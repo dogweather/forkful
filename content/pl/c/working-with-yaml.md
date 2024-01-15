@@ -1,6 +1,7 @@
 ---
-title:                "C: Praca z yaml"
-simple_title:         "Praca z yaml"
+title:                "Praca z formatem yaml"
+html_title:           "C: Praca z formatem yaml"
+simple_title:         "Praca z formatem yaml"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,95 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-C jest jednym z najpopularniejszych języków programowania na świecie i często używany do tworzenia aplikacji i systemów. Jedną z zalet C jest możliwość łatwego obsługiwania formatu danych YAML. Przeczytaj ten artykuł, aby dowiedzieć się dlaczego warto poznać YAML i jak możesz go używać w swoich projektach.
+Czy kiedykolwiek potrzebowałeś przechowywać dane w czytelny dla człowieka sposób, ale jednocześnie być w stanie je łatwo przetwarzać w swoim programie? Wtedy warto poznać YAML - czytelną dla ludzi strukturę danych, która jest również łatwa do interpretacji przez komputer. Przeczytaj nasz artykuł, aby dowiedzieć się, co to jest YAML i jak go używać w języku C.
 
-## Jak to zrobić
+## Jak używać YAML w języku C?
 
-W celu pracy z formatem YAML w języku C musimy użyć biblioteki zewnętrznej, takiej jak yaml-c. Należy pamiętać, że biblioteka ta jest dostępna tylko dla systemów operacyjnych unixowych, więc jeśli pracujesz na Windowsie, musisz skorzystać z innej biblioteki.
+To proste! Musisz jedynie zaimportować bibliotekę libyaml do swojego projektu. Następnie możesz łatwo wczytywać i zapisywać dane w formacie YAML. Oto przykładowy kod:
 
 ```C
-#include <stdio.h>
-#include <yaml.h>      // wczytaj bibliotekę yaml-c
+#include <yaml.h>
 
-int main()
-{
-  // utwórz nowy obiekt parsera YAML
-  yaml_parser_t parser;
-  
-  // zainicjuj obiekt
-  yaml_parser_initialize(&parser);
-  
-  // otwórz plik zawierający dane YAML
-  FILE *file = fopen("example.yaml", "rb");
-  
-  // ustaw strumień wejściowy dla parsera
-  yaml_parser_set_input_file(&parser, file);
-  
-  // zacznij analizę danych YAML
-  yaml_event_t event;
-  do {
-    yaml_parser_parse(&parser, &event);  // pobierz kolejne zdarzenie
-    switch (event.type) {
-      case YAML_SCALAR_EVENT:
-        // przetwórz dane typu skalar
-        printf("Klucz: %s\n", event.data.scalar.value);
-        break;
-      case YAML_SEQUENCE_START_EVENT:
-        // przetwórz początek sekwencji
-        printf("Sekwencja rozpoczęta\n");
-        break;
-      case YAML_MAPPING_START_EVENT:
-        // przetwórz początek mapowania
-        printf("Mapowanie rozpoczęte\n");
-        break;
-      // dodaj obsługę pozostałych typów zdarzeń
-    }
-    // zwolnij pamięć zdarzenia
-    yaml_event_delete(&event);
-  } while (event.type != YAML_STREAM_END_EVENT);
-  
-  // zwolnij pamięć parsera
-  yaml_parser_delete(&parser);
-  
-  // zamknij plik
-  fclose(file);
-  
-  return 0;
-}
+// Tworzymy nowy dokument YAML
+yaml_document_t document;
+yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0);
+
+// Dodajemy sekcję z kluczem "zawartość" i wartością "tekst"
+yaml_node_t *content = yaml_document_add_scalar(&document, (yaml_char_t *)"zawartość", (yaml_char_t *)"tekst");
+
+// Tworzymy przepływ wyjściowy do zapisu dokumentu w formacie YAML
+yaml_emitter_t emitter;
+yaml_emitter_initialize(&emitter);
+
+// Ustawiamy standardowy strumień wyjściowy na stdout
+yaml_emitter_set_output_file(&emitter, stdout);
+
+// Emitujemy nasz dokument do strumienia wyjściowego
+yaml_emitter_dump(&emitter, &document);
+
+// Zwalniamy zasoby
+yaml_document_delete(&document);
+yaml_emitter_delete(&emitter);
+
+// Output:
+// zawartość: tekst
 ```
 
-Przykładowy plik `example.yaml` może wyglądać następująco:
+## Pogłębiona analiza
 
-```yaml
-klucz: wartość
-lista:
-  - element 1
-  - element 2
-mapa:
-  klucz1: wartość1
-  klucz2: wartość2
-```
+Dzięki YAML możesz przechowywać złożone struktury danych, takie jak tablice i słowniki (klucz-wartość). Ponadto, ten format jest niezwykle czytelny dla człowieka, co ułatwia jego modyfikację i aktualizację.
 
-Kod powyżej wyświetli następujące dane na konsoli:
+W języku C dostępna jest biblioteka libyaml, która umożliwia proste parsowanie i generowanie dokumentów w formacie YAML. Warto zapoznać się z jej dokumentacją dla pełnej listy funkcji i możliwości.
 
-```
-Klucz: klucz
-Sekwencja rozpoczęta
-Klucz: lista
-Klucz: element 1
-Klucz: element 2
-Mapowanie rozpoczęte
-Klucz: mapa
-Klucz: klucz1
-Klucz: wartość1
-Klucz: klucz2
-Klucz: wartość2
-```
+## Zobacz również
 
-## Głębszy zanurzenie
-
-Format YAML jest bardzo użyteczny, gdy chcemy przechowywać i przekazywać dane w sposób czytelny dla człowieka. Jest to szczególnie przydatne, gdy pracujemy z dużymi zbiorami danych, takimi jak konfiguracje systemowe czy dane użytkowników.
-
-Biblioteka yaml-c oferuje wiele funkcji do wyciągania i zapisywania danych w formacie YAML. Możemy na przykład dodać własne zdarzenia do parsera, aby dostosować jego zachowanie dla naszych potrzeb. Możemy również wykorzystać wbudowane funkcje do konwersji danych z formatu YAML do innych formatów, takich jak JSON czy XML.
-
-Jednym z zastosowań YAML jest tworzenie plików konfiguracyjnych dla aplikacji, co pozwala na łatwą zmianę ustawień bez konieczności modyfikacji kodu.
+- Dokumentacja dla biblioteki libyaml (https://pyyaml.org/wiki/LibYAML)
+- Przykładowe projekty wykorzystujące YAML i język C (https://github.com/yaml/libyaml#projects-using-libyaml)
+- Tutorial na temat obsługi formatu YAML w języku C (https://www.commsp.ee.ic.ac.uk/~vijay/nbook/booklpsoct.html)

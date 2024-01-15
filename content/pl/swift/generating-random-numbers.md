@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Swift: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego generowanie losowych liczb jest ważne dla programistów
-Generowanie losowych liczb jest częstym zadaniem dla programistów, ponieważ pozwala na tworzenie różnorodnych wariantów w swoich programach, co może być przydatne w różnych przypadkach. Na przykład, generowanie losowych liczb może pomóc w losowym wyborze elementów z listy lub symulacji różnych scenariuszy.
+## Dlaczego
+
+Generowanie losowych liczb jest bardzo przydatną umiejętnością w programowaniu, ponieważ pozwala ona na wykonywanie różnych zadań, takich jak symulowanie losowych zdarzeń lub tworzenie losowych danych do testowania aplikacji.
 
 ## Jak to zrobić
-Aby wygenerować losową liczbę w języku Swift, należy użyć wbudowanej funkcji `random`. Przykładowy kod niżej pokazuje, jak generować losowe liczby z zakresu od 1 do 10.
+
+Aby wygenerować losową liczbę w Swift, możemy skorzystać z funkcji `arc4random_uniform(_:UInt32)`. Ta funkcja zwraca losową liczbę całkowitą z przedziału 0 do podanej liczby całkowitej. Przykładowy kod wyglądałby następująco:
 
 ```Swift
-let randomNum = Int.random(in: 1...10)
-print(randomNum)
+let randomNumber = Int(arc4random_uniform(10))
+print(randomNumber)
 ```
 
-To wydrukuje losową liczbę z zakresu od 1 do 10, na przykład `7`.
+Ten kod wygeneruje losową liczbę całkowitą od 0 do 9 i wyświetli ją w konsoli. Możemy również wykorzystać tę funkcję do generowania losowych liczb z zakresu innych typów danych, takich jak Double lub Float.
 
-Jeśli chcemy wygenerować więcej niż jedną liczbę, możemy użyć pętli `for`, jak pokazano w przykładzie poniżej:
+## Głębszy wgląd
+
+W Swift istnieje również struktura `Random`, która umożliwia nam jeszcze większą kontrolę nad generowaniem losowych liczb. Dzięki niej możemy definiować własne zakresy i typy danych dla wygenerowanych liczb. Przykładowy kod wykorzystujący strukturę `Random` mógłby wyglądać tak:
 
 ```Swift
-for _ in 1...5 {
-    let randomNum = Int.random(in: 1...10)
-    print(randomNum)
-}
+let generator = Random()
+let randomNumber = generator.generate(normalIn: 1.0...10.0)
+print(randomNumber)
 ```
 
-Ten kod wygeneruje 5 liczb z zakresu od 1 do 10.
-
-## Głębsze zagadnienia
-W języku programowania, generowanie liczb z zakresu od 0 do 1 jest uważane za najbardziej losowe. W Swift, możemy użyć funkcji `Double.random(in: 0...1)` aby wygenerować taką liczbę. Istnieje również możliwość wygenerowania losowych liczb zmiennoprzecinkowych, używając funkcji `Double` lub `Float` zamiast `Int`.
-
-Jedną z metod generowania liczb losowych jest wykorzystanie tzw. "ziarna" (ang. seed), które jest wartością początkową dla generatora liczb pseudolosowych. Domyślnie, w języku Swift, seed jest ustawiony na aktualny czas, co powoduje, że generowane liczby są zawsze inne przy każdym uruchomieniu programu. Jednak, jeśli chcemy osiągnąć dokładnie takie same wyniki, możemy ustawić seed ręcznie, używając funkcji `RandomNumberGenerator`.
+W tym przypadku wygenerowana liczba będzie typu Double, znajdująca się w zakresie od 1.0 do 10.0.
 
 ## Zobacz również
-- [Oficjalna dokumentacja Swift na temat generowania liczb losowych](https://developer.apple.com/documentation/swift/random)
-- [Poradnik na temat generowania liczb losowych w języku Swift](https://www.hackingwithswift.com/example-code/language/how-to-generate-random-numbers-in-swift)
+
+- [Dokumentacja Swift: Generowanie Liczb Losowych](https://developer.apple.com/documentation/swift/int/2952598-arc4random_uniform)
+- [Szybkie losowanie liczb losowych w Swift](https://www.hackingwithswift.com/example-code/system/how-to-generate-random-numbers-in-swift)
+- [Tworzenie własnej struktury Random w Swift](https://appventure.me/2015/08/24/creating-a-custom-swift-random-number-generator/)

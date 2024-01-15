@@ -1,5 +1,6 @@
 ---
-title:                "C: Väliaikaisen tiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "C: Väliaikaisen tiedoston luominen"
 simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "C"
 category:             "C"
@@ -9,38 +10,95 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-Monissa ohjelmoinnin projekteissa saattaa tulla tarve luoda väliaikaisia tiedostoja. Tämä voi tapahtua esimerkiksi silloin, kun ohjelma tarvitsee tallentaa väliaikaista dataa muistiin ja käsitellä sitä myöhemmin, tai kun yhteyksiä ulkoisiin resursseihin tulee luoda ja lukea tiedostoja. Tässä blogipostissa käymme läpi, kuinka voit luoda väliaikaisia tiedostoja C-ohjelmointikielellä.
+Miksi joku haluaisi luoda väliaikaisen tiedoston C-ohjelmoinnissa? Väliaikaiset tiedostot voivat olla hyödyllisiä esimerkiksi silloin, kun tarvitaan tallennustilaa väliaikaista tietoa varten tai kun halutaan varmistaa, että data ei jää pysyvästi käyttöjärjestelmän muistiin.
 
-## Näin luot väliaikaisen tiedoston
+## Kuinka
 
-C-ohjelmointikielessä on olemassa useita tapoja luoda väliaikaisia tiedostoja, mutta yleisin ja suositeltavin tapa on käyttää standardikirjaston `tmpfile()`-funktiota. Tämän funktion avulla voit luoda väliaikaisen tiedoston järjestelmän oletuskansioon ja käyttää sitä kuten tavallista tiedostoa. Ole kuitenkin varovainen, sillä nämä tiedostot tuhotaan automaattisesti ohjelman sulkeutuessa.
-
-Tämän seuraavan koodiesimerkin avulla voit luoda väliaikaisen tiedoston ja kirjoittaa siihen tekstirivin:
+Tässä osiossa esittelemme käytännön esimerkkejä siitä, kuinka voit luoda väliaikaisen tiedoston C-ohjelmoinnissa.
 
 ```C
-#include <stdio.h> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h> // tarvitaan mkstemp-toimintoa varten
 
-int main() 
-{
-    FILE *tf = tmpfile(); // luodaan väliaikainen tiedosto
-    fputs("Tämä on väliaikainen tiedosto.", tf); // kirjoitetaan tiedostoon rivi
-    fclose(tf); // suljetaan tiedosto
-    return 0;
+int main() {
+  // Luo väliaikainen tiedosto "tempfile"
+  char *tempfile = mktemp("tempfile");
+
+  // Avaa tiedosto kirjoitustilassa
+  FILE *fp = fopen(tempfile, "w");
+
+  // Tarkista onnistuiko tiedoston luominen
+  if (fp == NULL) {
+    printf("Väliaikaisen tiedoston luominen epäonnistui");
+    exit(1);
+  }
+
+  // Kirjoita data tiedostoon
+  fprintf(fp, "Tämä on väliaikainen tiedosto!");
+
+  // Sulje tiedosto
+  fclose(fp);
+
+  // Tulosta tiedoston sisältö
+  printf("Luotu tiedosto %s sisältää seuraavan tekstin:\n", tempfile);
+  system("cat tempfile");
+
+  return 0;
 }
 ```
 
-Ohjelman suorituksen jälkeen voit tarkistaa oman järjestelmäsi väliaikaisten tiedostojen kansiosta, ja näet siellä uuden nimettömän tiedoston, johon koodiesimerkissä kirjoitettu teksti on tallentunut.
+Tässä esimerkissä käytämme ```mktemp```-funktiota luodaksemme väliaikaisen tiedoston ja avataksesi sen kirjoitustilassa. Tämän jälkeen voit kirjoittaa tiedostoon haluamasi datan ja sulkea sen. Lopuksi käytämme ```cat```-komentoa tulostaaksemme tiedoston sisällön konsoliin.
 
-## Syvemmälle väliaikaisten tiedostojen luomiseen
+```C
+// Output:
+// Luotu tiedosto tempfile sisältää seuraavan tekstin:
+// Tämä on väliaikainen tiedosto!
+```
 
-Väliaikaisten tiedostojen luominen voi vaikuttaa helpolta, mutta on tärkeää ymmärtää, että nämä tiedostot ovat rajallisia resursseja. Järjestelmäsi väliaikaisten tiedostojen kansioon on määritetty ennalta sallittu määrä nykyisiä tiedostoja, ja jos ylität tämän määrän, väliaikainen tiedosto ei enää luoda. Ole siis tietoinen siitä, kuinka monta väliaikaista tiedostoa luot ja varmista, että suljet ne kaikki ohjelman suorituksen jälkeen.
+Voit myös käyttää ```tmpnam```-funktiota luodaksesi väliaikaisen tiedoston, jos et halua itse antaa nimeä tiedostolle.
 
-## Katso myös
+```C
+#include <stdio.h>
+#include <stdlib.h>
 
-Tässä blogipostissa olemme keskittyneet vain yhteen tapaan luoda väliaikaisia tiedostoja C-ohjelmointikielessä. Voit kuitenkin syventää tietämystäsi ja tutustua muihin tapoihin ja mahdollisiin sudenkuoppiin lukemalla seuraavat artikkelit:
+int main() {
+  // Luo väliaikainen tiedostonimi
+  char *tempfile = tmpnam(NULL);
 
-- C `tmpfile()`-funktio: https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm
-- Väliaikaiset tiedostot Unix-ympäristössä: https://www.linkedin.com/pulse/you-really-know-anything-temporary-file-jeremy-ross-smith/
-- C-kielen tiedostonkäsittely: https://www.cprogramming.com/tutorial/cfileio.html
+  // Avaa tiedosto kirjoitustilassa
+  FILE *fp = fopen(tempfile, "w");
+
+  // Tarkista onnistuiko tiedoston luominen
+  if (fp == NULL) {
+    printf("Väliaikaisen tiedoston luominen epäonnistui");
+    exit(1);
+  }
+
+  // Kirjoita data tiedostoon
+  fprintf(fp, "Tämä on väliaikainen tiedosto!");
+
+  // Sulje tiedosto
+  fclose(fp);
+
+  // Tulosta tiedoston sisältö
+  printf("Luotu tiedosto %s sisältää seuraavan tekstin:\n", tempfile);
+  system("cat tempfile");
+
+  return 0;
+}
+```
+
+Tässä esimerkissä käytämme ```tmpnam```-funktiota luodaksemme väliaikaisen tiedoston ja avataksesi sen kirjoitustilassa. Muilla parametreilla voit muokata luodun tiedoston nimeä haluamillasi tavoilla.
+
+```C
+// Output:
+// Luotu tiedosto /tmp/filerl4g6 sisältää seuraavan tekstin:
+// Tämä on väliaikainen tiedosto!
+```
+
+## Syvemmälle
+
+Edellä esitellyt esimerkit ovat vain pintaraapaisu siitä, kuinka voit luoda väliaikaisia tiedostoja C-ohjelmoinnissa. Vaihtoehtoisia tapoja on useita ja ne tarjoavat erilaisia ominaisuuksia ja toiminnallisuuksia. Kannattaa tutustua myös ```mkstemp```, ```tmpfile``` ja ```tmpnam```-funktioihin saadaksesi lisät

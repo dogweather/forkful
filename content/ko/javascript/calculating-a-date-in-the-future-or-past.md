@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 미래 또는 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "Javascript: 미래 또는 과거의 날짜 계산하기"
 simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,32 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 미래 또는 과거로 계산해야 할 이유는 매우 다양합니다. 가장 흔한 이유로는 예약 시스템이나 이벤트 플래너와 같은 애플리케이션에서 사용될 수 있습니다. 사용자가 특정 날짜에 대한 정보를 얻을 수 있도록 도와주고, 언제나 원하는 미래 또는 과거의 날짜를 계산할 수 있도록 돕는 것입니다.
+날짜를 미래나 과거로 계산하게 되는 이유는 우리 일상생활에서 다양한 이유로 날짜를 알아야 할 때가 있기 때문입니다. 예를 들어, 오늘이 어떤 요일인지, 기념일이 몇 일 뒤에 있는지 등을 알고 싶을 때 계산을 하게 되는데, 자바스크립트를 사용하면 간단하게 날짜를 계산할 수 있습니다.
 
-## 하르 투
-
-미래 또는 과거의 날짜를 계산하는 방법은 간단합니다. 먼저, Javascript에서 날짜를 다루기 위해 내장된 Date 객체를 사용해야 합니다. Date 객체를 통해 현재 시간을 가져오고, 이를 바탕으로 미래 또는 과거의 날짜를 계산할 수 있습니다. 아래는 예제 코드와 함께 사용된 결과입니다.
+## 하우 투
 
 ```Javascript
-// 현재 시간 생성
-let today = new Date();
+// 미래 날짜 계산
+let currentDay = new Date(); // 오늘 날짜
+let futureDay = currentDay.getDate() + 7; // 7일 뒤 날짜
+currentDay.setDate(futureDay); // 미래 날짜로 설정
+console.log(currentDay); // 출력: 현재로부터 7일 뒤의 날짜
 
-// 미래의 날짜 계산 (100일 후)
-today.setDate(today.getDate()+100);
-console.log(today); // 2020-09-26T14:39:43.659Z
-
-// 과거의 날짜 계산 (1년 전)
-today.setFullYear(today.getFullYear()-1);
-console.log(today); // 2019-06-19T14:40:45.898Z
+// 과거 날짜 계산
+let currentDate = new Date(); // 오늘 날짜
+let pastDate = currentDate.getDate() - 7; // 7일 전 날짜
+currentDate.setDate(pastDate); // 과거 날짜로 설정
+console.log(currentDate); // 출력: 현재로부터 7일 전의 날짜
 ```
+
+위의 예시는 오늘 날짜를 기준으로 미래 날짜와 과거 날짜를 간단하게 계산하는 방법을 보여줍니다. 날짜를 구하는 데 사용되는 함수들을 잘 활용하면 더욱 다양한 계산을 할 수 있으니, 여러 가지 예시를 통해 익혀보시기 바랍니다.
 
 ## 딥 다이브
 
-날짜를 계산하는 것은 실제로 복잡한 작업이 아닙니다. 하지만 좀 더 깊이 들어가면, Javascript에서 날짜를 다루는 방식에 대해 좀 더 알 수 있습니다. 예를 들어, Date 객체의 메소드 중 하나인 `setDate()`은 날짜를 설정할 때 일부러 1을 빼주어야 하는 이유가 있습니다. 이는 1월부터 시작하는 인덱싱 방식 때문입니다.
+날짜를 계산하는 데에는 많은 함수들이 있지만, 가장 기본적인 것은 `Date()` 객체입니다. 이 객체는 년, 월, 일, 시간 등 다양한 날짜 정보를 다룰 수 있습니다. 또한, `getDate()`, `setDate()`, `getMonth()`, `getYear()` 등 다양한 함수들을 이용하여 원하는 날짜를 계산할 수 있습니다. 자세한 내용은 공식 문서나 다른 블로그에서 참고하시기 바랍니다.
 
-또한, 미래 또는 과거의 날짜를 계산할 때 윤년을 고려해야 할 수도 있습니다. 이러한 작은 세부사항들을 알아두면, 더 정확하고 효율적인 날짜 계산을 할 수 있습니다.
+## 참고
 
-## 봐도록 하기
-
-- Date 객체에 대한 자세한 정보: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date
-- 윤년에 대한 이해: https://ko.wikipedia.org/wiki/%EC%9C%A4%EB%85%84
+- [JavaScript Date 객체 - MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript에서 날짜 계산하는 방법](https://engkimbs.tistory.com/766)

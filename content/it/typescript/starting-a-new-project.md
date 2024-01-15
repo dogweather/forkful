@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Iniziare un nuovo progetto"
-simple_title:         "Iniziare un nuovo progetto"
+title:                "Avviare un nuovo progetto"
+html_title:           "TypeScript: Avviare un nuovo progetto"
+simple_title:         "Avviare un nuovo progetto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -9,59 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché iniziare un nuovo progetto TypeScript
+## Perché
 
-Iniziare un nuovo progetto in TypeScript può essere una scelta vantaggiosa per molti motivi. TypeScript è un linguaggio di programmazione che combina la tipizzazione statica di JavaScript con funzionalità di programmazione orientata agli oggetti, rendendolo più robusto ed efficiente.
+Ci sono molte ragioni per cui qualcuno potrebbe decidere di iniziare un nuovo progetto utilizzando TypeScript. Innanzitutto, TypeScript è un linguaggio di programmazione moderno e potente che sta diventando sempre più popolare tra gli sviluppatori. Inoltre, l'utilizzo di TypeScript può aumentare la produttività e la qualità del codice grazie alla sua tipizzazione statica e alle numerose funzionalità avanzate.
 
-Inoltre, TypeScript è compatibile con la maggior parte dei moderni framework di sviluppo web, come Angular e React, offrendo una maggiore flessibilità nella gestione e manutenzione del codice.
+## Come iniziare
 
-# Come iniziare un nuovo progetto TypeScript
-
-Per iniziare un nuovo progetto in TypeScript, è necessario avere installato prima il compilatore TypeScript e un editor di testo o IDE. Una volta fatto ciò, è possibile seguire i seguenti passaggi:
-
-1. Creare una nuova cartella per il progetto
-2. Inizializzare il progetto con il comando `tsc --init`
-3. Creare un file `index.ts`
-4. Inserire il seguente codice:
+Per iniziare un nuovo progetto TypeScript, è necessario assicurarsi di avere installato l'ultima versione di Node.js, che è disponibile gratuitamente sul sito ufficiale. Successivamente, è possibile utilizzare il comando `npm` per installare TypeScript globalmente sul proprio sistema:
 
 ```TypeScript
-class Persona {
-    nome: string;
-    cognome: string;
-    
-    constructor(nome: string, cognome: string) {
-        this.nome = nome;
-        this.cognome = cognome;
-    }
-
-    presentazione(): void {
-        console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}`);
-    }
-}
-
-let persona = new Persona("Mario", "Rossi");
-persona.presentazione();
+npm install -g typescript
 ```
 
-5. Eseguire il comando `tsc index.ts` per compilare il file TypeScript in JavaScript
-6. Eseguire il comando `node index.js` per eseguire il file JavaScript e visualizzare l'output:
+Una volta completata l'installazione, è possibile creare una nuova cartella per il progetto e all'interno di essa inizializzare un nuovo progetto TypeScript utilizzando il comando `tsc --init`. Questo creerà un file `tsconfig.json` che conterrà le impostazioni del progetto. Ora è possibile scrivere il codice TypeScript all'interno di file con estensione `.ts` e utilizzare il comando `tsc` per compilare il codice in JavaScript:
 
+```TypeScript
+tsc nomefile.ts
 ```
-Ciao, mi chiamo Mario Rossi
+
+Il codice compilato verrà salvato in un nuovo file con estensione `.js`. Ora è possibile eseguire il file JavaScript utilizzando Node.js, come si farebbe con qualsiasi altro progetto JavaScript. Ad esempio:
+
+```TypeScript
+console.log("Ciao, mondo!");
 ```
 
-# Approfondimento
+## Approfondimento
 
-Per approfondire l'utilizzo di TypeScript in un nuovo progetto, è importante comprendere le nozioni di base del linguaggio come tipi di dati, classi, interfaccie e moduli. Inoltre, è possibile integrare TypeScript con altri strumenti come Babel per aumentare la compatibilità con i browser più vecchi.
+Se si desidera approfondire ulteriormente le funzionalità di TypeScript, è possibile consultare la documentazione ufficiale su TypeScript o guardare alcuni tutorial online. Inoltre, esistono numerosi framework e librerie che supportano TypeScript, come Angular, React e Vue. Utilizzare uno di questi framework può semplificare notevolmente lo sviluppo di un progetto TypeScript.
 
-Altre risorse utili da consultare sono:
+## Vedi anche
 
-- [Sito ufficiale di TypeScript](https://www.typescriptlang.org/)
-- [Documentazione di TypeScript](https://www.typescriptlang.org/docs/)
-- [Tutorial su TypeScript](https://www.tutorialspoint.com/typescript/index.htm)
-
-# Vedi anche
-
-- [Tutorial su Angular con TypeScript](https://www.tutorialspoint.com/angular6/typescript.htm)
-- [Utilizzo di TypeScript con React](https://blog.logrocket.com/using-typescript-with-react/)
-- [Guida introduttiva a Babel e TypeScript](https://medium.com/@iamcherta/getting-started-with-babel-and-typescript-714abfc8b3e)
+- Documentazione ufficiale TypeScript: https://www.typescriptlang.org/docs/
+- Tutorial TypeScript: https://www.tutorialspoint.com/typescript/index.htm
+- Framework Angular: https://angular.io/
+- Libreria React: https://reactjs.org/
+- Framework Vue: https://vuejs.org/

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Rozpoczynanie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Rust: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,36 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto zacząć nowy projekt w Rust?
+## Dlaczego
 
-Istnieje wiele powodów, dla których warto rozważyć rozpoczęcie nowego projektu w języku programowania Rust. Przede wszystkim, jest to nowoczesny, efektywny i bezpieczny język, który pozwala tworzyć wydajne i niezawodne aplikacje. Ponadto, Rust jest stale rozwijany przez społeczność programistów, co oznacza, że można spodziewać się ciągłych ulepszeń i aktualizacji.
+Zastanawiasz się, dlaczego warto rozpocząć nowy projekt w Rust? Jest wiele powodów, dla których warto zacząć pracę w tym języku. Po pierwsze, Rust jest niesamowitym narzędziem dla programistów, którzy cenią sobie wydajność i bezpieczeństwo swojego kodu. Oprócz tego, społeczność Rust jest bardzo aktywna i chętnie dzieli się wiedzą, co sprawia, że nauka tego języka jest szybka i przyjemna.
 
-## Jak zacząć projekt w Rust?
+## Jak to zrobić
 
-Aby rozpocząć nowy projekt w Rust, należy najpierw zainstalować odpowiednią wersję języka, która jest dostępna dla różnych systemów operacyjnych. Następnie, warto zapoznać się z podstawowymi konceptami języka, takimi jak właściwości, struktury danych i pętle. Poniżej przedstawiam przykładowy kod w Rust, który wyświetli napis "Hello, world!"
+Rust jest językiem statycznie typowanym, co oznacza, że zmienne muszą być zdefiniowane z określonym typem i nie mogą zmienić swojego typu podczas działania programu. To zapewnia większą pewność, że kod działa zgodnie z naszymi oczekiwaniami. Przypomina to trochę C++, ale posiada również inne ciekawe funkcje, takie jak system typów zależny od wartości, który pozwala na bezpieczne operowanie na danych bez konieczności ręcznego sprawdzania ich poprawności. Zobaczmy to na przykładzie:
 
-```Rust
+```rust
 fn main() {
-    println!("Hello, world!");
+    // Tworzymy zmienną "x" typu i32 i nadajemy jej wartość
+    let x: i32 = 5;
+
+    // Tworzymy nową zmienną "y" i wykorzystujemy wcześniej
+    // zdefiniowaną wartość "x" do obliczenia jej wartości
+    let y: i32 = x + 10;
+
+    println!("Wartość y: {}", y);
 }
+
 ```
 
-Wynik działania tego kodu będzie wyglądał następująco:
+Wyjście: Wartość y: 15
 
-`Hello, world!`
+Możemy również definiować własne struktury danych i implementować na nich metody:
 
-Każdy projekt w Rust powinien również zawierać plik `Cargo.toml`, w którym definiuje się zależności i konfiguracje projektu.
+```rust
+// Definiujemy strukturę "Student" z polami "imie" i "nazwisko"
+struct Student {
+    imie: String,
+    nazwisko: String,
+}
+
+// Tworzymy dla tej struktury metodę "przedstaw_sie"
+// która wyświetli imię i nazwisko studenta
+impl Student {
+    fn przedstaw_sie(&self) {
+        println!("Cześć, jestem {} {}", self.imie, self.nazwisko);
+    }
+}
+
+fn main() {
+    // Tworzymy nowego studenta i wywołujemy na nim metodę
+    let student = Student {
+        imie: String::from("Anna"),
+        nazwisko: String::from("Kowalska"),
+    };
+
+    student.przedstaw_sie();
+}
+
+```
+
+Wyjście: Cześć, jestem Anna Kowalska
 
 ## Deep Dive
 
-Jeśli chcesz zgłębić temat tworzenia projektów w Rust, przydatne będzie zapoznanie się z dokumentacją języka oraz udział w społeczności programistów. Znajdziesz tam wiele przydatnych informacji i porad dotyczących rozpoczynania, rozwijania i utrzymywania projektów w Rust.
+Teraz, gdy już wiesz jak zacząć pracę w Rust, warto wiedzieć, że aby zainstalować i uruchomić język na swoim komputerze, musisz mieć dobrą znajomość terminala i niektórych podstawowych narzędzi programistycznych, takich jak kompilator Rusta - `rustc` oraz menadżer pakietów `cargo`. Możesz również skorzystać z wielu dostępnych online kursów i samouczków, aby lepiej poznać ten język i jego możliwości.
 
-Ważne jest również, aby pamiętać o zasadach bezpieczeństwa w Rust, takich jak system typów, własność i sposoby unikania pamięci niedostępnej.
+## Zobacz również
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o języku programowania Rust i jego możliwościach, zapoznaj się z poniższymi linkami:
-
-- [Oficjalna strona języka Rust](https://www.rust-lang.org/)
-- [Dokumentacja języka Rust](https://doc.rust-lang.org/book/)
-- [Społeczność programistów Rust](https://www.rust-lang.org/community)
+- [Oficjalna strona Rust](https://www.rust-lang.org)
+- [Dokumentacja Rust](https://doc.rust-lang.org/stable/book)
+- [The Rust Programming Language - kurs na Udemy](https://www.udemy.com/course/rust-lang/)

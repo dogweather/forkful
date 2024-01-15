@@ -1,5 +1,6 @@
 ---
-title:                "Python: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Python: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Python"
 category:             "Python"
@@ -9,55 +10,121 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-CSV, eller "Comma-Separated Values", är ett vanligt filformat som används för att lagra data i tabellform. Det är ett praktiskt sätt att hantera data eftersom det är lätt att läsa och hantera för både människor och datorer. Om du arbetar med dataanalys, webbutveckling eller automatisering kan du ofta stöta på CSV-filer och det är därför viktigt att ha kunskap om hur du kan jobba med dem.
+Vi använder CSV-filer för att lagra och hantera stora mängder tabulär data på ett strukturerat sätt. Det är ett vanligt format som används för att dela data mellan olika applikationer och system.
 
-# Hur man gör
+## Så här gör du
 
-Att arbeta med CSV-filer i Python är relativt enkelt tack vare många inbyggda funktioner och moduler. För att öppna och läsa en CSV-fil kan du använda funktionen `open()` och modulen `csv`. Se nedan för ett exempel på hur du kan läsa en CSV-fil och skriva ut dess innehåll:
+För att arbeta med CSV-filer i Python behöver du importera `csv`-modulen. Här är ett kort kodexempel som läser in en CSV-fil och skriver ut varje rad i konsolen:
 
-```python
-# Importera csv-modulen
+```Python
 import csv
 
-# Öppna csv-filen och läs in data
-with open('exempel.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    # Loopa genom varje rad i filen
+with open('data.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
     for row in csv_reader:
-        # Skriv ut varje rad som en lista
         print(row)
 ```
 
-Detta kodblock kommer att skriva ut innehållet i filen `exempel.csv` som en lista av listor, där varje inre lista representerar en rad i filen.
+Output:
 
-Om du vill skriva till en CSV-fil kan du använda funktionen `writer()` från `csv`-modulen. Se nedan för ett exempel på hur du kan skapa en ny CSV-fil och skriva till den:
-
-```python
-# Importera csv-modulen
-import csv
-
-# Skapa en ny csv-fil
-with open('ny_fil.csv', mode='w') as csv_file:
-    # Skapa en csv-writer
-    csv_writer = csv.writer(csv_file, delimiter=',')
-    # Skriv till filen
-    csv_writer.writerow(['Förnamn', 'Efternamn', 'Ålder'])
-    csv_writer.writerow(['Anna', 'Andersson', 30])
-    csv_writer.writerow(['Erik', 'Ek', 25])
+``` 
+['Namn', 'Ålder', 'Stad']
+['Lisa', '25', 'Stockholm']
+['Erik', '30', 'Göteborg']
+['Maria', '27', 'Malmö']
 ```
 
-Detta kodblock kommer att skapa en ny fil med namnet `ny_fil.csv` och skriva innehållet som en tabell med tre kolumner: "Förnamn", "Efternamn" och "Ålder".
+För att skriva till en CSV-fil kan du använda `writer`-funktionen från `csv`-modulen. Se till att du öppnar filen i läge "append" (`a`) om du vill lägga till data till en befintlig fil.
 
-# Djupdykning
+```Python
+import csv
 
-Att läsa och skriva CSV-filer är bara en del av vad du kan göra med dem i Python. Du kan också använda modulen `csv` för att manipulera data, såsom att lägga till eller ta bort rader och kolumner, eller för att jämföra data mellan olika filer.
+with open('data.csv', 'a') as csv_file:
+    csv_writer = csv.writer(csv_file)
 
-En annan användbar modul för att arbeta med CSV-filer är `pandas`, som är speciellt utformad för dataanalys. Med `pandas` kan du enkelt läsa in och manipulera stora mängder CSV-data och utföra olika typer av analyser.
+    # Skriv en rad i taget
+    csv_writer.writerow(['Johan', '32', 'Uppsala'])
 
-# Se även
+    # Skriv flera rader på en gång
+    data = [
+        ['Alina', '29', 'Norrköping'],
+        ['Oskar', '24', 'Lund']
+    ]
+    csv_writer.writerows(data)
+```
 
-* [Officiell dokumentation för csv-modulen](https://docs.python.org/3/library/csv.html)
-* [Pandas dokumentation](https://pandas.pydata.org/pandas-docs/stable/)
-* [En artikel om dataanalyser med pandas](https://realpython.com/python-data-analysis/)
+Output i data.csv:
+
+```
+Namn,Ålder,Stad
+Lisa,25,Stockholm
+Erik,30,Göteborg
+Maria,27,Malmö
+Johan,32,Uppsala
+Alina,29,Norrköping
+Oskar,24,Lund
+```
+
+## Djupdykning
+
+CSV står för "Comma Separated Values" och det är just det - ett textbaserat format där varje rad med data separeras av ett kommatecken. I vissa fall används även andra separatorer, till exempel semikolon eller tabb, men i det här fallet kommer vi att fokusera på den vanligaste formen med kommatecken.
+
+Förutom att läsa och skriva data till CSV-filer, kan vi även manipulera data med hjälp av inbyggda funktioner som `split()` och `join()`. Till exempel:
+
+```Python
+import csv
+
+with open('data.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
+    for row in csv_reader:
+        # Dela upp namnet i för- och efternamn
+        name = row[0].split()
+        first_name = name[0]
+        last_name = name[1]
+
+        # Skapa ett användarnamn genom att sammanslå första bokstaven av förnamn med hela efternamnet
+        username = first_name[0] + last_name
+
+        # Spara det som en ny kolumn i varje rad
+        row.append(username)
+
+        print(row)
+```
+
+Output:
+
+```
+['Namn', 'Ålder', 'Stad', 'Användarnamn']
+['Lisa Andersson', '25', 'Stockholm', 'Landersson']
+['Erik Svensson', '30', 'Göteborg', 'Esvensson']
+['Maria Karlsson', '27', 'Malmö', 'Mkarlsson']
+```
+
+Det finns även möjlighet att läsa in CSV-data som en ordnad dictionary istället för en lista, genom att använda `DictReader`-funktionen. Detta gör det lättare att arbeta med data eftersom varje kolumn då blir en "nyckel" i dictionaryn.
+
+```Python
+import csv
+
+with open('data.csv', 'r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+
+    for row in csv_reader:
+        print(row['Namn'] + " bor i " + row['Stad'])
+```
+
+Output:
+
+```
+Lisa bor i Stockholm
+Erik bor i Göteborg
+Maria bor i Malmö
+```
+
+## Se även
+
+- [Officiell dokumentation för CSV i Python](https://docs.python.org/3/library/csv.html)
+- [Lista med CSV-moduler för Python

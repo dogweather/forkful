@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Fish Shell: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,37 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué leer argumentos de línea de comandos?
 
-Si eres un programador, probablemente estés acostumbrado a utilizar una interfaz gráfica para manejar tu código. Sin embargo, existe otra forma de interactuar con tu computadora y es a través de la línea de comandos. Aunque puede parecer intimidante al principio, aprender a utilizar la línea de comandos puede ser muy beneficioso, especialmente cuando se trata de leer y utilizar argumentos de línea de comandos.
+Si eres un programador o un amante de la tecnología, probablemente ya estés acostumbrado a trabajar con la línea de comandos. Sin embargo, puede que no estés familiarizado con cómo leer y manipular argumentos de línea de comandos en la Fish Shell. En este artículo te explicaremos por qué deberías aprender a hacerlo y cómo puedes hacerlo.
 
-## Cómo
+## Cómo hacerlo
 
-Fish Shell es un tipo de terminal que permite a los usuarios interactuar con su sistema operativo a través de la línea de comandos. Una de las funciones más útiles de Fish Shell es la capacidad de leer y utilizar argumentos de línea de comandos en tus scripts o programas.
+Para leer argumentos de línea de comandos en la Fish Shell, simplemente debes utilizar la variable especial `$argv`. Esta variable contiene una lista de todos los argumentos que se pasaron al ejecutar el script o comando en la línea de comandos. Veamos un ejemplo:
 
-Para leer un argumento de línea de comandos en Fish Shell, se utiliza la variable especial `$argv`. Esta variable contiene todos los argumentos que se han pasado al comando, separados por espacios. Por ejemplo, si se ejecuta el script `hola.fish` de la siguiente manera:
-
+```Fish Shell
+# Este script suma dos números
+echo "La suma de $argv[1] y $argv[2] es igual a $argv[1] + $argv[2]"
 ```
-fish hola.fish Juan Marta Pedro
+
+Si ejecutamos este script en la línea de comandos de la siguiente manera:
+
+```Fish Shell
+./sumar_script 2 3
 ```
 
-La variable `$argv` contendrá los valores `Juan`, `Marta` y `Pedro`.
+Obtendremos la siguiente salida:
 
-Para acceder a cada argumento de manera individual, se utiliza `$argv[1]` para el primer argumento, `$argv[2]` para el segundo, y así sucesivamente.
+```Fish Shell
+La suma de 2 y 3 es igual a 2 + 3
+```
 
-## Deep Dive
+Como puedes ver, los valores de los argumentos se pueden acceder mediante `$argv[indice]`, donde el índice comienza en 1 (ya que el nombre del script es `$argv[0]`). También puedes acceder a todos los argumentos en una sola cadena con la variable `$arguments`.
 
-Los argumentos de línea de comandos pueden ser de gran utilidad cuando se trata de automatizar tareas u obtener información específica del usuario. Por ejemplo, puedes crear un script que te permita copiar y renombrar archivos en base a los argumentos que le pases. También puedes utilizar argumentos de línea de comandos en tus programas para personalizar su funcionamiento según la necesidad del usuario.
+## Un vistazo más profundo
 
-Es importante mencionar que Fish Shell también cuenta con la variable especial `$argc`, que contiene el número total de argumentos pasados al comando.
+La Fish Shell también tiene la capacidad de leer opciones de línea de comandos, que son argumentos precedidos por un guión (`-`). Estos se pueden acceder mediante la variable `$options`, que contiene un diccionario donde la clave es el nombre de la opción y el valor es su valor. Veamos un ejemplo:
 
-## See Also
+```Fish Shell
+# Este script suma dos números
+echo "La suma de $argv[1] y $argv[2] es igual a $argv[1] + $argv[2]"
+echo "El resultado es:"
 
-Si quieres saber más sobre cómo utilizar Fish Shell y sus diferentes funcionalidades, aquí te dejamos algunos enlaces útiles:
+# Obtener la opción -v que indica si queremos que se muestre el resultado en modo verboso
+if test $options['-v'] = true
+    set resultado $argv[1] + $argv[2]
+    echo "El resultado de $argv[1] + $argv[2] es igual a $resultado"
+else 
+    echo $argv[1] + $argv[2]
+end
+```
 
-- [Introducción a Fish Shell](https://fishshell.com/)
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de línea de comandos para principiantes](https://tutorial.djangogirls.org/es/intro_to_command_line/)
-- [Tutorial de línea de comandos avanzado](https://www.learnenough.com/command-line-tutorial)
+Si ejecutamos este script de la siguiente manera:
 
-¡Esperamos que este artículo te haya sido útil para aprender sobre la lectura de argumentos de línea de comandos en Fish Shell! Y recuerda, ¡practicar es la clave para dominar cualquier habilidad en programación! ¡Hasta pronto!
+```Fish Shell
+./sumar_script -v 2 3
+```
+
+Obtendremos la siguiente salida:
+
+```Fish Shell
+La suma de 2 y 3 es igual a 2 + 3
+El resultado es:
+El resultado de 2 + 3 es igual a 5
+```
+
+Como puedes ver, se puede acceder a la opción `-v` a través de `$options['-v']`, que devuelve el valor `true` si está presente en la línea de comandos.
+
+## Ver también
+
+Si quieres seguir aprendiendo sobre la Fish Shell, te recomendamos estos recursos:
+
+- Documentación oficial de la Fish Shell (https://fishshell.com/docs/current/index.html)
+- Guía de introducción a la Fish Shell por Anish Athalye (https://medium.com/@anishathalye/learning-fish-shell-4e99cb8de87d)

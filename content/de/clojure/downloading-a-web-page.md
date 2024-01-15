@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Eine Webseite herunterladen."
-simple_title:         "Eine Webseite herunterladen."
+title:                "Eine Webseite herunterladen"
+html_title:           "Clojure: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,63 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Herunterladen von Webseiten ist ein entscheidender Schritt beim Erstellen von Web Crawlers, Daten-Scraping oder einfach nur zum Speichern interessanter Inhalte. In dieser Anleitung werden wir untersuchen, wie man mithilfe von Clojure Webseiten herunterladen kann.
+Warum sollte jemand eine Webseite herunterladen? Nun, es gibt viele Gründe! Manchmal möchte man eine Kopie einer Seite für den Offline-Zugriff haben, andere Male möchte man sie untersuchen und möglicherweise Daten extrahieren. Egal aus welchem Grund, das Herunterladen einer Webpage ist eine nützliche Fähigkeit, die jeder Programmierer in seinem Werkzeugkasten haben sollte.
 
-## Anleitung
+## Wie geht das?
 
-```Clojure
-(ns website-downloader.core
-  (:require [clj-http.client :as client]))
-
-(defn get-page [url]
-  (let [response (client/get url)]
-    (println "Status code:" (:status response))
-    (:body response)))
-```
-
-Um eine Webseite herunterzuladen, verwenden wir die Bibliothek `clj-http` und die Funktion `get-page`. Sie nimmt die URL der Webseite als Argument und gibt den Inhalt der Seite als String zurück. Wir können auch den Statuscode der Antwort ausgeben und diesen für weitere Verarbeitungsschritte verwenden.
+Um eine Webseite herunterzuladen, müssen wir zunächst die URL kennen. Diese ist normalerweise in der Adressleiste des Browsers zu finden. Wir können dann die `clojure.java.io` Bibliothek verwenden, um die Seite herunterzuladen und den Inhalt auf der Konsole auszugeben.
 
 ```Clojure
-(def url "https://example.com")
-(def page (get-page url))
+(require '[clojure.java.io :as io])
 
-(println page)
+(def url "https://www.beispielwebseite.com/")
+
+(def page (slurp url))
+(io/copy (io/file "heruntergeladene-webpage.html") page)
 ```
 
-Im obigen Beispiel rufen wir die Funktion `get-page` auf und speichern den Rückgabewert in der Variable `page`. Anschließend geben wir den Inhalt der Webseite mittels `println` aus.
+Die `slurp` Funktion lädt den Inhalt der URL als String herunter, und die `copy` Funktion speichert diesen Inhalt in einer Datei namens "heruntergeladene-webpage.html". Nun können wir diese Datei öffnen und den Inhalt anzeigen.
 
-## Tiefer Tauchgang
-
-Um effizienter mit heruntergeladenen Webseiten umgehen zu können, bietet Clojure auch die Möglichkeit, den Inhalt als Datenstruktur zu parsen.
-
-```Clojure
-(ns website-downloader.core
-  (:require [clj-http.client :as client]
-            [clojure.xml :as xml]))
-
-(defn get-xml-page [url]
-  (let [response (client/get url)
-        xml-tree (xml/parse (:body response))]
-    xml-tree))
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beispielwebseite</title>
+  </head>
+  <body>
+    <h1>Willkommen auf unserer Webseite!</h1>
+    <p>Hier finden Sie alle Informationen, die Sie brauchen.</p>
+  </body>
+</html>
 ```
 
-In diesem Beispiel verwenden wir die Funktion `xml/parse`, um den Inhalt der Seite in eine Baumstruktur zu konvertieren. Anschließend können wir mit dem Datenzugriffsoperator `->` auf die einzelnen Elemente zugreifen.
+## Tiefere Einsicht
 
-```Clojure
-(def url "https://example.com")
-(def page-xml (get-xml-page url))
+Das Herunterladen einer Webseite mag einfach erscheinen, aber es gibt viele Dinge, die dabei passieren. Beim Herunterladen wird ein HTTP-Request an den Server geschickt, der dann den Inhalt der Seite als HTTP-Response zurücksendet. Die Daten werden dann in einen String konvertiert und an unsere `page` Variable gebunden.
 
-(-> page-xml
-    :html
-    :body
-    :div
-    :h1
-    :content)
-```
-
-Wir können beispielsweise den Inhalt des `<h1>`-Tags mit Hilfe der oben gezeigten Syntax extrahieren und ausgeben lassen.
+Es gibt auch andere Möglichkeiten, eine Webseite herunterzuladen, wie zum Beispiel mit der Bibliothek `clj-http` oder dem Leiningen-Plugin `lein-fetch`. Diese Methoden bieten zusätzliche Funktionen wie das Herunterladen von Bildern oder die Angabe von Benutzernamen und Passwörtern für Webseiten, die eine Authentifizierung erfordern.
 
 ## Siehe auch
 
-- [Offizielle Clojure-Dokumentation](https://clojure.org/)
-- [clj-http Dokumentation](https://github.com/dakrone/clj-http)
+- [clojure.java.io Dokumentation] (https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [clj-http Dokumentation] (https://github.com/dakrone/clj-http)
+- [Leiningen-Plugin "lein-fetch"] (https://github.com/martinklepsch/lein-fetch)

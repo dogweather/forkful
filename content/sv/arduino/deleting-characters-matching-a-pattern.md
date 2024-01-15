@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,59 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att ta bort tecken som matchar ett visst mönster kan vara användbart i många olika situationer. Till exempel kan det hjälpa till att rensa en sträng från onödiga tecken, vilket gör den lättare att hantera och bearbeta.
 
-Ibland kan du behöva ta bort vissa tecken från en sträng i ditt Arduino-program. Det kan vara av olika skäl, till exempel för att göra databehandling mer effektiv eller för att hantera användarens inmatning på ett mer flexibelt sätt. I den här blogginlägget kommer vi att gå igenom hur man kan ta bort tecken som matchar ett visst mönster från en sträng i Arduino-programmering.
-
-## Så här gör du
-
-Först måste vi inkludera standardbiblioteket `string` i vårt program. Sedan kan vi använda funktionen `indexOf()` för att hitta positionen för det första tecknet som matchar det mönster vi vill ta bort. Sedan använder vi funktionen `substring()` för att skapa en ny sträng som innehåller allt före det matchande tecknet och allt efter det. Här är en kodexempel:
+## Hur man gör det
+Det finns flera sätt att gå tillväga för att ta bort tecken som matchar ett visst mönster i Arduino. Ett sätt är att använda sig av den inbyggda funktionen "replace" som finns i "String" biblioteket. Se nedan för ett exempel på hur man kan implementera detta i sin kod:
 
 ```Arduino
-#include <string>
+String originalString = "Hej alla Arduino-användare!";
+String modifiedString = originalString.replace("a", "");
 
-String str = "Detta är en teststräng";
-int pos = str.indexOf("test"); //hittar positionen för första förekomsten av "test"
-String newStr = str.substring(0, pos) + str.substring(pos + 4); //skapar en ny sträng utan "test"
+Serial.println(modifiedString);
 ```
-
-I det här exemplet använder vi `substring()` två gånger för att skapa en ny sträng utan det matchande ordet "test". Vi måste också lägga till en offset på 4 i den andra `substring()` eftersom det är längden på ordet "test". Annars kommer vi att få ett extra mellanslag i vår nya sträng.
-
-En annan lösning är att använda funktionen `replace()` som finns i standardbiblioteket `string`. Denna funktion tar två parametrar, först det sökta mönstret och sedan det tecken (eller sträng) som ska ersätta det. Här är ett annat kodexempel:
-
-```Arduino
-#include <string>
-
-String str = "Detta är en teststräng";
-String newStr = str.replace("test", ""); //skapar en ny sträng utan "test"
-```
-
-Som du kan se, är det mycket enklare att använda `replace()` eftersom den tar hand om att hitta positionen och ändra strängen åt dig.
+Detta kodblock kommer att ta bort alla "a" från den ursprungliga strängen och skriva ut resultatet på seriell monitor. Resultatet blir "Hej ll Arduno-nvändre!".
 
 ## Djupdykning
+När man använder sig av "replace"-funktionen för att ta bort tecken som matchar ett mönster, är det viktigt att vara medveten om vad som händer bakom kulisserna. I grund och botten ersätts de matchande tecknen med en tom sträng, vilket innebär att den ursprungliga strängens längd förändras. Detta kan påverka prestandan i ens kod om man arbetar med stora och/eller många strängar.
 
-Om du vill ta bort flera förekomster av ett mönster från en sträng kan du använda en `while`-loop tills `indexOf()` returnerar -1, vilket betyder att det inte finns fler förekomster av mönstret i strängen. 
-Här är ett exempel där vi tar bort alla förekomster av bokstaven "a" från en sträng:
+Det finns också andra sätt att ta bort tecken som matchar ett mönster, som att använda sig av regelbundna uttryck eller loopa genom varje tecken i strängen och jämföra dem med det önskade mönstret. Det är viktigt att välja den lämpligaste metoden beroende på ens specifika behov och kodens krav.
 
-```Arduino
-#include <string>
-
-String str = "Detta är en teststräng";
-int pos = str.indexOf("a");
-while (pos >= 0) { //så länge det finns en förekomst av "a" i strängen
-    str = str.substring(0, pos) + str.substring(pos + 1); //ta bort tecknet på positionen
-    pos = str.indexOf("a"); //hitta nästa förekomst av "a"
-}
-```
-
-Nu när vi har gått igenom hur man tar bort tecken som matchar ett visst mönster i Arduino, kan du experimentera med olika mönster och se vilken metod som passar bäst för dina behov.
-
-## Se också
-
-Om du vill lära dig mer om strängmanipulering i Arduino, kan du läsa följande artiklar från vår officiella dokumentation:
-
-- [String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [indexOf()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
-- [substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [replace()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-
-Tack för att du läste och lycka till med dina Arduino-projekt!
+## Se även
+- [Arduino String replace dokumentation](https://www.arduino.cc/en/Curie/replace)
+- [Guide till regelbundna uttryck i Arduino](https://learn.sparkfun.com/tutorials/regular-expressions/reg-ex-in-arduino)
+- [Enkel Arduino kod för att ta bort mellanslag](https://www.maketecheasier.com/delete-spaces-string-arduino/)

@@ -1,5 +1,6 @@
 ---
-title:                "C: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "C: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "C"
 category:             "C"
@@ -9,48 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que?
 
-Não há dúvida de que a internet é uma parte essencial de nossas vidas hoje em dia. E com a abundância de informações disponíveis online, muitas vezes encontramos páginas da web que nos interessam e queremos tê-las em nossos dispositivos para acesso mais rápido ou até mesmo para uso offline. É aí que entra o código em C para download de páginas da web, permitindo que você salve o conteúdo de uma página diretamente em seu dispositivo.
+Você já se perguntou como um site da internet é carregado em seu navegador? Se você está interessado em aprender como os programas se comunicam com a web, este artigo é para você! Vamos explorar como baixar uma página da web usando a linguagem de programação C.
 
 ## Como Fazer
 
-Para começar, vamos criar um novo projeto em C e importar a biblioteca padrão `stdio.h` para que possamos trabalhar com entrada e saída de dados. A primeira etapa é definir a URL da página que desejamos baixar em uma variável.
+Antes de começarmos, é importante lembrar que este artigo assume um conhecimento básico da linguagem C. Se você é novo nesta linguagem, recomendamos que você consulte alguns tutoriais antes de prosseguir.
 
-````C
-#include <stdio.h>
+Para baixar uma página da web em C, precisamos usar uma biblioteca externa chamada "libcurl". Esta biblioteca fornece funções para fazer solicitações HTTP e manipular o conteúdo da resposta. Então, vamos ver como podemos usar essa biblioteca para baixar uma página da web.
 
-int main(){
-    char url[] = "https://www.example.com"; // Substitua com seu URL desejado
-    // Resto do código aqui
-}
-````
+Primeiro, precisamos incluir o cabeçalho da biblioteca em nosso código:
 
-Agora, para baixar a página da web, precisamos usar a função `fopen()` para abrir uma conexão com a URL especificada e, em seguida, usar a função `fputc()` para gravar o conteúdo HTML da página em um arquivo que criaremos usando `fopen()`. Lembre-se de iniciar o loop enquanto houver conteúdo HTML a ser baixado.
+```C
+#include <curl/curl.h>
+```
 
-````C
-FILE *arquivo;
-arquivo = fopen("pagina.html", "w"); // Criando um arquivo chamado pagina.html
+Em seguida, declaramos uma variável do tipo `CURL` para armazenar nossa sessão de download:
 
-fputc('<', arquivo);
+```C
+CURL *curl;
+```
 
-int c;
-while((c = fgetc(url)) != EOF){
-    fputc(c, arquivo);
-}
+Em seguida, precisamos configurar nossa sessão com as opções apropriadas, como o URL que queremos baixar e os parâmetros de conexão:
 
-fputc('>', arquivo);
-fclose(arquivo);
-````
+```C
+curl = curl_easy_init();
+curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+```
 
-Agora, se você executar o código, verá que o conteúdo HTML completo da página especificada será salvo em um arquivo chamado `pagina.html`.
+Por fim, precisamos executar a solicitação e salvar o conteúdo da resposta em um arquivo. Vamos usar a função `curl_easy_perform()` para isso:
+
+```C
+FILE *file = fopen("pagina.html","wb");
+curl_easy_perform(curl, file);
+fclose(file);
+```
+
+E pronto! Agora temos o conteúdo da página da web baixada e salva em um arquivo chamado "pagina.html". Você pode alterar o nome do arquivo e o URL de acordo com suas necessidades.
 
 ## Mergulho Profundo
 
-Para aprofundar ainda mais, você pode explorar outras funções de entrada e saída de dados, como `fprintf()`, `fgets()`, `fprintf()`, etc. Essas funções podem ajudar a tornar seu código mais eficiente e também oferecem mais opções de gravação e leitura de dados. Você também pode adicionar recursos como nomear o arquivo com base no título da página ou usando o URL da página como nome do arquivo. Além disso, você pode explorar bibliotecas externas para baixar páginas mais complexas com conteúdo dinâmico.
+Se você estiver interessado em explorar mais opções e funcionalidades da biblioteca libcurl, recomendamos conferir a documentação oficial em https://curl.haxx.se/libcurl/. Também existem muitos tutoriais e exemplos on-line que podem ajudá-lo a entender melhor como usar essa biblioteca em seus projetos.
 
-## Veja Também 
+## Veja Também
 
-- [Biblioteca de funções padrão do C](https://pt.wikipedia.org/wiki/C_(linguagem_de_programa%C3%A7%C3%A3o))
-- [Documentação do C na linguagem portuguesa](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual-2.0.0.pdf)
-- [Tutorial de entrada e saída em C](https://www.programiz.com/c-programming/c-file-input-output)
+Aqui estão alguns links que podem ser úteis para expandir seu conhecimento sobre a linguagem C e a comunicação com a web:
+
+- Documentação oficial do libcurl: https://curl.haxx.se/libcurl/
+- Tutorial de C da W3Schools: https://www.w3schools.in/c-tutorial/
+- Princípios de comunicação com a web em C: https://dev.to/vaidehijoshi/communications-protocols-should-know-when-coding-in-c-3akp

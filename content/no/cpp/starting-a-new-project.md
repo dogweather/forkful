@@ -1,5 +1,6 @@
 ---
-title:                "C++: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "C++: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C++"
 category:             "C++"
@@ -11,33 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan virke overveldende og skremmende i begynnelsen. Men det er også en svært spennende og givende oppgave. Enten du er en erfaren utvikler eller en nybegynner, er det alltid morsomt og utfordrende å ta fatt på noe nytt. Å starte et nytt prosjekt gir deg muligheten til å utvikle dine ferdigheter og lære nye teknologier, og til slutt skape noe som er unikt og nyttig.
+Hvis du er en programmerer som ønsker å utvide dine ferdigheter, eller hvis du har en idé du vil omsette til et konkret prosjekt, kan det å starte et nytt C++ prosjekt være en flott mulighet for å utvikle dine ferdigheter og lære noe nytt. 
 
-## Hvordan
+## Hvordan Starte Et Nytt C++ Prosjekt
 
-Først og fremst må du bestemme deg for hva slags prosjekt du ønsker å starte. Det kan være alt fra en enkel kalkulator-app til et avansert nettsted. Nå som du har en idé, er neste trinn å velge hvilket programmeringsspråk du vil bruke. Hvis du allerede er komfortabel med et programmeringsspråk, er det beste alternativet å bruke det. Hvis ikke, kan du gjøre litt research og se hvilket språk som passer best for ditt prosjekt.
+For å starte et nytt C++ prosjekt, følg disse trinnene:
 
-Etter at du har valgt språk, er det på tide å planlegge prosjektet ditt. Dette inkluderer å lage en liste over funksjoner, lage et design og vurdere hvilke verktøy og ressurser du trenger. Deretter kan du begynne å kode! Her er et enkelt eksempel på en "Hello World" program i C++:
+1. Åpne en teksteditor og lag en ny fil med filendelsen ".cpp". Dette vil være hovedfilen i prosjektet ditt, og det er her du vil skrive all koden.
+2. Skriv inn følgende kode i hovedfilen din:
 
 ```C++
-#include <iostream>
+#include <iostream> 
 
-int main() {
-    std::cout << "Hei, verden!";
-    return 0;
+int main() 
+{
+    std::cout << "Hei, verden!" << std::endl; 
+    return 0; 
 }
 ```
 
-Etterhvert som du jobber med prosjektet ditt, må du sørge for å teste kode endringer for å sikre at alt fungerer som det skal. Og ikke vær redd for å søke hjelp når du står fast - det er alltid massevis av ressurser og samfunn tilgjengelig for å hjelpe deg å løse problemer.
+3. Kompilér og kjør koden for å se den første utskriften av prosjektet ditt. Avhengig av teksteditoren du bruker, kan dette gjøres ved å trykke på en "run" eller "compile" knapp, eller ved å bruke en kommandolinje.
+4. Fortsett å utvikle prosjektet ditt ved å legge til nye funksjoner, klasser eller filer etter behov. Du kan også konsultere dokumentasjonen til C++ for å lære om ulike konsepter og funksjoner som kan brukes i ditt prosjekt. 
 
-## Dypdykk
+## Deep Dive
 
-Når du starter et nytt prosjekt, er det viktig å huske på at det ikke trenger å være perfekt fra starten av. Start med de viktigste funksjonene og legg til mer kompleksitet etterhvert som prosjektet utvikler seg. Det er også viktig å lage god dokumentasjon underveis, slik at du ikke mister oversikten over koden din.
+Når du starter et nytt C++ prosjekt, er det viktig å først planlegge og designe det. Tenk på hva slags funksjonalitet du ønsker at prosjektet skal ha, og hvordan du kan implementere det ved hjelp av C++ syntaks og konsepter som klasser, funksjoner og variabler. Husk også å planlegge hvordan du vil organisere og strukturere koden din for å gjøre prosjektet ditt så effektivt og leselig som mulig.
 
-Det kan også være nyttig å bruke et versjonskontrollsystem som GitHub for å sikre at du har backup av koden din og muligheten til å samarbeide med andre utviklere om prosjektet ditt.
+En annen viktig del av å starte et nytt C++ prosjekt er å sette opp et godt utviklingsmiljø. Dette inkluderer å velge riktig teksteditor og å installere et C++ kompilatorprogram slik at du kan bygge og kjøre koden din. Du kan også vurdere å bruke et versjonskontrollsystem for å holde styr på endringer i koden din og samarbeide med andre programmerere i prosjektet ditt.
 
-Til slutt er det viktig å ha tålmodighet og å ikke bli overveldet av prosjektet ditt. Å starte et nytt prosjekt tar tid og krever mye innsats, men resultatet vil være verdt det.
+Etter at prosjektet ditt er ferdig og fungerer som forventet, kan du vurdere å legge til dokumentasjon og testing for å sikre at koden din er godt dokumentert og robust.
 
-## Se også
-- [Hvordan komme i gang med C++](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [5 trinn for å starte et programmeringsprosjekt](https://www.freecodecamp.org/news/5-steps-for-starting-a-coding-project/)
+## Se Også
+
+- [Official C++ Dokumentasjon](https://www.cplusplus.com/)
+- [A Tour of C++ : Bjarne Stroustrup](https://isocpp.org/tour/)
+- [C++ Programmering v1.16 : SoloLearn](https://www.sololearn.com/Course/CPlusPlus/)

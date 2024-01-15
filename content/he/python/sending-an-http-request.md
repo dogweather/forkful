@@ -1,5 +1,6 @@
 ---
-title:                "Python: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Python: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Python"
 category:             "Python"
@@ -11,29 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-בזמן שמשתמשים באינטרנט, תהליך של שליחת בקשת HTTP יכול להיות מאוד מומחר וחשוב. כמו כן, שליחת בקשת HTTP היא דרך נוחה ויעילה לתקשורת עם שרתים ולקבלת מידע מהרשת. 
+ככל שהעולם התקשרות מתקדם, יותר ויותר נדרשת אפשרות לשליחת בקשות HTTP. זהו הדרך העיקרית לתקשורת בין אתרים ואפליקציות שונות וזה חלק חשוב מאוד בקבלת נתונים ושליחת מידע מעל האינטרנט.
 
 ## איך לעשות זאת
+
+השליחה של בקשת HTTP בפייתון נעשית באמצעות מודול ה `requests` ותלויה בשיטת השליחה הרצויה (get, post, put, delete וכו'). הנה דוגמא לשליחת בקשה GET לאתר של Google, כולל ביצוע הבקשה והדפסת התוצאה:
 
 ```Python
 import requests
 
-url = "https://www.example.com"
-response = requests.get(url)
-
-# פלט משוער מהקוד הנ"ל:
-# 200
-# <Response [200]>
+r = requests.get('https://www.google.com/')
+print(r.text)
 ```
+output: <!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="he"><head><meta charset="UTF-8">
 
-הדוגמה לעיל מראה כיצד לשלוח בקשת HTTP לכתובת אתר מסוימת ולקבל תגובה. ניתן להשתמש בספריית "requests" בפייתון כדי להפעיל שליחת בקשות HTTP בצורה פשוטה ומתקדמת. בקוד נ"ל אנו משתמשים בפונקציות "get()" ו-"requests", התחביר הנכון יוחזר כתוצאה ויופיע כפלט.
+## דפיקה עמוקה
 
-## עובדה עמוקה
-
-שליחת בקשת HTTP היא תהליך מכל הדוחף, מבחינת הצד המשתמש ומבחינת השרת שמתקבל בו הבקשה. לאורך התהליך, המידע נשלח בפורמט קבוע וניתן לעקוב אחריו באמצעות כלי מסוים. חשוב לוודא שהנתנו המשוער מתאים לבקשה שנשלחה וכי כל המידע הנדרש מועבר בצורה נכונה.
+בשליחת בקשת HTTP ישנם עוד כמה שיקולים שחשוב לקחת בחשבון. ניתן להוסיף מידע נוסף בכותרת (headers) של הבקשה, לשלוח פרמטרים כחלק מהבקשה, וכן ניתן לסנכרן עם התגובה המשובצת. למשל, ניתן לבדוק את קוד המצב (status code) של התגובה כדי לוודא שהבקשה נשלחה בהצלחה ולטפל בכל מקרה שבו היא נכשלה.
 
 ## ראה גם
 
-- [הספרייה "requests" בפייתון](https://requests.readthedocs.io/en/latest/)
-- [מידע פורמלי על בניית בקשות HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
-- [הבדלים בין HTTP ל-HTTPS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- עמוד המסמך הרשמי של `requests` מפירוש נושאים נוספים כמו מבנה הבקשה והתגובה.
+- [מדריך לשליחת בקשות HTTP בפייתון](https://realpython.com/python-requests/).

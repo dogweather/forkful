@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Arduino: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,76 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Det er viktig å vite hvordan man kan sjekke om en mappe eksisterer når man jobber med Arduino-prosjekter. Dette kan hjelpe til med å organisere filene dine og sikre at koden kjører riktig.
 
-En viktig del av å programmere er å ha kontroll over filer og mapper som programmet trenger for å fungere riktig. Derfor er det viktig å kunne sjekke om en mappe eksisterer eller ikke, før man tar skritt for å åpne eller endre denne mappen. Dette kan spare deg for mye tid og frustrasjon når du jobber med Arduino.
+# Slik gjør du det
+For å sjekke om en mappe eksisterer, kan du bruke funksjonen `exists()` fra SD-biblioteket på Arduino. Dette vil returnere `true` eller `false` avhengig av om mappen finnes eller ikke.
 
-## Hvordan gjøre det
+```
+Arduino SD-bibliotekAPI
+=============
 
-For å sjekke om en mappe eksisterer på en enkel måte, kan vi bruke funksjonen `exists()` i Arduino File System Library. La oss se på et eksempel:
+**exists()**
 
-```arduino
-#include <FS.h>
+Beskrivelse:
+Sjekker om en mappe finnes.
 
-void setup() {
-  Serial.begin(9600);
-
-  // Åpner en mappe som ikke eksisterer
-  Dir dir = SPIFFS.openDir("/min_mappe");
-  
-  // Sjekker om mappen eksisterer
-  if (dir.exists()) {
-    Serial.println("Mappe finnes!");
-  }
-  else {
-    Serial.println("Mappe finnes ikke!");
-  }
+Sintaks:
+if (SD.exists(mappenavn)) {
+  // gjør noe hvis mappen finnes
+} else {
+  // gjør noe hvis mappen ikke finnes
 }
 
-void loop() {
-  // no-op
+Eksempel:
+
+// Sjekker om mappen "dokumenter" eksisterer
+if (SD.exists("dokumenter")) {
+  Serial.println("Mappen finnes!");
+} else {
+  Serial.println("Mappen finnes ikke!");
 }
+
+Resultat:
+Mappen finnes ikke!
 ```
 
-Når du kjører dette programmet, vil du se at `Mappe finnes ikke!` blir skrevet til serieporten. Dette betyr at programmet har sjekket om mappen `/min_mappe` eksisterer, og det ble funnet ut at den ikke gjør det.
+# Dypdykk
+`exists()` funksjonen bruker `open()` metoden i SD-biblioteket for å åpne filen. Hvis filen ikke eksisterer, vil metoden returnere `false`, og dermed returnerer også `exists()` funksjonen `false`.
 
-## Dypdykk
+Hvis du ønsker å sjekke om en fil eksisterer i en undermappe, kan du bruke denne syntaksen: `SD.exists("/undermappe/navn")`.
 
-Når man sjekker om en mappe eksisterer, kan det også være lurt å vite om det er en fil eller en annen mappe med samme navn. I slike situasjoner kan man bruke `isFile()` og `isDir()` funksjonene for å få mer spesifikk informasjon om den gitte mappen.
+Hvis du vil sjekke om SD-kortet er satt inn og klar til å brukes, kan du bruke `SD.begin()` funksjonen og sjekke returverdien. Hvis `SD.begin()` returnerer `1`, betyr det at SD-kortet er klart til å brukes.
 
-```arduino
-#include <FS.h>
-
-void setup() {
-  Serial.begin(9600);
-
-  // Åpner en mappe som ikke eksisterer
-  Dir dir = SPIFFS.openDir("/min_mappe");
-  
-  // Sjekker om mappen eksisterer og er en fil
-  if (dir.exists() && dir.isFile()) {
-    Serial.println("Dette er en fil!");
-  }
-  // Sjekker om mappen eksisterer og er en mappe
-  else if (dir.exists() && dir.isDir()) {
-    Serial.println("Dette er en mappe!");
-  }
-  else {
-    Serial.println("Mappe finnes ikke!");
-  }
-}
-
-void loop() {
-  // no-op
-}
-```
-
-I dette eksempelet vil output avhenge av hva slags fil eller mappe som finnes med navnet `/min_mappe`. Hvis det er en fil, vil `Dette er en fil!` bli skrevet ut, hvis det er en mappe, vil `Dette er en mappe!` bli skrevet ut, og hvis ingenting finnes, vil `Mappe finnes ikke!` bli skrevet ut.
-
-Det er også verdt å merke seg at `exists()`, `isFile()`, og `isDir()` funksjonene returnerer en boolean-verdi (true eller false), og kan derfor brukes i sammenheng med if-setninger for å bestemme neste steg i programmet.
-
-## Se også
-
-- [Arduino File System Library](https://www.arduino.cc/en/Reference/ArduinoFS)
-- [SPIFFS.openDir() documentation](https://github.com/esp8266/Arduino/blob/master/libraries/FS/src/FS.h#L92)
-- [Eksempelkode for å sjekke om en fil eksisterer](https://techtutorialsx.com/2016/07/15/esp8266-arduino-check-if-a-file-exists-on-the-file-system/)
+# Se Også
+- [SD-bibliotekets offisielle dokumentasjon](https://www.arduino.cc/en/Reference/SD)
+- [Hvordan bruke SD-kort med Arduino](https://create.arduino.cc/projecthub/detroyer/how-to-use-sd-card-with-arduino-25e4ad)

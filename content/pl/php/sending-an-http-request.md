@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "PHP: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,46 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli chcesz pracować z siecią internetową lub korzystać z zasobów internetowych, wysyłanie zapytań HTTP jest nieodzownym elementem. Dzięki temu prostemu procesowi możesz pobierać dane z innych stron internetowych, przesyłać formularze, a nawet tworzyć własne serwisy internetowe. W tym artykule dowiecie się, jak wysyłać zapytania HTTP za pomocą języka PHP.
+Bez względu na to, czy jesteś programistą czy początkującym w dziedzinie tworzenia stron internetowych, przychodzi moment, w którym musisz wysłać żądanie HTTP. Może to być część Twojej pracy lub po prostu sposób na sprawdzenie stanu swojej strony lub aplikacji. W każdym przypadku, wysyłanie żądania HTTP jest nieodłączną częścią pracy z aplikacjami webowymi.
 
 ## Jak to zrobić
 
-Wysłanie zapytania HTTP za pomocą PHP jest bardzo proste, wystarczy użyć funkcji `file_get_contents ()`. Poniżej znajduje się przykładowy kod, który pobiera dane z zewnętrznego serwera i wyświetla je na stronie:
+Aby wysłać żądanie HTTP w PHP, wystarczy użyć funkcji `file_get_contents()` lub `curl_exec()`. Oto przykładowy kod:
 
 ```PHP
-<?php
-    $url = 'https://www.example.com/';
-    $data = file_get_contents($url);
-    echo $data;
-?>
+// Przykład użycia funkcji file_get_contents()
+$response = file_get_contents('https://example.com/api');
+echo $response; // Wyświetli zawartość zwróconą przez API
+
+// Przykład użycia funkcji curl_exec()
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://example.com/api');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = curl_exec($ch);
+echo $response; // Wyświetli zawartość zwróconą przez API
+curl_close($ch);
 ```
 
-Po wykonaniu tego kodu, na stronie pojawi się zawartość strony internetowej pod adresem `www.example.com`. Możesz również użyć tej funkcji do pobrania zawartości innych zasobów, takich jak obrazy czy filmy.
+Pierwszy przykład używa funkcji `file_get_contents()` do pobrania zawartości z podanego adresu URL. Drugi przykład wykorzystuje funkcje `curl_init()`, `curl_setopt()` i `curl_exec()` do wysłania bardziej zaawansowanego żądania HTTP, z możliwością ustawienia dodatkowych opcji takich jak nagłówki czy autoryzacja.
 
-Inną opcją jest użycie funkcji `curl_exec ()`, która oferuje większą kontrolę nad sposobem wysyłania zapytań HTTP. Poniżej znajduje się przykład użycia tej funkcji, który wyświetla odpowiedź serwera w formacie JSON:
+## Deep Dive
 
-```PHP
-<?php
-    $url = 'https://api.example.com/users/1';
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    $response = json_decode($data, true);
-    echo "User ID: " . $response['id'];
-    echo "User Name: " . $response['name'];
-    echo "User Email: " . $response['email'];
-?>
-```
+Aby lepiej zrozumieć proces wysyłania żądań HTTP w PHP i dostosować go do swoich potrzeb, warto poznać kilka dodatkowych informacji.
 
-Ten kod pobiera dane użytkownika o ID równym 1 z wybranego API i wyświetla je na stronie.
+### Typy żądań HTTP
 
-## Głębszy zanurzenie
+Wysyłane żądania mogą być jednym z trzech typów: GET, POST lub HEAD. GET jest domyślnym typem żądania i służy do pobierania danych z serwera. POST jest wykorzystywany do przesyłania i przetwarzania danych, na przykład formularzy na stronie. HEAD jest podobny do GET, ale zwraca tylko nagłówki bez ciała odpowiedzi.
 
-Wysyłanie zapytań HTTP jest integralną częścią programowania w języku PHP. Dzięki temu możesz komunikować się z innymi zasobami sieciowymi i korzystać z ich danych. Istnieje wiele funkcji i narzędzi, które można wykorzystać do wysyłania i odbierania zapytań HTTP w PHP. Warto dokładniej przyjrzeć się dokumentacji PHP, aby dowiedzieć się, jak wykorzystać te narzędzia w swoich projektach.
+### Nagłówki HTTP
+
+Nagłówki to dane, które są przesyłane wraz z żądaniem i pomagają w jego obsłudze. Istnieje wiele różnych nagłówków, ale te najczęściej używane przy wysyłaniu żądań HTTP w PHP to "Content-Type", "Content-Length" i "Authorization". Możesz je ustawić za pomocą funkcji `curl_setopt()` lub jako parametr w funkcji `file_get_contents()`.
+
+### Obsługa odpowiedzi HTTP
+
+Po wysłaniu żądania, serwer zwraca odpowiedź, która zawiera informacje o stanie żądania oraz ewentualne dane. Kod stanu żądania jest zwykle widoczny jako pierwsze trzy cyfry w nagłówku odpowiedzi. Przykładowo, kod 200 oznacza sukces, a 404 oznacza że strona nie została znaleziona. W zależności od kodu stanu, możesz odpowiednio przetworzyć odpowiedź w swoim kodzie.
 
 ## Zobacz także
 
-- Dokumentacja PHP: https://www.php.net/manual/pl/index.php
-- Przewodnik po wysyłaniu zapytań HTTP w PHP: https://www.sitepoint.com/guide-php-pseudo-variables/
-- Przykłady wykorzystania funkcji cURL w PHP: https://www.php.net/manual/pl/book.curl.php
+- [Dokumentacja PHP: Wprowadzenie do funkcji HTTP](https://www.php.net/manual/en/intro.http.php)
+- [Dokumentacja PHP: Function file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Dokumentacja PHP: CURL - Obsługa transferu URL](https://www.php.net/manual/en/book.curl.php)

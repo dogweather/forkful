@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Criando um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Clojure: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
-A criação de arquivos temporários é uma prática comum na programação, especialmente em linguagens funcionais como Clojure. Esses arquivos temporários podem ser úteis para armazenar dados temporários, testar diferentes funcionalidades ou até mesmo como uma saída temporária em um processo.
+
+Criar arquivos temporários pode ser útil em diversas situações, principalmente quando estamos lidando com processos de armazenamento temporário de dados ou quando precisamos realizar operações seguras e eficientes.
 
 ## Como Fazer
-Se você precisa criar um arquivo temporário em seu código Clojure, é possível fazê-lo facilmente usando a função `with-open`. Veja um exemplo abaixo:
+
+Para criar um arquivo temporário em Clojure, podemos utilizar a função `with-open` combinada com a função `tempfile`. Por exemplo, podemos criar um arquivo temporário nomeado "temp.txt" da seguinte maneira:
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "clojure-blog" ".txt")]
-    (.write temp-file "Este é um arquivo temporário gerado pelo Clojure!")
-    (.getName temp-file))
+(with-open [file (tempfile "temp.txt")]
+    (println "Criado arquivo temporário: " (.getAbsolutePath file)))
 ```
 
-Este código criará um arquivo temporário chamado "clojure-blog.txt" e escreverá a frase "Este é um arquivo temporário gerado pelo Clojure!" dentro dele. A função `with-open` garante que o arquivo será fechado corretamente após o uso.
+O código acima irá criar o arquivo temporário no diretório padrão do sistema operacional e imprimir o seu caminho absoluto. Além disso, o arquivo é automaticamente excluído após o encerramento do bloco `with-open`.
 
 ## Deep Dive
-Se você quiser personalizar ainda mais seu arquivo temporário, é possível passar parâmetros adicionais para a função `createTempFile`. Por exemplo, se você quiser definir um diretório específico para o arquivo ser criado, você pode fazer da seguinte maneira:
 
-```Clojure
-(with-open [temp-file (java.io.File/createTempFile "clojure-blog" ".txt" 
-                            (io/file "/users/juliana/desktop"))]
-    (.write temp-file "Este é um arquivo temporário gerado pelo Clojure!")
-    (.getName temp-file))
-```
+Por trás dos panos, a função `tempfile` utiliza a classe `java.io.File` e o método `createTempFile` para criar o arquivo temporário. Além disso, a função `with-open` gerencia automaticamente o fechamento do arquivo ao final do bloco de código.
 
-Isso criará o arquivo temporário no diretório "desktop" do usuário "juliana". Além disso, você também pode definir permissões para o arquivo temporário, especificar o tipo de arquivo ou até mesmo adicionar um timestamp ao nome do arquivo.
+Caso queiramos especificar um diretório diferente para a criação do arquivo temporário, podemos passar o caminho como parâmetro para a função `tempfile`, por exemplo: `(with-open [file (tempfile "C:/temp" "temp.txt")] ...)`
 
-## Veja Também
-- Função `with-open`: https://clojuredocs.org/clojure.core/with-open
-- Módulo `java.io`: https://clojuredocs.org/clojure.java.io
-- Tutorial sobre arquivos temporários em Clojure: https://www.clojureforthewin.com/post/understanding-java-interop-with-clojure-io-modules-and-temporary-files/
+## Veja também
+
+- [Documentação de tempfile em Clojure](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/tempfile)
+- [Tutorial oficial de Clojure](https://clojure.org/guides/getting_started)

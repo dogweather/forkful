@@ -1,6 +1,7 @@
 ---
-title:                "Java: Tulevaisuuden tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Java: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,35 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen voi olla hyödyllistä esimerkiksi sovelluksissa, joissa tarvitaan muistutuksia tai aikarajoja. Se voi myös auttaa ymmärtämään päivämäärien välisiä eroja ja aikojen laskemista.
+Ihmiset usein tarvitsevat laskutoimituksia tulevien tai menneiden päivien laskemiseen Java-ohjelmoinnissa. Tämä voi olla tarpeen esimerkiksi aikataulujen laatimisessa tai tiettyjen päivien välisen aikaeron laskemisessa.
 
 ## Kuinka
-Seuraavassa näytetään esimerkki siitä, kuinka voit ohjelmallisesti laskea tietyn päivämäärän tietyn ajanjakson päässä tai menneisyydessä. Koodiblokissa näet esimerkin Java-koodista ja sen tulosteen.
-
-```Java
-// Tulevaisuuden päivämäärän laskeminen
-LocalDate tulevaisuus = LocalDate.now().plusDays(30);
-System.out.println("Päivämäärä 30 päivää tulevaisuudessa: " + tulevaisuus);
-
-// Menneisyyden päivämäärän laskeminen
-LocalDate menneisyys = LocalDate.now().minusMonths(6);
-System.out.println("Päivämäärä 6 kuukautta menneisyydessä: " + menneisyys);
-```
-
-Tämä koodi laskee nykyisen päivämäärän perusteella tulevan päivämäärän 30 päivän päässä ja menneisyydessä olevan päivämäärän 6 kuukauden päässä. Tulosteen pitäisi olla jotain seuraavaa:
+Käytä Java-koodia seuraavien esimerkkien avulla laskeaksesi päivämäärän tulevaisuudessa tai menneisyydessä.
 
 ```
-Päivämäärä 30 päivää tulevaisuudessa: 2019-05-08
-Päivämäärä 6 kuukautta menneisyydessä: 2018-11-08
+// Tulevaisuudessa
+LocalDate tulevaisuus = LocalDate.now().plusDays(7);
+System.out.println(tulevaisuus);
+// Output: 2022-01-07
+
+// Menneisyydessä
+LocalDate menneisyys = LocalDate.now().minusYears(2);
+System.out.println(menneisyys);
+// Output: 2019-01-14
 ```
 
-Voit myös vaihtaa laskettavan ajanjakson päivien, kuukausien tai vuosien sijasta käyttämällä esimerkiksi `plusMonths()` tai `minusYears()` -metodia.
-
-## Syvällinen sukellus
-Java tarjoaa monia hyödyllisiä luokkia ja metodeja päivämäärän laskemiseen. Esimerkiksi `LocalDate`-luokka sisältää metodeja päivämäärien lisäämiseen ja vähentämiseen. Lisäksi `LocalDateTime`-luokka sisältää myös ajan huomioivia metodeja, kuten `plusHours()` ja `minusMinutes()`.
-
-Päivien, kuukausien ja vuosien lisäämisen tai vähentämisen lisäksi voit myös asettaa tietyn päivämäärän käyttämällä `with()`-metodia. Tämä voisi olla hyödyllistä esimerkiksi syntymäpäivän asettamisessa tietokannassa.
+## Syväsyventyminen
+Java-ohjelmassa päivien laskeminen tulevaisuuteen tai menneisyyteen voidaan tehdä LocalDate-luokan avulla, joka sisältää monia käteviä metodeja päivämäärien muokkaamiseen. Tulevaisuudessa päiviä voidaan lisätä käyttämällä plusDays (), plusMonths () tai plusYears () -metodeja, kun taas menneisyydessä päivistä voidaan vähentää käyttämällä vastaavia miinus-metodeja. Lisäksi voidaan käyttää myös muita metodeja, kuten withDayOfMonth () tai withYear (), jotka mahdollistavat päivän tai vuoden tarkan asettamisen.
 
 ## Katso myös
-- [Java 8 DateTime API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Stack Overflow: How to manipulate LocalDate](https://stackoverflow.com/questions/39896487/how-to-manipulate-localdate-in-java)
+- [Java LocalDate -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java Date and Time API -opas](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [Java 8: n uudet aikapinnatutoriaalit](https://www.baeldung.com/java-8-date-time-intro)

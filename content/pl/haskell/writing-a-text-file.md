@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Haskell: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,29 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie tekstowych plików jest nieodłączną częścią wielu projektów programistycznych. Może to pomóc w przechowywaniu danych, tworzeniu plików konfiguracyjnych lub generowaniu raportów. W języku Haskell, istnieje wiele sposobów na tworzenie i manipulowanie plikami tekstowymi, dlatego warto poznać podstawy tego procesu.
+### Dlaczego warto pisać pliki tekstowe w Haskellu?
+
+Pisanie plików tekstowych jest niezbędnym elementem programowania w języku Haskell dla wielu powodów. Jednym z głównych powodów jest to, że umożliwia on wygodne przechowywanie i przetwarzanie danych w sposób zrozumiały dla użytkownika. Dodatkowo, w Haskellu istnieje wiele funkcji i bibliotek do obsługi plików tekstowych, co ułatwia programowanie i zwiększa wydajność.
 
 ## Jak to zrobić
 
-Tworzenie i zapisywanie plików tekstowych w Haskell jest stosunkowo proste, ponieważ język ten posiada wbudowane funkcje do obsługi operacji na plikach. Aby utworzyć nowy plik, należy użyć funkcji "openFile" z biblioteki "System.IO". Przykładowy kod wyglądałby następująco:
+### Przykład kodu
+
+Aby zapisać tekst do pliku w Haskellu, możemy użyć funkcji `writeFile`. Przykładowy kod wygląda następująco:
 
 ```Haskell
-import System.IO
-
 main = do
-    handle <- openFile "hello.txt" WriteMode
-    hPutStrLn handle "Witaj, świecie!"
-    hClose handle
+    let text = "To jest przykładowy tekst, który zostanie zapisany do pliku."
+    writeFile "plik.txt" text
 ```
 
-W powyższym przykładzie, używamy funkcji "openFile" do utworzenia nowego pliku o nazwie "hello.txt" i trybie zapisu. Następnie, za pomocą funkcji "hPutStrLn" zapisujemy do pliku tekst "Witaj, świecie!". Na koniec, używamy funkcji "hClose" aby zamknąć plik. W ten sam sposób można również wczytać dane z pliku za pomocą funkcji "hGetLine" lub "hGetContents".
+### Wyjście
 
-## Wszystko to i więcej
+Po wykonaniu tego kodu, w katalogu powinien pojawić się plik o nazwie `plik.txt` z wprowadzonym tekstem.
 
-Ponadto, język Haskell oferuje wiele zaawansowanych funkcji do manipulowania plikami tekstowymi, takich jak zmienianie rozmiaru, usuwanie oraz przesuwanie wskaznika do odczytu/zapisu. Warto również wiedzieć o różnych trybach otwierania pliku, takich jak "ReadMode", "AppendMode" czy "ReadWriteMode". Dokładne informacje na ten temat można znaleźć w dokumentacji języka Haskell.
+## Wszystko na temat
 
-## Zobacz również
+### Głębsze spojrzenie na pisanie plików tekstowych w Haskellu
 
-- [Oficjalna dokumentacja języka Haskell](https://www.haskell.org/documentation/)
-- [Poradnik dla początkujących w języku Haskell](https://wiki.haskell.org/Tutorials/Programming_Haskell)
-- [Kurs programowania w języku Haskell](https://www.edx.org/course/introduction-to-functional-programming-2)
+W Haskellu, do obsługi plików tekstowych możemy wykorzystać wiele funkcji i bibliotek. Jednym z najczęściej używanych modułów jest `System.IO`, który zawiera funkcje takie jak `writeFile`, `readFile` czy `appendFile`. Dodatkowo, istnieją również specjalne mechanizmy do obsługi plików binarnych oraz plików o dużych rozmiarach.
+
+## Zobacz też
+
+- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Kurs programowania w Haskellu](http://learnyouahaskell.com/)
+- [Repositorium z przykładowymi projektami w Haskellu](https://github.com/dagit/haskell-projects)

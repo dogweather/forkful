@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Radering av tecken som matchar ett mönster"
-simple_title:         "Radering av tecken som matchar ett mönster"
+title:                "Borttagning av tecken som matchar ett mönster"
+html_title:           "Bash: Borttagning av tecken som matchar ett mönster"
+simple_title:         "Borttagning av tecken som matchar ett mönster"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att ta bort tecken som matchar ett mönster kan vara användbart i olika bash-script för att manipulera textsträngar eller skapa filtreringsfunktioner för data.
+Om du står inför en situation där du behöver ta bort vissa tecken från en textsträng, kan det vara användbart att kunna använda en kommando i Bash för att lösa detta problem. Det kan till exempel vara att du vill ta bort alla mellanslag från en textfil för att göra den mer läsbar eller för att utföra andra manipulationer på den.
 
 ## Hur man gör
+För att ta bort tecken som matchar ett visst mönster i Bash, kan du använda kommandot `sed`. Detta kommando kan användas för att söka efter en sträng av tecken och ersätta eller ta bort den.
 
-För att ta bort tecken som matchar ett mönster i Bash använder vi kommandot `sed` och dess sökfunktion. Här är en kodexempel på hur man tar bort alla siffror från en textsträng:
+Ett enkelt exempel på detta är om du har en textfil `exempel.txt` med innehåll som följer:
 
+```Bash
+Hej där! Följ med på en rolig resa!
 ```
-Bash
-str="Det här är en123 text456."
-echo "$str" | sed 's/[0-9]//g'
+
+Om du vill ta bort alla mellanslag från denna textfil kan du använda följande kommando:
+
+```Bash
+sed 's/ //g' exempel.txt
 ```
 
-Koden ovan kommer att ta bort alla siffror från textsträngen och ge oss resultatet "Det här är en text".
+Resultatet kommer då att bli:
 
-## Djupdykning
+```Bash
+Hejdär!Följmedpåenroligresa!
+```
 
-För att förstå hur det här fungerar behöver vi först veta vad ett "mönster" är inom Bash. Det är ett uttryck som används för att matcha textsträngar med hjälp av wildcards, som `*` eller `?`. I koden ovan använde vi mönstret `[0-9]` för att matcha alla siffror. `s` är en del av sökfunktionen `sed` och indikerar att vi vill byta ut texten som matchar mönstret med en tom sträng. `g` gör att operationen utförs för alla matchningar istället för bara den första.
+I detta exempel använde vi kommandot `sed` tillsammans med s-flaggan för att söka efter mellanslag (representarade som ` `) och ersätta dem med ingenting (representerat med `//`), så att de tas bort från den ursprungliga textfilen.
 
-Det finns flera andra användbara kommandon inom Bash för att manipulera textsträngar, såsom `grep` och `awk`. Genom att lära sig dessa kan du utveckla kraftfulla script för att hantera textbaserade data.
+## Utforska djupare
+Det finns flera andra sätt att använda kommandot `sed` för att ta bort tecken som matchar ett visst mönster. Du kan till exempel använda det för att ta bort tecken från specifika positioner i en textsträng eller för att ta bort vissa delar av en text. Det finns också andra kommandon i Bash som kan användas för att utföra liknande åtgärder, som till exempel `tr` och `awk`.
 
 ## Se även
-
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
+- [Linux Command Library - sed](https://linuxcommandlibrary.com/man/sed.html)
+- [Bash Hackers Wiki - Sed](https://wiki.bash-hackers.org/commands/classictest#stream_editing_with_sed)

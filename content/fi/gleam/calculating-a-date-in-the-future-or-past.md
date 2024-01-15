@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Tulevaisuuden tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneen päivän laskeminen"
+html_title:           "Gleam: Tulevaisuuden tai menneen päivän laskeminen"
+simple_title:         "Tulevaisuuden tai menneen päivän laskeminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -9,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi kukaan haluaisi laskea tulevaisuuden tai menneisyyden päivämäärän? Ehkäpä tarvitset päivämäärän tarkistamista varten, kuten tärkeän tapahtuman tai muistettavan päivän muistamiseen.
+## Miksi: Päivämäärän laskeminen tulevaisuutta tai menneisyyttä varten
+Monet sovellukset ja ohjelmistot vaativat päivämäärän laskemista tulevaisuuteen tai menneisyyteen liittyvissä toiminnoissaan. Esimerkiksi kalenterisovellus voi näyttää jäljellä olevien päivien määrän tärkeään tapahtumaan tai tehtävänmääräpäivään. Gleamin avulla tämä prosessi voidaan tehdä helposti ja tarkasti.
 
-## Miten 
-Koodiesimerkkien ja tuotosten avulla näytämme, kuinka voit laskea tulevia tai menneitä päivämääriä ```Gleam```-ohjelmointikielen avulla.
-
-#### Laske tuleva päivämäärä
+## Miten: Koodiesimerkkejä ja tulosteenäytteitä
 ```Gleam
-import gleam/time
+import Gleam.Date
 
-let tuleva_päivä = time.add_days(time.now(), 30)
+let tulevaPäivä = Date.addDays(Date.today(), 30) // Lisätään 30 päivää nykyiseen päivään
 
-IO.print("Tuleva päivämäärä: ", time.format(tuleva_päivä, "%d.%m.%Y"))
+let menneiTapahtuma = Date.subtractMonths(Date.today(), 3) // Vähennetään 3 kuukautta nykyisestä päivästä
+
+let päivämäärä = Date.fromString("2022-01-01") // Muunnetaan merkkijono päivämääriksi
+
+let ero = Date.diff(Date.fromString("2022-01-01"), Date.fromString("2021-10-15")) // Lasketaan aikaeron kahden päivämäärän välillä
+
+let onkoTuleva = Date.isAfter(Date.addDays(Date.today(), 30), Date.today()) // Tarkistetaan, onko tuleva päivä myöhemmin kuin nykyinen päivä
+
+let viikonPäivä = Date.getDayName(Date.today()) // Palauttaa nykyisen viikonpäivän nimen
+
+let kuukaudenPäivä = Date.getDayOfMonth(Date.today()) // Palauttaa nykyisen kuukauden päivän numeron
+
+io.print("21. huhtikuuta vuonna 2021 on ", Date.getDayOfWeek(Date.fromString("2021-04-21")), ".") // Tulostaa tiedon, onko kyseinen päivä viikonloppu
+
 ```
-Tuotos:
-> Tuleva päivämäärä: 23.11.2021
 
-#### Laske menneisyys päivämäärä
-```Gleam
-import gleam/time
-
-let menneisyys_päivä = time.subtract_days(time.now(), 100)
-
-IO.print("Menneisyys päivämäärä: ", time.format(menneisyys_päivä, "%d.%m.%Y"))
-```
-Tuotos:
-> Menneisyys päivämäärä: 18.08.2021
-
-## Syvällisempi sukellus
-Päivämäärien laskeminen tulevaisuuteen tai menneisyyteen voi olla hyödyllistä monissa tapauksissa, kuten kalenterisovellusten kehittämisessä tai ajastettujen muistutusten ohjelmoinnissa. Gleam tarjoaa monipuoliset toiminnot päivämäärien käsittelyyn, kuten päivien, kuukausien ja vuosien lisäämistä ja vähentämistä.
-
-Lisäksi Gleamilla on käytettävissä erilaisia muotoiluvaihtoehtoja päivämäärien esittämiseen halutussa muodossa, kuten päivämäärän osoittimena tai päivämäärän kirjaimellisena esityksenä. Näiden toimintojen avulla päivämäärien manipulointi ja esittäminen on helppoa ja tarkkaa.
+## Syvempää tietoa: Päivämäärälaskennan taustaa
+Gleamin Date-moduuli tarjoaa monipuoliset työkalut päivämäärän laskentaan tulevaisuutta tai menneisyyttä varten. Moduuli sisältää erilaisia ​​toimintoja, kuten päivien, kuukausien ja vuosien lisäämistä ja vähentämistä, päivämäärien muuntamista merkkijonoista, päivämäärien välisten aikaerojen laskemista ja viikonpäivien sekä kuukauden päivämäärien palauttamista. Näitä toimintoja voidaan hyödyntää monissa erilaisissa sovelluksissa ja ne mahdollistavat tarkat ja joustavat päivämääräkäsittelyt.
 
 ## Katso myös
-- [Gleam documentation on time module](https://gleam.run/documentation/#time-module)
-- [Gleam documentation on date formatting](https://gleam.run/documentation/#format-date-string-flags)
-
-Kiitos lukemisesta! Toivottavasti tämä opas auttoi sinua ymmärtämään, kuinka laskea päivämääriä tulevaisuuteen tai menneisyyteen Gleamin avulla. Jatka tutustumista Gleamiin ja sen moniin mahdollisuuksiin!
+- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation/)
+- [Gleam Date -moduulin tiedostokohtainen lähtö](https://github.com/gleam-lang/date/blob/master/src/gleam/calendar.gleam)

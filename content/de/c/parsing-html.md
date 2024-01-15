@@ -1,6 +1,7 @@
 ---
-title:                "C: HTML Parsen"
-simple_title:         "HTML Parsen"
+title:                "HTML-Analyse"
+html_title:           "C: HTML-Analyse"
+simple_title:         "HTML-Analyse"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,71 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Parsen von HTML ist eine wichtige Fähigkeit, die jeder C-Programmierer kennen sollte. Durch das Parsen von HTML können Daten aus Webseiten extrahiert und in anderen Anwendungen verwendet werden.
+Warum sollte man sich mit dem Parsen von HTML beschäftigen? Nun, HTML ist die Sprache, in der Websites geschrieben werden, und wenn man verstehen möchte, wie Websites funktionieren und wie man sie verbessern kann, ist es wichtig, HTML zu verstehen.
 
-## Anleitung
+## Wie geht man vor?
 
-Um HTML in C zu parsen, gibt es einige Bibliotheken und Tools wie z.B. libxml2 oder HTML Tidy. Wir können jedoch auch eine sehr einfache Methode verwenden, die auf den spezifischen Bedürfnissen unserer Anwendung basiert.
-
-Hier ist ein Beispielcode, der den Textinhalt eines HTML-Tags "p" aus einer Datei extrahiert und ausgibt:
+Um das Parsen von HTML in C zu erlernen, müssen Sie zuerst die Grundlagen der Sprache beherrschen. Dann können Sie den folgenden Code verwenden, um eine einfache HTML-Datei zu parsen und alle Tags und deren Inhalte auszugeben:
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-  // Datei öffnen und HTML-Inhalt in eine Zeichenkette lesen
-  FILE *html_file = fopen("example.html", "r");
-  char html_string[256];
-  fgets(html_string, 256, html_file);
+int main()
+{
+    FILE *file = fopen("index.html", "r"); // HTML-Datei öffnen
+    if (file == NULL)
+    {
+        printf("Fehler beim Öffnen der Datei!");
+        exit(1);
+    }
 
-  // Tag "p" finden und Textinhalt extrahieren
-  char *start = strstr(html_string, "<p>");
-  start += 3; // leere Tags überspringen
-  char *end = strstr(start, "</p>");
-  *end = '\0'; // Ende-Tag vorübergehend überschreiben
-  char *content = start;
-  
-  // Textinhalt ausgeben
-  printf("%s", content);
+    char c;
+    while ((c = fgetc(file)) != EOF)
+    {
+        if (c == '<') // Start eines Tags gefunden
+        {
+            char tag[100]; // Array für Tag-Namen
+            int i = 0;
+            while ((c = fgetc(file)) != '>')
+            {
+                tag[i++] = c; // Zeichen in Array hinzufügen
+            }
+            tag[i] = '\0'; // Array mit Nullterminator abschließen
 
-  // Datei schließen
-  fclose(html_file);
+            printf("Tag gefunden: <%s>\n", tag);
 
-  return 0;
+            char text[100]; // Array für Text innerhalb des Tags
+            i = 0;
+            while ((c = fgetc(file)) != '<')
+            {
+                text[i++] = c; // Zeichen in Array hinzufügen
+            }
+            text[i] = '\0'; // Array mit Nullterminator abschließen
+
+            printf("Inhalt: %s\n", text);
+        }
+    }
+
+    fclose(file); // Datei schließen
+    return 0;
 }
 ```
 
-Die Ausgabe wird folgendermaßen aussehen, wenn die Datei "example.html" folgenden Inhalt hat:
+Wenn Sie diese Codebeispiel ausführen, sehen Sie die Ausgabe für jeden gefundenen Tag mit dem entsprechenden Inhalt. Natürlich ist dies nur eine einfache Herangehensweise, und das Parsen von komplexerem HTML erfordert mehr Know-how und möglicherweise den Einsatz von Bibliotheken wie libxml oder Gumbo.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Beispielseite</title>
-  </head>
-  <body>
-    <h1>Willkommen</h1>
-    <p>Hallo, dies ist ein Beispieltext.</p>
-  </body>
-</html>
-```
+## Tiefergehende Informationen
 
-```
-Hallo, dies ist ein Beispieltext.
-```
-
-Mit dieser Methode können wir auch andere Tags oder Attribute wie "href" auslesen und unsere Ausgabe entsprechend anpassen.
-
-## Tiefer Einblick
-
-Das Konzept des Parsens von HTML kann komplex werden, da es viele verschiedene Regeln und Strukturen gibt, die beachtet werden müssen. Um ein vollständiges Verständnis des Parsens von HTML zu erlangen, ist es wichtig, sich mit den Grundlagen von HTML und der Syntax der Tags auseinanderzusetzen.
-
-Außerdem kann das Parsen von HTML auch in Kombination mit anderen Web-Technologien wie CSS und JavaScript verwendet werden, um komplexere Aufgaben zu erfüllen. Das Erlernen dieser Technologien kann dazu beitragen, das Verständnis und die Fähigkeiten im Bereich des HTML-Parsings zu vertiefen.
+Das Parsen von HTML kann kompliziert werden, da es einige Ausnahmen und komplexere Strukturen gibt, die berücksichtigt werden müssen. Zum Beispiel müssen Sie beachten, dass Tags Attribute enthalten können, die ebenfalls geparsed werden müssen. Auch das Ignorieren von Kommentaren und das Behandeln von Sonderfällen wie CDATA oder Skript-Tags sind wichtige Aspekte des HTML-Parsings. Daher ist es wichtig, sich immer weiter mit dem Thema auseinanderzusetzen und möglicherweise auch auf externe Ressourcen zurückzugreifen.
 
 ## Siehe auch
 
-- [libxml2 Bibliothek](http://www.xmlsoft.org/)
-- [HTML Tidy Tool](http://www.html-tidy.org/)
-- [Einführung in HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
-- [Einführung in CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS)
-- [Einführung in JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+- [libxml](http://www.xmlsoft.org/)
+- [Gumbo](https://github.com/google/gumbo-parser)

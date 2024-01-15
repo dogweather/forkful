@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Fish Shell recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,88 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Writing tests is an important aspect of programming, regardless of the language or framework being used. It allows developers to catch bugs and errors early on in the development process, ensuring a more stable and reliable application. By investing time in writing tests, you can save yourself from hours of debugging in the future.
+Writing tests may seem like a tedious task, but it plays a crucial role in ensuring that our code is functioning correctly. It helps us catch bugs and errors early on, saving us time and trouble in the long run.
 
 ## How To
+Writing tests in Fish Shell is fairly straightforward. Simply create a new file with the .fish extension and use the `test` command to validate different conditions. Here's an example:
 
-Writing tests in Fish Shell is a breeze with the `test` command. Let's look at an example of testing a simple function that adds two numbers together.
+```Fish Shell
+# This test ensures that the output of `ls` is "file1 file2 file3"
+test ls = "file1 file2 file3"
+```
 
-````Fish Shell
-function add_numbers
-  echo "Enter first number"
-  read num1
-  echo "Enter second number"
-  read num2
-  echo ($num1 + $num2)
-end
-````
+We can also use `test -n` to check if a value is not empty and `test -z` to check if it is empty. Here's an example:
 
-In the above code, we have a function `add_numbers` that takes two user input numbers and adds them together before returning the result. Now, let's write a test for this function.
+```Fish Shell
+# This test ensures that the variable "name" is not empty
+test -n $name
 
-````Fish Shell
-function test_add_numbers
-  test (add_numbers 5 5) = 10
-  or echo "Addition test failed!"
-end
-````
+# This test ensures that the variable "age" is empty
+test -z $age
+```
 
-The `test` command takes in an expression and checks if it evaluates to `true`. If it does, the test passes. In the above code, we are passing the numbers 5 and 5 to the `add_numbers` function and checking if it returns 10, which it should. We also have an `or` statement to display an error message in case the test fails.
-
-To run this test, we need to execute the `test_add_numbers` function. We can do so by calling it in our terminal:
-
-````Fish Shell
-test_add_numbers
-````
-
-If the test passes, nothing will be displayed. However, if the test fails, the error message we specified will be shown. It's as simple as that!
+By using different flags and functions, we can create multiple tests to cover various scenarios in our code. It is also recommended to use the `set` command to define variables before running tests to ensure consistency.
 
 ## Deep Dive
+When writing tests, it's important to thoroughly understand the `test` command and its different flags. For example, we can use `test -e` to check if a file or directory exists, `test -f` to check if it is a regular file, and `test -d` to check if it is a directory.
 
-Fish Shell also has the ability to define multiple test sections for a single function. This allows you to have different test cases for different scenarios. Let's add a conditional statement to our `add_numbers` function and see how we can write multiple tests for it.
+We can also use `test -nt` and `test -ot` to compare modification times of files and determine which one was changed more recently. Additionally, the `test` command supports logical operators such as `&&` and `||` for more complex tests.
 
-````Fish Shell
-function add_numbers
-  echo "Enter first number"
-  read num1
-  echo "Enter second number"
-  read num2
-
-  if test $num1 -gt $num2
-    echo "First number is larger"
-  else if test $num1 -lt $num2
-    echo "Second number is larger"
-  else
-    echo "Both numbers are equal"
-  end
-
-  echo ($num1 + $num2)
-end
-````
-
-Now, we can write three separate tests for each possible outcome of the function:
-
-````Fish Shell
-function test_add_numbers_greater
-  test (add_numbers 10 5) = 15
-  or echo "Greater test failed!"
-end
-
-function test_add_numbers_less
-  test (add_numbers 5 10) = 15
-  or echo "Less test failed!"
-end
-
-function test_add_numbers_equal
-  test (add_numbers 5 5) = 10
-  or echo "Equal test failed!"
-end
-````
-
-By writing multiple tests, we can cover all possible scenarios and ensure our function works as expected in any situation.
+Writing tests can also help us clearly define the expected outcomes of our code. This makes it easier to debug and maintain our code in the future. It also promotes a more structured and organized coding style.
 
 ## See Also
+Here are some helpful resources for writing tests in Fish Shell:
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Writing Tests in Fish Shell](https://fishshell.com/docs/current/tutorial.html#writing-tests)
-- [Introduction to Fish Shell](https://opensource.com/article/20/3/fish-shell)
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Tutorial by Linuxize](https://linuxize.com/post/fish-shell/)
+- [Writing Effective Tests in Fish Shell by Nick Janetakis](https://nickjanetakis.com/blog/writing-effective-tests-in-fish-shell)

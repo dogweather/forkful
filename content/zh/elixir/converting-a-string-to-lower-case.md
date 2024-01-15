@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Elixir: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,40 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要把字符串转为小写
+## 为什么
 
-字符串是编程中常用的一种数据类型，它可以存储文本信息。有时候，我们需要把字符串中的字母全部转为小写，这样方便我们对字符串进行比较或者处理。比如在判断用户输入的用户名是否正确时，就需要将输入的字符串转为小写再与正确的用户名进行比较。
+将字符串转换为小写是在Elixir编程中常见的操作，它可以很容易地转换包含大写和小写字母的字符串，从而使其在比较和匹配时更容易。它还可以帮助保持代码的统一性和可读性。
 
-## 如何实现字符串转小写
+## 如何操作
 
-首先，我们需要使用Elixir中内置的String模块来处理字符串。其中，有一个函数`String.downcase/1`可以将字符串中的所有字母转为小写。下面是一个简单的例子：
+```
+Elixir
+# 普通字符串
+string = "Hello World"
 
-```Elixir
-name = "Elixir"
-lowercase_name = String.downcase(name)
-IO.puts(lowercase_name)
+# 使用String.downcase函数转换为小写
+lowercase_string = String.downcase(string)
+
+# 输出: "hello world"
+IO.puts(lowercase_string)
 ```
 
-输出结果为`elixir`。
+```
+Elixir
+# 含有大写字母的字符串
+string = "Hello World"
 
-我们也可以使用`String.downcase/2`函数来指定需要转换的字母表，比如我们想要将希腊字母转为小写：
+# 使用String.downcase函数转换为小写
+lowercase_string = String.downcase(string)
 
-```Elixir
-greek_name = "ΕΛΙΞΙΡ"
-lowercase_greek_name = String.downcase(greek_name, "Greek.Uncase")
-IO.puts(lowercase_greek_name)
+# 输出: "hello world"
+IO.puts(lowercase_string)
+
 ```
 
-输出结果为`ελιξιρ`。
+## 深入探究
 
-## 深入了解字符串转小写
+使用String.downcase函数时，Elixir会在后台使用Unicode实现，这意味着它可以正确处理包含多字节字符的字符串。它还会处理非英文字符，例如德语的Umlauts或希腊语字母。
 
-在Elixir中，字符串是不可变的，也就是说我们无法直接修改某个字符串的内容。当我们使用`String.downcase/1`函数时，它会返回一个新的字符串而不是修改原来的字符串。这种特性叫做“尾部的可连接性”，它可以避免我们在处理较长的字符串时带来的性能问题。
+另外，如果你想要将字符串中的某些特定字母转换为小写，你可以使用String.replace函数来替换这些字母。
 
-另外，需要注意的是，`String.downcase/2`函数只对ASCII字符有效，如果想要转换其他字符集的字符串，我们可以使用`String.downcase/3`函数来指定字符集。
+```
+Elixir
+# 含有特定字母的字符串
+string = "HeLlO wOrLd"
 
-## 查看更多
+# 将所有大写字母'o'转换为小写
+lowercase_string = String.replace(string, "o", "O")
 
-- [Elixir String文档](https://hexdocs.pm/elixir/String.html)
-- [尾部的可连接性](https://hexdocs.pm/elixir/String.html#string-concatenation-and-appending)
-- [不可变性和字符串处理性能](https://elixirforum.com/t/immutability-and-string-manipulation-performance/869)
+# 输出："HeLLo wOrLd"
+IO.puts(lowercase_string)
+```
+
+## 参考
+
+- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
+- [Elixir Unicode](https://hexdocs.pm/elixir/Unicode.Html)
+- [Elixir String.downcase function](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Elixir String.replace function](https://hexdocs.pm/elixir/String.html#replace/4)
+
+## 参考
+- [ Elixir String模块](https://hexdocs.pm/elixir/String.html)
+- [ Elixir Unicode](https://hexdocs.pm/elixir/Unicode.Html)
+- [ Elixir String.downcase函数](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [ Elixir String.replace函数](https://hexdocs.pm/elixir/String.html#replace/4)

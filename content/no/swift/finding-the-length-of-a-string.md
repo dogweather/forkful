@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Å finne lengden på en streng"
-simple_title:         "Å finne lengden på en streng"
+title:                "Finn lengden av en streng"
+html_title:           "Swift: Finn lengden av en streng"
+simple_title:         "Finn lengden av en streng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Hvis du vil lage et program som kan håndtere tekst og informasjon, er en viktig del å kunne finne lengden på en tekststreng. Dette kan være nyttig for å sette begrensninger på brukerinput, filtrere ut uønskede tegn, eller bare for å få informasjon om en tekst du arbeider med.
 
-Å finne lengden på en streng er en vanlig oppgave i programmering, og kan være nyttig for å håndtere tekstbaserte data og utføre forskjellige operasjoner på dem.
+## Slik gjør du det
+Å finne lengden på en tekststreng i Swift er veldig enkelt. Alt du trenger å gjøre er å bruke metoden `count` på strengen du vil ha lengden på. La oss se på et eksempel:
 
-# Slik gjør du det
-
-For å finne lengden på en streng i Swift, kan du bruke den innebygde funksjonen `count`, som returnerer antall tegn i strengen. For eksempel:
-
-```swift
-let tekst = "Hei, verden!"
-let lengde = tekst.count
-print(lengde)
+```Swift
+let tekst = "Hei verden!"
+print(tekst.count)
 ```
 
-Dette vil produsere følgende utdata i konsollen:
+Dette vil gi følgende utput: `12`, siden det er 12 tegn i "Hei verden!".
 
+## Dykk dypere
+Når vi brukte `count`-metoden i det første eksempelet, var det faktisk en forkortelse for `String`-typens `count`-egenskap. Dette kan virke forvirrende, men egentlig er metoder og egenskaper ganske like, og de kan brukes om hverandre i mange tilfeller.
+
+En annen ting å merke seg er at `count`-egenskapen faktisk teller antall tegn og ikke bokstaver. Dette kan være viktig å huske hvis du bruker språk med spesielle tegn, for eksempel norsk. La oss se på et eksempel hvor vi teller antall bokstaver i en tekst med spesialtegn:
+
+```Swift
+let tekst = "Ha det / hei!"
+print(tekst.count) // vil gi utput: 12
+print(tekst.unicodeScalars.count) // vil gi output: 11
 ```
-13
-```
 
-Som du kan se, teller funksjonen også mellomrom og spesialtegn som del av strengens lengde.
+Vi kan nå se at det faktisk er 11 bokstaver i teksten, men `count`-metoden teller antall tegn, og for å få riktig antall bokstaver må vi bruke `unicodeScalars`-egenskapen i tillegg.
 
-# Dypdykk
-
-Det er viktig å merke seg at `count`-funksjonen returnerer en `Int`-verdi, som kun kan håndtere strenger med en størrelse på opptil 2,147,483,647 tegn. Dette er imidlertid sjelden et problem i praksis, da en streng med en slik lengde ville være veldig vanskelig å håndtere.
-
-Det finnes også andre måter å finne lengden på en streng, som for eksempel å bruke en løkke og telle antall tegn manuelt. Men dette er en mer tungvint og mindre effektiv metode.
-
-# Se også
-
-- [String og Characters i Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Introduksjon til Swift-programmering](https://developer.apple.com/swift/blog/?id=2)
-- [Offisiell Swift-dokumentasjon](https://docs.swift.org/)
+## Se også
+- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift by Sundell: Strings](https://www.swiftbysundell.com/articles/strings-in-swift/)

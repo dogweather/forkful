@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Extracting substrings"
+title:                "Extracting substrings"
+html_title:           "Haskell recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Substring extraction is a common task in programming, and luckily, Haskell provides us with an easy and efficient way to do it. By extracting substrings, we can manipulate and work with specific parts of a larger string, making our programs more dynamic and flexible.
+
+Extracting substrings is a common task in programming, as it allows us to manipulate and extract specific portions of a string. In Haskell, using the right functions and techniques, we can easily extract substrings to perform various operations on them.
 
 ## How To
-To extract a substring in Haskell, we will be using the `take` and `drop` functions. Let's say we have the string "Hello World" and we want to extract the substring "World". We can do this by using the following code:
-```Haskell
-let myString = "Hello World"
-let mySubstring = drop 6 myString
-```
-In the code above, we first define the original string, "Hello World", and then use the `drop` function to drop the first 6 characters, leaving us with the substring "World". 
 
-We can also use the `take` function to extract a substring. For example, if we want to get the first 5 characters of our string, we can use the following code:
-```Haskell
-let myString = "Hello World"
-let mySubstring = take 5 myString
-```
-This will give us the substring "Hello". 
+In Haskell, the `take` and `drop` functions are used to extract substrings from a given string. The `take` function takes two arguments, the first being the number of characters to extract and the second being the string itself. Let's see an example of extracting the first three characters from a string:
 
-In both examples, we used the `let` keyword to define a new variable for our substring. However, we can also use the `take` and `drop` functions directly within a larger expression.
+```Haskell
+take 3 "Hello World!"
+```
+
+The output of this would be `"Hel"`, as it has extracted the first three characters. Similarly, the `drop` function takes the same arguments but instead of extracting the beginning characters, it drops them and returns the remaining string. Let's try it out:
+
+```Haskell
+drop 3 "Hello World!"
+```
+
+The output of this would be `"lo World!"`, as it has dropped the first three characters.
+
+We can also use the `substr` function from the `Data.List` library to extract a substring from a specific start index to an end index. Let's take a look at an example:
+
+```Haskell
+import Data.List
+
+substr 3 7 "Hello World!"
+```
+
+The output of this would be `"lo W"`, as it has extracted the characters from index 3 to 7 (inclusive).
 
 ## Deep Dive
-Now let's take a deeper look at the `take` and `drop` functions. Both of these functions take in an integer value as their first argument, which determines the number of characters to take or drop from the string. 
 
-The `take` function starts from the beginning of the string and takes the specified number of characters, while the `drop` function starts from the beginning of the string and drops the specified number of characters. 
+In Haskell, we can also use pattern matching and recursion to extract substrings from a given string. Let's consider the following function:
 
-It's important to note that both functions will return a new string, as Haskell strings are immutable.
+```Haskell
+substr :: Int -> Int -> String -> String
+substr start end str = if start > end 
+                       then [] 
+                       else head str : (substr (start+1) end (tail str))
+```
+
+This function takes in a start and end index as well as a string, and returns the substring from the start index to the end index. It uses recursion and the `head` and `tail` functions to extract individual characters from the string and add them to a new string.
+
+We can also use the `splitAt` function from the `Data.List` library to split a string at a given index and return the two parts as a tuple. For example:
+
+```Haskell
+import Data.List
+
+splitAt 5 "Hello World!"
+```
+
+The output of this would be `("Hello", " World!")`, as it splits the string at index 5 and returns the two parts.
 
 ## See Also
-- [Haskell documentation on String functions](https://www.haskell.org/hoogle/?q=string#t:%5BChar%5D%20-%3E%20%5B%Char%5D)
-- [How To Extract Substrings in Python](https://realpython.com/lessons/extracting-substrings-python/)
-- [More on String Functions in Haskell](https://wiki.haskell.org/Character_string_functions)
+
+- [Haskell Docs: take](https://hackage.haskell.org/package/base/docs/Data-List.html#v:take)
+- [Haskell Docs: drop](https://hackage.haskell.org/package/base/docs/Data-List.html#v:drop)
+- [Haskell Docs: Data.List](https://hackage.haskell.org/package/base/docs/Data-List.html)
+- [Haskell Docs: splitAt](https://hackage.haskell.org/package/base/docs/Data-List.html#v:splitAt)
+
+By using the right functions and techniques, extracting substrings in Haskell can be a simple and straightforward task. Remember to check the documentation for more information and utilize pattern matching and recursion for more complex substring extractions. Happy coding!

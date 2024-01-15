@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Clojure: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+תהליך של עבודה עם JSON נחשב לכלי חיוני לפיתוח תוכניות בשפת Clojure ומאפשר מעבר נעים וקל בין מבני מידע שונים.
 
-מדוע לעסוק בעבודה עם JSON? כשאנחנו מטפלים במאפיינים באתרים, אנחנו תמיד נתקלים בהרבה נתונים בפורמט JSON. עם זאת, עבודה עם JSON מאפשרת לנו להתאים במפתחות וערכים שונים, מה שמאפשר לנו להיפרד מטיפול ידני של הנתונים ולהיות יעילים יותר בפיתוח.
-
-## איך לעשות זאת
-
-התחלנו את הפרויקט שלנו עם מפתח כמו כלשהו, כן? ועכשיו, בעזרת שפת Clojure, אתה יכול ליצור מפתחים דינאמיים ולקשר אותם לטובת ניהול הנתונים שלך. נדגים זאת בעזרת קוד כמו הבא:
+## כיצד
+הנה כמה דוגמאות לעבודה עם JSON בשפת Clojure ותוצאות הפלט המתאימות בתוך בלוקי קוד "```Clojure ... ```":
 
 ```Clojure
-(ns json-examples
-  (:require [clojure.data.json :as json]))
+;; יצירת מפתח-ערך
+(def json-map {"name" "John" "age" 25})
 
-(def sample-json {"name": "Jane", "age": 25, "hobbies": ["reading", "painting", "hiking"]})
+;; הדפסת תוצאה בפורמט JSON
+(print (json/write-str json-map))
 
-(println (:name sample-json)) ; outputs "Jane"
-
-(println (json/write-str sample-json)) ; outputs {"name": "Jane", "age": 25, "hobbies": ["reading", "painting", "hiking"]}
-
+;; {"name":"John","age":25}
 ```
 
-מה אנחנו עושים פה? בשני הדוגמאות, אנחנו משתמשים בפעולות שונות כדי לגשת לנתונים בטבלת JSON. בשורה השנייה, אנחנו משתמשים בפונקציית :require כדי לייבא את הספריה של Clojure שמטפלת בנתוני JSON. אנחנו משתמשים בפונקציות כמו :write-str כדי לכתוב את הנתונים שלנו כמחרוזת בפורמט JSON.
+```Clojure
+;; יצירת רשימה של מפתחות-ערכים
+(def json-list [{"name" "John"} {"name" "Jane"}])
 
-## להעמיק
+;; קריאת קובץ JSON והמרתו לרשימה
+(def json-file (slurp "data.json"))
+(def json-list (json/read-str json-file))
 
-עם שפת Clojure, יש לנו גם אפשרויות מתיחת ידיים כדי לנהל מאפיינים שונים של נתוני JSON. לדוגמה, באמצעות הפונקציות המובנות של Clojure, ניתן לייצב נתונים לפי סדר אלפביתי, לעשות בדיקת תקינות ולהחיל פעולות חשבוניות על הנתונים.
+;; שינוי ערכים במפתח-ערך מסוים והדפסת התוצאה
+(let [new-json-map (assoc-in (first json-list) "name" "Jack")]
+  (print (json/write-str new-json-map)))
 
-אנחנו גם יכולים להשתמש בספריות צד שלישי כדי לייעל עוד יותר א
+;; {"name":"Jack"}
+```
+
+## העומק
+עבודה עם JSON בשפת Clojure יכולה להיות מסובכת כאשר מגיעים לקבצים מורכבים עם מפתחות נוספים או כאשר ניתן לקרוא רק מספר מוגבל של ערכים בתוך רשימה או מפתח-ערך בודד. במקרים כאלה, כדאי להשתמש בספריות חיצוניות כגון jsonista או clj-json.
+
+## ראה גם
+- [תיעוד על עבודה עם JSON בשפת Clojure](https://clojure.github.io/data.json/)
+- [עורך טקסט חינמי לשפת Clojure עם תמיכה מובנית ב-JSON](https://atom.io/packages/clojure-json)

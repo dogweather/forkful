@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 웹 페이지를 다운로드하기"
+title:                "웹 페이지를 다운로드하기"
+html_title:           "Elm: 웹 페이지를 다운로드하기"
 simple_title:         "웹 페이지를 다운로드하기"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 다운로드를 해야 할까요?
+## 왜
+서버에서 웹 페이지를 다운로드하는 것이 왜 중요한지 궁금하신가요? 웹 페이지 다운로드는 웹 애플리케이션에서 필수적인 기능이며, 사용자에게 다양한 정보를 제공할 수 있게 해줍니다.
 
-웹 페이지를 다운로드하는 것은 인터넷을 사용하는 거의 모든 사람들이 해본 적이 있는 일입니다. 하지만 다운로드를 왜 해야 하는지에 대해 정확히 이해하고 있지는 않을 수도 있습니다. 이번 블로그 포스트에서는 다운로드의 중요성에 대해 알아보도록 하겠습니다.
-
-## 다운로드하는 방법
-
-다음과 같은 Elm 코드를 이용하여 웹 페이지를 다운로드할 수 있습니다.
-
+## 하는 방법
 ```Elm
+import Html exposing (text)
 import Http
 
-downloadPage : String -> Cmd Msg
-downloadPage url =
-  Http.send
-    GotPage
-    (Http.get url textDecoder)
+-- 서버에서 웹 페이지 다운로드
+-- URL 링크를 인자로 받아서 다운로드 후 결과를 텍스트로 반환
+fetchWebpage : String -> Cmd msg
+fetchWebpage url =
+    Http.send WebpageDownloaded (Http.get url text)
 
-GotPage : Result Http.Error String -> Msg
-GotPage result =
-  case result of
-    Err error ->
-      -- 에러 처리
+-- 결과를 받는 부분
+type Msg
+    = WebpageDownloaded (Result Http.Error String)
+    
+-- 결과에 따라서 다른 동작을 수행하도록 함
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        -- 다운로드 성공했을 때
+        WebpageDownloaded (Ok result) ->
+            ( model, Cmd.none )
+            
+        -- 다운로드 실패했을 때
+        WebpageDownloaded (Err err) ->
+            ( model, Cmd.none )
 
-    Ok response ->
-      -- 다운로드가 성공한 경우의 처리
-```
+``` 
 
-위 코드에서 `downloadPage` 함수는 `String` 타입의 URL을 입력받아 웹 페이지를 다운로드하는 `Cmd` 타입의 메시지를 반환합니다. 이후에는 `GotPage` 메시지를 처리하여 다운로드 결과를 적절하게 처리해주면 됩니다. 만약 오류가 발생했을 때는 `Err` 패턴에 대한 처리를 해주고, 다운로드가 성공했을 때는 `Ok` 패턴에 대한 처리를 해줍니다.
+## 깊이 파고들기
+웹 페이지를 다운로드하는 것이 왜 중요한지 자세히 알아보겠습니다. 웹 페이지 다운로드는 다른 언어에서도 비슷한 방법으로 구현되지만, Elm에서는 안전하고 명확한 방식으로 다운로드를 다룰 수 있습니다. 이를 통해 웹 애플리케이션에서 사용자에게 제공할 수 있는 다양한 정보를 쉽게 관리할 수 있게 됩니다.
 
-## 심층 분석
-
-웹 페이지를 다운로드하는 것은 프로그램에서 일반적으로 사용되는 많은 기능들 중 하나입니다. 다운로드를 통해 데이터를 가져오는 것이 프로그램의 기본 기능 중 하나이기 때문에 다운로드를 성공적으로 구현하는 것은 중요합니다. 또한 다양한 프로그램에서는 다운로드를 통해 가져온 데이터를 가공하여 다른 기능들을 수행하는 경우도 있기 때문에 다운로드 과정을 잘 이해하는 것이 중요합니다.
-
-## 마지막으로
-
-각 프로그래밍 언어마다 웹 페이지를 다운로드하는 방법은 다를 수 있지만, 이번 포스트에서는 Elm을 예시로 들어 설명하였습니다. Elm을 사용해 웹 페이지를 다운로드하는 방법을 자세히 알아보고, 다른 프로그래밍 언어에서도 유사한 기능을 구현하는 방법에 대해 알아보는 것도 좋은 방법입니다.
-
-## 관련 포스트
-
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [웹 페이지 다운로드 예제 코드](https://guide.elm-lang.org/architecture/fetching_data/http.html)
-- [5분만에 Elm 시작하기](https://blog.tsundere.moe/elm-programming/)
+## 참고 자료
+- [Elm 공식 문서](https://guide.elm-lang.org/)
+- [Elm을 사용한 웹 애플리케이션 개발](https://www.joyoftypes.com/2018/07/elm-for-web-frontend.html)
+- [웹 페이지 다운로드 샘플 코드](https://github.com/rtfeldman/elm-spa-example/blob/master/src/Url.elm)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: टेक्स्ट की खोज और प्रतिस्थापन"
-simple_title:         "टेक्स्ट की खोज और प्रतिस्थापन"
+title:                "टेक्स्ट को खोजें और बदलें"
+html_title:           "Javascript: टेक्स्ट को खोजें और बदलें"
+simple_title:         "टेक्स्ट को खोजें और बदलें"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,15 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## Why
+Kya aapne kabhi apne code mein ek specific text ko find aur replace kiya hai? Agar haan, toh aapko pata hoga ki yeh ek bahut common task hai jo har programmer ko karna padta hai. Text search and replace ka kaam karte waqt aapko same text ko manual search karne ki koi jarurat nahi hoti, jisse aapka time bachta hai aur aapka code bhi efficient banta hai.
 
-अगर आप अपने आप को जावास्क्रिप्ट प्रोग्रामिंग के रूप में समझते हैं, तो आप के दिमाग में अभी से सवाल उठते होंगे कि आप टेक्स्ट को सर्च और रिप्लेस करने के लिए क्यों जारी रखेंगे। इसका जवाब है कि जब आप बड़ी मात्रा में टेक्स्ट को संशोधित या बदलना चाहते हैं, तब सर्च और रिप्लेस एक बहुत ही प्रभावी विधि है। इससे आप बिना अतिरिक्त मेहनत के और अपने समय को बचाते हुए आसानी से टेक्स्ट में चाहे जो भी बदलाव ला सकते हैं।
-
-## कैसे
-
-कोडिंग उदाहरणों और मॉडर्न जावास्क्रिप्ट फ़र्मेट की मदद से "सर्च एंड रिप्लेस" कोर्स को समझना बहुत ही आसान है। इस लेख में हम आपको बताएंगे कि कैसे आप अपने कोड में बहुत ही सरल तरीके से टेक्स्ट को सर्च और रिप्लेस कर सकते हैं। इसके लिए आपके पास कुछ जावास्क्रिप्ट फ़ंक्शन का उपयोग करने की तकनीक होनी चाहिए, जैसे कि "replace()" और "match()"। निम्नलिखित उदाहरण को ध्यान से पढ़ें और अगर आप कोड में अपनी जगह पर कोई अन्य विशिष्ट जगह तलाशने की आवश्यकता हो तो आपको उस जगह पर कुछ संशोधन करने की क्षमता होनी चाहिए।
-
+## How To
 ```Javascript
-// यह हमलोग को दो गाने के शब्द के बीच का अंतर दिखाता है और उनमे जो अपसे 
-// सदृश्य होता है उसे रिप्लेस कर देता है
-let songLyrics
+// Yaha pe hum "Hello World!" ke saath ek variable declaration karenge.
+var text = "Hello World!";
+// Ab hum "Hello" ko "Hi" mein replace karenge.
+var newText = text.replace("Hello", "Hi");
+// Ab humara newText "Hi World!" hoga.
+console.log(newText); // Output: "Hi World!"
+```
+
+Kya aapko dikh raha hai? Humne .replace() function ka use kiya jisse humne ek specific text ko find aur replace kiya. Is function mein pehle humne find karna chahe text ko aur fir uske replace karne wale text ko dena hota hai. Agar hume saare instances ko replace karna hai, toh hum .replace() function ke sath "g" modifier bhi laga sakte hai.
+
+## Deep Dive
+Jaise ki humne upar dekha, .replace() function ek string method hai jo ek string ko find aur replace karne ke liye use kiya jaata hai. Is function ke arguments mein pehla argument woh text hai jo hume replace karna hai, aur dusra argument woh text hai jisse hum replace karna chahte hai. Hum chahe toh .replace() function ka ek optional argument bhi use kar sakte hai jisme hum find karne ke liye ek regex pattern bhi specify kar sakte hai.
+
+Ek important point yeh hai ki .replace() function, original string ko change nahi karta hai. Balki iska output ek completely new string hai jisme changes kiye gaye hai. Agar aap chahe toh original string ko bhi change kar sakte hai, iske liye hume ek variable mein yeh new string store karna hoga.
+
+## See Also
+Agar aapko Javascript mein .replace() function ke alawa bhi aur string methods ke bare mein janna hai, toh aap ye links check kar sakte hai:
+
+- [MDN - String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods)
+- [W3Schools - Javascript Strings](https://www.w3schools.com/js/js_strings.asp)
+
+Main aasha karta hu ki aapko yeh article helpful raha hoga. Happy coding!

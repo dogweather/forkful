@@ -1,6 +1,7 @@
 ---
-title:                "C++: Å opprette en midlertidig fil"
-simple_title:         "Å opprette en midlertidig fil"
+title:                "Oppretting av en midlertidig fil"
+html_title:           "C++: Oppretting av en midlertidig fil"
+simple_title:         "Oppretting av en midlertidig fil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,34 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å lage midlertidige filer kan være nyttig i programmering for å lagre og midlertidig behandle data. Dette kan være spesielt nyttig når man jobber med store datamengder eller trenger å sikkerhetskopiere data.
+Å lage midlertidige filer kan være nyttig når man trenger å lagre data midlertidig, for eksempel ved kjøring av et program eller når man leser eller skriver data til en fil.
 
-## Hvordan
+## Hvordan lage midlertidige filer i C++
 
-For å lage en midlertidig fil i C++, kan man bruke funksjonen `tmpfile()` fra `<stdio.h>` biblioteket. Her er et eksempel på hvordan man kan lage og skrive til en midlertidig fil:
+Måten å lage en midlertidig fil på i C++ er ved å bruke standardbiblioteket <fstream>. Vi må inkludere dette biblioteket i koden vår for å kunne lage og manipulere filer. Deretter bruker vi funksjonen "tmpfile()" for å opprette vår midlertidige fil, som vil bli lagret i operativsystemets midlertidige mappe.
 
 ```C++
-#include <stdio.h>
+#include <fstream>
+using namespace std;
+
 int main() {
-    FILE *fp;
-    int num = 5;
-    fp = tmpfile();
-    fprintf(fp, "%d", num);
-    fclose(fp);
-    return 0;
+  // Opprett en midlertidig fil
+  FILE *fp = tmpfile();
+  
+  // Skriv tekst til filen
+  fprintf(fp, "Dette er en midlertidig fil.");
+  
+  // Les fra filen
+  fseek(fp, 0, SEEK_SET);
+  char buffer[100];
+  fgets(buffer, 100, fp);
+  
+  // Print ut teksten
+  cout << buffer << endl;
+  
+  return 0;
 }
 ```
 
-Dette eksemplet vil lage en midlertidig fil og skrive verdien "5" til den. Man kan også bruke `fwrite()` for å skrive flere verdier til filen. Det er viktig å huske å lukke filen etter man er ferdig med å skrive til den.
+Output:
 
-## Dypdykk
+```Dette er en midlertidig fil.```
 
-Når man lager en midlertidig fil, blir den automatisk slettet når programmet avsluttes. Det kan også være nyttig å vite at man kan spesifisere hvor filen skal opprettes ved å bruke funksjonen `tmpnam()` fra samme bibliotek.
+I dette eksemplet oppretter vi en midlertidig fil ved hjelp av "tmpfile()", skriver teksten "Dette er en midlertidig fil." til filen og leser deretter teksten fra filen og skriver den ut på skjermen. For å sikre at filen blir slettet når programmet er ferdig, kan vi bruke funksjonen "fclose()" for å lukke filen.
 
-For å få tilgang til filen senere, kan man bruke funksjonen `tmpfile()` igjen og få en "filpeker" tilbake. Man kan også bruke `fread()` for å lese fra filen.
+## Dypdykk i oppretting av midlertidige filer
+
+Når vi bruker funksjonen "tmpfile()" for å opprette en midlertidig fil, vil filen bli lagret i operativsystemets midlertidige mappe. Dette er vanligvis i "/tmp" for Linux og "/var/tmp" for macOS. Operativsystemet vil generere et unikt filnavn for den midlertidige filen og returnere en peker til filen som vi kan bruke i koden vår.
+
+Det er også verdt å merke seg at når programmet vårt avsluttes, vil filen automatisk bli slettet fra den midlertidige mappen. Dette er nyttig for å spare plass på harddisken og unngå rot med unødvendige midlertidige filer.
 
 ## Se også
 
-- C++ `tmpfile()` reference: [https://www.cplusplus.com/reference/cstdio/tmpfile/](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- C++ `fwrite()` reference: [https://www.cplusplus.com/reference/cstdio/fwrite/](https://www.cplusplus.com/reference/cstdio/fwrite/)
-- C++ `fread()` reference: [https://www.cplusplus.com/reference/cstdio/fread/](https://www.cplusplus.com/reference/cstdio/fread/)
+- https://www.cplusplus.com/reference/cstdio/tmpfile/
+- https://en.cppreference.com/w/c/io/tmpfile

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "TypeScript: Senden einer http-Anfrage mit grundlegender Authentifizierung"
 simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,56 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+Warum: Warum sollte man sich mit dem Senden von HTTP-Anfragen mit grundlegender Authentifizierung beschäftigen? Es ist eine effektive Möglichkeit, sich bei einer Anwendung oder einem Service zu authentifizieren und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
 
-In der modernen Webentwicklung ist der Austausch von Daten zwischen verschiedenen Systemen unerlässlich. Eine gängige Methode, um dies zu erreichen, ist die Verwendung von HTTP-Anfragen. Manchmal ist es jedoch notwendig, dass die Anfrage durch eine Authentifizierung geschützt wird, um sicherzustellen, dass nur autorisierte Benutzer Zugriff auf die Daten haben. In diesem Fall wird die Verwendung von grundlegender Authentifizierung empfohlen, die eine Benutzeranmeldung erfordert, um auf die Ressourcen zugreifen zu können.
+So geht's: Hier sind zwei einfache Beispiele, wie man eine HTTP-Anfrage mit grundlegender Authentifizierung in TypeScript sendet:
 
-## Wie funktioniert es
-
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden, müssen wir zuerst die erforderlichen Daten wie URL, Methode und Header festlegen. Dann fügen wir den Benutzernamen und das Passwort im Base64-Format zum Header hinzu. Hier ist ein Beispiel in TypeScript:
-
-```TypeScript
-import axios from 'axios';
-
-// Definieren der URL, Methode und Header
-const url = 'https://myapp.com/api/users';
-const method = 'GET';
-const headers = {
-  'Authorization': 'Basis ' + btoa('Benutzername:Passwort')
+```
+// Beispiel 1: Verwendung der XHR-Methode
+function sendRequest(url: string, username: string, password: string) {
+  let authHeader: string = "Basic " + btoa(username+":"+password);
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", url, false);
+  xhr.setRequestHeader("Authorization", authHeader);
+  xhr.send();
+  console.log(xhr.responseText);
 }
 
-// Senden der Anfrage mit axios
-axios({
-  method: method,
-  url: url,
-  headers: headers
-}).then(response => {
-  // Ausgabe der erhaltenen Daten
-  console.log(response.data);
-}).catch(error => {
-  // Fehlerbehandlung
-  console.log(error);
-});
-```
+sendRequest("https://example.com/api/users", "benutzername123", "passwort123");
 
-Der Header enthält den Schlüssel "Authorization" und den Wert "Basic", gefolgt von einem Leerzeichen und dem Base64-kodierten Benutzernamen und Passwort im folgenden Format: "Benutzername:Passwort". Dadurch wird der Benutzer beim Server authentifiziert und die Anfrage kann weitergeleitet werden.
+// Beispiel 2: Verwendung von axios
+const axios = require('axios');
 
-Ein Beispiel für den empfangenen Output kann wie folgt aussehen:
-
-```json
-{
-  "id": 123,
-  "username": "beispielbenutzer",
-  "email": "beispiel@meinapp.com"
+let authHeader = {
+  username: "benutzername123",
+  password: "passwort123"
 }
+let config = {
+  headers: authHeader,
+  method: 'get',
+  url: 'https://example.com/api/users',
+};
+
+axios(config)
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 ```
 
-## Tiefere Einblicke
+Ausgabe Beispiel 1:
+```
+[
+  {
+    "id": "1234",
+    "name": "Max Mustermann",
+    "email": "max.mustermann@example.com"
+  },
+  {
+    "id": "2345",
+    "name": "Laura Schmidt",
+    "email": "laura.schmidt@example.com"
+  },
+  {
+    "id": "3456",
+    "name": "Tom Wagner",
+    "email": "tom.wagner@example.com"
+  }
+]
+```
 
-Es gibt einige wichtige Dinge zu beachten, wenn man eine HTTP-Anfrage mit grundlegender Authentifizierung sendet. Zum Beispiel sollte man sicherstellen, dass das Passwort vor dem Codieren mit Base64 verschlüsselt wird, um sicherzustellen, dass es nicht im Klartext übertragen wird. Außerdem sollte man beachten, dass grundlegende Authentifizierung nicht die sicherste Methode ist, da die Anmeldeinformationen im Header sichtbar sind. In sicherheitskritischen Anwendungen ist es daher möglicherweise besser, eine andere Methode zu verwenden, wie z.B. die Verwendung von OAuth.
+Ausgabe Beispiel 2:
+```
+[
+  {
+    "id": "1234",
+    "name": "Max Mustermann",
+    "email": "max.mustermann@example.com"
+  },
+  {
+    "id": "2345",
+    "name": "Laura Schmidt",
+    "email": "laura.schmidt@example.com"
+  },
+  {
+    "id": "3456",
+    "name": "Tom Wagner",
+    "email": "tom.wagner@example.com"
+  }
+]
+```
 
-## Siehe auch
+Tiefgehende Einblicke: Bei der grundlegenden Authentifizierung wird der Username und das Passwort in Base64 kodierter Form als Teil des Authorization-Headers in der HTTP-Anfrage mitgeschickt. Dies bietet zwar eine Grundlage für die Authentifizierung, aber es ist nicht besonders sicher, da Base64 leicht entschlüsselt werden kann. Für eine höhere Sicherheit empfiehlt es sich, auf andere Authentifizierungsmethoden wie z.B. OAuth umzusteigen.
 
-- The Ultimate Guide to Basic Authentication in TypeScript - https://blog.logrocket.com/basic-authentication-in-typescript
-- Axios documentation - https://github.com/axios/axios
-- Base64 Encoding in TypeScript - https://www.w3schools.com/jsref/met_win_atob.asp
+Siehe auch:
+- [MDN Web Docs: HTTP Basic Authentication](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication#Basic_Authentication)
+- [Axios: HTTP client for the browser and node.js](https://github.com/axios/axios)
+- [Base64: encode/decode data in base64 format](https://github.com/niklasvh/base64-js)

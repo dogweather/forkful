@@ -1,6 +1,7 @@
 ---
-title:                "Go: Lavorare con YAML"
-simple_title:         "Lavorare con YAML"
+title:                "Lavorare con yaml"
+html_title:           "Go: Lavorare con yaml"
+simple_title:         "Lavorare con yaml"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,121 +11,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Se sei un programmatore Go e stai cercando un modo per gestire i dati di configurazione in modo flessibile, allora lavorare con YAML potrebbe essere la soluzione perfetta per te. Con il suo formato leggibile per gli umani e la sua compatibilità con vari linguaggi di programmazione, YAML è diventato uno standard nella gestione dei dati di configurazione.
+Se sei un programmatore che lavora con YAML, allora la conoscenza di Go ti renderà più efficiente e produttivo. Con Go puoi facilmente creare, leggere e modificare i file YAML utilizzando moduli specifici.
 
 ## Come fare
-
-Per iniziare a lavorare con YAML in Go, è necessario prima importare il pacchetto "yaml" nel tuo progetto. Quindi, puoi utilizzare la funzione "marshal" per convertire una struttura di dati di Go in un documento YAML e la funzione "unmarshal" per convertire un documento YAML in una struttura di dati di Go.
-
-Ecco un esempio di come convertire una struttura di dati di Go in un documento YAML:
+Per iniziare a lavorare con YAML in Go, devi prima importare il pacchetto "gopkg.in/yaml.v2". Quindi, puoi utilizzare la funzione "Marshal" per convertire una struttura dati Go in un formato YAML. Ad esempio:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "gopkg.in/yaml.v3"
+    "fmt"
+    "gopkg.in/yaml.v2"
 )
 
 type Person struct {
-  Name string `yaml:"name"`
-  Age  int    `yaml:"age"`
+    Name string
+    Age  int
 }
 
 func main() {
-  p := Person{"Mario", 30}
-
-  data, err := yaml.Marshal(p)
-  if err != nil {
-    panic(err)
-  }
-  fmt.Println(string(data))
+    person := Person{Name: "Maria", Age: 30}
+    yamlData, _ := yaml.Marshal(person)
+    fmt.Println(string(yamlData))
 }
 ```
 
-L'output di questo codice sarebbe:
-
+Output:
 ```
-name: Mario
+name: Maria
 age: 30
 ```
 
-E per convertire un documento YAML in una struttura di dati di Go:
+Per leggere un file YAML in una struttura dati Go, puoi utilizzare la funzione "Unmarshal". Ad esempio:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "gopkg.in/yaml.v3"
+    "fmt"
+    "io/ioutil"
+    "gopkg.in/yaml.v2"
 )
 
-type Person struct {
-  Name string `yaml:"name"`
-  Age  int    `yaml:"age"`
+type Book struct {
+    Title    string `yaml:"title"`
+    Author   string `yaml:"author"`
+    Language string `yaml:"language"`
 }
 
 func main() {
-  data := `
-    name: Luigi
-    age: 35
-  `
-  p := Person{}
-
-  err := yaml.Unmarshal([]byte(data), &p)
-  if err != nil {
-    panic(err)
-  }
-  fmt.Println(p)
+    yamlFile, _ := ioutil.ReadFile("book.yaml")
+    book := Book{}
+    err := yaml.Unmarshal(yamlFile, &book)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(book.Title)
+    fmt.Println(book.Author)
+    fmt.Println(book.Language)
 }
 ```
 
-L'output sarebbe:
-
+Book.yaml:
 ```
-{Luigi 35}
+title: The Alchemist
+author: Paulo Coelho
+language: English
+```
+
+Output:
+```
+The Alchemist
+Paulo Coelho
+English
 ```
 
 ## Approfondimento
-
-Oltre alle funzioni di base per la conversione dei dati, il pacchetto "yaml" offre anche vari tipi di strumenti per la manipolazione dei documenti YAML. Ad esempio, è possibile utilizzare la funzione "MapSlice" per creare facilmente un documento YAML da una mappa:
-
-```Go
-package main
-
-import (
-  "fmt"
-  "gopkg.in/yaml.v3"
-)
-
-func main() {
-  m := yaml.MapSlice{
-    {"frutta", "mela"},
-    {"verdura", "spinaci"},
-    {"carne", "pollo"},
-  }
-
-  data, err := yaml.Marshal(m)
-  if err != nil {
-    panic(err)
-  }
-  fmt.Println(string(data))
-}
-```
-
-L'output sarebbe:
-
-```
-- frutta: mela
-- verdura: spinaci
-- carne: pollo
-```
-
-Per ulteriori informazioni sul pacchetto "yaml" e sui suoi strumenti, assicurati di leggere la documentazione ufficiale.
+È importante notare che Go non ha una libreria YAML incorporata, ma fa affidamento sui moduli di terze parti. Uno dei vantaggi di utilizzare Go per lavorare con YAML è la velocità, poiché Go è un linguaggio compilato. Inoltre, il pacchetto "gopkg.in/yaml.v2" offre anche la possibilità di gestire dati YAML complessi, come strutture nidificate e variabili di tipo diverso.
 
 ## Vedi anche
-
-- [Documentazione del pacchetto "yaml" di Go](https://pkg.go.dev/gopkg.in/yaml.v3)
-- [Introduzione a YAML](https://www.codeproject.com/Articles/1214409/YAML-For-Beginners)
-- [Confronto tra YAML e JSON](https://medium.com/@alexolivier/yaml-vs-json-14031dba87f9)
+- [Documentazione del pacchetto YAML di Go](https://godoc.org/gopkg.in/yaml.v2)
+- [Tutorial su come lavorare con YAML in Go](https://www.sohamkamani.com/golang/parsing-json/)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Criando um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Kotlin: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em Kotlin?
+## Por que criar um arquivo temporário?
 
-O processo de criação de arquivos temporários é muito importante em linguagens de programação, incluindo o Kotlin. Esses arquivos são úteis para armazenar informações temporárias durante a execução de um programa, economizando espaço de armazenamento e evitando conflitos com outros arquivos existentes. Além disso, eles são excluídos automaticamente após o término do programa, o que garante uma melhor organização dos dados.
+Criar um arquivo temporário é útil quando precisamos armazenar temporariamente dados que não serão mais necessários em um momento posterior. Isso é especialmente útil quando estamos lidando com grandes quantidades de informações e queremos manter nosso código limpo e organizado.
 
-## Como criar um arquivo temporário em Kotlin
+## Como fazer:
 
-Para criar um arquivo temporário em Kotlin, podemos usar a classe `java.io.File` e seus métodos `createTempFile()` e `deleteOnExit()`. O primeiro método é responsável por criar o arquivo temporário e o segundo garante que ele será excluído após o término do programa.
+```Kotlin
+import java.io.File
 
-```Kotlin 
-val tempFile = File.createTempFile("temp", ".txt")
-tempFile.deleteOnExit()
+fun main() {
+  val tempFile = File.createTempFile("temp", ".txt")
+  tempFile.writeText("Este é um exemplo de arquivo temporário!")
+}
 ```
 
-O código acima criará um arquivo chamado "temp" com a extensão ".txt". Podemos usar o arquivo criado para armazenar informações temporárias durante a execução do programa.
+Ao executar o código acima, um arquivo temporário será criado na pasta padrão do sistema operacional com o nome "temp12345.txt". O conteúdo do arquivo será "Este é um exemplo de arquivo temporário!". Você também pode especificar o diretório onde deseja criar o arquivo temporário, passando-o como um parâmetro para a função `createTempFile()`.
 
-## Deep Dive
+## Deep Dive:
 
-Além de usar a classe `java.io.File`, também podemos criar arquivos temporários usando a classe `kotlin.io.Files` do pacote padrão do Kotlin. Esta classe oferece métodos como `createTempFile()` e `createTempDirectory()` que facilitam a criação de arquivos temporários.
+Criar um arquivo temporário é uma tarefa simples em Kotlin, pois a linguagem já possui uma classe integrada para lidar com isso: `java.io.File`. Além disso, ao usar o método `createTempFile()`, o arquivo será automaticamente excluído quando o programa for encerrado.
 
-Além disso, também podemos personalizar o local onde o arquivo temporário será criado, especificando o diretório como parâmetro no método `createTempFile()`. Isso nos dá um melhor controle sobre a localização dos nossos arquivos temporários.
+No método `createTempFile()`, o primeiro parâmetro é o prefixo do arquivo e o segundo é sua extensão. Você também pode usar `createTempFile(prefix, suffix, directory)` para especificar um diretório diferente para armazenar seu arquivo temporário.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial do Kotlin sobre a classe `java.io.File` ](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Exemplo de criação de arquivo temporário em Kotlin](https://www.baeldung.com/kotlin-temporary-file)
-- [Tutorial sobre arquivos temporários em Kotlin](https://www.tutorialkart.com/kotlin/create-temporary-file-kotlin-with-examples/)
+- Documentação oficial do `java.io.File` em Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html
+- Tutorial sobre manipulação de arquivos em Kotlin: https://www.raywenderlich.com/1068424-kotlin-tutorial-for-android-getting-started
+- Artigo sobre as vantagens de usar Kotlin para desenvolvimento de aplicações: https://medium.com/estudiodigital/por-que-usar-kotlin-para-desenvolvimento-de-aplica%C3%A7%C3%B5es-espaciais-6105f274e59e

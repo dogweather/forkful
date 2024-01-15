@@ -1,6 +1,7 @@
 ---
-title:                "Java: Otrzymywanie aktualnej daty"
-simple_title:         "Otrzymywanie aktualnej daty"
+title:                "Pobieranie bieżącej daty"
+html_title:           "Java: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -9,92 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Dlaczego: Dlaczego warto poznać obecny dzień w języku Java?
 
-Dlaczego warto pobrać aktualną datę w programowaniu? Wiele aplikacji wymaga określenia daty i czasu, na przykład przy tworzeniu logów lub generowaniu raportów. W tym artykule pokażę Wam jak w prosty sposób pobrać aktualną datę w języku Java.
+Pozyskanie obecnego dnia ma wiele praktycznych zastosowań w programowaniu. Może to być przydatne przy tworzeniu aplikacji bądź skryptów, gdzie potrzebujemy informacji o aktualnej dacie, np. przy tworzeniu systemów rezerwacji lub harmonogramów.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby pobrać aktualną datę w Javie, należy skorzystać z klasy "java.util.Date". Najprostszym sposobem jest użycie metody "new Date()", która zwraca obiekt klasy Date z aktualną datą i czasem. Oto przykładowy kod:
-
-```Java
-import java.util.Date;
-
-public class CurrentDate {
-    public static void main(String[] args) {
-        Date currentDate = new Date();
-        System.out.println("Aktualna data i czas: " + currentDate);
-    }
-}
-```
-Wynik działania programu będzie wyglądał następująco:
-```
-Aktualna data i czas: Sat Nov 07 19:23:45 CET 2020
-```
-
-Jeśli chcemy uzyskać tylko datę lub czas, możemy skorzystać z metod "getDate()" i "getTime()" klasy Date. Oto przykład kodu:
+Pobranie obecnego dnia nie jest skomplikowane dzięki wbudowanej w język Java klasie "LocalDate". Wystarczy zadeklarować obiekt tej klasy i wykorzystać odpowiednią metodę.
 
 ```Java
-import java.util.Date;
-
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        Date currentDate = new Date();
-        System.out.println("Aktualna data: " + (currentDate.getDate() + 1) + "/" + (currentDate.getMonth() + 1) + "/" + (currentDate.getYear() + 1900));
-        System.out.println("Aktualny czas: " + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds());
-    }
-}
-```
-Wynik działania programu będzie wyglądał następująco:
-```
-Aktualna data: 8/11/2020
-Aktualny czas: 19:23:45
+LocalDate dzisiaj = LocalDate.now(); // Deklarujemy obiekt klasy LocalDate i przypisujemy mu obecną datę
+System.out.println(dzisiaj); // Wypisujemy obecną datę
 ```
 
-## Głębsze zanurzenie
-
-W poprzednich przykładach skorzystaliśmy z klasy "java.util.Date" do pobrania aktualnej daty. Jednak warto zauważyć, że klasa ta została oznaczona jako przestarzała, a zaleca się korzystanie z klasy "java.time.LocalDate" lub "java.time.LocalDateTime" (dostępne od JDK 8). Korzystając z tych klas, możemy wybrać konkretną strefę czasową oraz format daty i czasu.
-
-Przykładowy kod wykorzystujący klasę "java.time.LocalDate":
+Możemy również wyświetlić poszczególne elementy daty, takie jak dzień, miesiąc czy rok, wykorzystując odpowiednie metody klasy LocalDate.
 
 ```Java
-import java.time.LocalDate;
-
-public class CurrentDate {
-    public static void main(String[] args) {
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("Aktualna data: " + currentDate);
-    }
-}
-```
-Wynik działania programu będzie wyglądał następująco:
-```
-Aktualna data: 2020-11-08
+System.out.println(dzisiaj.getDayOfMonth()); // Wypisujemy obecny dzień miesiąca
+System.out.println(dzisiaj.getMonth()); // Wypisujemy obecny miesiąc
+System.out.println(dzisiaj.getYear()); // Wypisujemy obecny rok
 ```
 
-Aby skorzystać z klasy "java.time.LocalDateTime" i wybrać strefę czasową oraz format daty i czasu, możemy użyć klasy "java.time.format.DateTimeFormatter". Oto przykładowy kod:
+## Deep Dive
 
-```Java
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+W języku Java istnieją różne sposoby na pozyskanie obecnego czasu, takie jak klasa "Date" czy "Calendar". Jednak metoda "LocalDate" jest preferowanym sposobem, ponieważ jest nowocześniejsza i bardziej intuicyjna w użyciu.
 
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime currentDate = LocalDateTime.now(ZoneId.of("Europe/Warsaw"));
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formattedDate = currentDate.format(format);
-        System.out.println("Aktualna data i czas: " + formattedDate);
-    }
-}
-```
-Wynik działania programu będzie wyglądał następująco:
-```
-Aktualna data i czas: 08-11-2020 19:23:45
-```
+Klasa "LocalDate" korzysta z klasy "Clock" do pozyskiwania daty i czasu, dlatego jej wykorzystywanie jest dokładniejsze i bezpieczniejsze niż w przypadku innych metod.
 
-## Zobacz także
+## Zobacz również
 
-- [Oracle: Class Date] (https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-- [Oracle: Package java.time] (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java - Materiały online] (https://www.java.com/pl/download/help/resources.xml)
+- Dokumentacja klasy "LocalDate": https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- Przykładowe aplikacje wykorzystujące obecną datę: https://www.baeldung.com/java-current-date

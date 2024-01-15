@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyse du code HTML"
+html_title:           "Fish Shell: Analyse du code HTML"
+simple_title:         "Analyse du code HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,43 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Si vous êtes un programmeur en herbe ou même un expert chevronné, vous avez probablement entendu parler du langage informatique HTML. Mais saviez-vous qu'il est possible de naviguer dans une page web en utilisant le shell Fish ? Cela peut sembler étrange, car le shell Fish est principalement utilisé pour des tâches de développement en ligne de commande. Mais en utilisant des techniques de parsing, il est possible de récupérer des données importantes à partir de pages web sans avoir à les ouvrir dans un navigateur. Dans cet article, nous allons explorer comment utiliser le shell Fish pour parser du HTML et récupérer des données à partir de pages web.
+
+Si vous êtes un développeur web, vous avez probablement déjà dû faire face à la tâche fastidieuse de parcourir du code HTML pour extraire des informations précises. Heureusement, avec le shell Fish et quelques connaissances en parsing, vous pouvez automatiser cette tâche et libérer du temps pour des tâches plus importantes.
 
 ## Comment faire
-Pour parser du HTML en utilisant le shell Fish, nous allons utiliser un plugin appelé `htmlq`. Cela peut être installé en utilisant la commande `fisher install decors/htmlq` sur votre terminal. Une fois que le plugin est installé, nous pouvons utiliser la commande `htmlq` pour récupérer des données à partir d'une page web.
+
+Pour commencer, assurez-vous d'avoir Fish Shell installé sur votre système. Si ce n'est pas le cas, vous pouvez facilement l'installer avec votre gestionnaire de paquets préféré.
+
+Une fois Fish Shell installé, vous pouvez commencer à écrire votre code de parsing HTML en utilisant la commande `read` pour lire le contenu d'un fichier ou `curl` pour récupérer le contenu d'une URL :
 
 ```
-Fish Shell - Exemple de code pour utiliser htmlq
+Fish Shell
 
-# Importer la bibliothèque htmlq
-source (brew --prefix fish)/share/doc/htmlq/htmlq.fish
+# Récupérer le contenu d'une URL
+set html (curl https://www.example.com)
 
-# Utiliser htmlq pour récupérer les données au sein des balises spécifiées
-curl -s http://exemple.com/page.html | htmlq --id "titre" --attrib "class" --print text contenu
-
-# Sortie : contenu
+# Lire le contenu d'un fichier
+set html (read ~/Documents/example.html)
 ```
 
-Dans l'exemple ci-dessus, nous utilisons la commande `htmlq` pour récupérer le contenu de la balise `<titre>` avec l'attribut `class`. Nous pouvons spécifier plus d'un attribut en les séparant avec un espace. La partie `--print text` nous permet de spécifier le type de donnée que nous voulons afficher, dans ce cas, du texte. Enfin, nous spécifions le contenu que nous voulons récupérer avec `contenu`.
+Ensuite, utilisez la commande `string split` pour diviser votre code HTML en parties plus petites, en utilisant une balise spécifique comme délimiteur. Par exemple, si vous voulez extraire toutes les informations situées entre les balises `<h1>` et `</h1>`, vous pouvez utiliser le code suivant :
+
+```
+Fish Shell
+
+set html (curl https://www.example.com)
+set headers (string split -rm "<h1>" "</h1>" $html)
+
+# Affiche le contenu de chaque balise <h1>
+for header in $headers
+    echo $header
+end
+```
+
+Enfin, utilisez la commande `string sub` pour retirer les balises inutiles et ne garder que le contenu souhaité :
+
+```
+Fish Shell
+
+set html (curl https://www.example.com)
+set headers (string split -rm "<h1>" "</h1>" $html)
+
+# Affiche le contenu de chaque balise <h1> sans les balises
+for header in $headers
+    string sub -r "</?h1>" "" $header
+end
+```
 
 ## Plongée en profondeur
-Maintenant que nous savons comment utiliser le `htmlq` pour récupérer des données à partir d'une page HTML, explorons un peu plus en détails comment cela fonctionne. `htmlq` se base sur la bibliothèque Python `lxml` pour analyser et parser le HTML. Cela signifie que nous pouvons utiliser les sélecteurs XPath pour cibler des éléments spécifiques dans le HTML.
 
-Par exemple, si nous voulons récupérer tous les liens (`<a>`) à partir d'une page web, nous pouvons utiliser la commande suivante :
-
-```
-Fish Shell - Exemple de code pour utiliser des sélecteurs XPath
-
-curl -s http://exemple.com/page.html | htmlq --xpath "//a" --print text
-
-# Sortie : href vers le lien
-```
-
-En utilisant l'argument `--xpath`, nous pouvons spécifier un sélecteur XPath pour cibler les éléments que nous voulons récupérer. Dans cet exemple, nous ciblons tous les éléments `<a>` et affichons les URL en utilisant `--print text`.
-
-La plupart des utilisations de `htmlq` suivent ce même modèle, en utilisant les sélecteurs XPath pour cibler des éléments spécifiques et `--print` pour spécifier le type de donnée à afficher.
+Il existe de nombreuses autres commandes utiles pour le parsing HTML dans Fish Shell, telles que `string match` pour trouver une sous-chaîne spécifique, `sed` pour effectuer des modifications plus complexes et `grep` pour filtrer les résultats. N'hésitez pas à explorer les possibilités avec Fish Shell et à lire la documentation officielle pour en apprendre davantage sur ces commandes.
 
 ## Voir aussi
-- Le site officiel du shell Fish : https://fishshell.com/
-- La documentation du plugin htmlq : https://fisherman.github.io/htmlq/
-- La documentation de la bibliothèque Python lxml : https://lxml.de/
+
+- Documentation officielle de Fish Shell : https://fishshell.com/docs/current/index.html
+- Tutoriel pour débuter avec Fish Shell : https://fishshell.com/docs/current/tutorial.html
+- Guide du parsing HTML avec Fish Shell : https://fishshell.com/docs/current/cmds/string.html

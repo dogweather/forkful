@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Fish Shell: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-En este blog, vamos a explorar cómo enviar una solicitud HTTP utilizando autenticación básica en Fish Shell. La autenticación es esencial para garantizar que solo los usuarios autorizados puedan acceder a datos y recursos protegidos en línea. Al utilizar la autenticación básica, podemos enviar credenciales de usuario en la solicitud para verificar su identidad y permitir el acceso.
+## Why
 
-## Cómo hacer
-Para enviar una solicitud HTTP con autenticación básica en Fish Shell, necesitamos primero almacenar nuestras credenciales de usuario en una variable. Por ejemplo, podemos almacenar nuestro nombre de usuario en la variable $USERNAME y nuestra contraseña en la variable $PASSWORD.
+Si eres un desarrollador web o alguien que trabaja con APIs, es esencial saber cómo enviar una solicitud HTTP con autenticación básica. Esto te permitirá acceder a recursos protegidos y realizar acciones autorizadas en un servidor remoto.
 
-```Fish Shell
-set -x USERNAME usuario
-set -x PASSWORD contraseña
-```
-
-Luego, utilizaremos la herramienta cURL para enviar la solicitud HTTP. Dentro de nuestro bloque de código, podemos escribir lo siguiente:
+## How To
 
 ```Fish Shell
-set -l RESPONSE (curl -u $USERNAME:$PASSWORD http://www.ejemplo.com)
-echo $RESPONSE
+# Primero, importa el módulo `http` en tu script de Fish Shell
+source /usr/local/share/fish/vendor_completions.d/http.fish
+
+# Luego, establece las credenciales de autenticación como variables
+set -xu username <tu_usuario>
+set -xu password <tu_contraseña>
+
+# Ahora, puedes enviar una solicitud GET con autenticación básica
+http -a $username:$password GET https://api.example.com/resources
+
+# Para una solicitud POST, puedes incluir los datos en el cuerpo del mensaje
+set -xu data '{"title": "Nuevo recurso", "description": "Esto es un nuevo recurso de ejemplo"}'
+http -a $username:$password -f POST https://api.example.com/resources <<< $data
 ```
 
-Al utilizar la opción -u en cURL, le indicamos que enviemos nuestras credenciales de usuario en la solicitud. El formato de la opción es usuario:contraseña. En este ejemplo, reemplazamos $USERNAME y $PASSWORD con nuestras variables previamente establecidas.
+Output:
 
-## Buceo profundo
-Es importante tener en cuenta que, al utilizar la autenticación básica, nuestras credenciales se enviarán sin cifrar en la solicitud HTTP. Por lo tanto, es importante utilizar este método solo en casos en que se requiera una seguridad mínima. Para una mayor seguridad, es recomendable utilizar otros métodos de autenticación, como OAuth o certificados SSL.
+```
+HTTP/1.1 200 OK
+Date: Thu, 17 Sep 2020 18:46:22 GMT
 
-También es importante mencionar que algunas aplicaciones pueden requerir que las credenciales de autenticación básica se codifiquen en base64 antes de enviar la solicitud. Puedes utilizar la herramienta base64 de Fish Shell para codificar tus credenciales de esta manera.
+{
+  "id": "12345",
+  "title": "Nuevo recurso",
+  "description": "Esto es un nuevo recurso de ejemplo"
+}
+```
 
-## Ver también
-Si estás interesado en aprender más sobre la autenticación básica en Fish Shell y otras herramientas y técnicas de desarrollo web, consulta los siguientes enlaces:
+## Deep Dive
 
-- [HTTP Authentication Basic](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication#basic_authentication_scheme)
-- [Tutorial de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Cómo codificar cadenas en base64 en Fish Shell](https://www.systutorials.com/docs/linux/man/1-fish_base64/)
+La autenticación básica es un método simple de autenticación que se basa en credenciales de usuario y contraseña. Esta información se envía al servidor en formato de texto sin cifrar, por lo que no se recomienda para entornos de producción. Sin embargo, es útil para fines de prueba y desarrollo.
+
+Además de los ejemplos mencionados anteriormente, también puedes enviar solicitudes con otros métodos HTTP, como PUT, PATCH o DELETE, simplemente cambiando `GET` o `POST` en el comando `http` a tu método deseado. También puedes especificar encabezados adicionales en la solicitud mediante el uso del parámetro `-h`.
+
+Para obtener más detalles sobre el uso de `http` en Fish Shell, consulta la documentación oficial [aquí](https://fishshell.com/docs/current/cmds/http.html).
+
+## See Also
+
+- [Comandos básicos de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Ejemplos de uso de autenticación básica con cURL](https://gist.github.com/shim-hyunseok/0db41e326627f7fa08af262e4ac2543c)

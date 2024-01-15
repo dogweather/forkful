@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Bash recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,50 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Reading a text file may seem like a simple task, but it is a crucial skill to have in any kind of programming. It allows you to access and manipulate data stored in a text format, which is commonly used for various purposes such as configuration files, data storage, and more.
+Bash is a common Unix shell used to interact with the operating system through the command line. Reading a text file using Bash can be beneficial for those wanting to quickly access and manipulate the contents of a file without having to open a text editor.
 
 ## How To
 
-In Bash programming, reading a text file can be done using the `cat` command. This command takes in the name of the text file as an argument and outputs the contents of the file to the terminal. Let's say we have a text file called "example.txt" with the following content:
+To read a text file using Bash, we can use the `cat` command. This command is used to output the contents of a file onto the command line.
 
-```Bash
-Hello World!
-This is an example text file.
-```
-
-To read this file, we can use the `cat` command as follows:
+An example of this would be:
 
 ```Bash
 cat example.txt
 ```
 
-This will output the contents of the file to the terminal, which in this case will be:
+This would output the contents of `example.txt` onto the command line. If the file is large, we can use the `more` or `less` command to scroll through the file.
 
 ```Bash
-Hello World!
-This is an example text file.
+more largefile.txt
+less largefile.txt
 ```
 
-We can also use the `read` command to read a text file line by line. This command can be used in a loop to read and process data from a text file. Let's see an example of this in action:
+We can also search for specific keywords within a text file using the `grep` command. This command allows us to filter out specific lines or phrases from a file.
+
+An example of this would be:
 
 ```Bash
-while read line; do
-	echo "The line says: $line"
-done < example.txt
+grep "keyword" example.txt
 ```
 
-Running this code will output each line of the text file with the added prefix "The line says:".
+This would output all the lines from `example.txt` that contain the keyword "keyword". We can also use regular expressions with `grep` for more advanced searching.
+
+Lastly, we can read a specific number of lines from a file using the `head` or `tail` command. `head` outputs the first few lines while `tail` outputs the last few lines of a file.
+
+An example of this would be:
+
+```Bash
+head -5 example.txt
+tail -10 example.txt
+```
+
+This would output the first 5 lines and last 10 lines of `example.txt`.
 
 ## Deep Dive
 
-Reading a text file can be done in multiple ways. As shown above, the `cat` and `read` commands are the most popular ways to read a text file in Bash. However, there are other commands and options available as well.
+Using the `-n` flag with `cat` allows us to read a specific number of lines from a file. For example, `cat -n 15 example.txt` would output the first 15 lines of `example.txt` with line numbers for reference.
 
-For example, the `head` and `tail` commands allow you to read the first or last few lines of a text file, respectively. The `less` command allows you to view the contents of a text file with the ability to scroll and search through the file. And the `grep` command can be used to search for specific words or patterns in a text file.
+We can also use the `wc` command to count the number of words, lines, and characters in a file. The `-l` flag can be used to only count the number of lines in a file.
 
-Additionally, Bash also allows you to read a text file directly into a variable, using the `$(<filename)` syntax. This can be useful when you need to use the contents of a text file in your code.
+An example of this would be:
+
+```Bash
+wc -l example.txt
+```
+
+This would output the number of lines in `example.txt`.
 
 ## See Also
-
-- [Bash Reference Manual - Basic Concepts](https://www.gnu.org/software/bash/manual/html_node/Basic-Shell-Concepts.html)
-- [Linux Command Library - Bash Commands](https://www.linuxcommand.org/lc3_learning_the_shell.php)
-- [Bash Scripting Tutorial - Working with Files](http://www.panix.com/~elflord/unix/bash-tute.html#3.1)
+- [The Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash by Example](http://www.freeos.com/guides/lsst/)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: HTML解析"
-simple_title:         "HTML解析"
+title:                "HTMLの解析"
+html_title:           "Java: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,66 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTMLをパースする必要があるのか？
+## Why
+プログラミングにおいて、HTML（Hyper Text Markup Language）は最も一般的な言語の1つです。ウェブサイトやアプリケーションのデザインや構造を定義するために使用され、開発者はHTMLを理解しておくことが重要です。しかし、手動で大量のHTMLを読み解くのは非常に面倒で時間のかかる作業です。そのため、HTMLをパース（解析）することで、より効率的にコードを処理することができるようになります。
 
-HTML（HyperText Markup Language）は、ウェブページを記述するための言語です。しかし、ウェブ上の情報を取得したり、処理したりするためには、HTMLを読み取る必要があります。そのため、HTMLパーサーが重要になります。
-
-## HTMLをパースする方法
-
-HTMLをパースするには、多くのライブラリがありますが、今回はJavaでHTMLをパースする方法を紹介します。下のコードブロックを参考にしてください。
+## How To
+HTMLをパースする方法を見てみましょう。まずは、"Jsoup"と呼ばれるJavaのライブラリをインストールする必要があります。これは、HTMLドキュメントを解析するための強力なツールです。
 
 ```Java
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.jsoup.*;
+import org.jsoup.nodes.*;
+import org.jsoup.select.*;
 
-public class HTMLParser {
-    public static void main(String[] args) throws Exception {
-        // HTMLを取得
-        String html = "<html><head><title>Java Blog</title></head>"
-                      + "<body><div class='post'><h2>Javaプログラミングの楽しみ</h2>"
-                      + "<p>HTMLパーサーを使ってウェブ上の情報を取得する方法を紹介します。</p></div></body></html>";
-
-        // HTMLをパース
-        Document doc = Jsoup.parse(html);
-
-        // タイトルを取得
-        String title = doc.title();
-        System.out.println("タイトル： " + title);
-
-        // クラス名がpostの要素を取得
-        Element post = doc.select("div.post").first();
-
-        // タイトルと本文を取得
-        String postTitle = post.select("h2").text();
-        String postBody = post.select("p").text();
-        System.out.println("投稿タイトル： " + postTitle);
-        System.out.println("投稿本文： " + postBody);
-    }
-}
+Document doc = Jsoup.connect("https://example.com").get();
+Element contentDiv = doc.select("div.content").first();
+System.out.println(contentDiv.text());
 ```
 
-コードを実行すると、以下のような結果が得られます。
+上記のコードでは、URLを指定してHTMLページを取得し、"div.content"という要素を抽出しています。そして、その要素のテキストを出力しています。もちろん、使用する要素や出力の方法は自由にカスタマイズすることができます。
 
-```
-タイトル： Java Blog
-投稿タイトル： Javaプログラミングの楽しみ
-投稿本文： HTMLパーサーを使ってウェブ上の情報を取得する方法を紹介します。
-```
+## Deep Dive
+HTMLパースの規則について詳しく見ていきましょう。HTMLはタグ、属性、テキストといった要素で構成されています。Jsoupでは、CSSセレクターを使用して要素を取得することができます。たとえば、"a[href]"というセレクターは、href属性を持つすべてのアンカータグを取得します。また、".class"というセレクターは、指定したクラスを持つ要素を取得します。
 
-## HTMLをパースするための深い情報
+さらに、HTMLの構造をより詳細に調べるために、開発者ツールを使用することもできます。これは、特定の要素がどのように配置され、どのような階層構造を持っているかを確認するのに役立ちます。
 
-Javaでは、HTMLをパースするためにJsoupライブラリを使用することができますが、内部ではどのように動作しているのでしょうか？JsoupはHTMLをDOM（Document Object Model）として読み込み、ElementやAttributeなどのオブジェクトで表現しています。これにより、簡単な操作でHTMLの要素を取得することができます。
-
-また、HTMLパーサーを使用することで、ウェブスクレイピングやデータ収集などの用途に応じて、必要な要素だけを取得することができます。ただし、ウェブサイトの使用規約を遵守し、必要な場合は許可を得る必要があります。
-
-## おわりに
-
-今回はJavaを使用してHTMLをパースする方法について紹介しました。HTMLパーサーを使用することで、ウェブ上の情報を簡単に取得できますが、使用する際は注意が必要です。また、HTMLパーサーを使用することで、より多くのデータを収集することができるため、さまざまな用途に応じて活用することができます。
-
-## 関連リンク
-
+## See Also
 - [Jsoup公式サイト](https://jsoup.org/)
-- [JsoupのGitHubリポジトリ](https://github.com/jhy/jsoup)
-- [Jsoupを使ってJavaでHTMLをパースする方法](https://qiita.com/DIY_GUY/items/1582479ae36a40984328)
+- [HTMLパースのチュートリアル](https://www.baeldung.com/java-string-html-parsing)
+- [開発者ツールの使用方法（Chrome）](https://developer.chrome.com/docs/devtools/)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Lisämerkkien yhdistäminen"
+html_title:           "C: Lisämerkkien yhdistäminen"
+simple_title:         "Lisämerkkien yhdistäminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,48 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kukaan haluaisi käyttää merkkijonojen yhdistämistä? Usein ohjelmoinnin yhteydessä käsitellään useita erillisiä merkkijonoja, ja joskus on tarpeellista yhdistää nämä merkkijonot yhdeksi suuremmaksi kokonaisuudeksi. Tämä voi tapahtua esimerkiksi silloin, kun halutaan luoda tekstipohjainen käyttöliittymä tai tallentaa käyttäjän syöttämät tiedot yhdeksi merkkijonoksi. Tässä blogikirjoituksessa käsittelemme, miten tämä onnistuu kätevästi C-ohjelmointikielessä.
+On monia tilanteita, joissa haluat yhdistää useita merkkijonoja yhdeksi. Tämä voi olla tarpeen esimerkiksi tulostettaessa tietoja käyttäjälle tai luotaessa dynaamisia SQL-kyselyitä tietokantaan. 
 
-## Miten yhdistetään merkkijonoja C-kielellä
+## Kuinka tehdä se
 
-C-kielellä merkkijonojen yhdistäminen tapahtuu kätevästi käyttäen `strcat()`-funktiota. Tämä funktio yhdistää kaksi merkkijonoa toisiinsa lisäämällä toisen merkkijonon perään ensimmäiseen merkkijonoon. Alla on esimerkki siitä, miten `strcat()`-funktiota käytetään:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char nimi[] = "Hanna";
-    char sukunimi[] = "Hämäläinen";
-    strcat(nimi, sukunimi);
-    printf("Koko nimi on: %s", nimi);
-    return 0;
-}
-```
-
-Tämän koodin suorituksen jälkeen `nimi`-merkkijono sisältää arvon "HannaHämäläinen". Jos haluamme lisätä välilyönnin merkkijonojen väliin, voimme käyttää `strcat()`-funktion sijaan `strncat()`-funktiota, joka lisää myös määritetyn määrän merkkejä lähdeviite-merkkijonon perään.
-
-C-kielessä on myös mahdollisuus yhdistää merkkijonoja käyttämällä toisena vaihtoehtona `sprintf()`-funktiota. Tätä funktiota käytettäessä merkkijonossa voi yhdistää myös muita muuttujia, kuten kokonaisluvut, desimaaliluvut tai merkkitietoja. Alla on esimerkki siitä, miten `sprintf()`-funktiota voidaan käyttää:
+Voit yhdistää merkkijonoja käyttämällä standardikirjaston `strcat()` -funktiota, joka vaatii kaksi merkkijonoa parametreina. Se liittää toisen merkkijonon ensimmäiseen ja palauttaa lopputuloksen. Toinen vaihtoehto on käyttää `sprintf()` -funktiota, joka luo uuden merkkijonon yhdistämällä halutut merkkijonot ja muut objektit samalla kertaa.
 
 ```C
-#include <stdio.h>
-#include <string.h>
+char s1[20] = "Tämä ";
+char s2[] = "on lause.";
+strcat(s1, s2); // s1 = "Tämä on lause."
 
-int main() {
-    char kaupunki[] = "Helsinki";
-    int vuosi = 2020;
-    char kuukausi[] = "heinäkuu";
-    char paivamaara[50];
-    sprintf(paivamaara, "Tänään on %s %i. %s %i", kaupunki, vuosi, kuukausi, vuosi);
-    printf("%s", paivamaara);
-    return 0;
-}
+char s3[50];
+char nimi[] = "Jaska";
+int ika = 30;
+sprintf(s3, "Hei, olen %s ja olen %d vuotta vanha.", nimi, ika); // s3 = "Hei, olen Jaska ja olen 30 vuotta vanha."
 ```
 
-Tämän koodin suorituksen jälkeen `paivamaara`-merkkijonossa on arvo "Tänään on Helsinki 2020. heinäkuu 2020".
+## Syvällisempää tietoa
 
-## Syvällisempiä tietoja merkkijonojen yhdistämisestä
+Merkkijonojen yhdistäminen vaatii tiettyä varovaisuutta, sillä liian pitkät merkkijonot voivat aiheuttaa muistin ylikirjoituksen, mikä voi johtaa odottamattomiin tuloksiin. Siksi on tärkeää varmistaa, että tulosmerkkijonolle on varattu riittävästi tilaa ja käytetään tarvittaessa turvallisia kirjastofunktioita, kuten `strncat()` ja `snprintf()`.
 
-Merkkijonojen yhdistämisessä on tärkeää huomioida, että lähtö- ja lopputuloksen tulee olla molemmat kelvollisia merkkijonoja. Jos esimerkiksi yhdistettävien merkkijonojen lopusta puuttuu nul-merkki, yhdistämisen tulos ei ehkä ole haluttu. Tämän vuoksi on tärkeää varmistaa, että käytetyt merkkijonot ovat oikean pituisia ennen yhdistämistä.
+Merkkijonon yhdistäminen voi myös hidastaa ohjelman suoritusta, jos sitä tehdään suurille datamäärille. Tällöin voi olla hyödyllistä hajottaa yhdistäminen useisiin osiin ja käyttää esimerkiksi `sprintf()`-funktiota vain lopullisen merkkijonon luomiseen. Lisäksi kannattaa huolehtia merkkijonojen oikeasta formaatoinnista, jotta lopputulos olisi odotetunlainen.
 
-Samoin tulee huomioida, että käytetyt merkkijonot eivät ylitä kiintiöitä
+## Katso myös
+
+- [strcat() dokumentaatio (englanniksi)](https://www.cplusplus.com/reference/cstring/strcat/)
+- [sprintf() dokumentaatio (englanniksi)](https://www.cplusplus.com/reference/cstdio/sprintf/)
+- [strncat() dokumentaatio (englanniksi)](https://www.cplusplus.com/reference/cstring/strncat/)
+- [snprintf() dokumentaatio (englanniksi)](https://www.cplusplus.com/reference/cstdio/snprintf/)

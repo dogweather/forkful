@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "PHP: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Hvorfor vil noen generere tilfeldige tall? Det kan være nyttig for å lage sjansespill, testing av programmer og annet som krever tilfeldige verdier. I denne bloggposten skal vi se på hvordan vi kan generere tilfeldige tall i PHP.
+Å generere tilfeldige tall er en vanlig oppgave i mange programmer og kan være nyttig i ulike situasjoner. Dette kan inkludere å opprette tilfeldige brukernavn og passord, trekke en vinner i en konkurranse, eller generere testdata for programmeringstester.
 
 ## Hvordan
-
+For å generere tilfeldige tall i PHP kan du bruke funksjonen `rand()`. Denne funksjonen tar to parametere, et minimumsnummer og et maksimumsnummer, og returnerer et tilfeldig tall innenfor dette området. For eksempel, hvis du vil generere et tilfeldig tall mellom 1 og 10, kan du bruke følgende kode:
 ```PHP
-<?php
-// Genererer et tilfeldig heltall mellom 1 og 10
-echo mt_rand(1, 10) . "\n";
-// Eksempelutgang: 7
+$tilfeldig_tall = rand(1, 10);
+echo $tilfeldig_tall; //vil skrive ut et tilfeldig tall mellom 1 og 10
+```
+Du kan også bruke `mt_rand()`-funksjonen, som er en mer avansert versjon av `rand()`, og gir bedre tilfeldighet. Denne funksjonen tar to parametere, et minimumsnummer og et maksimumsnummer, og fungerer på samme måte som `rand()`. Et eksempel på bruken av `mt_rand()`:
+```PHP
+$tilfeldig_tall = mt_rand(20, 50);
+echo $tilfeldig_tall; //vil skrive ut et tilfeldig tall mellom 20 og 50
 ```
 
-```PHP
-<?php
-// Genererer et tilfeldig desimaltall mellom 0 og 1
-echo rand(0, 100) / 100 . "\n";
-// Eksempelutgang: 0.57
-```
-
-Innenfor "```PHP ... ```" kodeblokker kan du se eksempler på hvordan du kan generere tilfeldige tall. Ved å bruke `mt_rand()` funksjonen kan du generere et tilfeldig heltall innenfor en gitt rekkevidde. Ved å bruke `rand()` funksjonen kan du generere et tilfeldig desimaltall. Disse funksjonene bruker en teknikk kalt "Mersenne twister" som sikrer at tallene er tilfeldige.
-
-## Dypdykk
-
-Nå som vi har sett på hvordan vi kan generere tilfeldige tall i PHP, kan vi dykke litt dypere og se på hva som skjer bak kulissene når vi kaller på disse funksjonene. "Mersenne twister" er en algoritme som bruker en spesifikk formel for å generere tall basert på en såkalt seed eller startverdi. Seed-verdien blir ofte basert på tiden når funksjonen blir kalt, slik at tallene blir mer tilfeldige. Det finnes også flere ulike metoder for å generere tilfeldige tall i PHP, som for eksempel `random_bytes()` og `openssl_random_pseudo_bytes()`.
+## Deep Dive
+PHP har også en funksjon som kan generere tilfeldige tall basert på en forhåndsbestemt rekkefølge, kalt `srand()`. Ved å bruke denne funksjonen kan du kontrollere rekkefølgen av tilfeldige tall som blir generert. For eksempel, hvis du vil generere de samme tilfeldige tallene i flere runder av koden din, kan du bruke `srand()` i begynnelsen av koden din og gi den samme parameteren hver gang. Dette vil sikre at den samme tilfeldige sekvensen blir generert i hver runde.
 
 ## Se også
-
-- [PHP Manual: Mersenne Twister](https://www.php.net/manual/en/function.mt-rand.php)
-- [PHP Manual: random_bytes](https://www.php.net/manual/en/function.random-bytes.php)
-- [PHP Manual: openssl_random_pseudo_bytes](https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php)
+- [PHP rand() function](https://www.php.net/manual/en/function.rand.php)
+- [PHP mt_rand() function](https://www.php.net/manual/en/function.mt-rand.php)
+- [PHP srand() function](https://www.php.net/manual/en/function.srand.php)

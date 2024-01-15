@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Excluir caracteres que correspondam a um padrão."
-simple_title:         "Excluir caracteres que correspondam a um padrão."
+title:                "Exclusão de caracteres correspondentes a um padrão"
+html_title:           "Haskell: Exclusão de caracteres correspondentes a um padrão"
+simple_title:         "Exclusão de caracteres correspondentes a um padrão"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,51 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
+# Por que
+Algumas vezes precisamos limpar uma string removendo caracteres que correspondem a um padrão específico. Por exemplo, em uma aplicação de formulário, se o usuário digitar um número de telefone com parênteses, traços ou espaços, podemos querer remover esses caracteres antes de armazená-lo no banco de dados.
 
-Existem várias razões pelas quais você pode querer deletar caracteres que correspondem a um padrão em um programa em Haskell. Pode ser parte de um processo de limpeza de dados ou para simplificar strings antes de processá-las. Independentemente do motivo, saber como fazer isso pode economizar muito tempo e esforço.
+## Como Fazer
 
-## Como fazer?
+Para deletar caracteres a partir de um padrão em Haskell, podemos utilizar a função `filter`. Essa função recebe como parâmetros um predicado (uma função que retorna `True` ou `False`) e uma lista. O predicado é aplicado a cada elemento da lista e somente os elementos que retornarem `True` serão mantidos na lista resultante.
 
-A primeira coisa que precisamos entender é a função `filter`, que é usada para filtrar uma lista de acordo com um predicado. Vamos criar uma pequena lista de caracteres e filtrar apenas aqueles que correspondem ao nosso padrão.
-
-```Haskell
-listaCaracteres = "abc123ABC456"
-caracteresFiltrados = filter (`elem` "123") listaCaracteres
-```
-
-Neste exemplo, estamos usando a função `filter` com o predicado `(`elem` "123")`, que verifica se o caractere está presente na string "123". O resultado será "123456".
-
-No entanto, se quisermos excluir os caracteres que correspondem ao nosso padrão, podemos usar a função `delete` da biblioteca Data.List, que remove a primeira ocorrência de um elemento em uma lista.
+O código a seguir remove todos os números de uma string:
 
 ```Haskell
-import Data.list
-listaCaracteres = "abc123ABC456"
-caracteresDeletados = delete '2' listaCaracteres
+removeNumeros :: String -> String
+removeNumeros str = filter (not . isDigit) str
 ```
 
-O resultado será "abc13ABC456", já que o primeiro "2" encontrado na lista foi removido.
+No exemplo acima, usamos a função `isDigit` da biblioteca `Data.Char` para verificar se um caractere é um número. O `.` é uma função de composição, que neste caso combina a função `not` (que inverte o resultado de uma função booleana) com a função `isDigit`.
 
-## Aprofundando
-
-Agora que sabemos como usar a função `delete`, podemos usá-la para criar uma função mais geral que deleta todos os caracteres que correspondem a um padrão em uma string.
+Podemos agora usar a função `removeNumeros` para remover números de uma string:
 
 ```Haskell
-deletePattern :: [Char] -> String -> String
-deletePattern [] s = s
-deletePattern (x:xs) s = delete x (deletePattern xs s)
+removeNumeros "abc123def"
+-- "abcdef"
 ```
 
-Esta função é recursiva e usa a função `delete` para excluir cada caractere da lista de padrões da string. Por exemplo, se quisermos excluir todos os caracteres numéricos de uma string, podemos fazer o seguinte:
+Se quisermos remover vários tipos de caracteres, podemos utilizar a função `isAlphaNum` que verifica se um caractere é alfanumérico (letras ou números). Podemos também criar nossa própria função predicado.
 
 ```Haskell
-deleteNumeros = deletePattern "0123456789"
+removeCaracteres :: String -> [Char] -> String
+removeCaracteres str chars = filter (`notElem` chars) str
 ```
 
-Esta função pode ser facilmente adaptada para excluir caracteres especiais ou qualquer outro padrão desejado.
+A função acima recebe uma string e uma lista de caracteres e remove todos os caracteres que estão presentes na lista. Usando essa função, podemos remover parênteses, traços e espaços de uma string:
 
-## Veja também
+```Haskell
+removeCaracteres "(12) 345-6789" "()- "
+-- "123456789"
+```
 
-- [Documentação oficial da função `filter`](https://www.haskell.org/hoogle/?hoogle=filter)
-- [Documentação oficial da função `delete`](https://www.haskell.org/hoogle/?hoogle=delete)
-- [Tutorial do Learn You a Haskell for Great Good sobre listas](http://learnyouahaskell.com/starting-out#lists)
+## Deep Dive
+
+A função `filter` é uma das funções de ordem superior em Haskell, ou seja, uma função que recebe outra função como parâmetro. Isso permite que a função `filter` seja usada de forma mais genérica, por exemplo, para filtrar elementos em uma lista que atendem a um certo critério.
+
+Para entender melhor como a função `filter` funciona, podemos reproduzi-la de forma simplificada:
+
+```Haskell
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' p (x:xs)
+  | p x       = x : filter' p xs
+  | otherwise = filter' p xs
+```
+
+Essa função tem como parâmetros um predicado `p` e uma lista de elementos do tipo `a`. Se a lista estiver vazia, a função retorna uma lista vazia. Caso contrário, a função verifica se o primeiro elemento da lista atende ao predicado `p`. Se sim, esse elemento é adicionado à lista resultante, caso contrário, ele é ignorado. Em seguida, a função é chamada recursivamente para o restante da lista. Isso se repete até que todos os elementos sejam verificados.
+
+Um detalhe importante é que o tipo do predicado `p` é `(a -> Bool)`, ou seja, uma função que recebe um elemento do tipo `a` e retorna um valor booleano. Isso significa que podemos passar qualquer função que atenda a esse tipo como argumento para a função `filter`. Podemos até mesmo utilizar funções anônimas para criar predicados mais complexos.
+
+Por exemplo, podemos usar `filter` para remover todos os números pares de uma lista:
+
+```Haskell
+filter even [1..10]
+-- [2,4,6,8,10]
+```
+
+Nesse caso, `even` é uma função que verifica se um número é par.
+
+## Veja Também
+
+- [Funções em Haskell](https://wiki.haskell.org/Function)
+- [Compreensão de Listas em Haskell](https://wiki.haskell.org/List_comprehension)
+- [Documentação da biblioteca `Data.Char`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)

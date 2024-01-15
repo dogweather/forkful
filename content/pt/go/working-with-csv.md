@@ -1,5 +1,6 @@
 ---
-title:                "Go: Trabalhando com csv"
+title:                "Trabalhando com csv"
+html_title:           "Go: Trabalhando com csv"
 simple_title:         "Trabalhando com csv"
 programming_language: "Go"
 category:             "Go"
@@ -9,52 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com arquivos CSV em Go
+## Por que usar CSV em Go?
 
-Os arquivos CSV (Comma-Separated Values) são um formato comum para armazenar e compartilhar dados tabulares. Ao utilizar o Go para trabalhar com esses arquivos, é possível automatizar tarefas de processamento de dados e manipulação de informações. Além disso, a linguagem oferece recursos poderosos para realizar operações eficientes com arquivos CSV.
+Se você trabalha com dados estruturados em sua aplicação Go, é provável que já tenha se deparado com o formato CSV (Comma Separated Values). Este formato é amplamente utilizado para armazenar e compartilhar dados tabulares, e é uma ótima opção para armazenar grandes conjuntos de dados.
 
-## Como trabalhar com arquivos CSV em Go
+## Como trabalhar com CSV em Go
 
-Para começar a trabalhar com arquivos CSV em Go, é necessário importar o pacote "encoding/csv". Em seguida, podemos utilizar a função "NewReader" para ler o arquivo CSV e obter um objeto "Reader" para percorrê-lo. Podemos então usar o método "Read" desse objeto para ler cada linha do arquivo e obter os dados em formato de slice. Veja um exemplo de código abaixo:
+Para trabalhar com arquivos CSV em Go, primeiro precisamos importar o pacote "encoding/csv" em nosso código. Em seguida, podemos utilizar a função "csv.NewReader" para criar um leitor que irá ler nosso arquivo CSV.
 
-```Go
+```
 import (
     "encoding/csv"
-    "fmt"
     "os"
 )
 
 func main() {
-    // Criando um objeto Reader para ler o arquivo CSV
-    file, err := os.Open("dados.csv")
-    if err != nil {
-        fmt.Println("Erro ao abrir o arquivo:", err)
-        return
-    }
-    defer file.Close()
-
+    // Criando um leitor para o arquivo CSV
+    file, _ := os.Open("arquivo.csv")
     reader := csv.NewReader(file)
 
-    // Lendo cada linha do arquivo e exibindo na tela
+    // Lendo os dados do arquivo linha por linha
     for {
         record, err := reader.Read()
         if err != nil {
-            fmt.Println("Erro ao ler o arquivo:", err)
             break
         }
+        // Imprimindo a linha lida do arquivo
         fmt.Println(record)
     }
 }
 ```
 
-A saída do código acima será um slice contendo os dados de cada linha do arquivo CSV.
+O código acima irá imprimir cada linha do arquivo CSV, separando os valores por vírgula. Além disso, podemos utilizar a função "csv.NewWriter" para criar um escritor que nos permitirá escrever dados em um arquivo CSV. Veja um exemplo abaixo:
 
-## Aprofundando-se em arquivos CSV com Go
+```
+import (
+    "encoding/csv"
+    "os"
+)
 
-Além da leitura de dados, o pacote "encoding/csv" do Go também oferece funções para escrever e manipular arquivos CSV. Por exemplo, podemos utilizar a função "NewWriter" para criar um objeto "Writer" e escrever dados em um novo arquivo CSV. Além disso, é possível utilizar ferramentas adicionais do Go, como o pacote "strconv", para converter valores de strings para outros tipos de dados, tornando a manipulação de dados CSV mais versátil.
+func main() {
+    // Criando um escritor para o arquivo CSV
+    file, _ := os.Create("novo_arquivo.csv")
+    writer := csv.NewWriter(file)
+
+    // Criando uma linha com dados a serem escritos no arquivo
+    linha := []string{"nome", "sobrenome", "idade", "email"}
+    // Escrevendo a linha no arquivo
+    writer.Write(linha)
+
+    // Finalizando o escritor e salvando as mudanças no arquivo
+    writer.Flush()
+}
+```
+
+## Aprofundando no uso de CSV em Go
+
+Além de ler e escrever em arquivos CSV, o pacote "encoding/csv" possui outras funcionalidades interessantes, como definir delimitadores personalizados, trabalhar com cabeçalhos de coluna e lidar com possíveis erros durante o processamento do arquivo.
+
+É importante lembrar que, como o formato CSV é simples e bastante flexível, é responsabilidade do desenvolvedor garantir que os dados estejam formatados corretamente antes de trabalhar com eles. Isso inclui tratar possíveis valores nulos e caracteres especiais presentes no arquivo.
 
 ## Veja também
 
-- [Documentação do pacote "encoding/csv" em Go](https://golang.org/pkg/encoding/csv/)
-- [Artigo sobre manipulação de arquivos CSV com Go](https://www.digitalocean.com/community/tutorials/how-to-manipulate-data-in-csv-files-using-go-pt)
-- [Exemplo de uso do pacote "encoding/csv" em um projeto real](https://github.com/golang/example/tree/master/gotypes)
+- Documentação oficial do pacote "encoding/csv": https://golang.org/pkg/encoding/csv/
+- Exemplos de uso de CSV em Go: https://gobyexample.com/reading-files
+- Tutorial em vídeo sobre como trabalhar com CSV em Go: https://www.youtube.com/watch?v=6hFx5yL7bW0

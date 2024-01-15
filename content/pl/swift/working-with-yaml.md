@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Swift: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,39 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z formatem YAML jest nieodłączną częścią programowania w języku Swift, ponieważ jest to popularny sposób zapisywania i przetwarzania danych. Dzięki temu narzędziu możemy w łatwy sposób przechowywać i udostępniać informacje w naszych programach.
+Planujemy zacząć pracę z YAML w Swift? W takim razie dobrze trafiłeś! Ten język znaczników jest często wykorzystywany w aplikacjach i narzędziach do przechowywania danych w formacie tekstowym. Dzięki swojej czytelnej strukturze i prostocie użycia, YAML jest idealnym wyborem dla programistów.
 
 ## Jak to zrobić
 
-Aby rozpocząć pracę z YAML w Swift, musimy najpierw zaimportować odpowiednią bibliotekę. Możemy to zrobić przy użyciu komendy `import YAML` w naszym kodzie. Następnie, możemy utworzyć nowy obiekt typu `YAML` i przypisać do niego nasze dane w postaci tekstu lub tablicy.
+### Instalacja
+
+Aby rozpocząć pracę z YAML w Swift, musisz najpierw zainstalować bibliotekę YAMLSwift. Możesz to zrobić przy użyciu menedżera zależności, takiego jak CocoaPods lub Carthage, lub ręcznie pobrać i dodać ją do swojego projektu.
+
+### Tworzenie pliku YAML
+
+Aby utworzyć plik YAML, możesz użyć następującej struktury:
 
 ```Swift
-import YAML
-
-let data = "imie: Jan\nwiek: 30\nzawod: programista"
-let yaml = YAML(data)
+let yaml = """
+animal: dog
+name: Buddy
+age: 5
+breed: Labrador
+"""
 ```
 
-Teraz, gdy mamy nasze dane zapisane w formacie YAML, możemy je przetworzyć i wyświetlić przy użyciu metod dostępnych w bibliotece. Na przykład, jeśli chcemy wyświetlić imię osoby z naszych danych, możemy wywołać metodę `string(for:)` i przekazać jako argument odpowiedni klucz.
+Warto zauważyć, że klucze i wartości są oddzielone dwukropkiem, a pary klucz-wartość są oddzielone przecinkiem.
+
+### Parsowanie pliku YAML
+
+Aby przetworzyć plik YAML na obiekty w Swift, możesz użyć klasy YamlParser. Na przykład, jeśli chcesz sparsować powyższy przykład, możesz użyć następującego kodu:
 
 ```Swift
-let name = yaml.string(for: "imie") // "Jan"
-print(name)
+let parser = YamlParser()
+let yamlObject = try parser.parse(yaml)
 ```
 
-## Głębsze zagłębienie
+### Odczytywanie danych z obiektu YAML
 
-Język YAML jest bardzo elastyczny i obsługuje różne typy danych, takie jak tekst, liczby, tablice czy nawet obiekty. W naszym przykładzie, zapisaliśmy dane w postaci tekstowej, ale gdybyśmy chcieli użyć tablicy, moglibyśmy to zrobić w następujący sposób:
+Po sparsowaniu pliku YAML na obiekt, możesz odczytać jego wartości w następujący sposób:
 
 ```Swift
-let array = ["jabłko", "banan", "truskawki"]
-let yaml = YAML(array)
-let fruits = yaml.array // ["jabłko", "banan", "truskawki"]
+let animal = yamlObject["animal"]
+print(animal) // Output: dog
+
+let name = yamlObject["name"]
+print(name) // Output: Buddy
+
+let age = yamlObject["age"]
+print(age) // Output: 5
+
+let breed = yamlObject["breed"]
+print(breed) // Output: Labrador
 ```
 
-Dodatkowo, biblioteka YAML oferuje wiele przydatnych metod do przetwarzania danych w tym formacie. Możemy na przykład sprawdzić, czy dany klucz istnieje w naszych danych przy użyciu metody `contains(key:)` lub wyświetlić wszystkie klucze zawarte w obiekcie za pomocą metody `allKeys()`.
+W przypadku gdy klucz nie istnieje, wartość zwracana będzie równa nil.
+
+## Deep Dive
+
+Ponieważ YAML obsługuje różne typy danych, możesz również przechowywać w nim tablice i obiekty w formacie JSON. Możesz również tworzyć zagnieżdżone struktury, co daje większą elastyczność w przechowywaniu danych.
+
+Ponadto, narzędzie Jazzy oferuje możliwość generowania dokumentacji z plików YAML, co znacznie ułatwia zrozumienie struktury danych i umożliwia szybsze wprowadzenie zmian.
 
 ## Zobacz także
 
-- [Dokumentacja biblioteki YAML](https://github.com/behrang/YamlSwift)
-- [Oficjalna strona formatu YAML](https://yaml.org/)
+- [Dokumentacja YAMLSwift](https://github.com/behrang/YAMLSwift)
+- [Narzędzie Jazzy](https://github.com/realm/jazzy)
+- [Oficjalna strona YAML](https://yaml.org/)

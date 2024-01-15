@@ -1,5 +1,6 @@
 ---
-title:                "C++: 기본 인증으로 http 요청 보내기"
+title:                "기본 인증으로 http 요청 보내기"
+html_title:           "C++: 기본 인증으로 http 요청 보내기"
 simple_title:         "기본 인증으로 http 요청 보내기"
 programming_language: "C++"
 category:             "C++"
@@ -11,77 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTTP 요청을 보내는 데 기본 인증을 사용하는 이유는 무엇일까요? 기본 인증은 서버와의 안전한 통신을 위해 사용되며, 사용자의 계정 정보를 보호하기 위해 필요합니다.
+***HTTP 요청**을 본문에 담고 있는 `Basic Authentication`으로 전송하는 이유는 무엇일까요? 아주 간단합니다. `Basic Authentication`은 *사용자 인증*을 위한 가장 기본적인 방법 중 하나입니다. 즉, 서버와 클라이언트 간의 안전한 커뮤니케이션을 보장하기 위함입니다.
 
-## 하는 방법
+## 하는 법
+
+아래의 예시 코드를 참고하여 `Basic Authentication`으로 `HTTP 요청`을 전송하는 방법을 알아보겠습니다.
 
 ```C++
 #include <iostream>
 #include <curl/curl.h>
 
-using namespace std;
+// 예시 URL
+#define URL "https://www.example.com"
 
-// 인증 정보를 저장하는 구조체
-struct UserInfo {
-    const char * username;
-    const char * password;
-};
-
-// 인증 정보를 설정하는 콜백 함수
-static curl_write_callback SetAuth(CURL *curl, curl_header header, char * line, LinkedList * userdata) {
-    // userinfo 구조체에 사용자 정보 저장
-    UserInfo * credentials = (UserInfo*) userdata->content;
-    // HTTP 인증 헤더에 사용자 이름과 비밀번호 설정
-    sprintf(line, "Authorization: Basic %s:%s", credentials->username, credentials->password);
-    return strlen(line);
-}
-
-// HTTP 요청을 보내는 함수
-static void SendHTTPRequest() {
-    // 커버리브를 초기화하기 전 사용자 정보 저장
-    UserInfo credentials = { "username", "password" };
-    // 커버리브 라이브러리 초기화
-    curl_global_init(CURL_GLOBAL_SSL);
-    // 커버리브 핸들 생성
-    CURL * curl = curl_easy_init();
-    if (curl) {
-        // 요청할 URL 설정
-        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-        // 인증 정보 설정
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, SetAuth);
-        // 사용자 정보를 인증 콜백 함수의 매개변수로 넘기기 위해 설정
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &credentials);
-        // HTTP 요청 보내기
-        CURLcode res = curl_easy_perform(curl);
-        // 응답 코드 출력
-        cout << "HTTP response code: " << res << endl;
-
-        // 커버리브 핸들 해제
-        curl_easy_cleanup(curl);
-    }
-    // 커버리브 라이브러리 정리
-    curl_global_cleanup();
-}
+// 사용자 이름과 비밀번호
+#define USERNAME "my_username"
+#define PASSWORD "my_password"
 
 int main() {
-    // HTTP 요청 보내는 함수 호출
-    SendHTTPRequest();
-    return 0;
+  // libcurl 초기화
+  curl_global_init(CURL_GLOBAL_ALL);
+
+  // 새로운 curl 세션 생성
+  CURL *curl = curl_easy_init();
+
+  // URL 설정
+  curl_easy_setopt(curl, CURLOPT_URL, URL);
+
+  // Basic Authentication 설정
+  curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+  curl_easy_setopt(curl, CURLOPT_USERNAME, USERNAME);
+  curl_easy_setopt(curl, CURLOPT_PASSWORD, PASSWORD);
+
+  // 요청 전송
+  CURLcode res = curl_easy_perform(curl);
+  if (res != CURLE_OK) {
+    std::cerr << "Request failed." << std::endl;
+  }
+
+  // curl 세션 종료
+  curl_easy_cleanup(curl);
+
+  // libcurl 해제
+  curl_global_cleanup();
+
+  return 0;
 }
 ```
 
-**출력:**
-
-```
-HTTP response code: 200
-```
+위의 코드를 실행하면 `URL`에 해당하는 웹사이트에 `Basic Authentication`을 포함한 `HTTP 요청`이 전송됩니다.
 
 ## 깊게 들어가기
 
-위의 예제에서는 커버리브(CURL) 라이브러리를 사용하여 HTTP 요청을 보냈습니다. 이 라이브러리는 인터넷에 접근하는 다양한 프로토콜을 지원하며, HTTP는 그 중 하나입니다. 커버리브는 HTTP 요청을 보낼 때 기본 인증을 사용하기 위해 `CURLOPT_WRITEFUNCTION` 매개변수를 설정하는 것으로 인증을 처리합니다. 이를 통해 인증 헤더에 사용자 이름과 비밀번호를 추가하여 안전한 통신을 할 수 있습니다. 그리고 `CURLOPT_WRITEDATA`를 사용하여 사용자 정보를 인증 콜백 함수에 넘겨줍니다. 
+`Basic Authentication`은 `HTTP 요청`의 **Authorization** 헤더를 사용하여 인증 정보를 전송합니다. 즉, 클라이언트가 `Authorization` 헤더를 포함하여 서버에 요청을 보냄으로써 사용자 인증을 요청하고, 서버는 해당 사용자의 인증 정보를 확인한 후 요청을 처리하게 됩니다.
 
-## See Also
+이는 보안 측면에서 안전하지 못한 방법이기 때문에 최근에는 `Basic Authentication` 대신 **OAuth**나 **Token-based Authentication** 등 보다 안전한 방법들이 많이 사용되고 있습니다. 하지만 여전히 몇몇 웹사이트들은 `Basic Authentication`을 사용하고 있기 때문에 알고 있으면 유용할 수 있습니다.
 
-- [CURL 공식 문서](https://curl.haxx.se/libcurl/c)
-- [HTTP 기본 인증에 대한 더 자세한 정보](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [CURL 예제와 사용법](https://curl.haxx.se/libcurl/c/example.html)
+## 참조
+
+* [curl - Basic Authentication](https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html)
+* [HTTP Authentication](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)

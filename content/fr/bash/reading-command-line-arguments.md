@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lecture des arguments en ligne de commande"
+title:                "Lecture des arguments en ligne de commande"
+html_title:           "Bash: Lecture des arguments en ligne de commande"
 simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,78 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes nouveau dans le monde de la programmation Bash, vous vous demandez peut-être pourquoi vous devriez vous intéresser à la lecture des arguments de la ligne de commande. En fait, la lecture des arguments de la ligne de commande peut être extrêmement utile pour automatiser des tâches récurrentes ou pour rendre votre script plus dynamique et flexible.
+Vous vous demandez peut-être pourquoi vous devriez vous intéresser à la lecture des arguments via la ligne de commande? Eh bien, cette compétence peut vous permettre de personnaliser et d'automatiser vos tâches quotidiennes sur votre ordinateur. Cela peut également vous aider à mieux comprendre le fonctionnement de votre système d'exploitation.
 
-## Comment faire
+## Comment
 
-Pour lire les arguments de la ligne de commande en Bash, vous devez utiliser la variable spéciale "$@", qui stocke tous les arguments passés au script lors de son exécution. Voici un exemple de code Bash pour lire ces arguments :
-
-```Bash
-#!/bin/bash
-
-echo "Le premier agument est : $1"
-echo "Le deuxième argument est : $2"
-```
-
-Lors de l'exécution de ce script avec les arguments "Bonjour" et "monde", le résultat sera :
-
-```
-$ ./script.sh Bonjour monde
-Le premier agument est : Bonjour
-Le deuxième argument est : monde
-```
-
-Vous pouvez également utiliser la boucle "for" pour parcourir tous les arguments passés. Voici un exemple :
+La lecture des arguments via la ligne de commande se fait à l'aide de la variable spéciale "$@" qui contient tous les arguments passés au script Bash. Vous pouvez alors utiliser une boucle "for" pour parcourir et traiter chaque argument individuellement. Voici un exemple de code :
 
 ```Bash
 #!/bin/bash
+#Script qui lit tous les arguments et les affiche à l'écran
 
-for arg in "$@"
+for argument in "$@"
 do
-    echo "L'argument est : $arg"
+  echo "Argument: $argument"
 done
 ```
 
-Si vous exécutez ce script avec les arguments "Bonjour" "monde" "!" le résultat sera :
+Si vous exécutez ce script avec la commande "bash script.sh arg1 arg2", vous obtiendrez l'output suivant :
 
 ```
-$ ./script.sh Bonjour monde !
-L'argument est : Bonjour
-L'argument est : monde
-L'argument est : !
+Argument: arg1
+Argument: arg2
 ```
 
-## Plongée en profondeur
-
-Il est également possible de définir des options pour vos arguments de ligne de commande en utilisant la commande "getopt". Cela vous permet de rendre votre script plus convivial en permettant à l'utilisateur de spécifier des options pour personnaliser l'exécution du script. Voici un exemple de code Bash utilisant "getopt" :
+Vous pouvez également utiliser la variable "$#" pour obtenir le nombre total d'arguments passés. Voici un exemple qui affiche un message différent en fonction du nombre d'arguments :
 
 ```Bash
 #!/bin/bash
+#Script qui gère différents cas selon le nombre d'arguments
 
-# Définir les options disponibles
-OPTIONS=abc
-
-# Lire les options passées
-OPTIND=1
-while getopts $OPTIONS opt
-do
-    case $opt in
-        a) echo "Option a sélectionnée" ;;
-        b) echo "Option b sélectionnée" ;;
-        c) echo "Option c sélectionnée" ;;
-    esac
-done
+if [ "$#" -eq 0 ]; then 
+  echo "Aucun argument passé." 
+elif [ "$#" -eq 1 ]; then
+  echo "Un seul argument passé."
+else 
+  echo "Plusieurs arguments passés."
+fi
 ```
 
-En exécutant ce script avec les options "a" "c", le résultat sera :
+Si vous exécutez ce script avec la commande "bash script.sh arg1", vous obtiendrez "Un seul argument passé." Si vous utilisez la commande "bash script.sh arg1 arg2 arg3", vous obtiendrez "Plusieurs arguments passés."
 
-```
-$ ./script.sh -ac
-Option a sélectionnée
-Option c sélectionnée
-```
+## Deep Dive
+
+En plus de la variable spéciale "$@", il existe d'autres moyens de lire les arguments via la ligne de commande en utilisant des options spécifiques telles que "getopts" ou "shift". Ces méthodes peuvent être utiles pour gérer des arguments de façon plus complexe et avec plus de flexibilité. Vous pouvez également utiliser le script "getopt" pour vous aider à traiter les arguments de façon plus avancée.
 
 ## Voir aussi
-- [Documentation Bash - Variables spéciales de la ligne de commande](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
-- [Guide du débutant Bash](https://www.tecmint.com/shell-scripting-hello-world-2/)
-- [Documentation Bash - Utilisation de getopt](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
+
+- [Guide de la ligne de commande pour débutants](https://blog.storagecraft.com/fr/guide-de-la-ligne-de-commande-pour-les-debutants/)
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Scripting Bash pour les débutants](https://www.linux.com/fr/news/quest-ce-que-bash-scripting et comment le faire/)

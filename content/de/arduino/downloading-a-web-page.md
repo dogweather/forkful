@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Arduino: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,58 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Bevor wir uns mit dem Herunterladen von Webseiten in Arduino befassen, stellt sich die Frage: Warum sollte man das überhaupt machen? Nun, es gibt viele Gründe, aber einer der wichtigsten ist die Möglichkeit, Daten aus dem Internet in unsere Projekte zu integrieren. Durch das Herunterladen und Verarbeiten von Webseiteninhalten können wir beispielsweise Echtzeit-Informationen wie Wetterdaten, Nachrichten oder Aktienkurse in unseren Arduino-basierten Geräten anzeigen.
+Das Herunterladen einer Webseite mit einem Arduino kann für verschiedene Projekte nützlich sein, besonders wenn das Gerät über eine Internetverbindung verfügt. Es ermöglicht dem Nutzer, Informationen aus dem Internet abzurufen und in sein Projekt zu integrieren.
 
-## Wie man eine Webseite herunterlädt
+## Anleitung
 
-Das Herunterladen einer Webseite in Arduino mag auf den ersten Blick kompliziert erscheinen, aber es gibt eine relativ einfache Möglichkeit, dies zu erreichen. Wir werden die in Arduino eingebaute Ethernet-Bibliothek verwenden, um eine Verbindung zum Internet herzustellen und die benötigten Daten herunterzuladen.
-
-Zunächst müssen wir in unserem Code die Ethernet-Bibliothek importieren:
+Um mit einem Arduino eine Webseite herunterzuladen, benötigen Sie eine Ethernet Shield-Erweiterung und die entsprechenden Bibliotheken. Zuerst müssen Sie die Ethernet-Bibliothek in Ihrem Code einbinden:
 
 ```Arduino
 #include <Ethernet.h>
 ```
 
-Als nächstes definieren wir unsere Variablen für die IP-Adresse und den Host der Webseite, die wir herunterladen möchten:
+Anschließend müssen Sie eine Ethernet-Verbindung mit Ihrem Netzwerk herstellen. Dazu müssen Sie die IP-Adresse, die Subnetzmaske, das Standard-Gateway und die MAC-Adresse Ihres Arduinos angeben:
 
 ```Arduino
-byte server[] = { 173,194,112,115 }; 
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // MAC-Adresse des Arduino
+IPAddress ip(192, 168, 1, 177); // IP-Adresse des Arduino
+IPAddress subnet(255, 255, 255, 0); // Subnetzmaske des Netzwerks
+IPAddress gateway(192, 168, 1, 1); // Standard-Gateway des Netzwerks
 
-// Das ist die IP-Adresse von Google. 
-// Du kannst sie durch die IP-Adresse oder den Host deiner Zielseite ersetzen.
+Ethernet.begin(mac, ip, gateway, subnet); // Verbindung herstellen
 ```
 
-Dann erstellen wir ein Ethernet-Client-Objekt und stellen eine Verbindung zum Server her:
+Sobald die Verbindung besteht, können Sie die EthernetClient-Bibliothek verwenden, um eine HTTP-Verbindung zu einer Website herzustellen. Dazu müssen Sie die URL der Seite und die TCP-Portnummer angeben:
 
 ```Arduino
-EthernetClient client;
-if (client.connect(server, 80)) {
-  // Verbindung erfolgreich hergestellt
+EthernetClient client; // EthernetClient-Objekt erstellen
+client.connect("www.beispielseite.com", 80); // Verbindung zur Seite herstellen
+```
+
+Als nächstes müssen Sie eine HTTP-Anfrage senden. Die genaue Anfrage hängt von der Webseite ab, die Sie herunterladen möchten. Eine einfache Anfrage mit der Seite "/index.html" sieht zum Beispiel so aus:
+
+```Arduino
+client.println("GET /index.html HTTP/1.1"); // HTTP-Anfrage senden
+client.println("Host: www.beispielseite.com"); // Host-Header angeben
+client.println("Connection: close"); // Verbindung schließen
+client.println(); // Leerzeile
+```
+
+Nachdem die Anfrage gesendet wurde, können Sie die empfangenen Daten lesen. Dazu müssen Sie eine Schleife erstellen und jedes empfangene Zeichen einzeln auslesen. Wenn die Verbindung geschlossen wird, ist die Schleife zu beenden:
+
+```Arduino
+while (client.connected()) { // Solange die Verbindung besteht
+  if (client.available()) { // Wenn Daten empfangen wurden
+    char c = client.read(); // Nächstes Zeichen lesen
+    Serial.print(c); // Zeichen ausgeben
+  }
 }
+
+client.stop(); // Verbindung schließen
 ```
 
-Als nächstes senden wir einen HTTP-GET-Request an den Server, um die Seite herunterzuladen und die Antwort in einem String zu speichern:
+In diesem Beispiel werden die empfangenen Daten einfach auf der seriellen Konsole ausgegeben. Sie können sie aber auch in einer Variablen speichern oder weiterverarbeiten. Beachten Sie auch, dass viele Webseiten HTML-Tags und andere zusätzliche Inhalte enthalten, die Sie ggf. filtern müssen, um an die gewünschten Informationen zu gelangen.
 
-```Arduino
-client.print("GET / HTTP/1.1\n");
-client.print("Host: google.com\n");
-client.print("Connection: close\n");
-client.println();
-String response = client.readStringUntil('\n');
-```
+## Tiefgründig
 
-Wir schließen die Verbindung und können nun den heruntergeladenen Inhalt verarbeiten, beispielsweise indem wir ihn auf dem seriellen Monitor ausgeben:
+Der oben beschriebene Ansatz ist sehr einfach und eignet sich für einfache Projekte oder zum Lernen. Wenn Sie jedoch komplexere Anfragen senden oder mehr Kontrolle über die Verbindung haben möchten, sollten Sie sich mit der HTTPClient-Bibliothek auseinandersetzen. Diese bietet zusätzliche Funktionen wie die Möglichkeit, Anfrage-Header anzupassen oder SSL-Verbindungen herzustellen.
 
-```Arduino
-client.stop();
-Serial.println(response);
-```
-
-## Tiefere Einblicke
-
-Wir haben nun gesehen, wie einfach es ist, eine Webseite herunterzuladen und ihre Inhalte in unseren Arduino-Code zu integrieren. Aber wie funktioniert das genau? Nun, wenn wir eine Webseite besuchen, fordern wir sie eigentlich über das HTTP-Protokoll an. Dies ist ein Kommunikationsprotokoll, das es ermöglicht, Hypertext-Dokumente im Internet abzurufen. Der HTTP-GET-Request, den wir in unserem Code verwendet haben, ist also die Anforderung, die wir an den Server senden, um die gewünschte Seite herunterzuladen. Die Serverantwort besteht aus einem HTTP-Statuscode, gefolgt von den eigentlichen Inhalten der Seite.
+Sie können auch versuchen, verschiedene APIs zu nutzen, die es Ihnen ermöglichen, Daten von dynamischen Webseiten abzurufen. Ein Beispiel ist das "Simple HTML DOM" Paket, das die Verarbeitung und Extraktion von Daten aus HTML erleichtert.
 
 ## Siehe auch
 
-- [Ethernet Library Dokumentation für Arduino](https://www.arduino.cc/en/Reference/Ethernet)
-- [HTTP-GET-Request Erklärung](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
+- [Offizielle Arduino Ethernet-Library Dokumentation](https://www.arduino.cc/en/Reference/Ethernet)
+- [HTTPClient Bibliothek](https://github.com/amcewen/HttpClient)
+- [Simple HTML DOM Paket](https://github.com/shumatech/Arduino-Websocket)

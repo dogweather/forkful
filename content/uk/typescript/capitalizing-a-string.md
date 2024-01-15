@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Капіталізація рядка"
+title:                "Капіталізація рядка"
+html_title:           "TypeScript: Капіталізація рядка"
 simple_title:         "Капіталізація рядка"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Часто, коли програмісти працюють зі стрічками в TypeScript, їм потрібно змінити регістр окремих символів у стрічці. Це може бути необхідно для того, щоб вивести стрічку в певному форматі, або для порівняння стрічок без врахування регістру символів. Також це може бути корисно при валідації введених даних.
+## Чому 
+Інколи нам потрібно змінити першу літеру рядка на велику букву. Це корисно для коректного виводу на екран або для виконання певних операцій над текстом.
 
-## Як досягти
-
-Існує кілька різних способів змінити регістр в стрічці в TypeScript, але найпростішим і найпоширенішим є використання методу `.toUpperCase()` для зміни всіх символів на великі, або `.toLowerCase()` для зміни на малі. Наприклад:
-
+## Як
 ```TypeScript
-let str = "ПрИкЛаД";
-console.log(str.toUpperCase()); // виведе "ПРИКЛАД"
+function capitalizeString(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+const input = "typescript";
+console.log(capitalizeString(input));
+// Output: Typescript
 ```
+Цей приклад показує як змінити першу літеру рядка на велику за допомогою вбудованої функції `toUpperCase()` та методу `slice()` для отримання підрядка після першої літери.
 
-Іншим варіантом є використання методу `.replace()` для заміни конкретної частини стрічки на великі або малі символи. Наприклад:
-
+### Використання регулярних виразів
 ```TypeScript
-let str = "ПрИкЛаД";
-console.log(str.replace("кЛ", "кл").toUpperCase()); // виведе "ПРИКЛАД"
+function capitalizeString(str: string): string {
+  return str.replace(/\b\w/, (c) => c.toUpperCase());
+}
+
+// Or with ES6 syntax
+const capitalizeString = (str: string): string => {
+  return str.replace(/\b\w/, (c) => c.toUpperCase());
+};
+
+const input = "javascript";
+console.log(capitalizeString(input));
+// Output: Javascript
 ```
+У цьому прикладі ми використовуємо метод `replace()` та регулярний вираз `\b\w`, який означає першу літеру кожного слова у рядку. Функція `toUpperCase()` виконує зміну першої літери на велику.
 
-Також існує можливість використання методу `.charAt()` для зміни регістру лише одного символу. Наприклад:
+## Deep Dive
+У TypeScript є декілька вбудованих методів для роботи зі строками, які можна використовувати для капіталізації рядків.
+- `toUpperCase()` - змінює всі букви рядка на великі.
+- `toLowerCase()` - змінює всі букви рядка на малі.
+- `charAt()` - повертає символ за заданим індексом у рядку.
+- `slice()` - повертає підрядок рядка, починаючи з вказаного індексу.
 
-```TypeScript
-let str = "прИклАд";
-console.log(str.charAt(0).toUpperCase() + str.slice(1)); // виведе "ПрИклАд"
-```
+У TypeScript також є можливість використовувати функціональне програмування для капіталізації рядків. Це дозволяє використовувати зворотній виклик (callback) для зміни кожної букви у рядку.
 
-## Глибоке занурення
-
-Більш складні завдання щодо зміни регістру можна досягнути шляхом використання різних регулярних виразів і методів. Наприклад, для зміни першої літери кожного слова на велику, можна застосувати метод `.replace()` з використанням регулярного виразу `/(\b\w)/g`, який вибирає першу літеру кожного слова, і методу `.toUpperCase()` для зміни регістру. Наприклад:
-
-```TypeScript
-let str = "прИклАд з ПЕРШОГО слова";
-console.log(str.replace(/(\b\w)/g, (match) => match.toLocaleUpperCase())); // виведе "ПрИклАд З ПЕРШОГО Слова"
-```
-
-Цей приклад може бути складнішим для розуміння, але дозволяє змінювати регістр не тільки в одному конкретному місці, а у всій стрічці.
-
-## Дивись також
-
-- [Документація TypeScript](https://www.typescriptlang.org/docs/)
-- [Регулярні вирази в TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Використання методів рядків в TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+## See Also
+- [TypeScript документація по рядках](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Регулярні вирази у TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#regular-expressions)

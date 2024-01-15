@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Omvandling av datum till en sträng"
-simple_title:         "Omvandling av datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Swift: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna konvertera ett datum till en sträng är en grundläggande och ofta användbar färdighet för utvecklare. Det gör det möjligt för oss att presentera datumet på ett mer läsbart sätt för användare eller för att lagra det i en databas.
 
-Att konvertera ett datum till en sträng är en viktig färdighet inom Swift programmering eftersom det gör det möjligt att presentera datumdata på ett läsbart och användbart sätt. Det är också användbart för att jämföra datum eller söka efter specifika datum i en databas.
-
-## Hur man gör det
-
-Det finns flera sätt att konvertera ett datum till en sträng i Swift, men det mest använda sättet är genom användning av `DateFormatter` klassen. Nedan följer ett exempel på hur man använder denna klass för att konvertera ett datum till en sträng:
+## Så här gör du
+Konvertering av ett datum till en sträng kan göras med Swifts inbyggda funktion `toString()`. Här är ett exempel på hur man konverterar ett aktuellt datum till en sträng:
 
 ```Swift
-let date = Date() // Skapar ett datumobjekt som representerar nuvarande tidpunkt
-let dateFormatter = DateFormatter() // Skapar en instans av DateFormatter klassen
-dateFormatter.dateFormat = "dd/MM/yyyy" // Sätter formatet för strängen som ska returneras
-let dateString = dateFormatter.string(from: date) // Använder DateFormatter för att konvertera datumet till en sträng
-print(dateString) // Skriver ut resultatet: "25/06/2021"
+let currentDate = Date()
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd-MM-yyyy" // bestämmer strängens format
+let dateString = dateFormatter.string(from: currentDate)
+print(dateString) // utmatning: 30-05-2020
 ```
 
-Detta är bara ett enkelt exempel och det finns många fler format och funktioner som kan användas för att konvertera datum till strängar i Swift.
+I exemplet skapar vi först ett `Date` objekt för det aktuella datumet. Sedan skapar vi en `DateFormatter` och anger det önskade formatet för vår sträng. Slutligen använder vi `string(from:)` för att konvertera datumet till en sträng enligt det angivna formatet.
 
 ## Djupdykning
+Det finns många olika format som kan användas för att konvertera datum till strängar. Här är några vanliga format som kan användas med `dateFormat`:
 
-När vi konverterar ett datum till en sträng, är det viktigt att tänka på språk- och regioninställningarna. Om vi vill att strängen ska visas på ett specifikt språk eller i ett specifikt format, måste vi se till att dessa inställningar är korrekta i `DateFormatter` objektet.
+- `dd-MM-yyyy`: dag-månad-år (ex: 30-05-2020)
+- `MM/dd/yyyy`: månad/dag/år (ex: 05/30/2020)
+- `EEEE, MMM d, yyyy`: veckodag, tre bokstäver för månad, dag och år (ex: Saturday, May 30, 2020)
+- `h:mm a`: timme:minut AM/PM (ex: 9:30 AM)
 
-En annan viktig sak att tänka på är tidszoner. Om vi konverterar ett datum från en annan tidszon till vår lokala tidszon, måste vi ta hänsyn till tidszoner och eventuellt justera tiden för att få korrekta resultat.
+Det är viktigt att välja rätt format för det syfte där strängen kommer att användas, såsom visning i ett gränssnitt eller lagring av data i en databas. Det finns också olika inställningar för `locale` som kan påverka hur datum och tider visas beroende på var användaren befinner sig i världen.
 
 ## Se även
-
-- [Apple Dokumentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift Developer Blog: Date and Time in Swift](https://developer.apple.com/documentation/foundation/archives/date_and_time)
-- [StackOverflow: Formatting dates in Swift](https://stackoverflow.com/questions/25533147/format-nsdate-to-dd-mmm-yyyy-in-swift)
+- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Stack Overflow: Convert Date to String in Swift](https://stackoverflow.com/questions/35700281/convert-date-to-string-in-swift)

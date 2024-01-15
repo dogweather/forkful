@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Majusculation d'une chaîne de caractères"
+html_title:           "Elm: Majusculation d'une chaîne de caractères"
+simple_title:         "Majusculation d'une chaîne de caractères"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,39 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Elm, vous savez probablement qu'il n'y a rien de plus frustrant que de devoir corriger des erreurs de casse dans une chaîne de caractères. Heureusement, avec la fonction `String.toUpper`, cela devient un jeu d'enfant ! Découvrez dans cet article comment capitaliser facilement une chaîne de caractères en Elm.
+Tout d'abord, pourquoi irions-nous vouloir capitaliser une chaîne de caractères en Elm ? La réponse est simple : pour une meilleure lisibilité et pour respecter certaines conventions de codage.
 
-## Comment Faire
+## Comment faire
 
-Pour capitaliser une chaîne de caractères en Elm, il vous suffit d'utiliser la fonction `String.toUpper` comme ceci :
+Pour capitaliser une chaîne de caractères en Elm, il existe une fonction prédéfinie appelée `String.toUpper` qui prend une chaîne de caractères en entrée et renvoie une version en majuscules de cette chaîne. Voici un exemple de code avec une chaîne de caractères définie et l'utilisation de la fonction `String.toUpper` :
 
-```Elm
+```elm
 myString = "bonjour"
-String.toUpper myString
+capitalizedString = String.toUpper myString
 ```
 
-Et voilà, vous obtenez maintenant `"BONJOUR"` comme résultat ! Vous pouvez également utiliser cette fonction directement dans une chaîne de caractères comme ceci :
+La variable `capitalizedString` contiendra alors la valeur "BONJOUR". On peut également directement utiliser la fonction `String.toUpper` dans une expression, comme ceci :
 
-```Elm
-greeting = "Bonjour, je suis Eliot."
-"Ce n'est qu'un petit " ++ String.toUpper greeting
+```elm
+message = "bienvenue " ++ String.toUpper "utilisateur"
 ```
 
-Maintenant, le résultat sera `"Ce n'est qu'un petit BONJOUR, JE SUIS ELIOT."` ! N'est-ce pas simple ?
+Dans cet exemple, la variable `message` contiendra la valeur "bienvenue UTILISATEUR". On peut également utiliser des variables à l'intérieur de la fonction `String.toUpper` si on le souhaite.
 
-## Plongée En Profondeur
+## Plongeon en profondeur
 
-Maintenant que vous savez comment capitaliser une chaîne de caractères en Elm, vous pouvez également utiliser la fonction `String.toTitle` pour obtenir une chaîne de caractères avec la première lettre de chaque mot en majuscule. Par exemple :
+En plus de la fonction `String.toUpper`, il existe d'autres options pour capitaliser une chaîne de caractères en Elm, telles que l'utilisation de la bibliothèque `elm-community/string-extra` ou la création de sa propre fonction personnalisée en utilisant des fonctions de manipulation de chaînes comme `String.toList` et `String.fromList`.
 
-```Elm
-myString = "bonjour, je suis Eliot."
-String.toTitle myString
-```
+Il est également important de noter que la fonction `String.toUpper` ne fonctionne pas sur tous les caractères, en particulier ceux avec des accents ou des caractères spéciaux. Dans ce cas, il est nécessaire d'utiliser des fonctions de conversion spécifiques, comme `String.toUpperWithLocale` pour prendre en compte les spécificités de chaque langue.
 
-Le résultat sera `"Bonjour, Je Suis Eliot."`. Vous pouvez également utiliser la fonction `String.toLower` pour obtenir une chaîne de caractères en minuscules.
+## Voir aussi
 
-## Voir Aussi
+Pour en savoir plus sur les fonctions de manipulation de chaînes en Elm, n'hésitez pas à consulter la documentation officielle sur les chaînes de caractères ainsi que la bibliothèque `elm/community/string-extra`.
 
-- Documentation officielle de Elm sur les chaînes de caractères : https://guide.elm-lang.org/strings/
-- Tutoriel en français sur Elm : https://elm-tutorial.org/fr/
-- Forum de la communauté Elm : https://discourse.elm-lang.org/
+- [Documentation officielle - Chaînes de caractères](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Bibliothèque elm/community/string-extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest)

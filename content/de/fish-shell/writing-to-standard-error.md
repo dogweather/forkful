@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "Fish Shell: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum schreiben wir in die Standardfehlerausgabe? 
 
-Das Schreiben in den Standardfehler oder "Standard Error" ist ein wichtiger Teil des Programmierens in der Fish Shell. Durch das Schreiben von Fehlern und Warnungen auf den Standardfehler können Sie Fehler in Ihrem Code identifizieren und beheben. Es ermöglicht Ihnen auch, Benutzerinnen und Benutzer über potenzielle Probleme oder unerwartete Ergebnisse zu informieren. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man in Fish Shell effektiv auf den Standardfehler schreibt.
+Wenn du in der Fish Shell arbeitest, könnte es vorkommen, dass du Programmierbefehle eingibst, die Fehler verursachen. Um diese Fehler zu erkennen und zu debuggen, ist es wichtig zu wissen, wie du sie in die Standardfehlerausgabe schreibst. In diesem Artikel werde ich erklären, warum wir in die Standardfehlerausgabe schreiben und wie du dies in der Fish Shell durchführen kannst.
 
-## Wie geht man vor?
+## So geht's:
 
-Um in Fish Shell auf den Standardfehler zu schreiben, können Sie die `echo`-Befehlsfunktion verwenden. Diese Funktion gibt den angegebenen Text auf den Standardausgang (Standard Output) oder den Standardfehler aus, je nach den angegebenen Parametern. Um auf den Standardfehler zu schreiben, müssen Sie das Flag `>&2` verwenden. Dies weist Fish Shell an, den Text auf den Standardfehler statt auf den Standardausgang zu schreiben.
-
-```Fish Shell
-echo "Dies ist eine Fehlermeldung" >&2
-```
-
-Die Verwendung von `>&2` nach dem Text ist wichtig, da Fish Shell es sonst wie einen Teil der Nachricht betrachtet und es auf den Standardausgang schreibt. Um sicherzustellen, dass Ihr Code richtig funktioniert, sollten Sie immer auf den Standardfehler schreiben, wenn Sie Fehler und Warnungen ausgeben.
-
-Sie können auch den vorinstallierten Befehl `echo_err` verwenden, der speziell zum Schreiben auf den Standardfehler entwickelt wurde. Hier ist ein Beispiel:
+Um in die Standardfehlerausgabe zu schreiben, verwenden wir den Befehl `echo` mit dem Parameter `-e` und dem Redirect-Operator `2>`, der den Ausgabestrom in den Standardfehler umleitet. Hier ist ein Beispiel:
 
 ```Fish Shell
-echo_err "Dies ist eine weitere Fehlermeldung"
+echo -e "Dies ist ein Fehler." 2>
 ```
 
-## Tiefergehende Informationen
+Diese Zeile wird den Text "Dies ist ein Fehler." in die Standardfehlerausgabe schreiben. Du kannst auch Variablen in die Standardfehlerausgabe schreiben, indem du sie in geschweifte Klammern setzt, wie in diesem Beispiel:
 
-Das Schreiben auf den Standardfehler wird in Fish Shell automatisch mit den Befehlen `status` und `echo_err` gemacht, wenn Sie Fehler oder Warnungen haben. Aber Sie können auch manuell auf den Standardfehler schreiben, indem Sie das `>&2` Flag verwenden, wie in diesem Artikel gezeigt wurde.
+```Fish Shell
+set variable "Fehler"
+echo -e "Es gab einen ${variable}." 2>
+```
 
-Es ist auch wichtig zu wissen, dass Fish Shell einen speziellen Statuscode zurückgibt, wenn auf den Standardfehler geschrieben wird. Dieser Code kann von anderen Programmen oder Skripten ausgelesen werden, um zu bestimmen, ob ein Fehler aufgetreten ist. Der Code wird `1` sein, wenn auf den Standardfehler geschrieben wurde, und `0`, wenn alles erfolgreich war.
+Die Ausgabe wird folgendermaßen aussehen:
 
-## Siehe auch
+```
+Es gab einen Fehler.
+```
 
-Hier sind einige nützliche Links, die Ihnen helfen können, mehr über das Schreiben auf den Standardfehler in Fish Shell zu erfahren:
+## Tiefere Einblicke:
 
-- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current/cmds/echo_err.html
-- Ein praktisches Tutorial zum Schreiben auf den Standardfehler: https://blog.typcodex.com/fishing-writing-to-standard-error-with-fish-shell/
-- Die verschiedenen Möglichkeiten, Fehler in Fish Shell zu behandeln: https://www.2daygeek.com/redirect-linux-shell-script-errors-sterr-to-devnull-stdout/
+Wenn du tiefer in das Schreiben in die Standardfehlerausgabe eintauchen möchtest, gibt es einige weitere Dinge, die du beachten kannst. 
+
+- Du kannst die Fehlermeldungen in Farbe formatieren, indem du den `red` oder `err` Farbcode verwendest. Zum Beispiel `echo -e (err "Fehlermeldung") 2>`.
+- Du kannst auch "Pipefail" verwenden, um Fehler in Pipelines zu erkennen und in die Standardfehlerausgabe zu schreiben. Hier ist ein Beispiel: 
+
+```Fish Shell
+set -o pipefail
+command1 | command2 2>
+```
+
+Dies wird Fehler in der Pipeline erkennen und in die Standardfehlerausgabe schreiben.
+
+## Siehe auch:
+
+- [Fish Shell Documentation - Standardfehlerausgabe schreiben](https://fishshell.com/docs/current/commands.html#echo)
+- [Fish Shell Tutorial - Fehlerbehandlung](https://fishshell.com/docs/current/tutorial.html#error-handling)
+- [Befehlsreferenz - Fish Shell Befehle](https://fishshell.com/docs/current/cmds.html)

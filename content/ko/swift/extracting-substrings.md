@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "문자열 추출하기"
+html_title:           "Swift: 문자열 추출하기"
+simple_title:         "문자열 추출하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 
+우리는 프로그래밍을 할 때, 문자열을 다루는 경우가 많습니다. 그리고 때때로, 우리는 문자열에서 원하는 부분만 추출해야 할 때가 있습니다. 이때, **서브스트링 추출**을 사용하면 유용합니다. 
 
-사람들이 문자열에서 일부 문자열을 추출하는 것에 참여하기 위한 이유는 무엇일까요? 이 작업은 데이터 처리에서 매우 일반적이고 유용하며, 특정한 일을 수행하기 위해 문자열의 특정 부분만을 필요할 때 유용합니다. 또한 문자열에서 작업할 수있는 방법을 확장하여 더 복잡한 작업을 수행할 수도 있습니다.
-
-## 추출하는 방법
+## 사용 방법 
+서브스트링을 추출하는 방법은 간단합니다. 먼저 추출할 문자열을 `String` 변수에 저장합니다. 그 다음, `substring` 메소드를 사용하여 시작 지점과 길이를 지정해주면 됩니다. 아래의 예시를 살펴보세요.
 
 ```Swift
-// 주어진 문자열
-let str = "Hello World!"
+let myString = "Hello, world!"
+let mySubstring = myString.substring(from: 7, length: 5)
 
-// 첫 번째 문자부터 세 번째 문자까지 추출
-let subString = str[0...2]
-
-// 출력: "Hel"
-print(subString)
-
-// 마지막 문자만 추출
-let lastChar = str.last
-
-// 출력: "!"
-print(lastChar)
+print(mySubstring) // output: world
 ```
 
-### 내부 동작
+위의 예시에서는 `substring` 메소드를 사용하여 `"world"`라는 서브스트링을 추출했습니다. `from` 매개변수는 시작 지점을 나타내고, `length` 매개변수는 추출할 문자열의 길이를 나타냅니다. 
 
-위의 예시에서 보는 것처럼, 문자열에서 일부분을 추출하는 방법은 간단합니다. 대괄호를 사용하여 인덱스나 범위를 지정하여 사용할 수 있습니다. 또한 속성 `first`와 `last`를 사용하여 첫 번째와 마지막 문자를 추출할 수도 있습니다. 이러한 작업은 실제로 문자열의 `startIndex`와 `endIndex`를 사용하여 수행됩니다.
+## 깊게 들어가보기 
+서브스트링 추출은 `substring` 메소드 외에도 다양한 방법으로 사용할 수 있습니다. 예를 들어, `prefix` 메소드를 사용하면 문자열의 맨 앞부터 지정한 길이만큼의 서브스트링을 추출할 수 있고, `suffix` 메소드를 사용하면 문자열의 맨 뒤부터 지정한 길이만큼의 서브스트링을 추출할 수 있습니다.
 
-## 깊게 파고들기
+또한, 서브스트링에서도 다양한 기능을 사용할 수 있습니다. 예를 들어, `contains` 메소드를 사용하면 해당 서브스트링이 원본 문자열에 포함되어 있는지 확인할 수 있고, `replacingOccurrences` 메소드를 사용하면 특정 문자열을 다른 문자열로 대체할 수 있습니다. 
 
-문자열에서 일부분을 추출하는 것은 보통 간단한 작업으로 여겨집니다. 그러나 Swift의 내부 동작을 이해하고 이를 활용하여 더 복잡한 작업을 수행할 수 있다면 더욱 효율적인 프로그래밍을 할 수 있습니다. 예를들어, `substring(with: )` 메소드를 사용하면 중간에 문자열을 추출할 수 있으며, `contains()` 메소드를 사용하여 문자열 내에 특정 문자열이 포함되어 있는지 검사할 수도 있습니다.
+## 더 알아보기 
+- [Apple 공식 문서 - String](https://developer.apple.com/documentation/swift/string)
+- [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [String Cheat Sheet](https://goshdarnclosures.com/2019/08/23/string-cheat-sheet.html)
 
-## 더 찾아보기
+## 참고 자료 
+- [Swift에서 문자열 다루기](https://blog.naver.com/ksg5141/221387136067)
+- [Swift의 String을 슬라이싱하거나 문자열에서 부분 추출하는 방법](https://m.blog.naver.com/PostView.nhn?blogId=naemin1127&logNo=220290913436&proxyReferer=https:%2F%2Fwww.google.com%2F)
 
-[Apple 개발 문서](https://developer.apple.com/documentation/swift/string/2894561-substring)에서 `String` 클래스의 `substring(with: )`와 `contains()` 메소드에 대한 자세한 설명을 확인할 수 있습니다.
+---
 
-[Ray Wenderlich](https://www.raywenderlich.com/150073/swift-tutorial-extract-substrings-nsstring)에서는 `NSString`의 메소드를 사용하여 문자열에서 일부분을 추출하는 다양한 방법을 배울 수 있습니다.
-
-[AppCoda](https://www.appcoda.com/swift-string/)에서는 `Character`와 `String`사이의 변환 및 문자열에서 작업을 수행하는 다른 유용한 메소드에 대해 알아볼 수 있습니다.
-
-## 참고
-
-[Swift 문자열 추출](https://ko.jeffreyfreeman.me/programming/2017/11/14/swift-string-extracting/), [Jeffreyfreeman](https://ko.jeffreyfreeman.me/) 블로그의 기사를 참조하였습니다.
+*번역: 이 글은 Swift에서 문자열에서 서브스트링을 추출하는 방법에 대해 알아봤습니다. 문자열 다루는 기능을 더 알아보고 싶다면 위의 링크를 참고하세요!*

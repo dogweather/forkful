@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "PHP: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,61 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Welt der PHP-Programmierung gibt es oft die Notwendigkeit, temporäre Dateien zu erstellen. Dies kann aus verschiedenen Gründen geschehen, wie zum Beispiel zum Zwischenspeichern von Daten oder zum Erstellen von Sicherungskopien. In diesem Artikel werden wir uns ansehen, wie man in PHP temporäre Dateien erstellen kann und warum es eine nützliche Fähigkeit ist.
+Das Erstellen von temporären Dateien ist eine nützliche Technik in der PHP-Programmierung, um Daten vorübergehend zu speichern und zu verarbeiten, ohne das eigentliche System zu beeinträchtigen. Dies kann hilfreich sein, wenn zum Beispiel große Datenmengen verarbeitet werden müssen oder es Verbindungsprobleme mit externen Ressourcen gibt.
 
-## Wie man es macht
+## Wie geht das?
 
-Die Erstellung einer temporären Datei in PHP kann recht einfach erfolgen. Hier ist ein Beispielcode mit einem Kommentar, der den Prozess erklärt:
-
-```PHP
-// Hier wird ein eindeutiger Dateiname generiert, der aus einem Präfix und einer zufälligen Zahl besteht
-$filename = tempnam(sys_get_temp_dir(), 'prefix_');
-
-// Jetzt kann die Datei geöffnet und beschrieben werden
-$file = fopen($filename, "w");
-fwrite($file, "Hier ist der Inhalt der temporären Datei");
-fclose($file);
-
-// Der Inhalt kann nun ausgegeben werden, um zu überprüfen, dass die Datei erfolgreich erstellt wurde
-echo file_get_contents($filename);
-```
-
-Die Ausgabe der oben genannten Beispiele wird folgendes sein:
-
-```
-Hier ist der Inhalt der temporären Datei
-```
-
-## Tiefere Einblicke
-
-Jetzt, wo wir wissen, wie man in PHP eine temporäre Datei erstellt, schauen wir uns einige wichtige Informationen dazu an. Die `tempnam()` Funktion generiert einen eindeutigen Dateinamen und erstellt gleichzeitig die Datei. Sie akzeptiert zwei Parameter: das Verzeichnis, in dem die Datei erstellt werden soll, und ein Präfix, das dem Dateinamen vorangestellt wird.
-
-Es gibt auch eine andere Funktion, `tmpfile()`, die eine temporäre Datei erstellt und direkt öffnet. Diese Funktion ist besonders nützlich, wenn Sie die Datei direkt beschreiben möchten. Hier ist ein Beispiel:
+Das Erstellen einer temporären Datei in PHP ist relativ einfach. Wir verwenden die Funktion `tmpfile()`, die uns ein Objekt vom Typ `resource` zurückgibt. Dieses Objekt kann dann wie eine normale Datei behandelt werden.
 
 ```PHP
-// Eine temporäre Datei wird erstellt und geöffnet
-$file = tmpfile();
-
-// Schreibt etwas in die Datei
-fwrite($file, "Hier ist der Inhalt der temporären Datei");
-
-// Der Inhalt wird ausgegeben
-echo fread($file, 54);
-
-// Die Datei wird geschlossen und gelöscht
-fclose($file);
+<?php
+$temp_file = tmpfile(); // Erstellt eine temporäre Datei
+fwrite($temp_file, "Dies ist ein Test"); // Schreibt Daten in die Datei
+echo fread($temp_file, 4096); // Gibt die Daten aus der Datei aus
+fclose($temp_file); // Schließt die Datei und löscht sie automatisch
 ```
 
-Die Ausgabe wird folgendes sein:
+Das obige Beispiel zeigt, wie wir eine temporäre Datei erstellen, Daten in sie schreiben und dann lesen und schließen können. Beachten Sie, dass die temporäre Datei automatisch gelöscht wird, wenn sie geschlossen wird, so dass Sie sich keine Gedanken darüber machen müssen.
 
-```
-Hier ist der Inhalt der temporären Datei
+## Tiefer eintauchen
+
+Neben der oben gezeigten einfachen Verwendung gibt es auch einige Optionen, die Sie bei der Verwendung von `tmpfile()` berücksichtigen sollten. Zum Beispiel werden standardmäßig die temporären Dateien im Temp-Verzeichnis des Systems gespeichert. Sie können jedoch auch einen benutzerdefinierten Pfad festlegen, indem Sie `sys_get_temp_dir()` verwenden und das Ergebnis als Parameter an `tmpfile()` übergeben.
+
+```PHP
+<?php
+$temp_path = './temp/'; // Benutzerdefinierter Pfad
+$temp_file = tmpfile(sys_get_temp_dir()); // Verwenden Sie den benutzerdefinierten Pfad
 ```
 
-Man muss allerdings beachten, dass die `tmpfile()` Funktion die Datei sofort öffnet, wodurch sie unabhängig von der `fclose()` Funktion nicht automatisch gelöscht wird. Sie müssen die Datei selbst mit der `unlink()` Funktion löschen.
+Darüber hinaus können Sie auch die Größe der temporären Datei begrenzen, indem Sie als zweiten Parameter in `tmpfile()` die maximale Größe in Bytes angeben.
 
 ## Siehe auch
 
-- PHP-Dokumentation zu [tempnam()](https://www.php.net/manual/en/function.tempnam.php)
-- PHP-Dokumentation zu [tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- W3Schools-Artikel über [Temporäre Dateien in PHP](https://www.w3schools.com/php/php_ref_filesystem.asp)
+Für weitere Informationen über das Erstellen von temporären Dateien in PHP empfehle ich die offizielle Dokumentation:
+
+- [PHP: tmpfile - Manual](https://www.php.net/manual/en/function.tmpfile.php)
+- [PHP: sys_get_temp_dir - Manual](https://www.php.net/manual/en/function.sys-get-temp-dir.php)

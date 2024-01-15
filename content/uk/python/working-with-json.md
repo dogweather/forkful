@@ -1,5 +1,6 @@
 ---
-title:                "Python: Робота з json"
+title:                "Робота з json"
+html_title:           "Python: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Python"
 category:             "Python"
@@ -9,56 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Чому 
 
-Робота з форматом JSON є дуже корисною для програмістів, які працюють зі структурованими данними. Використання JSON дозволяє зберігати та обмінюватися даними між різними програмами та системами без проблем з обробкою різних форматів.
+В сьогоднішньому світі обмін даними є незамінним елементом програмування. Крім того, робота з даними в форматі JSON є швидшою та більш зручною, оскільки цей формат є стандартом для обміну даними в Інтернеті.
 
-## Як працювати з JSON у Python
-
-Щоб почати роботу з JSON у Python, спочатку необхідно імпортувати модуль `json`:
+## Як
 
 ```Python
 import json
+ 
+# створення простого об'єкта JSON
+user = {
+  "name": "Анна",
+  "age": 25,
+  "city": "Київ"
+}
+ 
+# перетворення об'єкта в JSON строку
+user_json = json.dumps(user)
+print(user_json)
+
+# виведення значення конкретного ключа
+print(user["name"])
+
+# розбирання JSON строку в об'єкт Python
+car_string = '{"brand": "Mercedes", "model": "E-Class", "year": 2020}'
+car = json.loads(car_string)
+print(car["model"])
 ```
 
-Потім можна створити змінну та задати у неї дані у форматі JSON:
+Вивід:
 
-```Python
-data = {"name": "John", "age": 27, "city": "Kyiv"}
+```
+{"name": "Анна", "age": 25, "city": "Київ"}
+Анна
+E-Class
 ```
 
-Для перетворення цих даних у рядок у форматі JSON використовуємо функцію `dumps()`:
+## Глибока занурення 
 
-```Python
-json_data = json.dumps(data)
-```
-
-Остаточно, ми можемо перетворити отриманий рядок назад у формат словника Python, використовуючи функцію `loads()`:
-
-```Python
-new_data = json.loads(json_data)
-```
-
-В результаті ми отримаємо той самий словник, з якого почали. Також, можливо обробляти дані з файлу у форматі JSON:
-
-```Python
-with open("data.json", "r") as f:
-    json_data = json.load(f)
-```
-
-## Глибоке занурення
-
-Розглянемо деякі корисні функції та методи, що допоможуть працювати з JSON у Python:
-
-- `json.dumps()` - перетворює дані у форматі Python у рядок у форматі JSON;
-- `json.loads()` - перетворює рядок у форматі JSON у формат словника Python;
-- `json.dump()` - записує дані у форматі JSON у зазначений файл;
-- `json.load()` - читає дані у форматі JSON з зазначеного файлу;
-- `json.dumps(..., indent=n)` - додає відступи у `n` пробілів для кожного рівня вкладених об'єктів;
-- `json.dumps(..., ensure_ascii=False)` - дозволяє виводити не-ASCII символи у файл.
+Формат JSON є зручним для обміну даними між різними мовами програмування. Це елегантний, легкий для зрозуміння формат, який підтримує список даних або об'єктів значення-ключ. Крім того, формат JSON є платформонезалежним та підтримується більшістю мов програмування.
 
 ## Дивись також
 
-- [Документація Python для модуля `json`](https://docs.python.org/3/library/json.html)
-- [Інструкція по роботі з JSON у Python](https://realpython.com/python-json/)
-- [Використання формату JSON у веб-розробці](https://www.w3schools.com/js/js_json_intro.asp)
+- [Офіційна документація Python для модулю JSON](https://docs.python.org/3/library/json.html)
+- [Робота з JSON в Python: керівництво для початківців](https://realpython.com/python-json/)
+- [Візуальне пояснення формату JSON](https://www.json.org/json-uk.html)

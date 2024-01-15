@@ -1,6 +1,7 @@
 ---
-title:                "C: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "एक HTTP अनुरोध भेजना"
+html_title:           "C: एक HTTP अनुरोध भेजना"
+simple_title:         "एक HTTP अनुरोध भेजना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-नमस्ते दोस्तों! अगर आप एक C प्रोग्रामर हैं तो आपने सुना ही होगा कि आजकल वेब डेवलपमेंट डोमेन में C का प्रयोग काफी बढ़ गया है। आपने शायद HTTP रिक्वेस्ट के बारे में सुना होगा लेकिन आपको यह पता हो तो अच्छा होगा कि यह क्या है और आप उसे कैसे भेज सकते हैं। इस ब्लॉग पोस्ट के माध्यम से हम आपको इस भाषा में बताएंगे कि आप अपने C प्रोग्रामों के अंतर्गत HTTP रिक्वेस्ट कैसे भेज सकते हैं।
-
 ## क्यों
 
-HTTP रिक्वेस्ट तक पहुंचना एक वेब डेवलपर के लिए बहुत जरूरी है। इसके माध्यम से आप वेब सर्वर से डेटा को पढ़ और लिख सकते हैं। आप यह जान सकते हैं कि किसी वेब पेज को लोड करने के लिए आप कैसे सर्वर से डेटा का अनुरोध करते हैं। 
+आपने निश्चित रूप से इंटरनेट पर सर्वसाधारण चीजों को ब्राउज़ किया है। आपने यह सोचा होगा कि सभी वेबसाइट पर जो सुविधाएं हैं, उसे कैसे प्राप्त किया जाता है। 
 
-## कैसे
-
-आइए अब देखते हैं कि कैसे आप C में HTTP रिक्वेस्ट भेज सकते हैं। आप नीचे दिए गए कोड ब्लॉक में दिए गए कोड को देख सकते हैं। यह एक बेसिक HTTP रिक्वेस्ट है जो आप अपने प्रोग्राम में इस्तेमाल कर सकते हैं। आप अपनी आवश्यकताओं के अनुसार कोड में परिवर्तन कर सकते हैं।
+## कैसे करें
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h>
+#include <curl/curl.h>
 
-int main() {
-  // HTTP Request message
-  char *message = "GET / HTTP/1.1\r\n\r\n";
-  
-  // Server address
-  char *server_address = "www.example.com";
-  
-  // Create socket
-  int socket_desc = socket(AF_INET, SOCK_STREAM, 0);
-  
-  // Check if socket was created successfully
-  if (socket_desc == -1) {
-    printf("Error creating socket!");
-    return 1;
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    curl_easy_cleanup(curl);
   }
-  
-  // Get server info
-  struct hostent *server = gethostbyname(server_address);
-  if (server == NULL) {
-    printf("Error getting server by name!");
-    return 1;
-  }
-  
-  // Create server address
+  return 0;
+}
+```
+
+यहां हम CURL का उपयोग करके HTTP अनुरोध भेजने का एक उदाहरण देख सकते हैं। इसमें हम पूरी जानकारी को फफोहराते नहीं हैं, लेकिन फिर भी सीखोगे। 
+
+## गहराई में
+
+एचटीटीपी अनुरोध भेजना असाधारण ढंग से महत्वपूर्ण है। यह सबकुछ शुरू होता है जब आप एक वेबसाइट या सेवा के लिए फ़ैक्चर या डेटा काम कराते हैं। प्राथमिक ढंग से, आप वेबसाइट पते को एक सामान्य ब्राउज़र के माध्यम से दर्ज करते हैं। इससे आपका अनुरोध नैतिक रूप से वेबसाइट के सर्वर तक पहुँचता है और उससे योग्य उत्तर भेजा जाता है। इस प्रक्रिया को एचटीटीपी अनुरोध भेजने कहते हैं। 
+
+## देखें भी
+
+- [हर चीज़ जो आपने कभी एचटीटीपी के बारे में पूछा है](https://www.tutorialspoint.com/http/http_quick_guide.htm)
+- [एचटीटीपी से जुड़ी शब्दावली](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

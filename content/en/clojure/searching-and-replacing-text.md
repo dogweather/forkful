@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Clojure recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,81 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Searching and replacing text is an essential task in any programming language, including Clojure. It allows you to quickly modify large amounts of text, saving you both time and effort. With the help of Clojure's powerful string functions, this task becomes even more efficient and seamless. In this blog post, we will explore the various techniques and functions for searching and replacing text in Clojure.
+Have you ever found yourself manually replacing text in a document or code, only to realize you missed a few instances and have to go back and fix them? That's where searching and replacing text comes in handy. It allows you to quickly and efficiently replace text in a document or code with just a few lines of code.
 
 ## How To
 
-To search and replace text in Clojure, we will be using the `replace` function from the `clojure.string` namespace. The basic syntax for using this function is:
+To search and replace text in Clojure, you can use the `replace` function from the `clojure.string` library. This function takes in three parameters: the string to search in, the pattern to search for, and the replacement text. Let's take a look at an example:
 
 ```
-(replace text search & args)
-```
-
-Let's now look at some examples to understand how this function works.
-
-### Simple Search and Replace
-
-Suppose we have a string containing the phrase "Hello World" and we want to replace "World" with "Universe". We can use the `replace` function as follows:
-
 ```Clojure
-(clojure.string/replace "Hello World" "World" "Universe")
+(require '[clojure.string :as str])
+
+(def str-to-replace "Hello World!")
+
+(str/replace str-to-replace "World" "Universe")
 ```
 
-The output of this code will be:
+In this example, we first require the `clojure.string` library and bind it to the alias `str`, just for convenience. Then we define a string variable called `str-to-replace` with the value "Hello World!". Finally, we use the `replace` function to replace the word "World" with "Universe" in our string variable.
 
-```
-"Hello Universe"
-```
-
-### Using Regex
-
-Clojure's `replace` function supports regex (regular expression) patterns, allowing us to perform more complex searches and replacements. For example, we can use the regex pattern `#"[aeiou]"` to replace all vowels in a string with asterisks.
-
-```Clojure
-(clojure.string/replace "Hello World" #"[aeiou]" "*")
-```
-
-The output of this code will be:
-
-```
-"H*ll* W*rld"
-```
-
-### Multi-line Search and Replace
-
-The `replace` function also supports multi-line search and replace. To do so, we can use the `clojure.string/replace-lines` function. Let's say we have the following string:
-
-```
-"Programming
-is
-fun"
-```
-
-And we want to replace all instances of "is" with "can be". We can use `replace-lines` as follows:
-
-```Clojure
-(clojure.string/replace-lines "Programming
-is
-fun"
-"is" "can be")
-```
-
-The output of this code will be:
-
-```
-"Programming
-can be
-fun"
-```
+The output of this function call would be the string "Hello Universe!", since it replaces all instances of "World" with "Universe" in the original string.
 
 ## Deep Dive
 
-Clojure's `replace` function uses a highly optimized hybrid implementation of Boyer-Moore and Knuth-Morris-Pratt algorithms to efficiently search and replace text. This makes it a performant and reliable choice for manipulating large amounts of text.
+The `replace` function supports regular expressions as the pattern to search for, giving you even more flexibility in your search and replace operations. It also has optional parameters for specifying the maximum number of replacements and the starting index to search from.
 
-There are also other string functions in Clojure, such as `replace-first` and `replace-regexp`, that offer additional features for more specific use cases. These functions can be explored in more depth in the official Clojure documentation.
+Keep in mind that the `replace` function is not limited to strings, but can also be used on other data types such as vectors and maps. This makes it a versatile tool for all your searching and replacing needs.
 
 ## See Also
 
-- [Official Clojure Documentation for replace](https://clojuredocs.org/clojure.string/replace)
-- [Clojure string functions cheatsheet](https://clojure.org/api/cheatsheet#Strings)
-- [Practical guide to Clojure string manipulation](https://practicalclj.github.io/string-manipulation/)
+- [Clojure Docs on replace function](https://clojuredocs.org/clojure.string/replace)
+- [ClojureRegex - a helpful library for working with regular expressions in Clojure](https://github.com/luxbock/clojure-regex)

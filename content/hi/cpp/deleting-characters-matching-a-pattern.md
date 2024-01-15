@@ -1,6 +1,7 @@
 ---
-title:                "C++: पैटर्न के समान वर्णों को हटाना"
-simple_title:         "पैटर्न के समान वर्णों को हटाना"
+title:                "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+html_title:           "C++: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,60 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun?
 
-कभी-कभी हमें एक पैटर्न से मिलती जुलती चरित्रों को हटाने की आवश्यकता होती है। इस ब्लॉग पोस्ट में, हम जानेंगे कि इसका होना क्यों ज़रूरी हो सकता है।
+Kabhi-kabhi hum chahte hain ki humare code mein se kuch characters ko hata diya jaaye jo humare pattern se match karte hain. Isse humare code ko clean and efficient banane mein madad milti hai.
 
-## कैसे करें
+## Kaise Karein?
 
-इस समस्या का हल करने के लिए, हम C++ में डेटा स्ट्रक्चर्स का इस्तेमाल कर सकते हैं। निम्नलिखित कोड ब्लॉक में हमने इस काम को कैसे करना है विस्तार से देखेंगे।
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-
-  string str = "Hello World!";
-  
-  // पैटर्न जो हटाना है
-  string pattern = "l";
-  
-  // पैटर्न से मिलते जुलते चरित्रों को हटाने का प्रोसेस
-  int pos = str.find(pattern);
-  
-  while (pos != string::npos) {
-    str.erase(pos, 1);
-    pos = str.find(pattern, pos);
-  }
-  
-  // नए स्ट्रिंग को आउटपुट करें
-  cout << str << endl;
-  
-  return 0;
-
-}
-```
-
-आउटपुट: Heo Word!
-
-जैसा कि आप देख सकते हैं, हमारे द्वारा निर्दिष्ट पैटर्न 'l' को हटा दिया गया है।
-
-## गहराई में जाएं
-
-इस प्रकार से क्वेश्चन को हटाने का बहुत ही अन्य प्रकार है जो हमारे पास हैं, जिनमें यह मजबूती से सामान्य नियम के साथ काम कर सकता है। सैम्पल अर्थव्यवस्था में, एक स्ट्रिंग के सांख्यिकीय स्तंभ में से सारे प्लस लाइन को हटाने का कोड है।
+Hamare paas do tareeko ke options hain character pattern matching ke liye: Regex (regular expressions) ya loop ke upyog se. Neeche diye gaye code blocks mein dono tareeko ka example diya gaya hai:
 
 ```C++
-for (int i = 0; i < str.size(); i++) {
-  if (str[i] == '+') {
-    str.erase(i, 1);
-  }
-}
+// Regex se character pattern hataayein
+
+#include <iostream> 
+#include <regex> 
+using namespace std; 
+
+int main() 
+{ 
+    string str = "Hello, World!"; 
+    regex unwanted_characters ("[eo]"); //eo characters ko remove karne ke liye
+    cout << regex_replace(str, unwanted_characters, "") << endl; 
+
+    return 0; 
+} 
 ```
 
-## देखें लिंक
+```C++
+// Loop se character pattern hataayein
 
-- [C++ डाटा स्ट्रक्चर्स](https://www.geeksforgeeks.org/data-structures/)
-- [string::find() फ़ंक्शन](https://www.cplusplus.com/reference/string/string/find/)
+#include <iostream> 
+using namespace std; 
+
+int main() 
+{ 
+    string str = "Hello, World!"; 
+    string new_str = ""; // naya string create karein jaha hum characters ko store karenge
+    for (int i = 0; i < str.length(); i++) { 
+        if (str[i] != 'o' && str[i] != 'e') { // hum unwanted characters ko alag se nikaal dete hain
+            new_str += str[i]; 
+        } 
+    } 
+    cout << new_str << endl; 
+
+    return 0; 
+} 
+```
+
+## Gehri Jhaanki
+
+Character pattern matching mein kuch cheezein yaad rakhein:
+- Regex ka upyog karne se pehle `#include <regex>` jaroor karein
+- Pattern ke saamne `\` backslash use karne se special characters ko match kar sakte hain (for example, \d for digits, \s for spaces)
+- `regex_replace()` function ka use karke hum string ko replace kar sakte hain
+- Loop mein hum `str.length()` ka upyog karke string ki length nikal sakte hain
+- `new_str` ka use karke loop ke andar unwanted characters ko nikaal sakte hain 
+
+## Dekhein Bhi
+
+- [Regex tutorial in Hindi](https://www.youtube.com/watch?v=gGKxUTSD8eU) 
+- [C++ loops tutorial in Hindi](https://www.geeksforgeeks.org/loops-in-cpp/)
+- [C++ string operations](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

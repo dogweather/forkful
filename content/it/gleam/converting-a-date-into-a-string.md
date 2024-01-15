@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Gleam: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Perché
 
-Spesso durante la programmazione, ci si confronta con la necessità di convertire una data in una stringa. Ci possono essere vari motivi per cui si vorrebbe fare ciò: ad esempio, per visualizzare la data in un formato specifico o per confrontare due date. In questo articolo vedremo come fare questa operazione utilizzando il linguaggio di programmazione Gleam.
+Se sei un programmatore, probabilmente hai già incontrato il problema di dover convertire una data in una stringa. Ci sono molte ragioni per cui potresti dover fare ciò, ad esempio la necessità di visualizzare la data in un formato specifico o di utilizzare la stringa come parte di un URL. Indipendentemente dal motivo, in questo articolo ti mostrerò come convertire una data in una stringa utilizzando il linguaggio di programmazione Gleam.
 
 ## Come fare
 
-Per convertire una data in una stringa in Gleam, possiamo utilizzare la funzione `Date.iso8601`, che accetta come input una data e restituisce una stringa nel formato ISO 8601, come mostrato nell'esempio seguente:
+Per prima cosa, dovrai importare l'API DateTime di Gleam nel tuo progetto. Puoi farlo utilizzando il seguente codice:
 
 ```Gleam
-let data = Date.from_calendar(2021, 1, 1, 0, 0, 0, "UTC")
-let data_string = Date.iso8601(data)
-
-// Output
-"2020-12-31T00:00:00+00:00"
+import gleam/datetime
 ```
 
-Possiamo anche specificare un fuso orario diverso da quello predefinito, utilizzando il parametro opzionale `time_zone`, come nell'esempio seguente:
+Una volta importata l'API DateTime, puoi utilizzare la funzione `DateTime.format` per convertire una data in una stringa. Vediamo un esempio:
 
 ```Gleam
-let data = Date.from_calendar(2021, 1, 1, 0, 0, 0, "UTC")
-let data_string = Date.iso8601(data, time_zone = "Europe/Rome")
-
-// Output
-"2021-01-01T01:00:00+01:00"
+let date = DateTime.create(~year=2021, ~month=5, ~day=15)
+let string = DateTime.format(date, "%d/%m/%Y")
 ```
 
-Inoltre, è possibile personalizzare il formato della stringa utilizzando la funzione `Date.format`, che accetta come input una data, una stringa di formato e, opzionalmente, un fuso orario, come mostrato nell'esempio seguente:
+In questo esempio, abbiamo creato una data con l'API DateTime, specificando l'anno, il mese e il giorno. Abbiamo poi utilizzato la funzione `format` per convertire la data in una stringa nel formato giorno/mese/anno. Se stampiamo la variabile `string`, otterremo il seguente output:
 
 ```Gleam
-let data = Date.from_calendar(2021, 1, 1, 12, 30, 0, "UTC")
-let data_string = Date.format(data, "%Y/%m/%d - %H:%M:%S", time_zone = "Europe/Rome")
-
-// Output
-"2021/01/01 - 13:30:00"
+15/05/2021
 ```
 
-## Approfondimento
+Puoi provare diversi formati utilizzando diverse combinazioni di caratteri. Ad esempio, utilizzando `%a, %d %b %Y` otterremo il seguente output:
 
-La conversione di una data in una stringa può sembrare un'operazione semplice, ma è importante prestare attenzione ai dettagli, come il fuso orario e il formato desiderato. Inoltre, in Gleam è anche possibile manipolare le date utilizzando la libreria `DateTime`, che offre una serie di funzioni utili per calcolare differenze tra date, aggiungere o sottrarre giorni, ore, minuti o secondi a una data, e molto altro.
+```Gleam
+sabato, 15 maggio 2021
+```
+
+Oltre a convertire una data in una stringa, è possibile anche fare il contrario: convertire una stringa in una data utilizzando la funzione `DateTime.parse`. Questa funzione richiede due parametri: la stringa da convertire e il formato della data.
+
+## Approfondimenti
+
+Se vuoi saperne di più sulle funzionalità della funzione `DateTime.format`, ti consiglio di dare un'occhiata alla documentazione ufficiale di Gleam. Qui troverai una lista completa di tutte le combinazioni possibili di caratteri per formattare una data.
+
+Inoltre, è importante tenere conto delle differenze tra i formati delle date in diversi paesi o lingue. Assicurati di considerare questi aspetti quando utilizzi la funzione `format` o `parse` per evitare problemi con la formattazione della data.
 
 ## Vedi anche
 
-- [Documentazione di Gleam su Date e DateTime](https://gleam.run/documentation/standard-library/date/)
-- [Tutorial di Gleam su le date e l'orario](https://gleam.run/articles/dates-and-times/)
-- [ISO 8601](https://it.wikipedia.org/wiki/ISO_8601)
+- [Documentazione ufficiale di Gleam su DateTime](https://gleam.run/modules/gleam/datetime.html)
+- [Tutorial di Gleam su date e ore](https://gleam.run/blog/date-time.html)
+- [API DateTime di Erlang (su cui si basa Gleam)](http://erlang.org/doc/man/calendar.html#strftime-3)

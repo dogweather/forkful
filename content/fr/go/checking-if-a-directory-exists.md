@@ -1,6 +1,7 @@
 ---
-title:                "Go: Vérifier l'existence d'un répertoire"
-simple_title:         "Vérifier l'existence d'un répertoire"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Go: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,42 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La vérification de l'existence d'un répertoire peut sembler être une tâche banale, mais elle est en fait très importante pour une bonne gestion de vos fichiers et de vos programmes en Go. Il est essentiel de s'assurer qu'un répertoire existe avant de pouvoir y créer de nouveaux fichiers ou de l'utiliser pour stocker des données.
+Vous avez besoin de vérifier régulièrement si un dossier existe dans votre projet Go et vous voulez savoir comment le faire efficacement. Cela peut vous aider à gérer les fichiers et les ressources de manière plus dynamique dans votre code.
 
-# Comment faire
+## Comment faire
 
-Pour vérifier si un répertoire existe en Go, vous pouvez utiliser la fonction `os.Stat` qui renvoie des informations sur le fichier ou répertoire spécifié. Si le répertoire n'existe pas, une erreur sera renvoyée. Voici un exemple de code montrant comment utiliser cette fonction :
+Voici un exemple de code pour vérifier si un dossier existe en utilisant la fonction `os.Stat()` :
 
-```
+```Go
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	path := "/chemin/vers/votre/répertoire"
+  folderPath := "chemin/vers/mon/dossier"
 
-	// Utilisation de la fonction os.Stat pour vérifier si le répertoire existe
-	if _, err := os.Stat(path); err == nil {
-		fmt.Println("Le répertoire existe")
-	} else {
-		fmt.Println("Le répertoire n'existe pas")
-	}
+  // Vérification de la statut du dossier
+  if _, err := os.Stat(folderPath); os.IsNotExist(err) {
+    fmt.Println("Le dossier n'existe pas.")
+  } else {
+    fmt.Println("Le dossier existe.")
+  }
 }
 ```
 
-Si le répertoire existe, la sortie sera `Le répertoire existe`, sinon elle sera `Le répertoire n'existe pas`.
+Le code ci-dessus utilise la fonction `os.Stat()` pour obtenir la statut d'un dossier spécifique, puis utilise la fonction `os.IsNotExist()` pour vérifier si le dossier n'existe pas. La fonction `IsNotExist()` renvoie un booléen indiquant si le dossier existe ou non.
 
-# Plongée en profondeur
+Voici un exemple de sortie si le dossier existe :
 
-Il est possible de faire une vérification plus détaillée en utilisant la fonction `os.Lstat` qui renvoie une `os.FileInfo` avec des informations supplémentaires sur le fichier ou répertoire spécifié. Vous pouvez également utiliser les méthodes `IsDir()` ou `IsExist()` pour vérifier directement si le chemin pointe vers un répertoire ou si le fichier ou répertoire existe déjà.
+```
+Le dossier existe.
+```
 
-# Voir aussi
+Et voici un exemple si le dossier n'existe pas :
 
-- [Package os](https://golang.org/pkg/os/)
-- [Documentation sur la fonction `os.Stat`](https://golang.org/pkg/os/#Stat)
-- [Documentation sur la fonction `os.Lstat`](https://golang.org/pkg/os/#Lstat)
+```
+Le dossier n'existe pas.
+```
+
+## Plongée en profondeur
+
+La fonction `os.Stat()` renvoie une erreur si le dossier n'existe pas ou si l'accès est refusé. Vous pouvez également utiliser la fonction `os.IsPermission()` pour vérifier si l'erreur est due à un problème de permissions d'accès.
+
+De plus, si vous avez besoin de créer un dossier si celui-ci n'existe pas encore, vous pouvez utiliser la fonction `os.Mkdir()` pour le créer. Voici un exemple de code qui utilise à la fois la vérification de l'existence du dossier et la création si nécessaire :
+
+```Go
+package main
+
+import (
+  "fmt"
+  "os"
+)
+
+func main() {
+  folderPath := "chemin/vers/mon/dossier"
+
+  // Vérification de la statut du dossier
+  if _, err := os.Stat(folderPath); os.IsNotExist(err) {
+
+    // Création du dossier
+    err := os.Mkdir(folderPath, 0755)
+    if err != nil {
+      fmt.Println("Erreur lors de la création du dossier :", err)
+      return
+    }
+    fmt.Println("Le dossier a été créé.")
+  }
+}
+```
+
+## Voir aussi
+
+- [Documentation officielle de la fonction os.Stat()](https://pkg.go.dev/os#Stat)
+- [Documentation officielle de la fonction os.Mkdir()](https://pkg.go.dev/os#Mkdir)
+- [Article sur la gestion de fichiers avec Go](https://www.digitalocean.com/community/tutorials/how-to-use-the-filesystem-package-in-go-fr)

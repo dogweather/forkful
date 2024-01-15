@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 현재 날짜 가져오기"
-simple_title:         "현재 날짜 가져오기"
+title:                "현재 날짜 얻기"
+html_title:           "Haskell: 현재 날짜 얻기"
+simple_title:         "현재 날짜 얻기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,40 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-현재 날짜를 가져오는 것을 왜 하는지 궁금하신가요? 프로그래밍을 하는 데 있어서 많은 경우 현재 날짜와 시간을 사용해야 할 때가 있습니다. 예를 들어, 파일 또는 데이터베이스에 로그를 남기거나, 알림을 표시하거나, 배송일자를 계산할 때 등이 있습니다.
 
-## 어떻게
-Haskell 언어를 사용하여 현재 날짜를 가져오는 것은 간단합니다. 아래의 코드 예제를 확인해보세요.
+현재 날짜를 얻는 것의 이점은 다음과 같습니다:
+- 일자 기반 작업을 자동화하기 위해 (예: 일일 보고서 생성)
+- 어떤 일이 발생한 시간을 기록하기 위해 (예: 사용자의 로그인 시간 기록)
+
+## 방법
+
+우선 `getCurrentTime` 함수를 사용하여 현재 날짜와 시간을 얻을 수 있습니다. 이 함수는 `IO` 타입이기 때문에, `do` 표현식을 사용하여 값을 받아와서 출력할 수 있습니다.
 
 ```Haskell
-import Data.Time.Clock.LocalTime
-import Data.Time.Calendar
+import Data.Time
 
--- 오늘 날짜와 시간을 가져오기 위해 getCurrentTime 함수를 사용합니다.
-getCurrentTime :: IO UTCTime
-
--- UTCTime에서 LocalTime으로 변환합니다.
-utcToLocalTime :: TimeZone -> UTCTime -> LocalTime
-
--- UTC 날짜를 스트링 형식으로 변환합니다.
-show :: FormatTime t => t -> String
-
--- 오늘 날짜와 시간을 출력합니다.
 main = do
-    time <- getCurrentTime
-    let localTime = utcToLocalTime (minutesToTimeZone 540) time
-    let date = show localTime
-    putStrLn date
-```
-실행 결과:
-```
-2021-11-29 12:30:45
+  currentTime <- getCurrentTime
+  print currentTime
 ```
 
-## 심층 분석
-보다 정확한 날짜와 시간을 얻기 위해서는 `TimeZone` 모듈을 불러와 TimeZone 데이터 형식을 이용해야 합니다. 이 모듈은 지역 시간과 UTC 사이의 차이를 계산할 수 있는 함수들을 제공합니다. 입력된 `TimeZone` 값은 분 단위로 설정되는데, 한국 기준의 GMT+09:00과 같은 값이 됩니다. 이 외에도 `getCurrentTime` 함수를 이용해 년, 월, 일, 시간 등 다양한 정보를 얻을 수 있습니다.
+출력 예시:
 
-## 참고 자료
-- [Haskell의 Data.Time.Clock.LocalTime 모듈](https://hackage.haskell.org/package/time-locale-compat-0.1.1/docs/Data-Time-Clock-LocalTime.html)
-- [Haskell의 Data.Time.Calendar 모듈](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
-- [Haskell의 FormatTime 함수](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)
+```
+2020-05-25 18:00:00.123456789 UTC
+```
+
+`getCurrentTime`으로 얻은 값은 `UTCTime` 타입입니다. `UTCTime`에는 날짜와 시간 뿐만 아니라 타임존 정보까지 포함되어 있습니다. 따라서 원하는 형식으로 날짜와 시간을 출력하기 위해서는 `Data.Time.Format` 모듈에서 제공하는 함수를 사용해야 합니다.
+
+아래의 예시 코드는 `Data.Time.Format`을 사용하여 날짜와 시간을 Hour-Minute-Second의 형식으로 출력하는 방법을 보여줍니다.
+
+```Haskell
+import Data.Time
+import Data.Time.Format
+
+main = do
+  currentTime <- getCurrentTime
+  let formattedTime = formatTime defaultTimeLocale "%H:%M:%S" currentTime
+  print formattedTime
+```
+
+출력 예시:
+
+```
+18:00:00
+```
+
+## 딥 다이브
+
+`getCurrentTime`을 사용하여 얻은 `UTCTime` 값에는 어떤 정보가 포함되어 있을까요? 각각의 정보를 다음과 같이 간단히 살펴보도록 하겠습니다.
+
+```Haskell
+data UTCTime = UTCTime {
+   utctDay :: Day,
+   utctDayTime :: DiffTime
+}
+```
+
+- `utctDay`: 해당 날짜의 `Day` 타입 값을 나타냅니다. `Day` 타입은 파싱이나 비교 연산을 할 수 있도록 년, 월, 일 등의 정보를 담고 있습니다.
+- `utctDayTime`: 해당 날짜의 시간 정보를 나타내는 `DiffTime` 값입니다. `DiffTime`은 일(day) 단위가 아닌 초 단위로 시간을 나타내는 타입입니다.
+
+위에서 사용한 `getCurrentTime`은 `System.Clock` 모듈에서 제공하는 함수 중 하나입니다. 이 외에도 `System.Clock`에서 시간과 관련된 유용한 함수들을 제공하고 있으니 필요하다면 참고하시기 바랍니다.
+
+## See Also
+
+- [Haskell Docs - Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Haskell Docs - System.Clock](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Clock.html)

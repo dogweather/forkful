@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Eine Datum in einen String umwandeln."
-simple_title:         "Eine Datum in einen String umwandeln."
+title:                "Umwandeln eines Datums in einen String"
+html_title:           "PHP: Umwandeln eines Datums in einen String"
+simple_title:         "Umwandeln eines Datums in einen String"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,28 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren eines Datums in einen String ist ein häufiger Vorgang in der Programmierung. Es ermöglicht uns, Daten, die in einer numerischen Form gespeichert sind, lesbarer zu machen und sie in verschiedenen Anwendungen zu verwenden.
+Wer mit PHP programmiert, kommt nicht darum herum, mit Datumsangaben zu arbeiten. Oft ist es nötig, diese Datumsangaben in Strings umzuwandeln, zum Beispiel um sie in einer bestimmten Formatierung auf der Webseite auszugeben. In diesem Artikel erfährst du, wie du das in PHP ganz einfach umsetzen kannst.
 
-## Wie geht man vor
+## Wie Geht's
 
-Um ein Datum in einen String umzuwandeln, gibt es verschiedene Methoden, je nachdem welche Programmiersprache verwendet wird. Im Folgenden werde ich zeigen, wie man dies in PHP erreichen kann.
+Um ein Datum in einen String umzuwandeln, gibt es in PHP die Funktion `date()`, die folgendermaßen aufgebaut ist:
 
 ```PHP
-$date = strtotime("2021-12-31"); //erstellt ein Datum (31. Dezember 2021)
-$output = date("d.m.Y", $date); //wandelt das Datum in ein String-Format um (31.12.2021)
-echo $output; //gibt den String "31.12.2021" aus
+$string = date ( string $format [, int $timestamp = time() ] );
 ```
 
-In diesem Beispiel wird die Funktion `strtotime()` verwendet, um das Datum in ein numerisches Format umzuwandeln. Anschließend wird die Funktion `date()` benutzt, um dieses Format in ein lesbares Datum umzuwandeln. Diese Funktion akzeptiert auch verschiedene Formatierungsmöglichkeiten, um das Datum nach eigenen Bedürfnissen anzupassen.
+Das bedeutet, dass die Funktion zwei Parameter erwartet: Das Format des Strings, in den das Datum umgewandelt werden soll, und optional ein Timestamp, der das Datum angibt, das umgewandelt werden soll. Wenn kein Timestamp angegeben wird, verwendet die Funktion automatisch das aktuelle Datum.
 
-## Tiefer Einblick
+Als Beispiel wollen wir das aktuelle Datum in der Formatierung "Tag.Monat.Jahr" ausgeben. Dafür sieht der Code folgendermaßen aus:
 
-In der Programmierung gibt es verschiedene Datums- und Zeitformate, wie z.B. Unix Timestamps oder ISO 8601. Indem man ein Datum in einen String konvertiert, können wir sicherstellen, dass es in einem einheitlichen Format vorliegt und leichter lesbar für Benutzer oder andere Programme ist.
+```PHP
+$string = date("d.m.Y");
+echo $string;
+```
 
-Um ein besseres Verständnis für die Formatierungsmöglichkeiten von `date()` zu bekommen, kann man die offizielle Dokumentation von PHP konsultieren und verschiedene Beispiele ausprobieren. Es ist auch wichtig zu beachten, dass die Funktion `date()` das aktuelle Zeit- und Datumsformat des Systems verwendet. Wenn man jedoch international agiert und ein bestimmtes Format benötigt, kann man die Funktion `setlocale()` verwenden, um die Standardzeitzone und Sprache festzulegen.
+Das Ergebnis wäre in diesem Fall zum Beispiel `02.03.2020`.
 
-## Siehe auch
+## Deep Dive
 
-- [PHP-Handbuch zu Dateiformaten](https://www.php.net/manual/de/datetime.format.php)
-- [ISO 8601 Format Guide](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [PHP-Handbuch zu Datums- und Zeitfunktionen](https://www.php.net/manual/de/ref.datetime.php)
+Das Format, in dem das Datum ausgegeben werden soll, wird mithilfe von Platzhaltern definiert. Zum Beispiel steht `d` für den Tag im Monat mit zwei Ziffern, `m` für den Monat mit zwei Ziffern und `Y` für das Jahr mit vier Ziffern. Eine vollständige Liste der verfügbaren Platzhalter findest du in der offiziellen PHP-Dokumentation.
+
+Wenn du das aktuelle Datum nicht ausgeben möchtest, sondern ein festgelegtes Datum umwandeln möchtest, kannst du den zweiten Parameter der `date()`-Funktion verwenden. Dafür muss der Timestamp des gewünschten Datums angegeben werden. Dieser kann entweder als Integer-Wert oder mithilfe der Funktion `strtotime()` definiert werden.
+
+## Siehe Auch
+
+- [Offizielle PHP-Dokumentation zur date() Funktion](https://www.php.net/manual/de/function.date.php)
+- [Übersicht über alle verfügbaren Platzhalter](https://www.php.net/manual/de/function.date.php#refsect1-function.date-parameters)

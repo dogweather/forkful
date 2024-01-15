@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Kotlin: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać standardowego wyjścia błędu w programowaniu Kotlin?
+## Dlaczego
 
-Kotlin jest jednym z najpopularniejszych języków programowania w dzisiejszych czasach, dlatego warto poznać jego najważniejsze funkcje, takie jak standardowe wyjście błędu. Pozwala ono na wyświetlanie ważnych informacji dla użytkownika w przypadku wystąpienia błędów w programie. Jest to niezwykle pomocne przy debugowaniu i poprawianiu kodu. W tym blogu postaramy się przybliżyć wam, jak wykorzystać standardowe wyjście błędu w programowaniu w języku Kotlin.
+Kotlin jest coraz popularniejszym językiem programowania zarówno wśród początkujących, jak i doświadczonych programistów. Jedną z przydatnych funkcji oferowanych przez Kotlin jest możliwość wypisywania wiadomości na standardowe wyjście błędów. W tym artykule dowiesz się, dlaczego warto korzystać z tej funkcji i jak jej używać.
 
-## Jak używać standardowego wyjścia błędu w programowaniu Kotlin?
+## Jak używać standardowego wyjścia błędów w Kotlin
 
-Aby wyświetlić informacje na standardowym wyjściu błędu, wystarczy użyć metody `System.err.println()`, która przyjmuje jako argument ciąg znaków lub obiekt. Poniżej znajduje się kod przykładowy w języku Kotlin:
+Za pomocą wbudowanej funkcji `System.err.println()` można wypisać wiadomość na standardowe wyjście błędów. Przykład poniżej pokazuje, jak użyć tej funkcji w celu wypisania informacji o błędzie do konsoli:
 
-```kotlin
+```Kotlin
 fun main() {
-   // Wyświetlenie komunikatu na standardowym wyjściu błędu
-   System.err.println("Wystąpił błąd!")
+    System.err.println("Wystąpił błąd!")
 }
 ```
 
-Możliwe jest także podanie do metody `System.err.println()` kilku argumentów, które zostaną połączone w jeden ciąg znaków. Przykład z użyciem zmiennej:
+Przykładowy output:
 
-```kotlin
+```Kotlin
+Wystąpił błąd!
+```
+
+Można również użyć wyrażenia `System.err.print()` jeśli nie chcemy, aby wypisywana informacja była automatycznie zakończona nową linią. Przykład:
+
+```Kotlin
 fun main() {
-   val liczba = 5
-   // Wyświetlenie wartości zmiennej na standardowym wyjściu błędu
-   System.err.println("Wartość zmiennej to: $liczba")
+    System.err.print("Wystąpił błąd ")
+    System.err.print("podczas odczytu pliku")
 }
 ```
 
-Pamiętajmy, że metoda `System.err.println()` jest tylko jedną z wielu możliwości wyświetlenia informacji na standardowym wyjściu błędu w języku Kotlin. Istnieje także inna metoda `System.err.print()`, która nie dodaje automatycznie znaku nowej linii na końcu wyświetlanego tekstu.
+Przykładowy output:
 
-## Głębszy wgląd w standardowe wyjście błędu
+```Kotlin
+Wystąpił błąd podczas odczytu pliku
+```
 
-Warto pamiętać, że standardowe wyjście błędu nie jest to samo co standardowe wyjście, które wyświetla wyniki działania programu. Standardowe wyjście błędu jest zwykle wyświetlane w konsoli w innym kolorze lub na osobnej konsoli. Jest to także oddzielny strumień danych niż standardowe wyjście. Dzięki temu, w razie wystąpienia błędów w programie, informacje na temat ich źródła będą wyświetlane w czytelny sposób, niezależnie od innych informacji wyświetlanych na standardowym wyjściu.
+## Deep Dive
+
+Funkcje `System.err.println()` i `System.err.print()` wykorzystują standardowe wyjście błędów, które jest oddzielone od standardowego wyjścia za pomocą specjalnego strumienia. Dzięki temu, w przypadku wystąpienia błędów, są one wypisywane niezależnie od innych informacji wyświetlanych na standardowym wyjściu. Jest to bardzo przydatne w przypadku, gdy chcemy otrzymywać informacje o błędach w sposób wyraźny i niezakłócony przez inne wiadomości.
 
 ## Zobacz także
 
-Chcesz dowiedzieć się więcej o języku Kotlin? Sprawdź poniższe linki:
+Jeśli chcesz poznać więcej o możliwościach jakie oferuje język Kotlin, zapoznaj się z poniższymi artykułami:
 
-- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
-- [Kurs programowania w języku Kotlin na platformie Udemy](https://www.udemy.com/course/kotlin-android-tutorial/)
-- [Kotlin w akcji - książka](https://www.amazon.com/Kotlin-ACTION-Dmitry-Jemerov/dp/1617293296)
+- [Jak używać process builder w Kotlin](https://www.example.com/process-builder-kotlin)
+- [Podstawowe operatory w Kotlin](https://www.example.com/basic-operators-kotlin)

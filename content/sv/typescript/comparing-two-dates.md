@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämförande av två datum"
+html_title:           "TypeScript: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att jämföra två datum är en viktig färdighet för alla TypeScript-programmerare. Det finns många situationer där vi behöver avgöra vilket datum som är senare eller äldre, eller om två datum är samma. Det är också viktigt att veta hur man hanterar olika format av datum för att undvika felaktiga resultat och buggar.
+Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med tidsrelaterade applikationer eller funktioner. Genom att jämföra datum kan man få information om vilket datum som kommer först, om de är lika och mycket mer. Det är alltså viktigt att ha grundläggande kunskap om hur man jämför datum i TypeScript.
 
 ## Hur man gör
+För att jämföra två datum i TypeScript kan du använda kommandot `new Date()` för att skapa ett datumobjekt för varje datum som du vill jämföra. Sedan kan du använda jämförelseoperatorerna (`<`, `>`, `==`) för att jämföra datumen.
 
-För att jämföra två datum i TypeScript behöver vi använda inbyggda metoder som Date och Date.prototype. Vi kan också använda bibliotek som moment.js för mer komplexa beräkningar.
+Exempel 1:
+```TypeScript
+let date1 = new Date("2020-01-01");
+let date2 = new Date("2020-01-05");
 
-Först måste vi skapa två Date-objekt som vi vill jämföra. Vi kan göra det genom att ange året, månaden och dagen som parametrar till Date-konstruktorn. Till exempel: 
-
-```typescript
-let startDate = new Date(2021, 5, 1);
-let endDate = new Date(2022, 0, 1);
-```
-
-För att jämföra om startDate är senare än endDate använder vi metoden `.getTime()` som returnerar antalet millisekunder sedan 1 januari 1970. Sedan kan vi helt enkelt använda ett vanligt if-sats för att avgöra om startDate är senare än endDate:
-
-```typescript
-if (startDate.getTime() > endDate.getTime()) {
-  console.log("startDate är senare än endDate");
+if (date1 < date2) {
+  console.log(date1 + " är tidigare än " + date2);
+} else if (date1 > date2) {
+  console.log(date1 + " är senare än " + date2);
 } else {
-  console.log("endDate är senare än startDate");
+  console.log(date1 + " och " + date2 + " är samma datum.");
 }
 ```
+Output: 2020-01-01 är tidigare än 2020-01-05.
 
-Om vi istället bara vill jämföra dagar, månader eller år kan vi använda Date-metoderna `.getDate()`, `.getMonth()` och `.getFullYear()`. Till exempel:
+Exempel 2:
+```TypeScript
+let today = new Date();
+let deadline = new Date("2021-03-15");
 
-```typescript
-if (startDate.getFullYear() === endDate.getFullYear()) {
-  console.log("Båda datum har samma år");
+if (today < deadline) {
+  console.log("Du har fortfarande tid att slutföra uppgiften!");
+} else {
+  console.log("Tiden har gått ut, hoppas du slutförde uppgiften i tid.");
 }
 ```
+Output: Du har fortfarande tid att slutföra uppgiften!
 
-## Djupdykning
+## Deep Dive
+När man jämför två datum är det viktigt att förstå att datum i TypeScript representeras som millisekunder efter 1 januari 1970. Detta innebär att ju senare datumet ligger, desto större blir dess millisekundvärde. Därför fungerar jämförelseoperatorerna för datum på samma sätt som för numeriska värden.
 
-När vi jämför två datum i TypeScript är det viktigt att tänka på tidszonen. Om vi använder `.getTime()`-metoden kan ett datum i en annan tidszon ge oss ett annat resultat. Det är också viktigt att hantera potentiella fel som kan uppstå om vi inte anger alla parametrar korrekt i Date-konstruktorn, som att råka byta plats på månad och dag.
+Det finns också andra metoder som kan användas för att jämföra datum i TypeScript, såsom `getTime()` och `getTimezoneOffset()`. Dessa kan vara användbara beroende på vilken typ av jämförelse som behövs.
 
-Det finns också andra metoder som kan vara användbara när man hanterar datum i TypeScript, som `.setDate()`, `.setMonth()` och `.setFullYear()` som ändrar ett datumobjekt utan att behöva skapa ett nytt.
-
-## Se även
-
-- [Date - MDN](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [moment.js](https://momentjs.com/)
-- [Stack Overflow: Comparing dates in TypeScript](https://stackoverflow.com/questions/35169127/comparing-dates-in-typescript)
+## Se också
+- [Date - TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/datetime.html)
+- [JavaScript Date Objects - W3Schools](https://www.w3schools.com/js/js_dates.asp)
+- [Comparing Dates in JavaScript - Stack Overflow](https://stackoverflow.com/questions/1197928/how-to-compare-two-dates-in-javascript)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "Rust recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,34 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Rust is a powerful programming language that provides developers with the ability to write safe and efficient code. One of the many useful features of Rust is its built-in string manipulation capabilities, including converting a string to lower case. This can be beneficial for data cleaning or standardizing input before processing it further.
+
+If you're dealing with text data in your Rust program, you may need to convert a string to lower case for various reasons. This allows for more consistent and easier comparison or manipulation of strings.
 
 ## How To
-To convert a string to lower case in Rust, we can use the `to_lowercase()` method from the `String` type. Let's take a look at an example:
+
+Converting a string to lower case in Rust is a simple process using the `to_lowercase` method. Let's take a look at an example:
 
 ```Rust
-let my_string = "RUST PROGRAMMING"; // create a string variable
-let lower_case_string = my_string.to_lowercase(); // call to_lowercase() method on the string
-println!("{}", lower_case_string); // print the lower case string
+let my_string = "Hello World";
+let lower_string = my_string.to_lowercase();
+
+println!("{}", lower_string); // output: hello world
 ```
 
-The output of this code would be:
+In the above code, we first declare a string variable `my_string` with the value "Hello World". Then, we use the `to_lowercase` method to convert it to lower case and assign the result to a new variable `lower_string`. Finally, we use `println` to print the lower case string to the console.
+
+You can also directly convert a string literal to lower case. Here's an example:
 
 ```Rust
-rust programming
-```
+let my_string = "I LOVE RUST".to_lowercase();
 
-It's important to note that the `to_lowercase()` method returns a new string with the lower case version, and does not modify the original string. This ensures the immutability of strings in Rust.
+println!("{}", my_string); // output: i love rust
+```
 
 ## Deep Dive
-Behind the scenes, the `to_lowercase()` method is implemented using Unicode's comprehensive database of character mappings. This allows for accurate conversions for characters in different languages and scripts. It also takes into account special cases such as the German Eszett (ß) being converted to "ss" instead of "ß" in lower case.
 
-Additionally, the `to_lowercase()` method uses the current locale of the system, which means it will follow the rules of the language used in that locale. This allows for consistent and expected behavior, especially when working with multiple languages in the same codebase.
+Let's take a deeper look at the `to_lowercase` method and how it works behind the scenes. This method is part of the `String` type in Rust and is implemented using the `Unicode` case mapping rules. This means that it takes into account different language-specific characters, accents, and special cases.
+
+Additionally, the `to_lowercase` method returns a new `String` value and does not mutate the original string. This is important to note as it follows Rust's ownership and borrowing rules.
+
+Furthermore, this method is marked as `pub` which means it can be used in your own functions or crates for string manipulation.
 
 ## See Also
-For more information on string manipulation in Rust, check out these resources:
-- [Rust Standard Library documentation on Strings](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Rustonomicon - String Conversions](https://doc.rust-lang.org/nomicon/string.html#string-conversions)
-- [Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
 
-Happy coding!
+- [Rust String documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust Unicode documentation](https://doc.rust-lang.org/std/char/trait.ToLowerCase.html)
+- [Learn Rust programming language](https://www.rust-lang.org/learn)

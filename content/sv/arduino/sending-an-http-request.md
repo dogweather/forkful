@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Att skicka en http-begäran"
-simple_title:         "Att skicka en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Arduino: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,65 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skicka en HTTP-begäran (request) är en grundläggande och viktig del av många internetbaserade projekt. Genom att göra det kan du ansluta din Arduino till olika webbtjänster och kommunicera över internet. Detta möjliggör funktioner som att hämta data, kontrollera enheter och göra uppdateringar. I den här bloggposten ska vi titta närmare på hur du kan skicka en HTTP-begäran med din Arduino.
+Det finns flera skäl till varför du skulle vilja skicka en HTTP-begäran med Arduino. Det kan till exempel vara för att hämta data från en webbplats eller för att kontrollera en fjärranordning över internet.
 
 ## Hur man gör det
+För att skicka en HTTP-begäran med Arduino behöver du använda dig av två bibliotek: WiFi- och HTTP-klienten. Här är ett enkelt exempel på hur du kan göra det:
 
-Att skicka en HTTP-begäran med en Arduino är inte enkelt, men med hjälp av lite kod kan vi enkelt komma igång. Först behöver vi inkludera Ethernet-biblioteket och skapa en instans av EthernetClient.
+```arduino
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-```
-Arduino #include <Ethernet.h>
-EthernetClient client;
-```
+// Användarnamn och lösenord för WiFi-nätverket
+const char* ssid = "Ditt_Nätverk";
+const char* password = "Ditt_Lösenord";
 
-Sedan behöver vi ansluta till internet via Ethernet-shield eller ett WiFi-shield beroende på din Arduino-modell.
+// URL till webbplatsen du vill hämta data från
+String url = "https://exempelsida.com/api/data";
 
-```
-Arduino Ethernet.begin(MAC-address); 
-```
+void setup() {
+  // Anslut till WiFi-nätverket
+  WiFi.begin(ssid, password);
+  
+  // Vänta tills anslutningen är etablerad
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
+  
+  // Skapa en HTTP-klient
+  HTTPClient http;
+  // Skicka en GET-begäran till den angivna URL:en
+  http.begin(url);
+  // Skriv ut statuskoden från servern
+  Serial.println(http.GET());
+  // Skriv ut svaret från servern
+  Serial.println(http.getString());
+  // Stäng anslutningen
+  http.end();
+}
 
-Nu kan vi börja konfigurera vår HTTP-begäran. Vi behöver ange webbadressen och önskad metod (GET, POST, osv.).
-
-```
-Arduino client.connect(server, port); 
-client.print("HTTP/1.1 POST /data HTTP/1.1"); 
-```
-
-För att skicka data kan vi använda oss av `client.print()` eller `client.println()`.
-
-```
-Arduino client.println("Content-Type: application/json"); 
-client.println("Content-Length: 9"); 
-client.println("foo=bar"); 
-```
-
-Slutligen behöver vi avsluta med `client.println()` och stänga anslutningen när begäran är klar.
-
-```
-Arduino client.println(); 
-client.println("Connection: close");
-client.stop();
-```
-
-När begäran skickas och anslutningen är stängd kan vi kontrollera svaret från servern via `client.available()` och `client.read()`.
-
-```
-Arduino while (client.available()) {
-  char c = client.read();
-  Serial.print(c);
+void loop() {
+  // Ingenting behöver göras i loop-funktionen eftersom vi bara behöver skicka en begäran en gång
 }
 ```
 
+När koden körs kommer den att ansluta till det angivna WiFi-nätverket och skicka en GET-begäran till den angivna URL:en. Sedan skrivs statuskoden från servern och svaret ut i seriell överföring.
+
 ## Djupdykning
-
-Att skicka en HTTP-begäran kan verka enkelt, men det finns många aspekter att ta hänsyn till. Att använda rätt metoder och skicka rätt format av data är viktigt för att få ett korrekt svar från servern. Det är också viktigt att hantera eventuella fel och felmeddelanden som kan uppstå under processen.
-
-En annan djupare aspekt att utforska är möjligheten att integrera SSL-certifikat för säkrade anslutningar. Detta är särskilt viktigt om du skickar känslig information över internet.
+När du skickar en HTTP-begäran med Arduino använder du HTTP-protokollet för att kommunicera med en webbserver. Det finns olika typer av begäranden som kan skickas, till exempel GET, POST, PUT och DELETE. Dessutom kan du skicka med data som en del av begäran, till exempel genom att lägga till parametrar eller skicka en JSON-sträng. Det är viktigt att undersöka dokumentationen för den webbplats eller den API som du ska kommunicera med för att se vilken typ av begäran och data som krävs.
 
 ## Se även
-
-- [Arduino Ethernet Library Reference](https://www.arduino.cc/en/Reference/Ethernet)
-- [Arduino WiFi Library Reference](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTP Requests in Arduino](https://randomnerdtutorials.com/solved-reason-http-client-failed-parse-httplength-header-arduino/)
-- [Integrating SSL with Arduino](https://www.arduino.cc/sv/Guide/Bibliotek#toc5)
+- [Arduino WiFi-bibliotek](https://www.arduino.cc/en/Reference/WiFi)
+- [Arduino HTTP-klient bibliotek](https://www.arduino.cc/en/Reference/HTTPClient)
+- [HTTP-begäran på Arduino forumet](https://forum.arduino.cc/index.php?topic=249229.0)

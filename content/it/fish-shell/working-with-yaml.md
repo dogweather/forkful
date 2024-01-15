@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Lavorare con YAML"
-simple_title:         "Lavorare con YAML"
+title:                "Lavorare con yaml"
+html_title:           "Fish Shell: Lavorare con yaml"
+simple_title:         "Lavorare con yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -11,54 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La programmazione con Fish Shell e YAML può sembrare intimidatoria, ma in realtà è un'ottima abilità da imparare per semplificare e automatizzare alcune attività. In questo post, esploreremo il motivo per cui dovresti considerare di lavorare con YAML e come farlo.
+Se stai cercando un modo semplice e veloce per gestire dati strutturati nel tuo terminale, allora la programmazione con YAML in Fish Shell potrebbe essere la soluzione perfetta per te. Con questa guida, imparerai come utilizzare YAML in modo efficiente e intuitivo, senza dover ricorrere a strumenti esterni.
 
 ## Come fare
 
-Per utilizzare YAML con Fish Shell, è necessario installare il modulo "json_yml". Una volta installato, è possibile utilizzare la funzione "json2yaml" per convertire i dati in formato YAML.
-
-```Fish Shell
-set data '{ "nome": "Marco", "cognome": "Rossi", "età": 30 }'
-set yaml (json2yaml $data)
-echo $yaml
-```
-
-Questo codice converte il nostro oggetto in formato JSON in un formato YAML leggibile e lo stampa a schermo.
+Per iniziare a utilizzare YAML in Fish Shell, è necessario prima installare il plugin "fish-yaml". Puoi farlo comodamente utilizzando il gestore dei pacchetti "fisher". Una volta installato, basta importare il modulo in Fish Shell con il comando:
 
 ```
-nome: Marco
+fisher install jorgebucaran/fish-yaml
+```
+
+Una volta importato il modulo, puoi iniziare a gestire dati YAML nel tuo terminale. Ad esempio, creando un file YAML come questo:
+
+```
+nome: Mario
 cognome: Rossi
-età: 30
+età: 38
 ```
 
-Oltre alla conversione, è anche possibile leggere e scrivere file YAML utilizzando i comandi standard di Fish Shell. Ad esempio, per leggere un file YAML chiamato "config.yml" e impostare alcune variabili basate su di esso, possiamo utilizzare il seguente codice:
+Puoi poi utilizzare il comando `yaml_print` per visualizzare i dati nel file come output:
 
-```Fish Shell
-set -q options # Verifica se la variabile "options" è già stata impostata
-if not $options # Se la variabile non è impostata, procediamo a leggere il file YAML e impostarla
-    set -q path # Verifica se la variabile "path" è già stata impostata
-    if not $path # Se la variabile non è impostata, impostala al percorso corrente
-        set path .
-    end
-    set -q config # Verifica se il file YAML è già stato letto
-    if not $config # Se il file non è stato letto, leggilo e impostalo come variabile
-        set -l config (yq r -P $path/config.yml -j)
-    end
-
-    set options $config.options
-end
+```
+$ yaml_print nome
+Mario
+$ yaml_print cognome
+Rossi
+$ yaml_print età
+38
 ```
 
-Una volta impostata, la variabile "options" conterrà un oggetto con tutti i dati del file YAML, rendendolo facilmente accessibile per ulteriori operazioni di programmazione.
+In questo modo puoi facilmente accedere ai dati strutturati senza doverli estrarre manualmente dal file.
 
-## Approfondimento
+## Deep Dive
 
-Per coloro che desiderano approfondire i loro studi su YAML, ci sono molte risorse disponibili online. Alcune fonti consigliate includono la documentazione ufficiale di Fish Shell, il modulo "json_yml" su GitHub e tutorial sulle basi di YAML per programmatori.
+Oltre alla semplice gestione dei dati, YAML in Fish Shell offre anche funzioni avanzate per il parsing e la manipolazione dei dati. Ad esempio, puoi utilizzare il comando `yaml_parse` per convertire un file YAML in un array associativo, che ti consente di accedere ai dati in modo ancora più efficiente.
+
+Puoi anche utilizzare funzioni come `yaml_set` e `yaml_delete` per modificare i dati all'interno di un file YAML direttamente dal tuo terminale. Inoltre, il linguaggio espressivo di YAML ti permette di creare strutture dati complesse, rendendo questo strumento utile per una vasta gamma di progetti.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Modulo "json_yml" su GitHub](https://github.com/IlanCosman/fish-json_yml)
-- [Tutorial sulle basi di YAML per programmatori](https://riptutorial.com/yaml)
-
-Grazie per aver letto! Speriamo che questo post ti abbia fornito una comprensione di base di come lavorare con YAML utilizzando Fish Shell. Buona programmazione!
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [fish-yaml repository su GitHub](https://github.com/jorgebucaran/fish-yaml)
+- [Tutorial sulle basi di YAML](https://www.tutorialsteacher.com/yaml)

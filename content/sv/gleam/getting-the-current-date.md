@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att få den aktuella datumet"
-simple_title:         "Att få den aktuella datumet"
+title:                "Att få dagens datum"
+html_title:           "Gleam: Att få dagens datum"
+simple_title:         "Att få dagens datum"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,26 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna få den nuvarande datumet är en viktig komponent av programmering. Det tillåter dig att skapa dynamiska och tidsbaserade applikationer och är en viktig del av att hantera tidrelaterade data.
 
-Att kunna få den nuvarande datumet i ditt program kan vara användbart för att visa när en händelse inträffade, eller för att jämföra datum mellan olika delar av din kod.
-
-## Så här gör du
-
-För att få den nuvarande datumet i Gleam, kan du använda funktionen `Time.now()` tillsammans med modulen `Time.Date`. Här är ett exempel:
+## Hur man
+Att få den nuvarande datumet i Gleam är enkelt. Först kan du importera 'Time' -modulen med `import Time`. Sedan kan du använda funktionen 'now' för att få den nuvarande tidpunkten som en sträng.
 
 ```Gleam
-import Time.Date
+import Time
 
-let nuvarande_datum = Time.now() |> Time.Date.from_gregorian
+let currentDate = Time.now()
 ```
 
-Detta kommer att ge dig ett datumobjekt med information om dag, månad och år. Du kan sedan använda `Time.Date`-funktioner som `day_of_week` och `month_name` för att få specifik information från datumet.
+Om du vill anpassa hur datumet visas kan du använda funktionen `format`, som tar emot en sträng som ett argument och returnerar datumet i det önskade formatet. Till exempel:
+
+```Gleam
+let formattedDate = Time.format("%A, %B %d, %Y")
+```
+
+Detta kommer att returnera datumet i formatet "dag, månad dag, år", till exempel "måndag, maj 14, 2021".
 
 ## Deep Dive
-
-För den som är intresserad av att veta mer om hur man får det nuvarande datumet i Gleam, så använder sig `Time.now()` av Erlangs inbyggda funktion `erlang:now()`, som returnerar den aktuella tidpunkten som antal sekunder sedan 1 januari 1970. Detta antal måste sedan omvandlas till ett Gleam-datumobjekt med hjälp av `Time.Date.from_gregorian`.
+För de som är intresserade av att veta mer om hur datumet hanteras i Gleam finns det flera inbyggda funktioner som kan vara användbara. Som nämnts tidigare kan du använda `now` för att få den nuvarande tiden, men du kan också använda `utc_now` för att få den aktuella tiden i UTC-format. Du kan också använda `add_seconds` och `add_minutes` för att lägga till tidsenheter till din nuvarande tid. Slutligen, om du vill hantera specifika datum, kan du använda `from_utc` som tar emot år, månad, dag och tid som argument och returnerar en tidsstämpel.
 
 ## Se även
-
-- Gleams dokumentation för `Time.Date`-modulen: https://gleam.run/modules/time#date
-- Mer information om Erlangs `erlang:now()`: https://erlang.org/doc/man/erlang.html#now-0
+- Officiell Gleam-hemsida: https://gleam.run/
+- Gleam dokumentation: https://gleam.run/get-started/introduction.html

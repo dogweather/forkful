@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Converting una stringa in minuscolo"
-simple_title:         "Converting una stringa in minuscolo"
+title:                "Convertire una stringa in minuscolo"
+html_title:           "Fish Shell: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,39 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché convertire una stringa in minuscolo con Fish Shell?
 
-Spesso durante la scrittura di script, ci si imbatte nella necessità di trasformare una stringa in minuscolo per eseguire confronti o elaborazioni. Fortunatamente, Fish Shell ci offre una semplice soluzione per questo problema.
+Se stai utilizzando Fish Shell, potresti aver bisogno di convertire una stringa in minuscolo per vari motivi, come manipolare i dati di un file o confrontare stringhe in modo case-insensitive. In questo articolo vedremo come farlo utilizzando Fish Shell.
 
-## Come fare
+## Come farlo con Fish Shell
 
-Per trasformare una stringa in minuscolo, è possibile utilizzare il comando `string tolower` seguito dalla stringa da convertire. Vediamo un esempio:
+La sintassi per convertire una stringa in minuscolo con Fish Shell è semplice:
 
-```Fish Shell
-string tolower "Ciao a Tutti!"
+```
+stringa | string tolower
 ```
 
-Output: `ciao a tutti!`
+In questo modo, il valore della stringa verrà convertito in minuscolo e restituito come output.
 
-Come si può osservare, il comando ha semplicemente convertito tutti i caratteri della stringa in minuscolo. Se si vuole salvare il risultato della conversione in una variabile, è necessario utilizzare la sintassi `set -l`. Ad esempio:
+Ecco un esempio pratico:
 
-```Fish Shell
-set -l lower_case (string tolower "Questa stringa Verrà CONVERTITA")
-echo $lower_case
+```
+echo "Hello World" | string tolower  # output: hello world
 ```
 
-Output: `questa stringa verrà convertita`
+In questo caso, abbiamo utilizzato `echo` per generare una stringa di testo e il comando `string tolower` per convertire la stringa in minuscolo.
 
-È anche possibile convertire una stringa in minuscolo all'interno di una funzione. Basterà utilizzare il comando `string tolower` all'interno della funzione per ottenere il risultato desiderato.
+È anche possibile utilizzare questa sintassi all'interno di uno script Fish, in questo modo:
 
-## Approfondimento
+```
+set nome "Marco"
+set nome_lowercase $nome | string tolower 
+echo $nome_lowercase  # output: marco
+```
 
-Il comando `string tolower` utilizza le regole standard di conversione delle lettere in base al locale corrente del sistema operativo. Questo significa che il risultato della conversione può differire a seconda della lingua e delle impostazioni del sistema in cui viene eseguita.
+In questo esempio, abbiamo salvato la stringa "Marco" nella variabile `nome` e poi utilizzato `string tolower` per convertirla in minuscolo e salvarla nella variabile `nome_lowercase`.
 
-Inoltre, è possibile utilizzare il comando `string toupper` per convertire una stringa in maiuscolo, e il comando `string capitalize` per convertire la prima lettera di ogni parola in maiuscolo.
+## Deep Dive
+
+La conversione di una stringa in minuscolo con Fish Shell è possibile grazie all'utilizzo del comando `string tolower`. Una possibile implementazione di questo comando è la seguente:
+
+```
+function string tolower -d "Converts a string to lowercase"
+  set -l result
+  for char in (string by -s $argv[1])
+    set char (string tolower $char)
+    set result $result$char
+  end
+  echo $result
+end
+```
+
+In questo comando, utilizziamo un ciclo `for` per andare attraverso ogni carattere della stringa e utilizzare il comando `string tolower` per convertire ogni carattere in minuscolo. Infine, utilizziamo `echo` per restituire la stringa convertita nel risultato.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.it.html)
-- [Tutorial sulle stringhe in Fish Shell](https://fishshell.com/docs/current/tutorial.html#strings)
-- [Altre funzionalità utili di Fish Shell](https://fishshell.com/docs/current/commands.html)
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
+- Converting Strings in Fish Shell: https://www.linux.com/topic/desktop/how-convert-strings-fish-shell/
+- Funzioni Fish Shell avanzate: https://hacksoflife.blogspot.com/2016/03/fish-functions-file-namesubstr.html

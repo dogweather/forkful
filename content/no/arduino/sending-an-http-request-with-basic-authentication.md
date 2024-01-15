@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Arduino: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,79 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+HTTP-forespørsler med grunnleggende autentisering er en enkel måte å sikre din kommunikasjon med ulike nettverksenheter. Dette kan for eksempel være nyttig når du ønsker å kommunisere med en API eller en skytjeneste fra dine Arduino-prosjekter. 
 
-Det er mange gode grunner til å sende en HTTP-forespørsel med grunnleggende autentisering i Arduino-programmering. Det kan være nødvendig for å kommunisere med en nettskyplattform eller en ekstern server for å hente data eller utføre handlinger.
-
-## Hvordan
-
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Arduino, må vi følge noen få enkle steg.
-
-Først må vi inkludere biblioteket "WiFiClientSecure.h" i koden vår. Dette gir oss tilgang til funksjoner for å opprette en sikker tilkobling med en server.
-
-Deretter må vi opprette en WiFi-klient og en HTTPS-tilkobling til ønsket nettadresse. Deretter kan vi definere forespørselen vår ved å spesifisere metoden (f.eks. GET eller POST), URI og HTTP-versjon. Vi må også legge til en "Authorization" -header med våre autentiseringsdetaljer.
-
-Til slutt kan vi sende forespørselen vår med "client.print()", og lese svaret med "client.read()". Et eksempel på denne koden er som følger:
+# Hvordan
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Arduino, trenger du å bruke WiFiClientSecure-biblioteket. Først må du laste ned og installere dette biblioteket fra Arduino IDE ved å gå til "Verktøy" og "Administrer bibliotek". Søk etter "WiFiClientSecure" og last ned det før du følger kodesnuttene nedenfor. 
 
 ```Arduino
 #include <WiFiClientSecure.h>
-
-const char* ssid = "wifi-nettverk";
-const char* password = "passordet ditt";
-const char* host = "www.din-nettside.no";
-const int httpsPort = 443;
-
+//Opprett et WiFiClientSecure-objekt:
 WiFiClientSecure client;
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
-
-  Serial.println("WiFi tilkoblet");
-
-  Serial.print("HTTPS-tilkobling til ");
-  Serial.println(host);
-
-  if (!client.connect(host, httpsPort)) {
-    Serial.println("Kan ikke opprette en sikker tilkobling");
-    return;
-  }
-
-  Serial.print("Forespørsel sendt til serveren");
-  client.println("GET /api/data HTTP/1.1");
-  client.println("Host: www.din-nettside.no");
-  client.println("Authorization: Basic ditt autentiseringspassord");
-  client.println("Connection: close");
-  client.println();
-
-  while (client.available()) {
-    String line = client.readStringUntil('\r');
+//Oppgi server- og portnummeret for forespørsel:
+const char* server = "https://www.example.com";
+int port = 443;
+//Angi brukernavn og passord for grunnleggende autentisering:
+const char* username = "example";
+const char* password = "password";
+//Koble til serveren og sjekk tilkoblingsstatusen:
+if(client.connect(server, port)){
+  Serial.println("Tilkoblet!");
+  //Legg til brukernavn og passord til HTTP-headeren:
+  client.println("Authorization: Basic " + String(username) + ":" + String(password) + "\r\n");
+  //Send den faktiske HTTP-forespørselen:
+  client.println("GET /index.html HTTP/1.1");
+  //Les og skriv ut responsen fra serveren:
+  while(client.available()){
+    String line = client.readStringUntil('\r\n');
     Serial.print(line);
   }
-
-  Serial.println();
-  Serial.println("Tilkobling lukket");
-}
-
-void loop() {
-
+  //Lukk tilkoblingen:
+  client.stop();
+} else {
+  Serial.println("Kunne ikke koble til serveren!");
 }
 ```
 
-Output fra serieporten vil vise svaret fra serveren og bekrefte at forespørselen ble sendt og autentisering ble vellykket.
+Etter å ha kjørt denne koden, bør du se responsen fra serveren i serieporten, og i dette tilfellet vil det være innholdet i "index.html"-siden fra serveren. Du kan gjøre mer komplekse forespørsler ved å endre HTTP-metoden og innholdet eller legge til flere HTTP-header parametere. Se eksemplene i "Deep Dive" seksjonen for mer informasjon om dette. 
 
-## Dypdykk
+# Deep Dive
+Når du sender en HTTP-forespørsel med grunnleggende autentisering, er det to viktige ting du må huske på: brukernavn og passord må være i base64-koding og du må inkludere "Authorization" HTTP-headeren i forespørselen. Dette betyr at du trenger å lage en streng som følger dette formatet: "username:password" og konvertere den til base64 før du legger den til i "Authorization" HTTP-headeren. Dette gjøres enkelt ved hjelp av Base64-biblioteket i Arduino. Se et eksempel på koding nedenfor:
 
-Når vi sender en HTTP-forespørsel med grunnleggende autentisering, sender vi en base64-kodet streng med brukernavnet og passordet vårt i "Authorization" -headeren. Denne kodingen er ikke en form for en sikkerhet, men mer som en enkel måte å gjøre informasjonen vår forståelig for serveren.
+```Arduino
+#include <Base64.h>
+//Opprett en variabel for base64-koding:
+String base64encoded = "";
+//Kod brukernavn og passord og legg dem til i basen:
+base64encoded.concat(username);
+base64encoded.concat(":");
+base64encoded.concat(password);
+//Konverter til base64 og legg til i "Authorization" HTTP-headeren:
+client.println("Authorization: Basic " + base64encode.encode(base64encoded) + "\r\n");
+```
 
-Det er også viktig å merke seg at denne metoden for autentisering ikke er like sikker som andre former for autentisering, for eksempel OAuth. Derfor bør den bare brukes når det er nødvendig og når kommunikasjonen med serveren er beskyttet med HTTPS.
+Du kan også inkludere flere HTTP-header parametere ved å følge samme format, for eksempel:
 
-## Se også
+```Arduino
+//Legg til "Content-Type" HTTP-header parametere:
+client.println("Content-Type: application/json");
+```
 
-- Offisiell dokumentasjon for WiFiClientSecure: https://www.arduino.cc/en/Reference/WiFiClientSecure
-- Code for Fun sin guide om å sende en HTTP-forespørsel i Arduino: https://www.codeforfun.no/sende-http-foresporsel-med-arduino/
-- Tutorial om å bruke grunnleggende autentisering i en Arduino-prosjekt: https://randomnerdtutorials.com/esp32-cam-post-image-photo-server-basic-authentication/
+Se dokumentasjonen for API-et eller skytjenesten du kommuniserer med for å finne ut hvilke HTTP-header parametere som er nødvendige for en vellykket forespørsel.
+
+# Se også
+- [WiFiClientSecure bibliotek](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi/examples/HTTPSRequest)
+- [Base64 bibliotek](https://www.arduino.cc/en/Reference/Base64)

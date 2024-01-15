@@ -1,5 +1,6 @@
 ---
-title:                "C: 比较两个日期"
+title:                "比较两个日期"
+html_title:           "C: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "C"
 category:             "C"
@@ -11,117 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-无论是在日常生活还是在程序设计中，我们经常需要比较两个日期的先后顺序。比如，判断今天是不是某个重要日子，或者计算两个事件之间的时间差。在C编程中，比较两个日期也是非常常见的需求。因此，学习如何在C语言中比较两个日期是很重要的。
+当我们需要比较两个日期时，我们可能会用到一些比较操作符，比如大于、小于和等于。这有助于我们在程序中判断某个日期是在另一个日期之前还是之后。
 
-## 如何实现
+## 如何
 
-比较两个日期的常用方法是通过将日期转换为整数，然后比较这两个整数的大小。下面是一个简单的例子，展示了如何在C语言中比较两个日期：
+比较两个日期可以通过使用以下方法来实现：
 
 ```C
+// 引入 <stdio.h> 头文件
 #include <stdio.h>
 
-int main()
-{
-    // 定义两个日期变量
-    int date1 = 20200101;
-    int date2 = 20210101;
+// 定义函数来比较日期
+int compareDate(int year1, int month1, int day1, int year2, int month2, int day2) {
 
-    // 比较两个日期的大小
-    if (date1 > date2)
-    {
-        printf("date1 大于 date2");
+    // 若第一个日期在第二个日期之前，则返回 -1
+    if (year1 < year2) {
+        return -1;
     }
-    else if (date1 < date2)
-    {
-        printf("date1 小于 date2");
+    else if (year1 == year2 && month1 < month2) {
+        return -1;
     }
-    else
-    {
-        printf("date1 等于 date2");
+    else if (year1 == year2 && month1 == month2 && day1 < day2) {
+        return -1;
     }
+
+    // 若第一个日期与第二个日期相等，则返回 0
+    else if (year1 == year2 && month1 == month2 && day1 == day2) {
+        return 0;
+    }
+
+    // 若第一个日期在第二个日期之后，则返回 1
+    else {
+        return 1;
+    }
+}
+
+// 调用函数，并打印输出
+int main(void) {
+    int year1 = 2020;
+    int month1 = 4;
+    int day1 = 30;
+    int year2 = 2021;
+    int month2 = 2;
+    int day2 = 14;
+
+    int result = compareDate(year1, month1, day1, year2, month2, day2);
+
+    printf("结果为：%d", result);
 
     return 0;
 }
 ```
 
-运行上面的代码，我们可以得到以下输出：
+以上代码的输出结果为：1，表示第一个日期在第二个日期之后。
 
-```
-date1 小于 date2
-```
+## 深入了解
 
-通过将日期转换为整数，我们可以很容易地实现日期的比较。但是，如果我们直接比较日期变量的话，结果可能不太准确，尤其是当涉及闰年的情况时。因为每个月的天数不同，所以我们需要根据月份和闰年来确定每个月的天数。下面的代码展示了如何按照这种方法比较日期：
+日期的比较涉及到对年份、月份和日期的比较，需要注意的是在比较月份和日期时，要考虑到不同月份的天数和闰年的情况。比如，在比较 2020 年 2 月 14 日和 2021 年 2 月 14 日时，若只简单地比较月份和日期，则会得出两个相等的日期，但实际上它们是不同的日期。
 
-```C
-#include <stdio.h>
+## 参考链接
 
-// 判断是否为闰年
-int isLeapYear(int year)
-{
-    // 普通平年，2月有28天
-    if (year % 4 != 0)
-    {
-        return 0;
-    }
+- [C 语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [日期比较函数](https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm)
+- [C 语言比较操作符](https://www.geeksforgeeks.org/relational-operators-in-c-c/)
 
-    // 世纪闰年，但非400的倍数，2月有28天
-    if (year % 100 == 0 && year % 400 != 0)
-    {
-        return 0;
-    }
+## 参见
 
-    // 符合以上两种情况，即为闰年
-    return 1;
-}
-
-// 根据月份和是否为闰年来确定每个月的天数
-int getDays(int month, int isLeapYear)
-{
-    // 默认每个月都有31天，除了2月
-    int days = 31;
-
-    // 根据月份来确定天数
-    if (month == 4 || month == 6 || month == 9 || month == 11)
-    {
-        days = 30;
-    }
-    else if (month == 2)
-    {
-        // 根据是否是闰年来确定2月的天数
-        days = isLeapYear ? 29 : 28;
-    }
-
-    return days;
-}
-
-int main()
-{
-    // 定义两个日期变量
-    int date1 = 20200101;
-    int date2 = 20210201;
-
-    // 提取每个日期的年、月、日
-    int year1 = date1 / 10000;
-    int year2 = date2 / 10000;
-    int month1 = (date1 % 10000) / 100;
-    int month2 = (date2 % 10000) / 100;
-    int day1 = date1 % 100;
-    int day2 = date2 % 100;
-
-    // 默认两个日期是相等的
-    int result = 0;
-
-    // 如果年份相同，比较月份，再比较天数
-    if (year1 == year2)
-    {
-        if (month1 == month2)
-        {
-            result = (day1 > day2) ? 1 : (day1 < day2) ? -1 : 0;
-        }
-        else
-        {
-            result = (month1 > month2) ? 1 : -1;
-        }
-    }
-    else
-    {
+- [C语言比较字符串](https://github.com/example/c_compare_strings)

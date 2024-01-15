@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Ruby: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan føles overveldende og skremmende, spesielt for de som er nye til Ruby. Men når du først kommer i gang og ser resultatene, er det en utrolig tilfredsstillende følelse. Å skape noe fra bunnen av og se det ta form er en av de største gledene ved å være en programmerer.
+Å starte et nytt programmeringsprosjekt kan være en spennende og kreativ utfordring som kan hjelpe deg med å forbedre ferdighetene dine og lære nye ting. Det kan også være en måte å uttrykke deg selv på gjennom å lage noe fra bunnen av.
 
-## Slik gjør du det
+# Slik gjør du det
 
-For å komme i gang med ditt nye Ruby-prosjekt, må du først sørge for at du har de riktige verktøyene på plass. Det første du trenger er selvfølgelig Ruby-programmeringsspråket installert på datamaskinen din. Dette kan gjøres ved å følge instruksjonene for din spesifikke operativsystem.
+Det første du trenger å gjøre er å sørge for at du har den nyeste versjonen av Ruby installert på datamaskinen din. Du kan sjekke dette ved å åpne terminalen og skrive ```ruby -v```. Hvis du ikke har den nyeste versjonen, kan du laste den ned fra den offisielle Ruby-nettsiden.
 
-Etter å ha installert Ruby, må du også ha en teksteditor som lar deg skrive og kjøre Ruby-kode. Det er mange forskjellige tekstredigeringsprogrammer å velge mellom, men noen av de mest populære for Ruby-programmering er Sublime Text, Atom og Visual Studio Code.
+Når du har installert Ruby, kan du begynne å skrive din første linje med kode. La oss si at du ønsker å skrive et program som skriver ut "Hei verden!". I Ruby ser det slik ut:
 
-Når du har alt du trenger på plass, kan du begynne å skrive kode! Her er et enkelt eksempel på et "Hello World!"-program i Ruby:
-
-```Ruby
+```ruby
 puts "Hei verden!"
 ```
 
-Når du kjører dette programmet, vil du se teksten "Hei verden!" bli trykket ut i terminalen din.
+Når du har skrevet koden i en tekstredigerer, kan du kjøre programmet ved å åpne terminalen og skrive ```ruby filnavn.rb```, hvor "filnavn" er navnet på Ruby-filen du har laget.
 
-## Dykk dypere
+# Dykk dypere
 
-Å starte et nytt Ruby-prosjekt innebærer mer enn bare å kunne skrive kode. Det er viktig å også ha en god forståelse av de grunnleggende konseptene og syntaksen i språket. Dette vil hjelpe deg med å unngå feil og effektivisere kodingen din.
+Nå som du har lært å kjøre ditt første Ruby-program, kan du begynne å utforske språket dypere. Ruby er et dynamisk og fleksibelt språk, med mange forskjellige bruksområder. Du kan bruke det til å lage nettsider, automatisere oppgaver, eller til og med utvikle spill.
 
-Et annet viktig steg når du starter et nytt prosjekt er å sette opp et godt strukturert prosjektmal. Dette vil gjøre det enklere for deg å organisere koden din og holde oversikt over de forskjellige filene som er en del av prosjektet ditt.
+En god ressurs for å lære mer om Ruby er å lese dokumentasjonen på den offisielle Ruby-nettsiden. Det finnes også mange online kurs og tutorials som kan hjelpe deg med å utvide dine Ruby-ferdigheter.
 
-Det kan også være lurt å utforske forskjellige Ruby-biblioteker og rammeverk som kan hjelpe deg med å bygge ditt prosjekt. Noen populære eksempler er Rails, Sinatra og Ruby on Rails. Disse verktøyene kan gjøre det enklere å håndtere vanskelige oppgaver og fremskynde utviklingsprosessen.
+# Se også
 
-## Se også
-
-- [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
-- [Ruby Gems](https://rubygems.org/)
-- [Rails Tutorial](https://www.railstutorial.org/)
+- [Ruby Programmeringsspråk](https://www.ruby-lang.org/no/)
+- [Ruby Dokumentasjon](https://www.ruby-lang.org/no/documentation/)

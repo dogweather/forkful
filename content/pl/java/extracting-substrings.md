@@ -1,5 +1,6 @@
 ---
-title:                "Java: Wyciąganie podciągów"
+title:                "Wyciąganie podciągów"
+html_title:           "Java: Wyciąganie podciągów"
 simple_title:         "Wyciąganie podciągów"
 programming_language: "Java"
 category:             "Java"
@@ -9,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto wyciągać podciągi
+## Dlaczego
 
-Wyciąganie podciągów jest ważnym aspektem programowania w języku Java, ponieważ pozwala na wygodniejsze i efektywniejsze manipulowanie tekstem. Jeśli pracujesz nad projektami, w których musisz operować na wielu różnych ciągach znaków, umiejętność wyciągania podciągów będzie niezbędna. Jest to również ważne w kontekście optymalizacji kodu, ponieważ pozwala na uniknięcie niepotrzebnego przekazywania dużych ciągów znaków pomiędzy funkcjami.
+W artykule tym omówimy, dlaczego warto poznać technikę wycinania podciągów w języku Java. Będziemy prezentować przykłady kodu oraz przybliżymy informacje na temat tego zagadnienia.
 
-## Jak wyciągać podciągi
+## Jak to zrobić
 
-Aby wyciągać podciągi, możesz wykorzystać metodę `substring()` klasy `String`. Przyjmuje ona dwa argumenty: początkowy i końcowy indeks podciągu. Pamiętaj, że indeksowanie w języku Java zaczyna się od zera, więc pierwszy znak będzie miał indeks 0.
-
-```Java
-String sentence = "To jest przykładowe zdanie.";
-System.out.println(sentence.substring(3, 13));
-```
-
-**Output:** jest przykł
-
-Jak widać w powyższym przykładzie, wyciągnęliśmy podciąg z oryginalnego zdania, zaczynając od 4. znaku (indeks 3) do 14. znaku (indeks 13).
-
-Możesz również wykorzystać metodę `substring()` do wydobycia podciągu od danego indeksu do końca ciągu, podając tylko pierwszy argument.
+Fragmentowanie stringów jest bardzo przydatną funkcją w języku Java, szczególnie przy pracy z tekstami. Pozwala ona na wyodrębnianie fragmentów tekstu, które są dla nas istotne, co ułatwia dalsze operacje. Poniżej prezentujemy kilka przykładów użycia z wyjaśnieniem.
 
 ```Java
-String name = "Katarzyna";
-System.out.println(name.substring(3));
+// Wyciąganie podciągu od danego indeksu do końca tekstu
+String sentence = "Programowanie w języku Java jest bardzo fascynujące.";
+String substring = sentence.substring(30);
+System.out.println(substring);
+// Output: fascynujące.
+
+// Wyciąganie podciągu od danego indeksu do innego podanego indeksu
+String sentence = "Język Java jest bardzo popularny na całym świecie.";
+String substring = sentence.substring(6, 10);
+System.out.println(substring);
+// Output: Java 
 ```
 
-**Output:** arzyna
+Powyższe przykłady pokazują, jak w prosty sposób wycinając odpowiednie fragmenty tekstu, możemy uzyskać dostęp do potrzebnych nam informacji. W przypadku wykorzystania tej funkcji w bardziej zaawansowanych projektach, z pewnością pomoże nam to w efektywnej i dokładnej obróbce danych.
 
-## Pogłębione informacje o wyciąganiu podciągów
+## Głębszy zanurzenie
 
-Wyciąganie podciągów jest możliwe również przy użyciu klasy `StringBuilder`. Jest to bardziej wydajna metoda, jeśli potrzebujesz modyfikować duże ciągi znaków. Metoda `substring()` jest dostępna również w tej klasie, ale należy pamiętać, że biblioteka ta indeksuje znaki od 1, a nie od 0.
+Metoda `substring` w języku Java jest często wykorzystywana przy pracy z indeksami. Warto mieć na uwadze, że numeracja indeksów rozpoczyna się od zera, co może być przydatne przy odwoływaniu się do konkretnych liter w tekście. Dodatkowo, istnieje również możliwość zastosowania metody `substring` do obiektów typu `StringBuilder`, co pozwala na edycję i modyfikację tekstu w miejscu.
 
-Warto również zwrócić uwagę na fakt, że metoda `substring()` nie zmienia oryginalnego ciągu znaków, tylko zwraca nowy ciąg zawierający wyciągnięty podciąg. Jeśli chcesz wprowadzić zmiany bezpośrednio do oryginalnego ciągu, możesz wykorzystać metody klasy `StringBuilder`, takie jak `replace()` lub `insert()`.
+Warto również zaznaczyć, że metoda ta posiada wiele różnych wariantów, co daje nam możliwość dostosowania jej do indywidualnych potrzeb. Na przykład, możemy podać indeksy w formie wyrażenia zamiast liczb, co zwiększa elastyczność jej użycia.
 
-# Zobacz również
+## Zobacz również
 
-- Oficjalna dokumentacja Javy dla klasy `String` i `StringBuilder`: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html
-- Przykładowe ćwiczenia z wykorzystaniem wyciągania podciągów: https://www.w3resource.com/java-exercises/string/index.php
+- [Dokumentacja Java - Manipulowanie stringami](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+- [Jednostka zajęć - Wycinanie podciągów w języku Java](https://www.tutorialspoint.com/java/java_string_substring.htm)
+- [Instrukcja Java - Metoda substring](https://www.geeksforgeeks.org/java-string-substring-method-example/)

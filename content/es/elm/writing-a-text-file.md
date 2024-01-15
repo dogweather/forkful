@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Escribiendo un archivo de texto"
+title:                "Escribiendo un archivo de texto"
+html_title:           "Elm: Escribiendo un archivo de texto"
 simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Escribir un archivo de texto es una de las tareas más comunes para los programadores de Elm. Puede ser utilizado para almacenar datos, configuraciones y otros tipos de información importante para su aplicación.
+Escribir un archivo de texto puede parecer una tarea simple y aburrida, pero en realidad es una habilidad valiosa para cualquier programador. Aprender a escribir un archivo de texto te permitirá almacenar y manipular datos de manera más eficiente, lo que puede ser útil en cualquier proyecto de programación.
 
-## Cómo
+## Cómo hacerlo
 
-Crear un archivo de texto en Elm es muy sencillo. Primero, debes importar el módulo `Text` en tu archivo. Luego, puedes utilizar la función `text` para crear un valor de texto. Aquí tienes un ejemplo:
+Elm tiene una función incorporada llamada `text.encode` que nos permite convertir una cadena de texto en una representación binaria de ese texto. Aquí hay un ejemplo de cómo usarlo:
 
-```Elm
-import Text
-
-miTexto = Text.text "¡Hola mundo!"
+```
+Elm text.encode "¡Hola mundo!"
 ```
 
-Esto creará un valor de texto que contiene la frase "¡Hola mundo!". Puedes asignar este valor a una variable y utilizarlo en otras partes de tu código.
+Esto nos daría como resultado `0xf09f988f486f6c612066756561` en hexadecimal, que es una representación binaria de "¡Hola mundo!".
 
-Si quieres guardar este texto en un archivo, puedes utilizar la biblioteca `elm/file` para escribir en un archivo específico. Aquí tienes un ejemplo:
+Para escribir esto en un archivo de texto, podemos usar la función `Text.writeFile` que toma una ruta de archivo y un valor de texto y escribe ese valor en el archivo especificado. Aquí hay un ejemplo completo de cómo escribir "¡Hola mundo!" como texto en un archivo llamado "saludo.txt":
 
-```Elm
-import File
-import Text
-
-escribirArchivo = 
-  File.write "mi-archivo.txt" (Text.text "¡Hola mundo!")
+```
+Elm import Text
+  .writeFile "saludo.txt" (Text.encode "¡Hola mundo!")
 ```
 
-Este código creará un archivo llamado "mi-archivo.txt" en la misma carpeta donde se encuentra tu archivo Elm y escribirá la frase "¡Hola mundo!" en él.
+## Profundizando
 
-## Deep Dive
+En realidad, escribir un archivo de texto es solo una forma de almacenar datos. Otros métodos incluyen bases de datos y servicios en la nube. Sin embargo, escribir un archivo de texto puede ser útil para proyectos pequeños o personales en los que no se requiere una gran cantidad de datos.
 
-Ahora que ya sabes cómo escribir un archivo de texto en Elm, hablemos un poco más sobre algunas de sus características. El módulo `Text` en Elm proporciona varias funciones útiles para trabajar con texto, como `toUpper` para convertir un texto en mayúsculas y `lines` para dividir un texto en líneas individuales.
-
-Además, la biblioteca `elm/file` también ofrece funcionalidades avanzadas para manejar archivos, como crear y eliminar directorios, leer y escribir archivos binarios, y mucho más.
+También es importante recordar que al escribir un archivo, es necesario asegurarse de incluir el formato correcto para que pueda ser leído y manipulado correctamente. En Elm, podemos especificar el formato de los datos utilizando encodings, como UTF-8 o UTF-16.
 
 ## Ver también
 
-- [Documentación oficial de Elm Text](https://package.elm-lang.org/packages/elm/core/latest/Text)
-- [Documentación oficial de Elm File](https://package.elm-lang.org/packages/elm/file/latest/)
+Si quieres profundizar más en el tema de la manipulación de datos en Elm, te recomendamos los siguientes enlaces:
+
+- [La documentación oficial de Elm sobre manejo de textos](https://guide.elm-lang.org/interop/javascript.html)
+- [Ejemplos prácticos de escritura de archivos en Elm](https://github.com/sporto/elm-text-file)
+- [Tutorial de Elm sobre encodings y cómo usarlos](https://elmprogramming.com/encodings-elm.html)
+
+¡Ahora estás listo para escribir tus propios archivos de texto en Elm! ¡Ánimo!

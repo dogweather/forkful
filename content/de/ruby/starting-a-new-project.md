@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Eine neue Programmier-Projekt beginnen"
-simple_title:         "Eine neue Programmier-Projekt beginnen"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Ruby: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -11,44 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn du ein begeisterter Programmierer bist, dann ist es wahrscheinlich, dass du immer wieder neue Projekte startest. Ob es darum geht, eine neue Programmiersprache zu lernen oder eine Idee in die Tat umzusetzen - es gibt viele Gründe, warum wir uns auf neue Programmierabenteuer einlassen. Lass uns nun darüber sprechen, wie du dein nächstes Projekt in Ruby beginnen kannst.
+Wenn du ein neues Projekt starten möchtest, hast du wahrscheinlich eine Idee oder ein Problem im Kopf, das du lösen möchtest. Mit Ruby kannst du schnell und effizient Prototypen entwickeln und deine Ideen in die Realität umsetzen.
 
-## Wie geht man vor
+## Wie geht's
 
-Das Starten eines neuen Projekts kann manchmal etwas überwältigend sein, aber mit ein paar einfachen Schritten kannst du dich schnell zurechtfinden. Hier sind einige Beispiele, wie du ein neues Projekt in Ruby erstellen und ausführen kannst:
+Um ein neues Projekt mit Ruby zu starten, kannst du Folgendes tun:
 
-```Ruby
-# Erstelle ein neues Projektverzeichnis
-mkdir neues-projekt
+- Installiere die neueste Version von Ruby auf deinem Computer.
+- Erstelle ein neues Verzeichnis für dein Projekt und navigiere mit der Befehlszeile in dieses Verzeichnis.
+- Füge eine Datei mit der Endung ".rb" hinzu, dies ist die Erweiterung für Ruby-Dateien.
+- Öffne die Datei in einem Texteditor deiner Wahl und fange an zu codieren!
 
-# Gehe in das Verzeichnis
-cd neues-projekt
-
-# Erstelle eine neue Ruby-Datei
-touch hallo-welt.rb
-
-# Öffne die Datei in deinem bevorzugten Texteditor
-code hallo-welt.rb
-```
-
-Jetzt kannst du deine Ruby-Datei bearbeiten und deinem Projekt Leben einhauchen. Vergiss nicht, dass du jederzeit den Code ausführen und testen kannst:
+Hier ist ein einfaches Beispiel für eine "Hello World"-Anwendung in Ruby:
 
 ```Ruby
-# Führe deine Datei aus
-ruby hallo-welt.rb
-# => Hallo Welt!
+# Dies ist ein Kommentar in Ruby
+puts "Hello World!" # Diese Zeile gibt "Hello World!" auf der Konsole aus
 ```
 
-## Tiefer Einblick
+Das obige Beispiel verwendet die Methode `puts`, um den Text "Hello World!" auf der Konsole auszugeben. Du kannst auch Variablen und Bedingungen verwenden, um deine Anwendung funktionaler und interaktiver zu gestalten.
 
-Während du mit deinem neuen Projekt weitermachst, gibt es ein paar wichtige Dinge, die du berücksichtigen solltest. Hier sind einige Ressourcen, die dir helfen können, bessere Entscheidungen für dein Projekt zu treffen:
+## Tiefentauchen
 
-- Ruby Dokumentation (https://www.ruby-lang.org/de/documentation): Hier findest du Informationen zu den verschiedenen Ruby-Methoden und -Funktionen.
-- Rubygems (https://rubygems.org): Entdecke und verwende bereits erstellte Ruby-Bibliotheken, um deine Arbeit zu vereinfachen.
-- Ruby on Rails (https://rubyonrails.org): Erfahre mehr über das beliebte Ruby-Framework, das dir helfen kann, deine Projekte noch schneller und effizienter zu gestalten.
+Bei der Erstellung eines neuen Projekts mit Ruby gibt es einige wichtige Dinge zu beachten. Als erstes solltest du dich mit Syntax und grundlegenden Konzepten wie Variablen, Datentypen und Kontrollstrukturen vertraut machen.
+
+Um ein tieferes Verständnis von Ruby zu erlangen, empfehle ich die offizielle Ruby-Dokumentation und Tutorials von erfahrenen Entwicklern zu lesen. Du kannst auch an Meetups oder Konferenzen teilnehmen, um dich mit anderen Ruby-Entwicklern zu vernetzen und von ihnen zu lernen.
 
 ## Siehe auch
 
-- Ruby-Tutorial für Anfänger (https://www.ruby-lang.org/de/documentation/quickstart)
-- RubyGems Ressourcen (https://www.nokogiri.org/tutorials/installing_nokogiri.html)
-- Ruby on Rails-Tutorial (https://guides.rubyonrails.org/getting_started.html)
+- [Die offizielle Ruby-Dokumentation](https://www.ruby-lang.org/de/documentation/)
+- [Ruby-Tutorials von Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- [Meetup.com - Ruby Meetups](https://www.meetup.com/topics/ruby/)

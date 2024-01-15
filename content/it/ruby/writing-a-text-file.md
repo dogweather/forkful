@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Scrivere un file di testo"
+title:                "Scrivere un file di testo"
+html_title:           "Ruby: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,41 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Tutti i programmatori utilizzano i testi per scrivere codice, sia per insegnare qualcosa o per documentare il proprio lavoro. Scopri come scrivere nel tuo codice in modo che sia leggibile per te e per gli altri.
+Scrivere un file di testo può sembrare banale, ma in realtà è una delle abilità fondamentali per qualsiasi programmatore di Ruby. Potresti aver bisogno di creare un file di configurazione, salvare dati in un formato leggibile, o addirittura scrivere un file di log per il tuo programma.
 
-## Come Fare
+## Come fare
 
-Scrivere un file di testo è un compito molto semplice in Ruby. Usando il nostro codice, possiamo creare un nuovo file e aggiungere del testo ad esso. Iniziamo creando un nuovo file chiamato `mio_file.txt`, e poi avremo bisogno di aprire e scrivere nel file. Inseriamo il seguente codice all'interno del nostro blocco `Ruby`:
-
-```
-File.open("mio_file.txt", "w") do |file|
-  file.puts "Ciao! Questo è un esempio di file di testo scritto in Ruby."
-end
-```
-
-Il nostro file di testo è stato creato e potete verificare il risultato aprendo il file con un editor di testo.
-
-Adesso, oltre ad aggiungere del testo, possiamo anche aggiungere un codice Ruby nel nostro file di testo. Basta aggiungere del codice all'interno del blocco `File.open`:
+Per scrivere un file di testo in Ruby, possiamo utilizzare il metodo `File.write`. Ad esempio, se vogliamo creare un file chiamato "esempio.txt" e scrivere al suo interno la stringa "Ciao mondo!", possiamo fare così:
 
 ```
-File.open("mio_file.txt", "w") do |file|
-  file.puts "Esempio di codice Ruby:"
-  file.puts "```Ruby"
-  file.puts "puts \"Ciao mondo!\""
-  file.puts "```"
-end
+File.write("esempio.txt", "Ciao mondo!")
 ```
 
-Ora vedrete che il vostro file di testo contiene del testo e un blocco di codice Ruby all'interno di un blocco `Ruby`. Se eseguite il file, potete vedere l'output del codice direttamente all'interno del file di testo.
+Questo creerà un nuovo file chiamato "esempio.txt" nella stessa cartella in cui si trova il tuo programma, e scriverà al suo interno la frase "Ciao mondo!".
 
 ## Approfondimento
 
-Ora che avete imparato come creare un file di testo e aggiungervi del testo e del codice Ruby, è importante ricordare che esistono molte opzioni e metodi diversi per manipolazione dei file di testo in Ruby. Ad esempio, potete utilizzare il metodo `.write` invece di `.puts` per scrivere nel file, oppure potete aggiungere altri parametri come il numero di linee o la modalità di apertura del file. Esplorate il mondo dei file di testo in Ruby per trovare il metodo che funziona meglio per le vostre esigenze.
+Oltre al metodo `File.write`, esistono anche altri modi per scrivere un file in Ruby. Ad esempio, possiamo utilizzare il metodo `File.open` per aprire un file in modalità scrittura e poi utilizzare il metodo `write` per scrivere al suo interno. Inoltre, possiamo anche specificare il formato dei dati da scrivere, come nel seguente esempio:
 
-## Vedi Anche
+```
+File.open("numeri.txt", "w") do |file|
+  file.write([1, 2, 3].join("\n"))
+end
+```
 
-- [Documentazione di Ruby sul metodo File.open](https://ruby-doc.org/core-2.6.3/File.html#method-c-open)
-- [Tutorial su come manipolare i file di testo in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Un'applicazione Ruby per scrivere, leggere e modificare file di testo](https://rubygems.org/gems/fileutils)
+Questo creerà un file chiamato "numeri.txt" e scriverà all'interno una lista di numeri separati da una nuova riga.
 
-_Grazie per aver letto questo articolo sulle basi della scrittura di file di testo in Ruby. Continuate ad esplorare il potenziale di questo linguaggio di programmazione versatile e divertente!_
+## Vedi anche
+
+- La documentazione ufficiale di Ruby sul metodo `File.write`: https://ruby-doc.org/core-2.7.1/File.html#method-c-write
+- Un tutorial su come scrivere un file di testo in Ruby: https://www.rubyguides.com/2015/05/working-with-files-ruby/
+- Un esempio di utilizzo del metodo `File.open` per scrivere un file in modalità scrittura: https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-ruby

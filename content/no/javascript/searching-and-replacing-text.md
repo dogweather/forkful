@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Søking og utskifting av tekst"
-simple_title:         "Søking og utskifting av tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Javascript: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,36 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å søke og erstatte tekst er en vanlig oppgave når man jobber med programmering. Det lar deg enkelt gjøre endringer i en større mengde tekst på en gang, noe som kan spare deg for mye tid og krefter.
 
-Å bytte ut tekst i et prosjekt kan være en viktig del av å forbedre koden din, organisere informasjonen din eller gjøre batch-oppdateringer. Ved å bruke JavaScript, kan du enkelt utføre søk og erstatninger i tekstfiler. Dette kan hjelpe deg med å spare tid og forbedre effektiviteten din som utvikler.
-
-## Hvordan
-
-For å utføre en søk og erstatning i en tekstfil med JavaScript, kan du bruke metoden `replace()`. Her er et eksempel på hvordan du kan erstatte et ord i en tekst med et annet ord:
+## Slik gjør du det
+Søke og erstatte funksjonen i Javascript gjør det mulig å finne et bestemt uttrykk i en tekststreng og erstatte det med et annet uttrykk. Dette kan gjøres ved hjelp av den innebygde metoden `replace()` som tar to parametere - uttrykket du ønsker å bytte ut, og det nye uttrykket du ønsker å erstatte det med. La oss se på et enkelt eksempel:
 
 ```Javascript
-let tekst = "Jeg elsker å kode i JavaScript!";
-let nyTekst = tekst.replace("elsker", "digger");
-// nyTekst vil nå være "Jeg digger å kode i JavaScript!"
+let tekst = "Jeg elsker å programmere i Javascript!";
+let nyTekst = tekst.replace("Javascript", "Python");
+console.log(nyTekst);
 ```
 
-Du kan også bruke regulære uttrykk for å gjøre enda mer komplekse søk og erstatninger. Her er et eksempel på hvordan du kan erstatte alle små bokstaver i en tekst med store bokstaver:
+I dette eksempelet har vi definert en variabel `tekst` med en tekststreng. Deretter bruker vi `replace()` metoden til å erstatte "Javascript" med "Python". Det nye uttrykket lagres i variabelen `nyTekst` og blir deretter logget ut, noe som vil gi følgende output:
+
+```
+Jeg elsker å programmere i Python!
+```
+
+Søke og erstatte funksjonen i Javascript tar også i bruk såkalte regulære uttrykk, som gjør det mulig å søke etter mer komplekse mønstre i en tekststreng. Her er et eksempel som viser hvordan du kan bytte ut alle tall i en tekststreng med "X":
 
 ```Javascript
-let tekst = "dette er en tekst med små bokstaver.";
-let nyTekst = tekst.replace(/[a-z]/g, match => match.toUpperCase());
-// nyTekst vil nå være "DETTE ER EN TEKST MED SMÅ BOKSTAVER."
+let tall = "123 er et tall og 456 er et annet tall.";
+let nyTekst = tall.replace(/[0-9]/g, "X");
+console.log(nyTekst);
 ```
 
-Som du kan se, bruker vi her `replace()`-metoden kombinert med et regulært uttrykk for å matche alle små bokstaver og deretter bytte dem ut med tilsvarende store bokstaver.
+I dette eksempelet bruker vi regulære uttrykk og `g` flagget (global) for å erstatte alle tall fra 0 til 9 med "X". Outputen vil bli:
+
+```
+XXX er et tall og XXX er et annet tall.
+```
 
 ## Dypdykk
+Nå som vi har sett på noen enkle eksempler på hvordan søke og erstatte funksjonen fungerer, la oss dykke dypere inn i dette emnet. `replace()` metoden i Javascript tar også i bruk to spesielle flagg - `i` for å gjøre søket case-insensitive (ikke skille mellom store og små bokstaver) og `m` for å gjøre søket flerlinjet. Du kan også gi `replace()` metoden en funksjon som argument i stedet for et statisk uttrykk. Dette kan være nyttig når du ønsker å lage et mer fleksibelt søk og erstatte system. Her er et eksempel på en slik implementering:
 
-Det er viktig å merke seg at `replace()`-metoden bare vil erstatte det første tilfellet av søket i teksten. Hvis du ønsker å erstatte alle forekomster, må du bruke et regulært uttrykk med flagget `g` (global).
+```Javascript
+let tekst = "Javascript er et fantastisk programmeringsspråk!";
+let nyTekst = tekst.replace(/javascr[ıı]pt/gi, match => match.toUpperCase());
+console.log(nyTekst);
+```
 
-Det er også viktig å ta hensyn til forskjellen mellom datatypene `string` og `RegExp` når du bruker regulære uttrykk. Du kan ikke bruke `match()`-metoden på en variabel av datatypen `string`, så du må sørge for å alltid bruke regulære uttrykk når du skal utføre søk og erstatning.
+I dette eksempelet bruker vi et regulært uttrykk som gjør søket case-insensitive, noe som betyr at både "Javascript" og "javascript" vil bli erstattet. Vi bruker også `.toUpperCase()` metoden i funksjonen som argument for å gjøre det erstattede uttrykket til store bokstaver. Outputen vil bli:
+
+```
+JAVASCRIPT er et fantastisk programmeringsspråk!
+```
 
 ## Se også
-
-- [MDN Web Docs: replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [MDN - String replace() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools - JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)

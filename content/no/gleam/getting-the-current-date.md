@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Å få dagens dato"
-simple_title:         "Å få dagens dato"
+title:                "Å få gjeldende dato"
+html_title:           "Gleam: Å få gjeldende dato"
+simple_title:         "Å få gjeldende dato"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -9,61 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Why
 
-Å få dagens dato er en vanlig oppgave innen programmering. Dette kan være nyttig for å vise brukere når noe ble opprettet, eller for å planlegge fremtidige hendelser. I dette blogginnlegget vil vi vise deg hvordan du enkelt kan få dagens dato i Gleam-programmeringsspråket.
+Hvorfor bry seg om å få dagens dato?
 
-## Hvordan
+Det kan være mange grunner til å ville vite dagens dato, enten man skal lage en kalender-app, følge med på tidsberegninger, eller bare ønsker å holde styr på tiden. Uansett årsak, kan Gleam gjøre dette enkelt for deg med sin innebygde funksjon for å hente dagens dato.
 
-Å få dagens dato i Gleam er enkelt og krever bare noen få linjer med kode. Først må vi importere `Time`-biblioteket:
+## How To
 
-```Gleam
-import Time
+Det er enkelt å få tak i dagens dato i Gleam. Du trenger bare å bruke funksjonen `Calendar.Date.today()` for å hente dagens dato som en `Calendar.Date`-rekord. Her er et eksempel på hvordan du kan bruke denne funksjonen i et program:
+
+```
+Gleam import time
+import gleam/calendar.{ Date }
+
+pub fn main() {
+  let today = Calendar.Date.today()
+  time.log_debug("Dagens dato er: {today.day}.{today.month}.{today.year}")
+}
 ```
 
-Deretter kan vi bruke funksjonen `now` for å få dagens dato og lagre den i en variabel:
-
-```Gleam
-today = Time.now()
-```
-
-Vi kan deretter bruke funksjoner fra `Time.Date`-biblioteket for å få tilgang til ulike elementer av datoen. Her er noen eksempler:
-
-- `today.year` - får året som en `Int`-verdi
-- `today.month` - får måneden som en `Int`-verdi
-- `today.day` - får dagen som en `Int`-verdi
-- `today.weekday` - får ukedagen som en `Int`-verdi (0 er søndag, 1 er mandag osv.)
-
-La oss se på et eksempel som viser dagens dato på et mer leselig format:
-
-```Gleam
-today = Time.now()
-date_string = "I dag er det " ++
-              today.day.toString() ++ "." ++
-              today.month.toString() ++ "." ++
-              today.year.toString()
-```
-
-I dette eksempelet bruker vi funksjonen `toString` for å konvertere de forskjellige datoelementene til tekst og legge dem til i en variabel som heter `date_string`. Vi bruker også `++` for å kombinere tekststrenger.
-
-Når vi nå kjører dette, vil `date_string` inneholde teksten "I dag er det 6.10.2021", avhengig av når du leser dette innlegget.
+Når programmet kjører, vil du få output som f.eks. `Dagens dato er: 5.9.2021`. Legg merke til at vi bruker `time.log_debug` for å logge datoen til terminalen. Du kan også bruke andre funksjoner for å formatere og manipulere datoen etter dine behov.
 
 ## Deep Dive
 
-Dersom du ønsker å lære mer om hvordan `Time`-biblioteket fungerer under overflaten, kan du ta en titt på Gleams offisielle dokumentasjon. Der finner du forklaringer og eksempler på alle funksjonene som er tilgjengelige for å håndtere datoer og klokkeslett i Gleam.
+For de som ønsker å gå dypere inn i hvordan Gleam håndterer datoer, kan det være nyttig å vite at `Calendar.Date`-rekorden inneholder flere felt som kan komme til nytte. Disse inkluderer `day`, `month` og `year` som vi allerede har nevnt, samt `day_of_week` og `day_of_year`.
 
-Det kan også være nyttig å vite at `today`-variabelen vi opprettet faktisk er en "struct" i Gleam. Dette betyr at den inneholder flere forskjellige variabler innenfor seg, som vi kan få tilgang til ved å bruke punktnotasjon. For eksempel:
+Gleam bruker koordinert universaltid (UTC) for å beregne datoer og tidspunkt, og håndterer også skuddår. Dette gjør at du kan være sikker på at datoen du får tilbake alltid vil være korrekt.
 
-```Gleam
-my_date = Time.Date.new(day: 6, month: 10, year: 2021)
-today = Time.Date.now()
-new_date = today |> Time.Date.set(day: 12)
-```
+## See Also
 
-I dette eksempelet oppretter vi en ny struct kalt `my_date` med en spesifikk dato, bruker `now`-funksjonen for å få dagens dato og lagre den i `today`, og deretter bruker vi `set`-funksjonen for å endre dagen til 12. Dette illustrerer hvordan vi kan manipulere og arbeide med datoen på en fleksibel måte.
-
-## Se også
-
-- [Gleam dokumentasjon om Time-biblioteket](https://gleam.run/documentation/stdlib/time/)
-- [Gleam dokumentasjon om structs](https://gleam.run/documentation/types/struct/)
-- [Gleam offisiell hjemmeside](https://gleam.run/)
+- Offisiell Gleam-dokumentasjon for `Calendar.Date`: https://gleam.run/documentation/std_lib/calendar
+- Gleam sin offisielle nettside: https://gleam.run/
+- Gleam på GitHub: https://github.com/gleam-lang/gleam

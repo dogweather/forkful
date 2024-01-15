@@ -1,6 +1,7 @@
 ---
-title:                "Go: 基本認証を使用してhttpリクエストを送信する方法"
-simple_title:         "基本認証を使用してhttpリクエストを送信する方法"
+title:                "基本認証を使ってhttpリクエストを送信する"
+html_title:           "Go: 基本認証を使ってhttpリクエストを送信する"
+simple_title:         "基本認証を使ってhttpリクエストを送信する"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,62 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-HTTPリクエストを基本認証で送信する理由を説明します。基本認証とは、ユーザー名とパスワードを使用してウェブサーバーにアクセスするための方法です。
+HTTPリクエストにBasic認証を使って送信する理由を最大2文で説明する。 
 
-## 方法
+誰か別のウェブサイトやアプリケーションにアクセスする際、そのウェブサイトやアプリケーションのサーバーが正しい認証情報を持ったユーザーであることを確認する必要があるためです。
 
-まずは、`net/http`パッケージをインポートしましょう。
-
-```Go
-import (
-	"net/http"
-)
-```
-
-次に、`http.NewRequest()`関数を使用して基本認証を含むリクエストを作成します。以下のコードでは、URLと認証用のユーザー名とパスワードが設定されています。
+## How To
 
 ```Go
-// URL
-url := "https://example.com/api/users"
-// 認証用のユーザー名とパスワード
-username := "user"
-password := "password"
+func makeRequest() {
+    // HTTPリクエストを設定
+    req, err := http.NewRequest("GET", "https://example.com", nil)
 
-// 基本認証を含むリクエストを作成
-req, err := http.NewRequest("GET", url, nil)
-req.SetBasicAuth(username, password)
+    // 認証情報をヘッダーに追加
+    req.SetBasicAuth("username", "password")
+
+    // リクエストを送信
+    client := http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+
+    // リクエストの結果を表示
+    fmt.Println(resp)
+}
 ```
 
-そして、作成したリクエストを`http.Client`を使用して送信します。
+上記のコード例では、Go言語でHTTPリクエストを作成し、Basic認証を使って認証情報をヘッダーに追加しています。また、リクエストを送信し、レスポンスを表示しています。
 
-```Go
-// http.Clientを作成
-client := &http.Client{}
-// リクエストを送信
-resp, err := client.Do(req)
-```
+## Deep Dive
 
-コードの出力結果は以下のようになります。
+Basic認証は、クライアントがユーザー名とパスワードをBase64エンコードしてリクエストヘッダーのAuthorizationフィールドに含めることで認証を行います。サーバーはこのヘッダーを受け取り、デコードして認証情報を検証します。この認証方法はセキュリティ面で不十分だと考えられ、今ではより強力な認証方法が推奨されています。
 
-```
-Status: 200 OK
-Body: {"message": "Hello, user!"}
-```
+## See Also
 
-## 詳細を調べる
-
-基本認証には、ユーザー名とパスワードを平文で送信するため、セキュリティリスクがあります。そのため、HTTPSを使用して暗号化した接続を行うことが推奨されます。また、ユーザー名とパスワードの代わりにトークンを使用する方法もあります。
-
-基本認証は、特に外部のAPIにアクセスする場合によく使用されます。しかし、セキュリティ上のリスクを考慮し、SSL接続を使用することを強くお勧めします。
-
-## はじめにもどる
-
-基本認証を使用してHTTPリクエストを送信する方法は、Go言語を使用する上で重要なことです。今回紹介した方法を覚えておくと、外部のAPIにアクセスする際に役立つことでしょう。
-
-## 他にも参考になるリンク
-
-- [net/httpパッケージドキュメント（英語）](https://golang.org/pkg/net/http/)
-- [OWASP：基本認証（英語）](https://owasp.org/www-community/attacks/Basic_Authentication)
-- [Go製の基本認証ライブラリ：basicauth（英語）](https://github.com/goji/httpauth/tree/master/basicauth)
+- [Go言語でHTTPリクエストを送る方法](https://www.yoheim.net/blog.php?q=20160702)
+- [Go言語でBasic認証を使ったHTTPリクエストをする方法](https://qiita.com/miyohide/items/d96aa3abf369a2ca9875)

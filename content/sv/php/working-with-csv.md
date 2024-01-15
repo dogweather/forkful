@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "PHP: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,36 +10,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför arbeta med CSV-filer?
+## Varför
 
-CSV (Comma Separated Values) är ett vanligt filformat för att lagra och hantera stora mängder av data. Det är ett flexibelt och lättillgängligt sätt att strukturera och organisera data, vilket gör det till ett populärt val för många programmerare. I denna bloggpost kommer vi att titta på hur man arbetar med CSV-filer i PHP och hur man kan dra nytta av dess fördelar.
+Om du någonsin har arbetat med data i en tabellformat, som i Excel, har du förmodligen hört talas om CSV-filer. CSV står för Comma Separated Values och är ett vanligt format för att hantera stora mängder av data. I PHP tillhandahåller CSV-funktioner en enkel och effektiv lösning för att manipulera och behandla CSV-filer.
 
-##Så här gör du
+## Hur man gör
 
-För att arbeta med CSV-filer i PHP behöver du först ladda ner biblioteket "parseCSV" från GitHub. Sedan kan du använda följande kodexempel för att läsa in en CSV-fil och skriva ut dess innehåll.
+För att kunna arbeta med CSV-filer i PHP behöver du först och främst kunna öppna och läsa filen. Detta görs med hjälp av ```fopen()``` och ```fgets()```. Här är ett enkelt exempel på hur man läser en CSV-fil och skriver ut varje rad som en tabell i HTML:
 
 ```PHP
-<?php
-    require_once 'path/to/parsecsv.lib.php';
-    $csv = new parseCSV('my_file.csv');
-    foreach ($csv->data as $row) {
-        echo $row['column1'] . ", " . $row['column2'];
+$file = fopen("min_csv_fil.csv", "r");
+
+echo "<table>";
+
+while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
+    echo "<tr>";
+    foreach ($data as $value) {
+        echo "<td>" . $value . "</td>";
     }
-?>
+    echo "</tr>";
+}
+
+echo "</table>";
+
+fclose($file);
 ```
 
-Detta kodexempel använder "foreach" loopen för att loopa igenom varje rad i CSV-filen och skriva ut värdet från kolumn 1 och 2. Du kan också använda andra PHP-funktioner för att manipulera och bearbeta data från en CSV-fil på ett liknande sätt.
+Resultatet kommer att se ut som en HTML-tabell med varje cell som en separat värde från CSV-filen.
 
-##Djupdykning
+Förutom att läsa CSV-filer kan PHP också skapa nya CSV-filer och skriva data till dem. Här är ett annat exempel som visar hur man kan skapa en CSV-fil och lägga till data i den:
 
-När du arbetar med CSV-filer är det viktigt att förstå dess format och hur data organiserade i filen. En CSV-fil består av rader och kolumner, där varje rad representerar en post och varje kolumn innehåller ett specifikt värde för den posten. Detta filformat är också känsligt för teckenkodning, så det är viktigt att du kontrollerar att filen har rätt teckenkodning för att undvika eventuella problem.
+```PHP
+$file = fopen("ny_csv_fil.csv", "w");
+$data = array(
+    array("Förnamn", "Efternamn", "Ålder"),
+    array("Alice", "Andersson", 25),
+    array("Bob", "Berg", 32),
+    array("Charlotte", "Ceder", 41)
+);
 
-I PHP finns det också flera inbyggda funktioner för att hantera CSV-filer, till exempel "fgetcsv" som läser in en rad från en öppen fil och "fputcsv" som skriver ut en rad till en fil. Dessa funktioner kan vara användbara när du behöver göra mer avancerade operationer på en CSV-fil.
+foreach ($data as $row) {
+    fputcsv($file, $row);
+}
 
-##Se även
+fclose($file);
+```
 
-Om du vill lära dig mer om att arbeta med CSV-filer i PHP kan du kolla in följande länkar:
+Detta exempel skapar en CSV-fil med tre kolumner och fyra rader med data. Du kan också lägga till mer data i filen genom att upprepa ```fputcsv()``` med fler rader.
 
-- [PHP parseCSV bibliotek på GitHub](https://github.com/parsecsv/parsecsv-for-php)
-- [Dokumentation för PHP-funktionen fgetcsv](https://www.php.net/manual/en/function.fgetcsv.php)
-- [Dokumentation för PHP-funktionen fputcsv](https://www.php.net/manual/en/function.fputcsv.php)
+## Djupdykning
+
+Nu när du har en grundläggande förståelse för att läsa och skriva CSV-filer i PHP, låt oss titta på några mer avancerade funktioner som kan vara användbara när du arbetar med större och mer komplexa datamängder.
+
+### Skippa första raden
+
+I det första exemplet visade vi hur man läser en CSV-fil och skriver ut varje rad som en tabell. Men vad händer om den första raden i filen är en rubrikrad och inte ska skrivas ut i tabellen? För att skippa den första raden i en CSV-fil kan du använda ```fgets()``` en gång innan du börjar läsa data, som i exemplet nedan:
+
+```PHP
+$file = fopen("min_csv_fil.csv", "r");
+
+// Skip first line
+fgets($file, 1000);
+
+echo "<table>";
+
+while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
+    echo "<tr>";
+    foreach ($data as $value) {
+        echo "<td>" . $value . "</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+fclose($file);
+```
+
+### Separations tecken
+
+I det föregående exemplet använde vi en komma (",") som separations tecken när vi läsde och skrev till CSV-filen. Men ibland kan det hända att det finns andra separatorer, som semikolon (";") eller tabb ("\t"). Du kan enkelt ändra separations tecknet genom att ange det som tredje parameter i ```fgetcsv()``` respektive ```fputcsv()```.
+
+### Inläsning och skrivning med delade filer
+
+När du arbetar med större datamängder kan det vara bra att dela upp filen i mindre delar, för att undvika minnesproblem. I PHP kan du använda funktionerna ```ftell()``` och ```fseek()``` för att hålla koll på var du befinner dig i en fil, så att du kan läsa och skriva från en viss position.

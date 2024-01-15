@@ -1,5 +1,6 @@
 ---
-title:                "Java: Å skrive en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Java: Å skrive en tekstfil"
 simple_title:         "Å skrive en tekstfil"
 programming_language: "Java"
 category:             "Java"
@@ -9,31 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
 
-Det å skrive en tekstfil i Java kan være en viktig del av programmering. Det kan være nyttig for å lagre data eller kommunisere med brukere.
+Skal du skrive et Java-program som håndterer store mengder data? Da kan det være nyttig å kunne skrive dataen din til en tekstfil. Det gjør at du kan lagre dataen og lese den senere, og det kan også være enklere å behandle store datamengder på den måten.
 
-## Hvordan
+## Slik gjør du det
 
-For å skrive en tekstfil i Java, kan du bruke klassene `File` og `FileWriter`. Først må du opprette en ny `File`-instans og angi filbanen og navnet på filen du vil skrive. Deretter må du opprette en `FileWriter`-instans og bruke `write()`-metoden til å skrive teksten du ønsker å lagre i filen. Til slutt må du bruke `close()`-metoden for å lagre og lukke filen.
+For å skrive en tekstfil i Java, må du følge noen enkle steg. Først må du opprette et nytt filobjekt, som vil representere filen du ønsker å skrive til.
 
-```
-Java
-  File fil = new File("minFil.txt");
-  FileWriter skriver = new FileWriter(fil);
-  skriver.write("Dette er en tekstfil skrevet i Java!");
-  skriver.close();
+```Java
+File file = new File("minfil.txt");
 ```
 
-Dette vil opprette en ny tekstfil med tittelen "minFil.txt" på rotmappen til prosjektet ditt. Du kan også angi en spesifikk filbane hvis du vil at filen skal lagres et annet sted.
+Deretter må du åpne en FileWriter og koble den til filobjektet.
+
+```Java
+FileWriter writer = new FileWriter(file);
+```
+
+For å skrive data til tekstfilen, må du bruke FileWriter-objektets write() metode.
+
+```Java
+writer.write("Dette er en testtekst.");
+```
+
+Husk å lukke FileWriter-objektet når du er ferdig.
+
+```Java
+writer.close();
+```
 
 ## Dypdykk
 
-Det er viktig å huske på at når du bruker `FileWriter`, vil all eksisterende tekst i filen bli erstattet med den nye teksten du skriver. Hvis du vil legge til tekst i en eksisterende fil, kan du bruke `FileWriter`'s andre konstruktør, som tar inn en boolean verdi. Hvis du setter denne til `true`, vil teksten bli lagt til i slutten av filen i stedet for å erstatte eksisterende tekst.
+Nå som du har lært hvordan du skriver data til en tekstfil i Java, kan det være nyttig å vite noen flere detaljer. Det første du bør vite er at FileWriter-klassen bruker en buffer for å skrive data til filen, som betyr at dataen ikke blir lagret umiddelbart. For å sikre at dataen faktisk blir lagret, kan du enten bruke FileWriter-objektets flush() metode eller methoden close().
 
-Det er også viktig å huske på at når du bruker `FileWriter`, må du håndtere eventuelle unntak som kan oppstå, for eksempel hvis filen ikke kan opprettes eller skrives til. Dette kan gjøres ved å bruke try/catch-blokker eller kaste unntak.
+En annen ting å være obs på er at FileWriter vil overskrive eksisterende data i filen hver gang du åpner den på nytt. Hvis du ønsker å legge til data i filen i stedet for å overskrive, kan du bruke FileWriter-objektets constructor med en boolean parameter som indikerer dette.
+
+```Java
+FileWriter writer = new FileWriter(file, true);
+```
+
+Et siste tips er å bruke try-with-resources syntaksen når du åpner en fil for å sørge for at ressursene blir lukket automatisk.
+
+```Java
+try (FileWriter writer = new FileWriter(file)) {
+    writer.write("Dette er en testtekst.");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 
 ## Se også
 
-- [Java File-klassen](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
-- [Java FileWriter-klassen](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileWriter.html)
+- Java FileWriter dokumentasjon: https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html
+- Java File dokumentasjon: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
+- Tutorialspoint sin guide til å skrive til en tekstfil i Java: https://www.tutorialspoint.com/javaexamples/file_write.htm

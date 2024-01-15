@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Analiza html"
+title:                "Analiza html"
+html_title:           "Javascript: Analiza html"
 simple_title:         "Analiza html"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto nauczyć się parsowania HTML?
+## Dlaczego
 
-Parsowanie HTML jest niezbędnym narzędziem dla każdego programisty, który chce tworzyć dynamiczne i interaktywne strony internetowe. Jest to proces konwertowania kodu źródłowego HTML na obiekty reprezentujące strukturę dokumentu, co pozwala na manipulowanie i wyświetlanie zawartości strony zgodnie z naszymi potrzebami.
+Parsing HTML to jest bardzo ważnym aspektem programowania w dzisiejszych czasach. Dzięki niemu możemy manipulować danymi zapisanymi w języku HTML, co daje nam możliwość tworzenia interaktywnych stron internetowych, aplikacji webowych oraz wielu innych przydatnych narzędzi.
 
-## Jak to zrobić w praktyce
+## Jak to zrobić
 
-Aby rozpocząć parsowanie HTML, musimy użyć odpowiednich narzędzi i bibliotek w języku JavaScript. Jedną z najpopularniejszych bibliotek jest na przykład "Cheerio", która udostępnia wiele przydatnych funkcji do przetwarzania i manipulowania zawartością strony.
+Aby rozpocząć parsowanie HTML w Javascript, musimy najpierw utworzyć nowy obiekt typu `Document`, który reprezentuje załadowany dokument HTML. Możemy to zrobić, korzystając z metody `document.createDocument()`. Następnie, używając odpowiednich metod, możemy odczytać zawartość dokumentu HTML i przetworzyć ją do postaci, którą będzie można wykorzystać w naszym kodzie. Poniżej znajdziesz przykładowy kod wraz z wypisanym rezultatem:
 
-Przykład kodu, który wykorzystuje "Cheerio" do pobrania tytułów artykułów ze strony internetowej wyglądałby następująco:
-
-```javascript
-const cheerio = require('cheerio');
-const request = require('request');
-
-request('https://www.example.com/', (error, response, html) => {
-  if (!error && response.statusCode === 200) {
-    const $ = cheerio.load(html);
-
-    // Pobranie wszystkich tytułów artykułów ze strony
-    const titles = $('h2.article-title').text();
-    console.log(titles);
-  }
-});
+```Javascript
+const doc = document.createDocument();
+doc.getElementsByTagName("h1")[0].innerText; //Zwraca zawartość pierwszego nagłówka h1 w dokumencie.
 ```
 
-W powyższym przykładzie najpierw importujemy bibliotekę "Cheerio", a następnie wykorzystujemy funkcję "load" do załadowania kodu źródłowego naszej strony. Następnie korzystając z selektorów CSS, pobieramy wszystkie tytuły artykułów znajdujących się w wybranym elemencie i wyświetlamy je w konsoli.
+W powyższym przykładzie używamy metody `getElementsByTagName()` do pobrania wszystkich elementów o tagu `h1` z dokumentu i wyświetlamy ich zawartość za pomocą właściwości `innerText`.
 
-Oczywiście istnieje wiele innych narzędzi i bibliotek, które możemy wykorzystać do parsowania HTML. Ważne jest, aby znaleźć taki, który najlepiej odpowiada naszym potrzebom i umiejętnościom.
+## Głębszy wgląd
 
-## Głębszy wgląd w parsowanie HTML
+Podczas parsowania HTML, istnieje wiele innych przydatnych metod, które można wykorzystać. Należą do nich między innymi `getElementById()`, `getElementsByClassName()`, `querySelector()` i wiele więcej. Warto również wspomnieć o tym, że parsowanie HTML może również być używane do walidacji kodu HTML, dzięki czemu nasze strony internetowe będą działać poprawnie.
 
-Parsowanie HTML może być prostym procesem, jeśli chcemy tylko wyświetlić określone elementy ze strony. Jednak, jeśli chcemy bardziej szczegółowo przebadać zawartość strony, możemy wykorzystać narzędzia do analizy składniowej jak na przykład "KSS" lub "DOMParser".
+## Zobacz również
 
-Ponadto, ważne jest aby pamiętać o optymalizacji działania naszej aplikacji. Zbyt częste parsowanie kodu źródłowego może spowolnić działanie strony, dlatego warto rozważyć wykorzystanie cacheowania lub innych technik.
+Poniżej znajduje się lista przydatnych linków, które mogą pomóc Ci w bardziej szczegółowym poznaniu tematu:
 
-# Zobacz także
-
-- [Dokumentacja "Cheerio"](https://cheerio.js.org/)
-- [Poradnik na temat parsowania HTML w JavaScript](https://www.sitepoint.com/javascript-html-parsing-reference/)
-- [Wprowadzenie do narzędzia "KSS"](https://github.com/kubukoz/html-parsing-tutorial/blob/master/1-node-kss.md)
+- [Dokumentacja Mozilla Developer Network](https://developer.mozilla.org/pl/docs/Web/API/Document)
+- [W3Schools Tutorial: Parsowanie HTML przy użyciu Javascript](https://www.w3schools.com/js/js_htmldom_parse.asp)
+- [Ebook "Learn to Parse HTML in Javascript" autorstwa Joshue Odmark](https://www.gitbook.com/book/joshdick/learn-to-parse-html-in-javascript/details)

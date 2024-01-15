@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Gleam recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever needed to calculate a date in the past or future in your programming projects? Maybe you're building a reservation system or scheduling tool. Whatever the reason may be, Gleam has got you covered with its built-in date manipulation functions. In this blog post, we'll explore how to use Gleam to easily calculate future or past dates.
+Do you ever need to calculate a future or past date in your code? Maybe you're creating a scheduling system or need to determine a deadline for a project. Whatever the reason, Gleam has got you covered with its built-in date calculation functions.
 
-## How To 
+## How To
 
-To calculate a date in the future or past, we'll be using the `Date` module from the standard library. Let's start by importing it at the top of our Gleam file:
-
-```Gleam
-import gleam/stdlib/Date
-```
-
-Next, let's define a function that takes in an integer representing the number of days and returns a future date based on that number. We'll call this function `add_days`:
+Calculating a date in the future or past in Gleam is as simple as using the built-in `Date` module and its functions. Let's take a look at an example of calculating a date 30 days in the future from today:
 
 ```Gleam
-pub fn add_days(days: Int) -> Date {
-  Date.add_days(Date.from_gregorian(2021, 07, 01), days)
-}
+import Date
+
+let today = Date.now()
+let thirty_days_later = Date.add_days(today, 30)
+
+// Output: 30 days from today is: 2021-08-07T11:15:34.826Z
 ```
 
-In this code block, we first create a date using the `from_gregorian` function, passing in the year, month, and day in that order. Then, we use the `add_days` function to add the specified number of days to the given date. Running this function with a value of 10 for `days` would return the date July 11, 2021.
+We first import the `Date` module and use the `now()` function to get the current date and time. Then, we use `add_days()` to add 30 days to that date, giving us the date 30 days in the future. Gleam also has other functions for calculating dates in the future or past, such as `add_months()` and `add_years()`, which work in a similar way.
 
-Similarly, we can also calculate a date in the past by using negative values for `days`:
+## Deep Dive
 
-```Gleam
-pub fn subtract_days(days: Int) -> Date {
-  Date.subtract_days(Date.from_gregorian(2021, 07, 01), days)
-}
-```
+Behind the scenes, Gleam uses the Erlang standard library `calendar` module to handle date and time calculations. This module provides accurate and efficient functions for handling date and time values, taking into account things like leap years and timezones. By using the `Date` module in Gleam, you can be sure that your date calculations will be accurate and reliable.
 
-This function would subtract the specified number of days from the given date, returning June 21, 2021 if `days` is 10.
+## See Also
 
-## Deep Dive 
-
-Now, let's dive deeper into how Gleam handles dates. Gleam follows the Gregorian calendar system and represents dates as tuples with three elements: year, month, and day. This makes it easy to manipulate dates by simply changing the values of each element.
-
-Additionally, Gleam also has functions for getting the current date, getting the number of days in a specific month, comparing dates, and more. Learn more about these functions and their usage in the Gleam documentation.
-
-## See Also 
-- [Gleam Date Module Documentation](https://gleam.run/modules/gleam_stdlib/Date.html)
-- [Gleam Standard Library Documentation](https://gleam.run/modules/gleam_stdlib.html)
-- [Gregorian Calendar System](https://en.wikipedia.org/wiki/Gregorian_calendar)
+- [Gleam Date Module Documentation](https://gleam.run/modules/datum/date/)
+- [Erlang Calendar Module Documentation](https://erlang.org/doc/man/calendar.html)

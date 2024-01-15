@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Generazione di numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Elm: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,50 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Generare numeri casuali è un'attività molto utile nella programmazione. Ad esempio, può essere utilizzato per creare giochi con risultati casuali o per generare dati casuali per scopi di testing.
+Se stai cercando di aggiungere un po' di casualità e variabilità ai tuoi programmi in Elm, allora la generazione di numeri casuali potrebbe essere ciò che stai cercando! Con la funzione di generazione di numeri casuali nativa di Elm, puoi creare diversi scenari e interazioni divertenti all'interno delle tue applicazioni.
 
-## Come fare
+## Come procedere 
 
-Per generare numeri casuali in Elm, è possibile utilizzare la funzione `Random.int` che prende come argomenti un numero minimo e un numero massimo e genera un intero casuale compreso tra questi due valori.
+Per generare numeri casuali in Elm, dovrai utilizzare la funzione `Random.generate` e fornire un generatore per il tipo di numero che desideri ottenere. Ad esempio, se vuoi generare un numero intero compreso tra 1 e 10, puoi scrivere:
 
-```Elm
-import Random
-
-Random.int 1 10
--- questo genererà un numero casuale compreso tra 1 e 10 (inclusi)
--- output: 7
+```elm
+Random.generate Random.int (1, 10)
 ```
 
-È anche possibile generare numeri casuali float utilizzando la funzione `Random.float` e specificando un intervallo.
+Il risultato sarà un dato di tipo `Cmd msg`, quindi dovrai gestirlo nella tua architettura di Elm. Puoi farlo utilizzando la funzione `Cmd.map` per mappare il tuo dato generato a un `msg` che può essere gestito nella tua funzione `update`.
 
-```Elm
-import Random
+## Approfondimento
 
-Random.float 0 1
--- questo genererà un numero casuale float compreso tra 0 e 1 (inclusi)
--- output: 0.6482234
-```
-
-È importante notare che quando si utilizzano numeri float, si consiglia di specificare una precisione con la funzione `Random.floatRange` per evitare problemi di approssimazione.
-
-## Approfondiamo
-
-La generazione di numeri casuali in Elm è basata sull'utilizzo del generatore casuale, che prende come parametro un seed e restituisce un nuovo seed e un valore casuale. Il seed può essere visto come il punto di partenza per la generazione dei numeri casuali e viene utilizzato per garantire che i numeri generati siano sempre gli stessi quando si passa lo stesso seed.
-
-```Elm
-import Random
-
-generator = Random.initialSeed 42
--- questo restituisce un generatore casuale con il seed 42
-
-newSeedAndValue = Random.generate Random.int 1 10 generator
--- questo utilizza il generatore per generare un nuovo seed e un valore che corrisponde a un intero casuale compreso tra 1 e 10 (inclusi)
-```
-
-Il generatore casuale può anche essere combinato utilizzando le funzioni `andThen`, `map` e `map2` per generare valori più complessi o per utilizzare numeri casuali in contesti diversi.
+La funzione `Random.generate` utilizza un generatore, che è essenzialmente una funzione che accetta uno stato iniziale e restituisce una tupla contenente il valore generato e lo stato aggiornato. Puoi trovare diversi generatori predefiniti nella libreria standard di Elm, ma puoi anche creare i tuoi generatori personalizzati utilizzando la funzione `Random.custom`. Questo può essere utile se hai esigenze precise nella generazione di numeri casuali per il tuo programma.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Elm sulla generazione di numeri casuali: https://package.elm-lang.org/packages/elm/random/latest/
-- Un tutorial su come utilizzare i numeri casuali in Elm: https://dev.to/filipowm/generating-random-numbers-in-elm-3b1d
-- Un esempio di creazione di un gioco utilizzando i numeri casuali in Elm: https://medium.com/@_sulrich/creating-a-game-with-elm-796c66bd7148
+- Documentazione ufficiale di Elm sulla generazione di numeri casuali: https://elm-lang.org/docs/random 
+- Esempi di generazione di numeri casuali in Elm: https://ellie-app.com/6CHXKqZRydQa1 
+- Tutorial su come gestire la funzione `Random` in Elm: https://www.youtube.com/watch?v=qvSamvFY7yA

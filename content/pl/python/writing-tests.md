@@ -1,5 +1,6 @@
 ---
-title:                "Python: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Python: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Python"
 category:             "Python"
@@ -9,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w Pythonie?
+# Dlaczego pisać testy?
 
-Pisanie testów jest nieodłączną częścią procesu programowania w Pythonie. Testowanie jest ważne, ponieważ pozwala na wykrycie błędów i zapewnienie, że nasz kod działa w sposób zamierzony. Jest to szczególnie przydatne w dużych projektach, w których można łatwo popełnić błąd lub przeoczyć potencjalne problemy.
+Pisanie testów jest ważną umiejętnością dla każdego programisty, ponieważ pomaga w weryfikacji poprawności działania kodu i zapobiega pojawianiu się błędów. Dzięki testom można również szybciej odnaleźć i naprawić ewentualne problemy, co przyczynia się do zwiększenia efektywności pracy.
 
-# Jak pisać testy w Pythonie?
+## Jak pisać testy?
 
-Testowanie w Pythonie jest niezwykle łatwe i prostsze niż w innych językach programowania. W celu napisania testów musimy wykorzystać moduł `unittest`, który jest wbudowany w standardową bibliotekę języka Python. Poniżej przedstawiony jest przykładowy kod, który testuje funkcję `multiply`, która mnoży dwie liczby:
-
+Poniżej znajdziesz przykłady kodu w języku Python oraz wyjście z testów za pomocą bloczków "```Python ... ```".
+```Python
+def dodaj(a, b):
+    return a + b
+    
+def test_dodaj():
+    assert dodaj(2, 3) == 5
+    assert dodaj(5, 7) == 12
+    
+test_dodaj()
 ```
-def multiply(x, y):
-    return x * y
+```
+Output:
 
-import unittest
-
-class TestMultiply(unittest.TestCase):
-    def test_multiply(self):
-        self.assertEqual(multiply(3, 4), 12) # sprawdzamy, czy wynik jest równy 12
-
-if __name__ == '__main__':
-    unittest.main()
+==================== 2 passed in 0.001 seconds ====================
 ```
 
-W powyższym przykładzie użyliśmy klasy `TestCase`, która dostarcza różne metody asercji do porównywania wartości i sprawdzania czy nasz kod działa poprawnie. W tym przypadku użyliśmy metody `assertEqual`, która porównuje wartość zwróconą przez funkcję `multiply` z oczekiwanym wynikiem, w naszym przypadku jest to 12.
+W powyższym przykładzie użyto funkcji `assert`, która sprawdza czy wyrażenie logiczne jest prawdziwe. Jeśli jest, to test zostanie uznany za zdany, a w przypadku, gdy wyrażenie jest fałszywe, pojawi się błąd.
 
-# Głębszy wgląd w pisanie testów
+## Wprowadzenie do pisania testów
 
-Pisanie testów może wydawać się czasochłonnym procesem, ale jest to inwestycja w przyszłość. Nie tylko pozwala na szybkie wykrycie potencjalnych błędów, ale także ułatwia refaktoryzację i rozwój kodu. Testy powinny być napisane w czasie, gdy piszemy kod, a nie dopiero na końcu, gdy musimy je szybko dodać przed wdrożeniem.
+Pisanie testów może wydawać się skomplikowane na początku, jednak jest to bardzo ważna umiejętność, która znajduje zastosowanie w każdym projekcie programistycznym. Warto poznać różne sposoby pisanie testów, takie jak testy jednostkowe, integracyjne czy akceptacyjne.
 
-Dobrą praktyką jest dzielenie testów na różne kategorie, takie jak testy jednostkowe, integracyjne czy funkcjonalne. Może to ułatwić późniejsze debugowanie i rozwiązywanie problemów.
+Testy jednostkowe służą do sprawdzenia poprawności wybranej funkcjonalności lub modułu, a testy integracyjne umożliwiają sprawdzenie poprawności działania kilku modułów lub całości aplikacji. Natomiast testy akceptacyjne są wykorzystywane do weryfikacji czy projekt spełnia wymagania klientów.
 
-Należy również pamiętać, że testy nie są wystarczające w celu wyeliminowania wszelkich błędów. Warto również stosować inne techniki, takie jak code reviews czy pair programming, aby zminimalizować ryzyko wystąpienia błędów.
+## Zobacz także
 
-# Zobacz również
-
-- Oficjalna dokumentacja modułu `unittest`: https://docs.python.org/3/library/unittest.html
-- Poradnik na temat pisania testów w Pythonie: https://realpython.com/python-testing/
+- [Dokumentacja biblioteki unittest w języku Python] (https://docs.python.org/3/library/unittest.html)
+- [Przykładowe testy jednostkowe w języku Python] (https://realpython.com/python-testing/)
+- [Poradnik pisania testów integracyjnych w języku Python] (https://testdriven.io/blog/intro-to-testing-in-python/)

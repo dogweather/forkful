@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Jobbe med json"
+html_title:           "Elm: Jobbe med json"
+simple_title:         "Jobbe med json"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,59 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å jobbe med JSON kan være en nyttig og spennende opplevelse for utviklere som ønsker å utvide sine programmeringsferdigheter. JSON er en svært populær dataformat som brukes for å utveksle data mellom applikasjoner og servere. Ved å lære Elm-programmering og hvordan du arbeider med JSON, vil du kunne bygge mer dynamiske og responsive applikasjoner.
+Å jobbe med JSON kan åpne opp mange muligheter i utviklingen av interaktive webapplikasjoner. JSON er et populært format for å overføre data mellom klient og server, og ved å lære hvordan man håndterer JSON i Elm, kan man få enda mer fleksibilitet og funksjonalitet i sine prosjekter.
 
 ## Hvordan
 
-For å begynne å jobbe med JSON i Elm kan du bruke den innebygde funksjonen `Json.Decode.decodeString`. Denne funksjonen tar inn en JSON-streng og konverterer den til en verdi i Elm. La oss se på et eksempel:
+Å håndtere JSON i Elm er en relativt enkel prosess. La oss ta en titt på et eksempel der vi henter data fra et API og presenterer det i en liste på nettsiden.
+
+Først trenger vi å importere `Json.Decode` modulen i vår Elm-fil. Dette gjøres ved å legge til følgende linje på toppen av filen:
 
 ```Elm
-fetchUserData : (Result String User -> msg) -> Cmd msg
-fetchUserData msg =
-    Http.get
-        { url = "http://example.com/api/user/1",
-          expect = Http.expectString msg
-        }
+import Json.Decode
 ```
 
-I dette eksempelet bruker vi `Http.get` for å gjøre et HTTP-kall til en API som returnerer brukerdata for bruker nummer 1. Dette HTTP-kallet forventer en JSON-streng som respons, så vi bruker `Http.expectString` som en del av den innkommende funksjonen for å konvertere responsen til en streng i Elm-format.
-
-For å behandle denne strengen, kan vi bruke `Json.Decode.decodeString`-funksjonen. Denne funksjonen tar inn en dekoderfunksjon, som er en funksjon som tar inn en JSON-streng og returnerer den ønskede verdien. La oss si at vi ønsker å hente ut brukerens navn fra responsen. Da kan vi lage en dekoderfunksjon som ser slik ut:
+Deretter kan vi opprette en funksjon som henter data fra et API ved hjelp av `Http.get` funksjonen. Vi kan også definere en decoder funksjon som vil konvertere JSON dataen til Elm datastrukturer. Følgende eksempel viser hvordan dette kan gjøres:
 
 ```Elm
-import Json.Decode exposing (..)
+getData : Cmd Msg
+getData =
+   Http.get
+      { url = "https://api.example.com/users"
+      , expect = Http.expectJson UserListDecoder
+      }
 
 type alias User =
-    { name : String
-    }
+   { name : String
+   , age : Int
+   }
 
-decodeUser : Decoder User
-decodeUser =
-    decode User
-        |> required "name" string
+type alias UserList =
+   List User
+
+userDecoder : Json.Decode.Decoder User
+userDecoder =
+   Json.Decode.succeed User
+      |> Json.Decode.required "name" Json.Decode.string
+      |> Json.Decode.required "age" Json.Decode.int
+
+userListDecoder : Json.Decode.Decoder UserList
+userListDecoder =
+   Json.Decode.list userDecoder
+
+type Msg
+   = UserListLoaded (Result Http.Error UserList)
+
+update msg model =
+   case msg of
+      UserListLoaded result ->
+         case result of
+            Ok userList ->
+               -- do something with the list of users
+
+            Err error ->
+               -- handle error case
 ```
 
-Vi bruker `Json.Decode.decode` til å lage en dekoderfunksjon for typen `User`, og spesifiserer deretter hvilke felter vi ønsker å hente ut fra JSON-en (i dette tilfellet en `name`-streng). Nå kan vi bruke denne dekoderen i `Json.Decode.decodeString`-funksjonen for å konvertere responsen til en verdi i Elm:
-
-```Elm
-fetchUserData : (Result String User -> msg) -> Cmd msg
-fetchUserData msg =
-    Http.get
-        { url = "http://example.com/api/user/1",
-          expect = Http.expectString (Json.Decode.decodeString decodeUser msg)
-        }
-```
-
-Nå vil `fetchUserData`-funksjonen returnere en `User`-verdi til innkommende funksjon når HTTP-kallet er fullført.
+Til slutt trenger vi å kalle på `getData` funksjonen i vår `update` funksjon for å hente dataen. Når vi får en melding tilbake fra `getData`, vil `UserListLoaded` bli utløst, og vi kan fange opp resultatet og gjøre noe med det.
 
 ## Dypdykk
 
-Å jobbe med JSON i Elm er ikke bare begrenset til enkeltstående kall til serveren. Du kan også håndtere mer komplekse JSON-strukturer ved hjelp av ulike dekoderfunksjoner og Elm-strukturer som ligner på den vi så på i eksempelet vårt. Med Elm kan du enkelt strukturere og behandle vanlige JSON-datatyper som strenger, tall, boolske verdier og lister.
+Når man jobber med JSON i Elm, kan det være nyttig å vite om noen av funksjonene i `Json.Decode` modulen som ikke ble brukt i det enkle eksempelet over. For eksempel kan man bruke `oneOf` funksjonen for å definere flere alternative decoder funksjoner, avhengig av hvilken struktur det aktuelle JSON dataen har.
 
-Du kan også jobbe med innkapslede datatyper i JSON, som kan være spesielt nyttig når du arbeider med API-er. Elm gjør det enkelt å dekode JSON-strukturer som `Maybe`, `List` og `Result`, som gjør det enklere å håndtere feil og ikke-eksisterende data.
+I tillegg til å bruke `Http.get` for å hente data fra et API, kan man også bruke `Http.post`, `Http.put`, `Http.delete` eller andre funksjoner avhengig av hva som er nødvendig i et prosjekt.
+
+Det er også verdt å nevne at Elm's type system vil hjelpe deg å sikre at alle feltene i ditt `User` objekt er til stede i JSON dataen, noe som kan forhindre feil under utviklingsprosessen.
 
 ## Se også
 
-* [Elm dokumentasjon om JSON dekoding](https://elm-lang.org/docs/json)
-* [JSON i Elm - eksempelprosjekt](https://github.com/elm/json)
-* [Her er en god guide til å lære Elm-programmering](https://guide.elm-lang.org/)
+For flere ressurser om å jobbe med JSON i Elm, kan du sjekke ut følgende linker:
+
+- [Offisiell Elm dokumentasjon om JSON](https://package.elm-lang.org/packages/elm/json/latest/)
+- [Tutorial om å håndtere JSON i Elm](https://guide.elm-lang.org/effects/json.html)
+- [Eksempelprosjekt for håndtering av JSON i Elm](https://github.com/elm-community/json-extra)

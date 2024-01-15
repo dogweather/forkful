@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "C recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "C"
 category:             "C"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Writing to standard error is a necessary skill for any C programmer. It allows for error handling and debugging messages to be displayed, providing crucial information for troubleshooting and improving the overall functionality of the program.
+Is your code producing errors or unexpected results? Or do you want to add custom error messages to make debugging easier? Then writing to standard error in C is the way to go. It allows you to output error messages to the console or terminal, providing useful information for developers and users alike.
 
 ## How To
-
-Writing to standard error in C is a simple process that involves using the `fprintf()` function. This function takes in two parameters - the first being the standard error output `stderr` and the second being the message that needs to be displayed.
+Writing to standard error in C is a simple process. First, include the `stdio.h` header file in your code. Then, use the `fprintf()` function to print your error message to `stderr`, which is the standard error stream.
 
 ```
 #include <stdio.h>
 
 int main()
 {
-    fprintf(stderr, "This is an error message.\n");
-    return 0;
+  // Print error message to standard error
+  fprintf(stderr, "*** Error: Something went wrong ***\n");
+
+  return 0;
 }
 ```
 
-Running this code will display the error message on the standard error output, which is often the command line or terminal window. The `\n` at the end of the message ensures that the message is displayed on a new line.
+The `fprintf()` function takes in multiple arguments, including the `stderr` file pointer, the error message string, and any additional values to be formatted into the message. The `\n` at the end will ensure that the message is printed on a new line.
+
+When running this program, the error message will appear on the console or terminal instead of the standard output.
+
+**Output:**
+```
+*** Error: Something went wrong ***
+```
 
 ## Deep Dive
+In C, there are three standard streams that can be used for input/output - `stdin`, `stdout`, and `stderr`. `stdin` is used for accepting input, `stdout` is used for outputting regular data, and `stderr` is used for error messages.
 
-In deeper technical terms, writing to standard error is important because it allows for the separation of error messages from normal output in C programs. Other methods of displaying error messages such as `printf()` can cause issues because the messages may be mixed in with normal output, making it difficult to identify and troubleshoot errors.
+By default, `stderr` is connected to the console or terminal, allowing for error messages to be displayed during program execution. However, it can also be redirected to a file for logging purposes. This can be done by using the "> " symbol in the command line, followed by the name of the file where you want the error messages to be saved.
 
-Another advantage of writing to standard error is that it can be redirected to a different output file using the `2>` operator in the command line. This allows for error messages to be saved for future reference or analysis.
+`./my_program > error_log.txt`
 
-## See Also
+Keep in mind that `stderr` is unbuffered, meaning that the messages will be displayed immediately without waiting for the program to finish execution.
 
-- [C Error Handling](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
-- [Standard Error Output](https://www.geeksforgeeks.org/pipe-stderr-stdout-c/)
-- [Redirecting Standard Error in C](https://www.linuxjournal.com/content/redirecting-stderr-stdout)
-
-Writing to standard error may seem like a minor detail, but it is an important aspect of C programming. By mastering this skill, you can improve the functionality and effectiveness of your code, making you a better programmer overall.
+## See also
+- [C fprintf() function](https://www.geeksforgeeks.org/fprintf-in-c/)
+- [Error Handling in C](https://www.tutorialspoint.com/error-handling-in-c)
+- [Redirecting Standard Output/Standard Error to Files in Linux](https://www.computerhope.com/unix/uredirect.htm)

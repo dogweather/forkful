@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Creare un file temporaneo"
+title:                "Creare un file temporaneo"
+html_title:           "Gleam: Creare un file temporaneo"
 simple_title:         "Creare un file temporaneo"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,42 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Creare un file temporaneo è spesso una parte necessaria della programmazione, soprattutto quando si gestiscono dati temporanei o si eseguono processi complessi. I file temporanei consentono di salvare temporary dati e di gestirli in modo efficiente senza occupare spazio di archiviazione permanente.
+Creare un file temporaneo può sembrare una banalità, ma in realtà può essere molto utile in diverse situazioni. Ad esempio, può essere utilizzato per archiviare dati temporanei durante l'esecuzione di un programma o per creare un backup di file importanti prima di eseguire modifiche rischiose.
 
-## Come fare
+## Come farlo
 
-Per creare un file temporaneo in Gleam, possiamo utilizzare la funzione `File.temp_path` che ci restituirà un percorso di file temporaneo valido. Possiamo quindi utilizzare questa funzione all'interno di un blocco `try`, dove gestiamo eventuali errori che potrebbero verificarsi durante la creazione del file.
+Per creare un file temporaneo in Gleam, possiamo utilizzare la funzione `os.tmpfile()` che restituisce un file handler per il file temporaneo creato. Possiamo poi scrivere e leggere dal file utilizzando le funzioni `write()` e `read()` messe a disposizione dal modulo `File` di Gleam. Ecco un esempio di codice:
 
+```gleam
+import File
+import os
+
+tmpfile := os.tmpfile()
+
+File.write(tmpfile, "Questo è un file temporaneo creato in Gleam!")
+
+read_result := File.read(tmpfile)
+assert Ok("Questo è un file temporaneo creato in Gleam!", read_result)
 ```
-Gleam import File
 
-let res = try {
-  let temp_file = File.temp_path()
-  temp_file
-}
-```
-
-Una volta ottenuto il percorso del file temporaneo, possiamo utilizzare la funzione `File.write` per scrivere dati all'interno del file. Possiamo anche utilizzare la funzione `File.read` per leggere i dati dal file temporaneo.
-
-```
-File.write(res, "Questo è un file temporaneo.")
-File.read(res) // Output: "Questo è un file temporaneo."
-```
+Il codice sopra crea un file temporaneo utilizzando la funzione `os.tmpfile()` e poi ne scrive il contenuto utilizzando la funzione `File.write()`. Infine, viene letto il contenuto del file con la funzione `read()` e viene effettuato un test di assert per verificare che il contenuto del file sia quello che ci aspettiamo.
 
 ## Approfondimento
 
-Creare un file temporaneo può anche essere utile per eseguire test automatizzati o per lavorare con librerie esterne che richiedono un percorso di file valido come input. Inoltre, possiamo specificare il prefisso e il suffisso del nome del file temporaneo utilizzando le opzioni aggiuntive della funzione `File.temp_path`.
+La funzione `os.tmpfile()` non solo crea un file temporaneo, ma lo apre in modalità di scrittura, quindi possiamo iniziare a scrivere nel file subito dopo averlo creato. Inoltre, il file viene creato in una posizione specifica sul sistema, garantendo che il contenuto scritto nel file non verrà persi a meno che il file non venga esplicitamente eliminato. Questo lo rende un'ottima opzione per gestire dati temporanei in modo sicuro e affidabile.
 
-```
-// Creiamo un file temporaneo con il prefisso 'temp' e il suffisso '.txt'
-let res = try {
-  let temp_file = File.temp_path(prefix: "temp", suffix: ".txt")
-  temp_file
-}
-```
+## Guarda anche
 
-## Vedi anche
-
-- Documentazione ufficiale di Gleam sulle funzioni di gestione dei file: [https://gleam.run/documentation/standard-libraries/files/](https://gleam.run/documentation/standard-libraries/files/)
-- Tutorial su come gestire i file in Gleam: [https://gleam.run/tutorials/files/](https://gleam.run/tutorials/files/)
-- Esempio di utilizzo della funzione `File.temp_path`: [https://gist.github.com/username/123456](https://gist.github.com/username/123456)
+- [La documentazione ufficiale su `os.tmpfile()`](https://gleam.run/modules/gleam_os/0.14.0/gleam_os#tmpfile)
+- [La documentazione ufficiale su `File.write()`](https://gleam.run/modules/gleam_stdlib/0.14.0/gleam_stdlib/File#write)
+- [La documentazione ufficiale su `File.read()`](https://gleam.run/modules/gleam_stdlib/0.14.0/gleam_stdlib/File#read)

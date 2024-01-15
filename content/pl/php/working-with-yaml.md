@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Praca z YAML"
-simple_title:         "Praca z YAML"
+title:                "Praca z formatem yaml"
+html_title:           "PHP: Praca z formatem yaml"
+simple_title:         "Praca z formatem yaml"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -11,58 +12,94 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego ludzie decydują się programować w PHP z YAML? Jest to szybki, łatwy i wydajny sposób na przetwarzanie struktury danych w swoim kodzie.
+Dlaczego warto pracować z formatem YAML w swoich projektach PHP? Po pierwsze, YAML jest niezwykle czytelnym i łatwym w użyciu formatem, który ułatwia tworzenie i zarządzanie konfiguracjami i danymi. Po drugie, jest to popularne rozwiązanie w świecie projektów open-source, dzięki czemu można łatwo znaleźć wsparcie i dokumentację w razie potrzeby.
 
 ## Jak to zrobić
 
-Kodowanie w PHP z użyciem YAML to prosta sprawa. Wystarczy zaimportować odpowiednią bibliotekę i już można rozpocząć pracę. Poniżej znajdują się przykłady, jak używać YAML w swoim kodzie PHP.
+### Instalacja biblioteki YAML
+
+Aby móc pracować z formatem YAML w PHP, musimy najpierw zainstalować odpowiednią bibliotekę. W tym celu możemy skorzystać z menedżera pakietów Composer, wykonując w terminalu następującą komendę:
 
 ```PHP
-// Importowanie biblioteki YAML
-require_once 'spyc.php';
+composer require symfony/yaml
+```
 
-// Tworzenie zmiennej z danymi YAML
-$data = "
-- id: 123
-  name: John
-  age: 25
-- id: 456
-  name: Jane
-  age: 30
-";
+### Tworzenie pliku YAML
 
-// Parsowanie danych za pomocą funkcji YAMLLoad
-$users = YAMLLoad($data);
+Format YAML jest oparty na strukturze klucz-wartość, podobnie jak np. JSON. Możemy więc w łatwy sposób utworzyć plik YAML, przypisując odpowiednie wartości do kluczy. Przykładowy plik YAML może wyglądać następująco:
 
-// Wyświetlanie danych użytkowników w pętli foreach
-foreach($users as $user){
-    echo "ID: " . $user['id'] . "\n";
-    echo "Name: " . $user['name'] . "\n";
-    echo "Age: " . $user['age'] . "\n";
-    echo "-----------------------------\n";
+```PHP
+# plik konfiguracyjny
+imie: Jan
+nazwisko: Kowalski
+wiek: 35
+zainteresowania:
+  - programowanie
+  - sport
+```
+
+### Odczyt i zapis pliku YAML
+
+Biblioteka YAML pozwala nam na wygodne odczytywanie danych z pliku YAML oraz zapisywanie zmian. Przykładowy kod może wyglądać tak:
+
+```PHP
+use Symfony\Component\Yaml\Yaml;
+
+// odczyt danych z pliku
+$data = Yaml::parseFile('plik.yaml');
+
+// zapis zmian
+$data['kolor'] = 'zielony';
+Yaml::dump($data, 'plik.yaml');
+```
+
+### Wyświetlanie danych
+
+Przejdźmy teraz do wyświetlania danych z pliku YAML. W tym celu możemy skorzystać z pętli foreach i funkcji echo, aby wyświetlić wszystkie klucze i odpowiadające im wartości:
+
+```PHP
+foreach ($data as $key => $value) {
+  echo $key . ' - ' . $value . '<br>';
 }
 ```
 
-Poniżej znajduje się wynik działania powyższego kodu:
+Powyższy kod wyświetli następujący wynik:
 
 ```
-ID: 123
-Name: John
-Age: 25
------------------------------
-ID: 456
-Name: Jane
-Age: 30
+imie - Jan
+nazwisko - Kowalski
+wiek - 35
+zainteresowania - Array
+kolor - zielony
 ```
 
-## Głębsze zanurzenie
+## Deep Dive
 
-Praca z YAML w PHP może być jeszcze bardziej zaawansowana. Biblioteka YAML oferuje wiele funkcji i możliwości, które mogą ułatwić nam pracy. Jest również możliwość przekonwertowania danych YAML do innych formatów, takich jak XML lub JSON. Można także wykonać wiele operacji na strukturze danych, aby dopasować ją do swoich potrzeb.
+Format YAML został stworzony z myślą o tym, aby być łatwym w użyciu i możliwym do czytania przez człowieka, co wyróżnia go na tle innych formatów danych. Poza prostą strukturą klucz-wartość, YAML pozwala na tworzenie bardziej złożonych struktur danych, takich jak tablice, obiekty czy nawet mapy.
 
-Warto również pamiętać o dostępnych narzędziach i bibliotekach, które pomagają w pracy z YAML w PHP. Można znaleźć wiele informacji i poradników w Internecie, które mogą ułatwić naukę i wykorzystanie YAML w programowaniu.
+Jednym z przydatnych narzędzi w pracy z YAML jest także narzędzie "Validator", które pozwala na sprawdzenie poprawności składni pliku YAML oraz wypisanie błędów, jeśli jakieś występują. Możemy skorzystać z niego w następujący sposób:
+
+```PHP
+use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Validator\Validator;
+
+// próba przetworzenia pliku YAML
+try {
+    Yaml::parseFile('plik.yaml');
+} catch (ParseException $exception) {
+    echo 'Błąd składni: ' . $exception->getMessage();
+}
+
+// sprawdzanie poprawności pliku YAML
+$validator = new Validator();
+if ($validator->validate('plik.yaml')) {
+    echo 'Plik YAML jest poprawny!';
+} else {
+    echo 'Wystąpiły błędy w pliku YAML.';
+}
+```
 
 ## Zobacz także
 
-- [Dokumentacja PHP do biblioteki YAML] (https://www.php.net/manual/en/yaml.installation.php)
-- [Oficjalna strona biblioteki YAML] (https://symfony.com/doc/current/components/yaml.html)
-- [Poradnik dla początkujących w pracy z YAML w PHP] (https://www.tutorialspoint.com/yaml/yaml_php.html)
+- [Dokumentacja biblioteki YAML](https://symfony.com/doc/current/components/yaml.html)
+- [Przykładowe projekty wykorzystujące format

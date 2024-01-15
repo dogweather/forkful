@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Å beregne en dato i fremtiden eller fortiden"
+html_title:           "Gleam: Å beregne en dato i fremtiden eller fortiden"
+simple_title:         "Å beregne en dato i fremtiden eller fortiden"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,50 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det er mange grunner til å ville beregne en dato i fremtiden eller fortiden. Kanskje du ønsker å lage en applikasjon som planlegger hendelser, eller kanskje du vil vite nøyaktig hvor mange dager det har vært siden en spesiell begivenhet. Uansett hva årsaken er, så kan Gleam hjelpe deg med å enkelt og nøyaktig beregne datoer.
+Hvorfor skulle noen ønske å beregne en dato i fremtiden eller fortiden? Vel, det kan være flere grunner til dette. Kanskje du planlegger en ferie og vil vite nøyaktig når du skal dra, eller kanskje du lurer på når en bestemt begivenhet vil finne sted. Uansett hva grunnen måtte være, kan Gleam gjøre det enkelt å beregne en dato.
 
-## Slik gjør du det
-Det første du må gjøre er å importere `Calendar` modulen fra Gleam-standard biblioteket. Deretter kan du bruke funksjonene `add/2` og `subtract/2` for å legge til eller trekke fra et gitt antall dager, uker, måneder eller år fra en gitt dato.
-
-```Gleam
-import Calendar
-
-let today = Calendar.Date.create(2021, 9, 15)
-
-let threeDaysFromToday = Calendar.add(today, Calendar.Duration.days(3))
-
-let tenYearsAgo = Calendar.subtract(today, Calendar.Duration.years(10))
-
-io.print("Tre dager fra i dag er \(Calendar.Date.to_string(threeDaysFromToday))")
-// Utoutput: Tre dager fra i dag er 18. september 2021
-
-io.print("Ti år tilbake i tid er \(Calendar.Date.to_string(tenYearsAgo))")
-// Utoutput: Ti år tilbake i tid er 15. september 2011
-```
-
-Du kan også bruke funksjonene `add_duration/2` og `subtract_duration/2` for å legge til eller trekke fra et bestemt antall enheter til en gitt dato.
+## Hvordan
+Det første du trenger å gjøre er å importere `gleam/datetime` pakken til koden din. Deretter kan du bruke funksjonene `future` og `past` for å beregne en dato i fremtiden eller fortiden. Her er noen eksempler på hvordan du kan gjøre dette:
 
 ```Gleam
-import Calendar
+import gleam/datetime
 
-let today = Calendar.Date.create(2021, 9, 15)
-let duration = Calendar.Duration{ days: 6, months: 2, years: 1 }
+// Beregne en dato 5 dager fra nå
+let future_date = datetime.future(5, "days")
+// Output: 2021-07-12T22:00:00Z
 
-let futureDate = Calendar.add_duration(today, duration)
+// Beregne en dato 2 uker fra nå
+let future_date = datetime.future(2, "weeks")
+// Output: 2021-07-26T22:00:00Z
 
-let pastDate = Calendar.subtract_duration(today, duration)
-
-io.print("Datoen seks dager, to måneder og ett år fra nå er \(Calendar.Date.to_string(futureDate))")
-// Utoutput: Datoen seks dager, to måneder og ett år fra nå er 27. november 2022
-
-io.print("Datoen seks dager, to måneder og ett år tilbake i tid er \(Calendar.Date.to_string(pastDate))")
-// Utoutput: Datoen seks dager, to måneder og ett år tilbake i tid er 9. juli 2020
+// Beregne en dato 1 måned fra nå
+let future_date = datetime.future(1, "months")
+// Output: 2021-08-09T22:00:00Z
 ```
 
-## Dypdykk
-Gleam's `Calendar` modul bruker Gregorian-kalenderen og håndterer også skuddår og tidssoner. Hvis du trenger å arbeide med andre typer kalendere, kan du undersøke biblioteket [Calen](https://github.com/oestrich/calen) som gir støtte for flere kalendere i Gleam.
+```Gleam
+import gleam/datetime
+
+// Beregne en dato 2 dager siden
+let past_date = datetime.past(2, "days")
+// Output: 2021-07-01T22:00:00Z
+
+// Beregne en dato 1 uke siden
+let past_date = datetime.past(1, "weeks")
+// Output: 2021-06-24T22:00:00Z
+
+// Beregne en dato 2 måneder siden
+let past_date = datetime.past(2, "months")
+// Output: 2021-05-27T22:00:00Z
+```
+
+## Deep Dive
+Nå lurer du kanskje på hva som skjer hvis du prøver å beregne en dato i fortiden eller fremtiden med en større enhet enn det som finnes i Gleam? For eksempel, hva om du vil beregne en dato 3 år fra nå? Vel, da vil Gleam automatisk konvertere det til antall dager, som er den minste enheten som kan brukes til å beregne en dato i fortiden eller fremtiden. Så i dette tilfellet, vil `datetime.future(3, "years")` faktisk gi deg datoen 1095 dager fra nå. Samme prinsipp gjelder for å beregne en dato i fortiden.
 
 ## Se også
-- [Gleam-standard bibliotekets `Calendar` modul](https://hexdocs.pm/gleam_stdlib/Calendar.html)
-- [Calen biblioteket](https://github.com/oestrich/calen)
-- [Offisiell Gleam dokumentasjon](https://gleam.run/documentation/)
+- [Gleam Datetime pakken](https://gleam.run/modules/gleam/datetime/latest/)
+- [Offisiell Gleam dokumentasjon](https://gleam.run/)

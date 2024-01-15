@@ -1,5 +1,6 @@
 ---
-title:                "C: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "C: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "C"
 category:             "C"
@@ -9,66 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-אנשים יכולים לרצות לשלוח בקשת HTTP מכיוון שזהו אמצעי נוח להתקשרות עם שרתים ולקבלת מידע מהם.
+כדי לבצע פעולות באתר אינטרנט אנו צריכים לבצע בקשות HTTP. זהו תהליך חשוב וקריטי בכל פיתוח אתרים או אפליקציות ולכן חשוב לדעת כיצד לבצע בקשות HTTP בצורה נכונה.
 
-## איך לעשות זאת
+## כיצד לבצע בקשת HTTP ב-C
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+התהליך המקרוי של שליחת בקשת HTTP כולל שלושה צעדים עיקריים: בניית הבקשה, שליחת הבקשה וקבלת התגובה. הנה דוגמאות של קוד C לכל אחד מהצעדים:
 
-int main()
-{
-    // ייבוא קובץ כותרת לביצוע קריאות HTTP
-    #include <curl/curl.h>
+```
+// בניית הבקשה
+char *request = "GET /index.html HTTP/1.1\r\nHost: www.example.com\r\nConnection: close\r\n\r\n";
 
-    // משתנה עבור כתובת האתר שבסוף הנספח נשלח אליו בקשת HTTP
-    char *url = "https://www.example.com";
+// שליחת הבקשה
+int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+struct sockaddr_in server_addr;
+server_addr.sin_family = AF_INET;
+server_addr.sin_addr.s_addr = inet_addr("93.184.216.34");
+server_addr.sin_port = htons(80);
+connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
+send(sockfd, request, strlen(request), 0);
 
-    // משתנה עבור נתוני הסטטוס של הבקשה
-    CURLcode res;
+// קבלת התגובה
+char response[4096];
+recv(sockfd, response, 4096, 0);
+close(sockfd);
 
-    // יצירת משתנה עבור הספריה של curl לניהול הבקשות
-    CURL *curl;
-
-    // התחלת פעולת curl ובקשת GET לכתובת האתר
-    curl = curl_easy_init();
-
-    if (curl) {
-        // הגדרת האתר לפעולת curl
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-
-        // ייצוב הבקשה על ידי הכנסת "1" במשתנה לבקשה GET
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-        // ביצוע הבקשה ואחסון תוצאת הבקשה ב-mres
-        res = curl_easy_perform(curl);
-
-        // אם הבקשה נכשלה, תציג את השגיאה
-        if (res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n");
-            curl_easy_strerror(res);
-        }
-        // כלל הסטורציה
-        curl_easy_cleanup(curl);
-    }
-    // סיום תכתובת האתר
-    free(url);
-
-    return 0;
-}
+// פלט התגובה
+printf("%s", response);
 ```
 
-פלט משמעותו שהקוד שמעל, במידה והבקשה נענתה בהצלחה, ישלח את האתר שמכיל את התוכן של הבקשה.
+## עומק יותר על שליחת בקשת HTTP
 
-## חקירה מעמיקה
+בקשת HTTP מכילה שניים מרכיבים עיקריים: בקשה ותגובה. הבקשה מכילה את הפעולה הרצויה (GET, POST, PUT וכו'), הנתיב לעסקת (URL) וגרסת הפרוטוקול הרצויה (HTTP/1.1). כמו כן, הבקשה יכולה לכלול ראשית שליחה בשורת הכתובת שמכילה שדות נוספים כמו כותרת, פרמטרים ועוד. תגובת הבקשה מכילה את הקוד הסטטוס (200, 404 וכו'), כותרות נוספות ותוכן התגובה. חשוב לבדוק את הקוד הסטטוס לפני פעולות נוספות על התוכן המוחזר.
 
-כדי להבין יותר על תהליך שליחת בקשת HTTP במקוד C, כדאי לעיין בתיעוד של ספריית curl ולהתחיל להשתמש בפקודות כמו `CURLOPT_URL` על מנת לשלוח את כתובת האתר שבסופו ישלח אליו הבקשה. כמו כן, יש לוודא כי המתאם לחיבור הרשת curl נמצא מותקן על המחשב.
+## ראה גם
 
-## ראו גם
-
-- [ספריית curl הרשמית על תקשורת בינהן](https://curl.haxx.se/libcurl/)
-- [ד
+- [The Basics of Sending an HTTP Request in C](https://www.geeksforgeeks.org/http-request-methods/) 
+- [Parsing HTTP Requests in C](https://stackoverflow.com/questions/22100266/parsing-an-http-request-in-c) 
+- [HTTP Requests in C - A Crash Course](https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Ein neues Projekt beginnen"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Fish Shell: Ein neues Projekt beginnen"
 simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn du ein neues Projekt starten möchtest, lohnt es sich, die Fish Shell zu nutzen. Mit ihrer benutzerfreundlichen Syntax und den vielen eingebauten Funktionen kann die Fish Shell dein Entwicklungsprozess erleichtern und beschleunigen.
+Warum sollte man ein neues Projekt starten? Es gibt viele Gründe dafür, wie z.B. die Automatisierung von Aufgaben, die Verbesserung der Produktivität oder die Anpassung an persönliche Bedürfnisse. Wenn du daran interessiert bist, ein neues Projekt zu starten, solltest du weiterlesen, um zu erfahren, wie du dies mit der Fish Shell erreichen kannst.
 
-## Wie geht's
+# Wie geht's
 
-### Installation
+Die Fish Shell ist eine leistungsstarke und benutzerfreundliche Shell, die es dir ermöglicht, komplexe Aufgaben mit nur wenigen Befehlen auszuführen. Wenn du ein neues Projekt starten möchtest, solltest du zuerst ein Verzeichnis für dein Projekt erstellen und dann mit der Fish Shell interagieren. Hier sind einige Beispiele, wie du dies tun kannst:
 
-Um die Fish Shell zu installieren, folge den Anweisungen auf ihrer offiziellen Website. Je nach Betriebssystem gibt es verschiedene Möglichkeiten, die Fish Shell zu nutzen. Eine detaillierte Anleitung findest du unter [https://fishshell.com/](https://fishshell.com).
+```fish
+# Ein neues Verzeichnis erstellen
+mkdir mein_projekt
 
-### Einführung in die Fish Shell
+# In das Verzeichnis wechseln
+cd mein_projekt
 
-Die Fish Shell unterscheidet sich von anderen Shells durch ihre benutzerfreundliche Syntax. Sie verwendet beispielsweise keine Semikolons oder geschweifte Klammern, um Befehle zu trennen oder zu gruppieren. Stattdessen werden Befehle durch Zeilenumbrüche getrennt und Variablen werden durch ein Dollarzeichen ($) gekennzeichnet.
+# Eine neue Datei erstellen
+touch index.html
 
-Ein Beispiel für einen einfachen Befehl in der Fish Shell:
-
-```Fish Shell
-echo "Hallo Welt"
+# Den Inhalt der Datei mit einem Texteditor bearbeiten
+vi index.html
 ```
 
-Die Ausgabe dieses Befehls ist:
+Wenn du die Datei mit dem Texteditor bearbeitet hast, kannst du sie ausführen, indem du den Namen der Datei in der Shell eingibst:
 
-```Fish Shell
-Hallo Welt
+```fish
+./index.html
 ```
 
-### Verwendung von Variablen
+Dies sind nur einige Beispiele dafür, wie du die Fish Shell für dein neues Projekt nutzen kannst. Mit der Fish Shell kannst du auch Variablen, Funktionen und andere nützliche Tools nutzen, um deine Arbeit effizienter zu gestalten.
 
-Variablen in der Fish Shell werden ohne das Schlüsselwort "export" verwendet. Sie können einfach durch ein Gleichheitszeichen (=) zugewiesen werden.
+# Tief eintauchen
 
-Ein Beispiel einer Variablenzuweisung und ihrer Verwendung in einem Befehl:
+Um dein Verständnis von der Fish Shell zu vertiefen, solltest du eine kurze Einführung in das Skripting mit Fish lesen. Mit dieser Technik kannst du komplexe Aufgaben automatisieren und deine Produktivität steigern. Außerdem bietet die Fish Shell eine Vielzahl von Plugins und Erweiterungen, die dir helfen können, dein Projekt anzupassen und zu erweitern.
 
-```Fish Shell
-name = "Max"
-echo "Hallo $name"
-```
+Eine gute Möglichkeit, mehr über die Fish Shell zu lernen, ist die offizielle Dokumentation auf der Website des Projekts. Dort findest du detaillierte Informationen zu den Funktionen, Syntax und Einsatzmöglichkeiten der Shell. Außerdem gibt es eine aktive Community, in der du Fragen stellen und hilfreiche Tipps und Tricks erhalten kannst.
 
-Die Ausgabe dieses Befehls ist:
+# Siehe auch
 
-```Fish Shell
-Hallo Max
-```
-
-## Tief tauchen
-
-Die Fish Shell bietet viele weitere Funktionen, die dir dabei helfen können, ein neues Projekt zu starten. Beispielsweise kannst du mit der History-Funktion deine vorherigen Befehle durchsuchen und ausführen, indem du die Pfeiltasten nach oben und unten verwendest. Die Fish Shell bietet auch eine Autovervollständigungsfunktion, die dir bei der Eingabe von Befehlen und Dateinamen helfen kann.
-
-Eine detaillierte Dokumentation über alle Funktionen und Konzepte der Fish Shell findest du unter [https://fishshell.com/docs/](https://fishshell.com/docs/).
-
-## Siehe auch
-
-- [https://fishshell.com/](https://fishshell.com/)
-- [https://fishshell.com/docs/](https://fishshell.com/docs/)
-- [https://fishshell.com/tutorial/](https://fishshell.com/tutorial/)
+- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/
+- Fish Shell Cookbook: https://fishshell.com/docs/current/index.html
+- Fish Shell Plugins: https://github.com/fish-shell/fish-shell/wiki/Plugins

@@ -1,5 +1,6 @@
 ---
-title:                "Java: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Java: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Java"
 category:             "Java"
@@ -9,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP?
+## Por que
+Você já se perguntou como os aplicativos e sites que usamos todos os dias se comunicam com os servidores? Isso é feito através do envio de solicitações HTTP. Neste artigo, vamos aprender como enviar uma solicitação HTTP usando Java e por que isso é importante para os desenvolvedores.
 
-Enviar solicitações HTTP é uma tarefa comum na programação Java, especialmente quando se trabalha com APIs e serviços na web. Essas solicitações permitem que os desenvolvedores interajam com outros sistemas, obtendo informações ou realizando ações específicas. É uma parte essencial do desenvolvimento de aplicativos e pode ser útil de várias maneiras.
+## Como Fazer
+Para enviar uma solicitação HTTP em Java, nós precisamos seguir alguns passos simples. Primeiro, vamos criar uma instância da classe `URLConnection` e fornecer a URL que queremos enviar a solicitação. Em seguida, vamos configurar os parâmetros da solicitação, como o método (GET, POST, PUT, etc.), cabeçalhos e corpo da requisição. Por fim, executamos a solicitação e obtemos a resposta do servidor.
 
-## Como fazer
+```java
+//Criando uma instância de URLConnection
+URL url = new URL("http://www.exemplo.com");
+URLConnection con = url.openConnection();
 
-Enviar uma solicitação HTTP em Java é relativamente simples. Você precisará de uma biblioteca externa, como o Apache HttpClient, para facilitar a interação com o servidor. Aqui está um exemplo de como enviar uma solicitação GET e obter a resposta em formato JSON:
+//Configurando a solicitação
+con.setDoOutput(true); //nós queremos enviar dados
+con.setRequestMethod("POST"); //método POST
+con.setRequestProperty("Content-Type", "application/json"); //definindo o tipo de conteúdo do corpo
 
-```Java
-// Importar as bibliotecas necessárias
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.json.JSONObject;
+//Escrevendo o corpo da solicitação
+OutputStream os = con.getOutputStream();
+byte[] input = "{'mensagem': 'Olá servidor!'}".getBytes("utf-8");
+os.write(input, 0, input.length);
 
-// Criar um objeto HttpClient
-CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+//Executando a solicitação
+InputStream in = con.getInputStream();
 
-// Crie um objeto HttpGet com o URL da solicitação
-HttpGet httpGet = new HttpGet("https://api.example.com/users");
-
-// Executar a solicitação e obter a resposta
-HttpResponse response = httpClient.execute(httpGet);
-
-// Extrair o conteúdo da resposta como um objeto JSON
-JSONObject jsonResponse = new JSONObject(response.getEntity().getContent());
-
-// Imprimir a resposta
-System.out.println(jsonResponse.toString());
+//Lendo a resposta do servidor
+int responseCode = ((HttpURLConnection)con).getResponseCode();
+System.out.println("Código de resposta: " + responseCode);
 ```
 
-A saída deste código será um objeto JSON contendo informações sobre os usuários da API. Você pode personalizar sua solicitação, adicionando parâmetros ou headers, dependendo das necessidades do seu projeto.
+O código acima mostra como enviar uma solicitação HTTP POST com um corpo JSON e ver a resposta do servidor. Você pode usar esse mesmo processo para enviar solicitações com outros métodos e tipos de conteúdo.
 
-## Aprofundando
+## Mergulho Profundo
+Para enviar uma solicitação HTTP em Java, também é possível utilizar as bibliotecas Apache HttpClient e HttpURLConnection. Ambas fornecem uma API mais avançada para lidar com solicitações HTTP, como autenticação, cookies e redirecionamentos.
 
-Embora o exemplo acima mostre como enviar uma solicitação GET simples, há muito mais a considerar ao trabalhar com solicitações HTTP. Algumas coisas a se manter em mente incluem autenticação, tratamento de erros e uso adequado de métodos HTTP, como PUT e POST.
-
-Para mais informações, você pode consultar a documentação da biblioteca que está utilizando ou ler sobre como funcionam as solicitações HTTP em geral. É importante entender completamente esse processo para garantir que suas solicitações sejam eficazes e eficientes.
+Além disso, é importante entender os diferentes códigos de resposta HTTP que podemos receber do servidor. Alguns exemplos comuns incluem `200` para solicitação bem-sucedida, `400` para solicitação inválida e `500` para erro do servidor.
 
 ## Veja também
-
-- [Documentação do Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/index.html)
-- [Tutorial de solicitação HTTP em Java](https://www.baeldung.com/httpclient-guide)
-- [Visão geral de solicitações HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
+- [Documentação oficial do Java sobre HttpURLConnection](https://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html)
+- [Tutorial da Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/fundamentals.html)
+- [Lista de códigos de resposta HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status)

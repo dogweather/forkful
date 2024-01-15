@@ -1,6 +1,7 @@
 ---
-title:                "C++: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+html_title:           "C++: שליחת בקשת HTTP עם אימות בסיסי"
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,48 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-לשלוח בקשת HTTP עם אימות בסיסי (basic authentication) נעשה במקרים רבים לצורך ביצוע פעולות ספציפיות באתר אינטרנט, כגון כניסה לחשבון או שליחת טופס.
+## איך לעשות
 
-## איך לעשות זאת
-
-הנה דוגמא של כיצד לשלוח בקשת HTTP עם אימות בסיסי באמצעות שפת תכנות C++:
+כדי לשלוח בקשת HTTP עם אימות בסיסי בשפת C++, ניתן להשתמש בפונקציית `curl_easy_setopt` כדי להגדיר את הפרמטר `CURLOPT_USERPWD` עם שם המשתמש והסיסמה לאימות בסיסי. ובכדי לשלוח את הבקשה עם `curl_easy_perform` ולקבל תשובה בקוד התגובה ובגוף של התשובה.
 
 ```C++
-// ייבוא הספריה המתאימה לשליחת בקשות HTTP
-#include <curl/curl.h> 
+#include <curl/curl.h>
 
-int main() {
-
-  // מערך של הערכים שיישלחו עם הבקשה, כאשר הערכים מפורסמים ומוצגים בצורה של זוגות של שם-ערך
-  const char* params[] = { "username", "myusername", "password", "mypassword" };
-
-  // נקבע את הכתובת של האתר ואת בקשת הPOST
-  CURL *curl = curl_easy_init();
-  curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com/login");
-  curl_easy_setopt(curl, CURLOPT_POSTFIELDS, params);
-
-  // הפעלת הבקשה ובדיקת אם היא הצליחה
-  CURLcode res = curl_easy_perform(curl);
-  if (res != CURLE_OK) {
-    fprintf(stderr, "curl_easy_perform() failed: %s\n",
-            curl_easy_strerror(res));
-    return 1;
-  }
-
-  // מרכזת את כל תוצאות הבקשה במשתנה שקוראים בו "response_string"
-  std::string response_string;
-  
-  // מידע נוסף על התגובה שנשלחה ייכול להימצא במשתנה שקוראים בו "response_code"
-  long response_code;
-  curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
-  
-  // שחרור המשאבים שנוצרו בתהליך הפעלת הבקשה
-  curl_easy_cleanup(curl);
-
-  return 0;
+int main()
+{
+    CURL *curl = curl_easy_init(); // initialize curl
+    if(curl)
+    {
+        // set basic authentication credentials
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+        // set endpoint URL
+        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
+        // perform the request and get the response
+        CURLcode res = curl_easy_perform(curl);
+        // get response code
+        long response_code;
+        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+        // get response body
+        char *response_body;
+        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_body);
+        // print results
+        std::cout << "Response code: " << response_code << std::endl;
+        std::cout << "Response body: " << response_body << std::endl;
+        // cleanup
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-## ללכת לעומק
+## Deep Dive
 
-על מנת לשלוח בקשת HTTP עם אימות בסיסי באמצעות שפת תכנות C++, צריך להשתמש בספריה מיוחדת שנקראת libcurl. תהליך שליחת בקשת HTTP נעשה באמצעות פונקציות כמו curl_easy_init ו- curl_easy_perform, בהן מציין את הכתובת, את הפרמטרים לשליחה ומעבירים לתוכן התגובה שהתקבלה מהשרת. כדי לאפשר תגובה אינטואטיבית יותר מקודם, חשוב להש
+כאשר משתמשים באימות בסיסי, שם המשתמש והסיסמה יתווספו להפעיל את חלק המשתמש בכותרת Authorization של הכותרת הראשית של הבקשה. זה נעשה על ידי הוספת התוים `username:password` למחרוזת המתאימה ומשלמת אותה בקידומת Base64. בכדי למצוא את כתובת הנתיב שנדרשת עבור הבקשה, עלינו לפנות לשרת הרישום או לאתר עם ההמלצות על הנתיבים המתאימים.
+
+## See Also
+
+- [מסמכי תיעוד של libcurl](https://curl.se/libcurl/)
+- [פורומים של libcurl](https://curl.se/mail/lib-2018-04/)
+- [מדריכים נוספים של C++](https://www.cplusplus.com/)

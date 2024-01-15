@@ -1,6 +1,7 @@
 ---
-title:                "C++: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Päivämäärän hakeminen"
+html_title:           "C++: Päivämäärän hakeminen"
+simple_title:         "Päivämäärän hakeminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Koodaajat usein tarvitsevat tietää nykyisen päivämäärän eri ohjelmointiprosesseissa, kuten tiedostojen tallentamisessa, lokiin kirjoittamisessa tai käyttäjäkohtaisissa sovelluksissa.
 
-Monesti ohjelmointiprojekteissa tarvitaan nykyisen päivämäärän käyttöä. Tämä on erityisen hyödyllistä ajan merkitsemiseen esimerkiksi lokiin tai tiedostonumerointiin.
+## Näin teet sen
+### Käytä vakiotyökaluja
+Yksi helpoimmista tavoista saada nykyinen päivämäärä C++:ssa on käyttää `ctime` kirjastoa. Tämä kirjasto sisältää valmiin funktion `time()`, joka palauttaa nykyisen ajan sekunteina. Voit sitten käyttää `localtime()` funktiota muuttamaan tämän sekuntiarvon paikalliseksi aikarakenteeksi, joka sisältää päivämäärän ja kellonajan.
 
-## How To
+```C++
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    time_t nykyinen_aika = time(NULL);
+    struct tm *paikallinen_aika = localtime(&nykyinen_aika);
+    cout << "Päivämäärä: " << paikallinen_aika->tm_mday << "/" << paikallinen_aika->tm_mon+1 << "/" << paikallinen_aika->tm_year+1900 << endl;
+    return 0;
+}
+```
+
+### Käytä C++11:ssä lisättyä `<chrono>` kirjastoa
+C++11 toi mukanaan uuden aikakirjaston, `<chrono>`, joka mahdollistaa entistä tarkemman ajan hallinnan. Voit käyttää sitä seuraavasti saadaksesi nykyisen päivämäärän:
 
 ```C++
 #include <iostream>
 #include <chrono>
-#include <ctime>
 
-int main(){
-    // Haetaan nykyinen aika
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-    
-    // Muunnetaan aika tavalliselle muodolle
-    std::time_t current_time = std::chrono::system_clock::to_time_t(now);
-    
-    // Tulostetaan nykyinen päivämäärä
-    std::cout << "Nykyinen päivämäärä: " << std::ctime(&current_time) << std::endl;
-    
+using namespace std;
+using namespace std::chrono;
+
+int main() {
+    system_clock::time_point nykyinen_aika = system_clock::now();
+    time_t nykyinen_aika_aikaleima = system_clock::to_time_t(nykyinen_aika);
+    cout << "Päivämäärä: " << ctime(&nykyinen_aika_aikaleima) << endl;
     return 0;
 }
 ```
-Tulostus:
-```
-Nykyinen päivämäärä: Tue Jun 29 14:34:46 2021
-```
 
-## Deep Dive
+Huomaat ehkä, että tämä lähestymistapa antaa enemmän tietoa, kuten kellonajan.
 
-Nykyisen päivämäärän saaminen vaatii aikaleimojen käsittelyä. C++ tarjoaa tähän apuna `chrono` kirjaston, jolla voidaan käsitellä aikoja tarkasti ja tehokkaasti. `std::chrono::system_clock` luokan avulla voidaan hakea nykyinen aika, jonka jälkeen se muunnetaan helposti halutulle muodolle.
+### Käytä kirjastoa `<ctime>` tarkemmin
+Joissakin tilanteissa saatat tarvita vielä tarkempia tietoja nykyisestä päivämäärästä, kuten millisekunnit tai mikrosekunnit. Voit tehdä tämän käyttämällä `<ctime>` kirjaston lisää funktioita, kuten `clock()` tai `gettimeofday()`. Nämä antavat lisätietoja ohjelman suoritusajasta, ja voit käyttää niitä laskemaan nykyisen päivämäärän tarkemmin.
+
+## Syvällisempi tarkastelu
+Nykyisen päivämäärän saaminen on toiminto, joka sisältää monia erilaisia lähestymistapoja ja vaihtoehtoja C++:ssa. Voit lukea lisää eri kirjastoista ja funktioista, jotka auttavat sinua saamaan haluamasi tiedot nykyisestä päivämäärästä.
 
 ## Katso myös
-- [cppreference.com - std::chrono](https://en.cppreference.com/w/cpp/chrono)
-- [cplusplus.com - Working with time](https://www.cplusplus.com/reference/ctime/)
-- [cplusplus.com - std::chrono::system_clock](https://www.cplusplus.com/reference/chrono/system_clock/)
+- [C++ time library reference](https://en.cppreference.com/w/cpp/chrono)
+- [C library ctime reference](https://en.cppreference.com/w/cpp/chrono)
+- [C++ strftime function reference](https://en.cppreference.com/w/cpp/chrono/c/strftime)

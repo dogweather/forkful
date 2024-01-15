@@ -1,6 +1,7 @@
 ---
-title:                "C#: Travailler avec le yaml"
-simple_title:         "Travailler avec le yaml"
+title:                "Travailler avec le yaml."
+html_title:           "C#: Travailler avec le yaml."
+simple_title:         "Travailler avec le yaml."
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -9,97 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes un développeur logiciel, vous avez probablement déjà entendu parler de YAML. Mais pourquoi est-ce important? Pourquoi devriez-vous vous intéresser à travailler avec YAML? La réponse est simple: YAML est un format de sérialisation de données populaire utilisé dans de nombreux projets de développement. C'est un outil utile pour stocker et transmettre des données de manière structurée et facile à lire. 
+Vous avez probablement déjà entendu parler de YAML si vous travaillez avec du code en C#. Mais pourquoi est-il si important d'en savoir plus sur YAML ? Eh bien, YAML est un format de données configurable facile à lire et à écrire, ce qui le rend idéal pour la communication entre différentes applications.
 
-## Comment faire
+## Comment faire 
 
-Si vous souhaitez commencer à travailler avec YAML en utilisant C#, voici quelques exemples de code pour vous aider. 
+La première étape pour travailler avec YAML en C# est d'installer le package NuGet "YamlDotNet". Ensuite, vous pouvez commencer à manipuler vos données en utilisant les classes de ce package. Voici un exemple de code montrant comment lire et écrire des données YAML :
 
 ```C#
-// Exemple de création d'un fichier YAML 
 using System;
-using System.IO;
 using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
+using System.IO;
 
-public class Personne
+namespace YAMLExample
 {
-    public string Nom { get; set; }
-    public string Prenom { get; set; }
-    public int Age { get; set; }
-}
-
-public class Program
-{
-    public static void Main()
+    class Program
     {
-        var personne = new Personne
+        static void Main(string[] args)
         {
-            Nom = "Dupont",
-            Prenom = "Jean",
-            Age = 31
-        };
+            var data = new
+            {
+                Name = "John",
+                Age = 25,
+                Hobbies = new string[] { "reading", "coding", "cooking" }
+            };
 
-        var serializer = new SerializerBuilder()
-            .WithNamingConvention(UnderscoredNamingConvention.Instance)
-            .Build();
+            // Writing data to YAML file
+            string yaml = new SerializerBuilder().Build().Serialize(data);
+            File.WriteAllText("data.yaml", yaml);
 
-        var yaml = serializer.Serialize(personne);
-        File.WriteAllText("personne.yaml", yaml);
+            // Reading data from YAML file
+            var deserializer = new DeserializerBuilder().Build();
+            var result = deserializer.Deserialize<Person>(File.OpenText("data.yaml").ReadToEnd());
+
+            Console.WriteLine("Name: " + result.Name);
+            Console.WriteLine("Age: " + result.Age);
+            Console.WriteLine("Hobbies: ");
+            foreach (var hobby in result.Hobbies)
+            {
+                Console.WriteLine("- " + hobby);
+            }
+        }
     }
-}
 
-```
-
-```C#
-// Exemple de lecture d'un fichier YAML
-using System;
-using System.IO;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-
-public class Personne
-{
-    public string Nom { get; set; }
-    public string Prenom { get; set; }
-    public int Age { get; set; }
-}
-
-public class Program
-{
-    public static void Main()
+    // Defining a person class to deserialize YAML data to
+    class Person
     {
-        var input = new StringReader(File.ReadAllText("personne.yaml"));
-        var deserializer = new DeserializerBuilder()
-            .WithNamingConvention(UnderscoredNamingConvention.Instance)
-            .Build();
-
-        var personne = deserializer.Deserialize<Personne>(input);
-        Console.WriteLine("Nom: {0}, Prenom: {1}, Age: {2}", personne.Nom, personne.Prenom, personne.Age);
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string[] Hobbies { get; set; }
     }
 }
 ```
 
-Output: 
+Voici le résultat de l'exécution du code ci-dessus : 
+
 ```
-Nom: Dupont, Prenom: Jean, Age: 31
+Name: John
+Age: 25
+Hobbies:
+- reading
+- coding
+- cooking
 ```
 
-## Plongée en profondeur
+## Plongée Plus Profonde 
 
-Maintenant que vous avez vu comment créer et lire un fichier YAML en utilisant C#, il est temps de plonger plus en profondeur dans les fonctionnalités de YAML. Voici quelques éléments clés à prendre en compte : 
+Maintenant que vous savez comment lire et écrire des données YAML en utilisant C#, vous pouvez explorer d'autres fonctionnalités offertes par le package "YamlDotNet". Par exemple, vous pouvez utiliser des attributs pour personnaliser la sérialisation de vos données. Vous pouvez également utiliser des convertisseurs personnalisés pour prendre en charge des types de données complexes.
 
-- YAML est basé sur une syntaxe simple et facile à lire, ce qui le rend idéal pour stocker et transférer des données entre différentes applications.
-- YAML prend en charge les commentaires, ce qui peut être utile pour la documentation ou pour ajouter des informations supplémentaires à vos données.
-- Il est possible d'utiliser des références dans YAML pour éviter les redondances de données.
-- YAML offre une grande flexibilité avec ses types de données, tels que les tableaux, les chaînes de caractères, les nombres, les booléens, etc.
+## Voir Aussi 
 
-Pour en savoir plus sur YAML, n'hésitez pas à consulter la section de documentation officielle sur la syntaxe YAML pour de plus amples informations.
-
-## Voir aussi
-
-- [Documentation officielle sur la syntaxe YAML](https://yaml.org/spec/1.2/spec.html)
-- [YAML en 5 minutes](https://learnxinyminutes.com/docs/yaml/)
-- [Bibliothèque YamlDotNet pour C#](https://github.com/aaubry/YamlDotNet)
+- [Documentation officielle de YamlDotNet](https://www.nuget.org/packages/YamlDotNet/)
+- [Tutoriel complet sur YAML en C#](https://dotnetcoretutorials.com/2021/04/01/working-with-yaml-in-c/)

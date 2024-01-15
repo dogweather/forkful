@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Wycinanie podciągów"
+title:                "Wycinanie podciągów"
+html_title:           "Ruby: Wycinanie podciągów"
 simple_title:         "Wycinanie podciągów"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,46 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy wyciągnąć fragment tekstu z większego ciągu znaków. Może to być np. imię i nazwisko użytkownika z adresu email, numer telefonu z wielu tekstu lub fragment hasła z ciągu znaków. W takich przypadkach bardzo przydatną umiejętnością jest umiejętność ekstrakcji podciągów. Dzięki temu możemy wyselekcjonować tylko te informacje, które nas interesują, a omijać resztę. W tym artykule omówimy, jak w łatwy sposób dokonać ekstrakcji podciągów w języku Ruby.
+Jeśli pracujesz z napisami lub dokumentami tekstowymi, w pewnym momencie może pojawić się potrzeba wyciągnięcia pewnego fragmentu tekstu ze stringa. W Ruby istnieje wiele sposobów na wyciąganie podciągów, co pozwala na wygodne i skuteczne manipulowanie tekstem.
 
 ## Jak to zrobić
 
-Korzystając z języka Ruby, możemy użyć metody `slice` lub `substring` do wyciągnięcia fragmentu tekstu. Przyjrzyjmy się przykładowi:
+W Ruby do wyciągania podciągów służy metoda `slice`, która przyjmuje dwa argumenty - początkowy indeks oraz długość. Przykłady wykorzystania tej metody prezentują się następująco:
 
 ```Ruby
-text = "Witaj w świecie programowania Ruby"
-puts text.slice(11, 10) #=> "świecie"
-puts text.substring(7, 15) #=> "w świecie pro"
+"Hello World".slice(0, 5) # output: "Hello"
+"Hello World".slice(6, 5) # output: "World"
 ```
 
-Metoda `slice` przyjmuje dwa argumenty - pozycję początkową oraz długość fragmentu. Natomiast metoda `substring` przyjmuje pozycję początkową oraz pozycję końcową fragmentu. W obu przypadkach zwracany jest ciąg znaków, który został wybrany.
-
-Możemy także wykorzystać operator `[]` do wyciągnięcia fragmentu tekstu lub wyrażenie regularne, aby dokonać bardziej skomplikowanej ekstrakcji. Przykłady:
+Możemy również wyciągnąć podciąg za pomocą operatorów rzutowania:
 
 ```Ruby
-name = "Anna Kowalska"
-puts name[5..-1] #=> "Kowalska"
-phone_number = "555-123-456"
-puts phone_number[/\d{3}-\d{3}-\d{3}/] #=> "555-123-456"
+"Hello World"[0, 5] # output: "Hello"
+"Hello World"[6, 5] # output: "World"
 ```
 
-## Głębsza analiza
-
-Podczas ekstrakcji podciągów warto pamiętać, że indeksowanie w języku Ruby zaczyna się od 0, a nie od 1. Oznacza to, że pierwszy element tekstu oznaczony jest jako `0`, drugi jako `1` itd. Aby to uwzględnić, musimy odpowiednio dostosować argumenty metody `slice` lub `substring`. Przykład:
+Jeśli chcemy wyciągnąć podciąg od danego indeksu do końca stringa, możemy użyć tylko jednego argumentu bez określania długości:
 
 ```Ruby
-text = "Cześć"
-puts text.slice(0, 2) #=> "Cz"
+"Hello World"[6..] # output: "World"
 ```
 
-Jeśli chcemy wyciągnąć ostatni element tekstu, możemy wykorzystać indeks ujemny, np. `-1` oznacza ostatni element, `-2` przedostatni itd.
+Możemy również wyciągnąć podciąg od końca stringa, używając ujemnych indeksów:
 
-## Zobacz również
+```Ruby
+"Hello World"[-5..-1] # output: "World"
+```
 
-Aby dowiedzieć się więcej o metodach `slice` i `substring` oraz innych sposobach na ekstrakcję podciągów w języku Ruby, zobacz poniższe źródła:
+## Deep Dive
 
-- Dokumentacja Ruby: https://ruby-doc.org/core-3.0.2/String.html#method-i-slice
-- Ruby Guides: https://www.rubyguides.com/2019/07/ruby-extract-string/
-- Blog GoRails: https://gorails.com/blog/substrings-in-ruby
+W Ruby mamy dostęp do wielu innych metod służących do wyciągania podciągów, takich jak `slice!`, `substring` czy `scan`. Każda z nich ma nieco inne zachowanie i może być bardziej odpowiednia w zależności od konkretnego przypadku.
 
-Dzięki znajomości ekstrakcji podciągów będziesz miał większą kontrolę nad swoim kodem i łatwiej opanujesz manipulację tekstem. Koniecznie wypróbuj te metody w swoich projektach!
+Warto również zapoznać się z regularnymi wyrażeniami, które są bardzo potężnym narzędziem do manipulowania tekstem. Wiele problemów związanych z wyciąganiem podciągów można rozwiązać za pomocą wyrażeń regularnych.
+
+## Zobacz także
+
+* [Dokumentacja Ruby o metodzie `slice`](https://ruby-doc.org/core-3.0.1/String.html#method-i-slice)
+* [Artykuł na temat wyrażeń regularnych w Ruby](https://medium.com/better-programming/why-learning-regular-expressions-is-hard-and-how-to-deal-with-them-fb9f57f24b5c)

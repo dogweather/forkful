@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Swift: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,37 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pobieranie stron internetowych jest niezbędnym elementem programowania w dzisiejszych czasach. Dzięki temu możemy tworzyć aplikacje, które wykorzystują dane z internetu, takie jak aktualności, informacje o pogodzie czy też wyniki meczów. Bez pobierania stron, nasze aplikacje byłyby ograniczone do danych tylko dostępnych w nich samych.
+Pobieranie stron internetowych jest niezbędnym elementem w dzisiejszym świecie cyfrowym. Dzięki temu możemy uzyskać dostęp do różnych informacji, treści i zasobów, które są dostępne online.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Pobranie strony internetowej w języku Swift jest bardzo proste. Wystarczy zastosować kilka linijek kodu, a już będziemy w stanie pobrać stronę i wyświetlić jej zawartość. Poniżej przedstawiam przykładowy kod oraz jego rezultat:
+Aby pobrać stronę internetową w języku Swift, możemy skorzystać z kilku różnych metod. Jedną z nich jest użycie API URLSession, które pozwala na wykonywanie żądań HTTP i pobieranie danych z wybranego adresu URL. Należy najpierw utworzyć obiekt URL z adresem strony, a następnie użyć metody URLSession do pobrania danych z tego adresu. Poniżej znajduje się przykładowy kod:
 
 ```Swift
-let url = URL(string: "https://www.example.com") // utworzenie URL dla wybranej strony
-if let data = try? Data(contentsOf: url!) { // pobranie danych ze strony
-    let htmlData = NSString(data: data, encoding: String.Encoding.utf8.rawValue) // konwersja danych z binarnych na tekst HTML
-    print(htmlData as Any) // wyświetlenie zawartości strony
+// Tworzenie obiektu URL
+guard let url = URL(string: "https://www.example.com") else {
+  print("Nieprawidłowy adres URL.")
+  return
 }
+
+// Tworzenie żądania
+let request = URLRequest(url: url)
+
+// Inicjalizacja sesji URLSession
+let session = URLSession.shared
+
+// Tworzenie zadania pobierania danych
+let task = session.dataTask(with: request) { (data, response, error) in
+  if let error = error {
+    print("Wystąpił błąd: \(error)")
+  } else if let data = data {
+    // Opcjonalne przetworzenie danych
+    let htmlData = String(data: data, encoding: .utf8)
+    print(htmlData)
+  }
+}
+
+// Uruchamianie zadania
+task.resume()
 ```
 
-Rezultat:
+Po wykonaniu tego kodu, można zobaczyć zawartość pobranej strony w konsoli. Możemy również zastosować różne operacje na danych, aby dostosować wynik do naszych potrzeb.
 
-```
-<html> 
-  <head> ... </head>
-  <body> ... </body>
-</html>
-```
+## Głębsza Analiza
 
-Dzięki temu prostemu kodowi, możemy pobierać i wykorzystywać dane z dowolnej strony internetowej.
+Podczas pobierania stron internetowych w języku Swift, warto pamiętać o pewnych rzeczach. Przede wszystkim, należy zachować ostrożność przy pobieraniu danych z niezaufanych źródeł, ponieważ mogą one zawierać złośliwy kod. Warto również zapoznać się z metodami do zarządzania sesją URLSession, takimi jak ustawianie limitów czasowych czy dodawanie nagłówków do żądań.
 
-## Głębsza analiza
+Inną przydatną funkcją jest użycie bloków w metodzie dataTask. Dzięki temu możemy przekazać kod, który zostanie wykonany po pobraniu danych z serwera, co pozwala na lepszą obsługę błędów i zarządzanie danymi.
 
-Pobieranie stron internetowych w języku Swift może być także ulepszone poprzez wykorzystanie biblioteki Alamofire, która oferuje łatwiejsze i bardziej przejrzyste sposoby pobierania danych z internetu. Dodatkowo, można również wykorzystać narzędzie HTMLParser, aby przeanalizować i wyciągnąć konkretne elementy z pobranej strony.
+## Zobacz również
 
-## Zobacz też
-
-- [Dokumentacja Swift: Foundation](https://developer.apple.com/documentation/foundation)
-- [Alamofire](https://github.com/Alamofire/Alamofire)
-- [HTMLParser](https://github.com/tid-kijyun/Kanna)
+* [Dokumentacja URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+* [Swift dla początkujących](https://www.swiftbysundell.com/basics/)
+* [Pobieranie danych z internetu w języku Swift](https://www.hackingwithswift.com/advanced-ios/20)

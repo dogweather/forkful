@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Écrire un fichier texte"
+title:                "Écrire un fichier texte"
+html_title:           "Kotlin: Écrire un fichier texte"
 simple_title:         "Écrire un fichier texte"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,38 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte?
+## Pourquoi 
 
-L'écriture de fichiers texte est un élément fondamental de la programmation en Kotlin. Cela permet aux développeurs de créer et de stocker des données qui peuvent être utilisées par d'autres parties du code ou même par d'autres programmes.
+Ecrire un fichier texte peut sembler être une tâche banale, mais c'est en fait une compétence essentielle pour tout développeur Kotlin. Cela vous permet de stocker et de manipuler des données de manière simple et efficace, ce qui peut être très utile pour de nombreux projets.
 
-## Comment faire?
+## Comment faire 
 
-L'écriture d'un fichier texte en Kotlin est assez simple. Tout d'abord, vous devez ouvrir un flux de fichier en utilisant la classe `FileOutputStream` et en spécifiant le chemin et le nom du fichier que vous souhaitez créer :
+Pour écrire un fichier texte en Kotlin, suivez ces étapes simples: 
 
-```Kotlin
-val fileOutputStream = FileOutputStream("chemin/vers/votre/fichier.txt")
-```
+1. Tout d'abord, importez les classes nécessaires en utilisant l'instruction `import java.io.File` 
+2. Créez une instance de la classe `File`, en spécifiant le chemin et le nom du fichier que vous souhaitez créer. Par exemple, `val file = File("monfichier.txt")` 
+3. Utilisez la méthode `writeText()` pour écrire du texte dans votre fichier. Par exemple, `file.writeText("Bonjour le monde!")` 
+4. Si vous souhaitez ajouter du texte à un fichier existant, utilisez la méthode `appendText()` au lieu de `writeText()`. 
+5. N'oubliez pas de gérer les exceptions lors de l'utilisation de ces méthodes en utilisant des blocs `try-catch`.
 
-Ensuite, vous pouvez écrire du contenu dans le fichier en utilisant la méthode `write()` du flux de fichier :
-
-```Kotlin
-fileOutputStream.write("Ceci est un exemple de texte qui sera écrit dans le fichier.".toByteArray())
-```
-
-Enfin, n'oubliez pas de fermer le flux de fichier une fois que vous avez terminé d'écrire dans le fichier :
+Voici un exemple complet de code pour écrire du texte dans un fichier et le récupérer ensuite en tant que chaîne de caractères:
 
 ```Kotlin
-fileOutputStream.close()
+import java.io.File
+
+fun main() {
+  // Crée un fichier "monfichier.txt"
+  val file = File("monfichier.txt")
+  
+  // Ecrire du texte dans le fichier
+  file.writeText("Bonjour le monde!")
+  
+  // Récupère le contenu du fichier en tant que chaîne de caractères
+  val content = file.readText()
+  
+  println(content) // Affiche "Bonjour le monde!"
+}
 ```
 
-## Plongée en profondeur
+## Plongée en profondeur 
 
-Il est important de noter que lors de l'écriture d'un fichier texte en Kotlin, vous devez spécifier le type de données en utilisant la méthode `toByteArray()` pour convertir une chaîne en un tableau d'octets. De plus, vous pouvez également spécifier un encodeur pour votre fichier en utilisant le deuxième paramètre de la méthode `write()`. Par exemple, si vous voulez utiliser l'encodeur UTF-8, vous pouvez utiliser `fileOutputStream.write("Votre texte".toByteArray(), Charset.forName("UTF-8"))`.
+Maintenant que vous savez comment écrire et récupérer du texte dans un fichier en utilisant Kotlin, voici quelques informations supplémentaires pour améliorer vos connaissances sur le sujet:
 
-Les fichiers texte sont également utiles pour stocker des données structurées, telles que du JSON ou du CSV. Vous pouvez utiliser des bibliothèques telles que Moshi ou OpenCSV pour faciliter l'écriture de ces types de données dans des fichiers texte.
+- Vous pouvez également utiliser la méthode `printWriter()` pour écrire du texte dans un fichier avec plus de flexibilité, en spécifiant l'encodage, le format de nouvelle ligne, etc.
+- Outre les méthodes `writeText()` et `appendText()`, vous pouvez également utiliser `writeBytes()` pour écrire des données binaires dans un fichier.
+- Kotlin offre également une syntaxe de blocs `use` qui s'assure que le fichier est correctement fermé même en cas d'exception. Par exemple:
 
-## Voir aussi
+```Kotlin
+File("monfichier.txt").printWriter().use { out ->
+  out.println("Bonjour le monde!")
+}
+```
 
-- [Documentation officielle de Kotlin sur l'écriture de fichiers](https://kotlinlang.org/docs/tutorials/kotlin-for-py/create-files.html)
-- [Exemple de code pour écrire un fichier texte en Kotlin](https://www.geeksforgeeks.org/kotlin-file-outputstream-writebytes-method-with-example/)
-- [Tutoriel sur l'utilisation de Moshi pour écrire des fichiers JSON en Kotlin](https://medium.com/@t1kw0ndo/reading-and-writing-json-with-kotlin-using-moshi-and-gson-963c54bc15fc)
+## Voir aussi 
+
+- [Documentation officielle Kotlin pour les entrées-sorties](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html)
+- [Tutoriel sur la manipulation de fichiers en Kotlin](https://www.tutorialkart.com/kotlin/kotlin-write-to-file/)
+- [Documentation officielle Java pour la classe `File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Javascript: Utskrift av feilsøkingsutdata"
 simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,81 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å printe ut feilsøkingsutdata kan være en nyttig praksis for å feilsøke og finne feil i koden din. Det kan hjelpe deg med å forstå hva som skjer under kjøringen av programmet ditt og finne ut hvor det kan være problemer.
+Å skrive ut feilsøkingsinformasjon, også kjent som debug output, er en viktig praksis for å finne og fikse feil i din JavaScript-kode. Det hjelper deg med å forstå hvordan koden din fungerer, og kan gi verdifull informasjon for å løse problemer i ditt program.
 
 ## Hvordan
-
-For å printe ut feilsøkingsutdata i Javascript, kan du bruke `console.log()` funksjonen. Denne funksjonen vil skrive ut gitt data til utgangskonsollen i nettleseren din.
-
-```Javascript
-let navn = "Sarah";
-let alder = 25;
-let yrke = "Webutvikler";
-console.log("Navn: " + navn);
-console.log("Alder: " + alder);
-console.log("Yrke: " + yrke);
-```
-
-Dette vil resultere i følgende utdata i konsollen:
-
-```
-Navn: Sarah
-Alder: 25
-Yrke: Webutvikler
-```
-
-I tillegg til å skrive ut variabler, kan du også printe ut tekster eller til og med objekter:
+For å skrive ut debug output i JavaScript, kan du bruke funksjonen `console.log()`. Denne funksjonen lar deg skrive ut en verdi eller et objekt til konsollen, som er en del av utviklerverktøyene i nettleseren din.
 
 ```Javascript
-console.log("Feilmelding: En ugyldig input ble oppdaget.");
-console.log({ navn: "John", alder: 28, yrke: "Designer" });
+// Skriver ut en enkel tekststreng
+console.log("Hei, verden!");
+
+// Skriver ut en verdi fra en variabel
+const navn = "Sara";
+console.log("Hei, mitt navn er " + navn);
+
+// Skriver ut et objekt 
+const bruker = { navn: "John", alder: 27, yrke: "utvikler" };
+console.log(bruker);
 ```
 
-Dette vil resultere i:
-
+Output i konsollen:
 ```
-Feilmelding: En ugyldig input ble oppdaget.
-{ navn: "John", alder: 28, yrke: "Designer" }
-```
-
-## Dypdykk
-
-Ved å bruke `console.log()` funksjonen, kan du også formatere utdataen din på en mer nyttig måte. For eksempel kan du bruke `%c` for å legge til farger og stil i teksten din:
-
-```Javascript
-console.log("%cFeilmelding: En ugyldig input ble oppdaget.", "color: red; font-weight: bold");
+Hei, verden!
+Hei, mitt navn er Sara
+{ navn: 'John', alder: 27, yrke: 'utvikler' }
 ```
 
-Dette vil gi deg en mer iøynefallende feilmelding i konsollen din.
+## Deep Dive
+I tillegg til `console.log()`, finnes det andre nyttige funksjoner for å skrive ut debug output i JavaScript. Noen av dem er `console.error()` for å skrive ut feilmeldinger, `console.warn()` for å advare om potensielle problemer og `console.info()` for å gi informasjon til utviklere.
 
-En annen nyttig funksjon er `console.table()`, som lar deg skrive ut data i en tabellform:
-
-```Javascript
-let brukere = [
-    { navn: "Lisa", alder: 32, yrke: "Lærer" },
-    { navn: "David", alder: 29, yrke: "Selger" },
-    { navn: "Maria", alder: 35, yrke: "Sykepleier" }
-];
-console.table(brukere);
-```
-
-Dette vil gi deg følgende utdata i konsollen din:
-
-```
-┌─────────┬───────┬─────────────┐
-│ (index) │ navn  │    Verdi    │
-├─────────┼───────┼─────────────┤
-│    0    │ 'Lisa'│ [object ...]│
-│    1    │ 'David' │ [object ...]│
-│    2    │ 'Maria' │ [object ...]│
-└─────────┴───────┴─────────────┘
-```
-
-Ved hjelp av disse funksjonene kan du enkelt få en bedre forståelse av hva som skjer under kjøringen av koden din og finne eventuelle feil eller problemer.
+Det finnes også andre måter å bruke `console`-objektet på, som å skrive ut en tabell med data ved hjelp av `console.table()` eller å måle tiden det tar for et stykke kode å utføre ved hjelp av `console.time()` og `console.timeEnd()`.
 
 ## Se også
-
-- [Javascript konsole API-dokumentasjon](https://developer.mozilla.org/nb/docs/Web/API/Console)
-- [5 tips for effektiv feilsøking i Javascript](https://medium.com/swlh/5-tips-to-efficiently-debug-your-javascript-code-a11447b057dd)
-- [Debugging i Javascript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-chrome-devtools)
+- [Mozilla Developer Network - Debugging JavaScript](https://developer.mozilla.org/nb/docs/Web/JavaScript/Debugging)
+- [W3Schools - JavaScript Debugging](https://www.w3schools.com/js/js_debugging.asp)
+- [Chrome DevTools Documentation - Console API Reference](https://developers.google.com/web/tools/chrome-devtools/console/api)

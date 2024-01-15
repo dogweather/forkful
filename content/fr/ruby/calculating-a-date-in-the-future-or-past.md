@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Calculer une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "Ruby: Calculer une date dans le futur ou le passé"
 simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,49 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles quelqu'un voudrait calculer une date dans le futur ou dans le passé en utilisant Ruby. Cela peut être utile pour la planification d'événements, la gestion de tâches, ou simplement pour satisfaire sa curiosité.
+Êtes-vous fatigué de calculer manuellement une date dans le futur ou dans le passé? Ou peut-être que vous cherchez simplement à automatiser cette tâche fastidieuse? Dans tous les cas, l'utilisation de Ruby peut grandement vous faciliter la vie.
 
-# Comment faire
+## Comment faire
 
-Calculer une date dans le futur ou dans le passé en Ruby est assez simple en utilisant la méthode `Date.new`. Voici un exemple de code pour calculer la date dans 7 jours à partir d'aujourd'hui :
+Tout d'abord, vous aurez besoin d'importer la bibliothèque standard Date de Ruby en ajoutant ```require 'date'``` au début de votre code.
 
-```Ruby
-Date.new(2020, 6, 25)+7
+### Calculer une date dans le futur
+
+Pour calculer une date dans le futur, vous pouvez utiliser la méthode ```Date.today + n```, où ```n``` est le nombre de jours dans le futur que vous souhaitez calculer. Par exemple, si vous voulez obtenir la date d'un mois à partir d'aujourd'hui, vous pouvez utiliser ```Date.today + 30```.
+
+### Calculer une date dans le passé
+
+Pour calculer une date dans le passé, vous pouvez utiliser la méthode ```Date.today - n```, où ```n``` est le nombre de jours dans le passé que vous souhaitez calculer. Par exemple, si vous voulez obtenir la date il y a un mois à partir d'aujourd'hui, vous pouvez utiliser ```Date.today - 30```.
+
+### Exemples de code et résultats
+
+Voici un exemple de code pour calculer une date dans le futur:
+
+```
+require 'date'
+future_date = Date.today + 15
+puts "Dans 15 jours, nous serons le #{future_date}"
+```
+Résultat:
+```
+Dans 15 jours, nous serons le 2021-10-07
 ```
 
-Cela nous donne la date du 2 juillet 2020. De même, pour calculer une date dans le passé, il suffit de soustraire le nombre de jours souhaité :
+Et voici un exemple de code pour calculer une date dans le passé:
 
-```Ruby
-Date.new(2020, 6, 25)-7
+```
+require 'date'
+past_date = Date.today - 30
+puts "Il y a un mois, nous étions le #{past_date}"
+```
+Résultat:
+```
+Il y a un mois, nous étions le 2021-08-11
 ```
 
-Cela nous donne la date du 18 juin 2020.
+## Plongée en profondeur
 
-Pour rendre le code encore plus dynamique, vous pouvez utiliser la méthode `.today` pour obtenir la date actuelle, et la méthode `.strftime` pour formater la date selon vos préférences. En voici un exemple :
+Ruby offre également d'autres méthodes pour calculer des dates dans le futur ou dans le passé, telles que ```Date.new```, ```Date.parse```, et ```Date.strptime```. Vous pouvez également spécifier des formats de date spécifiques en utilisant la méthode ```strftime```. Consultez la documentation officielle de Ruby pour en savoir plus sur ces méthodes.
 
-```Ruby
-today = Date.today    # obtient la date actuelle
-future_date = today + 7    # ajoute 7 jours à la date actuelle
-puts future_date.strftime("%d/%m/%Y")    # formate la date pour l'afficher au format jour/mois/année
-```
+## Voir aussi
 
-Cela nous donne l'affichage suivant : `02/07/2020`.
-
-# Plongez plus profondément
-
-Maintenant que vous savez comment calculer une date dans le futur ou dans le passé en utilisant Ruby, voici quelques conseils supplémentaires :
-
-- La méthode `Date.new` prend trois arguments obligatoires : l'année, le mois et le jour. Mais vous pouvez également utiliser des arguments optionnels comme l'heure, les minutes et les secondes pour créer des dates plus précises.
-
-- Ruby a une bibliothèque standard étendue pour travailler avec les dates et les heures, y compris les méthodes pour comparer des dates, ajouter et soustraire des temps et des dates, et beaucoup plus encore. N'hésitez pas à explorer ces fonctions pour en savoir plus sur le travail avec les dates en Ruby.
-
-- Si vous avez besoin de calculer des dates plus complexes, comme une date dans 2 mois à partir d'aujourd'hui, vous pouvez utiliser la gem `active_support` qui offre des méthodes supplémentaires pour travailler avec les dates.
-
-# Voir aussi
-
-- [Documentation officielle de Ruby sur les dates et les heures](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Gem active_support pour des manipulations de dates plus avancées](https://rubygems.org/gems/active_support)
-- [Un tutoriel sur la manipulation de dates en Ruby](https://www.rubyguides.com/2015/12/ruby-date-time/)
-- [Exemples concrets d'utilisation de dates en Ruby](https://www.rubyguides.com/2016/06/ruby-date/)
+- [Documentation officielle de Ruby](https://ruby-doc.org/)
+- [Guide de référence rapide de Ruby](https://www.ruby-lang.org/fr/documentation/quickstart/)

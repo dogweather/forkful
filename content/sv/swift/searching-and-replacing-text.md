@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Söka och ersätta text"
+title:                "Söka och ersätta text"
+html_title:           "Swift: Söka och ersätta text"
 simple_title:         "Söka och ersätta text"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,25 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-När man arbetar med programmering, är det inte ovanligt att behöva göra ändringar i sin kod. En av de vanligaste uppgifterna är att söka och ersätta text inom sitt kodprojekt. Detta kan spara tid och minimera fel när man behöver göra en stor mängd ändringar i en fil eller flera filer. 
+Att kunna söka och ersätta text i en kodbas är en viktig och användbar funktion för Swift-utvecklare. Det kan hjälpa till att snabbt göra ändringar i koden och minska risken för skrivfel.
 
-## Så här gör man
+## Så här gör du
 
-För att söka och ersätta text i Swift kan man använda sig av funktionen `replacingOccurences(of:with:)`. Detta gör man genom att först ange den texten man vill söka efter som det första argumentet och den text man vill ersätta med som det andra argumentet. Låt oss ta ett enkelt exempel:
+För att söka och ersätta text i Swift, använd funktionen `replacingOccurrences(of:with:)`. Här är ett exempel på hur du kan ersätta alla förekomster av ett ord med ett annat i en sträng:
 
 ```Swift
-let text = "Hej, jag heter *Sandra* och jag gillar *Swift*."
-let newText = text.replacingOccurrences(of: "*", with: "")
+let str = "Jag älskar att koda i Swift!"
+let nyStr = str.replacingOccurrences(of: "älskar", with: "tycker om")
+
+print(nyStr) // Output: "Jag tycker om att koda i Swift!"
 ```
 
-I detta exempel söker vi efter asterisker och ersätter dem med en tom sträng. Detta skulle resultera i att `newText` blir "Hej, jag heter Sandra och jag gillar Swift." 
+Om du vill söka och ersätta text i en hel kodbas kan du använda Xcode's "Find and Replace" -funktion. Du kan söka efter ett specifikt ord och välja att ersätta det i hela projektet eller bara i vissa filer.
 
 ## Djupdykning
 
-För att göra sökandet mer avancerat kan man använda reguljära uttryck. Detta gör det möjligt att söka efter mönster istället för en specifik textsträng. Man kan även specificera vilken del av texten som ska ersättas genom att använda ett Skriv ett reguljärt uttryck som passar dina behov. För mer information om reguljära uttryck i Swift, se Apples dokumentation [här](https://developer.apple.com/documentation/foundation/nsregularexpression).
+När du använder `replacingOccurrences(of:with:)`-funktionen, kommer alla förekomster av det sökta ordet att ersättas. Detta inkluderar även om ordet finns som en del av ett annat ord.
 
-## Se även
+I exemplet ovan kommer "älskar" att ersättas även om det finns som en del av ordet "älskarinnan". För att undvika detta kan du använda `replacingOccurrences(of:with:options:range:)` och specificera vilka delar av strängen som ska sökas i för att undvika oönskade ersättningar.
 
-- [Apple Developer dokumentation för replaceOccurrences](https://developer.apple.com/documentation/foundation/nsstring/1407924-replacingoccurrences)
-- [Reguljära uttryck i Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Enkel Swift tutorial om sökning och ersättning av text](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+Det finns också andra funktioner som kan komma till nytta vid sökning och ersättning av text, som `range(of:)` för att hitta en del av en sträng och `replacingCharacters(in:with:)` för att ersätta en del av en sträng med en annan.
+
+## Se också
+
+- [Swift's String Dokumentation](https://developer.apple.com/documentation/swift/string)
+- [How to use Find and Replace in Xcode](https://medium.com/@twannl/xcode-find-and-replace-explained-5c1e8c1ef4b1)

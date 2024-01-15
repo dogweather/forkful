@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: L'utilisation des expressions régulières"
-simple_title:         "L'utilisation des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Clojure: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi utiliser des expressions régulières en Clojure ?
+Pourquoi: Les expressions régulières sont un outil puissant et flexible pour manipuler des chaînes de caractères dans vos programmes Clojure. Elles peuvent être utilisées pour extraire des données spécifiques, valider des entrées utilisateur et même transformer des données en masse.
 
-Les expressions régulières sont des outils puissants pour rechercher, extraire et manipuler des motifs de texte. En utilisant des expressions régulières en Clojure, vous pouvez facilement traiter et manipuler des données textuelles de manière efficace. Que vous travailliez avec du texte brut ou des chaînes de caractères, les expressions régulières peuvent vous aider à trouver et à traiter rapidement ce dont vous avez besoin.
+Comment faire: Voici quelques exemples pratiques de l'utilisation des expressions régulières en Clojure:
 
-## Comment faire ?
-
-Les expressions régulières en Clojure peuvent être utilisées à l'aide de la fonction `re-find`, qui recherche une expression régulière dans une chaîne de caractères et renvoie le premier résultat trouvé. Voici un exemple de code utilisant `re-find` :
+### Chercher et remplacer une chaîne de caractères
 
 ```Clojure
-; Définir une chaîne de caractères
-(def chaine "Je suis un développeur Clojure")
-
-; Utilisation de `re-find` pour rechercher le mot "développeur" dans la chaîne
-(re-find #"développeur" chaine)
-; Output: "développeur"
+user=> (clojure.string/replace "Bonjour le monde!" #"le" "la")
+"Bonjour la monde!"
 ```
 
-Vous pouvez également utiliser `re-seq` pour renvoyer tous les résultats trouvés plutôt que seulement le premier. Voici un exemple avec `re-seq` :
+Dans cet exemple, nous utilisons la fonction `replace` de la bibliothèque standard `clojure.string` pour remplacer toutes les occurrences de "le" par "la" dans la chaîne de caractères donnée. Notez que nous avons également utilisé des expressions régulières pour spécifier le motif à remplacer.
+
+### Extraire des informations d'une chaîne de caractères
 
 ```Clojure
-; Définir une chaîne de caractères
-(def chaine "La vie est belle")
-
-; Utilisation de `re-seq` pour rechercher tous les mots contenant la lettre "e" dans la chaîne
-(re-seq #"\w*e\w*" chaine)
-; Output: ("belle")
+user=> (re-find #"\d{3}-\d{2}-\d{4}" "Mon numéro de sécurité sociale est 123-45-6789")
+"123-45-6789"
 ```
 
-## Plongée en profondeur
+Ici, nous utilisons la fonction `re-find` de la bibliothèque standard `clojure.core` pour extraire un numéro de sécurité sociale à 9 chiffres d'une chaîne de caractères donnée. L'expression régulière `\d{3}-\d{2}-\d{4}` correspond à un motif de trois chiffres, suivis d'un tiret, puis de deux chiffres, puis d'un autre tiret, puis de quatre chiffres.
 
-Les expressions régulières en Clojure utilisent la bibliothèque Java `java.util.regex`, ce qui signifie que vous pouvez utiliser toutes les fonctionnalités de cette bibliothèque dans vos expressions régulières Clojure. En outre, vous pouvez utiliser des groupes de capture, qui vous permettent de cibler et de récupérer des parties spécifiques d'un motif. Voici un exemple de code utilisant des groupes de capture :
+### Valider une adresse email
 
 ```Clojure
-; Définir une chaîne de caractères
-(def chaine "Mon adresse email est contact@domaine.com")
-
-; Utilisation de groupes de capture pour récupérer l'adresse email
-(re-find #"(\w+@\w+\.com)" chaine)
-; Output: ("contact@domaine.com" "contact@domaine.com")
+user=> (re-matches #"^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$" "utilisateur@test.com")
+true
 ```
 
-Pour plus d'informations sur l'utilisation des expressions régulières en Clojure, vous pouvez consulter la documentation officielle de Clojure sur les expressions régulières ainsi que la documentation de la bibliothèque Java `java.util.regex`.
+Dans cet exemple, nous utilisons la fonction `re-matches` de la bibliothèque standard `clojure.core` pour valider une adresse email donnée en utilisant une expression régulière. Le motif `^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$` correspond à une chaîne de caractères commençant par des lettres ou des chiffres, suivie d'un symbole "@", puis d'un domaine composé de lettres et se terminant par une extension de deux ou trois lettres.
 
-# Voir aussi
+Plongée en profondeur: Les expressions régulières sont basées sur la syntaxe PCRE (Perl Compatible Regular Expressions) et peuvent être utilisées dans de nombreux langages de programmation, y compris Clojure. Elles sont extrêmement polyvalentes et peuvent être particulièrement utiles pour nettoyer, extraire ou valider des données dans vos programmes. Cependant, il est important de noter que les expressions régulières peuvent être complexes et difficiles à comprendre pour les débutants. Il est donc recommandé de suivre des tutoriels ou d'utiliser des outils de test en ligne pour vous familiariser avec leur syntaxe et leur fonctionnement.
 
-- Documentation officielle de Clojure sur les expressions régulières: https://clojure.org/guides/faq?section=regularexpressions
-- Documentation de la bibliothèque Java `java.util.regex`: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
+Voir aussi: 
+- [Documentation Clojure sur les expressions régulières](https://clojuredocs.org/clojure.core/re-pattern)
+- [Exemples et exercices pour pratiquer les expressions régulières](https://regexone.com/)
+- [Outil de test en ligne pour les expressions régulières](https://regex101.com/)

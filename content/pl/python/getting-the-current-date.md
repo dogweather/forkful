@@ -1,6 +1,7 @@
 ---
-title:                "Python: Uzyskiwanie aktualnej daty"
-simple_title:         "Uzyskiwanie aktualnej daty"
+title:                "Otrzymywanie aktualnej daty"
+html_title:           "Python: Otrzymywanie aktualnej daty"
+simple_title:         "Otrzymywanie aktualnej daty"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,72 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w naszym codziennym życiu potrzebujemy aktualnej daty, niezależnie czy pracujemy jako programiści, czy też jesteśmy po prostu zapracowanymi osobami, które muszą organizować swoje obowiązki. W tym artykule dowiesz się dlaczego pobieranie aktualnej daty jest ważne w programowaniu.
+Obecna data jest często potrzebna w programowaniu, ponieważ pozwala na utworzenie dynamicznych aplikacji, które wykorzystują aktualny czas. Może być również używana do tworzenia funkcji, które mają reagować na konkretny dzień lub czas, np. wyświetlenie innej informacji w święta.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby pobrać aktualną datę w języku Python, użyjemy modułu "datetime". Najpierw zaimportujemy ten moduł do naszego kodu:
-
-```Python
+```python
 import datetime
+
+aktualna_data = datetime.datetime.now()
+print("Aktualna data i czas:", aktualna_data)
+```
+#### Wynik:
+```
+Aktualna data i czas: 2021-04-16 13:30:00.480041
 ```
 
-Następnie możemy użyć metody "now()" aby pobrać aktualną datę i czas:
+Możemy również wyświetlić tylko konkretną część daty, np. dzień lub miesiąc, korzystając z odpowiednich funkcji, takich jak `day` i `month`.
 
-```Python
-current_date = datetime.datetime.now()
-
-print(current_date)
+```python
+aktualna_data = datetime.datetime.now()
+dzień = aktualna_data.day
+miesiąc = aktualna_data.month
+print("Dziś jest", dzień, "dzień miesiąca", miesiąc)
+```
+#### Wynik:
+```
+Dziś jest 16 dzień miesiąca 4
 ```
 
-**Output:**
+Możemy także użyć modułu `calendar` do wyświetlenia nazwy dnia tygodnia.
 
+```python
+import calendar
+aktualna_data = datetime.datetime.now()
+dzień_tygodnia = calendar.day_name[aktualna_data.weekday()]
+print("Dziś jest", dzień_tygodnia)
 ```
-2021-04-20 12:00:00.123456
+#### Wynik:
 ```
-
-Aby wyświetlić tylko datę lub czas, możemy użyć odpowiednich metod "date()" lub "time()":
-
-```Python
-print(current_date.date()) # wyświetli tylko datę
-
-print(current_date.time()) # wyświetli tylko czas
-```
-
-**Output:**
-
-```
-2021-04-20 # tylko data
-12:00:00.123456 # tylko czas
+Dziś jest piątek
 ```
 
-Możemy również wyświetlić tylko określone elementy daty lub czasu, na przykład:
+## W głębi rzeczy
 
-```Python
-print(current_date.year) # wyświetli rok
+Aby dokładnie zrozumieć, jak działa funkcja `datetime.now()` należy wiedzieć, że zwraca ona obiekt typu `datetime`, który zawiera informacje o bieżącej dacie i czasie. Następnie możemy używać różnych metod na tym obiekcie, np. `day`, `month`, `year`, aby otrzymać pożądane informacje.
 
-print(current_date.month) # wyświetli miesiąc
+Moduł `calendar` zawiera wiele przydatnych funkcji, które pozwalają na łatwą obsługę dat i czasu. W powyższym przykładzie korzystaliśmy z `day_name` aby wyświetlić nazwę dnia tygodnia, ale istnieją również inne funkcje, takie jak `month` czy `week`, które mogą być wykorzystane w naszych aplikacjach.
 
-print(current_date.day) # wyświetli dzień miesiąca
+## Zobacz także
 
-print(current_date.hour) # wyświetli godzinę
-```
-
-**Output:**
-
-```
-2021 # rok
-4 # miesiąc
-20 # dzień miesiąca
-12 # godzina
-```
-
-## Głębsza analiza
-
-Moduł "datetime" posiada wiele więcej metod i funkcji, dzięki którym możemy manipulować datami i czasem w naszym kodzie. Możemy na przykład dodawać lub odejmować dni, godziny lub sekundy od aktualnej daty, dzięki czemu możemy tworzyć różne funkcje, jak na przykład kalendarze lub zegarki. Możemy również porównywać daty, sprawdzać czy jest to rok przestępny, łączyć różne elementy daty w jeden obiekt i wiele więcej.
-
-## Zobacz również
-
-- Dokumentacja Python dotycząca modułu "datetime": https://docs.python.org/3/library/datetime.html
-- Wideo instruktażowe na YouTube o pobieraniu aktualnej daty w Python: https://www.youtube.com/watch?v=qjkR3jZ60gs
-- Przydatny artykuł na temat manipulacji datami w Python: https://medium.com/@karambelkar/manipulating-dates-and-times-in-python-c212ea4f58a9
+- [Dokumentacja modułu datetime](https://docs.python.org/3/library/datetime.html)
+- [Poradnik dla początkujących w języku Python - część 2](https://programiz.com/python-programming/datetime)
+- [Podstawy funkcji dat i czasu w Pythonie](https://www.w3schools.com/python/python_datetime.asp)

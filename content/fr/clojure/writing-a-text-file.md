@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Écrire un fichier texte"
+title:                "Écrire un fichier texte"
+html_title:           "Clojure: Écrire un fichier texte"
 simple_title:         "Écrire un fichier texte"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,57 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Ecrire un fichier texte est un moyen simple et efficace de stocker des informations dans un format lisible par l'humain. Cela peut être utile pour créer des rapports, des listes ou tout simplement pour noter des idées.
+Ecrire un fichier texte peut sembler simple, mais cela peut être utile pour diverses raisons, telles que la sauvegarde de données, la création de scripts ou la préparation de rapports.
 
 ## Comment faire
 
-Le langage de programmation Clojure offre une syntaxe rapide et efficace pour écrire des fichiers texte. Voici un exemple de code qui crée un fichier texte avec deux lignes contenant des nombres :
+Pour écrire un fichier texte en utilisant Clojure, il suffit d'utiliser la fonction `spit`. Voici un exemple de code:
 
 ```Clojure
-(with-open [f (clojure.java.io/writer "mon_fichier.txt")]
-  (.write f "30\n")
-  (.write f "15\n"))
+(spit "mon_fichier.txt" "Bonjour le monde!")
 ```
 
-En exécutant ce code, un fichier nommé "mon_fichier.txt" sera créé dans le même dossier que votre code Clojure. Son contenu sera :
+Cela créera un fichier nommé "mon_fichier.txt" contenant la phrase "Bonjour le monde!".
 
-```
-30
-15
-```
-
-Vous pouvez également intégrer des données dynamiques dans votre fichier en utilisant des variables et des boucles. Voici un exemple qui crée un fichier avec les noms de trois fruits :
+Si vous souhaitez ajouter du contenu à un fichier existant, vous pouvez utiliser la fonction `slurp` pour lire le contenu du fichier, puis utiliser `spit` pour écrire le nouveau contenu. Voici un exemple:
 
 ```Clojure
-(with-open [f (clojure.java.io/writer "fruits.txt")]
-  (doseq [fruit ["pomme" "banane" "fraise"]]
-    (.write f (str fruit "\n"))))
+(let [mon_fichier (slurp "mon_fichier.txt")]
+  (spit "mon_fichier.txt" (str mon_fichier " Au revoir le monde!")))
 ```
 
-Le fichier "fruits.txt" contiendra :
-
-```
-pomme
-banane
-fraise
-```
+Cela ajoutera la phrase " Au revoir le monde!" à la fin du fichier.
 
 ## Plongée en profondeur
 
-En plus de créer des fichiers texte, Clojure offre également des fonctions utiles pour lire et manipuler des fichiers déjà existants. Par exemple, la fonction `slurp` permet de lire le contenu d'un fichier en une seule ligne de code :
+Il existe plusieurs options pour personnaliser l'écriture d'un fichier texte en utilisant Clojure. Par exemple, vous pouvez spécifier le mode d'écriture avec `spit`, tels que `:append` pour ajouter du contenu à la fin du fichier, ou `:truncate` pour écraser le contenu existant.
 
-```Clojure
-(slurp "mon_fichier.txt")
-```
-
-Cela renverra le contenu du fichier sous forme de chaîne de caractères. Vous pouvez également utiliser des fonctions telles que `subs` pour extraire une partie spécifique du contenu ou `reduce` pour effectuer des opérations sur chaque ligne du fichier.
+De plus, vous pouvez également spécifier un encodage spécifique avec le paramètre `:encoding` pour gérer les caractères spéciaux dans votre fichier texte.
 
 ## Voir aussi
 
-Pour en savoir plus sur la manipulation de fichiers en Clojure, vous pouvez consulter les ressources suivantes :
-
-- [Documentation officielle de Clojure](https://clojuredocs.org/clojure.core/slurp)
-- [Tutoriel sur la manipulation de fichiers avec Clojure](https://www.clojure.org/guides/io)
-- [Exemples de code pour écrire, lire et manipuler des fichiers](https://clojuredocs.org/clojure.java.io)
-
-Maintenant que vous avez appris à écrire des fichiers texte en utilisant Clojure, vous pouvez les utiliser pour stocker et organiser vos données de manière plus efficace. À vous de jouer !
+- [Documentation officielle de Clojure sur la fonction `spit`](https://clojuredocs.org/clojure.core/spit)
+- [Un tutoriel sur l'écriture de fichiers texte en Clojure](https://www.baeldung.com/clojure-write-file)

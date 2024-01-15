@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 디렉토리가 존재하는지 확인하기"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "Haskell: 디렉토리가 존재하는지 확인하기"
 simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜?
 
-파일 시스템을 다루다보면 때때로 특정 디렉토리가 존재하는지 여부를 확인해야 할 때가 있습니다. 그래서 Haskell을 사용하여 디렉토리의 존재 여부를 확인하는 방법을 배워보겠습니다.
+프로그램을 작성하는 동안 디렉토리가 존재하는지 확인해야 할 수 있습니다. 이를 통해 우리는 프로그램이 예상대로 작동하거나 예외 상황을 처리할 수 있습니다.
 
-## 어떻게
+## 방법
 
-먼저 System.Directory 모듈을 임포트합니다.
+디렉토리가 있는지 확인하는 가장 간단한 방법은 `doesDirectoryExist` 함수를 사용하는 것입니다. 예를 들어, 우리가 현재 작업 디렉토리에 있는 "test"라는 디렉토리가 있는지 확인하고 싶다면 다음과 같이 작성할 수 있습니다.
 
 ```Haskell
 import System.Directory
+
+main = do
+    isTestDir <- doesDirectoryExist "test"
+    if isTestDir
+        then putStrLn "test 디렉토리가 있습니다."
+        else putStrLn "test 디렉토리가 없습니다."
 ```
 
-다음으로, `doesDirectoryExist` 함수를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 이 함수는 디렉토리의 경로를 인자로 받아 Bool 값을 반환합니다.
+위 코드를 실행하면 "test 디렉토리가 없습니다."라는 결과가 나올 것입니다. 만약 디렉토리가 존재한다면, "test 디렉토리가 있습니다."라는 결과가 나올 것입니다.
+
+## 깊게 들어가기
+
+`doesDirectoryExist` 함수는 `System.Directory` 모듈에서 제공되며, 디렉토리의 존재 여부를 감지하기 위해 시스템의 파일 시스템에 직접 액세스합니다. 이 함수는 인자로 디렉토리의 경로를 받고, 해당 경로의 파일 유형을 알아낸 후 디렉토리인지 아닌지를 판단합니다.
+
+시스템 디렉토리를 아직 작성하지 않은 경우, `System.Directory` 모듈에서 제공하는 함수를 사용하여 디렉토리를 생성할 수도 있습니다. `createDirectory` 함수는 지정된 경로에 디렉토리를 생성하고, 경로를 따라 부모 디렉토리들도 모두 생성합니다.
 
 ```Haskell
-doesDirectoryExist :: FilePath -> IO Bool
+import System.Directory
+
+main = do
+    createDirectory "test/dir"
 ```
 
-예를 들어, "photos" 디렉토리가 존재하는지 여부를 확인하는 예제를 살펴보겠습니다.
+위 코드를 실행하면, "test"라는 디렉토리 아래에 "dir"이라는 디렉토리가 생성될 것입니다. `createDirectoryIfMissing` 함수를 사용하면 디렉토리가 이미 존재하는지 여부를 미리 확인한 후 생성할 수도 있습니다.
 
-```Haskell
-existed <- doesDirectoryExist "photos"
-print existed -- True 혹은 False 값이 출력됩니다.
-```
+## 참고
 
-## 깊게 파고들기
-
-이제 `doesDirectoryExist` 함수가 어떻게 동작하는지 살펴보겠습니다. 이 함수는 내부적으로 `fileExist` 함수를 호출하여 디렉토리의 존재 여부를 확인합니다. 만약 해당 경로가 파일인 경우에는 False 값을 반환하며, 그 외에는 디렉토리의 존재 여부를 확인하기 위해 운영 체제에 따라 다른 시스템 호출을 수행합니다.
-
-## 또 다른 정보들
-
-- [System.Directory 모듈 문서](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell에서 파일 시스템 다루기](https://haskell.fpcomplete.com/library/directory)
-- [Haskell에서 파일 및 디렉토리 다루기](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/9-file-and-directory-management)
+- [Hackage: System.Directory module](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Learn You A Haskell: System.Directory](http://learnyouahaskell.com/input-and-output#files-and-streams)
+- [Haskell Wiki: File Manipulation](https://wiki.haskell.org/File_manipulation)

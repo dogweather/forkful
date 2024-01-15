@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "Bash: Tworzenie pliku tymczasowego"
 simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Dlaczego
 
-Tworzenie plików tymczasowych jest niezwykle ważne w programowaniu Bash. Są one niezbędne dla przechowywania chwilowych danych, dzięki czemu nie zaburzają one istniejących plików lub struktur katalogów. Tworzenie tymczasowych plików jest również niezbędne w tworzeniu skryptów, które wymagają korzystania z wielu plików tymczasowych jednocześnie.
+Tworzenie plików tymczasowych jest częstą operacją w skrypcie Bash. Często potrzebujemy tymczasowo przechować dane lub wykonać operacje na plikach, a potem usunąć je po zakończeniu zadania. Stworzenie tymczasowego pliku jest szybkim i prostym sposobem na to.
 
-## Jak to zrobić
-
-Aby utworzyć plik tymczasowy w Bash, możemy skorzystać z komendy `mktemp`. Polecenie to generuje unikalny plik tymczasowy na podstawie określonego szablonu, który można dostosować. Przykładowy kod wyglądałby następująco:
+### Jak to zrobić
 
 ```Bash
-temp_file=$(mktemp prefix_XXXXXXXXXX)
-echo "To jest przykładowe dane" > $temp_file
-cat $temp_file
+# Utworzenie tymczasowego pliku o nazwie "temp.txt"
+touch temp.txt
+# Wyświetlenie zawartości pliku
+cat temp.txt
+# Zapisanie tekstu do pliku
+echo "To jest przykładowy tekst" > temp.txt
+# Wyświetlenie zawartości pliku
+cat temp.txt
+# Usunięcie pliku
+rm temp.txt
+```
+```
+To jest przykładowy tekst
 ```
 
-W powyższym kodzie używamy szablonu `prefix_XXXXXXXXXX`, który zostanie zastąpiony przez losowe 10 znaków. Następnie pobieramy nazwę wygenerowanego pliku tymczasowego do zmiennej `temp_file`, a następnie wyświetlamy zawartość pliku i czyszczymy go.
+### Głębsza analiza
 
-Warto także wspomnieć o opcji `-d` dla komendy `mktemp`, która pozwala na utworzenie tymczasowego katalogu zamiast pliku.
+Tworzenie tymczasowego pliku w Bash jest bardzo proste - możemy użyć do tego polecenia `touch`, które tworzy pusty plik o podanej nazwie. Możemy także użyć `echo` do zapisania tekstu lub danych do naszego pliku tymczasowego.
 
-## Pogłębione informacje
+Warto zauważyć, że domyślnie plik tymczasowy jest tworzony w bieżącym katalogu roboczym, ale możemy także podać pełną ścieżkę do pliku, jeśli chcemy go stworzyć w innym miejscu.
 
-Podczas tworzenia pliku tymczasowego, ważne jest, aby upewnić się, że nazwa pliku jest unikalna, aby uniknąć przypadkowego nadpisania istniejących plików. Dlatego też, warto dodać prefiks lub sufiks do nazwy pliku w szablonie. Możemy również użyć opcji `-u` w celu wyświetlenia tylko wygenerowanej nazwy pliku, bez jego utworzenia.
+Jedną z najważniejszych rzeczy, na które warto zwrócić uwagę, jest to, że plik tymczasowy powinien zostać usunięty po zakończeniu zadania. W przeciwnym razie może zajmować niepotrzebną przestrzeń na naszym dysku. W powyższym przykładzie użyliśmy polecenia `rm` do usunięcia pliku, ale zawsze możemy także ręcznie usunąć go za pomocą ulubionego menedżera plików.
 
-Dodatkowo, istnieje również możliwość ustawienia innego katalogu tymczasowego, w którym plik będzie tworzony, przy użyciu zmiennej środowiskowej `TMPDIR`.
+### Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja komendy mktemp](https://www.man7.org/linux/man-pages/man1/mktemp.1.html)
-- [Inne sposoby tworzenia plików tymczasowych w Bash](https://www.shellhacks.com/create-temporary-file-one-line-bash-script/)
-- [Poradnik tworzenia plików tymczasowych dla początkujących](https://www.ostechnix.com/create-temporary-files-shell-scripting/)
+- [Dokumentacja Bash na stronie GNU](https://www.gnu.org/software/bash/manual/)
+- [5 prostych trików, które ułatwią Ci pracę w Bash](https://thoughtbot.com/blog/five-awesome-bash-tricks)
+- [Ważne elementy w skrypcie Bash](https://www.linux.com/learn/bash-scripting-important-elements-bash)

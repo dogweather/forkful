@@ -1,6 +1,7 @@
 ---
-title:                "Rust: भविष्य या भूतकाल में एक तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में एक तारीख की गणना"
+title:                "भविष्य या भूत की तारीख की गणना"
+html_title:           "Rust: भविष्य या भूत की तारीख की गणना"
+simple_title:         "भविष्य या भूत की तारीख की गणना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -9,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu:
+## क्यों
 
- Agar aap ek programmer hai aur aapko future ya past mein kisi specific date ko calculate karna hai to Rust programming language aapke liye ek accha option ho sakta hai. Yeh ek efficient, safe, aur fast language hai jo aapko accurate results provide karta hai.
+डेटा की तारीख की गणना से कोई छूट नहीं की जा सकती है। इसलिए, इसका उपयोग शायद आपके दैनिक कार्यों में समय का निर्धारण करने में सहायक हो सकता है।
 
-## Kaise Karein:
+## कैसे करें
 
-Rust mein date calculate karne ke liye aapko datetime library ka use karna hoga. Sabse pehle, aapko `chrono` crate ko apne project mein add karna hoga. Iske baad, aapko ek `DateTime` object banana hoga jis mein aap apni desired date ko define kar sakte hai. Yeh object year, month, day, hour, minute, aur second ko represent karta hai. Uske baad, aap `DateTime` object mein se future ya past mein kitne days add ya subtract karna hai wo specify kar sakte hai.
+```rust
+use chrono::{Utc, Local, Date, Datelike, NaiveDate};
+fn calculate_date(year: i32, month: u32, day: u32) -> Date<Local> {
+    let current_date = Local::today();
+    let future_date = NaiveDate::from_ymd(year, month, day);
+    let days_diff = future_date.num_days_from_ce() - current_date.num_days_from_ce();
+    current_date + chrono::Duration::days(days_diff)
+}
 
-```Rust
-use chrono::{DateTime, Local, Duration};
-// Add 10 days to today's date
-let now = Local::now();
-let future_date = now + Duration::days(10); 
-// Subtract 5 days from today's date
-let past_date = now - Duration::days(5); 
-println!("Future date: {}", future_date.format("%Y-%m-%d"));
-println!("Past date: {}", past_date.format("%Y-%m-%d"));
+fn main() {
+    let future_date = calculate_date(2021, 12, 25);
+    let output = future_date.format("%A, %B %e, %Y").to_string();
+    println!("{}", output);
+}
 ```
 
-Output:
+उपरोक्त उदाहरण में, हम दिए गए तारीख की गणना करने के लिए `calculate_date` फ़ंक्शन का उपयोग करते हैं। यह हमें एक तारीख देता है जो आज से निर्धारित दिनों के बाद होती है। हम इस नए की प्रिंट किया हुआ प्रारूप को प्राप्त करने के लिए `format` फ़ंक्शन का भी उपयोग करते हैं। आप `'format'` की जगह पर अपनी पसंदीदा प्रारूप का उपयोग कर सकते हैं।
 
-```
-Future date: 2020-08-29
-Past date: 2020-08-14
-```
+## गहराई में जाएं
 
-## Gehri Jankari:
-
-Rust mein date calculate karne ka process kaafi simple hai aur datetime crate aapko ismein help karta hai. Iss crate mein aapko `DateTime` object ke alawa bhi kai aur standard date and time formats milte hai jaise ISO 8601 aur RFC 3339. Aap apne project ke requirements ke hisaab se in formats ka use kar sakte hai.
-
-Iss process ke alawa aap Rust ki official documentation aur online tutorials se bhi aur gehri jankari prapt kar sakte hai.
-
-## Dekhiye Bhi:
-
-- [Rust Programming Language](https://www.rust-lang.org/)
-- [Chrono Crate Documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Tutorials on YouTube](https://www.youtube.com/playlist?list=PLV176MJSI2DXC3ZnpIOELeg0OukvLwL97)
+डेटा की तारीख की गणना करने के लिए, हम `chrono` लाइब्रेरी का उपयोग कर सकते हैं। इसमें दो मुख्य सेटिंग्स हैं - समय क्षेत्र और अवधि शैली। हम `Local` को स्थानीय समय क्षेत्र के लिए और `Utc` को संयुक्त राष्ट्र के समय क्षेत्र के लिए उपयोग करते हैं। इन समय क्षेत्रों के साथ, आप अपने वर्तमान या भविष्य की तारीख को प्राप्त कर सकते हैं। हम `format` फ़ंक्शन के साथ तस्वीर तारीख का प्रारूप भी निर्दिष्ट कर सकते हैं, जो आपको ए

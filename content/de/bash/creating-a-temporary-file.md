@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Bash: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+# Warum
 
-Beim Programmieren in Bash kann es oft sinnvoll sein, temporäre Dateien zu erstellen. Diese Dateien dienen als "Arbeitsbereich" für Skripte und können für verschiedene Zwecke verwendet werden, wie zum Beispiel zum Speichern von Zwischenergebnissen oder temporären Variablen. Das Erstellen einer temporären Datei kann auch dazu beitragen, Speicherplatz und Ressourcen auf dem System zu sparen, da sie automatisch gelöscht wird, wenn das Skript beendet wird.
+Das Erstellen von temporären Dateien kann in der Bash-Programmierung nützlich sein, um vorübergehend Daten zu speichern, die während des Ausführungsprozesses benötigt werden, aber nicht dauerhaft auf der Festplatte gespeichert werden müssen.
 
-## Wie erstellt man eine temporäre Datei in Bash?
+# Wie geht's
 
-Es gibt mehrere Möglichkeiten, eine temporäre Datei in Bash zu erstellen. Eine gängige Methode ist die Verwendung des `mktemp` Befehls. Dieser Befehl erstellt eine eindeutige temporäre Datei und gibt ihren Dateinamen aus, den Sie dann in Ihrem Skript verwenden können.
+Um eine temporäre Datei in Bash zu erstellen, können Sie den Befehl "mktemp" verwenden, gefolgt von einem Präfix für die Datei. Zum Beispiel:
+```Bash 
+temp_file=$(mktemp prefix.XXXXXX)
+```
+Dies erstellt eine temporäre Datei mit dem Muster "prefix.XXXXXX", wobei die Xen als Platzhalter für zufällige Zeichen verwendet werden. Der Befehl gibt den erstellten Dateinamen zurück, der in der Variablen "temp_file" gespeichert wird.
 
-Ein Beispiel für die Verwendung von `mktemp`:
+Sie können auch eine bestimmte Anzahl von Zeichen im Präfix angeben, z.B. "prefix.XXXXXX.txt" oder "prefix.XXXXXX.html". Dadurch wird die Erweiterung der temporären Datei festgelegt.
 
-```Bash
-temp_file=$(mktemp)
-echo "Dies ist eine temporäre Datei." > $temp_file
+Um die temporäre Datei zu verwenden, können Sie sie in einem Befehl ausführen oder Daten in sie schreiben.
+```Bash 
+echo "Dies ist ein Beispieltext" > $temp_file
+# Führt den Inhalt der temporären Datei aus
+$temp_file
+# Gib den Inhalt der temporären Datei aus
 cat $temp_file
 ```
+Wenn Sie mit der temporären Datei fertig sind, sollten Sie sie löschen, um Speicherplatz freizugeben. Verwenden Sie dazu den Befehl "rm".
+```Bash 
+rm $temp_file
+```
 
-Dieses Skript erstellt eine temporäre Datei mit dem Namen, der vom `mktemp` Befehl ausgegeben wird. Dann wird der Text "Dies ist eine temporäre Datei." in diese Datei geschrieben und mit dem `cat` Befehl gelesen. Denken Sie daran, am Ende Ihres Skripts die temporäre Datei zu löschen, um Ressourcen zu sparen.
+# Tiefes Eintauchen
 
-## Tiefere Einblicke
+In Bash können Sie auch eine temporäre Datei auf einer bestimmten Dateisystempartition erstellen, indem Sie den Parameter "-p" verwenden und den Pfad zur gewünschten Partition angeben.
 
-Es gibt verschiedene Möglichkeiten, eine temporäre Datei in Bash zu erstellen, je nach Ihren spezifischen Anforderungen. Sie können zum Beispiel die Option `-p` verwenden, um den Ort der temporären Datei anzugeben, oder die Option `-d` für das angegebene Verzeichnis, in dem die Datei erstellt werden soll.
+Der Befehl "mktemp" kann auch sowohl für Einzel- als auch für Mehrfachverwendung konfiguriert werden, indem Sie die Option "-u" oder "-t" angeben. Das vorherige Beispiel würde dann folgendermaßen aussehen:
+```Bash 
+temp_file=$(mktemp -u prefix.XXXXXX)
+```
+Dies würde eine Datei mit dem gleichen Präfix erstellen, aber mit einer zufälligen Nummer als Erweiterung, die für jede Verwendung eindeutig sein würde.
 
-Darüber hinaus können Sie mit dem `mktemp` Befehl auch bestimmte Dateinamenmuster festlegen oder eine Zufallszahl in den Dateinamen einfügen, um die Einzigartigkeit der temporären Datei zu gewährleisten.
+Eine andere Möglichkeit, eine temporäre Datei zu erstellen, ist die Verwendung von Pipes. Sie können den Befehl "mkfifo" verwenden, um eine Pipe-Datei zu erstellen, die als temporäre Datei verwendet werden kann.
 
-Es ist auch wichtig zu beachten, dass die Erstellung einer temporären Datei allein nicht immer ausreichend ist. Sie müssen möglicherweise auch die Zugriffsrechte der Datei anpassen, um sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
+# Siehe auch
 
-## Siehe auch
-
-- [Die `mktemp`-Manpage](https://manpages.debian.org/stretch/tmpreaper/mktemp.1.en.html)
-- [Shell-Skript in 30 Minuten - Kapitel 12](https://www.linux.com/training-tutorials/how-write-simple-bash-shell-script/)
-- [StackOverflow-Fragen zur Verwendung von `mktemp` in Bash](https://stackoverflow.com/questions/tagged/mktemp+bash)
+- [Bash Scripting Guide](https://www.gnu.org/software/bash/guide/)
+- [mktemp-Befehlsreferenz](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
+- [Erstellen und Verwenden zeitlich begrenzter Dateien und Pfade in Bash](https://www.cyberciti.biz/tips/shell-scripting-tutorial-create-temporary-files-using-mktemp.html)

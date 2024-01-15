@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Utskrift av felsökningsutmatning"
-simple_title:         "Utskrift av felsökningsutmatning"
+title:                "Utskrift av felsökningsresultat"
+html_title:           "Haskell: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
-I Haskell-utveckling kan det ibland vara användbart att kunna skriva ut debug-utmatning för att förstå hur ens kod arbetar och var det kan finnas eventuella problem. I denna bloggpost ska vi titta på hur man enkelt kan använda sig av debug-utmatning i Haskell.
+## Varför
 
-##Så här gör du
-Att skriva ut debug-utmatning i Haskell är enkelt med hjälp av funktionen `traceShow`. Den tar emot ett värde och en sträng och skriver ut strängen tillsammans med värdet. Här är ett enkelt exempel:
+Att skriva felsökningsutskrift är ett viktigt verktyg för att förstå vad som händer i vår kod. Genom att skriva ut värden på olika variabler och delar av programflödet kan vi se exakt vad som händer vid varje steg och hitta eventuella fel eller förbättringsområden.
 
+## Hur man gör
+
+För att skriva ut felsökningsutskrift i Haskell kan vi använda oss av funktionen "print". Den tar ett värde som parameter och skriver ut det till skärmen. Låt oss till exempel säga att vi har en variabel "number" med värdet 42. Genom att skriva:
 ```Haskell
-import Debug.Trace
-
-main = do
-  let x = 5
-      y = 10
-      z = traceShow (x + y) "Summan av x och y är:"
-  print z
+print number
 ```
-Output: Summan av x och y är: 15
+kommer värdet 42 att skrivas ut till skärmen.
 
-Som du kan se skrevs strängen ut tillsammans med värdet `15`. Man kan också använda operatorn `.` för att kombinera flera `traceShow` anrop. Här är ett annat exempel:
-
+En annan användbar funktion är "trace" från "Debug.Trace" biblioteket. Den kan användas för att skriva ut förklarande text tillsammans med värden. Till exempel:
 ```Haskell
-import Debug.Trace
+import Debug.Trace (trace)
 
-main = do
-  let x = 5
-      y = 10
-      z = traceShow (x+y) . traceShow (x*y) $ "Summan av x och y är:"
-  print z
+let x = 10
+let y = 5
+trace ("x = " ++ show x) (x + y) 
 ```
-Output: Summan av x och y är: 15
+skriver ut "x = 10" och returnerar sedan värdet 15.
 
-Som du kan se skrevs både summan och produkten av `x` och `y` ut tillsammans med strängen.
+## Djupdykning
 
-##Djupdykning
-I Haskell är det viktigt att notera att `traceShow` är en ren funktion, vilket innebär att den alltid returnerar samma värde för samma indata. Detta innebär att trots att du använder `traceShow` för att skriva ut värden när de beräknas, så kommer dessa värden inte att skrivas ut om de samma värden används senare i din kod.
+När vi printar värden som är av en komplexare typ, som en lista eller en tuple, kan vi använda oss av "show" funktionen för att få en mer läsbar utskrift. Till exempel:
+```Haskell
+let myTuple = (1, "Hello", True)
+print $ show myTuple
+```
+skriver ut "(1, "Hello", True)" istället för det mer svårlästa "(1,"Hello",True)". 
 
-Detta kan vara förvirrande för många utvecklare, särskilt de som är vana vid att skriva ut debug-utmatning i andra språk på samma sätt. Det är viktigt att vara medveten om detta beteende och förstå att `traceShow` bara är till för att hjälpa dig att förstå hur värdena beräknas.
+Vi kan också använda oss av "putStrLn" för att skriva ut flera värden på samma rad. Till exempel:
+```Haskell
+putStrLn "My favorite color is" ++ " blue!"
+```
+skriver ut "My favorite color is blue!".
 
-##Se även
-- [Haskell Debugging Techniques](https://mmhaskell.com/blog/2019/3/25/haskell-debugging-techniques)
-- [Debugging in Haskell](https://www.fpcomplete.com/blog/2017/01/programming-haskell-debugging/)
+Det är även möjligt att använda felsökningsutskrift med hjälp av monader, som "IO". Genom att använda "putStrLn" och >>= operatorn kan vi printa värden inuti våra monader.
+
+## Se även
+
+- [Haskell Debugging Techniques](https://wiki.haskell.org/Debugging_techniques)
+- [Debugging in Haskell with trace](https://stackify.com/haskell-debugging-with-trace/)

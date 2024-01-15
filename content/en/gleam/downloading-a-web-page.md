@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Gleam recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,53 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-In the world of writing code, there are endless possibilities and use cases for every programming language. One popular language that often flies under the radar is Gleam. This functional programming language has many features that make it unique, including the ability to easily download web pages. But why would someone want to do that?
+##Why
+So you want to download a web page using the Gleam programming language? Maybe you want to perform some data scraping or automate a task. Whatever your reason may be, Gleam's web page downloading capabilities make it a breeze to extract data from any website.
 
-If you are a developer or programmer, chances are you have come across situations where you need to retrieve information from a website. This could be for data analysis, web scraping, or simply accessing content from another site. Whatever the case may be, downloading a web page in Gleam can be a useful and efficient tool.
+##How To
+To download a web page using Gleam, simply use the `http` library and the `get_text` function. Let's take a look at an example:
 
-## How To
-To download a web page in Gleam, we will be using the `httpc` module from the standard library. This module provides functions for making HTTP requests, which is exactly what we need for our task.
-
-To get started, we first need to import the `httpc` module. This can be done by adding the following line at the top of our Gleam file:
-
-```Gleam
-import httpc
 ```
+Gleam module DownloadWebPage
 
-Next, we'll use the `get` function from `httpc` to make a GET request to the URL of the webpage we want to download. This function takes in a URL as a string and returns a `Result` type. We can then pattern match on this result to handle any errors that may occur.
+import http
 
-```Gleam
-let result = httpc.get("https://www.example.com")
-case result {
-    Ok(response) -> {
-        // Do something with the response
-        io.print(response.body)
+pub fn main() {
+  let response = http.get_text("https://www.example.com").ok()
+  match response {
+    Ok(result) -> {
+      // Process the downloaded web page here
     }
-    Err(error) -> {
-        // Handle the error
-        log.error(error.message)
+    Err(_) -> {
+      // Handle any errors here
     }
+  }
 }
 ```
 
-In the above code, we are using the `io` module to print the body of the response to our console. However, you can use the response however you see fit, depending on your specific use case. You can also add headers and query parameters to your request by passing them as additional arguments to the `get` function.
+In the above code, we are using the `get_text` function to download the web page from the URL provided. The `.ok()` method converts the response into a `Result` type, which we can then match against to check for any errors.
 
-## Deep Dive
-Digging deeper into the `get` function, we can see that it takes in a second argument of type `Options`. This allows us to customize our request even further by specifying things like timeouts, SSL verification, and more.
+##Deep Dive
+Now, let's take a deeper look at the `get_text` function. This function takes in a `String` of the URL and returns a `Result` with the downloaded page as a `String`. This makes it easy to extract data from the web page using string manipulation methods.
 
-For example, if we wanted to set a timeout of 10 seconds for our request, we can do so by creating an `Options` record and passing it to the `get` function.
+If you need more control over the web page downloading process, you can also use the `get` function from the `http` library. This function allows you to customize the request by adding headers or setting a timeout.
 
-```Gleam
-let options = httpc.options(timeout: time.from_seconds(10))
-let result = httpc.get("https://www.example.com", options)
-```
-
-The `Options` record has many more configurable options which you can explore in the Gleam documentation.
-
-## See Also
-For more information on downloading web pages in Gleam, check out the official documentation for the `httpc` module. You can also explore other useful modules in the Gleam standard library like `io` and `time` to enhance your web page downloading experience.
-
-- https://gleam.run/modules/httpc.html
-- https://gleam.run/modules/io.html
-- https://gleam.run/modules/time.html
+##See Also
+To learn more about the `http` library and its functions, check out the Gleam documentation [here](https://gleam.run/documentation/stdlib/http). You can also explore other useful libraries for web scraping and automation, such as `html` and `jsoup`, to further enhance your web page downloading capabilities. Happy coding!

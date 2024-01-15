@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Procurando e substituindo texto"
-simple_title:         "Procurando e substituindo texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Elm: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,45 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar o Elm para procurar e substituir texto?
+## Por que
 
-Procurar e substituir texto é uma tarefa comum no desenvolvimento de software. Com o Elm, você pode automatizar esse processo e economizar tempo e esforço. Além disso, o Elm é uma linguagem de programação funcional elegante e robusta, que oferece uma maneira simples e eficiente de manipular strings.
+Às vezes, precisamos fazer alterações em grandes quantidades de texto. Em vez de procurar e substituir manualmente, podemos usar o recurso de busca e substituição, que nos permite automatizar essa tarefa e economizar tempo e esforço.
 
-## Como fazer isso no Elm:
-
-Em primeiro lugar, precisamos declarar uma string que contenha o texto que desejamos modificar. Usaremos o operador `~` para atribuir o valor a uma variável.
+## Como Fazer
 
 ```Elm
-meuTexto = "Eu gosto de programar em Elm."
+main :
+    String
+main =
+    "Hello, world!"
 ```
 
-Em seguida, iremos utilizar a função `replace` do módulo `String` para substituir "gosto" por "amo" no texto:
+Para realizar uma busca e substituição em Elm, podemos usar a função `replace` do módulo `String`. Precisamos especificar a string que desejamos modificar, o texto que queremos substituir e o texto que será usado como substituto. Por exemplo:
 
 ```Elm
-novoTexto = String.replace "gosto" "amo" meuTexto
+import String
+
+myString : String
+myString =
+    "Aqui tem uma palavra que queremos substituir"
+
+novoString : String
+novoString =
+    String.replace "queremos" "substituir" myString
 ```
 
-E se quisermos procurar e substituir em todas as ocorrências da string? Podemos usar a função `replace` juntamente com a função `words`, que divide o texto em uma lista de palavras. Em seguida, podemos usar o operador `|>` para encadear as funções e realizar a substituição em cada elemento da lista.
+O resultado será "Aqui tem uma palavra que substituir substituir". Podemos também usar a função `replaceAll` se quisermos substituir todas as ocorrências de uma determinada palavra ou expressão. Por exemplo:
 
 ```Elm
-novaLista = meuTexto
-  |> String.words
-  |> List.map (\word -> String.replace "gosto" "amo" word)
-  |> String.join " "
-  |> String.trim
+import String
+
+myString : String
+myString =
+    "Esta é uma string com várias ocorrências de 'maçã'"
+
+novoString : String
+novoString =
+    String.replaceAll "maçã" "banana" myString
 ```
 
-Na linha 4, estamos unindo a lista de palavras de volta em uma única string, e na linha 5, estamos removendo espaços em branco extras do início e do fim da string.
+O resultado será "Esta é uma string com várias ocorrências de 'banana'".
 
-O resultado final será: "Eu amo de programar em Elm."
+## Mergulho Profundo
 
-## Aprofundando-se no assunto:
+A função `replace` do módulo `String` é definida da seguinte forma:
 
-Além da função `replace`, o módulo `String` do Elm oferece outras funções úteis para manipulação de strings, como `startsWith`, `endsWith` e `contains`. Além disso, a linguagem Elm facilita a escrita de expressões lambda (funções anônimas) para realizar operações mais complexas em strings.
+```Elm
+replace : String -> String -> String -> String
+```
 
-Com o uso de bibliotecas externas, como o módulo `elm-regex`, é possível realizar substituições com expressões regulares e criar regras avançadas para manipulação de texto.
+Isso significa que ela recebe três argumentos do tipo `String` e retorna uma nova `String` como resultado. O primeiro argumento é a string que queremos modificar, o segundo é o texto que desejamos substituir e o terceiro é o texto que será usado como substituto.
 
-## Veja também:
+Além disso, a função `replaceAll` também está disponível no módulo `String` e é definida como:
 
-- [Documentação oficial do módulo String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Módulo elm-regex](http://package.elm-lang.org/packages/elm-community/regex/latest)
+```Elm
+replaceAll : String -> String -> String -> String
+```
+
+A única diferença é que essa função substitui todas as ocorrências da palavra ou expressão, enquanto a função `replace` substitui apenas a primeira ocorrência.
+
+## Veja Também
+
+- Documentação oficial do módulo `String` em Elm: https://package.elm-lang.org/packages/elm/core/latest/String
+- Tutorial sobre busca e substituição em Elm: https://dev.to/charlottebrf/string-replace-in-elm-1bhf

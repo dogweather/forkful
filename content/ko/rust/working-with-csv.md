@@ -1,6 +1,7 @@
 ---
-title:                "Rust: csv로 작업하기"
-simple_title:         "csv로 작업하기"
+title:                "CSV 작업하기"
+html_title:           "Rust: CSV 작업하기"
+simple_title:         "CSV 작업하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,79 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 CSV를 다루는 것인가?
+## 왜 CSV를 다루는 것이 좋을까?
 
-CSV는 일반적으로 사용되는 데이터 형식 중 하나로, 다양한 어플리케이션에서 다루기 쉽고 보편적으로 이해할 수 있는 형식입니다. Rust는 안정성과 성능 강조를 통해 이러한 데이터를 처리하는 데 최적화되어 있습니다. 따라서 CSV를 다루는데 뛰어난 프로그래밍 언어로 Rust를 선택하는 것이 유용할 수 있습니다.
+CSV(comma-separated values)는 데이터를 쉽게 조작하고 저장할 수 있는 형식으로 많은 사람들이 사용합니다. Rust는 그 특성을 이용하여 CSV를 다루는 것이 더욱 쉽고 효율적일 뿐만 아니라 메모리 관리도 뛰어나기 때문에 많은 사람들이 유용하게 활용하고 있습니다.
 
-## 다루는 방법
-
-우선, Rust 프로그래밍 언어를 먼저 설치해야 합니다. [공식 웹사이트](https://www.rust-lang.org/ko/tools/install)에서 다운로드 및 설치할 수 있습니다. 이후, CSV 데이터를 다루기 위해 다음 두 가지 라이브러리를 사용할 수 있습니다.
-
-- [csv](https://github.com/BurntSushi/rust-csv): Rust로 CSV 파일을 읽고 쓰는 데 사용할 수 있는 라이브러리입니다. 이 라이브러리는 매우 간단하고 직관적인 API를 제공하여 사용하기 쉽습니다.
-- [rust-csv-derive](https://github.com/BurntSushi/rust-csv): 이 라이브러리는 csv 라이브러리와 함께 사용하기 위한 유용한 매크로를 제공합니다. 매크로를 사용하면 생성한 구조체와 CSV 데이터를 매우 쉽게 매핑할 수 있습니다.
-
-아래 코드 예시를 통해 csv 라이브러리를 사용하는 방법을 살펴보겠습니다.
-
+## 어떻게 Rust로 CSV 다루기
 ```Rust
-use csv::{Reader, Writer, Result, StringRecord};
+use csv;
 
-fn read_csv() -> Result<()> {
-    // CSV 파일을 읽기 위해 Reader를 생성합니다. 첫 번째 인자는 파일 이름, 두 번째 인자는 파싱 옵션입니다.
-    let mut rdr = Reader::from_path("data.csv")?;
-    // CSV 파일의 첫 번째 레코드를 읽고, 해당 레코드의 데이터 타입을 지정해 새로운 구조체를 생성합니다.
-    let header_record = rdr.headers()?;
-    let record: StringRecord = rdr.headers()?.deserialize(None)?;
-    println!("First record: {}", record);
-    // 더 이상 읽을 레코드가 없으면 에러 없이 정상적으로 종료합니다.
-    Ok(())
+fn main() {
+    let mut reader = csv::Reader::from_path("data.csv").expect("Failed to open CSV file");
+
+    for result in reader.records() {
+        let record = result.expect("Failed to parse record");
+
+        // do something with the record
+        println!("Name: {}, Age: {}", record[0], record[1]);
+    }
 }
 ```
+위 코드는 `csv` 라이브러리를 이용하여 CSV 파일을 열고, 각 레코드를 읽어오는 간단한 예시입니다. `rust-csv` 라이브러리는 사용하기 쉬운 인터페이스를 제공하여, 개발자가 쉽게 CSV를 다룰 수 있도록 도와줍니다.
 
-출력 결과:
-
+코드를 실행하면 다음과 같은 결과가 나타납니다.
 ```
-First record: Record { a: "1", b: "John", c: "Smith" }
-```
-
-마찬가지로 아래 코드 예시는 rust-csv-derive를 사용한 매크로 예시입니다.
-
-```Rust
-use csv::Writer;
-use csv_destruct_macro::CsvRecord;
-
-// CSV 파일의 데이터 타입을 매핑할 구조체를 생성합니다.
-#[derive(CsvRecord)]
-struct Person {
-    #[csv(name = "column_a")]
-    id: i32,
-    #[csv(name = "column_b")]
-    first_name: String,
-    #[csv(name = "column_c")]
-    last_name: String,
-}
-
-fn write_csv() -> Result<()> {
-    // CSV 파일을 쓰기 위해 Writer를 생성합니다.
-    let mut wtr = Writer::from_path("data.csv")?;
-    // Person 구조체를 이용해 새로운 레코드를 생성하고 CSV 파일에 쓴 후에 Rust 타입으로 패킹합니다.
-    let person = Person {
-        id: 1,
-        first_name: "John".to_owned(),
-        last_name: "Smith".to_owned(),
-    };
-    wtr.serialize(person)?;
-    // 더 이상 입력할 레코드가 없을 경우 에러 없이 정상적으로 종료합니다.
-    Ok(())
-}
+Name: John, Age: 28
+Name: Jane, Age: 35
+Name: Adam, Age: 43
 ```
 
-출력 결과:
+## 더 깊이 파헤쳐보기
 
-```csv
-column_a, column_b, column_c
-1, John, Smith
-```
+CSV 파일을 다룰 때 주의해야 할 점은 구분자(delimiter)를 제대로 설정하는 것입니다. 보통 쉼표 혹은 탭으로 구분되기 때문에 `Reader` 객체를 생성할 때 `csv::Reader::from_path` 메서드의 두 번째 인자로 구분자를 설정할 수 있습니다. 또한 `csv` 라이브러리는 각 레코드를 벡터로 저장하기 때문에, 특정 필드를 가져오기 위해서는 해당 인덱스에 접근해야 합니다.
 
-## 심화 학습
-
-CSV 파일을 처리할
+## 참고 자료
+- [Rust csv 라이브러리 문서](https://docs.rs/csv)
+- [Rust에서 CSV 파일 다루기](https://broothie.com/blog/csv-rs/)

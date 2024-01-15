@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Iniziare un nuovo progetto"
-simple_title:         "Iniziare un nuovo progetto"
+title:                "Avviare un nuovo progetto"
+html_title:           "Gleam: Avviare un nuovo progetto"
+simple_title:         "Avviare un nuovo progetto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-L'avvio di un nuovo progetto può essere un'esperienza entusiasmante e gratificante per chiunque sia appassionato di programmazione. Può essere un'opportunità per esprimere la propria creatività e sviluppare abilità nuove e innovative.
+
+Sei alla ricerca di un nuovo linguaggio di programmazione che ti permetta di sviluppare applicazioni robuste e scalabili? Allora non c'è bisogno di guardare oltre, perché Gleam è qui per aiutarti! Con la sua sintassi leggibile, il supporto per la programmazione funzionale e l'integrazione con la Erlang Virtual Machine (EVM), Gleam è la scelta perfetta per avviare il tuo prossimo progetto di programmazione.
 
 ## Come Fare
-Per iniziare un nuovo progetto con Gleam, è necessario seguire alcuni semplici passaggi. Innanzitutto, assicurati di avere installato il compilatore di Gleam e il gestore di pacchetti. Poi segui questi passaggi:
+
+Iniziamo con il setup del tuo ambiente di sviluppo. Dopo aver installato Erlang e la EVM, puoi scaricare Gleam tramite il gestore di pacchetti Hex. Una volta installato, puoi creare un nuovo progetto Gleam utilizzando il comando `gleam new nome_progetto`, dove "nome_progetto" è il nome del tuo progetto. Questo creerà una struttura di base per il tuo progetto, comprensiva di file `gleam.toml` per la configurazione e `src` per i tuoi file di codice.
+
+Ora puoi iniziare a scrivere il tuo codice. Gleam supporta una sintassi dichiarativa e funzionale, che rende la scrittura del codice più espressiva e leggibile. Ad esempio, per dichiarare una funzione che aggiunge due numeri, potresti scrivere:
 
 ```Gleam
-defmodule MyModule do
-  pub fn main() {
-    // Inserisci qui il tuo codice
-  }
+pub fn add(x, y) {
+  x + y
 }
 ```
 
-Una volta scritto il tuo codice, puoi eseguirlo con il seguente comando:
+Una volta scritto il tuo codice, puoi eseguirlo utilizzando il comando `gleam build` per compilarlo e `gleam run nome_funzione` per eseguire una specifica funzione. Potrai quindi vedere il risultato del tuo codice direttamente nella tua console!
 
-```Gleam
-gleam run my_module.gleam
-```
+## Approfondimento
 
-Se tutto è andato a buon fine, dovresti vedere l'output del tuo programma nella console.
-
-## Approfondimenti
-Prima di iniziare a scrivere codice, è importante prendere in considerazione alcuni aspetti fondamentali di un nuovo progetto: quali librerie e plugin possono essere utili, come organizzare il codice per renderlo più leggibile e manutenibile, e come impostare un adeguato sistema di gestione dei test.
-
-Per maggiori informazioni su come affrontare questi aspetti, puoi consultare la documentazione ufficiale di Gleam e partecipare alla comunità online attraverso forum e gruppi di discussione.
+Oltre alla sua sintassi pulita e al suo supporto per l'integrazione con la EVM, ci sono molte altre ragioni per iniziare un nuovo progetto con Gleam. Ad esempio, la sua forte tipizzazione e il sistema di gestione degli errori consentono di sviluppare applicazioni più affidabili e robuste. Inoltre, Gleam ha una comunità attiva e una documentazione dettagliata che possono aiutarti nella tua avventura di apprendimento.
 
 ## Vedi Anche
-- [La documentazione ufficiale di Gleam](https://gleam.run/)
-- [Forum di Gleam](https://elixirforum.com/c/gleam/12)
-- [Gruppo Telegram di Gleam](https://t.me/gleamlang)
+
+Se desideri saperne di più su Gleam, puoi consultare il suo sito ufficiale e la sua documentazione. Puoi anche partecipare alla community di Gleam su Discord, dove puoi condividere ed imparare da altri sviluppatori che utilizzano questo linguaggio di programmazione.
+
+- Sito ufficiale di Gleam: https://gleam.run/
+- Documentazione di Gleam: https://gleam.run/getting-started/
+- Community di Gleam su Discord: https://discord.gg/FjctVwC

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Utiliser les expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Swift: Utiliser les expressions régulières"
 simple_title:         "Utiliser les expressions régulières"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,40 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Avant d'entrer dans les détails de l'utilisation des expressions régulières en Swift, il est important de comprendre pourquoi vous voudriez les utiliser. Les expressions régulières sont des outils puissants pour manipuler et analyser des chaînes de caractères. Elles vous permettent de trouver des motifs spécifiques dans une chaîne et de les remplacer ou de les extraire selon vos besoins. Cela peut être particulièrement utile dans le développement d'applications qui nécessitent une saisie de données spécifique ou la vérification de mots de passe.
 
-## Comment utiliser les expressions régulières en Swift
-Pour utiliser les expressions régulières en Swift, vous devez d'abord importer le framework *Foundation*, qui inclut la classe NSRegularExpression utilisée pour manipuler les expressions régulières. Ensuite, vous pouvez créer une instance de NSRegularExpression en utilisant un motif de recherche et des options nécessaires.
+Tu te demandes peut-être pourquoi tu devrais utiliser des expressions régulières en Swift. Eh bien, laisse-moi te dire que ces petites lignes de code peuvent te faire gagner un temps précieux en manipulant et en filtrant des chaînes de caractères. Elles peuvent également améliorer la lisibilité de ton code en remplaçant de longues boucles et conditions par une seule ligne d'expression régulière. En bref, si tu travailles avec des chaînes de caractères, les expressions régulières sont un outil essentiel à connaître.
 
-Exemple de code:
+## Comment faire
 
-```Swift
-import Foundation
-let string = "Bonjour les ami(e)s!"
-let pattern = "ami(e)s"
+La syntaxe des expressions régulières en Swift est très similaire à celle des autres langages. Tout d'abord, tu dois créer une instance du type `NSRegularExpression` en fournissant la chaîne de caractères de ton expression régulière et les options requises. Ensuite, tu peux utiliser la méthode `matches(in:options:range:)` pour trouver les correspondances dans une chaîne donnée. Voici un exemple pour extraire un numéro de téléphone en utilisant une expression régulière :
+
+```
+let phoneNumber = "+33 6 12 34 56 78" // chaîne donnée
+let pattern = #"\+\d{2} \d{1} \d{2} \d{2} \d{2} \d{2} \d{2}"# // expression régulière
+
 do {
-  let regex = try NSRegularExpression(pattern: pattern)
-  let matches = regex.matches(in: string, range: NSRange(string.startIndex..., in: string))
-  print("Nombre de correspondances : \(matches.count)")
+    let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+    let matches = regex.matches(in: phoneNumber,
+                                options: [],
+                                range: NSRange(location: 0, length: phoneNumber.utf16.count))
+    if let match = matches.first {
+        let numberRange = match.range // plage des caractères correspondants
+
+        let startIndex = phoneNumber.index(phoneNumber.startIndex, offsetBy: numberRange.lowerBound)
+        let endIndex = phoneNumber.index(phoneNumber.startIndex, offsetBy: numberRange.upperBound)
+        let foundNumber = String(phoneNumber[startIndex...endIndex]) // extraction de la chaîne correspondante
+        
+        print(foundNumber) // imprime "+33 6 12 34 56 78"
+    }
 } catch {
-  print("Erreur : \(error)")
+    print("Erreur : \(error)")
 }
 ```
 
-Résultat:
-
-```Swift
-Nombre de correspondances : 1
-```
-
-Comme vous pouvez le voir, en utilisant l'expression régulière "ami(e)s", nous avons trouvé une correspondance dans la chaîne "Bonjour les ami(e)s!".
-
 ## Plongée en profondeur
-Il existe de nombreux motifs et options différents que vous pouvez utiliser dans les expressions régulières en Swift. Par exemple, vous pouvez spécifier des caractères alphanumériques, des chiffres ou des symboles spécifiques à rechercher. Vous pouvez également utiliser des opérateurs tels que "?" pour indiquer que le caractère précédent peut être présent ou non dans la chaîne, ou "*" pour indiquer que le caractère précédent peut être présent plusieurs fois.
 
-Il est également important de comprendre les différentes options qui existent, telles que la recherche sensible à la casse ou la recherche sur plusieurs lignes. En utilisant ces options, vous pouvez affiner encore plus vos recherches pour trouver exactement ce que vous recherchez dans une chaîne.
+Maintenant que tu sais comment utiliser les expressions régulières en Swift, voici quelques astuces pour optimiser leur utilisation :
+
+- Utilise les options `caseInsensitive` et `extended` pour faire correspondre les caractères en ignorant la casse et en utilisant des espaces et des commentaires dans ton expression.
+- Utilise la fonction `replacingOccurrences(of:with:options:range:)` pour remplacer des parties spécifiques d'une chaîne en utilisant une expression régulière.
+- Tu peux également utiliser des groupes dans ton expression pour extraire des parties spécifiques d'une chaîne et les utiliser dans le remplacement. Par exemple, si tu veux transformer un numéro de téléphone en un autre format, tu peux utiliser des groupes pour récupérer les différentes parties du numéro et les reconstituer différemment.
+
+Maintenant à toi de jouer avec les expressions régulières pour découvrir toutes leurs possibilités !
 
 ## Voir aussi
-- [Documentation Apple sur les expressions régulières en Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Guide de référence ultime pour les expressions régulières en Swift](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)
-- [Utilisation d'expressions régulières pour valider les données dans Swift](https://medium.com/@hassan_31951/now-use-regular-expression-to-validate-data-in-swift-f6a15f1c7deb)
+
+- [Documentation officielle d'Apple](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [RegExr - Outil de test en ligne pour les expressions régulières](https://regexr.com/)

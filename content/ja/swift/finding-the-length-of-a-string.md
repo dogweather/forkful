@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 文字列の長さを見つける"
+title:                "文字列の長さを見つける"
+html_title:           "Swift: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ文字列の長さを求める必要があるのか
 
-文字列の長さを取得することに取り組む理由は何でしょうか？簡単に1-2文で説明します。
+文字列の長さを知ることは、プログラミングにおいて非常に重要です。例えば、ユーザーが入力したデータを処理する際に、その入力が指定した文字数以内であるかを確認したり、特定の文字数の範囲に収まるようにフォーマットする際に必要となります。
 
-文字列を操作する必要がある場合、その文字列の長さを知ることは非常に重要です。例えば、ユーザーが入力した文字列が指定した長さよりも長い場合、その文字列を切り取る必要があるかもしれません。そのため、文字列の長さを取得できることは非常に便利な機能です。
+## 方法
 
-## ハウツー
-
-文字列の長さを取得する方法を実際のコード例とともに説明します。
+文字列の長さを求める方法は簡単です。まず、`count`プロパティを使用します。これは、Swiftの`String`クラスに含まれており、文字列の長さを返します。
 
 ```Swift
-let str = "こんにちは！こんにちは！"
-print(str.count)
-// 出力：15
+let string = "Hello World"
+print(string.count) // 出力結果：11
 ```
 
-上記のコードでは、`count`を使用して文字列の長さを取得しています。このプロパティは、文字列に含まれる文字の数をカウントするために使用されます。
+また、Stringの`characters`プロパティを使用して、このように長さを求めることもできます。
 
-## ディープダイブ
+```Swift
+let string = "こんにちは"
+print(string.characters.count) // 出力結果：5
+```
 
-より詳細な情報をお届けします。文字列の長さを取得する方法は、文字列の種類によって異なることがあります。例えば、日本語や絵文字のようなマルチバイト文字を含む文字列をカウントする場合、結果が異なる可能性があります。そのため、文字列の長さを取得する際は、文字のエンコーディングなども考慮する必要があります。
+## 深く掘り下げる
 
-また、Swiftでは、文字列の長さを取得するために`count`の代わりに`lengthOfBytes(using:)`メソッドを使用することもできます。しかし、このメソッドはSwift 5.0以前の古いバージョンでのみ使用可能です。
+文字列の長さを求めるという単純なタスクにもかかわらず、実はややややこしい部分があります。Unicodeという仕組みにより、文字列の「長さ」は特定の言語に依存する場合があるため、注意が必要です。例えば、`"こんにちは"`という文字列の長さは5である一方、`"你好"`という文字列の長さは2になります。これは、日本語と中国語が異なる文字コードを使用しているためです。
 
-## もっと詳しく学ぶ
+## See Also
 
-- [Swift公式ドキュメント - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [iOSアプリ開発の基礎：Swiftで文字列を操作する方法](https://dev.classmethod.jp/articles/swift-string-operation/)
-
-## 関連リンク
-
-- [Markdown 101 - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-- [Learn the Basics of Swift in 10 Minutes](https://learnappmaking.com/learn-swift-for-beginners/)
+- [String - The Swift Programming Language (Swift 4.1)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID268)
+- [Unicode - Wikipedia](https://ja.wikipedia.org/wiki/Unicode)

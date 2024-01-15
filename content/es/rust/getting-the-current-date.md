@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "Rust: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,51 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En el mundo de la programación, conocer la fecha actual es una tarea muy común. Ya sea para llevar el registro de eventos, mostrar información personalizada o simplemente para saber en qué día vivimos, la obtención de la fecha actual es un aspecto fundamental en muchos proyectos. Por eso, en este post hablaremos de cómo obtener la fecha actual utilizando Rust.
+¿Has necesitado alguna vez obtener la fecha y hora actual en tus programas de Rust? Obtener la fecha actual es una tarea común en la programación y en este artículo te mostraremos cómo hacerlo de manera sencilla y eficiente utilizando Rust.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en Rust, utilizaremos el módulo `chrono`. Este módulo proporciona una estructura de datos llamada `DateTime` que nos permite almacenar y manipular fechas y horas. Primero, agreguemos la dependencia de `chrono` en nuestro archivo `Cargo.toml`:
+En Rust, podemos obtener la fecha y hora actual utilizando el módulo `std::time`. Primero, importamos este módulo en nuestro programa:
 
-```
-[dependencies]
-chrono = "0.4.19"
-```
-
-A continuación, importamos el módulo en nuestro código:
-
-```
-use chrono::{DateTime, Local};
+```Rust
+use std::time;
 ```
 
-Para obtener la fecha actual, simplemente creamos una instancia de `DateTime` y la asignamos a la hora local actual:
+Luego, podemos usar la función `now()` para obtener un objeto `SystemTime` que representa la fecha y hora actuales. Podemos almacenar este objeto en una variable y luego utilizar sus métodos para obtener información específica como la fecha, la hora o incluso el día de la semana.
 
-```
-let fecha_actual: DateTime<Local> = Local::now();
-```
-
-Podemos imprimir la fecha actual utilizando el método `format()` y proporcionándole un formato de fecha como parámetro:
-
-```
-println!("La fecha actual es: {}", fecha_actual.format("%d/%m/%Y"));
+```Rust
+let fecha_hora_actual = time::SystemTime::now();
 ```
 
-Este es solo uno de los muchos formatos que se pueden utilizar para imprimir fechas. Puedes explorar más opciones en la documentación de `chrono`.
+Para obtener la fecha actual, podemos usar el método `date()`, el cual nos devuelve un objeto `Date` que contiene el año, mes y día.
+
+```Rust
+let fecha_actual = fecha_hora_actual.date();
+println!("La fecha actual es: {}", fecha_actual);
+```
+
+Si queremos obtener la hora actual, podemos usar el método `time()`, que nos devuelve un objeto `Duration` que contiene la cantidad de segundos y nanosegundos transcurridos desde la medianoche.
+
+```Rust
+let hora_actual = fecha_hora_actual.time();
+println!("La hora actual es: {}", hora_actual);
+```
+
+Incluso podemos obtener el día de la semana actual utilizando el método `weekday()`, el cual nos devuelve un enum `Weekday` que representa el día de la semana (domingo, lunes, martes, etc.).
+
+```Rust
+let dia_actual = fecha_hora_actual.weekday();
+println!("Hoy es: {}", dia_actual);
+```
 
 ## Profundizando
 
-Si queremos obtener más información sobre la fecha actual, podemos acceder a sus componentes individuales utilizando los métodos `day()`, `month()`, `year()`, `hour()`, `minute()` y `second()`. Por ejemplo, si queremos imprimir el día y mes actual, podemos hacerlo de la siguiente manera:
+El módulo `std::time` también nos permite realizar operaciones con las fechas y horas, como calcular la diferencia entre dos fechas o sumar una cierta cantidad de tiempo a una fecha dada.
 
-```
-println!("Hoy es {} de {}", fecha_actual.day(), fecha_actual.month());
+Por ejemplo, si queremos calcular la cantidad de segundos que han pasado entre dos fechas, podemos utilizar el método `elapsed()`:
+
+```Rust
+let fecha_pasada = time::SystemTime::now() - time::Duration::from_secs(1000);
+let fecha_actual = time::SystemTime::now();
+
+let segundos_pasados = fecha_actual.elapsed().unwrap().as_secs();
+println!("Han pasado {} segundos desde la fecha pasada", segundos_pasados);
 ```
 
-También podemos manipular la fecha actual utilizando los métodos `with_day()`, `with_month()` y `with_year()`, que nos permiten cambiar el día, mes y año de la fecha.
+También podemos sumar una cantidad de tiempo determinada a una fecha específica. Por ejemplo, si queremos obtener la fecha y hora en 10 días, podemos utilizar el método `checked_add()`:
+
+```Rust
+let fecha_actual = time::SystemTime::now();
+let fecha_futura = fecha_actual.checked_add(time::Duration::from_secs(864000));
+println!("La fecha y hora en 10 días será: {:?}", fecha_futura);
+```
 
 ## Ver también
 
-- [Documentación de Chrono](https://docs.rs/chrono/0.4.19/chrono/)
-- [Tutorial de Rust: Date and Time](https://www.tutorialspoint.com/rust/rust_date_time.htm)
-- [Obtener la fecha y hora actual en Rust](https://www.techiedelight.com/get-current-date-time-rust/)
-
-¡Ahora puedes obtener la fecha actual en tus próximos proyectos con Rust! Esperamos que este post te haya sido útil y te invitamos a seguir aprendiendo más sobre este lenguaje de programación en nuestros próximos artículos. ¡Hasta la próxima!
+- [Documentación oficial de Rust sobre el módulo `std::time`](https://doc.rust-lang.org/std/time/index.html)
+- [Tutorial sobre cómo trabajar con fechas y horas en Rust](https://www.wezm.net/technical/2019/10/use-rust-serde-json-value/)
+- [Ejemplos prácticos de cómo utilizar el módulo `std::time`](https://dev.to/twiecki/how-to-get-dates-and-times-right-in-rust-5kma)

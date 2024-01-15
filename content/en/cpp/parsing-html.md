@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "C++ recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "C++"
 category:             "C++"
@@ -11,51 +12,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's digital age, HTML is the backbone of the internet. It is used to create websites and web applications, making it an essential language for developers. As a result, understanding how to parse HTML is a valuable skill for anyone looking to work with web technologies.
+HTML is the standard markup language used for creating web pages, so understanding its structure and being able to extract information from it is essential for any web developer or data analyst. By learning how to parse HTML, you can automate the process of extracting data from websites and make your work more efficient.
 
 ## How To
 
-HTML is essentially a structured text document, which is why it is relatively easy to parse. In this section, we will cover the basic steps needed to parse HTML using C++.
+To parse HTML in C++, we will use the [libxml](http://www.xmlsoft.org/html/index.html) library. Follow these steps to get started:
 
-To begin, we will use the **HTML Parser library**, a popular open-source C++ library for parsing HTML. First, we need to include the necessary header files:
+1. Install libxml on your system by following the instructions on the [download page](http://www.xmlsoft.org/downloads.html).
+2. Create a new C++ project in your preferred IDE.
+3. Add the `#include <libxml/HTMLParser.h>` statement to your code to access the HTML parsing functions.
+4. Use the `htmlReadFile()` function to read an HTML file and store its contents in an `xmlDoc` structure.
+5. Use the `xmlDocGetRootElement()` function to get the root element of the HTML document.
+6. Traverse the document tree using the `xmlNode` and `xmlChar` datatypes and the `xmlGetProp()` function to get the attribute values.
+7. Use the `xmlNodeGetContent()` function to get the text content of a specific element.
+8. Use the `xmlFreeDoc()` and `xmlCleanupParser()` functions to free the memory allocated for the document and cleanup the parser, respectively.
+
+Let's see an example of how to extract information from a simple HTML document:
 
 ```C++
 #include <iostream>
-#include <htmlparser/htmlparser.h>
+#include <libxml/HTMLParser.h>
+
+int main() {
+  // Create an xmlDoc structure to store the HTML contents
+  xmlDocPtr doc;
+
+  // Read the HTML file and store its contents in the xmlDoc structure
+  doc = htmlReadFile("example.html", NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET);
+
+  // Get the root element of the HTML document
+  xmlNodePtr root = xmlDocGetRootElement(doc);
+
+  // Traverse the document tree and print the attribute values and text content
+  for (xmlNodePtr node = xmlFirstElementChild(root); node != NULL; node = xmlNextElementSibling(node)) {
+    xmlChar *id = xmlGetProp(node, (const xmlChar*)"id");
+    xmlChar *name = xmlGetProp(node, (const xmlChar*)"name");
+
+    std::cout << "Element with id " << id << ", name " << name << " and content " << xmlNodeGetContent(node) << std::endl;
+
+    // Free the memory allocated for the attribute values
+    xmlFree(id);
+    xmlFree(name);
+  }
+
+  // Free the memory allocated for the document and cleanup the parser
+  xmlFreeDoc(doc);
+  xmlCleanupParser();
+
+  return 0;
+}
 ```
 
-Next, we will create an HTML parser object and load the HTML document we want to parse:
+**Output:**
 
-```C++
-HTMLParser parser;
-parser.parseFile("index.html");
+```
+Element with id container, name div and content This is a container div.
+Element with id header, name h1 and content Welcome to My Website!
+Element with id content, name p and content This is the content of the page.
 ```
 
-Now, we can access the parsed HTML document using the `root` object, which is of type `HTMLTreeNode`. We can then traverse through the document structure using methods like `getChildren()` and `getAttributeValue()`.
-
-To demonstrate, let's say we want to retrieve the value of the `id` attribute from a `<div>` tag with `class="container"`:
-
-```C++
-HTMLTreeNode* divNode = root->getChild(0)->getChild(0);
-std::string idValue = divNode->getAttributeValue("id");
-```
-
-We can also extract the tag's content by using the `getText()` method:
-
-```C++
-std::string content = divNode->getText();
-```
+In this example, we first read an HTML file and store its contents in an `xmlDoc` structure. Then, we traverse the document tree and use the `xmlGetProp()` and `xmlNodeGetContent()` functions to extract the attribute values and text content of each element. Finally, we free the memory allocated for the document and cleanup the parser.
 
 ## Deep Dive
 
-While the basic steps outlined above are enough for simple HTML parsing, the HTML Parser library offers many more powerful features. For instance, it supports CSS selectors, allowing you to extract specific elements from the HTML document easily.
+Parsing HTML can be a complex task as HTML documents can have nested elements, different tag names, and multiple attributes. It is important to have a good understanding of the structure of HTML documents and how the libxml library works to successfully parse HTML in your C++ programs.
 
-Additionally, the library also provides methods for handling malformed or invalid HTML, making it a reliable tool for parsing even poorly written HTML code. It also offers options for optimizing performance, such as enabling or disabling automatic tag balancing and tag closing.
+Behind the scenes, libxml uses a parser called an HTML Reader to analyze the HTML code and create a tree structure that represents the document. This tree structure is then used by the library's functions to access and manipulate the nodes and attributes of the document.
 
-Overall, the HTML Parser library is a comprehensive tool for parsing HTML in C++, providing developers with an efficient and flexible way to work with web technologies.
+One of the key features of libxml is its ability to handle documents that are not well-formed or have errors. The library applies a set of parsing rules known as HTML Parse Options to handle these types of documents. These options can be passed as parameters to the `htmlReadFile()` function to customize the parsing behavior.
+
+For a more in-depth explanation of the libxml library and its HTML parsing capabilities, refer to the [libxml2 HTML Support](http://xmlsoft.org/html/libxml-html.html) page.
 
 ## See Also
 
-- HTML Parser library: https://github.com/lexborisov/myhtml
-- HTML tutorial for beginners: https://www.w3schools.com/html/
-- C++ documentation: https://isocpp.org/
+- [libxml2 official website](http://www.xmlsoft.org/)
+- [HTML Standard](https://html.spec.whatwg.org/)
+- [C++ documentation](https://devdocs.io/cpp/)

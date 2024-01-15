@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Enviando una solicitud http"
-simple_title:         "Enviando una solicitud http"
+title:                "Haciendo una solicitud http"
+html_title:           "Rust: Haciendo una solicitud http"
+simple_title:         "Haciendo una solicitud http"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,55 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué enviar una solicitud HTTP en Rust
+## Por qué
 
-¿Alguna vez te has preguntado cómo se realizan las solicitudes y respuestas en la web? Bueno, en Rust, podemos utilizar el poderoso módulo de red para enviar y recibir datos a través de HTTP. Ya sea para interactuar con una API, obtener información de un sitio web o realizar pruebas, enviar una solicitud HTTP en Rust puede ser una habilidad útil para cualquier programador.
+¿Alguna vez te has preguntado cómo funcionan las aplicaciones web? Bueno, detrás de cada clic en un enlace o botón en una página web, hay una solicitud HTTP que se envía al servidor. En este artículo, aprenderás cómo enviar una solicitud HTTP utilizando Rust y por qué es importante conocer este concepto.
 
 ## Cómo hacerlo
 
-Primero, debemos importar el módulo de red de Rust:
+Para enviar una solicitud HTTP en Rust, primero debes incluir el paquete `reqwest` en tu `Cargo.toml`:
 
-```Rust
-use std::net::TcpStream;
+```
+[dependencias]
+reqwest = { versión = "0.11", características = ["tls"] }
 ```
 
-Luego, definimos la URL a la que queremos hacer la solicitud y creamos un socket TCP para conectarnos:
+A continuación, importa el paquete en tu código:
 
-```Rust
-let url = "https://example.com";
-let stream = TcpStream::connect(url).expect("Error de conexión");
+```
+use reqwest;
 ```
 
-A continuación, podemos enviar una solicitud GET y recibir la respuesta del servidor en una variable mutable:
+Después de eso, puedes crear una función para enviar una solicitud GET a una URL determinada:
 
-```Rust
-use std::io::prelude::*;
+```
+fn enviar_solicitud() -> Result<(), Box<std::error::Error>> {
+    let respuesta = reqwest::get("https://jsonplaceholder.typicode.com/todos/1")?
+        .text()?;
 
-let mut response = String::new();
+    println!("Respuesta: {}", respuesta);
 
-stream.write_all(b"GET / HTTP/1.1\r\nHost: example.com\r\n\r\n").expect("Error al escribir en el socket");
-
-stream.read_to_string(&mut response).expect("Error al leer la respuesta del servidor");
+    Ok(())
+}
 ```
 
-Finalmente, podemos imprimir la respuesta en la consola:
+Como puedes ver, utilizamos el método `get()` del paquete `reqwest` y pasamos la URL a la que deseamos enviar la solicitud. Luego, usamos el método `text()` para obtener la respuesta como texto y la imprimimos en la consola.
 
-```Rust
-println!("{}", response);
+Si ejecutas este código, deberías obtener la siguiente salida en la consola:
+
+```
+Respuesta: {
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
 ```
 
-Si todo sale bien, deberíamos ver la página de inicio de "example.com" como resultado.
+## Deep Dive
 
-## Profundizando en el envío de solicitudes HTTP
+Ahora, profundicemos un poco más en cómo funciona el envío de una solicitud HTTP en Rust. Primero, cuando se invoca el método `get()`, se crea una nueva instancia de `Client` (cliente) del paquete `reqwest` que mantiene una conexión HTTP activa. Este cliente guarda automáticamente una conexión TCP reutilizable para optimizar futuras solicitudes a la misma URL.
 
-Al enviar una solicitud HTTP en Rust, es importante recordar que estamos enviando bytes en lugar de cadenas de texto. Por lo tanto, debemos asegurarnos de convertir nuestras cadenas a bytes utilizando el método `b""`.
+Luego, cuando llamamos al método `text()`, se inicia la conexión y se envía la solicitud GET al servidor. Una vez que se recibe una respuesta del servidor, se convierte a texto y se devuelve como un objeto `Result`.
 
-También es importante utilizar los encabezados adecuados en nuestras solicitudes para que el servidor pueda procesarlas correctamente. En el ejemplo anterior, agregamos el encabezado "Host" para especificar a qué sitio web estamos enviando la solicitud.
+También hay otros métodos disponibles en el paquete `reqwest`, como `post()`, `put()` y `delete()` que se pueden utilizar para enviar solicitudes HTTP con otros métodos.
 
-Además, es importante manejar posibles errores en la conexión y la lectura / escritura de datos en el socket. Para ello, podemos utilizar los métodos `expect()` y `unwrap()`.
+## Ver también
 
-# Consulte también
-
-- [Documentación oficial de la biblioteca std::net de Rust](https://doc.rust-lang.org/std/net/index.html)
-- [Tutorial de Rust: Envío de solicitudes HTTP](https://www.youtube.com/watch?v=k9xPtd73bbQ)
-- [Ejemplos de código de envío de solicitudes HTTP en Rust](https://github.com/tower-rs/tower-http)
+- [Documentación oficial de reqwest](https://docs.rs/reqwest/)
+- [Tutorial de HTTP en Rust](https://stevedonovan.github.io/hyperrust/)
+- [Ejemplos de reqwest](https://github.com/seanmonstar/reqwest/tree/master/examples)

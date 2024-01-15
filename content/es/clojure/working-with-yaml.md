@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Clojure: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,57 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué trabajar con YAML en Clojure?
 
-Trabajar con YAML en Clojure puede facilitar el manejo de archivos de configuración y datos estructurados. Además, YAML es un lenguaje sencillo y legible que se integra bien con Clojure.
+YAML es un lenguaje de formato de datos simple y legible por humanos que se utiliza ampliamente para representar estructuras de datos. En Clojure, su uso es especialmente útil para configurar aplicaciones y sistemas, ya que permite la definición de estructuras de datos complejas de manera sencilla.
 
-## Cómo empezar con YAML en Clojure
+## Cómo trabajar con YAML en Clojure
 
-Para comenzar a trabajar con YAML en Clojure, necesitarás la biblioteca de Clojure llamada "data.yaml". Puedes incluirlo en tu proyecto agregando la siguiente dependencia en tu archivo "project.clj":
-
-```Clojure
-[org.clojure/data.yaml "1.0.0"]
-```
-
-Una vez agregada la dependencia, puedes importar la biblioteca en tus archivos de Clojure de la siguiente manera:
+Para trabajar con YAML en Clojure, se utiliza la librería de código abierto "clj-yaml", que proporciona funciones para leer y escribir archivos YAML. A continuación, se presentan algunos ejemplos de cómo usar esta librería.
 
 ```Clojure
-(ns mi-proyecto.core
-  (:require [clojure.data.yaml :as yaml]
-            [clojure.java.io :as io]))
-```
+(ns my-app.core
+  (:require [clj-yaml.core :as yaml]))
 
-A continuación, puedes utilizar la función "(yaml/read ...)" para leer un archivo YAML y convertirlo en una estructura de datos en Clojure:
+;; Leer un archivo YAML
+(def data (yaml/read-yaml "config.yml"))
+;; La variable "data" ahora contiene la estructura de datos definida en el archivo YAML
 
-```Clojure
-(def datos (yaml/read (io/file "ejemplo.yml")))
-; datos es ahora una estructura de datos en Clojure que contiene la información del archivo YAML
-```
+;; Convertir una estructura de datos a YAML
+(def user {:name "John", :age 25, :city "New York"})
+(yaml/generate-yaml user)
+;; Se obtiene la siguiente salida:
+;; "name: John\nage: 25\ncity: New York\n"
 
-También puedes utilizar la función "(yaml/write ...)" para escribir una estructura de datos en Clojure en un archivo YAML:
+;; Actualizar un archivo YAML existente
+(yaml/write-yaml "config.yml" {:mode "production"})
+;; El contenido del archivo "config.yml" ahora es:
+;; "mode: production\n"
 
-```Clojure
-(yaml/write (io/file "datos.yml") datos)
-; esto creará un archivo YAML llamado "datos.yml" con la información de la estructura de datos
 ```
 
 ## Profundizando en el uso de YAML en Clojure
 
-Además de leer y escribir archivos YAML, también puedes manipular la estructura de datos resultante en Clojure. Por ejemplo, puedes utilizar la función "get-in" para acceder a valores específicos dentro de la estructura de datos:
+La librería "clj-yaml" también proporciona algunas funciones adicionales para trabajar con YAML de manera más avanzada.
 
-```Clojure
-(get-in datos [:propiedad1 :propiedad2])
-; esto devolverá el valor de la propiedad2 dentro de propiedad1 en la estructura de datos
-```
-
-También puedes utilizar "assoc-in" para agregar o actualizar valores en la estructura de datos:
-
-```Clojure
-(assoc-in datos [:propiedad1 :propiedad2] "nuevo valor")
-; esto actualizará el valor de la propiedad2 dentro de propiedad1 en la estructura de datos
-```
-
-Existen muchas más funciones y formas de trabajar con YAML en Clojure, así que asegúrate de revisar la documentación para obtener más información y ejemplos.
+- La función "generate-yaml-optimized" permite generar YAML más eficientemente al usar un mapa de códigos de caracteres en lugar de cadenas literales.
+- Se pueden utilizar las funciones "read-yaml-string" y "write-yaml-string" para trabajar con cadenas de texto en lugar de archivos.
+- Para manejar errores de manera adecuada, se pueden usar las funciones "load-reader" y "emit-writer" para obtener lectores y escritores personalizados.
 
 ## Ver también
 
-- Documentación de la biblioteca "data.yaml": https://clojure.github.io/data.yaml/
-- Tutorial sobre YAML en Clojure: https://www.braveclojure.com/consuming-api-data/#Reading_API_Data_in_the_Clojure_CRLF_CRLF_code
+- [Sitio oficial de YAML](https://yaml.org/)
+- [Librería "clj-yaml"](https://github.com/lancepantz/clj-yaml)
+- [Tutorial de YAML en Clojure](https://medium.com/@jacobobryant/working-with-yaml-in-clojure-2ef1f621f786)

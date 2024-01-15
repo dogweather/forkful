@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Usuwanie znaków pasujących do wzorca."
-simple_title:         "Usuwanie znaków pasujących do wzorca."
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "TypeScript: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,28 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami podczas pisania kodu w TypeScript, możesz natknąć się na pewien problem - musisz usunąć wszystkie znaki, które pasują do określonego wzorca. Może być to przydatne, gdy chcesz usunąć zbędne znaki z ciągu tekstowego lub przygotować dane do dalszej obróbki. W tym artykule dowiesz się, jak skutecznie usunąć znaki dopasowujące się do określonego wzorca w TypeScript.
+Wielu programistów może znaleźć się w sytuacji, gdzie muszą usunąć pewne znaki z ciągu znaków, które spełniają określony wzorzec. Może to wynikać z potrzeby filtrowania danych lub zmiany formatu tekstu. W takich przypadkach znajomość sposobów na usuwanie znaków zgodnych z wzorcem przydaje się i może znacznie ułatwić pracę.
 
-## Jak
+## Jak to zrobić
 
-Aby usunąć znaki dopasowujące się do wzorca w TypeScript, musisz skorzystać z metody `replace()` na obiekcie typu `string`. Przykładowa implementacja może wyglądać następująco:
+W TypeScript istnieje wiele sposobów na usunięcie znaków dopasowujących się do wzorca. Jednym z najprostszych może być użycie funkcji `replace()` i wykorzystanie wyrażenia regularnego w celu określenia wzorca. Na przykład:
 
-```typescript
-const exampleString = "1abc2def3ghi";
-const newString = exampleString.replace(/[a-z]/g, "");
-console.log(newString);
+```TypeScript
+const stringToFilter = "12aa34BB56cd";
+
+console.log(stringToFilter.replace(/[a-zA-Z]/g, ""));
+
+// wynik: 123456
 ```
 
-W powyższym kodzie, za pomocą wyrażenia regularnego `[a-z]`, zdefiniowaliśmy wzorzec dla wszystkich liter od `a` do `z`. Następnie podajemy parametr `g` do metody `replace()`, który oznacza globalną zamianę wszystkich dopasowań. Wynikiem działania powyższego kodu będzie `123`, ponieważ wszystkie litery zostały usunięte.
+Możemy również wykorzystać metodę `filter()` dla tablic, aby usunąć znaki spełniające określony wzorzec. Przykład:
 
-Możesz również wykorzystać wyrażenia regularne do dopasowania innych wzorców, na przykład liczb czy znaków specjalnych, aby dokładnie określić, jakie znaki chcesz usunąć.
+```TypeScript
+const arrayToFilter = ["apple", "banana", "123", "456", "cherry"];
 
-## Deep Dive
+const filteredArray = arrayToFilter.filter(item => !/^[a-z]+$/i.test(item));
 
-Dokładniejsze zrozumienie wyrażeń regularnych może przydać się podczas usuwania znaków dopasowujących się do wzorca w TypeScript. Dla bardziej skomplikowanych wzorców, możesz skorzystać z różnych konstrukcji, takich jak sposoby grupowania, zakresy znaków i wiele innych. Istnieje wiele dostępnych materiałów, które pomogą Ci zgłębić temat wyrażeń regularnych w TypeScript.
+console.log(filteredArray);
+
+// wynik: ["123", "456"]
+```
+
+## Wnikliwe omówienie
+
+Istnieje wiele zaawansowanych metod usuwania znaków dopasowujących się do wzorca w TypeScript, takich jak użycie modułu `string-matching` lub wykorzystanie gotowych funkcji biblioteki `lodash`. Istnieje również możliwość wykorzystania wyrażeń regularnych z parametrem globalnym `g` lub wykorzystanie metod `slice()` lub `substr()` dla obiektów typu `string`. Warto więc mieć świadomość różnych sposobów na filtrowanie danych i wybrać ten najlepiej odpowiadający potrzebom projektu.
 
 ## Zobacz również
 
-- [Dokumentacja Microsoft na temat wyrażeń regularnych w TypeScript](https://docs.microsoft.com/en-us/scripting/javascript/reference/deleting-character-matching-patterns-javascript)
-- [Interaktywny tutorial na temat wyrażeń regularnych w TypeScript](https://regexone.com/references/typescript)
-- [Kurs na platformie Udemy dotyczący wyrażeń regularnych w TypeScript](https://www.udemy.com/course/regularexpressions-typescript/)
+- [Dokumentacja TypeScript na temat wyrażeń regularnych](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Artykuł na temat wykorzystania metod `slice()` i `substr()`](https://www.oreilly.com/library/view/javascript-the-definitive/0596000480/ch04s09.html)
+- [Książka "Effective TypeScript" zawierająca wiele przykładów usuwania znaków dopasowujących się do wzorca](https://effective-typescript.com/2020/02/06/remove-falsy/)

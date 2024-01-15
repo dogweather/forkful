@@ -1,6 +1,7 @@
 ---
-title:                "Java: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html-analyysi"
+html_title:           "Java: Html-analyysi"
+simple_title:         "Html-analyysi"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,54 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi ohjelmoijan kannattaa ottaa mukaan HTML-analyysi?
+##Why
+Miksi: 
+Jos haluat luoda Java-sovelluksen, joka voi lukea ja analysoi HTML-koodia, tarvitset taitoja parsia HTML:ä. Tämä prosessi voi auttaa sinua saamaan tarvittavat tiedot ja muokkaamaan HTML-sivuja haluamallasi tavalla.
 
-HTML-analyysi on tärkeä osa monia Java-projekteja, joissa käsitellään verkkosivuja ja niiden sisältöä. HTML-analyysi mahdollistaa verkkosivun rakenteen ja tiedon erottamisen ja käsittelyn, mikä voi olla oleellista esimerkiksi web scrapingin tai tiedon keräämisen yhteydessä. Lisäksi se voi auttaa virheiden ja ongelmien havaitsemisessa ja korjaamisessa.
+##How To
+Kuinka: 
 
-## Kuinka: HTML-analyysin koodin kirjoittaminen
+Parsia HTML:ää Javailla voi olla hyödyllistä monissa sovelluksissa. Tässä on esimerkki, miten voit tehdä sen helposti:  
 
 ```Java
-// Tuodaan tarvittavat kirjastot
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+// Ensiksi, sinun täytyy importoida tarvittavat kirjastot
+import org.jsoup.Jsoup; 
+import org.jsoup.nodes.Document; 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-// Määritellään URL-osoite
-String url = "https://www.example.com/";
+// Sitten voit luoda Document-olion, joka edustaa HTML-sivua
+Document doc = Jsoup.connect("http://www.esimerkkisivu.com").get();
 
-// Luodaan Document-olio ja haetaan sivun HTML-sisältö
-Document doc = Jsoup.connect(url).get();
+// Voit hakea tietoa tietystä elementistä antamalla CSS-selectori
+Elements title = doc.select("title"); 
 
-// Etsitään haluttu elementti tai sisältö sivun rakenteesta
-Element title = doc.select("h1").first();
+// Voit tulostaa elementin sisällön
+System.out.println(title.text()); 
 
-// Tulostetaan elementin teksti
-System.out.println("Otsikko: " + title.text());
-
-// Etsitään useampi elementti ja tulostetaan ne
-Elements paragraphs = doc.select("p");
-for (Element p : paragraphs) {
-    System.out.println("Kappale: " + p.text());
+// Voit myös etsiä tietoa useista elementeistä
+Elements links = doc.select("a[href]"); 
+for(Element link : links){ 
+    System.out.println(link.attr("href")); 
 }
-```
-
-Output:
 
 ```
-Otsikko: Tervetuloa esimerkkisivulle!
-Kappale: Tämä on ensimmäinen kappale.
-Kappale: Tämä on toinen kappale.
-```
 
-## Syvällisemmin: HTML-analyysin tarkempi tutkimus
+Yllä oleva koodi esimerkiksi hakee HTML-sivulta otsikon ja kaikki linkit ja tulostaa ne konsoliin. Tämä on vain yksinkertainen esimerkki siitä, miten voit parsia HTML:ää Java-sovelluksessa. 
 
-HTML-analyysilla on mahdollista tutkia sekä sivun rakennetta että sen sisältöä. Sivun rakenteen analysointiin käytetään esimerkiksi CSS-selektoreita, joiden avulla voidaan hakea halutut elementit sivun DOM-puusta. Sisällön analysoinnissa hyödynnetään erilaisia JSoup-kirjaston tarjoamia metodeja, kuten `text()`, `html()`, `attr()`, `hasClass()`, jne.
+##Deep Dive
+Syvällisempi tieto:
+HTML:n parsimisessa on paljon enemmän mahdollisuuksia. Voit esimerkiksi käyttää CSS- tai XPath-selectoreita hakeaksesi tiettyjä elementtejä tai attribuutteja sivulta. Voit myös käyttää erilaisia kirjastoja, kuten Jsoup tai HTMLParser, jotka tarjoavat erilaisia toimintoja parsimiseen. Parsiminen voi myös auttaa sinua luomaan web-sovelluksia, kuten web-skraping tai tiedon kerääminen. 
 
-HTML-analyysin avulla voi myös suorittaa erilaisia manipulaatioita sivun sisältöön, kuten elementtien poistamista tai muokkaamista. Se on myös hyödyllistä silloin, kun halutaan hakea tietoa usealta eri sivulta ja käsitellä sitä automaattisesti.
+##See Also
+Katso myös:
 
-## Katso myös
+https://jsoup.org/ - Lisätietoa Jsoup-kirjastosta
 
-- [JSoup - Java HTML-analyysin kirjasto](https://jsoup.org/)
-- [CSS-selektorit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-- [Web scraping - Wikipedia (englanniksi)](https://en.wikipedia.org/wiki/Web_scraping)
+https://www.w3schools.com/xml/xml_parsing.asp - Tietoa XML-parsimisesta
+
+https://www.tutorialspoint.com//java_xml/index.htm - Tutoriaali Java ja XML
+
+Nämä linkit tarjoavat lisää tietoa ja esimerkkejä HTML:n parsimisesta Java-sovelluksissa. Kun hallitset taidon parsia HTML:ää, se voi auttaa sinua luomaan monipuolisia ja tehokkaita sovelluksia.

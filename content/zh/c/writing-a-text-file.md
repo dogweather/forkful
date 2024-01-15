@@ -1,5 +1,6 @@
 ---
-title:                "C: 编写文本文件"
+title:                "编写文本文件"
+html_title:           "C: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "C"
 category:             "C"
@@ -9,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么：为什么要写文本文件？
+为什么：写一个文本文件的原因只有一个：它可以帮助我们保存和组织数据。如果你要处理大量的数据，写一个文本文件是一个基本的技能。
 
-写文本文件是C语言编程中一个基本的任务，它允许我们以文本形式存储和处理数据。这样做可以帮助我们更有效地管理和分析大量数据，从而使我们的程序更具有可读性和可维护性。
-
-# 如何写文本文件
-
-下面是一个简单的例子，展示如何在C语言中创建和写入一个文本文件：
+如何做：要编写一个文本文件，您需要使用C语言中的“ fprintf”命令来将数据格式化为文本，并使用“ fopen”命令打开一个文件来存储它们。以下是一个简单的例子：
 
 ```C
 #include <stdio.h>
 
 int main() {
-   FILE *fp;
-   
-   // 尝试打开一个名为“data.txt”的文本文件，如果文件不存在，则创建一个新的空白文件
-   fp = fopen("data.txt", "w"); 
-   
-   // 将字符串写入文件中
-   fprintf(fp, "这是一段文本\n");
-   
-   // 关闭文件
-   fclose(fp);
-   
-   return 0;
+  FILE *fp;
+  fp = fopen("data.txt", "w");
+
+  int num = 7;
+  float pi = 3.14;
+  char str[20] = "Hello World";
+
+  fprintf(fp, "My favorite number is %d\n", num);
+  fprintf(fp, "Pi is approximately %.2f\n", pi);
+  fprintf(fp, "I love saying %s\n", str);
+
+  fclose(fp);
+
+  return 0;
 }
 ```
 
 输出：
 
+```txt
+My favorite number is 7
+Pi is approximately 3.14
+I love saying Hello World
 ```
-data.txt文件内容为：这是一段文本
-```
 
-# 深入讨论
+深入探讨：编写文本文件可以提供更大的灵活性，因为它允许您以不同的方式存储和组织数据。您可以使用不同的格式和分隔符来简化数据的处理和分析。此外，文本文件也可以轻松地与其他程序共享和使用。
 
-写文件涉及到两个主要的函数：fopen() 和 fprintf()。fopen()函数负责打开一个指定的文件，我们可以通过指定不同的打开模式来实现不同的操作。而fprintf()函数则负责将指定的数据写入到打开的文件中。除了上面示例中用到的"w"模式，我们还可以使用"a"（追加模式）或"r"（读取模式）模式来实现不同的写入操作。
+## 查看更多
 
-# 另请参阅
-
-- [C语言文件I/O教程](https://www.runoob.com/cprogramming/c-file-io.html)
-- [fopen()函数文档](https://www.man7.org/linux/man-pages/man3/fopen.3.html)
-- [fprintf()函数文档](https://www.man7.org/linux/man-pages/man3/fprintf.3.html)
+- [C语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [C语言文本文件处理教程](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [C标准库文档](https://devdocs.io/c/)

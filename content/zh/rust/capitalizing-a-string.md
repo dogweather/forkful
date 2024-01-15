@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 字符串的大写"
-simple_title:         "字符串的大写"
+title:                "将字符串编写成大写首字母"
+html_title:           "Rust: 将字符串编写成大写首字母"
+simple_title:         "将字符串编写成大写首字母"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用Rust编程
+## 为什么要用Rust语言来将字符串转换为大写
 
-Rust是一种现代的、高效的编程语言，拥有许多强大的特性。它具备安全性、并发性和高性能，使得它成为开发各种类型软件的完美选择。本文将介绍如何使用Rust来实现字符串的大写化功能。
+在编程中，我们经常需要处理字符串。而很多时候，为了统一格式或者方便处理，我们需要将字符串中的所有字母都转换为大写。使用Rust语言可以实现这一功能，它具有高效的性能和简洁的语法，让我们能够更轻松地处理字符串。
 
-## 如何实现字符串的大写化
-
-首先，我们需要导入标准库中的字符串处理模块`std::string`。然后，使用`to_uppercase()`方法将字符串转换为大写形式。
+## 如何使用Rust语言将字符串转换为大写
 
 ```Rust
-use std::string::String;
-
-let my_string = String::from("Hello, world!");
-let uppercase_string = my_string.to_uppercase();
-println!("大写化后的字符串：{}", uppercase_string);
+fn main() {
+    let s = String::from("hello, world!");
+    let s_uppercase = s.to_uppercase();
+    println!("{}", s_uppercase); // 输出：HELLO, WORLD!
+}
 ```
-**输出：**
-> 大写化后的字符串：HELLO, WORLD!
 
-## 深入浅出大写化字符串
+上面的代码演示了如何使用Rust语言中的`to_uppercase()`方法来将字符串转换为大写。首先，我们创建一个字符串`s`，然后调用`to_uppercase()`方法来转换为大写，并将结果存放在`s_uppercase`变量中。最后，使用`println!`宏来输出转换后的字符串。可以看到，输出的结果是全大写的。
 
-Rust的字符串数据类型是[`String`](https://doc.rust-lang.org/std/string/struct.String.html)，它是一个动态可变的字符串类型。由于Rust的所有权机制，当我们对字符串进行操作时，原始字符串的所有权会被转移，因此无法再使用它。
+除了`to_uppercase()`方法外，Rust语言还提供了一个`to_ascii_uppercase()`方法，它可以将字符串中的所有非ASCII字符转换为大写，同时保留ASCII字符不变。这对于处理特殊字符的字符串非常有用。
 
-Rust中的字符串类型还有一种静态不可变的字符串类型，即[`&str`](https://doc.rust-lang.org/std/primitive.str.html)。这种类型是一个指向字符串数据的引用，不具备所有权，因此可以对它进行操作而不会影响原始字符串。
+## 深入了解字符串转换为大写的原理
 
-使用`to_uppercase()`方法时，它会返回一个新的字符串，而不是对原始字符串进行修改。这符合Rust的不可变性原则，确保数据的安全性。
+Rust语言中，字符串是不可变的，即无法直接改变字符串的内容。因此，字符串转换为大写其实是创建了一个新的字符串并返回，而不是在原字符串上进行修改。
 
-## 参考链接
+在转换为大写时，Rust语言会遍历字符串中的每一个字符，并将小写字母转换为对应的大写字母。这个过程也被称为“升级码位（upgrade code point）”，因为Rust语言中，字符实际上是以码位（code point）的形式存储的，而不是字母本身。
 
-- Rust字符串处理模块文档：https://doc.rust-lang.org/std/string/index.html
-- Rust文档：https://www.rust-lang.org/zh-CN/
-- Rust语言中文社区：https://rust.cc/article?id=c7080995-8246-4b09-ae3d-34f5df061dcf
+## 看看这些相关链接
 
-# 参考链接
+- [Rust官方文档](https://www.rust-lang.org/zh-CN/)
+- [Rust语言教程](https://learnxinyminutes.com/docs/rust-cn/)
+- [使用Rust实现字符串转换为大写的算法](https://medium.com/@sohojoe/how-to-upcase-the-string-in-rust-c0947164e6d2)

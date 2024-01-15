@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: उपस्थित उपस्थितियों को निकालना"
-simple_title:         "उपस्थित उपस्थितियों को निकालना"
+title:                "पदच्छेद से निस्कारण"
+html_title:           "Gleam: पदच्छेद से निस्कारण"
+simple_title:         "पदच्छेद से निस्कारण"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,42 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-
-क्या आप कभी स्ट्रिंग से substring निकालने का प्रयास किया है? हाँ, आपने सही पढ़ा है! आज हम आपको बताएंगे की Gleam प्रोग्रामिंग भाषा में substring कैसे निकाला जा सकता है और इससे आपको कैसा लाभ हो सकता है।
+चिंटियाँ आपके धीमे गेम में सबसे टेज क्राश हैं! ये स्ट्रिंग सब्स्ट्रिंग्स को निकालने का सबसे अनुकूल तरीका है, जो आपको गेम डेवलपमेंट के लिए शानदार परिणाम देगा।
 
 ## कैसे करें
-
-कभी-कभी हमें एक लंबी स्ट्रिंग से केवल कुछ अमान्य भाग चाहिए होते हैं। इस समस्या को हल करने के लिए आपको उस स्ट्रिंग से एक substring निकालने की आवश्यकता होती है। यह आसानी से Gleam में किया जा सकता है। हम यह निम्नलिखित उदाहरण के माध्यम से इसका समाधान देखेंगे:
-
 ```Gleam
-// सभी वर्णों से substring निकालना:
-let string = "हमसे बड़ा सही नेटवर्क है।"
+let string = "हमारे घर में सबसे पहले दूरियां लगाई जाती हैं"
+let substring = String.substring(string, 11, 15)
+io.print(substring) // घर में सबसे पहले 
+io.print(string) // हमारे घर में सबसे पहले दूरियां लगाई जाती हैं
 
-let substring = string.slice(20)
-
-// Output: "कैलिफोर्निया"
-
-// केवल चार से substring निकालना:
-let string = "जीवन अनिश्चित होता है।"
-
-let substring = string.slice(2, 6)
-
-// Output: "अनिश्चित"
+let word = "मैं एक छोटी सी चिंटी हूँ"
+let substring = String.substring(word, 7)
+io.print(substring) // चिंटी हूँ
 ```
 
-आप अपने इच्छित भागों से substring को निकाल सकते हैं। आप अंतरिक्ष स्थानों से भी चाहे स्ट्रिंग स्लाइस कर सकते हैं। उदाहरण के लिए:
+## डीप डाइव
+स्ट्रिंग सब्स्ट्रिंग का उपयोग आपको विभिन्न विभिन्न स्थितियों में किया जा सकता है, जैसे कि टेक्स्ट प्रोसेसिंग, पाठ विश्लेषण और डाटा मैनिपुलेशन। आपको स्ट्रिंग सब्स्ट्रिंग का सही इस्तेमाल करके उसकी अधिक स्पष्टता और उपयोगिता को समझने के लिए एक गहराई से जानना चाहिए।
 
-```Gleam
-// पहले से दूसरे अंतरिक्ष स्थानों से substring निकालना:
-let string = "मैं लैंगिक न्याय विभाग को झाड़ दूंगा।"
-
-let substring = string.slice(7, 9)
-
-// Output: "लैं"
-```
-
-## गहराई में जाएं
-
-अब जब आप एक बात में पूरी तरह से माहिर हो गए हैं, आप एक गहराई में जाना चाहेंगे की substring किस प्रकार निकला जा सकता है। यह आपके लिए और आपके प्रोजेक्ट के लिए बहुत उपयोगी हो सकता है।
-
-आप
+## देखें भी
+- Official Gleam documentation (https://gleam.run)
+- Tutorial on string manipulation in Gleam (https://gleam.run/tutorials/strings/)
+- Example code for extracting substrings (https://github.com/gleam-lang/gleam/blob/master/examples/substring.gleam)

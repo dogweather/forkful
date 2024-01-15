@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Kotlin: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,77 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Das Berechnen von zukünftigen oder vergangenen Datumsangaben kann für Entwickler sehr nützlich sein, besonders wenn es um die Planung von Projekten oder Aufgaben geht. Mit Kotlin können Sie dies ganz einfach in wenigen Schritten tun.
+Das Berechnen von zukünftigen oder vergangenen Terminen kann in vielen Programmieraufgaben nützlich sein, z.B. für die zeitbasierte Planung von Aufgaben oder die Darstellung von Ereignissen in einer Anwendung.
 
-##Wie
+## Anleitung
 
-Zuerst müssen Sie das `Date`-Objekt in Kotlin importieren. Dann können Sie die Funktion `add` verwenden, um eine gewünschte Anzahl von Tagen, Monaten oder Jahren zu einem bestehenden Datum hinzuzufügen oder abzuziehen. Hier ist ein Beispiel, wie Sie 7 Tage zu einem Datum addieren könnten:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `LocalDate` Klasse aus der `java.time` Bibliothek verwenden.
 
-```Kotlin
-import java.util.Date
-
-fun addDays(date: Date): Date {
-    val cal = Calendar.getInstance()
-    cal.time = date
-    cal.add(Calendar.DAY_OF_MONTH, 7)
-    return cal.time
-}
-
-// Sample output
-val today = Date()
-val futureDate = addDays(today)
-println(futureDate) // Output: Tue Oct 20 09:54:45 CEST 2020
-```
-
-##Tiefes Eintauchen
-
-Sie können auch komplexere Berechnungen durchführen, z.B. das Ermitteln des Datums vor 3 Monaten oder 2 Wochen. Dazu müssen Sie die Funktion `add` mit den entsprechenden Konstanten wie `Calendar.MONTH` oder `Calendar.WEEK_OF_YEAR` verwenden. Hier ist ein Beispiel:
+Um z.B. das Datum von heute um 2 Monate in der Zukunft zu erhalten, können wir folgenden Code verwenden:
 
 ```Kotlin
-import java.util.Date
-
-fun subtractMonths(date: Date): Date {
-    val cal = Calendar.getInstance()
-    cal.time = date
-    cal.add(Calendar.MONTH, -3)
-    return cal.time
-}
-
-// Sample output
-val today = Date()
-val pastDate = subtractMonths(today)
-println(pastDate) // Output: Mon Jul 20 09:54:45 CEST 2020
+val currentDate = LocalDate.now()
+val futureDate = currentDate.plusMonths(2)
+println("Das Datum in zwei Monaten wird sein: $futureDate")
 ```
 
-Sie können auch mehr als ein Datum berechnen, indem Sie mehrere Funktionen miteinander kombinieren. Zum Beispiel, um das Datum vor einem Jahr und 3 Monaten zu erhalten, müssten Sie zwei Funktionen kombinieren:
+Die Ausgabe dieses Codes wäre: `Das Datum in zwei Monaten wird sein: 2021-08-26`.
+
+Um ein Datum in der Vergangenheit zu berechnen, können wir stattdessen die `minus` Methode verwenden, z.B.:
 
 ```Kotlin
-import java.util.Date
-
-fun subtractMonths(date: Date): Date {
-  val cal = Calendar.getInstance()
-  cal.time = date
-  cal.add(Calendar.MONTH, -3)
-  return cal.time
-}
-
-fun subtractYears(date: Date): Date {
-  val cal = Calendar.getInstance()
-  cal.time = date
-  cal.add(Calendar.YEAR, -1)
-  return cal.time
-}
-
-// Sample output
-val today = Date()
-val pastDate = subtractYears(subtractMonths(today))
-println(pastDate) // Output: Mon Jul 20 09:54:45 CEST 2019
+val pastDate = currentDate.minusWeeks(1)
+println("Das Datum vor einer Woche war: $pastDate")
 ```
 
-##Siehe auch
+Die Ausgabe dieses Codes wäre: `Das Datum vor einer Woche war: 2021-07-12`.
 
-- [Kotlin-Dokumentation zu Datum und Zeit](https://kotlinlang.org/docs/reference/datetime.html)
-- [Stack Overflow: Datum in der Zukunft oder Vergangenheit berechnen](https://stackoverflow.com/questions/34038052/get-date-in-the-past-or-future-in-varying-days-in-java)
-- [Kotlin Programmieren lernen: Datum und Zeit](https://www.programmierenlernenhq.de/kotlin-datum-und-zeit/)
+## Tiefere Einblicke
+
+Es gibt auch eine Reihe von anderen Methoden in der `LocalDate` Klasse, die helfen können, komplexe Datumsberechnungen durchzuführen. Zum Beispiel können wir die `withDayOfYear` Methode verwenden, um das Datum auf einen bestimmten Tag im Jahr zu setzen:
+
+```Kotlin
+val birthday = LocalDate.now().withDayOfYear(200)
+println("Mein Geburtstag ist am: $birthday")
+```
+
+Die Ausgabe dieses Codes wäre: `Mein Geburtstag ist am: 2021-07-19`.
+
+Außerdem können wir die `until` Methode verwenden, um die Anzahl der Tage zwischen zwei Datumswerten zu berechnen, z.B.:
+
+```Kotlin
+val christmas = LocalDate.of(2021, Month.DECEMBER, 24)
+val daysUntilChristmas = currentDate.until(christmas, ChronoUnit.DAYS)
+println("Es sind noch $daysUntilChristmas Tage bis Weihnachten!")
+```
+
+Die Ausgabe dieses Codes wäre: `Es sind noch 153 Tage bis Weihnachten!`.
+
+## Siehe auch
+
+- [Offizielle Kotlin Dokumentation zu Date and Time](https://kotlinlang.org/docs/dart-overview.html)
+- [Java LocalDate Dokumentation] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

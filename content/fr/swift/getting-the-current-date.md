@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Swift: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Si vous êtes un développeur Swift, il y a de fortes chances que vous deviez à un moment donné récupérer la date actuelle dans votre code. Cela peut être utile pour afficher la date pour l'utilisateur, enregistrer la date et l'heure d'une action ou pour toute autre tâche liée à la manipulation de la date. Dans cet article, nous allons vous montrer comment récupérer la date actuelle en utilisant Swift.
+Vous êtes-vous déjà demandé comment obtenir la date actuelle dans vos programmes Swift ? Peut-être que vous avez besoin d'afficher la date dans votre application ou peut-être que vous voulez simplement l'utiliser pour des opérations de calcul. Dans cet article, je vais vous montrer comment obtenir la date actuelle en utilisant Swift.
 
 ## Comment faire
 
-Pour récupérer la date actuelle, nous allons utiliser la classe `Date`. Voici un exemple de code qui montre comment obtenir la date actuelle et l'imprimer dans la console :
+Pour obtenir la date actuelle en Swift, nous allons utiliser la classe `Date` fournie par le framework `Foundation`. Suivez les étapes ci-dessous pour voir comment l'utiliser dans votre code.
 
-```swift
+```Swift
+// Importation du framework Foundation
+import Foundation
+
+// Obtenir la date actuelle
 let currentDate = Date()
-print(currentDate)
-// Output: 2021-03-15 10:30:00 +0000
-```
 
-Comme vous pouvez le voir, la date est affichée au format ISO 8601 par défaut. Si vous souhaitez afficher la date dans un format différent, vous pouvez utiliser un `DateFormatter` pour le formater selon vos besoins. Par exemple, pour afficher la date au format "dd/MM/yyyy", vous pouvez utiliser le code suivant :
+// Convertir la date en chaîne de caractères
+let dateString = "\(currentDate)"
 
-```swift
+// Imprimer la date au format par défaut
+print(dateString)
+
+// Imprimer la date en utilisant un format spécifique
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let currentDate = Date()
+dateFormatter.dateFormat = "dd/MM/YYYY"
 print(dateFormatter.string(from: currentDate))
-// Output: 15/03/2021
 ```
 
-Il est également possible d'obtenir la date actuelle sous forme de chaîne de caractères avec le même format en utilisant la méthode `string()` de `DateFormatter` :
-
-```swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let currentDate = Date()
-let currentDateAsString = dateFormatter.string(from: currentDate)
-print(currentDateAsString)
-// Output: 15/03/2021
-```
+L'exemple ci-dessus montre comment obtenir la date actuelle en utilisant la classe `Date`. Nous pouvons utiliser la méthode `print()` pour afficher la date au format par défaut ou utiliser un objet `DateFormatter` pour choisir un format spécifique.
 
 ## Plongée en profondeur
 
-Pour comprendre comment fonctionne la récupération de la date actuelle en Swift, il est important de comprendre le concept de temps universel coordonné (UTC). En informatique, le temps est généralement stocké sous forme de nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC. Lorsque nous récupérons la date actuelle avec `Date()`, nous obtenons le nombre de secondes écoulées depuis cette date. Cela signifie que la date et l'heure que nous obtenons dépendent du fuseau horaire de l'appareil sur lequel le code est exécuté.
+La classe `Date` contient également d'autres méthodes utiles pour manipuler les dates, telles que `addingTimeInterval` pour ajouter un certain nombre de secondes à une date donnée et `compare` pour comparer deux dates. Vous pouvez également utiliser la classe `Calendar` pour travailler avec des composants tels que l'heure, le jour et le mois d'une date.
 
-Il est également important de noter que la classe `Date` représente un instant précis dans le temps et ne contient aucune information sur les fuseaux horaires. La conversion d'un `Date` en chaîne de caractères dépend du système par défaut de l'appareil. Cela signifie que si votre application est utilisée dans différents fuseaux horaires, la date récupérée peut être différente selon l'emplacement.
+Pour en savoir plus sur la manipulation des dates en Swift, je vous recommande de consulter la documentation officielle de Swift sur les classes `Date` et `Calendar`.
 
-# Voir aussi
+## Voir aussi
 
-- [Documentation sur la classe Date en Swift](https://developer.apple.com/documentation/foundation/date)
-- [Tutoriel sur la manipulation des dates en Swift](https://www.raywenderlich.com/1388445-dates-and-times-in-swift)
+- [Documentation officielle de Swift sur les dates](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
+- [Documentation officielle de Swift sur les calendriers](https://developer.apple.com/documentation/foundation/calendar)

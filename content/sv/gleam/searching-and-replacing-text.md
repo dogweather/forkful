@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och ersätta text"
+html_title:           "Gleam: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Letar du efter ett enkelt och effektivt sätt att söka och byta ut text i ditt program? Då kan Gleam vara svaret på dina böner! Med Gleam kan du enkelt söka och ersätta text i dina filer, vilket sparar tid och minskar risken för mänskliga fel.
 
-Att söka och ersätta text är en viktig del av programmering eftersom det gör det möjligt att snabbt och enkelt ändra text i stora mängder av kod. Det är också ett bra sätt att göra upprepande uppgifter mer effektiva.
-
-## Hur man gör det
-
-För att söka och ersätta text i Gleam, använd ```replace``` funktionen. Till exempel, om du vill ändra alla förekomster av ordet "hund" till "katt" i en sträng, skulle du skriva:
+## Hur man gör 
+För att söka och ersätta text i Gleam, använd följande kodblock:
 
 ```Gleam
-let str = "Jag har en hund som heter Fido"
-let ny_sträng = replace(str, "hund", "katt")
+Text.replace(pattern, replacement, text)
 ```
 
-Detta kommer att resultera i strängen "Jag har en katt som heter Fido". Du kan också använda regex (regular expressions) för att söka efter mönster istället för specifika ord. Till exempel:
+Här är ett exempel på hur du kan använda denna funktion:
 
 ```Gleam
-let str = "Jag älskar att programmera på Gleam"
-let ny_sträng = replace(str, regex"#Gleam", "Elixir")
+Text.replace("Hejsan", "Hallå", "Hejsan världen!")
 ```
 
-Detta kommer att ersätta alla förekomster av "Gleam" med "Elixir" och resultera i strängen "Jag älskar att programmera på Elixir".
-
-## Djupdykning
-
-I Gleam kan du också använda ```replace_nth``` funktionen för att ersätta den n:te förekomsten av ett mönster i en textsträng. Detta kan vara användbart om du bara vill ersätta vissa förekomster istället för alla. Till exempel:
+Detta skulle ge följande utmatning:
 
 ```Gleam
-let str = "Jag har en hund som heter Fido. Jag har en katt som heter Whiskers."
-let ny_sträng = replace_nth(str, "har", "äger", 2)
+"Hallå världen!"
 ```
 
-Detta kommer att ersätta det andra förekomsten av "har" med "äger" och resultatet blir "Jag har en hund som heter Fido. Jag äger en katt som heter Whiskers". Du kan också använda ```replace_all``` för att ersätta alla förekomster utan att behöva ange ett specifikt nummer.
+En annan användbar funktion är ```Text.replace_all```, som tillåter dig att byta ut alla förekomster av ett mönster i en sträng. Här är ett exempel på hur man skulle göra detta:
 
-## Se även
+```Gleam
+Text.replace_all("l", "ll", "hello")
+```
 
-- [Officiell Gleam dokumentation för replace och replace_all](https://gleam.run/)
-- [Regex tutorial för Gleam](https://medium.com/@kay.jones/regular-expressions-in-gleam-a1133
+Detta skulle ge följande utmatning:
+
+```Gleam
+"hellllo"
+```
+
+## Djupdykning 
+Gleam erbjuder även andra funktioner för sökning och ersättning, till exempel möjligheten att söka och byta ut text baserat på ett reguljärt uttryck. För mer information om dessa funktioner och hur man använder dem, se Gleams officiella dokumentation.
+
+## Se även 
+- Officiell dokumentation för Gleam: https://gleam.run/
+- Reguljära uttryck: https://regexr.com/
+- Mer om textbehandling i Gleam: https://gleam.run/docs/std-lib-text/

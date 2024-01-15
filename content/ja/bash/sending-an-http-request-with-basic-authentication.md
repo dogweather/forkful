@@ -1,5 +1,6 @@
 ---
-title:                "Bash: ベーシック認証を使用してhttpリクエストを送信する"
+title:                "ベーシック認証を使用してhttpリクエストを送信する"
+html_title:           "Bash: ベーシック認証を使用してhttpリクエストを送信する"
 simple_title:         "ベーシック認証を使用してhttpリクエストを送信する"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,43 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-なぜ人々は基本認証を使用してHTTPリクエストを送信するかを説明する1-2文。
 
-HTTPリクエストを送信する際に、セキュリティが重要な場合には、基本認証を使用することで、特定のユーザーのみがアクセスできるように制限することができます。
+HTTPリクエストを基本認証で送信する理由は、WebサービスやAPIを使う際に、認証を通してセキュリティを確保するためです。
 
-## 方法
+## やり方
 
 ```Bash
-# cURLを使用して基本認証を行うHTTPリクエストを送信する
-curl -u ユーザー名:パスワード URL
+curl -u username:password https://example.com/api/endpoint
 ```
 
-上記のコードでは、cURLを使用して基本認証を行うHTTPリクエストを送信しています。-uオプションを使用することで、ユーザー名とパスワードを指定することができます。
+このコマンドは、`curl`を使用して基本認証でHTTPリクエストを送信する方法を示しています。`-u`オプションは、ユーザー名とパスワードを指定するために使用します。`username`と`password`は、実際の認証情報に置き換えて使用します。後に、リクエストを送信したいエンドポイントのURLを指定します。
 
 ```Bash
-# 201 Createdレスポンスを受け取る例
-HTTP/1.1 201 Created
+HTTP/1.1 200 OK
 Content-Type: application/json
+Content-Length: 123
 
 {
-  "message": "Success",
-  "data": {
-    "id": "12345",
-    "name": "John Doe"
-  }
+  "username": "John",
+  "email": "john@example.com"
 }
 ```
 
-上記の例では、サーバーから201 Createdレスポンスを受け取っています。HTTPリクエストが成功したことを示すメッセージと、データの中にidと名前の情報が含まれています。
+リクエストに成功した場合、上記のようにレスポンスが返ります。`Content-Type`ヘッダーは、レスポンスの内容がJSON形式であることを示し、`Content-Length`ヘッダーはレスポンスの長さを示しています。そして、実際のレスポンスの内容がJSON形式で返されます。
 
-## 詳細について
+## ディープダイブ
 
-基本認証を使用してHTTPリクエストを送信する際には、ユーザー名とパスワードをBase64エンコードして、リクエストのAuthorizationヘッダーに含める必要があります。これにより、サーバー側で正しい認証が行われることができます。
+基本認証は、ユーザー名とパスワードを使用して、認証情報をHTTPリクエストのヘッダーに埋め込むことで機能します。これにより、認証を受ける側のサーバーがユーザーを認識し、アクセスを許可するか拒否するかを決定することができます。基本認証では、認証情報が平文で送信されるため、HTTPSを使用してセキュリティを強化することが推奨されています。
 
-また、基本認証はセキュリティレベルが低いため、より高度な認証方法を使用することが推奨されています。セキュリティ上のリスクを考慮した上で、適切な認証方法を選択することが重要です。
-
-## 併せて参照
-
-- [cURLコマンドラインチートシート](https://catonmat.net/cookbooks/curl)
-- [HTTPリクエストとヘッダーについて](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [基本認証についての詳細](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#%E5%9F%BA%E6%9C%AC%E8%AA%8D%E8%A8%BC)
+## See Also
+- [HTTPリクエストとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+- [curlコマンドを使ってHTTPリクエストを送信する方法](https://qiita.com/KawamataL8/items/9fc45dafb78a13206573)

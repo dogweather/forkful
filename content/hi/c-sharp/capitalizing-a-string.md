@@ -1,6 +1,7 @@
 ---
-title:                "C#: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "स्ट्रिंग कैपिटलाइज़ बनाना"
+html_title:           "C#: स्ट्रिंग कैपिटलाइज़ बनाना"
+simple_title:         "स्ट्रिंग कैपिटलाइज़ बनाना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,29 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोई भी किसी स्ट्रिंग को कैपिटलाइज करने में क्यों रुचि रखेगा, इसका कारण सुनिश्चित रूप से लोगों को उस लेख में दिये गए कारणों से समझ लेना चाहिए।
+कभी-कभी हमें एक स्ट्रिंग को कैपिटलाइज करने की जरूरत होती है ताकि यह पढ़ने में आसान हो और साथ ही यह दिखाई भी दे। इस लेख में हम सीखेंगे कि स्ट्रिंग को कैपिटलाइज कैसे किया जाता है और इसके दोनों तरीके क्या हैं।
 
-## कैसे
+## कैसे करें
 
-छोटा उदाहरण के साथ स्ट्रिंग कैपिटलाइज करने के तरीके: "```C#
+```C#
 string str = "hello world";
+
+// Method 1: Using ToUpper() method
 Console.WriteLine(str.ToUpper());
+// Output: HELLO WORLD
+
+// Method 2: Using CultureInfo
+var cultureInfo = new CultureInfo("en-US", false);
+var textInfo = cultureInfo.TextInfo;
+Console.WriteLine(textInfo.ToTitleCase(str));
+// Output: Hello World
 ```
-आउटपुट: "HELLO WORLD" 
 
-लम्बा तरीके से स्ट्रिंग कैपिटलाइज करने का उपयोग: "```C#
-string str = "hello world";
-string capStr = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
-Console.WriteLine(capStr);
-```
-आउटपुट: "Hello World"
+## गहराई में जाएं
 
-## गहराई में जाइए
+स्ट्रिंग कैपिटलाइज करने के दो साधारण तरीके हैं, जिनमें से पहला `ToUpper()` मेथड है जो स्ट्रिंग को ऑपरेशन करने के लिए मौजूद होता है। इसमें स्ट्रिंग को पूर्णत: अपरकेस में परिवर्तित किया जाता है। दूसरा तरीका `CultureInfo` का उपयोग करके किया जाता है, जिसमें हम `TextInfo` का उपयोग करके स्ट्रिंग को कैपिटलाइज कर सकते हैं। इससे स्ट्रिंग का पहला अक्षर हेडर केस में और बाकी लोअर केस में हो जाता है।
 
-स्ट्रिंग कैपिटलाइज का सामान्य उपयोग है डिसप्ले करने में ध्यान आकर्षित करने के लिए। इससे आप अपने UI में शिर्षक, स्लोगन, या आस्ते हिसाब से स्ट्रिंग्ज दिखा सकते हैं। आप भाषाई अनुवाद के साथ स्ट्रिंग क्षमताओं में भी कैपिटलाइज कर सकते हैं जो कि प्रयोगकर्ता को अधिक समझ महसूस कराते हैं।
+## देखें भी
 
-## देखिए भी
-
-- [C# String Class](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
-- [ToTitleCase() Method](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=netcore-3.1)
-- [String Manipulation in C#](https://www.geeksforgeeks.org/c-sharp-string-manipulation/)
+- [String.ToUpper() method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [TextInfo.ToTitleCase() method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)

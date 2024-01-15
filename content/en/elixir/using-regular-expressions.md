@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Elixir recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,71 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Regular expressions may seem intimidating at first, but once you understand their power, they become an essential tool in your Elixir programming arsenal. With regular expressions, you can easily manipulate strings and perform complex pattern matching, making your code more efficient and concise.
+Regular expressions, also known as regex, are a powerful tool for pattern matching and text manipulation in Elixir. They allow developers to easily search for specific patterns in strings and perform various operations based on those patterns. This can save time and make code more efficient.
 
 ## How To
 
-To use regular expressions in Elixir, you first need to import the `Regex` module. You can do this by adding the `use Regex` statement at the top of your file. Once imported, you can use the `~r` sigil to define regular expressions.
+To use regular expressions in Elixir, we first need to import the `Regex` module. Let's take a look at some simple examples:
 
-```Elixir
-import Regex
+```
+Elixir: Match a string and extract a variable:
 
-# Defining a regular expression
-regex = ~r/foo/
+rx = ~r/Hello, (.*?)/
+"Hello, Alice" =~ rx
+# Output: {["Hello, Alice"], ["Alice"]}
 
-# Matching a string against the regex
-"foo bar" =~ regex
-# Output: true
+Elixir: Replace all occurrences of a pattern:
+
+rx = ~r/dog/
+String.replace("I have a cat and a dog", rx, "horse")
+# Output: "I have a cat and a horse"
 ```
 
-You can also use the `~r` sigil with options to specify more complex patterns. For example, you can use the `i` option to make the regex case-insensitive.
+In the first example, we match the string "Hello, Alice" against the regular expression `~r/Hello, (.*?)/` which looks for the word "Hello," followed by any characters. The match returns a tuple with the full match and the extracted variable, which in this case is "Alice".
 
-```Elixir
-# Defining a case-insensitive regex
-regex = ~r/foo/i
+In the second example, we use `String.replace/3` to replace all instances of the word "dog" with "horse" in the given string.
 
-# Matching a string against the regex
-"foO BAR" =~ regex
-# Output: true
-```
-
-You can also use regular expressions with the `Regex.match?/2` function to extract specific parts of a string.
-
-```Elixir
-# Defining a regex with capture groups
-regex = ~r/(foo) (bar)/
-
-# Matching a string and extracting the captured groups
-{"foo bar", match} = Regex.match?("foo bar", regex)
-
-# Accessing the captured groups
-match["1"] 
-# Output: "foo"
-match["2"]
-# Output: "bar"
-```
+Regular expressions also have various modifiers and special characters that allow for more complex pattern matching. These include `^` for matching the beginning of a string, `$` for matching the end of a string, and `+` for matching one or more occurrences of the previous pattern.
 
 ## Deep Dive
 
-Regular expressions in Elixir follow the same syntax as those in other programming languages, with a few minor differences. Elixir uses the PCRE (Perl Compatible Regular Expressions) library, which is a popular and widely-used library for regular expressions. This means that you can use any PCRE syntax in your Elixir regular expressions, including lookaheads, lookbehinds, and backreferences.
+One of the most useful aspects of regular expressions in Elixir is their ability to reference capture groups. These are portions of the matched string that are enclosed in parentheses. We can then use these capture groups in our replacements by using the backslash followed by the group number (`\1` for the first group, `\2` for the second, and so on).
 
-Another key feature of regular expressions in Elixir is the ability to use named capture groups. Instead of accessing captured groups by their index, you can use a name to retrieve the data. This provides more readability and allows you to reference the captured group by its purpose instead of its position.
-
-```Elixir
-# Defining a regex with named capture groups
-regex = ~r/(?<first_name>John) (?<last_name>Doe)/
-
-# Matching a string and extracting the named capture groups
-{"John Doe", match} = Regex.match?("John Doe", regex)
-
-# Accessing the captured groups by name
-match["first_name"]
-# Output: "John"
-match["last_name"]
-# Output: "Doe"
 ```
+rx = ~r/(\w+), (\w+)/
+"John, Smith" =~ rx
+# Output: {["John, Smith"], ["John", "Smith"]}
+
+# Using capture groups for replacement
+String.replace("John, Smith", rx, "\\2, \\1")
+# Output: "Smith, John"
+```
+
+We can also make our regular expressions more specific by using character classes, which are enclosed in square brackets (`[]`). For example, `[aeiou]` will match any vowel, allowing us to easily search for specific letters or patterns within strings.
 
 ## See Also
 
-- Official Elixir documentation for regular expressions: https://hexdocs.pm/elixir/Regex.html
-- Regex tutorial for Elixir: https://elixirschool.com/en/lessons/advanced/regex/
+- [Elixir's Regex module documentation](https://hexdocs.pm/elixir/Regex.html)
+- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Regex101 - an online regular expression tester](https://regex101.com/)

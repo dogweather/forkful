@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Arduino: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,41 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir un archivo de texto con Arduino?
+## ¿Por qué escribir un archivo de texto?
 
-Escribir un archivo de texto con Arduino puede ser útil para almacenar datos o para crear un registro de eventos. También puede ser una forma de comunicarse con un usuario final, ya que el contenido puede ser leído en un dispositivo externo.
+Escribir un archivo de texto en Arduino puede ser útil para guardar datos o para mostrar mensajes en una pantalla LCD. Además, te permite tener un registro de tus programas y cambios realizados en el código.
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto con Arduino, se pueden seguir los siguientes pasos:
+Para escribir un archivo de texto en Arduino, debes seguir los siguientes pasos:
 
-1. Inicializar una variable de tipo `File` para almacenar el archivo. Ejemplo:
+1. Abrir el programa Arduino y crear un nuevo sketch.
+2. Agregar la librería SD al sketch utilizando la función ```#include <SD.h>```.
+3. Inicializar la tarjeta SD utilizando la función ```SD.begin()```.
+4. Abrir un archivo en la tarjeta SD utilizando la función ```SD.open()```.
+5. Utilizar la función ```print()``` o ```println()``` para escribir en el archivo.
+6. Cerrar el archivo utilizando la función ```SD.close()```.
+
+Un ejemplo de código para escribir un archivo de texto sería el siguiente:
+
 ```Arduino
-File miArchivo;
-```
-2. Abrir el archivo utilizando el método `open()`. Este método recibe dos parámetros: el nombre del archivo y el modo en el que se va a abrir, en este caso "w" para escribir. Ejemplo:
-```Arduino
-miArchivo.open("datos.txt", "w");
-```
-3. Utilizar el método `println()` para escribir el contenido en el archivo. Ejemplo:
-```Arduino
-miArchivo.println("Hola mundo!");
-```
-4. Cerrar el archivo con el método `close()`. Ejemplo:
-```Arduino
-miArchivo.close();
+#include <SD.h>
+
+void setup() {
+  // Inicializar la tarjeta SD
+  SD.begin();
+
+  // Abrir el archivo "datos.txt" en la tarjeta SD
+  File archivo = SD.open("datos.txt", FILE_WRITE);
+
+  // Escribir en el archivo
+  archivo.println("Ejemplo de texto en el archivo");
+  archivo.println("Otro ejemplo de texto");
+
+  // Cerrar el archivo
+  archivo.close();
+}
+
+void loop() {
+  // Código que se sigue ejecutando
+}
 ```
 
-Una vez que se hayan seguido estos pasos, se tendrá un archivo de texto llamado "datos.txt" con el contenido "Hola mundo!".
+El archivo "datos.txt" se guardará en la tarjeta SD y contendrá los dos mensajes escritos en el sketch.
 
 ## Profundizando
 
-Existen varias funciones adicionales que se pueden utilizar para escribir un archivo de texto con Arduino, como `write()`, `print()`, `writeBytes()` y `printBytes()`. Cada una de estas tiene un propósito distinto y permite escribir diferentes tipos de datos en el archivo.
+La función ```SD.open()``` acepta dos parámetros: el nombre del archivo y el modo de apertura. Los posibles modos son:
 
-Además, es importante tener en cuenta que al escribir un archivo de texto con Arduino se debe tener en cuenta el tamaño máximo del archivo, ya que la memoria de Arduino es limitada.
+- ```FILE_READ```: para lectura
+- ```FILE_WRITE```: para escritura (sobrescribe el contenido del archivo)
+- ```FILE_APPEND```: para agregar al final del archivo
 
-## Ver también
+Además, la función ```print()``` o ```println()``` puede aceptar diferentes tipos de datos, no solo texto. Por ejemplo, puedes escribir variables numéricas o booleanas.
 
-- [Tutorial: Escribiendo archivos de texto con Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
-- [Documentación de la librería `File`](https://www.arduino.cc/reference/en/libraries/sd/file/)
-- [Video: Escribir y leer archivos de texto con Arduino](https://www.youtube.com/watch?v=tRwSmT9pWVQ)
+Ten en cuenta que debes utilizar una tarjeta SD formateada en formato FAT16 o FAT32 para poder escribir archivos en Arduino.
+
+## See Also
+
+- https://www.arduino.cc/en/Reference/SD
+- https://www.arduino.cc/en/Tutorial/Files
+- https://www.arduino.cc/en/Tutorial/Libraries

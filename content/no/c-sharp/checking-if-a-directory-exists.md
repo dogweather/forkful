@@ -1,6 +1,7 @@
 ---
-title:                "C#: Kontrollere om en mappe eksisterer"
-simple_title:         "Kontrollere om en mappe eksisterer"
+title:                "Å sjekke om en mappe eksisterer"
+html_title:           "C#: Å sjekke om en mappe eksisterer"
+simple_title:         "Å sjekke om en mappe eksisterer"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,48 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er viktig å vite om en mappe eksisterer før du prøver å aksessere eller manipulere den. Dette sikrer at programmet ditt fungerer korrekt og ikke krasjer hvis mappen ikke eksisterer.
+Det er viktig for programvareutviklere å sjekke om en mappe eksisterer før de utfører handlinger som å lese eller skrive filer i den. Dette sikrer at programmet ikke krasjer på grunn av å prøve å aksessere en ikke-eksisterende mappe.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å sjekke om en mappe eksisterer i C #, bruker du `Directory.Exists` metoden. Denne metoden tar inn en streng som representerer banen til mappen du vil sjekke, og returnerer en boolsk verdi som indikerer om mappen eksisterer eller ikke.
+Det er enkelt å sjekke om en mappe eksisterer i C# ved hjelp av File-klassen og dens metoder. Her er et eksempel på kode som viser hvordan du kan sjekke om en gitt mappe eksisterer:
 
 ```C#
-if (Directory.Exists("C:\\Users\\Desktop\\MyFolder")) {
-    Console.WriteLine("Mappen eksisterer.");
-} else {
+string mappenavn = "C:/MinMappe";
+
+// Sjekk om mappen eksisterer
+if (Directory.Exists(mappenavn))
+{
+    Console.WriteLine("Mappen eksisterer!");
+}
+else
+{
     Console.WriteLine("Mappen eksisterer ikke.");
 }
 ```
 
-Output:
-```
-Mappen eksisterer.
-```
-
-Hvis mappen ikke eksisterer, kan du også opprette den ved hjelp av `Directory.CreateDirectory` metoden.
-
-```C#
-if (!Directory.Exists("C:\\Users\\Desktop\\MyFolder")) {
-    Directory.CreateDirectory("C:\\Users\\Desktop\\MyFolder");
-    Console.WriteLine("Mappen er opprettet.");
-} else {
-    Console.WriteLine("Mappen eksisterer allerede.");
-}
-```
-
-Output:
-```
-Mappen er opprettet.
-```
+Output av dette eksempelet vil være "Mappen eksisterer!" dersom C:/MinMappe faktisk eksisterer, eller "Mappen eksisterer ikke." hvis den ikke gjør det.
 
 ## Dypdykk
 
-I tillegg til å sjekke om en mappe eksisterer, kan du også sjekke om en fil eksisterer på samme måte ved å bruke `File.Exists` metoden. Begge metodene bruker Windows API for å sjekke filsystemet, så de vil fungere riktig på alle operativsystemer som støttes av C #.
+Det finnes også andre måter å sjekke for eksistensen av en mappe på i C#, som for eksempel å bruke Path-klassen til å bygge en filbane og sjekke om den eksisterer ved hjelp av File.Exists() metoden. Det er viktig å huske på at både Directory.Exists() og File.Exists() metoder returnerer en boolsk verdi (true eller false), og bør derfor brukes i en if-else-uttalelse som vist i eksempelet over.
 
-Det er også viktig å merke seg at selv om en mappe eller fil eksisterer når du sjekker, kan den fortsatt bli slettet eller flyttet av brukeren mens programmet ditt kjører. Så sørg for å håndtere eventuelle feil som kan oppstå i disse situasjonene.
+En annen ting å huske på er at disse metodene bare sjekker om en mappe eksisterer, men ikke om du har tilgang til den. Det er fortsatt viktig å håndtere eventuelle tillatelser eller unntak dersom man prøver å aksessere filer eller mapper i programmet.
 
-## Se Også
-- [Directory.Exists metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [File.Exists metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.exists)
-- [Håndtering av feil i C#](https://www.tutorialspoint.com/csharp/csharp_exceptions.htm)
+## Se også
+
+- [Microsofts offisielle dokumentasjon om å sjekke om en mappe eksisterer i C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [En guide til å håndtere filer og mapper i C#](https://www.c-sharpcorner.com/UploadFile/mahakgupta/files-and-folders-in-C-Sharp/)
+- [Tutorial om tillatelser og håndtering av unntak i C#](https://www.tutorialsteacher.com/csharp/csharp-file-io)

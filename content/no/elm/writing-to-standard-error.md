@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriver til standard feil"
+html_title:           "Elm: Skriver til standard feil"
+simple_title:         "Skriver til standard feil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,66 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I dette innlegget skal vi dykke inn i hvordan man skriver til standard error i Elm. Dette kan være nyttig hvis du ønsker å logge feil eller varsler i din applikasjon. Det kan også hjelpe deg med å løse potensielle problemer som oppstår under utviklingsprosessen. La oss se på hvorfor dette kan være en god teknikk å bruke.
+Å skrive til standard error kan være nyttig når du jobber med feilhåndtering og debugging i Elm. Det lar deg skrive feilmeldinger og diagnostisk informasjon direkte til terminalen, i stedet for å måtte logge det til en fil eller konsoll.
 
 ## Hvordan
 
-Det første du må gjøre er å importere `Task`-modulen i ditt prosjekt. `Task`-modulen lar oss utføre asynkrone oppgaver, som å skrive til standard error. Ved å bruke funksjonen `perform`, kan du starte en asynkron oppgave og gi den en funksjon som skal utføres.
-
-```Elm
-import Task exposing (..)
-
--- Definer en funksjon for å skrive til standard error
-writeToStdErr : String -> Tack Never ()
-writeToStdErr message =
-  perform (succeed (Debug.log "Feilmelding" message))
-```
-
-Vi bruker `Debug.log`-funksjonen for å logge meldingen vår til standard error. Du kan erstatte denne med din egen loggefunksjon, eller bare bruke `Debug.log` som den er.
-
-For å kjøre denne funksjonen, kan vi bruke `perform` inne i en annen funksjon. For eksempel:
+For å skrive til standard error i Elm, kan du bruke funksjonen `Debug.crash` og passere inn en melding som en streng. For eksempel:
 
 ```
--- En funksjon som dobler et tall
-double : Int -> Int
-double n =
-  2 * n
+import Debug exposing (..)
 
-main : Program () Model Msg
 main =
-  Browser.sandbox { init = 0, update = update, view = view }
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    Double ->
-      (double model, Task.succeed ())
-    LogError ->
-      (model, writeToStdErr "En feil har oppstått")
+    Debug.crash "Dette er en feilmelding"
 ```
 
-Som du kan se, kan vi bruke `writeToStdErr`-funksjonen i en `Cmd` for å logge en feilmelding når `LogError`-meldingen blir sendt.
+Dette vil skrive ut meldingen "Dette er en feilmelding" til standard error når applikasjonen kjører.
 
-## Deep Dive
+Hvis du vil inkludere variabler eller andre data i meldingen, kan du bruke funksjonen `Debug.toString` for å konvertere dem til strenger. For eksempel:
 
-Nå som vi forstår hvordan vi kan skrive til standard error, la oss dykke litt dypere inn i emnet. Det finnes også en annen nyttig funksjon i `Task`-modulen som lar oss logge til standard error: `synchronously`.
+```
+import Debug exposing (..)
 
-Forskjellen mellom `synchronously` og `perform` er at `perform` kjører asynkront, mens `synchronously` kjører synkront. Dette betyr at koden din vil vente på at `synchronously`-funksjonen er ferdig før den fortsetter å kjøre. Dette kan være nyttig hvis du trenger å logge en feilmelding før du fortsetter med neste handling.
-
-```Elm
--- En funksjon som dobler et tall og logger verdien til standard error
-doubleAndLog : Int -> Tack Never ()
-doubleAndLog n =
-  perform (succeed (Debug.log "Resultat" (2 * n)))
-
--- En funksjon som dobler et tall og logger verdien synkront til standard error
-doubleAndLogSync : Int -> Tack Never ()
-doubleAndLogSync n =
-  synchronously (Debug.log "Resultat" (2 * n))
+main =
+    let
+        errorCode = 404
+    in
+    Debug.crash ("Feil: " ++ (Debug.toString errorCode))
 ```
 
-Som du kan se er koden ganske lik, men `doubleAndLogSync` bruker `synchronously` i stedet for `perform` for å logge verdien. Dette kan komme godt med når du trenger å logge noe på et spesifikt tidspunkt i koden din.
+Dette vil skrive ut meldingen "Feil: 404" til standard error.
+
+Du kan også bruke funksjonen `Debug.log` for å skrive til standard error uten å stoppe kjøringen av applikasjonen. Dette kan være nyttig når du vil logge informasjon underveis i programmet. For eksempel:
+
+```
+import Debug exposing (..)
+
+main =
+    let
+        bruker = "Jon"
+    in
+    Debug.log "Bruker: " bruker
+```
+
+Dette vil skrive ut meldingen "Bruker: Jon" til standard error.
+
+## Dypdykk
+
+Det er viktig å huske at å skrive til standard error ikke alltid er den beste løsningen for feilhåndtering. På grunn av hvordan Elm håndterer feil, kan det være bedre å bruke kanskje bruke `Result` eller`Maybe` typer til å håndtere feil på en mer strukturert måte.
+
+Du bør også være forsiktig med å skrive sensitiv informasjon til standard error, da dette kan bli fanget av feilloggingssystemer og potensielt utgjøre en sikkerhetsrisiko.
 
 ## Se også
 
-- Offisiell Elm dokumentasjon om Task-modulen: https://package.elm-lang.org/packages/elm/core/latest/Task
+- [Elm dokumentasjon om feilhåndtering](https://guide.elm-lang.org/error_handling/)
+- [The Elm Architecture](https://guide.elm-lang.org/architecture/)

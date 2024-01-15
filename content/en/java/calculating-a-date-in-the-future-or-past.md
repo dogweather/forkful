@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Java recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Java"
 category:             "Java"
@@ -10,48 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Calculating dates in the future or past can be a useful skill to have in Java programming. It allows for more precise and dynamic date calculations, making your code more efficient and flexible. 
+
+Calculating dates in the future or past is a common task in many applications, from scheduling events to managing deadlines. Having the ability to accurately calculate and manipulate dates can greatly improve the functionality and efficiency of a program. 
 
 ## How To
-To calculate a future date in Java, we can use the `Calendar` class. First, we need to create an instance of the `Calendar` object and set the date to be the current date:
 
-```Java
-Calendar calendar = Calendar.getInstance();
-calendar.setTime(new Date());
+To calculate a date in the future or past, we can use the `LocalDate` class from the `java.time` package. This class represents a date in the ISO-8601 calendar system (yyyy-MM-dd). 
+
+We can create a `LocalDate` object for a specific date by passing in the year, month, and day as parameters. For example, if we want to represent January 1st, 2020, we can write:
+
+```Java 
+LocalDate date = LocalDate.of(2020, 1, 1);
 ```
 
-Next, we can use the `add` method to add a certain number of days, months, or years to the current date:
+To calculate a date in the future or past, we can use the `plus()` and `minus()` methods. These methods take in a `Period` object, which represents a period of time in years, months, and days. 
+
+For example, if we want to calculate 10 days from our initial date, we can write:
 
 ```Java
-calendar.add(Calendar.DAY_OF_MONTH, 7); // adds 7 days to the current date
-calendar.add(Calendar.MONTH, 1); // adds 1 month to the current date
-calendar.add(Calendar.YEAR, 5); // adds 5 years to the current date
+LocalDate futureDate = date.plus(Period.ofDays(10));
 ```
 
-We can also calculate a past date by using negative values in the `add` method. Once we have added or subtracted the desired time, we can retrieve the resulting date by using the `getTime` method:
+Similarly, if we want to calculate 1 month and 3 years in the past, we can write:
 
 ```Java
-Date futureDate = calendar.getTime();
+LocalDate pastDate = date.minus(Period.ofYears(3).plusMonths(1));
 ```
 
-To display the date in a specific format, we can use the `SimpleDateFormat` class. Here's an example of how we can display our calculated future date in the format "dd/MM/yyyy":
+We can also use the `plus()` and `minus()` methods with `ChronoUnit` to calculate dates in smaller units such as hours, minutes, or seconds. For example, to calculate 3 hours in the future, we can write:
 
 ```Java
-SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-String formattedDate = formatter.format(futureDate);
-System.out.println("Future date: " + formattedDate);
+LocalDate futureDate = date.plus(3, ChronoUnit.HOURS);
 ```
 
-The output of the above code would be: "Future date: 18/06/2025".
+### Sample Output
+
+| Code | Output |
+|------|--------|
+| `LocalDate date = LocalDate.of(2020, 1, 1);` | `2020-01-01` |
+| `LocalDate futureDate = date.plus(Period.ofDays(10));` | `2020-01-11` |
+| `LocalDate pastDate = date.minus(Period.ofYears(3).plusMonths(1));` | `2016-12-01` |
+| `LocalDate futureDate = date.plus(3, ChronoUnit.HOURS);` | `2020-01-01T03:00` |
 
 ## Deep Dive
-Calculating dates in Java involves using the `Calendar` class and its various methods. It's important to note that months in the `Calendar` class are indexed starting from 0, so January is represented by 0 and December by 11. This means that when adding or subtracting months, we need to adjust our values accordingly.
 
-Additionally, we can also use the `set` method to set a specific date instead of using the current date. This can be useful when calculating dates based on a specific starting point.
+Under the hood, the `plus()` and `minus()` methods are using the `Temporal` interface, which represents a temporal amount. This interface is implemented by the `LocalDate` class and allows for manipulation of dates. 
 
-Overall, calculating dates in Java requires a good understanding of the `Calendar` class and its methods to accurately calculate future or past dates.
+Additionally, the `Period` class is used to represent a period of time in years, months, and days. It offers methods like `ofYears()`, `ofMonths()`, and `ofDays()` for easy creation of `Period` objects.
+
+And to calculate dates in smaller units using `ChronoUnit`, we use the `plus()` and `minus()` methods that are specific to the `ChronoUnit` enum. This enum contains all the available units for date and time manipulation.
 
 ## See Also
-- [Oracle Java SE Documentation on `Calendar` class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [GeeksforGeeks tutorial on Date and Time in Java](https://www.geeksforgeeks.org/date-class-java/)
-- [Java Code Geeks tutorial on `SimpleDateFormat` class](https://www.javacodegeeks.com/2012/06/date-format-example-using-simpledateformat.html)
+
+- [Java 8 API - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java 8 API - ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html)
+- [Understanding the Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

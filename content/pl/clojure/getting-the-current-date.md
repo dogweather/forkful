@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Uzyskiwanie aktualnej daty"
-simple_title:         "Uzyskiwanie aktualnej daty"
+title:                "Uzyskiwanie bieżącej daty"
+html_title:           "Clojure: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,36 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obecna data jest często potrzebna w programowaniu, na przykład do tworzenia harmonogramów, generowania raportów lub obsługi wydarzeń cyklicznych w aplikacjach. Dlatego warto nauczyć się w jaki sposób uzyskać aktualną datę w języku Clojure.
+Pisanie programów często wymaga używania aktualnej daty i czasu. Mogą być to różne dni lub godziny, na przykład kiedy dane zdarzenie miało miejsce lub kiedy trzeba coś zrobić. W języku Clojure jest wiele sposobów, aby uzyskać bieżącą datę i czas, a w tym artykule skupimy się na najprostszym i najczęściej używanym sposobie.
 
 ## Jak to zrobić
 
-```Clojure
-(import 'java.util.Date)
+Aby uzyskać bieżącą datę w Clojure, wystarczy użyć funkcji `now` z biblioteki `clojure.java-time`. Przed wykonaniem kodu należy zaimportować bibliotekę za pomocą `require`:
 
-(def current-date (Date.))
-(println current-date)
+```clojure
+(require '[clojure.java-time :as time])
+
 ```
 
-W powyższym przykładzie najpierw importujemy klasę `Date` z pakietu `java.util`, a następnie tworzymy zmienną `current-date` zawierającą obiekt daty z bieżącym czasem. Wypisujemy go na ekranie za pomocą funkcji `println`.
+Teraz możemy wywołać funkcję `now`, aby uzyskać obiekt daty i godziny w bieżącej strefie czasowej:
 
-Możemy też pobrać obecną datę w postaci liczby milisekund od 1 stycznia 1970 roku (tzw. epoki Unix).
-
-```Clojure
-(def current-time (.getTime (Date.)))
-(println current-time)
+```clojure
+(def current-date (time/now))
 ```
 
-Wynikiem działania powyższych przykładów może być na przykład `#inst "2020-04-23T15:19:02.176+00:00"` lub `1587646742176`.
+Możemy również użyć funkcji `now` z argumentem, aby uzyskać obiekt `java.time.Instant`, który reprezentuje bieżący czas w GMT:
 
-## Głębsza analiza
+```clojure
+(def current-time (time/now :instant))
+```
 
-Data w języku Clojure jest reprezentowana przez typ `Instant`, który jest częścią biblioteki Java zwaną `java.time`. Warto zwrócić uwagę, że jest ona niemutowalna, co oznacza, że każda operacja na dacie zwraca nowy obiekt, a nie zmienia wartość istniejącego.
+Aby uzyskać bieżącą datę w postaci napisu w wybranym formacie, możemy użyć funkcji `now-formatted`:
 
-Jeśli chcemy dowiedzieć się więcej o operacjach na datach w Clojure, warto przeczytać dokumentację do biblioteki `java.time` oraz wypróbować dostępne funkcje w praktyce.
+```clojure
+(def formatted-date (time/now-formatted "dd-MM-yyyy"))
+```
 
-## Zobacz też
+## Deep Dive
 
-- Dokumentacja do biblioteki `java.time` (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- Poradnik do języka Clojure (https://clojure.org/guides/getting_started)
-- Kurs programowania w Clojure (https://www.udemy.com/course/clojure-dla-poczatkujacych/)
+Biblioteka `clojure.java-time` jest oparta na bibliotece Java Time API, więc posiada wiele funkcji i metod, które mogą być przydatne w manipulowaniu datami i czasem. Możemy między innymi sprawdzić różnicę między dwoma datami za pomocą funkcji `between`:
+
+```clojure
+(time/between (time/now) (time/now (time/timezone "GMT")) :hours)
+```
+
+Możemy również wykorzystać dostępne metody do formatowania daty, np. `DateTimeFormatter`, aby uzyskać bardziej precyzyjne wyświetlanie danych.
+
+## Zobacz również
+
+- [Oficjalna dokumentacja biblioteki `clojure.java-time`](https://clojure.github.io/java-time/)
+- [Przewodnik po Java Time API](http://tutorials.jenkov.com/java-date-time/index.html)

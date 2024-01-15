@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Großschreibung einer Zeichenkette"
-simple_title:         "Großschreibung einer Zeichenkette"
+title:                "Eine Zeichenkette großschreiben"
+html_title:           "Ruby: Eine Zeichenkette großschreiben"
+simple_title:         "Eine Zeichenkette großschreiben"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,55 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Kapitalisieren von Strings ist eine häufige Aufgabe, die in Ruby Programmen durchgeführt werden muss. Durch die Großschreibung eines Strings kann die Lesbarkeit und Übersichtlichkeit des Codes erhöht werden. Dies ist besonders hilfreich, wenn es um die Anzeige von Benutzerinformationen oder die Erstellung von Textausgaben geht.
+Jeder hat wahrscheinlich schon mal einen Satz oder einen Namen in einer E-Mail oder Textnachricht in Großbuchstaben geschrieben, um eine Betonung auszudrücken oder zu zeigen, dass man wütend ist. Aber wusstest du, dass es auch in der Programmierung wichtig sein kann, Strings (Zeichenketten) in Großbuchstaben umzuwandeln? Mit Ruby, einer modernen und benutzerfreundlichen Programmiersprache, ist das ganz einfach. In diesem Artikel werde ich dir zeigen, wie du Strings in Ruby in Großbuchstaben umwandeln kannst und warum das wichtig sein kann.
 
-## Wie geht man vor?
+## Wie geht's
 
-Es gibt mehrere Methoden in Ruby, um einen String zu kapitalisieren. Die einfachste Methode ist die Verwendung der `.capitalize` Methode. Diese Methode wandelt den ersten Buchstaben eines Strings automatisch in einen Großbuchstaben um und den Rest der Buchstaben in Kleinbuchstaben. Hier ist ein Beispiel:
-
-```Ruby
-name = "max muster"
-puts name.capitalize
-# Output: Max muster
-```
-
-Eine weitere Methode ist die Verwendung der `.upcase` Methode. Diese Methode wandelt alle Buchstaben eines Strings in Großbuchstaben um. Beispiel:
+Das Umwandeln von Strings in Großbuchstaben ist in Ruby dank einer eingebauten Methode namens `upcase` unkompliziert. Hier ist ein Beispiel:
 
 ```Ruby
-text = "hello ruby"
-puts text.upcase
-# Output: HELLO RUBY
+string = "hallo welt"
+puts string.upcase
+# Ausgabe: HALLO WELT
 ```
 
-Es gibt auch die Möglichkeit, einen String manuell zu kapitalisieren, indem man den Zugriff auf den ersten Buchstaben über den Index `[0]` verwaltet und diesen in einen Großbuchstaben umwandelt. Beispiel:
+Wie du sehen kannst, gibt die Methode `upcase` den String in Großbuchstaben aus. Diese Methode funktioniert auch mit Umlauten und Sonderzeichen:
 
 ```Ruby
-string = "hallo"
-string[0] = string[0].capitalize
-puts string
-# Output: Hallo
+string = "Entschuldigung, ich spreche kein Deutsch."
+puts string.upcase
+# Ausgabe: ENTSCHULDIGUNG, ICH SPRECHE KEIN DEUTSCH.
 ```
 
-## Tiefergehende Informationen
-
-Es gibt auch die Möglichkeit, nur den ersten Buchstaben jedes Wortes in einem String zu kapitalisieren. Dies wird als Titelkapselung bezeichnet und kann mit der `.titleize` Methode erreicht werden. Diese Methode wandelt den ersten Buchstaben jedes Wortes in einen Großbuchstaben um und konvertiert alle anderen Buchstaben in Kleinbuchstaben. Beispiel:
+Du kannst die Methode auch auf Variablen anwenden, die vorherige Methoden auf Strings ausgeführt haben:
 
 ```Ruby
-text = "hallo ruby welt"
-puts text.titleize
-# Output: Hallo Ruby Welt
+string = "Hallo welt"
+puts string.reverse.upcase
+# Ausgabe: TLEW OLLAH
 ```
+## Tief tauchen
 
-Es ist auch möglich, die verschiedenen Methoden zu kombinieren, um spezifische Kapitalisierungsvorgänge durchzuführen. Zum Beispiel kann man die `.capitalize` Methode verwenden, um nur den ersten Buchstaben eines Strings zu ändern, und dann die `.gsub` Methode verwenden, um alle übrigen Buchstaben in Kleinbuchstaben umzuwandeln. Beispiel:
+Das Umwandeln von Strings in Großbuchstaben ist besonders nützlich, wenn du mit Benutzereingaben arbeitest. Nehmen wir an, du baust eine Benutzerregistrierungsseite für deine Website und möchtest sicherstellen, dass alle Benutzernamen in Großbuchstaben gespeichert werden, um spätere Verwirrungen oder Fehler zu vermeiden. Oder du möchtest eine Suchfunktion für deine Webseite erstellen und möchtest sicherstellen, dass alle eingegebenen Suchbegriffe unabhängig von der Groß- und Kleinschreibung funktionieren.
+
+Eine weitere interessante Anwendung von `upcase` ist die Verwendung in Kombination mit der `slice`-Methode, um bestimmte Buchstaben in einem String zu ersetzen oder zu entfernen. Hier ist ein Beispiel:
 
 ```Ruby
-text = "hallo RUBY welt"
-puts text.capitalize.gsub(/[^A-Z]/, ' ')
-# Output: Hallo RUBY Welt
+string = "Hallo Welt"
+puts string.slice(0..4).upcase + string.slice(5..-1)
+# Ausgabe: HALLOWelt
 ```
+
+In diesem Beispiel wird die `slice`-Methode verwendet, um aus dem ursprünglichen String nur die ersten fünf Buchstaben (`"Hallo"`) auszuwählen und dann `upcase` angewendet, um sie in Großbuchstaben auszugeben. Die restlichen Buchstaben werden durch den zweiten Teil des `puts`-Statements unverändert ausgegeben.
 
 ## Siehe auch
 
-- https://ruby-doc.org/core-2.6.3/String.html#method-i-capitalize
-- https://ruby-doc.org/core-2.6.3/String.html#method-i-titleize
-- https://ruby-doc.org/core-2.6.3/String.html#method-i-upcase
+- [Ruby Dokumentation - Strings](https://ruby-doc.org/core-2.7.1/String.html)
+- [ruby-doc.org - Methode upcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
+- [rubyguides.com - Ruby Strings](https://www.rubyguides.com/ruby-string/)

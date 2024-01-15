@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Etsiminen ja tekstien korvaaminen"
-simple_title:         "Etsiminen ja tekstien korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Elm: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,28 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi sitten haluaisit vaihtaa ja etsiä tekstiä vaihdettavaksi? Yksi syy voisi olla tehokkuus - käyttämällä oikeita työkaluja säästät aikaa ja vaivaa käsitellessäsi suuria määriä tekstiä. Olipa kyseessä sitten pienen kooditiedoston muokkaaminen tai suuren dokumentin läpikäyminen, hakukomennot voivat olla todella hyödyllisiä.
+Joskus ohjelmointiprojektissasi voi olla tarve etsiä tiettyä tekstiä koodistasi ja korvata se toisella tekstillä. Tämä voi johtua esimerkiksi vanhanaikaisten funktioiden tai muuttujien nimeämiskäytäntöjen päivittämisestä tai yksinkertaisesti virheellisen tekstikohdan korjaamisesta.
 
-## Kuinka tehdä näin
+## Miten
 
-Pidä selvää sinapista ja kovasta usein käyttämistäsi hakukomentoistasi luomalla funktio, joka yhdistää tarvittavat toiminnot yhteen. Esimerkiksi, jos haluat korvata kaikki "he" sanat "she" sanoilla, voit käyttää seuraavaa funktiota:
+Voit käyttää Elm:n String-moduulin tarjoamia funktioita tekstinkäsittelyyn. Alla on esimerkki, jossa korvaamme kaikki "hello" sanat "hei".
 
 ```Elm
-replace : String -> String
-replace string =
-    String.replace "he" "she" string
+import String exposing (replace)
+
+sampleString = "Hello world!"
+
+sampleString |> replace "hello" "hei" |> toString -- output: "Hei world!"
 ```
 
-Tämä funktio ottaa merkkijonon `string` argumenttina ja korvaa kaikki "he" sanat "she" sanoilla. Voit myös käyttää muita tekstinhakukomentoja, kuten `String.contains`, `String.startsWith` ja `String.endsWith`.
+Voit myös käyttää tarkempaa haku-toimintoa käyttämällä `Regex.replace` -funktiota. Tässä esimerkissä korvaamme kaikki sanat, jotka alkavat kirjaimilla "ha" ja loppuvat vokaaliin, sanalla "hauska".
 
-## Syvemmälle
+```Elm
+import Regex exposing (replace)
 
-On tärkeää muistaa, että hakukomennot voivat olla joustavia ja niitä voi käyttää monimutkaisempien tehtävien suorittamiseen. Voit esimerkiksi käyttää `String.split` ja `String.join` komentoja yhdistettynä hakukomentoihin erotellaksesi ja yhdistääksesi tekstiä haluamallasi tavalla.
+sampleString = "Olen hajamielinen käyttäjä."
 
-Lisäksi voit käyttää säännöllisiä lausekkeita (`Regex`) tekstin hakemiseen ja korvaamiseen vielä monipuolisemmin. Säännöllisten lausekkeiden käyttö ei ole välttämätöntä, mutta se voi olla hyödyllistä monimutkaisemmissa tapauksissa.
+sampleString |> replace (Regex.regex "(ha[a-z])*a") (\_ -> "hauska") |> toString -- output: "Olen hauska käyttäjä."
+```
+
+## Syventyvä tarkastelu
+
+Mikäli haluat tutustua tarkemmin String-moduulin ja Regex-funktioiden käyttöön tekstinkäsittelyssä, voit lukea [virallisen dokumentaation](https://package.elm-lang.org/packages/elm/core/latest/String) tai tehdä harjoituksia [Elm:tut:lla](https://tut.elm-lang.org/). 
 
 ## Katso myös
 
-- [Elm-documentation](https://elm-lang.org/docs) - lisätietoja tekstinkäsittelystä ja käytettävissä olevista komentoriveistä.
-- [Elm-repl](https://repl.it/languages/elm) - voit kokeilla hakukomentoja interaktiivisessa ympäristössä.
-- [Elm live-ohje](https://guide.elm-lang.org/) - oppitunteja ja käytännön esimerkkejä hakukomennoista ja muista textinkäsittelytekniikoista.
+- [String-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm:tut](https://tut.elm-lang.org/)

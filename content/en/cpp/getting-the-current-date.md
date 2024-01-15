@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "C++ recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "C++"
 category:             "C++"
@@ -9,51 +10,97 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## Why 
 
-In today's world, technology is an essential part of our daily lives. We use our devices for work, communication, and entertainment. One common task that many programs need to perform is getting the current date. Whether it's for data logging, time-sensitive tasks, or displaying the date to users, being able to get the current date is a fundamental skill in programming. In this blog post, we will explore how to get the current date in C++ and the different methods available.
+Getting the current date is a common task in programming and it can serve various purposes like tracking the time of an event or generating timestamps for data.
 
-## How To
+## How To 
 
-To get the current date in C++, we can use the built-in `time` library. This library provides functions for manipulating and formatting date and time values. One of the functions we can use is the `time()` function. This function returns the current time in the form of the number of seconds that have passed since January 1, 1970, 00:00:00 UTC.
-
-Let's see an example of how to use the `time()` function to get the current date and time.
+To get the current date in C++, we can use the <ctime> library and the function "time(0)". Here's an example:
 
 ```C++
-#include <iostream>
-#include <ctime>
+#include <iostream> 
+#include <ctime> 
 
-int main() {
-    // get the current time
-    time_t now = time(0);
+int main() 
+{ 
+    // create a variable to store current time 
+    time_t currentTime = time(0); 
 
-    // convert the time to a string
-    char* current_time = ctime(&now);
+    // convert the current time into a string 
+    char* currentDateTime = ctime(&currentTime); 
 
-    // print the current date and time
-    std::cout << "Current Date and Time: " << current_time << std::endl;
+    // print the current date and time 
+    std::cout << "The current date and time is: " << currentDateTime << std::endl; 
 
-    return 0;
-}
+    return 0; 
+} 
 ```
 
 Output:
-
 ```
-Current Date and Time: Sat Aug 14 14:15:47 2021
+The current date and time is: Sun Nov 10 17:53:28 2019
 ```
 
-We first include the `iostream` and `ctime` libraries, which provide the necessary functions for our code. Inside the `main()` function, we use the `time()` function to get the current time and store it in a variable called `now`. Then, we use the `ctime()` function to convert this time value to a string and store it in the `current_time` variable. Lastly, we print the current date and time using the `cout` statement.
+We can also format the current date and time using the <iomanip> library and the "std::put_time" function. Here's an example:
 
-There are also other functions available in the `time` library that can be used to manipulate and format date and time values, such as `localtime()` and `strftime()`. I encourage you to explore these functions and see what else you can do with dates and times in C++.
+```C++
+#include <iostream> 
+#include <iomanip> 
+#include <ctime> 
 
-## Deep Dive
+int main() 
+{ 
+    // create a variable to store current time 
+    time_t currentTime = time(0); 
 
-Under the hood, the `time` library uses the Unix epoch time system, which is the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC. This system was adopted to keep track of time in a uniform way across different systems and programming languages. It is also used in various other programming languages, such as Java, Python, and Perl.
+    // convert the current time into a struct 
+    struct tm * now = localtime(&currentTime); 
 
-While the `time()` function returns the time in the form of an integer, the `ctime()` function converts this value to a human-readable string using the standard date and time formatting. It is important to note that the `ctime()` function uses the local time zone of your system to display the date and time. If you want to display the date and time in a specific timezone, you can use the `localtime()` and `strftime()` functions.
+    // format the date and time 
+    std::cout << "The current date and time is: "; 
+    std::cout << std::put_time(now, "%Y-%m-%d %X") << std::endl; 
 
-## See Also
+    return 0; 
+} 
+```
 
-- [C++ `time` Library Documentation](https://www.cplusplus.com/reference/ctime/time/)
-- [Unix Time - Wikipedia](https://en.wikipedia.org/wiki/Unix_time)
+Output: 
+```
+The current date and time is: 2019-11-10 17:55:28
+```
+
+## Deep Dive 
+
+The "time(0)" function returns the number of seconds since the Unix epoch (January 1, 1970). This can be useful for calculating time differences between events or generating unique timestamps. 
+
+We can also use the <chrono> library to get the current date and time with higher precision. Here's an example:
+
+```C++
+#include <iostream> 
+#include <chrono>
+
+int main() 
+{ 
+    // get current system time 
+    auto currentTime = std::chrono::system_clock::now(); 
+
+    // convert time to time_t object 
+    std::time_t currentDateTime = std::chrono::system_clock::to_time_t(currentTime); 
+
+    // print current date and time 
+    std::cout << "The current date and time is: " << std::ctime(&currentDateTime) << std::endl; 
+
+    return 0; 
+} 
+```
+
+Output: 
+```
+The current date and time is: Sun Nov 10 18:00:05 2019
+```
+
+## See Also 
+
+- <ctime> library documentation: http://www.cplusplus.com/reference/ctime/ 
+- <chrono> library documentation: http://www.cplusplus.com/reference/chrono/

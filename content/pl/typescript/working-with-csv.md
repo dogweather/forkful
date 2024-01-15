@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "TypeScript: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,42 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-CSV (ang. Comma Separated Values) to bardzo popularny format pliku używany do przechowywania danych tabelarycznych. Jest on wygodny w użyciu i łatwy do wczytania przez programy, przez co stał się podstawowym wyborem dla wielu aplikacji i projektów. W tym artykule dowiesz się, dlaczego warto zainteresować się pracą z plikami CSV.
+CSV (ang. Comma-Separated Values) to popularny format danych używany w biznesie i analizie danych. Podczas prac z danymi, często będziesz mieć do czynienia z plikami CSV, dlatego warto poznać sposób ich obsługi w języku typu TypeScript.
 
-## Jak to zrobić 
+## Jak to zrobić?
 
-Aby wczytać dane ze pliku CSV w TypeScript, musisz najpierw zainstalować odpowiedni pakiet. Możesz to zrobić za pomocą menedżera pakietów NPM za pomocą poniższej komendy:
+Tworzenie plików CSV za pomocą TypeScript jest proste i wygodne. Wystarczy, że wykorzystasz wbudowany moduł "fs" (ang. file system) oraz funkcję "writeFile" z biblioteki "csv-parse". Poniżej przedstawiamy przykładowy kod i oczekiwany output:
 
 ```TypeScript
-npm install csv-parser
+import { writeFile } from 'fs';
+import { stringify } from 'csv-parse';
+
+const data = [
+  { id: 1, name: 'John', email: 'john@example.com' },
+  { id: 2, name: 'Jane', email: 'jane@example.com' },
+  { id: 3, name: 'Jack', email: 'jack@example.com' }
+];
+
+writeFile('users.csv', stringify(data), (err) => {
+  if (err) throw err;
+  console.log('CSV file created successfully!');
+});
 ```
 
-Następnie w pliku z kodem TypeScript, musisz zaimportować pakiet oraz moduł `fs`, który pozwoli Ci czytać pliki. Kod może wyglądać następująco:
+Po uruchomieniu powyższego kodu, w katalogu pojawi się plik "users.csv" z zawartością:
+
+```
+id,name,email
+1,John,john@example.com
+2,Jane,jane@example.com
+3,Jack,jack@example.com
+```
+
+Jeśli chcesz odczytać plik CSV, możesz użyć funkcji "parse" z biblioteki "csv-parse":
 
 ```TypeScript
-import { createReadStream } from "fs";
-import csvParser from "csv-parser";
+import { readFile } from 'fs';
+import { parse } from 'csv-parse';
 
-createReadStream("dane.csv")
-  .pipe(csvParser())
-  .on("data", (row) => {
-    console.log(row); //Przetworzone dane
-  })
-  .on("end", () => {
-    console.log("Wczytano plik CSV");
+readFile('users.csv', (err, data) => {
+  if (err) throw err;
+  parse(data, (err, output) => {
+    if (err) throw err;
+    console.log(output);
   });
+});
 ```
 
-Powyższy kod wczytuje plik `dane.csv` i przetwarza go w formie obiektów JavaScript. Możesz teraz w łatwy sposób odwołać się do odpowiednich wartości i wykorzystać je w swoim programie.
+Powinniśmy otrzymać następujący output:
 
-## Deep Dive 
+```
+[
+  ['id', 'name', 'email'],
+  ['1', 'John', 'john@example.com'],
+  ['2', 'Jane', 'jane@example.com'],
+  ['3', 'Jack', 'jack@example.com']
+]
+```
 
-Kiedy już opanujesz podstawy wczytywania danych z plików CSV, możesz zabawić się bardziej zaawansowanymi funkcjami. Na przykład, możesz użyć pakietu `fast-csv`, który pozwala na szybsze wczytywanie dużych plików lub modułu `papaparse`, który radzi sobie z różnymi rodzajami separatorów (np. średnikami zamiast przecinków).
+## Deep Dive
 
-Możesz również skorzystać z różnych opcji dostępnych w pakiecie `csv-parser`, takich jak ignorowanie pierwszego wiersza nagłówkowego lub konfigurowanie separatora i cudzysłowów.
+Istnieje wiele bibliotek, które ułatwiają pracę z plikami CSV w języku TypeScript. Jedną z nich jest "fast-csv", która oferuje wydajne rozwiązania dla odczytu i zapisu plików CSV. Możesz również wykorzystać modularny framework "NestJS", który ma wbudowane narzędzia do obsługi plików CSV.
 
-## Zobacz również 
+Innym ważnym aspektem pracy z CSV jest obsługa błędów. W przypadku niepoprawnego formatu danych, możesz użyć funkcji "onError" z biblioteki "csv-parse" lub zaimplementować własny mechanizm obsługi błędów.
 
-- Oficjalna dokumentacja pakietu csv-parser: https://www.npmjs.com/package/csv-parser
-- Przykładowe wczytywanie CSV za pomocą pakietu fast-csv: https://www.npmjs.com/package/fast-csv
-- Poradnik na temat manipulowania danymi CSV z wykorzystaniem modułu papaparse: https://www.digitalocean.com/community/tutorials/working-with-csv-data-in-node-js
+## Zobacz też
+
+- [Dokumentacja Node.js o pracy z plikami CSV](https://nodejs.org/api/fs.html#fs_file_system)
+- [NestJS: Working with CSV files](https://docs.nestjs.com/techniques/file-upload#csv-files)

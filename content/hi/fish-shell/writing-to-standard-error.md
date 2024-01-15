@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: स्टैंडर्ड त्रुटि पर लेखन"
-simple_title:         "स्टैंडर्ड त्रुटि पर लेखन"
+title:                "स्टैंडर्ड एरर में लिखना"
+html_title:           "Fish Shell: स्टैंडर्ड एरर में लिखना"
+simple_title:         "स्टैंडर्ड एरर में लिखना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,17 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-व्यापार, उपक्रम, या सॉफ़्टवेयर विकास में, आपको अक्सर डेवलपमेंट प्रोसेस के दौरान दिख सकता है कि कुछ गैर-संचित या नया समस्या आ रही है। ऐसे समय में, आपको अपने कोड का डीबगिंग करने के लिए एक अतिरिक्त उपकरण की आवश्यकता होती है। इसमें रीडर्स, आप फिश शैल टर्मिनल को उपयोग करके स्टैंडर्ड एरर में लाखों लाइनों को लिख सकते हैं।
+## Kyun
 
-## क्यों
+Dosto, kya aap Fish Shell ka istemal karte hai? Agar haan, toh aapko pata hoga ki yeh ek bahut hi powerful aur customizable shell hai. Par kya aapko pata hai ki aap Fish Shell mein standard error mein bhi likh sakte hai? Haan, aapne sahi suna! Is article mein hum aapko batayenge ki kaise aap standard error mein likh kar apne code ko aur bhi efficient bana sakte hai. Toh chaliye shuru karte hai!
 
-कभी-कभी कोडिंग के दौरान आप गलतियों या समस्याओं का सामना करते हैं जो स्टैंडर्ड आउटपुट में लिखा जाना तो सरल है, लेकिन जो गैर-संचित या असामान्य हैं वे स्टैंडर्ड एरर में लिखे जाने के कारण आपको इन्हें ढूंढना अधिक मुश्किल हो सकता है। इसलिए स्टैंडर्ड एरर में लिखना एक प्रभावी तरीका है अपनी गम्भीर गलतियों को खोजने का। यह आपको आसानी से असामान्य समस्याओं को खोजने और शुद्धिकरण करने में मदद कर सकता है।
+## Kaise Karein
 
-## कैसे करें
+Jaise ki hum sab jante hai ki Shell commands ko execute karne ke baad hume ek output milta hai, jo ki humare Terminal par likha hua hota hai. Lekin kabhi kabhi hume kuch errors bhi milte hai, jaise ki "Command not found" ya fir "Invalid argument". In errors ko hum standard error kehte hai. Agar hum chahe toh hum in errors ko apne code se alag kar sakte hai. Iske liye hum standard error mein likh sakte hai.
 
 ```Fish Shell
-# यहां आपको इस्तेमाल करने वाले कमांड को दिखाएंगे
-echo "यह एक उदाहरण है" >&2
+echo "Hello World!" >&2
+
+Output: Hello World!
 ```
 
-जैसा कि आप देख सकते हैं, आप लाखों कंटेन्ट को आपसी संवाद में स्टैंडर्ड एरर में आसानी से लिख सकते हैं। इस प्रक्रिया में, आपको स्टैंडर्ड आउटपुट को बंद कर देना होगा जो आपके अपने कंप्यूटर के टर्म
+Is example mein humne `echo` command ko use kiya hai jiske output ko standard error mein likhne ka instruction hai `>&2`. Is tarah se hum apne code mein multiple commands ke beech errors ko identify kar sakte hai.
+
+## Gehra Sach
+
+Standard error mein likhne ki madad se hum apne code ko aur bhi organized aur readable bana sakte hai. Isse hume errors ko identify karne aur fix karne mein aasani hoti hai. Aur saath hi saath, hum apne code ko debug karne mein bhi aasani pa sakte hai.
+
+Iske alawa, standard error mein likhne se hume errors ki sankhya aur details ko track karne ka bhi option milta hai. Isse humare code ko optimize karne mein madad milti hai.
+
+Iske alawa, upyog karne ka ek aur fayda hai ki hum apne code mein koi bhi changes or updates kar sakte hai aur firse apne errors ka track rakh sakte hai. Isse hum apne code ko robust bana sakte hai.
+
+Toh dosto, is article mein humne dekha ki kaise hum standard error mein likh kar apne code ko aur bhi efficient bana sakte hai. Agar aap Fish Shell ka istemal nahi karte hai, toh yeh ek accha mauka hai usse try karne ka! Hum umeeed karte hai ki yeh article aapke liye helpful hoga. Dhanyavaad!
+
+## Dekhein Bhi
+
+- [Official Fish Shell website](https://fishshell.com/)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [List of Fish Shell functions and commands](https://fishshell.com/docs/current/commands.html)

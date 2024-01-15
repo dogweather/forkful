@@ -1,6 +1,7 @@
 ---
-title:                "Go: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analisi di html"
+html_title:           "Go: Analisi di html"
+simple_title:         "Analisi di html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,67 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Il parsing HTML è essenziale per estrarre e manipolare dati da pagine web. È particolarmente utile per chiunque lavori nel campo dello sviluppo web, della data analysis o del web scraping.
+Se stai sviluppando un sito web o un'applicazione che richiede di estrarre informazioni da una pagina HTML, molto probabilmente dovrai utilizzare il parsing HTML. In breve, il parsing HTML ti permette di leggere e analizzare il contenuto di una pagina HTML in modo strutturato, rendendo più facile l'estrazione di dati specifici.
 
-# Come Fare
+## Come fare
 
-Per analizzare e interpretare i dati HTML di una pagina web, è necessario utilizzare un linguaggio di programmazione come Go. Ecco un esempio di codice Go per il parsing di un elemento HTML:
+Per eseguire il parsing di una pagina HTML in Go, puoi utilizzare la libreria "html" incorporata nel linguaggio. Ecco un esempio di codice per estrarre il titolo di una pagina HTML e stamparlo a schermo:
 
-```
+```Go
 package main
 
 import (
-    "fmt"
-    "strings"
-
-    "golang.org/x/net/html"
+	"fmt"
+	"net/http"
+	"golang.org/x/net/html"
 )
 
 func main() {
-    const htmlString = `<div class="post">
-    <h1>Go Programming Blog</h1>
-    <p>Hello, this is a blog post written in Go.</p>
-    </div>`
+	resp, err := http.Get("https://www.example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
 
-    doc, err := html.Parse(strings.NewReader(htmlString))
-    if err != nil {
-        panic(err)
-    }
+	doc, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
 
-    var traverseNode func(*html.Node)
-    traverseNode = func(n *html.Node) {
-        if n.Type == html.ElementNode && n.Data == "p" {
-            fmt.Println(n.FirstChild.Data)
-        }
-        for c := n.FirstChild; c != nil; c = c.NextSibling {
-            traverseNode(c)
-        }
-    }
+	var title string
+	var findTitle func(*html.Node)
+	findTitle = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "title" {
+			title = n.FirstChild.Data
+			return
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			findTitle(c)
+		}
+	}
 
-    traverseNode(doc)
+	findTitle(doc)
+	fmt.Println(title) // Stampa il titolo della pagina
 }
 ```
 
-Questa breve porzione di codice estrae il contenuto di un elemento "p" all'interno di un documento HTML e lo stampa a schermo. L'output sarà:
+L'esempio utilizza la funzione http.Get() per ottenere il contenuto della pagina e poi lo passa alla funzione html.Parse() per analizzarlo. Utilizzando la funzione ricorsiva findTitle(), vengono cercati tutti i nodi HTML con il tag "title" e il loro contenuto viene assegnato alla variabile "title". Infine, il titolo viene stampato a schermo.
 
-```
-Hello, this is a blog post written in Go.
-```
+## Approfondimento
 
-# Approfondimento
+Oltre al semplice parsing di tag HTML, la libreria "html" di Go permette anche di manipolare i nodi della pagina e ottenere attributi specifici. Inoltre, puoi combinare il parsing HTML con la libreria "net/http" per scaricare in modo automatico il contenuto di una pagina web.
 
-Il parsing HTML coinvolge due processi fondamentali: analisi e interpretazione. La prima consiste nel leggere e analizzare la stringa HTML, mentre la seconda comporta l'interpretazione dei dati in base alla struttura del documento HTML.
+Vale la pena notare che la libreria "html" non supporta il parsing di pagine HTML incomplete o non valide. Pertanto, è importante assicurarsi che la pagina sia correttamente formattata prima di tentare il parsing.
 
-Alcuni punti importanti da tenere a mente durante il parsing sono:
+## Vedi anche
 
-- Gli elementi HTML possono essere nidificati, quindi è importante gestire tutti i livelli di annidamento durante l'analisi dei dati.
-- I tag HTML possono avere attributi che contengono ulteriori informazioni sui dati. È importante saper gestire e riconoscere questi attributi durante l'interpretazione dei dati.
-- È necessario prestare particolare attenzione alle eccezioni e agli errori durante il processo di parsing, in modo da poter gestire correttamente eventuali dati non conformi o mancanti.
-
-# Vedi Anche
-
-- [Documentazione ufficiale di Go sul parsing HTML](https://golang.org/pkg/net/html/)
-- [Tutorial su come utilizzare il pacchetto `net/html` per il parsing HTML in Go](https://tutorialedge.net/golang/parsing-html-with-go/)
-- [Discussione su Stack Overflow sull'utilizzo di Go per il web scraping](https://stackoverflow.com/questions/52838177/using-go-for-web-scraping)
+- [Documentazione ufficiale su Go per il parsing HTML](https://golang.org/pkg/html/)
+- [Tutorial di parsing HTML in Go su Medium](https://medium.com/@zeebo/parsing-html-in-golang-5581e93711cf)
+- [Esempio di parsing HTML in Go su GitHub](https://github.com/zeebo/html-example)

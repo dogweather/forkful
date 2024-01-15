@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Rust: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,52 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Rust?
+## Por que escrever testes é importante?
 
-Escrever testes em Rust é uma prática importante que pode trazer muitos benefícios para o desenvolvedor e para o projeto em si. Testes garantem a qualidade e funcionalidade do código, reduzem a ocorrência de bugs e permitem uma manutenção mais fácil e rápida. Além disso, escrever testes pode acelerar o processo de desenvolvimento, já que o código é testado automaticamente.
+Escrever testes pode parecer uma tarefa tediosa e desnecessária para alguns, mas na verdade é uma parte crucial no processo de desenvolvimento de software. Além de garantir que o código funcione corretamente, os testes também ajudam a identificar e corrigir possíveis bugs antes que eles cheguem aos usuários finais.
 
 ## Como escrever testes em Rust
 
-Para escrever testes em Rust, é preciso utilizar a biblioteca de testes padrão do Rust, a "std::test". Esta biblioteca fornece uma série de macros que permitem definir funções de teste, benchmarks e asserções.
-
-### Exemplos de código:
+Escrever testes em Rust é uma tarefa simples e direta. Primeiro, é importante criar uma função de teste marcada com o atributo `#[test]`, seguida por uma chamada à função `assert!` que verifica se o resultado esperado é igual ao resultado real. Aqui está um exemplo de uma função de teste simples que verifica se dois números são iguais:
 
 ```Rust
-// Importando a biblioteca de testes
-use std::test;
-
-// Definindo uma função de teste
 #[test]
-fn test_addition() {
-    let result = add(2, 3);
-    assert_eq!(result, 5);
-}
-
-// Definindo uma função de benchmark
-#[bench]
-fn bench_addition(b: &mut Bencher) {
-    b.iter(|| add(2, 3));
+fn test_equality() {
+    assert!(10 == 5 + 5);
 }
 ```
 
-A saída do teste seria:
+Ao rodar o comando `cargo test`, você verá uma saída indicando se o teste foi aprovado ou falhou. Se você quiser testar uma função com argumentos, basta passá-los dentro dos parênteses da função `assert!`.
 
-```
-running 2 tests
-test test_addition ... ok
-test bench_addition ... bench:          10 ns/iter (+/- 2)
+## Aprofundando nos testes em Rust
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
-
-## Mergulho profundo
-
-Para escrever testes efetivos em Rust, é importante entender os conceitos de assertivas (assertions) e testes automatizados. Assertivas são declarações que devem ser verdadeiras para o teste passar. Já os testes automatizados são codificados para serem executados automaticamente, o que torna a tarefa de testar o código mais fácil e precisa.
-
-Além disso, é importante saber como estruturar os testes de forma organizada e como utilizar as diferentes macros da biblioteca std::test, como a `assert!()`, `assert_eq!()` e `assert_ne!()`.
+Existem várias ferramentas disponíveis em Rust para escrever testes mais avançados, como o módulo `std::assert` que oferece mais opções de checagem de valores. Também é possível criar testes que verifiquem se uma função específica retorna um erro esperado. Para isso, basta utilizar o atributo `#[should_panic]` na função de teste. Além disso, é possível criar testes estruturados em diferentes módulos e executá-los em paralelo para aumentar a eficiência dos testes.
 
 ## Veja também
-
-- [Documentação oficial de testes em Rust](https://doc.rust-lang.org/std/test/)
-- [Artigo sobre testes em Rust no blog da Rust Brasil](https://www.rust-lang-br.org/2019/04/24/testes-em-rust.html)
-- [Vídeo sobre testes em Rust no canal do Rust Brazil](https://youtu.be/KlLwB-w2YyQ)
+- [Documentação oficial do Rust sobre testes](https://doc.rust-lang.org/book/testing.html)
+- [Exemplos práticos de testes em Rust](https://www.rust-lang.org/learn/get-started)
+- [Artigo sobre a importância dos testes em desenvolvimento de software](https://medium.com/@chrisng93/the-importance-of-testing-in-software-development-290589c1c2d6)

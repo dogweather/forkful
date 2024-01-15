@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 문자열 추출하기"
-simple_title:         "문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Elixir: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+때로는 문자열에서 일부분을 추출하여 작업하는 것이 필요한 경우가 있습니다. 이런 경우에는 Elixir의 서브스트링 추출 기능이 매우 유용합니다.
 
-자바에서 Elixir로 전환하면서 문자열 추출에 대한 방법이 달라졌음을 알게 되었습니다. 이를 알기 전까지는 일반적인 방법만을 알고 있었기 때문에, Elixir에서 제공하는 다양하고 강력한 문자열 추출 기능에 대해 알아보고자 합니다.
+## 어떻게
+서브스트링을 추출하기 위해서는 두 가지 방법이 있습니다. 첫 번째 방법은 `String.slice/2` 함수를 사용하는 것입니다. 이 함수는 두 개의 인수를 받아 첫 번째 인수에서 두 번째 인수로 지정한 문자 사이의 부분 문자열을 추출합니다. 예를 들어:
 
-## 하나의 방법
-
-일반적인 문자열 추출 방법은 다음과 같습니다.
-
-```Elixir
-name = "홍길동"
-substring = String.slice(name, 0, 2)
-IO.puts(substring)
+```
+Elixir iex> String.slice("안녕하세요", 0, 2)
+"안녕"
 ```
 
-출력 결과는 "홍길"이 됩니다. 하지만 Elixir에서는 더욱 간단하게 문자열을 추출할 수 있습니다.
+두 번째 방법은 `String.split/3` 함수를 사용하는 것입니다. 이 함수는 세 개의 인수를 받아 첫 번째 인수에서 두 번째 인수로 지정한 패턴을 기준으로 부분 문자열을 나누고, 세 번째 인수는 반환된 문자열 배열에서 무시할 공백 문자의 수를 나타냅니다. 예를 들어:
 
-```Elixir
-name = "홍길동"
-substring = name[0..1]
-IO.puts(substring)
+```
+Elixir iex> String.split("Hello, world!", ",", trim: true)
+["Hello", "world!"]
 ```
 
-위의 코드를 실행하면 동일한 결과인 "홍길"이 나옵니다. 이 방법은 직관적이고 쉽게 이해할 수 있기 때문에 추천합니다.
+## 딥 다이브
+서브스트링 추출은 다양한 방식으로 활용될 수 있습니다. 예를 들어, `String.trim/1` 함수를 사용하여 문자열의 앞뒤 공백을 제거하고 `String.length/1` 함수를 사용하여 문자열의 길이를 확인한 후, 필요한 부분만 추출할 수 있습니다. 또는 `Regex` 모듈을 사용하여 정규식을 이용해 문자열을 추출할 수도 있습니다. 자세한 내용은 Elixir 문서나 인터넷 자료를 참고하세요.
 
-## 깊이 파보기
-
-Elixir에서는 다양한 방법으로 문자열을 추출할 수 있습니다. 위에서 소개한 `[0..1]` 외에도 `String.substring/3`, `String.substring/2`, `String.slice/2`, `String.split/2` 등의 함수를 사용할 수 있습니다. 각 함수의 기능과 사용법을 익히면 더욱 효율적인 문자열 추출이 가능해집니다.
-
-## 관련 링크
-
-- [Elixir 공식 문서](https://hexdocs.pm/elixir/String.html)
-- [Elixir 문자열 추출 예제](https://elixir-lang.org/getting-started/modules#string-slice-or-substring)
-- [Elixir 문자열 함수들과 사용 예제](https://elixir-lang.org/crash-course.html#string-manipulation)
-- [Elixir 문자열 추출 실습](https://elixirschool.com/lessons/basics/string-manipulation/)
+## 더 알아보기
+* [Elixir 문서 - String 모듈](https://hexdocs.pm/elixir/String.html)
+* [Elixir 문서 - Regex 모듈](https://hexdocs.pm/elixir/Regex.html)
+* [블로그 - Elixir에서 문자열 다루기](https://blog.process-one.net/elixir-string-operations/)

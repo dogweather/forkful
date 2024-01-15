@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Elixir: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,26 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos olet aloittelemassa Elixir-ohjelmointia tai haluat oppia uutta kielen ominaisuuksista, yksi hyödyllisimmistä asioista, joita voit tehdä, on oppia löytämään merkkijonon pituus. Tämä taito on välttämätön monissa ohjelmointitehtävissä, ja sen oppiminen auttaa sinua ymmärtämään paremmin Elixirin toimintatapaa.
+On monia tilanteita, joissa tarvitsemme tietää merkkijonon pituuden, kuten käsitellessämme käyttäjän syöttämää tietoa tai tarkistaessamme tiedostonimen oikeellisuuden. Elixirin avulla merkkijonon pituuden löytäminen on nopeaa ja helppoa.
 
-## Kuinka
+## Miten
 
- ```Elixir
-string = "Hei, tämä on esimerkkilause."
-length = String.length(string)
-IO.puts "Merkkijonon pituus on: #{length}"
+```elixir
+string = "Tervetuloa Elixirin maailmaan!"
+
+# Käytä String.length-funktiota selvittääksesi merkkijonon pituuden
+String.length(string) # palauttaa 27
 ```
 
-Tässä esimerkissä luomme muuttujan nimeltä "string" ja annamme sille merkkijonon arvon. Sitten käytämme "String.length" -funktiota löytääksemme merkkijonon pituuden. Viimeisessä rivillä tulostamme pituuden käyttäen "IO.puts" -funktiota. Tämän koodin suorittamisen pitäisi tulostaa seuraava viesti: "Merkkijonon pituus on: 27".
+Kun käytät `String.length`-funktiota, Elixir luo uuden merkkijonon ja laskee sen merkkien määrän. Voit myös käyttää `len`-funktiota, joka löytyy `String.Chars`-moduulista.
 
-## Syvempää sukellusta
+```elixir
+import String.Chars
 
-Merkkijonojen käsittely on tärkeä osa Elixir-ohjelmointia, ja löytämällä merkkijonon pituuden voit tehdä useita muita toimintoja, kuten esimerkiksi leikata tai yhdistää merkkijonoja. Tämä tapahtuu osittain siksi, että Elixir käsittelee merkkijonoja tavalla, joka poikkeaa monista muista kielistä. Esimerkiksi merkkijonoja ei tallenneta taulukoissa, mikä tarkoittaa, että ne eivät voi olla "yllekkäisiä" eli sisältää toisia merkkijonoja sisällään.
+string = "Hei maailma!"
 
-Lisäksi, Elixirin "String" -moduuli tarjoaa paljon muitakin hyödyllisiä toimintoja merkkijonojen käsittelyyn. Kannattaa tutustua näihin toimintoihin lisää oppiaksesi lisää tästä aiheesta.
+len(string) # palauttaa 11
+```
+
+## Syvällisempi sukellus
+
+Elixirin merkkijonofunktioissa on hyödyllisiä toimintoja merkkijonojen manipulointiin. Voit esimerkiksi käyttää `String.slice`-funktiota palauttaaksesi halutun merkkijonon osan käyttämällä indeksinumerointia.
+
+```elixir
+string = "Elixir on mahtava ohjelmointikieli!"
+
+String.slice(string, 7..13) # palauttaa "on maht"
+```
+
+Voit myös käyttää `String.replace`-funktiota vaihtaaksesi tietyn merkkijonon toiseen.
+
+```elixir
+string = "Elixir on hieno ohjelmointikieli!"
+String.replace(string, "hieno", "mahtava") # palauttaa "Elixir on mahtava ohjelmointikieli!"
+```
 
 ## Katso myös
 
-- [Elixi Tutorial – Merkkijonot](https://elixirschool.com/fi/lessons/basics/strings/)
-- [Totuudet ja tehtävinen – Merkkijonot](https://www.learnelixir.tv/s/string-basics/)
-- [Merkkijonot Elixirin virallisella dokumentaatiossa](https://hexdocs.pm/elixir/String.html)
+- [Elixirin virallinen dokumentaatio merkkijonofunktioista](https://hexdocs.pm/elixir/String.html)
+- [Elixirin merkkijonot: yleisimpiä kysymyksiä ja vastauksia](https://elixir-lang.org/getting-started/string-patterns.html)

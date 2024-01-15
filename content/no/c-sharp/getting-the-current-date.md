@@ -1,6 +1,7 @@
 ---
-title:                "C#: Hente nåværende dato"
-simple_title:         "Hente nåværende dato"
+title:                "Å få gjeldende dato"
+html_title:           "C#: Å få gjeldende dato"
+simple_title:         "Å få gjeldende dato"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Ved å få den nåværende datoen i et C# program, kan du vise brukeren nøyaktig tid og dato, eller bruke det til å planlegge fremtidige hendelser.
+Hvorfor skulle noen være interessert i å få den nåværende datoen?
 
-## Hvordan 
-Det er flere måter å få den nåværende datoen i C#. En enkel måte er å bruke DateTime.Now funksjonen. Her er et eksempel på hvordan du kan implementere dette:
+Det er mange grunner til at noen ville ønske å få den nåværende datoen i sine programmer. Det kan være for å vise datoen til brukeren, for å registrere når noe ble gjort eller for å gjøre beregninger basert på datoen. Med det å vite hvordan man kan få den nåværende datoen, vil du kunne forbedre funksjonaliteten og nøyaktigheten til programmene dine.
 
-```C#
-DateTime now = DateTime.Now;
-Console.WriteLine("Dagens dato er: " + now);
-```
-
-Denne koden vil gi deg følgende utgang:
-
-```
-Dagens dato er: 02.10.2021 12:30:00
-```
-
-Du kan også formatere datoen på forskjellige måter ved å bruke DateToString-funksjonen. Her er et eksempel på hvordan det kan se ut:
+## Slik gjør du det
+Du kan få den nåværende datoen i C# ved å bruke klassen DateTime. Du kan opprette et nytt DateTime-objekt og bruke metoden Now() for å få den nåværende datoen og klokkeslettet. La oss se på et eksempel:
 
 ```C#
-DateTime now = DateTime.Now;
-string formattedDate = now.ToString("dd/MM/yyyy");
-Console.WriteLine("Dagens dato er: " + formattedDate);
+DateTime nåværendeDato = DateTime.Now;
+Console.WriteLine("Den nåværende datoen er: " + nåværendeDato);
 ```
-
-Dette vil gi deg følgende utgang:
+Dette vil gi følgende output:
 
 ```
-Dagens dato er: 02/10/2021
+Den nåværende datoen er: 09.06.2021 13:24:18
+```
+Du kan også bruke metoder som ToString() for å formatere utskriften på en spesifikk måte. For eksempel, hvis du bare ønsker å få ut datoen uten klokkeslettet, kan du bruke formatet "dd.MM.yyyy":
+
+```C#
+DateTime nåværendeDato = DateTime.Now;
+Console.WriteLine("Den nåværende datoen er: " + nåværendeDato.ToString("dd.MM.yyyy"));
+```
+Dette vil gi følgende output:
+
+```
+Den nåværende datoen er: 09.06.2021
 ```
 
-## Deep Dive
-DateTime structen i C# gir mange nyttige metoder og egenskaper for å få den nåværende datoen. For eksempel kan du bruke DateTime.Today for å få ut bare dagens dato uten tid. Du kan også bruke DateTime.Parse for å konvertere en streng til en DateTime-objekt.
+## Dypdykk
+DateTime-klassen inneholder også andre nyttige metoder for å utføre operasjoner på datoen, som for eksempel å legge til eller trekke fra dager, timer eller minutter. Du kan også bruke DateTime.TryParse() for å prøve å konvertere en streng til en DateTime-verdi.
 
-En annen viktig ting å huske på er at DateTime er avhengig av systemets klokkeslett. Hvis systemklokken endres, vil også den nåværende datoen endres. Det er derfor viktig å oppdatere systemklokken regelmessig for å få nøyaktige resultater.
+Det er viktig å merke seg at den nåværende datoen som returneres av metoden Now(), er basert på datoen og klokkeslettet på datamaskinen din. Derfor vil den være forskjellig for forskjellige brukere eller på forskjellige datamaskiner. Hvis du ønsker å få den nåværende datoen basert på en spesifikk tidssone, kan du bruke klassen TimeZone og dens metoder.
 
 ## Se også
-- [DateTime Struct Dokumentasjon] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [DateTime metoder og egenskaper] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0#methods)
-- [DateTime.Now Dokumentasjon] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0)
-- [DateTime.ToString Metode Dokumentasjon] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
+Her er noen nyttige ressurser for å lære mer om å få den nåværende datoen i C#:
+
+- [DateTime-klasse (C# programmeringsguide)](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime?view=net-5.0)
+- [DateTime.Now Metode (System) (C# programmeringsguide)](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.now?view=net-5.0)
+- [DateTime.TryParse Metode (System) (C# programmeringsguide)](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.tryparse?view=net-5.0)
+- [TimeZone-klasse (C# programmeringsguide)](https://docs.microsoft.com/nb-no/dotnet/api/system.timezone?view=net-5.0)

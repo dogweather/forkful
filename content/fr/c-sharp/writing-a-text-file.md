@@ -1,6 +1,7 @@
 ---
-title:                "C#: Écriture d'un fichier texte"
-simple_title:         "Écriture d'un fichier texte"
+title:                "Écrire un fichier texte"
+html_title:           "C#: Écrire un fichier texte"
+simple_title:         "Écrire un fichier texte"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,68 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte?
+## Pourquoi
 
-Les fichiers texte sont utilisés dans de nombreux programmes informatiques pour stocker des données. En écrivant un fichier texte, vous pouvez créer un enregistrement permanent de vos données ou de vos résultats de programme pour une utilisation future. Cela peut être particulièrement utile pour la sauvegarde ou le partage de données importantes.
+Écrire un fichier texte peut sembler une tâche simple et banale, mais c'est en réalité une compétence fondamentale pour tout programmeur en C#. Les fichiers texte sont essentiels pour stocker et manipuler des données, et ils offrent une solution pratique pour communiquer avec d'autres programmes et utilisateurs.
 
-## Comment écrire un fichier texte en C#?
+## Comment faire
 
-L'écriture d'un fichier texte en C# est assez simple grâce à la classe `StreamWriter`. Tout d'abord, vous devrez ajouter `using System.IO;` en haut de votre code pour utiliser cette classe. Ensuite, vous devrez déclarer une instance de `StreamWriter` en utilisant le chemin de votre fichier texte comme paramètre. Enfin, vous pouvez écrire du contenu dans le fichier texte à l'aide de la méthode `Write` ou `WriteLine`.
+Pour écrire un fichier texte en C#, il existe plusieurs étapes à suivre :
 
-Voici un exemple de code en C# pour écrire un fichier texte:
+1. Définir un chemin d'accès et un nom de fichier pour votre fichier texte. Cela peut être un chemin absolu (comme "C:\monFichier.txt") ou relatif (comme "monDossier\monFichier.txt").
+2. Créer un objet de type StreamWriter en utilisant le chemin d'accès et le nom de fichier que vous avez définis.
+3. Utiliser la méthode StreamWriter.Write ou StreamWriter.WriteLine pour écrire le contenu de votre fichier texte dans l'objet StreamWriter.
+4. N'oubliez pas de toujours fermer votre objet StreamWriter en utilisant la méthode Close pour enregistrer les modifications apportées à votre fichier texte.
 
-```C#
-using System;
-using System.IO;
-
-class Program
-{
-  static void Main()
-  {
-    //Déclaration de l'instance StreamWriter
-    StreamWriter sw = new StreamWriter("monTexte.txt");
-
-    //Ecriture de contenu dans le fichier texte
-    sw.WriteLine("Bonjour!");
-    sw.WriteLine("Voici un exemple de fichier texte en C#.");
-    sw.Close(); //N'oubliez pas de fermer le StreamWriter après l'utilisation
-    
-    //Vérification du contenu du fichier texte en utilisant un StreamReader
-    StreamReader sr = new StreamReader("monTexte.txt");
-    Console.WriteLine(sr.ReadToEnd()); //Ecrit le contenu du fichier dans la console
-    sr.Close(); //Ferme le StreamReader après utilisation
-  }
-}
-```
-
-Dans cet exemple, nous avons créé un fichier texte appelé "monTexte.txt" et avons écrit deux lignes de contenu à l'aide de la méthode `WriteLine`. En utilisant un `StreamReader`, nous avons ensuite vérifié que notre texte a été correctement écrit dans le fichier en le lisant et en l'affichant dans la console.
-
-## Plongeon en profondeur: écrire et formater un fichier texte
-
-En plus d'écrire du contenu simple dans un fichier texte, vous pouvez également le formater en utilisant des caractères spéciaux et des méthodes de formatage de chaîne. La méthode `WriteLine` accepte un paramètre optionnel de formatage qui peut être utilisé pour contrôler l'alignement, la largeur et la précision de la valeur écrite.
-
-Voici un exemple de code qui utilise les méthodes de formatage pour écrire un tableau de valeurs dans un fichier texte:
+Un exemple de code pour écrire un fichier texte en utilisant ces étapes serait le suivant :
 
 ```C#
-using System;
-using System.IO;
+// Définition du chemin d'accès et du nom du fichier
+string chemin = "C:\monFichier.txt";
 
-class Program
-{
-  static void Main()
-  {
-    //Déclaration de l'instance StreamWriter
-    StreamWriter sw = new StreamWriter("monTableau.txt");
+// Création de l'objet StreamWriter
+StreamWriter writer = new StreamWriter(chemin);
 
-    //Ecriture d'un tableau de valeurs
-    sw.WriteLine("Nombre 1: {0,-10}Nombre 2: {1,-10}Nombre 3: {2,-10}", 10, 20.5, 30.789);
-    sw.Close(); //Ferme le StreamWriter après utilisation
-  }
-}
+// Utilisation des méthodes Write et WriteLine pour écrire du contenu dans l'objet StreamWriter
+writer.WriteLine("Ceci est une première ligne dans mon fichier texte.");
+writer.Write("Et voici une deuxième ligne.");
+
+// Fermeture de l'objet StreamWriter
+writer.Close();
 ```
 
-Dans cet exemple, nous utilisons les paramètres `{0,-10}`, `{1,-10}` et `{2,-10}` qui indiquent respectivement que la première, deuxième et troisième valeur écrite doivent être alignées à gauche avec une largeur de 10 caractères.
+Lorsque vous exécutez ce code, un fichier texte nommé "monFichier.txt" sera créé dans le chemin d'accès spécifié, et contiendra les deux lignes que vous avez écrites.
 
-## Voir aussi:
-- [Documentation Microsoft pour la classe StreamWriter en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.streamwriter?view=netcore-3.1)
-- [Tutoriel vidéo pour écrire et lire des fichiers texte en C#](https://www.youtube.com/watch?v=6-lPW191z8Y)
+## Plongée en profondeur
+
+En utilisant le concept de flux (stream) de données, l'objet StreamWriter vous permet d'écrire des données dans un fichier de manière séquentielle. Cela signifie que vous pouvez ajouter du contenu à votre fichier en utilisant plusieurs appels aux méthodes Write ou WriteLine, plutôt que d'avoir à tout écrire en une seule fois.
+
+En plus de cela, l'objet StreamWriter offre également des options pour spécifier l'encodage du fichier (UTF-8, ASCII, etc.), gérer les exceptions et vérifier l'état d'avancement de l'écriture dans le fichier.
+
+## Voir aussi
+
+- [Guide de référence Microsoft pour StreamWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
+- [Exemple de code pour écrire un fichier texte en C#](https://www.c-sharpcorner.com/code/3904/export-csv-excel-in-c-sharp-using-ado-net-data-reader) (article en anglais)
+- [Utilisation des fichiers texte en C#](https://www.ict.social/c-sharp/files-and-streams-in-csharp) (article en anglais)

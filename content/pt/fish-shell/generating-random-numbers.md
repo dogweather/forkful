@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Gerando números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "Fish Shell: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Algumas vezes, durante o desenvolvimento de um programa, podemos precisar gerar números aleatórios para simular dados ou para testar alguma funcionalidade específica. O uso de números aleatórios pode trazer mais diversidade e realismo aos nossos testes e também podem ser úteis em jogos e sorteios. A geração de números aleatórios é uma habilidade importante para programadores e a linguagem Fish Shell oferece uma maneira simples de incorporar essa funcionalidade em nossos scripts.
+## Por que gerar números aleatórios?
 
-## Como Fazer
-Para gerar números aleatórios em uma instância da Fish Shell, podemos utilizar o comando `math random` e especificar o intervalo entre os números desejados. Por exemplo, para gerar um número aleatório entre 1 e 10, podemos usar o seguinte código:
+É comum em muitos programas e scripts a necessidade de gerar números aleatórios para simular dados ou jogos, ou para realizar testes. A Fish Shell oferece recursos fáceis de usar para a geração de números aleatórios, tornando essa tarefa uma tarefa simples para os usuários.
 
-```Fish Shell
-set numero_aleatorio (math random 1 10)
-echo $numero_aleatorio
+## Como fazer
+
+Para gerar um número aleatório no Fish Shell, basta utilizar o comando `math random`. Por exemplo:
+
+```
+Fish Shell> math random
+0.472021
 ```
 
-Ao executar esse código, o terminal irá exibir um número aleatório entre 1 e 10, que pode ser diferente a cada vez que o script é executado. Podemos também usar variáveis no lugar dos números específicos:
+Você também pode especificar um intervalo de números para serem gerados. Por exemplo, se quisermos gerar um número entre 1 e 10, podemos usar o seguinte comando:
 
-```Fish Shell
-set minimo 50
-set maximo 100
-set numero_aleatorio (math random $minimo $maximo)
-echo $numero_aleatorio
+```
+Fish Shell> math random 1 10
+9
 ```
 
-Nessa situação, o número aleatório será gerado dentro do intervalo entre as variáveis minimo e maximo. Podemos até mesmo gerar números decimais, especificando um terceiro parâmetro com a quantidade de casas decimais desejadas:
+Podemos até mesmo gerar uma lista de números aleatórios usando o comando `math random-seed` juntamente com os comandos `for` e `echo`. Por exemplo:
 
-```Fish Shell
-set numero_decimal (math random 0 1 3)
-echo $numero_decimal
+```
+Fish Shell> math random-seed 1234
+Fish Shell> for i in (seq 5)
+             echo (math random)
+           end
+0.966079
+0.448646
+0.700563
+0.0292836
+0.670263
 ```
 
-O comando `math random` também possui outras opções, como a possibilidade de gerar mais de um número aleatório por vez e a geração de números a partir de uma semente específica.
+## Mergulho profundo
 
-## Mergulho Profundo
-Por trás dos bastidores, o comando `math random` utiliza o gerador de números pseudoaleatórios do C, que é um algoritmo matemático que produz uma sequência de números que parece ser aleatória, mas na verdade é determinística. Essa sequência é determinada por uma semente, que pode ser especificada ou gerada automaticamente pelo sistema. 
+A função `math random` utiliza o gerador de números pseudoaleatórios (PRNG) do seu sistema operacional, o que significa que os números gerados não são realmente aleatórios, mas sim determinados por uma fórmula matemática. Caso você precise de números verdadeiramente aleatórios, é possível utilizar ferramentas externas, como o comando `random` do pacote GNU coreutils, que gera números a partir de uma fonte de entropia no sistema.
 
-É importante lembrar que os números gerados dessa maneira não são totalmente aleatórios e não devem ser utilizados para fins criptográficos. Para isso, precisamos de um gerador de números verdadeiramente aleatórios, como um gerador de números quânticos.
+Além disso, é possível especificar o formato de saída dos números gerados pelo comando `math random`, utilizando a opção `-F` seguida de um formato válido do printf do C. Por exemplo, se quisermos gerar um número com no máximo 2 casas decimais, podemos utilizar o comando:
 
-## Veja Também
-- [Documentação do comando `math random`](https://fishshell.com/docs/current/commands.html#math)
-- [Gerador de Números Aleatórios Pseudoaleatórios](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- [Gerador de Números Quânticos](https://pt.wikipedia.org/wiki/Amplificador_de_vácuo)
+```
+Fish Shell> math random -F %.2f
+0.63
+```
+
+## Veja também
+
+- Documentação oficial da Fish Shell sobre o comando `math`: https://fishshell.com/docs/current/cmds/math.html
+- Perguntas frequentes sobre o comando `math` no Fish Shell Wiki: https://github.com/fish-shell/fish-shell/wiki/Math-FAQ 
+- Documentação do comando `random` do GNU coreutils: https://www.gnu.org/software/coreutils/manual/html_node/Any-Random-notes.html

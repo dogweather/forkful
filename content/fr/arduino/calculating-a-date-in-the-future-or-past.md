@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Calcul d'une date dans le futur ou le passé"
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "Arduino: Calcul d'une date dans le futur ou le passé"
 simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,62 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Pourquoi
 
-La programmation est une compétence essentielle en informatique qui peut être utile dans de nombreuses situations. Par exemple, savoir comment calculer une date dans le passé ou dans le futur peut être utile dans la programmation de projets tels que des calendriers, des rappels ou des tâches programmées.
+Saviez-vous qu'il est possible de calculer une date dans le futur ou dans le passé en utilisant votre Arduino ? Cela peut être très utile pour les projets impliquant des horaires spécifiques ou des délais précis. Dans cet article, nous allons vous montrer comment réaliser ce calcul en toute simplicité.
 
-# Comment faire
+## Comment faire
 
-Pour calculer une date dans le passé ou dans le futur, nous allons utiliser la bibliothèque Time d'Arduino. Cette bibliothèque contient des fonctions qui nous permettent de manipuler facilement les dates et les heures.
-
-Tout d'abord, nous devons initialiser notre heure et date actuelles. Nous pouvons utiliser la fonction `now()` pour obtenir la date et l'heure actuelles et stocker les valeurs dans des variables séparées. Par exemple :
+Pour calculer une date dans le futur ou dans le passé, nous devons d'abord déterminer la date de départ, puis spécifier le nombre de jours à ajouter ou soustraire. Voici un exemple de code pour calculer une date dans le futur en ajoutant 30 jours à la date actuelle :
 
 ```
-Arduino ...
+Arduino
+#include <Time.h> // inclure la bibliothèque Time
 
-time_t currentTime = now();
-int currentYear = year(currentTime);
-int currentMonth = month(currentTime);
-int currentDay = day(currentTime);
+void setup() {
+  // initialiser la connexion série
+  Serial.begin(9600);
+
+  // définir la date de départ au format YYYY,MM,DD
+  tmElements_t t;
+  t.Year = 2021;
+  t.Month = 11;
+  t.Day = 30;
+
+  // ajouter 30 jours à la date de départ
+  time_t futur = makeTime(t) + (30 * 24 * 60 * 60);
+
+  // convertir le temps en date
+  tmElements_t date = breakTime(futur);
+
+  // afficher la date calculée
+  Serial.print("La date dans 30 jours sera : ");
+  Serial.print(date.Year);
+  Serial.print("/");
+  Serial.print(date.Month);
+  Serial.print("/");
+  Serial.println(date.Day);
+}
+
+void loop() {
+  // ne rien faire ici
+}
 ```
 
-Ensuite, nous pouvons utiliser la fonction `makeTime()` pour créer un objet Time en spécifiant les valeurs de l'année, du mois, du jour, de l'heure, des minutes et des secondes que nous voulons pour notre date future ou passée. Par exemple, pour créer une date dans 5 jours à 9h30, nous pouvons écrire :
+Lorsque vous téléversez ce code sur votre Arduino et ouvrez le moniteur série, vous devriez voir la date calculée s'afficher : 2021/12/30.
+
+Vous pouvez également modifier le code pour calculer une date dans le passé en soustrayant un certain nombre de jours à la date de départ. Il suffit de changer la ligne pour ajouter le nombre de jours souhaité :
 
 ```
-Arduino ...
-
-int futureDay = currentDay + 5;
-int futureHour = 9;
-int futureMinute = 30;
-
-tmElements_t futureTime;
-futureTime.Year = currentYear;
-futureTime.Month = currentMonth;
-futureTime.Day = futureDay;
-futureTime.Hour = futureHour;
-futureTime.Minute = futureMinute;
-futureTime.Second = 0;
-
-time_t futureDateTime = makeTime(futureTime);
+// soustraire 30 jours à la date de départ
+time_t passe = makeTime(t) - (30 * 24 * 60 * 60);
 ```
 
-Enfin, nous pouvons utiliser la fonction `setTime()` pour régler l'heure et la date de notre Arduino au moment spécifié. Par exemple :
+## Plongée en profondeur
 
-```
-Arduino ...
+Le code présenté ici utilise la bibliothèque Time pour gérer les calculs de date et de temps sur votre Arduino. Cette bibliothèque est très utile car elle permet de convertir facilement des informations de date et de temps en valeurs numériques.
 
-setTime(futureDateTime);
-```
+Pour ajouter ou soustraire des jours, nous utilisons l'opérateur mathématique de multiplication (*) pour convertir le nombre de jours en secondes (1 jour = 24 heures = 24 * 60 minutes = 24 * 60 * 60 secondes). Nous pouvons ensuite utiliser la fonction makeTime() pour créer une valeur de temps à partir de notre structure de date créée avec les informations de la date de départ.
 
-Et voilà ! Maintenant, notre Arduino affichera la date et l'heure calculées.
+## Voir aussi
 
-# Plongeons plus en profondeur
+Si vous souhaitez en savoir plus sur la manipulation des dates et du temps avec votre Arduino, voici quelques liens utiles :
 
-Il est également possible de calculer des dates dans le passé ou le futur en ajoutant ou en soustrayant des secondes, des minutes, des heures, des jours, des semaines ou des mois à notre heure et date actuelles. Pour cela, nous pouvons utiliser des fonctions telles que `second()`, `minute()`, `hour()`, `day()`, `month()` et `year()` pour obtenir les valeurs de notre date actuelle, puis utiliser les opérateurs arithmétiques tels que `+` et `-` pour modifier ces valeurs.
+- [Documentation officielle de la bibliothèque Time](https://playground.arduino.cc/Code/Time/)
+- [Tutoriel sur la gestion du temps avec Arduino](https://randomnerdtutorials.com/guide-for-real-time-clock-rtc/)
+- [Utiliser une horloge temps réel (RTC) avec votre Arduino](https://learn.adafruit.com/adafruit-ds1307-real-time-clock-breakout-board-kit/overview)
 
-De plus, la bibliothèque Time d'Arduino offre également des fonctions pratiques pour comparer des dates, vérifier si une année est bissextile et bien plus encore. Pour en savoir plus sur ces fonctions, vous pouvez consulter la documentation officielle de la bibliothèque.
-
-# Voir aussi
-
-- Documentation de la bibliothèque Time d'Arduino : https://www.arduino.cc/en/Reference/Time
-- Tutoriel sur la gestion du temps avec Arduino : https://create.arduino.cc/projecthub/Arduino_Genuino/using-the-time-library-af8a7c
-
-Merci d'avoir lu cet article ! Nous espérons que cela vous a été utile dans vos projets de programmation Arduino. N'hésitez pas à explorer davantage la bibliothèque Time et à expérimenter avec différents calculs de date. Bonne programmation !
+Maintenant que vous savez comment calculer une date dans le futur ou dans le passé avec votre Arduino, vous pouvez l'utiliser dans vos projets pour ajouter plus de précision et de flexibilité à vos horaires. À vous de jouer !

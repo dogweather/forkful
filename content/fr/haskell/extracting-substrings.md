@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Haskell: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Dans la programmation Haskell, il est souvent nécessaire de travailler avec des chaînes de caractères. L'extraction de sous-chaînes à partir d'une chaîne existante peut être utile pour effectuer des manipulations ou des vérifications spécifiques. Dans cet article, nous allons explorer pourquoi et comment extraire des sous-chaînes en Haskell.
+Extraction de sous-chaînes de caractères: Pourquoi le faire?
 
-## Comment faire
+Si vous avez déjà eu à manipuler des chaînes de caractères dans vos programmes, vous avez probablement rencontré des situations où vous avez besoin d'extraire une partie spécifique de la chaîne. Peut-être que vous voulez obtenir un nom de fichier à partir d'un chemin complet ou extraire un numéro de téléphone d'un texte. Dans ces cas, avoir une méthode pour extraire facilement des sous-chaînes peut être très utile.
 
-Nous pouvons utiliser la fonction `take` pour extraire une sous-chaîne à partir d'une chaîne en spécifiant le nombre de caractères à extraire. Par exemple :
+# Comment faire
 
-```Haskell
-let str = "Bonjour le monde"
-take 7 str -- renvoie "Bonjour"
-```
-
-Nous pouvons également utiliser la fonction `drop` pour supprimer une partie d'une chaîne en spécifiant le nombre de caractères à supprimer. Par exemple :
+Pour extraire des sous-chaînes en Haskell, nous allons utiliser la fonction `take` et `drop` de la bibliothèque standard. `take` prend en entrée un nombre entier `n` et une liste et renvoie une sous-liste des `n` premiers éléments de la liste. De même, `drop` prend en entrée un nombre entier `n` et une liste et renvoie une sous-liste des éléments de la liste à partir de `n`. En combinant ces deux fonctions, nous pouvons extraire une partie spécifique d'une chaîne de caractères. Voici un exemple de code:
 
 ```Haskell
-let str = "Bonjour le monde"
-drop 7 str -- renvoie "le monde"
+let str = "Bonjour les programmeurs!"
+let nom = take 7 str -- renvoie "Bonjour"
+let message = drop 8 str -- renvoie "les programmeurs!"
 ```
 
-Pour extraire une sous-chaîne spécifique en fonction d'un index de début et d'un index de fin, nous pouvons utiliser la fonction `take` suivie de `drop`. Par exemple :
+Pour extraire une sous-chaîne entre deux positions spécifiques, nous pouvons utiliser la fonction `takeDrop` définie dans la bibliothèque `Data.List.Split`. Cette fonction prend en entrée une liste, une position de départ et une position de fin, et renvoie une sous-liste de la liste qui se situe entre ces positions. Voici un exemple d'utilisation:
 
 ```Haskell
-let str = "Bonjour le monde"
-let debut = 3 -- index de début
-let fin = 9 -- index de fin
-drop debut (take fin str) -- renvoie "jour l"
+import Data.List.Split
+let str = "Hello world!"
+let sousChaine = takeDrop str 2 6 -- renvoie "llo w"
 ```
 
-## Plongée en profondeur
 
-La fonction `take` renvoie une sous-chaîne à partir du début de la chaîne, tandis que la fonction `drop` renvoie une sous-chaîne à partir de la fin de la chaîne. En combinant ces deux fonctions, nous pouvons extrêmement manipuler une chaîne et extraire des sous-chaînes avec précision.
+# Plongée en profondeur
 
-Il est également important de noter que la numérotation des indices commence à partir de 0 en Haskell. Ainsi, le premier caractère d'une chaîne a un index de 0.
+Maintenant que nous savons comment extraire des sous-chaînes en Haskell, voyons comment cela fonctionne en détail. La fonction `take` utilise des nombres entiers pour déterminer combien d'éléments de la liste doivent être pris. Si le nombre entier `n` est plus grand que la longueur de la liste, `take` renverra simplement toute la liste. Sinon, elle renverra une liste avec les `n` premiers éléments. D'un autre côté, `drop` ignore simplement les `n` premiers éléments et renvoie le reste de la liste.
 
-## Voir aussi
+Pour extraire une sous-chaîne entre deux positions spécifiques, nous utilisons la fonction `takeDrop`. Dans cette fonction, nous utilisons simplement les fonctions `take` et `drop` que nous avons déjà vues, mais avec des positions spécifiques en tant que paramètres.
 
-- La documentation officielle sur la manipulation des chaînes en Haskell : https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-String.html
-- Un tutoriel complet sur la manipulation des chaînes en Haskell : https://www.tutorialspoint.com/haskell/haskell_strings.htm
-- Un article sur les fonctions de manipulation des chaînes en Haskell : http://haskell.tailorfontela.com.br/string-manipulation-functions/
+# Voir aussi
+
+- [Documentation sur la fonction `take`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:take)
+- [Documentation sur la fonction `drop`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:drop)
+- [Documentation sur `Data.List.Split`](https://hackage.haskell.org/package/split-0.2.3/docs/Data-List-Split.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: Merkkijonon suurentaminen"
-simple_title:         "Merkkijonon suurentaminen"
+title:                "Merkkijonon ensimmäistä kirjainta suurennettaessa"
+html_title:           "Go: Merkkijonon ensimmäistä kirjainta suurennettaessa"
+simple_title:         "Merkkijonon ensimmäistä kirjainta suurennettaessa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,57 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Oletko koskaan miettinyt kuinka muuttaa merkkijonon ensimmäinen kirjain isoksi? Tämä on yleinen tarve monissa ohjelmointiprojekteissa, ja se voidaan toteuttaa helposti käyttäen Go-ohjelmointikieltä.
+Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoiksi kirjaimiksi? Yksi yleinen syy voi olla, että haluat esimerkiksi tulostaa nimen tai lauseen kanssa, ja haluat varmistaa, että se näyttää siistiltä ja hyvin muotoillulta.
 
 ## Miten tehdä se
 
-Go-kielessä on valmiina funktio, joka tekee tämän tehtävän puolestasi, nimeltään "strings.Title". Tämä funktio ottaa parametrina merkkijonon ja palauttaa sen ensimmäisen kirjaimen isona. Katso seuraava koodiesimerkki:
+Go-kielessä on sisäänrakennettu funktio nimeltä `strings.Title()`, joka tekee juuri sen haluamasi asian: muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi. Tässä on yksinkertainen esimerkki:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	name := "julius"
-	fmt.Println(strings.Title(name))
+    s := "hei, olen go-ohjelmoija"
+    fmt.Println(strings.Title(s))
 }
 ```
 
-Tämän koodin suorittaminen tuottaa seuraavan tulosteen: "Julius". Kuten näet, funktio strings.Title muutti merkkijonon ensimmäisen kirjaimen isoksi.
+Tuloste: "Hei, Olen Go-Ohjelmoija"
 
-## Syvempi sukellus
-
-Halutessasi voit tehdä tämän tehtävän myös itse käyttäen Go:n sisäänrakennettua Unicode-mekanismia. Tämä mahdollistaa myös kansainvälisesti käytettyjen merkkien oikeanlaisen käsittelyn. Voit käyttää seuraavaa koodilohkoa:
+Voit myös käyttää `strings.ToUpper()` -funktiota, joka muuttaa kaikki merkit isoiksi kirjaimiksi, ja sitten `strings.ToLower()` -funktiota, joka muuttaa kaikki merkit pieniksi kirjaimiksi. Tässä on esimerkki, jossa ensin muutamme merkkijonon kaikki kirjaimet isoiksi ja sitten takaisin pieniksi:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"unicode"
+    "fmt"
+    "strings"
 )
 
-func capitalizeString(s string) string {
-	r := []rune(s)
-	r[0] = unicode.ToUpper(r[0])
-	return string(r)
-}
-
 func main() {
-	name := "söpö"
-	fmt.Println(capitalizeString(name))
+    s := "Tämä on Merkkijono"
+    fmt.Println(strings.ToLower(strings.ToUpper(s)))
 }
 ```
 
-Tulostuu: "Söpö". Tässä koodissa käytetään ensin Go:n "rune"-tietotyyppiä, joka mahdollistaa merkkien käsittelyn Unicode-muodossa. Funktiossa capitalizeString ensimmäinen kirjain muutetaan isoksi ja palautetaan sitten merkkijonona.
+Tuloste: TÄMÄ ON MERKKIJONO
+
+## Syvemmälle
+
+Jos haluat ymmärtää, miten `strings.Title()` -funktio todella toimii, voit tutkia sen lähdekoodia. Voit löytää sen Go-paketin `strings` lähdetiedostosta (tai voit vain tarkastella sitä GitHubissa). Siitä löydät useita muita hyödyllisiä merkkijonojen käsittelyyn liittyviä funktioita.
 
 ## Katso myös
 
-- [Go:n virallinen dokumentaatio merkkijonojen käsittelystä](https://golang.org/pkg/strings/)
-- [Vinkkejä ja temppuja Go:n käytöstä merkkijonojen kanssa](https://www.sohamkamani.com/blog/2017/10/18/golang-strings-cheat-sheet/)
-
-Toivottavasti tämä artikkeli auttoi sinua ymmärtämään kuinka helposti voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi käyttäen Go-kieltä. Onnea koodaukseen!
+- [Go-kielem käsikirja (englanniksi)](https://golang.org/ref/spec)
+- [Go-paketin strings lähdetiedosto (englanniksi)](https://github.com/golang/go/blob/master/src/strings/strings.go)

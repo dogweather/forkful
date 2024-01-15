@@ -1,6 +1,7 @@
 ---
-title:                "C++: Convertendo uma data em uma string"
-simple_title:         "Convertendo uma data em uma string"
+title:                "Convertendo uma data em uma string."
+html_title:           "C++: Convertendo uma data em uma string."
+simple_title:         "Convertendo uma data em uma string."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,82 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Ao trabalhar em projetos de programação, uma tarefa comum é precisar converter uma data em um formato legível para ser exibida ao usuário. Neste artigo, aprenderemos como realizar essa conversão em C++, permitindo que nossos programas apresentem datas de forma mais amigável.
+Se você está trabalhando em um projeto de programação que envolve datas, provavelmente precisará converter as datas em uma string em algum momento. Isso pode ser útil para imprimir a data em um arquivo de log ou para exibir a data formatada em uma interface de usuário.
 
 ## Como Fazer
 
-Existem várias formas de converter uma data em uma string em C++. Aqui, apresentamos dois métodos comumente utilizados: usando a biblioteca padrão "ctime" e a biblioteca "boost date_time".
-
-### Usando a biblioteca padrão "ctime"
+Para converter uma data em uma string em C++, podemos usar a função `strftime` da biblioteca `ctime`. Aqui está um exemplo de código que mostra como fazer isso:
 
 ```C++
-#include <iostream> 
-#include <ctime> 
-using namespace std; 
+#include <iostream>
+#include <ctime>
 
-int main() 
-{ 
-    // Definindo uma variável tm (struct que armazena informações sobre data e hora)
-    struct tm data; 
+int main() {
+    // Criando uma variável de data
+    std::tm date = {0, 0, 0,     // Segundos, minutos, horas
+                    1, 0, 2021}; // Dia, mês, ano (usamos 0 para os campos que não precisamos)
 
-    // Definindo uma string com a data desejada
-    string data_original = "2020/10/25"; 
+    // Criando um buffer de tamanho suficiente para armazenar a string
+    char buffer[80];
 
-    // Usando a função strptime para converter a string em uma struct tm
-    strptime(data_original.c_str(), "%Y/%m/%d", &data); 
+    // Usando strftime para converter a data em uma string
+    strftime(buffer, 80, "A data de hoje é: %d/%m/%Y", &date);
 
-    // Usando a função strftime para converter a struct tm em uma string no formato desejado
-    char data_string[11]; 
-    strftime(data_string, 11, "%d/%m/%Y", &data); 
+    // Imprimindo a string
+    std::cout << buffer << std::endl;
 
-    // Imprimindo a string resultante
-    cout << "A data convertida é: " << data_string << endl; 
-
-    return 0; 
-}
-```
-**Saída:** A data convertida é: 25/10/2020
-
-Neste exemplo, utilizamos as funções "strptime" e "strftime" da biblioteca "ctime" para converter a string da data original em uma struct tm e, em seguida, em uma string no formato desejado. Um detalhe importante a se observar é o uso do formato "%Y/%m/%d" na função "strptime", que indica que a string de data original está no formato "Ano/Mês/Dia".
-
-### Usando a biblioteca "boost date_time"
-
-```C++
-#include <iostream> 
-#include <boost/date_time.hpp> 
-using namespace std; 
-using namespace boost::gregorian; 
-
-int main() 
-{ 
-    // Definindo uma string com a data desejada 
-    string data_original = "2020-Oct-25"; 
-    
-    // Usando a função from_string para converter a string em um objeto date 
-    date data = from_string(data_original); 
-    
-    // Usando a função to_simple_string para converter o objeto date em uma string no formato desejado 
-    cout << "A data convertida é: " << to_simple_string(data) << endl; 
-    
     return 0;
 }
+
+/* Saída:
+A data de hoje é: 01/01/2021
+*/
+
 ```
 
-**Saída:** A data convertida é: 25-Oct-2020
-
-Neste exemplo, utilizamos as funções "from_string" e "to_simple_string" da biblioteca "boost date_time" para converter diretamente a string de data original em uma string no formato desejado. Vale ressaltar que, para utilizar a biblioteca "boost date_time", é necessário instalá-la e configurá-la corretamente em seu ambiente de desenvolvimento.
+Neste exemplo, criamos uma variável de data e usamos a função `strftime` para convertê-la em uma string com o formato desejado. O primeiro parâmetro da função é um array de caracteres que irá armazenar a string, o segundo parâmetro é o tamanho do array e o terceiro é a formatação que queremos para a string. O último parâmetro é a variável de data que queremos converter.
 
 ## Deep Dive
 
-Conversão de data em string pode parecer uma tarefa simples em um primeiro momento, mas existem alguns pontos importantes a serem considerados. Alguns deles são:
+A função `strftime` é muito versátil e permite que você formate a data de várias maneiras diferentes. Aqui estão alguns dos marcadores de formato mais comuns para usar na formatação:
 
-- A biblioteca "ctime" é limitada em relação aos formatos de data que pode converter e, em algumas plataformas, pode apresentar problemas relacionados a idioma e localização.
-- A biblioteca "boost date_time" oferece mais opções de formatos, mas sua instalação e configuração podem ser um pouco mais complexas.
-- É importante que a string de data original esteja no formato correto, caso contrário, a conversão pode resultar em uma data inválida.
-- É necessário escolher o formato adequado para a string resultante, de acordo com a forma com que se deseja exibir a data.
+- `%d` - dia do mês (de 01 a 31)
+- `%m` - mês (de 01 a 12)
+- `%Y` - ano com quatro dígitos
+- `%y` - ano com dois dígitos
+- `%H` - hora no formato 24 horas (de 00 a 23)
+- `%I` - hora no formato 12 horas (de 01 a 12)
+- `%M` - minutos (de 00 a 59)
+- `%S` - segundos (de 00 a 59)
+- `%p` - AM ou PM (apenas disponível para o formato de 12 horas)
 
-## Veja também
+Você pode utilizar esses marcadores de formato para criar a string de data que melhor atende às suas necessidades.
 
-- [Documentação da biblioteca std::ctime em cppreference.com](https://fr.cppreference.com/w/cpp/chrono/c/strftime)
-- [Documentação da biblioteca boost date_time](https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html)
-- [Tutorial de instalação e configuração do boost date_time](https://www.boost.org/doc/libs/1_74_0/libs/date_time/doc/html/getting_started.html)
+## Veja Também
+
+- [Documentação da função `strftime`](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Tutorial sobre manipulação de datas em C++](https://www.freecodecamp.org/news/how-to-work-with-dates-in-cpp-customize-your-handling-of-datetime-values/)
+- [Artigo sobre formatação de datas em C++](https://www.learncpp.com/cpp-tutorial/formatting-output-printf-and-iostream/)

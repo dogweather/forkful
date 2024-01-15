@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Cancellare caratteri corrispondenti a un determinato pattern"
-simple_title:         "Cancellare caratteri corrispondenti a un determinato pattern"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "Kotlin: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,27 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per cui potresti voler cancellare i caratteri che corrispondono ad un determinato modello nel tuo programma Kotlin. Ad esempio, potresti voler pulire un input utente per garantire la sicurezza del tuo programma o potresti dover formattare una stringa prima di salvarla in un database.
+Ci sono molte ragioni per cui qualcuno potrebbe voler cancellare i caratteri che corrispondono a un certo modello all'interno di un testo. Potresti voler pulire dei dati in un file di testo, rimuovere informazioni sensibili da un documento o semplicemente semplificare il tuo codice.
 
 ## Come fare
 
-Per cancellare i caratteri che corrispondono ad un modello, puoi utilizzare la funzione `replace` nella classe `String` di Kotlin. Questa funzione accetta due argomenti: il primo è il modello dei caratteri da sostituire e il secondo è la stringa di sostituzione.
+Per eliminare i caratteri che corrispondono a un certo modello, possiamo utilizzare il metodo `replace` della classe `StringBuilder` di Kotlin.
 
-```Kotlin
-val str = "Questo è un esempio di stringa con dei numeri 12345 e delle lettere abcdef"
-val cleanedStr = str.replace(Regex("[0-9]+"), "") // Rimuove tutti i numeri dalla stringa
-println(cleanedStr)
-
-// Output: Questo è un esempio di stringa con dei numeri e delle lettere abcdef
+```kotlin
+val text = "Questa è una stringa di testo con alcune parole censurate come **** e ****"
+val censoredText = StringBuilder(text).replace("[*]+".toRegex(), "")
+println(censoredText)
 ```
 
-In questo esempio, utilizziamo la classe `Regex` per creare un modello che rappresenta qualsiasi sequenza di numeri. Questo modello verrà quindi usato nella funzione `replace` per rimuovere tutti i numeri dalla stringa di input.
+L'output sarà:
+
+```
+Questa è una stringa di testo con alcune parole censurate come e
+```
+
+In questo esempio, abbiamo utilizzato un'espressione regolare per cercare e sostituire tutti i gruppi di asterischi con una stringa vuota.
 
 ## Approfondimento
 
-Se vuoi saperne di più sulla cancellazione dei caratteri corrispondenti ad un pattern, ti consiglio di esplorare la funzione `replace` nella documentazione ufficiale di Kotlin. Inoltre, puoi sperimentare con altri tipi di modelli e stringhe di sostituzione per ottenere risultati diversi. Ricorda sempre di gestire eventuali errori che possono verificarsi durante la cancellazione dei caratteri.
+Kotlin fornisce diversi metodi per gestire l'eliminazione di caratteri basati su un modello. Per esempio, il metodo `deleteRange` della classe `StringBuilder`ci permette di eliminare una porzione di testo specificata tramite indice.
+
+```kotlin
+val text = "Questa è una stringa di testo"
+val newText = StringBuilder(text).deleteRange(0, 6) // Cancella le prime 6 lettere
+println(newText)
+```
+
+L'output sarà:
+
+```
+è una stringa di testo
+```
+
+Un'altra opzione è utilizzare il metodo `dropWhile` della classe `Iterable` per eliminare tutti i caratteri iniziali che corrispondono a un modello:
+
+```kotlin
+val text = "12345abCDeFGh890"
+val newText = text.dropWhile { it.isDigit() } // Elimina tutti i caratteri numerici all'inizio
+println(newText)
+```
+
+L'output sarà:
+
+```
+abCDeFGh890
+```
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Kotlin su funzione replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Tutorial su come utilizzare la classe Regex in Kotlin](https://www.baeldung.com/kotlin/regex)
+- [Documentazione di Kotlin su StringBuilder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+- [ESPLORA.Lingua: Regex in Kotlin](https://explorastudy.wordpress.com/2020/05/29/regex-in-kotlin/)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Http-pyynnön lähettäminen perustason todennuksella"
-simple_title:         "Http-pyynnön lähettäminen perustason todennuksella"
+title:                "Perusautentikoinnilla http-pyynnön lähettäminen"
+html_title:           "Python: Perusautentikoinnilla http-pyynnön lähettäminen"
+simple_title:         "Perusautentikoinnilla http-pyynnön lähettäminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,41 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos haluat lähettää HTTP-pyynnön ja varmistaa sen turvallisuuden, on tärkeää sisällyttää siihen basic authentication. Tämä auttaa pääsemään suojattuihin verkkoresursseihin, kuten salasanasuojattuihin verkkosivustoihin.
+Miksi lähettää HTTP-pyyntö käyttäjätunnuksella ja salasanalla? Monissa tapauksissa palveluntarjoajat vaativat käyttäjiä todentamaan tunnistetietonsa ennen kuin he saavat pääsyn tiettyihin resursseihin. Tämä tapahtuu yleensä lähettämällä HTTP-pyyntö käyttäjätunnuksella ja salasanalla, jotta käyttäjä voidaan tunnistaa ja tarvittaessa valtuuttaa.
 
 ## Kuinka
 
 ```Python
 import requests
 
-url = "https://www.example.com/login"
-user = "käyttäjänimi"
+# Määritä pyyntö parametrit
+url = "https://www.example.com/api"
+username = "käyttäjätunnus"
 password = "salasana"
 
-r = requests.get(url, auth=(user, password))
-print(r.status_code)
-print(r.text)
+# Luo autentikointitiedot käyttäjätunnuksella ja salasanalla
+auth = (username, password)
+
+# Lähetä HTTP-pyyntö autentikointitiedoilla
+response = requests.get(url, auth=auth)
+
+# Tulosta vastauksen statuskoodi
+print(response.status_code)
 ```
-
-Koodiesimerkki näyttää, kuinka käyttäjänimi ja salasana voidaan sisällyttää HTTP-pyynnön autentikointitietoihin käyttäen requests-kirjastoa. Rivi "auth=(user, password)" lähettää basic authentication -todennustiedot pyynnön mukana.
-
-Esimerkkitulostus:
-
 ```
 200
-<p>Welcome, user!</p>
 ```
 
-2.11.0 ja uudemmissa versioissa requests-kirjastoa ei tarvitse erikseen asentaa, sillä se sisältyy jo Pythonin vakioasennukseen.
+```Python
+import requests
+import base64
 
-## Syvädykset
+# Määritä pyyntö parametrit
+url = "https://www.example.com/api"
+username = "käyttäjätunnus"
+password = "salasana"
 
-Basic authentication on yksi HTTP:n autentikointityypeistä ja se on yksi vanhimmista ja yksinkertaisimmista tavoista varmistaa verkkoresurssien turvallisuus. Autentikointitiedot lähetetään salattuna base64-muodossa.
+# Luo autentikointistringi
+auth_string = username + ":" + password
 
-Basic authenticationin suurin heikkous on se, että käyttäjänimi ja salasana lähetetään selkeäkielisinä pyynnön mukana. Tämä tekee siitä alttiin salasanan kaappaamiselle ja luvattomalle pääsylle verkkoresursseihin. Tämän vuoksi on suositeltavaa käyttää muita autentikointityyppejä, kuten token-pohjaista autentikointia.
+# Muunna autentikointistringi base64-muotoon
+base64_auth_string = base64.b64encode(auth_string.encode("utf-8"))
+
+# Luo otsikkoparametrit
+headers = {
+    "Authorization": "Basic " + base64_auth_string.decode("utf-8")
+}
+
+# Lähetä HTTP-pyyntö otsikkoparametreilla
+response = requests.get(url, headers=headers)
+
+# Tulosta vastauksen statuskoodi
+print(response.status_code)
+```
+```
+200
+```
+
+## Syväsukellus
+
+Basic-authentikaatio on yksi yleisimmistä tapoista autentikoida käyttäjät web-sovelluksissa. Se perustuu käyttäjän lähettämään käyttäjätunnukseen ja salasanaan, jotka koodataan base64-muotoon ja lähetetään HTTP-pyynnön otsikkoparametreina tai autentikointitietoina. On tärkeää varmistaa, että käyttäjätunnus ja salasana eivät ole avoimesti nähtävillä, ja salaaminen base64-muotoon ei tarjoa täydellistä turvallisuutta.
 
 ## Katso myös
 
-- [Requests-kirjaston dokumentaatio](https://requests.readthedocs.io/)
-- [Basic authenticationin tietoturva](https://www.ietf.org/rfc/rfc2617.txt)
-- [Token-pohjainen autentikointi Pythonilla](https://realpython.com/token-based-authentication-with-flask/)
+- [Python Requests -dokumentaatio](https://2.python-requests.org/en/master/)
+- [Base64 -moduulin dokumentaatio](https://docs.python.org/3/library/base64.html)
+- [HTTP-pyyntö ja vastaus -tiedot W3Schoolsissa](https://www.w3schools.com/python/module_requests.asp)

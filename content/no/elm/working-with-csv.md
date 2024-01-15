@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeide med csv"
+html_title:           "Elm: Arbeide med csv"
+simple_title:         "Arbeide med csv"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å jobbe med CSV-filer kan være nyttig for de som trenger å håndtere store mengder data på en organisert og strukturert måte. Med Elm kan man enkelt lese og skrive CSV-filer ved hjelp av innebygde funksjoner og biblioteker.
+Hvis du arbeider med store datamengder, så har du sannsynligvis støtt på CSV-filer. CSV (Comma Separated Values) er en vanlig filtype for å lagre data på en strukturert måte. Og med Elm, kan du enkelt håndtere og manipulere disse filene for å gjøre dine programmer mer effektive.
 
 ## Hvordan gjøre det
+Det første du må gjøre er å importere "elm/csv" pakken i ditt prosjekt. Deretter kan du bruke funksjoner som "Decode.csv", "Decode.map" og "Decode.list" for å dekode CSV-filer til Elm-datastrukturer. La oss si at du har en CSV-fil med følgende innhold:
 
-For å lese en CSV-fil i Elm, kan man bruke funksjonen `Csv.Decode.decode`. Denne funksjonen tar inn en streng med CSV-data og returnerer en liste av lister som representerer hver rad og kolonne i filen. For eksempel:
-
-```
-Elm:
-
-import Csv.Decode exposing (decode)
-
-csvData = """
-name,age,gender
-John,25,male
-Emily,30,female
-"""
-
-decode csvData --> 
-Ok [["name", "age", "gender"], ["John", "25", "male"], ["Emily", "30", "female"]]
+```Elm
+Navn,Alder,Adresse
+John,35,London
+Sarah,28,New York
 ```
 
-For å skrive ut en CSV-fil i Elm, kan man bruke biblioteket `Csv.Encode`. Ved å konvertere datastrukturen til en liste av lister til en `Csv.Encode.Value`, kan man deretter bruke funksjonen `Csv.Encode.encode` for å få en streng med CSV-data. For eksempel:
+Nå kan du bruke følgende kode for å dekode filen til en liste med poster:
 
+```Elm
+Decode.csv
+    |> Decode.map (\list -> List.map (\row -> Decode.list Decode.string row) list)
+    |> Decode.list Decode.int
+    |> Decode.decodeString "\,Alder\,[^,]+"
+    |> List.map (\[name, age, address] -> { name = name, age = age, address = address })
 ```
-Elm:
 
-import Csv.Encode exposing (encode)
+Dette vil resultere i en liste med poster som ligner på dette:
 
-csvData = [["name", "age", "gender"], ["John", "25", "male"], ["Emily", "30", "female"]]
-
-encode csvData --> 
-Ok "name,age,gender\r\nJohn,25,male\r\nEmily,30,female"
+```Elm
+[{ name = "John", age = 35, address = "London" },
+ { name = "Sarah", age = 28, address = "New York" }]
 ```
+
+Du kan også bruke funksjoner som "Encode.encode" og "Encode.toFile" for å konvertere dine Elm-datastrukturer til CSV-format og eksportere dem til en fil.
 
 ## Dypdykk
+Hvis du ønsker å bli mer avansert, kan du også bruke "elm/parser" pakken for å lage din egen tilpassede parser for CSV-filer. Dette gir deg mer kontroll over hvordan dataene skal håndteres og kan være nyttig hvis du for eksempel har spesielle krav til hvordan dataene skal organiseres.
 
-Ved å bruke elm-community-modulen `elm-csv`, er det enkelt å manipulere og behandle CSV-data i Elm. Dette biblioteket tilbyr funksjoner som å filtrere, sortere og gruppeere data basert på ulike kriterier.
-
-Det er også mulig å lage egne konfigureringer for å håndtere CSV-filer med avvikende strukturer eller spesielle tegnsett. Dette kan gjøres ved å bruke funksjoner som `Csv.Decode.customDecoder` og `Csv.Encode.customEncoder`.
+Du kan også utforske andre CSV-relaterte pakker i Elm-økosystemet, som for eksempel "elm-csv-explorer" som lar deg visualisere og utforske CSV-data på en interaktiv måte.
 
 ## Se også
-
-- [elm-csv pakken på Elm pakkesentralen] (https://package.elm-lang.org/packages/elm-community/elm-csv/latest/)
-- [Offisiell Elm dokumentasjon om CSV] (https://guide.elm-lang.org/interop/csv.html)
-- [Eksempel på Elm kode for å arbeide med CSV] (https://ellie-app.com/84ZP6qpT9zja1)
+- [Offisiell Elm dokumentasjon for CSV](https://package.elm-lang.org/packages/elm/csv/latest/)
+- [elm/parser pakken](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [elm-csv-explorer pakken](https://package.elm-lang.org/packages/ppyatetskyi/elm-csv-explorer/latest/)

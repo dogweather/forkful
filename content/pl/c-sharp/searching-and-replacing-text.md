@@ -1,6 +1,7 @@
 ---
-title:                "C#: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamienianie tekstu"
+html_title:           "C#: Wyszukiwanie i zamienianie tekstu"
+simple_title:         "Wyszukiwanie i zamienianie tekstu"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,40 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+WprowadzenieDoświadczasz frustracji, kiedy musisz ręcznie edytować wielokrotnie ten sam fragment tekstu w swoim kodzie? Szukanie i zamiana tekstu może Cię uratować od tego powtarzającego się koszmaru! Nie tylko oszczędzi Ci to czas i wysiłek, ale także pomoże uniknąć błędów ludzkich. W tym artykule dowiesz się, jak w prosty sposób wykonać to zadanie za pomocą C#.
 
-Często w trakcie pisania programów, napotykamy sytuacje, w których musimy dokonać zmiany w tekście. Może to być aktualizacja nazw zmiennych lub poprawa błędów w tekście. Dlatego znajomość metod wyszukiwania i zamiany tekstu w języku C# jest niezbędna dla każdego programisty.
-
-## Jak to zrobić
-
-W języku C#, w celu wyszukiwania i zamiany tekstu, najczęściej wykorzystujemy funkcję .Replace(). Przyjmuje ona dwa parametry - pierwszy to ciąg znaków, który chcemy znaleźć, a drugi to ciąg znaków, który ma zostać wstawiony w jego miejsce. Przykładowo, jeśli chcemy zamienić słowo "hello" na "hi" w tekście "Hello, world!", nasz kod wyglądałby następująco:
-
+Jak to zrobić?
 ```C#
-string text = "Hello, world!";
-text = text.Replace("Hello", "Hi");
-Console.WriteLine(text); //Wynik: Hi, world!
+var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+//Zakładamy, że chcemy zmienić wyraz "dolor" na "amor"
+var newText = text.Replace("dolor", "amor");
+Console.WriteLine(newText);
 ```
+Wynik: "Lorem ipsum amor sit amet, consectetur adipiscing elit."
 
-Zwróćmy uwagę, że funkcja .Replace() jest metoda typu string, co oznacza, że zwraca ona nowy ciąg znaków, a nie dokonuje zmian w miejscu.
+Jedną z najprostszych metod jest użycie metody Replace() na obiekcie typu string. Nie musimy przejmować się szukaniem indeksu, tylko podajemy tekst, który chcemy zastąpić i tekst, na który chcemy go zamienić. Metoda ta zwraca nowy ciąg znaków, więc warto przechować go w zmiennej.
 
-Inną przydatną metodą jest .ReplaceFirst(), dzięki której możemy zastosować zmianę tylko w pierwszym wystąpieniu danego wyrażenia. Możemy to osiągnąć poprzez użycie dodatkowego parametru, który określi, które wystąpienie ma być zmienione. Przykładowo, jeśli nasz tekst to "I am learning C#, C#, C#", a chcemy zamienić tylko pierwsze wystąpienie "C#" na "Java", nasz kod wyglądałby następująco:
-
+Jeśli chcemy dokonać wielu zmian w jednym ciągu, możemy skorzystać z metody Replace z wyrażeniem regularnym.
 ```C#
-string text = "I am learning C#, C#, C#";
-text = text.ReplaceFirst("C#", "Java", 1);
-Console.WriteLine(text); //Wynik: I am learning Java, C#, C#
+//Zakładamy, że chcemy zmienić wszystkie wystąpienia "m" na "n"
+var regex = new Regex("m");
+var newText = regex.Replace(text, "n");
+Console.WriteLine(newText);
 ```
+Wynik: "Loren ipsun dnolor sit anet, consectetunradipiscing elit."
+
+Tego typu podejście jest szczególnie przydatne, gdy chcemy dokonać zmian w dużych i skomplikowanych ciągach znaków.
 
 ## Deep Dive
+Do tej pory skupiliśmy się na metodzie Replace, ale C# oferuje także inne opcje do przeprowadzania zmian w tekście.
 
-Funkcja .Replace() wykorzystuje metodę IndexOf() do wyszukiwania ciągu znaków w tekście. Zwraca ona indeks pierwszego wystąpienia danego wyrażenia w tekście lub -1, jeśli wyrażenie nie zostanie znalezione. Dzięki temu, na podstawie indeksów, funkcja .Replace() wie, gdzie dokonać zmiany.
+Jeśli chcemy zmienić tekst w zależności od pewnych warunków, możemy skorzystać z metody Replace z funkcją zwrotną.
+```C#
+string ReplaceDelegate(Match match)
+{
+    //Jeśli na pierwszym miejscu znajduje się mała litera, zamieniamy ją na dużą
+    if (char.IsLower(match.Value[0]))
+        return char.ToUpper(match.Value[0]) + match.Value.Substring(1);
+    //Jeśli na pierwszym miejscu znajduje się duża litera, zamieniamy ją na małą
+    else
+        return char.ToLower(match.Value[0]) + match.Value.Substring(1);
+}
+//Zakładamy, że chcemy zmienić pierwszą literę wyrazu "dolor" na dużą literę
+var regex = new Regex("dolor");
+var newText = regex.Replace(text, ReplaceDelegate);
+Console.WriteLine(newText);
+```
+Wynik: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."
 
-Jednym z zastosowań funkcji .Replace() może być również usuwanie fragmentów tekstu, poprzez podanie pustego ciągu znaków jako drugiego parametru. 
+Możemy także używać wyrażeń regularnych do dokładniejszego określenia, które części tekstu mają zostać zmienione.
+```C#
+//Zakładamy, że chcemy zmienić wszystkie wystąpienia "am" na "amor"
+var regex = new Regex("am(?=or)");
+var newText = regex.Replace(text, "amor");
+Console.WriteLine(newText);
+```
+Wynik: "Lorem ipsum amor sit amet, consectetur adipiscing elit."
 
-Dodatkowo, w języku C# istnieje wiele innych metod służących do wyszukiwania i zamiany tekstu, takich jak .ReplaceLast(), .ReplaceAll() czy .ReplaceRange(). Warto je poznać i zastosować w zależności od potrzeb.
+Podsumowując, manipulowanie tekstem w C# jest nie tylko proste, ale także bardzo przydatne. Wykorzystując różne metody i funkcje, możemy wykonać wiele zmian w tekście w sposób skuteczny i szybki.
 
 ## Zobacz też
-
-- Dokumentacja C#, dział "String.Replace Method": https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netframework-4.8
-- Przewodnik po języku C#: https://www.tutorialspoint.com/csharp/index.htm
-- Wyszukiwanie i zamiana tekstu w języku C# - przydatne wskazówki i triki: https://www.c-sharpcorner.com/article/top-10-string-functions-in-c-sharp/
+- [Dokumentacja C# dotycząca metod Replace() i Replace(String, String)](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace)
+- [Poradnik dotyczący wyrażeń regularnych w C#](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions)

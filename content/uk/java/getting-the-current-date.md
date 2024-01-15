@@ -1,5 +1,6 @@
 ---
-title:                "Java: Отримання поточної дати"
+title:                "Отримання поточної дати"
+html_title:           "Java: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Java"
 category:             "Java"
@@ -9,55 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Чому
+## Зачем
 
-Уявіть ситуацію, в якій ви хочете знати, який зараз день тижня або ж яка дата на календарі. Це може бути корисно при створенні програми з нагадуваннями або просто для власного контролю. Отримання поточної дати - це універсальна задача в багатьох програмах, тому це корисно знати як зробити це в Java.
+Ответ на этот вопрос кажется очевидным - чтобы узнать текущую дату. Но зачем это нужно в программировании? Очень часто нам нужно работать с различными временными интервалами и датами, а получение текущей даты позволяет нам упростить этот процесс.
 
-# Як
-
-Простий спосіб отримати поточну дату в Java - використовувати клас `java.util.Date` та метод `now()`:
+## Как
 
 ```Java
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CurrentDateExample {
-
     public static void main(String[] args) {
-        Date now = new Date();
-        System.out.println(now); // Виведе поточну дату та час
+        // Получаем текущую дату
+        LocalDate currentDate = LocalDate.now();
+        // Выводим ее на экран в формате "год-месяц-день"
+        System.out.println("Текущая дата: " + currentDate);
+        // Выводим только год
+        System.out.println("Текущий год: " + currentDate.getYear());
+        // Выводим только месяц
+        System.out.println("Текущий месяц: " + currentDate.getMonth());
+        // Выводим только день
+        System.out.println("Текущий день: " + currentDate.getDayOfMonth());
     }
-
 }
 ```
 
-Ви також можете відформатувати вихідний рядок за допомогою класу `java.text.SimpleDateFormat`:
-
-```Java
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
-public class CurrentDateExample {
-
-    public static void main(String[] args) {
-        Date now = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-        String formattedDate = format.format(now);
-        System.out.println(formattedDate); // Виведе будь-який формат дати, наприклад "23.08.2021"
-    }
-
-}
+```
+Текущая дата: 2021-01-01
+Текущий год: 2021
+Текущий месяц: JANUARY
+Текущий день: 1
 ```
 
-# Глибокий погляд
+В приведенном примере мы использовали класс `LocalDate` из пакета `java.time`, который позволяет нам работать с датами и временными интервалами. Мы вызвали статический метод `now()`, который возвращает текущую дату. Затем мы использовали различные методы этого класса для получения необходимой нам информации о текущей дате. Обратите внимание, что месяц представлен в виде `enum` типа `Month`, поэтому он выводится в различных форматах.
 
-Отримання поточної дати в Java може бути більш складною задачею, ніж здається на перший погляд. Це пов'язано з тим, що у Java є декілька різних типів дати, кожен з яких має свої особливості та обмеження.
+## Глубокий погружение
 
-Наприклад, клас `java.util.Date` базується на часовій зоні та зберігає час в мілісекундах з певної дати в минулому. Цей клас має обмеження на діапазон років, тому його використання може призвести до помилки в окремих ситуаціях.
+Если мы хотим получить не только дату, но и время, мы можем воспользоваться классом `LocalDateTime`. Также мы можем работать с различными часовыми поясами, используя класс `ZonedDateTime`. И если нам нужно сравнить текущую дату с какой-то другой, мы можем использовать методы для сравнения дат и временных интервалов из классов `LocalDateTime` и `ZonedDateTime`. Более подробную информацию о работе с датами и временными интервалами в Java вы можете найти в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).
 
-Тому рекомендується використовувати клас `java.time.LocalDate` для роботи з датами. Він зберігає дату без часу та часової зони, що робить його більш універсальним та менш схильним до помилок.
+## Смотрите также
 
-# Дивись також
-
-- [Офіційна документація Java - java.util.Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Офіційна документація Java - java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Стаття про різницю між класами Date та LocalDate](https://www.baeldung.com/java-date-vs-localdate)
+- [Официальная документация по работе с датами и временными интервалами в Java](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Статья о пакете `java.time` на сайте Oracle](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)

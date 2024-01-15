@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Java recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Java"
 category:             "Java"
@@ -10,54 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-As a programmer, you may wonder why getting the current date is necessary. Well, the current date is often used in applications for various purposes, such as logging, time stamping, and scheduling tasks. It helps to keep track of when a certain event occurred or when a task needs to be performed. So, getting the current date is important for the proper functioning of many programs.
+Getting the current date is a common task in programming, whether it be for tracking events, scheduling tasks, or simply displaying the current date and time in an application. Java offers an efficient and reliable way to obtain the current date, making it a useful skill for any Java developer.
 
 ## How To
-
-To get the current date in Java, we can use the built-in `java.util.Date` class or the newer `java.time` API, introduced in Java 8. Let's take a look at some code examples to see how to get the current date using both methods.
-
-```Java
-// Using java.util.Date class
-import java.util.Date;
-
-// creating a Date object
-Date currentDate = new Date();
-
-// printing the current date
-System.out.println(currentDate);
-```
-
-Output:
-```
-Tue Aug 03 15:26:56 UTC 2021
-```
+To get the current date in Java, we can use the `LocalDate` class from the `java.time` package. First, we need to import the class into our program using the `import` statement:
 
 ```Java
-// Using java.time API
 import java.time.LocalDate;
+```
 
-// getting the current date
+Next, we can use the `now()` method of the `LocalDate` class to create an instance of `LocalDate` representing the current date:
+
+```Java
 LocalDate currentDate = LocalDate.now();
-
-// printing the current date
-System.out.println(currentDate);
 ```
 
-Output:
-```
-2021-08-03
+We can then use the `toString()` method to convert the `LocalDate` object into a string, and print it out to see the current date:
+
+```Java
+System.out.println(currentDate.toString());
 ```
 
-In both examples, we first import the necessary classes, then create an object or call a method to get the current date, and finally print it to the console. As you can see, the output format may differ slightly between the two methods. The `java.util.Date` class provides more details such as time and time zone, while the `java.time.LocalDate` only gives the date in a simple format.
+This will output the current date in the format of `YYYY-MM-DD`, such as `2021-07-13`.
+
+If we want to get the current date and time, we can use the `LocalDateTime` class instead, which also belongs to the `java.time` package. The steps are similar, but we will use the `now()` method of the `LocalDateTime` class this time:
+
+```Java
+import java.time.LocalDateTime;
+
+LocalDateTime currentDateTime = LocalDateTime.now();
+System.out.println(currentDateTime.toString());
+```
+
+This will output the current date and time in the format of `YYYY-MM-DDThh:mm:ss`, such as `2021-07-13T13:45:29`.
 
 ## Deep Dive
+Behind the scenes, the `now()` method of both `LocalDate` and `LocalDateTime` classes is utilizing the `Clock` class to obtain the current time in the system's default time zone. The `Clock` class also offers the option to specify a different time zone or even a different source of time, such as an atomic clock from a time server.
 
-Internally, the `java.util.Date` class stores the number of milliseconds since January 1, 1970, 00:00:00 GMT in a 64-bit long value. This value is known as the Unix Epoch, and is often used as a reference point for time calculations. When we create a `Date` object using the default constructor, it sets the value to the current date and time. However, it is important to note that the `Date` class is not recommended for use in newer applications due to various issues, such as not being thread-safe.
+Additionally, the `now()` method can take in an `ZoneId` as an argument, which allows us to get the current date and time in a specific time zone. For example, to get the current date and time in the Eastern Time Zone, we can use:
 
-On the other hand, the `java.time` API is a more modern and recommended way of handling date and time operations in Java. It offers a variety of classes for specific use cases, such as `LocalDate` for representing a date without time and time zone, `LocalDateTime` for representing a date with time but without time zone, and `ZonedDateTime` for representing a date with time and time zone. It also provides methods for easy manipulation and formatting of date and time values.
+```Java
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+LocalDateTime currentDateTime = LocalDateTime.now(ZoneId.of("US/Eastern"));
+System.out.println(currentDateTime.toString());
+```
+
+This will output the current date and time based on the Eastern Time Zone, such as `2021-07-13T14:45:29`.
 
 ## See Also
-
-- [Java Date class documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java Time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Official Java Documentation - LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- [Official Java Documentation - LocalDateTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html)
+- [Official Java Tutorial - Date and Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Comparando duas datas."
-simple_title:         "Comparando duas datas."
+title:                "Comparando duas datas"
+html_title:           "TypeScript: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -9,33 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em TypeScript?
+## Por que comparar duas datas?
 
-Comparar duas datas em TypeScript pode ser útil em diversas situações, como verificar se uma data é anterior ou posterior a outra, calcular a diferença de tempo entre elas ou até mesmo validar inputs de datas em formulários. Por isso, é importante entender como fazer essa comparação corretamente.
+Comparar datas é uma tarefa comum ao trabalhar com dados relacionados ao tempo em projetos de desenvolvimento. Ao comparar duas datas, é possível determinar qual delas é mais recente, se são iguais ou se uma é anterior à outra. Isso pode ser útil em diversas situações, como ao validar dados em um formulário, filtrar dados em uma aplicação ou ordenar eventos em uma agenda.
 
 ## Como fazer em TypeScript
 
-Comparar datas em TypeScript pode ser feito de forma simples e eficiente utilizando os métodos nativos da classe `Date`. Por exemplo, se precisarmos verificar se uma data é anterior a outra, podemos utilizar o método `getTime()` para obter o valor numérico da data e então compará-lo:
+Comparando duas datas em TypeScript é bastante simples. Primeiro, é preciso ter as duas datas que serão comparadas. Isso pode ser feito de diversas maneiras, como utilizando o construtor de `Date` ou convertendo strings em datas utilizando `Date.parse()`. Depois, basta utilizar os operadores de comparação (`>, <, >=, <=`) para comparar as datas e obter um valor booleano como resultado.
 
 ```TypeScript
-const data1 = new Date(2021, 0, 1);
-const data2 = new Date(2021, 5, 1);
+let data1 = new Date(2021, 8, 1);
+let data2 = new Date(2021, 8, 10);
 
-if(data1.getTime() < data2.getTime()) {
-  console.log("A data 1 é anterior à data 2");
-}
+console.log(data1 < data2); // true
+console.log(data1 > data2); // false
+console.log(data1 === data2); // false
 ```
-O código acima irá imprimir a mensagem "A data 1 é anterior à data 2". Além disso, podemos utilizar os operadores de comparação diretamente com as datas, como `>`, `<`, `<=` e `>=`.
 
-No entanto, é importante notar que, ao utilizar apenas os métodos `getDate()`, `getMonth()` e `getFullYear()`, podemos ter problemas com datas que possuem horário, pois eles retornam apenas a parte da data e ignoram o horário. Nesses casos, é recomendado utilizar o método `setHours(0,0,0,0)` para zerar o horário antes de fazer a comparação.
+Também é possível comparar diretamente as strings que representam as datas utilizando os mesmos operadores de comparação.
 
-## Deep Dive
+```TypeScript
+let data1 = "2021-08-01";
+let data2 = "2021-08-10";
 
-Se desejarmos fazer uma comparação mais precisa entre datas, podemos utilizar a biblioteca `moment.js` em nosso projeto TypeScript. Com ela, podemos realizar cálculos e manipulações de datas de forma mais avançada, utilizando os métodos `diff()`, `add()`, `subtract()` e muitos outros.
+console.log(data1 < data2); // true
+console.log(data1 > data2); // false
+console.log(data1 === data2); // false
+```
 
-Outro ponto importante a se destacar é que as datas em JavaScript possuem uma precisão de milissegundos, o que pode causar problemas ao fazer comparações diretas com outras linguagens que possuem apenas precisão de segundos. Em situações como essa, é recomendado converter a data em um formato compatível, como o padrão ISO 8601 (`yyyy-mm-ddTHH:mm:ssZ`).
+Como pode ser visto nos exemplos acima, as datas são comparadas com base em sua posição no calendário, ou seja, datas mais recentes são consideradas maiores que datas anteriores. Além disso, as datas também levam em conta o horário, então se for necessário ignorar o horário na comparação, é importante definir a hora como zero para ambas as datas. 
+
+## Mergulho Profundo
+
+Por padrão, as datas em JavaScript e TypeScript utilizam o fuso horário do local em que o código está sendo executado. Isso pode causar problemas ao comparar datas em diferentes fusos horários, pois uma data pode ser considerada maior que outra por causa do horário, mesmo que representem o mesmo momento.
+
+Para evitar essa situação, é recomendado utilizar a função `getTime()` para obter o valor numérico de uma data e comparar esses valores em vez das próprias datas. Esse valor representa a quantidade de milissegundos desde a meia-noite de 1º de janeiro de 1970, conhecido como *época*. Ao comparar esses valores, é possível obter resultados mais precisos, independentemente do fuso horário.
+
+```TypeScript
+let data1 = new Date(2021, 8, 1, 12, 0, 0); // 12h no fuso horário local
+let data2 = new Date(2021, 8, 1, 10, 30, 0); // 10h30 no fuso horário local
+
+console.log(data1.getTime() === data2.getTime()); // false
+```
+
+Além disso, também é possível utilizar a biblioteca [Moment.js](https://momentjs.com/), que oferece uma série de funções para manipulação e comparação de datas, facilitando ainda mais essa tarefa.
 
 ## Veja também
 
-- [Documentação nativa do TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
-- [Documentação da biblioteca moment.js](https://momentjs.com/docs/#/manipulating/)
+- [Documentação oficial do TypeScript sobre a classe Date](https://www.typescriptlang.org/docs/handbook/utility-types.html#date)
+- [Artigo sobre a biblioteca Moment.js](https://www.freecodecamp.org/news/how-to-compare-two-dates-in-javascript/)
+- [Exemplos de uso da função getTime()](https://www.geeksforgeeks.org/javascript-difference-between-two-dates-ms-and-gettime/)

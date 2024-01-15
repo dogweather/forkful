@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Java recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Java"
 category:             "Java"
@@ -10,51 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In the world of web development, sending HTTP requests is a fundamental practice. Whether it is retrieving data from a server or updating information, understanding how to send an HTTP request is essential for any programmer.
+
+Sending HTTP requests is an essential component of web development. It allows us to communicate with servers and retrieve data, making it an integral part of building dynamic and interactive websites.
 
 ## How To
-Sending an HTTP request in Java is a relatively straightforward process. First, we need to import the necessary classes from the Java.net package.
+
+Sending an HTTP request in Java can be done using the HttpURLConnection class. Here's an example of how to use it to send a GET request to a URL:
 
 ```Java
+// Import the necessary packages
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-```
 
-Next, we need to create an instance of the URL class and pass in the API endpoint as a String.
+// Create a URL object with the desired URL
+URL url = new URL("https://example.com");
 
-```Java
-URL url = new URL("https://example.com/api");
-```
-
-We can then open a connection to this URL using the openConnection() method and casting it to a HttpURLConnection.
-
-```Java
+// Open a connection to the URL
 HttpURLConnection con = (HttpURLConnection) url.openConnection();
+con.setRequestMethod("GET"); // Set the request method to GET
+
+// Read the response from the server
+BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuilder response = new StringBuilder();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+
+// Print the response
+System.out.println(response.toString());
 ```
 
-With the connection now established, we can set the request method, headers, and any necessary parameters.
-
-```Java
-con.setRequestMethod("GET");
-con.setRequestProperty("Content-Type", "application/json");
-con.setDoOutput(true); //only if we want to send parameters
-```
-
-Once all our settings are in place, we can finally send the request using the connect() and getResponseCode() methods.
-
-```Java
-con.connect();
-int responseCode = con.getResponseCode();
-```
-
-The response code will tell us if the request was successful or if there were any errors. We can also read the response body using the getInputStream() method and process the data accordingly.
+The above code makes use of the HttpURLConnection class to establish a connection, set the request method to GET, and read the response from the server. The response is then printed to the console. 
 
 ## Deep Dive
-Behind the scenes, sending an HTTP request involves creating a TCP/IP socket connection, formatting the request using the correct protocols, and handling any errors or redirects that may occur. It is crucial to have a basic understanding of the HTTP protocol and its various request methods (GET, POST, PUT, DELETE) when working with HTTP requests.
 
-Some other useful classes and methods in the Java.net package include URLConnection, URLDecoder and URLEncoder for handling URLs with special characters, and HttpsURLConnection for secure HTTPS connections.
+The HttpURLConnection class is a sub-class of the abstract class URLConnection, which provides a framework for working with URLs. It is part of the java.net package and is used for both client and server-side communication. The class provides a range of methods for sending different types of HTTP requests, such as GET, POST, PUT, DELETE, HEAD, OPTIONS, and TRACE. It also allows you to set request headers, set timeouts, and handle redirects.
+
+Another useful class for sending HTTP requests in Java is the HttpClient class from the Apache HttpComponents library. It provides a more user-friendly and modern API for sending HTTP requests and supports features such as authentication, cookies, and caching.
+
+When sending an HTTP request, it's essential to handle potential errors and exceptions that may occur. This includes connection timeouts, server errors, and network issues. It's also crucial to observe proper security practices, such as using HTTPS instead of HTTP for sensitive data.
 
 ## See Also
-- [Oracle Java Network Programming Tutorial](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)
-- [How to Send HTTP Request in Java](https://www.baeldung.com/java-http-request)
-- [Understanding HTTP Basics](https://www.digitalocean.com/community/tutorials/http-the-protocol-every-web-developer-must-know-part-1)
+- [Oracle's HttpURLConnection class documentation](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
+- [Apache HttpComponents library documentation](https://hc.apache.org/)
+- [Mozilla's HTTP request methods reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)

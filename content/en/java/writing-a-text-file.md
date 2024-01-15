@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "Java recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Java"
 category:             "Java"
@@ -11,56 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Text files have been a fundamental part of computing for decades. They allow us to store, access, and manipulate data in a straightforward and readable format. Text files can also be easily shared and transferred between different systems, making them a versatile tool for developers. In this post, we will explore the basics of writing a text file using Java, so you can add this valuable skill to your programming toolkit.
+Writing a text file in Java can be incredibly useful for storing and organizing data. Whether you need to save user input, create a log file, or save important information for your program, writing a text file can help you accomplish these tasks easily and efficiently.
 
 ## How To
 
-Writing a text file in Java involves a few simple steps. First, we need to import the `FileWriter` and `BufferedWriter` classes from the `java.io` package. Then, we can create an instance of `FileWriter` by passing the name of the file we want to write to as a parameter. Next, we wrap the `FileWriter` in a `BufferedWriter` for better performance.
+To write a text file in Java, follow these simple steps:
 
-```Java
-import java.io.FileWriter;
-import java.io.BufferedWriter;
+1. First, create a `File` object by specifying the file path and name. You can also include a parent directory if needed. For example: `File file = new File("file.txt");`.
 
-public class TextFileWriter {
-    public static void main(String[] args) {
-        // Create instance of FileWriter and BufferedWriter
-        FileWriter writer = new FileWriter("sample.txt");
-        BufferedWriter bw = new BufferedWriter(writer);
+2. Next, create a `FileWriter` object and pass in the `File` object as a parameter. This will open the file for writing and allow you to add content to it. For example: `FileWriter writer = new FileWriter(file);`.
 
-        // Write to file and add new lines
-        bw.write("Hello World!");
-        bw.newLine();
-        bw.write("This is a sample text file.");
+3. Now, you can use the `write` method to add content to the file. You can pass in a String or use the `String.valueOf()` method to convert other data types into a String. For example: `writer.write("Hello, world!");`.
 
-        // Close BufferedWriter
-        bw.close();
-    }
-}
-```
+4. After writing the content, be sure to close the `FileWriter` to save the changes to the file. You can use the `close` method for this. For example: `writer.close();`.
 
-The above code creates a new text file named `sample.txt` and writes two lines of text to it. You can customize the content of the file by modifying the `write()` statements. It is essential to close the `BufferedWriter` once we are done writing to the file to avoid any data loss.
-
-When the code is executed, it will create a new text file in the same directory as the Java file. Here is the sample output from the code above:
+And that's it! You have successfully written a text file in Java. You can also use the `append` method to add content to an existing file, and the `flush` method to ensure all the content is written to the file.
 
 ```
-Hello World!
-This is a sample text file.
+Java
+// Create File object
+File file = new File("file.txt");
+
+// Create FileWriter object
+FileWriter writer = new FileWriter(file);
+
+// Write content to the file
+writer.write("Hello, world!");
+
+// Close the FileWriter to save changes
+writer.close();
 ```
 
 ## Deep Dive
 
-Now that you know the basics of writing a text file in Java, let's dive a little deeper and look at some additional techniques.
+When writing a text file in Java, there are a few things to keep in mind:
 
-### Writing Characters vs. Writing Lines
+- If the file does not exist, it will be automatically created when you use the `FileWriter` object. However, if the parent directory does not exist, you will need to create it manually using the `mkdirs()` method.
+- To write to a file in a specific character encoding, you can pass in a `Charset` object as a second parameter to the `FileWriter` constructor. This can be useful for supporting different languages and special characters.
+- You can also use the `BufferedWriter` class to improve performance when writing large amounts of data. This class allows you to write multiple lines of text at once, and then flush the content to the file when you're finished.
+- Don't forget to handle any potential `IOException` that may occur while writing to the file. It's always good practice to wrap your code in a `try-catch` block to prevent any unexpected errors.
 
-In the code example above, we used the `bw.write()` method to write our text. This method writes individual characters to the file. Alternatively, we can use the `bw.newLine()` method to write an entire line of text to the file. This method also adds a new line or carriage return to the end of the line, making it useful for formatting multiple lines of text.
-
-### Exception Handling
-
-When working with files, it is essential to handle exceptions effectively. The `FileWriter` and `BufferedWriter` classes can throw `IOExceptions` if there is an issue with reading or writing to the file. Therefore, it is best to wrap our code in a `try-catch` block to handle potential errors gracefully.
+Now that you have a basic understanding of how to write a text file in Java, you can explore different methods and techniques to customize your file writing experience.
 
 ## See Also
 
-- [Writing Files in Java](https://www.geeksforgeeks.org/file-handling-java-using-filewriter-bufferedwriter/)
-- [Java File Handling](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Java BufferedWriter class](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedWriter.html)
+- [Writing Files in Java](https://www.baeldung.com/java-write-to-file)
+- [Working with Files in Java](https://www.geeksforgeeks.org/working-with-files-in-java/)
+- [Java FileWriter Class](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)

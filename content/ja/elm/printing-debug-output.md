@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 「デバッグの出力をプリントする」"
-simple_title:         "「デバッグの出力をプリントする」"
+title:                "デバッグ出力を印刷する"
+html_title:           "Elm: デバッグ出力を印刷する"
+simple_title:         "デバッグ出力を印刷する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -9,60 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ なぜ
+## なぜ
 
-プログラミングをしていると、私たちはコンピューターがどのように動作しているかを理解するのに役立つ、デバッグ出力を表示することがよくあります。Elmのデバッグプリンティング機能は、このプロセスをより簡単にするために、私たちに多くのツールを提供してくれます。
+デバッグ出力を表示することに関わって最も重要なのは、コードを理解するためです。デバッグ出力を使用することにより、開発者はコードの実行中に何が起こっているのかをより詳細に把握することができます。
 
-＃＃ 方法
+## 方法
 
-Elmでデバッグ出力を印刷するには、まず「Debug」パッケージをインポートしなければなりません。それから、以下のコードを使用して、任意のデータをプリントすることができます。
+デバッグ出力を表示するには、 `Debug.log` 関数を使います。以下は、 `Debug.log` 関数を使用して値を出力する例です。
 
-「エルム
+```Elm
 import Debug
 
-main = 
-  Debug.log "Hello World!" 
-  "こんにちは世界！" 
-  」
+main =
+  let
+    name = "John"
+    age = 25
+  in
+    Debug.log "Name: " name
+    Debug.log "Age: " (toString age)
+```
 
+上記のコードでは、 `Debug.log` 関数を使用して`name`と`age`の値を出力しています。出力はデバッガーに表示されるため、実行中に変数の値を確認することができます。
 
-このコードの出力は次のようになります。
+また、複雑なデータ構造の値を出力する場合は、 `Debug.toString` 関数を使用することもできます。
 
-ハローワールド！
-
-こんにちは世界！
-
-さらに複雑なデータを印刷することもできます。例えば、タプルやリストも印刷できます。
-
-「エルム
+```Elm
 import Debug
 
-main = 
-  Debug.log "Numbers" 
-  (1, 2, 3) 
-  Debug.log "List" 
-  [4, 5, 6] 」
+type alias Person =
+  { name: String
+  , age: Int
+  , address: String
+  }
 
+person = Person "John" 25 "Tokyo"
 
-このコードの出力は次のようになります。
+Debug.log "Person: " (Debug.toString person)
+```
 
-ヌンバーズ
+出力結果は以下のようになります。
 
-（1, 2, 3）
+```elm
+Person: 
+    { address = "Tokyo"
+    , age = 25
+    , name = "John"
+    }
+```
 
-リスト
+## 深堀り
 
-[4, 5, 6]
+`Debug.log` 関数を使用する際に注意することがあります。デバッグ出力は必ずしも正しい値を反映しない場合があり、最終的なプログラムの動作に影響しないこともあります。コードの最適化や最適箇所の特定には、 `Debug.log` を使用することが役立つ場合がありますが、本番環境では避けるべきです。
 
-これらのデバッグ出力は、私たちがコードの実行中にどのようにデータが変化するのかを追跡するのに役立ちます。
+## 参考リンク
 
-＃＃ ディープダイブ
-
-Elmのデバッグプリント機能には、さまざまなオプションがあります。デバッグメッセージに色を付けたり、より詳細な情報を表示するオプションもあります。公式ドキュメントを参照して、さまざまな方法を試してみることができます。
-
-また、デバッグ出力はエラーを解決するためにも役立ちます。実際にプリントコマンドを使用して、どのようなデータがどのように動作しているかを確認することで、エラーを特定し、修正することができます。
-
-＃＃参照
-
-Elmの公式ドキュメント - デバッグメッセージの印刷
-（https://elm-lang.org/docs/debug）
+- [Official guide to Debugging in Elm](https://guide.elm-lang.org/debugging/debugging.html)
+- [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)'

@@ -1,6 +1,7 @@
 ---
-title:                "Go: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Das Herunterladen einer Webseite"
+html_title:           "Go: Das Herunterladen einer Webseite"
+simple_title:         "Das Herunterladen einer Webseite"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,48 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man sich die Mühe machen, eine Webseite herunterzuladen? Nun, es gibt mehrere Gründe. Vielleicht möchtest du eine Kopie einer Webseite als Referenz haben, besonders wenn du daran arbeitest, sie zu verbessern. Oder vielleicht möchtest du einfach offline auf die Inhalte zugreifen können, ohne auf eine Internetverbindung angewiesen zu sein.
 
-Das Herunterladen einer Webseite kann aus verschiedenen Gründen nützlich sein, zum Beispiel um Daten zu extrahieren oder um Dateien zu sichern. In diesem Blog-Post werde ich dir zeigen, wie du mit Go eine Webseite herunterladen kannst.
-
-## Wie
-
-Das Herunterladen einer Webseite mit Go ist relativ einfach. Alles was du brauchst, ist die "net/http" Paket und die "io/ioutil" Bibliothek. Hier ist ein Beispiel, um die Webseite von Google herunterzuladen:
+## Wie geht's
+Lass uns jetzt schauen, wie wir eine Webseite mit Go herunterladen können. Zuerst müssen wir das "net/http" Paket importieren, welches uns Zugriff auf die HTTP-Client-Funktionen von Go gibt. Dann können wir die "Get" Funktion nutzen, die eine HTTP-Anfrage an die angegebene URL sendet und eine Antwort zurückgibt. In unserem Beispiel wollen wir die Webseite von Google herunterladen, also geben wir einfach die URL "http://www.google.com" als Parameter ein.
 
 ```
-package main
+package main 
 
 import (
-	"net/http"
-	"io/ioutil"
-	"fmt"
+    "fmt"
+    "net/http"
 )
 
 func main() {
-	resp, err := http.Get("https://www.google.de")
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
-	
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-	
-	fmt.Println(string(body))
+
+    // Get request to Google's homepage
+    resp, err := http.Get("http://www.google.com")
+    if err != nil {
+        fmt.Println("Error:", err)
+    }
+    defer resp.Body.Close()
+
+    // Store response body in a byte slice
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        fmt.Println("Error:", err)
+    }
+
+    // Convert byte slice to string and print it
+    fmt.Println(string(body))
 }
 ```
 
-Dieser Code sendet eine GET-Anfrage an die URL und liest anschließend den Body der Antwort aus und gibt ihn als String aus.
+Die Ausgabe wird wahrscheinlich sehr umfangreich sein, da es sich um den gesamten HTML-Code von Googles Homepage handelt. Aber keine Sorge, du hast erfolgreich eine Webseite mit Go heruntergeladen!
 
-## Deep Dive
+## Tiefentauchen
+Nun, das Herunterladen einer einfachen Webseite mag nicht allzu beeindruckend sein, aber es ist ein wichtiger Schritt, um weiter fortgeschrittene Projekte zu entwickeln. Mit dem "net/http" Paket von Go kannst du nicht nur Daten von einer Webseite herunterladen, sondern auch verschiedene HTTP-Anfragemethoden nutzen, HTTPS-Verbindungen aufbauen und Cookies verwalten. Es ist ein mächtiges Werkzeug, das es dir ermöglicht, komplexe Aufgaben im Zusammenhang mit HTTP-Anfragen zu bewältigen.
 
-Das Herunterladen einer Webseite kann etwas komplexer werden, wenn du authentifizierte Anfragen oder Cookies benötigst. In solchen Fällen musst du unter Umständen zusätzliche Header hinzufügen und die Anfrage über ein Cookie-Jar verwalten.
-
-Eine weitere Herausforderung beim Herunterladen von Webseiten sind Redirects. Oftmals führen Links auf einer Webseite zu einer anderen URL oder Seite. In solchen Fällen musst du möglicherweise mehrere HTTP-Anfragen senden, um die vollständige Seite zu erhalten.
-
-## Siehe auch
-
-- [net/http Paket in der Go Dokumentation](https://golang.org/pkg/net/http/)
-- [ioutil Bibliothek in der Go Dokumentation](https://golang.org/pkg/io/ioutil/)
-- [Cookie-Jar Paket in der Go Dokumentation](https://golang.org/pkg/net/http/cookiejar/)
+## Siehe Auch
+- [Offizielle Dokumentation von Go zum "net/http" Paket](https://golang.org/pkg/net/http/)
+- [Tutorial: Eine funktionsfähige RESTful API mit Go bauen](https://www.thepolyglotdeveloper.com/2016/07/create-a-simple-restful-api-with-golang/)
+- [Open Source Projekt: Go-HTML-Parser](https://github.com/google/go-html-transform)

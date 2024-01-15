@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "TypeScript: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,52 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Komentoriviparametrien lukeminen on tärkeä taito jokaiselle ohjelmoijalle. Se mahdollistaa ohjelman suorittamisen erilaisten parametrien kanssa, mikä helpottaa ohjelman käyttöä ja tarjoaa enemmän toiminnallisuutta. Tässä blogikirjoituksessa opit lukemaan komentoriviparametreja TypeScriptillä ja saat syvempää tietoa tästä tärkeästä taidosta.
+On olemassa monia tilanteita, joissa on hyödyllistä lukea käyttöliittymän argumentteja TypeScriptissä. Esimerkiksi kun haluat muokata ohjelman toimintaa tiettyjen parametrien perusteella.
 
-## Miten
+# Kuinka
 
-Komentoriviparametrien lukeminen TypeScriptillä on helppoa. Seuraavassa koodilohkossa näet yksinkertaisen esimerkin, jossa tulostetaan komentoriviltä ohjelmalle annetun parametrin arvo.
-
-```TypeScript
-const parametri = process.argv[2];
-console.log("Komentoriviparametri oli: " + parametri);
-```
-
-Jos suoritat tämän koodin komentoriviltä komennolla "ts-node index.ts argumentti", ohjelma tulostaa "Komentoriviparametri oli: argumentti".
-
-Voit myös käyttää komentoriviparametreja ohjelman logiikan säätämiseen. Seuraavassa esimerkissä ohjelma tulostaa eri viestin sen mukaan, mikä parametri sille annetaan.
+Käyttöliittymän argumenttien lukeminen TypeScriptissä on erittäin helppoa. Sinun tarvitsee vain käyttää `process.argv` muuttujaa, joka sisältää kaikki annetut argumentit.
 
 ```TypeScript
-const parametri = process.argv[2];
-if (parametri === "tervetuloa") {
-    console.log("Tervetuloa!");
-} else if (parametri === "hei") {
-    console.log("Hei!");
-} else {
-    console.log("Et antanut oikeaa parametria");
-}
+// Käytetään splice-funktiota ottamaan ensimmäinen argumentti pois listalta (koska se sisältää tiedoston nimen)
+const argumentit = process.argv.splice(2);
+
+console.log(argumentit);
 ```
 
-Jos suoritat tämän koodin komentoriviltä komennolla "ts-node index.ts hei", ohjelma tulostaa "Hei!".
+Esimerkiksi, jos ajatellut tiedostoa `node hello.ts arg1 arg2`, `argumentit` -muuttuja sisältää nyt `[arg1, arg2]`.
 
-Voit myös käyttää komentoriviparametreja ohjelman toiminnallisuuden laajentamiseen. Esimerkiksi voit antaa ohjelmalle oletusasetuksia komentoriviltä, mikä helpottaa sen käyttöä. Seuraavassa koodilohkossa ohjelmalle annetaan oletusarvona nimi, joka tulostetaan jos parametria ei anneta.
+## Syvällisempi katsaus
 
-```TypeScript
-const parametri = process.argv[2] || "Maailma";
-console.log(`Hei ${parametri}!`);
-```
+`process.argv` sisältää todellisen argumentin lisäksi myös 2 lisäargumenttia: node-komentorivin ja tiedoston nimen. Tämä on tärkeää muistaa, kun käsittelet argumentteja TypeScriptissä. Muista myös, että `process.argv` palauttaa aina merkkijonot, joten sinun täytyy muuttaa ne numeroiksi tai muiksi tyypeiksi jos tarvitset niitä.
 
-Jos suoritat tämän koodin komentoriviltä komennolla "ts-node index.ts", ohjelma tulostaa "Hei Maailma!".
+# Katso myös
 
-## Syvempää tietoa
-
-Komentoriviparametrien lukeminen TypeScriptillä perustuu Node.js:n process-objektin argv-muuttujaan. Tämä muuttuja sisältää kaikki komentoriviparametrit taulukkona, jossa ensimmäinen parametri on aina polku Node.js:n suoritettavaan tiedostoon ja toinen parametri ohjelman nimi. Näiden jälkeen tulevat käyttäjän antamat parametrit.
-
-Voit myös käyttää npm-pakettia yargs helpottamaan komentoriviparametrien lukemista. Yargs tarjoaa monipuolisia ja helppokäyttöisiä työkaluja komentoriviparametrien käsittelyyn. Tästä löydät lisätietoa yargsista ja siitä, kuinka voit hyödyntää sitä TypeScript-projekteissasi.
-
-## Katso myös
-
-- [Node.js: process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [Yargs](https://www.npmjs.com/package/yargs)
+- [Node.js -process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- [Reading command line arguments in TypeScript](https://stackoverrun.com/fi/q/1775988)
+- [Using command line arguments in TypeScript](https://medium.com/@xavierafilip/using-command-line-arguments-in-typescript-18fe6f7f25b3)

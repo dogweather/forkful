@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Gleam: Calculando una fecha en el futuro o pasado"
 simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
+## ¡Da un salto hacia el futuro o el pasado: Cómo calcular fechas con Gleam!
 
-Muchas veces, en la programación, necesitamos calcular fechas en el pasado o en el futuro. Esto puede ser necesario para programar eventos, validar datos o simplemente por curiosidad. En Gleam, podemos hacer esto de una manera sencilla y elegante utilizando algunas funciones incorporadas. En esta entrada del blog, aprenderás cómo hacerlo en tan solo unos pocos pasos.
+Si alguna vez te has preguntado cuántos días faltan para el próximo cumpleaños de tu mejor amigo o cuántos días han pasado desde que nació tu mascota, entonces este artículo es para ti. Gleam, un lenguaje de programación funcional creado por el equipo de investigación de Galois, te permite realizar cálculos precisos de fechas en el pasado y en el futuro. ¡Así que sigue leyendo y descubre cómo dar un salto en el tiempo con Gleam!
 
-# Cómo hacerlo
+## ¿Por qué?
 
-Para calcular una fecha en el futuro o en el pasado, necesitamos usar la función `date.shift` de Gleam. Esta función toma tres argumentos: una fecha, una cantidad de tiempo y una unidad de medida de tiempo (días, semanas, meses, etc.). Veamos algunos ejemplos utilizando la fecha de hoy, 23 de mayo de 2021.
+¿Por qué te gustaría calcular fechas en el futuro o en el pasado? Bueno, hay muchas razones. Tal vez necesitas saber cuándo se cumple un plazo importante o quieres saber cuántos días te quedan en tu período de vacaciones. O tal vez eres un aficionado a la genealogía y quieres calcular cuántas generaciones han pasado desde que nació tu bisabuelo. Sea cual sea la razón, Gleam te ofrece una forma fácil y precisa de calcular fechas.
 
-```
-Gleam
-import gleam/time.{Date, Days}
+## Cómo hacerlo
 
-let today = Date.new({ year: 2021, month: 05, day: 23 })
-let tomorrow = Date.shift(today, 1, Days) // 2021-05-24
-let last_month = Date.shift(today, -1, Months) // 2021-04-23
-let next_year = Date.shift(today, 1, Years) // 2022-05-23
+Primero, importa el módulo `Calendar.Date` en tu programa:
+
+```Gleam
+import Calendar.Date
 ```
 
-Como puedes ver, simplemente especificamos la fecha en la que queremos calcular y luego la cantidad de tiempo y la unidad de medida que queremos agregar o restar.
+A continuación, puedes utilizar la función `add_days` para calcular una fecha en el futuro o en el pasado:
 
-También podemos obtener la fecha actual utilizando la función `Date.now()` y luego aplicar la función `Date.shift` para obtener una fecha en el futuro o en el pasado a partir de la fecha actual.
+```Gleam
+let date = Calendar.Date.add_days(
+  today(),
+  30
+)
+```
 
-# Profundizando
+En este ejemplo, hemos usado la función `today` para obtener la fecha actual como punto de partida y luego hemos añadido 30 días a esta fecha usando `add_days`. Puedes cambiar el número de días según tus necesidades. Además, puedes restar días en lugar de añadirlos para obtener una fecha en el pasado.
 
-Puede que te estés preguntando cómo Gleam maneja las diferentes longitudes de los meses o los años bisiestos. No te preocupes, Gleam se encarga de todo eso por ti. Utiliza el calendario gregoriano utilizado por la mayoría de los países en la actualidad y tiene en cuenta los cambios en la duración de los meses y los años bisiestos.
+Si quieres obtener una fecha específica en el pasado o en el futuro, puedes utilizar la función `make` y especificar el año, mes y día como argumentos. Por ejemplo:
 
-Otra cosa interesante es que Gleam también te permite personalizar el calendario que se utiliza para el cálculo de fechas. Puedes proporcionar un calendario personalizado usando solo unos pocos pasos y hacer que la función `date.shift` lo utilice.
+```Gleam
+let date = Calendar.Date.make(1995, 8, 24)
+```
 
-# Ver también
+También puedes hacer cálculos más complejos como sumar años o meses a una fecha determinada utilizando las funciones `add_years` y `add_months`.
 
-- Documentación oficial de Gleam sobre la función `date.shift`: https://gleam.run/modules/time.html#date-shift
-- Ejemplos prácticos de Gleam en GitHub: https://github.com/gleam-lang/gleam/blob/master/examples/time/day_of_the_week.gleam
-- Ejercicio de cálculo de fecha en el futuro utilizando Gleam: https://dayssincelasttweet.com/exercise-deadline/
+## Profundizando en el cálculo de fechas
+
+Gleam utiliza el calendario gregoriano para calcular fechas, lo que significa que no se tendrán en cuenta los cambios en el calendario que se han hecho a lo largo de la historia (como el cambio del calendario juliano al gregoriano en 1582). Además, Gleam no puede manejar fechas anteriores al 1 de enero de 1582.
+
+Si te interesa la matemática detrás de los cálculos de fechas, puedes echar un vistazo a cómo Gleam utiliza algoritmos y funciones para realizar estas operaciones. ¡Quién sabe, podría ser una buena oportunidad para mejorar tus habilidades matemáticas y de programación al mismo tiempo!
+
+## Consulta también
+
+- [Documentación de Gleam sobre fechas](https://gleam.run/std/calendar.date.html)
+- [Tutorial de Gleam](https://gleam.run/book/tour/introduction.html)
+- [Comunidad de Gleam en Discord](https://discord.gg/7Rptjwu)

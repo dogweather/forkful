@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Working with json"
+title:                "Working with json"
+html_title:           "Ruby recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,49 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
-Working with JSON (JavaScript Object Notation) in Ruby can be incredibly useful when exchanging data between different systems or applications. It provides a lightweight and readable format for data, making it easier to parse and manipulate compared to other data formats.
+## Why
 
-# How To
-Using Ruby, there are a few different ways to work with JSON. The first option is to use the built-in `JSON` module. This provides a simple and straightforward way to convert objects to JSON format and vice versa. Here's an example of how to convert a hash to JSON:
+JSON, or JavaScript Object Notation, is a widely used format for storing and exchanging data on the web. It has become the de facto standard for transferring data between web applications, making it an essential skill for any developer working with web technologies. By learning how to work with JSON in Ruby, you will be able to process and manipulate data in a seamless and efficient manner.
 
-```Ruby
+## How To
+
+Working with JSON in Ruby is simple and straightforward. First, we need to require the JSON library:
+
+```ruby
 require 'json'
-
-my_hash = { name: "John", age: 30 }
-json_data = my_hash.to_json
-
-puts json_data # Outputs: {"name": "John", "age": 30}
 ```
 
-You can also convert JSON data into a Ruby hash using the `JSON.parse` method:
+Next, we can convert JSON data into a Ruby object using the `JSON.parse` method:
 
-```Ruby
-require 'json'
-
-json_data = '{"name": "John", "age": 30}'
-my_hash = JSON.parse(json_data)
-
-puts my_hash # Outputs: {:name=>"John", :age=>30}
+```ruby
+json_string = '{"name": "John", "age": 30}'
+user = JSON.parse(json_string)
 ```
 
-Another way to work with JSON in Ruby is by using the popular `HTTParty` gem. This allows you to make HTTP requests and handle the response in JSON format. Here's an example of how to make a GET request and retrieve JSON data from an API:
+This will convert the JSON data into a hash, which we can then access the values from using standard Ruby hash methods:
 
-```Ruby
-require 'httparty'
-
-response = HTTParty.get('https://api.example.com/users')
-users = response.parsed_response
-
-puts users # Outputs: [{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]
+```ruby
+puts user["name"] #=> John
+puts user["age"] #=> 30
 ```
 
-# Deep Dive
-When working with JSON in Ruby, it's important to understand the methods provided by the `JSON` module. Some useful methods include `generate`, `parse`, `pretty_generate`, `load`, and `dump`. These methods allow you to convert between JSON and Ruby objects, as well as format the JSON data for readability.
+We can also convert a Ruby object into JSON using the `to_json` method:
 
-In addition, it's important to be familiar with the structure of JSON data. It consists of key-value pairs enclosed in curly braces, with data types such as strings, numbers, arrays, and objects. It's also worth noting that JSON supports nested objects and arrays, making it a versatile format for representing complex data.
+```ruby
+hash = { "name" => "Jane", "age" => 25 }
+puts hash.to_json #=> {"name":"Jane","age":25}
+```
 
-# See Also
-- [Ruby's `JSON` module documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html)
-- [HTTParty gem documentation](https://github.com/jnunemaker/httparty)
-- [JSON data structures](https://www.json.org/json-en.html)
+## Deep Dive
+
+There are a few important things to keep in mind when working with JSON in Ruby. First, when parsing JSON data, we can use the `symbolize_names` option to convert the keys into symbols instead of strings, making it easier to access the data using symbols:
+
+```ruby
+json_string = '{"name": "John", "age": 30}'
+user = JSON.parse(json_string, symbolize_names: true)
+puts user[:name] #=> John
+puts user[:age] #=> 30
+```
+
+We can also use the `JSON.pretty_generate` method to format our JSON data in a more readable way, making it easier to debug and understand:
+
+```ruby
+hash = { "name" => "Jane", "age" => 25 }
+puts JSON.pretty_generate(hash)
+
+#=>
+{
+  "name": "Jane",
+  "age": 25
+}
+```
+
+Lastly, it's important to handle errors when working with JSON data. Ruby's `JSON.parse` method will raise an error if the JSON data is invalid, so it's best to wrap it in a `begin...rescue` block and handle the error accordingly.
+
+## See Also
+
+- [Official Ruby JSON documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/json/rdoc/JSON.html)
+- [Ruby JSON gems](https://rubygems.org/search?utf8=%E2%9C%93&query=json)
+- [Working with JSON in Rails](https://guides.rubyonrails.org/v6.0.3.1/api_app.html#json)

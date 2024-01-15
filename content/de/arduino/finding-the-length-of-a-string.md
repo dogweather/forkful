@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Ermittlung der Länge eines Strings"
+html_title:           "Arduino: Ermittlung der Länge eines Strings"
+simple_title:         "Ermittlung der Länge eines Strings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,66 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Warum
+Warum:
 
-Ja, warum sollte man sich überhaupt damit beschäftigen, die Länge eines Strings zu finden? Ganz einfach: Strings sind in der Programmierung eine wichtige Datenstruktur, die häufig verwendet wird. Das Finden der Länge eines Strings kann also dabei helfen, bestimmte Probleme zu lösen und den Code effizienter zu gestalten.
+Die Länge einer Zeichenkette (String) ist eine wichtige Information, die wir in vielen Anwendungen benötigen. Zum Beispiel könnte man damit die Anzahl der eingegebenen Zeichen in einem Textfeld überwachen oder die Länge eines Passwortes überprüfen. In diesem Artikel werden wir uns damit beschäftigen, wie man mithilfe von Arduino die Länge einer Zeichenkette bestimmen kann.
 
-##Wie geht das?
-Um die Länge eines Strings in Arduino zu finden, gibt es verschiedene Möglichkeiten. Eine einfache Methode wäre, die Funktion `strlen()` zu verwenden, die in der `string.h` Bibliothek enthalten ist. Diese Funktion erwartet den zu prüfenden String als Parameter und gibt als Ergebnis die Anzahl der Zeichen im String zurück.
+Wie geht's:
 
-```Arduino
-#include <string.h>
-
-void setup() {
-  Serial.begin(9600); // Initialisiere die serielle Schnittstelle
-  
-  char meinString[] = "Hallo Welt"; // Definiere den String
-  
-  int laenge = strlen(meinString); // Rufe die Funktion auf
-  
-  Serial.println("Die Länge des Strings ist: ");
-  Serial.println(laenge); // Gib das Ergebnis aus
-}
-
-void loop() {
-  // Code der loop-Funktion
-}
-```
-
-Der obige Code würde als Output "Die Länge des Strings ist: 10" ausgeben, da unser String 10 Zeichen lang ist (einschließlich eines Leerzeichens).
-
-Es ist auch möglich, die Länge eines Strings mithilfe einer Schleife zu ermitteln. In diesem Beispiel gehen wir davon aus, dass der String mit einem Nullzeichen (oder auch null-terminierendes Zeichen) am Ende endet, das als Markierung dient. Wir zählen also so lange die Zeichen, bis wir auf das Nullzeichen stoßen.
+Um die Länge einer Zeichenkette in Arduino zu finden, gibt es verschiedene Ansätze. Wir werden uns hier auf den einfachsten Weg konzentrieren, indem wir die Funktion "length()" verwenden. Diese Funktion zählt die Anzahl der Zeichen in einer Zeichenkette und gibt das Ergebnis zurück.
 
 ```Arduino
-void setup() {
-  Serial.begin(9600); // Initialisiere die serielle Schnittstelle
-  
-  char meinString[] = "Hallo Welt"; // Definiere den String
-  
-  int laenge = 0; // Initialisiere die Länge
-  
-  // Schleife zählt die Zeichen des Strings
-  while (meinString[laenge] != '\0') {
-    laenge++;
-  }
-
-  Serial.println("Die Länge des Strings ist: ");
-  Serial.println(laenge); // Gib das Ergebnis aus
-}
-
-void loop() {
-  // Code der loop-Funktion
-}
+String meineZeichenkette = "Hallo Welt!";
+int laenge = meineZeichenkette.length(); // laenge = 11
+Serial.println(laenge); // gibt 11 aus
 ```
 
-Das Ergebnis wäre hier ebenfalls "Die Länge des Strings ist: 10". Beachte aber, dass die Funktion `strlen()` bereits deutlich effizienter ist und daher empfohlen wird.
+In diesem Beispiel haben wir zuerst eine Zeichenkette mit dem Text "Hallo Welt!" erstellt und dann die Funktion "length()" auf diese Zeichenkette angewendet. Das Ergebnis wird in der Variablen "laenge" gespeichert und anschließend über die serielle Schnittstelle ausgegeben.
 
-##Der tiefe Einblick
-Wenn du dich näher mit dem Thema beschäftigen möchtest, gibt es einige Dinge zu beachten. Zum einen gibt es bei der Verwendung von `strlen()` keine Möglichkeit, zu überprüfen, ob der zu prüfende String tatsächlich einen Nullterminator besitzt. Dies kann zu Fehlern führen, wenn der String nicht korrekt erstellt wurde.
+Deep Dive:
 
-Außerdem gibt es unterschiedliche Codierungen (wie z.B. ASCII oder UTF-8), die sich auf die Anzahl der Zeichen und damit auch auf die Länge eines Strings auswirken können. Es ist daher wichtig, die Codierung zu berücksichtigen, wenn es um die Länge von Strings geht.
+Die Funktion "length()" ist sehr einfach zu nutzen und gibt uns schnell die gewünschte Information. Aber was passiert eigentlich im Hintergrund? Wie funktioniert die Funktion?
 
-##Siehe auch
-- [Tutorial: Der Umgang mit Strings in Arduino](https://www.arduino.cc/en/Tutorial/TextString)
-- [String Reference von Arduino](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
-- [ASCII-Tabelle](https://www.ascii-code.com/)
+Die Funktion "length()" ist Teil des String Objekts in der Arduino Programmiersprache. Dieses Objekt beinhaltet alle Funktionen, die auf Zeichenketten angewendet werden können. Die Implementierung dieser Funktion ist eine einfache Schleife, die jedes Zeichen in der Zeichenkette durchläuft und zählt. Am Ende wird die Anzahl der durchlaufenden Schleifendurchgänge zurückgegeben, was der Länge der Zeichenkette entspricht.
+
+Also keine Sorge, wenn du die genaue Funktionsweise der Funktion "length()" nicht verstehst. Wichtig ist, dass du weißt, wie du sie verwenden kannst, um die Länge einer Zeichenkette in Arduino zu bestimmen.
+
+Siehe auch:
+
+- [Arduino Reference - String Length](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
+- [Arduino String Object Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

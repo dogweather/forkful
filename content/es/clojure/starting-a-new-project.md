@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Clojure: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,48 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-Comenzar un nuevo proyecto en Clojure puede ser una excelente manera de expandir tus habilidades de programación y explorar un lenguaje de programación funcional dinámico. Además, Clojure es famoso por su capacidad para manejar grandes conjuntos de datos y su interoperabilidad con Java, lo que lo convierte en una opción popular para proyectos de ciencia de datos.
+Comenzar un nuevo proyecto puede ser emocionante y motivador para cualquier programador, ya que es una oportunidad para crear algo nuevo y desafiante. Además, la comunidad de Clojure es muy activa y amigable, lo que hace que sea una excelente opción para proyectos colaborativos.
 
 ## Cómo hacerlo
+Para comenzar un nuevo proyecto en Clojure, primero debes instalarlo en tu computadora. Luego, puedes seguir los siguientes pasos:
 
-Para comenzar un nuevo proyecto en Clojure, necesitarás tener instalado el entorno de desarrollo de Clojure (Clojure development environment) y un editor de texto. Una opción popular es usar Leiningen, que funciona como un administrador de paquetes y un generador de proyectos para Clojure.
-
-Una vez que hayas instalado Leiningen, puedes crear un nuevo proyecto con el siguiente comando:
-
-`lein new [nombre del proyecto]`
-
-Esto creará una estructura básica de archivos para tu proyecto, incluyendo un archivo "project.clj" que contiene las dependencias y configuraciones de tu proyecto.
-
-Para escribir código en tu proyecto, simplemente abre el archivo "src/[nombre del proyecto]/core.clj" en tu editor de texto y comienza a escribir en el lenguaje Clojure. Por ejemplo, puedes escribir una función que calcule la suma de dos números:
-
+1. Abre tu editor de código preferido y crea un nuevo archivo con la extensión ".clj".
+2. Importa el paquete `clojure.core` para tener acceso a las funciones básicas del lenguaje.
+3. Define una función principal con el nombre de tu proyecto:
 ```Clojure
-(defn sumar [a b] 
-  (+ a b))
-
-;;Llamar a la función
-(sumar 5 10) ;;Output: 15
+(defn mi-proyecto []
+   ;; Código de tu proyecto aquí
+)
 ```
-
-Ahora, podemos usar las funciones del lenguaje Clojure para crear una lista de números y luego sumarlos utilizando nuestra función "sumar":
-
+4. Ahora puedes comenzar a escribir el código de tu proyecto dentro de la función `mi-proyecto`.
+5. Para ejecutar tu programa, puedes abrir una terminal y escribir `clj` seguido del nombre de tu archivo:
 ```Clojure
-(def numeros [1 2 3 4 5])
-
-(reduce sumar numeros) ;;Output: 15
+clj mi-proyecto.clj
 ```
+6. ¡Voilà! Tu proyecto se ejecutará y podrás ver su salida en la terminal.
 
 ## Profundizando
+Comenzar un nuevo proyecto en Clojure también te permite aprovechar su poderosa función de interoperabilidad con Java. Esto significa que puedes utilizar librerías y herramientas de Java en tu proyecto de Clojure.
 
-Al comenzar un nuevo proyecto en Clojure, es importante familiarizarse con la sintaxis del lenguaje y los conceptos básicos de la programación funcional. También es útil conocer las características específicas de Clojure, como sus estructuras de datos inmutables y su gestión de concurrencia.
-
-Además, Clojure cuenta con una amplia comunidad de usuarios y una gran cantidad de recursos disponibles en línea. Puedes unirte a grupos de usuarios, foros y conferencias para aprender más sobre el lenguaje y obtener ayuda si tienes alguna pregunta o problema en tu proyecto.
-
-No tengas miedo de experimentar con diferentes aspectos de Clojure y seguir aprendiendo a través de la documentación y la práctica. ¡Pronto te sentirás cómodo y seguro en tu nuevo proyecto en Clojure!
+Además, Clojure tiene una sintaxis concisa y funcional, lo que hace que la escritura de código sea más fácil y elegante. También cuenta con una amplia comunidad de desarrolladores que pueden brindarte apoyo y recursos para resolver cualquier problema que encuentres durante el proceso de creación del proyecto.
 
 ## Ver también
-
-- [Documentación oficial de Clojure](https://clojure.org/documentation)
-- [Leiningen](https://leiningen.org/)
-- [Foro oficial de Clojure](https://ask.clojure.org/)
-- [Comunidad Clojure en Reddit](https://www.reddit.com/r/Clojure/)
+- [Cómo instalar Clojure](https://clojure.org/guides/getting_started)
+- [Documentación oficial de Clojure](https://clojure.org/guides/index)
+- [Comunidad de Clojure en Reddit](https://www.reddit.com/r/Clojure/)

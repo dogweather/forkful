@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie ciągów tekstowych"
+html_title:           "Ruby: Łączenie ciągów tekstowych"
+simple_title:         "Łączenie ciągów tekstowych"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,47 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą Ruby, prawdopodobnie spotkałeś się z sytuacją, w której musiałeś połączyć dwa lub więcej ciągów tekstowych w jednym ciągu. Na szczęście w Ruby istnieje łatwy sposób na wykonanie tego zadania: funkcja concatenate, inaczej znana jako "łączenie" lub "sklejanie" ciągów. W tym wpisie dowiesz się, dlaczego warto korzystać z tej operacji oraz jak jej używać.
+Czemu ktokolwiek chciałby się zająć łączeniem ciągów znaków? Jest to często używany w programowaniu sposób na tworzenie dynamicznych komunikatów, wygenerowanie unikalnych identyfikatorów lub manipulowanie tekstem w zależności od różnych warunków.
 
 ## Jak to zrobić
 
-Poniżej przedstawiam kilka przykładów wykorzystania funkcji concatenate w Ruby, wraz z wynikami wyświetlonymi pod kodem.
-
 ```Ruby
-# Przykład 1
-puts "Hello" + "World"
-# Output: HelloWorld
+# łączenie stałych ciągów znaków
+puts "Hello " + " world!" 
+# output: Hello world!
 
-# Przykład 2
-greeting = "Hello"
+# łączenie zmiennych ciągów znaków
 name = "John"
-puts greeting + " " + name
-# Output: Hello John
+puts "Hello, " + name
+# output: Hello, John
 
-# Przykład 3
-numbers = [1, 2, 3]
-puts "Numbers: " + numbers.join(",")
-# Output: Numbers: 1,2,3
+# łączenie różnych typów danych
+number = 3
+puts "I have " + number.to_s + " apples."
+# output: I have 3 apples.
 ```
 
-## Dogłębne badanie
+## Głębszy wgląd
 
-Funkcja concatenate w Ruby jest nie tylko wygodna, ale również bardzo przydatna w wielu sytuacjach. Pozwala na łączenie nie tylko ciągów tekstowych, ale także innych typów danych, takich jak liczby czy tablice. Możemy również użyć znaku operatora dodawania (+) lub metody "concat" zamiast funkcji concatenate, a wynik będzie taki sam.
+W języku Ruby, łączenie ciągów znaków odbywa się za pomocą operatora "+" lub metody "concat". Jednakże użycie operatora jest zalecane ze względu na wydajność. Dodatkowo, do łączenia ciągów znaków wykorzystywana jest metoda "<<", jednak jest to mniej wydajne niż użycie operatora "+".
 
-Istnieje także możliwość używania interpolacji ciągów, czyli wstawiania zmiennych lub wyrażeń wewnątrz ciągu tekstowego za pomocą znaku "#{}". Przykład:
+## Zobacz też
 
-```Ruby
-x = 5
-puts "Liczba x wynosi #{x}"
-# Output: Liczba x wynosi 5
-```
-
-Kolejną przydatną funkcją jest "concat!" - in-place version concatenate, która zmienia oryginalny ciąg tekstowy, zamiast tworzyć nowy. Bardzo ważne jest również określenie dokładnej kolejności ciągów, gdy stosujemy funkcję concatenate, ponieważ może to mieć wpływ na wydajność i skuteczność operacji.
-
-W przypadku większych ciągów tekstowych, lepiej jest używać metody "concat" zamiast znaku +, ponieważ jest bardziej wydajna w przypadku dużej liczby połączonych ciągów.
-
-## Zobacz również
-
-- Dokumentacja Ruby o funkcji concatenate: https://ruby-doc.org/core-2.7.3/String.html#method-i-2B
-- Inne metody łączenia ciągów w Ruby: https://apidock.com/ruby/String
-- Przydatne wskazówki dotyczące pracy z ciągami w Ruby: https://www.rubyguides.com/ruby-tutorial/string-methods/
+- Dokumentacja Ruby: https://ruby-doc.org/core-3.0.1/String.html#method-i-2B
+- Poradnik dla początkujących w Ruby: https://www.ruby-lang.org/pl/documentation/quickstart/

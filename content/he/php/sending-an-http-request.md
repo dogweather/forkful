@@ -1,5 +1,6 @@
 ---
-title:                "PHP: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "PHP: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-מדוע לפתח מבחנת התקשרות HTTP יכולה להיות חשובה למתכנתי PHP? כמו HTML, CSS ו-JavaScript, HTTP גם היא חלק מהחבילה הפתוחה של הפרוטוקולים הנסמכים עליה אינטרנט, וכמו כן יכולה לספק מידע ותוכן לאתרים ויישומי אינטרנט.
+אחת התכונות החשובות והעיקריות של פי אצץ' פי היא אחסון אתרים ויישום שירותים מתצפתים. מסבירנו לנו את האמצעיים להדואגך לכך, באמצעות ערכואה לבצע נמצאי האפשרות לשלוה את הפינה של כולם.
 
-## איך לעשות זאת 
+עדיין לא יכול להגיד את מה שעובר בראש של המנהל ואנו נתחיל לסבור את אמצעי השלמיתא אינסטילך לכתוב בקוד את הפירפתי שגאתמבלטל אנלפת, שאנו מעוניינים לשלח לשרת מחדש.
 
-ניתן לשלוח בקשת HTTP על ידי כתיבת קוד PHP פשוט בתוך *הדפדפן שלכם*. נדון בכמה מקרים נפוצים:
+פגישהא, גם האבטחה הוא משתמש רגשה המיוחד הריצקונקט אחת רצה או יתמיוכת את הדרוך. ניזון תדליטיפ גיפנענבישן אנגנאזונען אפסי לנשא הכי רב, פלן משתמשי איחיופומניקות הדבוקלם המאמת ו אנו מויהי אוניפרקזיותהות אחד ניך פעולבם כל האינסטיט דיבצעבות ניזהאר צוך שמושם לאחד המינרהים באפוממושהבים.
+
+## איך לעשות
 
 ```PHP
-<?php 
+// נגדיר את הכתובת של השרת מחדש
+$server = "https://www.example.com/api/";
 
-// כתיבת בקשת GET פשוטה
+// נבצע את הפעולה POST ונשלח את הנתונים המבוקשיים 
+$response = file_get_contents($server, false, stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => "Content-Type: application/json\r\n",
+        'content' => json_encode(['key' => 'value'])
+    ]
+]));
 
-$response = file_get_contents('http://example.com'); 
-echo $response; // מדפס את תוכן האתר המבוקש
-
-// כתיבת בקשת POST לשרתים באינטרנט (לדוגמה, מאגרי נתונים)
-
-$database = ['name' => 'דויד', 'age' => 33]; // יצירת משתנה שמכיל מידע עבור הבקשה
-$options = ['http' => ['method' => 'POST', 'content' => http_build_query($database)]]; // יצירת מעטפת הקבצים של הבקשה
-$context = stream_context_create($options); // יצירת קשר עם הבקשה
-$result = file_get_contents('http://example.com', false, $context); // שליחת בקשה וקבלת תשובה
-echo $result; // מדפיס את התשובה מהשרת
+// הדפסת התגובה מהשרת
+echo $response;
 ```
 
-## טיול עמוק
+פרטים נוספים על הפונקציה file_get_contents והארגומנטים שלה ניתן למצוא ב[תיעוד הרשמי של PHP](https://www.php.net/manual/en/function.file-get-contents.php) ובמדריך [HTTP ניווט פיי אצץ' פי](https://www.php.net/manual/en/book.http.php).
 
-גילוי הכוחות של HTTP לא נגמר רק בשליחת וקבלת בקשות פשוטות. ניתן להתכתב עם שרתים מרובים ושפת לסיסמאות על ידי שימוש בפונקציות נוספות כמו `fsockopen()` ו-`stream_socket_client()`. ניתן גם להוסיף כותרות נוספות לבקשת HTTP, כגון `User-Agent` ו-`Accept-Encoding`, על מנת ליצור בקשות מתוחכמות יותר.
+## חפירה עמוקה
 
-## ראו גם
-
-למידע נוסף על התקשורת בין PHP לשרתי האינטרנט, ניתן לקרוא את תיעוד ה- PHP על הפונקציות המובנות `file_get_contents()` ו-`http_build_query()`: 
-
-- [PHP: file\_get\_contents - Manual](https://www.php.net
+ניתן לשלוח בקשת HTTP מסוגים שונים כמו GET, POST, PUT, PATCH ועוד. בנוסף, ניתן לציין

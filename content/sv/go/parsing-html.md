@@ -1,6 +1,7 @@
 ---
-title:                "Go: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Go: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,62 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att parsA HTML är en vanlig uppgift för många Go-utvecklare, särskilt för de som arbetar inom webbutveckling. Genom att kunna extrahera data från HTML-kod kan man automatiskt skapa strukturerade filer som kan användas för olika ändamål såsom dataanalys, webbskrapning eller informationsextrahering.
+Om du någonsin har försökt att extrahera data från en webbsida, vet du att det kan vara en tidskrävande och tråkig process att manuellt klicka sig igenom HTML-koden. Genom att använda Go kan du skapa ett program som automatiskt analyserar och extraherar data från HTML-sidor, vilket sparar tid och minskar risken för mänskliga fel.
 
 ## Hur man gör
 
-För att parsA HTML med Go behöver man först använda en lämplig parser eller bibliotek. Ett populärt alternativ är goquery som erbjuder ett intuitivt och enkelt API för att sålla ut specifika element eller attribut från HTML-kod.
+För att parsa HTML i Go, behöver du först importera "html" paketet i ditt program. Sedan kan du använda funktionen "NewTokenizer" för att skapa en tokenizer som kan dela upp HTML-koden i olika tokens (t.ex. starttag, text och sluttag). Du kan sedan använda dessa tokens för att hitta och extrahera önskad data från HTML-koden.
 
-Börja med att importera nödvändiga paket:
+För att visa enkelheten och kraften i att parsa HTML i Go, här är ett exempel på ett program som hämtar och skriver ut titlarna på alla länkar på en webbsida:
 
 ```Go
+package main
+
 import (
     "fmt"
-    "log"
-
-    "github.com/PuerkitoBio/goquery"
+    "net/http"
+    "golang.org/x/net/html"
 )
-```
 
-Nästa steg är att hämta HTML-koden från en webbsida, antingen genom att läsa in från en fil eller genom att göra en HTTP-förfrågan. Här är ett exempel på hur man kan hämta HTML-kod från en specifik URL:
+func main() {
+    response, _ := http.Get("https://www.example.com")
+    tokenizer := html.NewTokenizer(response.Body)
 
-```Go
-// Hämta HTML-kod från en URL
-res, err := http.Get("http://example.com")
-if err != nil {
-    log.Fatal(err)
+    for {
+        token := tokenizer.Next()
+
+        switch {
+        case token == html.ErrorToken:
+            return
+        case token == html.StartTagToken:
+            token := tokenizer.Token()
+            if token.Data == "a" {
+                for _, attr := range token.Attr {
+                    if attr.Key == "title" {
+                        fmt.Println(attr.Val)
+                    }
+                }
+            }
+        }
+    }
 }
-defer res.Body.Close()
 ```
 
-Sedan behöver vi använda "NewDocumentFromReader" funktionen från goquery-paketet för att skapa ett dokument som innehåller den parsade HTML-koden:
+Output:
 
-```Go
-// Skapa ett dokument från läsaren
-doc, err := goquery.NewDocumentFromReader(res.Body)
-if err != nil {
-	log.Fatal(err)
-}
+```sh
+Example Title 1
+Example Title 2
+Example Title 3
 ```
 
-Nu kan vi använda "Find" funktionen för att hitta specifika element eller attribut baserat på deras klass, ID eller tagg. Här är ett exempel på hur man kan hämta alla länkar från en viss webbsida:
+## Djupdykning
 
-```Go
-// Hitta alla länkar på sidan
-doc.Find("a").Each(func(i int, s *goquery.Selection) {
-    link, _ := s.Attr("href")
-    fmt.Printf("Länk %d: %s\n", i+1, link)
-})
-```
+I exemplet ovan använder vi funktionen "Next" för att få nästa HTML-token och sedan en switch-sats för att kontrollera vilken typ av token vi fått. Det finns flera olika typer av HTML-tokens som tokenizer kan returnera, och det är viktigt att förstå hur dessa fungerar för att kunna extrahera korrekt data.
 
-## Deep Dive
+En annan viktig del av att parsa HTML är att förstå strukturen och hierarkin i HTML-dokumentet. Genom att använda olika funktioner som "NextSibling" och "FirstChild" kan du navigera genom HTML-trädet och hitta de element du är intresserad av.
 
-En av de viktigaste aspekterna vid parsning av HTML är att förstå dess struktur och syntax. HTML kod består av element, attribut och värden som tillsammans skapar en hierarki av data. Det är därför viktigt att ha en grundläggande förståelse för HTML för att kunna pars A på ett effektivt sätt.
+Det finns också flera olika attribut som kan användas för att hitta och extrahera data från HTML-koden. Till exempel kan du använda "id" för att hitta ett specifikt element med ett unikt id, eller "class" för att hitta flera element med samma klass.
 
-En annan viktig aspekt är effektiviteten och automatiseringen. Genom att utveckla återanvändbara funktioner och metoder för parsning av HTML-kod kan man spara tid och undvika manuella fel. Att ha en kraftfull parser som goquery gör det också enkelt att extrahera data från stora mängder HTML-kod.
+Generellt sett finns det många detaljer och tekniker för att parsa HTML i Go, men med lite övning kan du skapa robusta och effektiva program som kan hantera olika typer av HTML-kod.
 
 ## Se även
 
-- [Goquery Dokumentation](https://github.com/PuerkitoBio/goquery)
-- [Använda Go för webbutveckling](https://www.calhoun.io/using-go-as-a-scripting-language-in-linux/)
-- [HTML-tutorial för nybörjare](https://www.w3schools.com/html/)
+Här är några användbara länkar för vidare läsning och lärande om att parsa HTML i Go:
+
+- Golang.org: [Parsa HTML](https://golang.org/pkg/html/)
+- Blogg från Eric Chiang: [Hantering av HTML med Go](https://blog.erikwinter.nl/html-handling-with-go/)
+- GratisGo.com: [Webb-scraping med Go](https://gratisgo.com/web-scraping-with-go/)

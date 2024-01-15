@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Aloittaminen uudesta projektista"
-simple_title:         "Aloittaminen uudesta projektista"
+title:                "Aloittamassa uutta projektia"
+html_title:           "Arduino: Aloittamassa uutta projektia"
+simple_title:         "Aloittamassa uutta projektia"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -11,40 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos olet koskaan halunnut aloittaa uuden projektin käyttäen Arduinoa, tämä blogi on juuri sinulle! Arduino on monikäyttöinen ja helppokäyttöinen mikrokontrolleri, joka tarjoaa loputtomasti mahdollisuuksia luovuudelle ja insinöörisille haasteille. Mikä tahansa idea, joka sinulla on mielessä, Arduino auttaa sinua toteuttamaan sen.
+Miksi aloittaa uusi projekti Arduinoa käyttäen? Loppujen lopuksi on olemassa monia muitakin tapoja toteuttaa elektroniikkaprojekteja. Mutta miksi Arduino on yleensäkin vaihtoehto, ja mitä hyötyä siitä on?
 
-## Miten
+Arduino on helppo käyttää ja monipuolinen alusta, jolla voi toteuttaa lähes mitä tahansa elektroniikkaprojektia. Se tarjoaa myös runsaasti ohjeita ja tutoriaaleja eri alojen projekteihin, joten aloittaminen on helppoa vaikka et olisikaan elektroniikan asiantuntija.
 
-Arduino-ohjelmointi on helppoa ja hauskaa! Aloita lataamalla Arduino IDE ja kytkemällä Arduino mikrokontrolleri tietokoneeseen USB-kaapelilla. Tämän jälkeen voit aloittaa koodaamisen.
+## Näin aloitat uuden projektin
 
-```Arduino 
+Aloittaaksesi uuden projektin Arduinolla, sinun tarvitsee ensin hankkia tarvittavat välineet. Perusvaatimuksia ovat Arduino-mikrokontrolleri, piirilevy, johdot, vastukset ja tarvittaessa erilaisia antureita ja moduuleita.
+
+Sitten tarvitset myös Arduino-ohjelmiston, jonka voit ladata ilmaiseksi Arduino-verkkosivuilta. Ohjelmisto mahdollistaa koodin kirjoittamisen, yhdistämisen mikrokontrolleriin ja testaamisen.
+
+Valitse sitten projektillesi tarkoituksenmukainen ohjelmointikieli ja aloita koodin kirjoittaminen. Esimerkiksi seuraava koodinpätkä saa LEDin vilkkumaan kerran sekunnissa:
+
+```Arduino
+int ledPin = 13; // määritetään LEDin pinni
 void setup() {
-    // Suoritetaan kerran alussa
-    pinMode(LED_BUILTIN, OUTPUT); //Asetetaan LED_BUILTIN portiksi
+  pinMode(ledPin, OUTPUT); // LEDin pin-lähtötila asetetaan lähdöksi
 }
-
 void loop() {
-    // Suoritetaan loputtomasti
-    digitalWrite(LED_BUILTIN, HIGH); //Vaihdetaan LED_BUILTIN tilaa
-    delay(1000); //Odota 1 sekunti
-    digitalWrite(LED_BUILTIN, LOW); //Vaihdetaan LED_BUILTIN tilaa taas
-    delay(1000); //Odota 1 sekunti taas
+  digitalWrite(ledPin, HIGH); // LEDiä sytytetään
+  delay(1000);                // odotetaan yksi sekunti
+  digitalWrite(ledPin, LOW);  // LED sammutetaan
+  delay(1000);                // odotetaan taas
 }
 ```
-Tämä yksinkertainen koodinpätkä saa LED-valon vilkkumaan sekunnin välein. Voit kokeilla muuttaa delay-aikoja saadaksesi erilaisia tuloksia. Voit myös kokeilla muita komentoja, kuten analogisten pinnien lukemista tai käyttää muita antureita ja laitteita. Vain mielikuvitus on rajana!
 
-## Syväsukellus
+Kun koodi on valmis, voit ladata sen Arduino-mikrokontrolleriin ja tarkistaa, että projekti toimii halutulla tavalla.
 
-Jos haluat aloittaa oman projektisi Arduinoa käyttäen, sinun kannattaa aloittaa suunnitteluvaiheesta. Mieti ensin, minkälainen idea sinulla on ja mitä ominaisuuksia tarvitset projektin toteuttamiseen. Seuraavaksi voit piirtää kaavion siitä, miten komponentit kytketään yhteen ja miten Arduino ohjaa niitä. Tämä auttaa hahmottamaan projektisi kokonaisuudessaan ja välttämään virheitä.
+## Syvemmälle projektin aloittamiseen
 
-Kun suunnitelma on valmis, voit siirtyä koodaamiseen ja testaamiseen. Muista myös dokumentoida projektiasi etenemisen aikana ja opitut asiat, jotta voit helposti palata takaisin ja muokata projektiasi tarvittaessa.
+Kun olet päässyt vauhtiin Arduinon käytössä, voit tutustua esimerkiksi erilaisiin laajennuksiin ja biblioteekkeihin, jotka tarjoavat valmiita toimintoja ja helpottavat koodin kirjoittamista. Voit myös tutkia erilaisia antureita ja moduuleita, joilla voit lisätä monipuolisuutta projektiisi.
+
+Toinen tapa syventyä Arduinon käyttöön on seurata Arduino-yhteisön keskusteluita ja osallistua haasteisiin ja kilpailuihin, joita järjestetään maailmanlaajuisesti. Näin voit oppia uutta ja saada inspiraatiota uusiin projekteihin.
 
 ## Katso myös
 
-Tässä muutama hyödyllinen linkki aloittaessa uutta Arduino-projektia:
-
-- [Official Arduino -sivusto](https://www.arduino.cc/)
-- [Arduino-alkeiskurssi](https://savsoftacademy.com/courses/coding-from-scratch/)
-- [Projektivinkkejä](https://www.thestartuphub.io/nettisivut/john-whitbread/4-bit-led-watch/)
-- [Arduino-yhteisö](https://forum.arduino.cc/)
-- [Suomenkielinen Arduino-foorumi](https://discourse.arduino.cc/c/international/suomi)
+- Arduino-verkkosivusto: https://www.arduino.cc/
+- Arduino-projekteja ja tutoriaaleja: https://create.arduino.cc/projecthub
+- Arduino-yhteisöfoorumi: https://forum.arduino.cc/

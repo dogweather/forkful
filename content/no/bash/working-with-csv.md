@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Å jobbe med csv"
+title:                "Å jobbe med csv"
+html_title:           "Bash: Å jobbe med csv"
 simple_title:         "Å jobbe med csv"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,49 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-CSV, eller Comma-Separated Values, er en vanlig måte å lagre store mengder data på. Dette kan være alt fra kontaktpersoner og forretningsinformasjon til statistikk og datasett. Å jobbe med CSV-filer kan være nyttig for å analysere og organisere data på en enkel og strukturert måte. Med Bash programming, kan du automatisere mange av de manuelle oppgavene og gjøre det lettere å håndtere store databaser.
+Hvis du noen gang har jobbet med store datasett, har du sannsynligvis støtt på filformatet CSV (comma-separated values). CSV-filer er enkelt å lese og skrive, og er et vanlig format for å lagre og utveksle data. Ved å lære å jobbe med CSV-filer i Bash, kan du effektivt håndtere og manipulere store datasett på en enkel måte.
 
-## Hvordan
+## Slik gjør du det
 
-For å begynne å jobbe med CSV i Bash, trenger du å forstå de grunnleggende kommandoene som brukes til å lese og manipulere data. Her er noen enkle eksempler på hvordan du kan få tilgang til data i en CSV-fil og gjøre ulike operasjoner på den.
-
-### Les data fra en CSV-fil
-
-For å lese data fra en CSV-fil, kan du bruke `cat` kommandoen. For eksempel, hvis du har en fil som heter "dataset.csv", kan du bruke følgende kommando for å vise innholdet:
+For å lese og skrive CSV-filer i Bash, kan du bruke kommandoen "csvtool". Denne kommandoen er en del av pakken "csvkit", som må installeres først. Du kan installere "csvkit" ved å kjøre følgende kommando i terminalen:
 
 ```Bash
-cat dataset.csv
+sudo apt install csvkit
 ```
 
-Dette vil vise alt innholdet fra filen, inkludert kolonner og rader med data.
+Når "csvkit" er installert, kan du begynne å bruke "csvtool". Her er noen nyttige kommandoer og eksempler:
 
-### Velg spesifikke kolonner
-
-Hvis du vil velge bare spesifikke kolonner fra din CSV-fil, kan du bruke `cut` kommandoen. For eksempel, hvis du ønsker å velge bare de første tre kolonnene fra din fil, kan du bruke følgende kommando:
+- For å lese en CSV-fil og få utskrift på skjermen, bruk følgende kommando: 
 
 ```Bash
-cat dataset.csv | cut -d ',' -f 1-3
+csvtool format '%(1:s) - %(2:s)' sample.csv
 ```
 
-Dette vil vise bare de første tre kolonnene fra filen, som kan hjelpe deg med å fokusere på de dataene du trenger.
+Dette vil skrive ut innholdet i "sample.csv" med en tilpasset formatering.
 
-### Filtrere data
-
-For å filtrere ut data basert på en bestemt kriterie, kan du bruke `grep` kommandoen. La oss si at du bare ønsker å vise rader som inneholder ordet "kunde" i den første kolonnen. Du kan bruke følgende kommando:
+- For å velge bare spesifikke kolonner, kan du bruke flagget "-c" med en kommaseparert liste over kolonneindekser, for eksempel:
 
 ```Bash
-cat dataset.csv | grep '^kunde'
+csvtool -c 1,3,5 sample.csv
 ```
 
-Dette vil vise alle rader som starter med ordet "kunde".
+Dette vil bare skrive ut kolonnene 1, 3 og 5 fra "sample.csv".
 
-## Deep Dive
+- Du kan også søke etter et bestemt mønster i en bestemt kolonne ved å bruke flagget "-u" med søkeordet og kolonneindeksen, for eksempel:
 
-Det er mange flere kommandoer og operasjoner du kan bruke for å jobbe med CSV-filer i Bash, som `sort`, `awk`, `sed` og mange flere. For å lære mer, kan du sjekke ut dokumentasjonen og prøve dem ut selv. Det finnes også mange nyttige ressurser og tutorials tilgjengelig på nettet som kan hjelpe deg å bli mer komfortabel med å jobbe med CSV-filer i Bash.
+```Bash
+csvtool -u 'søkeord' -c 2 sample.csv
+```
 
-## Se Også
+Dette vil søke etter "søkeord" i kolonne 2 i "sample.csv".
 
-- [Bash manualen på norsk](https://www.gnu.org/software/bash/manual/bash.html#Introduction-to-Globbing)
-- [Kommandoer for å jobbe med CSV i Bash](https://linuxconfig.org/bash-cut-csv-file-programming-examples)
+## Dypdykk
+
+I tillegg til de nevnte kommandoene, har "csvtool" mange flere funksjoner, inkludert muligheten til å filtrere og sortere data, samt utføre matematiske beregninger. Du kan også bruke "csvtool" til å konvertere CSV-filer til andre formater som JSON eller HTML.
+
+En annen måte å jobbe med CSV-filer i Bash er ved hjelp av "awk" -kommandoen. Dette er en kraftig kommando som lar deg søke, sortere og manipulere data på en lignende måte som "csvtool". For å lære mer om "awk", kan du lese denne artikkelen.
+
+## Se også
+
+- [En innføring i Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+- [Offisiell dokumentasjon for "csvkit"](https://csvkit.readthedocs.io/en/latest/)
+- [En oversikt over "awk" kommandoen](https://www.grymoire.com/Unix/Awk.html)

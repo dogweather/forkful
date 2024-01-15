@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: לעבוד עם json"
-simple_title:         "לעבוד עם json"
+title:                "עבודה עם JSON"
+html_title:           "Haskell: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+אנשים יכולים להתעסק בעבודה עם JSON כדי לטפל בנתונים מורכבים כמו מידע מקימת API או קבצי הגדרת התצורה.
 
-JSON (JavaScript Object Notation) הוא תבנית נתונים נפוצה בעיצוב אנכי לנתונים. הכתיבה וקריאה של מידע בפורמט זה היא פשוטה וקלה לניתוח ע"י מחשבים ואנשים כאחד. בהינתן שעסקנו עם JSON בפוסטים קודמים, נבין למה כדאי להיכנס לתהליך של עבודה עם JSON בשפת התכנות הפופולרית הזו.
-
-## איך לעשות זאת
-
- נתחיל עם מודול JSON המאפשר לנו לקרוא ולכתוב נתונים בפורמט זה. נתחיל עם דוגמה פשוטה של יצירת אובייקט JSON והדפסתו למסך:
+## איך לבצע זאת
+אתם יכולים לעקוב אחר כמה פעולות פשוטות כדי לשנות את ייצוג הנתונים שלכם לתצורת JSON בHaskell. הנה דוגמה לקוד המראה איך לממש קבוצת נתונים כתצורת JSON:
 
 ```Haskell
--- ייבוא המודול הנחוץ
-import Text.JSON
+-- כתיבת מודולים מתאימים
+import Data.Aeson
+import Data.ByteString.Char8 as C8
+import Data.Text.Encoding as E
 
--- ציון נתונים לאובייקט, במקרה זה שם וגיל
-data Person = Person String Int
+-- יצירת נתוני דוגמה
+data User = User { name :: String
+                 , age :: Int
+                 , email :: String
+                 } deriving (Show, Generic)
 
--- יצירת פונקציה הממירה את האובייקט לפורמט JSON
-toJSON :: Person -> JSValue
-toJSON (Person name age) = JSObject $ toJSObject [("name", JSString $ toJSString name), ("age", JSRational False $ fromInteger $ toInteger age)]
+-- נמירה לתצורת JSON
+instance ToJSON User
 
--- יצירת אובייקט חדש עם שם וגיל
-person1 = Person "John" 30
-
--- הדפסת האובייקט בפורמט JSON
-printJSON person1
-
--- תוצאה:
--- { "name":"John", "age":30 }
+-- הדפסת התצורה שלנו לתצורת JSON
+main = do
+    let user = User "John" 30 "john@example.com"
+    let json = encode user
+    -- ממירים את התצורה לstring סודי כדי להדפיס
+    C8.putStrLn $ E.decodeUtf8 json
 ```
 
-עם המודול הזה אנחנו יכולים לשלב את יכולות השפה החזקות לעבוד עם סטרינגים ומספרים כדי ליצור אובייקטים מורכבים ומותאמים.
+הפלט:
 
-## שקיפות לעומק
+```Output
+{"age":30,"email":"john@example.com","name":"John"}
+```
 
-לעבוד עם JSON מתבצע באמצעות דוגמאות. תוכלו למצוא מבחר נרחב של דוגמאות בתיעוד של המודול כדי ללמוד יותר על קריאה, כתיבה וניתוח נתונים מסוג זה. ניתוח JSON כמו קבלת נתונים מפורמט זה לאובייקטים מוכנים לשימוש מתבצע עם פונקציות בשם `fromJSON`.
+## הצגה מעמיקה
+כאשר אתם מתחילים לעבוד עם JSON בHaskell, כדאי ללמוד מה הם ספריות המכשירים הטובות ביותר כדי לעבוד עם נתונים מורכבים. כמו כן, משתלב עם גוף רב שונות תומך הנתונים מידע אודות תעדוף, תקינה ועוד.
 
-ניתן גם להמיר אוב
+## ראו גם:
+- [המוכנה לשימוש ספריות JSON](https://hackage.haskell.org/package/aeson)
+- [מדריך איך להשתמש כמו לרכבת handling JSON עם Haskell](https://serokell.io/blog/handling-json-with-haskell)
+- [ממחשב תרגילים כדי לעבוד עם נתוני האיטרנט מקימת API או סמנטכיוס מערכת](https://github.com/nikita-volkov/semantic-refacto

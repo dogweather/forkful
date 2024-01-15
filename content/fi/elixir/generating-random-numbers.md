@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Sattumanvaraisten numeroiden luominen"
-simple_title:         "Sattumanvaraisten numeroiden luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Elixir: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -11,41 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Elixir-ohjelmointikieli tarjoaa laajan joukon työkaluja monenlaisten sovellusten kehittämiseen, mukaan lukien satunnaislukujen luominen. Generoidut satunnaisluvut voivat osoittautua erittäin hyödyllisiksi pelien ja salausmenetelmien tarkastelussa. Mikä vielä parempaa, Elixir tarjoaa helpon tavan luoda näitä satunnaislukuja.
+Miksi joku haluaisi käyttää satunnaislukugeneraattoria? Satunnaisluvut ovat hyödyllisiä simulaatioissa, salaussovelluksissa, pelien ja arpajaisten piirtämisessä ja yleensä kaikissa tilanteissa, joissa tarvitaan sattumanvaraista arvoa.
 
-## Miten tehdä se
+## Miten
 
-Käyttämällä Elixirin rand-funktiota, voimme helposti luoda satunnaisia kokonaislukuja haluamassamme välillä. Seuraavassa esimerkissä luodaan kymmenen satunnaislukua välillä 1-100 ja tulostetaan ne näytölle:
-
-```elixir
-numbers = for _ <- 1..10, do: :rand.uniform(1..100)
-IO.inspect numbers
-```
-
-Output:
-
-```
-[5, 87, 49, 36, 16, 92, 77, 57, 10, 31]
-```
-
-Voimme myös käyttää Elixirin :rand-algoritmeja luomaan erilaisia tyyppejä, kuten esimerkiksi binäärireittejä tai -merkkijonoja. Alla esimerkki, jossa luodaan 10 satunnaista merkkijonoa, joissa jokaisessa on 10 merkkiä:
+Globaalin satunnaislukugeneraattorin käyttö Elixirissä on helppoa. Käytämme siihen sisäänrakennettua :random -moduulia ja sen funktiota seed/3. Seuraavassa esimerkissä luomme 10 satunnaislukua välillä 1-100 ja tulostamme ne konsoliin:
 
 ```elixir
-strings = for _ <- 1..10, do: :rand.uniform(1..100) |> Integer.to_string
-IO.inspect strings
+for _ <- 1..10 do
+  random = :random.seed(:erlang.now, :os.timestamp, :rand.uniform)
+  IO.inspect(:rand.uniform(1..100, random))
+end
 ```
 
-Output:
+Tämä koodi käyttää nykyistä aikaleimaa, järjestelmän aikaleimaa ja satunnaista numeerista siementä luomaan kunkin satunnaisluvun. Tätä kutsutaan myös pseudosatunnaislukujen generoinniksi, koska luvut eivät ole täysin satunnaisia, mutta niillä on riittävästi sattumanvaraista elementtiä, jotta ne toimisivat useimmissa käyttötarkoituksissa.
 
-```
-["80", "28", "49", "31", "71", "99", "86", "40", "91", "38"]
-```
+## Syvällinen sukellus
 
-## Syvemmälle
+Satunnaislukugeneraattorit voivat olla erittäin monimutkaisia ja niillä on omat sääntönsä. Esimerkiksi :random-moduuli käyttää Mersenne Twister -algoritmia, joka on kehitetty erityisesti satunnaislukujen generointia varten. Tämä algoritmi on suhteellisen tehokas ja tuottaa laadukkaita satunnaislukuja.
 
-Jos haluamme saada enemmän tietoa Elixirin satunnaislukujen luomisesta, voimme tutkia Elixirin rand-moduulia. Täältä löydämme lisätietoja erilaisista satunnaislukujen generaattoreista, kuten :rand.uniform(), :rand.binomial() ja :rand.poisson(). Lisäksi voimme tarkastella Elixirin satunnaisluku-algoritmeja, kuten Marsaglia ja Park-Miller, ja selvittää, miten ne toimivat.
+Hyvä tapa parantaa satunnaislukugeneraattorisi laatua on antaa sille erityinen siemenarvo, joka määrittää sen aloitustilan. Tämä estää samojen lukujen toistumisen, mikä voisi aiheuttaa ennakoitavissa olevia tuloksia. Voit myös käyttää muita funktioita, kuten :rand.uniform/1 ja :rand.uniform/2, jotka antavat sinulle mahdollisuuden määrittää tulosten tyyppi ja alue, jolta luvut generoidaan.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio rand-moduulista](https://hexdocs.pm/elixir/1.12/Random.html)
-- [Elixirin satunnaislukujen generoiminen YouTube-videolla](https://www.youtube.com/watch?v=bO1tmCi_uPU) (suomenkielinen tekstitys saatavilla)
+- Elixirin virallinen dokumentaatio :random-moduulista (https://hexdocs.pm/elixir/random.html)
+- "Real-Life Examples of the Mersenne Twister" (https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html) - Esimerkkejä Mersenne Twister -algoritmista käytännön sovelluksissa

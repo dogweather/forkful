@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Vianmääritystulostus tietokoneohjelmoinnissa"
-simple_title:         "Vianmääritystulostus tietokoneohjelmoinnissa"
+title:                "Vianjäljitystulostuksen tekeminen"
+html_title:           "Javascript: Vianjäljitystulostuksen tekeminen"
+simple_title:         "Vianjäljitystulostuksen tekeminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -11,47 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein kehittäjät joutuvat korjaamaan ohjelmointivirheitä, joita voi olla haastavaa paikantaa koodista. Käyttämällä debuggaustoimintoja ja tulostamalla debuggaustietoja koodiin, voit helpommin havaita ja korjata nämä virheet. Tai ehkä haluat yksinkertaisesti tarkistaa tietokannan tulokset tai muuttujien arvot koodin suorituksen aikana. Ei väliä mikä on syysi, tulostamisella debug-tietoja voi olla paljon hyötyä ohjelmointiprosessissa.
+Debug-tulostuksen tulostaminen on tärkeä osa ohjelmointia, koska se auttaa meitä tunnistamaan virheitä ja korjaamaan niitä. Se on myös kätevä tapa seurata koodin suoritusta ja varmistaa sen oikeellisuus.
 
-## Miten
+## Kuinka
 
-Tulostaminen debug-tietoja JavaScriptissä on helppoa. Voit käyttää `console.log()` -funktiota tulostamaan viestejä komentotulkkauksessa tai selaimen konsolissa. Voit myös käyttää `console.error()` tulostamaan virheviestejä tai `console.warn()` varoitusviestejä.
-
-```Javascript
-console.log("Tämä on debug-viesti"); // Tulostaa "Tämä on debug-viesti" komentotulkkaukseen tai selaimen konsoliin.
-let numero = 10;
-console.log("Muuttujan arvo on: " + numero); // Tulostaa "Muuttujan arvo on: 10".
-console.error("Virhe: yhtäsuuruusmerkki puuttuu laskutoimituksesta"); // Tulostaa virheviestin komentotulkkaukseen tai selaimen konsoliin.
-console.warn("Varoitus: muuttuja ei ole alustettu"); // Tulostaa varoitusviestin komentotulkkaukseen tai selaimen konsoliin.
-```
-
-Voit myös tulostaa debug-tietoja suoraan HTML-sivulle käyttämällä `document.write()` -funktiota. Tämä on hyödyllistä, jos haluat tarkistaa muuttujien arvoja sivun suorituksen aikana.
+Debug-tulostuksen tulostaminen on helppoa JavaScriptillä. Käyttämällä `console.log()` -funktiota voimme tulostaa viestejä ja muuttujien arvoja selaimen kehittäjätyökaluihin. Esimerkiksi:
 
 ```Javascript
-document.write("Muuttujan arvo on: " + numero); // Tulostaa "Muuttujan arvo on: 10" suoraan HTML-sivulle.
+let name = "Maija";
+console.log("Tervetuloa, " + name);
 ```
 
-## Syvempi sukellus
-
-Tulostamalla debug-tietoja voit nähdä tarkalleen, mitä tapahtuu koodissasi suorituksen aikana. Voit käyttää ehtolausekkeita ja `console.assert()` -funktiota tulostamaan viestejä vain tietyissä tilanteissa. Esimerkiksi:
+Tämä tulostaa consoliin "Tervetuloa, Maija". Voimme myös tulostaa monimutkaisempia objekteja, kuten taulukoita tai json-tiedostoja:
 
 ```Javascript
-let luku = 5;
-
-console.assert(luku > 10, "Virhe: lukuarvo on liian pieni"); // Tulostaa virheviestin vain, jos luku on alle 10.
+let numbers = [1, 2, 3, 4, 5];
+console.log("Taulukon sisältö: ", numbers);
 ```
 
-Voit myös käyttää `console.group()` ja `console.groupEnd()` -funktioita ryhmitelläksesi ja selkeyttääksesi debug-viestejäsi.
+Tämä tulostaa consoliin "Taulukon sisältö: [1, 2, 3, 4, 5]". Tällä tavalla voimme seurata vaihtuvien arvojen muutoksia ja varmistaa, että koodi toimii odotetusti.
+
+## Syvemmälle
+
+On tärkeää huomata, että `console.log()` -funktio ei toimi kaikilla selaimilla. Tällöin voimme käyttää `debugger` -komentoa, joka pysäyttää koodin suorituksen ja antaa meille mahdollisuuden tarkastella muuttujien arvoja ja suoritusjärjestystä. Esimerkiksi:
 
 ```Javascript
-console.group("Laskutoimitukset");
-console.log("2 + 2 = " + (2+2));
-console.log("5 * 3 = " + (5*3));
-console.groupEnd(); // Ryhmä päättyy tähän.
+let number = 5;
+debugger;
+number += 10;
+console.log(number);
 ```
+
+Tässä tapauksessa, kun debugger saavutetaan, voimme tarkastella number-muuttujan arvoa ja sen muutosta.
+
+Voimme myös käyttää `console.assert()` -funktiota, joka tarkistaa väittämän oikeellisuuden ja tulostaa virheviestin, jos se ei ole totta. Esimerkiksi:
+
+```Javascript
+console.assert(5 > 10, "5 ei voi olla suurempi kuin 10");
+```
+
+Tämä tulostaa consoliin "Assertion failed: 5 ei voi olla suurempi kuin 10". Tämä on hyödyllinen tapa varmistaa, että koodissamme olevat oletukset ovat oikein.
 
 ## Katso myös
 
-- [MDN - Console API](https://developer.mozilla.org/en-US/docs/Web/API/console)
-- [Kehittäjäopas: debuggaaminen JavaScriptissä](https://www.w3schools.com/js/js_debugging.asp)
-- [Debuggaus vinkkejä ja temppuja JavaScriptille](https://www.sololearn.com/learn/JavaScript/224/)
+- [W3Schools: JavaScript Debugging](https://www.w3schools.com/js/js_debugging.asp)
+- [MDN Web Docs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
+- [MDN Web Docs: Debugger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+- [MDN Web Docs: console.assert()](https://developer.mozilla.org/en-US/docs/Web/API/Console/assert)

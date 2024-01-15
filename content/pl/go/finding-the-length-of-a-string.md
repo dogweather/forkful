@@ -1,5 +1,6 @@
 ---
-title:                "Go: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Go: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Go"
 category:             "Go"
@@ -10,35 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
+Zastanawiałeś się kiedyś jak programy są w stanie wykryć długość tekstu lub słowa? W tym artykule dowiecie się o prostym sposobie wykorzystania Go do znajdowania długości stringa.
 
-Często podczas pisania programów w Go, jesteśmy zmuszeni do pracy z tekstami i prawdopodobnie pytaliśmy się już kiedyś, jak dokładnie obliczyć długość ciągu znaków w języku Go. W tym artykule dowiecie się, dlaczego jest to przydatna umiejętność w programowaniu i jak to zrobić przy użyciu prostej składni Go.
-
-## Jak to zrobić
-
-Do obliczania długości ciągu znaków w Go, możemy użyć wbudowanej funkcji `len()`, która zwraca liczbę bajtów w danym ciągu znaków. Oto przykładowy kod w języku Go:
+## Jak
+Jednym z najprostszych sposobów znajdowania długości stringa w Go jest użycie funkcji `len()`. Spójrz na poniższy przykład:
 
 ```Go
-ciag := "To jest przykladowy ciag znakow"
-dlugosc := len(ciag)
-fmt.Println(dlugosc) // wyświetli wartość 32
+package main
+
+import "fmt"
+
+func main() {
+    str := "Witaj świecie!"
+    length := len(str)
+    fmt.Println(length)
+}
 ```
 
-Jeśli chcemy zliczyć długość ciągu w znakach, a nie bajtach, możemy wykorzystać funkcję `RuneCountInString()`. Zwraca ona liczbę znaków unicode w danym ciągu. Poniżej znajduje się przykład kodu:
+Wyjście: `14` 
+
+Funkcja `len()` przyjmuje string jako argument i zwraca jego długość. Jest to bardzo proste i wydajne rozwiązanie dla większości przypadków. 
+
+Jednak jeśli chcesz upewnić się, że długość liczona jest w znakach, a nie w bajtach, możesz użyć funkcji `utf8.RuneCountInString()`:
 
 ```Go
-ciag := "Hello, świat!"
-dlugosc := utf8.RuneCountInString(ciag)
-fmt.Println(dlugosc) // wyświetli wartość 13
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    str := "Привет мир!"
+    length := utf8.RuneCountInString(str)
+    fmt.Println(length)
+}
 ```
+
+Wyjście: `11`
+
+Funkcja ta uwzględnia różnice w kodowaniu znaków i zwraca właściwą długość bez względu na użyty język. 
 
 ## Deep Dive
+W Go wewnętrznie string jest reprezentowany jako tablica bajtów, dlatego funkcja `len()` zwraca liczbę bajtów, a nie znaków. Dlatego, jeśli będziesz pracował z kodowaniem znaków, należy użyć funkcji `utf8.RuneCountInString()`.
 
-Aby lepiej zrozumieć, jak dokładnie działają funkcje `len()` i `RuneCountInString()`, warto wiedzieć trochę więcej o sposobie, w jaki Go traktuje obliczanie długości ciągów. W języku Go ciągi znaków są traktowane jako tablice bajtów, co oznacza, że funkcja `len()` zwraca liczbę bajtów w ciągu. Jednak ze względu na to, że Go obsługuje znaki unicode, niektóre znaki mogą zajmować więcej niż jeden bajt, co może wpłynąć na rezultat.
-
-Funkcja `RuneCountInString()` z kolei iteruje przez znaki w ciągu i liczy liczbę rune (operacji, które dają nam znaki unicode) w ciągu. Dzięki temu możemy uzyskać dokładną liczbę znaków w ciągu, niezależnie od tego, ile bajtów zajmują poszczególne znaki.
+Należy również pamiętać, że stringi są typu immutable w Go, co oznacza, że nie można zmienić istniejącej wartości stringa. W przypadku zmiany długości, zostanie utworzony nowy string z nowymi wartościami, a stary zostanie usunięty. W związku z tym, jeśli masz do czynienia z dużymi ilościami stringów, lepiej użyć typu `[]byte` zamiast typu `string`, ponieważ ten pierwszy jest mutable i możliwe jest modyfikowanie jego długości bez konieczności tworzenia nowego obiektu w pamięci.
 
 ## Zobacz też
-
-- [Oficjalna dokumentacja Go](https://golang.org/doc/)
-- [Porównanie funkcji `len()` i `RuneCountInString()` w języku Go](https://yourbasic.org/golang/length-of-string/)
-- [Unicode w języku Go](https://blog.golang.org/strings)
+- [Dokumentacja Go: func Len](https://golang.org/pkg/builtin/#len)
+- [Dokumentacja Go: func RuneCountInString](https://golang.org/pkg/unicode/utf8/#RuneCountInString)
+- [Blog Go: Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "Arduino: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,84 +12,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy, kto pracował z danymi, wie, jak ważne jest przechowywanie ich w obszernym formacie, takim jak CSV. Jest to skrót od "Comma Separated Values" (wartości oddzielone przecinkiem), a używa się go do przechowywania tabelarycznych danych w plikach tekstowych. Dlatego też, jeśli jesteś zainteresowany programowaniem na Arduino, nauka pracy z CSV może być niezbędnym dodatkiem do Twoich umiejętności.
+Jeśli chcesz przetworzyć duże ilości danych w swoim projekcie Arduino, wykorzystanie plików CSV może ułatwić Ci pracę. Znajomość pracy z tym formatem danych może znacznie ułatwić analizę i wykorzystanie informacji w Twoich projektach.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Poniżej przedstawiono przykładowy kod, który pozwoli Ci na pracę z CSV na Arduino:
+### Przygotowanie środowiska
+
+Aby móc pracować z CSV w Arduino, musisz najpierw zainstalować bibliotekę TinyCSVParser. Zrób to za pomocą menedżera bibliotek w Arduino IDE lub ręcznie pobierając plik .zip ze strony projektu na GitHubie.
+
+### Tworzenie pliku CSV
+
+Pierwszym krokiem jest stworzenie pliku CSV z danymi. Możesz to zrobić w programie Excel lub innej aplikacji do arkuszy kalkulacyjnych. Pamiętaj, aby oddzielać każdą wartość przecinkiem.
+
+### Przygotowanie kodu
+
+W pierwszej kolejności musisz zaimportować bibliotekę TinyCSVParser w swoim kodzie:
 
 ```Arduino
-#include <SD.h>
-#include <SPI.h>
+#include <TinyCSVParser.h>
+```
 
-File myFile;
-String data;
+Następnie zdefiniujesz strukturę danych, która będzie odpowiadać wartościom z pliku CSV:
 
-void setup() {
-  Serial.begin(9600);
+```Arduino
+struct row{
+  int id;
+  String name;
+  float value;
+};
+```
 
-  // Inicjalizacja karty SD
-  if (!SD.begin(4)) {
-    Serial.println("Nie można zainicjalizować karty SD");
-    return;
-  }
+Teraz stwórz tablicę, która będzie przechowywać odczytane dane z pliku CSV:
 
-  // Odczyt pliku CSV
-  myFile = SD.open("dane.csv");
+```Arduino
+row csvData[10]; // 10 elementów odpowiada 10 wierszom pliku CSV
+```
 
-  // Jeśli udało się otworzyć plik
-  if (myFile) {
-    // Czytaj zawartość pliku linia po linii i wyświetlaj na Serial Monitorze 
-    while (myFile.available()) {
-      data = myFile.readStringUntil('\n');
-      Serial.println(data);
-    }
-    // Zamknij plik
-    myFile.close();
-  } else {
-    // Jeśli nie udało się otworzyć pliku
-    Serial.println("Nie można otworzyć pliku");
-  }
+### Odczyt danych
+
+Aby odczytać dane z pliku CSV, musisz utworzyć obiekt parsera:
+
+```Arduino
+CsvParser<row> parser;
+```
+
+Następnie otwórz plik CSV i przekaż jego zawartość do parsera:
+
+```Arduino
+File csvFile = SD.open("example.csv", FILE_READ);
+parser.parse(csvFile, csvData);
+```
+
+W ten sposób, w tablicy `csvData` znajdują się przetworzone dane z pliku CSV. Możesz wyświetlić je na serial monitorze przy użyciu pętli for:
+
+```Arduino
+for(int i = 0; i < 10; i++){
+  Serial.println(csvData[i].id);
+  Serial.println(csvData[i].name);
+  Serial.println(csvData[i].value);
 }
-
-void loop() {
-  // Poczekaj 5 sekund między odczytem pliku
-  delay(5000);
-}
 ```
 
-Przykładowy plik CSV może wyglądać następująco:
+### Tworzenie pliku CSV
 
-```text
-Imię,Nazwisko,Wiek,Miasto
-Adam,Kowalski,25,Warszawa
-Maria,Nowak,32,Kraków
-Jan,Kowalczyk,18,Poznań
+Jeśli chcesz również móc tworzyć pliki CSV w swoim projekcie, to również możesz skorzystać z biblioteki TinyCSVParser. Stwórz obiekt writer i przekaż mu informacje o pliku, w którym chcesz zapisać dane:
+
+```Arduino
+CsvWriter<row> writer;
+File csvFile = SD.open("data.csv", FILE_WRITE);
+writer.init(csvFile);
 ```
 
-Po przetestowaniu powyższego kodu, w Serial Monitorze powinno pojawić się takie wyjście:
+Następnie, wykorzystując funkcję `writeRow()`, można zapisać strukturę danych do pliku:
 
-```text
-Imię,Nazwisko,Wiek,Miasto
-Adam,Kowalski,25,Warszawa
-Maria,Nowak,32,Kraków
-Jan,Kowalczyk,18,Poznań
+```Arduino
+row data = {1, "example", 1.5}; // wartości testowe
+writer.writeRow(data); // zapisz dane jako jeden wiersz w pliku CSV
 ```
 
-## Głębsze zagadnienia
+## Deep Dive
 
-Jeśli chcesz zgłębić swoją wiedzę na temat pracy z CSV na Arduino, warto zwrócić uwagę na kilka ważnych aspektów:
+Biblioteka TinyCSVParser pozwala również dostosować sposób przetwarzania danych z pliku CSV. Można na przykład zmienić separatory lub wykorzystać własną funkcję przetwarzającą dane. W celu uzyskania szczegółowych informacji, warto zapoznać się z dokumentacją biblioteki i przykładowymi kodami na GitHubie.
 
-- Duże pliki CSV mogą powodować problemy z pamięcią, dlatego warto przeanalizować swoje dane i ewentualnie podzielić je na kilka plików mniejszych
-- Pamiętaj o dopasowaniu prędkości odczytu danych do prędkości Twojego kodu, aby uniknąć problemów z synchronizacją
-- W przypadku braku potrzeby edycji danych w pliku CSV, warto użyć funkcji "readString()" zamiast "readStringUntil()", co pozwoli uniknąć tworzenia dodatkowych tymczasowych zmiennych
+## Zobacz również
 
-Nauka pracy z CSV na Arduino może być przydatną umiejętnością w różnych aplikacjach, na przykład w systemach zapisu i odczytu danych lub urządzeniach pomiarowych.
-
-## Zobacz też
-
-Poniżej znajduje się lista linków, które mogą okazać się przydatne podczas pracy z CSV na Arduino:
-
-- [Oficjalna dokumentacja Arduino o pracy z kartami SD](https://www.arduino.cc/en/Reference/SD)
-- [Wideo tutorial na temat pracy z CSV na Arduino](https://www.youtube.com/watch?v=tNqHTH5EBQY)
-- [Przykładowy projekt: dokonywanie pomiarów i zapis do pliku CSV](https://github.com/RafaGS/MeasureAndSaveToCSV)
+- Dokumentacja TinyCSVParser: https://github.com/kevinferrare/TinyCSVParser
+- Przykładowe kody z wykorzystaniem TinyCSVParser: https://github.com/kevinferrare/TinyCSVParser/wiki/Code-Snippets
+- Strona projektu TinyCSVParser na GitHubie: https://github.com/kevinferrare/TinyCSVParser

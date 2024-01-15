@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos csv"
+html_title:           "Swift: Trabajando con archivos csv"
+simple_title:         "Trabajando con archivos csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -9,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué trabajar con CSV?
+## Por qué
+El formato CSV (valores separados por comas) es una forma popular de almacenar y compartir datos en una tabla simple. Al aprender a trabajar con archivos CSV en Swift, podrás manejar y analizar grandes conjuntos de datos de manera eficiente y efectiva.
 
-CSV (Comma Separated Values) es un formato de archivo utilizado comúnmente para almacenar datos tabulares en una forma que pueda ser fácilmente leída por programas y aplicaciones. Trabajar con archivos CSV puede ser útil para leer y escribir datos en aplicaciones web, análisis de datos, y mucho más.
-
-## Cómo trabajar con CSV
-
-Para trabajar con archivos CSV en Swift, puedes utilizar la librería `CSV` de Swift Package Manager. Primero, importa la librería en tu proyecto:
+## Cómo hacerlo
+Trabajar con archivos CSV en Swift es muy sencillo gracias a la biblioteca incorporada `CSVKit`. Primero, importaremos `CSVKit` en nuestro proyecto:
 
 ```Swift
-import CSV
+import CSVKit
 ```
 
-Luego, puedes leer un archivo CSV y obtener sus datos en una matriz de diccionarios de la siguiente manera:
+Luego, podemos crear un lector CSV para cargar los datos de nuestro archivo. Supongamos que tenemos un archivo CSV llamado "datos.csv" con dos columnas, "Nombre" y "Edad", y queremos imprimir todos los nombres en nuestra consola. El código se vería así:
 
 ```Swift
-let csv = try! CSV(url: URL(string: "ruta/al/archivo.csv")!)
-let rows = csv.namedRows
-
-// Recorrer la matriz y obtener datos
-for row in rows {
-  print(row["columna1"])
-  print(row["columna2"])
-  // ...
+let path = Bundle.main.path(forResource: "datos", ofType: "csv") // path al archivo CSV
+let csv = try! CSV(url: path!) // crea un lector CSV
+let nombres = csv.rows // obtiene una matriz de diccionarios con los datos
+for persona in nombres { // recorre cada fila en la matriz
+  print(persona["Nombre"]!) // imprime el nombre de cada persona
 }
 ```
 
-También puedes escribir datos en un archivo CSV utilizando la función `write` y especificando los datos como un arreglo de diccionarios:
+Y la salida será algo como:
 
-```Swift
-let csv = try! CSV(url: URL(string: "ruta/al/archivo.csv")!)
-let data: [[String: String]] = [
-    ["producto": "iPhone", "precio": "999"],
-    ["producto": "Macbook Pro", "precio": "1999"]
-]
-try! csv.write(rows: data, delimiter: ",", encoding: .utf8)
+```
+Juan
+María
+Luis
+Ana
 ```
 
-## Profundizando en el trabajo con CSV
-
-Además de leer y escribir archivos CSV básicos, la librería `CSV` también ofrece características avanzadas como la capacidad de especificar el delimitador, el carácter de cita y la codificación. Puedes explorar más sobre estas características en la documentación oficial de la librería.
+## Profundizando
+Aunque `CSVKit` nos facilita mucho el trabajo con archivos CSV, es importante destacar que existen diversas formas de trabajar con los datos cargados del archivo. Por ejemplo, podemos convertir la matriz de diccionarios a un objeto personalizado e incluso podemos realizar operaciones de filtrado o agregación de datos utilizando las funciones de la biblioteca `CSVSwift` que se basa en `CSVKit`.
 
 ## Ver también
-
-- Documentación de la librería `CSV`: https://github.com/yaslab/CSV.swift
-- Ejemplos de código: https://github.com/yaslab/SwiftCSV/tree/master/Examples
-- Tutorial de trabajo con CSV en Swift: https://www.raywenderlich.com/157128/working-csv-files-swift
+- [Documentación oficial de CSVKit (en inglés)](https://cocoapods.org/pods/CSVKit)
+- [Tutorial de trabajo con archivos CSV en Swift (en inglés)](https://medium.com/@aravindhomes/how-to-work-with-csv-files-in-swift-f5ecb958ace5)
+- [Otras formas de trabajar con datos en Swift (en inglés)](https://www.hackingwithswift.com/read/32/2/from-swift-to-bash-using-command-line-arguments)

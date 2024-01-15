@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Gleam recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Writing to Standard Error in Gleam is Useful
+## Why
 
-Writing to standard error in Gleam can be useful for debugging purposes. It allows you to print out specific information or error messages that can help you troubleshoot any issues in your code. This can save you time and effort in the troubleshooting process.
+Writing to the standard error (often abbreviated as "stderr") is a crucial function in programming that allows developers to efficiently handle error messages and debugging in their code. Without utilizing stderr, it can be difficult to pinpoint and troubleshoot issues within a program.
 
-## How To Write to Standard Error in Gleam
+## How To
 
-To write to standard error in Gleam, you can use the ```gleam/io:stderr``` module. Here's an example code snippet:
+To write to stderr in Gleam, you can use the `io.println` function and specify stderr as the first argument. Here's an example:
 
 ```Gleam
 import gleam/io
 
-fn main() {
-  io.stderr.print("Oops, an error occurred!")
-}
+io.println(gleam/core.Line(stderr), "This is an error message!")
 ```
 
-In this example, we imported the ```gleam/io``` module and used the ```stderr.print()``` function to print out a custom error message to the standard error stream. 
+This will print the given message to the standard error stream. You can also use `gleam/core.Line(stderr)` to define a new line before the message to make it stand out.
 
-The output of this code would be:
+### Sample Output
+
+Running this code will output the following to your terminal: 
 
 ```
-Oops, an error occurred!
+This is an error message!
 ```
 
-## Deep Dive into Writing to Standard Error
+## Deep Dive
 
-In Gleam, everything printed to ```stdout``` goes to the standard output stream, which is typically displayed in the console when you run your program. The ```stderr``` stream, on the other hand, is used for error messages and is typically printed in red or highlighted in some way to differentiate it from regular output.
+Writing to standard error can be particularly useful when dealing with error handling or debugging in your program. By directing certain messages to stderr instead of stdout (the standard output stream), you can easily distinguish and filter out error messages from regular output. This can help with troubleshooting and identifying issues within your code.
 
-By using the ```stderr.print()``` function, you can add more context to your error messages and make them stand out for easier troubleshooting. You can also use the ```stderr.println()``` function to add a new line after your error message.
+It's also worth noting that stderr and stdout can be redirected to different locations, such as a log file, to store and review error messages separately from regular output.
 
-## See Also
-- [Gleam.io module documentation](https://gleam.run/documentation/stdlib/io)
-- [Gleam error handling documentation](https://gleam.run/documentation/error_handling)
+## See Also 
 
-By writing to standard error in Gleam, you can improve your debugging process and make it easier to identify and fix any issues in your code. Give it a try in your next project and see how it can benefit you!
+- [Gleam documentation for `io.println`](https://gleam.run/core/io.html#println)
+- [Introduction to stderr and stdout in programming](https://www.geeksforgeeks.org/stderr-stdout-linux/)
+- [Using stderr for error handling in C programming](https://www.thecrazyprogrammer.com/2013/06/using-stderr-for-error-messages-in-c.html)

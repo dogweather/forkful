@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Enviando una solicitud http con autenticación básica"
-simple_title:         "Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica."
+html_title:           "PHP: Enviando una solicitud http con autenticación básica."
+simple_title:         "Enviando una solicitud http con autenticación básica."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+## Por qué
 
-Enviar solicitudes HTTP con autenticación básica es una forma segura y sencilla de acceder a información protegida en un servidor. Con esta técnica, se puede garantizar que solo los usuarios autorizados puedan acceder a recursos específicos en una aplicación web.
+Enviar una solicitud HTTP con autenticación básica es una forma segura de proteger las comunicaciones entre un servidor y un cliente. Al proporcionar credenciales de inicio de sesión básicas, se verifica la identidad del usuario y se garantiza que solo aquellos con las credenciales correctas puedan acceder a ciertas páginas web o recursos protegidos.
 
 ## Cómo hacerlo
 
-Para enviar una solicitud HTTP con autenticación básica en PHP, primero es necesario crear un objeto `curl` con la URL del recurso al que se desea acceder. Luego, se puede usar la función `curl_setopt` para configurar las opciones de la solicitud, incluyendo el tipo de autenticación y las credenciales del usuario.
+Para enviar una solicitud HTTP con autenticación básica en PHP, necesitamos utilizar la función `curl_init()` y configurar la autenticación con las opciones `CURLOPT_USERPWD` y `CURLOPT_HTTPAUTH`.
 
-A continuación se muestra un ejemplo de cómo enviar una solicitud GET con autenticación básica a una API:
-
-```PHP
-// Crear objeto curl
-$curl = curl_init("https://api.example.com/users/123");
-
-// Configurar opciones de la solicitud
-curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($curl, CURLOPT_USERPWD, "usuario:contraseña");
-
-// Ejecutar la solicitud y obtener la respuesta
-$response = curl_exec($curl);
-
-// Imprimir la respuesta
-echo $response;
-
-// Cerrar conexión curl
-curl_close($curl);
 ```
-La respuesta de esta solicitud debería ser una representación en formato JSON del usuario con ID 123, siempre y cuando se proporcione la autenticación correcta.
+<?php
+// Inicializar cURL
+$ch = curl_init();
+
+// Configurar la url
+curl_setopt($ch, CURLOPT_URL, "https://ejemplo.com/recurso-protegido");
+
+// Configurar la autenticación básica
+curl_setopt($ch, CURLOPT_USERPWD, "usuario:contraseña");
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+
+// Ejecutar la solicitud y guardar el resultado
+$resultado = curl_exec($ch);
+
+// Cerrar la conexión cURL
+curl_close($ch);
+
+// Imprimir el resultado
+echo $resultado;
+?>
+```
+
+La información de autenticación debe proporcionarse en credenciales de usuario y contraseña separadas por dos puntos. En este ejemplo, hemos utilizado la cuenta de usuario "usuario" y la contraseña "contraseña". Luego, se especifica que la autenticación es básica mediante el uso de la constante `CURLAUTH_BASIC`.
 
 ## Profundizando
 
-La autenticación básica es considerada como un mecanismo relativamente inseguro de autenticación, ya que las credenciales se envían como texto plano en la solicitud. Además, no ofrece una forma de renovar las credenciales después de cierto tiempo, lo que puede ser un problema en aplicaciones de larga duración.
+La autenticación básica es uno de los métodos de autenticación más antiguos y menos seguros disponibles para la comunicación en línea. Funciona enviando las credenciales de usuario y contraseña en texto plano a través de la conexión HTTP. Por lo tanto, se recomienda utilizar métodos de autenticación más robustos como HTTPS o OAuth en lugar de la autenticación básica.
 
-Para aumentar la seguridad de las solicitudes con autenticación básica, se pueden tomar medidas adicionales como usar HTTPS y almacenar las credenciales encriptadas en lugar de en texto plano. También es importante recordar que las credenciales no deben ser almacenadas en código fuente o compartirse de manera insegura.
+Sin embargo, si por alguna razón debes utilizar autenticación básica en tu código PHP, ten en cuenta que es posible que la información de autenticación se guarde en caché a nivel de servidor o de cliente, lo que puede generar problemas de seguridad si se utiliza en conexiones no confiables. Además, si se produce un error, la respuesta del servidor puede ser 401 (no autorizado) o 403 (prohibido), lo que puede ser una pista útil para solucionar problemas de autenticación.
 
-## Véase también
+## Ver también
 
-- [Tutorial de autenticación básica con PHP y cURL](https://www.codeofaninja.com/2013/04/basic-http-authentication-php-curl.html)
-- [Documentación oficial de cURL](https://www.php.net/manual/es/book.curl.php)
-- [Artículo sobre seguridad en autenticación básica](https://dzone.com/articles/how-bad-basic-authentication)
+- [Documentación de cURL para PHP](https://www.php.net/manual/es/book.curl.php)
+- [Autenticación básica de HTTP en Wikipedia](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_b%C3%A1sica_de_HTTP)

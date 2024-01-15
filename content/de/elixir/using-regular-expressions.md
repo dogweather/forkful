@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Verwendung regulärer Ausdrücke"
+html_title:           "Elixir: Verwendung regulärer Ausdrücke"
+simple_title:         "Verwendung regulärer Ausdrücke"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Regular Expressions (kurz RegEx) sind ein unverzichtbares Werkzeug für die Textverarbeitung in der Programmierung. Sie ermöglichen es uns, komplexe Textmuster zu identifizieren und zu manipulieren. In Elixir können wir RegEx sowohl in Strings als auch in Binärdaten verwenden.
+Warum sollte man sich überhaupt mit regulären Ausdrücken in Elixir beschäftigen? Nun, reguläre Ausdrücke ermöglichen es uns, Muster in Zeichenketten zu suchen und zu manipulieren. Dies ist besonders nützlich bei der Verarbeitung von Texten, Suchvorgängen und Datenvalidierung.
 
-# Wie geht's
+## Wie man es macht
 
-Um RegEx in Elixir zu nutzen, können wir das `Regex`-Modul verwenden. Hier ist ein Beispiel für eine RegEx, die prüft, ob ein String eine gültige Email-Adresse enthält:
+Um reguläre Ausdrücke in Elixir zu verwenden, müssen wir das Modul `Regex` importieren. Dann können wir `=~` verwenden, um zu überprüfen, ob ein Muster in einer Zeichenkette vorhanden ist. Zum Beispiel:
 
-```Elixir
-Regex.match?("meine@emailadresse.com", ~r/[\w.]+@[a-z]+\.[a-z]+/)
-```
-Die Ausgabe würde `true` sein, da die übergebene Email-Adresse dem Muster entspricht. Hier sind einige weitere nützliche Funktionen des `Regex`-Moduls:
+```elixir
+import Regex
 
-- `Regex.match?/2` prüft, ob ein String dem übergebenen Muster entspricht.
-- `Regex.replace/3` ersetzt alle in einem String gefundenen Muster durch den angegebenen Wert.
-- `Regex.named_captures/2` gibt ein Map zurück, das die benannten Captures (Teilmuster) des Musters und deren Werte enthält.
-
-Weitere Beispiele und Erklärungen findest du in der offiziellen [Elixir-Dokumentation zum `Regex`-Modul](https://hexdocs.pm/elixir/Regex.html).
-
-# Deep Dive
-
-Ein interessantes Feature von RegEx in Elixir ist die Möglichkeit, benannte Captures zu erstellen. Diese werden durch `(?<capture_name>erweiterter_regulärer_ausdruck)` definiert und können dann mit `Regex.named_captures/2` abgerufen werden. Hier ist ein Beispiel, das das Einfügen von benannten Captures in ein String-Format verdeutlicht:
-
-```Elixir
-Regex.replace("Mein Name ist {{first_name}} {{last_name}}. Ich bin {{age}} Jahre alt.", 
-~r/{{(?<capture>.+)}}/,
-%{"first_name" => "Max", "last_name" => "Mustermann", "age" => 30})
+"Hello World" =~ ~r/World/ # Gibt true zurück, da "World" in der Zeichenkette enthalten ist.
 ```
 
-Die Ausgabe wäre dann `"Mein Name ist Max Mustermann. Ich bin 30 Jahre alt."`. Durch die Verwendung von benannten Captures können wir dynamisch Strings generieren, die auf bestimmte Werte angepasst sind.
+Wir können auch `capture` verwenden, um Teile einer Zeichenkette zu extrahieren, die mit einem bestimmten Muster übereinstimmen. Zum Beispiel:
 
-# Siehe auch
+```elixir
+import Regex
 
-- [Elixir-Dokumentation zum `Regex`-Modul](https://hexdocs.pm/elixir/Regex.html)
-- [Reguläre Ausdrücke lernen - Einführung von Coding Train (Englisch)](https://www.youtube.com/watch?v=r6I-Ahc0HB4)
-- [RegExr - interaktiver RegEx-Tester und Referenz (Englisch)](https://regexr.com/)
+result = capture(~r/(\d+)-(\d+)-(\d+)/, "04-25-2021") # Gibt eine Liste mit den gefangenen Werten zurück.
+IO.inspect result # Gibt ["04", "25", "2021"] aus.
+```
+
+Wir können auch reguläre Ausdrücke verwenden, um Zeichenketten zu manipulieren. Zum Beispiel können wir `replace` verwenden, um Teilzeichenketten mit einem bestimmten Muster durch einen anderen Wert zu ersetzen. Wir können auch `split` verwenden, um eine Zeichenkette an bestimmten Stellen aufzuteilen. Ein weiteres nützliches Werkzeug ist `match?`, das uns einfach sagen lässt, ob ein Muster in einer Zeichenkette vorhanden ist.
+
+## Tiefere Einblicke
+
+Neben den oben genannten grundlegenden Funktionen gibt es noch viel mehr, was wir mit regulären Ausdrücken in Elixir tun können. Wir können beispielsweise die `Regex`-Module verwenden, um unsere eigenen benannten Muster zu definieren. Wir können auch die `Regex.run`-Funktion verwenden, um Funktionen auf einem Muster anzuwenden, anstatt nur Übereinstimmungen zu finden.
+
+Reguläre Ausdrücke können auch in Kombination mit Mustern und Funktionen in `Enum` und `Stream` verwendet werden, um komplexe String-Manipulationen durchzuführen. Wir können sogar reguläre Ausdrücke verwenden, um Validierungsregeln für Formulare zu schreiben.
+
+Schlussendlich können reguläre Ausdrücke in Elixir sehr mächtig sein, aber sie können auch komplex und manchmal schwer zu lesen sein. Es ist wichtig, das richtige Gleichgewicht zu finden und sie nur zu verwenden, wenn es wirklich notwendig ist.
+
+## Siehe auch
+
+- [Elixir Dokumentation zu regulären Ausdrücken](https://hexdocs.pm/elixir/Regex.html)
+- [Elixir Schulungsvideo zu regulären Ausdrücken](https://www.youtube.com/watch?v=uE_KSwh_EVY)
+- [Reguläre Ausdrücke in 10 Minuten lernen](https://www.youtube.com/watch?v=EkluES9Rvak)

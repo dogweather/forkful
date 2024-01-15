@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Leyendo argumentos de línea de comando."
+title:                "Leyendo argumentos de línea de comando."
+html_title:           "Elm: Leyendo argumentos de línea de comando."
 simple_title:         "Leyendo argumentos de línea de comando."
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Antes de profundizar en cómo leer argumentos de línea de comandos en Elm, es importante comprender por qué es una habilidad útil para cualquier programador. Al leer y procesar argumentos de línea de comandos, puedes hacer que tus programas sean más flexibles y adaptables a diferentes situaciones. Además, al permitir que los usuarios proporcionen información directamente al ejecutar el programa, se puede crear una mejor experiencia para el usuario final.
+¿Alguna vez te has preguntado cómo un programa de línea de comandos puede leer los argumentos que le pasas? Bueno, en Elm, es muy sencillo y hoy te voy a enseñar cómo hacerlo.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comandos en Elm, utilizaremos la función `Elm.System.args` que se encuentra en el módulo `Platform.Cmd`. Esta función devuelve una lista de cadenas que representan los argumentos proporcionados al ejecutar el programa. Por ejemplo:
+Para leer los argumentos de línea de comando en Elm, utilizaremos la función `System.args` de la biblioteca `elm/core`. Esta función devuelve una lista de cadenas de texto que representan los argumentos pasados al programa. Veamos un ejemplo:
 
 ```Elm
-import Platform.Cmd
+import System exposing (..)
 
 main =
-  Platform.Cmd.attempt argsReceived
-
-argsReceived result =
-  case result of
-    Ok args ->
-      -- Utiliza la lista de args para realizar acciones
-
-    Err error ->
-      -- Maneja el error, como por ejemplo si no se proporcionaron argumentos
+  let
+    args = System.args
+  in
+    case args of
+      Ok arguments ->
+         case arguments of
+           [] -> -- Si no se pasa ningún argumento, se ejecuta este código
+             "No se pasaron argumentos"
+           (arg::_) -> -- Si se pasan argumentos, se ejecuta este código
+             "El argumento es " ++ arg
+      Err error -> -- En caso de error, se ejecuta este código
+         "Hubo un error al leer los argumentos"
 ```
 
-En el ejemplo anterior, utilizamos la función `attempt` para manejar tanto un resultado exitoso (`Ok`) como un error (`Err`). Podemos acceder a la lista de argumentos a través del parámetro `args` en el caso de `Ok`. A partir de ahí, podemos realizar cualquier acción que necesitemos con los argumentos proporcionados.
+Veamos el posible resultado de este programa para diferentes argumentos pasados en la línea de comandos:
 
-## Profundizando más
+```
+$ elm make my_program.elm
+"No se pasaron argumentos"
 
-Además de la función `args`, el módulo `Platform.Cmd` también proporciona otras funciones útiles para trabajar con argumentos de línea de comandos en Elm, como `flag`, `intFlag` y `flagAndArgs`. Estas funciones nos permiten procesar argumentos específicos de diferentes tipos, como cadenas, enteros y listas.
+$ elm make my_program.elm argumento
+"El argumento es argumento"
 
-También es importante recordar que al leer y procesar argumentos de línea de comandos, siempre debemos validar y sanitizar los datos para evitar posibles vulnerabilidades de seguridad en nuestro programa.
+$ elm make my_program.elm "otra cadena de texto"
+"El argumento es otra cadena de texto"
+```
+
+## Profundizando
+
+La función `System.args` también acepta un argumento opcional de tipo `Decoded.Value`, que se utiliza para decodificar los argumentos pasados en un formato específico. Por ejemplo, si pasamos argumentos en formato JSON, podemos utilizar la biblioteca `elm/json` para decodificarlos y utilizarlos en nuestro programa.
+
+Además, podemos utilizar la función `System.execPath` para obtener la ruta de ejecución del programa, lo que puede ser útil en algunas situaciones.
 
 ## Ver también
 
-Para obtener más información sobre cómo trabajar con argumentos de línea de comandos en Elm, puedes consultar los siguientes recursos:
-
-- Documentación oficial de Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-- Ejemplo de código en línea: [https://ellie-app.com/new](https://ellie-app.com/new)
-- Comunidad de Elm en línea: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)
+Para obtener más información sobre cómo trabajar con programas de línea de comandos en Elm, puedes consultar la documentación oficial [aquí](https://package.elm-lang.org/packages/elm/core/latest/). También puedes explorar la biblioteca [elm-cli-options-parser](https://package.elm-lang.org/packages/MasterToad/elm-cli-options-parser/latest/) para una forma más avanzada de manejar los argumentos de línea de comando en Elm.

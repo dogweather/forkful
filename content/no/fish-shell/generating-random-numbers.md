@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Fish Shell: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,36 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Enten du er en nybegynner eller en erfaren programmerer, er det alltid morsomt og nyttig å kunne generere tilfeldige tall i koden din. Kanskje du skal lage et spill, generere tilfeldige passord, eller bare teste ut noe nytt. Uansett hva årsaken er, er det enkelt og gøy å gjøre dette med Fish Shell!
+Å generere tilfeldige tall kan være nyttig for en rekke programmeringsoppgaver, for eksempel å skape usikkerhet eller å simulere tilfeldige hendelser. Dette kan være spesielt nyttig for utviklere som jobber med spill, tilfeldige algoritmer eller tester.
 
 ## Hvordan
 
-For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `random`. Denne kommandoen tar inn et argument for det største tallet du ønsker å generere. Her er et eksempel på hvordan du kan bruke denne kommandoen:
+For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `math random`. Dette vil gi deg et tilfeldig desimaltall mellom 0 og 1. For å få et heltall, kan du multiplisere tallet med det maksimale ønskede intervallet og runde av resultatet. La oss si at du vil generere et tilfeldig tall mellom 1 og 10, da kan du bruke følgende kommando:
 
-```Fish Shell
-random 10
+```
+Fish Shell:
+
+math random * 10 | round
 ```
 
-Dette vil generere et tilfeldig tall mellom 0 og 10.
+Dette vil gi deg et tilfeldig heltall mellom 1 og 10 som output. Du kan også sette dette i en løkke for å generere flere tilfeldige tall:
 
-Du kan også kombinere denne kommandoen med andre Fish Shell-funksjoner for å lage mer komplekse og tilpassede output. For eksempel kan du bruke `head` og `seq` for å generere en liste med tilfeldige tall:
-
-```Fish Shell
-random 10 | head -n5 | seq 1
+```
+Fish Shell:
+for x in ( seq 5 )
+	echo (math random * 10 | round)
+end
 ```
 
-Dette vil generere en liste med 5 tilfeldige tall mellom 1 og 10.
+Dette vil gi deg 5 tilfeldige heltall mellom 1 og 10 som output.
 
 ## Deep Dive
 
-Rose - en tilfeldig algoritme for å generere tilfeldige tall
+Fish Shell bruker en pseudorandom generator for å generere tilfeldige tall. Dette betyr at tallene ikke er helt tilfeldige, men genereres gjennom en beregningsprosess som bruker et initialt tall som kalt en "seed". Den genererte sekvensen av tall vil alltid være den samme for en spesifikk seed. Dette betyr at hvis du ønsker å ha en mer tilfeldig følelse, kan du endre seeden ved å bruke kommandoen `math random-set-seed` med et annet tall som argument.
 
-Fish Shell bruker en algoritme kalt "Rose" for å generere tilfeldige tall. Rose-algoritmen bruker et pseudo-random nummergenerator i kombinasjon med en hashfunksjon for å skape en jevn og tilfeldig fordeling av tallene.
+Et annet nyttig aspekt ved å generere tilfeldige tall i Fish Shell er muligheten til å generere tall innenfor et spesifikt intervall. Ved å bruke kommandoen `math random-seed` med et lavere og øvre tall som argumenter, kan du generere tilfeldige tall innenfor dette intervallet. For eksempel, `math random-seed 1 100` vil generere tall mellom 1 og 100.
 
-Hvis du ønsker å lære mer om hvordan Rose-algoritmen fungerer, kan du se på Fish Shell sin kildekode på GitHub.
+## Se også
 
-## Se Også
-
-- [Fish Shell dokumentasjon om random kommandoen](https://fishshell.com/docs/current/cmds/random.html)
-- [GitHub repository for Fish Shell](https://github.com/fish-shell/fish-shell)
-- [Wikipedia artikkel om pseudo-random nummergenerering](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Tilfeldig tallgenerator i andre programmeringsspråk](https://en.wikipedia.org/wiki/Random_number_generation)

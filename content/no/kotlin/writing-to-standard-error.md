@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Skriver til standardfeil"
+title:                "Skriver til standardfeil"
+html_title:           "Kotlin: Skriver til standardfeil"
 simple_title:         "Skriver til standardfeil"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,37 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standard error er en viktig del av feilsøking og debugging i Kotlin-programmering. Ved å sende ut feilmeldinger til standard error i stedet for standard output, kan utviklere enkelt identifisere og løse potensielle problemer i koden sin.
+Hvis du noen gang har programmert, har du sannsynligvis sett uttrykket "skrive til standard feil" eller "skrive til konsollen". Dette betyr simpelthen å sende en beskjed eller en utskrift til konsollen mens koden kjører. Men hvorfor er dette nyttig?
 
-## Hvordan
+Å skrive til standard feil (også kjent som standardfeilkonsoll) gir deg muligheten til å gi informasjon eller feilmeldinger om koden din mens den kjører. Dette er spesielt nyttig når du skal debugge og finne ut hvorfor koden din ikke fungerer som den skal.
 
-For å skrive til standard error i Kotlin, kan du bruke funksjonen `System.err.println()`. Dette vil skrive ut en melding til standard error-strømmen og få den til å vises i konsollen.
+## Slik gjør du det
+
+For å skrive til standard feil i Kotlin, bruker du funksjonen "System.err.println()". Du kan plassere denne funksjonen hvor som helst i koden din for å sende en melding til konsollen.
 
 ```Kotlin
+
 fun main() {
-    // Skriver ut en feilmelding
-    System.err.println("Det har oppstått en feil!")
-
-    // Skriver ut en variabel til standard error
-    val num = 5
-    System.err.println("Tallet er $num")
+  System.err.println("Dette er en testmelding som vil bli skrevet til standard feil!")
 }
+
+// Output: Dette er en testmelding som vil bli skrevet til standard feil!
 ```
 
-Outputen av dette vil være:
+Hvis du vil kaste et unntak (exception) og skrive en feilmelding til konsollen, kan du bruke "System.err.println()" inne i et try-catch-blokk.
 
-```
-Det har oppstått en feil!
-Tallet er 5
+```Kotlin
+
+fun main() {
+  try {
+    var x = 10 / 0
+  } catch (e: Exception) {
+    System.err.println("Kan ikke dele med 0. Feilmelding: " + e.message)
+  }
+}
+
+// Output: Kan ikke dele med 0. Feilmelding: / by zero
 ```
 
 ## Dypdykk
 
-Når du skriver til standard error, er det viktig å huske på at eventuell tekst som blir skrevet ut vil vises som en feilmelding i konsollen, og ikke som standard output. Dette betyr at du bør være forsiktig med hva du skriver til standard error og kun bruke det for å rapportere feil eller viktige meldinger.
+Når du skriver til standard feil, kan du også styre utseendet på meldingene som blir sendt til konsollen. Dette kan være nyttig for å gjøre meldingene mer tydelige og organiserte.
 
-En annen viktig ting å huske på er at standard error-strømmen ikke blir påvirket av eventuelle endringer i standard output-strømmen. Dette betyr at uansett om du endrer innstillinger for standard output, vil feilmeldinger fortsatt bli skrevet til standard error.
+Du kan bruke "System.err.print()" for å sende en melding uten linjeskift eller "System.err.printf()" for å formatere meldingene dine.
+
+```Kotlin
+
+fun main() {
+  // Bruk System.err.print() for å sende meldinger uten linjeskift
+  System.err.print("Dette er en ")
+  System.err.print("testmelding. ")
+
+  // Bruk System.err.printf() for å formatere meldinger
+  val x = 10
+  val y = 5
+  System.err.printf("%d er større enn %d", x, y)
+
+}
+
+// Output: Dette er en testmelding. 10 er større enn 5
+```
 
 ## Se også
 
-- [Offisiell Kotlin-dokumentasjon for standard error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/err.html)
-- [Tutorial for feilsøking og debugging i Kotlin](https://kotlinlang.org/docs/tutorials/getting-started.html#debugging-classes-with-real-world-usage)
+- [Kotlin Dokumentasjon](https://kotlinlang.org/docs/home.html)
+- [Hvordan skrive til standardfeil i Java](https://www.geeksforgeeks.org/system-out-println-in-java-with-examples/)
+- [Feilbehandling i Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)

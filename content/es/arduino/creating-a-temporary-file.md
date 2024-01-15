@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Creando un archivo temporal"
+title:                "Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,57 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué crear un archivo temporal en Arduino?
 
-Crear un archivo temporal puede ser útil en muchas situaciones, ya sea para almacenar datos temporales o para realizar pruebas en nuestro programa sin afectar archivos permanentes. Además, puede ayudarnos a ahorrar espacio de almacenamiento en nuestra placa Arduino.
+Hay varias razones por las que podrías querer crear un archivo temporal en Arduino. Algunas posibles aplicaciones son guardar datos sensibles temporalmente, almacenar información durante una sesión de ejecución o incluso para realizar pruebas antes de guardar datos permanentes.
 
 ## Cómo hacerlo
 
-Para crear un archivo temporal en Arduino, podemos seguir los siguientes pasos:
+Crear un archivo temporal en Arduino es bastante sencillo. A continuación, se presenta un código de ejemplo y su salida en un bloque de código ```Arduino```:
 
-1. Incluir la librería SD en nuestro código.
+```
+#include <SPI.h> //Librería necesaria para crear archivos temporales
+#include <SD.h> //Librería necesaria para el manejo de archivos en una tarjeta SD
 
-```Arduino
-#include <SD.h>
+File tempFile; //Variable para almacenar el archivo temporal
+
+void setup() {
+  //Inicializar la comunicación con la tarjeta SD
+  SD.begin(4); //4 representa el pin CS de la tarjeta SD
+}
+
+void loop() {
+  //Crear el archivo temporal en la tarjeta SD
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+
+  //Escribir datos en el archivo
+  tempFile.println("Este es un archivo temporal creado en Arduino.");
+
+  //Cerrar el archivo
+  tempFile.close();
+
+  //Esperar 1 segundo antes de ejecutar el proceso nuevamente
+  delay(1000);
+}
 ```
 
-2. Definir una variable para almacenar el nombre de nuestro archivo temporal.
+Salida:
 
-```Arduino
-String tempFile = "temp.txt";
 ```
-
-3. Abrir el archivo temporal en modo escritura.
-
-```Arduino
-File file = SD.open(tempFile, FILE_WRITE);
+Este es un archivo temporal creado en Arduino.
 ```
-
-4. Escribir los datos que deseamos almacenar en el archivo.
-
-```Arduino
-file.print("Datos temporales");
-```
-
-5. Cerrar el archivo.
-
-```Arduino
-file.close();
-```
-
-Con estos sencillos pasos, habremos creado un archivo temporal en nuestra tarjeta SD. Podemos verificarlo conectando la tarjeta SD a nuestro ordenador y buscando el archivo "temp.txt".
 
 ## Profundizando
 
-Al crear un archivo temporal, también debemos tener en cuenta que este archivo ocupará espacio en nuestra tarjeta SD. Por lo tanto, es importante borrarlo después de su uso. Podemos hacerlo utilizando la función "remove()" de la librería SD.
+Ahora que sabes cómo crear un archivo temporal en Arduino, es importante tener en cuenta algunos detalles. Primero, es necesario tener una tarjeta SD conectada al Arduino para poder guardar el archivo temporal. Además, es importante cerrar el archivo después de utilizarlo para evitar problemas de escritura y lectura en la tarjeta SD.
 
-```Arduino
-SD.remove(tempFile);
-```
-
-Además, es recomendable utilizar un nombre de archivo único para evitar conflictos con otros archivos. Podemos hacerlo agregando algún dato diferente o aleatorio al nombre del archivo, como la hora o un número generado por la placa.
+También es importante tener en cuenta que los archivos temporales se guardarán en la tarjeta SD hasta que se eliminen manualmente o el Arduino se apague. Si se desea guardar los datos permanentemente, se deberá programar para que el Arduino copie los datos del archivo temporal a un archivo permanente antes de ser eliminado.
 
 ## Ver también
 
-- [Tutorial de la librería SD en Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Más información sobre archivos temporales](https://en.wikipedia.org/wiki/Temporary_file)
+- [Tutorial de Arduino sobre el manejo de tarjetas SD](https://www.arduino.cc/en/Tutorial/ReadWrite)
+- [Documentación oficial de la librería SD](https://www.arduino.cc/en/Reference/SD)
+- [Ejemplo de creación de archivos temporales en Arduino](https://www.arduino.cc/en/Tutorial/CreateTempFile)

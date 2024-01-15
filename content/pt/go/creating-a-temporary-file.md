@@ -1,5 +1,6 @@
 ---
-title:                "Go: Criando um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Go: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Go"
 category:             "Go"
@@ -11,95 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que criar um arquivo temporário em Go?
 
-Criar arquivos temporários é uma prática comum em muitas linguagens de programação, incluindo Go. Esses arquivos são úteis para armazenar dados temporários durante a execução de um programa, como informações de cache ou de processamento. Além disso, eles podem ser uma solução para lidar com problemas de segurança relacionados ao armazenamento de dados sensíveis em disco. A seguir, mostraremos como criar um arquivo temporário em Go e como utilizá-lo em suas aplicações.
+Criar e utilizar arquivos temporários é uma prática comum em programação, especialmente quando se trabalha com dados sensíveis ou temporários. Em Go, isso é feito de forma simples e eficiente, permitindo que os desenvolvedores evitem o acúmulo de arquivos não utilizados ou expostos.
 
-## Como fazer
+## Como fazer em Go?
 
-A criação de um arquivo temporário em Go é bem simples e pode ser feita utilizando a função `ioutil.TempFile`. Veja um exemplo básico abaixo:
+A criação de um arquivo temporário em Go é feita utilizando a biblioteca "io/ioutil". Abaixo, temos um exemplo de como criar um arquivo temporário e escrever alguns dados nele:
 
 ```Go
-package main
-
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
+    "fmt"
+    "io/ioutil"
 )
 
 func main() {
-	// Criando um arquivo temporário no diretório atual
-	file, err := ioutil.TempFile(".", "tempfile")
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+    // criando o arquivo temporário e capturando seu nome e eventuais erros
+    arquivo, err := ioutil.TempFile("", "meuarquivo")
+    if err != nil {
+       fmt.Println(err)
+    }
 
-	// Escrevendo dados no arquivo
-	data := []byte("Exemplo de dados a serem armazenados no arquivo temporário")
-	file.Write(data)
+    // escrevendo dados no arquivo
+    _, err = arquivo.Write([]byte("Meus dados"))
+    if err != nil {
+        fmt.Println(err)
+    }
 
-	// Fechando o arquivo
-	file.Close()
+    // fechando e removendo o arquivo temporário após a utilização
+    defer os.Remove(arquivo.Name())
 
-	// Deletando o arquivo após o uso
-	defer os.Remove(file.Name())
-
-	// Exibindo o nome do arquivo temporário criado
-	fmt.Println("Arquivo temporário criado:", file.Name())
+    // exibindo o nome do arquivo
+    fmt.Println(arquivo.Name())
 }
 ```
 
-Este código irá criar um arquivo temporário com o nome `tempfile` no diretório atual e escrever os dados especificados no mesmo. Ele também adiciona uma função `defer` para garantir que o arquivo seja excluído após a execução do programa.
+A saída do código acima será algo como "/tmp/meuarquivo012345678". Além disso, o arquivo será automaticamente excluído após sua utilização, evitando assim a necessidade de limpezas manuais.
 
-O resultado deste código será:
+## Aprofundando
 
-```
-Arquivo temporário criado: ./tempfile301762812
-```
+Ao criar um arquivo temporário em Go, é possível definir o diretório onde ele será criado e seu nome através dos dois argumentos passados para a função "TempFile". Caso o primeiro argumento seja uma string vazia ("") o arquivo será criado no diretório padrão definido pelo sistema operacional.
 
-## Profundando mais
-
-Além da função `ioutil.TempFile`, Go também possui uma biblioteca interna para manipulação de arquivos temporários chamada `os.TempDir`. Esta função retorna o caminho do diretório padrão para arquivos temporários do sistema operacional. Podemos utilizá-la para criar um arquivo temporário em um local específico. Veja um exemplo:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-)
-
-func main() {
-	// Obtendo o caminho do diretório de arquivos temporários
-	tempDir := os.TempDir()
-
-	// Criando um arquivo temporário no diretório especificado
-	file, err := ioutil.TempFile(tempDir, "tempfile")
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
-	// Escrevendo dados no arquivo
-	data := []byte("Exemplo de dados a serem armazenados no arquivo temporário")
-	file.Write(data)
-
-	// Fechando o arquivo
-	file.Close()
-
-	// Deletando o arquivo após o uso
-	defer os.Remove(file.Name())
-
-	// Exibindo o nome do arquivo temporário criado
-	fmt.Println("Arquivo temporário criado:", file.Name())
-}
-```
-
-No código acima, utilizamos a função `os.TempDir` para obter o caminho do diretório padrão e especificá-lo na função `ioutil.TempFile`. O resultado será o mesmo do exemplo anterior, mas o arquivo será criado no diretório de arquivos temporários do sistema operacional.
+É importante ressaltar que é necessário utilizar o prefixo "os" para remover o arquivo temporário criado, como mostrado no exemplo acima. Além disso, é possível definir um sufixo para o nome do arquivo, que por padrão será um identificador único.
 
 ## Veja também
 
-- [Documentação oficial da função `ioutil.TempFile` em Go](https://golang.org/pkg/io/ioutil/#TempFile)
-- [Documentação oficial da função `os.TempDir` em Go](https://golang.org/pkg/os/#TempDir)
-- [Artigo sobre segurança em arquivos temporários em Go](https://www.alexedwards.net/blog/sensitive-unprotected-temp-files)
+- [Documentação oficial da biblioteca ioutil](https://golang.org/pkg/io/ioutil/)
+- [Guia de estilo do Go](https://github.com/golang/go/wiki/CodeReviewComments#identifier-names)

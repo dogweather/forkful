@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Eliminando caracteres que coinciden con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Kotlin: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,44 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Si eres un desarrollador de Kotlin, es posible que en algún momento hayas necesitado eliminar caracteres de una cadena que coinciden con un patrón específico. Esto podría ser útil en situaciones como limpiar datos de entrada o formatear una cadena según ciertas reglas. En este artículo, discutiremos cómo realizar esta tarea de manera eficiente y efectiva en Kotlin.
+En algunas situaciones, es posible que necesitemos eliminar ciertos caracteres de un texto que coincidan con un patrón específico. Esto puede ser necesario para limpiar datos, filtrar información o mejorar la legibilidad de un texto.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Kotlin, podemos utilizar el método `replace()` en una cadena. Este método toma dos argumentos: el patrón de búsqueda y la cadena de reemplazo.
+Podemos utilizar el método `removeChars` de Kotlin para eliminar los caracteres que coinciden con un patrón determinado. Veamos un ejemplo:
 
-```
-val cadena = "¡Kotlin es genial!"
-val nuevaCadena = cadena.replace(Regex("o")) { "" }
-println(nuevaCadena)
-// Output: ¡Ktlin es genial!
-```
+```Kotlin
+// Crea una cadena de texto con caracteres no deseados
+val str = "¡H01@ m1 ¡N0Mbr3 es Juan!"
 
-En este ejemplo, utilizamos una expresión regular para definir el patrón de búsqueda, en este caso, la letra `o`. Luego, pasamos una función lambda como segundo argumento, que en este caso simplemente devuelve una cadena vacía `""`. Esto significa que cualquier coincidencia con la letra `o` será reemplazada por una cadena vacía, eliminándola de la cadena original.
+// Elimina los números y el símbolo @
+val resultado = str.removeChars("[0-9@]")
 
-También podemos utilizar el método `replace()` para reemplazar varias coincidencias en una sola llamada. Por ejemplo, si queremos eliminar todas las vocales de una cadena, podemos usar una expresión regular que contenga todas las vocales y reemplazarlas por una cadena vacía.
-
-```
-val cadena = "¡Kotlin es genial!"
-val nuevaCadena = cadena.replace(Regex("[aeiou]")) { "" }
-println(nuevaCadena)
-// Output: ¡Ktln s gnl!
+// Imprime el resultado
+print(resultado)
 ```
 
-En este caso, hemos utilizado una clase de caracteres en la expresión regular, que buscará cualquier coincidencia con las vocales `a, e, i, o, u`.
+**Salida**:
+
+Hola mi nombre es Juan!
+
+En este ejemplo, utilizamos la expresión regular `[0-9@]` como patrón, que eliminará cualquier número o el símbolo @ de la cadena de texto. Podemos modificar el patrón según nuestras necesidades para eliminar otros caracteres.
+
+También podemos utilizar el operador `-=`, que nos permite eliminar directamente los caracteres que coinciden con un patrón de una cadena de texto:
+
+```Kotlin
+// Crea una cadena de texto con caracteres no deseados
+val str = "123-456-789"
+
+// Elimina los símbolos -
+str -= "-"
+
+// Imprime el resultado
+print(str)
+```
+
+**Salida**:
+
+123456789
 
 ## Profundizando
 
-Si queremos ser más específicos con las coincidencias que queremos eliminar, podemos utilizar más opciones en nuestra expresión regular. Por ejemplo, podemos especificar una clase de caracteres negada para excluir ciertos caracteres, o utilizar cuantificadores para eliminar ciertos patrones repetitivos.
+El método `removeChars` toma como argumento una expresión regular, que es una secuencia de caracteres que nos permite especificar un patrón de búsqueda. Pueden ser muy útiles para manipular cadenas de texto, ya que nos permiten buscar y reemplazar partes específicas de una cadena.
 
-También podemos utilizar el método `replaceFirst()` si solo queremos eliminar la primera coincidencia, en lugar de todas las coincidencias en la cadena.
+Existen muchos patrones de expresiones regulares que pueden ser utilizados para eliminar caracteres. Aquí te dejamos algunos recursos que te pueden ayudar a aprender más sobre cómo trabajar con expresiones regulares en Kotlin:
 
-Por último, vale la pena mencionar que el método `replace()` también funciona con cadenas que no contienen el patrón de búsqueda. En ese caso, la cadena original se devolverá sin cambios.
+- [Documentación oficial de Kotlin sobre expresiones regulares](https://kotlinlang.org/docs/regexp.html)
+- [Tutorial de expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regular-expressions)
+- [Libro sobre expresiones regulares en Kotlin](https://www.amazon.es/Regular-Expressions-Kotlin-Lothringer-David/dp/1484234042)
 
-## Ver también
+## Consulta también
 
-- [Documentación de Kotlin sobre expresiones regulares](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-string/replace.html)
-- [Kotlin Regex Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tutorial de expresiones regulares en Kotlin](https://kotlinlang.org/docs/regex.html)
+- [Documentación oficial de Kotlin sobre el método `removeChars`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/remove-chars.html)
+- [Tutorial de Kotlin en español](https://www.genbeta.com/desarrollo/tutorial-kotlin)

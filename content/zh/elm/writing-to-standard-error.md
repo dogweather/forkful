@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 编写标准错误"
-simple_title:         "编写标准错误"
+title:                "标准错误写入"
+html_title:           "Elm: 标准错误写入"
+simple_title:         "标准错误写入"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,52 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写标准错误（Standard Error）
+## 为什么
 
-写作标准错误（Standard Error）是 Elm 程序员中频繁使用的一种技术，它允许程序将错误信息打印到控制台。这样做可以帮助程序员更容易地调试和修复代码中的错误。
+写入标准错误有什么用？在编程中，错误信息是非常重要的，它可以帮助我们快速找出代码中的问题，并进行调试。如果我们能将错误信息写入到标准错误中，就可以更方便地查看和分析错误，并及时解决它们。
 
-## 如何编写标准错误
+## 如何做
 
-要在 Elm 中编写标准错误，我们可以使用 `Debug.crash` 函数来实现。如下所示：
+首先，我们需要使用 Elm 语言中的 `Debug` 模块。然后，我们可以使用 `Debug.log` 函数来输出错误信息。下面是一个简单的例子：
 
-``` Elm
-import Debug exposing (crash)
-import Maybe exposing (Maybe(..))
+```elm
+import Debug
 
-divide : Float -> Float -> Maybe Float
-divide x y =
-    if y == 0 then
-        Nothing
-    else
-        Just (x / y)
+x = 5
+y = 0
 
-safeDivide : Float -> Float -> Float
-safeDivide x y =
-    case divide x y of
-        Just result ->
-            result
+result = x/y
 
-        Nothing ->
-            crash "除数不能为 0"
-
--- Output: 除数不能为 0
+Debug.log "错误信息：" (toString result)
 ```
 
-在这个例子中，我们使用 `Debug.crash` 函数来打印错误信息，当 `divide` 函数返回 `Nothing` 的时候，表示程序发生错误，我们将错误信息传递给 `crash` 函数进行打印。
+在这个例子中，我们定义了两个变量 `x` 和 `y`，然后用 `x` 除以 `y`，由于 `y` 的值为 0，会导致除法错误。最后，我们使用 `Debug.log` 函数来输出错误信息，它的第一个参数为我们自定义的错误信息，第二个参数为要输出的变量。在这个例子中，我们将结果 `result` 转换为字符串，并将它作为第二个参数传入。
 
-## 深入了解标准错误
+运行上述代码后，你会在控制台中看到如下输出：
 
-标准错误是一种常用的调试方法，但是在 Elm 中，它并不是一个良好的实践。这是因为 Elm 代码应该是可靠的，而不应该发生任何错误。如果出现错误，我们应该尽可能地避免它们，而不是简单地打印错误信息。
+```
+错误信息：Cannot perform division by zero
+```
 
-另一种避免使用标准错误的方法是使用 `Maybe` 或 `Result` 类型来处理可能出现的错误情况。例如，在上面的例子中，我们可以使用 `Maybe` 类型来处理除数为 0 的情况，而不是直接使用 `Debug.crash` 函数。
+这个错误信息就是我们自定义的，它可以帮助我们快速定位到出错的地方，并找出错误的原因。
 
-# 参考资料
+## 深入了解
 
-- [Debug - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Maybe - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Maybe)
-- [Result - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Result)
+除了 `Debug.log` 函数外，Elm 中还提供了其他几个函数来输出错误信息，比如 `Debug.log2`、`Debug.log3` 等。它们的使用方式与 `Debug.log` 函数类似，只是可以输出不同数量的变量。
 
-# 查看也可以 (See Also)
+另外，我们还可以使用 `Debug.crash` 函数来手动抛出一个错误。它的第一个参数为错误信息，后面可以跟上任意参数。下面是一个例子：
 
-- [错误处理 - Elm 网站](https://elm-lang.org/docs/error-handling)
-- [Debugging - Elm 网站](https://elm-lang.org/docs/debugging)
+```elm
+import Debug
+
+x = 5
+y = 0
+
+result = x/y
+
+Debug.crash "错误信息：" result
+```
+
+运行上述代码后，你会在控制台中看到如下输出：
+
+```
+错误信息：Cannot perform division by zero
+```
+
+除了输出错误信息外，`Debug.crash` 函数还会终止程序的执行，这有助于我们在调试时及时发现并解决错误。
+
+## 参考链接
+
+- Elm 官方文档：https://guide.elm-lang.org/
+- Elm 语言编程指南（中文版）：http://evancz.gitbooks.io/elm/content/

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Arbeta med json"
+title:                "Arbeta med json"
+html_title:           "Elm: Arbeta med json"
 simple_title:         "Arbeta med json"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,54 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför du bör använda JSON i Elm-programmering
+## Varför
 
-JSON, eller JavaScript Object Notation, är ett populärt format för att hantera data i webbapplikationer. Det är lättläst både för människor och maskiner, vilket gör det till ett utmärkt alternativ för att lagra och hantera data i dina Elm-program. Genom att använda JSON kan du skapa mer dynamiska och flexibla applikationer som kan utbyta data med andra system.
+JSON (JavaScript Object Notation) är en vanligt använd format för att hantera data. Med hjälp av JSON kan vi enkelt överföra och lagra data i en strukturerad form. Att lära sig att arbeta med JSON i Elm kan göra det enklare för oss att integrera med andra system och hantera stora mängder av data.
 
-## Hur man arbetar med JSON i Elm
+## Hur man gör det
 
-För att arbeta med JSON i Elm, behöver du först importera paketet "Json.Decode". Detta ger dig tillgång till olika funktioner som gör det möjligt att konvertera JSON-data till Elm-datastrukturer och vice versa.
+För att arbeta med JSON i Elm behöver vi först importera biblioteket "Json.Decode".
 
 ```Elm
 import Json.Decode exposing (..)
 ```
 
-För att hämta data från en extern källa, som ett API, kan du använda funktionen `Http.get` tillsammans med `Json.Decode` för att konvertera datan till ett Elm-format. Till exempel kan vi hämta en lista med användare från en fiktiv JSON API med hjälp av följande kod:
+För att sedan hämta en JSON-fil från en extern resurs använder vi funktionen "Http.get", som tar två argument: en URL och en avkodare för JSON. Avkodaren följer en struktur som motsvarar JSON-filen.
 
 ```Elm
-type alias User =
-    { id : Int
-    , name : String
-    , email : String
-    }
+type alias Person = {
+    name: String,
+    age: Int
+}
 
-userDecoder : Decoder User
-userDecoder =
-    decode User
-        |> required "id" int
-        |> required "name" string
-        |> required "email" string
+personDecoder : Decoder Person
+personDecoder =
+    map2 Person
+        (field "name" string)
+        (field "age" int)
 
-fetchUsers : Cmd Msg
-fetchUsers =
-    Http.get
-        { url = "https://jsonplaceholder.typicode.com/users"
-        , expect = Http.expectJson Decoders.userDecoder UserFetched
-        }
+httpGetExample : Cmd Msg
+httpGetExample =
+    Http.get "https://example.com/api/person/1" personDecoder
 ```
 
-I detta exempel skapar vi en dekoder för `User` som definierar hur vi vill strukturera datan från vår API-förfrågan. Sedan använder vi funktionen `Http.get` för att göra en GET-förfrågan och konvertera datan till ett `User`-objekt med hjälp av vår dekoder. För att använda dekodern i vår GET-förfrågan behöver vi importera paketet "Http".
+När vi sedan tar emot svar från vår anrop kommer det att vara formaterat enligt vår avkodare och vi kan enkelt arbeta med datan. Om vi till exempel vill skriva ut personens namn och ålder kan vi göra det på följande sätt:
 
-## En djupdykning i JSON-hantering i Elm
+```Elm
+case result of
+    Ok person ->
+        Debug.log person.name ++ ", " ++ String.fromInt person.age
 
-Elm har inbyggda funktioner för att hantera JSON-data, vilket gör det relativt enkelt att arbeta med. Det finns också många användbara paket som hjälper till med att hantera specifika strukturer och format för JSON-data.
+    Err error ->
+        Debug.log "An error occurred: " ++ toString error
+```
 
-Till exempel kan du använda paketet "elm-uuid" för att generera unika ID:n för dina dataobjekt när du sparar data i JSON-format. Det finns också paket som hjälper till med att hantera mer komplex datastrukturer som MondaDB och GraphQL.
+## Djupdykning
 
-Att ha en god förståelse för hur man arbetar med JSON i Elm är avgörande för att skapa effektiva och skräddarsydda webbapplikationer. Genom att använda korrekta dekoder och encoders kan du säkerställa att din applikation får in och skickar ut rätt dataformat.
+För att kunna hantera olika typer av data i JSON kan vi använda använda funktioner som "field" eller "at" för att komma åt specifika delar av vår struktur. Om vi till exempel har en JSON-fil med flera personer kan vi hämta ut en lista av dessa genom att använda "at" och en lista av avkodare.
+
+```Elm
+personsDecoder : Decoder (List Person)
+personsDecoder =
+    list personDecoder
+
+httpGetExample : Cmd Msg
+httpGetExample =
+    Http.get "https://example.com/api/persons" personsDecoder
+```
+
+Vi kan även använda funktionen "Json.Decode.andThen" för att hantera felaktiga värden i vår JSON-fil. Genom att använda "Json.Decode.optional" kan vi välja att ignorera en viss del av datan om den saknas eller är ogiltig.
 
 ## Se även
 
-- [Officiell Elm dokumentation om JSON](https://guide.elm-lang.org/effects/json.html)
-- [Elm-paket för hantering av JSON-data](https://package.elm-lang.org/packages/search?q=json)
-- [Exempelprojekt för Elm och JSON](https://github.com/elm/json/tree/master/examples)
+- Elm-dokumentation: https://guide.elm-lang.org/effects/http.html
+- Json.Decode-dokumentation: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode

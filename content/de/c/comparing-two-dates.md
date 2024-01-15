@@ -1,5 +1,6 @@
 ---
-title:                "C: Vergleich von zwei Daten"
+title:                "Vergleich von zwei Daten"
+html_title:           "C: Vergleich von zwei Daten"
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "C"
 category:             "C"
@@ -11,53 +12,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Vergleichen von zwei Datumsangaben ist ein wichtiger Bestandteil der Programmierung, insbesondere wenn es um die Handhabung von Terminen und Zeitleisten geht. Durch das Vergleichen von zwei Datumswerten können Sie zum Beispiel überprüfen, ob ein Termin in der Zukunft liegt oder ob ein bestimmtes Datum bereits in der Vergangenheit liegt.
+Wer in der Welt der Programmierung unterwegs ist, stößt oft auf die Herausforderung, zwei Zeitpunkte miteinander vergleichen zu müssen. Ob es um das Sortieren von Daten oder das Überprüfen von Zeitspannen geht, das Vergleichen von zwei Datumswerten ist ein häufiger Bestandteil des Programmieralltags. In diesem Artikel werden wir uns ansehen, wie man in C zwei Datumswerte vergleichen kann und warum es wichtig ist, diese Fähigkeit zu beherrschen.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um zwei Datumswerte in C zu vergleichen, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung der Funktion "difftime", die Teil der Standard-C-Bibliothek ist. Diese Funktion berechnet die Differenz zwischen zwei Datumsangaben in Sekunden und gibt entweder einen positiven, negativen oder neutralen Wert zurück, je nachdem welches Datum später liegt.
+Das Vergleichen von zwei Datumswerten in C kann auf verschiedene Arten erfolgen, je nachdem welche Informationen und Funktionen einem zur Verfügung stehen. Hier sind zwei mögliche Ansätze:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Zwei Beispieldaten
-    struct tm date1 = { .tm_year = 2020, .tm_mon = 5, .tm_mday = 2 };
-    struct tm date2 = { .tm_year = 2020, .tm_mon = 4, .tm_mday = 1 };
+int main() {
 
-    // Berechnen der Differenz zwischen den Daten in Sekunden
-    double diff = difftime(mktime(&date1), mktime(&date2));
+    // Erstellen von zwei Variablen mit Datumswerten
+    time_t date1 = time(NULL); // aktuelles Datum
+    time_t date2 = 173744400; // 2. September 1975, 0 Uhr
+    
+    // Erstellen von Structs tm mit jeweiligen Datumswerten
+    struct tm *ptr1 = localtime(&date1); 
+    struct tm *ptr2 = localtime(&date2);
+    
+    // Vergleich der beiden Datumswerte
+    if (mktime(ptr1) > mktime(ptr2)) {
+        printf("Das erste Datum ist später als das zweite Datum\n");
+    } else if (mktime(ptr1) < mktime(ptr2)) {
+        printf("Das zweite Datum ist später als das erste Datum\n");
+    } else {
+        printf("Die beiden Datumswerte sind gleich\n");
+    }
+    
+    return 0;
+}
+```
 
-    // Ausgabe des Ergebnisses
-    if (diff > 0)
-    {
-        printf("Date 1 liegt später als Date 2.");
-    }
-    else if (diff < 0)
-    {
-        printf("Date 2 liegt später als Date 1.");
-    }
-    else
-    {
-        printf("Date 1 ist gleich Date 2.");
-    }
+In diesem Beispiel werden die Daten mithilfe der "time" und "localtime" Funktionen in Variablen und Structs gespeichert. Daraufhin werden die Timestamps mithilfe der "mktime" Funktion verglichen und je nach Ergebnis eine Ausgabe auf der Konsole generiert.
+
+Eine weitere Möglichkeit, zwei Datumswerte miteinander zu vergleichen, ist die Verwendung der Funktion "difftime". Diese gibt die Differenz in Sekunden zwischen zwei Datumswerten zurück. Hier ist ein Beispiel:
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+
+    // Erstellen von Variablen mit Datumswerten
+    time_t date1 = time(NULL); // aktuelles Datum
+    time_t date2 = 173744400; // 2. September 1975, 0 Uhr
+    
+    // Berechnung der Differenz in Sekunden
+    double difference = difftime(date1, date2);
+    
+    // Ausgabe der Differenz in Sekunden
+    printf("Die Differenz zwischen den beiden Datumswerten beträgt %.0f Sekunden\n", difference);
 
     return 0;
 }
 ```
 
-Dieses Beispiel nutzt die Funktion "mktime", um die Datumsangaben in einen numerischen Wert umzuwandeln, der von "difftime" verwendet werden kann. Das Ergebnis ist je nach Situation entweder positiv, negativ oder neutral.
+Beide Ansätze sind effektive Möglichkeiten, um zwei Datumswerte in C zu vergleichen. Es ist jedoch wichtig zu beachten, dass die Ergebnisse je nach verwendetem Ansatz geringfügig abweichen können.
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Beim Vergleichen von Datumsangaben ist es wichtig zu beachten, dass es in der Realität viele verschiedene Zeitzonen und Regionen gibt. Daher kann es zu unerwarteten Ergebnissen kommen, wenn Sie nur die Funktion "difftime" verwenden. Eine bessere Möglichkeit ist die Verwendung der "tm_gmtoff"-Strukturkomponente von "tm", die die Anzahl der Sekunden in der Zeitzone des Datums enthält.
+Bei der Verwendung von Structs tm und mktime kann es zu Problemen mit der Zeitzone oder der Sommerzeitumstellung kommen, da diese Funktionen auf lokale Zeiten basieren. Um dieses Problem zu vermeiden, können die Funktionen "gmtime" und "timegm" verwendet werden, die auf der Coordinated Universal Time (UTC) basieren.
 
-Die Arbeit mit Datumswerten kann auch kompliziert werden, wenn es um Berechnungen mit Schaltjahren und Daten in unterschiedlichen Kalenderformaten geht. In solchen Fällen müssen Sie möglicherweise auf externe Bibliotheken oder spezielle Funktionen von C zurückgreifen, um zuverlässige Ergebnisse zu erhalten.
+Außerdem gibt "difftime" nur die Differenz in Sekunden zurück, was möglicherweise nicht ausreicht, um genau zu bestimmen, welches Datum später ist. Hier kann die Bibliothek "timelib" behilflich sein, die die Differenz in Tagen, Stunden, Minuten und Sekunden zurückgibt.
 
 ## Siehe auch
 
-- Offizielle Dokumentation von C: https://de.wikibooks.org/wiki/C-Programmierung:_Einf%C3%BChrung
-- Verwenden von Datums- und Zeitfunktionen in C: https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm
-- Unix-Zeit und ihre Nutzung in C: https://de.wikipedia.org/wiki/Unix-Zeit
+- [C Datumswerterfassung](https://de.wikibooks.org/wiki/C-Programmierung:_Datumswerterfassung)
+- [C Standard-Bibliothek: Datums- und Zeitfunktionen](https://de.wikibooks.org/wiki/C-Programmierung:_Datum-und_Zeitfunktionen)
+- [C-Befehlsübersicht: Zeit und Datum](https://en.wikibooks.org/wiki/C_Programming/C_Reference/Time_and_Date_Functions)

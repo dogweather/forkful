@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Leser kommandolinje-argumenter"
+title:                "Leser kommandolinje-argumenter"
+html_title:           "Kotlin: Leser kommandolinje-argumenter"
 simple_title:         "Leser kommandolinje-argumenter"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,60 +11,94 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å lese kommandolinjeargumenter kan være svært nyttig for å lage programvare som er mer brukervennlig og fleksibel. Ved å kunne ta imot informasjon direkte fra brukeren, kan du tilpasse programmets funksjon basert på deres behov. I denne bloggen vil vi se på hvordan du enkelt kan lese kommandolinjeargumenter i Kotlin.
+Å lese kommandolinje-argumenter er en nøkkelkompetanse som alle Kotlin-programmerere bør ha. Det lar deg utvide funksjonaliteten til programmene dine ved å ta imot informasjon fra brukeren på kjøretid.
 
 ## Hvordan
-
-Først må vi importere nødvendige pakker, som `args` fra `Array`:
+Det første trinnet for å lese kommandolinje-argumenter i Kotlin er å importere `kotlin.text.Regex` biblioteket. Deretter kan du bruke `args` variabelen i `main` funksjonen din for å få tilgang til kommandolinje-argumentene som en matrise (array). Her er et eksempel på hvordan du bruker `args` variabelen for å skrive ut alle argumentene som ble passert inn ved å kjøre programmet:
 
 ```Kotlin
-import java.util.Arrays
+import kotlin.text.Regex
 
 fun main(args: Array<String>) {
-    // kode her
-}
-
-```
-
-Deretter kan vi bruke `args` for å få tilgang til kommandolinjeargumentene. La oss si at vi vil lese en streng og et tall fra brukeren:
-
-```Kotlin
-val inputString = args[0] // første kommandolinjeargument
-val inputNumber = args[1].toInt() // andre kommandolinjeargument, konvertert til et tall ved hjelp av .toInt() funksjonen
-println("Du skrev inn $inputString og $inputNumber") // utskrift: Du skrev inn [inputString] og [inputNumber]
-```
-
-Du kan også benytte deg av `args.size` for å sjekke hvor mange argumenter som er gitt av brukeren.
-
-## Dypdykk
-
-Det er viktig å huske at kommandolinjeargumenter alltid er strenger, selv om du ønsker å lese inn tall. Derfor må du konvertere dem til riktig datatype ved å bruke funksjoner som `.toInt()` eller `.toDouble()`.
-
-I tillegg går det an å lese inn flere argumenter ved hjelp av en `for`-løkke og `args.forEach`-funksjonen:
-
-```Kotlin
-args.forEach { arg ->
-    println(arg) // utskrift: hvert kommandolinjeargument én etter én
-}
-```
-
-Du kan også lese argumenter ved hjelp av flagg, for eksempel `--name` og `--age`:
-
-```Kotlin
-args.forEachIndexed { index, arg ->
-    if(arg == "--name") {
-        val name = args[index+1] // navnet vil være plassert i argumentet etter flagget
-        println("Navn: $name")
-    } else if(arg == "--age") {
-        val age = args[index+1].toInt() // alderen vil være plassert i argumentet etter flagget, må konverteres til et tall
-        println("Alder: $age")
+    println("Kommandolinje-argumenter:")
+    for (argument in args) {
+        println(Regex.escape(argument))
     }
 }
 ```
 
-## Se også
+Hvis du for eksempel kjører programmet med argumentene "Hello" og "World", vil følgende bli skrevet ut:
 
-- [Official Kotlin documentation on command line arguments](https://kotlinlang.org/docs/reference/command-line.html)
-- [Tutorialspoint article on handling command line arguments in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_command_line_arguments.htm)
-- [StackOverflow thread on reading command line arguments in Kotlin](https://stackoverflow.com/questions/4604237/how-to-process-console-arguments-in-kotlin)
+```
+Kommandolinje-argumenter:
+Hello
+World
+```
+
+Du kan også få tilgang til en bestemt mengde argumenter ved å bruke deres indeks i `args` matrisen. For eksempel, hvis du bare ville skrive ut det første og siste argumentet, kunne du gjort noe som dette:
+
+```Kotlin
+import kotlin.text.Regex
+
+fun main(args: Array<String>) {
+    println("Første argument: " + args[0])
+    println("Siste argument: " + args[args.size - 1])
+}
+```
+
+Som før, hvis du kjører programmet med argumentene "Hello" og "World", vil følgende bli skrevet ut:
+
+```
+Første argument: Hello
+Siste argument: World
+```
+
+## Deep Dive
+Du kan også bruke Kotlin-built-in `argParser` for å lese og analysere kommandolinje-argumenter på en mer strukturert måte. Med dette verktøyet kan du enkelt definere forskjellige argumenttyper og deres verdier, og få tilgang til dem i koden din ved hjelp av argumentnavnene. Her er et eksempel på hvordan dette kan gjøres:
+
+```Kotlin
+import kotlin.system.exitProcess
+
+fun main(args: Array<String>) {
+    argParser(args).parseInto(::Config).runCatching {
+        if (hasHelpOption) {
+            println("Dette programmet tar imot to kommandolinje-argumenter: <navn> og <alder>")
+            exitProcess(0)
+        }
+        println("Navn: $name")
+        println("Alder: $age")
+    }.onFailure {
+        System.err.println("Ugyldige argumenter. Bruk '--help' for å se brukermenyen.")
+        exitProcess(1)
+    }
+}
+
+data class Config(val name: String, val age: Int, val hasHelpOption: Boolean)
+
+fun Config.Companion.create() = Config("", 0, false) //Default verdier
+
+private fun argParser(args: Array<String>) = if (args.contains("--help")) {
+    Config.create().copy(hasHelpOption = true)
+} else {
+    Config.create().apply {
+        val iterator = args.iterator()
+        while (iterator.hasNext()) {
+            when (iterator.next()) {
+                "--name" -> name = iterator.next() //Argumentnavn og -verdi
+                "--age" -> age = iterator.next().toInt() //Argumentnavn og -verdi konvertert til Int
+                else -> throw Exception() //Ugyldig argument
+            }
+        }
+    }
+}
+```
+
+Her definerer vi to typer argumenter, navn og alder, og bruker `argParser` til å hente og analysere disse argumentene fra kommandolinjen. Hvis brukeren inkluderer "--help" som et argument, vil vi bare skrive ut en hjelpemeny og avslutte programmet. Hvis ikke, vil vi få tilgang til og skrive ut navn og alder som ble angitt som argumenter. Her er noen eksempler på hvordan dette kan kjøres:
+
+```
+$ kotlin Main --help
+Dette programmet tar imot to kommandolinje-argumenter: <navn> og <alder>
+
+$ kotlin Main --name Alice --age 25
+Navn: Alice
+Alder

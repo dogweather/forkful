@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: HTTP अनुरोध भेजना"
-simple_title:         "HTTP अनुरोध भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Elixir: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### क्यों
+## क्यों
 
-एक HTTP अनुरोध भेजने का सही तरीका सिर्फ आपको प्रोग्रामिंग के लिए एक महत्वपूर्ण यूज़ केस है, वरना आप एप्लिकेशन के साथ संघर्ष कर सकते हैं।
+एक HTTP अनुरोध भेजने में किसी को कितना रुचि हो सकता है, इसे समझने के लिए सूचना उपलब्ध कराने से संबंधित हो सकता है।
 
-### कैसे करें
+## कैसे करें
 
-``` Elixir
-# कनेक्शन निर्माण करें
-conn = HTTPoison.get("https://example.com")
+```elixir
+defmodule HTTPRequest do
+  def send(method, url) do
+    case method do
+      "GET" -> IO.puts("Request sent to #{url} using the GET method.")
+      "POST" -> IO.puts("Request sent to #{url} using the POST method.")
+      "PUT" -> IO.puts("Request sent to #{url} using the PUT method.")
+      "DELETE" -> IO.puts("Request sent to #{url} using the DELETE method.")
+      _ -> IO.puts("Invalid method.")
+    end
+  end
+end
 
-# आउटपुट की जांच करें
-IO.puts(conn)
+method = "GET"
+url = "https://example.com"
+HTTPRequest.send(method, url)
 ```
 
-आउटपुट:
+इस कोड ब्लॉक देखकर आप एक एचटीटीपी अनुरोध भेजने के लिए कैसे कोड कर सकते हैं और कैसे उसकी उत्पादन की जांच कर सकते हैं।
 
-``` Elixir
-%HTTPoison.Response{status_code: 200, body: "वेबसाइट का सामग्री", headers: [...]}
-```
+## गहराई में जाएँ
 
-### गहराई में जाएं
+HTTP अनुरोध भेजने के लिए, हम ईक्सर का अनुकरण कर सकते हैं, जो कि असंबद्ध और एसिन्क्रोनस कार्रवाई के लिए भी जाना जाता है। HTTPoison और Mint जैसे कई पैकेज उपलब्ध हैं जो HTTP अनुरोधों को अधिक सहज बनाने के लिए आसान माध्यम प्रदान करते हैं।
 
-HTTP अनुरोध भेजने के लिए, हम प्रस्तावित URL पर एक आरूपक्रिया का निर्माण करते हैं। यह अनुरोध जारी रखता है, प्राप्त उत्तर को प्रसंस्करण करता है और प्रतिक्रिया को हमारे कोड में जमा करता है। जोड़ने के लिए, हम HTTPoison लाइब्रेरी का उपयोग कर सकते हैं जो हमेशा उपलब्ध होती है।
+## देखें सहायक
 
-### देखें भी
+[HTTPoison](https://hex.pm/packages/httpoison)
 
-- [Elixir के साथ HTTP कैसे भेजें]()
-- [Elixir में HTTP प्रोटोकॉल की समझ]()
-- [Elixir डॉक्स HTTPoison]()
+[Mint](https://hex.pm/packages/mint)
+
+[An Introduction to HTTP Clients in Elixir](https://www.syndicode.com/blog/2019/02/22/an-introduction-to-http-clients-in-elixir/)

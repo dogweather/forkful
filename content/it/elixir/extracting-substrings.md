@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Estrazione di sottostringhe."
-simple_title:         "Estrazione di sottostringhe."
+title:                "Estrazione di sottostringhe"
+html_title:           "Elixir: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-La funzione di estrarre sottostringhe è fondamentale per manipolare testi e stringhe in Elixir. Grazie alla sua semplicità e versatilità, questa funzione può aiutare a risparmiare tempo e rendere il tuo codice più efficiente.
+Se stai lavorando con stringhe di testo in Elixir, potresti trovarti nella situazione in cui devi estrarre una sottostringa, ovvero una porzione di testo più piccola dalla stringa principale. Questo può essere utile per effettuare confronti, manipolare i dati o semplicemente per ottenere una parte specifica di una stringa.
 
 ## Come Fare
-
-Per estrarre una sottostringa da una stringa esistente in Elixir, possiamo utilizzare la funzione `String.slice/2`. Questa funzione prende come argomenti una stringa e un intervallo di caratteri da estrarre. Ad esempio, se vogliamo estrarre i primi tre caratteri da una stringa, il nostro codice sarebbe il seguente:
-
-```Elixir
-stringa = "Ciao mondo"
-String.slice(stringa, 0..2)
-```
-
-Questo ci restituirebbe la sottostringa "Cia".
-
-Possiamo anche utilizzare un altro argomento opzionale per specificare lo step della selezione dei caratteri. Ad esempio, se vogliamo estrarre una sottostringa con i caratteri pari da una stringa, possiamo utilizzare il seguente codice:
+Per estrarre una sottostringa in Elixir, puoi utilizzare la funzione `String.slice`. Questa funzione accetta due argomenti: la stringa di origine e un intervallo di indici per indicare la porzione di testo che desideri ottenere. Ad esempio, se vogliamo estrarre i primi tre caratteri di una stringa, possiamo scrivere il seguente codice:
 
 ```Elixir
-stringa = "Elixir è fantastico"
-String.slice(stringa, 0..-1, 2)
+stringa = "Ciao a tutti!"
+String.slice(stringa, 3, 0) # Output: "Cia"
 ```
 
-Questo ci restituirebbe la sottostringa "Elr sn".
+In questo esempio, `stringa` è la nostra stringa di origine, `3` è il primo indice (compreso) e `0` è il secondo indice (escluso). Inoltre, possiamo anche specificare un solo indice se desideriamo estrarre una sottostringa a partire da quel punto. Ad esempio:
 
+```Elixir
+stringa = "Ciao a tutti!"
+String.slice(stringa, 5) # Output: "a tutti!"
+```
+
+In questo caso, la sottostringa viene estratta a partire dall'indice 5 fino alla fine della stringa.
 
 ## Approfondimento
+Per ottenere una migliore comprensione di `String.slice`, è utile sapere che questa funzione utilizza l'indice `0` come punto di partenza. Ciò significa che se abbiamo una stringa di 10 caratteri, l'ultimo indice utilizzabile sarà 9. Inoltre, possiamo anche utilizzare numeri negativi per indicare gli indici a partire dalla fine della stringa. Ad esempio:
 
-La funzione `String.slice/2` è basata sulla funzione `String.substr/3`, che a sua volta utilizza la libreria standard di Elixir `StringBuilder`. Ciò significa che possiamo sfruttare le potenzialità di `StringBuilder` per ottenere prestazioni ottimali.
+```Elixir
+stringa = "Elixir è fantastico!"
+String.slice(stringa, -9, -1) # Output: "fantastico"
+```
 
-Inoltre, è importante notare che la funzione `String.slice/2` restituisce una nuova stringa e non modifica la stringa originale. Questo rende il nostro codice più sicuro e facile da leggere.
+In questo esempio, stiamo estraendo la sottostringa che va dall'indice -9 (escluso) all'indice -1 (incluso), ovvero gli ultimi 9 caratteri della stringa.
 
 ## Vedi Anche
-
-- [Documentazione di Elixir su String.slice/2](https://hexdocs.pm/elixir/String.html#slice/2)
-- [Tutorial su Elixir e manipolazione di stringhe](https://elixirschool.com/it/lessons/basics/binaries-strings-and-char-lists/#manipolazione-di-stringhe)
-- [Libreria StringBuilder di Elixir](https://hexdocs.pm/elixir/String.Builder.html)
+- [Documentazione di Elixir su String.slice](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Tutorial su come manipolare le stringhe in Elixir](https://dev.to/brpaz/working-with-strings-in-elixir-3dbc)
+- [Esercizi pratici per imparare Elixir](https://exercism.io/tracks/elixir/exercises)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Kotlin recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In programming, we often need to generate random numbers for various purposes, such as creating randomized game levels or selecting a random item from a list. Thankfully, Kotlin makes it easy to generate random numbers with just a few lines of code.
+
+Creating random numbers is a common task in programming and can serve various purposes such as generating test data, simulating real-life scenarios, or implementing random elements in games or simulations.
 
 ## How To
 
-In Kotlin, we can generate random numbers using the `Random` class from the `kotlin.random` package. Let's see some coding examples and their corresponding outputs:
+Generating random numbers in Kotlin is made simple with the use of the `kotlin.random` package. Let's take a look at two common ways of generating random numbers in Kotlin.
 
-```kotlin
-// Generating a random integer between 0 (inclusive) and 10 (exclusive)
-val randomNumber = Random.nextInt(10)
-println(randomNumber) // Output: 5
+### Generating a Random Integer
 
-// Generating a random double between 0 (inclusive) and 1 (exclusive)
-val randomDouble = Random.nextDouble()
-println(randomDouble) // Output: 0.784
+To generate a random integer within a specified range, we can use the `Random.nextInt()` function. This function takes in two parameters, `start` and `end`, which define the range from which the random number will be generated. For example, to generate a random number between 1 and 10, we can use the following code:
 
-// Generating a random boolean
-val randomBoolean = Random.nextBoolean()
-println(randomBoolean) // Output: true
-
-// Generating a random element from a list
-val fruits = listOf("apple", "banana", "orange", "grape")
-val randomFruit = fruits.random()
-println(randomFruit) // Output: banana
+```Kotlin
+val randomInt = Random.nextInt(1, 11)
+println(randomInt)
 ```
 
-As we can see from the examples, the `Random` class provides useful functions for generating different types of random values. We can also use a range parameter in the `nextInt()` function to generate a random integer within a specific range.
+This will output a random integer between 1 (inclusive) and 11 (exclusive), such as 5 or 10.
+
+### Generating a Random Double
+
+To generate a random decimal number, we can use the `Random.nextDouble()` function. This function takes in a single parameter, `range`, which defines the upper bound for the random number. For example, to generate a random number between 0 and 1, we can use the following code:
+
+```Kotlin
+val randomDouble = Random.nextDouble(1.0)
+println(randomDouble)
+```
+
+This will output a random double between 0 (inclusive) and 1 (exclusive), such as 0.25 or 0.99.
 
 ## Deep Dive
-Behind the scenes, the `Random` class uses the default Java `Random` implementation to generate random numbers. However, it also has its own algorithm for generating random integers. This algorithm uses a 48-bit seed, which is seeded from a system-dependent source of randomness when the `Random` class is created. 
 
-In addition to the functions that were used in the coding examples, the `Random` class also provides other methods for generating random values, such as `nextBytes()`, `nextBytesFromPool()`, and `nextLong()`. These methods offer more flexibility and customization options for generating random numbers.
+Kotlin provides various functions for generating different types of random numbers, such as `nextLong()`, `nextFloat()`, and `nextBytes()`. Additionally, we can also set a seed value for the random number generator using the `Random(seed)` constructor. This is helpful for generating a specific set of random numbers consistently.
 
-It is also important to note that the `Random` class is not thread-safe, meaning it should not be accessed from multiple threads at the same time. If you need to generate random numbers in a multi-threaded environment, consider using the `ThreadLocalRandom` class instead.
+Another key aspect to consider when working with random numbers is their distribution. The `Random` class uses a uniform distribution, which means that all numbers in the given range have an equal chance of being generated. However, if we want to achieve a different distribution, such as a normal distribution, we can use the `Random.nextDouble()` function in conjunction with a mathematical formula, such as the Box-Muller transform, to transform the uniformly distributed random number into the desired distribution.
 
 ## See Also
-To learn more about generating random numbers in Kotlin, check out these resources:
 
-- [Random class - Kotlin Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [Kotlin Random Numbers - GeeksforGeeks](https://www.geeksforgeeks.org/kotlin-random-numbers/)
-- [Kotlin Random Numbers - Baeldung](https://www.baeldung.com/kotlin/random-numbers)
+- Official documentation for the `kotlin.random` package: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html
+- Tutorial on generating random numbers in Kotlin: https://www.tutorialkart.com/kotlin/generate-random-number-kotlin/
+- Article on creating a custom distribution for random numbers in Kotlin: https://kotlinexpertise.com/kotlin-random-number-generator/

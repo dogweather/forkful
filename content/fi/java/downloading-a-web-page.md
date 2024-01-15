@@ -1,6 +1,7 @@
 ---
-title:                "Java: Verkkosivun lataaminen."
-simple_title:         "Verkkosivun lataaminen."
+title:                "Sivun lataaminen"
+html_title:           "Java: Sivun lataaminen"
+simple_title:         "Sivun lataaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,67 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Internetin sisällön lataaminen voi olla hyödyllinen taito monille, joko tiettyjen tietojen kaivamiseen tai yksinkertaisesti säästämään aikaa ja vaivaa manuaalisen kopiointiin. Java tarjoaa tehokkaan tavan ladata verkkosivuja ja hyödyntää niiden sisältöä.
+Web-sivun lataaminen on tärkeä osa nykypäivän ohjelmointia, joka mahdollistaa tietojen hakemisen ja käsittelemisen internetissä. Java tarjoaa laajan valikoiman työkaluja ja kirjastoja, jotka helpottavat web-sivujen lataamista ja niiden sisällön käsittelyä.
 
-## Ohje
-
-Ensimmäinen askel on ottaa käyttöön Java-kehitysympäristö, kuten Eclipse tai Netbeans. Seuraavaksi tarvitaan paketti, joka pystyy lähettämään HTTP-pyynnön ja vastaanottamaan vastauksen verkkosivulta. Tässä esimerkissä käytämme Apache HttpComponents -pakettia.
+## Kuinka
 
 ```Java
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-```
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-Näiden pakettien avulla voimme luoda yhteyden verkkosivuun ja ladata sen sisällön. Esimerkiksi lataamme Googlen etusivun:
-
-```Java
-// Luodaan HTTP-yhteydenhallintapalvelu
-CloseableHttpClient httpClient = HttpClients.createDefault();
-
-// Luodaan Get-pyyntö ja asetetaan URL
-HttpGet request = new HttpGet("https://www.google.com");
-
-// Lähetetään pyyntö ja vastaanotetaan vastaus
-CloseableHttpResponse response = httpClient.execute(request);
-
-// Haetaan vastauksen sisältö HTML-muodossa
-String content = EntityUtils.toString(response.getEntity());
-
-// Tulostetaan sisältö
-System.out.println(content);
-
-// Suljetaan yhteydet
-response.close();
-httpClient.close();
-```
-
-Voimme myös suodattaa vastauksen sisältöä saadaksemme haluamamme tiedon. Esimerkiksi jos haluamme tulostaa vain Googlen hakukentän sisällön:
-
-```Java
-// Luodaan hakukentän kuvaussäännös
-String searchField = "<input type=\"text\".*?>";
-
-// Luodaan uusi regex-suodatin ja sovelletaan se sisältöön
-Pattern p = Pattern.compile(searchField);
-Matcher m = p.matcher(content);
-
-// Tulostetaan hakukentän sisältö
-if (m.find()) {
-  System.out.println(m.group(0));
+public class WebpageDownloader {
+  
+  public static void main(String[] args) {
+    
+    // Luodaan URL-objekti halutulle web-sivulle
+    URL url = new URL("https://www.example.com");
+    
+    // Avataan virta web-sivulle
+    InputStream is = url.openStream();
+    
+    // Luodaan lukija lukemaan web-sivun sisällön
+    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    
+    String line = null;
+    StringBuilder sb = new StringBuilder();
+    
+    // Luetaan web-sivun sisältö rivi riviltä ja tallennetaan StringBuilderiin
+    while ((line = br.readLine()) != null) {
+      sb.append(line);
+    }
+    
+    // Tulostetaan web-sivun sisältö konsolille
+    System.out.println(sb.toString());
+    
+    // Suljetaan lukija ja virta
+    br.close();
+    is.close();
+  }
 }
 ```
 
-Tässä esimerkissä käytimme regex-suodatusta saadaksemme haluamamme tiedon, mutta voit myös käyttää muita kehittyneempiä tapoja kuten HTML-analysointikirjastoja.
+Esimerkkituloste:
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+<div>
+  <h1>Example Domain</h1>
+  <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+  <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+```
 
 ## Syvempi sukellus
 
-Internetin sisällön lataaminen voi joskus olla monimutkaisempi prosessi. Esimerkiksi jos sivustolla on sisäänkirjautumisominaisuus tai muuta tietoa, jota haluat simuloida. Tässä tapauksessa voit käyttää kirjastoa, kuten Selenium Webdriver, joka mahdollistaa sivustolla tapahtuvan toiminnan automatisoinnin.
-
-Kaiken kaikkiaan internetin sisällön lataaminen Java-koodilla on nopeaa ja helppoa, ja se tarjoaa paljon mahdollisuuksia hyödyntää verkkosivujen sisältöä.
+Java tarjoaa useita erilaisia työkaluja ja kirjastoja web-sivujen lataamiseen ja niiden sisällön käsittelyyn. Näitä ovat mm. luokat URL, URLConnection, BufferedReader ja InputStream. Näiden avulla voidaan avata yhteys haluttuun web-sivuun ja lukea sen sisältöä rivi riviltä. Lisäksi Java tarjoaa erilaisia metodeja, kuten get, post ja put, joilla voidaan lähettää ja vastaanottaa tietoa web-sivun kautta.
 
 ## Katso myös
 
-- [Apache HttpComponents](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)
-- [Selenium Webdriver](https://www.seleniumhq.org/projects/webdriver/)
+- [Oracle Java-Dokumentaatio](https://docs.oracle.com/javase/10/docs/api/java/net/URL.html)
+- [Stack Overflow -kysymys ja vastaus web-sivun lataamisesta Javalla](https://stackoverflow.com/questions/238547/how-do-you-programmatically-download-a-webpage-in-java)

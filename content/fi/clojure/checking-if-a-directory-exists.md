@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Tarkistetaan onko hakemisto olemassa"
-simple_title:         "Tarkistetaan onko hakemisto olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa."
+html_title:           "Clojure: Tarkistetaan, onko hakemisto olemassa."
+simple_title:         "Tarkistetaan, onko hakemisto olemassa."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,29 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein Clojure-ohjelmoijille voi tulla tarve tarkistaa, onko jokin kansio olemassa ohjelman suorituksen aikana. Tämä voi olla tarpeellista esimerkiksi ennen tiedostojen hakemista tai tallentamista tiettyyn sijaintiin. Tässä blogipostauksessa käydään läpi kuinka tarkistaa hakemiston olemassaolo Clojurella.
+On usein tarpeellista tarkistaa, onko tietty hakemisto olemassa Clojure-ohjelmassa. Tämä mahdollistaa esimerkiksi turvallisen tiedostojen käsittelyn ja välttää ohjelman kaatumisen, jos hakemistoa ei löydy.
 
 ## Miten
 
-Tarkistaaksesi, onko hakemisto olemassa, voit käyttää Clojuren `clojure.java.io/file` -funktiota yhdessä `java.io.File` -luokan kanssa. Tämä funktio palauttaa tiedoston olion, joka kuvaa hakemistoa, ja voit tarkistaa sen olemassaolon käyttämällä `java.io.File/exists?` -metodia.
+Tässä on esimerkki siitä, miten tarkistaa, onko hakemisto olemassa Clojurella:
 
 ```Clojure
-(def directory (clojure.java.io/file "/polku/hakemistoon/"))
-(if (.exists directory)
-  (println "Hakemisto löytyi!")
-  (println "Hakemistoa ei löytynyt.")
-  )
+(ns directory-check
+  (:require [clojure.java.io :as io]))
+
+(defn exists? [dir]
+  (.exists (io/file dir)))
+
+(println (exists? "/Users/example/directory")) ; tulostaa true
+(println (exists? "/Users/example/nonexistent")) ; tulostaa false
 ```
 
-Tämä esimerkki olettaa, että `/polku/hakemistoon/` on olemassa. Jos hakemistoa ei löydy, tulostetaan `Hakemistoa ei löytynyt.`
+## Syventävä tieto
 
-## Syventävä tarkastelu
+Clojurella hakemistojen tarkistaminen tapahtuu `.exists`-funktion avulla, joka tarkistaa, onko tiedostopolku olemassa. Tämä funktio palauttaa joko true tai false riippuen siitä, onko hakemisto olemassa vai ei.
 
-Tarkistaessaan hakemiston olemassaoloa `java.io.File/exists?` käyttää `java.io.File/exists` -metodia, joka puolestaan kutsuu samannimistä Javan metodia. Tämä metodi tarkistaa, onko tiedosto olemassa ja palauttaa `true` jos tiedosto löytyy tai `false` jos tiedostoa ei löydy. Sen sijaan `java.io.File` -luokan `exists?` -metodi palauttaa `nil` jos tiedostoa ei löydy ja tiedoston olion, jos tiedosto löytyy.
-
-On myös tärkeää huomata, että `java.io.File/exists?` ei tarkista pelkästään hakemiston olemassaoloa, vaan myös mahdollisia käyttöoikeuksia. Jos käyttäjällä ei ole oikeutta tarkistaa hakemistoa, `exists?` palauttaa `false` vaikka hakemisto olisikin olemassa.
+Toinen tapa tarkistaa hakemiston olemassaolo on käyttää `clojure.java.io/file-exists?`-funktiota, joka palauttaa true, jos hakemisto on olemassa. Se kuitenkin heittää poikkeuksen, jos annettua hakemistoa ei ole.
 
 ## Katso myös
 
-- [Clojure - `clojure.java.io/file`](https://clojuredocs.org/clojure.java.io/file)
-- [Java - `java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- Clojuren virallinen dokumentaatio `.exists`-funktiosta: https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file_exists? 
+- Lisätietoja tiedostojen ja hakemistojen käsittelystä Clojuressa: https://www.braveclojure.com/files-and-directories/

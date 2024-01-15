@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: csv 작업하기"
-simple_title:         "csv 작업하기"
+title:                "CSV 작업하기"
+html_title:           "Clojure: CSV 작업하기"
+simple_title:         "CSV 작업하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -9,63 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-CSV는 일반적으로 엑셀 또는 스프레드시트와 같은 데이터 관리 도구로 자주 사용됩니다. 따라서, Clojure 프로그래밍을 할 때 다양한 데이터를 다루기 위해 필수적으로 알아야 하는 방법입니다.
+## 왜 CSV를 다루는 것이 유익한가요?
 
-## 어떻게
-CSV 파일을 Clojure에서 다루기 위해서는 먼저 [clojure.data.csv](https://github.com/clojure/data.csv) 라이브러리를 이용해야 합니다. 이 라이브러리는 CSV 파일을 파싱하고 맵 형태로 데이터를 변환하며, Clojure의 seq 데이터 형태로 변환하여 쉽게 다룰 수 있도록 해줍니다.
+CSV는 엑셀과 같은 스프레드시트 프로그램에서 자주 사용되는 데이터 형식입니다. 따라서 CSV 파일을 처리하는 것은 비즈니스에서 필수적인 작업이 될 수 있습니다. 또한 Clojure에서 CSV를 다루는 것은 매우 간단하고 빠르며 유용합니다.
 
-먼저, [clojure.java.io](https://clojure.github.io/java.io/) 라이브러리를 이용하여 파일을 열고 clojure.data.csv 라이브러리를 이용해 데이터를 파싱합니다. 다음은 파일에서 데이터를 읽어와 맵으로 변환하는 예제입니다.
+## 어떻게 하면 될까요?
+
+CSV를 다루는 데에는 두 가지 주요 방법이 있습니다. 첫 번째 방법은 Clojure 라이브러리인 "clojure-csv"를 사용하는 것입니다. 이 라이브러리는 CSV 파일을 읽고 쓰는 데에 필요한 모든 기능을 제공합니다. 예를 들어, CSV 파일을 읽어서 데이터를 맵으로 변환하는 코드는 다음과 같습니다. 
 
 ```Clojure
-(require '[clojure.data.csv :as csv])
+(require '[clojure-csv.core :as csv])
+
+(csv/parse-csv "file.csv") ; CSV 파일을 파싱하여 한 줄씩 맵으로 변환
+```
+
+두 번째 방법은 Clojure의 내장 함수인 "clojure.string"을 사용하는 것입니다. 이 방법은 더욱 간단하지만, 기본적인 기능만 제공합니다. 예를 들어, CSV 파일을 문자열로 읽은 뒤 줄마다 분리하여 리스트로 변환하는 코드는 다음과 같습니다.
+
+```Clojure
 (require '[clojure.java.io :as io])
+(require '[clojure.string :as string])
 
-(def csv-data (csv/read-csv (io/reader "exmaple.csv")))
+(string/split (slurp (io/file "file.csv")) #"\r\n") ; CSV 파일을 문자열로 읽고 줄마다 분리하여 리스트로 변환
 ```
 
-위의 예제에서 `example.csv` 파일에는 다음과 같은 데이터가 포함되어 있다고 가정합니다.
-```
-id, name, age
-1, John, 25
-2, Jane, 30
-3, Emma, 20
-```
+## 딥 다이브
 
-파일을 읽은 후에는 `csv-data` 변수가 다음과 같이 바인딩됩니다.
+CSV 파일을 읽고 쓰는 것 외에도, Clojure에서는 다양한 방식으로 CSV를 다룰 수 있습니다. 예를 들어, "data.csv" 파일을 분석하여 평균 값을 구하는 코드는 다음과 같습니다.
 
 ```Clojure
-[["id" "name" "age"]
- ["1" "John" "25"]
- ["2" "Jane" "30"]
- ["3" "Emma" "20"]]
+(require '[clojure.string :as string])
+(require '[clojure.java.io :as io])
+(require '[clojure.math :as math])
+
+(defn get-data [file]
+  ; CSV 파일을 읽고 데이터를 리스트로 변환
+  (->> (slurp file) (string/split #"\r\n") (map string/split #",") (map #(map #(Float/parseFloat %) %))))
+
+(defn get-average [data]
+  ; 데이터의 평균 값을 구하는 함수
+  (/ (apply + data) (count data)))
+
+(with-open [file (io/reader "data.csv")]
+  (->> (get-data file) (map get-average))) ; data.csv 파일에서 데이터를 읽고 평균 값을 구하는 코드
 ```
 
-이제 데이터를 쉽게 다룰 수 있습니다. 예를 들어, 다음과 같이 각 행의 id 값을 가져올 수 있습니다.
+딥 다이브를 위해 추가적인 자료를 참고하고 싶다면 아래 링크를 확인해 보세요.
 
-```Clojure
-(def ids (rest (map first csv-data)))
-```
-
-위의 예제에서 `ids` 변수에는 `[1 2 3]` 값이 바인딩됩니다.
-
-## 깊이있게 살펴보기
-csv 라이브러리는 맵 형태로 데이터를 변환해주기 때문에 데이터를 더 쉽게 다룰 수 있습니다. 예를 들어, 위에서 언급한 `example.csv` 파일에서 데이터를 ID를 기준으로 정렬하고 싶다면 다음과 같이 할 수 있습니다.
-
-```Clojure
-(def sorted-data (sort-by (comp int first) (rest csv-data)))
-```
-
-위의 예제에서 `sorted-data` 변수에는 다음과 같이 정렬된 데이터가 바인딩됩니다.
-
-```Clojure
-[["1" "John" "25"]
- ["2" "Jane" "30"]
- ["3" "Emma" "20"]]
-```
-
-## 참고 자료
-- [clojure.data.csv 라이브러리 문서](https://clojure.github.io/data.csv/)
-- [clojure.java.io 라이브러리 문서](https://clojure.github.io/java.io/)
-- [Clojure 공식 사이트](https://clojure.org/)
-- [Clojure 공식 한국 커뮤니티 포럼](https://clojure.or.kr/)
+## See Also
+- [Clojure Docs](https://clojure.org/)
+- [clojure-csv 라이브러리](https://github.com/danlentz/clojure-csv)
+- [Clojure for the Brave and True](https://www.braveclojure.com/)

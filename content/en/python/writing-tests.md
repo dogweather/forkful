@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Python recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Python"
 category:             "Python"
@@ -11,48 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing tests is an essential practice for any programmer, whether you are a beginner or an experienced developer. Tests help ensure the functionality and quality of your code, making it easier to catch and fix errors before they become bigger problems. In the long run, writing tests can save you time and headaches, as well as improve the overall performance of your code.
+Writing tests may seem like an extra step in the coding process, but it ultimately saves time and effort in the long run. By testing your code, you can catch any errors or bugs early on and ensure that your code is functioning as intended.
 
 ## How To
 
-To begin writing tests in Python, you will first need to import the built-in `unittest` module. This module provides tools for constructing and running tests, and organizing them into test cases and test suites. Let's take a look at a simple example:
+Writing tests in Python is made easy with the built-in `unittest` module. Let's say we have a simple function that adds two numbers together:
+
+```Python
+def add(x, y):
+    return x + y
+```
+
+To write a test for this function, we can create a new file and import the `unittest` module. Then, we can define a new test case and add a test method to it using the `assertEqual()` function to verify that our function is returning the correct output:
 
 ```Python
 import unittest
 
-# define a function to test
-def square(x):
-    return x ** 2
-
-# create a test case
-class SquareTest(unittest.TestCase):
-    
-    # add test methods
-    def test_square_positive(self):
-        self.assertEqual(square(5), 25)
-        
-    def test_square_negative(self):
-        self.assertEqual(square(-10), 100)
-        
-# run the tests
-if __name__ == '__main__':
-    unittest.main()
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(5, 10), 15)
 ```
 
-In this example, we have defined a function to test, `square()`, and created a test case called `SquareTest`. Within the `SquareTest` class, we have added two test methods, `test_square_positive` and `test_square_negative`, using the `assertEqual()` method to check if the output of `square()` matches the expected result. Finally, we run the tests using the `unittest.main()` function.
+We can run this test by simply executing our test file, and if all goes well, we should see that our test passes!
 
-To run this code, save it as a Python file and execute it in your terminal. You should see two green dots, indicating that both tests have passed. Congratulations, you have written your first tests in Python!
+Now let's say we want to add some more functionality to our `add()` function, such as checking for invalid inputs. We can easily add this test by using the `assertRaises()` function:
+
+```Python
+def add(x, y):
+    if not isinstance(x, int) or not isinstance(y, int):
+        raise TypeError("Arguments must be integers")
+    return x + y
+```
+
+```Python
+import unittest
+
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(5, 10), 15)
+    def test_invalid_input(self):
+        self.assertRaises(TypeError, add, "5", 10)
+```
+
+Now, if we run our tests again, we should see that the second test fails, since we are passing in a string instead of an integer.
 
 ## Deep Dive
 
-One of the key benefits of writing tests is being able to easily test and maintain your code as it evolves. With the `unittest` module, you can easily add new test cases and test methods to cover different scenarios and edge cases. Use the `assert` methods to check for expected behaviors, and use the `setUp()` method to prepare any data or resources needed for your tests.
+Writing tests not only helps ensure that your code is functioning correctly, but it also promotes good coding practices. By writing tests, you are essentially breaking down your code into smaller, more manageable chunks and checking each one individually. This not only makes debugging easier, but it also allows for easier testing of new features and catching potential bugs.
 
-In addition, you can also use test coverage tools, such as `coverage.py`, to measure the effectiveness of your tests and identify areas of your code that may need additional testing. This deeper analysis can help improve the overall quality and reliability of your program.
+Another useful tool for testing in Python is the `pytest` module, which provides additional features such as support for parametrized testing and fixtures. It also has a more user-friendly and readable syntax compared to the `unittest` module.
+
+It's important to remember that writing tests should not be an afterthought, but rather an integral part of the coding process. By writing tests along with your code, you are ensuring that your code is reliable and maintainable.
 
 ## See Also
 
-- [Official Python documentation for unittest](https://docs.python.org/3/library/unittest.html)
-- [PyCharm tutorial on testing in Python](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
-- [Coverage.py user guide](https://coverage.readthedocs.io/en/coverage-5.3.1/)
-
-By incorporating tests into your coding workflow, you can improve your code quality, catch errors early on, and ultimately become a more efficient and effective programmer. Happy testing!
+- [Python unittest documentation](https://docs.python.org/3/library/unittest.html)
+- [pytest documentation](https://docs.pytest.org/en/latest/)

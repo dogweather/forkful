@@ -1,5 +1,6 @@
 ---
-title:                "Go: 计算未来或过去的日期"
+title:                "计算未来或过去的日期"
+html_title:           "Go: 计算未来或过去的日期"
 simple_title:         "计算未来或过去的日期"
 programming_language: "Go"
 category:             "Go"
@@ -9,55 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-人们可能想要计算未来或过去日期的原因可能是为了日程安排、生日、节假日等。使用Go编程语言可以轻松地进行日期计算。
+很多时候我们需要计算未来或过去的日期，比如预定旅行日期或者计划会议安排。Go语言提供了方便的时间和日期计算功能，让我们不用手动计算，节省时间和精力。
 
-## 如何
+## 如何做
+
+下面是一个简单的示例代码，通过输入天数来计算未来或过去指定天数后的日期，并输出结果。请注意，代码中的日期格式遵循ISO 8601标准。
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
-func main(){
-    // 假设今天是2021年6月15日
-    currentTime := time.Now()
-    fmt.Println("当前日期：", currentTime)
+func main() {
+	// 今天的日期
+	today := time.Now()
+	fmt.Println("今天的日期是：", today.Format("2006-01-02"))
 
-    // 计算3天后的日期
-    futureDate := currentTime.AddDate(0, 0, 3)
-    fmt.Println("3天后的日期：", futureDate)
+	// 计算未来10天后的日期
+	future := today.AddDate(0, 0, 10)
+	fmt.Println("未来10天的日期是：", future.Format("2006-01-02"))
 
-    // 计算1个月前的日期
-    pastDate := currentTime.AddDate(0, -1, 0)
-    fmt.Println("1个月前的日期：", pastDate)
+	// 计算过去5天的日期
+	past := today.AddDate(0, 0, -5)
+	fmt.Println("过去5天的日期是：", past.Format("2006-01-02"))
 }
 ```
 
-输出结果：
+运行上面的代码，将会得到以下结果：
+
 ```
-当前日期： 2021-06-15 18:00:00 +0800 CST
-3天后的日期： 2021-06-18 18:00:00 +0800 CST
-1个月前的日期： 2021-05-15 18:00:00 +0800 CST
+今天的日期是： 2019-09-11
+未来10天的日期是： 2019-09-21
+过去5天的日期是： 2019-09-06
 ```
 
 ## 深入了解
 
-在Go编程语言中，可以使用`time`包中的`AddDate()`函数来进行日期计算。该函数接受三个参数，分别为年、月、日的增加/减少值，返回结果为一个新的`time.Time`类型的日期。
+除了上面的示例代码中提到的`AddDate()`方法，Go语言还提供了可以进行更精确计算的方法，比如`Add()`用于计算小时、分钟、秒等时间单位的增减，`AddDuration()`用于计算任意长度的时间增减。
 
-需要注意的是，月份是从1开始计数，而在`AddDate()`函数中，月份的增加/减少值可以超过12或小于1，该函数会自动将日期调整为合理的日期。例如，如果当前日期为1月31日，增加1个月后的日期为2月31日，则该函数会将日期调整为2月28日/29日，避免出现无效的日期。
+如果你想要更深入了解Go语言中的时间和日期处理，可以参考官方文档中的[time包](https://golang.org/pkg/time/)和[日期和时间处理教程](https://gobyexample.com/time).
 
-# 参考链接
+## 参考链接
 
-- [Go语言官方文档-时间包](https://golang.org/pkg/time/)
-- [Go语言中文网-日期时间操作](https://studygolang.com/articles/14386)
-- [Go编程语言圣经-日期与时间](https://books.studygolang.com/gopl-zh/ch8/ch8-04.html)
-
-# 参见
-
-- [使用Go编程语言计算日期和时间](https://www.example.com/)
-- [Go语言中日期时间格式化](https://www.example.com/)
+- [Go官方文档：Time包](https://golang.org/pkg/time/)
+- [日期和时间处理教程](https://gobyexample.com/time)
+- [ISO 8601标准](https://en.wikipedia.org/wiki/ISO_8601)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Clojure: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,62 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La manipulation de chaînes de caractères est souvent un aspect important dans la programmation, et l'extraction de sous-chaînes est une tâche courante lors du traitement de données. En apprenant à extraire des sous-chaînes en utilisant Clojure, vous pourrez facilement manipuler et traiter des données de manière plus efficace.
+Si vous travaillez avec des chaînes de caractères en Clojure, il peut arriver que vous ayez besoin d'extraire des sous-chaînes de votre chaîne principale. Que ce soit pour les manipuler, les comparer ou les utiliser dans d'autres fonctions, comprendre comment extraire des sous-chaînes peut rendre votre code plus efficace et votre travail plus facile.
 
-# Comment Faire
+## Comment faire
 
-Nous allons utiliser la fonction "subs" pour extraire des sous-chaînes dans Clojure. Cette fonction prend deux paramètres: la chaîne de caractères à extraire et les indices de début et de fin de la sous-chaîne souhaitée. Voici un exemple de code et de sortie :
+Pour extraire une sous-chaîne, vous pouvez utiliser la fonction "subs" qui prend trois arguments : la chaîne d'origine, l'indice de départ et l'indice de fin de la sous-chaîne souhaitée. Voici un exemple de code avec des commentaires pour expliquer chaque étape :
 
+```Clojure
+(def chaine "Bonjour tout le monde")
+
+; Utilisation de la fonction "subs" pour extraire une sous-chaîne qui démarre à l'indice 8
+; et s'arrête avant l'indice 17 (exclu)
+(subs chaine 8 17)
+
+; Résultat : "le monde"
+
+; Vous pouvez aussi utiliser des nombres négatifs pour compter à partir de la fin de la chaîne.
+; Pour extraire la dernière partie de la chaîne :
+(subs chaine -6)
+; Résultat : "monde"
 ```
-(def s "Bonjour tout le monde!")
 
-(subs s 8 15)
-```
-Résultat: `"tout le"`
+Bien sûr, vous pouvez également utiliser des variables pour stocker les indices de début et de fin, ce qui peut être utile si vous avez besoin d'extraire des sous-chaînes dans une boucle ou dans le cadre d'une fonction plus complexe.
 
-La fonction "subs" peut également être utilisée pour extraire une sous-chaîne à partir d'un index donné jusqu'à la fin de la chaîne. Par exemple:
+## Plongée en profondeur
 
-```
-(def s "Bonjour tout le monde!")
+La fonction "subs" peut sembler simple, mais elle a en fait quelques subtilités à connaître. Tout d'abord, les indices utilisés pour délimiter la sous-chaîne sont inclusifs pour l'indice de départ et exclusifs pour celui de fin. Cela signifie que la sous-chaîne sera composée des caractères compris entre l'indice de départ (inclus) et l'indice de fin (exclu).
 
-(subs s 8)
-```
-Résultat: `"tout le monde!"`
+De plus, si vous utilisez des nombres négatifs pour les indices, ils sont comptés à partir de la fin de la chaîne plutôt qu'à partir du début. Cela peut être utile lorsque vous ne connaissez pas la longueur exacte de la chaîne, mais que vous savez que vous voulez extraire les derniers caractères.
 
-Vous pouvez également utiliser des nombres négatifs pour indiquer un index à partir de la fin de la chaîne. Par exemple:
+Enfin, gardez à l'esprit que la fonction "subs" ne modifie pas la chaîne d'origine, elle renvoie simplement la sous-chaîne extraite. Si vous avez besoin de modifier la chaîne d'origine, vous pouvez utiliser la fonction "replace" avec "subs".
 
-```
-(def s "Bonjour tout le monde!")
+## Voir aussi
 
-(subs s -7 -1)
-```
-Résultat: `"monde!"`
+Pour plus d'informations sur la fonction "subs" et les chaînes de caractères en général, voici quelques liens utiles :
 
-# Plongée Profonde
-
-La fonction "subs" utilise l'indice de début inclusif et l'indice de fin exclusif. Cela signifie que l'indice de fin ne sera pas inclus dans la sous-chaîne extraite. Par exemple:
-
-```
-(def s "Bonjour tout le monde!")
-
-(subs s 0 7)
-```
-Résultat: `"Bonjour"`
-
-Dans cet exemple, l'indice de début est 0 et l'indice de fin est 7. Cela signifie que seuls les caractères aux indices 0 à 6 (inclus) seront inclus dans la sous-chaîne.
-
-De plus, si vous utilisez un indice négatif pour l'indice de fin, celui-ci sera compté à partir de la fin de la chaîne. Par exemple:
-
-```
-(def s "Bonjour tout le monde!")
-
-(subs s 0 -1)
-```
-Résultat: `"Bonjour tout le monde!"`
-
-# Voir Aussi
-
-- [Documentation officielle de Clojure sur la fonction "subs"](https://clojuredocs.org/clojure.core/subs)
-- [Guide complet sur les sous-chaînes en Clojure](https://www.baeldung.com/string-subsets-in-clojure)
+- [Documentation officielle de la fonction "subs"](https://clojuredocs.org/clojure.core/subs)
+- [Article sur l'utilisation des chaînes en Clojure](https://clojure.org/reference/strings)

@@ -1,5 +1,6 @@
 ---
-title:                "C: Commencer un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "C: Commencer un nouveau projet"
 simple_title:         "Commencer un nouveau projet"
 programming_language: "C"
 category:             "C"
@@ -11,44 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Que vous soyez un développeur expérimenté ou un débutant en programmation, il est toujours excitant de démarrer un nouveau projet. Cela peut être pour améliorer vos compétences, pour un projet personnel ou même pour quelque chose de plus significatif comme une contribution à la communauté open-source. Quelle que soit la raison, il est important de comprendre les étapes à suivre pour bien démarrer un nouveau projet en programmation.
+Si vous êtes passionné par la programmation et que vous souhaitez constamment améliorer vos compétences, démarrer un nouveau projet est la meilleure façon de le faire. Cela vous permettra de vous mettre au défi et d'apprendre de nouvelles techniques et pratiques de codage.
 
 ## Comment faire
 
-Avant de commencer à écrire du code, il est important d'avoir une planification et une réflexion préalable. Voici quelques étapes à suivre pour bien démarrer votre projet en langage C.
+Pour commencer un nouveau projet en C, vous aurez besoin d'un éditeur de code tel que Visual Studio Code ou Code::Blocks. Assurez-vous d'installer un compilateur C tel que GCC ou Clang pour exécuter votre code.
+
+Voici un exemple de code simple pour afficher "Bonjour, monde !" à l'écran :
 
 ```C
-#include<stdio.h>
+#include <stdio.h>
 
-// Déclaration de la fonction principale
 int main() {
-
-    // Code à exécuter
-    printf("Bonjour, monde !");
-
-    // Retourne une valeur à la fin de la fonction
-    return 0;
+  printf("Bonjour, monde !\n");
+  return 0;
 }
 ```
 
-Dans l'exemple ci-dessus, nous pouvons voir une déclaration de fonction principale `main()` ainsi qu'un code à exécuter à l'intérieur des accolades. La fonction `printf()` est utilisée pour afficher du texte sur la console. Ensuite, nous avons une instruction `return` qui renvoie une valeur après l'exécution de la fonction.
+Lorsque vous exécutez ce code, vous devriez voir la phrase "Bonjour, monde !" s'afficher dans la console de votre éditeur de code.
 
-Une fois que vous avez une compréhension de base de la structure du code en C, vous pouvez commencer à écrire votre propre code pour votre projet. Voici quelques choses importantes à garder à l'esprit :
+Vous pouvez également créer une fonction pour demander à l'utilisateur son nom et lui souhaiter la bienvenue :
 
-- Prenez le temps de bien comprendre le problème que vous essayez de résoudre.
-- Planifiez et réfléchissez à votre algorithme avant de commencer à écrire du code.
-- Écrivez votre code de manière organisée et facile à lire pour que les autres puissent comprendre et contribuer facilement.
-- Testez et déboguez votre code régulièrement pour vous assurer qu'il fonctionne correctement.
+```C
+#include <stdio.h>
+
+void welcome() {
+  char name[20];
+  printf("Quel est votre nom ?\n");
+  scanf("%s", name);
+  printf("Bienvenue, %s !\n", name);
+}
+
+int main() {
+  welcome();
+  return 0;
+}
+```
+
+La fonction scanf accepte l'entrée utilisateur et la stocke dans la variable name. La phrase "Bienvenue, [nom] !" sera alors imprimée à l'écran.
 
 ## Plongée en profondeur
 
-En plus des étapes de base pour commencer un projet en C, voici quelques autres conseils pour vous aider à réussir :
+Lorsque vous démarrez un nouveau projet en C, il est important de bien comprendre l'objectif du projet et de planifier sa structure et son architecture. Assurez-vous de décomposer votre code en fonctions logiques pour rendre votre code plus lisible et facile à maintenir.
 
-- Étudiez et comprenez les bonnes pratiques en matière de codage en C, telles que l'utilisation de la mémoire de manière efficace et la gestion des erreurs.
-- Utilisez des outils et des ressources comme des IDE (environnement de développement intégré) pour vous aider à écrire du code plus rapidement et de manière plus efficace.
-- N'ayez pas peur de demander de l'aide à d'autres développeurs en cas de besoin. La communauté open-source est généralement très accueillante et prête à aider.
+Vous devriez également vous familiariser avec les fonctions et bibliothèques standard du langage C, telles que printf pour l'affichage et scanf pour la saisie utilisateur.
+
+N'oubliez pas de toujours commenter votre code pour expliquer vos choix de conception et rendre votre code plus compréhensible pour vous et pour les autres programmeurs travaillant sur le projet.
 
 ## Voir aussi
 
-- [Débuter en programmation C](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
-- [Guide de style de programmation en C](https://www.sei.cmu.edu/legacy/).
+- [Tutoriel C pour débutants](https://www.learn-c.org/)
+- [Documentation officielle du langage C](https://en.cppreference.com/w/c)
+- [Guide de style de codage C](https://stackoverflow.com/questions/228783/what-is-your-favorite-c-coding-style)

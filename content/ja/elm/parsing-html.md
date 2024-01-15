@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 「HTMLの解析」"
-simple_title:         "「HTMLの解析」"
+title:                "HTMLの解析"
+html_title:           "Elm: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,70 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-※この記事は日本語のElmプログラマー向けです
+## なぜHTMLの解析に取り組むのか？
 
-## なぜHTML解析をするのか
+HTMLの解析は、Web開発において重要なスキルです。HTMLはWebページの構造を決めるため、その内容を把握することはコードの改善やバグの修正につながります。また、HTMLの解析を行うことで、Webスクレイピングやコンテンツの抽出にも役立ちます。
 
-HTML解析は、ウェブページから必要な情報を取得するために必要な重要なスキルです。例えば、ニュースサイトの見出しや本のカバー画像を取得したい場合、HTML解析を使用してその情報を簡単に取得することができます。
+## HTMLの解析方法
 
-## 解析する方法
-
-まずは、[elm/parser](https://package.elm-lang.org/packages/elm/parser/latest/)パッケージをインストールします。このパッケージには、HTML解析に必要なすべての機能が含まれています。
-
-HTMLを解析するコード例を以下に示します。この例では、[BBCニュースのトップページ](https://www.bbc.com/news)から見出しを取得します。
-
-```elm
-import Html.Parser exposing (..)
-import Html.Parser.Attributes exposing (..)
-
-parseTitle : String -> String
-parseTitle html =
-    let
-        parser =
-            filter isH2 (many attributeOrContent)
-                |> filterMap (getAttribute (\a -> a.key == "class" && a.value == "gs-c-promo-heading__title"))
-                |> map (\a -> a.child)
-                |> oneOrMore
-                |> text []
-    in
-    case run parser html of
-        Ok titles ->
-            -- 元々の見出しが改行されているため、改行を削除
-            String.join " " titles |> String.replace "\n" ""
-
-        Err error ->
-            -- エラー処理
-            ""
+HTMLの解析をするためには、Elmパッケージの中にある`elm/html`を使用します。まずはパッケージをインストールし、HTMLを解析する際に必要な関数をインポートする必要があります。
 
 ```
-
-このコードを実行すると、以下のような出力が得られます。
-
-```elm
-"S Korea threat to 'destroy' N Korea"
-"Women pose for feminist coffee table book"
-"Trump lifts North Korea travel ban"
+Elm install elm/html
 ```
 
-## 詳細な解説
+```
+import Html exposing (..)
+import Html.Attributes exposing (..)
+```
 
-HTMLを解析する際は、ウェブサイトのHTML構造を理解する必要があります。例えば、見出しを取得したい場合、その見出しは`<h1>`や`<h2>`などのタグで囲まれていることが多いです。また、見出しの内容は`innerText`や`innerHTML`といった属性に格納されています。これらの知識を使用して、解析の正確性を高めることができます。
+次に、`parse`関数を使用してHTMLを解析し、解析結果をHTML要素として取得することができます。以下の例では、`parse`関数を使用してh1タグ内のテキストを取得しています。
 
-さらに、elm/parserパッケージにはHTML解析に役立つ多くの便利な関数が用意されています。例えば、`filter`や`oneOrMore`を使用することで、特定のタグや属性を持つ要素だけを選択することができます。
+```
+parse "<h1>Hello World</h1>"
+```
 
-## この後もっと学びたい方へ
+実行結果は以下のようになります。
 
-もし今回の記事で取り上げた内容に興味がある場合は、次のリソースを参考にしてみてください。
+```
+Ok [h1 [] [text "Hello World"]]
+```
 
-- [elm/parserパッケージの公式ドキュメント](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [Elm in Action](https://www.amazon.com/Elm-Action-Richard-Feldman-ebook/dp/B07D2YCY82)
-- [Pragmatic Studio - Elm Programming](https://pragmaticstudio.com/elm-programming)
-- [Elm公式フォーラム](https://discourse.elm-lang.org/)
+このように、HTMLタグや属性も含めて解析結果を取得することができます。
+
+## ディープダイブ
+
+HTMLの解析は、解析したい要素の階層が深くなるほど複雑になります。そのため、`getElement`や`childAt`といった関数を使用して、特定の要素を取得することができます。また、CSSセレクタを使用して要素を特定する方法もあります。例えば、`first`関数を使用すると、最初にマッチした要素を取得することができます。
+
+```
+first "#main p" (parse "<div id="main"><p>Hello</p><p>World</p></div>")
+```
+
+実行結果は以下のようになります。
+
+```
+Ok p [text "Hello"]
+```
+
+HTMLの解析は、Web開発において重要なスキルです。コーディングの際にも役立つ上に、Webスクレイピングやコンテンツの抽出にも応用できるため、積極的に取り組んでみることをおすすめします。
 
 ## 参考リンク
 
-- [BBCニュースのトップページ](https://www.bbc.com/news)
-- [elm/parserパッケージ](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [Elm公式フォーラム](https://discourse.elm-lang.org/)
-- [Elm in Action](https://www.amazon.com/Elm-Action-Richard-Feldman-ebook/dp/B07D2YCY82)
-- [Pragmatic Studio - Elm Programming](https://pragmaticstudio.com/elm-programming)
+- [Elm Package Documentation](https://package.elm-lang.org/packages/elm/html/latest/)
+- [Elmシリーズ-HTMLの解析](https://qiita.com/esumii/items/03bd10050d9c9829c324)

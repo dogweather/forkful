@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Merkkijonon ensimmäinen suuri kirjain"
-simple_title:         "Merkkijonon ensimmäinen suuri kirjain"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi."
+html_title:           "Kotlin: Merkkijonon muuttaminen isoiksi kirjaimiksi."
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi kapitalisoida string
+# Miksi pääoman käyttöönotto merkkijonossa?
 
-Kapitalisointi tarkoittaa merkkijonon muuttamista niin, että jokaisen sanan ensimmäinen kirjain on isolla kirjaimella ja muut kirjaimet pienillä. Tämä voi olla hyödyllistä esimerkiksi käyttäjänimiä tai otsikoita luodessa. 
+Olet todennäköisesti jo nähnyt, että jotkut ohjelmat esimerkiksi muutavat otsikot ja virkkeiden alkukirjaimet isoihin kirjaimiin. Tätä kutsutaan merkkijonon pääoman käyttöönotoksi ja se on yksi tärkeä työkalu ohjelmoinnissa. Se ei yksinkertaisesti vain tee tekstistä kauniimpaa, vaan sillä voi myös olla merkittävä rooli ohjelman toiminnallisuudessa.
 
-## Miten tehdä
+## Kuinka tehdä pääoman käyttöönotto Kotlin-kielellä?
 
-Kotlinissa stringien kapitalisointi on helppoa. Voit käyttää `capitalize()`-metodia, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja muut kirjaimet pieniksi. Esimerkiksi:
-
-```Kotlin
-val name = "sanni"
-println(name.capitalize())
-```
-
-Tulostus: "Sanni"
-
-Jos sinulla on useita sanoja sisältävä merkkijono, voit käyttää `split()`-metodia ja `map()`-funktiota muuttaaksesi jokaisen sanan ensimmäisen kirjaimen isoksi. Esimerkiksi:
+Kotlinilla on sisäänrakennettu `capitalize()`-funktio, joka tekee merkkijonon ensimmäisestä kirjaimesta ison kirjaimen ja muut kirjaimet pieniksi. Voit käyttää tätä funktiota seuraavasti:
 
 ```Kotlin
-val sentence = "tervetuloa kotisivuilleni"
-val capitalized = sentence.split(" ").map { it.capitalize() }.joinToString(" ")
-println(capitalized)
+val sana = "kotlin"
+val isoinaKirjaimina = sana.capitalize()
+
+println(isoinaKirjaimina)
+
+// output: Kotlin
 ```
 
-Tulostus: "Tervetuloa Kotisivuilleni"
+Voit myös käyttää `toUpperCase()`-funktiota, joka muuttaa kaikki merkit isoina kirjaimina:
 
-## Syvempi sukellus
+```Kotlin
+val sana = "kotlin"
+val isoinaKirjaimina = sana.toUpperCase()
 
-Kapitalisointiin liittyy muutamia seikkoja, jotka on hyvä huomioida. Esimerkiksi `capitalize()`-metodi muuttaa vain ensimmäisen kirjaimen isoksi ja jättää muut kirjaimet ennalleen. Jos haluat, että kaikki kirjaimet ovat samassa muodossa, voit käyttää `toLowerCase()` tai `toUpperCase()`-metodeja ennen kapitalisointia.
+println(isoinaKirjaimina)
 
-Lisäksi kannattaa pitää mielessä, että kapitalisointi on kieliriippuvainen. Esimerkiksi suomen kielessä `capitalize()`-metodi toimii oletuksena oikein, mutta toisissa kielissä se voi aiheuttaa ongelmia. Kannattaa siis aina tarkistaa, että kapitalisointi toimii halutulla tavalla.
+// output: KOTLIN
+```
+
+## Syventävä tieto pääoman käyttöönotosta
+
+Pääoman käyttöönotto on tärkeä osa merkkijonojen käsittelyä ohjelmoinnissa. Se voi auttaa esimerkiksi käyttäjän syöttämän tiedon oikeellisuuden tarkistamisessa, sillä monet käyttäjät eivät välttämättä muista kirjoittaa kaikki isot kirjaimet oikeisiin kohtiin. Lisäksi pääoman käyttöönotto on hyödyllinen esimerkiksi vertaillessa merkkijonoja, sillä isot ja pienet kirjaimet voivat vaikuttaa vertailun tulokseen.
 
 ## Katso myös
 
-- [Kotlindoc: String.capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Kotlindoc: String.split()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/split.html)
-- [Kotlindoc: String.map()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/map.html)
-- [Kotlindoc: String.joinToString()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html)
+- [Kotlinin dokumentaatio merkkijonojen käsittelystä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.lang.-string/)
+- [Kotlinin pääoman käyttöönotto Stack Overflow:ssa](https://stackoverflow.com/questions/33003752/how-to-capitalize-the-first-letter-of-a-string-in-kotlin)

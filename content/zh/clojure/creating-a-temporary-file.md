@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 生成一个临时文件"
-simple_title:         "生成一个临时文件"
+title:                "创建临时文件"
+html_title:           "Clojure: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+## Why
 ## 为什么
+为什么会有人想要创建临时文件？临时文件是一种在程序执行期间暂时存储数据的方式，特别是在需要处理大量数据时会很有用。临时文件能够帮助程序在运行时运行更高效，使代码更易读。
 
-临时文件是许多编程中常见的概念，它能帮助我们在程序运行的过程中存储临时数据或保存中间结果。它们的创建和使用经常是编程过程中必不可少的一部分，让我们来看看如何在Clojure中创建临时文件吧！
-
-## 如何
-
-在Clojure中，我们可以使用`with-open`函数来创建一个临时文件。下面是一个简单的示例代码：
+## How To
+## 如何操作
+我们可以使用Clojure的“file”函数来创建临时文件，这需要传入两个参数：临时文件名和父文件夹路径。代码如下所示：
 
 ```Clojure
-(with-open [^java.io.File file (java.io.File/createTempFile "temp" nil)]
-    (println "临时文件的路径是：" (.getAbsolutePath file)))
+(file "temp-file.txt" "/tmp/")
 ```
 
-运行上面的代码会得到如下的输出：
+这将在/tmp/文件夹中创建名为“temp-file.txt”的临时文件。我们也可以使用“with-open”宏来创建临时文件，这样就不需要手动删除文件了。代码如下所示：
+
+```Clojure
+(with-open [temp-file (tempfile)]
+    (println "Writing data to temporary file...")
+    (spit temp-file "This is the content of the temporary file.")
+    (println "Data successfully written!")
+    (println "Temporary file will be automatically deleted."))
 
 ```
-临时文件的路径是：/tmp/temp325132361647186075.tmp
-```
 
+运行以上代码后，我们将在控制台输出“Data successfully written!”，并且在/tmp/文件夹中创建一个名为“nrepl-port”。这个临时文件将在代码块结束后被自动删除。
+
+## Deep Dive
 ## 深入探讨
+创建临时文件的好处之一是可以使程序更高效地运行。当我们需要处理大量数据时，我们可以使用临时文件来存储一部分数据，而不是一次性加载所有数据到内存中。这样可以避免内存溢出的问题，并且在处理完数据后，我们可以及时删除临时文件，释放空间。
 
-上面的示例代码中，我们使用了`createTempFile`函数来创建一个以"temp"开头的临时文件，并且不指定后缀名，所以系统会自动生成唯一的后缀。在`with-open`中，我们将临时文件赋值给一个变量`file`，然后可以通过该变量来访问临时文件的路径和其他属性。`with-open`函数会确保在执行完后关闭临时文件，这样就不用手动清理临时文件了。
+此外，在使用临时文件时，我们还需要注意文件命名的唯一性，避免不同的程序或线程同时使用同一个临时文件，造成数据混乱。我们可以使用Clojure的“tempfile”函数来创建唯一的临时文件名，从而避免这个问题。
 
-除了使用`with-open`，我们还可以使用`File`类的`deleteOnExit`函数来在程序退出时自动删除临时文件，避免在程序运行过程中临时文件没有被手动删除的情况。
-
-## 参考链接
-
-- [Java官方文档：createTempFile函数](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-
-## 参考文章
-
-欢迎阅读我们其他关于Clojure编程的博客文章：
-
-- [Clojure中原生JSON解析与封装](http://www.example.com)
-- [使用Clojure创建RESTful API](http://www.example.com)
-
-## 参见
-
-- [Java官方文档：createTempFile函数](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-- [Clojure官方文档：with-open函数](https://clojuredocs.org/clojure.core/with-open)
+## See Also
+## 请参阅
+- [Clojure官方文档](https://clojure.org/)
+- [Clojure中文网](https://clojure.net/)
+- [Clojure学习资料合集](https://github.com/jeffreyxam/clojure-resources)

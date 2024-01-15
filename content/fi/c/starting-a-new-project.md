@@ -1,5 +1,6 @@
 ---
-title:                "C: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "C: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C"
 category:             "C"
@@ -11,37 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tervetuloa tekemään jotain uutta projektia C-kielellä! On monia syitä, miksi voit haluta aloittaa uuden projektin, kuten oppia uutta, testata taitojasi tai ratkaista jonkin ongelman. Riippumatta siitä miksi, tärkeintä on lähteä liikkeelle ja saada aikaan jotain omaa.
+Miksi aloittaisit uuden projektin C-ohjelmointikielellä? Yksinkertaisesti siksi, että se on yksi suosituimmista ohjelmointikielistä ja sillä saa tehokkaita ja nopeita sovelluksia aikaan. Lisäksi C-koodin ymmärtäminen ja muokkaaminen on hyödyllistä, sillä monet muut kielet pohjautuvat siihen.
 
-## Miten
+## Miten aloittaa
 
-Aloittaminen uuden C-projektin kanssa voi tuntua ylivoimaiselta, mutta se ei ole vaikeaa kun tiedät miten aloittaa. Ensinnäkin, sinun tulee luoda uusi tiedosto ja lisätä siihen pääfunktio `main()`. Tämän jälkeen voit aloittaa kirjoittamaan koodia `main()`-funktion sisälle. Alla on esimerkki yksinkertaisesta koodista, joka tulostaa tekstiä näytölle:
+C-kielen aloittamisessa kannattaa ensin oppia perusteet ja perehtyä sen syntaksiin. Esimerkiksi voit aloittaa helpon "Hello world" -ohjelman tekemisestä, joka tulostaa tekstin ruudulle. Alla on esimerkki koodista ja sen tulostuksesta:
 
 ```C
 #include <stdio.h>
 
-int main() {
-    printf("Tervetuloa uuden projektin pariin!");
-    return 0;
+int main()
+{
+  printf("Hei maailma!");
+  return 0;
 }
 ```
 
-Tämän koodin tulosteen pitäisi näyttää tältä:
-
+Tulostus:
 ```
-Tervetuloa uuden projektin pariin!
+Hei maailma!
 ```
 
-Seuraavaksi voit alkaa lisätä haluamiasi toiminnallisuuksia koodiin ja testata niitä menemällä `main()`-funktion sisällä syvemmälle.
+Lisäksi kannattaa opetella käyttämään C-ohjelmoinnissa tarvittavia kirjastoja ja funktioita, kuten esimerkiksi <stdio.h> kirjastoa, joka sisältää tarvittavat toiminnot tiedon syöttämiseen ja tulostamiseen. On myös hyvä harjoitella erilaisten muuttujien ja tietotyyppien käyttöä sekä toistorakenteiden ja ehtolauseiden luomista.
 
-## Syvempää tietoa
+## Syvempi sukellus
 
-On tärkeää huomata, että C-kielessä ei ole valmiiksi valmiita ominaisuuksia, kuten esimerkiksi taulukot tai merkkijonot. Sinun täytyy itse luoda ja hallinnoida näitä työkaluja. Tämä voi aluksi vaikuttaa haastavalta, mutta se antaa sinulle täyden kontrolin projektissasi.
-
-Lisäksi on suositeltavaa kirjoittaa selkeää ja helposti ymmärrettävää koodia. Näin projekti pysyy hallinnassa ja on helpompi muokata ja laajentaa myöhemmin.
+Uuden projektin aloittaminen C-kielellä vaatii pientä vaivannäköä alussa, mutta se tuo monia etuja pitkällä aikavälillä. C-koodin kirjoittaminen vaatii huolellisuutta ja tarkkuutta, mutta samalla pystyt luomaan tehokkaita ja nopeita ohjelmia. Lisäksi C-kielen osaaminen avaa ovia myös muiden kielten opiskeluun ja ymmärtämiseen.
 
 ## Katso myös
 
-- [C-tutoriaali aloittelijoille](https://www.learn-c.org/)
-- [C-koodiesimerkkejä](https://www.programiz.com/c-programming/examples)
-- [Harjoitustehtäviä C-kielelle](https://www.w3resource.com/c-programming-exercises/)
+- [C-ohjelmoinnin perusteet (englanniksi)](https://www.programiz.com/c-programming)
+- [C-kirjastoja (englanniksi)](https://www.programmingsimplified.com/c-programming-library-functions)
+- [C-koodin luettavuus ja hyvät käytännöt (englanniksi)](https://www.gnu.org/prep/standards/html_node/Writing-C-Code.html)

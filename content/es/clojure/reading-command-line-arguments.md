@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Leyendo argumentos de línea de comando."
-simple_title:         "Leyendo argumentos de línea de comando."
+title:                "La lectura de los argumentos en la línea de comandos"
+html_title:           "Clojure: La lectura de los argumentos en la línea de comandos"
+simple_title:         "La lectura de los argumentos en la línea de comandos"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,41 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Muchos desarrolladores y programadores pueden estar familiarizados con la idea de pasar argumentos de línea de comandos a un programa o script, pero ¿por qué alguien querría hacer esto en Clojure? La respuesta es simple: al leer argumentos de línea de comandos, podemos hacer que nuestro programa sea más dinámico y personalizable para el usuario.
+Al programar en Clojure, es posible que en algún momento necesites trabajar con argumentos de línea de comandos. Esto puede ser útil para pasar información al programa o para realizar ciertas acciones dependiendo de los argumentos recibidos. En este artículo, aprenderemos cómo leer y trabajar con los argumentos de línea de comandos en Clojure.
 
 ## Cómo hacerlo
 
-Para leer los argumentos de línea de comandos en Clojure, podemos usar la función `*command-line-args*`. Esta función devuelve una lista de todos los argumentos pasados a nuestro programa desde la línea de comandos, incluyendo el nombre del programa en sí. Por ejemplo:
+Para leer los argumentos de línea de comandos en Clojure, podemos utilizar la función `clojure.core/command-line-args`. Esta función toma como argumento una lista de argumentos y devuelve una lista de cadenas con los argumentos recibidos. Veamos un ejemplo de cómo podemos utilizar esta función:
 
 ```Clojure
-(defn saludo [nombre]
-  (println "¡Hola" nombre "! Bienvenido a mi programa."))
+(defn leer-argumentos [args]
+  (let [argumentos (clojure.core/command-line-args args)]
+    (println "Los argumentos recibidos son:" argumentos)))
 
-(defn -main []
-  (doseq [arg *command-line-args*]
-    (saludo arg)))
+(leer-argumentos *command-line-args*)
 ```
 
-Si ejecutamos este código en la línea de comandos con el siguiente comando:
+En este ejemplo, estamos definiendo una función `leer-argumentos` que toma como argumento una lista de argumentos. Luego, utilizamos la función `clojure.core/command-line-args` para obtener la lista de argumentos recibidos y la almacenamos en una variable llamada `argumentos`. Finalmente, imprimimos la lista de argumentos recibidos utilizando la función `println`.
 
-`$ java -cp <ruta_a_jar> programa.clj Juan Pedro Marta`
-
-Obtendremos la siguiente salida:
+Si ejecutamos este código pasándole algunos argumentos de línea de comando, por ejemplo `clojure ejemplo.clj arg1 arg2 arg3`, obtendremos como salida:
 
 ```
-¡Hola programa ! Bienvenido a mi programa.
-¡Hola Juan ! Bienvenido a mi programa.
-¡Hola Pedro ! Bienvenido a mi programa.
-¡Hola Marta ! Bienvenido a mi programa.
+Los argumentos recibidos son: [arg1 arg2 arg3]
 ```
 
-Podemos ver que la lista de argumentos de línea de comandos se imprime en el orden en que fueron pasados al programa.
+Como podemos ver, la función `clojure.core/command-line-args` devuelve una lista de cadenas con los argumentos recibidos. Ahora, podemos utilizar esta lista para realizar las acciones que necesitemos en nuestro programa.
 
 ## Profundizando
 
-Además de la función `*command-line-args*`, también podemos usar la biblioteca `clojure.tools.cli` para realizar un análisis más sofisticado de los argumentos de línea de comandos. Esta biblioteca proporciona una forma más fácil de definir argumentos específicos, como banderas o valores opcionales, y manejar errores de entrada de manera más elegante. Puedes encontrar más información y ejemplos en la [documentación oficial de Clojure](https://clojure.github.io/tools.cli/).
+La función `clojure.core/command-line-args` también nos permite especificar un prefijo para los argumentos. Por defecto, el prefijo es `-`. Sin embargo, podemos cambiarlo pasando un argumento adicional a la función. Por ejemplo, si queremos utilizar `--` como prefijo, podemos hacerlo de la siguiente manera:
+
+```Clojure
+(defn leer-argumentos [args]
+  (let [argumentos (clojure.core/command-line-args args "--")]
+    (println "Los argumentos recibidos son:" argumentos)))
+
+(leer-argumentos *command-line-args*)
+```
+
+Ahora, si ejecutamos este código con los argumentos `clojure ejemplo.clj --arg1 --arg2 --arg3`, obtendremos como salida:
+
+```
+Los argumentos recibidos son: [arg1 arg2 arg3]
+```
+
+También podemos utilizar la función `clojure.core/command-line-args` para parsear argumentos con valores. Por ejemplo, si queremos recibir un argumento con un valor numérico, podemos utilizar la siguiente función:
+
+```Clojure
+(defn leer-argumentos [args]
+  (let [argumentos (clojure.core/command-line-args args)]
+    (println "El argumento recibido es:" (Integer/parseInt (second argumentos)))))
+
+(leer-argumentos *command-line-args*)
+```
+
+Al ejecutar este código con el argumento `clojure ejemplo.clj -valor 10`, obtendremos como salida:
+
+```
+El argumento recibido es: 10
+```
+
+Como podemos ver, podemos utilizar la función `clojure.core/command-line-args` para trabajar con diferentes tipos de argumentos y valores.
 
 ## Ver también
 
-- [Documentación oficial de Clojure sobre *command-line-args*](https://clojuredocs.org/clojure.core/*command-line-args*)
-- [Documentación oficial de Clojure sobre `clojure.tools.cli`](https://clojure.github.io/tools.cli/)
+- Documentación oficial de la función `clojure.core/command-line-args`: https://clojuredocs.org/clojure.core/command-line-args
+- Ejemplo de uso de la función `clojure.core/command-line-args`: https://clojuredocs.org/clojure.core/with-open#example-54269250e4b04b050a02b4ef

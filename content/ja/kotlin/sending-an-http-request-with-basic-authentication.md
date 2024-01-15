@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 基本認証を使用したhttpリクエストの送信"
-simple_title:         "基本認証を使用したhttpリクエストの送信"
+title:                "基本認証付きでhttpリクエストを送信する"
+html_title:           "Kotlin: 基本認証付きでhttpリクエストを送信する"
+simple_title:         "基本認証付きでhttpリクエストを送信する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストをBasic認証で送信するのか
+## なぜ
 
-HTTPリクエストを送信するとき、時にはサーバーによる認証が必要になることがあります。例えば、パスワード保護された情報にアクセスする場合や、セキュリティが重要な操作を行う場合などです。このような場合に、Basic認証を使用することで、ユーザー名とパスワードを用いて簡単に認証を行うことができます。
+HTTPリクエストを基本認証で送信する理由は、特定のリソースやエンドポイントにアクセスする際に認証を必要とするためです。これはセキュリティの面で重要な手段であり、多くのウェブアプリケーションで使用されています。
 
 ## 方法
 
-Basic認証を使用してHTTPリクエストを送信するには、Kotlinの`URL`クラスと`HttpURLConnection`クラスを使用します。以下のコード例を参考にしてください。
+基本認証を使用してHTTPリクエストを送信するには、まずHeadersに認証情報を追加する必要があります。次に、リクエストを実行し、レスポンスを受け取ることができます。
 
 ```Kotlin
-val url = URL("https://example.com/protected-info")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-val customAuth = "username:password".toByteArray().encodeBase64()
-connection.setRequestProperty("Authorization", "Basic $customAuth")
+//必要なライブラリをインポート
+import java.net.*
+import java.io.*
+import java.util.*
+
+//URLを指定し、接続を開始
+val url = URL("https://example.com/api")
+val conn = url.openConnection() as HttpURLConnection
+
+//認証情報を追加
+val username = "username"
+val password = "password"
+val encoded = Base64.getEncoder().encodeToString("$username:$password".toByteArray())
+conn.setRequestProperty("Authorization", "Basic $encoded")
+
+//リクエストを送信し、レスポンスを受け取る
+val responseCode = conn.responseCode
+val responseMessage = conn.responseMessage
 ```
 
-上記のコードでは、まずURLオブジェクトを作成し、そのURLを使用して`openConnection()`メソッドを呼び出します。このメソッドは、`HttpURLConnection`オブジェクトを返します。その後、リクエストメソッドを設定し、ユーザー名とパスワードをBase64エンコードして、リクエストヘッダーに`Authorization`プロパティとして追加します。そして、リクエストを送信する準備が整いました。
-
-上記のコード例では、GETリクエストを使用していますが、必要に応じてリクエストメソッドやボディにデータを追加することができます。
-
-```Kotlin
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "POST"
-
-val postData = "name=John&age=25"
-val outputStream = connection.outputStream
-outputStream.write(postData.toByteArray(Charsets.UTF_8))
-outputStream.close()
-```
-
-上記のコードでは、POSTリクエストを使用し、`outputStream`を使用してリクエストボディにデータを追加しています。
+上記の例では、Kotlinの標準ライブラリを使用して基本認証を行っています。まず、java.netパッケージからURLクラスをインポートし、目的のURLを指定します。次に、UrlConnectionインターフェイスからHttpURLConnectionクラスを取得し、接続を開始します。その後、Base64を使用して認証情報をエンコードし、Headerに追加します。最後に、リクエストを送信し、レスポンスコードとメッセージを受け取ります。
 
 ## ディープダイブ
 
-Basic認証は、Base64エンコードされた文字列を使用してユーザー名とパスワードを認証するため、非常に安全性が低い方法と言えます。そのため、セキュリティの観点からは推奨されません。代わりに、より安全な認証方法であるDigest認証やOAuth認証を使用することが推奨されます。
+基本認証は、クライアントとサーバー間で安全な通信を確保するために使用される認証方式の一つです。サーバー側では、クライアントから送信された認証情報をデコードし、比較して正しい認証情報であればリクエストを受け付けます。Kotlinのようなモダンなプログラミング言語を使用すると、認証情報を簡単にエンコード・デコードすることができます。
 
-また、Basic認証は平文でユーザー名とパスワードが送信されるため、HTTPSの使用を推奨します。これにより、通信内容が暗号化され、セキュリティが向上します。
+## この記事を読んだら
 
-## 関連リンク
-
-[Basic認証について - MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-[JavaのURLクラスについて - Oracle](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html)
-[JavaのHttpURLConnectionクラスについて - Oracle](https://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html)
+- [Basic authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Official Kotlin Documentation](https://kotlinlang.org/docs/reference/)
+- [Java URLConnection on Oracle Docs](https://docs.oracle.com/javase/7/docs/api/java/net/URLConnection.html)

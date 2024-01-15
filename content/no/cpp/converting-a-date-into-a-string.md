@@ -1,6 +1,7 @@
 ---
-title:                "C++: Konvertere en dato til en streng"
-simple_title:         "Konvertere en dato til en streng"
+title:                "Oversette en dato til en streng."
+html_title:           "C++: Oversette en dato til en streng."
+simple_title:         "Oversette en dato til en streng."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,48 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konvertere en dato til en streng kan være nyttig for å vise datoer i et mer leselig format for brukere, eller for å lagre datoer som en del av en filnavn eller databaseoppføring.
+Å konvertere en dato til en streng kan være nødvendig når man ønsker å presentere datoen på en spesifikk måte, for eksempel i et brukergrensesnitt eller i en rapport. Det kan også være nyttig når man skal lagre datoen i et bestemt format i en database.
 
-## Slik gjør du det
-
-Konvertering av en dato til en streng kan gjøres enkelt ved å bruke et innebygd bibliotek i C++ kalt "stringstream". Følgende er et eksempel på hvordan du kan bruke dette biblioteket for å konvertere en dato til en streng:
+## Hvordan
 
 ```C++
 #include <iostream>
-#include <sstream> // inkluder stringstream biblioteket
-#include <ctime> // inkluder ctime biblioteket for å få tilgang til dato- og tidsfunksjoner
+#include <string>
+#include <iomanip>
+#include <ctime>
+
+using namespace std;
 
 int main() {
-    time_t now = time(0); // hent nåværende dato og tid
-
-    // konverter til en streng ved å bruke stringstream
-    stringstream ss;
-    ss << put_time(localtime(&now), "%d.%m.%Y"); // bruker ønsket format her
-
-    // lagre den konverterte datoen som en streng i en variabel
-    string date = ss.str();
-
-    // skriv ut den konverterte datoen
-    cout << "Dagens dato: " << date << endl;
-
-    return 0;
+  // Lag en dato variabel og sett den til dagens dato
+  time_t now = time(0);
+  tm *ltm = localtime(&now);
+  string input_date = asctime(ltm);
+  
+  // Konverter datoen til en streng i det ønskede formatet
+  string output_date = input_date.substr(8, 2) + "." + input_date.substr(4, 3) + "." + input_date.substr(20, 4);
+  
+  // Skriv ut den konverterte datoen
+  cout << "Dagens dato: " << output_date << endl;
+  
+  return 0;
 }
 ```
 
-Dette vil gi følgende utdata:
-
 ```
-Dagens dato: 26.04.2021
+Output:
+Dagens dato: 09.Jul.2021
 ```
 
-## Dykk dypere
+## Deep Dive
 
-Det å konvertere en dato til en streng kan bli mer komplisert dersom man ønsker å bruke et spesifikt datoformat eller lokal tidssone. I eksempelet over bruker vi "%d.%m.%Y" for å få datoen i formatet dag.måned.år, men man kan endre dette til ønsket format.
+Når man konverterer en dato til en streng, er det viktig å sørge for at formatet på datoen er riktig. For eksempel, i kodeeksempelet ovenfor, bruker vi funksjonen `asctime()` for å konvertere datoen til en streng, men dette resulterer i at måneden og året blir skilt med et enkelt mellomrom. Hvis dette ikke er ønskelig, kan man bruke andre funksjoner som `put_time()` eller `strftime()` for å formatere datoen på en mer nøyaktig måte.
 
-I tillegg kan man også bruke forskjellige funksjoner fra ctime-biblioteket for å få tilgang til andre aspekter ved datoen, for eksempel dag i uken eller klokkeslett.
+For å unngå feil og sikre at datoen blir konvertert på riktig måte, kan man også sjekke at datoen er gyldig før man konverterer den til en streng. Dette kan gjøres ved å bruke funksjoner som `mktime()` og `localtime()` for å sjekke at alle delene av datoen er innenfor gyldige områder.
 
 ## Se også
 
-- [Completing conversions in C++](https://www.learncpp.com/cpp-tutorial/completing-conversions-in-cpp/)
-- [StringStream class reference](https://www.cplusplus.com/reference/sstream/stringstream/)
-- [Date and time functions in C++](https://www.cplusplus.com/reference/ctime/)
+- [http://www.cplusplus.com/reference/ctime/asctime/](http://www.cplusplus.com/reference/ctime/asctime/)
+- [http://www.cplusplus.com/reference/ctime/put_time/](http://www.cplusplus.com/reference/ctime/put_time/)
+- [http://www.cplusplus.com/reference/ctime/strftime/](http://www.cplusplus.com/reference/ctime/strftime/)

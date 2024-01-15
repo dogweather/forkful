@@ -1,5 +1,6 @@
 ---
-title:                "C: Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "C: Trouver la longueur d'une chaîne de caractères"
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "C"
 category:             "C"
@@ -9,47 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Vous êtes peut-être en train d'écrire un programme qui nécessite des manipulations sur des données textuelles. Dans ce cas, savoir la longueur d'une chaîne de caractères peut être utile pour effectuer des opérations telles que la comparaison ou la recherche de sous-chaînes.
 
-Trouver la longueur d'une chaîne de caractères est une tâche très courante en programmation C. Cela peut semer la confusion chez les débutants, mais c'est une compétence essentielle à maîtriser. En comprenant comment calculer la longueur d'une chaîne de caractères, vous serez en mesure de développer des applications plus avancées et complexes.
-
-# Comment faire
-
-La méthode la plus courante pour trouver la longueur d'une chaîne de caractères en programmation C est d'utiliser la fonction `strlen()`. Cette fonction prend une chaîne de caractères en tant que paramètre et renvoie le nombre de caractères dans cette chaîne. Voici un exemple de code:
+## Comment faire
+Pour trouver la longueur d'une chaîne de caractères en C, il existe plusieurs façons de procéder. Voici deux exemples de code qui illustrent différentes méthodes :
 
 ```C
+// Exemple 1 : utiliser la fonction strlen() de la bibliothèque string.h
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    char str[20] = "Bonjour";
-    int len = strlen(str);
-    printf("La longueur de la chaine est: %d", len);
-    return 0;
+int main() {
+  char str[] = "Bonjour le monde !";
+  int longueur = strlen(str);
+
+  printf("Longueur de la chaîne : %d", longueur);
+  return 0;
 }
+/* Output :
+ Longueur de la chaîne : 19
+ */
+
+// Exemple 2 : parcourir la chaîne de caractères jusqu'à trouver le caractère nul
+#include <stdio.h>
+
+int main() {
+  char str[] = "Bonjour le monde !";
+  int i = 0;
+
+  // boucle while pour parcourir la chaîne jusqu'à trouver le caractère nul
+  while (str[i] != '\0') {
+    i++;
+  }
+
+  printf("Longueur de la chaîne : %d", i);
+  return 0;
+}
+/* Output :
+ Longueur de la chaîne : 19
+ */
 ```
 
-Lorsque vous exécutez ce code, vous devriez obtenir une sortie qui ressemble à ceci:
+## Plongée en profondeur
+Il est important de comprendre que la fonction strlen() ne compte pas le caractère nul à la fin de la chaîne. Cela signifie que la longueur retournée n'est pas juste le nombre de caractères visibles dans la chaîne, mais plutôt le nombre total de caractères présents, y compris le caractère nul. 
 
-```
-La longueur de la chaine est: 7
-```
+Il est également important de noter que les chaînes de caractères en C sont en fait des tableaux de caractères, et leur longueur peut donc être trouvée en utilisant la boucle while dans l'exemple 2, en parcourant chaque élément du tableau jusqu'à ce que le caractère nul soit rencontré. 
 
-La fonction `strlen()` ne compte pas le caractère nul de fin de chaîne, donc dans notre exemple, la dernière lettre "r" n'est pas incluse dans le résultat.
-
-Il est également important de noter que la fonction `strlen()` ne fonctionne que pour les chaînes de caractères. Si vous essayez de l'utiliser sur un pointeur ou un tableau de caractères, vous risquez d'obtenir un résultat inattendu.
-
-# Plongée en profondeur
-
-La fonction `strlen()` utilise un pointeur pour parcourir la chaîne de caractères et compter le nombre de caractères jusqu'à ce qu'elle atteigne le caractère nul. Cela se fait en utilisant une boucle while qui vérifie à chaque itération si le caractère actuel est le caractère nul. Si ce n'est pas le cas, le pointeur est déplacé vers le caractère suivant jusqu'à ce qu'il atteigne le caractère nul.
-
-De plus, il est important de noter que la fonction `strlen()` est définie dans l'en-tête `string.h`. Cela signifie que vous devez inclure cet en-tête dans votre code si vous voulez utiliser cette fonction.
-
-# Voir aussi
-
-Voici quelques liens utiles pour en savoir plus sur la fonction `strlen()` et la manipulation des chaînes de caractères en programmation C:
-
-- [Documentation de la fonction strlen()](https://www.tutorialspoint.com/ansi_c/c_strlen.htm)
-- [Manipulation de chaînes de caractères en C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Les fonctions de la bibliothèque standard en C](https://www.tutorialspoint.com/c_standard_library/index.htm)
+## Voir aussi
+- [Les chaînes de caractères en C](https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_caract%C3%A8res_en_C)
+- [Documentation de la fonction strlen()](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)

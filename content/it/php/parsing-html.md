@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Analisi di html"
-simple_title:         "Analisi di html"
+title:                "Analisi dei linguaggi html"
+html_title:           "PHP: Analisi dei linguaggi html"
+simple_title:         "Analisi dei linguaggi html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,71 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Internet è diventata una fonte inesauribile di informazioni e molte volte è necessario estrarre dati specifici da pagine web. Il parsing HTML è uno strumento essenziale per ottenere informazioni strutturate e utili da queste pagine.
 
-Molte volte, quando si lavora con i dati tratti da pagine web, è necessario estrarre solo alcune parti specifiche del codice HTML per poterle elaborare. Questo processo è chiamato "parsing" e può essere fatto in diversi modi, tra cui utilizzando il linguaggio di programmazione PHP. In questo articolo, esploreremo perché è importante saper fare il parsing dell'HTML e come farlo utilizzando PHP.
-
-## Come Fare
-
-Per prima cosa, dovrai avere una conoscenza di base di PHP e delle sue funzioni per poter eseguire il parsing dell'HTML. Ci sono diverse librerie PHP disponibili per il parsing dell'HTML, tra cui DOMDocument e SimpleHTMLDom. Utilizzeremo SimpleHTMLDom in questo esempio.
-
-Iniziando, dobbiamo scaricare e includere la libreria SimpleHTMLDom nel nostro script PHP. Una volta fatto ciò, dobbiamo creare una variabile che conterrà il nostro codice HTML come una stringa.
+## Come fare
+Lo strumento principale per il parsing HTML in PHP è la libreria DOM. Per iniziare, bisogna creare un documento DOM con la funzione `domdocument()` e caricarci il codice HTML da analizzare. Ad esempio:
 
 ```PHP
-<?php
-include('simple_html_dom.php');
-
-$codiceHTML = "
-<html>
-  <head>
-    <title>Il mio Blog di PHP</title>
-  </head>
-  <body>
-    <h1>Ciao a tutti!</h1>
-    <p>Bentornati nel mio blog di PHP.</p>
-    <div class='post'>
-      <h2>Imparare il parsing di HTML</h2>
-      <p>In questo post, esploreremo come fare il parsing di HTML utilizzando PHP.</p>
-    </div>
-  </body>
-</html>
-";
+$dom = new domdocument();
+$dom->loadHTML($html);
 ```
-
-Una volta che abbiamo il nostro codice HTML in una variabile, possiamo utilizzare la funzione `str_get_html()` di SimpleHTMLDom per convertirlo in un oggetto DOM che possiamo manipolare.
+Dove `$html` è una stringa contenente il codice HTML da analizzare. Per ottenere le informazioni desiderate, è possibile usare metodi come `getElementsByTagName()` e `getAttribute()`. Ad esempio:
 
 ```PHP
-<?php
-$dom = str_get_html($codiceHTML);
+$titoli = $dom->getElementsByTagName('h1'); //ottiene gli elementi <h1>
+foreach ($titoli as $titolo) {
+    echo $titolo->getAttribute('id'); //stampa l'attributo "id" dei titoli
+}
 ```
-
-Ora possiamo utilizzare i metodi di SimpleHTMLDom per estrarre le parti specifiche del codice HTML che ci interessano. Ad esempio, se volessimo ottenere il titolo della nostra pagina, useremmo il metodo `find()` per cercare l'elemento `<title>` e poi il metodo `plaintext` per ottenere il suo contenuto.
-
-```PHP
-<?php
-$titolo = $dom->find('title', 0)->plaintext;
-echo $titolo; //output: Il mio Blog di PHP
-```
-
-Inoltre, se volessimo ottenere il contenuto della nostra `<div>` con il class "post", useremmo il metodo `find()` con il selettore CSS `.post` e poi il metodo `plaintext` per ottenere il suo contenuto.
-
-```PHP
-<?php
-$contenuto = $dom->find('.post', 0)->plaintext;
-echo $contenuto; //output: Imparare il parsing di HTML In questo post, esploreremo come fare il parsing di HTML utilizzando PHP.
-```
-
-Ci sono molti altri metodi disponibili in SimpleHTMLDom per estrarre parti specifiche di codice HTML. Assicurati di consultare la documentazione ufficiale per maggiori informazioni.
+L'output di questo codice sarà una lista di id dei titoli presenti nella pagina HTML.
 
 ## Deep Dive
+Il parsing HTML è un argomento vasto e complesso che richiede una buona conoscenza del linguaggio e delle tecniche di manipolazione dei dati. È importante scegliere metodi efficienti e ottimizzare il codice per evitare errori e prestazioni lente. Inoltre, è consigliato utilizzare librerie esterne per semplificare il processo di parsing e sfruttare al massimo le potenzialità del PHP.
 
-Ora che hai una comprensione di base di come fare il parsing dell'HTML con PHP, vediamo alcune altre cose importanti da sapere.
-
-- Quando si effettua il parsing dell'HTML, è importante avere una buona conoscenza di come funziona la struttura del codice HTML. Questo ti aiuterà a capire quali elementi e attributi selezionare per estrarre le informazioni desiderate.
-- Se stai eseguendo il parsing di pagine web esterne, assicurati di rispettare le politiche di scraping etico e di consultare i termini di utilizzo del sito web.
-- Per rendere il tuo codice più efficiente, puoi utilizzare le espressioni regolari per estrarre parti specifiche di codice HTML invece di utilizzare librerie esterne.
-
-## Vedi Anche
-
-- Documentazione SimpleHTMLDom: https://simplehtmldom.sourceforge.io/
-- Manipolazione HTML con PHP: https://www.php.net/manual/en/book.dom.php
-- Guida alle espressioni regolari in PHP: https://www.php.net/manual/en/reference.pcre.pattern.syntax.php
+## Vedi anche
+- [DomDocument PHP Manual](https://www.php.net/manual/en/class.domdocument.php)
+- [Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/)

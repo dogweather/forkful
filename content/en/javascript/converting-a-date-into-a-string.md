@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Converting a date into a string"
+title:                "Converting a date into a string"
+html_title:           "Javascript recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,43 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting a date into a string may seem like a simple task, but it can actually be beneficial in various programming scenarios. Some common reasons for converting dates into strings include displaying them in a user-friendly format, sorting and manipulating data, and passing data between different systems.
+Converting a date into a string is a common task in web development. In many cases, we need to display dates in a specific format or manipulate them for various purposes. By converting a date into a string, we can easily work with dates and display them in the desired format.
 
 ## How To
 
-To convert a date into a string in Javascript, we can use the `toString()` method. This method converts a date object into a string, using the computer's local time zone as the default. Here's an example code block:
+To convert a date into a string in Javascript, we can use the `toString()` method. This method returns the string representation of a date object. Let's see an example:
 
 ```Javascript
-let today = new Date(); 
-let dateString = today.toString(); 
-console.log(dateString); 
+let date = new Date();
+let stringDate = date.toString();
+console.log(stringDate); // output: Wed Nov 25 2020 11:13:45 GMT+0530 (India Standard Time)
 ```
 
-This code will output the following string: `Mon Nov 09 2020 15:29:11 GMT-0500 (Eastern Standard Time)`
-
-We can also specify a different time zone by using the `toLocaleString()` method. This method takes in two parameters: the desired time zone and an options object to format the string output. Here's an example:
+We can also use the `toLocaleDateString()` method to convert the date into a string with a specific format based on the user's local time zone.
 
 ```Javascript
-let date = new Date(Date.UTC(2020, 10, 25, 18, 30, 0));
-
-console.log(date.toLocaleString("en-US", {timeZone: "UTC"})); // 11/25/2020, 6:30:00 PM
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+console.log(date.toLocaleDateString('en-US', options)); // output: Wednesday, November 25, 2020
 ```
+
+We can also use third-party libraries like Moment.js to convert dates into strings with various formats and translations.
 
 ## Deep Dive
 
-Now that we have covered the basic methods for converting a date into a string, let's take a deeper look at the options object for `toLocaleString()`. This object allows us to format the output string according to our preferences.
+When converting dates into strings, it's essential to understand the concept of time zones. The `toString()` method returns the date and time in the local time zone of the user's browser. However, the `toLocaleDateString()` method considers the time zone passed as an argument and returns the date and time accordingly.
 
-Some common options include `year`, `month`, `day`, `hour`, `minute`, `second`, `weekday`, and `timeZoneName`. We can specify which options we want to include in the output string and even change the order by specifying an array of options. Here's an example:
+Another important aspect to consider is that the `toString()` method returns the date and time in a standardized format, while the `toLocaleDateString()` method returns the date and time in a format based on the language specified.
 
-```Javascript
-let date = new Date("2020-10-20T12:00:00");
-console.log(date.toLocaleString("en-US", {weekday: "long", year: "numeric", month: "long", day: "numeric", timeZoneName: "short"})); // Tuesday, Oct 20, 2020, GMT-5
-```
-
-For more information on the available options, check out the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString). Understanding these options can help us customize our output string to suit our needs.
+Furthermore, when using third-party libraries like Moment.js, it's crucial to understand their syntax and methods to get the desired format and translations. It's always recommended to check the documentation before using any third-party library.
 
 ## See Also
 
-- [MDN documentation for `toString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
-- [MDN documentation for `toLocaleString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-- [W3Schools tutorial on working with dates in Javascript](https://www.w3schools.com/js/js_dates.asp)
+- [MDN web docs on the `toString()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
+- [MDN web docs on the `toLocaleDateString()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+- [Moment.js documentation](https://momentjs.com/docs/)

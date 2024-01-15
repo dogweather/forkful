@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Sending et HTTP-forespørsel"
-simple_title:         "Sending et HTTP-forespørsel"
+title:                "Sending et http-forespørsel"
+html_title:           "Haskell: Sending et http-forespørsel"
+simple_title:         "Sending et http-forespørsel"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,46 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende en HTTP-forespørsel er en viktig ferdighet for Haskell-programmerere som ønsker å kommunisere med andre nettverkstjenester. Ved å kunne lage og sende en forespørsel, kan vi få tilgang til data fra ulike kilder og bruke dem i våre egne programmer. Dette kan være nyttig for å hente informasjon fra en database, sende data til en API eller laste ned filer fra nettet.
+Hvis du noensinne har brukt en nettleser eller et program som kobler til Internett, har du sannsynligvis allerede sendt en HTTP forespørsel uten å vite det. HTTP står for Hypertext Transfer Protocol og er den vanligste protokollen som brukes for kommunikasjon mellom nettlesere og webservere. I Haskell, kan du programmere dine egne HTTP forespørsler for å hente data fra et nettsted, sende informasjon til en webtjeneste, eller automatisere en nettopp-kallende oppgave.
 
-## Hvordan gjør du det
+## Slik gjør du
 
-For å sende en HTTP-forespørsel i Haskell, må vi først importere "Network.HTTP.Simple" biblioteket. Deretter kan vi bruke funksjonen "httpRequest" for å lage en forespørsel. Her er et eksempel på å sende en GET-forespørsel til Google:
+For å sende en HTTP forespørsel i Haskell, må du bruke et bibliotek som håndterer HTTP kommunikasjon. Det finnes flere biblioteker tilgjengelig, men et populært valg er "http-conduit". Først må du importere biblioteket i din kode:
 
 ```Haskell
 import Network.HTTP.Simple
-
--- Lag en GET-forespørsel
-request <- parseRequest "GET https://www.google.com"
-
--- Send forespørselen og få svar
-response <- httpLBS request
-
--- Skriv ut statuskoden og svardata
-putStrLn $ "Status kode: " ++ show (getResponseStatusCode response)
-putStrLn $ "Svar: " ++ show (getResponseBody response)
 ```
 
-Dette vil gi oss følgende output:
-
-```
-Status kode: 200
-Svar: "<!doctype html><html itemscope=\"\" itemtype=\"https://schema.org/WebPage\" lang=\"no\"><head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\"><meta content=\"..."
-```
-
-Vi kan også legge til spesifikke parametere i forespørselen, for eksempel å be om å få tilbake JSON-data. Dette gjøres ved å endre URL-en og angi innholdstypen som "application/json":
+Deretter kan du lage en HTTP forespørsel ved å bruke funksjonen "parseRequest" og angi URL-adressen du ønsker å kalle som en streng:
 
 ```Haskell
--- Legg til JSON som innholdstype
-request <- parseRequest "GET https://www.example.com/api/users" >>= addRequestHeader "Content-Type" "application/json"
+request <- parseRequest "http://www.example.com"
 ```
 
-## Dykk ned i HTTP-forespørsler
+Du kan også spesifisere hvilken HTTP metode du vil bruke, som for eksempel GET eller POST:
 
-En HTTP-forespørsel består av en forespørselslinje, forespørselsmetode, headers og en eventuell bodies med data. Det finnes flere ulike metoder for å lage og sende HTTP-forespørsler, og mange ulike bibliotek og pakker som kan hjelpe oss med dette. Det er også viktig å være oppmerksom på sikkerhet når vi sender forespørsler, for eksempel ved å bruke TLS-tilkoblinger.
+```Haskell
+request <- setRequestMethod "POST" <$> parseRequest "http://www.example.com"
+```
+
+Nå kan du sende forespørselen ved å bruke funksjonen "httpLBS". Denne funksjonen returnerer en respons som inneholder både statuskoden og svaret fra nettstedet:
+
+```Haskell
+response <- httpLBS request
+```
+
+For å få tilgang til svaret fra nettstedet, kan du bruke funksjonen "getResponseBody":
+
+```Haskell
+responseBody <- getResponseBody response
+```
+
+Du kan nå bruke "responseBody" til å gjøre videre behandling på dataene, for eksempel å pakke de ut fra JSON format, eller skrive de til en fil.
+
+## Dypdykk
+
+Hvis du ønsker å lære mer om hvordan HTTP forespørsler fungerer og alle de forskjellige parameterne du kan spesifisere, kan du sjekke ut den offisielle HTTP spesifikasjonen (https://www.w3.org/Protocols/rfc2616/rfc2616.html) som beskriver alle detaljene. Du kan også utforske "http-conduit" dokumentasjonen for å se alle funksjonene som er tilgjengelige for å bygge mer komplekse forespørsler og håndtere forskjellige situasjoner som feil og omadressering.
 
 ## Se også
 
-- [Haskell Network.HTTP.Simple Documentation](https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html)
-- [HTTP Requests in Haskell - A Practical Guide](https://dandreamsofcoding.com/2016/01/18/http-requests-in-haskell/)
-- [Making Simple HTTP Requests in Haskell](https://mmhaskell.com/blog/2017/3/13/making-requests-in-haskell)
+- Offisiell HTTP spesifikasjon: https://www.w3.org/Protocols/rfc2616/rfc2616.html
+- http-conduit dokumentasjon: https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Conduit.html

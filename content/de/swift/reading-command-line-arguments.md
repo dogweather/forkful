@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Swift: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Eine der coolsten Funktionen von Swift ist die Möglichkeit, Befehlszeilenargumente zu lesen und damit interaktive und anpassbare Programme zu erstellen. Wenn du neugierig bist, wie du das machen kannst, bist du hier richtig!
 
-## Wie man Befehlszeilenargumente in Swift liest
-Befehlszeilenargumente sind Parameter, die beim Starten eines Programms in der Terminalumgebung übergeben werden können. In Swift kannst du diese Argumente einfach mit dem `CommandLine` Objekt auslesen.
+Wenn du ein fortgeschrittener Swift-Entwickler bist, möchtest du vielleicht lernen, wie man Befehlszeilenargumente in deine Programme einbinden kann. Mit diesem Wissen kannst du beispielsweise eine eigene Kommandozeilenanwendung erstellen oder vorhandene Programme erweitern.
 
-```Swift
-let arguments = CommandLine.arguments
+## Wie geht das
+
+Es gibt verschiedene Möglichkeiten, Befehlszeilenargumente in Swift zu lesen. Die einfachste Methode ist die Verwendung von `CommandLine.arguments`, das eine Array von Strings zurückgibt. In diesem Beispiel werden wir eine Eingabeaufforderung mit zwei Argumenten erstellen und die Argumente in der Konsole ausgeben:
+
+```
+Swift
+let args = CommandLine.arguments
+print("Das erste Argument ist: \(args[1])")
+print("Das zweite Argument ist: \(args[2])")
 ```
 
-Das gibt dir ein Array mit allen übergebenen Argumenten. Du kannst dann durch das Array iterieren und die Argumente verwenden, um verschiedene Funktionen innerhalb deines Programms auszuführen.
+Wenn du deine Anwendung über die Befehlszeile ausführst und zwei Argumente angegeben hast, wirst du folgende Ausgabe sehen:
 
-```Swift
-for argument in arguments {
-    if argument == "-h" {
-        print("Dies ist eine Hilfe-Nachricht")
-    } else if argument == "-v" {
-        print("Version 1.0")
-    }
+```
+Swift
+$ ./meinprogramm argument1 argument2
+Das erste Argument ist: argument1
+Das zweite Argument ist: argument2
+```
+
+Du kannst auch überprüfen, ob bestimmte Argumente vorhanden sind und entsprechende Aktionen ausführen. Zum Beispiel könntest du deine Anwendung so gestalten, dass sie ein bestimmtes Verhalten zeigt, wenn das Argument `--help` angegeben wird. Hier ist ein Beispielcode:
+
+```
+Swift
+let args = CommandLine.arguments
+if args.contains("--help") {
+    print("Dies ist die Hilfeseite für mein Programm.")
+    print("Gib `--version` ein, um die Versionsnummer anzuzeigen.")
 }
 ```
 
-Wenn du das Programm in deinem Terminal mit dem Befehl `swift Programm.swift -h` ausführst, wird die entsprechende Ausgabe auf dem Bildschirm angezeigt.
+## Tiefere Einblicke
 
-## Tiefergehender Einblick
-Die `CommandLine` Klasse bietet auch weitere nützliche Funktionen, wie zum Beispiel `commandLine.arguments.count`, um die Anzahl der Argumente zu überprüfen, oder `commandLine.arguments.dropFirst()`, um das erste Argument (meistens der Dateiname) zu ignorieren.
+Manchmal möchtest du vielleicht mehr Kontrolle über die Befehlszeilenargumente haben, z.B. um bestimmte Argumente in spezifische Datentypen zu konvertieren. Dafür gibt es die Klasse `CommandLineOption`. Hier ein Beispiel:
 
-Außerdem kannst du mit `CommandLine.arguments.joined(separator: " ")` die Argumente in einem String zusammenführen, der dann zum Beispiel für die Ausgabe in einer Datei oder per E-Mail verwendet werden könnte.
+```
+Swift
+let options = CommandLineOption.arguments([
+    .option("input", .single, default: nil),
+    .option("output", .single, default: "output.txt")
+])
+
+guard let input = options["input"] else {
+    print("Es muss ein Eingabedokument angegeben werden.")
+    exit(0)
+}
+
+let output = options["output"]
+
+print("Das Eingabedokument ist: \(input)")
+print("Das Ausgabedokument ist: \(output)")
+```
+
+In diesem Beispiel wird überprüft, ob das Argument `input` vorhanden ist und dann als String ausgegeben. Wenn das Argument `output` nicht angegeben wird, wird standardmäßig "output.txt" ausgegeben. Du kannst auch verschiedene Werte für ein Argument zulassen, z.B. durch Hinzufügen von `.multiple` nach dem Argumentnamen.
 
 ## Siehe auch
-- [Offizielle Dokumentation von Apple zu Command-Line-Argumenten](https://developer.apple.com/documentation/foundation/commandline)
-- [Swift Tutorial: Kontrollstrukturen und die `CommandLine` Klasse](https://www.ralfebert.de/ios/tutorials/swift_kontrollstrukturen/)
-- [Eine Einführung in die iOS Entwicklung mit Swift](https://www.toptal.com/swift/ios-swift-tutorial-introduction-to-ios-apps)
+
+- [Apple Dokumentation zu Befehlszeilenparametern in Swift](https://developer.apple.com/documentation/swift/command-line_arguments)
+- [Swift ArgParser - Eine Bibliothek zur Analyse von Befehlszeilenargumenten](https://github.com/apple/swift-argument-parser)

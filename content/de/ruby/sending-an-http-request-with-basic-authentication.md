@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
+html_title:           "Ruby: Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
+simple_title:         "Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,38 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Sicherlich hast du schon einmal gehört, dass es wichtig ist, deine Webanwendungen mit grundlegender Authentifizierung zu sichern. Aber hast du dich jemals gefragt, warum das notwendig ist? Die Verwendung von grundlegender Authentifizierung ermöglicht es dir, Benutzernamen und Passwörter zu überprüfen und sicherzustellen, dass nur autorisierte Benutzer Zugriff auf deine Anwendung haben. Dies ist besonders wichtig, wenn du sensible Informationen verarbeitest, wie zum Beispiel persönliche Kundeninformationen oder finanzielle Daten.
+HTTP-Anfragen mit Basisauthentifizierung werden oft verwendet, um eine sichere Verbindung zwischen einer Anwendung und einem Server herzustellen. Dies ist besonders nützlich, wenn vertrauliche Daten übertragen werden müssen.
 
 ## Wie geht das?
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden, musst du zuerst die `Net::HTTP` Bibliothek in deinem Ruby-Programm importieren. Dann musst du die entsprechenden Informationen in deiner Anfrage angeben, einschließlich des Benutzernamens und des Passworts. Hier ist ein Beispielcode, wie du eine GET-Anfrage mit grundlegender Authentifizierung senden kannst:
+Um eine HTTP-Anfrage mit Basisauthentifizierung in Ruby zu senden, können wir die Net::HTTP-Bibliothek verwenden. Zuerst müssen wir ein URI-Objekt erstellen, das die URL enthält, zu der wir eine Anfrage senden möchten. Dann können wir ein Net::HTTP-Objekt erstellen und die Methode #basic_auth verwenden, um Benutzername und Passwort anzugeben. Schließlich rufen wir die Methode #request auf und übergeben die gewünschte Aktion (GET, POST, PUT, etc.) sowie das URI-Objekt. Hier ist ein Beispielcode:
 
 ```Ruby
 require 'net/http'
 
-uri = URI('https://example.com/api')
-credentials = {username: "benutzername", password: "passwort"}
-response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', 
-                          basic_auth: credentials) do |http|
-  request = Net::HTTP::Get.new uri
-  http.request request # Die Anfrage wird gesendet und wir erhalten eine Antwort
-end
+uri = URI('https://www.example.com')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
 
-puts response.body # Gibt die Antwort aus
+request = Net::HTTP::Get.new(uri)
+request.basic_auth("username", "password")
+
+response = http.request(request)
+
+puts response.code
+puts response.body
 ```
 
-Die `basic_auth` Option verwendet die vom Benutzer angegebenen Anmeldedaten, um die HTTP-Anfrage zu authentifizieren. Wenn die Anfrage erfolgreich ist, erhältst du eine Antwort von der angeforderten URL. In diesem Beispiel wird die Antwort als einfachen Text ausgegeben, aber du kannst sie auch in einem JSON-Objekt oder einem anderen Format erhalten, je nachdem, was deine API liefert.
+Das obige Beispiel stellt eine sichere Verbindung zu www.example.com her, führt eine GET-Anfrage mit Basisauthentifizierung aus und gibt den Statuscode sowie die Antwortdaten aus. Die Methode #basic_auth kann auch auf andere HTTP-Anfragemethoden wie POST und PUT angewendet werden.
 
-## Tiefentauchen
+## Tiefer Einblick
 
-Es gibt einige wichtige Dinge zu beachten, wenn du HTTP-Anfragen mit grundlegender Authentifizierung sendest. Zum einen ist die Verwendung von HTTPS anstelle von HTTP in der URI wichtig, um sicherzustellen, dass die Anmeldedaten sicher übertragen werden. Außerdem ist es ratsam, vor der Verwendung einer grundlegenden Authentifizierungslösung zu prüfen, ob es möglicherweise sicherere Optionen gibt, wie zum Beispiel OAuth.
-
-Es ist auch wichtig zu beachten, dass die Übermittlung von Benutzernamen und Passwort in Klartext ein potenzielles Sicherheitsrisiko darstellt. Achte also darauf, dass du deine Anmeldedaten sicher speicherst und die Anfragen nur über eine sichere Verbindung sendest.
+HTTP-Anfragen mit Basisauthentifizierung verwenden den Authentifizierungstyp "Basic", bei dem der Benutzername und das Passwort in Base64-Format kodiert und als Teil des Authorization-Headers in der Anfrage gesendet werden. Der Server überprüft dann die Gültigkeit der Anmeldedaten und gibt eine entsprechende Antwort zurück. Es ist wichtig zu beachten, dass dieser Vorgang nicht als sicherer Authentifizierungsmechanismus gilt und zusätzliche Sicherheitsmaßnahmen wie SSL/TLS empfohlen werden.
 
 ## Siehe auch
 
-* ["Einführung in die Ruby Net::HTTP Bibliothek"](https://www.rubyguides.com/2018/08/ruby-net-http/)
-
-* ["HTTP Anfragen mit Ruby"](https://www.tutorialspoint.com/ruby/ruby_http_requests.htm)
-
-* ["Verhindern von Brute-Force Angriffen mit grundlegender Authentifizierung"](https://www.hugeserver.com/kb/preventing-brute-force-attacks-using-basic-authentication/)
+- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Base64-Bibliothek in Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/base64/rdoc/Base64.html)
+- [HTTP-Basisauthentifizierung auf Wikipedia](https://de.wikipedia.org/wiki/HTTP#Authentifizierung)

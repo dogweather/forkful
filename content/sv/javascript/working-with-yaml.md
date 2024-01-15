@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "Javascript: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,63 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du är en JavaScript-utvecklare och har hört talas om YAML, undrar du kanske varför du skulle vilja lära dig det. YAML är en konfigurationsfilformat som ofta används i webbutveckling för att strukturera data och inställningar på ett enkelt och lättläst sätt. Det är också ett populärt alternativ till JSON och XML eftersom det är mer mänskligt läsbart och lättare att arbeta med.
+Att arbeta med YAML kan vara en användbar färdighet att ha för utvecklare, särskilt för de som är intresserade av webbutveckling. YAML är ett språk som används för att konfigurera och organisera datastrukturer, vilket gör det till en praktiskt verktyg för att hantera stora mängder information på ett lättläst format.
 
 ## Hur man gör
 
-För att börja arbeta med YAML i JavaScript måste du först installera ett paket som heter "js-yaml". Detta kan enkelt göras genom att köra kommandot `npm install js-yaml` i terminalen. När paketet är installerat kan du importera det i ditt projekt och använda dess funktioner för att konvertera mellan YAML och JavaScript-objekt.
+För att komma igång med YAML behöver du inte mycket mer än en grundläggande kunskap om Javascript. Först och främst behöver du installera och konfigurera ett YAML-bibliotek i din utvecklingsmiljö. Sedan kan du använda olika funktioner och metoder för att skapa och manipulera YAML-data. 
 
-Här är ett enkelt exempel på hur du kan konvertera en YAML-sträng till ett JavaScript-objekt:
+Exempel: 
 
-```Javascript
-const yaml = require('js-yaml');
+```Javascript 
+const yaml = require('yaml')
 
-const yamlString = `
-    title: Mitt blogginlägg
-    author: Johan
-    date: 2021-05-05
-`;
-
-const data = yaml.safeLoad(yamlString);
-console.log(data);
-
-/* Output:
-{
-    title: 'Mitt blogginlägg',
-    author: 'Johan',
-    date: '2021-05-05'
+// Skapa en YAML-data
+const data = { 
+  name: 'John Doe', 
+  age: 25, 
+  hobbies: ['programming', 'guitar', 'video games'] 
 }
-*/
-```
 
-Du kan också konvertera ett JavaScript-objekt till YAML-format genom att använda `yaml.safeDump()`-funktionen. Detta kan vara användbart om du behöver spara dina data i en YAML-fil.
-
-```Javascript
-const yaml = require('js-yaml');
-
-const data = {
-    title: 'Mitt blogginlägg',
-    author: 'Johan',
-    date: '2021-05-05'
-};
-
-const yamlString = yaml.safeDump(data);
-console.log(yamlString);
+// Konvertera till YAML-format och skriv ut
+const yamlData = yaml.stringify(data)
+console.log(yamlData)
 
 /* Output:
-title: Mitt blogginlägg
-author: Johan
-date: 2021-05-05
+name: John Doe
+age: 25
+hobbies:
+  - programming
+  - guitar
+  - video games 
 */
-```
 
-Det finns också andra funktioner och alternativ som du kan utforska för att arbeta med YAML i JavaScript. Genom att använda dokumentationen för `js-yaml`-paketet kan du lära dig mer om dessa och hur du kan integrera YAML i dina projekt.
+// Ändra värde på en egenskap och konvertera tillbaka till objekt
+const newYamlData = yamlData.replace('John Doe', 'Jane Doe')
+const newData = yaml.parse(newYamlData)
+
+console.log(newData.name) // Output: Jane Doe
+```
 
 ## Djupdykning
 
-Om du vill gå ännu djupare in i YAML och lära dig mer om dess syntax och funktioner, kan du läsa YAML-specifikationen. Detta är en detaljerad guide som beskriver hur YAML-filer ska struktureras och vad de olika symbolerna och reglerna betyder. Detta kan hjälpa dig att förstå YAML på en mer grundlig nivå och möjliggöra mer avancerad användning i dina projekt.
+Ett av de viktigaste koncepten att lära sig när man jobbar med YAML är att förstå YAML-syntaxen. YAML använder sig av indentation (inryckning) för att skapa hierarkier och används ofta för att konfigurera inställningar och datastrukturer för webbapplikationer. Det är också viktigt att känna till skillnaderna mellan YAML och andra liknande format som JSON och XML.
 
-## Se även
+Det finns också många avancerade funktioner och metoder för att hantera YAML-data, som till exempel att inkludera externa filer och validering av YAML-strukturer.
 
-- [js-yaml dokumentation](https://www.npmjs.com/package/js-yaml)
-- [YAML-specifikation](https://yaml.org/spec/)
+## Se också
+
+- [YAML officiell hemsida](https://yaml.org/)
+- [YAML bibliotek för Javascript](https://yaml.com/)
+- [YAML-tutorial från W3Schools](https://www.w3schools.com/js/js_yaml.asp)

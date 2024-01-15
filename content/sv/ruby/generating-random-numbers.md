@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "Ruby: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,41 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att generera slumpmässiga nummer är en vanlig uppgift inom programmering, särskilt inom spelutveckling och statistiska beräkningar. Det kan också användas för att skapa variation och slumpmässighet i olika applikationer och algoritmer.
 
-Att generera slumpmässiga nummer är ett viktigt koncept inom programmering. Det kan användas för spel, simuleringsprogram, säkerhet och mycket mer. Att lära sig hur man skapar slumpmässiga nummer i Ruby är en viktig färdighet för alla som vill bli en bättre programmerare.
+## Hur man gör det
+För att generera slumpmässiga nummer i Ruby kan vi använda oss av inbyggda metoder i språket. Ett sätt är att använda sig av `rand` metoden som returnerar ett decimaltal mellan 0 och 1. För att få ett heltal kan vi multiplicera resultatet med antalet önskade tal och sedan avrunda det till närmaste heltal.
 
-## Hur man gör
-
-För att generera slumpmässiga nummer i Ruby kan du använda funktionen `rand()`. Detta kommer att skapa ett decimaltal mellan 0 och 1. Om du vill skapa slumpmässiga heltal kan du använda funktionen `rand()` tillsammans med `*` för att multiplicera med ett nummer, till exempel `rand() * 10` för att få ett heltal mellan 0 och 10.
+Exempel:
 
 ```Ruby
-# Exempel på att generera slumpmässiga heltal
-# mellan 1 och 10
-puts rand() * 10
+# Genererar ett slumpmässigt heltal mellan 1 och 10
+random_number = (rand * 10).round 
 
-# Exempel på att generera slumpmässiga decimaltal
-# mellan 0 och 1
-puts rand()
+puts random_number # Exempeloutput: 7
 ```
 
-Output:
+Om vi vill ha ett slumpmässigt nummer inom ett visst intervall, till exempel mellan 50 och 100, kan vi använda oss av `rand(min..max)` metoden. Den tar ett internt nummer som argument och returnerar ett tal inom det givna intervallet.
+
+Exempel:
+
 ```Ruby
-7
-0.6421782193
+# Genererar ett slumpmässigt nummer mellan 50 och 100
+random_number = rand(50..100)
+
+puts random_number # Exempeloutput: 82
 ```
-
-Du kan också använda `rand(x)` där x är ett heltal för att få ett slumpmässigt heltal mellan 0 och x. Om du vill ha ett positivt heltal mellan x och y kan du använda `rand(x..y)`.
-
-För att kontrollera vilka nummer som kommer att genereras kan du använda `srand(nummer)`, där nummer är en specifierad startpunkt för den slumpmässiga sekvensen. Detta är användbart om du till exempel vill återskapa samma slumpmässiga tal i ett program i framtiden.
 
 ## Djupdykning
+För att förstå hur `rand` metoden fungerar kan vi titta närmare på dess implementation. I Ruby är `rand` en del av `Random` klassen, som vi kan använda för att skapa en instans och sedan göra anrop till dess metoder, som `rand`.
 
-Bakom kulisserna använder Ruby en algoritm som kallas Mersenne Twister för att generera slumpmässiga nummer. Detta är en av de mest utbredda algoritmerna för att skapa slumpmässiga sekvenser och är baserad på en matematisk formel. Användningen av `srand()` ändrar startvärdet för denna formel, vilket resulterar i olika sekvenser av slumpmässiga nummer.
+Därför kan vi, om vi vill ha mer kontroll över hur slumpmässiga nummer genereras, skapa en egen instans av `Random` och ange ett seed-värde för att få ett bestämt mönster i nummergenereringen.
 
-Det finns också andra sätt att generera slumpmässiga tal i Ruby, inklusive att använda tillägget `SecureRandom`. Detta ger ett extra lager av säkerhet genom att använda en kryptografiskt säker algoritm för att skapa slumpmässiga nummer.
+Exempel:
 
-## Se även
+```Ruby
+# Skapar en instans av Random och anger seed-värde
+random_generator = Random.new(123)
 
-- [Slumpmässiga nummer i Ruby dokumentationen](https://ruby-doc.org/core-3.0.1/Random.html)
-- [Mersenne Twister på Wikipedia](https://sv.wikipedia.org/wiki/Mersenne_Twister)
-- [SecureRandom dokumentationen](https://ruby-doc.org/stdlib-3.0.1/libdoc/securerandom/rdoc/SecureRandom.html)
+# Genererar 5 slumpmässiga heltal mellan 1 och 10
+5.times { puts random_generator.rand(10) }
+# Exempeloutput: 8, 3, 6, 2, 4
+
+# Genererar samma 5 heltal eftersom vi angett ett seed-värde
+5.times { puts random_generator.rand(10) }
+# Exempeloutput: 8, 3, 6, 2, 4
+```
+
+Slutligen är det viktigt att vara medveten om att de slumpmässiga nummer som genereras i Ruby inte är helt och hållet slumpmässiga utan baseras på en algoritm. För mer avancerade behov av slumpmässighet, till exempel inom kryptografi, finns det andra metoder som kan användas.
+
+## Se också
+Om du vill lära dig mer om slumpmässiga nummer i Ruby kan du titta på följande länkar:
+
+- [Dokumentation för `Random` klassen](https://ruby-doc.org/core/Random.html)
+- [Mer om slumpmässighet i Ruby](https://www.rubyguides.com/2018/11/ruby-random/)
+- [Använda `SecureRandom` för säkrare slumpmässiga nummer](https://www.youtube.com/watch?v=7txDRDV7er0) (Video)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Gleam: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till gemener (lower case) är ofta en viktig del av programmering då det kan förenkla jämförelser och sökningar i text. Det är även en vanlig uppgift när man arbetar med användarinput, där man vill hantera olika variationer av bokstäver för att undvika problem med jämförelser.
+Det är vanligt att behöva hantera textsträngar i programmering, och ibland kan det vara nödvändigt att konvertera dem till en viss form. Att konvertera en sträng till små bokstäver är en vanlig operation som kan behövas av olika skäl, till exempel för att underlätta sökning eller för att jämföra strängar utan att bry sig om deras stor- eller små bokstäver.
 
-## Så här gör du
-För att konvertera en sträng till gemener i Gleam, kan du använda den inbyggda funktionen `String.to_lower()`:
-
-```Gleam
-let str = "HeLLo"
-let lower_str = String.to_lower(str)
-```
-Output: `lower_str = "hello"`
-
-Du kan också använda pattern matching för att enkelt hantera både gemener och versaler:
+## Såhär gör du
+För att konvertera en sträng till små bokstäver i Gleam kan du använda funktionen `String.to_lower` som tar emot en sträng som argument och returnerar en ny sträng med alla bokstäver i små bokstäver.
 
 ```Gleam
-fn to_lower_case(str) {
-  case str {
-    string -> String.to_lower(str)
-    _ -> str
-  }
-}
+my_string = "HeLlo WoRlD"
+lower_case_string = my_string |> String.to_lower
 ```
-Output: `to_lower_case("Hello") = "hello"`
+
+Output: `"hello world"`
+
+Om du vill kan du också använda funktionen `String.to_lower_case_all` som har samma funktion, men tar emot en lista av strängar och returnerar en lista av konverterade strängar.
+
+```Gleam
+my_strings = ["HeLlo", "WoRlD"]
+lower_case_strings = my_strings |> String.to_lower_case_all
+```
+
+Output: `["hello", "world"]`
 
 ## Djupdykning
-Att konvertera en sträng till gemener innebär att du ändrar alla versaler (stora bokstäver) till gemener (små bokstäver). I Unicode finns det dock vissa tecken som inte har en gemener, såsom vissa akutaccent (´). Detta kan leda till oväntade resultat när man använder inbyggda funktioner för att konvertera strängar till gemener. Det är därför viktigt att ha detta i åtanke när du arbetar med olika språk och teckenuppsättningar.
+Det finns flera anledningar till att man vill konvertera en sträng till små bokstäver, till exempel för jämförelse eller för att underlätta sökning. Det kan också vara användbart för att få en enhetlig form på strängar som innehåller blandade stor- och små bokstäver.
+
+Det finns även andra metoder för att konvertera strängar till olika former, som till exempel `String.to_upper`, `String.to_title` och `String.to_snake_case`. Dessa funktioner kan vara användbara beroende på vilken form du vill ha på din sträng.
 
 ## Se även
-- [Gleam Documentation: String module](https://gleam.run/modules/std/string#to_lower)
-- [Unicode: Lowercase Mapping](https://www.unicode.org/charts/PDF/U0000.pdf)
+- [Gleam dokumentation om strängar](https://gleam.run/core/string.html)
+- [Gleam String modul på GitHub](https://github.com/gleam-lang/gleam_stdlib/blob/main/std/string.gleam)

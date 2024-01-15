@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf die Standardfehlerausgabe"
+html_title:           "PHP: Schreiben auf die Standardfehlerausgabe"
 simple_title:         "Schreiben auf die Standardfehlerausgabe"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,38 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Fehlermeldungen oder sogenannten Standardfehlermeldungen ist eine wichtige Funktion beim Programmieren mit PHP. Sie ermöglicht es Entwicklern, potenzielle Fehler in ihrem Code zu identifizieren und zu beheben, bevor sie zu größeren Problemen führen. In diesem Blog-Beitrag werden wir uns näher damit beschäftigen und zeigen, wie man diese Funktion in PHP nutzen kann.
+Manchmal kann es vorkommen, dass wir in unseren PHP-Programmen Fehlermeldungen oder andere wichtige Informationen ausgeben möchten. Standardmäßig werden diese jedoch auf dem Bildschirm angezeigt, was nicht immer ideal ist. Deshalb ist es wichtig zu wissen, wie man in PHP Informationen an den sogenannten Standardfehler (standard error) ausgeben kann.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um eine Fehlermeldung in PHP zu schreiben, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der integrierten Funktion "error_log()", die es ermöglicht, eine benutzerdefinierte Fehlermeldung in das Standardfehlerprotokoll zu schreiben. Zum Beispiel:
-
-```PHP
-$error = "Fehler in der Funktion!";
-error_log($error);
-```
-
-Diese Funktion gibt die angegebene Fehlermeldung in das Standardfehlerprotokoll aus, welches standardmäßig in der PHP-Installation vorhanden ist. Der Vorteil dieser Methode ist, dass Entwickler ihre eigenen benutzerdefinierten Fehlermeldungen erstellen und in das Protokoll schreiben können.
-
-Eine weitere Möglichkeit ist die Verwendung von "trigger_error()", die ähnlich wie "error_log()" funktioniert, aber zusätzliche Informationen wie die Art des Fehlers und die Zeilennummer des Codes liefert. Zum Beispiel:
+Um Informationen an den Standardfehler auszugeben, können wir die Funktion ```fwrite()``` verwenden. Diese Funktion erwartet zwei Parameter: Zuerst den Datei-Handle von ```STDERR```, das für den Standardfehler steht, und dann die zu schreibende Nachricht als String.
 
 ```PHP
-$error = "Fehler in der Funktion!";
-trigger_error($error, E_USER_ERROR);
+fwrite(STDERR, 'Eine wichtige Fehlermeldung');
+```
+Dieser Code wird die Nachricht "Eine wichtige Fehlermeldung" an den Standardfehler ausgeben.
+
+Eine andere Möglichkeit ist die Verwendung von ```error_log```. Diese Funktion ermöglicht es uns, Informationen direkt an den Standardfehler zu senden, ohne einen Datei-Handle zu öffnen.
+
+```PHP
+error_log('Das ist eine wichtige Information', 0);
 ```
 
-Diese Funktion kann auch verwendet werden, um spezifische Fehler im Code zu markieren und anzuzeigen, an welcher Stelle sie aufgetreten sind.
+In beiden Fällen wird die Ausgabe nicht auf dem Bildschirm angezeigt, sondern in einem separaten Log-File gespeichert.
 
-## Tiefer Einblick
+## Deep Dive
 
-Das Schreiben von Standardfehlermeldungen ist ein wichtiger Teil der Fehlerbehandlung im PHP-Code. Es hilft Entwicklern dabei, potenzielle Probleme zu identifizieren und zu beheben, bevor sie zu größeren Problemen führen. Zusätzlich zu den oben genannten Methoden gibt es noch weitere Funktionen und Techniken, um Fehlermeldungen zu schreiben, wie z.B. die Verwendung von "ini_set()" oder die Änderung der Einstellungen in der PHP-Konfigurationsdatei.
+Standardmäßig ist der Standardfehler in PHP auf die gleiche Log-Datei wie der Standardausgang (standard output) eingestellt. Diese Einstellung kann jedoch durch das Setzen von ```ini_set('display_errors', 0);``` geändert werden. Dadurch werden die Fehlermeldungen nicht mehr auf dem Bildschirm ausgegeben, sondern nur noch in der Log-Datei.
 
-Es ist wichtig zu beachten, dass das Schreiben von Standardfehlermeldungen nicht die einzige Methode der Fehlerbehandlung ist. Es sollte immer in Kombination mit anderen Techniken wie z.B. Try-Catch-Blöcken oder Logging-Funktionen verwendet werden, um eine umfassende Fehlerbehandlung zu gewährleisten.
+Eine weitere Möglichkeit ist das Umlenken des Standardfehlers in eine eigene Log-Datei. Dies kann erreicht werden, indem man den Datei-Handle von ```STDERR``` auf eine Datei setzt, in die die Fehlermeldungen geschrieben werden sollen.
+
+```PHP
+$file = fopen('error.log', 'a');
+fwrite(STDERR, 'Dies ist eine wichtige Fehlermeldung');
+```
+
+Dieser Code wird die Fehlermeldung in die Datei "error.log" schreiben, anstatt sie auf dem Bildschirm anzuzeigen.
 
 ## Siehe auch
 
-Hier sind einige nützliche Ressourcen, um mehr über das Schreiben von Standardfehlermeldungen in PHP zu erfahren:
-
-- [PHP error_log() Dokumentation](https://www.php.net/manual/de/function.error-log.php)
-- [PHP trigger_error() Dokumentation](https://www.php.net/manual/de/function.trigger-error.php)
-- [Artikel über Fehlerbehandlung in PHP](https://www.cloudways.com/blog/php-error-handling/)
+- [PHP fwrite() Funktion] (https://www.php.net/manual/de/function.fwrite.php)
+- [PHP error_log() Funktion] (https://www.php.net/manual/de/function.error-log.php)
+- [PHP Standardimput/-ausgang (STDOUT/STDERR)] (https://www.php.net/manual/de/faq.commandline.php#faq.commandline.std)
+- [PHP ini_set() Funktion] (https://www.php.net/manual/de/function.ini-set.php)

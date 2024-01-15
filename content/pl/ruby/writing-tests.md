@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Ruby: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,74 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Testowanie jest nieodłączną częścią procesu pisania kodu. Zapewnia ono pewność, że nasza aplikacja działa poprawnie i minimizuje ryzyko wystąpienia błędów. Dzięki testom nie tylko sprawdzamy czy nasz kod działa poprawnie teraz, ale również ułatwiamy sobie pracę w przyszłości - przy wprowadzaniu zmian i rozwijaniu aplikacji.
+Czy kiedykolwiek zastanawiałeś się dlaczego programiści spędzają tyle czasu na pisaniu testów? Przecież to tylko kolejny etap w procesie tworzenia oprogramowania. Jednak naprawdę warto poświęcić ten dodatkowy wysiłek. Pisząc testy, możemy mieć pewność, że nasz kod jest funkcjonalny i nie dopuszcza do błędów, co przekłada się na wyższą jakość i niezawodność finalnego produktu.
 
 ## Jak to zrobić
 
-W celu napisania testów w Ruby możemy skorzystać z kilku bibliotek, takich jak Minitest czy RSpec. Poniżej pokazane są przykłady testów przy użyciu Minitest.
+Aby przetestować swój kod w języku Ruby, możemy wykorzystać framework testowy o nazwie "RSpec". W pierwszym kroku zainstalujmy go przy użyciu polecania `gem install rspec`. Następnie, stwórzmy nowy projekt Ruby i dodajmy do niego folder `spec`. W tym folderze będziemy przechowywać nasze testy.
 
-#### Test jednostkowy
-
-```Ruby
-require 'minitest/autorun'
-
-class Calculator
-  def add(a, b)
-    a + b
-  end
-end
-
-class TestCalculator < Minitest::Test
-  def setup
-    @calculator = Calculator.new
-  end
-
-  def test_addition
-    result = @calculator.add(2, 3)
-    assert_equal 5, result
-  end
-end
-```
-
-W powyższym przykładzie tworzymy klasę Calculator, która ma metodę add, która dodaje dwie liczby. W klasie testowej tworzymy obiekt tej klasy i w danym teście sprawdzamy, czy wynik dodawania jest poprawny.
-
-#### Test akceptacyjny
+Teraz, gdy mamy już odpowiednie narzędzia, możemy przystąpić do pisania samych testów. Poniżej przedstawiam przykład testu jednostkowego wraz z wyjaśnieniami:
 
 ```Ruby
-require 'minitest/autorun'
+# Ten test sprawdza, czy suma dwóch liczb jest poprawna.
+# Zaczynamy od podłączenia biblioteki "RSpec".
+require 'rspec'
 
-class Calculator
-  def divide(a, b)
-    a / b
-  end
-end
-
-class TestCalculator < Minitest::Test
-  def setup
-    @calculator = Calculator.new
-  end
-
-  def test_division_by_zero
-    assert_raises ZeroDivisionError do
-      @calculator.divide(2, 0)
+# Następnie definiujemy nazwę testu.
+RSpec.describe 'Dodawanie' do
+  # Wewnątrz bloku describe możemy zagnieżdżać kolejne bloki.
+  # W tym przypadku tworzymy blok dla metody "sum".
+  describe '#sum' do
+    # Tego typu blok używamy, gdy testujemy konkretną funkcję.
+    context 'gdy oba argumenty są liczbami' do
+      # Podajemy nazwę naszego testu.
+      it 'zwraca poprawną sumę' do
+        # Tworzymy obiekt, na którym będziemy testować metodę "sum".
+        calculator = Calculator.new
+        # Wywołujemy metodę "sum" z dwoma argumentami.
+        result = calculator.sum(2, 3)
+        # W tym miejscu definiujemy oczekiwany wynik.
+        expected_result = 5
+        # Porównujemy wyniki z użyciem metody "expect".
+        expect(result).to eq(expected_result)
+      end
     end
   end
 end
 ```
+Aby uruchomić nasz test, musimy przejść do folderu z projektem i wpisać w konsoli komendę `rspec spec`, która uruchomi wszystkie testy w folderze `spec`.
 
-W tym przypadku testujemy zachowanie aplikacji w przypadku podziału przez zero. Oczekujemy, że metoda rzuci wyjątek ZeroDivisionError.
+## Deep Dive
 
-## Głębszy wykład
+Pisząc testy, musimy pamiętać o kilku rzeczach:
 
-Testy są nie tylko przydatne w celu sprawdzenia poprawności kodu, ale także pozwalają na kontrolę jakości aplikacji. Dobrą praktyką jest pisanie testów przed napisaniem kodu, co pomaga w zdefiniowaniu oczekiwanej funkcjonalności oraz struktury kodu.
+1. Każdy test powinien być opisowy i czytelny. Dzięki temu łatwiej będzie nam zlokalizować błąd, gdy test nie przejdzie.
 
-Istotne jest również pokrycie testami jak największej ilości scenariuszy - zarówno poprawnych, jak i błędnych. Dzięki temu mamy pewność, że nasza aplikacja jest niezawodna i odporna na różne przypadki.
+2. Musimy sprawdzać warunki brzegowe. Często pomijamy takie przypadki, a to właśnie one mogą powodować błędy w naszym kodzie.
 
-Warto również pamiętać, że testy nie są jednorazową czynnością - powinniśmy aktualizować je przy każdej zmianie w kodzie, aby zapewnić, że nasza aplikacja nadal działa poprawnie.
+3. Pamiętajmy o testach jednostkowych oraz testach integracyjnych. Te pierwsze odpowiadają za testowanie pojedynczych funkcji, natomiast te drugie za poprawne działanie całego systemu.
+
+4. Przeprowadzajmy testy często, aby na bieżąco weryfikować nasz kod. Dzięki temu unikniemy problemów w przyszłości.
 
 ## Zobacz również
 
-- [Dlaczego warto testować w Ruby?](https://www.rubyguides.com/2015/01/rspec-tutorial/)
-- [Przewodnik po testowaniu w Ruby](https://www.rubyguides.com/2018/12/ruby-testing-guide/)
-- [Oficjalna dokumentacja Minitest](https://ruby-doc.org/stdlib-2.5.0/libdoc/minitest/rdoc/MiniTest.html)
-- [Oficjalna dokumentacja RSpec](http://rspec.info/documentation/)
+- [RubySpec](https://www.rubydoc.info/github/rubyspec/rubyspec)
+- [Tutorial RSpec](https://www.youtube.com/watch?v=JhR9IbX0DR8)
+- [The RSpec Book](https://pragprog.com/book/achbd/the-rspec-book)

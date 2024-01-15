@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Obtendo a data atual"
+title:                "Obtendo a data atual"
+html_title:           "Fish Shell: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por Que
+## Por que?
 
-Ao programar com a Fish Shell, muitas vezes você precisará obter a data atual para realizar diversas tarefas, como nomear arquivos ou criar logs. Felizmente, o Fish Shell tem uma maneira simples e eficiente de obter a data atual sem a necessidade de instalar pacotes adicionais.
+Quando estamos programando em linguagens de script, muitas vezes precisamos obter informações sobre a data atual. Isso pode ser necessário para criar arquivos com nomes exclusivos, registrar timestamps em registros de log ou até mesmo como parte de uma mensagem de saída em nosso script. Felizmente, o Fish Shell facilita a obtenção da data atual com alguns comandos simples.
 
-# Como Fazer
+## Como fazer:
 
-Para obter a data atual no Fish Shell, você pode utilizar o comando `date`. Veja um exemplo:
-
-```Fish Shell
-date +%Y-%m-%d
-```
-
-O código acima irá fornecer a data atual no formato "ano-mês-dia" (por exemplo, 2021-08-18). Você também pode personalizar o formato da data adicionando diferentes opções após o comando `date`. Por exemplo:
+Para obter a data atual no Fish Shell, podemos usar o comando `date` seguido de uma string de formatação. Por exemplo, para obter a data no formato "dia/mês/ano" podemos usar o seguinte comando:
 
 ```Fish Shell
-date +%A, %d de %B de %Y
+date +%d/%m/%Y
 ```
 
-Neste caso, o output será algo como "quarta-feira, 18 de agosto de 2021".
+Isso irá retornar a data atual no seguinte formato:
 
-# Deep Dive
+```Shell
+11/10/2021
+```
 
-Por padrão, o comando `date` utiliza a data e hora do sistema. No entanto, você também pode fornecer uma data específica como argumento, utilizando o formato "ano-mês-dia". Por exemplo:
+Também podemos obter informações adicionais, como o dia da semana, a hora atual e até mesmo o fuso horário, usando códigos de formatação específicos. Por exemplo, para obter o dia da semana e a hora atual com o fuso horário, podemos usar o seguinte comando:
 
 ```Fish Shell
-date -d 2021-12-25 +%A
+date +"%A às %H:%M %Z"
 ```
 
-O output desta linha será "sábado", já que a data fornecida é o Natal de 2021.
+Isso irá retornar algo parecido com:
 
-Também é possível realizar cálculos simples utilizando o comando `date`. Por exemplo, se você quiser saber qual será a data daqui a 30 dias, pode utilizar o seguinte código:
-
-```Fish Shell
-date -d "+30 days" +%A, %d de %B de %Y
+```Shell
+Segunda-feira às 18:30 CEST
 ```
 
-# Veja Também
+## Mergulho profundo:
 
-- Documentação do comando `date`: https://fishshell.com/docs/current/cmds/date.html
-- Tutorial sobre formatação de datas com o Fish Shell: https://arcolinux.com/f-formatting-dates-in-the-terminal-with-the-date-command-in-fish-shell/
+O comando `date` é na verdade um utilitário Unix que é amplamente suportado por diferentes sistemas operacionais e shells. Isso significa que podemos usar a mesma sintaxe e códigos de formatação em outros shells, como o Bash ou Zsh. Além disso, também podemos usar o comando `man date` para obter mais informações sobre todas as opções de formatação disponíveis.
+
+## Veja também:
+
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Documentação do comando Unix "date"](https://www.unix.com/man-page/posix/1p/date/)
+- [Tutorial do Fish Shell no DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell-in-linux-and-os-x)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Debug-tulostuksen tulostaminen"
-simple_title:         "Debug-tulostuksen tulostaminen"
+title:                "Tulostaa virhedataa"
+html_title:           "Ruby: Tulostaa virhedataa"
+simple_title:         "Tulostaa virhedataa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ruby-ohjelman debug-tulosteiden tulostaminen on tärkeä osa ohjelmointiprosessia. Debug-tulosteiden tulostaminen auttaa sinua selvittämään ohjelmien virheitä ja koodin suoritusjärjestystä. Se on tärkeä työkalu ohjelmoijille, jotka haluavat varmistaa koodinsa sujuvan ja virheettömän suorituksen.
+Ruby-ohjelmointikielellä debug-viestien tulostaminen on hyödyllinen tapa tarkistaa ohjelman suoritusta ja korjata mahdollisia virheitä. Lisäksi se auttaa koodin ymmärtämisessä ja kehittämisessä.
 
 ## Miten
 
-Kun haluat tulostaa debug-tulosteita Ruby-ohjelmassasi, voit käyttää `puts`-metodia. Se tulostaa haluamasi viestin ja mahdollisen muuttujan arvon. Esimerkiksi:
+Debug-viestien tulostaminen Rubyssa on helppoa ja nopeaa. Voit käyttää `puts` tai `p` -metodia, joka tulostaa viestin terminaaliin. Voit myös käyttää `p` -metodia, joka tulostaa viestin lisäksi myös tiedon tietotyypistä ja muodosta. Esimerkiksi:
 
 ```Ruby
-puts "Tulostetaan debug-tuloste!"
-puts "Muuttujan arvo on #{muuttuja}"
+p "Tervetuloa Ruby-ohjelmointimaailmaan"
+# Tervetuloa Ruby-ohjelmointimaailmaan
 ```
 
-Ohjelman suorituksessa saat seuraavanlaisen tulosteen:
-
-```
-Tulostetaan debug-tuloste!
-Muuttujan arvo on 10
-```
-
-Voit myös käyttää `p`-metodia, joka tulostaa muuttujan arvon sellaisenaan. Esimerkiksi:
+Voit myös tulostaa debug-viestin muuttujien arvoilla käyttämällä merkkijonon interpolointia tai string-metodia. Esimerkiksi:
 
 ```Ruby
-muuttuja = 10
-p muuttuja
+name = "Maija"
+puts "Hei, minun nimeni on #{name}."
+p name.upcase
+# Hei, minun nimeni on Maija.
+#"MAIJA"
 ```
 
-Tällöin saat tulosteena `10`.
+## Syvällinen sukellus
 
-## Syvemmälle
+Debug-viestien tulostaminen on hyödyllinen taito Ruby-kehittäjille. Se auttaa tunnistamaan virheitä ja ymmärtämään ohjelman toimintaa. Voit myös käyttää `binding.pry` -metodia, joka pysäyttää ohjelman suorituksen tietyssä kohtaa ja avaa interaktiivisen konsolin, jossa voit tarkastella muuttujia ja debugata koodia.
 
-On tärkeää muistaa, että debug-tulosteiden tulostaminen hidastaa ohjelman suoritusta. Siksi niitä tulisi käyttää vain silloin, kun todella tarvitset tietoa koodin suorituksen vaiheista. Voit myös käyttää ehtolauseita ja käyttää `puts`- tai `p`-metodia vain tietyissä tilanteissa.
-
-Voit myös käyttää `binding.pry`-metodia ohjelman suorituksen keskeyttämiseen ja tarkastella muuttujien arvoja ja suoritusjärjestystä. Tämä on hyödyllinen työkalu monimutkaisempien ohjelmien debuggaamiseen.
+Toinen hyödyllinen tekniikka on käyttää `ENV['DEBUG']` -asetusta, joka mahdollistaa debug-viestien tulostamisen vain silloin, kun haluat. Voit esimerkiksi asettaa sen todeksi vain kehitysympäristössä ja estää debug-viestien tulostamisen kun ohjelma on tuotantokäytössä.
 
 ## Katso myös
 
-- [Ruby-opetusohjelma](https://www.ruby-lang.org/fi/learn/)
-- [Ruby-debuggausopas](https://www.howtogeek.com/howto/6152/use-the-built-in-irb-debugger-to-debug-your-ruby-code/)
-- [Ruby-ohjelmoinnin perusteet](https://www.tutorialspoint.com/ruby/ruby_basic_syntax.htm)
+- [Rubyissa debug-viestien tulostaminen](https://www.rubyguides.com/2019/02/ruby-print-debug-messages/)
+- [Ruby on Rails debuggaaminen](https://gorails.com/episodes/how-to-debug-ruby-on-rails-applications)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Scrivere test"
+title:                "Scrivere test"
+html_title:           "Fish Shell: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,36 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test? 
-Scrivere test è uno dei migliori modi per assicurarsi che il codice che scriviamo funzioni correttamente. Ci aiuta a identificare eventuali errori o bug prima che possano creare problemi più seri nel nostro programma.
+## Perché
 
-## Come scrivere test in Fish Shell 
-Scrivere test in Fish Shell è semplice e intuitivo. Utilizzando il comando "test", possiamo verificare le nostre aspettative su variabili, espressioni e comandi. Vediamo un esempio:
+Scrivere test è un'importante pratica di programmazione che consente di verificare il corretto funzionamento del codice e di prevenire potenziali errori. Inoltre, i test rendono il processo di sviluppo più efficiente, in quanto aiutano a individuare e risolvere i bug in modo più rapido e preciso.
 
-```Fish Shell
-set fruit "apple"
-test $fruit = "apple"
+## Come fare
+
+```Fish Shell``` è un potente strumento per scrivere test per il tuo codice. Ecco un semplice esempio di come creare un test di unità per una funzione di concatenazione in ```Fish Shell```.
+
+```
+# Definiamo la funzione di concatenazione
+function concat_var -d "Concatena due variabili"
+  set var1 "$argv[1]"
+  set var2 "$argv[2]"
+
+  # Restituiamo la concatenazione delle due variabili
+  echo "$var1$var2"
+end
+
+# Creiamo un test per la funzione
+function test_concat_var
+  # Definiamo due variabili
+  set a "Ciao"
+  set b "Mondo"
+
+  # Richiamiamo la funzione con le due variabili come argomenti
+  set result (concat_var $a $b)
+
+  # Verifichiamo che il risultato sia corretto
+  if [ "$result" = "CiaoMondo" ]
+    echo "Test superato!"
+  else
+    echo "Il test ha fallito."
+  end
+end
+
+# Eseguiamo il test
+test_concat_var
 ```
 
-Il comando "set" ci permette di assegnare il valore "apple" alla variabile "fruit". Poi, con il comando "test", verifichiamo se il valore di "fruit" è effettivamente "apple". Se tutto va bene, non vedremo alcun output. Tuttavia, se modifichiamo il valore della variabile, ad esempio con "set fruit "banana"", il comando "test" fallirà e ci mostrerà un messaggio di errore.
+Ecco come il risultato dovrebbe apparire nel terminale:
 
-Un altro esempio potrebbe essere il seguente:
-
-```Fish Shell
-mkdir temp_folder
-touch temp_folder/file.txt
-test -f temp_folder/file.txt
+```
+$ fish test.fish
+Test superato!
 ```
 
-Qui, creiamo una nuova cartella chiamata "temp_folder" e un file al suo interno. Poi, con il comando "test", verifichiamo se il file esiste nella cartella. Se il file è effettivamente presente, non vedremo alcun output.
+## Approfondimento
 
-## Approfondimento sui test 
-Scrivere test è un ottimo modo per garantire la qualità e la stabilità del nostro codice. Inoltre, ci aiuta a trovare errori e bug in modo rapido ed efficiente. È importante anche scrivere test per le funzioni più critiche del nostro programma, per assicurarci che sempre funzionino correttamente.
+Scrivere test per il tuo codice è importante non solo per verificare il corretto funzionamento delle funzioni, ma anche per garantire la qualità del tuo codice. Ecco alcuni consigli per scrivere test efficaci:
 
-In Fish Shell, esistono diverse tecniche per scrivere test più avanzati, come ad esempio l'utilizzo di blocchi "if" e "end" o l'utilizzo di espressioni regolari. Se vuoi approfondire ulteriormente l'argomento, ti consiglio di dare un'occhiata alla documentazione ufficiale di Fish Shell o ad alcuni tutorial online.
+- Assicurati di testare tutti i possibili scenari, incluso il caso di input errati o imprevisti.
+- Utilizza strumenti di test automatizzati per eseguire i test in modo più efficiente.
+- Scrivi test in modo regolare durante il processo di sviluppo, anziché aspettare fino alla fine.
+- Non rinunciare a scrivere test solo perché sembra essere una perdita di tempo. In realtà, scrivere test può risparmiare tempo e fatica in futuro.
 
-## Vedi anche 
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
-- Tutorial su Fish Shell: https://www.digitalocean.com/community/tutorials/how-to-use-fish-shell-on-a-vps
-- Come scrivere test in Bash: https://www.linuxjournal.com/content/return-values-bash-functions
-- Espressioni regolari in Fish Shell: https://fishshell.com/docs/current/index.html#patterns
+## Vedi anche
+
+- [Fish Shell - documentazione ufficiale](https://fishshell.com/docs/current/)
+- [Guida rapida a Fish Shell per principianti](https://www.graspingtech.com/fish-shell-tutorial/)
+- [Introduzione ai test di unità in Fish Shell](https://medium.com/@camontes/testing-in-fish-shell-411b2a85b19d)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Utdrag av delstrenger"
-simple_title:         "Utdrag av delstrenger"
+title:                "Utvinning av delstrenger"
+html_title:           "Gleam: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,43 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor vil noen ønske å trekke ut substringer i Gleam-programmering? Å extrahere substringer er et nyttig verktøy som kan brukes for å manipulere strenger på en mer effektiv måte. Det kan også være nyttig for å analysere og håndtere data på en mer nøyaktig måte.
+Du har kanskje hørt begrepet "utvinne substrings" og lurt på hva det egentlig betyr og hvorfor noen ville gjøre det. Kort sagt, å utvinne substrings handler om å hente ut en del av en tekst eller en tekstvariabel basert på et bestemt kriterium. Dette kan være nyttig når du jobber med tekstbehandling eller dataanalyse, og det kan gjøre koden din mer effektiv og lesbar.
 
-## Hvordan
+## Hvordan å
 
-For å ekstrahere substringer i Gleam, kan du bruke funksjonen `substring()` som tar inn tre parametere: en streng, en startindeks og en sluttindeks. Her er et eksempel på hvordan du kan bruker denne funksjonen:
+For å utvinne substrings i Gleam, bruker du funksjonen `String.sub()`. Denne funksjonen tar tre argumenter: en tekst, en startindeks og en sluttkildeks. Den returnerer en ny tekst som består av en del av den originale teksten basert på start- og sluttposisjonene du angir.
 
-```Gleam
-let str = "Hei, dette er en Gleam bloggpost."
-let sub = substring(str, 5, 12)
-```
-
-I dette eksempelet vil `sub` variabelen inneholde ordet "dette". `substring()`-funksjonen starter å telle indekser fra 0, så 5 representerer starten på ordet "dette", og 12 representerer slutten av ordet.
-
-Outputen av dette eksempelet vil være `dette er`, siden funksjonen inkluderer både start- og sluttindeks i det ekstraherte substringet.
-
-## Deep Dive
-
-Det er verdt å merke seg at `substring()`-funksjonen i Gleam også kan brukes med negative indekser. Dette betyr at du kan trekke ut substringer fra slutten av en streng i stedet for begynnelsen. Her er et eksempel på hvordan du kan trekke ut de to siste ordene fra en streng:
+La oss si at vi har følgende tekstvariabel:
 
 ```Gleam
-let str = "Dette er den siste strengen."
-let sub = substring(str, -2, -1)
+tekst = "Hei, hva skjer?"
 ```
 
-Outputen vil da være `siste strengen`.
-
-En annen nyttig funksjon i forbindelse med substringer er `split()`-funksjonen. Denne funksjonen tar inn en streng og et skillemerke som parametere, og returnerer en liste av substringer som er separert av skilletegn. Her er et eksempel:
+Hvis vi bare vil ha ordet "hva" fra denne teksten, bruker vi `String.sub()`:
 
 ```Gleam
-let str = "Apple, Orange, Banana, Mango"
-let list = split(str, ", ")
+String.sub(tekst, 5, 7)
 ```
 
-Outputen vil da være en liste med fire elementer: "Apple", "Orange", "Banana" og "Mango".
+Dette vil returnere `hva`, som er ordet mellom indeks 5 og 7 i teksten. Du kan også bruke negative tall for å angi indekser fra slutten av teksten. For eksempel, hvis du vil ha de to siste tegnene i teksten, kan du bruke:
 
-## Se også
+```Gleam
+String.sub(tekst, -2, -1)
+```
 
-- [Offisiell Gleam dokumentasjon om substringer](https://gleam.run/documentation/stdlib/string.html#functions)
-- [En guide til Gleam for nybegynnere (på norsk)](https://medium.com/@danielschukert/an-introduction-to-gleam-for-beginners-e96f788225e2)
-- [En introduksjon til strenger i Gleam (på norsk)](https://medium.com/@danielschukert/a-beginners-guide-to-strings-in-gleam-norwegian-c59aacc87e3f)
+Dette vil returnere `er`, siden det er de to siste tegnene i teksten. Hvis du bare angir en startindeks vil funksjonen returnere en del av teksten fra og med denne indeksen til slutten av teksten. Og hvis du bare angir en sluttkildeks, vil funksjonen returnere en del av teksten fra starten til denne indeksen.
+
+## Dypdykk
+
+Som nevnt kan du bruke både positive og negative tall for å angi indekser når du bruker `String.sub()`. Men du kan også bruke variabler eller beregninger som argumenter, for eksempel:
+
+```Gleam
+start = 10
+slutt = 15
+String.sub(tekst, start, slutt)
+```
+
+Eller:
+
+```Gleam
+tall = 2 + 3
+String.sub(tekst, 0, tall)
+```
+
+Dette vil hjelpe deg med å dynamisk hente ut substrings basert på varierende kriterier. Du kan også bruke funksjonen `String.len()` for å få lengden på en tekst og bruke det som en sluttkildeks for å få den siste delen av teksten.
+
+## Se Også
+
+- Offisiell Gleam dokumentasjon for `String.sub()`: https://gleam.run/guides/strings.html#string-substring
+- En annen artikkel om å utvinne substrings i Gleam: https://medium.com/@sle/don-t-like-slicing-use-string-sub-in-gleam-c9de602fc6f5

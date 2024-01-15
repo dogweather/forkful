@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: HTML पार्सिंग"
-simple_title:         "HTML पार्सिंग"
+title:                "HTML का विश्लेषण"
+html_title:           "Gleam: HTML का विश्लेषण"
+simple_title:         "HTML का विश्लेषण"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,47 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-HTML पार्सिंग में शामिल होने के दौरान, आप वेबसाइटों से डेटा को स्क्रैप कर सकते हैं। यह आपको डेटा का अनुकरण करने और उसे अपनी अनुकूलता के अनुसार संरचित करने की अनुमति देता है।
+आपको शायद ही पता हो कि वेब के हर पृष्ठ में होते हैं उस्ताद पाठ, जिन्हें आपको समझने के लिए HTML को पेशे वार ढंग से पार्स किया जाना होगा। एक उच्च गुणवत्ता वाले पार्शिंग टूल के बिना, यह काम थोड़ा मुश्किल हो सकता है। इसलिए, हमारे पाठकों के लिए, हम बताने जा रहे हैं कि ग्लीम कैसे आपकी मदद कर सकता है HTML को पार्स करने में।
 
 ## कैसे करें
 
-जैसा कि हम सभी जानते हैं, वेबसाइटों में डेटा हमारे अनुकूलता के लिए ऊपर से आता है। ग्लेम में, हम केवल HTML को पार्स करके उसे डेटा स्ट्रक्चर में परिवर्तित करने के लिए थोड़ी सी कोड लिख सकते हैं। इसके लिए `html.parse` फंक्शन का उपयोग करें:
-
-```
-Gleam> html.parse("<h1>Hello World</h1>")
-ᚕOk(ᚐ
-    [
-        {
-            tag = "h1",
-            children = [
-                {
-                    tag = (),
-                    text = "Hello World",
-                    attributes = (),
-                    children = [()],
-                },
-            ],
-            attributes = (),
-            children = [
-                {
-                    tag = (),
-                    text = "Hello World",
-                    attributes = (),
-                    children = [()],
-                },
-            ],
-        },
-    ],
-)
+```gleam
+import html
+parsed_html = html.parse("""<html>
+<head>
+  <title>Gleam Tutorial</title>
+</head>
+<body>
+  <h1>Welcome to Gleam</h1>
+  <p>This is a tutorial about parsing HTML with Gleam.</p>
+</body>
+</html>""")
 ```
 
-आप सामान्य ग्राहकों को बाहर सिर्फ `<h1>Hello World</h1>` देख सकते हैं, लेकिन `html.parse` फंक्शन इसे स्पष्ट रूप से स्ट्रक्चर में डेटा के साथ प्रस्तुत करता है।
+जैसा कि आप ऊपर दिखा रहे कोड से देख सकते हैं, हमने पहले ग्लीम की `html` मॉड्यूल को आयात किया और फिर हमें एक HTML स्ट्रिंग को पार्स करने के लिए `html.parse` फंक्शन को बुलाया। हमारा आउटपुट `parsed_html` नाम के एक ओब्जेक्ट के अंदर स्टोर होगा जिसे हम उपयोग करके HTML के अलग-अलग एलिमेंट्स, एट्रिब्यूट्स और टेग से एकसाथ अलग डेटा को एक्सेस कर सकते हैं।
 
-## गहराई में जायें
+```gleam
+title = parsed_html.find("title")
+p = parsed_html.find(".//p")
+```
 
-HTML पार्स करना थोड़ा सामान्य है, लेकिन भाषा की सामग्री को समझने और उसे स्ट्रक्चर में लाने में प्रतिभागियों को गहराई में जाने की आवश्यकता हो सकती है। इसलिए, आप #Gleam-HTML [प्रोजेक्ट में](https://github.com/gleam-lang/gleam_html) और [विशेष प्रोजेक्ट सिद्धांतों में](https://gleam.run/#org812c478) गहराई में प्रवेश कर सकते हैं।
+ऊपर दिए हुए उदाहरण से आप देख सकते हैं कि हम एक `title` एलिमेंट को स्ट्रिंग के रूप में `title` नामक भेदक की सहायता से एक्सेस कर सकते हैं और वहीं हम `find` फंक्शन का उपयोग करके परिणाम से `p` को एक पैराग्राफ़ एलिमेंट के रूप में हासिल कर सकते हैं।
 
-## देखें भी
+```gleam
+print(title.text) // Output: Gleam Tutorial
+print(p.text) // Output: This is a tutorial about parsing HTML with Gleam.
+```
 
-- [ग्लेम डॉक्यूमेंटेशन](https://gleam.run/)
-- [ग्लेम-HTML प्रोजेक्ट](https://github.com/gleam-lang/gleam_html)
+अधिक उपयोगी फंक्शनों के बारे में

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Extraction de sous-chaînes"
-simple_title:         "Extraction de sous-chaînes"
+title:                "Extraction de sous-chaines"
+html_title:           "Gleam: Extraction de sous-chaines"
+simple_title:         "Extraction de sous-chaines"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,37 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+Avez-vous déjà eu besoin d'extraire une partie spécifique d'une chaîne de caractères en programmation ? Si oui, vous n'êtes pas seul ! La méthode d'extraction de sous-chaînes est un outil très utile pour manipuler des données et résoudre des problèmes complexes en utilisant Gleam.
 
-L'extraction de sous-chaînes est une fonctionnalité utile dans de nombreux projets de programmation. Cela vous permet de sélectionner et de manipuler des parties spécifiques d'une chaîne de caractères, ce qui peut être particulièrement pratique lors du traitement de données ou de la création de modèles de texte.
-
-## Comment faire
-
-Voici comment vous pouvez utiliser la fonction d'extraction de sous-chaînes en utilisant le langage de programmation Gleam :
-
+## Comment Faire
+Pour extraire une sous-chaîne en utilisant Gleam, vous devez d'abord connaître la syntaxe de base : 
+```Gleam
+str.slice(start, end) 
 ```
-Gleam |> string.sub("Bonjour le monde", 8, 12)
+Cette fonction prend en paramètres l'index de début et de fin de la sous-chaîne que vous souhaitez extraire. Par exemple, si vous voulez extraire les trois premiers caractères d'une chaîne de caractères, vous pouvez utiliser : 
+```Gleam 
+str.slice(0, 3) 
 ```
-
-La sortie pour cet exemple serait "le monde", car nous avons sélectionné les caractères de la 8e à la 12e position dans la chaîne "Bonjour le monde". Vous pouvez également utiliser des variables pour spécifier les positions de début et de fin, ce qui peut rendre l'extraction de sous-chaînes plus dynamique.
-
-```
-let message = "Bonjour le monde"
-let debut = 8
-let fin = 12
-Gleam |> string.sub(message, debut, fin)
+Et voici le résultat : 
+```Gleam 
+"Bon" 
 ```
 
-La sortie serait toujours "le monde", mais vous pouvez maintenant changer les valeurs de début et de fin pour extraire différentes sous-chaînes.
+Vous pouvez également utiliser des variables à la place des valeurs numériques dans la fonction slice et même utiliser des boucles pour extraire plusieurs sous-chaînes à la fois.
 
-## Plongée en profondeur
+## Plongée Profonde
+Maintenant que vous savez comment extraire une sous-chaîne en utilisant Gleam, vous pouvez également profiter de ses autres fonctionnalités pour effectuer des opérations plus avancées. Par exemple, vous pouvez utiliser la fonction ```split``` pour diviser une chaîne en un tableau de sous-chaînes en utilisant un séparateur spécifique. Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes en fonction d'un motif spécifique.
 
-La fonction `string.sub` est basée sur les index de caractères, ce qui signifie qu'elle compte chaque caractère individuel pour déterminer sa position dans la chaîne. Cela peut sembler évident, mais il est important de le savoir lors de l'extraction de sous-chaînes, car les espaces et les caractères spéciaux comptent également comme des caractères. Par exemple, si vous avez une chaîne avec des espaces et que vous essayez d'extraire une sous-chaîne à partir d'un certain nombre de positions, vous devez prendre en compte les espaces pour obtenir le résultat souhaité.
-
-En outre, la fonction `string.sub` renverra une erreur si les positions spécifiées sont en dehors de la plage de caractères de la chaîne donnée. Par exemple, si vous essayez d'extraire une sous-chaîne à partir de la 15e position d'une chaîne avec seulement 10 caractères, cela entraînera une erreur.
-
-## Voir aussi
-
-Pour plus d'informations sur la fonction `string.sub` et d'autres fonctionnalités de manipulation de chaînes en Gleam, consultez ces liens utiles :
-
-- [Documentation officielle de Gleam](https://gleam.run/documentation/)
-- [Tutoriel de Gleam sur la manipulation de chaînes](https://www.fusioncharts.com/blog/learning-gleam-manipulating-strings/)
+## Voir Aussi
+- Documentation officielle sur la manipulation de chaînes de caractères en Gleam : https://gleam.run/docs/string
+- Tutoriel sur les expressions régulières en Gleam : https://dev.to/katendesaumwe/guide-to-regular-expressions-in-gleam-3imh
+- Exemples de code en Gleam : https://gist.github.com/happi/the-new-erlang-lang

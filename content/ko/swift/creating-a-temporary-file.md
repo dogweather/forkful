@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 임시 파일 생성하기"
+title:                "임시 파일 생성하기"
+html_title:           "Swift: 임시 파일 생성하기"
 simple_title:         "임시 파일 생성하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜: 임시 파일을 생성하는 이유
+## 왜
 
-임시 파일을 생성하는 것은 여러 가지 이유가 있을 수 있습니다. 예를 들어, 파일을 임시로 저장하고 사용한 뒤에는 삭제하는 경우가 있을 수 있습니다. 또는 일시적인 데이터를 다루는 경우 임시 파일을 사용하는 것이 효율적일 수 있습니다.
+임시 파일을 생성하는 것에 참여하는 이유는 매우 간단합니다. 이는 파일을 생성하고 사용한 후에 해당 파일을 자동으로 삭제하게 해주기 때문입니다. 이는 우리가 불필요한 파일을 수동으로 삭제하는 수고를 덜어줍니다!
 
-## 방법: 임시 파일 생성하기
+## 사용 방법
 
-Swift에서 임시 파일을 생성하는 방법은 간단합니다. 우선, `FileManager` 클래스의 `temporaryDirectory` 메서드를 사용하여 임시 폴더의 경로를 가져옵니다. 그리고 `createFile(atPath:contents:attributes:)` 메서드를 사용하여 임시 파일을 생성하고 데이터를 쓸 수 있습니다.
+코드를 작성하기 전에, `FileManager`를 import 해야 합니다. 그러고난 후에는 `FileManager`의 `URLForDirectory` 메소드를 사용하는데, 이는 우리가 생성한 임시 파일을 저장할 디렉토리를 반환합니다. 이후에는 `FileManager`의 `createFile` 메소드를 사용하여 임시 파일을 생성할 수 있습니다.
 
-```Swift
+``` Swift 
 let fileManager = FileManager.default
-let tempDirectory = fileManager.temporaryDirectory
-let tempFilePath = tempDirectory.appendingPathComponent("myfile.txt")
+let tempDir = fileManager.URLForDirectory(FileManager.SearchPathDirectory.ItemReplacementDirectory, inDomain: FileManager.SearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: true, error: nil)
+let tempURL = tempDir?.appendingPathComponent("temp.txt")
 
 do {
-    try fileManager.createFile(atPath: tempFilePath, contents: nil, attributes: nil)
-    let data = "Hello World".data(using: .utf8)
-    try data?.write(to: URL(fileURLWithPath: tempFilePath))
-    print("임시 파일이 생성되었습니다.")
-}catch {
-    print("임시 파일 생성에 실패하였습니다.")
+    try "This is a temporary file!".write(to: tempURL!, atomically: true, encoding: String.Encoding.utf8)
+    print("\(tempURL!) 파일이 생성되었습니다.")
+} catch {
+    print("파일을 생성하는데 실패했습니다.")
 }
 ```
 
-위의 코드를 실행하면 임시 파일이 생성되고 "Hello World"라는 텍스트가 파일에 쓰여집니다.
+위의 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
 
-## 깊이 집어보기: 임시 파일 생성 방법 더 알아보기
+```
+file:///Users/username/Library/Temporary%20Items/temp.txt 파일이 생성되었습니다.
+```
 
-위에서는 간단한 예제를 통해 임시 파일을 생성하는 방법을 알아보았습니다. 하지만 실제로는 더 다양한 옵션을 사용하여 임시 파일을 생성할 수 있습니다.
+## 깊이 들어가기
 
-예를 들어, `createFile(atPath:contents:attributes:)` 메서드의 `attributes` 매개변수를 통해 생성된 파일의 속성을 설정할 수 있습니다. 또한 `URL` 클래스를 사용하여 파일 경로를 더 쉽게 다룰 수 있습니다.
+임시 파일을 생성하는데는 두 가지 방법이 있습니다. 첫 번째 방법은 `FileManager`의 `URLForDirectory` 메소드를 사용하는 것이고, 두 번째 방법은 `NSTemporaryDirectory` 메소드를 사용하는 것입니다. 두 방법 중 어떤 것을 사용하든 임시 파일을 생성하는 것은 동일하지만, `NSTemporaryDirectory`는 iOS 7 이상에서만 사용 가능합니다.
 
-더 많은 옵션과 기능을 사용하여 임시 파일을 생성하는 방법을 익혀보세요.
+## 참고 자료
 
-## 또 다른 방법 참고하기
-
-- [한국어로 배우는 Swift 문서](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Swift 공식 문서](https://developer.apple.com/swift/)
+- [Apple's Documentation on NSTemporaryDirectory](https://developer.apple.com/documentation/foundation/1409215-nstemporarydirectory)
+- [How To Use FileManager in Swift](https://www.ralfebert.de/ios-examples/foundation/filemanager/)

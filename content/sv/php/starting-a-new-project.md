@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "PHP: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -11,37 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt programmeringsprojekt kan kännas överväldigande och krävande, men det kan också vara en otroligt givande och spännande upplevelse. Genom att skapa något från grunden kan du utveckla dina kunskaper och färdigheter inom programmering och samtidigt bidra till den ständigt växande digitala världen.
+Om du är nyfiken på hur webbutveckling och programmering fungerar, är PHP en utmärkt plattform att lära sig. Det är ett användarvänligt och populärt språk som används för att skapa dynamiska och interaktiva webbsidor.
 
-## Hur du gör det
+## Hur man börjar
 
-Det finns många olika sätt att gå tillväga för att starta ett nytt programmeringsprojekt, men en vanlig metod är att börja med att välja ett programmeringsspråk. Ett av de mest populära och användbara språken just nu är PHP, så i den här bloggposten kommer vi att fokusera på just det.
+För att starta ett nytt PHP-projekt behöver du en texteditor och en webbläsare. Börja med att skapa en ny fil med filändelsen ".php" och öppna den i din texteditor. Sedan kan vi börja med att skriva en grundläggande "Hello World!"-applikation.
 
-För att komma igång med PHP-behöver du först och främst installera en server på din dator. Det finns flera olika alternativ som Xampp, Wamp eller Mamp som alla är gratis att ladda ner och använda.
-
-När servern är igång är det dags att skapa din första fil med PHP-kod. Här är ett enkelt exempel på en hello world-applikation:
+Först behöver vi skriva några enkla HTML-taggar för att skapa en webbsida:
 
 ```PHP
-<?php
-echo "Hej världen!";
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Min första PHP-applikation</title>
+</head>
+<body>
+	<h1>Hello World!</h1>
+</body>
+</html>
 ```
 
-Koden ovan kommer att skriva ut "Hej världen!" i webbläsaren när du öppnar filen i din webbläsare. Det är en enkel men viktig första steg för att komma igång med PHP.
+Spara filen och öppna den i din webbläsare genom att skriva in filens sökväg i adressfältet. Om allt har gått rätt till bör du nu se en enkel webbsida med stora bokstäver som säger "Hello World!".
+
+Nu kommer vi till det roliga, att lägga till PHP-kod. PHP-kod skrivs inom `<?php` och `?>` taggar. Allt innehåll som är innan dessa taggar kommer att tolkas som vanlig HTML. Låt oss ändra vår tidigare kod för att inkludera PHP:
+
+```PHP
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Min första PHP-applikation</title>
+</head>
+<body>
+	<?php
+	echo "<h1>Hello World!</h1>";
+	?>
+</body>
+</html>
+```
+
+Spara filen och uppdatera din webbläsare. Nu bör du se samma output som tidigare, men denna gång använder vi PHP för att skriva ut "Hello World!"-meddelandet.
 
 ## Djupdykning
 
-När du väl har kommit igång med din första PHP-applikation finns det många olika vägar du kan ta för att utveckla dina kunskaper och ta ditt projekt till nästa nivå. Här är några tips för att fördjupa dig i PHP-programmering:
+PHP är ett server-side skriptspråk, vilket innebär att koden körs på servern istället för på din klient. Detta ger dig möjligheten att skapa dynamiska webbsidor som kan anpassas baserat på användarens input och andra faktorer.
 
-- Utforska olika typer av variabler och datatyper som finns i PHP för att bättre förstå hur du kan hantera och lagra information i dina applikationer.
-- Lär dig mer om loopar, villkor och funktioner, som är grundläggande byggstenar i PHP-programmering.
-- Använd dig av PHP:s inbyggda funktioner och bibliotek för att göra din kod mer effektiv och kraftfull.
-- Läs på om säkerhet inom PHP-programmering för att undvika sårbarheter och skydda din kod och ditt projekt.
+En av de vanligaste anledningarna till att starta ett PHP-projekt är för att bygga en e-handelswebbplats. Detta är möjligt tack vare funktionerna för att hantera data, såsom lagring av användares kundvagnar eller inloggningssystem för att skydda känsliga uppgifter.
 
-## Se också
+En annan fördel med PHP är dess stora community och ständiga utveckling. Det finns en mängd tillgängliga resurser och dokumentation för att hjälpa dig att lära dig och utveckla din kunskap inom språket. Oavsett om du är en nybörjare eller en erfaren utvecklare, finns det alltid något nytt att lära sig och utforska.
 
-Här är några länkar som kan vara användbara för dig som vill fortsätta lära dig mer om PHP-programmering:
+## Se även
 
-- [Officiell PHP-dokumentation] (https://www.php.net/manual/en/)
-- [PHP The Right Way] (https://phptherightway.com/)
-- [Udemy: PHP for Beginners - Become a PHP Master] (https://www.udemy.com/course/php-for-beginners-start-becoming-a-superstar-php-programmer/)
+- [Officiell PHP-dokumentation](https://www.php.net/manual/sv/)
+- [Codecademy's PHP-kurs](https://www.codecademy.com/learn/learn-php)
+- [W3Schools PHP-tutorial](https://www.w3schools.com/php/)

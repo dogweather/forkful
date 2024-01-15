@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "TypeScript: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,47 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Pisanie kodu może być zabawne i satysfakcjonujące, ale równie ważne jest aby wybrać właściwe narzędzia i technologie. Jednym z narzędzi, które może być przydatne dla każdego programisty, jest YAML. W tym artykule omówimy, dlaczego warto rozważyć użycie YAML w pracy z TypeScript.
 
-## Jak używać YAML z TypeScript
+Jeśli jesteś programistą, który korzysta z JavaScript lub TypeScript, na pewno słyszałeś o formacie YAML. YAML to język oparty na tekście, który jest coraz częściej wykorzystywany do przechowywania i przesyłania danych w aplikacjach webowych. W tym artykule dowiesz się, dlaczego warto nauczyć się pracować z YAML.
+
+## Jak to zrobić
+
+Na początek musimy zainstalować pakiet @types/yaml, który umożliwia używanie TypeScript z YAML. W terminalu wpisz następującą komendę:
+
 ```TypeScript
-import {safeLoad} from 'js-yaml';
-
-const yamlString = `
-  colors:
-    - red
-    - blue
-    - green
-`;
-
-const colors = safeLoad(yamlString);
-
-colors.forEach(color => {
-  console.log(color);
-});
+npm install @types/yaml
 ```
+Następnie importujemy pakiet w naszym kodzie TypeScript:
 
+```TypeScript
+import * as YAML from 'yaml'
+```
+Mamy teraz dostęp do funkcji YAML, które pozwalają nam na łatwe parsowanie i serializację danych.
+
+Oto przykładowe użycie YAML do przetworzenia danych w formacie JSON:
+
+```TypeScript
+const jsonExample = {
+  name: 'Jan Kowalski',
+  age: 25,
+  job: 'programista'
+}
+
+const yamlStr = YAML.stringify(jsonExample)
+
+console.log(yamlStr)
+
+/*
 Output:
+name: Jan Kowalski
+age: 25
+job: programista
+*/
 ```
-red
-blue
-green
+
+Możemy również używać YAML do przechowywania konfiguracji w naszych aplikacjach. Jest to bardzo wygodny sposób na przechowywanie danych w postaci strukturalnej i późniejsze łatwe dostęp do nich. Przykładowo, możemy stworzyć plik "config.yaml" z następującymi danymi:
+
+```YAML
+database:
+  host: localhost
+  port: 3306
+  user: admin
+  password: 123456
 ```
 
-YAML (YAML Ain't Markup Language) jest językiem opartym na tekście, który służy do reprezentowania danych w prosty sposób. Jest często wykorzystywany do formatowania plików konfiguracyjnych i danych, ale może być również używany do przechowywania informacji w aplikacjach. Dzięki swojej prostocie i czytelności, YAML jest popularnym wyborem dla wielu programistów.
+A następnie w naszym kodzie użyć YAML do odczytania tych danych:
 
-Aby używać YAML z TypeScript, możemy skorzystać z biblioteki js-yaml. W powyższym przykładzie, importujemy funkcję `safeLoad` z biblioteki, która pozwala nam na ładowanie danych YAML do obiektu w języku TypeScript. Następnie tworzymy przykładowy ciąg YAML i przekazujemy go do funkcji `safeLoad`, a następnie możemy wykorzystać uzyskany obiekt w naszym kodzie.
+```TypeScript
+const config = YAML.parse(fs.readFileSync('./config.yaml', 'utf-8'))
 
-Takie podejście umożliwia nam łatwą pracę z danymi YAML w TypeScript i pozwala na wykorzystanie wszystkich zalet języka, takich jak silna typizacja i IntelliSense.
+console.log(config.database.host) // Output: localhost
+```
 
-## Głębsze wgląd w pracę z YAML
-YAML oferuje wiele możliwości, których nie udało się nam pokazać w powyższym kodzie. Możemy na przykład korzystać z różnych typów danych, takich jak listy, obiekty czy nawet zmienne. Ponadto, js-yaml biblioteka udostępnia wiele innych przydatnych funkcji, na przykład dla obsługi błędów.
+## Głębszy wgląd
 
-Warto również zwrócić uwagę, że YAML jest językiem niezależnym od języka programowania, co oznacza, że możemy używać go w różnych projektach, niezależnie od używanego języka.
+Należy zauważyć, że YAML jest bardzo elastycznym formatem i możemy używać go do przechowywania różnych typów danych, takich jak tablice, obiekty itp. Możemy również zmieniać format danych w dowolnym momencie, ponieważ YAML jest formatem tekstu.
+
+Warto również zwrócić uwagę na to, że wiele narzędzi programistycznych obsługuje YAML, co może być bardzo przydatne przy pracy nad projektami zespołowymi.
 
 ## Zobacz również
-- Oficjalna strona YAML: https://yaml.org/
-- Dokumentacja biblioteki js-yaml: https://github.com/nodeca/js-yaml
-- Przykładowy projekt wykorzystujący YAML z TypeScript: https://github.com/exampleproject
 
-Dzięki możliwościom, jakie oferuje YAML oraz wygodnej integracji z TypeScript, może warto rozważyć użycie tego języka w swoich projektach. Dzięki temu będziemy mogli pracować szybciej i efektywniej, a nasz kod będzie bardziej przejrzysty i czytelny dla innych programistów. Nigdy nie jest za późno, aby wypróbować nowe narzędzia i technologie, które mogą ułatwić nam pracę.
+- Oficjalna dokumentacja biblioteki YAML dla TypeScript: https://www.npmjs.com/package/@types/yaml
+- Przewodnik po składni YAML: https://yaml.org/spec/1.2/spec.html
+- Przykładowe projekty wykorzystujące format YAML: https://github.com/search?q=yaml&type=Repositories

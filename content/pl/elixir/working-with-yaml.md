@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Praca z plikiem YAML"
-simple_title:         "Praca z plikiem YAML"
+title:                "Współpraca z yaml"
+html_title:           "Elixir: Współpraca z yaml"
+simple_title:         "Współpraca z yaml"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,60 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto poznać język programowania Elixir? Jednym z powodów może być fakt, że Elixir jest doskonałym narzędziem do pracy z plikami YAML. W tym artykule dowiesz się, dlaczego warto zacząć pracować z YAML w Elixir i jak to zrobić.
+Istnieje wiele formatów plików konfiguracyjnych, ale YAML jest jednym z najbardziej popularnych dla programistów. Oferuje on prostą składnię, łatwość czytania i umożliwia przechowywanie danych w hierarchicznej strukturze. W tym artykule dowiesz się, dlaczego warto używać YAML w swoich projektach i jak to zrobić.
 
-## Jak
+## Jak to zrobić
 
-Elixir oferuje wiele narzędzi do pracy z plikami YAML, ale najważniejszym z nich jest biblioteka `YAML`. Aby zacząć, musisz dodać ją do swojego projektu, do pliku `mix.exs`:
+Aby zacząć pracować z YAML w Elixir, musisz zainstalować bibliotekę `YAML` używając gestora pakietów Hex. Następnie musisz zaimportować funkcje z tej biblioteki do swojego pliku Elixir, aby móc wykorzystać jego możliwości.
 
 ```Elixir
 defp deps do
-  [{:yaml, "~> 0.4.7"}]
+  [{:yaml, "~> 0.2.2"}]
 end
-```
 
-Następnie zaimportuj bibliotekę w swoim pliku Elixir:
+defmodule Example do
+  import Yaml
 
-```Elixir
-import YAML
-```
+  yaml = """
+  name: John
+  age: 30
+  favorite_foods:
+    - pizza
+    - tacos
+  """
 
-Teraz możesz ładować pliki YAML i pracować z nimi w swoim kodzie. Na przykład, jeśli masz plik `config.yml` z taką treścią:
+  data = load(yaml) # wczytuje YAML jako mapę danych
 
-```YAML
-names:
-  - Adam
-  - Ewa
-  - Jan
-  - Anna
-```
+  age = data["age"] # zwraca wartość klucza "age" jako integer
 
-Możesz go wczytać do zmiennej w ten sposób:
+  favorite_foods = data["favorite_foods"] # zwraca wartość klucza "favorite_foods" jako listę
 
-```Elixir
-names = YAML.load_file("config.yml")
-```
-
-Aby uzyskać dostęp do zawartości pliku, możesz skorzystać z funkcji `get/3`:
-
-```Elixir
-names = YAML.load_file("config.yml")
-
-# Pobierz pierwsze imię
-first_name = names |> get("names") |> hd()
-
-# Pobierz ostatnie imię
-last_name = names |> get("names") |> List.last()
+end
 ```
 
 ## Deep Dive
 
-Jak już widzisz, praca z YAML w Elixir jest bardzo prosta. Biblioteka `YAML` oferuje wiele funkcji, na przykład `load_string/1` do ładowania ciągów tekstu YAML, `dump/1` do zapisywania danych w formacie YAML oraz `get/3` do pobierania wartości z pliku.
+Jedną z najważniejszych funkcji YAML w Elixir jest funkcja `load/1`, która wczytuje YAML jako mapę danych. Jeśli chcesz skonwertować tę mapę na inny format, na przykład JSON, możesz użyć funkcji `encode/1`.
 
-Jeśli chcesz dowiedzieć się więcej na temat pracy z YAML w Elixir, możesz przejrzeć dokumentację biblioteki na stronie [hexdocs.pm](https://hexdocs.pm/yaml/api-reference.html) oraz poszukać tutoriali i przykładowych projektów w Internecie.
+```Elixir
+json = encode(data) # konwertuje mapę danych YAML na JSON
+```
+
+Ponadto, funkcja `load_file/1` pozwala na wczytanie danych bezpośrednio z pliku YAML. Jest to szczególnie przydatne, gdy masz duży plik YAML, który chcesz przetworzyć.
+
+Jeśli potrzebujesz przykładowych plików YAML, możesz skorzystać z stron takich jak YAML.org lub skorzystać z gotowych szablonów YAML dostępnych dla różnych języków programowania.
 
 ## Zobacz także
 
-- Dokumentacja biblioteki YAML na [hexdocs.pm](https://hexdocs.pm/yaml/api-reference.html)
-- Przykładowy projekt korzystający z biblioteki YAML na [GitHub](https://github.com/elixir-yaml/yaml)
-- Tutorial o pracy z YAML w Elixir na [Medium](https://medium.com/@petitviolet/yaml-in-elixir-b1c3e98f8aed)
+- Dokumentacja Elixir YAML: https://hexdocs.pm/yaml/api-reference.html
+- Przykłady YAML: https://yaml.org/start.html
+- Szablony YAML dla różnych języków: https://yamltemplates.com/

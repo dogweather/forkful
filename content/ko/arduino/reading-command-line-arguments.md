@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 컴퓨터 프로그래밍에서 명령 줄 인자 읽기"
-simple_title:         "컴퓨터 프로그래밍에서 명령 줄 인자 읽기"
+title:                "Command line 인수 읽기"
+html_title:           "Arduino: Command line 인수 읽기"
+simple_title:         "Command line 인수 읽기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,49 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+프로그래밍에서 라인 인자(argument)를 읽는 것은 매우 유용합니다. 이 기술을 통해 사용자의 입력을 받고, 그에 따라 프로그램의 동작을 다르게 할 수 있습니다. 따라서 이 글을 통해 라인 인자를 읽는 방법을 배우게 됩니다.
 
-커맨드 라인 인수를 읽는 방법을 배우는 것은 아두이노 프로그래밍을 더욱 유연하고 효율적으로 만들 수 있기 때문에 중요합니다.
-
-## 어떻게
-
-다음 예제 코드를 사용하여 커맨드 라인 인수를 읽는 방법을 배워보세요.
+## 사용 방법
+먼저, 모든 인자(argument)를 받은 후 `for`문을 통해 각 인자를 순회합니다. 그리고 `Serial.println()`을 통해 각 인자를 출력합니다.
 
 ```Arduino
-String input = "";
-
-void setup() {
-  Serial.begin(9600);
-  while (! Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
-
-  // read input from command line
-  if (Serial.available()) {
-    input = Serial.readString();
-  }
-
-  Serial.print("Input: ");
-  Serial.println(input);
-}
-
-void loop() {
-  // do something with the input
+for (int i = 0; i < commandLineArguments.length(); i++){ 
+  Serial.println(commandLineArguments[i]);
 }
 ```
 
-예제 코드를 실행하면 시리얼 모니터 창에서 입력한 값을 출력할 수 있습니다.
+예를 들어 `LED`를 켜는 프로그램에서, `arduino.exe on`이라는 명령어를 입력하면 `commandLineArguments` 배열에는 `arduino.exe`와 `on`이 각각 저장됩니다. 이러한 방식으로 인자를 읽어서 프로그램의 동작을 제어할 수 있습니다.
 
-```
-Enter input: Hello world!
-Input: Hello world!
-```
+## 심화 공부
+라인 인자를 읽기 전, `Serial.begin(9600)`을 통해 시리얼 통신을 시작해야 합니다. 그리고 `Serial.readString()`을 통해 사용자의 입력을 받습니다. 이렇게 받은 문자열을 `split()` 함수를 이용해 공백을 기준으로 나눈 후, 각각을 `commandLineArguments` 배열에 저장하는 방식으로 라인 인자를 읽을 수 있습니다.
 
-## 깊이 알아보기
-
-커맨드 라인 인수를 읽는 것은 멀티플랙스 프로그래밍에 유용할 수 있습니다. 예를 들어, 센서에서 읽은 값을 인수로 전달하여 원하는 작업을 수행할 수 있습니다.
-
-## 또 다른 정보
-
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 코리아](https://www.arduinokorea.com/)
-- [아두이노 포럼](https://forum.arduino.cc/index.php)
+See Also
+- [Serial Interface for Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/serial-interface-with-arduino-3cdc4d)
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino String Split() Function](https://www.arduino.cc/en/Reference/SerialSplit)

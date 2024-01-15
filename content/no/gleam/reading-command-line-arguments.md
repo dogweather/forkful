@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lese kommandolinje argumenter"
-simple_title:         "Lese kommandolinje argumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "Gleam: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Har du noen gang lurt på hvorfor du skulle bry deg med å lese kommandolinjeargumenter i programmene dine? Vel, i denne bloggposten skal vi se nærmere på hvorfor dette er et viktig konsept i Gleam-programmering.
+Å lese kommandolinjeargumenter kan være en nyttig ferdighet å ha for utviklere som arbeider med terminalbaserte programmer eller scripts. Dette gjør at de kan tilpasse og kontrollere hvordan programmet deres fungerer uten å måtte endre selve koden.
 
-## Hvordan
+# Hvordan
 
-Å lese kommandolinjeargumenter i Gleam er en enkel prosess som gir stor fleksibilitet til programmene dine. La oss ta en titt på et eksempel:
+For å få tilgang til kommandolinjeargumenter i Gleam kan du bruke funksjonen `CommandLine.arguments()`, som gir deg en liste med alle argumentene som ble gitt da programmet ble kjørt.
 
 ```Gleam
-import gleam/io
+import gleam/cli
 
-// Leser inn et kommandolinjeargument og skriver ut det til konsollen
-fn main(args) {
-  let argument = get_argument(args)
-  io.print(argument)
-}
-
-// Funksjon som henter ut det første kommandolinjeargumentet
-fn get_argument(args) {
-  case args {
-    [arg | _] -> arg
-    _ -> ""
-  }
+pub fn main() {
+  let arguments = CommandLine.arguments()
+  // gjør noe spennende med argumentene her
 }
 ```
 
-Når du kjører dette programmet med følgende kommandolinje:
+La oss si at du kjører programmet ditt med `gleam run hello_world.gleam --name Bob`. Da vil `CommandLine.arguments()` returnere en liste med verdier `[hello_world.gleam, --name, Bob]`.
 
-```bash
-gleam run my_program.gleam my_argument
+# Deep Dive
+
+Det finnes også muligheter for å gi verdier til argumentene dine ved hjelp av flagg og navngitte argumenter. Dette kan gjøres ved å bruke `gleam/cli`-modulen og dens funksjoner som `get_flag()` og `get_named_arg()`.
+
+`get_flag()` brukes for flagg som ikke har noen verdi, for eksempel `--help`. Mens `get_named_arg()` brukes for å hente verdien til et navngitt argument, for eksempel `--name Bob`.
+
+For å bruke disse funksjonene må du først definere hvilke flagg og navngitte argumenter du forventer, som vist i eksempelet nedenfor.
+
+```Gleam
+import gleam/cli
+
+config fn main(flags, args) {
+  flags
+    | get_flag(_, "--help")
+    | get_named_arg(_, "--name", "Bob")
+  // gjør noe magisk med flagg og argumenter her
+}
 ```
 
-Vil konsollen skrive ut "my_argument". Her henter vi ut det første argumentet som ble gitt med ved kjøring av programmet, men du kan også endre koden for å lese inn et spesifikt argument basert på posisjon.
+# Se også
 
-## Dypdykk
-
-Nå som du vet hvordan du leser kommandolinjeargumenter i Gleam, la oss se på noen grunner til hvorfor dette kan være nyttig. Først og fremst kan det være en måte å gi foretrukne instillinger eller parametere til programmene dine uten å måtte endre selve koden. Dette gjør det enkelt å tilpasse og gjenbruke samme program til ulike formål.
-
-Et annet scenario kan være når du ønsker å kjøre mange ulike tester eller tjenester med samme kodebase, men med ulike innstillinger. Ved å lese kommandolinjeargumenter kan du enkelt endre disse innstillingene uten å måtte endre koden hver gang.
-
-## Se også
-
-- [Offisiell Gleam dokumentasjon](https://gleam.run/)
-- [Gleam kommandolinjeverktøy](https://github.com/gleam-lang/gleam/blob/master/README.md)
-- [Bruk av kommandolinjeargumenter i andre programmeringsspråk](https://www.sitepoint.com/bash-command-line-arguments/)
+- [Gleam dokumentasjon](https://gleam.run/documentation/)
+- [Gleam Github-repositorium](https://github.com/gleam-lang/gleam)

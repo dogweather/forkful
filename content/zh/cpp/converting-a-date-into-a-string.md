@@ -1,5 +1,6 @@
 ---
-title:                "C++: 将日期转换为字符串"
+title:                "将日期转换为字符串"
+html_title:           "C++: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "C++"
 category:             "C++"
@@ -9,54 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
+有时候，我们需要将日期（比如生日、纪念日等）转换成字符串的形式，比如在文件名中使用，或者显示在用户界面中。在本文中，我们将学习如何使用C++编程语言将日期转换成字符串，并且探索一些深层知识。
 
-为什么有时候我们需要将日期转换为字符串？这样做的原因通常是为了方便数据的存储和处理。在日常生活中，我们经常会遇到需要存储日期的情况，比如生日、会议日期等等。将日期转换为字符串可以使得数据的读取和处理更加简单，从而提高程序的效率。
-
-# 如何操作
-
-在C++中，有一种简单的方法来将日期转换为字符串。我们可以使用`strftime`函数。下面是一个示例代码：
+## 如何做
+我们先来看一个简单的示例，将`2020-11-11`这个日期转换成字符串格式的`November 11, 2020`。
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <iomanip>
+#include <sstream>
+using namespace std;
 
 int main() {
-    // 获取当前日期
-    time_t now = time(0);
-    // 使用指定格式将日期转换为字符串
-    char* date = strftime("%Y/%m/%d", localtime(&now));
-    // 输出结果
-    std::cout << date << std::endl;
+    // 定义日期变量
+    int year = 2020;
+    int month = 11;
+    int day = 11;
+
+    // 使用stringstream来构建字符串
+    stringstream ss;
+
+    // 设置日期格式
+    ss << setfill('0') << setw(2) << month << "/";
+    ss << setfill('0') << setw(2) << day << "/";
+    ss << year;
+
+    // 将字符串打印出来
+    cout << "转换结果：" << ss.str() << endl;
+
     return 0;
 }
 ```
+输出结果为：
+```
+转换结果：11/11/2020
+```
+现在让我们来看一下上面代码的解释：
+- 首先，我们使用`iostream`和`sstream`库来处理输入和输出。
+- 然后，定义了三个整型变量来存储日期的年、月、日。
+- 接着，我们使用`stringstream`来构建一个字符串，它允许我们将多个字符串组合成一个字符串。
+- 使用`setfill`函数来指定字符串中的空格填充字符为`0`，`setw`函数来指定字符串的宽度为`2`，然后使用`<<`运算符来将月份、日期和年份添加到`stringstream`中。
+- 最后，使用`ss.str()`函数来获取字符串的值并输出到控制台。
 
-输出结果为：2021/04/20。
+除了这种简单的格式，我们也可以根据需要来定义更复杂的日期格式。C++提供了`strftime()`函数来帮助我们格式化日期，它使用一个格式字符串作为参数，并返回格式化后的日期字符串。下面是一个例子，将当前日期和时间转换成格式为`Monday, August 10, 2020 at 12:30:45 PM`的字符串：
 
-在上面的代码中，我们首先通过`time`函数获取当前日期，然后使用`strftime`函数将日期按照指定格式转换为字符串，并存储在`date`变量中。最后，通过`cout`输出结果。
+```C++
+#include <iostream>
+#include <ctime> // 包含了时间相关的函数
+using namespace std;
 
-# 深入探索
+int main() {
+    // 获取当前时间
+    time_t now = time(0);
 
-在C++中，日期和时间被表示为`std::tm`结构体，它包括年、月、日、小时、分钟、秒等信息。`strftime`函数的第一个参数是格式化字符串，它决定了最终生成的字符串的格式。下面是一些常用的格式符：
+    // 将当前时间转换成字符串
+    char* str_time = ctime(&now);
 
-- `%Y`：四位数的年份
-- `%m`：补零的月份
-- `%d`：补零的日期
-- `%H`：24小时制的小时数
-- `%M`：补零的分钟数
-- `%S`：补零的秒数
+    // 输出转换结果
+    cout << "转换结果：" << str_time << endl;
 
-除了`strftime`函数，C++中还有其他方法可以将日期转换为字符串，比如`std::to_string`和`boost::date_time`库。如果你想深入了解日期和时间的操作，可以查阅相关文档。
+    return 0;
+}
+```
+输出结果为：
+```
+转换结果：Mon Sep 30 13:54:50 2019
+```
 
-# 参考文档
+## 深入探讨
+除了上面提到的两种方法，C++还有一些其它方法来将日期转换成字符串。一些常用的库比如`boost`和`Qt`也都提供了日期转换的功能。如果你需要使用这些库，你可以通过查阅它们的官方文档来了解具体的实现方法。
 
-- strftime函数：https://www.cplusplus.com/reference/ctime/strftime/
-- std::tm结构体：https://www.cplusplus.com/reference/ctime/tm/
-- 日期时间操作：https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
+此外，在C++11标准中，也提供了一个`chrono`库来处理时间和日期相关的操作。它提供了一些新的类和函数，可以更方便地处理日期转换，比如`to_string()`函数来将日期转换成字符串，还有一些`duration`类来处理时间差值。如果你使用的是C++11及以上版本，你可以尝试使用这些新的特性来完成日期的转换。
 
-# 参见
-
-- C++中的日期操作：https://www.learn-c.org/en/Dates_and_time
-- 如何使用C++操作日期和时间：https://www.javatpoint.com/cpp-date-and-time
-- Boost库中的日期和时间：https://theboostcpplibraries.com/boost.datetime
+## 参考链接
+- [C++日期和时间转换](https://www.programiz.com/cpp-programming/time-date)
+- [C++ strftime()函数](https://www.cplusplus.com/reference/ctime/strftime/)
+- [C++11 chrono库](https://www.techiedelight.com/convert-string-to-int-stdstoi

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Gleam: Senden einer http-Anfrage mit grundlegender Authentifizierung"
 simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Senden von HTTP-Anfragen mit grundlegender Authentifizierung kann in vielen Fällen nützlich sein, wie z.B. beim Zugriff auf geschützte Ressourcen oder bei der Überprüfung von Benutzeranmeldungen.
+Warum sollte man eine HTTP-Anfrage mit Grundauthentifizierung senden? In der heutigen Welt der Webentwicklung ist es unerlässlich, dass Anwendungen auf sichere Weise miteinander kommunizieren können. Die Verwendung von Grundauthentifizierung ermöglicht den Schutz sensibler Daten bei der Übertragung über das Internet.
 
-## Wie funktioniert es?
+## Wie man es macht
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden, muss zunächst ein Authentifizierungs-Header mit den Zugangsdaten des Benutzers erstellt werden. Hier ist ein Beispiel, wie dies mit Gleam gemacht werden kann:
+Um eine HTTP-Anfrage mit Grundauthentifizierung in Gleam zu senden, müssen Sie zunächst ein HTTP-Client-Modul importieren. Verwenden Sie dann die Funktion `BasicAuth` und übergeben Sie Ihre Benutzername und Passwort als Argumente.
 
-```Gleam
-let url = "https://example.com/api"
-let username = "example"
-let password = "password"
+```gleam
+import http
 
-let request = Http.basic_auth_request(url, username, password)
-let response = Http.fetch(request)
+// Ein Beispiel für eine HTTP-Anfrage mit Grundauthentifizierung
+let request = http
+  .get("https://meineanwendung.com/api/user", BasicAuth("benutzer123", "meinpasswort"))
+  .send()
+```
 
-# Beispiel-Ausgabe:
-Statuscode: 200
-Body: {"message": "Authentifizierung erfolgreich!"}
-``` 
+Das `BasicAuth`-Argument wird automatisch in das Anfrage-Header eingefügt, um die Authentifizierung zu ermöglichen. Sie können auch die `getAuthHeader`-Funktion verwenden, um das erstellte Header zu überprüfen oder zu ändern.
 
-## Tiefere Einblicke
+```gleam
+let authHeader = BasicAuth(benutzername, passwort) |> http.getAuthHeader()
+```
 
-Kommt es zu einer fehlgeschlagenen Authentifizierung, wird meist ein Statuscode von 401 zurückgegeben. Es ist auch möglich, zusätzliche Optionen wie z.B. die Verschlüsselung der Anfrage hinzuzufügen. Weitere Informationen dazu findet man in der Gleam-Dokumentation zu `Http.basic_auth_request`.
+Die oben genannten Funktionen sind nur Beispiele, es gibt jedoch verschiedene andere Methoden, um HTTP-Anfragen mit Grundauthentifizierung in Gleam zu senden. Bitte schau dir die offizielle Dokumentation an, um weitere Details zu erfahren.
 
-# Siehe auch
+## Tiefer eintauchen
 
-- Gleam-Dokumentation: https://gleam.run/articles/http/
-- HTTP-Statuscodes erklärt: https://developer.mozilla.org/de/docs/Web/HTTP/Status
-- Grundlagen der Authentifizierung: https://www.lifewire.com/what-is-basic-access-authentication-817131
+Bei der Verwendung von HTTP-Anfragen mit Grundauthentifizierung gibt es einige wichtige Dinge zu beachten. Zum Beispiel ist es wichtig, sicherzustellen, dass Ihre Anwendung über eine SSL-Verbindung verfügt, um die Sicherheit Ihrer Daten zu gewährleisten. Darüber hinaus sollten Sie bei der Verwendung von Grundauthentifizierung sicherstellen, dass Benutzername und Passwort sicher gespeichert und übertragen werden, um die Risiken von unbefugtem Zugriff zu minimieren.
+
+## Siehe auch
+
+- [Official Gleam Documentation](https://gleam.run/core/http.html#basic-auth)
+- [HTTP Basic Authentication Explained](https://www.techopedia.com/definition/23974/basic-authentication)

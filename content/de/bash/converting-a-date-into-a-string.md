@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Umwandlung eines Datums in einen String"
-simple_title:         "Umwandlung eines Datums in einen String"
+title:                "Eine Datum in eine Zeichenfolge konvertieren."
+html_title:           "Bash: Eine Datum in eine Zeichenfolge konvertieren."
+simple_title:         "Eine Datum in eine Zeichenfolge konvertieren."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Manchmal möchtest du vielleicht in deinem Bash-Skript ein Datum in eine Zeichenfolge umwandeln. Das kann nützlich sein, um es auf einer Benutzeroberfläche anzuzeigen oder in eine Datei zu schreiben.
 
-Sie fragen sich vielleicht, warum es wichtig ist, ein Datum in einen String umzuwandeln. Nun, in der Programmierung gibt es oft verschiedene Formate, in denen ein Datum angezeigt werden kann. Durch die Umwandlung in einen String können Sie sicherstellen, dass das Datum in einem einheitlichen Format angezeigt wird, unabhängig davon, wie es in der Datenbank oder im Code gespeichert ist.
+## Wie geht das?
+Grundsätzlich gibt es zwei Möglichkeiten, ein Datum in Bash in eine Zeichenfolge umzuwandeln.
 
-## Wie geht's
+### Methode 1: `date` Befehl
+Der `date` Befehl ist der einfachste Weg, um ein Datum in eine Zeichenfolge umzuwandeln. Du kannst die Ausgabe des Befehls direkt in eine Variable speichern oder ihn in eine Zeichenfolgenersetzung einfügen.
 
-Die Umwandlung eines Datums in einen String in Bash ist relativ einfach. Folgen Sie einfach den Schritten unten mit den dazugehörigen Code-Beispielen:
-
-1. Definieren Sie das Datum im gewünschten Format
 ```Bash
-date="2021/12/31"
+date_var=$(date + "%A, %d.%m.%Y")
+echo $date_var
+# Ausgabe: Donnerstag, 03.12.2020
 ```
 
-2. Verwenden Sie den `date` Befehl und das gewünschte Datumsformat als Option.
+### Methode 2: `printf` Befehl
+Du kannst auch den `printf` Befehl verwenden, um ein Datum in eine Zeichenfolge umzuwandeln. Dazu musst du das Datum zunächst in die richtige Formatierung bringen und dann den `printf` Befehl verwenden.
+
 ```Bash
-str_date=$(date +"%d.%m.%Y" -d "$date")
+date_var=$(printf "%(%A, %d.%m.%Y)T" -1)
+echo $date_var
+# Ausgabe: Donnerstag, 03.12.2020
 ```
 
-3. Geben Sie den Inhalt der Variable `str_date` aus
-```Bash
-echo $str_date
-# Output: 31.12.2021
-```
+## Tiefer Einblick
+Um das Datum in ein bestimmtes Format zu bringen, musst du die entsprechende Formatierungszeichenfolge verwenden. Eine Liste der verfügbaren Formatierungszeichenfolgen findest du in der [Bash-Dokumentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions).
 
-Durch die Verwendung der `date` Funktion können Sie das Datum in verschiedenen Formaten anzeigen lassen, indem Sie die Formatierungsoption entsprechend anpassen.
-
-## Tiefere Einblicke
-
-In Bash gibt es verschiedene Möglichkeiten, ein Datum in einen String umzuwandeln. Neben dem verwendeten Beispiel können Sie auch den `printf` Befehl verwenden, um das Datum in anderen Formaten auszugeben. Sie können auch mit der `awk` Funktion arbeiten, um das Datum auszulesen und in einen String zu konvertieren.
-
-Es ist auch wichtig zu beachten, dass die Umgebungseinstellungen wie die Zeitzoneneinstellung und das verwendete Format der Ausgabe beeinflussen können. Deshalb ist es wichtig, sicherzustellen, dass diese Einstellungen richtig konfiguriert sind, um unerwartete Ergebnisse zu vermeiden.
+Wenn du das Datum in eine andere Sprache übersetzen möchtest, musst du die `LANG` Umgebungsvariable setzen. Zum Beispiel würde `LANG=de_DE.UTF-8` das Datum in deutscher Sprache ausgeben. Mehr Informationen dazu findest du in der [Bash-Referenz](https://tldp.org/LDP/abs/html/dateenvvar.html) Seite.
 
 ## Siehe auch
-
-- [Bash-Referenzhandbuch: Datums- und Zeitfunktionen](https://www.gnu.org/software/bash/manual/html_node/Shell-Functions.html#Shell-Functions)
-- [Bash-Hackers Wiki: Daten- und Uhrzeitfunktionen](https://wiki.bash-hackers.org/commands/builtin/date)
-- [Linuxize: Wie man ein Datum in Bash formatiert](https://linuxize.com/post/how-to-format-date-in-bash/)
+- [Bash-Dokumentation](https://www.gnu.org/software/bash/manual/)
+- [Bash-Referenz](https://tldp.org/LDP/abs/html/)

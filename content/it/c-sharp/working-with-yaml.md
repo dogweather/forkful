@@ -1,5 +1,6 @@
 ---
-title:                "C#: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "C#: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "C#"
 category:             "C#"
@@ -9,59 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché utilizzare YAML?
+YAML è un formato di file per la rappresentazione di dati strutturati in modo chiaro e leggibile sia per gli esseri umani che per le macchine. Inoltre, è ampiamente utilizzato nei processi di automazione e configurazione dei sistemi.
 
-Se sei un programmatore C# e vuoi lavorare con una sintassi più semplice per file di configurazione, allora YAML potrebbe essere la soluzione perfetta per te. Con la sua struttura chiara e intuitiva, YAML può semplificare notevolmente la gestione dei file di configurazione nei tuoi progetti.
+## Come utilizzare YAML in C#?
+Per lavorare con YAML in C#, è necessario utilizzare una libreria esterna come ad esempio "YAML_DOT_NET". Di seguito mostriamo un esempio di codice che carica un file YAML e ne stampa il contenuto:
+```
+using System;
+using YamlDotNet.Serialization;
 
-## Come fare
+var yamlInput = @"
+# Esempio di file YAML
+person: 
+  name: Marco
+  age: 25
+";
 
-Per iniziare a lavorare con YAML in C#, devi prima installare un pacchetto di supporto YAML come `YamlDotNet` attraverso il gestore pacchetti NuGet. Una volta installato, puoi utilizzare la classe `YamlStream` per leggere e scrivere dati YAML. Ecco un esempio di come leggere un file YAML e ottenere i valori delle chiavi:
-
-```C#
-// importa il pacchetto YamlDotNet
-using YamlDotNet.RepresentationModel;
-
-// crea un nuovo yamlStream e carica il file
-var yamlStream = new YamlStream();
-yamlStream.Load(File.OpenText("config.yml"));
-
-// ottieni il documento YAML
-var yamlDocument = yamlStream.Documents[0];
-
-// leggi i dati e ottieni i valori delle chiavi
-var yamlMapping = (YamlMappingNode)yamlDocument.RootNode;
-string server = ((YamlScalarNode)yamlMapping.Children[new YamlScalarNode("server")]).Value;
-int port = ((YamlScalarNode)yamlMapping.Children[new YamlScalarNode("port")]).Value;
-
-// stampa i valori delle chiavi
-Console.WriteLine($"Server: {server}");
-Console.WriteLine($"Porta: {port}");
+var deserializer = new DeserializerBuilder().Build();
+var result = deserializer.Deserialize(yamlInput);
+Console.WriteLine(result["person"]["name"]); // Output: Marco
 ```
 
-Ecco un esempio di file YAML (`config.yml`):
-
-```yml
-server: "www.example.com"
-port: 8080
-```
-
-L'output del codice sopra dovrebbe essere:
-
-```
-Server: www.example.com
-Porta: 8080
-```
-
-## Approfondimento
-
-Oltre alla semplicità nella lettura e scrittura dei dati, YAML ha anche il vantaggio di essere un formato estendibile. Ciò significa che puoi creare strutture di dati complesse, tra cui oggetti e array, usando una sintassi facile da leggere e scrivere. Inoltre, YAML supporta anche commenti, che possono aiutare a documentare il tuo codice e a tenerlo organizzato.
-
-Un altro vantaggio di lavorare con YAML è che è compatibile con molti altri linguaggi di programmazione, rendendo più facile la condivisione di file di configurazione tra diversi team di sviluppo.
-
-Inoltre, esistono molte risorse online per imparare ulteriormente su YAML e come utilizzarlo efficacemente. Ti consigliamo di dare un'occhiata alla documentazione ufficiale di YAML e alle numerose guide e tutorial disponibili online.
+## Approfondimenti su YAML
+Oltre alla semplice lettura e scrittura di file YAML, è possibile utilizzare alcune funzionalità avanzate come la serializzazione e deserializzazione di oggetti in YAML, la gestione dei commenti e la validazione della struttura dei dati. Inoltre, è possibile integrare YAML con altri formati di dati come JSON e XML. Per ulteriori informazioni, si consiglia di consultare la documentazione ufficiale di YAML e delle librerie di supporto.
 
 ## Vedi anche
-
-- Documentazione di YAML: https://yaml.org/spec/1.2/spec.html
-- Pacchetto YamlDotNet su NuGet: https://www.nuget.org/packages/YamlDotNet/
-- Guida all'utilizzo di YAML in C#: https://dotnetcoretutorials.com/2019/02/24/reading-yaml-files-in-net-core/
+- Sito ufficiale di YAML: [yaml.org](https://yaml.org/)
+- Documentazione di YAML_DOT_NET: [github.com/aaubry/YamlDotNet/](https://github.com/aaubry/YamlDotNet/)
+- Tutorial su YAML in C#: [vogliacoding.com/working-with-yaml-csharp/](https://www.vogliacoding.com/working-with-yaml-csharp/)

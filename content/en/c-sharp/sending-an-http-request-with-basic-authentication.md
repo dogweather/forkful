@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "C# recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "C#"
 category:             "C#"
@@ -9,61 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why: The purpose of sending an HTTP request with basic authentication
+## Why
 
-Sending an HTTP request with basic authentication is a crucial part of web development, as it ensures secure communication between a client and server. This type of authentication requires the user to provide a unique username and password in order to access a protected resource. Implementing basic authentication is necessary to prevent unauthorized access to sensitive data and maintain the security of a web application.
+If you're building a web application that needs to access resources protected by basic authentication, you'll need to send an HTTP request with the appropriate credentials. Basic authentication is one of the simplest ways to secure access to web resources and is widely supported by web servers.
 
-## How To: Sending an HTTP request with basic authentication using C#
+## How To
 
-To send an HTTP request with basic authentication using C#, we can use the `HttpClient` class available in the `System.Net.Http` namespace. The `HttpClient` class provides methods to send an HTTP request to a specific URI, and we can use the `HttpClientHandler` class to add basic authentication to the request.
-
-Let's take a look at the following code snippet to see how we can send an HTTP request with basic authentication using C#:
+To send an HTTP request with basic authentication in C#, you can use the `HttpClient` class from the `System.Net.Http` namespace. First, create an instance of `HttpClient`:
 
 ```C#
-// Initialize HttpClient
-HttpClient client = new HttpClient();
-
-// Specify the base address of the request
-client.BaseAddress = new Uri("https://www.example.com/api/");
-
-// Create a new instance of HttpClientHandler and set credentials
-HttpClientHandler handler = new HttpClientHandler();
-handler.Credentials = new NetworkCredential("username", "password");
-
-// Assign the handler to the HttpClient instance
-client.Handler = handler;
-
-// Define the request URI and add necessary headers
-Uri requestUri = new Uri(client.BaseAddress, "resource");
-client.DefaultRequestHeaders.Add("Accept", "application/json");
-
-// Send the request and get the response
-HttpResponseMessage response = client.GetAsync(requestUri).Result;
-
-// Read the response and display the status code
-string result = response.Content.ReadAsStringAsync().Result;
-Console.WriteLine($"Status Code: {response.StatusCode}, Result: {result}");
+var client = new HttpClient();
 ```
 
-### Sample Output:
+Then, set the `Authorization` header with the user's credentials:
+
+```C#
+var username = "myusername";
+var password = "mypassword";
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.ASCII.GetBytes($"{username}:{password}")));
+```
+
+Finally, use the `GetAsync()` method to send the request and get the response:
+
+```C#
+var response = await client.GetAsync("https://example.com/resource");
+```
+
+The response will contain the requested resource or an error message if the authentication failed. Here's an example of a successful response:
 
 ```
-Status Code: OK, Result: { "id": 1, "name": "John Doe", "email": "johndoe@example.com" }
+HTTP/1.1 200 OK
+Date: Wed, 19 Feb 2020 15:24:17 GMT
+Server: Apache/2.4.38 (Unix)
+Content-Length: 196
+Content-Type: text/html; charset=utf-8
+
+<html>
+<body>
+<h1>Hello World!</h1>
+</body>
+</html>
 ```
 
-As shown in the code above, we first initialize an instance of `HttpClient` and specify the base address of the request. Then, we create an instance of `HttpClientHandler` and provide the necessary credentials. Next, we assign this handler to the `HttpClient` instance. Finally, we define the request URI and headers, send the request, and read the response.
+## Deep Dive
 
-## Deep Dive: Understanding the process of sending an HTTP request with basic authentication
+When you set the `Authorization` header with the user's credentials, you're using the basic authentication scheme defined in the HTTP specifications. These credentials are encoded in base64 and sent in plain text, meaning they're not secure. For this reason, it's recommended to use HTTPS to encrypt the communication and protect the credentials from being intercepted.
 
-When a client sends an HTTP request with basic authentication, the server checks for the presence of the `Authorization` header in the request. This header contains the word "Basic" followed by a space and the Base64-encoded username and password. Upon receiving this header, the server decodes the username and password and verifies them with the user database. If the credentials match, the server allows access to the requested resource; otherwise, it returns an error message.
-
-It is important to note that the use of basic authentication is discouraged due to the fact that the username and password are encoded, not encrypted, which makes them easily readable by anyone who intercepts the request. It is recommended to use a more secure method of authentication, such as OAuth or JSON Web Tokens, instead.
+It's also worth noting that the `Authorization` header can be set manually for each request, or you can create a `HttpClient` with credentials already set, using the `HttpClientHandler` class. This is useful if you need to make multiple requests with the same credentials.
 
 ## See Also
 
-For more information on sending HTTP requests with basic authentication using C#, check out the following resources:
-
-- [MSDN - HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-- [MSDN - HttpClientHandler Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclienthandler)
-- [MDN - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Basic Authentication in Web API](https://www.c-sharpcorner.com/article/basic-authentication-in-web-api/)
+- [HttpClient Class (System.Net.Http)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)
+- [Basic Authentication Scheme](https://tools.ietf.org/html/rfc7617)

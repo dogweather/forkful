@@ -1,6 +1,7 @@
 ---
-title:                "C++: Wydrukowanie wyników debugowania"
-simple_title:         "Wydrukowanie wyników debugowania"
+title:                "Wypisywanie wyników debugowania"
+html_title:           "C++: Wypisywanie wyników debugowania"
+simple_title:         "Wypisywanie wyników debugowania"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,33 +11,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Drukowanie wiadomości debugowania jest niezwykle przydatną umiejętnością w świecie programowania. Pozwala ono na wyświetlanie informacji o przebiegu działania programu, co znacznie ułatwia jego debugowanie oraz znajdowanie potencjalnych błędów. Jest to niezbędne w procesie tworzenia oprogramowania, dlatego warto nauczyć się tej techniki.
+Debugowanie to nieodzowny proces w tworzeniu oprogramowania. Dzięki wypisywaniu informacji o stanie programu możemy łatwiej znaleźć i naprawić błędy. W tym artykule dowiesz się, dlaczego warto używać drukowania danych debugowania w języku C++.
 
 ## Jak to zrobić
-
-Aby wyświetlać wiadomości debugowania w C++, można skorzystać z funkcji `cout` z biblioteki `iostream`. Przykładem takiego użycia może być wyświetlanie wartości zmiennych w celu sprawdzenia ich poprawności. Poniżej znajduje się przykładowy kod z wykorzystaniem funkcji `cout`:
-
+W języku C++ do wypisywania danych debugowania używamy funkcji ```cout```. W przypadku aplikacji konsolowych możemy wypisywać dane bezpośrednio na standardowe wyjście. Na przykład:
+```C++
+cout << "Zmienna x ma wartość: " << x << endl;
 ```
-#include <iostream>
+W przypadku aplikacji graficznych, gdzie nie mamy dostępu do konsoli, możemy zapisywać dane do pliku dziennika lub wyświetlać je w oknie dialogowym.
 
-int main(){
-    int liczba = 7;
-    std::cout << "Wartość zmiennej liczba wynosi: " << liczba << std::endl;
-    return 0;
-}
-```
-
-Po skompilowaniu i uruchomieniu powyższego kodu, w konsoli zostanie wyświetlona wiadomość "Wartość zmiennej liczba wynosi: 7". Dzięki temu łatwo można kontrolować wartości zmiennych w trakcie wykonywania programu.
-
-## Głębszy wgląd
-
-Drukowanie wiadomości debugowania może być również użyteczne w przypadku łapania wyjątków. Można wtedy wyświetlić informacje o błędzie, który jest powodem wywołania wyjątku. W ten sposób łatwiej jest znaleźć przyczynę występowania błędów i je naprawić.
-
-Innym sposobem na wyświetlanie informacji debugowania jest użycie funkcji `cerr`. Różni się ona od funkcji `cout` tym, że wiadomości zostaną wyświetlone w konsoli, nawet jeśli wystąpi błąd w programie. Dzięki temu można wyświetlić informacje o błędzie nawet gdy program się wykonał błędnie i zakończył działanie.
+## Zagłębianie się
+Możemy różnie formatować dane wyjściowe, na przykład za pomocą flag formatujących lub manipulatorów strumienia. Dobrą praktyką jest również dodawanie informacji o miejscu, w którym wypisujemy dane (nazwa funkcji, linia kodu). Dzięki temu łatwiej zlokalizujemy miejsce, w którym wystąpił błąd. Pamiętaj jednak, aby usuwać wszystkie wypisywanie danych debugowania po zakończeniu procesu debugowania, aby nie spowolnić działania programu.
 
 ## Zobacz także
-
-- [10 porad na łatwiejsze debugowanie kodu w C++](https://itcraftsman.pl/poradnik-na-latwiejsze-debugowanie-kodu-w-c/)
-- [Wiadomości debugowania w Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/how-to-set-a-breakpoint-within-source-code?view=vs-2019)
-- [Różnice między funkcjami cout i cerr w C++](https://www.geeksforgeeks.org/differences-between-printf-and-stdout-in-c/)
+- [Dokumentacja języka C++ o standardowym strumieniu wyjścia](http://www.cplusplus.com/reference/iostream/cout/)
+- [Artykuł o debugowaniu w języku C++](https://www.ibm.com/developerworks/library/l-debug.html)
+- [Poradnik o wypisywaniu danych debugowania w języku C++](https://www.geeksforgeeks.org/printing-output-of-c-program-set-1-cout/)

@@ -1,5 +1,6 @@
 ---
-title:                "Python: Génération de nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+html_title:           "Python: Génération de nombres aléatoires"
 simple_title:         "Génération de nombres aléatoires"
 programming_language: "Python"
 category:             "Python"
@@ -9,29 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi utiliser des nombres aléatoires?
 
-Vous êtes peut-être en train de vous demander pourquoi générer des nombres aléatoires est une compétence utile en programmation. Eh bien, il existe de nombreuses raisons pour lesquelles vous pourriez avoir besoin de générer des nombres aléatoires dans votre code. Par exemple, les jeux utilisent souvent des nombres aléatoires pour créer des situations différentes à chaque fois que vous jouez. Ou bien, vous pourriez avoir besoin de générer des données de test pour vos applications. Quelle que soit la raison, la génération de nombres aléatoires est une compétence importante à avoir dans votre boîte à outils de programmation.
+Générer des nombres aléatoires est utile dans de nombreux cas de programmation, tels que la simulation de données, la génération de mots de passe sécurisés ou même dans les jeux. Cela peut également être utile pour tester un programme en lui fournissant différents scénarios aléatoires.
 
-## Comment faire
+## Comment faire?
 
-Voici un exemple de code Python simple pour générer un nombre aléatoire entre 1 et 10 :
+Il existe différentes manières de générer des nombres aléatoires en Python, voici quelques exemples :
 
 ```Python
+# Méthode 1 : Utiliser le module random pour générer un nombre entier entre 0 et 10
+
 import random
 
-nombre_aleatoire = random.randint(1, 10)
-print(nombre_aleatoire)
+num = random.randint(0, 10)
+print(num)
+
+# Méthode 2 : Utiliser le module secrets pour générer un nombre entier entre 100 et 200
+
+import secrets
+
+num = secrets.randbelow(101) + 100
+print(num)
+
+# Méthode 3 : Utiliser le module numpy pour générer un nombre décimal entre 0 et 1
+
+import numpy as np
+
+num = np.random.rand()
+print(num)
 ```
 
-Cela générera un nombre aléatoire chaque fois que vous exécutez le code. Vous pouvez également utiliser des fonctions comme `random.randrange()` ou `random.uniform()` pour générer des nombres aléatoires dans des plages spécifiques ou avec une précision décimale.
+Output:
 
-## Plongée en profondeur
+```
+7
+187
+0.523619775
+```
 
-Maintenant que vous savez comment générer des nombres aléatoires en Python, vous pourriez vous demander comment cela fonctionne réellement. En termes simples, les ordinateurs ne peuvent pas générer de véritables nombres aléatoires. Au lieu de cela, ils utilisent des algorithmes pour produire des nombres qui apparaissent aléatoires. Ces algorithmes se basent sur une "graine" initiale, qui est un nombre de départ à partir duquel les nombres aléatoires sont générés. Si vous utilisez la même graine, vous obtiendrez toujours la même série de nombres aléatoires.
+## Approfondissement
+
+Python utilise un algorithme appelé Mersenne Twister pour générer des nombres aléatoires. Cet algorithme est basé sur des opérations mathématiques complexes et prend comme paramètres une "graine" initiale et une période. La période est le nombre de valeurs différentes que l'algorithme peut générer avant de répéter un nombre. La graine détermine le point de départ du générateur de nombres aléatoires.
+
+Il est également possible de définir une graine manuellement en utilisant la fonction `random.seed()`. Cela peut être utile si vous souhaitez reproduire exactement la même séquence de nombres aléatoires à chaque exécution de votre programme.
 
 ## Voir aussi
 
-- [La documentation officielle de Python pour la génération de nombres aléatoires](https://docs.python.org/fr/3/library/random.html)
-- [Un tutoriel sur la génération de nombres aléatoires en Python](https://realpython.com/python-random/)
-- [Les risques de sécurité associés à la génération de nombres aléatoires](https://www.owasp.org/index.php/Randomness_and_Security)
+- La documentation officielle sur les modules random et secrets : https://docs.python.org/fr/3/library/random.html https://docs.python.org/fr/3/library/secrets.html
+- La documentation officielle sur le module numpy : https://numpy.org/doc/
+- Un tutoriel sur la génération de nombres aléatoires en Python : https://realpython.com/python-random/

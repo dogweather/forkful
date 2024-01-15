@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Textdateien lesen"
-simple_title:         "Textdateien lesen"
+title:                "Ein Textdokument lesen"
+html_title:           "Elixir: Ein Textdokument lesen"
+simple_title:         "Ein Textdokument lesen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,29 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Warum sollte man sich mit dem Lesen von Textdateien in Elixir beschäftigen? Nun, Textdateien sind ein grundlegender Bestandteil der Datenverarbeitung und können in vielen Anwendungen nützlich sein, sei es für die Eingabe von Benutzereingaben, das Lesen von externen Konfigurationsdateien oder das Analysieren von Logfiles.
+Das Lesen von Textdateien ist eine häufige Aufgabe bei der Programmierung in Elixir. Ob Sie CSV-Daten analysieren oder Protokolldateien durchsuchen, das Lesen von Textdateien ist eine wichtige Fähigkeit, die Ihnen dabei helfen kann, komplexe Aufgaben zu lösen.
 
-## Wie man Textdateien in Elixir liest
+# Wie man es macht
 
-Um eine Textdatei in Elixir zu lesen, müssen wir zunächst die Funktion `File.read/1` verwenden, die uns ermöglicht, einen Dateinamen als Parameter zu übergeben und den Inhalt der Datei als Binärdaten zurückzugeben. Hier ist ein Beispiel:
+Um eine Textdatei in Elixir zu lesen, können Sie die Funktion `File.read!/1` verwenden. Dieser Befehl liest die gesamte Datei als Binärdaten ein und gibt sie als String zurück.
 
-```Elixir
-{:ok, content} = File.read("mein_textdokument.txt")
-IO.puts(content)
+```
+Elixir
+file = File.read!("beispiel.txt")
+IO.puts(file)
+```
+Output:
+
+```
+Elixir
+Dies ist eine Beispieldatei
+Sie können beliebige Texte hier schreiben
+Und sie werden alle in der Ausgabe angezeigt
 ```
 
-In diesem Codebeispiel speichern wir den Inhalt des Dokuments in einer Variablen namens `content` und geben ihn dann mit `IO.puts/1` auf der Konsole aus.
+Wenn Sie eine große Datei lesen möchten, können Sie die Funktion `File.stream!/1` verwenden, die die Datei als Strom von Zeilen liest und sie nacheinander zurückgibt.
 
-## Tiefere Einblicke
+```
+Elixir
+File.stream!("beispiel.txt")
+|> Enum.each(&IO.puts/1)
+```
+Output:
 
-Beim Lesen von Textdateien gibt es einige wichtige Dinge zu beachten. Erstens, wenn die Datei sehr groß ist, kann es sinnvoll sein, sie zeilenweise oder in Chunks zu lesen, um den Speicherverbrauch zu minimieren. Dies kann mit der Funktion `File.stream!/2` erreicht werden, die uns einen Stream von Daten aus der Datei zurückgibt.
+```
+Elixir
+Dies ist eine Beispieldatei
+Sie können beliebige Texte hier schreiben
+Und sie werden alle in der Ausgabe angezeigt
+```
 
-Zweitens, beim Lesen von Dateien, die in verschiedenen Zeichensätzen codiert sein können, ist es wichtig, den korrekten Zeichensatz beim Öffnen der Datei anzugeben. Dies kann mit der Option `{:encoding, encoding_name}` beim Aufruf der Funktion `File.read/2` gemacht werden.
+# Tiefere Einblicke
 
-## Siehe auch
+Wenn Sie eine Textdatei mit speziellen Zeichensätzen lesen müssen, können Sie beim Lesen die Option `:encoding` verwenden. Zum Beispiel, wenn Ihre Datei im UTF-8 Format ist:
 
-- Offizielle Elixir Dokumentation für File.read: https://hexdocs.pm/elixir/File.html#read/1
-- Einführung in das Lesen von Textdateien in Elixir: https://medium.com/@ericdecanini/how-to-read-a-text-file-with-elixir-5a850aabe4aa
-- Lesen von großen Dateien in Elixir: https://medium.com/@robocopkaka/reading-large-files-line-by-line-in-elixir-e2d6cdca9c61
+```
+Elixir
+file = File.read!("beispiel.txt", [:encoding, :utf8])
+```
+
+Sie können auch die Funktion `File.open!/2` verwenden, um eine Datei zu öffnen und sie Zugriff darauf für mehrere Operationen zu haben. Vergessen Sie nicht, die Datei am Ende zu schließen:
+
+```
+Elixir
+file = File.open!("beispiel.txt", [:read])
+IO.write(file, "Dies ist ein Beispieltext")
+File.close(file)
+```
+
+# Siehe auch
+
+- https://elixir-lang.org/getting-started/io-and-the-file-system.html
+- https://hexdocs.pm/elixir/File.html

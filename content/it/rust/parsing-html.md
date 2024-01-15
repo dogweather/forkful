@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Analisi della sintassi dell'html"
-simple_title:         "Analisi della sintassi dell'html"
+title:                "Analisi di codice html."
+html_title:           "Rust: Analisi di codice html."
+simple_title:         "Analisi di codice html."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,58 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché Parsare l'HTML con Rust
 
-L'HTML è il linguaggio di markup standard utilizzato per creare pagine web. Molti programmatori potrebbero trovare utile imparare come analizzare e gestire dati HTML. Questo è particolarmente importante per i programmatori Rust, in quanto è un linguaggio di programmazione che offre prestazioni elevate e una sintassi intuitiva che lo rendono ideale per questo tipo di compito.
+Se stai cercando un modo veloce e sicuro per gestire il parsing dell'HTML, allora Rust è il linguaggio di programmazione ideale per te. Con la sua combinazione unica di prestazioni elevate, controllo dei tipi e gestione degli errori, Rust è la scelta perfetta per affrontare questa sfida.
 
-## Come fare
+## Come Fare
 
-Per analizzare e gestire dati HTML in Rust, esistono diversi approcci, ma uno dei più comuni è utilizzare una libreria esterna chiamata "html5ever". Per utilizzarla, è necessario aggiungere la dipendenza nel file Cargo.toml del proprio progetto Rust.
+Per prima cosa, è necessario installare Rust sul tuo sistema. Puoi farlo seguendo le istruzioni dettagliate nel sito ufficiale di Rust. Una volta completata l'installazione, è possibile avviare un nuovo progetto Rust e importare la libreria "html-parsing" utilizzando il gestore di pacchetti Cargo. Dopo aver importato la libreria, puoi utilizzare le funzioni fornite per parsare l'HTML.
 
-```Rust
-[dependencies] 
-html5ever = "0.24.1"
-```
-
-Una volta aggiunta la dipendenza, è possibile iniziare ad utilizzare le funzionalità della libreria. Ad esempio, per analizzare un documento HTML e stampare il suo titolo, è possibile utilizzare il seguente codice:
+Ecco un esempio di codice che utilizza la libreria "html-parsing" per ottenere il titolo di una pagina web:
 
 ```Rust
-extern crate html5ever;
-use std::io::Read;
+use html_parsing::parse;
 
-fn main() {
-    // Lettura del documento HTML da un file
-    let mut file = std::fs::File::open("documento.html").unwrap();
-    let mut html = Vec::new();
-    file.read_to_end(&mut html).unwrap();
+let html = "<html> <head> <title>Il mio sito web</title> </head> <body> <h1>Benvenuti nel mio sito web!</h1> </body> </html>";
 
-    // Creazione di un albero di analisi dell'HTML
-    let tree = html5ever::parse_document(html5ever::rcdom::RcDom::default(), Default::default())
-        .from_utf8()
-        .read_from(&mut html.as_slice())
-        .unwrap();
+let result = parse(html);
 
-    // Stampa del titolo del documento HTML
-    let title = tree.document.borrow().children.first().unwrap();
-    println!("{}", title.children[1].children[0].children[0].to_string());
+match result {
+    Ok(doc) => {
+        let title = doc.find("title").text().collect::<Vec<_>>();
+        println!("Il titolo della pagina è: {}", title[0]);
+    },
+    Err(_) => println!("Impossibile parsare l'HTML.")
 }
 ```
 
-L'output di questo codice sarà il seguente:
-
-```
-Il titolo del mio documento HTML
-```
+Questo codice utilizzerà la funzione `parse()` per creare un albero DOM a partire dall'HTML fornito, quindi utilizzando la funzione `find()` per trovare l'elemento "title" e la funzione `text()` per ottenere il testo all'interno di questo elemento. Utilizzando `collect::<Vec<_>>()` è possibile raccogliere il testo in un vettore. L'output di questo codice sarà "Il titolo della pagina è: Il mio sito web".
 
 ## Approfondimento
 
-Per capire meglio come funziona il codice sopra, è importante conoscere alcuni concetti di base su come funziona la libreria html5ever. In poche parole, essa esegue la sintassi del documento HTML e la trasforma in un "albero di analisi", che è una struttura ad albero con tutti gli elementi e gli attributi del documento per consentire una facile navigazione e manipolazione dei dati HTML.
+Per coloro che desiderano saperne di più sul parsing dell'HTML con Rust, ci sono diverse risorse disponibili online. In particolare, la documentazione ufficiale di Rust offre una guida dettagliata sull'utilizzo della libreria "html-parsing", con esempi di codice e spiegazioni approfondite. Inoltre, ci sono anche numerose domande e risposte su Stack Overflow per ulteriori dubbi o problemi.
 
-Nel codice sopra, la parte più importante è la creazione dell'albero di analisi tramite il metodo "parse_document". Si noti che in questo esempio viene utilizzato anche il metodo "from_utf8", che consente di elaborare documenti HTML codificati in UTF-8.
+## Vedi Anche
 
-Per esplorare ulteriormente la libreria html5ever e tutti i suoi metodi e funzionalità, è possibile consultare la documentazione ufficiale o esaminare alcuni dei numerosi progetti open source che la utilizzano.
-
-## Vedi anche
-
-- Documentazione ufficiale di html5ever: https://docs.rs/html5ever/0.24.1/html5ever/
-- Esempi di progetti che utilizzano html5ever: https://github.com/search?q=html5ever+rust
+- La documentazione ufficiale di Rust sulla libreria "html-parsing": [https://docs.rs/html-parsing](https://docs.rs/html-parsing)
+- Esempi di codice sull'utilizzo della libreria "html-parsing": [https://github.com/rust-lang/html-parsing/tree/master/examples](https://github.com/rust-lang/html-parsing/tree/master/examples)
+- Domande e risposte su Stack Overflow su parsing HTML con Rust: [https://stackoverflow.com/questions/tagged/rust+html-parsing] (https://stackoverflow.com/questions/tagged/rust+html-parsing)

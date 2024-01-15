@@ -1,5 +1,6 @@
 ---
-title:                "C++: Radera tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "C++: Radera tecken som matchar ett mönster"
 simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "C++"
 category:             "C++"
@@ -9,64 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Ibland behöver du kanske ta bort vissa tecken från en textsträng i ditt C++ program. Det kan vara för att rensa bort onödiga tecken eller för att filtrera ut specifika teckenmönster. Oavsett anledning så är det viktigt att veta hur man gör det på rätt sätt för att undvika fel och buggar.
+Att ta bort karaktärer som matchar ett mönster kan vara användbart när man vill rensa eller filtrera data. Det kan också vara ett sätt att effektivisera kod eller göra den mer läsbar.
 
-# Hur man gör det
+## Så här gör du
 
-För att ta bort tecken som matchar ett visst mönster från en textsträng i C++ så kan du använda dig av en kombination av `find` och `erase` funktionerna. `Find` letar efter förekomster av ett specifikt teckenmönster och returnerar indexet av första förekomsten. `Erase` tar sedan bort tecknen från det angivna indexet. Till exempel, låt oss säga att vi har en textsträng och vill ta bort alla förekomster av bokstaven "a":
-
-```C++
-// Skapa en textsträng
-string text = "Denna text innehåller flera bokstäver a";
-
-// Hitta första förekomsten av "a"
-int index = text.find("a");
-
-// Om indexet inte är -1, fortsätt ta bort förekomsten av "a"
-while (index != -1) {
-    text.erase(index, 1);
-    index = text.find("a");
-}
-
-// Skriv ut den nya textsträngen utan bokstaven "a"
-cout << text << endl;
-
-// Output: Denn text innehller fler bokstver
-```
-
-Det är viktigt att notera att när vi tar bort tecken från en textsträng så förskjuts alla tecken till vänster efter det borttagna tecknet. Det betyder att indexet för nästa förekomst också kommer att förskjutas. Därför behöver vi använda en loop för att fortsätta hitta och ta bort alla förekomster tills det inte finns några kvar.
-
-# Djupdykning
-
-Om du vill ta bort tecken från en textsträng men även behålla en del av tecknen från ett visst index, kan du använda `replace` funktionen istället för `erase`. `Replace` tar förutom index och antal tecken att ta bort, även ett antal tecken att lägga till på samma index. Till exempel, om vi vill ta bort alla förekomster av "a" men behålla bokstaven "ä" vid index 10, då kan vi använda följande kod:
+För att ta bort karaktärer som matchar ett visst mönster i en sträng finns det flera olika tillvägagångssätt beroende på vad du vill uppnå och vilket språk du arbetar i. Nedan följer två exempel i C++.
 
 ```C++
-// Skapa en textsträng
-string text = "Denna text innehåller flera bokstäver a";
+// Exempel 1: Ta bort alla förekomster av bokstaven 'a' i en sträng
+#include <iostream>
+#include <string>
 
-// Hitta första förekomsten av "a"
-int index = text.find("a");
+using namespace std;
 
-// Om indexet inte är -1, fortsätt ersätta tecknet med "ä" samtidigt som vi tar bort "a"
-while (index != -1) {
-    text.replace(index, 1, "ä");
-    index = text.find("a");
+int main() {
+  string str = "Hej på dig, alpaka!";
+  
+  // Loopa igenom strängen och jämför varje tecken med 'a'
+  // Om karaktären inte är 'a', lägg till den i en ny sträng
+  string ny_str;
+  for (int i = 0; i < str.length(); i++) {
+    if (str[i] != 'a') {
+      ny_str += str[i];
+    }
+  }
+  
+  cout << ny_str; // Output: "Hej p dig, lpk!";
+  
+  return 0;
 }
-
-// Skriv ut den nya textsträngen
-cout << text << endl;
-
-// Output: Denna text innehäller flera bokstäver ä
 ```
 
-Detta är en mer avancerad teknik som kan vara användbar i vissa situationer, men kräver lite extra planering och tänkande.
+```C++
+// Exempel 2: Ta bort alla siffror från en sträng
+#include <iostream>
+#include <string>
+#include <cctype>
 
-# Se även
+using namespace std;
 
-- [C++ dokumentation för `find`](https://cppreference.com/w/cpp/string/basic_string/find)
-- [C++ dokumentation för `erase`](https://cppreference.com/w/cpp/string/basic_string/erase)
-- [C++ dokumentation för `replace`](https://cppreference.com/w/cpp/string/basic_string/replace)
+int main() {
+  string str = "Det är 2021, och snart är det 2022!";
+  
+  // Loopa igenom strängen och kontrollera om varje tecken är en siffra
+  // Om inte, lägg till tecknet i en ny sträng
+  string ny_str;
+  for (int i = 0; i < str.length(); i++) {
+    if (!isdigit(str[i])) {
+      ny_str += str[i];
+    }
+  }
+  
+  cout << ny_str; // Output: "Det är , och snart är det !";
+  
+  return 0;
+}
+```
 
-Hoppas denna guide har hjälpt dig att förstå hur man tar bort tecken som matchar ett visst mönster i C++. Lycka till med dina programmeringsprojekt!
+## Djupdykning
+
+För att ta bort karaktärer som matchar ett visst mönster kan man också använda sig av olika funktioner och metoder beroende på det specifika språket. I C++ finns till exempel en funktion som heter erase() som kan användas för att ta bort specifika tecken eller en del av en sträng.
+
+Det finns också olika sätt att matcha ett mönster, som till exempel att använda regex (regular expressions), vilket kan vara användbart om man vill ta bort mer komplexa mönster av karaktärer.
+
+## Se även
+
+- cplusplus.com/reference/cstring/strtok/
+- geeksforgeeks.org/clearing-the-input-buffer-in-cc/
+- std::string::erase - C++ Reference

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsning av kommandolinjeargument"
+html_title:           "Rust: Läsning av kommandolinjeargument"
+simple_title:         "Läsning av kommandolinjeargument"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,92 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa kommando radargument är en viktig del av att skriva effektiva Rust-program. Genom att kunna läsa argument från terminalen kan du skapa program som är mer anpassningsbara för användaren.
+Att läsa kommandoradsargument i Rust är ett viktigt steg för att skapa mer interaktiva program. Genom att hantera kommandoradsargument kan ditt program ta in information från användaren, vilket ger en mer dynamisk och anpassningsbar upplevelse.
 
-## Så här
+## Så här gör du
 
-Att läsa kommando radargument i Rust är enkelt och kan göras med hjälp av standard biblioteket. Här är ett exempel på hur du kan läsa ett argument som representerar en filnamn och skriva ut det till terminalen:
-
-```Rust
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    // args[0] är alltid programnamnet
-    // args[1] är första argumentet som användaren anger
-    println!("Du har angett filnamnet: {}", args[1]);
-}
-```
-
-Om du kör detta program med kommandot `cargo run filnamn.txt`, kommer följande att skrivas ut i terminalen:
-
-```
-Du har angett filnamnet: filnamn.txt
-```
-
-Du kan också använda en `match`-sats för att hantera olika scenario och argument. Till exempel, om du endast vill att programmet ska köras om användaren anger ett argument kan du göra följande:
+För att läsa kommandoradsargument i Rust, behöver du importera biblioteket "std" och funktionen "env" som är en del av detta bibliotek. Detta ger tillgång till "args" vilket är en vektor som innehåller alla kommandoradsargument som har passerats till ditt program.
 
 ```Rust
 use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    match args.len() {
-        // För många argument, avbryt programmet
-        1 => println!("Ange ett filnamn för att köra programmet."),
-        // Endast ett argument anges, fortsätt med programmet
-        2 => {
-            println!("Du har angett filnamnet: {}", args[1]);
-            // Din kod här
-        }
-        // Fler än två argument, avbryt programmet
-        _ => println!("Endast ett argument kan anges."),
-    }
+    println!("Kommandoradsargumenten är: {:?}", args);
 }
 ```
 
-## Djupdykning
+Om du till exempel kör detta program med kommandoradsargumenten "hello world", kommer outputen att bli:
 
-Om du vill läsa flera argument eller vill hantera argument med olika typer, kan du använda `clap`-paketet. Det ger en enkel och konfigurerbar lösning för att läsa kommando radargument.
-
-För att installera `clap`, lägg till följande i din `Cargo.toml`-fil:
-
-```toml
-[dependencies]
-clap = "2.33.0"
+```
+Kommandoradsargumenten är: ["hello", "world"]
 ```
 
-Du kan sedan läsa kommando radargument på följande sätt:
+Nu kan du använda detta argument i ditt program för att göra olika saker beroende på vad användaren matat in.
 
-```Rust
-use clap::{App, Arg};
+## Deep Dive
 
-fn main() {
-    // Skapa en ny app med hjälp av clap
-    let matches = App::new("Min Rust-applikation")
-        .version("1.0")
-        .author("Ditt namn")
-        .about("Ett program för att läsa kommando radargument.")
-        // Lägg till de argument som ditt program behöver
-        .arg(
-            Arg::with_name("filnamn")
-                .long("fil")
-                .required(true)
-                .takes_value(true),
-        )
-        .get_matches();
+För att fördjupa dina kunskaper om att läsa kommandoradsargument i Rust, kan det vara bra att förstå hur vektorn "args" fungerar. Argumenten lagras i vektorn i samma ordning som de matats in på kommandoraden. Det första argumentet ligger alltså på index 0, det andra på index 1 osv. Om inga argument matats in, kommer vektorn bara att innehålla ett element som är namnet på ditt program.
 
-    // Hämta värdet för argumentet "filnamn"
-    let filnamn = matches.value_of("filnamn").unwrap();
-
-    println!("Du har angett filnamnet: {}", filnamn);
-}
-```
+Det kan också vara användbart att veta att "args" även innehåller det första elementet som är namnet på ditt program. Detta kan dock enkelt tas bort med hjälp av funktionen "shift" som tar bort det första elementet i vektorn och returnerar det.
 
 ## Se även
 
-[Bryce Mankin's blogg om kommando radargument i Rust](https://blog.burntsushi.net/rust-cli-framework-design/)
-
-[Rust dokumentation för att läsa miljövariabler](https://doc.rust-lang.org/std/env/fn.var.html)
-
-[Kompletta handledningar för att läsa från kommando raden i andra programmeringsspråk](https://ss64.com/bash/syntax-cmdline.html)
+- [Officiell Rust dokumentation för Command Line Arguments](https://doc.rust-lang.org/std/env/fn.args.html)
+- [En tutorial om att använda Command Line Arguments i Rust](https://www.tutorialspoint.com/rust/rust_program_arguments.htm)

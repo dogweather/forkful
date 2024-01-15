@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Merkkijonon muuntaminen isolla alkukirjaimella"
-simple_title:         "Merkkijonon muuntaminen isolla alkukirjaimella"
+title:                "Tekstin kirjoittaminen isolla alkukirjaimella"
+html_title:           "Fish Shell: Tekstin kirjoittaminen isolla alkukirjaimella"
+simple_title:         "Tekstin kirjoittaminen isolla alkukirjaimella"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi stringien isoiksi kirjoittaminen on tärkeää Fish Shell ohjelmoinnissa?
-
 ## Miksi
 
-Fish Shell on suosittu työkalu ohjelmoijille, jotka haluavat tehostaa työskentelyään. Yksi tapa tehdä tämä on kirjoittaa koodi mahdollisimman lyhyesti ja tehokkaasti. Yksi tapa tehdä tämä on capitalize-funktio. Tämän toiminnon avulla voit nopeasti muuttaa kirjaimet stringin ensimmäisten kirjainten kirjoittamalla ne isoina ja loput pieninä. Tämä voi auttaa parantamaan lopputulosta ja säästämään aikaa kirjoittamisessa.
+Stringin muuttaminen isolla alkukirjaimella voi olla hyödyllistä esimerkiksi silloin, kun halutaan korostaa jonkin asian merkitystä tai tehdä siitä erottuvampi.
 
-## Miten capitalizing toimii Fish Shell:in avulla
+## Kuinka tehdä
 
-```Fish Shell
-string capitalize "testi"
-```
-
-```
-OUTPUT: Testi
-```
-
-Capitalizing toimii yksinkertaisesti syöttämällä komento "capitalize" ja sitten haluamasi string. Ohjelma sitten muuttaa ensimmäisen kirjaimen isoksi ja loput pieniksi. Tämä toimii kaikille stringeille, joten voit käyttää sitä eri kielillä ja eri muodoilla.
-
-Toinen kätevä tapa käyttää capitalize on yhdistää se muihin komentoihin. Esimerkiksi, jos haluat muuttaa tietyn tiedoston nimen ensimmäinen kirjain isoksi, voit tehdä sen seuraavalla tavalla:
+Capitalization onnistuu helposti käyttämällä fish shellin sisäänrakennettua `string` komentoa. Alla on esimerkkejä erilaisista tapauksista:
 
 ```Fish Shell
-mv testi.txt (string capitalize "testi").txt
+# Ensimmäisen kirjaimen muuttaminen isoksi
+set string "fish shell"
+echo (string capitalize $string) # Tulostaa "Fish shell"
+
+# Kaikkien kirjainten muuttaminen isoiksi
+set string "fish shell"
+echo (string capitalize -a $string) # Tulostaa "FISH SHELL"
+
+# Sanojen ensimmäisten kirjainten muuttaminen isoiksi
+set string "fish shell"
+echo (string capitalize -w $string) # Tulostaa "Fish Shell"
+
+# Lisäämällä rivinvaihtoja stringiin
+set string "fish\nshell"
+echo (string capitalize -wl $string) # Tulostaa "Fish\nShell"
 ```
 
-Tämä komento muuttaa tiedoston nimen "testi.txt" muotoon "Testi.txt". Näin voit käyttää capitalizea osana muita komentoja ja tehostaa työskentelyäsi.
+## Syvemmälle
 
-## Syvällisempi sukellus capitalizen maailmaan
-
-Capitalizen toiminta perustuu Unicode-standardiin ja se tunnistaa automaattisesti eri kielellisiä kirjaimia. Tämä tarkoittaa, että voit käyttää capitalizea monilla eri kielillä ja se toimii silti oikein. Lisäksi se pystyy käsittelemään myös erikoismerkkejä ja välimerkkejä kunnolla, mikä tekee siitä monipuolisen työkalun ohjelmoijille.
-
-On myös huomionarvoista, että capitalize ei muuta stringin alkuperäistä muotoa, vaan tuottaa uuden, muutetun version. Täten voit käyttää sitä luomaan dynaamisia nimiä esimerkiksi tiedostoille tai kansioille, mikä voi olla hyödyllistä monimutkaisemmissa ohjelmissa.
+`string` komennolla on myös muita hyödyllisiä vaihtoehtoja, kuten muuttaminen pieniksi kirjaimiksi (`-l`), muuttaminen isoiksi kirjaimiksi mutta säilyttäen muut kirjaimet samoina (`-uc`) tai muuttaminen camel case muotoon (`-c`). Lisätietoja näistä ja muista vaihtoehdoista löytyy fish shellin dokumentaatiosta.
 
 ## Katso myös
 
-- [Fish-Shell dokumentaatio](https://fishshell.com/docs/current/)
-- [Unicode-standardin selitys](https://www.unicode.org/)
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/)
+- [String-komennon dokumentaatio](https://fishshell.com/docs/current/cmds/string.html)

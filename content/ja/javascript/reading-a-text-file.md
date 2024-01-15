@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: テキストファイルの読み込み"
+title:                "テキストファイルの読み込み"
+html_title:           "Javascript: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ読むのか
 
-テキストファイルを読むことの重要性を理解するには、プログラミングにおける基本的なスキルであると認識することが重要です。テキストファイルを読むことで、データを取り込んだり、処理したりすることができるようになります。
+Javascriptには、文字列や数値などのデータをファイルから読み込むための機能があります。これは、ウェブアプリケーションやゲームなど、様々なプログラムを作成する際に必要不可欠です。そのため、Javascriptを学ぶ上で、ファイルの読み込み方法を知っておくことは非常に重要です。
 
-## テキストファイルの読み方
+## 方法
+
+ファイルを読み込むには、`FileReader()`という関数を使用します。以下の例では、`test.txt`というテキストファイルを読み込んで、その内容をコンソールに出力しています。
 
 ```Javascript
-// ファイルシステムモジュールを使用する
-const fs = require('fs');
-
-// テキストファイルを読み込む
-fs.readFile('sample.txt', 'utf8', (err, data) => {
-    // ファイルの読み込みに成功した場合
-    if (!err) {
-        // データをコンソールに出力する
-        console.log(data);
-    } else {
-        // ファイルの読み込みに失敗した場合
-        console.log(err);
-    }
-});
+let reader = new FileReader(); // FileReader()関数を使用して新しいインスタンスを作成
+reader.onload = function(e) {
+  let fileContent = e.target.result; // 読み込んだファイルの内容を取得
+  console.log(fileContent); // 内容をコンソールに出力
+}
+reader.readAsText('./test.txt'); // テキストファイルを読み込む
 ```
 
-### 出力結果
+上記のコードを実行すると、`test.txt`の内容がコンソールに出力されます。
+
 ```
-こんにちは、世界！
-Hello, World!
+Hello, world!
 ```
 
-## 詳しく調べる
+## 深堀り
 
-テキストファイルの読み込みでは、`fs.readFile()`メソッドを使用しています。このメソッドは、非同期的にファイルを読み込むため、コールバック関数を使用して処理を行います。第一引数には読み込むファイルのパスを指定し、第二引数には文字コードを指定します。そしてコールバック関数の第一引数にはエラーオブジェクトが渡され、第二引数には読み込んだデータが渡されます。
+`FileReader()`は、ファイルの読み込みが完了するまで待機するため、非同期処理が必要です。また、`FileReader()`には、ファイルを読み込むためのさまざまなメソッドがあります。詳細については、[公式ドキュメント](https://developer.mozilla.org/ja/docs/Web/API/FileReader)を参照してください。
 
 ## 参考リンク
 
-- [Node.js公式ドキュメント](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [TechAcademy | テキストファイルを読み書きする方法](https://techacademy.jp/magazine/33202)
-- [Qiita | Node.jsでテキストファイルの読み込みをしてみよう](https://qiita.com/moririn772/items/2852b5300e400a0a6ff8)
+- [FileReader - MDN web docs](https://developer.mozilla.org/ja/docs/Web/API/FileReader)
+- [Javascriptでファイルを読み込む方法 - Qiita](https://qiita.com/toduq/items/7690e1a4904e889d59ae)

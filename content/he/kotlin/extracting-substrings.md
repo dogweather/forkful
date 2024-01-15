@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: יצירת תת-מחרוזות"
-simple_title:         "יצירת תת-מחרוזות"
+title:                "חילוץ תת-מחרוזות"
+html_title:           "Kotlin: חילוץ תת-מחרוזות"
+simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,21 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-יתרון משמעותי לחיתוך תת-מחרוזת הוא שהוא מאפשר לנו לעבוד במדויק עם טקסטים גדולים ומסובכים, ולהשיג תוצאות מדויקות בכמה פעולות פשוטות. אם אתם מפתחים באמצעות הכולס JetBrains IntelliJ IDEA או כל רכיב אחר בשורת פקודה, אתה יכול בקלות לחתוך ולהחביא מחרוזות לקרוא בשלב מאוחר יותר, או לפצל את המחרוזות לתתי-מחרוזות על פי פורמטים מסוימים.
+למה להתעסק בחילוץ מחרוזת? טוב, ברשימה אתה
 
-## כיצד לעשות זאת
+1. עובד עם נתונים וזיהוי עיקריים לניתוח נתונים.
+2. צריך לשלב מחרוזות כחלק ממטלות כמו תיאור תכניות או פילטר מסננים.
 
-למשל, נניח שאנחנו רוצים לחתוך תת-מחרוזת מתוך מחרוזת ארוכה. לכן, ניצור מחרוזת ראשית כדי להעיפ את כל התכונות החדשים של Kotlin אליהן. נגדיר מחרוזת חדשה בשם "Kotlin" ונשתמש בפעולת החזרה המובנת של ה-matchedMatch של המחרוזת הראשית Kotlin לקבוע מחרוזת.
+## איך לעשות זאת
+
+ראשית, נצטרך להעדפת מחרוזת ראשונית, וכדי לעשות זאת, נשתמש בפעולה `subSequence()`. למשל, ננסה להחליף את האות "א" במחרוזת "Hello אותו":
 
 ```Kotlin
-var string = "שלום לעולם"
-var substring = string.substring(startIndex = 6, endIndex = 10)
+val originalString = "Hello World"
+val replacedString = originalString.replace("World", "Place")
+
+println(replacedString)
 ```
+Output: Hello Place
 
-כעת, מחרוזת תת-מחרוזת תתוקן ותכיל את התוצאה "לעו".
+כעת נרצה לחלץ את האות "א" מהמחרוזת המקורית:
 
-## Deep Dive
+```Kotlin
+val originalString = "Hello World"
+val substring = originalString.subSequence(6,7)
 
-כדי להבין טוב יותר את החיתוך של תת-מחרוזת, ניתן להשתמש בשיטומיות לחיתוך מחרוזת לא רק לפי מספר התווים, אלא גם לפי מיקום נתון של התווים תוך כדי החיתוך. בנוסף, ניתן לשים לב לחיתוך מחרוזת ראשית על ידי הגדרת הנקודת התחלת והמקום של החיתוך, יהיה יותר נקי ומהיר יותר כאשר מעבירים מחרוזת קטנה יותר כמו Kotlin.
+println(substring)
+```
+Output: א
 
-אם אתם מעוניינים לדעת עוד על חיתוך תת-מחרוזת ועל שימושים נוספים שיכול להשתמש בהם, ניתן לעיין במדריך המפורט של JetBrains המכ
+ניתן גם להשתמש בפעולה `substring()` כדי לחלץ עוד יותר מחרוזות. בדוגמה הבאה, נחלץ את המספרים במחרוזת "12345":
+
+```Kotlin
+val originalString = "12345"
+val substring1 = originalString.substring(0,2)
+val substring2 = originalString.substring(2,5)
+
+println(substring1)
+println(substring2)
+```
+Output: 12
+345
+
+## רטרוספקטיבה
+
+מכיוון שמחרוזות הן מבני נתונים נפוצים בכל שפת תכנות, חילוץ מחרוזות הוא כלי חשוב בתחום תכנות. בדוגמאות שלנו עילה נראה כיצד להשתמש בפעולות חילוץ מחרוזת הכוללות פעולות כגון `subSequence()` ו-`substring()`, אשר יכולות להיות מועילות כאשר מעורבים בהפיכת מחרוזות ונתונים.
+
+## ראה גם
+
+- [Kotlin Documentation on subSequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-char-sequence/sub-sequence.html)
+- [Kotlin Documentation on substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html)

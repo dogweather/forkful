@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekk om en mappe eksisterer"
+html_title:           "Rust: Sjekk om en mappe eksisterer"
+simple_title:         "Sjekk om en mappe eksisterer"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,32 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-I denne bloggposten skal vi se nærmere på hvordan man kan sjekke om en mappe eksisterer i Rust-programmeringsspråket. Dette er en viktig ferdighet for å kunne håndtere filbehandling i et program, og kan være nyttig i mange ulike situasjoner.
 
-## Slik gjør du det
-For å sjekke om en mappe eksisterer i Rust, kan du bruke funksjonen ```std::path::Path::exists()```. Denne funksjonen tar inn en sti (path) som parameter og returnerer en boolean-verdi som indikerer om stien eksisterer eller ikke.
+Å sjekke om en mappe eksisterer er et viktig skritt i mange programmeringsprosjekter. Det kan være nyttig for å sikre at en fil kan åpnes, eller for å kontrollere om en fil allerede er lagret på riktig sted.
 
-La oss se på et eksempel. Anta at vi har en mappe med navnet "Bilder" på skrivebordet vårt. Vi kan bruke følgende kode for å sjekke om denne mappen eksisterer:
+## Hvordan
+
+For å sjekke om en mappe eksisterer i et Rust-program, kan du bruke følgende kode:
 
 ```Rust
-use std::path::Path;
+use std::fs;
 
-if Path::new("C:\\Users\\brukernavn\\Desktop\\Bilder").exists() {
-    println!("Bilder-mappen eksisterer!");
+let directory = "/hjem/mappe";
+
+if fs::metadata(directory).is_ok() {
+    println!("Mappen eksisterer!");
 } else {
-    println!("Bilder-mappen eksisterer ikke!");
+    println!("Mappen eksisterer ikke.");
 }
 ```
 
-Dette vil skrive ut "Bilder-mappen eksisterer!" hvis mappen finnes, og "Bilder-mappen eksisterer ikke!" hvis den ikke finnes.
+I dette eksempelet bruker vi funksjonen `fs::metadata()` som returnerer en `std::fs::Metadata`-struktur for gitt filbane. Vi bruker så `is_ok()`-metoden for å sjekke om det ikke har skjedd en feil.
 
-I tillegg til å bruke ```std::path::Path::exists()```, kan du også bruke funksjonen ```std::fs::metadata()``` for å få mer informasjon om en mappe eller fil. Denne funksjonen returnerer en ```std::fs::Metadata```-struktur som inneholder blant annet informasjon om størrelse og endringsdato for den gitte stien.
+## Dypdykk
 
-## Dykk ned i detaljene
-Når du bruker ```std::path::Path::exists()``` for å sjekke om en mappe eksisterer, må du være oppmerksom på at denne funksjonen også vil returnere ```true``` hvis stien peker på en fil. Hvis du kun ønsker å sjekke om en mappe (og ikke en fil) eksisterer, kan du bruke funksjonen ```std::fs::metadata()``` som nevnt tidligere, og sjekke om returverdien inneholder informasjon om en mappe.
+Når du sjekker om en mappe eksisterer, er det viktig å være oppmerksom på at mappen kan være skjult, eller at du ikke har tillatelse til å lese den. I disse tilfellene vil `fs::metadata()`-funksjonen returnere en feil. For å håndtere dette kan du bruke et match-uttrykk, som lar deg håndtere både suksess og feiltilfeller.
 
-Det er også viktig å merke seg at å sjekke om en mappe eksisterer ikke betyr at du har tilgang til å lese eller skrive til denne mappen. Dette vil fortsatt avhenge av filrettighetene og eventuelle restriksjoner på systemet ditt.
+```Rust
+match fs::metadata(directory) {
+    Ok(metadata) => println!("Mappen eksisterer!"),
+    Err(error) => println!("Kunne ikke sjekke om mappen eksisterer: {}", error),
+}
+```
+
+Du kan også bruke `fs::symlink_metadata()`-funksjonen hvis du vil sjekke metadata for en symbolisk lenke i stedet for den endelige destinasjonsfilen.
 
 ## Se også
-- [Rust dokumentasjon for std::path::Path::exists()](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists)
-- [Rust dokumentasjon for std::fs::metadata()](https://doc.rust-lang.org/std/fs/fn.metadata.html)
+
+Følgende lenker kan være nyttige for å lære mer om mapping av filer og mapper i Rust:
+
+- [Offisiell dokumentasjon for `std::fs`](https://doc.rust-lang.org/std/fs/index.html)
+- [TutorialsPoint om lesing og skriving av filer](https://www.tutorialspoint.com/rust/rust_file_handling.htm)
+- [StackOverflow-tråd om å sjekke om en mappe eksisterer](https://stackoverflow.com/questions/28392008/how-to-use-rust-code-to-create-a-folder-if-it-does-not-exist)
+
+Vi håper denne artikkelen var nyttig for å hjelpe deg med å sjekke om mapper eksisterer i Rust!

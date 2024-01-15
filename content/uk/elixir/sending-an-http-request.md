@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання http запиту"
+html_title:           "Elixir: Надсилання http запиту"
+simple_title:         "Надсилання http запиту"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,60 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-У сучасному світі, веб-розробка є необхідною умінням для багатьох програмістів. Високорівневі мови програмування, такі як Elixir, надають зручні інструменти для здійснення HTTP-запитів. Це дозволяє зв'язувати наші додатки з іншими системами та сервісами, що значно розширює можливості наших програм. У цій статті ми розглянемо, як надсилати HTTP-запити за допомогою Elixir та як це може бути корисно.
+Надсилання HTTP запиту - це важлива частина розробки веб-додатків, так як ця протокол дозволяє програмам обмінюватися даними через мережу Інтернет. Зокрема, це дозволяє отримати від сервера HTML сторінку, яку ми бачимо в браузері, або отримати дані з сервера для подальшої обробки.
 
 ## Як
 
-Для надсилання HTTP-запитів у Elixir ми будемо використовувати бібліотеку `HTTPoison`. Перш ніж почати, переконайтеся, що у вас встановлений Elixir та отримайте бібліотеку за допомогою залежностей Mix:
+Надсилання HTTP запиту в Еліксир можливо завдяки використанню модуля `HTTPoison`. Перш за все, необхідно встановити цей модуль за допомогою команди `mix deps.get`. Далі, можна використовувати функцію `HTTPoison.request/4`, передаючи у неї параметри `:post` або `:get` для надсилання відповідних запитів, а також URL адресу та необов'язково дані для надсилання. Нижче подані приклади коду та можливі виходи для відповідних запитів.
 
 ```Elixir
-def deps do
-  [
-    {:httpoison, "~> 1.6"}
-  ]
-end
+# Відправка GET запиту
+HTTPoison.request(:get, "https://jsonplaceholder.typicode.com/posts/1")
+
+# Вихід:
+{:ok, %HTTPoison.Response{body: "{\"userId\": 1, \"id\": 1, \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\", \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"}", headers: [...], request: %HTTPoison.Request{...}, status_code: 200}}
+
+# Відправка POST запиту
+HTTPoison.request(:post, "https://jsonplaceholder.typicode.com/posts", [], body: %{title: "New post", body: "This is a new post!", userId: 1})
+
+# Вихід:
+{:ok, %HTTPoison.Response{body: "{\"title\": \"New post\", \"body\": \"This is a new post!\", \"userId\": 1, \"id\": 101}", headers: [...], request: %HTTPoison.Request{...}, status_code: 201}}
 ```
 
-Далі, імпортуємо `HTTPoison` та встановимо налаштування, яке дозволить нам отримувати дані в форматі JSON:
+## Глибинне дослідження
 
-```Elixir
-iex> import HTTPoison
+На практиці можуть виникнути ситуації, коли потрібно вказати додаткові параметри для запиту, наприклад, заголовки або авторизацію. Для цього, можна передати додатковий аргумент `headers` або `basic_auth` у функцію `HTTPoison.request/4`. Також, можна використовувати інші методи HTTP запитів (наприклад, `:put` чи `:delete`) та передавати дані у JSON форматі за допомогою бібліотеки `Poison`.
 
-iex> httpoison.set(json_decoder: Poison)
-```
+## Дивіться також
 
-Тепер, для надсилання GET-запита, ми можемо використати функцію `get` із необхідними параметрами, такими як URL та заголовки:
-
-```Elixir
-iex> result = get("https://jsonplaceholder.typicode.com/posts", [{"Content-Type", "application/json"}])
-
-iex> result
-%HTTPoison.Response{status_code: 200, body: "[{...}, {...}, ...]"}
-```
-
-Як бачимо, ми отримали відповідь у форматі JSON, яку ми можемо подальше обробити за допомогою функцій `Poison`.
-
-## Deep Dive
-
-Для надсилання інших типів запитів, таких як POST, PUT чи DELETE, ми можемо використовувати відповідні функції `post`, `put` та `delete`, у яких також можна передавати параметри та тіло запиту.
-
-За допомогою опції `stream_to` ми можемо також надсилати файл для POST-запитів:
-
-```Elixir
-iex> file = File.read("test.json")
-
-iex> post("https://jsonplaceholder.typicode.com/posts", file, [{"Content-Type", "application/json"}], stream_to: self())
-
-iex> receive do
-...>   {:httpoison_response, %{status_code: 201, body: body}} -> body
-...> end
-"{...}"
-```
-
-Більш детальну інформацію про параметри та опції можна знайти у документації `HTTPoison`.
-
-## Дивись також
-
-- [Документація HTTPoison](https://hexdocs.pm/httpoison)
-- [Туторіал з HTTP-запитів у Elixir](https://elixirschool.com/lessons/advanced/http/)
-- [Бібліотека HTTPoison на GitHub](https://github.com/edgurgel/httpoison)
+- [Документація по HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Офіційний сайт Еліксир](https://elixir-lang.org/)
+- [Приклади коду для надсилання HTTP запитів в Еліксирі](https://gist.github.com/elliottneilclark/5d0b116e379e6e862872)

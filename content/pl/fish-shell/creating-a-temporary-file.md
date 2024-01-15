@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "Fish Shell: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,38 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Tworzenie tymczasowych plików jest powszechną praktyką w programowaniu. Często jest to niezbędne, gdy potrzebujemy tymczasowych danych lub plików, które nie są potrzebne po zakończeniu działania programu.
+Tworzenie plików tymczasowych jest niezbędnym elementem programowania w Fish Shell. Często potrzebujemy tymczasowego pliku do przechowywania danych lub wyników działania programu. Tworzenie tymczasowych plików jest szybkie, łatwe i wygodne dzięki wbudowanym funkcjom Fish Shell.
 
 ## Jak to zrobić
 
-Tworzenie tymczasowych plików jest bardzo proste w Fish Shell. Możemy użyć wbudowanej funkcji `mktemp`, która automatycznie generuje unikalną nazwę dla naszego pliku tymczasowego.
+Aby utworzyć tymczasowy plik w Fish Shell, możemy skorzystać z funkcji `mktemp`, która automatycznie tworzy unikalny plik i zwraca jego ścieżkę. Przykładowy kod wyglądałby następująco:
 
 ```Fish Shell
-set tempfile (mktemp)
-echo "To jest tymczasowy plik" > $tempfile
-cat $tempfile
+set temp_file (mktemp)
+touch $temp_file
+echo "To jest przykładowa treść" > $temp_file
+cat $temp_file
 ```
 
-W powyższym przykładzie tworzymy zmienną `tempfile` i przypisujemy jej wartość zwróconą przez funkcję `mktemp`. Następnie do naszego pliku tymczasowego zapisujemy przykładowy tekst i wyświetlamy go na konsoli za pomocą komendy `cat`.
+Powyższy kod utworzy tymczasowy plik, doda do niego tekst, a następnie wyświetli jego zawartość. Dzięki użyciu funkcji `mktemp`, nie musimy samodzielnie wymyślać unikalnych nazw plików, co ułatwia nam zadanie.
 
-Możemy również ustalić konkretną nazwę dla naszego pliku tymczasowego, jeśli chcemy. W tym celu możemy wykorzystać opcję `-p` funkcji `mktemp`.
+Możemy również utworzyć tymczasowy katalog przy pomocy funkcji `mktemp -d`, a także ustalić prefix lub suffix dla nazwy tymczasowego pliku lub katalogu, na przykład `mktemp -p prefix_ -s _suffix`. Więcej informacji na temat funkcji `mktemp` możemy znaleźć w jej dokumentacji lub wpisując w terminalu komendę `help mktemp`.
 
-```Fish Shell
-set tempfile (mktemp -p data)
-echo "To jest tymczasowy plik w folderze data" > $tempfile
-cat $tempfile
-```
+## Deep Dive
 
-W ten sposób plik zostanie automatycznie stworzony w określonym przez nas folderze.
+Tworzenie tymczasowego pliku w Fish Shell odbywa się poprzez utworzenie gałęzi wirtualnego systemu plików (VFS), zwanego `tmpfs`. Jest to system plików, który istnieje tylko w pamięci RAM i jest automatycznie usuwany po zakończeniu sesji użytkownika. Dzięki temu pliki tymczasowe są szybkie i nie obciążają dysku twardego.
 
-## Przeanalizujmy to dokładniej
+Pliki tymczasowe są szczególnie przydatne w przypadku, gdy chcemy przetestować lub wykorzystać jakąś funkcję, ale nie chcemy podpisywać się pod zmianami w pliku źródłowym. Dzięki temu możemy bezpiecznie pracować na kopii, która zostanie automatycznie usunięta po zakończeniu sesji.
 
-Tworząc tymczasowe pliki w ten sposób, musimy pamiętać, że zostaną one automatycznie usunięte po zakończeniu działania programu. Jeśli chcemy zachować plik, musimy go przenieść lub skopiować w innej części skryptu.
+## Zobacz także
 
-Istnieją również inne metody tworzenia tymczasowych plików w Fish Shell, na przykład za pomocą funkcji `mktemp -s` lub `mktemp -t`. Możemy również użyć polecenia `touch`, aby utworzyć pusty plik tymczasowy.
-
-## Zobacz również
-
-- Dokumentacja funkcji `mktemp` w Fish Shell: https://fishshell.com/docs/current/cmds/mktemp.html
-- Wprowadzenie do podstaw programowania w Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Przykłady i dalsze zastosowania tworzenia tymczasowych plików w Fish Shell: https://www.davidbegin.com/create-temporary-files-and-directories-in-fish-shell/
+- Dokumentacja funkcji `mktemp`
+- Poradnik tworzenia tymczasowych plików w Fish Shell na blogu Fisherman.pl
+- Temat na forum Fish Shell dotyczący korzystania z plików tymczasowych

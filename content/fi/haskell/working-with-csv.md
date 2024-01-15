@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Työskentely csv:n kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "Haskell: Työskentely csv:n kanssa"
 simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi työskennellä CSV-tiedostojen kanssa?
+## Miksi
 
-CSV (Comma-Separated Values) on yleisesti käytetty tiedostomuoto datan tallentamiseen ja jakamiseen. Monet ohjelmistot ja työkalut tukevat CSV-muotoa, joten se on erinomainen valinta käsittelemään tietoja useiden eri ohjelmistojen välillä. Lisäksi CSV-tiedostoja on helppo lukea ja muokata, mikä tekee niistä suositun ratkaisun datan käsittelyyn.
+Miksi joku haluaisi työskennellä CSV-tiedostojen parissa? Yksinkertaisesti sanottuna, CSV-tiedostot ovat erittäin yleisessä käytössä, ja niiden käsittely on välttämätöntä monille ohjelmoijille, varsinkin jos he käsittelevät dataa.
 
-## Kuinka työskennellä CSV-tiedostojen kanssa?
+## Miten
 
-CSV-tiedostojen käsittely Haskellilla on yksinkertaista, sillä on olemassa hyödyllisiä kirjastoja, kuten [csv](https://hackage.haskell.org/package/csv) ja [cassava](https://hackage.haskell.org/package/cassava), joilla voit helposti lukea ja kirjoittaa CSV-tiedostoja. Esimerkiksi, jos haluat lukea CSV-tiedoston nimeltä "data.csv" ja tulostaa sen sisällön, voit tehdä sen seuraavasti:
+Haskellin avulla CSV-tiedostojen käsittely on suhteellisen helppoa ja suoraviivaista. Ensimmäiseksi sinun täytyy importata **csv** -kirjasto:
 
 ```Haskell
-import Text.CSV (parseCSV, Record)
-
-main :: IO ()
-main = do
-    csvData <- parseCSVFromFile "data.csv"
-    either handleError print csvData
-
-handleError :: String -> IO ()
-handleError err = putStrLn $ "Virhe: " ++ err    
-
-print :: Either String [Record] -> IO ()
-print (Right records) = mapM_ (putStrLn . show) records
-print (Left err) = print err
+import Text.CSV
 ```
 
-Kun ajat tämän koodin, näet CSV-tiedoston sisällön tulostettuna näytölle.
+Seuraavaksi voit avata CSV-tiedoston ja tallentaa sen listaan käyttämällä **parseCSVFromFile** -funktiota:
 
-## Syvempi sukellus CSV-tiedostojen työstämiseen
+```Haskell
+records <- parseCSVFromFile "tiedosto.csv"
+```
 
-CSV-tiedostojen työstämisessä on hyvä huomioida, että tiedostojen väliset erot voivat vaihdella eri käyttöjärjestelmissä. Esimerkiksi Windows-käyttöjärjestelmässä rivinvaihdot merkitään kahdella merkillä, kun taas Linux-käyttöjärjestelmässä vain yhdellä. Tämän vuoksi CSV-tiedostoja luettaessa kannattaa käyttää [csv-parse](https://hackage.haskell.org/package/csv-parse) tai [cassava-parse](https://hackage.haskell.org/package/cassava) -funktioita, joilla voi määrittää oikean rivinvaihdon merkin. Lisäksi näiden kirjastojen avulla voit helposti muuntaa CSV-tiedostosta luetun datan haluttuun muotoon.
+Saat nyt listan listoista, jotka sisältävät CSV-tiedoston rivit. Voit esimerkiksi tulostaa kaikki rivit käyttämällä **mapM_** -funktiota:
+
+```Haskell
+mapM_ putStrLn (map show records)
+```
+
+Jos haluat käsitellä tiettyjä arvoja tiedostosta, voit käyttää **index** -funktiota. Jos esimerkiksi haluat tulostaa ensimmäisen rivin kolmannen sarakkeen arvon, voit käyttää seuraavaa koodia:
+
+```Haskell
+let value = records !! 0 !! 2
+print value 
+-- Tulostaa ensimmäisen rivin kolmannen sarakkeen arvon
+```
+
+## Syventävä sukellus
+
+CSV-tiedostot sisältävät usein tekstiä ja eri datatyyppejä. Haskellin avulla voit käsitellä näitä erilaisia datatyyppejä helposti. Esimerkiksi jos haluat muuntaa sarakkeen arvon merkkijonosta numeroarvoksi, voit käyttää **read** -funktiota:
+
+```Haskell
+let value = read (records !! 0 !! 2) :: Double
+print value
+-- Tulostaa ensimmäisen rivin kolmannen sarakkeen arvon muunnettuna Double-tyypiksi
+```
+
+Huomaa myös, että CSV-tiedoston alkuun voidaan lisätä ns. otsikkorivi, joka sisältää sarakkeiden nimet. Tämän avulla voit käsitellä tiedostoa helpommin, kun tiedät mitä arvoja kukin sarake sisältää.
 
 ## Katso myös
 
-- [csv - Hackage](https://hackage.haskell.org/package/csv)
-- [cassava - Hackage](https://hackage.haskell.org/package/cassava)
-- [csv-parse - Hackage](https://hackage.haskell.org/package/csv-parse)
-- [cassava-parse - Hackage](https://hackage.haskell.org/package/cassava-parse)
+- [Haskellin dokumentaatio CSV-kirjastolle](https://hackage.haskell.org/package/csv)
+- [Ohjelmointiopas CSV-tiedostojen käsittelyyn](https://www.haskell.org/haskellwiki/How_to_work_on_CSV_data)

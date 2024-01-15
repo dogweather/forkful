@@ -1,5 +1,6 @@
 ---
-title:                "Java: Trabajando con csv"
+title:                "Trabajando con csv"
+html_title:           "Java: Trabajando con csv"
 simple_title:         "Trabajando con csv"
 programming_language: "Java"
 category:             "Java"
@@ -9,57 +10,100 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué trabajar con CSV? 
+¿Por qué trabajar con CSV en Java?
 
-CSV (Valores Separados por Comas) es uno de los formatos de archivos más comunes y utilizados en el mundo de la programación. Este formato permite almacenar y organizar datos de forma sencilla y estructurada, lo que lo hace muy útil en diferentes aplicaciones. En Java, trabajar con archivos CSV puede resultar beneficioso para realizar tareas de análisis de datos, exportar e importar información, entre otros. En esta entrada, te mostraremos cómo trabajar con CSV en Java y los beneficios que puede aportar a tus proyectos.
+Trabajar con archivos CSV en Java puede ser extremadamente útil en muchas situaciones, especialmente cuando se trata de manejar grandes cantidades de datos estructurados. Esto puede ser particularmente útil para aquellos que trabajan con análisis de datos o bases de datos.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-Para empezar, debemos tener en cuenta que en Java, para trabajar con archivos CSV, necesitaremos importar la clase `CSVReader` de la librería `opencsv`. A continuación, te mostramos un ejemplo de cómo leer un archivo CSV y mostrar su contenido por consola:
+Para trabajar con archivos CSV en Java, primero necesitarás importar la clase **CSVReader** de la librería **opencsv**. Una vez que hayas hecho esto, puedes crear una instancia de **CSVReader** utilizando un objeto de tipo **FileReader** y pasando como parámetro el archivo CSV que deseas leer.
+
+Aquí hay un ejemplo de cómo leer un archivo CSV y mostrar su contenido en la consola:
 
 ```Java
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
 import com.opencsv.CSVReader;
 
-public class LeerCSV {
+public class CSVExample {
+  public static void main(String[] args) {
+    try {
+      // Crear objeto CSVReader y pasar el archivo CSV que deseas leer
+      CSVReader reader = new CSVReader(new FileReader("ejemplo.csv"));
+      String[] linea;
 
-    public static void main(String[] args) throws IOException {
-
-        // Se define la ruta del archivo CSV
-        String ruta = "datos.csv";
-
-        // Se crea un objeto CSVReader para leer el archivo
-        CSVReader reader = new CSVReader(new FileReader(ruta));
-
-        // Se convierte el contenido del archivo a una lista de arrays
-        List<String[]> contenido = reader.readAll();
-
-        // Se recorre la lista y se imprime cada array en una línea diferente
-        for (String[] fila : contenido) {
-            System.out.println(Arrays.toString(fila));
+      // Leer cada línea del archivo y mostrarla en la consola
+      while ((linea = reader.readNext()) != null) {
+        for (String dato : linea) {
+          System.out.print(dato + " ");
         }
-
-        // Se cierra el objeto CSVReader
-        reader.close();
-
+        System.out.println();
+      }
+      reader.close();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
-
+  }
 }
 ```
 
-Este código nos permite leer el archivo CSV y mostrar su contenido por consola, lo que resulta útil para poder manipular estos datos en el futuro. Además, utilizando la librería `opencsv` podemos realizar otras operaciones como escribir en archivos CSV o realizar búsquedas específicas de datos.
+El resultado de este programa sería:
 
-## ¡Sumérgete en los detalles!
+```bash
+1, Juan, Pérez, juan@email.com
+2, María, García, maria@email.com
+3, Pedro, López, pedro@email.com
+```
 
-Ahora que ya sabemos cómo leer un archivo CSV en Java, es importante conocer algunas características importantes de este formato de archivo. En primer lugar, los archivos CSV suelen tener como delimitador la coma (`,`), sin embargo, puede variar según la configuración regional del sistema en el que se esté trabajando. Además, es común que los datos estén separados por columnas y cada fila represente un registro completo de información.
+Además de leer archivos CSV, también es posible escribir en ellos utilizando la clase **CSVWriter**. Aquí hay un ejemplo de cómo crear un nuevo archivo CSV y escribir en él:
 
-En cuanto a la manipulación de datos en archivos CSV, es importante tener en cuenta que cualquier valor que contenga una coma o una nueva línea debe estar entre comillas para que sea considerado como un solo campo. También es importante estar atentos a posibles caracteres especiales que puedan afectar la lectura del archivo.
+```Java
+import java.io.FileWriter;
+import java.util.ArrayList;
+import com.opencsv.CSVWriter;
 
-¡No olvides explorar las diferentes opciones y métodos que ofrece la librería `opencsv` para manipular archivos CSV en Java!
+public class CSVWriterExample {
+  public static void main(String[] args) {
+    try {
+      // Crear objeto CSVWriter y pasar el nombre del archivo a crear
+      CSVWriter writer = new CSVWriter(new FileWriter("nuevo.csv"));
+
+      // Crear una lista de datos para agregar al archivo CSV
+      ArrayList<String[]> datos = new ArrayList<String[]>();
+      datos.add(new String[] {"ID", "Nombre", "Apellido", "Email"});
+      datos.add(new String[] {"1", "Juan", "Pérez", "juan@email.com"});
+      datos.add(new String[] {"2", "María", "García", "maria@email.com"});
+      datos.add(new String[] {"3", "Pedro", "López", "pedro@email.com"});
+
+      // Escribir los datos en el archivo CSV
+      writer.writeAll(datos);
+
+      writer.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+El resultado sería un nuevo archivo CSV llamado "nuevo.csv" con la siguiente información:
+
+```bash
+ID, Nombre, Apellido, Email
+1, Juan, Pérez, juan@email.com
+2, María, García, maria@email.com
+3, Pedro, López, pedro@email.com
+```
+
+## Profundizando en CSV
+
+Ahora que tienes una idea básica de cómo leer y escribir archivos CSV en Java, es importante comprender que existen diferentes métodos y opciones para trabajar con ellos. Puedes, por ejemplo, especificar un delimitador personalizado para el archivo CSV o incluso utilizar la clase **CSVParser** para analizar los datos de diferentes maneras.
+
+También es importante tener en cuenta que, aunque CSV es un formato de archivo muy utilizado, no es la mejor opción para todos los tipos de datos. Por ejemplo, si tus datos contienen valores de texto que pueden incluir comas o saltos de línea, podrías tener problemas al leer o escribir el archivo CSV.
+
+Por esta razón, es importante investigar y comprender todas las opciones disponibles para trabajar con archivos CSV en Java y elegir la mejor opción según tus necesidades específicas.
 
 ## Ver también
 
-- [Documentación de la librería opencsv en español](https://opencsv.es/)
-- [Ejemplos de código para trabajar con archivos CSV en Java](https://github.com/Baeldung/opencsv-tutorial)
+- [Documentación oficial de OpenCSV](http://opencsv.sourceforge.net/)
+- [Tutorial de Java CSV](https://www.baeldung.com/java-csv)
+- [Especificar delimitador en Java CSV](https://stackoverflow.com/questions/19881224/set-delimiter-in-opencsv?rq=1)

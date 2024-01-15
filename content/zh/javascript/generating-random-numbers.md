@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 生成随机数"
+title:                "生成随机数"
+html_title:           "Javascript: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,63 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么使用随机数生成器
+## 为什么
 
-随机数生成器在编程中扮演着非常重要的角色，它可以为我们提供随机的数值，使得我们的程序变得更加多样化和有趣。例如，如果你正在开发一款游戏，你肯定会需要通过随机数来决定敌人的行动或者随机生成地图，这样游戏体验才会更加刺激。所以说，使用随机数生成器可以让我们的程序更加生动和具有挑战性。
+随机数生成是一种非常有趣和常用的技能。它可以用于创建游戏、测试程序或模拟任何随机事件。无论您是一名初学者还是一名专业人士，了解如何在Javascript中生成随机数都是具有实用性的。
 
-## 如何使用
+## 如何编码
 
-我们可以使用Math对象中的random方法来生成随机数，它会返回一个0到1之间的随机小数。如果需要一个特定范围内的随机整数，我们可以通过乘以范围的长度再加上起始值，然后使用Math.floor()来取整。下面是一个例子：
-
-```Javascript
-let randomNumber = Math.random(); // 生成0到1之间的随机小数
-let randomInteger = Math.floor(Math.random() * 10 + 1); // 生成1到10之间的随机整数
-console.log(randomNumber);
-console.log(randomInteger);
-```
+生成随机数是一个简单但又有趣的过程，我们可以使用Math对象中的内置函数来完成。下面是使用Javascript代码如何生成一个1到10之间的随机整数的例子：
 
 ```Javascript
-输出：
-0.5467865432 // 每次运行结果都不同
-5 // 每次运行结果都不同
+let randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum); // Output: 7
 ```
 
-我们也可以通过制定随机数的种子来控制随机数的生成。种子可以是任意的数值，但是通常我们会使用当前的时间戳作为种子，这样每次生成的随机数都会有所不同。下面是一个例子：
+让我们来解释一下这段代码。首先，我们使用`Math.random()`函数来生成一个0到1之间的随机小数。为了将它转换为整数，我们使用`Math.floor()`函数舍去小数部分。然后，我们将结果与10相乘，得到一个0到10之间的数。最后，我们再加上1，这样我们就得到了一个1到10之间的随机整数。
+
+除了生成整数，我们也可以使用相同的原理来生成特定范围内的随机小数。例如，如果我们想要生成一个0到1之间的小数，我们只需要使用`Math.random()`函数即可。如果我们想要生成一个1到100之间的小数，我们可以使用以下代码：
 
 ```Javascript
-let randomNumber = Math.random(1234); 
-console.log(randomNumber);
+let randomNum = Math.random() * 100;
+console.log(randomNum); // Output: 74.253811587
 ```
+
+还有另一种方法可以生成指定范围内的随机整数，那就是使用`Math.floor()`函数和`Math.random()`函数的结合。以下是一个生成1到5之间的随机整数的示例：
 
 ```Javascript
-输出：
-0.432164545 // 每次运行结果都相同
+let randomNum = Math.floor(Math.random() * 5) + 1;
+console.log(randomNum); // Output: 3
 ```
 
-## 深入探讨
+## 深入了解
 
-有时候，我们可能需要生成特定分布的随机数。比如，我们希望生成符合正态分布的随机数，这样我们可以更加真实地模拟一些实验数据。为了实现这样的功能，我们可以使用第三方库如`random-js`。它提供了丰富的随机数生成方法，包括常见的均匀分布、正态分布、负二项分布等等。下面是一个例子：
+生成随机数并不意味着完全的随机性。Javascript中内置的`Math.random()`函数实际上是基于伪随机数生成器算法（PRNG），它使用一个称为"种子"的输入来生成随机数。默认情况下，`Math.random()`函数的种子是当前的系统时间，因此每次运行代码时它都会生成不同的随机数。
 
-```Javascript
-const Random = require('random-js');
-let random = new Random(); // 创建随机数生成器
-let normalRandomNumber = random.normal(0, 1); // 生成均值为0，标准差为1的正态分布随机数
-console.log(normalRandomNumber);
-```
+了解PRNG的工作原理对于生成不一样的随机数是很重要的。例如，如果我们想要在游戏中使用随机数，那么每个玩家应该获得不同的数。为了做到这一点，我们可以使用不同的种子来调用`Math.random()`函数。
 
-```Javascript
-输出：
--0.7683756
-```
+另一个需要注意的地方是PRNG的周期性。周期性是指生成的随机数序列会在一定的次数后重复。对于大多数应用来说，周期性并不是一个问题，但是对于安全性要求高的应用来说，我们可能需要使用更加复杂的随机数生成算法。
 
-在使用随机数生成器时，我们还需要注意一些潜在的问题。比如，生成的随机数并非真正的随机，它们只是按照一定的规则来进行计算。这意味着如果我们使用相同的种子或者相同的算法，就有可能得到相同的结果。因此，在一些安全性要求高的场景中，我们需要使用更加复杂的方法来生成随机数，以防止被破解。
+## 参考链接
 
-# 参考链接
-
-- [Math.random()文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [random-js文档](https://www.npmjs.com/package/random-js)
-- [随机数生成器的安全性问题](https://www.jianshu.com/p/78788fa4d449)
-
-## 参见
-
-[Markdown文档](https://www.markdownguide.org)
+- [MDN Web Docs: Math.random()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [深入理解伪随机数序列](http://adsabs.harvard.edu/full/1999ASPC..172...25G)

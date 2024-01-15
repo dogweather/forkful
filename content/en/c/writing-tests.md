@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "C recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "C"
 category:             "C"
@@ -10,68 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Writing tests may seem like an extra step in the coding process, but trust us, it's worth it. Testing your code ensures that it functions correctly and efficiently, saving you time and effort in the long run. Plus, it helps catch any bugs or errors early on, preventing them from becoming bigger issues down the line.
+
+Writing tests for C code is an important aspect of software development that helps ensure code quality and reduce the chances of bugs and errors. By writing tests, developers can catch and fix issues early on, saving time and effort in the long run.
 
 ## How To
-To start writing tests in C, you'll need a testing framework. One popular option is cmocka, a lightweight testing framework for C. Here's an example of how to use cmocka to test a simple function:
 
-```
-#include <stdio.h>
-#include <cmocka.h>
+To get started with writing tests in C, it is important to first understand the basic structure of a test. A test generally consists of three main parts: setting up the environment, executing the code to be tested, and verifying the expected output.
 
-// Function to test
+To demonstrate this, let's consider a simple function that adds two numbers and return the result:
+
+```C
 int add(int a, int b) {
     return a + b;
 }
+```
 
-// Test case 1
-static void test_add(void **state) {
-    assert_int_equal(add(2, 3), 5);
-}
+To test this function, we can create a test case using the `assert` macro from the `<assert.h>` library. This macro takes in a condition and returns an error if the condition is false.
 
-// Test case 2
-static void test_add_negative(void **state) {
-    assert_int_equal(add(-2, -3), -5);
-}
+```C
+#include <assert.h>
 
 int main() {
-    // Create an array of test cases
-    const struct CMUnitTest tests[] = {
-        cmocka_unit_test(test_add),
-        cmocka_unit_test(test_add_negative),
-    };
+    // Setup
+    int a = 5;
+    int b = 10;
 
-    // Run all tests
-    return cmocka_run_group_tests(tests, NULL, NULL);
+    // Execute
+    int result = add(a, b);
+
+    // Verify
+    assert(result == 15);
+
+    return 0;
 }
 ```
 
-The test cases are defined using `cmocka_unit_test` and each one contains an assertion to check the result of the function. If all assertions pass, the test is considered successful.
-
-Running this code produces the following output:
-
-```
-[==========] Running 2 test case(s).
-[----------] Global test environment set-up.
-[----------] 1 test(s) run.
-[ RUN      ] test_add
-[       OK ] test_add
-[ RUN      ] test_add_negative
-[       OK ] test_add_negative
-[----------] 2 test(s) run.
-[----------] Global test environment tear-down.
-[==========] 2 test(s) run.
-[  PASSED  ] 2 test(s).
-```
+After compiling and running this test, if all goes well, we should see an output of `OK` indicating that the test was successful.
 
 ## Deep Dive
-When it comes to writing tests, it's important to think about various scenarios and edge cases to thoroughly test your code. Make sure to cover both expected and unexpected inputs to ensure your code can handle all possible scenarios.
 
-It's also a good practice to follow the Arrange-Act-Assert (AAA) pattern when writing test cases. This means clearly separating the setup, execution, and assertion parts of your test to make it more readable and maintainable.
+Writing tests in C can be a bit more challenging compared to other languages due to its low-level nature. This means the developer has to manually manage memory and handle potential errors to ensure the code behaves as expected.
 
-Additionally, don't forget to regularly update your tests as you make changes to your code. This helps catch any new bugs that may arise and ensures your code continues to function correctly.
+Fortunately, there are libraries such as `libcheck` that provide useful testing functions and macros to make writing tests in C easier. These libraries also offer more advanced features such as test grouping and parameterized testing.
+
+Another important aspect to consider when writing tests is code coverage. Code coverage measures the percentage of code that is covered by tests. It is important to aim for high code coverage to ensure that all possible scenarios are tested.
 
 ## See Also
-- [cmocka](https://cmocka.org/)
-- [Unit Testing in C using cmocka](https://www.oreilly.com/content/unit-testing-in-c-using-cmocka/)
-- [Writing Testable Code in C](https://philsquared.co.uk/blog/2019/05/25/writing-testable-code-in-c/)
+
+- [Writing C unit tests with libcheck](https://libcheck.github.io/check/)
+- [Beginners guide to unit testing in C with examples](https://medium.com/@hardikpandya/unit-testing-in-c-beginners-guide-with-examples-4197395d4e5a)
+- [An Introduction to Code Coverage in C](https://medium.com/@coderunner/cpp-code-coverage-with-gcov-d398c40e1ab0)

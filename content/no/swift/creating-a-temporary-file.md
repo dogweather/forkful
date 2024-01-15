@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Opprette en midlertidig fil"
-simple_title:         "Opprette en midlertidig fil"
+title:                "Oppretting av en midlertidig fil"
+html_title:           "Swift: Oppretting av en midlertidig fil"
+simple_title:         "Oppretting av en midlertidig fil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Noen ganger kan det være nødvendig å opprette midlertidige filer i et program. Dette kan være for å lagre data midlertidig mens programmet kjører, eller for å sende data til en annen del av koden. Uansett årsak, er å kunne opprette midlertidige filer en nyttig ferdighet å ha som programmerer.
 
-Å lage midlertidige filer er en vanlig praksis i programmmering for å midlertidig lagre data eller informasjon. Dette kan være nyttig når du trenger å teste koden din eller utføre en midlertidig oppgave.
+## Hvordan å opprette en midlertidig fil
+For å opprette en midlertidig fil i Swift, kan du bruke NSFileManager-klassen og dens metode `tempFile(withTemplate)`.
 
-## Hvordan
-
-For å lage en midlertidig fil i Swift, kan du bruke `FileManager`-klassen og dens `createFile`-metode. Her er et eksempel på hvordan du kan opprette en midlertidig fil:
-
-```Swift
-let fileManager = FileManager.default
-let temporaryDir = NSTemporaryDirectory()
-let temporaryFile = temporaryDir.appending("myTempFile.txt")
-
-if fileManager.createFile(atPath: temporaryFile, contents: nil, attributes: nil) {
-    print("Midlertidig fil opprettet!")
-} else {
-    print("Noe gikk galt under opprettelsen av den midlertidige filen.")
+```Swift 
+let fileManager = FileManager()
+let template = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("tempFilePrefix").appendingPathExtension("txt").path
+do {
+    let tempFile = try fileManager.tempFile(withTemplate: template) // opprette en midlertidig fil med forhåndsdefinert prefiks og filtype
+    print(tempFile.path) // skriver ut filstien til den midlertidige filen som ble opprettet
+} catch {
+    print("Kunne ikke opprette midlertidig fil: \(error)") // hvis noe går galt, skrives feilmeldingen ut
 }
 ```
 
-I dette eksempelet bruker vi `NSTemporaryDirectory()` for å få den midlertidige mappen på enheten vår, og vi oppretter en sti til vår midlertidige fil ved å kombinere stien med filnavnet vi ønsker. Deretter bruker vi `createFile`-metoden for å faktisk lage filen, og sjekker om det var vellykket. Hvis alt gikk som planlagt, skal vi få en bekreftelse i terminalen.
+Om alt går som det skal, vil du få følgende output:
+```
+/var/folders/lb/2xpfjpmj7h3cyyfccgcvvszc0000gn/T/tempFilePrefix3042887085416563608.txt
+```
 
-## Dypdykk
-
-Nå som vi har sett på et enkelt eksempel på hvordan vi kan opprette en midlertidig fil, la oss ta en nærmere titt på hva som skjer bak kulissene. Når vi kaller `createFile`, vil det automatisk opprette en tom fil på den angitte plasseringen. Hvis vi ønsker å legge til innhold i filen vår, kan vi gjøre det ved å spesifisere `contents`-parameteren med ønsket data i form av en `Data`-objekt.
-
-En annen viktig ting å merke seg er at når appen vår avsluttes, vil alle midlertidige filer som er opprettet ved hjelp av `createFile` bli automatisk slettet. Dette er fordi disse filene befinner seg i en spesiell midlertidig mappe på enheten vår.
+## Dykk dypere
+Når du oppretter en midlertidig fil, returneres en URL som peker til den midlertidige filen. Dette betyr at du kan bruke vanlige metoder for å lese og skrive til filen. Husk at den midlertidige filen vil bli slettet så snart programmet avsluttes, så det kan være lurt å kopiere innholdet til en annen fil hvis du ønsker å bevare dataene på en permanent måte.
 
 ## Se også
-
-Her er noen nyttige ressurser for å lære mer om å lage midlertidige filer i Swift:
-
-- [Apple Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Apple Developer Video - Temporary Files](https://developer.apple.com/videos/play/wwdc2020/10111/)
-- [Hvordan lage midlertidige filer i Swift](https://www.appcoda.com/temporary-files-swift/)
+- [Apple Developer Documentation for NSFileManager](https://developer.apple.com/documentation/foundation/nsfilemanager)
+- [NSFileManager.tempFile(withTemplate:)](https://developer.apple.com/documentation/foundation/nsfilemanager/1419486-tempfile)

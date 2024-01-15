@@ -1,6 +1,7 @@
 ---
-title:                "Python: Excluindo caracteres que correspondem a um padrão."
-simple_title:         "Excluindo caracteres que correspondem a um padrão."
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Python: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,42 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que
 
-Às vezes, ao trabalhar com dados, podemos nos deparar com a necessidade de remover caracteres que correspondem a um determinado padrão. Isso pode ser útil quando estamos lidando com strings que contêm informações desnecessárias ou indesejadas.
+Você provavelmente já se deparou com a situação de precisar remover alguns caracteres específicos de uma string. Isso pode ser útil, por exemplo, para limpar dados de um arquivo ou para validar entradas de usuário. Neste artigo, aprenderemos como deletar caracteres que correspondem a um determinado padrão em Python.
 
-## Como Fazer
+## Como fazer
 
-Para deletar os caracteres correspondentes a um padrão em uma string, podemos usar a função `re.sub()` do módulo `re` do Python. Esta função substitui todas as ocorrências do padrão especificado por uma string vazia, efetivamente excluindo-as da string original.
+Para deletar caracteres que correspondem a um padrão em uma string, podemos utilizar o método `replace()` combinado com o método `filter()` da classe `str`. Veja um exemplo abaixo:
 
-Aqui está um exemplo de como usar `re.sub()` para remover todas as letras maiúsculas de uma string:
+```Python
+# Definindo uma string
+texto = "ABCDE12345"
 
-```python
+# Utilizando replace() e filter()
+novo_texto = "".join(filter(lambda x: not x.isdigit(), texto.replace("A", "")))
+
+# Imprimindo o resultado
+print(novo_texto)
+
+# Resultado: BCDE
+```
+
+Neste exemplo, utilizamos o `replace()` para remover todas as ocorrências da letra "A" na string e, em seguida, combinamos com o `filter()` para remover todos os dígitos restantes. Por fim, utilizamos o `"".join()` para transformar os caracteres resultantes em uma nova string.
+
+Outra maneira de fazer isso é utilizando expressões regulares. Veja um exemplo:
+
+```Python
 import re
 
-string = "Olá amigo! Bem-Vindo ao Meu Blog."
-nova_string = re.sub("[A-Z]", "", string)
+# Definindo uma string
+texto = "ABCDE12345"
 
-print(nova_string)
+# Utilizando regex
+novo_texto = re.sub("[A0-9]", "", texto)
+
+# Imprimindo o resultado
+print(novo_texto)
+
+# Resultado: BCDE
 ```
 
-**Output:**
-```
-lá amigo! em-vindo ao eu log.
-```
+Neste exemplo, utilizamos a função `sub()` do módulo `re` para substituir todas as ocorrências de letras e dígitos pela string vazia, resultando em uma string limpa apenas com as letras desejadas.
 
-No exemplo acima, usamos uma expressão regular entre colchetes para indicar que queremos substituir todas as letras maiúsculas na string pela string vazia. É importante lembrar que a função `re.sub()` é sensível a maiúsculas e minúsculas, então `[A-Z]` não vai corresponder às letras minúsculas.
+## Mergulho profundo
 
-Além disso, podemos usar quantificadores para indicar quantas ocorrências do padrão queremos substituir. Por exemplo, se quisermos remover apenas as duas primeiras letras maiúsculas da string, podemos usar `[A-Z]{2}` no lugar de `[A-Z]`.
+Ambos os métodos apresentados acima são eficientes para deletar caracteres que correspondem a um padrão em uma string. No entanto, é importante lembrar que o método `replace()` é sensível a maiúsculas e minúsculas, enquanto o uso de expressões regulares pode ser mais complexo e demandar um maior conhecimento sobre o assunto.
 
-## Deep Dive
+No caso do `filter()`, é importante destacar que ele retorna um objeto do tipo `filter`, não uma string. Por isso, é necessário utilizar o método `join()` para transformar os resultados em uma nova string.
 
-O módulo `re` do Python nos fornece uma série de opções para criar expressões regulares mais complexas e utilizar funções como `re.sub()` de forma mais eficiente. Alguns exemplos incluem usar meta caracteres, como `*`, `+` e `?`, para fazer correspondências mais flexíveis e usar grupos de captura para extrair informações específicas de uma string.
+## Veja também
 
-Para uma explicação mais detalhada sobre expressões regulares, recomenda-se a leitura da documentação oficial do Python ou outros recursos online, como o tutorial do W3Schools.
-
-## Veja Também
-
-- [Documentação oficial do módulo re do Python](https://docs.python.org/pt-br/3/library/re.html)
-- [Tutorial de expressões regulares do W3Schools](https://www.w3schools.com/python/python_regex.asp)
-- [Guia de expressões regulares do Real Python (em inglês)](https://realpython.com/regex-python/)
+- [Documentação oficial do Python](https://docs.python.org/3/howto/regex.html)
+- [Tutorial sobre expressões regulares em Python](https://realpython.com/regex-python/)

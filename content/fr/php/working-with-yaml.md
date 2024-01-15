@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "PHP: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,72 +10,120 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi travailler avec YAML ?
+## Pourquoi
 
-Si vous travaillez avec des données structurées, YAML est un outil incontournable pour faciliter la gestion et la manipulation de ces données. En utilisant YAML, vous pouvez stocker vos données dans un format facilement lisible et modifiable par d'autres développeurs.
+Si vous êtes programmeur PHP, vous avez probablement déjà entendu parler de YAML. Mais savez-vous pourquoi vous devriez l'utiliser dans vos projets ? Eh bien, le YAML est un langage de configuration flexible et facile à lire, qui peut grandement faciliter la gestion de données dans vos applications. Dans cet article, nous allons plonger dans le monde du YAML et découvrir pourquoi c'est un outil précieux pour tout programmeur PHP.
 
-## Comment utiliser YAML en PHP
+## Comment faire
 
-Pour commencer à travailler avec YAML en PHP, vous aurez besoin d'une extension PHP appelée "yaml". Si vous utilisez Ubuntu, vous pouvez l'installer en tapant la commande suivante dans votre terminal :
+Pour commencer à utiliser YAML dans votre code PHP, vous devez inclure la librairie Symfony YAML dans votre projet. Vous pouvez le faire en utilisant Composer, en exécutant la commande suivante dans votre terminal : `composer require symfony/yaml`.
 
-```PHP
-sudo apt-get install php-yaml
-```
-
-Ensuite, vous pouvez utiliser la fonction `yaml_parse()` pour convertir une chaîne YAML en tableau PHP. Par exemple :
+Une fois que la librairie est installée, vous pouvez utiliser la classe `Yaml` pour lire et écrire des données au format YAML. Voici un exemple de code qui lit un fichier YAML et affiche son contenu :
 
 ```PHP
-<?php
-// Chaîne YAML
-$input = "
-  student:
-    name: Jean
-    age: 25
-    courses:
-      - Mathématiques
-      - Physique
-      - Chimie
-";
+use Symfony\Component\Yaml\Yaml;
 
-// Convertir en tableau PHP
-$student_info = yaml_parse($input);
-
-// Afficher le nom de l'étudiant
-echo $student_info['student']['name']; // Résultat : Jean
+$file = "config.yml";
+$config = Yaml::parse(file_get_contents($file));
+print_r($config);
 ```
 
-Vous pouvez également utiliser la fonction `yaml_emit()` pour créer une chaîne YAML à partir d'un tableau PHP. Par exemple :
+Et voici le contenu du fichier `config.yml` :
+
+```yaml
+# config.yml
+database:
+  host: localhost
+  user: root
+  password: 1234
+```
+
+Lorsque vous exécutez le code, vous devriez obtenir la sortie suivante :
+
+```
+Array
+(
+    [database] => Array
+        (
+            [host] => localhost
+            [user] => root
+            [password] => 1234
+        )
+
+)
+```
+
+Vous pouvez également écrire des données au format YAML en utilisant la fonction `dump` :
 
 ```PHP
-<?php
-// Tableau PHP
-$data = ["pays" => "France", "villes" => ["Paris", "Marseille", "Lyon"]];
+use Symfony\Component\Yaml\Yaml;
 
-// Convertir en chaîne YAML
-$output = yaml_emit($data);
+$config = [
+    "database" => [
+        "host" => "localhost",
+        "user" => "root",
+        "password" => "1234"
+    ]
+];
 
-// Afficher la chaîne YAML
-echo $output; 
-// Résultat :
-// pays: France
-// villes:
-//   - Paris
-//   - Marseille
-//   - Lyon
+echo Yaml::dump($config);
 ```
 
-## Plongée en profondeur dans YAML
+Et voici la sortie :
 
-YAML est un langage de sérialisation de données qui permet de représenter des données complexes de manière structurée et lisible par les humains. Il prend en charge les types de données tels que les chaînes, les nombres, les tableaux, les objets, les booléens, etc. De plus, YAML prend en charge les commentaires pour faciliter la compréhension du code.
+```yaml
+database:
+  host: localhost
+  user: root
+  password: 1234
+```
 
-L'un des avantages les plus intéressants de YAML est qu'il permet de regrouper les données en sections et sous-sections, ce qui facilite la navigation et la manipulation des données.
+Vous pouvez également utiliser des tableaux multidimensionnels pour représenter des données complexes dans votre fichier YAML, comme des listes ou des tableaux associatifs. Voici un exemple de code pour écrire et lire un fichier YAML avec des données plus complexes :
 
-Il existe également des outils pratiques pour valider et convertir des fichiers YAML en ligne, tels que "YAML Lint" et "YAML to JSON converter".
+```PHP
+use Symfony\Component\Yaml\Yaml;
 
----
-## Voir aussi
+$movies = [
+    [
+        "title" => "Inception",
+        "year" => 2010,
+        "director" => "Christopher Nolan",
+        "actors" => ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]
+    ],
+    [
+        "title" => "The Shawshank Redemption",
+        "year" => 1994,
+        "director" => "Frank Darabont",
+        "actors" => ["Tim Robbins", "Morgan Freeman"]
+    ]
+];
 
-- [Documentation officielle de YAML](https://yaml.org/)
-- [Extensions PHP pour YAML](https://www.php.net/manual/fr/refs.fileprocess.yaml.php)
-- [YAML Lint](https://www.yamllint.com/)
-- [YAML to JSON converter](https://www.convertjson.com/yaml-to-json.htm)
+// Écrire les données dans un fichier YAML
+Yaml::dump($movies, $file);
+
+// Lire le fichier YAML et le convertir en tableau associatif
+$movies = Yaml::parse(file_get_contents($file));
+
+// Parcourir le tableau et afficher les données
+foreach ($movies as $movie) {
+    echo $movie["title"] . " (" . $movie["year"] . ") directed by " . $movie["director"] . " and starring ";
+    echo implode(", ", $movie["actors"]) . PHP_EOL;
+}
+```
+
+Et voici la sortie :
+
+```
+Inception (2010) directed by Christopher Nolan and starring Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page
+The Shawshank Redemption (1994) directed by Frank Darabont and starring Tim Robbins, Morgan Freeman
+```
+
+## Plongée en profondeur
+
+Maintenant que vous savez comment lire et écrire des données au format YAML en utilisant la librairie Symfony, voyons quelques astuces pour travailler avec YAML de manière plus efficace.
+
+Tout d'abord, vous pouvez personnaliser la façon dont les données sont écrites en utilisant plusieurs options dans la fonction `dump`. Par exemple, vous pouvez choisir d'utiliser des indentations ou des tabulations pour formater votre fichier YAML, ou même activer la prise en charge des références pour éviter les duplications de données.
+
+Deuxièmement, vous pouvez utiliser des commentaires dans votre fichier YAML en les ajoutant après le symbole `#`. Cela peut être utile pour documenter vos données ou ajouter des notes pour vous-même ou pour d'autres membres de votre équipe.
+
+De plus, la libra

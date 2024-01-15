@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Encontrando la longitud de una cadena"
-simple_title:         "Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena."
+html_title:           "Ruby: Encontrando la longitud de una cadena."
+simple_title:         "Encontrando la longitud de una cadena."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Por qué encontrar la longitud de una cadena de texto es importante en Ruby?
+## Por qué 
 
-En la programación, es común encontrarse con tareas que requieren manipulación de cadenas de texto. Ya sea para validar datos ingresados por el usuario o para realizar operaciones con ellas, es esencial conocer la longitud de una cadena. En Ruby, esto se logra con el método `length`, y en esta publicación, te mostraremos cómo utilizarlo de manera efectiva.
+En la programación, a menudo nos encontramos con situaciones en las que necesitamos saber la longitud de una cadena de texto. Esto puede ser útil para validar la entrada del usuario, manipular y formatear texto, entre otros casos.
 
-¿Cómo hacerlo en Ruby?
+## Cómo 
 
-Para obtener la longitud de una cadena de texto en Ruby, simplemente usamos el método `length` seguido de la variable que contiene la cadena. Por ejemplo:
+Para encontrar la longitud de una cadena en Ruby, podemos utilizar el método `length` o `size`. Veamos un ejemplo de cómo utilizarlos: 
 
-```ruby
-cadena = "¡Hola mundo!"
-puts cadena.length
+```Ruby
+# Creamos una cadena de texto
+text = "Hola amigos"
+
+# Utilizamos el método 'length'
+puts text.length # Output: 11
+
+# Utilizamos el método 'size'
+puts text.size # Output: 11
 ```
 
-El código anterior imprimirá en la consola el número `12` que es la longitud de la cadena. Esto se debe a que cada carácter, incluyendo espacios y signos de puntuación, se cuentan como un elemento en la cadena.
+En este ejemplo, hemos creado una variable `text` que contiene la cadena de texto "Hola amigos". Luego, utilizamos el método `length` y `size` para encontrar la longitud de la cadena, que es de 11 caracteres. Ambos métodos nos darán el mismo resultado, por lo que podemos utilizar cualquiera de ellos según nuestras preferencias.
 
-Otra forma de obtener la longitud es utilizando el método `size`, que funciona de la misma manera que `length` en Ruby.
+## Deep Dive
 
-Para un ejemplo más práctico, supongamos que queremos validar si una contraseña ingresada por el usuario cumple con los requisitos de longitud mínima. Podríamos hacer lo siguiente:
+En Ruby, el método `length` y `size` funcionan de la misma manera ya que `size` es simplemente un alias de `length`. Ambos métodos recorren la cadena y cuentan la cantidad de caracteres, incluyendo espacios, símbolos y caracteres especiales. 
 
-```ruby
-# Pedimos al usuario que ingrese una contraseña
-puts "Ingresa tu contraseña:"
-contrasena = gets.chomp
+Además, estos métodos son útiles para validar la entrada del usuario en un formulario. Por ejemplo, podemos verificar si un campo de texto tiene una longitud mínima o máxima antes de procesarlo.
 
-# Validamos la longitud de la contraseña
-if contrasena.length >= 8
-  puts "Contraseña válida."
-else
-  puts "La contraseña debe tener al menos 8 caracteres."
-end
-```
+## Ver también
 
-En este caso, el método `length` nos permite comparar la longitud de la contraseña ingresada con el requisito mínimo de 8 caracteres.
-
-Deep Dive: Más información sobre la longitud de cadenas en Ruby
-
-Es importante mencionar que el método `length` también puede ser utilizado en otras estructuras de datos en Ruby, como arrays y hashes. En estos casos, la longitud se refiere al número de elementos contenidos en la estructura.
-
-Además, es bueno tener en cuenta que existen otras maneras de encontrar la longitud de una cadena en Ruby, como por ejemplo utilizando un contador o iterando sobre la cadena para contar cada elemento. Sin embargo, el método `length` es la forma más eficiente y sencilla de hacerlo.
-
-Ver también
-
-- Documentación oficial sobre el método `length` en Ruby: https://ruby-doc.org/core-3.0.1/String.html#method-i-length
-- Explicación detallada sobre los métodos `length` y `size` en Ruby: https://www.geeksforgeeks.org/ruby-string-length-methods-length-size/
-- Ejemplos prácticos de uso de `length` en diferentes contextos: https://www.codecademy.com/forum_questions/514106e55419117995007347
+- [Ruby Strings](https://www.ruby-lang.org/en/documentation/quickstart/2/)
+- [Ruby String length Method](https://ruby-doc.org/core-2.5.0/String.html#method-i-length)

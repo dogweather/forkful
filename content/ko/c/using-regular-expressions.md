@@ -1,6 +1,7 @@
 ---
-title:                "C: 정규식 사용하기"
-simple_title:         "정규식 사용하기"
+title:                "정규 표현식 사용하기"
+html_title:           "C: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,49 +11,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+정규 표현식을 사용하는 이유는 텍스트 데이터에서 원하는 패턴을 찾거나 변환하기 위해서입니다.
 
-왜 누군가 정규 표현식을 사용해야 하는지는 간단합니다. 정규 표현식은 문자열 내에서 특정 패턴을 찾아내기 위해 사용되는 강력한 도구입니다. 이는 코드에서 문자열을 처리하거나 특정 값만을 선택하기 위해 많이 사용됩니다.
+## 방법
+정규 표현식을 사용하는 방법은 다양하게 있지만, 여기에는 가장 기본적인 패턴 매칭과 치환 방법을 알려드리겠습니다.
 
-## 사용 방법
-
-먼저 정규 표현식을 사용하기 위해서는 헤더 파일 `<regex.h>`를 포함해야 합니다. 그런 다음, 정규 표현식과 비교할 문자열을 `char` 배열로 선언합니다. 그리고 `regex_t` 구조체를 생성하여 정규 표현식을 저장하고, `regcomp` 함수를 사용하여 정규 표현식을 컴파일합니다.
+### 패턴 매칭
+패턴 매칭 코드의 기본 형식은 다음과 같습니다.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
-int main(void) {
-    int ret;
+int main()
+{
     regex_t regex;
-    char str[] = "Hello, world!";
-    
-    ret = regcomp(&regex, "world", 0);
-    if (ret) {
-        printf("정규 표현식 컴파일 실패\n");
-        return 1;
-    }
-    
-    ret = regexec(&regex, str, 0, NULL, 0);
-    if (!ret) {
-        printf("'world' 발견!\n");
-    } else if (ret == REG_NOMATCH) {
-        printf("'world'를 찾지 못했습니다.\n");
-    }
-    
+    int ret;
+
+    // 정규 표현식 컴파일
+    ret = regcomp(&regex, "패턴", 0);
+
+    // 패턴 매칭
+    ret = regexec(&regex, "문자열", 0, NULL, 0);
+
+    // 매칭된 문자열 출력
+    printf("%s\n", "문자열");
+
+    // 정규 표현식 메모리 해제
     regfree(&regex);
-    
+
     return 0;
 }
 ```
 
-위 예시 코드에서는 문자열 `str`에서 정규 표현식 `world`을 찾는 것을 목적으로 합니다. `regcomp` 함수에서는 정규 표현식을 컴파일하고, `regexec` 함수에서는 문자열에 해당 정규 표현식이 있는지 검사합니다. 마지막으로 `regfree` 함수를 사용하여 `regex_t` 구조체를 해제합니다.
+위 코드를 실행하면 "문자열"이 매칭되고 출력됩니다. 패턴과 매칭할 문자열을 바꿔가며 여러 가지 경우를 테스트해보세요!
 
-## 깊이 파고들기
+### 치환
+패턴 매칭과 비슷하지만, 치환을 수행하기 위한 추가적인 매개변수가 필요합니다.
 
-정규 표현식은 매우 강력한 도구이지만, 그 만큼 복잡하고 어려운 개념입니다. 다양한 메타 문자와 그 사용법, 그리고 여러 예외 상황들을 고려해야 하기 때문입니다. 또한 정규 표현식을 사용할 때에는 최적화에 주의해야 합니다. 간단한 정규 표현식일지라도 문자열의 길이나 패턴의 수에 따라 실행 속도가 크게 달라질 수 있으므로, 적절한 최적화 방법을 찾는 것이 중요합니다.
+```C
+#include <stdio.h>
+#include <regex.h>
 
-## 관련 링크들
+int main()
+{
+    regex_t regex;
+    int ret;
+    char *result;
 
-[Learn C.org - 정규 표현식](https://www.learn-c.org/en/Regular_Expressions)  
-[C Reference - 정규 표현식 관련 함수](https://en.cppreference.com/w/c/regex)  
-[정규 표현식 테스트 도구](https://regexr.com/)
+    // 정규 표현식 컴파일
+    ret = regcomp(&regex, "패턴", 0);
+
+    // 치환
+    result = regsub("문자열", "치환할 문자열", &regex, 0);
+
+    // 치환된 문자열 출력
+    printf("%s\n", result);
+
+    // 메모리 해제
+    free(result);
+    regfree(&regex);
+
+    return 0;
+}
+```
+
+위 코드를 실행하면 "치환할 문자열"이 "문자열"로 치환되고 그 결과가 출력됩니다. 이러한 방식으로 정규 표현식을 사용하여 텍스트 데이터를 효과적으로 변환할 수 있습니다.
+
+## 더 깊이 들어가기
+여러 가지 패턴 매칭 기법과 고급 사용법에 대해 알아보세요. 정규 표현식은 텍스트 작업에서 매우 유용하며, 더 깊이 공부한다면 더 많은 기능을 발견할 수 있을 것입니다.
+
+## 참고 자료
+- [C 언어로 정규 표현식 다루기](https://bulljo.tistory.com/3)
+- [정규 표현식 기초부터 활용까지](https://thebook.io/006723/ch09/)
+- [정규식 테스트 사이트](https://regexr.com/)

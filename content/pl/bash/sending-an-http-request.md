@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Bash: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Z pewnością wielu z Was słyszało już o tajemniczych "HTTP requestach", ale co to takiego i po co używać ich w programowaniu? Dzięki nim możemy wysyłać i otrzymywać dane z serwera, a to jest szczególnie ważne w przypadku tworzenia aplikacji internetowych.
+Wysyłanie zapytań HTTP jest ważną częścią programowania i może być wykorzystywane w wielu różnych sytuacjach. Na przykład, może być potrzebne do pobrania danych z serwera lub do komunikacji z innymi systemami.
 
 ## Jak To Zrobić
 
-Aby wysłać HTTP request, należy użyć polecenia "curl" w terminalu Bash. W poniższym przykładzie wyślemy GET request do serwera Google i zobaczymy odpowiedź w terminalu.
+Można wysyłać żądania HTTP za pomocą polecenia `curl` w Bash. Wystarczy podać adres URL, na który chcemy wysłać żądanie. Na przykład:
 
 ```Bash
-curl www.google.com
+curl www.example.com
 ```
 
-Powinno pojawić się kilka linii tekstu z odpowiedzią od serwera Google. Możemy również dodać parametry do naszego requestu, na przykład, aby przekazać dane formularza w formacie JSON lub wysłać żądanie POST. Poniższy przykład pokazuje, jak wysłać POST request z danymi w formacie JSON.
+To spowoduje wysłanie standardowego zapytania GET do serwera www.example.com. Jeśli chcemy wysłać zapytanie innego typu, na przykład POST, możemy użyć opcji `-X`:
 
 ```Bash
-curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 30}' www.example.com
+curl -X POST www.example.com
 ```
 
-Jeśli chcemy zobaczyć tylko nagłówki odpowiedzi, możemy użyć flagi "-I", a jeśli chcemy zobaczyć szczegółową informację o requestach i odpowiedziach, możemy użyć flagi "-v".
+Jeśli chcemy wysłać zapytanie z danymi, możemy użyć opcji `-d`:
 
 ```Bash
-curl -I www.google.com
-curl -v www.example.com
+curl -d "username=example&password=secret" www.example.com/login
 ```
 
-Warto również wspomnieć o tym, że polecenie "curl" jest bardzo elastyczne i posiada wiele innych opcji, które mogą być przydatne w różnych sytuacjach. Możesz je poznać, używając flagi "--help" lub przeglądając dokumentację.
+Oczywiście, to tylko podstawowe przykłady. Istnieje wiele więcej opcji, takich jak ustawianie nagłówków, używanie autoryzacji, obsługa zapytań z poświadczeniami SSL i wiele innych. Aby dowiedzieć się więcej, warto przeczytać dokumentację dla polecenia `curl` lub szukać w Internecie poradników dotyczących wysyłania zapytań HTTP z Bash.
 
-## Głębszy Zanurzenie
+## Deep Dive
 
-HTTP requesty są często używane w programowaniu, szczególnie w przypadku tworzenia aplikacji internetowych. Pozwalają nam one na komunikację z serwerem i możliwość przesyłania oraz odbierania danych. W dzisiejszych czasach, gdy wiele aplikacji działa w oparciu o usługi internetowe, umiejętność tworzenia i obsługi HTTP requestów jest niezwykle przydatna dla programistów.
+Wysyłanie zapytań HTTP jest możliwe dzięki wykorzystaniu protokołu HTTP, który pozwala na komunikację między klientem (np. przeglądarką internetową) a serwerem. Wysyłając żądanie HTTP, klient przekazuje informacje o tym, jakie dane chce uzyskać od serwera oraz w jakim formacie ma je otrzymać. Serwer natomiast odpowiada na żądanie, przesyłając dane zgodnie z wytycznymi klienta.
 
-Jednym z ciekawszych zastosowań HTTP requestów jest tworzenie automatycznych skryptów, które pobierają i przetwarzają dane z różnych źródeł. Dzięki temu możemy na przykład zautomatyzować proces pobierania danych do naszej bazy danych lub regularne aktualizacje naszych zasobów zewnętrznych.
+Wysyłanie zapytań HTTP jest często używane w aplikacjach internetowych, w których dane muszą być pobrane lub przekazane z serwera do przeglądarki użytkownika. Dzięki temu mechanizmowi możliwe jest również korzystanie z różnych API, czyli interfejsów programistycznych, które udostępniają funkcje i dane z innych aplikacji lub serwisów.
 
-Oprócz tego, istnieją różne metody obsługi HTTP requestów w różnych językach programowania, dlatego warto poszerzyć swoją wiedzę w tym temacie, aby być przygotowanym na różne przypadki.
+## Zobacz również
 
-## Zobacz Również
-
-- [HTTP Request w dokumentacji curl](https://curl.haxx.se/docs/httpscripting.html)
-- [Poradnik o HTTP requestach na blogu Girl vs Code](http://girlvscode.com/http-request-basics-python/)
-
-Dziękujemy za przeczytanie naszego wpisu na blogu o programowaniu w Bash dotyczącego HTTP requestów. Mamy nadzieję, że teraz masz lepsze pojęcie o tym, jak używać tego narzędzia w swoich projektach. A jeśli chcesz dowiedzieć się więcej o programowaniu w Bash, zachęcamy do przeglądania innych naszych wpisów. Do zobaczenia!
+- [Dokumentacja polecenia `curl` (ang.)](https://man7.org/linux/man-pages/man1/curl.1.html)
+- [Kompletny przewodnik po wysyłaniu zapytań HTTP z Bash (ang.)](https://www.baeldung.com/curl-rest)

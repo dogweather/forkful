@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Luodaan tilapäistiedosto"
-simple_title:         "Luodaan tilapäistiedosto"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Haskell: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi luoda väliaikainen tiedosto?
 
-Joskus Haskell-ohjelmissa voi olla tarvetta luoda väliaikaisia tiedostoja. Ne voivat olla tarpeellisia esimerkiksi datan tallentamiseen tai väliaikaiseen tiedonkäsittelyyn. Tässä blogipostissa opit, miten luodaan väliaikaisia tiedostoja Haskellissa.
+Väliaikaisen tiedoston luominen on hyödyllistä silloin, kun tarvitaan väliaikaista tallennustilaa ohjelman suorituksen aikana. Se voi auttaa välttämään turhia tallennuksia pysyviin tiedostoihin ja mahdollistaa ohjelman suorituksen jälkeen tiedoston poistamisen varmistaen, ettei turhia tiedostoja jää jäljelle.
 
-## Miten
+## Kuinka: Väliaikaisen tiedoston luominen
+
+Väliaikaisen tiedoston luominen Haskellissa on helppoa käyttämällä 'System.IO.Temp' -kirjastoa. Esimerkiksi, seuraava koodi luo väliaikaisen tiedoston nimellä "temp.txt" ja kirjoittaa siihen tekstin "Tämä on väliaikainen tiedosto.":
 
 ```Haskell
 import System.IO.Temp
-import System.Directory
 
 main = do
-  -- Luodaan väliaikainen tiedosto
-  tempFile <- openTempFile "kansio" "tiedosto.txt" 
-  writeFile (fst tempFile) "Tämä on väliaikainen tiedosto"
-  hClose (snd tempFile)
-
-  -- Luodaan väliaikainen hakemisto
-  tempDir <- createTempDirectory "kansio" "hakemisto" 
-  putStrLn tempDir
+    withSystemTempFile "temp.txt" $ \path handle -> do
+        hPutStrLn handle "Tämä on väliaikainen tiedosto."
 ```
 
-```haskell
--- Ohjelman tulostama output:
-"kansio31751UT/tiedosto.txt"
-"kansio78450UT/hakemisto"
+Mikäli haluat käyttää tiedostoa muissa funktioissa, voit sen sijaan käyttää 'withTempFile' -funktiota, joka palauttaa tiedoston polun. Esimerkiksi:
+
+```Haskell
+import System.IO.Temp
+
+main = do
+    tmpFilePath <- withTempFile "temp.txt" $ \path handle ->
+        return path
+    putStrLn $ "Väliaikainen tiedosto luotu polkuun: " ++ tmpFilePath
 ```
 
-Väliaikainen tiedosto luodaan `openTempFile` -funktiolla, joka ottaa argumentteina polun ja tiedostonimen. `fst` -funktio palauttaa tiedostoparin ensimmäisen osan, eli tiedoston polun. `snd` -funktio puolestaan palauttaa tiedostoparin toisen osan, eli tiedoston kahvan. Näiden avulla voimme käsitellä tiedostoa esimerkiksi `writeFile` ja `hClose` -funktioiden avulla.
+Output: Väliaikainen tiedosto luotu polkuun: /tmp/tmp11322.txt
 
-Väliaikainen hakemisto luodaan `createTempDirectory` -funktiolla, joka ottaa samat argumentit kuin `openTempFile`. `putStrLn` tulostaa luodun hakemiston polun.
+## Deep Dive: Väliaikaisen tiedoston luomisen mekanismi
 
-## Syvempää tietoa
+Väliaikaisen tiedoston luominen 'System.IO.Temp' -kirjaston avulla tapahtuu seuraavalla tavalla:
 
-Haskellin `System.IO.Temp` -paketti tarjoaa paljon enemmän mahdollisuuksia väliaikaisten tiedostojen luomiseen, kuten automaattisen nimien generoinnin, paketoinnin ja uudelleennimeämisen. Voit tutustua niihin tarkemmin [dokumentaatiosta](https://hackage.haskell.org/package/temp-1.2.3/docs/System-IO-Temp.html).
+1. Kirjasto luo väliaikaisen hakemiston käyttäen järjestelmän 'tmp' hakemistoa.
+2. Tiedoston nimi ja polku generoidaan käyttäen satunnaisgeneraattoria.
+3. Tiedosto avataan ja käyttäjän antama koodi suoritetaan.
+4. Ohjelman suorituksen jälkeen tiedosto poistetaan ja hakemisto tyhjennetään.
+
+Väliaikaisen tiedoston luominen on siis turvallinen tapa käyttää väliaikaista tallennustilaa ohjelmassa.
 
 ## Katso myös
 
-- [Temporary files and directories in Haskell](https://ro-che.info/articles/2014-01-16-temporary-files-and-directories-in-haskell)
-- [Haskell System.Directory - Temporary files and directories](https://hackage.haskell.org/package/directory-1.2.3.1/docs/System-Directory.html#t:FilePath)
-- [Creating temporary files in Haskell](https://blog.wuzi.io/creating-temporary-files-in-haskell/)
+- https://hackage.haskell.org/package/temporary - Toinen kirjasto väliaikaisen tiedoston luomiseen Haskellissa.
+- https://www.haskell.org/ - Virallinen Haskellin sivusto, jonka kautta voit löytää paljon lisätietoa ja resursseja kieleen liittyen.

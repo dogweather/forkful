@@ -1,5 +1,6 @@
 ---
-title:                "C: Analizando html"
+title:                "Analizando html"
+html_title:           "C: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "C"
 category:             "C"
@@ -9,66 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+##¿Por qué deberías aprender a parsear HTML en C?
 
-En esta ocasión, hablaremos de una tarea bastante común en el mundo de la programación: analizar y extraer información de páginas web en HTML. Esta es una habilidad que puede resultar muy útil en diversas situaciones, como en el desarrollo de aplicaciones web o en la recolección de datos para un proyecto de investigación. Aprender a hacer este proceso en lenguaje C te permitirá automatizar tareas y ahorrar tiempo en tus proyectos.
+Si estás interesado en desarrollar aplicaciones o sitios web en C, aprender a parsear HTML te permitirá acceder y manipular información importante de una página web de una manera sencilla y eficiente. Además, te ayudará a comprender mejor cómo funciona la estructura de un sitio y cómo interactúa con el código.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-Antes de empezar, es importante tener conocimiento básico de HTML y de cómo funciona una página web. También necesitaremos una biblioteca llamada "libxml" que nos facilitará el proceso de análisis de documentos HTML. Una vez que tengamos estas bases, podremos seguir los siguientes pasos:
+```C 
+// Incluye la librería para trabajar con HTML
+#include <htmlparser.h>
 
-##### Paso 1: Incluye la biblioteca
+// Función para parsear una página web
+void parsearHTML(char *url, char *elemento) {
 
-Primero, debemos incluir la biblioteca libxml en nuestro código C, utilizando la directiva `#include`. También, incluiremos la biblioteca `stdio` para poder imprimir los resultados en la consola.
+    // Crea una instancia de HTML Parser
+    htmlparser_t *parser = htmlparser_create();
 
-##### Paso 2: Definir variables
+    // Carga la página web
+    htmlparser_load_url(parser, url);
 
-A continuación, definiremos las variables que necesitaremos para almacenar el documento HTML, así como los datos que queremos extraer de él.
+    // Busca el elemento especificado dentro del HTML 
+    htmlnode_t *nodo = htmlparser_query(parser, elemento);
 
-```
-xmlDocPtr doc;
-xmlNodePtr node;
-char *url = "https://www.example.com";
-```
+    // Imprime el contenido del elemento
+    printf("%s", nodo->children[0]->content);
 
-En este caso, estamos definiendo un puntero al documento HTML, un puntero al nodo que queremos analizar y una cadena de caracteres con la URL del sitio web que queremos analizar.
+    // Libera la memoria
+    htmlparser_destroy(parser);
+}
 
-##### Paso 3: Obtener el documento
+int main() {
+    // Llama a la función con la URL y el elemento que quieres parsear
+    parsearHTML("https://www.ejemplo.com", "h1");
 
-Ahora procederemos a obtener el documento del sitio web indicado utilizando la función `xmlParseFile`.
-
-```
-doc = xmlParseFile(url);
-```
-
-##### Paso 4: Recorrer el documento
-
-Con la función `xmlDocGetRootElement` obtendremos el nodo raíz del documento y con la función `xmlParseDocument` obtendremos el siguiente nodo del tipo especificado.
-
-```
-node = xmlDocGetRootElement(doc);
-node = xmlParseDocument(node, "head");
+    return 0;
+}
 ```
 
-De esta forma, podremos acceder a los datos que se encuentran en la sección "head" del documento HTML.
+**Salida:** Este código imprimirá el contenido del primer elemento "h1" encontrado en la página web especificada.
 
-##### Paso 5: Imprimir los resultados
-
-Por último, utilizando la función `printf` podremos imprimir los resultados en la consola. Por ejemplo, si queremos obtener el título de la página web, podemos utilizar la función `xmlGetProp` para obtener el valor del atributo "title" del nodo "title".
-
-```
-char *title = xmlGetProp(node, "title");
-printf("El título del sitio web es: %s", title);
+```C
+<h1>Bienvenidos a Ejemplo.com</h1>
 ```
 
-El resultado impreso en la consola sería: "El título del sitio web es: Example".
+##Profundizando en el parsing de HTML
 
-## Inmersión Profunda
+El proceso de parsing de HTML consiste en analizar una página web para identificar sus elementos y estructura, lo que permite obtener y manipular información específica. Una vez que se carga el código HTML, el parser busca patrones y etiquetas para crear una estructura de árbol que representa la página. De esta manera, se pueden acceder a los elementos y sus atributos utilizando funciones y métodos proporcionados por la librería.
 
-Como has podido ver, el proceso de analizar documentos HTML en C no es muy complicado si tenemos los conocimientos básicos y utilizamos la biblioteca correcta. Sin embargo, es importante tener en cuenta que cada página web es diferente y puede tener una estructura HTML distinta, por lo que es necesario adaptar el código según sea necesario. Además, existen muchas otras funciones y técnicas que pueden ayudarnos a analizar con mayor profundidad y precisión los documentos HTML.
+Es importante tener en cuenta que el HTML puede variar según el sitio web y su estructura, por lo que es importante familiarizarse con el formato y etiquetas más comunes. Además, existen diferentes opciones de librerías de HTML Parser en C, por lo que es recomendable investigar y elegir la que mejor se adapte a tus necesidades.
 
-## Ver también
+##Ver también
 
-- [Documentación de la biblioteca libxml](http://www.xmlsoft.org/html/libxml-tree.html)
-- [Tutorial de HTML en W3Schools](https://www.w3schools.com/html/)
-- [Ejemplos de análisis de documentos HTML en C](https://www.programiz.com/c-programming/examples/parse-html)
+- [Documentación de la librería HTML Parser para C](https://htmlparser.sourceforge.io/)
+- [Tutorial para parsear HTML en C](https://www.programmingsimplified.com/c/html-parser-library)
+- [Introducción a HTML para programadores en C](https://riptutorial.com/c/topic/1401/html)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Elm recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,77 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Web development has become an essential skill in today's technological landscape, and being able to download a web page is an important aspect of this field. Whether you are a web developer, a hobbyist, or simply curious about how to retrieve a web page, learning how to do it in Elm can bring your programming knowledge to the next level.
+If you're interested in building web applications using functional programming, then Elm is a great language to explore. With its type safety and declarative syntax, it's gaining popularity among developers. In this article, we'll focus on a common task in web development - downloading a web page - and how to do it in Elm.
 
 ## How To
 
-Firstly, make sure you have Elm installed on your machine. Then, let's dive into the code! 
+First, we'll need to import the `Http` module, which contains functions for making HTTP requests. We can do this by adding the following line to the top of our file:
 
 ```Elm
-import Browser
-import Html exposing (text)
-import Json.Decode 
+import Http
+```
 
-main = Browser.element
-  { init = init
-  , update = update
-  , view = view
-  , subscriptions = subscriptions
-  }
+Next, we'll create a `Request` using the `request` function. This function takes in two arguments - a `method` and a `url`.
 
-type Msg 
-  = ReceiveData Msg.ReceiveData
-
-type alias Model = 
-  { data : String
-  }
-
-init : () -> ( Model, Cmd Msg )
-init _ = 
-  ( Model "", getData )
-
-getData : Cmd Msg 
-getData = 
-  Http.get 
-    { url = "https://www.example.com"
-    , expect = 
-        Http.expectString ReceiveData (Json.Decode.succeed "Success!")
+```Elm
+let request = Http.request
+    { method = "GET"
+    , url = "https://www.example.com"
     }
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of 
-    ReceiveData data ->
-      ( { model | data = data }, Cmd.none )
-
-view : Model -> Html Msg 
-view model = 
-  text model.data 
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
 ```
 
-Output:
-```
-Success!
+After creating our request, we can use the `send` function to actually make the request and receive a response.
+
+```Elm
+Http.send handleResponse request
 ```
 
-Let's break down the code. Firstly, we import the necessary libraries: `Browser`, `Html`, and `Json.Decode`. The `init` function is where we set up our model and any initial commands. In this case, our model consists of a `data` field that will hold the retrieved web page. The `getData` function makes the `Http` request to the specified URL and expects a string as a response. The `update` function handles the `ReceiveData` message and updates our model accordingly. The `view` function simply displays the retrieved data on the screen.
+In the `send` function, we pass in a `handleResponse` function as the first argument. This function will be called when the request is completed, and it will receive a `Result` type with either a `Http.Error` or a `Http.Response`. We can pattern match on this `Result` to handle the different scenarios.
+
+```Elm
+handleResponse : Result Http.Error Http.Response -> msg
+handleResponse result =
+    case result of
+        Ok response ->
+            case response.statusCode of
+                200 ->
+                    -- do something with the response body
+                _ ->
+                    -- handle other status codes
+        Err error ->
+            -- handle errors
+```
 
 ## Deep Dive
 
-Now that we have the basics covered, let's explore further. The `getData` function can be customized to include different parameters, such as headers or form data. Additionally, you can use `Http.send` instead of `Http.get` if you want to send web page data instead of just retrieving it.
-
-You can also use Elm's `Cmd` module to perform multiple `Http` requests asynchronously and handle the responses with `Debug.log` or `Json.Decode` functions. This can be useful for creating more complex web scraping or data mining applications.
+Under the hood, Elm uses `XMLHttpRequest` to handle HTTP requests. This allows for a consistent API across browsers. Additionally, Elm automatically handles cross-origin requests, eliminating the need for CORS. It also handles caching and retries, making it easier to deal with common HTTP scenarios.
 
 ## See Also
 
-For more information on downloading web pages in Elm, check out these helpful links:
-
-- [Elm Guide: HTTP](https://guide.elm-lang.org/effects/http.html)
-- [Elm Docs: Http](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Using Elm's Cmd to preform multiple Http Requests](https://medium.com/@dschultz_51649/using-elms-cmd-to-preform-multiple-http-requests-9c11d4daed93)
-
-Happy coding!
+- [Official Elm website](https://elm-lang.org/)
+- [Elm documentation](https://package.elm-lang.org)
+- [Elm subreddit](https://www.reddit.com/r/elm/)

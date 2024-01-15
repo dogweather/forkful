@@ -1,5 +1,6 @@
 ---
-title:                "C: Capitalizando una cadena"
+title:                "Capitalizando una cadena"
+html_title:           "C: Capitalizando una cadena"
 simple_title:         "Capitalizando una cadena"
 programming_language: "C"
 category:             "C"
@@ -9,72 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena en C?
+## Por qué
 
-La capitalización de una cadena es un proceso común en cualquier programa que maneje texto. Al capitalizar una cadena, se cambia la primera letra de cada palabra a mayúscula y se convierten el resto de las letras en minúsculas. Esto es especialmente útil en casos donde se necesite imprimir o mostrar datos al usuario de forma más legible.
+¿Alguna vez has necesitado convertir una cadena de texto a mayúsculas en un programa en C? La capitalización de cadenas es una tarea común en la programación y puede ser útil para mostrar títulos, validar entradas de usuario o simplemente para fines estéticos.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para capitalizar una cadena en C, existen varias formas de lograrlo. La manera más sencilla es utilizando la función `toupper()` que se encuentra en la biblioteca estándar `<ctype.h>`. Esta función convierte un carácter en mayúscula, por lo que se puede aplicar iterativamente a cada carácter de la cadena. A continuación, se muestra un ejemplo de código utilizando esta función:
+Para capitalizar una cadena en C, podemos utilizar la función `toupper()` incluida en la biblioteca de strings `string.h`. Esta función toma un carácter como parámetro y devuelve su equivalente en mayúsculas. Podemos utilizar esta función en un bucle para recorrer cada carácter de la cadena y reemplazarlo con su versión en mayúsculas.
 
-```C
-#include <stdio.h>
-#include <ctype.h>
-
-int main() {
-  char str[] = "hola, esta es una cadena a capitalizar.";
-  int i = 0;
-
-  while (str[i]) {
-    str[i] = toupper(str[i]);
-    i++;
-  }
-
-  printf("%s", str);
-
-  return 0;
-}
 ```
-
-El resultado de este programa sería: `HOLA, ESTA ES UNA CADENA A CAPITALIZAR.`
-
-Otra opción es utilizar la función `strtok()` que se encuentra en `<string.h>`, la cual permite dividir una cadena en "tokens" (trozos) utilizando un caracter delimitador. Se puede utilizar esto junto con la función `toupper()` para capitalizar cada palabra en la cadena. A continuación, se muestra un ejemplo:
-
-```C
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
 int main() {
-  char str[] = "hola, esta es una cadena a capitalizar.";
-  char delimitador[] = " ";
-  char *token;
 
-  // obtener el primer token
-  token = strtok(str, delimitador);
+    // Definir una cadena de ejemplo
+    char str[] = "¡Hola, mundo!";
 
-  // seguir obteniendo tokens hasta el final de la cadena
-  while (token != NULL) {
-    token[0] = toupper(token[0]); // capitalizar primera letra
-    printf("%s ", token); // imprimir token
-    token = strtok(NULL, delimitador); // obtener siguiente token
-  }
+    // Obtener la longitud de la cadena
+    int length = strlen(str);
 
-  return 0;
+    // Recorrer la cadena
+    for (int i = 0; i < length; i++) {
+        // Reemplazar los caracteres con su versión en mayúsculas
+        str[i] = toupper(str[i]);
+    }
+
+    // Imprimir la cadena capitalizada
+    printf("%s", str);
+
+    return 0;
 }
 ```
 
-El resultado de este programa sería: `Hola, Esta Es Una Cadena A Capitalizar.`
+**Output:** ¡HOLA, MUNDO!
 
-Ambos ejemplos utilizan funciones básicas de C, por lo que son compatibles con la mayoría de compiladores.
+## Profundizando
 
-## Profundizando en la capitalización de cadenas
-
-Si se desea un control más específico sobre cómo se capitalizan las cadenas, se pueden utilizar otras funciones como `isalpha()` y `isblank()` de `<ctype.h>`, que permiten identificar si un carácter es una letra o un espacio en blanco, respectivamente. Esto puede ser útil en casos donde se quieran mantener ciertas palabras o símbolos en minúsculas, como en el caso de títulos de libros o nombres propios.
-
-También se pueden utilizar algoritmos más complejos para capitalizar una cadena, como por ejemplo teniendo en cuenta excepciones y reglas gramaticales. Esto puede ser útil en proyectos de lenguaje natural o traductores.
+La función `toupper()` es una de las muchas funciones útiles para manipular cadenas en C. Otras funciones útiles incluyen `tolower()` y `strcpy()`. También existen diferentes técnicas para capitalizar cadenas, por ejemplo, utilizando punteros en lugar de un bucle for. Puedes explorar más sobre estas técnicas y funciones en la documentación de C.
 
 ## Ver también
-- [Documentación de toupper() en C](https://www.tutorialspoint.com/c_standard_library/c_function_ctype_h_toascii.htm)
-- [Documentación de strtok() en C](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [Tutorial de C de W3Schools](https://www.w3schools.in/c-tutorial/)
+
+- [Documentación de C en español](https://es.cppreference.com/w/c)
+- [Manipulación de cadenas en C](https://www.programiz.com/c-programming/c-strings)
+- [Cadenas en C - Video tutorial en español](https://www.youtube.com/watch?v=ShcjNc5FFaM)

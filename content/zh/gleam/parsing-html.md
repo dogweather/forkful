@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 解析 HTML"
+title:                "解析 HTML"
+html_title:           "Gleam: 解析 HTML"
 simple_title:         "解析 HTML"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么要解析HTML？
+## 为什么
 
-HTML是一种用于构建网页的语言，它包含了大量的信息和标签。为了从网页中提取有用的信息，我们需要使用解析器来解析HTML。通过解析HTML，我们可以获得网页的结构、内容和样式等各种信息。
+在编写网页或者进行网络爬虫时，经常需要从大量的HTML代码中提取所需信息。使用Gleam来解析HTML可以让这一过程更加简单、高效，节省大量的时间和精力。
 
-Gleam是一种高效、易于使用的编程语言，它提供了强大的解析器库，可以帮助我们轻松地解析HTML。如果您想要从网页中提取数据或做网页分析，那么了解如何解析HTML就是必不可少的。
+## 如何操作
 
-怎么做：
+首先，我们需要导入Gleam的HTML解析库`Html.Parser`。然后，使用`Html.Parser.parse_string()`方法来解析HTML代码。例如，下面是一个简单的示例，从一个HTML代码片段中提取所有的“<h1>”标签的内容，并打印出来。
 
 ```Gleam
-import html_parser
+import Html.Parser
 
-// Load HTML document
-let doc = html_parser::parse("https://www.example.com")
+let html = """
+<html>
+  <body>
+    <h1>Hello World</h1>
+    <h1>Gleam is Awesome</h1>
+  </body>
+</html>
+"""
 
-// Find element by ID
-let element = html_parser::find_by_id(doc, "my-element")
+let parsed = Html.Parser.parse_string(html)
 
-// Get element's text content
-let text_content = html_parser::get_text(element)
+// Print all "h1" tags' content
+for node in parsed.headings {
+    println(node.inner_text)
+}
 
-// Print result
-io::println(text_content) // Output: Hello World
+// Output:
+// Hello World
+// Gleam is Awesome
 ```
 
-您可以看到，使用Gleam解析器非常简单。首先，我们需要导入html_parser库。然后，通过使用parse函数加载HTML文档，我们可以获取一个表示整个文档的数据结构。接下来，我们可以使用find_by_id函数查找具有特定ID的元素，并使用get_text函数获取它的文本内容。最后，我们将结果打印到控制台。
+## 深入探讨
 
-深入研究：
+Gleam的HTML解析功能可以更加灵活和强大。它可以提取不同类型的HTML标签，如段落标签、链接标签等，并且可以根据需要提取标签的属性值。我们也可以使用`Html.Parser.parse_url()`方法来从指定的URL地址中获取HTML代码，并进行解析。详细的使用说明和方法可参考Gleam的官方文档。
 
-HTML是一种树状结构，Gleam解析器使用树形遍历算法来遍历HTML文档。每个HTML元素都被视为一个节点，具有父节点和子节点。通过使用不同的函数，我们可以获取元素的属性、子元素、文本内容等。
+## 参考链接
 
-此外，Gleam解析器还提供了一些功能，如根据选择器选择元素、处理特殊字符等。您可以通过阅读官方文档来深入了解这些功能。
-
-参考链接：
-
-- 官方文档： https://gleam.run/modules/html_parser.html
-- 示例代码： https://gist.github.com/example
-- 更多Gleam文章： https://www.example.com/gleam-articles
-
-请参考：
-
-官方文档：https://gleam.run/modules/html_parser.html
-示例代码：https://gist.github.com/example
-更多Gleam文章：https://www.example.com/gleam-articles
+- [Gleam官方网站](https://gleam.run/)
+- [Gleam HTML解析库文档](https://gleam.run/modules/html.html)
+- [Gleam HTML解析库源代码](https://github.com/gleam-lang/html)

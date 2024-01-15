@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Nykyisen päivämäärän hakeminen"
-simple_title:         "Nykyisen päivämäärän hakeminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Clojure: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -9,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi päivämäärän hankkiminen on tärkeää
+## Miksi
+Haluatko tietää mikä päivä tänään on? Haluatko lisätä päivämääräominaisuuden omassa ohjelmassasi? Clojuren avulla voit helposti saada nykyisen päivämäärän näkyviin.
 
-Päivämäärän hankkiminen (tai nykyisen päivän hankkiminen) on tärkeää monissa ohjelmoinnin yhteyksissä. Se voi olla hyödyllistä esimerkiksi aikaleimojen luomisessa, aikataulujen tarkistamisessa tai raporttien luomisessa. Clojure tarjoaa helpon ja tehokkaan tavan hankkia nykyinen päivämäärä ja tässä blogissa kerromme, miten se tapahtuu.
-
-# Kuinka hankkia nykyinen päivämäärä Clojurella
-
-Clojure tarjoaa built-in toiminnon `clojure.java-time/local-date` nykyisen päivämäärän hankkimiseen. Voit käyttää sitä suoraan ilman lisäkirjastoja tai asennuksia. Alla on esimerkki koodista, joka hakee ja tulostaa nykyisen päivämäärän:
+## Miten
+Käytä Clojuren *clj-time* -kirjastoa saadaksesi nykyisen päivämäärän käyttöön. Ensimmäiseksi, lisää *clj-time* riippuvuus projektiisi ja importtaa se koodiisi.
 
 ```Clojure
-(clojure.java-time/local-date)
-; => #object[java.time.LocalDate 0x1b76efb1 "2019-06-10"]
+(require '[clj-time.core :as time])
 ```
 
-Kuten näet, funktio palauttaa `java.time.LocalDate` -objektin, joka sisältää tiedot päivämäärästä. Voit käyttää Clojuren tarjoamia toimintoja tämän objektin tietojen käsittelyyn, esimerkiksi `(.getYear date)` hakee vuodet ja `(.getMonth date)` kuukaudet.
+Sitten voit käyttää *now* -funktiota saadaksesi nykyisen päivämäärän ja *today* -funktiota saadaksesi nykyisen päivän ilman kellonaikaa. Voit myös käyttää *date* funktiota muuttamaan päivämäärän haluamaasi muotoon.
 
-Voit myös käyttää `clojure.java-time` -kirjaston muita funktioita hieman monimutkaisempien päivämäärien hankkimiseen, kuten esimerkiksi aikavyöhykesidonnaisten päivämäärien käsittelyyn. Tarkista Clojuren virallinen dokumentaatio lisätietoja varten.
+```Clojure
+(time/now) ; => #<DateTime 2020-10-16T00:00:00.000Z>
+(time/today) ; => #<LocalDate 2020-10-16>
+(time/date (time/today)) ; => #<DateTime 2020-10-16T00:00:00.000Z>
+```
 
-# Syvempi sukellus päivämäärän hankkimiseen
+Voit myös saada nykyisen ajan käyttämällä *now* funktiota ilman parametreja.
 
-Nykyisen päivämäärän hankkiminen on helppoa, mutta takana on paljon enemmän kuin vain yksi funktio. Clojure pohjautuu vahvasti Javan `java.time` -ajankohtakeskukselle, joten päivämäärän käsittely Clojurella on todella tehokasta ja monipuolista. Voit esimerkiksi luoda uuden päivämäärän, lisätä tai vähentää päiviä, tarkistaa päivämäärien välistä eroa ja paljon muuta.
+```Clojure
+(time/now) ; => #<DateTime 2020-10-16T00:00:00.000Z>
+```
 
-# Katso myös
+## Syventyminen
+Voit lisätä päivämäärän avulla myös muita ominaisuuksia, kuten päivien ja kuukausien lisääminen tai vähentäminen. Voit käyttää *plus* ja *minus* funktioita muuttamaan päivämäärää haluamallasi tavalla.
 
-- Clojuren virallinen dokumentaatio päivämäärän käsittelyyn: https://clojure.github.io/java-time/
-- Java:n `java.time` -ajankohtakeskus: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+```Clojure
+(time/plus (time/now) (time/days 7)) ; lisää 7 päivää nykyiseen päivämäärään
+(time/minus (time/now) (time/months 1)) ; vähentää 1 kuukauden nykyisestä päivämäärästä
+```
+
+Voit myös lisätä tietty määrä aikaa nykyiseen päivämäärään käyttämällä *plus* ja *minus* funktioita sekä *milliseconds*, *seconds*, *minutes*, *hours*, *days*, *weeks* ja *months* funktioita.
+
+```Clojure
+(time/plus (time/now) (time/seconds 30)) ; lisää 30 sekuntia nykyiseen päivämäärään
+(time/minus (time/now) (time/weeks 2)) ; vähentää 2 viikkoa nykyisestä päivämäärästä
+```
+
+## Katso myös
+- [clj-time - ClojureKirjasto](https://github.com/clj-time/clj-time)
+- [Joda - Aikakirjasto Java-kielelle, johon clj-time perustuu](https://www.joda.org/joda-time/)
+- [Java 8 Datetime API - Java-kirjasto päivämäärien käsittelyyn](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

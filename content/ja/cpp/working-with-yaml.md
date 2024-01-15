@@ -1,6 +1,7 @@
 ---
-title:                "C++: 「Yamlを扱う」"
-simple_title:         "「Yamlを扱う」"
+title:                "「YAMLでの作業」"
+html_title:           "C++: 「YAMLでの作業」"
+simple_title:         "「YAMLでの作業」"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -9,47 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜYAMLを使うのか
+## なぜ
 
-YAMLは、人間が読みやすく、理解しやすいテキスト形式のデータシリアライゼーション言語です。これは、プログラムやアプリケーション間でデータをやりとりする際に非常に便利です。また、YAMLはXMLやJSONよりもシンプルで、コーディングの手間を減らすことができます。
+プログラミング言語C++でYAMLを使用する理由は、構造化されたデータのストレージや転送に最適なフォーマットとして知られているためです。また、YAMLは人間にとっても読みやすい形式であり、データを簡単に修正できるため、開発作業の効率性を高めることができます。
 
-## YAMLの使い方
+## 使い方
 
-まず、YAMLの文法を理解する必要があります。例えば、次のようなYAMLファイルを作成することができます。
-
-```C++
-person:
-   name: John
-   age: 30
-   profession: Programmer
-```
-
-この例では、personというキーの下にname、age、professionのキーとそれぞれの値が格納されています。このように、YAMLは階層構造を持つことができます。
-
-YAMLファイルを読み込むには、ライブラリを使用する必要があります。C++でYAMLを扱う場合、"yaml-cpp"というライブラリが便利です。次の例では、yaml-cppを使用してpersonデータを読み込み、ageの値を出力する方法を示します。
+YAMLをC++で使うための簡単なコード例を示します。
 
 ```C++
 #include <iostream>
 #include <yaml-cpp/yaml.h>
 
-int main() {
-    YAML::Node person = YAML::LoadFile("person.yaml");
+int main()
+{
+  // YAMLドキュメントの作成
+  YAML::Node doc;
+  doc["name"] = "Miku";
+  doc["age"] = 18;
+  doc["hobbies"] = YAML::Load("[Singing, Dancing, Programming]");
 
-    // ageの値を取得し、出力する
-    std::cout << person["age"] << std::endl;
+  // YAMLドキュメントの表示
+  std::cout << doc << std::endl;
 
-    return 0;
+  // YAMLファイルに保存
+  std::ofstream fout("profile.yml");
+  fout << doc;
+
+  return 0;
 }
 ```
 
-上記の例では、yaml-cppライブラリのLoadFileメソッドを使用して、person.yamlファイルを読み込んでいます。また、YAML::Nodeクラスを使用してpersonデータを扱っています。
+上記のコードでは、まず`yaml-cpp`ライブラリをインポートし、YAMLドキュメントを作成します。その後、ドキュメントにデータを追加し、表示したりファイルに保存したりできます。上記のコードを実行すると、以下のような出力が得られます。
 
-## YAMLの詳細
+```yaml
+name: Miku
+age: 18
+hobbies: [Singing, Dancing, Programming]
+```
 
-YAMLは、RubyとPythonで開発されたもので、C++でも人気があります。また、YAMLには豊富なデータ型があり、リストやマップ、複数行のテキストなどを格納することができます。さらに、YAMLは設定ファイルのような簡単なデータだけでなく、コンフィギュレーションファイルやメッセージングデータなど、さまざまな用途で使用されています。
+### ディープダイブ
+
+YAMLを扱う上でよく使われる2つの基本的なデータ型は、マップ（`map`）とシーケンス（`seq`）です。マップは`key: value`という形式でデータを保持し、シーケンスは順番にデータを並べて保持します。また、YAMLでは`#`を使ってコメントを記述することができます。
+
+例えば、以下のようなYAMLドキュメントがあったとします。
+
+```yaml
+# 家族の情報
+family:
+  # 父親の情報
+  father:
+    name: Taro
+    age: 45
+  # 母親の情報
+  mother:
+    name: Hanako
+    age: 42
+  # 子どもの情報
+  children:
+    - name: Miku
+      age: 18
+    - name: Yumi
+      age: 13
+```
+
+このYAMLドキュメントでは、`family`というマップの中に`father`、`mother`、`children`というキーがあり、それぞれに対応するデータがマップまたはシーケンスで保持されています。データの参照はドット演算子`.`を使って行うことができます。例えば`family.father.name`とすると、父親の名前である`Taro`が取得できます。
+
+YAMLについてさらに詳しく知りたい方は、公式のドキュメントを参考にすると良いでしょう。
 
 ## See Also
 
-- [YAML公式サイト](https://yaml.org/)
-- [yaml-cppライブラリ](https://github.com/jbeder/yaml-cpp)
-- [YAMLの基本的な文法説明](https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml)
+- [YAML公式ドキュメント](https://yaml.org/)
+- [yaml-cppライブラリのGitHubページ](https://github.com/jbeder/yaml-cpp)
+- [YAMLとは？ - Qiita](https://qiita.com/yoskeoka/items/9eb57c9c067cfb84659d)

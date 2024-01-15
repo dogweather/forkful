@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Unterzeichenketten extrahieren"
-simple_title:         "Unterzeichenketten extrahieren"
+title:                "Substrings extrahieren"
+html_title:           "Swift: Substrings extrahieren"
+simple_title:         "Substrings extrahieren"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,46 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Extrahieren von Teilstrings kann eine nützliche Funktion in der Swift Programmierung sein, da es es ermöglicht, nur einen Teil eines Texts zu extrahieren, anstatt den gesamten String zu verwenden. Dies kann besonders hilfreich sein, wenn man mit großen Texten arbeitet und nur bestimmte Teile davon benötigt.
+Es gibt viele Gründe, warum man substrings in Swift extrahieren möchte. Zum Beispiel kann es sein, dass man Daten analysieren oder bearbeiten muss, die in einem String gespeichert sind. Oder man möchte eine bestimmte Information aus einem längeren Text herausfiltern. Egal aus welchem Grund, die Möglichkeit, Substrings extrahieren zu können, ist eine nützliche Fähigkeit in der Swift Programmierung.
 
-## Wie geht man vor
+# Wie geht's
 
-Die Extraktion von Teilstrings kann mit der `substring` Funktion in Swift erreicht werden. Hier ist ein Beispielcode, der diesen Prozess veranschaulicht:
+Um Substrings in Swift zu extrahieren, gibt es verschiedene Methoden, je nachdem was man erreichen möchte. Hier sind drei häufige Anwendungsbeispiele mit passendem Code und Output:
 
-```Swift
-let string = "Hello World"
-let substring = string.substring(from: 6)
-print(substring) // Output: World
-```
+### Beispiel 1: Extrahieren von Zeichen aus einem String
 
-Das `substring` muss mit dem Ausgangsstring und einer startenden Indexposition aufgerufen werden. In diesem Beispiel beginnt der Teilstring mit dem sechsten Zeichen, was dem Buchstaben "W" entspricht.
-
-Es ist auch möglich, die Länge des Teilstrings anzugeben, wenn man nicht den gesamten Rest des Textes extrahieren möchte. In diesem Fall würde der Code folgendermaßen aussehen:
+Manchmal wollen wir nur ein oder mehrere Zeichen aus einem String extrahieren. Dafür können wir die Methode `prefix(_ maxLength: Int)` verwenden, die uns die ersten `maxLength` Zeichen des Strings zurückgibt.
 
 ```Swift
-let string = "Hello World"
-let substring = string.substring(from: 6, length: 5)
-print(substring) // Output: World
+let text = "Swift ist eine tolle Programmiersprache"
+let prefix = text.prefix(5)
+
+print(prefix) // Output: Swift
 ```
 
-Das Argument `length` gibt an, wie viele Zeichen nach dem startenden Index extrahiert werden sollen.
+### Beispiel 2: Extrahieren einer bestimmten Anzahl an Zeichen ab einer bestimmten Stelle
 
-## Tiefergehende Informationen
-
-Man kann auch Teilstrings aus dem Anfang eines Strings extrahieren, indem man die `substring(to:)` Funktion verwendet. Diese nimmt lediglich die endende Indexposition als Argument:
+Oft ist es praktisch, wenn wir einen Teil eines Strings ab einer bestimmten Stelle herausfiltern können. Dafür nutzen wir die Methode `suffix(_ maxLength: Int)`, die uns die letzten `maxLength` Zeichen zurückgibt.
 
 ```Swift
-let string = "Hello World"
-let substring = string.substring(to: 5)
-print(substring) // Output: Hello
+let text = "Swift ist eine tolle Programmiersprache"
+let suffix = text.suffix(16)
+
+print(suffix) // Output: Programmiersprache
 ```
 
-Wenn man bestimmte Zeichen in einem String als Teilstring extrahieren möchte, kann man die `range(of:)` Funktion verwenden, um die Indexpositionen dieser Zeichen zu finden und dann die `substring` Funktion anzuwenden.
+### Beispiel 3: Extrahieren eines bestimmten Teilstrings
 
-## Siehe auch
+Manchmal möchten wir auch einen bestimmten Teil eines Strings extrahieren, der an einer bestimmten Position beginnt und an einer anderen endet. Hierfür nutzen wir die Methode `subscript(_ bounds: Range<Int>)`, die uns den Teilstring zwischen den angegebenen Indizes zurückgibt.
 
-- [Offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID283)
-- [Extraktion von Teilstrings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string)
-- [Teilstrings mit range(of:) finden](https://www.hackingwithswift.com/example-code/strings/how-to-highlight-substrings-using-nsmutableattributedstring)
+```Swift
+let text = "Swift ist eine tolle Programmiersprache"
+let range = text.index(text.startIndex, offsetBy: 11)..<text.endIndex
+let substring = text[range]
+
+print(substring) // Output: tolle Programmiersprache
+```
+
+# Tiefer in die Materie
+
+Wenn man sich tiefer mit dem Thema befassen möchte, gibt es noch weitere Methoden und Eigenschaften, die man beim Extrahieren von Substrings nutzen kann. Zum Beispiel gibt es die `range(of: String)` Methode, die uns die Position des ersten Vorkommens eines bestimmten Strings zurückgibt, oder die `components(separatedBy: String)` Methode, die uns den String in ein Array von Substrings aufteilt.
+
+# Siehe auch
+
+- [Offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial über das Extrahieren von Substrings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string-in-swift)
+- [Weitere Beispiele und Erklärungen zum Thema Substrings](https://www.ralfebert.de/ios/swift-substring-range/)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Jämförande av två datum"
+title:                "Jämförande av två datum"
+html_title:           "Fish Shell: Jämförande av två datum"
 simple_title:         "Jämförande av två datum"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför 
-Att jämföra två datum är en användbar funktion inom Fish Shell som kan hjälpa dig att organisera och hantera dina filer och projekt bättre. Det kan även vara användbart för att säkerställa att du inte råkar arbeta med föråldrade filer eller glömmer viktiga frister.
+## Varför
 
-# Hur man gör
-För att börja jämföra två datum i Fish Shell, behöver du använda kommandot "date" följt av de två datum du vill jämföra. Se till att skriva datumen i formatet "ÅÅÅÅ/MM/DD" för att undvika förvirring.
+Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med tidshantering eller sorteringsfunktioner. Det finns flera situationer där man behöver veta om ett datum är före, efter, eller samma som ett annat datum.
 
-```Fish Shell
-date 2019/05/01
-date 2020/10/15
-```
+## Så här gör du
 
-Detta kommer att returnera ett resultat som jämför de två datumen och visar vilket av dem som är tidigare.
-
-```
-ons 01 maj 2019 00:00:00 CEST
-tor 15 okt 2020 00:00:00 CEST
-```
-
-Det är viktigt att notera att Fish Shell använder ditt lokala tidsformat för att visa resultatet, så resultatet kan se annorlunda ut beroende på var du befinner dig i världen.
-
-# Djupdykning
-Förutom att bara jämföra två datum kan du också använda Fish Shell för att beräkna skillnaden mellan dem. Detta kan vara särskilt användbart när du behöver hålla koll på hur många dagar som återstår till en viktig deadline.
-
-Ett exempel på hur du kan göra detta är genom att använda kommandot "date -d" följt av datumen du vill jämföra. Resultatet kommer att visa hur många dagar det är mellan datumen.
+Fish Shell erbjuder flera inbyggda funktioner för att enkelt jämföra två datum. Här är några exempel på hur du kan använda dessa funktioner:
 
 ```Fish Shell
-date -d 2020/01/01 -d 2020/01/15
-```
+# Kontrollera om ett datum är efter ett annat datum
+if date "2021-01-01" > "2020-12-31"
+  echo "2021-01-01 är efter 2020-12-31"
+end
+
+# Kontrollera om två datum är samma
+if date "2020-10-10" = "2020-10-10"
+  echo "2020-10-10 är samma som 2020-10-10"
+end
+
+# Kontrollera om ett datum är före ett annat datum
+if date "2020-02-14" < "2020-12-24"
+  echo "2020-02-14 är före 2020-12-24"
+end
+
+# Omvandla datum till sekunder för att jämföra dem
+set january_first (date --date "2021-01-01" +%s)
+set december_thirtyfirst (date --date "2020-12-31" +%s)
+if test $january_first -gt $december_thirtyfirst
+  echo "2021-01-01 är efter 2020-12-31"
+end
 
 ```
-14
-```
 
-Du kan också göra mer komplicerade jämförelser genom att använda standard Unix-verktyg som "diff" eller "grep" tillsammans med "date" kommandot.
+I detta exempel utnyttjar vi funktionen `date` för att konvertera specifika datum till sekunder och sedan jämföra dem med hjälp av `test`-kommandot.
 
-# Se även
-Här är några användbara länkar för att lära dig mer om hur du jämför datum i Fish Shell:
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/cmds/date.html)
-- [Jämföra tidsintervall i Fish Shell](https://fishshell.com/docs/current/cmds/seq.html#comparing-time-intervals)
-- [Beräkna skillnaden mellan två datum i Fish Shell](https://askubuntu.com/questions/921529/how-do-i-calculate-the-difference-between-two-dates)
+## Djupt dyk
+
+När man jämför två datum är det viktigt att tänka på hur tidszoner kan påverka resultatet. Om du inte specifikt anger en tidszon, kommer datumet att tolkas utifrån den aktuella systemtidszonen. Detta kan leda till felaktiga resultat om du arbetar med datum från olika tidszoner.
+
+En annan sak att tänka på är att formatet på dina datum måste vara korrekt för att jämförelsen ska fungera. Fish Shell accepterar många olika format, men det är viktigt att du håller dig till ett konsekvent format för att undvika problem.
+
+## Se även
+
+-https://fishshell.com/docs/current/cmds/date.html
+-https://www.geeksforgeeks.org/compare-two-dates-with-the-help-of-fish-shell-in-linux/
+-https://stackoverflow.com/questions/52366389/how-to-compare-two-dates-in-bash

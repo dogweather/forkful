@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Encontrando o comprimento de uma string"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "Haskell: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,51 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Existem muitos cenários em que precisamos descobrir o comprimento de uma string em Haskell, desde validar inputs do usuário até manipular texto em um programa. Saber como encontrar o comprimento de uma string é uma habilidade essencial para qualquer programador em Haskell.
+Você já precisou saber quantos caracteres existem em uma palavra ou frase? Saber a extensão de uma string pode ser útil em várias situações, especialmente na manipulação de texto. Neste artigo, vamos explorar como encontrar o comprimento de uma string em Haskell.
 
 ## Como fazer
 
-Existem algumas maneiras diferentes de encontrar o comprimento de uma string em Haskell. Vamos começar com a abordagem mais simples, usando a função `length`:
+Encontrar o comprimento de uma string em Haskell é bem simples e pode ser feito de diferentes maneiras. Aqui, vamos abordar três métodos: usando a função `length`, recursão e list comprehension.
 
-```
-Haskell> length "Olá mundo!"
-11
-```
+### Usando a função `length`
 
-Essa função é uma das funções de alta ordem mais básicas em Haskell e é definida da seguinte maneira:
+A função `length` é uma função nativa em Haskell que retorna o comprimento de uma lista, incluindo strings. Basta passar a string como argumento para a função e ela irá retornar o número de caracteres.
 
-```
-length :: [a] -> Int
-length [] = 0
-length (_:xs) = 1 + length xs
+```Haskell
+length "Olá, mundo!" -- retorna 12
 ```
 
-A função `length` recebe uma lista e retorna o comprimento dessa lista como um número inteiro. A primeira linha da definição de tipo mostra que essa função é polimórfica e pode lidar com listas de qualquer tipo.
+### Usando recursão
 
-Além da função `length`, existem outras maneiras de encontrar o comprimento de uma string em Haskell. Uma opção é usar a função `foldl`, que pode ser implementada da seguinte maneira:
+A recursão é uma técnica muito comum em programação funcional e também pode ser utilizada para encontrar o comprimento de uma string em Haskell. Essencialmente, a ideia é percorrer a string caracter por caracter, incrementando um contador a cada iteração até que se chegue ao final da string.
 
+```Haskell
+strLength :: String -> Int
+strLength [] = 0 -- caso base, string vazia
+strLength (x:xs) = 1 + strLength xs -- recursão, incrementa 1 e passa para o próximo caractere
+
+strLength "Olá, mundo!" -- retorna 12
 ```
-myLength :: [a] -> Int
-myLength xs = foldl (\acc x -> acc + 1) 0 xs
+
+### Usando list comprehension
+
+Outra forma de encontrar o comprimento de uma string é usando list comprehension. Nesse caso, é criada uma lista com os caracteres da string e então é utilizado o operador `length` para obter o tamanho da lista.
+
+```Haskell
+strLength :: String -> Int
+strLength str = length [x | x <- str] -- cria uma lista com os caracteres e aplica a função `length`
+
+strLength "Olá, mundo!" -- retorna 12
 ```
 
-A função `foldl` reduz uma lista aplicando uma função a cada elemento e acumulando o resultado. Neste caso, a função simplesmente adiciona 1 ao acumulador a cada iteração, resultando no comprimento final da lista.
+## Deep Dive
 
-## Mergulho profundo
+Embora possa parecer simples encontrar o comprimento de uma string em Haskell, é importante entender como as diferentes abordagens funcionam por trás dos panos.
 
-Ao usar a função `length`, é importante ter em mente que ela percorre a lista inteira, o que pode ser um problema para listas longas. Uma solução para isso é usar a função `foldl'` do módulo `Data.List`, que é otimizada para evitar chamadas recursivas desnecessárias.
+No caso da função `length`, ela utiliza o conceito de *fold* (dobra) para percorrer a lista e contar seus elementos. Já na recursão, estamos trabalhando com o conceito de *pattern matching* (casamento de padrões) para lidar com diferentes casos, como a string vazia. E no list comprehension, estamos criando uma nova lista baseada nos elementos da string e utilizando a função `length` para encontrar o tamanho dessa lista.
 
-Outro ponto importante é a diferença entre strings e listas de caracteres em Haskell. Em Haskell, uma string é simplesmente uma lista de caracteres, portanto, as funções de lista, como `length` e `foldl`, podem ser usadas diretamente em strings.
-
-Além disso, é possível usar a sintaxe de lista de compreensão com strings em Haskell, tornando mais fácil para os programadores trabalhar com elas. Por exemplo, podemos encontrar o comprimento de uma string usando a seguinte expressão:
-
-```
-lengthStr :: String -> Int
-lengthStr str = sum [1 | _ <- str]
-```
+Além do mais, é interessante observar que, em Haskell, uma string é simplesmente uma lista de caracteres, o que facilita o seu tratamento por meio de funções nativas ou funcionalidades mais elaboradas.
 
 ## Veja também
 
-- [Documentação do Haskell](https://www.haskell.org/documentation/)
-- [Funções de alta ordem em Haskell](https://wiki.haskell.org/Function)
-- [Manipulação de strings em Haskell](https://wiki.haskell.org/Strings_as_lists)
+- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+- [Haskell Brasil](https://www.haskellbr.com)
+- [Haskell no Reddit](https://www.reddit.com/r/haskell)

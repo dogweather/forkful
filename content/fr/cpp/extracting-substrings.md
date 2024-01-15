@@ -1,5 +1,6 @@
 ---
-title:                "C++: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "C++: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "C++"
 category:             "C++"
@@ -9,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi extrait-on des sous-chaînes en programmation C++ ?
 
-Si vous êtes un programmeur en herbe ou même expérimenté, vous avez probablement déjà entendu parler de l'extraction de sous-chaînes. L'extraction de sous-chaînes est une tâche courante en programmation qui consiste à extraire une partie spécifique d'une chaîne de caractères. Vous pourriez vous demander pourquoi vous devriez vous préoccuper de cette tâche apparemment simple. La réponse est simple : l'extraction de sous-chaînes est une compétence clé pour manipuler des données textuelles et peut être utilisée pour une variété d'applications, telles que le traitement de texte, le traitement de données et la recherche d'informations.
+Extrait les sous-chaînes est utile lorsque l'on souhaite manipuler ou analyser une partie spécifique d'une chaîne de caractères plus longue.
 
-## Comment faire
-
-Pour extraire une sous-chaîne en C++, vous pouvez utiliser la méthode "substr" de la classe "string". Cette méthode prend deux paramètres : l'index de début et le nombre de caractères à extraire. Par exemple, si vous avez une chaîne "Bonjour" et que vous voulez extraire la sous-chaîne "onj", vous pouvez utiliser la méthode de cette manière :
+## Comment faire ?
 
 ```C++
-string str = "Bonjour";
-string sub = str.substr(1, 3); 
-cout << sub; // affiche "onj"
+// Déclaration d'une chaîne de caractères
+string chaine = "Hello World!";
+
+// Extrait les 5 premiers caractères de la chaîne:
+string sous_chaine = chaine.substr(0, 5);
+
+// Affiche la sous-chaîne extraite
+cout << sous_chaine << endl;
+
+// Output : Hello
 ```
 
-Dans cet exemple, nous avons utilisé l'index "1" comme point de départ pour extraire la sous-chaîne et le nombre "3" pour spécifier la quantité de caractères à extraire.
+Les sous-chaînes sont extraites à l'aide de la méthode `substr()` de la classe `string`. Cette méthode prend deux paramètres : l'index de départ et la longueur de la sous-chaîne à extraire. En utilisant cette méthode, vous pouvez facilement manipuler et traiter des sous-parties de vos chaînes de caractères.
 
 ## Plongée en profondeur
 
-Si vous voulez en savoir plus sur l'extraction de sous-chaînes en C++, il est important de comprendre l'indexation des chaînes de caractères. En C++, les indices commencent à 0, ce qui signifie que le premier caractère d'une chaîne a l'index 0, le deuxième a l'index 1, et ainsi de suite. En utilisant cette notation, vous pouvez spécifier facilement les indices de début et de fin pour extraire la sous-chaîne souhaitée.
+La méthode `substr()` retourne une nouvelle chaîne de caractères contenant la sous-chaîne extraite, sans modifier la chaîne d'origine. Vous pouvez également utiliser des indices négatifs pour spécifier le nombre de caractères à partir de la fin de la chaîne. Par exemple, `chaine.substr(-3)` va extraire les 3 derniers caractères de la chaîne.
 
-De plus, vous pouvez également spécifier un seul paramètre dans la méthode "substr" pour extraire tout le reste de la chaîne à partir de l'index donné jusqu'à la fin de la chaîne. Par exemple, en utilisant l'indice 2 dans notre exemple précédent, la sous-chaîne extraite serait "njour".
-
-## Voir aussi
-
-Si vous voulez en savoir plus sur l'extraction de sous-chaînes en C++, voici quelques liens utiles :
-
-- Tutoriel sur les chaînes de caractères en C++ : www.cplusplus.com/doc/tutorial/strings/
-- Documentation de la méthode "substr" : www.cplusplus.com/reference/string/string/substr/
-- Exemples de l'utilisation de l'extraction de sous-chaînes en C++ : github.com/search?q=substring+in+C%2B%2B
+# Voir aussi
+- [Documentation officielle de la classe string en C++](https://docs.microsoft.com/fr-fr/cpp/standard-library/string-class?view=msvc-160)
+- [Explications sur la manipulation de chaînes de caractères en C++](https://www.developpez.net/forums/d1988378/cpp/general-cpp/traitement-chaines-caracteres/#post9864081)

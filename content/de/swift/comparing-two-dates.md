@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Vergleich von zwei Daten"
-simple_title:         "Vergleich von zwei Daten"
+title:                "Zwei Daten vergleichen"
+html_title:           "Swift: Zwei Daten vergleichen"
+simple_title:         "Zwei Daten vergleichen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,50 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In der Programmierung ist es oft notwendig, zwei Daten miteinander zu vergleichen, um bestimmte Aktionen auszuführen oder Bedingungen zu überprüfen. In der Swift-Programmierung gibt es verschiedene Möglichkeiten, um die Vergleichbarkeit von Daten, insbesondere von Datumswerten, zu implementieren. In diesem Blog-Beitrag werden wir uns ansehen, wie man effektiv zwei Datumswerte vergleichen kann.
+Die Vergleichung von zwei Daten ist eine häufige Aufgabe in der Programmierung. Mit Swift kann dies mithilfe von integrierten Funktionen schnell und einfach durchgeführt werden. In diesem Artikel erfahren Sie, wie Sie zwei Daten vergleichen und warum dies nützlich sein kann.
 
-## Wie man zwei Datumswerte vergleicht
+## Wie geht das?
 
-Um zwei Datumswerte in Swift zu vergleichen, gibt es zwei Optionen: die Verwendung des >- oder < -Operators oder die Verwendung der compare-Methode des Date-Typs. Im Folgenden werden wir beide Optionen in Aktion sehen.
-
-### Verwendung von >- oder < -Operators
-
-Um zu überprüfen, ob ein Datum vor oder nach einem anderen Datum liegt, können wir den >- oder < -Operator verwenden. Hier ist ein Beispielcode, der dies demonstriert:
+Um zwei Daten in Swift zu vergleichen, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung der `compare()` Funktion, die in der Klasse `Date` enthalten ist. Schauen wir uns ein Beispiel an:
 
 ```Swift
-let date1 = Date() // aktuelles Datum
-let date2 = Date(timeIntervalSinceNow: -86400) // Datum von gestern
-if date1 > date2 {
-   print("Das aktuelle Datum ist später als das Datum von gestern.")
+let date1 = Date()
+let date2 = Date().addingTimeInterval(60) // 60 Sekunden (= 1 Minute) später
+
+if date1.compare(date2) == .orderedAscending {
+    print("\(date1) liegt vor \(date2)")
+} else if date1.compare(date2) == .orderedDescending {
+    print("\(date1) liegt nach \(date2)")
+} else {
+    print("\(date1) ist gleich \(date2)")
 }
+
+// Ausgabe: 2021-03-25 10:00:00 liegt vor 2021-03-25 10:01:00
 ```
 
-Die Ausgabe wäre wie folgt:
+In diesem Beispiel verwenden wir die `compare()` Funktion, um zu prüfen, ob `date1` vor oder nach `date2` liegt, oder ob beide Daten gleich sind. Wir können auch die `earlier()` und `later()` Funktionen verwenden, um das frühere bzw. spätere Datum zu erhalten.
+
+Eine weitere Möglichkeit ist die Verwendung von Operatoren (`<`, `>`, `==`), um zwei Daten zu vergleichen. Dies kann besonders praktisch sein, wenn Sie nur überprüfen möchten, ob eine Bedingung erfüllt ist, ohne eine bestimmte Ausgabe auszuführen. Schauen wir uns ein Beispiel an:
 
 ```Swift
-Das aktuelle Datum ist später als das Datum von gestern.
+let yesterday = Date().addingTimeInterval(-86400) // 86400 Sekunden (= 1 Tag) früher
+
+if yesterday < Date() {
+    print("Gestern war früher als heute.")
+}
+
+// Ausgabe: Gestern war früher als heute.
 ```
 
-### Verwendung der compare-Methode
+Hier vergleichen wir `yesterday`, das einen Tag früher als das aktuelle Datum ist, mit `Date()` mithilfe des `<` Operators. Wenn die Bedingung erfüllt ist, wird die Ausgabe ausgeführt. 
 
-Eine andere Möglichkeit, zwei Datumswerte in Swift zu vergleichen, besteht darin, die compare-Methode des Date-Typs zu verwenden. Diese Methode gibt einen Enumerationstyp zurück, der die Ergebnisbeziehung zwischen den beiden Datumswerten darstellt: entweder aufsteigend, absteigend oder gleich. Schauen wir uns ein Beispiel an:
+Es ist auch möglich, zwei Daten mithilfe von `timeIntervalSince(_:)` zu vergleichen, um die Differenz zwischen den beiden Daten in Sekunden zu erhalten. Wenn die Differenz größer als `0` ist, ist das erste Datum später als das zweite. Ansonsten ist das erste Datum früher als das zweite. Schauen wir uns ein Beispiel an:
 
 ```Swift
-let date1 = Date(timeIntervalSince1970: 1577836800) // 01.01.2020
-let date2 = Date(timeIntervalSince1970: 1577836800) // 01.01.2020
-let comparisonResult = date1.compare(date2) // die beiden sind gleich
-print(comparisonResult == .orderedSame) //true
+let currentTime = Date()
+let fiveMinutesLater = Date().addingTimeInterval(300) // 300 Sekunden (= 5 Minuten) später
+
+if currentTime.timeIntervalSince(fiveMinutesLater) > 0 {
+    print("\(currentTime) ist später als \(fiveMinutesLater)")
+} else {
+    print("\(currentTime) ist früher als \(fiveMinutesLater)")
+}
+
+// Ausgabe: 2021-03-25 10:00:00 ist früher als 2021-03-25 10:05:00
 ```
 
-In diesem Beispiel sind beide Datumswerte identisch, daher gibt die compare-Methode .orderedSame zurück, was darauf hinweist, dass sie in der gleichen Reihenfolge sind.
+## Tieferer Einblick
 
-## Tiefere Einblicke
+Beim Vergleichen von zwei Daten ist es wichtig zu beachten, dass die Ergebnisse von verschiedenen Faktoren wie Zeitzone, Kalender und Locale beeinflusst werden können. Es ist daher wichtig, sicherzustellen, dass beide Daten auf die gleiche Weise interpretiert werden. Hierfür gibt es die `compare(_:toGranularity:)` Funktion, die die Genauigkeit des Vergleichs bestimmt. Wir können zwischen fünf verschiedenen Granularitätsstufen wählen: `.era`, `.year`, `.month`, `.day` und `.minute`. Ein höherer Granularitätsgrad bedeutet, dass auch kleinere Unterschiede, wie z.B. die Sekunden, berücksichtigt werden.
 
-Beim Vergleich von Datumswerten in Swift gibt es einige wichtige Dinge zu beachten. Zum Beispiel können Datumswerte auch die Zeit enthalten, was bedeutet, dass zwei Datumswerte, obwohl sie auf demselben Tag liegen, möglicherweise nicht in der gleichen Reihenfolge sind, wenn sie unterschiedliche Zeiten enthalten. Darüber hinaus kann die Verwendung von Zeitbereichen wie Zeitzonen oder Sommerzeit die Ergebnisse des Vergleichs beeinflussen. Es ist daher wichtig, bei der Implementierung von Datumswertvergleichen genau zu sein und mögliche Auswirkungen von Zeitänderungen zu berücksichtigen.
+Ein weiterer wichtiger Aspekt beim Vergleichen von Daten ist die Verwendung von Zeitintervallen. Sie können die Funktion `addingTimeInterval(_:)` verwenden, um ein Datum um eine bestimmte Zeit zu ändern. Diese Funktion ist besonders hilfreich beim Umgang mit unterschiedlichen Zeitzonen oder bei der Durchführung von Berechnungen auf Basis von Zeiträumen.
 
-# Siehe auch
+## Siehe auch
 
-- [Offizielle Dokumentation von Swift zu Datumswertvergleichen](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID540)
-- [Tutorial zu Datumswertvergleichen in Swift von Coding Explorer](https://www.codingexplorer.com/comparing-dates-swift/)
+- [Apple Dokumentation zu Date](https://developer.apple.com/documentation/foundation/date)
+- [Weitere Vergleichsoperatoren in Swift](https://docs.swift.org/swift-book

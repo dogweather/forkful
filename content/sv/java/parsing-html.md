@@ -1,5 +1,6 @@
 ---
-title:                "Java: Parsning av html"
+title:                "Parsning av html"
+html_title:           "Java: Parsning av html"
 simple_title:         "Parsning av html"
 programming_language: "Java"
 category:             "Java"
@@ -10,34 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Innan vi börjar koda, låt oss förstå varför någon skulle vilja utföra parsing av HTML i Java. 
 
-Att parsa HTML är en viktig färdighet för alla som vill utveckla webbapplikationer eller utvinna data från webbsidor. Genom att parsa HTML kan du enkelt extrahera och manipulera information från en webbsida och integrera den i din egen applikation.
+HTML är det vanligaste språket för att skapa webbsidor och det finns en mängd olika verktyg som genererar HTML-kod. Att kunna hantera, filtrera och extrahera information från HTML-kod är därför en viktig färdighet för Java-utvecklare.
 
 ## Hur man gör
+Det finns flera olika metoder för att utföra parsing av HTML i Java. Här är ett enkelt exempel med hjälp av biblioteket Jsoup:
 
-Parsing av HTML kan utföras med hjälp av Java-bibliotek som Jsoup eller HTMLUnit. Dessa bibliotek tillåter dig att ladda in en webbsida och sedan utvinna informationen som finns i dess HTML-struktur.
+```Java 
+// importera nödvändiga bibliotek
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-Här är ett enkelt exempel på hur man kan ladda in en webbsida och utvinna dess titel:
+// skapa en anslutning till webbsidan
+String url = "https://www.example.com";
+Document doc = Jsoup.connect(url).get();
 
-```java
-Document doc = Jsoup.connect("https://www.example.com").get();
-String title = doc.title();
-System.out.println(title);
+// välj de element som du vill extrahera information från
+Elements titles = doc.select("h1");
+
+// loopa genom elementen och skriv ut titlarna
+for (Element title : titles) {
+  System.out.println(title.text());
+}
+
+```
+Detta kodexempel hämtar innehållet från webbsidan https://www.example.com och väljer sedan alla h1-element (vanligtvis använda för titlar) från HTML-koden. De valda titlarna skrivs sedan ut till konsolen.
+
+Output:
+```
+Welcome to Example!
 ```
 
-Detta kodexempel använder Jsoup för att ladda in webbsidan på "www.example.com" och sedan hämta titeln som finns i <title> elementet. Resultatet av detta kommer att vara "Example Domain".
-
 ## Djupdykning
+Det finns olika sätt att filtrera och extrahera information från HTML-kod i Java, beroende på vilka bibliotek och verktyg du väljer att använda. En annan populär metod är att använda DOM (Document Object Model) och XPath för att identifiera och manipulera specifika HTML-element.
 
-För de som är mer avancerade kan det vara intressant att veta att parsing av HTML faktiskt sker i flera steg. Först hämtas den råa HTML-koden från webbsidan och sedan omvandlas den till ett DOM-träd som gör det lättare att navigera och manipulera informationen. Avancerade tekniker som regex eller CSS-selektorer kan även användas för att filtrera ut specifik information från HTML-koden.
+Det är också viktigt att förstå skillnaden mellan static och dynamic parsing. Med en static parser, som Jsoup, hämtas HTML-koden vid en viss tidpunkt och all information som behövs måste finnas tillgänglig vid detta tillfälle. Med en dynamic parser, som Selenium, simuleras en webbläsare och HTML-koden kan hämtas och manipuleras i realtid.
 
-Det är också viktigt att notera att HTML är en dynamisk och föränderlig språk. Det betyder att webbsidor kan ha olika strukturer och det kan finnas variationer i HTML-koden. Det är därför viktigt att ha robusta parsing-metoder för att kunna hantera dessa variationer och undvika att din applikation bryts när en webbsida uppdateras.
+Det finns även andra aspekter att tänka på när man utför parsing av HTML, som att hantera felaktig eller ovalid HTML-kod och att undvika webbsidor som försöker blockera automatisk parsing.
 
-## Se även
-
-Här är några användbara länkar för att lära dig mer om parsing av HTML med Java:
-
-- Jsoup documentation: https://jsoup.org/cookbook/
-- HTMLUnit tutorial: https://www.programmersought.com/article/7217718133/
-- Regex tutorial: https://www.w3schools.com/java/java_regex.asp
-- CSS selectors tutorial: https://www.w3schools.com/cssref/css_selectors.asp
+## Se även 
+- [Jsoup dokumentation](https://jsoup.org/)
+- [DOM (Document Object Model) introduktion](https://developer.mozilla.org/sv/docs/Web/API/Document_Object_Model/Introduction)
+- [Selenium dokumentation](https://www.selenium.dev/documentation/en/)

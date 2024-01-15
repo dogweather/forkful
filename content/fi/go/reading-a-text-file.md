@@ -1,6 +1,7 @@
 ---
-title:                "Go: Lukeminen tekstitiedostosta"
-simple_title:         "Lukeminen tekstitiedostosta"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Go: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,37 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi lukea tekstitiedostoja Go-ohjelmoinnin parissa? Yksinkertaisesti sanoen, tiedostojen käsittely on tärkeä osa useimpien ohjelmien toimintaa. Tekstitiedostot ovat yleisimpiä tietotyyppejä, joista ohjelmat lukevat ja kirjoittavat tietoa. Siksi on tärkeää ymmärtää, miten Go-kielen avulla voi käsitellä näitä tiedostoja.
+Miksi lukea tiedostoa Go-ohjelmoinnilla? Tämä artikkeli kertoo kuinka tekstitiedosto voidaan lukea Go-kielellä ja tarjoaa syvempää tietoa aiheesta.
 
 ## Kuinka
 
-Go-kielellä on monia mahdollisuuksia lukea ja käsitellä tekstitiedostoja. Yksi yksinkertainen tapa on käyttää `bufio`-pakettia. Alla on esimerkki, miten voit lukea tekstitiedoston rivi riviltä ja tulostaa sen sisällön:
+Käyttäjät voivat käyttää Go-ohjelmointikieltä lukemaan erilaisia tiedostoja, mukaan lukien teksti-tiedostoja. Tämä tapahtuu käyttämällä *os* ja *io/ioutil* paketteja. Seuraava koodiesimerkki näyttää kuinka tekstitiedosto voidaan lukea ja tulostaa konsoliin.
 
 ```Go
-file, err := os.Open("tekstitiedosto.txt") // avaa tiedosto
-if err != nil { // tarkistetaan onko virheitä
-    log.Fatal(err)
-}
+package main
 
-scanner := bufio.NewScanner(file) // luodaan skanneri tiedoston lukemista varten
-for scanner.Scan() { 
-    fmt.Println(scanner.Text()) // tulostetaan jokainen rivi
-}
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+)
 
-if err := scanner.Err(); err != nil { // tarkistetaan mahdolliset skannerivirheet
-    log.Fatal(err)
-}
+func main() {
+	// Avaa haluttu tiedosto
+	file, err := os.Open("tekstitiedosto.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file.Close()
 
+	// Lukee tiedoston sisällön ([]byte muodossa)
+	content, err := ioutil.ReadAll(file)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// Tulostaa tiedoston sisällön konsoliin
+	fmt.Println(string(content))
+}
 ```
 
-Yllä oleva esimerkki käyttää `os`-pakettia tiedoston avaamiseen, `bufio`-pakettia tiedoston lukemista varten ja `fmt`-pakettia tulostamiseen. Voit myös käyttää `io/ioutil`-pakettia, joka tarjoaa yksinkertaisemman tavan lukea tekstitiedostoja.
+Koodin suorittamisen jälkeen, konsoliin tulostuu tekstitiedoston sisältö. Huomaa, että *err* muuttujaa käytetään virheiden käsittelyssä. On tärkeää huolehtia mahdollisista virhetilanteista tiedostoa luettaessa.
 
-## Syväsukellus
+## Syvällisempää tietoa
 
-Tiedostojen lukeminen ja käsittely voi olla monimutkaisempaa kuin yllä olevassa esimerkissä. Esimerkiksi jos haluat lukea vain tietyn tiedoston osan, sinun täytyy käyttää `io.Seek()`-funktiota. Tiedostojen lukeminen voi myös suorittaa monia muita toimintoja, kuten muuttaa tiedostojen nimiä, päivittää niitä tai jopa luoda niitä. Siksi on tärkeää tutkia Go-kielellä olevia erilaisia työkaluja ja paketteja, jotka voivat auttaa sinua käsittelemään tekstitiedostoja tehokkaasti.
+*os* ja *io/ioutil* paketit tarjoavat useita metodeja tiedoston käsittelyyn. Esimerkiksi, *ioutil.ReadFile()* voi lukea koko tiedoston sisällön *[]byte* muodossa, kun taas *ioutil.ReadFileToString()* muuttaa tiedoston sisällön *string* muotoon. Lue lisää näistä paketeista Go:n virallisesta dokumentaatiosta. 
 
 ## Katso myös
 
-- https://gobyexample.com/reading-files - Kattava esimerkki tutustuttaa lukemiseen ja kirjoittamiseen tekstitiedostoissa Go-kielellä.
-- https://golang.org/pkg - Virallinen Go-kielen dokumentaatio, joka sisältää kattavan listan paketteja ja toimintoja tiedostonkäsittelyyn.
-- https://github.com/go-kratos/kratos/tree/master/pkg/os - Esimerkkejä siitä, miten joissakin avoimen lähdekoodin projekteissa käsitellään tiedostoja käyttäen Go-kieltä.
+- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
+- [Go-paketit tiedostojen käsittelyyn](https://golang.org/pkg/os/)

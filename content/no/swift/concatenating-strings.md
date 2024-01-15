@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenkobling av strenger"
+html_title:           "Swift: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,41 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Noen ganger er det nødvendig å sette sammen flere strenger til én lang streng i Swift-programmering. Dette kan være nyttig for å lage dynamiske strenger som inneholder variabel data, som for eksempel en brukers navn eller alder, ved siden av fast tekst. Slik kan du enkelt tilpasse meldinger og informasjon i appen din.
 
-## Hvordan
-Det er flere måter å konkatenerer strenger i Swift på, men den enkleste metoden er å bruke operatøren `+` eller kommandoen `append()`. La oss se på et eksempel:
+Enten du er en erfaren programmerer eller en nybegynner, er sannsynligheten stor for at du vil støte på behovet for å slå sammen flere tekststrenger på et eller annet tidspunkt. Dette kan være for å lage en kompleks beskjed, en URL eller bare for å lage en generell tekstutdata. Uansett hva grunnen måtte være, er det viktig å vite hvordan man kan utføre dette effektivt og enkelt i Swift.
+
+## Hvordan gjøre det
+
+Det er flere måter å slå sammen strings (tekststrenger) i Swift, men den enkleste og mest effektive er ved hjelp av operatøren "+".
+```Swift
+let navn = "Mari"
+let alder = 25
+let beskjed = navn + " er " + "\(alder)" + " år gammel."
+print(beskjed)
+```
+Output: Mari er 25 år gammel.
+
+Her kan du se at vi enkelt kombinerer tre forskjellige typer data (tekst, tall og en uttrykksstreng) til en eneste beskjed ved hjelp av "+" operatøren. Dette er en rask og enkel måte å slå sammen strings på i Swift. Du kan også bruke operatøren til å legge til flere strings på en gang:
+```Swift
+let beskjed = "Hei" + " verden" + "!"
+print(beskjed)
+```
+Output: Hei verden!
+
+## Deep Dive
+
+I tillegg til å bruke "+" operatøren, kan du også bruke funksjonen "String(format:)" for å slå sammen strings. Denne funksjonen lar deg bruke formateringsmønstre, som gjør det enkelt å sette sammen tekststrenger på en spesifikk måte. For eksempel:
 
 ```Swift
-let navn = "Ingrid"
-let alder = 29
-print("Hei, mitt navn er " + navn + " og jeg er " + String(alder) + " år gammel.")
+let navn = "Anna"
+let alder = 32
+let beskjed = String(format: "%@ er %d år gammel.", navn, alder)
+print(beskjed)
 ```
+Output: Anna er 32 år gammel.
 
-Dette vil resultere i en utskrift av "Hei, mitt navn er Ingrid og jeg er 29 år gammel." ved hjelp av `+`-operatøren. Ved å bruke `append()`-kommandoen, kan vi skrive det samme eksemplet som:
-
-```Swift
-var personInfo = "Hei, mitt navn er "
-personInfo.append(navn)
-personInfo.append(" og jeg er ")
-personInfo.append(String(alder))
-personInfo.append(" år gammel.")
-print(personInfo)
-```
-
-Dette vil også gi utskriften vår.
-
-## Dykk dypere
-I Swift er det også mulig å interpolere strenger ved hjelp av `\(variable)`. Dette betyr at i stedet for å bruke `+` eller `append()`, kan vi inkludere variabler direkte i strengene våre. La oss se på et eksempel:
-
-```Swift
-let favorittMat = "pizza"
-print("Jeg elsker å spise \(favorittMat) til middag.")
-```
-
-Dette vil gi utskriften vår av "Jeg elsker å spise pizza til middag." Som du kan se, gjør dette det enklere å inkludere og formatere variabler i strengene våre.
+I dette tilfellet bruker vi formateringsmønstrene "%@" for tekst og "%d" for tall, og erstatter de med variablene våre. Dette kan være nyttig hvis du trenger å slå sammen en større mengde tekststrenger og ønsker mer kontroll over hvordan de skal presenteres.
 
 ## Se også
-* [Swift String and Character documentation](https://developer.apple.com/documentation/swift/string)
-* [Free Swift tutorials and resources](https://www.hackingwithswift.com)
-* [Swift docs på norsk](https://swiftlang.nga.gov.au)
+
+- [Offisiell Swift Dokumentasjon - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorialspoint - Swift string concatenation](https://www.tutorialspoint.com/swift-programming/swift_string_concatenation.htm)
+- [Hacking with Swift - How to concatenate strings to make one joined string](https://www.hackingwithswift.com/example-code/strings/how-to-concatenate-strings-to-make-one-joined-string)

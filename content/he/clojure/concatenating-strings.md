@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "קישור מחרוזות"
+html_title:           "Clojure: קישור מחרוזות"
+simple_title:         "קישור מחרוזות"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
-היכן שאנשים עושים תחבירת מילות אחרונות בלבד 1-2 משפטים שמסבירים *למה* מישהו יעסוק באיחוד מחרוזות.
+## למה?
 
-## איך לעשות
-בלוקי קוד "Clojure..." הצורה עם דוגמאות קוד ופלט דוגמאות תחת ```...```
+String Concatenation היא פעולה חשובה ל-code formatting וכתיבת הקוד הברור והקריא. באמצעות חיבור תווים, מתבצעת היכולת להגדיר קבועים דינמיים וליצור תנאים הנבוכים ביותר.
 
-```Clojure
-(def first-name "יוסי")
-(def last-name "לוי")
-"שלום, שלומי! נהנת להכיר אותך?"
-(str "שלום," first-name "!" "נהנת להכיר אותך?")
+## איך לבצע?
 
-```
-
-הפלט יהיה: "שלום, יוסי! נהנת להכיר אותך?"
+לפניכם מספר דוגמאות קוד כדי להדגים כיצד לבצע String Concatenation ב-Clojure.
 
 ```Clojure
-(def car "פורד")
-(def model "פייסטה")
-(def year "2008")
-(str "ברכות ל" car " " model " " year "אהבת הנהג החדש זה מהסרט שלך")
+; דוגמה 1
+(def name "יניב")
+(def greeting (str "שלום, " name "!" ))
+(prn greeting) ;output: שלום, יניב!
 
+; דוגמה 2
+(def width 6)
+(def area (str "האזור של הריבוע הוא " width " על " width " =" (* width width)))
+(println area) ;output: האזור של הריבוע הוא 6 על 6 = 36
+
+; דוגמה 3
+(def nums [1 2 3])
+(def joined (apply str nums))
+(prn joined) ;output: 123
 ```
 
-הפלט יהיה: "ברכות לפורד פייסטה 2008 אהבת הנהג החדש זה מהסרט שלך"
+## חפירה עמוקה
 
-## Deep Dive
-תמיד נראה כמו משימה פשוטה לחבר מחרוזות, אבל ישנם כמה דברים החשוב לזכור. ראשית, בשביל לחבר מחרוזות בצורה תקינה, יש להכניס אותן לתוך פונקציה "str". בנוסף, עלינו לזכור שכאשר חוברים מילות אחרונות, הן צריכות להיות מופרדות עם רווח אחד ביניהן. כמו כן, ניתן להשתמש בתווים נוספים כמו מספרים וסימנים, אך חשוב לזכור לשים אותם בתוך גרשיים כדי שהם לא יתבלבלו עם המחרוזת.
+String Concatenation היא פעולה שמשתמשת בקורסורים כדי לחבר תווים יחד לסדרת תווים אחת. ב-Clojure, ניתן להשתמש בפונקציות כמו str, join,  ו-apply כדי לבצע String Concatenation. בנוסף, Clojure תומך בכתיבת פורמטים מתקדמים עבור String Concatenation כדי לאפשר יצירת תבניות דינמיות יותר של סדרות תווים.
 
-## ראה גם
-- [מדריך קצר על פונקציית "str" ב-Clojure](https://clojure.org/guides/learn/functions#_str)
-- [למה חבר מחרוזות נחשב לפעולה גנרית בפונקציות רב-שימושיות](https://clojure.org/reference/protocols#_generic_functions)
-- [דיון על פונקציית "str" וטיפים נוספים לניהול מחרוזות ב-Clojure](https://stackoverflow.com/questions/24458058/how-do-i-concatenate-strings-in-clojure)
+## ראו גם
+
+- [Official Clojure Documentation for String Concatenation](https://clojuredocs.org/clojure.core/str)
+- [A Beginner's Guide to Clojure Programming](https://www.freecodecamp.org/news/a-beginners-guide-to-clojure-programming-7f8f9e0a85f4/)
+- [Mastering Clojure: Strings](https://vvvvalvalval.github.io/posts/clojure-strings.html)

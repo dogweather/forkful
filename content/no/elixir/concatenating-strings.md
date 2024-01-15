@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenstilling av strenger"
+html_title:           "Elixir: Sammenstilling av strenger"
+simple_title:         "Sammenstilling av strenger"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,61 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konkatenerre strenger (mer kjent som å sammenføye eller sette sammen strenger) er en vanlig oppgave i mange programmeringsspråk, inkludert Elixir. Det kan være nyttig å lære å gjøre dette for å håndtere dynamiske data eller for å lage mer komplekse tekst utdata.
+Å kombinere strenger, også kjent som konkatenasjon, er en grunnleggende og nødvendig ferdighet i Elixir-programmering. Ved å kunne sette sammen flere strenger kan du lage mer dynamiske og tilpassede meldinger, påmeldingsskjemaer og annen tekst i programmene dine.
 
 ## Hvordan
 
 ```Elixir
-name = "Kristine"
-age = 28
-occupation = "programmerer"
+# Eksempel 1: Enkel konkatenasjon
+"Velkommen til Elixir-programmering " <> "Artikkel!"
 
-IO.puts "Hei, mitt navn er #{name}, jeg er #{age} år gammel og jeg jobber som #{occupation}."
+# Output: "Velkommen til Elixir-programmering Artikkel!"
+
+# Eksempel 2: Konkatenasjon med variabler
+fornavn = "Jens"
+etternavn = "Hansen"
+"Velkommen, " <> fornavn <> " " <> etternavn <> "!"
+
+# Output: "Velkommen, Jens Hansen!"
+
+# Eksempel 3: Konkatenasjon med interpolering
+navn = "Petter"
+"Velkommen, #{navn}!"
+
+# Output: "Velkommen, Petter!"
 ```
-
-Output:
-```
-Hei, mitt navn er Kristine, jeg er 28 år gammel og jeg jobber som programmerer.
-```
-
-I eksempelet over har vi definert variabler for navn, alder og yrke. Ved å bruke interpolasjon, som er symbolisert med `#{}` inne i en streng, kan vi sette inn verdien av variablene i strengen. Det resulterende utdata vil være en setning som inneholder den dynamiske informasjonen som er satt sammen.
-
-```Elixir
-quote = "Elixir brings joy to programming."
-
-IO.puts "Remember: #{quote}"
-```
-
-Output:
-```
-Remember: Elixir brings joy to programming.
-```
-
-Her bruker vi også interpolasjon for å sette inn en variabel i en annen streng, og resultater er en korrekt sammensatt setning med dynamisk informasjon.
 
 ## Deep Dive
 
-Å konkatenerre strenger kan også oppnås ved å bruke operatoren `<>`, som står for "kontatenere". Denne måten kan være mer brukervennlig hvis du jobber med flere strenger eller en samling av strenger. Du kan også bruke `<<>>` for å konkatenerre binære data, men vi vil fokusere på strenger her.
+I Elixir er konkatenasjon utført ved hjelp av operatøren `<>`, som brukes til å kombinere to strenger. Dette kan også brukes til å kjede sammen flere strenger i én operasjon. En viktig egenskap ved konkatenasjon i Elixir er at den er en ikke-destruktiv operasjon, noe som betyr at originale strenger ikke endres, men heller en ny streng blir opprettet.
 
-```Elixir
-name = "Michael"
-age = "41"
-occupation = "musiker"
+Det er også viktig å merke seg at konkatenasjon i Elixir er veldig effektiv, siden det er en del av Elixir-datastrukturen, kalt binærer. Dette betyr at konkatenasjon er mye raskere enn i andre språk som behandler strenger som en liste av tegn.
 
-concert = "Jeg heter " <> name <> " og jeg er " <> age <> " år gammel. Jeg spiller musikk som en " <> occupation <> "."
+## Se også
 
-IO.puts concert
-```
-
-Output:
-```
-Jeg heter Michael og jeg er 41 år gammel. Jeg spiller musikk som en musiker.
-```
-
-Det er viktig å merke seg at begge måtene å konkatenerre strenger på returnerer en ny streng og påvirker ikke de opprinnelige strengene.
-
-## Se Også
-
-- [Offisiell Elixir Dokumentasjon](https://elixir-lang.org/getting-started/basic-types.html#strings)
-- [Elixir School - Strenger](https://elixirschool.com/lessons/basics/strings/)
-- [Elixir String Modul](https://hexdocs.pm/elixir/String.html)
+- [Offisiell dokumentasjon for konkatenasjon i Elixir](https://hexdocs.pm/elixir/1.11.2/String.html#concatenation/)
+- [En artikkel om effektiv strengkonkatenasjon i Elixir](https://tech.europace.de/efficient-string-concatenation-in-elixir/)
+- [En diskusjon om strengkonkatenasjon i Elixir-forumet](https://elixirforum.com/t/concatenate-strings-or-binaries/1697/)

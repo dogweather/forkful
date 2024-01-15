@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Procurando e substituindo texto"
-simple_title:         "Procurando e substituindo texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Clojure: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que fazer substituições de texto em Clojure
+## Por que
 
-Fazer substituições de texto é uma tarefa comum em programação, seja para corrigir erros ou para transformar dados de uma forma específica. Em Clojure, existem várias maneiras de realizar essa tarefa, o que torna a linguagem uma ótima opção para quem precisa lidar com manipulação de texto.
+A substituição de texto é uma tarefa comum ao trabalhar com texto em programação. Pode ser necessário alterar nomes de variáveis, corrigir erros de digitação ou fazer alterações em massa em um grande arquivo de texto. A capacidade de efetivamente pesquisar e substituir texto é uma habilidade essencial para melhorar a produtividade e a eficiência na codificação.
 
-## Como fazer substituições de texto em Clojure
+## Como fazer
 
-Existem duas principais funções em Clojure para substituir texto: `replace` e `replace-first`. Ambas recebem como parâmetros uma expressão regular e a string de substituição. Vamos ver como elas funcionam em um exemplo:
+A substituição de texto em Clojure é realizada usando a função `replace` do namespace `clojure.string`. Esta função leva três argumentos: a string original, o texto a ser pesquisado e o texto de substituição. Aqui está um exemplo de como usar a função `replace` para substituir todas as instâncias do texto "apple" por "banana" em uma string:
 
 ```Clojure
-(println (replace #"mundo" "Hello mundo" "World"))
-; Saída: Hello World
-(println (replace-first #"\d+" "Eu tenho 2 maçãs e 3 bananas"))
-; Saída: Eu tenho maçãs e 3 bananas
+(require '[clojure.string :as str])
+
+(str/replace "I love apple pie" "apple" "banana")
 ```
 
-No primeiro exemplo, usamos a função `replace` para substituir a palavra "mundo" por "World" na string "Hello mundo". Já no segundo exemplo, usamos a função `replace-first` para substituir o primeiro número (\d+) por uma string vazia, removendo-o da frase.
+A saída desse código seria `"I love banana pie"`, mostrando que a função `replace` substituiu com sucesso o texto desejado. Além disso, também é possível usar expressões regulares para uma substituição mais sofisticada. Aqui está um exemplo de como substituir todas as letras maiúsculas por letras minúsculas:
 
-## Mais informações sobre substituições de texto em Clojure
+```Clojure
+(str/replace "Hello WORLD" #"[A-Z]" (fn [m] (str/upper-case m)))
+```
 
-Em Clojure, as expressões regulares são escritas entre aspas duplas e precedidas por um `#`. Além disso, a função `replace` substitui todas as ocorrências da expressão regular, enquanto a função `replace-first` substitui apenas a primeira ocorrência.
+Este código produziria a saída `"hello world"`, pois a função de substituição usa uma expressão lambda para converter todas as letras maiúsculas em suas equivalentes minúsculas.
 
-Outra funcionalidade interessante é a possibilidade de usar grupos na expressão regular e referenciá-los na string de substituição. Para isso, basta utilizar `\1`, `\2`, etc. para substituir o primeiro, segundo, etc. grupo.
+## Mergulho Profundo
+
+A função `replace` é útil para substituições simples, mas existem outras funções em Clojure que podem ser usadas para casos mais complexos. A função `replace-first` substitui apenas a primeira ocorrência do texto pesquisado, enquanto a função `replace-nth` substitui a n-ésima ocorrência. É importante notar que todas essas funções retornam uma nova string, em vez de modificar a string original.
+
+Outra opção é usar a função `re-seq`, que retorna um sequenciador de todas as correspondências do texto pesquisado. Isso pode ser útil para situações em que você precisa substituir apenas determinadas ocorrências. Por exemplo, você pode usar `re-seq` em conjunto com `replace-nth` para substituir apenas a segunda ocorrência de um texto.
 
 ## Veja também
 
-- Documentação oficial do Clojure para substituições de texto: https://clojuredocs.org/clojure.core/replace
-- Tutorial sobre substituições de texto em Clojure: https://www.baeldung.com/clojure/regex-replace
+- [Documentação oficial do Clojure](https://clojure.org/)
+- [Tutorial de Clojure do "Learn X in Y Minutes"](https://learnxinyminutes.com/docs/clojure-pt/)

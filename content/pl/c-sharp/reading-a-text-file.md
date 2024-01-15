@@ -1,5 +1,6 @@
 ---
-title:                "C#: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "C#: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C#"
 category:             "C#"
@@ -11,34 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek musiałeś przetwarzać spory plik tekstowy w swoim programie? Czy zastanawiałeś się, jak usprawnić ten proces? W tym artykule dowiesz się, dlaczego warto poznać technikę czytania plików tekstowych oraz jak to zrobić w języku C#.
+Czy kiedykolwiek zastanawiałeś się, jak programy czytają tekstowe pliki? Może chcesz napisać własny program, który będzie analizować dane zebranie w pliku tekstowym? W obu przypadkach konieczna jest umiejętność czytania plików tekstowych w języku C#. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak ją wykorzystać.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Kodowanie w języku C# jest bardzo wygodne dzięki wbudowanym narzędziom do operacji na plikach. Przykładowo, aby odczytać zawartość pliku tekstowego, potrzebujemy tylko kilku linijek kodu:
+```c#
+using System; // importujemy bibliotekę System, aby móc używać funkcji do czytania plików
 
-```C#
-using System.IO; // importujemy bibliotekę do operacji na plikach
+string path = @"C:\Users\user\Desktop\dane.txt"; // ścieżka do pliku, którego chcemy odczytać
+string[] lines = System.IO.File.ReadAllLines(path); // odczytujemy wszystkie linie z pliku i zapisujemy je jako tablicę linii
 
-string path = @"C:\nazwa_folderu\plik.txt"; // określamy ścieżkę pliku
-string content = File.ReadAllText(path); // odczytujemy jego zawartość
+foreach (string line in lines) // iterujemy przez każdą linię w tablicy
+{
+    Console.WriteLine(line); // wyświetlamy każdą linię na ekranie
+}
 
-Console.WriteLine(content); // wyświetlamy zawartość na ekranie
+// Wyjściem programu będzie wyświetlenie wszystkich linii z pliku na ekranie.
 ```
 
-W powyższym przykładzie korzystamy z metody `ReadAllText` z klasy `File`, która przypisuje całą zawartość pliku do zmiennej `content`. Następnie wyświetlamy ją na ekranie dzięki funkcji `WriteLine` z klasy `Console`.
+## Głębszy zanurkuj
 
-## Głębsze Zagadnienia
+Oprócz funkcji `ReadAllLines()`, istnieją też inne metody do czytania plików tekstowych w języku C#. Na przykład, możemy użyć funkcji `ReadAllText()`, aby odczytać całą zawartość pliku jako pojedynczy ciąg znaków. Możemy także użyć funkcji `ReadLine()`, aby odczytać kolejną linię z pliku i przechodzić przez plik w ten sposób.
 
-Warto zauważyć, że w powyższym przykładzie nie musimy pamiętać o zamykaniu pliku - metoda `ReadAllText` robi to za nas. Możemy także sprecyzować kodowanie czy znaki nowej linii przy pomocy innych metod, takich jak `ReadAllLines` czy `ReadAllBytes`.
+Jest również ważne, aby pamiętać o zamknięciu pliku po jego odczytaniu lub zapisaniu. Możemy to zrobić za pomocą funkcji `Close()` lub `Dispose()`. Można również użyć bloku `using`, który automatycznie zamknie plik po wykonaniu kodu wewnątrz bloku.
 
-Kolejną przydatną funkcją jest operowanie na poszczególnych linijkach w pliku. Możemy to zrobić przy pomocy metody `File.ReadAllLines(path)`, która zwraca tablicę stringów zawierającą wszystkie linie pliku. Możemy także użyć pętli `foreach` do przejścia przez te linie lub wybierać konkretne linie według indeksów.
+## Zobacz także
 
-## Zobacz Również
-
-Jeśli chcesz dowiedzieć się więcej o operacjach na plikach w języku C#, możesz zapoznać się z poniższymi artykułami:
-
-- [Dokumentacja Microsoft o klasie `File`](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file?view=netcore-3.1)
-- [Poradnik Stack Overflow dotyczący czytania pliku w C#](https://stackoverflow.com/questions/1393708/how-to-read-a-text-file/1393734#1393734)
-
-Teraz już wiesz, jak odczytać zawartość pliku tekstowego w języku C#. Mamy nadzieję, że ten artykuł był dla Ciebie pomocny. Powodzenia!
+- [Dokumentacja C# - Przestrzeń nazw System.IO](https://docs.microsoft.com/pl-pl/dotnet/api/system.io?view=netcore-3.1)
+- [How To Read/Write Text Files In C#](https://www.c-sharpcorner.com/article/reading-and-writing-text-file-in-C-Sharp/) (ang.)

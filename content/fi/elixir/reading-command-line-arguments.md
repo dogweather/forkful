@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Käskynlinja-argumenttien lukeminen"
+html_title:           "Elixir: Käskynlinja-argumenttien lukeminen"
+simple_title:         "Käskynlinja-argumenttien lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,48 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentoriviparametrejä
+## Miksi
+Joskus ohjelmia halutaan suorittaa erilaisilla parametreilla riippuen esimerkiksi käyttötarkoituksesta tai ympäristöstä. Siksi on tärkeää tietää, miten lukea komentoriviparametreja Elixirilla.
 
-Komentoriviparametrit ovat tärkeitä monissa Elixir-ohjelmissa, koska ne antavat mahdollisuuden tarjota lisätoimintoja ohjelman käyttäjille. Lukemalla komentoriviparametrejä voit tehdä ohjelmasi vieläkin monipuolisemmaksi ja helpommaksi käyttää. Näin voit parantaa käyttäjäkokemusta ja tarjota enemmän vaihtoehtoja ohjelman käyttäjille.
+## Miten
+Komentoriviparametrien lukeminen Elixirilla on helppoa ja vaivatonta. Alla on esimerkki yksinkertaisesta koodista, joka lukee annetun komentoriviparametrin ja tulostaa sen:
 
-## Kuinka lukea komentoriviparametrejä
+```Elixir
+defmodule Args do
+  def print(arg) do
+    IO.puts("Annettu parametri on: #{arg}")
+  end
+end
 
-Komentoriviparametrien lukeminen Elixirillä on helppoa. Voit käyttää ```OptionParser```-moduulia, joka tarjoaa valmiin tavan lukea ja käsittellä parametrejä. Voit aloittaa luomalla uuden ```OptionParser```-olion ja määrittää sille haluamasi parametrit.
-
-```
-# Luodaan uusi OptionParser-olio
-parser = OptionParser.new
-
-# Lisätään parametri "username"
-parser.add(:username, "Käyttäjänimi")
-
-# Lisätään parametri "autocomplete", joka ottaa vastaan Boolean-arvon
-parser.add(:autocomplete, "Automaattinen täydennys", types: [boolean])
-
-# Luetaan parametrit käyttäjältä
-options = parser.parse(ARGV)
+Args.print(System.argv()[0])
 ```
 
-Kun olet lisännyt kaikki tarvittavat parametrit ja lukenut ne käyttäjältä, voit käyttää ```options```-muuttujaa saadaksesi parametrien arvot.
+Jos annamme komentorivillä esimerkiksi seuraavanlaisen komennon: `elixir args.exs Hello`, tulostuu "Annettu parametri on: Hello".
 
+Koodissa käytetään `System.argv()`-funktiota, joka palauttaa listan käyttäjän antamista komentoriviparametreista. Funktio palauttaa listan, joka sisältää myös itse ohjelman nimen ensimmäisenä parametrina. Siksi koodissa käytetään `[0]` indeksinä, jotta saadaan vain käyttäjän antama parametri.
+
+## Syväsukellus
+Komentoriviparametrien lukemisen lisäksi Elixirilla on myös mahdollista käsitellä komentoriviparametreja eri tavoin, kuten järjestää ne tai tarkistaa niiden määrä. Alla olevassa esimerkissä luodaan `Args`-moduuli, johon lisätään useita funktioita parametrien käsittelyä varten.
+
+```Elixir
+defmodule Args do
+  def get_first(args) do
+    Enum.at(args, 0)
+  end
+
+  def sort(args) do
+    Enum.sort(args)
+  end
+
+  def count(args) do
+    length(args)
+  end
+end
+
+args = System.argv()
+IO.puts("Ensimmäinen parametri: #{Args.get_first(args)}")
+IO.puts("Järjestetyt parametrit: #{Args.sort(args)}")
+IO.puts("Parametrien määrä: #{Args.count(args)}")
 ```
-# Saadaan käyttäjänimi
-username = options[:username]
 
-# Saadaan boolean-arvo automaattiselle täydennykselle
-autocomplete = options[:autocomplete]
-```
-
-Voit myös määrittää oletusarvoja parametreille ja käyttää ehtolauseita parametrien käsittelyyn.
-
-## Syvällinen sukellus komentoriviparametreihin
-
-Komentoriviparametrien lukeminen ```OptionParser```-moduulilla on erittäin hyödyllistä, sillä se tarjoaa valmiin tavan lukea ja käsittellä parametrejä. Voit myös käyttää muita tapoja lukea parametreja, kuten käyttämällä ```System.argv```.
-
-On tärkeää huomata, että komentoriviparametrien lukeminen ei ole aina välttämätöntä, mutta se voi tehdä ohjelmastasi käyttäjäystävällisemmän ja lisätä sen monipuolisuutta.
+Tässä esimerkissä luodaan ensin `args`-muuttuja, johon tallennetaan käyttäjän antamat parametrit. Tämän jälkeen käytetään `Args`-moduulin funktioita niiden käsittelyyn. Saamme tulostuksena ensimmäisen parametrin, järjestetyt parametrit ja parametrien määrän.
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio OptionParserista](https://hexdocs.pm/elixir/OptionParser.html)
-- [Elixir Forum: How to read command line arguments](https://elixirforum.com/t/how-to-read-command-line-arguments/8217)
-- [Medium: Introduction to Elixir command line argument parsing](https://medium.com/@noahhlw/introduction-to-elixir-command-line-argument-parsing-b09b91d8c108)
+- Elixirin virallinen dokumentaatio komentoriviparametrien lukemisesta: https://hexdocs.pm/elixir/System.html#argv/0
+- Kaksikielinen Elixir-oppikirja: https://www.gitbook.com/book/antweb/kirja-elixir/details/fi

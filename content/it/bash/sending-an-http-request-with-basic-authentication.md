@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base."
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base."
+simple_title:         "Inviare una richiesta http con autenticazione di base."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,50 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-L'invio di una richiesta HTTP con autenticazione di base può essere utile per accedere a risorse protette su un server. Questo metodo di autenticazione richiede l'utilizzo di un nome utente e una password per accedere alle risorse.
+Sarete felici di sapere che inviare una richiesta HTTP con autenticazione di base usando Bash è più facile di quanto pensiate! In un mondo sempre più digitale, questa è una delle abilità più utili da avere per automatizzare alcune delle tue attività online.
 
 ## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base, è necessario utilizzare il comando "curl" in Bash. Di seguito è riportato un esempio di codice Bash che mostra come utilizzare "curl" per inviare una richiesta HTTP con autenticazione di base:
+Prima di tutto, dovete avere chiaro che cosa sia l'autenticazione di base. In parole molto semplici, è un modo per proteggere le vostre informazioni sensibili durante il trasferimento di dati su internet. Per inviare una richiesta HTTP con autenticazione di base, dovrete utilizzare il comando `curl` di Bash, che è uno strumento estremamente potente per interagire con le risorse web. Vediamo un esempio pratico:
 
-```Bash
-curl -u nome_utente:password https://www.example.com
 ```
-
-Nell'esempio sopra, il nome utente e la password sono inseriti dopo il flag "-u". Notare che il nome utente e la password devono essere separati da due punti ":".
-
-Una volta eseguito il comando, verrà inviata una richiesta HTTP al server specificato e, se l'autenticazione viene accettata, verrà restituita la risorsa protetta.
-
-Di seguito è riportato un esempio di output:
-
-```Bash
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=UTF-8
-Date: Sat, 06 Feb 2021 12:00:00 GMT
-Server: Apache
-Content-Length: 127
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Ciao Mondo!</title>
-</head>
-<body>
-  <h1>Buongiorno!</h1>
-</body>
-</html>
+curl -u username:password https://www.example.com
 ```
+In questo comando, stiamo utilizzando l'opzione `u` per specificare le credenziali di accesso tramite il formato `username:password`. Se il server richiede l'autenticazione di base, la richiesta verrà completata con successo e verrà visualizzata la risposta del server.
 
 ## Approfondimento
 
-Il metodo di autenticazione di base è uno dei più semplici e meno sicuri. Ciò è dovuto al fatto che il nome utente e la password sono inviati in chiaro, ovvero senza la crittografia dei dati. Ciò rende più facile per hacker o cracker avere accesso alle credenziali di accesso e accedere a risorse protette.
-
-Un modo per aumentare la sicurezza è utilizzare una connessione protetta come HTTPS, che utilizza la crittografia dei dati durante la trasmissione. Ciò rende più difficile per terze parti leggere le credenziali di accesso.
-
-Inoltre, è importante utilizzare password sicure, composte da una combinazione di lettere maiuscole e minuscole, numeri e caratteri speciali. Questo rende più difficile per hacker o cracker indovinare la password e accedere alle risorse protette.
+Ora che sappiamo come inviare una richiesta HTTP con autenticazione di base, è importante anche capire come funziona questo processo di autenticazione. Quando il server riceve la richiesta, controlla le credenziali fornite dalla nostra opzione `-u` e se sono corrette, concedere l'accesso alla risorsa richiesta. Questo processo avviene tramite un header speciale chiamato `Authorization`, che contiene il tipo di autenticazione e le credenziali codificate in base64.
 
 ## Vedi anche
 
-- Tutorial di Bash: https://www.linux.it/tutorial/linux-segreti/sistemi-bash-security
-- Documentazione di curl: https://curl.se/docs/
-- Guida all'autenticazione di base: https://developer.mozilla.org/it/docs/Web/HTTP/Authentication
+A questo punto, avete una buona comprensione di come utilizzare l'autenticazione di base in una richiesta HTTP con Bash. Se siete interessati a saperne di più su questo argomento, ecco alcuni link utili che possono aiutarvi:
+
+- [Documentazione ufficiale di cURL](https://curl.haxx.se/docs/manpage.html)
+- [Autenticazione di base su Wikipedia](https://it.wikipedia.org/wiki/Autenticazione_base)
+- [Come funziona l'autenticazione di base](https://www.freecodecamp.org/news/understanding-basic-authentication-and-how-it-works-17da7633730)

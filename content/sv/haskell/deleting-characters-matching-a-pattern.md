@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Raderande av tecken som matchar ett mönster"
-simple_title:         "Raderande av tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster."
+html_title:           "Haskell: Radera tecken som matchar ett mönster."
+simple_title:         "Radera tecken som matchar ett mönster."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,33 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara användbart när du vill filtrera eller rensa data i Haskell. Det kan också vara ett sätt att göra din kod mer läsbar och strukturerad. Genom att lära dig hur man tar bort tecken som matchar ett mönster kan du bli en mer effektiv programmerare.
+Att ta bort tecken som matchar ett mönster kan vara en användbar funktion när man hanterar textdata eller vill rensa ut onödiga tecken från en sträng.
 
-## Så här gör du
+## Hur man gör det
 
-Ett enkelt sätt att ta bort tecken som matchar ett mönster är genom att använda funktionen `filter`. Här är en kodexempel som tar bort alla tecken som matchar bokstaven "a" från en lista:
-
-```Haskell
-filter (\x -> x /= 'a') "Haskell är ett funktionellt programmeringsspråk"
-```
-
-Detta skulle resultera i följande utmatning: "Hskell r ett funktionellt progrmmereingssprlk".
-
-Du kan också använda funktionen `delete` från paketet Data.List för att ta bort alla förekomster av ett visst tecken från en sträng. Till exempel:
+Haskell har ett inbyggt verktyg som heter `delete` för att ta bort element från en lista baserat på ett visst villkor. I detta fall kommer vi att använda funktionen `isAlpha` för att kolla om det är ett alfabetiskt tecken och sedan ta bort det från vår sträng.
 
 ```Haskell
-delete 'a' "Haskell är ett funktionellt programmeringsspråk"
+deleteChars :: String -> String
+deleteChars str = delete `isAlpha` str
 ```
 
-Detta skulle ge utmatningen "Hskell är ett funktionellt progrmmeringsspråk".
+Om vi kör funktionen med en sträng som innehåller "Hello World!" som innehåller både bokstäver och symboler, kommer vi att få ut "HelloWorld" som ett resultat.
 
 ## Djupdykning
 
-För att förstå hur funktionerna `filter` och `delete` fungerar, är det viktigt att förstå hur mönstermatchning fungerar i Haskell. När du säger `x /= 'a'` i koden ovan, anger du ett mönster som beskriver vilka tecken som ska matchas och tas bort. I detta fall betyder detta "alla tecken som inte är lika med 'a'".
+Haskell har en mängd olika funktioner för att hantera textdata, inklusive `delete`. Det finns också funktioner som `filter`, `map` och `fold` som kan användas för att manipulera strängar på olika sätt. Man kan också skapa egna funktioner för att uppnå önskade resultat.
 
-Haskell har också stöd för reguljära uttryck, vilket kan vara användbart för mer avancerad mönstermatchning. Genom att använda reguljära uttryck kan du till exempel ta bort alla siffror eller specialtecken från en sträng.
+En annan användbar funktion som ofta används i samband med `delete` är `takeWhile`, som låter oss ta bort tecken från en lista tills ett villkor inte längre är uppfyllt. Det finns också möjlighet att ta bort enbart delar av en sträng genom att använda indexering, till exempel `str !! index` för att få ett specifikt tecken.
 
 ## Se också
 
-- [Data.List dokumentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
-- [Haskell Regular Expressions-tutorial](https://wiki.haskell.org/Regular_expressions)
+- [Haskell.org](https://www.haskell.org/) - Officiell hemsida för Haskell
+- [Learn You a Haskell](http://learnyouahaskell.com/) - En interaktiv guide för att lära sig Haskell
+- [CodeWars](https://www.codewars.com/?language=haskell) - Träna på att lösa problem och utöka din Haskell-kunskap

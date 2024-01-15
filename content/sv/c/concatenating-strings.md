@@ -1,6 +1,7 @@
 ---
-title:                "C: Sammanslående strängar"
-simple_title:         "Sammanslående strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-En av de grundläggande koncepten inom C-programmering är möjligheten att manipulera strängar. Att sammanslå flera strängar till en enda är en viktig teknik som används i många program. Det kan vara till nytta för att skapa textutskrifter, lösa arkitekturmönster eller helt enkelt för att organisera data på ett mer effektivt sätt. 
+
+Att sammanslå strängar är en vanlig och nyttig teknik i C-programmering. Det kan användas för att skapa dynamisk text och processa olika typer av data som är lagrade i strängar. Det kan också hjälpa till att skapa mer läsbar och effektiv kod.
 
 ## Så här gör du
-Att sammanslå strängar i C är relativt enkelt. Det finns flera sätt att göra det på, men den enklaste metoden är att använda "strcat()" funktionen. För detta behöver du två strängar som redan är deklarerade och initialiserade. Sedan använder du funktionen för att sammanslå dem och lagra resultatet i en tredje sträng. 
 
-```C
-char str1[] = "Hej";
-char str2[] = "världen!";
-char str3[100];
+För att sammanslå två strängar i C kan du använda funktionen `strcat()`. Här är ett exempel på hur du skulle kunna använda den:
 
-// Sammanslå str1 och str2
-strcat(str3, str1);
-strcat(str3, str2);
+````C
+#include <stdio.h>
+#include <string.h>
 
-printf("%s", str3); // Utskrift: Hejvärlden!
-```
+int main() {
+    char str1[20] = "Hello";
+    char str2[20] = "World";
 
-I ovanstående exempel sammanslår vi strängarna "Hej" och "världen!" och lagrar resultatet i str3. För att kunna använda funktionen "strcat()" behöver vi inkludera "string.h" biblioteket.
+    strcat(str1, str2);
+    printf("%s", str1);
 
-## Djupdykning
-Om vi tittar närmare på "strcat()" funktionen kan vi se att den tar två argument - destinationsträngen och källsträngen. Destinationsträngen är där det sammanslagna resultatet kommer att lagras och källsträngen är den sträng som ska sättas ihop med destinationsträngen. Det är också viktigt att notera att destinationsträngen måste vara tillräckligt stor för att rymma båda strängarna.
+    return 0;
+}
 
-Det finns också andra funktioner som kan användas för att sammanslå strängar i C, såsom "strncat()" som låter dig sätta ett maximalt antal tecken från källsträngen och "sprintf()" som låter dig sätta ihop flera variabler och strängar till en enda sträng.
+````
+**Output:** *HelloWorld*
 
-## Se även
-- Läs mer om "strcat()" funktionen här: [https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- Här kan du lära dig mer om hur du använder "sprintf()" funktionen: [https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
-- Om du vill utforska fler sätt att manipulera strängar i C: [https://www.geeksforgeeks.org/c-string-manipulation-basics/](https://www.geeksforgeeks.org/c-string-manipulation-basics/)
+I det här exemplet deklarerar vi två strängar, `str1` och `str2`, med storleken 20 tecken. Sedan använder vi `strcat()` för att sammanslå `str2` till `str1`, vilket lägger till "World" till slutet av "Hello". Slutligen skrivs den sammanslagna strängen ut.
 
-Se även: 
-[https://www.programiz.com/c-programming/string-concatenation](https://www.programiz.com/c-programming/string-concatenation) 
-[https://www.ee.iitb.ac.in/~nilotpal/String_Concatenation.html](https://www.ee.iitb.ac.in/~nilotpal/String_Concatenation.html)
+Det är viktigt att notera att storleken på `str1` måste vara tillräckligt stor för att rymma den sammanslagna strängen. Om `str2` är längre än resterande utrymme i `str1` kommer de överflödiga tecknen att kapas eller så kan det uppstå en error. Du kan också använda `strncat()` för att säkerställa att strängen inte blir för lång.
+
+## Deep Dive
+
+För att förstå hur sammanslagning av strängar fungerar djupare kan vi titta på den faktiska koden bakom `strcat()` funktionen:
+
+````C
+char *strcat(char *dest, const char *src) {
+    char *ptr = dest + strlen(dest);
+    while (*src) {
+        *ptr++ = *src++;
+    }
+    *ptr = '\0';
+    return dest;
+}
+````
+
+Funktionen `strcat()` tar in två parametrar, en destinationssträng (`dest`) och en källsträng(`src`). Den första raden i koden deklarerar en pekare `ptr` som pekar på slutet av `dest` med hjälp av `strlen()` funktionen. Sedan loopar den igenom `src` tills den når slutet av strängen och lägger till varje tecken till `dest` en efter en. Slutligen sätts ett null-tecken till slutet av `dest` för att indikera att strängen är slut.
+
+Det finns också andra funktioner som kan användas för att sammanslå strängar, som `strncat()` eller `sprintf()`. Det är viktigt att läsa dokumentationen för dessa funktioner för att förstå deras användning och skillnader.
+
+## Se också
+
+- [Dokumentation för strcat()](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Exempel på sammanslagning av strängar i C](https://www.geeksforgeeks.org/strcat-strncat-functions-c/)
+- [Tilldelning av strängar i C](https://www.programiz.com/c-programming/c-strings)

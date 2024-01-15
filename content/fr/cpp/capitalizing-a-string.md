@@ -1,6 +1,7 @@
 ---
-title:                "C++: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Capitaliser une chaîne de caractères"
+html_title:           "C++: Capitaliser une chaîne de caractères"
+simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,60 +10,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi capitaliser une chaîne de caractères en C++?
+## Pourquoi
 
-Capitaliser une chaîne de caractères en C++ peut sembler une tâche simple et banale, mais cela peut s'avérer très utile dans certains cas. Par exemple, si vous souhaitez afficher un texte en majuscules dans votre programme, vous aurez besoin de connaître les différentes méthodes pour capitaliser une chaîne de caractères. Dans cet article, nous allons explorer pourquoi et comment capitaliser une chaîne de caractères en C++, ainsi que plonger plus en profondeur dans cette fonctionnalité.
+Vous êtes peut-être en train de coder un programme dans lequel vous avez besoin de convertir une chaîne de caractères en majuscules. Peut-être que vous voulez vérifier le formatage de l'entrée utilisateur ou que vous voulez simplement afficher une ligne de texte en majuscules. Quelle que soit la raison, il est utile de savoir comment capitaliser efficacement une chaîne en C++.
 
-## Comment capitaliser une chaîne de caractères en C++?
+## Comment faire
 
-Il existe différentes façons de capitaliser une chaîne de caractères en C++. Nous allons vous montrer deux méthodes couramment utilisées pour réaliser cette tâche.
+Il existe plusieurs façons de capitaliser une chaîne en C++. L'une des méthodes les plus simples est d'utiliser la fonction `toupper()` du header `<cctype>`. Cette fonction prend un caractère en entrée et renvoie le caractère en majuscule correspondant. En utilisant une boucle, vous pouvez parcourir chaque caractère de la chaîne et appliquer la fonction `toupper()` pour obtenir la chaîne entière en majuscules.
 
 ```C++
 #include <iostream>
+#include <cctype> // header pour la fonction toupper()
 #include <string>
 
 using namespace std;
 
-int main()
-{
-    // Création d'une chaîne de caractères en minuscules
-    string texte = "bonjour tout le monde";
-    
-    // Méthode 1 : Utilisation de la fonction transform()
-    transform(texte.begin(), texte.end(), texte.begin(), ::toupper);
-    cout << texte << endl;
-    
-    //Méthode 2 : Utilisation de la boucle for et de la fonction toupper()
-    for(int i=0; i<texte.length(); i++)
-    {
-        texte[i] = toupper(texte[i]);
+int main() {
+    // chaîne d'exemple
+    string str = "Bonjour le monde!";
+    // boucle pour parcourir chaque caractère
+    for (int i = 0; i < str.length(); i++) {
+        // utilisation de la fonction toupper() pour convertir en majuscules
+        str[i] = toupper(str[i]);
     }
-    cout << texte << endl;
-    
+    // affichage de la chaîne en majuscules
+    cout << str << endl;
     return 0;
 }
 ```
 
-**Output:**
+Output:
 
-BONJOUR TOUT LE MONDE
-BONJOUR TOUT LE MONDE
+```
+BONJOUR LE MONDE!
+```
 
-La première méthode utilise la fonction `transform()` qui prend en paramètres un itérateur de début, un itérateur de fin et une opération à appliquer sur chaque caractère. Dans notre cas, nous utilisons `::toupper` pour convertir chaque caractère en majuscule.
+Cette méthode peut également être utilisée avec une boucle `while` ou `do while` selon votre préférence. Il est également possible de créer une fonction personnalisée qui utilise la méthode ci-dessus et qui peut être réutilisée dans votre code.
 
-La deuxième méthode utilise une boucle for pour parcourir chaque caractère de la chaîne de caractères et la fonction `toupper()` pour la convertir en majuscule.
+## Plongée en profondeur
 
-Vous pouvez choisir la méthode qui vous convient le mieux en fonction de vos préférences et de la complexité de votre programme.
+Il est important de noter que la fonction `toupper()` ne fonctionnera que pour les caractères alphabétiques. Pour les caractères spéciaux ou les chiffres, le résultat sera le même que l'entrée. Si vous avez besoin de convertir une chaîne en majuscules sans tenir compte de ces différences, vous pouvez utiliser la méthode `transform()` du header `<algorithm>`.
 
-## Plongée plus profonde
+```C++
+#include <iostream>
+#include <algorithm> // header pour la fonction transform()
+#include <string>
 
-Maintenant, intéressons-nous à la mécanique derrière la fonction `transform()` et la fonction `toupper()` utilisées dans les exemples ci-dessus. Lorsque nous utilisons `::toupper`, nous faisons appel à une fonction membre statique de la classe `locale`. Cette fonction prend en paramètre un caractère et renvoie sa version en majuscule, selon la locale actuellement utilisée. Si aucune locale n'est spécifiée, la locale "C" sera utilisée par défaut.
+using namespace std;
 
-La fonction `transform()` quant à elle, utilise deux itérateurs pour parcourir la chaîne de caractères et appliquer l'opération `::toupper` sur chaque caractère. Il est important de noter que cette fonction n'est disponible que depuis le C++11.
+// fonction personnalisée pour convertir une chaîne en majuscules
+string capitalize(string str) {
+    // boucle pour parcourir chaque caractère
+    transform(str.begin(), str.end(), str.begin(), ::toupper);
+    // renvoie de la chaîne en majuscules
+    return str;
+}
 
-## Voir également
-- [Documentation sur `transform()`](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [Documentation sur la fonction `toupper()`](https://en.cppreference.com/w/cpp/string/byte/toupper)
-- [Article sur les locales en C++](https://www.geeksforgeeks.org/locale-class-in-c/)
+int main() {
+    // chaîne d'exemple avec caractères spéciaux
+    string str = "Héllo, wörld!";
+    // appel de la fonction capitalize()
+    str = capitalize(str);
+    // affichage de la chaîne en majuscules
+    cout << str << endl;
+    return 0;
+}
+```
 
-Merci d'avoir lu cet article sur la capitalisation de chaînes de caractères en C++. J'espère que cela vous sera utile dans vos futurs projets. N'hésitez pas à partager vos astuces pour capitaliser une chaîne de caractères dans les commentaires ci-dessous. À bientôt pour de nouveaux articles sur la programmation en C++!
+Output:
+
+```
+HÉLLO, WÖRLD!
+```
+
+De plus, si vous souhaitez capitaliser uniquement la première lettre d'une chaîne, vous pouvez utiliser la fonction `toupper()` seule ou avec la fonction `tolower()` pour le reste de la chaîne.
+
+## Voir aussi
+
+- [Documentation sur la fonction `toupper()`](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Documentation sur la fonction `transform()`](https://www.cplusplus.com/reference/algorithm/transform/)
+- [Guide pour les débutants en C++](https://www.programiz.com/cpp-programming)

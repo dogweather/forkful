@@ -1,5 +1,6 @@
 ---
-title:                "Java: Analizando html"
+title:                "Analizando html"
+html_title:           "Java: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "Java"
 category:             "Java"
@@ -9,47 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué: 
+¿Alguna vez te has preguntado cómo hacer uso de la información de una página web en tu programa? Bueno, ¡parsear HTML es la respuesta! Es una habilidad útil que te permite extraer datos específicos de una página web y utilizarlos en tu aplicación.
 
-Aprender a analizar HTML es una habilidad importante para cualquier programador de Java. La capacidad de extraer información valiosa de páginas web es crucial para la creación de aplicaciones y herramientas avanzadas. En este blog, te guiaremos a través de los conceptos básicos de cómo analizar HTML en Java.
+## Cómo hacerlo:
+Para empezar, necesitas una biblioteca de Java llamada Jsoup, que facilita el proceso de parsear HTML. Aquí te mostramos un ejemplo sencillo de cómo usarla:
 
-## Cómo hacerlo
-
-Para analizar HTML en Java, necesitarás utilizar una biblioteca externa llamada Jsoup. Esta biblioteca nos permite analizar y manipular fácilmente documentos HTML. Primero, debes asegurarte de tener Jsoup agregado a tu proyecto Java.
-
-Una vez que hayas importado la biblioteca, puedes comenzar a analizar HTML haciendo lo siguiente:
-
-```
-// Importar la biblioteca Jsoup
+```Java
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-// URL del sitio web a analizar
-String url = "https://www.ejemplo.com";
+public class ParseadorHTML {
 
-// Conectar con el sitio web y obtener su documento HTML
-Document document = Jsoup.connect(url).get();
-
-// Encontrar todos los elementos <a> en el documento HTML
-Elements links = document.select("a");
-
-// Imprimir todos los títulos y enlaces de los elementos <a>
-for (Element link : links) {
-     String title = link.text();
-     String href = link.attr("href");
-     System.out.println(title + " - " + href);
+    public static void main(String[] args) throws Exception {
+        String url = "https://www.ejemplo.com";
+        Document doc = Jsoup.connect(url).get();
+        Elements elementos = doc.select("h1"); //selecciona todos los elementos <h1> en la página
+        for (Element elemento : elementos) {
+            System.out.println(elemento.text()); //imprime el texto del elemento
+        }
+    }
 }
 ```
 
-Este código nos permite encontrar y mostrar todos los enlaces y títulos en un sitio web específico. Puedes personalizar este código para extraer la información que necesites de cualquier página web.
+Al ejecutar este código, obtendrás como resultado todos los encabezados de nivel 1 (<h1>) en la página de ejemplo. Pero no solo puedes seleccionar elementos por su etiqueta, también puedes utilizar selectores CSS, lo que hace que el parsing de HTML sea aún más flexible.
 
-## Profundizando
+## Profundizando:
+Para aquellos interesados en conocer más sobre cómo funciona el parsing de HTML, aquí hay algunos conceptos adicionales que pueden resultar útiles.
 
-Para los más aventureros, puedes profundizar en el análisis de HTML en Java mediante la comprensión de los diferentes selectores que se pueden utilizar en Jsoup. Algunos ejemplos incluyen encontrar elementos por clase, id o atributos específicos. También puedes aprender a manipular y modificar los elementos de la página web, como agregar o eliminar elementos.
+### DOM:
+DOM (Document Object Model) es una representación en memoria de una página HTML, que permite acceder y manipular los elementos en la página. Jsoup utiliza una implementación simplificada de DOM para hacer el proceso de parsing más fácil para los desarrolladores.
 
-Si deseas conocer más sobre el análisis de HTML en Java, te recomendamos explorar la documentación de Jsoup y experimentar con diferentes códigos y selecciones.
+### Selectores CSS:
+Como mencionamos anteriormente, puedes utilizar selectores CSS para seleccionar elementos específicos en una página web. Algunos ejemplos de selectores CSS son:
 
-## Ver también
+- ```.clase``` para seleccionar elementos con una clase específica
+- ```#id``` para seleccionar elementos con un id específico
+- ```elemento[attr="valor"]``` para seleccionar elementos con un atributo y valor específico
 
-- Documentación oficial de Jsoup: https://jsoup.org/
-- Ejemplos de código en GitHub: https://github.com/jhy/jsoup/
-- Tutorial en línea de w3schools: https://www.w3schools.com/jsoup/
+### Documento HTML válido:
+Jsoup solo puede parsear documentos HTML válidos, lo que significa que si te encuentras con un error al intentar parsear una página, es posible que el HTML no esté bien formateado. Puedes utilizar una herramienta en línea como W3C Validator para verificar la validez de un documento HTML.
+
+## Ver también:
+- [Documentación de Jsoup](https://jsoup.org/)
+- [Tutorial de parsing de HTML en Java](https://www.programcreek.com/2011/03/java-parse-html-document-sample-code/)
+- [Ejemplo de parsing de HTML utilizando Jsoup](https://www.baeldung.com/java-with-jsoup)

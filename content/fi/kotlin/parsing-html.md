@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Htm-ln parsiminen"
-simple_title:         "Htm-ln parsiminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Kotlin: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,54 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Parsing HTML on tärkeä taito jokaiselle Kotlin-ohjelmoijalle, joka haluaa hyödyntää web-sivujen sisältöä omassa sovelluskehityksessään. HTML-sisällöt ovat yleinen tapa tarjota tietoa käyttäjille ja osa ohjelmien toiminnallisuutta perustuu juuri web-sivujen päivittämiseen. Tässä blogipostissa kerron, miten HTML-parsiminen voidaan toteuttaa Kotlinilla ja miten siitä voidaan saada hyötyä.
+Monet moderneista nettisivuista ovat tehty käyttämään HTML-kieltä, joka on tietokonerajapinta sivujen muotoiluun ja sisällön esittämiseen. Siksi on tärkeää, että ohjelmoijina osaamme parsia HTML:ää ymmärtääksemme sivustojen rakennetta ja kerätäksemme sieltä tarvitsemamme tiedot.
 
-# Miten
+## Kuinka tehdä
 
-HTML-parsiminen on prosessi, jossa haetaan tietoa web-sivuilta ja käsitellään sitä halutulla tavalla. Tämä on erityisen kätevää silloin, kun halutaan automatisoida informaation hakeminen tai hyödyntää web-sivujen sisältöä omassa sovelluskehityksessä. Alla on esimerkki, miten voit toteuttaa HTML-parsimisen Kotlinilla ja tulostaa haetut tiedot konsoliin:
+HTML:n parsiminen voidaan tehdä monella eri tavalla käyttäen erilaisia työkaluja ja kirjastoja. Yksi suosituimmista vaihtoehdoista on käyttää Kotlinia, joka on nykyaikainen ja suosittu ohjelmointikieli. Se yhdistää puhtaasti funktionaalisen ja olio-orientoituneen ohjelmoinnin parhaita puolia.
+
+Yksi tapa parsia HTML:ää Kotlinilla on käyttämällä JSoup-kirjastoa, joka on Java-kirjasto, mutta sitä voidaan myös käyttää Kotlin-projekteissa. Alla on esimerkki, miten voit ladata ja parsia nettisivun HTML:ää käyttäen Kotlinia:
 
 ```Kotlin
-// Lisää tarvittavat riippuvuudet
+// Lisätään JSoup-kirjasto
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 
-// Luodaan funktio, joka hakee halutun web-sivun HTML-dokumentin
-fun getHTMLDocument(url: String): Document {
-    return Jsoup.connect(url).get()
+// Luodaan funktio nimeltä `parseHTML`, joka saa argumenttina URL-osoitteen
+fun parseHTML(url: String) {
+    // Ladataan HTML dokumentti annetusta URL-osoitteesta
+    val document: Document = Jsoup.connect(url).get()
+
+    // Käytetään CSS-selektoreita löytääksemme haluamamme elementit sivulta
+    val title: String = document.select("h1").text()
+    val paragraphs: List<String> = document.select("p").eachText()
+
+    // Tulostetaan parsitut elementit
+    println("Sivun otsikko: $title")
+    println("Kappaleet: $paragraphs")
 }
 
-// Haetaan ja tulostetaan HTML-dokumentista haluttu sisältö
-fun parseHTML() {
-    val document = getHTMLDocument("https://esimerkki.fi/")
-    val title = document.title()
-    println("Web-sivun otsikko: $title")
-    val element = document.select("p")
-    println("Ensimmäinen kappale: ${element[0].text()}")
-}
-
-// Kutsutaan funktiota
-parseHTML()
+// Kutsutaan funktiota antamalla sille URL-osoite
+parseHTML("https://example.com")
 ```
 
-Ohjelma tulostaa seuraavanlaisen tulosteen:
+Tulostuksena saat HTML-sivun otsikon ja listaun kappaleista:
 
 ```
-Web-sivun otsikko: Esimerkki.fi - HTML-parsiminen Kotlinilla
-Ensimmäinen kappale: Tervetuloa lukemaan uutta blogipostaustamme! Tässä tarjoamme oppaan HTML-parsimisen toteuttamiseen Kotlinilla ja jaamme vinkkejä, miten voit hyödyntää tätä taitoa omaan käyttöösi.
+Sivun otsikko: Esimerkki Sivu
+Kappaleet: [Tämä on ensimmäinen kappale, Tämä on toinen kappale, Ja tämä on kolmas kappale]
 ```
 
-Tässä esimerkissä haemme otsikon ja ensimmäisen kappaleen halutusta web-sivusta ja tulostamme ne konsoliin. Muokkaamalla funktiota ja käyttämällä erilaisia CSS-valitsimia, voit hakea ja käsitellä haluamiasi tietoja web-sivuilta.
+## Syvällisempi tarkastelu
 
-# Syvällisemmin
+HTML:n parsiminen ei rajoitu pelkästään netissä olevien sivujen muotoilun analysointiin, vaan sitä voidaan myös käyttää tiedonkeruuseen ja datan tallentamiseen tietokantaan. Esimerkiksi voit parsia uutissivuston HTML:ää ja tallentaa sieltä löydetyt uutisotsikot ja linkit omaan tietokantaasi, josta voit myöhemmin hakea haluamiasi uutisia.
 
-HTML-parsiminen tulisi toteuttaa aina huolellisesti ja ottaen huomioon mahdolliset virhetilanteet, kuten puuttuvat elementit tai muutokset HTML-rakenteessa. Jsoup-kirjasto, jota käytimme esimerkissä, tarjoaa erinomaisia työkaluja näiden tilanteiden käsittelyyn, kuten `try-catch` lauseita ja metodien käyttöä varmistamaan, että haettu tieto löytyy.
+Parsittaessa HTML:ää on tärkeää ymmärtää sivuston rakennetta ja miten eri elementtejä voidaan valita käyttäen CSS-selektoreita. Myös tiedon käsittely kannattaa tehdä tehokkaasti, jotta parsiminen ei hidasta ohjelman suorituskykyä.
 
-Lisäksi kannattaa ottaa huomioon, että HTML-parsiminen voi olla aikaavievää, jos haettava sivusto on suuri tai jos halutaan hakea suuri määrä tietoja. Kannattaa siis aina miettiä, onko HTML-parsiminen oikea tapa toteuttaa haluamasi toiminnallisuus ja kuinka suuri vaikutus sillä on ohjelman suorituskykyyn.
+## Katso myös
 
-# Katso myös
-
-- [Jsoup - HTML-parsimiseen tarkoitettu Java-kirjasto](https://jsoup.org/)
-- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
-- [Kotlinin dokumentaatio HTML-pars
+- [JSoup kirjaston kotisivu](https://jsoup.org/)
+- [Kotlin viralliset dokumentaatiot](https://kotlinlang.org/docs/home.html)
+- [HTML ja CSS opetusmateriaali](https://www.w3schools.com/htmL)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: टेक्स्ट को खोजना और बदलना"
-simple_title:         "टेक्स्ट को खोजना और बदलना"
+title:                "टेक्स्ट को खोजना और प्रतिस्थापित करना"
+html_title:           "Fish Shell: टेक्स्ट को खोजना और प्रतिस्थापित करना"
+simple_title:         "टेक्स्ट को खोजना और प्रतिस्थापित करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-आपने कभी कोशिश की है कि आपका सिस्टम टेक्स्ट फ़ाइल में से कुछ खोज कर उसे बदलें? वैसे तो यह काफी दिक्कत और समय लेता है, लेकिन Fish Shell कोडिंग भाषा के सहायता से आप इस काम को आसान और तेज़ बना सकते हैं।
+## Kyun
+Tum logon ko pata hai, computer par kaam karte waqt hum kabhi-kabhi text ko badalna ya replace karna chahte hain. Jaise ki agar hume ek poora document me se ek particular word ko delete karna hai ya phir kisi word ki spelling theek karni hai. Yeh sab kaam manually karne me humara bahut time waste ho jaata hai. Lekin, fish shell ka use karke hum is process ko asaan aur tezi se kar sakte hain.
 
-## क्यों
+## Kaise Karein
+Fish shell me text search and replace karne ke liye hum `sed` command ka use karenge. Iske liye sabse pehle hume `sed` command ko install karna hoga. Iske liye hum terminal me yeh command likhenge:
+```Fish Shell
+sudo apt-get install sed
+```
+Ab, hume `sed` command ka syntax jaanna hoga. Yeh command 3 parts se bana hai - `address`, `command` aur `input file`. Iske alawa, hum replace karne ke liye ek aur argument yaani `replacement` bhi use kar sakte hain.
 
-टेक्स्ट फ़ाइलों में पाठ की खोज और इसे बदलने की प्रक्रिया हर कोडर के लिए बहुत महत्वपूर्ण होती है। इससे आपको समय बचाने और अपने काम को सुधारने का मौका मिलता है। इससे आपको कोड लिखने की जटिलता को कम करने में भी मदद मिलती है।
+Ab, maan lijiye hume ek file me se ek particular word ko delete karna hai. Toh hum `sed` command ko iss tarah use karenge:
+```Fish Shell
+sed /word/d input_file.txt
+```
+Yahaan `/word/` ka matlab hai hume jo bhi word delete karna hai, woh `input_file.txt` me se humare liye search karega. Iske baad, humara naya output terminal par show hoga.
 
-## कैसे करें
+Agar hum kisi word ki spelling ko replace karna chahte hain, toh hum iss command ko use kar sakte hain:
+```Fish Shell
+sed s/old_word/new_word/g input_file.txt
+```
+Yahaan `/old_word/` ka matlab hai humare document me se hume woh word delete karna hai aur `/new_word/` ka matlab hai woh word jo hum iss file me daalna chahte hain.
 
-```Fish Shell``` कोडिंग भाषा के साथ आप आसानी से टेक्स्ट फ़ाइलों में खोज और पाठ को बदल सकते हैं। इसके लिए निम्नलिखित कदमों का पालन करें:
+## Deep Dive
+`sed` command bahut powerful hai aur hum iss command ki madad se bahut saare text manipulation tasks ko asaan se kar sakte hain. Iske alawa, hum iss command me `regex` bhi use kar sakte hain jiske baare me ek alag se article likha ja sakta hai.
 
-1. पहले, सिस्टम में Fish Shell को चलाएं।
-2. ```sed``` कमांड का उपयोग करें जो कि खोज और पाठ को बदलने को समर्थ बनाता है।
-3. उदाहरण के लिए, टेक्स्ट फ़ाइल में से एक वाक्य खोजें और उसे दूसरे वाक्य से बदलें।
-4. आप अधिक उदाहरणों के लिए Fish Shell की आधिकारिक वेबसाइट पर जा सकते हैं।
+Iske alawa, hum iss command ko use karke file ko modify bhi kar sakte hain. Hum iss command me `-i` flag ka use karke humare original file ko overwrite kar sakte hain. Isse hume ek naya file create karne ki zaroorat nahi padegi.
 
-यदि आप अपने टेक्स्ट फ़ाइल में बहुत से बदलाव करना चाहते हैं, तो आप स्क्रिप्ट लिखकर अपने काम को आसान बना सकते हैं। आप ```sed``` कमांड के साथ स्क्रिप्ट कोड को बदलकर अपने आवश्यकताओं के अनुसार इस्तेमाल कर सकते हैं।
+## Dekhein Bhi
+1. [Fish Shell GitHub page](https://github.com/fish-shell/fish-shell)
+2. [Fish Shell tutorial by The Primeagen](https://www.youtube.com/watch?v=-M2amRgTu-8)
+3. [Regex tutorial by freeCodeCamp.org](https://www.youtube.com/watch?v=rhzKDrUiJVk)
 
-## गहराई में
-
-खो
+# Aur Jaanein
+Lagbhag har commands me, hum terminal se bahut saare text manipulation tasks asaanise kar sakte hain. Isliye, aapko apne terminal ke commands ko acche se jaan lena chahiye. Aasha karte hain aapko yeh article helpful laga hoga. Keep coding!

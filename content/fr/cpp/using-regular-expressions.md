@@ -1,6 +1,7 @@
 ---
-title:                "C++: Utiliser des expressions régulières"
-simple_title:         "Utiliser des expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "C++: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,50 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Pourquoi utiliser des expressions régulières en C++?
 
-Les expressions régulières sont une partie essentielle de la programmation en C++. Elles sont utilisées pour la recherche et la manipulation de chaînes de caractères avec une grande précision et efficacité. Si vous êtes un programmeur, les expressions régulières peuvent simplifier et accélérer considérablement votre travail avec les chaînes de caractères.
+Les expressions régulières sont un outil puissant pour rechercher et manipuler des chaînes de caractères selon des modèles spécifiques. En utilisant des expressions régulières, vous pouvez augmenter l'efficacité de votre code et éviter des erreurs courantes liées à la manipulation de chaînes de caractères manuellement.
 
-## Comment Faire
+### Comment utiliser des expressions régulières en C++
 
-Voici comment utiliser les expressions régulières en C++ :
+Voici quelques exemples de code pour utiliser des expressions régulières en C++. Assurez-vous d'inclure la bibliothèque `<regex>` pour pouvoir utiliser les fonctions nécessaires.
 
 ```C++
 #include <iostream>
+#include <string>
 #include <regex>
 
-using namespace std;
+int main()
+{
+    // Définir une chaîne de caractères à analyser
+    std::string texte = "Mon adresse email est test@test.com.";
 
-int main() {
-    // Définition d'une expression régulière pour une adresse e-mail valide
-    regex pattern("\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}\\b");
+    // Définir un modèle d'expression régulière pour rechercher une adresse email
+    std::regex modele("(\\w+)(\\.\\w+)*@(\\w+)(\\.\\w+)*");
 
-    // Chaîne de caractères à tester
-    string email = "bonjour123@gmail.com";
-
-    // Vérification si la chaîne correspond au modèle défini
-    if (regex_match(email, pattern)) {
-        cout << "Adresse e-mail valide !" << endl;
-    } else {
-        cout << "Adresse e-mail invalide." << endl;
+    // Utiliser la fonction `std::regex_search` pour rechercher une correspondance dans le texte
+    if (std::regex_search(texte, modele))
+    {
+        std::cout << "Adresse email trouvée !" << std::endl;
     }
 
     return 0;
 }
 ```
 
-La sortie de ce code sera "Adresse e-mail valide !". Vous pouvez également utiliser des expressions régulières pour la recherche et le remplacement de texte dans des chaînes de caractères.
+**Sortie:**
+```
+Adresse email trouvée !
+```
 
-## Plongée Profonde
+Vous pouvez également utiliser des expressions régulières pour remplacer du texte dans une chaîne de caractères. Dans l'exemple suivant, nous remplacerons toutes les occurrences de "bienvenue" par "bonjour" dans la chaîne de caractères.
 
-Les expressions régulières sont un ensemble de règles pour décrire un modèle de chaîne de caractères. Ces règles peuvent inclure des caractères spéciaux et des opérateurs pour rendre la recherche plus précise. Il existe également des bibliothèques de fonctions spéciales pour les expressions régulières, comme "regex_match" qui vérifie si la chaîne donnée correspond au modèle défini.
+```C++
+#include <iostream>
+#include <string>
+#include <regex>
 
-Il est important de noter que les expressions régulières sont sensibles à la casse, c'est-à-dire qu'elles font la différence entre les majuscules et les minuscules. Il est également possible d'utiliser des drapeaux pour rendre la recherche insensible à la casse ou pour effectuer des recherches dans des chaînes de caractères multilignes.
+int main()
+{
+    std::string texte = "Bienvenue à tous les nouveaux utilisateurs !";
 
-Il existe de nombreuses ressources en ligne pour vous aider à apprendre et à maîtriser les expressions régulières en C++. Il est également utile de pratiquer et d'expérimenter avec différents modèles pour mieux comprendre leur fonctionnement.
+    // Définir un modèle d'expression régulière pour rechercher et remplacer du texte
+    std::regex modele("bienvenue");
 
-## Voir Aussi
+    // Utiliser la fonction `std::regex_replace` pour remplacer le texte
+    std::cout << std::regex_replace(texte, modele, "bonjour") << std::endl;
 
-- [Documentation sur les expressions régulières en C++](https://fr.cppreference.com/w/cpp/regex)
-- [Tutoriel sur les expressions régulières en C++](https://www.tutorialspoint.com/cpp_standard_library/cpp_regex_library.htm)
-- [Exemples sur l'utilisation des expressions régulières en C++](https://github.com/learn-with-leap/Examples/tree/master/C%2B%2B/Regex)
+    return 0;
+}
+```
+
+**Sortie:**
+```
+Bonjour à tous les nouveaux utilisateurs !
+```
+
+### Plongez plus profondément dans les expressions régulières
+
+Il existe de nombreux modèles et fonctions disponibles pour utiliser des expressions régulières en C++. Vous pouvez consulter [la documentation de la bibliothèque `<regex>`](https://en.cppreference.com/w/cpp/regex) pour découvrir toutes les possibilités.
+
+Pour les débutants, il peut être utile de consulter des tutoriels en ligne pour comprendre comment créer des modèles et utiliser efficacement les fonctions de la bibliothèque. Vous pouvez également pratiquer en utilisant un outil en ligne comme [Regex101](https://regex101.com/) pour tester vos modèles et voir des exemples d'utilisation.
+
+---
+Voir aussi:
+- [C++ Regex Tutorial](https://www.geeksforgeeks.org/regular-expressions-in-c-implementation/)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Online regex tester and debugger](https://regex101.com/)

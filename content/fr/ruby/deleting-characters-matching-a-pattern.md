@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Suppression de caractères correspondant à un motif"
-simple_title:         "Suppression de caractères correspondant à un motif"
+title:                "Effacement de caractères correspondants à un modèle"
+html_title:           "Ruby: Effacement de caractères correspondants à un modèle"
+simple_title:         "Effacement de caractères correspondants à un modèle"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,52 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La suppression de caractères correspondant à un motif peut être un moyen efficace de nettoyer une chaîne de caractères ou de manipuler des données. Cela peut également être utile pour régler des problèmes de formatage ou de validation dans votre code.
+Il peut y avoir différentes raisons pour lesquelles vous voudriez supprimer des caractères correspondant à un motif particulier dans votre code Ruby. Peut-être que vous essayez de nettoyer une chaîne de caractères en retirant les caractères spéciaux, ou peut-être que vous voulez vérifier qu'une chaîne de caractères ne contient que des chiffres.
 
 ## Comment faire
 
-Voici un exemple de code Ruby pour supprimer tous les chiffres d'une chaîne de caractères :
+Dans Ruby, il existe plusieurs façons de supprimer des caractères correspondant à un motif. Voici quelques exemples :
 
-````Ruby
-chaine = "J'ai 25 ans"
-chaine = chaine.gsub(/[0-9]/, "") # Remplace tous les chiffres par une chaîne vide
-puts chaine # Résultat : "J'ai ans"
-````
+```Ruby
+# Supprimer tous les espaces d'une chaîne de caractères
+str = "Ruby est super cool !"
+str.delete!(" ")
 
-Notez l'utilisation de la méthode `gsub` qui permet de remplacer tous les éléments correspondant à un motif dans une chaîne de caractères.
+# Supprimer tous les chiffres d'une chaîne de caractères
+str = "12345678"
+str.delete!("0-9")
 
-Vous pouvez également utiliser des expressions régulières plus complexes pour cibler des motifs spécifiques :
+# Supprimer tous les caractères spéciaux d'une chaîne de caractères
+str = "Le projet Ruby a débuté le 24 février 1993."
+str.delete!("/[^A-Za-z0-9]/") # l'espace après "delete!" est important
+```
 
-````Ruby
-chaine = "@johndoe"
-chaine = chaine.gsub(/[!@#$%^&*()]/, "") # Supprime tous les symboles spéciaux
-puts chaine # Résultat : "johndoe"
-````
+Output:
+
+```bash
+Rbystrsuprcol!
+  +
+-
+LeprojetRubya24fvrier1993
+```
 
 ## Plongée en profondeur
 
-La méthode `gsub` utilise en réalité des expressions régulières pour trouver les motifs à supprimer. Cela signifie que vous pouvez utiliser toute la puissance des expressions régulières pour manipuler vos chaînes de caractères.
-
-Par exemple, vous pouvez utiliser des quantificateurs pour supprimer plusieurs occurrences d'un motif :
-
-````Ruby
-chaine = "haaahaaahaaahaa"
-chaine = chaine.gsub(/ha{3}/, "") # Supprime toutes les occurrences de "haaa"
-puts chaine # Résultat : "ha,ha,ha"
-````
-
-Ou encore, vous pouvez utiliser des groupes de capture pour réutiliser les éléments supprimés dans votre nouvelle chaîne :
-
-````Ruby
-chaine = "Bonjour, je m'appelle John Doe"
-chaine = chaine.gsub(/(\w+)\s+John\s+(\w+)/, "Salut \\1, je suis \\2") # Remplace le nom complet par un salut
-puts chaine # Résultat : "Salut Bonjour, je suis Doe"
-````
-
-En explorant les différentes possibilités des expressions régulières, vous pourrez supprimer efficacement tous les caractères indésirables de vos chaînes de caractères.
+Ruby offre de nombreuses méthodes pour supprimer des caractères correspondant à un motif, notamment `delete`, `delete_if`, `gsub`, `tr`, `tr_s`, `squeeze`, `squeeze!` et `strip`. Selon vos besoins, vous pouvez utiliser ces méthodes pour supprimer des caractères spécifiques en fonction d'une condition, effectuer un remplacement, ou même supprimer les caractères répétés dans une chaîne de caractères.
 
 ## Voir aussi
 
-- [Documentation officielle de Ruby pour les expressions régulières](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Tutoriel RegexOne pour apprendre les expressions régulières](https://regexone.com/) 
-- [Liste des métacaractères utilisables en expressions régulières](https://www.rexegg.com/regex-quickstart.html)
+Voici quelques ressources utiles pour en savoir plus sur les méthodes de suppression de caractères dans Ruby :
+
+- [La documentation officielle de Ruby sur les méthodes de suppression de caractères](https://ruby-doc.org/core/classes/String.html#M000355)
+- [Un tutoriel sur la manipulation de chaînes de caractères en Ruby](https://www.rubyguides.com/2015/05/manipulating-strings-in-ruby/)
+- [Un article sur le filtrage de caractères en utilisant `gsub` dans Ruby](https://www.rubyguides.com/2019/02/ruby-gsub-method/)

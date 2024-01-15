@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Elm: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,76 +11,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Command line -argumenttien lukeminen voi olla hyödyllistä sovelluskehittäjille, jotka haluavat antaa käyttäjilleen mahdollisuuden ohjailla sovelluksiaan erilaisten parametrien avulla.
 
-## Miten
-Käytettäessä Elm-ohjelmointikieltä, voit käyttää `CMD` -moduulia lukemaan ja käsittelemään komentoriviargumentteja. Seuraavassa esimerkissä näytämme, kuinka voit lukea ja tulostaa yhden argumentin:
+Kommentorivin argumenttien lukeminen on tärkeä taito, joka helpottaa ohjelmien suorittamista ja hallintaa. Tämän taidon avulla voit helposti välittää parametreja ohjelmalle sen suorituksen aikana.
 
-```Elm
-import String
-import CMD exposing (args)
-
-main = 
-    args
-    |> List.head
-    |> Maybe.withDefault "Ei argumenttia saatavilla."
-    |> String.reverse
-    |> String.toUpper
-    |> Debug.log "Tulos: "
-```
-
-Alla on esimerkki, joka ottaa vastaan kaksi argumenttia ja kerrotaan ne keskenään:
+## Kuinka
 
 ```Elm
-import Time
-import CMD exposing (args)
+import Platform exposing (Program)
+import Task exposing (Task)
+import Parser exposing (run, string, succeed) 
 
-multiplyArgs arg1 arg2 = 
-    let 
-        in1 = String.toInt arg1
-        in2 = String.toInt arg2
-    in
-        case (in1, in2) of
-            (Just i1, Just i2) -> 
-                i1 * i2
-                |> toString
-                |> Debug.log "Tulos: "
-    
-            _ -> 
-                Debug.crash "Argumentit eivät ole numeroita."
-
+main : Program Never Model 
 main = 
-    args
-    |> List.head
-    |> Maybe.withDefault "Ei argumenttia saatavilla."
-    |> Debug.log "Ensimmäinen argumentti: "
-    |> args
-    |> List.tail
-    |> Maybe.withDefault []
-    |> List.head
-    |> Maybe.withDefault "Ei toista argumenttia annettu."
-    |> Debug.log "Toinen argumentti: "
-    |> multiplyArgs
+    Platform.program
+    { init = init
+    , view = view
+    , update = update
+    , subscriptions = subscriptions
+    }
+
+-- Alustaa ohjelman lukemaan komentorivin argumenttien rivin
+init: (Model, Cmd Msg)
+init = (Model "", Task.succeed Cmd")
+
+-- Näyttää yksinkertaisen tekstikentän
+view : Model -> Html Msg
+view model =
+    text model
+
+-- Päivittää tilan komentorivilla annettuun arvoon
+type Msg = Cmd String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Cmd arg ->
+            (Model arg, Cmd.none)
+
+-- Tilaukset komentorivin argumenttien muutoksille
+subscriptions: Model -> Sub Msg
+subscriptions model =
+    Sub.none
+
+-- Toteuttaa komentorivin argumenttien lukemisen
+port currentUrl : String
+port currentUrl =
+    toTask Platform.Task
+
+-- Käynnistää ohjelman komentorivilla annetun argumentin avulla
+port launch : Task x
+port launch = 
+    Succeed ()
+
+-- Mahdollistaa ohjelman suorittamisen komentorivin argumentteja apuna käyttäen
+port toTask : (String -> Task x) -> Sub x
+port toTask task =
+  on "args" (map task currentUrl)
 ```
 
-Suoritettuna komentoriviltä käsin esimerkin kanssa, joka ottaa yhden argumentin, tulostus voisi olla seuraavanlainen:
-
-```
-Ei argumenttia saatavilla.
-Tulos: EIKODIM YNOMI
+```bash
+elm make Main.elm
+elm reactor
 ```
 
-Ja esimerkki, joka ottaa kaksi argumenttia, voisi tuottaa seuraavan tulostuksen:
+#### Syöte: `elm reactor`  
+#### Output: Palvelin käynnistyy oletuksena portissa 8000.
 
-```
-Ensimmäinen argumentti: 5
-Toinen argumentti: 8
-Tulos: 40
-```
+#### Syöte: `elm make Main.elm --output=app.js`  
+#### Output: Luo `app.js` -tiedoston.
 
-## Syvempään
-CMD-moduuli tarjoaa myös muita hyödyllisiä funktioita, kuten `run` ja `path`, jotka voivat auttaa käsittelemään komentoriviargumentteja. Voit tutustua niihin Elm-oppaassa ja lisätietoja löytyy myös CMD-moduulin dokumentaatiosta.
+#### Syöte: `elm make Main.elm --optimize`  
+#### Output: Optimoi tiedostokoon.
+
+#### Syöte: `elm repl`  
+#### Output: Käynnistää Elm-tulkin, jolla voit kokeilla koodia reaaliajassa.
+
+## Syvemmälle
+
+Kommentorivin argumenttien lukeminen perustuu tietokoneen käyttöjärjestelmän ominaisuuksiin. Komentorivin argumenttien lukemisessa on myös huomioitava mahdolliset virhetilanteet, kuten virheellisten argumenttien antaminen ja odotettujen argumenttien puuttuminen. Jokaisella käyttöjärjestelmällä voi myös olla omat ominaisuutensa ja tapansa käsitellä komentorivin argumentteja, joten kannattaa tutustua niihin ennen koodin kirjoittamista.
 
 ## Katso myös
-- [Elm-opas](https://guide.elm-lang.org/)
-- [CMD-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/cmd/latest/)
+- [Elm-ohjelmointikielen virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [Komentoriviparametrien käsittely eri käyttöjärjestelmissä](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)

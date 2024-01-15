@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Надсилання http запиту з основною аутентифікацією"
-simple_title:         "Надсилання http запиту з основною аутентифікацією"
+title:                "Відправка запиту http з базовою аутентифікацією"
+html_title:           "Rust: Відправка запиту http з базовою аутентифікацією"
+simple_title:         "Відправка запиту http з базовою аутентифікацією"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,32 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+![Rust Logo](https://www.rust-lang.org/static/images/rust-logo-blk.svg)
+
 ## Чому
 
-Протокол HTTP дозволяє нам взаємодіяти з веб-програмами та отримувати дані з Інтернету. Застосування автентифікації базовим методом допоможе забезпечити безпеку та захищеність наших HTTP-запитів.
+Якщо вам потрібно отримати доступ до захищеного веб-ресурсу через вашу програму на Rust, вам потрібно буде використовувати базову аутентифікацію. Це забезпечить безпечну передачу облікових даних і дозволить вам зробити запит на сервер.
 
-## Як використовувати
+## Як
 
+Для початку, необхідно імпортувати необхідні бібліотеки:
 ```Rust
-use reqwest::Client;
-
-let client = Client::new();
-let response = client.post("https://example.com")
-    .basic_auth("username", Some("password"))
-    .send()
-    .await?;
-
-println!("Status: {}", response.status());
+use std::io::Read;
+use reqwest::blocking::{Client, Response};
 ```
 
- У цьому прикладі ми використовуємо бібліотеку `reqwest` для створення клієнта HTTP та відправлення POST-запиту з базовою автентифікацією. Ми можемо також вказати ім'я користувача та пароль для доступу до ресурсу.
+Потім ініціалізуйте змінну клієнта, яка буде використовуватись для виконання запиту:
+```Rust
+let client = Client::new();
+```
 
-## Глибоке дослідження
+Створіть новий запит, вказавши необхідний URL і метод запиту (у цьому випадку GET):
+```Rust
+let mut request = client.get("https://example.com").send().unwrap();
+```
 
-HTTP автентифікація базовим методом полягає в тому, що сервер запитує у користувача логін та пароль для авторизації доступу до ресурсу. Ці дані потім передаються у заголовку запиту `Authorization` у форматі `Basic base64_encoded(username:password)`. Для нашого прикладу це буде виглядати як `Basic dXNlcm5hbWU6cGFzc3dvcmQ=`.
+Далі, встановіть заголовки для запиту, включаючи заголовки для базової аутентифікації, використовуючи ваші облікові дані:
+```Rust
+request = request.basic_auth("username", Some("password"));
+```
 
-## Дивіться також
+Нарешті, виконайте запит і отримайте відповідь з сервера:
+```Rust
+let mut response: Response = request.send().unwrap();
+```
 
-- [Документація бібліотеки reqwest](https://docs.rs/reqwest/0.11.4/reqwest/)
-- [Стаття про HTTP автентифікацію](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-- [Приклад використання базової автентифікації в Rust](https://medium.com/@mattanden/rust-http-client-tutorial-be5d22192d86)
+Ось приклад результуючого коду:
+```Rust
+use std::io::Read;
+use reqwest::blocking::{Client, Response};
+
+let client = Client::new();
+let mut request = client.get("https://example.com").send().unwrap();
+request = request.basic_auth("username", Some("password"));
+let mut response: Response = request.send().unwrap();
+
+let mut body = String::new();
+response.read_to_string(&mut body);
+
+println!("Status Code: {}", response.status());
+println!("Response Body: {}", body);
+```
+
+В результаті, ви отримаєте відповідь з сервера з кодом статусу та тілом відповіді.
+
+## Глибокий погляд
+
+В даному прикладі ми використовували бібліотеку `reqwest` для створення запиту та обробки відповіді. Ця бібліотека забезпечує безпечну передачу даних від і до сервера.
+
+Також важливо знати, що базова аутентифікація не є надійним методом аутентифікації, оскільки дані передаються у відкритому вигляді. Кращим варіантом буде використання більш сучасних методів аутентифікації, таких як OAuth.
+
+## Дивись також
+
+- [Документація по бібліотеці reqwest](https://docs.rs/reqwest/)
+- [Приклади використання базової аутентифікації в Rust](https://github.com/reqwest-rs/reqwest#authentication)
+- [Безпека веб-запитів в Rust](https://dev.to/anshulgupta11/how-to-authenticate-a-web-request-in-rust-2lea)

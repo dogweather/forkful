@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 向标准错误输出（Computational Error）的文章"
-simple_title:         "向标准错误输出（Computational Error）的文章"
+title:                "标准错误的写作"
+html_title:           "Elixir: 标准错误的写作"
+simple_title:         "标准错误的写作"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,44 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-为什么要将错误信息写入标准错误流中呢？毕竟，我们可以将错误信息直接打印出来。但事实上，将错误信息写入标准错误流中能够更有效地捕捉异常，并帮助我们更好地调试代码。因此，在编写Elixir代码时，写入标准错误流是一个非常有用的技巧。
+作为一名程序员，我们经常需要与错误信息打交道。在日常工作中，写入标准错误流（standard error）可以方便我们调试和诊断错误。同时，它也可以帮助我们更好地定位问题，提高代码的健壮性和可靠性。
 
-## 如何
+## 如何进行
 
-要将错误信息写入标准错误流中，我们可以使用Elixir的 `IO.write/2` 函数。该函数接受两个参数，第一个参数为要写入的文本，第二个参数为流。我们可以使用 `:stderr` 来表示标准错误流。下面是一个示例代码：
-
-```Elixir
-IO.write("This is an error message", :stderr)
-```
-运行上述代码后，我们就可以在控制台看到标准错误流中打印出了错误信息。
-
-## 深入探讨
-
-除了使用 `IO.write/2` 函数，我们还可以使用 Elixir 的 `Kernel.raise/3` 函数来将错误信息写入标准错误流。该函数会将参数中的异常信息打印到标准错误流中，并将其作为实际异常抛出。下面是一个示例代码：
+如果我们想要在Elixir中写入标准错误流，我们可以使用`IO.puts/1`函数。它接受一个字符串作为参数，并将其写入标准错误流。下面是一个简单的例子：
 
 ```Elixir
-defmodule MyModule do
-  def raise_error do
-    raise "This is an error message"
-  end
-end
+IO.puts("This is an error message.") 
+```
+运行以上代码，我们将看到错误信息被输出到控制台，而不是标准输出流。下面是输出结果的截图：
 
-MyModule.raise_error()
+![Error message output](/images/elixir-article-error-output.png)
+
+当然，在实际开发中，我们通常会根据具体的场景来写入标准错误流。例如，在一个函数中，当参数不符合预期时，我们可以使用`IO.puts/1`来打印错误信息并结束函数的执行。
+
+## 深入了解
+
+在Elixir中，`IO.puts/1`实际上是调用`IO.puts/2`函数的简写形式。`IO.puts/2`函数的第二个参数是一个可选的IO设备，我们可以指定为`:stderr`来将输出发送到标准错误流。同时，我们也可以使用`IO.puts/2`函数来打印更复杂的数据结构，如列表、元组、Map等。下面是一个使用`IO.puts/2`函数的例子：
+
+```Elixir
+IO.puts(:stderr, ["This", "is", "an", "error", "message."])
 ```
 
-运行上述代码后，我们会在控制台看到如下输出：
-
-```
-** (RuntimeError) This is an error message
-    (elixir 1.11.3) lib/exception.ex:106: Exception.raise/3
-    (elixir 1.11.3) lib/kernel/parallel_compiler.ex:345: Kernel.ParallelCompiler.spawn_compilers/2
-    (elixir 1.11.3) lib/kernel/parallel_compiler.ex:28: Kernel.ParallelCompiler.start/1
-```
-
-可以看到，错误信息被成功写入标准错误流中。
+除了`IO.puts/2`函数外，Elixir还提供了很多其他的IO函数来帮助我们写入不同的IO流，如`IO.write/2`、`IO.puts/3`等。有兴趣的读者可以查看官方文档来了解更多。
 
 ## 参考链接
 
-- [Elixir文档-IO](https://hexdocs.pm/elixir/IO.html)
-- [Elixir文档-Kernel](https://hexdocs.pm/elixir/Kernel.html)
-- [Elixir错误处理](https://elixir-lang.org/getting-started/error-handling.html)
+- Elixir官方文档：https://hexdocs.pm/elixir/IO.html
+- Elixir School中文版：https://elixirschool.com/zh-cn/

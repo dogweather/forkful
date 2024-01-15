@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Fish Shell recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
-As programmers, we often need to work with dates and times in our projects. Sometimes, we may need to calculate a date in the future or past for a specific task. So why should we use Fish Shell to help us with this? Because Fish Shell provides a simple and efficient way to perform date calculations without the need for external libraries or complicated syntax.
+## Why
+Ever had to figure out a date in the future or the past? Maybe you were planning a trip or trying to schedule an event. Either way, manually calculating dates can be time-consuming and prone to errors. With Fish Shell, you can easily automate this process and save yourself some headache.
 
-# How To
-To calculate a date in the future or past using Fish Shell, we can use the `date` command. This command takes in a date string and adds or subtracts a specific amount of time from it. Let's see some examples:
+## How To
+Calculating a date in the future or past using Fish Shell is a breeze. Simply follow the steps below:
+
+1. Open your terminal and enter the Fish Shell by typing `fish`.
+2. Use the `date` command followed by the desired date in YYYY-MM-DD format. For example, `date 2021-12-25` will output the date for Christmas in the current year.
+3. To calculate a date in the past, use a negative number after the date. For example, `date 2021-12-25 -1` will output the date from the previous year.
+4. You can also use keywords like `today` or `tomorrow` instead of a specific date. For example, `date tomorrow` will output tomorrow's date.
+
+Below is a sample output of the above commands:
 
 ```
-# To calculate 1 week from today
-date -d "now +1 week"
-# Output: 2021-08-23T14:42:54
+Fish Shell 3.2.2
+Copyright (c) 2015 - 2020 Fish contributors
 
-# To calculate 2 months from a specific date
-date -d "2020-06-15 +2 months"
-# Output: 2020-08-15T00:00:00
-
-# To calculate 1 year and 3 days from now
-date -d "now +1 year +3 days"
-# Output: 2022-08-17T14:42:54
+Date Output:
+2021-12-25
+2020-12-25
+2021-06-08
 ```
 
-As you can see, we can use keywords like `now`, `year`, `month`, `day`, etc. to specify the date and time intervals. We can also use different formats for our output, such as ISO 8601 (default), human-readable, or Unix timestamp. Fish Shell makes it easy to customize our date calculations according to our needs.
+## Deep Dive
+Behind the scenes, Fish Shell uses the GNU `date` command to calculate dates. It also accepts date formats from other languages, making it a versatile tool for international users. Additionally, you can use flags such as `-d` or `--date` to specify a different starting date or time zone.
 
-# Deep Dive
-To better understand how Fish Shell performs date calculations, let's take a deeper look at the underlying code. Fish Shell uses a library called `libdateutil` to handle date and time operations. This library provides a set of functions that use the Gregorian calendar to add or subtract intervals from a given date. Fish Shell makes use of these functions to provide us with a user-friendly and convenient way of performing date calculations.
-
-# See Also
-- [Fish Shell documentation on date](https://fishshell.com/docs/current/cmds/date.html)
-- [libdateutil documentation](https://github.com/fish-shell/libdateutil)
-- [ISO 8601 specification](https://www.iso.org/iso-8601-date-and-time-format.html)
+See Also
+- [Fish Shell official website](https://fishshell.com)
+- [GNU date command documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Fish Shell cheat sheet](https://fishshell.com/docs/current/tutorial.html#quick-reference)

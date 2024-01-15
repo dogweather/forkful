@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Rust: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne dla programisty Rust?
+## Dlaczego pisanie testów jest ważne?
 
-Testowanie jest nieodłącznym elementem procesu tworzenia wysokiej jakości oprogramowania. W przypadku języka Rust jest to szczególnie ważne, ponieważ jego statyczne typowanie oraz system własności gwarantują bezpieczeństwo i stabilność kodu. Pisanie testów pozwala upewnić się, że nasza aplikacja działa zgodnie z oczekiwaniami i minimalizuje ryzyko pojawienia się błędów w produkcyjnym środowisku.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki nim możemy mieć pewność, że nasz kod działa poprawnie i zgodnie z naszymi oczekiwaniami. Testowanie jest również kluczowym elementem w walce z błędami, ponieważ pozwala nam szybko wykryć i poprawić ewentualne problemy.
 
 ## Jak pisać testy w języku Rust?
 
-Pierwszym krokiem jest zaimportowanie makra `test` z biblioteki standardowej Rust. Jest ono odpowiedzialne za tworzenie testów jednostkowych oraz integracyjnych w naszym kodzie. Następnie, używając składni `#[test]`, możemy oznaczyć funkcję jako testową, a następnie przekazać do niej wartości wejściowe i porównać je z oczekiwanymi wynikami.
-
-Przykładowy kod wyglądałby następująco:
+Pisanie testów w języku Rust jest bardzo proste i intuicyjne. Wystarczy skorzystać z wbudowanej biblioteki `test` i jej makr. Przykładowy kod wyglądałby tak:
 
 ```Rust
-use std::env;
-
-// Oznaczamy funkcję jako testową z wykorzystaniem makra `test`
 #[test]
-fn test_environment_variables() {
-    // Wykonujemy testowane działanie
-    let path = env::var("PATH").expect("PATH nie jest ustawiony");
-    // Porównujemy wynik z oczekiwaną wartością
-    assert_eq!(path, "/usr/local/bin:/usr/bin:/bin");
+fn test_addition() {
+    let result = add_numbers(2, 3);
+    assert_eq!(result, 5);
 }
 ```
 
-Po uruchomieniu testów, w przypadku pojawienia się błędu w wyniku testu, zostanie on wyświetlony wraz z informacją o liczbie przetestowanych oraz nieprawidłowych testów. Dzięki temu możemy szybko zlokalizować problem i naprawić go.
+W powyższym przykładzie widzimy funkcję testową `test_addition`, która używa makra `assert_eq!` do porównania oczekiwanego wyniku z faktycznym wynikiem funkcji `add_numbers`. Aby uruchomić ten test, wystarczy użyć polecenia `cargo test` w terminalu.
 
-## Zagłębienie się w temat testowania w Rust
+### Przydatne makra
 
-Pisanie testów w języku Rust jest bardzo elastyczne i można go dostosować do swoich indywidualnych potrzeb. Możemy używać różnych asercji, warunków i wyjątków w celu sprawdzenia poprawności naszego kodu. Dodatkowo, dzięki integracji z frameworkami takimi jak `Cargo` czy `crates.io`, możemy wykorzystać narzędzia wspierające tworzenie i wykonywanie testów.
+W języku Rust istnieje wiele przydatnych makr, które ułatwiają pisanie testów. Niektóre z nich to:
 
-Jednym z najważniejszych aspektów pisanie testów jest utrzymanie ich aktualności i dopasowanie do zmian w kodzie. Dlatego ważne jest, aby pisać testy jednostkowe dla każdej funkcji i modułu naszej aplikacji. W ten sposób możemy szybko i łatwo wychwycić potencjalne błędy podczas rozwijania i refaktoryzacji kodu.
+- `assert!` - pozwala na sprawdzenie warunku logicznego
+- `assert_eq!` - porównuje dwa wyrażenia
+- `assert_ne!` - porównuje dwa wyrażenia i upewnia się, że są one różne
+- `should_panic` - sprawdza, czy funkcja zgłasza oczekiwany błąd
 
-## Zobacz również
+Więcej informacji na temat dostępnych makr i ich zastosowania można znaleźć w oficjalnej dokumentacji języka Rust.
 
-- [Dokumentacja Rust na temat testowania](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Przykładowe projekty z wykorzystaniem testów w języku Rust](https://github.com/Espylapiza/rust-learning/blob/main/hello_world/tests/lib.rs)
-- [Strona internetowa Cargo, narzędzia automatyzującego proces testowania w Rust](https://doc.rust-lang.org/cargo/guide/tests.html)
+## Głębsze spojrzenie na pisanie testów
+
+Testowanie w języku Rust to znacznie więcej niż tylko używanie wbudowanych makr. Istnieją pewne dobre praktyki, które warto przestrzegać podczas pisania testów. Kilka z nich to:
+
+- Separacja kodu - testy powinny być pisane oddzielnie od samego kodu źródłowego oraz powinny być zgrupowane w osobnym folderze.
+- Testowanie wszystkich możliwych przypadków - należy pamiętać o testowaniu różnych przypadków, w szczególności tych krańcowych.
+- Nazewnictwo funkcji testowych - nazwy funkcji testowych powinny zaczynać się od słowa `test` oraz dobrze opisywać przetestowaną funkcjonalność.
+
+Pamiętajmy, że testy to również część naszego kodu i powinny być pisane zgodnie z zasadami czystego kodu.
+
+## Zobacz także
+
+- [Dokumentacja języka Rust](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Przewodnik po testowaniu w języku Rust](https://medium.com/@ericdreichert/starting-with-rust-004-testing-b5a30e9a9072)
+- [Wideo na temat testowania w języku Rust](https://www.youtube.com/watch?v=sAxiUw3Vkbs)

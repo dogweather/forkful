@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Debugging is an important part of programming, and the Arduino is no exception. Printing debug output allows you to track the execution of your code and easily identify any issues that may arise. This can save you time and effort in the long run, making it a valuable tool for any Arduino project.
+
+Debugging is an essential part of programming, and one of the most effective ways to debug code is by printing out relevant information during runtime. This allows you to track the flow of your code and identify any potential issues or bugs. In this article, we will explore how to use the "Serial" library in Arduino to print debug output.
 
 ## How To
-Printing debug output on Arduino can be done using the `Serial.print()` or `Serial.println()` functions. These functions take in a string or variable as an argument and print it to the serial monitor, which can be accessed through the Arduino IDE. Let's take a look at an example:
 
-```Arduino
-int sensorValue = 0; // variable to store sensor reading
+To use the "Serial" library, you will first need to open the Serial Monitor in the Arduino IDE. This can be done by clicking on the "Tools" menu and then selecting "Serial Monitor". 
 
+Once the Serial Monitor is open, you can use the "Serial.println()" function to print out a specific value or variable. For example, ```Arduino
+Serial.println("Hello, world!"); 
+``` 
+will print out "Hello, world!" in the Serial Monitor.
+
+You can also use the "Serial.print()" function to print without adding a line break. This can be useful when you want to print out multiple values on the same line. For example, ```Arduino
+int x = 10;
+Serial.print("The value of x is: ");
+Serial.print(x);
+``` 
+will print out "The value of x is: 10" on the same line.
+
+Another useful function is "Serial.begin()" which is used to initialize the communication between your Arduino board and the Serial Monitor. This function should be called in the "setup" section of your code. For example, ```Arduino
 void setup() {
-  // initialize serial communication
-  Serial.begin(9600);
+  Serial.begin(9600); //sets the baud rate to 9600
 }
-
-void loop() {
-  // read sensor value
-  sensorValue = analogRead(A0);
-  
-  // print sensor value to serial monitor
-  Serial.print("Sensor value: ");
-  Serial.println(sensorValue);
-  
-  // delay for 1 second
-  delay(1000);
-}
-```
-
-In this example, we are reading the analog value from pin A0 and printing it to the serial monitor every 1 second. This allows us to monitor the sensor value while the code is running and make any necessary adjustments.
+``` 
 
 ## Deep Dive
-There are a few things to keep in mind when printing debug output on Arduino. First, make sure to use the correct baud rate in the `Serial.begin()` function. This should match the baud rate selected in the serial monitor. Additionally, you can use different forms of the `Serial.print()` function, such as `Serial.print()` for printing without a new line or `Serial.println()` for printing with a new line. This can be useful when debugging different types of data or printing multiple values.
 
-Another important aspect is managing the amount of output being printed. Too many debug statements can slow down your code and affect its performance. It's best to only include necessary output statements and remove them once you have identified and fixed any issues.
+The "Serial" library offers even more functions that can be useful for debugging. For example, "Serial.read()" can be used to read input from the Serial Monitor, and "Serial.available()" can check for any incoming data. You can also use "Serial.setTimeout()" to set a timeout period for "Serial.read()" where if no data is received within the specified time, the function will return -1.
+
+To make your debug output more organized, you can also use different formatting options with the "println" and "print" functions. For example, using "\t" will add a tab space and "\n" will add a new line.
+
+It is important to note that using the "Serial" library for debugging can slow down your code's execution speed. To avoid this, you can use conditional statements to check if the Serial Monitor is connected before printing any debug output. For example, ```Arduino
+if(Serial) {
+  Serial.println("Debug output here");
+}
+``` 
 
 ## See Also
-For more information on printing debug output on Arduino, check out these resources:
 
-- [Arduino Serial Communication](https://www.arduino.cc/en/Serial/Print)
-- [Debugging Arduino Code](https://create.arduino.cc/projecthub/Arduino_Genuino/debugging-arduino-code-f6b42f)
-
-In conclusion, printing debug output on Arduino is a valuable tool for tracking the execution of your code and identifying any issues. Use it wisely and happy debugging!
+- [Arduino Documentation on Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Tutorial on Debugging with Serial Communication](https://www.instructables.com/Arduino-Debugging-with-Serial-Communication/)
+- [Tips for Effective Debugging in Arduino](https://www.makeuseof.com/tag/arduino-debugging-tips/)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricando una pagina web"
+html_title:           "Go: Scaricando una pagina web"
+simple_title:         "Scaricando una pagina web"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,70 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scaricare una pagina web è un'attività essenziale per molti programmatori, specialmente quelli che lavorano nel campo della creazione di applicazioni web. Con Go, il linguaggio di programmazione open source sviluppato da Google, è possibile automatizzare questo processo in modo semplice ed efficiente.
+Scaricare una pagina web può essere utile per ottenere informazioni o dati specifici contenuti nella pagina, o semplicemente per salvare una copia della pagina per poterla visualizzare offline.
 
 ## Come fare
 
-Per scaricare una pagina web utilizzando Go, è necessario utilizzare il pacchetto `net/http`. Questo pacchetto fornisce una serie di funzioni per effettuare richieste HTTP e ottenere il contenuto di una pagina web.
+Per scaricare una pagina web in Go, possiamo utilizzare la libreria standard `net/http` e la funzione `HttpGet` per effettuare una richiesta HTTP GET al server del sito web desiderato.
 
 ```Go
+package main
 import (
     "fmt"
-    "net/http"
-)
-
-func main() {
-    // Effettua una richiesta GET alla pagina web specificata
-    response, err := http.Get("https://nome-sito-web.com")
-
-    // Gestisce eventuali errori
-    if err != nil {
-        fmt.Println("Errore durante la richiesta:", err)
-    }
-
-    // Stampa il contenuto della pagina scaricata
-    fmt.Println("Contenuto della pagina:", response.Body)
-    
-    // Chiude il corpo della risposta HTTP
-    defer response.Body.Close()
-}
-```
-
-## Approfondimento
-
-Quando si effettua una richiesta HTTP utilizzando Go, è importante tenere presente che la risposta può essere ricevuta in più parti. Per gestire questa situazione, è possibile utilizzare il pacchetto `io` per concatenare le diverse parti della risposta:
-
-```Go
-import (
-    "fmt"
-    "io"
     "io/ioutil"
     "net/http"
 )
 
 func main() {
-    response, err := http.Get("https://nome-sito-web.com")
-
+    // Effettua una richiesta GET al sito web
+    response, err := http.Get("https://www.example.com")
     if err != nil {
-        fmt.Println("Errore durante la richiesta:", err)
+        panic(err)
     }
+    defer response.Body.Close()
 
-    // Utilizza il pacchetto io per concatenare le parti della risposta
+    // Legge il contenuto della risposta
     body, err := ioutil.ReadAll(response.Body)
     if err != nil {
-        fmt.Println("Errore durante la lettura della risposta:", err)
+        panic(err)
     }
 
-    fmt.Println("Contenuto della pagina:", string(body))
-
-    defer response.Body.Close()
+    // Stampa il contenuto della pagina web
+    fmt.Println(string(body))
 }
 ```
 
-Altre informazioni sui pacchetti `net/http` e `io` possono essere trovate nella documentazione ufficiale di Go.
+L'output del codice precedente sarà il codice HTML della pagina web. Possiamo anche specificare un file di destinazione per salvare il contenuto invece di stamparlo a schermo:
+
+```Go
+// Scrittura su file
+err = ioutil.WriteFile("pagina.html", body, 0644)
+if err != nil {
+    panic(err)
+}
+```
+
+## Deep Dive
+
+Oltre alla funzione `HttpGet` della libreria standard, esistono altre opzioni per scaricare una pagina web in Go. Ad esempio, la libreria `goquery` permette di analizzare il codice HTML della pagina e ottenere specifici elementi o dati.
+
+Possiamo anche utilizzare altri metodi HTTP oltre al `GET`, come ad esempio `POST` o `PUT`, e specificare parametri o header personalizzati nella nostra richiesta.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Go](https://golang.org/pkg)
-- [Tutorial su come effettuare richieste HTTP con Go](https://www.smashingmagazine.com/2021/04/http-requests-in-go/)
-- [Alcuni esempi di utilizzo del pacchetto `net/http`](https://golangbyexample.com/http-get-go/)
+- [Documentazione ufficiale di Go sulla libreria `net/http`](https://golang.org/pkg/net/http/)
+- [Libreria `goquery`](https://github.com/PuerkitoBio/goquery) per l'analisi del codice HTML
+- [Tutorial su come scaricare una pagina web in Go](https://tutorialedge.net/golang/making-http-requests-in-golang/) su Tutorialedge.net

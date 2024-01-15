@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Clojure: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Haluatko käsitellä dataa, joka on helppo lukea ja muokata? JSON on yleinen tiedostomuoto, joka sopii hyvin tähän tarkoitukseen ja Clojure tekee sen käytöstä vieläkin helpompaa!
 
-Miksi työskennellä JSON:n kanssa? JSON (JavaScript Object Notation) on yleisesti käytetty tietojen tallennusmuoto, joka on kätevä ja helppo lukea ja kirjoittaa. Se on myös lightweight ja sopii hyvin internet-sovellusten käyttöön, mikä tekee siitä erittäin suositun ohjelmointikielen Clojure yhteisössä.
+## Kuinka tehdä
+```clojure
+;; Luodaan uusi JSON-muotoinen data rakenteessa
+(def data {:nimi "Juha" :ika 32 :harrastukset ["luistelu" "kirjoittaminen" "retkeily"]})
 
-## Miten
+;; Muuntaa Clojure-rakenteen JSON-muotoon
+(prn (json/write-str data))
+;; {"nimi":"Juha","ika":32,"harrastukset":["luistelu","kirjoittaminen","retkeily"]}
 
-Toimiminen JSON:n kanssa Clojurella on hyvin yksinkertaista. Voit käyttää Clojure.data.json -kirjastoa muuntaaksesi Clojure mallit JSON muotoon ja päinvastoin. Seuraavassa on esimerkki:
+;; Lukee JSON-tiedoston ja tallentaa sen Clojure-muotoon
+(def muistiinpanot (json/read-str (slurp "muistiinpanot.json")))
+;; {:otsikot ["Ensimmäinen päivä" "Toinen päivä" "Kolmas päivä"] :merkintä 1 "Tunteet" "Onnellinen ja energinen"}
 
-```Clojure
-(require '[clojure.data.json :as json])
+;; Muokkaa JSON-dataa
+(def uusi-muistiinpano (assoc muistiinpanot :neljäs-päivä "Hopeakannus"))
+(prn (json/write-str uusi-muistiinpano))
+;; {"otsikot":["Ensimmäinen päivä","Toinen päivä","Kolmas päivä","Neljäs päivä"],"merkintä 1":"Tunteet","tyyppi":"Onnellinen ja energinen"}
 
-;; Convert Clojure map into JSON
-(json/write-str {:name "John" :age 30})
-
-;; Output: "{\"name\":\"John\",\"age\":30}"
-
-;; Convert JSON into Clojure map
-(json/read-str "{\"name\":\"John\",\"age\":30}")
-
-;; Output: {:name "John" :age 30}
+;; Poistaa tietoa JSON-datasta
+(def poistettu-muistiinpanot (dissoc muistiinpanot :merkintä 1))
+(prn (json/write-str poistettu-muistiinpanot))
+;; {"otsikot":["Ensimmäinen päivä","Toinen päivä","Kolmas päivä"],"tyyppi":"Onnellinen ja energinen"}
 ```
 
-JSON:n lukeminen ja kirjoittaminen Clojuren avulla on vaivatonta ja intuitiivista. Kirjastossa on myös muita hyödyllisiä funktioita, kuten `json/read` ja `json/write`, jotka käsittelevät tiedostoja tai IO-virtoja JSON-muodossa.
-
-## Syventyvä tutkimus
-
-JSON:n käyttö Clojurella voi olla monipuolisempaa kuin vain yksinkertainen muuntaminen malleja ja tekstimuotoisen datan välillä. Voit myös käyttää JSON tiedostoja suoraan Clojure koodissa Clojure data rakenteina. Tämä voidaan tehdä käyttämällä `json/read` funktiota luomaan Clojure mappeja tai vektoreita JSON-tiedostosta.
-
-Toinen kätevä tapa käsitellä JSON-dataa Clojurella on käyttää `cheshire` kirjastoa, joka tarjoaa lisäominaisuuksia, kuten automaattisen koodauksen ja dekoodauksen, sekä monimutkaisemman JSON-syntaksin käsittelyn.
+## Syventävä tarkastelu
+JSON-tiedostoja käytettäessä on tärkeää muistaa, että muuttujien nimet tulee olla merkkijonoina ja datarakenteet tulee olla johdettu Clojure-rakenteista. JSON-tiedostot ovat myös käteviä, kun haluat kommunikoida eri ohjelmointikielten välillä, sillä ne ovat melko universaaleja ja helppoja lukea.
 
 ## Katso myös
-
-- Virallinen Clojure.data.json dokumentaatio: https://clojure.github.io/clojure/data.json-api.html
-- Cheshire dokumentaatio: https://github.com/dakrone/cheshire/wiki
-
-Tee elämästäsi helpompaa JSON:n kanssa käyttämällä Clojurea ja näitä käteviä kirjastoja!
+- [Clojure virallinen kotisivu](https://clojure.org/)
+- [JSON muotoilun opas](https://www.json.org/) 
+- [Clojure asetustiedoston tallentaminen JSON-muotoon](https://github.com/lgrapenthin/clojure-bind/blob/master/doc/upstart.md)

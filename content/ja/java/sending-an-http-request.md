@@ -1,5 +1,6 @@
 ---
-title:                "Java: 「HTTPリクエストの送信」"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Java: 「HTTPリクエストの送信」"
 simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Java"
 category:             "Java"
@@ -9,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜHTTPリクエストを送信する必要があるのか
+## なぜ
 
-HTTPリクエストは、Webアプリケーションやインターネット上の情報にアクセスするときに使用される重要なツールです。例えば、Webページを閲覧する際に使用されるHTTPプロトコルは、HTTPリクエストを送信することでサーバーから必要な情報を取得します。また、WebサービスやAPIを使用する際にもHTTPリクエストは必要不可欠です。つまり、HTTPリクエストはインターネットを活用する上で非常に重要な役割を果たしているのです。
+なぜ私たちがHTTPリクエストを送信するのか？それは、ウェブサイトやアプリケーションから必要な情報を取得したり、データを送信したりするためです。HTTPリクエストは、インターネット上でデータをやりとりするために非常に重要です。
 
-## HTTPリクエストの送信方法
-
-HTTPリクエストを送信するには、Java言語で提供される標準ライブラリの`HttpURLConnection`クラスを使用します。以下のようにコードを記述することで、簡単にHTTPリクエストを送信することができます。
+## 方法
 
 ```Java
-URL url = new URL("https://example.com/api/example");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
-con.setRequestProperty("User-Agent", "Java HTTP Client");
-int responseCode = con.getResponseCode();
-System.out.println("Response Code: " + responseCode);
+// HTTPリクエストを送信するためには、HttpURLConnectionクラスを使用します。
+URL url = new URL("https://example.com"); // リクエストを送信する先のURLを指定します
+HttpURLConnection con = (HttpURLConnection) url.openConnection(); // URLへの接続を確立します
+con.setRequestMethod("GET"); // GETリクエストを送信するように設定します
+// レスポンスコードが200の場合、リクエストが成功したことを意味します
+if (con.getResponseCode() == 200) {
+    // リクエストからレスポンスデータを取得します
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    StringBuffer content = new StringBuffer();
+    while ((inputLine = in.readLine()) != null) {
+        // レスポンスデータを読み込んで文字列として追加します
+        content.append(inputLine);
+    }
+    in.close();
+    System.out.println(content.toString()); // レスポンスデータを表示します
+}
+con.disconnect(); // 接続を切断します
 ```
 
-このコードでは、`URL`クラスを使用してリクエスト先のURLを指定し、`HttpURLConnection`クラスを利用して接続を開き、`GET`メソッドを使用してリクエストを送信しています。また、リクエストヘッダーに`User-Agent`を設定していますが、これはリクエストを送信するクライアントを識別するためのものです。最後に、`getResponseCode()`メソッドを使用することでサーバーから返ってきたレスポンスコードを取得しています。
+## 深堀り
 
-このように`HttpURLConnection`クラスを使用することで、簡単にHTTPリクエストを送信することができます。
+HTTPリクエストは、ウェブサイトやアプリケーションでデータの送受信を行うためのプロトコルです。HTTPリクエストは、URLを使用して接続先のサーバーを指定し、リクエストの種類（GET、POST、PUTなど）やヘッダー、ボディなどの情報を付加して送信します。サーバー側では、受け取ったリクエストに応じて適切な処理を行い、レスポンスを返します。HTTPリクエストを簡単に実装するためには、JavaにはHttpURLConnectionクラスが用意されています。詳しい使用方法や異なるタイプのリクエストの実装などは、ドキュメントやそれぞれのAPIの仕様を確認することで理解することができます。
 
-## HTTPリクエストの詳細
+## 関連リンク
 
-HTTPリクエストを送信する際には、リクエストヘッダーの設定やリクエストボディの指定、コネクションの確立など、様々な詳細な設定が可能です。また、リクエストを送信した後にはレスポンスを受け取り、必要に応じて処理することもできます。
-
-さらに、HTTPリクエストにはGETやPOSTなど様々なメソッドがあり、それぞれ異なる用途に使用されます。例えば、GETメソッドは情報の取得に使用され、POSTメソッドは新しい情報を作成するために使用されます。
-
-また、HTTPリクエストにはバージョンやエンコーディングなど、さまざまな規格が存在します。これらを理解することで、より効率的なHTTPリクエストを送信することができるようになります。
-
-# 詳しくはこちらを参照してください
-
-- [JavaでHTTPリクエストを送信する方法](https://qiita.com/kawasima/items/963625c06df32f0576ed)
-- [JavaでHTTPリクエストを送信する方法の基礎知識](https://www.javadrive.jp/network/http/)
-- [Javaドキュメント-HttpURLConnectionクラス](https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/net/HttpURLConnection.html)
-
-# もっと詳しく学びたい人は
-
-- [Javaで学ぶHTTPリクエストの仕組み](
+- [Java SEドキュメント](https://docs.oracle.com/javase/jp/)
+- [HttpURLConnectionクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/net/HttpURLConnection.html)
+- [HTTPリクエストとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)

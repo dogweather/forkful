@@ -1,6 +1,7 @@
 ---
-title:                "Python: Écrire sur le flux d'erreur standard"
-simple_title:         "Écrire sur le flux d'erreur standard"
+title:                "Écrire sur la sortie standard"
+html_title:           "Python: Écrire sur la sortie standard"
+simple_title:         "Écrire sur la sortie standard"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'écriture sur l'erreur standard, ou stderr en anglais, peut sembler intimidante pour certains programmeurs débutants. Cependant, c'est une compétence essentielle à maîtriser si vous voulez devenir un développeur Python accompli. En écrivant sur l'erreur standard, vous pouvez facilement signaler et gérer les erreurs ou les exceptions dans votre code, ce qui rendra vos programmes plus robustes et plus fiables.
+Écrire dans la sortie d'erreur standard (standard error) peut sembler effrayant pour les débutants en programmation, mais c'est en fait une compétence importante à maîtriser. Cela peut vous aider à comprendre les erreurs dans votre code et à les résoudre plus facilement, ce qui vous permettra de devenir un meilleur programmeur.
 
-# Comment faire
+## Comment
 
-Pour écrire sur l'erreur standard en Python, vous pouvez utiliser la fonction "print" avec le paramètre "file=sys.stderr". Cela enverra le texte passé en argument sur l'erreur standard plutôt que sur la sortie standard.
+Pour écrire dans la sortie d'erreur standard en Python, vous pouvez utiliser la fonction intégrée "stderr" du module "sys". Elle accepte une chaîne de caractères comme argument et l'affichera dans la sortie d'erreur standard. Voici un exemple de code :
 
-Un exemple simple de code utilisant cette méthode pourrait ressembler à ceci :
-
-```
+```Python
 import sys
-
-print("Je vais être écrit sur l'erreur standard", file=sys.stderr)
+sys.stderr.write("Une erreur s'est produite !")
 ```
 
-La sortie de ce code serait :
+La sortie sera alors :
 
 ```
-Je vais être écrit sur l'erreur standard
+Une erreur s'est produite !
 ```
 
-Remarque : Il est important de noter que si votre code n'a aucun bug ou exception, rien ne sera imprimé sur l'erreur standard.
+Cette fonction peut être utile lorsque vous voulez afficher un message d'erreur spécifique dans votre code, au lieu de simplement laisser le programme planter.
 
-# Profonde plongée
+## Plongée en profondeur
 
-Maintenant que vous savez comment écrire sur l'erreur standard en Python, il est intéressant de comprendre comment cela fonctionne en interne. En fait, la fonction "print" avec le paramètre "file" n'écrit pas directement sur l'erreur standard, mais sur un objet "file" Python qui correspond à l'erreur standard. Cela signifie que vous pouvez également utiliser des opérations de fichiers telles que "write" ou "writelines" pour écrire du contenu sur l'erreur standard.
+La sortie d'erreur standard en Python est également utile pour déboguer votre code. Lorsqu'une erreur se produit, vous pouvez utiliser la fonction "print" pour afficher des messages dans la sortie standard, mais cela peut interférer avec le déroulement normal de votre programme. En écrivant dans la sortie d'erreur standard, vous pouvez séparer les messages d'erreur du reste de votre code et les afficher sans perturber l'exécution du programme.
 
-De plus, contrairement à l'erreur standard en C, l'erreur standard en Python est un objet dynamique pouvant être redéfini par l'utilisateur. Cela signifie que vous pouvez changer l'objet "sys.stderr" pour diriger l'erreur standard vers un fichier spécifique ou même vers un journal personnalisé.
+De plus, en utilisant la redirection de la sortie d'erreur standard vers un fichier, vous pouvez enregistrer les erreurs dans un fichier pour les examiner plus tard et les corriger. Cela peut être particulièrement utile lorsque votre programme est exécuté sur un serveur distant sans accès à la sortie standard en direct.
 
-# Voir aussi
+## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur l'écriture sur l'erreur standard en Python :
-
-* [La documentation officielle de Python sur "print"](https://docs.python.org/fr/3/library/functions.html#print)
-* [Un tutoriel sur la redirection de l'erreur standard avec "sys.stderr"](https://www.geeksforgeeks.org/redirecting-python-stderr-and-stdout-to-a-log-file/)
-* [Un article sur la personnalisation de l'erreur standard en Python](https://www.codementor.io/@arpitbhayani/personalize-your-python-exception-using-sys-exc_info-stack-and-friends-aibdjrnx6)
+- Documentation officielle de Python sur la fonction "stderr" : https://docs.python.org/fr/3/library/sys.html#sys.stderr
+- Tutoriel sur les erreurs et exceptions en Python : https://www.programiz.com/python-programming/exceptions
+- Plus d'informations sur la redirection de la sortie d'erreur standard en utilisant la ligne de commande : https://www.geeksforgeeks.org/redirecting-stderr-stdout-stderr/

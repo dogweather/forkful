@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Gleam: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att jämföra två datum är en viktig del av många programmeringsprojekt. Det kan hjälpa till att kontrollera om ett datum kommer före eller efter ett annat, eller om de är lika.
 
-## Hur man gör det
-Att jämföra två datum i Gleam är ganska enkelt. Här är ett exempel på hur du kan göra det:
+Att jämföra två olika datum kan vara användbart i många olika situationer, både inom professionell programmering och för personligt bruk. Det kan hjälpa dig att hålla koll på tidsintervaller, kontrollera giltigheten av ett datum eller utföra olika beräkningar baserat på datum.
 
+## Så här gör du
+
+```Gleam
+import gleam/time
+
+let today = time.now()
+
+let tomorrow = today + time.Day
+let yesterday = today - time.Day
+
+// Jämföra två datum för likhet
+today == tomorrow
+// Output: false
+
+// Jämföra två datum för ordning, första datumet först
+yesterday < today
+// Output: true
+
+// Beräkna antalet dagar mellan två datum
+let diff = tomorrow - yesterday
+// Output: 2
+
+// Kontrollera giltigheten av ett datum
+let validDate = time.from_days(2021, 4, 31)
+// Output: false, eftersom april 2021 inte har 31 dagar
 ```
-Gleam.mod
-import gleam/datetime.{Date}
-
-pub fn compare_dates(date1: Date, date2: Date) {
-   if Date.is_before(date1, date2) {
-      // date1 är innan date2
-   } else if Date.is_equal(date1, date2) {
-      // date1 och date2 är samma dag
-   } else {
-      // date1 är efter date2
-   }
-}
-```
-
-I detta exempel använder vi funktionerna `Date.is_before` och `Date.is_equal` för att jämföra två datum och utföra en åtgärd baserat på resultatet.
 
 ## Djupdykning
-När du jämför två datum bör du också vara medveten om hur tidszoner och sommartid påverkar resultatet. I Gleams standardbibliotek finns även funktioner för att hantera dessa situationer, såsom `Date.adjust_for_timezone` och `Date.adjust_for_summertime`.
 
-## Se också
-För mer information om hur du hanterar datum i Gleam, se dessa länkar:
+Det finns flera olika metoder för att jämföra datum i Gleam. En av de mest användbara är att använda operatorerna `==` (lika med) och `<` (mindre än). Dessa kan användas för att jämföra datum på olika sätt som visas i exemplet ovan.
 
-- [Gleam dokumentation för datetime](https://gleam.run/documentation/std-lib-datetime/)
-- [Gleam-datum-paketet](https://github.com/gleam-lang/gleam-date)
+Gleam erbjuder också funktioner som `difference_between` för att beräkna antalet enheter (t.ex. dagar eller månader) mellan två datum och `is_valid_date` för att kontrollera giltigheten av ett angivet datum.
 
-Tack för att du läste! Fortsätt lära dig och utveckla med Gleam! 🚀
+## Se även
+
+- Official Gleam documentation for the `time` module: https://gleam.run/documentation/stdlib/time.html
+- Date comparison in other programming languages: https://www.exploringbinary.com/date-comparisons-in-different-programming-languages/

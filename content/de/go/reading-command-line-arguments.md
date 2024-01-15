@@ -1,6 +1,7 @@
 ---
-title:                "Go: Das Lesen von Befehlszeilen-Argumenten"
-simple_title:         "Das Lesen von Befehlszeilen-Argumenten"
+title:                "Das Lesen von Befehlszeilenargumenten"
+html_title:           "Go: Das Lesen von Befehlszeilenargumenten"
+simple_title:         "Das Lesen von Befehlszeilenargumenten"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,39 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Go-Programmierung. Wenn du wissen möchtest, wie du deine Anwendungen anpasst und erweiterst, dann ist das Verständnis von Befehlszeilenargumenten entscheidend.
+Wenn Sie Go programmieren, werden Sie früher oder später auf die Anforderung stoßen, Befehlszeilenargumente zu lesen. Dies ist besonders nützlich, wenn Sie Ihre Programme anpassungsfähiger machen möchten, da Benutzer verschiedene Einstellungen durch die Befehlszeile übergeben können.
 
-## Wie man es macht
+## Wie gehts
 
-Das Lesen von Befehlszeilenargumenten in Go ist einfach und unkompliziert. Mit dem `flag` Paket kannst du ganz einfach Argumente aus der Befehlszeile in dein Programm einlesen.
-
-```Go
-import "flag"
-```
-
-Als nächstes musst du die Argumente definieren, die du lesen möchtest. Zum Beispiel könnten wir eine Variable `name` definieren, die den Namen des Benutzers aufnehmen soll.
+Um Befehlszeilenargumente in Go zu lesen, können Sie die `os.Args` Funktion verwenden. Diese gibt eine `[]string` zurück, in der jedes Element ein Befehlszeilenargument darstellt. Beispiel:
 
 ```Go
-var name string
+func main() {
+    args := os.Args
+    fmt.Println(args)
+}
 ```
 
-Jetzt müssen wir nur noch das Argument mit dem `flag` Paket verknüpfen und das Programm ausführen.
+Wenn Sie nun Ihr Programm mit dem Befehlszeilenargument `foo bar` aufrufen, wird die Ausgabe `["meinprogramm" "foo" "bar"]` sein.
+
+Sie können auch auf bestimmte Argumente in der `[]string` zugreifen, indem Sie den Index verwenden. Beispiel:
 
 ```Go
-flag.StringVar(&name, "name", "", "Gib deinen Namen ein.")
-flag.Parse()
+func main() {
+    args := os.Args
+    fmt.Println(args[0]) // gibt "meinprogramm" aus
+    fmt.Println(args[1]) // gibt "foo" aus
+}
 ```
 
-Du kannst nun den Wert von `name` in deinem Programm verwenden. Wenn wir beispielsweise den Befehl `go run main.go -name Max` ausführen, wird `name` auf den Wert "Max" gesetzt.
+Dies ermöglicht es Ihnen, auf spezifische Argumente in Ihrem Programm zuzugreifen und diese zur Laufzeit zu verwenden.
 
-## Tiefentauchen
+## Tiefere Einblicke
 
-Das `flag` Paket bietet viele weitere Möglichkeiten, um Befehlszeilenargumente zu lesen und zu verarbeiten. Du kannst zum Beispiel auch verschiedene Datentypen wie Integers oder Booleans einlesen oder standardmäßige Werte für Argumente festlegen.
+Sie können auch die `flag`-Paket in Go verwenden, um Befehlszeilenargumente zu lesen. Dies ermöglicht es Ihnen, auch Argumente mit verschiedenen Flags zu übergeben und diese bequem beim Ausführen Ihres Programms zu überprüfen. Beispiel:
 
-Weitere Informationen findest du in der offiziellen [Dokumentation des `flag` Pakets](https://golang.org/pkg/flag/).
+```Go
+func main() {
+    name := flag.String("name", "Gopher", "Name of user")
+    age := flag.Int("age", 25, "Age of user")
+    flag.Parse()
+    fmt.Printf("Hello %s, you are %d years old!", *name, *age)
+}
+```
+
+Wenn Sie nun Ihr Programm mit dem Befehlszeilenargument `--name Alice --age 30` aufrufen, wird die Ausgabe `Hello Alice, you are 30 years old!` sein.
+
+Sie können auch benutzerdefinierte Flags und Argumente erstellen, indem Sie die `flag`-Paket weiter erkunden. Dies kann nützlich sein, wenn Sie ein Programm mit vielen verschiedenen Einstellungen und Optionen haben.
 
 ## Siehe auch
 
-- [Offizielle Go-Dokumentation](https://golang.org/doc/)
-- [Go-Forum auf Reddit](https://www.reddit.com/r/golang/)
-- [Go-Blog](https://blog.golang.org/)
+- [Die offizielle Dokumentation zu os.Args](https://golang.org/pkg/os/#Args)
+- [Die offizielle Dokumentation zum flag-Paket](https://golang.org/pkg/flag/)

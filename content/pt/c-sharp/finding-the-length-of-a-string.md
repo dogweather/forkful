@@ -1,6 +1,7 @@
 ---
-title:                "C#: Encontrando o comprimento de uma sequência"
-simple_title:         "Encontrando o comprimento de uma sequência"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C#: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,54 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que encontrar o comprimento de uma string?
 
-Ao escrever um programa em C#, muitas vezes é necessário manipular strings, ou seja, sequências de caracteres. Saber a quantidade de caracteres em uma string pode ser útil em diversas situações, como validação de entradas do usuário ou formatação de dados. Neste post, vamos explorar como encontrar o comprimento de uma string em C#.
+Encontrar o comprimento de uma string é uma tarefa comum em linguagens de programação, incluindo C#. Saber como fazer isso pode ser útil em muitos cenários, como validar o input do usuário, manipular dados em arquivos e muito mais.
 
-## Como Fazer
+## Como fazer isso?
 
-Existem duas maneiras de encontrar o comprimento de uma string em C#: usando o método `Length` do objeto `string` ou usando o método `Count` da classe `Enumerable`.
-
-Primeiro, vejamos um exemplo usando o método `Length`:
+Para encontrar o comprimento de uma string em C#, pode-se utilizar o método `Length`, que retorna o número de caracteres da string. Veja um exemplo abaixo:
 
 ```C#
 string nome = "Maria";
-
-int comprimento = nome.Length;
-
-Console.WriteLine($"O comprimento da string é: {comprimento}");
-
-// Output: O comprimento da string é: 5
+Console.WriteLine(nome.Length); // output: 5
 ```
 
-No exemplo acima, declaramos uma variável `string` chamada `nome` e atribuímos o valor "Maria" a ela. Em seguida, usamos o método `Length` para obter o comprimento da string e o armazenamos em uma variável `int` chamada `comprimento`. Por fim, imprimimos o resultado na tela.
+Este método é sensível a maiúsculas e minúsculas, ou seja, caracteres com acentos e letras maiúsculas serão contados como um caractere. Também é importante notar que o índice da string começa em 0, ou seja, o último caractere terá o índice igual ao comprimento da string -1.
 
-Agora, vejamos um exemplo usando o método `Count`:
+Além disso, o método `Length` também pode ser utilizado em outras estruturas de dados, como arrays, listas e dicionários, retornando o número de elementos na estrutura.
+
+## Deep Dive
+
+Em C#, strings são imutáveis, o que significa que uma vez criada, seu conteúdo não pode ser alterado. Isso pode ser importante ao trabalhar com o comprimento de uma string, pois, como o método `Length` não faz nenhuma alteração, seu valor sempre permanecerá o mesmo.
+
+Para garantir que uma string tenha um comprimento específico, pode-se utilizar o método `PadLeft` ou `PadRight`, que adicionam espaços vazios ou caracteres definidos para atingir o comprimento desejado.
+
+Além disso, podemos acessar elementos individuais de uma string utilizando o operador `[]`, passando o índice desejado. Por exemplo:
 
 ```C#
-string frase = "Hoje é um lindo dia";
-
-int comprimento = Enumerable.Count(frase);
-
-Console.WriteLine($"O comprimento da string é: {comprimento}");
-
-// Output: O comprimento da string é: 21
+string frase = "Olá, mundo!";
+Console.WriteLine(frase[4]); // output: a
 ```
 
-Aqui, declaramos uma variável `string` chamada `frase` e atribuímos o valor "Hoje é um lindo dia" a ela. Usamos o método `Count` da classe `Enumerable` para obter o comprimento da string e o armazenamos em uma variável `int` chamada `comprimento`. Por fim, imprimimos o resultado na tela.
+Também é possível utilizar o método `Substring` para obter uma parte específica de uma string, passando o índice de início e o comprimento desejado. Por exemplo:
 
-Agora que sabemos como encontrar o comprimento de uma string em C#, vamos nos aprofundar um pouco mais neste assunto.
+```C#
+string palavra = "programação";
+Console.WriteLine(palavra.Substring(0,4)); // output: prog
+```
 
-## Profundidade
+Existem mais métodos e técnicas para trabalhar com o comprimento de uma string em C#, mas as principais já foram abordadas aqui. Agora, é hora de colocar esse conhecimento em prática!
 
-Ao usar o método `Length` para encontrar o comprimento de uma string, é importante lembrar que ele conta o número de caracteres, incluindo espaços em branco e símbolos especiais. Isso pode ser útil em alguns casos, mas pode também causar diferenças no resultado esperado. Por exemplo, se uma string contém um caractere especial de escape, ele também será contado no resultado do método `Length`.
+## Veja também
 
-Já o método `Count`, da classe `Enumerable`, permite que você especifique um predicado como parâmetro, o que pode ser útil para fazer uma contagem mais precisa. Por exemplo, você pode usar o método `Count` para contar apenas as vogais em uma string, ignorando os espaços em branco e outros caracteres.
-
-Em geral, ambos os métodos são úteis para encontrar o comprimento de uma string em C#, mas é importante entender suas diferenças e escolher o mais adequado para cada situação.
-
-## Veja Também
-
-- Documentação oficial sobre o método `Length` (em inglês): https://docs.microsoft.com/en-us/dotnet/api/system.string.length
-- Documentação oficial sobre o método `Count` (em inglês): https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count
-- Tutorial sobre strings em C# (em português): https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/
+-Como trabalhar com strings em C#: <https://www.w3schools.com/cs/cs_strings.asp>
+-Documentação oficial do método `Length`: <https://docs.microsoft.com/en-us/dotnet/api/system.string.length>
+-O guia completo de strings em C#: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/strings>

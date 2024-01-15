@@ -1,6 +1,7 @@
 ---
-title:                "C++: 文字列の長さを見つける"
-simple_title:         "文字列の長さを見つける"
+title:                "文字列の長さを求める"
+html_title:           "C++: 文字列の長さを求める"
+simple_title:         "文字列の長さを求める"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,51 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の長さを求めることに興味がある理由は、プログラミングにおいて文字列操作が非常に重要だからです。文字列の長さを知ることで、さまざまなテキスト処理が容易になります。
+文字列の長さを求めることに関わる理由は、プログラムで文字列を処理する必要があるからです。例えば、ユーザーからの入力を受け付ける場合や、文字列を比較する場合などです。文字列の長さを知ることで、より効率的にプログラムを構築することができます。
 
 ## 方法
-
-文字列の長さを求める方法は様々ありますが、C++言語では`strlen`関数を使用することが一般的です。以下のコードは、文字列の長さを求める基本的な例です。
-
-```C++
-#include <iostream>
-#include <cstring>
-
-int main() {
-    char str[] = "こんにちは、世界！";
-    int length = strlen(str); //文字列の長さを求める
-    std::cout << "文字列の長さは" << length << "です。" << std::endl;
-    return 0;
-}
-```
-
-上記のコードを実行すると、次のような出力が得られます。
-
-```
-文字列の長さは9です。
-```
-
-また、`string`型でも`length`関数を使用することで文字列の長さを求めることができます。
 
 ```C++
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 int main() {
-    std::string str = "こんにちは、世界！";
-    int length = str.length(); //文字列の長さを求める
-    std::cout << "文字列の長さは" << length << "です。" << std::endl;
+    // 文字列の長さを求める例
+    string str = "Hello World";
+    int length = str.size();
+
+    cout << "The length of the string is: " << length << endl;
+
     return 0;
 }
 ```
 
-同じく、上記のコードを実行すると同じ結果が得られます。
+上記のようなコードを使用することで、文字列の長さを求めることができます。まず、"string"ライブラリをインポートし、"using namespace std;"を使用することで、プログラム内でstringを使用することができます。そして、"size()"関数を使用することで、文字列の長さを取得できます。上記の例では、文字列 "Hello World"の長さが求められ、その結果がコンソールに表示されます。
 
 ## ディープダイブ
 
-`strlen`関数や`length`関数の原理は、文字列の終端を示す特殊な文字の位置を探索することで、その位置までの文字数をカウントすることによって行われます。また、文字列の長さを求める際には文字コードの扱いにも注意が必要です。
+文字列の長さを求めるためには、プログラムで文字列を扱うにあたっての基本的な知識が必要となります。文字列は、単なる文字の配列としてメモリ上に格納されています。そのため、文字列の長さは、配列の要素数を表す整数として求めることができます。また、C++では、文字列の長さを取得するためにいくつかの関数が用意されています。"size()"関数の他には、"length()"や"capacity()"などの関数もありますので、使用する際には適切な関数を選択することが重要です。
 
-## また見る
+## 関連リンク
 
-- [C++言語の文字列操作](https://ja.wikipedia.org/wiki/C%2B%2B%E8%A8%80%E8%AA%9E%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E6%93%8D%E4%BD%9C)
-- [stringクラスのメソッド一覧](http://www.cplusplus.com/reference/string/string/)
+- [C++の文字列の長さを取得する方法](https://www.sejuku.net/blog/13606)
+- [string - C++ Reference](https://www.cplusplus.com/reference/string/string/)

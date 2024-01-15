@@ -1,6 +1,7 @@
 ---
-title:                "C++: Å tolke html"
-simple_title:         "Å tolke html"
+title:                "Analysering av HTML"
+html_title:           "C++: Analysering av HTML"
+simple_title:         "Analysering av HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,50 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvis du noen gang har jobbet med å hente data fra et nettsted, har du sannsynligvis støtt på HTML. Dette språket brukes til å strukturere og formatere innholdet på nettsider. Ved å lære å parse HTML med C++, kan du hente ut spesifikke data fra nettsider og bruke det til å bygge applikasjoner, nettsteder eller automatisere oppgaver.
 
- Om du noen gang har jobbet med web design, nettutvikling eller datainnhenting, så har du sannsynligvis kommet over HTML-koding. HTML er det språket som brukes til å lage nettsider, og er dermed utrolig viktig for alle som jobber med teknologi. Men hva om du ønsker å hente ut spesifikk informasjon fra en nettside, slik som overskrifter eller prislisten til en nettbutikk? Her kommer parsing av HTML inn i bildet.
-
-## Slik gjør du det
-
-For å kunne parse HTML, trenger du et programmeringsspråk som støtter dette. For denne guiden vil vi fokusere på hvordan dette kan gjøres i C++. Det første du trenger er et parserverktøy, som for eksempel "libxml2". Deretter kan du kode følgende i et nytt C++-prosjekt:
+## Hvordan gjøre det
+For å parse HTML med C++, trenger du et bibliotek kalt `libxml2` som kan lastes ned fra nettet. Når du har lastet ned og installert biblioteket, kan du bruke følgende kode for å hente og parse HTML fra en nettside:
 
 ```C++
-#include <iostream>
-#include <libxml/parser.h>
-using namespace std;
+#include <stdio.h>
+#include <libxml/HTMLparser.h>
 
-int main() {
+int main()
+{
+    // Hent HTML-kildekode fra en nettside
+    const char* htmlKilde = "<html><body><h1>Velkommen</h1><p>Dette er en test</p></body></html>";
 
-   // Åpne nettsiden du ønsker å parse
-    string nettside = "https://www.example.com";
-    
-    // Opprett en ny XML-parser
-    htmlParserCtxtPtr parser = htmlNewParserCtxt();
-    
-    // Les inn dokumentet
-    xmlDocPtr dokument = htmlCtxtReadFile(parser, nettside.c_str(), NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING| HTML_PARSE_NONET);
-    
-    // Hent ut tittel og skriv ut
-    xmlChar *tittel = (xmlChar *)dokument->name;
-    cout << "Tittel: " << tittel << endl;
+    // Opprett en HTML-parserkontekst
+    htmlParserCtxtPtr parser = htmlCreateMemoryParserCtxt(htmlKilde, strlen(htmlKilde));
+
+    // Analyser HTML-kildekoden
+    htmlDocPtr doc = htmlCtxtReadDoc(parser, NULL, "UTF-8", HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+
+    // Hent dokumentets rotelement (html-taggen)
+    xmlNodePtr rotelement = xmlDocGetRootElement(doc);
+
+    // Hent og skriv ut innholdet i alle <p>-tagger
+    for (xmlNodePtr node = rotelement->children; node != NULL; node = node->next) 
+    {
+        if (node->type == XML_ELEMENT_NODE && xmlStrcmp(node->name, (const xmlChar *) "p") == 0) 
+        {
+            xmlChar *innhold = xmlNodeGetContent(node);
+            printf("%s\n", innhold);
+            xmlFree(innhold);
+        }
+    }
     
     // Frigjør minne
-    xmlFreeDoc(dokument);
-    xmlCleanupParser();
+    htmlFreeDoc(doc);
+    htmlFreeParserCtxt(parser);
+    
     return 0;
 }
 ```
-
-Koden over vil parse nettsiden du har valgt og skrive ut tittelen på siden til terminalen din. Merk at dette bare er et enkelt eksempel, og du kan parse og hente ut mye mer informasjon fra en nettside ved å bruke riktig metoder og funksjoner.
+Dette enkle eksempelet viser hvordan du kan hente ut og skrive ut innholdet i alle `<p>`-tagger fra et HTML-dokument. Du kan bygge videre på dette eksempelet for å hente ut andre typer data eller for å bygge mer avanserte applikasjoner.
 
 ## Dypdykk
+Parsing av HTML med C++ kan være en kompleks oppgave, spesielt hvis du ønsker å håndtere flere forskjellige typer HTML-dokumenter og tags. Du kan bruke `libxml2` til å håndtere en rekke forskjellige typer HTML, inkludert HTML5, XHTML og XML. Biblioteket har også mange funksjoner som kan hjelpe deg med å håndtere feil i HTML-dokumenter og konvertere data til forskjellige formater.
 
-For å virkelig forstå hvordan parsing av HTML fungerer, må du ha kjennskap til hvordan HTML-koder er strukturert og hva de ulike kodene betyr. HTML består av ulike elementer, som for eksempel "head" som inneholder metadata om siden, og "body" som inneholder selve innholdet på siden. For å kunne hente ut informasjon, må man bruke forskjellige metoder og funksjoner for å navigere gjennom disse elementene og finne det man er ute etter.
+Et viktig konsept å forstå når du jobber med parsing av HTML er DOM (Document Object Model). Dette er en representering av HTML-dokumentet som et tre av objekter, som gjør det enkelt å navigere gjennom dokumentet og hente ut ønsket data. `libxml2` bruker også DOM-prinsipper i sin parsing.
 
-En annen viktig ting å huske på er at nettsider kan endre seg, og dermed kan også strukturen av HTML-koden endre seg. Dette kan føre til utfordringer når man skal parse og hente ut informasjon fra en nettside. Det er derfor viktig å forstå hvordan man kan håndtere endringer og holde parseren oppdatert.
+Det kan også være lurt å sjekke ut følgende ressurser for å lære mer om parsing av HTML med C++:
 
-## Se også 
+- [libxml2 hjemmeside](http://www.xmlsoft.org/html/index.html)
+- [libxml2 dokumentasjon](http://www.xmlsoft.org/html/libxml-HTMLparser.html)
+- [W3Schools - HTML tutorial](https://www.w3schools.com/html/default.asp)
+- [Stack Overflow - "parsing html with c++"](https://stackoverflow.com/questions/5328911/parsing-html-with-c)
 
-- [libxml2 biblioteket](https://xmlsoft.org/)
-- [HTML-tag referanse](https://www.w3schools.com/tags/default.asp)
-- [C++ ressurser](https://www.learncpp.com/)
+## Se også
+- [Parsing JSON i C++](https://github.com/EtienneDepaulis/cpp-json-parsing-article)

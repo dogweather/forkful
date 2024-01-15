@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "TypeScript: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,37 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek chciałeś wyświetlić zawartość pliku tekstowego w swoim programie? Może chcesz przetworzyć dane zawarte w pliku lub po prostu je wyświetlić dla użytkownika. W tym artykule dowiesz się, jak odczytywać pliki tekstowe w języku TypeScript i jakie metody są dostępne do tego celu.
+Jeśli jesteś programistą lub uczysz się programowania, prawdopodobnie spotykasz się z różnymi rodzajami plików, w tym także plikami tekstowymi. Czy kiedykolwiek zastanawiałeś się, jak odczytać zawartość pliku tekstowego w swoim kodzie? W tym artykule dowiesz się, dlaczego warto nauczyć się tej umiejętności i jak to zrobić w TypeScript.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-W TypeScript możemy odczytać pliki tekstowe za pomocą wbudowanego modułu `fs`, który dostarcza metody do odczytu i zapisu plików. Najpierw musimy zaimportować ten moduł do naszego programu:
-
-```TypeScript
-import * as fs from 'fs';
-```
-
-Następnie możemy wywołać metodę `readFileSync`, która odczyta plik i zwróci jego zawartość jako ciąg znaków:
+Oto kilka przykładów kodu, które pokazują, jak odczytywać pliki tekstowe w TypeScript:
 
 ```TypeScript
-const fileContents = fs.readFileSync('nazwa_pliku.txt', 'utf-8');
+import fs from "fs";
+
+// Funkcja asynchroniczna do odczytywania pliku tekstowego
+async function readTextFile(filename: string) {
+  try {
+    // Wykorzystanie fs.promises.readFile() do odczytania pliku
+    const data = await fs.promises.readFile(filename, "utf8");
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Wywołanie funkcji z nazwą pliku
+readTextFile("tekstowy.txt");
 ```
 
-Teraz możemy wyświetlić zawartość pliku w konsoli lub przetwarzać ją dalej w naszym programie. W przypadku większych plików zaleca się korzystanie z metody `createReadStream`, która pozwala na odczyt pliku w postaci strumienia danych.
+Po uruchomieniu tego kodu, powinieneś zobaczyć zawartość pliku tekstowego "tekstowy.txt" w konsoli.
 
-```TypeScript
-const readStream = fs.createReadStream('nazwa_pliku.txt', 'utf-8');
-readStream.on('data', (chunk) => {
-  console.log(chunk);
-});
-```
+Jeśli chcesz odczytać plik synchronicznie, użyj metody fs.readFileSync(). Pamiętaj jednak, że ta metoda blokuje wykonanie kodu aż do momentu odczytania całego pliku, więc lepiej jest używać jej tylko w prostych scenariuszach.
 
-## Głębszy Wgląd
+Jeśli chcesz odczytać plik z danych binarnych, możesz użyć metody fs.readFile() z parametrem "utf8" zmienionym jako "binary". Możesz także użyć opcji "encoding" z wartością "binary".
 
-Podczas odczytywania plików tekstowych w TypeScript możemy wykorzystać także wbudowany moduł `path`, który pozwala na operacje na ścieżkach plików. Możemy również skorzystać z wbudowanego modułu `util`, aby przetworzyć dane odczytane z pliku w postaci bufora do czytelniejszej formy.
+## Deep Dive
 
-## Zobacz też
+Metoda fs.promises.readFile() zwraca obiekt typu Promise, który możesz obsłużyć przy użyciu instrukcji async/await lub metody .then(). Po zwróceniu zawartości pliku, możesz przetworzyć ją według własnych potrzeb i wykorzystać w swoim kodzie.
 
-- [Dokumentacja modułu fs](https://nodejs.org/api/fs.html)
-- [Dokumentacja modułu path](https://nodejs.org/api/path.html)
-- [Dokumentacja modułu util](https://nodejs.org/api/util.html)
+Pamiętaj także, że możesz manipulować plikami tekstowymi w TypeScript za pomocą wielu innych metod z modułu fs, takich jak tworzenie, usuwanie czy zmiana nazwy pliku.
+
+Jeśli potrzebujesz więcej informacji na temat operacji na plikach w TypeScript, możesz przejrzeć dokumentację na stronie https://nodejs.org/api/fs.html.
+
+## Zobacz także
+
+- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html - informacje o nowych funkcjach w zakresie operacji plikowych w TypeScript
+- https://www.digitalocean.com/community/tutorials/nodejs-reading-writing-files - przykłady użycia metod do operacji na plikach w Node.js
+- https://www.typescriptlang.org/docs - oficjalna dokumentacja TypeScript

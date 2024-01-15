@@ -1,6 +1,7 @@
 ---
-title:                "Java: Завантаження веб-сторінки."
-simple_title:         "Завантаження веб-сторінки."
+title:                "Завантаження веб-сторінки"
+html_title:           "Java: Завантаження веб-сторінки"
+simple_title:         "Завантаження веб-сторінки"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,55 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"
-## Чому
-Завантаження веб-сторінки є важливою частиною програмування веб-додатків. Це може бути корисно для отримання необхідної інформації з Інтернету або для автоматизації процесів.
+## Для чого
+Завантаження веб-сторінки може бути корисним для отримання важливої інформації або автоматизації задач.
 
-## Як зробити
-Для завантаження веб-сторінки використовується клас `URL` з пакету `java.net`. Спочатку потрібно створити об'єкт URL, передавши у конструктор адресу веб-сторінки. Далі можна використовувати об'єкт для отримання потоку вводу із сторінки та зчитування її вмісту. Наприклад:
+## Як
+Код для завантаження веб-сторінки виглядає наступним чином:
 
 ```java
+import java.io.*;  
 import java.net.*;
-import java.io.*;
 
-public class DownloadWebPage {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("https://example.com");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+public class DownloadPage {  
+    public static void main(String[] args)  throws Exception {    
+        String url = "https://example.com"; 
+        URL website = new URL(url); 
+        URLConnection connection = website.openConnection(); 
+        BufferedReader in = new BufferedReader( 
+                                new InputStreamReader( 
+                                    connection.getInputStream())); 
+        String inputLine; 
+        while ((inputLine = in.readLine()) != null)  
+            System.out.println(inputLine); 
+        in.close(); 
+    } 
+} 
+```
+Приклад введення:
 
-        String inputLine;
-        while ((inputLine = reader.readLine()) != null)
-            System.out.println(inputLine);
-        
-        reader.close();
-    }
-}
+```
+https://example.com
 ```
 
-В результаті виконання програми, буде виведено вміст сторінки на екран.
+Виведе веб-сторінку в консолі.
 
-## Глибоке дослідження
-Завантаження веб-сторінок також може бути корисним для виконання HTTP запитів та оброблення відповідей сервера. Для цього можна використати бібліотеку `java.net.HttpURLConnection` або `java.net.HttpsURLConnection`. Ці класи надають можливість відправляти різні типи запитів (GET, POST, PUT і т.д.) та отримувати відповіді сервера. Також можна встановлювати заголовки запиту і читати заголовки відповіді.
+## Поглиблення
+У Java є багато бібліотек для завантаження веб-сторінок, таких як JSoup і Apache HttpClient. Ці бібліотеки дозволяють здійснювати більш складні дії, такі як робота з формами та куки.
 
-Наприклад:
-
-```java
-URL url = new URL("https://example.com");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET"); // встановлюємо тип запиту
-int responseCode = con.getResponseCode();
-System.out.println("Код відповіді: " + responseCode);
-
-BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-String inputLine;
-while ((inputLine = reader.readLine()) != null)
-    System.out.println(inputLine);
-reader.close();
-```
-
-Це дозволить отримати вміст сторінки, а також перевірити статус виконання запиту (наприклад, чи був успішною відповідь сервера).
-
-## Дивись також
-- [Документація Java з класом URL](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Документація Java з доступом до ресурсів по URL](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
-- [Документація Java з HTTPUrlConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+## Дивіться також
+- [Офіційна документація Java](https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html)
+- [JSoup](https://jsoup.org/)
+- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/)

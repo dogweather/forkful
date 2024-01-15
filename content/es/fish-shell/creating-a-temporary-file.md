@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Creando un archivo temporal"
+title:                "Creando un archivo temporal"
+html_title:           "Fish Shell: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,53 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Cuando estamos programando en Fish Shell, a menudo nos encontramos necesitando crear archivos temporales durante la ejecución del código. Estos archivos temporales pueden ser útiles para almacenar información temporalmente o para realizar operaciones específicas de forma más eficiente. En este artículo, aprenderemos cómo crear y utilizar archivos temporales en Fish Shell.
+Crear archivos temporales es útil cuando necesitamos almacenar información temporalmente en nuestro sistema. Puede ser útil para aplicaciones que requieren guardar datos temporales durante la ejecución del programa, o para realizar pruebas y experimentos sin comprometer los archivos permanentes.
 
 ## Cómo hacerlo
 
-Para crear un archivo temporal en Fish Shell, utilizaremos el comando `mktemp`. Este comando creará un archivo temporal con un nombre único y lo guardará en el directorio `/tmp`.
+En Fish Shell, podemos crear un archivo temporal utilizando el comando `mktemp`. Por ejemplo, si queremos crear un archivo temporal llamado "temp.txt" en nuestro directorio actual, podemos hacerlo de la siguiente manera:
 
 ```Fish Shell
-$ mktemp
-/tmp/tmp.bUntE
+mktemp temp.txt
 ```
 
-También podemos especificar un prefijo para el nombre del archivo temporal utilizando la opción `-p`. Por ejemplo, si queremos que nuestro archivo temporal comience con la palabra "temp-", podemos usar el siguiente comando:
+Esto creará un archivo llamado "temp.txt" en el directorio actual y nos dará su ruta completa, que podemos utilizar para acceder y trabajar con ese archivo.
+
+Si queremos crear un archivo temporal dentro de un directorio específico, podemos especificar la ruta al directorio como argumento para el comando `mktemp`:
 
 ```Fish Shell
-$ mktemp -p temp-
-temp-Tyko3
+mktemp ~/Documentos/temp.txt
 ```
 
-Una vez que tenemos nuestro archivo temporal, podemos escribir en él utilizando el comando `echo`.
+También podemos utilizar la opción `-d` para crear un directorio temporal en lugar de un archivo temporal:
 
 ```Fish Shell
-$ echo "¡Hola mundo!" >> temp-Tyko3
+mktemp -d ~/Documentos/temporal/
 ```
 
-También podemos ver el contenido de nuestro archivo temporal utilizando el comando `cat`.
+### Deep Dive
 
-```Fish Shell
-$ cat temp-Tyko3
-¡Hola mundo!
-```
+El comando `mktemp` es en realidad un backend para el comando `mktemp.fish`, que es la versión de Fish Shell de este comando. Esto significa que podemos usar `mktemp.fish` en lugar de `mktemp` si queremos acceder a sus opciones y funcionalidades adicionales. Por ejemplo, el comando `mktemp.fish` nos permite especificar un patrón para el nombre del archivo temporal que se generará. Esto es útil si queremos que el archivo temporal siga un patrón específico para facilitar su identificación y eliminación posteriormente.
 
-Una vez que hayamos terminado de utilizar nuestro archivo temporal, debemos eliminarlo usando el comando `rm`.
+Otra diferencia entre `mktemp` y `mktemp.fish` es que `mktemp.fish` nos permite especificar un prefijo para el nombre del archivo temporal. Esto significa que podemos usar nombres más descriptivos para nuestros archivos temporales, lo que facilita su comprensión y gestión.
 
-```Fish Shell
-$ rm temp-Tyko3
-```
+## Ver También
 
-## Deep Dive
-
-El comando `mktemp` no solo nos permite crear archivos temporales, sino que también nos brinda opciones para controlar mejor cómo se crean estos archivos. Por ejemplo, podemos especificar una extensión para el archivo utilizando la opción `-s`. También podemos elegir el directorio donde queremos que se guarde el archivo utilizando la opción `-d`.
-
-Además, el comando `mktemp` nos ofrece la opción de crear un directorio temporal en lugar de un archivo, agregando la opción `-d`.
-
-Otra opción útil del comando `mktemp` es la opción `-t`, que nos permite crear un archivo temporal dentro de un directorio previamente especificado. Esto puede ser útil si queremos tener un mayor control sobre dónde se guardan nuestros archivos temporales.
-
-## Ver también
-
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Comandos básicos de Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Página oficial de Fish Shell](https://fishshell.com/)
+- [Documentación de Fish Shell sobre el comando `mktemp`](https://fishshell.com/docs/current/cmds/mktemp.html)
+- [Tutorial de Fish Shell en español](https://shellsystem.es/tutorial-fish-shell-el-editor-de-comandos-que-no-conoces/)

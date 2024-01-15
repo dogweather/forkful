@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Comparando dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "PHP: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,48 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en programación?
+## Por qué
 
-Comparar dos fechas puede ser una tarea común en programación. Esto se debe a que a menudo es necesario verificar si una fecha es anterior o posterior a otra, o si ambas son iguales. En este artículo, aprenderemos cómo hacerlo en PHP.
+En programación, a menudo surgen situaciones en las que es necesario comparar dos fechas. Esto puede ser útil en casos como validar una fecha de inicio y una fecha de finalización en un formulario, ordenar eventos por fecha o verificar si una promoción ya ha caducado.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en PHP, podemos utilizar la función "strtotime()" para convertir una fecha en un formato de tiempo para su fácil manipulación. A continuación, podemos utilizar la función "date()" para formatear la fecha de acuerdo a nuestras necesidades.
+En PHP, hay varias formas de comparar dos fechas. Aquí hay tres ejemplos utilizando diferentes funciones: `strtotime()`, `DateTime` y `strtotime()` con `date()`.
 
-Veamos un ejemplo de cómo comparar dos fechas en PHP:
+### Utilizando `strtotime()`
+
+La función `strtotime()` convierte una cadena de texto con una fecha a un timestamp, que representa la cantidad de segundos desde el 1 de enero de 1970 a la fecha especificada. Podemos utilizar esto para comparar dos fechas de la siguiente manera:
 
 ```PHP
-$fecha1 = '2020-05-25';
-$fecha2 = '2020-06-01';
+$fecha1 = "2020-01-15";
+$fecha2 = "2020-02-20";
 
-// convertir fechas a formato de tiempo
-$timestamp1 = strtotime($fecha1);
-$timestamp2 = strtotime($fecha2);
-
-// formatear fechas para comparar
-$formatted1 = date('Y-m-d', $timestamp1);
-$formatted2 = date('Y-m-d', $timestamp2);
-
-// comparar fechas
-if($formatted1 > $formatted2) {
-    echo "La fecha 1 es posterior a la fecha 2";
-} elseif($formatted1 < $formatted2) {
+if (strtotime($fecha1) < strtotime($fecha2)) {
     echo "La fecha 1 es anterior a la fecha 2";
 } else {
-    echo "Ambas fechas son iguales";
+    echo "La fecha 1 es posterior o igual a la fecha 2";
 }
-
-// output: La fecha 1 es anterior a la fecha 2
 ```
 
-En este ejemplo, hemos utilizado la función "strtotime()" para convertir las fechas en formato de tiempo y luego la función "date()" para formatearlas como fechas nuevamente. Finalmente, comparamos las fechas utilizando operadores como ">", "<" y "==".
+El resultado sería "La fecha 1 es anterior a la fecha 2".
 
-## Inmersión profunda
+### Utilizando `DateTime`
 
-Una cosa importante a tener en cuenta al comparar fechas en PHP es asegurarse de que ambas fechas estén en el mismo formato. De lo contrario, puede llevar a resultados inesperados. Además, al utilizar la función "strtotime()", puede ocurrir un comportamiento impredecible al pasar una fecha en formato dd/mm/aaaa debido a diferencias regionales. Es importante asegurarse de que el formato de fecha utilizado sea compatible en diferentes entornos.
+La clase `DateTime` nos permite trabajar con fechas de una manera más orientada a objetos. Podemos crear dos objetos `DateTime` y compararlos utilizando el método `diff()` que devuelve un objeto `DateInterval`.
+
+```PHP
+$fecha1 = new DateTime("2020-01-15");
+$fecha2 = new DateTime("2020-02-20");
+
+$diferencia = $fecha1->diff($fecha2);
+
+if ($diferencia->invert == 1) {
+    echo "La fecha 1 es anterior a la fecha 2";
+} else {
+    echo "La fecha 1 es posterior o igual a la fecha 2";
+}
+```
+
+En este caso, el resultado también sería "La fecha 1 es anterior a la fecha 2".
+
+### Utilizando `strtotime()` y `date()`
+
+También podemos utilizar la función `date()` junto con `strtotime()` para convertir las fechas a un mismo formato y poder compararlas fácilmente.
+
+```PHP
+$fecha1 = date("d-m-Y", strtotime("2020-01-15"));
+$fecha2 = date("d-m-Y", strtotime("2020-02-20"));
+
+if ($fecha1 < $fecha2) {
+    echo "La fecha 1 es anterior a la fecha 2";
+} else {
+    echo "La fecha 1 es posterior o igual a la fecha 2";
+}
+```
+
+Este código también nos devuelve "La fecha 1 es anterior a la fecha 2".
+
+## Profundizando
+
+En general, cuando comparamos dos fechas, debemos tener en cuenta su formato y asegurarnos de que ambas estén en el mismo antes de realizar la comparación. Además, cabe mencionar que en algunos casos puede resultar necesario utilizar funciones adicionales para manipular las fechas y obtener el resultado deseado. Es importante investigar y familiarizarse con las diferentes opciones de comparación de fechas en PHP para elegir la más adecuada según nuestro contexto.
 
 ## Ver también
 
-- [Documentación de strtotime() en PHP](https://www.php.net/manual/es/function.strtotime.php)
-- [Documentación de date() en PHP](https://www.php.net/manual/es/function.date.php)
-- [Tutorial de PHP datetime](https://www.w3schools.com/php/php_date.asp)
+Para más información sobre manejo de fechas en PHP, puedes revisar los siguientes enlaces:
+
+- [Documentación oficial de PHP sobre fechas y horas](https://www.php.net/manual/es/datetime.examples-arithmetic.php)
+- [Comparando fechas en PHP](https://www.w3resource.com/php-exercises/date-time-exercise/php-date-time-exercise-16.php)
+- [Realizar cálculos con fechas en PHP](https://www.geeksforgeeks.org/php-date-function-compare-dates/)

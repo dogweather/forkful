@@ -1,5 +1,6 @@
 ---
-title:                "Python: Sammanslagning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Python: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Python"
 category:             "Python"
@@ -11,48 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att sammanfoga eller "concatenate" strängar är en viktig del av Python-programmering. Det låter dig kombinera flera strängar till en större sträng för att skapa mer dynamiska och anpassade texter för dina program.
+Att kombinera strängar är en viktig del av programmering eftersom det tillåter oss att skapa dynamiska och variabla texter som kan anpassas efter olika situationer. Det är användbart för att skapa meddelanden, generera rapporter och mycket mer.
 
 ## Hur man gör
 
-För att sammanfoga strängar i Python, använder man "+" operatorn för att lägga till den andra strängen till den första. Här är ett exempel:
+Att kombinera strängar i Python är enkelt och kan göras på flera olika sätt. Det enklaste sättet är att använda operatorn "+" för att sammanfoga två eller flera strängar. Till exempel:
 
-```Python
-str1 = "Hej"
-str2 = "världen!"
-str3 = str1 + str2
-print(str3)
 ```
-Output: Hej världen!
+Python
+förnamn = "Lisa"
+efternamn = "Svensson"
+fullständigt_namn = förnamn + " " + efternamn
 
-Det är viktigt att komma ihåg att de två strängarna du försöker sammanfoga måste vara av samma datatyp, annars kommer koden att ge ett felmeddelande.
-
-Du kan också använda "join" funktionen för att sammanfoga flera strängar. Här är ett exempel där vi sammanfogar en lista av strängar till en större sträng med hjälp av kommatecken som skiljer dem åt:
-
-```Python
-str_list = ["Hej", "på", "dig", "världen!"]
-str3 = ",".join(str_list)
-print(str3)
+print(fullständigt_namn) # resultatet blir "Lisa Svensson"
 ```
-Output: Hej,på,dig,världen!
 
-Det finns också möjlighet att formatera strängar med hjälp av "format" funktionen. Detta låter dig sätta in värden i en sträng från variabler eller användardata. Här är ett exempel där vi sätter in en variabel i en sträng:
+Det finns också möjlighet att formatera strängar med hjälp av placeholders. Här är ett exempel på hur man kan göra det:
 
-```Python
-name = "Emil"
-str3 = "Välkommen, {}".format(name)
-print(str3)
 ```
-Output: Välkommen, Emil
+Python
+förnamn = "Lisa"
+efternamn = "Svensson"
+ålder = 25
+introduktion = "Hej, mitt namn är {} {} och jag är {} år gammal".format(förnamn, efternamn, ålder)
+
+print(introduktion) # resultatet blir "Hej, mitt namn är Lisa Svensson och jag är 25 år gammal"
+```
+
+Man kan även använda sig av f-strings som är en nyare funktion i Python 3.6. Det fungerar på liknande sätt som placeholders men med en annan syntax. Här är ett exempel på hur man kan använda det:
+
+```
+Python
+förnamn = "Lisa"
+efternamn = "Svensson"
+ålder = 25
+introduktion = f"Hej, mitt namn är {förnamn} {efternamn} och jag är {ålder} år gammal"
+
+print(introduktion) # resultatet blir "Hej, mitt namn är Lisa Svensson och jag är 25 år gammal"
+```
 
 ## Djupdykning
 
-En intressant aspekt av att sammanfoga strängar i Python är att det faktiskt inte skapar en ny sträng, utan returnerar en ny strängobjekt som innehåller de två ursprungliga strängarna. Detta kan vara viktigt att förstå när det gäller prestanda och minnesanvändning i större program.
+Ett annat sätt att kombinera strängar är med hjälp av metoden "join()". Detta är speciellt användbart när man behöver sammanfoga en lista av strängar. Här är ett exempel:
 
-En annan viktig aspekt är att strängar är oföränderliga (immutable) i Python, vilket betyder att de inte kan ändras på plats. Detta innebär att om du försöker ändra en enstaka del av en sträng, kommer det att skapas en helt ny strängobjekt istället för att ändra den befintliga. Det här kan också påverka prestandan i ditt program om du arbetar med stora mängder data.
+```
+Python
+favorit_städer = ["Stockholm", "Paris", "New York"]
+första_bokstav = "Mina favoritstäder är: " + ", ".join(favorit_städer)
 
-## Se också
+print(första_bokstav) # resultatet blir "Mina favoritstäder är: Stockholm, Paris, New York"
+```
 
-- [Officiell Python-dokumentation - Strings (str)](https://docs.python.org/sv/3.8/library/stdtypes.html#text-sequence-type-str)
-- [GeeksforGeeks - String Concatenation](https://www.geeksforgeeks.org/python-string-concatenation/)
-- [Real Python - Formatting Strings in Python](https://realpython.com/python-f-strings/)
+Det är också viktigt att komma ihåg att strängar är oföränderliga i Python, vilket innebär att man inte kan ändra på en del av en sträng utan att skapa en ny sträng. Om man behöver göra många förändringar i en sträng, kan det vara mer effektivt att använda sig av "str.join()" istället för att använda "+".
+
+## Se även
+
+- [Dokumentation om strängar i Python](https://docs.python.org/sv/3/tutorial/introduction.html#strings)
+- [En guide till f-strings i Python](https://realpython.com/python-f-strings/)
+- [Skillnaden mellan "append() "och "join()" i Python](https://www.geeksforgeeks.org/python-append-vs-join-operations-on-lists/).

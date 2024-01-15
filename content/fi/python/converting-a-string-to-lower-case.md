@@ -1,6 +1,7 @@
 ---
-title:                "Python: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Muuntaminen merkkijonoksi pienaakkosiksi"
+html_title:           "Python: Muuntaminen merkkijonoksi pienaakkosiksi"
+simple_title:         "Muuntaminen merkkijonoksi pienaakkosiksi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,45 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Useimmissa ohjelmointikielissä on toiminto muuttaa merkkijono pieniksi kirjaimiksi. Tämä on kätevä toiminto, jos haluat vertailla merkkijonoja ilman, että niiden kirjainkoko vaikuttaa vertailuun. Esimerkiksi tietokantaohjelmissa tai tekstinkäsittelyssä tämä toiminto on erittäin hyödyllinen.
+Miksi joku haluaisi muuttaa merkkijonon pieniksi kirjaimiksi?
 
-## Miten
+Kun työskentelet tekstipohjaisessa ohjelmoinnissa, sinun täytyy usein hallita merkkijonoja. Merkkijonon muuntaminen pieniksi kirjaimiksi voi olla hyödyllistä esimerkiksi silloin, kun haluat verrata kahta tekstiä ja haluat varmistaa, että molemmat ovat samassa muodossa. Tämä voi myös auttaa välttämään virheitä ohjelmassa, jossa tiettyjä merkkijonoja oletetaan olevan tietyssä muodossa.
 
-Käytännössä merkkijonon muuttaminen pieniksi kirjaimiksi Pythonissa on erittäin helppoa. Tässä on muutama esimerkki ja niiden tulosteet:
+## Miten se tehdään
 
-```
-Python
-sana = "TÄMÄ ON MERKKIJONON MUUTTAMINEN PIENIKSI KIRJAIMIKSI"
-print(sana.lower())
-```
+```Python
+# Alkuperäinen merkkijono
+string = "Tämä On Esimerkki"
 
-Tuloste: "tämä on merkkijonon muuttaminen pieniksi kirjaimiksi"
+# Muunna pieniksi kirjaimiksi ja tulosta
+print(string.lower())
 
-```
-Python
-lause = "Tämä on esimerkki lauseesta"
-print(lause.lower())
+# Output
+tämä on esimerkki
 ```
 
-Tuloste: "tämä on esimerkki lauseesta"
+Voit muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä `.lower()` -metodia merkkijonolle. Tämä metodi muuttaa kaikki merkkijonon kirjaimet pieniksi kirjaimiksi ja palauttaa uuden merkkijonon. Voit myös tallentaa muunnetun merkkijonon uuteen muuttujaan tai käyttää sitä suoraan tulostamiseen.
 
+```Python
+# Esimerkki tallennetusta muunnetusta merkkijonosta
+lower_case = string.lower()
+print(lower_case)
+
+# Output
+tämä on esimerkki
 ```
-Python
-teksti = "123456789"
-print(teksti.lower())
-```
 
-Tuloste: "123456789"
+## Syväsukellus
 
-Kuten näet, funktion käyttäminen ei ole riippuvainen merkkijonon pituudesta tai sen sisällöstä. Se muuttaa vain kaikki kirjaimet pieniksi.
+Merkkijonon muuttaminen pieniksi kirjaimiksi perustuu siihen, että jokaisella merkillä on tietty numerokoodeihin perustuva esitysmuoto. Pieniksi kirjaimiksi muuttaminen tapahtuu muuttamalla jokaisen merkin numerokoodia vastaavaan pienempään arvoon. Esimerkiksi iso A-kirjain, jonka numerokoodi on 65, muuttuu pieneksi a-kirjaimeksi, jonka numerokoodi on 97.
 
-## Syvä sukellus
-
-Tarkemmin sanottuna funktion `lower()` toiminta riippuu käytetystä kielestä. Esimerkiksi suomen kielessä ei ole eroa isoilla ja pienillä kirjaimilla, joten funktion `lower()` käyttö ei ole tarpeellista. 
-
-Toinen tärkeä seikka on, että `lower()` ei muuta merkkijonoa pysyvästi. Se palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat pieniä. Tämä tarkoittaa sitä, että alkuperäinen merkkijono säilyy muuttumattomana, ellei siihen tehdä uutta muutosta.
+Pieniksi muuntaminen voi myös aiheuttaa ongelmia, jos merkkijonossa on muita kuin kirjaimia, kuten välimerkkejä tai numeroita. Voit kuitenkin käyttää muita metodeja, kuten `.strip()` poistamaan ylimääräiset merkit ennen muuntamista.
 
 ## Katso myös
 
-- Pythonin dokumentaatio: https://docs.python.org/3/library/stdtypes.html#str.lower
-- Stack Overflow: https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python
+- [Pythonin virallinen dokumentaatio merkkijonojen käsittelystä](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Merkkijonon muuttaminen isoiksi kirjaimiksi](https://pynative.com/python-string-to-upper-case/)
+- [Tabulaattoreiden ja rivinvaihtojen poistaminen merkkijonoista](https://www.geeksforgeeks.org/python-string-strip-method/)

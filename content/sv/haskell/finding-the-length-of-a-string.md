@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Att hitta längden av en sträng"
+html_title:           "Haskell: Att hitta längden av en sträng"
+simple_title:         "Att hitta längden av en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,47 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att hitta längden på en sträng är en vanlig uppgift i programmering. Med hjälp av Haskell kan du lära dig en enkel och effektiv metod för att göra det.
+Att hitta längden på en sträng är en viktig funktion inom programmering, speciellt när man arbetar med textbaserade data. Det kan vara användbart för uträkningar, jämförelser och bearbetning av data.
 
 ## Så här gör du
-Först behöver vi en sträng att arbeta med. Låt oss anta att vi har en variabel `text` som innehåller strängen "Hej världen!".
-
-Vi kan använda Haskells `length` funktion för att hitta längden på strängen:
+För att hitta längden på en sträng i Haskell kan du använda funktionen `length`. Här är ett exempel:
 
 ```Haskell
-length text
+length "Hej, vad gör du?"
 ```
 
-Detta ger oss ett resultat på 13, vilket är antalet tecken i strängen.
+Detta kommer att returnera längden på strängen "Hej, vad gör du?" vilket är 16. 
 
-Om vi vill skriva ut längden på strängen tillsammans med själva strängen kan vi använda `show` funktionen tillsammans med `length`:
+För att använda `length` på en variabel som innehåller en sträng kan du skriva:
 
 ```Haskell
-show (length text) ++ " " ++ text
+let sträng = "Välkommen till Haskell!"
+length sträng
 ```
 
-Detta ger oss följande output:
+Detta kommer att returnera längden på strängen som är 24.
 
-```
-"13 Hej världen!"
-```
+## Djupdykning
+För att förstå hur `length` funktionen faktiskt fungerar i Haskell är det viktigt att förstå grundläggande koncept inom programmering. Haskell är ett "funktionellt" programmeringsspråk vilket betyder att funktioner betraktas som grundläggande byggstenar och kan användas och manipuleras som vilken annan datatyp som helst.
 
-En annan metod för att hitta längden på en sträng är att använda `Data.List` modulen, som innehåller en funktion som heter `genericLength`. Denna funktion kan hantera både listor och strängar och ger oss samma resultat som `length`:
+I fallet med `length` funktionen, tar den en sträng som inmatning och returnerar en heltal. När du tillämpar funktionen på en variabel eller hårdkodad sträng som vi gjorde ovan, utför `length` funktionen en iteration över varje tecken i strängen och räknar antalet tecken. Detta betyder att längden på en sträng i Haskell är representerad av en heltal.
 
-```Haskell
-import Data.List
-
-genericLength text
-```
-Detta ger oss också ett resultat på 13.
-
-## Deep Dive
-Vad är egentligen skillnaden mellan `length` och `genericLength`? Skillnaden ligger i datatypen som funktionerna hanterar. `length` är specifik för listor medan `genericLength` är mer allmän och kan hantera flera olika typer av data, inklusive listor och strängar.
-
-Det är också värt att notera att både `length` och `genericLength` returnerar en `Int` i Haskell. Detta innebär att funktionerna inte är lämpliga för att hantera väldigt långa strängar, eftersom `Int` har en övre gräns på sin storlek.
-
-Om du behöver hantera väldigt långa strängar bör du istället använda dig av funktionen `genericLength` i `Data.List` modulen, eftersom denna funktion returnerar en `Integer` som har en mycket större övre gräns.
-
-## Se också
-- Haskells `length` funktion dokumentation: https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:length
-- Haskells `genericLength` funktion dokumentation: https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:genericLength
+## Se även
+- [Haskell: En introduktion](https://www.pragmafusion.com/programmering/haskell-en-introduktion)
+- [Funktionell programmering i praktiken med Haskell](https://blog.taqtiqa.com/functional-programming-in-practice-with-haskell-73e0e56d3ed9)
+- [A Gentle Introduction to Haskell](https://www.haskell.org/tutorial/)

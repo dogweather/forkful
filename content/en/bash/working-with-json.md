@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Working with json"
+title:                "Working with json"
+html_title:           "Bash recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,62 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Engage in Working with JSON
+## Why
 
-JSON (JavaScript Object Notation) is a lightweight and popular data interchange format commonly used in web development. It is human-readable and easy to parse, making it a preferred choice for transferring data between client and server. By learning how to work with JSON data, you can enhance your Bash programming skills and build more dynamic and modern applications. 
+JSON, or JavaScript Object Notation, is a widely used data interchange format that allows for easy parsing and sharing of data between different systems. It is commonly used in web development, API design, and data storage. Working with JSON in Bash can make data manipulation and automation processes much easier.
 
-## How To Work with JSON in Bash
+## How To
 
-JSON data is built on two structures: objects and arrays. Objects are key-value pairs enclosed in curly braces while arrays are an ordered collection of values enclosed in square brackets. To access data in JSON, we use the `jq` tool, which is a powerful command-line utility for parsing and manipulating JSON data.
+To work with JSON in Bash, you will first need to install the `jq` tool. This tool allows you to parse and manipulate JSON data directly from the command line. Once installed, you can use it like this:
 
-Here's an example of a JSON object:
+```
+# Parse a JSON file and display a specific key
+jq '.key' file.json 
 
-```Bash
-$ curl https://jsonplaceholder.typicode.com/posts/1 | jq
+# Create a new JSON object and add a key-value pair
+jq '. + {new_key: "value"}' file.json
+
+# Filter an array in a JSON file based on a key value
+jq '.array | map(select(.key == "value"))' file.json 
 ```
 
-And the sample output:
+These are just a few examples of what you can do with `jq`. It's a powerful tool with many more features and options for working with JSON data. Keep in mind that the syntax for `jq` can be a bit different from other Bash commands, so it may take some time to get used to.
 
-```Bash
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"
-}
-```
+## Deep Dive
 
-To access a specific value, we can use the `.` operator. For example, to get the post title from the above JSON object, we can use:
+JSON is composed of key-value pairs that are separated by commas and enclosed in curly braces. The value can be a string, number, boolean, array, or another object. The `jq` tool allows you to traverse and extract specific values or manipulate the entire JSON object.
 
-```Bash
-$ curl https://jsonplaceholder.typicode.com/posts/1 | jq '.title'
-```
+One of the most useful functions of `jq` is its ability to filter and extract data based on specific keys or values. This is especially helpful when dealing with large JSON files with nested objects or arrays. You can also use conditionals and loops within `jq` to further manipulate the data.
 
-Which will return:
-
-```Bash
-"sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
-```
-
-We can also use `jq` to filter and manipulate JSON data. For instance, we can retrieve only specific fields from a JSON array using the `map` function.
-
-```Bash
-$ curl https://jsonplaceholder.typicode.com/comments | jq 'map({name: .name, email: .email})'
-```
-
-This will return an array of objects with only the `name` and `email` fields.
-
-## Deep Dive into Working with JSON
-
-Besides basic parsing and filtering, `jq` offers a wide range of features that make working with JSON data more efficient. Some of these include selecting multiple keys at once, using regular expressions to filter data, and even performing data transformations. It also supports various output formats, such as CSV, XML, and YAML.
-
-Another useful feature of `jq` is its ability to handle errors and exceptions gracefully. If the input JSON data is malformed, `jq` will still attempt to process it and provide an error message with helpful details about where the issue occurred.
-
-To learn more about `jq` and its capabilities, the official documentation provides in-depth explanations and examples.
+There are also many other tools and libraries available for working with JSON in Bash, such as `json_pp` for pretty printing, `json_merge` for merging multiple JSON files, and `jsonlint` for validating the syntax of JSON data.
 
 ## See Also
 
-- Official `jq` documentation: https://stedolan.github.io/jq/manual/
-- `jq` tutorial by Codecademy: https://www.codecademy.com/learn/learn-json-parsing
-- Bash JSON cheatsheet: https://devhints.io/bash-json
-- `jq` GitHub repository: https://github.com/stedolan/jq
+For more information about working with JSON in Bash, check out these links:
+- Official `jq` documentation: https://stedolan.github.io/jq/
+- 10 `jq` Tricks for Handling JSON: https://hackernoon.com/10-jq-tricks-for-handling-json-5c477536b1f5
+- JSON manipulation in Bash using `jq`: https://opensource.com/article/17/2/json-manipulation-in-bash-using-jq

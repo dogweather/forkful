@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "yaml를 다루는 방법"
+html_title:           "Gleam: yaml를 다루는 방법"
+simple_title:         "yaml를 다루는 방법"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,81 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜 YAML을 사용해야 할까요?
 
-Gleam을 사용하면 YAML 파일을 쉽게 작성하고 읽을 수 있습니다. YAML은 데이터를 인간이 읽을 수 있는 형태로 저장하기에 적합하며, Gleam은 이를 처리하는 데 최적화되어 있습니다.
+YAML은 인간과 컴퓨터 모두가 쉽게 읽고 작성할 수 있는 형식의 데이터 직렬화 방식입니다. 따라서 YAML을 사용하면 더 간단하고 효율적인 데이터 관리가 가능해집니다.
 
-## 어떻게?
+## 사용 방법
 
-Gleam에서 YAML을 작성하는 방법은 간단합니다. 먼저 `gleam_yml` 패키지를 임포트한 다음, `Yaml.Writer` 모듈에서 데이터를 작성할 수 있습니다.
-
-```
-import gleam_yml
-import gleam_yml.Yaml.Writer
-
-let data = 
-  [
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Jane Smith" }
-  ]
-
-let yaml = 
-  data
-  |> Yaml.Writer.list(
-    \rec(person) ->
-      person
-      |> Yaml.Writer.map([
-        Yaml.Writer.field("id", Yaml.Writer.int),
-        Yaml.Writer.field("name", Yaml.Writer.string)
-      ])
-  )
-  |> Yaml.Writer.encode
-
+```Gleam
+fn main() {
+  let data = gleam_yml::from_string("
+    username: John
+    age: 27
+    hobbies:
+        - hiking
+        - reading
+        - coding
+  ")
+  let username = data.username
+  let age = data.age
+  let hobbies = data.hobbies
+  IO.println("Username: " ++ username)
+  IO.println("Age: " ++ age)
+  IO.println("Hobbies: " ++ hobbies)
+}
 ```
 
-위의 코드를 실행하면 다음과 같은 YAML 파일이 생성됩니다.
+위의 코드에서는 Gleam 패키지 중 하나인 gleam_yml을 사용하여 YAML 형식의 데이터를 읽고 출력하는 방법을 보여줍니다. 데이터를 읽을 때에는 간단한 키-값 쌍을 사용하고, 리스트 형태로 값을 전달할 수도 있습니다. 이를 이용하면 보다 복잡한 데이터도 쉽게 다룰 수 있습니다.
 
-```
-- id: 1
-  name: "John Doe"
-- id: 2
-  name: "Jane Smith"
-```
+YAML 라이브러리에는 gleam_yml 이외에도 다양한 패키지가 있습니다. 필요에 따라 다른 라이브러리를 사용해보는 것도 좋은 방법일 수 있습니다.
 
-객체나 리스트를 YAML로 작성하는 데 사용할 수 있는 다양한 함수가 있습니다. 자세한 정보는 [공식 문서](https://gleam.run/packages/gleam_yml/latest/gleam_yml/Yaml.Writer.html)에서 확인할 수 있습니다.
+## 깊이 들어가기
 
-## 깊이있게 알아보기
+YAML은 공백과 들여쓰기를 사용하여 데이터 구조를 표현합니다. 따라서 간단한 키-값 쌍의 경우에는 YAML 문법에 대한 이해가 필요하지 않지만, 보다 복잡한 데이터 구조를 다루기 위해서는 YAML 문법을 익히는 것이 중요합니다.
 
-Gleam의 `gleam_yml` 패키지는 YAML을 작성하는 것뿐만 아니라 읽는 데에도 사용할 수 있습니다. `Yaml.Reader` 모듈에서 YAML을 파싱해 데이터로 변환할 수 있습니다.
+또한, YAML은 표준 형식이 아닌 형식으로 기술되어 있기 때문에, 다른 언어나 툴과의 호환성에 대해서도 주의해야 합니다. 예를 들어, YAML 내에서 사용되는 타임스탬프와 함께 문자열을 사용할 경우, 다른 언어에서 이를 올바르게 해석하지 못할 수 있습니다.
 
-```
-import gleam_yml
-import gleam_yml.Yaml.Reader
+## 관련 링크
 
-let yaml = "
----
-- id: 1
-  name: 'John Doe'
-- id: 2
-  name: 'Jane Smith'
-"
-
-let data = yaml
-  |> Yaml.Reader.decode
-```
-
-`data` 변수에는 다음과 같은 데이터가 저장됩니다.
-
-```
-[
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" }
-]
-```
-
-또한 `Yaml.Reader` 모듈에서는 YAML을 다양한 타입으로 변환하는 함수도 제공합니다. 자세한 내용은 [공식 문서](https://gleam.run/packages/gleam_yml/latest/gleam_yml/Yaml.Reader.html)에서 확인할 수 있습니다.
-
-## 참고
-
-- [YAML 공식 사이트](https://yaml.org/)
-- [Gleam YAML 패키지 공식 문서](https://gleam.run/packages/gleam_yml/latest/gleam_yml/Yaml.html)
+- [Gleam 공식 사이트](https://gleam.run/)
+- [Gleam 관련 패키지 목록](https://github.com/gleam-lang/awesome-gleam)
+- [YAML 문서](https://yaml.org/)

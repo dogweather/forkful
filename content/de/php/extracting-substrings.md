@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Auslesen von Teilzeichenketten"
+html_title:           "PHP: Auslesen von Teilzeichenketten"
+simple_title:         "Auslesen von Teilzeichenketten"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,54 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man beim Programmieren auf PHP substrings (Teilstrings) anpassen möchte. Ein häufiger Grund ist zum Beispiel, um bestimmte Teile einer textbasierten Eingabe zu extrahieren. Oder auch um eine URL in einzelne Komponenten zu zerlegen. Egal aus welchem Grund, die Extraktion von Substrings ist eine wichtige Fähigkeit in der PHP-Programmierung.
+Es gibt viele Gründe, warum man sich mit dem Extrahieren von Teilstrings in PHP beschäftigen sollte. Vielleicht möchtest du Daten aus einer Zeichenkette extrahieren, um sie in einem bestimmten Format anzuzeigen, oder du möchtest Benutzereingaben überprüfen, um sicherzustellen, dass sie den gewünschten Kriterien entsprechen. Egal aus welchem Grund, das Extrahieren von Teilstrings ist eine wichtige Fähigkeit, die jeder PHP-Programmierer beherrschen sollte.
 
 ## Wie geht man vor?
 
-Um einen Substring in PHP zu extrahieren, gibt es verschiedene Methoden. Eine davon ist die Verwendung der Funktion `substr()`. Hier ist ein Beispiel:
+Um einen Teilstring in PHP zu extrahieren, gibt es verschiedene Funktionen und Methoden, die man verwenden kann. Eine Möglichkeit ist die Verwendung der ```substr```-Funktion, die es dir ermöglicht, einen Teilstring aus einer bestimmten Zeichenkette auszuschneiden. Sie akzeptiert drei Parameter: Die Eingangszeichenkette, den Startindex und die gewünschte Länge des Teilstrings.
+
+Zum Beispiel, wenn wir aus der Zeichenkette "Hallo Welt!" den Teilstring "Welt" extrahieren möchten, verwenden wir folgenden Code:
 
 ```PHP
-$text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-// Extrahiere die ersten 5 Zeichen
-echo substr($text, 0, 5);
-
-// Ausgabe: Lorem
+$string = "Hallo Welt!";
+$teilstring = substr($string, 6, 4);
+echo $teilstring;
+// Ausgabe: Welt
 ```
 
-Mit dieser Funktion können wir den gewünschten Teilstring auswählen, indem wir den Startindex und die Länge des Substrings angeben. In diesem Fall haben wir den Index 0 ausgewählt, was bedeutet, dass wir bei dem ersten Zeichen im String beginnen. Die Länge des Substrings beträgt 5 Zeichen.
-
-Hier ist ein weiteres Beispiel, in dem wir die Funktion `substr()` verwenden, um einen Teilstring aus einer URL zu extrahieren:
+Eine weitere nützliche Funktion ist ```strpos```, die uns den Index des ersten Vorkommens eines bestimmten Zeichens oder Teilstrings innerhalb einer Zeichenkette gibt. Mit dieser Funktion können wir zum Beispiel überprüfen, ob ein bestimmter Teilstring in einer Benutzereingabe vorhanden ist.
 
 ```PHP
-$url = "https://www.example.com/blog/post/123";
-
-// Extrahiere den Teilstring "blog/post"
-echo substr($url, 14, 9);
-
-// Ausgabe: blog/post
+$string = "Ich mag Schokolade!";
+if (strpos($string, "Schokolade") !== false) {
+  echo "Ja, ich mag Schokolade!";
+} else {
+  echo "Ich mag keine Schokolade!";
+}
+// Ausgabe: Ja, ich mag Schokolade!
 ```
 
-In diesem Beispiel haben wir den Teilstring "blog/post" aus einer URL extrahiert, indem wir den Startindex bei 14 gesetzt haben (nach "https://www.example.com/") und eine Länge von 9 Zeichen angegeben haben.
+## Tiefer tauchen
 
-## Tiefeneintauchen
+Beim Extrahieren von Teilstrings gibt es noch weitere Dinge zu beachten, wie zum Beispiel die Behandlung von Unicode-Zeichen und die Verwendung von regulären Ausdrücken. Hier ist es wichtig, sich mit den verschiedenen Funktionen und Methoden vertraut zu machen und zu verstehen, wie sie in verschiedenen Szenarien verwendet werden können.
 
-Wenn es darum geht, Substrings in PHP zu extrahieren, gibt es noch viele weitere Funktionen und Methoden, die man verwenden kann. Eine davon ist die Funktion `strpos()`, mit der man den Index des ersten Vorkommens eines bestimmten Teilstrings in einem größeren String finden kann. Hier ist ein Beispiel:
-
-```PHP
-$text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-// Finde den Index des ersten Vorkommens von "dolor"
-echo strpos($text, "dolor");
-
-// Ausgabe: 12
-```
-
-In diesem Beispiel haben wir den Index 12 ausgegeben, was dem Anfang des Teilstrings "dolor" entspricht. Damit können wir zum Beispiel den Teilstring "sit amet" extrahieren, indem wir `substr()` und `strpos()` kombinieren.
+Ein häufiges Problem beim Extrahieren von Teilstrings ist auch die Beachtung der Spracheinstellungen. Je nach Spracheinstellung kann die Indexierung von Zeichen in einer Zeichenkette unterschiedlich sein, was zu unerwarteten Ergebnissen führen kann. Deshalb ist es wichtig, alle Funktionen und Methoden sorgfältig zu überprüfen und gegebenenfalls die Spracheinstellungen anzupassen.
 
 ## Siehe auch
 
-- [PHP substr() Funktion](https://www.php.net/manual/de/function.substr.php)
-- [PHP strpos() Funktion](https://www.php.net/manual/de/function.strpos.php)
-- [PHP Teilstrings extrahieren](https://www.php-einfach.de/php-tutorial/php-substring/)
-- [PHP String-Funktionen](https://www.php-einfach.de/php-tutorial/php-string-funktionen/)
+- Offizielle PHP-Dokumentation zu [substr](https://www.php.net/manual/en/function.substr.php) und [strpos](https://www.php.net/manual/en/function.strpos.php)
+- Ein Tutorial von TutsPlus über [das Extrahieren von Teilstrings in PHP](https://code.tutsplus.com/tutorials/manipulating-strings-in-php--net-21689)

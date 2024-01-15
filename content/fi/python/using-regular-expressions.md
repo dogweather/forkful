@@ -1,5 +1,6 @@
 ---
-title:                "Python: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Python: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Python"
 category:             "Python"
@@ -9,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää regular expressioneja?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Regular expressionit (regular expressions) ovat voimakkaita työkaluja, joiden avulla voit tehokkaasti suodattaa, hakea ja muokata tekstiä Pythonilla. Ne ovat erityisen hyödyllisiä, kun haluat etsiä tiettyjä sanoja tai lausekkeita suuresta tekstimäärästä. Jos olet kiinnostunut tekstianalyysistä tai datan käsittelystä, regular expressionit ovat ehdottomasti tutustumisen arvoinen.
+Säännölliset lausekkeet ovat tehokas työkalu tekstin käsittelyssä ja etsimisessä. Niiden avulla voit suorittaa monimutkaisia hakuja ja korvauksia tekstissä, mikä säästää aikaa ja vaivaa monissa ohjelmointitilanteissa.
 
-## Kuinka käyttää regular expressioneja Pythonissa
+## Kuinka käyttää säännöllisiä lausekkeita?
 
-Regular expressionien käyttäminen Pythonissa on helppoa. Voit ensin tuoda tarvittavan "re" -kirjaston käyttöön:
-
-```Python
-import re 
-```
-
-Seuraavaksi voit määrittää haluamasi regular expressionin ja tallentaa sen muuttujaan:
+Säännöllisiä lausekkeita käytetään Pythonin `re` -kirjaston avulla. Ensimmäiseksi sinun on tuotava `re` -kirjasto:
 
 ```Python
-pattern = r"maito"
+import re
 ```
 
-Jos haluat nähdä, kuinka monta kertaa "maito" esiintyy tiedostossa, voit käyttää "re.findall" -funktiota ja antaa sille parametrina muuttujan ja käsiteltävän tiedoston nimen:
+Sitten voit käyttää `re` -kirjaston eri funktioita säännöllisten lausekkeiden luomiseen. Esimerkiksi voit käyttää `re.search()` -funktiota etsimään tietyn kaavan mukaisia merkkijonoja. Tässä on yksinkertainen esimerkki, jossa etsitään kaikkia sanoja, jotka alkavat kirjaimella "h" ja loppuvat kirjainpariin "en":
 
 ```Python
-matches = re.findall(pattern, "ostin maitoa kaupasta tänään")
-print(matches)
+teksti = "Hei, tämä on esimerkki hakusanoista, jotka alkavat h:lla ja loppuvat en:aan"
+hakutulos = re.search(r"h\w+en", teksti)
+print(hakutulos.group())
 ```
 
-Tämä tulostaa: ["maito"]. Jos haluat hakea eri kirjoitusmuotoja, voit käyttää "flags" -parametria, kuten alla olevassa esimerkissä:
+Tämä tulostaa "hakusanojen" sijasta "haku" osoituksena siitä, että säännölliset lausekkeet ovat löytäneet oikean vastineen tekstissä.
 
-```Python
-pattern = r"maito"
-matches = re.findall(pattern, "Ostin MAITOA kaupasta tänään", flags = re.IGNORECASE)
-print(matches)
-```
+## Syvennä tietämystäsi säännöllisistä lausekkeista
 
-Tämä tulostaa edelleen ["maito"], vaikka "MAITOA" onkin kirjoitettu suurilla kirjaimilla.
-
-## Syväsukellus regular expressioneihin
-
-Regular expressioneilla on monia eri käyttötapoja, ja niitä voi hyödyntää erilaisissa ohjelmointitehtävissä. Voit esimerkiksi käyttää niitä luomaan omia tekstintyöstötoimintoja, kuten sanojen korvaamista tai tekstien jäsennystä. On myös mahdollista luoda monimutkaisempia regular expressioneja, jotka pystyvät tunnistamaan esimerkiksi tietyn muotoiset sähköpostiosoitteet tai puhelinnumerot.
-
-On kuitenkin tärkeää muistaa, että regular expressioneja ei tulisi käyttää ainoana tapana tietojen käsittelyssä, vaan ne tulisi yhdistää muihin työkaluihin, kuten merkkijonon manipulointimetodeihin.
+Säännölliset lausekkeet voivat tuntua aluksi vaikeilta, mutta niiden avulla voit suorittaa monimutkaisia hakuja ja korvauksia tekstissä. Voit lukea lisää säännöllisistä lausekkeista Pythonin virallisesta dokumentaatiosta tai käyttää online-selaimia, kuten Regex101, harjoitellaksesi ja testataksesi erilaisia säännöllisiä lausekkeita.
 
 ## Katso myös
-- Pythonin virallinen "re" -kirjasto: https://docs.python.org/3/library/re.html
-- Regular expressionien opetusvideo: https://www.youtube.com/watch?v=ZdDOauFIDkw&ab_channel=freeCodeCamp.org
-- Harjoitustehtäviä regular expressioneihin: https://regexone.com/
+
+- [Pythonin virallinen dokumentaatio säännöllisistä lausekkeista](https://docs.python.org/3/library/re.html)
+- [Regex101](https://regex101.com/) - online-selain säännöllisten lausekkeiden harjoitteluun ja testaamiseen
+- [Säännöllisten lausekkeiden opas](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-regex-in-python-3) - oppimateriaali säännöllisistä lausekkeista Pythonissa

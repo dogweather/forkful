@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Bash recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why Writing to Standard Error is Useful
+## Why
 
-When writing a Bash script, it is important to be able to handle errors efficiently. This is where writing to standard error comes in. By outputting error messages to standard error, you can easily differentiate them from regular output and handle them appropriately.
+Writing to standard error in Bash can be useful when troubleshooting or debugging scripts. It allows you to see any error messages or warnings that your script may produce, which can help in identifying and fixing any issues.
 
-##How To Write to Standard Error in Bash
+## How To
 
-Writing to standard error in Bash is simple. You just need to use the `1>&2` redirection. For example:
-
-```Bash
-echo "This is regular output"
-echo "This is an error" 1>&2
-```
-
-The `1>&2` redirects the output of the second `echo` command to standard error instead of standard output. This allows the error message to be displayed separately from the regular output.
-
-To see this in action, let's run the following script:
+To write to standard error in Bash, you can use the `echo` command followed by the `>&2` redirection operator. For example:
 
 ```Bash
-#!/bin/bash
-
-echo "Starting execution..."
-
-ls non-existent-dir 1>&2
-
-echo "Execution complete."
+echo "This is an error message" >&2
 ```
 
-The output will be:
-
-```
-Starting execution...
-ls: cannot access 'non-existent-dir': No such file or directory
-Execution complete.
-```
-
-As you can see, the error message from the `ls` command is displayed separately from the regular output.
-
-##Deep Dive into Writing to Standard Error
-
-In Bash, standard error is represented by file descriptor 2. When using the `1>&2` redirection, we are essentially redirecting the output of a command to file descriptor 2, which is standard error. This allows us to handle error messages separately from regular output.
-
-It is important to note that standard error is not affected by the `2>&1` redirection. This means that even if you redirect standard output to standard error, error messages will still be displayed separately. For example:
+This will print the message to standard error instead of standard output. You can also use the `printf` command with the `%2>&1` format specifier to achieve the same result:
 
 ```Bash
-command 2>&1  # redirects standard output to standard error, but error messages will still be displayed separately
+printf "%2" "This is an error message"
 ```
 
-Additionally, you can also redirect standard error to a file using `2>filename` or append to a file using `2>>filename`.
+To see the difference, you can try running the same command without the `>&2` or `%2>&1` redirection and see the message will be printed to standard output instead.
 
-##See Also
+## Deep Dive
 
-- [Understanding File Descriptors in Bash](https://linuxize.com/post/bash-file-descriptors/)
-- [Redirections in Bash](https://www.tldp.org/LDP/abs/html/io-redirection.html)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+By default, any error messages or warnings produced by a command will be printed to standard error. However, some commands may also have an option to redirect errors to a different location. For example, the `grep` command has a `-q` option which suppresses all error messages.
 
-Writing to standard error is a useful technique to handle errors in Bash scripts. By using the `1>&2` redirection, you can easily handle error messages separately from regular output. For more advanced use cases, you can also redirect standard error to a file or append to an existing file. The key to writing efficient Bash scripts is understanding file descriptors and how to manipulate them to your advantage.
+Additionally, you can display both standard output and standard error using the `|&` operator, also known as "pipe and ampersand". This can be useful when you want to save all output, including errors, to a file. For example:
+
+```Bash
+ls -lR |& tee output.txt
+```
+
+This will list all files and directories recursively and save both standard output and standard error to the `output.txt` file.
+
+## See Also
+
+For more information on standard error and redirection in Bash, check out these resources:
+
+- [Bash Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Linux I/O Explained](https://www.computerhope.com/unix/uio.htm)
+- [Understanding Shell Script's idiom: 2>&1](https://www.ibm.com/support/knowledgecenter/ssw_aix_71/osmanagement/2ampersand.htm)

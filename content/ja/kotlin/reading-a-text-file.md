@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: テキストファイルを読む"
-simple_title:         "テキストファイルを読む"
+title:                "「テキストファイルの読み込み」"
+html_title:           "Kotlin: 「テキストファイルの読み込み」"
+simple_title:         "「テキストファイルの読み込み」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ読む必要があるのか？
+## Why
 
-テキストファイルとは、テキストデータを含むファイルのことです。コンピューターやスマートフォンなど、さまざまなデバイスで使用されています。テキストファイルを読むことは、プログラミングの世界で非常に重要です。例えば、データ処理やファイルの内容を表示するなど、さまざまな用途に使用されます。この記事では、Kotlinを使用してテキストファイルを読み込む方法を紹介します。
+なぜテキストファイルを読むことに興味を持つのか？それは、テキストファイルがコンピューターやプログラミングにおいて欠かせないものであるからです。テキストファイルは、様々なデータを格納し、処理するための重要な手段です。
 
-## 読み込み方法
+## How To
 
-まずは、Kotlinでテキストファイルを読み込む方法を学びましょう。下記のコードブロックを使用して、簡単なテキストファイルを読み込み、その内容をコンソールに表示することができます。
+テキストファイルを読み込むには、Kotlinで以下のようにコードを書けばいいです。
 
-```Kotlin
-fun main() {
-    // ファイルを読み込む
-    val file = File("テキストファイルのパス")
-    // ファイルの内容を読み込む
-    val content = file.readText()
-    // ファイルの内容をコンソールに表示する
-    println(content)
+```
+Kotlin
+val file = File("text.txt")
+file.forEachLine {
+    println(it)
 }
 ```
 
-上記のように、まずはファイルを`File`クラスのインスタンスとして作成し、その後`readText()`メソッドを使用してファイルの中身を読み込みます。最後に、`println()`メソッドを使用してファイルの内容を表示します。
+これは、ファイルの各行を読み込み、コンソールに出力するコードです。もちろん、ファイルの内容を実際に処理することも可能です。
 
-## 深堀り
+```
+Kotlin
+val file = File("names.txt")
+val names = mutableListOf<String>()
 
-テキストファイルを読み込む際に、より複雑な処理を行うこともできます。例えば、ファイルの中に特定の文字列が含まれているかどうかをチェックしたり、ファイルの内容を修正したりすることができます。以下のコードブロックは、特定の文字列が含まれている場合にその行を表示するプログラムの例です。
-
-```Kotlin
-fun main() {
-    // ファイルを読み込む
-    val file = File("テキストファイルのパス")
-    // ファイルの内容を読み込む
-    val content = file.readText()
-    // ファイルの内容を行ごとに分割して配列に格納する
-    val lines = content.split("\n")
-    // 配列の中身をループさせる
-    for (line in lines) {
-        // もし特定の文字列が含まれていた場合は、その行を表示する
-        if (line.contains("特定の文字列")) {
-            println(line)
-        }
-    }
+file.forEachLine {
+    names.add(it)
 }
+println("読み込まれた名前の数は ${names.size} です。")
 ```
 
-このように、Kotlinを使用することでテキストファイルを柔軟に操作することができます。
+上記のコードは、テキストファイルに記録された名前をリストに追加し、最後にその数を出力するものです。
 
-## 関連リンク
+## Deep Dive
 
-* Kotlin公式ドキュメント - https://kotlinlang.org/docs/reference/
-* テキストファイルの読み込み方法まとめ - https://www.javadrive.jp/kotlin/file/index2.html
-* Kotlinでのファイル操作のベストプラクティス - https://code-examples.net/ja/d/3095df
+テキストファイルを読み込む際には、ファイルのエンコーディングに気をつける必要があります。特に日本語のようなマルチバイト文字を含む場合は、適切なエンコーディングを指定する必要があります。Kotlinでは、`File()`メソッドの引数にエンコーディングを指定することで、問題なくファイルを読み込むことができます。
+
+また、大規模なテキストファイルを読み込む際には、メモリの消費にも注意が必要です。その場合、`readLines()`メソッドを使用し、必要な行だけを読み込むことができます。
+
+## See Also
+
+- [Kotlin File Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
+- [Reading and Writing Files in Kotlin](https://medium.com/@thomashambach/reading-and-writing-files-in-kotlin-a73ab397acc6)

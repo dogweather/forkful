@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: パターンに一致する文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Arduino: パターンに一致する文字を削除する"
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,51 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Arduinoプログラミングでは、テキストデータを処理する際に特定のパターンに一致する文字を削除する必要がある場合があります。これは、データの整理や統計処理を行う際に便利な方法です。
+あなたのプログラムには、不要な文字が含まれることがあります。これらの文字を削除することで、プログラムの効率を改善し、正しい結果を得ることができます。この記事では、Arduinoを使って文字を削除する方法を紹介します。
 
-## 方法
+## 使い方
 
-Arduinoのプログラムで文字を削除する方法はいくつかあります。最も基本的な方法は、文字列を一つずつチェックし、パターンに一致する場合は空白文字または空の文字列に置き換えることです。以下の例を参考にしてください。
-
-```Arduino
-// テキストデータの文字列を定義 
-String text = "Arduinoは楽しい!";
-
-// 文字列を削除したいパターンを定義 
-String pattern = "楽しい";
-
-// 文字列からパターンに一致する文字を削除する 
-text.replace(pattern, "");
-
-// 出力 
-Arduinoは!
-```
-
-複雑なパターンを扱う場合は、正規表現を使用することもできます。正規表現を使用すると、パターンに一致する文字を簡単に置き換えることができます。以下の例を参考にしてください。
+削除したい文字と一致するパターンを指定し、それをコードに組み込むことで削除することができます。以下の例を参考にしてください。
 
 ```Arduino
-// テキストデータの文字列を定義 
-String text = "1234 5678 9101112";
+// 正規表現を使用して、削除したい文字を指定する
+String pattern = "[abc]";
 
-// 文字列から数字のみを除外する 
-text.replaceAll("[0-9]", "");
+// 削除する文字列を定義する
+String str = "abcdefg";
 
-// 出力 
- 
+// 文字を削除する関数を定義する
+String deleteChars(String input, String pattern) {
+  // 削除したい文字を指定して、replace()関数を使用する
+  input.replace(pattern, "");
+
+  // 結果を返す
+  return input;
+}
+
+// 削除した文字を出力する
+Serial.println(deleteChars(str, pattern));
 ```
+
+出力結果は、`defg`となります。パターンに一致する文字が削除されていることが分かりますね。
 
 ## 深堀り
 
-Text.replace()やreplaceAll()は、ArduinoのStringオブジェクトが持つ便利なメソッドですが、文字列を一つずつ処理するため、大きなデータを処理する場合は効率が悪くなる可能性があります。そのため、より高速な処理が必要な場合は、C言語の標準ライブラリであるstring.hを使用する方法もあります。
+もし、削除したい文字が複数の場所に出現する場合にはどうするのでしょうか？その場合には、replace()関数ではなく、replaceAll()関数を使用します。これにより、指定したパターンと全ての一致する文字が削除されます。
 
-例えば、Arduinoのプログラムで使用できるstrtok()関数は、指定したデリミタ文字に基づいて文字列を分割することができます。これを使用すると、文字列を一度に一部ずつ処理することができるため、より高速な削除処理が可能になります。
+また、削除したい文字以外の文字を置換する際には、replace()関数の代わりにreplaceFirst()やreplaceLast()関数を使用することもできます。
 
-## おわりに
-
-今回はArduinoプログラミングで文字を削除する方法について紹介しました。それぞれの方法には長所と短所がありますが、自分のプロジェクトに最適な方法を選択してみてください。
+より詳細な情報や例は、[Arduino公式ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)を参考にしてください。
 
 ## 関連リンク
 
-- [Stringオブジェクトのドキュメント](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [正規表現のチュートリアル](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [string.hのドキュメント](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Stringクラスのドキュメンテーション](https://www.arduino.cc/reference/en/language/variables/data-types/string/)

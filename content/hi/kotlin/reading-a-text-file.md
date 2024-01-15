@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: एक टेक्स्ट फ़ाइल पढ़ना"
-simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
+title:                "एक पाठ फ़ाइल पढ़ना"
+html_title:           "Kotlin: एक पाठ फ़ाइल पढ़ना"
+simple_title:         "एक पाठ फ़ाइल पढ़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,21 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
 
-कोटलिन प्रोग्रामिंग, जैसे कि अन्य भाषाओं के लिए, हिंदी भाषाओं में भी बहुत सरल है और इसका उपयोग काफी अलग-अलग शिक्षकों और उनके छात्रों द्वारा किया जाता है। इसलिए, हम आपको इस ब्लॉग पोस्ट के माध्यम से कोटलिन में एक टेक्स्ट फ़ाइल पढ़ने के बारे में बताना चाहेंगे कि इससे आपको क्या फ़ायदा हो सकता है।
+Kisi bhi programmer ke liye text files ek bahut important aur pratishthit source of information hai. Text files me hum sirf text likh sakte hai, jiske wajah se wo bahut asaani se readable aur accessible ho jaate hai. Isliye, agar aapko kisi bhi programming language ko sikhna hai ya fir kisi project me work karna hai, toh text files ko padhna aur unme se data extract karke use karna bahut hi zaruri hai.
 
-## कैसे करें
+## Kaise Kare
 
+```Kotlin
+val file = File("path/to/file.txt")
+file.forEachLine { println(it) }
 ```
-fun main() {
-    val file = File("sample.txt")
-    println(file.readText())
-}
-```
+Is coding example me humne ek text file ko read karke uske har line ko print kiya hai. `File()` function ko use karke hum file ka path specify kar sakte hai. Fir `forEachLine` function me hum `println` use karke file ke har line ko print kar sakte hai.
 
-यहां हमने ```File("...")``` का उपयोग करके एक फ़ाइल बनाई है और उसकी पाठ सामग्री को ```readText()``` के माध्यम से प्रिंट किया है। इस तरह से आप कोटलिन में आसानी से एक टेक्स्ट फ़ाइल को पढ़ सकते हैं। आप ```readLines()``` का भी उपयोग कर सकते हैं जो हमें पंक्तियों की एक लिस्ट देगा।
+Is tarah se, aap Kotlin ka `File` class aur `forEachLine` function ka use karke text files ko bahut asani se read aur manipulate kar sakte hai.
 
-## गहराई में
+## Deep Dive
 
-जब आप एक फ़ाइल को पढ़ते हैं, तो आपको कुछ बातों का ध्यान रखना चाहिए। पहले, फ़ाइल का पथ सही होना चाहिए और यदि आपके द्वारा उपयोग किया गया फ़ाइल स्थान परिवर्तित हुआ, तो आपको नया पथ इसमें दर्ज करना होगा। दूसरा, यदि फ़ाइल खोलने या पढ़ने में कोई त्रुटि होती है, तो आपको कोटलिन द्वारा फ़ाइल बंद करना होगा। आप ```try-catch``` ब्लॉक का इस्तेमाल करके इसको हैंडल कर सकते हैं। आप भी अपनी फ़ाइल को लाइन-वाइस के बारे में विस्तार से पढ़ सकत
+Text files me data line by line format me store hota hai. Isliye, hum `forEachLine` function ka use karte hai taki hum file ke har line ko separately access kar sake. Agar aap `readText()` function ka use karte hai, toh pura file ek string ke roop me return ho jayega.
+
+Hum `FileReader` class bhi use kar sakte hai text files ke read karne ke liye. `FileReader` class ka ek constructor hai jisme hum file ka path specify karke `readText()` function ka use kar sakte hai.
+
+## Dekhiye Bhi
+
+Agar aapko aur jaankari chahiye text files ke read karne ke baare me, toh neeche di gayi links par visit kare:
+- https://kotlinlang.org/docs/reference/input-output.html
+- https://www.tutorialspoint.com/kotlin/kotlin_read_write_files.htm
+- https://www.baeldung.com/kotlin-read-file

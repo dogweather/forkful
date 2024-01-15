@@ -1,6 +1,7 @@
 ---
-title:                "Rust: פירוק HTML"
-simple_title:         "פירוק HTML"
+title:                "ניתוח שפת html"
+html_title:           "Rust: ניתוח שפת html"
+simple_title:         "ניתוח שפת html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,33 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-HTML היא שפת תכנות נפוצה ביותר המשמשת ליצירת דפי אינטרנט. כך שמןדיפס לאינטרנט לעיתים קרובות דורשת לנו לעבוד עם קוד HTML. זה כאשר כלי פיתוח כמו Rust נכנסים לתמוך.
+זהו עולם מסובך של נתוני רשת - אתרי אינטרנט מלאים בקידודים ותגים שונים, וכאשר אנו רוצים לנקות את המידע ולהציג אותו בצורה מסודרת ויפה, ניתן להשתמש בכלי עזר שנקרא HTML parsing. כדי לכתוב תוכניות יעילות וחכמות, יש לנו צורך להתחיל בהבנת כלי ה-HTML parsing שיש לנו זמין בשפת ראסט.
 
-## איך לעשות
+## איך לעשות זאת
 
-כאשר מדובר בזיהוי והצגת קוד HTML, כלי פיתוח כמו Rust יכול להיות מועיל ביותר. בכתבה הזו, אני אדגים כמה פרטים על איך להשתמש בכלי התכנות הזה כדי לפענח ולתצוגה דף אינטרנט.
-
-כדי להתחיל, נגש למטרה שלנו באמצעות גרסה פשוטה של HTML כמו דוגמא. בדוגמא הזאת, אני משתמש בדף פשוט המכיל שורת תמונה עם הכתובת המלאה שלה.
+נתחיל משלב ההתקנה. נוכיח תחילה שאנחנו משתמשים במערכת ההפעלה של Unix כדי להתקין את הספרייה והכלי שלנו. בשורת הכותרת הראשונה נתחיל בהוראות ההתקנה המפורטות עבור הספרייה, ואז נתחיל בכתיבת קוד לפי הצורך.
 
 ```Rust
-use std::fs;
+
+use html5ever::parse_document;
+use std::fs::File;
+use std::io::BufReader;
+use std::io::Read;
 
 fn main() {
-  let html = fs::read_to_string("page.html").unwrap();
-  let image_tag = "<img src='/image.jpg'>";
-  // תפס תג  HTML
-  let start_tag = html.find(image_tag).unwrap();
-  let end_tag = html[start_tag..].find("/>").unwrap() + start_tag;
-  let tag = &html[start_tag..=end_tag];
+    // פתיחת קובץ ה-HTML עם בפונקציות
+    let file = File::open("example.html").unwrap();
+    let reader = BufReader::new(file);
 
-  // נפרס תמונת הכתובת מהתג מצד שמאל
-  let url_start = tag.find("'").unwrap() + 1;
-  let url_end = tag[url_start..].find("'").unwrap() + url_start;
-  let url = &tag[url_start..=url_end];
+    // קריאת תוכן הקובץ והמרה לסטרינג
+    let mut input = String::new();
+    reader.read_to_string(&mut input).unwrap();
 
-  println!("הכתובת המלאה של התמונה היא: {}", url);
+    // יצירת משתמשנת מסוג Belk
+    let dom = parse_document(&Belk, Default::default()).from_utf8().read_from(&mut input.as_bytes()).unwrap();
+
+    // הדפסת תוצאה
+    println!("{}", dom.quiere("title").nth(0).unwrap().text_contents());
 }
-```
-כאן, אנו קוראים את תוכן הדף HTML בעזרת פונקציית "fs::read_to_string" שמקבלת את השם של הקובץ כפרמטר. נשתמש במיתוג כדי לאתר את התג של התמונה ולפענח את הכתובת המלאה שלה. החלק הכי חשוב כאן הוא תפיסת התג המכיל את הכתובת והכתיבה שלה מתוך תגובת התוכן של הדף HTML.
 
-המגבלה העיקרית של הגישה זו היא שהיא עובדת רק עם דפי HTML פשוטים בלבד ולא יפתח תפעולות מורכבות יותר כמו CSS או
+```
+
+ניתן לראות בתחילת הקוד שאנו משתמשים בספריית `html5ever` כדי לעשות את כל העבודה לנו. כתבנו גם פונקציית `main` שמייצרת קובץ לקריאה וממנו תכנים שיענו לבקשת המשתמש.
+
+## חצי עיון
+
+HTML parsing הוא תהליך שכולל שלושה שלבים עיקריים שנקראים "כותרות" (Lexing), "ניתוחים" (Parsing) ו"החלפות" (Mutations). תהליך הכותרות הוא השלב הראשון שבו הטקסט שנקרא מהקלט נמס

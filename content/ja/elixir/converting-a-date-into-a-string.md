@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 「日付を文字列に変換する」"
-simple_title:         "「日付を文字列に変換する」"
+title:                "日付を文字列に変換する"
+html_title:           "Elixir: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why 
+なぜ日付を文字列に変換するのか？
+Elixirにおける日付変換の重要性を説明していきます。
 
-日付を文字列に変換するのに気を取られなければならない理由はたくさんありますが、一つは日付をデータベースや外部アプリケーションとやり取りする必要があるからです。それに加えて、ユーザーにとってわかりやすい形式で日付を表示したいというニーズもあります。
+日付を文字列に変換する必要がある理由の一つは、データを保管するためです。たとえば、データベースに日付を保存する場合、日付を文字列に変換してから保存する必要があります。また、日付を文字列として出力する場合も同様です。Elixirでは、日付を文字列に変換するための便利な機能がありますので、今回はその使い方を紹介していきます。
 
-## 方法
-
-```Elixir
-defmodule DateConverter do
-  def convert(date) do
-    date |> NaiveDateTime.to_date |> Date.to_iso8601
-  end
-end
-```
-
-この例では、最初に `NaiveDateTime` によって与えられた日時を `Date` に変換し、その後 `to_iso8601` 関数を使用してISO 8601形式の文字列に変換しています。結果は次のようになります：
+## How To
 
 ```Elixir
-DateConverter.convert(~D[2022-01-01])
-
-"2022-01-01"
+date = ~D[2021-12-31] # 日付の定義
+IO.puts(to_string(date)) # 日付を文字列に変換して出力
 ```
 
-## ディープダイブ
+```
+> "2021-12-31"
+```
 
-上記の方法は、一般的な日付の変換方法ですが、最適な方法ではありません。日付と時刻を取り扱うのに最適化された `DateTime` モジュールや、異なるタイムゾーンを考慮する `Timex` ライブラリなど、さまざまなツールがElixirにはあります。また、日付を文字列に変換する際にタイムゾーンを指定することも重要です。詳細は公式ドキュメントを参照してください。
+```Elixir
+time = ~T[23:59:59] # 時刻の定義
+IO.puts(to_string(time, {:time, "{YYYY}-{0M}-{DD} {h}時{m}分{s}秒"})) # フォーマットを指定して日付を文字列に変換し出力
+```
+
+```
+> "2021-00-31 23時59分59秒"
+```
+
+日付や時刻を扱うには、まず日付や時刻を定義する必要があります。上記のように日付は`~D`を使用して定義し、時刻は`~T`を使用して定義することができます。そして、`to_string`関数を使用して日付や時刻を文字列に変換することができます。フォーマットを指定することもでき、日付や時刻を任意の形式に変換することができます。
+
+## Deep Dive
+日付を文字列に変換する際、Elixirでは主に二つの関数を使用します。一つは先ほど紹介した`to_string`関数で、日付や時刻の値を文字列に変換します。もう一つは`DateTime.to_iso8601`という関数です。この関数はISO 8601というフォーマットに準拠した文字列に日付や時刻を変換します。
+
+```Elixir
+date = ~D[2021-12-31]
+IO.puts(to_string(date)) # "2021-12-31"
+IO.puts(DateTime.to_iso8601(date)) # "2021-12-31T00:00:00"
+```
+
+`to_string`関数はISO 8601に準拠していませんが、フォーマットを指定することでハイフンなしやスラッシュ区切りなど、様々な形式に変換することができます。一方で、`DateTime.to_iso8601`関数は常にISO 8601の形式で日付や時刻を出力するため、特定のフォーマットを指定できません。どちらの関数を使用するかは、使用する場面や状況によって決める必要があります。
 
 ## See Also
+## 参考リンク
 
-- [Elixir DateTimeモジュール](https://hexdocs.pm/elixir/DateTime.html)
-- [Timexライブラリ](https://hexdocs.pm/timex/Timex.html)
-- [ISO 8601形式についての詳細](https://en.wikipedia.org/wiki/ISO_8601)
+- [Elixirの日付/時刻型を扱う方法](https://fukatsu.tech/elixir-datetime)
+- [DateTimeモジュール](https://hexdocs.pm/elixir/DateTime.html)
+- [to_string関数](https://hexdocs.pm/elixir/String.html#to_string/1)

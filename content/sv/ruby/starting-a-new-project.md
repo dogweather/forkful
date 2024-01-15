@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "Ruby: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -9,47 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
- 
-Att starta ett nytt programmeringsprojekt kan verka överväldigande, men det kan också vara en spännande utmaning. Med Ruby som verktyg finns det många möjligheter att skapa kraftfulla och eleganta program. Läs vidare för att lära dig hur du sätter igång med ditt nya projekt!
+## Varför
+Att starta ett nytt programmeringsprojekt kan vara ett spännande och givande sätt att utmana dig själv och utveckla dina kodningsfärdigheter. Det ger dig också möjlighet att skapa något unikt och användbart för andra.
 
-## Hur man gör
- 
-För att börja ett nytt Ruby-projekt behöver du först och främst ha Ruby installerat på din dator. Om du använder Windows kan du ladda ner Ruby installer här: https://rubyinstaller.org/. Om du använder Mac eller Linux så är det vanligtvis redan förinstallerat på din dator, annars kan du använda en pakethanterare som Homebrew eller apt-get för att installera Ruby.
-
-När du har installerat Ruby behöver du välja en textredigerare för att skriva din kod. Det finns många olika alternativ som Sublime Text, Visual Studio Code eller Atom. Välj den som passar dig bäst och se till att det finns stöd för Ruby.
-
-Nu är det dags att börja koda! Nedan följer ett enkelt exempel på en "Hello World"-applikation i Ruby:
+## Hur Man Gör
+```Ruby
+# Skapa en ny Ruby-fil
+touch nytt_projekt.rb 
+```
 
 ```Ruby
-puts "Hej världen!"
+# Definiera ett nytt klassobjekt
+class Projekt
+  def initialize
+    puts "Välkommen till ditt nya projekt!"
+  end
+end
+
+# Skapa ett instansobjekt av klassen Projekt
+nytt_projekt = Projekt.new
 ```
 
-I konsolen kommer du att se följande output:
-```
-Hej världen!
+```Ruby
+# Lägga till funktioner till klassen
+class Projekt
+  def initialize(languages)
+    @languages = languages
+  end
+  
+  # Skriv ut vilka programmeringsspråk som används i projektet
+  def print_languages
+    puts "Ditt projekt använder följande programmeringsspråk: #{@languages}."
+  end
+end
+
+# Skapa ett nytt instansobjekt med hjälp av konstruktorn
+nytt_projekt = Projekt.new("Ruby, HTML, CSS")
+
+# Anropa funktionen för att skriva ut språken
+nytt_projekt.print_languages
 ```
 
-Du kan också spara koden i en fil med tillägget ".rb" och köra den från kommandoraden med kommandot `ruby hello.rb`. Du bör se samma output som tidigare.
+```Ruby
+# Skapa nya funktioner
+class Projekt
+  def initialize(languages)
+    @languages = languages
+  end
+  
+  # Lägg till ett nytt programmeringsspråk
+  def add_language(language)
+    @languages << language
+    puts "#{language} har lagts till i ditt projekt."
+  end
+  
+  # Radera ett programmeringsspråk
+  def delete_language(language)
+    @languages.delete(language)
+    puts "#{language} har tagits bort från ditt projekt."
+  end
+end
+
+# Skapa ett nytt instansobjekt med hjälp av konstruktorn
+nytt_projekt = Projekt.new(["Ruby", "HTML", "CSS"])
+
+# Anropa funktioner för att lägga till och radera språk
+nytt_projekt.add_language("JavaScript")
+nytt_projekt.delete_language("CSS")
+```
 
 ## Djupdykning
- 
-När du väl har börjat ditt projekt finns det några saker att tänka på för att hålla det organiserat och enkelt att följa. En av de viktigaste aspekterna är att använda versionhantering, som Git eller Github, för att hålla koll på ändringar i din kod och möjliggöra samarbete med andra utvecklare.
+Att starta ett nytt projekt innebär inte bara att skapa ny kod, utan också att planera och organisera ditt arbete. Det är viktigt att tydligt definiera målen för projektet och skapa en plan för hur du ska uppnå dem. Det kan också vara användbart att använda ett versionshanteringssystem som Git för att hantera dina ändringar och samarbeta med andra utvecklare.
 
-En annan viktig aspekt är att skapa en bra filstruktur för ditt projekt. Detta gör det lättare att navigera och hitta rätt filer när ditt projekt växer. Det är också en bra idé att använda kommentarer i din kod för att förklara dess syfte och hjälpa andra att förstå den.
-
-Se till att använda validatorer och tester för att säkerställa att din kod är korrekt och fungerar som den ska. Detta kan spara dig mycket tid och frustration senare i projektet.
-
-Det finns många resurser online för att lära sig mer om Ruby-programmering och hur du kan förbättra ditt projekt. Här är några länkar som kan vara till hjälp:
-
-- Ruby's officiella hemsida: https://www.ruby-lang.org/sv/
-- Ruby on Rails Tutorial: https://www.railstutorial.org/
-- Ruby Gems: https://rubygems.org/
-
-Fortsätt utforska och experimentera med Ruby för att utvecklas som programmerare och skapa fantastiska projekt!
-
-# Se även
- 
-- [Ruby Style Guide](https://github.com/rubocop/ruby-style-guide)
-- [Ruby Best Practices](https://github.com/daustin777/ruby-best-practices)
-- [The Ruby Toolbox](https://www.ruby-toolbox.com/)
+## Se även
+[Officiell Ruby Dokumentation](https://www.ruby-lang.org/sv/documentation/)\
+[Ruby on Rails Tutorial](https://guides.rubyonrails.org/)\
+[Github Repository för Ruby](https://github.com/ruby/ruby)

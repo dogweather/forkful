@@ -1,6 +1,7 @@
 ---
-title:                "C#: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Å skrive tester"
+html_title:           "C#: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -11,55 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av utviklingsprosessen. Det hjelper deg å oppdage og fikse feil tidligere, noe som resulterer i mer stabil og pålitelig kode. Ved å skrive tester, kan du også dokumentere koden din og bidra til økt forståelse for andre utviklere.
+Det å skrive tester er en viktig del av utviklingen i ethvert programmeringsspråk. Tester hjelper oss med å sikre at koden vår fungerer som den skal og reduserer risikoen for feil og bugs. Det kan også bidra til å forbedre kvaliteten på koden og gjøre den mer pålitelig.
 
-Nå lurer du kanskje på hvordan du skal skrive tester i C#, så la oss dykke inn i det neste avsnittet.
+## Hvordan du gjør det
 
-## Hvordan skrive tester i C#
+Skrive tester i C# er en enkel prosess som kan gjøres ved hjelp av .NET's innebygde testingverktøy, NUnit eller xUnit. Her er et eksempel på hvordan man kan skrive en enkel test i C#:
 
-For å skrive tester i C#, trenger du et testrammeverk som NUnit eller xUnit og et verktøy som Visual Studio eller Visual Studio Code. La oss se på et eksempel på hvordan du kan skrive en enkel enhetstest ved hjelp av NUnit:
-
-```
-using System;
+```C#
 using NUnit.Framework;
 
-namespace TestProject
+[TestFixture]
+public class CalculatorTests
 {
-  public class Calculator
-  {
-    public int Add(int a, int b)
-    {
-      return a + b;
-    }
-  }
-
-  [TestFixture]
-  public class CalculatorTests
-  {
     [Test]
-    public void Add_Test()
+    public void AddTwoNumbers_ReturnsCorrectSum()
     {
-      int expected = 5;
-      int actual = Calculator.Add(2, 3);
-      Assert.AreEqual(expected, actual);
+        // Arrange
+        int num1 = 5;
+        int num2 = 10;
+        int expectedSum = 15;
+
+        // Act
+        int actualResult = Calculator.Add(num1, num2);
+
+        // Assert
+        Assert.AreEqual(expectedSum, actualResult);
     }
-  }
 }
 ```
 
-I dette eksempelet oppretter vi en enkel kalkulator som har en metode for å legge sammen to tall. Deretter bruker vi NUnit-testrammeverket for å opprette en testklasse og en testmetode. Inne i testmetoden definerer vi forventede og faktiske verdier og bruker Assert-metoden til å validere om verdien vi får fra kalkulatoren er riktig.
+I koden ovenfor har vi opprettet en testklasse med en testmetode som sjekker om kalkulatoren vår gir riktig sum når vi legger sammen to tall. Vi bruker "Arrange, "Act" og "Assert" konvensjonen for å organisere koden vår og gjøre den mer leselig.
 
-Det er viktig å merke seg at i eksempelet over, bruker vi TestFixture og Test-attributtene for å markere klassen og metoden som en test. Dette er nødvendig for at testrammeverket skal kunne kjøre testene.
+Når vi kjører testen vår, vil vi få en utgang som sier at testen har passert. Hvis vi endrer det ene av tallene våre i koden, vil testen mislykkes og vi vil få en feilmelding som indikerer at verdien ikke er som forventet.
 
-## Dypdykk i skriving av tester
+## Dykk dypere
 
-Når du begynner å skrive tester i C#, er det mange ting å vurdere. Du vil kanskje vurdere ulike testdesignmønstre som enhetstesting, integrasjonstesting og aksepttesting. Du må også ta hensyn til hvordan du skal mocks og stubs for å isolere koden din og skrive mer effektive tester.
+Når vi skriver tester, er det viktig å tenke på hva slags scenarier koden vår må kunne håndtere. Vi bør skrive tester for både positive og negative scenarier, for å sikre at koden vår fungerer som den skal under ulike forhold.
 
-En ting du også må huske på er å skrive testene før du skriver selve koden. Dette konseptet kalles testdrevet utvikling (TDD) og kan hjelpe deg å tenke mer nøye gjennom koden din og resultere i bedre strukturert kode.
+Vi kan også bruke "Mocks" og "Stubs" for å simulere ulike situasjoner og objekter når vi skriver tester. Dette kan være nyttig for å isolere koden vår og teste den uavhengig av andre avhengigheter.
+
+Det finnes også ulike verktøy og teknikker som kan hjelpe oss med å skrive bedre tester, som for eksempel "Test Driven Development" (TDD) og "Behavior Driven Development" (BDD). Det kan være lurt å utforske disse konseptene for å forbedre testene våre enda mer.
 
 ## Se også
 
-- [NUnit dokumentasjon](https://nunit.org/)
+- [Microsoft sin guide for testing i .NET](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0)
+- [NUnit dokumentasjon](https://docs.nunit.org/)
 - [xUnit dokumentasjon](https://xunit.net/)
-- [Introduksjon til enhetstesting i C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [Hva er TDD?](https://www.agilealliance.org/glossary/tdd/)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: ניתוח קוד HTML"
-simple_title:         "ניתוח קוד HTML"
+title:                "פירוק קוד HTML"
+html_title:           "Go: פירוק קוד HTML"
+simple_title:         "פירוק קוד HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,55 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-פעולת ניתוח (Parsing) של קוד HTML היא חשובה כשמעוניינים לאתר את מבנה האתר ולהשתמש בנתונים מתוכו.
+## מדוע
 
-## איך לבצע ניתוח HTML ב-Go
-הנה דוגמא פשוטה של ניתוח קוד HTML בשפת Go:
+אם אתם מתכנתים, ייתכן שתגיעו למצבים בהם תצטרכו לטפל בנתונים שמגיעים מקוד HTML. בג'ו, זה די קל להפוך את התהליך הזה למהיר ויעיל.
 
+## איך לעשות זאת
+
+### התקנת החבילה
+
+לפני שניכנס לפנייה ניתן לקחת ארגז הכלים של `http` ולהביא את המערכת וכן `html` אבל השיטה המומלצת לעשות את זה היא ע"י התקנת החבילה `golang.org/x/net/html`.
+
+כדאי לוודא שהחבילה מתוקנת בצורה נכונה ואם לא כך, אז לשלוח `go get` כמו תמיד.
+
+### השתמש ב`Parse`
+
+עבור תחילת הפעילות של הקוד שכתבנו, נגדיר משתנה שנקרא `doc` שיכיל את הרצועה של התשתית שהוספנו ברגע הקודם.
+
+```Go
+doc, err := html.Parse(resp.Body)
 ```
-package main
 
-import (
-	"fmt"
-	"strings"
-	"net/http"
-	"io/ioutil"
-)
+במקרה הנוכחי, המתודה של `Parse` תהיה נמשכת מהתשובת האתר המבוקש המופיע במשתנה `resp`.
 
-func main() {
-	
-	// שרתים עם קוד HTML פשוט
-	urls := []string{"https://example.com", "https://google.com", "https://github.com"}
+### מציאת אלמנטים
 
-	for _, url := range urls {
-		res, err := http.Get(url)
-		if err != nil {
-			fmt.Println("Error:", err)
-		} else {
-			htmlBytes, _ := ioutil.ReadAll(res.Body)
-			htmlString := string(htmlBytes)
-			// הדפסת כל טקסט בין תגיי <title> </title> באתר
-			titleStartIndex := strings.Index(htmlString, "<title>") + len("<title>") 
-			titleEndIndex := strings.Index(htmlString, "</title>")
-			fmt.Println(url, ":", htmlString[titleStartIndex:titleEndIndex])
+בכוונה, אנחנו נחפש את האלמנט הרצוי באמצעות השיטה `findLinks`.
+
+```Go
+func findLinks(n *html.Node) []string {
+	var links []string
+	// רק אם זה תנאי הזה
+	if n.Type == html.ElementNode && n.Data == "a" {
+		for _, a := range n.Attr {
+			if a.Key == "href" {
+				links = append(links, a.Val)
+			}
 		}
 	}
+	// זה יוצא מכל השאר
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		links = append(links, findLinks(c)...)
+	}
+	return links
 }
 ```
 
-תוצאות הקוד לכתובות האינטרנט שנתתי כדוגמא:
+זה לא משנה מה זה HTML נראה להכריח את השיטה `findLinks` לרדת לילדים של `Node` ולהתחיל לעבוד רק כשהיא מגיעה לאיבר הרלוונטי.
+
+בסוף הקוד מחזיר רשימה של אופני מחיקה עבור סוגי נתונים HTML כגון.
+
+Url x, url y, url z, url3
+
+הנה פלט לקריאה של הפונקציה הקודמת:
 
 ```
-https://example.com : Example Domain
-https://google.com : Google
-https://github.com : The world's leading software development platform · GitHub
+$ go run fetching_urls.go
+
+https://www.yourwebsite.com
+http://www.example.com
+http://www.example2.com
 ```
 
-## העמקת הנתונים של ניתוח HTML
-הנתונים שניתקלים בניתוח קוד HTML מכילים רבים מאוד פרטים וכוללים נתונים כמו כותרות, תמונות, כפתורים, טקסטים ועוד. כדי להשתמש בנתונים בצורה יעילה יותר, יש להשיג ידע נוסף על האופן שבו הם מאוחסנים והאיזון בין נתונים באתרים שונים.
-
-## ראו גם
-- [ספרית Go עבור ניתוח קוד HTML](https://github.com/google/go-html-transform)
-- [מדריך מפורט של ניתוח קוד HTML בשפת Go](https://www.geeksforgeeks.org/how-to-parse-and-provide-data-from-website-into-csv-file-using-golang/)
-- [משתמשות בניתוח קוד HTML לצורכי אופטימיזציה וניתוח נתונים](https://towardsdatascience.com/extracting-data-from-web-pages-with-golang-89ccc1b08b9)
+### השת

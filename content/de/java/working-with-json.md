@@ -1,6 +1,7 @@
 ---
-title:                "Java: Arbeiten mit json"
-simple_title:         "Arbeiten mit json"
+title:                "Arbeiten mit JSON"
+html_title:           "Java: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,116 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-JSON ist eine sehr nützliche Form von Daten, die in vielen Bereichen der Softwareentwicklung verwendet wird. Es ist ein einfaches und leicht lesbares Format, das für den Austausch von Daten zwischen Anwendungen verwendet werden kann. Egal, ob Sie eine Webanwendung entwickeln, Daten analysieren oder mit API-Anfragen arbeiten, die Wahrscheinlichkeit ist hoch, dass Sie irgendwann mit JSON konfrontiert werden. Daher ist es wichtig, eine grundlegende Kenntnis davon zu haben, wie man mit JSON in Java arbeitet.
+JSON (JavaScript Object Notation) ist ein gängiges Format zum Austausch von Daten zwischen Anwendungen. Es ist sowohl einfach zu lesen und zu schreiben als auch plattformunabhängig, was es zu einer beliebten Wahl für die Datenübertragung macht.
 
-# Wie man mit JSON in Java arbeitet
+## So geht's
 
-Die Java-Plattform bietet verschiedene Bibliotheken und APIs, mit denen Sie problemlos mit JSON arbeiten können. Im Folgenden werden wir uns auf die Verwendung der Standardbibliothek von Java konzentrieren.
+Die Arbeit mit JSON in Java ist relativ einfach. Hier sind einige Beispiele und Ausgaben, um dir den Einstieg zu erleichtern.
 
-Zunächst müssen Sie ein JSON-Objekt erstellen. Dazu können Sie die Klasse JsonObject aus der Java.util-Bibliothek verwenden. Das folgende Beispiel zeigt, wie Sie ein JSON-Objekt erstellen und einige Werte hinzufügen können:
+Um eine JSON-Datei zu lesen, kann das JSONObject verwendet werden. Dazu muss die JSON-Datei zuerst als String eingelesen werden. Dann wird der String dem JSONObject-Konstruktor übergeben.
 
 ```Java
-import java.util.*;
-
-public class JSONDemo {
-
-     public static void main(String[] args) {
-         
-         // Erstelle ein neues JSON-Objekt
-         JsonObject jsonObject = new JsonObject();
-         
-         // Füge einige Werte hinzu
-         jsonObject.addProperty("Name", "Max Mustermann");
-         jsonObject.addProperty("Alter", 25);
-         jsonObject.addProperty("Beruf", "Softwareentwickler");
-         
-         // Gib das JSON-Objekt aus
-         System.out.println(jsonObject);
-         
-     }
-
-}
+// Vorraussetzung: import org.json.JSONObject;
+String jsonString = "{\"name\":\"Max\", \"age\":25}";
+JSONObject json = new JSONObject(jsonString);
 ```
 
-Die Ausgabe dieses Codes wäre:
+Um auf bestimmte Werte in der JSON-Datei zuzugreifen, können die entsprechenden Methoden verwendet werden. Zum Beispiel, um auf den Namen zuzugreifen:
 
-```JSON
+```Java
+String name = json.getString("name");
+System.out.println(name); // Ausgabe: Max
+```
+
+Um eine JSON-Datei zu schreiben, kann das JSONObject verwendet werden, um die Einträge hinzuzufügen. Dann kann die toJSONString()-Methode verwendet werden, um die Datei als String zu erhalten.
+
+```Java
+JSONObject json = new JSONObject();
+json.put("name", "Max");
+json.put("age", 25);
+String jsonString = json.toJSONString();
+System.out.println(jsonString); // Ausgabe: {"name":"Max", "age":25}
+```
+
+## Tiefentauchen
+
+JSON bietet auch die Möglichkeit, komplexe Datenstrukturen zu erstellen, indem Objekte und Arrays in Objekten und Arrays verschachtelt werden. Zum Beispiel:
+
+```Java
 {
-  "Name": "Max Mustermann",
-  "Alter": 25,
-  "Beruf": "Softwareentwickler"
-}
-```
-
-Um auf die Werte eines JSON-Objekts zuzugreifen, können Sie die Methode get(String key) verwenden, wobei der Schlüssel des Werts als Argument übergeben wird. Im folgenden Beispiel wird auf den Namen aus dem oben erstellten JSON-Objekt zugegriffen:
-
-```Java
-// Gib den Namen aus dem JSON-Objekt aus
-System.out.println(jsonObject.get("Name"));
-```
-
-Die Ausgabe wäre:
-
-```JSON
-Max Mustermann
-```
-
-# Tiefer Einblick in die Arbeit mit JSON
-
-Neben der Erstellung von JSON-Objekten können Sie auch JSON-Arrays erstellen, die eine Liste von JSON-Objekten darstellen. Dazu können Sie die Klasse JsonArray aus der Java.util-Bibliothek verwenden. Im folgenden Beispiel wird ein JSON-Array erstellt und mit zwei JSON-Objekten befüllt:
-
-```Java
-import java.util.*;
-
-public class JSONDemo {
-
-     public static void main(String[] args) {
-         
-         // Erstelle ein neues JSON-Array
-         JsonArray jsonArray = new JsonArray();
-         
-         // Füge JSON-Objekte hinzu
-         jsonArray.add(new JsonObject().addProperty("Name", "Max Mustermann").addProperty("Beruf", "Softwareentwickler"));
-         jsonArray.add(new JsonObject().addProperty("Name", "Lisa Müller").addProperty("Beruf", "Datenanalystin"));
-         
-         // Gib das JSON-Array aus
-         System.out.println(jsonArray);
-     }
-
-}
-```
-
-Die Ausgabe dieses Codes wäre:
-
-```JSON
-[
-  {
-    "Name": "Max Mustermann",
-    "Beruf": "Softwareentwickler"
-  },
-  {
-    "Name": "Lisa Müller",
-    "Beruf": "Datenanalystin"
+  "name": "Max",
+  "age": 25,
+  "hobbies": ["Gaming", "Reading", "Hiking"],
+  "address": {
+    "street": "Hauptstraße 123",
+    "city": "Berlin",
+    "zip": 12345
   }
-]
+}
 ```
 
-Es ist auch möglich, ein JSON-Objekt in eine Java-Map zu konvertieren, um einfacher auf die Werte zuzugreifen. Dazu können Sie die Methode getAsMap() verwenden. Das folgende Beispiel zeigt, wie man das oben erstellte JSON-Objekt in eine Map konvertieren kann:
+Hier kann auf die Liste der Hobbys zugegriffen werden, indem man auf das entsprechende Array zugreift:
 
 ```Java
-// Konvertiere das JSON-Objekt in eine Java-Map
-Map<String, Object> map = jsonObject.getAsMap();
-
-// Gib den Namen aus der Map aus
-System.out.println(map.get("Name"));
+JSONArray hobbies = json.getJSONArray("hobbies");
+String hobby = hobbies.getString(0);
+System.out.println(hobby); // Ausgabe: Gaming
 ```
 
-Dies würde die Ausgabe "Max Mustermann" erzeugen.
+Und auf die Straße der Adresse kann folgendermaßen zugegriffen werden:
 
-# Siehe auch
+```Java
+JSONObject address = json.getJSONObject("address");
+String street = address.getString("street");
+System.out.println(street); // Ausgabe: Hauptstraße 123
+```
 
-- [JSON in Java verwenden](https://www.baeldung.com/java-json)
-- [Java.util-Bibliothek](https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html)
-- [JSON-Referenz](https://www.json.org/json-de.html)
+Es gibt viele weitere Methoden, die beim Arbeiten mit JSON hilfreich sind, wie z.B. die getJSONArray(), getJSONObject(), putIfAbsent() und viele andere. Es ist empfehlenswert, die offizielle Java-Dokumentation für JSONObject und JSONArray zu konsultieren, um alle verfügbaren Methoden zu erfahren.
+
+## Siehe auch
+
+- [Java Dokumentation für JSONObject](https://docs.oracle.com/javase/7/docs/api/org/json/JSONObject.html)
+- [Java Dokumentation für JSONArray](https://docs.oracle.com/javase/7/docs/api/org/json/JSONArray.html)
+- [JSON-Tutorial für Anfänger](https://www.json.org/json-de.html)

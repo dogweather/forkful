@@ -1,6 +1,7 @@
 ---
-title:                "Go: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Kaavan mukaisten merkkien poistaminen"
+html_title:           "Go: Kaavan mukaisten merkkien poistaminen"
+simple_title:         "Kaavan mukaisten merkkien poistaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,56 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jotkut ohjelmoijat saattavat tarvita poistaa merkkejä, jotka vastaavat tiettyä mallia. Tämä voi olla hyödyllistä esimerkiksi tietojen puhdistamisessa tai tiettyjen merkkitietojen etsimisessä. Tässä artikkelissa kerromme, miten tämä voidaan toteuttaa Go-ohjelmointikielellä.
+## Miksi joku haluaisi poistaa tiettyä kaavaa vastaavat merkit?
 
-## Miten tehdä
+Poistaminen merkkejä, jotka vastaavat tiettyä kaavaa, voi olla hyödyllistä, kun käsitellään tekstimuotoista dataa. Tämä voi auttaa yksinkertaistamaan dataa tai löytämään tiettyjä avainsanoja tai lauseita.
 
-Voit poistaa merkkejä, jotka vastaavat tiettyä mallia, käyttämällä "regexp" -pakettia. Tämä paketti tarjoaa laajan valikoiman työkaluja, joita voit käyttää merkkihakuihin ja korvaamiseen.
+## Miten
 
-Esimerkiksi voimme luoda yksinkertaisen ohjelman, joka poistaa kaikki numerot sisältävät merkit merkkijonosta:
+Poistaaksesi merkit, jotka vastaavat tiettyä kaavaa, sinun on ensin lueteltava merkit, joita haluat poistaa. Tämän jälkeen voit käyttää Go: n sisäänrakennettua `strings.ReplaceAll` -funktiota, jonka avulla voit korvata muodostetut merkit tyhjällä merkillä.
+
+Esimerkki löytyy alla olevasta koodilohkosta:
 
 ```Go
 package main
 
 import (
     "fmt"
-    "regexp"
+    "strings"
 )
 
 func main() {
-    // Luodaan säännöllinen lauseke, joka vastaa kaikkia numeroita
-    regex := regexp.MustCompile("[0-9]+")
+    text := "Tämä on testiteksti, jossa on tarpeettomia merkkejä?"
+    poistettavat := "aieö?"
+    puhdasTeksti := strings.ReplaceAll(text, poistettavat, "")
 
-    // Testimerkkijono
-    str := "Tämä on esimerkkimerkkijono, jossa on 123 numeroa."
-
-    // Käytetään FindAllString -funktiota löytämään kaikki numerot
-    matches := regex.FindAllString(str, -1)
-
-    // Tulostetaan alkuperäinen merkkijono ja numerot sen sisällä
-    fmt.Println("Alkuperäinen merkkijono:", str)
-    fmt.Println("Numerot:", matches)
-
-    // Poistetaan numerot merkkijonosta ja tulostetaan puhdistettu versio
-    cleanStr := regex.ReplaceAllString(str, "")
-    fmt.Println("Puhdistettu merkkijono:", cleanStr)
+    fmt.Println(puhdasTeksti)
 }
 ```
 
-Tuloste:
+Tämän koodin tulos olisi: `Tm n tstmksn jssn trpttmla kkmrkj`
 
-```
-Alkuperäinen merkkijono: Tämä on esimerkkimerkkijono, jossa on 123 numeroa.
-Numerot: [123]
-Puhdistettu merkkijono: Tämä on esimerkkimerkkijono, jossa on numeroa.
-```
+## Syvällinen sukellus
 
-## Syvempää sukellusta
+Vaikka `strings.ReplaceAll` -funktio on helppo ja tehokas tapa poistaa merkkejä, se voi myös aiheuttaa ongelmia joissakin tilanteissa. Esimerkiksi jos haluat poistaa tietyn kaavan mukaiset merkit, mutta tekstissä on useita esiintymiä samasta kaavasta, kaikki esiintymät poistetaan. Tämä voi johtaa ei-toivottuihin tuloksiin.
 
-Säännöllisillä lausekkeilla on monia erilaisia käyttötarkoituksia ja ne voivat olla erittäin hyödyllisiä datan käsittelyssä ja analysoinnissa. Go:n "regexp" -paketti tarjoaa useita erilaisia toimintoja, joita voit käyttää monimutkaisempien mallien löytämiseen ja korvaamiseen.
+Voit välttää tämän ongelman käyttämällä "regexp" -pakettia Go: ssa, joka tarjoaa laajempia toimintoja kaavojen ja merkkijonojen käsittelyyn. Tämän paketin avulla voit esimerkiksi käsitellä säännöllisiä lausekkeita ja tallentaa tulokset muuttujiin.
+
+Lisätietoja "regexp" -paketista ja sen käytöstä löydät Go: n virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [Go:n "regexp" -paketin virallinen dokumentaatio](https://golang.org/pkg/regexp/)
-- [Säännölliset lausekkeet - Wikipedia (suomeksi)](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke)
-- [15 Tavallista säännöllistä lauseketta](https://www.guru99.com/regular-expressions.html)
+- [Go: n virallinen dokumentaatio](https://golang.org/doc/)
+- [Regexp-paketin dokumentaatio](https://golang.org/pkg/regexp/)

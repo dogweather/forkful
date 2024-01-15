@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Satunnaisten numeroiden generoiminen"
-simple_title:         "Satunnaisten numeroiden generoiminen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Elm: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -9,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää satunnaislukugeneraattoria Elm-ohjelmoinnissa?
+## Miksi
 
-Satunnaislukugeneraattori on tärkeä työkalu monissa ohjelmointitehtävissä. Sen avulla voidaan luoda arvaamattomia lukuja, jotka ovat tarpeen esimerkiksi peleissä, simulaatioissa ja salausalgoritmeissa. Elm tarjoaa helpon tavan generoida satunnaislukuja, joten se on erinomainen valinta projekteihin, joissa satunnaislukujen käyttö on olennaista.
+Satunnaislukujen luominen on tärkeä osa ohjelmointia monissa sovelluksissa. Ne voivat auttaa luomaan monipuolisia toimintoja, kuten arpajaisia, salasanoja ja satunnaisia tietokannan viittauksia. Elm tarjoaa tehokkaan ja luotettavan tavan generoida satunnaisia lukuja, joten saatat haluta oppia lisää tästä tärkeästä taidosta.
 
-## Kuinka käyttää satunnaislukugeneraattoria Elm-ohjelmoinnissa?
+## Miten
 
-Satunnaislukujen generointi Elm:ssa onnistuu käyttämällä `Random`-moduulia. Ensimmäiseksi on tuotava tämä moduuli ohjelmaan käyttämällä `import`-lauseketta. Sitten satunnaislukugeneraattori luodaan halutun tyypin mukaan, esimerkiksi `Float`-tyyppistä satunnaislukua varten. Lopuksi tulostamme generoidun luvun käyttämällä `seed`-funktiota ja määrittämällä sen parametriksi halutun luvun haarukan.
+Satunnaislukujen luominen Elm:llä on helppoa. Voit käyttää `Random` kirjastoa, joka tarjoaa useita toimintoja satunnaisten lukujen generoimiseen. Tässä on yksinkertainen esimerkki, jossa generoidaan luku väliltä 1-10:
 
-``` Elm
-import Random
-randomNumber : Float
-randomNumber = 
-  Random.generate 
-    (Random.float 0 10) -- Haarukka välillä 0-10
-    Random.initialSeed
+```Elm
+import Random exposing (int, step)
+
+generateRandomNumber : Random.Generator Int
+generateRandomNumber =
+  Random.step (Random.int 1 10)
+
+main =
+  Random.generate generateRandomNumber
 ```
 
-Tulostus voi vaihdella jokaisella suorituskerralla, mutta seuraavassa on esimerkki mahdollisesta tuloksesta:
+Tässä koodin esimerkissä `Random` kirjastosta tuodaan `int` ja `step` toiminnot. `step` toiminto ottaa parametrina `Random.Generator` tyypin ja `Random.int` luo satunnaisen luvun annetulta väliltä. Lopuksi `Random` kirjasto käyttää `generate` toimintoa, joka käyttää `generateRandomNumber` funktiota ja luo satunnaisen luvun.
 
-``` Elm
-9.362957
+Suoritettaessa tätä koodia, voit odottaa tuloksena jotakin seuraavan kaltaista:
+
+```
+Ok 7 : Result String Int
 ```
 
-## Syvällisempi tarkastelu satunnaislukugeneraattorista Elm:ssa
+Tämä tarkoittaa, että satunnainen luku on luotu onnistuneesti ja sen arvo on 7.
 
-Elm:n `Random`-moduuli käyttää sisäisesti Mersenne Twister -algoritmia satunnaislukujen generointiin. Tämä algoritmi on suorituskykyinen ja tarjoaa hyvän satunnaisuuden. 
+## Syvällisempi sukellus
 
-Satunnaislukugeneraattori tarvitsee myös alkuperäisen siemenen, joka sitten käytetään uusien lukujen luomiseen. On tärkeää huomata, että jos käytetään samaa siementä useammin, generoitu satunnaislukusarja on aina sama. Siksi onkin hyvä idea käyttää esimerkiksi ajanhetkestä tai käyttäjän antamasta syötteestä saatua siementä, jolloin taataan arvaamaton satunnaisuus.
+Satunnaislukujen generoiminen Elm:llä perustuu `Random` kirjastoon ja sen toimintoihin. Voit käyttää esimerkiksi `float` toimintoa, jos haluat generoida satunnaisia liukulukuja. `int` ja `float` toiminnot hyväksyvät myös `min` ja `max` parametrit, joiden avulla voit määrittää halutun välillä.
+
+Voit myös käyttää `stepWith` toimintoa, joka ottaa parametreina funktion ja `Random.Generator` tyypin. Tämä mahdollistaa monimutkaisempien satunnaislukujen generoinnin, kuten esimerkiksi luvun pohjalta toisen luvun luonti tai tiettyjen ehtojen täyttymisen tarkistaminen ennen luvun generointia.
+
+Olennaista on kuitenkin pitää mielessä, että satunnaisluvut eivät ole täysin "satunnaisia" tietokoneessa, vaan niitä generoidaan tietynlaisen kaavan avulla. Tästä syystä niitä ei tulisi käyttää tietoturvasovelluksissa tai missään muussa tilanteessa, jossa todellinen satunnaisuus on välttämätön.
 
 ## Katso myös
 
-- [Elm:n virallinen dokumentaatio satunnaislukugeneraattorista](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Mersenne Twister -algoritmin tutkimuspaperi](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/ARTICLES/mt.pdf)
+- OfBorg satunnaislukugeneraattori Elm-ympäristöön: https://github.com/elm-community/elm-random-extra
+- Elm Random kirjaston dokumentaatio: https://package.elm-lang.org/packages/elm/random/latest/Random

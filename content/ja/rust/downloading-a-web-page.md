@@ -1,6 +1,7 @@
 ---
-title:                "Rust: ウェブページをダウンロード"
-simple_title:         "ウェブページをダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Rust: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-ウェブページをダウンロードする理由は多岐に渡りますが、その一つにはウェブスクレイピングやデータ収集があります。Rustの強力な並列処理能力と高速性を活かして、有用なデータを簡単かつ効率的に収集することができます。
+## なぜ
 
-## How To
+ウェブページをダウンロードする理由はたくさんあります。例えば、特定の情報を手元に保存したい、オフライン環境で閲覧したい、またはプログラミングの演習として使用したいなどが挙げられます。この記事では、Rust言語でウェブページをダウンロードする方法を紹介します。
 
-ウェブページをダウンロードするためには、Rustの標準ライブラリであるreqwestクレートが必要です。まずはこのクレートをプロジェクトに追加しましょう。
+## 方法
+
+Rustでウェブページをダウンロードするには、まずは必要なクレートをインポートします。例えば、[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートを使うと簡単にウェブページをダウンロードできます。
+
 ```Rust
-[dependencies]
-reqwest = "0.11.4"
+use reqwest::Error; // エラー処理を行うためのクレートをインポート
+use std::fs::File; // ファイル操作をするためのクレートをインポート
+use std::io::copy; // ファイルをコピーするためのクレートをインポート
+
+fn main() -> Result<(), Error>{
+  let response = reqwest::get("https://example.com")?; // ウェブページをダウンロードする
+  let mut output = File::create("index.html")?; // ファイルを作成する
+  copy(&mut response, &mut output)?; // ファイルをコピーする
+
+  println!("ページをダウンロードしました！");
+  Ok(()) // 処理が成功した場合には、エラーオブジェクトを返さずに`()`を返す
+}
 ```
 
-次に、reqwestクレートをインポートします。
-```Rust
-use reqwest::blocking::get;
-```
-ウェブページをダウンロードするには、`get()`メソッドを使用します。このメソッドにはダウンロードするページのURLを引数として渡します。例えば、google.comをダウンロードするには次のようになります。
-```Rust
-let response = get("https://www.google.com").unwrap();
-```
-レスポンスは、`Response`型のインスタンスとして返されます。このインスタンスからウェブページのHTMLコンテンツを取得するには、`text()`メソッドを使用します。
-```Rust
-let body = response.text().unwrap();
-```
-これで、ウェブページのHTMLコンテンツが`body`変数に格納されます。
+上の例では、[`get`](https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.text)メソッドを使用してウェブページをダウンロードし、[`copy`](https://doc.rust-lang.org/std/fs/fn.copy.html)関数を使用してファイルをコピーしています。ダウンロードしたウェブページは`index.html`という名前で保存されます。この方法を応用すれば、ダウンロードしたファイルをパースしたり、ヘッダー情報を取得したりすることもできます。
 
-## Deep Dive
-ウェブページをダウンロードする際には、レスポンスのステータスコードやヘッダー情報を確認することも重要です。レスポンスのステータスコードは、`status()`メソッドで取得できます。また、`headers()`メソッドを使用することで、ヘッダー情報を取得することができます。
+## ディープダイブ
 
-また、reqwestクレートには非同期制御が可能な非同期メソッドもあります。複数のウェブページを同時にダウンロードする場合は、非同期メソッドを使用することで処理速度を向上させることができます。
+ウェブページをダウンロードする際には、HTTPリクエストやレスポンスについても知っておく必要があります。[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートでは、[`Request`](https://docs.rs/reqwest/latest/reqwest/struct.Request.html)と[`Response`](https://docs.rs/reqwest/latest/reqwest/struct.Response.html)という構造体を使用してリクエストとレスポンスを処理することができます。また、HTTPリクエスト時には[`Client`](https://docs.rs/reqwest/latest/reqwest/struct.Client.html)構造体を使用して、セッションを作成することができます。
 
-## See Also
-- [reqwestクレートのドキュメント（英語）](https://docs.rs/reqwest/0.11.4/reqwest/)
-- [ウェブスクレイピングにおける注意点（日本語）](https://note.mu/oozou/n/n2b3d9692f9b8)
-- [Rustでの非同期プログラミング（日本語）](https://qiita.com/tatsuya6502/items/097c5c078985d26068ce)
+さらに、ウェブページをダウンロードする際にはHTTPSを使用することが推奨されています。[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートでは、[`ClientBuilder`](https://docs.rs/reqwest/latest/reqwest/struct.ClientBuilder.html)を使用してHTTPSエンドポイントを検証することもできます。
+
+## もっと詳しく知りたい
+
+- [`reqwest`クレートドキュメンテーション](https://docs.rs/reqwest/latest/reqwest/)
+- [Rustプログラミング言語公式ウェブサイト](https://www.rust-lang.org/ja)
+- [RustでWebスクレイピングする方法（Qiita）](https://qiita.com/attsun1031/items/9d95a

@@ -1,6 +1,7 @@
 ---
-title:                "C: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "부분 문자열 추출하기"
+html_title:           "C: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,48 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-컴퓨터 프로그래밍을 할 때, 우리는 종종 특정 문자열을 필요로 합니다. 하지만 때로는 그 문자열의 일부만 필요한 경우가 있습니다. 이럴 때 서브스트링 추출이 필요합니다. 이 기술을 사용하면 원하는 부분만 가져와서 다른 작업에 사용할 수 있습니다.
+문자열에서 일부분을 추출하는 것은 많은 상황에서 유용합니다. 예를 들어, 특정 단어나 구를 검색하거나 다른 문자열에 일치하는 부분을 찾는 등 다양한 작업에 활용할 수 있습니다.
 
 ## 하는 방법
 
-서브스트링 추출은 C 프로그래밍에서 매우 유용한 기술입니다.
-
-### 첫 번째 방법
-
-먼저, 우리는 문자열과 추출하고 싶은 시작 인덱스와 마지막 인덱스를 정의해야 합니다. 그 다음, 해당 문자열의 시작 인덱스부터 끝 인덱스까지 반복문을 사용하여 문자를 하나씩 가져오면 됩니다.
+C 언어에서 문자열을 추출하는 방법은 다음과 같습니다:
 
 ```C
-char string[] = "안녕하세요";
-int start_index = 2;
-int end_index = 4;
+// 원본 문자열
+char str[] = "Hello World";
 
-for (int i = start_index; i <= end_index; i++) {
-  printf("%c", string[i]);
-}
+// 추출할 부분의 시작 인덱스와 길이
+int start = 6;
+int length = 5;
 
-// 출력: 녕하
+// 추출된 부분을 저장할 문자열 변수 선언
+char substr[length + 1];
+
+// 길이만큼 문자를 복사하여 추출
+strncpy(substr, str + start, length);
+
+// 추출된 부분에 NULL 문자 추가
+substr[length] = '\0';
+
+// 추출된 부분 출력
+printf("추출된 부분: %s", substr);
 ```
 
-### 두 번째 방법
-
-또 다른 방법으로는 `memcpy()` 함수를 사용하는 것입니다. 이 함수는 주어진 두번째 문자열의 시작 위치부터 첫번째 문자열에 지정된 길이만큼 복사합니다.
-
-```C
-char string[] = "안녕하세요";
-char substring[4];
-
-memcpy(substring, &string[2], 4); // substring에 "녕하" 복사
-
-printf("%s", substring); // 출력: 녕하
+출력:
+```
+추출된 부분: World
 ```
 
-## 깊게 들어가기
+## 딥 다이브
 
-서브스트링 추출은 문자열을 조작하는 다양한 기술 중 하나입니다. 이 기술을 사용하여 문자열을 잘라내는 것 외에도, 문자열 내부의 특정 위치에 문자를 삽입하거나, 검색하여 특정 문자열을 바꾸는 등 다양한 작업을 수행할 수 있습니다.
+위 예시에서는 `strncpy()` 함수를 사용하여 문자열을 추출했습니다. 이 함수는 첫 번째 매개변수로 추출할 문자열을 저장할 변수를 받고, 두 번째 매개변수로 원본 문자열에서 추출할 부분의 시작 인덱스를 받습니다. 마지막 매개변수는 추출할 문자의 개수를 나타냅니다.
+하지만 이 함수는 추출한 문자열 마지막에 NULL 문자를 자동으로 추가하지 않으므로, 따로 처리해주어야 합니다. 또한, 원본 문자열과 추출한 문자열이 겹치지 않도록 주의해야 합니다.
 
-더 많은 예제와 기술은 [여기를](https://www.studytonight.com/c/string-manipulation-in-c.php) 참조하세요.
+추출된 부분의 시작 인덱스나 길이를 변수로 받아 동적으로 추출할 수도 있습니다. 또한, 여러 개의 부분을 추출하여 다른 문자열에 합칠 수도 있으며, 각각의 추출된 부분을 개별적으로 사용할 수도 있습니다.
 
-## 또 보기
+## 그 밖에 알아볼만한 것들
 
-- [C 언어 재입문하기](https://ko.wikipedia.org/wiki/C_언어)
-- [C 언어 문법 할렐루야!](https://www.inflearn.com/course/c언어-영상버전-2)
+- [C 문자열 관련 함수 레퍼런스](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C 언어 문자열 기초 강좌](https://modoocode.com/136)
+- [문자열에서 특정 단어 찾기 예시](https://www.programiz.com/c-programming/examples/find-substring)

@@ -1,5 +1,6 @@
 ---
-title:                "Go: एक एचटीटीपी अनुरोध भेजना"
+title:                "एक एचटीटीपी अनुरोध भेजना"
+html_title:           "Go: एक एचटीटीपी अनुरोध भेजना"
 simple_title:         "एक एचटीटीपी अनुरोध भेजना"
 programming_language: "Go"
 category:             "Go"
@@ -9,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
 
-एचटीटीपी अनुरोध भेजने के लिए कोई कारण है कि क्यों यह जरूरी है।
+**HTTP** (Hypertext Transfer Protocol) request bhejna kisi bhi network communication mein bahut important hota hai. Yeh ek sadharan si si vasee ***foundation pillar*** hai web development ka, isiliye jaankari honi chahiye ki ye request kaise bheji jaati hai.
 
-## कैसे करें
-
-एचटीटीपी अनुरोध भेजने के लिए आपको कुछ स्टेप्स का पालन करना होगा। आप निम्नलिखित उदाहरण और कोड ब्लॉक के साथ इसे कैसे किया जाता है इसके बारे में अधिक जान सकते हैं।
+## Kaise
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
-)
-
-func main() {
-    // एक नया एचटीटीपी अनुरोध बनाएं
-    req, err := http.NewRequest("GET", "https://www.example.com", nil)
-    if err != nil {
-        panic(err)
-    }
-
-    // अनुरोध भेजें
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    if err != nil {
-        panic(err)
-    }
-    defer resp.Body.Close()
-
-    // अनुरोध का प्रिंट करें
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(string(body))
+req, err := http.NewRequest("GET", "https://www.example.com", nil)
+if err != nil {
+    log.Fatal("NewRequest: ", err)
 }
+resp, err := http.DefaultClient.Do(req)
+if err != nil {
+    log.Fatal("Do: ", err)
+}
+defer resp.Body.Close()
+
+// Response output
+fmt.Println(resp.Status)
+fmt.Println(resp.StatusCode)
+fmt.Println(resp.Proto)
 ```
 
-उपरोक्त कोड का उपयोग करके आप किसी भी वेबसाइट से एचटीटीपी रिक्वेस्ट भेज सकते हैं और उसका रिस्पॉन्स प्राप्त कर सकते हैं। इसमें आपको एक नया एचटीटीपी अनुरोध बनाना, उसे भेजना और रिस्पॉन्स का उपयोग करना सीखने को मिलेगा।
+**Output:**
 
-## डीप डाइव
+```Go
+200 OK
+200
+HTTP/2.0
+```
 
-एचटीटीपी अनुरोध भेजने का अधिक गहराई में जानने के लिए, आप इसके अंतर्निहित कार्यों को समझ सकते हैं। इसमें आपको एचटीटीपी के अनुसार कैसे रिक्वेस्ट, रिस्पॉन्स और क्लाइंट बनाएं तथा कैसे उनका उपयोग करें, उनके साथ कैसे काम करें और अन्य उपयोगी जानकारी शामिल हो सकती है। बहुत से विकल्प हैं जो आपको एचटीटीपी अनुरोध को अपने आव
+**Note:** Iss example mein humne ek naya HTTP request bhejne ke liye `http.NewRequest()` method ka istemaal kiya hai. Fir ek default `http.Client` ke through humne request ko bheja hai `Do()` method ki madad se. Yeh ek basic example hai, lekin aap request ko customize kar sakte hai by adding headers, cookies, etc. Yaha par hamne ek `GET` request bheja hai, lekin aap `POST`, `PUT`, `DELETE`, etc. bhi bhej sakte hai.
+
+## Deep Dive
+
+**HTTP request** ka basic structure ho jata hai 3 parts mein: request line, headers, and body. Request line mein method, URL aur protocol version hoti hai. Headers mein hum kuch specific information, jaise ki `Content-Type` ya `User-Agent` ke baare mein bataate hai. Aur body mein hum data ko bhejte hai, jaise ki form data ya JSON.
+
+HTTP request bhejne ke liye bahut saare options hai Go mein, jaise ki `http.Get()`, `http.Post()`, `http.Do()` ya `http.Client`. Aap in options ki madad se apni needs ke according request bhej sakte hai.
+
+## See Also
+
+- [Official Go Documentation on HTTP](https://golang.org/pkg/net/http/)
+- [A Beginner's Guide to HTTP and REST](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
+- [How to Build Basic HTTP Servers with Go](https://www.digitalocean.com/community/tutorials/how-to-build-basic-http-server-with-golang)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Convertendo uma string para minúsculas."
+title:                "Convertendo uma string para minúsculas."
+html_title:           "Bash: Convertendo uma string para minúsculas."
 simple_title:         "Convertendo uma string para minúsculas."
 programming_language: "Bash"
 category:             "Bash"
@@ -9,77 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Converter uma String para Minúsculas em Bash?
+## Por que alguém se interessaria em converter uma string para minúsculas?
 
-Às vezes, precisamos trabalhar com strings em nosso código Bash e pode ser útil convertê-las para minúsculas. Isso pode ser útil para comparações de strings, formatação de entrada do usuário ou para garantir que o texto esteja padronizado.
+Se você está trabalhando com programação Bash, pode ser necessário converter uma string para minúsculas em algum momento. Isso pode ser útil para padronizar a entrada de dados ou para comparar strings sem diferenciar entre maiúsculas e minúsculas. Felizmente, existem maneiras simples de fazer isso com algumas linhas de código.
 
-## Como Fazer
+## Como fazer a conversão em Bash
 
-Para converter uma string para minúsculas em Bash, podemos usar o comando `tr` em conjunto com as opções `-d` e `-s`.
-
-```
-#!/bin/bash
-
-# Definir a string inicial
-string="EXEMPLO DE STRING EM MAIÚSCULAS"
-
-# Usar tr para converter para minúsculas e armazenar em uma nova variável
-nova_string=$(echo "$string" | tr 'A-Z' 'a-z')
-
-# Imprimir a nova string
-echo "Nova string em minúsculas: $nova_string"
-
-# Saída:
-# Nova string em minúsculas: exemplo de string em maiúsculas
-```
-
-Nesse exemplo, primeiro definimos uma variável com a string em maiúsculas. Em seguida, usamos o comando `tr` para substituir todos os caracteres em maiúsculas por caracteres em minúsculas e armazenamos o resultado em uma nova variável. Por fim, imprimimos a nova string.
-
-Também é possível usar o comando `sed` para converter uma string para minúsculas.
+Para converter uma string para minúsculas em Bash, você pode usar o comando "tr" ou a substituição de parâmetros do Bash.
 
 ```
-#!/bin/bash
+# Usando o comando "tr"
+texto="Olá MUNDO"
+echo $texto | tr '[:upper:]' '[:lower:]' # saída: olá mundo
 
-# Definir a string inicial
-string="EXEMPLO DE STRING EM MAIÚSCULAS"
-
-# Armazenar a string em uma nova variável e usar sed para converter para minúsculas
-nova_string=$(echo "$string" | sed 's/./\L&/g')
-
-# Imprimir a nova string
-echo "Nova string em minúsculas: $nova_string"
-
-# Saída:
-# Nova string em minúsculas: exemplo de string em maiúsculas
+# Usando substituição de parâmetros
+texto="EStE é UM TEXTO"
+echo ${texto,,} # saída: este é um texto
 ```
 
-Nesse exemplo, primeiro armazenamos a string em uma nova variável e, em seguida, usamos o `sed` para substituir cada caractere pela respectiva letra minúscula. O resultado é armazenado novamente na mesma variável e impresso.
+## Mergulho profundo
 
-## Explorando Mais a Conversão de Strings para Minúsculas em Bash
+Ao converter uma string para minúsculas em Bash, é importante entender o que está acontecendo por trás das cenas. O comando "tr" usa conjuntos de caracteres para transformar as letras maiúsculas em minúsculas. Já a substituição de parâmetros usa uma variável de expansão para converter a string em minúsculas. É sempre bom ter uma compreensão mais profunda desses conceitos ao trabalhar com programação.
 
-Uma das principais diferenças entre o uso de `tr` e `sed` para essa tarefa é que o `tr` converte todos os caracteres em maiúsculas, enquanto o `sed` mantém os caracteres não alfanuméricos na mesma forma. Além disso, podemos usar o comando `awk` para converter apenas a primeira letra de cada palavra em maiúscula, mantendo o resto em minúsculas.
+## Veja também
 
-```
-#!/bin/bash
-
-# Definir a string inicial
-string="EXEMPLO DE STRING EM MAIÚSCULAS PARA TESTAR O AWK"
-
-# Usar awk para converter a primeira letra de cada palavra em maiúscula e armazenar em uma nova variável
-nova_string=$(echo "$string" | awk '{for(i=1;i<=NF;i++)sub(".", substr(tolower($i),1,1), $i); print}')
-
-# Imprimir a nova string
-echo "Nova string em maiúsculas: $nova_string"
-
-# Saída:
-# Nova string em maiúsculas: Exemplo De String Em Maiúsculas Para Testar O Awk
-```
-
-Nesse exemplo, usamos o `awk` para percorrer cada palavra da string e, em seguida, substituímos a primeira letra por sua versão em minúsculas. O resultado é armazenado em uma nova variável e impresso.
-
-## Veja Também
-
-- [Manual do Bash](https://www.gnu.org/software/bash/manual/)
-- [Documentação do tr](https://man7.org/linux/man-pages/man1/tr.1.html)
-- [Documentação do sed](https://man7.org/linux/man-pages/man1/sed.1.html)
-- [Documentação do awk](https://man7.org/linux/man-pages/man1/awk.1.html)
+- Documentação oficial do Bash: https://www.gnu.org/software/bash/
+- Tutorial de Bash no Codecademy: https://www.codecademy.com/learn/learn-bash
+- Guia de referência rápida de Bash: https://devhints.io/bash

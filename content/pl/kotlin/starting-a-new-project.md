@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczęcie nowego projektu"
+html_title:           "Kotlin: Rozpoczęcie nowego projektu"
+simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -9,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego zacząć nowy projekt w Kotlinie?
 
-Założenie nowego projektu w języku Kotlin może być bardzo ekscytujące i satysfakcjonujące. Kotlin jest nowoczesnym językiem programowania, który oferuje wiele zalet, takich jak czytelny składni, bezpieczeństwo typów i możliwość wykorzystania środowiska JVM. Rozpoczęcie projektu w Kotlinie może pomóc Ci w ulepszeniu swoich umiejętności programistycznych i wzniesieniu Twojego projektu na wyższy poziom.
+Kotlin to język programowania, który zyskuje coraz większą popularność w świecie programistów. Po pewnym czasie korzystania z niego, często zaczynamy się zastanawiać, czy nie warto rozpocząć nowego projektu w tym właśnie języku. W tym artykule odpowiemy na pytanie "dlaczego?" oraz pokażemy, jak przejść na Kotlin w prosty sposób.
 
-## Jak To Zrobić
+# Jak to zrobić?
 
-Pierwszym krokiem przy rozpoczynaniu projektu w języku Kotlin jest oczywiście pobranie i zainstalowanie języka oraz odpowiedniej wersji JDK. Następnie musisz wybrać swoje ulubione IDE, takie jak IntelliJ lub Android Studio, które oferują wiele przydatnych narzędzi do programowania Kotlin. Aby rozpocząć kodowanie, musisz utworzyć nowy projekt i dodać plik z rozszerzeniem ".kt". Następnie możesz zacząć pisać kod, korzystając z przykładowych bloków kodu poniżej:
+Aby rozpocząć pracę nad nowym projektem w Kotlinie, potrzebujemy przede wszystkim środowiska programistycznego. Możemy skorzystać z wielu dostępnych opcji, takich jak Android Studio, IntelliJ IDEA czy też Eclipse z odpowiednim pluginem. Po zainstalowaniu środowiska, możemy przejść do kodowania w Kotlinie.
 
 ```Kotlin
 fun main() {
-    val language = "Kotlin"
-    print("Witaj w $language!") //Output: Witaj w Kotlin!
+    // przykładowy kod
+    val name = "Jan"
+    println("Witaj, $name!")
 }
 ```
 
-W tym przykładzie tworzymy prostą funkcję "main()", która wypisuje powitanie wraz z wykorzystaniem zmiennej "language". Język Kotlin jest bardzo czytelny i można w nim wykorzystywać wiele zaawansowanych funkcji, takich jak lambdy, wyrażenia warunkowe i wiele innych.
+````
+Witaj, Jan!
+````
 
-## Zanurzenia w Temat
+Możemy również skorzystać z narzędzia online, takiego jak Kotlin Playground, aby szybko przetestować nasz kod bez konieczności instalacji środowiska. 
 
-Rozpoczęcie nowego projektu w języku Kotlin może wymagać dodatkowych kroków, takich jak ustawienie odpowiednich zależności i konfiguracji projektu. Jednak warto poświęcić czas na zrozumienie wszystkich funkcji i możliwości, jakie oferuje ten język. Możesz również stosować wzorce projektowe i wykorzystywać biblioteki dostępne dla języka Kotlin, aby ułatwić sobie pracę i zwiększyć wydajność projektu.
+## Pogłębione informacje
 
-## Zobacz także
+Przed rozpoczęciem nowego projektu w Kotlinie, warto zapoznać się z jego podstawowymi konceptami, takimi jak funkcje, zmienne czy typy danych. W ten sposób łatwiej będzie nam zrozumieć składnię i wykorzystanie języka. Dobrym pomysłem jest również przejrzenie popularnych frameworków i narzędzi, które używają Kotlin jako główny język programowania, takich jak Spring czy Ktor.
 
-Jeśli jesteś zainteresowany dalszym zgłębianiem języka Kotlin i rozpoczynaniem nowych projektów, polecamy zapoznać się z następującymi zasobami:
+Kotlin oferuje wiele zalet, takich jak bezpieczeństwo typów, null-safety czy wygodną składnię, co czyni go atrakcyjnym wyborem dla nowych projektów. Dodatkowo, język ten jest wspierany przez Google jako oficjalny język do tworzenia aplikacji na Androida, co świadczy o jego potencjale.
 
-- Strona główna języka Kotlin: https://kotlinlang.org/
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/home.html
-- Kursy online z Kotlinem: https://www.udemy.com/topic/kotlin/
+# Zobacz również
+
+- [Oficjalna strona Kotlina](https://kotlinlang.org/)
+- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/)
+- [Kotlin Playground](https://play.kotlinlang.org/)
+- [Kotlin na platformie Android](https://developer.android.com/kotlin)

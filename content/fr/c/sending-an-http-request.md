@@ -1,5 +1,6 @@
 ---
-title:                "C: Envoyer une requête http"
+title:                "Envoyer une requête http"
+html_title:           "C: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "C"
 category:             "C"
@@ -11,45 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Envoyer une requête HTTP est une tâche essentielle pour tout programmeur C travaillant sur des applications Web. Cela permet de communiquer avec des serveurs distants et d'échanger des données, que ce soit pour afficher des informations sur une page ou pour effectuer des actions sur un site.
+Envoyer une requête HTTP est une tâche essentielle dans le développement d'applications web. Cela permet d'échanger des informations entre un client et un serveur, ce qui est indispensable pour toute communication sur internet.
 
-## Comment faire
+## Comment Faire
 
-Pour envoyer une requête HTTP en utilisant le langage C, il existe différentes bibliothèques telles que "libcurl" ou "libmicrohttpd". Cependant, dans cet article, nous allons utiliser la bibliothèque "libsocket" pour sa simplicité et sa compatibilité avec de nombreux systèmes d'exploitation.
-
-Voici un exemple de code pour envoyer une requête GET en utilisant "libsocket":
+Pour envoyer une requête HTTP en utilisant le langage C, il y a quelques étapes à suivre :
 
 ```C
+#include <stdlib.h>
 #include <stdio.h>
-#include <libsocket/libinetsocket.h>
+#include <curl/curl.h>
 
-int main() {
-    FILE *req = create_inet_request("GET", "https://example.com", 0, NULL);
-    send_request(req);
-    
-    /* Récupère le résultat de la requête */
-    char buffer[1024];
-    while(receive_line(req, buffer, sizeof(buffer)) > 0) {
-        printf("%s\n", buffer);
-    }
-    destroy_socket_request(req);
-    
-    return 0;
+int main(void) {
+   CURL *curl;
+   CURLcode res;
+   
+   // Création de l'objet curl
+   curl = curl_easy_init();
+
+   if(curl) {
+      // Définition de l'URL de destination
+      curl_easy_setopt(curl, CURLOPT_URL, "https://www.cours.fr/api");
+
+      // Définition de l'action à effectuer (GET, POST, etc.)
+      curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
+
+      // Exécution de la requête
+      res = curl_easy_perform(curl);
+
+      // Vérification des erreurs
+      if(res != CURLE_OK)
+         fprintf(stderr, "Erreur lors de l'envoi de la requête : %s\n",
+                 curl_easy_strerror(res));
+
+      // Nettoyage de l'objet curl
+      curl_easy_cleanup(curl);
+   }
+   return 0;
 }
 ```
 
-Ceci est un exemple simple, mais vous pouvez également personnaliser le type de requête, les entêtes et le corps en utilisant différentes fonctions de la bibliothèque.
+Pour cet exemple, nous utilisons la librairie `libcurl` qui fournit des fonctions pour faciliter l'envoi de requêtes HTTP. Tout d'abord, nous créons un objet `curl` et définissons l'URL de destination et l'action à effectuer. Ensuite, nous exécutons la requête en utilisant la fonction `curl_easy_perform` et vérifions s'il y a eu des erreurs. Enfin, nous nettoyons l'objet `curl` pour libérer la mémoire.
 
-Lors de l'exécution, vous devriez obtenir la réponse du serveur affichée sur votre terminal.
+Il est également possible de définir des en-têtes et des corps de requête en utilisant les options `CURLOPT_HTTPHEADER` et `CURLOPT_POSTFIELDS`. Pour plus d'exemples et d'informations, consultez la documentation de `libcurl`.
 
-## Plongée en profondeur
+## Plongée en Profondeur
 
-Lorsque vous envoyez une requête HTTP, il y a plusieurs étapes impliquées. Tout d'abord, le client (votre programme en C) se connecte au serveur à l'aide d'un socket TCP/IP. Ensuite, le client envoie la requête avec la méthode, le chemin et les entêtes spécifiés. Le serveur reçoit la requête et envoie une réponse avec un code d'état et une réponse éventuelle. Le client peut ensuite traiter la réponse et fermer la connexion.
+L'envoi d'une requête HTTP avec C peut sembler complexe, mais il s'agit en fait d'une tâche relativement simple grâce à `libcurl`. Cette librairie offre également de nombreuses fonctionnalités avancées pour gérer les cookies, les certificats SSL, et bien d'autres.
 
-Lors du choix d'une bibliothèque pour envoyer des requêtes HTTP en C, il est important de prendre en compte la compatibilité avec différents systèmes d'exploitation, la simplicité d'utilisation et la documentation fournie.
+Il est important de bien comprendre le fonctionnement des requêtes HTTP et des réponses pour éviter les erreurs et optimiser les performances de votre application. N'hésitez pas à vous plonger dans la documentation si vous avez besoin de plus d'informations.
 
-## Voir aussi
+## Voir Aussi
 
-- [Documentation de la bibliothèque libsocket](https://github.com/dermesser/libsocket/blob/master/doc/REQUETES.md)
-- [Guide de lib curl pour les requêtes HTTP en C](https://curl.haxx.se/libcurl/c/http.html)
-- [Exemple de code pour l'envoi de requêtes HTTP avec libmicrohttpd](https://www.gnu.org/software/libmicrohttpd/tutorial.html#Hello,-World!)
+- [Documentation `libcurl`](https://curl.haxx.se/libcurl/c/)
+- [Protocol HTTP sur MDN](https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Client-server_web_APIs/Fetching_data_with_XMLHttpRequest)
+- [Exemples de requêtes HTTP](https://httpbin.org/)

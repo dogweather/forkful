@@ -1,6 +1,7 @@
 ---
-title:                "Java: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+html_title:           "Java: Hämta en webbsida"
+simple_title:         "Hämta en webbsida"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,56 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att ladda ner en webbsida kan vara användbart för många ändamål, såsom att analysera data, söka information eller skapa en egen offlineversion av en webbplats.
 
-## Hur man
-För att ladda ner en webbsida i Java kan man använda sig av Java-biblioteket "URLConnection". Först måste man skapa en ny URL-objekt med adressen till webbsidan som parameter. Sedan kan man öppna en anslutning till webbadressen med "openConnection()" metoden. För att hämta webbsidans innehåll i form av en "InputStream" behöver man sedan använda "getInputStream()" funktionen. Slutligen kan man läsa den hämtade datan och spara den i en fil med hjälp av "FileOutputStream".
+Att ladda ner en webbsida kan vara en användbar funktion när du vill spara en kopia av en sida för senare referens eller när du arbetar med web skrapning och datainsamling.
+
+## Hur man gör det
+
+För att ladda ner en webbsida i Java, kan du använda klassen URL och dess openStream()-metod. Nedan är ett exempel på hur du kan implementera detta:
 
 ```Java
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class WebPageDownloader {
-    public static void main(String[] args) {
-        try {
-            // skapar en ny URL-objekt med adressen till webbsidan
-            URL url = new URL("https://www.example.com/");
 
-            // öppnar en anslutning till webbadressen
-            URLConnection connection = url.openConnection();
+    public static void main(String[] args) throws IOException {
 
-            // hämtar webbsidans innehåll i form av en InputStream
-            InputStream inputStream = connection.getInputStream();
+        // ange webbadress som ska laddas ner
+        String url = "https://www.example.com";
 
-            // läser och sparar datan i en output-fil
-            FileOutputStream outputStream = new FileOutputStream("example.html");
-            int bytesRead = -1;
-            byte[] buffer = new byte[1024];
-            while ((bytesRead = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, bytesRead);
-            }
+        // skapa en URL-objekt
+        URL myURL = new URL(url);
 
-            // stänger strömmarna
-            inputStream.close();
-            outputStream.close();
+        // öppna en anslutning till webbadressen och ladda ner innehållet som en BufferedReader
+        BufferedReader in = new BufferedReader(new InputStreamReader(myURL.openStream()));
 
-            System.out.println("Webbsidan laddades ner framgångsrikt.");
-        } catch (MalformedURLException e) {
-            System.out.println("Ogiltig URL.");
-        } catch (IOException e) {
-            System.out.println("Något gick fel vid nedladdningen av webbsidan.");
+        // använd en StringBuilder för att lagra innehållet från webbsidan
+        StringBuilder sb = new StringBuilder();
+        String line;
+
+        // läs rad för rad från BufferedReader och lagra i StringBuilder
+        while ((line = in.readLine()) != null) {
+            sb.append(line + "\n");
         }
+        in.close();
+
+        // skriv ut innehållet från StringBuilder
+        System.out.println(sb.toString());
+
     }
 }
 ```
 
-**Output:**
-Webbsidan laddades ner framgångsrikt. Datan sparas i filen "example.html".
+Detta kommer att skriva ut innehållet från den angivna webbadressen till konsolen. Du kan också välja att spara innehållet till en fil istället för att skriva ut det.
 
 ## Djupdykning
-Att ladda ner en webbsida är inte alltid enkelt. Det finns många faktorer som kan påverka hur sidan visas, såsom autentisering, cookies och JavaScript-kod. För att säkerställa att hela sidan laddas ner korrekt kan man behöva använda sig av ytterligare Java-bibliotek, såsom "HttpURLConnection" eller "Jsoup", beroende på sidans komplexitet.
+
+När du laddar ner en webbsida, kommer du att hämta innehållet som visas på sidan när du besöker den med en webbläsare. Detta inkluderar HTML, CSS, JavaScript och andra användarresurser. Det är också viktigt att notera att vissa webbsidor kan ha anti-skrapa åtgärder som blockerar automatisk nedladdning av sidor. Det är därför viktigt att kontrollera de lagar och regler som gäller för den specifika webbsidan och se till att du har rättigheter att ladda ner dess innehåll.
 
 ## Se även
-- [Java-biblioteket URLConnection](https://docs.oracle.com/javase/7/docs/api/java/net/URLConnection.html)
-- [HttpURLConnection för mer avancerad hantering av HTTP-anrop](https://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html)
-- [Jsoup för HTML-manipulering i Java](https://jsoup.org/)
+
+- [Java URL-klassens officiella dokumentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
+- [Apache HTTP-klient för att ladda ner webbsidor i Java](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/fundamentals.html)

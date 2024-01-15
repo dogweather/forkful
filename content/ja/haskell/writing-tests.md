@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "「テストの書き方」"
+html_title:           "Haskell: 「テストの書き方」"
+simple_title:         "「テストの書き方」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,44 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ
 
-プログラミングをする際、テストを書くことは非常に重要です。テストを書くことで、コードにバグやエラーがないかを確認することができます。また、将来コードを変更する際にも、テストを使うことで予期せぬバグを防ぐことができます。
+Haskellプログラミングをしている人々にとって、テストは非常に重要なツールです。テストを書くことにより、コードの品質を保証し、バグの早期発見につながります。また、将来の変更に対してもコードが正しく機能することを保証することができます。
 
-## テストの書き方
+## やり方
 
-テストを書くために、まずはHaskellのテストフレームワークであるHUnitをインポートします。それから、次のようにテストケースを作成します。
-
-```Haskell
-import Test.HUnit
-test1 = TestCase (assertEqual "1 + 1は2に等しい" 2 (1 + 1))
-tests = TestList [TestLabel "test1" test1]
-```
-
-上記の例では、1 + 1が2に等しいかをテストしています。assertEqual関数を使うことで、実際の値と期待する値が等しいかを確認することができます。また、TestList関数を使うことで複数のテストケースを結合することができます。
-
-最後に、main関数を使ってテストを実行します。
+テストを書くためには、まずは通常のコードを書くときと同じようにモジュールをインポートします。次に、テストする関数を定義し、それに対するテストケースを書きます。最後に、`if`文を使ってテスト結果を表示します。
 
 ```Haskell
-main = do
-  runTestTT tests
+import Test.Hspec
+
+main :: IO ()
+main = hspec $ do
+  describe "addition" $ do
+    it "calculates the sum of two numbers" $ do
+      (1 + 2) `shouldBe` 3
 ```
 
-実行結果は次のようになります。
+このコードでは、`Test.Hspec`モジュールをインポートし、`hspec`関数を使ってテストを実行しています。`describe`関数を使ってテストする関数を指定し、`it`関数によりテストケースを記述しています。最後に、`shouldBe`関数を使って正しい結果が得られるかどうかをチェックしています。
 
-```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Counts {cases=1, tried=1, errors=0, failures=0}
-```
+## ディープダイブ
 
-テストが1回実行され、エラーや失敗がないことが確認できます。
+テストを書く際には、さまざまなテスト用のモジュールを利用することができます。例えば、`HUnit`や`QuickCheck`などがあります。また、関数のモックやスタブを利用することにより、テストをより柔軟にすることもできます。
 
-## 深堀り
+## その他
 
-テストを書く際のポイントとしては、実際の値と期待する値をよく考えることが重要です。また、異なるケースやエラー処理を考慮することも忘れずに行いましょう。さらに、多くのテストケースを書くことで、より確実なコードを書くことができます。
+ここでは基本的なテストの書き方について紹介しましたが、より詳細な情報や他のテスト用モジュールの使い方については以下のリンクを参考にしてください。
 
-## また見てね
+## 詳細情報
 
-- [HUnitドキュメント](https://hackage.haskell.org/package/HUnit)
-- [テスト駆動開発 (TDD) について](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%B9%E3%83%88%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA)
-- [Haskellでテスト駆動開発をする](https://qiita.com/stkdev/items/ff5cde445656f464dfb8)
+- [Haskellにおけるテストの書き方のガイド](https://www.fpcomplete.com/blog/2017/07/testing-in-haskell/)
+- [HUnitによるユニットテストの書き方のチュートリアル](https://hspec.github.io/)
+- [QuickCheckによるプロパティベーステストの書き方のチュートリアル](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/testing-with-quickcheck.html)
+- [Haskellにおける関数のモックやスタブの使い方のチュートリアル](https://tech.trifork.com/undefined-making-object-and-function-mocking-easier-in-haskell/)

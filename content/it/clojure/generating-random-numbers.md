@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: In generazione di numeri casuali"
-simple_title:         "In generazione di numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Clojure: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -9,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Generare Numeri Casuali in Clojure?
+## Perché
 
-Generare numeri casuali è un'attività comune nella programmazione, ed è particolarmente utile quando si vuole introdurre un elemento di aleatorietà o casualità in un programma. In Clojure, questo può essere fatto in modo semplice e veloce grazie alle funzionalità del linguaggio.
+Generare numeri casuali è un'attività molto comune nella programmazione. Questo può essere utile per testare le funzioni, creare giochi o quiz, o semplicemente per divertimento.
 
-## Come Generare Numeri Casuali in Clojure
+## Come fare
 
-Per generare numeri casuali in Clojure, è necessario utilizzare la funzione `rand-int`. Questa funzione prende un parametro `n` e restituisce un numero intero casuale compreso tra 0 e `n - 1`. Ad esempio, per generare un numero casuale tra 0 e 9, si può utilizzare la seguente espressione:
+Per generare un numero casuale in Clojure, puoi utilizzare la funzione predefinita "rand-int". Ad esempio:
 
 ```Clojure
 (rand-int 10)
 ```
 
-Esempio di output:
+In questo caso, verrà generato un numero intero casuale compreso tra 0 e 10 (escluso). Per includere 10 nel range, è possibile utilizzare la funzione "rand-nth" con una sequenza che contiene il valore desiderato. Ad esempio:
 
 ```Clojure
-4
+(rand-nth [1 2 3 4 5 6 7 8 9 10])
 ```
 
-Per generare un numero casuale tra due valori specifici, ad esempio tra 1 e 100, si può utilizzare la funzione `+` per sommare il risultato di `rand-int` al valore iniziale. Ad esempio:
+Ci sono anche altre funzioni disponibili per generare numeri casuali in Clojure, come ad esempio "rand", "rand-float" e "rand-nth". Ecco un esempio di come utilizzare "rand-float" per generare un numero casuale con due cifre decimali:
 
 ```Clojure
-(+ 1 (rand-int 100))
+(rand-float 100)
 ```
+Questo genererà un numero con due cifre decimali compreso tra 0 e 100 (escluso).
 
-Esempio di output:
+## Approfondimento
+
+Molte volte, la generazione di numeri casuali richiede anche il controllo di alcune condizioni, come ad esempio l'esclusione di alcune cifre o la generazione di valori unici. In Clojure, puoi utilizzare la libreria "clojure.set" per eseguire queste operazioni in modo efficiente.
+
+Ad esempio, se vuoi generare 5 numeri casuali compresi tra 1 e 10 (esclusi), puoi utilizzare la funzione "clojure.set/shuffle" per mescolare una sequenza di numeri compresi tra 1 e 10 e poi utilizzare la funzione "take" per estrarre solo i primi 5 numeri dalla sequenza mescolata. Ecco un esempio di come farlo:
 
 ```Clojure
-57
+(require '[clojure.set :as set])
+
+(def numeri (range 1 10))
+(def numeri-shuffle (set/shuffle numeri))
+(take 5 numeri-shuffle)
 ```
 
-## Approfondimento sulla Generazione di Numeri Casuali
+Questo genererà una sequenza con 5 numeri casuali che puoi utilizzare a tuo piacimento.
 
-La funzione `rand-int` è in realtà un'implementazione dell'algoritmo di generazione di numeri casuali Mersenne Twister, che è noto per essere veloce e molto efficiente. Clojure offre anche altre funzioni per generare numeri casuali, come `rand` che restituisce un numero decimale casuale tra 0 e 1. Inoltre, è possibile utilizzare la libreria `clojure.math.numeric-tower` per generare numeri casuali con distribuzioni diverse dalle uniformi, come ad esempio le distribuzioni normali o esponenziali.
+## Vedi anche
 
-## Vedi Anche
-
-- [Documentazione di Clojure sulla generazione di numeri casuali] (https://clojure.org/api/java.util.Random)
-- [Guida su come utilizzare la libreria clojure.math.numeric-tower] (https://clojuredocs.org/clojure.math.numeric-tower)
+- [Documentazione ufficiale di Clojure](https://clojure.org/)
+- [Clojure Cookbook](https://www.clojure-cookbook.com/)
+- [The Joy of Clojure](https://www.manning.com/books/the-joy-of-clojure)

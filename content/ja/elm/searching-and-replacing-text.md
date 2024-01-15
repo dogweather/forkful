@@ -1,5 +1,6 @@
 ---
-title:                "Elm: テキストの検索と置換"
+title:                "テキストの検索と置換"
+html_title:           "Elm: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,25 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜテキストの検索と置換が重要なのか？
+## なぜ
 
-テキストの検索と置換は、プログラミングにおいて非常に重要な機能です。例えば、大規模なプロジェクトを管理している時に必要となるテキストの一括置換や、バグを修正する際に一度に複数のファイル内の特定の文字列を修正する場合などに役立ちます。Elm言語では、検索と置換を簡単に行うことができ、効率的なプログラミングが可能になります。
+テキストの検索と置換を行う理由は、繰り返し行わなければいけない作業を自動化することや、大量のテキストを効率的に編集するためです。
 
-## 使い方
+## 方法
 
-Elm言語では、"String.replace"という組み込みの関数を使用してテキストの検索と置換を行うことができます。以下は、"Hello, World!"という文字列を"こんにちわ、世界!"に置換する例です。
+```elm
+-- 起動コマンド
+elm repl
 
-```Elm
-String.replace "Hello, World!" "こんにちわ、世界!"
+-- テキストの置換
+String.replace "元のテキスト" "新しいテキスト" "対象のテキスト"
+
+-- マッチした部分のみ置換
+String.replace "元のテキスト" "新しいテキスト" "対象のテキスト" True
 ```
 
-このコードを実行すると、"こんにちわ、世界!"という文字列が出力されます。さらに、正規表現を使用して複雑な検索や置換も可能です。詳細な使い方は、公式ドキュメントを参照してください。
+上記のようなコードを実行すると、対象のテキストの中から指定した元のテキストを新しいテキストに置換します。
 
-## 深堀り
+```elm
+> String.replace "cat" "dog" "I have a cat."
+"I have a dog."
 
-Elm言語では、文字列の検索と置換を行う際にパターンマッチングの概念を活用しています。つまり、検索対象の文字列をパターンとして定義し、そのパターンにマッチした部分を置換することができます。また、置換時に正規表現を使用することで、より柔軟な置換が可能になります。このように、Elm言語では文字列の検索と置換を高度なテクニックを駆使して行うことができます。
+> String.replace "Hi" "Hello" "Hi everyone!"
+"Hello everyone!"
 
-## 関連記事
+> String.replace "Apple" "Banana" "I love apples, but I also like applesauce."
+"I love bananas, but I also like bananasauce."
+```
 
-- [Elm公式ドキュメント](https://guide.elm-lang.jp/)
-- [Elmのパターンマッチングの仕組み](https://qiita.com/neghcci/items/fd1ee6100a796c6d3166)
+指定した元のテキストが複数回出現する場合でも、全てのマッチした部分が置換されます。また、最後の引数にTrueを渡すと、マッチした部分のみが置換されるようになります。
+
+## ディープダイブ
+
+Elmではテキストの検索と置換にはStringモジュールを使用します。Stringモジュールの中には、文字列を操作するための便利な関数がたくさん用意されています。また、Stringモジュールに限らず、他のモジュールでもテキストの置換に役立つ関数が提供されています。詳しくは公式ドキュメントを参照してください。
+
+## 関連リンク
+
+- [Elm公式ドキュメント](https://guide.elm-lang.org/)
+- [Stringモジュールのドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [文字列操作に便利なElmライブラリ](https://github.com/mgold/elm-string-extra)

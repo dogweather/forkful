@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Haskell: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,40 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit etsiä ja korvata tekstiä Haskell-ohjelmoinnissa? Joskus sinun täytyy muuttaa useita samanlaisia merkkijonoja yhdellä kertaa, kuten vaihtaessasi nimen projektissa tai korvatessasi oikeassa taulukossa olevat tiedot testituloksilla.
+Haskell on funktionaalinen ohjelmointikieli, joka korostaa puhtaita funktioita ja välttää muuttuvaa tilaa. Tämä tekee siitä erinomaisen työkalun merkkijonojen muokkaamiseen, kuten tekstin etsimiseen ja korvaamiseen.
 
-## Kuinka
+## Kuinka tehdä
 
-Helpoin tapa etsiä ja korvata tekstiä on käyttää `replace` -funktiota `Data.Text` -moduulista. Voit käyttää sitä seuraavasti:
-
-```Haskell
-import qualified Data.Text as T
-
-replace "Haskell" "Rust" (T.pack "Opi Haskell:sta") 
-```
-
-Tämä tuottaa tuloksen `"Opi Rust:sta"`. Huomaa, että käytimme `T.pack` -funktiota muuntaaksemme tekstiä `Data.Text` -tyyppisiksi.
-
-Voit myös käyttää säännöllisiä lausekkeita hakemaan ja korvaamaan tekstiä seuraavasti:
+Haskellilla tekstien etsiminen ja korvaaminen voidaan tehdä helposti, käyttämällä valmiita funktioita ja heittämällä syntaksiakaan. Alla on esimerkki, jossa muutetaan teksti "Hello World" muotoon "Hello Haskell".
 
 ```Haskell
-import qualified Data.Text as T
-import Text.Regex.PCRE.Text (sub, gsub)
+import Data.Text (replace)
 
-sub "a[bc]+" (const "def") (T.pack "aaabbb") -- "def"
-gsub "[0-9]+" "x" (T.pack "1 2 3 4 5") -- "x x x x x"
+main = do
+  let text = "Hello World"
+  let modifiedText = replace "World" "Haskell" text
+  print modifiedText
 ```
 
-Tässä `sub` -funktio korvaa ensimmäisen esiintymän annetulla merkkijonolla ja `gsub` -funktio korvaa kaikki esiintymät. Huomaa, että `Regex.PCRE.Text` -moduulissa on myös `subCapture` ja `gsubCapture` -funktiot, jotka tallentavat vastaavat kaapit uudelleenkirjoitettuun merkkijonoon.
+Tämän koodin tulostus olisi:
 
-## Syvemmälle
+```Haskell
+"Hello Haskell"
+```
 
-`Data.Text` -moduulilla on monia muita hyödyllisiä toimintoja, kuten `strip`, `words` ja `lines`, jotka voivat auttaa tekstien käsittelyssä. Voit myös käyttää `Data.ByteString` -moduulia, jos haluat tehdä toimintoja suorituskykyisemmin.
+Kuten huomaat, Haskellissa ei tarvitse aloittaa muuttujia tyyppiannotaatioilla. Kirjasto Data.Text tarjoaa funktion replace, joka ottaa ensimmäisenä parametrina etsittävän tekstin, toisena parametrina korvaavan tekstin ja lopulta haettavan tekstin.
 
-Katso dokumentaatiosta lisää `Data.Text` -ja `Data.ByteString` -toiminnoista sekä `Regex.PCRE.Text` -moduulin säännöllisten lausekkeiden funktioista.
+## Syvällinen sukellus
+
+Haskellin Data.Text-kirjasto tarjoaa monia muita hyödyllisiä funktioita tekstien muokkaamiseen, kuten capitalize, take, drop jne. Lisäksi Haskellilla on myös mahdollista käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen.
+
+Kannattaa myös tutustua listaan sisäänrakennettuja funktioita ja käyttää niitä hyväksi etsimisprosessissa. Esimerkiksi map-funktio, joka ottaa vastaan listan ja funktiokutsun, voisi auttaa muokkaamaan tekstiä haluttuun muotoon.
 
 ## Katso myös
 
-- [Haskellin dokumentaatio](https://www.haskell.org/documentation/)
-- [Haskell-opetusohjelma](https://haskell.tips/)
-- [Haskellin yhteisöfoorumi](https://discourse.haskell.org/)
+- [Haskellin virallinen sivusto](https://www.haskell.org/)
+- [Data.Text-kirjasto Hooglesta](https://hackage.haskell.org/package/text)
+- [Haskelliin tutustumisen opas](https://wiki.haskell.org/Learning_Haskell)

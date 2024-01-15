@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie, czy istnieje katalog."
+html_title:           "Haskell: Sprawdzanie, czy istnieje katalog."
+simple_title:         "Sprawdzanie, czy istnieje katalog."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,40 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w Haskellu. Po pierwsze, może to pomóc uniknąć błędów w programie związanych z brakującym katalogiem. Po drugie, może to być przydatne w przypadku działań na plikach, gdzie konieczne jest określenie ścieżki do istniejącego katalogu. W tym artykule omówimy, dlaczego warto zwrócić uwagę na sprawdzanie istnienia katalogów oraz jak to zrobić w Haskellu.
+Czy kiedykolwiek zastanawiałeś się, czy dany katalog istnieje w Twoim systemie plików? Jest to ważne pytanie, gdyż może pomóc Ci uniknąć niepotrzebnych błędów w Twoim kodzie. W tym artykule poznamy sposób na sprawdzenie istnienia katalogu w języku Haskell.
 
 ## Jak to zrobić
 
-Sprawdzenie, czy dany katalog istnieje, jest możliwe dzięki funkcji ```doesDirectoryExist``` z modułu ```System.Directory```. Wymaga to jednak wcześniejszego importowania tego modułu. Przykładowy kod może wyglądać następująco:
+Sprawdzenie istnienia katalogu w języku Haskell jest bardzo proste. Wystarczy użyć funkcji `doesDirectoryExist` z modułu `System.Directory`. Funkcja ta przyjmuje jako argument ścieżkę do katalogu, który chcemy sprawdzić. Poniżej znajduje się przykładowy kod:
 
 ```Haskell
 import System.Directory
 
-main :: IO()
 main = do
-  let dirName = "moj_katalog"
-  dirExists <- doesDirectoryExist dirName
-  if dirExists
-    then putStrLn "Katalog istnieje."
-    else putStrLn "Katalog nie istnieje."
+    exists <- doesDirectoryExist "sciezka/do/katalogu"
+    putStrLn $ "Katalog istnieje: " ++ show exists
 ```
 
-W powyższym przykładzie, najpierw importujemy potrzebny nam moduł, a następnie tworzymy zmienną z nazwą naszego katalogu. W kolejnej linii wywołujemy funkcję ```doesDirectoryExist```, która zwraca wartość typu ```Bool```, informującą czy dany katalog istnieje. W składni ```if/else``` sprawdzamy tę wartość i wypisujemy odpowiedni komunikat.
+Wywołanie funkcji `doesDirectoryExist` zwraca wartość typu `Bool`, więc możemy ją wykorzystać w wyrażeniu `if` do podejmowania odpowiednich działań w zależności od wyniku. Poniżej znajduje się przykładowy kod, który wyświetla komunikat, jeśli katalog istnieje:
 
-Przykładowy output programu może wyglądać tak:
+```Haskell
+import System.Directory
 
+main = do
+    exists <- doesDirectoryExist "sciezka/do/katalogu"
+    if exists
+        then putStrLn "Katalog istnieje"
+        else putStrLn "Katalog nie istnieje"
 ```
-Katalog istnieje.
-```
 
-## Deep Dive
+## Głębsza analiza
 
-Funkcja ```doesDirectoryExist``` korzysta z funkcji systemowej ```stat```, która jest dostępna na większości platform. Wynik tej funkcji jest konwertowany na ```Bool``` i zwracany przez Haskell. W przypadku błędnego wywołania lub gdy operacja nie powiedzie się, funkcja zwraca ```False```.
+Sprawdzenie istnienia katalogu może być również przydatne w przypadku, gdy chcemy upewnić się, że nie usuniemy istniejącego katalogu przy wykonywaniu operacji na plikach. Możemy to osiągnąć wywołując funkcję `doesDirectoryExist` przed wykonaniem operacji.
 
-Warto również zwrócić uwagę, że funkcja ```doesDirectoryExist``` nie sprawdza, czy dany katalog jest dostępny do zapisu lub odczytu. Po prostu informuje nas o tym, czy dana ścieżka odpowiada prawdziwemu katalogowi.
+Warto również wspomnieć, że funkcja `doesDirectoryExist` jest częścią modułu `System.Directory`, który oferuje wiele innych przydatnych funkcji do zarządzania plikami i katalogami w systemie.
 
 ## Zobacz także
 
-- [Dokumentacja modułu System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Tutorial o zarządzaniu plikami i katalogami w Haskellu](https://www.fpcomplete.com/blog/2016/10/read-only-file-io#file-system-basics)
-- [Poradnik programowania w Haskellu](https://wiki.haskell.org/How_to_write_a_Haskell_program)
+- [Hackage: System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Stack Overflow: Check if Directory Exists Haskell](https://stackoverflow.com/questions/35522052/check-if-directory-exists-haskell)

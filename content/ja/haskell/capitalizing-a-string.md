@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 文字列の大文字変換"
-simple_title:         "文字列の大文字変換"
+title:                "文字列の大文字化"
+html_title:           "Haskell: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+Konnichiwa! Do you ever find yourself needing to capitalize a string in your programming? Maybe you want to make the first letter of a name or title uppercase. Or perhaps you just prefer the look of a capitalized string. Whatever the reason may be, capitalizing a string is a common task in programming and this article will show you how to do it in Haskell.
 
-文字列を大文字にすることに興味がある人にとって、Haskellのプログラミングは非常に魅力的なものです。文字列を大文字に変換することは、エンコーディングやフォーマットなどの多くの問題を解決することができます。
+## How To
+To capitalize a string in Haskell, we can use the `toUpper` function from the `Data.Char` module. Let's take a look at some simple examples:
 
-## 方法
+```
+import Data.Char
 
-まずは、必要な言語拡張を有効にしましょう。
+capitalize :: String -> String
+capitalize "" = ""
+capitalize (x:xs) = toUpper x : xs
 
-```Haskell
-{-# LANGUAGE OverloadedStrings #-}
+capitalize "hello" -- "Hello"
+
+capitalize "haskell" -- "Haskell"
 ```
 
-次に、Data.Textモジュールをインポートし、capitalize関数を定義します。
+In the code above, we first import the `Data.Char` module which contains the `toUpper` function. Then, we define a `capitalize` function that takes a `String` as input and outputs a capitalized version of that string. We use pattern matching to check if the string is empty and if it is, we simply return an empty string. Then, in the second line, we use the `toUpper` function to capitalize the first letter of the string and concatenate it with the rest of the string. 
 
-```Haskell
-import Data.Text (toUpper)
+We can also use `map` and `toUpper` to capitalize each letter in a string:
 
-capitalize :: Text -> Text
-capitalize str = toUpper str
+```
+import Data.Char
+
+capitalize :: String -> String
+capitalize "" = ""
+capitalize str = map toUpper str
+
+capitalize "hello" -- "HELLO"
+
+capitalize "haskell" -- "HASKELL"
 ```
 
-最後に、入力文字列を受け取って、大文字に変換した文字列を返すように関数を呼び出します。
+In the code above, we use `map` to apply the `toUpper` function to each character in the string. This will give us the same result as the previous function, but with a slightly different approach. 
 
-```Haskell
-capitalize "hello world" -- 出力: "HELLO WORLD"
-```
+## Deep Dive
+Now, let's take a deeper look at how the `toUpper` function works. In Haskell, characters are represented by numbers using the ASCII system. The lowercase letters range from 97 to 122, while the uppercase letters range from 65 to 90. The `toUpper` function simply takes a character and adds 32 to it (subtracting 32 would give us the lowercase version of the character). This may seem like a strange method, but it is rooted in the history of computing and character representation.
 
-## ディープダイブ
+If you want to delve even deeper, you can take a look at the source code for `toUpper` in the `Data.Char` module. It uses a `case` statement to check where the character falls in the ASCII range and applies the appropriate transformation. This is just one example of the power and flexibility of Haskell's pattern matching and functional programming.
 
-文字列を大文字に変換する際に、多くの人が便利だと感じるのは、特殊文字や記号などを含む文字列でも正しく変換することができる点です。HaskellのData.Textモジュールには、これらの文字を扱うための便利な関数がたくさん用意されています。また、文字列を大文字に変換するだけでなく、Data.Textモジュールでは様々な文字列操作を行う関数が提供されています。
+## See Also
+If you want to learn more about string manipulation in Haskell, here are some helpful resources to check out:
 
-## 参考リンク
-
-- Data.Textモジュールの公式ドキュメント: https://hackage.haskell.org/package/text/docs/Data-Text.html
-- Haskell言語のチュートリアル: https://www.haskell.org/tutorial/
-- 他の便利な言語拡張について: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/exts/index.html
-
-## 参考
-
-- [Haskellでの文字列操作について](https://qiita.com/hiratara/items/7686b334c35194f9cb5d)
-- [実践的なHaskellプログラミング入門](https://blog.eleven-labs.com/ja/introduction-a-la-programmation-haskell-pratique/)
+- [Haskell documentation for Data.Char module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Learn You a Haskell for Great Good! - Chapter 7: Modules](http://learnyouahaskell.com/modules)
+- [Real World Haskell - Chapter 2: Types and Functions](http://book.realworldhaskell.org/read/types-and-functions.html)

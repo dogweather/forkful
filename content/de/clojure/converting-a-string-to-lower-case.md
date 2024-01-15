@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "Clojure: Umwandeln eines Strings in Kleinbuchstaben"
 simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,62 +11,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man eine Zeichenkette in Kleinbuchstaben umwandeln? Nun, es gibt verschiedene Anwendungen, wie z.B. beim Vergleich von Benutzereingaben oder bei der Formatierung von Text in bestimmten Situationen.
 
-Das Konvertieren eines Strings in Kleinbuchstaben ist eine häufig benötigte Funktion beim Programmieren. Es ermöglicht uns, Texte einheitlich zu formatieren und erleichtert somit die weitere Verarbeitung.
-
-## Wie geht's
-
-Um einen String in Kleinbuchstaben umzuwandeln, können wir die `lower-case` Funktion verwenden. Diese Funktion akzeptiert einen einzigen Parameter, den zu konvertierenden String.
-
+## Wie geht das?
 ```Clojure
-(lower-case "Hallo WELT") ; Output: "hallo welt"
+(def text "HALLO WELT!")
+(println (clojure.string/lower-case text))
 ```
+Output: "hallo welt!"
 
-Ein weiterer Weg ist die Verkettung der `str` Funktion mit der `clojure.string/lower-case` Funktion. Dies ermöglicht eine bessere Lesbarkeit und  ist besonders hilfreich, wenn wir zusätzliche Manipulationen am String vornehmen möchten.
+Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, können wir die Funktion `lower-case` aus der `clojure.string` Bibliothek verwenden. Zuerst definieren wir eine Variable `text` mit dem Wert "HALLO WELT!" und dann geben wir den umgewandelten Text mit `println` aus. Bitte beachte, dass wir `clojure.string` vor dem Aufruf von `lower-case` mit einem "/" angeben und die Funktion als Argument die Variable `text` erhält.
 
-```Clojure
-(str (clojure.string/lower-case "HALLo")) ; Output: "hallo"
-```
-
-## Tiefer Einblick
-
-Beim Konvertieren in Kleinbuchstaben kann es zu unerwartetem Verhalten kommen, je nachdem, welche Zeichen im String enthalten sind. Zum Beispiel kann die Großbuchstaben-I mit Akut (Ì) nicht einfach in einen Kleinbuchstaben umgewandelt werden. Stattdessen bleibt es ein unverändertes Zeichen.
-
-```Clojure
-(lower-case "Ã‰è") ; Output: "Ã©Ã¨"
-```
-
-Um dieses Problem zu lösen, können wir die `Unicode`-Bibliothek verwenden. Sie bietet die `normalization` Funktion, die uns hilft, Sonderzeichen in ASCII-Zeichen umzuwandeln. Dann können wir die `lower-case` Funktion wie gewohnt verwenden.
-
-```Clojure
-(require '[clojure.string :refer [lower-case]]
-         '[clojure.data :as data]
-         '[clojure.java.io :as io]
-         '[clojure.pprint :refer [print-table]])
-
-(defn convert-text [text]
-  (lower-case (apply str (data/normalization :nfd text))))
-
-(defn read-text-from-file [file]
-  (reduce str 
-          (with-open [r (io/reader file)]
-            (line-seq r))))
-
-(def sample-text (read-text-from-file "sample.txt"))
-
-(print-table [["Original Text" "Converted Text"]
-              [sample-text (convert-text sample-text)]])
-```
-
-Und der Output sieht jetzt so aus:
-
-```
-| Original Text | Converted Text |
-|---------------+----------------|
-| liebe GrÃ¼ÃŸe  | liebe grüße   |
-```
+## Tieferer Einblick
+Um zu verstehen, wie die `lower-case` Funktion arbeitet, können wir einen genaueren Blick darauf werfen. Sie nutzt in Wahrheit die `clojure.core` Funktion `str/lower-case`, welche eine Zeichenkette auf die gleiche Weise in Kleinbuchstaben umwandelt. Die Funktion wandelt nicht nur einzelne Buchstaben, sondern auch alle Akzentzeichen und Sonderzeichen um, wie z.B. das "ß" in "ss" oder das "ä" in "ae".
 
 ## Siehe auch
-
-- [Clojure Dokumentation zu lower-case](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case)
-- [Clojure Unicode Bibliothek](https://clojuredocs.org/clojure.java.io/reader)
+- https://clojuredocs.org/clojure.string/lower-case
+- https://clojuredocs.org/clojure.core/str/lower-case
+- https://clojuredocs.org/clojure.core/println

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Ricerca e sostituzione di testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Javascript: Ricerca e sostituzione di testo"
 simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,50 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Il processo di ricerca e sostituzione del testo è fondamentale nella programmazione Javascript per poter automatizzare e semplificare la gestione del testo. Ad esempio, può essere utilizzato per correggere eventuali errori di battitura in modo rapido ed efficiente.
 
-## Come Fare
-Per eseguire una ricerca e sostituzione del testo in Javascript, è necessario utilizzare il metodo `replace()`. Vediamo un esempio pratico:
+Semplice: spesso, quando si scrivono programmi, si vuole avere il controllo sui dati che vengono manipolati. La ricerca e la sostituzione di testo è uno strumento utile che permette di trovare e rimpiazzare parti specifiche di una stringa.
+
+## Come fare
+
+Per eseguire una ricerca e sostituzione di testo in Javascript, è possibile utilizzare il metodo `.replace()` delle stringhe. Il formato del metodo è il seguente: `stringa.replace( testoDaCercare, testoDaSostituire )`. Se il testo da cercare viene trovato, verrà sostituito con il testo da rimpiazzare. Un esempio concreto potrebbe essere:
+
+```Javascript 
+let testo = "Questa è una stringa di esempio";
+let nuovoTesto = testo.replace("esempio", "prova");
+
+console.log(nuovoTesto);
+// Output: "Questa è una stringa di prova"
+```
+
+In questo caso, la parola "esempio" è stata trovata all'interno della stringa e sostituita con la parola "prova". Il metodo `.replace()` sostituisce solo la prima occorrenza trovata, quindi se si vuole sostituire tutte le occorrenze è necessario aggiungere il flag `"g"`, che sta per "global". Ad esempio:
 
 ```Javascript
-var str = "Ciao, sono un programmatore!";
-var newStr = str.replace("programmatore", "sviluppatore");
+let testo = "Questa è una stringa di esempio con diversi esempi";
+let nuovoTesto = testo.replace(/esempio/g, "prova");
 
-console.log(newStr);
+console.log(nuovoTesto);
+// Output: "Questa è una stringa di prova con diversi prove"
 ```
-Output: Ciao, sono un sviluppatore!
 
-In questo esempio, è stato cercato il termine "programmatore" e sostituito con "sviluppatore" all'interno della stringa "Ciao, sono un programmatore!". Il risultato finale è stato quindi "Ciao, sono un sviluppatore!".
-
-Inoltre, è possibile utilizzare le espressioni regolari per effettuare una sostituzione di più occorrenze di un determinato pattern all'interno di una stringa. Vediamo un altro esempio:
-
-```Javascript
-var str = "Javascript è divertente ma può essere complicato a volte.";
-var newStr = str.replace(/complicato/g, "difficile");
-
-console.log(newStr);
-```
-Output: Javascript è divertente ma può essere difficile a volte.
-
-In questo caso, la parola "complicato" è stata sostituita con "difficile" all'interno della stringa.
+In questo caso, il flag `g` ha permesso di sostituire tutte le occorrenze di "esempio" con "prova". È anche possibile utilizzare espressioni regolari all'interno del metodo `.replace()`, per avere una maggiore flessibilità e precisione nella ricerca del testo.
 
 ## Approfondimento
-Il metodo `replace()` non altera la stringa originale, ma restituisce una nuova stringa con le modifiche effettuate. Inoltre, è possibile combinare l'utilizzo delle espressioni regolari con funzioni per manipolare la stringa durante il processo di sostituzione.
 
-Ad esempio, è possibile utilizzare la funzione `toUpperCase()` per sostituire una parola con la sua versione maiuscola:
+Il metodo `.replace()` in realtà è molto più potente e versatile di quanto si sia visto finora. Infatti, oltre al testo da rimpiazzare, è possibile passare anche una funzione come parametro di sostituzione. Questa funzione viene eseguita ogni volta che viene trovato il testo da cercare e può avere un input dinamico che dipende dalla posizione del testo cercato. Per esempio:
 
 ```Javascript
-var str = "cercando e sostituendo";
-var newStr = str.replace(/e/g, function(match) {
-  return match.toUpperCase();
+let testo = "Non ho mai avuto 23 anni, neanche ieri";
+let nuovoTesto = testo.replace(/\d+/, function(numero) {
+    return parseInt(numero) * 2;
 });
 
-console.log(newStr);
+console.log(nuovoTesto);
+// Output: "Non ho mai avuto 46 anni, neanche ieri"
 ```
-Output: cErcando E sostituendo
 
-In questo esempio, la lettera "e" è stata sostituita con "E" usando la funzione `toUpperCase()`.
+In questo caso, la funzione ha ricevuto come input il numero "23", lo ha moltiplicato per 2 e ha restituito il nuovo valore, che è stato poi utilizzato per sostituire il testo originale. Questo approccio può essere molto utile per manipolare dinamicamente i dati che si vogliono sostituire.
 
-## Vedi Anche
-- [Documentazione del metodo replace() in Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Tutorial sulle espressioni regolari in Javascript](https://www.html.it/pag/27667/espressioni-regolari-in-javascript/)
+## Vedi anche
+
+- [Documentazione ufficiale del metodo .replace()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Tutorial su espressioni regolari in Javascript](https://www.w3schools.com/js/js_regexp.asp)
+- [Articolo su come manipolare stringhe in Javascript](https://www.javascripttutorial.net/javascript-string/)

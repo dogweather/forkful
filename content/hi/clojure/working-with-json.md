@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
+title:                "जेसोन के साथ काम करना"
+html_title:           "Clojure: जेसोन के साथ काम करना"
+simple_title:         "जेसोन के साथ काम करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,25 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-JSON (JavaScript Object Notation) एक popular data format है जिसे प्रोग्रामिंग में इस्तेमाल किया जाता है। यह डेटा को एकीकृत ढंग से संग्रहीत करने और इसे स्थानीय भाषाओं में पार्स करने के लिए उपयोगी है। इसलिए, Clojure programmers के लिए JSON को सीखना जरूरी है।
+
+आज के समय में, डाटा विन्यास प्राथमिकताओं में से एक है। जेसन (JSON) एक लोकप्रिय डेटा फॉर्मेट है जिसका उपयोग सभी तरह के डाटा को संगठित करने के लिए किया जाता है, चाहे वह वेब सामग्री हो या मोबाइल ऍप्स। ऐसे में, जेसन (JSON) के साथ काम करना एक महत्वपूर्ण कौशल है जो हर डेवलपर को सीखना चाहिए।
 
 ## कैसे करें
+
+जेसन (JSON) का उपयोग करने के लिए, हमारे पास clojure.data.json नामक लाइब्रेरी है। इसे इम्पोर्ट करने के लिए, हम `(:require [clojure.data.json :as json])` का उपयोग कर सकते हैं।
+
 ```Clojure
-;; जैसे ही JSON को Clojure भाषा में पार्स किया जाता है, यह Clojure में मानचित्र में रूपांतरित हो जाता है।
-(def json-data
-  "{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"music\",\"coding\"]}") ;string को डेटा संरचना में परिवर्तित करें
+(require '[clojure.data.json :as json])
 
-(require '[clojure.data.json :as json]) ;clojure.data.json नामी सामान्य नामइकृत-निर्वाचित namespace को सम्मिलित करें
-
-(json/read-str json-data) ;डेटा parse करें
-;; आउटपुट:
-;; {"name" "John", "age" 30, "hobbies" ["reading" "music" "coding"]}
+(def sample-data {:name "John" :age 30 :occupation "Software Engineer"})
 ```
 
-## गहराई में
-JSON को Clojure में काम करने के लिए, clojure.data.json namespace को import करने के अलावा, हम clojure.core में उपलब्ध फ़ंक्शंस का भी उपयोग कर सकते हैं। इनमें से कुछ मुख्य हैं `json/write-str`, `json/generate-string`, `json/read`, `json/write` और `json/parse-string`। हम इन फ़ंक्शंस का उपयोग करके JSON विलक्षणताओं को अधिक घहराने वाले कामों में उपयोगी बना सकते हैं।
+आप अपने डेटा को map के रूप में डिक्लेयर कर सकते हैं और `json/write` फ़ंक्शन का उपयोग करके जेसन (JSON) फॉर्मेट में उसे लिख सकते हैं।
 
-## इससे जुड़े लिंक्स
-- [Clojure Docs: JSON](https://clojure.org/guides/json)
-- [Clojure Docs: clojure.data.json](https://clojure.github.io/clojure/clojure.data.json-api.html)
-- [JSON व्याख्या](https://json.org/)
+```Clojure
+(json/write sample-data) ;; outputs: "{\"name\":\"John\",\"age\":30,\"occupation\":\"Software Engineer\"}"
+```
+
+अगर हमें जेसन (JSON) फ़ॉर्मेट से अपने डेटा को पार्स करना हो, तो हम `json/parse-string` फ़ंक्शन का उपयोग करके डेटा को Clojure डेटा टाइप में लोड कर सकते हैं।
+
+```Clojure
+(json/parse-string "{\"name\":\"John\",\"age\":30,\"occupation\":\"Software Engineer\"}") ;; returns: {:name "John" :age 30 :occupation "Software Engineer"}
+```
+
+## डीप डाइव
+
+जेसन (JSON) फ़ॉर्मेट में डेटा को संगठित करना काफी आसान है और सामान्य रूप से उपयोग किया जाता है। हालांकि, जानना कि कैसे `json/write` और `json/parse-string` फ़ंक्शन काम करते हैं एक बेहतरीन गहराई हो सकती है। इसलिए, आप Clojure डिक्शनरी के माध्यम से इन फ़ंक्शन की डॉक्यूमें

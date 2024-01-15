@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 「テキストファイルを読む」"
-simple_title:         "「テキストファイルを読む」"
+title:                "テキストファイルの読み込み"
+html_title:           "Clojure: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-テキストファイルを読むのに、なぜこの記事を読む必要があるのでしょうか？テキストファイルはプログラミングにおいて非常に重要な役割を果たしています。そのため、この記事ではClojure言語を使用してテキストファイルを読む方法を紹介します。
+あなたがテキストファイルを読む上で何が重要か気になりますか？テキストファイルを読むことで、プログラムやデータを扱う上で不可欠な情報を得ることができます。この記事では、Clojureを使ってテキストファイルを読む方法をご紹介します。
 
 ## 使い方
-
-テキストファイルを読むには、まず`clojure.java.io`ライブラリを使用する必要があります。以下のようにコードを書くことで、テキストファイルを読み込むことができます。
-
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(with-open [reader (io/reader "sample.txt")]
+(with-open [reader (clojure.java.io/reader "sample.txt")]
   (doseq [line (line-seq reader)]
     (println line)))
 ```
 
-上記のサンプルコードでは、`sample.txt`というファイルを読み込んで、1行ずつ内容を出力しています。もちろん、このコードは自分のファイル名に合わせて変更する必要があります。
+これはClojureでテキストファイルを読み込む最も基本的な方法です。`sample.txt`というファイルを開いて、それぞれの行を順に取り出して出力することができます。
 
-## ディープダイブ
+```Clojure
+(with-open [reader (clojure.java.io/reader "sample.txt")]
+  (doall (take 5 (line-seq reader))))
+```
 
-テキストファイルを読む方法は様々ありますが、基本的な考え方は同じです。まずはファイルを開いて、行ごとに処理していくという流れです。ただし、ファイルを開く際にはエラー処理をきちんと行う必要があります。
+さらに、ファイルから一部の行だけを取り出したい場合は、`take`関数を使って行数を指定することもできます。
 
-また、テキストファイルを読み込むだけでなく、書き込むこともできます。`clojure.java.io`ライブラリには`writer`関数もあるため、ファイルを作成してその中に文字を書き込むこともできます。
+```Clojure
+(with-open [reader (clojure.java.io/reader "sample.txt")]
+  (doall (filter #(re-find #"Clojure" %) (line-seq reader))))
+```
 
-## 参考リンク
+あるパターンにマッチする行を取り出したい場合は、`filter`関数を使って正規表現を指定することもできます。
 
-- [Clojure - Java Interop](https://clojure.org/reference/java_interop)
-- [clojure.java.io - ClojureDocs](https://clojuredocs.org/clojure.java.io/reader)
-- [How to Read and Write Text Files in Clojure - Clojure for the Brave and True](https://www.braveclojure.com/reading-and-writing/)
+## 深く掘り下げる
+Clojureは標準ライブラリによって、テキストファイルを扱うための便利な関数を多数提供しています。例えば、`clojure.string`モジュールにはテキストの分割や結合を行う関数が含まれています。
+
+また、Clojureにはデータ構造としてのシーケンスがあり、これを使ってテキストファイルを処理することができます。シーケンスを操作する関数を使えば、より高度なテキストファイルの処理が可能になります。
+
+## See Also (参考リンク)
+- [Clojure Documentation](https://clojure.org/)
+- [Clojure for the Brave and True](http://www.braveclojure.com/)
+- [Learn Clojure in Y Minutes](https://learnxinyminutes.com/docs/ja-jp/clojure-ja/)

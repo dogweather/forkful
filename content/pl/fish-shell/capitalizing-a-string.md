@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Zmiana na wielkie litery ciągu znaków"
-simple_title:         "Zmiana na wielkie litery ciągu znaków"
+title:                "Zmiana wielkości litery w ciągu znaków"
+html_title:           "Fish Shell: Zmiana wielkości litery w ciągu znaków"
+simple_title:         "Zmiana wielkości litery w ciągu znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
+Jedną z podstawowych operacji, które musimy wykonywać w programowaniu, jest manipulacja napisami. Jedną z często używanych jest zmiana wielkości liter – zwłaszcza w celu uzyskania poprawnego formatowania. W tym artykule dowiesz się, jak używając Fish Shell, możesz prostym sposobem zamienić napis na jego zdatną do wykorzystania formę.
 
-Jeśli jesteś programistą, z pewnością spotkałeś się z sytuacją, w której musiałeś zmienić wielkość liter w tekście. Możliwe, że korzystałeś z języka programowania, który miał wbudowaną funkcję do tej operacji. Jednak, jeśli używasz powłoki Fish Shell, musisz samodzielnie napisać ten kod. W tym artykule dowiesz się, dlaczego warto to zrobić i jak to zrobić.
-
-## Jak to zrobić
-
-Fish Shell oferuje proste i wygodne rozwiązanie, aby zmienić wielkość liter w dowolnym ciągu znaków. Wystarczy zastosować wbudowaną funkcję `string capitalize`, która przyjmuje w parametrze ciąg znaków, a zwraca wynik z pierwszą literą każdego słowa zapisanego wielkimi literami. Przykładowy kod i wynik w konsoli może wyglądać następująco:
+## Jak to zrobić?
+Fish Shell oferuje wbudowaną funkcję `string toupper` do zmiany wszystkich liter w napisie na duże oraz `string tolower` do zmiany na małe. Możesz również użyć funkcji `string capitalize`, aby zamienić pierwszą literę w napisie na dużą, pozostawiając pozostałe bez zmian.
 
 ```Fish Shell
-# Przykładowy tekst
-set text "to jest tekst przykładowy"
-
-# Użycie funkcji capitalize
-string capitalize $text
-
-# Wynik
-To Jest Tekst Przykładowy
+echo "witaj świecie" | string toupper
 ```
+Output: WITAJ ŚWIECIE
 
-W powyższym przykładzie zastosowaliśmy funkcję `string capitalize` do zmiany wielkości liter w tekście z małych na duże. Możemy również wykorzystać funkcję `string uppercase` lub `string lowercase` dla bardziej szczegółowej kontroli nad zmianą wielkości liter.
+```Fish Shell
+echo "TUtrzy słOwa" | string tolower
+```
+Output: tutrzy słowa
 
-## Deep Dive
+```Fish Shell
+echo "mój naPiS" | string capitalize
+```
+Output: Mój naPiS
 
-Jeśli jesteś ciekaw, jak dokładnie działa funkcja `string capitalize`, warto prześledzić kod źródłowy tej funkcji. Dzięki temu będziesz miał lepsze zrozumienie procesu zmiany wielkości liter w Fish Shell. Kod możesz znaleźć w dokumentacji na oficjalnej stronie Fish Shell lub w repozytorium na GitHubie.
+## Głębsze zagadnienia
+W przypadku, kiedy chcesz zmienić jedynie kilka wybranych liter w napisie, możesz użyć funkcji `string replace`. Jest ona przydatna, gdy np. chcesz zamienić wszystkie spacje na znaki podkreślenia w celu utworzenia poprawnej nazwy pliku.
+
+```Fish Shell
+echo "To jest przykładowy napis" | string replace " " "_"
+```
+Output: To_jest_przykładowy_napis
+
+Ponadto, jeśli chcesz bardziej zaawansowanej funkcjonalności, Fish Shell umożliwia również dostęp do wbudowanych narzędzi systemu operacyjnego. Można to wykorzystać do wywołania programów zewnętrznych, takich jak `tr` do zmiany wielkości liter.
 
 ## Zobacz również
-
-* Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-* Repozytorium Fish Shell na GitHubie: https://github.com/fish-shell/fish-shell
+- [Dokumentacja Funkcji String w Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
+- [Inne wbudowane narzędzia w Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Przykłady wykorzystania funkcji string w Fish Shell](https://www.freecodecamp.org/news/string-manipulation-in-fish-shell-c34c33774e94/) (w języku angielskim)

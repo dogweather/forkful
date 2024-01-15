@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "C recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "C"
 category:             "C"
@@ -11,55 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Debugging is an essential aspect of programming. It helps to identify and fix any issues or bugs in the code, ensuring the smooth functioning of a program. One popular method of debugging is by using print statements, also known as "debug output." These statements allow developers to see the values of variables and the flow of the program at different points, making it easier to track down errors. In this post, we will explore the importance of print statements and how to effectively use them for debugging in C programming.
+Debugging is an essential part of software development, and one of the most common tools used in debugging is printing debug output. This allows developers to track the flow of their code, understand what is happening at each step, and identify any potential errors or bugs.
 
 ## How To
 
-Using print statements for debugging is a simple yet powerful technique. The syntax for printing output in C programming is as follows:
+Printing debug output in C is a simple and effective way to aid in the debugging process. To do so, we can use the `printf()` function, which allows us to print formatted output to the standard output stream (usually the terminal).
 
-```C
-    printf("Debug output: %d, %f, %c", num, float_num, character);
-```
-
-In this example, we are using the 'printf' function to print out the values of variables 'num', 'float_num', and 'character'. The "%d", "%f", and "%c" are format specifiers used to indicate the type of value we want to print. It is crucial to ensure that the correct format specifier is used for each variable to avoid any errors.
-
-Now, let's look at an example of how we can use print statements for debugging:
+Let's take a look at a simple example:
 
 ```C
 #include <stdio.h>
-int main()
-{
-    int x = 5;
-    float y = 3.14;
 
-    printf("Value of x: %d\n", x);
-    printf("Value of y: %f\n", y);
+int main() {
+    int num1 = 10;
+    int num2 = 5;
+
+    // Print the values of num1 and num2
+    printf("num1 = %d, num2 = %d\n", num1, num2);
+
+    // Print the sum of num1 and num2
+    printf("%d + %d = %d\n", num1, num2, num1 + num2);
 
     return 0;
 }
 ```
 
-In this code snippet, we have declared two variables, 'x' and 'y', with values 5 and 3.14 respectively. By using print statements, we can print out the values of these variables to see if they are being assigned correctly.
-
-The output of the above code would be:
-
+Output:
 ```
-Value of x: 5
-Value of y: 3.140000
+num1 = 10, num2 = 5
+10 + 5 = 15
 ```
 
-As we can see, using print statements helps us to monitor the values of variables and track the flow of our code. It can be especially useful when dealing with complex algorithms or large codebases.
+In this example, we first declare two variables `num1` and `num2` and assign them the values 10 and 5 respectively. Then, using `printf()`, we print the values of these variables as well as their sum.
+
+It's important to note that `printf()` uses format specifiers to print the values of variables. In the above example, `%d` is used to print integers, but there are many other format specifiers for different data types.
 
 ## Deep Dive
 
-While using print statements for debugging is a handy technique, it is essential to use it wisely. Overusing print statements can make the code cluttered and difficult to read, leading to more confusion. One way to minimize the use of print statements is to use conditional statements like 'if' and 'else'. This way, print statements will only be executed if a certain condition is met, reducing unnecessary output.
+Printing debug output can also be useful for tracking the execution of a program. By strategically placing `printf()` statements in different parts of the code, we can get a better understanding of how our program is running and where any potential errors may be occurring.
 
-Another helpful tip is to use descriptive messages in print statements. Instead of just printing out the values of variables, we can include information about the specific point in the code or the action being performed. This can provide more context and make debugging more efficient.
+Another technique for debugging with `printf()` is using conditional statements. For example, we can print a message only if a certain condition is met, which can help us pinpoint the exact location of a bug.
 
-Lastly, it is essential to remove all print statements before finalizing the code and pushing it to production. Leaving print statements in the final code can cause performance issues and also pose a risk of exposing sensitive information.
+It's important to remember to remove all debug `printf()` statements before releasing the final version of our code, as it can impact the performance of our program.
 
 ## See Also
 
-- [The Importance of Debugging in Programming](https://www.computersciencedegreehub.com/5-steps-to-mastering-debugging-in-programming/)
-- [Debugging in C - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_program_debugging.htm)
-- [The Power of Print Statements for Debugging - Tutorial by cs50](https://www.youtube.com/watch?v=PEabYjpegFs)
+- [Debugging in C: Tips and Tricks](https://www.codeproject.com/Articles/15971/Debugging-in-C-Tips-and-Tricks)
+- [Logging in C and C++ using the Standard Library](https://www.guru99.com/c-logging-programming.html)
+- [How to Debug C Programs on Linux Using gdb](https://www.tecmint.com/debug-c-programs-in-linux-using-gdb/)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Schreiben in die Standardfehlerausgabe"
-simple_title:         "Schreiben in die Standardfehlerausgabe"
+title:                "Schreiben auf standardmäßigen Fehler"
+html_title:           "Javascript: Schreiben auf standardmäßigen Fehler"
+simple_title:         "Schreiben auf standardmäßigen Fehler"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,63 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben zu Standardfehlern (engl: writing to standard error) in der Programmierung kann ein entscheidendes Werkzeug sein, um Fehler und Probleme in unserem Code zu identifizieren und zu beheben. Durch die Ausgabe von Fehlermeldungen auf dem Standardfehlerausgabestrom (engl: standard error output stream) können wir genauere Informationen über die auftretenden Probleme erhalten und so unser Programm verbessern.
+Warum sollte man sich überhaupt mit dem Schreiben von Standardfehlern in Javascript beschäftigen? Nun, es gibt verschiedene Gründe, warum man dies tun könnte. 
 
-## Wie man das macht
+Eine mögliche Situation wäre, dass du als Entwickler arbeitest und du möchtest sicherstellen, dass dein Code ohne Probleme läuft, bevor du ihn auf die Produktionsumgebung hochlädst. In diesem Fall kannst du den Fehler in der "console" deines Browsers ausgeben lassen, um zu sehen, wo genau der Fehler auftritt. Eine andere Möglichkeit ist, dass du deine Anwendung fehlerfrei halten möchtest, indem du der "console" Ausgaben hinzufügst, um zu sehen, ob alles wie geplant funktioniert. 
 
-In Javascript können wir mithilfe der Methode `console.error()` Fehlermeldungen auf dem Standardfehlerausgabestrom ausgeben. Dies ist besonders nützlich, wenn wir versuchen, Bugs in unserem Code zu finden oder wenn wir unsere Programme für die Produktion optimieren.
+Wie auch immer deine Gründe aussehen mögen, lassen uns nun einen Blick darauf werfen, wie man in Javascript Fehler ausgibt.
 
-Ein einfaches Beispiel dafür wäre:
+## Wie man Standardfehler ausgibt
+
+Um einen Standardfehler in Javascript auszugeben, musst du die "console.error()" Funktion verwenden. Hier ist ein Beispiel, wie du dies in deinem Code einfügen kannst:
 
 ```Javascript
-let num = "leer";
+let num1 = 5;
+let num2 = 0;
 
-if(num === "leer") {
-  console.error("Die Variable ist leer!");
+if (num2 === 0) {
+  console.error("Divison durch 0 ist nicht möglich!");
+} else {
+  console.log(num1 / num2);
 }
 ```
 
-Die Ausgabe dieses Codes würde folgendermaßen aussehen:
+Das obige Beispiel zeigt, wie du einen Fehler ausgibst, wenn du versuchst, durch 0 zu teilen. Wenn du dieses Beispiel in deinem Code ausführst, wird die Fehlermeldung "Division durch 0 ist nicht möglich!" in der Konsole ausgegeben und dein Code wird nicht abstürzen. 
 
-```
-Die Variable ist leer!
-```
-
-Auf diese Weise können wir schnell und effektiv Fehler in unserem Code erkennen und beheben.
-
-## Tiefer Tauchen
-
-Manchmal kann es notwendig sein, zusätzliche Informationen über einen Fehler zu erhalten, wie zum Beispiel die Datei, in der der Fehler aufgetreten ist, oder die genaue Zeilennummer. Hierfür können wir die Funktion `console.trace()` verwenden, um einen Stack-Trace des Programms auszugeben. Dies kann uns helfen, den Fehler genauer zu lokalisieren und zu verstehen.
-
-Die Verwendung von `console.trace()` könnte beispielsweise so aussehen:
+Es ist auch möglich, Variablen in der Fehlermeldung anzuzeigen, indem du sie als weitere Parameter an die "console.error()" Funktion übergibst:
 
 ```Javascript
-function divide(a, b) {
-  if(b === 0) {
-    console.error("Division durch 0 ist nicht erlaubt!");
-    console.trace();
-  } else {
-    return a / b;
-  }
-}
+let name = "Max";
+let age = 25;
 
-divide(10, 0);
+console.error("Der Benutzer " + name + " ist " + age + " Jahre alt.");
 ```
 
-Die Ausgabe würde dann folgendermaßen aussehen:
+Dies würde die folgende Fehlermeldung ausgeben: "Der Benutzer Max ist 25 Jahre alt." 
 
-```
-Division durch 0 ist nicht erlaubt!
-Trace
-    at divide (<anonymous>:4:13)
-    at <anonymous>:11:1
-    at <anonymous>:12:3
-```
+Man kann auch komplexe Objekte als Parameter an "console.error()" übergeben, um mehr Informationen über den Fehler zu erhalten. Dies ist besonders nützlich bei der Fehlersuche in komplexen Anwendungen.
 
-Durch das Erstellen eines Stack-Traces können wir den Fehler zurückverfolgen und so effizienter beheben.
+## Tiefergehende Informationen über das Schreiben von Standardfehlern
+
+Wenn du ein tieferes Verständnis dafür entwickeln möchtest, wie das Schreiben von Standardfehlern in Javascript funktioniert, gibt es einige wichtige Dinge zu beachten.
+
+Zunächst einmal wird "console.error()" auch eine "Stacktrace" in die Konsole ausgeben, was ein nützliches Werkzeug ist, um die Ursache eines Fehlers zu finden. Der "Stacktrace" zeigt die Reihenfolge der Funktionsaufrufe an, die zu dem Fehler geführt haben, und kann dir helfen, den genauen Punkt in deinem Code zu finden, an dem der Fehler aufgetreten ist. 
+
+Ebenfalls wichtig ist, dass "console.error()" nur in Entwicklertools ausgegeben wird, nicht in der tatsächlichen Ausführungsumgebung deiner Anwendung. Wenn du also auf eine Live-Website gehst und in die Browserkonsole schaust, wirst du dort keine Fehlermeldungen sehen. Aus diesem Grund ist es empfehlenswert, "console.error()" Ausgaben nur in der Entwicklungsphase zu verwenden und sie später aus dem Code zu entfernen, bevor du deine Anwendung live schaltest.
 
 ## Siehe auch
 
-- [MDN Web Docs - Fehlerbehandlung und Fehlererkennung in Javascript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Errors)
-- [Techtutorials - Debugging mit der Konsole in Javascript](https://www.techtutorials.de/javascript-tutorial/javascript-debugging-mit-dem-console.html)
-- [W3Schools - console.error()](https://www.w3schools.com/jsref/met_console_error.asp)
+- [Javascript Fehlerbehandlung: Ein Anfängerleitfaden](https://www.digitalocean.com/community/tutorials/js-exception-handling)
+- [Konsole Ausgabe in Javascript](https://www.w3schools.com/js/js_console.asp)
+- [Javascript Debugging Tipps](https://blog.logrocket.com/10-tips-for-javascript-debugging-like-a-pro/)

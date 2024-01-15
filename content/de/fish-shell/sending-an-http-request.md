@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Das Senden einer http-Anfrage"
-simple_title:         "Das Senden einer http-Anfrage"
+title:                "Eine http-Anfrage senden"
+html_title:           "Fish Shell: Eine http-Anfrage senden"
+simple_title:         "Eine http-Anfrage senden"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-Das Senden von HTTP-Anfragen ist eine nützliche Fähigkeit für alle, die mit Webanwendungen arbeiten. Mit der Fish Shell können Sie ganz einfach HTTP-Anfragen senden und die Antwort verarbeiten.
+Manchmal ist es in der Programmierung notwendig, eine Verbindung zu einem Server herzustellen, um Daten abzurufen oder zu senden. Das kann beispielsweise für die Entwicklung von Webanwendungen oder APIs relevant sein. In solchen Fällen ist es hilfreich, die Fish Shell zu nutzen, um schnell und einfach HTTP Requests zu versenden.
 
-## Wie es geht
+## Wie geht das
 
-Um eine HTTP-Anfrage mit Fish Shell zu senden, können Sie das integrierte `curl`-Tool verwenden. Hier ist ein Beispiel, wie Sie eine GET-Anfrage an eine API-Endpoint senden können:
+Um einen HTTP Request mit der Fish Shell zu senden, folge diesen Schritten: 
 
-```Fish Shell
-curl -X GET https://example.com/api/users
-```
+1. Öffne die Fish Shell auf deinem Computer.
+2. Definiere eine Variable für die URL, an die der Request gesendet werden soll: ```set url 'https://example.com'```
+3. Verwende den Befehl ```curl``` zusammen mit der Variable, um den Request zu senden: ```curl $url```
+4. Du kannst auch spezifische Optionen hinzufügen, z.B. ```-X``` für eine bestimmte HTTP-Methode oder ```-d``` für Daten, die im Request mitgesendet werden sollen.
 
-Dies wird eine Antwort mit dem JSON-Datenformat zurückgeben. Sie können die Antwort direkt in der Shell anzeigen oder in eine Datei schreiben, wie im folgenden Beispiel gezeigt:
+Wenn alles erfolgreich war, erhältst du eine Antwort vom Server in der Fish Shell, die du dann weiterverarbeiten kannst.
 
-```Fish Shell
-curl -X GET https://example.com/api/users > users.json
-```
-Dies speichert die Antwort in einer Datei mit dem Namen "users.json".
+## Deep Dive
 
-Um eine POST-Anfrage mit Daten zu senden, können Sie den `-d` Parameter verwenden, gefolgt von den Daten, die Sie senden möchten. Zum Beispiel:
+Um den HTTP Request noch weiter anzupassen, gibt es verschiedene Optionen, die du mit dem ```curl``` Befehl verwenden kannst. Hier sind ein paar Beispiele:
 
-```Fish Shell
-curl -X POST -d 'name=Max&age=28' https://example.com/api/users
-```
+- ```-H``` ermöglicht das Hinzufügen von HTTP Header zu deinem Request.
+- ```-u``` erlaubt es dir, dich mit Benutzername und Passwort auf einer Webseite anzumelden.
+- ```-v``` zeigt dir zusätzliche Informationen zum Request und zur Serverantwort an.
+- ```-o``` gibt dir die Möglichkeit, die Serverantwort in einer Datei zu speichern.
 
-Dies sendet eine POST-Anfrage an den API-Endpoint mit den angegebenen Daten.
-
-## Tiefergehende Informationen
-
-Die Fish Shell bietet auch die Möglichkeit, benutzerdefinierte HTTP-Anfragen mit dem `http`-Befehl zu senden. Dies ermöglicht eine genauere Kontrolle über die Anfrage und bietet zusätzliche Funktionen wie das Setzen von Anfrage-Headern und das Verarbeiten von Basic-Authentifizierung. Hier ist ein Beispiel, wie Sie eine GET-Anfrage mit `http` senden können:
-
-```Fish Shell
-http https://example.com/api/users
-```
-
-Dies sendet dieselbe GET-Anfrage wie im vorherigen Beispiel mit `curl`. Weitere Informationen über die Verwendung des `http`-Befehls finden Sie in der [offiziellen Dokumentation](https://fishshell.com/docs/current/commands.html#http).
+Es gibt noch viele weitere Optionen, die du entdecken kannst, je nachdem welche Anforderungen dein Request hat.
 
 ## Siehe auch
 
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [Curl Dokumentation](https://curl.haxx.se/docs/manpage.html)
-- [Httpie Dokumentation](https://httpie.org/doc)
+- [Fish Shell: Offizielle Dokumentation](https://fishshell.com/docs/current/index.html)
+- [curl: Details zu allen verfügbaren Optionen](https://curl.se/docs/manpage.html)
+- [HTTP Requests mit der Fish Shell: Ein ausführlicher Guide](https://medium.com/@devatrox/sending-http-requests-with-fish-shell-a-detailed-guide-9309c84f139f)

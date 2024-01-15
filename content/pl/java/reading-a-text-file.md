@@ -1,6 +1,7 @@
 ---
-title:                "Java: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytanie pliku tekstowego"
+html_title:           "Java: Odczytanie pliku tekstowego"
+simple_title:         "Odczytanie pliku tekstowego"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,58 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy chcesz nauczyć się czytać pliki tekstowe w języku Java? W artykule tym dowiesz się, jak to zrobić, aby zacząć przetwarzać pliki tekstowe za pomocą swojego kodu.
+Jeśli programujesz w języku Java, prawdopodobnie już wiesz, jak ważne są pliki tekstowe w przetwarzaniu danych. W tym artykule dowiecie się, jak czytać pliki tekstowe w prosty i skuteczny sposób.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby odczytać plik tekstowy w Java, musimy użyć klasy FileReader oraz BufferedReader. W prosty sposób możemy to zrobić za pomocą poniższego kodu:
+Czytanie pliku tekstowego w języku Java jest stosunkowo proste. Wystarczy wykorzystać klasę `FileReader` i `BufferedReader`, aby wczytać plik, a następnie użyć pętli `while` do odczytania danych linia po linii. Oto przykładowy kod:
 
 ```Java
+FileReader file = new FileReader("plik.txt");
+BufferedReader reader = new BufferedReader(file);
 
-// importujemy niezbędne klasy
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class ReadFile {
-
-    public static void main(String[] args) {
-
-        // określamy ścieżkę do pliku tekstowego
-        String filePath ="tekst.txt";
-
-        // otwieramy plik i tworzymy BufferedReader
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-
-            // zmienna przechowująca kolejną linię tekstu
-            String line;
-
-            // odczytujemy kolejne linie dopóki nie natrafimy na null
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+String line = reader.readLine();
+while (line != null) {
+    System.out.println(line);
+    line = reader.readLine();
 }
+
+reader.close();
 ```
 
-Po uruchomieniu tego kodu, otrzymamy wydruk tekstu z naszego pliku. Na przykład:
+W tym kodzie najpierw tworzymy obiekt `FileReader`, który reprezentuje plik tekstowy `plik.txt`. Następnie tworzymy obiekt `BufferedReader`, który przetwarza dane z pliku i przechowuje je w pamięci podręcznej, co pozwala nam na bardziej efektywne czytanie. W pętli `while` czytamy pojedyncze linie z pliku, aż do momentu, gdy osiągniemy koniec pliku (wyrażenie `line != null`). Na końcu zamykamy obiekt `BufferedReader` przy użyciu metody `close()`.
 
+Jeśli chcesz odczytać cały plik jako jeden ciąg znaków, możesz skorzystać z klasy `Scanner`, która posiada wiele przydatnych metod do przetwarzania danych tekstowych. Oto jak to zrobić:
+
+```Java
+Scanner scanner = new Scanner(new File("plik.txt"));
+String content = scanner.useDelimiter("\\Z").next();
+System.out.println(content);
+scanner.close();
 ```
-To jest pierwsza linia tekstu.
-To jest druga linia tekstu.
-To jest trzecia linia tekstu.
-```
+
+W tym przypadku tworzymy obiekt `Scanner`, który przyjmuje jako argument obiekt `File`, reprezentujący nasz plik tekstowy. Następnie używamy metody `useDelimiter()` do ustawienia separatora jako `\Z`, co oznacza koniec tekstu. W ten sposób podajemy całą zawartość pliku jako pojedynczy ciąg znaków do zmiennej `content`, którą następnie możemy wyświetlić na ekranie. Na końcu zamykamy obiekt `Scanner` przy użyciu metody `close()`.
 
 ## Deep Dive
 
-Podczas wczytywania pliku tekstowego, konieczne jest również obsłużenie wyjątków takich jak FileNotFoundException oraz IOException. Możemy również zmienić sposób wczytywania tekstu, na przykład używając metody read() z klasy FileReader lub wykorzystując pętlę z warunkiem while z użyciem metody readLine().
+Podczas czytania pliku tekstowego, istnieje wiele przydatnych metod, które mogą ułatwić przetwarzanie danych. Na przykład, możesz użyć metody `split()` klasy `String`, aby rozdzielić linię tekstu na pojedyncze wartości oddzielone określonym znakiem. Używając pętli `for`, możesz łatwo przetworzyć każdą z tych wartości. Oto przykładowy kod:
 
-## Zobacz również
+```Java
+String line = "1, 2, 3, 4, 5";
+String[] values = line.split(",");
+for (String value : values) {
+    System.out.println(value);
+}
+```
 
-- [Tutorial: Reading and Writing Files in Java](https://www.baeldung.com/java-read-write-files)
-- [Java File Handling](https://www.geeksforgeeks.org/file-handling-java-tips/)
-- [Official Java Documentation: Reading and Writing Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+Wynik:
+
+```
+1
+2
+3
+4
+5
+```
+
+Inną przydatną klasą jest `LineNumberReader`, która pozwala na odczytywanie nie tylko zawartości pliku, ale także numerów kolejnych linii. Możesz tego użyć do wyświetlania numerów linii wraz z ich zawartością i w ten sposób ułatwić użytkownikowi odnalezienie konkretnych danych. Oto przykładowy kod:
+
+```Java
+LineNumberReader reader = new LineNumberReader(new FileReader("plik.txt"));
+String line;
+while ((line = reader.readLine()) != null) {
+    System.out.println(reader.getLineNumber() + ": " + line);
+}
+reader.close();
+```
+
+Wynik:
+
+```
+1: Pierwsza linia tekstu
+2: Druga linia tekstu
+3: Trzecia linia tekstu
+```

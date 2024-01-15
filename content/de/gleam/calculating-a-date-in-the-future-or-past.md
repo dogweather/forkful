@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Gleam: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,55 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Manchmal müssen wir in unseren Programmen zukünftige oder vergangene Termine berechnen. Zum Beispiel möchten wir vielleicht ein Geburtstagsdatum für die nächsten 10 Jahre berechnen oder ein Abonnementdatum in der Vergangenheit überprüfen. In solchen Fällen ist es nützlich zu wissen, wie man Datumsberechnungen in Gleam durchführt.
+Es kann viele Gründe geben, warum man sich mit der Berechnung von zukünftigen oder vergangenen Daten beschäftigen möchte. Vielleicht planst du eine Reise und möchtest wissen, wie viele Tage es noch bis dahin sind. Oder du entwickelst eine Software, die Geburtstage oder Vertragslaufzeiten verwalten muss. Egal aus welchem Grund, die Fähigkeit, Datumsberechnungen durchzuführen, ist für viele Anwendungsfälle unerlässlich.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir die `gleam/time`-Bibliothek importieren und die Funktion `add_time` oder `sub_time` verwenden. Lassen Sie uns zunächst ein Beispiel machen, um das aktuelle Datum zu erhalten:
-
-```Gleam
-import gleam/time
-today = time.now() // Heutiges Datum
-```
-
-Um nun ein zukünftiges Datum zu berechnen, können wir die `add_time`-Funktion verwenden und die Anzahl der Tage, Monate oder Jahre, die wir hinzufügen möchten, als Argument übergeben. Es handelt sich dabei um einen `Time.Duration`-Wert, der aus der `gleam/core`-Bibliothek importiert werden muss.
-
-Lassen Sie uns ein Beispiel machen, um das Datum in 10 Monaten zu berechnen:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, musst du zunächst das `DateTime` Modul in Gleam importieren. Dann kannst du die Funktion `add` verwenden, um die gewünschte Anzahl von Tagen, Monaten oder Jahren zu einem Datum hinzuzufügen oder davon abzuziehen.
 
 ```Gleam
-import gleam/time
-import gleam/core
-today = time.now()
-nextDate = time.add_time(today, core.Duration(months: 10))
-// Datum in 10 Monaten
+import gleam/datetime
+let twenty_first_october_2021 = datetime.DateTime(
+    year = 2021,
+    month = October,
+    day = 21,
+    hour = 12,
+    minute = 0,
+    second = 0,
+    nano = 0,
+)
+
+let three_days_later = datetime.add(
+    date = twenty_first_october_2021,
+    duration = datetime.Duration(days = 3)
+)
+
+datetime.to_string(twenty_first_october_2021) // "2021-10-21T12:00:00Z"
+datetime.to_string(three_days_later) // "2021-10-24T12:00:00Z"
 ```
 
-Um ein vergangenes Datum zu berechnen, können wir die `sub_time`-Funktion verwenden und die Dauer, die wir abziehen möchten, als Argument übergeben. Hier ist ein Beispiel, um das Datum vor 2 Wochen zu berechnen:
+## Tiefer in die Materie
 
-```Gleam
-import gleam/time
-import gleam/core
-today = time.now()
-pastDate = time.sub_time(today, core.Duration(weeks: 2))
-// Datum vor 2 Wochen
-```
-
-## Tiefere Einblicke
-
-Möglicherweise möchten Sie auch Zeitangaben wie Stunden, Minuten oder Sekunden berücksichtigen, um ein genaueres Datum zu berechnen. Dafür können wir die `Time.Duration`-Datentypen `hours`, `minutes` und `seconds` verwenden. Schauen wir uns ein Beispiel an, um das Datum genau 6 Stunden und 30 Minuten in der Zukunft zu berechnen:
-
-```Gleam
-import gleam/time
-import gleam/core
-today = time.now()
-nextDate = time.add_time(today, core.Duration(hours: 6, minutes: 30))
-// Datum in 6 Stunden und 30 Minuten
-```
-
-Es gibt auch andere nützliche Funktionen in der `gleam/time`-Bibliothek, wie zum Beispiel `compare_time`, um zwei Datumswerte zu vergleichen, oder `to_string` um ein Datum in einem bestimmten Format auszugeben.
+Die `DateTime`- und `Duration`-Module in Gleam sind auf dem Niveau von Datums- und Zeitberechnungen sehr leistungsfähig. Du kannst nicht nur Tage, Monate und Jahre hinzufügen oder abziehen, sondern auch beliebige Zeitspannen, einschließlich Nanosekunden. Die Gleam-Compiler bietet auch integrierte Funktionen zur Unterstützung der Umstellung von Zeitzonen. Überprüfe die offizielle Dokumentation für weitere Details.
 
 ## Siehe auch
 
-- [Gleam Dokumentation zu Datum und Zeit](https://gleam.run/modules/time)
-- [Gleam Zeit Funktionen im Core Modul](https://gleam.run/modules/core#Time.Duration)
-- [Verfügbarer Datentyp in der Glean Standardbibliothek](https://github.com/gleam-lang/gleam_stdlib/blob/master/std/time/time.gleam)
+- Offizielle Gleam-Dokumentation für das `DateTime`-Modul: https://gleam.run/documentation/standard-library#datetime
+- Gleam-Beispielcode für Datumsberechnungen: https://github.com/gleam-lang/gleam/blob/master/examples/datetime.gleam
+- Andere nützliche Funktionen der Gleam-Standardbibliothek: https://gleam.run/documentation/standard-library

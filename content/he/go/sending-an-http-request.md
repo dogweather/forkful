@@ -1,5 +1,6 @@
 ---
-title:                "Go: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Go: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Go"
 category:             "Go"
@@ -10,50 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+מקבלי שירות צריכים להעביר בקשת HTTP בכדי לשלוח נתונים אל השרת הרלוונטי.
 
-כל מי שמתעסק עם פיתוח תוכנה יכול להיתקל במצב שבו הוא צריך לשלוח בקשת HTTP. להכיל מודול בפרויקט שלך שתומך בשליחת בקשות HTTP ועובד יפה יכול להחסיר זמן וכמובן כסף. בפוסט הזה נלמד איך לשלוח בקשת HTTP באמצעות Go.
+## איך לעשות זאת 
+המשתמשים יכולים להשתמש בתכנית השנית כדי לשלוח בקשת HTTP. כדי לעשות זאת, עליהם לעקוב אחר השלבים הבאים:
 
-## כיצד לעשות זאת
-
-הפונקציה `SetRequest()` מאחזרת את כל הפרטים שלנו לשליחת בקשת POST.
+1. ייבאו את החבילה הבאה לתכנית שלהם:
+ ```Go
+    import "net/http"
+```
+2. בנו את הפעולה הנדרשת עם המתאם `http.Client`, כפי שנמצא ברשימה המסובסדת של Go:
 ```Go
-func SetRequest() *http.Request {
-	reqBody := bytes.NewBuffer([]byte("This is the request body"))
-	req, _ := http.NewRequest("POST", "https://example.com/api", reqBody)
-	req.Header.Set("Content-Type", "application/json")
-	return req
-}
+    client := &http.Client{}
 ```
-
-לאחר מכן, ניתן לקחת את הבקשה שהתמצאה ולשלוח אותה באמצעות `http.DefaultClient`:
+3. כדי לשלוח בקשת HTTP קנונית, השתמשו בפעולה `http.NewRequest()`:
 ```Go
-func main() {
-	req := SetRequest()
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer resp.Body.Close()
-
-	fmt.Println("Response status:", resp.Status)
-	fmt.Println("Response headers:", resp.Header)
-	body, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println("Response body:", string(body))
-}
+    req, err := http.NewRequest("GET", "https://example.com", nil)
 ```
-
-פלט:
+4. השלימו את הבקשה על ידי קביעת הכותרת הנדרשת ושליחת הבקשה לשרת:
+```Go
+    req.Header.Set("User-Agent", "My-Go-Client")
+    resp, err := client.Do(req)
+    defer resp.Body.Close() // זיכוי זיכרון לסיום עם YES
 ```
-Response status: 200 OK
-Response headers: map[Content-Length:[0] Content-Type:[text/html; charset=utf-8] Date:[Mon, 19 Oct 2020 10:00:00 GMT]]
-Response body: Example response
+5. חקרו את התשובה שהתקבלה על ידי קריאת `resp.Body` וחשוב על ההתאמה לנתוני הכניסה שלכם:
+```Go
+    response, err := ioutil.ReadAll(resp.Body)
 ```
+כאשר הקוד הזה ניתן מהדמה ממש מולקטים, אתם יכולים לראות את הפיות שלכם עם השליחה שלכם ביציאה מתמשכת למיניהם.
 
-## העומק שבזה
-משליחת בקשות HTTP בקוד הוא חלק חשוב מהפיתוח בכל לולאת חייו. יכול להיות מאוד חשוב להיות מכירים עם שדות השפה, כיצד הם עובדים וכיצד ניתן להשתמש בהם מתוך הקוד שלנו. ישנם גם פרמטרים נוספים שניתן להוסיף לבקשות שלנו, כגון הוספת כותרות או מידע אודות המשתמש.
+## טיפול מפנק
+כאשר בקשת ה-HTTP מגיעה, לפני כל דבר, בקשתך תינתן עם מסתייג מוסדת ממש בניגוד לכיוונה הפנימי של החלונית. לעומת זאת, הצב ללא אנקדוט של הפיתוד הם פיתודים ניתנים לחיסונים במקבילים, כפי שנמצאת במים דהמה הבאות:
 
-## ראה גם
-
-- [מדריך לשליחת בקשות HTTP באמצעות Go](https://golang.org/pkg/net/http/)
-- [הספרייה "net/http" של Go](https://golang.org/doc/articles/wiki/)
-- [פיתוח תוכנה באמצעות Go](https://golang.org/doc/code.html)
+- [מטלת HTTP קהילתית חיסונית] (https://medium.com/rit-en-link/posts/api-design-best-practices) מתנדבים semi-חריגים השתעות שפותפתים כמו אני ותלמים תמיד תימצאם של רשותיים ע

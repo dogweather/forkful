@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Swift: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#### Miksi: Miksi ladata verkkosivu?
+## Miksi
+Yksi yleinen syy ladata verkkosivu on tietojen kerääminen jälkikäteen, tai mahdollisuus tarkastella sivuston sisältöä offline-tilassa.
 
-Lähes jokainen meistä on joskus joutunut lataamaan verkkosivun, joko työn tai viihteen takia. Tässä artikkelissa opit kuinka saat helposti ladattua verkkosivun käyttäen Swift-ohjelmointikieltä.
-
-#### Miten: Esimerkkejä koodin ja tulosteen kanssa
-
-Jos haluat ladata verkkosivun käyttäen Swift-ohjelmointikieltä, se onnistuu helposti vain muutamalla rivillä koodia. Ensimmäiseksi sinun täytyy tuoda "Foundation" kirjasto, jotta voit käyttää sen sisältämiä luokkia ja metodeja. Sitten voit käyttää "Data(contentsOf: URL)" -metodia lataamaan verkkosivun URL-osoitteen perusteella.
+## Kuinka
+Asettamalla URL-osoite ja käyttämällä URLSession-luokan metodia, pystyt lataamaan web-sivun helposti.
 
 ```Swift
-import Foundation
-
-if let data = try? Data(contentsOf: URL(string: "https://www.example.com")!) {
-    // Sivu ladattu onnistuneesti, voit käsitellä datan tässä
-} else {
-    // Sivun lataaminen epäonnistui
+// Esimerkki koodi
+let url = URL(string: "https://www.example.com")!
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+   guard let data = data else { return }
+   // Käsittele ladattu data tässä
 }
+task.resume()
 ```
 
-Yllä oleva koodi lataa "example.com" -sivun ja tallentaa sen "data" -muuttujaan. Mikäli lataus onnistuu, voit käsitellä saamasi datan haluamallasi tavalla.
+Saat ladatun datan käyttämällä URL-tietojen latauspyynnön sisältämää "data" parametria. Tämän jälkeen voit käsitellä dataa haluamallasi tavalla.
 
-#### Syviä vesiä: Tarkempaa tietoa verkkosivun lataamisesta
+```
+// Esimerkki tulostus
+print(data)
+```
 
-Verkkosivun lataaminen Swift-ohjelmointikielellä onnistuu käyttäen sen sisäänrakennettua "Foundation" kirjastoa, joka sisältää luokan "Data". Tämän luokan avulla voit ladata suoraan verkkosivun sisällön ilman ylimääräisiä työvaiheita. On kuitenkin tärkeää huomioida, että latauksen tulee tapahtua omassa säikeessään, jotta se ei estä pääsäiettä.
+## Syventävä sukellus
+Lisäksi voit määrittää latauspyyntöön lisäparametreja, kuten timeout-ajan ja datan käsittelemistavan. Voit myös käsitellä ladattua datatyyppiä, kuten kuvia tai JSON-muotoista dataa, eri tavoin.
 
-#### Katso myös: Lisää linkkejä
-
-- [Apple:n virallinen dokumentaatio Data-luokasta](https://developer.apple.com/documentation/foundation/data)
-- [Swiftin perusteet](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/)
-- [Hanki lisätietoa lataamisesta linkin takaa](https://www.raywenderlich.com/14172/how-to-write-a-simple-phpmysql-web-service-for-an-ios-app)
+## Katso myös
+- Apple:n virallinen dokumentaatio URLSessionista: https://developer.apple.com/documentation/foundation/urlsession
+- Kattava opas URL-näyttämiseen Swiftissä: https://www.raywenderlich.com/5895-urlsession-tutorial-getting-started

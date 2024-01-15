@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Gleam: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,26 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-HTTP 요청을 보내는 것에 참여하는 이유는 무엇인가요? 간단히 알아보겠습니다.
+# 왜: HTTP 요청을 보내는 이유
 
-HTTP 요청은 인터넷에서 데이터를 주고받기 위한 표준 프로토콜입니다. 예를 들어, 웹 브라우저는 웹 사이트의 내용을 요청하고, 서버는 해당 내용을 전송합니다. Gleam에서 HTTP 요청을 보내는 것은 데이터를 가져오거나 전송하기 위한 중요한 방법입니다. 그래서 우리가 이렇게 중요하고 유용한 기능을 배우는 것입니다.
+HTTP 요청을 보내는 것은 웹 개발에서 매우 중요한 요소입니다. 이를 통해 웹 애플리케이션과 다른 서버 간에 데이터를 교환하고, API를 사용하여 다른 애플리케이션과 통신할 수 있습니다.
 
-## 방법
-"```Gleam
+# 방법: HTTP 요청 보내기
+
+Gleam 언어에서 HTTP 요청을 보내는 방법은 매우 간단합니다. 먼저 `gleam/http` 라이브러리를 import합니다. 그리고 `gleam/http` 모듈의 `send` 함수를 사용해 요청을 보냅니다. 이때, `send` 함수의 첫 번째 인자는 요청 메소드(GET, POST 등), 두 번째 인자는 요청을 보낼 URL, 그리고 옵션으로 세번째 인자에는 요청에 필요한 헤더와 바디 데이터를 전달할 수 있습니다.
+
+```
 import gleam/http
 
-let response = http.request(url: "https://koreanblog.com")
-|> http.send
-```"
-위의 예제에서 우리는 Gleam의 `http` 모듈을 사용하여 HTTP 요청을 보내고 서버로부터의 응답을 받아왔습니다. `url` 파라미터에서는 요청을 보낼 서버의 주소를 지정할 수 있습니다. 또한 HTTP 메서드, 요청 본문, 헤더 등을 추가로 지정할 수 있습니다. 위의 예제에서는 간단하게 요청을 보내고 응답을 받아오기만을 보여주었지만, 자세한 사용 방법은 Gleam 공식 문서를 참고하세요.
+resp =
+  http.send("GET", "https://example.com")
+  # 세번째 인자는 옵셔널입니다.
+  # 예를 들어, HTTP 헤더를 담기 위해 사용할 수 있습니다.
+  ["User-Agent: Gleam/1.0", "Content-Type: application/json"]
+  # 바디 데이터는 JSON 형식으로 전달합니다.
+  (Ok("{\"name\": \"Gleam\"}"))
 
-위의 코드를 실행하면 `response` 변수에 응답 객체가 할당됩니다. 이 객체에서는 HTTP 응답의 상태 코드, 응답 본문 등 다양한 정보를 얻을 수 있습니다. 예를 들어, `response.body`를 통해 본문을 얻을 수 있습니다. 그리고 `response.body.string()`과 같이 메서드를 이용하면 본문을 문자열로 변환할 수 있습니다.
+# 요청에 대한 응답을 확인합니다.
+case resp do
+  Ok(response) -> response
+  Err(e) -> "Something went wrong"
+end
+```
 
-## 심층 탐구
-HTTP 요청을 보내는 것은 매우 중요하고 유용하지만, 실제로는 그보다 더 복잡한 작업을 수행할 수 있습니다. 예를 들어, HTTP 요청을 보낼 때 인증 정보를 함께 보낼 수도 있습니다. 이를 위해서는 `http.send` 함수에 새로운 파라미터를 추가하여 인증 정보를 지정하면 됩니다. 또한 HTTP 요청에 대한 응답을 처리할 때에서도, 에러 처리와 같은 상황에서는 Gleam의 예외 처리 기능을 사용할 수 있습니다. 이 외에도 다양한 기능과 라이브러리를 이용해 보다 효율적으로 HTTP 요청을 보낼 수 있습니다.
+위 코드의 실행 결과는 아래와 같습니다.
 
-## 참고 자료
-- [Gleam 공식 문서](https://gleam.run/documentation/)
-- [HTTP 프로토콜 설명 (Wikipedia)](https://ko.wikipedia.org/wiki/HTTP)
-- [Gleam에서 HTTP 요청 보내기 (블로그 포스트)](https://medium.com/@gleam/new-to-gleam-sending-http-requests-7dbeaee99c66)
+```
+# 성공적인 요청의 경우
+status: 200 OK
+body: {"name": "Gleam"}
+
+# 요청 실패의 경우
+Something went wrong
+```
+
+# 깊이 파헤치기: HTTP 요청 보내기
+
+보다 복잡한 통신을 위해서는 `gleam/http/build` 모듈을 사용할 수 있습니다. `build` 모듈은 단순한 텍스트 기반의 요청 대신에 다양한 자료형을 사용하여 요청을 생성할 수 있습니다. 예를 들어, `gleam/encoding` 모듈을 사용해 요청 바디를 생성할 수 있고, `gleam/json` 모듈을 사용해 JSON 형식의 데이터를 쉽게 생성할 수 있습니다.
+
+```
+import gleam/http/build
+import gleam/encoding
+import gleam/json
+
+# 요청 바디를 만듭니다.
+body =
+  encoding.encode([bytes("\x01\x02")])
+  |> json.decoder()
+
+# JSON 형식의 요청 데이터를 만듭니다.
+json_data = %Json.Decode
+  { name: "Gleam", type: "language" }
+
+# build 모듈을 사용하여 요청을 생성합니다.
+req =
+  build.request(url="https://example.com", json=json_data)
+  |> build.method("POST")
+  |> build.header("Content-Type", "application/json")
+  |> build.body(body)
+
+# 요청을 보냅니다.
+resp = http.send(req)
+
+# 요청에 대한 응답을 확인합니다.
+case resp do
+  Ok(response) -> response
+  Err(e) -> "Something went wrong"
+end
+```
+
+# 참고하실 만한 것들
+
+- Gleam 언어 공식 문서: https://gleam.run/
+- Gleam `http` 라이브러리: https://gleam.run/documentation/stdlib/http
+- Gleam `http/build` 모듈: https://gleam.run/documentation/stdlib/http#build

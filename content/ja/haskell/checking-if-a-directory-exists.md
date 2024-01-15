@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: ディレクトリが存在するかどうかの確認"
-simple_title:         "ディレクトリが存在するかどうかの確認"
+title:                "ディレクトリが存在するかどうかを調べる"
+html_title:           "Haskell: ディレクトリが存在するかどうかを調べる"
+simple_title:         "ディレクトリが存在するかどうかを調べる"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-ディレクトリが存在するかどうかをチェックする必要がある理由は様々です。例えば、プログラム内で特定のファイルを処理する前に、そのファイルが存在するかどうかを確認する必要があります。また、ファイルを保存する前に、ファイルが既に存在するかどうかを確認して、上書きを防ぐこともできます。
+ディレクトリが存在するかどうかを確認することは、プログラマーがファイルやデータを正しく処理するために重要なステップです。特に、ファイルを操作するプログラムを開発する場合には、ディレクトリが存在するかどうかを確認することは欠かせません。この記事では、Haskellでディレクトリの存在を確認する方法を紹介します。
 
 ## 方法
 
-ディレクトリが存在するかどうかを確認するには、`directory`パッケージを使用します。まず、必要なパッケージをインポートします。
+まずは、Haskellでディレクトリの存在を確認する方法を見てみましょう。ディレクトリが存在するかどうかを確認するには、`doesDirectoryExist`関数を使用します。以下のコード例では、`directoryPath`変数に対象のディレクトリのパスを指定し、`doesDirectoryExist`関数に渡します。
 
 ```Haskell
 import System.Directory
+
+main = do
+  let directoryPath = "/home/user/example_directory"
+  dirExists <- doesDirectoryExist directoryPath
+  print dirExists
 ```
 
-次に、`doesDirectoryExist`関数を使用してディレクトリの存在を確認します。
-
-```Haskell
-doesDirectoryExist :: FilePath -> IO Bool
-```
-
-この関数は、与えられたパスのディレクトリが存在する場合には`True`を返し、存在しない場合には`False`を返します。例えば、`/home/user/Documents`というパスのディレクトリが存在するかどうかを確認する場合、以下のようにコードを書くことができます。
-
-```Haskell
-doesDirectoryExist "/home/user/Documents"
-```
-
-もしディレクトリが存在する場合は`True`を、存在しない場合は`False`を返します。
+上記のコードを実行すると、`True`または`False`が出力されます。これにより、指定したディレクトリが存在するかどうかが確認できます。
 
 ## ディープダイブ
 
-`doesDirectoryExist`関数は、実際には`System.Posix.Directory`モジュールの`DirectoryExist`型を使用しています。この型は、`Foreign.C.Error`モジュールからインポートされた`errno_t`を使用して、`IO Bool`の返り値を提供します。このため、ファイルシステム操作において何らかのエラーが発生した場合は、`IO Bool`の返り値は`False`ではなく`throwErrnoIfPathInvalid`関数を使用してエラーをスローします。
+`doesDirectoryExist`関数は、`System.Directory`モジュールに属しています。このモジュールには、ディレクトリに関するさまざまな便利な関数が収録されています。例えば、`createDirectory`関数を使用すると、指定したディレクトリを作成することができます。また、`getDirectoryContents`関数を使用すると、指定したディレクトリ内のファイルやディレクトリの一覧を取得することができます。
 
-## ぜひ参考にしてみてください
+さらに、Haskellでは例外処理を行うための`try`関数が提供されています。`doesDirectoryExist`関数と組み合わせることで、指定したディレクトリが存在しなかった場合に例外処理を行うことができます。
 
-**参考リンク：**
+詳しくは、Haskellの公式ドキュメントを参考にしてください。
 
-1. [Haskellドキュメント - System.Directory](https://hackage.haskell.org/package/directory-1.3.4.1/docs/System-Directory.html)
-2. [Haskellドキュメント - System.Posix.Directory](https://hackage.haskell.org/package/directory-1.3.4.1/docs/System-Posix-Directory.html)
-3. [Haskellドキュメント - Foreign.C.Error](https://www.haskell.org/onlinereport/haskell2010/haskellch35.html#x42-14900035)
-4. [Haskellドキュメント - throwErrnoIfPathInvalid](https://hackage.haskell.org/package/base-4.14.1.0/docs/Foreign-C-Error.html#v:throwErrnoIfPathInvalid)
+## はたして
+
+以上で、Haskellでディレクトリの存在を確認する方法を紹介しました。ディレクトリ操作は、プログラミングにおいて重要な一部です。ぜひ、実際に手を動かしながら学んでみてください。
+
+## 参考リンク
+
+- [Haskell公式サイト](https://www.haskell.org/)
+- [System.Directoryモジュールのドキュメント](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [例外処理についてのHaskellWikiの記事](https://wiki.haskell.org/Error_messages_and_Exceptions#Exceptions_in_Haskell)

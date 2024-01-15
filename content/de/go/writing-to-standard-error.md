@@ -1,6 +1,7 @@
 ---
-title:                "Go: Schreiben in Standardfehler"
-simple_title:         "Schreiben in Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Go: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,59 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Schreiben Sie an die Standardfehlerausgabe kann sehr hilfreich sein, um Fehlermeldungen und andere wichtige Informationen während der Ausführung eines Go-Programms zu erhalten. Auf diese Weise können Entwickler Probleme schnell erkennen und beheben, um sicherzustellen, dass ihre Programme reibungslos funktionieren.
+Warum sollte jemand seine Fehlermeldungen in Go-Code an den Standardfehlerausgabestrom schreiben? Nun, das Schreiben an den Standardfehlerausgabestrom ist oft nützlich, um Fehler in der Ausführung eines Programms zu identifizieren, da sie direkt auf dem Bildschirm angezeigt werden und somit schneller erkannt werden können.
 
-# Wie geht das?
+## Wie geht das?
 
-Um an die Standardfehlerausgabe in Go zu schreiben, verwenden Sie einfach die "fmt.Fprintln" Funktion und geben Sie "os.Stderr" als ersten Parameter an. Hier ist ein Beispielcode, der "Hello World" an die Standardfehlerausgabe schreibt:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"os"
-)
-
-func main() {
-	fmt.Fprintln(os.Stderr, "Hello World")
-}
-```
-
-Die Ausgabe dieses Programms wäre:
-
-```
-Hello World
-```
-
-# Tiefergehende Information
-
-In Go gibt es auch die Möglichkeit, direkt auf den "stderr" Stream zuzugreifen, indem man die "os.Stderr" Variable verwendet. Dies kann nützlich sein, um andere Informationen außerhalb von "fmt.Fprintln" an die Standardfehlerausgabe zu schreiben. Hier ist ein Beispielcode:
+Es ist ganz einfach, Fehler an den Standardfehlerausgabestrom in Go zu schreiben. Alles, was du tun musst, ist die "fmt" Bibliothek zu importieren und die Funktion "Fprintf" zu verwenden, die es dir ermöglicht, direkt in den Standardfehlerstrom zu schreiben.
 
 ```Go
-package main
+  import "fmt"
 
-import (
-	"os"
-)
-
-func main() {
-	os.Stderr.WriteString("Dies ist eine weitere Nachricht an die Standardfehlerausgabe.")
-}
+  func main() {
+    fmt.Fprintf(os.Stderr, "Dies ist eine Fehlermeldung")
+  }
 ```
 
-Die Ausgabe dieses Programms wäre:
+Die oben genannten Codezeilen werden eine einfache Fehlermeldung auf dem Bildschirm ausgeben. Du kannst jedoch auch zusätzliche Informationen wie Datei- oder Zeilennummern angeben, indem du die Printf-Funktion verwendest und Platzhalter in deinen Fehlermeldungen verwendest.
 
+```Go
+  import "fmt"
+
+  func main() {
+    fmt.Fprintf(os.Stderr, "Fehler in Datei %s auf Zeile %d", filename, lineNum)
+  }
 ```
-Dies ist eine weitere Nachricht an die Standardfehlerausgabe.
-```
 
-# Siehe auch
+## Tiefer Einblick
 
-Hier sind einige nützliche Ressourcen, die Ihnen helfen können, mehr über das Schreiben an die Standardfehlerausgabe in Go zu erfahren:
+Um einen tieferen Einblick in das Schreiben von Fehlern an den Standardfehlerausgabestrom in Go zu bekommen, solltest du dir die verschiedenen Möglichkeiten ansehen, wie du die Printf-Funktion verwenden kannst. Du kannst zum Beispiel Farbcodes verwenden, um deine Fehlermeldungen hervorzuheben oder benutzerdefinierte Funktionen schreiben, um spezifische Typen von Fehlern zu behandeln. Es gibt unzählige Möglichkeiten, um deine Fehlermeldungen effektiver zu gestalten und somit das Debugging deines Codes zu erleichtern.
 
-- [Go-Dokumentation über die "fmt" Paket](https://golang.org/pkg/fmt)
-- [Offizielle Go-Website](https://golang.org)
-- [Go-Community-Forum](https://forum.golangbridge.org)
+## Siehe auch
+
+- [Go Standardbibliothek "fmt"](https://golang.org/pkg/fmt/)
+- [Effektives Debugging in Go](https://medium.com/@nazmulnyc/effective-debugging-in-go-a4bcc59a05a1)
+- [Anzeige von Farben in der Konsolenausgabe mit Go](https://medium.com/swlh/displaying-colors-in-console-output-with-go-e339c07b0c4f)

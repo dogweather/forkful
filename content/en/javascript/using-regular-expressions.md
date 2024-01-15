@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Javascript recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Regular expressions can be a powerful tool in any programmer's arsenal. They allow for efficient and precise string manipulation, making tasks such as validation and searching through large amounts of data much easier. By learning regular expressions, you can streamline your code and make it more robust.
+Regular expressions, also known as regex, are a powerful tool for searching and manipulating strings of text. They allow for more complex and precise text matching than simple string methods, making them useful for tasks like data validation and text extraction.
 
 ## How To
-To use regular expressions in Javascript, we first need to define a pattern using a combination of characters, operators, and flags. For example, if we want to find all words that start with the letter "a" in a string, we can use the pattern `/a\w*/g`. Let's see how this would work in code:
-
+Regular expressions are defined by a pattern of characters, symbols, and special metacharacters that represent specific text patterns. To use regex in Javascript, you can create a new regular expression object using the `RegExp` constructor or use the literal notation `//`. Here's an example of a basic regex that matches any string that contains the word "cat":
 ```Javascript
-// Define a string
-const text = "apples are delicious and amazing";
-
-// Define our pattern
-const pattern = /a\w*/g;
-
-// Use the match() method to find all matches in the string
-const matches = text.match(pattern);
-
-// Output the results
-console.log(matches);
-// Output: ["apples", "amazing"]
+let pattern = /cat/;
+let text = "I have a cat named Whiskers";
+console.log(pattern.test(text)); // output: true
 ```
-
-In this example, we used the `g` flag to make sure we find all occurrences of the pattern in the string. Without it, only the first match would be returned. We can also use other flags to modify our pattern, such as `i` to make it case insensitive.
+To match more complex patterns, you can use special metacharacters like `[]` to specify a range of characters, `()` to create groups, and `|` to indicate alternate patterns. For example, the following regex will match any string that contains either "cat" or "dog":
+```Javascript
+let pattern = /(cat|dog)/;
+let text = "I have a dog named Max";
+console.log(pattern.test(text)); // output: true
+```
+Regex also allows for modifiers, such as `i` for case-insensitive matching and `g` for global matching. For more advanced use cases, you can also use regex methods like `match()`, `search()`, and `replace()`.
 
 ## Deep Dive
-Regular expressions have a wide range of uses and can be customized to fit your specific needs. Some useful operators to know include `*` for zero or more occurrences, `+` for one or more occurrences, and `?` for an optional character. We can also use quantifiers such as `{n}` to specify a specific number of occurrences.
+One of the advantages of using regular expressions is their ability to use quantifiers, which specify the number of times a pattern should occur. For example, `*` means zero or more times, `+` means one or more times, and `?` means either zero or one time. You can also specify a specific number by including `{min,max}` after a character or group. Additionally, regex allows for special sequences, such as `\d` for digit characters, `\w` for word characters, and `\s` for whitespace characters.
 
-Regular expressions also have special characters that represent certain types of characters. For example, `\d` represents any digit, while `\w` represents any word character. These special characters can be used in combination with other operators to create more complex patterns.
-
-One important tip to keep in mind when using regular expressions is to be mindful of regex injection attacks. This happens when user input is directly inserted into a regular expression, allowing for malicious input to cause unintended results. Always sanitize and validate user input before using it in a regular expression to prevent these types of attacks.
+Keep in mind that regular expressions have a steep learning curve and can quickly become complex. It's important to test and debug your regex carefully, using online tools like RegExr or RegEx101.
 
 ## See Also
-For more information on regular expressions in Javascript, check out these resources:
-
-- [Mozilla Developer Network Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools Regular Expressions Tutorial](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Regular Expressions in Javascript Cheatsheet](https://www.rexegg.com/regex-javascript.html)
+- [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [FreeCodeCamp Regular Expressions Tutorial](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/)
+- [Regexr](https://regexr.com/)
+- [RegEx101](https://regex101.com/)

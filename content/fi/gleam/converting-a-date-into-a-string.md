@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Muunnetaan päivämäärä merkkijonoksi"
+html_title:           "Gleam: Muunnetaan päivämäärä merkkijonoksi"
+simple_title:         "Muunnetaan päivämäärä merkkijonoksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,37 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Miksi
 
-On monia syitä, miksi sinun kannattaisi muuntaa päivämäärä merkkijonoksi. Ehkä haluat tulostaa päivämäärän tietyn muodon mukaisesti tai tallentaa sen tietokantaan. Gleam tekee tämän prosessin helpoksi ja sujuvaksi.
+Kenties olet törmännyt tarpeeseen muuntaa päivämäärä merkkijonoksi ohjelmassasi. Tämä artikkeli esittelee, miten Gleam-kielen avulla voit helposti ja tarkasti suorittaa tämän konversion.
 
-# Miten tehdä
+# Miten
 
-Muuntaminen päivämäärästä merkkijonoksi Gleamilla on helppoa. Käytämme tähän "to_string" -funktiota, joka ottaa parametrina päivämäärän ja palauttaa sen merkkijonona. Alla on esimerkkejä koodista ja sen tulostuksista Gleamilla.
-
-```Gleam
-let date = Date.from_string("2020-06-01", "%Y-%m-%d")
-let string_date = Date.to_string(date, "%A, %d. %B %Y")
-
-io.format("Päivämäärä merkkijonona: {}", [string_date])
-// Tulostus: Päivämäärä merkkijonona: maanantai, 01. kesäkuuta 2020
-```
-
-Voit myös käyttää Gleamin "Fmt" -kirjastoa helpottamaan muotoilua. Se tarjoaa erilaisia ​​apufunktioita päivämäärien muotoilemiseen. Alla olevassa esimerkissä käytämme "fmt.rfc822" -funktiota muuntamaan päivämäärän RFC 822 -muotoon.
+Aloitetaan luomalla päämoduuli, joka sisältää muutamia päivämääriä eri formaateissa.
 
 ```Gleam
-let date = Date.from_string("2020-06-01", "%Y-%m-%d")
-let rfc822_date = Fmt.rfc822(date)
+// Haku pakkaukselle "gleam/datetime"
+import gleam/datetime
 
-io.format("RFC 822 -muotoinen päivämäärä: {}", [rfc822_date])
-// Tulostus: RFC 822 -muotoinen päivämäärä: Mon, 01 Jun 20 00:00:00 +0000
+// Päivämäärä muodossa "vuosi, kuukausi, päivä"
+let date = datetime.Date.new(2021, 9, 30)
+
+// Aika muodossa "tunti, minuutti, sekunti, millisekunti"
+let time = datetime.Time.new(12, 30, 45, 500)
+
+// Päivämäärä ja aika yhdistettynä
+let datetime = datetime.DateTime.new(date, time)
+
+// Tulostetaan päivämäärä ja aika merkkijonona
+io.println(datetime |> datetime.to_string())
 ```
 
-# Syvällinen sukellus
+Tässä esimerkissä käytämme "gleam/datetime" -pakkauksessa olevaa Date ja Time moduuleja luodaksemme päivämäärän ja ajan. Sitten yhdistämme ne DateTime-moduulissa ja lopuksi muunnetaan merkkijonoksi käyttämällä to_string()-funktiota. Tulostetun merkkijonon pitäisi näyttää seuraavalta: "2021-09-30T12:30:45.500Z".
 
-Gleam käyttää taustallaan Erlangin "calendar"-moduulia, joka tarjoaa monia erilaisia muuntoja päivämäärän ja ajan välillä. Tämän ansiosta Gleamissa on runsaasti tehokkuutta ja tarkkuutta.
+# Syväsukellus
 
-Muotoilumerkkijät, kuten "%Y-%m-%d" ja "%A, %d. %B %Y", sisältävät erilaisia ​​merkkejä, jotka kertovat Gleamille, millainen tulostus halutaan. Jokainen merkki vastaa tietyille osille päivämäärää, kuten vuodelle, kuukaudelle, päivälle jne. Lisätietoja näistä löytyy Erlangin kalenterimoduulin dokumentaatiosta.
+Gleamissa päivämäärän ja ajan muuntaminen merkkijonoksi on mahdollista kielen ydinmoduulien avulla, mutta "gleam/datetime" -pakkauksen avulla voimme tehdä sen paljon helpommin ja tarkemmin. DateTime-moduulissa on myös muita hyödyllisiä funktioita, kuten muunnokset eri aikavyöhykkeiden välillä.
 
 # Katso myös
 
-- Gleamin "Date" -moduulin dokumentaatio
-- Erlangin "calendar" -moduulin dokumentaatio
+- [Gleam-kielen viralliset sivut](https://gleam.run)
+- [Gleam-dokumentaatio](https://gleam.run/documentation)
+- [Gleam/datetime pakkauksen dokumentaatio](https://github.com/gleam-lang/datetime)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: वर्तमान दिनांक प्राप्त करना"
-simple_title:         "वर्तमान दिनांक प्राप्त करना"
+title:                "वर्तमान तारीख प्राप्त करना"
+html_title:           "Javascript: वर्तमान तारीख प्राप्त करना"
+simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -9,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kya aapne kabhi socha hai ki aapka computer ya mobile phone aapko current date and time kaise batata hai? Yeh sab possible hai, kyunki hum Javascript ke madad se current date aur time ko retrieve kar sakte hain.
 
-जब हम किसी वेबसाइट या एप्लिकेशन पर होते हैं, तो हमें अक्सर पूछा जाता है कि हमारे पास क्या तारीख है। हमारे दैनिक जीवन में तारीख का होना बहुत महत्वपूर्ण है, चाहे हम एक मीटिंग में शामिल हो रहे हों या किसी उपहार का तारीख़ या लोकप्रिय राष्ट्रीय त्योहार का तारीख पता करना हो। इसलिए, हमें वर्तमान तारीख को जानने की जरूरत होती है और इसके लिए हम जावास्क्रिप्ट का उपयोग कर सकते हैं।
-
-## कैसे
-
-यदि आप जावास्क्रिप्ट में वर्तमान तारीख को प्राप्त करना चाहते हैं, तो आपको निम्नलिखित कोड को अपनी वेबसाइट या एप्लिकेशन में जोड़ना होगा:
-
+## Kaise Karein
 ```Javascript
-// वर्तमान तारीख को प्राप्त करने के लिए एक नया दिनांक ऑब्जेक्ट बनाएं
-var currentdate = new Date();
+let currentDate = new Date(); // create new Date object
+console.log(currentDate); // output: Sun Jun 13 2021 19:24:43 GMT+0530 (India Standard Time)
 
-// तारीख, महीना और साल को प्राप्त करें
-var date = currentdate.getDate();
-var month = currentdate.getMonth() + 1;
-var year = currentdate.getFullYear();
+// get current date in specific format
+let day = currentDate. getDate(); // get day of the month
+let month = currentDate.getMonth() + 1; // get month (returns value between 0-11, so adding 1)
+let year = currentDate.getFullYear(); // get full year
 
-// तारीख को द्वारा दृश्य जोड़ें
-var displayDate = date + "/" + month + "/" + year;
-
-// प्रिंट करें
-console.log(displayDate);
+console.log(`${day}-${month}-${year}`); // output: 13-6-2021
 ```
 
-यह कोड `console` पर वर्तमान तारीख को दर्शाता है, जैसा कि `10/07/2021` के समान हो सकता है। आप भी अपने अनुसार तारीख को प्राप्त करने के लिए अतिरिक्त समय कोड जोड़ सकते हैं, जैसे कि वर्तमान घंटा और मिनट।
+## Gehri Jhaank
+Javascript mein current date ko retrieve karne ke liye hum `Date()` object ka upyog karte hain. Is object mein humein flexible methods diye jaate hain jaise `getDate()`, `getMonth()` aur `getFullYear()`, jinse hum specific date format mein current date ko access kar sakte hain.
 
-## गहराई में
+Ek aur tarika hai current date ko retrieve karne ka, jahan hum ek existing date object ko modify kar sakte hain.
 
-जब आप `new Date()` फ़ंक्शन का उपयोग करते हैं, तो आपको स्थानीय समय के अनुसार एक `Date` ऑब्जेक्ट मिलता है। यह
+```Javascript
+let currentDate = new Date();
+
+// modify date object to a specific date
+currentDate.setFullYear(2022); // change full year to 2022
+currentDate.setMonth(0); // change month to January (0 index)
+
+console.log(currentDate); // output: Sat Jan 13 2022 19:34:45 GMT+0530 (India Standard Time)
+```
+
+## Dekhie Humari Dusri Articles
+Agar aapko Javascript mein aur bhi mazedaar aur kaam ki cheezein seekhni hai, toh neeche diye gaye links par click karein:
+
+- [Javascript Variables kaise declare karte hain](https://www.example.com/variables)
+- [Arrays kya hote hain aur javascript mein unka upyog kaise karein](https://www.example.com/arrays)
+- [Functions kya hote hain aur javascript mein unka upyog kaise karein](https://www.example.com/functions)
+
+## Dekhie Aage
+Ab aapko pata hai ki hum Javascript mein current date ko kaise retrieve karte hain. Agar aap aur bhi mazedaar programming languages aur concepts seekhna chahte hain, toh aap hamare [blog](https://www.example.com/blog) aur [YouTube channel](https://www.example.com/youtube) par visit karein. Sukriya!

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Ottenere la data corrente"
+title:                "Ottenere la data corrente"
+html_title:           "Rust: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,72 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Scrivere codice per ottenere la data corrente può sembrare un compito banale, ma è un fondamentale skill per qualsiasi programmatore in Rust. In questo articolo, esploreremo come ottenere la data corrente utilizzando il linguaggio di programmazione Rust.
 
-## Come Fare
-Per prima cosa, dovremo importare la libreria standard di Rust `std::time::SystemTime`. In seguito, è possibile utilizzare la funzione `now()` per ottenere un istante temporale corrispondente all'istante di esecuzione del programma. Ecco come potrebbe apparire il codice:
+Quando si scrive un programma, può essere utile avere accesso alla data corrente. Potresti volerla usare per mostrare all'utente quando è stato prodotto il risultato o per effettuare una determinata operazione solo in certi giorni. In questa guida, vedremo come ottenere la data corrente in Rust.
 
-```Rust
+## Come fare
+
+In Rust, per ottenere la data corrente possiamo utilizzare la libreria standard `std::time::SystemTime` e il suo metodo `now()`. Vediamo un esempio di codice che stampa la data corrente a schermo:
+
+```rust
 use std::time::SystemTime;
 
-let current_time = SystemTime::now();
+fn main() {
+    let current_time = SystemTime::now(); // Ottiene la data corrente come istanza di SystemTime
+    println!("{:?}", current_time); // Stampa a schermo la data corrente
+}
 ```
 
-Una volta ottenuta la data corrente, è possibile visualizzarla in formato stringa utilizzando il metodo `to_string()`. Di seguito, un esempio di codice completo con output:
+Esempio di output:
 
-```Rust
-use std::time::SystemTime;
-use std::string::ToString;
-
-let current_time = SystemTime::now();
-
-println!("La data corrente è {}", current_time.to_string());
+```
+2021-08-11 12:00:00.000000000 +0000
 ```
 
-Output:
+Potresti notare che l'output è in formato `YYYY-MM-DD HH:MM:SS`. Inoltre, noterai che ci sono degli zeri aggiunti alla fine, questi indicano le millisecondi e i microsecondi. Se desideri un formato più leggibile, puoi utilizzare la libreria `chrono` e il suo metodo `DateTime::now()`. Vediamo un esempio:
+
+```rust
+use chrono::prelude::*;
+
+fn main() {
+    let local_time = Local::now(); // Ottiene la data corrente come istanza di DateTime
+    println!("{}", local_time.format("%Y-%m-%d %H:%M:%S")); // Stampa a schermo la data con formato personalizzato
+}
 ```
-La data corrente è 2019-10-15 08:30:20.263435568 UTC
+
+Esempio di output:
+
 ```
+2021-08-11 12:00:00
+```
+
+Puoi scegliere il formato che preferisci, basta modificare il parametro del metodo `format()` con le corrispondenti lettere dalla documentazione ufficiale di `chrono`.
 
 ## Approfondimento
-Ora che abbiamo un'idea generale di come ottenere la data corrente in Rust, vediamo alcune funzioni più specifiche che ci possono essere utili.
 
-### Unix Timestamp
-Il tempo Unix è un modo comune di rappresentare il tempo come un numero di secondi trascorsi dal 1 gennaio 1970. In Rust, possiamo ottenere il tempo Unix utilizzando il metodo `duration_since()` e il valore di riferimento `UNIX_EPOCH`. Ecco un esempio di codice:
+La libreria `std::time::SystemTime` rappresenta il tempo dal 1 gennaio 1970 (detto anche "epoch") in secondo Unix. Ciò permette di avere una rappresentazione del tempo universale in maniera uniforme e senza bisogno di conversioni. Invece, `chrono` offre una rappresentazione più flessibile e leggibile, grazie alla sua gestione dei fusi orari. L'output della data corrente utilizzando `SystemTime` è del tipo `SystemTime` mentre utilizzando `chrono` è del tipo `DateTime`.
 
-```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+## Vedi anche
 
-let unix_timestamp = SystemTime::now()
-    .duration_since(UNIX_EPOCH)
-    .expect("Errore durante il calcolo del tempo Unix");
-
-println!("Il tempo Unix corrente è {}", unix_timestamp.as_secs());
-```
-
-Output:
-```
-Il tempo Unix corrente è 1578029458
-```
-
-### Conversione in altre zone orarie
-È possibile convertire la data corrente in un'altra zona oraria utilizzando il metodo `to_datetime()` e specificando la zona oraria desiderata. Ad esempio:
-
-```Rust
-use chrono::Utc;
-
-let current_time = SystemTime::now();
-let datetime = current_time.to_datetime();
-
-println!("La data e ora corrente nella zona oraria di Los Angeles è {}", datetime.with_timezone(&Utc));
-```
-
-Output:
-```
-La data e ora corrente nella zona oraria di Los Angeles è 2019-10-15 01:30:20.263435568 UTC
-```
-
-## Vedi Anche
-- [Documentazione Rust sulla libreria std::time](https://doc.rust-lang.org/std/time/)
-- [Documentazione Chrono sulla gestione del tempo in Rust](https://docs.rs/chrono/0.4.10/chrono/)
-- [Tutorial su come ottenere la data corrente in Rust](https://www.rust-lang.org/it/learn/get-current-date-time)
+- Documentazione ufficiale di `std::time::SystemTime`: https://doc.rust-lang.org/std/time/struct.SystemTime.html
+- Documentazione ufficiale di `chrono`: https://docs.rs/chrono/0.4.19/chrono/index.html

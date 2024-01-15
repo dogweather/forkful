@@ -1,6 +1,7 @@
 ---
-title:                "C++: Basic認証を使用して httpリクエストを送信する"
-simple_title:         "Basic認証を使用して httpリクエストを送信する"
+title:                "ベーシック認証を使用してhttpリクエストを送信する"
+html_title:           "C++: ベーシック認証を使用してhttpリクエストを送信する"
+simple_title:         "ベーシック認証を使用してhttpリクエストを送信する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,55 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+なぜ？
+HTTPリクエストで基本認証を行う必要があるのでしょうか？
+基本認証は、Webサーバーとのやり取りにおいて、セキュリティを確保するための重要な手段の一つです。特定のWebリソースにアクセスするためには、認証情報を提供する必要があります。そのため、基本認証を用いてHTTPリクエストを送信することによって、安全にリソースにアクセスすることができます。
 
-HTTPリクエストを基本認証で送信する理由は、サーバーから保護されたリソースにアクセスする必要があるためです。基本認証は、ユーザーがユーザー名とパスワードを使用してサーバーにログインするための一般的な方法です。
+## How To
+どのようにすればいいの？
+まず、基本認証を行うためには、コンピューター上で実行されるプログラムを用いて、HTTPリクエストを送信する必要があります。以下のようなC++のコードを使って、基本認証を行ったHTTPリクエストを送信することができます。
 
-## 方法
-
-基本認証を使用してHTTPリクエストを送信するための基本的なC++コードの例を示します。
-
-```C++
+```
 #include <iostream>
-#include <curl/curl.h> // curlライブラリのインクルード
+#include <curl/curl.h>
 
 using namespace std;
 
-int main() {
-    CURL *curl;
-    CURLcode res;
-
-    // curlオプションを設定
-    curl = curl_easy_init(); // curl初期化
-    if (curl) {
-       curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/protected_resource"); // リクエスト先のURLを指定
-       curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); // basic認証を指定
-       curl_easy_setopt(curl, CURLOPT_USERNAME, "username"); // ユーザー名を指定
-       curl_easy_setopt(curl, CURLOPT_PASSWORD, "password"); // パスワードを指定
-
-       // リクエストの実行
-       res = curl_easy_perform(curl);
-
-       // エラー処理
-       if (res != CURLE_OK)
-           cout << "Error: " << curl_easy_strerror(res) << endl;
-
-       // curl終了処理
-       curl_easy_cleanup(curl);
+int main()
+{
+  // curlセッションの初期化
+  CURL *curl;
+  curl = curl_easy_init();
+  
+  if(curl)
+  {
+    // URLの設定
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    
+    // 認証情報の設定
+    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+    
+    // HTTPリクエストの実行
+    CURLcode res = curl_easy_perform(curl);
+    
+    // エラーハンドリング
+    if(res != CURLE_OK)
+    {
+      cerr << "An error has occurred: " << curl_easy_strerror(res) << endl;
+      curl_easy_cleanup(curl);
+      return 1;
     }
-
-    return 0;
+    
+    // curlのクリーンアップ
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
 
-上記のコードを実行すると、指定したURLのリソースに対して基本認証が行われ、その後リクエストが実行されます。もし認証が成功すると、サーバーからリソースのデータが返されます。
+上記のコードでは、curlライブラリを使用して、基本認証のためのユーザー名とパスワードを設定し、HTTPリクエストを送信しています。成功した場合は、WebサイトのHTMLページが取得され、それがcoutに出力されます。
 
-## ディープダイブ
+## Deep Dive
+詳細な情報
+基本認証には、ユーザー名とパスワードを平文で送信するというセキュリティ上の問題があります。そのため、HTTPSを使うことで暗号化することが推奨されています。また、基本認証を行う際には、認証情報を保持するためのセッションを確立する必要があります。これにより、同じ認証情報を繰り返し送信することなく、複数のリクエストを行うことができます。
 
-基本認証は、HTTPリクエストを送信する方法の一つですが、セキュリティ上の問題があります。パスワードは平文で送信されるため、認証情報が傍受されると危険です。そのため、よりセキュアな認証方式を使用することをお勧めします。また、基本認証を使用する場合は、HTTPSプロトコルを使用することで情報を暗号化することができます。
+## See Also
+詳細な情報が必要な場合は、以下のリンクを参考にしてください。
 
-## 関連リンク
-
-- [C++でHTTPリクエストを送信する方法](https://docs.microsoft.com/ja-jp/cpp/libraries/curl?view=msvc-160)
-- [Basic認証についての詳細](https://ja.wikipedia.org/wiki/Basic%E8%AA%8D%E8%A8%BC)
-- [HTTPSプロトコルについての詳細](https://en.wikipedia.org/wiki/HTTPS)
+- [HTTP Basic認証の仕組みと実装方法](https://qiita.com/RyosukeTai/items/641d0675e2b8ab0db1aa)
+- [HTTP Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+- [curl ライブラリのドキュメント](http://curl.se/libcurl/c/)

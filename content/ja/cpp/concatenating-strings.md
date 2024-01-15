@@ -1,6 +1,7 @@
 ---
-title:                "C++: 文字列の連結"
-simple_title:         "文字列の連結"
+title:                "「文字列の連結」"
+html_title:           "C++: 「文字列の連結」"
+simple_title:         "「文字列の連結」"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
+文字列の連結を行う理由を2文以内で説明します。
 
-文字列の連結に取り組む理由はさまざまです。例えば、複数の変数を組み合わせて新しい文字列を作成する必要があったり、文字列を動的に変更する必要があったりする場合があります。また、データベースから取得した情報を人が読みやすい形式に変換する際にも文字列の連結が必要になることがあります。
+文字列を結合することで、より複雑なデータを作成し、プログラムの柔軟性を高めることができます。例えば、複数の文字列を結合してメッセージを作成したり、ファイルパスを作成したりすることができます。
 
 ## 方法
-
-文字列の連結を行うには、C++で用意されている`+`演算子を利用します。例えば、2つの変数`string1`と`string2`を連結する場合、以下のように書きます。
-
 ```C++
-string1 + string2
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  // 2つの文字列を宣言
+  string name = "太郎";
+  string message = "こんにちは、";
+
+  // 文字列を連結して新しいメッセージを作成
+  string greeting = message + name;
+
+  // 結果を出力
+  cout << greeting << endl;
+
+  return 0;
+}
 ```
 
-もしくは、`+=`演算子を使って変数の値を更新することもできます。
-
-```C++
-string1 += string2
+出力結果:
+```
+こんにちは、太郎
 ```
 
-また、文字列の連結には`concat()`関数を使うこともできます。`concat()`関数は複数の引数を受け取り、それらを連結した文字列を返します。例えば、
+## ディープダイブ
+文字列の連結には、C++では`+`演算子を使用します。これは、左側の文字列に右側の文字列を結合することを意味します。また、`+=`演算子を使用することで、既存の文字列に新しい文字列を追加することができます。
 
-```C++
-concat(string1, string2)
-```
+文字列を結合する場合、文字列の長さやコンピュータの処理能力によって、パフォーマンスに影響が出ることがあります。そのため、大量の文字列を多数回結合する場合は、効率的な方法を検討する必要があります。
 
-のように使うことができます。
-
-文字列の連結が正しく行われているかどうかを確認するために、`cout`を使って結果をコンソールに出力することもできます。例えば、
-
-```C++
-cout << string1 + string2 << endl;
-```
-
-とすると、`string1`と`string2`が連結された結果が表示されます。
-
-## 深堀り
-
-文字列の連結を行う際には注意すべき点があります。文字列の長さが大きいほど連結にかかる処理時間も長くなり、メモリの消費量も増えます。そのため、大きな文字列を連結する場合は、`concat()`関数を使うよりも`+=`演算子を使った方が効率的です。また、文字列の連結を繰り返し行う場合は、毎回新しい文字列を作成して連結するよりも、最初から大きな文字列を作成してそこにデータを追加する方が良いでしょう。
-
-## これらを参考にしてみてください
-
-[3つの方法でC++で文字列の連結を行う方法](https://www.geeksforgeeks.org/concatenate-strings-in-cpp/)
-
-[文字列の連結パフォーマンスの比較](https://programming.guide/string-concatenation-performance.html)
-
-[文字列の操作を標準出力する方法](https://www.techiedelight.com/print-strings-characters-cpp/)
+See Also:
+- http://www.cplusplus.com/reference/string/string/operator+/
+- http://www.cplusplus.com/reference/string/string/operator+=/

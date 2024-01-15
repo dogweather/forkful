@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Extrahieren von Teilzeichenketten"
+html_title:           "Bash: Extrahieren von Teilzeichenketten"
+simple_title:         "Extrahieren von Teilzeichenketten"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,41 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Substrings oder Teilstrings (auch bekannt als Unterstrings) sind Teil einer Zeichenfolge oder eines Textes, der aus einer bestimmten Anzahl von Zeichen besteht. Das Extrahieren von Substrings kann nützlich sein, um bestimmte Informationen aus einem Text zu erhalten, beispielsweise um die Postleitzahl aus einer Adresse zu extrahieren. In diesem Blog-Beitrag werden wir uns ansehen, wie man Substrings in Bash extrahiert und warum dies eine nützliche Fähigkeit für jeden Programmierer sein kann.
+Warum sollte man sich die Mühe machen, Unterzeichenketten zu extrahieren? Nun, es stellt sich heraus, dass es eine praktische und nützliche Fähigkeit ist, die in vielen Anwendungsfällen verwendet werden kann. Von der Datenbereinigung bis hin zu Textmanipulation, das Extrahieren von Unterketten ist ein wertvolles Werkzeug für jeden, der mit Bash arbeitet.
 
-## Wie geht man vor
+## Wie geht man vor?
 
-Um Substrings in Bash zu extrahieren, können wir uns der integrierten Funktion `cut` bedienen. Diese Funktion ermöglicht es uns, eine beliebige Anzahl von Zeichen von einer bestimmten Position in der Zeichenfolge zu extrahieren. Zum Beispiel, wenn wir den Teilstring mit der Postleitzahl aus einer Adresse extrahieren wollen, können wir folgende Zeile verwenden:
-
-```Bash
-echo "123 Main St., Anytown, USA 12345" | cut -c 24-28
-```
-
-In diesem Beispiel extrahieren wir die Zeichen 24 bis 28 von der Eingabezeichenfolge, was der Postleitzahl entspricht. Die Ausgabe würde dann "12345" sein.
-
-Wir können auch die `cut` Funktion verwenden, um Substrings basierend auf einem Trennzeichen zu extrahieren. Zum Beispiel, wenn wir eine Liste von Namen haben und nur die Nachnamen extrahieren möchten, können wir folgenden Bash-Code verwenden:
+Das Extrahieren von Unterketten ist in Bash relativ einfach, da es bereits eine integrierte Möglichkeit gibt, dies zu tun. Mit dem Befehl "cut" können wir Substrings basierend auf bestimmten Trennzeichen oder Positionen in einer Zeichenkette extrahieren.
 
 ```Bash
-names="John Smith, Jane Doe, Bob Jones"
-echo $names | cut -d " " -f 2
+# Extrahieren von Unterketten basierend auf einem Trennzeichen
+echo "Hallo|Welt" | cut -d '|' -f 1 # Output: Hallo
+
+# Extrahieren eines Substrings an einer bestimmten Position
+echo "Das ist ein Beispieltext" | cut -c 9-18 # Output: Beispielte
 ```
 
-Die Option `-d` gibt das Trennzeichen an, in diesem Fall ein Leerzeichen, und die Option `-f` gibt die Feldnummer an, die extrahiert werden soll. In diesem Beispiel wird der zweite Teil des Namens, also der Nachname, extrahiert.
-
-Man kann auch mit der `awk` Funktion Substrings in Bash extrahieren. Diese ermöglicht es uns, basierend auf einem regulären Ausdruck zu suchen und zu extrahieren. Hier ein Beispiel, um alle Zahlen aus einem Text zu extrahieren:
+Darüber hinaus können Regex-Ausdrücke in Kombination mit dem Befehl "sed" verwendet werden, um komplexe Extraktionsaufgaben auszuführen. Hier ist ein Beispiel, das alle Zahlen aus einer Zeichenkette entfernt und nur Buchstaben und Sonderzeichen zurückgibt:
 
 ```Bash
-echo "Hello 123, bye 456" | awk '{print gensub(/([0-9]+)/,"\\1","g")}'
+echo "Hello123#World" | sed 's/[0-9]//g' # Output: Hello#World
 ```
 
-Die `awk` Funktion sucht nach jeder Zahl, die durch den regulären Ausdruck `([0-9]+)` dargestellt wird, und extrahiert sie in eine separate Zeile.
+## Deep Dive
 
-## Tiefgehende Einblicke
+Es gibt einige zusätzliche Optionen, die beim Extrahieren von Unterketten in Bash nützlich sein können. Zum Beispiel können wir mit dem Befehl "grep" Unterketten basierend auf einem bestimmten Muster suchen und ausgeben:
 
-Das Extrahieren von Substrings ist nicht nur nützlich, um bestimmte Informationen aus einem Text zu erhalten, sondern es hilft auch beim Datenhandling und Parsing von Dateien. Zum Beispiel können CSV-Dateien mit Hilfe von Substrings leicht in separate Spalten aufgeteilt werden. Außerdem ist das Extrahieren von Substrings ein grundlegender Bestandteil des String-Manipulationsprozesses und kann in vielen anderen Programmiersprachen angewendet werden.
+```Bash
+# Extrahieren von Substrings mit dem Muster "Hello"
+echo "Hello World" | grep -o "Hello" # Output: Hello
+```
+
+Auch die Verwendung von Variablen in Kombination mit den genannten Befehlen kann uns die Möglichkeit geben, spezifischere Extraktionsaufgaben auszuführen. Hier ist ein Beispiel, das den zweiten Buchstaben einer Zeichenkette extrahiert:
+
+```Bash
+# Verwendung einer Variablen, um den zweiten Buchstaben zu extrahieren
+sentence="Hello World"
+echo ${sentence:1:1} # Output: e
+```
 
 ## Siehe auch
 
-- [Beginner's Guide to Bash Scripting](https://www.pluralsight.com/blog/it-ops/linux-scripts-beginners-guide)
-- [How to Use Awk for Data Manipulation](https://www.section.io/engineering-education/how-to-use-awk-for-data-manipulation/)
-- [Mastering Bash: Substrings](https://linuxhint.com/bash_substring/)
+Hier sind einige weitere Ressourcen, um mehr über das Extrahieren von Unterketten in Bash zu erfahren:
+
+- [Cut Command in Linux with Examples](https://www.geeksforgeeks.org/cut-command-linux-examples/)
+- [Regex Tutorial – Learn How to Use Regular Expressions](https://www.regular-expressions.info/tutorial.html)
+- [Advanced Bash Scripting Guide - String Operations](https://tldp.org/LDP/abs/html/string-manipulation.html)

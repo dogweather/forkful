@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Bash: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué comenzar un nuevo proyecto de programación Bash
+## Por qué
+Si estás buscando un lenguaje de programación fácil de aprender, versátil y ampliamente utilizado, no busques más allá de Bash. No solo es una excelente opción para la automatización de tareas en sistemas operativos Linux y Unix, sino que también puede ser utilizado para crear scripts y aplicaciones. ¡Incluso puedes utilizarlo como intérprete de comandos en la terminal!
 
-Comenzar un nuevo proyecto de programación Bash puede ser emocionante y desafiante al mismo tiempo. Con esta herramienta de línea de comandos versátil y potente, puedes automatizar tareas repetitivas, crear scripts personalizados y mejorar tu eficiencia como desarrollador.
+## Cómo
+Para empezar a utilizar Bash y comenzar un nuevo proyecto, primero necesitas asegurarte de tenerlo instalado en tu sistema operativo. Si estás utilizando Linux o Unix, es muy probable que ya lo tengas instalado. En caso contrario, puedes instalarlo fácilmente utilizando los comandos apropiados para tu sistema operativo.
 
-## Cómo empezar
+Una vez que tienes Bash instalado, puedes comenzar a escribir tu código en cualquier editor de texto que prefieras. ¡Incluso puedes utilizar la propia terminal para escribir tus scripts! Aquí te dejamos un ejemplo de un script simple que muestra un mensaje por pantalla:
 
-Para comenzar un proyecto de programación Bash, lo primero que necesitas es una terminal o consola en tu computadora. Puedes utilizar la terminal predeterminada de tu sistema operativo o descargar una aplicación como iTerm para una experiencia más personalizada.
-
-Una vez que tengas tu terminal lista, puedes comenzar a escribir tus comandos Bash. Aquí hay un ejemplo básico de un script de Bash que imprime "¡Hola mundo!" en la terminal:
-
-```bash
+```Bash
 #!/bin/bash
-echo "¡Hola mundo!"
+echo "¡Hola Mundo!"
 ```
 
-Si ejecutas este script en tu terminal, deberías ver el siguiente resultado:
+Nota: El primer comentario es conocido como "shebang" y le indica al sistema que el archivo debe ser ejecutado por Bash.
 
-```bash
-¡Hola mundo!
-```
+Para ejecutar este script, simplemente debes guardar el archivo con una extensión .sh y luego ejecutar el siguiente comando en tu terminal:
 
-Este es solo un ejemplo simple, pero con la sintaxis de Bash y un poco de creatividad, puedes hacer mucho más. Puedes utilizar variables, condicionales, bucles y otras características de la programación para crear scripts más complejos.
+`bash mi_script.sh`
 
-## Elaborando un nuevo proyecto de programación
+Y ¡voilà! Verás el mensaje "¡Hola Mundo!" impreso en la terminal.
 
-A medida que ¡vas aprendiendo más sobre Bash y cómo utilizarlo para tus proyectos, puede ser útil tener un plan o una estructura en lugar de simplemente escribir código sin un objetivo claro. Aquí hay algunos pasos que puedes seguir para elaborar un nuevo proyecto de programación Bash:
+## Profundizando
+Ahora que ya tienes idea de cómo escribir un script básico en Bash, vamos a profundizar un poco más en lo que significa comenzar un nuevo proyecto. Lo primero que debes hacer es planificar qué quieres lograr con tu proyecto y qué herramientas de Bash necesitarás para hacerlo.
 
-1. Comprender tu objetivo: Antes de comenzar a escribir código, es importante tener una idea clara de lo que quieres lograr con tu proyecto. Esto te ayudará a enfocarte y a tomar decisiones más informadas durante el proceso de desarrollo.
+Una de las ventajas de Bash es su amplia biblioteca de comandos y herramientas integradas que te permiten realizar una amplia gama de tareas. Para tener un conocimiento más profundo de todas las posibilidades de Bash, puedes consultar la documentación oficial o buscar tutoriales en línea.
 
-2. Diseñar tu script: Una vez que tengas una idea clara de tu objetivo, puedes comenzar a diseñar tu script. Determina qué comandos y estructuras de Bash necesitarás utilizar y cómo se conectarán entre sí.
+Además, es importante seguir buenas prácticas de codificación, como utilizar variables descriptivas, comentar tu código y mantenerlo organizado para facilitar su mantenimiento. No tengas miedo de experimentar y explorar nuevas funcionalidades de Bash para mejorar tu proyecto.
 
-3. Empezar a codificar: Con un plan en mente, puedes comenzar a escribir tu script en tu editor de texto preferido. Asegúrate de seguir las buenas prácticas de codificación, como utilizar comentarios y nombres descriptivos para que tu código sea más fácil de entender y modificar.
-
-4. Probar y depurar: A medida que vayas escribiendo tu código, es posible que te encuentres con errores o problemas en el funcionamiento. Es importante probar y depurar tu código en cada etapa para garantizar que funcione como se espera.
-
-5. Documentar y mantener: Una vez que tengas tu script funcionando, no olvides documentarlo y mantenerlo para futuras referencias. Puedes utilizar herramientas como Git para realizar un seguimiento de tus cambios y hacer anotaciones a medida que evoluciona tu proyecto.
-
-## Ver además
-
-- [Introducción a la programación Bash](https://www.geeksforgeeks.org/bash-programming-introduction/)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/)
-- [Ejemplos de scripts de Bash](https://github.com/awesome-lists/awesome-bash)
-
-¡Ahora estás listo para comenzar tu nuevo proyecto de programación Bash! ¡Anímate a explorar esta herramienta poderosa y descubrir todo lo que puedes lograr con ella!
+## Ver también
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html#Introduction)
+- [Guía de referencia de Bash](https://tldp.org/LDP/abs/html/)
+- [10 ejemplos útiles de scripts en Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Tutorial interactivo para aprender Bash desde cero](https://www.learnshell.org/)

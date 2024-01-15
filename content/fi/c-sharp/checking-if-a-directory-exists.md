@@ -1,6 +1,7 @@
 ---
-title:                "C#: Tarkista löytyykö hakemisto"
-simple_title:         "Tarkista löytyykö hakemisto"
+title:                "Tarkistetaan löytyykö kansio"
+html_title:           "C#: Tarkistetaan löytyykö kansio"
+simple_title:         "Tarkistetaan löytyykö kansio"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Tiedämme, että ohjelmoijana ei ole koskaan hauskaa, kun koodi ei toimi odotetusti. Yksi yleisimmistä ongelmista, joka voi johtaa tähän, on väärä kansiorakenne. Mutta älä huoli, tämän ongelman välttämiseksi voit tarkistaa, onko hakemistosi olemassa C# -koodilla.
+Joskus ohjelmoinnissa tarvitsemme tietää, onko tietty kansio olemassa. Tämä voi olla tarpeellista esimerkiksi sen varmistamiseksi, että tietokoneen resursseja käytetään tehokkaasti ja turhaa aikaa ei hukata yrittäessämme päästä käsiksi olemattomaan kansioon.
 
-## Miten tarkistaa, onko hakemisto olemassa
+## Miten tehdä se
+
+Tarkistaaksesi, onko kansio olemassa C# -koodissa, voit käyttää "Directory.Exists()" -metodia. Tämä metodi ottaa parametriksi polun kansion sijaintiin ja palauttaa boolean-arvon osoittamaan, onko kyseinen kansio olemassa vai ei. Katso alla oleva esimerkki:
 
 ```C#
-if (Directory.Exists("polku/hakemistoon/")) {
-  Console.WriteLine("Hakemisto on olemassa.");
+string kansio = @"C:\Tiedostot\Kansio";
+
+if (Directory.Exists(kansio))
+{
+    Console.WriteLine("Kansio on olemassa!");
 }
-else {
-  Console.WriteLine("Hakemistoa ei löytynyt.");
+else
+{
+    Console.WriteLine("Kansiota ei löytynyt.");
 }
 ```
 
-Tämä yksinkertainen koodiesimerkki tarkistaa, onko hakemisto olemassa annetulla polulla ja tulostaa sen perusteella viestin konsoliin. Käytämme Directory-luokkaa, joka löytyy System.IO -tilasta.
+Tässä esimerkissä luomme muuttujan kansio, joka osoittaa polkuun "C:\Tiedostot\Kansio". Sitten tarkistamme, onko kansio olemassa käyttämällä "Directory.Exists()" -metodia. Jos kansio on olemassa, tulostamme ilmoituksen "Kansio on olemassa!", muuten tulostamme "Kansiota ei löytynyt.".
 
-## Syvällisempi katsaus
+## Syvällisempi sukellus
 
-Tarkemmin sanottuna tarkistus toimii tarkistamalla, onko annetulla polulla oleva hakemisto olemassa ja palauttaa sitten boolean-arvon true tai false. Jos hakemisto löytyy, niin koodissamme määritellyt komennot suoritetaan. Jos sitä ei löydy, niin voit käsitellä tilanteen eri tavoin ja esimerkiksi välttää mahdolliset virheet koodissasi.
-
-Tärkeää on myös huomata, että tarkistus ei tarkoita vain hakemiston nimen tarkistamista, vaan myös sen, että annetussa polussa on kohde, joka on nimeltään hakemisto.
+Kansioita voidaan tarkistaa myös erityisillä ehdoilla käyttäen "Directory.GetDirectories()" ja "Directory.GetDirectories()" -metodeja. Näitä metodeja voidaan käyttää etsimään tiettyä kansiorakennetta tai tietynlaista tiedostoa sisältävää kansiota. Voit tutustua näihin metodeihin tarkemmin Microsoftin dokumentaatiosta.
 
 ## Katso myös
 
-- [Directory.Exists-metodi (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [System.IO -tilan dokumentaatio (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.io)
-
-Onnea hakemistojen tarkistamiseen C#-koodilla! Toivottavasti tämä blogikirjoitus auttoi sinua paremmin ymmärtämään, miksi ja miten tarkistaa hakemistoja. Lisätietoja ja esimerkkejä löydät yllä olevista linkeistä.
+- C# Directory-luokan dokumentaatio: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0
+- Directory.Exists () -metodin käyttöohjeet: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0
+- Directory.GetDirectories () -metodin käyttöohjeet: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.getdirectories?view=net-5.0

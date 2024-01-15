@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 랜덤 숫자 생성하기."
-simple_title:         "랜덤 숫자 생성하기."
+title:                "랜덤 숫자 생성하기"
+html_title:           "Elm: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -9,72 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-랜덤한 숫자를 생성하는 것에 대해 궁금했던 적이 있나요? 바로 이것 때문이죠. 랜덤하게 생성된 숫자를 사용하면 애플리케이션에 다양한 놀이요소 및 기능을 추가할 수 있고, 더욱 흥미롭고 다양한 경험을 제공할 수 있습니다.
+우리는 종종 무작위 수를 생성하는 것이 필요합니다. 예를 들어 게임에서 적, 아이템 또는 레벨을 무작위로 설정하거나 프로젝트에서 테스트 데이터를 만들 때 등등 말이죠. 이러한 경우 우리는 프로그램이나 언어에서 무작위 수를 생성하는 방법을 알아야 합니다. 여기서는 Elm에서 무작위 수를 생성하는 방법을 배우겠습니다.
 
-## 어떻게?
+## 하우 투
 
-이제 Elm으로 랜덤 숫자를 생성하는 방법을 알아보겠습니다. 먼저, Elm 패키지에서 Random Generator를 가져와야 합니다.
+### 기본 범위 내에서 무작위 수 생성
+
+먼저, Elm의 Random 라이브러리에 있는 `generate` 함수를 사용하여 일정 범위 내에서 무작위 수를 생성할 수 있습니다. 예를 들어, 1부터 10 사이의 무작위 정수를 생성하는 코드는 다음과 같습니다.
 
 ```Elm
 import Random
 
+Random.generate (Random.int 1 10)
 ```
 
-랜덤 숫자를 생성하기 위해선 `generator` 함수를 사용해야 합니다. 이 함수는 생성한 랜덤 숫자를 `Seed` 타입으로 반환합니다. 그리고 `initialSeed` 함수를 사용해 초기 랜덤 `Seed`를 생성합니다.
+무작위 정수 말고도, `Random.float` 함수를 사용하면 일정 범위 내에서 무작위 소수점 숫자를 생성할 수도 있습니다.
 
 ```Elm
-Random.generator Random.int
-    |> Random.map (+1)
-    |> Random.initialSeed
+import Random
+
+Random.generate (Random.float 0 1)
 ```
 
-위의 코드에서는 `Random.int`를 사용해 랜덤한 정수를 생성한 후, `map` 함수를 사용해 숫자를 1만큼 증가시키고, `initialSeed` 함수를 사용해 초기 `Seed`로 변환합니다.
+### 사용자 정의 타입에서 무작위 값 생성
 
-이제 `next` 함수를 사용해 랜덤 숫자를 계속 생성해보겠습니다.
+우리는 자체적으로 사용자 정의 타입에서 무작위 값을 생성할 수도 있습니다. 예를 들어, `User` 타입에서 무작위 값을 생성하는 코드는 다음과 같습니다.
 
 ```Elm
-Random.next Random.int
-    |> Random.map (\(value, seed) -> value + 1)
+type alias User =
+  { name : String
+  , age : Int
+  }
+
+import Random
+
+userGenerator : Random.Generator User
+userGenerator =
+  Random.map2 User (Random.string 5) (Random.int 18 60)
+
+Random.generate userGenerator
 ```
 
-위의 코드에서는 `Random.next` 함수를 사용해 이전에 생성한 `Seed`로부터 새로운 랜덤 숫자를 생성하고, `map` 함수를 사용해 숫자를 1만큼 증가시킵니다.
+위 코드에서는 `Random.string`과 `Random.int` 함수를 조합하여 `User` 타입의 값들을 무작위로 생성합니다. 따라서 이를 활용하여 프로그램에서 필요한 무작위 데이터를 생성할 수 있습니다.
 
-## 더 깊게 들어가보기
+## 딥 다이브
 
-랜덤 숫자를 생성하는 데에는 다양한 방법이 있습니다. Elm에서는 `Random.integer` 함수를 사용해 범위 내에서 랜덤한 정수를 생성할 수 있습니다. 또한 `Random.float` 함수를 사용해 0부터 1사이의 랜덤한 소수를 생성할 수도 있습니다.
-
-또한, `Random.sequence` 함수를 사용해 여러 개의 랜덤 숫자를 한 번에 생성할 수도 있습니다.
-
-```Elm
-let
-    generator =
-        Random.sequence
-            [ Random.int 1 10
-            , Random.float 0 1
-            ]
-
-    (numbers, newSeed) =
-        Random.step generator seed
-in
-    numbers
-```
-
-위의 코드에서는 `Random.sequence` 함수를 사용해 랜덤한 정수와 소수를 생성하고, `step` 함수를 사용해 `Seed`를 업데이트하고, 생성된 숫자들을 튜플로 반환합니다.
+우리는 이제 무작위 값을 생성하기 위해 어떻게 코드를 작성하는지 알게 되었지만, 실제로는 어떤 방식으로 무작위 수가 생성되는지 알고 있어야 합니다. Elm에서는 Pseudo-Random number generator (PRNG) 알고리즘을 사용하여 무작위 값을 생성합니다. 이 알고리즘은 시드(seed)라고 불리는 시작 숫자에서 시작하여 계속해서 무작위 값을 생성하는 방식입니다. 따라서 같은 시드를 사용하면 항상 같은 무작위 수가 생성되며, 이는 효율적이고 안정된 무작위 값을 생성하는 방법입니다.
 
 ## 더 알아보기
 
-Elm에서 랜덤 숫자를 생성하는 데에는 다양한 방법들이 있습니다. 이 외에도 `Random.floatRange`, `Random.intRange`, `Random.bool`, `Random.string` 등 다양한 함수를 사용할 수 있습니다.
-
-더 자세한 내용은 Elm 공식 문서를 참고해주세요.
-
-## 더 알아보기
-
-- [Random Generator Elm 패키지](https://package.elm-lang.org/packages/elm/random/latest)
-- [Elm 공식 문서 - 랜덤 생성기 모듈](https://guide.elm-lang.org/random/)
-
-# 참고
-
-- [Elm 샘플 코드](https://github.com/kamikaze/awesome-elm#random)
-- [모던 Elm 프로그래밍: Function을 사용한 랜덤 숫자 생성](https://thoughtbot.com/blog/making-random-unpredictable-numbers-in-elm-using-functions)
+- [The Elm Guide: Random](https://guide.elm-lang.org/effects/random.html)
+- [Elm Random library documentation](https://package.elm-lang.org/packages/elm/random/latest/)

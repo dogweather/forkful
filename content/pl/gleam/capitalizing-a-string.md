@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Zmiana wielkości litery łańcucha"
-simple_title:         "Zmiana wielkości litery łańcucha"
+title:                "Zmiana wielkości litery w stringu"
+html_title:           "Gleam: Zmiana wielkości litery w stringu"
+simple_title:         "Zmiana wielkości litery w stringu"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,27 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w naszych programach potrzebujemy zmienić wielkość liter w tekście. Na przykład, może chcemy zmienić wszystkie litery na dużych lub na małe. W tym artykule przyjrzymy się w jaki sposób możemy użyć języka programowania Gleam do zastosowania tej operacji na stringach.
+Niektóre języki programowania wymagają, aby tekst był sformatowany zgodnie z określonymi regułami, w tym podział na wielkie i małe litery. Dzięki funkcji capitalize w Gleam, można automatycznie zmienić pierwszą literę w zdaniu na wielką, co oszczędza czas i ogranicza możliwość popełnienia błędu.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby zmienić wielkość liter w tekście, możemy skorzystać z funkcji `String.capitalize` dostępnej w bibliotece standardowej języka Gleam. W poniższym przykładzie użyjemy tej funkcji na przykładzie zdania "witaj świecie".
+Aby wykorzystać funkcję capitalize w Gleam, należy najpierw utworzyć zmienną przechowującą wybrany ciąg znaków. Następnie można wywołać funkcję capitalize, podając jako argument utworzoną zmienną. Poniższy przykład ilustruje to w praktyce:
 
-``` Gleam
-let zdanie = "witaj świecie"
-let zmienione_zdanie = String.capitalize(zdanie)
+```Gleam
+let tekst = "witaj, świecie!"
 
-// Wynik: "Witaj świecie"
+gleam.string.capitalize(tekst)
 ```
 
-Jak widać, funkcja `String.capitalize` zmienia pierwszą literę zdania na wielką, a pozostałe litery pozostają bez zmian. Aby zmienić wszystkie litery na duże, możemy użyć funkcji `String.uppercase` lub na małe funkcji `String.lowercase`.
+Output: "Witaj, świecie!"
 
 ## Deep Dive
 
-Funkcje `String.capitalize`, `String.uppercase` i `String.lowercase` są często używane do formatowania tekstu w naszym programie. Jednak warto pamiętać, że są one zależne od ustawień lokalnych naszego systemu operacyjnego, co może mieć wpływ na wyjście. Dlatego ważne jest, aby upewnić się, że nasze dane są poprawnie ustawione w odpowiedniej postaci przed przeprowadzeniem operacji zmiany wielkości liter.
+Funkcja capitalize dokonuje korekty wyłącznie pierwszej litery w zdaniu, nie wpływając na pozostałe znaki. Jednak można wykorzystać ją również do zmiany wybranej litery na dużą lub małą. W tym celu należy użyć funkcji index, aby określić pozycję danej litery, a następnie zastosować metodę ubytkhnac czyli zamiany litery na dużą lub Ustawianie threadu, która zamienia literę na małą.
 
 ## Zobacz także
 
-- Dokumentacja języka Gleam: https://gleam.run/
-- Biblioteka standardowa języka Gleam: https://gleam.run/modules/ 
-- Przewodnik po operacjach na stringach w języku Gleam: https://gleam.run/docs/guides/strings
+- Dokumentacja Gleam: https://gleam.run/
+- Funkcje łańcuchowe w Gleam: https://gleam.run/docs/std/string.html#string-functions

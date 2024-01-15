@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Kotlin recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,44 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Regular expressions, also known as regex, are a powerful tool in programming that allow for efficient and flexible text manipulation. They are especially useful when working with large strings of data or when specific patterns need to be identified. With regular expressions, you can search, replace, and extract text in a precise and automated way.
+Regular expressions, commonly known as regex, are powerful tools for searching and manipulating text in programming languages. They allow for more complex and flexible pattern matching, making tasks like data validation, parsing, and text manipulation much easier and more efficient.
 
 ## How To
-To use regular expressions in Kotlin, we first need to import the `Regex` class from the `kotlin.text` package. This class provides methods for creating and manipulating regular expressions. Let's take a look at a simple example:
+To use regular expressions in Kotlin, you first need to import the `kotlin.text.Regex` class. Then, you can create a regex pattern by enclosing it in forward slashes (`/`), similar to other languages like Javascript. Here's an example of a simple regex pattern that matches words starting with "kotlin":
 
 ```Kotlin
-fun main() {
-    val text = "Hello, world!"
-    val regex = Regex("[a-z]+")
-    val matchResult = regex.find(text)
-    println(matchResult?.value) 
-}
+val pattern = Regex("/kotlin\\w+/")
+val text = "Kotlin rocks!"
+val matchResult = pattern.find(text)
+println(matchResult?.value) // Output: "Kotlin"
 ```
+In the above code, we create a regex pattern using the `Regex` class, passing in the desired pattern enclosed in forward slashes. Then, we use the `find()` function to search for the pattern in the given text and store the result in a variable. Finally, we use the `value` property to get the actual matched text and print it out.
 
-In this code, we are using the `find()` method on our `Regex` object to search for any lowercase letters in the given string. The output of this code will be `ello`, as the first pattern that matches our regex is `ello` in `Hello, world!`.
-
-But what if we want to replace a certain pattern in our string? We can use the `replace()` method instead:
+But regex in Kotlin is not just limited to simple patterns. You can use special characters to create more complex and specific patterns. For example, `\d` matches any digit, `+` matches one or more instances, `*` matches zero or more instances, and `?` makes the preceding character optional. Combining these characters, we can create a pattern to match a phone number:
 
 ```Kotlin
-fun main() {
-    val text = "I love coding in Kotlin"
-    val regex = Regex("Kotlin")
-    val result = regex.replace(text, "Java")
-    println(result)
-}
+val pattern = Regex("/^\\d{3}-\\d{3}-\\d{4}\$/")
+val text = "123-456-7890"
+val isMatch = pattern.matches(text)
+println(isMatch) // Output: true
 ```
-
-In this example, we are using the `replace()` method to replace all occurrences of the string `Kotlin` with `Java` in our original text. The output will be `I love coding in Java`.
-
-Regex also allows for more complex patterns using special characters and modifiers. For example, we can use the `+` modifier to match one or more occurrences of a specific pattern, or the `^` modifier to match the beginning of a line. There are many more modifiers and special characters that can be used in regular expressions, and it's worth exploring their functionality.
 
 ## Deep Dive
-Regular expressions can be a bit daunting at first, but once you get the hang of them, they can save a lot of time and effort in your coding. One thing to keep in mind is that regular expressions can affect the performance of your code if not used carefully. It's important to test and optimize your regex patterns to ensure they are not slowing down the execution of your program.
+Regular expressions can also be used for replacing text. The `replace()` function can be used to replace all instances of a given pattern in a text with a specified string. Here's an example:
 
-Another tip is to use online tools or editors that support regex, such as [Regex101](https://regex101.com/) or [Visual Studio Code](https://code.visualstudio.com/). These tools provide a visual representation and explanation of your regular expressions, making it easier to understand and debug them.
+```Kotlin
+val text = "I love Kotlin!"
+val pattern = Regex("/Kotlin/")
+val replacedText = pattern.replace(text, "Java")
+println(replacedText) // Output: "I love Java!"
+```
+
+But if we want to replace only the first instance, we can use the `replaceFirst()` function instead.
+
+Regex in Kotlin also supports grouping and capturing specific parts of a text. This can be done by enclosing the desired part of the pattern in parentheses `(` and `)`. Here's an example:
+
+```Kotlin
+val text = "My birthday is on 15-08-1995."
+val pattern = Regex("/(\\d{2})-(\\d{2})-(\\d{4})/")
+val matchResult = pattern.find(text)
+println(matchResult?.groups?.get(3)?.value) // Output: "1995"
+```
+
+In the above code, we use parentheses to create three capture groups for the day, month, and year in a date format. Then, we access the groups using the `groups` property and print out the value of the third group, which is the year.
 
 ## See Also
-- [Kotlin Regular Expressions](https://kotlinlang.org/docs/regex.html)
-- [Regular Expressions in Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
-- [Regexone - Interactive Regular Expressions Tutorial](https://regexone.com/)
+- [Kotlin Regex documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Regular Expressions Quick Start Guide](https://www.regular-expressions.info/quickstart.html)
+- [Regex101 tool for testing and learning regular expressions](https://regex101.com/)

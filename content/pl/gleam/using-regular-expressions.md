@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Używanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Gleam: Używanie wyrażeń regularnych"
 simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,39 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wykorzystanie wyrażeń regularnych jest niezbędne w wielu dziedzinach programowania, zwłaszcza przy analizie i manipulacji tekstem. Jest to niezwykle przydatne narzędzie do przetwarzania i wyszukiwania danych w różnych formatach, a także ułatwiające pracę z dużymi zbiorami danych. W artykule dowiesz się, dlaczego warto nauczyć się korzystać z wyrażeń regularnych w języku programowania Gleam.
+Regular expressions są użytecznym narzędziem w programowaniu, pozwalającym na wyszukiwanie i manipulacje tekstu w sposób precyzyjny i wydajny. Mogą być przydatne w wielu różnych sytuacjach, od walidacji danych po przetwarzanie plików tekstowych.
 
-## Jak wykorzystać wyrażenia regularne w Gleam
+## Jak to zrobić
 
-Aby rozpocząć pracę z wyrażeniami regularnymi w Gleam, należy zaimportować pakiet "tobby/regex" za pomocą polecenia ```import "tobby/regex"```. Następnie można użyć funkcji ```Regex.new()``` do utworzenia wyrażenia regularnego, a następnie ```Regex.match()``` do przeszukiwania tekstu i zwrócenia dopasowań. Poniższy przykład ilustruje wykorzystanie wyrażeń regularnych do odnalezienia powtarzających się słów w zdaniu:
+Poniżej przedstawimy kilka przykładów użycia regular expressions w języku Gleam. Przykłady te są zapisane w formacie "```Gleam ... ```", więc możesz łatwo je skopiować i wypróbować w swoim własnym kodzie.
 
-```Gleam
-import "tobby/regex"
+### Wyszukiwanie frazy w tekście
 
-let sentence = "To jest przykładowe zdanie z powtarzającymi się słowami. To jest przykładowe zdanie."
-let regex = Regex.new("(?i)\\b(\\w+)\\b\\s+\\b\\1\\b")
-let matches = Regex.match(regex, sentence)
-
-// samples zawiera listę ["To", "jest"] jako dopasowane słowa
-```
-
-Innym przydatnym narzędziem jest funkcja ```Regex.replace()```, która pozwala na zamianę dopasowanych fragmentów tekstu na wybrane wyrażenie. Przykładowo, można przeformatować daty zapisane w niejednolitym formacie:
+Aby wyszukać konkretną frazę w tekście, możemy skorzystać z funkcji `Regex.find()`. Na przykład, jeśli chcemy znaleźć wszystkie wystąpienia słowa "Gleam" w ciągu znaków, możemy użyć następującego kodu:
 
 ```Gleam
-let dates = "01-01-2020, 01.02.2021, 01/03/2022"
-let regex = Regex.new("(\\d{2})[./-](\\d{2})[./-](\\d{4})")
-let formatted_dates = Regex.replace(regex, dates, "YYYY-MM-DD")
-
-// wynikiem będzie "2020-01-01, 2021-02-01, 2022-03-01"
+my_text = "Hello World! I love Gleam."
+pattern = Regex.compile("Gleam")
+matches = Regex.find(my_text, pattern)
 ```
 
-## Zagłębienie się w wyrażenia regularne
+Wynikiem będzie lista wszystkich indeksów w ciągu znaków, w których znajduje się szukane słowo. W tym przypadku, będzie to `[17]` ponieważ "Gleam" zaczyna się od 17 znaku.
 
-Wyrażenia regularne oferują wiele możliwości, a z czasem można nauczyć się coraz bardziej skomplikowanych wzorców i wykorzystywać dodatkowe funkcje i składnię. W języku Gleam dostępne są także inne pakiety, takie jak "tobby/peg" czy "evadne/lingua" oferujące jeszcze więcej funkcjonalności związanych z wyrażeniami regularnymi.
+### Walidacja danych
 
-## Zobacz także
+Regular expressions mogą być również wykorzystane do sprawdzania czy dane są poprawnego formatu. Na przykład, jeśli chcemy sprawdzić czy dany ciąg znaków jest poprawnym adresem email, możemy użyć następującego kodu:
 
-- Dokumentacja Gleam: https://gleam.run/
-- Przewodnik po wyrażeniach regularnych: https://regexone.com/
-- Wyrażenia regularne w języku Gleam: https://gleam.toby.cloud/tobby/regex/latest/Regex/
-- Inne przydatne pakiety Gleam: https://github.com/gleam-lang/awesome-gleam
+```Gleam
+email = "example@test.com"
+pattern = Regex.compile("[A-Za-z0-9.-_]+@[A-Za-z0-9]+\.[A-Za-z]+")
+is_valid = Regex.matches(email, pattern)
+```
+
+Wynikiem będzie wartość logiczna `true`, ponieważ email spełnia zdefiniowany przez nas wzorzec.
+
+### Zamiana tekstu
+
+Regular expressions umożliwiają również proste i szybkie zamiany w tekście. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "Gleam" na "Gleam 2.0" w danym tekście, możemy użyć funkcji `Regex.replace()`:
+
+```Gleam
+my_text = "Gleam is the best!"
+pattern = Regex.compile("Gleam")
+new_text = Regex.replace(my_text, pattern, "Gleam 2.0")
+```
+
+Wynikiem będzie "Gleam 2.0 is the best!".
+
+## Deep Dive
+
+Regular expressions w języku Gleam są oparte na standardowej bibliotece `re`. Biblioteka ta oferuje wiele różnych funkcji, które mogą być przydatne w bardziej zaawansowanych sytuacjach. Dokumentacja biblioteki zawiera szczegółowe objaśnienia oraz przykłady użycia.
+
+Dla tych, którzy są bardziej zaawansowani w dziedzinie regular expressions, warto również zapoznać się z różnymi składnikami składni języka Gleam, takimi jak pattern matching, funkcje wyższego rzędu oraz moduły. Mogą one być wykorzystane w połączeniu ze zwykłymi wyrażeniami regularnymi, aby stworzyć jeszcze bardziej potężne narzędzie do przetwarzania tekstu.
+
+## Zobacz również
+
+Dokumentacja języka Gleam: https://gleam.run/
+
+Dokumentacja standardowej biblioteki `re`: https://gleam.run/modules/re.html
+
+Przydatne zagadnienia dotyczące regular expressions: https://regexone.com/

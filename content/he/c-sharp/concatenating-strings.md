@@ -1,6 +1,7 @@
 ---
-title:                "C#: להצטרפות מחרוזות"
-simple_title:         "להצטרפות מחרוזות"
+title:                "שרשור מחרוזות"
+html_title:           "C#: שרשור מחרוזות"
+simple_title:         "שרשור מחרוזות"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## על מה לכתוב
+# למה
+בעולם התכנות, קיבוץ מחרוזות הוא כלי חשוב ושימושי שעוזר לנו לבנות מחרוזות מרוכבות יותר באופן יעיל. זה יכול להיות מועיל למתכנתים שרוצים לשמור על קוד קצר ותכנותי.
 
-בואו נדבר על עקרונות בסיסיים בתכנות בשפת C#. אחד הדברים החשובים ביותר בכתיבת קוד הוא היכולת לשתף פעולה בין מספר תווים ליצירת מחרוזת אחת. במאמר זה על תמצית טיפול מחרוזת זו בשפת סי שארפ.
+# איך לעשות זאת
+הנה מספר דוגמאות של קיבוץ מחרוזות בשפת סי שארפ. הקוד והפלט מוצגים תחת בלוק "```C# ... ```"
 
-## איך לעשות זאת
-
-לפני שנתחיל לכתוב קוד, נצטרך להגדיר מחרוזת נוספת. ניתן לעשות זאת בעזרת האופרטור + ולשתף פעולה בין שתי מחרוזות.
-
-```C#
-string firstName = "John";
-string lastName = "Doe";
-string fullName = firstName + lastName;
-Console.WriteLine(fullName);
-```
-Output: JohnDoe
-
-כפי שאתם רואים, השתמשנו באופרטור + כדי לשתף פעולה בין שתי מחרוזות וליצור מחרוזת חדשה. אם ברצונכם להוסיף מרחב בין שני התווים, ניתן להוסיף גם מחרוזת ריקה כדי לייצר מרחב בין התווים.
-
+### דוגמא 1:
 ```C#
 string firstName = "John";
 string lastName = "Doe";
 string fullName = firstName + " " + lastName;
 Console.WriteLine(fullName);
 ```
-Output: John Doe
+פלט: John Doe
 
-כעת, אם ברצונכם להוסיף ערכים אחרים, כגון מספרים או בוליאניים, יש להמיר אותם למחרוזות בעזרת הפונקציה .ToString כדי לשתף אותם פעולה בין שלושת המחרוזות.
-
+### דוגמא 2:
 ```C#
-int age = 30;
-bool isMarried = false;
-string fullName = firstName + " " + lastName + ". Age: " + age.ToString() + ". Married: " + isMarried.ToString();
-Console.WriteLine(fullName);
+string greeting = "Hello";
+string name = "Sarah";
+string message = greeting + ", " + name + "!";
+Console.WriteLine(message);
 ```
-Output: John Doe. Age: 30. Married: False
+פלט: Hello, Sarah!
 
-## מעמקים
+כפי שניתן לראות מהדוגמאות, ניתן להשתמש בסימן חיבור (+) כדי לקבץ מחרוזות יחד וליצור מחרוזות חדשות באופן תכנותי. ניתן גם להשתמש בפעולות אחרות כמו "string.Format" ו"StringBuilder.Append" כדי לקבץ מחרוזות בצורה יותר מתקדמת. 
 
-כפי שראינו, הפעולה של שתף פעולה בין מחרוזות בשפת C# היא פעולה פשוטה ויעילה. במיוחד כאשר יש לנו צורך ליצור מחרוזת מסובכת עם מספר ערכים שונים. חשוב לזכור שעלינו להמיר ערכים שלא מסוג מחרוזת למחרוזת בעזרת הפונקציה .ToString כדי לשתף אותם פעולה בין מחר
+# לחקור עומק יותר
+קיבוץ מחרוזות הוא פעולה שנדרשת לעיבוד מחרוזת בנות או ליצירת מחרוזת חדשה. השימוש התכונות של הסימן הקיבוץ (+) יכול להיות מקור לבאגים בקוד ועל כן חשוב להיות זהירים בשימוש בו. כמו כן, ישנם בעיות בפרצוף בקיבוץ מחרוזות שמחייבים שימוש בפעולות תכנותיות יותר מתקדמות כגון מחלקת "StringBuilder".
+
+# ראו גם
+- [מדריך לקיבוץ מחרוזות בשפת סי שארפ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+- [מאמר מפורט יותר על קיבוץ מחרוזות בסי שארפ](https://www.c-sharpcorner.com/blogs/string-concatination-in-c-sharp-programming1)

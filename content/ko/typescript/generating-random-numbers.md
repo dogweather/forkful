@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 난수 생성하기"
-simple_title:         "난수 생성하기"
+title:                "임의의 숫자 생성"
+html_title:           "TypeScript: 임의의 숫자 생성"
+simple_title:         "임의의 숫자 생성"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -11,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-난수 생성에 참여하는 이유는 무엇일까요? 난수 생성은 컴퓨터 과학에서 중요한 개념이며 다양한 프로그래밍 분야에서 유용하게 사용될 수 있습니다. 우리는 이 글에서 타입스크립트를 사용하여 간단한 난수 생성 프로그램을 작성해보고, 이를 통해 난수 생성의 중요성을 알아보겠습니다.
+랜덤 숫자를 생성하는데 참여하는 이유는 무엇일까요? 우리는 때때로 우리의 프로그램이나 게임에서 무작위 숫자가 필요할 수 있습니다. 예를 들어, 게임에서 주사위를 굴릴 때마다 다른 값을 가진 무작위 숫자가 필요합니다. 이때 우리는 랜덤 숫자를 생성하는 기능이 필요하며, 이를 위해 TypeScript를 사용할 수 있습니다.
 
-## 방법
+## 어떻게
 
-먼저, 타입스크립트 환경에서 난수 생성 함수를 작성해야합니다. 이를 위해 `Math.random()` 메서드를 사용할 수 있습니다. 이 메서드는 0과 1 사이의 난수를 생성하는데, 만약 우리가 원하는 범위의 난수를 생성하고 싶다면 몇 가지 계산으로 원하는 범위를 만들어 낼 수 있습니다.
+우리는 TypeScript를 사용하여 랜덤 숫자를 생성하는 방법을 알아보겠습니다. 먼저, Math 라이브러리의 random() 함수를 사용하여 0에서 1 사이의 랜덤 실수를 생성할 수 있습니다.
 
-```typescript
-// Math.random()을 사용하여 0부터 10까지의 난수 생성
-let randomNumber = Math.random() * 10;
-
-// 소수점 이하 제거
-randomNumber = Math.floor(randomNumber);
-
-// 결과 출력
-console.log(randomNumber); // 7
+```TypeScript
+let randomNumber = Math.random();
+console.log(randomNumber); // 예시 출력: 0.37618473679410747
 ```
 
-위 코드를 실행하면 `randomNumber` 변수에 0과 10 사이의 정수가 할당됩니다. 이를 통해 우리는 원하는 범위의 난수를 생성할 수 있습니다. 직접 몇 가지 다른 예제를 만들어보며 더 많은 방법을 알아보세요!
+또 다른 예시로, 범위를 지정하여 랜덤 정수를 생성하는 방법도 있습니다. 이를 위해 Math 라이브러리의 floor() 함수와 random() 함수를 조합하여 범위 내에서 랜덤 정수를 생성할 수 있습니다.
 
-## 깊은 이야기
+```TypeScript
+let min = 1;
+let max = 10;
+let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(randomNumber); // 예시 출력: 5
+```
 
-난수 생성은 매우 중요한 주제이며 다양한 분야에서 널리 사용됩니다. 예를 들어 게임 개발에 있어서 난수를 사용하여 무작위적인 이벤트나 아이템을 생성할 수 있고, 보안 분야에서도 암호화를 위해 난수를 사용할 수 있습니다. 또한 난수는 시뮬레이션 프로그램을 작성할 때 필요한 요소로서 랜덤한 상황을 시뮬레이션하는 데 사용될 수 있습니다.
+## 딥 다이브
 
-## 관련 연구
+랜덤 숫자를 생성하는 방법에 대해 좀 더 깊이 살펴보겠습니다. Math 라이브러리의 random() 함수는 실제로 유사 난수(비결정적인 무작위 값)를 생성합니다. 이는 시드(seed) 값을 입력하지 않았기 때문입니다. 따라서 동일한 코드를 여러 번 실행하면 항상 다른 무작위 값을 얻을 수 있습니다.
 
-- [난수 생성 알고리즘](https://ko.wikipedia.org/wiki/난수_생성법)
-- [난수 생성 관련 문제들](https://programmers.co.kr/learn/courses/30/lessons/12969)
-- [타입스크립트 공식 문서](https://www.typescriptlang.org/docs/handbook/variable-declarations.html)
+반면, 난수를 생성하는 다른 방법으로는 시드 값을 입력하여 결정론적인 난수(항상 동일한 무작위 값을 생성하는 값)를 생성하는 난수 알고리즘을 사용할 수 있습니다. 이를 위해서는 외부 라이브러리를 사용해야 할 수도 있습니다. 예를 들어, seedrandom 라이브러리를 사용하면 시드 값과 함께 무작위 값을 생성할 수 있습니다.
+
+## 관련 링크
+
+- TypeScript 공식 문서: https://www.typescriptlang.org/docs
+- Math 라이브러리 문서: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math
+- seedrandom 라이브러리: https://cdnjs.com/libraries/seedrandom

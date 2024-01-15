@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Lesing av en tekstfil"
-simple_title:         "Lesing av en tekstfil"
+title:                "Å lese en tekstfil"
+html_title:           "Clojure: Å lese en tekstfil"
+simple_title:         "Å lese en tekstfil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,60 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lese en tekstfil kan være nyttig når du lagrer data som ikke trenger å være strukturert på en bestemt måte, eller når du ønsker å importere data fra en ekstern kilde inn i ditt Clojure-program. I denne blogginnlegget vil vi gå gjennom hvordan du kan lese en tekstfil ved hjelp av Clojure, og gi deg en dypere forståelse av hvordan dette kan gjøres.
+Å lese en tekstfil er en grunnleggende ferdighet i mange programmeringsspråk, inkludert Clojure. Det lar deg hente informasjon fra en fil og bruke den i programmet ditt på en effektiv måte.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å lese en tekstfil i Clojure, bruker vi funksjonen `slurp`, som tar inn filstien som et argument og returnerer tekstinnholdet i filen som en streng. La oss si at vi har en tekstfil som heter "minfil.txt" og inneholder følgende tekst:
+Lesing av en tekstfil involverer følgende trinn:
 
-```
-Dette er en tekstfil
-med litt innhold
-og flere linjer
-```
+1. Åpne filen ved hjelp av `clojure.java.io/reader` funksjonen. Den tar inn filbanen som et argument.
+2. Bruk `line-seq` funksjonen for å splitte filen inn i linjer og lagre dem i en variabel.
+3. Gå gjennom hver linje ved hjelp av `doseq` eller `for` løkker.
+4. Gjør noe med informasjonen fra hver linje, for eksempel skriv den ut eller lagre den i en liste.
 
-Vi kan lese denne filen i Clojure ved å bruke følgende kode:
-
-```Clojure
-(def tekst (slurp "minfil.txt"))
-```
-
-Dette vil lagre innholdet i filen som en streng i variabelen "tekst". Vi kan deretter skrive ut innholdet ved å bruke `println`-funksjonen:
+La oss se på et eksempel der vi leser en tekstfil som inneholder navnene på frukt på hver linje og skriver dem ut:
 
 ```Clojure
-(println tekst)
+(def file "fruits.txt")
+(with-open [rdr (clojure.java.io/reader file)]
+    (let [lines (line-seq rdr)]
+        (doseq [line lines]
+            (println line))))
 ```
 
-Dette vil gi følgende output:
+Dette eksempelet illustrerer hvordan vi kan gi filbanen som et argument til `clojure.java.io/reader` funksjonen og bruke `line-seq` funksjonen til å splitte filen inn i linjer. Deretter bruker vi en `doseq` løkke for å skrive ut hver linje.
 
-```
-Dette er en tekstfil
-med litt innhold
-og flere linjer
-```
+## Dykke dypere
 
-Vi kan også lese data fra en tekstfil på en mer strukturert måte, for eksempel ved å bruke funksjonen `clojure.string/split-lines`, som deler opp en streng etter hver linje:
+Når du leser en tekstfil i Clojure, er det verdt å merke seg følgende:
 
-```Clojure
-(def linjer (clojure.string/split-lines tekst))
-```
-
-Dette vil gi oss en liste med alle linjene i filen, som vi kan bruke i vårt program.
-
-## Dypdykk
-
-Hvis du ønsker å lese en tekstfil som ikke er på ditt lokale filsystem, men i en ekstern kilde, kan du bruke "java.io" biblioteket i Clojure. Denne gir funksjoner for å lese og skrive til filer i forskjellige formater. For å lese en ekstern tekstfil kan vi bruke funksjonen `java.io/BufferedReader` sammen med `clojure.java.io/reader`:
-
-```Clojure
-(def reader (clojure.java.io/reader "https://www.mittnettsted.com/minfil.txt"))
-(def tekst (java.io/BufferedReader. reader))
-(println (slurp tekst)))
-```
-
-Dette vil lese innholdet i tekstfilen fra den eksterne kilden og skrive det ut på samme måte som vist tidligere.
+- `with-open` funksjonen håndterer automatisk å lukke filen for deg når du er ferdig med å bruke den.
+- `line-seq` funksjonen returnerer en sekvens av linjer i filen, slik at du kan bruke alminnelige Clojure funksjoner som `map` og `filter` på den.
+- Det er også mulig å lese en tekstfil som en hel streng ved å bruke `slurp` funksjonen.
 
 ## Se også
 
-- [Clojure - Official Website](https://clojure.org/)
-- [Clojure Dokumentasjon](https://clojure.org/documentation)
-- [Clojure Cookbook - Lesing og Skriving av Filer](https://clojure-cookbook.com/reading-files.html)
+- [clojure.java.io - Offisiell dokumentasjon](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Lær deg Clojure - Lesing av filer](https://learnxinyminutes.com/docs/no-no/clojure-no/)

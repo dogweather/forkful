@@ -1,6 +1,7 @@
 ---
-title:                "Python: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Drukowanie wyniku debugowania"
+html_title:           "Python: Drukowanie wyniku debugowania"
+simple_title:         "Drukowanie wyniku debugowania"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -11,35 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyświetlanie debugowania jest ważnym narzędziem dla każdego programisty. W ten sposób możesz sprawdzić, co dzieje się w Twoim kodzie i jakie wartości są przetwarzane. Może pomóc w zidentyfikowaniu błędów i usprawnieniu kodu.
+Gdy programujemy, często napotykamy na błędy i nieprawidłowe działanie naszego kodu. W takich sytuacjach bardzo przydatne jest wyświetlanie informacji debuggowania, aby zrozumieć, co się dzieje wewnątrz naszego programu. Dzięki temu możemy szybciej i skuteczniej znaleźć i naprawić problemy.
 
 ## Jak to zrobić
 
-Możesz wyświetlać komunikaty debugowania w Pythonie za pomocą funkcji print(). Możesz też użyć specjalnego poziomu logowania, aby wyświetlić tylko niektóre informacje w zależności od potrzeb.
+Aby wyświetlić informacje debuggowania, musimy użyć funkcji `print()` wraz z wyrażeniami, które chcemy wyświetlić. Przykładowy kod wyglądałby następująco:
 
-```Python
-# Przykład użycia funkcji print()
-print("Wartość x wynosi:", x)
-
-# Przykład użycia poziomu logowania 
-import logging
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
-logger.debug("Wartość x wynosi: %s", x)
+```python
+x = 10
+y = 5
+print("Wartość x:", x, "Wartość y:", y)
 ```
 
-Kiedy używasz funkcji print(), pamiętaj o umieszczeniu odpowiednich informacji, takich jak wartości zmiennych czy komentarze, aby ułatwić sobie debugowanie w przyszłości.
+Powyższy kod wyświetli następującą informację: `Wartość x: 10 Wartość y: 5`. W ten sposób można wyświetlać nie tylko zmienne, ale także komunikaty, które pomogą nam zrozumieć, co się dzieje w naszym programie.
 
 ## Głębsze zagłębienie
 
-Jeśli chcesz jeszcze głębiej poznać możliwości wyświetlania debugowania w Pythonie, możesz zacząć od zapoznania się z pakietem pdb (Python Debugger). Pozwala on na interaktywne debugowanie kodu, w które możesz się zagłębić i sprawdzić jego działanie krok po kroku.
+Wyświetlanie informacji debuggowania jest nie tylko przydatne w znalezieniu błędów, ale także w analizowaniu działania naszego kodu. Możemy wyświetlić różne wartości z różnych części naszego kodu, aby lepiej zrozumieć, jakie dane przekazywane są między zmiennymi i funkcjami.
 
-Możesz również wykorzystać funkcję assert, aby upewnić się, że Twoje zmienne mają poprawne wartości, a w przeciwnym razie wyświetlić komunikat błędu.
+Dodatkowo, funkcja `print()` posiada wiele przydatnych opcji, takich jak zmiana sposobu wyświetlania danych czy zapisanie informacji do pliku. Możliwości jest wiele, a wyświetlanie informacji debuggowania jest kluczowym elementem w ułatwianiu nam pracy z kodem.
 
-## Zobacz też
+## Zobacz również
 
-- [Dokumentacja funkcji print() w Pythonie](https://docs.python.org/3/library/functions.html#print)
-- [Dokumentacja modułu logging w Pythonie](https://docs.python.org/3/library/logging.html)
-- [Dokumentacja modułu pdb w Pythonie](https://docs.python.org/3/library/pdb.html)
-- [Pomoc w debugowaniu kodu w Pythonie](https://realpython.com/python-debugging-pdb/)
-- [Jak wykorzystać assert do testowania i debugowania kodu w Pythonie](https://www.blog.pythonlibrary.org/2016/09/10/python-201-asserting-your-assumptions/)
+- [Dokumentacja Python o funkcji print()](https://docs.python.org/3/library/functions.html#print)
+- [Przewodnik programisty Python](https://realpython.com/)
+- [Kursy online z Pythonem](https://www.udemy.com/courses/search/?src=ukw&q=python)

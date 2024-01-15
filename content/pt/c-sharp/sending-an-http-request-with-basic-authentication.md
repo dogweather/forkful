@@ -1,5 +1,6 @@
 ---
-title:                "C#: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "C#: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "C#"
 category:             "C#"
@@ -9,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com autenticação básica?
+## Por que
 
-Há várias razões pelas quais você pode querer enviar uma solicitação HTTP com autenticação básica. Por exemplo, pode ser necessário acessar dados protegidos por senha ou realizar ações específicas em um determinado servidor. Independentemente do motivo, é importante saber como fazer isso corretamente para garantir que sua solicitação seja processada corretamente.
+Há muitas razões pelas quais você pode querer enviar uma solicitação HTTP com autenticação básica. Talvez você precise acessar uma API que requer autenticação para obter certos dados. Ou talvez você precise fazer com que seu aplicativo se comunique com um servidor usando um nome de usuário e senha para acesso seguro. De qualquer forma, aprender como enviar uma solicitação HTTP com autenticação básica é essencial para muitos aplicativos e projetos.
 
-## Como fazer
+## Como Fazer
 
-Para enviar uma solicitação HTTP com autenticação básica em C#, você precisará seguir alguns passos simples. Primeiro, você precisará obter os dados de autenticação, como o nome de usuário e a senha do servidor. Em seguida, você pode criar um objeto de solicitação HTTP e adicioná-los aos cabeçalhos da solicitação. Aqui está um exemplo de código que mostra como fazer isso:
+Para começar a enviar uma solicitação HTTP com autenticação básica em C#, você precisará ter acesso à biblioteca System.Net.Http e usar a classe HttpClient para enviar sua solicitação. Aqui está um exemplo de código que você pode usar como ponto de partida:
 
 ```C#
-// Dados de autenticação
-string username = "usuario";
-string password = "senha";
+using System;
+using System.Net.Http;
+using System.Text;
 
-// Cria objeto de solicitação HTTP com URL do servidor
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://meuservidor.com/api/dados");
+class Program
+{
+    static async Task Main()
+    {
+        var username = "seunomeusuario";
+        var password = "suasenha";
+        var url = "https://www.exemplo.com/api";
 
-// Adiciona dados de autenticação ao cabeçalho
-string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password));
-request.Headers.Add("Authorization", "Basic " + credentials);
+        var httpClient = new HttpClient();
 
-// Envia a solicitação e obtém a resposta
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        var clientCredentials = new UTF8Encoding().GetBytes($"{username}:{password}");
+        var base64ClientCredentials = Convert.ToBase64String(clientCredentials);
+        
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
+        request.Headers.Add("Authorization", $"Basic {base64ClientCredentials}");
+
+        var response = await httpClient.SendAsync(request);
+
+        Console.WriteLine($"Resposta: {await response.Content.ReadAsStringAsync()}");
+    }
+}
 ```
 
-Ao enviar a solicitação, você receberá uma resposta do servidor com o status da solicitação e os dados ou resultados solicitados.
+Neste exemplo, você primeiro precisa obter o nome de usuário e senha para a autenticação básica. Em seguida, você precisa criar uma string codificada em base64 dessas informações, que será usada como valor do cabeçalho de autorização em sua solicitação. Ao usar o objeto HttpClient, você pode enviar a solicitação e receber a resposta. Você precisará verificar a documentação da API que está chamando para entender os detalhes específicos da autenticação básica necessária.
 
-## Deep Dive
+## Mergulho Profundo
 
-Além dos passos mencionados acima, é importante entender um pouco mais sobre como as solicitações HTTP com autenticação básica funcionam. Quando você adiciona os dados de autenticação ao cabeçalho da solicitação, está criando um parâmetro de autorização usando o esquema "Basic". Isso significa que os dados de autenticação serão codificados em Base64 antes de serem enviados para o servidor. No entanto, é importante notar que esse processo não é considerado totalmente seguro, pois é possível decodificar os dados de autenticação do cabeçalho.
+Ao enviar uma solicitação HTTP com autenticação básica, é importante entender como esse processo funciona nos bastidores. A autenticação básica é um dos métodos de autenticação mais antigos e simples. Ele envia o nome de usuário e senha codificados em base64 no cabeçalho de autorização da solicitação, usando o formato "Basic [string codificada]". É importante estar ciente de que, embora a base64 seja uma forma de codificar dados para fins de transporte, ela não é considerada uma forma segura de criptografar informações confidenciais, pois pode facilmente ser decodificada. Portanto, antes de usar a autenticação básica em seu aplicativo, certifique-se de pesquisar as melhores práticas para manter suas informações de autenticação seguras.
 
-Outra coisa a ter em mente é que nem todos os servidores e APIs aceitam a autenticação básica. Alguns podem exigir métodos mais seguros, como OAuth ou tokens de acesso. Portanto, é sempre importante verificar as documentações antes de enviar suas solicitações.
+## Veja Também
 
-## Veja também
-
-- [Tutorial sobre como enviar solicitações HTTP em C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.httphttpclient)
-- [Documentação de autenticação básica em servidores IIS](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/basicAuthentication)
-- [Tutorial sobre autenticação de API em C#](https://www.c-sharpcorner.com/article/authentication-using-web-api/)
-
-Se você quiser aprender mais sobre o uso de autenticação básica em solicitações HTTP em C#, recomendamos que você confira esses recursos para obter mais informações e exemplos práticos. Boas codificações! 
+- [Documentação oficial do HttpClient em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Guia de autenticação básica no HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [Artigo sobre autenticação em APIs REST em C#](https://www.researchgate.net/publication/331104733_Autenticacao_em_APIs_REST_utilizando_o_framework_RESTSharp)

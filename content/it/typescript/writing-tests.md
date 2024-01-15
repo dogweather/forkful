@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Scrivere test"
+title:                "Scrivere test"
+html_title:           "TypeScript: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in TypeScript?
+## Perché
 
-Scrivere test è una pratica fondamentale per garantire la qualità e la robustezza del nostro codice TypeScript. I test ci permettono di individuare errori e bug nel nostro codice in modo efficiente e di correggerli prima che possano causare problemi nella produzione.
+Scrivere test è un'attività fondamentale per garantire la qualità del codice. I test ci permettono di individuare e risolvere errori in modo più efficiente, rendendo il nostro codice più affidabile e stabile.
 
-## Come scrivere test in TypeScript
+## Come
 
-Per scrivere test in TypeScript, possiamo utilizzare il framework di testing Jest. Iniziamo dall'installarlo tramite npm:
-
-```TypeScript
-npm install jest --save-dev
-```
-
-Una volta installato, possiamo creare il nostro primo test. Supponiamo di avere una semplice funzione ```add``` che accetta due numeri e restituisce la loro somma. Possiamo testarla in questo modo:
+Per iniziare a scrivere test in TypeScript, è necessario utilizzare un framework specifico, come ad esempio Jest o Mocha.
 
 ```TypeScript
-test("aggiunge correttamente due numeri", () => {
-  expect(add(2, 3)).toBe(5);
+import { expect } from 'chai';
+import { calculate, Order } from './calculator';
+
+describe('Calcolatore', () => {
+  it('Dovrebbe restituire il totale delle spese', () => {
+    const ordine: Order = {
+      prodotto: 'T-shirt',
+      quantità: 2,
+      prezzo: 25
+    };
+    const totale = calculate(ordine);
+    expect(totale).to.be.equal(50);
+  });
 });
+
 ```
 
-Qui abbiamo definito un test che verifica se la somma di 2 e 3 è effettivamente uguale a 5. L'output dovrebbe essere "Test completato con successo" se tutto è corretto.
+Nell'esempio sopra utilizziamo il framework di testing Mocha e la libreria di asserzioni Chai per testare una funzione di calcolo delle spese di un ordine. Creiamo un oggetto ordine con un prodotto, una quantità e un prezzo e ci aspettiamo che la funzione di calcolo restituisca il totale corretto.
 
-## Approfondimento sui test in TypeScript
+## Deep Dive
 
-Scrivere test significa creare degli scenari testuali per il nostro codice, verificando che i risultati corrispondano alle nostre aspettative. Questo ci aiuta a individuare possibili errori e a garantire che il nostro codice funzioni correttamente in diverse situazioni.
+Scrivere test efficaci richiede una buona pianificazione e una comprensione approfondita del codice. È importante scrivere test per coprire diversi scenari e casi limite, in modo da garantire che il codice funzioni correttamente in ogni situazione.
 
-Un altro aspetto importante dei test è la loro capacità di collegare i moduli del nostro progetto. In questo modo possiamo individuare eventuali problemi di dipendenze o di importazione di moduli errati.
-
-Inoltre, i test ci permettono di mantenere il codice pulito e ben strutturato, dividendo le funzionalità in moduli e testandoli separatamente. Ciò rende il nostro codice più leggibile e facile da mantenere nel lungo termine.
-
-Infine, scrivere test ci permette di avere più fiducia nel nostro codice e nei cambiamenti che apportiamo ad esso nel tempo. Possiamo eseguire i test in modo automatico durante lo sviluppo e prima del rilascio, garantendo così che il nostro codice funzioni come previsto.
+Inoltre, il concetto di "test-driven development" (TDD) può essere utile per scrivere codice di qualità fin dall'inizio. Questo approccio prevede di scrivere i test prima del codice, in modo da avere un'idea chiara degli obiettivi e dei risultati attesi.
 
 ## Vedi anche
-- [La documentazione ufficiale di Jest](https://jestjs.io/docs/getting-started)
-- [Un tutorial su come scrivere test in TypeScript](https://blog.logrocket.com/how-to-write-tests-for-typescript/)
-- [Un video sul significato e l'importanza dei test nel software development](https://www.youtube.com/watch?v=TWBDa5dqrl8)
+
+- [Documentazione di Jest](https://jestjs.io/docs/en/getting-started)
+- [Documentazione di Mocha](https://mochajs.org/)
+- [Tutorial di test-driven development con TypeScript](https://medium.com/@joejamesdev/understanding-typescript-test-driven-development-b01318ebe2bd)

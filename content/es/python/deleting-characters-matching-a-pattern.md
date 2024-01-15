@@ -1,6 +1,7 @@
 ---
-title:                "Python: Eliminando caracteres que coinciden con un patrón"
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
+title:                "Borrando caracteres que coinciden con un patrón"
+html_title:           "Python: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,44 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+#¿Por qué borrar caracteres que coinciden con un patrón?
 
-Eliminar caracteres que coinciden con un patrón es una habilidad esencial en la programación de Python para limpiar y procesar datos. Puede ser útil cuando se trabaja con cadenas de texto o cuando se necesita analizar información de una fuente externa.
+Borrar caracteres que coinciden con un patrón puede ser una tarea útil en la programación para limpiar textos o datos, eliminar errores o simplemente para simplificar un código. Al seguir leyendo, aprenderás a realizar esta acción en Python.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Python, se debe utilizar el método `sub()` de la librería `re` (expresiones regulares). Por ejemplo, si queremos eliminar todos los espacios en blanco de una cadena de texto, podemos usar el siguiente código:
+Para eliminar caracteres que coinciden con un patrón en Python, utilizaremos la función `re.sub()` del módulo de expresiones regulares. Primero, importamos el módulo con la siguiente línea de código:
 
-```Python
+```python
 import re
-
-texto = "Hola, esto es una cadena de texto con espacios en blanco"
-nuevo_texto = re.sub(r"\s+", "", texto)
-print(nuevo_texto)
 ```
 
-El resultado de este código será: `Hola,estoesunacadenadetextoconespaciosenblanco`. Aquí, utilizamos la expresión regular `\s+`, que representa uno o más espacios en blanco a ser reemplazados por una cadena vacía `""`.
+A continuación, definiremos la cadena de texto en la que queremos borrar los caracteres y el patrón que queremos que coincida. Por ejemplo, si queremos eliminar todos los espacios y guiones bajos de una cadena, podemos escribir lo siguiente:
 
-También se pueden utilizar expresiones regulares más complejas para eliminar caracteres que coinciden con un patrón específico. Por ejemplo, si queremos eliminar todos los caracteres que no sean letras o números de una cadena de texto, podemos usar el siguiente código:
-
-```Python
-import re
-
-texto = "S0l0 5on pal4bras"
-nuevo_texto = re.sub(r"[^\w\s]", "", texto)
-print(nuevo_texto)
+```python
+texto = "hola - mundo"
+patron = r"[\s_]"
 ```
 
-El resultado de este código será: `S0l0 5on pal4bras`. Aquí, utilizamos la expresión regular `[^\w\s]`, que representa cualquier carácter que no sea una letra, un número o un espacio en blanco, y lo reemplaza por una cadena vacía.
+En este caso, el patrón `[\s_]` coincide con cualquier espacio (representado por `\s`) o guión bajo (representado por `_`). Podemos utilizar la función `re.sub()` para reemplazar todas las coincidencias con una cadena vacía:
+
+```python
+resultado = re.sub(patron, "", texto)
+print(resultado)
+```
+
+El resultado sería: `holamundo`.
 
 ## Profundizando
 
-Las expresiones regulares son una herramienta poderosa y versátil en Python para trabajar con cadenas de texto. Se pueden utilizar para buscar, reemplazar o eliminar patrones específicos en una cadena de texto de manera eficiente.
+La función `re.sub()` también ofrece la posibilidad de utilizar una función como argumento en lugar de una cadena. Esta función se aplica a cada coincidencia y su valor de retorno se utiliza como reemplazo. Por ejemplo, si queremos convertir todos los caracteres en mayúsculas en una cadena, podemos utilizar la función `upper()` de la siguiente manera:
 
-Para aprender más sobre expresiones regulares y su uso en Python, se puede consultar la documentación oficial de la librería `re` (https://docs.python.org/es/3/library/re.html) o seguir tutoriales y ejemplos prácticos en línea.
+```python
+texto = "hola mundo"
+patron = r"[a-z]"
+resultado = re.sub(patron, lambda x: x.group(0).upper(), texto)
+print(resultado)
+```
+
+El resultado sería: `HOLA MUNDO`.
+
+Además, también podemos utilizar grupos de captura en el patrón para guardar las coincidencias y utilizarlas en la función de reemplazo. Por ejemplo, si queremos reemplazar todas las letras "a" seguidas de un número con un punto, podemos hacer lo siguiente:
+
+```python
+texto = "a1, a2, a3, a4"
+patron = r"a(\d)"
+resultado = re.sub(patron, lambda x: "." + x.group(1), texto)
+print(resultado)
+```
+
+El resultado sería: `.1, .2, .3, .4`.
 
 ## Ver también
 
-- La documentación oficial de la librería `re` (https://docs.python.org/es/3/library/re.html)
-- Tutorial de expresiones regulares de Real Python (https://realpython.com/regex-python/)
-- Video tutorial sobre expresiones regulares de Corey Schafer (https://youtu.be/K8L6KVGG-7o)
+- [Documentación de `re` en Python](https://docs.python.org/es/3/library/re.html)
+- [Tutorial sobre expresiones regulares en Python](https://realpython.com/regex-python/)
+- [Módulo `re` para expresiones regulares en Python (en inglés)](https://docs.python.org/3/library/re.html)

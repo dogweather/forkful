@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Bash: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,43 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie losowych liczb jest nieodłączną częścią wielu programów i skryptów Bash. Dzięki temu funkcjonalności możemy uzyskać różnorodność i zaskoczenie w naszych działaniach. Czytaj dalej, aby dowiedzieć się, jak to zrobić!
+Generowanie losowych liczb w Bashu może być przydatne w wielu różnych scenariuszach, od testowania aplikacji po gry i symulacje. Może to również być wygodne wtedy, gdy potrzebujemy szybko wylosować jakieś dane bez konieczności tworzenia specjalnego skryptu.
 
-## Jak
+## Jak to zrobić
 
-Istnieje kilka sposobów na generowanie losowych liczb w Bash. Jednym z najprostszych jest użycie polecenia `shuf` wraz z opcją `-i` oraz podaniem zakresu liczb, z którego chcemy wylosować. Przykładowo:
+### Metoda 1: Korzystając z wbudowanego polecenia `shuf`
 
-```Bash
-shuf -i 1-10
-```
-
-Wygeneruje losową liczbę z przedziału od 1 do 10. Możemy również użyć polecenia `jot`, które pozwala na wygenerowanie większej ilości losowych liczb, na przykład:
+Polecenie `shuf` jest częścią standardowych narzędzi Bash i pozwala na losowanie liczb z podanego zakresu. Musimy podać tylko minimalną i maksymalną wartość oraz liczbę liczb do wylosowania. Oto przykład:
 
 ```Bash
-jot -r 5 1-100
+shuf -i 1-100 -n 5
 ```
 
-Wygeneruje 5 losowych liczb z przedziału od 1 do 100.
+Wygeneruje pięć losowych liczb z zakresu od 1 do 100.
 
-Inną metodą jest użycie pętli `for` w połączeniu z wyrzuceniem wygenerowanych liczb do pliku, na przykład:
+### Metoda 2: Używając wbudowanej zmiennej `$RANDOM`
+
+Bash zawiera wbudowaną zmienną `$RANDOM`, która przechowuje losową liczbę całkowitą z zakresu od 0 do 32767. Możemy wykorzystać tę zmienną do wygenerowania losowych liczb w naszym skrypcie. Oto przykład:
 
 ```Bash
-for i in {1..10}; do
-  echo $RANDOM >> numbers.txt
-done
+echo $((RANDOM%100))
 ```
 
-Spowoduje wygenerowanie 10 losowych liczb i zapisanie ich do pliku numbers.txt. Istnieje wiele innych sposobów na generowanie losowych liczb w Bash, więc warto zobaczyć, który z nich będzie najbardziej odpowiedni dla naszego konkretnego przypadku.
+Powtarzając to polecenie, będziemy otrzymywać różne losowe liczby z zakresu od 0 do 99.
 
 ## Deep Dive
 
-Warto wspomnieć, że użycie polecenia `RANDOM` w Bash również pozwala na generowanie losowych liczb, jednakże jest to bardziej ograniczone i działa tylko w przedziale od 0 do 32767. Istnieją również bardziej zaawansowane metody, takie jak użycie funkcji `mktemp` lub wykorzystanie połączenia zewnętrznych bibliotek do generowania liczb pseudolosowych.
+Aby uzyskać większą elastyczność w generowaniu losowych liczb, możemy skorzystać z zewnętrznych bibliotek lub narzędzi, takich jak `awk` lub `sed`. Możemy również wykorzystać wyjście z innych poleceń do generowania liczb, na przykład:
 
-## Zobacz również
+```Bash
+echo $(openssl rand -hex 4)
+```
 
-- [Kurs Bash w języku polskim](https://pl.wikibooks.org/wiki/Bash)
-- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
-- [Przewodnik po poleceniu `shuf` w Bash](https://www.tutorialspoint.com/unix_commands/shuf.htm)
-- [Więcej informacji o generowaniu losowych liczb w Bash](https://www.cyberciti.biz/faq/unix-linux-generating-random-passwords/)
+Spowoduje to wygenerowanie losowego kodu szesnastkowego o długości 4 znaków.
 
-Dzięki tym informacjom, generowanie losowych liczb w Bash powinno już nie być dla Ciebie problemem! Sprawdź również inne sposoby, aby dostosować wygenerowane liczby do swoich potrzeb i śmiało wykorzystuj je w swoich skryptach i programach.
+## Zobacz też
+
+- Dokumentacja polecenia `shuf`: https://linux.die.net/man/1/shuf
+- Dokumentacja wbudowanej zmiennej `$RANDOM`: https://linux.die.net/man/1/bash
+- Poradnik o generowaniu losowych liczb w Bashu: https://www.shell-tips.com/bash/random-numbers/

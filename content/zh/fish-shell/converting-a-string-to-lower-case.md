@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Fish Shell: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 为什么
-在编程中，有时候我们需要将字符串转换为小写。这可以让我们更容易地比较和操作字符串，尤其是在处理用户输入时。使用Fish Shell来转换字符串到小写可以帮助我们更加高效地完成这个任务。
+有时候，我们需要把字符串转换成小写形式。这可能是因为字符串是由用户输入的，我们希望保持统一的格式，或者是因为跟其他字符串进行比较时需要忽略大小写。
 
-## 如何做
-首先，我们需要定义一个字符串变量。假设我们的字符串是"Hello World"，现在我们想将它转换为小写。以下是Fish Shell中的代码示例：
-
-```Fish Shell
-set my_string "Hello World"
-echo $my_string | tr [:upper:] [:lower:]
+## 如何做到
+```Fish Shell```里有内置的函数可以帮助我们把字符串转换成小写形式。让我们来看一个简单的示例：
 ```
+set str "Hello World"
+echo $str  # 输出 "Hello World"
 
-运行这段代码，我们将看到输出为"hello world"。让我们来解释一下这段代码。首先，使用`set`命令来定义一个名为`my_string`的变量，并将字符串"Hello World"赋值给它。然后使用`echo`命令来输出我们的字符串，并通过管道将输出传递给`tr`命令。`tr`命令是一个字符串转换工具，可以将一个字符集转换为另一个字符集。在这里，我们使用了`[:upper:]`和`[:lower:]`字符集来将大写字母转换为小写字母。最后，我们可以看到输出已经成功地被转换为小写。
-
-## 深入探讨
-实际上，我们可以使用多种方法来将字符串转换为小写。除了通过`tr`命令来转换字符集，我们也可以使用Fish Shell中的内置函数`string tolower`来达到同样的效果。以下是另一种方法的代码示例：
-
-```Fish Shell
-set my_string "Hello World"
-set my_lower_string (string tolower $my_string)
-echo $my_lower_string
+# 使用 tolower 函数把字符串转换为小写
+set lower_str (tolower $str)
+echo $lower_str  # 输出 "hello world"
 ```
+我们可以看到，使用 ```tolower``` 函数可以轻松地把字符串转换成小写形式。另外，如果我们需要在一条命令中同时转换多个字符串，可以使用管道符号 ```|``` 连接多个 ```tolower``` 函数。
 
-在这个例子中，我们使用`string tolower`函数来将`my_string`变量中的内容转换为小写，并将结果赋值给一个新的变量`my_lower_string`。最后，我们可以看到输出同样为"hello world"。
-
-最后值得一提的是，不管是使用`tr`命令还是`string tolower`函数，它们都可以接受任意类型的输入，而不仅仅是字符串。这意味着我们也可以将其他数据类型如数字或布尔值转换为小写。
+## 深入了解
+如果你对于字符串的转换操作感兴趣，可以进一步了解内置函数 ```tolower``` 的工作原理。```tolower``` 函数实际上是使用了字符集转换工具 ```iconv``` 来实现字符串的转换。字符集是一种将字符编码为数字的方式，并且不同的字符集可能对应着不同的编码规则。通过转换字符集，字符串中的大写字母会被转换成相应的小写字母。
 
 ## 参考链接
-- Fish Shell官方网站：https://fishshell.com/
-- `tr`命令手册：https://fishshell.com/docs/current/cmds/tr.html
-- `string tolower`函数手册：https://fishshell.com/docs/current/cmds/string.html#string-lower
+- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
+- [iconv 文档](http://www.gnu.org/software/libiconv/)
+- [字符集和编码简介](https://www.jianshu.com/p/401b6199d1a3)
+
+## 参见

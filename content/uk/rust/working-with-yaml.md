@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Робота з yaml"
+title:                "Робота з yaml"
+html_title:           "Rust: Робота з yaml"
 simple_title:         "Робота з yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,52 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Також, чому
-Робота з YAML має багато практичних застосувань у програмуванні на Rust. Вона дозволяє зберігати дані у текстовому форматі, що полегшує комунікацію і обмін даними між різними програмами.
+## Чому
 
-## Як
+ЯМЛ (YAML) - це формат, що дозволяє представляти дані в зручному для людей форматі, що одночасно зберігає структуру. Використовуючи Раст (Rust), ви можете легко зчитати та зберегти дані у форматі ЯМЛ, що робить його корисним для збереження конфігураційних файлів, налаштувань програм та багатьох інших сценаріїв.
+
+## Як це зробити
+
+Щоб використати ЯМЛ у своїй програмі, спочатку необхідно додати залежність у файл Cargo.toml:
+
 ```Rust
-use std::fs::File;
-use std::io::Write;
+[dependencies]
+yaml = "0.6.3"
+```
 
-fn main() {
-    // Створення нового YAML файлу
-    let mut file = File::create("persons.yaml").unwrap();
+Далі, необхідно імпортувати бібліотеку `yaml` у свою програму:
 
-    // Створення даних для запису у файл
-    let persons = vec![
-        ("John Smith", 24),
-        ("Anna Johnson", 30),
-        ("Michael Williams", 42),
-    ];
+```Rust
+extern crate yaml;
+use yaml::{YamlLoader, Yaml};
+```
 
-    // Запис даних у YAML формат у файл
-    write!(file, "---
-persons:
-")?;
-    for (name, age) in persons {
-        write!(file, "    - name: {}
-      age: {}
-", name, age)?;
-    }
+І, нарешті, можна зчитати та зберегти ЯМЛ дані:
+
+```Rust
+let data = "
+students:
+  - name: John
+    age: 19
+  - name: Jane
+    age: 20
+";
+
+let yaml_data = YamlLoader::load_from_str(data).unwrap();
+let students = yaml_data[0]["students"].clone();
+
+// Записати дані у форматі ЯМЛ
+let yaml = Yaml::String("Hello, World!".to_string());
+yaml.write_to_file("output.yml").unwrap();
+
+// Вивести дані
+println!("Студенти:");
+for student in students {
+  let name = student["name"].as_str().unwrap();
+  let age = student["age"].as_i64().unwrap();
+
+  println!("{} - {} років", name, age);
 }
 ```
-В результаті виконання програми буде створено файл "persons.yaml" з наступним вмістом:
+
+В результаті отримаємо наступний вивід:
+
 ```
----
-persons:
-    - name: John Smith
-      age: 24
-    - name: Anna Johnson
-      age: 30
-    - name: Michael Williams
-      age: 42
+Студенти:
+John - 19 років
+Jane - 20 років
 ```
 
-## Глибоке дослідження
-При роботі з YAML важливо дотримуватися правильного формату. Часто виникають проблеми зі збереженням спеціальних символів, таких як подвійні лапки або двокрапки. Для уникнення цих проблем, корисно використовувати бібліотеки, які вже враховують ці випадки, наприклад [serde-yaml](https://github.com/dtolnay/serde-yaml).
+## Поглиблене вивчення
+
+ЯМЛ має багато особливостей та можливостей, які зроблять роботу з цим форматом ще зручнішою. Наприклад, ви можете використовувати табличний вигляд для представлення даних, а також вкладені структури та масиви для складних структур даних. Ви можете дізнатися більше про ЯМЛ та його можливості на [офіційному сайті](https://yaml.org/).
 
 ## Дивіться також
-- [Програмування на Rust: початковий посібник](http://uk.rust-lang.org/learn/get-started)
-- [Офіційна документація по роботі з YAML у Rust](https://docs.rs/serde_yaml/)
-- [Стаття про структури даних у YAML](https://yaml.org/spec/1.2/spec.html#Data%20Structures)
+
+- [Офіційний сайт ЯМЛ](https://yaml.org/)
+- [Документація бібліотеки yaml для Раст](https://docs.rs/yaml/0.6.3/yaml/)

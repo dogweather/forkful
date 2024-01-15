@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Vianmääritystulostus"
-simple_title:         "Vianmääritystulostus"
+title:                "Virheentarkistuslohkojen tulostaminen"
+html_title:           "Haskell: Virheentarkistuslohkojen tulostaminen"
+simple_title:         "Virheentarkistuslohkojen tulostaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,29 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi tulostamme debug-ilmoituksia?
+## Miksi
 
-Joskus koodia kirjoittaessa tai korjatessa törmäämme ongelmiin, joita on vaikea havaita vain koodia lukemalla. Tällöin debug-ilmoitusten tulostaminen voi auttaa meitä selvittämään mistä ongelma johtuu ja missä kohdassa koodia se tapahtuu.
+Debug-tulosteiden tulostaminen on tärkeä osa koodauksen prosessia, jolla voit helposti löytää virheitä ja ongelmia koodissasi. Se säästää aikaa ja vaivaa, ja auttaa sinua kehittämään tehokkaampia ja virheettömiä ohjelmia.
 
-## Miten: Näin tulostat debug-ilmoituksia Haskellissa
-
-Haskellissa tulostamme debug-ilmoituksia käyttäen `putStrLn` -funktiota. Tämä funktio ottaa parametrinaan merkkijonon, jonka se sitten tulostaa näytölle. Alla on yksinkertainen esimerkki siitä, miten käytämme `putStrLn` -funktiota:
+## Kuinka
 
 ```Haskell
-putStrLn "Tämä on debug-ilmoitus"
+-- Esimerkki debug-tulosteen tulostamisesta
+-- Kayttaen "print" funktiota
+main = do
+  print "Tama on debug-tuloste"
+  print [1, 2, 3]
+
+-- Vastaava tulos:
+-- "Tama on debug-tuloste"
+-- [1, 2, 3]
 ```
 
-Tämän koodin suorittamisen jälkeen näytölle tulostetaan "Tämä on debug-ilmoitus".
+Voit myös käyttää "putStrLn" funktiota tulostamaan merkkijonoja ja "show" funktiota muuntamaan arvoja merkkijonoiksi.
 
-Debug-ilmoituksia tulostettaessa on hyvä antaa jotain hyödyllistä informaatiota, kuten muuttujien arvoja tai mitä koodin osaa suoritetaan. Tämä auttaa meitä hahmottamaan koodin toimintaa ja löytämään mahdollisia ongelmakohtia.
+```Haskell
+-- Debug-tulosteen tulostaminen käyttäen "putStrLn" ja "show" funktioita
+main = do
+  putStrLn "Tama on debug-tuloste"
+  putStrLn (show [1, 2, 3])
 
-## Syvemmälle: Tietoa debug-ilmoitusten tulostamisesta
+-- Vastaava tulos:
+-- "Tama on debug-tuloste"
+-- "[1, 2, 3]"
+```
 
-On tärkeää muistaa, että debug-ilmoitukset ovat hyödyllisiä vain kehitysvaiheessa ja niitä ei tulisi jättää koodiin valmiiden ohjelmien mukana. Liiallinen debug-ilmoitusten tulostaminen voi hidastaa ohjelman suoritusta ja vaikeuttaa koodin lukemista.
+## Syvempi sukellus
 
-Parhaiten debug-ilmoitusten tulostamista varten kannattaa luoda oma funktio, joka hyödyntää `putStrLn` -funktiota ja ottaa parametrinaan ne arvot, joita halutaan tulostaa. Näin koodi pysyy siistinä ja selkeänä.
+Voit myös käyttää "trace" funktiota "Debug.Trace" moduulista tulostamaan debug-viestejä haluamassasi kohdassa koodia.
+
+```Haskell
+-- Debug-tulosteen tulostaminen käyttäen "trace" funktiota
+import Debug.Trace
+
+main = do
+  let x = 10
+  trace "X:n arvo:" (print x)
+
+-- Vastaava tulos:
+-- "X:n arvo:"
+-- 10
+```
+
+Voit myös määrittää oman "trace" funktiosi, jossa voit käyttää haluamiasi merkkejä tai symboleja erottamaan viestejä ja arvoja.
+
+```Haskell
+-- Oma "trace" funktio, jossa käytetään "$" merkkiä erottamaan viesti ja arvo
+trace' :: String -> a -> a
+trace' msg val = trace (msg ++ ": $" ++ show val) val
+
+main = do
+  let x = 10
+  trace' "X" x
+
+-- Vastaava tulos:
+-- "X: $10"
+```
 
 ## Katso myös
 
-- [Haskellin debuggaaminen](https://haskell.org/debugging)
-- [putStrLn dokumentaatio](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:putStrLn)
+- [Haskell Wikibooks: Debugging](https://en.wikibooks.org/wiki/Haskell/Debugging)
+- [Debugging with Haskell's GHCi](http://brandon.si/code/debugging-with-haskells-ghci/)
+- [Haskell Weekly: Debugging with Haskell](https://haskellweekly.news/issue/4.html)

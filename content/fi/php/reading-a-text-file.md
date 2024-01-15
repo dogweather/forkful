@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedoston lukeminen"
+html_title:           "PHP: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,50 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-HelsinkiWeb-ohjelmointi blogi
-
 ## Miksi
 
-Lukemalla tekstitiedostoja on tärkeää taitoa, jota jokaisen PHP-kehittäjän tulisi hallita. Tekstitiedostoihin tallennetaan usein tärkeitä tietoja, kuten käyttäjien syöttämiä tietoja tai sovelluksen konfiguraatiotietoja. Lukemalla näitä tiedostoja voit käyttää ja hyödyntää niiden sisältöä PHP-sovelluksessasi.
+Tekstitiedoston lukeminen on olennainen osa PHP-ohjelmointia, sillä usein haluamme käsitellä ja tallentaa tekstimuotoisia tietoja. Tässä artikkelissa näytämme, miten voit lukea tekstitiedostoja PHP:lla ja miten voit hyödyntää tätä taitoa omassa ohjelmointityössäsi.
 
-## Kuinka
+## Miten tehdä se
 
-Tekstitiedostojen lukeminen PHP:lla on yllättävän helppoa. Voit tehdä sen käyttämällä file_get_contents() -funktiota ja antamalla sille tekstifileen polun parametrina. Tämä funktio palauttaa tiedoston sisällön merkkijono-muodossa, joten voit käsitellä sitä kuten tavallista muuttujaa.
+Lukeminen tekstitiedosto PHP:lla on helppoa käyttäen file_get_contents()-funktiota. Funktio ottaa parametrinaan tiedoston nimen ja palauttaa tiedoston sisällön merkkijonona. Voit tallentaa palautetun merkkijonon muuttujaan ja käyttää sitä edelleen. Katso alla oleva esimerkki:
 
-```
-PHP $file_content = file_get_contents("/polku/tekstitiedosto.txt");
-echo $file_content; // tulostaa tiedoston sisällön
-```
-
-Voit myös käyttää file() -funktiota, joka luo tiedoston sisällöstä taulukon, jossa jokainen rivi on oma alkionsa.
-
-```
-PHP $file_lines = file("/polku/tekstitiedosto.txt");
-foreach ($file_lines as $line) {
-  echo $line; // tulostaa jokaisen rivin erikseen
-}
+```PHP
+$tiedosto = file_get_contents("tiedostonimi.txt");
+echo $tiedosto;
 ```
 
-## Syväsukellus
+Tällä koodilla voit lukea tiedoston ja tulostaa sen sisällön näytölle. Voit myös käyttää muita PHP:n tiedostonkäsittelyfunktioita, kuten fopen() ja fread(), tarkempien lukemismahdollisuuksien saavuttamiseksi.
 
-On tärkeää huomata, että file_get_contents() ja file() -funktiot lukevat tiedoston sisällön kokonaan muistiin ennen kuin palaavat sen arvon. Tämä voi olla ongelmallista suurille tiedostoille, jotka saattavat aiheuttaa suorituskykyongelmia tai jopa aiheuttaa sivuston kaatumisen. Tässä tapauksessa suosittelemme käyttämään fopen() ja fread() -funktioita, jotka lukevat tiedoston sisällön pienissä paloissa kerrallaan.
+## Syventävää tietoa
 
-```
-PHP
-$handle = fopen("/polku/tekstitiedosto.txt", "r");
-if ($handle) {
-  while (($line = fgets($handle)) !== false) {
-    echo $line; // tulostaa jokaisen rivin erikseen
-  }
-  fclose($handle);
-} else {
-  echo "Tiedoston avaaminen epäonnistui.";
-}
-```
+Tiedoston lukeminen PHP:lla onnistuu myös eri tiedostomuodoissa, kuten CSV ja JSON. Voit käyttää PHP:n sisäänrakennettuja funktioita, kuten fgetcsv() ja json_decode(), näiden tiedostotyyppien käsittelyyn. Lisäksi voit käyttää erilaisia hakutoimintoja tiedoston sisällön tarkasteluun.
 
 ## Katso myös
 
-- [PHP:n virallinen tiedostojen käsittely -dokumentaatio](https://www.php.net/manual/en/book.filesystem.php)
-- [Tekstitiedostojen kirjoittaminen PHP:lla](https://www.php.net/manual/en/function.file-put-contents.php)
-- [PHP-ohjelmoinnin perusteet](https://www.w3schools.com/php)
-- [PHP-foorumit ja yhteisöt](https://www.php.net/community)
+- PHP:n virallinen dokumentaatio tiedostonkäsittelyfunktioista: https://www.php.net/manual/en/ref.filesystem.php
+- W3Schools opetusohjelma tiedoston lukemisesta PHP:lla: https://www.w3schools.com/php/php_file.asp
+- PHP-käyttäjätuen keskusteluketju tiedoston lukemisesta: https://stackoverflow.com/questions/9222973/how-to-read-a-file-line-by-line-to-an-array-in-php

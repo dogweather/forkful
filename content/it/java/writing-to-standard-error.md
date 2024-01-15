@@ -1,6 +1,7 @@
 ---
-title:                "Java: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su errore standard"
+html_title:           "Java: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,48 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere a standard error è importante
+## Perché scrivere su standard error
 
-Scrivere a standard error è una parte essenziale della programmazione in Java. Sebbene in genere si utilizzi la funzione standard output per scrivere dati, a volte è necessario scrivere a standard error per catturare errori o problemi durante l'esecuzione del codice.
+Scrivere su standard error è un'importante pratica di debugging per gli sviluppatori Java. Quando si scrive su standard error, si possono identificare e risolvere più facilmente eventuali errori nel codice, migliorando la qualità e l'affidabilità delle proprie applicazioni.
 
-## Come scrivere a standard error in Java
+## Come scrivere su standard error
 
-Per scrivere a standard error in Java, è necessario utilizzare la classe `System` e il metodo `err` seguito dal metodo `println` o `printf` per stampare il contenuto desiderato. Ecco un esempio di codice:
-
+Per scrivere su standard error in Java, è possibile utilizzare il metodo "System.err.println()", come mostrato nell'esempio seguente:
 ```Java
-// Importa la classe System nel tuo codice
-import java.lang.System;
-
-// Utilizza il metodo err per scrivere a standard error
 System.err.println("Questo è un messaggio di errore.");
 ```
+Quando viene eseguito, questo codice stamperà il messaggio di errore sulla console di errore. È importante notare che il metodo "System.err.println()" è diverso dal metodo "System.out.println()", che stampa invece il messaggio sulla console standard.
 
-L'output di questo codice sarà:
+## Approfondimento
 
-```
-Questo è un messaggio di errore.
-```
-
-Puoi anche utilizzare il metodo `printf` per formattare l'output a standard error. Ad esempio:
-
-```Java
-System.err.printf("Il risultato di %d + %d è %d", 1, 2, 3);
-```
-
-L'output sarà:
-
-```
-Il risultato di 1 + 2 è 3
-```
-
-## Approfondimento su scrivere a standard error in Java
-
-Scrivere a standard error è utile quando si vogliono catturare errori o problemi durante l'esecuzione del codice. Inoltre, scrivere a standard error è un modo per differenziare i messaggi di errore dai normali output, rendendo più facile per gli sviluppatori individuare e risolvere eventuali problemi.
-
-È importante notare che quando si scrive a standard error, il testo viene stampato immediatamente e senza alcun buffer, il che significa che i messaggi verranno visualizzati in ordine con cui sono stati emessi. Ciò può essere utile per il debugging, ma può anche rendere l'output meno leggibile.
+Scrivere su standard error è particolarmente utile quando si lavora con applicazioni complesse e di grandi dimensioni, poiché consente di individuare rapidamente e risolvere gli errori senza dover spulciare il codice. Inoltre, è possibile utilizzare il metodo "System.err.println()" anche per stampare informazioni di debug durante lo sviluppo di un'applicazione.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Java su System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
-- [Articolo di Baeldung su System.out e System.err](https://www.baeldung.com/java-system-out-println-vs-system-err-println)
-- [Esempi pratici di scrittura a standard error in Java](https://www.educba.com/java-system-err/)
+- Documentazione ufficiale Java per il metodo System.err.println() (https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- Tutorial di Java sull'uso di standard error per il debugging (https://www.baeldung.com/java-system-err-vs-system-out)

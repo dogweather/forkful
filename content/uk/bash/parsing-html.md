@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Аналізування html"
-simple_title:         "Аналізування html"
+title:                "Аналіз html"
+html_title:           "Bash: Аналіз html"
+simple_title:         "Аналіз html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,45 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Розбір HTML - це процес, який дозволяє витягувати специфічну інформацію з веб-сторінок. Це може бути корисно для отримання даних зі сторінок, які не мають простого API або для веб-скрапінгу.
+Парсинг HTML є важливою навичкою для програмістів, які працюють зі веб-додатками. Він дозволяє отримувати та обробляти дані з веб-сторінок, що дозволяє робити різноманітні речі, наприклад, створювати збірники даних або автоматично заповнювати форми.
 
-## Як це зробити
+## Як
 
-Для розбирання HTML у Bash використовуються утиліти, такі як `grep` та `sed`. Нижче наведений приклад коду, який витягує всі посилання на зображення з веб-сторінки:
-
+Для початку, необхідно імпортувати бібліотеку "BeautifulSoup", що дозволяє просто та ефективно парсити HTML код. Наступним кроком буде завантаження веб-сторінки, з якої ми хочемо отримати дані. Наприклад, ми хочемо отримати заголовок статті з веб-сторінки "example.com":
 ```Bash
-#!/bin/bash
+from bs4 import BeautifulSoup
+import requests
 
-# Виконати запит і зберегти в результат у змінну
-res=$(curl -sS https://example.com)
+r = requests.get("http://example.com")
+soup = BeautifulSoup(r.content, 'html.parser')
 
-# Використати grep для видалення всіх рядків, що не містять посилання на зображення
-imgs=($(echo "$res" | grep -Eo "https?://[^>\"]+?\.(jpg|png|gif)"))
-
-# Вивести результат
-for img in "${imgs[@]}"; do
-  echo "$img"
-done
+header = soup.find('h1').get_text()
 ```
 
-Вихідний код буде виглядати приблизно так:
-
+У даному прикладі ми використовуємо метод "find" для пошуку тегу "h1" та метод "get_text", щоб отримати текст в цьому тегу. Ми можемо також отримати всі посилання на сторінці:
+```Bash
+links = soup.find_all('a')
+for link in links:
+  print(link.get('href'))
 ```
-https://example.com/img1.jpg
-https://example.com/img2.png
-https://example.com/img3.gif
-```
 
-Цей приклад демонструє, як легко можна використовувати утиліти для розбирання HTML у Bash.
+## Глибоке погруження
 
-## Глибока затонув
+Парсинг HTML дозволяє отримувати не лише текст та посилання, але й інші дані, такі як таблиці, зображення та форми. Для цього можна використовувати різні методи "find" та "find_all" для пошуку необхідних елементів на сторінці. Також існують бібліотеки, які дозволяють помічати дані на сторінках та отримувати їх у зручному вигляді, наприклад, "Scrapy".
 
-Утиліти `grep` та `sed` можуть виконувати багато різних завдань з розбирання HTML. Наприклад, ви можете витягувати певні теги чи атрибути з веб-сторінки. Також є спеціальні утиліти, такі як `html2text`, які дозволяють конвертувати HTML у звичайний текст для подальшої обробки.
+## Дивись також
 
-Є також більш потужні інструменти для розбирання HTML, такі як `awk` та `perl`, які дозволяють більш гнучко виконувати завдання. Але `grep` та `sed` будуть достатньо для більшості простих задач.
-
-## Дивіться також
-
-- [Розбирання HTML за допомогою Bash](https://www.linuxjournal.com/content/bash-html-processing-made-easy)
-- [HTML утиліти для Bash](https://www.scriptinglibrary.com/html-utilities-for-bash/) 
-- [Використання grep та sed для розбирання HTML](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+- [BeautifulSoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Scrapy documentation](https://docs.scrapy.org/en/latest/)
+- [Python requests library documentation](https://requests.readthedocs.io/en/latest/)

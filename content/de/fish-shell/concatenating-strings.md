@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Verkettung von Zeichenfolgen"
-simple_title:         "Verkettung von Zeichenfolgen"
+title:                "Zusammenfügen von Zeichenketten"
+html_title:           "Fish Shell: Zusammenfügen von Zeichenketten"
+simple_title:         "Zusammenfügen von Zeichenketten"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Eine der Grundfunktionen der Programmierung ist die Möglichkeit, Strings zu kombinieren, um damit komplexe Ausgaben zu erstellen. Das kann hilfreich sein, um zum Beispiel Benutzereingaben mit statischen Texten zu verbinden oder Daten aus verschiedenen Variablen zu kombinieren.
+Es gibt viele Gründe, warum man sich mit der Verkettung von Strings in der Fish Shell beschäftigen sollte. Zum einen ermöglicht es, komplexe Texte oder Befehle aus verschiedenen Variablen zusammenzusetzen, zum anderen kann es die Lesbarkeit und Wiederverwendbarkeit des Codes verbessern.
 
-## Wie geht das?
+# Wie geht's?
 
-Die Fish Shell bietet eine einfache Möglichkeit, Strings mit dem Befehl `string join` zu verbinden. Dabei wird der Befehl mit zwei Argumenten aufgerufen: dem Trennzeichen und einer Liste von Strings, die kombiniert werden sollen. Hier ist ein Beispiel:
-
-```Fish Shell
-string join " " "Hallo" "welt!" # Ausgabe: Hallo welt!
-```
-
-Wie man sehen kann, wird das Trennzeichen, hier ein Leerzeichen, zwischen den einzelnen Strings platziert. Man kann auch mehr als zwei Strings miteinander verbinden und verschiedene Trennzeichen verwenden. Hier ist ein weiteres Beispiel:
+Um Strings in der Fish Shell zu verketten, wird der Punkt-Operator verwendet. Dieser verbindet zwei oder mehr Strings miteinander. Hier ein Beispiel:
 
 ```Fish Shell
-string join " - " "Ich" "bin" "eine" "Fish" "Shell" # Ausgabe: Ich - bin - eine - Fish - Shell
+set salutation "Hallo"
+set name "Anna"
+set greeting $salutation", "$name"!"
 ```
 
-## Tiefergehende Informationen
-
-Der Befehl `string join` kann auch noch mehr als nur die Verbindung von Strings. Man kann zum Beispiel auch Arrays verwenden, um damit dynamisch Strings zu verbinden. Hier ein Beispiel:
+Der obige Code weist dem String "greeting" den Wert "Hallo, Anna!" zu, indem er den Inhalt der Variablen "salutation" und "name" miteinander verbindet. Die Verkettung von Strings ist jedoch nicht auf Variablen beschränkt, sondern kann auch direkt in Befehlen verwendet werden:
 
 ```Fish Shell
-set fruits "Apfel" "Birne" "Banane"
-string join " und " $fruits # Ausgabe: Apfel und Birne und Banane
+echo "Der Benutzer "$USER" ist eingeloggt."
 ```
 
-Außerdem bietet die Fish Shell auch eine spezielle Syntax, um Strings zu kombinieren: den `..` Operator. Dieser funktioniert ähnlich wie `string join`, ist aber kürzer und kann auch andere Arten von Sequenzen miteinander verbinden. Hier ein Beispiel:
+Dieser Befehl gibt eine Nachricht aus, in der der Name des Benutzers, der gerade eingeloggt ist, angezeigt wird. Beachte, dass zwischen den einzelnen Teilen des Satzes Leerzeichen eingefügt werden müssen, da der Punkt-Operator nur Strings miteinander verbindet, aber keine zusätzlichen Leerzeichen hinzufügt.
+
+# Tiefer in die Materie eintauchen
+
+Man kann nicht nur einzelne Wörter oder Sätze verketten, sondern auch ganze Listen von Strings. Dazu verwendet man den Befehl "string join", der ein Trennzeichen als zusätzlichen Parameter akzeptiert. Hier ein Beispiel:
 
 ```Fish Shell
-echo "Zahl: " 1..10 # Ausgabe: Zahl: 1 2 3 4 5 6 7 8 9 10
+set colors "rot blau grün gelb"
+string join ", " $colors
 ```
 
-Eine detaillierte Beschreibung aller Möglichkeiten und Syntaxen gibt es in der offiziellen Fish Shell Dokumentation.
+Dies gibt den String "rot, blau, grün, gelb" aus, indem die einzelnen Wörter der Variablen "colors" mit dem Trennzeichen ", " verbunden werden.
 
-## Siehe auch
+Weitere Informationen und Beispiele zur Verkettung von Strings in der Fish Shell findest du in der offiziellen Dokumentation unter [https://fishshell.com/docs/current/tutorial.html#tut_string_concatenation](https://fishshell.com/docs/current/tutorial.html#tut_string_concatenation).
 
-- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current
-- Einführung in die Fish Shell: https://opensource.com/article/18/5/how-learn-fish-shell
-- Interaktives Tutorial für Fish Shell: https://rootnroll.com/d/fish-shell/
-- Weitere Tipps und Tricks für die Fish Shell: https://www.example.com/
+# Siehe auch
+
+- [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
+- [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)

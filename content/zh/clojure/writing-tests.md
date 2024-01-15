@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 编写测试"
+title:                "编写测试"
+html_title:           "Clojure: 编写测试"
 simple_title:         "编写测试"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要写测试(Test)？
+## 为什么
 
-在软件开发过程中，写测试是非常重要的一步。它可以帮助我们发现代码中的错误，确保代码的质量和稳定性。通过编写测试，我们可以更加自信地修改和重构代码，从而提高整体的生产效率。
+在写代码时，测试是一个非常重要的步骤。它可以帮助我们验证代码的正确性，提高代码的质量，减少程序中的错误。通过写测试，我们可以更加自信地修改代码，同时也能够帮助我们构建可靠的软件系统。
 
-## 如何编写测试？
+## 如何做
 
-编写测试有几个常用的方法。首先，我们可以使用Clojure中内置的测试框架`clojure.test`来编写测试。下面是一个简单的例子：
+使用Clojure编写测试非常简单，下面是一个简单的示例：
 
 ```Clojure
-(ns my-project.test
-  (:require [clojure.test :refer [deftest is]]))
+(ns example-test
+  (:require [clojure.test :refer :all]
+            [example :refer :all])) ; 导入被测试的命名空间
 
-(deftest add-test
-  (is (= 3 (+ 1 2))))
+(deftest test-example ; 定义一个测试函数
+  (is (= 2 (add 1 1))) ; 使用is断言测试函数的输出值是否为2
+  (is (= 0 (subtract 2 2))))
+
 ```
 
-在上面的代码中，我们首先定义一个测试的命名空间`my-project.test`，然后使用`deftest`宏来定义一个名为`add-test`的测试。在`is`宏中，我们可以使用断言来判断表达式的结果是否符合预期。在这个例子中，我们测试了`(= 3 (+ 1 2))`这个表达式的结果是否为真。运行测试的方法是在命令行中使用`lein test`命令。
+测试函数使用`deftest`宏定义，它的第一个参数是函数的名字，接下来是需要测试的断言。我们可以使用`is`断言来判断函数输出的值是否和预期相等。测试通过时，控制台会显示`Passed`，失败时则会显示失败的断言。
 
-除了内置的`clojure.test`框架，还有一些其他的Clojure测试框架，如`speclj`、`midje`等，可以根据自己的喜好选择使用。
+## 深入了解
 
-## 深入了解测试
+Clojure提供了许多用于编写测试的宏和函数。除了`deftest`和`is`之外，我们还可以使用`testing`宏来定义一个测试套件，使用`run-test`函数来运行所有的测试，使用`are`宏来测试多个输入和输出值。还有许多其他的工具，可以根据需求选择使用。
 
-除了简单的断言外，测试还可以使用其他高级技术，如模拟(mock)对象、测试驱动开发(TDD)等。这些技术可以帮助我们更灵活地编写测试，更容易发现代码中的问题。
-
-此外，编写测试还有一些常用的最佳实践，如命名规范、测试覆盖率等。这些实践可以帮助我们编写出高质量的测试代码。
+除了Clojure内置的测试框架，社区也开发了许多第三方工具，如Leiningen和Midje，它们可以帮助我们更加高效地编写和运行测试。建议读者根据自己的需求和习惯来选择适合自己的工具。
 
 ## 参考链接
 
-- [Clojure官方网站](https://clojure.org)
-- [Clojure中文网](https://clojure.info)
-- [中文Clojure社区](https://clojure-china.org)
+- [Clojure官方文档](https://clojure.org/guides/testing)
+- [Leiningen官方文档](https://leiningen.org/)
+- [Midje官方文档](https://github.com/marick/Midje/wiki)
+
+## 了解更多
+
+希望本文让你对Clojure的测试有更清晰的了解。如果你想进一步了解Clojure的其他方面，可以参考下面的链接：
+
+- [Clojure官方文档](https://clojure.org/)
+- [Clojure Cookbook](https://www.clojurecookbook.org/)
+- [Clojure for the Brave and True](https://www.braveclojure.com/)

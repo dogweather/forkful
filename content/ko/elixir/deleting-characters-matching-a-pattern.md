@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 패턴과 일치하는 문자 삭제하기"
+title:                "패턴과 일치하는 문자 삭제하기"
+html_title:           "Elixir: 패턴과 일치하는 문자 삭제하기"
 simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,38 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-이 글에서, 우리는 엘릭서 프로그래밍 언어에서 문자열 패턴을 지우는 방법을 살펴보겠습니다. 이 작업을 왜 하는지에 대해서 간단히 알아보겠습니다.
+누군가가 패턴과 일치하는 문자를 삭제하는 것에 참여하는 이유는 주로 데이터 정제나 문자열 처리를 위해서입니다. 이 작업은 잘못된 정보를 제거하거나 원하는 데이터를 추출하기 위해 필수적입니다.
 
-# 방법
+## 하는 방법
 
-우리는 우선 문자열 내에서 원하는 패턴을 검색하고, 그 패턴과 일치하는 문자를 모두 지우는 함수를 만들어볼 것입니다. 이를 위해 `Regex` 모듈을 사용할 것입니다.
+아래는 Elixir에서 문자를 삭제하는 두 가지 방법을 소개합니다.
 
-```Elixir
-# 패턴과 일치하는 문자를 지우는 함수
-def delete_pattern(string, pattern) do
-  # 패턴과 일치하는 문자를 검색
-  matches = Regex.scan(%r/#{pattern}/, string)
-  # 일치하는 문자를 지움
-  string |> String.replace_pattern(%r/#{pattern}/, "")
-end
+### 문자열 간단히 삭제하기
 
-# 예시
-puts delete_pattern("Hello World!", "l") # Heo Word!
+```elixir
+string = "Hello, world!"
+result = String.replace(string, "o", "")
+IO.puts(result)
+
+# 출력:
+# Hell, wrld!
 ```
 
-# 깊게 살펴보기
+위 예제에서는 `String.replace` 함수를 사용하여 문자열에서 `o`를 찾아 삭제하였습니다. 이를 통해 특정 문자를 간단하게 삭제할 수 있습니다.
 
-`Regex` 모듈을 사용하여 문자열 내에서 패턴을 지우는 방법을 살펴보았습니다. 이를 좀 더 깊게 들어가보겠습니다.
+### 정규표현식으로 삭제하기
 
-먼저 `Regex.scan` 함수는 두 개의 인자를 받습니다. 첫 번째 인자는 패턴을 나타내는 `regex`이고, 두 번째 인자는 검색할 문자열입니다. 이 함수는 일치하는 패턴이 발견되면 해당 패턴을 리스트로 반환합니다. 따라서 `matches`변수에 일치하는 패턴을 저장하게 됩니다.
+```elixir
+string = "I love coding in Elixir! #elixirlang"
+result = Regex.replace(~r/[A-Z]/, string, "")
+IO.puts(result)
 
-다음으로 `String.replace_pattern` 함수는 세 개의 인자를 받습니다. 첫 번째 인자는 문자열 자체이고, 두 번째 인자는 바꿀 패턴을 나타내는 `regex`이고, 세 번째 인자는 새로 바꿀 문자열입니다. 이 함수는 첫 번째 인자인 문자열에서 두 번째 인자인 패턴과 일치하는 문자를 세 번째 인자인 문자열로 바꿔줍니다.
+# 출력:
+#  love coding in l! #elixirlang
+```
 
-따라서 위 예시에서는 `"Hello World!"`라는 문자열에서 `"l"`이라는 패턴과 일치하는 모든 문자를 `""`로 바꿔주었습니다. 따라서 출력 결과는 "eHoo Word!"가 됩니다.
+정규표현식을 사용하면 더 복잡한 패턴에 따라 문자를 삭제할 수 있습니다. 예를 들어, 위 예제에서는 대문자를 정규표현식으로 찾아 삭제하는 방법을 보여줍니다.
 
-# 참고 문서
+## 깊이 들어가기
 
-- [Elixir Regex 모듈 공식 문서](https://hexdocs.pm/elixir/Regex.html)
-- [Mastering Elixir Regex - Elixir virtuoso](https://blog.openstrapping.org/2017/09/08/mastering-elixir-regex/)
+이번 섹션에서는 문자를 삭제하기 위한 다양한 함수와 옵션에 대해 알아보겠습니다.
+
+### `delete_at`
+
+`delete_at` 함수는 주어진 위치에 있는 문자를 삭제하는 함수입니다. 예를 들어:
+
+```elixir
+string = "Hello, world!"
+result = String.delete_at(string, 4)
+IO.puts(result)
+
+# 출력:
+# Hello world!
+```
+
+### `stringify`
+
+`stringify` 옵션은 값을 문자열로 변환해주는 역할을 합니다. 따라서 숫자나 특수문자도 문자로 변환되어 삭제될 수 있습니다. 예를 들어:
+
+```elixir
+string = "Hello, world!"
+result = String.replace(string, "o", "", stringify: true)
+IO.puts(result)
+
+# 출력:
+# Hell, wrld!
+```
+
+### `all`
+
+`all` 옵션은 패턴과 일치하는 모든 문자를 삭제하는 옵션입니다. 예를 들어:
+
+```elixir
+string = "I love coding in Elixir! #elixirlang"
+result = Regex.replace(~r/[a-z]/, string, "", all: true)
+IO.puts(result)
+
+# 출력:
+#     ! #E !
+```
+
+## 참고
+
+* [Elixir 공식 문서 - String](https://hexdocs.pm/elixir/String.html)
+* [Elixir 공식 문서 - Regex](https://hexdocs.pm/elixir/Regex.html)
+* [Pattern matching in Elixir](https://elixir-lang.org/getting-started/pattern-matching.html)

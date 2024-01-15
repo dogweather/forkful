@@ -1,5 +1,6 @@
 ---
-title:                "C: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "C: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "C"
 category:             "C"
@@ -11,97 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore C, potresti chiederti perché dovresti imparare a lavorare con YAML. La risposta è semplice: YAML è uno strumento utile per gestire dati strutturati in modo leggibile e facilmente manipolabile. In questo blog, parleremo di come utilizzarlo nel tuo codice C e approfondiremo alcuni aspetti più avanzati.
+Se sei un programmatore C e stai cercando un modo semplice per gestire file di configurazione o dati strutturati, allora lavorare con YAML potrebbe essere la soluzione ideale per te.
 
 ## Come fare
 
-Prima di tutto, è necessario includere la libreria YAML nella tua applicazione C. Puoi farlo aggiungendo `yaml.h` al tuo file di intestazione e `libyaml` alla lista delle librerie da linkare. Una volta fatto questo, puoi utilizzare le funzioni di YAML per leggere e scrivere dati nei tuoi programmi.
+Per iniziare a lavorare con YAML in C, è necessario avere a disposizione una libreria che supporti questo formato. Fortunatamente, esiste una libreria popolare ed efficiente chiamata libyaml. Puoi installarla utilizzando il gestore dei pacchetti del tuo sistema operativo o scaricandola direttamente dal suo repository GitHub.
 
-Ecco un esempio di codice che mostra come scrivere un file YAML usando la libreria `libyaml`:
+Una volta installata, puoi includere la libreria nel tuo codice C e iniziare a manipolare facilmente i dati YAML. Ecco un semplice esempio di come leggere un file YAML e accedere ai suoi elementi:
 
-```C
+```
 #include <yaml.h>
 
-// Definisci i dati da scrivere nel file YAML
-char* nome = "Marco";
-int età = 28;
-char* lavoro = "Programmatore";
+int main() {
+    // apre il file YAML
+    FILE *file = fopen("config.yaml", "rb");
 
-// Apri il file per la scrittura
-FILE *f = fopen("dati.yaml", "w");
+    // inizializza il parser YAML
+    yaml_parser_t parser;
+    yaml_parser_initialize(&parser);
 
-// Inizializza il tipo di documento, il flusso e il parser YAML
-yaml_emitter_t *emitter = malloc(sizeof(yaml_emitter_t));
-yaml_event_t *event = malloc(sizeof(yaml_event_t));
-yaml_emitter_initialize(emitter);
-yaml_emitter_set_output_file(emitter, f);
-yaml_emitter_set_canonical(emitter, 1);
+    // associa il file al parser
+    yaml_parser_set_input_file(&parser, file);
 
-// Inizia a scrivere il file YAML
-yaml_stream_start_event_initialize(event, YAML_UTF8_ENCODING);
-yaml_emitter_emit(emitter, event);
-yaml_document_start_event_initialize(event, NULL, NULL, NULL, 1);
-yaml_emitter_emit(emitter, event);
-yaml_mapping_start_event_initialize(event, NULL, (yaml_char_t *) YAML_MAP_TAG,
-  0, YAML_BLOCK_MAPPING_STYLE);
-yaml_emitter_emit(emitter, event);
+    // inizializza la variabile di supporto per il documento YAML
+    yaml_document_t document;
+    memset(&document, 0, sizeof(yaml_document_t));
 
-// Scrivi le chiavi e i valori nel tuo documento YAML
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) "nome", strlen("nome"),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) nome, strlen(nome),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) "età", strlen("età"),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) &età, sizeof(età),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) "lavoro", strlen("lavoro"),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
-yaml_scalar_event_initialize(event, NULL, (yaml_char_t *) lavoro, strlen(lavoro),
-  1, 1, YAML_PLAIN_SCALAR_STYLE);
-yaml_emitter_emit(emitter, event);
+    // legge il documento YAML
+    yaml_parser_load(&parser, &document);
 
-// Concludi il file YAML
-yaml_mapping_end_event_initialize(event);
-yaml_emitter_emit(emitter, event);
-yaml_document_end_event_initialize(event, 1);
-yaml_emitter_emit(emitter, event);
-yaml_stream_end_event_initialize(event);
-yaml_emitter_emit(emitter, event);
+    // accede al primo elemento nel documento
+    yaml_node_t *node = yaml_document_get_root_node(&document);
 
-// Pulisci la memoria e chiudi il file
-yaml_emitter_delete(emitter);
-yaml_event_delete(event);
-fclose(f);
+    // accede al valore della chiave "nome"
+    yaml_node_t *nome = yaml_document_get_node(&document, node->data.mapping.pairs->key);
+
+    // stampa il valore
+    printf("Il nome nel file YAML è %s", nome->data.scalar.value);
+
+    // pulisce la memoria
+    yaml_document_delete(&document);
+    yaml_parser_delete(&parser);
+    fclose(file);
+
+    return 0;
+}
 ```
 
-Questo codice produrrà il seguente file YAML:
+Output:
 
-```yaml
----
-nome: Marco
-età: 28
-lavoro: Programmatore
+```
+Il nome nel file YAML è John
 ```
 
-Puoi anche leggere un file YAML utilizzando le funzioni `yaml_parser` e `yaml_parser_scan`. Ecco un esempio di codice che legge il file YAML del nostro esempio precedente e stampa i valori delle chiavi:
+Ovviamente, questo è solo un esempio di base per mostrare come utilizzare la libreria libyaml. Ci sono molti altri metodi e funzioni disponibili per gestire i dati YAML in modo più approfondito.
 
-```C
-#include <yaml.h>
+## Approfondimento
 
-// Definisci il puntatore al file
-FILE *f;
+Per saperne di più sui dettagli di YAML e su come utilizzarlo al meglio nel tuo codice C, è consigliato leggere la specifica ufficiale del formato disponibile sul sito ufficiale del progetto YAML.
 
-// Apri il file in modalità lettura
-f = fopen("dati.yaml", "r");
+Inoltre, è possibile consultare la documentazione completa della libreria libyaml per avere una visione più approfondita delle funzionalità disponibili e dei loro utilizzi.
 
-// Inizializza il parser YAML e il documento YAML
-yaml_parser_t *parser = malloc(sizeof(yaml_parser_t));
-yaml_parser_initialize(parser);
-yaml_document_t *doc = malloc(sizeof(yaml_document_t));
-yaml_parser_set_input_file(parser, f);
+## Vedi anche
+
+- [Sito ufficiale di YAML](https://yaml.org/)
+- [Specifiche YAML](https://yaml.org/spec/)
+- [Documentazione di libyaml](https://github.com/yaml/libyaml)

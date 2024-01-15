@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
 simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,30 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I många Arduino-programmeringsprojekt kan det vara nödvändigt att omvandla en sträng till små bokstäver. Detta kan vara användbart för att kunna jämföra och hantera olika ord eller för att skapa en enhetlig typografi i ett textmeddelande. Genom att konvertera strängar till små bokstäver kan du också undvika frustrerande problem med att jämna ihop orden ordentligt. I denna bloggpost kommer vi att titta på hur du enkelt kan konvertera en sträng till små bokstäver genom att använda Arduino.
+Att konvertera en sträng till gemener är en vanlig operation inom programmering och kan vara användbart för att jämföra strängar eller för att se till att en sträng har en enhetlig formatering.
 
 ## Så här gör du
 
-Arduino har ett inbyggt bibliotek för strängmanipulering, vilket gör det enkelt att konvertera en sträng till små bokstäver. Det första steget är att deklarera en variabel för den ursprungliga strängen som du vill konvertera. Sedan kan du använda funktionen `toLowerCase()` för att omvandla strängen till små bokstäver. Här är ett enkelt exempel på hur det kan se ut i kod:
+För att konvertera en sträng till gemener i Arduino, kan du använda den inbyggda funktionen `toLowerCase()`. Här är ett exempel på hur du kan använda den:
 
 ```Arduino
-String originalString = "HEJ SWEDEN!";
-String lowerCaseString = originalString.toLowerCase();
-Serial.println(lowerCaseString);
+String myString = "HEJ!";
+String lowerString = myString.toLowerCase();
+Serial.println(lowerString);
 ```
 
-När du laddar upp koden till din Arduino och öppnar seriell monitor kommer du att se att den ursprungliga strängen "HEJ SWEDEN!" har konverterats till små bokstäver och skrivits ut som "hej sweden!".
+Detta kommer att skriva ut `hej!` på serieporten.
 
-Det är viktigt att notera att funktionen `toLowerCase()` endast fungerar på ASCII-tecken. Om du använder speciella tecken som å, ä, ö eller andra icke-ASCII-tecken i din sträng kommer de inte att konverteras. För att kunna hantera icke-ASCII-tecken kan du använda funktioner som `toLower()` eller `toLowercase()` från andra bibliotek eller skriva din egen kod för att hantera konverteringen.
+## Djupdykning
 
-## Deep Dive
+När du använder `toLowerCase()` funktionen i Arduino, är det viktigt att notera att den endast fungerar för ASCII-tecken (tecken med värden mellan 0-127). Om du behöver konvertera strängar med icke-ASCII-tecken, kan du använda en funktion som `toLowerCaseLatin1()` från biblioteket "Arduino String".
 
-För de som är intresserade av mer detaljerad information om konvertering av strängar till små bokstäver, är det viktigt att förstå hur ASCII-koderna fungerar. ASCII-koderna är numeriska representationer av tecken och bokstäver som används för att kommunicera mellan datorer. Varje bokstav har en specifik numerisk kod, och för bokstäverna a-z är den stora bokstaven alltid 32 enheter högre än den lilla bokstaven. Så till exempel är ASCII-koden för "a" 97 och ASCII-koden för "A" är 65. Genom att lägga till eller subtrahera 32 från denna kod kan du enkelt konvertera en sträng till små bokstäver.
-
-Det är också viktigt att tänka på att vissa bokstäver har olika ASCII-koder beroende på vilket språk som används. Så om du planerar att använda konverteringsfunktioner i dina projekt, se till att du har rätt kod för det specifika språket som du arbetar med.
+En annan viktig sak att komma ihåg är att `toLowerCase()` skapar en ny sträng och returnerar den, istället för att ändra den befintliga strängen. Så om du vill spara den konverterade strängen, som i exemplet ovan, måste du tilldela resultatet till en ny strängvariabel.
 
 ## Se även
 
-- [Arduino String Library](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-- [ASCII Character Codes](http://www.asciitable.com/)
-- [UTF-8 Encoding](https://www.utf8-chartable.de/)
+Här är några användbara länkar för att lära dig mer om konvertering av strängar i Arduino:
+
+- [Arduino Reference - toLowerCase()](https://www.arduino.cc/reference/en/language/functions/string-functions/tolowercase/)
+- [Arduino String Library](https://www.arduino.cc/reference/en/libraries/string/)
+- [ASCII-tecken](https://www.ascii-code.com/)

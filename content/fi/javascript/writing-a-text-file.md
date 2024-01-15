@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Textitiedoston kirjoittaminen"
-simple_title:         "Textitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Javascript: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,38 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen on olennainen osa ohjelmointia kaikilla ohjelmointikielillä, myös Javascriptillä. Tekstitiedoston kirjoittaminen voi olla hyödyllistä, kun haluat tallentaa tietoja tai tekstejä, jotka eivät näy suoraan käyttäjälle, kuten virheenkorjausviestejä tai tietokannan sisältöä. Se on myös tärkeää esimerkiksi tekstimuotoisten tiedostojen lataamisessa tai luomisessa.
+Miksi joku haluaisi kirjoittaa tekstitiedostoa? On monia syitä, mutta muutamia yleisimpiä ovat tallennustilan säästäminen, tiedon jakaminen ja koodin dokumentointi.
 
-## Kuinka tehdä
+## Miten
 
-Käyttämällä Javascriptiä voit helposti kirjoittaa tekstiä tiedostoon. Voit käyttää Node.js-kirjastoa tai HTML5 File API:a selaimessa. Alla olevassa esimerkissä käytämme Node.js:ää.
+Käyttämällä Javascriptia, voit helposti luoda ja kirjoittaa tekstitiedoston sisältöä. Tässä on yksinkertainen esimerkki:
 
 ```Javascript
-const fs = require('fs');
-
-// Luodaan muuttuja, joka sisältää tiedostoon kirjoitettavan tekstin
-let text = 'Tämä on tekstiä, joka kirjoitetaan tiedostoon.';
-
-// Käytetään fs-kirjaston writeFile-metodia kirjoittamaan teksti tiedostoon
-// Ensimmäinen parametri on tiedoston nimi, toinen on kirjoitettava teksti
-fs.writeFile('tekstitiedosto.txt', text, (error) => {
-  if (error) throw error;
-  console.log('Teksti kirjoitettu tiedostoon!');
+let fs = require('fs'); // Avaaminen ja kirjoittaminen tiedostoon "testi.txt"
+fs.writeFile('testi.txt', 'Tervetuloa lukijoille!', function (err) {
+  if (err) throw err;
+  console.log('Tiedot tallennettu!');
 });
-
 ```
 
-Yllä olevassa esimerkissä käytetään writeFile-metodia, joka ottaa ensimmäisenä parametrinä tiedoston nimen, johon teksti kirjoitetaan, ja toisena parametrina tekstiä, joka kirjoitetaan. On myös mahdollista asettaa kolmas parametri, joka on funktio, joka suoritetaan, kun kirjoitus on valmis. Tässä esimerkissä me tulostamme konsoliin viestin, joka ilmoittaa kun teksti on kirjoitettu onnistuneesti.
+Tämän koodin suorittamisen jälkeen löydät "testi.txt" tiedostosta "Tervetuloa lukijoille!" sisällön.
 
-## Syventävä tieto
+Voit myös lisätä sisältöä jo olemassa olevaan tekstitiedostoon käyttämällä "appendFile" -toimintoa, kuten tässä:
 
-Kun kirjoitat tekstiä tiedostoon Javascriptillä, on tärkeää ymmärtää, mikä tiedostomuoto sopii tekstin tallentamiseen. Yleensä CSV- tai JSON-tiedostot toimivat hyvin, mutta voit myös tallentaa tekstin vaikkapa HTML-tiedostona, jos haluat luoda verkkosivun sisältöä automaattisesti.
+```Javascript
+fs.appendFile('testi.txt', '\n Tämä on uusi rivi!', function (err) {
+  if (err) throw err;
+  console.log('Tiedot lisätty!');
+});
+```
 
-Voit myös käyttää Node.js-kirjastoa lukemaan tiedostosta, jonka olet juuri kirjoittanut, jotta voit varmistaa että teksti kirjoitettiin oikein. Tämä on erityisen tärkeää, jos kirjoitat tietoa, jota käytetään myöhemmin esimerkiksi tietokannoissa tai verkkosivuilla.
+Nyt "testi.txt" -tiedostossa on kaksi riviä: "Tervetuloa lukijoille!" ja "Tämä on uusi rivi!".
+
+## Syvällinen sukellus
+
+Kirjoittaessa tekstitiedostoa Javascriptilla, voit valita erilaisia datatyyppejä, kuten merkkijonoja, numeroita ja taulukoita. Käytä "toString ()" -toimintoa muuttaaksesi erilaiset datatyypit merkkijonoiksi ja lisätä ne tiedostoon.
+
+Voit myös käyttää "readFile" -toimintoa lukeaksesi tiedostosta ja tallentaa sisällön muuttujaan. Tämä voi olla hyödyllistä, jos haluat käyttää tiedoston sisältöä myöhemmin koodissasi.
 
 ## Katso myös
 
-- [Node.js file system -kirjasto](https://nodejs.org/api/fs.html)
-- [HTML5 File API](https://developer.mozilla.org/en-US/docs/Web/API/File_API)
-- [CSV-tiedostojen luominen Javascriptillä](https://www.npmjs.com/package/json2csv)
-- [JSON-tiedostojen lukeminen ja kirjoittaminen Javascriptillä](https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript/19706620)
+Täältä löydät lisätietoa Javascriptin käytöstä tekstitiedostojen kanssa:
+
+- https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+- https://nodejs.org/api/fs.html
+- https://www.geeksforgeeks.org/javascript-program-to-write-data-in-a-text-file/

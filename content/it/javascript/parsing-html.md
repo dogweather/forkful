@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi delle intestazioni HTML"
+html_title:           "Javascript: Analisi delle intestazioni HTML"
+simple_title:         "Analisi delle intestazioni HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,53 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Perché Parsare HTML è Importante per i Programmatori Javascript
+## Perché
 
-Parsare HTML è un'abilità fondamentale per i programmatori Javascript. Quando si sviluppano applicazioni web, spesso è necessario estrarre informazioni specifiche dalla struttura del codice HTML. Inoltre, capire come funziona il parsing HTML può aiutare a risolvere errori e problemi di compatibilità tra diversi browser.
+Se stai lavorando con dati provenienti da pagine web, potrebbe essere necessario estrarre informazioni specifiche da loro. La soluzione per fare ciò è di usare il parsing HTML, ovvero l'analisi e l'elaborazione del codice HTML di una pagina web.
 
-### Come Fare il Parsing HTML in Javascript
+## Come Fare
 
-Per fare il parsing HTML in Javascript, è necessario utilizzare il metodo `querySelector()` per selezionare gli elementi del DOM che si desidera estrarre. Si può anche utilizzare il metodo `getElementById()` se si ha bisogno di estrarre un elemento specifico conoscendone l'ID. Una volta selezionati gli elementi, è possibile utilizzare le proprietà `innerHTML` o `innerText` per ottenere il contenuto dell'elemento.
-
-Un esempio di codice potrebbe essere:
+Per eseguire il parsing HTML in Javascript, puoi utilizzare la libreria "cheerio". Ecco un esempio di come potresti estrarre il titolo di una pagina web:
 
 ```Javascript
-// Seleziona il titolo del blog dal DOM
-var blogTitle = document.querySelector('#blog-title');
+const cheerio = require('cheerio');
+const request = require('request');
 
-// Estrapola il contenuto del titolo
-var titleText = blogTitle.innerText;
+const url = 'http://example.com';
 
-// Stampa il risultato
-console.log(titleText);
-
-// Output: "Parsare HTML in Javascript"
+request(url, (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+        const $ = cheerio.load(html);
+        const title = $('title').text();
+        console.log(title);
+    }
+});
 ```
 
-Inoltre, è possibile utilizzare il metodo `getAttribute()` per ottenere i valori degli attributi di un elemento, come ad esempio l'URL di un'immagine. Ecco un esempio:
+Il risultato di questo codice dovrebbe essere il titolo della pagina "Example Domain". 
 
-```Javascript
-// Seleziona l'immagine del profilo dell'autore dal DOM
-var authorImage = document.querySelector('#author-image');
+## Approfondimento
 
-// Ottiene l'URL dell'immagine
-var imageURL = authorImage.getAttribute('src');
+Il parsing HTML è fondamentale per lo sviluppo di applicazioni web e per l'estrazione di informazioni da pagine web. Il processo coinvolge l'analisi del documento HTML e la sua trasformazione in un formato facilmente manipolabile dai programmatori. La libreria "cheerio" offre un'API simile a JQuery che semplifica il processo di selezione e manipolazione degli elementi della pagina web.
 
-// Stampa il risultato
-console.log(imageURL);
+## Vedi Anche
 
-// Output: "https://www.example.com/my-profile-image.jpg"
-```
-
-### Approfondimento sul Parsare HTML
-
-Il parsing HTML si riferisce al processo di analisi del codice HTML per interpretare la sua struttura e il suo contenuto. Quando un browser carica una pagina web, esegue questa operazione per creare il DOM (Document Object Model) che rappresenta l'albero di nodi della pagina.
-
-Durante il parsing, il browser legge ogni riga di codice HTML e la trasforma in un oggetto nodo. Questi nodi vengono poi collegati tra loro per creare la struttura della pagina che viene visualizzata sullo schermo. Il parsing HTML è di fondamentale importanza per la comprensione di come funzionano le pagine web e per manipolarle utilizzando Javascript.
-
-### Vedi Anche
-
-- [Documentazione su `querySelector()`](https://developer.mozilla.org/it/docs/Web/API/Document/querySelector)
-- [Documentazione su `getElementById()`](https://developer.mozilla.org/it/docs/Web/API/Document/getElementById)
-- [Documentazione su `getAttribute()`](https://developer.mozilla.org/it/docs/Web/API/Element/getAttribute)
-- [Approfondimento sul DOM](https://developer.mozilla.org/it/docs/DOM/DOM_Reference)
+- [Documentazione di Cheerio](https://cheerio.js.org/)
+- [Tutorial su Come Estrarre Dati da una Pagina Web Usando Javascript e Cheerio](https://www.digitalocean.com/community/tutorials/how-to-scrape-a-website-using-node-js-and-cheerio)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Tekstitiedoston lukeminen."
-simple_title:         "Tekstitiedoston lukeminen."
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Haskell: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,41 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos olet kiinnostunut Haskell-ohjelmoinnista tai yksinkertaisesti opettelet kieltä, tiedoston lukeminen on tärkeä taito, jota tarvitset monissa sovelluksissa. Teksti tiedostoja käytetään usein tietojen tallentamiseen ja jakamiseen, joten osaaminen niiden lukemisessa on erittäin hyödyllistä.
+Miksi haluaisit lukea tekstiedoston Haskell-ohjelmalla? Se voi olla hyödyllistä, kun haluat käsitellä isoa määrää tekstimuotoista dataa, kuten logitiedostoja tai CSV-tiedostoja.
 
-## Kuinka
+## Miten
 
-Aloita avaamalla haluamasi tiedosto ```Using System.IO``` -kirjaston avulla. Jos haluat käyttää komentoriviltä päivitettävää tiedostoa, voit käyttää ```getContents```. Voit lukea tiedoston sisällön monella tavalla, kuten riviriviltä tai kokonaisuudessaan. Tässä on esimerkkejä:
+Lukeminen ja käsittely Haskellilla on helppoa ja tehokasta, kiitos sen monipuolisten kirjastojen ja sisäänrakennettujen toimintojen. Voit käyttää ```readFile``` -funktiota ladataksesi tiedoston ja ```lines``` -funktiota jakamaan sen riveihin. Alla on yksinkertainen esimerkki:
 
 ```Haskell
 import System.IO
 
 main = do
-  -- Avaa tiedosto ja tulosta sen sisältö riviriviltä
-  handle <- openFile "tiedosto.txt" ReadMode
-  contents <- hGetContents handle
-  putStr contents
-  hClose handle
-
-  -- Lue tiedoston sisältö ja tulosta se kokonaisuudessaan
-  contents <- readFile "tiedosto.txt"
-  putStrLn contents
+  file <- readFile "tiedosto.txt"
+  let rivit = lines file
+  print rivit
 ```
 
-#### Tuloste:
+Tämä koodi lukee "tiedosto.txt" -tiedoston ja tallentaa sen sisällön listana, jossa jokainen alkio on yksi tiedoston rivi. Voit sitten käsitellä tätä dataa haluamallasi tavalla, kuten tulostaa tietyn rivin tai laskea rivien määrän.
 
-```
-Tämä on testitiedosto.
-Rivi 2
-Rivi 3
-```
+## Syväsukellus
 
-## Syväsyvennystä
-
-Tiedostojen lukeminen tapahtuu monessa osassa. Ensinnäkin tiedosto avataan, sitten sen sisältö luetaan ja lopuksi tiedosto suljetaan. Tämä on tärkeää pitää mielessä, jotta tiedosto ei jää vahingossa auki ja aiheuta ongelmia. Lisäksi, kun tiedosto on avattu, sen sisältöä pystytään lukemaan eri tavoilla, kuten merkkeinä tai kokonaisina riveinä. Erilaiset rakenteet, kuten kaaviosolut tai puut, voivat auttaa tiedoston sisällön järjestelyssä ja käsittelyssä.
+```readFile``` ja ```lines``` ovat vain kaksi esimerkkiä Haskellin tarjoamista monipuolisista toiminnoista tekstitiedostojen lukemiseen ja käsittelyyn. Voit myös käyttää muita funktioita, kuten ```words``` ja ```unlines``` tuettaessasi tekstin jakamista ja yhdistämistä. Voit myös hyödyntää erilaisia kirjastoja, kuten ```Data.Text``` tai ```Data.ByteString``` jos haluat käsitellä tekstitiedostoja eri formaateissa.
 
 ## Katso myös
 
-- [Haskell: Tiedoston käsittely](https://wiki.haskell.org/Handling_files)
-- [Haskell: Systeemi-moduuli (System.IO)](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [Tiedoston käsittely Haskellissa: Näin onnistut ilman pettymyksiä](https://techinsight.io/tiedostonkasittely-haskelilla-nain-onnistut-ilman-pettymyksia/)
+- [Haskellin viralliset dokumentaatiot](https://www.haskell.org/documentation/)
+- [Hackage: Haskellin pakettikirjasto](https://hackage.haskell.org/)
+- [Haskell.org:n oppimismateriaalit](https://www.haskell.org/learn/)
+- [Learn You a Haskell -kirja](http://learnyouahaskell.com/)

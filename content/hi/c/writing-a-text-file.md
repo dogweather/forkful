@@ -1,6 +1,7 @@
 ---
-title:                "C: एक पाठ फाइल लिखना"
-simple_title:         "एक पाठ फाइल लिखना"
+title:                "टेक्स्ट फ़ाइल लिखना"
+html_title:           "C: टेक्स्ट फ़ाइल लिखना"
+simple_title:         "टेक्स्ट फ़ाइल लिखना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Agar aap C programming language ke sath kaam kar rahe hain toh shayad aapne kabhi na kabhi text files ke jaal ko experience kiya hoga. Text files hamare code ke liye ek essential part hote hain jisko ham user input, output ya storage ke liye istemal karte hain. Is article mein hum baat karenge ki kis tarah se aap C mein text file ko likh sakte hain.
 
-प्रोग्रामिंग दुनिया में टेक्स्ट फ़ाइल लिखना एक महत्वपूर्ण और स्वाभाविक कौशल है। यह आसानी से बनाया और संशोधित किया जा सकता है और इसका उपयोग डाटा को स्टोर और संचालित करने के लिए किया जाता है।
-
-## कैसे करें
-
-टेक्स्ट फ़ाइल लिखने के लिए, हमें सबसे पहले एक फ़ाइल ओपन करनी होगी, उसके बाद हमें वहां से डेटा पढ़ना और अन्य व्यवहार करना होगा। नीचे स्क्रीनशॉट में यह सभी प्रक्रिया दिखाई गई है।
+## Kaise
+Sabse pehle hum file handle ko declare karte hain. File handle ek special variable hota hai jiska istemal file ke data ko read aur write karne ke liye kiya jata hai. Iske baad hum `fopen()` function ka istemal karte hain jiska syntax `FILE *fopen(const char *filename, const char *mode)` hota hai. Is function mein filename aur mode specify kiya jata hai. Mode ko "w" assign karne se ek file ko write karne ka permission milta hai. Uske baad hum `fprintf()` function ka istemal karte hain jiska syntax `int fprintf(FILE *f, const char *format, ...)` hota hai. Yeh function text file mein data likhne ke liye use kiya jata hai. Iske baad hum file ko close kar dete hain `fclose()` function ka istemal karke.
 
 ```C
-#include <stdio.h> // स्टैंडर्ड इनपुट और आउटपुट का हेडर फ़ाइल
+#include <stdio.h>
 int main() {
-    FILE *fp;
-    char ch;
-    
-    fp = fopen("example.txt", "w"); // एक नया फ़ाइल बनाने के लिए फ़ाइल ओपन करें
-    
-    // फ़ाइल में डेटा लिखें
-    fprintf(fp, "मैं टेक्स्ट फ़ाइल में लिख रहा हूँ। \n");
-    fprintf(fp, "यह एक दूसरी लाइन है।");
-    
-    // फ़ाइल बंद करें
-    fclose(fp);
-    
-    // फ़ाइल फिर से ओपन करें
-    fp = fopen("example.txt", "r");
-    
-    // फ़ाइल में से डेटा पढ़ें और दिखाएं
-    printf("फ़ाइल का सारा डेटा है: \n");
-    while((ch = fgetc(fp)) != EOF) {
-        printf("%c", ch);
-    }
-    
-    // फ़ाइल बंद करें
-    fclose(fp);
-    
-    return 0;
+  FILE *fp;
+  fp = fopen("example.txt", "w");
+  fprintf(fp, "Hello, world!");
+  fclose(fp);
+  return 0;
 }
 ```
 
-**आउटपुट:**
+Jab aap is code ko run karenge, toh aapko current working directory mein "example.txt" naam ka ek text file milega jisme "Hello, world!" likha hua hoga.
 
-```
-फ़ाइल का सारा डेटा है:
-मैं टेक्स्ट फ़ाइल में लिख रहा हूँ।
-यह एक दूसरी लाइन है।
-```
+## Deep Dive
+Is section mein hum text file ke likhne ke process ko aur detail mein jaayenge. Sabse pehle `fopen()` function ke baare mein baat karte hain. Is function mein humne `const char *filename` aur `const char *mode` use kiya. `const` ka matlab hai ki hum is variable mein value assign nahi kar sakte hain. `char` data type string ko represent karta hai aur `*` operator ka istemal us variable ki memory address ko point karne ke liye kiya jata hai. `fopen()` function se hume ek pointer return hota hai jo hum file handle mein assign kar sakte hain.
 
-## गहराई में जाएं
+Agar aap text file mein multiple lines likhna chahte hain, toh `fprintf()` function mein `"\n"` ka istemal karke line break kar sakte hain. Iske alawa hum `fprintf()` function mein variables, integers, floats, characters, etc. bhi print kar sakte hain. `fclose()` function ka istemal file ko address ko release karne ke liye kiya jata hai.
 
-टेक्स्ट फ़ाइल लिखने के लिए, सबसे पहले हमें `stdio.h` हेडर फ़ाइल को इंक्लूड करना होगा। य
+## See Also
+- [C File Input/Output](https://www.programiz.com/c-programming/c-file-input-output)
+- [File Handling in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [C File Handling Tutorial](https://www.youtube.com/watch?v=1PZ7fVJHwN0)

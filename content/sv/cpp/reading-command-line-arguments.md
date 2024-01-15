@@ -1,6 +1,7 @@
 ---
-title:                "C++: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "C++: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför läsa kommandoargument?
+# Varför
 
-Att kunna läsa kommandoargument är en viktig del av att kunna skriva effektiva program. Det gör det möjligt för programmet att ta emot input från användaren och göra anpassade handlingar baserade på den inputen.
+Om du någonsin har använt ett program som kräver dig att ange kommandon eller parametrar via kommandoraden, har du använt funktionen för att läsa kommandoraden i din kod. Detta gör det möjligt för användaren att anpassa programmet efter sina behov, vilket är viktigt för ett smidigt och användarvänligt program.
 
-## Så här gör du
+# Hur man gör
 
-För att läsa kommandoargument i C++, behöver du först importera biblioteket "iostream" och deklarera "int main" funktionen. Sedan kan du använda "int argc" och "char* argv[]" parametrar för att ta emot argumenten från kommandoraden.
+För att läsa kommandoraden i C++ behöver du inkludera `#include <iostream>` och `#include <stdlib.h>` i din kod. Därefter kan du använda `argc` och `argv` variablerna för att ta emot antalet argument som har skickats och en array med själva argumenten.
 
 ```C++
-#include <iostream>
-
-int main(int argc, char* argv[]) {
-    // Här kan du utföra dina handlingar baserat på argumenten
-    // Till exempel, för att skriva ut det första argumentet:
-    std::cout << argv[0] << std::endl;
-
-    return 0;
+int main(int argc, char *argv[]) {
+    // Kod för att hantera kommandoraden
 }
 ```
 
-Om du kör detta program och anger "hello" som argument från kommandoraden, så kommer programmet att skriva ut "hello" som output.
+För att komma åt de faktiska argumenten kan du använda index i `argv` arrayen. Till exempel om användaren skriver in `./program argument1 argument2`, då är `argv[0]` värdet `./program`, `argv[1]` är `argument1` och `argv[2]` är `argument2`.
 
-## Djupdykning
+Nu när du har läst in kommandoraden, kan du använda `if`-satser eller `switch`-satser för att hantera olika kommandon och parametrar som användaren kan ha skickat. Ett exempel på detta kan se ut som följande:
 
-En intressant egenskap hos kommandoargument är möjligheten att läsa in argumenten som nummer istället för strängar. Detta görs genom att konvertera "argv[]" till "int" eller "double". Detta öppnar upp för olika användningsområden, som till exempel att göra matematiska beräkningar baserat på input från användaren.
+```C++
+if (argc == 2 && strcmp(argv[1], "help") == 0) {
+    // Kod för att visa hjälpmeddelande
+}
 
-## Se även
+else if (argc == 3 && strcmp(argv[1], "add") == 0) {
+    int num1 = atoi(argv[2]);
+    int num2 = atoi(argv[3]);
+    int sum = num1 + num2;
+    std::cout << "Summan av " << num1 << " och " << num2 << " är " << sum << std::endl;
+}
+```
 
-- [C++ - Kommandoargument ](https://www.w3schools.com/cpp/cpp_command_line.asp)
-- [Kommandoargument i C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Argument med kommandoraden i C++](https://www.cplusplus.com/articles/DEN36Up4/)
+Om användaren skriver in `./program help` kommer hjälpmeddelandet att visas och om användaren skriver in `./program add 5 10`, kommer summan av 5 och 10 att beräknas och visas på skärmen.
+
+# Djupdykning
+
+Förutom att läsa in kommandoraden har du också möjlighet att läsa in miljövariabler som kan ha skickats till programmet via kommandoraden. Du kan använda funktionen `getenv()` för att läsa in dessa variabler och sedan använda dem i din kod.
+
+En annan viktig punkt att komma ihåg är att `argv` arrayen alltid kommer att ha minst ett element, även om ingen kommandorad har skickats. Detta första element kommer alltid att vara programmets namn. Därför är det viktigt att ha detta i åtanke när du hanterar kommandoraden i din kod.
+
+# Se även
+
+- [Dokumentation för `argc` och `argv`](https://www.cplusplus.com/articles/CommandLine/)
+- [Guide för att läsa kommandoraden i C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Exempelkod för att läsa kommandoraden](https://www.dreamincode.net/forums/topic/139987-reading-command-line-arguments/)

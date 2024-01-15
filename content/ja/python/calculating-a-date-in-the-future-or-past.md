@@ -1,6 +1,7 @@
 ---
-title:                "Python: 未来または過去の日付の計算"
-simple_title:         "未来または過去の日付の計算"
+title:                "将来または過去の日付の計算"
+html_title:           "Python: 将来または過去の日付の計算"
+simple_title:         "将来または過去の日付の計算"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,45 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-計算は、私たちが日々の活動を効率的に行うのに不可欠です。あなたが正確な日付を知る必要がある場合、プログラミング言語を使用してそれを計算することは非常に役立ちます。過去や将来の日付を計算することは、特に予定やタイムラインを追跡する必要がある場合に役立ちます。
+日付を計算する理由は、将来または過去の日付を特定する必要があるためです。例えば、予定や重要なイベントを計画する場合、特定の日付を知ることが重要です。
 
 ## 方法
 
-まず、datetimeモジュールをインポートします。このモジュールには、日付や時刻を操作するための便利な機能があります。
+```python
+import datetime # datetimeモジュールをインポート
 
-```Python
-import datetime
-```
-
-次に、任意の日付をdatetimeオブジェクトとして作成します。例えば、今日の日付は次のように作成できます。
-
-```Python
+# 今日の日付を取得
 today = datetime.date.today()
-print(today)
+
+# １週間後の日付を計算
+one_week = today + datetime.timedelta(days=7)
+
+print(one_week) # 今日から１週間後の日付を出力 (例: 2020-09-07)
 ```
 
-これにより、現在の日付が出力されます。同様に、明日の日付を計算することもできます。
+```python
+import datetime # datetimeモジュールをインポート
 
-```Python
-tomorrow = today + datetime.timedelta(days=1)
-print(tomorrow)
-```
+# 指定した日付を設定
+date = datetime.date(2020, 10, 15)
 
-このように、timedeltaを使用することで、任意の日数を加算することができます。
+# １０日前の日付を計算
+ten_days_ago = date - datetime.timedelta(days=10)
 
-そして、過去の日付を計算するには、マイナスの日数を加算すれば良いです。例えば、1ヶ月前の日付を計算する場合は次のようになります。
-
-```Python
-one_month_ago = today - datetime.timedelta(days=30)
-print(one_month_ago)
+print(ten_days_ago) # １０日前の日付を出力 (例: 2020-10-05)
 ```
 
 ## ディープダイブ
 
-日付を計算する方法は他にもたくさんあります。例えば、datetimeクラスのstrftimeメソッドを使用することで、日付のフォーマットを指定することができます。また、日付の比較や演算も可能です。詳しくは、公式ドキュメントを参照してください。
+日付の計算には、datetimeモジュールのtimedeltaクラスを使用します。日数、週数、月数、年数を指定して、特定の日付を計算することができます。また、dateクラスを使用することで、指定した年月日のオブジェクトを作成することができます。
 
-## 関連リンク
+## 参考リンク
 
-- [Python公式ドキュメント - datetimeモジュール](https://docs.python.org/ja/3/library/datetime.html)
-- [Pythonプログラミングによる日付の操作方法](https://www.soudegesu.com/python/datetime/)
-- [Pythonで日付を計算する方法](https://qiita.com/zaramme/items/7a0cb10ff6f862744827)
+- [datetimeモジュールドキュメント](https://docs.python.org/ja/3/library/datetime.html)
+- [timedeltaクラスドキュメント](https://docs.python.org/ja/3/library/datetime.html#timedelta-objects)
+- [dateクラスドキュメント](https://docs.python.org/ja/3/library/datetime.html#date-objects)

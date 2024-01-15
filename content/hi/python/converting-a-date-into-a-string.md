@@ -1,6 +1,7 @@
 ---
-title:                "Python: एक दिनांक को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक दिनांक को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में रूपांतरित करना"
+html_title:           "Python: तारीख को स्ट्रिंग में रूपांतरित करना"
+simple_title:         "तारीख को स्ट्रिंग में रूपांतरित करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -9,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-यह लेख हिंदी पाठकों के लिए है जो पायथन प्रोग्रामिंग में रुचि रखते हैं। अगर आपको उसका हल करने में समस्या हो रही है तो आपको यह अपने कोड में तारीख को स्ट्रिंग में बदलने की जरूरत हो सकती है।
+## Kyu
+Koi bhi vyakti tithi ko ek string mein badal kar isse alag prakar se pradarshin kar sakta hai, jaise ki alag alag bhashao mein ya kisi specific format mein. Isse tithi ka upyog anek sthano par kiya ja sakta hai, jaise ki document mein, database mein ya kisi software mein.
 
-## कैसे करें
-आपने कभी अपने कोड में तारीख को स्ट्रिंग में बदलने की कोशिश की है तो आप जानते होंगे कि यह काफी आसान है। आप निम्न दिए गए आप निम्न दिए गए कोड ब्लॉक देख सकते हैं जो आपको इस काम को करने में मदद करेंगे।
-
+## Kaise?
 ```Python
-# तारीख को स्ट्रिंग में बदलने के लिए आपको datetime और strftime फंक्शन का उपयोग करना होगा
-import datetime
+from datetime import date
 
-# एक डेट ऑब्जेक्ट बनाएं
-date = datetime.datetime.now()
+today = date.today()
 
-# तारीख को स्ट्रिंग में बदलें
-date_string = date.strftime("%d/%m/%Y")
+# dd/mm/YY
+today_str = today.strftime("%d/%m/%Y")
+print(today_str)
 
-# स्ट्रिंग का आउटपुट प्रिंट करें
-print(date_string)
+# Month name, Year
+today_str = today.strftime("%B, %Y")
+print(today_str)
 
-# आपका आउटपुट इस प्रकार होगा - 20/08/2021
+# Full date with time
+today_str = today.strftime("%A, %B %d, %Y at %I:%M %p")
+print(today_str)
 ```
 
-इस तरह से आप अपने कोड में तारीख को स्ट्रिंग में बदल सकते हैं। आप अपनी आवश्यकताओं के अनुसार निर्देशांकों को बदल सकते हैं।
+Output:
+```
+14/05/2021
+May, 2021
+Friday, May 14, 2021 at 07:00 PM
+```
 
-## गहराई में गोता
-तारीख को स्ट्रिंग में बदलना पापुलर काम है जो पायथन प्रोग्रामर्स को अपने कोड में करते हैं। यह व्यापकता से इसलिए होता है क्योंकि यह दृश्यमान और सरल होता है और आप अपने कोड में यह तारीख को स्ट्रिंग में प्रदर्शित करने के लिए अपने व्यक्तिगत आवश्यकताओं के अनुसार निर्द
+## Deep Dive
+Python mein tithi ko string mein badalna kaafi aasan hai. Iske liye hum `strftime()` function ka upyog karte hai jo `datetime` module mein available hai. Is function mein hum tithi ke format ke anusaar `%` ke saath alag alag characters ka upyog kar sakte hai. In characters se hum tithi ko alag alag prakar se string mein badal sakte hai. Is prakar ki string formatting ka upyog anya bhi variables ke saath kiya ja sakta hai, jaise time, year, week, etc. Isse hum apne project ya code ke according tithi ko customize kar sakte hai.
+
+## Dekhiye bhi
+- [Python documentation on datetime](https://docs.python.org/3/library/datetime.html)
+- [W3Schools tutorial on datetime in Python](https://www.w3schools.com/python/python_datetime.asp)
+- [Real Python article on datetime formatting](https://realpython.com/python-datetime/#python-date-formatting)

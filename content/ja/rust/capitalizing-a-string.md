@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "「文字列の大文字化」"
+html_title:           "Rust: 「文字列の大文字化」"
+simple_title:         "「文字列の大文字化」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,63 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-あなたはRustプログラミングに興味を持っているかもしれませんが、今日はRustで文字列を大文字に変換する方法についてお話しします。文字列の大文字化は、文字列処理において非常に重要な役割を果たしています。それでは、どのようにして実現するのか見ていきましょう！
+文字列を大文字に変換することの網じめについて説明するために、なぜこれを行うのかという点を最初に説明したいと思います。文字列の大文字変換は、ユーザーの入力を正規化したり、表示の一貫性を保ったりするために使用される一般的なタスクです。
 
 ## 方法
 
-まずは、文字列を大文字に変換するためにRustの標準ライブラリにあるメソッド```to_uppercase()```を使用します。このメソッドは、文字列全体を大文字に変換して新しい文字列を返します。
+Rustでは、文字列を大文字に変換するための便利なメソッドが用意されています。下記のコードを使用することで、文字列"hello"を"HELLO"に変換することができます。
 
-```
-Rustでの文字列大文字化
-
-fn main() {
-    let s = "Hello, world!";
-    println!("大文字に変換する前: {}", s);
-    let upper = s.to_uppercase();
-    println!("大文字に変換した後: {}", upper);
-}
+```Rust
+let small_str = "hello";
+let capital_str = small_str.to_uppercase();
 ```
 
-< output >
+コードの実行結果は、`capital_str`に"HELLO"という値が格納されることになります。このメソッドは、ASCII文字だけでなくUnicode文字にも対応しています。
 
-```
-> 大文字に変換する前: Hello, world!
-> 大文字に変換した後: HELLO, WORLD!
-```
+## ディープダイブ
 
-また、もし文字列の一部を大文字に変換したい場合は、```to_ascii_uppercase()```を使用することもできます。このメソッドでは、アルファベット以外の文字を除くすべての文字を大文字に変換します。
+Rustにおける文字列の大文字変換には、内部的にバイトシーケンスが使用されています。このバイトシーケンスは、コンピューター内部で文字を表現する際に使用される方法です。Rustは文字列がUTF-8でエンコードされていることを保証するため、このバイトシーケンスを使用して処理を行います。そのため、文字列の大文字変換を行う際にもUTF-8のルールに従って処理が行われます。
 
-```
-Rustでの文字列一部大文字化
+## 参考リンク
 
-fn main() {
-    let s = "Hello, world!";
-    println!("大文字に変換する前: {}", s);
-    let upper = s[0..5].to_ascii_uppercase() + &s[5..];
-    println!("一部を大文字に変換した後: {}", upper);
-}
-```
+ここまで文字列の大文字変換について紹介してきましたが、Rustにはさまざまな便利な文字列操作のメソッドが用意されています。興味がある方は、下記のリンクを参考にしてみてください。
 
-< output >
-
-```
-> 大文字に変換する前: Hello, world!
-> 一部を大文字に変換した後: HELLO, world!
-```
-
-## 深く掘り下げる
-
-では、```to_uppercase()```と```to_ascii_uppercase()```の違いについて少し詳しく見てみましょう。まず、```to_uppercase()```はUnicodeに基づいており、各言語における標準的な大文字小文字の変換規則に従います。一方、```to_ascii_uppercase()```はASCII文字に基づいています。
-
-このような違いにより、例えばドイツ語の文字列であれば、```to_uppercase()```では```"ß"```を```"SS"```に変換しますが、```to_ascii_uppercase()```ではそのまま残ります。
-
-## 参考
-
-- [Rust標準ライブラリドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [Rust標準ライブラリドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.to_ascii_uppercase)
-
-## 用語集
-
-- 大文字化：文字列をすべて大文字に変換すること。
-- メソッド：オブジェクトやデータ型に対応する関数。
-- アルファベット：文字の一種で、主に英語やフランス語などで使用される文字。
+- [Rust 文字列処理 - Rust by Example (日本語訳)](https://doc.rust-jp.rs/rust-by-example-ja/std/str/process.html)
+- [日本語で学ぶRustチュートリアル - 03. 文字列 -](https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/book/strings.html)
+- [Rust の文字列とUTF-8 - Qiita](https://qiita.com/satosystems/items/bf42219680401fb32067)

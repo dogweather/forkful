@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Working with json"
+title:                "Working with json"
+html_title:           "Kotlin recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,63 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-JSON has become a widely used format for data exchange in web development and mobile applications. It is lightweight, human-readable, and supported by almost all programming languages. Working with JSON allows us to easily send and receive data from servers and APIs, making it an essential skill for developers to have.
+JSON (JavaScript Object Notation) is a widely used data format for storing and exchanging information. It is particularly popular in web development and mobile app development. By learning how to work with JSON, you can access and manipulate data from different sources, making your applications more dynamic and powerful.
 
 ## How To
 
-To work with JSON in Kotlin, we can use the built-in library `org.json`. Here's a step-by-step guide on how to get started:
-
-1. Import the `org.json` library into your project.
+Working with JSON in Kotlin is made easy by the built-in support that the language offers. To get started, you need to have a basic understanding of JSON structure. Here's an example of a simple JSON object:
 
 ```Kotlin
-import org.json.*
+val json = """
+    {
+        "name" : "John Doe",
+        "age" : 30,
+        "occupation" : "Software Engineer"
+    }
 ```
 
-2. Create a `JSONObject` from a string using its constructor.
+To access the data in this JSON object, you can use the `JsonParser` class from the `kotlinx.serialization.json` package. Here's a code snippet that shows how to retrieve the value of the "name" field:
 
 ```Kotlin
-val jsonString = "{"name": "John", "age": 25}"
-val jsonObject = JSONObject(jsonString)
+val name = JsonParser.parseString(json).jsonObject["name"].toString()
+println(name) //Output: "John Doe"
 ```
 
-3. Access the values in the `JSONObject` using the `get` method.
+You can also easily convert a Kotlin object into JSON using the `Json.encodeToString()` function. For example:
 
 ```Kotlin
-val name = jsonObject.get("name") // returns "John"
-val age = jsonObject.get("age") // returns 25
-```
+data class Person(val name: String, val age: Int)
 
-4. To add a new key-value pair, use the `put` method.
-
-```Kotlin
-jsonObject.put("country", "USA")
-```
-
-5. Convert the `JSONObject` into a string using the `toString` method.
-
-```Kotlin
-val newJsonString = jsonObject.toString() // returns "{"name": "John", "age": 25, "country": "USA"}"
-```
-
-6. To convert a JSON string into a `JSONObject`, use the `JSONObject` constructor.
-
-```Kotlin
-val newJsonObject = JSONObject(newJsonString)
-```
-
-7. To handle nested JSON objects, use the `getJSONObject` method.
-
-```Kotlin
-val nestedJsonObject = jsonObject.getJSONObject("address") // assuming there is a key "address" with a nested JSON object
+val person = Person("Jane Smith", 25)
+val json = Json.encodeToString(person)
+println(json) //Output: {"name" : "Jane Smith", "age" : 25}
 ```
 
 ## Deep Dive
 
-There are various approaches to working with JSON in Kotlin. We can use libraries like `GSON` or `Moshi` which provide more convenient ways to serialize and deserialize JSON data. Alternatively, we can also use the `kotlinx-serialization` library to convert JSON strings into Kotlin objects. This library also supports nested objects and custom mappings.
+When working with more complex JSON structures, you can use the `jsonObject` and `jsonArray` properties to access nested objects and arrays. Here's an example:
 
-Another important aspect of working with JSON is handling errors. When trying to access a non-existent key, the `get` method returns a `null` value, which can lead to `NullPointerExceptions`. It is the developer's responsibility to handle such cases and ensure proper data validation.
+```Kotlin
+val json = """
+    {
+        "person" : {
+            "name" : "Mark Johnson",
+            "age" : 35,
+            "address" : {
+                "street" : "123 Main Street",
+                "city" : "New York"
+            },
+            "hobbies" : ["reading", "hiking", "cooking"]
+        }
+    }
+```
+
+To retrieve the street address and first hobby from this JSON object, you can use the following code:
+
+```Kotlin
+val person = JsonParser.parseString(json).jsonObject["person"].jsonObject
+val street = person["address"].jsonObject["street"].toString()
+val firstHobby = person["hobbies"].jsonArray.first().toString()
+println("$street loves $firstHobby") //Output: 123 Main Street loves reading
+```
 
 ## See Also
 
-- [Kotlin JSON tutorial by Baeldung](https://www.baeldung.com/kotlin-json)
-- [Kotlinx-serialization library documentation](https://github.com/Kotlin/kotlinx.serialization)
+- Kotlin JSON serialization: https://kotlinlang.org/docs/serialization-json.html
+- Working with JSON in Android using Kotlin: https://developer.android.com/kotlin/first#working_with_json

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Ruby: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,66 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Warum sollte man sich mit YAML beschäftigen? Nun, YAML ist eine einfache und benutzerfreundliche Möglichkeiten, Daten in einem strukturierten Format zu speichern und zu übertragen. Es ist besonders nützlich für Programmierer, die große Datensätze verarbeiten und austauschen müssen.
+YAML ist eine einfache und intuitive Möglichkeit, Daten in einem formatierten und strukturierten Format darzustellen. Es ist besonders nützlich für die Konfiguration von Programmen oder das Lesen und Schreiben von Dateien. Wenn du in der Ruby-Programmierung tätig bist, ist es hilfreich, YAML zu beherrschen, da es ein häufig genutztes Format ist.
 
-## Wie man es macht
+# Wie man YAML in Ruby verwendet
 
-Der erste Schritt, um mit YAML zu arbeiten, ist die Installation der YAML-Gem auf Ihrem Computer. Mit Ruby können Sie dies einfach mit dem Befehl `gem install yaml` tun.
+```ruby
+require "yaml"
 
-Als nächstes können Sie mit YAML-Dokumenten arbeiten, indem Sie sie als eine Ruby-Hash-Struktur laden. Zum Beispiel:
+# Daten in YAML-Format speichern
+data = { name: "Max Mustermann", alter: 35, hobbies: ["Lesen", "Reisen"] }
+File.write("daten.yml", data.to_yaml)
 
-```Ruby 
-require 'yaml'
- 
-# Laden Sie das YAML-Dokument als eine Hash-Strukur.
-data = YAML.load(File.read('data.yml'))
-
-# Greifen Sie auf die Daten zu, wie Sie es mit einem normalen Hash tun würden.
-puts data["Nutzername"]
+# Daten aus YAML-Datei auslesen
+daten = YAML.load(File.read("daten.yml"))
+puts daten[:name]
+# => Max Mustermann
+puts daten[:alter]
+# => 35
+puts daten[:hobbies]
+# => ["Lesen", "Reisen"]
 ```
 
-Die `require 'yaml'` Anweisung stellt sicher, dass das YAML-Modul in Ihrem Projekt verfügbar ist. Dann wird das YAML-Dokument mit der `File.read` Funktion gelesen und in eine Hash-Struktur mit der `YAML.load` Funktion umgewandelt. Von dort aus können Sie die Daten wie gewohnt mit normalen Hash-Operationen wie `puts` oder `each` verwenden.
+# Tiefer Einblick
 
-## Tiefergehende Informationen
+YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine menschenlesbare Alternative zu XML zu bieten. Ähnlich wie bei JSON, können in YAML Datenstrukturen wie Hashes und Arrays dargestellt werden. Eine Besonderheit von YAML ist die Verwendung von Einrückungen, um die Struktur der Daten zu definieren. Dies macht YAML besonders gut lesbar.
 
-Was ist, wenn Sie komplexe Datenstrukturen haben oder sogar YAML-Dateien programmatisch erstellen müssen? In solchen Fällen ist es sinnvoll, die `YAML.dump` Funktion zu verwenden, um einen hash in ein YAML-Dokument umzuwandeln. Zum Beispiel:
+# Siehe auch
 
-```Ruby
-require 'yaml'
-
-# Eine Hash-Struktur erstellen.
-data = {
-  "Titel" => "Mein Blogpost",
-  "Autor" => "Max Mustermann",
-  "Inhalt" => "Dies ist ein Beispielinhalt.",
-  "Tags" => ["Ruby", "Programmieren", "YAML"]
-}
-
-# Den Hash in ein YAML-Dokument konvertieren.
-yaml_data = YAML.dump(data)
-
-# Das erzeugte YAML-Dokument ausgeben.
-puts yaml_data
-```
-
-Dies wird das folgende YAML-Dokument ausgeben:
-
-```YAML
---- 
-Titel: Mein Blogpost
-Autor: Max Mustermann
-Inhalt: Dies ist ein Beispielinhalt.
-Tags: 
-  - Ruby
-  - Programmieren
-  - YAML
-```
-
-Mit YAML können Sie auch komplexe Datenstrukturen wie Arrays, Booleans und sogar verschachtelte Hashes speichern. Eine gute Übersicht über alle unterstützten Datentypen finden Sie in der offiziellen [YAML-Spezifikation](https://yaml.org/spec/1.2/spec.html#Representations).
-
-## Siehe auch
-
-- Offizielle YAML-Website: https://yaml.org/
-- YAML-Spezifikation: https://yaml.org/spec/
+- [YAML-Dokumentation auf ruby-doc.org](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
+- [YAML-Spezifikation auf yaml.org](https://yaml.org/spec/)
+- [YAML-Tutorial auf SitePoint](https://www.sitepoint.com/yaml-tutorial-beginners-guide/)

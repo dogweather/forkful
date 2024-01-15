@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Ruby: Utskrift av feilsøkingsutdata"
 simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du noen gang har sittet fast i en bug i koden din, så vet du hvor frustrerende det kan være. En måte å finne og fikse disse bugene på er å bruke "debug output" eller å skrive ut informasjon mens koden kjører. Dette gir deg mulighet til å se hva som skjer i koden din og hvorfor den ikke fungerer som den skal. I denne bloggposten vil vi utforske hvordan man kan bruke debug output i Ruby-programmering.
+Å skrive ut debugging-utdata i Ruby er en nyttig og effektiv måte å feilsøke og forstå hva som skjer i ditt program. Det kan hjelpe deg med å identifisere og løse feil og problemer i koden din, samt forbedre din generelle forståelse av hvordan koden fungerer.
 
-# Hvordan
+## Hvordan
 
-For å legge til debug output i koden din, kan du bruke "puts" metoden i Ruby. Denne metoden viser en melding eller verdi til terminalen eller konsollen når programmet kjører. La oss for eksempel si at du har en variabel som heter "navn" og du vil se hva den inneholder når koden kjører. Du kan legge til denne linjen med debug output:
-
-```Ruby
-puts navn
-```
-
-Når du kjører koden din, vil du se verdien av variabelen "navn" i terminalen. Dette kan hjelpe deg å identifisere eventuelle feil eller uønskede verdier som kan føre til en bug.
-
-Du kan også bruke "p" metoden for å skrive ut mer komplekse objekter som hash eller array. Denne metoden viser hele objektet og dens innhold, som kan være nyttig når du feilsøker.
+For å skrive ut debugging-utdata i Ruby, kan du bruke `p` eller `puts` metoden. Disse metodene vil skrive ut variablene og deres verdier på konsollen, slik at du kan se hva som skjer i koden din.
 
 ```Ruby
-p array
+# Her er et eksempel på å bruke `p` for å skrive ut en variabel:
+age = 25
+p age # output: 25
+
+# Du kan også skrive ut flere variabler på en gang:
+name = "Emma"
+country = "Norway"
+p name, country # output: "Emma" "Norway"
 ```
 
-# Dypdykk
+```Ruby
+# Her er et eksempel på å bruke `puts` for å skrive ut en streng:
+puts "Hello world!" # output: Hello world!
 
-Når du bruker debug output er det viktig å være forsiktig med hvor mye du skriver ut. Hvis du skriver ut for mye informasjon, kan det bli forvirrende og vanskelig å finne ut hva som er relevant. Du kan også bruke "if" betingelser for å bestemme når debug output skal vises. Dette kan hjelpe deg med å begrense mengden informasjon som blir skrevet ut og gjøre det enklere å finne feilen.
+# Du kan også bruke `puts` for å skrive ut variabler og strenger sammen:
+age = 25
+puts "Jeg er #{age} år gammel." # output: Jeg er 25 år gammel.
+```
 
-Det kan også være lurt å bruke kommentarer sammen med debug output for å gjøre det tydelig hva som blir skrevet ut og hvorfor. Dette kan hjelpe deg og andre utviklere med å forstå koden bedre og raskere finne feilen.
+## Deep Dive
 
-# Se også
+Det er viktig å bruke debugging-utdata på riktig måte for å få mest mulig ut av det. Her er noen tips for å hjelpe deg med å bruke det effektivt:
 
-- [Ruby Dokumentasjon: Debugging](https://www.ruby-lang.org/no/documentation/debugging/)
-- [Ruby on Rails Guides: Debugging](https://guides.rubyonrails.org/v4.2.4/debugging_rails_applications.html)
-- [RailsTapas: Debugging Techniques in Ruby on Rails](http://railscasts.com/episodes/54-debugging-techniques?view=comments)
+- Unngå å skrive ut for mye unødvendig informasjon, da dette kan gjøre det vanskelig å finne de viktige punktene. Velg spesifikke variabler og steder i koden din der du tror et problem kan oppstå.
+- Bruk `p` i stedet for `puts` når du arbeider med komplekse strukturer som arrays og hashes, da `p` vil skrive ut informasjonen på en mer detaljert måte.
+- Kombiner `p` og `puts` for å få en bedre forståelse av hva som skjer. Skriv ut viktige variabler og strings for å se om de har den riktige verdien på de riktige punktene i koden.
+
+## Se også
+
+- [Ruby Dokumentasjon](https://www.ruby-lang.org/no/documentation/) for mer informasjon om debugging-utdata og andre nyttige Ruby-funksjoner.
+- [Ruby on Rails Tutorial](https://www.railstutorial.org/) for å lære mer om Ruby og Ruby on Rails-rammeverket.

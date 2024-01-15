@@ -1,6 +1,7 @@
 ---
-title:                "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "C: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,40 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Po co
+## Dlaczego
 
-C jest jednym z najpopularniejszych języków programowania na świecie, a umiejętność czytania plików tekstowych jest niezbędną umiejętnością dla każdego programisty. Ten blog post opowie Ci, dlaczego warto nauczyć się czytać pliki tekstowe w języku C.
+C jest jednym z najpopularniejszych języków programowania na świecie i znajduje szerokie zastosowanie w różnych dziedzinach. W tym artykule dowiesz się, jak za pomocą C odczytać plik tekstowy i przetworzyć jego zawartość.
 
 ## Jak to zrobić
 
-Kiedy już opanujesz podstawy C, możesz przejść do nauki odczytywania plików tekstowych. W tym celu użyjesz funkcji `fopen()`, `fscanf()` i `fclose()`. Oto przykładowy kod:
-
-```C
+Przykład kodu w języku C:
+```
 #include <stdio.h>
 
 int main() {
-    FILE *plik;
-    char imie[20], nazwisko[20];
-    int wiek;
+   FILE *plik;
+   char linia[200];
 
-    plik = fopen("dane.txt", "r");
-    fscanf(plik, "%s %s %d", imie, nazwisko, &wiek);
-    fclose(plik);
+   // otwieranie pliku
+   plik = fopen("tekstowy.txt", "r");
 
-    printf("Witaj, %s %s! Masz %d lat.", imie, nazwisko, wiek);
+   // sprawdzanie czy plik został otwarty poprawnie
+   if (plik == NULL) {
+      printf("Nie udało się otworzyć pliku.");
+      return 1;
+   }
 
-    return 0;
+   // czytanie linia po linii
+   while (fgets(linia, 200, plik) != NULL) {
+      // wyświetlanie zawartości linii na ekranie
+      printf("%s", linia);
+   }
+
+   // zamykanie pliku
+   fclose(plik);
+
+   return 0;
 }
 ```
 
-Funkcja `fopen()` otwiera plik o podanej nazwie, `fscanf()` wczytuje dane z pliku, a `fclose()` zamyka plik. Prosty, prawda? Warto jednak pamiętać o poprawnym obsłużeniu ewentualnych błędów, na przykład gdy plik nie istnieje.
+Przykładowy plik tekstopwy "tekstowy.txt":
+```
+To jest przykładowy plik tekstowy.
+Zawiera on kilka linii tekstu.
+Możemy go odczytać za pomocą języka C.
+```
 
-## Dogłębny opis
+Przykładowy wynik działania programu:
+```
+To jest przykładowy plik tekstowy.
+Zawiera on kilka linii tekstu.
+Możemy go odczytać za pomocą języka C.
+```
 
-Czytanie plików tekstowych może być nieco bardziej skomplikowane, jeśli chcemy na przykład wczytać kilka linii tekstu lub dania numeryczne. W takim przypadku warto zapoznać się z funkcją `fgets()`, która wczytuje pojedynczą linię tekstu do tablicy znaków, oraz funkcją `strtok()`, która dzieli linię na mniejsze części, tzw. tokeny. Możesz też wykorzystać pętlę `while` i sprawdzać warunek końca pliku za pomocą funkcji `feof()`.
+## Głębsze zagadnienia
+
+Odczytywanie pliku tekstowego w języku C wymaga wcześniejszego zapoznania się z pojęciem wskaźnika oraz funkcjami bibliotecznymi fopen i fgets. Należy również pamiętać o obsłudze błędów, takich jak nieudane otwarcie pliku. W przypadku dłuższych plików tekstowych, możemy użyć pętli while do odczytywania linii po linii. Możemy również wykorzystać funkcje takie jak fread lub fgetc do odczytywania pojedynczych znaków z pliku.
 
 ## Zobacz też
 
-- [Dokumentacja języka C](https://pl.wikibooks.org/wiki/C)
-- [Tutorial odczytywania i zapisywania plików w języku C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Poradnik czytania plików tekstowych w języku C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Dokumentacja języka C](https://pl.wikibooks.org/wiki/C/Dokumentacja)
+- [Język C - Wikipedia](https://pl.wikipedia.org/wiki/J%C4%99zyk_C)
+- [Kurs języka C - Programiz](https://www.programiz.com/c-programming)

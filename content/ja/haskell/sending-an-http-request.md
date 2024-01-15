@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 「HTTPリクエストの送信」"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Haskell: 「HTTPリクエストの送信」"
 simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,41 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+なぜ人々がHTTPリクエストを送ることに取り組むのか、主な理由は2つあります。まず第一に、インターネットを介して情報をやりとりする上で、HTTPは重要なプロトコルであるということです。そして第二に、Haskellは強い静的型付け言語であり、HTTPリクエストを送る際にも安全性を確保できるということです。
 
-HaskellでHTTPリクエストを送信することの魅力について説明します。
-
-## 方法
-
-### 基本的なHTTPリクエストの送信方法
+## 使い方
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP
 
 main = do
-    response <- httpLBS "http://example.com"
-    print $ getResponseStatusCode response
+  request <- simpleHTTP (getRequest "https://example.com")
+  body <- getResponseBody request
+  print body
 ```
-上記のコードは、Network.HTTP.Simpleモジュールを使用してHTTPリクエストを送信し、レスポンスのステータスコードを表示するものです。
-
-### カスタムヘッダーを含めたHTTPリクエストの送信
-```Haskell
-import Network.HTTP.Simple
-
-main = do
-    let request = setRequestHeader "Content-Type" ["application/json"]
-                $ setRequestMethod "POST"
-                $ setRequestBodyLBS "{\"key\": \"value\"}"
-                $ setRequestHeader "Authorization" ["Bearer token"]
-                $ "http://example.com"
-    response <- httpLBS request
-    putStrLn $ "Response body: " ++ (getResponseBody response)
-```
-上記のコードでは、カスタムのヘッダーを設定してPOSTリクエストを送信し、レスポンスのボディを表示しています。"Content-Type"のヘッダーでは、JSON形式のデータを送信しています。さらに、"Authorization"のヘッダーではベアラートークンを使用して認証を行っています。
+サンプルコードを実行すると、HTTPSプロトコルを使用してexample.comから取得したHTMLの内容が表示されます。
 
 ## 深堀り
-
-Network.HTTP.Simpleモジュールでは、HTTPリクエストを送信する際によく使用する関数がたくさん用意されています。例えば、`setRequestHeader`関数を使用してヘッダーを設定したり、`setRequestBody`関数を使用してボディを設定したりすることができます。さらに詳しくは、公式ドキュメントを参照することをおすすめします。
+HTTPリクエストを送信するためにHaskellを使用するには、まずNetwork.HTTPモジュールをインポートする必要があります。その後、simpleHTTP関数を使用してリクエストを作成し、getRequest関数を使用してリクエストのURLを指定します。そして、getResponseBody関数を使うことでレスポンスボディを取得することができます。Haskellは強力なパターンマッチング機能を備えているため、受け取ったレスポンスを適切に処理することができます。
 
 ## 参考リンク
-
-- [Haskellによる開発フローのアーキテクチャについて](https://www.oreilly.co.jp/pub/9784873118705) 
-- [HaskellでHTTP通信をする方法](https://qiita.com/suin/items/27c88da7ae1cf45760e2)
+- [Network.HTTPモジュールのドキュメント](https://hackage.haskell.org/package/HTTP)
+- [HaskellでHTTPリクエストを送信する方法](https://stackoverflow.com/questions/16210548/sending-a-http-request-in-haskell)
+- [HaskellとHTTPクライアントライブラリの比較](https://www.fpcomplete.com/blog/2017/10/comparing-haskell-web-libraries)

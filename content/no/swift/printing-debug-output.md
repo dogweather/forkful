@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Utskrift av feilsøkingsdata"
-simple_title:         "Utskrift av feilsøkingsdata"
+title:                "Utskrift av feilrapporter"
+html_title:           "Swift: Utskrift av feilrapporter"
+simple_title:         "Utskrift av feilrapporter"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -11,81 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Har du noen gang sittet på din beste venns maskin og feilsøkt en Swift-applikasjon du har utviklet sammen? Eller kanskje prøvd å finne ut hvorfor din egen kode ikke fungerer som forventet? Det kan være en frustrerende og tidkrevende prosess å finne ut feilen i koden. Heldigvis er det et enkelt verktøy som kan gjøre denne prosessen mye lettere - print debugging. Ved å skrive ut informasjon om variabler, funksjonskall og fler i koden din, kan du enklere forstå hva som skjer og finne feilen raskere. I denne bloggposten vil jeg vise deg hvordan du kan bruke print debugging i Swift.
+Hvorfor bry seg om å skrive ut feilsøkingsresultater? Vel, debugging er en viktig del av utviklingsprosessen og kan hjelpe deg med å identifisere og fikse feil i koden din. Logging ut informasjon om hva som skjer i programmet ditt kan være en verdifull ressurs for å feilsøke og forbedre ytelsen til appen din.
 
 ## Hvordan
 
-For å skrive ut en variabel i Swift, bruker du print-funksjonen og angir variabelens navn slik:
+Det enkleste måten å skrive ut debug output i Swift er ved å bruke funksjonen `print()`. La oss si at vi har en variabel `count` som inneholder antall elementer i en liste. Hvis vi vil skrive ut denne verdien, kan vi gjøre det på følgende måte:
 
 ```Swift
-let navn = "Maria"
-print(navn)
+print("Antall elementer: \(count)")
 ```
+Dette vil skrive ut "Antall elementer: 10" (hvis for eksempel `count` er 10) i konsollen, noe som kan være nyttig for å følge med på verdiene til variabler mens appen kjører.
 
-Dette vil skrive ut verdien til variabelen "navn" i konsollen:
-
-``` Swift
-Maria
-```
-
-Du kan også skrive ut flere variabler ved å separere dem med komma:
+Vi kan også legge til ekstra informasjon som kan hjelpe oss med å identifisere hvor i koden utskriften kommer fra, for eksempel:
 
 ```Swift
-let alder = 28
-let yrke = "programmerer"
-print(navn, alder, yrke)
+print("Koden i for-løkken er nådd.")
 ```
 
-Dette vil skrive ut følgende i konsollen:
+Dette vil skrive ut "Koden i for-løkken er nådd." og forteller oss nøyaktig hvilken del av koden som ble kjørt.
 
-```
-Maria 28 programmerer
-```
+## Deep Dive
 
-Du kan også bruke print-funksjonen til å skrive ut informasjon om funksjonskall og fler. La oss si at du har en funksjon som regner ut gjennomsnittet av to tall:
+I tillegg til å bare skrive ut verdier og informasjon, kan vi også bruke `print`-funksjonen til å feilsøke. Ved å legge til `#file`, `#line` og `#function` som argumenter i `print`-funksjonen, kan vi også få vite hvilken fil, linje og funksjon utskriften kommer fra.
 
 ```Swift
-func beregnGjennomsnitt(tall1: Double, tall2: Double) -> Double {
-    let gjennomsnitt = (tall1 + tall2) / 2
-    print("Gjennomsnittet av \(tall1) og \(tall2) er \(gjennomsnitt)")
-    return gjennomsnitt
-}
+print("Feil oppstod i filen: \(#file), på linje: \(#line), i funksjonen: \(#function)")
 ```
 
-Når du kaller på denne funksjonen, vil print-funksjonen skrive ut følgende i konsollen:
+Dette kan være spesielt nyttig når du jobber med større og mer komplekse prosjekter.
 
-```Swift
-Gjennomsnittet av 4.5 og 7.2 er 5.85
-```
+## See Also
 
-Bytte til å bruke print-funksjonen istedenfor å bare vise verdier i en UI-kontroller vil også være nyttig når du trenger å undersøke hva som skjer med verdier når appen kjører i en reell situasjon.
-
-## Dypdykk
-
-En annen nyttig funksjon med print-funksjonen er at du kan bruke den for å debugge komplekse kodesnutter. For å gjøre dette, må du bruke en "kittstruktur" som gjør at du kan bryte ned koden i mindre deler og deretter skrive ut informasjon om disse delene for å forstå hva som skjer. La oss si at du utvikler en app som genererer en QR-kode basert på en tekststreng. Koden ser slik ut:
-
-```Swift
-import Foundation
-import UIKit
-
-let tekst = "ABC1234"
-let qrdata = tekst.data(using: .isoLatin1)
-let filter = CIFilter(name: "CIQRCodeGenerator")
-filter?.setValue(qrdata, forKey: "inputMessage")
-let image = UIImage(ciImage: (filter?.outputImage)!)
-```
-
-Hvis du har problemer med å få appen til å generere QR-koden riktig, kan du bruke print-funksjonen til å undersøke hva som skjer med hver av variablene:
-
-```Swift
-print(qrdata)
-print(filter?.outputImage)
-```
-
-Dette vil gi deg verdifull informasjon om hva som skjer med variablene og hjelpe deg å finne feilen.
-
-## Se også
-
-- [The Ultimate Guide to Debugging in Swift](https://learnappmaking.com/debugging-swift-how-to/)
-- [Debugging and Printing in Swift](https://medium.com/flawless-app-stories/debugging-and-printing-in-swift-a8a2e8a2293e)
-- [Swift Print Statement and Debugging Techniques](https://developer.apple.com/swift/blog/?id=16)
+- [Swift Documentation - Printing](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID449)
+- [Using print() to debug in Swift](https://www.hackingwithswift.com/read/34/0/using-print-to-debug-in-swift) 
+- [Logging and Debugging in Swift](https://www.raywenderlich.com/5009-logging-and-debugging-in-swift)

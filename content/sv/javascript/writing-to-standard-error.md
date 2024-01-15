@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Skriva till standardfel"
-simple_title:         "Skriva till standardfel"
+title:                "Skrivning till standardfel"
+html_title:           "Javascript: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,60 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standardfel i Javascript är en viktig del av felsökning och felhantering. Genom att utskriva felmeddelanden till standardfel kan du enkelt spåra och identifiera problem i din kod.
+En av de mest användbara aspekterna av att lära sig Javascript är förmågan att skriva till standard error. Denna funktion hjälper dig att spåra fel och felsöka din kod, vilket är en nödvändig färdighet för alla utvecklare.
 
-## Hur du gör det
+## Så här gör du
 
-För att skriva till standardfel i Javascript använder du metoden `console.error()` och skriver ut ditt felmeddelande som sträng. Exempelvis, om du vill utskriva ett felmeddelande om att en variabel inte är definierad kan du använda följande kod:
-
-```Javascript
-let namn // variabeln är inte definierad
-console.error("Variabeln 'namn' är inte definierad") 
-```
-**Output:**
-![Javascript Console Error](https://i.imgur.com/ZvDH3Ja.png)
-
-Om du vill skriva ut flera felmeddelanden till standardfel kan du använda denna metod flera gånger:
+För att skriva till standard error i Javascript, kan du använda `console.error()` funktionen. Detta tar en parameter som är det felaktiga meddelandet och skriver ut det i standard error-flödet.
 
 ```Javascript
-console.error("Första felmeddelandet")
-console.error("Andra felmeddelandet")
-console.error("Tredje felmeddelandet")
+console.error("Ett fel har uppstått!");
 ```
 
-**Output:**
-```
-Första felmeddelandet
-Andra felmeddelandet
-Tredje felmeddelandet
-```
+Detta skulle ge följande output i standard error-fönstret:
 
-Du kan också använda `console.error()` för att utskriva information om ett kritiskt fel i en `try...catch`-block. Till exempel:
-
-```Javascript
-try {
-    // kod som kan orsaka ett fel
-    let name = "Emma"
-    console.log(lastName) // variabeln är inte definierad
-} catch (error) {
-    console.error("Ett fel har uppstått:", error.message)
-}
 ```
-**Output:**
-```
-Ett fel har uppstått: lastName is not defined
+Ett fel har uppstått!
 ```
 
 ## Djupdykning
 
-Att skriva till standardfel är en bra vana att ha under utvecklingsprocessen eftersom det hjälper till att identifiera och rätta till fel snabbare. Genom att logga felmeddelanden till standardfel i produktionskoden kan du också se till att dina användare inte får en tom eller kraschad sida om ett fel skulle uppstå.
+Att kunna skriva till standard error är en viktig del av felhanteringen i Javascript. Genom att använda `console.error()` kan du enkelt identifiera var i din kod som ett fel har uppstått och snabbt felsöka det.
 
-En annan fördel med att skriva till standardfel är att det kan hjälpa till att felsöka kod som körs på en klient eller server. Genom att använda `console.error()` kan du se vilken del av koden som orsakar problem och spåra det till en specifik fil och rad.
+En annan fördel med att skriva till standard error är att det ger en enkel och synlig indikator på eventuella fel för användare av din webbapplikation. Detta är särskilt användbart för användare som inte är bekanta med konsolen och inte kan se felmeddelanden som skrivs till standard output.
 
-En sista sak att komma ihåg är att se till att ta bort eller kommentera ut eventuella `console.error()`-utskrifter när du är färdig med att felsöka din kod. Annars kan det leda till onödig loggning och påverka prestandan i din applikation.
+## Se också
 
-## Se även
+För mer information och tips om Javascript, kolla in följande länkar:
 
-- [W3Schools - Console Methods in Javascript](https://www.w3schools.com/js/js_console.asp)
-- [Mozilla Developer Network - Using the Console in the Web Console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Using#console_methods)
-- [Medium - How to Use console.error() in Javascript](https://javascript.plainenglish.io/how-to-use-console-error-in-javascript-12960b21afb3)
+- [MDN webbdocs om console.error()](https://developer.mozilla.org/sv-SE/docs/Web/API/Console/error)
+- [Bra praktiska användningar för console.error()](https://stackify.com/console-error/)
+- [Javascript felhanteringstips och tricks](https://www.toptal.com/javascript/guide-javascript-error-handling)

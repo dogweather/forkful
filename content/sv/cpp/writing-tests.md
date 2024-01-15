@@ -1,5 +1,6 @@
 ---
-title:                "C++: Skriva tester"
+title:                "Skriva tester"
+html_title:           "C++: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "C++"
 category:             "C++"
@@ -11,39 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av programmering, det hjälper till att säkerställa att koden fungerar som den ska innan den släpps ut i produktion. Det kan också bidra till att upptäcka och åtgärda eventuella fel eller buggar i koden tidigt i utvecklingsprocessen. Att använda tester kan också spara tid och resurser genom att förhindra att felaktig kod når användaren.
+Det finns många anledningar till varför man bör inkludera tester i sin C++-kod. För det första, det kan hjälpa till att upptäcka och förhindra buggar i koden. Det är också ett praktiskt sätt att säkerställa att koden fungerar som den ska och fortsätter göra det även efter eventuella framtida ändringar.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva tester i C++, behöver du en testerhetskod, som vanligtvis är en del av ett separat testbibliotek. Ett populärt testbibliotek för C++ är Google Test, som är en Open Source-lösning som används av många C++ utvecklare.
-
-Först måste du installera och konfigurera Google Test för ditt projekt. Sedan kan du skriva tester för dina funktioner och klasser i en separat testfil. Här är ett enkelt exempel på hur en testfil kan se ut:
+Att skriva tester i C++ är inte så svårt som det kanske verkar. Det finns flera olika ramverk som underlättar processen, som till exempel Google Test och Catch2. Nedan följer ett enkelt exempel på hur du kan skriva ett test för en funktion som adderar två tal:
 
 ```C++
-#include <gtest/gtest.h>
+#include <iostream>
 
-TEST(Exempeltest, Generelltest) {
-    // förväntad utdata
-    int expected = 10;
-    // faktisk utdata
-    int actual = minFunktion(5, 5);
-    // verifiera att de är lika
-    EXPECT_EQ(expected, actual);
+// Funktionen som ska testas
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // En enkel testcase
+    int result = add(2, 3);
+
+    // Om resultatet är rätt så skrivs "Test passed!" ut
+    // Annars skrivs "Test failed!" ut
+    if (result == 5) {
+        std::cout << "Test passed!" << std::endl;
+    } else {
+        std::cout << "Test failed!" << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-När du kör testet kommer Google Test att rapportera om det lyckades eller misslyckades. Om det misslyckades kan du enkelt hitta och åtgärda felet i din funktion.
+Kom ihåg att testa både positiva och negativa scenarier för att vara säker på att koden fungerar som den ska.
 
 ## Djupdykning
 
-Att skriva effektiva tester är en färdighet som kräver övning. Det är viktigt att tänka på alla möjliga scenarier och fall som din kod kan stöta på och skriva tester för dem. Det är också viktigt att ha en välstrukturerad och lättläst testkod för att säkerställa att testerna är enkla att följa och förstå.
+När du skriver tester i C++ är det viktigt att förstå hur testbaserade klasser fungerar. En testbaserad klass är en klass som innehåller en uppsättning tester för en funktionell enhet, som till exempel en klass eller en funktion. Genom att använda dessa klasser kan du enkelt organisera och köra dina tester, vilket gör det enklare att upptäcka och åtgärda buggar.
 
-En annan viktig aspekt av tester är att undvika beroenden och isolera tester för att förhindra att ett fel i en del av koden påverkar resultatet av andra tester. Det är också bra att använda "mock" objekt för att simulera externa beroenden och undvika att faktiska anrop görs under testning.
-
-Tänk på att skriva tester kontinuerligt och inte bara när koden är "klar". Att ha en god täckning av tester kommer att bidra till att upptäcka och lösa problem snabbare.
+Du bör också överväga att använda en CI (continuous integration) plattform för att automatiskt köra dina tester varje gång du gör en förändring i koden. Detta hjälper till att identifiera eventuella problem tidigt och säkerställer att koden alltid är i ett fungerande skick.
 
 ## Se även
 
-- [Google Test dokumentation](https://github.com/google/googletest/blob/master/docs/googlemock.md)
-- [Tutorial på hur man använder Google Test](https://www.softwaretestinghelp.com/cpp-unit-testing-with-google-test-tutorial/)
-- [Skillnad mellan enhetstester, integrationstester och systemtester](https://www.softwaretestinghelp.com/unit-testing-vs-integration-testing-difference/)
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [Continuous Integration](https://medium.com/@onejohi/continuous-integration-vs-continuous-delivery-vs-continuous-deployment-5c3e869d4e65)

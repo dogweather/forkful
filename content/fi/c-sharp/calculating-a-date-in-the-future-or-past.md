@@ -1,6 +1,7 @@
 ---
-title:                "C#: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "C#: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -11,66 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus ohjelmoinnissa tarvitaan laskemaan tietty päivämäärä menneisyydessä tai tulevaisuudessa. Tämä voi tapahtua esimerkiksi laskutaulukoiden luomiseksi tai päivämääräperusteisten muistutusten tekemiseksi.
+Usein tarvitsemme laskemaan päivämäärän menneisyydessä tai tulevaisuudessa toiminnassamme. Ehkä sinulla on projekti, joka vaatii tietyn päivämäärän tai haluat vain tietää tulevaisuuden päivämäärän johonkin tiettyyn tapahtumaan.
 
-## Miten
+## Kuinka
 
-```C#
-using System;
-
-DateTime tanaan = DateTime.Today;
-DateTime tulevaPaiva = tanaan.AddMonths(3); // lisätään kolme kuukautta nykyiseen päivämäärään
-DateTime menneemPaiva = tanaan.AddYears(-2); // vähennetään kaksi vuotta nykyisestä päivämäärästä
-
-Console.WriteLine("Päivämäärä kolmen kuukauden päästä: " + tulevaPaiva.ToShortDateString());
-Console.WriteLine("Päivämäärä kaksi vuotta sitten: " + menneemPaiva.ToShortDateString());
-```
-
-Tulostus:
-
-```
-Päivämäärä kolmen kuukauden päästä: 01.03.2022
-Päivämäärä kaksi vuotta sitten: 22.09.2019
-```
-
-Voit myös asettaa tietyn päivämäärän laskentaan käyttämällä `DateTime`-parametrejä:
+Laskeminen päivämäärää menneisyydessä on helppoa C# -ohjelmointikielellä. Seuraavassa on esimerkki, joka näyttää kuinka voit laskea päivämäärän tietyn määrän päiviä menneisyyteen:
 
 ```C#
-DateTime syntymapaiva = new DateTime(1995, 1, 15); // päivämäärä syntymäpäivälleni
-DateTime tulevaSynttari = syntymapaiva.AddYears(1); // lisätään yksi vuosi syntymäpäivään
+DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
+int päivätMenneisyydessä = 30; //Määrittää, kuinka monta päivää haluat mennä taaksepäin
 
-Console.WriteLine("Seuraava syntymäpäivä: " + tulevaSynttari.ToShortDateString());
+DateTime tulevaPäivä = nykyinenPäivä.AddDays(-päivätMenneisyydessä); //Laskee päivämäärän 30 päivää taaksepäin
+Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
 ```
 
-Tulostus:
+Tämä koodi käyttää DateTime-luokan AddDays-metodia, joka lisää tai vähentää päiviä valittuun päivämäärään. Huomaa, että käytämme negatiivista päivien lukumäärää, jos haluamme laskea päivämäärää menneisyyteen.
 
-```
-Seuraava syntymäpäivä: 15.01.2022
-```
-
-## Syvällinen sukellus
-
-Voit myös laskea päivämäärän tietynä päivänä viikossa käyttämällä `DayOfWeek`-enumerointia ja `AddDays`-metodia:
+Voit myös laskea tulevan päivämäärän lisäämällä päiviä nykyiseen päivämäärään. Seuraavassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään:
 
 ```C#
-DateTime tanaan = DateTime.Today;
-DateTime tulevaMaanantai = tanaan.AddDays(8 - (int)tanaan.DayOfWeek); // lisätään päiviä nykyiseen päivämäärään niin, että seuraava maanantai saadaan
-DateTime tulevaPerjantai = tanaan.AddDays(12 - (int)tanaan.DayOfWeek); // lisätään päiviä niin, että seuraava perjantai saadaan
+DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
+int päivätTulevaisuudessa = 30; //Määrittää, kuinka monta päivää haluat lisätä
 
-Console.WriteLine("Seuraava maanantai: " + tulevaMaanantai.ToShortDateString());
-Console.WriteLine("Seuraava perjantai: " + tulevaPerjantai.ToShortDateString());
+DateTime tulevaPäivä = nykyinenPäivä.AddDays(päivätTulevaisuudessa); //Laskee päivämäärän 30 päivää eteenpäin
+Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
 ```
 
-Tulostus:
+## Syvempi sukellus
 
+Päivämäärän laskeminen menneisyydessä tai tulevaisuudessa on mahdollista myös käyttämällä TimeSpan-luokkaa. TimeSpan-luokka edustaa ajanjaksoa esimerkiksi päivien, tuntien tai minuuttien muodossa. Voimme käyttää tätä luokkaa laskemaan päivämäärä tietyn ajanjakson kuluttua.
+
+Seuraavassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään käyttäen TimeSpania:
+
+```C#
+DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
+int päivätTulevaisuudessa = 30; //Määrittää, kuinka monta päivää haluat lisätä
+
+TimeSpan ajanjakso = new TimeSpan(päivätTulevaisuudessa, 0, 0, 0); //Luodaan TimeSpan jossa 30 päivää
+DateTime tulevaPäivä = nykyinenPäivä + ajanjakso; //Lisätään TimeSpan nykyiseen päivämäärään
+Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
 ```
-Seuraava maanantai: 04.10.2021
-Seuraava perjantai: 08.10.2021
-```
 
-Käytännöllisiä `DateTime`-metodeja ja enumerointeja löytyy lisää Microsoftin dokumentaatiosta.
-
-## Katso myös
-
-- [Microsoftin DateTime-dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0)
-- [Perusohjeet päivämäärien laskemiseen C#-kielellä](https://keystrokecountdown.com/blog/2019/11/05/c-sharp-date-calculations/) (englanniksi)
+Huomaathan, että TimeSpanin ensimmäinen parametri on päivien määrä. Voit myös käyttää muita parametreja, kuten tunteja, minuutteja ja sekunteja, lasketaksesi tarkempia päivämääri

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Clojure: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,50 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要获取当前日期？
+## 为什么
 
-获取当前日期在Clojure编程中是非常常见的操作。通过获取当前日期，我们可以在程序中实现时间相关的功能，比如记录数据更新的时间，或者定时执行某些任务等。 
+在日常编程中，获取当前日期是一项必不可少的任务。它可以帮助我们跟踪事件，计算持续时间等等。Clojure语言提供了简单而强大的方法来获取当前日期，让我们来看看如何实现吧！
 
-## 如何实现？
+## 如何
 
-在Clojure中，有多种方法可以获取当前日期。下面将通过代码示例来介绍其中的两种方法。
+首先，让我们导入Clojure中的日期库：
 
-### 方法一：使用 `clj-time` 库
-
-首先，我们需要导入 `clj-time` 库：
 ```Clojure
-(ns my-namespace
-  (:require [clj-time.core :refer [now]]))
+(require '[clojure.java-time :as jtime])
 ```
 
-然后，就可以使用 `now` 函数来获取当前日期对象：
+接下来，我们可以使用`now`函数来获取当前日期和时间：
+
 ```Clojure
-(def current-date (now))
+(jtime/now)
 ```
 
-最后，我们可以使用 `clj-time` 提供的各种函数来对日期对象进行操作，比如获取年、月、日等信息，或者进行日期的加减运算。
+这将返回包含当前日期和时间的`Instant`对象。我们可以通过调用`toLocalDate`来获取当前日期：
 
-### 方法二：使用 `java.time` 库
-
-`java.time` 是 Java 8 中引入的日期和时间 API，我们可以通过Clojure与Java的互操作性来使用它。
-
-首先，需要导入 `java.time.LocalDate` 类：
 ```Clojure
-(import java.time.LocalDate)
+(jtime/toLocalDate (jtime/now))
 ```
 
-然后，我们可以直接调用 `LocalDate` 的静态方法来获取当前日期对象：
+该函数将返回一个`LocalDate`对象，其中包含当前日期的年份，月份和日数。我们还可以使用`toLocalDateTime`函数来获取当前日期和时间的更多细节：
+
 ```Clojure
-(def current-date (LocalDate/now))
+(jtime/toLocalDateTime (jtime/now))
 ```
 
-最后，我们可以使用 `LocalDate` 提供的各种方法来对日期对象进行操作，比如获取年、月、日等信息，或者进行日期的加减运算。
+这将返回一个`LocalDateTime`对象，其中包含当前日期的年份，月份，日数，小时，分钟和秒数。现在，让我们来看看如何格式化当前日期的输出。
 
-## 深入探讨
+要以特定的格式输出当前日期，我们可以使用`format`函数，并指定所需的格式。例如，要以`yyyy-MM-dd`格式输出当前日期，我们可以这样做：
 
-无论是使用 `clj-time` 还是 `java.time`，都是通过调用Java类的静态方法来获取当前日期。在Java中，可以通过 `Clock` 类来获取当前时间，而这也是 `clj-time` 库的内部实现。另外，值得一提的是，在Clojure中，我们也可以自己实现一个 `now` 函数来获取当前日期，比如通过调用 `System/currentTimeMillis` 方法来返回当前毫秒数，再通过 `java.time.Instant` 类来将毫秒数转换为日期对象。不管使用哪种方法，最终都是在获取系统时间并做适当的处理来得到当前日期。
+```Clojure
+(jtime/format (jtime/now) "yyyy-MM-dd")
+```
 
-# 参考链接
+这将返回一个字符串，其中包含当前日期的年份，月份和日数，使用连字符分隔。除此之外，您还可以指定其他日期格式，例如`MM/dd/yyyy`，`dd MMM yyyy`等等。现在，让我们来深入探讨一下如何获取当前日期的更多信息。
 
-- [clj-time 文档](https://cljdoc.org/d/clj-time/clj-time/0.14.4/doc/readme)
-- [java.time 文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+## 深入了解
+
+在获取当前日期时，Clojure使用的是Java类库中的日期和时间类。这些类提供了各种方法来处理和管理日期，例如计算持续时间，比较日期，转换日期等等。您可以通过查看Java类库文档来了解更多关于这些类和其相关方法的信息。另外，Clojure还提供了许多其他日期操作的函数，例如`plus-days`，`minus-days`等等，使您能够方便地对日期进行修改和计算。现在，您已经了解了如何获取当前日期，让我们来看看一些相关的链接吧。
+
+## 参考资料
+
+- Java 日期和时间类库文档: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Clojure 日期与时间函数文档: https://clojure.github.io/java-time/
+- Clojurians论坛: https://ask.clojure.org/
+- Clojure标准库: https://clojuredocs.org/

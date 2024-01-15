@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Swift recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,46 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Compare Dates in Swift?
+## Why
 
-Comparing dates is a common task in programming, especially when dealing with time-sensitive data. In Swift, there are built-in methods and functions that make it easy to compare dates and determine their relative order. In this blog post, we will discuss why you might need to compare dates in Swift and how to do it effectively.
+Comparing dates is a common task in programming that allows us to check if certain events have occurred or to determine the amount of time that has passed between two dates. Whether you need to keep track of deadlines, calculate age, or schedule tasks, being able to compare dates is an essential skill for any developer.
 
-## How To Compare Dates in Swift
+## How To
 
-To compare two dates in Swift, we can use the `compare()` method provided by the `Date` class. This method takes in another `Date` object as a parameter and returns a `ComparisonResult` enum value. There are three possible values that can be returned:
+Comparing dates in Swift is a straightforward process that involves using the `Date` and `Calendar` classes. Let's take a look at some code examples to see how it's done:
 
-- `.orderedAscending`: the receiver date is earlier than the parameter date
-- `.orderedDescending`: the receiver date is later than the parameter date
-- `.orderedSame`: the receiver date is the same as the parameter date
+```Swift
+// Creating two date objects
+let date1 = Date()
+let date2 = Date().addingTimeInterval(60)
 
-We can use this method to compare two dates and determine their relative order. For example, let's compare two dates representing today and yesterday:
+// Comparing if date1 is before date2
+if date1 < date2 {
+    print("date1 is before date2")
+}
 
-```
-let today = Date()
-let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!
-
-let comparison = today.compare(yesterday)
-
-switch comparison {
-case .orderedAscending:
-    print("Today is earlier than yesterday")
-case .orderedDescending:
-    print("Today is later than yesterday")
-case .orderedSame:
-    print("Today is the same as yesterday")
+// Comparing if date1 is after date2
+if date1 > date2 {
+    print("date1 is after date2")
 }
 ```
 
-The output of this code would be `Today is later than yesterday`, since the receiver date (today) is indeed later than the parameter date (yesterday). 
+Output:
+```
+date1 is before date2
+```
 
-## Deep Dive: Understanding Date Components
+In the above example, we created two `Date` objects using the `Date()` initializer. We also used the `addingTimeInterval()` method to add 60 seconds to `date2` so that it would be one minute ahead of `date1`. Then, we used the comparison operators `<` and `>` to check if one date is before or after the other.
 
-In the previous example, we used the `Calendar` class to create a `Date` object representing yesterday. This shows us an important aspect of comparing dates in Swift - time precision. When comparing dates, we need to take into account the time components as well as the date components. If two dates are on the same day but at different times, the `compare()` method will return `.orderedSame` even though the times are different. 
+If you're comparing dates with a more specific level of precision, such as comparing only the dates and ignoring the time, you can use the `isDate()` method of the `Calendar` class. Here's an example:
 
-To compare dates with more precision, we can use the `Calendar` class to extract specific components from the `Date` objects. For example, we can extract the year, month, and day components using the `dateComponents(_:from:)` method and then compare them individually. This allows us to consider the time components as well and get a more accurate comparison. 
+```Swift
+// Creating a calendar instance
+let calendar = Calendar.current
+
+// Getting the date components of date1
+let date1Components = calendar.dateComponents([.day, .month, .year], from: date1)
+
+// Getting the date components of date2
+let date2Components = calendar.dateComponents([.day, .month, .year], from: date2)
+
+// Checking if the dates have the same day, month, and year
+if calendar.isDate(date1, equalTo: date2, toGranularity: .day) {
+    print("date1 and date2 have the same day, month, and year")
+}
+```
+
+Output:
+```
+date1 and date2 have the same day, month, and year
+```
+
+In the above example, we used the `dateComponents()` method to get specific components from the dates, and then we used the `isDate()` method to compare only the day, month, and year components.
+
+## Deep Dive
+
+Under the hood, Swift's `Date` class is a typealias for the `Foundation` framework's `NSDate` class, which represents a specific point in time. This means that when comparing dates in Swift, you are actually comparing timestamps.
+
+Additionally, the `Calendar` class gives you control over how dates are compared by allowing you to specify a `Calendar.Identifier`, which represents a specific type of calendar (e.g. Gregorian, Islamic, Chinese). This ensures that your comparisons are accurate and reflect the expected cultural and societal norms.
 
 ## See Also
 
-- [Apple Developer Documentation on Comparing Dates in Swift](https://developer.apple.com/documentation/foundation/date/comparing_dates)
-- [Swift Date and Time Tutorial](https://www.hackingwithswift.com/read/20/overview)
-- [Stack Overflow Discussion on Comparing Dates in Swift](https://stackoverflow.com/questions/31675665/how-to-compare-two-dates-in-swift)
+- [Apple Developer Documentation: Foundation Framework](https://developer.apple.com/documentation/foundation)
+- [NSCalendar - wwdc2016](https://nshipster.com/nscalendar/)

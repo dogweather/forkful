@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: コンピュータプログラミングの記事のタイトル：コマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラミングの記事のタイトル：コマンドライン引数の読み取り"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Gleam: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,67 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#なぜ
-コマンドライン引数を読む方法を学ぶことによって、あなたのGleamプログラミングのスキルを向上させることができます。また、より効率的なコードを書くことができるようになり、プログラムの実行をカスタマイズすることができるようになります。
+## なぜ
 
-##方法
-コマンドライン引数を読むには、まず`Gleam.System`モジュールをインポートする必要があります。そして、`args`という関数を使用してコマンドライン引数を取得することができます。以下はコマンドライン引数を取得し、その内容を表示するコードの例です。
+コマンドライン引数を読み取る方法を学ぶことで、あなたのプログラミングスキルを向上させることができます。また、コマンドライン引数を使うことで、プログラムをより動的に制御できるようになります。
+
+## 方法
+
+コマンドライン引数を読み取るには、Gleamの標準ライブラリに含まれている `gleam/io/argv` モジュールを使用します。以下のコードを参考にしてください。
 
 ```Gleam
-import Gleam.System
+import gleam/io/argv
 
-pub fn main(_) {
-  args()
-  |> System.args
-  |> println
+pub fn main() {
+  args = argv.args()               // 引数を取得する
+  println(args)                    // 引数を表示する
+  println(args[0])                 // 最初の引数を表示する
+  println(args[1])                 // 2番目の引数を表示する
+  println(args.len())              // 引数の数を表示する
 }
 ```
 
-コマンドライン引数を指定するには、以下のように`gleam run`コマンドを使用します。
+もしあなたが `gleam build` コマンドでコンパイルしたプログラムを実行する場合は、 `gleam run my_program`` `と入力してください。もしもあなたが、 `gleam repl`` `でプログラムを実行する場合、コマンドライン引数は自動的に与えられます。
 
-```
-$ gleam run ファイル名 引数1 引数2 ...
-```
-
-例えば、上記のコードを`args.gleam`というファイル名で保存し、以下のように実行すると、
-
-```
-$ gleam run args.gleam hello world
-```
-
-以下のように表示されます。
-
-```
-[hello, world]
-```
-
-##深堀り
-現在のプログラムがどの引数で実行されたかを知る必要がある場合、`Gleam.System`モジュールの`os_args`関数を使用することもできます。この関数は、実行中のプログラムと同じ引数のリストを返します。以下はその例です。
+サンプルの出力は以下のようになります。
 
 ```Gleam
-import Gleam.System
-
-pub fn main(_) {
-  let program = System.args()[1]
-  os_args()
-  |> List.drop(1) // プログラム名を除外する
-  |> println
-}
+my_program
+arg1
+arg2
+2
 ```
 
-上記のコードを`program_args.gleam`というファイル名で保存し、以下のように実行すると、
+## 詳細
 
-```
-$ gleam run program_args.gleam hello world
-```
+`argv.args()` 関数は、文字列のリストを返します。もしもコマンドライン引数を指定しなかった場合、この関数は空のリストを返します。`argv.args()` 関数で返されるリストは、配列に似ていますが、 `append`` ` や `split` などの配列の一部の関数を使用することはできません。そのため、 `args[0]`` ` のようなインデックスを使用する必要があります。
 
-以下のように表示されます。
+## 関連情報
 
-```
-[hello, world]
-```
-
-##参考リンク
-- [Gleam公式ドキュメント: Systemモジュール](https://gleam.run/book/stdlib.html#system)
-- [Gleam公式ドキュメント: コマンドライン引数の取得](https://gleam.run/book/manual.html#command-line-arguments)
-- [Gleam公式リポジトリのコマンドライン引数の使用例](https://github.com/gleam-lang/gleam/blob/master/examples/command-line-arguments.gleam)
+- [Gleamのドキュメンテーション](https://gleam.run/documentation/)
+- [コマンドライン引数の読み取りについての詳細](https://gleam.run/articles/command-line-arguments/)

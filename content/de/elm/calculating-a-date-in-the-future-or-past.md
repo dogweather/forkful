@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "Elm: Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,53 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann eine praktische Möglichkeit sein, um bestimmte Aktionen zu automatisieren oder zu planen. Mit Elm können Sie dies auf einfache und elegante Weise tun.
+Es gibt viele Gründe, warum jemand ein Datum in der Zukunft oder Vergangenheit berechnen möchte. Vielleicht möchten Sie wissen, an welchem Tag Ihr Geburtstag in ein paar Jahren sein wird, oder Sie müssen eine Frist für ein Projekt festlegen. Egal aus welchem Grund, Elm bietet eine einfache Möglichkeit, diese Berechnungen durchzuführen.
 
-## Wie geht das?
+## How To
+
+Um ein Datum in Elm zu berechnen, verwenden wir die `Time` Bibliothek. Zunächst müssen wir sie importieren:
 
 ```Elm
-import Time exposing ( add, hours, days, months, years, sub, inUtc )
-
--- Berechnet das Datum von heute in einer Woche
-addWeek : Date
-addWeek =
-    Time.now
-        |> inUtc
-        |> add (days 7)
-
--- Berechnet das Datum von heute vor zwei Monaten
-subTwoMonths : Date
-subTwoMonths =
-    Time.now
-        |> inUtc
-        |> sub (months 2)
-
--- Berechnet das Datum von heute in einem Jahr und fünf Monaten
-addYearAndFiveMonths : Date
-addYearAndFiveMonths =
-    Time.now
-        |> inUtc
-        |> add (years 1)
-        |> add (months 5)
-
--- Berechnet das Datum von heute vor einer Stunde
-subHour : Date
-subHour =
-    Time.now
-        |> inUtc
-        |> sub (hours 1)
+import Time
 ```
 
-Die Funktionen `add` und `sub` ermöglichen es uns, Datumsangaben in der Zukunft oder Vergangenheit zu berechnen, indem wir einfach angeben, wie viele Einheiten (Stunden, Tage, Monate, Jahre) wir hinzufügen oder subtrahieren möchten. Wir können auch `inUtc` verwenden, um sicherzustellen, dass die Berechnungen in der UTC-Zeitzone durchgeführt werden.
+Dann können wir die Funktion `add` verwenden, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Diese Funktion erwartet zwei Argumente: die Anzahl der Einheiten, die Sie hinzufügen möchten, und die Zeit Einheit selbst. Zum Beispiel, wenn wir 10 Tage in die Zukunft berechnen möchten, würden wir Folgendes tun:
 
-## Tiefentauchen
+```Elm
+Time.add 10 Time.day
+```
 
-Das Berechnen von Datumsangaben mag auf den ersten Blick einfach erscheinen, aber es gibt einige Dinge zu beachten. Zum Beispiel müssen wir berücksichtigen, dass einige Jahre Schaltjahre sind und daher einen zusätzlichen Tag haben. Für solche Fälle bietet Elm die Funktion `Time.isLeapYear`, die überprüft, ob ein bestimmtes Jahr ein Schaltjahr ist oder nicht.
+Dies gibt uns ein `Posix` Datum zurück, das wir in unserer Anwendung verwenden können. Wenn wir das Datum im Format "Monat/Tag/Jahr" ausgeben möchten, können wir die `Time.Format` Bibliothek importieren und die `format` Funktion verwenden:
 
-Eine weitere wichtige Sache zu beachten ist, dass wir immer mit der UTC-Zeitzone arbeiten. Wenn wir also ein bestimmtes Datum in unserer lokalen Zeitzone anzeigen möchten, müssen wir eine Konvertierung vornehmen. Elm bietet die Funktion `Time.utcToOtherZone`, mit der wir ein Datum aus der UTC-Zeitzone in eine andere Zeitzone konvertieren können.
+```Elm
+import Time.Format
+
+let
+    dateInFuture = Time.add 10 Time.day
+in
+    Time.Format.format "%m/%d/%Y" dateInFuture
+```
+
+Dies würde uns ein Format wie "05/01/2021" zurückgeben, abhängig von dem aktuellen Datum.
+
+## Deep Dive
+
+Es ist wichtig zu verstehen, dass die `Time` Bibliothek in Elm auf `POSIX` basiert, was ein einheitlicher Zeit- und Datumsstandard ist. Dies bedeutet, dass wir immer mit `POSIX` Datumswerten arbeiten, die wir dann formatieren oder in unserer Anwendung verwenden können.
+
+Eine weitere wichtige Funktion in der `Time` Bibliothek ist `now`, die uns das aktuelle Datum und die aktuelle Uhrzeit gibt. Wenn wir also ein Datum in der Zukunft oder Vergangenheit berechnen möchten, können wir dies basierend auf dem aktuellen Datum und der aktuellen Uhrzeit tun, indem wir `now` verwenden.
+
+Ein weiteres zu beachtendes Detail ist, dass die `Time` Bibliothek nur für gregorianische Kalender unterstützt, was bedeutet, dass sie keine Unterstützung für andere Kalender wie den islamischen oder jüdischen Kalender bietet.
 
 ## Siehe auch
 
-- [Offizielle Elm Dokumentation zu Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Blogbeitrag: Working with Dates in Elm](https://elmprogramming.com/working-with-dates-in-elm.html)
-- [Video-Tutorial: Elm Time Library](https://www.youtube.com/watch?v=gJ_CIA4PqYo)
+- Offizielle Elm `Time` Dokumentation: https://package.elm-lang.org/packages/elm/time/latest/
+- Einführung in die Elm Programmierung: https://elm-lang.org/docs/from-javascript

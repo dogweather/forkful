@@ -1,6 +1,7 @@
 ---
-title:                "C++: Forrige sjekk av eksistensen til en mappe"
-simple_title:         "Forrige sjekk av eksistensen til en mappe"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "C++: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,90 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Når man jobber med å programmere i C++, er det viktig å kunne sjekke om en mappe eksisterer før man fortsetter kodingen. Dette sikrer at programmet er robust og kan håndtere uventede situasjoner, som for eksempel hvis en nødvendig fil er flyttet eller slettet.
+Å sjekke om en mappe eksisterer er en viktig del av programmering, da det lar deg håndtere potensielle feil i koden din. Dette kan bidra til å forhindre programkrasj og forbedre programytelsen.
 
 ## Hvordan
-
-Det finnes forskjellige metoder for å sjekke om en mappe eksisterer i C++. En av de mest vanlige er å bruke `std::filesystem::exists` funksjonen, som sjekker om en filbane peker mot en eksisterende fil eller mappe. Se eksemplet nedenfor:
-
-```C++
-#include <iostream>
-#include <filesystem>
-
-namespace fs = std::filesystem;
-  
-int main()
-{
-    // Oppretter en ny filbane som peker mot en eksisterende mappe
-    fs::path folderPath = "C:/Brukere/Navn/Dokumenter/";
-
-    // Sjekker om mappen eksisterer
-    if (fs::exists(folderPath))
-    {
-        std::cout << "Mappen eksisterer" << std::endl;
-    }
-    else
-    {
-        std::cout << "Mappen eksisterer ikke" << std::endl;
-    }
-    return 0;
-}
-```
-
-Eksempelutdata:
-
-```
-Mappen eksisterer
-```
-
-Det er også mulig å sjekke om en mappe eksisterer ved å bruke `stat` funksjonen, som returnerer informasjon om en fil eller mappe. Hvis det ikke er mulig å hente informasjon om filen eller mappen, betyr det at den ikke eksisterer. Se eksemplet nedenfor:
+Det finnes flere måter å sjekke om en mappe eksisterer i C++. Her er et eksempel på hvordan du kan gjøre det ved hjelp av `opendir()` og `closedir()` funksjoner:
 
 ```C++
 #include <iostream>
-#include <sys/stat.h>
+#include <dirent.h>
 
-int main()
-{
-    // Oppretter en filbane som peker mot en eksisterende mappe
-    const char* folderPath = "C:/Brukere/Navn/Dokumenter/";
+using namespace std;
 
-    // Oppretter en struct for å lagre informasjon om mappen
-    struct stat info;
-
-    // Henter informasjon fra mappen og lagrer det i structen
-    if(stat(folderPath, &info) != 0) 
-    {
-        // Hvis mappen ikke eksisterer, vil denne kodesnutten kjøre
-        std::cout << "Mappen eksisterer ikke" << std::endl;
-    }
-    else if(info.st_mode & S_IFDIR) 
-    {
-        // Hvis mappen eksisterer, vil denne kodesnutten kjøre
-        std::cout << "Mappen eksisterer" << std::endl;
-    }
-    else 
-    {
-        std::cout << "Mappen eksisterer ikke" << std::endl;
-    }
-
-    return 0;
+int main() {
+  string directory_path = "my_directory";  // endre til relevant mappebane
+  DIR* directory = opendir(directory_path.c_str()); // åpner mappen ved hjelp av opendir()
+  if (directory) {
+    // mappen eksisterer
+    closedir(directory); // lukker mappen ved hjelp av closedir()
+    cout << "Mappen eksisterer!" << endl;
+  }
+  else {
+    // mappen eksisterer ikke
+    cout << "Mappen eksisterer ikke." << endl;
+  }
+  return 0;
 }
 ```
 
-Eksempelutdata:
-
+Output:
 ```
-Mappen eksisterer
+Mappen eksisterer!
 ```
 
-## Dykk Dypere
+## Deep Dive
+Merk at `opendir()` og `closedir()` funksjonene tilhører `<dirent.h>` biblioteket, som inneholder funksjoner utviklet for håndtering av kataloger. `opendir()` funksjonen tar inn en mappebane som argument og returnerer en peker til denne mappen hvis den eksisterer, ellers returnerer den en nullpeker. Derfor kan man bruke `if`-setningen til å sjekke om mappen eksisterer eller ikke.
 
-Det er viktig å merke seg at når man sjekker om en mappe eksisterer, betyr det ikke nødvendigvis at den er tilgjengelig for å bli brukt. Det kan være flere årsaker til dette, som for eksempel rettigheter eller skrivebeskyttelse. Derfor bør man alltid sjekke at man faktisk kan utføre operasjoner på mappen, og ikke bare at den eksisterer.
-
-Et annet viktig poeng er at hvis man bruker `stat` funksjonen, er det viktig å merke seg hvilken platform man jobber på. Denne metoden fungerer annerledes på forskjellige operativsystemer, og det kan være nødvendig å inkludere forskjellige biblioteker eller bruke andre funksjoner for å få ønsket resultat.
-
-## Se Også
-
-- [std::filesystem::exists dokumentasjon (engelsk)](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [stat dokumentasjon (engelsk)](http://man7.org/linux/man-pages/man2/stat.2.html)
+## Se også
+- [C++ opendir() function](https://www.cplusplus.com/reference/cstdio/opendir/)
+- [C++ closedir() function](https://www.cplusplus.com/reference/cstdio/closedir/)

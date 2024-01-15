@@ -1,5 +1,6 @@
 ---
-title:                "Python: Skapa en tillfällig fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Python: Skapa en tillfällig fil"
 simple_title:         "Skapa en tillfällig fil"
 programming_language: "Python"
 category:             "Python"
@@ -9,43 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför skapa en tillfällig fil i Python?
+## Varför
 
-Att skapa en temporär fil i Python kan vara användbart när man behöver tillfälligt lagra data eller när man inte vill spara permanenta filer på ens dator. Det är också ett vanligt sätt att hantera och organisera data i mer komplexa program.
+Innan vi börjar, låt oss ta en snabb titt på varför vi behöver använda temporära filer i vår Python-kod. En temporär fil är en fil som skapas tillfälligt för att lagra data eller utföra en viss uppgift under exekveringen av vårt program. Detta kan vara användbart när vi arbetar med stora datamängder eller när vi behöver skriva till en fil utan att permanent lagra den på disk.
 
-##Så här skapar du en tillfällig fil i Python
+## Så här gör du
 
-För att skapa en tillfällig fil i Python, behöver du importera inbyggda "tempfile" biblioteket och använda funktionen "TemporaryFile()". Sedan kan du använda den temporära filen som vanligt som du skulle använda en vanlig fil. För att se en enkel kod-exempel, se nedan:
+Att skapa en temporär fil i Python är en enkel process. Vi kan använda modulen `tempfile` för att skapa vår temporära fil och senare använda den för vår önskade uppgift. Först importerar vi modulen:
 
-```python
+```Python
 import tempfile
-
-with tempfile.TemporaryFile() as temp_file: #Skapar en temporär fil
-    #Skriva data till filen
-    temp_file.write(b"Du skapade en tillfällig fil från Python!")
-
-    #Läser data från filen
-    temp_file.seek(0)
-    print(temp_file.read())
 ```
 
-Output:
+Nästa steg är att använda funktionen `NamedTemporaryFile()` för att skapa vår temporära fil och tilldela den till en variabel:
 
-Du skapade en tillfällig fil från Python!
+```Python
+temp_file = tempfile.NamedTemporaryFile()
+```
 
-I detta exempel kan vi se att vi kan skriva till den temporära filen och sedan läsa från den som vilken annan fil som helst.
+Om vi vill ange ett annat namn på vår temporära fil kan vi använda parametern `prefix`:
 
-##Djupdykning i skapandet av en temporär fil i Python
+```Python
+temp_file = tempfile.NamedTemporaryFile(prefix="my_temp_file")
+```
 
-När du skapar en temporär fil i Python, används operativsystemets temporära filsystem för att skapa filen. Det innebär att filen kommer att sparas på en temporär plats på din dator och kommer att raderas automatiskt när den inte längre används.
+Nu kan vi skriva in data i vår temporära fil precis som vi skulle göra med en vanlig fil:
 
-En viktig sak att notera är att när du skapar en temporär fil, kommer den automatiskt att öppnas i bytes-läge. Detta innebär att om du vill skriva text till filen, måste du konvertera den till bytes först. Därför inkluderade vi "b" före texten i vårt exempel: "b" står för bytes.
+```Python
+temp_file.write("Det här är en temporär fil")
+```
 
-Slutligen, när din kod är klar och du inte längre behöver den temporära filen, raderas den automatiskt när du stänger den eller när ditt program avslutas. Om du vill ta bort den manuellt kan du använda funktionen "temp_file.close()".
+Vi kan också läsa från vår temporära fil:
 
-##Se även
+```Python
+temp_file.read()
+```
 
-- [Python dokumentation om tempfile](https://docs.python.org/3/library/tempfile.html)
-- [Real Python artikel om att arbeta med temporära filer](https://realpython.com/working-with-files-in-python/#creating-temporary-files-and-directories)
+När vi är klara med att använda vår temporära fil måste vi stänga den:
 
-Tack för att du läste! Hoppas denna artikel har varit till hjälp för att förstå hur man skapar en temporär fil i Python. Fortsätt lära dig och utforska allt som detta kraftfulla språk har att erbjuda. Lycka till med dina programmeringsprojekt!
+```Python
+temp_file.close()
+```
+
+Det är också möjligt att behålla vår temporära fil efter att vårt program har avslutats genom att ange parametern `delete=False`:
+
+```Python
+temp_file = tempfile.NamedTemporaryFile(delete=False)
+```
+
+Det finns också andra alternativ för att skapa temporära filer, till exempel kan vi använda funktionen `TemporaryDirectory()` för att skapa en temporär mapp istället för en fil.
+
+## Djupdykning
+
+Modulen `tempfile` tillhandahåller flera användbara funktioner för att hantera temporära filer och mappar. Till exempel kan vi också använda funktionen `mkstemp()` för att skapa en temporär fil och få dess namn som återgår som en sträng. Detta kan vara användbart om vi behöver använda namnet på vår temporära fil i vår kod.
+
+Det finns också andra parametrar som vi kan ange vid skapandet av vår temporära fil, som `suffix` för att ange en filändelse, `dir` för att ange en mapp där den temporära filen ska skapas, och `text` för att ange att filen ska öppnas i textläge istället för binärläge.
+
+En annan viktig aspekt att tänka på när vi arbetar med temporära filer är att se till att vi stänger och tar bort dem när vi är klara. Om vi inte använder parametern `delete=False` kommer vår temporära fil att raderas automatiskt när vårt program avslutas. Men om vi behåller vår temporära fil måste vi se till att ta bort den manuellt för att undvika att den tar upp onödig diskutrymme.
+
+## Se även
+
+- [Python dokumentation om modulen `tempfile`](https://docs.python.org/sv/3/library/tempfile.html)
+- [Real Python - Working with Temporary Files and Directories in Python](https://realpython.com/working-with-temporary-files-in-python/)

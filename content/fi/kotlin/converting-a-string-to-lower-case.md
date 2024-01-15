@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Kotlin: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi Stringin muuntaminen pienaakkosiin on hyödyllistä?
+## Miksi
 
-Stringin muuntaminen pienaakkosiin on tärkeä osa ohjelmointia, koska se helpottaa tekstin käsittelyä ja vertailua. Pienaakkosten käyttö yhdenmukaistaa tekstin, mikä tekee siitä helpommin luettavan ja ymmärrettävän.
+On monia käyttötarkoituksia, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi. Ehkä haluat vertailla merkkijonoja ilman, että välitetään kirjainten koosta tai ehkä haluat yhdenmukaistaa merkkijonojen muotoilun.
 
-## Kuinka muuntaa String pienaakkosiin Kotlinissa?
+## Miten
 
-```Kotlin
-val sana = "TEKSTI"
-println(sana.lowercase()) //tulostaa "teksti"
-```
+### Esimerkki 1: Yksinkertainen muunnos
 
-Stringin muuntaminen pienaakkosiin Kotlinissa on yksinkertaista, sillä siihen on sisäänrakennettu metodi ```lowercase()```. Metodi palauttaa uuden String-olion, joka sisältää kaikki kirjaimet pienaakkosina.
-
-Jos haluat muuntaa Stringin pienaakkosiin ilman uuden olion luomista, voit käyttää ```lowercaseInPlace()``` -metodia:
+Käyttäen Kotlinin String-luokan toLowerCase()-metodia voit helposti muuttaa merkkijonon pieniksi kirjaimiksi.
 
 ```Kotlin
-var tekstiMuutettavaksi = "MUUTETTAVA TEKSTI"
-tekstiMuutettavaksi.lowercaseInPlace()
-println(tekstiMuutettavaksi) //tulostaa "muutettava teksti"
+val s = "TÄMÄ ON ESIMERKKI"
+println(s.toLowerCase())
 ```
 
-Tässä tapauksessa alkuperäinen String-muuttuja muutetaan suoraan pienaakkosiksi.
+Tuloste: tämä on esimerkki
 
-## Syvempi sukellus Stringin muuntamiseen pienaakkosiin
+### Esimerkki 2: Muunnos jossain tiettynä paikassa
 
-Kotlinin ```lowercase()``` ja ```lowercaseInPlace()``` -metodien toiminta perustuu Unicode-standardissa määritettyyn pienaakkosten muuntamiseen. Unicode-standardi sisältää kaikki mahdolliset merkit ja kirjaimet, ja sen avulla varmistetaan, että ohjelmointikielet käyttävät yhteistä merkistöä.
+Voit myös valita haluamasi kohdan merkkijonosta ja muuttaa vain sen pieniksi kirjaimiksi.
 
-Usein ohjelmointikielistä löytyy myös muita metodeja, kuten ```toLowercase()```, jotka suorittavat saman toiminnon. Näissä tapauksissa kannattaa tarkistaa, miten kyseinen metodi käsittelee erikoismerkkejä ja kielikohtaisia eroavaisuuksia.
+```Kotlin
+val s = "Muista Muuttaa Merkkin Tänne"
+println(s.toLowerCase(7..11))
+```
 
-On myös hyvä ottaa huomioon, että merkkijonon pienaakkosiksi muuttaminen ei yleensä vaikuta merkkijonon sisältöön. Esimerkiksi sana "ÄITI" muuttuu pienaakkosiin "äiti", mutta kirjoitusasu ei muutu. Jos haluat muuttaa myös sanojen kirjoitusasun, voit käyttää esimerkiksi metodeja ```capitalize()``` tai ```titlecase()```.
+Tuloste: Muista muuttaa merkkiä tänne
+
+## Syvempi sukellus
+
+Kotlinin String-luokka on muokattavissa oleva, joten se ei tarjoa sisäänrakennettua konversiota isojen ja pienten kirjainten välillä. Sen sijaan, se käyttää Unicode-standardia, joka määrää, mikä merkki tulee ensin ja mikä viimeiseksi.
+
+Unicode-standardin mukaan suuret kirjaimet tulevat aakkoston alkuun ja pienet kirjaimet aakkoston loppuun. Tämä on syy sille, miksi konversio on "teknisesti" mahdollista.
 
 ## Katso myös
 
-- Kotlinin virallinen dokumentaatio: https://kotlinlang.org/docs/reference/strings.html#string-literals
-- Unicode-standardin tietoja: https://unicode.org/
-- Vinkkejä merkkijonojen käsittelyyn Kotlinissa: https://www.baeldung.com/kotlin/strings-processing
+- [Kotlinin String-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Unicode-standardi](https://unicode.org/)

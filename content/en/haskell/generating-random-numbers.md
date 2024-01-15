@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Haskell recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Generate Random Numbers?
+## Why
 
-Generating random numbers is a fun and useful programming exercise that can also have practical applications in various algorithms and simulations. In Haskell, it is also a great way to showcase the power of functional programming and its ability to work with pure functions.
+Do you ever need to generate random numbers in your programming projects? Maybe you want to create a game with unpredictable events or create a simulation where each run is unique. Well, Haskell has you covered with its built-in functions for generating random numbers!
 
-# How To Do It: A Simple Example
+## How To
 
-To generate a random number in Haskell, we can use the *random* function from the *System.Random* module. First, we need to import the module:
+Generating random numbers in Haskell is incredibly simple. First, we need to import the `System.Random` module to access the functions we need. Then, we can use the `randomRIO` function to generate a random number within a specified range. Here's an example:
 
 ```Haskell
 import System.Random
+
+-- Generate a random number between 1 and 10
+randomNum :: IO Int
+randomNum = randomRIO (1,10)
+
+-- Print the result
+main :: IO ()
+main = do
+    num <- randomNum
+    print num
+    
+-- Output: 7 (or any number between 1 and 10)
 ```
 
-Next, we can create a function called *randomNumber* that will take in a range and use the *randomRIO* function to generate a random number within that range:
+The `randomRIO` function returns an `IO Int` type, which means it performs a side-effect (generating a random number) and returns an `Int` result. So we use the `do` notation to bind the result to a variable and then print it. Simple, right?
 
-```Haskell
-randomNumber :: (Int, Int) -> IO Int
-randomNumber range = randomRIO range
-```
+We can also use the `randomIO` function to generate a random number within the entire range of `Int` values. And for generating random floating-point numbers, we have the `randomRIO` function, which takes in a `Float` or `Double` range.
 
-Here, we are using the *IO* monad to wrap the result in the *IO Int* type, meaning that we will get an *IO* computation that will eventually yield an *Int* value. Now, let's call the function and see the result:
+We can even generate random values of different data types! For example, we can use the `randomR` function to generate a random `Bool` value or the `randomShuffle` function to randomly shuffle a list. The possibilities are endless!
 
-```Haskell
-result <- randomNumber (1, 10)
-```
+## Deep Dive
 
-The *result* will be a random number between 1 and 10. Run the code multiple times and you will get different results each time!
+Now that we've seen some basic examples, let's take a deeper dive into how Haskell generates random numbers. Haskell uses a pseudo-random number generator (PRNG) to produce a sequence of numbers that appear to be random. The initial state of the PRNG is determined by the current time, so each run of the program will produce a different sequence of numbers.
 
-# Deep Dive into Generating Random Numbers
+Haskell also has a `Random` type class which defines the functions `random` and `randomR`, allowing us to generate random values of any type that is an instance of the `Random` class. This is what allows us to generate values like `Bool` and lists, as seen in the previous examples.
 
-The *random* function uses a pseudo-random algorithm to generate numbers. This means that the numbers are not truly random, but they appear to be random for practical purposes.
+Another important concept to understand is the concept of a seed. A seed is a value used to initialize the PRNG, and it determines the sequence of random numbers that will be generated. This is useful when we want to reproduce a specific sequence of random numbers. We can set a seed using the `setStdGen` function from the `System.Random` module.
 
-The *random* function has a type of *RandomGen g => g -> (a, g)* where *a* is the type of the result and *g* is the type of the random number generator. This allows the function to work with different types of random number generators, such as *StdGen* or *IO StdGen*.
+## See Also
 
-If we want to get a specific sequence of random numbers, we can use the *mkStdGen* function to create a specific random number generator with a given seed:
-
-```Haskell
-gen <- mkStdGen 42
-```
-
-Now, every time we use *gen* to generate a random number, we will get the same sequence of numbers. This can be useful for testing or reproducibility.
-
-# See Also
-
-- [Haskell Random Module Documentation](https://hackage.haskell.org/package/random)
-- [Functional Random Numbers in Haskell](https://codecrafters.io/posts/functional-random-numbers-in-haskell)
-- [Haskell Tutorial: Random Numbers and Generating Games](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10-randomness)
+- [Haskell Documentation on Random Numbers](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
+- [HaskellWiki: Random Numbers](https://wiki.haskell.org/Random)
+- [Real World Haskell: Randomness](http://book.realworldhaskell.org/read/randomness.html)

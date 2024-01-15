@@ -1,6 +1,7 @@
 ---
-title:                "Java: Zamiana na wielkie litery ciągu znaków"
-simple_title:         "Zamiana na wielkie litery ciągu znaków"
+title:                "Zapisywanie ciągu znaków"
+html_title:           "Java: Zapisywanie ciągu znaków"
+simple_title:         "Zapisywanie ciągu znaków"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,44 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarza się, że w programowaniu musimy zmieniać teksty na wielką lub małą literę w zależności od naszych potrzeb. Jedną z najczęstszych operacji jest kapitalizacja, czyli zmiana pierwszej litery tekstu na wielką. W tym artykule dowiesz się, dlaczego jest to ważne i jak to zrobić w języku Java.
+Często w programowaniu występuje potrzeba zmiany wielkości liter w ciągach znaków. Może być to przydatne przy porównywaniu lub wyświetlaniu tekstu. Własciwa obsługa zmiany wielkości liter jest istotna dla poprawnego funkcjonowania programu.
 
 ## Jak to zrobić
 
-Aby kapitalizować tekst w Java, możemy użyć metody `toUpperCase()` lub `toLowerCase()` dostępnej dla obiektów typu `String`. Zobaczmy przykład:
+Aby zamienić wszystkie litery w ciągu znaków na duże lub małe, wystarczy wykorzystać wbudowane metody klasy `String`.
 
+Przykład dla zamiany na duże litery:
 ```Java
-String name = "jan kowalski";
-
-System.out.println(name.toUpperCase()); // wynik: JAN KOWALSKI
-System.out.println(name.toLowerCase()); // wynik: jan kowalski
+String string1 = "to jest przykładowy tekst";
+System.out.println(string1.toUpperCase());
 ```
+**Output:** TO JEST PRZYKŁADOWY TEKST
 
-W powyższym przykładzie widzimy, że metoda `toUpperCase()` zmienia cały tekst na wielkie litery, a `toLowerCase()` na małe. Ale co zrobimy, jeśli chcemy tylko pierwszą literę zmienić na wielką? W tym przypadku możemy skorzystać z metody `substring()` oraz `toUpperCase()`, aby wyciąć pierwszą literę i zmienić ją na wielką. Zobaczmy:
-
+Przykład dla zamiany na małe litery:
 ```Java
-String name = "jan kowalski";
-
-String firstName = name.substring(0, 1).toUpperCase() + name.substring(1);
-
-System.out.println(firstName); // wynik: Jan kowalski
+String string2 = "TO JEST PRZYKŁADOWY TEKST";
+System.out.println(string2.toLowerCase());
 ```
+**Output:** to jest przykładowy tekst
 
-W powyższym przykładzie wykorzystaliśmy metodę `substring()` do wycięcia pierwszej litery, a następnie wykorzystaliśmy `toUpperCase()` do jej zmiany na wielką. Następnie do pierwotnego tekstu dokleiliśmy zmienioną literę, aby uzyskać pożądany efekt.
+Jeśli chcemy zmienić jedynie pierwszą literę w ciągu na dużą, należy wykorzystać klasę `StringBuilder` oraz metodę `charAt()` i `toUpperCase()`.
+
+Przykład:
+```Java
+String string3 = "to jest przykładowy tekst";
+StringBuilder stringBuilder = new StringBuilder(string3);
+stringBuilder.setCharAt(0, Character.toUpperCase(stringBuilder.charAt(0)));
+System.out.println(stringBuilder.toString());
+```
+**Output:** To jest przykładowy tekst
 
 ## Deep Dive
 
-Operacja kapitalizacji jest często stosowana w programowaniu ze względu na estetykę lub wymagania projektowe. W języku Java możemy również skorzystać z metody `capitalize()` dostępnej dla obiektów typu `String`, która zmienia tylko pierwszą literę na wielką, a pozostałe zostawia bez zmian. Zobaczmy:
+W przypadku gdy mamy do czynienia z większą ilością tekstu, przydatne może być użycie metody `split()` do podzielenia tekstu na tablicę wyrazów i następnie połączenie ich z odpowiednio zmienionymi pierwszymi literami przy użyciu pętli.
 
-```Java
-String name = "jan kowalski";
+Warto również pamiętać, że metody `toUpperCase()` i `toLowerCase()` działają tylko na literach angielskiego alfabetu. W przypadku innych języków mogą pojawić się problemy ze zmianą wielkości liter.
 
-System.out.println(name.capitalize()); // wynik: Jan kowalski
-```
-
-Warto również zwrócić uwagę na to, że metody `toUpperCase()` oraz `toLowerCase()` są przydatne nie tylko przy kapitalizacji tekstu, ale także przy porównywaniu ciągów znaków. Jest to szczególnie przydatne przy walidacji danych wejściowych w aplikacjach.
-
-## Zobacz też
-- [Java String class documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [How to Capitalize Strings in Java](https://www.baeldung.com/java-uppercase-first-letter)
-- [Learn Java Online - Strings](https://www.learnjavaonline.org/en/Strings)
+## Zobacz również
+- [Java - klasa String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Java - klasa StringBuilder](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
+- [Metody manipulacji łańcuchami znaków w Java](https://www.javatpoint.com/java-string-methods)

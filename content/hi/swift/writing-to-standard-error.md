@@ -1,6 +1,7 @@
 ---
-title:                "Swift: स्टैण्डर्ड एरर में लिखना"
-simple_title:         "स्टैण्डर्ड एरर में लिखना"
+title:                "स्टैंडर्ड त्रुटि पर लेखन"
+html_title:           "Swift: स्टैंडर्ड त्रुटि पर लेखन"
+simple_title:         "स्टैंडर्ड त्रुटि पर लेखन"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्यों 
 
-अगर आप Swift प्रोग्रामिंग के बारे में कुछ भी जानते हैं, तो आपने `print()` फंक्शन का उपयोग किया होगा। लेकिन क्‍या आप जानते हैं कि आप इसके साथ एक और फंक्शन का भी उपयोग कर सकते हैं जो आपको अपने कोड में त्रुटियों का पता लगाने और उन्हें सुधारने में मदद करता है? हा, आपने सही सुना, इसका नाम है `write(to: TextOutputStream)` और यह आपको स्टैंडर्ड एरर कंसोल में दिए गए हालातों को प्रदर्शित करता है। इस ब्लॉग पोस्‍ट में, हम इस फंक्शन के बारे में गहराई से जानेंगे और सीधे कोडिंग उदाहरण के साथ आपको इसका प्रयोग करना सिखाएंगे।
+अभी हाल ही में, Swift में लिखने वाले कई डेवलपर हाई-लेवल logging एपीआई का उपयोग करते हैं जो उन्हें debugging के लिए मदद करता है। इसमें लिखने के साथ, standard error को लिखने का कोई विस्तारित अवसर नहीं है जो कि एक कामतरता वृध्दि वाली तकनीक है इससे आप अपने प्रोग्राम को आसानी से debug कर सकते हैं।
 
-## कैसे करें
-
-चलिए देखें कि हम Swift में `write(to: TextOutputStream)` का उपयोग कैसे कर सकते हैं। सबसे पहले, हमें एक इंस्‍टेंस बनाना होगा `TextOutputStream` का। आम तौर पर हम त्रुटि संदेशों को स्टैंडर्ड एरर कंसोल में प्रिंट करना चाहते हैं, इसलिए हम `stderr` को `TextOutputStream` में तकनीकी तौर पर लेंगे।
+## कैसे करें 
 
 ```Swift
-let errorStream = TextOutputStream(of: stderr)
+// त्रुटि संदेश को standard error में लिखने का उदाहरण
+print("Error: Unable to perform operation", to: &errorStream)
+
+// समान त्रुटि संदेश जो कि standard output में लिखा हुआ होता है
+print("Error: Unable to perform operation")
+
+// त्रुटि संदेशों को अन्य errors के साथ एकीकृत करने का उदाहरण
+let error = NSError(domain: "com.example.error", code: 500, userInfo: [NSLocalizedDescriptionKey: "Unable to perform operation"])
+print(error, to: &errorStream)
 ```
 
-अब हमें एक सादा सा `Int` वेरिएबल बनाना होगा और इसमें कोई गलती मापने के लिए कुछ कोड लिखना होगा।
+उपरोक्त उदाहरणों को देखें, हमने `print()` फंक्शन का उपयोग किया है जो कि standard error में लिखने के लिए एक अलग विकल्प प्रदान करता है। इसके अलावा, हमने `NSError` की मदद से अन्य errors को एकीकृत किया है जो कि standard error में लिखा जाएगा।
 
-```Swift
-let num = 10
-if num % 2 == 0 {
-    errorStream.write("यह एक दोहरा नंबर है।")
-} else {
-    errorStream.write("यह एक विषम नंबर है।")
-}
-```
+## गहराई में जाएँ 
 
-अगर आप अब अपने कंसोल में देखेंगे, तो आपको निम्नलिखित आउटपुट मिलना चाहिए:
+Standard error के उपयोग को आपके प्रोग्राम को debug करने में बहुत मदद मिल सकती है। इसके अलावा, अगर आपका प्रोग्राम अन्य प्रोग्रामों को कॉल करता है तो आप standard error में errors को लिख सकते हैं जो कि आपको समस्या का पता लगाने में मदद करेंगे।
 
-```
-यह एक विषम नंबर है।
-```
+## देखें भी 
 
-जैस
+- [Apple Developer Documentation: Using Standard Error and Standard Output](https://developer.apple.com/documentation/swift/formatoutput/using_standard_error_and_standard_output)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att arbeta med JSON"
-simple_title:         "Att arbeta med JSON"
+title:                "Arbeta med json"
+html_title:           "Gleam: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför Arbeta Med JSON i Gleam?
+## Varför
 
-JavaScript Object Notation (JSON) är ett populärt format för datautbyte, vilket gör det till en viktig del av webbutveckling och datahantering. I Gleam programmeringsspråk, är det relativt enkelt att arbeta med JSON och det finns flera fördelar med att använda det. Detta inlägg kommer att förklara varför det är värt att lära sig att arbeta med JSON i Gleam.
+Att arbeta med JSON kan vara väldigt användbart eftersom det är ett vanligt format för datautbyte mellan olika applikationer. Oavsett om du bygger en webbapplikation eller utvecklar en mobilapp, kommer du sannolikt att behöva hantera JSON-data på ett eller annat sätt.
 
-## Hur Man Gör
+## Så här gör du
 
-För att arbeta med JSON i Gleam behöver du först importera modulen `json` genom att lägga till `import json` överst i din kodfil. Sedan kan du skapa en JSON-sträng genom att använda funktionen `json.encode(data)`. Till exempel:
+För att börja arbeta med JSON i Gleam, använd `gleam/json` paketet. För att installera paketet, öppna en terminal och kör följande kommando:
 
-```Gleam
-import json
-
-let data = {
-  name: "John Doe",
-  age: 30,
-  hobbies: ["gaming", "reading", "coding"]
-}
-
-let json_string = json.encode(data)
+```
+gleam install gleam/json
 ```
 
-Detta kommer att skapa en giltig JSON-sträng från datan vi tillhandahöll. Du kan också göra motsatsen genom att använda funktionen `json.decode(string)` som tar en JSON-sträng och konverterar den till Gleams typsystem. Exempel:
+När paketet är installerat kan du importera det i din kod genom att lägga till följande längst upp i din `.gleam` fil:
 
-```Gleam
-import json
-
-let json_string = "{\"name\": \"John Doe\", \"age\": 30, \"hobbies\": [\"gaming\", \"reading\", \"coding\"]}"
-
-let data = json.decode(json_string)
+```
+import gleam/json
 ```
 
-Detta kommer att ge oss en typ `Result(Error, HashMap(String, Any))`, där `Any` är en generisk typ som kan representera vilken typ av data som helst. Du kan sedan använda `Result.map` för att hantera datan på ett säkert sätt.
+För att läsa in JSON-data i en variabel kan du använda funktionen `gleam/json.decode` och ange JSON-strängen och den förväntade typen av data som argument. Till exempel, om du har en JSON-sträng som innehåller en lista med användare, kan du läsa in den i en `User`-lista enligt följande:
+
+```
+let json_string = "{ "users": [ { "name": "Lisa", "age": 25 }, { "name": "Peter", "age": 30 } ] }"
+
+let users = json.decode(json_string, &[User])
+```
+
+För att konvertera en Gleam-struktur till en JSON-sträng, kan du använda funktionen `gleam/json.encode` och ange strukturen som argument. Till exempel, om du har en `User`-struktur som du vill skicka som JSON-data, kan du göra det enligt följande:
+
+```
+let user = User("John", 35)
+
+let json_string = json.encode(user)
+```
 
 ## Djupdykning
 
-När du arbetar med JSON i Gleam, kommer du att stöta på olika funktioner som `json.parse(string)` och `json.prettify(json_string)`. `json.parse` används för att konvertera en JSON-sträng till ett Gleam-värde, medan `json.prettify` används för att formatera en JSON-sträng för läsbarhet. I modulen `json`, finns det också funktioner som `json.skip_nulls` och `json.encoding` som är användbara för att hantera specifika egenskaper i din JSON-data.
+När du arbetar med JSON i Gleam, är det viktigt att förstå att JSON-strängar måste följa ett visst format för att kunna läsas in korrekt. Till exempel måste alla nycklar vara omgivna av citattecken och alla värden måste vara antingen ett nummer, en sträng eller en boolean. Om din JSON-sträng inte följer detta format kan den inte läsas in korrekt.
 
-När du arbetar med större och mer komplexa JSON-strängar, kan det vara användbart att använda externa bibliotek för att underlätta hanteringen. Gleam har bra stöd för externa bibliotek och det finns flera alternativ för att arbeta med JSON, som till exempel `gleam_json` och `gleam-serialization`.
+En annan viktig sak att komma ihåg är att du måste ange den förväntade typen av data när du läser in JSON. Om typen inte matchar den faktiska datan i JSON-strängen kommer du att få ett felmeddelande.
 
-## Se Också
+## Se även
 
-- [Gleam - Officiell webbplats](https://gleam.run/)
-- [Gleam - Officiell dokumentation](https://gleam.run/documentation/)
-- [Gleam JSON-modul - Officiell dokumentation](https://gleam.run/modules/json.html)
-- [Gleam JSON-modul på GitHub](https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/json.gleam)
-- [Gleam JSON-modul på Hex](https://hex.pm/packages/gleam_json)
+- [Official Gleam Documentation](https://gleam.run/documentation/)
+- [Gleam JSON Package Documentation](https://hexdocs.pm/gleam_json/readme.html)

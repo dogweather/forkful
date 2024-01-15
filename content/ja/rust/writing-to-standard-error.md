@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 標準エラーに書き込む"
-simple_title:         "標準エラーに書き込む"
+title:                "「標準エラーへの書き込み」"
+html_title:           "Rust: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,31 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Rustを使ってコーディングを行う場合、様々な方法でプログラムにエラーをハンドリングすることが重要です。その中でも、標準エラーに書き込む方法は特に重要です。標準エラーに書き込むことで、エラーメッセージをより詳細に表示することができ、デバッグの効率を上げることができます。
+標準エラーへの書き込みを行う理由は、デバッグやエラーの追跡に役立つことです。
 
 ## 方法
 
-まずは、コード内でエラーをハンドリングするための基本的な方法を学びましょう。以下のRustコードを参考にしてください。
-
+### 準備をする
+まず、標準エラーへの書き込みを行う準備をします。以下のコードを使用することで、標準エラーへのアクセスを許可します。
 
 ```Rust
-use std::io::Write;
-
-fn main() {
-    let mut stderr = std::io::stderr();
-    writeln!(stderr, "エラーメッセージの書き込み");
-}
+use std::io::{self, Write};
 ```
 
-上記のコードでは、標準エラーに`writeln!`マクロを使用して、エラーメッセージを書き込んでいます。これにより、コードの実行中に発生したエラーが詳細に表示されます。
+### 標準エラーへの書き込み
+標準エラーへの書き込みは、標準出力と同様に行うことができます。しかし、コードブロックの前に```eprintln!```を使用し、出力を標準エラーにリダイレクトします。
 
-## 深堀り
+```Rust
+eprintln!("This message will be written to standard error!");
+```
 
-では、なぜ標準エラーに書き込むことが重要なのでしょうか？通常、プログラムを実行する際には、標準出力に結果を表示することが多いです。しかし、エラーが発生した場合は標準出力ではなく、標準エラーに書き込むことでエラーメッセージを表示することができます。このように、標準エラーに書き込むことで、エラーをより明確に表示することができます。
+上記のコードでは、```eprintln!```マクロを使用して、標準エラーへの書き込みを行っています。
 
-また、標準エラーはファイルにリダイレクトすることができるため、後でエラーログを確認することができます。これは、プログラムのデバッグに役立ちます。
+### 実行結果
+標準エラーへの書き込みを行うと、標準出力とは異なる場所にメッセージが表示されます。実際にプログラムを実行して、出力を確認してみましょう。
 
-## 関連情報
+```Rust
+eprintln!("This message will be written to standard error!");
+println!("This message will be written to standard output!");
+```
 
-- [Rust公式ドキュメント：エラーハンドリング](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-- [Rustプログラミング言語入門：標準エラーの扱い方](https://doc.rust-jp.rs/book-ja/ch09-03-to-panic-or-not-to-panic.html#%E6%A8%99%E6%BA%96%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E6%89%B1%E3%81%84%E6%96%B9)
+実行結果は以下のようになります。
+
+```
+This message will be written to standard output!
+This message will be written to standard error!
+```
+
+## ディープダイブ
+
+標準エラーへの書き込みは、プログラムをデバッグする際に非常に役立ちます。標準エラーは、標準出力とは異なる場所にメッセージを表示するため、デバッグメッセージを分離することができます。また、標準エラーはプログラムがクラッシュした際にも出力されるため、エラーの追跡にも役立ちます。
+
+## 他でも読む
+- [Rustの標準エラーへの書き込みについて](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [標準出力と標準エラーの違いを理解する](https://stackoverflow.com/questions/2342826/how-can-i-print-to-stderr-in-rust)

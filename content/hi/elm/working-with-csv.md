@@ -1,6 +1,7 @@
 ---
-title:                "Elm: csv के साथ काम करना"
-simple_title:         "csv के साथ काम करना"
+title:                "कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
+html_title:           "Elm: कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,59 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
+CSV (Comma Separated Values) ek common data format hai jiska istemal data store aur exchange karne ke liye kiya jata hai. Elm mein CSV ka sath lena aasan aur efficient hai, jo file handling aur data manipulation ko asan banata hai.
 
-CSV के साथ काम करने में आपको क्यों रूचि होनी चाहिए।
+## Kaise Kare
+Elm mein CSV file ka sath lena bohot hi easy hai. Sabse pehle, aapko `elm-explorations/csv` package ko import karna hoga. Fir, CSV file ko decode karne ke liye `Decode.field` function ka istemal kiya jata hai. Yeh function ek FieldParser ko input leta hai aur CSV string ko decode karta hai. Iske baad, decoded data ko desired format mein convert kar sakte hai.
 
-CSV (Comma Separated Values) फॉर्मेट सबसे आसान तरीका है डेटा को संग्रहीत करने का। इस फॉर्मेट में आप अपने डेटा को एक सरल स्प्रेडशीट की तरह प्रदर्शित कर सकते हैं जो कि प्रोग्रामर्स को अधिक सुविधा देता है। CSV फॉर्मेट को बहुत से प्रोग्रामिंग भाषाओं का समर्थन करता है लेकिन इसका समर्थन Elm में बहुत अच्छा है जो और भी रूचिकर है।
+```Elm
+import Csv exposing (FieldParser, Decode)
+import Csv.Decode exposing (field)
 
-## कैसे
+myCsvFile : String
+myCsvFile = """
+Name, Age
+John, 25
+Emily, 30
+"""
 
-अब हम देखेंगे कि Elm में CSV को कैसे प्रबंधित किया जाए। यहां हम एक आसान से उदाहरण ले कर शुरू करेंगे:
+myDecoder : FieldParser (List User)
+myDecoder =
+  Decode.map2 User
+    (field "Name" Decode.string)
+    (field "Age" Decode.int)
 
-``` Elm
-import Csv
-import File
-import Html exposing (Html, text)
+type alias User = 
+  { name : String
+  , age : Int
+  }
 
-type alias User =
-    { name : String
-    , age : Int
-    , occupation : String
-    }
-
-csvFile : String
-csvFile =
-    """
-    name,age,occupation
-    John,35,Engineer
-    Jane,28,Teacher
-    Bob,42,Writer
-    """
-
-parseUser : List String -> User
-parseUser columns =
-    { name = List.get 0 columns
-    , age = String.toInt (List.get 1 columns) |> Result.withDefault 0
-    , occupation = List.get 2 columns
-    }
-
-viewUser : User -> Html msg
-viewUser user =
-    Html.div []
-        [ Html.text user.name
-        , Html.text (String.fromInt user.age)
-        , Html.text user.occupation
-        ]
-
-main : Html msg
-main =
-    csvFile
-        |> Csv.Decode.decodeString Csv.HeaderRow
-        |> Result.map (List.map parseUser >> viewUser)
-        |> Result.withDefault (text "There was an error decoding the CSV file.")
+decodedData : Result String (List User)
+decodedData =
+  Csv.Decode.decode myDecoder myCsvFile
+  -- Result is Ok [{ name = "John", age = 25 }, { name = "Emily", age = 30 }]
 ```
 
-उपरोक्त कोड एक CSV फ़ाइल से डेटा को पढ़ता है और उसे अलग-अलग `User` रूप में प्रदर्शित करता है। `parseUser` फ़ंक्शन फ़ाइल के प्रत्येक पंक्ति से स्थानीय `User` ऑब्जेक्ट बनाता है। इससे हमें अपने डेटा को उपयोग करने के लिए क्या आवश्यक है उसे समझने में सुविधा होती है।
+## Deep Dive
+Elm mein CSV ko sambhalne ka kaam "elm-explorations/csv" package se hoga. Is package ke dwara provided functions CSV file ko decode aur encode karne mein madad karti hai. Package ke functions, data ko convert karna, data types ko define karna, aur CSV headers ko handle karna mein help karte hai. Yeh package developers ko complex data handling se bachata hai aur ashan aur efficient tarike se CSV files ko handle karne mein help karta hai.
 
-अगर आप इस कोड को अपने सिस्टम में परीक्षण करते हैं तो आप इस प्रकार का आउटपुट देखेंगे:
+## Dekhe Bhi
+- [Elm CSV package documentation](https://package.elm-lang.org/packages/elm-explorations/csv/latest/)
+- [Explaining CSV files](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/)
+- [Working with CSV files in Elm](https://dev.to/tuata-restrepo/working-with-csv-files-in-elm-cng)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Die aktuelle Datum erhalten"
+html_title:           "Gleam: Die aktuelle Datum erhalten"
+simple_title:         "Die aktuelle Datum erhalten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,36 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Abrufen des aktuellen Datums kann eine nützliche Funktion in der Programmierung sein, um zeitabhängige Aktionen auszuführen, z. B. das Erstellen von täglichen Backups oder das Anzeigen des aktuellen Datums in einer Anwendung.
+Das Abrufen des aktuellen Datums ist oft ein wichtiger Teil der Programmierung. Es ermöglicht es uns, zeitabhängige Aktionen auszuführen, Daten in einer bestimmten Reihenfolge zu organisieren und vieles mehr. In diesem Artikel werden wir uns ansehen, wie man das aktuelle Datum in Gleam bekommt.
 
-## How To
+## Wie man das aktuelle Datum in Gleam bekommt
 
-Die aktuelle Datums- und Uhrzeitfunktion ist in Gleam durch das `Calendar` Paket verfügbar. Sie kann einfach importiert werden, indem man `use Calendar` am Anfang des Codes hinzufügt. Dann kann das aktuelle Datum mit der `today` Funktion aufgerufen werden, die einen `Calendar.Date`-Datentyp zurückgibt.
-
-```Gleam
-use Calendar
-
-let current_date = Calendar.today()
-```
-
-Um das aktuelle Datum in einem bestimmten Format zu erhalten, kann die `format` Funktion verwendet werden, die das Datum als Zeichenkette zurückgibt. Zum Beispiel:
+Die einfachste Möglichkeit, das aktuelle Datum in Gleam zu bekommen, ist die `Time.now()` Funktion zu verwenden. Dies gibt uns ein `Date` Objekt zurück, das das aktuelle Datum und die Uhrzeit enthält.
 
 ```Gleam
-let current_date_str = Calendar.format(current_date, "%Y-%m-%d")
+let current_date = Time.now()
 ```
 
-Der obige Code würde das Datum im Format "Jahr-Monat-Tag" ausgeben, z. B. 2021-09-01.
+Wenn wir nur das Datum ohne Zeit benötigen, können wir die `Time.date()` Funktion verwenden.
 
-Um auch die aktuelle Uhrzeit abzurufen, kann die `now` Funktion verwendet werden, die einen `Calendar.DateTime`-Datentyp zurückgibt. Dieser Datentyp kann dann ebenfalls mit der `format` Funktion in das gewünschte Format gebracht werden.
+```Gleam
+let today = Time.date()
+```
 
-## Deep Dive
+Um das Datum in einem bestimmten Format zu erhalten, können wir die `Time.format()` Funktion verwenden und dem Format eine Schnur übergeben.
 
-Die `Calendar` Bibliothek basiert auf dem `Erlang Calendar` Modul, was bedeutet, dass die Datums- und Uhrzeitmanipulation in Gleam auch die gleichen Funktionen bereitstellt wie in Erlang. Dies beinhaltet Funktionen wie zum Beispiel das Hinzufügen von Tagen zu einem Datum, das Vergleichen von Datumswerten und vieles mehr.
+```Gleam
+let today_str = Time.format(today, "{YYYY}/{MM}/{D}")
+```
 
-Eine Besonderheit von Gleam ist, dass Datumsangaben nicht veränderbar sind, d.h. die Funktionen, die sie manipulieren sollen, geben immer ein neues Datum zurück, anstatt das ursprüngliche zu ändern. Dies kann dazu beitragen, unerwartete Seiteneffekte zu vermeiden.
+Dies würde ein Datum im Format "YYYY/MM/D" zurückgeben, z.B. "2020/07/12". Für eine vollständige Liste der unterstützten Formate, schau dir die Dokumentation an.
+
+## Tiefere Einblicke
+
+Das `Date` Objekt, das von `Time.now()` zurückgegeben wird, besteht aus verschiedenen Komponenten wie Jahr, Monat, Tag, Stunde, Minute und Sekunde. Wir können auf diese Komponenten zugreifen, indem wir die entsprechenden Funktionen aufrufen, z.B. `Time.year()`, `Time.month()`, `Time.day()`, usw.
+
+```Gleam
+let year = Time.year(Time.now())
+let month = Time.month(Time.now())
+let day = Time.day(Time.now())
+```
+
+Außerdem können wir mithilfe der `Time.adjust()` Funktion ein bestimmtes Datum anpassen, indem wir die entsprechenden Parameter wie "year", "month" und "day" angeben.
+
+```Gleam
+let tomorrow = Time.adjust(Time.date(), [year => 2020, month => 7, day => 13])
+```
+
+Dies würde das Datum auf den 13. Juli 2020 festlegen. Für weitere Informationen zu den verfügbaren Funktionen und deren Verwendung, lies dir die offizielle Dokumentation durch.
 
 ## Siehe auch
 
-- [Gleam Dokumentation](https://gleam.run/)
-- [Erlang Calendar Modul](https://erlang.org/doc/man/calendar.html)
-- [Einführung in die Zeit- und Datumsmanipulation in Gleam](https://simplabs.com/blog/2021/03/16/exploring-time-date-manipulation-in-gleam)
+- [Offizielle Dokumentation zu Gleam](https://gleam.run/documentation)
+- [Beispielcode für die Verwendung von `Time`](https://github.com/gleam-lang/gleam/blob/master/examples/time.gleam)

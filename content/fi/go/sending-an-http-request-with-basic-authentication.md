@@ -1,6 +1,7 @@
 ---
-title:                "Go: Http-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "Http-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähetetään http-pyyntö perusautentikoinnilla"
+html_title:           "Go: Lähetetään http-pyyntö perusautentikoinnilla"
+simple_title:         "Lähetetään http-pyyntö perusautentikoinnilla"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,29 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Go:
+## Miksi
 
-# Miksi käyttää perusautentikointia HTTP-pyyntöihin?
+HTTP-pyyntöjen lähettäminen perusautentikaation avulla on yleinen tapa tietojen lähettämiseen ja vastaanottamiseen tietoverkoissa. Tämän menetelmän avulla voit luoda turvallisen yhteyden palvelimelle ja varmistaa, että vain valtuutetut käyttäjät voivat käyttää tietoja. 
 
-HTTP-pyyntöjen lähettämistä käytetään usein kommunikointiin verkkosivustojen ja sovellusten välillä. Yksi tapa varmistaa, että vain tiettyjä käyttäjiä tai sovelluksia voi lähettää pyyntöjä on käyttää perusautentikointia. Tämä auttaa suojamaan rajapintoja ja estämään luvattomia käyttäjiä pääsemästä tärkeisiin tietoihin.
-
-## Kuinka käyttää perusautentikointia HTTP-pyyntöihin
-
-Perusautentikoinnin käyttämiseksi HTTP-pyyntöihin tarvitaan koodirivi, jossa määritellään käyttäjätunnus ja salasana. Esimerkiksi:
+## Miten
 
 ```Go
-req.SetBasicAuth("käyttäjätunnus", "salasana")
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "encoding/base64"
+)
+
+func main() {
+    // Luodaan HTTP-pyyntö osoitteeseen "example.com"
+    req, err := http.NewRequest("GET", "https://www.example.com", nil)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    // Lisätään "Authorization" header pyyntöön, jossa on käyttäjätunnus ja salasana 
+    username := "käyttäjätunnus"
+    password := "salasana"
+    auth := username + ":" + password
+    base64Auth := base64.StdEncoding.EncodeToString([]byte(auth))
+    req.Header.Set("Authorization", "Basic " + base64Auth)
+
+    // Lähetetään pyyntö
+    resp, err := http.DefaultClient.Do(req)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    defer resp.Body.Close()
+
+    // Tulostetaan vastauskoodi ja mahdollinen virheilmoitus
+    fmt.Println("Vastauskoodi:", resp.Status)
+    fmt.Println("Virheilmoitus:", resp.StatusText)
+}
 ```
 
-Tässä koodissa määritellään käyttäjätunnus ja salasana osaksi HTTP-pyyntöä. Käyttäjätunnus ja salasana on tärkeää antaa oikein, jotta pyyntö voidaan lähettää onnistuneesti.
+**Tulostus:**
 
-## Syvempää tietoa HTTP-pyynnön lähettämisestä perusautentikoinnilla
+```
+Statuskoodi: 200 OK
+Virheilmoitus: OK
+```
 
-Perusautentikointi perustuu käyttäjätunnuksen ja salasanan antamiseen ja tarkistamiseen ennen kuin pyyntö hyväksytään. Tämä tapahtuu yleensä käyttäen Base64-koodausta, joka on menetelmä tekstin muuntamiseksi ASCII-muotoon.
+## Syvempi sukellus
 
-HTTP-pyyntöjen lähettämisessä perusautentikoinnilla on tärkeää muistaa, että käyttäjätunnus ja salasana pitäisi aina lähettää turvallisella tavalla. Tämä tarkoittaa esimerkiksi HTTPS-yhteyden käyttämistä ja salauksen käyttämistä tietojen lähettämisessä.
+Perusautentikaatio toimii lähettämällä käyttäjätunnus ja salasana HTTP-pyynnön "Authorization" header-kentässä. Tällöin käyttäjätunnus ja salasana ovat Base64-merkistössä, joten tietoja ei voi lukea selkeänä tekstinä. Palvelin tarkistaa pyynnön "Authorization" kentän ja varmistaa, että se vastaa tallennettuja käyttäjätunnuksia ja salasanoja. Mikäli pyyntö vastaa, palvelin lähettää vastauksen tietojen tai pyydetyn toiminnon mukaisesti.
 
-# Katso myös
+## Katso myös
 
-- [Go:n virallinen dokumentaatio HTTP-pyyntöjen lähettämisestä](https://golang.org/pkg/net/http/#Request.SetBasicAuth)
-- [Perusautentikoinnin selitys ja esimerkkikoodia Go-kielellä](https://www.mysamplecode.com/2012/07/golang-http-client-setbasicauth-example.html)
+- [https://golang.org/pkg/net/http/#Request](https://golang.org/pkg/net/http/#Request)
+- [https://golang.org/pkg/encoding/base64/](https://golang.org/pkg/encoding/base64/)

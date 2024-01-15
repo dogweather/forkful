@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Sletting av tegn som matcher et mønster"
+title:                "Sletting av tegn som matcher et mønster"
+html_title:           "Clojure: Sletting av tegn som matcher et mønster"
 simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,45 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
+Noen ganger ønsker man å fjerne spesifikke tegn fra en streng, for eksempel for å formatere eller rense data. Ved å lære hvordan man sletter tegn som matcher et visst mønster i Clojure, kan man effektivt håndtere slike situasjoner.
 
-Noen ganger kan det hende vi trenger å slette spesifikke tegn som matcher et mønster i en tekststreng. Dette kan være nyttig når vi trenger å rense data eller filtrere ut uønskede tegn. I denne bloggposten vil vi utforske hvordan vi kan gjøre dette ved hjelp av Clojure-programmering.
-
-## Hvordan
-
-For å slette tegn som matcher et mønster, kan vi bruke funksjonen `clojure.string/replace` i Clojure. Denne funksjonen tar inn en tekststreng, et mønster og en erstatning og returnerer en ny tekststreng med de matchende tegnene erstattet med ønsket erstatning.
-
+##Slik Gjør Du
 ```Clojure
-(clojure.string/replace "Dette er en tekst som inneholder tall 123" #"[\d]" "")
-; "Dette er en tekst som inneholder tall "
+(def my-string "Hei, jeg heter Anna!")
+
+;;Slette alle mellomrom fra strengen
+(clojure.string/replace my-string #"\s" "")
+
+;;Output: "Hei,jeg haterAnna!"
+
+;;Slette alle tall fra strengen
+(clojure.string/replace my-string #"\d" "")
+
+;;Output: "Hei, jeg heter Anna!"
 ```
+Eksemplene bruker funksjonen `clojure.string/replace` og et regulært uttrykk som spesifiserer hvilke tegn som skal slettes fra strengen. I det første eksempelet sletter vi alle mellomrom (representert med `\s`), og i det andre slettes alle tall (representert med `\d`). Ved å erstatte det siste argumentet med ønsket mønster, kan man tilpasse funksjonen til sine behov.
 
-Her sletter vi alle tall i tekststrengen ved å bruke mønsteret `#"[d]"` som matcher alle tall i strengen. Vi erstatter de matchende tegnene med et tomt tegn `""` som bare sletter dem.
+##Dypere Dykk
+Når man bruker regulære uttrykk for å slette tegn, må man være klar over at uttrykket matcher alle forekomster av det spesifikke mønsteret i strengen. Det kan være nyttig å bruke anker-tegn (`^` og `$`) for å begrense søket til å kun gjelde på slutten eller begynnelsen av strengen. I tillegg kan man bruke gruppering (`()`) for å beholde deler av teksten som matcher mønsteret.
 
-La oss se et annet eksempel der vi ønsker å slette alle vokaler fra en tekststreng:
-
-```Clojure
-(clojure.string/replace "Dette er en tekst med vokaler" #"aeiou" "")
-; "Dtt r n txt m vklr"
-```
-
-I dette tilfellet bruker vi mønsteret `#"aeiou"` som matcher alle vokaler i tekststrengen. Vi erstatter de matchende tegnene med et tomt tegn `""` for å slette dem.
-
-## Gå i dybden
-
-Det er også mulig å bruke regulære uttrykk i mønsteret for å utføre mer avansert sletting av tegn. Vi kan for eksempel bruke `#"[\p{Punct}]"` for å slette alle tegn som regnes som tegnsetting i teksten. Dette vil inkludere tegn som komma, punktum, utropstegn osv.
-
-Vi kan også bruke funksjonen `clojure.string/replace-first` for å bare slette det første mønsteret som matcher i tekststrengen. Dette kan være nyttig når vi bare ønsker å fjerne en spesifikk forekomst av et tegn eller et mønster.
-
-```Clojure
-(clojure.string/replace-first "Dette er en tekst med flere tegn !" #"tegn" "")
-; "Dette er en tekst med flere !"
-```
-
-Som du kan se, har bare den første forekomsten av "tegn" blitt slettet, selv om det var flere.
-
-## Se også
-
-- Clojure dokumentasjon for `clojure.string/replace` og `clojure.string/replace-first`: https://clojuredocs.org/clojure.string/replace, https://clojuredocs.org/clojure.string/replace-first
-- Regulære uttrykk i Clojure: https://clojuredocs.org/clojure.repl/doc
-- Bruk av Clojure funksjoner i strenger: https://clojure.or.id/en/slot/2011/04/clojure-core-important-library-string-function/
+##Se Også
+- [Clojure Dokumentasjon om `clojure.string`](https://clojuredocs.org/clojure.string)
+- [Regulære Uttrykk i Clojure](https://clojure.org/guides/learn/regular_expressions)

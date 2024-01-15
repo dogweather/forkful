@@ -1,6 +1,7 @@
 ---
-title:                "C++: Merkkijonon muuttaminen isoksi kirjoitusmuodoksi."
-simple_title:         "Merkkijonon muuttaminen isoksi kirjoitusmuodoksi."
+title:                "Merkkijonon kirjoittaminen isolla alkukirjaimella"
+html_title:           "C++: Merkkijonon kirjoittaminen isolla alkukirjaimella"
+simple_title:         "Merkkijonon kirjoittaminen isolla alkukirjaimella"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,67 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kannattaa käyttää merkkijonon suurennusta?
+## Miksi
 
-Jokaisessa ohjelmointikielessä on erilaisia toimintoja, jotka voivat helpottaa kehittäjän arkea ja tehdä koodista helpommin luettavaa ja ylläpidettävää. Merkkijonon suurennus on yksi tällainen toiminto, joka voi olla hyödyllinen monissa ohjelmointiprojekteissa.
+### Miksi haluaisit muuntaa merkkijonon alkukirjaimet isoihin kirjaimiin?
 
-## Miten: Esimerkkejä koodista ja tulosteista
+Merkkijonon alkukirjainten muuntaminen isoihin tai pieniin kirjaimiin on yleinen ohjelmointitoiminto, jota käytetään muun muassa käyttäjän syöttämien tietojen validointiin ja tietojen jäsennystä varten. Se voi myös helpottaa tietojen vertailua, kun kirjaimien koko ei vaikuta lopputulokseen.
 
-Merkkijonon suurennusta voidaan käyttää muuttamaan merkkijonon ensimmäinen kirjain isoksi kirjaimeksi. Tämä voi olla hyödyllistä esimerkiksi koodissa, jossa käyttäjän syöttämä teksti halutaan muuttaa yhtenäiseen muotoon.
+## Kuinka
 
-Esimerkiksi seuraavassa koodissa käytämme C++:n capitalize-funktiota muuttamaan käyttäjän antaman merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi:
+### Kuinka muuntaa merkkijonon alkukirjaimet isoihin kirjaimiin käyttäen C++:aa
 
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    string s;
-    cout << "Anna merkkijono: ";
-    cin >> s;
-
-    s[0] = toupper(s[0]); // muutetaan ensimmäinen kirjain isoksi
-
-    cout << "Suurennettu merkkijono: " << s << endl;
-
-    return 0;
-}
-```
-
-Kun käyttäjä antaa syötteeksi esimerkiksi "program", saadaan tulostettaessa "Suurennettu merkkijono: Program".
-
-Toinen tapa käyttää capitalizea on käyttää sille annettua merkkijonoa ja tallentaa se uuteen muuttujaan. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan käyttää alkuperäistä merkkijonoa myöhemmin, mutta myös suurennettua versiota.
+Useimmissa ohjelmointikielissä on valmiita funktioita, jotka hoitavat merkkijonon muuntamisen isoonsa tai pieneen muotoon. C++:ssa voit käyttää `toupper()`-funktiota, joka muuntaa yhden merkin isoksi kirjaimeksi. Alla olevassa koodiesimerkissä käytämme `toupper()`-funktiota ja `for`-silmukkaa käydäksemme läpi koko merkkijonon:
 
 ```C++
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
-int main() {
-    string original = "ohjelmointi";
-    string capitalized = capitalize(original); // tallennetaan uuteen muuttujaan
-
-    cout << "Alkuperäinen merkkijono: " << original << endl;
-    cout << "Suurennettu merkkijono: " << capitalized << endl;
-
+int main()
+{
+    string s = "tervetuloa käyttämään C++:aa";
+    
+    for (int i = 0; i < s.length(); i++)
+    {
+        s[i] = toupper(s[i]);
+    }
+    
+    cout << s << endl;
+    
     return 0;
 }
+
+// Output:
+// TERVETULOA KÄYTTÄMÄÄN C++:AA
 ```
 
-Tulostettaessa saadaan "Alkuperäinen merkkijono: ohjelmointi" ja "Suurennettu merkkijono: Ohjelmointi".
+## Syvempi sukellus
 
-## Syvällisempi tarkastelu merkkijonon suurennuksesta
+### Syvällisempää tietoa merkkijonon muuntamisesta isoihin kirjaimiin
 
-Merkkijonon suurennus toimii muuttamalla merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi ja jättämällä muut kirjaimet ennalleen. Tämä tapahtuu käyttämällä toupper-funktiota, joka muuttaa annetun kirjaimen isoksi.
+C++:n `toupper()`-funktio hyödyntää C-kielen `cctype`-kirjaston funktioita. Tämä tarkoittaa, että `toupper()`-funktio käyttää ASCII-taulukkoa määrittääkseen, mikä merkin iso muoto on. Jos haluat käyttää Unicode-merkkejä, sinun on käytettävä `towupper()`-funktiota, joka hyödyntää `cwctype`-kirjastoa.
 
-On kuitenkin hyvä huomata, että toupper-funktio ei tee muutoksia itse merkkijonoon, vaan palauttaa uuden suurennetun merkkijonon. Tämän vuoksi meidän täytyy tallentaa palautettu merkkijono uuteen muuttujaan, mikäli haluamme käyttää alkuperäistä merkkijonoa myöhemmin.
+On myös mahdollista käyttää `transform()`-funktiota yhdistelmänä funktioiden `toupper()` tai `tolower()` kanssa, jos haluat muuttaa kaikki merkit isiksi tai pieniksi kerralla.
 
 ## Katso myös
-
-- [C++:n toupper-funktio](https://www.cplusplus.com/reference/cctype/toupper/)
-- [Stringin muokkaaminen C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings_handling.htm)
-
-Kiitos, että luit tämän blogikirjoituksen merkkijonon suurennuksesta C++:ssa! Toivottavasti siitä oli sinulle hyötyä ja se auttaa sinua parantamaan koodisi luettavuutta ja yllä
+- [C++ string manipulation functions (C++ merkkijonofunktiot)](https://www.educba.com/c-plus-plus-string-functions/) 
+- [C++ toupper() function (C++ toupper()-funktio)](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)

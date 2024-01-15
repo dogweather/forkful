@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "C# recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "C#"
 category:             "C#"
@@ -11,63 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's digital age, text files are still a crucial aspect of programming. They allow us to store data in a human-readable format that can easily be accessed and manipulated by different programs. Whether you're writing a simple script or a complex application, text files are a versatile tool that every programmer should have in their arsenal.
+If you're familiar with C# programming, you probably know that sometimes you need to save and read data from external files. One of the most common types of files to work with is a text file, which stores data in a human-readable format. In this article, we'll discuss how to write a text file in C# and why it's necessary.
 
 ## How To
 
-Writing a text file in C# is a straightforward process. First, we need to import the necessary libraries:
+To start, we need to import the `System.IO` namespace in order to use file-related classes and methods. Then, we'll create a new `StreamWriter` object and specify the file path and name we want to write to. Next, we can use the `WriteLine()` method to add text to the file, and the `Close()` method to save and close the file.
 
 ```C#
-using System.IO; // for file operations
-using System.Text; // for text encoding
+using System.IO;
+
+StreamWriter writer = new StreamWriter("myFile.txt");
+
+writer.WriteLine("Hello World!");
+writer.WriteLine("This is a sample text file.");
+
+writer.Close();
 ```
-
-Next, we can use the `StreamWriter` class to create a new text file and write to it. We need to provide the file path where we want to create the file, the text encoding format, and whether we want to append to an existing file or create a new one.
-
-```C#
-// create a new text file and write to it
-using (StreamWriter writer = new StreamWriter("C:/example.txt", false, Encoding.UTF8)) 
-{
-    // write a string
-    writer.WriteLine("Hello world!");
-    
-    // write a formatted string
-    string name = "John";
-    int age = 28;
-    writer.WriteLine("My name is {0} and I am {1} years old.", name, age);
-}
-```
-
-We can also use the `File` class to write to a text file instead of using a `StreamWriter`:
-
-```C#
-// write to a text file using the File class
-string[] lines = {"This is line 1", "This is line 2", "This is line 3"};
-File.WriteAllLines("C:/example2.txt", lines);
-```
-
-Our code above will create two text files - "example.txt" with two lines of text and "example2.txt" with three lines of text. 
+The above code will create a text file named `myFile.txt` in the same directory as your program. If the file already exists, its contents will be overwritten.
 
 ## Deep Dive
 
-Apart from writing plain text to a file, we can also write more complex data types such as arrays or objects. We can use the `ToString()` method to convert these data types into strings and then write them to a text file.
+If you want to add multiple lines of text to your file without using repeated `WriteLine()` statements, you can use the `Write()` method instead. This will write the text without adding a new line character at the end. You can also use the `Write()` method to write data of different types, such as numbers or boolean values.
 
-```C#
-// write an array to a text file
-string[] fruits = {"apple", "orange", "banana"};
-File.WriteAllText("C:/fruits.txt", fruits.ToString());
-
-// write an object to a text file
-Person person = new Person("Jane", 30);
-File.WriteAllText("C:/person.txt", person.ToString());
-```
-
-Another useful feature of writing text files is the ability to use different encodings. In the second parameter of our `StreamWriter` above, we used `Encoding.UTF8` to specify the text encoding. Other options include `Encoding.ASCII`, `Encoding.Unicode`, and `Encoding.Default`, which uses the default system encoding.
+Additionally, you can use the `AppendText()` method of the `File` class to add new lines of text to an existing file without overwriting its contents. This can be useful if you want to constantly update a log file or keep track of changes in a data file.
 
 ## See Also
 
-To learn more about working with text files in C#, check out these helpful resources:
-
-- [Working with Text Files in C#](https://www.c-sharpcorner.com/article/working-with-text-file-in-C-Sharp/)
-- [Writing Text Files in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [C# File Handling](https://www.tutorialspoint.com/csharp/csharp_file_handling.htm)
+- [C# StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
+- [C# File Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0)
+- [C# File I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)

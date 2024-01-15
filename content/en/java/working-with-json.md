@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Working with json"
+title:                "Working with json"
+html_title:           "Java recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Java"
 category:             "Java"
@@ -11,65 +12,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-JSON (JavaScript Object Notation) is a popular data interchange format, commonly used in web development and API integration. It allows for efficient and compact data representation, making it a preferred choice for transferring data over the internet. If you are a Java developer, it is important to understand how to work with JSON to effectively communicate with other systems or applications.
+JSON has become a widely used format for data exchange due to its simplicity and flexibility. With its human-readable format and compatibility with most programming languages, JSON allows efficient communication between different systems and devices.
 
 ## How To
 
-To work with JSON in Java, we will use the ```JSONObject``` class from the ```org.json``` package. Let's start by creating a simple JSON object:
+Working with JSON in Java is simple and straightforward. Here are some examples to get you started:
 
+### Creating a JSON Object
 ```Java
-JSONObject user = new JSONObject();
-user.put("name", "Tom");
-user.put("age", 25);
+JSONObject object = new JSONObject();
+object.put("name", "John");
+object.put("age", 28);
+object.put("city", "New York");
+
+System.out.println(object.toString());
+```
+Output:
+```
+{"name":"John","age":28,"city":"New York"}
 ```
 
-Here, we have created a JSON object with two key-value pairs representing a user's name and age. We can access and print the values using the ```get()``` method:
-
+### Parsing JSON Data
 ```Java
-System.out.println(user.get("name")); // Output: Tom
-System.out.println(user.get("age")); // Output: 25
+String jsonStr = "{\"name\":\"Amy\",\"age\":32}";
+
+JSONObject jsonObject = new JSONObject(jsonStr);
+
+String name = jsonObject.getString("name");
+int age = jsonObject.getInt("age");
+
+System.out.println(name + " is " + age + " years old.");
+```
+Output:
+```
+Amy is 32 years old.
 ```
 
-Next, let us convert this JSON object to a string using the ```toString()``` method:
-
+### Writing JSON to File
 ```Java
-String userString = user.toString();
-System.out.println(userString); // Output: {"name":"Tom","age":25}
+JSONObject object = new JSONObject();
+object.put("title", "My Book");
+object.put("author", "Jane Smith");
+object.put("year", 2020);
+
+try (FileWriter file = new FileWriter("book.json")) {
+    file.write(object.toString());
+} catch (IOException e) {
+    e.printStackTrace();
+}
 ```
 
-To parse a JSON string into a ```JSONObject```, we can use the ```JSONObject``` constructor:
-
+### Reading JSON from File
 ```Java
-String jsonString = "{\"fruit\":\"apple\",\"color\":\"red\"}";
-JSONObject apple = new JSONObject(jsonString);
-System.out.println(apple.get("fruit")); // Output: apple
-System.out.println(apple.get("color")); // Output: red
-```
+File file = new File("book.json");
+try (FileReader reader = new FileReader(file)) {
+    JSONObject object = (JSONObject) new JSONParser().parse(reader);
 
-We can also handle nested JSON objects and arrays using the same methods. For example:
+    String title = (String) object.get("title");
+    String author = (String) object.get("author");
+    int year = Integer.parseInt(object.get("year").toString());
 
-```Java
-JSONObject nestedObj = new JSONObject();
-JSONArray fruits = new JSONArray();
-
-fruits.put("apple");
-fruits.put("orange");
-fruits.put("banana");
-
-nestedObj.put("fruits", fruits);
-
-System.out.println(nestedObj.toString()); // Output: {"fruits":["apple","orange","banana"]}
-
+    System.out.println("Title: " + title);
+    System.out.println("Author: " + author);
+    System.out.println("Year: " + year);
+} catch (IOException | ParseException e) {
+    e.printStackTrace();
+}
 ```
 
 ## Deep Dive
 
-One important thing to note when working with JSON in Java is that the ```JSONObject``` class does not preserve the order of elements, unlike in JavaScript. This is because it uses a ```HashMap``` to store the key-value pairs. As a workaround, we can use the ```JSONArray``` class to maintain the order of elements.
+JSON (JavaScript Object Notation) is a lightweight and platform-independent format for data exchange. It is based on a subset of JavaScript object literal syntax, making it easy to understand and use. By using key-value pairs, JSON allows for the representation of complex data structures that can be easily transmitted and decoded by different systems.
 
-Additionally, when handling large or complex JSON data, it is recommended to use a library such as ```Gson``` or ```Jackson```, which provide more robust and efficient methods for dealing with JSON.
+In Java, the "org.json" package provides easy-to-use classes for working with JSON data. The JSONObject class represents a JSON object, while the JSONArray class represents a JSON array. Both classes allow for the manipulation and retrieval of data using key-value pairs.
+
+When parsing JSON data, it is important to handle exceptions and ensure that the JSON data is in the expected format. The "org.json.simple.parser" package provides a JSONParser class for this purpose. It allows for the conversion of JSON text into objects and vice versa.
+
+Overall, working with JSON in Java is simple yet powerful, making it a widely used format for data exchange in various applications.
 
 ## See Also
 
-- Official documentation for [JSONObject class](https://docs.oracle.com/javaee/7/api/javax/json/JsonObject.html)
-- [Gson library](https://github.com/google/gson)
-- [Jackson library](https://github.com/FasterXML/jackson)
+- [JSON Tutorial by W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
+- [Oracle's Java JSON Tutorial](https://www.oracle.com/technical-resources/articles/java/jsont.html)
+- [Introduction to JSON in Java with Examples by Baeldung](https://www.baeldung.com/java-json)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Bruk av regulære uttrykk"
-simple_title:         "Bruk av regulære uttrykk"
+title:                "Å bruke regelmessige uttrykk"
+html_title:           "TypeScript: Å bruke regelmessige uttrykk"
+simple_title:         "Å bruke regelmessige uttrykk"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke regulære uttrykk i TypeScript?
+## Hvorfor
 
-Regulære uttrykk er et kraftig verktøy for å håndtere strenger og data i TypeScript. Ved hjelp av regulære uttrykk kan du enkelt søke etter og manipulere data, noe som gjør kodingen mer effektiv og effektiv. I denne blogginnlegget skal vi se nærmere på hvordan du kan bruke regulære uttrykk i TypeScript, og hvordan det kan hjelpe deg med å forbedre kodekvaliteten din.
+Det finnes mange gode grunner til å bruke regulære uttrykk (regular expressions) i TypeScript koden din. Først og fremst kan de hjelpe deg med å finne, manipulere og validere tekstbaserte data på en effektiv måte. Dette kan være svært nyttig når du jobber med ting som validering av skjemaer, parsing av filer eller søk i lange dokumenter.
 
-## Hvordan bruke regulære uttrykk i TypeScript?
+## Hvordan
 
-For å bruke regulære uttrykk i TypeScript, må du først opprette et RegExp-objekt ved hjelp av et mønster og eventuelle flagg. Dette mønsteret kan være en kombinasjon av bokstaver, tall, spesielle tegn og meta-tegn som lar deg søke etter et bestemt ord eller mønster i en streng. La oss se på et eksempel der vi ønsker å finne alle forekomster av ordet "hund" i en streng:
-
-```TypeScript
-let streng = "En hund løper på gaten";
-let regex = /hund/g;
-
-let resultat = streng.match(regex);
-console.log(resultat); // Output: ["hund"]
-```
-
-Her oppretter vi et RegExp-objekt som søker etter ordet "hund" med flagget "g" som betyr global søk. Deretter bruker vi metoden `match` på strengen vår for å finne alle forekomster av ordet "hund". Outputen vil da være et array med alle matchende forekomster.
-
-Du kan også bruke regulære uttrykk for å erstatte deler av en streng med annen tekst. La oss se på et eksempel der vi ønsker å bytte ut alle forekomster av ordet "hund" med ordet "katt":
+Bruken av regulære uttrykk i TypeScript er ganske likt som i andre programmeringsspråk. La oss se på noen enkle eksempler og tilhørende output.
 
 ```TypeScript
-let streng = "En hund løper på gaten";
-let regex = /hund/g;
+// Matcher en streng som starter med en stor bokstav og inneholder minst ett tall
+const regex = /^[A-Z].*\d+$/;
 
-let resultat = streng.replace(regex, "katt");
-console.log(resultat); // Output: "En katt løper på gaten"
+console.log(regex.test('Hei123')); // Output: true
+console.log(regex.test('Hei')); // Output: false
 ```
 
-Som du ser, kan regulære uttrykk være svært nyttige for å søke etter og bytte ut ord og mønstre i en streng. Du kan også bruke forskjellige flagg for å gjøre søket mer nøyaktig og omfattende.
+Dette uttrykket starter med `/` og slutter med `/`, som er vanlig syntaks for regulære uttrykk. `^` betyr "start of line" mens `$` betyr "end of line". Strengen må altså starte med en stor bokstav og inneholde minst ett tall for å være en match.
 
-## En dypere forståelse av regulære uttrykk i TypeScript
+```TypeScript
+// Erstatter alle tall i en streng med *
+const regex = /\d/g;
 
-Regulære uttrykk kan være ganske komplekse og ta tid å lære, men det er verdt innsatsen. De kan være svært nyttige når du håndterer store mengder data og ønsker å finne spesifikke mønstre, og kan spare deg for mye tid og frustrasjon.
+console.log('Hei123'.replace(regex, '*')); // Output: Hei***
+```
 
-Det finnes en rekke spesielle meta-tegn og flagg som kan brukes i regulære uttrykk, og det anbefales å lære disse for å få en dypere forståelse av hvordan de fungerer. Du kan også bruke online verktøy som "regex101" for å teste og øve deg på å lage forskjellige regulære uttrykk.
+I dette eksempelet bruker vi funksjonen `replace` til å erstatte alle tall i en streng med `*`. `\d` matcher alle tall og `g` betyr "global", altså alle forekomster i strengen.
+
+## Dypdykk
+
+Det finnes mange forskjellige metoder og funksjoner for å jobbe med regulære uttrykk i TypeScript. Det kan også være lurt å være klar over at noen spesielle tegn, som `.` og `*`, må escapes med `\` for å tolkes som vanlige tegn og ikke som del av selve uttrykket.
+
+En annen ting å være klar over er at regulære uttrykk er case-sensitive, med mindre du bruker flagget `i` for "case-insensitive". Dette kan være spesielt viktig å tenke på ved validering av brukerinput.
 
 ## Se også
 
-- [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) - offisiell dokumentasjon for RegExp i JavaScript.
-- [Mastering Regular Expressions](https://regexone.com/) - en interaktiv tutorial for å mestre regulære uttrykk.
-- [regex101](https://regex101.com/) - et online verktøy for å teste og øve på regulære uttrykk.
+- [Regulære uttrykk i TypeScript dokumentasjonen](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Regular Expression Tester](https://regex101.com/) for å teste og eksperimentere med uttrykk.

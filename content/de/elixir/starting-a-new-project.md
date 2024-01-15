@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Eine neue Projekt starten"
-simple_title:         "Eine neue Projekt starten"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Elixir: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -9,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Elixir ist eine aufstrebende Sprache, die immer beliebter wird. Sie zeichnet sich durch ihre robuste Fehlerbehandlung und die Fähigkeit aus, verteilte Systeme effizient zu verwalten. Wenn Sie ein neues Projekt starten möchten, ist Elixir definitiv eine Sprache, die es sich lohnt zu erkunden.
+Elixir ist eine bahnbrechende Programmiersprache, die die Leistung von funktionaler Programmierung mit der Flexibilität von Konkurrenzprogrammierung kombiniert. Mit seinem leistungsstarken Toolset, seiner hohen Skalierbarkeit und seinem benutzerfreundlichen Syntax ist Elixir die perfekte Wahl für alle, die ein neues Projekt starten möchten.
 
-# Wie man anfängt
+## Wie man anfängt
 
-Um ein neues Elixir-Projekt zu starten, müssen Sie zuerst die Sprache auf Ihrem System installieren. Dazu können Sie entweder den Paketmanager Ihrer Wahl verwenden oder die offizielle Elixir-Website besuchen. Sobald Sie Elixir installiert haben, können Sie mit der Erstellung eines neuen Projekts beginnen.
+Um ein neues Projekt in Elixir zu starten, müssen Sie zunächst die Elixir-Sprachumgebung auf Ihrem Computer installieren. Sobald Sie dies getan haben, können Sie ein neues Projekt erstellen, indem Sie den Befehl `mix new <project_name>` ausführen. Dies erstellt automatisch eine grundlegende Projektstruktur, die alle notwendigen Dateien und Ordner enthält.
 
-Öffnen Sie zunächst Ihre Terminalanwendung und navigieren Sie zu dem Ordner, in dem Sie das Projekt speichern möchten. Verwenden Sie den Befehl `mix new {Projektname}` um ein neues Elixir-Projekt zu erstellen. Dadurch werden alle erforderlichen Dateien und Ordner automatisch erstellt.
+Lassen Sie uns als nächstes einen einfachen "Hello World"-Code erstellen, um sicherzustellen, dass alles ordnungsgemäß funktioniert.
 
-Nun können Sie Ihre Elixir-Dateien schreiben und ausführen. Hier ist ein Beispiel, das "Hello World!" auf der Konsole ausgibt:
-
-```Elixir
+```elixir
 defmodule HelloWorld do
-  def hello do
-    IO.puts "Hello World!"
+  def main do
+    IO.puts "Hallo Welt!"
   end
 end
 
-HelloWorld.hello()
+HelloWorld.main
 ```
 
-Die Ausgabe dieses Codes wird "Hello World!" sein.
+Wenn Sie diesen Code ausführen, sollten Sie die Nachricht "Hallo Welt!" in Ihrem Terminal sehen.
 
-# Eintauchen in die Details
+## Tiefer Einblick
 
-Wenn Sie tiefer in die Erstellung eines Elixir-Projekts eintauchen möchten, gibt es einige wichtige Konzepte, die Sie verstehen sollten. Zum Beispiel verwenden Elixir und die dazugehörige Plattform Phoenix eine bestimmte Dateistruktur und Benennungskonventionen für das Organisieren von Code. Es ist auch wichtig zu wissen, wie Abhängigkeiten in Elixir behandelt werden und wie Sie Pakete von Drittanbietern in Ihre Projekte integrieren können.
+Natürlich gibt es noch viel mehr, was Sie über das Starten eines neuen Projekts in Elixir wissen müssen. Eine wichtige Sache zu beachten ist, dass Elixir auf der virtuellen Maschine Erlang läuft. Das bedeutet, dass Sie Zugriff auf alle leistungsstarken Funktionen von Erlang haben, während Sie gleichzeitig die benutzerfreundliche Syntax von Elixir nutzen können.
 
-Darüber hinaus ist es hilfreich zu verstehen, wie Sie Ihre Elixir-Anwendung testen können, um sicherzustellen, dass alles wie beabsichtigt funktioniert. Elixir hat ein integriertes Test-Framework, das es Ihnen ermöglicht, Tests für jede Funktion oder Modul in Ihrer Anwendung zu schreiben. Dies hilft Ihnen, Fehler zu identifizieren und sicherzustellen, dass Ihre Anwendung immer zuverlässig bleibt.
+Darüber hinaus gibt es eine Reihe von Frameworks und Tools, die Ihnen helfen können, Ihre Elixir-Projekte zu verwalten und zu skalieren. Einige beliebte Optionen sind Phoenix für die Webentwicklung und Ecto für die Datenbankintegration.
 
-# Siehe auch
+## Siehe auch
 
 - Offizielle Elixir-Website: https://elixir-lang.org/
-- Elixir-Dokumentation: https://hexdocs.pm/elixir/
-- Phoenix Framework: https://www.phoenixframework.org/
-- Elixir Forum (auf Deutsch): https://elixirforum.de/
+- Elixir School: https://elixirschool.com/de/
+- Elixir Forum: https://elixirforum.com/

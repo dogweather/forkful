@@ -1,5 +1,6 @@
 ---
-title:                "C++: Vergleich von zwei Daten."
+title:                "Vergleich von zwei Daten."
+html_title:           "C++: Vergleich von zwei Daten."
 simple_title:         "Vergleich von zwei Daten."
 programming_language: "C++"
 category:             "C++"
@@ -11,42 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Vergleichung von zwei Daten ist ein wichtiges Konzept in der Programmierung, da es oft erforderlich ist, zu überprüfen, ob ein bestimmtes Datum vor oder nach einem anderen Datum liegt. Das kann beispielsweise bei der Erstellung von Kalendern oder bei der Berechnung von Alter verwendet werden.
+Vergleiche zwischen zwei Daten können in der Programmierung nützlich sein, zum Beispiel um zu überprüfen, ob ein Ereignis in der Zukunft oder Vergangenheit liegt, oder um zu bestimmen, welches Datum später ist.
 
-## Wie man zwei Daten vergleicht
+## Wie geht's
 
-Um zwei Daten in C++ zu vergleichen, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung der "std::chrono" Bibliothek, die Funktionen zur Manipulation von Zeit und Datumsangaben bietet.
-
-Ein Beispielcode für die Verwendung von "std::chrono" ist wie folgt:
+Um zwei Daten miteinander zu vergleichen, gibt es in C++ die `std::chrono` Bibliothek, die eine Vielzahl an Funktionen und Variablen für die Arbeit mit Zeit und Datum bereitstellt.
 
 ```C++
 #include <iostream>
 #include <chrono>
 
-int main()
-{
-    // Erstellen Sie zwei Daten zum Vergleich
-    auto date1 = std::chrono::system_clock::now();
-    auto date2 = std::chrono::system_clock::now() - std::chrono::hours(24);
+using namespace std;
+using namespace std::chrono;
 
-    // Vergleichen Sie die Daten
-    if(date1 > date2)
-    {
-        std::cout << "Das erste Datum liegt nach dem zweiten Datum." << std::endl;
-    }
-    else
-    {
-        std::cout << "Das erste Datum liegt vor dem zweiten Datum." << std::endl;
+int main() {
+    // Erstelle zwei Daten-Objekte
+    system_clock::time_point date1 = system_clock::now();
+    system_clock::time_point date2 = system_clock::now() + hours(24);
+
+    // Vergleiche die Objekte
+    if (date1 > date2) {
+        cout << "date1 ist später als date2" << endl;
+    } else if (date1 < date2) {
+        cout << "date1 ist früher als date2" << endl;
+    } else {
+        cout << "beide Daten sind gleich" << endl;
     }
 
     return 0;
 }
 ```
 
-Die Ausgabe dieses Codes wird je nach den erstellten Daten variieren, aber es wird immer angezeigt, ob das erste Datum vor oder nach dem zweiten Datum liegt.
+Die Ausgabe des obigen Codes wäre:
 
-## Tiefere Einblicke
+```
+date1 ist früher als date2
+```
 
-Bei der Vergleichung von Daten in C++ ist es wichtig zu beachten, dass es verschiedene Arten von Datumsangaben gibt, wie zum Beispiel lokale Zeit, UTC und UNIX-Zeit. Daher ist es wichtig, die richtigen Funktionen aus der "std::chrono" Bibliothek für die jeweilige Art von Datumsangabe zu verwenden.
+In diesem Beispiel wird die Funktion `now()` verwendet, um das aktuelle Datum und die Uhrzeit als `time_point` Objekt der Systemuhr zurückzugeben. Mit `hours()` kann ein gewünschter Zeitraum angegeben werden, um das zweite Datum entsprechend zu verschieben. Dann werden die beiden `time_point` Objekte miteinander verglichen und je nach Bedingung eine entsprechende Ausgabe gemacht.
 
-Außerdem ist es wichtig zu beachten, dass bei der Verwendung von "std::chrono" die Genauigkeit der vergleichen
+Weitere nützliche Funktionen zum Vergleichen von Zeiten sind `time_since_epoch()`, das die Anzahl der vergangenen Zeit seit dem 1. Januar 1970 zurückgibt, und `time_since()`, das die Differenz zwischen zwei Zeitpunkten berechnet.
+
+## Tief eintauchen
+
+Die `std::chrono` Bibliothek verwendet ein System von Dauern und Zeitpunkten, um Zeit und Datum darzustellen. Eine Dauer ist eine Zeitspanne, die in Ticks angegeben wird, während ein Zeitpunkt ein bestimmtes Datum und eine bestimmte Uhrzeit repräsentiert. Dieses System ermöglicht eine präzise und zuverlässige Arbeit mit Zeit und Datum in C++.
+
+Es gibt auch spezielle Datentypen wie `system_clock`, `steady_clock` und `high_resolution_clock`, die die Möglichkeit bieten, die Systemzeit, eine konstante Zeit und eine hochauflösende Zeit zu messen, um die Genauigkeit der Zeitmessung zu verbessern.
+
+## Siehe auch
+
+- [std::chrono Referenz](https://en.cppreference.com/w/cpp/chrono)
+- [C++ Datum und Zeit Tutorial](https://www.learncpp.com/cpp-tutorial/8-13-a-simple-date-class/)
+- [C++ Vergleichsoperatoren](https://www.learncpp.com/cpp-tutorial/relational-operators-and-comparisons/)

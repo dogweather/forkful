@@ -1,6 +1,7 @@
 ---
-title:                "Swift: एक Http अनुरोध भेजना"
-simple_title:         "एक Http अनुरोध भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Swift: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-अभी आप वेब डेवलपमेंट की दुनिया में बहुत अच्छे 平रे से चल रहे होंगे जहाँ HTTP की रीक्वेस्ट भरता हो गया होंगा। ये बहुत ही महत्वपूर्ण हैं जब आप सर्वर से डाटा लेने या भेजने की आवश्यकता होती है। यह एक सधी सी प्रकिया है लेकिन उसे समझना बहुत ही ज़रूरी है।
+## क्यों
 
-## कैसे
+एक व्यक्ति हमेशा ही वेब क्लाइंट से डेटा प्राप्त करना या डेटा को सर्वर पर भेजना चाहता है, तो उन्हें HTTP रिक्वेस्ट भेजने की आवश्यकता होती है। HTTP रिक्वेस्ट भेजने से आप अपने ऐप्स या वेबसाइट में डायनामिक सामग्री को डाउनलोड कर सकते हैं या यूजर के द्वारा दर्ज किया गया डेटा को सर्वर पर स्टोर कर सकते हैं।
 
-आज हम स्विफ्ट में कैसे HTTP रीक्वेस्ट भेज सकते हैं उसके बारे में बात करेंगे। आपको स्विफ्ट कोड के भीतर HTTP रीक्वेस्ट भेजने के लिए NSURLSession और NSURLRequest की ज़रूरत होती है। नीचे दिए गए कोड स्निपेट में हम एक GET रीक्वेस्ट की उदाहरण देखेंगे।
+## कैसे करें
 
 ```Swift
-// NSURLSession का नया इंस्टेंस बनायें
+let url = URL(string: "https://www.example.com/data")!
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+
 let session = URLSession.shared
-// एक NSURLRequest बनाएं
-let request = URLRequest(url: URL(string: "http://www.example.com")!)
-// NSURLSessionDataTask का नया इंस्टेंस बनाएं
 let task = session.dataTask(with: request) { data, response, error in
-    // रेस्पॉन्स को चेक करें
-    if let httpResponse = response as? HTTPURLResponse {
-        // सफलतापूर्वक सर्वर से कनेक्ट करने की स्थिति देखें
-        if httpResponse.statusCode == 200 {
-            // डेटा को प्रिंट करें
-            if let data = data {
-                print(data)
-            }
-        }
+    guard let data = data, error == nil else {                                                  
+        // handle error here
     }
+    
+    // use response and data here
+    print(response)
+    let output = String(data: data, encoding: .utf8)
+    print(output)
 }
-// रीक्वेस्ट भेजें
+
 task.resume()
 ```
 
-ऊपर दिए गए कोड में हम स्विफ्ट के URLSession और URLRequest का इस्तेमाल करके एक GET रीक्वेस्ट को भेजते हैं। हम रिस्पॉन्स को चेक करते हैं और फिर सर्वर से कनेक्ट करने की स्थिति को देखते हैं। फिर डेटा को प्रिंट करते हैं। आप फिर उस डेटा को अपनी आवश्यकतानुसार उपयोग कर सकते हैं।
+उपरोक्त कोड स्निपेट में, हमने किसी भी श्रोत से डेटा प्राप्त करने के लिए सर्वर पर GET रिक्वेस्ट भेजी है। हमने एक URL बनाया है जिससे हम डेटा डाउनलोड कर सकते हैं और फिर हमने उस URL को कैसे खोलना है की निर्देशिका दिखायी है। आगे भेजे गए संदेश का जवाब, डेटा और वेबसाइट के URL के रूप में हमसे प्रकाशित भी होता है। आप वेबसाइट के डेटा को डाउनलोड करने के लिए प्रति session का उपयोग कर सकते हैं और इस वेब ब्राउज़र के अंदर ऐसा कुछ कैसे करते हैं जो एक सेशन खोल सकता है। विश्लेषण करते समय खोलने की योग्यता बनाएँ जिसका हम इस्तेमाल करते हैं।
 
-## गहरी जानकारी
+## गहराई में जाएं
 
-HTTP रीक्वेस्ट भेजने के बारे
+HTTP रिक्वेस्ट भेजते समय, आपको उन्हें `GET`, `POST`, `PUT` या `DELETE` क्यों भेजने के बारे में जानना होगा। `GET`

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Análise de HTML"
-simple_title:         "Análise de HTML"
+title:                "Analisando html"
+html_title:           "C++: Analisando html"
+simple_title:         "Analisando html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,45 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que realizar análise de HTML em C++?
+## Por que
 
-Se você está interessado em manipular dados da web, realizar uma análise de HTML pode ser uma habilidade extremamente útil. Com o uso da linguagem de programação C++, é possível automatizar a extração de dados de sites e utilizá-los para diversas finalidades, como análise de mercado, pesquisa de preços, entre outros.
+Muitas vezes, é necessário analisar ou extrair informações específicas de uma página HTML para fins de análise de dados, automação de tarefas ou criação de aplicativos da web. É aí que entra o uso do parsing HTML em C++.
 
-## Como realizar a análise de HTML em C++?
+## Como fazer
 
-Para realizar a análise de HTML em C++, é necessário utilizar uma biblioteca externa, como a popular "libxml2". Essa biblioteca é capaz de ler e interpretar o código de uma página HTML e fornecer acesso aos elementos da estrutura do documento. Veja um exemplo de código:
+Para fazer parsing HTML em C++, é preciso utilizar uma biblioteca de parsing, como a "libxml2". Aqui está um exemplo simples de como fazer parsing de uma página HTML e imprimir o título:
 
-```C++
-#include <iostream>
+```
 #include <libxml/HTMLparser.h>
+#include <libxml/xpath.h>
 
 int main() {
-  // Obtém o arquivo HTML
-  FILE *arquivo = fopen("exemplo.html", "r");
-
-  // Analisa o código HTML
-  htmlDocPtr doc = htmlReadFile(arquivo, NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-
-  // Imprime o título da página
-  xmlNodePtr titulo = xmlDocGetFirstElementChild(doc)->children;
-  std::cout << titulo->content << std::endl;
-
-  // Libera a memória usada
-  xmlFreeDoc(doc);
-  fclose(arquivo);
-  xmlCleanupParser();
-
-  return 0;
+    // Criando a estrutura do documento HTML
+    xmlDocPtr doc = htmlNewDoc("UTF-8");
+    // Lendo o arquivo HTML
+    htmlCtxtPtr context = htmlReadFile("pagina.html", NULL, HTML_PARSE_NOBLANKS);
+    // Obtendo o elemento do título
+    htmlNodePtr titulo = htmlXPathEvalExpression((xmlChar*)"//title", context->doc);
+    // Imprimindo o texto do título
+    printf("Título: %s",titulo->children->content);
+    // Limpando a memória
+    xmlFreeDoc(doc);
+    htmlCleanupParser();
+    xmlCleanupParser();
+    return 0;
 }
 ```
 
-A saída do código acima seria o título presente na página HTML. A partir dessa base é possível acessar outros elementos da página, como links, imagens, entre outros.
+A saída esperada seria:
 
-## Profundamente sobre a análise de HTML
+```
+Título: Meu Site Incrível
+```
 
-A análise de HTML envolve entender a estrutura do documento e como os diferentes elementos são organizados. Além disso, é preciso conhecer as tags e atributos utilizados no código para selecionar os dados desejados. Com a biblioteca "libxml2" é possível realizar a análise de forma eficiente e acessar esses dados para manipulá-los conforme a necessidade.
+## Mergulho Profundo
+
+Parsing HTML em C++ pode ser um processo complexo, pois o HTML pode ser muito estruturado e detalhado. Algumas coisas importantes a serem consideradas incluem:
+
+- A tag <title> pode estar em diferentes lugares em páginas HTML diferentes, por isso, pode ser necessário usar expressões XPath diferentes para encontrá-lo.
+
+- Existem muitas bibliotecas de parsing HTML disponíveis, cada uma com suas próprias vantagens e desvantagens. Certifique-se de escolher a que melhor se adequa às suas necessidades.
+
+- É importante garantir que a página HTML seja válida e esteja bem formatada, caso contrário, pode ser difícil realizar o parsing corretamente.
 
 ## Veja também
 
-- [Tutorial de análise de HTML em C++](https://www.tutorialspoint.com/libxml2/libxml2_parse_html.htm)
-- [Documentação da biblioteca libxml2](http://www.xmlsoft.org/html/index.html)
+- [libxml2 documentation](http://www.xmlsoft.org/html/index.html)
+- [XPath tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
+- [C++ tutorial](https://www.tutorialspoint.com/cplusplus/index.htm)

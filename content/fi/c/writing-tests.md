@@ -1,5 +1,6 @@
 ---
-title:                "C: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "C: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "C"
 category:             "C"
@@ -11,44 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Koodin testaaminen on tärkeä osa ohjelmistokehitystä. Se varmistaa, että koodi toimii oikein ja vähentää virheiden mahdollisuutta tuotantoympäristössä. Kirjoittamalla testejä varmistat myös, että tulevaisuudessa tehtävät muutokset eivät riko olemassa olevaa koodia.
+Testien kirjoittaminen on tärkeä osa ohjelmointia, koska se auttaa varmistamaan, että koodi toimii odotetulla tavalla ja estää mahdollisten bugien pääsyn tuotantoympäristöön.
 
-## Miten tehdä
+## Miten aloittaa
 
-Testien kirjoittaminen voi aluksi tuntua työläältä, mutta siitä on paljon hyötyä pitkällä aikavälillä. Tässä on yksinkertainen esimerkki testin kirjoittamisesta C-ohjelmalle:
+Testien kirjoittaminen C-kielellä on yksinkertaista. Alla on esimerkki yksinkertaisesta funktiosta, joka tarkistaa, onko annettu luku parillinen vai ei:
 
 ```C
-// Testattava funktio, joka palauttaa luvun neliön
-int square(int number) {
-    return number * number;
-}
+#include <stdio.h>
 
-// Testifunktio, joka tarkistaa, että square-funktio palauttaa oikean luvun neliön
-int test_square() {
-    int result = square(5);
-    if (result == 25) {
-        printf("Test passed!");
+int main()
+{
+    int num = 6;
+    if(num % 2 == 0)
+    {
+        printf("Luku %d on parillinen", num);
     }
-    else {
-        printf("Test failed!");
+    else
+    {
+        printf("Luku %d on pariton", num);
     }
-    return 0;
-}
 
-int main() {
-    test_square();
     return 0;
 }
 ```
+Tämän koodin tuloste olisi "Luku 6 on parillinen". Voit myös muokata tätä esimerkkiä omien funktioidesi testaamiseen.
 
-Testin tulisi palauttaa "Test passed!" Jos funktio toimii oikein, muuten se palauttaa "Test failed!" Kirjoita erilaisia testejä jokaiselle koodin osa-alueelle varmistaaksesi, että kaikki toimii odotetusti.
-
-## Syvällisempi tarkastelu
-
-Testien kirjoittaminen auttaa myös dokumentoimaan koodiasi ja helpottaa ymmärtämään sen toimintaa. Hyviä testejä kirjoittaessa sinun tulee ajatella erilaisia syötteitä ja miten ohjelmasi käsittelee niitä. Voit myös käyttää testaamiseen erilaisia kirjastoja, kuten JUnit C: lle.
+## Syvempi sukellus
+Testien kirjoittamisessa on tärkeää muistaa, että niiden on oltava yksinkertaisia ja selkeitä. Testien tarkoituksena on auttaa sinua vahvistamaan, että koodisi toimii odotetulla tavalla eikä löydä virheitä. Hyödyt testien kirjoittamisesta ovat suurempia kuin mahdolliset haitat, kuten lisätyö ja aika. Muista myös käyttää hyviä testaustekniikoita, kuten yksikkötestausta ja jatkuvaa integrointia, parhaan mahdollisen tuloksen saavuttamiseksi.
 
 ## Katso myös
-
-- [JUnit C](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
-- [Testaus C: ssä](https://gcc.gnu.org/onlinedocs/gcc-4.4.1/gcc/Testing.html)
-- [TDD (Test Driven Development) C: ssä](https://dzone.com/articles/tdd-c-tutorial)
+- [C-kielen virallinen dokumentaatio](https://en.cppreference.com/w/c)
+- [Testien kirjoittaminen C-kielellä käyttäen Unity-testikirjastoa](https://medium.com/@rushman/test-driven-development-in-c-with-the-unity-test-framework-832d3cd0e107)
+- [Jatkuvan integroinnin perusteet C-projekteissa](https://medium.com/@alexandrechoisy/getting-started-with-continuous-integration-for-a-c-project-887a1758badc)

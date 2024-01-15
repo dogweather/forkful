@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Elixir recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,44 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever encountered an error while writing code in Elixir and wondered how to properly handle it? Writing to standard error is a helpful way to capture and display these errors, making it easier to debug and find solutions for. In this blog post, we will explore the basics of writing to standard error in Elixir and how it can improve your coding experience.
+Writing to standard error may not be the most exciting topic, but it is a crucial aspect of programming in Elixir. As developers, we often rely on standard error to understand and debug issues in our code. By learning how to write to standard error, we can gain a better understanding of our programs and improve our overall development process.
 
 ## How To
 
-To write to standard error in Elixir, we can use the `IO.write/2` function and specify `:stderr` as the second argument. Let's take a look at an example:
+The process of writing to standard error in Elixir is simple and straightforward. All we need to do is use the `IO.puts/2` function with a second argument of `:stderr` to specify that we want to write to standard error instead of standard output. Let's take a look at an example:
 
 ```Elixir
-IO.write(:stderr, "This is an error message.")
+IO.puts("Hello World", :stderr)
 ```
-Running this code in the Elixir terminal will output `This is an error message.` in red text, indicating that it was written to standard error. 
 
-In the code block above, we use the `IO.write/2` function to write the message to the specified output, in this case `:stderr`. You can also use the `IO.puts/2` function in the same way, which adds a new line after the message. 
+When we run this code, we will see the message "Hello World" printed to our terminal as an error. This may not seem useful on its own, but we can leverage this functionality to provide more informative error messages in our programs.
 
-Let's try another example to see how we can handle errors using the `IO.write/2` function:
+For example, if we encounter an error in our program, we can use `IO.puts/2` to write a specific error message to standard error. This will help us pinpoint the issue and understand what went wrong in our code.
 
 ```Elixir
-try do
-  file = File.open("nonexistentfile.txt")
-  IO.write(:stderr, "File opened successfully.")
-catch
-  error -> IO.write(:stderr, "Error: #{inspect error}")
+if input == "invalid" do
+  IO.puts("Invalid input! Please try again.", :stderr)
 end
 ```
 
-In this example, we open a file that does not exist, triggering an `error` in the `catch` block. Using `IO.write/1`, we can output a custom error message along with the specific `error` that occurred.
-
 ## Deep Dive
 
-Behind the scenes, Elixir uses the `:stdio` module to handle standard input, output, and error. When we use `:stderr` as the second argument in the `IO.write/2` function, we are essentially telling Elixir to write the message to the error output handled by the `:stdio` module.
+In Elixir, standard error is represented by the `:stderr` atom. This atom is used to identify where error messages should be written to in the underlying operating system.
 
-It is important to note that writing to standard error will not interrupt the execution of the program, but will simply display the error message in the terminal. This allows us to continue with our program and handle errors in a more organized and visible way.
+We can also use `IO.inspect/2` to write data to standard error for debugging purposes. This function prints the given data to standard error, which can help us understand and troubleshoot our code.
+
+```Elixir
+list = [1, 2, 3]
+IO.inspect(list, label: "My List:", out: :stderr)
+```
+
+We can also use the `Kernel.raise/1` function to raise an error and write a custom message to standard error at the same time. This is useful when we want to explicitly raise an error in our code and provide more information about the issue.
+
+```Elixir
+defmodule Math do
+  @doc "Returns the result of dividing `a` by `b`."
+  def divide(a, b) do
+    if b == 0 do
+      IO.puts("Cannot divide by 0!", :stderr)
+      Kernel.raise("Division by zero error!")
+    end
+    a / b
+  end
+end
+```
 
 ## See Also
 
-Below are some additional resources for learning more about writing to standard error in Elixir:
-
-- [Elixir Documentation on IO.write/2 function](https://hexdocs.pm/elixir/IO.html#write/2)
-- [Elixir Documentation on standard I/O](https://elixir-lang.org/getting-started/io-and-the-file-system.html#standard-io)
-- [Elixir School](https://elixirschool.com/lessons/basics/io/) - a comprehensive learning resource for Elixir, including a lesson on I/O.
-
-Now that you have a better understanding of writing to standard error in Elixir, give it a try in your own coding projects and see how it can improve your debugging process. Happy coding!
+- [Elixir Documentation on IO](https://hexdocs.pm/elixir/IO.html)
+- [Elixir Documentation on Kernel](https://hexdocs.pm/elixir/Kernel.html)
+- [Article on Building CLI Tools in Elixir](https://bryanconner.com/building-cli-tools-in-elixir/)

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Rust: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -11,46 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-JSON, यानि जयेसन (JavaScript Object Notation), एक popular data format है जो की modern web programming में extensively use किया जाता है। इसका format readable और easy to parse होने के कारण, यह developers के बीच काफी popular है। इसीलिए, Rust में JSON के साथ काम करना बहुत important है और होना भी चाहिए।
+रस्ट एक मौजूदा और अधिक भाषावादी भाषा है जो डीकोडिंग और एन्कोडिंग जैसे JSON डेटा को प्रसंस्करण करने के लिए शानदार है। हालांकि, अगर आप पहली बार रस्ट का उपयोग कर रहे हैं तो आपको JSON डेटा से सामने कई चुनौतियां आ सकती हैं।
 
-## कैसे करे
+## कैसे करें
 
-जब आप Rust में JSON का प्रभावी तरीके से use करते हैं, तो आप अपने code को बहुत organized और readable बना सकते हैं। पहले, आपको Rust में `serde` और `serde_json` libraries को install करना होगा। फिर, आप `use serde::{Deserialize, Serialize};` को import करके start कर सकते हैं। आप `#[derive(Deserialize, Serialize)]` attribute का use करे करके अपने structs को JSON compatible बना सकते हैं। आप नीचे दी गई code snippet को चेक कर सकते हैं।
-
-```Rust
-use serde::{Deserialize, Serialize};
-
-#[derive(Serialize, Deserialize)]
-struct User {
-    name: String,
-    age: u8,
-    active: bool,
-}
+{\```rust
+use serde_json::{Value, json};
 
 fn main() {
-    let user = User {
-        name: String::from("John"),
-        age: 25,
-        active: true,
-    };
+    // नए JSON वैल्यू बनाएं
+    let my_object = json!({
+        "name": "John",
+        "age": 25,
+        "favorite_fruit": "Mango"
+    });
 
-    let json = serde_json::to_string(&user).unwrap();
-    println!("{}", json);
+    // वैल्यू के अनुसार प्रिंट करें
+    println!("{:#?}", my_object);
+
+    // डेटा एक्सेस करें
+    println!("नाम: {}", my_object["name"]);
+    println!("उम्र: {}", my_object["age"]);
 }
-```
 
-और output आपको निम्न दिखाई देगा:
+{\```
 
-```Rust
-{"name":"John","age":25,"active":true}
-```
+{\```bash
+OUTPUT:
+{
+    "name": "John",
+    "age": 25,
+    "favorite_fruit": "Mango"
+}
+नाम: John
+उम्र: 25
+{\```}
 
-## गहराई में
+## गहराई में जाएं
 
-जब आप Rust में JSON के साथ काम करते हैं, तो आप पाएंगे की यह आसान है। लेकिन, आपको JSON की समझ की गहराई में जानने की आवश्यकता होगी। आपको इसके अलावा भी serialization और deserialization के बारे में समझना होगा। आप उन्हें customize कर सकते हैं ताकि आप अपने data को specific formats में convert कर सके। आप दी गई links को checkout करके और Rust में JSON के साथ काम करना सीखके और पूरी ताक लेंगे।
+जब आप JSON डेटा को प्रसंस्करण करते हैं, तो आपको सुनिश्चित करना होगा कि आपका JSON डेटा वैध है और उसमें कोई अनुमत विलंब नहीं है। सरल एफपीआई (API) के साथ काम करने के लिए, आपको विशेषकर JSON को सीरियलाइज और डीसीरियलाइज करना आवश्यक हो सकता है। आप सर्वोत्तम तरीके से यह करने के लिए serde अनुप्रयोग का उपयोग कर सकते हैं।
 
-## देखें भी
+## और जानें
 
-- [Official Rust docs for working with JSON](https://doc.rust-lang.org/beta/book/ch08-02-strings.html)
-- [Rust for JavaScript Developers: Handling JSON](https://www.sitepoint.com/rust-javascript-stack-handling-json/)
-- [Simple JSON Serialization and Deserialization from Scratch in Rust](https://kylewbanks.com/blog/simple-json-serialization-and-deserialization-in-rust)
+यदि आप रस्ट में JSON डेटा के साथ काम करने के बारे में अधिक जानना चाहते हैं, तो इन लिंकों पर जाएं:
+
+- [serde डॉक्यूमेंटेशन](https://docs.rs/serde_json/1.0.65/serde_json/)
+- [Jaspy का रस्ट और JSON विकास](https://jaspy.dev/rust-and-json/)
+- [रस्ट में सीरियलाइज और डीसीरियलाइज करने का एक नमूना कोड](https://blog.logrocket.com/serializing-and-deserializing-json-in-rust-with-serde/)

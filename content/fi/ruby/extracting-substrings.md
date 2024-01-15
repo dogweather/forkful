@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Alaohjelman nimet"
-simple_title:         "Alaohjelman nimet"
+title:                "Alimerkkijonojen erottaminen"
+html_title:           "Ruby: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,47 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: 
+## Miksi: Miksi haluat nimenomaan osa-merkkijonon poistamisen
 
-Miksi joku haluaisi osallistua alamerkkijonojen erotteluun Ruby-ohjelmoinnilla? 
+Substringien poistaminen on erittäin hyödyllistä, kun haluat käsitellä vain osaa merkkijonosta tietyissä tilanteissa. Tämä voi säästää aikaa ja tehdä koodistasi tehokkaampaa.
 
-On monia syitä, miksi tämä voi olla hyödyllistä ohjelmoijalle. Yksi yleinen syy voisi olla, että käsiteltävässä merkkijonossa on tiettyä tietoa, jota tarvitaan erikseen. Esimerkiksi, jos ohjelmassa on annettu henkilötunnus, saattaa olla hyödyllistä saada erillinen alamerkkijono syntymäajan osista. Tai, jos käyttäjä syötti postinumeron, alamerkkijonolla voisi olla hyödyllinen tieto siitä, mihin kaupunkiin se liittyy.
+## Kuinka: Esimerkkejä koodia ja tulostusta
 
-## Kuinka:
-
-Seuraavassa on esimerkkejä siitä, kuinka voit käyttää Rubya erottamaan alamerkkijonoja. 
+Mikäli haluat poistaa osan merkkijonosta, käytä Rubyssa "slice!"-metodia, joka poistaa ilmoittamasi alueen merkkijonosta ja palauttaa poistetun osan. Katso alla olevaa esimerkkiä:
 
 ```Ruby
-# Alustetaan merkkijono
-merkkijono = "Tämä on esimerkkilause."
+string = "Tämä on hyvä tapa poistaa osa merkkijonosta"
 
-# Tulostaa viisi ensimmäistä merkkiä
-puts merkkijono[0, 5]
-# => Tämä
+string.slice!(9, 11)
 
-# Tulostaa viisi viimeistä merkkiä
-puts merkkijono[-5, 5]
-# => lause
-
-# Tulostaa merkkijonon kolmannesta merkistä alkaen viisi merkkiä
-puts merkkijono[2, 5]
-# => m on
-
-# Käyttäen regexp-merkintä kiinteän merkkimäärän sijaan
-
-# Tulostaa kaikki isolla kirjaimella alkavat sanat
-puts merkkijono.scan(/\b[A-Z]\w*/)
-# => Tämä
-
-# Tulostaa kaikki numerot
-puts merkkijono.scan(/\d+/)
-# => tyhjä taulukko, sillä merkkijonossa ei ole numeroita
+puts string #=> Tämä on poistaa merkkijonosta
 ```
 
-## Syvällinen tarkastelu:
+## Syvällinen tarkastelu: Lisätietoa osa-merkkijonon poistamisesta
 
-Ruby tarjoaa monia erilaisia tapoja erottaa alamerkkijonoja. Yllä olevissa esimerkeissä käytämme `[]`-operaattoria ja `scan`-metodia. `[]`-operaattori ottaa vastaan aloitusindeksin ja halutun merkkimäärän, kun taas `scan`-metodi käyttää regexp-merkintää löytääkseen halutun merkkimäärän. 
+Jos haluat tarkistaa, onko merkkijono tietyssä kohdassa tietyllä pituudella, voit käyttää "include?"-metodia yhdessä "slice!"-metodin kanssa. Tämä auttaa sinua välttämään tyhjien alkioiden poiston, jos kohdassa ei ole tarpeeksi merkkejä poistettavaksi. Katso alla olevaa esimerkkiä:
 
-On myös muita vaihtoehtoja, kuten `slice`-metodi ja `match`-metodi. Lisäksi on mahdollista käyttää regexp-merkintää `partition`-metodilla saadakseen alueen ja erottelemaan sen kolmeen eri osaan.
+```Ruby
+string = "Tämä on toinen hyvä tapa poistaa merkkijonosta"
 
-Erotaessa alamerkkijonoja on tärkeää olla tarkka siitä, minkä merkkimäärän haluat ja missä kohdassa merkkijonoa se sijaitsee. Joissakin tapauksissa, kuten ha
+if string.include?("hyvä tapa") 
+  string.slice!(0, 15)
+end
+
+puts string #=> poistaa merkkijonosta
+```
+
+## Katso myös
+
+- [Ruby String API](https://ruby-doc.org/core-2.7.3/String.html)
+- [Miten poistaa merkkijonosta välimerkki käyttämällä Rubya](https://medium.com/@alanachavez616/how-to-remove-punctuation-in-ruby-6d979172c5d0)
+- [Stringien manipulointi ja substringien poistaminen Rubyssa](https://www.rubyguides.com/2016/07/ruby-strings/)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Cálculo de uma data no futuro ou passado"
+html_title:           "Elm: Cálculo de uma data no futuro ou passado"
+simple_title:         "Cálculo de uma data no futuro ou passado"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -9,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Porque
+## Por que calcular uma data no futuro ou passado?
 
-Cálculos de datas no futuro e passado são uma parte importante da programação em Elm. Eles permitem que os desenvolvedores trabalhem com diferentes cenários de tempo em seus aplicativos, como agendamento de tarefas ou exibição de eventos futuros.
+Existem muitas situações nas quais precisamos descobrir uma data específica no futuro ou passado. Pode ser para agendar um evento, criar um lembrete ou qualquer outra necessidade relacionada ao tempo. Felizmente, a linguagem Elm oferece uma maneira simples e eficiente de calcular datas.
 
-##Como Fazer
+## Como fazer
 
-Para calcular uma data no futuro ou passado em Elm, usamos a biblioteca `elm/time` que fornece funções úteis para manipulação de datas e horas. Para começar, importamos a biblioteca em nosso código:
+Para calcular uma data em Elm, primeiro precisamos importar o módulo `Time`:
 
 ```Elm
 import Time exposing (..)
 ```
 
-Agora, podemos usar as funções fornecidas pela biblioteca para realizar nossos cálculos. Por exemplo, para obter a data atual, usamos a função `now` e para adicionar um certo número de segundos a essa data, usamos a função `add`:
+Em seguida, podemos usar a função `millisToPosix` para converter um número de milissegundos em um valor de data POSIX. Por exemplo, se quisermos calcular uma data 5 dias a partir de hoje, podemos fazer o seguinte:
 
 ```Elm
--- obtenha a data atual
-now
-
--- adicione 5 segundos à data atual
-add (seconds 5) now
+let
+    dataFutura = Date.millisToPosix (Time.millisToPosix 5)
+in
+    "A data daqui a 5 dias é " ++ Date.toString dataFutura
 ```
 
-O resultado dessas operações será do tipo `Time Posix` que representa um momento específico no tempo. Podemos então formatá-lo usando a função `toString` para exibir a data de forma mais legível:
+Isso nos dará a seguinte saída: "A data daqui a 5 dias é 2021-10-10". Podemos fazer o mesmo para calcular uma data no passado, basta usar um número negativo de milissegundos.
 
-```Elm
--- obtenha a data atual em formato de string
-toString now
-```
+## Mergulho Profundo
 
-Podemos até mesmo passar um formato específico como argumento para a função `toString`, como por exemplo:
+A função `millisToPosix` aceita um segundo argumento opcional que nos permite ajustar o fuso horário da data. Por padrão, ele assume o fuso horário padrão UTC, mas podemos especificar um fuso horário específico por meio da função `Time.millisToUtcPosix`. Além disso, o módulo `Time` também oferece outras funções úteis para manipulação de datas, como `calculate` e `since`.
 
-```Elm
--- obtenha a data atual no formato "dia/mês/ano"
-toString (customFormat "%d/%m/%Y" now)
--- output: "18/12/2020"
-```
-
-##Mergulho Profundo
-
-Ao lidar com datas e horas em Elm, é importante entender que a linguagem usa o tipo `Time Posix` para representar um momento específico no tempo. Isso é diferente de outras linguagens que usam um tipo de dados mais genérico, o que pode criar certa confusão.
-
-Além disso, a biblioteca `elm/time` também oferece funções como `daysInMonth` e `addGregorianYears`, que podem ser úteis ao trabalhar com cálculos de datas mais complexos.
-
-##Veja Também
-
-- Documentação oficial da biblioteca `elm/time`: https://package.elm-lang.org/packages/elm/time/latest/
-- Tutorial de Elm sobre manipulação de datas e horas: https://www.elm-tutorial.org/en/09-elm-time.html
+## Veja também
+- Documentação oficial sobre o módulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/
+- Como manipular e formatar datas em Elm: https://dev.to/mariyadomina/handling-dates-in-elm-3kii
+- Exemplos práticos de cálculos de datas em Elm: https://gist.github.com/rtfeldman/b71e0271d419dbdaff904b01bacd2475

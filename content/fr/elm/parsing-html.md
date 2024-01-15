@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Analyse du html"
-simple_title:         "Analyse du html"
+title:                "Analyse de HTML"
+html_title:           "Elm: Analyse de HTML"
+simple_title:         "Analyse de HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,47 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur web, vous avez probablement déjà rencontré des problèmes avec le HTML. Mis à part les balises manquantes et les erreurs de syntaxe, le HTML peut souvent être très mal formaté et difficile à lire pour les humains. C'est là que le parsing HTML entre en jeu. En utilisant un langage de programmation comme Elm, il est possible de transformer le HTML en une structure de données manipulable et facile à comprendre.
+Si vous êtes développeur ou développeuse web, il est probable que vous ayez déjà dû manipuler des données HTML. Que ce soit pour créer des sites web ou pour extraire des informations d'une page web, la manipulation de HTML est inévitable. Dans cet article, nous allons plonger dans l'un des aspects fondamentaux du développement web: l'analyse (ou le parsing) de HTML en utilisant le langage de programmation Elm.
 
 ## Comment faire
 
-Le Elm offre une bibliothèque pour le parsing de HTML appelée `elm/html`. Voici un exemple de code pour convertir une chaîne de caractères HTML en une structure de données en utilisant cette bibliothèque :
+L'analyse de HTML en Elm peut sembler intimidante, mais grâce à sa bibliothèque HTML, cela peut être fait de manière facile et efficace. Voici un exemple de code Elm pour extraire le contenu d'un titre HTML d'une page web:
 
 ```Elm
 import Html exposing (..)
-import Html.Parser exposing (..)
-import Html.Events exposing (..)
 
-htmlString = "<div><h1>Hello World!</h1></div>"
+-- Crée un élément HTML à partir d'une chaîne de caractères
+htmlFromString : String -> Html.Html
+htmlFromString str =
+  case Html.parse str of
+    Ok tree ->
+      tree
 
--- Convertit la chaîne de caractères en une Liste d'éléments HTML
-html = htmlString |> parse
+    Err error ->
+      errorMsg error
 
--- Affiche le contenu de la balise h1
-h1Text = html 
-    |> filter (\el -> case el of
-        Element "h1" _ _ -> True
-        _ -> False)
-    |> childNodes
-    |> mapMaybe text
-    |> List.head
+-- Élément HTML pour représenter un titre
+type alias Title = String
 
-main =
-  text h1Text
+-- Parse le titre HTML
+parseTitle : String -> Title
+parseTitle html =
+  case htmlFromString html |> Html.firstChild |> Html.firstChild of
+    Title title ->
+      title
+
+    _ ->
+      "Titre non trouvé"
+
+-- Exemple d'utilisation
+myTitle : Title
+myTitle =
+  parseTitle "<h1>Hello, World!</h1>" -- Output: "Hello, World!"
 ```
 
-En utilisant cette méthode, vous pouvez facilement extraire des informations spécifiques du HTML et les afficher dans votre application Elm.
+Comme on peut le voir dans cet exemple, l'utilisation de la bibliothèque HTML permet d'extraire facilement le contenu d'un élément HTML. Il suffit de fournir une chaîne de caractères représentant le code HTML et d'utiliser les fonctions de la bibliothèque pour accéder aux différentes parties de l'arborescence.
 
 ## Plongée en profondeur
 
-Il est important de noter que le parsing HTML peut être un processus complexe en raison des différentes façons dont le HTML peut être écrit. Cela signifie qu'il est essentiel de comprendre comment fonctionne le parser et d'être en mesure de manipuler correctement la structure de données résultante.
+Maintenant que nous avons vu un exemple simple de parsing de HTML en Elm, il est important de noter quelques points importants:
 
-Les bibliothèques Elm fournissent un ensemble de fonctions utiles pour filtrer, mapper et effectuer d'autres opérations sur la structure de données HTML. Il est également possible de créer des parsers personnalisés pour gérer des cas particuliers ou pour traiter des structures de données spécifiques.
+- La bibliothèque HTML d'Elm n'est pas conçue pour l'analyse complète de pages web, mais pour extraire des données spécifiques d'un élément HTML.
+- La fonction `Html.parse` renvoie un type `Result` qui peut être soit `Ok` ou `Err`, il est donc important de gérer les cas d'erreur pour éviter des bugs.
+- Il existe d'autres fonctions utiles dans la bibliothèque HTML pour accéder aux différents attributs et enfants d'un élément HTML, il est donc conseillé de les explorer pour une meilleure compréhension.
 
-Il est recommandé de lire la documentation et de regarder des exemples de code pour mieux comprendre comment utiliser le parsing HTML en Elm.
+La manipulation de HTML en Elm peut sembler un peu complexe au début, mais une fois que vous maîtriserez la bibliothèque HTML, elle deviendra un outil précieux pour votre développement web.
 
 ## Voir aussi
 
-- [Démonstration de parsing HTML en Elm](https://ellie-app.com/43gcLk5cVTxa1)
-- [Documentation officielle sur le parsing HTML en Elm](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
-- [Tutoriel sur le HTML parsing en Elm](https://medium.com/@jamonholmgren/parsing-html-in-elm-a-tutorial-9bd313c61de)
+- [Documentation officielle Elm HTML](https://package.elm-lang.org/packages/elm/html/latest/)
+- [Article sur l'analyse de JSON en Elm](https://programmer.group/parsing-json-in-elm.html)

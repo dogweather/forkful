@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 정규 표현식을 사용하는 방법"
-simple_title:         "정규 표현식을 사용하는 방법"
+title:                "정규식을 사용하는 방법"
+html_title:           "Clojure: 정규식을 사용하는 방법"
+simple_title:         "정규식을 사용하는 방법"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,39 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-정규 표현식을 사용하는 이유는 무엇일까요? 이러한 도구는 문자열 검색과 패턴 매칭을 더 쉽고 강력하게 만들어줍니다.
+정규 표현식을 사용하려는 이유는 무엇이 있을까요? 
+
+정규 표현식은 문자열을 검색, 추출, 대체하는 데 유용한 도구로서, 특히 데이터 처리와 텍스트 분석에 많이 사용됩니다. 또한, 다양한 언어와 플랫폼에서 사용할 수 있고 간단하고, 효율적인 방법으로 패턴 매칭을 수행할 수 있습니다.
 
 ## 사용 방법
 
-정규 표현식은 Clojure에서 강력하게 사용할 수 있는 기능입니다. 이를 통해 문자열에서 패턴을 찾거나 대체하거나 삭제하는 등 다양한 작업을 할 수 있습니다.
-
-아래는 정규 표현식을 사용하여 문자열에서 특정 패턴을 찾는 예시 코드입니다.
+정규 표현식은 `re-pattern` 함수와 `re-seq` 함수를 통해 생성하고, 문자열에서 매칭되는 부분을 찾을 수 있습니다.
 
 ```Clojure
-;; 문자열 선언
-(def string "안녕하세요, Clojure를 사용하여 정규 표현식을 배워봅시다.")
+(def input-string "Clojure is my favorite programming language")
 
-;; 패턴 매치
-(re-matches #"Clojure.*배우기" string)
-;; => "Clojure를 사용하여 정규 표현식을 배워봅시다."
+(def regex (re-pattern "clojure"))
 
-;; 패턴 대체
-(replace "사용하여" "통해" string)
-;; => "안녕하세요, Clojure통해 정규 표현식을 배워봅시다."
-
-;; 패턴 삭제
-(replace #",.*정규 표현식을" "" string)
-;; => "안녕하세요 Clojure를 배워봅시다."
+(re-seq regex input-string) ; => ("Clojure")
 ```
 
-## 더 들어가기
+`re-find` 함수는 매칭되는 첫 번째 부분을 반환하며, `re-groups` 함수는 매칭된 하위 그룹을 반환합니다.
 
-정규 표현식을 좀 더 깊이 있게 사용하려면 정규 표현식의 문법과 다양한 패턴을 잘 이해하는 것이 중요합니다. 각 패턴의 의미와 활용 방법을 익히는 것이 도움이 될 것입니다.
+```Clojure
+(def input-string "The quick brown fox jumps over the lazy dog")
 
-또한 Clojure에서는 정규 표현식을 더 유연하게 사용할 수 있도록 다양한 함수를 제공하고 있으니 이를 참고하여 효율적인 코드를 작성할 수 있도록 노력해보세요.
+(def regex (re-pattern "(\\w+) jumps over (\\w+)"))
 
-## 더 찾아보기
+(re-find regex input-string) ; => ["fox jumps over lazy" "fox" "lazy"]
+(re-groups (re-find regex input-string)) ; => ["fox jumps over lazy" "fox" "lazy"]
+```
 
-- [Clojure 정규 표현식 문서](https://clojure.org/reference/regular_expressions)
-- [정규 표현식 문법 설명서](https://regexr.com/)
-- [Clojure 정규 표현식을 활용한 예제](https://clojuredocs.org/clojure.string/replace)
+매칭한 부분을 대체하려면 `re-gsub` 함수를 사용할 수 있습니다.
+
+```Clojure
+(def input-string "I love pizza and pasta")
+
+(def regex (re-pattern "pizza|pasta"))
+
+(re-gsub regex input-string "sushi") ; => "I love sushi and sushi"
+```
+
+## 깊이 파고들기
+
+정규 표현식은 강력한 도구지만, 그만큼 학습 곡선이 까다로울 수 있습니다. 대부분의 경우 간단한 매칭을 위해서는 간단한 표현식만 필요하지만, 복잡한 매칭을 위해서는 정규 표현식 문법을 잘 이해해야 합니다.
+
+범위, 캡처 그룹, 비슷한 패턴 등에 대해 조금 더 자세히 알아보려면 [이 문서](https://learnxinyminutes.com/docs/ko-kr/regex/)를 참고하세요.
+
+## 관련 링크
+
+- [Clojure 정규 표현식 문서](https://clojuredocs.org/clojure.core/re-find)
+- [정규 표현식 이해하기 (번역)](https://brunch.co.kr/@mapthegod/37)
+- [정규 표현식 테스트 사이트](https://regexr.com/)

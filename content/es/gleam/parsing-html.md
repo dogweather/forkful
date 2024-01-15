@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Analizando html"
+title:                "Analizando html"
+html_title:           "Gleam: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías aprender a analizar HTML con Gleam?
+¡Hola, amigos! ¿Están buscando una forma fácil de analizar y manipular código HTML en su programa? Si es así, ¡entonces han llegado al lugar correcto! En este artículo, les mostraré cómo utilizar Gleam para hacer el parsing de HTML de una manera sencilla y eficiente.
 
-Si eres un desarrollador web, es esencial saber cómo analizar y manipular HTML. Además, Gleam es un lenguaje de programación moderno y funcional que ofrece una forma elegante y sencilla de manejar datos estructurados, como el HTML.
+## ¿Por qué?
 
-## Cómo hacerlo: Ejemplos de codificación
+Es posible que se pregunten por qué querrían realizar el parsing de HTML en primer lugar. Bueno, existen muchas razones, pero una de las más comunes es la de extraer información específica de una página web. Por ejemplo, si quieren obtener el título o el contenido de un artículo de un sitio de noticias, el parsing de HTML es lo que necesitan para hacerlo de manera automática.
 
-Para analizar HTML en Gleam, necesitamos usar una biblioteca externa llamada "gleam-html". Podemos instalar esta biblioteca usando el administrador de paquetes de Gleam:
+## Cómo hacerlo
 
-```Gleam
-em: install gleam-html
-```
-
-Una vez que la biblioteca esté instalada, podemos importarla en nuestro código y usarla para analizar el HTML:
+La sintaxis básica de un programa Gleam es la siguiente:
 
 ```Gleam
-import gleam/html as html
+import http
+import gleam/html
 
-let html_string = "<h1>Hello world</h1>"
-
-let result = html.parse(html_string)
-
-// Output: Ok([Html.heading([Html.text('Hello world')])])
+let html = http.get("https://www.example.com")
+let dom = html |> html.parse
 ```
 
-En el ejemplo anterior, estamos analizando una cadena de HTML y obteniendo una estructura de datos en formato Gleam que podemos usar en nuestro código.
+En este ejemplo, estamos importando los módulos necesarios para hacer la petición a una página web y para analizar su contenido HTML. Luego, utilizamos la función "get" del módulo http para obtener el contenido de la página y lo pasamos a la función "parse" del módulo gleam/html para obtener un documento DOM (modelo de objeto de documento).
 
-## Profundizando en la analización de HTML
+Para extraer información específica del DOM, podemos utilizar el patrón de coincidencia de Gleam. Por ejemplo, si queremos obtener todos los enlaces de una página, podemos hacer lo siguiente:
 
-Además de parsear HTML, la biblioteca "gleam-html" también nos permite construir código HTML de forma programática y validar la estructura de HTML. Además, podemos realizar operaciones más complejas, como recorrer y manipular el árbol de HTML.
+```Gleam
+let links =
+  dom
+  |> html.selectAll("a")
+  |> List.map(html.getAttribute("href"))
+  |> List.filter(Option.isSome)
+```
 
-También es importante tener en cuenta que la biblioteca "gleam-html" es compatible con el estándar HTML5 y maneja de forma segura las etiquetas y atributos inválidos o mal formateados.
+En este caso, estamos filtrando solo los enlaces que tienen un atributo "href" y mapeándolos a una lista de cadenas de texto.
 
-Ahora que tienes una idea de cómo analizar HTML con Gleam, ¡puedes comenzar a utilizarlo en tus proyectos web para un código más limpio y sencillo!
+## Deep Dive
+
+Si desean profundizar en el tema, Gleam también tiene una función "selectOne" que les permite seleccionar un solo elemento del DOM. Además, pueden utilizar el módulo gleam/regex para hacer coincidir patrones en el contenido HTML y extraer información de manera más específica.
+
+¡Eso es todo por hoy, amigos! Espero que hayan encontrado útil este artículo sobre el parsing de HTML con Gleam. ¡Pero esto es solo el comienzo! Pueden seguir investigando y descubrir más formas de utilizar Gleam para analizar y manipular HTML en sus proyectos.
 
 ## Ver también
 
-- Documentación oficial de "gleam-html": https://hexdocs.pm/gleam_html/html-module.html
-- Ejemplos de uso de "gleam-html": https://github.com/gleam-lang/gleam-html/tree/master/examples
-- Tutorial de Gleam: https://gleam.run/book/getting-started.html#toc_1
+- Documentación oficial de Gleam: https://gleam.run/
+- Módulo HTTP de Gleam: https://gleam.run/modules/http.html
+- Módulo HTML de Gleam: https://gleam.run/modules/html.html
+- Módulo Regex de Gleam: https://gleam.run/modules/regex.html

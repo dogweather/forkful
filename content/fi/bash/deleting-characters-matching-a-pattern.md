@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Mallin mukaisen merkkien poistaminen"
-simple_title:         "Mallin mukaisen merkkien poistaminen"
+title:                "Kuvion vastaavien merkkien poistaminen"
+html_title:           "Bash: Kuvion vastaavien merkkien poistaminen"
+simple_title:         "Kuvion vastaavien merkkien poistaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,48 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi poistaa tiettyä kaavaa vastaavat merkit?
+Joskus ohjelmoinnissa tulee tilanteita, joissa haluamme poistaa tietyt merkit tai merkkijonot koodista. Tämä voi olla esimerkiksi turhien välimerkkien poistaminen tai tiettyjen haitallisten merkkien suodattaminen. Bash-skriptien avulla tämä onnistuu helposti ja tehokkaasti.
 
-Usein Bash-ohjelmoinnissa törmätään tilanteisiin, joissa halutaan poistaa tiettyjä merkkejä tiedostojen tai syötteiden käsittelyssä. Tämä voi olla tarpeellista esimerkiksi tiettyjen tiedostojen järjestelyssä tai tietojen puhdistamisessa ennen niiden käsittelyä. Tässä artikkelissa tarkastelemme, miten Bashilla voidaan poistaa merkkejä, jotka vastaavat tiettyä kaavaa.
+## Miten
 
-## Miten tehdä
+Bash tarjoaa joukon käteviä komentoja poistamaan merkkejä tai merkkijonoja halutun kaavan perusteella. Käytämme seuraavia komentoja poistaaksemme merkkejä:
 
-Bashissa on useita tapoja poistaa merkkejä peräkkäisistä merkeistä ja sanoista. Yksi tapa on käyttää `sed`-komennon `s`-vaihtoehtoa. Seuraavassa esimerkissä poistamme tietyn kaavan vastaavat merkit "Hello World" -merkkijonosta ja tulostamme lopputuloksen:
+```Bash 
+# Poistaa kaikki numerot merkkijonosta "hello123world"
+echo "hello123world" | tr -d [:digit:] 
+# Output: helloworld
+```
+
+Käytännössä komento ```tr``` (lyhenne sanasta "translate") korvaa kaikki annetun kaavan mukaiset merkit tyhjällä merkillä, jolloin ne poistuvat kokonaan merkkijonosta. Näin ollen se sopii hyvin poistamaan tiettyjä merkkejä tai merkkijonoja.
 
 ```Bash
-echo "Hello World" | sed 's/o//g'
+# Poistaa kaikki isoilla kirjaimilla kirjoitetut sanat merkkijonosta "Bash is AMAZING"
+echo "Bash is AMAZING" | tr -d [:upper:] 
+# Output: is 
 ```
 
-Tulostus:
-
-```
-Hell Wrld
-```
-
-Käytämme `sed`-komennon `s`-vaihtoehtoa, joka tarkoittaa "korvaa". Kaava korvaa kaikki "o"-kirjaimet tyhjällä merkillä (`//`) ja `g` tarkoittaa, että muutos tehdään kaikkiin linjan kohtiin. Voit käyttää myös muita kaavoja, kuten sulkua `()` korvaamaan tiettyjen merkkijonojen osia.
-
-Toinen tapa poistaa merkkejä Bashissa on käyttää `tr`-komennolla `d`-vaihtoehtoa. Esimerkiksi seuraavassa esimerkissä poistamme "o"-kirjaimen "Hello World" -merkkijonosta:
+Käyttämällä komentoa ```sed``` (lyhenne sanasta "streamline editor"), voimme myös poistaa tiettyjä merkkijonoja tai sanoja laajemmin. Käytämme tällöin säännöllisiä lausekkeita (regular expressions) määrittelemään poistettavat merkkijonot.
 
 ```Bash
-echo "Hello World" | tr -d 'o'
+# Poistaa kaikki viisi kirjainta pidemmät sanat merkkijonosta "This article is awesome"
+echo "This article is awesome" | sed 's/\b[A-Za-z]\{5,\}\b//g' 
+# Output: This is 
 ```
 
-Tulostus:
+Tässä tapauksessa komento ```sed``` etsii sanoja, jotka ovat vähintään viisi kirjainta pitkiä ja korvaa ne tyhjällä merkillä. Tämän ansiosta esimerkiksi sanat "article" ja "awesome" poistuvat kokonaan merkkijonosta.
 
-```
-Hell Wrld
-```
+## Syvemmälle
 
-Tässä käytämme `tr`-komennon `d`-vaihtoehtoa, joka tarkoittaa "poista". Voit myös käyttää muita vaihtoehtoja, kuten `s` korvaamaan merkkejä tietyn kaavan mukaan.
+Kuten edellisistä esimerkeistä näkyy, Bash tarjoaa monipuolisia ja tehokkaita keinoja poistaa tarpeettomia merkkejä tai merkkijonoja koodista. On myös hyvä huomata, että komentojen yhdistelemällä ja erilaisia säännöllisiä lausekkeita käyttämällä pystytään ratkaisemaan monimutkaisempiakin ongelmia.
 
-## Syventyminen
-
-Bashilla merkkien poistaminen on yksinkertaista, mutta se voi silti olla hyödyllinen taito monissa tilanteissa. Voit esimerkiksi käyttää näitä menetelmiä puhdistaaksesi tietoja ennen niiden käsittelyä tai järjestelläksesi tiedostoja kätevästi. Voit myös poistaa merkkejä tietystä kaavasta, kuten numerot tai kirjaimet, käyttämällä säännöllisiä lausekkeita.
-
-On myös hyvä muistaa, että Bashin lisäksi voit käyttää muita työkaluja, kuten Pythonia tai Perl:ia, merkkien poistamiseen. Valitse itsellesi sopivin työkalu ja käytä sitä tehokkaasti tietojen käsittelyyn.
+Lisäksi Bash-skripteihin on mahdollista luoda myös omia funktioita tai käyttää valmiita komentoriviohjelmia, kuten "awk" tai "grep", poistamiseen. Tästä syystä kannattaa tutustua Bashin eri ominaisuuksiin ja mahdollisuuksiin syvemmin ja löytää juuri itselle sopiva tapa poistaa merkkejä koodista.
 
 ## Katso myös
 
-- [Linux.com: Manipulating Strings in Bash](https://www.linux.com/topic/desktop/manipulating-strings-bash/)
-- [The Geek Stuff: Bash String Manipulation Examples – Length, Substring, Find and Replace](https://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
-- [Bash-hakemisto Linux.fi-wikissa](https://www.linux.fi/wiki/Bash-hakemisto)
+- [Bash-skriptikielen virallisilta sivuilta](https://www.gnu.org/software/bash/)
+- [Bash-skriptin kirjoittamisen perusteet](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Käyttäjän määrittelemien funktioiden luominen Bashissa](https://www.shellscript.sh/functions.html)

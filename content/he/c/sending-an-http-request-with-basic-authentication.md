@@ -1,5 +1,6 @@
 ---
-title:                "C: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "C"
 category:             "C"
@@ -9,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
+מחקרים רבים מראים שהתקשורת ברשת האינטרנט מתבצעת באופן מאובטח יותר כאשר השרתים מחייבים אימות בסיסי כחלק מתהליך התקשורת. אחד הדרכים הפופולריות ביותר לאמת את המשתמש הוא על ידי שליחת בקשת HTTP עם אימות בסיסי.
 
-שליחת בקשת HTTP עם אימות בסיסי (basic authentication) היא דרך נוחה ובטוחה לאמת שתי צדדים שמתקשרים ביניהם. באמצעות אימות הבסיסי, משתמש לא מוכר או לא בעל הרשאות יכול להוכיח את זהותו ולקבל גישה למידע או שירותים שאחרת לא היו נגישים לו.
-
-## איך לעשות
-
-כדי לשלוח בקשה HTTP עם אימות בסיסי בשפת C, נצטרך להשתמש בספריה מקבילה (parallel library) ולהוסיף כותרת Base64 להודעה שנרצה לשלוח. לדוגמה:
+## איך לעשות זאת
+הגבלת הגישה למידע מגיעה עם מערכת אימות בסיסית, בה המשתמש יכול להכניס שם משתמש וסיסמה לקבלת הרשאה למידע. בשפת תכנות C, ניתן לבצע אימות בסיסי זה על ידי הוספת כותרת "Authorization" לבקשת HTTP והצבת מחרוזת מוצפנת המכילה את שם המשתמש והסיסמה. להלן דוגמת קוד לניסוח בקשת HTTP עם אימות בסיסי:
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <curl/curl.h>
-
-int main(void) {
-
+ 
+int main(void)
+{
   CURL *curl;
   CURLcode res;
-
+ 
   curl = curl_easy_init();
   if(curl) {
-    // יצירת מחרוזת של הכותרת הנדרשת לפי הפורמט שנדרש בבקשה
-    char *auth = "Authorization: Basic xxxxx";
-
-    struct curl_slist *headers = NULL;
-    headers = curl_slist_append(headers, auth); // הוספת הכותרת לרשימה של הכותרות בבקשה
-
-    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com/"); // הכתובת של השרת שמטרתו לקבל את הבקשה
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers); // יוצא ומתחיל עם רשימת הכותרות
-    res = curl_easy_perform(curl); // שליחת הבקשה
-    if(res != CURLE_OK) {
-      // אם הפעולה נכשלה, הדפסת הודעת שגיאה
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/");
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+    res = curl_easy_perform(curl);
+ 
+    /* check for errors */
+    if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
-    }
-
-    curl_easy_cleanup(curl); // סיום השימוש בספריה
+ 
+    /* always cleanup */
+    curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
 
-כאשר הקוד מוריד ומדפיס את תוצאת הבקשה לקובץ חיצוני, התוכן של הקובץ יכיל את התוכן המבוקש באמצעות האימות הבסיסי.
+כאשר הבקשה מתקבלת על ידי השרת, הנתונים של השם משתמש והסיסמה נבדקים והרשאה למידע ניתנת רק אם הם נכונים.
 
-## צלילה עמוקה
-
-כאשר שולחים בקשה HTTP עם אימות בסיסי, התהליך נמשך לחלוטין בהתאם לפרוטוקול התקשורת. הבקשה מכילה כותרת מסוג Authorization המכילה נתוני משתמש וסיסמה המוצגים בפורמט Base64. כאשר ה
+## שקיפות גבוהה
+בין הכתובות המפורסמות ביותר לגישה למידע עם אימות בסיסי ניתן למצוא את API של GitHub ו-Google. כדי להתחבר ל-API הם מומלצים לשלוח בקשת POST יחד עם הגדרת הכותרת "Authorization" ותווים מוצפנים שמכילים את שם המשתמש והסיסמה. לכן, אם אתם מתעסקים עם התכנות במסגרת דרישות אבטחה, כדאי להתחשב באפשרות לשלוח בקשת HTTP

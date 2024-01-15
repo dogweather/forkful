@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire vers la sortie d'erreur standard"
+html_title:           "Clojure: Écrire vers la sortie d'erreur standard"
+simple_title:         "Écrire vers la sortie d'erreur standard"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,36 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Ecrire sur la sortie d'erreur standard (standard error) peut sembler effrayant au premier abord, mais c'est en fait un concept très utile à comprendre pour tout programmeur Clojure. Cet article explique pourquoi et comment utiliser la sortie d'erreur standard dans votre code Clojure.
+Ecrire vers le flux d'erreur standard est un moyen pratique de déboguer votre code. Cela vous permet de voir les erreurs qui se produisent pendant l'exécution de votre programme, ce qui est essentiel pour identifier et résoudre les problèmes.
 
-## Comment Faire
+## Comment faire
 
-Utiliser la sortie d'erreur standard n'est pas aussi complexe qu'il n'y paraît. Tout d'abord, il faut comprendre la différence entre la sortie standard (standard output) et la sortie d'erreur standard. La sortie standard est utilisée pour afficher les résultats et les informations de votre programme, tandis que la sortie d'erreur standard est utilisée pour afficher les erreurs et les avertissements.
-
-Pour écrire sur la sortie d'erreur standard, vous pouvez utiliser la fonction `System/err.println`. Voici un exemple de code avec sa sortie correspondante :
+Pour écrire vers le flux d'erreur standard en Clojure, utilisez la fonction `println-multiline` en lui passant en paramètre une chaîne de caractères. Par exemple :
 
 ```Clojure
-(System/err.println "Il y a une erreur!")
+(println-multiline "Ceci est une erreur")
 ```
+Cela écrira la chaîne de caractères `"Ceci est une erreur"` vers le flux d'erreur standard, qui sera ensuite affichée dans la console lors de l'exécution du programme.
 
-```
-Il y a une erreur!
-```
-
-Comme vous pouvez le voir, la phrase "Il y a une erreur!" est affichée sur la sortie d'erreur standard. Vous pouvez également utiliser la macro `println` pour écrire sur la sortie d'erreur standard :
+Si vous voulez écrire un objet plus complexe vers le flux d'erreur standard, vous pouvez utiliser la fonction `prn`en lui passant en paramètre l'objet que vous souhaitez afficher. Par exemple :
 
 ```Clojure
-(println System/err "Il y a une erreur!")
+(def error {:type "Erreur de validation" :message "La valeur entrée n'est pas valide"})
+
+(prn error)
 ```
 
-## Plongée Profonde
+Cela écrira l'objet `error` vers le flux d'erreur standard, qui sera ensuite affiché sous la forme d'une liste dans la console.
 
-Bien que l'utilisation de la sortie d'erreur standard puisse sembler assez simple, il y a des nuances à prendre en compte. Tout d'abord, vous pouvez rediriger la sortie d'erreur standard vers un fichier en utilisant la commande `clojure.core/with-out-str`. Cela peut être utile lorsque vous voulez enregistrer les erreurs et les avertissements dans un journal.
+## Plongée en profondeur
 
-De plus, vous pouvez personnaliser le format dans lequel les erreurs et les avertissements sont affichés en utilisant la macro `with-err-str`. Cela peut être utile lorsque vous voulez capturer les erreurs et les traiter d'une manière spécifique.
+La différence entre les fonctions `println-multiline` et `prn` est que `println-multiline` affiche la chaîne de caractères passée en paramètre telle quelle, tandis que `prn` affiche une version lisible de l'objet. Cela peut être utile lorsque vous essayez de comprendre la structure d'un objet ou d'un ensemble de données complexes.
 
-## Voir Aussi
+Il est également bon de noter que le flux d'erreur standard est généralement réservé pour les erreurs et les avertissements importants. Pour les messages de débogage ou de journalisation, il est préférable d'utiliser le flux de sortie standard avec la fonction `println`.
 
-- [Documentation officielle de Clojure sur la sortie d'erreur standard](https://clojure.org/reference/repl_and_main#_redirects_and_output_capture)
-- [Article de blog sur l'utilisation de la sortie d'erreur standard en Clojure](https://clojuredocs.org/clojure.core/with-out-str)
-- [Vidéo explicative sur la sortie d'erreur standard en Clojure](https://www.youtube.com/watch?v=jmQjUepBUmg)
+## Voir aussi
+
+- Documentation officielle de Clojure sur l'utilisation des flux d'erreur : https://clojuredocs.org/clojure.core/with-err-out
+- Un article de blog sur la gestion des erreurs en Clojure : https://purelyfunctional.tv/article/error-handling-in-clojure/

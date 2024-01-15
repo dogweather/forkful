@@ -1,6 +1,7 @@
 ---
-title:                "Java: Å få den nåværende datoen"
-simple_title:         "Å få den nåværende datoen"
+title:                "Få dagens dato"
+html_title:           "Java: Få dagens dato"
+simple_title:         "Få dagens dato"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,59 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Har du noen gang lurt på hvordan du kan få den nåværende datoen i Java-programmering? Det kan virke som en enkel oppgave, men det kan være nyttig i mange programmeringsprosjekter. I denne bloggposten skal vi se nærmere på hvorfor og hvordan du kan få den nåværende datoen i Java.
+Hvorfor skulle noen bry seg om å få dagens dato? Vel, i moderne programmering brukes ofte datoer til å spore og registrere hendelser. Dette kan være nyttig for å organisere og analysere data, samt for å lage tidsstempelbaserte rapporter.
 
 ## Slik gjør du det
-
-Først og fremst trenger du å importere "java.util.Date" pakken i Java-koden din. Deretter kan du bruke Date klassen for å få den nåværende datoen. Her er et enkelt eksempel på hvordan du kan gjøre det:
+For å få dagens dato i Java, kan du bruke klassen `LocalDate` fra `java.time` pakken. Her er et enkelt eksempel på hvordan du kan skrive ut dagens dato:
 
 ```Java
-import java.util.Date;
+import java.time.LocalDate;
 
-public class CurrentDateExample {
-   public static void main(String[] args) {
-      Date currentDate = new Date();
-      System.out.println("Den nåværende datoen er: " + currentDate);
-   }
+public class DatoEksempel {
+    public static void main(String[] args) {
+        LocalDate dagensDato = LocalDate.now();
+        System.out.println("Dagens dato er: " + dagensDato);
+    }
 }
 ```
 
-Når programmet kjøres, vil det vise følgende output:
+Koden vil produsere følgende output:
 
 ```
-Den nåværende datoen er: Fri Sep 03 14:20:57 CEST 2021
+Dagens dato er: 2021-10-15
 ```
 
-Som du kan se, vises datoen automatisk i en spesifikk format. Hvis du ønsker å endre formatet, kan du bruke SimpleDateFormat klassen. Her er et eksempel på hvordan du kan gjøre det:
-
-```Java
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
-public class CurrentDateExample {
-   public static void main(String[] args) {
-      Date currentDate = new Date();
-      SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-      System.out.println("Den nåværende datoen er: " + formatter.format(currentDate));
-   }
-}
-```
-
-Output vil se slik ut:
-
-```
-Den nåværende datoen er: 03/09/2021
-```
-
-Du kan også bruke andre formateringsalternativer for å få datoen til å vises slik du ønsker det.
+Her bruker vi `now()` metoden til å hente dagens dato, og lagrer den i en variabel `dagensDato`. Deretter skriver vi ut datoen ved hjelp av `System.out.println()` metoden.
 
 ## Dypdykk
+I tillegg til å hente dagens dato, kan du også gjøre mer avanserte operasjoner med `LocalDate` klassen. For eksempel kan du bruke `plus()` metoden til å legge til eller trekke fra et bestemt antall dager, måneder eller år. Her er et eksempel som viser hvordan du kan legge til 7 dager til dagens dato:
 
-Nå som du vet hvordan du kan få den nåværende datoen i Java, kan det være nyttig å vite litt mer om hvordan datoen blir hentet. Når du bruker Date klassen, blir datoen hentet fra systemklokken på datamaskinen din. Dette betyr at datoen kan variere avhengig av tidssonen og klokkeslettet på datamaskinen din. Det kan også være lurt å håndtere eventuelle unntak som kan oppstå når man prøver å få datoen, som for eksempel hvis det er problemer med systemklokken.
+```Java
+LocalDate dagensDato = LocalDate.now();
+dagensDato = dagensDato.plusDays(7);
+System.out.println("Datoen om 7 dager er: " + dagensDato);
+```
+
+Output vil være:
+
+```
+Datoen om 7 dager er: 2021-10-22
+```
+
+Du kan også bruke `minus()` metoden på samme måte hvis du vil trekke fra et bestemt antall dager, måneder eller år.
 
 ## Se også
-
-- [W3Schools - Java Date Class](https://www.w3schools.com/java/java_date.asp)
-- [Oracle - Java SimpleDateFormat Class](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [GeeksforGeeks - Getting current date and time in Java](https://www.geeksforgeeks.org/get-current-date-and-time-in-java/)
+* [Java API dokumentasjon for LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+* [Java Tutorials - Dato og Kalender](https://docs.oracle.com/javase/tutorial/datetime/index.html)

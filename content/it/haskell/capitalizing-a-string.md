@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolare una stringa"
+html_title:           "Haskell: Maiuscolare una stringa"
+simple_title:         "Maiuscolare una stringa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Capitalizzare una Stringa è Importante
+## Perché
 
-Capitalize una stringa è un'operazione comune nella programmazione quando si vuole rendere la prima lettera maiuscola, ad esempio in un titolo o in un nome. Potrebbe sembrare una banalità, ma può fare la differenza nella presentazione dei dati e migliorare l'estetica del codice.
+Hai mai avuto la necessità di trasformare una stringa in maiuscolo? Se sì, allora hai bisogno di conoscere il concetto di capitalizzazione in Haskell! Continua a leggere per scoprire come farlo.
 
-## Come Capitalizzare una Stringa in Haskell
+## Come Fare
 
-Per capitalizzare una stringa in Haskell, possiamo utilizzare la funzione `toUpper` della libreria `Data.Char`. Vediamo un esempio pratico:
-
-```Haskell
-import Data.Char (toUpper)
-
-main :: IO ()
-main = do
-  let str = "ciao a tutti"
-  putStrLn (toUpper (head str) : tail str)
-```
-In questo esempio, utilizziamo la funzione `toUpper` per convertire la prima lettera della stringa `str` in maiuscolo e poi la concateniamo con il resto della stringa utilizzando l'operatore `:`. Il risultato dell'esecuzione del codice sarà il seguente:
-
-```
-"Ciao a tutti"
-```
-
-## Approfondimento sulla Capitalizzazione in Haskell
-
-La funzione `toUpper` è solo un semplice esempio di come si può capitalizzare una stringa in Haskell. Tuttavia, esistono altre funzioni e metodi che possono essere utilizzati a seconda del tipo di dati che stiamo manipolando e del risultato che vogliamo ottenere.
-
-Ad esempio, se vogliamo capitalizzare tutte le lettere di una stringa, possiamo utilizzare la funzione `map` insieme alla funzione `toUpper` che verrà applicata ad ogni carattere della stringa. Ecco un esempio:
+Per capitalizzare una stringa in Haskell, è necessario utilizzare la funzione `toUpper` del modulo `Data.Char`. Ecco un esempio di codice per farlo:
 
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char
 
-main :: IO ()
-main = do
-  let str = "ciao a tutti"
-  putStrLn (map toUpper str)
-```
-Il risultato dell'esecuzione di questo codice sarà:
-
-```
-"CIAO A TUTTI"
+capitalizza :: String -> String  -- definizione della funzione 
+capitalizza str = map toUpper str  -- utilizzo della funzione toUpper e della funzione map per applicarla a ogni carattere della stringa
 ```
 
-Inoltre, esistono anche funzioni che permettono di capitalizzare solo alcune lettere della stringa, come ad esempio la funzione `toTitle` che converte in maiuscolo solo le lettere che seguono uno spazio. È importante esplorare le diverse opzioni disponibili per scegliere la migliore soluzione in base alle nostre esigenze.
+Esempio di output:
+
+```Haskell
+capitalizza "haskell"  -- chiamata alla funzione 
+"HASKELL"
+```
+
+## Approfondimento
+
+La funzione `map` è un'operazione molto importante in Haskell. Permette di applicare una funzione a ogni elemento di una lista senza bisogno di effettuare un ciclo. Questo significa che possiamo utilizzare la funzione `map` anche per trasformare ogni singolo carattere di una stringa.
+
+Un'altra cosa importante da notare è che la funzione `toUpper` non modifica la stringa originale, ma ne restituisce una nuova con tutti i caratteri trasformati in maiuscolo. Questo perché in Haskell le stringhe sono immutabili, il che significa che non possono essere modificate una volta create.
 
 ## Vedi Anche
 
-- [Haskell Data.Char library](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- [Haskell map function](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:map)
-- [Haskell string functions](https://www.haskell.org/documentation/#string-functions)
+- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
+- [Tutorial di Haskell su Codecademy](https://www.codecademy.com/learn/learn-haskell)

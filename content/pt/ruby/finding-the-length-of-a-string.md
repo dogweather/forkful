@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Encontrando o comprimento de uma string."
+html_title:           "Ruby: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Você já se perguntou como os programadores conseguem encontrar o comprimento de uma string em seus códigos? Descubra a importância dessa habilidade e como você também pode aplicá-la em seus projetos Ruby.
+# Por que
+A obtenção do comprimento de uma string é uma tarefa comum em programação que permite aos desenvolvedores manipular e lidar com dados de forma eficiente. Saber como encontrar o comprimento de uma string é uma habilidade fundamental em Ruby e pode ser aplicada em uma variedade de projetos e aplicações.
 
-## How To
-Para encontrar o comprimento de uma string em Ruby, podemos usar o método .length. Você simplesmente precisa chamar o método na string e ele retornará o número de caracteres. Veja um exemplo abaixo:
+## Como fazer
+Para encontrar o comprimento de uma string em Ruby, podemos usar o método `length` ou `size`. Ambos os métodos retornam o número de caracteres em uma string. Veja os exemplos abaixo:
 
 ```Ruby
 string = "Olá, mundo!"
 puts string.length
+# Output: 12
+
+puts string.size
+# Output: 12
 ```
 
-A saída desse código será 12, já que a string possui 12 caracteres. Mas e se tivermos espaços em branco no início ou fim da string? Nesse caso, podemos usar o método .strip antes de .length para remover esses espaços e ter uma contagem precisa. Veja:
+Também é possível usar o método `count` para contar o número de caracteres específicos em uma string. Por exemplo, se quisermos contar o número de letras "o" na string acima, podemos fazer da seguinte forma:
 
 ```Ruby
-string = "  Olá, mundo!  "
-puts string.strip.length
+puts string.count("o")
+# Output: 2
 ```
 
-Agora a saída será 12 novamente, pois removemos os espaços antes de usar o método .length. Podemos também combinar esses dois métodos em uma única linha de código:
+Além disso, o método `chars` pode ser usado para converter uma string em um array contendo cada caractere individual. Em seguida, podemos usar o método `size` para determinar o número de elementos no array, que corresponde ao número de caracteres na string.
 
 ```Ruby
-string = "   Olá, mundo!   "
-puts string.strip.length
+string = "Hello, world!"
+array = string.chars
+puts array.size
+# Output: 13
 ```
 
-Assim, teremos a mesma saída sem a necessidade de criar uma variável.
+## Mergulho profundo
+Ao contrário de outras linguagens de programação, em Ruby, uma string é vista como um objeto. Isso significa que ela possui métodos próprios que podem ser usados para manipular e obter informações sobre a string. Para encontrar o comprimento de uma string em Ruby, o método `length` é aplicado ao objeto string, ao invés de ser uma função separada.
 
-## Deep Dive
-Vamos dar uma olhada mais aprofundada no método .length. Ele pode ser aplicado em vários tipos de dados, como strings, arrays e hashes. Em strings, ele contabiliza o número de caracteres, mas em arrays e hashes, ele retornará o número de elementos.
+Além disso, é importante notar que o método `length` retorna o número de caracteres na string, enquanto o método `size` retorna o número de bytes. Isso pode ser útil ao lidar com strings multibyte, como caracteres acentuados em português.
 
-Além disso, é importante lembrar que o método .length é diferente do método .size. Enquanto .length conta apenas os caracteres, .size contabiliza também os elementos em branco. Por exemplo, se tivermos uma string com dois espaços em branco, o método .length retornará 2, enquanto .size retornará 4.
-
-Além disso, podemos usar o método .bytesize para encontrar o tamanho em bytes de uma string, considerando também os caracteres especiais e acentos.
-
-## See Also
-Para mais informações sobre como trabalhar com strings em Ruby, confira os links abaixo:
-
-- Documentação oficial do método .length: https://ruby-doc.org/core-2.7.2/String.html#method-i-length
-- Diferença entre .length e .size: https://stackoverflow.com/questions/2754313/what-is-the-difference-between-count-length-size-in-ruby
-- Diferença entre .length e .bytesize: https://stackoverflow.com/questions/9655419/ruby-whats-the-difference-between-size-and-length-for-a-string/9655552
+## Veja também
+- [Documentação oficial do método length em Ruby](https://ruby-doc.org/core-3.0.1/String.html#method-i-length)
+- [Documentação oficial do método count em Ruby](https://ruby-doc.org/core-3.0.1/String.html#method-i-count)
+- [Tutorial interativo sobre strings em Ruby](https://www.learnruby.org/en/strings)

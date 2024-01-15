@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 부분 문자열 추출하기"
+title:                "부분 문자열 추출하기"
+html_title:           "Javascript: 부분 문자열 추출하기"
 simple_title:         "부분 문자열 추출하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,90 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜?
 
-서브스트링(Substring) 추출을 하게 되면 문자열의 일부만을 추출할 수 있습니다. 이는 특정 문자열을 찾거나, 문자열을 잘라서 원하는 데이터를 추출할 수 있어서 많은 사람들이 이 기능을 사용합니다.
+문자열의 일부분을 추출하는 것은 자바스크립트 프로그래밍에서 매우 유용한 기술입니다. 우리는 자주 문자열을 다루는데 그만큼 이 기술을 이해하고 활용하는 것이 중요합니다.
 
-## 추출하는 방법은?
+## 어떻게?
 
-자바스크립트를 사용하여 문자열에서 서브스트링을 추출하는 방법은 간단합니다.
+자바스크립트에서 문자열의 일부분을 추출하는 방법에 대해 알아보겠습니다. 아래의 예제 코드를 살펴보고 결과를 확인해보세요.
 
-```Javascript
-// 문자열을 변수에 저장합니다.
-let str = "Hello world";
+```javascript
+// 문자열 선언
+let str = "안녕하세요! 이번에는 자바스크립트에 대해 알아보려고 합니다.";
 
-// 서브스트링을 추출합니다.
-let substring = str.substring(0, 5);
+// 일부분 추출
+let sub = str.substring(7, 12);
 
-// 결과를 콘솔에 출력합니다.
-console.log(substring);
-
-// Output: "Hello"
+// 결과 출력
+console.log(sub); // '이번에는'
 ```
 
-위의 예시 코드에서는 "Hello world"라는 문자열에서 0번째부터 5번째 글자까지 서브스트링을 추출해 "Hello"라는 결과를 얻게 됩니다. substring() 함수는 시작 인덱스와 끝 인덱스를 인자로 받으며, 해당 인덱스 사이의 문자열을 추출합니다.
+위 코드에서는 `substring()` 함수를 사용하여 원하는 부분의 문자열을 추출하고 있습니다. 첫 번째 매개변수는 시작 인덱스, 두 번째 매개변수는 종료 인덱스를 나타냅니다. 또한 이 함수는 원본 문자열을 수정하지 않고 추출한 부분을 새로운 문자열로 반환합니다.
 
-또는, 다음과 같이 "..."와 같은 특수 문자를 사용하여도 간단하게 서브스트링을 추출할 수 있습니다.
+## 깊이 파헤치기
 
-```Javascript
-// 문자열을 변수에 저장합니다.
-let str = "Hello world";
+우리는 `substring()` 함수를 사용하여 문자열의 일부분을 추출할 수 있지만, 더 깊게 파헤쳐보겠습니다. 이 함수는 첫 번째 매개변수로 음수 값을 사용할 수 있습니다. 음수 값을 사용하면 문자열의 끝에서부터 인덱싱을 시작합니다.
 
-// "..." 특수 문자를 사용하여 서브스트링을 추출합니다.
-let substring = str.substring(0, str.indexOf("..."));
+```javascript
+// 문자열 선언
+let str = "안녕하세요! 이번에는 자바스크립트에 대해 알아보려고 합니다.";
 
-// 결과를 콘솔에 출력합니다.
-console.log(substring);
+// 뒤에서 8글자 추출
+let sub = str.substring(-8);
 
-// Output: "Hello"
+// 결과 출력
+console.log(sub); // '배알때려'
 ```
 
-위의 예시 코드에서는 "Hello world"라는 문자열에서 "..." 특수 문자가 나오기 전까지의 문자열을 추출하여 "Hello"라는 결과를 얻게 됩니다.
+또한, `substring()` 함수 대신 `slice()` 함수를 사용하여 문자열의 일부분을 추출할 수도 있습니다. `slice()` 함수는 시작 인덱스만 매개변수로 받는데, 이는 `substring()` 함수의 두 번째 매개변수를 생략한 것과 같습니다.
 
-## 더 알아보기
+```javascript
+// 문자열 선언
+let str = "자바스크립트 짱짱맨!";
 
-서브스트링 추출에 대해서 좀 더 깊이 알아보겠습니다. 자바스크립트에서는 다양한 문자열 메소드를 사용하여 서브스트링을 추출할 수 있습니다.
+// 일부분 추출
+let sub = str.slice(8);
 
-```Javascript
-// 문자열을 변수에 저장합니다.
-let str = "Hello world";
-
-// charAt() 메소드를 사용하여 인덱스에 해당하는 문자를 추출합니다.
-let char = str.charAt(6);
-
-// 결과를 콘솔에 출력합니다.
-console.log(char);
-
-// Output: "w"
+// 결과 출력
+console.log(sub); // '짱맨!'
 ```
 
-위의 예시 코드에서는 charAt() 메소드를 사용하여 인덱스 6번째에 해당하는 문자 "w"를 추출하였습니다.
+## 관련 링크
 
-또는, substring() 함수 외에도 substr() 함수를 사용하여 서브스트링을 추출할 수 있습니다.
-
-```Javascript
-// 문자열를 변수에 저장합니다.
-let str = "Hello world";
-
-// substr() 함수를 사용하여 인덱스 6번째부터 5개의 글자를 추출합니다.
-let substring = str.substr(6, 5);
-
-// 결과를 콘솔에 출력합니다.
-console.log(substring);
-
-// Output: "world"
-```
-
-위의 예시 코드에서는 substr() 함수를 사용하여 인덱스 6번째부터 5개의 글자를 추출하여 "world"라는 결과를 얻게 됩니다.
-
-## 이어서 읽어보세요.
-
-- [자바스크립트 문자열 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [substring() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [substr() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-
-## 참고 자료
-
-- [Javascript substring() 함수로 문자열 자르기](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [Javascript substr() 함수로 문자열 자르기](https://www.w3schools.com/jsref/jsref_substr.asp)
-- [JavaScript substring() 함수로 시작 인덱스와 끝 인덱스의 값 지정
+- [MDN substring()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

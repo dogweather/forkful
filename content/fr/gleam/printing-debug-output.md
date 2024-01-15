@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Imprimer les sorties de débogage"
-simple_title:         "Imprimer les sorties de débogage"
+title:                "Affichage des résultats de débogage"
+html_title:           "Gleam: Affichage des résultats de débogage"
+simple_title:         "Affichage des résultats de débogage"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,29 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'impression de sortie de débogage peut sembler être une tâche simple et banale, mais elle peut être un outil extrêmement utile pour les programmeurs. Non seulement elle aide à identifier et à résoudre les erreurs dans le code, mais elle peut également fournir des informations précieuses sur le fonctionnement de votre programme. Dans cet article, nous allons explorer en détail l'utilisation de l'impression de sortie de débogage en Gleam.
+Vous avez probablement entendu parler de la célèbre phrase “print is not dead”. Eh bien, en programmation, c'est également vrai. L'impression de messages de débogage est un outil utile pour comprendre le comportement de votre code et trouver des erreurs.
 
-## Comment faire
+## Comment Faire
 
-L'impression de sortie de débogage en Gleam est très simple et peut être réalisée en utilisant la fonction `io.format`. Cette fonction prend deux arguments: un format de chaîne et une liste de valeurs à insérer dans le format. Voyons un exemple concret:
+L'utilisation de la fonction `debug` dans Gleam permet d'imprimer des messages de débogage dans votre code. Voici un exemple:
 
+```Gleam
+let name = "Jane"
+debug("Hello", name)
 ```
-Gleam module debug_example
 
-pub fn print_output(a) {
-  io.format("La valeur de a est: {}\n", [a])
+Dans cet exemple, nous utilisons la fonction `debug` pour imprimer le message “Hello” suivi du contenu de la variable `name`. Lorsque vous exécutez votre code, le message “Hello Jane” sera imprimé dans votre terminal. Cela peut vous aider à suivre le flux de votre programme et à comprendre comment les valeurs changent au fil du temps.
+
+Vous pouvez également utiliser des conditions pour n'imprimer des messages de débogage que lorsqu'une certaine condition est remplie. Par exemple:
+
+```Gleam
+let age = 25
+if age > 18 {
+    debug("Vous êtes un adulte!")
 }
-
-print_output(10)
 ```
 
-Dans cet exemple, nous définissons une fonction nommée `print_output` qui prend un argument `a` et utilise `io.format` pour imprimer la valeur de `a` dans un format spécifique. En utilisant cela dans notre programme, nous pouvons facilement vérifier la valeur de n'importe quelle variable à n'importe quel moment.
+Dans cet exemple, le message “Vous êtes un adulte!” ne sera imprimé que si la variable `age` est supérieure à 18.
 
-## Plongée profonde
+## Plongée Profonde
 
-Il est également possible d'ajouter plus de détails à votre sortie de débogage en utilisant des options de formatage. Par exemple, vous pouvez ajouter des informations de type de données en utilisant `{:?}` et `{{:?}}` pour les paramètres et les valeurs respectivement. Vous pouvez également personnaliser les options en utilisant `{:,}`, `{;}` et `{:b}` pour les chaînes, les nombres de type `float` et `bool` respectivement. Cela peut être très utile lorsque vous avez besoin de plus d'informations sur les valeurs que vous imprimez.
+L'impression de messages de débogage peut également être utile pour vérifier si votre code fonctionne correctement. Vous pouvez utiliser des messages de débogage pour afficher le contenu de variables à des points spécifiques de votre code, afin de vous assurer que les valeurs sont correctes avant de continuer.
 
-## Voir aussi
+Il est important d'être sélectif dans les messages de débogage que vous imprimez, car trop de messages peuvent rendre votre code illisible. Utilisez-les avec parcimonie et n'oubliez pas de les supprimer une fois que vous avez corrigé vos erreurs.
 
-- [Guide de formatage](https://gleam.run/book/tour/formatting.html)
-- [Documentation de la fonction io.format](https://hexdocs.pm/gleam_stdlib/io.html#format-2)
+## Voir Aussi
+
+- [Documentation Gleam](https://gleam.run/documentation/guide/debugging)
+- [Article Medium sur l'impression de messages de débogage en Gleam](https://medium.com/@middy/improve-your-debugging-skills-with-gleam-27e559f23185)
+- [Guide de débogage en Gleam](https://matthewhammer.org/blog/2020/07/18/gleam-debugging.html)

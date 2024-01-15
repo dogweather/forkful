@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Haskell: Arbeta med yaml"
 simple_title:         "Arbeta med yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Om du behöver arbeta med YAML-filer, är Haskell ett kraftfullt och effektivt val för att hantera dem. Det är också ett bra sätt att lära sig funktionell programmering genom praktisk kodning.
 
-YAML är ett utmärkt sätt att strukturera och organisera data i en läsbar och lättförståelig filformat. Det är särskilt användbart för att hantera konfigurationsfiler och data som behöver delas mellan flera program eller plattformar.
-
-## Hur man gör
-
-För att arbeta med YAML i Haskell, behöver du först installera YAML-paketet med kommandot `cabal install yaml`. Sedan kan du importera YAML-modulen och använda dess funktioner för att läsa in och skriva YAML-filer.
+## Så här gör du
+Först måste du installera Haskell på din dator. Sedan kan du använda följande kod för att läsa in och tolka en YAML-fil:
 
 ```Haskell
 import Data.Yaml
 
--- Läs in en YAML-fil
-yamlFile <- readFile "exempel.yaml"
-
--- Konvertera YAML till Haskell datastruktur
-let data = decodeEither' yamlFile :: Either ParseException [MyData]
-
--- Skriv ut Haskell data till YAML-fil
-let renderedYaml = encode data
-writeFile "nytt_exempel.yaml" renderedYaml
+main :: IO ()
+main = do
+  -- Läs in YAML-fil
+  yamlFile <- readFile "exempel.yaml"
+  -- Tolkar YAML-filen och returnerar en Maybe-sträng
+  let result = decodeEither' yamlFile :: Either ParseException String
+  case result of
+    Left err -> putStrLn $ "Fel vid tolkning av YAML-fil: " ++ show err
+    Right str -> putStrLn $ "YAML-fil tolkad som: " ++ str
 ```
 
+Detta kommer att läsa in en YAML-fil "exempel.yaml", tolka den och skriva ut det tolkade resultatet. Om något går fel kommer ett felmeddelande att skrivas ut istället. 
+
+Om du vill skriva en YAML-fil istället kan du använda följande kod:
+
+```Haskell
+import Data.Yaml
+
+main :: IO ()
+main = do
+  -- Skapa ett värde för att konvertera till YAML
+  let person = [("name" :: "John), ("age" :: 30)]
+  -- Konvertera personvärde till YAML
+  let yaml = encode person
+  -- Skriv YAML till en fil
+  writeFile "ny_person.yaml" yaml
+```
+
+Detta kommer att skapa en YAML-fil "ny_person.yaml" med det inmatade personvärdet i det kodade formatet.
+
 ## Djupdykning
+Haskell har en robust YAML-parsning och serialisering med hjälp av biblioteket "yaml". Det ger dig möjlighet att läsa och skriva YAML-filer samt konvertera dem till och från Haskell-värden.
 
-YAML stöder en mängd olika datatyper, som strängar, listor, dictionaries och booleska värden. Det finns också möjlighet att definiera egna datatyper och referera till dem i YAML-filen. YAML är också mycket flexibelt och tillåter kommentarer och tomma linjer för att förbättra läsbarheten.
-
-För mer information om hur man använder YAML i Haskell, rekommenderar vi att titta på YAML-paketets hemsida och läsa igenom dess dokumentation och exempel.
+YAML innehåller flera nyckelfunktioner som inte finns i andra filformat, till exempel återanvändbara ankarpunkter och alias för att återanvända data, vilket gör det till ett flexibelt val för konfigurationer och datastrukturer.
 
 ## Se även
-
-- [Data.Yaml dokumentation](https://hackage.haskell.org/package/yaml/docs/Data-Yaml.html)
-- [YAML officiella hemsida](https://yaml.org/)
-- [Yaml gå igenom](https://www.linode.com/docs/applications/configuration-management/beginners-guide-to-yaml/)
-
-Tack för att du läste! Vi hoppas att du nu har en bättre förståelse för hur man arbetar med YAML i Haskell och hur det kan förenkla hanteringen av data i dina projekt. Lycka till med programmeringen!
+- Haskell dokumentation för YAML: https://hackage.haskell.org/package/yaml
+- YAML officiell webbplats: https://yaml.org/
+- En snabb intro till YAML: https://learnxinyminutes.com/docs/yaml/

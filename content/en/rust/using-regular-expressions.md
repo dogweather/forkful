@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Rust recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,46 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Regular expressions are a powerful tool for text processing and pattern matching in various programming languages. Rust, being a modern systems programming language, also has built-in support for regular expressions. It allows developers to easily search and manipulate strings with complex patterns, making it a valuable skill to have in your programming arsenal.
+Regular expressions are powerful textual pattern matching tools that allow for efficient and flexible string manipulation. In Rust, they are implemented through the standard library's `regex` crate and provide a convenient way to handle complex text parsing and validation tasks. By familiarizing yourself with regular expressions, you can significantly enhance your coding capabilities and streamline your data processing workflows.
 
 ## How To
 
-To use regular expressions in Rust, you first need to import the `regex` crate in your code. You can do this by adding the following line to your `Cargo.toml` file:
+To use regular expressions in your Rust code, first add the `regex` crate to your `Cargo.toml` file, like so:
 
 ```Rust
 [dependencies]
-regex = "1.5.4"
+regex = "1.4.2"
 ```
 
-Next, you can use the `Regex` struct provided by the `regex` crate to create a regular expression object. You can then use this object to match patterns against a given string. Let's see an example of this in action:
+Then, import the `Regex` struct from the crate in your code:
 
 ```Rust
 use regex::Regex;
+```
 
-fn main() {
-  let re = Regex::new(r"hello.*world").unwrap();
-  let text = "hello dear world";
+Next, you can create a new `Regex` object by passing in the desired regular expression pattern as a string:
 
-  if re.is_match(text) {
-    println!("Match found!");
-  } else {
-    println!("No match found :(");
-  }
+```Rust
+let pattern = Regex::new(r"^\w+@[a-z]+\.[a-z]{2,3}$")?; // creates a regex for validating email addresses
+```
+
+With your `Regex` object in hand, you can now perform different operations such as matching, replacing, or capturing text based on the given pattern. For example, to check if a string matches the regex, you can use the `is_match` method:
+
+```Rust
+let email = "john@example.com";
+if pattern.is_match(email) {
+    println!("Valid email address!");
+} else {
+    println!("Invalid email address!");
 }
 ```
 
-In this example, we create a `Regex` object that would match any string starting with "hello" and ending with "world". We then use the `is_match` method to check if our `text` variable passes this test. As you can see, using regular expressions in Rust is pretty straightforward.
+You can also capture parts of a string using capture groups and extract the captured text using the `captures` method:
+
+```Rust
+let text = "Today is 12/04/2021.";
+let date_regex = Regex::new(r"(\d{2})/(\d{2})/(\d{4})").unwrap();
+if let Some(captures) = date_regex.captures(text) {
+    let day = captures.get(1).unwrap().as_str();
+    let month = captures.get(2).unwrap().as_str();
+    let year = captures.get(3).unwrap().as_str();
+    println!("Date: {}/{}/{}", month, day, year); // prints "Date: 04/12/2021"
+}
+```
+
+These are just a few examples of how regular expressions can be used in Rust. For a more comprehensive guide, check out the official Rust documentation and the additional resources listed in the "See Also" section below.
 
 ## Deep Dive
 
-Aside from basic pattern matching, regular expressions in Rust also support capturing groups, replacement, and more advanced features such as lookarounds. The `regex` crate provides a comprehensive API for working with regular expressions, including methods for finding multiple matches, iterating over captured groups, and replacing matched patterns with new strings.
+Regular expressions in Rust follow the Perl-style syntax and support most regex features you would expect, including character classes, quantifiers, anchors, and capturing groups. However, it is worth noting that due to Rust's emphasis on safety, some regex options may be disabled by default to prevent potentially dangerous operations. For more advanced usage, the `RegexBuilder` struct allows you to customize certain settings and enable disabled features.
 
-One important thing to note is that Rust's regular expressions use the PCRE (Perl Compatible Regular Expressions) syntax. So if you're already familiar with regular expressions in other languages, you should feel right at home in Rust.
+Additionally, the `regex` crate also provides a `RegexSet` struct that allows you to match against multiple regular expressions simultaneously for more complex scenarios. Moreover, the `replace` and `replacen` methods offer different ways to replace text based on a given regex pattern and substitution string.
 
 ## See Also
 
-If you want to learn more about using regular expressions in Rust, here are some helpful resources:
-
-- The Rust `regex` crate documentation: https://docs.rs/regex/1.5.4/regex/
-- The Rust Book chapter on regular expressions: https://doc.rust-lang.org/book/ch09-06-patterns.html
-- An interactive tutorial for learning regular expressions in Rust: https://learnbyexample.github.io/Rust_regular_expressions/
+- Rust documentation: [Regular Expressions](https://doc.rust-lang.org/std/str/struct.Regex.html)
+- Rust By Example: [Regular Expressions](https://rustbyexample.com/std/regex.html)
+- Official Regex Syntax Guide: [Regular Expressions - Syntax](https://doc.rust-lang.org/regex/regex/index.html#syntax)

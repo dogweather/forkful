@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Gleam: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,73 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å sjekke om en mappe eksisterer er en viktig del av programmering. Det kan hjelpe deg med å sikre at programmet ditt fungerer riktig og unngå feil i koden.
+Har du noen gang prøvd å åpne en fil eller lese en fil fra en mappe, bare for å finne ut at mappen ikke eksisterer? Det er ikke bare frustrerende, men det kan også føre til krasj i programmet ditt. Å sjekke om en mappe eksisterer før du prøver å gjøre noe med den, er en viktig del av å skrive pålitelig og feilfri kode.
 
-## Hvordan
+## Hvordan du gjør det
 
-### Sjekke eksistensen av en mappe
+For å sjekke om en mappe eksisterer i Gleam, bruker du funksjonen `std.fs.exists` og gir den mappen du vil sjekke som et argument. Denne funksjonen vil returnere en `Result`-type som enten er `Ok` hvis mappen eksisterer, eller `Err` hvis den ikke gjør det. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+
 ```Gleam
-import gleam/path.Dir
+// Sjekker om mappen "bilder" eksisterer
+let resultat = std.fs.exists("bilder")
 
-fn check_directory() {
-    let dir = Dir.from_path("./my_directory")
-    let exists = Dir.exists(dir)
-    if exists {
-        io.print("Mappen eksisterer.")
-    } else {
-        io.print("Mappen eksisterer ikke.")
-    }
+// Hvis resultatet er en "Ok"-verdi, skriver vi ut at mappen eksisterer
+match resultat {
+  Ok -> println("Mappen 'bilder' eksisterer!")
+  Err -> println("Mappen 'bilder' eksisterer ikke.")
 }
-
-check_directory() // output: Mappen eksisterer.
 ```
 
-### Sjekke eksistensen av en mappe og dens innhold
+I dette eksempelet sjekker vi om mappen "bilder" eksisterer, og skriver ut en passende melding basert på resultatet. Du kan også bruke en `if`-setning for å håndtere resultatet:
+
 ```Gleam
-import gleam/path.Dir
-
-fn check_directory_contents() {
-    let dir = Dir.from_path("./my_directory")
-    let exists = Dir.exists(dir)
-    let contents = Dir.contents(dir)
-    if exists {
-        io.print(contents)
-    } else {
-        io.print("Mappen eksisterer ikke.")
-    }
+if std.fs.exists("bilder") == Ok {
+  println("Mappen 'bilder' eksisterer!")
+} else {
+  println("Mappen 'bilder' eksisterer ikke.")
 }
-
-check_directory_contents() // output: [{name: "file1.txt", path: "./my_directory/file1.txt"}, {name: "file2.txt", path: "./my_directory/file2.txt"}]
 ```
 
-## Dypdykk
+## Dypere dykk
 
-Når vi sjekker eksistensen av en mappe, må vi huske på at det også er viktig å håndtere eventuelle feil som kan oppstå. For eksempel kan det hende at mappen ikke eksisterer eller at vi ikke har tilgang til den.
+Som nevnt ovenfor, vil `std.fs.exists`-funksjonen returnere en `Result`-type. Dette er en type som kan være enten `Ok` eller `Err`, og den brukes mye i Gleam for å håndtere mulige feil. Hvis du vil ha en mer detaljert forklaring på hvordan `Result` fungerer, kan du sjekke ut dokumentasjonen [her](https://gleam.run/book/std/result.html).
 
-For å håndtere slike scenarier kan vi bruke try/catch-metoden:
-```Gleam
-import gleam/path.Dir
-
-fn check_directory() {
-    try {
-        let dir = Dir.from_path("./my_directory")
-        let exists = Dir.exists(dir)
-        if exists {
-            io.print("Mappen eksisterer.")
-        } else {
-            io.print("Mappen eksisterer ikke.")
-        }
-    } catch error {
-        io.print("En feil oppsto. Feilmelding: " ++ error)
-    }
-}
-
-check_directory() // output: En feil oppsto. Feilmelding: "Directory does not exist."
-```
+Det er også verdt å merke seg at `std.fs.exists`-funksjonen kun sjekker om mappen eksisterer, den sjekker ikke om du har tilgang til den eller om det er andre problemer med mappen. Hvis du trenger mer avansert filbehandling, kan du se på `std.fs.open` og `std.fs.create`-funksjonene.
 
 ## Se også
 
-- [Gleam dokumentasjon for å sjekke eksistensen av en mappe](https://gleam.run/functions/Dir.exists.html)
-- [Tutorial for å håndtere feil i Gleam](https://gleam.run/tutorials/error_handling.html)
+- [Dokumentasjon for Gleam sin standardbibliotek](https://gleam.run/book/std/)
+- [Gleam sin offisielle nettside](https://gleam.run/)
+- [Kodeeksempler på GitHub](https://github.com/gleam-lang/gleam/tree/main/examples)

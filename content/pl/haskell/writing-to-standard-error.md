@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Haskell: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,27 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie do standardowego błędu (stderr) jest nie tylko ważnym elementem programowania w Haskellu, ale także bardzo przydatnym narzędziem do debugowania. Poprzez wypisywanie błędów i informacji do stderr, programista może szybko zlokalizować i naprawić potencjalne problemy w swoim kodzie.
+Pisanie do standardowego błędu jest ważną częścią programowania w Haskellu, ponieważ pozwala programiście na obsługę wyjątków i wyświetlanie błędów w przejrzysty sposób. Jest to niezbędne przy pracy nad wymagającymi i skomplikowanymi projektami.
 
 ## Jak to zrobić
 
-Aby pisać do standardowego błędu w Haskellu, wystarczy skorzystać z funkcji `hPutStrLn` z modułu `System.IO`. Przykładowy kod wykorzystujący tę funkcję wyglądałby następująco:
+Pisanie do standardowego błędu w Haskellu jest bardzo proste. Wystarczy skorzystać z funkcji `hPutStrLn` z modułu `System.IO`. Przykładowy kod wyglądałby następująco:
 
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-  hPutStrLn stderr "Błąd: nieznaleziono pliku"
+  hPutStrLn stderr "To jest błąd!"
 ```
 
-Po uruchomieniu tego programu, na konsoli zostanie wypisany tekst "Błąd: nieznaleziono pliku" wraz z informacją o błędzie.
+Po uruchomieniu tego kodu, wyjście zostanie wyświetlone w standardowym strumieniu błędów, co w większości przypadków jest widoczne w konsoli.
 
-## Głębszy wgląd
+Możemy także wykorzystać tę funkcję w połączeniu z operatorem `>>` do wywoływania funkcji jedna po drugiej:
 
-Istnieją również inne funkcje z modułu `System.IO`, takie jak `hPutStr` i `hPutChar`, które pozwalają na pisanie do standardowego błędu bez dodawania nowej linii na końcu. Dodatkowo, istnieje również możliwość przekierowania standardowego błędu do pliku z pomocą funkcji `hPutStrLn`, co może być przydatne w przypadku zapisywania logów.
+```Haskell
+main = hPutStrLn stderr "Pierwszy błąd!" >> hPutStrLn stderr "Drugi błąd!"
+```
 
-## Zobacz także
+W tym przypadku, będą wyświetlone dwa błędy pod sobą w standardowym strumieniu błędów.
 
-- [Dokumentacja modułu System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Poradnik dla początkujących w Haskellu](https://learnyouahaskell.com/)
-- [Przydatne narzędzia do debugowania w Haskellu](https://medium.com/swlh/useful-tools-for-debugging-haskell-code-14d9779ae1d8)
+## Wnikliwa analiza
+
+Funkcja `hPutStrLn` jest zdefiniowana jako `hPutStrLn :: Handle -> String -> IO ()` i przyjmuje dwa argumenty - uchwyt do określonego strumienia (w tym przypadku `stderr`) oraz łańcuch znaków, który ma być wyświetlony. Dlatego też funkcja ta jest często używana do wyświetlania błędów podczas obsługi wyjątków.
+
+Dodatkowo, funkcja `hPutStrLn` musi być wywołana wewnątrz monady `IO`, co oznacza, że może ona modyfikować stan programu, w tym wypadku wyświetlić błąd w standardowym strumieniu błędów.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o pisaniu do standardowego błędu w Haskellu, polecamy zapoznanie się z dokumentacją modułu `System.IO` oraz artykułem "Debugging in Haskell" na stronie [Haskell.org](https://www.haskell.org/).

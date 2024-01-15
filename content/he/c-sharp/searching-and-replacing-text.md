@@ -1,5 +1,6 @@
 ---
-title:                "C#: חיפוש והחלפת טקסט"
+title:                "חיפוש והחלפת טקסט"
+html_title:           "C#: חיפוש והחלפת טקסט"
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "C#"
 category:             "C#"
@@ -9,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-המטרה של חיפוש והחלפה של טקסט היא לאפשר למתכנתים לשנות את הטקסט בקלות ולאחר מכן לשחזר אותו תוך שמירה על קוד נקי ומאורגן. זה יכול להוביל להפחתת זמן פיתוח ולשיפור היציבות של התוכנה.
+## מדוע
 
-כיצד לבצע חיפוש והחלפה בקוד של C#: 
+בפיתוח תוכניות ואפליקציות, טכניקת החיפוש וההחלפה של טקסט היא חיונית בכדי לשפר את היעילות ולפתור בעיות תכנותיות.
 
-```C#
-//שימוש בתוכנית Regex לחיפוש והחלפת טקסט 
-using System.Text.RegularExpressions;
+## איך לעשות זאת
 
-//שימוש בשיטה Replace על מחרוזת כדי להחליף טקסט
-string newString = Regex.Replace(originalString, "textToReplace", "replacementText");
+לבצע חיפוש והחלפה של טקסט בשפת C# ניתן בעזרת פונקציות פשוטות כמו Replace() ו-ReplaceAll(). הנה דוגמאות לשימוש בהן:
 
-//דוגמה:
-string original = "זהו טקסט לדוגמה";
-string newString = Regex.Replace(original, "טקסט", "מתמטיקה");
+```
+// השתמש בפונקציה Replace() כדי להחליף את מופע המילה "משהו" במערך של טקסט
+string[] textArr = { "משהו מרתק", "משהו פשוט", "משהו מעניין" };
+foreach(string text in textArr)  
+{  
+    Console.WriteLine(text.Replace("משהו", "משהו אחר"));  
+}
 
-//output: זהו מתמטיקה לדוגמה
+// פלט: "משהו אחר מרתק", "משהו אחר פשוט", "משהו אחר מעניין"
+
+// השתמש בפונקציה ReplaceAll() כדי להחליף את כל מופעי הגרשיים בטקסט לסימן המחרוזת מתאימה
+string text = "אני אוהב 'עוגת תפוחים'";
+Console.WriteLine(text.ReplaceAll("\'", "\""));
+
+// פלט: "אני אוהב עוגת תפוחים"
 ```
 
-עומקנו:
+## בירור עמוק
 
-כמו כל כלי חזק, ישנם עוד כמה דברים שניתן לעשות עם חיפוש והחלפה של טקסט. לדוגמה, ניתן להשתמש בתכונות נוספות של Regex כגון ניתוח הביטויים הרגולריים, שינוי גודל האותיות, ועוד. בנוסף, כדאי להבצע חיפוש והחלפה על מחרוזות גדולות על מנת לתקן שגיאות כמו תווים ריקים או תווים ספציפיים שגויים.
+פונקציות חיפוש והחלפה נמצאות במחלקת String בשפת C# ומאפשרות למצוא ולהחליף באופן נוח ומהיר טקסט במחרוזת. כמו כן, ניתן לעבוד עם פונקציות נוספות כגון ReplaceFirst() ו- ReplaceLast() לפעולות החלפה מפורטות יותר.
 
-על מנת ללמוד עוד על חיפוש והחלפה של טקסט ב-C#, ניתן לבדוק את המדריכים הבאים:
+## ראה גם
 
-- [Microsoft Docs: Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
-- [C# Regex Tutorial](https://www.c-sharpcorner.com/UploadFile/dbd951/regular-expression-in-C-Sharp/)
-- [Codecademy: Learn to use Regular Expressions in C#](https://www.codecademy.com/learn/learn-regular-expressions/modules/learn-regular-expressions-csharp/) 
+למידע נוסף על חיפוש והחלפה של טקסט בשפת C#, הצטרף לקהילת הפורומים וקרא את המדריכים המקיפים שלהם:
 
-ראה גם:
-
-- [Markdown: שיטת כתיבה פשוטה לכתיבת מדריכים טכניים](https://daringfireball.net/projects/markdown/)
+- [חיפוש והחלפת טקסט בשפת C#](https://forum.devshed.com/c-programming-42/search-replace-text-c-945006.html)
+- [מדריך לפונקציות חיפוש והחלפה בשפת C#](https://www.tutorialspoint.com/csharp/csharp_string_replace.htm)

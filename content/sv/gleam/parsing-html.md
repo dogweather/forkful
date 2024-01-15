@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Parsning av HTML"
+html_title:           "Gleam: Parsning av HTML"
+simple_title:         "Parsning av HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,74 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-HTML-analys (även känd som HTML-parsning) är en viktig uppgift för utvecklare inom webbutveckling och automatisering. Det innebär att extrahera information från HTML-kod för att manipulera eller använda det på ett något annat sätt. Det kan användas för att skapa webbskrapor, datautvinning, automatiserad testning och mycket mer. Det är ett viktigt verktyg att ha i din utvecklarverktygslåda.
+Om du någonsin har behövt extrahera specifika data från en webbsida, så har du förmodligen mött det frustrerande problemet med att behöva gå igenom en stor mängd HTML-kod. Men med Gleam, behöver du inte längre oroa dig för att manuellt bearbeta koden. Med hjälp av Gleam's HTML-parsing funktion kan du snabbt och enkelt extrahera den data du behöver från en webbsida.
 
-## Så här
+## Så här gör du
 
-Att analysera HTML med Gleam är förvånansvärt enkelt. Först och främst måste vi importera nödvändiga moduler, som `html`, `http.client` och `gleam/json`:
+För att börja parsningen av en HTML-sida, måste du först installera och importera modulen "html". För att göra detta, använd kommandot ```mix add html``` i din projektmapp och importera modulet genom att lägga till "use html" i början av dina kodfiler.
 
-```
-import html
-import http.client
-import gleam/json
-```
+Nästa steg är att ladda in HTML-koden som du vill parsar. Du kan göra detta genom att använda funktionen "load" som finns i html-modulet. Detta gör att koden sparas i en variabel, som du sedan kan använda för att extrahera data från.
 
-Sedan behöver vi en HTML-sträng att analysera. I det här fallet använder vi vår egen hemsida:
-
-```
-let html_string = http.client.get("https://www.example.com")
-|> html.stringify
+```Gleam
+let html_data = html.load("<html><body><h1>Welcome to Gleam!</h1></body></html>")
 ```
 
-Nu kan vi använda `html.parse`-funktionen för att omvandla vår HTML-sträng till en JSON-representasjon:
+Nu kan vi börja extrahera data genom att använda funktioner som "get_text" och "get_attribute". Dessa tar in en HTML-element och returnerar antingen dess textinnehåll eller värde för en specifik attribut.
 
-```
-let parsed = html.parse(html_string)
-|> gleam/json.encode_pretty(2)
-```
+```Gleam
+let heading = html.get_text(html_data |> html.find("h1"))
 
-I exemplet ovan använder vi också `gleam/json.encode_pretty`-funktionen för att förbättra läsbarheten av vår JSON-utdata genom att formatera den med ett indenteringssteg på 2.
-
-Efter att ha kört detta får vi följande utdata:
-
-```
-{
-  "name": "html",
-  "attributes": {},
-  "children": [
-    {
-      "name": "head",
-      "attributes": {},
-      "children": [
-        { "name": "title", "attributes": {}, "children": ["Example Domain"] }
-      ]
-    },
-    {
-      "name": "body",
-      "attributes": {},
-      "children": [
-        { "name": "h1", "attributes": {}, "children": ["Example Domain"] },
-        {
-          "name": "p",
-          "attributes": {},
-          "children": ["This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission."]
-        }
-      ]
-    }
-  ]
-}
+let paragraph = html_data
+  |> html.find(".paragraph")
+  |> html.get_attribute("class")
 ```
 
-Som du kan se har vår HTML-sträng nu blivit strukturerad som en JSON-fil, vilket gör det lättare att arbeta med den och extrahera information från den.
+Slutligen kan vi använda "find_all" för att hämta flera element med samma tag eller klassnamn.
+
+```Gleam
+let links = html_data |> html.find_all("a")
+
+links |> List.iter(html.get_attribute("href") |> debug.log)
+```
 
 ## Djupdykning
 
-Att lära sig om HTML-analys är inte bara användbart för webbutveckling och automatisering, det är också en viktig kunskap för säkerhet. Genom att förstå hur HTML-kod fungerar kan vi identifiera potentiella säkerhetsrisker i våra egna webbsidor och skydda oss mot skadlig kod.
+Till skillnad från regex, som ofta används för att parsea HTML, så använder Gleam en mer "smart" metod som tar hänsyn till strukturen av koden. Detta betyder att du kan vara säker på att du får exakt den data du söker efter.
 
-Vid djupdykningen i HTML-analys kan vi också utforska mer avancerade funktioner, som att använda CSS-väljare för att välja specifika element i en HTML-sida eller extrahera attributvärden från HTML-taggar.
+I Gleam, så representeras HTML-element som skräddarsydda typer för att säkerställa att du bara åtkommer giltig data. Detta eliminierar behovet av flera kontroller och felhanteringar.
 
-## Se också
+HTML-parsing i Gleam är också väldigt snabbt tack vare dess effektiva algoritmer. Detta är särskilt användbart om du behöver parsar stora mängder HTML-kod.
 
-- [Gleam dokumentation för HTML-modulen](https://gleam.run/modules/html.html)
-- [W3Schools HTML-tutorial](https://www.w3schools.com/html/)
-- [Mozilla Developer Network HTML-dokumentation](https://developer.mozilla.org/en-US/docs/Web/HTML)
+## Se även
+
+- [Officiell Gleam dokumentation för HTML-modulen](https://gleam.run/modules/html.html)
+- [GitHub repository för HTML-modulen](https://github.com/gleam-lang/html)
+- [Demo applikation med HTML-parsing i Gleam](https://github.com/spencerlefant/html-parsing-demo)

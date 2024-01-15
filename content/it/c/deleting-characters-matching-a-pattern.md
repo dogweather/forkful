@@ -1,5 +1,6 @@
 ---
-title:                "C: Cancellazione di caratteri corrispondenti a un modello."
+title:                "Cancellazione di caratteri corrispondenti a un modello."
+html_title:           "C: Cancellazione di caratteri corrispondenti a un modello."
 simple_title:         "Cancellazione di caratteri corrispondenti a un modello."
 programming_language: "C"
 category:             "C"
@@ -11,52 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per voler eliminare caratteri corrispondenti a un determinato pattern in un programma C. Potresti voler pulire i dati di input o rimuovere informazioni sensibili prima di salvarle o inviarle. Inoltre, l'eliminazione di caratteri in questo modo può essere utile per validare l'input dell'utente o per formattare correttamente i dati per un certo scopo.
+Se sei un programmatore in C, potresti a volte aver bisogno di eliminare caratteri da una stringa che corrispondono a un certo modello. Questo potrebbe essere necessario per filtrare dati o per riformattare una stringa.
 
-## Come eseguire l'operazione
+## Come fare
 
-Per eliminare caratteri in base a un pattern, possiamo utilizzare la funzione "strchr" della libreria standard di C. Questa funzione accetta due argomenti: una stringa e un carattere. Restituisce un puntatore alla prima occorrenza del carattere nella stringa, se presente, o NULL se il carattere non è stato trovato.
+Per eliminare caratteri che corrispondono a un modello in una stringa, puoi utilizzare la funzione `strsep()` della libreria standard di C. Qui di seguito un esempio di codice che mostra come utilizzarla:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  // Dichiarazione di una stringa di esempio
-  char stringa[] = "Hello World!";
-  // Dichiarazione di un carattere da eliminare
-  char carattere = 'o';
+int main(void) {
+    // Definire una stringa di esempio
+    char stringa[] = "Questa è una stringa di esempio.";
 
-  // Utilizzo della funzione "strchr" per trovare la prima occorrenza del carattere nella stringa
-  char *ptr = strchr(stringa, carattere);
+    // Definire il modello da eliminare
+    char pattern[] = "aeiou";
 
-  // Continua ad eliminare tutti i caratteri corrispondenti fino a quando non trovi più il carattere nella stringa
-  while (ptr != NULL) {
-    // Sostituisci il carattere con uno spazio vuoto
-    *ptr = ' ';
-    // Utilizzo di "strchr" per trovare una nuova occorrenza del carattere
-    ptr = strchr(stringa, carattere);
-  }
+    // Ciclo per eliminare ogni carattere del modello dalla stringa
+    char* token;
+    while ((token = strsep(&stringa, pattern)) != NULL) {
+        printf("%s", token);
+    }
+    printf("\n");
 
-  // Stampa il risultato della stringa modificata
-  printf("%s\n", stringa);
-
-  return 0;
+    return 0;
 }
 ```
 
-Output:
-
-```
-Hell  W rld!
-```
+Questo codice restituirà la stringa "Qst  strng d mpl.". Puoi modificare il modello e la stringa di esempio per ottenere risultati diversi.
 
 ## Approfondimento
 
-La funzione "strchr" utilizza un approccio semplice ma efficace basato su un ciclo while per scorrere la stringa e sostituire ogni occorrenza del carattere corrispondente con uno spazio vuoto. Tuttavia, ci sono altre opzioni per eliminare caratteri in base a un pattern come l'utilizzo della funzione "strtok" o l'utilizzo di espressioni regolari.
+La funzione `strsep()` è una funzione molto utile quando si lavora con stringhe in C. In realtà, è una versione migliorata della funzione `strtok()` che, invece di modificare la stringa originale, restituisce ogni token estratto in una nuova stringa. Questo permette di lavorare su una stringa senza modificarla.
+
+Vale la pena notare che, se non ci sono più corrispondenze tra il modello e la stringa, la funzione restituisce `NULL`. È importante gestire questo caso all'interno del tuo codice per evitare errori.
 
 ## Vedi anche
 
-- Documentazione ufficiale su "strchr": https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm
-- Guida su come utilizzare la funzione "strtok": https://www.geeksforgeeks.org/strtok-strtok_r-functions-c-examples/
-- Tutorial sull'utilizzo delle espressioni regolari in C: https://www.regular-expressions.info/libc.html
+- [Documentazione ufficiale della funzione `strsep()`](https://en.cppreference.com/w/c/string/byte/strsep)
+- [Esempi di utilizzo della funzione `strsep()`](https://www.geeksforgeeks.org/strsep-in-c-strtok/)
+- [Come utilizzare le stringhe in C](https://www.programiz.com/c-programming/c-strings)

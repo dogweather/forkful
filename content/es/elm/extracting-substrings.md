@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Extractando subcadenas"
-simple_title:         "Extractando subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Elm: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,30 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué extraer subcadenas en Elm es útil
+##¿Por qué extraer subcadenas?
 
-Extraer subcadenas, o porciones de una cadena de texto, es una tarea común en programación. En Elm, esta funcionalidad puede ser muy útil para manipular datos y obtener la información que necesitamos de manera eficiente. A continuación, veremos cómo utilizarla en tus proyectos.
+Extraer subcadenas es una habilidad importante en la programación ya que te permite manipular y obtener información específica de una cadena de texto. Esto puede ser útil en una variedad de situaciones, como en la creación de filtros de búsqueda o en la validación de datos de usuario. Aprender cómo extraer subcadenas te ayudará a ampliar tus capacidades como programador en Elm.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-Para extraer una subcadena en Elm, utilizamos la función `String.slice start end string`. Esta función recibe tres argumentos: `start`, que es la posición donde queremos comenzar a extraer la subcadena, `end`, que es la posición donde queremos terminar la extracción, y `string`, que es la cadena de texto original.
+La función `String.slice` se utiliza para extraer subcadenas de una cadena existente en Elm. Toma tres argumentos: la cadena de origen, el índice inicial y el índice final. Por ejemplo:
 
-Por ejemplo, si tenemos la cadena "Hola mundo" y queremos extraer la subcadena "mundo", podemos hacerlo utilizando la función `String.slice 5 9 "Hola mundo"`, ya que la letra "m" está en la posición 5 y la "o" está en la posición 9. El resultado sería "mundo".
+```Elm
+cadena = "Hola Mundo"
+subcadena = String.slice cadena 0 4
+-- Esto extraerá la subcadena "Hola"
+```
 
-También podemos utilizar esta función para obtener un número específico de caracteres a partir de una posición. Por ejemplo, si queremos obtener los tres primeros caracteres de la cadena "Elm es divertido", podemos utilizar `String.slice 0 3 "Elm es divertido"` y el resultado sería "Elm".
+También puedes utilizar índices negativos para contar desde el final de la cadena, por ejemplo:
 
-Si queremos extraer una subcadena a partir del final de la cadena original, podemos utilizar números negativos en `start` y `end`. Por ejemplo, si queremos extraer la subcadena "divertido" de la cadena "Elm es divertido", podemos hacerlo con `String.slice -8 -1 "Elm es divertido"`, ya que la "d" está en la posición -8 y la "o" está en la posición -1.
+```Elm
+cadena = "Hola Mundo"
+subcadena = String.slice cadena (-4) (-1)
+-- Esto extraerá la subcadena "ndo"
+```
 
-## Profundizando
+Si solo se proporciona el índice inicial, se extraerá una subcadena desde ese índice hasta el final de la cadena:
 
-Además de la función `String.slice`, Elm ofrece otras funciones para trabajar con subcadenas. Por ejemplo, `String.left n string` nos permite obtener los primeros `n` caracteres de una cadena, mientras que `String.right n string` nos devuelve los últimos `n` caracteres.
+```Elm
+cadena = "Hola Mundo"
+subcadena = String.slice cadena 4
+-- Esto extraerá la subcadena "Mundo"
+```
 
-También podemos utilizar `String.drop n string` para eliminar los primeros `n` caracteres de una cadena y `String.dropRight n string` para eliminar los últimos `n` caracteres.
+Recuerda que los índices en Elm comienzan en 0, por lo que el primer carácter en una cadena tiene un índice de 0.
 
-Otras funciones útiles incluyen `String.take n string`, que nos permite obtener los primeros `n` caracteres de una cadena y descartar el resto, y `String.takeRight n string`, que hace lo mismo pero con los últimos `n` caracteres.
+##Profundizando
 
-## Ver también
+La función `String.slice` en realidad utiliza dos índices para determinar la subcadena: el índice inicial inclusivo y el índice final no inclusivo. Esto significa que el carácter en el índice final no se incluirá en la subcadena resultante.
 
-- Documentación oficial de Elm sobre `String.slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
-- Tutorial de Elm para principiantes: https://guide.elm-lang.org/
-- Ejemplos de código en Elm: https://github.com/elm/projects/1
+También es posible utilizar valores de punto flotante para los índices, lo que te permite extraer subcadenas específicas dentro de una cadena. Por ejemplo:
+
+```Elm
+cadena = "Mi nombre es Juan"
+subcadena = String.slice cadena 8 12
+-- Esto extraerá la subcadena "es"
+```
+
+Además, si el índice inicial es mayor que el índice final, la función `String.slice` devolverá una cadena vacía. Esto puede ser útil para validar los datos de entrada antes de intentar extraer una subcadena.
+
+##Ver también
+
+- [Documentación oficial de Elm sobre la función `String.slice`](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- [Tutoriales de Elm en español](https://www.elm-tutorial.org/es/)

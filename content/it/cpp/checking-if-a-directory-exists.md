@@ -1,5 +1,6 @@
 ---
-title:                "C++: Verifica dell'esistenza di una directory"
+title:                "Verifica dell'esistenza di una directory"
+html_title:           "C++: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Quando si scrive un programma, è importante controllare se una determinata directory esiste prima di accedere ai suoi file o sottodirectory. In questo modo si prevengono errori e crash improvvisi del programma.
+Spesso, mentre scriviamo codice, è necessario controllare se una determinata directory esiste o meno. Questo ci aiuta a gestire il flusso del programma e ad evitare errori durante la lettura o la scrittura di file.
 
-## Come fare
-Ecco un esempio di come verificare se una directory esiste in C++ utilizzando la funzione `std::filesystem::exists()`:
+## Come Fare
+Controllare se una directory esiste in C++ è abbastanza semplice. Utilizzando la libreria `<filesystem>`, possiamo utilizzare la funzione `std::filesystem::exists()` per determinare se la directory esiste o meno. Di seguito un esempio di codice con una directory esistente ed una inesistente:
 
 ```C++
 #include <iostream>
 #include <filesystem>
 
-int main() {
-  std::filesystem::path directory_path = "/home/user/documents";
-  if(std::filesystem::exists(directory_path)) {
-    std::cout << "La directory esiste!" << std::endl;
-  } else {
-    std::cout << "La directory non esiste!" << std::endl;
-  }
-  return 0;
+int main()
+{
+    // Controllo della directory esistente
+    if (std::filesystem::exists("Documents"))
+    {
+        std::cout << "La directory esiste!" << std::endl;
+    }
+    
+    // Controllo della directory inesistente
+    if (std::filesystem::exists("Photos"))
+    {
+        std::cout << "La directory esiste!" << std::endl;
+    } 
+    else
+    {
+        std::cout << "La directory non esiste!" << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-Output:
+Ecco la corrispondente output:
 
 ```
 La directory esiste!
+La directory non esiste!
 ```
 
 ## Approfondimento
-Per verificare se una directory esiste in modo più dettagliato, ci sono alcune cose che è importante sapere. Innanzitutto, la funzione `std::filesystem::exists()` restituisce un valore booleano, `true` se la directory esiste e `false` se non esiste. Inoltre, è possibile specificare una serie di criteri opzionali nella funzione per cercare la directory. Ad esempio, si può specificare se si desidera cercare solo una directory o un file con lo stesso nome, o se si vuole cercare all'interno di una determinata directory o in tutte le sottodirectory. 
+La funzione `std::filesystem::exists()` utilizza la classe `std::experimental::filesystem::file_status` per determinare se un particolare percorso esiste. Questa classe fornisce anche informazioni aggiuntive sul percorso, come ad esempio i permessi di accesso e la data di ultima modifica. Per ulteriori informazioni su questa classe e altre funzioni utili per gestire i file e le directory in C++, si consiglia di consultare la documentazione ufficiale.
 
-Inoltre, è importante notare che la funzione `std::filesystem::exists()` dipende da come è implementato il file system del sistema operativo. Ad esempio, alcune piattaforme potrebbero non supportare la verifica di esistenza di file o directory con nomi di file non ASCII.
-
-## Vedi anche
-- [Documentazione della funzione `std::filesystem::exists()`](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [Tutorial su come gestire i file e le directory in C++](https://www.learncpp.com/cpp-tutorial/working-with-files/)
-- [Esempi di codice per la gestione delle directory in C++](https://www.geeksforgeeks.org/working-with-directories-in-c-cpp/)
+## Vedi Anche
+- [Funzione `std::filesystem::exists()`: Documentazione C++](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [Libreria `<filesystem>`: Documentazione C++](https://en.cppreference.com/w/cpp/filesystem)
+- [Gestione dei file e delle directory in C++: Tutorial su TutorialsPoint](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)

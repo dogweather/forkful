@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Swift recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,79 +12,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Text files are a common way to store and share data between programs. Whether you're working with configuration files or user input, the ability to read and manipulate text files is an essential skill for any programmer.
+If you're a programmer, chances are you've had to work with data from external sources. One common way to handle this data is by reading it from a text file. In this article, we'll explore how to read a text file in Swift, so you can easily integrate external data into your code.
 
 ## How To
 
-Reading a text file in Swift is a simple and straightforward process. Here's an example of how you could read a file line by line and print out each line:
+Reading a text file in Swift is a straightforward process. First, we need to create a `URL` object representing the location of our text file. This can be done using the `Bundle` class, which allows us to access files within our project's bundle.
 
-```Swift
-// Open file for reading
-if let fileURL = Bundle.main.url(forResource: "myFile", withExtension: "txt") {
-    
-    do {
-        // Read the file contents
-        let fileContents = try String(contentsOf: fileURL, encoding: .utf8)
-        
-        // Split contents into an array of lines
-        let lines = fileContents.components(separatedBy: "\n")
-        
-        // Loop through lines and print them out
-        for line in lines {
-            print(line)
-        }
-    } catch {
-        // Handle error
-        print(error)
-    }
-} else {
-    print("File not found")
-}
+```
+let fileURL = Bundle.main.url(forResource: "data", withExtension: "txt")
 ```
 
-This code uses the `Bundle` class to locate the text file, then uses the `String` class to read its contents. By using the `components(separatedBy: \n)` function, we can split the text into individual lines. Finally, we loop through each line and print it out to the console. 
+Next, we need to convert the data from our file into a `String` using the `String` class's `init(contentsOf:encoding:)` initializer. We'll specify the encoding of our file (usually UTF-8) as the second argument.
 
-Another useful way to read a text file is to use the `Scanner` class, which allows you to read the file using different delimiters or patterns. Let's take a look at an example:
-
-```Swift
-// Open file for reading
-if let fileURL = Bundle.main.url(forResource: "myFile", withExtension: "txt") {
-    
-    do {
-        // Create a scanner from the file URL
-        let scanner = Scanner(url: fileURL)
-        
-        // Set the delimiter to a comma
-        scanner.charactersToBeSkipped = CharacterSet(charactersIn: ",")
-        
-        // Loop through and print the content
-        while let content = scanner.readComponents(separatedBy: ",") {
-            print(content)
-        }
-        
-    } catch {
-        // Handle error
-        print(error)
-    }
-} else {
-    print("File not found")
-}
+```
+let fileContents = try String(contentsOf: fileURL, encoding: .utf8)
 ```
 
-In this code, we create a `Scanner` object from the file URL and set the delimiter to a comma. Then, using the `readComponents(separatedBy: )` function, we can read and print each component based on the delimiter we set.
+Now, we have the contents of our text file stored in a `String` object. Depending on the structure of your text file, you may need to parse it further to extract meaningful data.
+
+```
+let lines = fileContents.components(separatedBy: .newlines)
+for line in lines {
+    let data = line.components(separatedBy: " ")
+    // do something with the data
+}
+```
 
 ## Deep Dive
 
-Now that we've seen some examples of how to read a text file, let's dive a bit deeper into the process. When working with text files, it's important to understand what encoding is being used. Encoding is the process of converting characters into bytes so that they can be stored or transmitted. If you're not using the correct encoding, you may end up with garbled or incorrect data.
+When reading a text file in Swift, it's important to take into consideration the potential errors that may occur. The `init(contentsOf:encoding:)` initializer throws an error if it fails to read the file, so it's crucial to use try and catch statements to handle these errors appropriately.
 
-In Swift, the `String` class has an `encoding` property that allows you to specify the encoding when reading a file. By default, it is set to `.utf8` which is a commonly used encoding. However, depending on the source of the text file, you may need to use a different encoding such as `.ascii` or `.unicode`.
-
-Another important aspect to keep in mind is error handling when reading a text file. The `String` class's `init(contentsOf: encoding: )` function throws an error, so it's good practice to wrap it in a `do-catch` block as seen in our examples. This allows you to handle any possible errors that may occur, such as the file not existing or the encoding being incorrect.
+Additionally, you may encounter issues with different file encodings or special characters in your text file. In these cases, you can use different encoding options or string manipulation methods to ensure the data is properly handled.
 
 ## See Also
 
-For more information on reading text files in Swift, check out these helpful resources:
+To learn more about file handling in Swift, check out these resources:
 
-1. [Apple's official documentation on the String class](https://developer.apple.com/documentation/swift/string)
-2. [A guide to working with text files in Swift](https://www.hackingwithswift.com/read/32/overview)
-3. [A tutorial on using the Scanner class](https://www.raywenderlich.com/12253209-working-with-files-in-swift-5-1/lessons/5)
+- [Apple's Documentation on File Handling](https://developer.apple.com/documentation/foundation/file_handling)
+- [A Beginner's Guide to File Handling in Swift](https://www.ralfebert.de/ios/tutorials/iphone-apps-with-filemanager-uitableview/)
+
+Markdown formatted output:
+
+##
+
+Why
+
+If you're a programmer, chances are you've had to work with data from external sources. One common way to handle this data is by reading it from a text file. In this article, we'll explore how to read a text file in Swift, so you can easily integrate external data into your code.
+
+##
+
+How To
+
+Reading a text file in Swift is a straightforward process. First, we need to create a `URL` object representing the location of our text file. This can be done using the `Bundle` class, which allows us to access files within our project's bundle.
+```
+let fileURL = Bundle.main.url(forResource: "data", withExtension: "txt")
+```
+Next, we need to convert the data from our file into a `String` using the `String` class's `init(contentsOf:encoding:)` initializer. We'll specify the encoding of our file (usually UTF-8) as the second argument.
+```
+let fileContents = try String(contentsOf: fileURL, encoding: .utf8)
+```
+Now, we have the contents of our text file stored in a `String` object. Depending on the structure of your text file, you may need to parse it further to extract meaningful data.
+```
+let lines = fileContents.components(separatedBy: .newlines)
+for line in lines {
+    let data = line.components(separatedBy: " ")
+    // do something with the data
+}
+```
+
+## Deep Dive
+
+When reading a text file in Swift, it's important to take into consideration the potential errors that may occur. The `init(contentsOf:encoding:)` initializer throws an error if it fails to read the file, so it's crucial to use try and catch statements to handle these errors appropriately.
+Additionally, you may encounter issues with different file encodings or special characters in your text file. In these cases, you can use different encoding options or string manipulation methods to ensure the data is properly handled.
+
+## See Also
+
+To learn more about file handling in Swift, check out these resources:
+- [Apple's Documentation on File Handling](https://developer.apple.com/documentation/foundation/file_handling)
+- [A Beginner's Guide to File Handling in Swift](https://www.ralfebert.de/ios/tutorials/iphone-apps-with-filemanager-uitableview/)

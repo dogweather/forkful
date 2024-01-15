@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering."
+html_title:           "Gleam: Skicka en http-begäran med grundläggande autentisering."
+simple_title:         "Skicka en http-begäran med grundläggande autentisering."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,52 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Varför
- Grundläggande autentisering är en vanlig metod för att skydda webbutvecklingsprojekt från obehörig åtkomst. Genom att lära dig hur man skickar HTTP-förfrågningar med grundläggande autentisering kan du säkert kommunicera med externa API:er och tjänster, vilket är avgörande för många webbapplikationer.
+## Varför
 
-#Så här gör du
- För att skicka en HTTP-förfrågan med grundläggande autentisering i Gleam, behöver du först importera biblioteket för HTTP-anrop:
- 
+Det är vanligt att behöva skicka HTTP-förfrågningar med grundläggande autentisering för att kommunicera med webbtjänster och API:er. Detta kan krävas när du behöver säkra och skyddade förbindelser mellan din applikation och en extern server. Grundläggande autentisering är en enkel och utbredd autentiseringsmetod som använder en användarnamn-lösenord-kombination för att verifera identiteten hos den som skickar förfrågan.
+
+## Så här gör du
+
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Gleam, behöver du först importera det inbyggda biblioteket för HTTP-förfrågningar. Sedan anropar du funktionen `request` med rätt parametrar för metod, URL och eventuellt payload-data. Du kan sedan inkludera din autentiseringsinformation i förfrågningsheadern genom att lägga till en `Authorization`-header med en bas64-kodad sträng som innehåller användarnamn och lösenord.
+
 ```Gleam
-import http
-```
- 
-Nästa steg är att skapa ett anrop-objekt med hjälp av funktionen "http.request":
- 
-```Gleam
-let req = http.request(
-    method=Get,
-    url="http://api.exempel.com/",
-    headers=[("Authorization", "Basic QWxhZGRmqndMNtJZkSnd=")]
-)
-```
+import gleam/http
 
-I exemplet ovan har vi skapat ett GET-anrop till en API-adress och lagt till en grundläggande autentiseringsrubrik med användarnamn och lösenord i Base64-kodning.
-
-Nästa steg är att faktiskt skicka förfrågan och hantera svaret:
- 
-```Gleam
-let res = http.send(req)
-
-match res {
-    Ok(_) -> "Förfrågan skickad."
-    Error(_) -> "Något gick fel."
-}
-
-match res {
-    Ok(resp) ->
-        let body = http.read_body(resp)
-        "Svar från API: " ++ body
-    Error(_) -> "Något gick fel."
+pub fn send_request() {
+    let response = http.request(
+        method: "GET",
+        url: "https://example.com/api",
+        headers: [
+            ("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
+        ]
+    )
 }
 ```
 
-I exemplet ovan använder vi "http.send" för att skicka förfrågan och sedan matchar vi svaret för att få reda på om förfrågan lyckades eller inte. Om den lyckas, kan vi använda "http.read_body" för att läsa svarets innehåll och arbeta med det på lämpligt sätt.
+När du får tillbaka ett svar från servern kan du hantera det som en vanlig Gleam-uppdelning för att få tillgång till svarskoden, rubrikerna och eventuell innehållsdata. Genom att använda returtypen `http.response` kan du också få tillgång till en mer detaljerad representation av hela svarspaketet.
 
-#Djupdykning
-Det finns en mängd olika bibliotek och metoder för att hantera HTTP-förfrågningar med grundläggande autentisering i Gleam. Du kan till exempel använda biblioteket "openssl" för att hantera SSL-certifikat vid autentisering, eller använda "base64" för att enkelt koda och avkoda användarnamn och lösenord i Base64.
+```Gleam
+import gleam/http
 
-#Se även
-- Gleam-dokumentation för HTTP-anrop: https://gleam.run/libraries/http/
-- OpenSSL-biblioteket för Gleam: https://github.com/lpil/gleam-openssl
-- Base64-biblioteket för Gleam: https://github.com/stenington/base64
+pub fn handle_response(response) {
+    let { status, headers, body } = response
+    // Gör något med svarskoden, rubrikerna och innehållet
+}
+
+pub fn handle_full_response(response) {
+    let { status, headers, body } = response
+    let http_response = http.response(status, headers, body)
+    // Gör något med den mer detaljerade representationen
+}
+```
+
+## Djupdykning
+
+När du skickar en förfrågan med grundläggande autentisering, är det viktigt att komma ihåg att lösenordet skickas som en bas64-kodad sträng, vilket betyder att det inte är säkert. Därför bör du undvika att använda grundläggande autentisering vid kritiska förfrågningar och istället överväga en starkare autentiseringsmetod som till exempel OAuth.
+
+En annan sak att vara medveten om är att det är möjligt att använda HTTPS tillsammans med grundläggande autentisering för en extra säkerhetsnivå. När du använder HTTPS krypteras både förfrågan och autentiseringsinformationen som skickas över nätverket, vilket gör det svårare för någon att få tag på dina autentiseringsuppgifter.
+
+## Se även
+
+- [HTTP Clients in Gleam](https://gleam.run/articles/http-clients/)
+- [Authenticate HTTP requests using Basic auth in Gleam](https://gist.github.com/wintondeshong/0329ab0d7aea9a146bdeec3ad38cbc96)

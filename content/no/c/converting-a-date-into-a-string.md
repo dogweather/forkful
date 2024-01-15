@@ -1,6 +1,7 @@
 ---
-title:                "C: Konvertere en dato til en streng"
-simple_title:         "Konvertere en dato til en streng"
+title:                "Konvertering av en dato til en streng"
+html_title:           "C: Konvertering av en dato til en streng"
+simple_title:         "Konvertering av en dato til en streng"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,52 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor ville noen ønske å konvertere en dato til en streng i programmering? Vel, det er flere grunner til dette. En vanlig situasjon er når du trenger å vise en dato i en leselig form for brukeren, for eksempel på et nettside eller i en applikasjon. Å konvertere datoen til en streng gjør det enklere å formatere og vise til brukeren.
+Konvertering av en dato til en streng er en vanlig oppgave som programmerere støter på når de jobber med datoer og tid i C. Det kan være nyttig å kunne representere en dato som en streng for å kunne vise den til brukere eller lagre den i en fil. 
 
 ## Hvordan
 
-```C 
+Det er flere måter å konvertere en dato til en streng i C, vi vil se på to av dem her. Først trenger vi å inkludere biblioteket <time.h> som inneholder funksjoner for å håndtere datoer og tid. Deretter kan vi bruke funksjonen `strftime()` for å konvertere en dato til en streng. La oss se på et eksempel:
+
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    //Oppretter en tidsstruktur
-    struct tm *t;
-    time_t now;
-    
-    //Henter nåværende tid
-    time(&now);
-    
-    //Bruker localtime-funksjonen for å konvertere datoen til en tidsstruktur
-    t = localtime(&now);
-    
-    //Bruker strftime-funksjonen for å konvertere tidsstrukturen til en streng
-    char date_string[20];
-    strftime(date_string, 20, "%d.%m.%Y", t);
-    
-    //Skriver ut datoen som en streng i det valgte formatet (dd.mm.åååå)
-    printf("Dagens dato: %s", date_string);
-    
-    return 0;
+int main() {
+    // Opprett en `tm` struktur som representerer 1. januar 2021 klokken 12:00
+    struct tm dato = {.tm_year = 121, .tm_mon = 0, .tm_mday = 1, .tm_hour = 12, .tm_isdst = -1};
+
+    // Bruk `strftime()` til å konvertere datoen til en strengformat
+    char streng[20]; // Oppretter en array for å lagre strengen
+    strftime(streng, 20, "%d.%m.%Y %H:%M", &dato);
+    // `20` er størrelsen på arrayet, "%d.%m.%Y %H:%M" er formatteringen og `&dato` er datoen som skal konverteres
+
+    // Skriv ut den konverterte datoen
+    printf("Dato som streng: %s\n", streng);
+
+    return 0; 
 }
 ```
-
-### Output
-
+Dette vil produsere følgende output:
 ```
-Dagens dato: 14.02.2021
+Dato som streng: 01.01.2021 12:00
+``` 
+
+Vi bruker her `strftime()` til å formatere datoen etter våre ønsker. Den første parameteren er en array som vil inneholde den konverterte datoen som en streng, den andre parameteren er størrelsen på arrayet, og den tredje parameteren er en formateringsstreng som bestemmer hvordan datoen skal se ut. Vi kan endre formateringen for å få en annen type streng.
+
+En annen måte å konvertere en dato til en streng er å bruke `asctime()` funksjonen som er en del av <time.h> biblioteket. Dette er spesielt nyttig når du vil ha en standardisert strengrepresentasjon av datoen. La oss se på et eksempel:
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    // Opprett en `tm` struktur som representerer 1. januar 2021 klokken 12:00
+    struct tm dato = {.tm_year = 121, .tm_mon = 0, .tm_mday = 1, .tm_hour = 12, .tm_isdst = -1};
+
+    // Bruk `asctime()` til å konvertere datoen til en streng
+    char* asctime_dato = asctime(&dato);
+
+    // Skriv ut den konverterte datoen
+    printf("Dato som streng: %s\n", asctime_dato);
+
+    return 0; 
+}
+```
+Dette vil produsere følgende output:
+```
+Dato som streng: Fri Jan  1 12:00:00 2021
 ```
 
-## Dykk ned
+Her ser vi at strengen er standardisert og viser dato og klokkeslett på en forhåndsbestemt måte.
 
-Å konvertere en dato til en streng kan virke som en enkel oppgave, men det finnes ulike måter å gjøre det på og flere aspekter å ta hensyn til. For eksempel kan formatet på datoen være forskjellig i ulike land og kulturer. Derfor er det viktig å velge riktig funksjon og passende format for den ønskede utgangen.
+## Deep Dive
 
-Det er også verdt å nevne at i noen programmeringsspråk, som Python, kan datoen konverteres til en streng uten behov for ekstra funksjoner. Men i C er det nødvendig å bruke spesialiserte funksjoner som strftime for å få ønsket utgang.
+Når vi bruker `strftime()` funksjonen, kan vi også inkludere lokale språkinnstillinger i formateringsstrengen for å få en dato på ønsket språk. Dette gjøres ved å bruke `%a` for forkortet ukenavn og `%A` for det fulle ukenavnet på språket. Tilsvarende kan `%b` og `%B` brukes for månednavn.
 
-## Se også
-
-- [strftime funksjonen i C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Hvordan formatere dato og tid i C](https://www.geeksforgeeks.org/date-time-programming-in-c-with-examples/?ref=lbp)
-- [C programmering for nybegynnere på norsk](https://www.ntnu.no/wiki/display/prog/
-C+programmering+for+nybegynnere+-+Leksjon+1)
+Det er også viktig å merke seg at `asctime()` returnerer en peker til en streng som er lagret internt i funksjonen. Dette betyr at du ikke kan endre denne strengen og forvente at datoen vil end

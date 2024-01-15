@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Lendo um arquivo de texto"
+title:                "Lendo um arquivo de texto"
+html_title:           "Kotlin: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+# Por que ler arquivos de texto em Kotlin?
 
-Ler um arquivo de texto é um passo fundamental na programação, pois muitas vezes precisamos acessar informações armazenadas em arquivos para processá-las ou exibi-las de alguma forma. Aprender a ler arquivos de texto é essencial para quem deseja se tornar um programador completo.
+Ler arquivos de texto é uma tarefa muito comum em programação, seja para importar dados, realizar manipulações ou simplesmente para extrair informações. Ao dominar a leitura de arquivos de texto em Kotlin, você terá uma habilidade valiosa que será útil em diversos projetos.
 
-## Como fazer
+## Como fazer isso em Kotlin?
 
-Para ler um arquivo de texto em Kotlin, podemos utilizar o método readText() da classe File. Este método lê o conteúdo do arquivo e o retorna como uma única string. Veja um exemplo abaixo:
+Em Kotlin, podemos ler arquivos de texto utilizando a classe `Scanner`, que nos permite percorrer o conteúdo do arquivo linha por linha. Para isso, primeiro precisamos criar uma instância da classe `Scanner` passando como parâmetro o caminho do arquivo que desejamos ler.
 
 ```Kotlin
-val file = File("arquivo.txt")
-val conteudo = file.readText()
-
-println(conteudo)
+val reader = Scanner(File("caminho/do/arquivo.txt"))
 ```
 
-No código acima, criamos um objeto File que representa o arquivo "arquivo.txt" e em seguida utilizamos o método readText() para ler seu conteúdo e o armazenamos na variável "conteudo". Depois, utilizamos o comando println() para exibir o conteúdo na tela.
-
-## Mergulho Profundo
-
-Além do método readText(), também existem outras formas de ler um arquivo de texto em Kotlin. Podemos utilizar o método readLines() para ler todas as linhas do arquivo e retorná-las como uma lista de strings. Veja um exemplo abaixo:
+Em seguida, podemos utilizar um laço de repetição para percorrer as linhas do arquivo através do método `nextLine()`.
 
 ```Kotlin
-val file = File("arquivo.txt")
-val linhas = file.readLines()
-
-for (linha in linhas) {
-    println(linha)
+while (reader.hasNextLine()) {
+    val linha = reader.nextLine()
+    //fazer manipulações com a linha lida
 }
 ```
 
-Este código irá ler todas as linhas do arquivo e imprimir cada uma delas na tela. Outra opção é utilizar o método forEachLine(), que executa uma ação para cada linha do arquivo, sem a necessidade de armazená-las em uma lista.
+Podemos também utilizar o método `useLines()` para ler o arquivo diretamente em formato de lista, o que facilita o acesso aos dados.
 
 ```Kotlin
-val file = File("arquivo.txt")
-file.forEachLine { linha ->
-    println(linha)
-}
+val linhas = File("caminho/do/arquivo.txt").useLines { it.toList() }
 ```
 
-Além disso, podemos utilizar a classe BufferedReader para ler o arquivo linha por linha de forma mais eficiente em casos em que o arquivo é muito grande.
+## Profundidade na leitura de arquivos em Kotlin
 
-## Veja Também
+Além da leitura básica de arquivos de texto, é possível realizar diversas operações mais complexas utilizando as ferramentas disponíveis em Kotlin. Por exemplo, podemos ler somente uma parte específica do arquivo, pular linhas e até mesmo utilizar expressões regulares para encontrar padrões dentro do conteúdo.
+
+Também é importante lembrar de sempre fechar o arquivo após a sua leitura, utilizando o método `close()`, ou utilizar a estrutura de controle `try-with-resources` para garantir que o arquivo será sempre fechado, mesmo em caso de erro durante a leitura.
+
+# Veja também
 
 - [Documentação oficial do Kotlin sobre leitura de arquivos](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html)
-- [Tutorial de leitura de arquivos em Kotlin](https://www.baeldung.com/kotlin/read-file)
-- [Exemplos práticos de leitura de arquivos em Kotlin](https://github.com/SimformSolutionsPvtLtd/Kotlin-Read-and-Write-Text-To-File/)
+- [Tutorial sobre leitura de arquivos em Kotlin](https://www.baeldung.com/kotlin-read-file)
+- [Exemplos práticos de leitura de arquivos em Kotlin](https://dev.to/caitlynmayers/reading-files-in-kotlin-55ia)

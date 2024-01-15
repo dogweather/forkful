@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Capitalizando uma string"
+title:                "Capitalizando uma string"
+html_title:           "Arduino: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string?
+## Por que
 
-Quando estamos trabalhando com strings em Arduino, muitas vezes precisamos manipular esses dados para que eles estejam no formato correto, como por exemplo, todas as primeiras letras em maiúsculo. Nesses casos, é importante saber como capitalizar uma string para que possamos apresentar os dados de forma eficiente.
+Capitalizar uma string pode ser útil em várias situações, como, por exemplo, tornar o texto mais legível para o usuário ou para realizar comparações mais precisas. É uma técnica simples que pode facilitar significativamente o manuseio de strings em seu código.
 
-## Como fazer?
+## Como Fazer
 
-Para capitalizar uma string em Arduino, podemos usar a função `toUpperCase()` da biblioteca `String` do Arduino. Veja abaixo um exemplo de código:
+Para capitalizar uma string em Arduino, podemos usar a função `toUpperCase()` do objeto String. Veja um exemplo abaixo:
 
 ```Arduino
-String texto = "capitalizar essa string";
+// Declarando uma string
+String texto = "ola mundo";
+
+// Convertendo para maiúsculo
 texto.toUpperCase();
-Serial.println(texto);
+
+// Imprimindo o resultado
+Serial.println(texto); // OLA MUNDO
 ```
 
-Neste exemplo, a função `toUpperCase()` irá transformar todas as primeiras letras de cada palavra em maiúsculo, resultando em "Capitalizar Essa String" ao imprimir na porta serial.
+É importante lembrar que a função `toUpperCase()` não altera a string original, apenas retorna uma versão maiúscula dela. Portanto, para salvar a string modificada, você deve atribuí-la a uma nova variável ou à mesma variável original.
 
-É importante ressaltar que a função `toUpperCase()` só irá alterar as letras que estão em minúsculo, mantendo as letras maiúsculas como estão. Além disso, essa função também pode ser usada com variáveis do tipo `char`.
+## Mergulho Profundo
 
-## Mais informações sobre capitalização de strings
+Ao usar a função `toUpperCase()`, é importante ter em mente que ela irá converter todos os caracteres da string para maiúsculo, incluindo, por exemplo, letras com acentos ou caracteres especiais. Além disso, a conversão é feita de acordo com a tabela ASCII, o que significa que letras acentuadas podem ser convertidas para caracteres diferentes do esperado em alguns casos.
 
-Uma maneira de capitalizar uma string é utilizando loops e condições para percorrer a string e alterar as letras desejadas. Porém, ao utilizar a função `toUpperCase()` do Arduino, essa tarefa se torna mais simples e eficiente.
+Uma alternativa seria criar sua própria função para capitalizar uma string, levando em consideração suas especificidades e necessidades. Outro detalhe importante é garantir que a string esteja sendo devidamente formatada antes de ser capitalizada, a fim de evitar erros inesperados no código.
 
-Além disso, é importante ressaltar que a função `toUpperCase()` pode ser utilizada em conjunto com outras funções de manipulação de strings, como `substring()` e `replace()`.
+## Veja Também
 
-## Veja também
-
-- Documentação oficial do Arduino sobre a função `toUpperCase()`: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
-- Tutoriais sobre strings em Arduino: https://www.embarcados.com.br/strings-em-arduino/
-- Vídeo tutorial explicando como capitalizar strings em Arduino: https://www.youtube.com/watch?v=gjQyZVAerEs
+- [Tutorial sobre Strings no Arduino](https://www.arduino.cc/en/Tutorial/String)
+- [Documentação oficial da função `toUpperCase()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- [Tabela ASCII](https://www.ascii-code.com/)

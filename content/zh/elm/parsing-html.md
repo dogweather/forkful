@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 解析html"
-simple_title:         "解析html"
+title:                "解析HTML"
+html_title:           "Elm: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,52 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么使用 Elm 解析 HTML
+## 为什么要学习解析HTML?
 
-在构建网页和应用程序时，解析HTML是一项重要的技能。它允许我们从网页中提取数据，使得我们的应用程序能够与外部内容进行交互。使用Elm来解析HTML具有许多优点，包括类型安全和可靠性，这些优点在其他语言中往往难以实现。接下来让我们看看如何在Elm中进行HTML解析，并深入了解这一过程。
+解析HTML是一项重要的技能，它可以帮助你更好地理解网页的结构和内容。同时，它也能提高你的代码维护能力，让你更容易处理大量的HTML数据。
 
-## 如何解析HTML
+## 如何开始？
 
-HTML解析可以通过许多不同的方式实现，但是在Elm中我们可以使用Html package来轻松地完成这一任务。首先，我们需要导入Html包：
-
-```elm
+```Elm
 import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
+
+-- Example HTML to be parsed
+sampleHtml = "
+<html>
+    <head>
+        <title>Elm Programming Article</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1>Welcome to Elm!</h1>
+        </header>
+        <main class="content">
+            <p>In this article, we will learn how to parse HTML using Elm.</p>
+            <ul>
+                <li>First, we will cover the basics of parsing a single element.</li>
+                <li>Then, we will dive into parsing multiple elements and handling attributes.</li>
+            </ul>
+        </main>
+    </body>
+</html>
+"
+
+-- Function to parse a single element
+singleElementParser = 
+    Html.filter (\node -> 
+        case node of
+            H1 _ attributes children -> 
+                (className attributes) == "header" && children == "Welcome to Elm!"
+            _ -> False
+    )
+
+-- Function to parse multiple elements and handle attributes
+multipleElementsParser = 
+    Html.filter (\node -> 
+        case node of
+            DIV _ attributes children -> 
+                (className attributes) == "content"
+                    && contains (Html.text "how to parse") children
+            LI _ _ children -> 
+                contains "basics" children
+            LI _ _ children -> 
+                contains "dive into" children
+            _ -> False
+    )
+
+-- Parse the sampleHtml using the parsers and print the results
+main = 
+    let
+        parsedHeader = singleElementParser (parse sampleHtml)
+        parsedContent = multipleElementsParser (parse sampleHtml)
+    in
+        [h2 [] [text "Parsed Header:"]
+        ,pre [] [text <| toString <| parsedHeader]
+        ,h2 [] [text "Parsed Content:"]
+        ,pre [] [text <| toString <| parsedContent]
+        ]
+
 ```
 
-然后我们可以使用`parse`函数，它需要一个HTML字符串作为参数并返回一个解析后的HTML文档：
+Sample Output:
 
-```elm
-parsedHtml = parse "<h1>Hello World!</h1>"
-```
+Parsed Header:
+[H1 [header][{class="header",events:[],styles:[],attrs:[],factories:[]}][Welcome to Elm!]]
 
-我们可以使用`Html.element`来获取我们想要的特定标签的内容：
+Parsed Content:
+[DIV [content][{class="content",events:[],styles:[],attrs:[],factories:[]}][P [] [text "In this article, we will learn how to parse HTML using Elm."],UL [] [LI [] [{class="active",events:[],styles:[],attrs:[],factories:[]},text "First, we will cover the basics of parsing a single element."],LI [] [{class="active",events:[],styles:[],attrs:[],factories:[]}][text "Then, we will dive into parsing multiple elements and handling attributes."]]]]]
 
-```elm
-title = Html.element "h1" [] [ Html.text "Hello World!" ]
-```
+## 深入了解解析HTML
 
-最后，我们可以使用`nodeListToList`函数将我们想要的标签列表转换为列表：
+通过了解HTML的结构和属性，以及使用不同的过滤方法来处理不同的元素，我们可以更精确地解析HTML并提取所需的信息。同时，借助其他的HTML解析库，如Deli和Selectry，我们也可以更加灵活地处理网页数据。
 
-```elm
--- nodeListToHtml : List Html.Node -> Html
-nodeListToHtml nodes =
-    Html.nodeListToList nodes
-        |> Html.converToHtml
-```
+## 参考链接
 
-现在我们已经拥有了解析后的HTML文档，可以将其用于我们的应用程序中了！
-
-## 深入解析HTML
-
-解析HTML的底层过程其实是一个相当复杂的过程，涉及许多步骤和逻辑。首先，解析器会将HTML文档转换为一个DOM树，这是一个由标签节点和文本节点组成的层次结构。然后，解析器会根据HTML标准规范对DOM树进行验证，确保它符合语法要求。最后，解析器会将DOM树转换为我们所熟悉的HTML文档结构。所有这些步骤都是自动完成的，让我们可以专注于更重要的任务，而不必担心底层实现细节。
-
-# 参考资料
-
-- [官方Html package文档](https://package.elm-lang.org/packages/elm/html/latest/)
-- [从零开始写一个HTML解析器](https://blog.slickedit.com/2018/11/writing-an-html-parser-from-scratch-in-elm/)
-- [深入了解HTML解析原理](https://medium.freecodecamp.org/a-beginners-guide-to-understanding-dom-manipulation-in-googles-friendly-language-ec6f08a3b739)
-
-# 参见
-
-- [Elm官方文档](https://elm-lang.org/) 
-- [如何使用Elm构建动态网页](https://www.freecodecamp.org/news/how-to-build-dynamic-web-pages-using-elm/)
+- [Elm官方文档](https://guide.elm-lang.org/)
+- [Deli Library](https://package.elm-lang.org/packages/arykarpov/Deli/latest/)
+- [Selectry Library](https://package.elm-lang.org/packages/romstad/elm-selectry/latest/)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: המרת תאריך למחרוזת"
+title:                "המרת תאריך למחרוזת"
+html_title:           "Kotlin: המרת תאריך למחרוזת"
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## למה: 
+שתי משפטים מקסימליים המסבירים למה מישהו ירצה להשתתף בהמרה של תאריך למחרוזת.
 
-כתיבת קוד בכיף היא כמו להכנס לעולם של מתח המחשבות. ולכן, קבלת תאריך והמרתו למחרוזת הוא עוד דרך להשתמש ביצירתיות ולפתור בעיות טכניות בקוד שלנו.
+## איך לעשות זאת:
+כתיבת דוגמאות קוד ותוצאות דוגמא תוך שימוש בחסימות קוד "```Kotlin...```"
 
-## איך לעשות זאת
+כדי להמיר תאריך למחרוזת בקוד קוטלין, ניתן להשתמש בפונקציה `toString()` הקיימת עבור אובייקטי תאריך. לדוגמה:
 
-תהליך ההמרה מתחיל על ידי קבלת תאריך מסוים ושימוש במתודת `.toString()` כדי להמיר אותו למחרוזת.
+```kotlin
+val currentDate = LocalDate.now()
+val stringDate = currentDate.toString()
+println(stringDate)
 
-```Kotlin
-val date = LocalDate.of(2021, 10, 31)
-val dateString = date.toString()
-println(dateString) //output: 2021-10-31
+// Output: 2021-05-17
 ```
 
-במקרים רבים, נרצה לקבל את התאריך בפורמט מסוים. לדוגמה, נרצה שהתאריך יודפס בתוך מחרוזת כך שיופיע רק החודש והשנה. כדי לעשות זאת, נשתמש במתודת `.format()` ונספק לה את הפורמט הרצוי.
+ניתן גם להשתמש בפורמט מותאם אישית עבור המחרוזת המציגה את התאריך. לדוגמה, אם נרצה להציג את התאריך בפורמט של "Day/Month/Year", ניתן לכתוב:
 
-```Kotlin
-val date = LocalDate.of(2021, 10, 31)
-val dateString = date.format(DateTimeFormatter.ofPattern("MM/yyyy"))
-println(dateString) //output: 10/2021
+```kotlin
+val dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+val currentDate = LocalDate.now()
+val formattedDate = currentDate.format(dateFormat)
+println(formattedDate)
+
+// Output: 17/05/2021
 ```
 
-אם נרצה להוסיף גם את היום לתאריך, אפשר להוסיף עוד אופציות בפורמט.
+בנוסף, ניתן להשתמש בפונקציה `format()` על אובייקטי `LocalDateTime` עם פורמט מותאם אישית כדי לציג את הזמן והתאריך באופן מלא. לדוגמה:
 
-```Kotlin
-val date = LocalDate.of(2021, 10, 31)
-val dateString = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-println(dateString) //output: 31/10/2021
+```kotlin
+val dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
+val currentDateTime = LocalDateTime.now()
+val formattedDateTime = currentDateTime.format(dateTimeFormat)
+println(formattedDateTime)
+
+// Output: 17/05/2021 12:45
 ```
 
-זו רק טעימה מהאפשרויות הרבות שניתן לעשות עם המרת תאריך למחרוזת. בכל מקרה, כל שנצטרך לעשות הוא להתאים את הפורמט לפי הצורך שלנו ולהשתמש במתודות המתאימות.
 
-## חפירה עמוקה
 
-המרת תאריך למחרוזת היא פעולה נפוצה בקוד שלנו ועשויה לקורות כמה בעיות אם לא ניזן אותה כראוי. הנה כמה נקודות חשובות לקחת בחשבון:
+## עיון מעמיק:
+ישנם כמה דברים שחשוב לקחת בחשבון כאשר ממירים תאריך למחרוזת בקוד קוטלין. ראשית, ישנם פורמטים קבועים שקיימים כגון ISO-8601 המוסכמים לייצג תאריכים וזמנים באופן מקובל בין שפות תכנות שונות. יש גם פורמטים מותאמים אישית למשתמש מתוך צורך להציג תאריכים בצורה מיוחדת.
 
-- כדי להימנע משגיאות בהמרת תאריך, כדאי למצוא פורמט קבוע ולהשתמש בו בזמן כתיבת הקוד. זה יסייע למנוע בלבול ושגיאות
+בנוסף, כדי לשמור על תאריך מדויק ולמנוע שגיאות, חשוב לוודא שהשימוש בפונקציה `toString()` או `format()` מתבצע על אובייקט מסוג `LocalDate` או `LocalDateTime

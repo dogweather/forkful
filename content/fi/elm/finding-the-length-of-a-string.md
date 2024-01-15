@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Elm: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,32 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä miksi joku haluaisi laskea merkkijonon pituuden. Se voi olla tärkeää sovelluksissa, joissa käsitellään käyttäjän syöttämiä tietoja tai kun halutaan tarkistaa, että syöte ei ylitä tiettyä pituutta.
+On monia tilanteita, joissa tarvitsemme tietoa merkkijonon pituudesta, kuten käyttäjän syötteen tarkistamisessa tai tekstin muotoilussa. Elm-ohjelmointikielellä tämän toiminnon toteuttaminen on helppoa ja tehokasta.
 
-## Kuinka laskea merkkijonon pituus
-
-Merkkijonon pituuden laskeminen Elm-ohjelmoinnissa on helppoa. Voit käyttää sisäänrakennettua `String.length`-funktiota, joka palauttaa merkkijonon pituuden.
+## Kuinka
 
 ```Elm
-let pituus = String.length "Tervetuloa"
-
--- pituus:n arvoksi tulee 11
-````
-
-Voit myös laskea pituuden dynaamisesti käyttämällä muuttujia ja käyttämällä `toString`-funktiota muuttaaksesi muuttujan arvon merkkijonoksi.
-
-```Elm
-let viesti = "Hei " ++ etunimi
-let pituus = String.length (toString viesti)
-
--- Jos etunimesi on "Matti", pituus:n arvoksi tulee 5
+length : String -> Int
 ```
 
-## Syvemmälle merkkijonon pituuden laskemiseen
+Ensimmäinen askel merkkijonon pituuden löytämisessä on käyttää sisäänrakennettua `length` -funktiota, joka ottaa merkkijonon parametrina ja palauttaa sen pituuden Int-tyypissä. Esimerkiksi:
 
-Vaikka merkkijonon pituuden laskeminen onkin yksinkertaista, on hyödyllistä ymmärtää hieman siitä, miten se tapahtuu taustalla. Merkkijono koostuu merkeistä, joita voit ajatella numeroina. Esimerkiksi A-kirjain voi olla numero 65, B-kirjain 66 ja niin edelleen. Merkkijonon pituuden laskeminen tarkoittaa siis käytännössä merkkien lukumäärän laskemista.
+```Elm
+length "Tämä on esimerkkimerkkijono" --> 26
+```
+
+## Syvempi sukellus
+
+Vaikka Elm tarjoaa kätevän sisäänrakennetun `length` -funktion, on hyödyllistä ymmärtää, miten tämä toiminto toimii taustalla. Merkkijono koostuu merkeistä, ja `length` -funktio laskee näiden merkkien määrän ja palauttaa sen pituuden. Voit myös käyttää `length` -funktion sijasta `String.toList` -funktiota ja lukea palautetun listan pituuden.
+
+```Elm
+String.toList "Hei" --> [ 'H', 'e', 'i' ]
+List.length [ 'H', 'e', 'i' ] --> 3
+```
 
 ## Katso myös
 
-- [Elm String -dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm-ohjelmoinnin aloittaminen -opas](https://guide.elm-lang.org)
+- [Elm-kielen virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [Merkkijonon käsittely Elmissä](https://www.oliverandcode.com/blog/elm/working-with-strings-in-elm/) tutorial

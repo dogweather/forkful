@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Omvandla ett datum till en sträng"
-simple_title:         "Omvandla ett datum till en sträng"
+title:                "Omvandling av ett datum till en sträng"
+html_title:           "Haskell: Omvandling av ett datum till en sträng"
+simple_title:         "Omvandling av ett datum till en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna konvertera ett datum till en sträng kan vara användbart för att visa datum i ett läsbart format, spara datum i en databas eller för att utföra beräkningar baserade på datum.
 
-## Så här gör du
-För att konvertera ett datum till en sträng i Haskell behöver du först importera "Data.Time" biblioteket. Sedan kan du använda funktionen `formatTime` för att specificera formatet på den önskade strängen. Här är ett exempel på hur du skulle kunna konvertera dagens datum till en sträng:
+Att konvertera en datum-till-sträng kan vara användbart när du vill visa datuminformation för användare, spara datumet i en databas eller manipulera datumet på olika sätt. Med Haskell kan du enkelt konvertera datum till en sträng med hjälp av några inbyggda funktioner.
+
+## Hur man gör
+
+Först måste du importera modulen "Data.Time" för att kunna använda funktionerna för datum och tid i Haskell. Se till att du också har "Control.Monad" modulen importerad för att använda "liftM" funktionen.
 
 ```Haskell
-import Data.Time
-
-main = do
-  today <- getCurrentTime
-  let dateString = formatTime defaultTimeLocale "%d/%m/%Y" today
-  putStrLn dateString
+import Data.Time (formatTime, getCurrentTime, defaultTimeLocale)
+import Control.Monad (liftM)
 ```
 
-Detta skulle ge följande output:
+För att konvertera ett datum till en sträng behöver du två saker: datumet självt och ett formateringssträng. Formateringssträngen berättar för Haskell vilken typ av format du vill ha för ditt datum. Du kan använda olika symboler för år, månad, dag, timme, minut och sekund. Här är ett exempel på hur du kan konvertera dagens datum till en sträng i formatet "ÅÅÅÅ-MM-DD":
 
+```Haskell
+getCurrentTime >>= liftM (formatTime defaultTimeLocale "%Y-%m-%d")
 ```
-23/05/2021
-```
+
+Du kan också ta en titt på System.Locale modulen för att se alla möjliga symboler du kan använda i formateringssträngen.
 
 ## Djupdykning
-När man konverterar ett datum till en sträng är det viktigt att förstå formatet som man vill ha på strängen. I exemplet ovan använde vi `%d` för att få dagens datum och `%m` för att få månadens numeriska värde. Men hur vet man vilka tecken man ska använda för att få det önskade resultatet?
 
-En användbar resurs för att lära sig om olika formateringsalternativ är [Haskell's Data.Time dokumentation](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html). Detta dokument beskriver alla tillgängliga formatteringsalternativ för att konvertera datum till strängar.
+När du använder formatTime funktionen, är det viktigt att förstå hur tidszoner fungerar. Som standard kommer funktionen att använda den lokala tidszonen på din dator. Om du vill använda en annan tidszon, måste du använda "z" eller "Z" symbolen i din formateringssträng och specificera en tidszon som en parameter. Du kan också använda "X" för att få tidszonen i timmar och minuter.
 
-Det är också viktigt att förstå att resultatet av `formatTime` funktionen kommer att vara en `String` i Haskell, vilket innebär att du kan använda den på samma sätt som du skulle använda andra strängar i ditt program.
+Haskell erbjuder också en "parseTimeM" funktion som gör det möjligt att konvertera en sträng till ett datum, vilket kan vara användbart om du behöver hämta datumet från en databas eller en användare.
 
 ## Se även
-* [Data.Time dokumentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-* [Haskell's standard bibliotek](https://www.haskell.org/onlinereport/standard-prelude.html) (sektion 6.6 för information om `formatTime` funktionen)
+
+- [Haskell Datum och Tid](https://wiki.haskell.org/Date_and_time)
+- [Dokumentation för Data.Time-modulen](https://hackage.haskell.org/package/time-1.8.0.2/docs/Data-Time.html)
+- [Tutorial för att arbeta med Datum och Tid i Haskell](https://www.schoolofhaskell.com/user/edwardk/tutorial-for-1-0-1-1-time-module)

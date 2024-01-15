@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Att få den aktuella datumen"
-simple_title:         "Att få den aktuella datumen"
+title:                "Att hämta aktuellt datum"
+html_title:           "Kotlin: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,61 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Innan vi dyker in i hur man hämtar det aktuella datumet i Kotlin, låt oss först prata om varför det är viktigt. Att kunna hämta det aktuella datumet är en viktig del av många programmeringsuppgifter. Det kan hjälpa oss att hålla reda på när en viss händelse inträffade, spela in tidsstämplingar för transaktioner eller enkelt visa det aktuella datumet för användaren i ett gränssnitt.
 
-Att kunna hämta den nuvarande datumet är en viktig funktion i många Kotlin-program. Det kan användas för att visa tidsstämplar, planera och schemalägga uppgifter, eller bara för att hålla spår på vilken dag det är. I denna blogginlägg kommer vi att gå igenom hur man enkelt kan hämta det nuvarande datumet med hjälp av Kotlin.
+## Hur man hämtar det aktuella datumet
+Att hämta det aktuella datumet i Kotlin är enkelt och kan göras på flera olika sätt. Ett sätt är att använda klassen `java.util.Calendar` och dess `getInstance()` metod för att skapa en instans av kalendern.
 
-## Hur man gör
-
-För att få det nuvarande datumet i Kotlin kan du använda klassen `LocalDate`. Detta ger dig datumet i dagens lokala tidszon. För att hämta datumet behöver du bara skriva följande kod:
-
-```kotlin
-val date = LocalDate.now()
-println(date)
+```Kotlin
+val currentDate = Calendar.getInstance()
+println(currentDate.time) // output: Sat Apr 03 14:19:46 EDT 2021
 ```
 
-Kör koden och du kommer att se det nuvarande datumet i konsolen.
+En annan metod är att använda klassen `java.time.LocalDate` från Javas nya tids-API.
 
-Om du vill ha mer detaljerad information om datumet, som till exempel vilken veckodag det är eller hur många dagar det är i det aktuella året, kan du använda klassen `LocalDate.now()` tillsammans med olika metoder. Här är ett exempel som visar datumet i ett specifikt format:
-
-```kotlin
-val date = LocalDate.now()
-val dayOfWeek = date.dayOfWeek // hämtar veckodagen
-val dayOfMonth = date.dayOfMonth // hämtar dagen i månaden
-val month = date.month // hämtar månaden
-val year = date.year // hämtar året
-println("Idag är det ${dayOfWeek}, den ${dayOfMonth} ${month} ${year}") // skriver ut datumet i ett format som "Torsdag, den 1 juli 2021"
-```
-
-Om du vill få datumet i en annan tidszon kan du använda metoden `atZone()` och ange den önskade tidszonen som ett argument. Här är ett exempel:
-
-```kotlin
-val date = LocalDate.now().atZone(ZoneId.of("America/New_York"))
-println(date)
-```
-
-Du kan också använda `LocalDate.now()` tillsammans med klassen `DateTimeFormatter` för att få datumet i önskat format. Det finns många fördefinierade formateringsalternativ, men du kan också skapa dina egna. Här är ett exempel där vi använder en anpassad formatterare för att få datumet i formatet "dd/MM/yyyy":
-
-```kotlin
-val date = LocalDate.now()
-val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy") // använder en anpassad formatterare
-val formattedDate = formatter.format(date) // formaterar datumet enligt den anpassade formatteraren
-println(formattedDate) // skriver ut datumet i formatet "01/07/2021"
+```Kotlin
+val currentDate = LocalDate.now()
+println(currentDate) // output: 2021-04-03
 ```
 
 ## Djupdykning
+För de som vill ha lite djupare kunskap om hur man hämtar det aktuella datumet i Kotlin, låt oss titta på det första exempelkodet igen och bryta ner det steg för steg.
 
-Om du vill ha ännu mer kontroll över datumet, kan du använda klassen `LocalDate` tillsammans med klassen `LocalDateTime`. LocalDateTime innehåller även tid och kan användas för att skapa specifika datum och tider. Här är ett exempel där vi skapar en LocalDateTime och sedan hämtar datumet:
+Först skapar vi en instans av `Calendar` klassen med hjälp av `getInstance()` metoden. Detta ger oss en kalenderinstans med aktuellt datum och tid som standard. Vi kan också ställa in ett specifikt datum och tid på kalendern om det behövs.
 
-```kotlin
-val dateTime = LocalDateTime.of(2021, Month.JULY, 1, 12, 0, 0) // skapar en lokal datetime med år, månad, dag, timme, minut och sekund
-val date = dateTime.toLocalDate() // hämtar datumet
-println(date) // skriver ut datumet "2021-07-01"
-```
+Sedan använder vi `time` metoden för att få ett `java.util.Date` objekt som representerar det aktuella datumet och tiden. Sedan skriver vi ut det till konsolen med `println()`.
 
-Det finns också många andra användbara metoder i klassen `LocalDate`, som till exempel `plusDays()` och `minusDays()` för att lägga till eller dra av dagar från datumet. Du kan utforska alla tillgängliga metoder på Kotlin's officiella dokumentationssida för `LocalDate`.
+Om vi istället använder `LocalDate` måste vi förstå den nya tids-API:et som introducerades i Java 8. Denna API använder den ISO-datum standarden och har förbättrad funktionalitet jämfört med den äldre `Calendar` klassen.
 
-### Se även
+## Se även
+Om du vill lära dig mer om att hämta datum i Kotlin, här är några användbara resurser:
 
-- [Kotlin's officiella dokumentation för LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
-- [Kotlin's officiella dokumentation för LocalDateTime](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date-time/)
-- [DateTimeFormatter-klassens dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-date-time-formatter/)
+- [Dokumentation för Java Calendar klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Dokumentation för Java 8 tids-API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlin Standard Library - Datum och tid](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/index.html#date-time-apis)

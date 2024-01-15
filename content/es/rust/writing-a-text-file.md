@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Escribiendo un archivo de texto"
+title:                "Escribiendo un archivo de texto"
+html_title:           "Rust: Escribiendo un archivo de texto"
 simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto en Rust
+## ¿Por qué escribir un archivo de texto?
 
-Si estás interesado en aprender Rust, una de las tareas básicas que deberías saber es cómo escribir un archivo de texto. Los archivos de texto son una forma común de guardar y leer información en cualquier lenguaje de programación, por lo que es importante saber cómo hacerlo en Rust también.
+Escribir un archivo de texto puede ser útil en varias situaciones, como por ejemplo guardar datos importantes, crear un archivo de configuración o simplemente dejar una nota para uno mismo o para alguien más.
 
-## Cómo escribir un archivo de texto en Rust
+## Cómo hacerlo
 
-Para escribir un archivo de texto en Rust, primero debes abrir un archivo en modo escritura y luego escribir la información que desees guardar en él. Esto se puede hacer utilizando el método `File::create()` para crear un nuevo archivo y el método `write_all()` para escribir en él.
+Para escribir un archivo de texto en Rust, utilizamos el módulo de manejo de archivos llamado `std::fs`. Primero, debemos importarlo añadiendo `use std::fs;` al principio de nuestro código. Luego, podemos utilizar su método `write` para crear el archivo y escribir en él. A continuación, se muestra un ejemplo de cómo escribir "Hola Mundo" en un archivo de texto llamado `saludo.txt`:
 
-```rust
-use std::fs::File;
-use std::io::Write;
+```Rust
+use std::fs; // importar el módulo de manejo de archivos
 
 fn main() {
-    // Creamos un nuevo archivo llamado "ejemplo.txt"
-    let mut archivo = File::create("ejemplo.txt")
-        .expect("No se pudo crear el archivo");
-
-    // Escribimos una cadena de texto en el archivo
-    archivo.write_all(b"Hola, esto es un ejemplo de archivo de texto escrito en Rust!")
-        .expect("No se pudo escribir en el archivo");
-
-    // Finalizamos el programa
-    println!("Archivo de texto escrito exitosamente!");
+    // Escribir en el archivo
+    fs::write("saludo.txt", "Hola Mundo").expect("No se pudo escribir en el archivo");
 }
 ```
 
-El código anterior creará un archivo llamado "ejemplo.txt" en la misma ubicación que el archivo de Rust y escribirá la cadena de texto en él. Si ejecutas este código varias veces, notarás que cada vez que se ejecuta, el archivo se sobrescribe con la nueva información.
+Si el archivo ya existe, el método `write` sobrescribirá su contenido. Si queremos agregar texto al final del archivo, podemos utilizar el método `append` en su lugar. Además, podemos utilizar la macro `format!` para incluir variables o expresiones en nuestro texto. A continuación, se muestra un ejemplo de cómo agregar un nombre al saludo anterior:
 
-## Profundizando en la escritura de archivos de texto en Rust
+```Rust
+use std::fs; // importar el módulo de manejo de archivos
 
-Si deseas tener un mayor control sobre cómo se escribe la información en un archivo de texto, hay algunas cosas adicionales que puedes hacer. Por ejemplo, si quieres agregar texto a un archivo existente en lugar de sobrescribirlo, puedes usar el método `File::open()` para abrir el archivo en modo de apertura y luego usar el método `write_all()` con la bandera `File::append()` para agregar información nueva al final del archivo.
+fn main() {
+    let nombre = "Pedro";
 
-También es importante conocer diferentes métodos para convertir tipos de datos en cadenas de texto, ya que solo se pueden escribir cadenas en un archivo de texto. Puedes usar el método `.to_string()` para convertir un tipo de dato en una cadena o el macro `format!()` para crear una cadena con múltiples variables.
+    // Agregar nombre al saludo
+    let saludo = format!("Hola {}", nombre);
+
+    // Escribir en el archivo
+    fs::append("saludo.txt", saludo).expect("No se pudo escribir en el archivo");
+}
+```
+
+Una vez que hayamos escrito en nuestro archivo, podemos comprobar su contenido abriendo el archivo en un editor de texto o utilizando el método `read_to_string` para leer su contenido y mostrarlo por pantalla. También podemos utilizar el método `metadata` para obtener información sobre el archivo, como su tamaño, fecha de creación, etc.
+
+## Profundizando
+
+Además de escribir en un archivo de texto, también podemos crearlo, eliminarlo, renombrarlo y moverlo utilizando los métodos proporcionados por el módulo `std::fs`. También es importante tener en cuenta que, al igual que con cualquier operación de entrada/salida, es recomendable manejar los posibles errores que puedan surgir al escribir en un archivo.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre manipulación de archivos](https://doc.rust-lang.org/std/fs/index.html)
-- [Tutorial de escritura de archivos en Rust](https://www.educative.io/edpresso/how-to-write-to-a-file-in-rust)
-- [Ejemplos de escritura de archivos en Rust](https://www.tutorialspoint.com/rust/rust_file_io.htm)
+- [La documentación oficial de Rust sobre manejo de archivos](https://doc.rust-lang.org/std/fs)
+- [Un tutorial sobre escritura de archivos en Rust](https://www.rust-lang.org/learn/get-started#working-with-files)
+- [Un ejemplo de proyecto en GitHub que utiliza escritura de archivos en Rust](https://github.com/PistonDevelopers/hematite_fileserver/blob/master/src/main.rs)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+html_title:           "C: Wysyłanie żądania HTTP"
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,64 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach większość aplikacji internetowych korzysta z komunikacji z zasobami zewnętrznymi, takimi jak bazy danych, serwery plików lub API. Aby to osiągnąć, musimy wykorzystać mechanizm znanym jako protokół HTTP (Hypertext Transfer Protocol). Dzięki temu możemy łatwo wysyłać i odbierać dane z różnych źródeł.
+W programowaniu często potrzebujemy komunikować się z serwerami internetowymi, wysyłając do nich żądania i oczekując odpowiedzi. W języku C możemy wykorzystać bibliotekę `libcurl`, aby w prosty sposób wysyłać zapytania HTTP.
 
-## Jak to zrobić
+## Jak zacząć
 
-Poniżej przedstawiamy przykładowy kod w języku C, który wyświetla dane odpowiedzi z serwera po wysłaniu żądania HTTP GET. Kod ten wykorzystuje bibliotekę libcurl, która jest dostępna w większości systemów operacyjnych.
+Najpierw musimy zaimportować bibliotekę `libcurl` w naszym kodzie. Możemy to zrobić za pomocą dyrektywy `#include <curl/curl.h>`. Następnie możemy zdefiniować funkcję, która będzie wysyłać nasze żądanie. W tym przypadku będzie to funkcja o nazwie `send_request`.
 
-```
-#include <stdio.h>
+```C
 #include <curl/curl.h>
 
-int main(void)
-{
-    // Inicjalizacja libcurl
-    CURL *curl;
-    CURLcode res;
-    
-    // Przygotowanie adresu URL
-    char *url = "https://example.com";
-
-    // Inicjalizacja i konfiguracja sesji curl
-    curl = curl_easy_init();
-    if(curl) {
-        // Ustawianie URL
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-        // Ustawianie opcji FOLLOWLOCATION w przypadku przekierowania
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-        
-        // Wysyłanie żądania GET i odbieranie odpowiedzi
-        res = curl_easy_perform(curl);
-        
-        // Sprawdzanie czy wystąpił błąd
-        if(res != CURLE_OK)
-          fprintf(stderr, "Błąd: %s\n",
-                  curl_easy_strerror(res));
-    
-        // Zamykanie curl
-        curl_easy_cleanup(curl);
-    }
-    return 0;
+void send_request() {
+    // Tutaj będziemy wysyłać żądanie
 }
 ```
 
-Po uruchomieniu powyższego kodu, zobaczymy w konsoli wyświetloną zawartość strony https://example.com. Oczywiście możemy zmienić adres URL na inny i wysłać odpowiednią metodą (np. POST) oraz dodawać nagłówki lub dane do żądania.
+Teraz możemy stworzyć zmienną typu `CURL`, która będzie przechowywać nasze połączenie HTTP. Użyjemy funkcji `curl_easy_init()` aby ją zainicjować.
+
+```C
+CURL *curl = curl_easy_init();
+```
+
+Następnie ustawiamy URL serwera, do którego chcemy się połączyć, za pomocą funkcji `curl_easy_setopt()`. W tym przypadku będzie to http://example.com.
+
+```C
+curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+```
+
+Teraz możemy wysłać nasze żądanie, używając funkcji `curl_easy_perform()`. W przypadku sukcesu, funkcja zwróci `CURLE_OK`.
+
+```C
+CURLcode res = curl_easy_perform(curl);
+if (res != CURLE_OK) {
+    // Obsłuż błąd
+}
+```
+
+Po zakończeniu połączenia, musimy jeszcze zwolnić pamięć, używając funkcji `curl_easy_cleanup()`.
+```C
+curl_easy_cleanup(curl);
+```
 
 ## Deep Dive
 
-Wysyłanie żądania HTTP za pomocą biblioteki libcurl odbywa się poprzez wywołanie funkcji `curl_easy_perform()`. W odpowiedzi otrzymujemy kod stanu (ang. status code), który informuje nas o wyniku wysyłanego żądania. Na przykład:
+Wysyłanie prostej żądania HTTP za pomocą biblioteki `libcurl` jest łatwe, ale biblioteka ta oferuje również wiele innych funkcji. Na przykład możemy ustawić różne opcje dla naszego żądania, takie jak nagłówki, limity czasu czy dane do wysłania. Możemy również przetwarzać odpowiedź serwera, wydobywając z niej potrzebne nam informacje.
 
-- `200` - żądanie zostało pomyślnie przetworzone
-- `301` - przeniesiono zasób na stałe
-- `404` - żądany zasób nie został znaleziony
-- `500` - wewnętrzny błąd serwera
+Każda z funkcji, takich jak `curl_easy_setopt()` czy `curl_easy_perform()`, ma wiele opcji dostępnych w dokumentacji `libcurl`. Możemy zapoznać się z nimi i dostosować wysyłane żądanie do naszych potrzeb.
 
-Dodatkowo, w przypadku żądań POST, musimy ustawić daną do wysłania i jej rozmiar za pomocą funkcji `curl_easy_setopt()`. Warto również wspomnieć o funkcjach, które pozwalają nam ustawiać nagłówki żądania i odbierać dane pobrane z odpowiedzi serwera.
+## Zobacz też
 
-Mimo że w tym przykładzie korzystamy z biblioteki libcurl, istnieją również inne sposoby na wysyłanie żądań HTTP w języku C, takie jak biblioteka cURLpp czy funkcje dostępne w systemie operacyjnym.
-
-## Zobacz również
-
-- Oficjalna strona libcurl: https://curl.haxx.se/libcurl/
-- Poradnik do biblioteki libcurl (ang.): https://ec.haxx.se/libcurl-programming.html
+- [Oficjalna dokumentacja biblioteki `libcurl`](https://curl.se/libcurl/)
+- [Przykłady użycia w języku C](https://curl.se/libcurl/c/example.html)

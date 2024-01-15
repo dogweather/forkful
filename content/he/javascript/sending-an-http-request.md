@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Javascript: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,30 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום וברוכים הבאים לפוסט פרוגרמינג בסיסי ב-Javascript! היום נדבר על כיצד לשלוח בקשת HTTP ב-Javascript ולמה יכולה להיות צורה שימושית לעשות זאת.
+## למה
 
-##למה
+למה מישהו יעסוק בשליחת בקשת HTTP? בעצם, בכדי לתקשר עם שרת חיצוני ולקבל תגובה ממנו. זה נחשב כפרוטוקול תקשורת רחב מקובל לאתרים ויישומים מרובי-שימוש ומאפשר למשתמש לבצע פעולות באתרים שונים כמו לעדכן מידע או להתחבר לחשבון משתמש.
 
-שליחת בקשת HTTP ב-Javascript יכולה להיות שימושית כאשר אנחנו רוצים ליצור תקשורת בין הדפים שלנו לבין שרת חיצוני. כך נוכל לקבל נתונים חדשים, לשלוח פרמטרים ולקבל תגובות מהשרת בזמן אמת.
+## כיצד לשלוח בקשת HTTP ב-Javascript
 
-##כיצד לעשות זאת
+תחילה, יש ליצור עצם XMLHttpRequest חדש שישמש כאמצעי תקשורת לשלוח את הבקשה. לאחר מכן, יש להגדיר את שיטת הפנייה, כתובת ה-URL וטיפוס הנתונים שנשלחים בגוף הבקשה. לבסוף, יש להגדיר פונקציה שתתבצע בעת סיום שליחת הבקשה כדי לקבל ולעבד את התגובה מהשרת.
 
-כדי לשלוח בקשת HTTP ב-Javascript, נשתמש בפונקציות הקיימות בעזרת כתב קוד קצר ופשוט. לדוגמה, כדי לשלוח בקשה GET, נשתמש בפונקציה "fetch" ונכניס את הכתובת של השרת ואת המידע הרלוונטי כארגומנטים. בקוד השלוחה ניתן לקבל גם נתונים מהשרת ולעבד אותם בהתאם.
-
-```Javascript
-fetch('https://example.com/data')
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(err => console.log(err));
+```javascript
+let httpRequest = new XMLHttpRequest();
+httpRequest.open("POST", "https://www.example.com/api", true);
+httpRequest.setRequestHeader('Content-Type', 'application/json');
+httpRequest.onreadystatechange = function() {
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    // עיבוד התגובה מהשרת
+  }
+}
+httpRequest.send(JSON.stringify(data));
 ```
 
-במשך זמן אמת, ניתן לשלוח בקשות נוספות ולקבל תגובות מהשרת, וכך ליצור תקשורת חלקה ויעילה בין הדפים והשרת.
+### דוגמא ליצירת בקשת POST
 
-##להתפנק
+נניח שאנו רוצים לשלוח בקשת POST עם גוף הבקשה המכיל מידע משתמש כמו שם ואימייל לשרת הרשמה. בכדי לעשות זאת, אנו משתמשים בפונקציה `JSON.stringify()` כדי להמיר את המידע לתבנית JSON ומשתמשים בטיפוס הנתונים המתאים כמו מחרוזת או מערך עבור כל אחד מהשדות של הטופס.
 
-שליחת בקשת HTTP ב-Javascript מאפשרת לנו גם לקבל מידע מתקדם על השרת ועל מענה התקשורת. ניתן להשתמש בכלים נוספים כמו תעודות אבטחת SSL, הגדרות איסוף מידע והגבלות מסוימות על מגבלות הבקשה. כמו כן, באמצעות כלים נוספים ניתן לנהל ולעקוב אחרי בקשות שנשלחות ולאחר את הנתונים שנתקבלו מהשרת.
+```javascript
+let data = {
+  name: "John Smith",
+  email: "john.smith@example.com"
+};
 
-##ראה גם
+let httpRequest = new XMLHttpRequest();
+httpRequest.open("POST", "https://www.example.com/register", true);
+httpRequest.setRequestHeader('Content-Type', 'application/json');
+httpRequest.onreadystatechange = function () {
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    let response = JSON.parse(httpRequest.responseText); // עיבוד תגובת השרת בתבנית JSON
+    console.log(response.message); // "המשתמש נרשם בהצלחה"
+  }
+}
+httpRequest.send(JSON.stringify(data));
+```
 
-* [MDN על שליחת בקשת HTTP עם Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-* [סרטון על השתמש
+## העמקת נתונים על שליחת בקשת HTTP
+
+ה-XMLHttpRequest הוא רכיב חיוני בטכנולוגיית ה-A

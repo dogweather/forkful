@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 计算未来或过去的日期"
-simple_title:         "计算未来或过去的日期"
+title:                "计算过去或未来的日期。"
+html_title:           "Haskell: 计算过去或未来的日期。"
+simple_title:         "计算过去或未来的日期。"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -9,52 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
+有时候我们需要计算过去或未来的日期，比如计算明天是几号，或者在几天后的日期。使用Haskell可以让我们轻松地进行这样的日期计算。
 
-计算一个日期在未来或过去的原因可能各有不同，也许是想预测未来的重要事件，或者是对过去某个特殊时刻的回顾。无论是什么原因，使用Haskell来进行日期计算可以使整个过程更加简单和高效。
-
-# 如何操作
-
-首先，我们需要使用Haskell的`time`库。这个库提供了许多有用的函数，可以帮助我们操作日期和时间。首先，让我们看一下如何通过当前日期来计算未来的日期。
+## 如何
+要在Haskell中计算日期，我们可以使用"Data.Time"库中的函数。首先，我们需要导入这个库：
 
 ```Haskell
 import Data.Time
-
--- 获取当前日期
-today :: IO Day
-today = utctDay <$> getCurrentTime
-
--- 计算未来的日期
-futureDate :: Integer -> Day -> Day
-futureDate days current = addDays days current
-
 ```
 
-上面的代码中，我们首先通过`Data.Time`模块中的`getCurrentTime`函数来获取当前日期和时间，然后使用`utctDay`函数从中提取出日期部分。接下来，我们定义了一个名为`futureDate`的函数，它接受一个整数参数和一个日期参数，并使用`addDays`函数来计算未来的日期。现在，让我们来测试一下这个函数。
+接下来，我们可以使用```UTCTime```和```addDays```函数来计算过去或未来的日期。比如，我们可以计算今天是几号：
 
 ```Haskell
--- 测试未来日期计算
-main :: IO ()
-main = do
-  current <- today -- 获取当前日期
-  let future = futureDate 10 current -- 计算未来的日期
-  print future -- 输出未来的日期
+getCurrentTime >>= print . utctDay
 ```
 
-现在，编译并运行这段代码，我们可以得到如下输出：
+输出结果可能是："2020-04-01"，说明今天是4月1日。如果我们想计算明天的日期，可以使用```addDays```函数，传入1作为参数：
 
+```Haskell
+addDays 1 <$> getCurrentTime >>= print . utctDay
 ```
-2021-10-31
+
+输出结果可能是："2020-04-02"，代表明天的日期。同理，如果我们想计算过去的日期，可以传入一个负数作为参数。比如，如果我们想计算5天前的日期，可以这样写：
+
+```Haskell
+addDays (-5) <$> getCurrentTime >>= print . utctDay
 ```
 
-这就是距离今天10天后的日期。同样的，我们也可以使用类似的方法来计算过去的日期。
+输出结果可能是："2020-03-27"，是5天前的日期。
 
-# 深入了解
+## 深入探讨
+除了```addDays```函数，"Data.Time"库还提供了其他函数来进行更复杂的日期计算，比如```addGregorianMonthsClip```、```addGregorianYearsClip```等。使用这些函数可以让我们更灵活地进行日期计算。同时，在处理日期的时候还要注意时区、闰年等因素，这些都可以通过该库中的函数来处理。
 
-如果你想进一步了解Haskell中日期计算的原理，可以在[官方文档](https://hackage.haskell.org/package/time)中查看`Data.Time`模块的文档，里面包含了大量有用的信息和函数。此外，你也可以探索一下`time`库的源代码，这将更加深入地了解日期和时间在Haskell中是如何被处理和表示的。
-
-# 参考链接
-
-- [Haskell官网](https://www.haskell.org/)
-- [Hackage - Haskell软件包库](https://hackage.haskell.org/)
-- [日期计算实例代码](https://github.com/haskell/Time/blob/master/examples/Date.hs)
+## 参考
+- [Haskell官方文档](https://www.haskell.org/)
+- [Data.Time文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「JSONを使ったプログラミング」"
-simple_title:         "「JSONを使ったプログラミング」"
+title:                "JSONを使用する"
+html_title:           "Kotlin: JSONを使用する"
+simple_title:         "JSONを使用する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,35 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ Ｗｈｙ
-多くの人々は、JSONを使用することでデータのシリアライズや通信を行うことができ、アプリケーションの開発をより効率的にすることができます。
+## なぜJSONを使用するか
 
-＃＃ Ｈｏｗ　Ｔｏ
-「JavaScript Object Notation」、通称JSONは、データを簡単に扱うことができるフォーマットです。Kotlinでは、Jacksonというライブラリを使用して、JSONを扱うことができます。以下のコードを参考にしてください。
+今やWeb開発において、データの転送形式としてJSONは欠かせないものとなりました。KotlinとJSONを組み合わせることで、よりスマートなコーディングが可能になります。
 
-```Kotlin
-import com.fasterxml.jackson.module.kotlin.*
-fun main(){
-    // JSONをオブジェクトに変換する
-    val input = """{"name":"太郎","age":20}"""
-    val mapper = jacksonObjectMapper()
-    val person: Person = mapper.readValue(input)
-    println(person.name) // 太郎
-    println(person.age) // 20
-    
-    // オブジェクトをJSONに変換する
-    val person2 = Person("花子", 25)
-    val output = mapper.writeValueAsString(person2)
-    println(output) // {"name":"花子","age":25}
+## KotlinでJSONを扱う方法
+
+Kotlinでは、GoogleのGSONライブラリを使用することで簡単にJSONを扱うことができます。以下のコードは、JSON形式のデータをKotlinオブジェクトに変換する例です。
+
+```
+import com.google.gson.Gson
+
+fun main() {
+    val json = """{"name":"John","age":27}"""
+    val person = Gson().fromJson(json, Person::class.java)
+    println(person.name)
 }
-
-data class Person(val name: String, val age: Int)
 ```
 
-＃＃ Ｄｅｅｐ　Ｄｉｖｅ
-JSONを扱う上でよく使用されるメソッドには、オブジェクトをシリアライズする`writeValue()`や、JSONをオブジェクトにデシリアライズする`readValue()`があります。また、`@JsonIgnore`アノテーションを使用することで、オブジェクトのプロパティをJSONに含めないよう設定することもできます。さらに、複雑なJSONのネストを扱う際には、`ObjectMapper`クラスのメソッドを使用することで、より細かな操作が可能です。
+出力結果は"John"となります。このように、KotlinではGSONを使用することでJSONデータを扱うことができます。
 
-＃＃　Ｓｅｅ　Ａｌｓｏ
-- [Jackson](https://github.com/FasterXML/jackson)
-- [Kotlin Jackson support](https://github.com/FasterXML/jackson-module-kotlin)
-- [KotlinでJSONのデータを操作する方法](https://qiita.com/shimizu/items/1ec15fb3ee73298a2481)
+## JSONを深く掘り下げる
+
+GSONライブラリを使用することで、より複雑なJSONデータを扱うことができます。また、Kotlinの拡張機能を使用することで、よりスマートなコーディングが可能になります。以下のコードは、リストの中にオブジェクトが含まれるJSONデータをKotlinオブジェクトに変換し、各オブジェクトのnameプロパティを出力する例です。
+
+```
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
+fun main() {
+    val json = """[{"name":"John"},{"name":"Sarah"}]"""
+    val listType = object : TypeToken<List<Person>>() {}.type
+    val personList = Gson().fromJson<List<Person>>(json, listType)
+    for (person in personList) {
+        println(person.name)
+    }
+}
+
+data class Person(val name: String)
+```
+
+出力結果は、"John"と"Sarah"となります。このように、KotlinとGSONを組み合わせることで、より柔軟にJSONデータを扱うことができます。
+
+## 関連リンク
+
+- [GSON公式ドキュメント](https://github.com/google/gson)
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)
+- [JSONパースライブラリの比較](https://www.baeldung.com/java-performance-json-libraries)

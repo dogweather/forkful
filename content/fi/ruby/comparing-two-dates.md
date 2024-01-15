@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "Ruby: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,32 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kaksi päivämäärää?
+##
 
-Oletko koskaan halunnut vertailla kahta päivämäärää Rubyssa? Se voi olla hyödyllistä esimerkiksi kun haluat tietää onko jokin tietty päivämäärä ennen vai jälkeen toista. Tässä blogikirjoituksessa opit miten voit vertailla kahta päivämäärää käyttämällä Rubya.
+Miksi: Miksi joku haluaisi vertailla kahta päivämäärää?
 
-## Miten tehdä se?
+Vertailemalla kahta päivämäärää voit tarkistaa, ovatko ne samat tai kuinka paljon ne poikkeavat toisistaan. Tämä voi olla hyödyllistä esimerkiksi laskutusta tai tehtäväaikojen tarkistamista varten.
 
-Vertaileminen on helppoa käyttäen Rubyn Date-luokkaa. Voit luoda uuden Date-olion käyttäen `Date.parse` metodia ja antamalla sille päivämäärän merkkijonona. Tämän jälkeen voit käyttää `>` ja `<` operaattoreita vertailemiseen.
+## Miten:
 
-```Ruby
-päivä1 = Date.parse("2020-05-28")
-päivä2 = Date.parse("2020-05-29")
+Vertaileminen kahden päivämäärän välillä Ruby-ohjelmoinnissa on helppoa. Käytä täsmälleen samaa syntaksia kuin vertailemalla kahta numeroa. 
 
-if päivä1 > päivä2 
-  puts "Päivä 1 on myöhempi."
+```
+Ruby
+require 'date'
+
+date1 = Date.parse("2019-01-01")
+date2 = Date.parse("2019-01-15")
+
+if date1 < date2
+  puts "Ensimmäinen päivämäärä on ennen toista."
+elsif date1 > date2
+  puts "Ensimmäinen päivämäärä on jälkeen toisen."
+else
+  puts "Päivämäärät ovat samat."
 end
 
-# Output: Päivä 1 on myöhempi.
 ```
 
-## Syväluotaus
+Tulostus:
 
-Rubyn Date-luokka tarjoaa myös muita hyödyllisiä metodeja vertailuun, kuten `between?` joka tarkistaa onko jokin päivämäärä kahden annetun päivämäärän välissä. Voit myös käyttää `==` operaattoria tarkistaaksesi ovatko päivämäärät täsmälleen samat.
+```
+Ensimmäinen päivämäärä on ennen toista.
+```
 
-On myös tärkeää huomata, että Date-oliot eivät sisällä aikatietoja. Jos haluat vertailla myös aikoja, kannattaa käyttää DateTime-luokkaa.
+## Syvempi sukellus:
 
-# Katso myös
+Vertailemalla päivämääriä, Ruby vertaa todellisuudessa päivämäärille annettavia arvoja. Tämä tarkoittaa, että jos päivämäärät eivät ole samassa muodossa, tulos voi olla yllättävä.
 
-- [Ruby Date-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Ruby DateTime-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
+```
+Ruby
+require 'date'
+
+date1 = Date.parse("6.12.2019")
+date2 = Date.parse("2019-12-06")
+
+if date1 == date2
+  # Tämä kohta ei koskaan suoriteta, koska päivämäärät eivät ole samassa muodossa.
+  puts "Päivämäärät ovat samat."
+end
+
+```
+
+Tässä tapauksessa tulos on "ArgumentError: invalid date". Tämä johtuu siitä, että ensimmäinen päivämäärä on annettu päivä-kuukausi-vuosi -muodossa, kun taas toinen päivämäärä on vuosi-kuukausi-päivä -muodossa.
+
+## Katso myös:
+
+- [Date-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.5.3/libdoc/date/rdoc/Date.html)
+- [Time-luokan dokumentaatio](https://ruby-doc.org/core-2.5.3/Time.html)
+- [Ruby Date and Time -opetusvideo](https://www.youtube.com/watch?v=n3fCNW_xAhc)

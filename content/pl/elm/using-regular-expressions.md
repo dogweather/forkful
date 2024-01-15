@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Korzystanie z wyrażeń regularnych"
-simple_title:         "Korzystanie z wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Elm: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,27 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
+ **Dlaczego warto używać wyrażeń regularnych w Elm** 
 
-Regularne wyrażenia są narzędziem niezbędnym w programowaniu w Elm, pozwalającym na szybkie i precyzyjne manipulowanie ciągami znaków. Dzięki nim można skutecznie wyszukiwać, porównywać i modyfikować teksty wewnątrz aplikacji. Jest to szczególnie pomocne w przypadku filtrowania i przetwarzania dużej ilości danych.
+Wyrażenia regularne to bardzo przydatne narzędzie, które pozwala na skuteczne i szybkie przetwarzanie danych tekstowych. W Elm możemy wykorzystać je do wzorcowania i przeszukiwania tekstu w sposób bardzo wygodny i intuicyjny.
 
-## Jak to zrobić
-
-Aby rozpocząć pracę z regularnymi wyrażeniami w Elm, należy zaimportować moduł Regex. Następnie można użyć funkcji Regex.find, aby znaleźć dopasowanie wyrażeniem regularnym w danym ciągu znaków. Na przykład:
-
-```
+## Jak to robić
+```Elm
+-- Przykładowe wykorzystanie wyrażeń regularnych w Elm
+-- Sprawdzenie czy dany tekst zawiera liczby
 import Regex
 
-Regex.find (Regex.regex "\\d{2}") "123 Elm Street"
+tekst = "Hello world 123"
+expression = Regex.regex "[0-9]+"
+isNumber = Regex.contains expression tekst
+
+-- isNumber będzie teraz równy True
 ```
 
-Wykorzystując wyrażenie regex "\\\d{2}", które oznacza dwa kolejne cyfry, funkcja zwróci dopasowanie "12". Istnieje wiele innych funkcji i kombinacji wyrażeń regularnych, które można wykorzystać w programowaniu w Elm.
+W powyższym przykładzie zaimportowaliśmy moduł Regex, który umożliwia nam wykorzystanie wyrażeń regularnych. Następnie stworzyliśmy zmienną tekst, zawierającą przykładowy tekst do przeszukania. Kolejnym krokiem było utworzenie wyrażenia, które będzie szukało liczb w tekście (wzorzec [0-9]+ oznacza, że szukamy jednej lub więcej wystąpień cyfr). Na koniec wywołaliśmy funckję contains, która sprawdza czy wyrażenie pasuje do podanego tekstu. 
 
-## Deep Dive
+## Głębszy zanurzenie
 
-Wyrażenia regularne składają się z określonych znaków i wzorców, które pozwalają na wyszukiwanie określonych ciągów znaków. W Elm istnieje wiele opcji dotyczących flag i specjalnych znaków, które umożliwiają zaawansowane wyrażenia regularne. Należy pamiętać, że regularne wyrażenia są wieloplatformowe, więc umiejętność ich stosowania jest bardzo oczekiwana przez programistów.
+Wyrażenia regularne pozwalają nam na jeszcze większą kontrolę nad przetwarzaniem tekstu w Elm. Możemy wykorzystać je do wyłapywania i wycinania konkretnych fragmentów tekstu, modyfikacji go lub nawet walidacji wprowadzonych przez użytkownika danych. 
 
-## Zobacz także
+W Elm wyrażenia regularne występują jako moduł Regex i udostępniają nam różne funkcje, takie jak:
 
-- Oficjalna dokumentacja Elm do wyrażeń regularnych: https://package.elm-lang.org/packages/elm/regex/latest/
-- Przewodnik po wyrażeniach regularnych: https://regexone.com/
-- Narzędzie do testowania wyrażeń regularnych online: https://regex101.com/
+- **contains:** służy do sprawdzenia czy wyrażenie pasuje do tekstu
+- **find:** służy do znalezienia pierwszego pasującego fragmentu tekstu
+- **matches:** zwraca listę wszystkich pasujących fragmentów tekstu
+- **replace:** pozwala na zamianę pasujących fragmentów tekstu na inne wyrażenie lub tekst
+
+Możemy także wykorzystać funkcję Regex.custom, która pozwala na stworzenie własnego wyrażenia regularnego z użyciem składni RegExp.
+
+## Zobacz również
+- Dokumentacja wyrażeń regularnych w Elm: https://package.elm-lang.org/packages/elm/regex/latest/
+- Praktyczne przykłady wykorzystania wyrażeń regularnych w Elm: https://thoughtbot.com/blog/practical-regular-expressions-in-elm

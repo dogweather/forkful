@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Javascript: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,42 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-L'estrazione di sottostringhe è un'operazione comune nella programmazione Javascript. Ciò è utile quando si vuole ottenere una porzione specifica di una stringa più grande per utilizzarla in altri calcoli o operazioni.
+Se si sta lavorando con stringhe di testo in Javascript, potrebbe essere necessario estrarre una parte di quella stringa. Ad esempio, se si ha il nome completo di una persona e si vuole mostrare solo il cognome o se si ha un URL e si vuole estrarre solo il percorso.
 
 ## Come Fare
 
-Per estrarre una sottostringa, si utilizza il metodo `substring()` di Javascript. Questo metodo richiede due parametri: l'indice di inizio e l'indice di fine della sottostringa da estrarre. Ad esempio, se abbiamo una stringa "Ciao a tutti!" e vogliamo estrarre la parola "tutti", possiamo utilizzare il seguente codice:
+Per estrarre una sottostringa da una stringa in Javascript, possiamo utilizzare il metodo `substring()`. Prende due parametri: il primo è l'indice di inizio della sottostringa e il secondo (opzionale) è l'indice di fine. Se viene omesso il secondo parametro, verrà automaticamente estratta la parte della stringa fino alla fine.
 
+Esempio di codice:
 ```Javascript
-let stringa = "Ciao a tutti!";
-let sottostringa = stringa.substring(7, 12);
-console.log(sottostringa); // Output: tutti
+let stringa = "Ciao mondo!";
+let sottostringa = stringa.substring(5);
+console.log(sottostringa);
+```
+Output:
+```Javascript
+"mondo!"
 ```
 
-Possiamo anche utilizzare `substring()` in combinazione con altri metodi come `indexOf()` per estrarre una sottostringa in base a una parola o carattere specifico. Ad esempio:
+È anche possibile utilizzare il metodo `slice()`, che funziona allo stesso modo di `substring()` ma permette anche di indicare indici negativi (che iniziano dalla fine della stringa). Inoltre, `slice()` può essere utilizzato anche per dividere una stringa in più parti.
 
+Esempio di codice:
 ```Javascript
-let stringa = "Questa è una stringa di esempio.";
-let inizio = stringa.indexOf("è"); // Trova l'indice della lettera "è"
-let fine = stringa.indexOf(".", inizio); // Trova l'indice del primo punto dopo "è"
-let sottostringa = stringa.substring(inizio, fine); // Estrae la sottostringa tra questi due indici
-console.log(sottostringa); // Output: è una stringa di esempio
+let stringa = "Javascript è fantastico";
+let sottostringa1 = stringa.slice(0, 9);
+let sottostringa2 = stringa.slice(-11);
+console.log(sottostringa1);
+console.log(sottostringa2);
+```
+Output:
+```Javascript
+"Javascript"
+"fantastico"
 ```
 
 ## Approfondimento
 
-Il metodo `substring()` accetta anche un solo parametro, il quale specifica l'indice di inizio della sottostringa. In questo caso, verrà estratta la porzione di stringa a partire da questo indice fino alla fine. Ad esempio:
+Il metodo `substr()` è simile a `substring()` ma invece di prendere come secondo parametro l'indice di fine, prende come secondo parametro la lunghezza della sottostringa. Inoltre, se viene passato un indice negativo come primo parametro, verrà contato partendo dalla fine della stringa.
 
+Esempio di codice:
 ```Javascript
-let stringa = "Questo è un esempio di estrazione di sottostringa.";
-let sottostringa = stringa.substring(17);
-console.log(sottostringa); // Output: un esempio di estrazione di sottostringa.
+let stringa = "Bellissima giornata";
+let sottostringa = stringa.substr(6, 9);
+console.log(sottostringa);
+```
+Output:
+```Javascript
+"mi giorn"
 ```
 
-Inoltre, è importante notare che l'indice di fine della sottostringa non è incluso nell'output. Ad esempio, se si utilizza l'indice 6 come parametro di fine, verrà estratta la stringa fino all'indice 5.
+Un concetto importante da comprendere è che in Javascript le stringhe sono immutabili, il che significa che non possono essere modificate direttamente. Quindi, quando si estrae una sottostringa da una stringa, viene in realtà creata una nuova stringa.
 
-## Vedi Anche
+## Vedi anche
 
-- Documentazione ufficiale di ```substring()``` su MDN: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/substring
-- Tutorial su come utilizzare ```substring()``` in combinazione con ```indexOf()```: https://www.w3schools.com/jsref/jsref_substring.asp
-- Altri metodi di manipolazione delle stringhe in Javascript: https://www.digitalocean.com/community/tutorials/js-string-manipulation-methods
+- Documentazione ufficiale di Javascript su stringhe: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String
+- Articolo su come manipolare stringhe in Javascript: https://www.html.it/pag/49573/manipolare-le-stringhe-in-javascript/

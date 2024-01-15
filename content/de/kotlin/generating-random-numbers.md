@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Eineinführung in die Erzeugung von Zufallszahlen"
-simple_title:         "Eineinführung in die Erzeugung von Zufallszahlen"
+title:                "Reply toZufallsgenerierung von Zahlen"
+html_title:           "Kotlin: Reply toZufallsgenerierung von Zahlen"
+simple_title:         "Reply toZufallsgenerierung von Zahlen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -11,32 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Generierung von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung. Es kann verwendet werden, um Spiele zu erstellen, zufällige Auswahlentscheidungen zu treffen oder Daten zu verschleiern. Mit Kotlin können Sie ganz einfach Zufallszahlen erzeugen und in Ihre Programme integrieren.
+Warum sollte man sich überhaupt mit dem Generieren von Zufallszahlen beschäftigen? Ganz einfach: Zufallszahlen sind ein grundlegender Bestandteil vieler Programmieraufgaben, sei es bei der Erstellung von Spielen, Simulationen oder Verschlüsselungen. Sie ermöglichen es, komplexe Probleme zu lösen und unvorhersehbares Verhalten zu erzeugen.
 
-## Wie geht es
+## Wie geht man vor?
 
-Um Zufallszahlen in Kotlin zu generieren, müssen Sie die Klasse "Random" verwenden. Zunächst müssen Sie ein Objekt von dieser Klasse erstellen, indem Sie den Konstruktor aufrufen. Dann können Sie die verschiedenen Methoden nutzen, um Zufallszahlen in verschiedenen Formaten zu erhalten. Zum Beispiel:
+Um Zufallszahlen in Kotlin zu generieren, gibt es mehrere Möglichkeiten. Eine einfache Methode ist die Verwendung der `Random`-Klasse, die Teil der Standardbibliothek von Kotlin ist. Hier ein Beispiel:
 
 ```Kotlin
-// Erstellen eines Objekts der Klasse Random
 val random = Random()
-
-// Generieren einer Zufallszahl zwischen 0 und 10
-val number = random.nextInt(11)
-
-// Generieren einer Zufallszahl zwischen 0 und 1
-val decimal = random.nextDouble()
+val randomNumber = random.nextInt(100) 
 ```
 
-Die verwendeten Methoden variieren je nachdem, was für Zufallszahlen Sie benötigen. Sie können auch bestimmte Grenzen und Bedingungen für die Zufallszahlen festlegen, indem Sie zusätzliche Parameter in die Methoden aufnehmen. Für weitere Beispiele und Informationen zur Generierung von Zufallszahlen in Kotlin können Sie die offizielle Dokumentation konsultieren.
+In diesem Beispiel wird ein `Random`-Objekt erstellt und anschließend die `nextInt()`-Methode aufgerufen, um eine Zufallszahl zwischen 0 und 100 zu generieren. Je nach Anforderung können auch andere Methoden wie `nextLong()` oder `nextDouble()` verwendet werden.
 
-## Tiefer Einblick
+## Tiefere Einblicke
 
-Hinter den Kulissen verwendet Kotlin die Klasse "java.util.Random", um Zufallszahlen zu generieren. Diese Klasse stellt verschiedene Methoden zur Verfügung, um Zufallszahlen in unterschiedlichen Formaten und mit verschiedenen Bedingungen zu erzeugen. Kotlin macht es jedoch einfacher, darauf zuzugreifen und zu verwenden, indem es eine benutzerfreundliche Syntax bietet.
+Manchmal ist es erforderlich, spezifische Anforderungen an die Zufallszahlen zu haben, wie zum Beispiel eine gleichmäßige Verteilung oder eine konkrete Anzahl von Nachkommastellen. In solchen Fällen bietet Kotlin mehrere Möglichkeiten, um diese Anforderungen zu erfüllen.
 
-Es ist auch wichtig zu beachten, dass Zufallszahlen, die auf diese Weise generiert werden, nicht wirklich zufällig sind. Sie basieren auf einem sogenannten "Seed" oder Startwert, der vom Programm festgelegt wird. Wenn also dasselbe Programm mit demselben Seed ausgeführt wird, werden dieselben Zufallszahlen generiert. Dies kann in manchen Fällen unerwünscht sein, daher gibt es Techniken, um den Seed zu variieren und sicherzustellen, dass die Zufallszahlen jedes Mal anders sind.
+Eine Möglichkeit ist die Verwendung der `Random.nextDouble()`-Methode in Kombination mit der `Math.pow()`-Funktion, um eine Zufallszahl innerhalb eines bestimmten Bereichs zu erhalten. Hier ein Beispiel, bei dem eine Zufallszahl zwischen 1 und 10 mit zwei Nachkommastellen generiert wird:
+
+```Kotlin
+val random = Random()
+val randomNumber = Math.pow(10.0, 0.0 - 2.0) * random.nextDouble() + 1.0
+println("%.2f".format(randomNumber))
+```
+
+Eine andere Möglichkeit ist die Verwendung von `ThreadLocalRandom`, das eine höhere Leistung bietet als `Random` und auch in Multi-Threading-Umgebungen sicher ist.
+
+```Kotlin
+val randomNumber = ThreadLocalRandom.current().nextInt(1, 10)
+```
+
+Es ist auch möglich, benutzerdefinierte Zufallszahlengeneratoren zu erstellen, indem man die `Random`-Klasse erweitert und die entsprechenden Methoden überschreibt.
+
+## Weitere Ressourcen
+
+Für weitere Informationen und Beispiele zum Generieren von Zufallszahlen in Kotlin empfehlen wir folgende Ressourcen:
+
+- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
+- [Official Kotlin Blog](https://blog.jetbrains.com/kotlin/)
+- [Kotlin Programming: The Big Nerd Ranch Guide](https://www.bignerdranch.com/books/kotlin-programming-the-big-nerd-ranch-guide/)
 
 ## Siehe auch
 
-- [Offizielle Dokumentation zu Kotlin Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [Tutorial zu Zufallszahlen in Kotlin](https://www.baeldung.com/kotlin/random)
+Hier sind einige weitere hilfreiche Links rund um das Thema Zufallszahlen in Kotlin:
+
+- [How to Generate Random Numbers in Android Kotlin](https://medium.com/@NikAgrawal/how-to-generate-random-numbers-in-android-kotlin-522c3bc635c8)
+- [Kotlin randomDouble() function example](https://www.concretepage.com/kotlin/kotlin-randomdouble-function-example)
+- [Creating Random Numbers With Swift](https://www.swiftdevcenter.com/creating-random-numbers-swift/)

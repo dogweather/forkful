@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "String großschreiben"
+html_title:           "Bash: String großschreiben"
+simple_title:         "String großschreiben"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,43 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Das Kapitalisieren von Zeichenketten ist eine häufig verwendete Funktion in der Bash-Programmierung. Es ermöglicht es uns, Texte auf eine bestimmte Art und Weise zu formatieren und kann in verschiedenen Anwendungsfällen nützlich sein.
+Es gibt mehrere Gründe, warum man in der Bash-Programmierung eine Zeichenkette groß schreiben würde. Es kann zum Beispiel Teil einer Textmanipulation sein oder um die Lesbarkeit des Codes zu verbessern.
 
-## Wie es geht
+## Anleitung
 
-Um eine Zeichenkette in Bash zu kapitalisieren, können wir das integrierte Tool `tr` verwenden. Hier ist ein Beispielcode für eine Funktion, die einen String in Großbuchstaben umwandelt:
+Um eine Zeichenkette in der Bash groß zu schreiben, können Sie den Befehl "tr" verwenden. Hier ist ein Beispiel, um den Satz "Hallo, Welt!" in Großbuchstaben zu schreiben:
 
-```Bash
-# Funktion zum Kapitalisieren von Strings
-capitalize() {
-  # Speichern des Strings in einer Variable
-  string=$1
-
-  # Verwendung von tr, um die Zeichenkette in Großbuchstaben umzuwandeln
-  capitalized_string="$(echo "${string}" | tr '[:lower:]' '[:upper:]')"
-
-  # Ausgabe des Ergebnisses
-  echo "${capitalized_string}"
-}
-
-# Aufruf der Funktion mit einem Beispiel-String
-capitalize "hallo welt"
-
-# Ausgabe: HALLO WELT
+```Bash 
+echo "Hallo, Welt!" | tr '[:lower:]' '[:upper:]'
+# Ausgabe: HALLO, WELT!
 ```
 
-Wir speichern zuerst den übergebenen String in einer Variablen und verwenden dann die `tr`-Funktion, um alle kleinen Buchstaben in Großbuchstaben umzuwandeln. Das Ergebnis wird in einer neuen Variable gespeichert und schließlich ausgegeben.
+Sie können auch die Funktion "toupper" verwenden, die in der Bash 4.0 und höher verfügbar ist. Hier ist ein Beispiel:
 
-## Deep Dive
+```Bash
+text="Hallo, Welt!"
+echo "${text^^}"
+# Ausgabe: HALLO, WELT!
+```
 
-Wenn wir uns das Beispiel oben genauer ansehen, können wir sehen, dass wir die `tr`-Funktion verwenden, um Zeichen in unserem String zu ersetzen. Wir geben zwei Zeichensätze an, einen mit allen Kleinbuchstaben (`[:lower:]`) und einen mit allen Großbuchstaben (`[:upper:]`). Das bedeutet, dass alle Vorkommen von Kleinbuchstaben in unserem String durch die entsprechenden Großbuchstaben ersetzt werden.
+## Tiefere Einblicke
 
-Es gibt auch andere Möglichkeiten, einen String in Bash zu kapitalisieren, zum Beispiel mit dem `sed` Befehl. Es gibt jedoch keine integrierte Funktion oder Befehl, der direkt dazu dient, einen String in Bash zu kapitalisieren.
+In der Bash gibt es keine eigene Funktion, um eine Zeichenkette in Großbuchstaben zu schreiben. Stattdessen können Sie die genannten Methoden verwenden, um eine Zeichenkette aus Kleinbuchstaben in Großbuchstaben umzuwandeln. Die Verwendung von "tr" ist jedoch nicht nur auf Groß- und Kleinbuchstaben beschränkt, sondern kann auch für andere Zeichen und Zeichensätze verwendet werden.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation zu tr](https://linux.die.net/man/1/tr)
-- [Stack Overflow-Antwort zum Kapitalisieren von Strings in Bash](https://stackoverflow.com/a/2264537)
-- [Video-Tutorial zu tr in der Bash-Programmierung](https://www.youtube.com/watch?v=rJtViH_uQu8)
+- Die offizielle Dokumentation zu [tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
+- Ein praktisches Beispiel für die Verwendung von "tr" in der Bash [hier](https://www.baeldung.com/linux/convert-uppercase-lowercase#tr-command)

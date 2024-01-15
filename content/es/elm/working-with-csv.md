@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Trabajando con csv"
+title:                "Trabajando con csv"
+html_title:           "Elm: Trabajando con csv"
 simple_title:         "Trabajando con csv"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,61 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué trabajar con CSV?
 
-El trabajar con archivos CSV es una tarea muy común en el desarrollo de software. Ya sea para importar o exportar datos, mantener registros o realizar análisis, conocer cómo manejar archivos CSV en Elm puede ser muy útil para cualquier programador.
+Trabajar con archivos CSV puede ser muy útil en programas que necesitan manejar grandes cantidades de datos. Al utilizar Elm para trabajar con CSV, se pueden realizar tareas como importar y exportar datos de manera eficiente.
 
-## Cómo
+## Cómo hacerlo
 
-Para trabajar con archivos CSV en Elm, es necesario importar el módulo `Csv` de la siguiente manera:
+Elm tiene una librería llamada `elm-csv` que facilita el manejo de archivos CSV. Para utilizarla, primero debemos instalarla mediante el comando `elm install elm/csv` en la terminal.
 
-```Elm
-import Csv
+Una vez instalada, podemos utilizar la función `Decode.csv` para decodificar un archivo CSV en una estructura de datos en formato `List`.
+
+```elm
+import Csv.Decode as Decode
+
+csvDecoder : Decode.Decoder (List (List Data))
+csvDecoder =
+    Decode.csv Decode.int
+
+DecodedData : Result Errors (List (List Int))
+DecodedData =
+    Decode.decodeString csvDecoder "1,2,3\n4,5,6"
+
+-- El resultado será: Ok [[1,2,3], [4,5,6]]
 ```
 
-Luego, para leer un archivo CSV, podemos utilizar la función `Csv.Decode.decode` que recibe un `Csv.Decoder` como argumento y devuelve una lista de filas del archivo.
+Un ejemplo más completo puede ser la decodificación de un archivo CSV con encabezados para crear una estructura de datos más compleja, como un registro de estudiantes con sus nombres, edades y carreras.
 
-```Elm
-exampleCsv : String
-exampleCsv =
-"""
-id,name,age
-1,John,28
-2,Lucia,32
-3,Marco,25
-"""
+```elm
+import Csv.Decode as Decode
 
-type alias Person =
-    { id : Int
-    , name : String
+type alias Student =
+    { name : String
     , age : Int
+    , major : String
     }
 
-csvDecoder : Csv.Decoder ( List Person )
+csvDecoder : Decode.Decoder (List Student)
 csvDecoder =
-    Csv.Decode.list <|
-        Csv.Decode.map3 Person
-            (Csv.Decode.field "id" Csv.Decode.int)
-            (Csv.Decode.field "name" Csv.Decode.string)
-            (Csv.Decode.field "age" Csv.Decode.int)
+    Decode.list <| Decode.indexedMap Student
+        [ ( 0, Decode.Header "name" Decode.string )
+        , ( 1, Decode.Header "age" Decode.int )
+        , ( 2, Decode.Header "major" Decode.string )
+        ]
 
-people : List Person
-people =
-    Csv.Decode.decodeString csvDecoder exampleCsv
+studentData : Result Errors (List Student)
+studentData =
+    Decode.decodeString csvDecoder "name,age,major\nJohn,22,Computer Science\nSara,20,Mathematics"
+
+-- El resultado será: Ok [{ name = "John", age = 22, major = "Computer Science" },
+--                       { name = "Sara", age = 20, major = "Mathematics" }]
 ```
 
-Con este código, podemos leer un archivo CSV y convertirlo en una lista de `Person` con sus respectivos campos.
+## Inmersión profunda
 
-## Deep Dive
+La librería `elm-csv` también nos permite trabajar con archivos CSV de manera bidireccional, es decir, tanto importar como exportar datos. Además, tiene funciones para manejar delimitadores, saltos de línea y manejo de errores.
 
-Una de las ventajas de trabajar con archivos CSV en Elm es que podemos utilizar la validación de tipos para garantizar que los datos estén en el formato correcto. Esto se logra utilizando los decoders de `Csv` en conjunto con los decoders de `Json` para convertir los datos a tipos de datos personalizados.
+También podemos utilizar la función `Decode.list` para decodificar un archivo CSV con múltiples filas y columnas en una lista de listas de datos, lo que nos da mayor flexibilidad en el manejo de los datos.
 
-Otra funcionalidad interesante es la capacidad de escribir archivos CSV utilizando la función `Csv.Encode.encode` pasándole una lista de filas y un `Csv.Encoder` que defina cómo se deberían escribir los datos.
+En resumen, trabajar con CSV en Elm no solo es fácil y eficiente, sino que también nos permite manipular grandes volúmenes de datos de manera sencilla. ¡Así que no dudes en utilizar esta librería en tus futuros proyectos!
 
 ## Ver también
 
-Para obtener más información sobre cómo trabajar con archivos CSV en Elm, aquí hay algunos recursos útiles:
-
-- Documentación oficial de Elm CSV: https://package.elm-lang.org/packages/elm-explorations/csv/latest/
-- Ejemplos de código para leer y escribir archivos CSV: https://github.com/elm-explorations/csv/tree/master/examples
-- Artículo sobre cómo usar tipos de datos personalizados con CSV: https://medium.com/@essenciary/using-custom-types-with-elm-s-csv-library-186ecaa05478
+- Documentación oficial de la librería `elm-csv`: https://package.elm-lang.org/packages/elm/csv/latest/
+- Ejemplos de uso de `elm-csv` en proyectos reales: https://github.com/elm-csv/examples

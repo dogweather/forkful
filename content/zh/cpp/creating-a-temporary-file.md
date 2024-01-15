@@ -1,5 +1,6 @@
 ---
-title:                "C++: 创建临时文件"
+title:                "创建临时文件"
+html_title:           "C++: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "C++"
 category:             "C++"
@@ -9,46 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么？
 
-现代编程语言提供了许多工具和功能，如创建临时文件，使我们的工作更加高效。创建临时文件是一种常见的编程技术，用于在程序运行时存储临时数据。
+创建临时文件是在编程中常见的做法。它可以帮助我们保存一些临时的数据，方便后续使用，同时也可以防止一些冲突和错误。因此，学习如何创建临时文件是非常重要的。
 
-## 如何
+## 如何做？
 
-创建临时文件可以通过几行简单的C++代码实现。首先，我们需要包含头文件<fstream>来使用文件输入输出功能。然后，我们可以使用ofstream类中的open()函数来打开一个新的文件。在括号中，我们可以指定文件名以及打开模式。使用模式“ios::out | ios::trunc”可以确保我们将创建一个新的临时文件，并清空其中的内容。
-
-```C++
-#include <fstream>
-using namespace std;
-
-ofstream temp_file;
-temp_file.open("temp.txt", ios::out | ios::trunc);
-```
-
-接下来，我们可以使用temp_file流对象的<<操作符来将数据写入临时文件中。最后，我们需要关闭文件流对象，以确保文件被正确保存。
+首先，我们需要包含一个头文件`<cstdio>`以使用文件操作函数。然后，使用`tmpfile()`函数来创建一个临时文件，如下所示：
 
 ```C++
-temp_file << "这是一个临时文件。\n";
-temp_file.close();
+FILE* temp = tmpfile();
 ```
 
-运行以上代码后，我们将在同一目录下创建一个名为“temp.txt”的临时文件。下面是输出：
+我们还可以使用`fopen()`函数来创建一个带有特定名称的临时文件，如下所示：
 
+```C++
+FILE* temp = fopen("temp_file.txt", "w+");
 ```
-这是一个临时文件。
+
+现在，我们可以使用标准的文件操作函数来读写这个临时文件。例如，我们可以使用`fprintf()`函数来向文件中写入数据，如下所示：
+
+```C++
+fprintf(temp, "Hello, world!");
 ```
 
-## 深入探讨
+最后，记得使用`fclose()`函数来关闭文件并清理内存。
 
-创建临时文件有多种用途。常见的用法是当程序需要临时存储数据，但又不想影响原始文件时，可以使用临时文件。此外，临时文件也可以用于缓存数据，以提高程序的性能。
+```C++
+fclose(temp);
+```
 
-在使用临时文件时，我们需要注意以下几点：
+这样，我们便成功地创建了一个临时文件并向它写入了数据。记得在使用完毕后删除这个临时文件，避免占用空间。
 
-- 创建的临时文件应该具有唯一的名称，以避免与其他文件重名。
-- 在程序结束时，应该删除临时文件以释放内存空间并避免造成垃圾文件。
+## 深入了解
 
-## 请参阅
+在创建临时文件时，我们需要注意的一点是文件名不能重复。因此，我们可以使用`tmpnam()`函数来生成一个唯一的文件名，如下所示：
 
-- [C ++创建临时文件](https://www.geeksforgeeks.org/create-temporary-file-using-c-cpp/)
-- [C ++文件输入输出](https://www.programiz.com/cpp-programming/files-input-output)
-- [C ++  ofstream 类](https://www.cplusplus.com/reference/fstream/ofstream/)
+```C++
+char temp_name[L_tmpnam];
+tmpnam(temp_name);
+```
+
+另外，我们也可以使用`mkstemp()`函数来创建一个带有唯一名称的临时文件，如下所示：
+
+```C++
+char temp_name[] = "temp_file_XXXXXX";
+int temp_fd = mkstemp(temp_name);
+```
+`mkstemp()`函数会在指定名称中替换`X`为随机字符，确保文件名的唯一性。而且，它会返回一个文件描述符，我们可以使用`fdopen()`函数将其转换为`FILE*`类型。
+
+```C++
+FILE* temp = fdopen(temp_fd, "w+");
+```
+
+这样，我们便可以利用这个临时文件进行更多的操作，例如在写入数据后刷新缓冲区或者获取文件大小等。
+
+# 参考链接
+
+- [C++ Reference - tmpfile()](http://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [C++ Reference - fopen()](http://www.cplusplus.com/reference/cstdio/fopen/)
+- [C++ Reference - fprintf()](http://www.cplusplus.com/reference/cstdio/fprintf/)
+- [C++ Reference - tmpnam()](http://www.cplusplus.com/reference/cstdio/tmpnam/)
+- [C++ Reference - mkstemp()](http://www.cplusplus.com/reference/cstdio/mkstemp/)
+- [C++ Reference - fdopen()](http://www.cplusplus.com/reference/cstdio/fdopen/)

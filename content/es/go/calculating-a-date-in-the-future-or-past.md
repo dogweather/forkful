@@ -1,5 +1,6 @@
 ---
-title:                "Go: Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Go: Calculando una fecha en el futuro o pasado"
 simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Go"
 category:             "Go"
@@ -9,63 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular fechas en el futuro o en el pasado?
+## Por qué
 
-Calcular fechas en el futuro o en el pasado puede ser útil en muchos casos, como por ejemplo en la programación de tareas o eventos, en el manejo de fechas de caducidad, o simplemente para realizar cálculos en un programa de forma más eficiente.
+¿Alguna vez has necesitado calcular una fecha en el futuro o en el pasado? Esto puede ser útil para programar eventos, automatizar tareas o simplemente por curiosidad. Aprender a hacerlo en Go puede mejorar tus habilidades de programación y hacer tu vida un poco más fácil.
 
-## Cómo hacerlo en Go
+## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Go, podemos utilizar la función `date.AddDate()` de la librería `time`. Por ejemplo, si queremos calcular el día de hoy más 7 días en el futuro, podemos hacerlo de la siguiente manera:
-
-```Go
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	fmt.Println("Hoy es:", time.Now()) // imprimimos la fecha de hoy
-	fechaFutura := time.Now().AddDate(0, 0, 7) // usamos la función AddDate para sumarle 7 días a la fecha de hoy
-	fmt.Println("Dentro de 7 días será:", fechaFutura) // imprimimos la fecha resultante
-}
-```
-
-El resultado de este código sería:
-
-```
-Hoy es: 2021-08-01 13:22:02.123456789 +0000 UTC m=+0.000000001
-Dentro de 7 días será: 2021-08-08 13:22:02.123456789 +0000 UTC m=+604800.000000001
-```
-
-Podemos jugar con los valores que le pasamos a la función `AddDate()` para sumar o restar años, meses y días en el cálculo de la fecha.
-
-## Profundizando en el cálculo de fechas en Go
-
-En Go también podemos utilizar la función `time.Parse()` para convertir una cadena de texto con una fecha en un objeto de tipo `time.Time`, el cual luego podemos utilizar para hacer cálculos de fechas. Por ejemplo, si queremos calcular cuántos días faltan para mi próximo cumpleaños, podemos hacer lo siguiente:
+Para calcular una fecha en el futuro o en el pasado, necesitamos utilizar la librería `time` de Go. Primero, debemos importarla en nuestro código:
 
 ```Go
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	hoy := time.Now()
-	cumple := "2021-12-01" // fecha de mi cumpleaños en formato año-mes-día
-	fechaCumple, _ := time.Parse("2006-01-02", cumple) // convertimos la cadena de texto a un objeto de tipo time.Time
-	diasFaltantes := fechaCumple.Sub(hoy).Hours() / 24 // utilizamos la función Sub para calcular la diferencia de días entre ambas fechas
-	fmt.Printf("Faltan %v días para mi cumpleaños\n", int(diasFaltantes)) // imprimimos el resultado
-}
+import "time"
 ```
 
-El resultado sería algo así:
+Luego, podemos utilizar la función `Now()` para obtener la fecha y hora actual y almacenarla en una variable:
 
+```Go
+ahora := time.Now()
 ```
-Faltan 120 días para mi cumpleaños
+
+A partir de aquí, podemos utilizar esta variable para calcular una fecha en el futuro o en el pasado. Por ejemplo, si queremos obtener la fecha de mañana, podemos añadir un día a la fecha actual utilizando la función `AddDate()` y almacenar el resultado en una nueva variable:
+
+```Go
+manana := ahora.AddDate(0, 0, 1)
 ```
+
+La función `AddDate()` toma tres argumentos: el número de años, meses y días que queremos añadir a la fecha actual. En este caso, hemos añadido 0 años, 0 meses y 1 día.
+
+También podemos utilizar la función `Sub()` para restar una cantidad de tiempo a la fecha actual. Por ejemplo, si queremos obtener la fecha de hace una semana, podemos restarle 7 días a la fecha actual y almacenar el resultado en una nueva variable:
+
+```Go
+haceUnaSemana := ahora.Sub(time.Hour * 24 * 7)
+```
+
+La función `Sub()` toma como argumento un `Duration`, que en este caso hemos creado multiplicando un día (24 horas) por 7.
+
+## Buceo profundo
+
+La librería `time` de Go ofrece muchas funciones y métodos útiles para trabajar con fechas y horas. Además de `Now()`, `AddDate()` y `Sub()`, también podemos utilizar las funciones `Date()` y `Parse()` para crear fechas específicas a partir de valores numéricos o cadenas de texto. También podemos trabajar con zonas horarias y realizar operaciones más complejas como comparar fechas o calcular la diferencia entre dos fechas.
+
+Con un poco de práctica, puedes utilizar estas funciones para realizar cálculos precisos y útiles con fechas en tus proyectos de Go.
 
 ## Ver también
 
-- Documentación de la función `AddDate()` en la librería `time`: https://golang.org/pkg/time/#Time.AddDate
-- Documentación de la función `Parse()` en la librería `time`: https://golang.org/pkg/time/#Parse
-- Ejemplos de cálculo de fechas con diferentes formatos en Go: https://gobyexample.com/time-formatting-parsing
+- Documentación de la librería `time` de Go: https://golang.org/pkg/time/
+- Ejemplos de cálculos de fechas en Go: https://golangbyexample.com/golang-time-series-datetime/
+- Tutorial sobre cómo trabajar con fechas y horas en Go: https://www.calhoun.io/working-with-dates-and-times-in-go/

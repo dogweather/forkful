@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Fish Shell: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué verificar si existe un directorio?
+## Por qué
 
-Verificar si un directorio existe es una tarea común al trabajar con la terminal y en programación. Es importante asegurarse de que un directorio exista antes de intentar manipularlo o acceder a él en caso de que no exista. Esto nos ayuda a evitar errores y a escribir código más robusto.
+Si estás trabajando en un proyecto en el que necesitas manejar diferentes directorios, es posible que en algún momento necesites verificar si un directorio específico existe antes de realizar alguna acción. Ya sea para asegurarte de que una ruta es válida o para evitar errores en tu código, es importante saber cómo verificar la existencia de un directorio en Fish Shell.
 
 ## Cómo hacerlo
 
-En Fish Shell, podemos usar el comando `test -d` seguido del nombre del directorio para verificar si existe o no. Este comando devuelve un valor de exito si el directorio existe y un error si no existe. Por ejemplo:
+Fish Shell tiene un comando interno llamado `test` que nos permite realizar diferentes comprobaciones, incluyendo la verificación de la existencia de un directorio. Podemos usarlo de la siguiente manera:
 
 ```Fish Shell
-test -d mi_directorio
-echo $status
+test -d <directorio>
 ```
 
-Si el directorio "mi_directorio" existe, este comando imprimirá un `0` como resultado. De lo contrario, imprimirá un `1` indicando que no existe.
+Si el directorio existe, este comando devolverá `true`, de lo contrario, devolverá `false`. También podemos utilizar la sintaxis de comillas dobles para referirnos a un directorio que contenga espacios en su nombre:
 
-## Profundizando en la verificación de directorios
+```Fish Shell
+test -d "<directorio>"
+```
 
-Además de usar el comando `test -d`, existen otras formas de verificar si un directorio existe en Fish Shell, como por ejemplo usando el comando `ls`. Este comando nos permite listar el contenido de un directorio específico y si el directorio que intentamos listar no existe, se mostrará un error.
+Por ejemplo, si queremos verificar si el directorio "documentos" existe en nuestra carpeta de usuario, podemos usar el siguiente comando:
 
-Otra opción es usar el comando `mkdir -p`. Este comando nos permite crear un directorio siempre y cuando no exista previamente. Podemos usarlo para crear un directorio si este no existe y luego verificar su existencia usando `test -d`.
+```Fish Shell
+test -d "~/documentos"
+```
 
-En resumen, es esencial verificar si un directorio existe antes de intentar acceder o manipularlo en Fish Shell. Esto nos ayuda a escribir un código más confiable y a evitar errores.
+Si el directorio existe, obtendremos como resultado `true`. Si lo combinamos con un condicional `if`, podemos realizar ciertas acciones según el resultado de la comprobación.
+
+## Profundizando
+
+Si queremos saber más sobre la verificación de la existencia de un directorio en Fish Shell, podemos revisar la sección de documentación correspondiente. Allí encontraremos información sobre otros comandos y opciones que pueden ser útiles en diferentes situaciones.
+
+También podemos utilizar la sugerencia de auto-completar de Fish Shell para obtener una lista de los directorios existentes en nuestra ubicación actual. Simplemente escribimos `test -d` seguido de un espacio y luego presionamos la tecla Tab. Esto nos mostrará una lista de los directorios existentes y nos ayudará a escribir la ruta correctamente.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [Ejemplos de verificación de directorios en Fish Shell](https://www.unixtutorial.org/fish-test-command-synatx/)
-- [Otras formas de verificar la existencia de directorios](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)
+- Documentación oficial sobre test: https://fishshell.com/docs/current/cmds/test.html
+- Listas de directorios en Fish Shell: https://fishshell.com/docs/current/cmds/complete.html#dirnames

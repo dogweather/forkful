@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Sattumanvaraisten numeroiden generointi"
-simple_title:         "Sattumanvaraisten numeroiden generointi"
+title:                "Satunnaislukujen luominen"
+html_title:           "Haskell: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,45 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-
-Ohjelmoijat voivat käyttää satunnaislukuja monissa eri ohjelmoinnin osa-alueissa, kuten peleissä, simuloinneissa ja salausalgoritmeissa.
+Joku voi haluta luoda satunnaisia numeroita esimerkiksi pelien ja simulaatioiden luomiseen. Satunnaiset numerot voivat myös auttaa testaamaan ja vertaamaan algoritmeja ja ohjelmia.
 
 ## Miten
-
-Satunnaislukujen generoiminen on helppoa Haskellissa, sillä siinä on valmiina funktio `random` ja `randomR`, jotka generoivat satunnaislukuja eri tavoin.
-
-```Haskell
-import System.Random
-
--- Generoi satunnaisluku väliltä 1-10.
-randomNumber1 :: Int
-randomNumber1 = randomRIO (1, 10)
-
--- Generoi satunnaisluku väliltä 50-100.
-randomNumber2 :: Int
-randomNumber2 = randomR (gRandom 50 100)
-
--- Generoi satunnainen True tai False arvo.
-randomBool :: Bool
-randomBool = random gBool
 ```
+Prelude> import Random
+Prelude Random> randomRIO (1,10)
+4
+```
+Yllä olevassa esimerkissä käytetään `randomRIO`-funktiota luomaan satunnainen luku väliltä 1-10. Tämä funktio hyödyntää `IO`-monadia, joka mahdollistaa satunnaisen numeron generoinnin. Voit myös käyttää `randomR`-funktiota, joka palauttaa arvon `RandomGen`-tyyppisenä.
 
 ```
->>> randomNumber1
-7
->>> randomNumber2
-78
->>> randomBool
-False
+Prelude> import System.Random
+Prelude System.Random> randomR (1,10) (mkStdGen 42)
+(5, StdGen 1095936233 363907491)
 ```
+Yllä olevassa esimerkissä käytetään `randomR`-funktiota luomaan satunnainen luku väliltä 1-10. `mkStdGen`-funktio luo uuden satunnaisgeneraattorin arvon 42 perusteella.
 
-## Syventyvä tarkastelu
+## Syväsukellus
+Satunnaisia numeroita generoidaan käyttäen satunnaistusfunktioita, jotka pohjautuvat erilaisiin algoritmeihin. Haskellissa on valmiiksi määriteltyjä satunnaistusfunktioita, kuten `randomR` ja `randomRIO`, jotka perustuvat Mersenne Twister -generaattoriin.
 
-Haskellissa satunnaislukujen generointi perustuu oletuksena "satunnaisgeneraattoriin" (random number generator), joka ottaa sisäänsä "siemenarvon" (seed), josta se generoi sarjan satunnaislukuja. Sama siemenarvo tuottaa aina saman sarjan satunnaislukuja, joten oikeassa käytössä siemenarvo tulisi vaihtaa joka kierroksella, esimerkiksi käyttäjän antaman satunnaisen arvon pohjalta.
-
-Lisäksi Haskellissa on mahdollista käyttää myös puhtaampaa satunnaislukugeneraattoria, jonka avulla voidaan tuottaa satunnaislukuja funktionaalisen ohjelmoinnin periaatteiden mukaisesti.
+Voit myös luoda omia satunnaistusfunktioita käyttämällä `RandomGen`-tyyppiä ja sen funktioita, kuten `next` ja `split`. Tämä mahdollistaa tarkemman ja monipuolisemman satunnaisen numeron luomisen.
 
 ## Katso myös
-
-- [Haskellin virallinen dokumentaatio satunnaislukujen generoinnista](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/random/System-Random.html)
-- [Ohjeita satunnaislukujen generointiin Haskellissa](http://www.csee.umbc.edu/~olano/s2002c36/ch06.1.pdf)
+- [Haskellin dokumentaatio satunnaistusfunktioista](https://hackage.haskell.org/package/random)
+- [Haskell kirja: Satunnaislukujen tuottaminen](http://learnyouahaskell.com/input-and-output)
+- [Haskellin ohjelmointiopas](https://www.haskell.org/)

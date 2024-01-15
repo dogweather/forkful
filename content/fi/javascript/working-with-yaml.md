@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Työskentely yaml:n kanssa."
-simple_title:         "Työskentely yaml:n kanssa."
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Javascript: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -9,58 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi Käyttää YAMLia JavaScript-Ohjelmoinnissa?
+## Miksi
 
-YAML (YAML Ain't Markup Language) on formaatti, jota käytetään tallentamaan tietoa tekstimuodossa. Se on suosittu monilla eri kielillä, mukaan lukien JavaScript, ja sillä on useita käyttötarkoituksia, kuten tietokantojen rakentaminen, konfiguraatiotiedostojen tallentaminen ja tietojen vaihtaminen eri sovellusten välillä. Käyttämällä YAMLia, voit helposti tallentaa ja lukea tietoja JavaScript-koodissasi.
+Jos olet JavaScript-kehittäjä ja haluat tehokkaan ja helpon tavan hallita tietoja, jotka ovat tallennettu tekstiin, niin YAML on juuri sitä mitä tarvitset. Se on moderni tiedostomuoto, joka on helppo lukea ja kirjoittaa, mikä tekee siitä erinomaisen vaihtoehdon monimutkaisille tietoformaateille, kuten XML.
 
-## Miten Käyttää YAMLia JavaScriptin Kanssa?
+## Miten
 
-YAMLin käyttäminen JavaScriptissä on helppoa, sillä siihen löytyy useita kirjastoja, kuten js-yaml ja yaml-js. Näiden avulla voit helposti lukea YAML-muotoisia tiedostoja ja muuttaa ne JavaScript-objekteiksi. Seuraavassa on esimerkki siitä, miten voit lukea YAML-tiedoston ja tulostaa sen sisällön konsoliin käyttäen js-yaml-kirjastoa:
+YAML-tiedostojen käsittely JavaScriptissä on yksinkertaista ja suoraviivaista. Ensimmäiseksi varmista, että olet asentanut tarvittavan kirjaston, kuten [js-yaml](https://github.com/nodeca/js-yaml), käyttääksesi YAML-parseria.
 
-```javascript
-const yaml = require('js-yaml');
-const fs = require('fs');
-
-// Lukee YAML-tiedoston ja tallentaa sen JavaScript-objektina
-const data = yaml.safeLoad(fs.readFileSync('tiedosto.yaml', 'utf8'));
-
-// Tulostaa objektin konsoliin
-console.log(data);
+```Javascript
+// Esimerkki YAML-tiedostosta
+const yamlData = `
+  year: 2021
+  month: August
+  day: 24
+`;
+// Muunnetaan YAML JavaScript-objektiksi
+const jsObject = YAML.load(yamlData);
+// Tulostetaan tiedot konsolille
+console.log(`Tänään on ${jsObject.day}. ${jsObject.month} ${jsObject.year}.`);
 ```
 
-Esimerkiksi, jos tiedostossasi on seuraava YAML-data:
+Tämä koodi luo JavaScript-objektin, joka sisältää vuoden, kuukauden ja päivän tiedot YAML-tiedostosta. Huomaa, että YAML syntaksiin kuuluu sisennys merkityillä tasoilla, joten varmista että tiedostosi on oikeassa muodossa ennen kuin yrität muuntaa sen JavaScript-muotoon.
 
-```yaml
-nimi: Johanna
-ika: 25
-kieli: suomi
+## Syventävä sukellus
+
+YAML-tiedot voivat sisältää monenlaisia arvoja, kuten lukuja, tekstiä, listoja ja objekteja. Voit myös luoda muuttujia ja käyttää niitä myöhemmin tiedostossa. Tässä on toinen esimerkki muokatusta YAML-päivämäärätiedostosta:
+
+```Javascript
+date: &date
+  year: 2021
+  month: August
+  day: 24
+
+// Käytetään muuttujina
+date1: *date
+date2: *date
+// Muutetaan kuukausi ja päivä
+date2.month: September
+date2.day: 1
 ```
 
-Koodi tulostaa seuraavan objektin konsoliin:
+Tämä tuottaa kaksi JavaScript-objektia, joista kummallakin on sama vuosi, mutta eri kuukausi ja päivä. Tämä voi olla hyödyllistä, jos haluat käyttää samoja tietoja useissa eri kohdissa tiedostoa.
 
-```javascript
-{ nimi: 'Johanna', ika: 25, kieli: 'suomi' }
-```
+## Katso myös
 
-Voit myös luoda uuden YAML-tiedoston tai kirjoittaa tietoja olemassa olevaan tiedostoon käyttämällä yaml-js-kirjastoa. Seuraavassa on esimerkki siitä, miten voit luoda uuden YAML-tiedoston ja tallentaa siihen tietoja:
-
-```javascript
-const YAML = require('yaml-js');
-const fs = require('fs');
-
-// Luo uuden YAML-tiedoston ja tallentaa siihen tietoja
-const data = { nimi: 'Matti', ika: 32, kieli: 'suomi' };
-const yamlData = YAML.dump(data);
-
-fs.writeFileSync('uusi_tiedosto.yaml', yamlData);
-```
-
-## Syvempi Sukellus YAMLin Käyttöön
-
-Jos haluat oppia enemmän YAMLin käytöstä JavaScriptissä, voit tutustua js-yamlin ja yaml-js:n dokumentaatioon, jotka antavat sinulle tarkemman kuvauksen eri toiminnoista ja vaihtoehdoista. Voit myös käyttää YAMLin kanssa muita kirjastoja ja työkaluja, kuten YAML-validaattoria, joka auttaa varmistamaan, että YAML-tiedostosi ovat oikeassa muodossa ja eivät aiheuta ongelmia koodissasi.
-
-## Katso Myös
-
-- [js-yaml dokumentaatio](https://github.com/nodeca/js-yaml)
-- [yaml-js dokumentaatio](https://github.com/yaml-js/yaml-js)
-- [YAML-validaattori](https://jsonformatter.org/yaml-validator)
+- [js-yaml](https://github.com/nodeca/js-yaml)
+- [YAML-oppaat](https://yaml.org/start.html)
+- [kustomoidut JavaScript-objektit](https://www.w3schools.com/js/js_objects.asp)

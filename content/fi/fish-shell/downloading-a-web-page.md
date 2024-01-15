@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Fish Shell: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,30 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi ladata verkkosivu? On monia syitä, miksi joku saattaa haluta ladata verkkosivun. Ehkä tarvitset tietyt tiedot sivulta, haluat tutkia sen rakennetta tai haluat tallentaa sen offline-käyttöä varten. Fish Shellissa on mahdollista ladata verkkosivuja ja tässä blogikirjoituksessa opit miten se tehdään.
+Miksi haluaisit ladata verkkosivun? Usein se johtuu siitä, että haluat tallentaa sivun sisällön tulevaa käyttöä varten tai lukea sitä offline-tilassa. Fish Shellilla on helppo tapa tehdä tämä ja tässä artikkelissa näytämme, miten se tehdään.
 
-## Miten tehdä
+## Miten tehdä se Fish Shellilla
 
-Fish Shellin avulla voit helposti ladata verkkosivuja käyttämällä `curl` komentoa. `curl` komento ottaa yleensä URL-osoitteen argumenttina ja lataa sen, mutta voit myös antaa muita vaihtoehtoja, kuten tallentaa latauksen tiedostoon, määrittää käytettävän protokollan tai muokata oletusasetuksia. Tässä on yksinkertainen esimerkki, kuinka ladataan Google.com:
-
-```Fish Shell
-curl https://www.google.com
-```
-
-Tämä lataa Google-sivun HTML-koodin ja tulostaa sen konsolille. Voit myös tallentaa sen tiedostoon, antamalla `-o` vaihtoehdon ja määrittämällä tiedoston nimen, kuten tässä:
+Fish Shellilla on sisäänrakennettu komento nimeltä `curl`, joka pystyy lataamaan verkkosivun sisällön ja tallentamaan sen tiedostoon. Seuraava esimerkki näyttää, miten ladataan Githubin etusivu ja tallennetaan se tiedostoon nimeltä "github.html":
 
 ```Fish Shell
-curl https://www.google.com -o google.html
+curl -o github.html https://github.com
 ```
 
-Tämä tallentaa Google-sivun tiedostoon nimeltä "google.html". Voit myös määrittää käytettävän protokollan lisäämällä `--proto` vaihtoehdon, esimerkiksi `-proto http` lataa sivun HTTP-protokollaa käyttäen. Käyttämällä `curl --help` voit nähdä kaikki mahdolliset vaihtoehdot ja niiden käytön.
+Tämän jälkeen voit avata "github.html" tiedoston selaimessa ja näet Githubin etusivun sisällön. Voit myös määrittää toisen tiedostonimen `curl` komennolle, jos haluat tallentaa sivun eri nimellä.
 
-## Syvemmälle
+Voit myös käyttää `curl` komentoa dynaamisesti muuttujien kanssa. Seuraava esimerkki näyttää, miten voit ladata haluamasi sivun ja tallentaa sen tiedostoon, jonka nimi on sama kuin valitun sivun otsikko:
 
-`curl` komento mahdollistaa syvällisemmät asetukset ja mahdollistaa verkkosivujen tarkemman lataamisen. Voit esimerkiksi määrittää käytettävän käyttäjän-agentin käyttämällä `-A` vaihtoehtoa, jolloin voit esittää sellaisena käyttäjänä, jota sivusto luulee sinun olevan. Lisäksi voit käyttää `-H` vaihtoehtoa lisätäksesi HTTP-otsakkeita pyyntöön. Näiden vaihtoehtojen avulla voit simuloida todellista käyttäytymistä ja saada mahdollisimman tarkat tiedot sivulta.
+```Fish Shell
+otsikko=(Lataa tämä sivu)
+curl -o "$otsikko.html" https://esimerkkisivu.com
+```
+
+## Syventävää tietoa
+
+`curl` komennolle on saatavilla monia eri argumentteja, joilla voit muokata lataamistasi sivuista. Voit esimerkiksi määrittää, haluatko ladata sivun vain otsikon tai sisällön avulla. Voit lukea lisää näistä mahdollisuuksista `curl` komennon dokumentaatiosta.
+
+Voit myös tehdä lisämuokkauksia lataamiisi sivuihin esimerkiksi käyttäen tekstinkäsittelyohjelmia, kuten `sed` tai `awk`. Näin voit poistaa tai muokata sivun sisältöä, ennen kuin tallennat sen tiedostoon.
 
 ## Katso myös
 
-- [Fish Shell virallisilta kotisivuilta](https://fishshell.com)
-- [Curl dokumentaatio](https://curl.se/docs/manpage.html)
-- [Fish Shell ohjelmointiopas](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/)
+- [`curl` komennon dokumentaatio](https://curl.haxx.se/docs/manpage.html)
+- [Sivun lataaminen ja tallentaminen Bash Shellilla](https://dev.to/akhil/curl-the-best-things-in-life-are-free-42n8) (englanniksi)

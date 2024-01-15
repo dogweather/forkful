@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 读取命令行参数"
+title:                "读取命令行参数"
+html_title:           "Gleam: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,50 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么读取命令行参数？
 
-如果你是一名Gleam程序员，你可能已经听说过命令行参数。它们可以帮助你的程序在运行时从命令行接受输入，并根据这些输入执行特定的操作。阅读命令行参数是一个重要的技能，无论你是在开发命令行工具还是构建网络应用程序。
+如果你是一名Gleam编程语言的入门者，或者想要学习如何从命令行获取输入，那么阅读命令行参数是必不可少的。通过阅读本文，你将学会如何在Gleam中灵活地读取命令行参数，以及为什么要这样做。
 
-# 如何
+## 如何读取命令行参数？
 
-阅读命令行参数的方法很简单。首先，在你的Gleam文件中导入'gleam/io'模块：
+读取命令行参数在Gleam中非常简单，只需要使用标准库中的`gleam/args`模块。让我们来看一个例子，假设我们要从命令行获取一个名字并输出它：
 
-```Gleam
-import gleam/io
+```
+import gleam/args
+
+fn main() {
+  let args = args.arguments()
+  let name = case args {
+    [] -> "John"
+    [name] -> name
+    _ -> "Invalid input"
+  }
+  io.println("Hello, #{name}!")
+}
 ```
 
-然后，使用'io/parse_arguments'函数来解析命令行参数，并将参数存储在一个变量中：
+我们使用`args.arguments()`函数来获取命令行参数，并使用`case`表达式来匹配不同的参数情况。上面的代码的基本思路是：如果命令行参数为空，则默认输出"John"；如果只有一个参数，则输出该参数作为名字；否则，输出"Invalid input"。
 
-```Gleam
-args = io/parse_arguments()
+让我们来测试一下：
+
+```
+$ gleam run hello.gleam
+Hello, John!
+
+$ gleam run hello.gleam Alice
+Hello, Alice!
+
+$ gleam run hello.gleam Alice Bob
+Hello, Invalid input!
 ```
 
-现在，你可以使用变量'args'来访问每个命令行参数。例如，如果你的程序需要接受一个名字作为参数，你可以使用'args'来获取这个名字，如下所示：
+通过这个例子，我们可以看到如何使用`args`模块来读取命令行参数，并使用`case`表达式进行匹配。
 
-```Gleam
-name = args["name"]
-```
+## 深入了解
 
-最后，你可以在程序中使用这个名字来执行你想要的操作。当你从命令行运行你的程序，你可以在命令行中使用'--name'参数来提供名字，如下所示：
+现在，让我们深入了解一下如何读取命令行参数。在Gleam中，命令行参数是以字符串列表的形式存在的，通过使用`args.arguments()`函数，我们可以获取这个字符串列表。然后，我们可以使用`case`表达式对这个列表进行匹配，来做出不同的处理。
 
-```shell
-gleam run program_name.gleam --name="John"
-```
+除了`args`模块，我们也可以从[Gleam文档](https://gleam.run/documentation/standard-library/args/)中学习更多相关的标准库函数，例如`args.ordered`和`args.named`函数，它们可以帮助我们更灵活地读取命令行参数。
 
-在这个例子中，程序将获取到名字"John"，并在运行时使用它来执行相关的操作。
+# 参考链接
 
-# 深入了解
-
-除了上面提到的基本用法，阅读命令行参数还可以有更多的用途，例如：
-
-- 使用默认值：如果命令行中没有提供某个参数，你可以使用'io/parse_arguments_with_defaults'函数来设置默认值，以确保程序的正常运行。
-- 错误处理：如果命令行参数的格式不正确，或者缺少必要的参数，你可以使用'io/parse_arguments_with_error_handling'函数来捕获错误并进行处理。
-- 更复杂的参数：除了简单的字符串参数，你还可以通过使用'gleam/struct'来创建结构体来解析和使用更复杂的命令行参数。
-
-了解更多关于命令行参数的用法和函数，请查阅官方文档。
-
-# 同时查看
-
-- [Offical Gleam Documentation](https://gleam.run/documentation/)
-- [Gleam Github Repository](https://github.com/gleam-lang/gleam)
-- [A Beginner's Guide to Gleam Programming](https://dev.to/alexburgos/a-beginner-s-guide-to-gleam-programming-5i6g)
+- [Gleam文档 - 读取命令行参数](https://gleam.run/documentation/standard-library/args/)
+- [Gleam仓库 - args模块源代码](https://github.com/gleam-lang/gleam_stdlib/blob/master/src/gleam/args.erl)

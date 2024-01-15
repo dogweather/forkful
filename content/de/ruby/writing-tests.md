@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Tests schreiben"
-simple_title:         "Tests schreiben"
+title:                "Test schreiben"
+html_title:           "Ruby: Test schreiben"
+simple_title:         "Test schreiben"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -11,39 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Welt der Softwareentwicklung gibt es eine Vielzahl von Programmiersprachen und -methoden, die verwendet werden können, um qualitativ hochwertigen Code zu erstellen. Eine davon ist Ruby, eine dynamische Programmiersprache, die für ihre Benutzerfreundlichkeit und Lesbarkeit bekannt ist. Aber warum sollte man Tests in Ruby schreiben? Nun, Tests helfen dabei, Fehler in unserem Code zu finden und zu beheben, bevor sie sich auf die Funktionalität unserer Anwendung auswirken. Sie ersparen uns auch Zeit und Mühe, da wir nicht manuell jeden Bereich unseres Codes überprüfen müssen. In diesem Artikel werden wir uns genauer damit befassen, wie man Tests in Ruby schreibt und warum sie für jeden Entwickler unerlässlich sind.
+Tests sind unerlässlich, um die Qualität und Zuverlässigkeit von Ruby-Code sicherzustellen. Mit Tests können Fehler frühzeitig erkannt und behoben werden, was wiederum zu einem reibungsloseren Arbeitsablauf und einem insgesamt besseren Endprodukt führt.
 
-## Wie man Tests in Ruby schreibt
+## Wie man Tests schreibt
 
-Die Syntax für Tests in Ruby ist einfach und intuitiv. In der Regel verwendet man dazu das Ruby Testing Framework "MiniTest", das in der Standardbibliothek von Ruby enthalten ist. Um eine Testklasse zu erstellen, müssen wir zunächst eine neue Datei mit der Dateiendung ".rb" erstellen und sie in unserer Ruby-Anwendung importieren. Innerhalb dieser Datei erstellen wir dann eine Klasse mit dem Namen "Test" und erweitern sie von der Klasse "Minitest::Test". Hier ist ein Beispiel:
+Tests in Ruby werden mit dem beliebten Framework RSpec geschrieben. Hier ist ein einfaches Beispiel für einen Test, der überprüft, ob eine Methode die richtige Ausgabe zurückgibt.
 
-```Ruby
-require 'minitest/autorun'
+```ruby
+def add(a, b)
+  a + b
+end
 
-class Test < Minitest::Test
-  # Testmethoden hier einfügen
+describe "#add" do
+  it "adds two numbers correctly" do
+    result = add(2, 3)
+    expect(result).to eq(5)
+  end
 end
 ```
-Nun können wir Testmethoden innerhalb dieser Klasse definieren, die jeweils mit "test_" beginnen. Hier ist ein Beispiel für eine Testmethode, die überprüft, ob die Summe von zwei Zahlen korrekt berechnet wird:
 
-```Ruby
-def test_summe_von_zwei_zahlen
-  assert_equal 7, 3 + 4  # Expected, Actual
-end
-```
+In diesem Beispiel erstellen wir eine Methode namens `add`, die zwei Zahlen addiert. Im Test überprüfen wir, ob die Methode die richtige Ausgabe zurückgibt, in diesem Fall 5. Wenn der Test erfolgreich ist, wird die grüne Farbe in der Konsole angezeigt, was bedeutet, dass unser Code ordnungsgemäß funktioniert. Wenn es zu einem Fehler kommt, wird die rote Farbe angezeigt und wir wissen, dass etwas behoben werden muss.
 
-Wir verwenden hier die Methode "assert_equal", um zu überprüfen, ob die erwartete Ausgabe mit der tatsächlichen Ausgabe übereinstimmt. Wenn dies nicht der Fall ist, wird der Test fehlschlagen und uns mitteilen, wo der Fehler aufgetreten ist. Es gibt auch andere nützliche Methoden für das Testen von Code, wie zum Beispiel "assert_nil" oder "assert_raises". Eine vollständige Liste findet man in der Dokumentation von MiniTest.
+Ein weiteres nützliches Feature von RSpec ist die Möglichkeit, sogenannte Mocks und Stubs zu verwenden, um externe Abhängigkeiten in den Tests zu simulieren. Dadurch können wir unsere Tests unabhängig von externen Ressourcen durchführen und garantieren, dass sie immer konsistent sind.
 
-## Deep Dive
+## Tiefere Einblicke
 
-Nun, da wir wissen, wie man Tests in Ruby schreibt, lassen Sie uns etwas tiefer in das Konzept des Testens eintauchen. Tests sind in der Regel in zwei Kategorien unterteilt: Unit-Tests und Integrationstests. Unit-Tests überprüfen einzelne Methoden oder Klassen, während Integrationstests die Zusammenspiel von verschiedenen Komponenten unserer Anwendung testen. Beide sind wichtig, um sicherzustellen, dass unser Code gut getestet und zuverlässig ist.
+Eine gute Praxis beim Schreiben von Tests ist es, jeden Aspekt des Codes abzudecken und sicherzustellen, dass alle möglichen Szenarien getestet werden. Dies wird als "Testabdeckung" bezeichnet und kann mit Tools wie SimpleCov gemessen werden. Eine hohe Testabdeckung gibt uns Vertrauen in unseren Code und hilft uns, potenzielle Fehler frühzeitig zu erkennen.
 
-Eine gute Praxis beim Schreiben von Tests ist auch das "Arrange-Act-Assert"-Muster, bei dem wir den Code in drei Teile unterteilen: das Anordnen (Arrange), das Ausführen (Act) und das Überprüfen (Assert). Das Anordnen bezieht sich auf das Einrichten von Vorbedingungen für unseren Test, das Ausführen auf die Ausführung der zu testenden Methode und das Überprüfen auf das Überprüfen der erwarteten Ausgabe.
-
-Eine weitere wichtige Sache beim Testen ist die Codeabdeckung. Das bedeutet, wie viel Prozent unseres Codes durch Tests abgedeckt wird. Wir sollten immer versuchen, eine hohe Codeabdeckung zu erreichen, um sicherzustellen, dass unser Code gut getestet ist.
+Es gibt auch verschiedene Arten von Tests, wie zum Beispiel Unit Tests, Integrationstests und End-to-End-Tests. Das Verständnis der Unterschiede und wann sie angewendet werden sollten, kann sehr hilfreich sein, um die Teststrategie zu optimieren.
 
 ## Siehe auch
 
-- Einführung in MiniTest: https://www.rubyguides.com/2018/07/minitest/
-- Ruby Testing Guide: https://www.rubyguides.com/2018/07/make-ruby-tests/
-- Die offizielle MiniTest Dokumentation: https://ruby-doc.org/stdlib-2.4.1/libdoc/minitest/rdoc/MiniTest.html
+- [RSpec Dokumentation](https://rspec.info/documentation/)
+- [Einführung in Test-Driven Development (TDD)](https://medium.com/@waqarahmadjustdoit/test-driven-development-tdd-an-introduction-4c91ba038cea)
+- [Die Bedeutung von Testabdeckung](https://medium.com/swlh/what-is-code-coverage-and-why-should-you-care-14b21a16fca1)

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Sammenligning av to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "TypeScript: Sammenligning av to datoer"
 simple_title:         "Sammenligning av to datoer"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,44 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sammenligne to datoer kan være nyttig når du jobber med datoer i TypeScript-programmering. Det kan hjelpe deg med å bestemme hvilken dato som er tidligere, senere eller om de er like. Dette kan være nyttig for å filtrere eller sortere data, samt hjelpe deg med å lage logikk for å styre handlinger basert på datoer.
+Mange ganger i programmering må vi sammenligne to datoer for å avgjøre om en dato kommer før, etter eller på samme tid som en annen. Dette kan være nyttig når man for eksempel ønsker å filtrere data eller sortere det i kronologisk rekkefølge. Med TypeScript kan vi enkelt sammenligne datoer ved hjelp av innebygde funksjoner og metoder.
 
-## Slik gjør du det
+## Hvordan
 
-For å sammenligne to datoer i TypeScript, kan du bruke den innebygde `Date` klassen. Du kan opprette to datovariabler ved hjelp av `new Date()` metoden og deretter bruke sammenligningsoperatører som `<`, `>`, `<=` og `>=` for å sammenligne dem. Her er et eksempel på hvordan du kan gjøre det:
+For å sammenligne to datoer i TypeScript, kan vi bruke den innebygde Date-klassen. Vi kan opprette to Date-objekter og deretter bruke metoden `.getTime()` for å få en timestamp som vi kan sammenligne. La oss se på et eksempel:
 
 ```TypeScript
-let dato1 = new Date("2021-01-01");
-let dato2 = new Date("2021-02-01");
+const birthday = new Date(2000, 5, 10);
+const currentDate = new Date();
 
-if (dato1 < dato2) {
-    console.log("Dato 1 kommer før dato 2");
+if (birthday.getTime() > currentDate.getTime()) {
+  console.log("Birthday has not happened yet");
+} else if (birthday.getTime() < currentDate.getTime()) {
+  console.log("Birthday has already passed");
+} else {
+  console.log("Today is the birthday!");
 }
 ```
 
-I dette eksempelet vil konsollen skrive ut "Dato 1 kommer før dato 2" fordi februar (dato 2) kommer etter januar (dato 1).
+I dette eksempelet oppretter vi et Date-objekt for en fødselsdag i 2000 (10. juni) og et Date-objekt for dagens dato. Vi sammenligner deretter timestampene til disse to datoene ved hjelp av `.getTime()`-metoden. Hvis fødselsdagen ligger etter dagens dato, betyr det at den ikke har skjedd ennå. Hvis fødselsdagen ligger før dagens dato, har den allerede passert. Hvis timestampene er like, betyr det at det er fødselsdagen i dag.
 
-## Dypdykk
+## Deep Dive
 
-I tillegg til de vanlige sammenligningsoperatørene, kan du også bruke `getTime()` metoden på `Date` objektet for å få datoen i millisekunder. Dette kan være nyttig hvis du trenger å sammenligne to nøyaktige tidspunkter. Du kan også bruke `getTime()` og `setTime()` metoder for å sammenligne og justere datoer ved hjelp av millisekunder. Her er et eksempel på hvordan du kan bruke dette:
+I tillegg til `.getTime()`-metoden, kan vi også bruke andre innebygde metoder og operatører for å sammenligne datoer i TypeScript. Noen nyttige er `.getFullYear()`, `.getMonth()` og `.getDate()` for å få spesifikke deler av en dato. I tillegg kan vi bruke operatorer som `>`, `<` og `===` for å sammenligne datoene direkte, uten å bruke `.getTime()`-metoden.
 
-```TypeScript
-let dato1 = new Date("2021-01-01");
-let dato2 = new Date("2021-01-02");
-
-// Sammenligner datoen i millisekunder
-if (dato1.getTime() < dato2.getTime()) {
-    console.log("Dato 1 kommer før dato 2");
-}
-
-// Justerer dato 2 til å være en dag etter dato 1
-dato2.setTime(dato1.getTime() + 86400000);
-console.log(dato2); // Output: Sat Jan 02 2021 00:00:00 GMT+0100 (sentraleuropeisk normaltid)
-```
-
-Det er også verdt å merke seg at datoen i JavaScript og TypeScript er basert på UTC-tidssonen. Så når du sammenligner eller justerer datoer, vil det være viktig å ta hensyn til tilpasninger til lokale tidssoner.
+Det er også viktig å merke seg at datoer kan være litt feilbarlige på grunn av forskjellige tids soner og formater. Det kan være lurt å utforske forskjellige biblioteker og pakker som kan hjelpe med å normalisere datoer og håndtere ulike tids soner.
 
 ## Se også
 
-- [Date klasse i TypeScript dokumentasjon](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [Date objektet i JavaScript dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript dokumentasjon](https://www.typescriptlang.org/docs/)
+- [Date-klassen i TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js - library for working with dates in JavaScript](https://momentjs.com/)

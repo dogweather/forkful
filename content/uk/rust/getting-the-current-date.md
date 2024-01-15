@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Отримання поточної дати."
-simple_title:         "Отримання поточної дати."
+title:                "Отримання поточної дати"
+html_title:           "Rust: Отримання поточної дати"
+simple_title:         "Отримання поточної дати"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,42 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Отримання поточної дати є важливою складовою для багатьох програм, особливо тих, що використовуються для обробки даних та створення звітів. У Rust є простий та ефективний спосіб отримати поточну дату, що допоможе зберегти час та зусилля програмістів.
+Встановлення поточної дати в програмі може бути корисним для відстеження часу створення або модифікації файлів, роботи з розкладами або для створення інформативних повідомлень.
 
-## Як це зробити
+## Як
 
-В Rust існує стандартна бібліотека з функціями для роботи з часом. Щоб отримати поточну дату, спочатку потрібно імпортувати бібліотеки `std::time::SystemTime` та `std::time::SystemTimeError`. Тоді можна викликати функцію `now()` з `SystemTime`, що поверне поточний час у форматі `SystemTime`.
-
-Наприклад, якщо ми хочемо отримати дату у форматі `%Y-%m-%d`, можна використати метод `format()` з бібліотеки `chrono`, яка надає інструменти для роботи зі строковими даними дати та часу. Далі, результат необхідно сконвертувати у строку та вивести на екран.
-
-```
-Rust
-use std::time::{SystemTime, SystemTimeError};
-use chrono::prelude::*;
+```Rust
+use std::time::SystemTime;
 
 fn main() {
-    let current_date = SystemTime::now();
-    let formatted_date = current_date
-        .duration_since(SystemTime::UNIX_EPOCH)
-        .map(|d| Utc.timestamp(d.as_secs() as i64, 0).format("%Y-%m-%d").to_string())
-        .unwrap_or_else(|e| e.to_string());
+    // Отримання поточного часу у секундах з 1 січня 1970 року (Unix Epoch)
+    let current_time = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).expect("Could not get current time");
 
-    println!("Potочна дата: {}", formatted_date);
+    // Перетворення у формат UNIX Timestamp (із секунд у мікросекунди)
+    let unix_timestamp = current_time.as_secs() as u64;
+
+    println!("Поточний час у UNIX Timestamp: {}", unix_timestamp);
 }
-```
 
-Вивід на екран буде виглядати так:
 
 ```
-Potочна дата: 2019-11-24
+
+Вивід:
+``` 
+Поточний час у UNIX Timestamp: 1615038182 
 ```
 
-## Глибокая інформація
+## Глибока Занурення
 
-Якщо більше зацікавлених у наступну побітову глибоку розбірку цього процесу, можна дізнатися більше про `SystemTime` та `SystemTimeError` у [документації Rust](https://doc.rust-lang.org/std/time/struct.SystemTime.html). Також, для роботи з форматуванням дати і часу, можна перевірити більше про [chrono бібліотеку](https://docs.rs/chrono/0.4.10/chrono/).
+В Rust, є кілька способів отримати поточну дату та час, уключаючи використання вбудованих типів даних `SystemTime` та `Instant`, а також стандартної бібліотеки `std::time`. Ці типи даних дозволяють отримувати поточну дату та час у різних форматах, включаючи UNIX Timestamp та `DateTime` об'єкти.
+
+Щоб отримати більше інформації про отримання поточної дати в Rust, ознайомтеся з офіційною документацією [тут](https://doc.rust-lang.org/std/time/index.html).
 
 ## Дивись також
 
-- [Робота зі строковими даними дати та часу в Rust](https://www.phoronix.com/scan.php?page=news_item&px=Rust-Date-Time-Formats)
-- [Створення графіку дати з даними в Rust](https://rust-lang-nursery.github.io/date-time/guide-conversion.html)
-- [Порівняння дат у Rust](https://raymii.org/s/blog/Comparing_dates_with_Rust__the_easy_way.html)
+- [Official Rust Documentation - Time](https://doc.rust-lang.org/std/time/index.html)
+- [A Guide to Working With Dates and Times in Rust](https://www.freecodecamp.org/news/how-to-work-with-dates-and-times-in-rust/)

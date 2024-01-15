@@ -1,6 +1,7 @@
 ---
-title:                "Go: HTML-Analyse"
-simple_title:         "HTML-Analyse"
+title:                "Analysieren von HTML"
+html_title:           "Go: Analysieren von HTML"
+simple_title:         "Analysieren von HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,54 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Parsen von HTML kann für EntwicklerInnen in Go sehr nützlich sein, um Daten von Websites oder APIs zu extrahieren und weiterzuverarbeiten.
+HTML ist die gebräuchlichste Sprache zur Gestaltung von Webseiten und enthält wichtige Informationen über den Inhalt und die Struktur einer Webseite. Mit dem Parsen von HTML können Entwickler diese Informationen extrahieren und weiterverarbeiten, was für viele Anwendungen, von Web-Crawling bis hin zu datengetriebenen Entscheidungen, unerlässlich ist.
 
-## Wie man es macht
+## Wie geht man vor?
 
-Das Parsen von HTML in Go ist relativ einfach mit der Verwendung der `goquery` Bibliothek. Hier ist ein Beispiel, um alle Links auf einer Webseite zu extrahieren:
+Das Parsen von HTML ist mit Go relativ einfach. Zunächst muss man das entsprechende Paket importieren:
 
 ```Go
-package main
+import "golang.org/x/net/html"
+```
 
-import (
-  "fmt"
-  "log"
+Anschließend kann man mithilfe der `html.Parse()` Funktion den HTML-Code in ein `*html.Node` Objekt parsen:
 
-  "github.com/PuerkitoBio/goquery"
-)
+```Go
+doc, err := html.Parse(resp.Body)
+```
 
-func main() {
-  // Webseite laden
-  doc, err := goquery.NewDocument("https://www.example.com")
-  if err != nil {
-    log.Fatal(err)
-  }
+Hier sollte beachtet werden, dass `resp.Body` ein `io.Reader` Objekt sein muss, das den HTML-Code enthält. Mit diesem `*html.Node` Objekt kann nun durch die HTML-Struktur navigiert werden, um die gewünschten Informationen zu extrahieren. Hier ein Beispiel, um alle Links auf einer Seite zu finden:
 
-  // Alle Links auf der Seite sammeln
-  doc.Find("a").Each(func(index int, element *goquery.Selection) {
-    link, _ := element.Attr("href")
-    fmt.Printf("Link #%d: %s\n", index, link)
-  })
+```Go
+func findLinks(n *html.Node) []string {
+	var links []string
+	if n.Type == html.ElementNode && n.Data == "a" {
+		for _, attr := range n.Attr {
+			if attr.Key == "href" {
+				links = append(links, attr.Val)
+			}
+		}
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		links = append(links, findLinks(c)...)
+	}
+	return links
 }
 ```
 
-Die Ausgabe sieht dann in etwa so aus:
-
-```
-Link #0: https://www.example.com/first
-Link #1: https://www.example.com/second
-Link #2: https://www.example.com/third
-...
-```
+Dieser Code durchläuft rekursiv alle Nodes und sucht nach `<a>` Tags mit dem Attribut `href`. Die gefundenen Links werden in einem Slice gespeichert, das am Ende zurückgegeben wird.
 
 ## Tiefergehende Informationen
 
-Das Parsen von HTML in Go ermöglicht es EntwicklerInnen, gezielt nach bestimmten Elementen oder Klassen zu suchen und diese zu extrahieren. Mit der `Selection` Struktur von goquery können verschiedene Methoden wie `Find()` und `Text()` verwendet werden, um die gewünschten Daten auszuwählen und zu formatieren.
+Das Parsen von HTML mit Go bietet auch die Möglichkeit, spezifische Elemente und Attribute gezielt zu suchen und auszulesen. Dazu können die Funktionen `Query()` und `Attr()` aus dem Paket `"golang.org/x/net/html"` verwendet werden.
 
-Ein weiterer wichtiger Aspekt beim Parsen von HTML ist die Verwendung von Selectors, um spezifischere Elemente auszuwählen. Mit der Unterstützung von CSS-Selektoren in goquery können EntwicklerInnen ihre Suchanfragen noch genauer definieren.
+Ein weiteres nützliches Werkzeug ist das Paket `"golang.org/x/net/html/atom"`, das häufig verwendete HTML-Elemente als vordefinierte Konstanten zur Verfügung stellt.
+
+Außerdem bietet die offizielle Dokumentation von Go weitere Informationen und Beispiele zum Parsen von HTML.
 
 ## Siehe auch
 
-- [Die offizielle Dokumentation von goquery](https://godoc.org/github.com/PuerkitoBio/goquery)
-- [Ein Tutorial zum Parsen von HTML in Go](https://www.youtube.com/watch?v=RW4vv8G9Ubo)
-- [Weitere Beispiele und Anwendungsgebiete für das Parsing von HTML in Go](https://github.com/avelino/awesome-go#html)
+- [Offizielle Dokumentation zu HTML-Parsing mit Go](https://golang.org/pkg/html)
+- [Beispiele für das Parsen von HTML mit Go](https://gobyexample.com/html-parsing)
+- [Tutorial: Web-Scraping mit Go](https://tutorialedge.net/golang/go-web-scraping-tutorial/)

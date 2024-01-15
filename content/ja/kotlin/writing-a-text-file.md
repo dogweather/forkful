@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き方"
+html_title:           "Kotlin: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,57 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-日本のKotlinプログラミングブログへようこそ！
+## Why
 
-## なぜ
-テキストファイルを書くことは、プログラマーにとって非常に重要です。それは、データを保存し、読み込むための最も基本的な方法の1つであり、データの交換やバックアップにも使用されます。
+Text files are a common and convenient way to store and manage data. By learning how to write a text file in Kotlin, you can easily manipulate and save your data in a structured format that can be easily accessed and modified.
 
-## 方法
-テキストファイルを書くには、まずファイルを開く必要があります。以下のように、`FileWriter()`メソッドを使用してファイルを開きます。
+## How To
 
+Creating a text file in Kotlin is a simple process that involves a few basic steps:
+
+1. Import the `java.io.File` class in your Kotlin file:
 ```Kotlin
-val file = FileWriter("sample.txt")
+import java.io.File
 ```
 
-次に、`write()`メソッドを使用してテキストをファイルに書き込みます。
-
+2. Create a `File` object with the desired file name and path:
 ```Kotlin
-file.write("ここにテキストを入力します。")
+val file = File("myFile.txt")
 ```
 
-最後に、`close()`メソッドを使用してファイルを閉じます。
-
+3. Use the `bufferedWriter()` function to create a `BufferedWriter` object:
 ```Kotlin
-file.close()
+val writer = file.bufferedWriter()
 ```
 
-これで、あなたはテキストファイルを書くことができます！以下は、実際のコード例です。
-
+4. Use the `write()` function to add content to the file:
 ```Kotlin
-import java.io.FileWriter
-
-fun main(args: Array<String>) {
-    val file = FileWriter("sample.txt")
-    file.write("こんにちは、世界！")
-    file.close()
-}
+writer.write("Hello World")
 ```
 
-ファイルを開いて中身を確認すると、"こんにちは、世界！"というテキストが書き込まれていることがわかります。
+5. Use the `close()` function to save and close the file:
+```Kotlin
+writer.close()
+```
 
-## ディープダイブ
-テキストファイルを書く際には、いくつか注意点があります。例えば、ファイルが既に存在する場合、新しいテキストがファイルに上書きされてしまうことがあります。そのため、ファイルを開く際には、`FileWriter()`メソッドの引数に`true`を指定することで、既存のファイルに追記することができます。
+This will create a new text file named "myFile.txt" in the same directory as your Kotlin file, with the content "Hello World" inside.
 
-また、ファイルを閉じる際には、必ず`close()`メソッドを呼び出し、ファイルを明示的に閉じるようにしましょう。
+## Deep Dive
 
-## 参考リンク
-- [Kotlin入門チュートリアル](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Java.io.Fileを使用したテキストファイルの書き込みと読み込み](https://itsakura.com/kotlin-file-open)
-- [Kotlinでテキストファイルを扱う方法](https://itisfun.jp/kotlin-text-file)
-- [Kotlinの文法を理解する](https://qiita.com/YNW/items/018c8504b9ef894c5fd8)
+Kotlin's `java.io` package provides a variety of classes and functions for working with text files. The `File` class represents a file in the system, while the `BufferedWriter` class allows for efficient writing of large amounts of data to a file.
 
-## 関連記事を見る
-- [Kotlinの入門ガイド](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Kotlinのクラスとオブジェクトの使い方](https://qiita.com/sugasaki/items/5cec55ff7390771fe859)
-- [Kotlinのデータ型と制御構造をマスターする](https://tech.recruit-mp.co.jp/mobile/learning-kotlin-vol2/)
-- [KotlinとJavaの比較：どちらを選ぶべきか？](https://www.atmarkit.co.jp/ait/articles/1807/30/news012.html)
+In addition to the `write()` function, the `BufferedWriter` class also has other useful functions such as `newLine()` to add a line break and `append()` to add content to an existing file.
+
+It's important to use the `close()` function to properly save and close the file after writing to it. This ensures that all data is properly written and the file is not left open.
+
+## See Also
+
+- [Kotlin Documentation: java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Kotlin Documentation: java.io.BufferedWriter](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-buffered-writer/)

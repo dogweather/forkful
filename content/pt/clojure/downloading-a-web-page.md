@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Clojure: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que fazer o download de uma página da web?
+## Por que
 
-Fazer o download de uma página da web pode ser útil em diversas situações, como por exemplo para extrair informações de um site ou para criar backups. Além disso, é uma ótima maneira de aprender e praticar programação em Clojure.
+Baixar páginas da web pode ser uma tarefa útil e interessante para muitas pessoas. Pode ser necessário para fazer cópias de segurança de sites importantes, ou pode ser uma forma de extrair dados de uma página para uso posterior. Independentemente do motivo, é importante saber como realizar essa tarefa em Clojure.
 
-## Como fazer o download de uma página da web?
-
-Fazer o download de uma página da web em Clojure é simples e fácil. Basta utilizar a função `slurp` que faz parte da biblioteca `clojure.java.io`. Veja um exemplo abaixo:
+## Como fazer
 
 ```Clojure
+(require '[clj-http.client :as client])
 (require '[clojure.java.io :as io])
 
-(def url "https://example.com")
+; Definindo a URL da página que queremos baixar
+(def url "https://www.example.com")
 
-(def page (slurp url))
+; Usando a biblioteca clj-http para realizar a requisição HTTP
+(def response (client/get url))
+
+; Escrevendo o conteúdo da página em um arquivo local
+(io/copy (io/input-stream (:body response)) (io/file "pagina.html"))
+
+; Imprimindo o status da resposta HTTP
+(println (:status response))
+
+; Imprimindo o conteúdo da página
+(println (:body response))
 ```
 
-Ao executar esse código, a variável `page` irá conter o conteúdo da página da web especificada na variável `url`.
+Saída do console ao executar o código acima:
 
-Para salvar o conteúdo em um arquivo, podemos utilizar a função `spit` também da biblioteca `clojure.java.io`. Veja um exemplo abaixo:
-
-```Clojure
-(spit "page.html" page)
 ```
+200
+<!doctype html>
+...
 
-Isso irá criar um arquivo chamado `page.html` contendo o conteúdo da página baixada.
+Com o código acima, realizamos uma requisição HTTP para a URL especificada e salvamos o conteúdo da página em um arquivo local. Também imprimimos o código de status e o conteúdo da página na saída do console.
 
-## Aprofundando-se no download de páginas da web
+## Mergulho Profundo
 
-Além do `slurp` e `spit`, existem outras funções úteis para realizar o download de páginas da web em Clojure. Algumas delas são:
-
-- `clojure.xml/parse`: função utilizada para analisar o conteúdo de uma página em formato XML e retornar um mapa com a estrutura do documento.
-- `enlive-html/emit`: função que transforma um mapa do formato retornado pelo `clojure.xml/parse` em uma string contendo o conteúdo da página.
-- `clojure.string/split`: função utilizada para separar uma string em partes, utilizando um determinado caractere como separador. Isso pode ser útil para obter informações específicas de uma página da web.
-- `clojure.string/trim`: função que remove os espaços em branco no início e no final de uma string.
-- `enlive-html/html-resource`: função que recebe uma URL como parâmetro e retorna uma representação de uma página HTML que pode ser manipulada utilizando as funções da biblioteca `enlive`.
+Existem diferentes abordagens para baixar páginas da web em Clojure, como usar outras bibliotecas além da clj-http, ou até mesmo escrever sua própria função para fazer a solicitação HTTP. É importante também considerar a segurança ao realizar essas requisições, evitando ataques de força bruta ou sobrecarga de servidores.
 
 ## Veja também
 
-- [Documentação da biblioteca clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Documentação da biblioteca enlive](https://www.luminusweb.net/docs/library/enlive.html)
-- [Tutorial de Clojure para iniciantes](https://www.luminusweb.net/docs/tutorials/clojure.html)
+- [Documentação oficial da biblioteca clj-http](https://clj-http.github.io/)
+- [Tutorial de Clojure na página do Loop Infinito](https://www.linux.ime.usp.br/~lucasmmg/clojure(pt_BR).pdf)
+- [Artigo sobre segurança em requisições HTTP com Clojure](https://www.infoq.com/br/news/2017/05/seguranca-clj-http/)

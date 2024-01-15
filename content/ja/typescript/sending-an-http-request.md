@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 「httpリクエストの送信」"
-simple_title:         "「httpリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "TypeScript: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,61 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-何かをするときにHTTPリクエストを送信することは、Web開発の重要な側面です。これにより、Webブラウザやサーバー、データベースなどのリソースとのコミュニケーションが可能になります。しかし、多くの初心者開発者は、HTTPリクエストを正しく理解せずにコーディングを始めてしまうことがあるかもしれません。この記事では、TypeScriptを使ってHTTPリクエストを送信する方法を紹介します。
+人々がHTTPリクエストを送信する理由を最大2文で説明すると、それは外部のAPIやデータベースからデータを取得したり、ウェブサービスとの通信を行うためです。
 
-## 方法
+## 使い方
 
-まずは、HTTPリクエストを送信するために必要な基本的なコードを見てみましょう。
+**HTTPリクエストを送信する前に必要な準備**
+
+1. `axios`パッケージをインストールします。
+
+   ```TypeScript
+   npm install axios
+   ```
+
+2. `axios`をインポートします。
+
+   ```TypeScript
+   import axios from 'axios';
+   ```
+
+**GETリクエストを送信する方法**
 
 ```TypeScript
-import axios from 'axios';
-
-axios.get('https://example.com/api/users')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+axios.get('https://jsonplaceholder.typicode.com/posts')
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
 ```
 
-簡単ですね！このコードでは、axiosというライブラリを使って`https://example.com/api/users`というURLにGETリクエストを送信しています。そして、サーバーからのレスポンスが`response`に格納され、その中の`data`をコンソールに出力します。もしエラーが発生した場合は、`catch`の中で処理を行います。
-
-次に、POSTリクエストを送信する例を見てみましょう。
+**POSTリクエストを送信する方法**
 
 ```TypeScript
-import axios from 'axios';
-
 const data = {
-  name: 'John',
-  age: 30
+  title: 'My New Post',
+  body: 'This is a new post about TypeScript.',
+  userId: 1,
 };
 
-axios.post('https://example.com/api/users', data)
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+axios.post('https://jsonplaceholder.typicode.com/posts', data)
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
 ```
 
-このコードでは、`data`というオブジェクトを作成し、それを`axios.post`の第二引数に渡しています。これにより、サーバーにデータを送信することができます。
+**PUTリクエストを送信する方法**
 
-また、HTTPリクエストには、さまざまなオプションを設定することができます。例えば、ヘッダーやタイムアウトの設定などです。詳細については、公式ドキュメントを参照してください。
+```TypeScript
+const data = {
+  title: 'Updated Post',
+  body: 'This post has been updated.',
+};
 
-## 深堀り
+axios.put('https://jsonplaceholder.typicode.com/posts/1', data)
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
+```
 
-この記事では、axiosというライブラリを使用してHTTPリクエストを送信しましたが、実際にはさまざまな方法でHTTPリクエストをすることができます。例えば、fetchやXMLHttpRequestなどのネイティブのAPIを使うこともできます。
+**DELETEリクエストを送信する方法**
 
-また、RESTful APIを使う場合は、GETやPOST以外にもPUTやDELETEなどのメソッドを使うこともあります。それぞれのメソッドには、どのような目的があるのか、どのように使うのかを理解することが重要です。
+```TypeScript
+axios.delete('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
+```
 
-もし開発中に問題が発生した場合は、デベロッパーツールやネットワークタブを使って、実際にリクエストとレスポンスを確認してみることをおすすめします。これにより、リクエストやレスポンスの内容を正しく理解できるようになります。
+## 詳細を掘り下げる
 
-## 併せて参照
+HTTPリクエストを送信する際、`axios`を使用することで非同期処理を簡単に行えます。また、`catch`メソッドを使用することでエラーハンドリングを行うことができます。さらに、レスポンスデータを取得するには`then`メソッドを使用し、エラーを表示するには`catch`メソッドを使用します。
 
-- [axios 公式ドキュメント](https://axios-http.com/docs/intro)
-- [Fetch API ドキュメント](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch)
-- [XMLHttpRequest ドキュメント](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
+## 関連リンク
+
+[axios公式ドキュメント](https://axios-http.com/)
+[MDN Web DocsのHTTPリクエストに関する情報](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)

@@ -1,5 +1,6 @@
 ---
-title:                "Java: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Java: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Java"
 category:             "Java"
@@ -9,39 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać testy jednostkowe?
+## Dlaczego
 
-Pisanie testów jednostkowych jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki nim można weryfikować działanie poszczególnych modułów aplikacji i upewnić się, że zmiany wprowadzone w kodzie nie wpłynęły negatywnie na jego funkcjonalność. Można także uniknąć błędów i problemów w późniejszych etapach projektu.
+Testowanie jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki testom, deweloperzy mogą wczesniej wykrywać błędy i uniknąć problemów w późniejszych etapach projektu. W ten sposób, pisanie testów znacznie zwiększa jakość produktu i pozwala zaoszczędzić czas i pieniądze.
 
-## Jak pisać testy jednostkowe?
+## Jak to zrobić
 
-Aby napisać testy jednostkowe, należy wybrać odpowiednią bibliotekę do testowania, taką jak JUnit czy TestNG. Następnie należy stworzyć klasę testową, w której będą zawarte testy dla konkretnych metod i funkcji. Poniżej przedstawiam przykład testu dla prostej klasy Java, który wykorzystuje bibliotekę JUnit:
+Pisanie testów w języku Java jest stosunkowo proste i wymaga znajomości kilku podstawowych koncepcji. Poniżej znajdują się przykłady kodów zawierających testy i ich wynik.
 
-```Java
-class Calculator {
-    public int add(int a, int b) {
+```java
+// Przykładowa klasa, którą będziemy testować
+public class Calculator {
+    public int add(int a, int b){
         return a + b;
     }
 }
 
-class CalculatorTest {
-    @Test
-    public void addTest() {
-        Calculator calc = new Calculator();
-        int result = calc.add(5, 7);
-        assertEquals(12, result);
-    }
+// Test metody add() z wykorzystaniem biblioteki JUnit
+import static org.junit.Assert.assertEquals;
+
+@Test
+public void testAdd() {
+    Calculator calculator = new Calculator();
+    assertEquals(5, calculator.add(2, 3));
 }
 ```
+Powstanie nowego obiektu klasy Calculator i wywołanie metody add() z dwoma argumentami 2 i 3 zwróci wartość 5, co jest potwierdzeniem poprawności działania metody.
 
-W powyższym przykładzie, klasa Calculator zawiera metodę dodawania dwóch liczb, a klasa CalculatorTest przeprowadza test tej funkcji. Po uruchomieniu testu, oczekiwany wynik to 12, dlatego metoda assertEquals porównuje otrzymany wynik z oczekiwanym.
+Możemy również użyć biblioteki Mockito do tworzenia mocków i weryfikowania zachowań obiektów w naszych testach. Przykład kodu wykorzystującego tę bibliotekę wyglądałby następująco:
 
-## Głębsza analiza pisanie testów jednostkowych
+```java
+// Przykładowa klasa, którą będziemy testować
+public class MessageService {
+    public void sendMessage(String message){
+        System.out.println(message);
+    }
+}
 
-Pisanie testów jednostkowych jest nie tylko pomocne w weryfikacji poprawności działania kodu, ale także w tworzeniu czytelnego i przetestowanego kodu. Pomaga wyłapać ewentualne błędy i ułatwia wprowadzanie zmian w późniejszym etapie projektu. Dokładne i skuteczne pisanie testów jest kluczem do sukcesu w tworzeniu oprogramowania.
+// Test metody sendMessage() z wykorzystaniem biblioteki Mockito
+import static org.mockito.Mockito.*;
+
+@Test
+public void testSendMessage() {
+    MessageService messageService = mock(MessageService.class);
+    messageService.sendMessage("Hello World");
+    verify(messageService).sendMessage("Hello World");
+}
+```
+Tworzymy tutaj mock klasy MessageService, wywołujemy na nim metodę sendMessage() z argumentem "Hello World" i sprawdzamy czy metoda ta została wywołana z tym samym argumentem.
+
+## Pogłębione informacje
+
+Pisanie testów w języku Java pozwala na lepsze zrozumienie kodu i jego funkcjonowania. Dzięki testom możemy upewnić się, że nasze metody działają zgodnie z oczekiwaniami i nie powodują przypadkowych błędów. Warto również pamiętać o odpowiednim nazewnictwie testów, tak aby były one czytelne i łatwe w utrzymaniu.
+
+Istnieje wiele bibliotek przeznaczonych do testowania w języku Java, takich jak JUnit, Mockito czy AssertJ, które ułatwiają tworzenie i uruchamianie testów. Warto zapoznać się z nimi i wybrać tę, która najlepiej pasuje do naszych potrzeb.
 
 ## Zobacz także
 
-- [Tutorial JUnit](https://www.tutorialspoint.com/junit/index.htm)
-- [Selenium - narzędzie do testowania aplikacji webowych](https://www.selenium.dev/)
-- [Javadoc - dokumentacja dla kodu w Javie](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
+[10 podstawowych sposobów pisania testów w Javie](https://www.pluralsight.com/blog/software-development/writing-clean-unit-tests-10-tips)
+
+[Testowanie jednostkowe w języku Java - poradnik dla początkujących](https://www.toptal.com/developers/blog/junit-testing-tutorial-for-beginners)
+
+[Oficjalna dokumentacja JUnit](https://junit.org/junit5/docs/current/user-guide/)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: 标准错误的编写"
-simple_title:         "标准错误的编写"
+title:                "写入标准错误"
+html_title:           "Python: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,60 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要写入标准错误？
+## 为什么
 
-当我们在编写Python程序时，有时候会遇到一些错误，通常我们会使用标准输出来显示错误信息。但是当我们需要将错误信息记录下来，以便进行调试或日志记录时，我们就需要将错误信息写入标准错误。这样可以更方便地跟踪错误并进行后续处理。
+为什么一个人会使用标准错误来写作？因为标准错误是一种非常有用的方法，可以帮助程序员发现和调试他们的代码中的任何错误。
 
-## 如何写入标准错误？
+## 如何
 
-要想将错误信息写入标准错误，我们可以使用Python内置的`sys`模块中的`stderr`方法。下面是一个简单的例子：
-
-```Python
-import sys
-
-def divide(x, y):
-    try:
-        result = x / y
-    except ZeroDivisionError:
-        print("Error: 不允许除数为0", file=sys.stderr)
-    else:
-        print(f"{x} 除以 {y} 的结果为: {result}")
-
-divide(6, 2)
-divide(10, 0)
-```
-
-这段代码中，我们定义了一个`divide`函数来进行除法计算，当除数为0时会触发`ZeroDivisionError`，此时我们使用`sys.stderr`打印错误信息，而非使用标准输出。因此，我们可以得到以下输出：
-
-```
-6 除以 2 的结果为: 3.0
-Error: 不允许除数为0
-```
-
-## 深入了解
-
-除了上面提到的方法，我们还可以通过重定向标准错误进行错误信息的记录。这需要借助`sys`模块中的`stderr`和`stdou`对象及`redirect_stderr()`方法。下面我们来看一个例子：
+Python中，可以使用`sys`模块中的`stderr`对象来将错误消息写入标准错误流。下面是一个例子：
 
 ```Python
 import sys
 
-def divide(x, y):
-    try:
-        result = x / y
-    except ZeroDivisionError:
-        print("Error: 不允许除数为0", file=sys.stderr)
-    else:
-        print(f"{x} 除以 {y} 的结果为: {result}")
+try:
+  # 这里是可能会出错的代码
+  print("Hello world")
 
-with open("error_log.txt", "w") as f:
-    with redirect_stderr(f):
-        divide(10, 0)
+except:
+  # 将错误消息写入标准错误
+  sys.stderr.write("出错了！")
+
 ```
 
-在这个例子中，我们使用`open()`来创建一个`error_log.txt`文件，并通过`redirect_stderr()`方法将标准错误重定向到这个文件中。这样，当程序出现除以0错误时，错误信息就会被记录到`error_log.txt`文件中。
+运行上述代码，将会在控制台输出`出错了！`。这是一个非常简单的例子，但它展示了如何使用标准错误来提醒程序员出现了错误。
 
-## 参考链接
+## 深入探讨
 
-- [Python sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [Python try...except语句](https://www.runoob.com/python3/python3-errors-execptions.html)
-- [Python contextlib模块](https://docs.python.org/3/library/contextlib.html#contextlib.redirect_stderr)
+写入标准错误的方法不仅限于在代码中手动添加`sys.stderr.write()`。Python还提供了`logging`模块来帮助程序员记录程序运行过程中的信息。通过设置`level`为`ERROR`，可以将错误消息写入标准错误流中，而且可以通过`format`参数来定制输出格式。这样，程序员就可以更方便地追踪和调试程序中的错误。
+
+## 另请参阅
+
+- [Python官方文档（中文版）](https://docs.python.org/zh-cn/3/tutorial/errors.html)
+- [Python异常处理教程](https://www.runoob.com/python/python-exceptions.html)
+- [Python logging模块文档](https://docs.python.org/3/library/logging.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Nedladdning av en webbsida"
+html_title:           "Swift: Nedladdning av en webbsida"
+simple_title:         "Nedladdning av en webbsida"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,48 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ladda ner en webbsida är en vanlig uppgift inom Swift-programmering, särskilt när man bygger appar som hämtar data från internet. Genom att lära sig hur man laddar ner en webbsida kan du öppna upp en hel värld av möjligheter för din app.
+Det finns många anledningar till varför någon skulle vilja ladda ner en webbsida. Kanske vill du spara en kopia av en artikel eller att använda den som en referens för senare. Oavsett orsak, är det en viktig programmeringsförmåga att ha när du arbetar med webbutveckling.
 
-## Hur man gör
+## Så här
 
-För att ladda ner en webbsida i Swift kan du följa följande steg:
-
-1. Skapa en URL-objekt som innehåller länken till den webbsida du vill ladda ner. Till exempel: 
+För att ladda ner en webbsida i Swift, kan du använda klassen `URLSession` och dess `dataTask`-metod för att hämta informationen från webbsidan. Här är ett exempel på hur du skulle göra det:
 
 ```Swift
-let webpageURL = URL(string: "https://www.example.com")
-```
-
-2. Skapa ett URLRequest-objekt med hjälp av URL-objektet och ange lämpliga inställningar. Till exempel:
-
-```Swift
-var request = URLRequest(url: webpageURL)
-request.httpMethod = "GET"
-```
-
-3. Använd URLSession för att skicka begäran och ta emot responsen från webbsidan. Till exempel:
-
-```Swift
+let url = URL(string: "https://www.example.com") // Ersätt med den URL du vill ladda ner
 let session = URLSession.shared
-let task = session.dataTask(with: request) { data, response, error in
+
+let task = session.dataTask(with: url!) {(data, response, error) in
+    // Om inga fel uppstår, så kan du få tillgång till webbsidans innehåll
     if let data = data {
-        // här kan du hantera responsens data
+        let content = String(data: data, encoding: .utf8)
+        print(content)
     }
 }
-task.resume()
+
+task.resume() // Viktigt! Glöm inte att starta uppgiften
 ```
+
+I detta exempel, skapar vi en `URL`-objekt från webbsidans URL och använder sedan `URLSession` för att hämta data från den. Vi använder också en avslutningsfunktion för att hantera eventuella fel och få tillgång till webbsidans innehåll. 
 
 ## Djupdykning
 
-När du laddar ner en webbsida i Swift är det viktigt att förstå hur du hanterar data som tas emot från webbsidan. Vanligtvis är responsen ett NSData-objekt, som kan omvandlas till en String för att enklare kunna arbeta med den.
+Om du vill göra mer med den nerladdade webbsidan, finns det några intressanta saker du kan göra med datan du hämtat. Till exempel kan du använda ett `HTMLParser` bibliotek för att extrahera specifikt innehåll från webbsidan, eller använda `Grand Central Dispatch` för att köra uppgiften på en annan tråd och inte blockera huvudtråden. 
 
-Du kan också använda olika inställningar på URLRequest-objektet för att exempelvis ange en timeout-tid eller lägga till HTTP-header-fält.
-
-Det är också viktigt att förstå skillnaden mellan att använda HTTP-metoder som GET, POST, PUT etc. när du skickar din begäran, eftersom de har olika användningsområden och påverkar hur data tas emot.
+Det finns också andra alternativ för att hämta webbsidan, såsom att använda bibliotek som `Alamofire` för enklare kodning eller `WebKit` för att hämta hela webbsidan inklusive HTML. Oavsett vad du väljer, är det viktigt att lägga till nödvändiga felhanteringar och tänka på prestanda när du arbetar med denna typ av uppgift.
 
 ## Se även
 
-- [Apple Developer Documentation: URL](https://developer.apple.com/documentation/foundation/url)
-- [Apple Developer Guide: Communicate with a Web Page](https://developer.apple.com/documentation/foundation/url_loading_system/communicating_with_a_webpage)
-- [Ray Wenderlich Tutorial: URL Session Tutorial: Getting Started](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
-- [Hacking with Swift Tutorial: How to download files with URLSession and downloadTask()](https://www.hackingwithswift.com/example-code/networking/how-to-download-files-with-urlsession-and-downloadtask)
+- [Apple: Working with the Web](https://developer.apple.com/documentation/foundation/url_loading_system/downloading_files_from_websites)
+- [Ray Wenderlich: How To Use Swift At The Command Line](https://www.raywenderlich.com/8318-swift-at-the-command-line)
+- [Codecademy: Learn Swift](https://www.codecademy.com/learn/learn-swift)

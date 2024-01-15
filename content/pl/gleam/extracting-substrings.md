@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Wycinanie podciągów"
+title:                "Wycinanie podciągów"
+html_title:           "Gleam: Wycinanie podciągów"
 simple_title:         "Wycinanie podciągów"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,23 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Często w procesie pisania kodu napotykamy sytuacje, w których musimy wyodrębnić pewien fragment tekstu z większego ciągu znaków. W takich przypadkach wykorzystanie funkcji do wycinania podciągów może być niezwykle pomocne.
+
+Ekstrakcja podciągów jest częstym wyzwaniem w programowaniu, szczególnie w przypadku manipulowania tekstami. Zrozumienie, jak to zrobić w Gleam, pozwoli Ci wykorzystać tę funkcję w swoim kodzie i ułatwi pracę z tekstami.
 
 ## Jak to zrobić
-Aby wyodrębnić substring z tekstu w języku Gleam, należy skorzystać z funkcji `String.slice()`, podając jej jako argument indeks początkowy oraz końcowy wycięcia. Przykładowy kod wyglądałby następująco:
 
 ```Gleam
-let text = "Witaj, Gleam!"
-let substring = String.slice(text, 7, 12) // wynik: "Gleam"
+let text = "Witaj, świecie!"
+
+let extracted = text.slice(7, 12)
+
+// extracted: "świec"
 ```
 
-Możemy również ustawić indeks końcowy na `String.length(text)` aby pobrać podciąg od wybranego indeksu do końca tekstu. W przypadku gdy nie znamy dokładnych długości tekstu, możemy wykorzystać funkcję `String.split()` do podzielenia tekstu na wybrane znaki specjalne lub słowa.
+W powyższym przykładzie używamy metody `slice(start, end)` do wydobycia podciągu "świec" z oryginalnego tekstu. Metoda ta przyjmuje dwa argumenty: początkowy i końcowy indeks, które określają, które znaki powinny znaleźć się w podciągu.
 
-## Deep Dive
-Funkcja `String.slice()` wykorzystuje indeksowanie znaków Unicode, co oznacza, że możemy bez problemu wyodrębnić podciągi z tekstów w różnych językach. Ponadto, argumenty funkcji mogą przyjmować także wartości ujemne, co pozwala nam wybierać znaki od końca tekstu.
+Możesz również użyć `string.get()` i `string.head()` do pobierania pojedynczego znaku lub pierwszego znaku z podciągu. Na przykład:
 
-Jednym z zastosowań funkcji do wycinania podciągów może być np. sprawdzanie czy dany fragment tekstu istnieje w większym tekście.
+```Gleam
+let first_letter = text.get(0)
+// first_letter: "W"
 
-## Zobacz także
-- Dokumentacja funkcji `String.slice()`: https://gleam.run/core/string.html#slice
-- Wyciąganie podciągów z wykorzystaniem pattern matchingu: https://blog.carbonfive.com/2019/03/01/pattern-matching-in-gleam/
+let last_letter = text.slice(12).head()
+//last_letter: "ń"
+```
+
+## Pełne zagłębienie
+
+Ekstrakcja podciągów jest możliwa dzięki temu, że traktujemy tekst jako listę znaków. Metoda `slice()` pozwala nam wyciągać podciągi wykorzystując indeksy w tej liście. Dzięki temu możemy manipulować tekstami w bardziej zaawansowany sposób, co jest szczególnie przydatne przy przetwarzaniu danych.
+
+## Zobacz też
+
+- [Metody tekstowe w Gleam](https://gleam.run/documentation/language/strings.html#methods)
+- [Gleam dokumentacja](https://gleam.run/documentation/index.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Radera tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "Rust: Radera tecken som matchar ett mönster"
 simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,60 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara användbart när man vill rensa en textsträng eller söka efter specifika tecken. Det kan också vara en del av en större algoritm för att filtrera eller manipulera data.
+Ibland behöver vi ta bort specifika tecken från en sträng eller en fil för att uppnå ett visst mål. Det kan vara för att filtrera ut oönskade tecken eller för att ändra format på data. I det här avsnittet kommer vi att lära oss hur man tar bort tecken som matchar ett visst mönster i Rust.
 
-## Så här gör du
+## Hur man gör
 
-Det finns flera sätt att ta bort tecken som matchar ett mönster i Rust. Ett sätt är att använda sig av metoden `.replace()` tillsammans med det typen `&str`, som representerar en textsträng. Här är ett grundläggande exempel:
+För att ta bort tecken som matchar ett visst mönster i Rust, använder vi funktionen `replace_all` från standardbiblioteket `regex`. Vi börjar med att importera `regex` biblioteket genom att lägga till följande kod i början av vårt program:
 
-```Rust
-let text = "Jag älskar att läsa böcker.";
-let ny_text = text.replace("älskar", "hatar");
-println!("Den nya texten: {}", ny_text);
+```
+use regex::Regex;
 ```
 
-Output:
+Nästa steg är att skapa en instans av `Regex` som innehåller mönstret som vi vill matcha. Det kan se ut så här:
+
 ```
-Den nya texten: Jag hatar att läsa böcker.
+let re = Regex::new(r"[aeiou]").unwrap();
 ```
 
-Om man istället vill ta bort alla mellanslag i en textsträng kan man använda en `for`-loop tillsammans med `.replace()`:
+Detta mönster kommer att matcha alla små bokstäver a, e, i, o, u i en sträng. Nu kan vi använda funktionen `replace_all` för att ersätta alla matchande tecken med en tom sträng. Detta kan göras så här:
 
-```Rust
-let text = "Jag gillar att koda i Rust.";
-let mut ny_text = String::new();
-for char in text.chars() {
-    if char != ' ' {
-        ny_text.push(char);
-    }
-}
-println!("Den nya texten: {}", ny_text);
+```
+let new_string = re.replace_all("Hello World!", "");
 ```
 
-Output:
-```
-Den nya texten: JaggillaratkodaiRust.
-```
-
-Det finns också en funktion som heter `.trim_matches()` som kan användas för att ta bort tecken från början eller slutet av en textsträng. I följande exempel tas alla vokaler bort från början av texten:
-
-```Rust
-let text = "irriterande";
-let ny_text = text.trim_matches(['a', 'e', 'i', 'o', 'u'].as_ref());
-println!("Den nya texten: {}", ny_text);
-```
-
-Output:
-```
-Den nya texten: rriterande
-```
+Detta kommer att ge oss en ny sträng utan några a, e, i, o, u tecken kvar.
 
 ## Djupdykning
 
-Att ta bort tecken som matchar ett mönster kan vara mer komplicerat än bara dessa exempel. Det kan innebära att använda sig av reguljära uttryck eller att implementera en egen algoritm för att hantera specialfall. Det är också viktigt att tänka på prestanda när man ska ta bort tecken från en stor textsträng, eftersom det kan påverka hastigheten i programmet.
+Vid användning av `replace_all` funktionen är det viktigt att notera att den returnerar en helt ny sträng och lämnar den ursprungliga strängen oförändrad. Om vi vill ändra den ursprungliga strängen, måste vi tilldela det nya värdet till den ursprungliga variabeln. Till exempel:
+
+```
+let mut my_string = "This is a string".to_string();
+let new_string = my_string.replace_all("is", "was");
+```
+
+Här kommer `new_string` att innehålla "Thwas was a string" medan `my_string` fortfarande är "This is a string".
+
+Det är också värt att notera att `replace_all` funktionen är fallkänslig. Detta betyder att den kommer att ersätta tecken som matchar mönstret oavsett om de är stora eller små bokstäver. I exemplet ovan skulle "Hello World!" bli "Hll Wld!" eftersom vi inte specificerade att vi bara ville matcha små bokstäver.
 
 ## Se även
 
-- [Rust Referens](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Reguljära uttryck i Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
-- [Hantera textsträngar i Rust](https://www.educative.io/edpresso/what-is-the-use-of-the-string-in-rust)
+För mer information och exempel på hur man använder `replace_all` funktionen och `regex` biblioteket i Rust, se följande resurser:
+
+- [Official Rust documentation](https://doc.rust-lang.org/std/str/struct.Regex.html)
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/regex.html)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/std/str/regex.html)

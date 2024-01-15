@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Descargando una página web"
+title:                "Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,38 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué descargar una página web?
 
-La descarga de páginas web es esencial para conectarse con información en línea y acceder a sitios web en cualquier momento y en cualquier lugar. Con la ayuda de Arduino, es posible automatizar este proceso y tener una forma conveniente de obtener información cuando se necesite.
+Descargar una página web puede ser útil para obtener información específica de un sitio en particular, como datos de precios o noticias actualizadas. También puede ser útil para crear un archivo de respaldo de una página web importante o para realizar pruebas y experimentos en su código fuente.
 
-##Cómo
+## Cómo hacerlo en Arduino
 
-Para descargar una página web usando Arduino, primero debemos asegurarnos de tener una conexión a internet estable. Luego, utilizaremos la biblioteca "WiFiClient" para establecer una conexión con la URL del sitio web que queremos descargar. Una vez que hemos establecido la conexión, utilizaremos la función "print" para enviar una solicitud HTTP GET al sitio web y "readString" para recibir la respuesta del servidor. Finalmente, imprimiremos la respuesta en el monitor serial.
+Para descargar una página web en Arduino, necesitarás utilizar la librería WiFiClient. Primero, debes conectar tu Arduino a una red WiFi. Luego, sigue estos pasos:
 
+1. Incluir la librería WiFiClient en tu código:
+```Arduino
+#include <WiFiClient.h>
 ```
-Arduino WiFiClient client;
 
-if (client.connect(URL)) {
-  Serial.println("Conexión establecida");
-  client.print("GET / HTTP/1.1\r\n");
-  client.print("Host: www.ejemplo.com\r\n");
-  client.print("Connection: close\r\n\r\n");
+2. Crear un objeto de tipo `WiFiClient`:
+```Arduino
+WiFiClient client;
+```
+
+3. Establecer una conexión con el servidor web del sitio que deseas descargar:
+```Arduino
+if (client.connect("example.com", 80)) {
+  // Código a ejecutar si la conexión es exitosa
+} else {
+  // Código a ejecutar si la conexión falla
 }
+```
 
+4. Enviar una solicitud HTTP GET al servidor:
+```Arduino
+client.println("GET /index.html HTTP/1.1");
+client.println("Host: example.com");
+client.println("Connection: close");
+client.println();
+```
+
+5. Leer y almacenar los datos recibidos del servidor utilizando el método `readString()`:
+```Arduino
 while (client.available()) {
-  String response = client.readString();
-  Serial.println(response);
+  String data = client.readString();
+  // Hacer algo con los datos recibidos
 }
 ```
 
-##Deep Dive
+## Profundizando en la descarga de páginas web
 
-La función "print" envía la solicitud HTTP GET al servidor y le dice al servidor qué página queremos descargar. La forma en que se envía esta solicitud es mediante el uso de una cadena de texto que consta de varias partes, incluyendo el método (GET), la versión de HTTP (HTTP/1.1) y la URL del sitio web. También se pueden incluir encabezados adicionales, como información sobre el navegador y la conexión.
+Al descargar una página web utilizando Arduino, es importante tener en cuenta los siguientes puntos:
 
-La función "readString" recibe la respuesta del servidor y la almacena en una variable de tipo String. Esta respuesta es básicamente el código HTML de la página web solicitada. Podemos usar esta respuesta para realizar acciones adicionales en nuestro proyecto de Arduino, como mostrar información en una pantalla LCD o activar un sensor.
+- Algunos servidores web pueden requerir una conexión segura (HTTPS) en lugar de una conexión no segura (HTTP). En ese caso, deberás utilizar la librería WiFiSSLClient en lugar de WiFiClient.
+- Si estás descargando una página web que contiene imágenes u otros archivos, deberás utilizar otras librerías, como la librería SD, para almacenarlos en tu Arduino.
+- Ten en cuenta que descargar una página web puede ser un proceso lento y consumir mucha memoria en tu Arduino, por lo que es importante optimizar tu código y evitar errores de memoria.
+- Algunos servidores pueden bloquear las solicitudes de descarga si se realizan demasiado a menudo, así que asegúrate de revisar la política del sitio web antes de programar tu Arduino para descargar una página de forma repetitiva.
 
-##Vea También
+## Ver también
 
-- Tutorial de Arduino sobre cómo descargar una página web: https://www.arduino.cc/en/Tutorial/WiFiWebClient
-- Biblioteca WiFiClient: https://www.arduino.cc/en/Reference/WiFiClient
-- Curso en línea de Arduino para principiantes: https://www.coursera.org/learn/arduino
+- [Documentación oficial de la librería WiFiClient](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Tutorial de descarga de páginas web con el ESP8266](https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/)
+- [Ejemplo de descarga de una página web con Arduino y la librería WiFiClient](https://create.arduino.cc/projecthub/rowan07/reading-a-webpage-using-an-arduino-uno-62039a)

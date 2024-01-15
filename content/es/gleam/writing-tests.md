@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Escribiendo pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Gleam: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Escribir pruebas o tests es una práctica común para garantizar que nuestro código funcione correctamente y evitar posibles errores en el futuro. En lugar de simplemente depender de la revisión manual del código, es importante incluir pruebas en nuestro proceso de desarrollo para asegurarnos de que todo funcione como debería.
+## ¿Por qué escribir pruebas en Gleam?
 
-## Cómo hacerlo
-Para escribir pruebas en Gleam, primero debemos importar el módulo `gleam/test` a nuestro archivo. Luego, podemos utilizar la función `test` para definir nuestras pruebas. Veamos un ejemplo:
+Escribir pruebas en Gleam es una forma eficiente de verificar el correcto funcionamiento de nuestro código. Nos permite encontrar errores y realizar modificaciones de forma rápida y sencilla, asegurándonos de que nuestro código esté lo más libre de errores posible.
 
-```Gleam
-import gleam/test
+## Cómo escribir pruebas en Gleam
 
-fn add(x, y) {
-  x + y
-}
-
-test("La suma de 2 y 2 debería ser 4", _ {
-  assert add(2, 2) == 4
-})
-```
-
-En este código, estamos importando el módulo de pruebas y definiendo una función `add` que suma dos valores. Luego, usamos la función `test` para definir una prueba que comprueba si la suma de 2 y 2 es igual a 4. Finalmente, utilizamos la función `assert` para verificar si la afirmación es verdadera.
-
-## Profundizando
-Para escribir pruebas más completas, podemos utilizar patrones de correspondencia y expresiones `let` en nuestras `assert`. También podemos agrupar nuestras pruebas utilizando la función `test_suites`. Por ejemplo:
+Escribir pruebas en Gleam es sencillo y no requiere demasiado esfuerzo. A continuación, se mostrará un ejemplo básico de una prueba en Gleam:
 
 ```Gleam
-import gleam/test
-
-fn list_length(list) {
-  let len = length(list)
-  { list, len }
-}
-
-let fruits = ["manzana", "naranja", "plátano"]
-
-fn fruits_suite() {
-  test_suites("Longitud de la lista", [
-    test("La longitud de la lista de frutas debería ser 3", _ {
-      let { _, len } = list_length(fruits)
-      assert len == 3
-    }),
-    test("La lista de frutas no debería estar vacía", _ {
-      let { list, _ } = list_length(fruits)
-      assert list != []
-    })
-  ])
+test "Suma de dos números" {
+  expect(Number.add(2, 3)) == 5
 }
 ```
 
-En este ejemplo, estamos utilizando un patrón de correspondencia en nuestra `assert` para comprobar la longitud de la lista de frutas y también estamos utilizando la expresión `let` para extraer la lista de frutas y su longitud en diferentes pruebas dentro de una suite de pruebas más grande.
+En este ejemplo, estamos probando la función `Number.add` para asegurarnos de que su resultado sea igual a 5 cuando se le pasan los valores 2 y 3 como argumentos. Para ejecutar esta prueba, simplemente debemos utilizar el comando `gleam test` en la terminal y veremos el resultado en la consola.
+
+Otro aspecto importante al escribir pruebas en Gleam es utilizar el módulo `gleam/assert` para realizar nuestras afirmaciones. Este módulo nos proporciona funciones como `expect` y `assert` que nos permiten comparar valores y verificar si se cumplen nuestras condiciones.
+
+## Profundizando en la escritura de pruebas en Gleam
+
+Escribir pruebas en Gleam no solo nos permite verificar el correcto funcionamiento de nuestro código, sino que también nos ayuda a mantenerlo organizado y documentado. Al escribir pruebas, estamos obligados a pensar en todas las posibles situaciones y a documentar nuestro código para que sea más legible y comprensible.
+
+Además, Gleam utiliza un enfoque de programación funcional, lo que significa que nuestras pruebas deben ser puras, es decir, no deben tener efectos secundarios y su resultado debe ser siempre el mismo para los mismos argumentos. Esto nos obliga a escribir código más limpio y fácil de probar.
 
 ## Ver también
-- Documentación de Gleam sobre pruebas (https://gleam.run/book/testing.html)
-- Revisión de código de Gleam con pruebas (https://github.com/gleam-lang/gleam/issues/172)
+
+- [Documentación de pruebas en Gleam](https://gleam.run/book/intro.html#testing)
+- [Escribiendo pruebas en Gleam](https://bloggleam.com/writing-tests-in-gleam/) (en inglés)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 새로운 프로젝트를 시작하기"
-simple_title:         "새로운 프로젝트를 시작하기"
+title:                "새 프로젝트 시작"
+html_title:           "Swift: 새 프로젝트 시작"
+simple_title:         "새 프로젝트 시작"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -9,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## Why
 
-새로운 프로젝트를 시작하려는 이유는 매우 다양할 수 있습니다. 목표를 달성하기 위해 새로운 언어를 배우거나 새로운 기술을 연마할 수 있습니다. 어떤 이유든 그 프로젝트를 시작하면서 새로운 도전에 도전하는 기회가 주어질 것입니다.
+새 프로젝트를 시작하는 이유는 다양할 수 있습니다. 아마도 새로운 아이디어를 실현하거나, 새로운 기술을 배우려고 할 때일 수도 있겠죠. 어쨌든, 새로운 프로젝트는 새로운 도전을 의미하며, 개발자로서 성장할 수 있는 기회가 될 수 있습니다.
 
-## 어떻게 시작할까요?
+## How To
 
-우선, 새로운 프로젝트를 시작하기 전에 프로젝트의 목표와 범위를 명확히 정하는 것이 중요합니다. 그리고 Xcode와 같은 개발 도구를 사용하여 새로운 프로젝트를 생성할 수 있습니다. 하지만 Swift 언어를 사용하여 새로운 프로젝트를 시작하는 것은 어떻게 할까요?
-
-먼저, 새로운 Swift 파일을 만듭니다. 그리고 맨 위에 `import UIKit` 라는 줄을 추가합니다. 이 단순한 줄은 앱 개발에 필요한 모든 기능을 포함한 UIKit 프레임워크를 불러올 수 있도록 해줍니다. 그리고 이어서 다음과 같은 코드를 추가합니다.
+새로운 프로젝트를 시작하는 것은 생각보다 간단합니다. 먼저 Xcode를 열고, 새 프로젝트를 만듭니다. 그런 다음 해당 프로젝트의 작업 영역을 설정하고, 원하는 언어를 선택합니다.
 
 ```Swift
-let greeting = "안녕하세요!"
-print(greeting)
+let newProject = Project()
+newProject.setupWorkspace()
+newProject.chooseLanguage(Swift)
 ```
 
-이는 새로운 문자열 변수 `greeting`을 생성하고 그것을 출력하는 예제입니다. 실행하면 콘솔에 "안녕하세요!"라는 글자가 찍히는 것을 볼 수 있습니다.
+생성된 프로젝트는 기본적인 구조를 갖추게 됩니다. 이제 여러분이 할 일은 코드를 작성하고, 원하는 기능을 추가하는 것뿐입니다.
 
-이제 기본적인 Swift 문법에 대한 이해가 조금 필요합니다. 변수는 `let` 키워드를 사용하여 만들 수 있고, 한번 선언된 변수는 값을 변경할 수 없습니다. 만약 변경을 원한다면 `var` 키워드를 사용하여 변수를 선언해야 합니다. 또한 문자열은 큰 따옴표로 묶어서 만들 수 있고, `print()` 함수를 사용하여 콘솔에 출력할 수 있습니다.
+```Swift
+func addFeature(to project: Project, feature: Feature) {
+    project.add(feature)
+}
+```
 
-## 깊이 들어가보기
+코드를 작성하고, 콘솔이나 시뮬레이터를 통해 출력을 확인하며, 원하는 기능을 구현할 때마다 새로운 경험을 쌓게 됩니다.
 
-새로운 프로젝트를 시작할 때 가장 중요한 것은 바로 아이디어입니다. 어떤 앱을 만들 것인지, 그 앱이 어떤 사용자 문제를 해결하는지에 대한 명확한 아이디어가 있어야 합니다. 그리고 그 아이디어를 실행하기 위해 필요한 기술과 지식을 습득해야 합니다.
+## Deep Dive
 
-그리고 앞서 언급한 것처럼 Swift 문법과 Xcode에 대한 이해도 매우 중요합니다. 적절한 데이터 구조와 함수를 사용하여 코드를 정리하고, 애플리케이션의 사용자 인터페이스를 디자인하는 방법을 배워야 합니다.
+새로운 프로젝트를 시작할 때, 가장 중요한 것은 목표를 명확하게 정하는 것입니다. 어떤 기능을 구현하고 싶은지, 어떤 디자인을 갖추고 싶은지 등을 명확하게 정하는 것은 나중에 수정해야 할 일을 줄여줄 수 있습니다.
 
-마지막으로, 새로운 프로젝트를 시작할 때 꼭 필요한 것은 열정과 인내심입니다. 새로운 언어나 기술을 배우는 것은 쉬운 일이 아닐 수 있지만, 열심히 공부하고 끝까지 포기하지 않는다면 결국에는 성취감을 느낄 수 있을 것입니다.
+또한, 적절한 디자인 패턴을 선택하는 것도 중요합니다. 어떤 패턴이 프로젝트에 잘 맞을지, 코드를 어떻게 분리할지 등을 고민하는 것이 프로젝트의 성공에 큰 영향을 끼칠 수 있습니다.
 
-## 더 알아보기
+## See Also
 
-- [Swift 공식 문서](https://swift.org/documentation/)
-- [Swift 강의 - Codecademy](https://www.codecademy.com/learn/learn-swift)
-- [iOS 개발 강의 - Udemy](https://www.udemy.com/topic/ios-development/)
-- [앱 개발 실습 프로젝트
+* [Apple Developer Documentation](https://developer.apple.com/documentation/)
+* [Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/)

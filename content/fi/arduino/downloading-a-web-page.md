@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Verkkosivun lataaminen"
-simple_title:         "Verkkosivun lataaminen"
+title:                "Web-sivun lataaminen"
+html_title:           "Arduino: Web-sivun lataaminen"
+simple_title:         "Web-sivun lataaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,63 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Web-sivun lataamisen hyödyt
+## Miksi
 
-Web-sivujen lataamisella on monia käyttötarkoituksia Arduinon ohjelmoinnissa. Esimerkiksi voit käyttää sitä hankkimaan tietoja Internetistä, päivittämään laitteesi ohjelmistoa tai yhdistämään sen verkkoon etäohjausta varten.
+Web-sivujen lataaminen on tärkeä osa nykyaikaista teknologiaa, ja Arduino tarjoaa helpon ja joustavan tavan toteuttaa tämä ominaisuus omassa projektissasi. Lataamalla web-sivuja voit esimerkiksi näyttää reaaliaikaista tietoa projektiisi liittyen tai saada päivityksiä ulkoisilta lähteiltä.
 
-## Miten: Koodin esimerkki ja lähtö
+## Miten
 
-Web-sivun lataaminen Arduinolle on helppoa käyttäen Ethernet-korttia tai WiFi-sovitinta. Alla olevassa koodiesimerkissä käytämme Ethernet-korttia ja tulostamme lataamamme web-sivun sisällön sarjaporttiin.
+Web-sivujen lataaminen Arduino-ohjelmassa onnistuu käyttämällä WiFi-yhteyttä ja HTTP GET -pyyntöjä. Ensiksi tarvitset WiFi-moduulin, kuten ESP8266, ja sen jälkeen voit käyttää esimerkiksi ESP8266WiFi-kirjastoa kommunikoidaksesi verkossa. Alla on yksinkertainen esimerkki, joka lataa ja tulostaa HTML-sisällön Arduino Serial Monitoriin.
 
 ```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+#include <ESP8266WiFi.h>
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // Arduinon Ethernet moduulin MAC-osoite
-IPAddress ip(192, 168, 0, 5); // Arduinon IP-osoite
-EthernetClient client;
-char server[] = "www.esimerkkisivu.com"; // Lataamamme web-sivun osoite
+const char* ssid = "WiFi-verkon-nimi";
+const char* password = "WiFi-salasana";
 
 void setup() {
-  Ethernet.begin(mac, ip); // Alustetaan Ethernet-yhteys
-  Serial.begin(9600); // Sarjaportin alustus
-  delay(1000); // Pieni viive yhteyden muodostumiseen
-  Serial.println("Yhdistetään palvelimeen...");
-  delay(1000); // Pieni viive uudelleen
-  if (client.connect(server, 80)) { // Yhdistetään web-palvelimeen portin 80 avulla
-    Serial.println("Yhteys muodostettu");
-    client.println("GET / HTTP/1.1"); // Lähetetään pyyntö GET-metodilla
-    client.println("Host: www.esimerkkisivu.com"); // Pyydetään haluttu sivu
-    client.println("Connection: close"); // Suljetaan yhteys latauksen jälkeen
-    client.println(); // Tyhjä rivi
+  Serial.begin(9600);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Yhdistetään WiFi-verkkoon...");
   }
+
+  Serial.println("WiFi-yhteys muodostettu!");
 }
 
 void loop() {
-  while (client.available()) { // Luetaan vastaanotettu data sarjaporttiin
-    char c = client.read();
-    Serial.print(c);
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin("http://www.esimerkkisivu.fi/"); // Muuta osoite haluamaksesi
+    int httpCode = http.GET();
+
+    if (httpCode > 0) {
+      Serial.println("Web-sivu ladattu.");
+      String html = http.getString();
+      Serial.println(html); // Tulostaa sivun sisällön
+    }
+    else {
+      Serial.println("Virhe ladattaessa web-sivua.");
+    }
+    
+    http.end();
+  }
+  else {
+    Serial.println("WiFi-yhteys katkaistu.");
   }
 
-  if (!client.connected()) { // Suljetaan yhteys ja odotetaan 5 sekuntia
-    Serial.println();
-    Serial.println("Lataus suoritettu");
-    client.stop();
-    while(true);
-  }
+  delay(5000); // Lataa web-sivua uudelleen 5 sekunnin välein
 }
 ```
 
-Yllä olevassa koodiesimerkissä käytetään Ethernet-korttia, mutta WiFi-sovittimen kanssa koodi toimii hyvin samalla tavalla. Voit myös muokata koodia lataamaan muita web-sivuja vain muuttamalla osoitetta.
+## Syvällisempi tarkastelu
 
-## Syvempi sukellus: Web-sivun lataaminen
-
-Web-sivun lataaminen Arduinolle toimii protokollan nimeltä HTTP (Hypertext Transfer Protocol) avulla. HTTP käyttää yhteydessä TCP (Transmission Control Protocol) mahdollistaakseen tiedonsiirron web-palvelimen ja Arduinon välillä. Lataus alkaa lähettämällä pyyntö GET-metodilla web-palvelimelle, joka vastaa lähettämällä pyydetyn sivun tiedot takaisin.
-
-HTTP muodostaa merkittävän osan Internetin toiminnasta ja on tärkeää ymmärtää sen periaatteet ja käytännöt, jos haluaa ladata web-sivuja Arduinolle tai tehdä muita Internet-yhteyksiä.
+HTTP GET -pyyntöä käytetään lähettämään tiettyä tietoa web-sivulta palvelimelle ja saamaan vastauksena tietoa palvelimen puolelta. Tämä toimii hyvin yksinkertaisten web-sivujen lataamisessa, mutta vaativammissa projekteissa voi olla tarpeen käyttää esimerkiksi REST API:a tai muita kommunikointitapoja. On myös tärkeää muistaa, että WiFi-yhteys voi olla epäluotettava ja pyyntöjä tulee käsitellä virheiden varalta.
 
 ## Katso myös
 
-- [Ethernet-kortin käyttö Arduinolla](https://www.arduino.cc/en/Reference/Ethernet)
-- [WiFi-sovittimen käyttö Arduinolla](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTP ja TCP:n toimintaperiaatteet](https://developer.mozilla.org
+- [Arduino HTTPClient library](https://github.com/arduino-libraries/ArduinoHttpClient)
+- [ESP8266WiFi library reference](https://arduino-esp8266.readthedocs.io/en/2.6.0/esp8266wifi/readme.html)
+- [REST API tutorial](https://www.restapitutorial.com/lessons/whatisrest.html)

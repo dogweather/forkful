@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Calcolare una data nel futuro o nel passato."
-simple_title:         "Calcolare una data nel futuro o nel passato."
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Elm: Calcolare una data nel futuro o nel passato"
+simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,33 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte situazioni in cui potresti voler calcolare una data specifica in futuro o in passato. Ad esempio, potresti avere un programma di prenotazione che chiede all'utente di selezionare una data di partenza o di arrivo. O forse stai creando un calendario con un'opzione per spostare tra i mesi. In ogni caso, è importante comprendere come calcolare correttamente una data futura o passata in Elm.
+Molte volte, quando si scrive un programma, si ha bisogno di calcolare la data in futuro o nel passato. Ad esempio, quando si crea un calendario o un'app per la pianificazione delle attività, è importante essere in grado di calcolare le date in modo preciso e affidabile. In questo articolo, impareremo come fare questo utilizzando il linguaggio di programmazione Elm.
 
-## Come fare
+## Come Fare
 
-Calcolare una data in Elm è abbastanza semplice e si può fare utilizzando alcune funzioni standard della libreria Time di Elm. Per calcolare una data futura o passata, è necessario utilizzare la funzione `add` che accetta tre argomenti: un intero che rappresenta l'ammontare di tempo da aggiungere o sottrarre, un intervallo di tempo (such as `millisecond`, `second`, `minute`, etc.), e una data base di riferimento. Ecco un esempio di codice che calcola la data di oggi più 5 giorni:
-
-```Elm
-import Time exposing (..)
-
-add 5 day (today)
-```
-
-L'output del codice sarà il seguente:
+Per calcolare una data in futuro o nel passato usando Elm, dobbiamo innanzitutto capire come Elm gestisce le date. In Elm, le date sono rappresentate come record con i seguenti campi: `year`, `month`, `day`, `hour`, `minute`, `second`, `millisecond`, e `zone`. Per iniziare, creiamo una funzione che crea una data a partire da questi campi:
 
 ```Elm
-Teak Time exposing (..)
-"2019-10-11"
+createDate : Int -> Int -> Int -> Date
+createDate year month day =
+  Date.DateZone.fromCalendarDate
+    year month day 0 0 0 0 DateZone.utc
 ```
 
-Oltre alle funzioni `add` e `today`, la libreria Time di Elm offre molte altre funzioni utili per il calcolo di date e orari. È possibile esplorarle ulteriormente nella documentazione ufficiale di Elm.
+Utilizzando questa funzione, possiamo creare una data specificando l'anno, il mese e il giorno desiderati. Ad esempio:
 
-## Approfondimento
+```Elm
+myDate : Date
+myDate =
+  createDate 2021 10 31
+```
 
-Per calcolare una data futura o passata in modo più preciso e complesso, potresti voler prendere in considerazione anche i leap years, i fusi orari e i giorni festivi. In questo caso, potresti dover utilizzare una libreria esterna o scrivere il tuo codice personalizzato. Inoltre, ricorda che le date in Elm sono immutabili, il che significa che una volta create, non possono essere modificate. Sarà necessario quindi utilizzare le funzioni di creazione e manipolazione delle date per ottenere risultati più accurati.
+Una volta che abbiamo una data di riferimento, possiamo utilizzare alcune funzioni predefinite di Elm per calcolare una data in futuro o nel passato.
+
+Per calcolare una data in futuro, possiamo utilizzare la funzione `add` e specificare quanti giorni, mesi, o anni vogliamo aggiungere alla data di riferimento. Ad esempio, per aggiungere 1 mese alla data `myDate`:
+
+```Elm
+Date.add Date.Month 1 myDate
+-- { year = 2021, month = 11, day = 30, hour = 0, minute = 0, second = 0, millisecond = 0, zone = DateZone.utc }
+```
+
+Per calcolare una data nel passato, possiamo utilizzare la funzione `subtract` e specificare quanti giorni, mesi, o anni vogliamo sottrarre alla data di riferimento. Ad esempio, per sottrarre 1 mese dalla data `myDate`:
+
+```Elm
+Date.subtract Date.Month 1 myDate
+-- { year = 2021, month = 9, day = 1, hour = 0, minute = 0, second = 0, millisecond = 0, zone = DateZone.utc }
+```
+
+## Deep Dive
+
+Se vuoi andare più in profondità nel calcolo delle date in Elm, puoi utilizzare il modulo `Date` e la sua documentazione ufficiale per scoprire tutte le funzioni disponibili per manipolare le date. Puoi anche utilizzare il modulo `Date.Extra` che fornisce funzioni aggiuntive, come il controllo sulle date di inizio e fine dei mesi, la creazione di date casuali, e molto altro ancora.
+
+Inoltre, è importante notare che Elm utilizza la libreria `elm/time` per gestire le date e i tempi. Assicurati di leggere anche la documentazione di questa libreria per saperne di più sulle funzioni disponibili.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Elm su Date e Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Esempi di calcolo di date in Elm](https://www.itabari.com/elm/it/articles/visually-review-date-time-in-Elm.html)
-- [Il codice sorgente del progetto Elm](https://github.com/elm/compiler/blob/master/hints/date.md)
+- Documentazione ufficiale di Elm sulle date: https://package.elm-lang.org/packages/elm/time/latest/
+- Modulo `Date` nella documentazione di Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Modulo `Date.Extra` nella documentazione di Elm: https://package.elm-lang.org/packages/elm-community/date-extra/latest/Date-Extra

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: HTMLの解析"
+title:                "HTMLの解析"
+html_title:           "Elixir: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,33 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-人々がHTMLパースを行う理由を説明するための1-2文。
 
-HTMLをパースするには、ウェブページから情報を収集する必要があるかもしれません。または、特定のパターンを検索して情報を抽出したい場合もあります。ElixirのHTMLパーサーは、このようなタスクを非常に簡単に実行できます。
+HTMLを解析することに取り組む *なぜ* ですか？
 
-## 使い方
-以下の「```Elixir ... ```」コードブロックには、どのようにHTMLパースを実行するかの例と出力が含まれています。
+HTMLはウェブサイトを構築する際に使用される一般的な言語です。多くのウェブサイトがHTMLを使用するため、エンジニアやウェブ開発者にはHTMLを理解しておく必要があります。また、ウェブスクレイピングやデータ収集のためにHTMLを解析する必要があるかもしれません。
+
+## 方法
+
+まず、Elixirをお使いのコンピューターにインストールしてください。次に、Elixirプロジェクトを作成しましょう。
 
 ```Elixir
-# HTMLパーサーを使って特定の要素をパースする
-html = "<div><h1>Hello World!</h1></div>"
-parsed = HTML.parse(html)
-IO.inspect parsed
-# 出力: [{:div, [], [{:h1, [], ["Hello World!"]}]}]
-
-# パータン検索を実行して情報を抽出する
-html = "<div><h1>Hello World!</h1><p>This is a paragraph</p></div>"
-parsed = HTML.parse(html, "div > p")
-IO.inspect parsed
-# 出力: ["This is a paragraph"]
+mkdir my_html_parser
+cd my_html_parser
+mix new my_html_parser
 ```
 
+次に、HTTPリクエストを使ってHTMLを取得し、Nokogiriライブラリを使ってHTMLを解析します。
+
+```Elixir
+url = "https://www.example.com"
+html = HTTPoison.get!(url).body
+document = Floki.parse(html)
+
+# ページのタイトルを取得する
+title = Floki.find(document, "title") |> Floki.text
+
+# リンクを取得する
+links = Floki.find_all(document, "a") |> Floki.attribute("href")
+
+# 画像を取得する
+images = Floki.find_all(document, "img") |> Floki.attribute("src")
+```
+
+上記のコードでは、HTMLタグを指定して特定の情報を抽出することができます。Nokogiriライブラリは、HTMLをパースし、Flokiライブラリを使用することで、取得した情報をさまざまな形式で抽出することができます。
+
 ## ディープダイブ
-HTMLパーサーには、さまざまなオプションがあります。例えば、特定の要素の属性やテキストを抽出したり、抽出されたデータをリストやマップに変換したりすることができます。詳細については、公式ドキュメントを参照してください。
 
-## 参考
-こちらのリンクを参考にしてください。
+HTMLを解析するには、HTMLの基本構造やタグの意味を理解する必要があります。さらに、HTML内のタグの階層や属性についても知る必要があります。また、さまざまなライブラリやフレームワークを使用してHTMLをパースする方法もあります。Elixirには、NokogiriやFlokiの他にもScrivenerやNimbleParsecなどの優れたライブラリがあります。
 
-- [Elixir HTMLパーサー公式ドキュメント](https://hexdocs.pm/html/HTML.html)
-- [Elixirウェブスクレイピングチュートリアル](https://dev.to/mnishiguchi/how-to-scrape-websites-with-elixir-and-exactor-4cdo)
- これを読むことで、より実践的なHTMLパースを行うことができます。
+## 参考文献
+
+- [Flokiライブラリ](https://github.com/philss/floki)
+- [Nokogiriライブラリ](https://github.com/elixir-nokogiri/nokogiri)
+- [Scrivenerライブラリ](https://github.com/awetzel/scrivener)
+- [NimbleParsecライブラリ](https://github.com/dashbitco/nimble_parsec)

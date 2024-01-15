@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Ein neues Projekt beginnen"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Rust: Ein neues Projekt beginnen"
 simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,48 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie auf der Suche nach einer neuen Programmiersprache sind, die sowohl leistungsstark als auch sicher ist, dann sollten Sie unbedingt überlegen, Rust auszuprobieren. Rust ist eine moderne Sprache, die sich auf Geschwindigkeit und Speichersicherheit konzentriert und wurde von Mozilla entwickelt. In diesem Blogbeitrag erfahren Sie, wie Sie mit Rust ein neues Projekt starten können.
+Warum sollte man sich engagieren, um ein neues Projekt zu starten? Nun, es gibt viele Gründe dafür! Vielleicht möchtest du deine Programmierfähigkeiten verbessern, ein interessantes Projekt umsetzen oder einfach nur neues ausprobieren. Egal aus welchem Grund, Rust ist definitiv eine gute Wahl für dein neues Projekt.
 
-## Wie geht man vor
+## Wie geht man vor?
 
-Um ein neues Rust-Projekt zu starten, müssen Sie zuerst sicherstellen, dass Sie Rust auf Ihrem System installiert haben. Falls nicht, folgen Sie einfach den Anweisungen auf der offiziellen Rust-Website. Sobald Sie Rust installiert haben, können Sie mit dem Erstellen Ihres neuen Projekts beginnen.
+Um ein neues Projekt in Rust zu starten, gibt es ein paar Schritte, die du befolgen solltest. Zuerst musst du Rust auf deinem Computer installieren. Dies ist relativ einfach, da es eine offizielle Installationsanleitung auf der Rust-Website gibt.
 
-Um ein neues Projekt anzulegen, öffnen Sie zunächst ein Terminal und navigieren Sie zu dem Ordner, in dem Sie das Projekt erstellen möchten. Geben Sie dann den folgenden Befehl ein:
+Sobald Rust installiert ist, kannst du ein neues Projekt mit dem Befehl `cargo new` erstellen. Dies erstellt eine Standardstruktur für dein Projekt, die ein `src`-Verzeichnis und eine `main.rs`-Datei enthält.
 
-```
-Rust new mein-projekt
-```
+Lass uns ein einfaches Beispiel erstellen, um zu verstehen, wie die Syntax in Rust funktioniert. Hier ist ein Programm, das "Hello, World!" auf der Konsole ausgibt:
 
-Diese Befehl erstellt einen neuen Ordner mit dem Namen "mein-projekt" und fügt automatisch einige grundlegende Dateien hinzu, die für ein Rust-Projekt benötigt werden. Als nächstes müssen Sie in diesen Ordner navigieren und können dann mit dem Schreiben Ihres Codes beginnen.
-
-Um zu demonstrieren, wie einfach es ist, Rust-Code zu schreiben, werden wir ein einfaches "Hallo Welt"-Programm erstellen. Öffnen Sie dazu die Datei "main.rs" und fügen Sie den folgenden Code hinzu:
-
-```
+```Rust
 fn main() {
-    println!("Hallo Welt!");
+    println!("Hello, World!");
 }
 ```
 
-Speichern Sie die Datei und navigieren Sie zurück zum Terminal. Geben Sie den folgenden Befehl ein, um Ihr Programm zu kompilieren und auszuführen:
+Um dieses Programm auszuführen, navigiere in deinem Terminal in das Projektverzeichnis und führe den Befehl `cargo run` aus. Du solltest "Hello, World!" auf deiner Konsole sehen.
 
-```
-Rust run
-```
+Dies ist nur ein einfaches Beispiel, aber es gibt noch viel mehr, was man in Rust tun kann. Schau dir die offizielle Rust-Dokumentation an, um mehr über die Syntax, Datentypen und die verschiedenen Funktionen zu erfahren.
 
-Sie sollten dann die Ausgabe "Hallo Welt!" sehen. Herzlichen Glückwunsch, Sie haben erfolgreich Ihr erstes Rust-Programm geschrieben!
+## Tiefer eintauchen
 
-## Tiefere Einblicke
+Um tiefer in die Welt von Rust einzutauchen, gibt es einige Dinge, die du beachten solltest, wenn du ein neues Projekt startest. Zuerst solltest du dich mit den Konzepten der Eigentümerschaft und der Borrowing-Regeln vertraut machen, da dies wichtige Konzepte in Rust sind.
 
-Nun, da Sie wissen, wie Sie ein neues Rust-Projekt starten und einfache Programme schreiben können, gibt es noch viele weitere Aspekte von Rust, die Sie erkunden können. Zum Beispiel bietet Rust eine starke Typisierung und eine anspruchsvolle Fehlerbehandlung, die es Ihnen ermöglichen, Bugs in Ihrem Code zu reduzieren. Sie können auch mit den Funktionen von Rust, wie Traits und Pattern Matching, experimentieren, um noch leistungsfähigere Programme zu erstellen.
+Ein weiterer wichtiger Aspekt ist das Verständnis von Lebenszeiten (Lifetimes) in Rust. Dies ist eine fortschrittlichere Konzept, aber es ist wichtig, um die Fehlermeldungen von Rust zu verstehen und effektiv zu programmieren.
 
-Ein weiteres interessantes Feature von Rust sind die sogenannten "Ownership Rules", die sicherstellen, dass es keine Zustandsfehler gibt und Speicherlecks vermieden werden. Dies kann dazu beitragen, die Sicherheit und die Performance Ihrer Anwendungen zu verbessern.
-
-Für weitere Informationen und Tutorials zu Rust können Sie die offizielle Rust-Dokumentation und die zahlreichen Community-Ressourcen erkunden.
+Schließlich gibt es noch die Module in Rust, die helfen, deinen Code in einzelne Dateien oder Ordner zu organisieren. Es ist wichtig, dies zu verstehen, um ein strukturiertes und gut wartbares Projekt zu entwickeln.
 
 ## Siehe auch
 
-- [Offizielle Rust-Website](https://www.rust-lang.org/)
-
-- [Rust-Dokumentation](https://doc.rust-lang.org/)
-
-- [Rust Community-Website](https://www.rust-lang.org/community)
+- Offizielle Rust-Website: https://www.rust-lang.org/
+- Rust-Dokumentation: https://doc.rust-lang.org/stable/
+- Rust-Community-Forum: https://users.rust-lang.org/

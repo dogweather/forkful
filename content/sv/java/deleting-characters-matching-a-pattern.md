@@ -1,6 +1,7 @@
 ---
-title:                "Java: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Att ta bort tecken som matchar ett mönster"
+html_title:           "Java: Att ta bort tecken som matchar ett mönster"
+simple_title:         "Att ta bort tecken som matchar ett mönster"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,40 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett visst mönster är en viktig färdighet inom Java-programmering. Detta gör det möjligt för dig att filtrera eller manipulera data på ett effektivt sätt och förbättra prestandan för ditt program.
+Ibland vill man ta bort vissa tecken från en textsträng baserat på ett visst mönster. Det kan till exempel vara för att upprätthålla en specifik formatering eller för att rensa bort onödiga tecken.
 
-## Hur du gör det
+## Hur man gör det
 
-För att ta bort tecken som matchar ett visst mönster i Java, kan du använda metoden `replaceAll()` från klassen `java.lang.String`. Denna metod tar emot två parametrar - det mönster du vill matcha och den byte du vill ersätta den matchade biten med. Här är ett exempel:
+För att ta bort tecken som matchar ett visst mönster i en textsträng, kan man använda sig av Java's `replaceAll()`-metod tillsammans med regular expressions. Här är ett enkelt exempel som tar bort alla siffror från en textsträng:
 
-```java
-String input = "Rensa bort alla specialtecken i den här strängen!";
-String output = input.replaceAll("[^a-zA-Z0-9 ]", "");
-System.out.println(output);
+```Java
+String originalStrang = "Jag har 3 hundar och 5 katter.";
+String nyStrang = originalStrang.replaceAll("[0-9]", "");
+
+System.out.println(nyStrang);
 ```
 
-I det här exemplet använder vi en regex som matchar alla specialtecken (inklusive mellanslag) och ersätter dem med en tom sträng. Det ger oss en ren version av vår ursprungliga sträng. Koden ovan kommer att producera följande output:
+Output: "Jag har hundar och katter."
 
-```
-Rensa bort alla specialtecken i den har strangen
-```
+I det här exemplet används `replaceAll()`-metoden för att söka igenom `originalStrang` och ersätta alla siffror (representerade av `[0-9]`) med ett tomt tecken. Detta resulterar i den uppdaterade strängen `nyStrang`. 
 
-Observera att vi använder `^` för att ange ett negativt tecken inom hakparenteser, vilket betyder att vi vill matcha allt utom det som finns innanför dem. Om du vill ta bort specifika tecken, till exempel endast specialtecken, kan du använda ett uttryck som `"[!-/:-@\\[-`-`{-~]"`i stället.
+Det finns olika typer av regular expressions som kan användas för att matcha olika mönster och tecken i en textsträng. Det kan vara bra att läsa på mer om dessa för att kunna använda `replaceAll()`-metoden på ett effektivt sätt.
 
 ## Djupdykning
 
-För att förstå detta bättre, låt oss titta på hur regex fungerar. En regex är ett uttryck för att matcha eller hitta ett visst mönster i en sträng. Det är ett mycket kraftfullt verktyg inom programmering, men det kan också vara förvirrande att förstå för nybörjare.
+Ibland kan man vilja ta bort vissa tecken från en sträng som inte nödvändigtvis finns i ett specifikt mönster. Då kan det vara användbart att använda sig av `replace()`-metoden istället för `replaceall()`. I motsats till `replaceAll()` som arbetar med regular expressions, så tar `replace()` emot två vanliga strängar som argument och ersätter den första strängen med den andra.
 
-I exemplet ovan använder vi en vanlig regex syntax `[...]` för att definiera ett set av tecken som vi vill matcha. Inuti hakparenteserna kan vi använda teckenklasser (t.ex. `a-z` eller `A-Z`) eller enskilda tecken. Om vi vill matcha tecken mellan `a` och `e` skulle vi använda `"[a-e]"`.
+```Java
+String originalStrang = "Jag gillar #pizza# och #pasta#.";
+String nyStrang = originalStrang.replace("#", "");
 
-Vi kan också använda modifierare i vår regex för att ändra dess beteende. Till exempel betyder `i` att matchningen är fallöverskridande. Om vi inte skulle ha angett det, skulle endast tecken som matchar exakt vårt uttryck tas bort.
+System.out.println(nyStrang);
+```
 
-Det finns en hel del olika speciala tecken och mönster som du kan använda för att skapa regex och överväga. Det kan vara en bra idé att ta en titt på Java-dokumentationen eller annan resurs för att bekanta dig med dessa för att bli bekväm med regex.
+Output: "Jag gillar pizza och pasta."
 
-## Se också
+Här används `replace()`-metoden för att ersätta alla förekomster av "#" med ett tomt tecken, vilket resulterar i att tecknet tas bort från strängen.
 
-- [Java Regex-tutorial](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-- [Java String-metoder](https://www.w3schools.com/java/java_ref_string.asp)
-- [Java Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+Det finns även andra metoder som kan användas för att rensa bort tecken från en sträng, såsom `substring()` och `trim()`. Det är viktigt att välja den lämpligaste metoden beroende på vilket resultat man vill uppnå.
 
-Tack för att du läste! Vi hoppas att denna artikel har hjälpt dig att förstå hur du kan ta bort tecken som matchar ett mönster i Java. Lycka till med din fortsatta programmeringsresa!
+## Se även
+
+- Java's Regular Expressions Tutorial: https://docs.oracle.com/javase/tutorial/essential/regex/
+- Java String Methods: https://www.w3schools.com/java/java_ref_string.asp

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Telechargement d'une page web"
-simple_title:         "Telechargement d'une page web"
+title:                "Récupération d'une page web"
+html_title:           "Fish Shell: Récupération d'une page web"
+simple_title:         "Récupération d'une page web"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles vous pourriez vouloir télécharger une page web à l'aide de Fish Shell. Peut-être que vous voulez sauvegarder une page pour la lire hors ligne, ou extraire des données d'une page pour les utiliser dans un script. Quelle que soit la raison, Fish Shell propose des outils pratiques pour faciliter le téléchargement de pages web.
+Tu pourrais te demander pourquoi tu devrais t'intéresser à télécharger une page web. Eh bien, c'est très utile si tu as besoin de récupérer des données spécifiques d'un site, en particulier si tu veux les utiliser pour un projet personnel ou professionnel. Cela peut aussi être pratique pour automatiser certaines tâches, comme le téléchargement régulier de rapports ou d'articles.
 
-# Comment faire
+## Comment Faire
 
-Télécharger une page web à l'aide de Fish Shell est assez simple. Tout d'abord, nous avons besoin d'installer un gestionnaire de paquets pour Fish Shell appelé Oh My Fish. Pour cela, ouvrez votre terminal et entrez la commande suivante :
-
-```Fish Shell
-curl -L https://get.oh-my.fish | fish
-```
-
-Une fois que Oh My Fish est installé, vous pouvez utiliser sa fonctionnalité intégrée appelée "wget" pour télécharger une page web. Par exemple, si vous souhaitez télécharger la page d'accueil de Fish Shell, vous pouvez utiliser cette commande :
+La coquille Fish (Fish Shell en anglais), est un excellent choix pour télécharger des pages web grâce à ses fonctionnalités pratiques telles que l'auto-complétion et les fonctions intégrées. Voyons comment tu peux utiliser Fish pour télécharger une page web en utilisant l'exemple du site web Stack Overflow.
 
 ```Fish Shell
-wget https://fishshell.com/ -O fish-shell.html
+
+# Premièrement, nous devons définir l'URL de la page que nous voulons télécharger
+set url https://stackoverflow.com/questions/10681771/how-to-download-a-web-page
+
+# Ensuite, nous allons utiliser la fonction `curl` intégrée pour télécharger la page
+curl $url > page.html
+
+# Le fichier html sera maintenant enregistré dans le même répertoire que votre terminal
 ```
 
-Cette commande téléchargera la page et la sauvegardera dans un fichier HTML appelé "fish-shell.html". Vous pouvez également spécifier le chemin vers lequel vous souhaitez enregistrer le fichier, en remplaçant "fish-shell.html" par le chemin désiré.
+Et c'est tout ! Tu as maintenant téléchargé avec succès une page web en utilisant Fish. Tu peux modifier l'URL pour télécharger différentes pages ou encore ajouter des options à la commande `curl` pour personnaliser le téléchargement selon tes besoins.
 
-# Plongeon en profondeur
+## Plongée Profonde
 
-Il y a beaucoup plus de choses que vous pouvez faire avec la fonction "wget" de Oh My Fish. Par exemple, vous pouvez utiliser des options différentes pour personnaliser votre téléchargement. La commande suivante, par exemple, vous permet de spécifier un user-agent pour le téléchargement :
+Si tu veux approfondir tes connaissances sur la façon de télécharger des pages web, voici quelques points importants à retenir :
 
-```Fish Shell
-wget -U "Fish Shell User" https://fishshell.com/ -O fish-shell.html
-```
+- Tu peux également utiliser la commande `wget` intégrée à Fish pour télécharger une page web, mais sa syntaxe peut être un peu plus complexe.
+- Pour les pages qui nécessitent une authentification, tu peux utiliser la commande `curl` avec les options `--user` et `--password` pour fournir tes identifiants.
+- Pour télécharger des pages avec du contenu dynamique, tu peux utiliser des bibliothèques externes telles que `mechanize` ou `BeautifulSoup` en les incluant dans ton script Fish.
 
-Cela peut être utile si vous souhaitez télécharger une page qui n'est pas accessible sans un certain user-agent spécifique.
+## Voir Aussi
 
-Il existe également d'autres outils de Fish Shell qui peuvent être utilisés pour télécharger des pages web, tels que cURL et HTTPie. N'hésitez pas à explorer ces options pour trouver la plus adaptée à vos besoins.
-
-# Voir aussi
-
-- [Documentation Fish Shell sur wget](https://fishshell.com/docs/current/cmds/wget.html)
-- [Oh My Fish - Gestionnaire de paquets pour Fish Shell](https://github.com/oh-my-fish/oh-my-fish)
-- [Apprendre les bases de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Documentation officielle de Fish](https://fishshell.com/docs/current/) pour en savoir plus sur les fonctionnalités et commandes intégrées.
+- [Guide de référence des coquilles de commande](https://devhints.io/fish) contenant des astuces et raccourcis clavier utiles pour Fish.
+- [Page GitHub de Fish](https://github.com/fish-shell/fish-shell) pour connaître les mises à jour et contribuer à l'amélioration de cette coquille.

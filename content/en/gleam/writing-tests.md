@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Gleam recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Writing tests is an essential part of any software development process. It can help catch bugs and errors in code, ensure that all features work as intended, and provide confidence in the codebase. In short, writing tests can save time and effort in the long run.
+
+Writing tests is an essential part of software development, as it helps ensure code stability and catch bugs early on. By writing tests, you can have confidence in the functionality of your code and prevent unexpected issues from arising in the future.
 
 ## How To
-To write tests in Gleam, we first need to create a test module using the `test` keyword. Inside this module, we can define individual test cases using the `#` operator. Let's take a look at an example:
+
+To start writing tests in Gleam, you will need to use the `gleam-test` library, which can be installed through the Gleam package manager. Once installed, you can import it into your project with the following code:
 
 ```Gleam
-test "addition" {
-  assert.equal(2, 1 + 1)
+import gleam/test
+```
+
+Next, you can write your first test using the `test` function, which takes in a description and a function that contains your test code. Here's an example of a simple test that checks if the result of adding two numbers is correct:
+
+```Gleam
+test "Adding two numbers should return the correct result"() {
+  let result = 2 + 2
+  expect(result).toBe(4)
 }
 ```
 
-In this code block, we declared a test case called "addition" and used the `assert.equal` function to check if the result of `1 + 1` is equal to 2. If the assertion fails, an error message will be displayed. Let's see what the output looks like when we run this test:
+You can also use other assertions, such as `toBeNil`, `toEqual`, and `toContain`, to check for more specific conditions in your tests.
 
-```
-Test "addition" failed
-Expected: 2
-Actual: 3
-```
-
-As we can see, the test failed because the expected and actual values did not match. This indicates that our test is doing its job and catching the error in our code.
-
-We can also use the `assert.not_equal`, `assert.true`, and `assert.false` functions to check for inequality, truthiness, and falsiness, respectively. Additionally, we can use the `#ignore` operator to skip specific test cases, and the `#only` operator to focus on those specific cases during testing.
+Once you have written your tests, you can run them by executing the command `gleam test` in your project directory. This will run all the tests and provide a report on the number of passing and failing tests.
 
 ## Deep Dive
-Writing good tests involves following best practices and considering edge cases. Gleam allows us to easily mock external dependencies using the `mock` keyword, which can come in handy when testing code that relies on other services or APIs. Additionally, we can use `test.fixtures` to set up and clean up data for our tests.
 
-When writing tests, it's important to not only cover happy path scenarios but also to test for potential errors and exceptions. This can be done using the `assert_error` function, which checks if a given expression results in an error. Another useful function is `expect_true`, which lets us assert that a function will return `Ok(value)` instead of `Error(error)`.
+Writing tests in Gleam follows the Arrange-Act-Assert (AAA) pattern, where you set up the initial state of your code, perform an action, and then assert that the result is as expected. It is essential to follow this pattern to ensure that your tests are organized and easy to understand.
+
+Additionally, Gleam has other testing libraries such as `gleam-expect` that provide more advanced assertions, and `gleam-check` that can generate random inputs for testing.
+
+It is also recommended to write multiple tests for each function and to update them when making changes to your code, as it helps catch bugs and ensure code stability.
 
 ## See Also
-- [Gleam documentation on testing](https://gleam.run/book/tour/testing.html)
-- [Writing Automated Tests in Gleam](https://www.youtube.com/watch?v=QcxAJxg76DE)
-- [Unit Testing in Gleam with Mocks](https://dev.to/johntyree/unit-testing-in-gleam-470j)
+
+- [Official Gleam Documentation](https://gleam.run/documentation/)
+- [Writing Tests in Gleam Tutorial](https://github.com/codenoid/Gleam-talk/blob/master/src/guide/writing-tests.md)
+- [Gleam Testing Example Project](https://github.com/mjm/greeter)

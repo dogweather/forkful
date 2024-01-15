@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Kuvion mukaisten merkkien poistaminen"
+title:                "Kuvion mukaisten merkkien poistaminen"
+html_title:           "PHP: Kuvion mukaisten merkkien poistaminen"
 simple_title:         "Kuvion mukaisten merkkien poistaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,29 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa tilanteissa on hyödyllistä pystyä poistamaan merkkejä, jotka vastaavat tiettyä kuvioa ohjelmoinnin aikana. Tämä voi säästää aikaa ja vaivaa manuaaliselta työltä, ja olla tärkeää tiettyjen algoritmien tai datan käsittelyn kannalta.
+Joskus ohjelmoinnissa saattaa olla tarpeen poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi olla hyödyllistä esimerkiksi datan muokkaamisessa tai validoinnissa.
 
-## Kuinka tehdä
+## Kuinka
 
-Tehtävän suorittamiseksi PHP:ssä voit käyttää `preg_replace()`-funktiota. Se ottaa parametrina kaksi merkkijonoa, ensimmäisenä olevan kuvion ja toisena korvaavan merkkijonon. Se palauttaa uuden merkkijonon, jossa kaikki kuvioon vastaavat merkit on korvattu annetulla merkkijonolla.
+Seuraavissa esimerkeissä käytetään PHP:n `preg_replace()`-funktiota poistamaan merkkejä, jotka täyttävät halutun kaavan.
 
-Esimerkiksi, jos haluamme poistaa kaikki välilyönnit merkkijonon lopusta, voimme käyttää seuraavaa koodia:
+````PHP
+$lista = array(
+    "Omena123",
+    "Banaani456",
+    "Mansikka789"
+);
 
-```PHP
-$input = "Tämä on esimerkkiteksti.   ";
-$output = preg_replace("/\s+$/", "", $input);
-```
+$kaava = '/[0-9]/'; //poista kaikki numerot
 
-Tässä kuviossa `\s+` vastaa yhtä tai useampaa välilyöntiä ja `$` merkkijonon loppua. Lopputuloksena `$output`-muuttujassa on "Tämä on esimerkkiteksti."
+foreach ($lista as $item) {
+    $uusi_lista[] = preg_replace($kaava, "", $item);
+}
+
+print_r($uusi_lista);
+
+//tulostaa:
+//Array (
+//    [0] => Omena
+//    [1] => Banaani
+//    [2] => Mansikka
+//)
+````
+
+````PHP
+$string = "Tämä on teksti, josta haluamme poistaa välilyönnit.";
+
+$kaava = '/\s+/'; //poista välilyönnit
+
+print preg_replace($kaava, "", $string);
+
+//tulostaa:
+//Tämäonteksti,jostahaluamme poistaa välilyönnit.
+````
 
 ## Syvempi sukellus
 
-`preg_replace()`-funktion käyttö voi olla monimutkaisempaa kuin yksinkertainen esimerkkimme. Kuvion käyttäminen regex-säännöissä voi olla hankalaa ja aiheuttaa virheitä. Tärkeää on myös muistaa, että `preg_replace()` ei muuta alkuperäistä merkkijonoa, vaan palauttaa muokatun kopion.
+PHP:n `preg_replace()`-funktio käyttää säännöllisiä lausekkeita (regular expressions) kaavojen määrittämiseen. Säännölliset lausekkeet ovat voimakas työkalu, jolla voidaan tunnistaa ja manipuloida merkkijonoja.
 
-Voit lukea lisää PHP:n regex-ehdoista ja `preg_replace()`-funktion eri parametreistä PHP:n virallisesta dokumentaatiosta.
+Kaavassa `/[0-9]/` `[0-9]` tarkoittaa "mikä tahansa numero". Vastaavasti `\s+` tarkoittaa "yksi tai useampi välilyönti". Suosittelemme tutustumaan säännöllisiin lausekkeisiin ja niiden erilaisiin käyttötarkoituksiin.
 
 ## Katso myös
 
-- [PHP-pääsivu](https://www.php.net/)
-- [preg_replace-dokumentaatio](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regex-tutoriaali](https://www.regular-expressions.info/)
+- [PHP:n virallinen sivusto](https://www.php.net/)
+- [Säännöllisten lausekkeiden perusteet](https://www.regular-expressions.info/)
+- [PHP:n preg_replace()-funktion dokumentaatio](https://www.php.net/manual/en/function.preg-replace.php)

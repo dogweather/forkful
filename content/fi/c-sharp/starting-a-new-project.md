@@ -1,6 +1,7 @@
 ---
-title:                "C#: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittamassa uutta projektia"
+html_title:           "C#: Aloittamassa uutta projektia"
+simple_title:         "Aloittamassa uutta projektia"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -9,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+## Miksi
 
-Moni meistä ohjelmoijista rakastaa uuden projektin aloittamista. Se antaa meille mahdollisuuden päästä luovuutemme valloilleen ja kehittää uusia taitoja. Uuden projektin aloittaminen voi myös olla hyvä tapa ratkaista ongelmia tai haasteita, jotka olemme kohdanneet työssämme. Se voi myös tarjota meille mahdollisuuden oppia uutta teknologiaa tai parantaa jo olemassa olevaa koodiamme.
+Miksi joku haluaisi aloittaa uuden C#-projektin? Tässä muutama syy:
 
-## Kuinka aloittaa uusi projekti?
+- C# on monikäyttöinen ohjelmointikieli, joka soveltuu niin web-sovellusten kuin mobiilisovellustenkin kehittämiseen.
+- Se on myös osa Microsoftin .NET Frameworkia, joten projektin aloittaminen C#-kielellä voi olla loistava tapa tutustua tähän laajaan ja suosittuun ohjelmistokehitysalustaan.
 
-Uuden projektin aloittaminen voi tuntua ylivoimaiselta tehtävältä, mutta se ei tarvitse olla. On tärkeää aloittaa tekemällä selkeä suunnitelma projektista ja päättää, mitä haluat saavuttaa. Sitten sinun tulee valita ohjelmointikieli ja kehitysympäristö, joka sopii parhaiten projektillesi. Esimerkiksi, jos haluat kehittää sovelluksen Windows-käyttöjärjestelmälle, kannattaa valita C# ja Visual Studio. 
+## Miten
 
-Aloita koodaamalla projektisi pohja ja aloita lisäämällä toiminnallisuuksia askel askeleelta. Voit hyödyntää valmiita kirjastoja ja avoimen lähdekoodin projekteja helpottaaksesi työtäsi. Varmista myös, että seuraat ohjelmointikäytäntöjä ja kirjoitat selkeää ja helppolukuista koodia. Alla on esimerkki yksinkertaisesta C# koodipätkästä, joka tulostaa "Hello World!" konsoliin:
+Aloittaminen uuden C#-projektin kanssa on helppoa! Tarvitset vain C#-yhteensopivan tekstieditorin, kuten Visual Studio -ohjelmiston, ja C#-tiedoston, johon voit kirjoittaa koodisi.
 
 ```C#
 using System;
 
-class Program
+namespace UusiProjekti 
 {
-    static void Main(string[] args)
+  class Program 
+  {
+    static void Main (string[] args) 
     {
-        Console.WriteLine("Hello World!");
+      Console.WriteLine("Tervetuloa uuden projektin maailmaan!");
     }
+  }
 }
 ```
 
-Muista myös testata koodiasi useissa eri tilanteissa ja varmista, että se toimii odotetulla tavalla. Kun olet valmis, voit jakaa projektisi käyttäjien kanssa tai täyttää sille muut tavoitteesi.
+Kun ajat tämän koodin, näet tuloksen konsolissa:
 
-## Syvempi sukellus uuden projektin aloittamiseen
+```
+Tervetuloa uuden projektin maailmaan!
+```
 
-Kun olet aloittanut uuden projektin, on tärkeää pysyä motivoituneena ja kohdata mahdolliset haasteet rohkeasti. Työskentely käyttäjäpalautteen ja yhteistyön merkeissä voi auttaa projektin kehittämisessä ja antaa uusia ideoita siihen. Muista myös dokumentoida projektisi hyvin, jotta se on helppo ymmärtää ja muokata tulevaisuudessa.
+Voit nyt alkaa muokata tätä projektia omaa tarkoitustasi varten lisäämällä uusia funktioita, luokkia ja muuttujia. C#-kieli tarjoaa monia erilaisia työkaluja, joiden avulla voit kehittää monimutkaisiakin ohjelmia.
 
-Lopuksi, muista nauttia prosessista! Uuden projektin aloittaminen voi olla erittäin palkitsevaa ja voit oppia paljon matkan varrella.
+## Syväsukellus
+
+Jotta uuden projektin aloittaminen sujuisi mahdollisimman jouhevasti, kannattaa tutustua muutamaan tärkeään asiaan etukäteen.
+
+Ensinnäkin, on hyvä olla perustuntemusta C#-kielen syntaksista ja rakenteesta. Tärkeimpiä käsitteitä ovat luokat, metodit, muuttujat ja ehdot, ja niiden avulla voit luoda monipuolisia ohjelmia.
+
+Toiseksi, on hyvä perehtyä myös .NET Frameworkin perusteisiin ja alustan tarjoamiin eri ominaisuuksiin. Näitä ovat esimerkiksi tietokantayhteydet, HTTP-pyyntöjen käsittely ja käyttöliittymien luominen.
+
+Lisäksi, ennen kuin aloitat uuden projektin, on tärkeää miettiä tarkasti projektin tavoitteita ja vaatimuksia. Näin voit suunnitella ohjelmistosi rakenteen ja toiminnot mahdollisimman tehokkaasti.
 
 ## Katso myös
 
-- [Visual Studio:n aloitusopas](https://docs.microsoft.com/en-us/visualstudio/get-started/?view=vs-2019)
-- [C# opetusohjelmat](https://www.tutorialspoint.com/csharp/index.htm)
-- [GitHub julkaisualustana](https://github.com/)
+Onko sinulla vielä lisäkysymyksiä C#-projektien aloittamisesta? Tässä muutama hyödyllinen linkki, joista voit löytää lisätietoa:
+
+- [C# - Quizlets](https://quizlet.com/subject/c%23/)
+- [C# - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [Codecademy - C#](https://www.codecademy.com/learn/learn-c-sharp)
+
+Kiitos lukemisesta ja onnea uuden projektin aloittamiseen!

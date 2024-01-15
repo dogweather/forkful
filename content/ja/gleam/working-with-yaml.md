@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 「YAML を使う」"
-simple_title:         "「YAML を使う」"
+title:                "「YAMLを使ったプログラミング」"
+html_title:           "Gleam: 「YAMLを使ったプログラミング」"
+simple_title:         "「YAMLを使ったプログラミング」"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜYAMLを使うのか
+## なぜ？
 
-YAMLは人間にとって読みやすく、コンピューターにとっても処理しやすいデータの形式です。Gleamでは、YAMLを使用して構成ファイルやデータ構造を作成することができます。これにより、アプリケーションの設定やデータの管理がより簡単になります。
+YAMLとは、人間にとって読みやすく、コンピューターにとっても解析しやすいテキスト形式のデータ保存方法です。GleamでYAMLを扱うことで、よりシンプルで効率的なコーディングが可能になります。
 
-## 方法
-
-まずは、GleamでYAMLを使用する方法をご紹介します。まず、YAMLライブラリをインポートしましょう。
+## 使い方
 
 ```Gleam
-import yaml
-```
+import gleam/yaml.{decode, encode}
 
-次に、YAML形式のテキストをパースするための関数を使用します。
+// YAMLをデコードする例
+let yaml = "name: John\nage: 30"
+let person = yaml
+  |> decode
+  // Result<Person, DecodeError>型に変換
+  |> Result.map_err(fn err => err |> to_string |> yaml.error)
 
-```Gleam
-let data = yaml.parse("name: John\nage: 30\nhobbies:\n - coding\n - hiking\n - cooking")
-```
-
-このコードでは、YAML形式のテキストを解析して、データを扱いやすい形式に変換します。実行すると、次のようなデータが得られます。
-
-```Gleam
-{
-  name: "John",
-  age: 30,
-  hobbies: ["coding","hiking","cooking"]
+// YAMLをエンコードする例
+let user = %{
+  name: "Emily",
+  email: "emily@example.com"
 }
+user
+  |> encode
+  // Result<String, EncodeError>型に変換
+  |> Result.map_err(fn err => err |> to_string |> yaml.error)
+  // 結果は "name: Emily\nemail: emily@example.com" のようになります
 ```
 
-このように、YAMLを使用することで、データをより構造化し、扱いやすくすることができます。
+## 詳細を深堀り
 
-## 深堀り
+YAMLを使用することで、データを階層構造で表現することができ、複雑なオブジェクトやリストを簡潔に表現することができます。さらに、Gleamのパターンマッチング機能を使用することで、より複雑なデータのパースが可能になります。また、YAMLとJSONの相互変換もサポートしています。
 
-YAMLは非常に柔軟なデータ形式であり、さまざまな機能を備えています。例えば、キーと値のペアを含むマップだけでなく、リストや文字列といったさまざまなデータ型を表現することができます。
+## See Also
 
-また、インデントを使用してデータの階層構造を表現することもできます。このように、様々な方法でデータを表現することができるため、GleamではYAMLがよく使用されます。
-
-## 併せて読みたい
-
-- [公式YAML仕様書](https://yaml.org/spec/)
-- [GleamのYAMLドキュメンテーション](https://gleam.run/packages/yaml/)
-- [YAMLを使用したGleamアプリケーションの例](https://github.com/gleam-lang/gleam/blob/master/examples/yaml_example.yaml)
-
-ありがとうございました。YAMLを使用して、より簡単にデータを管理し、アプリケーションを構築しましょう！
+- YAMLの公式サイト: https://yaml.org/
+- Gleamの公式ドキュメント: https://gleam.run/

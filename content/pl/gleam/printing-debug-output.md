@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Wyświetlanie wyników debugowania"
-simple_title:         "Wyświetlanie wyników debugowania"
+title:                "Drukowanie danych debugowania"
+html_title:           "Gleam: Drukowanie danych debugowania"
+simple_title:         "Drukowanie danych debugowania"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,82 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele razy przy pisaniu kodu w języku Gleam napotkasz sytuacje, w których nie jesteś pewien, co właściwie dzieje się w Twoim programie. Często wyświetlanie informacji i wyników podczas debugowania może bardzo pomóc w zrozumieniu działania kodu. W tym krótkim artykule dowiesz się, dlaczego jest to przydatne i jak to zrobić.
+Drukowanie debug outputu jest nieodłącznym elementem procesu programowania. Dzięki niemu możemy zobaczyć, co dzieje się w naszym kodzie, a także znaleźć ewentualne błędy i poprawić je szybko i skutecznie.
 
 ## Jak to zrobić
 
-Gleam posiada prostą i skuteczną metodę na wyświetlanie debug outputu. Wystarczy użyć funkcji `debug!()` aby wyświetlić żądaną informację. Poniżej znajduje się przykładowy kod, który demonstruje to w praktyce:
+Gleam jest językiem bardzo przyjaznym dla programistów, również jeśli chodzi o dedukowanie i wyświetlanie debug outputu. Wystarczy użyć funkcji `Debug.todo/1` lub `Debug.inspect/1` przy odpowiednich zmiennych lub wyrażeniach. 
 
-```Gleam
-pub fn main() {
-  let num = 5
-  debug!(num)
+```
+Gleam> import Debug
+
+Gleam> number = 42
+Gleam> Debug.inspect(number)
+42: Number
+```
+
+Możemy również użyć funkcji `Debug.format/1` aby sformatować output w określony sposób. 
+
+```
+Gleam> fruit = "apple"
+Gleam> colour = "red"
+Gleam> Debug.format("{fruit} is {colour}", [fruit, colour])
+apple is red
+```
+
+Gleam również oferuje nam możliwość wyświetlenia debug outputu w funkcjach rekurencyjnych. Wystarczy dodać kolejny parametr do funkcji `Debug.inspect/2`, który będzie reprezentował aktualny poziom rekursji. 
+
+```
+fn count_down(number, depth) {
+  if number <= 0 {
+    Debug.inspect(number, depth)
+  } else {
+    Debug.inspect(number, depth)
+    count_down(number - 1, depth + 1)
+  }
 }
 ```
 
-Rezultatem tego kodu będzie wyświetlenie wartości zmiennej `num` w konsoli:
+Możesz także użyć funkcji `Debug.todo/2` aby oznaczyć miejsca w kodzie, które chcesz jeszcze uzupełnić. Funkcja ta wyświetli błąd i podpowie Ci gdzie powinieneś dalej pracować. 
 
 ```
-5
-```
-
-Możesz również wyświetlać dowolne wyrażenia lub wartości zmiennych:
-
-```Gleam
-pub fn main() {
-  let name = "John"
-  let age = 25
-  debug!("Imię: " ++ name ++ ", Wiek: " ++ age)
-  debug!(age + 5)
-}
-```
-
-Na konsoli pojawią się następujące wyjścia:
-
-```
-Imię: John, Wiek: 25
-30
+Gleam> name = "John"
+Gleam> Debug.todo("Make a function to greet {name}") 
+Error: Unexpected TODO in the code. "Make a function to greet {name}"
 ```
 
 ## Deep Dive
 
-Istnieje również możliwość wyświetlania danych typu `Record` i `Tuple`. Są one wyświetlane w formacie `Tuple` i posiadają swoją własną unikalną składnię. W przykładzie poniżej `Person` jest rekordem posiadającym pola `name` i `age`:
+Podczas używania funkcji `Debug.inspect/1`, widzimy obiekt `Gleam.Debug.Output` z opisem wartości i typu. Jest to bardzo przydatne, szczególnie gdy potrzebujemy wyświetlić bardziej złożone struktury danych, jak na przykład krotki czy listy. 
 
-```Gleam
-pub fn main() {
-  let person = {
-    name: "Adam",
-    age: 30
-  }
-  debug!(person)
-}
-```
+Funkcja `Debug.format/1` działa na podobnej zasadzie jak `Printf` w innych językach programowania. Operujemy na słowach kluczowych (takich jak `{fruit}` w poprzednim przykładzie), których wartości podstawiane są zgodnie z kolejnością w argumencie listy. Dzięki temu możemy swobodniej formatować nasz output. 
 
-Wyjściem na konsoli będzie:
+W przypadku użycia funkcji `Debug.todo/1` powinniśmy pamiętać, aby w końcowej wersji naszego kodu usunąć wszystkie takie wywołania. W przeciwnym razie zostanie nam zwrócony błąd. 
 
-```
-{"Adam", 30}
-```
+## Zobacz także
 
-Jeśli chcesz wyświetlić konkretny element w krotce lub rekordzie, możesz użyć `.N` za pomocą którego określisz, który element chcesz wyświetlić (N jest od 0 do końca). Poniżej przykład:
-
-```Gleam
-pub fn main() {
-  let person = {
-    name: "Adam",
-    age: 30
-  }
-  debug!(person.0)
-}
-```
-
-Konsola wyświetli:
-
-```
-{"Adam"}
-```
-
-## Zobacz również
-
-- Oficjalna dokumentacja Gleam: https://gleam.run/
-- Wprowadzenie do Gleam: https://gleam.run/book/introduction.html
+- Oficjalna dokumentacja Gleam dotycząca debugowania: [Gleam - Debugging](https://gleam.run/book/tour/debugging.html)
+- Wideo tutorial omawiające debugowanie w Gleam: [Gleam - Debugging with Nuby](https://www.youtube.com/watch?v=sGikLa2yQvA)

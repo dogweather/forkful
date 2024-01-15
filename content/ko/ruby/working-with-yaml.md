@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "yaml로 작업하기"
+html_title:           "Ruby: yaml로 작업하기"
+simple_title:         "yaml로 작업하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -9,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-Ruby 프로그래밍을 배우면서 YAML을 동작하는 방법을 배우는 것은 매우 중요합니다. YAML은 데이터를 구조화하고 효율적으로 다룰 수 있는 간단하고 유연한 형식입니다. 또한 Ruby에서 YAML을 사용하기위한 내장 라이브러리가 있기 때문에 프로그램에 쉽게 적용할 수 있습니다.
+## 왜인가요?
+이 글은 많은 프로그래밍 언어 중 하나인 루비(Ruby)에서 YAML을 다루는 방법을 알려드리고자 쓰여졌습니다. YAML은 데이터 시리얼라이제이션(Data Serialization)에 매우 유용한 포맷으로, 개발자들이 데이터를 보다 쉽게 저장하고 공유할 수 있도록 도와줍니다. YAML을 업무에 활용하면 보다 효율적인 데이터 관리가 가능합니다.
 
-## 방법
-다음은 Ruby에서 YAML을 사용하는 간단한 예제입니다.
-
+## 어떻게 하나요?
+YAML을 다루는 방법은 매우 간단합니다. 아래의 예시 코드를 참고하면 쉽게 익힐 수 있습니다. 모든 코드는 루비 문법에 맞게 작성되었으며 실행 결과도 함께 제공합니다.
 ```Ruby
+# YAML 라이브러리 불러오기
 require 'yaml'
 
-# YAML 파일 불러오기
-data = YAML.load_file('my_file.yml')
+# YAML 형식의 데이터 생성
+data = {name: "John", age: 25, hobbies: ["reading", "playing guitar"]}
 
-# 데이터 구조 출력
-puts data
+# 데이터를 YAML 포맷으로 변환하기
+yaml_data = YAML.dump(data)
+#=> "---\n:name: John\n:age: 25\n:hobbies:\n- reading\n- playing guitar\n"
 
-# 데이터 수정
-data['name'] = 'John Doe'
+# YAML 형식의 데이터 읽어오기
+new_data = YAML.load(yaml_data)
 
-# 수정된 데이터를 새로운 YAML 파일로 저장
-File.open('new_file.yml', 'w') do |file|
-  YAML.dump(data, file)
-end
+# 원하는 데이터 가져오기
+puts new_data[:name]
+#=> John
+puts new_data[:age]
+#=> 25
+puts new_data[:hobbies][0]
+#=> reading
 ```
 
-위 예제에서는 YAML 파일을 불러오고, 데이터 구조를 출력하고, 데이터를 수정하여 새로운 파일로 저장하는 방법을 보여줍니다. 이 외에도 YAML을 사용하여 배열이나 해시와 같은 다양한 자료형을 다룰 수 있습니다.
+## 깊게 들어가보기
+YAML 형식의 데이터는 사람이 읽고 쓰기가 쉬우면서도 컴퓨터가 이해하기에도 쉽습니다. 이러한 특성 덕분에 YAML은 많은 프로그래밍 언어에서 널리 사용되며, 자유롭게 활용할 수 있습니다. 또한 YAML은 공백을 이용해 데이터를 구분하는 구조를 가지고 있어 구조적으로 보기 쉽습니다. 형식이 정해져 있지 않기 때문에 실수나 수정이 쉽고 유연하게 사용할 수 있습니다. YAML 공식 홈페이지에서 더 많은 정보를 확인할 수 있습니다.
 
-## 딥 다이브
-YAML은 일반적인 데이터 저장 형식인 JSON보다 더 유연하고 읽기 쉽습니다. YAML 파일은 들여쓰기를 사용하여 데이터의 구조를 정의하기 때문에 가독성이 뛰어나며, 주석을 사용하여 데이터에 대한 설명을 추가할 수도 있습니다. 또한 YAML은 여러 언어에서 호환성이 높아 데이터를 다양한 환경에서 쉽게 공유할 수 있습니다.
-
-## 관련 자료
-- https://docs.ruby-lang.org/en/2.6.0/YAML.html
-- https://en.wikipedia.org/wiki/YAML
-- http://www.yaml.org/
-- https://www.rubyguides.com/2019/05/load-yaml-ruby/
+## 더 자세한 정보는 아래 링크를 참고해주세요.
+- YAML 공식 홈페이지: https://yaml.org/
+- 루비 공식 홈페이지: https://www.ruby-lang.org/ko/
+- YAML 라이브러리 문서: https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html

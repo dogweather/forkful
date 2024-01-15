@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Pisanie do standardowego błędu"
-simple_title:         "Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego wyjścia błędu"
+html_title:           "Fish Shell: Pisanie do standardowego wyjścia błędu"
+simple_title:         "Pisanie do standardowego wyjścia błędu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,33 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszym wpisie omówimy, dlaczego pisanie do standardowego błędu może być ważnym narzędziem w naszym programowaniu. Poznamy również kilka prostych przykładów, jak tego użyć w języku Fish Shell.
+Kodowanie w Fish Shell jest jednym z najbardziej popularnych sposobów na wykonywanie poleceń w terminalu. Jedną z ważnych umiejętności jest pisanie do standardowego błędu (stderr). W tym krótkim artykule dowiecie się, dlaczego warto nauczyć się tego podstawowego aspektu programowania w Fish Shell.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Fish Shell oferuje nam prosty i przejrzysty sposób na przekierowanie informacji do standardowego błędu za pomocą operatora "2>". Przykładowy kod wyglądałby następująco:
-
-```Fish Shell
-ls -1 /home/bruno 2>errors.txt
-```
-
-W tym przykładzie używamy polecenia "ls" aby wyświetlić zawartość katalogu "/home/bruno", a za pomocą operatora "2>" przekierowujemy wszystkie błędy, które mogą wystąpić do pliku "errors.txt". 
-
-Możemy też użyć tego narzędzia do wyświetlania konkretnych komunikatów, na przykład:
+Pisanie do stderr jest wyjątkowo proste w Fish Shell. Wystarczy użyć specjalnego operatora `>&2` w linii kodu, aby wysłać dane do standardowego błędu. Poniżej przedstawiamy przykładowy kod, który wyświetla błąd w przypadku podania błędnych argumentów podczas uruchamiania skryptu:
 
 ```Fish Shell
-echo "Ups, coś poszło nie tak!" 2>/dev/null
+if not test -f $argv[1]
+    echo "Podany plik nie istnieje" >&2
+    exit 1
+end
 ```
 
-Tutaj przekierowujemy komunikat "Ups, coś poszło nie tak!" do standardowego błędu, ale jednocześnie używamy operatora "/dev/null" aby ten błąd nie został wyświetlony na ekranie.
+W tym przykładzie, jeśli podany plik nie istnieje, zostanie wyświetlona wiadomość błędu na standardowym wyjściu błędu. Możesz również użyć `2>` aby przekierować wyjście błędu do pliku.
 
-## Głębsze Zagłębienie
+## Deep Dive
 
-Pisanie do standardowego błędu może okazać się bardzo przydatne, gdy piszemy skrypty lub programy, które mają działać bez nadzoru użytkownika. Dzięki przekierowaniu błędów do pliku, możemy łatwiej monitorować nasz kod i w razie wystąpienia problemu szybko zareagować.
+Większość programów i skryptów generuje wyjście błędu w celu poinformowania użytkownika o ewentualnych błędach lub problemach. Pisanie do standardowego błędu jest szczególnie przydatne w przypadku skryptów, gdy chcemy wyświetlić wiadomość błędu i przerwać wykonanie dalszej części kodu.
 
-Pamiętajmy jednak, że zbyt duża ilość przekierowanych błędów może sprawić, że pliki będą szybko rosnąć i zabierać cenne miejsce na naszym dysku. Dlatego musimy uważnie dobierać jakie informacje chcemy przekierować do standardowego błędu.
+W Fish Shell, możemy również użyć funkcji `fish_add_error_handler` w celu definiowania własnych obsług błędów i wyświetlania spersonalizowanych wiadomości. Możesz się nauczyć więcej na temat tej funkcji poprzez wpisanie `help fish_add_error_handler` w terminalu.
 
-## Zobacz też
+## Zobacz także
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Przekierowanie wyjścia i błędów w języku Fish Shell](https://devdungeon.com/content/stdout-stderr-redirect-fish-shell)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Oficjalny Poradnik Fish Shell](https://fishshell.com/docs/current/index.html#tut_friendly)
+- [Poradnik na temat pisanie skryptów w Fish Shell](https://fishshell.com/docs/current/commands.html#commands-writingScripts)

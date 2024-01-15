@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Att skicka en http-begäran"
-simple_title:         "Att skicka en http-begäran"
+title:                "Sända en http-begäran"
+html_title:           "Elixir: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,47 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skicka HTTP-förfrågningar är en viktig del av många mjukvaruprojekt, oavsett om det är för att hämta data från en API eller för att interagera med en webbplats. Med hjälp av Elixir blir det enklare och mer effektivt att hantera dessa förfrågningar, vilket är anledningen till att många utvecklare väljer detta språk.
 
-Att skicka en HTTP förfrågan är en grundläggande aspekt av webbutveckling. Det är en viktig del av att interagera med olika webbtjänster och API:er. I denna blogginlägg kommer vi att utforska hur man implementerar detta i Elixir.
-
-## Hur man gör
-
-För att skicka en HTTP förfrågan i Elixir, behöver vi använda oss av inbyggda funktioner som finns tillgängliga i modulen `HTTPoison`. Det finns olika metoder som kan användas för detta, såsom `get`, `post` och `put`. Låt oss se hur vi kan använda dessa med hjälp av kodexempel nedan.
+## Så här gör du
+Du behöver först installera Elixir på din dator. Sedan kan du enkelt skicka en HTTP-förfrågan genom att följa dessa steg:
 
 ```Elixir
-# Använda get-metoden för att hämta data från en URL
-
-response = HTTPoison.get("https://example.com")
-
-IO.inspect response
-
-# Använda post-metoden för att skicka data till en URL
-
-body = %{username: "JaneDoe", password: "123456"}
-
-response = HTTPoison.post("https://api.example.com/login", body)
-
-IO.inspect response
-
-# Använda put-metoden för att uppdatera data på en URL
-
-body = %{name: "JohnDoe", age: 30}
-
-response = HTTPoison.put("https://api.example.com/users/1", body)
-
-IO.inspect response
+httpc.request(:get, "https://www.example.com")
 ```
 
-Genom att köra dessa kodexempel i en Elixir-miljö, kommer vi att få utdata som innehåller relevanta information om våra förfrågningar, såsom statuskod, headers och svarskropp.
+Det här är ett exempel på hur man kan skicka en GET-förfrågan till en URL. Det finns också andra parametrar som man kan använda för att skräddarsy förfrågningen, som till exempel HTTP-header och body. Läs mer om dessa i [Elixirs dokumentation](https://hexdocs.pm/elixir/httpc.html).
+
+När du skickar en HTTP-förfrågan i Elixir, returneras en tuple med två värden: statuskoden för förfrågan och den faktiska data som har hämtats. Till exempel:
+
+```Elixir
+{200, "Det här är resultatet av min förfrågan"}
+```
+
+För att få ut specifik information, som till exempel bara HTTP-header eller body, kan du använda hjälpfunktioner som `:split_response` och `:fetch_body`.
 
 ## Djupdykning
+En av de största fördelarna med att använda Elixir för att skicka HTTP-förfrågningar är att språket har fantastisk hantering av parallellism och konkurrens. Det betyder att man kan skicka flera förfrågningar samtidigt utan att behöva vänta på att en förfrågan ska slutföras innan man börjar på nästa.
 
-Att skicka en HTTP förfrågan i Elixir är en del av HTTPoisons funktionalitet, men under huven är det faktiskt Erlangs `:httpc` bibliotek som används. Med hjälp av HTTPoison kan vi därför utnyttja alla fördelar som kommer med Erlangs `:httpc` bibliotek, till exempel asynkrona anrop och hantering av fel.
-
-Det är också möjligt att anpassa våra förfrågningar genom att ange specifika headers, timeouts och även autentisering. Detta gör att vi kan använda HTTPoison för mer avancerade användningsområden.
+Ett annat användbart verktyg för att hantera HTTP-förfrågningar är tesverktyget [hackney](https://github.com/benoitc/hackney). Detta erbjuder mer avancerade funktioner för att skicka förfrågningar, som att kunna sätta en timeout eller skicka förfrågningar med olika protokoll (t.ex. HTTPS).
 
 ## Se även
-
-- [HTTPoison dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Erlangs :httpc bibliotek](http://erlang.org/doc/man/httpc.html)
-- [GenHTTP - en Elixir wrapper för :httpc](https://github.com/LukeWood/gen_http)
+- [Elixirs dokumentation om HTTP-förfrågningar](https://hexdocs.pm/elixir/httpc.html)
+- [Hackneys officiella hemsida](https://github.com/benoitc/hackney)

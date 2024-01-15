@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Pisanie do standardowego wyjścia błędów"
+title:                "Pisanie do standardowego wyjścia błędów"
+html_title:           "TypeScript: Pisanie do standardowego wyjścia błędów"
 simple_title:         "Pisanie do standardowego wyjścia błędów"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,35 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarzają się sytuacje, w których jako programista musisz poinformować użytkownika o wystąpieniu błędu lub wyświetlić pewne ważne informacje. W takim przypadku używana jest funkcja `console.log()`, która wypisuje tekst na standardowe wyjście. Jednak, co w sytuacji, gdy chcesz przekazać informacje do standardowego wyjścia błędów? W tym przypadku przyda nam się funkcja `process.stderr.write()`, która pozwala na wypisanie tekstu na standardowe wyjście błędów. W tym artykule dowiemy się dlaczego warto korzystać z tej funkcji oraz jak ją używać.
+Pisanie do standardowego błędu jest nieodłączną częścią procesu programowania w TypeScript. Jest to ważny proces, ponieważ pozwala nam na lepsze śledzenie błędów i szybsze rozwiązywanie problemów podczas debugowania.
 
 ## Jak to zrobić
 
-Aby wypisać tekst na standardowe wyjście błędów, musimy najpierw zaimportować moduł `process` z pakietu `@types/node`. Możemy to zrobić przy pomocy polecenia:
+Aby napisać do standardowego błędu w TypeScript, należy użyć metody `console.error ()`. Przykładowy kod wyglądałby następująco:
 
 ```TypeScript
-import * as process from 'process'; 
+console.error("To jest przykładowy błąd."); 
 ```
 
-Następnie, korzystając z funkcji `process.stderr.write()`, możemy przekazać tekst, który chcemy wypisać na standardowe wyjście błędów. Przykładowy kod może wyglądać następująco:
+Po wykonaniu tego kodu otrzymamy następujący wynik w konsoli:
+
+```
+To jest przykładowy błąd.
+```
+
+Korzystając z tej metody, możemy przekazać dowolny komunikat błędu, który będzie wyświetlony w konsoli, wraz z informacjami o błędzie, na przykład o błędnych zmiennych lub funkcjach.
+
+## Głębszy wgląd
+
+W TypeScript istnieje również inna metoda do pisania do standardowego błędu - `process.stderr.write ()`. Za jej pomocą można wysłać również dane do standardowego błędu. Przykładowy kod wyglądałby następująco:
 
 ```TypeScript
-process.stderr.write('Błąd: Nieprawidłowy format danych'); 
+process.stderr.write("To są przykładowe dane do błędu.");
 ```
 
-Po wykonaniu takiego kodu, powyższy tekst zostanie wypisany na standardowym wyjściu błędów:
-
-```
-Błąd: Nieprawidłowy format danych
-```
-
-## Deep Dive
-
-Funkcja `process.stderr.write()` jest często używana w celu poinformowania użytkownika o błędzie w programie. Jednak warto również wiedzieć, że można również przekierować standardowe wyjście błędów do pliku, korzystając z operatora `>` w terminalu. Dzięki temu można łatwo zapisywać informacje o błędach do pliku, co może być przydatne w przypadku późniejszej analizy i debugowania programu.
+Wykorzystując tę metodę, możemy przekazać również tablicę dowolnych danych, a nie tylko komunikat tekstowy, co może być przydatne podczas debugowania błędów.
 
 ## Zobacz też
 
-* [Dokumentacja funkcji `process.stderr.write()` (w języku angielskim)](https://nodejs.org/api/process.html#process_process_stderr_write_data_encoding_callback)
-* [Artykuł o standardowym wyjściu i wyjściu błędów w Node.js (w języku polskim)](https://poradnikjavascript.pl/standardowe-wyjscie-i-wyjscie-bledow-w-node-js/)
-
-Dziękuję za przeczytanie tego artykułu. Mam nadzieję, że pomógł on w zrozumieniu funkcji `process.stderr.write()` oraz w jej wykorzystaniu w Twoich projektach. Jeśli masz jakieś pytania lub uwagi, daj znać w komentarzu poniżej. Do zobaczenia w kolejnych artykułach!
+- [Dokumentacja TypeScript o standardowym wyjściu i błędach](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)
+- [Informacje o standardowych błędach w JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)

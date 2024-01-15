@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Lectura de argumentos de línea de comandos"
-simple_title:         "Lectura de argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comando"
+html_title:           "Elixir: Leyendo argumentos de línea de comando"
+simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,70 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-En la programación de Elixir, a menudo es necesario leer argumentos de línea de comandos para que nuestro programa pueda tomar decisiones en función de la entrada del usuario. En esta publicación, exploraremos cómo hacerlo de manera eficiente y efectiva.
+## ¿Por qué leer argumentos de línea de comando?
+
+La lectura de argumentos de línea de comando es una habilidad esencial para cualquier programador de Elixir. Al comprender cómo funcionan los argumentos de línea de comando, podrás hacer que tus programas sean más flexibles y adaptables, lo que mejora la experiencia del usuario.
 
 ## Cómo hacerlo
-Usando el módulo `OptionParser` de Elixir, podemos leer y procesar los argumentos de línea de comandos de manera muy sencilla. Primero, importamos el módulo en nuestro archivo de Elixir:
+
+Para leer argumentos de línea de comando en Elixir, puedes utilizar el módulo `System` y su función `argv`. Esto te devolverá una lista con los argumentos ingresados al ejecutar el programa.
+
+Veamos un ejemplo de cómo utilizarlo:
 
 ```Elixir
-import OptionParser
-```
+# Este programa toma un nombre como argumento de línea de comando
+defmodule CommandLine do
+  def main do
+    args = System.argv
+    nombre = Enum.at(args, 0)
 
-Luego, definimos las opciones que queremos leer y cómo deben ser procesadas. Por ejemplo, si queremos leer dos argumentos, uno para un nombre y otro para una edad, podemos hacerlo de la siguiente manera:
-
-```Elixir
-OptionParser.parse(
-  ["--nombre", "Juan", "--edad", "25"],
-  switches: [
-    nombre: {:string, "--nombre"},
-    edad: {:integer, "--edad"}
-  ]
-)
-```
-
-Esto creará un mapa con la estructura `{nombre: "Juan", edad: 25}` que podemos utilizar en nuestro programa. Además, podemos definir acciones para cada opción, como imprimir un mensaje si se ingresa un argumento incorrecto:
-
-```Elixir
-OptionParser.parse(
-  ["--nombre", "Juan", "--edad", "25", "--altura", "1.80"],
-  switches: [
-    nombre: {:string, "--nombre"},
-    edad: {:integer, "--edad"},
-    altura: {:float, "--altura"}
-  ],
-  on_argument_error: fn(option, _value) ->
-    IO.puts "El argumento #{option} no fue ingresado correctamente."
+    IO.puts "¡Hola #{nombre}!"
   end
-)
+end
 
-# Salida:
-# El argumento --altura no fue ingresado correctamente.
+CommandLine.main()
 ```
 
-## Deep Dive
-El módulo `OptionParser` también nos permite definir opciones con argumentos opcionales y argumentos con múltiples valores. Podemos hacerlo utilizando las opciones `{:option, :optional}` y `{:option, :repeatable}`, respectivamente.
+Si ejecutas este programa desde la línea de comando escribiendo `elixir hello.exs World`, la salida será:
 
-Además, podemos utilizar la opción `:switch` para definir una opción que solamente necesita ser mencionada para ser activada, sin ningún valor asociado. Por ejemplo, si queremos una opción `--ayuda` que muestre un mensaje de ayuda, podemos hacerlo de la siguiente manera:
-
-```Elixir
-OptionParser.parse(
-  ["--nombre", "Juan", "--edad", "25", "--ayuda"],
-  switches: [
-    nombre: {:string, "--nombre"},
-    edad: {:integer, "--edad"},
-    ayuda: :switch
-  ],
-  on_switch: fn(_option) ->
-    IO.puts "Bienvenido a este programa de Elixir!"
-  end
-)
-
-# Salida:
-# Bienvenido a este programa de Elixir!
 ```
+¡Hola World!
+```
+
+Además de esto, también puedes utilizar la función `get_env` del módulo `System` para acceder a las variables de entorno, que pueden ser pasadas como argumentos al ejecutar el programa.
+
+## Profundizando
+
+La función `argv` es útil, pero tiene algunas limitaciones. Por ejemplo, si los argumentos contienen espacios, estos se interpretarán como argumentos separados. Para solucionar esto, puedes utilizar el módulo `OptionParser` que permite parsear argumentos de manera más flexible.
+
+Además, al utilizar la función `argv` también se obtienen otros argumentos del sistema, como la ruta del archivo ejecutado y la bandera `--no-halt`, que indica si se debe finalizar la ejecución de manera forzada. Si no quieres obtener estos argumentos, puedes utilizar la función `command_line` del módulo `Kernel` para acceder solo a los argumentos específicos de tu programa.
 
 ## Ver también
-- Documentación oficial de OptionParser: https://hexdocs.pm/elixir/OptionParser.html
-- Ejemplos prácticos de lectura de argumentos de línea de comandos en Elixir:
-  https://medium.com/@afe19940913/handling-command-line-arguments-in-elixir-f55f041c8711
+
+- Documentación del módulo [System](https://hexdocs.pm/elixir/System.html)
+- Documentación del módulo [OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- Ejemplos de [argumentos de línea de comando en Elixir](https://github.com/dwyl/learn-elixir/blob/master/command-line-arguments.md)

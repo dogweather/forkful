@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Versenden einer http-Anfrage"
-simple_title:         "Versenden einer http-Anfrage"
+title:                "Das Versenden einer http-Anfrage"
+html_title:           "Javascript: Das Versenden einer http-Anfrage"
+simple_title:         "Das Versenden einer http-Anfrage"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum man HTTP-Anfragen senden sollte
+## Warum
 
-Das Senden von HTTP-Anfragen ist ein wesentlicher Bestandteil der Webentwicklung. Durch das Senden von Anfragen von einem Client an einen Server können Daten abgerufen und dynamische Inhalte auf einer Webseite angezeigt werden. Ohne das Senden von HTTP-Anfragen wäre das Surfen im Internet nicht möglich.
+Warum sollte man sich mit dem Senden von HTTP-Anfragen in der aktuellen Version von JavaScript beschäftigen? Ganz einfach: die Kommunikation mit einem Server ist für moderne Webanwendungen unerlässlich. Ob Daten abrufen, Informationen senden oder Ressourcen laden - alles läuft über HTTP-Anfragen.
 
-# Wie man eine HTTP-Anfrage sendet
+## Wie
 
-Um eine HTTP-Anfrage in Javascript zu senden, benötigen wir die Fetch API, die es uns ermöglicht, eine Anfrage an eine URL zu senden und die Antwort zu verarbeiten. Hier ist ein einfaches Beispiel, wie man eine HTTP-Anfrage mit der Fetch API sendet:
+Um eine HTTP-Anfrage in JavaScript zu senden, muss man zuerst eine Instanz des XMLHttpRequest-Objekts erstellen. Dieses Objekt ermöglicht die asynchrone Kommunikation mit dem Server. Dann muss man die Datenform der Anfrage angeben, z.B. JSON oder XML, und die URL des Ziels angeben. Hier ist ein Beispielcode:
 
 ```Javascript
-fetch('https://www.example.com')
-  .then(response => response.text())
-  .then(data => console.log(data))
+let request = new XMLHttpRequest();
+request.open('GET', 'https://www.example.com/data');
+request.send();
 ```
 
-Dieser Code sendet eine GET-Anfrage an die angegebene URL und gibt die Antwort als Text in der Konsole aus. Die Fetch API kann auch für POST-Anfragen verwendet werden, um Daten an den Server zu senden.
+Wenn die Anfrage erfolgreich ist, erhält man eine Antwort mit dem gewünschten Inhalt. Dieser kann dann weiterverarbeitet werden, z.B. durch das Manipulieren von DOM-Elementen. Man kann auch mehrere Parameter angeben, um die Anfrage zu personalisieren. 
 
-# Tiefere Einblicke in das Senden von HTTP-Anfragen
+## Deep Dive
 
-Es gibt verschiedene Arten von HTTP-Anfragen, die je nach Zweck und Verwendung unterschiedliche Methoden verwenden. GET-Anfragen werden verwendet, um Daten vom Server zu erhalten, während POST-Anfragen verwendet werden, um Daten an den Server zu senden. Weitere gängige Methoden sind PUT, DELETE oder PATCH.
+Das XMLHttpRequest-Objekt hat verschiedene Eigenschaften, die man ändern kann, um die Kommunikation anzupassen. Mit der `onreadystatechange` Eigenschaft kann man z.B. eine Funktion festlegen, die bei Änderungen des Anfrage-Status aufgerufen wird. Dies kann nützlich sein, um Feedback während der Anfrage zu erhalten. Außerdem kann man mit `setRequestHeader()` zusätzliche Header-Informationen zur Anfrage hinzufügen.
 
-Außerdem gibt es verschiedene Arten von HTTP-Statuscodes, die anzeigen, ob die Anfrage erfolgreich war oder ob ein Fehler aufgetreten ist. Zum Beispiel steht der Statuscode 200 für eine erfolgreiche Anfrage, während der Statuscode 404 einen Fehler anzeigt, wenn die angeforderte Ressource nicht gefunden werden konnte.
+Es gibt auch alternative Methoden für HTTP-Anfragen in JavaScript, wie z.B. die `fetch()` API. Diese ermöglicht eine noch einfachere und flexiblere Art, Anfragen zu senden. Es ist daher empfehlenswert, sich über die verschiedenen Möglichkeiten zu informieren und die für den individuellen Anwendungsfall am besten geeignete Methode auszuwählen.
 
-Weitere wichtige Aspekte beim Senden von HTTP-Anfragen sind die HTTP-Header, die zusätzliche Informationen über die Anfrage und die gewünschten Daten enthalten können, und die Verwendung von Asynchronität, um die Performance zu verbessern.
+## Siehe auch
 
-# Siehe auch
-
-- [MDN Web Docs - Fetch API](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)
-- [HTTP-Statuscodes](https://developer.mozilla.org/de/docs/Web/HTTP/Status)
-- [HTTP-Anfragemethoden](https://developer.mozilla.org/de/docs/Web/HTTP/Methods)
+- [XMLHttpRequest Objekt](https://developer.mozilla.org/de/docs/Web/API/XMLHttpRequest)
+- [fetch() API](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)
+- [Einführung in AJAX](https://www.w3schools.com/js/js_ajax_intro.asp)

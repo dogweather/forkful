@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Escribir pruebas"
+html_title:           "PHP: Escribir pruebas"
+simple_title:         "Escribir pruebas"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -9,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en PHP
+## ¿Por qué escribir pruebas en PHP?
 
-Escribir pruebas en PHP es fundamental para garantizar la calidad de nuestro código. Con las pruebas, podemos detectar rápidamente errores y asegurarnos de que nuestro código funciona como debería. También nos permite hacer cambios en el futuro sin temor a romper el código existente. ¡Sigue leyendo para aprender cómo escribir pruebas en PHP!
+Escribir pruebas en PHP es fundamental para garantizar la calidad y el funcionamiento adecuado de nuestras aplicaciones. Con las pruebas, podemos detectar y corregir errores antes de que afecten a nuestros usuarios y ahorrar tiempo y esfuerzo en la resolución de problemas imprevistos en producción.
 
 ## Cómo escribir pruebas en PHP
 
-Primero, necesitamos asegurarnos de tener instalado PHPUnit, la herramienta de pruebas más popular para PHP. Una vez instalado, podemos comenzar a escribir nuestras pruebas. A continuación, se muestra un ejemplo de código de una función de suma simple:
+El proceso de escribir pruebas en PHP se puede dividir en tres pasos clave: preparación, ejecución y verificación.
+
+**Preparación:** Antes de escribir cualquier prueba, es necesario definir la funcionalidad que queremos probar. Esto nos ayudará a establecer los casos de prueba y los resultados esperados.
+
+**Ejecución:** Para realizar una prueba en PHP, utilizaremos la función `assert()`, la cual espera una expresión booleana como primer parámetro y un mensaje opcional como segundo parámetro para imprimir en caso de que la prueba falle.
+
+**Verificación:** Una vez que se han ejecutado las pruebas, es importante verificar los resultados para asegurarnos de que la funcionalidad probada funciona como se espera. En caso de encontrar errores, podemos corregirlos antes de que afecten a nuestro código en producción.
+
+A continuación, se muestra un ejemplo sencillo de cómo escribir y ejecutar una prueba en PHP utilizando la función `assert()`.
 
 ```PHP
-// Definimos una función para sumar dos números
-function sumar($num1, $num2) {
-    return $num1 + $num2;
+<?php
+
+// Definimos la función a probar
+function sum($a, $b) {
+    return $a + $b;
 }
 
-// Escribimos nuestra prueba utilizando la aserción (assert) de PHPUnit
-// Esta prueba verificará si la suma de 2 y 3 es igual a 5
-use PHPUnit\Framework\TestCase;
-
-class SumaTest extends TestCase {
-    public function testSuma() {
-        $resultado = sumar(2, 3);
-        $this->assertEquals(5, $resultado);
-    }
-}
+// Realizamos la prueba utilizando assert()
+assert(sum(2, 2) == 4, "La suma de 2 y 2 debería ser igual a 4");
 ```
 
-Al ejecutar esta prueba, si todo está bien, obtendremos una salida que nos indica que nuestra prueba ha pasado. Si quisieras probar una solución alternativa, por ejemplo, sumando dos números en lugar de restarlos, la prueba fallaría y nos mostraría un mensaje de error.
+Si ejecutamos este código y todo está correcto, no se imprimirá nada en pantalla. Sin embargo, si modificamos la función `sum()` para que devuelva un resultado incorrecto, obtendremos el siguiente mensaje de error: `Assertion failed: La suma de 2 y 2 debería ser igual a 4`.
 
-## Profundizando en las pruebas
+## Profundizando en la escritura de pruebas en PHP
 
-Es importante tener en cuenta que nuestras pruebas deben ser lo más exhaustivas y completas posible. Podemos probar diferentes combinaciones de entradas y comparar los resultados esperados con los obtenidos. También podemos comprobar situaciones de error y asegurarnos de que nuestro código maneje adecuadamente esas situaciones.
+Escribir pruebas en PHP puede ser un proceso más complejo que el ejemplo mostrado anteriormente. Por eso, es importante considerar algunos aspectos durante este proceso.
 
-Otra técnica útil para escribir pruebas es la prueba de "caja negra". Esto significa que probamos nuestra función solo desde la perspectiva del usuario, sin mirar el código interno. De esta manera, podemos asegurarnos de que nuestro código funcione correctamente desde el punto de vista del usuario final.
+**Estructurar y organizar las pruebas:** Conforme nuestro código crece, es fundamental estructurar y organizar nuestras pruebas de manera adecuada. Podemos utilizar herramientas como PHPUnit para realizar esto de una manera más eficiente.
+
+**Pruebas unitarias vs pruebas de integración:** Las pruebas unitarias se encargan de probar una unidad de código aislada, como una función o una clase. Por otro lado, las pruebas de integración se enfocan en probar la interacción entre distintas unidades de código. Es importante realizar ambas para tener una cobertura completa de nuestras pruebas.
+
+**Mantener un conjunto de pruebas actualizado:** Conforme nuestro código va cambiando, nuestras pruebas también deberán ser actualizadas para garantizar que sigan funcionando correctamente.
 
 ## Ver también
 
-- [Documentación de PHPUnit](https://phpunit.readthedocs.io/en/9.5/)
-- [Tutorial de pruebas en PHP](https://www.tutorialspoint.com/phpunit/phpunit_writing_tests.htm)
-- [Guía de buenas prácticas para escribir pruebas en PHP](https://github.com/marco-pivetta/php-unit-best-practices)
+- [PHPUnit Documentation](https://phpunit.readthedocs.io/en/latest/)
+- [Pruebas unitarias y de integración en PHP](https://codigofacilito.com/articulos/pruebas-unitarias-integracion-php)
+- [Escribiendo pruebas de código en PHP](https://docs.meziantou.net/writing-tests-in-php.html)

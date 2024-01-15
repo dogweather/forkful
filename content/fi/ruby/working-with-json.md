@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Ruby: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,51 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-JSON (JavaScript Object Notation) on yksi suosituimmista tietojen tallennusmuodoista nykyään. Se on kevyt, helppolukuinen ja helppo käyttää. Monet nykyaikaiset ohjelmointikielet, kuten Ruby, tarjoavat tuen JSON-tiedostojen käsittelyyn. Jos haluat olla pätevä ohjelmoija, on tärkeää oppia työskentelemään JSON:in kanssa.
+Miksi haluaisit käyttää JSONia Ruby-ohjelmoinnissa? JSON eli JavaScript Object Notation on suosittu tiedonvälitysmuoto verkossa ja monissa ohjelmointikielissä, joten sen tunteminen hyödyllistä työssäsi ohjelmoijana.
 
-## Miten
+## Kuinka
 
-Ruby tarjoaa sisäänrakennetut metodit JSON-tietojen käsittelyyn. Aloita luomalla uusi tiedosto ja kirjoittamalla sinne seuraava koodi:
+JSONin käsittely Rubyssa on helppoa ja suoraviivaista. Käytämme JSON-pakettia, joka sisältää valmiit työkalut JSON-tietojen parsimiseen ja generoimiseen. Katso seuraava koodiesimerkki JSON-tiedon parsimisesta:
 
 ```Ruby
 require 'json'
 
-data = { nimi: 'Matti', ikä: 30, kaupunki: 'Helsinki' }
+# JSON-dataa, jonka haluamme parsia
+json_data = '{"nimi": "Anna", "kaupunki": "Helsinki", "ikä": 30}'
+
+# Parsitaan JSON-data ja tallennetaan se muuttujaan
+tulos = JSON.parse(json_data)
+
+# Printataan tuloksen avain ja arvo
+puts "Nimi: #{tulos['nimi']}\nKaupunki: #{tulos['kaupunki']}\nIkä: #{tulos['ikä']}"
+
 ```
 
-Ensimmäinen rivi tuo Ruby:n JSON-kirjaston käyttöön, jotta voimme käyttää JSON-metodeja. Toisella rivillä luomme muuttujan "data", joka sisältää avain-arvo -pareja. Tässä esimerkissä käytämme henkilön nimeä, ikää ja kaupunkia.
+Tulostus:
 
-Seuraavaksi voimme käyttää JSON-metodeja muuttaaksemme datan JSON-muotoon ja tallentaa sen tiedostoon:
-
-```Ruby
-File.open('henkilot.json','w') do |f|
-  f.write(data.to_json)
-end
+```
+Nimi: Anna
+Kaupunki: Helsinki
+Ikä: 30
 ```
 
-Tämä luo uuden tiedoston nimeltä "henkilot.json" ja tallentaa siihen datan JSON-muodossa. Voit tarkistaa tiedoston sisällön avaamalla sen tekstieditorilla.
+Havaitsemme, että JSON-data on nyt purettu ja tallennettu muuttujaan. Voimme nyt käyttää sitä ohjelmassamme haluamallamme tavalla. Seuraavaksi esittelemme vaikeampia JSON-käsittelyn tapauksia.
 
-Jos haluat lukea JSON-tiedoston takaisin Ruby:n muuttujaksi, voit käyttää seuraavaa koodia:
+## Syväsukellus
 
-```Ruby
-File.open('henkilot.json') do |f|
-  parsed_data = JSON.parse(f.read)
-end
-```
-
-Nyt voit käyttää muuttujaa "parsed_data" samalla tavalla kuin aiemmin luomaasi "data" -muuttujaa.
-
-## Syvennys
-
-JSON:ssa on myös mahdollista luoda monimutkaisempia rakenteita, kuten sisäkkäisiä avain-arvo -pareja ja listoja. Voit tutustua lisää JSON:n syntaksiin ja mahdollisuuksiin täältä: https://www.json.org/json-fi.html.
-
-Voit myös käyttää Ruby:n "pretty_generate" -metodia tulostamaan JSON-tiedoston kauniissa muodossa:
-
-```Ruby
-puts JSON.pretty_generate(parsed_data)
-```
+JSON-tiedosto voi sisältää monimutkaisempia rakenteita, kuten sisäkkäisiä objekteja ja listoja. Tässä tapauksessa voimme käyttää Ruby-kieleen sisäänrakennettua Hash-metodia, joka tekee JSON-objektin käsittelystä helpompaa. JSON-tiedoston käsittelyyn sisältyy myös virheiden käsittely, kuten esimerkiksi virheellisen tiedon parsiminen. Voit oppia lisää tästä Ruby'n virallisen dokumentaation avulla.
 
 ## Katso myös
 
-- JSON:n virallinen verkkosivusto: https://www.json.org/json-fi.html
-- Ruby:n dokumentaatio JSON-kirjastolle: https://ruby-doc.org/stdlib-3.0.0/libdoc/json/rdoc/JSON.html
+- Virallinen Ruby JSON-dokumentaatio: https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html
+- JSON-opas: https://www.tutorialspoint.com/ruby-json-tutorial

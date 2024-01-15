@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skriving til standardfeil"
+html_title:           "Ruby: Skriving til standardfeil"
+simple_title:         "Skriving til standardfeil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor du bør bruke standard error når du koder
+##Hvorfor
 
-Mange nye Ruby-utviklere lurer på hvorfor de trenger å bruke standard error når de koder. Svaret er enkelt: det hjelper deg med å finne og løse feil i koden din. Når du skriver til standard error, kan du spore feil på en mer effektiv måte og få bedre forståelse av hva som skjer i programmet ditt.
+Mange ganger ønsker vi å vise meldinger eller feilmeldinger til brukeren mens programmet vårt kjører. Dette kan være nyttig for å forklare hva som skjer eller informere om eventuelle problemer. Å skrive til standard error gir en enkel og effektiv måte å gjøre akkurat det.
 
-## Hvordan du kan skrive til standard error i Ruby
+##Slik gjør du det
 
-Å skrive til standard error er enkelt. Du kan bruke metoden `STDERR.puts` for å skrive ut en melding til standard error. Her er et eksempel på hvordan du kan gjøre det:
-
-```Ruby
-STDERR.puts "Dette er en feilmelding"
-```
-
-Dette vil skrive ut teksten "Dette er en feilmelding" til standard error. Her er et annet eksempel som viser hvordan du kan bruke standard error til å håndtere feil i koden din:
+For å skrive til standard error, kan du bruke metoden `puts` og skrive ut meldingen din etterfulgt av `STDERR` som et argument. For eksempel:
 
 ```Ruby
-begin
-  # Kode som kan føre til en feil
-rescue StandardError => e
-  STDERR.puts "Noe gikk galt: #{e.message}"
-end
+puts "Dette er en melding til brukeren" + STDERR
 ```
 
-I dette eksempelet bruker vi `begin` og `rescue` for å håndtere en potensiell feil i koden vår. Vi skriver ut feilmeldingen ved hjelp av `STDERR.puts` og får tilbake feilmeldingen ved hjelp av `e.message`.
+Dette vil skrive ut meldingen til brukeren og vises som en feilmelding på skjermen. Du kan også bruke `warn` metoden, som gjør det samme som `puts` metoden, men bare for standard error. For eksempel:
 
-## Dykk dypere inn i bruken av standard error
+```Ruby
+warn "Dette er en feilmelding" # Vil skrive ut meldingen på standard error
+```
 
-Å skrive til standard error er en viktig komponent i feilhåndtering i Ruby. Mange utviklere bruker det også til å logge feil og andre viktige meldinger. Det finnes også forskjellige metoder du kan bruke i tillegg til `puts`, som for eksempel `warn` og `error`, for å gi forskjellige nivåer av viktig informasjon. Det er også mulig å kombinere bruk av standard error med andre feilhåndteringsmetoder som `raise` for å få en mer strukturert og effektiv måte å håndtere feil i koden din.
+Du kan også skrive ut variabelverdier i meldinger ved hjelp av string interpolasjon. For eksempel:
 
-## Se også
-- [Ruby dokumentasjon: Debugging med standard error](https://ruby-doc.org/stdlib-2.7.1/libdoc/logger/rdoc/Logger.html#method-c-new)
-- [Stack Overflow: Hva er forskjellen mellom standard error og standard output?](https://stackoverflow.com/questions/3703493/what-is-the-difference-between-stderr-and-stdout-in-ruby)
-- [Codecademy: Feilhåndtering i Ruby](https://www.codecademy.com/learn/learn-ruby/modules/exceptions-and-error-handling-in-ruby)
-- [Ruby Monstas: Feilhåndtering i Ruby](https://rubymonstas.org/curriculum/intermediate_ruby/error_handling.html)
+```Ruby
+name = "John"
+warn "Hei #{name}, velkommen til programmet vårt!"
+```
 
-Husk at å bruke standard error er en viktig del av å skrive robust og feilfri kode i Ruby. Ta deg tid til å lære om det og utforske mulighetene for å bruke det i koden din. Lykke til!
+Dette vil skrive ut "Hei John, velkommen til programmet vårt!" på standard error.
+
+##Dykk dypere
+
+Standard error er en spesiell filstrøm som brukes for å sende feilmeldinger til brukeren. Det er anbefalt å bruke denne strømmen for alle ikke-kritiske meldinger og feilmeldinger, mens standard out bør brukes for den vanlige utdataen til programmet.
+
+En annen grunn til å bruke standard error er at det kan kobles til et loggebibliotek for å lagre alle meldinger og feilmeldinger samlet på ett sted. Dette kan være nyttig for feilsøking av problemer i et større prosjekt.
+
+##Se også
+
+- [Ruby dokumentasjon for StandardError](https://ruby-doc.org/core-2.7.0/StandardError.html)
+- [Enkel guide til Ruby exceptions](https://www.rubyguides.com/2019/03/ruby-exceptions/)

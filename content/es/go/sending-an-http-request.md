@@ -1,5 +1,6 @@
 ---
-title:                "Go: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Go: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Go"
 category:             "Go"
@@ -11,45 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-El envío de solicitudes HTTP es una parte fundamental de la programación en Go. Al utilizar este método, podemos comunicarnos con servidores web y obtener información de manera eficiente. Aprender a enviar solicitudes HTTP es una habilidad esencial para cualquier programador de Go.
+¿Alguna vez has navegado por una página web y te has preguntado cómo funciona el intercambio de información entre tu navegador y el servidor? Bueno, eso es gracias a las solicitudes HTTP. En este artículo, vamos a explorar cómo puedes enviar una solicitud HTTP utilizando Go.
 
-## Cómo
+## Cómo hacerlo
 
-Para enviar una solicitud HTTP en Go, necesitamos utilizar la biblioteca estándar "net/http". Primero, importamos esta biblioteca en nuestro archivo de código:
+Todo lo que necesitas para enviar una solicitud HTTP en Go son dos componentes: un cliente HTTP y una URL de destino. Primero, importa el paquete `"net/http"` en tu código. Luego, puedes crear un cliente HTTP utilizando la función `http.Client()`:
 
 ```Go
 import "net/http"
+
+cliente := http.Client()
 ```
 
-Luego, creamos una función que maneje la solicitud HTTP. En este ejemplo, enviaremos una solicitud GET al sitio web de Google y obtendremos su código de estado de respuesta:
+Luego, debes crear una solicitud HTTP con la URL de destino y el método HTTP adecuado. Por ejemplo, si quieres obtener el contenido de una página web, puedes utilizar el método `GET`:
 
 ```Go
-func main() {
-    response, err := http.Get("https://www.google.com/")
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println(response.Status)
+solcitud, error := http.NewRequest("GET", "https://www.ejemplo.com", nil)
+if error != nil {
+    // manejo de errores
 }
 ```
 
-En este código, utilizamos la función "http.Get" para enviar una solicitud GET a la URL proporcionada. Guardamos la respuesta en la variable "response" y manejamos cualquier error que pueda surgir. Luego, imprimimos el código de estado de la respuesta utilizando la propiedad "Status" de la variable "response".
-
-## Deep Dive
-
-El paquete "net/http" también nos permite personalizar nuestra solicitud HTTP con diferentes opciones. Por ejemplo, podemos agregar encabezados a nuestra solicitud para proporcionar información adicional al servidor.
+Ahora solo queda ejecutar la solicitud utilizando el cliente que creamos anteriormente y manejar la respuesta. Puedes hacerlo con la función `cliente.Do()` y el método de respuesta `Response.Body`. Aquí hay un ejemplo de cómo imprimir el contenido de la respuesta:
 
 ```Go
-req, err := http.NewRequest("GET", "https://www.example.com/", nil)
-req.Header.Set("User-Agent", "My-Go-Client") //agregamos un encabezado personalizado
-response, err := http.DefaultClient.Do(req)
+respuesta, error := cliente.Do(solicitud)
+if error != nil {
+    // manejo de errores
+}
+defer respuesta.Body.Close()
+
+fmt.Println(respuesta.Body)
 ```
 
-En este código, utilizamos la función "NewRequest" para crear una nueva solicitud GET. Luego, agregamos un encabezado con la función "Set" y utilizamos la función "Do" para enviar nuestra solicitud personalizada utilizando el cliente HTTP predeterminado.
+¡Y eso es todo! Con solo unos pocos pasos sencillos, has enviado una solicitud HTTP utilizando Go.
+
+## Profundizando
+
+Ahora que ya sabes cómo enviar una solicitud HTTP en Go, es importante comprender los diferentes componentes y opciones que están disponibles. Por ejemplo, puedes agregar encabezados personalizados a tu solicitud utilizando el método `Request.Header.Add()` y también puedes establecer un tiempo de espera para la solicitud utilizando la función `Timeout` del cliente HTTP.
+
+También es importante tener en cuenta cómo manejar los errores adecuadamente al enviar solicitudes HTTP. Puedes utilizar declaraciones `if` o el paquete `"log"` para registrar los errores y asegurarte de que tu código funcione de manera confiable.
 
 ## Ver también
 
-- Documentación oficial de "net/http": https://golang.org/pkg/net/http/
-- Tutorial de envío de solicitudes HTTP en Go: https://gowebexamples.com/http-client/
-- Ejemplos de código de solicitud HTTP en Go: https://gobyexample.com/http-clients
+- [Documentación de Go sobre el paquete "net/http"](https://golang.org/pkg/net/http/)
+- [Ejemplo de solicitud HTTP en Go](https://gobyexample.com/http-client)
+- [Guía de estilo de Go](https://github.com/golang/go/wiki/CodeReviewComments#formatting)

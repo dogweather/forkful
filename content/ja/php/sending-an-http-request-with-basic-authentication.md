@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 基本認証付きのHTTPリクエストを送信する方法"
-simple_title:         "基本認証付きのHTTPリクエストを送信する方法"
+title:                "基本認証を使用して、httpリクエストを送信する"
+html_title:           "PHP: 基本認証を使用して、httpリクエストを送信する"
+simple_title:         "基本認証を使用して、httpリクエストを送信する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,56 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
-HTTPリクエストに基本認証を使って送信する理由について明確にするのは重要です。
+## なぜ
 
-# 方法
-基本認証を使ったHTTPリクエストを送信する方法を理解するために、以下のコード例と出力を見てみましょう。
+基本認証を使用してHTTPリクエストを送信する理由は、セキュリティー上の理由です。基本認証は、ユーザーによる認証を行うための非常にシンプルで一般的な方法であり、URLの認証を行い、アクセス制御を行うことができます。
+
+## やり方
+
+基本認証を使用してHTTPリクエストを送信するには、まず次のようにPHPの`curl`モジュールを使用して新しいリクエストを作成する必要があります。
 
 ```PHP
-<?php
-
-// URLを指定
-$url = "https://example.com/api";
-
-// ユーザー名とパスワードを指定
-$username = "username";
-$password = "password";
-
-// CURLを初期化
-$curl = curl_init($url);
-
-// リクエストに基本認証を追加
-curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
-
-// リクエストを実行し、レスポンスを取得
-$response = curl_exec($curl);
-
-// レスポンスの状態コードを取得
-$status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-// リクエストを閉じる
-curl_close($curl);
-
-// 結果を出力
-echo "ステータスコード: " . $status . "\n";
-echo "レスポンス: " . $response;
-
-?>
+$ch = curl_init();
 ```
 
-出力:
+次に、リクエストのアドレスと認証情報を指定する必要があります。
 
+```PHP
+curl_setopt($ch, CURLOPT_URL, 'https://example.com');
+curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
 ```
-ステータスコード: 200
-レスポンス: {"message": "認証に成功しました！"}
+
+最後に、リクエストを実行し、レスポンスを取得します。
+
+```PHP
+curl_exec($ch);
+curl_close($ch);
 ```
 
-# 深堀り
-基本認証は、WebサービスやAPIなどのセキュリティを強化するために使われる一般的な認証方法です。これを使うことで、ユーザー名とパスワードを使ってリクエストを送信する際に、よりセキュアにデータを保護することができます。また、基本認証はSSLやTLSよりも軽量であり、パフォーマンスが向上するというメリットもあります。
+これで、基本認証を使用してHTTPリクエストを送信する準備が整いました。
 
-# 併せて参考になるリンク
-- [PHP cURL公式ドキュメント](https://www.php.net/manual/en/book.curl.php)
-- [HTTPベーシック認証の仕組みと使い方](https://www.ibm.com/support/knowledgecenter/ja/SS9H2Y_7.7.0/com.ibm.dp.doc/basic_auth.html)
-- [HTTPSの仕組みとセキュリティについて](https://www.ipa.go.jp/security/awareness/vendor/programmingv2/contents/405.html)
+## ディープダイブ
+
+基本認証を使用してHTTPリクエストを送信する際、`curl`モジュールを使用することで、より詳細なオプションを指定することもできます。例えば、認証方法をBASIC以外のものに変更したり、ユーザー名とパスワードを外部から読み込んだりすることもできます。
+
+## References
+
+https://www.php.net/manual/en/book.curl.php
+
+## はてなブログ
+
+https://hatenablog.com/
+
+## Guzzle
+
+https://docs.guzzlephp.org/en/stable/

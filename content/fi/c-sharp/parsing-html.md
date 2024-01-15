@@ -1,6 +1,7 @@
 ---
-title:                "C#: HTML-analyysi"
-simple_title:         "HTML-analyysi"
+title:                "HTML:n jäsentäminen"
+html_title:           "C#: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,38 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi HTML-analyysiin osallistuminen on tärkeää ohjelmoijille?
+## Miksi
 
-HTML-analyysi on tärkeä taito, jota jokaisen ohjelmoijan tulisi hallita. Se mahdollistaa verkkosivujen sisällön ja rakenteen tarkastelun ja muokkaamisen, mikä on tärkeää web-kehityksessä ja datan kaivelussa. Lisäksi se voi auttaa ymmärtämään muiden verkkosivujen koodia ja oppimaan uusia tekniikoita ja käytäntöjä.
+Oletko koskaan joutunut työskentelemään verkkosivujen kanssa ja tarvinnut tietoa tietystä elementistä? HTML-parsiminen mahdollistaa sivustojen sisällön analysoinnin ja tiedon hakemisen helposti ja nopeasti.
 
-# Miten HTML-analyysi tehdään C# -ohjelmointikielellä?
+## Kuinka
 
-HTML-analyysi C# -kielellä voidaan suorittaa helposti käyttäen erilaisia kirjastoja ja työkaluja, kuten HtmlAgilityPack tai NSoup. Näiden kirjastojen avulla voit tarkastella HTML-koodia ja suorittaa erilaisia toimintoja, kuten tietojen poimintaa ja muokkausta.
+HTML-parsimista varten voit käyttää C#-kielen [HtmlAgilityPackia](https://html-agility-pack.net/). Se tarjoaa kätevän tavan ladata ja analysoida HTML-tiedostoja.
 
-Alla on esimerkki käyttäen HtmlAgilityPack-kirjastoa:
+Seuraava koodiesimerkki näyttää kuinka ladata HTML-sivu ja tulostaa kaikki sen otsikkoelementit:
 
 ```C#
-// Lisätään kirjasto projektiin
-using HtmlAgilityPack;
+var html = new HtmlDocument();
+html.Load("https://www.example.com/");
 
-// Luodaan HtmlWeb-olio ja haetaan tietokanta sivulta
-HtmlWeb web = new HtmlWeb();
-HtmlDocument doc = web.Load("https://www.example.com");
+var headings = html.DocumentNode.Descendants("h1");
+foreach(var heading in headings)
+{
+    Console.WriteLine(heading.InnerText);
+}
 
-// Tulostetaan sivun otsikko
-Console.WriteLine(doc.DocumentNode.SelectSingleNode("//head/title").InnerHtml);
+// Output:
+// Example Website Title
+// First Heading
+// Second Heading
 ```
 
-Tämän koodin tuloste olisi: "Esimerkki".
+Voit myös parsia HTML-tiedoston tai sivun tiettyä elementtiä käyttämällä sen ID:tä tai luokkaa:
 
-# Syvällinen tarkastelu HTML-analyysistä
+```C#
+var elementWithId = html.GetElementById("elementId");
+var elementsWithClass = html.DocumentNode.SelectNodes("//div[@class='className']");
 
-Yllä olevassa koodiesimerkissä käytetty HtmlAgilityPack on avoimen lähdekoodin kirjasto, joka tarjoaa monipuolisia toimintoja HTML-analyysiin. Se käyttää XPath-kyselyitä, jotka mahdollistavat helpomman ja tarkemman tiedon poiminnan HTML-sivulta.
+// Output:
+// <div id="elementId">Content</div>
+// <div class="className">Content 1</div>
+// <div class="className">Content 2</div>
+```
 
-Lisäksi, HTML-analyysi voi olla hyödyllistä myös muiden ohjelmointikielten kanssa, kuten Pythonin BeautifulSoup-kirjaston avulla. Se voi olla hyödyllistä myös tunnistamalla virheitä ja ongelmia verkkosivuilla ja auttamalla niiden korjaamisessa.
+## Syvällisempi sukellus
 
-# Katso myös
+HTML-parsiminen mahdollistaa myös datan keräämisen ja manipuloinnin verkkosivuilla. Voit esimerkiksi hakea ja tallentaa tiettyjä tietoja sivulta tietokantaan.
 
-- [HtmlAgilityPack-kirjaston dokumentaatio](https://html-agility-pack.net/)
-- [NSoup-kirjaston GitHub-sivu](https://github.com/nickbabcock/NSoup)
-- [Pythonin BeautifulSoup-kirjasto](https://www.crummy.com/software/BeautifulSoup/)
+Hyödyntämällä CssSelectoria voit parsia haluamiesi elementtien CSS-pohjalta:
+
+```C#
+var elements = html.DocumentNode.SelectNodes("cssSelector");
+
+foreach(var element in elements)
+{
+    // Code to manipulate or store data
+}
+```
+
+HTML-parsiminen on hyödyllinen taito, jota on helppo oppia ja käyttää. Se auttaa tehostamaan erilaisia verkkosivujen ja sovellusten kehitysprojekteja.
+
+## Katso myös
+
+- [HtmlAgilityPackin dokumentaatio](https://html-agility-pack.net/documentation)
+- [C#-kielen virallinen sivusto](https://docs.microsoft.com/en-us/dotnet/csharp/)
+
+Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään HTML-parsimisen tärkeyttä ja käyttöä C#-ohjelmoinnissa.

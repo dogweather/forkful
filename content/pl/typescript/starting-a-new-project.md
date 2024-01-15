@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Rozpoczęcie nowego projektu"
+title:                "Rozpoczęcie nowego projektu"
+html_title:           "TypeScript: Rozpoczęcie nowego projektu"
 simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,52 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Rozpoczęcie nowego projektu programistycznego może być ekscytującym wyzwaniem i szansą na naukę nowych umiejętności oraz rozwijanie własnych umiejętności programowania. Jest to również doskonały sposób na wykorzystanie swojej kreatywności i pomysłowości.
+Rozpoczęcie nowego projektu może wydawać się przerażające, ale TypeScript może ułatwić ten proces. TypeScript jest językiem programowania, który dodaje statyczną typizację i wiele innych zaawansowanych funkcji do zwykłego JavaScriptu. W tym artykule dowiesz się, dlaczego warto używać TypeScript i jak zacząć przygodę z tym językiem.
 
 ## Jak to zrobić
 
-Rozpoczęcie nowego projektu TypeScript jest prostsze niż się wydaje. Wystarczy skorzystać z poniższego kodu jako szablonu i dostosować go do własnych potrzeb:
+Aby rozpocząć nowy projekt w TypeScript, wystarczy zainstalować podstawowe narzędzia. Poniżej przedstawiony jest przykładowy kod, który pomoże Ci to zrobić:
 
-```
-TypeScript
-
-// Tutaj umieszczamy swoje kod Luazę
-
+```TypeScript
+npm install -g typescript
+npm init
 ```
 
-Aby wyświetlić prostą wiadomość na ekranie, możemy użyć poniższego kodu i zobaczyć wynik w konsoli:
+Po zainstalowaniu TypeScript, musisz utworzyć plik `tsconfig.json`, w którym będziesz przechowywać ustawienia dla swojego projektu TypeScript. Przykładowa konfiguracja może wyglądać następująco:
 
-```
-TypeScript
-
-console.log("Witaj, świecie!");
-
-// Wynik: Witaj, świecie!
-
-```
-
-Jeśli chcemy wykorzystać zewnętrzne biblioteki lub pakiety w naszym projekcie, możemy dodać je przy użyciu menedżera pakietów npm oraz importować je w kodzie:
-
-```
-TypeScript
-
-import * as moment from 'moment';
-
-const date = moment().format('MMMM Do YYYY, h:mm:ss a');
-console.log(date);
-
-// Wynik: wrzesień 23rd 2021, 3:26:37 pm
-
+```TypeScript
+{
+  "compilerOptions": {
+    "target": "es5",                    
+    "module": "commonjs",               
+    "outDir": "./dist",                    
+    "strict": true,                          
+    "esModuleInterop": true,
+  }
+}
 ```
 
-## Głębsza analiza
+Teraz możesz utworzyć plik z rozszerzeniem `.ts` i zacząć pisać kod w TypeScript. Następnie, aby skompilować pliki TypeScript do kodu JavaScript, wystarczy wpisać polecenie `tsc` w konsoli lub dodać skrypt `build` do pliku `package.json`.
 
-Rozpoczęcie nowego projektu TypeScript może być skomplikowane ze względu na wiele czynników, takich jak wybór odpowiednich narzędzi, architektury czy też wybór bibliotek i frameworków. Ważne jest również, aby pamiętać o dobrych praktykach programistycznych, takich jak dokumentowanie kodu, testowanie oraz kontrola wersji.
+## Głębsze zanurzenie
 
-Aby ułatwić rozpoczęcie nowego projektu, można skorzystać z gotowych szablonów lub starterów, które są dostępne w sieci. Warto również zapoznać się z dokumentacją TypeScript oraz przeglądać zagadnienia na forach i platformach społecznościowych, aby dowiedzieć się więcej o możliwościach tego języka programowania.
+Po zainstalowaniu podstawowych narzędzi i stworzeniu konfiguracji, możesz zacząć używać TypeScript do tworzenia nowego projektu. Jedną z głównych zalet TypeScript jest statyczna typizacja, która pozwala programiście na precyzyjne określenie typów zmiennych. To znacznie zmniejsza ryzyko błędów w kodzie i ułatwia jego późniejsze utrzymanie.
+
+Ponadto, TypeScript oferuje wiele innych funkcji, takich jak interfejsy, klasy, moduły i wyliczenia, które pomagają zorganizować kod i uczynić go bardziej czytelnym i skalowalnym.
+
+Dodatkowo, TypeScript jest dobrze udokumentowany i posiada aktywną społeczność, co oznacza, że zawsze możesz znaleźć pomoc i wsparcie w rozwiązywaniu problemów.
 
 ## Zobacz również
 
-- [Oficjalna strona TypeScript](https://www.typescriptlang.org/)
-- [Kurs TypeScript na platformie Udemy](https://www.udemy.com/course/typescript-the-complete-developers-guide/)
-- [Poradnik dla początkujących w języku TypeScript](https://dev.to/divshekhar/typescript-for-beginners-part-1-data-types-2emk)
+- [Oficjalna strona TypeScript](https://www.typescriptlang.org)
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs)
+- [Repozytorium projektu TypeScript na GitHub](https://github.com/Microsoft/TypeScript)

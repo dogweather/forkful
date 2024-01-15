@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Last ned en nettside"
-simple_title:         "Last ned en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Kotlin: Å laste ned en nettside"
+simple_title:         "Å laste ned en nettside"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,47 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Enkelt og greit, noen ganger trenger vi å laste ned en nettside for å få tak i informasjon eller data. Å laste ned en nettside kan være nyttig for utviklere som ønsker å analysere eller manipulere data, eller for forskere og journalister som ønsker å undersøke informasjon for forskning eller nyhetsartikler.
 
-## Hvordan 
-Å laste ned en nettside er en relativt enkel prosess med Kotlin. Følgende kode eksempel viser hvordan man kan laste ned en nettside og få tak i kildekoden:
+Hvorfor ville noen ønske å laste ned en nettside? Vel, det kan være mange grunner til det. Kanskje du vil lagre informasjonen for senere bruk, eller kanskje du vil ha en offline versjon av nettsiden. Uansett hva grunnen din er, er det enkelt å laste ned en nettside ved hjelp av Kotlin. 
 
-```Kotlin
-val url = URL("https://www.example.com")
-val conn = url.openConnection() as HttpURLConnection
-conn.requestMethod = "GET"
-val responseCode = conn.responseCode
+## Hvordan gjøre det
 
-if(responseCode == HttpURLConnection.HTTP_OK) { //sjekk om responsen er OK
-    // Bruk "inputStream" til å lese kildekoden fra nettsiden
-    val inputStream = conn.inputStream
-    val reader = BufferedReader(InputStreamReader(inputStream))
-    var line: String?
-    val response = StringBuffer()
+Først må du importere nødvendige pakker. For å laste ned en nettside, trenger du å importere `java.net.URL` og `java.io.File`. Deretter kan du følge disse trinnene:
 
-    // Les hver linje av kildekoden og lagre det i en StringBuffer
-    do {
-        line = reader.readLine()
-        response.append(line)
-    } while (line != null)
+1. Lag en `URL`-instans med adressen til nettsiden du ønsker å laste ned, for eksempel: 
+   
+   ```Kotlin
+   val url = URL("https://www.example.com")
+   ```
 
-    // Skriv ut kildekoden
-    println(response.toString())
-}
+2. Deretter må du opprette en `File`-instans som vil bli brukt til å lagre nettsiden. Du kan velge hvilken som helst filsti og filnavn du ønsker:
+   
+   ```Kotlin
+   val fil = File("sti/til/fil/nettside.html")
+   ```
 
-// Lukk tilkoblingen
-conn.disconnect()
-```
+3. Nå er det på tide å laste ned nettsiden! Du kan gjøre det ved å bruke `copyTo()`-funksjonen og angi `File`-instansen som mål:
+   
+   ```Kotlin
+   url.openStream().copyTo(fil.outputStream())
+   ```
 
-Kjører man denne koden vil man få den komplette kildekoden til nettsiden som output i konsollen.
+4. Og det er alt! Nettsiden er nå lastet ned og lagret på ønsket filsti. Du kan nå åpne filen og se nettsiden offline når som helst.
 
-## Dypdykk
-Det finnes også biblioteker og rammeverk i Kotlin som gjør det enda enklere å laste ned en nettside og håndtere responsen. Et eksempel er `OkHttp`, som er et populært HTTP- og HTTP/2 klient bibliotek som kan brukes til å hente data fra en nettside med bare noen få linjer med kode.
+## Dykk dypere
 
-I tillegg finnes det også flere tredjeparts biblioteker og verktøy som kan hjelpe med å analysere og håndtere data som er lastet ned fra en nettside, som for eksempel `Jsoup` som er et Java HTML parser bibliotek som også støtter Kotlin.
+Det er verdt å merke seg at dette eksemplet bare laster ned selve HTML-siden til nettsiden, ikke hele nettsiden med bilder, CSS og JavaScript. For å laste ned alt dette innholdet, må du bruke en annen metode som involverer å analysere HTML-koden og finne lenker til alle bildene, CSS-filene og JavaScript-filene.
 
-Å laste ned en nettside kan være viktig for å få tak i data som kan brukes til å utvikle nye applikasjoner, eller til forskning og journalistikk. Med Kotlin er det enkelt å implementere en løsning for å laste ned og behandle data fra en nettside.
+Det kan også være nyttig å legge til litt feilhåndtering i koden din. Dette kan gjøres ved å omgi koden din med et `try-catch`-blokk, og håndtere eventuelle unntak som oppstår under nedlastingsprosessen.
 
 ## Se også
-- [OkHttp - HTTP and HTTP/2 client for Kotlin](https://github.com/square/okhttp)
-- [Jsoup - Java HTML parser for Kotlin](https://jsoup.org/)
+
+- [Official Kotlin Documentation](https://kotlinlang.org/docs/reference/)
+- [How to download a file in Kotlin](https://www.tutorialkart.com/kotlin/how-to-download-a-file-in-kotlin/)

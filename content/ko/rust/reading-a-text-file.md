@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 텍스트 파일 읽기"
+title:                "텍스트 파일 읽기"
+html_title:           "Rust: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-텍스트 파일을 읽는 것을 왜 해야 하는지 궁금하셨나요? 그렇다면 여기 가장 중요한 이유가 있습니다! 
+텍스트 파일을 읽는 방법을 배우는 것은 프로그래밍에서 중요한 기술 중 하나입니다. 이를 통해 여러분은 파일을 조작하고 내용을 분석할 수 있으며, 더 나은 애플리케이션을 개발하는 데 도움이 될 수 있습니다.
 
-# 어떻게
+## 사용 방법
 
-Rust는 텍스트 파일을 읽는 것에 아주 강력한 기능을 제공합니다. 아래 코드 블록을 통해 간단한 예제를 살펴보세요.
+텍스트 파일을 읽는 가장 간단한 방법은 `std::fs` 모듈의 `read_to_string()` 함수를 사용하는 것입니다. 이 함수는 파일 이름을 매개변수로 받고, 파일의 내용을 문자열로 반환합니다.
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
+use std::fs;
 
-fn main() {
-    // 파일 열기
-    let mut file = File::open("example.txt").expect("파일을 열 수 없습니다.");
+let file_content = fs::read_to_string("sample.txt")
+    .expect("Failed to read file");
 
-    // 파일 내용 읽기
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("파일을 읽을 수 없습니다.");
-
-    // 결과 출력
-    println!("{}", contents);
-}
+println!("{}", file_content);
 ```
-위의 코드를 실행하면 "example.txt" 파일의 내용이 출력될 것입니다.
 
-# 깊게 들어가기
+위 예제는 "sample.txt" 파일을 읽고, 파일의 내용을 콘솔에 출력하는 간단한 예제입니다.
 
-텍스트 파일을 읽는 것은 기본적으로 파일의 모든 내용을 메모리에 불러오는 것을 의미합니다. 하지만 Rust는 대량의 데이터도 빠르고 안정적으로 처리할 수 있도록 다양한 기능을 제공합니다. 이를 통해 해야 할 작업에 따라 파일을 조각조각 나누어 읽을 수도 있고, 특정 문자열을 찾는 등 다양한 작업을 수행할 수 있습니다.
+## 깊이 있는 설명
 
-# 더 알아보기
+위의 예제에서 `expect()` 함수는 에러 처리를 위해 사용되었습니다. 이 함수는 파일을 읽을 수 없는 경우, 프로그램을 중단하고 에러 메시지를 출력합니다. 더 복잡한 애플리케이션에서는 이 에러를 처리하는 코드를 추가해야합니다.
 
-만약 텍스트 파일을 다루는 더 많은 기능에 관심이 있다면 아래 링크들을 참고해보세요.
+또한, 파일의 내용을 읽는 방법은 `read_to_string()` 함수뿐만 아니라 다른 메서드들도 존재합니다. 예를 들어, `read()` 함수는 파일의 내용을 바이트 형태로 반환합니다.
 
-## 참고 자료
-
-- [Rust 공식 문서: 파일 처리](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust by Example: 파일 I/O](https://rustbyexample.com/std_misc/file/open.html)
-- [Rust Cookbook: 파일 작업](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html)
-
-# 더 알아보기
-
-만약 텍스트 파일을 다루는 더 많은 기능에 관심이 있다면 아래 링크들을 참고해보세요.
+파일을 읽는 방법에 대한 더 자세한 정보는 [Rust 공식 문서](https://doc.rust-lang.org/std/fs/fn.read_to_string.html)를 참고하시기 바랍니다.
 
 ## 관련 링크
 
-- [Rust 공식 문서: 파일 처리](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust by Example: 파일 I/O](https://rustbyexample.com/std_misc/file/open.html)
-- [Rust Cookbook: 파일 작업](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html)
+- [Rust 공식 문서](https://www.rust-lang.org/ko)
+- [격식을 버리고 쓰는 Rust (Rust for casual speakers)](https://github.com/rust-lang/rfcs/blob/master/text/2632-casual-rust.md)
+- [Rust 커뮤니티 포럼](https://users.rust-lang.org/)

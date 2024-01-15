@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Http-pyynnön lähettäminen"
-simple_title:         "Http-pyynnön lähettäminen"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Ruby: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Monet ohjelmoijat käyttävät Rubyä päivittäin, ja yksi tärkeimmistä komponenteista on HTTP-pyyntöjen lähettäminen ulkoisiin palveluihin. Tämä on tärkeä työkalu monille sovelluksille, jotka ovat riippuvaisia tietojen hakemisesta ja jakamisesta verkossa.
+Miksi haluat lähettää HTTP-pyynnön Ruby-ohjelmasta? Yksinkertaisesti sanottuna se antaa sinulle mahdollisuuden kommunikoida verkossa olevien palvelimien kanssa. Tämä avaa oven moniin jännittäviin mahdollisuuksiin, kuten web-scrapingiin, API-kutsuihin ja paljon muuhun.
 
-## Kuinka tehdä niin
+# Miten
 
-HTTP-pyyntöjen lähettäminen Rubyllä on yksinkertaista, ja tässä on esimerkki:
+Lähetetään HTTP-pyyntö Ruby-ohjelmasta käyttämällä Net::HTTP-kirjastoa, joka on yksi Ruby-kielen ydinmoduuleista. Se lähettää pyynnön ja palauttaa vastauksen, johon voit reagoida ohjelmassasi. Katso alla oleva esimerkki:
 
 ```Ruby
 require 'net/http'
 
-uri = URI('http://greatblog.fi')
-response = Net::HTTP.get_response(uri)
+# Luodaan uusi HTTP-pyyntö osoitteeseen "www.example.com"
+request = Net::HTTP.get_response(URI('http://www.example.com'))
 
-puts response.body if response.is_a?(Net::HTTPSuccess)
+# Tulostetaan vastauksen koodi ja sisältö
+puts "Response code: #{request.code}"
+puts "Response body: #{request.body}"
 ```
 
-Tässä esimerkissä käytämme Net::HTTP-moduulia lähettääksemme GET-pyynnön "greatblog.fi" -sivustoon. Tämän jälkeen tulostamme vastauksen rungon, jos pyyntö onnistuu.
+Tässä esimerkissä lähetämme GET-pyynnön osoitteeseen "www.example.com" ja tulostamme vastauksen koodin (esim. 200 OK) ja sisällön (HTML-sivun).
 
-Pyyntöjen lähettämiseen on useita muita tapoja, kuten esimerkiksi käyttäen HTTParty- tai Faraday-kirjastoja. Nämä kirjastot tarjoavat enemmän ominaisuuksia ja joustavuutta lähettämiseen ja käsittelyyn.
+On myös mahdollista määrittää muita HTTP-pyynnön parametreja, kuten otsikot tai pyynnön kohde. Lisätietoja löytyy Net::HTTP-dokumentaatiosta.
 
-## Syvä sukellus
+# Syvempi sukellus
 
-HTTP-pyyntöjen lähettäminen koostuu useista vaiheista. Ensiksi luodaan URI-objekti, joka määrittelee pyynnön osoitteen. Sitten käytämme Net::HTTP-moduulia lähettämäänksemme pyynnön ja saamme vastauksen takaisin.
+Net::HTTP on korkean tason abstraktio HTTP-protokollasta ja sopii hyvin yksinkertaisiin pyyntöihin. Jos haluat enemmän hallintaa, voit käyttää alhaisemman tason kirjastoa, kuten Net::HTTP::Persistent tai HTTParty, jotka tarjoavat monia lisäominaisuuksia, kuten automaattisen uudelleenyrityksen tai HTTP-vastauksen hallinnan.
 
-Vastauksen sisältö riippuu pyynnön tyypistä, jota käytämme. GET-pyynnöllä saatamme saada takaisin HTML-koodia, kun taas POST-pyynnöllä voimme lähettää dataa ja saada takaisin vastauksen, jossa on esimerkiksi käyttäjän tiedot. On tärkeää ymmärtää pyyntöjen eri tyypit ja millaisia vastauksia ne voivat tuottaa.
+Lisäksi voit suorittaa muita HTTP-metodeja, kuten POST tai PUT, määrittämällä pyynnön muodon ja sisällön. Pyynnön muodon määrittäminen on erityisen tärkeää, jos haluat lähettää JSON- tai XML-tietoja palvelimelle.
 
-## Katso myös
+# Katso myös
 
-- [Ruby Net::HTTP documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTParty gem](https://github.com/jnunemaker/httparty)
-- [Faraday gem](https://github.com/lostisland/faraday)
+- [Ruby Net::HTTP dokumentaatio](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Net::HTTP::Persistent dokumentaatio](https://github.com/drbrain/net-http-persistent)
+- [HTTParty dokumentaatio](https://github.com/jnunemaker/httparty)
+- [Ruby- kielen virallinen nettisivu](https://www.ruby-lang.org/fi/)

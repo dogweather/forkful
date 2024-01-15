@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Confrontare due date"
+title:                "Confrontare due date"
+html_title:           "Ruby: Confrontare due date"
 simple_title:         "Confrontare due date"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,51 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
 
-In linguaggio Ruby, le date sono rappresentate come oggetti Date o Time, che possono essere facilmente comparati tra loro. Ma perché dovresti voler confrontare due date? Ci sono diverse situazioni in cui questo può essere utile in un programma. Ad esempio, potresti voler verificare se una data è precedente o successiva ad un'altra, o se si trovano entrambe in un determinato intervallo di tempo.
+Comparare due date è un'operazione molto comune nella programmazione, soprattutto quando si lavora con dati temporali. Sapere come confrontare due date permette di gestire efficacemente le informazioni e di ottenere risultati precisi.
 
 ## Come fare
 
-Per confrontare due date in Ruby, puoi utilizzare il metodo `.compare` che accetta due oggetti Date o Time e restituisce un valore intero. Se le due date sono identiche, il valore sarà 0. Se la prima data è precedente alla seconda, il valore sarà -1. Se la prima data è successiva alla seconda, il valore sarà 1.
+Per comparare due date in Ruby, è possibile utilizzare il metodo `DateTime#<=>`. Questo metodo restituisce un valore negativo se la prima data è precedente alla seconda, 0 se sono uguali e un valore positivo se la prima data è successiva alla seconda.
 
 ```Ruby
-date1 = Date.new(2021, 04, 10)
-date2 = Date.new(2021, 04, 15)
+require 'date'
 
-# confronto tra le date usando il metodo .compare
-puts "La prima data è successiva alla seconda" if date1.compare(date2) == 1
+first_date = DateTime.new(2020, 8, 15)
+second_date = DateTime.new(2020, 7, 2)
+
+puts first_date <=> second_date # Output: 1
 ```
 
-L'output di questo esempio sarà: La prima data è successiva alla seconda.
+Si può anche utilizzare il metodo `DateTime#==` per controllare se due date sono uguali.
+
+```Ruby
+require 'date'
+
+first_date = DateTime.new(2020, 8, 15)
+second_date = DateTime.new(2020, 8, 15)
+
+puts first_date == second_date # Output: true
+```
 
 ## Approfondimento
 
-Esistono anche altri metodi che possono essere utili per confrontare due date in Ruby. Ad esempio, il metodo `.between?` può essere usato per verificare se una data si trova tra due date specifiche. 
+Quando si confrontano due date, è importante considerare il formato dei dati. Se si ha a che fare con date generiche, si può utilizzare il metodo `Date.parse` per convertire una stringa in un oggetto di tipo date.
 
 ```Ruby
-date1 = Date.new(2021, 04, 10)
-date2 = Date.new(2021, 04, 15)
+require 'date'
 
-# verifica se la data 12 aprile 2021 si trova tra le due date
-puts "La data è compresa tra le due date" if Date.new(2021, 04, 12).between?(date1, date2)
+workshop_date = Date.parse("27-09-2020")
+current_date = Date.today
+
+puts workshop_date <=> current_date # Output: 1
 ```
 
-L'output sarà: La data è compresa tra le due date.
-
-Un altro metodo utile è `.same_day?` che restituisce true se due date corrispondono allo stesso giorno, mese e anno.
-
-```Ruby
-date1 = Date.new(2021, 04, 15)
-date2 = Date.new(2021, 04, 15)
-
-# verifica se le due date sono lo stesso giorno
-puts "Le due date sono lo stesso giorno" if date1.same_day?(date2)
-```
-
-L'output sarà: Le due date sono lo stesso giorno.
+Inoltre, Ruby offre anche diverse librerie esterne che permettono di gestire in modo più preciso le date, come ad esempio `ActiveSupport` o `Chronic`.
 
 ## Vedi anche
 
-* [Documentazione Ruby sui metodi di confronto delle date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html#method-i-compare)
-* [Tutorial su come lavorare con le date in Ruby](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+- Documentazione ufficiale di Ruby sulla classe `DateTime`: https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html
+- Tutorial su come gestire le date in Ruby: https://www.rubyguides.com/2015/09/ruby-date-and-time/

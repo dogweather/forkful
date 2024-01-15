@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 標準エラーへの書き込み"
-simple_title:         "標準エラーへの書き込み"
+title:                "標準エラーに書き込みする"
+html_title:           "Gleam: 標準エラーに書き込みする"
+simple_title:         "標準エラーに書き込みする"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## なぜ書き込むのか
 
-あなたのプログラムのデバッグを行う際に、標準エラー出力を書き込む必要があるかもしれません。標準エラー出力は、プログラムが正しく動作していない場合にエラーメッセージを表示する役割を果たします。これにより、エラーの原因を特定し、それを修正することができます。
+あなたがプログラミングをしていると、コードの実行中にエラーが発生することがあります。そのエラーを見つけるためには、標準エラー出力を読む必要があります。この記事では、Gleamを使用して標準エラー出力に書き込む方法を紹介します。
 
-## How To
+## 方法
 
-標準エラー出力に書き込む方法はとてもシンプルです。まず、次のコードをプログラムのメイン関数の中に記述します。
-
-```Gleam
-import gleam/io
-
-gleam/io.format(stderr, "エラーが発生しました。")
-```
-
-これで、プログラムが実行された際に、「エラーが発生しました。」というエラーメッセージが標準エラー出力に表示されます。
-
-もし、エラーの内容をより詳細に示したい場合は、次のようにカンマを使用して、エラーメッセージの後ろに変数を追加することもできます。
+Gleamでは、`gleam/io`モジュールにある`stderr`関数を使用して標準エラー出力に書き込むことができます。以下のコードを参考にしてください。
 
 ```Gleam
-import gleam/io
+import gleam/io.{stderr}
 
-let error_code = 404
-
-gleam/io.format(stderr, "エラーが発生しました。", error_code)
+fn main() {
+  stderr.print("エラーが発生しました！")
+}
 ```
 
-これで、エラーメッセージには「エラーが発生しました。404」という内容が表示されます。
+上記のコードを実行すると、標準エラー出力に`エラーが発生しました！`というメッセージが出力されます。このように、エラーが発生した箇所を特定するために、標準エラー出力にメッセージを書き込むことができます。
 
-## Deep Dive
+## ディープダイブ
 
-標準エラー出力を利用することで、プログラム実行時に発生したエラーを捕捉し、正しく修正することができます。また、ログを取ることで、プログラムの実行状況を詳細に把握することも可能です。しかし、過剰なログ出力はシステムのパフォーマンスに影響を与えることがあるため、適切なバランスを保つことが重要です。
+標準エラー出力に書き込む際には、`stderr.write`関数を使用することもできます。この関数を使用すると、複数のメッセージを一度に書き込むことができます。以下のコードを参考にしてください。
 
-## See Also
+```Gleam
+import gleam/io.{stderr}
 
-- [Gleam ドキュメント](https://gleam.run/)
-- [標準エラー出力についての詳細](https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%82%A8%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B)
+fn main() {
+  stderr.write("エラーが", "発生しました！")
+}
+```
 
-この記事を読んで、標準エラー出力の重要性と使い方について理解していただけたと思います。ぜひ、今後のプログラミングにお役立てください。
+上記のコードを実行すると、標準エラー出力に`エラーが発生しました！`というメッセージが出力されます。`stderr.write`関数を使用することで、複数のメッセージを一度に書き込むことができ、より詳細な情報を標準エラー出力に出力することができます。
+
+## 良く分かるリンク
+
+- Gleamドキュメント: https://gleam.run/book/tour/io.html#standard-error
+- Gleam Githubリポジトリ: https://github.com/gleam-lang/gleam/blob/master/lib/gleam/io/gleam
+- スタックオーバーフロー: https://stackoverflow.com/questions/13202014/redirecting-stdout-and-stderr-to-file-in-gleam
+
+## 参考
+
+- Gleamドキュメント: https://gleam.run/
+- Gleamコミュニティフォーラム: https://forum.gleam.run/
+- Gleam公式Twitterアカウント: https://twitter.com/gleamlangjp

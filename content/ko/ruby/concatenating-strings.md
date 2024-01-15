@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 문자열 합치기"
-simple_title:         "문자열 합치기"
+title:                "문자열 연결"
+html_title:           "Ruby: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,39 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열을 연결하는 이유는 문자열 데이터를 조합하여 더 긴 문자열을 만들어야 할 때 유용하기 때문입니다.
+문자열을 결합하는 데에는 다양한 이유가 있습니다. 예를 들어, 여러 개의 문자열을 하나로 합쳐서 보기 쉬운 형식으로 표시하거나, 다른 변수나 데이터를 포함한 동적인 문자열을 만들어야 할 때 등이 있습니다. Ruby에서 문자열을 결합하는 방법에 대해 알아보겠습니다.
 
-여러 개의 단어를 하나의 문장으로 만들거나 변수와 문자열을 함께 출력해야 할 때, 이 기능을 사용하면 코드를 간결하게 유지할 수 있습니다.
-
-## 사용 방법
+## 어떻게
 
 ```Ruby
-puts "Hello " + "world"
-# 출력: Hello world
+# 단일 인용부호를 사용하면 공백 문자열을 추가할 수 있습니다.
+"Fizz" + "Buzz" => "FizzBuzz"
+
+# 변수를 이용하여 동적인 문자열을 생성할 수 있습니다.
+num1 = 3
+num2 = 5
+
+"#{num1} 곱하기 #{num2}는 #{num1 * num2}입니다." => "3 곱하기 5는 15입니다."
 ```
 
-여기서 `+` 연산자를 사용하여 `"Hello "`와 `"world"` 두 개의 문자열을 하나의 문자열로 연결합니다.
+## 깊이 들어가기
 
-```Ruby
-name = "Ruby"
-puts "I love " + name + " programming!"
-# 출력: I love Ruby programming!
-```
+문자열을 결합하는 방법에는 여러 가지가 있습니다. 가장 간단한 방법은 단순히 `+` 연산자를 사용하는 것입니다. 이외에도 `<<`, `+=` 등의 방법도 있습니다. 따라서, 어떤 방법이 가장 효율적인지, 또는 어떤 상황에서 어떤 방법을 사용하는 것이 더 나은지 등에 대해 더 깊이 학습할 필요가 있습니다. 또한, Ruby에서 문자열을 결합할 때 특수한 문자열 객체가 사용되기 때문에 메모리 사용량 등의 측면에서도 고려해야 합니다.
 
-변수와 문자열을 함께 사용할 수도 있습니다. 위 예시에서는 변수 `name`에 저장된 문자열인 `"Ruby"`와 함께 출력하고 싶은 문장을 연결해 출력합니다.
+## 관련 링크
 
-## 깊은 곳 들어가기
-
-문자열을 연결하는 데에는 여러 가지 방법이 있습니다. 위의 예시에서는 `+` 연산자를 사용하였지만, `<<` 연산자나 `concat` 메소드를 사용할 수도 있습니다.
-
-`+` 연산자는 새로운 문자열을 만들기 때문에, 연결할 데이터의 크기가 커지면 성능에 영향을 줄 수 있습니다. 반면 `<<` 연산자나 `concat` 메소드는 기존의 문자열에 데이터를 추가하기 때문에 성능 면에서 이점을 가질 수 있습니다.
-
-하지만, 실제로는 이러한 성능의 차이는 거의 무시할 수준이기 때문에 보다 가독성있고 간단한 코드를 작성하기 위해서는 `+` 연산자를 사용하는 것을 권장합니다.
-
-## 참고
-
-[Ruby 문자열 연산자](https://ruby-doc.org/core-2.6.3/String.html#method-i-2B)
-
-[Ruby 메소드 - concat](https://ruby-doc.org/core-2.6.3/String.html#method-i-concat)
-
-[Ruby 첫걸음 - 문자열](https://rubykoans.com/)
+- [Ruby 문자열 결합 방법](https://www.rubyguides.com/2019/02/ruby-string-concatenation/)
+- [Ruby 문자열 포맷팅](https://www.pluralsight.com/guides/ruby-string-formatting)
+- [Ruby 문자열 객체와 메모리 최적화](https://www.sitepoint.com/ruby-string-optimization-tips/)

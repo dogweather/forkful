@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Gleam: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,36 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est important de pouvoir accéder à la date actuelle lors du développement d'un programme en Gleam. Cela peut être utile pour afficher la date dans une interface utilisateur ou pour effectuer des calculs basés sur la date.
+Si vous avez déjà eu besoin de connaître la date actuelle dans votre code, vous savez que cela peut être une tâche fastidieuse et compliquée. Heureusement, avec Gleam, il existe une manière simple et efficace de récupérer la date courante.
 
 ## Comment faire
 
-Pour obtenir la date actuelle en Gleam, il suffit d'utiliser la fonction `Date.now()` avec la bibliothèque standard `gleam/time`. Voici un exemple :
+Pour obtenir la date courante en Gleam, utilisez simplement la fonction `Date.current()`, qui retournera un enregistrement contenant les informations sur la date actuelle. Voici un exemple de code:
 
-```Gleam
-import gleam/time
+```
+Gleam import Date
 
-let now = Date.now()
+let date = Date.current()
+
+IO.print(ln: "La date actuelle est: #{date.year}-#{date.month}-#{date.day}")
 ```
 
-Vous pouvez également préciser un fuseau horaire spécifique en utilisant la fonction `Date.now_with_timezone()` et en passant en paramètre le fuseau horaire souhaité. Par exemple :
+Et voici ce que vous pouvez attendre en terme de sortie: 
 
-```Gleam
-import gleam/time
-
-let now = Date.now_with_timezone("Europe/Paris")
+```
+La date actuelle est: 2021-09-15
 ```
 
-Lorsque vous exécutez ces codes, vous obtiendrez un résultat similaire à `2021-10-10T19:30:00Z`. Il est important de noter que la valeur renvoyée par la fonction `Date.now()` est un enregistrement avec des champs tels que `year`, `month`, `day`, `hour`, `minute` et `second`. Ces champs peuvent être utilisés pour afficher la date de manière plus spécifique dans votre programme.
+## Plongée approfondie
 
-## Plongée en profondeur
-
-Le module `gleam/time` fournit diverses autres fonctions utiles pour travailler avec les dates telles que `Date.from_utc_nanos()` pour convertir une heure d'un fuseau horaire spécifique en un enregistrement de date, et `Date.from_date()` pour construire un enregistrement de date à partir de valeurs spécifiques pour chaque champ (année, mois, jour, heure, etc.).
-
-Il est également possible de formater l'affichage de la date en utilisant la fonction `format()` avec des options telles que `year`, `month`, `day`, `hour`, `minute` et `second` pour personnaliser l'affichage de la date selon vos besoins.
+La fonction `Date.current()` utilise le fuseau horaire actuel de votre système pour déterminer la date. Cela signifie que la date peut être différente en fonction de l'emplacement de votre serveur. Si vous souhaitez spécifier un fuseau horaire différent, vous pouvez utiliser la fonction `Date.current(Timezone.(nom_du_fuseau))`. Vous pouvez également utiliser cette fonction pour obtenir la date et l'heure, en ajoutant des informations supplémentaires à l'enregistrement retourné par la fonction `Date.current()`.
 
 ## Voir aussi
 
-- Documentation officielle de Gleam sur la gestion des dates : [https://gleam.run/libraries/time](https://gleam.run/libraries/time)
-- Tutoriel sur la manipulation des dates en Gleam : [https://gleam.run/news/dates-in-gleam](https://gleam.run/news/dates-in-gleam)
-- Bibliothèque de fuseaux horaires prise en charge par Gleam : [https://github.com/laukvik/gleam-timezone](https://github.com/laukvik/gleam-timezone)
+- [Documentation officielle de Gleam sur les dates](https://gleam.run/documentation/standard_library/dates.html)
+- [Tutoriel sur les dates avec Gleam](https://dev.to/gleamlang/getting-started-with-gleam-dates-57m)

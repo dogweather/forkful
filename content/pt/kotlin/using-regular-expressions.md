@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Utilizando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Kotlin: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar expressões regulares em Kotlin?
+## Por que usar expressões regulares?
 
-As expressões regulares são uma ferramenta poderosa para buscar e manipular texto em linguagens de programação. Em Kotlin, elas permitem que os desenvolvedores realizem tarefas de forma mais eficiente e com menos linhas de código. Além disso, a utilização de expressões regulares pode ser extremamente útil para tarefas de validação e filtragem de dados.
+Expressões regulares são uma ferramenta poderosa para manipular strings em qualquer linguagem de programação, incluindo Kotlin. Com elas, podemos encontrar e substituir padrões específicos de texto de maneira eficiente e concisa.
 
-## Como utilizar expressões regulares em Kotlin?
+## Como usar expressões regulares em Kotlin
 
-A sintaxe para utilizar expressões regulares em Kotlin é semelhante a outras linguagens de programação, como Java. Primeiro, é necessário importar a classe correspondente ao uso de expressões regulares:
-
-```Kotlin
-import kotlin.text.Regex
-```
-
-Com a classe importada, podemos criar um objeto Regex para representar nossa expressão regular, utilizando o construtor que recebe como parâmetro uma string com a expressão. Por exemplo, para encontrar todas as ocorrências de um determinado padrão de caracteres (nesse caso, números seguidos de letras maiúsculas) em uma string, podemos utilizar o seguinte código:
+O uso de expressões regulares em Kotlin é bastante simples e é feito através de uma classe chamada `Regex`. Vamos ver alguns exemplos de como podemos criar e utilizar essas expressões:
 
 ```Kotlin
-val pattern = "[0-9]+[A-Z]+".toRegex()
-val result = pattern.findAll("12345ABCDE").toList()
-println(result) // saída: [12345, ABCDE]
+// Criando uma expressão regular para encontrar um número de telefone com o formato (xx) xxxxx-xxxx
+val regex = Regex("\\(\\d{2}\\)\\s\\d{5}-\\d{4}")
+// Verificando se uma string corresponde à expressão regular
+val match = regex.matches("(11) 99999-9999")
 ```
 
-Podemos utilizar diversas funções da classe Regex para aplicar essa expressão em diferentes situações e obter resultados específicos, como substituir uma parte de uma string ou verificar se uma string segue um determinado padrão.
+No código acima, utilizamos a barra invertida para escapar os caracteres especiais da expressão regular, como os parênteses e o hífen. Também definimos a quantidade de dígitos em cada parte do número, utilizando o símbolo de repetição `\d{n}`, onde `n` representa o número de dígitos desejado.
 
-## Aprofundando no uso de expressões regulares
+Além disso, podemos utilizar a função `find()` para encontrar o primeiro padrão correspondente em uma string, ou a função `findAll()`, que retorna uma lista de todos os padrões encontrados.
 
-Além das funcionalidades básicas, as expressões regulares em Kotlin possuem algumas particularidades interessantes. Por exemplo, é possível utilizar grupos de captura para acessar partes específicas da string que foi encontrada pelo padrão, utilizando a propriedade `groups`. Também é possível utilizar classes de caractere específicas, como `\d` para representar qualquer dígito ou `\w` para representar qualquer caractere alfanumérico.
+```Kotlin
+// Encontrando o primeiro padrão correspondente em uma string
+val match = regex.find("Tel: (11) 99999-9999")?.value
+// Encontrando todos os padrões correspondentes em uma string
+val matches = regex.findAll("(11) 99999-9999 e (12) 88888-8888").toList()
+```
 
-Outra funcionalidade útil é a possibilidade de utilizar o modo multiline, que permite que a expressão regular seja aplicada em várias linhas de uma string. Isso pode ser especialmente útil para processar textos com quebras de linha.
+Também é possível utilizar os símbolos `^` e `$` para indicar o começo e o fim da string, respectivamente. Com eles, podemos criar expressões regulares mais precisas e evitar correspondências indesejadas.
 
-Se você deseja aprender mais sobre expressões regulares em Kotlin, pode consultar a documentação oficial da classe Regex e também alguns tutoriais e exercícios disponíveis online, como os do site *RegexOne* (https://regexone.com/).
+## Profundando nas expressões regulares
+
+As expressões regulares possuem uma grande quantidade de metacaracteres que nos permitem criar padrões complexos de busca. Algumas das principais são:
+
+- `.`: corresponde a qualquer caractere.
+- `[]`: corresponde a um conjunto de caracteres. Por exemplo, `[abc]` corresponde a qualquer uma das letras `a`,`b` ou `c`.
+- `*`: corresponde a zero ou mais ocorrências do padrão anterior. Por exemplo, `ab*` corresponde a `a`, `ab`, `abb`, `abbb`...
+- `+`: corresponde a uma ou mais ocorrências do padrão anterior. Por exemplo, `ab+` corresponde a `ab`, `abb`, `abbb`...
+- `?`: corresponde a zero ou uma ocorrência do padrão anterior. Por exemplo, `ab?` corresponde a `a` e `ab`.
+- `^`: corresponde ao começo da string.
+- `$`: corresponde ao fim da string.
+- `|`: corresponde a um padrão ou outro. Por exemplo, `a|b` corresponde a `a` ou `b`.
+
+Podemos utilizar esses metacaracteres em conjunto com os símbolos de repetição para criar expressões regulares mais complexas e precisas.
 
 ## Veja também
 
-- Documentação oficial da classe Regex em Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/
-- Tutorial do site RegexOne: https://regexone.com/
-- Exemplos práticos de uso de expressões regulares em Kotlin: https://www.javatpoint.com/kotlin-regular-expression
+- [Referência da classe `Regex` em Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Tutorial de Expressões Regulares (em inglês)](https://www.regular-expressions.info/)

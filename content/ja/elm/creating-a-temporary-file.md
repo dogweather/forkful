@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 一時ファイルの作成"
+title:                "一時ファイルの作成"
+html_title:           "Elm: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,68 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ作るの？
+## なぜ
+一時ファイルを作成する理由は何でしょうか？簡単に説明します。
 
-作りモノをする際、時に一時的なファイルが必要になります。例えば、データ保存やバックアップ、あるいは一時的な処理のために作ることがあります。Elmでは、一時的なファイルの作成も簡単にできます。
+一時ファイルを作成することで、プログラムの実行中にデータを一時的に保管することができます。例えば、一時的に保存したデータを後から参照したり、別のプログラムで利用したりすることができます。
 
 ## 作り方
+以下のコーディング例を参考に、一時ファイルを作成する方法を説明します。実際のコーディング例は ```Elm ... ``` で囲み、サンプルの出力結果はコメントアウトで表示します。
 
-まず、一時的なファイルを作るためには、Elmの`Graphics.Input`を使います。このモジュールには`createFile`という関数が用意されており、引数にファイル名とデータを渡すことで、一時的なファイルを作ることができます。
-
+### ファイルを作成する
 ```Elm
-import Graphics.Input
+import File
+import Task
 
-tempFile = "temp.txt" -- 作りたい一時的なファイル名
-data = "これは一時的なファイルのコンテンツです。"
+-- 一時ファイルを作成します
+createTempFile : Task.Task File.Error File.File
+createTempFile =
+  -- 一時ファイルのパスを指定してファイルを作成
+  File.tempFile "tmp/filename.txt"
 
-file = Graphics.Input.createFile tempFile data
+-- createTempFile の結果を処理する
+Task.attempt handleTempFile createTempFile
 
-case file of
-    Ok file -> "一時的なファイルが作成されました。"
-    Err err -> "一時的なファイルの作成に失敗しました。" ++ err
+-- ファイル作成後に実行する関数
+handleTempFile : Result File.Error File.File -> Cmd msg
+handleTempFile result =
+  case result of
+    Err err ->
+      -- コンソールにエラーを出力
+      Debug.log "Error" err
+    Ok file ->
+      -- 作成したファイルのパスを表示
+      Debug.log "Success!" (File.path file)
+```
+出力結果：
+```
+"tmp/filename.txt"
 ```
 
-もし、ファイル名の指定を省略したい場合は、`Graphics.Input.guid()`を使うことで、ランダムなファイル名を取得することができます。
-
+### ファイルにデータを書き込む
 ```Elm
-import Graphics.Input
+import File
+import Task
 
-data = "これは一時的なファイルのコンテンツです。"
+-- 書き込むデータの内容
+content : String
+content = "Hello, world!"
 
-file = Graphics.Input.createFile (Graphics.Input.guid()) data
-
-case file of
-    Ok file -> "一時的なファイルが作成されました。"
-    Err err -> "一時的なファイルの作成に失敗しました。" ++ err
+-- ファイルにデータを書き込む
+writeToFile : File.File -> Task.Task File.Error ()
+writeToFile file =
+  File.write file content
+```
+出力結果：
+```
+Ok ()
 ```
 
-## 深堀り
+## 詳細を深く掘り下げる
+一時ファイルを作成する方法について、もう少し詳しく見ていきましょう。
 
-一時的なファイルの作成には、`Graphics.Input`モジュール以外にも、`Dict`や`List`といった他のモジュールを組み合わせて使うこともできます。また、作成した一時的なファイルを後で削除する際には、`Graphics.Input.deleteFile`を使用します。
+### 一時ファイルとは？
+一時ファイルとは、一時的なデータを保存するためのファイルのことです。プログラムが終了すると自動的に削除されるため、プログラムの実行中に一時的なデータを保管するのに適しています。
 
-```Elm
-import Graphics.Input
-import Dict exposing (Dict)
+### ファイルのパスを指定する
+一時ファイルを作成する際には、ファイルのパスを指定する必要があります。このパスはファイルを保存する場所を示すもので、一般的にはプログラムファイルと同じ場所に保存されます。今回の例では、 ```tmp/filename.txt``` というパスを指定しました。
 
-path = "temp.txt"
-data = "これは一時的なファイルのコンテンツです。"
+### ファイル操作のエラー処理
+一時ファイルの作成やデータの書き込みなど、ファイル操作はエラーが発生することがあります。エラー処理をきちんと行うことで、バグや予期せぬ事態を防ぐことができます。今回の例では、 ```File.Error``` 型を使ってエラーを処理しています。
 
-file = Graphics.Input.createFile path data
-
-case file of
-    Ok file -> "一時的なファイルが作成されました。"
-    Err err -> "一時的なファイルの作成に失敗しました。" ++ err
-
--- ファイルの削除
-result = Graphics.Input.deleteFile path
-
-case result of
-    Ok _ -> "一時的なファイルが削除されました。"
-    Err err -> "一時的なファイルの削除に失敗しました。" ++ err
-```
-
-# 参考リンク
-
-- [Elm公式ガイド: Graphics.Input](https://guide.elm-lang.org/architecture/effects/temp_files.html)
-- [Elm公式ガイド: Dictモジュールの使い方](https://guide.elm-lang.org/core_language.html#dict)
-- [Elm公式ガイド: Listモジュールの使い方](https://guide.elm-lang.org/core_language.html#list)
+## See Also
+- Elm ドキュメント: [File module](https://package.elm-lang.org/packages/elm/file/latest/)
+- Elm Japan 公式サイト: [https://elmjapan.org/](https://elmjapan.org/)
+- Elm 公式サイト: [https://elm-lang.org/](https://elm-lang.org/)

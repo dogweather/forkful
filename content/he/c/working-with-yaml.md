@@ -1,5 +1,6 @@
 ---
-title:                "C: עבודה עם YAML"
+title:                "עבודה עם YAML"
+html_title:           "C: עבודה עם YAML"
 simple_title:         "עבודה עם YAML"
 programming_language: "C"
 category:             "C"
@@ -9,60 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## עבור מה?
+## למה:
+יכול להיות שאתה נתקלת בקבצי YAML בעבודתך וצריך לעבוד איתם, או שאולי תרצה ליצור קוד שמייצג מידע בפורמט הזה. בכל מקרה, ידע כיצ׳ור ה- YAML יהיה שימושי עבורך.
 
-קובצי YAML הם קבצי טקסט שמשמשים לניתוח ותיעוד של נתונים מבלי להיות קשורים לפורמט מסוים. מדוע שימוש במתאם YAML יהיה שימושי עבורך? יתרונות של עבודה עם YAML כוללים תיעוד קל יותר, התאמה גמישה יותר של מבני הנתונים, ואפילו יכולת לעבוד עם קבצים מקרובים מה שמקל על טיפול בתקלות.
+## איך לעבוד עם YAML בשפת C:
+ה-YAML הוא לכאורה פורמט קובץ פשוט, אך יש לו מאפיינים ייחודיים שיכולים להפוך אותו לאתגר כאשר מדובר בעיבוד ועיבוד מידע מורכב. הכירו את העולם של YAML בעזרת דוגמאות קוד ופלטים שלהלן:
 
-## איך לעבוד עם YAML בלולאות
-
-```C
-#include <stdio.h>
-#include "yaml.h"
+```c
+// טענת הספריות הדרושות
+#include <yaml.h>
 
 int main() {
-    FILE *file = fopen("example.yaml", "r"); // פתיחת קובץ YAML לקריאה
-    yaml_parser_t parser;
-    yaml_parser_initialize(&parser); // הכנת המתאם לפעולה
-    yaml_parser_set_input_file(&parser, file); // הגדרת הקובץ כקלט למתאם
-    yaml_event_t event;
-
-    do {
-        yaml_parser_parse(&parser, &event); // ניתוח הקובץ לפי אירועים
-        switch (event.type) {
-            case YAML_SEQUENCE_START_EVENT:
-                printf("פתיחת רשימה. יש לנו %d איברים\n", event.data.sequence_start_start);
-                break;
-            case YAML_MAPPING_START_EVENT:
-                printf("פתיחת מפתחות. יש לנו %d מפתחות\n", event.data.mapping_start_start);
-                break;
-            case YAML_SCALAR_EVENT:
-                printf("ראו טוקן: %s\n", event.data.scalar.value); // הפסקה יחידה של טקסט בפייתון היא טוקן
-                break;
-        }
-        yaml_event_delete(&event);
-    } while (event.type != YAML_STREAM_END_EVENT);
-    yaml_parser_delete(&parser); // סיום פעולת הקריאה
-    fclose(file);
-    return 0;
+	// יצירת מבנה לאחסון הנתונים
+	yaml_document_t document;
+	
+	// טעינת הקובץ הקיים
+	yaml_parser_t parser;
+	yaml_parser_initialize(&parser);
+	yaml_parser_set_input_file(&parser, "file.yaml");
+	
+	// קריאת הנתונים מהקובץ והצבתם בסטרים
+	yaml_parser_load(&parser, &document);
+	yaml_node_t *node = yaml_document_get_root_node(&document);
+	
+	// קבלת נתונים מאחת התוכן בעץ
+	yaml_node_t *key = yaml_document_get_node(&document, node->data.mapping.pairs.start->key);
+	char *value = (char*)node->data.mapping.pairs.start->value->data.scalar.value;
+	
+	// יידפוס התוכן למסך
+	printf("מפתח: %s, ערך: %s\n", key->data.scalar.value, value);
+	
+	// קיצור המודול וסגירת היעד
+	yaml_document_delete(&document);
+	yaml_parser_delete(&parser);
+	
+	return 0;
 }
 ```
 
-הנה כמה נתונים נוספים מקובץ YAML כדי להדגים את הפלט המצורף:
-
-```yaml
-- ארגמן: האיש
-- מינשטרל: חג סחור סלקטור
+הפלט:
+```
+מפתח: name, ערך: John Doe
 ```
 
-בפלט המתקבל, יש שתי תכונות עבור רשומה נתונה:
+## העמקה:
+ישנם כמה נסיבות בהן ייתכן שהידע על YAML ישמשך כמה עבודה נוספת. לדוגמה, תמיכה ב-YAML נמצאת בשפות תכנות מגוונות כמו גולנג׳ וגיט, וניתן להמיר קבצי YAML לפורמט XML דרך קבלה מעופשת.
 
-```
-ראו טוקן: ארגמן
-ראו טוקן: האיש
-```
-
-וכך נעלמת החוצפה. איזה מירבינציה זו!
-
-## העומק של YAML
-
-לאורך הפוסט הזה, ראינו כי עבודה עם קבצי YAML מציעה שפע של יתרונות, ו
+## ראו גם:
+- [פרויקט ה-YAML הרשמי](https://yaml.org/)
+- [תיעוד C של YAML](https://yaml.org/spec/1.2/spec.html)
+- [טכנולוגיית ה-YAML בוויקיפדיה](https://en.wikipedia.org

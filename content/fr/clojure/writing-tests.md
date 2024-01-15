@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Écriture des tests"
-simple_title:         "Écriture des tests"
+title:                "Écriture de tests"
+html_title:           "Clojure: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,44 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+Ecrire des tests peut sembler fastidieux et inutile, mais c'est en réalité un aspect crucial de la programmation. Les tests garantissent la stabilité et la fiabilité de votre code, ce qui vous permet de détecter et de résoudre les problèmes avant qu'ils ne deviennent des bugs dans votre code.
 
-Les tests sont une partie importante du processus de développement d'un logiciel. Ils permettent de s'assurer que le code fonctionne correctement et de détecter les bugs avant de déployer une nouvelle version. Cela peut également aider à maintenir le code propre et à faciliter la collaboration entre les développeurs.
-
-## Comment faire
-
-```Clojure
-(defn somme [a b]
-  (+ a b))
-(somme 2 3)
-
-;; Output: 5
+## Comment Faire
+Pour écrire des tests en Clojure, vous devez d'abord inclure la bibliothèque de tests dans votre fichier. Cela se fait en ajoutant la ligne suivante en haut de votre fichier :
 ```
-
-Pour écrire des tests en Clojure, il est recommandé d'utiliser le framework de test intégré appelé "clojure.test". Il permet de créer des fonctions de test qui utilisent des assertions pour vérifier que les résultats obtenus sont conformes aux résultats attendus.
-
-```Clojure
-require '[clojure.test :refer :all]
-(deftest somme-test
-  (is (= 5 (somme 2 3))))
+(ns mon-projet.tests (:require [clojure.test :refer :all]))
+```
+Ensuite, vous pouvez définir vos tests en utilisant le macro `deftest`. Par exemple, si vous voulez tester une fonction `addition` qui prend deux nombres en entrée et renvoie leur somme, vous pouvez écrire :
+```
+(deftest test-addition
+  (is (= (addition 2 3) 5))
+  (is (= (addition 5 -3) 2)))
+```
+Dans cet exemple, nous utilisons la fonction `is` pour vérifier si l'expression donnée est vraie. Si les expressions sont valides, le test réussit, sinon il échoue. Enfin, vous pouvez exécuter vos tests en appelant `run-tests` à la fin de votre fichier :
+```
 (run-tests)
-
-;; Output: 
-Testing user
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
 ```
+Vous obtiendrez une liste des tests exécutés et leur statut (passé ou échoué).
 
-La fonction "deftest" définit un test en tant que fonction et la fonction "is" définit une assertion. Ensuite, en exécutant la fonction "run-tests", nous pouvons voir le résultat des tests dans la console.
+## Plongée Profonde
+Il y a quelques astuces à garder à l'esprit lors de l'écriture de tests en Clojure :
 
-## Plongée en profondeur
+- Utilisez des données de test variées pour couvrir autant de cas de figure que possible.
+- Utilisez les fonctions `is` et `is-not` pour vérifier si les expressions sont vraies ou fausses respectivement.
+- Utilisez les fonctions `=`, `=`, `==`, `not=` et `nil?` pour les comparaisons de valeurs.
+- Utilisez les fonctions `:throws` et `thrown` pour vérifier les exceptions levées par votre code.
+- Utilisez les fonctions `testing` et `use-fixtures` pour organiser et gérer vos tests de manière plus efficace.
 
-Il est important d'écrire des tests pour chaque fonction que nous créons, ainsi que pour les scénarios de test qui couvrent toutes les possibilités. Cela permettra de détecter rapidement les erreurs et de s'assurer de la fiabilité du code.
-
-Il existe également d'autres outils de test en dehors de "clojure.test", tels que "speclj" et "Midje". Ceux-ci peuvent offrir plus de fonctionnalités et de flexibilité en matière de test.
-
-## Voir aussi
-
-- [Clojure Docs : Testing](https://clojure-doc.org/articles/testing.html)
-- [Clojure Guide : Writing Tests](https://clojure.org/guides/testing)
-- [Speclj : A Testing Framework for Clojure](https://github.com/slagyr/speclj)
-- [Midje : A Test Framework for Clojure and ClojureScript](https://github.com/marick/midje)
+## Voir Aussi
+- [Documentation officielle de tests en Clojure](https://clojure.org/guides/learn/testing)
+- [Clojure Cookbook : écrire des tests en Clojure](https://lispcast.com/writing-clojure-tests)
+- [Introduction aux tests en Clojure](https://medium.com/jostle-engineering/clojure-unit-testing-basics-47279b540ce7)

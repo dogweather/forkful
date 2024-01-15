@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Descargando una página web"
+title:                "Descargando una página web"
+html_title:           "Ruby: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,48 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué descargar una página web?
 
-Descargar una página web puede ser una tarea útil para los programadores en Ruby que necesitan acceder a cierta información de un sitio web o para realizar pruebas. También puede ser una buena manera de aprender más sobre cómo funciona el código de una página web.
+Descargar una página web puede ser útil en muchas situaciones. Puede ser para guardar una copia local de una página importante, como para tener acceso a ella cuando no hay conexión a internet. También puede ser para analizar o extraer datos de una página web en particular.
 
 ## Cómo hacerlo
 
-Para descargar una página web utilizando Ruby, podemos utilizar la gema "open-uri" y su método "open". Este método acepta una URL como argumento y devuelve un objeto "File" que podemos leer utilizando el método "readlines". Veamos un ejemplo:
+Para descargar una página web en Ruby, utilizaremos la gema open-uri. Primero, debes instalar la gema en tu computadora con el siguiente comando en la terminal:
+
+```
+gem install open-uri
+```
+
+Una vez instalada, podemos usarla en nuestro código Ruby. Importamos la gema al principio de nuestro archivo con la línea:
 
 ```
 require 'open-uri'
-
-url = "https://www.example.com"
-file = open(url)
-output = file.readlines
-
-puts output
 ```
 
-Esto devolverá el código HTML de la página web en forma de array, con cada línea siendo un elemento del array. Podemos iterar sobre este array para manipular la información o simplemente imprimirla en la pantalla.
+Luego, para descargar la página web, simplemente utilizamos el método `open` de la gema `open-uri` y le pasamos la URL de la página que queremos descargar. Por ejemplo, para descargar la página de Google, escribimos:
+
+```
+page = open("https://www.google.com")
+```
+
+Podemos guardar la página descargada en una variable, llamada `page` en este ejemplo. Luego, podemos imprimir el contenido de la página utilizando el método `read` de la variable `page`:
+
+```
+puts page.read
+```
+
+Este código imprimirá el contenido HTML de la página de Google en la terminal. También podemos guardar el contenido en un archivo utilizando el método `write` y pasándole el nombre del archivo como argumento:
+
+```
+page.write("google.html")
+```
+
+Este código creará un archivo llamado `google.html` en el directorio donde se encuentra nuestro archivo Ruby, y guardará el contenido de la página de Google en él.
 
 ## Profundizando
 
-La gema "open-uri" también nos permite especificar el tipo de petición que queremos hacer. Por defecto, utiliza el método GET, pero si queremos realizar una petición POST, podemos utilizar el método "open". Por ejemplo:
+La gema open-uri también nos permite descargar páginas y guardarlas en diferentes formatos, como por ejemplo PDF. También nos permite autenticarnos en páginas web privadas si tenemos los datos de acceso necesarios.
 
-```
-url = "https://www.example.com"
-params = {username: "usuario", password: "contraseña"}
-file = open(url, method: :post, params: params)
-```
+Otra funcionalidad útil es el manejo de errores al descargar páginas. Podemos utilizar la estructura `begin` `rescue` para manejar posibles errores al descargar una página, como por ejemplo si la página no existe o no se puede acceder a ella. Esto nos permite controlar el flujo de nuestro programa y manejar los errores de manera adecuada.
 
-Esto será útil si queremos enviar información a un formulario en la página web que estamos descargando.
+## Ver también
 
-También podemos agregar headers a nuestra petición utilizando el método "open" y pasando un hash como argumento. Esto puede ser útil si la página web requiere ciertos headers para permitir el acceso. Por ejemplo:
-
-```
-url = "https://www.example.com"
-headers = {"User-Agent" => "Navegador de Ruby"}
-file = open(url, headers: headers)
-```
-
-Para obtener más información sobre la gema "open-uri" y sus opciones, puedes consultar su documentación oficial.
-
-## Visita también
-
-- [Documentación de la gema open-uri](https://github.com/ruby/ruby/blob/trunk/lib/open-uri.rb)
-- [Métodos HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
-- [Uso de headers en HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+- Documentación de la gema open-uri: https://github.com/ruby/open-uri
+- Ejemplos de uso de open-uri: https://www.rubyguides.com/2016/09/ruby-open-uri/
+- Tutorial de descarga de páginas web en Ruby: https://www.pluralsight.com/guides/download-web-pages-using-ruby

@@ -1,6 +1,7 @@
 ---
-title:                "PHP: दो दिनांकों की तुलना करना"
-simple_title:         "दो दिनांकों की तुलना करना"
+title:                "हिंदी में दो तारीखों को तुलना करना."
+html_title:           "PHP: हिंदी में दो तारीखों को तुलना करना."
+simple_title:         "हिंदी में दो तारीखों को तुलना करना."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -9,40 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-Aaj ke samay mein, bahut saare web applications aur websites par tithi aur samay ka mukabla karna aam hai. Yeh ek mahatavapurna kary hai jo humein apne projects mein karne ki zaroorat padti hai. PHP mein, do dates ko compare karne ka kaam karna behad hi aasan hai. Is blog post mein hum dekhenge ki do dates ko compare karna kis tarah se sambhav hai aur isse humein kya fayda hoga.
+## क्यों
 
-## Kaise
-Agar aap PHP mein do dates ko compare karna chahte hai toh apko sirf *date_diff* function ka upyog karna hoga. Is function ke through hum do dates ko compare kar sakte hai aur pata laga sakte hai ki kitne din, mahine, saal ya fir ghante, minute, second tak ka antar hai. Niche diye gye code blocks mein humein yeh function istemaal karna sikhaya jayega:
+दो दिनांकों को तुलना करने के कारण एक समस्या को हल करने में मदद मिलती है।
 
-```PHP
-// Humne 2 dates banaye hai
-$date1 = date_create('2021-01-01');
-$date2 = date_create('2021-02-01');
-// Humne date_diff function ka upyog kiya aur output ko $diff variable mein store kiya
-$diff = date_diff($date1, $date2);
-// Ab humein output print karna hai
-echo $diff->format('%R%a days');
+## कैसे करें
+
+```
+<?php
+
+// दो तारीखों को तुलना करने के लिए फ़ंक्शन कोड
+function compareDates($date1, $date2) {
+  // दो तारीखों को strtotime function का उपयोग करके unix timestamp में बदलें
+  $timestamp1 = strtotime($date1);
+  $timestamp2 = strtotime($date2);
+
+  // तुलना करें और समान होने पर संख्या को वापस करें
+  if ($timestamp1 === $timestamp2) {
+    return 0;
+  } else if ($timestamp1 > $timestamp2) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+
+// उदाहरण: दो तारीखों को तुलना करें
+$date1 = "5 October 2020";
+$date2 = "10 October 2020";
+
+// फ़ंक्शन का उपयोग करें
+$result = compareDates($date1, $date2);
+
+// समानता के आधार पर उत्पादन दें
+if ($result === 0) {
+  echo "$date1 और $date2 बराबर हैं।";
+} else if ($result === 1) {
+  echo "$date1 $date2 से पहले है।";
+} else {
+  echo "$date1 $date2 के बाद है।";
+}
+
+?>
 ```
 
-Output:
+**आउटपुट:** 5 October 2020 और 10 October 2020 के बीच अंतर है।
 
-+31 days
+## गहराई से जाने
 
+दो दिनांकों को तुलना करने के लिए सबसे सामान्य विधि strtotime() function का उपयोग है। यह फ़ंक्शन दो स्वरूपों में उपलब्ध है - स्ट्रिंग या टाइमस्टैंप। कई आधारभूत समकालीन फ़ंक्शनें फ़ंक्शन के आंकड़े को दो तारीखों को तुलना करने के लिए उपयोग कर सकती हैं।
 
-Is tarah se hum 2 dates ko compare karke output le sakte hai. Iske alawa hum *strtotime* function bhi istemaal kar sakte hai. Is function ke through hum ek date ko dusre format mein convert kar sakte hai jaise ki *Y-m-d* se *F j, Y*.
+## देखें भी
 
-## Gehri Jankari
-Dates ko compare karna ek bahut hi zaroori functionality hai jise hum apne projects mein istemaal karte hai. Isse hum apne users ko accurate information provide kar sakte hai aur unhe events aur tithi ki sahi jaankari de sakte hai. PHP mein, do dates ko compare karne ke liye bahut se functions available hai jaise ki *date_diff*, *strtotime*, *mktime* aur *cal_days_in_month*.
-
-Do dates ko compare karte waqt humein thodi saavdhani rakhni chahiye kyunki kai baar date format ki wajah se errors aa sakte hai. Isliye humein date format ko bhi sahi se samjhna zaroori hai. Ek baar hum acchi tarah se date functions ke bare mein jaan le, tab hum bahut se complex tasks ko bhi aasaani se kar sakte hai.
-
-## Dekhiye Bhi
-Agar aap PHP programming ke baare mein aur bhi gehri jankari lena chahte hai toh niche diye gye links ko jarur check kare:
-
-- [PHP Date Functions](https://www.php.net/manual/en/function.date.php)
-- [PHP Date Formats](https://www.php.net/manual/en/datetime.format.php)
-- [Difference between two dates in PHP](https://www.geeksforgeeks.org/php-difference-between-two-dates/)
-- [PHP Programming Tutorials for Beginners (Hindi)](https://www.guru99.com/php-tutorials.html)
-
-Asha karte hai ki aapko yeh blog post pasand aaya hoga aur aap ab acchi tarah se dates ko compare kar payenge. Dhanyavaad!
+[Solve a variety of tasks involving comparing dates in PHP](https://www.geeksforgeeks.org/php-comparing-two-dates/) 
+[PHP DateTime class for more advanced date and time operations](https://www.php.net/manual/en/class.datetime.php)

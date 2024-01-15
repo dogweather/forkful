@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Haskell: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-W dzisiejszych czasach programowanie jest niezwykle ważną umiejętnością, a jednym z najpopularniejszych języków programowania jest Haskell. W tym języku można napisać wydajny i elegancki kod, który jest również łatwy w utrzymaniu. Jednym z ciekawych zastosowań języka Haskell jest odczytywanie plików tekstowych. W tym artykule spróbujemy przybliżyć, dlaczego czytanie pliku tekstowego może być przydatnym umiejętnością dla każdego programisty.
+Czy kiedykolwiek zastanawiałeś się, dlaczego niektóre programy potrafią odczytywać pliki tekstowe, podczas gdy inne nie? W tym artykule dowiecie się, jak w języku Haskell odczytać zawartość pliku tekstowego i wykorzystać ją w swoich programach.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Aby odczytać plik tekstowy w Haskell, możemy użyć funkcji `readFile` z modułu `System.IO`. Przyjmuję ona argument w postaci ścieżki do pliku i zwraca jego zawartość w postaci napisu.
-
-```Haskell
-import System.IO
-
-main = do
-  content <- readFile "plik.txt"
-  putStrLn content
-```
-
-W powyższym przykładzie używamy również funkcji `putStrLn` do wyświetlenia zawartości pliku na ekranie.
-
-# Deep Dive
-
-Kiedy już nauczymy się odczytywać pliki tekstowe, możemy zacząć eksperymentować z różnymi metodami przetwarzania ich zawartości. Dzięki użyciu funkcji `lines` możemy podzielić odczytaną zawartość na pojedyncze linie, a następnie wykorzystać inne funkcje do ich dalszej obróbki. Przykładowo, możemy policzyć ilość linii w pliku przy użyciu funkcji `length`.
+Rozpocznijmy od importu modułu `System.IO`, który umożliwi nam wykorzystanie funkcji do obsługi plików. Następnie stwórzmy funkcję `readFile` i podajmy jako argument ścieżkę do pliku, który chcemy odczytać. Przykładowo:
 
 ```Haskell
 import System.IO
 
 main = do
-  content <- readFile "plik.txt"
-  let linesNumber = length (lines content)
-  putStrLn ("Liczba linii w pliku to: " ++ show linesNumber)
+    contents <- readFile "plik.txt"
+    putStrLn contents
 ```
 
-Dodatkowo, możemy użyć funkcji `words`, aby podzielić zawartość pliku na pojedyncze słowa, co może być przydatne przy przetwarzaniu tekstu.
+Wywołanie `readFile` zwróci nam zawartość pliku jako pojedynczy napis. Następnie wypisujemy ją na ekran za pomocą funkcji `putStrLn`. Koniec! Nasz program potrafi już czytać pliki tekstowe.
 
-# Zobacz również
+## Głębsze zanurzenie
 
-- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
-- [Inne przydatne przykłady kodu w Haskellu](https://www.haskell.org/documentation#cookbook)
-- [Przykładowe projekty w Haskellu](https://github.com/topics/haskell)
+Oczywiście, możliwości odczytywania plików tekstowych w Haskellu są o wiele większe. Możemy na przykład wczytać zawartość pliku wiersz po wierszu za pomocą funkcji `readFile` i `lines`:
+
+```Haskell
+import System.IO
+
+main = do
+    contents <- readFile "plik.txt"
+    let lines = splitOn "\n" contents
+    mapM_ putStrLn lines
+```
+
+Funkcja `splitOn` pochodzi z modułu `Data.List.Split` i dzieli napis na listę w miejscach, gdzie występuje podany separator (w tym wypadku znak nowej linii). Następnie za pomocą funkcji `mapM_` (odpowiednik funkcji `mapM`, ale nie zwraca wyniku) wypisujemy każdy wiersz na ekran.
+
+## Zobacz też
+
+- [Dokumentacja modułu System.IO](http://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [Dokumentacja modułu Data.List.Split](http://hackage.haskell.org/package/split-0.2.3.4/docs/Data-List-Split.html)

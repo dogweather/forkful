@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Søking og erstatting av tekst"
-simple_title:         "Søking og erstatting av tekst"
+title:                "Søking og utskifting av tekst"
+html_title:           "Elixir: Søking og utskifting av tekst"
+simple_title:         "Søking og utskifting av tekst"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,39 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en vanlig oppgave innen programmering. Dette kan være nødvendig for å endre variabelnavn, fjerne feilaktige karakterer eller bare en generell renseprosess av kode. Elixir, et funksjonelt programmeringsspråk, tilbyr kraftige verktøy for å utføre disse oppgavene på en enkel og effektiv måte.
+Å søke og erstatte tekst er en vanlig oppgave når du jobber med programmering eller administrerer dokumenter. Det lar deg raskt og effektivt endre store mengder tekst basert på et gitt mønster.
 
 ## Hvordan
 
-I Elixir bruker vi funksjonen `String.replace/4` for å søke og erstatte tekst. Denne funksjonen tar fire argumenter: den originale teksten, søkeordet, erstatningsordet og en liste med modifikasjonstegn. La oss se på et eksempel:
+Søke og erstatte funksjonalitet er innebygd i Elixir ved hjelp av funksjonen `String.replace/3`. Denne funksjonen tar tre argumenter: den opprinnelige teksten, søkemønsteret og erstatningsstrengen.
 
-```elixir
-original_tekst = "God dag, verden!"
-søkeord = "dag"
-erstatningsord = "kveld"
-
-ny_tekst = String.replace(original_tekst, søkeord, erstatningsord, ["c"])
-IO.puts ny_tekst  # Resultatet blir "God kveld, verden!"
+```Elixir
+iex> tekst = "Hei! Velkommen til Elixir!"
+iex> String.replace(tekst, "Hei", "Hallo")
+"Hallo! Velkommen til Elixir!"
 ```
 
-I dette eksempelet har vi byttet ut "dag" med "kveld", og vi har også inkludert modifikasjonstegnet "c", som står for "case-sensitive" (så ordet "Dag" ville ikke blitt byttet ut).
+Søkemønsteret kan også være en regulær uttrykk for mer fleksibel matching. For eksempel, hvis vi vil erstatte alle forekomster av små bokstaver med store bokstaver, kan vi bruke en regulær uttrykk med `~r` notasjon og regex funksjonen `String.upcase/1`.
 
-Det er også mulig å bruke regulære uttrykk ved hjelp av `Regex.replace/3`-funksjonen. Dette er nyttig når du trenger å søke og erstatte mer komplekse mønstre i teksten. Her er et eksempel på å erstatte alle tall med "X":
-
-```elixir
-tekst = "Det er 123 mangoer på bordet"
-ny_tekst = Regex.replace(~r/\d+/, tekst, "X")
-IO.puts ny_tekst # Resultatet blir "Det er X mangoer på bordet"
+```Elixir
+iex> tekst = "Dette er en test"
+iex> String.replace(tekst, ~r/[a-z]+/, &String.upcase/1)
+"DETTE ER EN TEST"
 ```
 
-## Dypdykk
+## Deep Dive
 
-Begge disse funksjonene gir deg muligheten til å spesifisere hvor mange ganger du vil gjøre søket og erstatningen. Du kan også bruke `String.replace_all/4` og `Regex.replace_all/3` for å utføre søk og erstatt operasjoner på tekststrenger hvor søket skjer flere ganger.
-
-Det er også verdt å nevne at både `String.replace/4` og `Regex.replace/3` returnerer en kopi av den originale teksten med søket og erstatningen gjort. Dette betyr at den originale teksten ikke blir endret, og du må lagre det returnerte resultatet hvis du ønsker å bruke den endrede teksten videre.
+String.replace-funksjonen i Elixir støtter også søk og erstatting i listen av atomer og lister av atomer. Du kan også bruke funksjonen `String.replace!/3` for å heve en `Regex.MatchError` hvis søkemønsteret ikke finnes i teksten.
 
 ## Se Også
 
-- [Elixir Docs om String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Elixir Docs om Regex.replace/3](https://hexdocs.pm/elixir/Regex.html#replace/3)
-- [Elixir offisiell hjemmeside](https://elixir-lang.org/)
+- [Elixir String-modulen offisiell dokumentasjon](https://hexdocs.pm/elixir/String.html)
+- [Regulære uttrykk i Elixir](https://elixir-lang.org/getting-started/string-patterns.html)

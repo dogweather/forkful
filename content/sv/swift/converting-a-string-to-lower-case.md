@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Konvertering av en sträng till små bokstäver"
-simple_title:         "Konvertering av en sträng till små bokstäver"
+title:                "Konvertera en sträng till gemener"
+html_title:           "Swift: Konvertera en sträng till gemener"
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,59 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hej alla Swift-entusiaster! Idag ska vi prata om hur du kan konvertera en sträng till små bokstäver i Swift. Varför skulle du vilja göra det? Hur gör man det? Och vad händer under ytan? Låt oss gräva djupare och ta reda på det!
-
 ## Varför
-
-Att konvertera en sträng till små bokstäver kan vara användbart när du behöver söka igenom och jämföra textsträngar. Genom att ha en gemensam form (allt i små bokstäver) blir det enklare att hitta matchningar och göra jämförelser. Det är också användbart för att presentera text på ett enhetligt sätt, oavsett hur användaren har skrivit in det.
+Att konvertera en sträng till små bokstäver är en vanlig uppgift i programmering, oavsett om det är för att få en enhetlig formatering eller för att jämföra strängar utan att bry sig om stora och små bokstäver. Det finns flera olika metoder i Swift som kan användas för att utföra detta.
 
 ## Hur man gör det
-
-För att enkelt konvertera en sträng till små bokstäver i Swift kan du använda metoden `lowercased()` på strängen. Här är ett exempel:
-
 ```Swift
-let text = "HELLO EVERYONE"
-let lowercaseText = text.lowercased()
-print(lowercaseText)
+let sträng = "HELLO SWIFT"
+print(sträng.lowercased()) // Skriver ut "hello swift"
 ```
 
-Output: `hello everyone`
-
-Som du kan se returneras nu strängen i små bokstäver. Här är några fler exempel på hur man kan använda denna metod:
+Den enklaste metoden för att konvertera en sträng till små bokstäver är genom att använda metoden `lowercased()`, som finns tillgänglig på alla `String`-objekt i Swift. Detta kommer att returnera en ny sträng med alla bokstäver i små bokstäver.
 
 ```Swift
-let text = "welcome to Sweden"
-let anotherText = "Welcome to Sweden"
-
-print(text.lowercased()) // output: welcome to sweden
-print(anotherText.lowercased()) // output: welcome to sweden
+let sträng = "Det här är En Sträng"
+print(sträng.lowercased()) // Skriver ut "det här är en sträng"
 ```
 
-Observera att både "Welcome" och "welcome" är konverterade till "welcome". Överkurs: om du behöver jämföra två strängar men vill ignorera skillnader i stor bokstav kan du använda `caseInsensitiveCompare()` metoden.
+Om du behöver konvertera en sträng till små bokstäver utan att göra några förändringar i den ursprungliga strängen kan du använda metoden `lowercased()` tillsammans med `map()` för att applicera denna konvertering på varje tecken i strängen.
 
 ```Swift
-let firstString = "HeLlO"
-let secondString = "hello"
-
-if firstString.caseInsensitiveCompare(secondString) == .orderedSame {
-    print("Strängarna är lika!")
-} else {
-    print("Strängarna är olika.")
-}
+let sträng = "ExEMPl 123 !!!"
+let småbokstäver = sträng.lowercased().map {String($0)}
+print(småbokstäver) // Skriver ut ["e", "x", "e", "m", "p", "l", " ", "1", "2", "3", " ", "!", "!", "!"]
 ```
 
-Output: `Strängarna är lika!`
-
-## Djupdykning
-
-Nu när vi har sett hur man konverterar en sträng till små bokstäver, låt oss dyka lite djupare och titta på vad som händer under ytan. I Swift används Unicode för att representera tecken. Varje bokstav har en unik kodpunkt som motsvarar den, vilket möjliggör att stödja en mängd olika språk. När `lowercased()` anropas på en sträng används Unicode för att konvertera alla bokstäver till deras motsvarande små bokstäver.
+## Djupgående
+Det finns flera andra metoder som kan användas för att konvertera en sträng till små bokstäver, till exempel `localizedLowercase`, som tar hänsyn till språkinställningar. Det finns också vissa skillnader i hur dessa metoder hanterar speciella tecken som å, ä och ö. Du kan läsa mer om detta i Swifts officiella dokumentation om `String`-objektet.
 
 ## Se även
-
-Här är några användbara länkar för att lära dig mer om Swift-strängar och Unicode:
-
-- [Strings and Characters in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Unicode på Swift för Alla](https://swiftforall.com/articles/strings-and-characters-on-swift-part-5-unicode/)
-- [Sträng-manipulering på Swift by John Sundell](https://www.swiftbysundell.com/articles/strings-in-swift/)
-
-Vi hoppas att du har lärt dig något nytt om strängar och Unicode i Swift. Lycka till med dina kodprojekt och ha det så kul med Swift!
+- [Officiell Swift dokumentation för String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
+- [Stack Overflow-fråga om att konvertera en sträng till små bokstäver i Swift](https://stackoverflow.com/questions/26508485/how-to-make-string-lowercase-in-swift)

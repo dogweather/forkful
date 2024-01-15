@@ -1,5 +1,6 @@
 ---
-title:                "C: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "C: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "C"
 category:             "C"
@@ -9,68 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要提取子字符串？
+# 为什么
 
-提取子字符串是一个常用的技术，在编程中经常会遇到这样的情况：我们需要从一个字符串中提取出特定的一部分，而不是使用整个字符串。比如，从一个完整的文件路径中获取文件名，从一个邮箱地址中提取用户名等等。这就是为什么能够熟练地提取子字符串是一个程序员必备的技能。
+人们为什么会对提取子串感兴趣呢？首先，提取子串是一种常见的字符串操作，可以帮助解决很多实际问题。其次，掌握提取子串的技巧可以让我们在写程序时更加得心应手，提高代码效率和质量。
 
-# 如何提取子字符串？
+# 如何做
 
-在C语言中，提取子字符串可以使用几个不同的方法。首先，我们需要使用字符串函数`strncpy()`来将字符串的一部分复制到一个新的字符数组中。例如，假设我们有一个字符串`str`，我们想从第5个字符开始复制4个字符到新数组`substr`中，代码如下：
+我们可以使用C语言中的字符串相关函数来提取子串。下面给出几个例子。
 
-```C
-char str[] = "Hello World";
-char substr[5];
-
-strncpy(substr, &str[4], 4);
-// 这里的`&str[4]`表示从第5个字符开始，`4`表示复制的字符数量，可以根据具体需求进行调整
-
-printf("提取的子字符串为：%s\n", substr);
-// 输出：World
+```
+// 定义一个字符串
+char str[] = "Hello World!";
+// 提取从索引为6的子串，长度为5
+char subStr[6];
+strcpy(subStr, str + 6);
+printf("%s", subStr); // 输出 "World!"
 ```
 
-另一种方法是使用`strtok()`函数来将字符串按照指定的分隔符进行分割，然后取出需要的子字符串。例如，我们有一个字符串`str`，其中包含了若干个单词以空格分隔，我们想要提取出第二个单词，代码如下：
-
-```C
-char str[] = "Hello World Goodbye";
-char *token;
-
-// 第一次调用strtok()时，需要传入要分割的字符串和分隔符，随后每次调用时传入NULL
-token = strtok(str, " ");
-
-// 经过一次调用后，token指向第一个单词"Hello"
-// 继续传入NULL，返回的token指向第二个单词"World"
-token = strtok(NULL, " ");
-
-printf("提取的子字符串为：%s\n", token);
-// 输出：World
+```
+// 定义一个字符串
+char str[] = "Programming in C";
+// 提取从索引为12的子串，直到结尾
+char subStr[6];
+strcpy(subStr, str + 12);
+printf("%s", subStr); // 输出 "C"
 ```
 
-还有一种方法是使用指针来直接指向字符串中的某一部分，然后使用`puts()`函数打印出来。例如，我们有一个字符串`str`，我们想要提取出第3个字符到第5个字符之间的子字符串，代码如下：
-
-```C
-char str[] = "Hello World";
-char *substr;
-
-substr = &str[2];
-// substr指向第3个字符"H"
-
-printf("提取的子字符串为：%.*s\n", 3, substr);
-// 输出：llo
+```
+// 定义一个字符串
+char str[] = "This is a string";
+// 提取从索引为2的子串，长度为6
+char subStr[7];
+strncpy(subStr, str + 2, 6);
+subStr[6] = '\0';
+printf("%s", subStr); // 输出 "is a s"
 ```
 
-需要注意的是，以上提取子字符串的方法都不会改变原始字符串，而是将提取的子字符串复制到新的字符串中，因此原始字符串的内容没有变化。
+# 深入了解
 
-# 深入了解提取子字符串
+在C语言中，提取子串的底层实现是通过指针来实现的。当我们使用类似`str + 6`的操作时，实际上是将指针指向原始字符串中对应索引的位置。然后利用字符串拷贝函数来将指定长度的子串复制到目标数组中。
 
-如果想要更加深入地了解提取子字符串的原理，可以深入研究C语言中字符串的内存表示方式。字符串实际上是一个字符数组，使用指针来指向字符串的首地址。因此，当我们提取子字符串时，实际上是在操作指针，将指针指向对应的位置。在内存中，字符串是连续存储的，因此提取子字符串时，只需要计算出起始位置和结束位置对应的指针即可。
+除了上述提到的函数外，C语言还提供了其他一些函数来帮助我们提取子串，如`strnlen()`、`strncpy()`等。熟练掌握这些函数可以帮助我们更加灵活地处理字符串操作。
 
-# 参考链接
+# 参考资料
 
-- [C语言字符串库函数](https://www.runoob.com/c-programming/c-standard-library-functions.html)
-- [指针和数组](https://www.runoob.com/cprogramming/c-pointers-arrays.html)
-- [C语言中的字符串与指针](https://www.jianshu.com/p/a6c7ac0865bb)
+- [C语言标准库 | 提取子串](https://www.cplusplus.com/reference/cstring/strncpy/)
+- [C语言字符串 | 从字符串中提取子串](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [C语言指针 | 指针初探](https://wizardforcel.gitbooks.io/learn-c-the-hard-way-cn/content/chS6.html)
 
-# 查看也可
+# 另请参阅
 
-- [如何处理C语言中的字符串](https://www.example.com/how-to-handle-strings-in-c)
-- [掌握C语言中常用的字符串处理技巧](https://www.example.com/master-common
+- [C语言教程 | 字符串操作](https://www.runoob.com/cprogramming/c-string.html)
+- [C语言函数速查表 | 字符串函数](https://www.tutorialspoint.com/cprogramming/c_string_functions.htm)

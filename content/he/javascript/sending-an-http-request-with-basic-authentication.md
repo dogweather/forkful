@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: שליחת בקשת HTTP עם אימות בסיסי"
-simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Javascript: שליחת בקשת http עם אימות בסיסי"
+simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,57 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-בתכנות ג'אווהסקריפט, ישנם מקרים בהם נדרש לשלוח בקשת HTTP עם אימות בסיסי. זהו תהליך נפוץ בעידן האינטרנט הנוכחי, ובמאמר זה נלמד כיצד לבצע פעולה זאת.
+בשפה המתוכנתת Javascript, ישנן מקרים בהם נדרש לשלוח בקשת HTTP עם אימות בסיסי. זה היכולת להתחבר לשרת עם שם משתמש וסיסמה כדי לבצע פעולות או גישה למידע שמוגבל רק למשתמשים מורשים.
 
-## כיצד לעשות זאת
+במאמר זה, נלמד כיצד לשלוח בקשת HTTP עם אימות בסיסי באמצעות קוד Javascript, כך שתוכלו להשתמש בכך ביכולתיות שלכם כמתכנתי Javascript.
 
-שליחת בקשת HTTP עם אימות בסיסי בתכנות ג'אווהסקריפט אפשרית באמצעות פונקציות של חבילת HTTP. ננסה לשלוח בקשה עם אימות בסיסי לאתר כלשהו, לדוגמה:
+## איך לעשות זאת
+
+כדי לשלוח בקשת HTTP עם אימות בסיסי, נדרשת בקשת AJAX ממשתמש. נתחיל ביצירת אינסטנס חדש לאובייקט XMLHttpRequest עם הקוד הבא:
 
 ```javascript
-// ייבוא חבילת HTTP
-const http = require('http');
-
-// נגדיר את פרטי האימות - שם משתמש וסיסמה
-const username = 'myUsername';
-const password = 'myPassword';
-
-// נבנה את התכנית של הבקשה המכילה את הפרטים עם האימות
-const options = {
-  hostname: 'www.example.com', // שם האתר שנשלח אליו הבקשה
-  port: 80, // פורט המאפשר גישה לאתר
-  path: '/', // הנתיב של העמוד הראשי של האתר
-  method: 'GET', // סוג הבקשה - לדוגמה: GET, POST, PUT, DELETE
-  headers: { // כותרות נוספות שניתן לכלול
-    Authorization: 'Basic ' + Buffer.from(username + ':' + password).toString('base64') // אימות בסיסי
-  }
-};
-
-// נשלח את הבקשה לאתר ונקבל תשובה
-const req = http.request(options, (res) => {
-  console.log(`קוד מצב התגובה: ${res.statusCode}`); // קוד מצב התגובה של האתר
-  // הצגת התוכן של התגובה
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
-});
-
-// אם יש טעות בשליחת הבקשה
-req.on('error', (error) => {
-  console.error(error);
-});
-
-req.end();
+let xhr = new XMLHttpRequest();
 ```
 
-הפלט של הקוד הנ"ל יוצא לדוגמה כך:
+לאחר מכן, נגדיר את אופן הבקשה באמצעות הפונקציה "open", כאשר נכתוב את המכתבת (GET / POST), את הכתובת המתאימה ואת האופציות לאימות בסיסי. לדוגמה:
 
-```
-קוד מצב התגובה: 200
-<!doctype html>
-<html>
-...
+```javascript
+xhr.open('GET', 'https://example.com', true, 'username', 'password');
 ```
 
-נשים לב שבהגדרת הכותרת בבקשה, נציג את האימות הבסיסי באופן נכון על ידי המרת השם משתמש והסיסמה למבנה של Base64. בכוונתיות הוגדר הכתובת של ה
+לבסוף, נשלח את הבקשה עם הפונקציה "send" ונקבל את התשובה בתור טקסט פשוט:
+
+```javascript
+xhr.send();
+console.log(xhr.responseText);
+```
+
+כך אנו שולחים בקשת HTTP עם אימות בסיסי ומקבלים את התוצאה.
+
+## חפירה עמוקה
+
+כפי שראינו בדוגמה, ניתן לשלוח בקשת HTTP עם אימות בסיסי באמצעות חיבור מקשד של AJAX. כמו כן, ניתן להשתמש בגישת Authorization בשביל כתובת האתר לאחר שהכנסת פרטי המשתמש לבקשה. גישת Authorization מאפשרת לכם לקבל גישה למידע מוגבל למשתמשים מסוימים על ידי הכנסת ביטוי סודי בכותרת הבקשה. לדוגמה:
+
+```javascript
+xhr.setRequestHeader('Authorization', 'Basic ' + btoa('username:password'));
+```
+
+את הכותרת Authorization אתם יכולים להשתמש בה בכל בקשה מ

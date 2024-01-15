@@ -1,6 +1,7 @@
 ---
-title:                "C: Slette tegn som samsvarer med et mønster"
-simple_title:         "Slette tegn som samsvarer med et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "C: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,48 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å slette tegn som matcher et mønster er en vanlig oppgave i programmering, spesielt når du arbeider med tekstbehandling. Det kan være nyttig å fjerne spesifikke tegn for å konvertere tekst til et annet format, eller for å rydde opp i uønskede karakterer i en tekststreng.
+Det er ofte nødvendig å søke gjennom og behandle tekststrenger i et program. En vanlig oppgave er å slette bestemte tegn som samsvarer med et visst mønster. Dette kan for eksempel være uønskede spesialtegn eller mellomrom som trenger å fjernes før videre behandling av strengen. Å lære å slette tegn basert på et mønster i C kan være en nyttig kunnskap for å håndtere tekstbehandling i programmering.
 
-## Hvordan
+# Hvordan
 
-Å slette tegn som matcher et mønster kan gjøres ved å bruke funksjoner som "strchr" eller "strpbrk" i C. Her er et eksempel å bruke "strchr" for å fjerne alle forekomster av et spesifikt tegn fra en tekststreng:
+Vi kan bruke funksjonen `strpbrk()` i C for å søke etter et mønster i en streng og slette alle tegn som samsvarer med dette mønsteret. Syntaxen for denne funksjonen er som følger:
+
+```C
+char* strpbrk(const char* str, const char* accept);
+```
+
+Her er `str` strengen som skal søkes gjennom, mens `accept` er et sett av slettbare tegn som skal matches. Funksjonen vil returnere en peker til den første samsvarende tegnet, eller `NULL` hvis mønsteret ikke finnes i strengen.
+
+La oss se et eksempel på hvordan vi kan bruke `strpbrk()` funksjonen for å slette mellomrom og punktum fra en streng:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char string[] = "Hei, verden!";
-  char *result;
-
-  // Finn posisjonen til "e" i tekststrengen
-  result = strchr(string, 'e');
-
-  // Slett alle forekomster av "e" fra tekststrengen
-  while (result != NULL) {
-    memmove(result, result + 1, strlen(result));
-    result = strchr(result, 'e');
-  }
-
-  printf("%s", string);
-
-  return 0;
+    char str[] = "Dette er en streng.";
+    char accept[] = " .";
+    char* ptr = strpbrk(str, accept); // Finner første samsvarnde tegn
+    while (ptr != NULL) {
+        *ptr = '_'; // Erstatter med underscore-tegn
+        ptr = strpbrk(ptr + 1, accept); // Søker etter neste match
+    }
+    printf("%s", str);
+    return 0;
 }
 ```
 
-Output:
-```Hei, vrdn!```
+Dette vil generere følgende output:
 
-I dette eksemplet bruker vi "strchr" til å finne posisjonen til tegnet "e" i tekststrengen, og deretter bruker vi "memmove" til å flytte alle tegnene etter dette tegnet en plass fremover. Dette fjerner effektivt alle forekomster av tegnet "e" fra tekststrengen. 
+```
+Dette_er_en_streng_
+```
 
-## Dypdykk 
+# Deep Dive
 
-Det er flere måter å slette tegn som matcher et mønster på i C, og noen kan være mer effektive enn andre for bestemte situasjoner. Det er også viktig å være forsiktig med hvordan du manipulerer en tekststreng, da feil kan føre til uforutsette resultater eller til og med programkrasj. Det kan være lurt å bruke innebygde funksjoner som "strncpy" eller "strcpy_s" for å unngå bufferoverløp. 
+En nærmere titt på `strpbrk()` funksjonen avdekker at den egentlig er en variant av `strchr()` funksjonen som søker etter ett tegn i en streng. `strpbrk()` søker derimot etter et sett av tegn og er derfor ofte mer praktisk når man skal slette flere tegn.
 
-## Se også
+En annen viktig funksjon for å slette tegn er `strchr()` funksjonen som returnerer en peker til det første forekomsten av et gitt tegn i en streng. Syntaxen for denne funksjonen er som følger:
 
-- [string.h dokumentasjon](https://www.cplusplus.com/reference/cstring/)
-- [C string funksjoner tutorial](https://www.programiz.com/c-programming/c-strings)
-- [Hvordan fjerne tegn fra en tekststreng i C](https://stackoverflow.com/questions/2022078/how-to-remove-characters-from-a-string-in-c)
+```C
+char* strchr(const char* str, int c);
+```
+
+Her er `str` strengen som skal søkes gjennom, mens `c` er tegnet som skal matches. Hvis tegnet ikke finnes i strengen, vil funksjonen returnere `NULL`.
+
+# Se også
+
+- [strpbrk() dokumentasjon på programmerings.net](https://www.programmerings.net/c/function/strpbrk)
+- [strchr() dokumentasjon på microsoft.com](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strchr-strchrn-strchrnp-wmbsinc-memchr-memchrw-memchrw)
+- [Intro til strings i C for nybegynnere (på norsk)](https://www.itstudios.no/lang/no/Strings-Sekvenser.php)

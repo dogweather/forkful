@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Commencer un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Gleam: Commencer un nouveau projet"
 simple_title:         "Commencer un nouveau projet"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes un programmeur cherchant à étendre vos compétences en étudiant un nouveau langage, alors Gleam est fait pour vous ! Gleam est un langage de programmation fonctionnel et compilé conçu pour garantir une meilleure qualité et des erreurs moins fréquentes dans votre code. Avec sa syntaxe simple et élégante, Gleam vous permet de créer des applications robustes et performantes avec facilité.
+Si vous êtes un programmeur à la recherche d'une nouvelle aventure, Gleam pourrait être l'outil idéal pour vous. Il s'agit d'un langage de programmation fonctionnel moderne qui offre une syntaxe élégante, une forte typisation et une vérification statique des erreurs. Avec Gleam, vous pourrez créer des applications robustes et évolutives en toute simplicité.
 
-## Comment faire
+## Comment faire 
 
-Pour commencer un projet en Gleam, il vous suffit de suivre ces étapes simples :
+Maintenant que vous êtes convaincu de l'utilité de Gleam, passons à la partie pratique. Voici quelques exemples de code pour vous aider à démarrer :
 
-1. Installez le compilateur Gleam à l'aide de la commande ```brew install gleam``` pour les utilisateurs Mac ou ```apt-get install gleam``` pour les utilisateurs Linux.
+```
+Gleam Début
+fn main () {
+  laisse s = "Bonjour, monde!"
+  imprimer (s)
+}
+```
 
-2. Créez un nouveau répertoire pour votre projet et naviguez vers celui-ci dans votre terminal.
+Dans ce petit programme, nous avons déclaré une variable "s" avec la chaîne de caractères "Bonjour, monde!" et l'avons imprimée à l'écran. Pour exécuter ce code, vous devez d'abord l'installer en suivant les instructions sur [le site officiel de Gleam](https://gleam.run/). Ensuite, vous pourrez le compiler et l'exécuter en utilisant les commandes suivantes :
 
-3. Initialisez votre projet en utilisant la commande ```gleam new``` suivie du nom de votre projet.
+```
+gleam construit main.gleam
+./ . / main
+```
 
-4. Un nouveau répertoire contenant une structure de projet de base sera créé. Vous pouvez maintenant commencer à écrire votre code dans les fichiers ```src/*.gleam```.
+Et voilà, vous avez écrit et exécuté votre premier code Gleam !
 
-5. Pour compiler votre projet, utilisez la commande ```gleam build``` dans votre terminal.
+## Plongée en profondeur 
 
-## Plongée en profondeur
+Pour ceux d'entre vous qui souhaitent en savoir plus sur Gleam et comment commencer un nouveau projet, voici quelques conseils supplémentaires :
 
-Maintenant que vous savez comment démarrer un projet en Gleam, examinons de plus près les principales caractéristiques du langage :
+1. Assurez-vous de comprendre les concepts de base de la programmation fonctionnelle, tels que les fonctions d'ordre supérieur, la composition et la récursivité.
+2. Familiarisez-vous avec les structures de données de base telles que les listes, les tuples et les dictionnaires.
+3. Explorez les bibliothèques standard de Gleam pour découvrir toutes les fonctionnalités qu'elles offrent.
+4. Utilisez un éditeur de code tel que VS Code avec le plugin Gleam pour une expérience de développement plus fluide.
 
-- Syntaxe élégante : la syntaxe de Gleam est orientée vers la lisibilité et la clarté du code. Cela rend le débogage et la maintenance de votre code plus faciles et plus rapides.
+## Voir aussi 
 
-- Typage statique : Gleam est un langage de typage statique, ce qui signifie que les types sont vérifiés lors de la compilation. Cela vous permet de détecter et de corriger les erreurs plus tôt dans le processus de développement.
+Si vous souhaitez en savoir plus sur Gleam, consultez les liens suivants pour plus d'informations utiles :
 
-- Pattern matching : le pattern matching est une fonctionnalité puissante de Gleam qui vous permet de décomposer des données complexes en parties plus petites et plus faciles à gérer.
-
-- Modules et imports : Gleam utilise des modules pour organiser le code et des imports pour accéder aux définitions de modules externes.
-
-## Voir aussi
-
-Pour en savoir plus sur Gleam et commencer à coder, consultez les ressources suivantes :
-
-- Site officiel de Gleam : https://gleam.run/
-- Documentation : https://gleam.run/book/introduction.html
-- Tutoriels : https://gleam.run/tutorials/
+- [Le site officiel de Gleam](https://gleam.run/)
+- [La documentation officielle de Gleam](https://gleam.run/learn/)
+- [Le dépôt GitHub officiel de Gleam](https://github.com/gleam-lang/gleam)

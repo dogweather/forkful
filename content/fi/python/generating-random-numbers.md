@@ -1,6 +1,7 @@
 ---
-title:                "Python: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Satunnaislukujen generointi"
+html_title:           "Python: Satunnaislukujen generointi"
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -11,63 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Python tarjoaa mahdollisuuden luoda satunnaisia numeroita moniin eri tarkoituksiin, kuten simulaatioihin, peleihin ja salausmenetelmiin. Luonnollisesti meidän tulee ensin oppia, miten näitä numeroita voi luoda.
+Satunnaisten numeroiden luominen on tärkeä osa monia ohjelmointitehtäviä, kuten arpajaisten tai satunnaisen salasanan generointia. Se voi myös olla hyödyllistä testauksessa tai simuloinnissa.
 
-## Kuinka tehdä se
+## Miten
 
-Luodaksemme satunnaisia numeroita käytämme Pythonin `random`-moduulia. Ensin meidän tulee tuoda tämä moduuli käyttöömme:
+Satunnaisia numeroita voidaan luoda Pythonilla käyttämällä random-moduulia. Tässä on esimerkki satunnaisen kokonaisluvun generoinnista väliltä 1-10:
 
 ```Python
 import random
+luku = random.randint(1, 10)
+print(luku)
 ```
 
-Luodessamme yksittäisen satunnaisen numeron käytämme `random.randint()`-funktiota. Tämä funktio ottaa parametreikseen kaksi kokonaislukua, `a` ja `b`, ja palauttaa satunnaisen kokonaisluvun väliltä `a` ja `b` mukaan lukien.
+Tämä koodi tulostaa satunnaisen kokonaisluvun väliltä 1-10 joka kerta, kun sitä suoritetaan.
+
+Voit myös määrittää itse haluamasi alueen generoitaville numeroille. Tässä esimerkissä generoidaan satunnainen liukuluku väliltä 0-1:
 
 ```Python
-numero = random.randint(1, 10)
-print(numero)
+import random
+luku = random.random()
+print(luku)
 ```
 
-Tuloste:
-
-```
-5
-```
-
-Voimme myös luoda listan satunnaisia numeroita käyttäen `random.sample()`-funktiota. Tämä funktio ottaa parametreikseen listan ja halutun määrän satunnaisia numeroita. Se palauttaa listan, joka sisältää satunnaiset numerot halutussa järjestyksessä.
+Voit myös saada listan satunnaisia numeroita käyttämällä random.sample-funktiota. Alla oleva esimerkki generoi 5 ainutlaatuista satunnaisnumeroa väliltä 1-10:
 
 ```Python
-numerot = random.sample([1, 2, 3, 4, 5], 3)
-print(numerot)
+import random
+lukuja = random.sample(range(1, 11), 5)
+print(lukuja)
 ```
 
-Tuloste:
+## Syventyvä tieto
 
-```
-[2, 5, 3]
-```
+Random-moduuli käyttää Mersenne Twister -algoritmia satunnaislukujen generointiin. Tämä algoritmi on yksi suosituimmista satunnaislukujen generointimenetelmistä ja se tuottaa laadukkaita ja tasaisesti jakautuneita satunnaislukuja.
 
-Voimme myös käyttää `random.random()`-funktiota luodaksemme satunnaisen desimaaliluvun väliltä 0 (mukaan lukien) ja 1 (ei mukaan lukien).
-
-```Python
-desimaali = random.random()
-print(desimaali)
-```
-
-Tuloste:
-
-```
-0.7309275634152
-```
-
-## Syventävä tieto
-
-Pythonin `random`-moduuli käyttää Mersenne Twister -nimistä pseudosatunnaislukugeneraattoria luodessaan satunnaisia numeroita. Tämä on yksi yleisimmin käytetyistä pseudosatunnaislukugeneraattoreista, ja se perustuu monimutkaiseen matemaattiseen kaavaan.
-
-On tärkeää ymmärtää, että nämä luodut numerot eivät ole täysin satunnaisia vaan perustuvat kaavaan. Tämän takia niitä ei tule käyttää esimerkiksi turvallisissa salauksissa.
+On tärkeää huomata, että satunnaislukuja ei oikeasti voida luoda tietokoneessa täysin satunnaisesti, vaan ne perustuvat tietokoneen sisäisiin toimintoihin. Tämän vuoksi niitä ei tulisi käyttää salauksessa tai muissa turvallisuustarkoituksissa.
 
 ## Katso myös
 
-- [Pythonin virallinen dokumentaatio satunnaisista numeroista](https://docs.python.org/3/library/random.html)
-- [Interaktiivinen harjoitus luoda satunnaisia numeroita Pythonilla](https://www.w3schools.com/python/ref_random_randint.asp)
-- [Artikkeli satunnaisista numeroista ja niiden käytöstä datan analysoinnissa](https://www.datacamp.com/community/tutorials/numpy-random)
+- Täydellinen lista random-moduulin toiminnoista: https://docs.python.org/3/library/random.html
+- Selitys Mersenne Twister -algoritmista: https://en.wikipedia.org/wiki/Mersenne_Twister

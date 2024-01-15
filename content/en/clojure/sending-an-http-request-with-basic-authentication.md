@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Clojure recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Sending HTTP requests with basic authentication is essential for accessing secure resources on the web. It allows users to provide a username and password for verification before accessing sensitive information.
+
+Sending an HTTP request with basic authentication is a common and essential task in web development. It allows you to securely access and authenticate with APIs or websites that require login credentials.
 
 ## How To
 
-To send an HTTP request with basic authentication in Clojure, we will use the "clj-http" library. First, we need to include it in our project by adding the dependency in our "project.clj" file:
-
 ```Clojure
-:dependencies [[clj-http "3.10.0"]]
+;; First, import the necessary libraries
+(require '[clj-http.client :as client])
+(require '[clojure.edn :as edn])
+
+;; Define the request URL
+(def url "https://example.com/api")
+
+;; Set the basic authentication credentials
+(def username "myusername")
+(def password "mypassword")
+
+;; Specify the authentication type as "basic"
+(def auth {:basic-auth [username password]})
+
+;; Make the HTTP request with basic authentication
+(client/post url
+             {:auth auth})
+
+;; You can also send additional request parameters
+(client/post url
+             {:auth auth
+              :params (edn/read-string "{\"param1\": \"value1\", \"param2\": \"value2\"}")})
 ```
 
-Next, we need to require the library in our namespace:
+Expected output:
 
-```Clojure
-(ns my-project.core
-(:require [clj-http.client :as http]))
 ```
-
-Now, we can use the "basic-auth" function provided by the library to send our request. We need to provide the URL, username, and password as parameters:
-
-```Clojure
-(http/get "https://example.com/secure/resource"
- :basic-auth {:username "myusername" :password "mypassword"})
+{:status 200, :headers {"content-type" "application/json"}, :body "{\"message\": \"Success!\"}"}
 ```
-
-This will result in a response that we can then use in our code. For example, we can print the status code and response body:
-
-```Clojure
-(let [response (http/get "https://example.com/secure/resource"
-                       :basic-auth {:username "myusername" :password "mypassword"})]
-  (println "Response Status:" (:status response))
-  (println "Response Body:" (:body response)))
-```
-
-This will print the status code and the response body of the requested resource. You can also use other HTTP methods such as POST, PUT, and DELETE with basic authentication in a similar manner.
 
 ## Deep Dive
 
-Basic authentication involves sending a username and password in the header of our HTTP request. The server then verifies this information before granting access to the requested resource. This type of authentication is considered to be less secure compared to others, as the username and password are sent in plain text and can be easily intercepted.
+Sending an HTTP request with basic authentication involves adding an "Authorization" header to the request. This header contains the word "Basic" followed by a base64-encoded string of the format "username:password". For example, if the username is "myusername" and the password is "mypassword", the base64-encoded string would be "bXl1c2VybmFtZTpteXBhc3N3b3Jk".
 
-In order to improve security, it is recommended to use HTTPS along with basic authentication. This will encrypt the data being sent and make it more difficult for an attacker to intercept and access the sensitive information. It is also important to use strong usernames and passwords to further enhance security.
+Additionally, some APIs or websites may require the use of HTTPS instead of HTTP for secure communication. In this case, you would simply change the request URL to "https://example.com/api".
 
 ## See Also
 
-- [clj-http library](https://github.com/dakrone/clj-http)
-- [HTTP basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) 
-- [HTTP methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- Clj-http Library: https://github.com/dakrone/clj-http
+- Basic Authentication Wikipedia Page: https://en.wikipedia.org/wiki/Basic_access_authentication

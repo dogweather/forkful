@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Verifica dell'esistenza di una directory."
-simple_title:         "Verifica dell'esistenza di una directory."
+title:                "Verifica dell'esistenza di una cartella"
+html_title:           "Bash: Verifica dell'esistenza di una cartella"
+simple_title:         "Verifica dell'esistenza di una cartella"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,39 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-La verifica dell'esistenza di una directory è un'operazione fondamentale nella programmazione di Bash. La capacità di determinare se una directory specifica esiste o meno può essere utile in molte situazioni, come ad esempio durante la creazione di script di automazione o nella gestione di file.
+In Bash, è comune dover verificare se una directory esiste o meno prima di eseguire determinate operazioni su di essa, come ad esempio creare un nuovo file o spostare file all'interno della directory. In questo articolo vedremo come effettuare questa operazione in modo semplice ed efficiente.
 
 ## Come fare
-
-Per verificare se una directory esiste utilizzando Bash, è possibile utilizzare il comando `test` con l'opzione `-d` seguito dal percorso della directory desiderata. Ad esempio:
-
 ```Bash
-test -d /home/utente/documenti
-```
-
-Se la directory esiste, il comando restituirà un valore "vero" (0). Altrimenti, se la directory non esiste o non è accessibile, il comando restituirà un valore "falso" (1).
-
-Inoltre, è possibile anche utilizzare l'operatore di controllo dei flussi `if`, `then` e `fi` per gestire le azioni da compiere in base al risultato della verifica. Un esempio di codice sarebbe il seguente:
-
-```Bash
-if test -d /home/utente/documenti; then
-  echo "La directory esiste!"
+# Utilizziamo il comando "test" seguito dalla flag "-d" per specificare che vogliamo verificare se una directory esiste
+test -d my_directory
+# Questo comando restituirà un valore "0" se la directory esiste e un valore diverso da "0" se non esiste
+# Possiamo quindi utilizzare la sintassi "if" per eseguire determinate azioni in base al risultato della verifica
+if [ $? -eq 0 ]
+then
+  # La directory esiste, possiamo eseguire le nostre operazioni
 else
-  echo "La directory non esiste."
+  # La directory non esiste, possiamo gestire l'errore
 fi
 ```
 
-Nell'esempio sopra, se la directory esiste, verrà stampato il messaggio "La directory esiste!". In caso contrario, verrà stampato il messaggio "La directory non esiste.".
-
 ## Approfondimento
-
-Per verificare se una directory esiste, Bash esegue in realtà un controllo sui metadati del file. In particolare, il controllo avviene sul bit "directory" dei metadati che viene impostato solo se il file in questione è effettivamente una directory.
-
-È importante notare che la verifica dell'esistenza di una directory mediante il comando `test` non garantisce che la directory non verrà eliminata o spostata in un secondo momento. Pertanto, è importante assicurarsi che il codice migliori venga protetto da eventuali errori dovuti alla non esistenza della directory.
+È importante notare che il comando "test" può anche essere scritto come due parentesi quadre "[ ]" e che il seguito "-eq" significa "uguale a". Inoltre, possiamo utilizzare la flag "-f" per verificare se un file esiste invece che una directory.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/manual/)
-- [Articolo di Wikipedia su Bash](https://it.wikipedia.org/wiki/Bash)
-- [Tutorial su Scripting in Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- Guida di riferimento su Bash: https://www.gnu.org/software/bash/
+- Documentazione del comando "test": https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html

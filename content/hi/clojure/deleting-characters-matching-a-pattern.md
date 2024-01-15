@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: पैटर्न से मिलते हुए अक्षरों को हटाना"
-simple_title:         "पैटर्न से मिलते हुए अक्षरों को हटाना"
+title:                "एक पैटर्न से मेल खाने वाले अक्षरों को हटाना।"
+html_title:           "Clojure: एक पैटर्न से मेल खाने वाले अक्षरों को हटाना।"
+simple_title:         "एक पैटर्न से मेल खाने वाले अक्षरों को हटाना।"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+### Kyun:
+Kya aap kabhi kabhi kisi dhang se likhe hue text mein se kuch characters ko hataana chahte hain? Yeh kisi specific pattern ke anusaar ho sakta hai, jaise ki numbers ya special characters. Iska ek common use case hai text editing aur data cleaning.
 
-विभिन्न प्रोग्रामिंग भाषाओं में एक आम समस्या है कि पैटर्न से मिलते अक्षरों को हटाना। इस लेख में हम डिफरेंट क्लोजर प्रोग्रामिंग भाषा का उपयोग करके इस समस्या का समाधान करने के बारे में बात करेंगे।
+### Kaise Karain:
+Pattern ke anusaar characters ko hataane ke liye, hum "```(remove pred coll)```" function ka istemaal kar sakte hain. Yeh function ek predicate aur ek collection lekar kaam karta hai. Predicate ek function hoti hai jo ek element ko lekar true ya false return karti hai. Aur collection uss text ke pieces ko contain karti hai, jinhe aap edit karna chahte hain.
 
-## कैसे करें
+Yeh function ek naya collection return karegi, jisme se original text ke pieces hata diye jaayenge, jo predicate ke liye true return karte hain. Yeh function ek sath multiple patterns bhi handle kar sakta hai.
 
-आइये स्ट्रिंग से अक्षरों को हटाने के तरीकों को समझें। सबसे पहले, हम एक आसान से कोड बना सकते हैं जिसमें हम स्ट्रिंग से अक्षरों को हटाने के लिए Clojure प्रोग्रामिंग भाषा का उपयोग करके इससे बात कर सकते हैं। नीचे एक सादा उदाहरण है:
-
-```Clojure
-(def my-string "यहां कुछ अक्षर हटाएं")
-(str/replace my-string #"अ" "")
+```
+;;; Text mein se numbers aur special characters hataana
+(remove #(or (number? %) (char? %)) "H3ll0, w0rld!") ; Output: "Helloworld"
 ```
 
-उपरोक्त कोड का आउटपुट निम्न में दिखाया गया है:
+### Gaharaai Mein Jaaen:
+Pattern matching aur text manipulation mein ek important concept hai regular expressions. Clojure mein hum inka istemaal "re-seq" aur "replace" functions ke through kar sakte hain. Iske alawa, hum "remove" function ke "filter" parameter ko bhi ek function ke roop mein define kar sakte hain.
 
-यहां कुच् षर हटाएं
+Regular expressions ke liye "#" dhaatu ka istemaal karna hota hai aur isme "re-pattern" function ka upayog karna padta hai.
 
-अगर आप अधिक डिफरेंट तरीकों से पैटर्न से मिलते अक्षरों को हटाने के बारे में जानना चाहते हैं, तो नीचे और एक उदाहरण दिया गया है जिसमें हम `replace` फंक्शन और `clojure.string` लाइब्रेरी का उपयोग करते हैं:
-
-```Clojure
-(def my-string "पूरा पैटर्न हटाना")
-(str/replace my-string #"ा" "")
+```
+;;; Text mein se vowels hataana
+(remove (filter #(#{"a" "e" "i" "o" "u"} %)) "Hello, world!") ; Output: "Hll, wrld!"
 ```
 
-आउटपुट:
+Aap upar diye gaye examples mein apne liye pattern aur functions define kar sakte hain aur apne specific use cases ke liye customize kar sakte hain.
 
-पुर पतरन हतन
-
-यहां उपरोक्त उदाहरणों में हमने `replace` और `clojure.string` लाइब्रेरी का उपयोग किया है, लेकिन आप `re-sub` फंक्शन के साथ `clojure.regex` लाइब्रेरी का भी उपयोग कर सकते हैं।
-
-## गहराई में खोज
-
-अगर आप `delete-matching` फंक्शन के बारे में अधिक जानकारी प्राप्त करना चाहते हैं, तो आप `clojure.string` और
+### See Also:
+- [Clojure String functions](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/match)
+- [Clojure Regular Expressions](https://clojure.org/reference/regular_expressions)

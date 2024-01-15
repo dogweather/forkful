@@ -1,6 +1,7 @@
 ---
-title:                "Java: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Java: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,46 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kombinere strenger, også kjent som konkatinasjon, er et viktig konsept i Java-programmering. Det lar deg sette sammen flere strenger for å lage en lengre streng, som er nyttig for å lage dynamiske meldinger, visning av data og mye mer.
+Har du noen gang ønsket å kombinere flere tekststrenger til én? Det kan være nyttig for å lage komplekse setninger eller skrive ut variabelverdier sammen med støttetekst. I Java, kan du gjøre dette ved å bruke stringkonkatenasjon (string concatenation). Les videre for å lære hvordan du kan gjøre dette!
 
 ## Hvordan
 
-For å konkatinere strenger i Java, bruker vi "+" -operatøren. Dette lar oss kombinere to eller flere strenger til en enkelt streng. La oss se på et eksempel:
+For å konkatenere flere strenger, kan du bruke "+" -operatøren. Dette vil kombinere de to strengene og returnere en ny streng som inneholder begge. La oss se på et eksempel:
 
 ```Java
-String navn = "Per";
-String alder = "30";
-String informasjon = navn + " er " + alder + " år gammel.";
-System.out.println(informasjon);
+String navn = "Jan";
+String etternavn = "Jansen";
+String fulltNavn = navn + " " + etternavn;
+
+System.out.println(fulltNavn);
 ```
 
-Output:
-```
-Per er 30 år gammel.
-```
+Denne koden vil skrive ut "Jan Jansen" til konsollen. Merk at vi har brukt " " (mellomrom) i mellom navnet og etternavnet for å få et mellomrom mellom dem i den kombinerte strengen.
 
-Vi ser her at vi kombinert tre strenger (variabler) og skapte en lengre streng ved å bruke "+" -operatøren. Merk at mellomrom og tegn må inkluderes i de originale strengene for å få ønsket format i den kombinerte strengen.
-
-## Deep Dive
-
-I tillegg til "+" -operatøren, kan vi også bruke `concat` -funksjonen for å konkatinere strenger i Java. Dette fungerer på samme måte som "+" -operatøren, men vi må huske å legge til en variabel først som skal lagre den kombinerte strengen. Se et eksempel nedenfor:
+Du kan også kombinere strenger med tall. For eksempel:
 
 ```Java
-String navn = "Kari";
-String alder = "25";
-String konkatinert = navn.concat(" er ").concat(alder).concat(" år gammel.");
-System.out.println(konkatinert);
+int alder = 25;
+String beskrivelse = "Jeg er " + alder + " år gammel.";
+System.out.println(beskrivelse);
 ```
 
-Output:
-```
-Kari er 25 år gammel.
+Denne koden vil skrive ut "Jeg er 25 år gammel." til konsollen.
+
+## Dype dypere
+
+Når du bruker "+" -operatøren for å kombinere strenger, må du være oppmerksom på datatypekonvertering. Hvis du prøver å kombinere en streng og et tall, vil Java automatisk konvertere tallet til en streng før de kombineres. Dette er grunnen til at vi kunne bruke "+" -operatøren i eksemplene våre ovenfor uten å konvertere alderen til en streng først.
+
+I tillegg, hvis du bruker "+" -operatøren flere ganger på rad, vil Java utføre concatenation i sekvens. For eksempel:
+
+```Java
+String tekst1 = "Hei ";
+String tekst2 = "på ";
+String tekst3 = "deg!";
+String kombinert = tekst1 + tekst2 + tekst3;
+
+System.out.println(kombinert);
 ```
 
-En annen viktig ting å huske på er at i Java er strenger uforanderlige (immutable), det betyr at hvis vi endrer på en streng, vil det opprettes en helt ny streng i minnet. Dette kan påvirke ytelsen til programmet vårt, spesielt når vi jobber med store strenger. Derfor, hvis du jobber med store mengder av data og kombinering av strenger, kan det være lurt å bruke `StringBuilder`-klassen som er optimalisert for å håndtere slike operasjoner.
+Denne koden vil skrive ut "Hei på deg!" til konsollen.
 
 ## Se også
 
-- [Java dokumentasjon: String concatenation](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- [Tutorialspoint: Java - Strings](https://www.tutorialspoint.com/java/java_strings.htm)
-- [GeeksforGeeks: String concatenation in Java](https://www.geeksforgeeks.org/concatenation-in-java/)
+- [Java String concatenation tutorial](https://www.tutorialspoint.com/java/java_string_concatenation.htm)
+- [Official Java documentation on String concatenation](https://docs.oracle.com/javase/tutorial/java/data/converting.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Go: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Go: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Go"
 category:             "Go"
@@ -9,55 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP em Go?
+## Por que enviar uma solicitação HTTP com Go?
 
-Enviar solicitações HTTP é uma parte essencial do desenvolvimento de aplicativos web em Go. Essas solicitações permitem que nosso aplicativo se comunique com outros servidores ou APIs, tornando possível a troca de dados e informações. Sem enviar uma solicitação HTTP, nosso aplicativo ficaria isolado e incapaz de se integrar ao mundo maior da web.
+Enviar uma solicitação HTTP é uma tarefa comum ao criar aplicativos web ou APIs. Com Go, essa tarefa é facilitada, pois possui uma biblioteca padrão poderosa para lidar com requisições e respostas HTTP.
 
-## Como enviar uma solicitação HTTP em Go?
+## Como fazer?
 
-Para enviar uma solicitação HTTP em Go, precisamos utilizar a biblioteca padrão "net/http". Primeiro, precisamos criar um cliente HTTP, que será responsável por enviar a solicitação. Em seguida, usaremos a função "Get" ou "Post" do cliente para enviar uma solicitação HTTP para um determinado URL. Confira o código de exemplo abaixo:
+Para enviar uma solicitação HTTP com Go, primeiro precisamos importar o pacote "net/http". Em seguida, usamos a função "Get" desse pacote, passando a URL do endpoint desejado como parâmetro. O código ficaria assim:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
-)
+import "net/http"
 
 func main() {
-    // Criando um cliente HTTP
-    client := &http.Client{}
-
-    // Enviando uma solicitação GET para o URL "https://jsonplaceholder.typicode.com/posts/1"
-    response, err := client.Get("https://jsonplaceholder.typicode.com/posts/1")
+    resp, err := http.Get("https://exemplo.com/api/usuarios")
     if err != nil {
-        // Manuseando qualquer erro
-        fmt.Println("Erro ao enviar a solicitação HTTP:", err)
+        // tratamento de erros
     }
-    defer response.Body.Close()
+    defer resp.Body.Close()
 
-    // Lendo o conteúdo da resposta
-    body, err := ioutil.ReadAll(response.Body)
-    if err != nil {
-        // Manuseando qualquer erro
-        fmt.Println("Erro ao ler o corpo da resposta:", err)
-    }
-    // Exibindo o resultado
-    fmt.Println(string(body))
+    // código para lidar com a resposta
 }
-
 ```
 
-Esse código envia uma solicitação GET para o servidor da API JSON Placeholder e imprime o conteúdo da resposta no console. Experimente executar o código e verifique a saída!
+Ao executar esse código, uma solicitação GET será enviada para a URL fornecida e a resposta será armazenada na variável "resp". No exemplo acima, estamos apenas acessando a resposta, mas é possível manipulá-la de diversas maneiras, como converter para um tipo específico de dado ou decodificar dados JSON.
 
-## Aprofundando nos detalhes das solicitações HTTP
+## Aprofundando-se
 
-Existem várias propriedades de uma solicitação HTTP que podemos controlar em Go. Podemos definir o cabeçalho da solicitação para incluir informações adicionais, definir o método da solicitação (como GET, POST, PUT, DELETE, etc.) e até mesmo definir um corpo de dados para ser enviado com a solicitação. Também podemos controlar os cookies e outras configurações da solicitação usando a estrutura "Request" da biblioteca "net/http". Além disso, podemos analisar a resposta retornada pelo servidor para obter mais informações e lidar com diferentes códigos de status. Explore a documentação oficial do pacote "net/http" para obter mais detalhes sobre esses recursos.
+A biblioteca "net/http" oferece muitas opções para customizar e controlar a forma como as solicitações são enviadas e respostas são recebidas. Algumas funções importantes que podemos explorar são:
+
+- "Post": para enviar uma solicitação do tipo POST;
+- "Client": para criar um cliente personalizado com configurações específicas;
+- "Transport": para definir o comportamento do transporte da solicitação, como uso de caching ou proxies.
+
+Recomendamos explorar a documentação oficial da biblioteca para aprender mais sobre esses recursos e como utilizá-los em suas aplicações.
 
 ## Veja também
 
-- Documentação da biblioteca "net/http" do Go: https://golang.org/pkg/net/http/
-- Tutorial de solicitações HTTP em Go: https://medium.com/@masnun/making-http-requests-in-golang-dd123379efe7
-- Exemplo de envio de solicitações HTTP em Go: https://gobyexample.com/http-clients
+- Documentação oficial da biblioteca "net/http": https://pkg.go.dev/net/http
+- Exemplos de uso da biblioteca em projetos reais: https://github.com/golang/go/wiki/Projects#web-applications

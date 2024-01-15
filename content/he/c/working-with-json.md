@@ -1,6 +1,7 @@
 ---
-title:                "C: עובדים עם ג'ייסון"
-simple_title:         "עובדים עם ג'ייסון"
+title:                "עבודה עם json"
+html_title:           "C: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-יצירת קשר עם אפליקציות מקוונות ושימוש במידע מאוחסן אינו אפשרי בלעדי עבודה עם JSON. קבצי JSON מאפשרים לנו לאחזר נתונים מבלי להיות תלויים בתפתחות הטכנולוגיות השונות של אפליקציות נמצאות באינטרנט.
+JSON הוא שפת פריסת מידע פופולרית ונמצאת בשימוש נרחב בתחום התכנות. כשמשתמשים ב־C כדי לעבוד עם JSON, ניתן ליצור יישומים מוצלחים ויעילים שמשתמשים במודל הנתונים הפשוט והקל לקריאה של JSON.
 
-## איך לעשות זאת
+## איך לעבוד עם JSON ב־C
 
-תחילה, נדרוס את הקובץ הנתונים שלנו למחרוזת ונשתמש בפונקציות `json_parse()` ו`json_value_get()` כדי לקרוא וליצור מבנה מתאים לכל ערך בקובץ. לאחר מכן, נשתמש בלולאה `json_object_foreach()` כדי לעבור על כל המפתחות והערכים של המבנה ולהדפיס אותם בפורמט שנרצה. הנה דוגמא של קוד ופלט לקובץ JSON פשוט:
+הליכים פשוטים למדי לעבוד עם JSON ב־C:
+
+### התחברות לספריית JSON
+
+כדי להתחיל לעבוד עם JSON ב־C, תחילה עלינו להוריד ולהתקין את הספרייה הנדרשת. הנה דוגמה של איך ניתן לעשות זאת ב־Ubuntu:
 
 ```C
-#include <stdio.h>
-#include "json-c/json.h"
-
-int main() {
-    FILE *fp = fopen("data.json", "r");
-    if (!fp) {
-        printf("לא ניתן היה לפתוח קובץ!\n");
-        return 1;
-    }
-    char buffer[1024];
-    struct json_object *parsed_json;
-    struct json_object *name;
-    
-    fgets(buffer, 1024, fp);
-    parsed_json = json_tokener_parse(buffer);
-    json_parse(&parsed_json, "name", &name);
-    
-    printf("שם: %s\n", json_value_get_string(name));
-    fclose(fp);
-    return 0;
-}
+sudo apt-get install libjson-c-dev
 ```
 
-פלט:
+### יצירת מופע JSON
 
+כדי ליצור מופע JSON חדש, ניתן להשתמש בפונקציה `json_object_new_object()`. כאן יש דוגמה לכיצד ליצור מופע JSON ולהדפיס אותו:
+
+```C
+json_object *json = json_object_new_object();
+printf("Object created: %s", json_object_to_json_string(json));
 ```
-שם: ים
+
+### גישה לערכים במופע JSON
+
+ניתן לגשת לערכים במופע JSON על ידי שימוש ב־`json_object_object_get()`. כאן תוכלו למצוא דוגמה לכיצד לגשת לערכים במופע ולהדפיס אותם:
+
+```C
+// נתון מופע עם מפתח name וערך John
+json_object *json = json_object_new_object();
+json_object_object_add(json, "name", json_object_new_string("John"));
+
+// גישה לערך של 'name'
+json_object *name = json_object_object_get(json, "name");
+// הדפסת הערך של 'name'
+printf("Name: %s", json_object_get_string(name));
 ```
 
-## צלילה עמוקה
+### קריאת נתונים מ־JSON קיים
 
-עבודה עם JSON יכולה להיות יותר מורכבת כאשר מדובר בטיפוסים מסובכים, כמו מערכים או מבני נתונים מקוננים. ניתן להשתמש בפונקציות נוספות כדי לטפל במקרים אלו, כמו `json_object_array_length()` כדי לקבוע את אורך המערך ו`json_object_object_add()` כדי להוסיף נתונים חדשים למבנה הנתונים. בנוסף, ישנם כלים נוספים כמו JSON Schema ו-JSON Validator שיכולים לעזור בבדיקה ואימות מבנה הנתונים שלנו כדי לוודא שהכל תקין ומתאים.
+כאשר רוצים לקרוא נתונים מ־JSON קיים, נדרש להתחבר לקובץ ה־JSON ולהפעיל את הפעולות הרצויות. הנה דוגמה לכיצד לעשות זאת:
 
-## ראה גם
+```C
+// פתיחת קובץ JSON קיים
+json_object *json = json_object_from_file("example.json");
 
-- [הדרכות שימוש ב
+// גישה לערכים במופע
+json_object *name = json_object_object_get(json, "name");
+// הדפסת הערך של 'name'
+printf("Name: %s", json_object_get_string(name));
+```
+
+### כתיבת נתונים ל־JSON חדש

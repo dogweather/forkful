@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Konwertowanie ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Rust: Konwertowanie ciągu znaków na małe litery"
 simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery jest ważnym elementem programowania w języku Rust. Dzięki temu możemy dokonać porównań i operacji na tekście w sposób niezależny od wielkości liter, co jest bardzo przydatne w wielu zastosowaniach. Dlatego warto poznać techniki konwertowania tekstu na małe litery w Rust.
+Konwersja tekstu na małe litery (lower case) jest częstym zadaniem w programowaniu, które może być potrzebne przy przetwarzaniu danych lub porównywaniu ciągów tekstu. W tym artykule dowiesz się, w jaki sposób dokonać takiej konwersji za pomocą języka Rust.
 
 ## Jak to zrobić
 
-Konwersja tekstu na małe litery w Rust jest bardzo prosta i wykorzystuje funkcję `to_lowercase()`. Przykładowy kod wyglądałby następująco:
+Konwersja tekstu na małe litery w języku Rust jest bardzo prosta i szybka. Można to zrobić za pomocą metody `to_lowercase()`, która jest dostępna dla typu `String` oraz `&str`. Przykładowy kod wyglądałby następująco:
 
 ```Rust
-let text = "PRZYKŁADOWY TEKST";
-println!("{}", text.to_lowercase());
+let text = "PROGRAMOWANIE RUST";
+let lower_case_text = text.to_lowercase();
+println!("{}", lower_case_text);
 ```
 
-Kod ten zwróci nam przekonwertowany tekst, czyli "przykładowy tekst". Funkcja ta działa na typach `String` oraz `&str`, więc możemy ją użyć w zależności od potrzeb. Poniżej przedstawione są dwa przykłady z użyciem obu typów:
+W powyższym przykładzie utworzyliśmy zmienną `text` zawierającą tekst w dużych literach, a następnie przy pomocy metody `to_lowercase()` przekształciliśmy go na tekst w małych literach. Wynik zostanie wyświetlony na ekranie jako `programowanie rust`.
 
-```Rust
-let string = String::from("PRZYKŁADOWY TEKST");
-println!("{}", string.to_lowercase());
+## Głębsze wertowanie
 
-let str = "PRZYKŁADOWY TEKST";
-println!("{}", str.to_lowercase());
-```
-
-Zwrócone zostaną odpowiednio wyniki "przykładowy tekst" dla zmiennej `string` oraz "przykładowy tekst" dla zmiennej `str`.
-
-## Deep Dive
-
-Funkcja `to_lowercase()` wykorzystuje standard Unicode do konwersji tekstu na małe litery. Jest to bardzo ważne w przypadku języków, które używają innych alfabetów niż alfabet łaciński. Ponadto, dzięki wykorzystaniu standardu Unicode, funkcja ta jest odporna na różne kodowania znaków.
-
-W przypadku gdy potrzebujemy dokonać konwersji tylko części tekstu, możemy użyć funkcji `get()` w połączeniu z funkcją `to_lowercase()`. Poniżej przedstawiony jest przykład, w którym konwertowane są tylko pierwsze trzy znaki tekstu:
-
-```Rust
-let text = "PRZYKŁADOWY TEKST";
-println!("{}S", text.get(0..3).unwrap().to_lowercase());
-```
-
-Kod ten zwróci nam wynik "przS", ponieważ tylko pierwsze trzy znaki zostały przekonwertowane na małe litery.
+W praktyce, podczas konwersji tekstu na małe litery może pojawić się kilka problemów, które warto znać. Jednym z nich jest porównywanie ciągów tekstowych różnej wielkości liter. Domyślnie funkcja `to_lowercase()` konwertuje tekst na małe litery na podstawie standardowego zestawu znaków Unicode. Dzięki temu możliwe jest porównywanie tekstów bez względu na wielkość liter. Jednak w niektórych przypadkach może to nie być oczekiwany efekt - na przykład w sytuacji, gdy chcemy zachować wielkość liter w pewnych częściach tekstu. Wtedy warto skorzystać z metody `to_lowercase()` z biblioteki `unicase`, która pozwala na bardziej elastyczną kontrolę nad konwersją tekstu.
 
 ## Zobacz również
 
-- Dokumentacja funkcji `to_lowercase()` w języku Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
-- Przykładowe programy w języku Rust: https://github.com/rust-lang/rust-by-example
-- Kurs programowania w języku Rust: https://www.udemy.com/course/rust-beginner/
+- [Dokumentacja języka Rust - metoda to_lowercase()](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [Biblioteka unicase](https://crates.io/crates/unicase)

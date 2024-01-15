@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Fish Shell: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,30 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Erstellen von temporären Dateien ist oft eine nützliche Technik beim Programmieren. Zum Beispiel können temporäre Dateien verwendet werden, um Zwischenergebnisse zu speichern oder um Dateien für einen bestimmten Zweck zu erstellen, ohne den ursprünglichen Code zu ändern.
+Warum sollte man überhaupt einen temporären Datei erstellen? Nun, es gibt verschiedene Situationen, in denen dies notwendig sein könnte. Zum Beispiel kann es erforderlich sein, temporäre Dateien zu verwenden, um Daten zwischen verschiedenen Programmen zu übertragen oder um vorübergehende Speicherung für bestimmte Daten zu schaffen.
 
-## Wie man eine temporäre Datei erstellt
+## Wie geht's?
 
-Das Erstellen einer temporären Datei ist mit Fish Shell sehr einfach. Verwende einfach den Befehl `mktemp` gefolgt von einem gewünschten Dateinamen oder Muster. Hier ist ein Beispiel:
-
-```Fish Shell
-mktemp temp_file_XXX.txt
-```
-
-Dieser Befehl wird eine temporäre Datei mit dem Namen "temp_file_XXX.txt" erstellen, wobei die XXX durch eine zufällige Zeichenfolge ersetzt werden. Du kannst auch ein bestimmtes Muster angeben, indem du das Zeichen "X" mit anderen Zeichen ersetzt. Zum Beispiel:
+Das Erstellen einer temporären Datei mit Fish Shell ist ziemlich einfach. Dazu können wir das Befehl "mktemp" verwenden, der speziell für diesen Zweck entwickelt wurde.
 
 ```Fish Shell
-mktemp temp_file_XXXX.txt
+
+set temp_file (mktemp) 
+
 ```
 
-Diese Methode wird eine temporäre Datei mit vier zufälligen Zeichen zwischen "temp_file_" und ".txt" erstellen.
+Das obige Beispiel erstellt eine temporäre Datei mit einem zufälligen Namen und speichert den Pfad zur Datei in einer Variablen namens "temp_file". Um jetzt Daten in diese temporäre Datei zu schreiben, können wir den Befehl "echo" verwenden.
 
-## Tiefer eintauchen
+```Fish Shell
 
-Das Erstellen einer temporären Datei mit Fish Shell ermöglicht es dir auch, verschiedene Optionen zu definieren, wie zum Beispiel das Erstellen einer temporären Verzeichnisstruktur oder das Ändern des Präfixes der zufälligen Zeichenfolge. Weitere Informationen findest du in der Fish Shell Dokumentation.
+echo Hallo Welt > $temp_file
+
+```
+
+Dieser Befehl schreibt den Text "Hallo Welt" in die temporäre Datei. Um den Inhalt der Datei anzuzeigen, können wir einfach den Inhalt der Variablen "temp_file" ausgeben.
+
+```Fish Shell
+
+echo $temp_file
+
+```
+
+Dies sollte den Pfad zur temporären Datei ausgeben, zusammen mit dem Text "Hallo Welt", den wir zuvor hinzugefügt haben.
+
+## Tiefer gehende Informationen
+
+Beim Erstellen einer temporären Datei mit Fish Shell gibt es ein paar Dinge zu beachten. "mktemp" erstellt automatisch eine temporäre Datei in einem temporären Ordner, und löscht die Datei automatisch, wenn das Skript beendet wird. Wenn Sie jedoch möchten, dass die temporäre Datei an einem bestimmten Speicherort erstellt wird, können Sie dies mit dem Befehl "mktemp -d" angeben und einen spezifischen Pfad angeben.
+
+Eine weitere Sache zu beachten ist, dass "mktemp" eine zufällige Datei mit einem zufälligen Namen erstellt, was bedeutet, dass jedes Mal, wenn Sie den Befehl ausführen, eine neue Datei erstellt wird. Dies kann nützlich sein, wenn Sie mehrere temporäre Dateien benötigen, aber wenn Sie eine bestimmte Datei immer wieder verwenden möchten, sollten Sie sie mit einem spezifischen Namen erstellen und darauf achten, dass sie nicht überschrieben wird.
 
 ## Siehe auch
 
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
-- Einführung in die Programmierung mit Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Praktische Tipps und Tricks für Fish Shell: https://fishshell.com/docs/current/index.html#tips-and-tricks
+- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current/
+- Kurze Einführung in Fish Shell: https://dev.to/bowmanjd/a-quick-introduction-to-fish-shell-4ge5
+- Weitere Beispiele und Tipps zur Verwendung von Fish Shell: https://medium.com/@rommelvs007/fish-shell-59bd8b9af1f6

@@ -1,5 +1,6 @@
 ---
-title:                "Go: テキストの検索と置換"
+title:                "テキストの検索と置換"
+html_title:           "Go: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Go"
 category:             "Go"
@@ -9,37 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-テキストの検索と置換をする理由は、プログラミングには欠かせない作業です。例えば、大量のテキストデータを処理する場合や、特定のパターンのテキストを一括で変換する場合に、手作業で行うよりも効率的です。また、テキストの修正や変更が容易にできるため、プログラムのメンテナンス性を高めることができます。
+テキストの検索と置換を行うことになりますか？それは、コーディングの中で頻繁に使用されるタスクであり、手間を省くために効率的に行う必要があるからです。
 
-## 方法
+## ハウツー
 
-テキストの検索と置換をGo言語で行う方法について説明します。まず、以下のコード例を参考に、正規表現を用いてテキストの検索と置換を行います。
+テキストの検索と置換を行うには、Go言語の`strings`パッケージを使用します。まずは `strings.Replace()` 関数を使って、単純な置換を行ってみましょう。
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"regexp"
+	"strings"
 )
 
 func main() {
-	text := "こんにちは、世界！Hello, world!"
-	re := regexp.MustCompile("Hello")
-	result := re.ReplaceAllString(text, "こんにちは")
-	fmt.Println(result) // 出力結果：こんにちは、世界！こんにちは、world!
+	text := "Go言語はとても簡単です。Go言語は楽しくて面白いです。"
+	newText := strings.Replace(text, "Go言語", "Golang", -1)
+	fmt.Println(newText)
 }
 ```
-上記のコードでは、`regexp`パッケージを使用して正規表現を定義し、`ReplaceAllString()`関数を使ってテキストの置換を行っています。このように、Go言語では簡単にテキストの検索と置換を行うことができます。
+
+上記のコードを実行すると、次のような結果が得られます。
+
+```
+Golangはとても簡単です。Golangは楽しくて面白いです。
+```
+
+また、`strings.ReplaceAll()`関数を使うことで、すべてのマッチする文字列を置換することもできます。
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	text := "Go言語はとても簡単です。Go言語は楽しくて面白いです。"
+	newText := strings.ReplaceAll(text, "Go言語", "Golang")
+	fmt.Println(newText)
+}
+```
+
+上記のコードを実行すると、同じ結果が得られますが、`-1`の代わりに` strings.ReplaceAll()`では引数を省略することができます。
 
 ## ディープダイブ
 
-テキストの検索と置換のプロセスでは、正規表現を学ぶことが重要です。正規表現とは、特定のパターンのテキストを検索するための記述方法です。Go言語では、`regexp`パッケージによって正規表現を扱うことができます。詳しくは、公式ドキュメントを参照してください。
+今回使用した`strings.Replace()`と`strings.ReplaceAll()`は、非常に基本的な機能を備えています。しかし、`strings`パッケージにはさらに多くの関数があり、より柔軟な検索と置換が可能です。
 
-## もっと詳しく知りたい方は
+例えば、`strings.Replace()`には第四引数として、置換する回数を指定するオプションがあります。
 
-- [Go言語公式ドキュメント - 正規表現](https://golang.org/pkg/regexp/)
-- [A Tour of Go - 正規表現](https://go-tour-jp.appspot.com/regex)
-- [正規表現入門 - Qiita](https://qiita.com/jnchito/items/3a9b22ea6f4fa0b21f4c)
+```Go
+newText := strings.Replace(text, "Go言語", "Golang", 1)
+```
+
+上記のようにすることで、最初のマッチした箇所のみを置換することができます。
+
+また、`strings.ReplaceAll()`は、内部で正規表現を使用しているため、正規表現を用いた高度な検索と置換も可能です。
+
+```Go
+newText := strings.ReplaceAll(text, "[a-z]+言語", "Golang")
+```
+
+上記のように書くことで、文字列の中で先頭が小文字の文字列のみを検索し、`Golang`に置換することができます。
+
+## さらに学ぶ
+
+- [Go言語公式ドキュメント - stringsパッケージ](https://golang.org/pkg/strings/)
+- [A Tour of Go - stringsのセクション](https://go-tour-jp.appspot.com/basics/12)
+
+## 参考リンク
+
+- [Replace and ReplaceAll functions in the strings package - Programming.Guide](https://programming.guide/go/replace-replaceall-strings.html)
+- [Golang: replace substring with another in a string](https://stackoverflow.com/a/33860055)

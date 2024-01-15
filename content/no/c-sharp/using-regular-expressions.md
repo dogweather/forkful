@@ -1,6 +1,7 @@
 ---
-title:                "C#: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "C#: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,50 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Regular expressions, eller regulære uttrykk, er en svært kraftig funksjon i programmering. Det lar oss søke, analysere og manipulere tekst på en mer avansert måte enn ved å bare bruke vanlige strenger.
+Hvorfor skulle noen engasjere seg i å bruke regulære uttrykk? Vel, regulære uttrykk er et utrolig kraftig verktøy som kan hjelpe deg med å finne og manipulere tekst i enkle og komplekse måter. Dette er spesielt nyttig for utviklere som jobber med tekstbehandling, dataanalyse eller testing.
 
-## Hvordan
+## Slik gjør du det
 
-For å bruke regulære uttrykk i C#, må du først importere System.Text.RegularExpressions biblioteket. Deretter kan du bruke Regex-klassen til å definere og utføre søk. La oss se på et eksempel:
+La oss si at du ønsker å finne alle e-postadresser i en tekstfil. Dette kan være en utfordrende oppgave hvis du må lete gjennom hundrevis av linjer med tekst. Men med regulære uttrykk kan du enkelt finne alle forekomster av e-postadresser ved hjelp av et mønster.
+
+La oss se på et eksempel i C#:
 
 ```C#
-string input = "Hei, mitt navn er Anna. Jeg er 25 år gammel.";
-string pattern = "navn (.+). (.*)år gammel";
-
-// Oppretter et nytt Regex-objekt og bruker det til å søke i Input-teksten
+string text = "Dette er en tekst med flere e-postadresser som [email protected] og [email protected]";
+string pattern = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
 Regex regex = new Regex(pattern);
-Match match = regex.Match(input);
+MatchCollection matches = regex.Matches(text);
 
-// Henter ut resultatet ved hjelp av Group-metoden
-string name = match.Groups[1].Value;
-int age = Int32.Parse(match.Groups[2].Value);
-
-// Printer ut resultatet
-Console.WriteLine("Hei, {0}. Du er {1} år gammel.", name, age);
+foreach (Match match in matches)
+{
+    Console.WriteLine(match.Value);
+}
 ```
 
-I dette eksempelet bruker vi et regulært uttrykk til å finne navnet og alderen til en person i en tekststreng. Først definerer vi søke-mønsteret vårt, som består av to grupper: "navn" etterfulgt av alt som kommer etterpå, og "år gammel" etterfulgt av et tall. Deretter bruker vi Regex-klassen til å utføre søket og henter ut resultatet ved hjelp av Group-metoden.
-
-Her er hva koden vår skal produsere som output:
+Dette vil gi følgende output:
 
 ```
-Hei, Anna. Du er 25 år gammel.
+[email protected]
+[email protected]
 ```
 
-## Dypdykk
+La oss bryte ned koden litt:
 
-Regulære uttrykk kan virke forvirrende og vanskelige å forstå i begynnelsen, men med litt øving vil du mestre dem på kort tid. Her er noen nøkkelkonsepter å huske på når du jobber med regulære uttrykk:
+- Først oppretter vi en tekststreng som inneholder e-postadressene vi vil finne.
 
-- "." matcher ethvert tegn unntatt ny linje
-- "^" markerer starten på en linje, mens "$" markerer slutten på en linje
-- "\w" matcher et hvilket som helst alfanumerisk tegn, mens "\d" matcher et hvilket som helst tall
-- "[]" matcher et tegn fra en gitt karakterklasse, for eksempel [a-z] for alle små bokstaver
-- "+" matcher et eller flere forekomster av det forutgående uttrykket
-- "*" matcher null eller flere forekomster av det forutgående uttrykket
+- Deretter definerer vi et mønster som beskriver en vanlig e-postadresse. Dette mønsteret bruker såkalte regex-koder, som representerer forskjellige tegn og mønstre.
 
-Ta deg tid til å eksperimentere med disse og andre konsepter for å bli mer komfortabel med å bruke regulære uttrykk.
+- Vi oppretter et Regex-objekt med mønsteret vårt.
+
+- Deretter bruker vi Matches-metoden til å finne alle forekomster av mønsteret i teksten vår.
+
+- Til slutt går vi gjennom alle kampene og skriver dem ut.
+
+## Dykk dypere
+
+Dette var bare et enkelt eksempel på hvordan du kan bruke regulære uttrykk i C#. Det er mange forskjellige regex-koder og teknikker du kan lære for å gjøre søkene og manipuleringen av tekst enda mer nøyaktig og effektiv.
+
+Et annet nyttig aspekt ved regulære uttrykk er at de kan brukes i flere programmeringsspråk og tekstredigeringsverktøy. Så ved å lære regex i C#, vil du også kunne bruke det i f.eks. Javascript, Java eller Python.
 
 ## Se også
 
-- [Microsofts offisielle dokumentasjon om regulære uttrykk i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [RegExr - en interaktiv nettbasert lekeplass for å eksperimentere med regulære uttrykk](https://regexr.com/)
+- [Fullstendig veiledning til regulære uttrykk i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [En online regex-tester](https://regex101.com/)
+- [Regex Crash Course video](https://www.youtube.com/watch?v=rhzKDrUiJVk)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Clojure: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,45 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie losowych liczb jest niezbędnym elementem programowania w wielu językach, w tym w Clojure. Losowe liczby mogą być wykorzystywane do symulacji, generowania unikalnych identyfikatorów, szyfrowania danych oraz wielu innych zastosowań. W tym artykule dowiecie się, jak wygenerować losowe liczby w Clojure i jak można je wykorzystać.
+Generowanie losowych liczb jest ważną częścią wielu programów i aplikacji. Pozwala to na symulowanie losowych rezultatów, testowanie funkcji i algorytmów oraz w wielu innych zastosowaniach, w których potrzebne są wartości bez ustalonego wzoru.
 
 ## Jak to zrobić
 
-Aby wygenerować losową liczbę w Clojure, można użyć wbudowanej funkcji "rand". Przykładowo, aby wylosować liczbę z przedziału od 1 do 10, należy użyć poniższego kodu:
-
 ```Clojure
-(rand-int 10) ; zwraca losową liczbę całkowitą od 0 do 9
+; Wykorzystanie funkcji rand z biblioteki clojure.core
+(clojure.core/rand)
+
+; Generowanie pojedynczej losowej liczby w zakresie od 0 do 10
+(rand 10)
+
+; Generowanie listy 10 losowych liczb w zakresie od 0 do 100
+(repeat 10 #(rand 100))
+
+; Generowanie losowego indexu dla listy
+(nth (shuffle ["jabłko" "banan" "ananas" "gruszka"]) (rand 4))
 ```
 
-Można także wygenerować losową liczbę zmiennoprzecinkową używając funkcji "rand".
+Sample output:
 
-```Clojure
-(rand) ; zwraca losową liczbę z przedziału od 0 do 1
-```
+6
+(43 92 76 11 25 98 72 64 32 5)
+gruszka
 
-Jeśli potrzebujemy większej precyzji lub chcemy wygenerować liczbę z innego przedziału, można użyć funkcji "rand-nth". Przykładowo, jeśli chcemy wylosować liczbę z przedziału od 50 do 100, możemy użyć poniższego kodu:
+## Głębsza analiza
 
-```Clojure
-(rand-nth (range 50 101)) ; zwraca losową liczbę z przedziału od 50 do 100
-```
-
-Można także wylosować element z listy używając funkcji "rand-nth". Przykładowo:
-
-```Clojure
-(rand-nth ['jabłko 'banan 'truskawka]) ; zwraca losowy element z listy
-```
-
-## Mocne strony
-
-Clojure ma wiele wbudowanych funkcji do generowania losowych liczb, co czyni ją wygodnym wyborem dla programistów. Dodatkowo, Clojure jest językiem funkcyjnym, co oznacza, że generowanie losowych liczb jest deterministyczne i zawsze zwraca ten sam wynik dla tego samego wejścia. Dzięki temu, można dokładnie kontrolować, jakie liczby zostaną wygenerowane.
-
-## Wnikliwe zagłębienie
-
-Clojure korzysta z algorytmu Mersenne Twister do generowania losowych liczb. Jest to algorytm o wysokim stopniu losowości i szybkości, który jest również szeroko stosowany w innych językach programowania.
-
-Warto także pamiętać, że generowanie względnie "losowych" liczb w komputerach nie jest możliwe. Algorytmy używane w językach programowania są jedynie sposobem na symulowanie losowości, a ich wyniki są zawsze przewidywalne.
+W Clojure istnieje wiele sposobów na generowanie losowych liczb. Oprócz już przykładowej funkcji rand, istnieją także funkcje rand-int i rand-nth, które pozwalają na generowanie losowych liczb całkowitych oraz losowych elementów z listy. Istnieje również możliwość ustawienia ziarna (seed), dzięki czemu możliwe jest uzyskanie powtarzalnych rezultatów z losowych generacji.
 
 ## Zobacz także
-
-- [Dokumentacja Clojure o generowaniu liczb losowych](https://clojure.org/reference/numbers#_random_numbers)
-- [Algorytm Mersenne Twister](https://pl.wikipedia.org/wiki/Mersenne_Twister)
+- [Dokumentacja Clojure do funkcji rand](https://clojuredocs.org/clojure.core/rand)
+- [Inne sposoby na generowanie losowych liczb w Clojure](https://stackoverflow.com/questions/38515048/how-to-generate-random-number-in-clojure)
+- [Przydatna aplikacja do testowania funkcji i algorytmów z wykorzystaniem losowych liczb](https://leetcode.com/)

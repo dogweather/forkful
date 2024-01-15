@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Fish Shell: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,34 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מכיוון שפיתוח אפליקציות מחייב שימוש באינטרנט וכתיבת קוד כדי לשלוח בקשות HTTP אל שרתים, זהו נושא חשוב ללמוד עבור מתכנתי Fish Shell.
+לכמה אנשים נדרש לשלוח בקשת HTTP? הגישה הזו נהיה חשובה כאשר ברצונם לקבל מידע מתכניות דרך האינטרנט, לשלוח מידע למסד נתונים, או לאפשר למשתמשים לתקשר עם האתר שלכם.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-תחילה נצטרך להתקין את חבילת HTTPie בפיתוח האתר או היישום שלנו. לאחר התקנה זו, נוכל להשתמש בפקודה הבאה כדי לשלוח בקשת GET לכתובת URL מסוימת:
+כדי לשלוח בקשת HTTP בדרך נוחה וקלה, נוכל להשתמש בפקודת `curl` בתוך פקודת הקשת `Fish Shell`. נלמד איך להשתמש בפקודה ונדגים דוגמאות של פלט מעניין.
 
-```
-fish -c "http GET https://example.com"
-```
+```fish
+# שלוח בקשה GET לדף הבית של גוגל
+curl "https://www.google.com"
 
-כדי לשלוח בקשות אחרות כמו POST, PUT או DELETE, באפשרותנו להוסיף את הפרמטרים המתאימים לפקודה זו. למשל, כדי לשלוח בקשת POST עם נתונים לכתובת URL ספציפית, נוכל להשתמש בפקודה הבאה:
-
-```
-fish -c "http POST https://example.com data='foo'"
-```
-
-בתוך כל פקודה נוכל למצוא את התגובה שקיבלנו מהשרת ולהדפיס אותה. נוכל לעשות זאת על ידי שימוש בפקודת echo כדי להדפיס את הכתובת URL שקיבלנו תשובה ממנה, או להשתמש בפקודת tr כדי לסנן את התגובה ולהדפיס רק את המידע הרלוונטי. לדוגמה:
-
-```
-fish -c "http GET https://example.com | echo 'Response from example.com' | tr -d '{' | tr -d '}')"
+# שלוח בקשה POST עם מידע מסוג JSON
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"username": "admin", "password": "1234"}' \
+  "https://api.example.com/login"
 ```
 
-## מגעים עמוקים
+## חפירה עמוקה
 
-כעת שהשתמשנו בפקודת HTTPie בפעם הראשונה, נוכל לעצב אותה ולהתאים אותה לסגנון הכתיבה החביב עלינו. עבור כל פקודת HTTP, נוכל להשתמש בפרופילים כדי לשמור על הפרמטרים הנדרשים עבור כל פעמים שנרצה לשלוח בקשה. נוכל לשנות את הפרופיל הנוכחי באמצעות פקודת CURL_CONFIG ולהוסיף או למחוק פרמטרים בפרופיל. לדוגמה:
+כמו הכל, ישנם יותר מפקודת `curl` לשליחת בקשת HTTP. נוכל להתאים את הבקשה עם מידע נוסף, כגון פרמטרים, כותרות, וכו'. ניידע גם על כלי נוסף, כמו `wget` ו`httpie`, שיכולים להקל על התקשורת עם שרתי האינטרנט.
 
-```
-fish -c "export CURLIE_PROFILE=myprofile; http GET https://example.com"
-```
+## ראו גם
 
-למיד
+- [דוגמאות של `curl`](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
+- [מדריך לשליחת בקשות HTTP באמצעות `httpie`](https://codeburst.io/httpie-a-manual-for-its-command-line-utilities-9e0a36ac1036)
+- [פקודת `download` של `Fish Shell`](https://fishshell.com/docs/3.0/cmds/download.html)

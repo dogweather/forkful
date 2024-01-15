@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用してHTTPリクエストを送信する"
+html_title:           "Ruby: 基本認証を使用してHTTPリクエストを送信する"
+simple_title:         "基本認証を使用してHTTPリクエストを送信する"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-誰かが基本認証を使用してHTTPリクエストを送信する理由を理解するには、セキュリティが重要であることがわかります。
+## Why 
+なぜHTTPリクエストに基本認証を付けて送信するのか？
 
-## 方法
-````Ruby
+HTTPリクエストに基本認証を付けることで、セキュリティを強化し、アクセス制限をかけることができるためです。
+
+## How To 
+```Ruby 
+require 'uri' 
 require 'net/http'
-require 'json'
 
-url = URI('https://example.com/api/user')
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true # この行は、https接続でのみ必要です
-request = Net::HTTP::Get.new(url)
-request['Authorization'] = 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=' # ユーザー名:パスワードの Base64 エンコード文字列
-response = http.request(request)
-puts JSON.pretty_generate(JSON.parse(response.body))
-````
-実行結果:
+uri = URI('https://example.com') 
+req = Net::HTTP::Get.new(uri) 
+req.basic_auth('username', 'password') 
+res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') {|http| http.request(req)}
+
+puts res.body
 ```
-{
-  "user": {
-    "name": "John",
-    "age": 28
-  }
-}
+　
+```
+Example output:
+200 OK
+<p>Hello World</p>
 ```
 
-## ディープダイブ
-基本認証は、セキュリティのためにデフォルトで有効になっていたが、現在は安全とは見なされていません。そのため、HTTPS接続によるエンドポイントとの通信には、より安全な認証方法を選択することをお勧めします。また、ユーザー名とパスワードを明示的に入力することではなく、環境変数などのセキュリティ設定からデータを取得する方法もあります。
+## Deep Dive 
+HTTPリクエストの`Authorization`ヘッダーには、ユーザー名とパスワードのBase64エンコードを含まれることにより、基本認証が行われます。Basic認証は、セキュリティ性の低い方式であるため、HTTPSを使用して通信を暗号化することが推奨されます。また、セキュリティを強化するためにユーザー名とパスワードを定期的に変更することも重要です。
 
-## 参考リンク
-- [Ruby Net::HTTPガイド](https://docs.ruby-lang.org/ja/2.5.0/Net/HTTP.html)
-- [Base64エンコードについてのRubyドキュメント](https://docs.ruby-lang.org/ja/2.5.0/library/base64.html)
-- [HTTPクライアントの自動認証の詳細（英語）](https://aaronparecki.com/2017/01/23/9/http-client-cert)
-- [Rubyにおける環境変数の扱い方についてのガイド](https://qiita.com/Alex_mhtcode/items/cad4c15c83208e7fdffd)
+## See Also 
+参考リンク:
+
+- [Rubyの公式ドキュメント](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Basic認証についての詳しい解説](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme) 
+- [RubyでのHTTPリクエストの送信例](https://docs.ruby-lang.org/ja/latest/class/Net=3a=3aHTTP.html)

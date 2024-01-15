@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Fish Shell: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP?
+## ¿Por qué utilizar Fish Shell para enviar una solicitud HTTP?
 
-Enviar una solicitud HTTP es una parte crucial en la programación de aplicaciones web. Permite a los usuarios comunicarse con servidores web para obtener información o realizar cambios en un sitio web. Esta es una habilidad esencial para cualquier desarrollador web o de aplicaciones.
+Hay varias razones por las que uno podría querer enviar una solicitud HTTP utilizando Fish Shell. En primer lugar, Fish Shell es un intérprete de comandos rápido y eficiente que puede ayudar a automatizar tareas repetitivas. Además, al usar Fish Shell, uno puede aprovechar sus funciones integradas para formatear y procesar datos, lo que puede ser útil al trabajar con solicitudes HTTP.
 
 ## Cómo hacerlo
 
-En Fish Shell, enviar una solicitud HTTP es fácil y rápido gracias a el comando `curl`. Este comando permite al usuario enviar solicitudes GET, POST, PUT y DELETE. A continuación se muestra un ejemplo de cómo enviar una solicitud GET utilizando `curl`:
-
 ```Fish Shell
-curl www.ejemplo.com
+curl -X GET https://example.com
 ```
 
-Una vez ejecutado este comando, Fish Shell enviará una solicitud GET a la URL especificada y devolverá la respuesta del servidor, ya sea en formato HTML o en formato JSON, dependiendo de la configuración del sitio web.
+La forma más sencilla de enviar una solicitud HTTP utilizando Fish Shell es con el comando `curl`. Al especificar la URL de la solicitud, Fish Shell enviará una solicitud GET y devolverá la respuesta del servidor. Puede utilizar varios parámetros con `curl` para personalizar su solicitud, por ejemplo, puede agregar un encabezado utilizando `-H`, incluir datos en el cuerpo de su solicitud con `-d`, o especificar un método HTTP específico con `-X`.
 
-## Aprofundando
+```Fish Shell
+set -gx response (curl -X POST -d '{"name": "John", "age": 25}' https://example.com/api)
+echo $response
+```
 
-Detrás de escena, enviar una solicitud HTTP con Fish Shell implica usar el protocolo HTTP y TCP/IP. El protocolo HTTP es el lenguaje utilizado para comunicarse con el servidor web, mientras que TCP/IP permite la transferencia de datos entre el cliente y el servidor.
+Otra forma de enviar una solicitud HTTP utilizando Fish Shell es almacenando la respuesta en una variable y luego imprimirla con `echo`. En el ejemplo anterior, estamos enviando una solicitud POST al servidor con un objeto JSON en el cuerpo y almacenando la respuesta en la variable `$response`. Luego, utilizando `echo`, imprimimos la respuesta en la terminal.
 
-Además, Fish Shell también permite a los usuarios enviar solicitudes con encabezados personalizados y enviar datos en formato JSON utilizando el comando `curl`. Estas características avanzadas pueden ser muy útiles en la construcción de aplicaciones complejas.
+## Inmersión profunda
+
+Al enviar una solicitud HTTP utilizando Fish Shell, hay varias variables y funciones útiles que pueden ayudar a procesar la solicitud y respuesta. Por ejemplo, la variable especial `status` contiene el código de estado de la solicitud, lo que puede ser útil para verificar si la solicitud fue exitosa o no. Además, puede acceder a la respuesta del servidor utilizando otras variables como `content_type`, `error`, `location`, entre otras.
+
+También puede utilizar la función `string` para formatear la respuesta del servidor en diferentes formatos como JSON, XML o CSV. Por ejemplo, si desea obtener solo ciertos datos de la respuesta del servidor, puede utilizar `string` y la bandera `-r` para especificar un formato de salida.
 
 ## Ver también
 
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de uso de `curl`](https://www.computerhope.com/unix/curl.htm)
-- [Más información sobre HTTP y TCP/IP](https://www.w3schools.in/internet/web-development-technologies/tcp-ip-vs-http/)
+- [Documentación de Fish Shell](https://fishshell.com/docs/current/)
+- [Curl man page](https://curl.se/docs/manpage.html)
+- [Construyendo una API REST utilizando Fish Shell y cURL](https://medium.com/better-programming/building-rest-api-in-the-best-shell-6fdd9cdefb48)

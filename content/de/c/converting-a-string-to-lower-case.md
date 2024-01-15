@@ -1,6 +1,7 @@
 ---
-title:                "C: String in Kleinbuchstaben umwandeln"
-simple_title:         "String in Kleinbuchstaben umwandeln"
+title:                "Ein String in Kleinbuchstaben umwandeln"
+html_title:           "C: Ein String in Kleinbuchstaben umwandeln"
+simple_title:         "Ein String in Kleinbuchstaben umwandeln"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,42 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Eine häufige Aufgabe beim Programmieren ist es, Texte in Groß- oder Kleinschreibung zu konvertieren. Dies kann aus verschiedenen Gründen notwendig sein, zum Beispiel um eine einheitliche Darstellung zu gewährleisten oder um eine Zeichenkette bei der Verarbeitung zu vergleichen.
+Es mag dir vielleicht nicht wichtig erscheinen, aber das Umwandeln von Groß- zu Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung. Zum Beispiel kann es notwendig sein, Benutzereingaben zu formatieren oder Vergleiche in Kontrollstrukturen durchzuführen. Daher ist es wichtig, zu verstehen, wie man das in C bewerkstelligt.
 
-## Wie es geht
+## Wie geht's
 
-Hier ist ein Beispiel, wie man eine Zeichenkette in Kleinbuchstaben umwandeln kann:
+Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten in C. Eine Option ist die Verwendung der Standardbibliotheksfunktion `tolower()`, die in `ctype.h` deklariert ist. Hier ist ein Beispiel:
+
+```C
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void) {
+  char word[] = "Programmieren";
+
+  for (int i = 0; word[i] != '\0'; i++) {
+    word[i] = tolower(word[i]);
+  }
+
+  printf("Kleinbuchstaben: %s\n", word);
+  return 0;
+}
+```
+
+Dieser Code nutzt eine `for`-Schleife, um jeden Buchstaben in der Zeichenkette `word` in einen Kleinbuchstaben zu konvertieren. Anschließend wird die konvertierte Zeichenkette mit der `printf()`-Funktion ausgegeben.
+
+Eine andere Möglichkeit ist die Verwendung der Funktion `strlwr()`, die in der Bibliothek `string.h` deklariert ist. Hier ist ein Beispiel für die Verwendung:
 
 ```C
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int main(void) {
-    char str[] = "HELLO WORLD";
-    int len = strlen(str);
-    int i;
+  char word[] = "Programmieren";
 
-    for (i = 0; i < len; i++){
-        str[i] = tolower(str[i]);
-    }
+  strlwr(word);
 
-    printf("%s\n", str);
-
-    return 0;
+  printf("Kleinbuchstaben: %s\n", word);
+  return 0;
 }
 ```
 
-Die Ausgabe dieses Codes lautet "hello world". Zunächst importieren wir die benötigten Bibliotheken `stdio.h`, `string.h` und `ctype.h`. Dann definieren wir die Zeichenkette, die wir konvertieren möchten, und ihre Länge. In der `for`-Schleife durchlaufen wir alle Zeichen der Zeichenkette und wenden die Funktion `tolower()` auf jedes Zeichen an, um es in einen Kleinbuchstaben umzuwandeln. Schließlich geben wir die konvertierte Zeichenkette aus.
+Der Unterschied hier ist, dass die Umwandlung in Kleinbuchstaben mithilfe der Funktion `strlwr()` direkt auf die Zeichenkette `word` angewendet wird.
 
-## Tiefergehender Einblick
+## Tiefergehende Infos
 
-Beim Konvertieren von Zeichenketten in Kleinbuchstaben gibt es einige Dinge zu beachten. Zum Beispiel müssen wir sicherstellen, dass die Zeichenkette genügend Speicherplatz hat, um alle konvertierten Zeichen zu speichern. Außerdem kann es nützlich sein zu überprüfen, ob die Zeichenkette bereits nur aus Kleinbuchstaben besteht, um unnötige Konvertierungen zu vermeiden.
+Es ist wichtig zu beachten, dass die Methode, die in diesem Artikel vorgestellt wird, nicht ohne ihre Einschränkungen ist. Zum Beispiel kann die `tolower()`-Methode nur für einzelne Zeichen angewendet werden und nicht auf ganze Zeichenketten. Außerdem kann sie möglicherweise nicht alle Zeichen korrekt in Kleinbuchstaben umwandeln, da sie für ASCII-Zeichen ausgelegt ist.
 
-Eine alternative Möglichkeit, eine Zeichenkette in Kleinbuchstaben zu konvertieren, besteht darin, die Funktion `strlwr()` aus der `string.h` Bibliothek zu verwenden. Diese Funktion arbeitet ähnlich wie die `tolower()` Funktion, wandelt jedoch die gesamte Zeichenkette in Kleinbuchstaben um.
+Für fortgeschrittenere Ansätze kann selbst eine Funktion geschrieben werden, die eine Zeichenkette in Kleinbuchstaben umwandelt. Dies würde es ermöglichen, Sonderzeichen, Unicode-Zeichen und andere Zeichenformate zu berücksichtigen. Es gibt auch Bibliotheken von Drittanbietern, die diese Aufgabe vereinfachen können.
 
 ## Siehe auch
 
-- [Online Compiler, um den Code selbst auszuprobieren](https://www.onlinegdb.com/)
-- [Weitere Informationen zu den Funktionen `strncmp()` und `strlwr()`](https://www.tutorialspoint.com/c_standard_library/c_function_strncmp.htm)
-- [Dokumentation zur `string.h` Bibliothek](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [ASCII-Tabelle](https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
+- [C Zeichenketten](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [ctype.h Referenz](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)

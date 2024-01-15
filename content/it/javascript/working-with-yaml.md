@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Lavorare con YAML"
-simple_title:         "Lavorare con YAML"
+title:                "Lavorare con yaml"
+html_title:           "Javascript: Lavorare con yaml"
+simple_title:         "Lavorare con yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,38 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore Javascript, probabilmente hai sentito parlare di YAML. Ma perché dovresti impegnarti a lavorare con questo linguaggio di marcatura? La risposta è semplice: YAML è uno strumento potente per gestire e organizzare i dati. Con la sua sintassi intuitiva ed elegante, è una scelta popolare per molti sviluppatori.
+Se sei un programmatore Javascript, molto probabilmente conosci già il formato YAML. Ma forse non hai mai pensato a utilizzarlo nei tuoi progetti. Ecco perché dovresti dare una possibilità a YAML: è un formato leggibile dall'uomo e molto utile per organizzare e strutturare dati complessi.
 
-## Come fare
+## Come
 
-Per iniziare a lavorare con YAML in Javascript, dovrai prima installare il pacchetto "js-yaml" utilizzando npm. Una volta installato, puoi utilizzarlo nel tuo codice utilizzando il seguente codice:
+Per utilizzare YAML in Javascript, abbiamo bisogno di un modulo chiamato "js-yaml". Per installarlo, apri il tuo terminale e digita il seguente comando:
 
 ```Javascript
-const yaml = require('js-yaml'); //importa il pacchetto js-yaml
-const fs = require('fs'); //importa il modulo file system
-
-//legge il file YAML
-const data = fs.readFileSync('file.yaml', 'utf8');
-
-//converte il file in un oggetto Javascript
-const yamlObject = yaml.load(data);
-
-//stampa il risultato
-console.log(yamlObject);
+npm install js-yaml
 ```
 
-Il nostro codice sta importando il pacchetto js-yaml e il modulo file system. Quindi stiamo leggendo un file YAML utilizzando il metodo "readFileSync" e lo stiamo convertendo in un oggetto Javascript utilizzando il metodo "load". Infine, il risultato viene stampato sulla console.
+Una volta installato il modulo, possiamo iniziare a utilizzarlo nel nostro codice. Di seguito un esempio di come leggere e scrivere un file YAML utilizzando il modulo "js-yaml":
 
-## Approfondimento
+```Javascript
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-Oltre al semplice caricamento di un file YAML, ci sono molte altre funzionalità utili che js-yaml offre. Ad esempio, puoi serializzare un oggetto Javascript in un documento YAML utilizzando il metodo "dump". Oppure puoi utilizzare il metodo "safeLoad" per caricare un file YAML senza alcun rischio di vulnerabilità.
+// Leggiamo il file YAML
+const doc = yaml.safeLoad(fs.readFileSync('miofile.yml', 'utf8'));
 
-Inoltre, js-yaml è in grado di gestire tipi personalizzati, mantiene l'ordine dei dati e supporta la struttura di ereditarietà Emmet.
+// Modifichiamo i dati letti
+doc.name = 'Nuovo nome';
+doc.age = 30;
 
-Per ulteriori informazioni su come utilizzare al meglio questo pacchetto, consulta la sua [documentazione ufficiale](https://www.npmjs.com/package/js-yaml).
+// Scriviamo il file YAML modificato
+fs.writeFileSync('miofile.yml', yaml.safeDump(doc));
+```
+
+L'output ottenuto sarà un file YAML con i dati modificati, pronto per essere utilizzato nel tuo progetto!
+
+## Deep Dive
+
+Per coloro che vogliono approfondire la conoscenza di YAML, ci sono molte altre funzionalità e opzioni disponibili. Ad esempio, il modulo "js-yaml" ci permette di impostare diversi opzioni durante la lettura e la scrittura dei file YAML, come ad esempio una maggiore sicurezza dei dati o una formattazione personalizzata.
+
+Inoltre, è importante notare che YAML supporta anche l'utilizzo di commenti nei file, rendendolo ancora più flessibile e facile da leggere per gli esseri umani.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di js-yaml](https://www.npmjs.com/package/js-yaml)
-- [Tutorial introduttivo a YAML per sviluppatori Javascript](https://medium.com/inmersiv/what-is-yaml-ea1c63899a5c)
-- [Guida completa a YAML](https://www.codecademy.com/learn/learn-yaml)
+- [Documentazione ufficiale di JS-YAML](https://github.com/nodeca/js-yaml)
+- [Tutorial sul formato YAML](https://www.tutorialspoint.com/yaml/index.htm)
+- [Un'introduzione a YAML per programmatori Javascript](https://lucasoft.blog/cosa-e-yaml-per-che-cosa-si-usa)

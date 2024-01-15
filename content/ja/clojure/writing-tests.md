@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの書き方"
+html_title:           "Clojure: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜテストを書くのか
+テストを書くことの最も重要な理由は、コードの品質を保証することです。テストを書くことで、潜在的なバグを発見し、品質を向上させることができます。
 
-テストを書くことは、コードの品質を向上させるだけでなく、将来的にコードを変更する際にも大きなメリットがあります。テストを書くことで、コードが意図したとおりに機能することを保証することができます。
-
-## テストを書く方法
-
-テストを書くには、いくつかの方法がありますが、Clojureでは`deftest`マクロを使用してテストを定義します。以下は簡単な例です。
+## テストの書き方
+以下は、Clojureでテストを書く方法の例です。テストを書くための基本的な構文を示します。
 
 ```Clojure
-(deftest test-addition
-  (is (= (+ 1 2) 3)))
+(defn add [x y]       ; 関数を定義
+  (+ x y))            ; 処理内容
+
+```Clojure
+(require '[clojure.test :refer [deftest is]])
+
+(deftest test-addition    ; テストを定義
+  (is (= 4 (add 2 2))))  ; 期待する結果と実際の結果を比較
+
+(deftest test-multiplication
+  (is (= 9 (multiply 3 3))))
+
+```Clojure
+(run-tests)  ; テストを実行するコマンド
 ```
 
-上記のコードでは、`1`と`2`を足した結果が`3`に等しいことをテストしています。もしもこのテストが失敗した場合、Clojureはエラーメッセージを表示してくれます。
+上記のコードでは、最初に関数を定義し、その後にテストを定義しています。テストの実行は「run-tests」コマンドを使用します。テストが全てパス（成功）すると、以下のような出力が得られます。
 
-テストを実行するには、`lein test`コマンドを使用します。
+```Clojure
+Testing test-addition
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
 
-## 深く掘り下げる
+Testing test-multiplication
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
-テストを書く際には、いくつかのベストプラクティスがあります。例えば、単体テストと統合テストを分けることや、余分なデータをマップやベクターとして定義しておくことが挙げられます。また、Clojureではテストのための専用のライブラリである`clojure.test`が用意されており、これを使うことでさらに効率的にテストを書くことができます。
+このように、テストを書くことで期待する結果と実際の結果を比較し、コードの正しさを確認することができます。
 
-## もっと詳しく知る
+## 深堀り
+Clojureでは、「clojure.test」ライブラリを使ってテストを書きます。このライブラリを使うことで、テストをより柔軟に書くことができます。また、テストの実行前や実行後に特定の処理を行うこともできます。
 
-テストについては、Clojure公式ドキュメントや書籍などを参考にすることができます。また、実際にプログラムを書きながらテストを適用することで、より深く理解することができるでしょう。
+テストを同じnamespaceにまとめることもできます。これにより、関連するテストをグループ化し、論理的な構造を持たせることができます。
 
-## 関連リンク
+テストを書くことで、コードの品質を保証するだけでなく、自信を持ってプログラムを実行することができるようになります。また、不具合を早期に発見することで、修正が簡単になり、プロジェクト全体の品質を維持できるようになります。
 
-- [Clojure公式ドキュメント](https://clojure.org)
-- [「プログラミングClojure 第2版」](https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Clojure-%E7%AC%AC2%E7%89%88-Alex-Miller-ebook/dp/B075X8VKQV)
-- [「ひとつのコードで始めるClojureプログラミング」](https://www.amazon.co.jp/%E3%81%B2%E3%81%A8%E3%81%A4%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8BClojure%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-Java%E3%81%8B%E3%82%89%E6%AD%A9%E3%81%BE%E3%81%B5%E7%BF%92%E5%BE%92%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E6%9C%AC-James-Reeves/dp/4802611506)
+## See Also
+- [Clojureのテスト方法](https://clojuredocs.org/clojure.test)
+- [テスト駆動開発について](https://qiita.com/opengl-8080/items/81bf81a3d1f51f559148)

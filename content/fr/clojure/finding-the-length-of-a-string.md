@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Trouver la longueur d'une chaîne de caractères."
-simple_title:         "Trouver la longueur d'une chaîne de caractères."
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "Clojure: Trouver la longueur d'une chaîne de caractères"
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Si vous êtes curieux de connaître la taille d'une chaîne de caractères en Clojure, alors cet article est fait pour vous ! De manière générale, savoir trouver la longueur d'une chaîne de caractères peut être utile dans de nombreux cas de programmation, que ce soit pour la manipulation de données ou la vérification de la validité d'une entrée utilisateur.
 
-L'une des tâches les plus courantes lors de la programmation est de trouver la longueur d'une chaîne de caractères. Que vous soyez un débutant ou un développeur chevronné, vous devrez souvent effectuer cette opération dans vos projets. Dans cet article, nous allons explorer comment trouver la longueur d'une chaîne en utilisant Clojure.
+## Comment faire
+Pour trouver la longueur d'une chaîne de caractères en Clojure, on peut utiliser la fonction `count` qui renvoie le nombre de caractères dans une chaîne. Voici un exemple :
 
-# Comment faire
-
-La première étape pour trouver la longueur d'une chaîne en Clojure est de connaître la syntaxe de base pour les chaînes de caractères. En Clojure, une chaîne est représentée entre guillemets (") et peut contenir des caractères, des nombres, des espaces et des symboles spéciaux.
-
-Voici un exemple de déclaration de chaîne en Clojure:
-
-```Clojure
-(def my-string "Bonjour le monde")
+```Clojure 
+(count "Bonjour") 
 ```
 
-Maintenant que nous avons une chaîne définie, nous pouvons utiliser la fonction `count` pour trouver sa longueur. Cette fonction renvoie simplement le nombre de caractères dans une chaîne donnée.
+Cet exemple renverra la valeur 7, car la chaîne "Bonjour" contient 7 caractères.
 
-Voici un exemple de code complet pour trouver la longueur d'une chaîne en Clojure:
+On peut également utiliser `str` pour créer une chaîne à partir d'une liste de caractères et ainsi obtenir sa longueur. Voici un autre exemple :
 
-```Clojure
-(def my-string "Bonjour le monde")
-(count my-string) ; renvoie 17
+```Clojure 
+(count (str \C \l \o \j \u \r \e))
 ```
 
-Comme vous pouvez le voir, c'est assez simple et direct. Vous pouvez également utiliser cette méthode pour trouver la longueur d'une chaîne stockée dans une variable ou directement en utilisant la chaîne elle-même.
+Cet exemple renvoie également la valeur 7, car la chaîne "Cljoure" contient 7 caractères.
 
-# Plongée en profondeur
+## Plongée en profondeur
+Il est important de noter que la fonction `count` peut également être utilisée sur d'autres types de données en Clojure, tels que les listes, les vecteurs ou les ensembles. Elle renverra alors la taille de ces structures de données. Par exemple :
 
-Il est important de comprendre comment Clojure traite les chaînes pour comprendre pourquoi la fonction `count` fonctionne pour trouver la longueur d'une chaîne. En Clojure, une chaîne est en fait une séquence, ce qui signifie qu'elle est composée de plusieurs éléments indexés. La fonction `count` compte tout simplement le nombre d'éléments dans cette séquence, nous donnant ainsi la longueur de la chaîne.
-
-Une autre méthode pour trouver la longueur d'une chaîne en utilisant Clojure est d'utiliser la fonction `str` pour la concaténer avec une chaîne vide, puis d'utiliser `count` comme précédemment.
-
-Voici un exemple de code utilisant cette méthode alternative:
-
-```Clojure
-(def my-string "Bonjour le monde")
-(count (str my-string "")) ; renvoie 17
+```Clojure 
+(count [1 2 3]) ;; renvoie 3 
+(count #{:a :b :c}) ;; renvoie 3 
 ```
 
-# Voir aussi
+De plus, `count` peut également être utilisée en combinaison avec d'autres fonctions en Clojure, telles que `map` ou `reduce`, pour effectuer des opérations sur chaque élément d'une chaîne ou d'une structure de données. Cela permet une grande flexibilité dans la manipulation de données et dans l'obtention de la longueur d'une chaîne.
 
-Voici quelques liens utiles pour en savoir plus sur les chaînes en Clojure:
-
-- Documentation officielle sur les chaînes en Clojure : https://clojure.org/reference/strings
-- Un tutoriel vidéo expliquant les bases des chaînes en Clojure : https://www.youtube.com/watch?v=eRbRD5lvGUc
-
-Merci d'avoir lu cet article sur la façon de trouver la longueur d'une chaîne en utilisant Clojure. Nous espérons que cela vous sera utile dans vos futurs projets de programmation !
+## Voir aussi
+- Documentation officielle de la fonction `count` : https://clojuredocs.org/clojure.core/count
+- Article sur la manipulation de chaînes de caractères en Clojure : https://www.baeldung.com/clojure-strings

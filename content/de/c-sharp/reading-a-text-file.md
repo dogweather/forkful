@@ -1,6 +1,7 @@
 ---
-title:                "C#: Eine Textdatei lesen"
-simple_title:         "Eine Textdatei lesen"
+title:                "Das Lesen einer Textdatei"
+html_title:           "C#: Das Lesen einer Textdatei"
+simple_title:         "Das Lesen einer Textdatei"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,54 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Das Lesen von Textdateien ist eine grundlegende und wichtige Fähigkeit in der Programmierung. Es ermöglicht uns, Informationen aus einer externen Datei in unser Programm zu laden und sie zu verarbeiten. Dies kann hilfreich sein, um große Datenmengen zu verarbeiten oder um die Benutzerfreundlichkeit unserer Anwendung zu verbessern, indem wir Konfigurationen oder Einstellungen aus einer Datei lesen.
 
-## Wie macht man es?
-Das Lesen von Textdateien in C# ist relativ einfach. Wir verwenden dazu die Klasse `StreamReader` aus dem Namespace `System.IO`. Zunächst müssen wir einen `StreamReader`-Objekt erstellen und ihm den Pfad zur Datei übergeben, die wir lesen möchten. Anschließend können wir die Methode `ReadLine()` verwenden, um jeweils eine Zeile aus der Datei zu lesen. Wir schreiben einfach eine Schleife, die solange läuft, bis das Ende der Datei erreicht ist, und jedes Mal die gelesene Zeile ausgibt. Hier ist ein Beispielcode:
+Wenn du schon einmal eine Textdatei gelesen hast, weißt du, wie nützlich es ist, Informationen aus einer Datei auszulesen. In diesem Artikel werden wir besprechen, wie du in C# eine Textdatei lesen kannst.
+
+## Wie geht das?
+
+Um eine Textdatei in C# zu lesen, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung der `StreamReader`-Klasse. In diesem Beispiel zeigen wir, wie du mithilfe der `StreamReader`-Klasse eine Textdatei zeilenweise auslesen kannst:
 
 ```C#
 using System;
 using System.IO;
 
-namespace LesenTextdatei
+StreamReader reader = new StreamReader("beispiel.txt");
+
+while (!reader.EndOfStream)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Erstelle einen StreamReader und weise ihm den Pfad zur Datei zu
-            StreamReader reader = new StreamReader(@"C:\MeineDatei.txt");
-            
-            // Schleife, die solange läuft bis das Ende der Datei erreicht ist
-            while (!reader.EndOfStream)
-            {
-                // Lese eine Zeile aus der Datei und gib sie aus
-                string line = reader.ReadLine();
-                Console.WriteLine(line);
-            }
-            
-            // Schließe den StreamReader
-            reader.Close();
-            
-           Console.ReadKey();
-        }
-    }
+    Console.WriteLine(reader.ReadLine());
+}
+
+reader.Close();
+```
+
+Nun nehmen wir an, unsere Textdatei `beispiel.txt` enthält die folgenden Zeilen:
+
+```
+Dies ist eine Beispieltextdatei.
+Hier sind ein paar Zeilen.
+Und hier noch eine weitere Zeile.
+```
+
+Wenn wir unser oben genanntes Beispielprogramm ausführen, wird die folgende Ausgabe erzeugt:
+
+```
+Dies ist eine Beispieltextdatei.
+Hier sind ein paar Zeilen.
+Und hier noch eine weitere Zeile.
+```
+
+Die `StreamReader`-Klasse ermöglicht es uns, eine Textdatei zu öffnen, zu lesen und am Ende wieder zu schließen.
+
+## Tiefentauchen
+
+Es gibt noch viele weitere Methoden und Möglichkeiten, um Textdateien in C# zu lesen. Wir können auch die `File`-Klasse verwenden, um beispielsweise den gesamten Inhalt einer Datei auf einmal auszulesen und in eine Liste zu speichern.
+
+```C#
+using System;
+using System.IO;
+
+List<string> lines = new List<string>(File.ReadAllLines("beispiel.txt"));
+
+foreach (var line in lines)
+{
+    Console.WriteLine(line);
 }
 ```
 
-Die Ausgabe wird je nach Inhalt der Textdatei unterschiedlich sein. Hier ist ein Beispiel für eine Textdatei mit den Inhalten "Hallo" und "Welt":
+Dies würde die gleiche Ausgabe erzeugen wie das vorherige Beispiel. Beachte jedoch, dass wir hier nicht die `EndOfStream`-Methode verwenden müssen, da die `File`-Klasse den gesamten Inhalt der Datei auf einmal liest.
 
-```shell
-Hallo
-Welt
-```
-
-## Tiefer in die Materie eintauchen
-Um eine Textdatei in C# zu lesen, gibt es einige zusätzliche Dinge zu beachten. Zum Beispiel müssen wir darauf achten, die richtige Codierung (z.B. UTF-8 oder ANSI) zu verwenden, um die Datei richtig zu lesen. Auch die Verwendung von `using`-Blöcken ist empfehlenswert, um sicherzustellen, dass der `StreamReader` ordnungsgemäß geschlossen wird, selbst wenn während des Lesens eine Ausnahme auftritt.
-
-Eine weitere Sache, die man wissen sollte, ist, wie man Daten aus einer Textdatei verarbeitet. Man kann beispielsweise eine Liste erstellen und jeweils die gelesenen Zeilen in die Liste hinzufügen, um später darauf zuzugreifen.
+Es gibt noch viele weitere Details über das Lesen von Textdateien in C#, die wir hier nicht abdecken konnten. Wenn du mehr darüber erfahren möchtest, empfehlen wir dir, die offizielle Dokumentation durchzulesen und mit eigenen Experimenten zu lernen.
 
 ## Siehe auch
-- [Dokumentation von StreamReader (Microsoft)](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-5.0)
-- [C# Tutorial: Lesen von Textdateien (Tutorialspoint)](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
-- [Die verschiedenen Codierungen verstehen (Microsoft)](https://docs.microsoft.com/de-de/dotnet/standard/base-types/character-encoding)
+
+- [C# Dokumentation - Lesen von Textdateien](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file)
+- [C# Dokumentation - StreamReader-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-5.0)
+- [C# Dokumentation - File-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=net-5.0)

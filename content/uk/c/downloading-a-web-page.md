@@ -1,5 +1,6 @@
 ---
-title:                "C: Завантаження веб-сторінки"
+title:                "Завантаження веб-сторінки"
+html_title:           "C: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "C"
 category:             "C"
@@ -9,48 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Зачем
+## Чому
+Попереднє завантаження веб-сторінки може бути корисним для отримання доступу до інформації, яка відображається в Інтернеті, та використання її в програмах або скриптах.
 
-Завантаження веб-сторінки може бути необхідним для багатьох різноманітних речей у програмуванні на C, включаючи отримання корисної інформації з Інтернету, роботу зі зображеннями або просто для вивчення технологій роботи з мережами.
-
-# Як
-
-Для початку завантаження сторінки нам потрібно знайти URL-адресу сторінки, яку ми хочемо завантажити. Це можна зробити за допомогою функції `gethostbyname()`, яка зчитує інформацію про хост з допомогою DNS. Приклад коду:
+## Як це зробити
+Використовуючи мову програмування C, можна з легкістю завантажити сторінку з Інтернету. Нижче наведено приклад коду для завантаження сторінки та його виконання:
 
 ```C
-char *url = "https://example.com";
-struct hostent *website = gethostbyname(url);
+#include <stdio.h>
+#include <stdlib.h>
+#include <curl/curl.h>
+
+int main(void)
+{
+  CURL *curl;
+  FILE *fp;
+  CURLcode res;
+  char *url = "https://www.example.com/";
+  char outfilename[FILENAME_MAX] = "page.html";
+
+  curl = curl_easy_init();
+  if (curl)
+  {
+    fp = fopen(outfilename, "wb");
+    curl_easy_setopt(curl, CURLOPT_URL, url);
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+    fclose(fp);
+  }
+  return 0;
+}
 ```
 
-Потім ми можемо використовувати функцію `connect()`, щоб встановити з'єднання з сервером. Після цього ми можемо передати HTTP-запит на завантаження сторінки. Приклад коду:
+Як результат, цей код завантажує сторінку в HTML-файл з назвою "page.html".
 
-```C
-int connection = socket(AF_INET, SOCK_STREAM, 0);
-struct sockaddr_in server_addr;
-server_addr.sin_family = AF_INET;
-server_addr.sin_addr.s_addr = INADDR_ANY;
-server_addr.sin_port = htons(80);
-connect(connection, (struct sockaddr*)&server_addr, sizeof(server_addr));
-char *request = "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n";
-send(connection, request, strlen(request), 0);
-```
+## Глибоке погруження
+Іноді, для більш складних завдань, потрібно поглибитись у технічні деталі попереднього завантаження сторінки. Наприклад, ви можете налаштувати CURL, щоб додатково передати параметри запиту або обробити дані, що повертаються з сервера. Для цього варто заглянути до офіційної документації CURL та прочитати про можливі опції та функції.
 
-Після того, як ми відправили запит, ми можемо отримати відповідь від сервера у вигляді байтів, які потрібно обробити і вивести у зрозумілому форматі. Приклад коду:
-
-```C
-char buffer[1024];
-recv(connection, buffer, sizeof(buffer), 0);
-printf("%s", buffer);
-```
-
-В результаті ви отримаєте вивід сторінки у терміналі.
-
-# Глибші деталі
-
-В цьому прикладі ми завантажили лише базову сторінку з HTTP-заголовком `GET / HTTP/1.1`. Але існує багато інших методів і типів запитів, які можуть бути корисними для різних веб-комунікацій. Також важливо пам'ятати про обробку помилок і використання захисних механізмів при роботі з мережами.
-
-# Дивись також
-
-- [Офіційна документація з функцій для мережевого програмування у C](http://man7.org/linux/man-pages/man3/index.html#name_section)
-- [Приклади коду для завантаження сторінок за допомогою C](https://www.geeksforgeeks.org/downloading-a-webpage-using-urllib-module/)
-- [Поради по роботі з мережевими даними у C](https://www.gnu.org/software/libc/manual/html_node/Network-Addresses.html#Network-Addresses)
+## Дивіться також
+- [Офіційна документація CURL](https://curl.se/docs/)
+- [Приклади коду для завантаження веб-сторінок в C](https://www.includehelp.com/c-programs/download-web-page.aspx)
+- [Курс "Програмування на мові C" на Codeacademy](https://www.codecademy.com/learn/learn-c)

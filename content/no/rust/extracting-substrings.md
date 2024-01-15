@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Ekstrahere substrings"
-simple_title:         "Ekstrahere substrings"
+title:                "Ekstrahering av understrenger"
+html_title:           "Rust: Ekstrahering av understrenger"
+simple_title:         "Ekstrahering av understrenger"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,39 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor ville noen ønske å utvinne substrings? Det er flere grunner til å gjøre dette i Rust. En av de vanligste grunnene er å manipulere tekststrenger mer effektivt og enkelt. Ved å utvinne substrings kan du få tilgang til og endre deler av en tekststreng uten å måtte kopiere hele strengen.
+Å utvinne substrings er en viktig del av programmering, spesielt når vi arbeider med tekstdokumenter og data. Dette gjør det mulig å hente ut spesifikke deler av en tekststreng, for eksempel en enkelt bokstav eller et ord, og bruke det til ulike formål i koden vår.
 
 ## Hvordan
 
-For å utvinne substrings i Rust, kan du bruke "slice" -operatøren ([..]) eller metoden .split_at (). Her er et eksempel på å bruke slice-operatøren:
+Kodesnutter i Rust brukes til å trekke ut substrings ved hjelp av det innebygde biblioteket "String". La oss se på et eksempel på hvordan dette kan gjøres:
 
-```rust
-let original = "Dette er en tekststreng";
-let substring = &original[6..13]; // "er en t"
+```Rust
+let tekst = "Dette er en eksempeltekst";
+
+let substring_1 = &tekst[0..5]; // Trekker ut de første 5 tegnene fra teksten
+println!("{}", substring_1); // Output: Dette
+
+let substring_2 = &tekst[12..19]; // Trekker ut tegnene mellom indeks 12 og 19 fra teksten
+println!("{}", substring_2); // Output: eksempel
+
+let substring_3 = &tekst[20..]; // Trekker ut alle tegn fra index 20 og utover
+println!("{}", substring_3); // Output: tekst
+
 ```
 
-Metoden .split_at () gjør det mulig å utvinne en tekststreng på et bestemt indeks:
+Vi kan også bruke metoden "split()" for å dele opp teksten basert på en gitt separator, som for eksempel mellomrom eller komma.
 
-```rust
-let original = "Dette er en tekststreng";
-let (start, end) = original.split_at(9); // start = "Dette er ", end = "en tekststreng"
+```Rust
+let tekst = "Dette er en, annen tekst";
+
+let substring_1 = tekst.split("er"); // Deler opp teksten ved hvert forekomst av "er"
+for substr in substring_1 {
+    println!("{}", substr); // Output: D ett , , n , , n tekst
+}
+
+let substring_2 = tekst.split(", "); // Deler opp teksten ved hvert forekomst av et komma etterfulgt av et mellomrom
+for substr in substring_2 {
+    println!("{}", substr); // Output: Dette er en , annen tekst
+}
 ```
 
-## Deep Dive
+## Dypdykk
 
-Når du utvinner en substring i Rust, blir det opprettet en ny tekststreng som deler den samme minneplassen som den opprinnelige strengen. Dette betyr at å utvinne substringer er en effektiv måte å håndtere tekst på, da det ikke krever mer minne.
+Når det gjelder substrings i Rust, er det viktig å merke seg at det å trekke ut en del av en tekststreng resulterer i en ny tekststreng som er en referanse til den opprinnelige tekststrengen. Dette kan føre til uforutsette endringer i koden og derfor bør man være forsiktig med å manipulere substrings for mye.
 
-En annen nyttig funksjon i Rust er .get () -metoden, som gjør det mulig å hente en enkelt karakter fra en tekststreng basert på indeksen:
-
-```rust
-let original = "Dette er en tekststreng";
-let character = original.get(5); // character = Some('e')
-```
-
-Hvis indeksen overskrider lengden på tekststrengen, vil metoden returnere None. Dette gjør det også mulig å unngå feil som kan oppstå ved å bruke indeksering utenfor grensene til en streng.
+Man kan også bruke "chars()" metoden for å få en iterator over enkelttegnene i en tekststreng og dermed gjøre operasjoner på hvert enkelt tegn.
 
 ## Se også
 
-- Rust dokumentasjon om tekstmanipulering: https://doc.rust-lang.org/std/string/
-- Alternativer for tekstbehandlingsbiblioteker i Rust: https://github.com/brson/stdx/issues/2
-- Eksempelkode for å utvinne substringer i Rust: https://github.com/mkpankov/trade-server/blob/master/src/main.rs
+For mer informasjon og eksempler på hvordan man kan arbeide med substrings i Rust, kan du sjekke ut følgende ressurser:
+
+- [Offisiell Rust dokumentasjon](https://doc.rust-lang.org/std/str/)
+- [Rust By Example: Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- [Rust Cookbook: Working with Strings](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html)

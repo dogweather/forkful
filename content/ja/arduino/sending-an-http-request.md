@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 「httpリクエストの送信」"
+title:                "「httpリクエストの送信」"
+html_title:           "Arduino: 「httpリクエストの送信」"
 simple_title:         "「httpリクエストの送信」"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,59 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Arduinoのプログラミングにおいて、HTTPリクエストを送信することはとても重要な役割を果たします。例えば、センサーから収集したデータをクラウド上のサーバーにアップロードすることで、リアルタイムでデータを収集・管理・解析することが可能となります。
+HTTPリクエストを送信することに関わる動機は、インターネット上の情報にアクセスしたいと思うことから来ています。例えば、ウェブサイトやAPIからデータを取得したい、クラウドサービスにデータを送信したいといった場合に、HTTPリクエストが必要になってきます。
 
-## 方法
+## 作り方
 
-HTTPリクエストを送信するには、まずはWi-FiシールドやEthernetシールドなどのインターネット接続用のモジュールをArduinoに接続し、ネットワークに接続する必要があります。
-
-次に、`HttpClient.h`ライブラリをインポートし、リクエストを送信するURLを指定します。例えば、以下のようなコードでリクエストを送信することができます。
+Arduinoには、EthernetライブラリというHTTPリクエストを送信するための機能があります。以下のように、ライブラリを使用してGETリクエストを送信する例を示します。
 
 ```Arduino
 #include <SPI.h>
 #include <Ethernet.h>
-#include <HttpClient.h>
 
-byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED}; // ArduinoのMACアドレス
-IPAddress server(192,168,1,1); // リクエストを送信するURLのIPアドレス
+// イーサーネットシールドを使用している場合、ピン番号を指定してイーサーネットオブジェクトを作成
+// Ethernetクラス の引数にはMACアドレスを指定
 EthernetClient client;
+char server[] = "www.example.com";
 
 void setup() {
-  Ethernet.begin(mac); // イーサネット接続を開始
-  Serial.begin(9600); // シリアル通信を開始
+  // シリアルポートを開き、コンソールにメッセージを表示
+  Serial.begin(9600);
+  Serial.println("HTTPリクエストを送信します。");
+
+  // イーサーネット初期化
+  Ethernet.begin(mac);
+  // IPアドレスをシリアルモニターに表示
+  Serial.print("IP アドレス：");
+  Serial.println(Ethernet.localIP());
 }
 
 void loop() {
-  if (client.connect(server, 80)) { // 指定したIPアドレスのポート80に接続する
-    client.println("GET / HTTP/1.1"); // リクエストの種類を指定
-    client.println("Host: 192.168.1.1"); // リクエストを送信するホストを指定
-    client.println("Connection: close"); // コネクションをクローズすることを指定
-    client.println(); // 改行
+  // HTTPリクエストの要求を開始
+  if (client.connect(server, 80)) {
+    // サーバーにGETリクエストを送信
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
   }
-
-  while (client.connected()) {
-    if (client.available()) { // サーバーからのレスポンスを読み取る
-      char c = client.read();
-      Serial.print(c); // シリアルモニターにレスポンスを出力
-    }
+  // サーバーからのレスポンスを受信
+  while (client.available()) {
+    // シリアルモニターにレスポンスを表示
+    char c = client.read();
+    Serial.print(c);
   }
-
-  client.stop(); // リクエスト後にコネクションをクローズする
-  delay(10000); // 10秒待機
+  // サーバーとの接続を閉じる
+  client.stop();
 }
+
 ```
 
-リクエストを送信する際には、HTTPメソッドとしてGETやPOSTなどを指定することもできます。
+実行すると、シリアルモニターにサーバーからのレスポンスが表示されます。また、EthernetライブラリにはHTTPリクエストを送信するための関数が他にもありますので、詳細は公式ドキュメントを参照してください。
 
-## ディープダイブ
+## 深堀り
 
-HTTPリクエストを送信する際には、ネットワークのセキュリティにも注意する必要があります。HTTPSプロトコルを使用することで、データのやり取りを暗号化することができます。さらに、サーバー側では認証のためのAPIキーなども必要となる場合がありますので、コード内に適切な認証情報を含めることも重要です。
+HTTPリクエストは、トランスポート層のTCPプロトコルを使用して通信を行います。TCPプロトコルによってデータが断片化されることなく、確実に送信および受信されることが保証されます。また、リクエストにはヘッダーとボディの2つの部分があり、ヘッダーにはリクエストの種類や受け取り元・宛先の情報が含まれ、ボディにはリクエストに関連するデータが含まれます。HTTPリクエストを送信する際は、これらの情報を適切に設定することが重要です。
 
-## おすすめのリンク
+## 参考リンク
 
-- [HttpClientライブラリのドキュメント](https://github.com/amcewen/HttpClient)
-- [ArduinoでのHTTPリクエストの方法](https://www.arduino.cc/en/Tutorial/HttpClient)
-- [Wi-FiシールドとEthernetシールドの違い](https://www.electroschematics.com/differences-wifi-ethernet-shield/)
-- [HTTPSプロトコルについての解説](https://www.cloudflare.com/ja-jp/learning/ssl/what-is-https/)
-- [サーバー側でのAPI認証についての記事](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
-- [Arduinoのオフィシャルフォーラム](https
+- [Arduino Ethernet Library Reference](https://www.arduino.cc/en/Reference/Ethernet)
+- [TCP Protocol](https://www.tutorialspoint.com/transport_layer/tcp_protocol.htm)
+- [HTTP Headers Reference](https://www.tutorialspoint.com/http/http_headers.htm)

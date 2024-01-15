@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Робота з CSV"
-simple_title:         "Робота з CSV"
+title:                "Робота з csv"
+html_title:           "Clojure: Робота з csv"
+simple_title:         "Робота з csv"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,48 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Робота з CSV є незаперечно корисною навичкою для бізнесу та збереження даних. За допомогою Clojure можна швидко та ефективно обробляти дані в форматі CSV, що дозволяє зберігати та аналізувати великі обсяги інформації швидше та ефективніше ніж за допомогою інших інструментів.
+Готувати суші дімашніх м.Люди починають працювати з CSV для збереження, обробки та обміну даних. CSV є одним з найпоширеніших форматів для представлення табличних даних, тому знання роботи з ним є необхідним для багатьох програмістів та аналітиків даних.
 
-## Як
+## Як це зробити
 
 ```Clojure
-;; Завантаження та читання файлу CSV
-(ns project.core
-    (:require [clojure.data.csv :as csv]))
+;; Читання CSV файлу
+(require '[clojure-csv.core :as csv])
 
-(defn read-csv [file]
-  (with-open [reader (clojure.java.io/reader file)]
-    (doall
-      (csv/read-csv reader))))
+(csv/read-csv "data.csv" :delimiter \,)
 
-(def csv-data (read-csv "file.csv"))
+;; Запис CSV файлу
+(csv/write-csv "new_data.csv" data)
 
-;; Вивід перших п'яти рядків даних
-(take 5 csv-data)
-
-[["ID" "Name" "Age" "Sex"]
- ["1" "John" "25" "Male"]
- ["2" "Maria" "32" "Female"]
- ["3" "James" "41" "Male"]
- ["4" "Anna" "27" "Female"]]
-
-;; Фільтрація даних за певною умовою
-(->> csv-data 
-     (filter #(= (nth % 3) "Female")))
-
-[["2" "Maria" "32" "Female"]
- ["4" "Anna" "27" "Female"]]
-
-;; Створення нового файлу CSV з результатами фільтрації
-(with-open [writer (clojure.java.io/writer "filtered.csv")]
-  (csv/write-csv writer (filter #(= (nth % 3) "Female") csv-data)))
+;; Додавання рядка даних до CSV файлу
+(csv/append-csv "data.csv" [1 "John Doe" "john@email.com"])
 ```
 
-## Глибоке дослідження
+Зверніть увагу, що дані в CSV файлі представлені у вигляді списків Clojure, тому для роботи з ними можна використовувати звичні функції для списків, такі як `map`, `filter` та інші.
 
-При роботі з CSV у Clojure є кілька кроків, які потрібно виконати для успішної обробки та аналізу даних. Для початку, потрібно завантажити та прочитати файл CSV за допомогою функції `read-csv`. Потім, можна використовувати функції зі списково-орієнтованої програми для фільтрації та маніпулювання даними за потребою. Нарешті, за допомогою `write-csv`, можна створити новий файл з обробленими даними.
+## Поглиблене дослідження
+
+Для більш складних операцій обробки CSV даних існують бібліотеки, такі як `clojure.data.csv` та `clojure.data.csv`. Вони мають розширені можливості, такі як обробка різних типів даних, встановлення власних роздільників та інших параметрів.
+
+Ще однією корисною функцією є зчитування даних з веб-ресурсів у форматі CSV за допомогою бібліотеки `clj-http`. Це дозволяє отримувати оновлені дані безпосередньо з Інтернету та опрацьовувати їх у програмі.
 
 ## Дивіться також
 
-* [Clojure Cookbook on CSV](https://jacekschae.github.io/clojure-cookbook/file-and-io/handling-comma-separated-value-csv-format.html)
-* [Clojure CSV Library](https://github.com/clojure/data.csv)
+- [Clojure CSV бібліотека](https://github.com/didibus/csv)
+- [clj-http бібліотека](https://github.com/dakrone/clj-http)
+- [Clojure документація](https://clojure.org/)

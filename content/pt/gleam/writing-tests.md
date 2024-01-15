@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Gleam: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que escrever testes em Gleam
+## Por que escrever testes é importante?
 
-A escrita de testes em qualquer linguagem de programação é crucial para garantir que o código está funcionando corretamente e prevenir falhas no futuro. Em Gleam, a prática de escrever testes é especialmente importante devido à sua tipagem forte, que ajuda a capturar erros de forma mais precisa e evitar problemas de execução em produção.
+Escrever testes é uma prática fundamental para todo programador, pois garante a qualidade do código e previne possíveis erros em sua aplicação. Além disso, a criação de testes automatizados ajuda a economizar tempo e esforço em futuras manutenções.
 
-## Como escrever testes em Gleam
+## Como fazer isso no Gleam?
 
-Escrever testes em Gleam é simples e direto. Para começar, é importante importar o módulo de teste no seu arquivo:
-
-```Gleam
-import gleam/test
-```
-
-Em seguida, defina sua função de teste usando o padrão `test/0`:
+A linguagem de programação Gleam possui um sistema de testes integrado que facilita a criação de testes unitários e funcionais. Para criar um teste, basta criar um arquivo com a extensão .test.gleam e importar o módulo de testes da biblioteca padrão.
 
 ```Gleam
-pub test/0 = {
-  assert.eql(2, 1 + 1)
+import test
+
+test.test("Meu teste") {
+  assert.equal(2 + 2, 4)
 }
 ```
 
-Este é um exemplo básico de teste que verifica se 1 + 1 é igual a 2. Você pode usar outras funções de asserção, como `assert.lt/2` para verificar se um valor é menor que outro. Para executar seus testes, você pode usar o comando `gleam test` no terminal.
+Ao executar o comando `gleam test`, todos os testes no arquivo serão executados, mostrando o resultado e os possíveis erros encontrados.
 
-## Mergulho Profundo
+## Aprofundando no assunto
 
-Além das funções de asserção básicas mencionadas acima, Gleam também possui a função `assert.eql/2`. Esta função é útil quando se trabalha com tipos de dados mais complexos, como tuplas e registros. Por exemplo:
+Além de simples testes de comparação de valores, o Gleam também permite o uso de blocos de código para realizar testes mais complexos. Além disso, é possível criar testes que simulam erros e falhas para garantir que a aplicação se comportará corretamente nesses cenários.
 
-```Gleam
-type Alias = { id: Int, name: String }
-let item = { id: 1, name: "Item 1" }
-
-test "check alias equality" {
-  assert.eql(item, { id: 1, name: "Item 1" })
-}
-```
-
-Este é apenas um exemplo simples, mas é importante lembrar que escrever testes em Gleam permite que você verifique a precisão de seus tipos de dados, o que pode ser crucial em projetos maiores.
+Veja mais sobre testes no Gleam em sua [documentação oficial](https://gleam.run/book/testing.html).
 
 ## Veja também
 
-- [Documentação Gleam: Testes](https://gleam.run/book/getting-started/test.html)
-- [Artigo sobre a importância de testes em tipagem forte](https://blog.feathersapp.com/why-strong-typing-is-your-unit-test/)
-- [Exemplo de código com testes em Gleam](https://github.com/gleam-lang/gleam/tree/master/core/src/test)
+- [Documentação oficial do Gleam](https://gleam.run/documentation/)
+- [Tutorial de introdução ao Gleam](https://medium.com/@gleamlang/apresentando-o-gleam-uma-linguagem-de-programa%C3%A7%C3%A3o-funcional-33c6375d6355)

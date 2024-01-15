@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: På jakt etter lengden til en tekststreng"
-simple_title:         "På jakt etter lengden til en tekststreng"
+title:                "Å finne lengden av en streng"
+html_title:           "Clojure: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Strings, eller strenger, er en viktig del av programmering og kan ofte være nøkkelen til å manipulere og håndtere data. Å vite lengden på en streng er en grunnleggende operasjon som kan være nyttig i en rekke situasjoner. I denne bloggposten vil vi gå gjennom hvordan man kan finne lengden på en streng i Clojure.
 
-## Hvordan
-Å finne lengden på en streng i Clojure er enkelt og kan gjøres på flere måter.
+Å finne lengden til en streng, eller en tekststreng, er en vanlig utfordring i programmering. Dette kan være nyttig for å manipulere tekst, søke etter spesifikke deler av en streng eller bare for å få informasjon om dataene du arbeider med.
 
-```Clojure
-(.length "Hei, verden!")
-```
-Dette eksempelet bruker Java-interoperabilitet i Clojure for å kalle på lengdefunksjonen til Java String-klassen.
+## Hvordan gjøre det
+
+For å finne lengden til en streng i Clojure, kan du bruke funksjonen `count`. Her er et eksempel på hvordan du kan bruke den:
 
 ```Clojure
-(count "Hei, verden!")
+(count "Hei, verden!")  ; gir ut 13
 ```
-Her bruker vi funksjonen "count" som er en del av Clojure's standardbibliotek. Denne funksjonen teller antall elementer i en sekvens, inkludert den gitte strengen.
 
-Om du ønsker å finne lengden på alle strenger i en liste, kan du bruke "map" funksjonen.
+Som du kan se, gir denne koden ut lengden til strengen "Hei, verden!" som er 13 tegn.
+
+Du kan også bruke `count` på lister, vektorer og andre samlinger i Clojure. Her er et annet eksempel:
 
 ```Clojure
-(map count ["Hei, verden!" "Hello, world!"])
+(count [1 2 3 4])  ; gir ut 4
 ```
 
-Dette vil returnere en sekvens med lengden på hver streng, som i dette tilfellet blir [13 12]. 
+Det er viktig å merke seg at `count` returnerer et heltall, så hvis du trenger en mer nøyaktig lengde som inkluderer spesielle tegn, kan du bruke `count` på en konvertert streng, som vist i dette eksemplet:
 
-Alle eksemplene ovenfor vil gi oss samme utgangspunkt, nemlig lengden på den gitte strengen. Dette er en enkel og nyttig funksjon som kan brukes i mange forskjellige sammenhenger.
+```Clojure
+(count (str "Hei, verden!" :encoding "UTF-8"))  ;gir ut 12
+```
 
-## Dypdykk
-Det er viktig å merke seg at lengden på en streng er antall tegn i strengen, og ikke antall ord. Dette kan føre til forvirring hvis man ikke er klar over forskjellen.
+## Dykk dypere
 
-En annen viktig ting å huske på er at "count" funksjonen kun opererer på Unicode-tegn og ignorerer eventuelle kontrollkarakterer eller hviteskipskarakterer. For å få en mer nøyaktig telling kan man bruke en regex for å fjerne disse karakterene før man teller lengden.
+Hvis du er interessert i å forstå hvordan `count` fungerer i Clojure, kan du ta en titt på kildekoden for funksjonen. Den er definert som følger:
+
+```Clojure
+(defn count
+  "Returns the number of items in the collection. (count nil) returns
+  0."
+  {:added "1.0"
+   :static true}
+  (^long [coll] (. clojure.lang.RT (count coll))))
+```
+
+Som du kan se, bruker `count` funksjonen `clojure.lang.RT/count` til å finne lengden på samlingen du gir den.
 
 ## Se også
-- [Clojure dokumentasjon](https://clojuredocs.org/)
-- [Java String dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Clojure regex tutorial](https://dzone.com/articles/java-regex-tutorial)
+
+[Offisiell Clojure Dokumentasjon](https://clojure.org/guides/getting_started)
+
+[Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook)
+
+[Clojure for the Brave and True](https://www.braveclojure.com/)

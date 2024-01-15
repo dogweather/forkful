@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Fish Shell recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Regular expressions are a powerful tool for manipulating text and can save you time and frustration when working with large amounts of data. They allow you to search for patterns within a string and perform operations such as replacing, extracting, and validating data. With regular expressions, you can work more efficiently and effectively in the Fish Shell environment.
+Regular expressions are a powerful tool for string manipulation and pattern matching in the Fish Shell. They allow you to search, replace, and extract text in a flexible and efficient manner. By learning how to use regular expressions, you can save time and streamline your coding process.
 
 ## How To
 
-To use regular expressions in Fish Shell, you first need to surround the pattern you want to search for with forward slashes. For example, to find all occurrences of the word "apple" in a string, you would use the regular expression /apple/. Let's see an example of this in action:
+Using regular expressions in the Fish Shell is simple. You can start by using the `grep` command to search for a specific pattern in a file or command output. For example, let's say we have a file called `names.txt` containing a list of names:
 
 ```
-Fish Shell> string="I love apples in all forms"
-Fish Shell> echo $string | grep /apple/
-I love apples in all forms
+John
+Emily
+Michael
+Jane
 ```
 
-As you can see, the grep command is used to search for the regular expression in the given string. It then outputs the results, which in this case is the entire string since it contains the word "apple".
-
-Regular expressions can also be used for more complex operations, such as extracting specific information from a string. Let's say we have a string containing a phone number in the format of (123) 456-7890 and we want to extract just the area code. We can use regular expressions to do this as shown below:
+We can use regular expressions to search for all names that start with "J" by using the following command:
 
 ```
-Fish Shell> string="(123) 456-7890"
-Fish Shell> echo $string | grep -o /([0-9]{3})/
-(123)
+grep ^J names.txt
 ```
 
-Here, we use the -o flag with grep to output only the matching text, and the {3} specifies that we want three digits to be matched.
+The `^` symbol represents the beginning of a line, so this command will return "John" and "Jane" as results.
+
+To replace text with regular expressions, we can use the `sed` command. For instance, if we want to change all "e" characters to "E" in `names.txt`, we can use the following command:
+
+```
+sed -i 's/e/E/g' names.txt
+```
+
+The `-i` flag ensures that the changes are made directly in the file and the `g` flag makes the replacement global, meaning all instances of "e" will be replaced with "E".
 
 ## Deep Dive
 
-Regular expressions provide a powerful and flexible way of searching and manipulating text in Fish Shell. They allow you to use wildcards, quantifiers, and other special characters to define complex patterns. You can also use them in combination with other commands like sed, awk, and cut to perform more advanced tasks.
+Regular expressions have a wide range of symbols and operators that allow for complex pattern matching. Here are some useful resources to learn more:
 
-One important aspect to keep in mind when using regular expressions is that they are case sensitive by default. For example, /apple/ will only match strings containing "apple" with the letter "a" in lowercase. To make a search case insensitive, you can use the -i flag with grep.
+- [Fish Shell documentation on regular expressions](https://fishshell.com/docs/3.1/cmds/grep.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info/) - an in-depth guide on regular expressions
+- [Regex101](https://regex101.com/) - an online tool to test and learn regular expressions
 
-Additionally, regular expressions can be used with character classes to match a range of characters. For example, /[A-Z]/ would match any uppercase letter, and /[0-9]/ would match any digit.
+See Also
 
-## See Also
-
-- [Fish Shell documentation on regular expressions](https://fishshell.com/docs/current/cmds/grep.html)
-- [Regular expressions tutorial](https://www.regular-expressions.info/tutorial.html)
-- [An interactive regular expressions tutorial](https://regexone.com/)
+- [Fish Shell: Getting Started](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell: Command Substitution](https://fishshell.com/docs/current/tutorial.html#builtin-command-substitution) - another useful feature in the Fish Shell
+- [Fish Shell: Pipes and Redirections](https://fishshell.com/docs/current/tutorial.html#pipes-and-redirections) - learn how to use pipes and redirections with regular expressions.

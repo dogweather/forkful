@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Töissä jsonin kanssa"
-simple_title:         "Töissä jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Javascript: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,33 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-JSON on tärkeä osa nykyaikaista ohjelmointia, sillä se tarjoaa tapa tallentaa ja jakaa tietoa verkon kautta. JSON-formaatti on myös erittäin yhteensopiva muiden ohjelmointikielten kanssa, joten sen kanssa työskentely on erittäin tärkeä taito.
+JSON (JavaScript Object Notation) on yksi suosituimpia tiedostomuotoja, jota käytetään datan tallentamiseen ja siirtämiseen JavaScript-sovelluksissa. JSON:in avulla voidaan helposti muuntaa JavaScript-olioita tekstimuotoon ja päinvastoin, mikä tekee siitä erittäin hyödyllisen työkalun kehittäjille.
 
-## Kuinka
+## Miten JSON toimii
 
 ```Javascript
-// Esimerkki JSON-objektista
-const json = {
-  "nimi": "Matti Meikäläinen",
-  "ikä": 30,
-  "harrastukset": ["joukkuelajit", "käsitöiden tekeminen", "kirjallisuus"]
-}
+// Luo JSON-objekti
+const data = {
+    name: "Matti",
+    age: 25,
+    hobbies: ["urheilu", "kirjoittaminen", "valokuvaus"]
+};
 
-// Muunna JSON-objekti tekstiksi
-const teksti = JSON.stringify(json);
-console.log(teksti); // tulostaa {"nimi": "Matti Meikäläinen", "ikä": 30, "harrastukset": ["joukkuelajit", "käsitöiden tekeminen", "kirjallisuus"]}
+// Muunna JSON tekstimuotoon
+const jsonData = JSON.stringify(data);
 
-// Muunna JSON-teksti takaisin objektiksi
-const objekti = JSON.parse(teksti);
-console.log(objekt); // tulostaa {nimi: "Matti Meikäläinen", ikä: 30, harrastukset: ["joukkuelajit", "käsitöiden tekeminen", "kirjallisuus"]}
+// Tulostaa '{ "name": "Matti", "age": 25, "hobbies": ["urheilu", "kirjoittaminen", "valokuvaus"] }'
+console.log(jsonData);
+
+// Muunna tekstimuoto takaisin JSON-objektiksi
+const parsedData = JSON.parse(jsonData);
+
+// Tulostaa JavaScript-objektin { name: "Matti", age: 25, hobbies: ["urheilu", "kirjoittaminen", "valokuvaus"] }
+console.log(parsedData);
 ```
 
-## Syvällinen sukeltaminen
+JSON:in tärkein ominaisuus on sen yksinkertaisuus ja helppokäyttöisyys. Se koostuu avain-arvo pareista ja listoista, ja sen tekstimuotoinen rakenne on helposti luettavissa ihmisille ja tulkittavissa JavaScript:in avulla.
 
-JSON-objektit koostuvat avain-arvo -pareista, joita kutsutaan myös nimikkeiksi (keys) ja arvoiksi (values). JSON tukee useita eri tietotyyppejä, kuten merkkijonoja, numeroita, taulukoita ja muita objekteja. JSON-objektien käsittelyyn on olemassa lukuisia kirjastoja ja työkaluja, jotka voivat helpottaa työskentelyä JSON-datalla.
+## Syventävä tieto JSON:ista
+
+JSON tukee erilaisia tietotyyppejä, kuten merkkijonoja, numeroita, boole-arvoja ja listoja. Se myös tukee monenlaisten tietojen rakenteita, kuten objekteja ja listoja sisäkkäin. JSON on myös lähdekoodista riippumaton, mikä tarkoittaa sitä, että se toimii hyvin monissa erilaisissa ohjelmointikielissä.
+
+Yksi tärkeä asia, jota kehittäjän tulisi tietää JSON:ista, on sen käyttö web-sovelluksissa. JSON voidaan nimittäin käyttää tiedon siirtoon clientin ja serverin välillä esimerkiksi AJAX-pyyntöjen yhteydessä. Se on myös yksi tärkeimmistä tiedostomuodoista, joita käytetään REST APIen kanssa kommunikoinnissa.
 
 ## Katso myös
 
-- [MDN:n JSON-opas](https://developer.mozilla.org/fi/docs/Learn/JavaScript/Objects/JSON)
-- [JSON:n virallinen verkkosivusto](https://www.json.org/json-fi.html)
-- [JSON-objektien manipulointi jQuery-kirjastolla](https://www.w3schools.com/jquery/ajax_parsejson.asp)
+- [JSON:n virallinen dokumentaatio](https://www.json.org/json-fi.html)
+- [MDN:n opas JSON:in käyttöön](https://developer.mozilla.org/fi/docs/Learn/JavaScript/Objects/JSON)
+- [JSON:in käyttö REST APIen kanssa](https://developer.mozilla.org/fi/docs/Web/HTTP/Methods/POST)

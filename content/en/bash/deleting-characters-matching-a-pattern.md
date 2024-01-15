@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Bash recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,50 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever come across a situation where you need to delete a specific set of characters from a file or text? Maybe they are typos or unwanted symbols that you want to remove. In such cases, knowing how to delete characters matching a pattern in Bash can come in handy.
+Need to clean up some specific characters from a text file or variable? Deleting characters matching a certain pattern can save you time and effort by automatically removing them for you.
 
 ## How To
-
-To delete characters matching a pattern in Bash, you need to use the `tr` command. This command allows you to translate or delete characters in a file or text. Here's an example of how you can use `tr` to delete the letter "a" from a file:
-
+Using the `sed` command, we can easily delete characters that match a given pattern. Here's a simple example where we want to remove all digits from a file named `test.txt`:
 ```Bash
-echo "apple" | tr -d 'a'
+sed 's/[0-9]//g' test.txt
 ```
+The `s` in `sed` stands for substitute, and we specify the pattern to substitute in between the first and second forward slashes, in this case `[0-9]` for all digits. The global flag `g` at the end tells `sed` to replace all occurrences in the file. Running the command will output the `test.txt` file without any digits.
 
-The above command will output "pple" after deleting the letter "a".
-
-You can also provide a set of characters to be deleted instead of just one. For example, if you want to delete vowels from a file, you can use the following command:
-
+To delete multiple characters or patterns, we can use the same format by specifying them within brackets and using the `|` symbol as an OR operator. For example, to delete all digits and all periods `.` from `test.txt`, we can use:
 ```Bash
-echo "hello" | tr -d 'aeiou'
+sed 's/[0-9|.]//g' test.txt
 ```
+This will replace all occurrences of either a digit or period with an empty string.
 
-This will output "hll" after deleting all the vowels.
+## Deep Dive 
+The `sed` command is a versatile tool that can not only delete characters matching a certain pattern, but also have more advanced uses such as replacing strings and editing specific lines in a file. It supports regular expressions, which provide powerful search and replace capabilities. `sed` also has multiple flags and options that can be used to modify its behavior, such as the `-i` flag which allows us to edit a file in-place without creating a new file.
 
-You can also specify a range of characters to be deleted using the `-c` option. For example, if you want to delete all numbers from a file, you can use the following command:
+Keep in mind that the `sed` command is not limited to just Bash, as it is available in most Unix-like operating systems, including macOS and Linux. This makes it a useful and portable tool to have in your arsenal.
 
-```Bash
-echo "abc123" | tr -d -c 'a-z'
-```
-
-This will output "abc" after deleting all the numbers.
-
-## Deep Dive
-
-The `tr` command is useful for deleting characters because it processes the input one character at a time and replaces it with the specified character. This makes it efficient for large files or texts.
-
-Another advantage of using `tr` is that it allows you to delete characters from stdin as well as from a file. This means you can use this command in your scripts to automate the deletion of characters.
-
-It's also worth mentioning that you can use regular expressions with `tr` to delete patterns of characters instead of just single characters. Regular expressions provide much more flexibility in terms of what you can delete, making the `tr` command even more powerful.
-
-## See Also
-
-To learn more about the `tr` command and its options, you can check out the following resources:
-
-- [Bash tr command](https://www.gnu.org/savannah-checkouts/gnu/coreutils/manual/html_node/tr-invocation.html)
-- [Linux tr command](https://linux.die.net/man/1/tr)
-- [Bash regex tutorial](https://linuxconfig.org/bash-regex)
-- [Bash scripting guide](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-
-Happy coding!
+## See Also 
+- [sed command tutorial](https://www.geeksforgeeks.org/sed-command-in-linuxunix-with-examples/)
+- [Regular expressions tutorial](https://www.regular-expressions.info/)
+- [Bash scripting guide](https://www.shellscript.sh/index.html)

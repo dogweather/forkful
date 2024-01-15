@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Trabalhando com csv."
-simple_title:         "Trabalhando com csv."
+title:                "Trabalhando com csv"
+html_title:           "Gleam: Trabalhando com csv"
+simple_title:         "Trabalhando com csv"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV?
+## Por que utilizar CSV no Gleam?
 
-O formato CSV (Comma-Separated Values) é amplamente utilizado para armazenar e compartilhar dados tabulares. Ele é simples, legível por humanos e pode ser aberto em praticamente qualquer programa de planilha eletrônica. Trabalhar com arquivos CSV é uma habilidade valiosa para profissionais que lidam com dados e também pode ser útil para fins pessoais, como organizar informações em uma planilha.
+CSV (Comma-Separated Values) é um formato de arquivo amplamente utilizado para armazenar dados tabulares de forma simples e fácil de ser lida. Ao trabalhar com CSV no Gleam, você pode facilmente importar e exportar dados entre diferentes programas e bancos de dados. Além disso, o uso de CSV pode ajudar a manter a compatibilidade e interoperabilidade entre diferentes sistemas.
 
-## Como trabalhar com CSV em Gleam
+## Como usar CSV no Gleam
 
-Trabalhar com arquivos CSV em Gleam é simples e direto. Comece importando o módulo `csv`:
+Você pode facilmente manipular arquivos CSV no Gleam usando as funções e módulos disponíveis na biblioteca padrão. Abaixo está um exemplo simples de como ler e imprimir os dados de um arquivo CSV:
 
-```
+```Gleam
 import csv
-```
 
-Em seguida, abra o arquivo CSV desejado usando a função `csv.open()` e especifique o modo de leitura (por exemplo, `csv.read` para ler o arquivo):
-
-```
-file = csv.open("arquivo.csv", csv.Read)
-```
-
-Agora você pode acessar os dados do arquivo usando a variável `file`. Por exemplo, para imprimir todas as linhas do arquivo:
-
-```
-for row in file {
+let reader = csv.new_reader("arquivo.csv")
+for row in reader do
   io.println(row)
+pub fn main() {
+  ok
 }
 ```
 
-## Mergulho profundo em trabalhar com CSV
+O arquivo CSV utilizado no exemplo possui três colunas: nome, idade e cidade. O código acima irá imprimir cada linha do arquivo, exibindo o nome da pessoa, sua idade e sua cidade.
 
-Ao trabalhar com arquivos CSV em Gleam, é importante lembrar que ele lida com tipos fortemente definidos, o que significa que suas colunas devem ser consistentes e precisam ser convertidas em tipos Gleam apropriados (por exemplo, `Int` para números inteiros ou `String` para valores de texto).
+## Mergulho Profundo em CSV
 
-Você também pode separar e analisar linhas individuais usando a função `csv.parse()`:
+Ao trabalhar com arquivos CSV no Gleam, é importante ter em mente que esses arquivos podem conter valores nulos ou vazios, o que pode causar erros ao manipulá-los. Portanto, é importante estar ciente disso ao escrever o seu código.
 
-```
-line = "nome, sobrenome, idade"
-parsed = csv.parse(line)
-// parsed = ["nome", "sobrenome", "idade"]
-```
-
-Além disso, o módulo `csv` oferece suporte para gravar em arquivos CSV com a função `csv.write()` e também permite especificar um delimitador personalizado em vez da vírgula padrão.
+Além disso, a biblioteca padrão do Gleam também oferece a possibilidade de escrever dados em arquivos CSV, utilizando a função `csv.new_writer()`.
 
 ## Veja também
 
-- Documentação oficial do módulo `csv`: https://gleam.run/modules/csv/
-- Tutorial de CSV em Gleam: https://blog.gleam.run/csv-in-gleam.html
-- Exemplo completo de manipulação de CSV em Gleam: https://gist.github.com/gdejohn/0023a3967e3062799b59e8584fa0c36a
+- Documentação oficial do CSV no Gleam: [https://gleam.run/documentation/standard-library/csv](https://gleam.run/documentation/standard-library/csv)
+- Tutorial sobre manipulação de arquivos CSV no Gleam: [https://medium.com/gleam-lang/manipulating-csv-files-in-gleam-26a95378386d](https://medium.com/gleam-lang/manipulating-csv-files-in-gleam-26a95378386d)

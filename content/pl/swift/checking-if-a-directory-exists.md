@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie czy istnieje katalog"
+html_title:           "Swift: Sprawdzanie czy istnieje katalog"
 simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Sprawdzanie istnienia katalogu może być ważnym elementem w procesie programowania aplikacji. Pozwala to na dynamiczne dostosowywanie działań w zależności od obecności lub braku określonego katalogu. Jest to szczególnie przydatne, gdy aplikacja ma dużo plików i katalogów, a programista chce zapewnić, że wszystko działa poprawnie.
+Sprawdzanie, czy katalog istnieje, jest ważną umiejętnością w programowaniu w Swift. Pozwala to na zapewnienie, że nasz kod działa poprawnie i świadczy o tym, że jesteśmy odpowiedzialnymi programistami.
 
 ## Jak to zrobić
-
-Aby sprawdzić czy katalog istnieje, można skorzystać z metody `FileManager.default.fileExists(atPath: )`. Poniżej znajduje się przykładowy kod, który pokazuje jak można wykorzystać tę metodę:
+W Swift, aby sprawdzić, czy katalog istnieje, możemy użyć klasy FileManager i jej metody fileExists(atPath). Przyjmie ona ścieżkę do naszego katalogu jako argument, a następnie zwróci wartość logiczną true lub false, w zależności od tego, czy katalog istnieje.
 
 ```Swift
 let fileManager = FileManager.default
-let path = "/Users/John/Documents/Projects"
-var isDirectory: ObjCBool = false
+let path = "/ścieżka/do/katalogu"
 
-if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        print("Katalog istnieje.")
-    } else {
-        print("To nie jest katalog.")
-    }
+if fileManager.fileExists(atPath: path) {
+    print("Katalog istnieje")
 } else {
-    print("Katalog nie istnieje.")
+    print("Katalog nie istnieje")
 }
 ```
 
-Powyższy kod sprawdzi czy w podanym ścieżce znajduje się istniejący katalog i w zależności od tego wyświetli odpowiedni komunikat. Warto również zwrócić uwagę na wykorzystanie zmiennej `isDirectory` typu `ObjCBool`, która pozwala na rozróżnienie między plikiem a katalogiem.
+W powyższym przykładzie, na początku tworzymy obiekt klasy FileManager i przypisujemy go do stałej fileManager. Następnie definiujemy zmienną path jako ścieżkę do naszego katalogu, którego istnienie chcemy sprawdzić. W warunku if wywołujemy metodę fileExists(atPath:) na fileManagerze, przekazując do niej naszą zmienną path. W zależności od zwróconej wartości, wyświetlamy odpowiedni komunikat.
 
-## Wnikliwa analiza
+## Deep Dive
+Klasa FileManager udostępnia również inne przydatne metody do sprawdzania katalogów, takie jak fileExists() czy fileExists(atPath: isDirectory:). Metoda fileExists() zwraca wartość logiczną określającą, czy podana ścieżka jest do pliku lub katalogu, natomiast fileExists(atPath: isDirectory:) pozwala na określenie, czy podana ścieżka wskazuje na plik czy katalog.
 
-Metoda `fileExists(atPath: )` wykorzystuje podstawową klasę `FileManager`, która jest odpowiedzialna za zarządzanie plikami i katalogami w systemie. W przypadku sprawdzania istnienia katalogu, metoda ta przekazuje informacje o tym, czy w podanej ścieżce znajduje się katalog czy nie, poprzez argument `isDirectory` typu `ObjCBool`. Dodatkowo, jeśli jest to katalog, można użyć innych metod z tej klasy do dalszego wykonywania operacji na nim.
+Należy również pamiętać, że przy sprawdzaniu ścieżki do katalogu można użyć względnej lub absolutnej ścieżki. Względna ścieżka jest określona od aktualnego katalogu, w którym znajduje się nasz program, natomiast absolutna ścieżka jest pełną ścieżką do pliku lub katalogu. Ważne jest, aby dostarczyć odpowiednią ścieżkę do metody fileExists(), w przeciwnym razie zwrócona wartość może być niepoprawna.
 
-## Zobacz również
+## Zobacz także
+- [Dokumentacja klasy FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Przewodnik po podstawach Swift](https://www.raywenderlich.com/4919757-a-swift-tutorial-for-complete-beginners)
 
-Jeśli chcesz dowiedzieć się więcej o wykorzystywaniu klas i metod w języku Swift, zapoznaj się z następującymi linkami:
-
-- [Dokumentacja oficjalna języka Swift](https://docs.swift.org/swift-book/)
-- [Udemy - Szybkie wprowadzenie do programowania w języku Swift](https://www.udemy.com/course/szybkie-wprowadzenie-do-programowania-w-jezyku-swift/)
-- [Książka "Swift 5 - zbiór przepisów"](https://helion.pl/ksiazki/swift-5-zbior-przepisow-poznaj-tajniki-jezyka-swift-marcin-krzyzanowski,dswfif.htm)
+Dzięki temu artykułowi powinieneś być w stanie samodzielnie sprawdzać istnienie katalogów w Swifie. Pamiętaj, aby regularnie wykonywać takie sprawdzenia w swoim kodzie, aby zapewnić jego poprawność i niezawodność. Powodzenia!

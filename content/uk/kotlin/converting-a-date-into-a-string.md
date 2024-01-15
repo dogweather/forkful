@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Перетворення дати в рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Kotlin: Перетворення дати в рядок"
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Для чого: Конвертація дати в рядок є важливою задачею у програмуванні, оскільки дата є важливою інформацією у багатьох програмах, а потрібна форматування може різнитися в залежності від вимог проекту.
+## Чому
 
-Як: Для конвертації дати в рядок у Kotlin використовуються методи `format()` та `SimpleDateFormat()`. Наприклад:
+Конвертація дати в строку є дуже корисним процесом в програмуванні, який дозволяє зробити дати більш зрозумілими для користувачів і забезпечити зручну взаємодію із даними.
+
+## Як
 
 ```Kotlin
-val date = Date()
-val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-val dateString = dateFormat.format(date)
+// Створюємо об'єкт типу LocalDataTime з поточною датою та часом 
+val currentDateTime = LocalDateTime.now()
 
-println(dateString) // Виведе: 23/04/2021
+// Конвертуємо дату у строку за допомогою методу toString(),
+// передаючи формат, в якому хочемо отримати дату у вигляді строкі
+val stringDate = currentDateTime.toString("dd-MM-yyyy")
+
+// Виводимо отриману строку на екран
+println("Поточна дата у форматі dd-MM-yyyy: $stringDate") 
+
+// Вихід: Поточна дата у форматі dd-MM-yyyy: 29-07-2021
 ```
 
-Глибше: Окрім стандартного формату дати, у Kotlin є можливість використовувати різні шаблони для форматування дати, такі як `yyyy-MM-dd` або `dd MMM yyyy`. Також, можна використовувати метод `parse()` для конвертації рядка у дату. Зверніть увагу, що стандартний формат дати в Kotlin відрізняється від стандартного формату в Java.
+## Глибше занурення
 
-Дивіться також: 
-- [Офіційна документація Kotlin](https://kotlinlang.org/docs/datetime.html)
-- [Гайд з форматування дати у Kotlin](https://www.javatpoint.com/kotlin-string-format-date)
-- [Презентація про дати та час у Kotlin](https://www.slideshare.net/jetbrains/whats-new-in-kotlin-18-dates-and-times)
+У Kotlin є декілька варіантів конвертації дати в строку: за допомогою методу toString(), за допомогою використання форматувальників (DateTimeFormatter) або за допомогою функції format(). Кожен з цих методів має свої особливості та може бути використаний залежно від конкретної задачі.
+
+## Дивіться також
+
+- [Документація Kotlin про конвертування дати в строку](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date-time/to-string.html)
+- [Стаття на тему форматування дати в Kotlin](https://developer.android.com/guide/topics/ui/look-and-feel/internationalization#date-formats)
+- [Підручник з Kotlin](https://kotlinlang.org/docs/home.html)

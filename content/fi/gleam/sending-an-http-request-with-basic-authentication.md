@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Perusautentikoinnin lähettäminen HTTP-pyynnöllä"
-simple_title:         "Perusautentikoinnin lähettäminen HTTP-pyynnöllä"
+title:                "Perusautentikoinnin lähettäminen http-pyyntönä"
+html_title:           "Gleam: Perusautentikoinnin lähettäminen http-pyyntönä"
+simple_title:         "Perusautentikoinnin lähettäminen http-pyyntönä"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,43 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluat lähettää HTTP-pyynnön perusautentikoinnilla? Vastaus on yksinkertainen - monet verkkosivustot ja palvelut vaativat käyttäjän tunnistautumisen ennen kuin ne antavat pääsyn tietyn sisällön tai toiminnon käyttämiseen. Perusautentikointi on yksi tapa varmistaa, että vain oikeilla käyttäjillä on pääsy näihin rajoitettuihin alueisiin.
+Miksi haluaisit lähettää HTTP-pyynnön perusautentikoinnilla?
 
-## Kuinka
+HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeä osa monia web-sovelluksia, joissa käyttäjän täytyy todistaa olevansa oikea henkilö ennen kuin heille annetaan pääsy rajoitettuihin resursseihin. Tämä voi sisältää esimerkiksi salaisia tietokantoja, API-palveluita tai muita herkkiä tiedostoja.
 
-Gleam-kielen avulla voit helposti lähettää HTTP-pyynnön perusautentikoinnilla. Alla on esimerkki koodista, jossa lähetetään pyyntö API-osoitteeseen käyttäen perusautentikointia.
+## Miten
+
+Gleamilla on helppo lähettää HTTP-pyyntöjä perusautentikoinnilla käyttäen `httpc` kirjastoa. Katso esimerkki alla:
 
 ```Gleam
-import http
-import base64
-import data.encoder
+import httpc
 
-// Luodaan auth-otsake, joka sisältää käyttäjänimen ja salasanan koodattuna base64-muodossa
-let auth_header = "Basic " ++ base64.encode("#{username}:#{password}")
+fn make_request() {
+  let url = "https://api.example.com/user"
+  let username = "käyttäjänimi"
+  let password = "salasana"
 
-// Luodaan pyyntölähetin, joka sisältää perusautentikoinnin otsakkeen
-let request_sender = http.client({"Authorization": auth_header})
+  let response = httpc.request(
+    method: "GET",
+    url: url,
+    headers: [
+      ("Authorization", "Basic {base64_encode(username ++ ":" ++ password)}")
+    ]
+  )
 
-// Lähetetään GET-pyyntö API-osoitteeseen
-let response = request_sender.get("https://example.com/api")
-
-// Tulostetaan vastauksen sisältö
-debug!("#{response.body}")
+  case response {
+    Ok(httpc.Response(decoder)) -> {
+      let body = decoder.read()
+      // Tee jotain vastaukselle
+    }
+    Error(httpc.Error(err)) -> {
+      // Käsittelyvirheet
+    }
+  }
+}
 ```
 
-Yllä olevassa koodiesimerkissä importoidaan "http" -moduuli, joka tarjoaa työkaluja HTTP-pyynnön lähettämiseen ja vastauksen käsittelyyn. Base64-kirjaston avulla koodataan käyttäjänimi ja salasana ylläpitäjän vaatimaan muotoon. Luodaan sitten pyyntölähetin ja lisätään otsake, jossa on koodattu käyttäjänimi ja salasana. Lopuksi lähetetään GET-pyyntö API-osoitteeseen ja tulostetaan vastauksen sisältö.
+Yllä oleva koodi lähettää GET-pyynnön annettuun URL-osoitteeseen ja ottaa käyttäjänimen ja salasanan käyttöön perusautentikointia varten. Vastauksena saatava data voi sitten käsitellä ja hyödyntää tarpeen mukaan. 
 
-Mahdollinen tulostus voisi olla:
+## Syvällinen tarkastelu
 
-```
-"{\"message\": \"Tervetuloa API:in!\"}"
-```
-
-## Syväsukellus
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla voi tuntua monimutkaiselta, mutta Gleam-kielen avulla se on yksinkertaista. Käyttämällä "http" -moduulin tarjoamia työkaluja ja base64-kirjastoa, voit luoda helposti tarvittavan HTTP-pyynnön ja lähettää sen haluamaasi verkkopalveluun tai API:hin. Täyden dokumentaation Gleam-kielen http-moduulista löydät täältä: [https://gleam.run/modules/http.html](https://gleam.run/modules/http.html).
+Perusautentikointi käyttää HTTP-pyynnön otsikkona `Authorization`-otsikkoa, jossa kerrotaan käyttäjän nimi ja salasana salausmuodossa. Tässä esimerkissä käytämme base64-koodausta, mutta autentikointimenetelmä voi vaihdella riippuen tarpeista ja käytetyistä palveluista. On tärkeää varmistaa, että käyttäjän salasana ei ole näkyvillä selkeästi käyttäjän koodissa.
 
 ## Katso myös
 
-- [Gleam-kielen virallinen verkkosivusto](https://gleam.run/)
-- [Gleam-kielen dokumentaatio](https://gleam.run/docs/)
+- [Gleam HTTP Client -kirjaston dokumentaatio](https://hexdocs.pm/gleam_httpc/)
+- [HTTP-pyyntöjen lähettäminen Gleamilla](https://gleam.run/articles/http-requests)
+- [HTTP-tilan koodauksen perusteet](https://gleam.run/articles/http-status-codes)

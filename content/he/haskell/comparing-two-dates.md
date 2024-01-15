@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "להשוות שני תאריכים"
+html_title:           "Haskell: להשוות שני תאריכים"
+simple_title:         "להשוות שני תאריכים"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,30 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כתיבת קוד ב-Haskell יכול להיות מאתגר ומעניין עבור מתכנתים מתחילים ומנוסים כאחד. במאמר זה, נתמקד בנושא חשוב ומרכזי כמו השוואת שני תאריכים. למה כדאי לעסוק בנושא כזה? קראו הלאה כדי לגלות!
+השוואת שני תאריכים בתכנות בחסקל עשויה להיות רלוונטית כאשר נרצה לבדוק אם התאריכים מתאימים להשוואה, לדוגמה כאשר נרצה לבדוק האם תאריך מסוים נמצא בין שני תאריכים אחרים.
 
 ## כיצד לעשות זאת
 
-לפניכם דוגמאות פשוטות ונוחות של קוד ב-Haskell להשוואת שני תאריכים. נתחיל עם טיפוס נתונים מקושר בשם "תאריך", שיש לו שני משתנים - חודש ושנה. לאחר מכן נשתמש בפונקציה  ```compareDates``` כדי לבדוק אם תאריך נתון הוא לפני/אחרי/באותו התאריך כמו תאריך אחר. לחצו על הקוד כדי לראות את התוצאות של הרצת הקוד המופיע כאן:
+תחילה, נצטט את המודול Data.Time כדי להשתמש בפונקציות איתור תאריכים של הסטנדרט של חסקל. לדוגמה, נשתמש ב־UTCTime להצגת תאריכים בזמן יוניברסלי. 
 
-```Haskell
-data Date = Date Int Int  -- יצירת טיפוס נתונים לתאריך עם שני משתנים
-compareDates :: Date -> Date -> Ordering  -- פונקציה להשוואת שני תאריכים
+```
+import Data.Time
 
-month1 = 10  -- חודש ראשון
-year1 = 2021  -- שנה ראשונה
-month2 = 12  -- חודש שני
-year2 = 2020  -- שנה שנייה
+-- תאריך התחלה
+start :: UTCTime
+start = UTCTime (fromGregorian 2021 01 01) (timeOfDayToTime (TimeOfDay 12 0 0))
 
--- השוואת שני תאריכים עם פניה לפונקציה
-compareDates (Date month1 year1) (Date month2 year2) 
+-- תאריך סיום
+end :: UTCTime
+end = UTCTime (fromGregorian 2021 01 15) (timeOfDayToTime (TimeOfDay 12 0 0))
 
--- הדפסת התוצאה
-print (compareDates (Date month1 year1) (Date month2 year2))
+-- בדיקה אם תאריך נמצא בין התאריכים הנתונים
+checkIfInRange :: UTCTime -> Bool
+checkIfInRange date = date >= start && date <= end
+
+main = do
+  -- תאריך לבדיקה
+  let dateToCheck = UTCTime (fromGregorian 2021 01 10) (timeOfDayToTime (TimeOfDay 12 0 0))
+  print $ checkIfInRange dateToCheck
+
 ```
 
-תוצאה: אתרוג כתום (Orange Order)
+פלט:
+```
+True
+```
 
-## חקירה מקורית
+## חפירה עמוקה
 
-כעת שהתרגלנו להשוות שני תאריכים באמצעות הפונקציה הפשוטה שתוכלו לראות למעלה, בואו נעשה חקירה עמוקה יותר על תפקידה של הפונקציה ```compareDates```. כדי להתחיל, נתבונן בפירוט על כל אחד מהתנאים השונים בו הפונקציה מחזירה תוצאות שונות (לפני/אחרי/באותו התאריך), ואפילו
+בנוסף להשוואה פשוטה של תאריכים, ניתן לבצע גם השוואות נוספות עם תכנות בחסקל. לדוגמה, ניתן לבדוק האם תאריך מסוים חולף את תקופת ניסיון מסוימת, לבדוק האם תאריך הוא יום חול או שבת, ועוד.
+
+## ראו גם
+
+- [מודול Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [תיעוד חסקל רשמי](https://www.haskell.org/documentation/#libraries)
+- [מדריך להתחשבות זמן בחסכול](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_Time_And_Date)

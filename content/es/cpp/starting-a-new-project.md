@@ -1,5 +1,6 @@
 ---
-title:                "C++: Iniciando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "C++: Iniciando un nuevo proyecto"
 simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "C++"
 category:             "C++"
@@ -11,55 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Empezar un nuevo proyecto de programación puede ser emocionante y desafiante. Es una oportunidad para aprender nuevas habilidades y crear algo nuevo e innovador. También puede ser una forma de mejorar tus habilidades existentes y demostrar tu creatividad y pensamiento lógico.
+¿Estás buscando empezar un nuevo proyecto en C++? ¡Genial! Aprender un nuevo lenguaje de programación puede ser emocionante y retador, y C++ es una excelente opción con su combinación de eficiencia y versatilidad. Ya sea que quieras desarrollar una aplicación, un juego o simplemente expandir tus habilidades como programador, iniciar un proyecto en C++ es una gran decisión.
 
 ## Cómo hacerlo
 
-Para empezar tu nuevo proyecto en C++, sigue estos pasos sencillos:
+Para empezar, necesitarás un compilador de C++ en tu computadora. La forma más fácil es utilizar un entorno de desarrollo integrado (IDE) como Visual Studio o Code::Blocks que ya incluyen un compilador. Una vez que tengas el entorno listo, es hora de escribir tu primer programa en C++.
 
-1. Define el objetivo de tu proyecto: ¿Qué quieres lograr con este proyecto? ¿Qué problema quieres resolver?
-2. Elige un IDE (entorno de desarrollo integrado): Hay muchas opciones disponibles para programar en C++, como Visual Studio, Code::Blocks, Eclipse, etc. Elige el que mejor se adapte a tus necesidades.
-3. Aprende los conceptos básicos: Para programar en C++, es importante tener una comprensión básica de conceptos como variables, bucles, condicionales, funciones, etc.
-4. Escribe tu código: Utiliza el IDE para escribir tu código y asegúrate de seguir una buena práctica de programación como la indentación y el uso de comentarios para hacer tu código más fácil de entender y mantener.
-5. Compila y prueba tu código: Utiliza el compilador del IDE para asegurarte de que tu código se ejecute correctamente y corregir cualquier error que surja.
-6. Agrega características adicionales: Una vez que tu proyecto básico esté funcionando, puedes agregar características adicionales para hacerlo más interesante y desafiante.
-
-A continuación, se muestra un ejemplo simple de un proyecto de calculadora en C++:
-
-```C++
+```
 #include <iostream>
 using namespace std;
 
 int main() {
-    int num1, num2;
-    cout << "Ingresa dos números:" << endl;
-    cin >> num1 >> num2;
-    cout << "La suma es: " << num1 + num2 << endl;
-    return 0;
+  cout << "¡Hola, mundo!";
+  return 0;
 }
 ```
 
-Output:
+En este ejemplo, utilizamos la biblioteca estándar "iostream" para poder imprimir un mensaje en la pantalla. Luego, usamos la función "cout" para mostrar el mensaje "¡Hola, mundo!" y "return" para salir del programa. Al compilar y ejecutar este código, deberías ver en la salida "¡Hola, mundo!".
 
-```
-Ingrese dos números:
-5 7
-La suma es: 12
-```
+Ahora que tienes una idea básica de cómo funciona C++, puedes seguir explorando diferentes conceptos y funciones para desarrollar tu proyecto. A medida que avanzas, asegúrate de comprender los fundamentos del lenguaje, como los tipos de datos, las estructuras de control y las funciones, y practica constantemente para mejorar tus habilidades.
 
 ## Profundizando
 
-Cuando empieces un nuevo proyecto de programación, es importante seguir algunos consejos para asegurarte de que sea exitoso:
+Antes de empezar tu proyecto, es importante tener una idea clara de lo que quieres lograr y cómo vas a organizar tu código. Puedes empezar por crear un diagrama de flujo o una lista de tareas para guiarte en el diseño de tu programa. Además, asegúrate de seguir las buenas prácticas de programación, como nombrar tus variables y funciones de manera significativa, comentar tu código y hacer pruebas frecuentes.
 
-1. Planifica tu proyecto: Tener un plan claro y detallado te ayudará a mantenerte enfocado y organizado durante todo el proceso de desarrollo.
-2. Investiga: Si tu proyecto implica trabajar con tecnologías o lenguajes nuevos para ti, es importante que dediques tiempo a investigar y aprender más sobre ellos antes de empezar a escribir código.
-3. No tengas miedo de pedir ayuda: Si te quedas atascado o tienes dudas sobre algo, no dudes en preguntar a otros programadores o buscar en línea para obtener una solución.
-4. Practica, practica, practica: Como con cualquier habilidad, la práctica hace al maestro. Sigue practicando y mejorando tus habilidades de programación.
-
-¡Ahora estás listo para empezar tu nuevo proyecto en C++!
+También es importante tener una comprensión sólida de estructuras de datos y algoritmos para poder optimizar tu código y hacerlo más eficiente. Puedes investigar sobre diferentes tipos de estructuras de datos, como arreglos, listas enlazadas y árboles, y cómo utilizarlas en tu proyecto. Asimismo, familiarízate con los algoritmos de clasificación y búsqueda para poder elegir la mejor opción para tu proyecto.
 
 ## Ver también
 
-- [Tutorial completo de C++ en español](https://www.c-plusplus.net/tutorial/)
-- [Documentación oficial de C++](https://isocpp.org/std/the-standard)
-- [Foro de programación en español](https://www.lawebdelprogramador.com/)
+Si estás interesado en aprender más sobre C++ y mejorar tus habilidades de programación, aquí hay algunas referencias útiles que pueden ayudarte:
+
+- [C++ Reference](https://www.cplusplus.com/): Esta página web ofrece una amplia documentación del lenguaje, incluyendo referencias de funciones, ejemplos de código y tutoriales.
+- [C++ Primer Plus](https://www.amazon.com/C-Primer-Plus-6th-Developers/dp/0321776402): Un libro popular y bien estructurado para principiantes en C++, que cubre desde lo básico hasta temas más avanzados.
+- [SoloLearn: C++ Tutorial](https://www.sololearn.com/Course/CPlusPlus/): Una aplicación móvil que ofrece tutoriales interactivos y desafíos para mejorar tus habilidades de programación en C++.
+
+¡Ahora que tienes los conceptos fundamentales para empezar tu proyecto en C++, es hora de comenzar a codificar! Recuerda mantener una mente abierta y seguir practicando y mejorando tus habilidades. ¡Buena suerte!

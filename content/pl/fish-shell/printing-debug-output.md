@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Drukowanie wyjścia do debugowania"
-simple_title:         "Drukowanie wyjścia do debugowania"
+title:                "Drukowanie wyjścia debugowania"
+html_title:           "Fish Shell: Drukowanie wyjścia debugowania"
+simple_title:         "Drukowanie wyjścia debugowania"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -11,46 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą i używasz Fish Shell do pisania skryptów lub automatyzacji zadań, prawdopodobnie spotkałeś się z potrzebą debugowania swojego kodu. W takich sytuacjach niezwykle przydatne jest wypisywanie informacji, które pomagają zrozumieć działanie programu i znajdować błędy. W tym wpisie dowiesz się, jak wykorzystać funkcję drukowania debug output w Fish Shell.
+Czasami podczas pisania kodu lub wykonując pracę na komputerze napotykamy problemy lub błędy, które trudno jest nam zlokalizować. W takiej sytuacji przydatnym narzędziem jest wypisywanie informacji debuggowych, aby lepiej zrozumieć co się dzieje w naszym programie. W tym artykule pokażemy jak wykorzystać wbudowane funkcje w Fish Shell do drukowania debug outputu.
 
 ## Jak to zrobić
 
-Drukowanie debug output w Fish Shell jest bardzo proste. Wystarczy użyć wbudowanej funkcji `echo` i przekazać jej wiadomość lub zmienną, którą chcesz wyświetlić. Oto przykładowy kod:
+W Fish Shell istnieją dwa sposoby na drukowanie informacji debuggowych:
+
+1. Użyj komendy `echo` aby wyświetlić zadany tekst w terminalu:
 
 ```Fish Shell
-set my_var "Hello World"
-echo $my_var
+echo "Hello world"
 ```
 
-W powyższym przykładzie, do zmiennej `my_var` przypisujemy tekst "Hello World", a następnie wyświetlamy go na ekranie za pomocą funkcji `echo`. W wyniku otrzymamy na konsoli napis "Hello World". Proste, prawda?
-
-Możesz również wyświetlać wiadomości bezpośrednio wewnątrz kodu, aby uzyskać dodatkowe informacje na temat działania programu. Na przykład:
+2. Użyj funkcji `debug` aby przekierować wyniki wywołania polecenia do strumienia błędów. W ten sposób możesz wyświetlić wyniki bez przerywania normalnego przebiegu programu:
 
 ```Fish Shell
-mkdir test_folder
-echo "Utworzyłem folder testowy"
+debug ls -l
 ```
 
-Dzięki temu będziemy wiedzieli, czy operacja utworzenia folderu przebiegła pomyślnie.
+Możesz również łączyć te dwa sposoby aby wyświetlać dokładniejsze informacje debugowe.
 
 ## Deep Dive
 
-Jeśli chcesz wypisać więcej informacji niż tylko jedną wiadomość lub zmienną, możesz użyć funkcji `printf` w połączeniu z formatowaniem. Oto przykładowy kod:
+W funkcji `debug` można również ustawić poziom logowania za pomocą flagi `-l` oraz wybrać na jakim strumieniu błędów mają być wyświetlane wyniki. Domyślnie poziom logowania jest ustawiony na `info`, ale możesz zmienić go na `error`, `warning`, `debug` lub `trace`. Możesz również przekierować wyniki na dowolny strumień błędów, np. `stderr` lub `stdout`. 
 
-```Fish Shell
-set my_var "Hello"
-set another_var "World"
-printf "%s %s!" $my_var $another_var
-```
+Możliwość ustawienia poziomów logowania i celu wyświetlania wyników czyni funkcję `debug` bardzo użytecznym narzędziem do debuggowania programów.
 
-W wyniku otrzymamy tekst "Hello World!". Zauważ, że w funkcji `printf` wstawiamy zmienne za pomocą symbolu `$` oraz określamy formatowanie wiadomości. Możesz dowolnie zmieniać formatowanie, wykorzystując specjalne symbole takie jak `%s` (dla stringów) czy `%d` (dla liczb całkowitych).
+## Zobacz także
 
-Dzięki wykorzystaniu funkcji `echo` i `printf`, możesz wypisać dowolne informacje potrzebne w procesie debugowania, asystując sobie w szybkim znajdowaniu błędów czy zrozumieniu działania programu.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o funkcjach Fish Shell, zapoznaj się z poniższymi linkami:
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
-- [Przydatne funkcje w Fish Shell](https://www.techrepublic.com/article/learn-this-overlooked-shell-for-apple-users/)
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+- Przewodnik po Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Forum Fish Shell: https://github.com/fish-shell/fish-shell/issues

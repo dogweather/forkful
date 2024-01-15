@@ -1,5 +1,6 @@
 ---
-title:                "Java: Praca z formatem json"
+title:                "Praca z formatem json"
+html_title:           "Java: Praca z formatem json"
 simple_title:         "Praca z formatem json"
 programming_language: "Java"
 category:             "Java"
@@ -9,65 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego 
 
-JSON (JavaScript Object Notation) jest jednym z najpopularniejszych formatów służących do przechowywania i wymiany danych w aplikacjach. Jest to lekki, czytelny dla człowieka i łatwy do parsowania format, dlatego jest często używany w programowaniu. Jeśli jesteś programistą Java i chcesz nauczyć się pracować z JSON, ten artykuł jest dla Ciebie.
+JSON (JavaScript Object Notation) jest powszechnie wykorzystywanym formatem wymiany danych w programowaniu. Jest on lekki, czytelny dla człowieka i łatwy w użyciu. W tym artykule dowiesz się, dlaczego warto znać i umieć pracować z JSON w języku Java.
 
-## Jak to zrobić
+## Jak 
 
-Parsowanie i generowanie JSON w języku Java jest bardzo proste dzięki wbudowanej klasie ```JSONObject```. Aby rozpocząć pracę z JSON, musimy najpierw pobrać bibliotekę JSON-Java ze strony http://json.org/java/. Następnie należy dodać pobraną bibliotekę do projektu.
+Aby pracować z JSON w języku Java, będziemy potrzebować dwóch bibliotek: `json-simple` i `Gson`. Pierwsza z nich jest lekka i łatwa w użyciu, natomiast druga obsługuje bardziej zaawansowane opcje. Poniżej przedstawione są przykłady kodów oraz wyjścia dla obu bibliotek.
 
-Aby parsować istniejący JSON, należy utworzyć nowy obiekt klasy ```JSONObject``` i przekazać mu tekst zawierający dane w formacie JSON. Następnie możemy korzystać z różnych metod, takich jak ```get()``` lub ```getString()```, aby pobrać potrzebne nam wartości z obiektu. Przykładowy kod wyglądałby tak:
-
+### Użycie `json-simple`:
 ```Java
-String jsonStr = "{\"firstName\":\"John\",\"lastName\":\"Doe\",\"age\":28}";
-JSONObject jsonObject = new JSONObject(jsonStr);
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-String firstName = jsonObject.getString("firstName");
-String lastName = jsonObject.getString("lastName");
-int age = jsonObject.getInt("age");
+JSONObject obj = new JSONObject();
+obj.put("imie", "Ania");
+obj.put("wiek", 25);
+obj.put("hobby", "programowanie");
 
-System.out.println("First Name: " + firstName);
-System.out.println("Last Name: " + lastName);
-System.out.println("Age: " + age);
+System.out.println(obj);
 ```
 
-Wyjście tego kodu byłoby następujące:
-
-```
-First Name: John
-Last Name: Doe
-Age: 28
-```
-
-Podobnie, aby wygenerować nowy obiekt w formacie JSON, możemy utworzyć nowy obiekt ```JSONObject``` i powiązać z nim odpowiednie klucze i wartości. Następnie możemy użyć metody ```toString()``` aby zamienić obiekt na tekst w formacie JSON. Przykładowy kod wyglądałby tak:
-
+Wyjście:
 ```Java
-JSONObject jsonObject = new JSONObject();
-jsonObject.put("firstName", "Jane");
-jsonObject.put("lastName", "Smith");
-jsonObject.put("age", 32);
+{"imie":"Ania","wiek":25,"hobby":"programowanie"}
+```
+### Użycie `Gson`:
+```Java
+import com.google.gson.Gson;
 
-String jsonStr = jsonObject.toString();
-System.out.println(jsonStr);
+class Osoba {
+    String imie;
+    int wiek;
+    String hobby;
+}
+
+Osoba osoba = new Osoba();
+osoba.imie = "Ania";
+osoba.wiek = 25;
+osoba.hobby = "programowanie";
+
+Gson gson = new Gson();
+String json = gson.toJson(osoba);
+
+System.out.println(json);
 ```
 
-Wyjście tego kodu byłoby następujące:
-
+Wyjście:
+```Java
+{"imie":"Ania","wiek":25,"hobby":"programowanie"}
 ```
-{"firstName":"Jane","lastName":"Smith","age":32}
-```
 
-## Pogłębiona analiza
+## Deep Dive
 
-Klasa ```JSONObject``` zawiera również wiele innych przydatnych metod, które pozwalają na bardziej zaawansowane operacje na danych w formacie JSON. Na przykład, możemy użyć metody ```put()``` aby dodać nowy klucz i wartość do istniejącego obiektu, lub użyć metody ```remove()``` aby usunąć dany klucz i wartość. Klasa ta również umożliwia obsługę tablic w formacie JSON poprzez użycie obiektów klasy ```JSONArray```.
+W przypadku bardziej zaawansowanych operacji na JSON, warto skorzystać z biblioteki `Gson`. Pozwala ona na łatwe mapowanie obiektów Java na JSON i odwrotnie, a także obsługę bardziej złożonych struktur danych. Ponadto, można również skorzystać z klas `JsonReader` i `JsonWriter`, aby czytać i pisać dane JSON bezpośrednio z pliku.
 
-Korzystając z tych metod oraz wyrażeń warunkowych i pętli, można zaimplementować zaawansowane operacje na danych w formacie JSON, co czyni język Java idealnym narzędziem do pracy z tym formatem.
+Warto również zapoznać się z różnymi formatami danych, które są obsługiwane przez JSON, np. tekst, liczby, tablice czy obiekty. W przypadku pracy z dużymi i złożonymi strukturami danych, warto również zwrócić uwagę na optymalizację i wydajność operacji na JSON.
 
-## Zobacz również
+## Zobacz także
 
-Ta lista linków może Ci pomóc w dalszej nauce:
-
-- Oficjalna strona formatu JSON: http://json.org/
-- Oficjalna dokumentacja klasy JSONObject: https://static.javadoc.io/org.json/json/20180130/org/json/JSONObject.html
-- Wideo-tutorial o pracy z JSON w języku Java: https://www.youtube.com/watch?v=N6Z6SueRYcA
+- Dokumentacja biblioteki `json-simple`: https://code.google.com/archive/p/json-simple/
+- Dokumentacja biblioteki `Gson`: https://github.com/google/gson
+- Tutorial na temat pracy z JSON w języku Java: https://www.mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/

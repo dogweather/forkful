@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Sammanslagning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Arduino: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,30 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att sammanlänka strängar är ett viktigt koncept inom Arduino programmering eftersom det tillåter oss att kombinera flera strängar till en enda sträng. Detta kan vara särskilt användbart när vi arbetar med text eller behöver skapa variabler för att lagra data.
+Är du frustrerad över att behöva skriva ut flera separata teckensträngar när du vill visa dem tillsammans? Bra nyheter, detta är precis vad strängkonkatinering är till för! Detta är en användbar teknik som hjälper dig att effektivt sammanfoga flera strängar och presentera dem som en enda enhet.
 
 ## Hur man gör
-
-Att sammanlänka strängar i Arduino är ganska enkelt. Nedan följer ett exempel på kod som visar hur man enkelt kan sammanlänka två strängar "Hej" och "världen" för att få ut strängen "Hej världen":
-
-```Arduino
-String första = "Hej";
-String andra = "världen";
-String sammanlänkad = första + " " + andra;
-Serial.println(sammanlänkad);
+För att sammanfoga strängar i Arduino, används operatorn "+" eller funktionen "strcat()". Här är ett enkelt exempel:
+``` Arduino
+String str1 = "Hello";
+String str2 = "world!";
+String str3 = str1 + " " + str2; // str3 blir "Hello world!"
 ```
-
-Detta kommer att skriva ut "Hej världen" i seriell överföring.
+Om du vill använda "strcat()", så kan ett exempel se ut så här:
+``` Arduino
+char str1[] = "This is ";
+char str2[] = "a sentence.";
+strcat(str1, str2); // str1 blir "This is a sentence."
+```
+Det är viktigt att känna till att strängkonkatinering endast fungerar om båda variablerna är av samma datatyp, till exempel "String" eller "char". Om du försöker använda "+" eller "strcat()" mellan två olika datatyper kommer du få ett felmeddelande.
 
 ## Djupdykning
-
-Det finns olika sätt att sammanlänka strängar i Arduino, men det mest använda sättet är genom att använda operatorn "+" eller funktionen "concat()". Det är också viktigt att notera att sammanlänka en sträng med en heltal eller flyttal kräver att du först konverterar dem till en sträng med funktionen "String()". Detta kan vara användbart när vi behöver skriva ut våra sensorvärden tillsammans med en sträng för att ange vad som mäts.
-
-Det är också möjligt att sammanlänka strängar i en loop eller inuti en if-sats för att skapa dynamiska strängar baserade på olika variabler.
+För att förstå strängkonkatinering bättre är det viktigt att förstå hur datatyper fungerar i Arduino. En datatyp representerar typen av data som en variabel lagrar och det är därför viktigt att matcha datatyperna när man sammanställer strängar. Om datatyperna är olika, kommer Arduino försöka konvertera dem för att matcha och det kan leda till oönskade resultat. Det är därför som man bör använda samma datatyp för båda variablerna. En annan viktig sak att notera är att "String" data skapar en ny variabel med en ny plats i minnet varje gång en sträng är uppdaterad, vilket kan leda till minnesproblem. Om man konstant använder "String" i stället för "char" när man arbetar med strängar, kan det påverka kodens prestanda.
 
 ## Se även
-
-- [Arduino String Documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Tutorial: Arduino for Beginners - How to Concatenate Strings](https://www.youtube.com/watch?v=1KvhSOvF8ps)
-- [Guide: How to Combine Strings in Arduino](https://maker.pro/arduino/tutorial/how-to-combine-strings-in-arduino)
+Om du vill lära dig mer om datatyper och hur de påverkar din kod i Arduino, kolla in följande länkar:
+- [Datatyper i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/)
+- [Skillnaden mellan "String" och "char" i Arduino](https://arduino.stackexchange.com/questions/347/how-do-i-declare-a-string-in-arduino)
+- [Strängoperationer i Arduino](https://www.programiz.com/arduino/strings)

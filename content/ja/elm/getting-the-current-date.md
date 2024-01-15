@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 現在の日付の取得"
+title:                "現在の日付の取得"
+html_title:           "Elm: 現在の日付の取得"
 simple_title:         "現在の日付の取得"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,57 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を取得する理由は何でしょうか？ Elmプログラミングをする上で、現在の日付を取得する必要がある場合があります。たとえば、ブログ記事の投稿日を表示したり、期限を設定するアプリケーションを作成する際には、現在の日付を取得する必要があります。
+現在の日付を取得することの魅力は、日常的なタスクであるため、Elmプログラミング初心者にとって便利なスキルとなります。
 
 ## 方法
 
-現在の日付を取得するためには、 `Date` モジュールを使用します。まず、 `Date.now` 関数を使って現在のタイムスタンプを取得します。次に、 `Date.fromTime` 関数を使ってタイムスタンプを日付に変換します。
-
 ```Elm
-import Date
+import Time exposing (now)
 
-timestamp = Date.now
-currentDate = Date.fromTime timestamp
+date : Task x Date
+date =
+  now
+    |> Task.attempt identity
+    |> Task.map .fromJust
 ```
 
-上記のコードを実行すると、 `currentDate` の値は以下のようになります。
-
-```Elm
-"2021-07-16"
-```
-
-日付フォーマットをカスタマイズしたい場合は、`Date.Format` モジュールを使用することもできます。例えば、以下のように日付のフォーマットを指定することができます。
-
-```Elm
-import Date
-import Date.Format exposing (custom)
-
-timestamp = Date.now
-formattedDate = Date.Format.custom "YYYY.MM.dd" timestamp
-```
-
-上記のコードを実行すると、 `formattedDate` の値は以下のようになります。
-
-```Elm
-"2021.07.16"
-```
+上記のコードは、現在の日付を取得するために必要な最小限のコードです。```Time```モジュールから```now```をインポートし、```Task.attempt```を使用して日付を取得し、```Task.map```で結果を取り出します。```date```という名前のタスクを定義し、コンパイラーに任される動作を示します。
 
 ## ディープダイブ
 
-日付を取得する際には、タイムゾーンの考慮も重要です。 `Date` モジュールを使用する場合は、タイムゾーンに関する設定を行うことができます。また、 `Date.fromTimezone` 関数を使って、指定したタイムゾーンを考慮した日付を取得することもできます。
+```Time```モジュールにはさまざまな関数があり、現在の時刻や日付のほかにもタイムゾーンや時差を扱うことができます。また、自動的に変化する時刻を取得するためにも使用することができます。詳細な情報は、公式ドキュメントを参照してください。
 
-```Elm
-import Date
-import Date.Timezone exposing (timezone)
+## おすすめリンク
 
-japanTimezone =  timezone 9 0
-timestamp = Date.now
-japanDate = Date.fromTimezone japanTimezone timestamp
-```
-
-## 参考リンク
-
-- [Elm Dateモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm Date.Timezoneモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date-Timezone)
-- [Elm Date.Formatモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date-Format)
-- [TsuruokaDai/elm-jstz](https://github.com/TsuruokaDai/elm-jstz)
+- [Elm公式ドキュメント](https://elm-lang.org/docs)
+- [Elmメッセージャーの使い方](https://qiita.com/kiiik/items/66a411dc71d0d45e963b)

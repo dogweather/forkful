@@ -1,6 +1,7 @@
 ---
-title:                "Rust: टेक्स्ट खोजना और बदलना"
-simple_title:         "टेक्स्ट खोजना और बदलना"
+title:                "टेक्स्ट ढूंढ़ना और प्रतिस्थापन करना"
+html_title:           "Rust: टेक्स्ट ढूंढ़ना और प्रतिस्थापन करना"
+simple_title:         "टेक्स्ट ढूंढ़ना और प्रतिस्थापन करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,28 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"
+## Kyun
 
-## क्यों
+Kya aapne kabhi text ko replace karna chaha hai? Sayad aapko lagta ho gya hai ki yeh kam bohot boring hai. Lekin Rust mein text ko search aur replace karna behad asaan hai. Is article mein hum Rust ke current version ki madad se text ko search aur replace karne ke tarike ke bare mein baat karenge.
 
-टेक्स्ट में खोज और बदलाव करना एक बहुत महत्वपूर्ण गतिविधि है जो एक प्रोग्रामर को अपनी कोड को अधिक मजबूत और स्पष्ट बनाने में मदद कर सकती है। यह भी क्योंकि हमारे द्वारा लिखे गए लंबे कोड आमतौर पर तलाशी और बदलाव को लगभग असंभव बना देते हैं। इसलिए, यदि आप अपने कोड को स्पष्ट और सुधारने की इच्छा रखते हैं, तो आपको टेक्स्ट खोज और बदलने की बुनियादी जानकारी होनी चाहिए।
+## Kaise Kare
 
-## कैसे करें
+Sabse pehle, hume `std::string::String` ko import karna hoga. Isse hume text ko manipulate karne mein madad milegi. Fir hum `replace()` function ko use karke text ko replace kar sakte hai. Yeh function do arguments lete hai - pehla hai jo hum replace karna chahte hai aur doosra hai jo humare dwara replace kiya gaya text hai.
 
-अब हम आपको बताएंगे कि आप Rust में टेक्स्ट को खोज कर सकते हैं और उसे कैसे बदल सकते हैं। नीचे दिए गए कोड ब्लॉक में आप इसकी कोडिंग उदाहरण और सैंपल आउटपुट देख सकते हैं।
-
-```Rust
-fn main() {
-  let mut text = String::from("Hello, world!");
-  println!("Before replacing: {}", text);
-
-  // Replacing text
-  text = text.replace("world", "Hindi readers");
-  println!("After replacing: {}", text);
-}
 ```
-आप देख सकते हैं कि हमने `replace()` फ़ंक्शन का उपयोग करके `"world"` के स्थान पर `"Hindi readers"` को रिप्लेस किया है। यह बहुत ही आसान और संवेदनशील है। आप स्थानांतरण और उनके योग्यता के बारे में और भी जानकारी के लिए Rust की ऑफिशियल डॉक्यूमेंटेशन देख सकते हैं।
+Rust
+let mut text = String::from("Hello world!");
+text.replace("world", "Rust");
+```
 
-## गहराई में जाएं
+Output: "Hello Rust!"
 
-अब आप जान चुके हैं कि आप Rust में टेक्स्ट को कैसे खोज और बदल सकते हैं, जानते हैं कि यह बहुत ही उपयोगी है। लेकिन इसकी गहराई में जाने से आप अधिक जानने ल
+Toh yeh hai basic tarike se text replace karne ka. Lekin aap isse aur bhi advanced bana sakte hai. Jaise ki, multiple words ko replace kar sakte hai, regex ka use karke bhi replace kar sakte hai aur bhi bahut kuch.
+
+## Gehri Jhaank
+
+Jaise ki humne dekha, `replace()` function ek string ko dusre string se replace karta hai. Lekin iske alawa bhi Rust mein kuch aur options available hai. Jaise ki `replace_range()` function jo ki ek specific range mein text ko replace karta hai.
+
+```
+Rust
+let mut text = String::from("Rust is awesome!");
+text.replace_range(0..4, "I");
+```
+
+Output: "I is awesome!"
+
+Iske alawa, `clone_from()` function bhi hai jo ki ek string ko dusri string se replace karta hai. Lekin isme hume do arguments provide karna hoga - source string aur destination string.
+
+```
+Rust
+let mut source = String::from("Hello");
+let mut dest = String::from("Rust");
+dest.clone_from(&source);
+```
+
+Output: "Hello"
+
+## Dekhein Bhi
+
+Agar aap aur jyada advanced tarike sikhna chahte hai toh maine kuch links niche provide kiye hai.
+
+- [Rust String Documentation](https://doc.rust-lang.org/std/string/index.html)
+- [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/index.html)
+- [Rust Reddit Community](https://www.reddit.com/r/rust/)
+
+Toh ab aap text ko search aur replace karne ke tarike sikh chuke hai. Rust mein text manipulation kaafi powerful hai aur aage aur bhi possibilities hai. Happy coding!

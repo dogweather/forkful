@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Http अनुरोध भेजना"
-simple_title:         "Http अनुरोध भेजना"
+title:                "Hindi में http अनुरोध भेजना"
+html_title:           "Ruby: Hindi में http अनुरोध भेजना"
+simple_title:         "Hindi में http अनुरोध भेजना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Why
+आज कल आप अपने स्मार्टफोन या कंप्यूटर से जितनी भी एप्लिकेशन्स या वेबसाइट्स का इस्तेमाल करते हैं, वे सभी HTTP (HyperText Transfer Protocol) का इस्तेमाल करके काम करते हैं. यह एक कमाल की प्रोटोकॉल है जो आपको अपनी डेटा को अन्य सर्वरों या सर्विसेस के साथ संचार करने में मदद करता है. इसलिए आपको भी HTTP रिक्वेस्ट भेजना आने वाले समय में बहुत ही उपयोगी हो सकता है.
 
-HTTP अनुरोध भेजने में क्यों कोई रुचि रखे?
+## How To
 
-वेब डिवेलपमेंट में, हम अक्सर दूरस्थ सर्वर से डेटा को प्राप्त करने के लिए एक अनुरोध भेजते हैं। इस अनुरोध को HTTP अनुरोध कहा जाता है और यही अनुरोध हमारी ब्राउज़र और वेबसाइट के बीच डेटा का आदान-प्रदान करने का माध्यम होता है। इसलिए, यह अनुरोध भेजना वेब डिवेलपमेंट के लिए बहुत महत्वपूर्ण है।
-
-## कैसे करें
-
-अब हम रूबी में HTTP अनुरोध भेजने के लिए कैसे कोड लिखेंगे? चलिए इसे एक उदाहरण के साथ देखते हैं।
+आप रुबी का इस्तेमाल करके भी आसानी से HTTP रिक्वेस्ट भेज सकते हैं. पहले हम आपको बताएंगे कि कैसे आप आसानी से किसी वेबसाइट पर GET रिक्वेस्ट भेज सकते हैं:
 
 ```Ruby
 require 'net/http'
- 
-# अनुरोध भेजने के लिए URI बनाएं
-uri = URI('https://www.example.com')
-
-# अनुरोध के माध्यम से डेटा प्राप्त करें
-response = Net::HTTP.get(uri)
-
-# डेटा की प्रिंट करें
-puts response
+uri = URI("https://your-website.com") # Change this to the website you want to send a request to
+response = Net::HTTP.get_response(uri)
+puts response.body
 ```
 
-उपरोक्त कोड के अनुसार, हमने `net/http` लायब्रेरी को इंपोर्ट किया और URI के जरिए अपने अनुरोध के लिए एक लिंक तैयार किया। उसके बाद, हम `Net::HTTP.get` को उस URI पर डेटा को प्राप्त करने के लिए बोले। अंत में, हम उस डेटा को प्रिंट करते हैं। नीचे दिए गए उदाहरण की तरह आपको भी एक HTTP अनुरोध करने के बाद डेटा की प्रिंट मिलेगी:
+ऊपर दिए गए कोड से आप आसानी से किसी भी वेबसाइट पर GET रिक्वेस्ट भेज सकते हैं और रिस्पॉन्स को अपनी जरूरत के अनुसार प्रिंट कर सकते हैं. अब हम बात करते हैं कि कैसे POST रिक्वेस्ट भेजा जा सकता है:
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-</head>
-<body>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-<p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</body>
-</html>
+```Ruby
+require 'net/http'
+require 'uri'
+uri = URI("https://your-website.com") # Change this to the website you want to send a request to
+res = Net::HTTP.post_form(uri, 'key1' => 'value1', 'key2' => 'value2') # Change the key-value pairs according to your needs
+puts res.body
 ```
 
-## गहराई में जाएं
+ऊपर दिए गए कोड से आप आसानी से POST रिक्वेस्ट भेज सकते हैं. आपको सिर्फ वेबसाइट का URL और अपने द्वारा भेजने वाले डेटा को बताना होगा. अब हम बात करते हैं कि कैसे आप अपने रिक्वेस्ट में कुछ और हेडर्स और पैरामीटर्स भी डाल सकते हैं:
 
-अब आपने एक बहुत सरल उदाहरण देखा है, चलिए इस अनुरोध को गहराई से सम
+```Ruby
+require 'net/http'
+require 'uri'
+uri = URI("https://your-website.com") # Change this to the website you want to send

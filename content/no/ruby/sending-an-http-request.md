@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Send en http-forespørsel"
-simple_title:         "Send en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Ruby: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,47 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke HTTP-forespørsler i Ruby-programmering
+## Hvorfor
 
-HTTP-forespørsler er en viktig del av Ruby-programmering, for å kunne kommunisere med andre nettsider og tjenester. Det lar deg hente og sende data fra og til eksterne kilder, og integrere din egen kode med andre API-er. Å kunne få tilgang til disse eksterne tjenestene åpner opp for et bredere og kraftigere utvalg av funksjonalitet i dine programmer.
+Å sende HTTP-forespørsler (HTTP requests) er en viktig del av å utvikle nettsider og applikasjoner. Det gjør det mulig for oss å kommunisere med ulike servere og få tilgang til ulike tjenester og data.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å sende en HTTP-forespørsel i Ruby, må du først installere og importere et bibliotek som heter "net/http". Dette er standardbiblioteket for å håndtere HTTP-forespørsler i Ruby.
+For å sende en HTTP-forespørsel i Ruby, kan du bruke Net::HTTP biblioteket. Først må du importere biblioteket:
 
-Deretter kan du bruke metoden "get" for å sende en forespørsel til en bestemt URL-adresse, og lagre responsen i en variabel for senere bruk. Her er et eksempel på hvordan det kan se ut:
-
-```ruby
+```Ruby
 require 'net/http'
-response = Net::HTTP.get('www.example.com', '/api/customers')
-puts response.body
 ```
 
-Dette vil sende en GET-forespørsel til example.com sin /api/customers-sti og lagre svaret i variabelen "response". Deretter skriver vi ut innholdet i responsen ved hjelp av "puts" kommandoen.
+Deretter kan du bruke `Net::HTTP.start` metoden til å åpne en forbindelse til URL-en du ønsker å sende en forespørsel til:
 
-Du kan også sende andre typer forespørsler, som for eksempel POST- eller PUT-forespørsler ved å bruke tilsvarende metoder. Her er et eksempel på hvordan du kan sende en POST-forespørsel med Net::HTTP:
-
-```ruby
-require 'net/http'
-uri = URI('www.example.com')
-request = Net::HTTP::Post.new(uri)
-request.set_form_data({username: 'Testuser', password: '12345'})
-response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-  http.request(request)
-end
-puts response.body
+```Ruby
+url = URI.parse('https://example.com')
+connection = Net::HTTP.start(url.host, url.port)
 ```
 
-Dette eksempelet viser hvordan du kan sende en POST-forespørsel til example.com og legge til data i forespørselen ved hjelp av "set_form_data" metoden. Deretter lagrer vi responsen i variabelen "response" og skriver ut innholdet med "puts" kommandoen.
+Nå kan du bruke `Net::HTTP::Get` klasse til å lage en GET forespørsel og sende den gjennom forbindelsen:
+
+```Ruby
+request = Net::HTTP::Get.new(url)
+response = connection.request(request)
+puts response.body # output: <h1>Hello world!</h1>
+```
+
+Du kan også sende andre typer HTTP-forespørsler som `Net::HTTP::Post`, `Net::HTTP::Put` og `Net::HTTP::Delete` ved å endre på metoden i `Net::HTTP::Get.new()`.
 
 ## Dypdykk
 
-For å forstå mer om hvordan du kan bruke HTTP-forespørsler i Ruby, er det viktig å ha kunnskap om ulike typer forespørsler og responskoder. En forespørsel kan for eksempel ha en responskode som indikerer om forespørselen ble utført suksessfullt eller ikke. Det er også mulig å sende forespørsler med ulike typer autorisasjon, for eksempel basic authentication eller token authentication.
+Man kan også spesifisere flere parametere når man sender en HTTP-forespørsel, som for eksempel headers og body. Her er et eksempel på hvordan man kan legge til headers i en GET forespørsel:
 
-I tillegg er det viktig å forstå hvordan du kan håndtere eventuelle feil som kan oppstå under en HTTP-forespørsel. Du kan for eksempel bruke "begin" og "rescue" blokker for å fange opp og håndtere feil, slik at programmet ditt ikke stopper helt hvis noe går galt.
+```Ruby
+request = Net::HTTP::Get.new(url)
+request['Content-Type'] = 'application/json'
+response = connection.request(request)
+```
+
+Du kan også bruke `Net::HTTP::Post.new()` for å sende en POST forespørsel med en body som for eksempel et JSON-objekt. For å gjøre dette må du først konvertere objektet til en streng vha. `#to_s` metoden, og deretter sette det som `request.body`:
+
+```Ruby
+request = Net::HTTP::Post.new(url)
+request['Content-Type'] = 'application/json'
+payload = { name: 'John', age: 28 }.to_s
+request.body = payload
+response = connection.request(request)
+puts response.body # output: { message: 'User created successfully' }
+```
 
 ## Se også
 
-- [Ruby net/http bibilotek](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTP-forespørsler i Ruby on Rails](https://guides.rubyonrails.org/v5.2.3/getting_started.html#using-form-helpers)
-- [Intro til HTTP-forespørsler i Ruby](https://www.digitalocean.com/community/tutorials/how-to-use-net-http-with-ssl-to-connect-to-an-ssl-protected-web-page)
+- [Net::HTTP dokumentasjon](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Ruby for nybegynnere](https://ruby-for-beginners.rubymonstas.org/)
+- [Ruby Gems](https://rubygems.org/)

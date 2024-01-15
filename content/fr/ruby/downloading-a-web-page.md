@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Téléchargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Ruby: Téléchargement d'une page web"
 simple_title:         "Téléchargement d'une page web"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,44 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur, il y a de fortes chances que vous ayez déjà eu besoin de télécharger une page web pour récupérer des données ou pour effectuer un scraping. Dans cet article, nous allons explorer comment le faire en utilisant le langage de programmation Ruby.
+Si vous êtes intéressé par le développement web, alors vous avez probablement entendu parler du langage de programmation Ruby. Ruby est un langage élégant et flexible, utilisé pour créer des sites web dynamiques et des applications. Dans cet article, nous allons explorer comment utiliser Ruby pour télécharger une page web et manipuler son contenu.
 
 ## Comment faire
 
-Tout d'abord, nous avons besoin d'installer la gem 'open-uri' dans notre environnement Ruby en utilisant la commande `gem install open-uri`. Ensuite, dans notre fichier Ruby, nous allons importer cette gem en utilisant la ligne de code suivante :
+La première étape pour télécharger une page web est d'installer le package Ruby `open-uri`. Ouvrez votre terminal et tapez :
+
+```Ruby
+gem install open-uri
+```
+
+Maintenant que nous avons le package installé, nous pouvons commencer à télécharger une page web en utilisant la méthode `open()` de `open-uri` :
 
 ```Ruby
 require 'open-uri'
+
+html = open('https://www.example.com').read
+puts html
 ```
 
-Maintenant, pour télécharger une page web, nous allons utiliser la méthode `.open()` avec l'URL de la page en tant que paramètre. Voici un exemple de code qui nous permet de télécharger la page d'accueil de Google :
+Dans cet exemple, nous utilisons la méthode `read` pour lire le contenu de la page téléchargée et le stocker dans une variable `html`. Ensuite, nous imprimons le contenu à l'écran avec `puts`. Vous pouvez également enregistrer le contenu dans un fichier en utilisant la méthode `write` :
 
 ```Ruby
-require 'open-uri'
-
-page = open("https://www.google.com")
-puts page.read
+open('https://www.example.com').write(html)
 ```
 
-Le `puts page.read` permet d'afficher le contenu de la page dans le terminal. Vous pouvez également utiliser d'autres méthodes comme `.gets`, `.readchar`, `.readline` pour lire le contenu de la page de différentes manières.
+Maintenant que nous avons téléchargé notre page web, nous pouvons la manipuler en utilisant des méthodes de traitement de strings de Ruby telles que `gsub` (remplacer une chaîne de caractères par une autre) ou `scan` (extraire des informations à partir d'une chaîne de caractères). Par exemple, si nous voulons extraire tous les liens de la page et les stocker dans un tableau, nous pouvons utiliser :
+
+```Ruby
+links = html.scan(/<a.+?href=\"(.+?)\".+?>/)
+```
+
+Nous pouvons ensuite parcourir ce tableau et imprimer chaque lien à l'écran ou les enregistrer dans un fichier. Avec un peu de créativité, les possibilités de manipulation sont infinies !
 
 ## Plongée en profondeur
 
-La méthode `.open()` renvoie un objet de type `TempFile` qui se comporte comme un fichier local temporaire contenant le contenu de la page téléchargée. Cela signifie que nous pouvons utiliser toutes les méthodes de manipulation de fichiers de Ruby pour travailler avec ce contenu.
-
-Par exemple, si nous voulons enregistrer le contenu de la page dans un fichier texte local, nous pouvons utiliser la méthode `.write()` comme ceci :
+Télécharger une page web peut sembler simple, mais il y a en fait plusieurs choses à prendre en compte. Par exemple, des erreurs peuvent se produire pendant le téléchargement ou le contenu de la page peut être encodé d'une manière qui n'est pas compatible avec Ruby. Dans ce cas, nous pouvons utiliser `open-uri` pour gérer ces problèmes en utilisant des options supplémentaires telles que `read_timeout` (fixer une limite de temps pour le téléchargement) ou `charset` (spécifier l'encodage du contenu).
 
 ```Ruby
-require 'open-uri'
-
-page = open("https://www.google.com")
-file = File.new("page_google.txt", "w+")
-file.write(page.read)
-puts "La page a été enregistrée dans le fichier page_google.txt !"
+html = open('https://www.example.com', read_timeout: 10, charset: 'utf-8').read
 ```
+
+En outre, vous pouvez également utiliser la méthode `URI::HTTPS.build` pour construire une URL personnelle avec des paramètres comme dans l'exemple suivant :
+
+```Ruby
+url = URI::HTTPS.build(host: 'www.example.com', path: '/page', query: 'id=1')
+html = open(url).read
+```
+
+En utilisant ces options et méthodes avancées, vous pouvez personnaliser le téléchargement de votre page web en fonction de vos besoins spécifiques.
 
 ## Voir aussi
 
-- [Documentation de la gem open-uri](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
-- [Tutoriel pour le scraping en Ruby](https://www.pluralsight.com/guides/scraping-webpage-ruby)
-- [Exemple de projet de scraping en Ruby](https://github.com/joeshonk/scrape-it)
+Maintenant que vous avez appris à télécharger une page web en utilisant Ruby, vous pouvez explorer les autres possibilités du langage pour créer des sites web dynamiques et des applications. Voici quelques ressources qui pourraient vous intéresser :
+
+- [Documentation officielle de Ruby (EN)](https://www.ruby-lang.org/en/documentation/)
+- [Ruby on Rails - le framework web Ruby le plus populaire](https://rubyonrails.org/)
+- [The Ruby Toolbox - répertoire de bibliothèques et outils Ruby](https://www.ruby-toolbox.com/)
+
+À vous de jouer !

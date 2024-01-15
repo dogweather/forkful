@@ -1,5 +1,6 @@
 ---
-title:                "C#: Travailler avec les fichiers csv"
+title:                "Travailler avec les fichiers csv"
+html_title:           "C#: Travailler avec les fichiers csv"
 simple_title:         "Travailler avec les fichiers csv"
 programming_language: "C#"
 category:             "C#"
@@ -9,65 +10,108 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi travailler avec des fichiers CSV en C# ?
+## Pourquoi
 
-Les fichiers CSV (Comma-Separated Values) sont un format de fichier couramment utilisé pour stocker des données tabulaires. Ils sont très utiles dans le domaine de la programmation car ils peuvent être facilement lus et écrits par de nombreuses langues, y compris C#. Dans cet article, nous allons explorer pourquoi il est important de savoir travailler avec des fichiers CSV en C#.
+Si vous travaillez en tant que développeur ou que vous étudiez la programmation, vous avez probablement déjà entendu parler du format CSV. Les fichiers CSV (Comma-Separated Values) sont un moyen simple et efficace de stocker et d'échanger des données tabulaires. Dans cet article, nous allons explorer comment travailler avec des fichiers CSV en utilisant le langage de programmation C#.
 
-## Comment le faire en C# ?
+## Comment faire
 
-Pour lire un fichier CSV en C#, nous pouvons utiliser la classe `StreamReader` pour ouvrir le fichier et la classe `CsvHelper` pour le traiter. Voici un exemple de code qui lit un fichier CSV avec une en-tête et imprime chaque ligne dans la console :
+Pour travailler avec des fichiers CSV en C#, nous allons utiliser deux classes principales : la classe `StreamReader` pour lire le fichier CSV et la classe `StreamWriter` pour écrire des données dans un fichier CSV. Voici un exemple de code qui lit un fichier CSV et affiche son contenu dans la console :
 
-```
-using (var reader = new StreamReader("fichier.csv"))
-using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+```C#
+using System;
+using System.IO; 
+
+class Program
 {
-    csv.Read();
-    csv.ReadHeader();
-    while (csv.Read())
+    static void Main(string[] args)
     {
-        var colonne1 = csv.GetField("colonne1");
-        var colonne2 = csv.GetField("colonne2");
-        Console.WriteLine($"{colonne1}, {colonne2}");
+        // Ouvrir le fichier CSV en utilisant StreamReader
+        using (var sr = new StreamReader("mon_fichier.csv"))
+        {
+            // Lire la première ligne qui contient les en-têtes de colonnes
+            string[] headers = sr.ReadLine().Split(',');
+
+            // Tant que nous ne sommes pas à la fin du fichier
+            while (!sr.EndOfStream)
+            {
+                // Lire chaque ligne et la stocker dans un tableau
+                string[] rows = sr.ReadLine().Split(',');
+
+                // Afficher les données dans la console
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    Console.Write($"{headers[i]}: {rows[i]} | ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
 ```
 
-Ensuite, si nous voulons écrire dans un fichier CSV en utilisant C#, nous pouvons utiliser la classe `StreamWriter` et la méthode `WriteField` de la classe `CsvWriter` pour remplir chaque cellule du fichier. Voici un exemple de code qui écrit dans un fichier CSV avec une en-tête et des données :
+La sortie de ce code devrait ressembler à ceci :
 
 ```
-using (var writer = new StreamWriter("fichier.csv"))
-using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+Nom: Jean | Âge: 25 | Sexe: Masculin |
+Nom: Marie | Âge: 30 | Sexe: Féminin |
+```
+
+Vous pouvez également écrire des données dans un fichier CSV en utilisant la classe `StreamWriter`. Voici un exemple de code qui crée un fichier CSV à partir d'un tableau de données :
+
+```C#
+using System;
+using System.IO;
+
+class Program
 {
-    csv.WriteHeader<Data>();
-
-    var data = new Data
+    static void Main(string[] args)
     {
-        Colonne1 = "valeur1",
-        Colonne2 = "valeur2",
-    };
+        // Les données à écrire dans le fichier CSV
+        string[][] data = new string[][]
+        {
+            new string[] { "Janvier", "Février", "Mars" },
+            new string[] { "1000", "2000", "3000" }
+        };
 
-    csv.NextRecord();
-    csv.WriteRecord(data);
+        // Ouvrir un fichier CSV en utilisant StreamWriter
+        using (var sw = new StreamWriter("nouveau_fichier.csv"))
+        {
+            // Écrire les en-têtes de colonnes
+            foreach (string column in data[0])
+            {
+                sw.Write($"{column},");
+            }
+            sw.WriteLine();
+
+            // Écrire chaque ligne de données
+            for (int i = 1; i < data.Length; i++)
+            {
+                foreach (string value in data[i])
+                {
+                    sw.Write($"{value},");
+                }
+                sw.WriteLine();
+            }
+        }
+    }
 }
 ```
 
-La sortie de ces exemples de code serait la suivante :
+Cela devrait créer un nouveau fichier CSV contenant les données suivantes :
 
 ```
-colonne1, colonne2
-valeur1, valeur2
+Janvier,Février,Mars,
+1000,2000,3000,
 ```
 
-## Une plongée plus profonde dans les fichiers CSV
+## Plongée en profondeur
 
-Outre la lecture et l'écriture de fichiers CSV, il existe de nombreuses autres fonctionnalités importantes lors de la manipulation de ces fichiers en C#. Par exemple, la classe `CsvHelper` offre des méthodes pour créer des enregistrements personnalisés, définir des délimiteurs de ligne personnalisés et gérer les valeurs nulles.
-
-De plus, il est également possible de travailler avec des fichiers CSV contenant des données multilingues en utilisant la classe `CsvConfiguration` pour définir des règles spécifiques à chaque langue.
-
-Enfin, il est important de noter qu'il existe de nombreuses bibliothèques tierces pour travailler avec des fichiers CSV en C#, offrant des fonctionnalités avancées telles que la validation de données, l'analyse statistique et la gestion des erreurs.
+Travailler avec des fichiers CSV peut parfois être un peu délicat car il est important de gérer correctement les caractères spéciaux et les différentes conventions de format. Heureusement, il existe des bibliothèques en C# telles que CsvHelper ou FileHelpers qui facilitent la manipulation de fichiers CSV en fournissant des fonctions pour gérer ces problèmes. N'hésitez pas à les explorer si vous avez besoin d'une solution plus complète et robuste.
 
 ## Voir aussi
 
-- [Microsoft Docs sur les fichiers CSV en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
-- [Utilisation de CsvHelper pour lire et écrire des fichiers CSV en C#](https://joshclose.github.io/CsvHelper/)
-- [Lecteur et écrivain de fichiers CSV en C# avec une bibliothèque tiers](https://www.codeproject.com/Articles/9258/A-Fast-CSV-Reader)
+- [Documentation officielle de Microsoft sur la classe `StreamReader`](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.streamreader?view=netcore-3.1)
+- [Documentation officielle de Microsoft sur la classe `StreamWriter`](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.streamwriter?view=netcore-3.1)
+- [CsvHelper](https://joshclose.github.io/CsvHelper/)
+- [FileHelpers](https://www.filehelpers.net/)

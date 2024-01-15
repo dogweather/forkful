@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Skrive en tekstfil"
+title:                "Skrive en tekstfil"
+html_title:           "Javascript: Skrive en tekstfil"
 simple_title:         "Skrive en tekstfil"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,57 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive en tekstfil er en viktig ferdighet for enhver JavaScript-programmer. Det lar deg lagre og organisere data på en enkel måte, og kan være nyttig for å lagre brukerpreferanser, lagre data fra skjemaer eller generere rapporter.
+Å skrive en tekstfil er en viktig del av programmering, spesielt i Javascript. Det lar deg lagre og behandle data på en strukturert måte, og er nyttig for å lage og lagre konfigurasjonsfiler og logger.
 
-# Hvordan
+## Slik gjør du det
 
-Å skrive en tekstfil er en relativt enkel prosess i JavaScript. Først må vi opprette en fil ved hjelp av `fs`-modulen. Vi bruker `createWriteStream()`-funksjonen og gir den navnet på filen vi ønsker å opprette, for eksempel "data.txt".
+For å skrive en tekstfil i JavaScript må du følge noen enkle trinn:
 
-```Javascript
-const fs = require('fs');
-const file = fs.createWriteStream('data.txt');
-```
+1. Åpne et tekstredigeringsprogram som Notepad, Sublime Text eller Atom.
+2. Skriv koden din i .js-filen og lagre den med et passende filnavn og ".js" utvidelse.
+3. Skriv følgende linje med kode først for å importere Node's "fs" modulen:
 
-Nå kan vi skrive data til filen ved hjelp av `.write()`-funksjonen. Vi kan skrive enkel tekst eller variabler til filen, for eksempel:
+ ```Javascript
+ var fs = require('fs');
+ ```
 
-```Javascript
-file.write('Dette er en tekst som blir skrevet til filen\n');
-file.write(`${variable1} er en variabel som blir skrevet til filen`);
-```
+4. Deretter kan du bruke fs.writeFile() funksjonen for å skrive innholdet i filen:
 
-Vi må også huske å lukke filen når vi er ferdige med å skrive data ved å bruke `.end()`-funksjonen.
-
-```Javascript
-file.end();
-```
-
-Det er viktig å merke seg at ved å bruke `.write()`-funksjonen overskriver vi ikke eksisterende data i filen, men legger til ny data på slutten av filen.
-
-# Dypdykk
-
-Noen ganger ønsker vi kanskje å skrive større mengder data til en fil, for eksempel en JSON-struktur eller en tabell med data. I slike tilfeller kan det være nyttig å bruke `JSON.stringify()`-funksjonen for å konvertere dataene til en tekststreng før vi skriver dem til filen.
-
-```Javascript
-const data = { name: 'John', age: 25 };
-file.write(JSON.stringify(data));
-```
-
-Vi kan også bruke `fs`-modulens `appendFile()`-funksjon hvis vi ønsker å legge til data til en eksisterende fil i stedet for å skrive over den.
-
-```Javascript
-fs.appendFile('data.txt', 'Denne teksten legges til på slutten av filen', (err) => {
-  if (err) throw err;
-  console.log('Data lagt til i filen');
+ ```Javascript
+ fs.writeFile('navn-på-filen.txt', 'Dette er en tekstfil skrevet i JavaScript!', function (err) {
+  if (err) return console.log(err);
+  console.log('Tekstfilen ble laget!');
 });
-```
+ ```
 
-# Se også
+5. Åpne filen du nettopp laget og du vil se teksten "Dette er en tekstfil skrevet i JavaScript!" inne i den.
 
-- Node.js `fs`-modulen dokumentasjon: https://nodejs.org/api/fs.html
-- `.createWriteStream()`-funksjonen: https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options
-- `.write()`-funksjonen: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
-- `.end()`-funksjonen: https://nodejs.org/api/stream.html#stream_writable_end_chunk_encoding_callback
-- `JSON.stringify()`-funksjonen: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-- `.appendFile()`-funksjonen: https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback
+## Dypdykk
+
+Når du skriver en tekstfil i JavaScript, er det viktig å huske på noen nøkkelelementer:
+
+- Du må importere "fs" modulen før du kan skrive til en fil.
+- Når du bruker fs.writeFile() funksjonen, må du gi den et filnavn og et innhold å skrive til filen.
+- Funksjonen tar også et valgfritt callback-argument, som vil bli kalt når skrivingen er fullført eller hvis det oppstår en feil.
+
+## Se også
+
+- [Node.js fs modul dokumentasjon](https://nodejs.org/api/fs.html)
+- [Skape og skrive filer med Node.js](https://www.digitalocean.com/community/tutorials/how-to-create-and-write-to-a-file-in-node-js)

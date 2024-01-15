@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Analisando o html"
-simple_title:         "Analisando o html"
+title:                "Analisando html."
+html_title:           "Elm: Analisando html."
+simple_title:         "Analisando html."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,54 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Se você é um desenvolvedor web, provavelmente já se deparou com a tarefa de analisar o código HTML de uma página para extrair informações específicas. Talvez você precise fazer isso para extrair dados de um site ou para criar recursos dinâmicos. Independentemente do motivo, a análise de HTML pode ser uma tarefa tediosa e demorada. Felizmente, o Elm oferece uma maneira fácil e segura de fazer isso.
+Se você já trabalhou com desenvolvimento web, provavelmente já teve que lidar com HTML em algum momento. Sabemos como pode ser doloroso e trabalhoso analisar esse tipo de código manualmente. É aí que entra o Elm e suas habilidades de análise de HTML, tornando esse processo muito mais fácil e eficiente.
 
 ## Como Fazer
 
-A linguagem de programação Elm possui uma biblioteca chamada elm/parser que nos permite criar uma função que analisa o código HTML de forma eficiente e precisa. Veja um exemplo de função que usa a biblioteca elm/parser para analisar uma tag `<h1>` em um documento HTML:
+```Elm
+import Html.Parser exposing (..)
 
-```elm
-import Html exposing (..)
-import Parser exposing (..)
-import String exposing (..)
+html = """
+<html>
+  <head>
+    <title>Meu Site</title>
+  </head>
+  <body>
+    <h1>Olá, mundo!</h1>
+  </body>
+</html>
+"""
 
-headerParser : Parser String
-headerParser =
-    let
-        openTag =
-            symbol "<h1>"
-        closeTag =
-            symbol "</h1>"
-        header =
-            takeUntil closeTag
-    in
-    succeed header
-        |. openTag
-        |= header
-        |= closeTag
-
-extractHeader : String -> Maybe String
-extractHeader html =
-    case run headerParser html of
-        Err _ ->
-            Nothing
-        Ok header ->
-            Just header
+parsedHtml = parse html
 
 main =
-    Html.text (extractHeader "<h1>Hello World</h1>")
+  case parsedHtml of
+    Ok value -> "Análise bem sucedida! O título é " ++ (getInnerHtml value "title")
+    Err message -> "Erro: " ++ message
 ```
 
-Neste exemplo, criamos uma função `headerParser` que utiliza funções da biblioteca elm/parser para analisar uma tag `<h1>`. A função `extractHeader` utiliza a função `run` para executar o nosso parser no código HTML e extrair o conteúdo da tag `<h1>`. Por fim, no nosso `main`, utilizamos a função `extractHeader` para exibir o conteúdo da tag no navegador.
+Este pequeno exemplo mostra como podemos usar a função `parse` da biblioteca Html.Parser para analisar uma string contendo código HTML. A variável `parsedHtml` contém o resultado da análise, que pode ser acessado usando as funções fornecidas pela biblioteca, como `getInnerHtml` que retorna o conteúdo dentro das tags especificadas. Dessa forma, podemos extrair facilmente informações de um documento HTML sem ter que lidar com todas as tags e formatação manualmente.
 
-## Deep Dive
+## Mergulho Profundo
 
-A biblioteca elm/parser possui diversos parsers já implementados, que podem ser facilmente combinados para analisar qualquer tipo de código HTML. Além disso, a linguagem Elm possui um sistema de tipos muito forte, que ajuda a evitar erros durante a análise do código. Isso significa que podemos confiar nos resultados obtidos pelo nosso parser.
-
-Outra vantagem de utilizar o elm/parser é que ele possui um desempenho muito bom, graças às suas otimizações internas baseadas em algoritmos de análise léxica e gramatical.
+O Elm é uma linguagem altamente eficiente e segura que oferece diversas ferramentas para manipulação de dados. A biblioteca Html.Parser é um ótimo exemplo disso, permitindo que os desenvolvedores extraiam informações de documentos HTML de forma clara e eficiente. Além disso, o Elm é capaz de identificar erros de análise em tempo de compilação, evitando possíveis bugs e falhas em tempo de execução.
 
 ## Veja Também
 
-- Documentação da biblioteca elm/parser: https://package.elm-lang.org/packages/elm/parser/latest/
-- Tutorial de análise de HTML com o elm/parser: https://dev.to/joelmansilla/parsing-html-trees-with-elm--15ah
-- Exemplo de projeto em Elm utilizando o elm/parser para análise de HTML: https://github.com/mdgriffith/elm-markup
+- Documentação da biblioteca Html.Parser: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
+- Tutorial de HTML parsing em Elm: https://elmprogramming.com/html-parsing-elm-tutorial.html

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Verkkosivun lataaminen"
-simple_title:         "Verkkosivun lataaminen"
+title:                "Navigoinnin lataaminen"
+html_title:           "Javascript: Navigoinnin lataaminen"
+simple_title:         "Navigoinnin lataaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Web-sivujen lataaminen on välttämätöntä monissa eri tapauksissa, kuten tiedon hankkimisessa, tietojen analysoinnissa tai sisällön hakemisessa. Se on myös tärkeä osa web-sivujen kehittämistä ja testaamista.
+Jokaisella verkkosivulla on oma ainutlaatuinen ulkoasu ja sisältö, joka tekee siitä mielenkiintoisen ja tarpeellisen. Jos haluat päästä käsiksi tähän sisältöön ja manipuloida sitä, sinun täytyy ensin ladata verkkosivu.
 
-## Miten?
+## Kuinka tehdä se
 
-Lataa web-sivu käyttämällä Javascript-komentoa `fetch` ja sen palauttamaa `Response`-objektia. Käytä sitten `text()`-metodia hakeaksesi sivun sisällön ja tallentamalla sen muuttujaan. Katso esimerkki alla:
+Lataaminen vaatii käyttämään Javascript-koodia, joka luo HTTP-pyynnön ja vastaanottaa palvelimelta verkkosivun sisällön. Tämän jälkeen voit käyttää tätä sisältöä ja suorittaa erilaisia toimintoja, kuten muokata ja näyttää sitä käyttäjälle.
 
-```Javascript
-fetch("https://example.com").then(response => response.text()).then(data => {
-  console.log(data); // tulostaa web-sivun sisällön konsoliin
-});
-```
-
-Voit myös käyttää `async` ja `await`-avainsanoja tehdäksesi prosessista helpompaa ja odottaa vastauksen saapumista ennen sisällön hakemista. Katso esimerkki alla:
+Esimerkiksi voit ladata verkkosivun ja näyttää sen sisällön käyttäjälle seuraavalla koodilla:
 
 ```Javascript
-async function lataaSivu() {
-  let vastaus = await fetch("https://example.com");
-  let sisalto = await vastaus.text();
-  console.log(sisalto);
-}
+// Luo uusi HTTP-pyyntö osoitteeseen
+var request = new XMLHttpRequest();
+request.open('GET', 'https://www.example.com/', true);
 
-lataaSivu(); // kutsuu funktiota ja tulostaa web-sivun sisällön konsoliin
+// Kun vastaus on valmis, tulosta sisältö konsolissa
+request.onload = function() {
+  if (request.status >= 200 && request.status < 400) {
+    console.log(request.responseText);
+  } else {
+    console.log("Sivun lataaminen epäonnistui");
+  }
+};
+
+// Lähetä pyyntö
+request.send();
 ```
+
+Tämä koodi luo uuden HTTP-pyynnön osoitteeseen "https://www.example.com/" ja palauttaa vastauksena lataamasi verkkosivun sisällön. Voit tämän jälkeen käyttää tätä sisältöä erilaisiin tarkoituksiin, kuten näyttää sen käyttäjälle tai tallentaa sen johonkin tietorakenteeseen.
 
 ## Syväsukellus
 
-Web-sivun lataaminen käyttämällä Javascript-komentoa `fetch` tarjoaa paljon erilaisia mahdollisuuksia ja vaihtoehtoja. Voit esimerkiksi käyttää erilaisia `Response`-objektin metodeja, kuten `json()`, `blob()` tai `arrayBuffer()` saadaksesi sivun sisällön eri muodoissa. Voit myös asettaa erilaisia parametreja, kuten otsikoita ja metodityyppejä, `fetch`-komennon sisällä.
+Sivun lataamisessa on useita vaihtoehtoisia tapoja, kuten käyttämällä jQuery-kirjastoa tai NodeJS:n sisäänrakennettuja moduuleja. Voit myös muokata pyyntöä ja lisätä otsikoita tai muita parametreja sen mukaan, mitä tarpeita sinulla on.
 
-Lisäksi voit käyttää muita Javascript-komentoja, kuten `XMLHttpRequest` tai `jQuery.ajax`, saavuttaaksesi saman tavoitteen. On tärkeää huomata, että web-sivujen lataamiseen voi liittyä myös tietoturvariskejä, ja se tulisi suorittaa vain luotetuilta lähteiltä.
+On myös hyvä huomata, että jotkut verkkosivut voivat estää niiden lataamisen. Tämä johtuu yleensä siitä, että sivuston omistaja ei halua, että joku muu käyttää heidän sisältöään ilman lupaa. Tässä tapauksessa sinun täytyy tutkia sivuston politiikkaa ja etsiä muita vaihtoehtoja ladata sisältöä tai luoda oma sisältösi.
 
 ## Katso myös
 
-- [MDN Web-sivujen lataaminen käyttämällä Javascriptiä](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [W3Schools JavaScript `fetch`-opas](https://www.w3schools.com/js/js_api_fetch.asp)
-- [JavaScript `async` ja `await`-opas](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
+- [MDN: HTTP-pyyntö](https://developer.mozilla.org/fi/docs/Web/API/XMLHttpRequest) 
+- [jQuery-kirjasto](https://jquery.com/) 
+- [NodeJS](https://nodejs.org/en/)

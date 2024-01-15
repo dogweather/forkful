@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Kotlin: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
-נשלחת בקשת HTTP עם אימות בסיסי? דוגמה לכך כוללת גישה לאתר אינטרנט או לשירות חיצוני שמצריך כניסה למשתמשים מורשים לפני שגישה תינתן לפרטים באמצעות בקשת HTTP.
+##למה
+מנסיון השימוש באפליקציות והתכנתות, כדאי לשרוד את משתמשי האפליקציות עם הרבה אפוסי LTC שמונים על חלוקת סיסמה בשירות האתר שלהם.כמו כן, מספק יתרונות כמו טביעת אצבעות, צידודיות, אבטחת אבטחת אתר וכו ' כדי למנוע חשיפת פרטים אישיים.
 
-# איך לעשות זאת
-הנה דוגמה לקוד קוטלין עם הוספת אימות בסיסי בשאילתת HTTP:
+##איך ל
+תכנות HTTP POST ב-Kotlin יכול להיות קל ופשוט עם אימות בסיס של כיתוב בסיסי. למשל, בשימוש בספרייה okhttp3 תוכל<br> להשתמש ב- `Request.Builder()` כדי לבנות את הבקשה ולכלול את השיטה `.header()` כדי להוסיף אימות בסיסי עם שם המשתמש והסיסמה. הנה דוגמאת קוד מלא עם אימות בסיסי:
 
 ```Kotlin
-val url = "https://example.com/api/users"
-val username = "username"
-val password = "password"
-val auth = "$username:$password"
-val encodedAuth = Base64.getEncoder().encodeToString(auth.toByteArray())
-
-val request = Request.Builder()
-    .url(url)
-    .addHeader("Authorization", "Basic $encodedAuth")
-    .build()
-
-val response = OkHttpClient().newCall(request).execute()
-
-// בדיקת תגובה הצלחה
-if (response.isSuccessful) {
-    // המשך עם עיבוד התוצאה
-    // כמו לאחזר את הנתונים מהתוכן של התגובה
-    println("Response body: ${response.body?.string()}")
-} else {
-    // מקרה בו יש תגובה נכונה עם שגיאה
-    // כמו להדפיס את קוד התגובה וההודעה
-    println("Response code: ${response.code}")
-    println("Response message: ${response.message}")
+fun sendPostRequest() {
+    val url = "https://example.com/api"
+    val requestBody = "Some data to be posted"
+    
+    val credentials = Credentials.basic("username", "password")
+    val request = Request.Builder()
+        .url(url)
+        .post(requestBody.toRequestBody())
+        .header("Authorization", credentials)
+        .build()
+        
+    val client = OkHttpClient()
+    val response = client.newCall(request).execute()
+    println(response.body()?.string())
 }
 ```
 
-תוצאה דוגמתית:
+יציאה לדוגמא הנ"ל תהיה: `"Some data to be posted"`, תעבור בהצלחה תוך A `200 OK`.
 
-```
-Response body: {
-    "id": 1234,
-    "name": "John Doe",
-    "email": "johndoe@example.com"
-}
-```
+## צליל משנה
 
-# טפסים עמוקים
-כאשר אנחנו שולחים בקשת HTTP עם אימות בסיסי, אנו מעבירים פרמטרים שמאפיינים את זהות המשתמש והסיסמה באמצעות הכותרת "Authorization". כדי לבצע אימות בסיסי בקשת HTTP, אנו צריכים לקודד את זהות המשתמש והסיסמה בבסיס 64, כך שניתן יהיה להעביר אותם כמחרוזת בכותרת HTTP.
+כעת, נכנסים לתמצית עמוקה יותר על פרוטוקול ה- HTTP ואימות בסיסי. האחריות העיקרית של אימות בסיסי היא למנוע גישה למידע סודי וגישה לפעולות ללא רשיות. כאשר משתמש מתחבר לאתר עם אימות בסיסי, הם יצטרכו לספק שם משתמש וסיסמה. הפרטים האלו ישמו לטבלת המשתמשים של האתר/אפליקציה כדי לוודא שהמשתמש יש מספיק רשיות ועד לשלב זה האתר יאשר את המשתמשות. 
 
-כדי לקודד את זהות המשתמש והסיסמה בבסיס 64 בקוד קוטלין, אנו משתמשים במחלקת Base64 ובפונקציית encodeToString להמרת הפרמטרים לתבנית המתאימה.
-
-# ראה גם
-- [פרסום מידע HTTP כולל אימות בסיסי](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [ספריית OKHttp לקוד קוטלין](https://square.github.io/okhttp
+##ראה גם
+- [אימות בסיסי ב-Kotlin עם אופן התכנות](https://www.baeldung.com/kotlin-http-post-request)
+- [HTTP ואימות ב

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Clojure: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,34 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego powinieneś używać konkatenacji stringów? Jest to ważny element w programowaniu Clojure, ponieważ pozwala na łączenie różnych stringów w jeden. W ten sposób możemy tworzyć dowolne wyrażenia i przetwarzać dane w sposób bardziej złożony.
+Concatenacja jest procesem łączenia wielu ciągów znaków w jeden większy ciąg. Jest to często spotykana operacja w programowaniu, która jest używana do tworzenia czytelnych i dynamicznych wyjść dla użytkownika. W Clojure, możemy łatwo łączyć ciągi znaków w bardziej złożone struktury danych za pomocą funkcji concatenation.
 
 ## Jak to zrobić
 
-Przykładowy kod wykorzystujący konkatenację stringów wygląda następująco:
+Możemy użyć funkcji `str` w Clojure, aby połączyć dwa lub więcej ciągów znaków w jeden. Na przykład, jeśli chcielibyśmy połączyć "Hello" i "World", nasz kod wyglądałby następująco:
 
 ```Clojure
-(def imie "Kasia")
-(def nazwisko "Nowak")
-(def wiek 28)
-
-(str "Cześć, jestem " imie " " nazwisko " i mam " wiek " lat.")
+(str "Hello" "World")
 ```
 
-Wynikiem działania tego kodu będzie: `Cześć, jestem Kasia Nowak i mam 28 lat.`
+Jego wynikiem będzie "HelloWorld". Możemy również użyć zmiennej do przechowywania ciągów znaków i połączyć je później za pomocą funkcji `str`. Na przykład:
 
-Jedną z najczęstszych metod konkatenacji stringów w Clojure jest używanie funkcji `str`, która łączy wszystkie argumenty w jedną dłuższą linię. Możemy również użyć `concat`, aby połączyć listę stringów w jedną linię lub operatora `str` do łączenia dwóch stringów.
+```Clojure
+(def str1 "Hello")
+(def str2 "World")
+(str str1 str2)
+```
+Wynikiem będzie również "HelloWorld".
 
-## Głębsza analiza
+Możemy również użyć operatora `str` do łączenia ciągów znaków w mapach i listach. Na przykład, jeśli chcemy łączyć wartości z mapy, nasz kod może wyglądać tak:
 
-Podczas konkatenacji stringów w Clojure warto pamiętać o typach danych. Jeśli jeden z argumentów jest listą, to zostanie ona rozwinięta i połączona z resztą stringów. Jeśli argument jest liczbą, zostanie automatycznie przekształcony na string.
+```Clojure
+(def map1 {:name "John" :age "30"})
+(str (str (:name map1) " is " (:age map1) " years old."))
+```
+Wynikiem będzie "John is 30 years old."
 
-Inną ciekawą funkcjonalnością jest możliwość łączenia stringów za pomocą separatora przy użyciu `str-join` lub `join` (w przypadku list). Jest to przydatne w przypadku łączenia większej ilości wartości i chcemy oddzielić je od siebie.
+## Głębsze zagłębianie
+
+Funkcja `str` w Clojure jest bardzo elastyczna, ponieważ pozwala nam łączyć różne typy danych, takie jak liczby, znaki i obiekty. Możemy również użyć operatora `str` do interpolacji, co pozwala nam wstawiać zmienne do ciągów znaków. Na przykład:
+
+```Clojure
+(def name "John")
+(str "My name is ${name}.")
+```
+Wynikiem będzie "My name is John." 
+
+Warto również wspomnieć o funkcji `join`, która jest również użyteczna do łączenia ciągów znaków. Jednak w przeciwieństwie do `str`, `join` działa na kolekcjach, takich jak listy i mapy, i wymaga podania separatora. Na przykład, jeśli chcemy połączyć elementy w liście z separatorem "-":
+
+```Clojure
+(def list1 ["hello" "world"])
+(join "-" list1)
+```
+Wynikiem będzie "hello-world".
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o konkatenacji stringów w Clojure, polecamy zapoznać się z poniższymi materiałami:
-
-- https://www.tutorialspoint.com/clojure/clojure_strings.htm
-- https://clojuredocs.org/clojure.core/str
-- https://www.clojure.org/reference/strings
+- Dokumentacja Clojure: https://clojure.org/
+- Oficjalna strona Clojure: https://clojure.org/
+- Poradnik dla początkujących w Clojure: https://www.braveclojure.com/

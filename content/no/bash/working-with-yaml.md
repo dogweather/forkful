@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Arbeide med yaml"
+title:                "Arbeide med yaml"
+html_title:           "Bash: Arbeide med yaml"
 simple_title:         "Arbeide med yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,57 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er en utvikler som jobber med konfigurasjonsfiler, har du sannsynligvis hørt om YAML. YAML (YAML Ain't Markup Language) er et format for å representere data i en menneskeleselig og strukturert form. Men hvorfor bør du lære å jobbe med YAML?
+Hvis du er en programmerer som arbeider med YAML-filer, vil du sannsynligvis også ønske å kunne håndtere disse filene i Bash-skript. Dette kan være nyttig hvis du trenger å manipulere YAML-data i skriptet ditt, for eksempel når du automatiserer oppgaver eller behandler konfigurasjonsfiler.
 
-YAML er et populært valg blant utviklere fordi det er enkelt å forstå og skrive. Det inneholder intuitive syntaks og er lett å lese for både mennesker og maskiner. Det er også et åpent format som kan brukes på tvers av ulike programmeringsspråk, noe som gjør det til et fleksibelt valg for konfigurasjonsfiler.
+## Slik gjør du det
 
-## Hvordan
+Den beste måten å jobbe med YAML i Bash er å bruke verktøyet `yq`, som er en del av open-source-pakken `yq`, som lar deg behandle YAML-data fra kommandolinjen.
 
-Hvis du vil begynne å jobbe med YAML, er det første du må gjøre å installere en YAML parser på datamaskinen din. I dette eksempelet vil vi bruke "yq" - en YAML parser for Bash.
+For å installere `yq` kan du bruke kommandoen `pip install yq` eller `brew install yq` hvis du bruker Homebrew på macOS. Hvis du ikke har `pip` eller `brew` installert, kan du finne instruksjoner på nettet for å installere dem på din enhet.
 
-Før du begynner å kode, bør du først lese gjennom YAML sitt offisielle dokumentasjon for å bli kjent med syntaksen og strukturen til filene.
-
-La oss si at vi har en YAML-fil som ser slik ut:
+For å teste ut `yq` og se hvordan den fungerer, kan du bruke følgende YAML-fil som et eksempel:
 
 ```Bash
-# test.yml
-
-navn: Johan
-alder: 35
-hobbyer:
-- brettspill
-- klatring
+# example.yaml
+name: John Smith
+age: 30
+skills:
+  - programming
+  - data analysis
 ```
 
-Vi kan bruke "yq" til å få ut navnet fra denne filen ved å skrive følgende kommando:
-
+For å se hele innholdet av denne filen i terminalen, kan du bruke denne kommandoen:
 ```Bash
-yq .navn test.yml
+yq read example.yaml
 ```
 
-Dette vil gi oss følgende output:
-
+Dette vil gi deg følgende output:
 ```Bash
-Johan
+name: John Smith
+age: 30
+skills:
+- programming
+- data analysis
 ```
 
-Vi kan også bruke "yq" til å legge til en ny verdi til YAML-filen vår. For eksempel, hvis vi ønsker å legge til en ny hobby, kan vi skrive følgende kommando:
-
+Du kan også hente ut spesifikke deler av YAML-filen ved å bruke `yq` til å søke etter bestemte nøkler. For eksempel, for å hente ut navnet fra YAML-filen, kan du bruke denne kommandoen:
 ```Bash
-yq '.hobbyer += "fotografering"' test.yml
+yq read example.yaml name
 ```
 
-Dette vil da legge til "fotografering" som en ny verdi under "hobbyer" i YAML-filen vår.
+Dette vil gi deg følgende output:
+```Bash
+John Smith
+```
 
-## Dykk Dypere
+Du kan også bruke `yq` til å endre eller legge til data i YAML-filen. For eksempel, for å legge til en ny ferdighet i `skills`-listen, kan du bruke denne kommandoen:
+```Bash
+yq write -i example.yaml skills[+] "project management"
+```
 
-YAML støtter også avanserte funksjoner som løkker og betingelser, som kan være nyttig for å lage dynamiske konfigurasjonsfiler. Det er også mulig å inkludere deler av en YAML-fil i en annen ved hjelp av "<<"-operator.
+Dette vil legge til "project management" som en ny ferdighet i YAML-filen. For å sjekke at endringen ble utført, kan du lese YAML-filen igjen ved å bruke kommandoen `yq read example.yaml`.
 
-Det finnes også ulike verktøy og biblioteker som kan hjelpe deg med å jobbe med YAML, som for eksempel "yq", "yamllint" og "PyYAML". Ved å utforske disse verktøyene og lære mer om YAML, vil du kunne dra nytte av dette effektive og populære formatet i ditt arbeid som utvikler.
+For flere detaljerte instruksjoner om hvordan du bruker `yq`, kan du se på dokumentasjonen på GitHub-siden deres [her](https://github.com/kislyuk/yq).
+
+## Dypdykk
+
+I tillegg til å bruke `yq`, kan du også jobbe med YAML i Bash ved å bruke innebygde kommandoer som `sed` eller `awk` for å manipulere YAML-data. Det er også mulig å bruke `jq`, som er et annet verktøy som ligner på `yq`, men som er laget for å håndtere JSON-filer.
+
+Det er viktig å merke seg at `yq` og andre verktøy bare er ment for å lese og skrive til YAML-filer. Hvis du trenger å behandle store mengder YAML-data eller arbeide med komplekse YAML-strukturer, kan det være lurt å vurdere å bruke et programmeringsspråk som støtter YAML, for eksempel Python eller Ruby.
 
 ## Se også
 
-- [YAML offisiell dokumentasjon](https://yaml.org/spec/)
-- [yq](https://yq.readthedocs.io/en/latest/)
-- [yamllint](https://yamllint.readthedocs.io/en/latest/)
-- [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
+* [yq dokumentasjon](https://github.com/kislyuk/yq)
+* [YAML syntax guide](https://yaml.org/spec/1.2/spec.html)

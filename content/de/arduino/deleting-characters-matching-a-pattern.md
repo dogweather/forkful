@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Entfernen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Arduino: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-In der Programmierung gibt es oft Situationen, in denen bestimmte Zeichen in einem Text oder einer Zeichenkette gelöscht werden müssen. Hierfür gibt es verschiedene Methoden, aber in diesem Blogbeitrag möchten wir die "Zeichen löschen"-Funktion in Arduino genauer betrachten.
+Warum: 
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Arduino Programmierung nützlich sein, um zum Beispiel ungewollte Eingaben bei der Verwendung von Sensoren zu filtern oder um Daten effizienter zu verarbeiten.
 
-# Wie das funktioniert
-Hier ist ein einfaches Beispiel, um zu verstehen, wie man Zeichen in Arduino löscht. Nehmen wir an, wir haben die Zeichenfolge "Arduino ist cool!" und möchten das Ausrufezeichen am Ende entfernen. Hier ist der Code, den wir verwenden können:
+How To: 
+Das Löschen von Zeichen in Arduino ist recht einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, wie man alle Zeichen löschen kann, die dem Buchstaben 'a' entsprechen:
 
-```
-Arduino ist cool!
-
-void setup() {
-  Serial.begin(9600); //initialisiere die serielle Verbindung
-  delay(1000); //warte 1 Sekunde
-  Serial.println("Arduino ist cool!"); //gib den ursprünglichen Text aus
+```Arduino
+// Deklaration und Initialisierung des Zeichenarrays
+char data[] = "Hallo Arduino";
+// Variable zur Speicherung der Länge des Arrays
+int len = sizeof(data);
+// Schleife zum Durchlaufen des Arrays
+for (int i = 0; i < len; i++) {
+  // Überprüfung ob aktuelles Zeichen dem Muster entspricht
+  if (data[i] == 'a') {
+    // Falls ja, wird das Zeichen aus dem Array gelöscht
+    memmove(data + i, data + i + 1, len - i);
+    // Da ein Zeichen gelöscht wurde, wird die Schleife erneut mit dem aktuellen Index durchlaufen
+    i--;
+  }
 }
-
-void loop() {
-  char inputString[] = "Arduino ist cool!"; //definiere die Zeichenfolge 
-  int length = strlen(inputString); //ermittle die Länge der Zeichenfolge
-  inputString[length - 1] = '\0'; //setze das letzte Zeichen auf Null
-  Serial.println(inputString); //gib den Text ohne das Ausrufezeichen aus
-  delay(1000); //warte 1 Sekunde
-}
+// Ausgabe des geänderten Arrays
+Serial.println(data);
 ```
 
-Die Ausgabe, die wir bekommen, lautet: "Arduino ist cool". Das Ausrufezeichen wurde erfolgreich gelöscht.
+Der obige Code nimmt das Zeichenarray "Hallo Arduino" und entfernt alle Zeichen, die dem Buchstaben 'a' entsprechen. Die Ausgabe ist dann "Hllo Arduino".
 
-# Tiefere Einblicke
-Die Funktion `strlen()` wird verwendet, um die Länge der Zeichenfolge zu ermitteln. Wir ziehen 1 von der Länge ab, um auf das letzte Zeichen zuzugreifen, da Indizes in Arduino bei 0 beginnen. Das letzte Zeichen wird dann auf Null gesetzt, was in C als Zeichen für das Ende einer Zeichenfolge gilt.
+Deep Dive:
+Die Funktion `memmove()` wird in diesem Beispiel verwendet, um das Zeichen aus dem Array zu löschen. Sie gehört zur C Standardbibliothek und ermöglicht es, einen Teil des Speichers zu verschieben. Im Code wird sie verwendet, um das Zeichen an der aktuellen Position durch das nächste im Array stehende Zeichen zu ersetzen. Dadurch wird das Zeichen effektiv "gelöscht". Die Schleife läuft für jedes gelöschte Zeichen erneut mit dem aktuellen Index durch, um sicherzustellen, dass keines der verschobenen Zeichen übersprungen wird.
 
-Es ist wichtig zu beachten, dass diese Methode das letzte Zeichen der Zeichenfolge löscht, unabhängig davon, welches Zeichen es ist. Wenn also unsere ursprüngliche Zeichenfolge "Arduino ist cool?" wäre, würde das Fragezeichen gelöscht werden.
+See Also:
+Hier sind einige nützliche Links für weitere Informationen zur Arduino Programmierung und zur Verwendung von Strings und Zeichenarrays:
 
-# Siehe auch
-- [Arduino offizielle Website](https://www.arduino.cc/)
-- [Offizielle Arduino Referenz zu Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
-- [Einführung in Arduino Programmierung](https://www.makerblog.at/2015/01/eine-einfuhrung-in-die-arduino-programmierung/)
+- [Arduino Language Reference](https://www.arduino.cc/reference/en/)
+- [C String Tutorial](https://www.arduino.cc/reference/en/language/variables/data-types/string/manipulation/)
+- [Characters and Strings in C](https://www.cprogramming.com/tutorial/c/lesson9.html)

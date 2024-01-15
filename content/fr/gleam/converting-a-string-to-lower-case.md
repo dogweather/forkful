@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Convertir une chaîne de caractères en minuscules"
-simple_title:         "Convertir une chaîne de caractères en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Gleam: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,28 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Dans la programmation, il est parfois nécessaire de convertir une chaîne de caractères en minuscules. Que ce soit pour une vérification de mot de passe, une comparaison de chaînes ou simplement pour des raisons esthétiques, cette fonctionnalité est largement utilisée dans de nombreux langages de programmation. Dans cet article, nous allons voir comment convertir une chaîne de caractères en minuscules avec Gleam.
+Si vous travaillez avec des chaînes de caractères dans vos projets de programmation, il est probable que vous ayez rencontré la nécessité de convertir une chaîne en lettres minuscules. Cela peut être utile pour comparer des chaînes sans prendre en compte la casse, pour une meilleure lisibilité ou pour d'autres raisons. Dans cet article, nous allons vous montrer comment réaliser cette tâche en utilisant Gleam, un langage de programmation fonctionnel robuste et expressif.
 
-## Comment faire
+## Comment procéder
 
-Pour convertir une chaîne de caractères en minuscules avec Gleam, nous allons utiliser la fonction `String.to_lower` qui prend en paramètre une chaîne de caractères et renvoie une nouvelle chaîne avec tous les caractères en minuscules.
+Pour convertir une chaîne en lettres minuscules en utilisant Gleam, il existe deux méthodes principales: utiliser la fonction `String.to_lower/1` ou la fonction `String.map/1`. Voici un exemple de code pour chaque méthode:
 
 ```Gleam
-let str = "Bonjour, MONDE!"
-let result = String.to_lower(str)
-io.println(result)
+let str = "Bonjour Tout Le Monde"
+let lower_case_str = String.to_lower(str)
+# Résultat: "bonjour tout le monde"
+
+let mapped_str = String.map(str, fn(c) -> 
+    String.to_lower(c) 
+end)
+# Résultat: "bonjour tout le monde"
 ```
 
-Lorsque nous exécutons ce code, la sortie sera `bonjour, monde!`. Comme vous pouvez le voir, tous les caractères sont maintenant en minuscules.
+Comme vous pouvez le voir, les deux méthodes aboutissent au même résultat: une chaîne avec toutes les lettres en minuscules. Cependant, la fonction `String.to_lower/1` est plus concise et intuitive puisqu'elle ne nécessite pas l'utilisation d'une fonction de mappage. Il est donc conseillé de l'utiliser dans la plupart des cas.
 
-## Plongée en profondeur
+## Approfondissement
 
-Il est important de noter que la fonction `String.to_lower` utilise l'Unicode pour effectuer la conversion. Cela signifie que les caractères spéciaux ou accentués seront également convertis en minuscules selon la règle de normalisation Unicode. Par exemple, "Éléphant" sera converti en "éléphant" et "Über" en "über".
+Maintenant que vous savez comment convertir une chaîne en lettres minuscules en utilisant Gleam, vous pouvez vous demander comment cela fonctionne réellement. En fait, il n'y a rien de magique à cela. La fonction `String.to_lower/1` utilise simplement la fonction `String.map/2` en interne pour appliquer la fonction `String.to_lower/1` à chaque caractère de la chaîne d'entrée.
 
-Si vous souhaitez uniquement convertir les lettres de l'alphabet anglais en minuscules, vous pouvez utiliser la fonction `String.to_lower_ascii` qui ne tient compte que des 26 lettres de l'alphabet anglais dans la conversion.
+Il est également important de noter que lors de la conversion en minuscules, certaines lettres peuvent être remplacées par plusieurs caractères. Par exemple, la lettre "ß" en majuscule devient "SS" en minuscule en allemand. Cela peut être surprenant, mais c'est le comportement attendu.
 
 ## Voir aussi
 
-- Documentation officielle de Gleam : https://gleam.run/documentation/
-- Tutoriels pour débutants : https://gleam.run/documentation/tutorials/
-- Discussion sur Stack Overflow : https://stackoverflow.com/questions/tagged/gleam
+- Documentation de la fonction `String.to_lower/1`: https://hexdocs.pm/gleam/std-string.html#to_lower/1
+- Documentation de la fonction `String.map/1`: https://hexdocs.pm/gleam/std-string.html#map/1
+- Exemples de projets utilisant Gleam: https://github.com/search?q=language%3Agleam

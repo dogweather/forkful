@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: HTML 파싱"
+title:                "HTML 파싱"
+html_title:           "Haskell: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,65 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+혹시 웹 개발을 하고 계시다면, 다양한 웹페이지에서 데이터를 추출하는 기능이 필요하게 될 수도 있습니다. 이때 HTML parsing이라는 기술이 필요합니다. 이를 통해 원하는 정보를 정확하게 추출할 수 있고, 자동화된 작업도 가능해집니다.
 
-웹 개발은 많은 사람들에게 일상적인 일이 되었습니다. 하지만 웹 페이지를 만들 때 가장 큰 문제 중 하나는 다양한 형식을 가진 HTML 코드를 파싱하는 것입니다. 이러한 문제를 해결하기 위해 Haskell을 사용해볼 수 있습니다. Haskell은 강력한 타입 시스템과 함수형 프로그래밍 패러다임을 가지고 있어 HTML 파싱을 더욱 쉽고 간단하게 만들어 줍니다.
-
-## 어떻게?
-
-Haskell에서 HTML 파싱을 위해 사용되는 가장 중요한 패키지는 "tagsoup"입니다. 이 패키지는 태그를 파싱하는데 사용되는 모든 필요한 기능을 제공합니다. 예를 들어, ```parseTags``` 함수를 사용하여 HTML 코드를 태그 리스트로 파싱할 수 있습니다.
+## 방법
+우선, Haskell 프로그래밍 언어를 설치해야 합니다. 그러고 나서 라이브러리 중에서 `tagsoup`을 선택한 뒤, 간단한 예제를 통해 어떻게 HTML을 파싱하는지 알아보겠습니다.
 
 ```Haskell
 import Text.HTML.TagSoup
 
 main = do
-  let html = "<div><h1>Hello World!</h1><p>This is a paragraph.</p></div>"
-  let tags = parseTags html
-  print tags
+    let html = "<html><body><h1>Hello, World!</h1></body></html>"
+    let tags = parseTags html
+    let h1 = fromAttrib "h1" $ head tags
+    print h1
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+이 예제에서는 `Text.HTML.TagSoup` 라이브러리를 불러오고, `parseTags` 함수를 사용하여 HTML 코드를 파싱합니다. 그리고 `fromAttrib` 함수와 `head` 함수를 사용하여 `<h1>` 태그 안에 있는 정보를 추출합니다. 마지막으로 `print` 함수를 사용해 결과를 출력합니다.
+
+위 코드를 실해하면 "Hello, World!"라는 결과가 출력됩니다. 이처럼 쉽게 HTML 코드를 파싱하여 원하는 정보를 추출할 수 있습니다.
+
+## 딥 다이브
+더 깊이 들어가보면, `tagsoup` 라이브러리는 더 다양한 기능을 제공합니다. 예를 들어 HTML 코드에서 특정 태그를 지정하여 그 안에 있는 내용을 추출하는 것도 가능합니다.
 
 ```Haskell
-[TagOpen "div" [],TagOpen "h1" [],TagText "Hello World!",TagClose "h1",TagOpen "p" [],TagText "This is a paragraph.",TagClose "p",TagClose "div"]
-```
+import Text.HTML.TagSoup
 
-이제 이 태그 리스트를 다양한 방법으로 사용할 수 있습니다. 예를 들어, ```innerTexts``` 함수를 사용하여 태그 안에 있는 텍스트를 추출할 수 있습니다.
-
-```Haskell
 main = do
-  let html = "<div><h1>Hello World!</h1><p>This is a paragraph.</p></div>"
-  let tags = parseTags html
-  print $ innerTexts tags
+    let html = "<html><body><div><p>Hello, World!</p><p>This is a paragraph.</p></div></body></html>"
+    let tags = parseTags html
+    let pTags = sections (~== TagOpen "p" []) tags
+    let p1 = fromTagText $ head pTags
+    let p2 = fromTagText $ pTags !! 1
+    print p1
+    print p2
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+위 코드에서는 `<p>` 태그를 지정하여 그 안에 있는 내용을 추출하는 방법을 보여줍니다. `sections` 함수를 사용하여 `<p>` 태그를 찾은 뒤, `fromTagText` 함수를 사용하여 텍스트를 추출합니다. 그리고 `!!` 연산자를 통해 원하는 위치의 태그를 추출합니다.
 
-```Haskell
-["Hello World!","This is a paragraph."]
-```
+이 외에도 더 많은 기능을 `tagsoup` 라이브러리에서 사용할 수 있습니다. 참고자료의 링크를 통해 더 자세한 정보를 확인할 수 있습니다.
 
-또 다른 유용한 함수는 ```findTag```입니다. 이 함수는 주어진 태그 이름과 일치하는 첫 번째 태그를 찾아줍니다.
-
-```Haskell
-main = do
-  let html = "<div><h1>Hello World!</h1><p>This is a paragraph.</p></div>"
-  let tags = parseTags html
-  print $ findTag "p" tags
-```
-
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
-
-```Haskell
-Just (TagOpen "p" [])
-```
-
-## 더 깊게 들어가기
-
-HTML 파싱에 관해서 더 알고 싶다면 "tagsoup" 패키지의 공식 문서를 참조해주세요. 또한 Haskell을 사용하여 웹 개발을 한다면 "scotty" 패키지도 살펴보시기 바랍니다. 이 패키지는 웹 애플리케이션 개발을 위한 프레임워크로서 임의의 콘텐츠를 HTML로 렌더링하는 작업을 쉽게 만들어줍니다.
-
-## 관련 링크
-
-- "tagsoup" 패키지 문서: https://hackage.haskell.org/package/tagsoup
-- "scotty" 패키지 문서: https://hackage.haskell.org/package/scotty
-- Haskell 공식 웹사이트: https://www.haskell.org/
+## 참고자료
+- [Hackage: tagsoup 라이브러리 문서](https://hackage.haskell.org/package/tagsoup/docs/Text-HTML-TagSoup.html)
+- [Learn You a Haskell for Great Good! - HTML parsing](http://learnyouahaskell.com/input-and-output#reading-a-file)

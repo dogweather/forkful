@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Escribiendo en el error estándar"
-simple_title:         "Escribiendo en el error estándar"
+title:                "Escribiendo a error estándar"
+html_title:           "Rust: Escribiendo a error estándar"
+simple_title:         "Escribiendo a error estándar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,50 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Escribir a la salida de error estándar (standard error) puede ser útil en situaciones en las que queramos mostrar mensajes de error o información de depuración en nuestra aplicación. También puede ser útil para capturar y registrar errores en tiempo de ejecución.
+Escribir a la salida de error estándar (standard error) puede ser útil en situaciones en las que se necesita enviar un mensaje de error al usuario o registrar información detallada durante la ejecución de un programa.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Rust, podemos utilizar la macro `eprintln!()`. Esta macro funciona de manera similar a `println!()` pero en lugar de imprimir en la salida estándar, imprime en la salida de error estándar.
+Para escribir a la salida de error estándar en Rust, se utiliza la macro `eprintln!` seguida del mensaje que se desea imprimir. Por ejemplo:
 
-Veamos un ejemplo:
-
-```Rust
-fn main() {
-    let age = 25;
-
-    eprintln!("La edad es: {}", age);
-}
-```
-**Salida:**
-```
-La edad es: 25
+```rust
+eprintln!("¡Error! Algo salió mal.");
 ```
 
-## Inmersión profunda
+Esto imprimirá el mensaje "¡Error! Algo salió mal." en la salida de error estándar. También se puede utilizar la función `writeln!` para escribir a la salida de error estándar con formato. Por ejemplo:
 
-En Rust, la salida de error estándar se representa como un objeto de tipo `io::Stderr`. Esto nos permite utilizar algunos métodos adicionales para formatear o escribir en la salida de error.
+```rust
+let n = 10;
+let m = 5;
 
-Si queremos imprimir un mensaje de error personalizado, podemos utilizar el método `write()` en lugar de `eprintln!()`. Esto nos permitirá formatear el mensaje antes de escribirlo en la salida de error estándar.
-
-```Rust
-use std::io::{self, Write};
-
-fn main() -> io::Result<()> {
-    let file = std::fs::File::open("archivos.txt")?;
-
-    io::stdout().write(b"¡Archivo abierto correctamente!")?;
-
-    Ok(())
-}
+writeln!(std::io::stderr(), "La suma de {} y {} es {}", n, m, n+m);
 ```
 
-**Salida:**
-```
-¡Archivo abierto correctamente!
-```
+Esto imprimirá el mensaje "La suma de 10 y 5 es 15" en la salida de error estándar.
+
+## Profundizando
+
+Cuando se utiliza la macro `eprintln!`, el mensaje se imprime en la salida de error estándar sin ningún procesamiento adicional. Sin embargo, con la función `writeln!` se puede especificar dónde se desea imprimir el mensaje de error, lo que puede ser útil en situaciones específicas. Por ejemplo, se puede utilizar `std::io::stderr()` para imprimir en la salida de error estándar, o `std::fs::File::create("error_log.txt").unwrap()` para guardar el mensaje de error en un archivo.
+
+Además, se pueden utilizar diferentes tipos de formato en el mensaje que se desea imprimir, como `%d` para números enteros, `%f` para números de punto flotante, `%s` para cadenas, entre otros. Esto permite personalizar el mensaje de error y hacerlo más claro y comprensible para el usuario.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre la macro `eprintln!()`](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Documentación oficial de Rust sobre la salida de error estándar](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+- [Documentación de Rust sobre la macro eprintln](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Documentación de Rust sobre la función writeln](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Artículo sobre escritura a la salida de error estándar en Rust](https://www.deadcoderising.com/2017-12-12-rust-tutorial-writing-to-standard-error/)

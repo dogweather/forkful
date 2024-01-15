@@ -1,6 +1,7 @@
 ---
-title:                "C#: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Sending en http forespørsel"
+html_title:           "C#: Sending en http forespørsel"
+simple_title:         "Sending en http forespørsel"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Veldig ofte når vi bruker internett, så sender nettleseren vår en HTTP request for å få tilgang til en nettside eller ressurs. HTTP requests er averdagen av internettbruk og er nødvendig for å kommunisere med forskjellige servere. Men hvordan fungerer egentlig dette i bakgrunnen? Hvordan kan vi implementere det i våre egne programmer? I denne bloggposten skal vi se nærmere på hvordan vi kan sende en HTTP request ved hjelp av C#.
-
 ## Hvorfor
-Hvis du lurer på hvorfor du ville komme i situasjoner der du må sende HTTP requests gjennom et program eller en applikasjon, kan du tenke deg eksempler som å lese data fra en API, laste ned filer eller sende data til en server. Det er en viktig del av interaksjonen med eksterne ressurser og servere. 
+HTTP-forespørsler er en viktig del av å kommunisere med nettet. I C# kan du bruke HTTP-forespørsler til å få tilgang til eksterne ressurser og data, noe som er nyttig for å lage dynamiske og interaktive programmer.
 
-## Slik gjør du det
-For å sende en HTTP request i C#, må vi først opprette en instans av WebClient-klassen. Deretter setter vi URL-en til den nettsiden eller ressursen vi ønsker å få tilgang til. Vi bruker deretter "DownloadString" metoden for å hente data fra URL-en og skrive det ut til konsollen. Det kan se slik ut:
+## Hvordan Sende en HTTP Request
+Det første du trenger å gjøre er å legge til `System.Net.Http`-biblioteket i prosjektet ditt. Dette gir deg tilgang til alle klassene som trengs for å sende en HTTP-forespørsel.
 
-```C#
-using System; 
-using System.Net; 
+Deretter kan du bruke `HttpClient`-klassen til å opprette en ny instans av en HTTP-klient. Dette vil være utgangspunktet for alle dine forespørsler. For eksempel kan du skrive:
 
-class Program { 
-    static void Main(string[] args) {
-        // Opprette en instans av WebClient-klassen 
-        using (var client = new WebClient()) 
-        {
-            // Setter URL-en 
-            string url = "https://example.com"; 
-            //Henter data fra URL-en og skriver det ut til konsollen 
-            string result = client.DownloadString(url); 
-            Console.WriteLine(result); 
-        } 
-    } 
-} 
+```
+var client = new HttpClient();
 ```
 
-Kjøringen av dette programmet vil skrive ut HTML-koden til nettsiden i konsollen. Det er viktig å huske å inkludere "using System.Net;" øverst i koden for å kunne bruke WebClient-klassen.
+Neste steg er å opprette en `HttpRequestMessage`-instans som inneholder informasjon om forespørselen din. Dette inkluderer typen forespørsel (GET, POST, PUT, etc.), URL-adressen og eventuelle nødvendige autentiseringsdetaljer. Et eksempel på dette kan være:
 
-## Dypdykk
-Nå som vi har sett på den grunnleggende implementeringen, la oss se litt nærmere på de forskjellige delene av en HTTP request. En HTTP request består av en URL (Uniform Resource Locator) som vi har brukt i eksemplet over, en HTTP-metode som spesifiserer handlingen vi ønsker å utføre (for eksempel GET, POST, PUT eller DELETE), og valgfrie parametere og data som sendes med requesten.
+```
+var request = new HttpRequestMessage(HttpMethod.Get, "https://www.example.com/api/users");
+```
 
-I tillegg til "DownloadString" metoden som vi har brukt i eksemplet, har WebClient-klassen også andre metoder som kan være nyttige i forskjellige situasjoner. For eksempel kan du bruke "UploadString" metoden hvis du trenger å sende data til en server, eller "DownloadData" metoden hvis du vil laste ned filer.
+Nå kan du faktisk sende forespørselen ved hjelp av HTTP-klienten du opprettet tidligere. Du kan gjøre dette ved å bruke `SendAsync`-metoden og lagre resultatet i en `HttpResponseMessage`-instans. For eksempel:
 
-## Se også
-- [Microsoft Docs: WebClient Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1)
-- [MDN Web Docs: HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [Tutorialspoint: C# - Sending HTTP Requests](https://www.tutorialspoint.com/csharp/csharp_sending_http_requests.htm)
+```
+var response = await client.SendAsync(request);
+```
 
-Forhåpentligvis har denne bloggposten gitt deg en god forståelse av hvordan du kan sende en HTTP request ved hjelp av C#. Ved å bruke WebClient-klassen, kan du enkelt få tilgang til eksterne ressurser og utveksle data med servere. Husk å alltid håndtere eventuelle feil som kan oppstå når du sender en HTTP request og åpne nye muligheter for interaksjon med internett i dine programmer.
+Til slutt kan du hente dataene fra svaret ved å bruke `Content`-egenskapen til `HttpResponseMessage`. Dette vil vanligvis være i JSON-format, og du kan enkelt konvertere det til C#-objekter ved hjelp av `JsonConvert`-klassen fra `Newtonsoft.Json`-biblioteket.
+
+## Dypere Dykk
+En viktig del av å sende HTTP-forespørsler er å forstå HTTP-statuskoder og hvordan du kan håndtere dem i koden din. Her er noen av de vanligste statuskodene du kan støte på:
+
+- 200 OK: Dette betyr at forespørselen var vellykket og at dataene du ba om ble returnert.
+- 401 Unauthorized: Dette betyr at forespørselen ikke var autorisert, og du må kanskje legge til autentiseringsdetaljer i forespørselen din.
+- 404 Not Found: Dette betyr at ressursen du ba om ikke kunne bli funnet.
+
+I tillegg kan det være nyttig å bruke debugging-verktøy som Postman for å teste og feilsøke dine HTTP-forespørsler.
+
+## Se Også
+- [HttpClient Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [HttpRequestMessage Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httprequestmessage)
+- [HttpResponseMessage Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpresponsemessage)

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Haskell: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,36 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi selvittää merkkijonon pituuden? Pituuden selvittäminen voi olla hyödyllistä esimerkiksi kirjoittaessaan tekstipohjaista sovellusta, jossa tarkkaillaan syötteiden pituutta tai analysoitaessa tekstidataa.
+Oletko koskaan tarvinnut tietää merkkijonon pituuden ohjelmointiprojektissasi? Tai ehkä haluat vain tutustua uuteen ohjelmointikielen ominaisuuteen? Tässä artikkelissa opit, miten voit käyttää Haskell-kielellä valmiina olevaa toimintoa merkkijonon pituuden löytämiseen.
 
 ## Miten
 
-Merkkijonon pituuden selvittäminen Haskell-kielen avulla on helppoa. Käytännössä tarvitset vain yhden funktion, nimeltään "length".
+Haskellissa merkkijonon pituuden löytämiseen on helppo ja nopea tapa. Voit käyttää standardikirjaston `length` funktiota antamalla sille merkkijonon parametrina. Katsotaan esimerkkiä:
 
 ```Haskell
-length "Tämä on esimerkkiteksti." 
+length "Tämä on esimerkkimerkkijono"
 ```
+Tämän koodin suorittaminen johtaa tulokseen `28`, eli merkkijonon pituus on 28 merkkiä. Kuten näet, `length` funktio palauttaa kokonaislukuarvon, joten voit tallentaa sen muuttujaan tai käyttää sitä suoraan muissa operaatioissa.
 
-```
-25
-```
-Funktion "length" oletusarvo on laskeminen merkkien määrä, mutta voit myös käyttää sitä muiden tietotyyppien, kuten listojen, pituuden laskemiseen.
+Vaihtoehtoisesti voit myös käyttää `Data.Text` moduulin `length` funktiota merkkijonojen käsittelyyn. Tämä funktio on suorituskykyisempi ja tehokkaampi kuin standardikirjaston vastaava. Katsotaan esimerkkiä:
 
 ```Haskell
-length [1, 2, 3, 4, 5]
+import Data.Text (length)
+
+length "Tämä on esimerkkimerkkijono"
 ```
+Tuloksena saadaan jälleen `28`, mutta tämä funktio toimii nopeammin ja tehokkaammin toistuville operaatioille.
 
-```
-5
-```
+## Syvemmälle
 
-## Syvällinen tarkastelu
+Miten sitten `length` funktio toimii taustalla? Siinä hyödynnetään yhtä Haskellin perustietorakenteista, lista-tyyppiä. Listassa on alkioiden lisäksi myös pituustieto, joten `length` funktio käyttää tätä tietoa vain palauttaakseen alkioihin perustuvan pituuden.
 
-Haskellissa merkkijonot ovat omia tietotyyppejä, mutta ne voivat myös olla listoja merkeistä. Tämä johtaa siihen, että funktion "length" kautta myös merkkijonon pituus lasketaan listan pituutena.
+On myös hyvä huomata, että `length` funktio toimii vain merkkijonon ensimmäisen tason pituuden laskemisessa. Jos haluat laskea sisäkkäisten listojen pituudet, sinun tulee käyttää rekursiota tai muita sopivia funktioita.
 
-Tämän lisäksi Haskellissa on myös muita tapoja lukea merkkijonon pituutta, kuten käyttämällä funktiota "fst" ja "snd" tupleille, joissa ensimmäinen alkio on merkkijono ja toinen on sen pituus.
+## Katso Myös
 
-## Katso myös
-
-- [Haskellin dokumentaatio merkkijonojen käsittelystä](https://www.haskell.org/onlinereport/string.html)
-- [Haskellin opetusohjelma "Learn You a Haskell"](http://learnyouahaskell.com/starting-out#im-a-list-comprehension)
+- [Haskellin dokumentaatio listojen pituudesta](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:length)
+- [Data.Text moduulin dokumentaatio](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)

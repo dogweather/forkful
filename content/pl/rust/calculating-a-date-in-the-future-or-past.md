@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Obliczanie daty w przyszłości lub przeszłości."
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Rust: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,61 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Zastanawiałeś się kiedyś jak obliczyć datę w przyszłości lub przeszłości? Może jesteś programistą, który chce stworzyć aplikację, która będzie wyswietlała datę z wybranego przez użytkownika dnia? W tym artykule dowiesz się jak to zrobić w języku Rust!
+Czasem potrzebujemy obliczyć datę w przyszłości lub w przeszłości. Może to być przydatne, gdy chcemy zaplanować wydarzenie lub sprawdzić, które dni tygodnia przypadały na konkretne daty w naszym życiu. W tym artykule pokażemy, jak wykonać takie obliczenia w języku Rust.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Pierwszą rzeczą, którą musisz zrobić, to zaimportować bibliotekę czasu do swojego projektu. Możesz to zrobić za pomocą następującego kodu:
-
-```Rust
-use std::time::Duration;
-```
-
-Następnie, możesz użyć funkcji `elapsed()` w celu obliczenia odstępu czasu między dwoma określonymi punktami czasowymi. W poniższym przykładzie, obliczymy odstęp czasu od momentu uruchomienia programu do teraz:
+Do obliczania daty w przyszłości lub w przeszłości w języku Rust wykorzystamy bibliotekę `chrono`, która udostępnia funkcje i typy do pracy z datami i czasem. Aby jej użyć, musimy najpierw dodać odpowiednie zależności w pliku `Cargo.toml` naszego projektu:
 
 ```Rust
-use std::time::Instant;
-
-let start = Instant::now();
-
-// some code...
-
-let end = Instant::now();
-
-let elapsed = end.elapsed();
-
-println!("Od momentu uruchomienia minęło {:?}.", elapsed);
+[dependencies]
+chrono = "0.4"
 ```
 
-Output:
-
-```
-Od momentu uruchomienia minęło 2.496927ms.
-```
-
-Możesz również obliczyć datę w przyszłości lub przeszłości, dodając lub odejmując odpowiednią ilość czasu od obecnej daty. W poniższym przykładzie, dodamy 1 dzień do obecnej daty:
+Następnie, w pliku z kodem, importujemy bibliotekę `chrono`:
 
 ```Rust
-use std::time::SystemTime;
-
-let now = SystemTime::now();
-
-let one_day = now + Duration::from_secs(60 * 60 * 24);
-
-println!("Data za 1 dzień będzie następująca: {:?}", one_day);
+use chrono::{DateTime, Duration, NaiveDate, Utc};
 ```
 
-Output:
+Teraz możemy wykonać obliczenia. Zobaczmy, jak uzyskać datę jutrzejszą (od bieżącego dnia):
 
+```Rust
+let dzisiaj = Utc::now().naive_utc().date();
+let jutro = dzisiaj + Duration::days(1);
+println!("{}", jutro); // wypisze datę jutrzejszą w formacie YYYY-MM-DD
 ```
-Data za 1 dzień będzie następująca: 2019-10-29 17:00:26.897347211 +0200.
+
+Podobnie możemy obliczyć datę w przeszłości, np. sprzed 10 lat:
+
+```Rust
+let dzisiaj = Utc::now().naive_utc().date();
+let dziesiec_lat_temu = dzisiaj - Duration::days(365 * 10);
+println!("{}", dziesiec_lat_temu); // wypisze datę sprzed 10 lat w formacie YYYY-MM-DD
 ```
 
-## Deep Dive
+## Wnikliwe spojrzenie
 
-Jeśli chcesz dowiedzieć się więcej o obliczaniu daty w przyszłości lub przeszłości w języku Rust, możesz zapoznać się z dokumentacją biblioteki czasu oraz przestudiować przykłady kodu dostępne na stronie Rust Playground.
+W języku Rust obliczanie dat w przyszłości lub w przeszłości jest bardzo proste dzięki bibliotece `chrono`. Biblioteka ta oferuje również wiele innych przydatnych funkcji, takich jak wykonywanie operacji na czasie czy formatowanie dat. Zachęcamy do zapoznania się z jej dokumentacją, aby poznać więcej możliwości.
 
-## Zobacz Również
+## Zobacz też
 
-- [Dokumentacja biblioteki czasu w Rust](https://doc.rust-lang.org/std/time/index.html)
-- [Przykłady kodu w Rust Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=1e8cfd8f11ef3d3c73c1b1fa1d239307)
+- Dokumentacja biblioteki `chrono`: https://docs.rs/chrono/0.4.11/chrono/index.html
+- Przykładowy projekt wykorzystujący `chrono`: https://github.com/dylanaraps/chronobreak

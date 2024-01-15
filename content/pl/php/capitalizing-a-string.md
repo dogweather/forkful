@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Zapisywanie wielkich liter ciągu znaków"
-simple_title:         "Zapisywanie wielkich liter ciągu znaków"
+title:                "Zapisywanie wielkich liter w ciągu znaków"
+html_title:           "PHP: Zapisywanie wielkich liter w ciągu znaków"
+simple_title:         "Zapisywanie wielkich liter w ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,45 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy modyfikować ciągi znaków, na przykład zmiany ich rozmiaru czy stylu. Jeden z takich przypadków to konieczność zamiany pierwszej litery każdego słowa w ciągu na wielką literę. Ten proces nazywa się "kapitalizacją" i jest bardzo częstym zadaniem w PHP. Dlatego w tym artykule pokażemy, jak w prosty sposób kapitalizować ciągi znaków w PHP.
+Czemu warto wykorzystywać funkcję 'strtoupper' do zamieniania liter na duże litery? Przez wykorzystanie tego prostego narzędzia można szybko i sprawnie zmienić format tekstu do swoich potrzeb. Ponadto, jest to bardzo przydatne przy pracy z tekstami w programowaniu.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Do kapitalizacji ciągów znaków w PHP możemy użyć funkcji `ucwords()`. Przyjmuje ona jeden argument - ciąg znaków, który chcemy zmodyfikować. Następnie zwraca ona nowy ciąg znaków z pierwszą literą każdego słowa kapitalizowaną.
-
-```PHP
-$ciag = 'to jest przykladowy ciag do kapitalizacji';
-echo ucwords($ciag);
-```
-
-**Output:** To Jest Przykladowy Ciag Do Kapitalizacji
-
-Funkcja `ucwords()` jest szczególnie przydatna, gdy chcemy kapitalizować również słowa zaczynające się od znaku specjalnego, na przykład `-` lub `.`.
+Kodowanie w PHP jest bardzo proste i intuicyjne, dlatego też wykorzystanie funkcji 'strtoupper' nie sprawia większych trudności. Wystarczy umieścić kod pomiędzy znacznikami "```PHP" i "```" oraz użyć funkcji w następujący sposób:
 
 ```PHP
-$ciag = 'ciało-energia-pojawienie się';
-echo ucwords($ciag);
+$name = "programowanie w PHP";
+echo strtoupper($name);
 ```
 
-**Output:** Ciało-Energia-Pojawienie Się
+W rezultacie otrzymamy: PROGRAMOWANIE W PHP.
 
-## Deep Dive
+## Głębszy zanurzenie
 
-Jeśli chcemy kapitalizować ciąg znaków bez uwzględniania znaków specjalnych, możemy użyć funkcji `ucfirst()`. Różni się ona od `ucwords()` tym, że kapitalizuje tylko pierwszą literę ciągu.
+Funkcja 'strtoupper' w PHP służy do zamiany wszystkich liter w podanym ciągu znaków na duże litery. Dzięki temu możemy szybko i bez większego wysiłku zmienić format tekstu, co jest szczególnie przydatne przy tworzeniu raportów, dokumentów czy formularzy.
 
-Funkcja `ucwords()` wykorzystuje również ustalony przez użytkownika separator słów. Domyślnie jest nim spacja, ale można to zmienić poprzez przekazanie opcjonalnego drugiego argumentu do funkcji.
+Funkcja ta jest również bardzo użyteczna przy porównywaniu tekstu, ponieważ zamiana na jeden, ustalony format ułatwia znalezienie identycznych lub podobnych ciągów znaków.
 
-```PHP
-$ciag = 'to jest przykladowy ciag do kapitalizacji';
-echo ucwords($ciag, "-");
-```
+Innym ciekawym zastosowaniem może być wykorzystanie funkcji 'strtoupper' do zabezpieczenia formularzy na stronie internetowej. W przypadku, gdy wymagane jest wpisanie kodu captcha, zmiana liter na duże znacznie zmniejsza szansę na błędy przy wpisywaniu kodu.
 
-**Output:** To Jest Przykladowy Ciag Do Kapitalizacji
+## Zobacz także
 
-W przypadku gdy potrzebujemy kapitalizować tylko pierwsze litery wyrazów, ale zachowując oryginalny rozmiar liter pozostałych znaków, możemy użyć funkcji `mb_convert_case()`, która dostępna jest w PHP w wersjach 7 i wyższych.
-
-## Zobacz Także
-
-- [Dokumentacja funkcji ucwords() w PHP](https://www.php.net/manual/en/function.ucwords.php)
-- [Dokumentacja funkcji ucfirst() w PHP](https://www.php.net/manual/en/function.ucfirst.php)
-- [Dokumentacja funkcji mb_convert_case() w PHP](https://www.php.net/manual/en/function.mb-convert-case.php)
+- Dokumentacja funkcji 'strtoupper' w PHP: https://www.php.net/manual/en/function.strtoupper.php
+- Przykłady użycia funkcji 'strtoupper': https://www.w3schools.com/php/func_string_strtoupper.asp
+- Poradnik dotyczący tworzenia formularzy z wykorzystaniem funkcji 'strtoupper': https://www.phpzag.com/uppercasing-captcha-code-by-strtoupper-function-in-php/

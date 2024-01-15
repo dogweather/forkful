@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Завантаження веб-сторінки."
-simple_title:         "Завантаження веб-сторінки."
+title:                "Завантаження веб-сторінки"
+html_title:           "Kotlin: Завантаження веб-сторінки"
+simple_title:         "Завантаження веб-сторінки"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,44 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Завантаження веб-сторінки є важливим кроком у розробці веб-додатків та скриптів. Це дозволяє програмістам отримувати потрібну інформацію з інших веб-сторінок та обробляти її для подальшого використання.
+Завантаження веб-сторінки може бути корисним для збереження контенту з Інтернету для подальшого використання, а також для доступу до інформації в офлайн режимі.
 
 ## Як
 
-Кotlin має потужну бібліотеку для завантаження веб-сторінок - `URL` та `HttpURLConnection`. Ось приклад коду, який показує, як завантажити веб-сторінку та отримати її контент:
+Цей приклад використовує бібліотеку `kotlinx.coroutines` для створення синхронного запиту на отримання вмісту веб-сторінки.
+
+За допомогою `runBlocking` функції, ми можемо виконати запит і очікувати результату перед продовженням програми.
 
 ```Kotlin
-val url = URL("https://www.example.com")
-val connection = url.openConnection() as HttpURLConnection
+import kotlinx.coroutines.*
+import java.net.URL
 
-connection.requestMethod = "GET"
-
-val responseCode = connection.responseCode
-Log.d("HTTP Response Code: ", responseCode.toString())
-
-val input = BufferedReader(InputStreamReader(connection.inputStream))
-val result = StringBuilder()
-
-var line = input.readLine()
-while (line != null) {
-    result.append(line)
-    line = input.readLine()
+fun main() { 
+    runBlocking {
+        val url = URL("https://example.com") // вказуємо URL сторінки
+        val content = url.readText() // отримуємо вміст сторінки як рядок
+        println(content) // виводимо вміст у консоль
+    }
 }
-
-val content = result.toString()
-Log.d("HTML Content: ", content)
 ```
 
-Цей код використовує `URL` для створення з'єднання з веб-сторінкою, а потім `HttpURLConnection` для відправлення запиту і отримання контенту. Результат може бути оброблений та використаний згідно з потребами програміста.
+Результатом виконання програми буде виведений у консоль вміст веб-сторінки.
 
-## Глибока занурення
+## Глибокий занурений погляд
 
-Якщо потрібно більш складний або ефективний підхід до завантаження веб-сторінок, Kotlin також пропонує інші інструменти, такі як `OkHttp` та `Jsoup`. `OkHttp` є швидким та високопродуктивним засобом для роботи з мережевими запитами, а `Jsoup` дозволяє легко отримувати та обробляти HTML-код сторінки.
+Завантаження веб-сторінки за допомогою `readText()` може бути зручною, але менш ефективною методологією, оскільки це виконує синхронний запит, тобто програма буде зупинена на час отримання відповіді від сервера.
 
-Незалежно від того, який підхід ви виберете, завантаження веб-сторінки є важливою частиною багатьох проектів на Kotlin та допомагає програмістам отримувати необхідну інформацію для своїх програм.
+У більш складних ситуаціях, коли потрібен асинхронний запит або більш розширена обробка вмісту сторінки, рекомендовано використовувати бібліотеку `khttp`, яка надає більш гнучкий інструментарій для роботи з HTTP запитами.
 
 ## Дивись також
 
-- [Офіційна документація Kotlin з завантаження веб-сторінок](https://kotlinlang.org/docs/reference/networking.html#urls-and-uriconnections)
-- [Офіційна документація OkHttp](https://square.github.io/okhttp/)
-- [Офіційна документація Jsoup](https://jsoup.org/)
+- [Офіційна документація з бібліотекою kotlinx.coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
+- [Офіційна документація з бібліотекою khttp](https://khttp.readthedocs.io/en/latest/)
+- [Стаття про асинхронні HTTP запити в Kotlin](https://www.baeldung.com/kotlin-http-requests)

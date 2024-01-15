@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Enviando uma requisição http com autenticação básica"
-simple_title:         "Enviando uma requisição http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "TypeScript: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,47 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar autenticação básica em requisições HTTP?
+## Por que
 
-A autenticação básica é um método simples e eficaz para garantir que apenas usuários autorizados acessem determinados recursos em uma aplicação. Ao enviar uma requisição HTTP com autenticação básica, o usuário deve fornecer um nome de usuário e senha para comprovar sua identidade antes de receber uma resposta da aplicação. Isso ajuda a garantir que apenas usuários autorizados possam acessar informações sensíveis ou realizar ações específicas.
+Enviar uma solicitação HTTP com autenticação básica é essencial para acessar recursos protegidos em um servidor. Isso garante a segurança da comunicação com o servidor e permite que o mesmo verifique se o usuário é autorizado a acessar determinados dados ou realizar determinadas ações.
 
-## Como enviar uma requisição HTTP com autenticação básica em TypeScript
+## Como fazer
 
-Para enviar uma requisição HTTP com autenticação básica em TypeScript, primeiro precisamos importar o módulo `https` nativo do Node.js. Então, definimos as credenciais de autenticação em uma variável de cabeçalho, que será anexada à nossa requisição. Por fim, usamos o método `request` do módulo `https` para enviar a requisição ao servidor.
+Para enviar uma solicitação HTTP com autenticação básica em TypeScript, você vai precisar de uma biblioteca de cliente HTTP, como o "Axios". Primeiro, importe a biblioteca no seu arquivo TypeScript:
 
-~~~TypeScript
-import https from 'https';
+```TypeScript
+import axios from 'axios';
+```
 
-const username = 'fulano';
-const password = '012adc34e';
-const authHeader = `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`;
+Em seguida, crie um objeto de configuração que contenha o endpoint da solicitação, as credenciais de autenticação e outros parâmetros opcionais, como headers ou dados a serem enviados:
 
-const options = {
-  hostname: 'www.exemplo.com',
-  path: '/recurso',
-  headers: {
-    'Authorization': authHeader
-  }
+```TypeScript
+let config = {
+    url: 'https://api.example.com/resource',
+    auth: {
+        username: 'usuario',
+        password: 'senha'
+    },
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: {
+        foo: 'bar'
+    }
 };
+```
 
-https.request(options, (res) => {
-  res.on('data', (chunk) => {
-    console.log(`Dados recebidos: ${chunk}`);
-  });
-}).end();
-~~~
+Por fim, use o método "axios.request()" para enviar a solicitação com a configuração criada:
 
-Ao executar este código, a aplicação enviará uma requisição HTTP GET para o endereço `www.exemplo.com/recurso` e retornará os dados recebidos no console.
+```TypeScript
+axios.request(config)
+    .then(response => console.log(response.data))
+    .catch(error => console.log(error));
+```
 
-## Aprofundando-se em requisições HTTP com autenticação básica em TypeScript
+## Deep Dive
 
-Além da autenticação básica, existem outros métodos de autenticação como o Digest e o Bearer, que também podem ser usados em requisições HTTP. Além disso, as especificações do HTTP também permitem o uso de outros tipos de autenticação baseados em tokens, como o OAuth. É importante estar familiarizado com esses métodos e escolher o mais apropriado para cada situação.
+A autenticação básica é um método simples de autenticação baseado em criptografia de texto simples. Ao enviar uma solicitação com autenticação básica, o cliente inclui as credenciais do usuário (nome de usuário e senha) criptografadas no cabeçalho da solicitação. O servidor, por sua vez, verifica se as credenciais correspondem a um usuário autorizado e retorna os dados solicitados se a autenticação for bem-sucedida.
 
-Outro aspecto importante a se considerar é que, ao usar a autenticação básica, as credenciais são enviadas em formato de texto simples, o que torna vulnerável a interceptação por hackers. Portanto, é importante garantir que a conexão esteja criptografada com o uso de HTTPS para proteger as informações de autenticação.
+É importante lembrar que a autenticação básica não é considerada um método seguro, pois as credenciais são enviadas em texto simples e podem ser interceptadas por terceiros. Portanto, é recomendável utilizar métodos de autenticação mais robustos, como o OAuth, sempre que possível.
 
 ## Veja também
-[Documentação do módulo HTTPS do Node.js](https://nodejs.org/api/https.html)
 
-[Artigo sobre autenticação HTTP da Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basic_access_authentication)
-
-[Artigo sobre autenticação com tokens da Microsoft](https://msdn.microsoft.com/pt-br/library/azure/dn645542.aspx)
+- Documentação oficial do Axios: https://github.com/axios/axios
+- Tutorial sobre autenticação básica em HTTP: https://www.baeldung.com/spring-security-basic-authentication
+- Artigo sobre segurança de dados em comunicações HTTP: https://owasp.org/www-community/controls/Authentication

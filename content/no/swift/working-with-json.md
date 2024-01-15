@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Å arbeide med json"
-simple_title:         "Å arbeide med json"
+title:                "Arbeide med json"
+html_title:           "Swift: Arbeide med json"
+simple_title:         "Arbeide med json"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -11,31 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle noen ønske å jobbe med JSON? JSON, som står for JavaScript Object Notation, er et populært format for å lagre og overføre data. Det brukes ofte i web-applikasjoner og mobilapplikasjoner for å kommunisere med servere og sikre at dataene som blir sendt og mottatt er i et strukturert og lesbart format.
+JSON (JavaScript Object Notation) er en populær måte å lagre og utveksle data på i moderne programvareutvikling. Å jobbe med JSON i Swift er viktig for å kunne bruke og behandle data fra forskjellige kilder, som APIer og databasesystemer.
 
-## Hvordan
+## Slik gjør du det
 
-Å jobbe med JSON i Swift er enkelt og effektivt. Her er et eksempel på hvordan man kan konvertere data som er lagret i et JSON-format til et Swift-objekt og hente ut spesifikke verdier:
+For å jobbe med JSON i Swift, må du først importere `Foundation`-rammeverket. Deretter kan du bruke `Foundation`-klassen `JSONSerialization` for å konvertere JSON-data til Swift-objekter og vice versa. Her er et eksempel på hvordan du kan hente JSON-data fra en URL:
 
 ```Swift
-if let jsonData = jsonString.data(using: .utf8) {
-    let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: [])
-    if let jsonDictionary = jsonObject as? [String: Any],
-        let name = jsonDictionary["name"] as? String,
-        let age = jsonDictionary["age"] as? Int {
-            print("\(name) is \(age) years old")
-    }
+// Opprett URL-objekt
+let url = URL(string: "https://api.example.com/data")
+
+// Hent JSON-data fra URL
+if let data = try? Data(contentsOf: url) {
+  // Konverter data til Swift-objekter
+  if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+    // Gjør noe med ditt Swift-objekt
+    print(json)
+  }
 }
 ```
 
-I dette eksempelet lager vi først en`Data`-objekt fra den JSON-strengen vi ønsker å jobbe med. Deretter bruker vi`JSONSerialization` for å konvertere dette til et `Any`-objekt, som vi deretter cast'er til et `Dictionary` hvor vi kan hente ut spesifikke verdier ved hjelp av nøklene i JSON-strengen.
+I dette eksempelet bruker vi `Data`-klassen for å hente JSON-data fra en URL og deretter `JSONSerialization` for å konvertere data til et Swift-objekt. Pass også på at du håndterer eventuelle feil som kan oppstå ved konvertering av data.
 
 ## Dypdykk
 
-Det finnes flere måter å jobbe med JSON i Swift, og det er viktig å forstå forskjellene mellom dem. En vanlig måte er å bruke `JSONSerialization`, men det finnes også populære biblioteker som SwiftyJSON som gjør det enklere å hente ut verdier fra JSON-strenger. Det er også viktig å huske på at JSON er et hierarkisk format, og at man bør strukturere dataene sine på en måte som gjør det enkelt å hente ut ønskede verdier.
+Når du jobber med JSON i Swift, er det viktig å forstå forskjellen mellom forskjellige datastrukturer og hvordan de kan konverteres til Swift-objekter. JSON-data kan være enkle verdier som strenger og tall, eller det kan være komplekse objekter og matriser av data. Det er viktig å vite hvordan disse forskjellige datastrukturene kan tolkes og behandles i Swift for å kunne bruke dem effektivt i programmene dine.
 
 ## Se også
 
-- [Apple documentation for JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [SwiftyJSON on GitHub](https://github.com/SwiftyJSON/SwiftyJSON)
-- [How to work with JSON in Swift](https://www.raywenderlich.com/3627073-json-tutorial-for-ios-getting-started)
+- [Foundation API reference](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [Introduction to JSON in Swift](https://www.raywenderlich.com/2694-creating-and-parsing-json-in-swift)

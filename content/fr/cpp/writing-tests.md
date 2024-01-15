@@ -1,5 +1,6 @@
 ---
-title:                "C++: Écriture de tests"
+title:                "Écriture de tests"
+html_title:           "C++: Écriture de tests"
 simple_title:         "Écriture de tests"
 programming_language: "C++"
 category:             "C++"
@@ -9,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi écrirer des tests en C++
+## Pourquoi écrire des tests ?
 
-Il est souvent considéré comme une bonne pratique de tester son code lors de la programmation, surtout en C++, où les erreurs peuvent être plus difficiles à repérer. Écrire des tests peut aider à détecter et à corriger les erreurs avant qu'elles ne causent des problèmes dans votre programme.
+Ecrire des tests est une pratique essentielle pour s'assurer de la qualité du code et pour éviter les bugs. Cela permet de détecter rapidement et efficacement les erreurs, tout en assurant un fonctionnement optimal de l'application.
 
-## Comment écrire des tests en C++
+## Comment faire ?
 
-Pour écrire des tests en C++, vous pouvez utiliser la bibliothèque de tests unitaires Google Test. Voici un exemple de test simple qui vérifie si une fonction retourne le bon résultat :
+La première étape pour écrire des tests est de choisir un framework de test adapté à votre projet. Par exemple, Google Test ou Catch2 sont des frameworks populaires pour les tests en C++. Ensuite, il suffit de suivre cette structure de base :
 
-```C++
-#include <gtest/gtest.h>
+```
+#include <gtest/gtest.h> // or #include <catch2/catch.hpp> 
 
-int square(int x) {
-    return x * x;
+// Your code to test goes here
+
+TEST(Fonction à tester, Nom du test) {
+  // Arrange: Setup any necessary data or variables
+  // Act: Call the function to be tested with specific input
+  // Assert: Check if the output matches the expected result
 }
 
-TEST(SquareTest, PositiveNumbers) {
-    EXPECT_EQ(square(5), 25);
-    EXPECT_EQ(square(10), 100);
+TEST(Autre fonction à tester, Autre nom de test) {
+  // Arrange
+  // Act
+  // Assert
 }
 
-TEST(SquareTest, NegativeNumbers) {
-    EXPECT_EQ(square(-5), 25);
-    EXPECT_EQ(square(-10), 100);
-}
-
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+// more tests...
 ```
 
-Cette bibliothèque vous permet de définir des cas de tests avec différentes valeurs en entrée et de vérifier si les résultats sont corrects avec la fonction `ASSERT_EQ` de Google Test. Si tous les tests passent, le programme affichera un message de réussite. Sinon, il indiquera quel test a échoué et quel était l'erreur.
+Maintenant, vous pouvez écrire différentes fonctions de test en utilisant la structure mentionnée ci-dessus. Les résultats des tests seront affichés de manière claire et concise, vous indiquant où et pourquoi le test a échoué.
 
-## Plongée plus profonde
+## Approfondissement
 
-Écrire des tests peut sembler fastidieux et prendre du temps, mais cela peut vous faire gagner du temps à long terme en réduisant le temps passé à déboguer en cas d'erreur. Cela peut également rendre votre code plus robuste et faciliter les modifications et les mises à jour ultérieures.
+Ecrire des tests ne se limite pas simplement à vérifier si votre code fonctionne. Cela peut également vous aider à détecter des problèmes de performance et à améliorer l'efficacité de votre application. En divisant votre code en petites parties testables, vous pouvez également rendre votre code plus modulaire, ce qui facilite sa maintenance à long terme.
 
-Certaines bonnes pratiques à suivre lors de l'écriture de tests en C++ sont les suivantes :
+Cependant, il est important de ne pas tomber dans l'excès et d'écrire trop de tests. Cela peut ralentir le processus de développement et devenir difficile à maintenir. Il est préférable de se concentrer sur les parties les plus critiques et complexes de votre code pour les tester en priorité.
 
-- Testez toutes les fonctions importantes de votre programme.
-- Utilisez des valeurs en entrée variées pour vos tests.
-- Commentez vos tests pour expliquer pourquoi ils sont importants et ce qu'ils devraient vérifier.
+## Voir aussi
 
-# Voir aussi
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [Introduction aux tests unitaires en C++](https://docs.google.com/presentation/d/1-qAIbLKrPWdYzHnCAyOorECbDNfR2EbdxzbIhop3Cpw/edit#slide=id.p)
 
-- [Documentation de Google Test pour C++](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
-- [Tutoriel sur les tests unitaires en C++](https://www.testedemo.com/tutorials/tutorials.html)
+N'attendez plus et commencez à écrire des tests pour votre prochain projet en C++ ! Cela vous fera gagner du temps et vous permettra d'avoir une base solide pour votre code. Bonne écriture de tests !

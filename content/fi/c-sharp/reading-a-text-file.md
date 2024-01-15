@@ -1,5 +1,6 @@
 ---
-title:                "C#: Tiedoston lukeminen"
+title:                "Tiedoston lukeminen"
+html_title:           "C#: Tiedoston lukeminen"
 simple_title:         "Tiedoston lukeminen"
 programming_language: "C#"
 category:             "C#"
@@ -11,71 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstitiedostojen lukeminen on yksi perustaidoista C# -ohjelmoinnissa. Se on tärkeä taito, joka auttaa ohjelmoijia käsittelemään ja analysoimaan suuria määriä tietoa tiedostoista. Olipa kyseessä sitten tiedon tallentaminen, raporttien luominen tai tietojen visualisointi, tekstitiedostojen lukeminen on välttämätöntä lähes jokaisessa ohjelmassa.
+Monet ohjelmoijat tarvitsevat kyvyn lukea tekstitiedostoja tietojen käsittelyä ja tallentamista varten, joten tämä artikkeli auttaa heitä oppimaan, kuinka se tehdään käyttäen C# -ohjelmointikieltä.
 
-## Miten tehdä
-
-Tekstitiedoston lukeminen C# -kielellä on yllättävän yksinkertaista. Käytämme siihen StreamReader-luokkaa, joka tarjoaa monia käteviä metodeja tekstitiedoston lukemiseen. Katso seuraavia koodirivejä saadaksesi paremman käsityksen:
+## Kuinka
 
 ```C#
-// Avaa tiedosto ja luo uusi StreamReader-olio
-StreamReader reader = new StreamReader("tiedostonimi.txt");
+using System.IO;  // Tämä kirjasto tarvitaan tekstitiedoston lukemiseen ja kirjoittamiseen
 
-// Lukee tiedoston sisällön kokonaisuudessaan ja tallentaa sen muuttujaan
-string text = reader.ReadToEnd();
+// Avataan ja luetaan tekstitiedosto nimeltä "teksti.txt"
+StreamReader lukija = new StreamReader("teksti.txt");
 
-// Sulkee tiedoston lukemisen jälkeen
-reader.Close();
+// Luetaan ensimmäinen rivi tekstitiedostosta
+string rivi = lukija.ReadLine();
 
-// Tulostaa tiedoston sisällön konsoliin
-Console.WriteLine(text);
+// Tulostetaan rivi konsoliin
+Console.WriteLine(rivi);
 
+// Suljetaan lukija
+lukija.Close();
 ```
 
-Seuraava koodiesimerkki näyttää, kuinka voit lukea ja käsitellä tekstitiedostoa rivi kerrallaan. Tässä esimerkissä käytämme while-silmukkaa ja StreamReaderin ReadLine-metodia:
+Output:
+
+`Tämä on esimerkkiteksti, joka on tallennettu tekstitiedostoon.`
+
+Tässä esimerkissä avataan ja luetaan tekstitiedosto nimeltä "teksti.txt". Lukemisen jälkeen ensimmäinen rivi tallennetaan muuttujaan ja tulostetaan konsoliin. Lopuksi lukija suljetaan, jotta muistia ei kuluteta turhaan.
+
+## Syvällisempi sukellus
+
+Jos haluat lukea tekstitiedoston sisällön kokonaisuudessaan ja käsitellä sitä jotenkin, voit käyttää `ReadToEnd()` -metodia sen sijaan, että lukisit tiedosto rivi kerrallaan. Tämä palauttaa koko tekstitiedoston sisällön yhtenä merkkijonona, jota voit sitten käsitellä haluamallasi tavalla.
 
 ```C#
-// Avaa tiedosto ja luo uusi StreamReader-olio
-StreamReader reader = new StreamReader("tiedostonimi.txt");
+// Luetaan koko tekstitiedoston sisältö ja tallennetaan muuttujaan
+string sisalto = lukija.ReadToEnd();
 
-// Luetaan tiedosto rivi kerrallaan ja tulostetaan jokainen rivi konsoliin
-string line;
-while ((line = reader.ReadLine()) != null)
-{
-    Console.WriteLine(line);
-}
+// Tulostetaan koko sisältö konsoliin
+Console.WriteLine(sisalto);
 
-// Sulkee tiedoston lukemisen jälkeen
-reader.Close();
+// Split-metodilla voidaan jakaa sisältö esimerkiksi rivinvaihdon perusteella
+string[] rivit = sisalto.Split("\n");
 
+// Tulostetaan rivien määrä
+Console.WriteLine("Tiedostossa on " + rivit.Length + " riviä.");
 ```
 
-Näissä esimerkeissä käytämme File-luokkaa luomaan uuden tekstitiedoston ja kirjoittamaan siihen tietoa. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tallentaa käyttäjältä saatuja tietoja tiedostoon:
+Output:
 
-```C#
-// Luodaan uusi tekstitiedosto nimellä "uusi_tiedosto.txt"
-File.Create("uusi_tiedosto.txt");
+`Tämä on esimerkkiteksti, joka on tallennettu tekstitiedostoon.
+Tämä on seuraava rivi.
+Ja tämä on vielä kolmas.`
 
-// Avataan tiedosto ja luodaan StreamWriter-olio
-StreamWriter writer = new StreamWriter("uusi_tiedosto.txt");
+`Tiedostossa on 3 riviä.`
 
-// Kirjoitetaan tietoa tiedostoon
-writer.WriteLine("Tervetuloa blogiimme!");
-writer.WriteLine("Tutustu artikkeleihimme ja opi uutta C# -ohjelmoinnista.");
-
-// Suljetaan tiedosto
-writer.Close();
-
-```
-
-## Syventävä tieto
-
-Tekstitiedostojen lukeminen on perustietoa C# -ohjelmoinnissa, mutta siitä löytyy myös monia edistyneempiä ominaisuuksia. Voit esimerkiksi määrittää erilaisia lukutapoja, kuten käsittelyä merkitsemättömien rivien kohdalla tai tiedoston koodauksen. Lisäksi voit käyttää muita luokkia, kuten FileStream tai BinaryReader, tekstitiedoston lukemiseen.
-
-Jos haluat oppia lisää tekstitiedoston lukemisesta C# -kielellä, suosittelemme tarkistamaan C# -kielen dokumentoinnin aiheesta tai tutustumaan erilaisiin oppimateriaaleihin.
+Muista myös käyttää `try-catch` -lohkoa, jotta virhetilanteet voidaan hallita ja ohjelma ei kaadu, jos tiedostoa ei esimerkiksi löydy tai käyttäjällä ei ole lukuoikeutta.
 
 ## Katso myös
 
-- C# Language Reference: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/
-- C# Programming Guide: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/
-- Tutorialspoint: https://www.tutorialspoint.com/csharp/csharp_text_files.htm
+- [C# tiedoston lukeminen ja kirjoittaminen](https://www.tut.fi/pop/popSohv/HTML/textIO.html)
+- [Tekstitiedostojen käsittely C# -ohjelmoinnissa](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
+- [Tietojen tallentaminen ja lukeminen tekstitiedostoon C# -ohjelmoinnissa](https://www.c-sharpcorner.com/article/storing-data-in-a-text-file/)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "Fish Shell: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,39 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur ou un administrateur système, vous savez probablement à quel point il est important d'automatiser certaines tâches pour gagner du temps et garantir la cohérence dans votre travail. C'est là que YAML entre en jeu. YAML est un langage de sérialisation de données facile à lire et à écrire, principalement utilisé pour la configuration, ce qui en fait un outil indispensable pour automatiser vos tâches quotidiennes.
+Si vous êtes un amateur de programmation, il est fort probable que vous ayez entendu parler de YAML. Cette syntaxe de données est de plus en plus populaire, et est utilisée par de nombreux langages de programmation pour stocker et gérer des données structurées. Dans cet article, nous allons explorer comment utiliser YAML dans votre shell Fish.
 
 ## Comment faire
 
-La première étape pour travailler avec YAML dans Fish Shell est d'installer le plugin fish-pe (Fisher + PE), qui fournit les fonctionnalités nécessaires pour manipuler les données YAML. Une fois installé, il suffit d'utiliser la commande `yqr` pour lire un fichier YAML et la commande `yqw` pour écrire dans un fichier YAML. Voici un exemple de code pour lire et écrire dans un fichier YAML :
+La première étape pour travailler avec YAML dans Fish Shell est d'installer le plugin correspondant. Pour ce faire, vous pouvez utiliser la commande suivante :
 
 ```Fish Shell
-# Lecture d'un fichier YAML
-set config (yqr config.yaml)
-
-# Affichage des données
-echo $config
-
-# Modification des données
-set config.name "John Doe"
-set config.age 30
-
-# Écriture dans le fichier YAML
-yqw config.yaml $config
+omf install yaml
 ```
 
-Lors de l'exécution de ce code, vous verrez le contenu du fichier YAML affiché dans votre terminal, puis les données seront modifiées et réécrites dans le même fichier.
+Une fois le plugin installé, vous pouvez utiliser la commande `yq` pour travailler avec des fichiers YAML. Par exemple, pour afficher le contenu d'un fichier YAML, vous pouvez utiliser la commande suivante :
+
+```Fish Shell
+yq read fichier.yaml
+```
+
+Pour ajouter une nouvelle entrée dans le fichier YAML, vous pouvez utiliser la commande `yq write` en spécifiant le chemin de la nouvelle clé et sa valeur, comme ceci :
+
+```Fish Shell
+yq write fichier.yaml chemin.clé "nouvelle valeur"
+```
+
+Vous pouvez également utiliser `grep` pour rechercher des éléments spécifiques dans un fichier YAML :
+
+```Fish Shell
+yq read fichier.yaml | grep "élément recherché"
+```
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment travailler avec YAML dans Fish Shell, voici quelques astuces pour tirer le meilleur parti de cet outil : 
+Maintenant que vous savez comment utiliser les commandes principales pour travailler avec YAML dans Fish Shell, regardons de plus près les différentes manières de modifier et d'analyser des fichiers YAML.
 
-- Utilisez des variables pour stocker les données YAML, ce qui facilite la modification et la réutilisation de ces données dans votre code.
-- Utilisez la commande `yqr -e` pour extraire une valeur spécifique d'un fichier YAML, ce qui peut être utile pour automatiser des tâches telles que la création de dossiers ou de fichiers.
-- Consultez la documentation complète de fish-pe pour en savoir plus sur les fonctionnalités avancées de manipulation de données YAML.
+Vous pouvez modifier un fichier YAML en utilisant des expressions régulières avec `sed`. Par exemple, pour remplacer toutes les occurences d'une chaîne de caractères dans un fichier YAML, vous pouvez utiliser la commande suivante :
+
+```Fish Shell
+sed -i "s/ancienne_chaîne/nouvelle_chaîne/g" fichier.yaml
+```
+
+De plus, si vous avez besoin d'analyser un fichier YAML avec des scripts, vous pouvez utiliser la bibliothèque Python `pyyaml` pour le faire facilement.
 
 ## Voir aussi
 
-- [Site officiel de Fish Shell](https://fishshell.com/)
-- [Documentation de fish-pe](https://github.com/fisherman/pe)
-- [Site officiel de YAML](https://yaml.org/)
+- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Github du plugin YAML pour Fish Shell](https://github.com/fishery/yaml)

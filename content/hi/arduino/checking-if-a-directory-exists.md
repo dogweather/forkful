@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: क्या एक निर्देशिका मौजूद है की जांच"
-simple_title:         "क्या एक निर्देशिका मौजूद है की जांच"
+title:                "डायरेक्टरी का अस्तित्व जांचें"
+html_title:           "Arduino: डायरेक्टरी का अस्तित्व जांचें"
+simple_title:         "डायरेक्टरी का अस्तित्व जांचें"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,50 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+# क्यों
 
-Arduino ke sath programming karne ke dauran, kabhi kabhi aapko check karna padega ki kya ek directory hai ya nahi. Directory, ya folder, humare code ke liye important hota hai kyunki isme hum apne files ko organize karte hain. Isliye, ek directory ki upasthiti ko check karna zaroori hai taaki hum sahi tarah se apne files ko access kar sakein.
+क्या आपको कभी अपने Arduino प्रोजेक्ट में कुछ चीजों को स्टोर करने या लोड करने के लिए एक फ़ोल्डर जांचने की ज़रूरत हुई है? यदि हाँ, तो आपने शायद नोट पाया होगा कि फोल्डर क्या मौजूद है या नहीं। इसलिए हम आज Arduino में फ़ोल्डर के मौजूद होने की जांच कैसे करते हैं, इसके बारे में बात करेंगे।
 
-## Kaise Karein
+## कैसे करें
 
-```Arduino
-#include <SD.h> // library ko import karein
+क्या आप जानते हैं कि Arduino में फ़ोल्डर के मौजूद होने की जांच करने के लिए एक फ़ंक्शन होता है? हां, आपने सही सुना है! वह है `exists()` फ़ंक्शन। यह फ़ंक्शन दो तरीके से कॉल किया जा सकता है - `exists(path)` और `exists(dir, fileName)`। पहला तरीका हमें फ़ोल्डर की पथ को चेक करने के लिए देता है जबकि दूसरा तरीका हमें फ़ोल्डर में कौन सी फ़ाइल है उसका भी पता लगाने का अनुमान देता है। आइए एक उदाहरण के साथ देखें:
 
-if (SD.exists("/folder")) { // directory ki upasthiti ko check karein
-  Serial.println("Directory exists!"); // agar directory maujood hai toh serial monitor par message print karein
-}
-```
-Output:
-```
-Directory exists!
+```arduino
+bool exists(const char* path);
+
+bool folderExists = exists("/Folder1/Folder2"); // Checks if "Folder2" exists inside "Folder1"
+bool fileExists = exists("/Folder1/", "file.txt"); // Checks if "file.txt" exists inside "Folder1"
 ```
 
-Is coding example mein humne `SD.exists()` function ka upyog kiya hai, jo ek boolean value return karta hai, yaani true ya false. Yadi directory maujood hai toh true return hoga aur hum message print karenge, warna false return hoga aur kuch nahi hoga.
-
-Hum bhi `SD.mkdir()` function ka upyog karke ek naya directory create kar sakte hain, jaisa ki neeche coding example mein dikhaya gaya hai:
-
-```Arduino
-#include <SD.h> // library ko import karein
-
-if (!SD.exists("/folder")) { // agar directory nahi hai toh
-  if (SD.mkdir("/folder")) { // directory create karein
-    Serial.println("Directory created!"); // aur message print karein
-  }
-}
-```
-Output:
-```
-Directory created!
-```
-
-## Gehri Khudaai
-
-Directory ki upasthiti ko check karna kai situations mein zaroori ho sakta hai. Jaise, agar hume kisi specific file ko read ya write karna hai toh hume pahle directory ki upasthiti ko check karna padega. Iske alawa, hum bhi `SD.remove()` function ka upyog karke directory ko delete kar sakte hain. Is tarah se, directory ki upasthiti ko check karna bahut zaroori ho sakta hai humare Arduino project ke liye.
-
-## Dekhiye Bhi
-
-Agar aapko aur jaankari chahiye directory ko check karne aur manipulate karne ke baare mein, toh neeche diye gaye resources ko dekhein:
-
-- [Arduino SD library reference](https://www.arduino.cc/en/Reference/SD)
-- [How to create and delete folders with Arduino SD library](https://randomnerdtutorials.com/arduino-sd-card-how-to-create-and-delete-files/)
-- [Beginner's guide to Arduino](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32) (Hindi translation available on the site)
+चिंता न करें, कॉड बोल्डर के उदाहरण में आपको केवल यह दिखाना है कि कैसे फ़ोल्डर `Folder1` और उसके अन्दर `Folder2` और `file.txt` की जांच करते हैं। इसके अलावा, फ़ोल्डर के केवल मौजूद होने की जांच करने के लिए, आप `exists()` फ़ंक्शन को केवल `Folder1` को ही पास कर सकते हैं। अब आपको अपने प्रोजेक्ट में फ़ोल्डर का मौजूद होना जाँचने में आसानी

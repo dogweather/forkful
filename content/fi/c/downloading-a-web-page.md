@@ -1,5 +1,6 @@
 ---
-title:                "C: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "C: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "C"
 category:             "C"
@@ -9,63 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
+Viime vuosien aikana internetin käyttö on kasvanut huomattavasti ja se on tullut keskeiseksi osaksi monen ihmisen arkea. Tämän vuoksi on tärkeää pystyä lataamaan verkkosivuja ja käsittelemään niiden tietoja. Tässä artikkelissa opit, kuinka voit ladata verkkosivun C-ohjelmoinnilla ja mitä hyötyä siitä voi olla.
 
-Web-sivustojen lataaminen voi olla tärkeä osa C-ohjelman kehittämistä, etenkin jos haluat luoda sovelluksen, joka käyttää dynaamisia sivustoja tai tarvitset tietoa verkkopohjaisista lähteistä. Tämä blogikirjoitus opastaa sinua kuinka voit ladata web-sivuja C-ohjelmalla ja tarjoaa syvällisempää tietoa aiheesta.
+## Kuinka
+Lataaminen on yksi yleisimmistä tehtävistä C-ohjelmoinnissa ja sen avulla voidaan hakea tietoa verkkosivuilta ja käsitellä sitä ohjelman sisällä. Ensimmäiseksi tarvitset ohjelmaan mukaan tarvittavat tiedostot, kuten <stdio.h> ja <stdlib.h>, sekä mukana oleva osoite, josta sivu halutaan ladata.
 
-# Miten
-
-Web-sivujen lataaminen C-ohjelmalla on suhteellisen yksinkertainen prosessi. Sinun täytyy ensin käyttää librarya, joka sallii verkkoyhteyden luomisen ja lataamisen. Yksi näistä kirjastoista on esimerkiksi libcurl. Seuraavaksi tarvitset koodin, joka määrittää URL-osoitteen, josta haluat ladata sivun. Sitten vain luodaan yhteys ja käsitellään ladattuja tietoja.
-
-Alla on esimerkki koodista, jossa ladotaan C-ohjelman verkkosivu ja tulostetaan sen sisältö:
-
-```C
+```
 #include <stdio.h>
-#include <curl/curl.h>
- 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
- 
-  curl = curl_easy_init();
-  if(curl) {
-    // määritetään URL-osoite
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    // lähetetään kaikki tiedot stdout:iin
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, stdout);
- 
-    // suoritetaan pyyntö
-    res = curl_easy_perform(curl);
- 
-    // vapautetaan muisti ja suljetaan yhteys
-    curl_easy_cleanup(curl);
-  }
- 
-  return 0;
+#include <stdlib.h>
+
+int main() {
+    // osoite, josta sivu ladataan
+    char *osoite = "https://example.com";
+    // tiedosto, johon sivun tiedot tallennetaan
+    FILE *tiedosto = fopen("sivu.html", "w");
+    // C-komento lataukseen
+    system("curl -o sivu.html https://example.com");
+    // tiedoston sulkeminen
+    fclose(tiedosto);
+    return 0;
 }
 ```
 
-Yllä olevassa koodissa käytetään libcurl-kirjastoa ja sen avulla asetetaan URL-osoite ja määritetään, että sivu lähetetään standard outputiin. Sen jälkeen suoritetaan pyyntö ja vapautetaan käytetyt resurssit. Alla on esimerkki, millainen tuloste koodin ajamisen jälkeen näyttäisi:
+Koodin ensimmäisillä riveillä määritetään tarvittavat tiedostot ja sitten määritellään muuttuja osoitteelle, josta sivu ladataan. Tämän jälkeen luodaan muuttuja tiedostolle, johon sivun tiedot tallennetaan. Koodin suorituksen aikana käytetään C-komentoa `system()` latauksen tekemiseen ja tallennetaan sivun tiedot annettuun tiedostoon. Lopuksi tiedosto suljetaan ja ohjelma palaa pääohjelmaan.
 
-```
-<!doctype html>
-<html>
-<head>
-<title>Esimerkki</title>
-</head>
-<body>
-<h1>Tervetuloa</h1>
-<p>Esimerkki verkkosivusta C-ohjelmassa.</p>
-</body>
-</html>
-```
+## Syventymistä
+Lataamalla verkkosivun C-ohjelmalla, voidaan käsitellä sivun tietoja ja poimia sieltä haluttuja tietoja. Tämä voi olla hyödyllistä esimerkiksi verkkosivujen tarkkailemisessa tai tietojen keräämisessä. Lisäksi lataamalla sivun ohjelman kautta, voidaan automatisoida prosesseja ja säästää aikaa.
 
-# Syvemmälle
-
-Web-sivujen lataaminen C-ohjelmalla voi olla monimutkaisempaa, jos haluat käsitellä esimerkiksi erilaisia vastauksia tai virheitä. Voit esimerkiksi käyttää libcurlin tarjoamaa monipuolista dokumentaatiota saadaksesi lisätietoa ja löytääksesi tarvitsemasi toiminnot. Voit myös käyttää muita kirjastoja, kuten libxml, jos haluat analysoida ladattuja HTML-sivuja.
-
-# Katso myös
-
-- [Libcurl dokumentaatio](https://curl.haxx.se/libcurl/)
-- [Esimerkkejä C-ohjelmoinnista ja web-latauksesta](https://www.programmersought.com/article/41665870129/)
+## Katso myös
+- [C-kielen virallinen dokumentaatio](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html)
+- [C-ohjelmoinnin perusteet](https://www.studytonight.com/c/)

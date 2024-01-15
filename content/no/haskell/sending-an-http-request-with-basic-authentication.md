@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sending en http-forespørsel med grunnleggende autentisering"
+html_title:           "Haskell: Sending en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Sending av HTTP-forespørsler med grunnleggende autentisering er en viktig del av nettverksprogrammering. Dette tillater utveksling av sensitiv informasjon mellom klient og server på en sikker måte.
+Hvis du noen gang har brukt en nettleser til å logge inn på en nettside, har du mest sannsynlig brukt basic authentication. Dette er en enkel måte å sende en HTTP-forespørsel med brukernavn og passord for å autentisere deg mot en server. I denne artikkelen skal vi se på hvordan man kan gjøre dette i Haskell.
 
-## Hvordan gjøre det
+## Kom i gang
 
-For å utføre en HTTP-forespørsel med grunnleggende autentisering i Haskell, kan vi bruke biblioteket `http-conduit`. Først må vi importere biblioteket og noen av dets funksjoner:
+For å sende en HTTP-forespørsel med basic authentication i Haskell, trenger vi å bruke pakken "Network.HTTP.Simple". Først må vi importere pakken og definere variabler for brukernavn og passord:
 
-````Haskell
-import Network.HTTP.Conduit
+```Haskell
+import Network.HTTP.Simple
 
-res <- do
-    request <- parseUrlThrow "URL-adresse"
-    manager <- newManager tlsManagerSettings
-    let request' = applyBasicAuth "brukernavn" "passord" request
-    httpLbs request' manager
-````
+username = "brukernavn"
+password = "passord"
+```
 
-Her bruker vi `parseUrlThrow` for å lage en `Request` fra en URL-adresse. Deretter lager vi en `Manager` ved hjelp av standardinnstillingene i `tlsManagerSettings`. `applyBasicAuth` funksjonen legger til grunnleggende autentisering til vår opprinnelige forespørsel. Til slutt sender vi vår forespørsel ved hjelp av `httpLbs` og mottar et svar fra serveren.
+Deretter bruker vi funksjonen "setRequestBasicAuth" for å legge til autentisering i vår HTTP-forespørsel:
 
-For å få tilgang til svaret, kan vi bruke `responseBody` funksjonen sammen med `res` verdi fra koden ovenfor.
+```Haskell
+request <- setRequestBasicAuth username password $ parseRequest_ "http://www.example.com"
+```
 
-````Haskell
-let responseBody' = responseBody res
-````
+Vi bruker også funksjonen "parseRequest_" for å konvertere en streng til en HTTP-forespørsel. Vi kan deretter sende forespørselen og håndtere svaret på følgende måte:
 
-Svaret vil være i `ByteString` format, som vi kan konvertere til en `String` ved hjelp av `Data.ByteString.Char8` modulen.
+```Haskell
+response <- httpJSON request
+print $ getResponseBody response
+```
 
-## Dypdykk
+Denne koden vil sende en HTTP GET-forespørsel til "http://www.example.com" med basic authentication og skrive ut svaret fra serveren som en JSON-verdi.
 
-HTTP-forespørsler med grunnleggende autentisering krever at brukernavn og passord blir sendt som en del av forespørselen i klartekst. Dette er en av de enkleste formene for autentisering, men den er ikke så sikker som andre autentiseringstyper som f.eks. OAuth. Det er viktig å sørge for at nettverkskommunikasjonen er sikret ved hjelp av TLS (Transport Layer Security) eller SSL (Secure Sockets Layer) når du bruker grunnleggende autentisering.
+## Dykk dypere
 
-Det er også viktig å merke seg at grunnleggende autentisering ikke krypterer brukernavn eller passord, så det er mulig for noen å fange opp denne informasjonen og få tilgang til kontoen din. Derfor er det viktig å bruke sterkere autentiseringstyper hvis det er mulig.
+Når vi bruker basic authentication, sender vi brukernavn og passord i klartekst i HTTP-forespørselen. Dette kan være en sikkerhetsrisiko, spesielt hvis man sender følsom informasjon. Det er derfor viktig å bruke HTTPS for å kryptere kommunikasjonen mellom klient og server.
+
+Det finnes også alternative metoder for autentisering, som for eksempel "digest authentication" som bruker en hashfunksjon for å sikre passordet. Dette er mer sikkert enn basic authentication, men krever mer kompleksitet i koden.
 
 ## Se også
 
-- [Haskell HTTP Client dokumentasjon](https://hackage.haskell.org/package/http-client)
-- [Intro to Network Conduit tutorial](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/http-conduit)
-- [TLS Manager Documentation](https://hackage.haskell.org/package/http-client-tls/docs/Network-HTTP-Client-TLS.html)
+- [Network.HTTP.Simple dokumentasjon](http://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html)
+- [En guide til basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [En sammenligning av autentiseringsmetoder i HTTP](https://www.sciencedirect.com/science/article/pii/B9780128008928000024)

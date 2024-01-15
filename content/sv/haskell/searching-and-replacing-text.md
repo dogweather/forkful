@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Haskell: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,44 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att söka och ersätta text är en viktig del av programmering. Genom att lära sig hur man utför denna handling i Haskell kan du effektivisera ditt arbete och göra din kod mer läsbar.
+Att söka och ersätta text är en vanlig uppgift i programmering, speciellt när man jobbar med stora mängder data eller textfiler. Oavsett om du behöver ändra stavfel eller ersätta vissa ord med andra, kan Haskell göra detta processen enklare och mer effektiv.
 
-## Hur man gör det
+# Hur man gör det
 
-För att söka och ersätta text i Haskell kan du använda funktionen `replace` från paketet `text`. Du behöver först importera detta paket med hjälp av kommandot `import qualified Data.Text as T`, vilket ger dig möjlighet att använda prefixet `T` för alla funktioner i paketet.
+För att söka och ersätta text i Haskell behöver du använda en funktion som heter `substitute`. Denna funktion tar tre argument: det första är det du vill söka efter, det andra är det du vill ersätta det med och det tredje är den texten du vill söka igenom. Här är ett exempel på hur du kan använda `substitute`:
 
 ```Haskell
-import qualified Data.Text as T
-
--- En enkel sträng att arbeta med
-let str = "Detta är en textsträng för exempel."
-
--- Söker efter text och ersätter den med ny text
-let nyStr = T.replace "text" "textsträng" str
-
--- Skriver ut resultatet
-print nyStr
+substitute "bilar" "cyklar" "Jag gillar bilar"
 ```
 
-Output: `Detta är en textsträngsträng för exempel.`
+I det här exemplet kommer `substitute` att byta ut alla instanser av "bilar" med "cyklar" i strängen "Jag gillar bilar". Resultatet blir "Jag gillar cyklar". Du kan också använda variabler istället för statiska strängar i funktionen, till exempel:
 
-Observera att i Haskell är alla strängar representerade som värden av typen `Text` från paketet `text`, och inte som `String` som i många andra programmeringsspråk.
-
-## Djupdykning
-
-För att förstå hur funktionen `replace` fungerar, låt oss titta på dess signatur:
 ```Haskell
-replace :: Text -> Text -> Text -> Text
+let word1 = "bilar"
+let word2 = "cyklar"
+let sentence = "Jag gillar bilar"
+substitute word1 word2 sentence
 ```
 
-Detta betyder att funktionen tar tre strängar som argument och returnerar en sträng. Det första argumentet är den text som ska sökas efter, det andra är den text som ska ersätta den och det tredje är den ursprungliga texten. Om det finns flera matchningar av den text som ska bytas ut, kommer alla dessa att ersättas.
+Om du vill söka igenom en hel textfil kan du använda funktionen `substituteFile`. Denna funktion tar också tre argument, det första är söktermen, det andra är ersättningstermen och det tredje är namnet på textfilen. Här är ett exempel:
 
-En viktig sak att notera är att funktionen `replace` är strängen anpassad och tar hänsyn till versaler och gemener i sin sökning.
+```Haskell
+substituteFile "hund" "katt" "minFil.txt"
+```
 
-## Se även (See Also)
+Detta kommer att byta ut alla instanser av "hund" med "katt" i textfilen "minFil.txt".
 
-- [Officiell dokumentation för paketet `text`](https://hackage.haskell.org/package/text)
-- [En introduktion till Haskell för nybörjare](https://en.wikipedia.org/wiki/Haskell_(programming_language))
-- [Lär dig mer om vanliga strängoperationer i Haskell](https://haskell-lang.org/tutorial/strings)
+# Deep Dive
+
+Förutom `substitute` och `substituteFile` finns det också andra funktioner i Haskell som kan hjälpa dig med sökning och ersättning av text. Till exempel finns det en funktion som heter `replace` som tar två argument: det första är söktermen och det andra är en lista med ersättningstermer. Här är ett exempel:
+
+```Haskell
+replace "hej" ["hello", "hi"] "Hej där"
+```
+
+Resultatet av detta kommer att vara en lista med "hello there" och "hi there". Du kan också använda `replace` på en hel textfil med funktionen `replaceFile`.
+
+För mer komplicerade sökningar och ersättningar kan du använda reguljära uttryck med funktionen `substituteRegex`. Denna funktion tar tre argument: det första är det reguljära uttrycket för sökningen, det andra är den ersättningssträngen och det tredje är den texten som ska sökas igenom. Här är ett exempel:
+
+```Haskell
+substituteRegex "[A-Z]" " " "Hej Där"
+```
+
+I detta exempel kommer alla stora bokstäver att bytas ut med ett mellanslag, vilket ger "hej där" som resultat.
+
+# Se också
+
+För mer information och användbara funktioner för sökning och ersättning i Haskell, se följande resurser:
+
+- [Haskell.org](https://www.haskell.org/): Officiell webbplats för Haskell språket.
+- [Hoogle](https://hoogle.haskell.org/): En sökmotor för Haskell dokumentation och funktioner.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters): En gratis onlinebok om Haskell.

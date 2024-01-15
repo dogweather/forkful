@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Écriture vers l'erreur standard"
-simple_title:         "Écriture vers l'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "Fish Shell: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-L'écriture sur la sortie d'erreur standard, ou "standard error" en anglais, est une pratique importante dans la programmation en Fish Shell. Cela permet aux programmeurs de signaler des erreurs ou des informations importantes aux utilisateurs lors de l'exécution d'un programme.
+Si vous êtes un développeur utilisant le langage Fish Shell, vous avez probablement croisé le terme "standard error" lors de votre travail sur des projets. Bien que cela puisse sembler intimidant, savoir comment écrire vers cette sortie est un outil précieux à ajouter à votre boîte à outils de développement. Dans cet article, nous allons plonger dans les raisons pour lesquelles vous devriez écrire vers le standard error et comment le faire dans Fish Shell.
 
-## Comment faire 
+## Comment faire
 
-Pour écrire sur la sortie d'erreur standard en utilisant Fish Shell, vous pouvez utiliser la commande `echo` suivie de l'option `-e` pour activer l'interprétation des caractères spéciaux et l'option `-s` pour écrire sur la sortie d'erreur standard. Par exemple : 
-
-```
-echo -e "Une erreur est survenue ! \n" >&2
-```
-
-Cela écrira le message "Une erreur est survenue !" sur la sortie d'erreur standard, qui sera affiché à l'utilisateur.
-
-## Plongée en profondeur 
-
-La sortie d'erreur standard est un flux réservé pour l'affichage des messages d'erreur, de débogage et d'informations importantes. Elle est séparée de la sortie standard pour permettre une gestion plus précise des données.
-
-Dans Fish Shell, vous pouvez utiliser le symbole `2>` pour rediriger la sortie d'erreur standard vers un fichier ou un autre flux. Vous pouvez également utiliser `&>` pour rediriger à la fois la sortie standard et la sortie d'erreur standard vers le même endroit.
-
-Par exemple, pour rediriger la sortie d'erreur standard vers un fichier nommé "erreurs.log", vous pouvez utiliser la commande suivante : 
+Pour écrire vers le standard error en utilisant Fish Shell, vous pouvez utiliser la commande `echo` suivie de `&2` pour indiquer que vous souhaitez écrire vers cette sortie. Par exemple :
 
 ```
-ls -l /dossier/inexistant 2> erreurs.log
+Fish Shell : echo "Erreur !" &2
 ```
 
-Cela créera un fichier contenant les informations d'erreur provenant de la commande `ls`. Vous pouvez ensuite utiliser la commande `cat` pour afficher le contenu du fichier d'erreurs.
+Ceci affichera "Erreur !" dans le standard error.
 
-## Voir aussi 
+Bien sûr, il est également possible de rediriger les erreurs sorties par une commande directement vers le standard error en ajoutant `2&>` avant le nom du fichier. Par exemple :
 
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel sur la redirection de la sortie en Fish Shell](https://dev.to/kojinkai/how-to-redirect-the-output-75c)
-- [Forum Fish Shell](https://github.com/fish-shell/fish-shell/discussions)
+```
+Fish Shell : les commandes > fichier.txt 2&> fichier-erreurs.txt
+```
+
+Cela enverra toutes les erreurs sorties par les commandes vers le fichier "fichier-erreurs.txt".
+
+## Deep Dive
+
+Il peut sembler étrange de vouloir écrire vers une sortie dédiée aux erreurs, mais cela peut en fait s'avérer très utile. Lorsqu'une application ou un script génère des erreurs, celles-ci sont généralement envoyées vers la sortie standard, ce qui signifie que les utilisateurs peuvent les manquer ou même les ignorer. En écrivant vers le standard error, vous vous assurez que les erreurs sont bien visibles par l'utilisateur, ce qui peut l'aider à déboguer plus facilement.
+
+De plus, écrire vers le standard error peut également être utile lors de l'utilisation de pipes ou de redirections dans vos scripts. En écrivant vers le standard error, vous pouvez vous assurer que les erreurs ne seront pas redirigées vers le fichier final, mais seront plutôt affichées à l'écran, ce qui peut aider à trouver et résoudre les problèmes plus rapidement.
+
+## Voir aussi
+- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guide de démarrage rapide Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Tutorial : Les redirections et les pipes avec Fish Shell](https://cmdchallenge.com/fish_shell_tutorial.html#pipe)

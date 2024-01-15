@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Elm recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,54 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When it comes to programming, there are endless possibilities and techniques to learn. One of the most important skills to have as a programmer is the ability to read and understand text files. In this blog post, we will explore how to read a text file using Elm, a functional programming language that is gaining popularity for its simplicity and powerful features.
+If you're an English reader looking to learn Elm, chances are you're either a beginner programmer or you're interested in functional programming. Whatever the case may be, learning how to read a text file in Elm is a useful skill to have. It allows you to easily access and manipulate data from external sources, such as APIs or user-generated files.
 
 ## How To
 
-To read a text file in Elm, you first need to create a function that will handle the file reading. You can do this by using the `File` library, which provides convenient functions for working with files.
+Reading a text file in Elm is fairly straightforward. First, we need to import the necessary module by adding `import File` to the top of our code. Next, we can use the `File.read` function to read in a file. Here's an example:
 
 ```Elm
 import File
 
-readFile : String -> Task x String
-readFile path =
-    File.readString path
-        |> Task.toResult
-        |> Task.mapError toString
+readTextFile : (Result String String -> msg) -> Sub msg
+readTextFile callback =
+  File.read "example.txt" callback
 ```
-In the above code, we import the `File` library and define a function called `readFile` that takes in a string (the path to the text file) and returns a `Task`, which represents an asynchronous computation that may succeed with a value or fail with an error. The `File.readString` function reads the contents of the file and returns a `Task` that contains the text.
+In this example, we're using a callback function to handle the result of the file read operation. The `File.read` function takes in the file path and the callback function as its arguments. Once the file has been read, the callback function will be called with a `Result` type, which can either be `Ok` or `Err`.
 
-To actually execute the `Task`, we can use the `Task.perform` function, which takes in two functions as arguments: one for handling success and one for handling error.
+To access the actual contents of the file, we can use the `Result.withDefault` function. Here's an example:
 
 ```Elm
-readFile "example.txt"
-    |> Task.perform
-        (\text -> -- handle success
-            text
-                |> String.lines
-                |> List.indexedMap (\i line -> (i+1, line))
-                |> String.join "\n"
-                |> Debug.log "file contents"
-        )
-        (\err -> -- handle error
-            Debug.log "error reading file: " ++ err
-        )
+import File exposing (read)
+import Result exposing (withDefault)
+
+main =
+  read "example.txt" (`withDefault` "") -- default value to return if file cannot be read
 ```
 
-The first function passed to `Task.perform` takes the text from the file and performs some actions with it. In this case, we use the `String.lines` function to split the text into a list of lines, then use `List.indexedMap` to add line numbers to each line, and finally, we use `String.join` to join the lines back together with a newline between them. The `Debug.log` function is used to log the result to the console.
-
-The second function handles any errors that may occur while reading the file. In this example, we simply log the error to the console.
+In this example, we're using the `withDefault` function to handle potential errors when reading the file. If the file cannot be read, the default value of an empty string will be returned.
 
 ## Deep Dive
 
-Reading a text file may seem like a simple task, but there are some important things to keep in mind. First, make sure that the text file you are trying to read actually exists and is accessible by your code. Otherwise, errors may occur.
+Now, let's take a deeper look at the `File.read` function and its type signature:
 
-Second, it is important to handle any errors that may occur while reading the file. This could be due to an incorrect file path, a corrupt file, or other reasons. By using the `Task` type, we can easily handle success and failure scenarios in our code and make sure our program does not crash unexpectedly.
+```
+read : String -> (Result String String -> msg) -> Sub msg
+```
 
-Lastly, remember to always close the file after reading it to avoid any potential memory leaks.
+As we can see, the function takes in a `String` (representing the file path) and a callback function with the `Result String String` type. This type represents a `Result` that either contains a `String` or an error message.
+
+Additionally, the `File.read` function returns a `Sub` type, which is a type used in Elm for handling subscriptions to external events. This is because reading a file is an asynchronous operation, meaning that we want to wait for the file to be read before continuing with our program.
 
 ## See Also
 
-- [Elm File library documentation](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Elm official website](https://elm-lang.org/)
-- [Elm tutorials and resources](https://github.com/isRuslan/awesome-elm#resources)
+- [Elm Docs - File](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm Tutorial - Reading and Writing Files](https://elmprogramming.com/reading-files-elm.html)
+- [Codepen - Reading Text File in Elm](https://codepen.io/sharkdp/pen/eYJWeQJ)

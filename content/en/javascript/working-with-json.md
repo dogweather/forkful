@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Working with json"
+title:                "Working with json"
+html_title:           "Javascript recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,73 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you are a web developer or just getting started with programming, chances are you have come across the term "JSON". JSON, which stands for JavaScript Object Notation, has become an integral part of web development. It is a lightweight, human-readable data format that is widely used for data storage and communication between web applications. Understanding how to work with JSON is crucial for anyone looking to build dynamic and interactive web applications.
+JSON (JavaScript Object Notation) is a popular data interchange format in web development, making it essential to understand for any aspiring or experienced developer. It allows for the easy storage and sharing of data across different applications and systems, making it a valuable skill to have in your toolkit.
 
 ## How To
 
-Working with JSON in Javascript is fairly straightforward. Let's take a look at how to create a simple JSON object and access its data.
+To begin working with JSON, we first need to understand its basic structure. It consists of key-value pairs, enclosed in curly braces `{}`, with each key and value separated by a colon `:`. For example, let's say we want to store some information about a person, we could create a JSON object like this:
 
 ```Javascript
-// Create a JSON object
-let user = {
-  name: "John",
-  age: 25,
-  city: "New York"
+let person = {
+  "name": "John",
+  "age": 28,
+  "country": "USA"
 }
-
-// Log the JSON object
-console.log(user);
-
-// Accessing data in the JSON object
-console.log(user.name); // Output: John
-console.log(user.age); // Output: 25
-console.log(user.city); // Output: New York
 ```
 
-As you can see, the basic structure of a JSON object is similar to that of a Javascript object, with key-value pairs separated by a colon. However, in JSON, the keys and values must always be enclosed in double quotes.
+Notice how the keys (name, age, country) are enclosed in double quotes, while the values (John, 28, USA) can be either strings or numbers. This is the most common way to create a JSON object, but it can also be created using a JSON JavaScript object constructor.
 
-Now, let's look at how we can convert a Javascript object into a JSON string using the `JSON.stringify()` method.
+To access specific values in the JSON object, we use dot notation, just like we would with a regular JavaScript object. For example, to access the person's age, we would use `person.age`.
+
+Now let's take a look at how we can convert a JavaScript object or array to a JSON string, using the `JSON.stringify()` method. This is useful when we want to send data to a server or store it in a file. For example:
 
 ```Javascript
-let user = {
-  name: "John",
-  age: 25,
-  city: "New York"
-}
-
-// Convert the object into a JSON string
-let userJSON = JSON.stringify(user);
-
-// Log the JSON string
-console.log(userJSON); // Output: {"name":"John","age":25,"city":"New York"}
+let fruits = ['apple', 'banana', 'orange'];
+let fruitsJSON = JSON.stringify(fruits);
+console.log(fruitsJSON);
+// Output: ["apple","banana","orange"]
 ```
 
-Conversely, we can also convert a JSON string back into a Javascript object using the `JSON.parse()` method.
+Notice how the output is now a string, and the keys have double quotes around them. We can also convert a JSON string back to a JavaScript object using the `JSON.parse()` method. For example:
 
 ```Javascript
-let userJSON = '{"name":"John","age":25,"city":"New York"}';
-
-// Convert the JSON string into a Javascript object
-let user = JSON.parse(userJSON);
-
-// Log the Javascript object
-console.log(user); // Output: {name: "John", age: 25, city: "New York"}
+let fruitsJSON = '["apple","banana","orange"]';
+let fruits = JSON.parse(fruitsJSON);
+console.log(fruits);
+// Output: ['apple', 'banana', 'orange']
 ```
 
 ## Deep Dive
 
-In addition to storing simple data types like strings and numbers, JSON can also handle more complex data structures like arrays and nested objects. You can also use JSON to store data from external sources, such as APIs, and manipulate the data in your web application.
+One of the great things about JSON is its flexibility. It allows us to store different types of data in one object, making it easy to work with complex data structures. Nested objects and arrays can also be created within a JSON object, allowing for even more versatile data storage.
 
-Furthermore, there are many libraries and packages available that can help with working with JSON in Javascript, such as `json2csv` for converting JSON data into CSV format or `json-server` for creating a mock REST API using a JSON file.
+Another important aspect to understand is how JSON handles data types. JSON supports six data types: string, number, boolean, null, array, and object. However, it does not support functions, undefined, or dates, so we need to be conscious of this when working with it.
 
-It is also important to note that while JSON is primarily used with Javascript, it is a language-independent format. This means that it can be easily used with other programming languages like Python, Java, and PHP.
+It's also worth noting that keys in a JSON object must be unique and follow the same naming rules as JavaScript objects (must be a string or valid identifier). Values can be of any of the supported data types.
+
+Lastly, when comparing JSON objects, they are considered equal only if their key-value pairs are in the same order. This is why it's important to use the `JSON.stringify()` method when comparing two JSON objects.
 
 ## See Also
 
-For more information on working with JSON in Javascript, check out these resources:
-
-- [MDN Web Docs: JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [JSON Tutorial by w3schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [JSON and AJAX Tutorial by Freecodecamp](https://www.youtube.com/watch?v=rJesac0_Ftw)
-
-Happy coding!
+- [JSON Tutorial for Beginners](https://www.w3schools.com/js/js_json_intro.asp)
+- [Understanding JSON in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-json-in-javascript)
+- [JSON Cheat Sheet](https://cheatography.com/karlredman/cheat-sheets/json-cheat-sheet/)

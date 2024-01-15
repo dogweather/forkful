@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Envoyer une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Javascript: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'envoi d'une requête HTTP fait partie intégrante de la programmation web. Cela permet aux développeurs d'envoyer et de recevoir des données entre un client et un serveur, créant ainsi une communication bidirectionnelle. Cela permet également aux applications web de fournir des informations dynamiques et de fournir une expérience utilisateur fluide.
+Vous vous demandez peut-être pourquoi il est important d'envoyer des requêtes HTTP en Javascript. Eh bien, cela peut être nécessaire pour récupérer des données à partir d'un serveur distant ou pour interagir avec des API.
 
 ## Comment faire
 
-Pour envoyer une requête HTTP en Javascript, vous pouvez utiliser la méthode `fetch ()`. Cela vous permet d'envoyer une requête à une URL spécifique et de récupérer la réponse sous forme de promesse. Voyons un exemple de code ci-dessous:
+Voici un exemple de code pour envoyer une requête GET avec l'API fetch en Javascript :
 
-```
-fetch("https://reqres.in/api/users/1")
+```Javascript
+fetch('https://example.com/api/users')
   .then(response => response.json())
-  .then(user => console.log(user))
+  .then(data => {
+    console.log(data); // Output: {users:[{name: "John", age: 30}, {name: "Jane", age: 28}]}
+  });
 ```
 
-Dans cet exemple, nous envoyons une requête à l'API ReqRes qui nous renvoie les informations de l'utilisateur avec un ID de 1. Nous utilisons ensuite la méthode `json ()` pour extraire les données de réponse au format JSON et les afficher dans la console. Le résultat de cet exemple sera:
+Vous pouvez également spécifier les options de la requête, telles que la méthode, les en-têtes et le corps, comme ceci :
 
+```Javascript
+fetch('https://example.com/api/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({name: "Bob", age: 35})
+})
+.then(response => console.log(response.status)) // Output: 201 (created)
 ```
-{ "data": { "id": 1, "email": "george.bluth@reqres.in", "first_name": "George", "last_name": "Bluth", "avatar": "https://reqres.in/img/faces/1-image.jpg" } }
-```
 
-## Plongée en profondeur
+## Plongeons plus en profondeur
 
-Il est important de noter que lors de l'envoi d'une requête HTTP en Javascript, il existe différents types de méthodes que vous pouvez utiliser en fonction de ce que vous souhaitez réaliser. Les plus couramment utilisées sont `GET`, `POST`, `PUT` et `DELETE`.
-
-- `GET` est utilisé pour obtenir des informations à partir d'une URL spécifique.
-- `POST` est utilisé pour envoyer des données à une URL spécifique pour créer ou mettre à jour une ressource.
-- `PUT` est utilisé pour mettre à jour une ressource existante à une URL spécifique.
-- `DELETE` est utilisé pour supprimer une ressource à une URL spécifique.
-
-Il est également possible d'ajouter des paramètres et des en-têtes à votre requête HTTP en utilisant des options de configuration supplémentaires.
+Lorsque vous envoyez une requête HTTP en Javascript, vous utilisez une interface appelée XMLHttpRequest (XHR). Cette interface vous permet d'envoyer des requêtes de manière asynchrone et de gérer les réponses. Vous pouvez également utiliser des bibliothèques telles que Axios pour simplifier le processus d'envoi de requêtes HTTP.
 
 ## Voir aussi
 
-- [Documentation sur la méthode fetch ()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch)
-- [Guide sur les méthodes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Methods)
-- [API ReqRes](https://reqres.in)
+- [Documentation sur l'API fetch en Javascript](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
+- [Tutoriel complet sur l'envoi de requêtes HTTP en Javascript](https://www.datacamp.com/community/tutorials/working-with-apis-using-javascript)

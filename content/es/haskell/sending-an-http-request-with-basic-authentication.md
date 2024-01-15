@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Haskell: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,30 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Hay varias situaciones en las que es necesario enviar una solicitud HTTP con autenticación básica. Algunos ejemplos comunes incluyen acceder a una API privada o realizar pruebas de integración con un servidor que requiere autenticación. 
+¿Por qué alguien querría enviar una solicitud HTTP con autenticación básica? Puede haber muchas razones, pero en resumen, la autenticación básica es una forma simple y común de proteger una API o servicio web. Al enviar una solicitud con autenticación básica, el cliente debe proporcionar credenciales (nombre de usuario y contraseña) para verificar su identidad y tener acceso a los recursos protegidos.
 
 ## Cómo hacerlo
 
-Para enviar una solicitud HTTP con autenticación básica en Haskell, primero debemos importar el módulo "Network.HTTP.Simple". A continuación, utilizando la función "setRequestMethod", podemos especificar el método de solicitud (en este caso, será "GET") y la URL a la que queremos enviar la solicitud. Luego, utilizamos la función "setRequestBasicAuth" para agregar las credenciales de autenticación básica, que consisten en el nombre de usuario y la contraseña. Finalmente, llamamos a la función "httpBS" para realizar la solicitud y recibir una respuesta.
+Para enviar una solicitud HTTP con autenticación básica en Haskell, necesitaremos utilizar el módulo "Network.HTTP.Simple" de la biblioteca "http-conduit". Comencemos por importar el módulo y establecer nuestra URL de destino:
 
 ```Haskell
-import Network.HTTP.Simple
-
-main = do
-    response <- setRequestMethod "GET" "https://www.example.com"
-        >>= setRequestBasicAuth "username" "password"
-        >>= httpBS
-    print (getResponseBody response)
+import Network.HTTP.Simple (httpLbs, parseRequest_, setRequestBasicAuth)
+url = "https://www.example.com/users/123"
 ```
 
-La respuesta devuelta será un objeto "Response" que contiene la información de estado de la solicitud y el cuerpo de la respuesta. Podemos acceder al cuerpo de la respuesta utilizando la función "getResponseBody" y luego procesar los datos según sea necesario.
+A continuación, analizamos la URL en un tipo de datos "Request" y le agregamos credenciales de autenticación básica con la función "setRequestBasicAuth":
+
+```Haskell
+request = parseRequest_ url
+requestWithAuth = setRequestBasicAuth "username" "password" request
+```
+
+Finalmente, podemos enviar la solicitud con la función "httpLbs" y obtener la respuesta del servidor:
+
+```Haskell
+response = httpLbs requestWithAuth
+```
+
+Si la autenticación es exitosa, recibiremos una respuesta exitosa (código de estado 200) junto con los datos solicitados. Si la autenticación falla, obtendremos un error de autorización (código de estado 401).
 
 ## Profundizando
 
-En la autenticación básica, las credenciales (nombre de usuario y contraseña) se codifican en Base64 antes de enviarse como encabezados de autorización en la solicitud HTTP. Esto significa que es importante tener en cuenta que la autenticación básica no encripta ni protege de ninguna manera las credenciales durante el proceso de transmisión. Por lo tanto, se recomienda utilizar una conexión segura (HTTPS) al enviar una solicitud con autenticación básica para proteger la información confidencial.
+Puede parecer fácil enviar una solicitud con autenticación básica en Haskell, pero ¿qué está sucediendo bajo el capó? En realidad, la función "setRequestBasicAuth" está haciendo un poco más de trabajo por nosotros. Analicemos su definición:
+
+```Haskell
+setRequestBasicAuth :: ByteString -> ByteString -> Request -> Request
+setRequestBasicAuth username password = setRequestHeader "Authorization" (basicAuthHeader username password)
+```
+
+Aquí, estamos agregando un encabezado "Authorization" a nuestra solicitud con una cadena codificada en base64 que contiene nuestras credenciales de autenticación. Esta cadena sigue el formato "username:password" y se agrega al encabezado en el siguiente formato:
+
+```Haskell
+"Basic " ++ (encodeBase64 (username ++ ":" ++ password))
+```
+
+Además, hay que tener en cuenta que la autenticación básica no es el método más seguro para proteger una API o servicio web, ya que la información de autenticación se pasa a través de la red en texto plano. Se recomienda utilizar métodos de autenticación más fuertes y seguros en su lugar.
 
 ## Ver también
 
-- [Documentación de Network.HTTP.Simple](https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html)
-- [RFC de Autenticación Básica en HTTP](https://tools.ietf.org/html/rfc7617)
-- [Tutorial de Haskell en español](https://es.wikibooks.org/wiki/Haskell)
+- Documentación oficial de la biblioteca "http-conduit": https://hackage.haskell.org/package/http-conduit
+- Ejemplo de autenticación básica en Haskell: https://www.snoyman.com/blog/2016/12/benchmarking-basic-auth
+- Cómo implementar otros métodos de autenticación en Haskell: https://begriffs.com/posts/2017-01-14-designing-authentication-in-haskell.html

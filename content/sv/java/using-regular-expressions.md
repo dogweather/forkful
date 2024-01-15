@@ -1,6 +1,7 @@
 ---
-title:                "Java: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Att använda reguljära uttryck"
+html_title:           "Java: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,47 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Regular expressions, eller regelbundna uttryck, är ett kraftfullt verktyg som kan hjälpa utvecklare att söka och manipulera textdata. Genom att använda sig av ett speciellt syntax kan man söka efter specifika mönster i textsträngar och utföra olika åtgärder. Några av dessa användningsområden inkluderar validering av telefonnummer och e-postadresser, filter av data och parsning av loggfiler. Genom att använda regular expressions kan man spara tid och undvika en del manuellt arbete.
+Regular expressions, även kallat regex, är ett kraftfullt verktyg som används inom programmering för att söka och manipulera textsträngar. Det är särskilt användbart när man behöver söka efter specifika mönster eller utföra komplexa uppgifter som annars skulle kräva mycket kod.
 
-## Så här gör man
-För att använda regular expressions i Java behöver man importera java.util.regex-paketet och skapa ett Regex-objekt som innehåller det mönster man vill söka efter. Det finns även olika metoder för att hitta eller ersätta matchande mönster i en textsträng. Nedan följer några vanliga exempel:
+## Så här använder du regex i Java
+För att använda regular expressions i Java behöver vi importera java.util.regex-biblioteket. Sedan kan vi använda dess olika metoder som tillhandahåller möjligheter för att söka och manipulera textsträngar.
 
-- Hitta ett ord i en textsträng: ```Java
-String pattern = "hej";
-String text = "Hej, hur mår du?";
-Pattern regex = Pattern.compile(pattern);
-Matcher matcher = regex.matcher(text);
-boolean found = matcher.find(); // true
+Första steget är att skapa ett Regular Expression-objekt med hjälp av metoden `compile()` och ange det mönster som vi vill söka efter som en parameter. Sedan använder vi metoden `matcher()` på vårt regex-objekt med den textsträng vi vill söka igenom som parameter. Till exempel:
+
 ```
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-- Ersätta text i en sträng: ```Java
-String newString = matcher.replaceAll("tja"); // Tja, hur mår du?
-```
+public class RegexExample {
+  public static void main(String[] args) {
+    // Skapar ett regex-objekt med mönstret "abc"
+    Pattern pattern = Pattern.compile("abc");
 
-- Validera en e-postadress: ```Java
-String pattern = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"; // ett mönster för en enkel e-postadress, inte helt komplett
-String email = "test@test.com";
-Pattern regex = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
-Matcher matcher = regex.matcher(email);
-boolean isValid = matcher.matches(); // true
-```
+    // Skapar en matcher med vår textsträng "abcdefg"
+    Matcher matcher = pattern.matcher("abcdefg");
 
-- Plocka ut siffror från en text: ```Java
-String pattern = "\\d+"; // ett mönster för att hitta siffror
-String text = "Det var 10 söta katter";
-Pattern regex = Pattern.compile(pattern);
-Matcher matcher = regex.matcher(text);
-while (matcher.find()) {
-    System.out.println(matcher.group()); // 10
+    // Använder find() för att söka efter mönstret i textsträngen
+    // Returnerar true om mönstret hittas, annars false
+    System.out.println(matcher.find()); // kommer att skriva ut "true"
+  }
 }
 ```
 
-Det finns många olika möjligheter och olika syntaxer att använda sig av när det kommer till regular expressions. Det är viktigt att kolla på dokumentationen för att hitta rätt mönster för det man behöver göra.
+I exemplet ovan kommer `matcher.find()` att returnera `true` eftersom "abc" förekommer i textsträngen "abcdefg". Om du vill söka efter flera förekomster av ett mönster, använd `find()` inuti en loop. Det finns även andra metoder som `matches()` och `replaceAll()` som också är användbara beroende på vad du behöver göra med din textsträng.
 
-## Djupdykning
-Att lära sig och förstå regular expressions kan ta lite tid, men det är definitivt värt det. Genom att använda ett regular expression-chekverktyg som regex101.com kan man experimentera och testa olika mönster. Det finns även olika nätverk bibliotek som kan hjälpa till med att skriva och förstå regular expressions. Övning är verkligen nyckeln till att behärska regular expressions och det behövs en viss tidsinvestering för att verkligen bli bekväm med dem.
+## Fördjupning i användningen av regex
+Att behärska regular expressions kan underlätta många uppgifter inom programmering. Det finns en mängd olika symboler och uttryck som kan användas för att skapa mönster och söka efter dem i textsträngar. Till exempel:
+
+- `.` används för att matcha alla tecken.
+- `*` används för att matcha noll eller flera förekomster av ett tecken.
+- `[ ]` kan användas för att specificera en uppsättning tecken som ska matchas.
+- `^` och `$` används för att matcha början och slutet av en textsträng.
+- `()` används för att gruppera delar av ett mönster.
+
+Det finns många andra uttryck och mönster att lära sig, men det är en bra start att använda de mest grundläggande. Sedan kan du testa och experimentera för att skapa mer avancerade regex-uttryck.
 
 ## Se även
-- [The Java Tutorials - Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Regex101.com](https://regex101.com/)
-- [Java Regex Cheatsheet](https://zeroturnaround.com/rebellabs/java-regex-cheat-sheet/)
+- [Java Regular Expressions](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
+- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

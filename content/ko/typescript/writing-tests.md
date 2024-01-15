@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 테스트 작성하기"
-simple_title:         "테스트 작성하기"
+title:                "테스트 작성"
+html_title:           "TypeScript: 테스트 작성"
+simple_title:         "테스트 작성"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-코드의 안전성과 신뢰성을 보장하기 위해서, 테스트 코드를 작성하는 것이 중요합니다. 이는 버그와 결함을 발견하여 제거하고, 코드의 동작을 확실히 보장하여 소프트웨어의 품질을 높이기 위함입니다.
+테스트를 작성하는 것에 참여하는 이유는 코드의 견고성과 신뢰성을 보장하기 위해서입니다. 테스트를 통해 코드를 자주 실행하고 오류를 식별하여 개발 속도를 높일 수 있습니다.
 
 ## 방법
 
-테스트는 대부분 개발 과정에서 빠지지 않고 수행되어야 합니다. 이를 위해 TypeScript에서는 `jest`를 사용하여 자동화된 테스트를 할 수 있습니다. 아래는 `jest`를 사용하여 간단히 `Calculator` 클래스를 테스트하는 예시입니다.
-
 ```TypeScript
-// Calculator.ts
-class Calculator {
-  add(a: number, b: number): number {
-    return a + b;
-  }
+// 새 함수를 정의합니다.
+function calculateSum(x: number, y: number) {
+  return x + y;
 }
-
-// Calculator.test.ts
-import Calculator from './Calculator';
-
-test('add two numbers', () => {
-  const calculator = new Calculator();
-  expect(calculator.add(2, 3)).toBe(5);
-});
+// 함수를 호출하고 결과를 출력합니다.
+console.log(calculateSum(3, 5));
+// 8이 출력됩니다.
 ```
 
-테스트 코드는 `Calculator` 클래스의 `add()` 메소드를 호출하여 2와 3을 더한 결과가 5인지를 검증합니다. 이를 위해 `expect()`와 `toBe()` 메소드를 사용합니다.
+위의 예제 코드는 두 개의 숫자를 더하는 간단한 함수를 정의하고 호출하는 방법을 보여줍니다. 이렇게 작성한 함수를 테스트해보기 위해 간단한 테스트 케이스를 만들어보겠습니다.
 
-## 딥 다이브
+```TypeScript
+// 테스트를 위한 새 함수를 정의합니다.
+function testCalculateSum() {
+  // 함수가 올바른 결과를 반환하는지 확인합니다.
+  const result = calculateSum(3, 5);
+  if (result === 8) {
+    console.log("테스트를 통과했습니다.");
+  } else {
+    console.log("결과가 올바르지 않습니다.");
+  }
+}
+// 함수를 호출하여 테스트를 실행합니다.
+testCalculateSum();
+```
 
-테스트 코드 작성에는 여러 가지 방법과 규칙이 있지만, 중요한 것은 코드를 어떻게 테스트할지에 대한 고민을 하는 것입니다. 효율적인 테스트 작성을 위해서는 각 함수, 메소드 또는 모듈을 작은 단위로 분할하여 각각을 독립적으로 테스트하는 것이 중요합니다.
+위의 코드를 실행하면 "테스트를 통과했습니다."라는 메시지가 출력될 것입니다. 이렇게 테스트 코드를 작성하면 함수에 변경이 있을 때마다 쉽게 테스트를 반복할 수 있습니다. 이를 통해 코드를 수정하더라도 함수가 여전히 올바른 결과를 반환하는지 확인할 수 있습니다.
 
-또한 `jest`를 비롯한 다양한 테스트 라이브러리에서는 다양한 기능을 제공하여 테스트를 보다 쉽고 편리하게 작성할 수 있도록 도와줍니다. 이러한 기능을 잘 활용하면 테스트 코드의 가독성을 높이고, 유지보수를 편리하게 할 수 있습니다.
+## 깊이 들어가기
 
-## 참고
+테스트 작성을 위해서는 세 가지 중요한 요소가 있습니다. 첫째, 테스트할 코드를 분리하는 것입니다. 둘째, 테스트 케이스를 작성하는 것입니다. 셋째, 테스트를 자동화하는 것입니다. 이렇게 함으로써 테스트 코드의 유지 보수가 쉬워지고 효율적으로 코드를 개발할 수 있습니다.
 
-- [jest 공식 문서](https://jestjs.io/docs/getting-started)
-- [타입스크립트 공식 문서 - 테스팅](https://www.typescriptlang.org/docs/handbook/testing.html)
-- [타입스크립트와 jest를 이용한 유닛 테스트 작성하기](https://velog.io/@velopert/typescript-and-jest)
+## 관련 자료
+
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+- [Jest 테스트 프레임워크](https://jestjs.io/docs/ko/getting-started)

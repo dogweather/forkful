@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Haskell: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,62 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi 
+## Pourquoi 
 
-Il y a de nombreuses raisons pour lesquelles vous pourriez vouloir lire les arguments de ligne de commande en Haskell. Peut-être que vous devez créer un programme qui réagit en fonction des options sélectionnées par l'utilisateur. Ou peut-être que vous souhaitez simplement obtenir des informations supplémentaires à partir de la ligne de commande pour votre programme. Quelle que soit la raison, la lecture des arguments de ligne de commande peut être une compétence précieuse pour tout programmeur Haskell.
+Si vous êtes un programmeur Haskell, il est fort probable que vous ayez déjà entendu parler de la lecture des arguments de ligne de commande. Mais si vous êtes nouveau dans le monde de la programmation fonctionnelle, vous pourriez vous demander pourquoi vous devriez vous intéresser à cela. En bref, la lecture des arguments de ligne de commande peut vous aider à rendre vos programmes plus dynamiques et interactifs en permettant à l'utilisateur de saisir des valeurs pour modifier le comportement du programme. 
 
-# Comment faire 
+## Comment Faire 
 
-Voici un exemple de code Haskell pour lire des arguments de ligne de commande :
+Pour commencer, nous allons créer un nouveau fichier nommé "args.hs" et nous allons le compiler en utilisant la commande "ghc" dans votre terminal. Vous pouvez trouver cette commande dans votre répertoire Haskell en tapant "stack exec ghc -- args.hs". Maintenant, nous allons écrire notre code dans le fichier "args.hs" en utilisant la syntaxe suivante: 
 
-```
-import System.Environment
+```Haskell 
+import System.Environment 
 
-main :: IO ()
-main = do
-    args <- getArgs
-    putStrLn ("Le premier argument est " ++ head args)
-    putStrLn ("Le deuxième argument est " ++ args !! 1)
-```
+main = do 
+  args <- getArgs 
+  print args
+``` 
 
-Voici un exemple d'entrée et de sortie pour mieux comprendre :
+Ensuite, vous pouvez compiler le fichier en utilisant la commande "ghc" et exécuter le programme en utilisant "./args" suivi de quelques arguments que vous voulez tester. Par exemple, si vous tapez "./args Hello World", la sortie sera ["Hello", "World"]. Vous pouvez également utiliser des types spécifiques pour lire les arguments en utilisant "Data.Text" ou "Data.Text.IO" au lieu de "print". 
 
-**Entrée :**
-```
-HaskellProg.exe foo bar
-```
+## Plongée Profonde 
 
-**Sortie :**
-```
-Le premier argument est foo
-Le deuxième argument est bar
-```
+Pour comprendre plus en détail comment la lecture des arguments de ligne de commande fonctionne en Haskell, il est important de comprendre les concepts de "IO" et de "monade". En bref, les programmes Haskell sont généralement purs, ce qui signifie qu'ils ne modifient pas l'état global du système. Cependant, en utilisant la monade "IO", vous pouvez exécuter des actions impures, telles que la lecture des arguments de la ligne de commande. 
 
-Dans cet exemple, nous utilisons la fonction `getArgs` du module `System.Environment` pour obtenir la liste des arguments de ligne de commande. Ensuite, nous utilisons la fonction `head` pour accéder au premier élément de la liste et la fonction `!!` pour accéder au deuxième élément.
+## Voir Aussi 
 
-Vous pouvez également utiliser une boucle pour parcourir tous les arguments :
-
-```
-import System.Environment
-
-main :: IO ()
-main = do
-    args <- getArgs
-    mapM_ putStrLn args
-```
-
-Dans cet exemple, nous utilisons la fonction `mapM_` pour appliquer la fonction `putStrLn` à chaque élément de la liste des arguments.
-
-# Plongée en profondeur
-
-Si vous souhaitez en savoir plus sur la lecture des arguments de ligne de commande en Haskell, voici quelques points supplémentaires à prendre en compte :
-
-- Vous pouvez également utiliser la fonction `getProgName` pour obtenir le nom du programme à partir des arguments de ligne de commande.
-- Si votre programme prend des options, vous voudrez peut-être utiliser un package comme `optparse-applicative` pour les gérer plus facilement.
-- Assurez-vous de gérer les erreurs lorsque la liste d'arguments est vide ou lorsque vous essayez d'accéder à un élément qui n'existe pas.
-
-# Voir aussi
-
-- [Documentation officielle sur les arguments de ligne de commande en Haskell](https://www.haskell.org/documentation/#getting-started)
-- [Module System.Environment](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Package optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
+- [Tutoriel Haskell: Lecture des Arguments de Ligne de Commande](https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm) 
+- [Documentation officielle de Haskell: System.Environment module](https://www.haskell.org/onlinereport/modules/System.Environment.html) 
+- [Vidéo Youtube: Introduction à la Programmation Haskell - Les Types et la Lecture des Arguments de la Ligne de Commande](https://www.youtube.com/watch?v=OvdDpu-dwhY)

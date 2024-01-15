@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,57 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Why
 
-If you're a programmer, you probably know that one of the most common tasks is to access and manipulate files and directories. In order to prevent errors or crashes, it's important to first check if a directory exists before trying to access or modify it. This blog post will guide you through the process of checking for directory existence in Gleam programming, so you can easily implement it in your projects.
+Have you ever encountered an error or malfunction in your code because a directory that was supposed to exist didn't? Checking if a directory exists can save you from these frustrating situations and ensure that your code runs smoothly.
 
-## How To
-To check for directory existence in Gleam, we will use the `std.fs` library. First, we need to import the library by adding the following code at the top of our file:
+# How To
 
-```Gleam
-import std.fs
-```
-
-Next, we will use the `std.fs.exists` function, passing in the path of the directory we want to check. This function returns a `Result` type, which can either be `Ok` or `Err`. In this case, if the directory exists, we will get an `Ok` result, and if it doesn't exist, we will get an `Err` result.
+Checking if a directory exists in Gleam is a simple process. First, you need to import the `os` package by using the `import os` statement. Then, you can use the `os.exists` function to check if a directory exists. Here's an example:
 
 ```Gleam
-let result = fs.exists("path/to/directory")
+import os
+
+exists := os.exists("/path/to/directory")
 ```
 
-To handle these possible outcomes, we can use pattern matching and write our code accordingly. Here is an example of how we could handle the results:
+The above code will return a Boolean value indicating whether the directory exists or not. You can also use `os.path.exists` for a more detailed check, including checking if the path is a file rather than a directory. Here's an example using `os.path.exists`:
 
 ```Gleam
-case fs.exists("path/to/directory") {
-    Ok(_) -> "Directory exists!"
-    Err(_) -> "Directory does not exist."
-}
+import os
+
+exists := os.path.exists("/path/to/file")
 ```
 
-And that's it! You can now use this code to check for directory existence in your Gleam projects. Below is a sample output of the code in action:
+The `exists` variable will be set to `True` if the file or directory exists, and `False` if it doesn't.
+
+# Deep Dive
+
+Behind the scenes, `os.exists` and `os.path.exists` actually use the `Sys.File.stat` function to retrieve the information about the specified path. This function returns a `Sys.File.Info` type, which contains information such as the type of the path (file or directory), the file permissions, and more. 
+
+If you want to check for the existence of a directory without importing the `os` package, you can also use the `Sys.File.info` function directly. Here's an example:
 
 ```Gleam
-import std.fs
+import Sys.File
 
-case fs.exists("users/documents") {
-    Ok(_) -> "Directory exists!"
-    Err(_) -> "Directory does not exist."
-}
+info := Sys.File.info("/path/to/directory")
 
-// Output: "Directory exists!"
+is_dir := info.type == Sys.File.Dir
 ```
 
-## Deep Dive
-If you want to dive deeper into the topic of checking for directory existence, here are some things to keep in mind:
+In the above code, the `info` variable will contain the `Sys.File.Info` type for the specified path, and the `is_dir` variable will be set to `True` if the path is a directory.
 
-- The `std.fs.exists` function can also be used to check for file existence, by passing in the path to the file instead of the directory.
-- You can also use the `std.fs.metadata` function to get more information about a directory or file, such as its size, last modified date, etc.
-- In some cases, checking for directory existence may not be enough. You may also need to check for permissions or other restrictions before being able to access or modify the directory.
+# See Also
 
-## See Also
-- [Official documentation for std.fs library](https://gleam.run/libraries/io/)
-- [Tutorial on handling errors in Gleam](https://gleam.run/documentation/tutorials/handling-errors)
-- [Blog post on manipulating files and directories in Gleam](https://gleam.run/blog/file-operations-in-gleam/)
-
----
-
-I hope this blog post was helpful in understanding how to check for directory existence in Gleam. With this knowledge, you can now confidently handle file and directory operations in your projects. Happy coding!
+- [Documentation on os.exists](https://gleam.run/packages/std-lib/file/os.html#method-exists)
+- [Documentation on os.path.exists](https://gleam.run/packages/std-lib/file/os.html#method-path-exists)
+- [Documentation on Sys.File.info](https://gleam.run/packages/std-lib/file/File.html#method-info)

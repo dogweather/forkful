@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Tiedosto-ohjelman kirjoittaminen"
-simple_title:         "Tiedosto-ohjelman kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Elm: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,24 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittamalla tekstiä tiedostoon, voit tallentaa tietoa pysyvästi ja jakaa sitä muiden kanssa. Tekstin kirjoittaminen on myös yksi perustaidoista Elm-ohjelmoinnissa ja auttaa sinua ilmaisemaan ideoitasi ja luomaan toimivia sovelluksia.
+Tekstitiedoston kirjoittaminen on yksi tärkeimmistä ohjelmointitaidoista, joka voi auttaa sinua luomaan monimutkaisia ​​sovelluksia ja järjestelmiä. Se on myös hyödyllistä, kun haluat tallentaa tietoja pysyvästi ja jakaa niitä muiden kanssa.
 
-## Miten tehdä
-
-Elm on funktionaalinen ohjelmointikieli, joten tekstin kirjoittaminen tapahtuu funktioiden avulla. Käytä funktiota `writeFile` ja anna sille parametriksi haluamasi tiedostonimi ja sen sisältö, kuten esimerkissä:
+## Miten
 
 ```Elm
-writeFile "teksti.txt" "Tämä on tekstiä"
+
+module Main exposing (main)
+
+
+import File
+import Task
+
+
+type Msg
+    = GetFileContentReceived (Result File.Error String)
+
+
+getFileContent : String -> Task.Task Never String
+getFileContent fileName =
+    File.readString fileName
+        |> Task.map2 GetFileContentReceived
+
+
+main : Program Never Model Msg
+main =
+    Task.attempt identity (getFileContent "tekstitiedosto.txt")
+
+
 ```
 
-Tämä luo tiedoston nimeltä "teksti.txt" ja tallentaa siihen tekstin "Tämä on tekstiä". Voit myös käyttää funktiota `appendFile` lisätäksesi tekstiä olemassa olevaan tiedostoon.
+Tämä koodi ottaa käyttöön `File` -moduulin ja käyttää `Task.Task`-tyyppiä saadakseen tiedoston sisällön. `Elm`-tiedoston kirjoittamisen aloittamiseksi sinun on otettava käyttöön `File`-moduuli projektissasi ja käytettävä `Task`-tyyppiä.
 
-## Syväsukellus
+## Syventävä sukellus
 
-Tekstin tallentaminen tiedostoon on tärkeä osa monia Elm-sovelluksia, kuten esimerkiksi blogin kirjoittamista tai käyttäjätilastojen tallentamista. Voit myös käyttää tekstieditointitoimintoa `Element.textarea` luodaksesi sovelluksia, joissa käyttäjät voivat kirjoittaa ja tallentaa tekstiä.
+`File`-moduulissa on monia muita tärkeitä toimintoja, kuten tiedoston kirjoittaminen, poistaminen ja hakeminen. Voit myös käyttää `Json`-moduulia tallentamaan ja lukemaan tietoja JSON-muodossa.
+
+`Elm`-tiedostojen kirjoittaminen on erittäin tärkeää, jos haluat luoda monimutkaisia ​​sovelluksia ja järjestelmiä. Se antaa sinulle mahdollisuuden tallentaa ja jakaa tietoja pysyvästi, mikä on olennaista monille sovelluksille. Jatkossa voit myös tutustua muihin `Elm`-kirjastoihin ja moduuleihin, joiden avulla voit tehdä enemmän tiedostoja ja tietoja käsitteleviä toimintoja.
 
 ## Katso myös
 
-- [Elm-kielen dokumentaatio](https://elm-lang.org/docs)
-- [Tekstin tallentaminen tiedostoon Elmissä](https://guide.elm-lang.org/fundamentals/text.html)
-- [Tekstieditointitoiminnon käyttäminen Elmissä](https://package.elm-lang.org/packages/elm/browser/latest/Browser#textarea)
+- [Virallinen `Elm`-verkkosivusto](http://elm-lang.org/)
+- [Virallinen `Elm`-dokumentaatio](https://package.elm-lang.org/)
+- [`Elm`-esimerkit GitHubista](https://github.com/elm/projects)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "C++: Leyendo argumentos de línea de comandos"
 simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "C++"
 category:             "C++"
@@ -9,80 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué leer argumentos de línea de comando
 
-Si estás interesado en aprender a programar en C++, una de las habilidades más importantes que debes dominar es la capacidad de leer argumentos de línea de comandos. Esto te permitirá crear programas más interactivos y dinámicos, y también te ayudará a desarrollar tus habilidades de resolución de problemas. Sigue leyendo para aprender cómo hacerlo.
+Si estás trabajando en un proyecto de programación en C++, es posible que en algún momento necesites pasar información al programa desde la línea de comando. Para ello, es importante saber cómo leer argumentos de línea de comando correctamente. ¡Sigue leyendo para aprender cómo hacerlo!
 
-## Cómo
+## Cómo hacerlo
 
-Una de las formas más comunes de leer argumentos de línea de comandos en C++ es a través de la función "getopt". Esta función te permite especificar los argumentos que deseas leer y luego los almacena en variables para que puedas usarlos en tu programa. Aquí hay un ejemplo de cómo usarlo:
+Para leer argumentos de línea de comando en C++, utilizamos la función `main()`, que es donde comienza la ejecución del programa. Esta función toma dos parámetros, `argc` y `argv`, que representan el número de argumentos y un array de cadenas respectivamente.
+
+Por ejemplo, si tenemos un programa que calcula el área de un rectángulo, podemos pasar la base y la altura desde la línea de comando de la siguiente manera:
 
 ```C++
-#include <unistd.h> 
+int main(int argc, char *argv[]) {
+    // verificamos que se hayan pasado los dos argumentos esperados
+    if (argc != 3) {
+        cout << "Se esperaban dos argumentos: la base y la altura." << endl;
+        return 1; // código de error
+    }
 
-int main(int argc, char *argv[]) { 
-    // El primer argumento es el comando  
-    // Los siguientes son los argumentos que estás buscando 
-    // "a" y "b" son indicadores opcionales 
-    int aflag = 0; 
-    int bflag = 0; 
-    char *cvalue = NULL; 
-    int index; 
-    int c; 
+    // convertimos las cadenas de caracteres a números
+    float base = atof(argv[1]);
+    float altura = atof(argv[2]);
 
-    opterr = 0; 
-
-    while ((c = getopt(argc, argv, "abc:")) != -1) {
-        switch (c) { 
-            case 'a': 
-                aflag = 1; 
-                break; 
-            case 'b': 
-                bflag = 1; 
-                break; 
-            case 'c': 
-                cvalue = optarg; 
-                break; 
-            case '?': 
-                if (optopt == 'c') { 
-                    fprintf(stderr, "La opción -%c requiere un argumento.\n", optopt); 
-                } else if (isprint(optopt)) { 
-                    fprintf(stderr, "Opción desconocida `-%c'.\n", optopt); 
-                } else { 
-                    fprintf(stderr, "Carácter de opción desconocido `\\x%x'.\n", optopt); 
-                } 
-                return 1; 
-            default: 
-                abort(); 
-        } 
-    } 
-
-    printf("aflag = %d, bflag = %d, cvalue = %s\n", 
-            aflag, bflag, cvalue); 
-
-    for (index = optind; index < argc; index++) {
-        printf("El argumento no válido que se encontró en %d es %s\n", index, argv[index]); 
-    } 
-
-    return 0; 
+    // calculamos y mostramos el área del rectángulo
+    float area = base * altura;
+    cout << "El área del rectángulo es: " << area << endl;
+    return 0; // código de éxito
 }
 ```
 
-El siguiente es un ejemplo de cómo ejecutar este programa en la línea de comandos y su posible salida:
+Si ejecutamos este programa desde la línea de comando con los argumentos adecuados, obtendremos el siguiente resultado:
 
-```bash
-$ ./programa -a -c abc archivo1 archivo2
-aflag = 1, bflag = 0, cvalue = abc
-El argumento no válido encontrado en 4 es archivo1
-El argumento no válido encontrado en 5 es archivo2
+```
+$ ./area_rectangulo 5.5 3
+El área del rectángulo es: 16.5
 ```
 
 ## Profundizando
 
-Ahora que ya conoces la sintaxis básica de la función "getopt" para leer argumentos de línea de comandos en C++, puedes explorar más opciones como la función "getopt_long", que te permite especificar argumentos de una manera más flexible. También puedes experimentar con otras funciones para trabajar con argumentos de línea de comandos, como "argc" y "argv".
+Cuando utilizamos la función `main()`, el primer argumento (`argv[0]`) siempre es el nombre del programa en sí. A partir del segundo argumento, podemos pasar la información que necesitemos al programa.
 
-## Mira también
+Además, es importante mencionar que los argumentos de línea de comando siempre son tratados como cadenas de caracteres, por lo que si necesitamos utilizarlos como otros tipos de datos (como en el ejemplo anterior), tendremos que realizar conversiones.
 
-- Tutorial sobre lectura de argumentos de línea de comandos en C++: https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
-- Documentación de la función "getopt": http://www.cplusplus.com/reference/cstdlib/getopt/
-- Tutorial sobre lectura de argumentos de línea de comandos con getopt_long: https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html
+## Ver también
+
+- [Tutorial de programación C++ de Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus)
+- [Documentación de la función `main()` en cplusplus.com](http://www.cplusplus.com/reference/cstdlib/main/)
+- [Artículo sobre argumentos de línea de comando en cplusplus.com](http://www.cplusplus.com/articles/DEN36Up4/)

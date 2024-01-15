@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Utvinna substrängar"
-simple_title:         "Utvinna substrängar"
+title:                "Utvinna delsträngar"
+html_title:           "Clojure: Utvinna delsträngar"
+simple_title:         "Utvinna delsträngar"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,54 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför extrahera substrängar?
+## Varför
 
-När du arbetar med texter i Clojure kan du ibland behöva extrahera delar av en sträng, även kallad en substräng. Det kan vara för att söka igenom en sträng efter ett visst mönster eller för att manipulera den på ett specifikt sätt. I den här bloggposten kommer vi att gå igenom hur man extraherar substrängar i Clojure och kommer att ge några djupare kunskaper om ämnet.
+Ibland behöver vi bara en del av en sträng istället för hela strängen. Kanske vill vi få tag på en specifik del av en webbadress eller plocka ut ett namn från en lång lista. Genom att använda Clojure-funktioner för att extrahera substrängar, kan vi snabbt och enkelt få ut den information vi behöver.
 
-## Hur man extraherar substrängar
+## Hur man gör det
 
-I Clojure finns det flera sätt att extrahera substrängar. Ett vanligt sätt är att använda funktionen `subs`, som tar emot en sträng, en startposition och en slutposition som argument:
-
-```Clojure
-(subs "Hej världen" 4 8)
-```
-Output: `värld`
-
-Detta kodexempel tar en sträng och extraherar delen från position 4 till position 8, vilket i det här fallet är ordet "värld".
-
-En annan funktion för substrängs-extrahering är `substring`, som tar emot samma argument som `subs` men tar också emot ett ytterligare argument för att ange ett steg med vilket man kan hoppa över tecken:
+För att extrahera substrängar i Clojure använder vi funktionen `subs`. Vi anger startindex för den del av strängen vi vill ha och sedan avslutar vi med ett valfritt slutindex.
 
 ```Clojure
-(substring "Hej världen" 0 8 2)
+;; Definiera en sträng för exempel
+(def sträng "Det här är en lång mening")
+
+;; Extrahera "här är"
+(subs sträng 4 10) ; "här är"
+
+;; Extrahera "mening"
+(subs sträng 15) ; "mening"
+
 ```
-Output: `Hjävl`
 
-I det här fallet hoppas vi över varannan bokstav från startpositionen till slutpositionen.
-
-Du kan också använda `re-find` för att söka efter ett visst mönster i en sträng och extrahera substrängen som matchar det mönstret:
+Vi kan också använda funktionen `clojure.string/substring` för att extrahera substrängar, som har samma syntax som `subs`.
 
 ```Clojure
-(re-find #"l\d" "Lektion 9")
+;; Extrahera "en lång"
+(clojure.string/substring sträng 11 17) ; "en lång"
 ```
-Output: `l9`
 
-I det här exemplet söker vi efter ett litet "l" följt av en siffra i strängen "Lektion 9" och `re-find` returnerar substrängen som matchar det mönstret.
+## Djupdykning
 
-## Djupdykning i substrängsextrahering
-
-En viktig sak att tänka på när du extraherar substrängar är indexeringen. I Clojure (precis som i många andra programmeringsspråk) börjar indexeringen av en sträng på position 0, vilket betyder att det första tecknet i en sträng har index 0 och det sista tecknet har index "längden på strängen - 1".
-
-Du kan också använda funktionen `get` för att extrahera ett enskilt tecken från en sträng:
+Förutom `subs` och `substring`, finns det andra funktioner som kan användas för att extrahera substrängar i Clojure. Till exempel `reverse` för att vända på strängen och sedan använda `subs` för att få den del som vi vill ha.
 
 ```Clojure
-(get "Hej världen" 1)
+;; Extrahera "lång"
+(subs (reverse sträng) 0 4) ; "lång"
 ```
-Output: `e`
 
-Även om det finns flera olika sätt att extrahera substrängar i Clojure, är det viktigt att välja rätt funktion baserat på det specifika behovet och argumenten som behövs.
+Vi kan också använda reguljära uttryck för att extrahera en del av en sträng. Genom att använda `re-find` och ett reguljärt uttryck som matchar den del vi vill få, kan vi extrahera substrängen.
+
+```Clojure
+;; Extrahera texten efter fyra siffror och ett mellanslag
+(re-find #"\d{4} " "1987 Clojure Fun") ; "Clojure Fun"
+```
 
 ## Se även
 
-- [Dokumentation för subs](https://clojuredocs.org/clojure.core/subs)
-- [Dokumentation för substring](https://clojuredocs.org/clojure.core/substring)
-- [Dokumentation för re-find](https://clojuredocs.org/clojure.core/re-find)
+- [ClojureDocs: String Functions](https://clojuredocs.org/clojure.core#string)
+- [Regular Expressions in Clojure](https://clojure.org/reference/regular_expressions)

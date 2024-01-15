@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Eine Zeichenkette großschreiben"
+title:                "Eine Zeichenkette großschreiben"
+html_title:           "Gleam: Eine Zeichenkette großschreiben"
 simple_title:         "Eine Zeichenkette großschreiben"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte ich mir die Mühe machen, einen String zu verändern und zu großschreiben? Nun, es gibt viele Situationen, in denen es wichtig ist, dass Texte korrekt und einheitlich geschrieben sind. Zum Beispiel, wenn wir eine Benutzerschnittstelle erstellen oder Daten aus einer externen Quelle erhalten, die möglicherweise nicht richtig formatiert ist. Indem wir einen String in Großbuchstaben konvertieren, können wir sicherstellen, dass unser Code einheitlich und lesbar ist.
 
-Das Kapitalisieren einer Zeichenfolge kann in vielen Situationen nützlich sein, wie zum Beispiel bei der Formatierung von Benutzereingaben oder der Erstellung von lesbaren Überschriften.
+## Wie geht das?
+Es gibt verschiedene Möglichkeiten, einen String in Gleam zu großzuschreiben. Die einfachste Methode ist die Verwendung der ```String.to_upper``` Funktion, die einen String in Großbuchstaben konvertiert. Zum Beispiel:
 
-## Wie geht das
-Die Gleam-Sprache bietet eine integrierte Funktion, um eine Zeichenfolge zu kapitalisieren: `String.capitalize`. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt eine neue Zeichenfolge zurück, in der der erste Buchstabe großgeschrieben wird.
-
-```Gleam
-let input = "hi there"
-let output = String.capitalize(input)
-
-// output == "Hi there"
+```gleam
+let name = "sophie"
+let name_in_caps = String.to_upper(name)
 ```
 
-Um sicherzustellen, dass auch die restlichen Buchstaben in der Zeichenfolge im richtigen Format sind, gibt es auch die Funktion `String.capitalize_words`, die jede einzelne Wort in der Zeichenfolge großschreibt.
+Dies würde ```"SOPHIE"``` als Ergebnis zurückgeben. Wenn wir einen längeren Text haben, können wir auch die ```String.map``` Funktion verwenden, um jeden Buchstaben im String individuell zu verändern. Hier ist ein Beispiel, bei dem wir ```map``` verwenden, um alle Buchstaben in einem String in Großbuchstaben umzuwandeln:
 
-```Gleam
-let input = "hello gleam programming"
-let output = String.capitalize_words(input)
-
-// output == "Hello Gleam Programming"
+```gleam
+let text = "Hallo, das ist ein Beispiel!"
+let upper_text = String.map(to_upper, text)
 ```
 
-## Tiefer Einblick
-Das Kapitalisieren einer Zeichenfolge kann auch manuell mit dem Modul `String` und seinen Funktionen `to_list`, `map` und `from_list` erreicht werden. Dies mag komplexer erscheinen, bietet aber mehr Flexibilität bei der Bearbeitung von Zeichenfolgen.
+Das Ergebnis wäre ```"HALLO, DAS IST EIN BEISPIEL!"```. Wir können auch die gleichen Funktionen verwenden, um einen String in Kleinbuchstaben umzuwandeln, indem wir anstelle von ```to_upper``` die ```to_lower``` Funktion benutzen.
 
-`to_list` konvertiert die Zeichenfolge in eine Liste von Zeichen. Mit `map` und einem Bedingungsausdruck kann dann jeder Buchstabe in der Liste überprüft und gegebenenfalls großgeschrieben werden. Schließlich wird die Liste mit `from_list` wieder in eine Zeichenfolge umgewandelt.
-
-Eine detaillierte Erklärung dieses Prozesses findest du in der Gleam-Dokumentation.
+## Tiefer gehend
+Es ist wichtig zu beachten, dass die ```to_upper``` und ```to_lower``` Funktionen nicht nur für englische Buchstaben funktionieren. Sie funktionieren auch für jegliche Unicode-Zeichen, was bedeutet, dass sie für die meisten Sprachen und Schriftsysteme geeignet sind. Während es einfach erscheinen mag, einen String in Groß- oder Kleinbuchstaben umzuwandeln, ist es wichtig zu wissen, dass es auch zukünftige Entwicklungen geben kann, die diese Funktionen verbessern und erweitern werden.
 
 ## Siehe auch
-- [Die Gleam-Dokumentation zu String-Funktionen](https://gleam.run/articles/strings/)
-- [Ein Tutorial zur Arbeit mit Gleam-Strings](https://dev.to/lee_hodges/working-with-strings-in-gleam-1720)
-- [Ein Beispielprojekt mit Gleam-String-Manipulationen](https://github.com/gleam-lang/gleam_string_examples)
+- [Gleam Dokumentation zu Strings](https://gleam.run/book/tour/strings.html)
+- [Tutorial zu String-Manipulation in Gleam](https://dev.to/dzcyb3r/updating-strings-in-gleam-8hj)
+- [Offizielles Gleam Forum](https://github.com/gleam-lang/gleam/discussions)

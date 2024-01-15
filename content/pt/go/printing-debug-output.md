@@ -1,5 +1,6 @@
 ---
-title:                "Go: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Go: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Go"
 category:             "Go"
@@ -9,36 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Muitas vezes, ao escrever código em Go, podemos nos deparar com problemas e bugs difíceis de identificar. É aí que a impressão de saída de depuração pode ser extremamente útil. Isso nos permite visualizar o fluxo do nosso código e entender exatamente o que está acontecendo, tornando a depuração muito mais fácil.
+Você já teve dificuldades para encontrar e corrigir bugs em seu código? Às vezes, simplesmente inspecionar variáveis ou trechos de código pode não ser suficiente. É aí que entra a impressão de saída de depuração (debug output). Imprimir mensagens de depuração pode ajudar os programadores a entenderem melhor o fluxo do código e identificarem erros com mais facilidade.
 
 ## Como Fazer
 
-Para imprimir saída de depuração em Go, podemos usar a função `fmt.Println()` com qualquer valor que desejarmos imprimir. Por exemplo:
+Em Go, podemos imprimir mensagens de depuração usando a função `fmt.Println()`. Essa função aceita um ou mais argumentos e os imprime no console. Vamos ver um exemplo:
 
-```Go
-fmt.Println("Olá, mundo!")
+```
+package main
+
+import "fmt"
+
+func main() {
+    nome := "João"
+    fmt.Println("Olá,", nome + "! Seja bem-vindo.")
+}
 ```
 
-Isso imprimirá a mensagem "Olá, mundo!" no console. Além disso, podemos usar a função `fmt.Printf()` para formatar a saída de uma maneira mais específica. Por exemplo:
+Neste exemplo, usamos a função `fmt.Println()` para imprimir uma mensagem de boas-vindas com o nome fornecido pelo usuário. Ao executar este código, veremos a seguinte saída no console:
 
-```Go
-num1 := 10
-num2 := 20
-fmt.Printf("A soma de %d e %d é igual a %d", num1, num2, num1+num2)
+```
+Olá, João! Seja bem-vindo.
 ```
 
-Este código imprimirá a mensagem "A soma de 10 e 20 é igual a 30". Isso pode ser útil quando queremos imprimir valores de variáveis ou expressões específicas para entender melhor o comportamento do nosso código.
+Além do `fmt.Println()`, também temos a opção de usar a função `fmt.Printf()`, que permite formatar a saída de acordo com especificadores de formato, como `%s` para strings e `%d` para inteiros. Vejamos outro exemplo:
 
-## Deep Dive
+```
+package main
 
-Existem algumas coisas importantes a serem lembradas ao imprimir saída de depuração em Go. Primeiramente, é importante lembrar de remover ou comentar todas as saídas de depuração antes de enviar o código para produção. Isso garantirá que nosso código não seja desnecessariamente lotado com mensagens de depuração.
+import "fmt"
 
-Também é importante notar que podemos usar a função `panic()` ao imprimir saída de depuração em situações mais críticas. Isso não apenas imprimirá nossa mensagem, mas também encerrará a execução do programa.
+func main() {
+    numero1 := 10
+    numero2 := 5
+    fmt.Printf("%d é maior que %d.", numero1, numero2)
+}
+```
+
+Nesta função, usamos `%d` para especificar que queremos imprimir os números na saída. Novamente, ao executar este código, veremos a seguinte saída:
+
+```
+10 é maior que 5.
+```
+
+## Mergulho Profundo
+
+A impressão de saída de depuração (debug output) pode ser especialmente útil em situações em que queremos verificar o valor de variáveis durante a execução do programa. No entanto, é importante lembrar de remover essas mensagens de depuração ao finalizar o desenvolvimento e antes de enviar o código para produção.
+
+Também é possível usar a função `log` da biblioteca padrão do Go para imprimir mensagens de depuração em níveis diferentes, permitindo que o programador controle a gravidade das mensagens. Para saber mais sobre essa funcionalidade, você pode consultar a documentação oficial do Go.
 
 ## Veja Também
 
-- [Documentação oficial do Go sobre saída de depuração] (https://golang.org/doc/effective_go.html#logging)
-- [Vídeo tutorial sobre impressão de saída de depuração em Go] (https://www.youtube.com/watch?v=rqsLFpTTNjo)
-- [Artigo sobre melhores práticas de impressão de saída de depuração em Go] (https://www.ardanlabs.com/blog/2014/10/level-logger-based-in-go.html)
+- [Documentação oficial do Go (em português)](https://golang.org/doc/)
+- [Tutorial do Go (em português)](https://go-tour-br.appspot.com/)
+- [The Go Blog (em inglês)](https://blog.golang.org/)

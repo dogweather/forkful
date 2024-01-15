@@ -1,5 +1,6 @@
 ---
-title:                "Java: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरित करना"
+html_title:           "Java: स्ट्रिंग को लोअर केस में रूपांतरित करना"
 simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "Java"
 category:             "Java"
@@ -9,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-जब हम किसी स्ट्रिंग को लोअर केस में बदलने का विचार करते हैं, तो ध्यान देने वाली एक बहुत आम वजह है कि हमें स्ट्रिंग को दूसरे स्ट्रिंग के साथ संबंधित करना हो और दोनों स्ट्रिंग को एक समान रूप से तुलना करना हो। इसलिए, स्ट्रिंग को लोअर केस में बदलने से हम उन्हें एक समान तुलना कर सकते हैं और उनका एक ही रूप बना सकते हैं।
+Kyu: 
 
-## कैसे करें
-```Java
-String sampleString = "Hello World";
-String lowerCaseString = sampleString.toLowerCase(); //output: hello world
-```
+Shayad aapne kabhi socha ho ki kyu hum string ko lower case mein badalte hain. Lekin ye bahut hi zaroori hai kyunki lower case strings humare code ka consistency aur readability ko improve karta hai.
 
-स्ट्रिंग को लोअर केस में बदलने के लिए, हम `toLowerCase()` मेथड का उपयोग कर सकते हैं जो String आइटम को लोअर केस में बदल देता है। यदि हम किसी भी स्ट्रिंग पर इस मेथड को लागू करते हैं तो वह स्वचालित रूप से उस स्ट्रिंग को लोअर केस में बदल देगा।
+Kaise Kare: 
 
-```Java
-String empName = "Ajeet Kumar";
-if(empName.toLowerCase().equals("ajeet kumar")) { //output: true
-    System.out.println("Employee name match found");
-}
-```
+Toh chaliye ab dekhte hain ki hum kaise kisi bhi string ko lower case mein convert kar sakte hain. Iske liye hum `toLowerCase()` method ka istemal karenge jo String class mein available hai. Code ke madhyam se dekhein:
 
-इस उदाहरण में, हम `toLowerCase()` मेथड को स्ट्रिंग को संशोधित करने के लिए उपयोग करने के स्थान पर चेकिंग के लिए उपयोग करते हैं। यह उपयोगकर्ता के द्वारा प्रदान किए गए प्रविष्ट किए गए नाम के साथ स्ट्रिंग में मेल खोजता है और अगर मेल मिलता है तो सही होगा अन्यथा गलत होगा।
+  ```Java
+  String str = "HELLO WORLD";
+  String lowerCaseStr = str.toLowerCase();
+  System.out.println(lowerCaseStr);
+  ```
+Iska output hoga:
+  ```Java
+  hello world
+  ```
+Jaise ki hum dekh sakte hain, `toLowerCase()` method humare string ko pura lower case mein badal deta hai.
 
-## गहराई की तरफ
-स्ट्रिंग को लोअर केस में बदलने का एक और तरीका है `String.toLowerCase(Locale loc)` मेथड का उपयोग करके जो किसी निर्दिष्ट टिप्पणी (लोकेल) के अनुसार स्ट्रिंग को लोअर केस में बद
+Gehri Jhaank: 
+
+Agar hum baat karein string ke character encodings ki toh lower case characters ASCII (American Standard Code for Information Interchange) ke values ke sath aate hain. Ye values 97 se 122 tak hote hain. Isse hum ye samajh sakte hain ki lower case characters ka ASCII value upper case characters se kam hota hai. Isliye `toLowerCase()` method apne string ke har character ke ASCII value ko check karta hai aur agar ye upper case character ke range mein aa jata hai toh use lower case character mein convert karta hai.
+
+See Also:
+
+Agar aapko Java programming ke aur bhi articles padhne hain toh neeche diye gaye links ki madad se ve padh sakte hain:
+
+- [Introduction to Java Programming Language](https://www.geeksforgeeks.org/introduction-to-java/)
+- [Java String toLowerCase() method](https://www.geeksforgeeks.org/java-string-tolowercase-method/)
+- [ASCII Table for Characters](https://www.asciitable.com/)

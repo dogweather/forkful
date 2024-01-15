@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Töitä jsonin kanssa"
-simple_title:         "Töitä jsonin kanssa"
+title:                "Työskentely jsonin kanssa."
+html_title:           "Gleam: Työskentely jsonin kanssa."
+simple_title:         "Työskentely jsonin kanssa."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -11,49 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos haluat käsitellä dataa web-ohjelmoinnissa, sinun täytyy osata työskennellä JSON:n kanssa. Se on tärkeä osa useimpia moderneja sovelluksia ja on tärkeä taito ymmärtää.
+JSON on tällä hetkellä yksi markkinoiden suosituimmista tiedonsiirtomuodoista. Se on yksinkertainen ja tehokas tapa välittää tietoja sovellusten välillä, joten jos haluat pystyä työskentelemään tämän päivän ohjelmistomaailmassa, sinun kannattaa olla perillä JSONista.
 
-## Kuinka
+## Kuinka tehdä
 
-Voit käyttää Gleam-kieltä JSON:n käsittelyyn yksinkertaisesti käyttämällä JSON-pakettia. Se on sisäänrakennettu moduuli, joten sinun ei tarvitse asentaa mitään lisäosia.
-
-### Esimerkki:
+Gleam tarjoaa helpon ja tehokkaan tavan työskennellä JSONin kanssa. Voimme käyttää internetyhteyskirjastoa ja integroida sen Gleamiin seuraavalla tavalla:
 
 ```
-Gleam import Gleam.JSON
+Gleam.HTTP.request(
+  url = "https://jsonplaceholder.typicode.com/todos/1",
+  method = "GET",
+  headers = [],
+  body = Gleam.HTTP.empty_body(),
+  expect = Gleam.HTTP.expect_json(Todo.decode)
+)
+```
 
-let data = {% raw %}"""{% endraw %}{"name": "John", "age": 25}{% raw %}"""{% endraw %}
+Tässä koodissa lähetämme GET-pyynnön URL-osoitteeseen ja odotamme vastaavan JSON-datan kääntämistä Gleamin Todo-tietorakenteeksi. Voimme myös käyttää Gleamin sisäänrakennettua taulukkotyyppiä ja tehdä tietojen käsittelystä helpompaa:
 
-let json = Gleam.JSON.decode(data) 
-
-match json {
-  Err(error) -> error
-  Ok(data) -> 
-    {"Nimi": data["name"], "Ikä": data["age"]}
+```
+let json = """{"name": "John", "age": 30, "tags": ["programming", "Gleam"]}"""
+let data = String.to_json(json)
+if Array.member(String.to_upper(String.to_utf8(data.tags)), "GLEAM") {
+  io.println("Tämä henkilö on Gleam-fani!")
 }
 ```
 
-Tämä esimerkki osoittaa kuinka voit lukea JSON-dataa ja purkaa sen Gleam-tietorakenteeksi. ```decode```-funktio palauttaa joko virheen tai onnistumisen. Jos data on validi JSON, voit käyttää sitä oman sovelluksesi kanssa.
+Tässä esimerkissä käytämme String-toimintoja muuttamaan JSON-data json-tietotyypiksi. Sitten voimme käyttää taulukoita ja merkkijonojen käsittelyfunktioita helposti datan tarkastelussa.
 
-### Esimerkkitulos:
+## Syvällinen sukellus
 
-```
-{"Nimi": "John", "Ikä": 25}
-```
+JSONin kanssa työskentely Gleamilla on helppoa ja intuitiivista. Voit helposti muuntaa JSON-datan oman sovelluksesi tietorakenteeksi ja käsitellä sitä Gleamin sisäänrakennetuilla toiminnoilla. Voit myös käyttää Gleamin tyyppijärjestelmää varmistamaan, että kaikki tiedot vastaavat odotettua tietotyyppiä.
 
-Tässä näet JSON:n datasta puretut nimi- ja ikä-tiedot. Voit käyttää tätä taitoa luoden vaihtelevia JSON-objekteja ja käsitellä niitä Gleam-kielen avulla.
+See Also 
 
-## Syvämmälle
-
-JSON:n käsittelyllä on monia tärkeitä osia, kuten:
-
-- Syötemuodon validointi
-- Tiedon käsittely eri muodoissa (kuten numerot, tekstit jne.)
-- Virheiden käsittely
-
-Jatkuvalla harjoittelulla ja tutustumalla Gleam-dokumentaatioon voit oppia monia lisätaitoja ja kehittää kykyjäsi JSON:n käsittelyssä.
-
-## Katso myös
-
-- [Gleam dokumentaatio](https://gleam.run/documentation)
-- [Gleam JSON-paketti](https://github.com/gleam-lang/gleam/blob/master/lib/json.gleam)
+- [Gleam JSON-dokumentaatio](https://gleam.run/articles/json)
+- [Gleam internetyhteyskirjasto](https://hexdocs.pm/gleam/Gleam.HTTP.html)
+- [Gleam tietotyypit](https://hexdocs.pm/gleam/Gleam.html#types)

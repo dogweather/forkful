@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "TypeScript: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué extraer subcadenas en TypeScript
+## Por qué
 
-Extracción de subcadenas es una operación común en la programación que consiste en obtener una parte de una cadena de texto. En TypeScript, esta tarea se puede realizar fácilmente utilizando algunos métodos y funciones integrados en el lenguaje. En este artículo, exploraremos por qué uno podría querer extraer subcadenas y cómo hacerlo en TypeScript. También nos adentraremos en algunos conceptos más profundos y proporcionaremos ejemplos de código para ilustrar mejor el proceso.
+Extraer subcadenas es una tarea común en la programación, ya sea para manipular datos de manera eficiente o para validar información en formularios. En TypeScript, esta tarea se vuelve aún más sencilla gracias a sus métodos incorporados.
 
 ## Cómo hacerlo
 
-Para extraer subcadenas en TypeScript, podemos utilizar el método `substring()` en las cadenas de texto. Este método toma dos argumentos: el índice inicial de la subcadena y el índice final (opcional). Si omitimos el segundo argumento, se asume que queremos extraer todos los caracteres hasta el final de la cadena.
-
 ```TypeScript
-let str: string = "Hola, mundo!";
-console.log(str.substring(0, 4));
+// Crear una cadena de ejemplo
+let cadena: string = "Hola Mundo";
 
-// Output: Hola
+// Extraer una subcadena de la posición 5 hasta el final
+let subcadena = cadena.substring(5);
+console.log(subcadena); // Salida: "Mundo"
+
+// Extraer una subcadena de la posición 2 hasta la 7
+let otraSubcadena = cadena.substring(2, 7);
+console.log(otraSubcadena); // Salida: "la Mu"
 ```
 
-También podemos utilizar el método `slice()` que tiene la misma funcionalidad que `substring()`. Sin embargo, el segundo argumento de `slice()` representa la longitud de la subcadena en lugar del índice final.
+Para extraer subcadenas en TypeScript, podemos utilizar el método `substring()` que acepta dos parámetros: la posición de inicio y la posición de final (opcional). Esto nos permite seleccionar una parte específica de una cadena de manera muy sencilla.
 
-```TypeScript
-let str: string = "Hola, mundo!";
-console.log(str.slice(5, 10));
+## Profundizando
 
-// Output: mundo
-```
+Además del método `substring()`, TypeScript también ofrece otras formas de extraer subcadenas:
 
-También podemos extraer subcadenas utilizando el operador de indexación `[]` en las cadenas de texto. Este operador toma un índice (o rango de índices) y devuelve la subcadena correspondiente.
+- `slice(start?: number, end?: number)` nos permite seleccionar una porción de una cadena, similar a `substring()` pero también acepta valores negativos para contar desde el final.
+- `substr(from: number, length?: number)` nos permite seleccionar una subcadena iniciando en una posición y de una longitud determinadas.
 
-```TypeScript
-let str: string = "Hola, mundo!";
-console.log(str[6]);
-
-// Output: m
-
-console.log(str[2, 8]);
-
-// Output: la, mu
-```
-
-## Profundizando en la extracción de subcadenas
-
-Además de los métodos y operadores mencionados anteriormente, también podemos utilizar la función `substring()` en TypeScript. A diferencia del método `substring()` que se aplica a cadenas individuales, la función `substring()` se puede utilizar en una gran variedad de tipos, incluyendo cadenas, matrices y tuplas. Esto nos proporciona una flexibilidad adicional en cuanto a cómo extraemos subcadenas en nuestros programas.
-
-También podemos utilizar expresiones regulares para extraer subcadenas en TypeScript. Las expresiones regulares nos permiten buscar patrones en una cadena de texto y extraer subcadenas basadas en esos patrones. Podemos utilizar el método `match()` junto con una expresión regular para realizar la extracción.
+Es importante tener en cuenta que en TypeScript, al igual que en JavaScript, las cadenas son inmutables, lo que significa que una vez que se crea una cadena, no se pueden modificar sus caracteres individuales. Por lo tanto, cada método de extracción de subcadenas devuelve una nueva cadena en lugar de modificar la original.
 
 ## Ver también
 
-- [Documentación de TypeScript sobre extracción de subcadenas](https://www.typescriptlang.org/docs/handbook/strings.html#substring)
-- [Expresiones regulares en TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expression-based-string-pattern-matching.html)
+- [Documentación oficial de TypeScript sobre métodos de manipulación de cadenas](https://www.typescriptlang.org/docs/handbook/destructuring.html#substring)
+- [Artículo en español sobre operaciones comunes con cadenas en TypeScript](https://www.arquitecturajava.com/operaciones-basicas-manipulacion-cadenas-typescript/)

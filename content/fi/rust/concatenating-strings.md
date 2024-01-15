@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Rust: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,54 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi Rustissa kannattaa käyttää stringien yhdistämistä?
-
 ## Miksi
 
-Rust on nopeasti kasvava ohjelmointikieli, joka tunnetaan sen tehokkuudesta ja turvallisuudesta. Yhdistäminen eli stringien liittäminen toisiinsa on yleinen tehtävä ohjelmoinnissa, ja Rustissa on useita tapoja suorittaa se. Tässä blogikirjoituksessa käymme läpi, miksi ja miten voit käyttää Rustissa stringien yhdistämistä.
+ "Concatenating" eli yhdistämällä merkkijonoja on tärkeä osa ohjelmoinnin maailmaa. Se antaa meille mahdollisuuden luoda monimutkaisia ja dynaamisia viestejä ja tietoja, jotka ovat välttämättömiä monissa ohjelmointitehtävissä.
 
-## Kuinka tehdä
-
-Rustin standardeissa kirjastoissa on useita toimintoja stringien yhdistämiseen, mukaan lukien `format!` ja `join` metodit. Voit myös käyttää `+` operaattoria yhdistääksesi kaksi stringiä. Alla on esimerkki kahden stringin yhdistämisestä käyttäen `format!` ja `+`:
+## Miten
 
 ```Rust
-let etunimi = "Matti";
-let sukunimi = "Meikäläinen";
-let kokonimi = format!("{} {}", etunimi, sukunimi);
-let kokonimi2 = etunimi + " " + &sukunimi;
-println!("Kokonimi: {}", kokonimi);
-println!("Kokonimi 2: {}", kokonimi2);
-```
 
-Tulostus:
+let nimi = "Maija"
+let tervehdys = "Hei " + nimi + ", tervetuloa!"
+
+println!("{}", tervehdys);
+
+// Tulostaa: Hei Maija, tervetuloa!
 
 ```
-Kokonimi: Matti Meikäläinen
-Kokonimi 2: Matti Meikäläinen
-```
 
-Kuten näemme, molemmat tavat tuottavat saman tuloksen. `format!` palauttaa uuden stringin, kun taas `+` operaattori yhdistää stringit suoraan.
-
-Rustissa voit myös käyttää `join` metodia yhdistämään useita stringejä yhdeksi stringiksi. Tämä metodi ottaa vektorin tai iteraattorin stringeistä ja yhdistää ne annetulla välimerkillä. Alla on esimerkki `join` metodin käytöstä:
+Kuten yllä olevassa esimerkissä, merkkijonojen yhdistämiseen voimme käyttää plusmerkkiä (+). Voimme myös käyttää `.to_string()` metodia muuttaaksemme muita tietotyyppejä (kuten numeroita) merkkijonoiksi ja yhdistää ne sitten.
 
 ```Rust
-let vihannekset = ["tomaatti", "kurkku", "paprika"];
-let vihannekset_stringiksi = vihannekset.join(", ");
-println!("Vihannekset: {}", vihannekset_stringiksi);
+
+let numero = 5;
+let merkkijono = "luku on ".to_string() + &numero.to_string();
+
+println!("{}", merkkijono);
+
+// Tulostaa: luku on 5
 ```
 
-Tulostus:
+## Syventävä sukellus
 
+Rustin `String`-tyyppi antaa meille mahdollisuuden luoda dynaamisia merkkijonoja, mutta siinä on myös muutamia erilaisia käyttötapoja kuin perinteisillä merkkijonoilla, kuten `&str`. Esimerkiksi `String`-tyyppiä voi käyttää myös `.push_str()`-metodin avulla lisäämään merkkijonoja sen perään.
+
+```Rust
+
+let mut viesti = String::from("Tämä on ");
+
+viesti.push_str("todella tärkeä viesti.");
+
+println!("{}", viesti);
+
+// Tulostaa: Tämä on todella tärkeä viesti.
 ```
-Vihannekset: tomaatti, kurkku, paprika
-```
 
-## Syvempi sukellus
-
-Rustissa `+` operaattorin käyttäminen yhdistämiseen voi aiheuttaa omistajuusongelmia. Esimerkiksi jos yrität yhdistää kaksi muuttujaa, joista toinen on muuttumaton (immutable) ja toinen muuttuva (mutable), niin Rust aiheuttaa virheen. Tämä johtuu siitä, että `+` operaattori ottaa omistajuuden molemmista muuttujista ja yrittää yhdistää niitä, mutta muuttumaton muuttuja ei voi luovuttaa omistajuutta ja Rustissa ei sallita muutettavien ja muuttumattomien muuttujien yhdistämistä.
-
-Toinen tärkeä huomioitava asia on, että Rustissa stringit eivät ole muutettavissa (immutable) oletuksena. Tämä tarkoittaa sitä, että et voi muuttaa jo olemassa olevaa stringiä, vaan joudut luomaan uuden joka kerta kun teet muutoksia. Tämä pätee myös yhdistämiseen, joten vaikka `+` operaattori vaikuttaisi yhdistävän stringejä, se todellisuudessa luo uuden stringin joka kerta. Tästä syystä `join` metodi on usein tehokkaampi vaihtoehto, kun yhdistät useita stringejä.
+On myös hyvä huomata, että merkkijonoilla ja `&str`-tyypeillä on erilaiset oletusarvot muistinhallinnassa. `String`-tyypin tapauksessa muistinhallinta on Russa automaattista, kun taas `&str`-tyypin kohdalla se täytyy hallita itse.
 
 ## Katso myös
 
-- [Rustin oppaat ja esimerkit](https://doc.rust-lang.org/stable/rust-by-example/index.html
+- [Rustin viralliset dokumentaatiot merkkijonoista](https://doc.rust-lang.org/std/string/index.html)
+- [Merkkijonojen muotoilu Rustissa](https://www.section.io/engineering-education/string-formatting-in-rust/)

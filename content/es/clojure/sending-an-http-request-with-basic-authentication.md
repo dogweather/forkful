@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Clojure: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+## ¿Por qué?
 
-Enviar una solicitud HTTP con autenticación básica es una forma segura de proteger la información confidencial al enviar o recibir datos a través de una conexión HTTP. Esto garantiza que solo los usuarios autorizados puedan acceder a los datos y ayuda a prevenir posibles ataques.
+Quizás estés preguntándote por qué alguien querría enviar una solicitud HTTP con autenticación básica. Bueno, la autenticación básica es una forma sencilla de proteger una API o una aplicación web, permitiendo el acceso solo a usuarios autorizados que puedan proporcionar credenciales válidas.
 
 ## Cómo hacerlo
 
+Para enviar una solicitud HTTP con autenticación básica en Clojure, hay algunos pasos sencillos que debes seguir. En primer lugar, necesitas importar la biblioteca `clj-http.client` para manejar las solicitudes HTTP. Luego, debes proporcionar las credenciales de autenticación en forma de mapa, con las claves `:basic-auth-username` y `:basic-auth-password`. A continuación, usa la función `http-basic-auth` para adjuntar las credenciales a la solicitud.
+
 ```Clojure
-(ns mi-proyecto.core
+(ns my-app.core
   (:require [clj-http.client :as http]))
 
-;; Definir las credenciales de autenticación
-(def credenciales {:basic-auth ["usuario" "contraseña"]})
-
-;; Enviar una solicitud GET con autenticación básica
-(http/get "https://ejemplo.com/api/datos"
-          {:basic-auth ["usuario" "contraseña"]})
+(defn make-request []
+  (let [credentials {:basic-auth-username "usuario"
+                     :basic-auth-password "contraseña"}
+        request (http/http-basic-auth
+                 (http/get "https://api.miapp.com/users")
+                 credentials)]
+    (http/https request)))
 ```
 
-El código anterior utiliza la librería "clj-http" para establecer y enviar una solicitud HTTP con autenticación básica. Primero, definimos las credenciales de autenticación en un mapa y luego las incluimos en la solicitud HTTP con el parámetro `:basic-auth`. Esto garantiza que la solicitud se realice con las credenciales correctas y pueda acceder a los datos de forma segura.
+¡Eso es todo! Si las credenciales son correctas, la solicitud se realizará con éxito. Si no, recibirás un error de autenticación.
 
-La salida del código anterior será un mapa con la respuesta de la solicitud, que puede ser procesada y utilizada como sea necesario.
+## Profundizando
 
-## Profundizando en la autenticación básica HTTP
+Ahora que sabes cómo enviar una solicitud HTTP con autenticación básica, aquí hay algunos detalles adicionales a tener en cuenta. En primer lugar, ten en cuenta que las credenciales se proporcionan en texto plano en la solicitud. Por lo tanto, debes asegurarte de que el intercambio de información se realice a través de una conexión segura (HTTPS) para protegerlas.
 
-La autenticación básica HTTP es un método sencillo de autenticación que se basa en el envío de un nombre de usuario y una contraseña en texto plano a través de una conexión HTTP. Sin embargo, esta forma de autenticación no es segura ya que la información se envía sin cifrar, lo que la hace vulnerable a posibles ataques.
-
-Para mejorar la seguridad, se puede utilizar una conexión HTTPS en lugar de HTTP. Esto asegura que los datos se transmitan encriptados, lo que dificulta que un atacante acceda a la información de la autenticación básica.
-
-Además, es importante utilizar contraseñas seguras y cambiarlas regularmente para una mayor protección. También se recomienda utilizar otros métodos de autenticación más seguros, como OAuth, en lugar de la autenticación básica.
+Además, ten en cuenta que la autenticación básica es una forma muy simple de autenticarse y no ofrece tanta seguridad como otros métodos más complejos. Si necesitas una mayor seguridad, considera el uso de OAuth o tokens de acceso.
 
 ## Ver también
-
-- [Documentación oficial de clj-http](https://github.com/dakrone/clj-http)
-- [Más información sobre la autenticación básica HTTP](https://www.w3.org/Protocols/HTTP/Authentication.html)
-- [Tutorial de autenticación básica en Clojure](https://spin.atomicobject.com/2017/03/30/basic-http-authentication-clojure/)
+- [Documentación oficial de `clj-http`](https://github.com/dakrone/clj-http)
+- [Artículo en Medium sobre autenticación básica en Clojure](https://medium.com/@adnankiani/basic-authentication-in-clojure-using-clj-http-c8dd050d63ff)
+- [Ejemplo de código en GitHub sobre envío de solicitudes HTTP con autenticación básica en Clojure](https://github.com/mikethompson/clojure-http-client/blob/master/src/clojure_http_client/examples/basic_auth.clj)

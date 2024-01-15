@@ -1,6 +1,7 @@
 ---
-title:                "C: 文字列の先頭を大文字にする"
-simple_title:         "文字列の先頭を大文字にする"
+title:                "文字列のキャピタライズ"
+html_title:           "C: 文字列のキャピタライズ"
+simple_title:         "文字列のキャピタライズ"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-Cプログラムで文字列を大文字にする理由はたくさんあります。例えば、データを整理する際に検索や比較をしやすくするためや、出力結果を見やすくするためです。文字列を大文字にすることで、プログラムをより強力にすることができます。
+文字列を大文字化することに興味があるかもしれません。例えば、入力された文字列をすべて大文字に変換してから処理したいときなどがあります。
 
 ## 方法
-まず、大文字にしたい文字列を選択します。次に、```toupper()```関数を使って文字列を大文字に変換します。例えば、次のように書きます。
+文字列を大文字化するためには、標準ライブラリの"string.h"を使用します。
 
-```
+```C
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int main() {
-    char word[100];
-    printf("文字列を入力してください：");
-    gets(word);
-    int i = 0;
-    while (word[i]) {
-        putchar(toupper(word[i]));
-        i++;
+  char str[100];
+  printf("文字列を入力してください：");
+  fgets(str, 100, stdin); // 文字列を標準入力から取得
+  for (int i = 0; i < strlen(str); i++) {
+    if (str[i] >= 'a' && str[i] <= 'z') { // 小文字の場合は大文字に変換
+      str[i] = str[i] - 32; // アスキーコードでの変換
     }
-    return 0;
+  }
+  printf("大文字化された文字列： %s", str); // 出力
+  return 0;
 }
 ```
+プログラムを実行すると、入力した文字列が大文字化されて出力されます。例えば、"hello"と入力した場合は、"HELLO"が出力されます。
 
-これを実行すると、入力した文字列が大文字に変換されて出力されます。例えば、入力した文字列が"hello world"の場合、出力結果は"HELLO WORLD"になります。
+## ディープダイブ
+文字列を大文字化するプロセスでは、str[i] = str[i] - 32;という処理によって、小文字のアスキーコードが大文字のアスキーコードに変換されています。小文字と大文字のアスキーコードの差は32であるため、この処理によって大文字化が可能になります。また、アスキーコードを使用することで、文字種に依存せずに大文字化ができるようになります。
 
-## 深堀り
-Cプログラムでは、文字列の一部分だけを大文字にすることも可能です。例えば、```scanf()```関数を使って入力した文字列の先頭の1文字だけを大文字にし、残りの文字列はそのまま出力することもできます。
-
-また、大文字に変換するだけではなく、小文字に変換する```tolower()```関数も存在します。これを使うことで、文字列を全て小文字にすることもできます。
-
-## 参考
-- [toupper()関数の使い方 - c言語入門](https://www.javadrive.jp/c/start/toupper/index9.html)
-- [tolower()関数の使い方 - c言語入門](https://www.javadrive.jp/c/start/tolower/index9.html)
-- [Cプログラムで文字列を大文字にする方法 - Qiita](https://qiita.com/zacky1972/items/ef8bbfeef9a252cf22b0)
+## See Also
+- [C言語で文字列を操作する方法](https://qiita.com/taptappun/items/235d3dca7b0351bced88)
+- [ASCIIコードとUnicodeの違いについて](https://qiita.com/hmuronaka/items/a5bd88e00c7ada11d152)

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Send en http forespørsel"
+html_title:           "Elixir: Send en http forespørsel"
+simple_title:         "Send en http forespørsel"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,49 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende HTTP-forespørsler er en viktig del av å utvikle web-applikasjoner og APIer. Det lar oss kommunisere med ulike tjenester og hente data som vi trenger for å bygge dynamiske og interaktive applikasjoner. I Elixir, kan vi enkelt sende HTTP-forespørsler ved hjelp av det innebygde `HTTPoison` biblioteket.
+Å sende en HTTP-forespørsel er en viktig del av moderne webutvikling. Dette gjør det mulig for en applikasjon å kommunisere med andre applikasjoner, hente og sende data, og utføre handlinger på nettet.
 
-## Hvordan
+## Slik Gjør Du
 
-For å sende en HTTP-forespørsel i Elixir, må vi først installere og importere `HTTPoison` biblioteket i prosjektet vårt.
+For å sende en HTTP-forespørsel i Elixir, kan du bruke `HTTPoison` biblioteket. Først må du legge det til i ditt `mix.exs` fil under `deps` seksjonen:
 
-```
-mix deps.get
-```
-```
-iex> Httpoison.start
-```
-
-Deretter kan vi bruke funksjonen `get` til å sende en GET-forespørsel til en bestemt URL.
-
-```
-response = HTTPoison.get("http://www.example.com")
+```Elixir 
+def deps do
+  [{:httpoison, "~> 1.5"}]
+end
 ```
 
-Vi kan også legge til parametere og headers til forespørselen vår.
+Deretter må du kjøre `mix deps.get` for å installere biblioteket.
 
-```
-response = HTTPoison.get(url, [body: "payload", headers: ["Authorization": "token"]])
+For å sende en GET-forespørsel, kan du bruke `HTTPoison.get` funksjonen og angi URL-en som et argument:
+
+```Elixir 
+HTTPoison.get("https://example.com")
 ```
 
-Når vi har fått en respons, kan vi få tilgang til statuskoden, responsens kropp og headers.
+Dette vil returnere en tuple med to elementer - statuskode og responsdata. Du kan deretter hente dataene ved å bruke `HTTPoison.Response.body`:
 
+```Elixir 
+response = HTTPoison.get("https://example.com")
+response_body = response.body
 ```
-HTTPoison.get(url) |> respstatus
+
+For å sende en POST-forespørsel med data, kan du bruke `HTTPoison.post` funksjonen og angi både URL-en og data som argumenter:
+
+```Elixir 
+HTTPoison.post("https://example.com", [body: "data"])
 ```
-```
-HTTPoison.get(url) |> respbody
-```
-```
-HTTPoison.get(url) |> respheaders
-```
+
+Du kan også inkludere HTTP-header og andre parametere i forespørselen ved å sende dem som en liste til `HTTPoison.get` eller `HTTPoison.post` funksjonene.
 
 ## Dypdykk
 
-Bak kulissene bruker `HTTPoison` biblioteket Erlang's `HTTPc` modul for å håndtere HTTP-kommunikasjon. Dette gir oss en pålitelig og stabil måte å sende og motta HTTP-forespørsler på. Vi kan også konfigurere `HTTPoison` til å bruke en HTTP-proxy eller å håndtere feil på en spesiell måte.
+HTTP-forespørsler er bygget på toppen av TCP-protokollen og følger et bestemt format. De består av en forespørselslinje som inneholder metode, URL og HTTP-versjon, etterfulgt av en liste over header og et valgfritt kropp som inneholder forespørselens data.
+
+Elixir's `HTTPoison` biblioteket forenkler prosessen med å sende HTTP-forespørsler ved å gi en abstraksjon over denne protokollen. Det håndterer også asynkron kommunikasjon og feilhåndtering.
 
 ## Se også
 
-- Offisiell dokumentasjon for HTTPoison: https://hexdocs.pm/httpoison/
-- En guide for å håndtere feilsituasjoner i HTTPoison: https://devato.com/post/http-error-handling-with-httpoison/
-- En introduksjon til Elixir og HTTP: https://medium.com/@geo_bash/elixir-http-get-requests-cb3a3b1bbf1d
+- [HTTPoison dokumentasjon](https://hexdocs.pm/httpoison/readme.html)
+- [Elixir offisiell nettside](https://elixir-lang.org/)
+- [TCP-protokollen forklart](https://www.cloudflare.com/learning/network-layer/what-is-tcp/)

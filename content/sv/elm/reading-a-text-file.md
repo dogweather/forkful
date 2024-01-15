@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "Elm: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,36 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du arbetar med Elm är du förmodligen intresserad av funktionell programmering och bygga responsiva och pålitliga webbapplikationer. Att kunna läsa en textfil är en viktig färdighet som kan hjälpa dig att hantera data och skapa mer dynamiska applikationer.
+Att kunna läsa en textfil är en grundläggande funktion som kan vara användbar för många olika typer av programmeringsprojekt. Genom att läsa en textfil kan du enkelt få tillgång till data som har sparats i ett format som är läsbart för både människor och datorer.
 
-## Så här gör du
+## Hur man gör det
 
-Att läsa en textfil i Elm är enkelt och kan göras med hjälp av funktionen `File.read`, som tar ett textfilbeskrivare och returnerar en `Task` som innehåller filens innehåll. Här är ett exempel som läser filen "text.txt" och skriver ut innehållet på konsolen:
+Att läsa en textfil i Elm är ganska enkelt. Det första steget är att importera funktionspaketet `File` genom att lägga till följande rad i början av filen:
 
-```Elm
-import File exposing (read)
-import Task exposing (attempt)
-
-readTextFile : String -> Task.Task String String
-readTextFile fileName =
-    read fileName
-        |> Task.attempt (always "")
-
-main =
-    readTextFile "text.txt"
-        |> Task.map Debug.log
+```elm
+import File exposing (text)
 ```
 
-När du kör detta program kommer du att se att innehållet i filen "text.txt" skrivs ut på konsolen. I exemplet ovan används funktionen `Debug.log` för att skriva ut värdet i `Task` på konsolen, så att vi kan se vad som har hänt. I ditt eget projekt kan du använda `Task.attempt` för att hantera eventuella felmeddelanden som kan uppstå när du försöker läsa en fil.
+Sedan kan du använda funktionen `text` för att läsa innehållet i en textfil och spara det som en `Result`-typ. Här är ett exempel på hur man läser innehållet i en fil som heter "textfil.txt":
+
+```elm
+File.text "textfil.txt"
+    |> Result.map (\text -> text)
+```
+
+För att använda datat i filen kan du till exempel skriva ut det på skärmen eller spara det i en variabel för senare användning.
 
 ## Djupdykning
 
-Om du vill lära dig mer om hur man läser en textfil i Elm kan du titta på Elm Documentation för `File` och `Task`-modulerna. Där hittar du mer information om funktionen `read` och hur du kan arbeta med `Task`-typen för att hantera asynkrona uppgifter.
+När du läser in en textfil i Elm, kommer innehållet i filen att läsas in som en enda lång sträng. Det betyder att alla tecken, inklusive radbrytningar, kommer att sparas i samma sträng. Om filen innehåller speciella tecken, som till exempel åäö, kommer dessa också att sparas korrekt i strängen.
+
+Det är också värt att nämna att det är viktigt att filen som du läser finns på samma server som din Elm-applikation. Om filen finns på en annan server, kommer du istället att behöva använda en HTTP-förfrågan för att hämta filen och sedan läsa dess innehåll.
 
 ## Se även
 
-Här är några användbara resurser för dig som vill lära dig mer om att läsa en textfil i Elm:
-
-- [Officiell Elm Documentation: Fil](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Officiell Elm Documentation: Task](https://package.elm-lang.org/packages/elm-lang/core/latest/Task)
-- [Elm Tutorial: Läsning och skrivning av filer](https://elmprogramming.com/reading-and-writing-files-in-elm.html)
+* Elm-biblioteket: https://package.elm-lang.org/packages/elm/file/latest/
+* Elm Guide: https://guide.elm-lang.org/

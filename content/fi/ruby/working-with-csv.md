@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "Työskentely csv-tiedostojen kanssa"
+html_title:           "Ruby: Työskentely csv-tiedostojen kanssa"
+simple_title:         "Työskentely csv-tiedostojen kanssa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,31 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-CSV-tiedostot ovat erittäin yleisiä tietomuotoja, jotka mahdollistavat tiedon tallentamisen ja jakamisen eri ohjelmien välillä. Jos työskentelet datan käsittelyn ja analysoinnin parissa, CSV-tiedostot ovat välttämättömiä työkaluja.
+Miksi kukaan haluaisi työskennellä CSV:n parissa? No, ensinnäkin CSV (Comma Separated Values) on yksi yleisimmistä tiedostomuodoista, jota käytetään tietojen tallentamiseen ja jakamiseen. Se on helppo lukea ja käsitellä, joten se on suosittu valinta monissa ohjelmointitehtävissä.
 
-## Miten tehdä
-
-Ruby-kielellä CSV-tiedostojen käsittely on helppoa ja nopeaa. Voit käyttää `csv`-kirjastoa, joka on osa Rubyn perusasennusta. Tässä esimerkissä luomme uuden CSV-tiedoston ja tallennamme siihen muutaman rivin dataa:
+## Miten
 
 ```Ruby
-require 'csv' # sisällytä csv-kirjasto
-CSV.open("tiedosto.csv", "w") do |csv| # avaa uusi tiedosto nimellä "tiedosto.csv"
-	csv << ["Otsikko1", "Otsikko2", "Otsikko3"] # lisää otsikkorivin
-	csv << ["Arvo1", "Arvo2", "Arvo3"] # lisää dataa ensimmäiselle riville
-	csv << ["Arvo4", "Arvo5", "Arvo6"] # lisää dataa toiselle riville
+# Avaaminen ja lukeminen
+require 'csv'
+
+CSV.foreach("tiedosto.csv") do |row|
+  puts row # tulostaa jokaisen rivin taulukkona
+end
+
+# Kirjoittaminen
+CSV.open("uusi_tiedosto.csv", "w") do |csv|
+  csv << ["Nimi", "Sähköposti", "Puhelinnumero"] # lisää ensimmäisen rivin otsikot
+  csv << ["Matti Meikäläinen", "matti@mail.com", "0401234567"] # lisää tietueen
+end
+
+# Järjestäminen
+CSV.foreach("tiedosto.csv", headers: true).sort_by { |row| row["Nimi"] } do |row|
+  puts row # tulostaa järjestetyn tiedoston taulukkona
 end
 ```
 
-Tässä koodissa käytetään `CSV.open`-metodia, joka avaa ja luo uuden CSV-tiedoston. Sitten käytetään `<<`-operaattoria lisäämään dataa tiedostoon. Lopputuloksena tiedostossa on kolme riviä, joissa on otsikkorivi ja kaksi data-riviä.
+Esimerkkituloste:
 
-## Syvemmälle CSV:hen
+```
+["Nimi", "Sähköposti", "Puhelinnumero"]
+["Matti Meikäläinen", "matti@mail.com", "0401234567"]
+["Emilia Esimerkki", "emilia@mail.com", "0509876543"]
+["Teppo Testaaja", "teppo@mail.com", "0452468135"]
+```
 
-CSV-tiedostojen käsittelyllä on laajempi pohja, joka kannattaa tutkia, jos aiot työskennellä usein CSV-tiedostojen kanssa. Voit esimerkiksi käsitellä tekstitiedostoja CSV-muotoon tai muuntaa CSV-tiedostoja taulukoiksi ja takaisin.
+## Syvempää sukeltamista
 
-Tärkeää on myös huomata, että CSV-tiedostot eivät ole standardoituja ja niiden formaatti voi vaihdella. Siksi on hyvä tutustua tarkemmin CSV-standardiin ja sen mahdollisiin ongelmiin, kuten erikoismerkkeihin tai tyhjiin kenttiin.
+CSV:n käsittelyyn liittyy monia hyödyllisiä toimintoja, kuten tietojen muokkaaminen, poimiminen ja yhdistäminen. Voit myös käyttää taulukkoja tai rakenteita CSV-tiedostojen sijaan. Lisäksi CSV-kirjastossa on monia muita parametreja, joiden avulla voit muokata toimintaa.
+
+### Tiedostojen lukeminen ja kirjoittaminen
+
+CSV-kirjasto tarjoaa paljon vaihtoehtoja tiedostojen käsittelyyn. Voit esimerkiksi määrittää erottimen, käyttää otsikkoja tai jopa määrittää omia muotoiluja tiedostolle.
+
+### Tiedostojen järjesteleminen
+
+Käyttämällä `sort_by` -metodia voit järjestää CSV-tiedoston rivejä haluamasi kentän perusteella. Voit myös käyttää `reverse` -metodia, jos haluat kääntää järjestyksen.
 
 ## Katso myös
 
-- [CSV-kirjaston dokumentaatio](https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html)
-- [CSV-standardin tiedot](https://tools.ietf.org/html/rfc4180)
-- [Ruby-kirjasto tekstidatasta CSV-muotoon](https://github.com/tilo/smarter_csv)
+- [Ruby:n virallinen CSV-dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
+- [CSValot - CSV:n käsittelyyn tarkoitettu Ruby-kirjasto](https://github.com/kmaida/csvalot)
+- [Ruby:n perusteet - CSV-tiedostojen käsittely](https://www.tutorialspoint.com/ruby/ruby_input_output.htm#csvfiles)

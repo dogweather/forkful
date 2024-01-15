@@ -1,6 +1,7 @@
 ---
-title:                "Python: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Python: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,55 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach coraz więcej aplikacji internetowych wymaga uwierzytelnienia użytkownika. Aby to osiągnąć, programiści muszą wykorzystać standardowy protokół HTTP wraz z dodatkowym mechanizmem uwierzytelnienia. W tym artykule dowiesz się, jak używać podstawowej autoryzacji HTTP w języku Python, aby przesyłać zapytania do serwera WWW.
+Wysyłanie żądania HTTP z podstawową autoryzacją może być konieczne, gdy potrzebujemy uzyskać dostęp do chronionego zasobu na stronie internetowej lub serwerze. W niektórych przypadkach, aby uzyskać dostęp do danego zasobu, musimy udowodnić swoją tożsamość poprzez podanie nazwy użytkownika i hasła.
 
 ## Jak to zrobić
 
-Aby wysłać żądanie HTTP z podstawową autoryzacją w Pythonie, musisz wykonać trzy kroki.
+W języku Python istnieje wiele bibliotek, które umożliwiają nam wysyłanie żądań HTTP z podstawową autoryzacją. Jedną z najpopularniejszych jest biblioteka `requests`, która pozwala na prosty i intuicyjny sposób na komunikację z serwerami i pobieranie danych. Aby wysłać żądanie z podstawową autoryzacją, należy użyć parametru `auth` i przekazać do niego obiekt klasy `HTTPBasicAuth`, przekazując nazwę użytkownika i hasło jako jego argumenty. Poniżej przedstawiony jest przykładowy kod:
 
-1. Importuj bibliotekę `requests`:
 ```Python
 import requests
+from requests.auth import HTTPBasicAuth
+
+response = requests.get("http://example.com/protected-resource", auth=HTTPBasicAuth('nazwa_użytkownika', 'hasło'))
+print(response.text)  # wyświetlenie zawartości odwołanego zasobu
 ```
 
-2. Utwórz obiekt z informacjami o uwierzytelnieniu, które zostaną dodane do nagłówka żądania HTTP:
-```Python
-auth = HTTPBasicAuth('użytkownik', 'hasło')
-```
+Przykładowy wynik:
 
-3. Wyślij żądanie HTTP do określonego adresu URL przy użyciu metody `get` lub `post` i przekazuj obiekt autoryzacji jako parametr `auth`:
-```Python
-response = requests.get('http://example.com', auth=auth)
-```
+`Strona zabezpieczona za pomocą podstawowej autoryzacji!`
 
-Oto przykładowy kod, który wysyła żądanie GET do serwera, który wymaga podstawowej autoryzacji i wypisuje odpowiedź na konsolę:
-```Python
-import requests
-
-auth = HTTPBasicAuth('użytkownik', 'hasło')
-response = requests.get('http://example.com', auth=auth)
-print(response.text)
-```
-
-Po uruchomieniu tego kodu otrzymamy odpowiedź serwera, która może wyglądać mniej więcej tak:
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Strona przykładowa</title>
-</head>
-<body>
-    <p>Witaj, użytkowniku!</p>
-</body>
-</html>
-```
+Zauważ, że w tym przypadku podajemy dane do uwierzytelnienia bezpośrednio w kodzie, co nie jest zalecane ze względów bezpieczeństwa. W praktyce, warto przechowywać je w zmiennych zdefiniowanych w osobnym pliku konfiguracyjnym, lub pobierać je z zewnętrznego źródła.
 
 ## Deep Dive
 
-Aby lepiej zrozumieć działanie podstawowej autoryzacji HTTP w języku Python, warto przyjrzeć się jej dokładniej. W przypadku uwierzytelnienia podstawowego, nazwa użytkownika i hasło są przesyłane w nagłówku żądania z kodowaniem w formacie Base64. Należy pamiętać, że takie uwierzytelnianie nie jest bezpieczne i może być łatwo złamane. Dlatego też zaleca się używanie bardziej zaawansowanych metod, takich jak uwierzytelnianie z użyciem tokenów lub kluczy API.
+Podczas wysyłania żądania z podstawową autoryzacją, wysyłane są nagłówki `Authorization`, zawierające nazwę użytkownika i zaszyfrowane hasło. Warto zauważyć, że podczas korzystania z podstawowej autoryzacji, hasło jest szyfrowane jedynie przy użyciu kodowania Base64, co nie jest metodą bezpieczną. Dlatego też zaleca się stosowanie bardziej zaawansowanych metod uwierzytelniania, jak np. autoryzacja żetonowa.
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja biblioteki requests](https://requests.readthedocs.io/en/master/)
-- [Oficjalny poradnik Pythona dla początkujących](https://docs.python.org/3/tutorial/index.html)
-- [Artykuł na temat bezpiecznego uwierzytelniania w sieci](https://lwn.net/Articles/784193/)
+1. Dokumentacja biblioteki `requests`: https://requests.readthedocs.io/en/latest/
+2. Poradnik o podstawowej autoryzacji w protokole HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication

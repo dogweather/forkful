@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec le yaml"
+html_title:           "Clojure: Travailler avec le yaml"
+simple_title:         "Travailler avec le yaml"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,29 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Dans le monde de la programmation, il y a souvent un besoin d'échanger des données entre différentes applications. L'une des façons courantes de le faire est en utilisant YAML. Ce langage de sérialisation de données est facile à lire pour les humains et peut être utilisé dans une variété de langages de programmation, y compris Clojure.
+Si vous êtes un développeur Clojure, vous avez probablement déjà entendu parler de YAML. Mais pourquoi vous engagez-vous dans cette technologie ? Et quelles sont les raisons pour lesquelles YAML est devenu si populaire ?
+
+En fait, YAML (YAML Ain't Markup Language) est un langage de sérialisation de données qui est parfait pour les configurations de programmes et les fichiers de données structurées. Il est plus facile à lire que JSON et plus puissant que XML, ce qui en fait un choix idéal pour les utilisateurs de Clojure.
 
 ## Comment faire
 
-Pour commencer à travailler avec YAML en Clojure, vous devez d'abord inclure la bibliothèque "clj-yaml" dans votre projet. Ensuite, vous pouvez utiliser des fonctions telles que "load-string" et "emit-string" pour lire et écrire des données YAML en clojure.
+Si vous voulez commencer à travailler avec YAML en utilisant Clojure, voici quelques étapes simples à suivre :
 
-Voici un exemple de code qui charge un fichier YAML et en extrait une valeur spécifique :
+Tout d'abord, vous devez ajouter la dépendance suivante à votre projet Clojure :
 
 ```
-(require '[clj-yaml.core :as yaml])
+[clojure-yaml "0.4.1"]
+```
 
-(def config (yaml/load-string "user: username"))
-(println (:user config)) ; affiche : username
+Ensuite, vous devrez importer la bibliothèque dans votre fichier :
+
+```
+(:require [clojure-yaml.core :as yaml])
+```
+
+Maintenant, vous pouvez utiliser les fonctions de cette bibliothèque pour lire et écrire des données YAML. Par exemple, pour lire des données YAML à partir d'un fichier, vous pouvez utiliser la fonction ```load-file``` :
+
+```
+(yaml/load-file "config.yml")
+```
+
+Et pour écrire des données YAML dans un fichier, vous pouvez utiliser la fonction ```spit``` :
+
+```
+(yaml/spit "nouveau-fichier.yml" data-to-write)
 ```
 
 ## Plongée profonde
 
-Lorsque vous travaillez avec YAML en Clojure, il peut être utile de comprendre comment les données sont représentées sous forme de structures de données Clojure. Par exemple, une liste en YAML sera convertie en une liste Clojure, tandis qu'un objet sera représenté par une map avec des clés et des valeurs correspondantes.
+Maintenant que vous savez comment utiliser YAML avec Clojure, voici quelques informations plus avancées pour vous aider à mieux comprendre cette technologie :
 
-Il est également important de comprendre comment gérer les données complexes telles que les données imbriquées ou les commentaires dans YAML. En explorant la documentation de la bibliothèque "clj-yaml" et en expérimentant avec différents exemples, vous pourrez mieux maîtriser cet outil puissant.
+- YAML est un langage sensible à la casse, donc faites attention aux majuscules et aux minuscules dans vos clés et valeurs.
+- Vous pouvez utiliser des structures de données Clojure telles que des vecteurs, des listes et des maps directement en YAML sans avoir à les convertir au préalable.
+- Pour plus de personnalisation, vous pouvez également utiliser la bibliothèque ```clj-yaml``` pour contrôler la manière dont vos données sont converties en YAML.
 
 ## Voir aussi
 
-- [Documentation de la bibliothèque clj-yaml](https://github.com/gorillalabs/clj-yaml)
-- [Exemples de YAML en Clojure](https://www.baeldung.com/clojure-yaml)
-- [Tutoriel sur YAML en Clojure](https://www.oncrashreboot.com/use-yaml-babashka)
+- Site officiel YAML : https://yaml.org
+- Wiki Clojure : https://github.com/clojure/clojure/wiki
+- Exemple de projet Clojure utilisant YAML : https://github.com/seancorfield/yaml/clj-yaml

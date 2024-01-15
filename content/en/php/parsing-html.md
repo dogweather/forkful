@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "PHP recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,38 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-HTML is the language that powers the web. It is the backbone of every website and contains all the information needed to display a webpage. As a programmer, being able to parse HTML is a valuable skill as it allows you to extract and manipulate data from websites. This can be useful for automating tasks, data scraping, and building web applications.
+
+Parsing HTML is a key skill for any web developer. It allows you to extract specific data and elements from a HTML document, making it easier to manipulate and use in your code. Whether you are scraping data from a website or building a web crawler, learning how to parse HTML is essential.
 
 ## How To
+
+To start parsing HTML in PHP, you will need to use a library called *PHP Simple HTML DOM Parser*. This library provides an easy to use interface for manipulating HTML elements.
+
+First, import the library into your PHP file by requiring the `simple_html_dom.php` file:
+
 ```PHP
-// Create a new DOMDocument object
-$document = new DOMDocument();
-
-// Load HTML from a URL
-$document->loadHTMLFile("https://www.example.com");
-
-// Create a new DOMXPath object
-$xpath = new DOMXPath($document);
-
-// Specify the HTML element to extract
-$element = "//h1";
-
-// Get the value of the first match of the element
-echo $xpath->query($element)->item(0)->nodeValue;
-
-// Output: Example Domain
+require 'simple_html_dom.php';
 ```
 
-To parse HTML in PHP, you will need to use the built-in DOMDocument and DOMXPath classes. These classes allow you to load an HTML file or string and then use XPath expressions to select specific elements. In the example above, we are using the DOMXPath object to query for the first h1 element on the webpage and printing out its value.
+Next, we will need to create a new instance of the `simple_html_dom` class and load our HTML document:
+
+```PHP
+$html = new simple_html_dom();
+$html->load_file('example.html');
+```
+
+Now we can use this instance to perform various operations on our HTML document. Let's say we want to extract all the links from our page and print them out:
+
+```PHP
+foreach ($html->find('a') as $link) {
+    echo $link->href . PHP_EOL;
+}
+```
+
+This will loop through all `<a>` tags in our HTML and print out their `href` attribute. The `PHP_EOL` constant adds a new line after each link, for clearer output.
+
+To access specific elements, we can use CSS selectors with the `find()` method. For example, if we want to get the text inside a `<h1>` tag, we can use:
+
+```PHP
+$title = $html->find('h1', 0)->innertext;
+echo $title;
+```
+
+This will print out the text inside the first `<h1>` tag in our HTML document.
 
 ## Deep Dive
-XPath stands for XML Path Language and is a query language used for traversing XML documents. HTML is a type of XML document, which is why we can use XPath to navigate through it. XPath expressions, such as the one used in our code example, allow us to select specific nodes in the HTML tree structure.
 
-The DOMDocument and DOMXPath classes are part of the DOM extension in PHP. The DOM extension also provides methods for manipulating HTML elements, such as adding or removing nodes, and modifying attributes.
+PHP Simple HTML DOM Parser is based on the popular DOM (Document Object Model) library, which represents HTML documents as a tree structure. This makes it easy to navigate and manipulate elements by using its methods and properties.
 
-HTML parsing can sometimes be tricky because not all websites follow the same structure and formatting. It is important to familiarize yourself with XPath and HTML in order to effectively extract the data you need.
+Besides finding elements by their tag name, you can also use CSS selectors to target specific elements and attributes. For example, `#id` will select an element with a specific ID and `.class` will select elements with a specific class.
+
+Additionally, the library provides methods for manipulating and modifying HTML elements. For example, you can use the `outertext` property to change the entire HTML of an element, or the `innertext` property to change only the text inside an element.
+
+It's also worth noting that the library supports advanced features like advanced CSS selectors, traversing the DOM tree, and handling malformed HTML.
 
 ## See Also
-- [PHP Documentation on DOM](https://www.php.net/manual/en/book.dom.php)
-- [W3Schools XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
-- [How to Parse HTML in PHP](https://www.phpzag.com/parsing-html-using-php/)
+
+- [PHP Simple HTML DOM Parser documentation](https://simplehtmldom.sourceforge.io/)
+- [DOM library documentation](https://www.php.net/manual/en/book.dom.php)
+- [Introduction to HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

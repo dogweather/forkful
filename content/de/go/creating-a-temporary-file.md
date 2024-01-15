@@ -1,6 +1,7 @@
 ---
-title:                "Go: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Go: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,59 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt mit der Erstellung von temporären Dateien beschäftigen? Nun, temporäre Dateien sind nützlich, wenn man Daten vorübergehend speichern muss, um sie später zu verarbeiten oder sie zu einem späteren Zeitpunkt wieder zu löschen. Zum Beispiel können sie in der Zwischenablage oder als Zwischenspeicher beim Herunterladen von Dateien verwendet werden.
+# Warum
 
-## Wie
-Das Erstellen einer temporären Datei in Go ist eigentlich recht einfach. Zunächst müssen wir das `os` Paket importieren, damit wir auf die Funktionen zum Erstellen von Dateien zugreifen können.
+Bist du jemals in einer Situation gewesen, in der du ein temporäres Datei für deine Go-Anwendung erstellen musstest? Dieser Artikel erklärt dir, wie man ganz einfach eine temporäre Datei in Go erstellt und gibt auch noch einige zusätzliche Informationen für eine tiefgehende Eintauchen in dieses Thema.
 
-```
-import (
-    "fmt"
-    "io/ioutil"
-    "os"
-)
-```
+# So geht's
 
-Als nächstes erstellen wir eine temporäre Datei mit dem Prefix "example" und der Erweiterung ".txt". Das `ioutil.TempFile` Funktion gibt ein `os.File` Objekt zurück.
+Das Erstellen einer temporären Datei in Go erfordert nur wenige Zeilen Code. Im folgenden Beispiel wird die Funktion `TempFile()` aus dem Paket `ioutil` verwendet, um eine temporäre Datei mit dem Präfix "example" und der Dateiendung ".txt" zu erstellen.
 
-```
+```Go
 file, err := ioutil.TempFile("", "example*.txt")
 if err != nil {
-    panic(err)
+  // handle error
 }
+defer os.Remove(file.Name()) // lösche die temporäre Datei am Ende
 ```
 
-Wir können dann den Dateinamen oder den Pfad der temporären Datei mit Hilfe von `file.Name()` abrufen. Wir können auch Schreib- oder Leserechte auf die Datei setzen oder auf sie schreiben.
+Die Funktion `TempFile()` akzeptiert zwei Parameter. Der erste ist die Pfad- oder Verzeichnis-Option, in der die temporäre Datei erstellt werden soll. Wenn dieser Option leer gelassen wird, wird die Standardpfad-Option verwendet. Der zweite Parameter ist das Präfix, dem der Name der temporären Datei vorangestellt wird. Dies ist optional, aber hilfreich, um später die Datei zu identifizieren.
 
-```
-fmt.Println("Temporäre Datei erstellt:", file.Name())
-file.WriteString("Hallo, Welt!")
-file.Sync()
-```
+In unserem Beispiel speichern wir die erstellte temporäre Datei in der Variable `file` und verwenden die `defer` Anweisung, um sicherzustellen, dass die Datei am Ende gelöscht wird. Dies ist wichtig, da temporäre Dateien nicht automatisch gelöscht werden und ansonsten unerwünschten Platz auf deinem System einnehmen können.
 
-Um die temporäre Datei am Ende zu löschen, können wir `os.Remove` Funktion verwenden.
+# Tief eintauchen
 
-```
-defer os.Remove(file.Name())
-```
+Wenn du eine detailliertere Kontrolle über die erstellte temporäre Datei benötigst, bietet das `ioutil` Paket noch zusätzliche Funktionen. Mit `TempDir()` kannst du eine temporäre Verzeichnis erstellen, und mit `ReadAll()` kannst du den Inhalt der temporären Datei auslesen.
 
-## Deep Dive
-Beim Erstellen einer temporären Datei gibt es einige Dinge zu beachten. Zum Beispiel kann es sein, dass die Datei beim Erstellen bereits existiert oder dass die Datei erst später gelöscht wird. Um diese potenziellen Probleme zu vermeiden, können wir das `ioutil.TempDir` Funktion verwenden, um einen temporären Ordner zu erstellen, in dem wir unsere temporäre Datei platzieren können. Wir können auch die Prefix- und Suffixparameter verwenden, um sicherzustellen, dass unsere temporäre Datei einen eindeutigen Namen hat.
+Es gibt auch andere Pakete wie `os` und `io` welche ebenfalls Methoden zum Erstellen temporären Dateien beinhalten. Es ist wichtig, dass man die Vorteile und Unterschiede dieser verschiedenen Methoden versteht, bevor man sich für eine entscheidet.
 
-```
-tempDir, err := ioutil.TempDir("", "example")
-if err != nil {
-    panic(err)
-}
-defer os.Remove(tempDir)
-file, err := ioutil.TempFile(tempDir, "tempfile*.txt")
-if err != nil {
-    panic(err)
-}
-```
+# Siehe auch
 
-## Siehe auch
-- [Das `os` Paket in der offiziellen Dokumentation von Go](https://golang.org/pkg/os/)
-- [Temporäre Dateien in Go von Gopher Academy](https://blog.gopheracademy.com/advent-2015/safely-creating-temporary-files/)
-- [Ein Stack Overflow Eintrag über die Verwendung von `ioutil.TempFile`](https://stackoverflow.com/questions/22424365/how-to-create-a-temporary-file-in-go)
+- [ioutil Paket Dokumentation](https://golang.org/pkg/io/ioutil/)
+- [os Paket Dokumentation](https://golang.org/pkg/os/)
+- [Temporäre Dateien und Verzeichnisse in Go](https://www.alexandre-gomes.com/articles/temporary-files-and-directories-in-go/)

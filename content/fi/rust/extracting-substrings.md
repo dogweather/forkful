@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Alimerkkijonojen palauttaminen"
-simple_title:         "Alimerkkijonojen palauttaminen"
+title:                "Alihankkeiden alaluokkien irrottaminen."
+html_title:           "Rust: Alihankkeiden alaluokkien irrottaminen."
+simple_title:         "Alihankkeiden alaluokkien irrottaminen."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,26 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus ohjelmoinnissa joudumme työskentelemään merkkijonojen kanssa, ja näiden merkkijonojen sisältöä täytyy ehkä muokata tai etsiä tiettyjä osia. Yksi tapa käsitellä merkkijonoja on erottaa niistä osia eli suoraan sanottuna ottaa niistä osia itsenäisiksi merkkijonoiksi.
+On monia syitä, miksi haluaisit erotella alimerkkijonat Rustilla. Yleisimmät syyt ovat tekstikäsittely, tietojen etsiminen ja muotoilu. Alimerkkijonojen erottaminen on tärkeä taito, joka auttaa sinua käsittelemään merkkijonoja tehokkaammin ja luomaan monipuolisia ohjelmia.
 
 ## Miten
 
-Rust-ohjelmointikielissä on helppo ja tehokas tapa ottaa merkkijonoista alamerkkijonoja. Käytämme tämän saavuttamiseen `substring`-funktiota. Esimerkiksi, jos haluamme ottaa merkkijonosta `"Tervetuloa"` osan `"velu"`, käyttäisimme seuraavaa koodia:
+Alimerkkijonojen erottaminen Rustilla on helppoa ja suoraviivaista. Käytämme String-metodia nimeltä *slice*, jota voit käyttää erottamaan tietyn osan merkkijonosta. Katso esimerkki alla:
 
 ```Rust
-let merkkijono = "Tervetuloa";
-let osa = merkkijono.substring(3, 6);
+let s = String::from("Tervetuloa maailmaan!");
+let alimerkkijono = &s[3..10];
+
+println!("{}", alimerkkijono); //tulos: vetuloa
 ```
 
-Tämä koodi luo uuden merkkijonon `"velu"` ja tallentaa sen muuttujaan `osa`. Asetimme `substring`-funktiolle kaksi parametria: ensimmäinen on aloitusindeksi, joka määrittää mistä kohtaa osa otetaan, ja toinen on lopetusindeksi, joka määrittää mihin kohtaan asti osa otetaan. Muista, että indeksit alkavat aina nollasta, joten `substring(3, 6)` tarkoittaa, että haluamme ottaa osan merkkijonon alkaen neljännestä merkistä ja lopettaen kuudenteen merkkiin. Voit myös käyttää negatiivisia indeksejä, jolloin merkkijonon loppupäästä voidaan ottaa osia.
+Ensimmäisellä rivillä meillä on merkkijono *s*, josta haluamme erottaa alimerkkijonon. Sitten käytämme slice-metodia *[]*, jossa annamme indeksejä mistä ja mihin merkkeihin haluamme alimerkkijonon muodostuvan. Lopuksi tulostamme alimerkkijonon konsoliin.
 
-## Syvemmälle
+## Syventävä sukellus
 
-`substring`-funktiolla on myös muita parametreja, jotka voivat olla hyödyllisiä erilaisissa tilanteissa. Voit esimerkiksi käyttää `substring`-funktiota kolmen parametrin kanssa, jolloin kolmas parametri määrää, kuinka monta merkkiä otetaan osaksi. Tämä on kätevää, jos tiedät tarkalleen kuinka monta merkkiä haluat ottaa osaksi. Voit myös käyttää `substring`-funktiota yhdessä `slice`-funktion kanssa, mikä tekee siitä vieläkin voimakkaamman työkalun merkkijonojen käsittelyssä.
+Alimerkkijonojen erottaminen Rustilla on pohjimmiltaan tapa käyttää JavaScriptin *substring()*-metodia. Erona on, että Rustin slice-metodi ei sisällytä viimeistä indeksiä alimerkkijonoon, kun taas JS:ssä se sisältyy.
+
+```Rust
+let s = String::from("Tervetuloa maailmaan!");
+let alimerkkijono = &s[3..10];
+
+println!("{}", alimerkkijono); //tulos: vetuloa
+```
+
+Tässä esimerkissä viimeinen indeksi on *9*, mutta alimerkkijonossamme on vain *7* merkkiä, jotka alkavat indeksistä *3*. Tämä siksi, että viimeinen indeksi ei sisälly alimerkkijonoon. Muista tämä, kun erotat alimerkkijonoja Rustilla.
 
 ## Katso myös
 
-- [Rustin dokumentaatio](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
-- [Rustin merkkijonojen käsittely](https://www.freecodecamp.org/news/rust-string-vs-str/)
-
-Kiitos lukemisesta! Toivottavasti tämä auttoi sinua ymmärtämään paremmin kuinka ottaa alamerkkijonoja merkkijonoista Rustissa. Hyödyntämällä `substring`-funktiota, voit käsitellä ja muokata merkkijonoja helposti ja tehokkaasti. Onnea ohjelmoinnissa!
+- [Rustin virallinen dokumentaatio alimerkkijonojen erottamisesta](https://doc.rust-lang.org/stable/std/primitive.str.html#method.slice)
+- [W3Schools: JavaScript substring()](https://www.w3schools.com/jsref/jsref_substring.asp)

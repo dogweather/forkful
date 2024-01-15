@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 发送一个http请求"
+title:                "发送一个http请求"
+html_title:           "Elixir: 发送一个http请求"
 simple_title:         "发送一个http请求"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,51 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-为了与其他应用程序或网站通信，发送 HTTP 请求是必不可少的。这可以让您的应用从其他来源获取数据，也可以将数据发送到其他应用程序。
+HTTP请求是现代网络通信中不可或缺的一部分。通过发送HTTP请求，我们可以获取信息，进行数据交换，甚至实现网页浏览。在Elixir编程中，使用HTTP请求可以轻松地与其他服务器或服务进行通信，为我们的应用程序带来更多功能。
 
-## 如何发送 HTTP 请求
+## 如何使用
 
-要发送 HTTP 请求，您需要使用 Elixir 中的 `HTTPoison` 库。首先，您需要在您的项目中添加它，可以在终端中使用以下命令：
+让我们来看一个简单的例子如何发送HTTP请求：
 
-```
-mix deps.get
-```
+```elixir
+url = "https://example.com/api/users/1"
+response = HTTPoison.get(url)
 
-然后，在您的代码中导入 `HTTPoison`：
-
-```
-require HTTPoison
+IO.puts response.body
+# 输出："{ "id": 1, "name": "John Doe" }"
 ```
 
-接下来，您可以使用 `HTTPoison.get/3` 函数发送 GET 请求：
+上面的代码示例使用了第三方库HTTPoison来发送GET请求，并从服务器获取用户信息。首先，我们将请求的URL保存在变量中，然后使用HTTPoison库的`get/2`函数来发送请求。最后，我们通过输出响应的body属性来查看服务器返回的信息。
 
+除了GET请求外，我们还可以使用HTTPoison来发送POST、PUT、PATCH、DELETE等常见的HTTP请求，以及设置请求头和参数。通过查阅官方文档，我们可以发现更多丰富的功能和用法。
+
+## 深入探讨
+
+Elixir的标准库中也提供了`HTTP`模块，可以用来发送HTTP请求。和HTTPoison相比，`HTTP`模块更加灵活，可以自定义更多的请求参数。让我们来看一个使用`HTTP.get/3`函数的例子：
+
+```elixir
+url = "https://example.com/api/users"
+response = HTTP.get(url, headers: [{"Accept", "application/json"}])
+
+IO.puts response.body
+# 输出："[{ "id": 1, "name": "John Doe" }, { "id": 2, "name": "Jane Smith" }]"
 ```
-response = HTTPoison.get("https://example.com")
-```
 
-您可以在此处替换您想要发送请求的网址。在这个例子中，`response` 变量将包含来自该网站的响应。
+在上面的例子中，我们通过在请求中设置header头来指定需要返回json格式的数据。这个功能可以在处理不同格式数据时非常有用。
 
-要发送 POST 请求，您可以使用 `HTTPoison.post/4` 函数：
+另外，使用`HTTP.get!/3`函数可以在请求出错时抛出异常，从而更好地处理错误情况。
 
-```
-body = %{username: "johnsmith", password: "secret"}
-response = HTTPoison.post("https://example.com/login", body, [{"ContentType", "application/json"}])
-```
+## 参考链接
 
-这里，我们传递了一个 `body` 参数，它是一个包含 JSON 数据的 Elixir Map。我们还在请求头中传递了一个 `ContentType`，以告知服务器我们发送的是 JSON 数据。
-
-## 深入了解发送 HTTP 请求
-
-当您发送 HTTP 请求时，服务器将以响应的形式返回数据。这可能是一个成功的响应，也可能是一个错误响应。您可以使用 `HTTPoison` 库来处理这些不同的响应。
-
-例如，您可以通过访问 `response` 变量中的 `status_code` 动态获取响应状态码。如果响应成功，状态码将为 `200`。如果响应错误，则可能为 `400` 或 `500` 等。
-
-您也可以使用 `response` 变量中的 `body` 动态来获取返回的数据。如果服务器返回的是 JSON 数据，您可以使用 `Jason` 库来解析它。
-
-如您所见，通过使用 `HTTPoison` 库，发送 HTTP 请求变得简单而直观。
-
-## 另请参阅
-
-- [HTTPoison 官方文档](https://hexdocs.pm/httpoison/1.6.1/overview.html)
-- [Elixir 官方文档](https://elixir-lang.org/docs.html)
-- [Jason 官方文档](https://hexdocs.pm/jason/readme.html)
+- [HTTPoison官方文档](https://github.com/edgurgel/httpoison)
+- [Elixir官方文档 - HTTP模块](https://hexdocs.pm/elixir/HTTP.html)

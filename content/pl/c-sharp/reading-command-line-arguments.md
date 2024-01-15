@@ -1,5 +1,6 @@
 ---
-title:                "C#: Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "C#: Odczytywanie argumentów wiersza poleceń"
 simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "C#"
 category:             "C#"
@@ -11,44 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią wielu dziedzin naszego życia. Wiele osób zainteresowanych jest nauką języków programowania, ale niektórzy z pewnością zastanawiają się, jakie są najważniejsze aspekty, którymi powinni się zająć. Jednym z nich jest odczytywanie argumentów wiersza poleceń, co jest kluczowym elementem nie tylko dla systemów operacyjnych, ale również dla wielu aplikacji. W tym blogu opowiemy o tym, dlaczego warto zgłębić ten temat i jak to zrobić.
+Dlaczego kiedykolwiek powinieneś zająć się czytaniem argumentów wiersza poleceń? Głównym powodem jest to, że jest to powszechny sposób pobierania danych od użytkowników w wielu programach. Dzięki temu możesz zapewnić interaktywność w swoich aplikacjach i umożliwić użytkownikom dostosowywanie programu do swoich potrzeb.
 
-## Jak to zrobić
+## jak to zrobić
 
-Odczytywanie argumentów wiersza poleceń jest możliwe dzięki wykorzystaniu metody `GetCommandLineArgs()` w języku C#. Przeanalizujemy przykład poniżej, aby lepiej zrozumieć, jak to działa:
+Jeśli chcesz nauczyć się czytać argumenty wiersza poleceń w języku C#, oto prosty sposób, aby to zrobić:
 
 ```C#
-using System;
-
-class Program
+static void Main(string[] args)
 {
-    static void Main(string[] args)
+    if (args.Length == 0)
     {
-        Console.WriteLine("Podane argumenty: ");
-        for (int i = 0; i < args.Length; i++)
+        Console.WriteLine("Nie podano żadnych argumentów!");
+    }
+    else
+    {
+        Console.WriteLine("Oto lista argumentów, które zostały przekazane:");
+        foreach (string arg in args)
         {
-            Console.WriteLine(args[i]);
+            Console.WriteLine(arg);
         }
     }
 }
 ```
-Wywołując ten kod z określonymi argumentami wiersza poleceń, otrzymamy następujący wynik:
+
+Przykładowy wynik dla uruchomienia programu z argumentami "arg1" i "arg2" będzie wyglądał następująco:
 
 ```
-$ C:\Users\User\Desktop\Program.exe argument1 argument2
-Podane argumenty:
-argument1
-argument2
+Oto lista argumentów, które zostały przekazane:
+arg1
+arg2
 ```
 
-W powyższym przykładzie wykorzystujemy pętlę `for`, aby wyświetlić wszystkie podane argumenty. Zauważmy również, że pierwszym argumentem jest nazwa pliku wykonywalnego, dlatego w pętli zaczynamy od indeksu 1.
+Możesz również przyjmować argumenty wiersza poleceń jako liczby i wykonywać na nich operacje matematyczne, czy też przekazywać do nich ścieżki plików lub adresy URL. Możliwości są nieograniczone!
 
-## Dogłębne wody
+## głębsze zagłębienie
 
-Warto wiedzieć, że oprócz podstawowej metody `GetCommandLineArgs()`, istnieją również inne sposoby na odczytywanie argumentów wiersza poleceń w C#. Jednym z nich jest wykorzystanie przestrzeni nazw `System.Environment`, która oferuje różne metody takie jak `GetCommandLine()` lub `GetCommandLineArgs()`. Można również korzystać z biblioteki `CommandLineParser`, która ułatwia zarządzanie i przetwarzanie argumentów wiersza poleceń. 
+Czytanie argumentów wiersza poleceń może być bardziej skomplikowane niż w powyższym przykładzie. Istnieje wiele różnych metod analizy i manipulowania nimi w programie. Ważne jest, aby pamiętać o sprawdzaniu poprawności danych i obsłudze wyjątków.
+
+Warto również przestudiować biblioteki i narzędzia dostępne w języku C#, które mogą ułatwić pracę z argumentami wiersza poleceń, takie jak biblioteka CommandLineParser lub narzędzie Command Line Parser.
 
 ## Zobacz również
 
-- [Dokumentacja Microsoft o odczytywaniu argumentów wiersza poleceń w C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
-- [Biblioteka CommandLineParser](https://commandlineparser.codeplex.com/)
-- [Poradnik wideo NTuTech o odczytywaniu argumentów wiersza poleceń](https://www.youtube.com/watch?v=I-puz0iF6QA)
+[Porównanie różnych bibliotek do czytania argumentów wiersza poleceń w języku C#](https://github.com/jchook/Command-Line-Parser)
+
+[Dokumentacja biblioteki CommandLineParser](https://github.com/commandlineparser/commandline)
+
+[Narzędzie Command Line Parser](https://github.com/gsscoder/commandline)

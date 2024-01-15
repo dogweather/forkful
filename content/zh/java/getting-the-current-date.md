@@ -1,6 +1,7 @@
 ---
-title:                "Java: 获取当前日期"
-simple_title:         "获取当前日期"
+title:                "请提供《获取当前日期》"
+html_title:           "Java: 请提供《获取当前日期》"
+simple_title:         "请提供《获取当前日期》"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -9,39 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-在编程的世界里，获取当前日期是一个普遍且有用的操作。无论你是在开发一个日历应用程序还是需要在日志记录中添加时间戳，都需要用到当前日期。在这篇博文中，我将向大家展示如何使用Java代码来获取当前日期，让我们一起来探索吧！
+人们经常需要获取当前日期，无论是记录事件、处理报表还是进行数据分析。Java提供了简单易用的方法来获取当前日期，并且可以根据自己的需要进行格式化输出。
 
-# 如何
+## 如何获取当前日期
 
-要获取当前日期，我们需要使用Java中的内置类Date。我们可以通过创建一个Date对象来获取当前日期，然后使用SimpleDateFormat来格式化日期输出。
-
-```Java
-Date currentDate = new Date(); // 创建一个Date对象
-SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // 定义日期格式
-String formattedDate = dateFormat.format(currentDate); // 格式化当前日期
-System.out.println("今天的日期是：" + formattedDate); // 输出结果：今天的日期是：2021-05-26
-```
-
-除了获取当前日期，我们也可以使用SimpleDateFormat来格式化任何指定日期。例如，如果我们想要获取明天的日期，可以使用Calendar类来进行日期计算。
+获取当前日期的方法很简单，只需要使用Java内置的Date类和SimpleDateFormat类即可。首先，我们需要导入这两个类：
 
 ```Java
-Calendar calendar = Calendar.getInstance(); // 创建Calendar对象
-calendar.add(Calendar.DATE, 1); // 将日期推迟一天
-Date nextDate = calendar.getTime(); // 获取推迟后的日期
-String nextFormattedDate = dateFormat.format(nextDate); // 格式化日期输出
-System.out.println("明天的日期是：" + nextFormattedDate); // 输出结果：明天的日期是：2021-05-27
+import java.util.Date;
+import java.text.SimpleDateFormat;
+```
+然后，我们可以创建一个Date对象并使用SimpleDateFormat类来格式化输出日期，例如：
+
+```Java
+Date currentDate = new Date();
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+String formattedDate = dateFormat.format(currentDate);
+System.out.println("当前日期是：" + formattedDate);
+```
+运行以上代码，您将会得到类似于以下的输出：
+
+```
+当前日期是：2021-06-08
 ```
 
-# 深入探讨
+我们还可以根据自己的需要，使用不同的日期格式来输出，例如：
 
-除了上述示例中，我们还可以根据需要使用不同的日期格式来格式化输出结果。SimpleDateFormat类中提供了多种日期格式选项，例如“MM/dd/yyyy”表示月/日/年，“dd MMM yyyy”表示日 月 年，等等。您可以根据需要选择合适的日期格式来展示您想要的日期输出。
+```Java
+SimpleDateFormat longDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+String longFormattedDate = longDateFormat.format(currentDate);
+System.out.println("当前日期和时间是：" + longFormattedDate);
+```
+输出结果为：
 
-除了SimpleDateFormat类，Java 8之后还提供了新的日期和时间API，例如LocalDateTime类，它提供了更方便、更灵活的日期和时间操作方法。您可以深入了解这些API，以便根据需要选择最适合您项目的日期和时间处理方法。
+```
+当前日期和时间是：2021年06月08日 15时29分37秒
+```
 
-# 参考资料
+除了日期以外，我们还可以获取当前时间的毫秒数，示例如下：
 
-- [Java中的日期和时间处理](https://www.runoob.com/java/java-date-time.html)
-- [SimpleDateFormat文档](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java 8新的日期和时间API](https://www.geeksforgeeks.org/java-8-localdatetime-class/)
+```Java
+long currentTimeMillis = System.currentTimeMillis();
+System.out.println("当前时间的毫秒数是：" + currentTimeMillis);
+```
+输出结果为：
+
+```
+当前时间的毫秒数是：1623163286203
+```
+
+## 深入了解
+
+Java中Date类提供了许多方法来操作日期，例如可以比较两个日期的大小、判断一个日期是否在另一个日期之前或之后。在Java 8及以上版本，还可以使用新的LocalDate类来处理日期，它提供了更多的方法来操作日期和时间。
+
+另外，Java提供了众多的第三方日期库，如Joda-Time、java.time和Threeten Extra，它们提供了更多的功能和更丰富的API来处理日期。
+
+## 参考链接
+
+- [Java Date类文档](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java SimpleDateFormat类文档](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Java LocalDate类文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Joda-Time官方文档](https://www.joda.org/joda-time/)
+- [java.time官方文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- [Threeten Extra官方文档](https://www.threeten.org/threeten-extra/)
+
+## 参见
+
+- [Java教程（中文版）](https://docs.oracle.com/javase/tutorial/index.html)
+- [在线Java编译器](https://www.jdoodle.com/online-java-compiler)
+- [Java之道](https://www.javacodegeeks.com/)

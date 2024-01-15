@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Elixir: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,30 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-JSON को समझना और काम करना एक महत्वपूर्ण टूल है जो कोडिंग को सफलतापूर्वक सम्पन्न करने में मदद करता है। Elixir में JSON विस्तृत तरीके से काम करता है और आनंददायक बनाता है।
+क्यों कर रहे हो आप JSON के साथ काम? अक्सर डेटा को स्टोर करने और प्रसंस्करण करने के लिए जब हम विभिन्न एप्लिकेशन और सिस्टमों के बीच डेटा को ट्रांसफर करते है, तो हम JSON का उपयोग करते है। इलिक्सिर में JSON का सबसे अधिक उपयोग डेटा एपीआई के साथ काम करने में होता है। 
 
-## कैसे
+## कैसे करें
 
-JSON के साथ काम करने के लिए, हम `Poison` नामक Elixir का मॉड्यूल प्रयोग कर सकते हैं। इस मॉड्यूल के अंतर्गत एक `encode!` और `decode!` फंक्शन है जो आपको JSON में डेटा को संगठित करने और उसे स्ट्रिंग में बदलने में मदद करता है। यहां हम एक उदाहरण देख सकते हैं:
+टेक्स्ट को JSON में बदलने के लिए, `Jason.encode!/1` फंक्शन का उपयोग करें। इसके बाद, हम डेटा को वापस स्ट्रिंग में बदलने के लिए `Jason.encode_to_iodata!/1` फंक्शन का उपयोग कर सकते है। अगर हमारे पास एक स्ट्रिंग हो और हम उसे JSON में प्रकट करना चाहते है, तो हम `Jason.decode!/1` फंक्शन का उपयोग कर सकते है। नीचे दिए गए उदाहरण को रन करने के लिए [iex](https://hexdocs.pm/iex/IEx.html#start/0)` टूल का उपयोग कर सकते है।
 
+```Elixir
+# स्ट्रिंग को JSON में बदलने का उदाहरण
+input = %{name: "John Doe", age: 30}
+JSON.encode!(input)
+
+# डेटा को स्ट्रिंग में बदलने का उदाहरण
+input = %{name: "John Doe", age: 30}
+JSON.encode_to_iodata!(input)
+
+# स्ट्रिंग को JSON में प्रकट करने का उदाहरण
+input = "{\"name\": \"John Doe\", \"age\": \"30\"}"
+JSON.decode!(input)
 ```
-Elixir> data = %{language: "Hindi", level: "Advanced"}
-%Elixir> encoded_data = Poison.encode!(data)
-"{\"language\":\"Hindi\",\"level\":\"Advanced\"}"
-%Elixir> decoded_data = Poison.decode!(encoded_data)
-%{language: "Hindi", level: "Advanced"}
-```
 
-## गहराई में
+## गहराई में जाएं
 
-JSON को एक स्ट्रिंग से Elixir डेटा स्ट्रक्चर में बदलने के लिए, `Poison` अंतर्गत `decode` फंक्शन का इस्तेमाल किया जाता है। इससे हम स्ट्रिंग को बाइनरी डेटा में बदल सकते हैं जो एक त्वरित प्रकार का संगठित डेटा होता है। इसके अलावा, एक JSON स्ट्रिंग को टाइपसैफ़ एतथीयट जैसे कि `floats` और `atoms` आदि के साथ भी इंटरफ़ेस किया जा सकता है।
-
-## देखें भी
-
-[JSON डॉक्यूमेंटेशन](https://hexdocs.pm/poison/readme.html#content)
-
-[एक JSON स्ट्रिंग को इंटरफ़ेस और अन्य टाइपसैफ़ टाइप में बदलना](https://hexdocs.pm/poison/Poison.html#decode/2)
-
-[एक Elixir मॉड्यूल में एक सुववे कोड स्निप्ट डेटा को JSON में संरचित करना](https://blog.heroku.com/elixir-release-process-and-json-web-encryption)
-
-[सही तरह से JSON को पार्स और उन्मुक्त करना](https://hackernoon.com
+इलिक्सिर में, हम जेसन डेटा को वन एटा की शक्ति का उपयोग करके हैंडल करते है। यह डेटा एपीआई के साथ काम करने में बहुत ही उपयोगी है। इसके अलावा, इलिक्सिर परियोजनाओं में फेडरेशन सर्वर आदि के साथ काम करने के लिए भी अन्य लाइब्रेरियां उपलब्ध हैं

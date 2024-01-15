@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: L'analisi di HTML"
-simple_title:         "L'analisi di HTML"
+title:                "Analisi di HTML"
+html_title:           "Arduino: Analisi di HTML"
+simple_title:         "Analisi di HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,61 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-[Immagine di un Arduino UNO con dei fili elettrici collegati ad esso]
-
 ## Perché
 
-Se sei un appassionato di Arduino e di programmazione, sicuramente avrai sentito parlare della tecnica di parsing HTML. Ma perché dovresti impegnarti in questa attività? Beh, in primo luogo, il parsing HTML ti consente di estrarre informazioni utili dai siti web, che possono essere utilizzate per realizzare progetti interessanti. In secondo luogo, può essere un modo divertente per mettere alla prova le tue capacità di programmazione e per acquisire nuove conoscenze.
+Se sei un'appassionato di Arduino e ti piace sperimentare con nuovi progetti, il parsing HTML potrebbe essere un'abilità utile da apprendere. Con il parsing HTML, puoi estrarre dati da pagine web e utilizzarli nel tuo codice Arduino per creare progetti ancora più interessanti.
 
 ## Come fare
 
-Per iniziare, avrai bisogno di un Arduino board, dei cavi elettrici e di un computer con il software di programmazione Arduino IDE installato. Una volta che hai tutto il materiale, puoi seguire i seguenti passaggi:
+Per iniziare, assicurati di avere un'Arduino aggiornata e il software IDE installato sul tuo computer. Quindi, segui questi passaggi:
 
-1. Collega il tuo Arduino alla porta USB del computer.
-2. Apri il software di programmazione e crea un nuovo sketch.
-3. Utilizzando la libreria HTTPClient, effettua una richiesta GET ad un sito web.
-4. Leggi il contenuto della risposta e scrivi un codice per estrarre le informazioni interessanti utilizzando la tecnica di parsing HTML.
-5. Alla fine, puoi inviare i dati raccolti ad un display, un servomotore o qualsiasi altro componente che desideri utilizzare.
+1. Importa la libreria esp32-hmtl-parser nel tuo progetto.
+2. Crea un oggetto della classe HtmlParser e assegna un'e-mail del sito web che desideri analizzare come parametro.
+3. Utilizza il metodo `parse()` per ottenere il contenuto HTML della pagina web.
+4. Sfrutta i metodi della classe HtmlParser per estrarre le informazioni che ti interessano dalla pagina, come titoli, paragrafi o immagini.
+5. Utilizza i dati che hai estratto nella tua logica di programmazione e crea progetti sorprendenti.
 
-Di seguito, puoi trovare un esempio di codice che effettua una richiesta GET al sito "www.esempio.com" e stampa sul serial monitor il contenuto della pagina.
+Ecco un esempio di codice che estrae il titolo di una pagina web utilizzando la libreria esp32-html-parser:
 
 ```Arduino
-#include <HTTPClient.h>
+#include <HtmlParser.h>
+
+HtmlParser parser("https://www.esempio.com");
 
 void setup() {
-  Serial.begin(9600); //Inizializza la comunicazione seriale
+    Serial.begin(9600);
+    parser.parse();
+    String title = parser.title();
+    Serial.println(title); // stampa il titolo della pagina web nella console
 }
 
-void loop() {
-  if(WiFi.status()== WL_CONNECTED){  //Controlla la connessione WiFi
-    HTTPClient http;    //Crea un oggetto HTTPClient
-    http.begin("http://www.example.com");  //Specifica l'URL da cui effettuare la richiesta
-    int httpCode = http.GET();   //Invia la richiesta GET
-    if(httpCode > 0) {
-      String content = http.getString();  //Salva il contenuto della risposta
-      Serial.println(content);   //Stampa il contenuto sul serial monitor
-    }
-    else {
-      Serial.println("Errore nella richiesta");  //Stampa un messaggio di errore
-    }
-    http.end();   //Termina la connessione
-  }
-  else {
-    Serial.println("Connessione WiFi non disponibile");  //Stampa un messaggio se la connessione WiFi non è disponibile
-  }
-}
+void loop() {}
 ```
 
-## Approfondimento
+L'output di questo codice sarà il titolo della pagina web, come "Esempio di pagina web". Ovviamente, puoi utilizzare anche gli altri metodi della classe HtmlParser per estrarre altre informazioni.
 
-Il parsing HTML è fondamentale per estrarre informazioni dai siti web, ma può essere un'attività complessa. Ad esempio, potrebbe essere necessario considerare le diverse classi e ID degli elementi HTML per ottenere i dati desiderati. Inoltre, i siti web possono aggiornare il loro codice in qualsiasi momento, quindi il tuo codice di parsing potrebbe non funzionare più dopo un po' di tempo.
+## Profondità di analisi
 
-Per semplificare il processo, puoi utilizzare una libreria di parsing HTML come ad esempio "ArduinoWebParser" disponibile su GitHub. Questa libreria gestisce in modo più efficiente le varie etichette e attributi degli elementi HTML, semplificando così il tuo codice.
+Il parsing HTML è spesso usato nei progetti di Arduino che richiedono l'accesso a dati da pagine web esterne. Tuttavia, è importante notare che le pagine web non sono sempre strutturate nello stesso modo e possono cambiare nel tempo. Ciò significa che il tuo codice deve essere robusto e in grado di gestire diversi scenari in modo adeguato.
 
-Un'altra opzione è quella di utilizzare un servizio di web scraping, che ti permette di estrarre facilmente i dati dai siti web senza dover scrivere alcun codice di parsing. Puoi trovare diverse opzioni online, come ad esempio "ParseHub" o "Octoparse".
+Inoltre, ci sono alcune situazioni in cui il parsing HTML potrebbe non essere la scelta migliore per ottenere i dati desiderati. Ad esempio, se il sito web utilizza la tecnica di render dinamico, i dati potrebbero essere inaccessibili tramite parsing HTML.
+
+Inoltre, se il sito web utilizza elementi visivi come le immagini per fornire i dati, sarà necessario utilizzare tecniche più avanzate per estrarli in modo efficace.
 
 ## Vedi anche
 
-- ArduinoWebParser: https://github.com/smerkousdavid/ArduinoWebParser
-- ParseHub: https://www.parsehub.com/
-- Octoparse: https://www.octoparse.com/it/
+- Libreria esp32-html-parser: https://github.com/lastlink/esp32-html-parser
+- Guida di installazione Arduino: https://www.arduino.cc/en/Guide/HomePage
+- Documentazione ufficiale di Arduino: https://www.arduino.cc/reference/en/

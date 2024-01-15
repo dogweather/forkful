@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Irrottamien alimerkkijonojen hakeminen"
-simple_title:         "Irrottamien alimerkkijonojen hakeminen"
+title:                "Alirivien erottaminen"
+html_title:           "Kotlin: Alirivien erottaminen"
+simple_title:         "Alirivien erottaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,52 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringien erottelemista käytetään usein silloin, kun halutaan käsitellä vain tietty osa merkkijonosta tai suorittaa toimintoja tietyllä alueella. Tämä voi säästää aikaa ja vaivaa, kun työskennellään merkkijonojen kanssa.
+Substringien erottaminen on erittäin kätevä toiminto, kun käsittelet merkkijonoja Kotlinissa. Se säästää aikaa ja vaivaa manuaalisessa merkkijonojen leikkaamisessa ja voi auttaa parantamaan koodisi suorituskykyä. Joten jos käytät merkkijonoja ohjelmassasi, substringien erottaminen on tärkeä taito oppia!
 
-## Kuinka
+## Miten
 
-Merkkijonon lopullinen luettelo muodostuu seuraavista toimenpiteistä:
-
-1. Alusta: Määritä ensin, mistä alkaen haluat ottaa merkkijonon osan.
+Voidaksesi erottaa substringejä merkkijonoista Kotlinissa, sinun tarvitsee käyttää sisäänrakennettua `substring()` -funktiota. Se ottaa kaksi parametria: aloituskohdan ja lopetuskohdan, ja palauttaa halutun osan alkuperäisestä merkkijonosta.
 
 ```Kotlin
-val s = "Tämä on esimerkki lauseesta"
-val alkuindeksi = 5
+val merkkijono = "Tämä on esimerkkimerkkijono"
+
+// Erota ensimmäinen sana (Tämä)
+val ensimmainenSana = merkkijono.substring(0,4)
+println(ensimmainenSana) // Tulostaa: Tämä
+
+// Erota toinen sana (on)
+val toinenSana = merkkijono.substring(5,7)
+println(toinenSana) // Tulostaa: on
+
+// Voit myös antaa vain aloitusindeksin ja jättää lopetuskohdan tyhjäksi,
+// jolloin substring erottaa merkkijonon halutusta indeksistä loppuun asti
+val loppu = merkkijono.substring(12)
+println(loppu) // Tulostaa: esimerkkimerkkijono
 ```
 
-2. Loppu: Määritä sitten, mihin asti haluat merkkijonon osan ulottuvan.
+## Syvällinen sukellus
 
-```Kotlin
-val loppuindeksi = 9
-```
+Substringin erottaminen perustuu merkkijonojen välimuistin käyttöön. Kun kutsut `substring()` -funktiota, se luo uuden merkkijonon, joka sisältää halutun osan alkuperäisestä merkkijonosta. Tämä tarkoittaa sitä, että vaikka merkkijonon leikkaaminen voi vaikuttaa tehokkaalta tavalta käsitellä merkkijonoja, se voi myös aiheuttaa lisätyötä tietokoneellesi, kun se luo useita uusia merkkijonoja muistissa.
 
-3. Huomioi, että indeksit alkavat nollasta, joten oikean lopullisen merkkijonon saamiseksi sinun on vähennettävä 1 alku- ja loppuindeksistä.
-
-```Kotlin
-val lopullinen = s.substring(alkuindeksi, loppuindeksi - 1)
-println(lopullinen)
-```
-
-Tämä tuottaa seuraavan tulosteen:
-
-```Kotlin
-on e
-```
-
-Se on siinä! Olet luonut pienen osan alkuperäisestä merkkijonosta.
-
-## Syvällinen tarkastelu
-
-Jotta ymmärtäisimme paremmin, miten substringien erottelu tapahtuu, on tutkittava hieman syvemmälle. Kun kutsumme [substring()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html) -metodia, se luo uuden merkkijonon alkuperäisestä merkkijonosta käyttämällä annettuja indeksejä. Substringilta otettu merkkijono on siis kopio alkuperäisestä merkkijonosta, ja kaikki siihen tehdyt muutokset eivät vaikuta alkuperäiseen merkkijonoon.
-
-Voit myös käyttää substringia parametrien sijasta vain yhdellä indeksillä, mikä tarkoittaa, että se luo uuden merkkijonon valitsemasta indeksistä loppuun asti.
-
-On myös tärkeää huomata, että substringin indeksit voivat olla negatiivisia, mikä tarkoittaa, että numerointi tapahtuu merkkijonon lopusta. Esimerkiksi indeksi -1 tarkoittaa merkkijonon viimeistä merkkiä ja -3 merkkijonon kolmanneksi viimeistä merkkiä.
+On myös tärkeää muistaa, että substringien erottaminen ei muuta alkuperäistä merkkijonoa, vaan palauttaa vain uuden, erillisen merkkijonon. Jos haluat muuttaa alkuperäistä merkkijonoasi, sinun on tallennettava palautettu substring uuteen muuttujaan.
 
 ## Katso myös
 
-- [Substringin käyttö Kotlinissa](https://www.baeldung.com/kotlin/substring)
-- [Kotlinin viralliset dokumentaatiot substringista](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-- [Merkkijonojen käsittely Kotlinissa](https://www.tutorialkart.com/kotlin/strings-in-kotlin/)
-
-Kiitos lukemisesta ja toivottavasti tämä auttoi sinua ymmärtämään substringien erottelua paremmin. Tehokkaasti koodausta!
+- [Kotlinin virallinen dokumentaatio merkkijonojen käsittelystä](https://kotlinlang.org/docs/reference/strings.html)
+- [Substringien erottaminen JavaScriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)

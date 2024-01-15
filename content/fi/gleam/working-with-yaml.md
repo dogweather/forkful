@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Yaml: Työskentely ohjelmointikielen kanssa"
+html_title:           "Gleam: Yaml: Työskentely ohjelmointikielen kanssa"
+simple_title:         "Yaml: Työskentely ohjelmointikielen kanssa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -11,37 +12,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-YAML on ohjelmointikieletön tiedostomuoto, jota käytetään usein määrittelemään tietorakenteita ja asetuksia. Sen avulla voit tallentaa tiedot ihmisystävällisessä muodossa, mikä tekee siitä loistavan vaihtoehdon tiedostojen tallentamiseen ja lähettämiseen. Gleamissa YAML on kätevä tapa lukea ja parsia tiedostoja ja käsitellä niiden sisältöä. 
+Yksi tärkeimmistä tekijöistä, jotka tekevät YAML:stä tärkeän, on sen yksinkertaisuus ja helppokäyttöisyys. YAML-tiedostot ovat loistava tapa tallentaa ja jakaa rakenteellisia tietoja.
 
-## Kuinka
+## How To
 
-### Lukeminen
-Gleamilla voit lukea YAML-tiedostoja helposti käyttämällä bibliotekkia `gleam_yaml`.
+Käyttääksesi YAML:ää kätevästi Gleamissa, tarvitset `gleam-serial` -kirjaston, jota voit asentaa seuraavalla komennolla:
 
+```gleam
+gleam install gleam-serial
 ```
-Gleam |> Yaml.encode(viesti, polku)
-```
 
-Tämä koodi luo YAML-merkkijonon `viesti`-muuttujasta ja tallentaa sen `polku`-polkuun.
+Seuraavaksi sinun tulee määrittää kuinka haluat käyttää YAML:ää tietojen tallentamiseen. Voit esimerkiksi luoda rakenteen, joka sisältää merkkijonon, kokonaisluvun ja listan, ja muuntaa sen YAML-muotoon seuraavasti:
 
-### Parsiminen
-Gleamilla voit myös helposti parsia YAML-tiedostoja ja käsitellä niiden sisältöä koodissasi. 
+```gleam
+import gleam/serial
 
-```
-case Gleam |> Yaml.decode(data) {
-    Ok(parsed) -> // parsed on YAML-tiedoston sisältämä data
-    Error(e) -> // käsittely virheelliselle tiedostolle
+pub struct Henkilo {
+  nimi: String,
+  ika: Int,
+  harrastukset: List(String),
 }
+
+let mina: Henkilo = Henkilo (
+  nimi: "Matti",
+  ika: 25,
+  harrastukset: ["luistelu", "lukeminen", "sisustaminen"]
+)
+
+let yaml = serial.encode(mina)
+
+gleam/core/format.println(yaml)
 ```
 
-Tässä esimerkissä käytämme `Gleam |> Yaml.decode(data)` -funktiota, joka palauttaa joko `Ok`-arvon käsiteltävästä datasta tai `Error`-arvon jos `data` ei ole validi YAML-tiedosto. Tämän avulla voit helposti käsitellä tiedoston sisältöä esimerkiksi rakenteiden avulla.
+Tulostus:
 
-## Syvä Syöksy
+```
+nimi: Matti
+ika: 25
+harrastukset:
+  - luistelu
+  - lukeminen
+  - sisustaminen
+```
 
-Vaikka Gleamin `gleam_yaml` bibliotekki tekee YAML-tiedostojen lukemisen ja parsimisen melko helpoksi, on silti hyödyllistä tietää tarkemmin YAML-syntaksista ja sen eri ominaisuuksista. Voit lukea lisää YAML:n ominaisuuksista ja syntaksista [YAML-spesifikaatiosta](https://yaml.org/spec/) ja kokeilla erilaisia lähestymistapoja käsitellä YAML-tiedostoja omassa koodissasi.
+Voit myös luoda Gleam-tyyppejä suoraan YAML-tiedostosta käyttämällä `decode` -funktiota:
 
-## Katso Myös
+```gleam
+let tulokset = serial.decode[Henkilo](yaml)
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run/)
-- [YAML-spesifikaatio](https://yaml.org/spec/)
-- [Gleamin `gleam_yaml` bibliotekin dokumentaatio](https://hexdocs.pm/gleam_yaml/readme.html)
+gleam/core/format.println(tulokset)
+
+```
+
+Tulostus:
+
+```
+Result.Ok(
+  Henkilo(
+    nimi: "Matti",
+    ika: 25,
+    harrastukset: ["luistelu", "lukeminen", "sisustaminen"]
+  )
+)
+```
+
+## Deep Dive
+
+YAML-tiedosto koostuu avaimista ja arvoista, jotka on jaoteltu sisennyksillä. Avaimet ja arvot ovat erotettu kaksoispisteellä (`:`), ja arvot voivat olla joko yksittäinen arvo (esim. merkkijono tai luku) tai lista.
+
+Kun käytät `decode` -funktiota, määrittele Gleam-tyyppi sen mukaan, millaisen YAML-tiedoston haluat luoda. Jos haluat määritellä hiontalistan, voit käyttää `List(Henkilo)`.
+
+Gleam-serial tarjoaa myös mahdollisuuden käsitellä virheitä `decode` -funktion kanssa käyttämällä `Result` -tyyppiä. Tämä on erityisen kätevää, jos haluat varmistaa, että YAML-tiedosto on oikein muotoiltu.
+
+## Katso myös
+
+- [YAML-syntaksiopas](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+- [Gleam-serialin dokumentaatio](https://github.com/gleam-lang/serial)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Recherche et remplacement de texte"
-simple_title:         "Recherche et remplacement de texte"
+title:                "Rechercher et remplacer du texte"
+html_title:           "Fish Shell: Rechercher et remplacer du texte"
+simple_title:         "Rechercher et remplacer du texte"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La programmation informatique est un monde en constante évolution et il est essentiel de s'adapter à ces changements. La recherche et le remplacement de texte sont des tâches courantes dans la programmation, et il est important de savoir comment les effectuer efficacement. Heureusement, le Fish Shell propose des fonctionnalités pratiques pour faciliter cette tâche.
+Si vous êtes un utilisateur régulier de Fish Shell, vous savez probablement à quel point il est pratique de travailler avec du texte. Mais parfois, il peut être fastidieux de modifier manuellement du texte dans plusieurs fichiers. Heureusement, Fish Shell a une fonctionnalité de recherche et de remplacement qui peut vous faire gagner du temps et de l'énergie.
 
 ## Comment faire
+La syntaxe de base pour rechercher et remplacer du texte dans Fish Shell est la suivante :
 
-Pour effectuer une recherche et un remplacement de texte dans Fish Shell, vous devez utiliser la commande `sed`. Ci-dessous, vous trouverez des exemples de code et des résultats d'output pour vous aider à comprendre comment utiliser cette commande.
-
-```
-Fish Shell
-> echo "J'aime écrire du code." | sed 's/J'aime/J'adore/'
+```Fish Shell
+set variable (echo $variable | sed 's/pattern/replacement/')
 ```
 
-Résultat de l'output : "J'adore écrire du code."
+Dans cet exemple, nous utilisons la commande `sed` pour rechercher et remplacer le texte contenu dans la variable `$variable`. Vous pouvez remplacer `echo $variable` par n'importe quelle autre commande qui renvoie du texte, comme `cat file.txt`.
 
-Dans cet exemple, nous avons utilisé la commande `sed` pour remplacer le mot "J'aime" par "J'adore". La syntaxe utilisée est `sed 's/texte1/texte2/'`, où "texte1" est le texte que vous souhaitez remplacer et "texte2" est le texte par lequel vous souhaitez le remplacer.
+Jetons un coup d'œil à un exemple concret. Supposons que nous ayons un fichier texte avec plusieurs occurrences du mot "chat" et que nous voulions le remplacer par "chien". Nous pouvons utiliser cette commande :
 
-Nous pouvons également utiliser la commande `sed` pour remplacer un mot ou une phrase spécifique dans un fichier. Par exemple, si nous voulons remplacer toutes les occurrences de "chat" par "chien" dans un fichier texte nommé "animaux.txt", voici comment nous pouvons le faire :
-
-```
-Fish Shell
-> sed -i 's/chat/chien/g' animaux.txt
+```Fish Shell
+set file_contents (cat file.txt | sed 's/chat/chien/g')
 ```
 
-Dans cet exemple, nous avons utilisé l'option `-i` pour spécifier que nous voulons modifier le fichier directement. L'option `g` est utilisée pour indiquer que nous voulons remplacer toutes les occurrences du texte, pas seulement la première.
+Cette commande recherche toutes les occurrences de "chat" dans le fichier et les remplace par "chien". Le flag `g` à la fin de la commande indique que la recherche doit être effectuée de manière globale, c'est-à-dire pour toutes les occurrences du mot "chat". Sans ce flag, la recherche ne s'effectuerait que pour la première occurrence.
 
-## Deep Dive
+Il est également possible d'utiliser des expressions régulières pour une recherche et un remplacement plus précis. Par exemple, si nous souhaitons remplacer toutes les occurrences de nombres dans un fichier par "123", nous pouvons utiliser cette commande :
 
-La commande `sed` peut sembler un peu complexe au premier abord, mais elle est en fait assez simple à utiliser une fois que vous en comprenez les bases. En plus de ses fonctionnalités de base, elle offre également des options avancées pour affiner votre recherche et remplacement de texte. Par exemple, vous pouvez utiliser des expressions régulières pour effectuer vos recherches. En utilisant l'option `-E`, vous pouvez rechercher des patterns plutôt que du texte exact.
+```Fish Shell
+set file_contents (cat file.txt | sed 's/[0-9]+/123/g')
+```
 
-En outre, il est possible de combiner plusieurs options pour une commande `sed`. Par exemple, vous pouvez utiliser `-i` avec `-E` pour effectuer un remplacement dans un fichier tout en utilisant des expressions régulières.
+Ici, l'expression régulière `[0-9]+` correspond à n'importe quel nombre présent dans le fichier.
+
+## Zoom en profondeur
+Si vous souhaitez en savoir plus sur les expressions régulières et leur utilisation dans Fish Shell, vous pouvez consulter la page de manuel de `sed` et la documentation de la fonction Fish Shell `string`. Ces ressources vous donneront une compréhension plus approfondie de la syntaxe à utiliser et des différentes options disponibles pour la recherche et le remplacement de texte dans Fish Shell.
 
 ## Voir aussi
-
-- La documentation officielle de Fish Shell : https://fishshell.com/docs/current/
-- Un guide complet sur l'utilisation de la commande `sed` : https://www.digitalocean.com/community/tutorials/how-to-use-the-sed-command-on-linux
-- Des tutoriels vidéo sur la recherche et le remplacement de texte avec Fish Shell : https://www.youtube.com/playlist?list=PLzfrg3cQjV4gIDWjMaTTvKjKq3FQfbmhk
+- [La page de manuel de `sed`](http://www.gnu.org/software/sed/manual/sed.html)
+- [La documentation de Fish Shell pour la fonction `string`](https://fishshell.com/docs/current/cmds/string.html)

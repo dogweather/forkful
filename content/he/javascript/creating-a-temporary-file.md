@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "Javascript: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-יצירת קבצים זמניים היא כלי חשוב בפיתוח תוכנה ותחזוקתה. זה מאפשר למתכנתים ליצור מידע מתוך קוד מזדמן ולהשתמש בו כדי לבדוק רעיונות ולבנות פתרונות.
+יצירת קובץ זמני היא תהליך עשוי להיות מועיל במיוחד כאשר יש צורך לכתוב קוד יעיל ומסודר שמכיל מידע ימיות או פרטים מתחילים שנצטרך להימחק או לעדכן בעתיד. השימוש בקובץ זמני יכול לסייע בתהליך הפיתוח ודיוק בקוד שנכתב.
 
-## כיצד לעשות את זה
+## איך לעשות זאת
+
+ליצור קובץ זמני בג'אווהסקריפט ניתן באמצעות השתמשות בפונקציית "fs" של הספריה "fs". תחילת כל תהליך כולל יצירת אובייקט של "fs" ומיועדת למחיקה מיוחדת של קובץ זמני יש להשתמש במספר פונקציות כדי ליצור באופן דינמי קובץ זמני עם שם זמני ותכולת קובץ לכל ערך.
 
 ```Javascript
+//יצירת אובייקט למעקב אחר השימוש בספריה 
+const fs = require('fs')
 
-// צור קובץ זמני בשם "temp.txt"
-var fs = require('fs');
-fs.write('temp.txt','Hello World', (err) => {
-    if (err) throw err;
-    console.log('Temporary file created');
-});
+//יצירת קובץ זמני בשם "example.txt" ותכולתו "זה קובץ זמני לדוגמא"
+fs.writeFile('example.txt', 'זה קובץ זמני לדוגמא', (err) => {
+  if (err) {
+    console.log(err) //ימחק אם יש שגיאה
+  } else {
+    console.log('קובץ זמני נוצר בהצלחה') //תציג הודעת הצלחה אם אין שגיאות
+  }
+})
 
-// קרא והדפס את תוכן הקובץ הזמני
-fs.readFile('temp.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-
-// מחק את הקובץ הזמני
-fs.unlink('temp.txt', (err) => {
-  if (err) throw err;
-  console.log('Temporary file deleted');
-});
+//מחיקת קובץ זמני בשם "example.txt"
+fs.unlink('example.txt', (err) => {
+  if(err){
+    console.log(err) //ימחק אם יש שגיאה
+  } else {
+    console.log('קובץ זמני נמחק בהצלחה') //תציג הודעת הצלחה אם אין שגיאות
+  }
+})
 ```
 
-**פלט:**
+תוצאה:
 
-Temporary file created
-Hello World
-Temporary file deleted
+קובץ זמני נוצר בהצלחה. כאשר תא BenBen בתיבת החיפוש תוכל למצוא את המידע "זהו קובץ זמני לדוגמא" הכלול בקובץ.
 
-## חקירה מעמיקה
+## העמקת מבנה
 
-יצירת קבצים זמניים משתמשת במנגנון המורכב ביותר ומיועדת להשתמש במקרים בהם יש צורך ליצור ולמחוק קבצים בזמן ריצה. השימוש בפעולות מנהל מערכת ליצירת קבצים זמניים מאפשר למתכנתים להפעיל קוד באופן יעיל ובטוח, מבלי לפגוע במערכת הקיימת.
-
-## ראה גם
-
-- [מנהל הקבצים של Node.js ויצירת קבצים זמניים](https://nodejs.org/api/fs.html#fs_file_system_and_path)
-- [מדריך תוכנות קבצים זמניים ב-Javascript](https://flaviocopes.com/javascript-temporary-files/)
-- [מאמר של קודהאס על פעולות מנהל הקבצים ב-Javascript](https://www.codahale.com/how-to-create-a-temporary-file-and-directory-in-node-js/)
+יצירת קובץ זמני הינה תהליך פשוט ונפוץ ב

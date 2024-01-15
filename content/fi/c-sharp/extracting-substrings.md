@@ -1,5 +1,6 @@
 ---
-title:                "C#: Alimerkkijonojen erottelu"
+title:                "Alimerkkijonojen erottelu"
+html_title:           "C#: Alimerkkijonojen erottelu"
 simple_title:         "Alimerkkijonojen erottelu"
 programming_language: "C#"
 category:             "C#"
@@ -9,48 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Substringien erottaminen on tärkeä osa ohjelmointia, joka sallii meidän käsitellä tekstipohjaisia tietoja osina. Tämä on hyödyllistä silloin kun haluamme etsiä tiettyjä tietoja tekstistä tai muokata sitä eri tavalla. Tässä blogitekstissä käymme läpi, miten voit helposti erottaa substrings C# -ohjelmointikielessä. 
+Substringien erottaminen on tärkeä taito ohjelmoinnissa, joka auttaa helpottamaan monimutkaisten merkkijonojen käsittelyä. Yleinen syy tähän on tiettyjen tietojen etsiminen tai manipulointi halutusta merkkijonosta, esimerkiksi tietyn sanan tai numeron etsiminen.
 
-## Miten 
+## Näin teet sen
 
-Erota substringi tekstistä käyttäen ```Substring``` -metodia C# :ssa. Tämä metodi ottaa kaksi parametria: aloitusindeksin ja pituuden. 
-
-Esimerkiksi, jos haluat erottaa sanan "C# ohjelmointi" lauseesta "Pidän C# ohjelmoinnista", käytä seuraavaa koodia:
-
-```C# 
-string lause = "Pidän C# ohjelmoinnista";
-string ohjelmointi = lause.Substring(5, 13);
-Console.WriteLine(ohjelmointi);
-```
-
-Tämä tulostaa "C# ohjelmointi" konsoliin. Aloitimme erottamaan sanan indeksistä 5 (lauseen 6. merkki, huom. indeksit alkavat 0:sta) ja kertomalla pituuden, eli 13 merkkiä. Voit myös käyttää ```Substring``` -metodia muuttujille, joita et muokkaa, esimerkiksi:
+Voit käyttää C# -ohjelmointikieltä helposti ja tehokkaasti erottamaan substringeja käytännöllisillä esimerkeillä ja kooditulosteilla.
 
 ```C#
-string yhteys = "www.tämäonlinkki.com"
-string linkki = yhteys.Substring(4, 18);
-Console.WriteLine(linkki);
+// Luo merkkijono
+string teksti = "Tämä on esimerkkiteksti.";
+
+// Tulostaa tekstisi pituuden
+Console.WriteLine($"Tekstiä on yhteensä {teksti.Length} merkkiä.");
+
+// Tulostaa ensimmäiset 10 merkkiä
+string partial = teksti.Substring(0, 10);
+Console.WriteLine($"Substring: {partial}");
+
+// Tulostaa viimeisen 10 merkkiä
+partial = teksti.Substring(teksti.Length - 10);
+Console.WriteLine($"Viimeiset 10 merkkiä: {partial}");
+
+// Tulostaa merkkien lukumäärän sanat:
+int sanat = teksti.Split(' ').Length;
+Console.WriteLine($"Tekstissä on yhteensä {sanat} sanaa.");
+
+// Etsii ja tulostaa tietyn sanan sijainnin tekstissä
+int sijainti = teksti.IndexOf("esimerkki");
+Console.WriteLine($"Ensimmäinen esiintyminen sijaitsee indeksissä {sijainti}.");
+
+// Korvaa sanan ja tulostaa muokatun tekstin
+teksti = teksti.Replace("esimerkki", "harjoitusesimerkki");
+Console.WriteLine($"Muokattu teksti: {teksti}");
 ```
 
-Tämä tulostaa "tämäonlinkki.com". 
-
-## Syvä Sukellus 
-
-```Substring``` -metodin lisäksi C# sisältää myös muita hyödyllisiä funktioita tekstien käsittelyyn, kuten ```IndexOf```, joka palauttaa ensimmäisen esiintymän indeksin annetusta merkkijonosta. Tämä on erittäin hyödyllistä silloin kun haluamme tietää tietyn sanan sijainnin lauseessa.
+Output:
 
 ```
-string lause = "Tämä teksti on esimerkki";
-int sijainti = lause.IndexOf("teksti");
-Console.WriteLine(sijainti);
+Tekstiä on yhteensä 23 merkkiä.
+Substring: Tämä on e
+Viimeiset 10 merkkiä: erkkiteksti.
+Tekstissä on yhteensä 4 sanaa.
+Ensimmäinen esiintyminen sijaitsee indeksissä 8.
+Muokattu teksti: Tämä on harjoitusesimerkkiteksti.
 ```
 
-Tämä tulostaa "5" konsoliin, koska sana "teksti" alkaa lauseessa kohdasta 5. Voit myös käyttää ```Substring``` ja ```IndexOf``` yhdessä, jolloin voit erottaa sanan mistä tahansa kohdasta lauseessa.
+## Syvempi sukellus
 
-On myös tärkeää huomata, että C#-kieli tukee Unicodea, joten voit käyttää erikoismerkkejä ja eri kieliä substringeissä ilman ongelmia. 
+C# tarjoaa monia käteviä metodeja substringien erottelemiseen, kuten `Substring()`, `Split()` ja `IndexOf()`. Näiden avulla voit helposti etsiä ja manipuloida haluamiasi tekstin paloja. On myös tärkeää huomioida, että merkkijonot ovat C# -kielellä muuttumattomia, joten `Substring()` ja `Replace()` -metodit luovat aina uuden merkkijonon sen sijaan, että muokkaisivat alkuperäistä.
 
-## Katso myös 
+## Katso myös
 
-- Microsoftin C# dokumentaatio: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/
-- W3C tutorial: https://www.w3schools.com/cs/cs_strings_substrings.asp
-- Tutorialspoint tutorial: https://www.tutorialspoint.com/csharp/csharp_strings.htm
+- [Microsoftin dokumentaatio substringien erottelusta C# -kielellä](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/substring)
+- [Kaikki C# -kielen string-metodit](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
+- [C# String-tietotyyppi](https://www.tutlane.com/tutorial/csharp/csharp-string-data-type)

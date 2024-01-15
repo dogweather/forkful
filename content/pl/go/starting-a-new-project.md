@@ -1,6 +1,7 @@
 ---
-title:                "Go: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Go: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -9,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto rozpocząć nowy projekt w Go?
 
-Rozpoczęcie nowego projektu jest ważną częścią nauki języka Go. Pozwala ono na praktykowanie podstawowych umiejętności i poszerzanie wiedzy o programowaniu w tym języku. Ponadto, tworzenie własnych projektów może być również świetnym sposobem na wykorzystanie kreatywności i rozwoju umiejętności problem solving.
+Rozpoczęcie nowego projektu w Go może przynieść wiele korzyści. Ten szybko rozwijający się język programowania jest prosty w użyciu, wydajny i obsługuje wiele platform. Dodatkowo, z powodu rosnącej popularności, Go jest często wybierany przez wielu programistów do tworzenia aplikacji webowych, narzędzi sieciowych czy usług w chmurze.
 
-## Jak zacząć
+## Jak to zrobić?
 
-Aby rozpocząć nowy projekt w języku Go, wystarczy utworzyć nowy plik z rozszerzeniem `.go` oraz zainicjować moduł przez wpisanie w terminalu komendy `go mod init nazwa_projektu`. Następnie, można zacząć pisać kod wewnątrz pliku, wykorzystując różne pakiety oraz funkcje dostępne w języku Go. Poniżej znajduje się przykładowy kod, który wyświetli napis "Witaj świecie!" na ekranie:
+Rozpoczęcie nowego projektu w Go może być łatwe i przyjemne. Najpierw musimy upewnić się, że mamy aktualną wersję Go zainstalowaną na naszym komputerze. Następnie, możemy utworzyć nowy katalog dla naszego projektu i uruchomić w nim terminal. Wpiszmy w nim następujące polecenie, aby utworzyć nowy plik main.go:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Witaj świecie!")
-}
+touch main.go
 ```
 
-Można również wykorzystać zewnętrzne biblioteki, korzystając z menadżera modułów `go get` oraz importując je w kodzie. Należy jednak pamiętać, aby sprawdzać licencję oraz popularność danej biblioteki, aby uniknąć problemów w przyszłości.
+Teraz możemy otworzyć ten plik w naszym edytorze kodu i zacząć pisać! Na początek, dodajmy import dla pakietu "fmt", który będzie nam pomocny podczas wypisywania rezultatów naszego kodu:
 
-## Deep Dive
+```Go
+import "fmt"
+```
 
-Rozpoczęcie nowego projektu w języku Go może być nieco przytłaczające dla początkujących. Dlatego warto zacząć od prostych projektów, aby opanować podstawy języka oraz strukturę plików i pakietów. Następnie, można stopniowo przechodzić do bardziej zaawansowanych projektów i wykorzystywać różne funkcje i pakiety dostępne w języku.
+Następnie, możemy napisać prosty kod, który wypisze "Witaj, świecie!" w terminalu:
 
-Warto również pamiętać o testowaniu kodu oraz dokumentowaniu go poprzez wykorzystanie komentarzy oraz narzędzi takich jak `godoc`.
+```Go
+fmt.Println("Witaj, świecie!")
+```
 
-## Zobacz także
+Teraz zapiszmy nasz kod i wróćmy do terminala. Wprowadźmy polecenie "go run main.go", które skompiluje i uruchomi nasz kod. Rezultat powinien wyglądać następująco:
 
-- [Oficjalna dokumentacja języka Go](https://golang.org/doc/)
-- [Lista popularnych bibliotek w języku Go](https://github.com/avelino/awesome-go)
-- [Kurs programowania w języku Go (w języku polskim)](http://www.golang-book.com/books/intro)
+```
+Witaj, świecie!
+```
+
+To wszystko! Jesteśmy już gotowi do rozpoczęcia naszego nowego projektu w Go.
+
+## Głębsza analiza
+
+Rozpoczęcie nowego projektu w Go jest również doskonałą okazją do nauki tego języka programowania. Go jest prosty w nauce, dzięki swoim czytelnym składniom i intuicyjnym funkcjom. Dodatkowo, korzystanie z narzędzi takich jak Go Modules pozwala na łatwe zarządzanie zależnościami w naszym projekcie.
+
+Kolejną ważną rzeczą podczas rozpoczynania nowego projektu jest wybór odpowiednich narzędzi do pracy. Go posiada wiele przydatnych bibliotek i frameworków, które mogą przyśpieszyć nasz rozwój. Przed rozpoczęciem projektu, warto zapoznać się z dostępnymi rozwiązaniami i wybrać to, które najlepiej odpowiada naszym potrzebom.
+
+# Zobacz także
+
+- [Oficjalna strona Go](https://golang.org/)
+- [Dokumentacja Go](https://golang.org/doc/)
+- [Go Modules](https://github.com/golang/go/wiki/Modules)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Clojure recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Calculating dates in the future or past is a commonly encountered task in programming. It can be used for tasks such as scheduling events, tracking time-based data, or displaying countdowns. In Clojure, there are built-in functions that make date calculations easy and efficient.
+
+Calculating dates in the future or past is a common task in many applications, whether it's for scheduling events, setting reminders, or determining deadlines. Clojure offers a powerful library for working with dates and times, making it easy to perform these calculations accurately and efficiently.
 
 ## How To
-Calculating dates in Clojure can be done using the `clj-time` library, which provides powerful date/time manipulation functions. First, we need to import the `clj-time.core` library into our code:
+To calculate a date in the future or past in Clojure, we will be using the `clj-time` library. First, we need to add the library as a dependency in our project's `project.clj` file:
 
 ```Clojure
-(ns my-project.core
+[clj-time "0.15.1"]
+```
+
+Next, we can use the `plus` and `minus` functions from the `clj-time.core` namespace to add or subtract a specific amount of time from a given date. Let's see some examples:
+
+```Clojure
+(ns my-project.date-calculator
   (:require [clj-time.core :as t]))
+
+;; Calculate 10 days from today
+(t/plus (t/today) (t/days 10)) ;=> #object[org.joda.time.DateTime 0x5489e344 "2019-12-26T00:00:00.000Z"]
+
+;; Calculate 2 weeks from a specific date
+(t/plus (t/date-time 2019 12 20) (t/weeks 2)) ;=> #object[org.joda.time.DateTime 0x2aedf924 "2020-01-03T00:00:00.000Z"]
+
+;; Calculate 6 months ago from now
+(t/minus (t/now) (t/months 6)) ;=> #object[org.joda.time.DateTime 0x41e19f8f "2019-06-25T22:01:55.000Z"]
 ```
 
-Next, we can use the `t/plus` and `t/minus` functions to add or subtract a specified time interval from a given date. For example, if we want to calculate the date that is 7 days in the future, we can use the following code:
-
-```Clojure
-(def today (t/today))
-(t/plus today (t/days 7))
-```
-
-This will return a `DateTime` object representing the date 7 days from today. Similarly, if we want to calculate a date in the past, we can use the `t/minus` function. For example, to calculate the date 2 weeks ago, we can use the following code:
-
-```Clojure
-(def today (t/today))
-(t/minus today (t/weeks 2))
-```
-
-The `clj-time` library also provides other useful functions for date manipulation, such as `t/interval`, `t/in-days`, and `t/in-months`. Refer to the library's documentation for more details.
+As we can see, the `clj-time` library makes it easy to perform date calculations by providing functions to represent different units of time, such as days, weeks, months, etc.
 
 ## Deep Dive
-The `clj-time` library is built on top of the popular Java library Joda-Time, which has been recognized for its intuitive and efficient API for date/time calculations. This means that Clojure developers can benefit from the robustness and reliability of Joda-Time while enjoying the simplicity and elegance of Clojure syntax.
+Behind the scenes, the `clj-time` library uses the Joda-Time library to handle date and time calculations. This makes `clj-time` a powerful and reliable tool for working with dates in Clojure.
 
-Behind the scenes, `clj-time` uses the concept of "duration" to calculate dates in the future or past. A duration is a period of time represented by a number of milliseconds. By using the `t/days`, `t/weeks`, `t/months`, and other duration functions, we can easily create a duration object that specifies the desired time interval. Then, we can use the `t/plus` and `t/minus` functions to add or subtract that duration from a given date.
+It is important to note that the `plus` and `minus` functions return a `DateTime` object, which is a data structure from the Joda-Time library. This object contains all the necessary information about the date and time, such as the year, month, day, hour, minute, second, and time zone.
+
+Additionally, the `clj-time` library provides functions to extract specific information from a `DateTime` object, such as `t/year`, `t/month`, `t/day-of-month`, `t/hour`, `t/minute`, `t/second`, and `t/time-zone`.
 
 ## See Also
-- [Official Clojure Documentation](https://clojure.org/)
-- [clj-time Github Repository](https://github.com/clj-time/clj-time)
-- [Joda-Time Documentation](https://www.joda.org/joda-time/)
+- [clj-time documentation](https://github.com/clj-time/clj-time)
+- [Joda-Time documentation](https://www.joda.org/joda-time/)
+- [Clojure cheat sheet](https://clojure.org/api/cheatsheet)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "C: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -9,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em C?
+## Por que começar um novo projeto?
 
-Iniciar um novo projeto em C pode ser um desafio, mas também pode ser extremamente gratificante. A linguagem C é amplamente usada em sistemas operacionais, aplicações de baixo nível e jogos, o que significa que você pode criar programas poderosos e eficientes. Além disso, aprender C é um ótimo primeiro passo para se tornar um programador mais avançado.
+Iniciar um novo projeto em C pode ser um desafio emocionante e gratificante. Ele permite que você desenvolva habilidades de programação e crie soluções personalizadas para problemas específicos. Além disso, a comunidade de programadores em C é ativa e sempre disposta a ajudar e colaborar.
 
-## Como começar em C
+## Como fazer
 
-Antes de começar a escrever seu código, você precisará configurar seu ambiente de desenvolvimento. Isso inclui escolher um compilador e um editor de texto, como o Visual Studio Code ou o Sublime Text. Em seguida, você pode seguir os passos abaixo para criar seu primeiro programa em C.
+Para começar um novo projeto em C, primeiro, certifique-se de ter o compilador C instalado em seu sistema. Em seguida, crie um novo arquivo de código fonte com a extensão .c. Dentro deste arquivo, você pode escrever seu código seguindo a sintaxe e as regras da linguagem C. Por exemplo:
 
-```C
+````C
 #include <stdio.h>
+
 int main() {
-    printf("Bem-vindo ao mundo da programação em C!");
-    return 0;
+  printf("Olá, mundo!\n");
+  return 0;
 }
-```
+````
+Após escrever o código, salve o arquivo e compile-o usando o compilador C. Em seguida, execute o programa e verifique se a saída corresponde às suas expectativas. Você pode continuar a adicionar mais código e funcionalidades ao seu projeto conforme necessário.
 
-Output:
-```
-Bem-vindo ao mundo da programação em C!
-```
+## Mergulho profundo
 
-Com este programa simples, você pode começar a entender os conceitos básicos da linguagem C, como a estrutura de um programa e o uso de declarações e funções.
-
-## Aprofundando em um novo projeto
-
-Ao iniciar um novo projeto em C, é importante ter uma compreensão clara dos recursos e padrões da linguagem. Você pode se aprofundar ainda mais aprendendo sobre ponteiros, estruturas de dados e como gerenciar a memória em seus programas. Além disso, é importante ter práticas de codificação sólidas, como comentar seu código e seguir padrões de nomenclatura.
-
-Outra dica importante é se familiarizar com bibliotecas de terceiros para ampliar as funcionalidades do seu programa. Existem muitas bibliotecas disponíveis que podem facilitar muito o processo de criação de um programa em C, como a biblioteca "stdio.h" que usávamos no exemplo acima.
+Ao iniciar um novo projeto em C, é importante entender o processo de compilação e como funciona a linguagem. Além disso, é útil aprender sobre as bibliotecas padrão em C, como a stdio.h que usamos no exemplo acima. Você também pode explorar outros recursos, como depuradores e sistemas de controle de versão, para se tornar um programador C mais eficiente e eficaz.
 
 ## Veja também
 
-- Documentação do C: https://www.gnu.org/software/gnu-c-manual/
-- Tutoriais da linguagem C: https://www.learn-c.org/
-- Biblioteca padrão do C: https://www.tutorialspoint.com/c_standard_library/
+Confira esses links para obter mais informações sobre como iniciar um novo projeto em C:
 
-Agora que você está familiarizado com os conceitos básicos da linguagem C, pode começar a explorar e criar seus próprios projetos. Aproveite para aprender e praticar, e em pouco tempo você estará criando programas incríveis em C!
+- Compilador GCC: https://gcc.gnu.org/
+- Tutorial completo de C: https://www.learn-c.org/
+- Introdução ao controle de versão com Git: https://www.atlassian.com/git/tutorials/what-is-version-control

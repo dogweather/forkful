@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 检查目录是否存在"
+title:                "检查目录是否存在"
+html_title:           "Swift: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,49 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 为什么
+一个常见的任务是要检查给定的文件夹是否存在。这是因为在Swift中，文件或文件夹操作往往需要确认它们是否存在，才能进行后续操作，以避免错误和不必要的操作。
 
-在编程中，我们经常需要检查某个目录是否存在。这可以帮助我们避免出现错误和意外情况，使代码更加健壮和可靠。
-
-## 如何实现
-
-下面是一个示例代码，展示如何在Swift中检查目录是否存在，并输出结果。
+## 怎么做
+在Swift中，我们可以使用`FileManager`类来检查文件夹的存在性。首先，我们需要先创建一个对应的文件管理器对象，然后使用`fileExists`方法来检查文件夹是否存在。
 
 ```Swift
+// 创建文件管理器对象
 let fileManager = FileManager.default
-let directory = "/Users/Desktop/TestDirectory"
-var isDirectory: ObjCBool = false
 
-if fileManager.fileExists(atPath: directory, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        print("目录存在")
-    } else {
-        print("这不是一个目录")
-    }
+// 检查文件夹是否存在
+if fileManager.fileExists(atPath: "path/to/directory") {
+    print("文件夹存在！")
 } else {
-    print("目录不存在")
+    print("文件夹不存在！")
 }
 ```
 
-输出结果可能是：
+输出结果将会是`文件夹存在！`或者`文件夹不存在！`，取决于给定的文件夹是否存在。
 
+## 深入探讨
+在Swift中，我们也可以使用`path`属性来检查文件夹的存在性。此外，我们还可以使用`isExecutableFile`方法来检查文件夹是否可执行。
+
+```Swift
+// 使用path来检查文件夹存在性
+let directoryPath = "path/to/directory"
+if fileManager.fileExists(atPath: directoryPath.path) {
+    print("文件夹存在！")
+} else {
+    print("文件夹不存在！")
+}
+
+// 使用isExecutableFile来检查文件夹是否可执行
+if fileManager.isExecutableFile(atPath: directoryPath.path) {
+    print("文件夹可执行！")
+} else {
+    print("文件夹不可执行！")
+}
 ```
-目录存在
-```
 
-## 深入了解
-
-在Swift中，我们可以使用FileManager类的fileExists方法来检查目录是否存在。这个方法接受两个参数，第一个是文件路径，第二个是一个布尔值的指针，用于指示目录是否存在。
-
-值得注意的是，该方法只适用于检查本地设备上的目录，无法检查远程服务器上的目录。
+更多关于`FileManager`类的方法和属性，可以参考官方文档。
 
 ## 参考链接
+- [FileManager - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Understanding the File System - Swift.org](https://swift.org/blog/understanding-file-systems/)
+- [Swift FileManager and useful methods - Medium](https://medium.com/@maximbilan/filemanager-swift-400e2a5849e1)
 
-- [Swift文档中的FileManager类说明](https://developer.apple.com/documentation/foundation/filemanager)
-- [如何在Swift中检查文件是否存在](https://dev.to/alejandromp/swift-how-to-check-if-a-file-exists-53d5)
-- [如何在Swift中创建和检查目录](https://www.hackingwithswift.com/example-code/system/how-to-create-a-directory-if-needed-using-filemanager)
-
-## 参考链接
-
-- [Swift文档中的FileManager类说明](https://developer.apple.com/documentation/foundation/filemanager)
-- [如何在Swift中检查文件是否存在](https://dev.to/alejandromp/swift-how-to-check-if-a-file-exists-53d5)
-- [如何在Swift中创建和检查目录](https://www.hackingwithswift.com/example-code/system/how-to-create-a-directory-if-needed-using-filemanager)
+## 参见

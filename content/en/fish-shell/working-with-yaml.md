@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Fish Shell recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-If you're a Fish Shell user and working with configuration files, you've probably come across YAML. This widely-used format is great for creating human-readable data files such as configuration files, making it an essential tool for any developer.
+
+Working with YAML files is essential for any programmer, as it allows for easy configuration and data storage. YAML is a human-readable data format that is commonly used in various applications, making it a valuable skill to have as a developer.
 
 ## How To
-To start working with YAML in Fish Shell, you'll first need to install the yq utility. This can be done easily through the Fish Shell plugin manager:
-```
-fisher add fishpkg/fish-prompt-mimisbrunnr
-```
-Once installed, you can use the `yq` command to perform various YAML-related tasks. Here are a few examples:
-```
-# View the contents of a YAML file
-yq eval . file.yaml
 
-# Convert YAML to JSON
-yq eval . file.yaml -j
+To work with YAML files in Fish Shell, we need to use the `yq` tool. First, we need to install it using `brew`:
 
-# Select specific values from a YAML file
-yq eval '.key1.key2[2]' file.yaml
 ```
+brew install yq
+```
+
+Next, we can use `yq` to read from and write to YAML files. Let's start by creating a simple YAML file called `config.yml` with the following content:
+
+```
+fruit:
+  - apple
+  - banana
+  - orange
+price: 2.50
+```
+
+To read the contents of this file, we can use the `yq read` command:
+
+```
+yq read config.yml
+```
+
+This will output the YAML data in a readable format. We can also use `yq` to modify the contents of the YAML file. For example, if we want to change the price of apples to $3.00, we can use the `yq write` command:
+
+```
+yq write config.yml fruit[0] "apple 3.00"
+```
+
+This will update our `config.yml` file with the new price. We can also use `yq` to format and validate YAML files, making it a powerful tool for working with data.
 
 ## Deep Dive
-YAML stands for "YAML Ain't Markup Language" and is often used as an alternative to the popular markup languages such as XML and JSON. It is a human-readable data serialization standard and is often used for configuration files, but can also be used for other types of data such as invoices, messages, and logs.
 
-One of the main advantages of using YAML is its simplicity. It uses indentation to define the structure of data, making it easy to read and understand. It also supports comments, making it easier to annotate and document your data.
+Behind the scenes, `yq` uses the `jq` library to manipulate YAML and JSON data. This means that we can also use `jq` commands to work with YAML files in Fish Shell. Additionally, Fish Shell has built-in support for working with YAML files, as it can handle indented lists and key-value pairs without the need for extra syntax.
 
-Additionally, YAML supports various data types such as strings, numbers, Booleans, and even complex structures like lists and dictionaries. This flexibility makes it a powerful tool for handling different types of data.
+One useful trick is to use the `grep` command to filter YAML data. For example, if we want to only see the fruit list in our `config.yml` file, we can use the following command:
+
+```
+grep fruit config.yml
+```
+
+This will output only the fruit list. We can also pipe this output to other commands, such as `sed` to modify the data, or `wc` to count the number of items in the list.
 
 ## See Also
-- [Official YAML Website](https://yaml.org/)
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [yq Utility Documentation](https://mikefarah.gitbook.io/yq/)
+
+- [Official Fish Shell documentation on YAML](https://fishshell.com/docs/current/tutorial.html#accessing-list-items)
+- [YAML documentation](https://yaml.org/) 
+- [`yq` repository on GitHub](https://github.com/kislyuk/yq)

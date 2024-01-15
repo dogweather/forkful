@@ -1,6 +1,7 @@
 ---
-title:                "C++: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "C++: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,67 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil är en vanlig uppgift för programmerare, oavsett om de arbetar med webbutveckling, databashantering eller mjukvaruutveckling. Att kunna läsa en textfil är en grundläggande färdighet som kan öppna upp möjligheter för att automatisera uppgifter och bearbeta stora mängder data. I denna bloggpost kommer vi att utforska hur man kan läsa en textfil i C++ och vilken nytta det kan ha.
+Att kunna läsa textfiler är en viktig färdighet när man programmerar i C++. Det ger dig möjlighet att använda extern data i ditt program, vilket kan vara avgörande för dess funktionalitet.
 
-## Så här
+## Hur man gör det
 
-För att läsa en textfil i C++ behöver vi först öppna filen med en instans av klassen `ifstream`. Detta görs genom att skicka filnamnet som en parameter till konstruktorn. Sedan kan vi använda funktionen `getline()` för att läsa en rad i taget från filen. Nedan följer ett enkelt exempel på hur man kan läsa en textfil och skriva ut varje rad till konsolen:
+För att läsa en textfil i C++ behöver du använda ett filobjekt och en instans av "ifstream"-klassen. Sedan kan du använda "open()" funktionen för att öppna filen och "getline()" funktionen för att läsa varje rad i filen.
 
 ```C++
 #include <iostream>
 #include <fstream>
-#include <string>
-
-using namespace std;
 
 int main() {
-    // Skapar en instans av ifstream och öppnar filen "textfil.txt"
-    ifstream inFile("textfil.txt");
-
-    // Om filen är öppen fortsätter vi att läsa
-    if (inFile.is_open()) {
-        string line;
-        // Läser en rad i taget och skriver ut den till konsolen
-        while (getline(inFile, line)) {
-            cout << line << endl;
-        }
-        // Stänger filen när vi är klara
-        inFile.close();
-    } else {
-        // Annars skriver vi ut ett felmeddelande
-        cout << "Kunde inte öppna filen" << endl;
-    }
-    return 0;
+  std::ifstream fil("textfil.txt"); // Skapar ett filobjekt och öppnar filen "textfil.txt"
+  std::string rad; // Skapar en variabel för varje rad i textfilen
+  
+  // While-loop som läser varje rad i filen tills den når slutet
+  while (std::getline(fil, rad)) {
+    std::cout << rad << std::endl; // Skriver ut varje rad på skärmen
+  }
+  
+  fil.close(); // Stänger filen när läsningen är klar
+  return 0;
 }
 ```
 
-Om vi till exempel har en textfil med namnet "textfil.txt" som innehåller följande rader:
+Om vi antar att vår textfil "textfil.txt" innehåller följande:
 
 ```
-Detta är en textfil.
-Här finns flera rader.
-Vi kan läsa dem en i taget.
+Hej,
+Det här är en textfil.
 ```
 
-Så kommer koden ovan att skriva ut följande till konsolen:
+Så kommer vår kod att skriva ut följande på skärmen:
 
 ```
-Detta är en textfil.
-Här finns flera rader.
-Vi kan läsa dem en i taget.
+Hej,
+Det här är en textfil.
 ```
 
 ## Djupdykning
 
-Förutom att bara läsa en rad i taget, finns det flera andra sätt att läsa en textfil i C++. Om vi till exempel inte vill läsa hela raden, utan bara en viss del av den, kan vi använda funktionen `get()` för att läsa en enskild karaktär från filen. Vi kan också använda funktionen `seekg()` för att hoppa till en viss position i filen och sedan fortsätta från där.
+För att förstå hur filobjekt och "ifstream"-klassen fungerar vid läsning av textfiler, behöver vi förstå begreppet "ström" (stream) i C++. Strömmar är en abstrakt representation av en sekvens av data, de kan vara inriktade (input eller output) och peka på en specifik enhet eller handling (tex en fil). I exemplet ovan är vårt filobjekt "fil" en inriktad input-ström som pekar på vår textfil "textfil.txt".
 
-Det finns också möjlighet att läsa en textfil på en rad i taget genom att använda funktionen `get()` tills dess att vi stöter på tecknet `'\n'` som indikerar en radbrytning.
+När vi använder "getline()" funktionen så läser den en hel rad av text från strömmen och sparar det i vår variabel "rad". Sedan flyttar den läsaren till nästa rad i filen och fortsätter tills den når slutet. När filen är klar så stängs strömmen automatiskt när "fil" objektet går ut ur synpunkten.
 
-Det finns många fler funktioner och metoder som kan användas för att läsa en textfil i C++, och det är en bra idé att läsa på om dessa om man planerar att jobba med textfiler regelbundet.
+För att få en djupare förståelse för hur filer och strömmar fungerar i C++, rekommenderas att läsa mer om dem i C++ dokumentationen eller andra resurser på nätet.
 
 ## Se även
 
-- [C++ ifstream referens](https://www.cplusplus.com/reference/fstream/ifstream/)
-- [C++ getline() referens](https://www.cplusplus.com/reference/string/string/getline/)
-- [C++ get() referens](https://www.cplusplus.com/reference/istream/istream/get/)
-- [C++ seekg() referens](https://www.cplusplus.com/reference/istream/istream/seekg/)
+- [C++ Filsystem](https://www.cplusplus.com/reference/filesystem/)
+- [C++ Strömmar](https://www.cplusplus.com/reference/ios/ios/)
+- [Textfiler i C++](https://www.geeksforgeeks.org/reading-writing-text-files-c/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Fish Shell: Arbeta med yaml"
+simple_title:         "Arbeta med yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-YAML är ett enkelt och lättläst dataformat som är populärt inom programmering. Det är särskilt användbart för att konfigurera och organisera data i dina Fish Shell skript. Genom att arbeta med YAML kan du effektivisera ditt arbete och göra det enklare att läsa och förstå koden.
+YAML är en filformat som används för att strukturera data på ett läs- och skrivbart sätt. Det används ofta inom programmering för att konfigurera och konfigurera applikationer eller för att hantera data på ett organiserat sätt.
 
-##Hur man gör
+## Hur man använder YAML i Fish Shell
 
-För att använda YAML med Fish Shell behöver du först installera en plugin som stödjer detta format. Det finns flera olika plugin tillgängliga, men en av de mest populära är "fish-yaml". När du väl har installerat detta plugin kan du enkelt arbeta med YAML i dina Fish Shell skript.
-
-```Fish Shell
-# Lägger till en variabel i YAML-format
-set -l yaml_var (yaml with_variable.yaml)
-
-# Skriv ut variabelns värde
-echo $yaml_var
-```
-
-För att referera till värden i din YAML-fil använder du punktnotation. Till exempel, om din YAML-fil innehåller en "person" variabel med ett "namn" värde, så kan du referera till det på följande sätt:
+Fisk Shell har inbyggd stöd för att hantera YAML-filer. För att läsa in en YAML-fil i Fish Shell, använd kommandot `yq` följt av filnamnet:
 
 ```Fish Shell
-echo $person.namn
+yq filnamn.yml
 ```
 
-YAML stödjer också listor och strukturerade värden, vilket kan vara användbart för att organisera data på ett tydligt sätt i dina skript.
+Om du vill göra ändringar i YAML-filen, kan du använda `yq` tillsammans med pipelining. Till exempel, om du vill lägga till ett nytt objekt i YAML-filen, kan du göra det med:
 
-##Djupdykning
+```Fish Shell
+echo "nytt_objekt:
+    - namn: John
+      ålder: 30" | yq -iy filnamn.yml
+```
 
-För mer avancerade användningsområden finns det flera olika sätt att arbeta med YAML i Fish Shell. Du kan till exempel använda "for" loopar för att behandla listor av data eller använda kommandot "yaml2json" för att konvertera YAML till JSON-format. Det finns också möjlighet att använda YAML-variabler för att inkludera externa YAML-filer i dina skript.
+Outputen kommer att färdigställas i YAML-format och skrivas till filen. Detta gör det enkelt att ändra och uppdatera YAML-filer direkt från Fish Shell.
 
-Generellt sett är YAML ett mycket flexibelt och kraftfullt verktyg som kan underlätta ditt arbete med Fish Shell. Ta dig tid att utforska olika metoder och kommandon för att hitta den bästa lösningen för dina egna behov.
+## Djupdykning
 
-##Se även
+Förutom att läsa och ändra i YAML-filer, kan du också använda Fish Shell för att skapa helt nya YAML-filer. Med hjälp av kommandot `yq` tillsammans med `for`-loopen i Fish Shell, kan du generera YAML-filer baserade på befintliga mallar eller data.
 
+Till exempel:
+
+```Fish Shell
+for rad i (seq 1 5)
+    echo "objekt_$rad:
+        - namn: Anonym
+          ålder: $rad" | yq -yiy ny_filspec.yml
+end
+```
+
+Genom att utnyttja de många funktionerna i Fish Shell och kommandot `yq`, kan du utföra många olika uppgifter med YAML-filer, från att läsa och ändra till att skapa helt nya.
+
+## Se även
+
+- [YAML officiella webbplats](https://yaml.org/)
+- [YAML Wikipedia](https://en.wikipedia.org/wiki/YAML)
 - [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [YAML.org](https://yaml.org/)
-- [Fish Shell YAML plugin](https://github.com/oh-my-fish/plugin-yaml)

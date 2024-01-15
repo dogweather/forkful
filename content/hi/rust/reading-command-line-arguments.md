@@ -1,6 +1,7 @@
 ---
-title:                "Rust: कम्प्यूटर प्रोग्रामिंग पर भाषा समझना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर भाषा समझना"
+title:                "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
+html_title:           "Rust: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,51 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyun
+## Kyun
 
-Agar aap ek Rust programmer hain aur command line arguments ki reading ke bare mein jaanna chahte hain, to yeh post aapke liye hai. Yahan hum aapko command line arguments ki importance aur isko kaise padha ja sakta hai, uske bare mein batayenge.
+Kya aapne kabhi command line arguments ka istemal kiya hai? Agar haan, to aap jaante honge ki ye programming mein bahut hi zaroori aur upyogi hote hain. Command line arguments se hum hamare program ko customize kar sakte hain aur use user-friendly bana sakte hain. Isliye aaj hum Rust mein command line arguments ko kaise padh sakte hain, uske bare mein baat karenge.
 
-# Kaise Karein
+## Kaise Kare
 
-Sabse pehle, hume command line arguments ko read karne ke liye `std::env` module ko use karna hoga. Iske baad hum `args()` function ko call kar sakte hain jisse hume ek iterator mil jayega jo command line arguments ko store karega. Is iterator se hum arguments ko access kar sakte hain.
+Sabse pehle hume ek "args" naam ka "Vec" (vector) create karna hoga. Iske liye hum "std::env::args()" ka use karenge. Is function se hum command line arguments ko ek vector ke roop mein access kar sakte hain.
 
 ```Rust
-use std::env;
+let args: Vec<String> = std::env::args().collect();
+```
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
+Yaha, "Vec<String>" string vector ko represent karta hai aur "collect()" function hume string vector banane mein help karta hai.
 
-    println!("Total arguments passed: {}", args.len());
+Ab hum apne program mein command line arguments ko print kar sakte hain. Iske liye hum for loop ka use karenge aur "args" vector ke har element ko print karenge.
 
-    // Printing each argument
-    for arg in args {
-        println!("{}", arg);
-    }
+```Rust
+for argument in args {
+    println!("{}", argument);
 }
 ```
 
-**Output:**
+Output:
 
-```bash
-Total arguments passed: 3
-target/debug/my_program
-Hello
-World
+```
+./my_program
+argument1
+argument2
 ```
 
-Is code snippet mein humne `args()` function se iterator liya aur use `collect()` method se `Vec<String>` mein convert kiya. Iska output `args` variable mein store hua. Iske baad humne `args.len()` ki madad se total arguments ko print kiya. Iske baad hum `for` loop ka use karke har argument ko print kiya.
+Agar hume shuru ke teen arguments ko ignore karna hai aur sirf user dwara diye gaye arguments ko print karna hai, to hum "skip()" function ka bhi use kar sakte hain.
 
-# Gehri Jhaank
+```Rust
+for argument in args.skip(3) {
+    println!("{}", argument);
+}
+```
 
-Command line arguments reading ke alawa, `std::env` module hume aur bhi kai interesting methods provide karta hai. Jaise ki hum arguments ko filter kar sakte hain, specific arguments ko extract kar sakte hain, etc.
+Output:
 
-Ek interesting method hai `args_os()` jo Rust ka `OsString` type ke arguments ko return karta hai. Iska use UTF-8 encoding ke sath text ko handle karne ke liye kiya ja sakta hai.
+```
+argument1
+argument2
+```
 
-# See Also
+## Gehri Jhaank
 
-Kuch aur articles command line arguments ki reading ke bare mein:
+Humne dekha ki command line arguments ko kaise padha jata hai aur unka istemal kaise kiya jaata hai. Lekin kya aap jaante hain ki hum command line arguments ko kisi bhi data type mein convert bhi kar sakte hain? Haan, Rust mein hum "to_string()" aur "parse()" functions ka istemal karke string ko integer ya float mein convert kar sakte hain.
 
-- [Command Line Arguments in Rust](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Command Line Args using Env Module](https://www.geeksforgeeks.org/command-line-argument-in-rust/)
-- [Reading Command Line Arguments in Rust](https://stackoverflow.com/questions/56826225/reading-command-line-arguments-in-rust)
-- [Using Command Line Arguments in Rust Program](https://www.educative.io/edpresso/how-to-use-command-line-arguments-in-a-rust-program)
+```Rust
+let num1 = args[1].to_string().parse::<i32>().unwrap();
+let num2 = args[2].to_string().parse::<i32>().unwrap();
+```
+
+Yaha, humne input ki string ko "parse()" function se integer mein convert kiya. Agar input ko integer se float mein convert karna hai, to hum "parse::<f32>()" ka istemal kar sakte hain. Lekin dhyan rakhein, string ko sahi data type mein convert karne ke liye, input ki string mein sahi format hona bahut zaroori hai.
+
+## Dekhiye Bhi
+
+- [Rust command line arguments official documentation](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Rust string to integer conversion official documentation](https://doc.rust-lang.org/std/primitive.str.html#method.parse)
+- [Detailed tutorial on reading command line arguments in Rust](https://www.educative.io/edpresso/how-to-read-command-line-arguments-in-rust)

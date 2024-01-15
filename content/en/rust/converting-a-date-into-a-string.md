@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Converting a date into a string"
+title:                "Converting a date into a string"
+html_title:           "Rust recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,64 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting dates into strings is a common task in many programming languages, and Rust is no exception. Whether you need to display a date on a user interface or save it in a database, converting a date into a string can be a necessary step. In this blog post, we will explore how to convert dates into strings in Rust.
+Converting a date into a string may seem like a simple task, but it is an essential skill for any programmer. It allows you to manipulate and display dates in a format that is easily readable for users, making your code more user-friendly.
 
 ## How To
 
-To convert a date into a string in Rust, we will use the `to_string()` method provided by the `DateTime` struct from the `chrono` crate. Let's first create a `DateTime` object representing the current date and time:
+Converting a date into a string in Rust is a straightforward process. First, we need to import the `chrono` crate, which is a popular third-party library for handling dates and times. In your `Cargo.toml` file, add the following line under `dependencies`:
 
 ```Rust
-use chrono::prelude::*;
-
-let now = Local::now();
+chrono = "0.4.19"
 ```
 
-Next, we can use the `to_string()` method to convert the `DateTime` object into a string:
+Next, we need to use the `chrono` crate in our code by adding the following line at the top of our `main.rs` file:
 
 ```Rust
-let date_string = now.to_string();
+use chrono::{DateTime, Utc};
 ```
 
-Let's print out the value of `date_string` to the console to see the output:
+Now, we can create a `DateTime` object and format it into a string using the `format()` method. Let's say we want to get the current date and time, and display it in the format "dd/mm/yyyy, hh:mm:ss". Our code would look like this:
 
 ```Rust
-println!("Date: {}", date_string);
+fn main() {
+    let current_datetime = Utc::now();
+    let formatted_datetime = current_datetime.format("%d/%m/%Y, %H:%M:%S");
+
+    println!("{}", formatted_datetime);
+}
 ```
 
-Output:
+The output of this code would be something like this: "07/06/2021, 15:45:22".
 
-```
-Date: 2021-10-21 17:30:00.000000000 +0000
-```
-
-We can also specify a custom format for the date string by using the `format()` method instead of `to_string()`. For example, let's say we want to display the date in the format "October 21, 2021". We can achieve this by using the `%B %e, %Y` format string, where `%B` represents the full month name, `%e` represents the day of the month, and `%Y` represents the full year:
+But what if we want to convert a specific date into a string? We can do that by creating a `DateTime` object with the desired date, instead of using `Utc::now()`. Here's an example:
 
 ```Rust
-let formatted_date = now.format("%B %e, %Y").to_string();
+fn main() {
+    let my_datetime = DateTime::parse_from_str("2021-06-01 14:00:00", "%Y-%m-%d %H:%M:%S").unwrap();
+    let formatted_datetime = my_datetime.format("%d/%m/%Y, %H:%M:%S");
+
+    println!("{}", formatted_datetime);
+}
 ```
 
-Let's print out the value of `formatted_date` to the console:
-
-```Rust
-println!("Formatted Date: {}", formatted_date);
-```
-
-Output:
-
-```
-Formatted Date: October 21, 2021
-```
+This code will display "01/06/2021, 14:00:00" as the output.
 
 ## Deep Dive
 
-Under the hood, the `to_string()` and `format()` methods use the `Display` trait to convert the `DateTime` object into a string. This trait allows us to customize the format of the date string by implementing the `fmt` method. The `format()` method essentially calls `format!("{}", self)` where `self` is the `DateTime` object. This means we can use any valid format string that we would use with the `format!()` macro.
+While the `format()` method is the most commonly used way to convert a date into a string, there are other methods and options available in the `chrono` crate. For example, you can use the `to_rfc2822()` method to get a string representation of the date in the RFC 2822 format, or the `to_rfc3339()` method for the RFC 3339 format.
 
-Additionally, the `DateTime` struct also provides methods for accessing individual components of a date, such as the year, month, and day, which can be useful when constructing customized date strings. You can explore the full list of available methods in the `DateTime` documentation.
+Additionally, you can also specify your own custom format by using the `strftime()` method. This allows for more flexibility in displaying the date in a specific way. For a full list of available formatting options, check out the `chrono` documentation.
 
 ## See Also
 
-To learn more about working with dates and times in Rust, check out the following resources:
-
-- [The Official Rust Book - Dates and Times](https://doc.rust-lang.org/book/ch16-01-threads.html)
-- [The `chrono` crate documentation](https://docs.rs/chrono)
-- [Effective Rust Concurrency - Date and Time Handling](https://www.effective-rust.com/2016/02/01/time-handling.html)
+- [The `chrono` crate documentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Converting Time between time zones in Rust] (https://blog.logrocket.com/converting-time-between-time-zones-in-rust/)
+- [Working with Dates and Times in Rust] (https://www.youtube.com/watch?v=BHh_pwoJ2zE)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 두 날짜를 비교하는 법"
-simple_title:         "두 날짜를 비교하는 법"
+title:                "두 날짜 비교하기"
+html_title:           "Kotlin: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,49 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-날짜 비교를 하는 이유는 무엇일까요? 날짜 비교는 일상 생활에서 자주 사용되는 중요한 작업입니다. 두 날짜를 비교하는 것은 예약 시스템에서 예약 가능한 날짜를 확인하거나 할인 이벤트 기간을 확인하는 등 여러 상황에서 필수적입니다.
 
-## 하는 방법
-날짜를 비교하는 방법은 다양합니다. 하지만 코틀린에서는 쉽고 간결하게 날짜를 비교할 수 있는 다양한 방법을 제공합니다. 아래의 코딩 예제를 통해 살펴보도록 하겠습니다.
+날짜 비교를 하는 이유는 무엇일까요? 간단하게 말하자면, 여러분이 두 날짜를 비교하면서 시간 차이나 기간을 계산할 수 있기 때문입니다. 예를 들어, 어떤 일이 발생한 날짜와 오늘 날짜를 비교하여 그 사이에 얼마나 시간이 지났는지를 알 수 있습니다.
 
-```Kotlin 
-// 두 날짜가 같은지 확인하기
-val date1 = LocalDate.of(2021, 8, 1)
-val date2 = LocalDate.of(2021, 8, 1)
-println(date1 == date2) // true 출력
+## 예제로 살펴보는 날짜 비교 방법
 
-// 두 날짜가 이전 날짜인지 확인하기
-val date1 = LocalDate.of(2021, 8, 1)
-val date2 = LocalDate.of(2021, 6, 1)
-println(date1.isBefore(date2)) // false 출력
+이제 Kotlin을 사용하여 두 날짜를 비교하는 방법에 대해 알아보겠습니다. 먼저 두 날짜 변수를 선언하고 각각의 대한 값들을 할당해야 합니다. 그리고 나서 날짜를 비교하는 코드를 작성해보겠습니다.
 
-// 두 날짜가 이후 날짜인지 확인하기
-val date1 = LocalDate.of(2021, 8, 1)
-val date2 = LocalDate.of(2021, 10, 1)
-println(date1.isAfter(date2)) // false 출력
+```Kotlin
+// 두 날짜 변수 선언
+val firstDate = LocalDateTime.of(2021, Month.JANUARY, 1, 0, 0, 0)
+val secondDate = LocalDateTime.of(2021, Month.DECEMBER, 31, 23, 59, 59)
+
+// 날짜 비교 코드
+if(firstDate.isBefore(secondDate)) { // firstDate가 secondDate보다 이전인지 확인
+    val diff = ChronoUnit.DAYS.between(firstDate, secondDate) // firstDate와 secondDate 사이에 몇 일 차이가 있는지 계산
+    println("두 날짜 사이에는 $diff 일 차이가 있습니다.")
+} else {
+    println("날짜를 다시 입력해주세요.")
+}
 ```
 
-위의 코드에서 사용된 `LocalDate`는 코틀린의 날짜 클래스 중 하나로, JDK 8에서 추가된 클래스입니다. 날짜를 생성하고 비교하는 메소드(`isEqual()`, `isBefore()`, `isAfter()`)를 사용할 수 있으며, 두 날짜를 비교할 때 `==` 연산자를 사용할 수도 있습니다.
+위의 코드를 실행하면 "두 날짜 사이에는 365 일 차이가 있습니다." 라는 출력 결과가 나올 것입니다.
 
-## 깊이있게 살펴보기
-코틀린에서는 날짜 비교를 위한 다양한 클래스를 제공합니다. `LocalDate` 외에도 `LocalTime`, `LocalDateTime` 등의 클래스를 사용할 수 있습니다. 또한 `ZonedDateTime`을 사용하여 특정 시간대에 대한 날짜 비교를 할 수도 있습니다.
+## 날짜 비교의 깊은 이해
 
-또한 날짜 비교를 할 때 주의해야 할 점이 있습니다. 우리가 사용하는 그레고리력은 윤년이 존재하기 때문에, 같은 날짜지만 윤년인지 아닌지에 따라 결과가 달라질 수 있습니다. 따라서 프로젝트에서 사용하는 달력을 반드시 확인하고, 날짜를 비교할 때 조심해야 합니다.
+날짜를 비교하는 방법은 간단하지만, 내부적으로는 아주 복잡한 로직으로 이루어져 있습니다. 때때로 우리는 단순히 날짜 비교를 위해서만 사용하지만, 실제로는 시간의 분, 초까지 고려하는 경우도 있습니다. 따라서 날짜 비교를 할 때는 어떤 시간 단위를 사용하는지에 따라 결과가 달라질 수 있음을 기억해야 합니다.
 
-## 또 다른 정보들
+## 더 많은 정보를 원하신다면
 
-### Kotlin Koans - Comparisons
-https://play.kotlinlang.org/koans/overview
+더 많은 정보를 원하신다면 아래 링크들을 참고하시기 바랍니다.
 
-### The Kotlin Standard Library - Comparisons
-https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.comparisons/
+[Java documentation on LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html)
 
-
-## 참고 자료
-이 포스트에서 살펴본 내용 이외에도 다양한 방법으로 날짜를 비교할 수 있습니다. 아래의 링크들을 참고하면 더 많은 정보를 얻을 수 있습니다. 
-
-Kotlin Cheat Sheet - date and time
-https://kotlinlang.org/docs/dates.html
-
-Kotlin - Date and Time 
-https://www.baeldung.com/kotlin/dates
+[Kotlin documentation on LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-kotlin.-local-date-time/)

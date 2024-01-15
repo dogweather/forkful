@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "C recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "C"
 category:             "C"
@@ -10,87 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
+There may be situations where a programmer needs to delete certain characters from a string based on a specific pattern. This can help with data cleanup or formatting operations, making the code more efficient and readable.
 
-In many programming tasks, cleaning up data is an important step in order to process it effectively. One common task is deleting characters that match a certain pattern. This could be useful in situations such as removing special characters from a string or replacing certain characters with another.
-
-## How To 
-
-To delete characters that match a pattern, one approach is to loop through each character in the string and check if it matches the pattern. If it does, we can remove it from the string. Below is a simple example in C, using the `strchr()` function to check for character matches and the `memmove()` function to shift the characters in the string after the match is deleted.
-
+## How To
+To begin, we need to understand the basic syntax for deleting characters from a string in C. The function `strchr()` can be used to locate a specific character in a string. It takes two arguments: the string to search and the character to find. Here's an example:
+```C
+char str[] = "Hello World";
+char *ptr = strchr(str, 'l'); // finds the first occurrence of 'l' in the string
 ```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello, $World!";
-    char pattern[] = "$";
-
-    printf("Before: %s\n", str);
-
-    char *ptr;
-    while ((ptr = strchr(str, *pattern)) != NULL ) {
-        memmove(ptr, ptr + 1, strlen(ptr));
+To delete multiple characters, we can use a for loop and check each character against our desired pattern. Here's an example that deletes all lowercase letters from a string:
+```C
+char str[] = "Hello World";
+for(int i = 0; i < strlen(str); i++) {
+    if(str[i] >= 'a' && str[i] <= 'z') { // checks if the character is lowercase
+        memmove(&str[i], &str[i+1], strlen(str) - i); // moves all remaining characters one index to the left
+        i--; // decrease i to check the new character at the current index
     }
-
-    printf("After: %s\n", str);
-    
-    return 0;
 }
 ```
-
-Output:
-
-```
-Before: Hello, $World!
-After: Hello, World!
-```
-
-In this example, we are deleting all occurrences of the character `$` in the string "Hello, $World!".
+The resulting string will be "H W" as all lowercases have been deleted. Keep in mind that `memmove()` is used instead of `strcpy()` to ensure that the null character at the end of the string is also moved.
 
 ## Deep Dive
-
-While the above method is a simple and efficient approach, it may not always be suitable for more complex patterns. For example, if we want to delete a sequence of characters rather than just a single character, the `memmove()` function may not work as expected. In such cases, using a regular expression library like PCRE (Perl Compatible Regular Expressions) can be a better option.
-
-Regular expressions allow us to match patterns in a more specific and flexible way by using special sequences of characters to represent a search pattern. In the example below, we use the `regex.h` library with the `regex` structure to compile and match a regular expression and then delete the matched characters using the `regexec()` and `regcomp()` functions.
-
-```
-#include <stdio.h>
-#include <string.h>
-#include <regex.h>
-
-int main() {
-    char str[] = "I love #coding in C!";
-    char pattern[] = "[#|a-z]";
-
-    printf("Before: %s\n", str);
-
-    int status;
-    regex_t regex;
-    status = regcomp(&regex, pattern, REG_ICASE);
-    status = regexec(&regex, str, 0, NULL, 0);
-    if (status == 0) {
-        regfree(&regex);
-        regcomp(&regex, pattern, REG_ICASE);
-        regsub(&regex, str, "", str);
+Instead of using the `strchr()` and `memmove()` functions, we can also use pointers to achieve the same result. The `strchr()` function returns a pointer to the first occurrence of the character in the given string. Similarly, the `memmove()` function also uses pointers to manipulate the string. Here's an example of how we can delete all spaces in a string using pointers:
+```C
+char str[] = "Hello World";
+char *ptr = str;
+while(*ptr) { // loops until the null character is reached
+    if(*ptr == ' ') { // checks if the character is a space
+        char *temp = ptr;
+        while(*temp) { // moves all characters after 'ptr' one index to the left
+            *temp = *(temp + 1);
+            temp++;
+        }
+        continue; // continues to next iteration without increasing ptr
     }
-
-    printf("After: %s\n", str);
-    
-    return 0;
+    ptr++; // increase ptr to check the next character
 }
 ```
-
-Output:
-
-```
-Before: I love #coding in C!
-After: I lve in !
-```
-
-Here, we use the regular expression "[#|a-z]" to match either a `#` symbol or any lowercase letter. By using the `regsub()` function, we are able to substitute the matched characters with an empty string, effectively deleting them from the string.
+This will effectively delete all spaces from the string and the resulting string will be "HelloWorld".
 
 ## See Also
-
-- [Regular expressions in C programming language](https://www.systutorials.com/docs/linux/man/3-regcomp/)
-- [C string functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [PCRE Library](https://www.pcre.org/)
+- [C String Functions](https://www.programiz.com/c-programming/c-string-functions)
+- [C Pointer Tutorial](https://www.tutorialspoint.com/cprogramming/c_pointers.htm)

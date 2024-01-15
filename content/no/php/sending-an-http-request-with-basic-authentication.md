@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sending en http-forespørsel med grunnleggende autentisering"
+html_title:           "PHP: Sending en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,49 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å sende en HTTP-forespørsel med grunnleggende autentisering kan være nødvendig for å få tilgang til en API eller et passordbeskyttet nettsted. Det gir en enkel måte å autentisere brukeren sin identitet på, slik at man kan hente ut ønsket informasjon fra nettstedet.
+Å sende en HTTP-forespørsel med grunnleggende autentisering er en enkel og sikker måte å sikre at kun autoriserte brukere har tilgang til en bestemt nettside eller ressurs. Det er særlig nyttig når man ønsker å beskytte sensitiv informasjon eller begrense tilgang til en spesifikk gruppe brukere.
 
 ## Hvordan
-Her er et eksempel på hvordan man kan sende en HTTP-forespørsel med grunnleggende autentisering i PHP:
+For å sende en HTTP-forespørsel med grunnleggende autentisering i PHP, kan du bruke funksjonen `file_get_contents()` sammen med en `stream_context` for å legge til autentiseringsopplysninger i forespørselen. For eksempel:
 
 ```PHP
-<?php
-// Definer variabler med brukernavn og passord
-$username = "dinbruker";
-$password = "dittpassord";
+$username = "brukernavn";
+$password = "passord";
 
-// Sett opp autentiseringen
-$auth = base64_encode("{$username}:{$password}");
+$opts = array(
+    'http' => array(
+        'method' => "GET",
+        "header" => "Authorization: Basic " . base64_encode("$username:$password")
+    )
+);
 
-// Sett opp HTTP-headers
-$headers = [
-    "Authorization: Basic {$auth}"
-];
-
-// Sett opp URL og initiér en ny cURL-sesjon
-$url = "https://example.com/api";
-$ch = curl_init($url);
-
-// Sett cURL-alternativer
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); // Legg til HTTP-headers
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Returnér resultatet i stedet for å skrive det ut
-
-// Send forespørsel og lagre resultatet
-$result = curl_exec($ch);
-
-// Skriv ut resultatet
-echo $result;
-
-// Avslutt cURL-sesjonen
-curl_close($ch);
+$context = stream_context_create($opts);
+$response = file_get_contents("https://example.com", false, $context);
+echo $response;
 ```
 
-Dette eksempelet bruker cURL-biblioteket for å sende en HTTP-forespørsel med grunnleggende autentisering. Først definerer vi variabler med brukernavn og passord, deretter koder vi dem med base64 og legger dem til i HTTP-headers. Deretter setter vi opp en cURL-sesjon med de nødvendige alternativene og sender forespørselen til ønsket URL.
+Dette vil sende en GET-forespørsel til `https://example.com` med brukernavn og passord i autentiseringsheaderen. Hvis forespørselen er vellykket, vil svaret fra nettsiden bli skrevet ut.
 
-## Dypdykk
-Når man sender en HTTP-forespørsel med grunnleggende autentisering, blir brukernavn og passord sendt i klartekst. Dette kan være en sikkerhetsrisiko hvis man ikke bruker HTTPS eller andre sikre tilkoblinger. Det er derfor viktig å være forsiktig med å bruke grunnleggende autentisering og alltid søke alternative metoder hvis mulig.
+## Deep Dive
+Grunnleggende autentisering er en enkel autentiseringsmetode som krever brukernavn og passord i klartekst for å få tilgang til en ressurs. Når en forespørsel er gjort, vil informasjonen bli kodet med Base64 og sendt i headeren som viser at forespørselen er autorisert. Selv om dette kan føles som en sikker måte å autentisere brukere på, bør det bemerkes at Base64-koding ikke er en egentlig krypteringsmetode og at andre autentiseringsmetoder som OAuth kan være mer sikre.
 
 ## Se også
-- [cURL - Dokumentasjon](https://www.php.net/manual/en/book.curl.php)
-- [HTTP-forespørsler med PHP - Tutorial](https://www.php.net/manual/en/ref.curl.php)
-- [Sikkerhet ved bruk av grunnleggende autentisering](https://www.owasp.org/index.php/Basic_Authentication)
+- [PHP: basic authentication](https://www.php.net/manual/en/features.http-auth.php)
+- [Understanding HTTP Basic Authentication](https://www.digitalocean.com/community/tutorials/understanding-http-basic-authentication)
+- [PHP Auth Basic Code Example](https://www.w3schools.com/php/php_examples.asp)

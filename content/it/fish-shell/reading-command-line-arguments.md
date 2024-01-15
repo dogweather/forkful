@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Lettura degli argomenti della riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Fish Shell: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,47 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
+Probabilmente sei qui perché vuoi imparare a utilizzare la Fish Shell e sei curioso di conoscere i suoi comandi. Leggere gli argomenti della riga di comando è un'abilità fondamentale per poter usare la Shell in modo efficace e veloce. Questo articolo ti spiegherà come farlo nel modo più semplice possibile.
 
-Se stai iniziando ad imparare la programmazione in Fish Shell, potresti chiederti perché è importante studiare come leggere gli argomenti dalla riga di comando. In realtà, questa tecnica è molto utile per automatizzare il processo di esecuzione dei tuoi script e per rendere più flessibile il tuo codice.
-
-## Come fare
-
-Per leggere gli argomenti dalla riga di comando in Fish Shell, puoi utilizzare la variabile $argv. Questa variabile contiene un elenco dei valori passati come argomenti al tuo script, separati da spazio. Ad esempio, se il tuo script si chiama "mio_script.fish" e lo esegui come `mio_script.fish arg1 arg2`, il valore di $argv sarà `arg1 arg2`. 
+##Come Fare
+Per leggere gli argomenti della riga di comando nella Fish Shell, è necessario utilizzare il comando `read`, seguito da una variabile dove verranno salvati i dati inseriti dall'utente. Vediamo un esempio:
 
 ```Fish Shell
-#!/usr/bin/env fish
-
-echo "Hai passato questi argomenti: $argv"
+read -l nome
 ```
 
-L'output di questo script sarebbe `Hai passato questi argomenti: arg1 arg2`.
-
-È possibile utilizzare un ciclo for per iterare attraverso i singoli argomenti come mostrato nell'esempio seguente:
+Questo comando aspetterà che l'utente inserisca il proprio nome e lo salverà nella variabile `nome`. Per stampare il nome inserito, possiamo utilizzare il comando `echo` seguito dal nome della variabile. Ad esempio:
 
 ```Fish Shell
-#!/usr/bin/env fish
-
-for arg in $argv
-    echo "$arg"
-end
+echo $nome
 ```
 
-L'output di questo script sarebbe:
+Se vogliamo leggere più di un argomento nella stessa riga, possiamo utilizzare il flag `-a`, che ci permette di creare un array con i dati inseriti. Vediamo un esempio:
 
+```Fish Shell
+read -a preferiti
 ```
-arg1
-arg2
+
+Con questo comando, l'utente potrà inserire più argomenti separati da spazi e verranno salvati nell'array `preferiti`. Possiamo poi stampare l'array utilizzando il comando `echo` seguito dal nome dell'array e dal numero dell'elemento che vogliamo visualizzare. Ad esempio:
+
+```Fish Shell
+echo $preferiti[1]
 ```
 
-## Profondità
+##Deep Dive
+Ora che sai come leggere gli argomenti della riga di comando nella Fish Shell, è importante comprendere che è anche possibile assegnare dei valori di default alle variabili. Ad esempio:
 
-Oltre alla variabile $argv, è possibile utilizzare la funzione fish_read_args per leggere gli argomenti dalla riga di comando. Questa funzione ha opzioni aggiuntive che ti consentono di specificare un pattern di matching per gli argomenti e di gestire gli errori.
+```Fish Shell
+read -l -i "Sconosciuto" nome
+```
 
-Per ulteriori informazioni su come leggere gli argomenti dalla riga di comando in Fish Shell, puoi consultare la documentazione ufficiale sul [sito web di Fish Shell](https://fishshell.com/docs/current/cmds/read_args.html).
+In questo modo, se l'utente non inserisce alcun valore, la variabile `nome` avrà come valore di default "Sconosciuto". Inoltre, possiamo anche specificare una lunghezza massima per l'input utilizzando il flag `-m`. Vediamo un esempio:
 
-## Vedi anche
+```Fish Shell
+read -l -m 20 nome
+```
 
-* [Documentazione ufficiale di Fish Shell su read_args](https://fishshell.com/docs/current/cmds/read_args.html)
-* [Tutorial su Fish Shell](https://dev.to/christopherkade/fish-functions-and-how-to-use-them-1-easiest-shell-functions-to-get-started-with-shell-scripting-4fo6) 
-* [Come creare un alias in Fish Shell](https://medium.com/platformer-blog/improve-your-shell-alias-bd4074b47986)
+In questo caso, l'utente può inserire al massimo 20 caratteri per il nome.
+
+##Vedi Anche
+- [Comandi di base della Fish Shell](https://fishshell.com/docs/current/tutorial.html#basic-commands)
+- [Creare script nella Fish Shell](https://fishshell.com/docs/current/tutorial.html#scripting)

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "TypeScript: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כתיבת קוד היא תהליך מרתק ומאתגר בו אנו יוצרים תוכניות ואפליקציות מתקדמות ושימושיות. אחד המשימות הנפוצות בכתיבת קוד הינו שליחת בקשות HTTP. בכתבה הזו נלמד כיצד לשלוח בקשת HTTP באמצעות TypeScript ונלך על שטח דילוג עמוק בנושא.
-
 ## למה
 
-שליחת בקשות HTTP הינה חלק חשוב מאוד בכתיבת אפליקציות תקשורת עם שרת וקבלת נתונים. זהו אמצעי חשוב להתקשרות עם שירותים חיצוניים ולשלוח נתונים למסדי נתונים. ללא שימוש בבקשות HTTP, יהיה קשה לבנות אפליקציות נגישות ומתחברות לרשת האינטרנט.
+למה מישהו ירצה לשלוח בקשת HTTP? בעצם, בקשת HTTP היא דרך קלה ויעילה לשלוח ולקבל מידע משרת אינטרנט מסוים. 
 
-## כיצד לשלוח בקשת HTTP
+## איך לעשות זאת
 
-דוגמה פשוטה לשליחת בקשת HTTP באמצעות TypeScript תראה כך:
+ראשית, נצטרך ליצור אובייקט של XMLHttpRequest מובנה של TypeScript. הקוד הבא מדגים כיצד ניתן ליצור ולשלוח בקשת HTTP GET באמצעות XMLHttpRequest:
 
 ```TypeScript
-import axios from 'axios';
-
-const url = 'https://jsonplaceholder.typicode.com/users';
-
-axios.get(url)
-    .then(response => console.log(response))
-    .catch(error => console.log(error));
+let request = new XMLHttpRequest();
+request.open('GET', 'https://example.com/data');
+request.send();
 ```
- פלט היוצא מתוך הקוד יכיל את כל המידע שנמצא בכתובת URL ויהיה זמין לשימוש באפליקציה שלנו.
 
-אם נרצה לשלוח בקשת POST, ניתן לעשות זאת כך:
+כעת נבדוק את התשובה המתקבלת מהשרת. ניתן להשתמש בפונקציה המובנית `onreadystatechange` על מנת לאתר מתי השאילתה הסתיימה ולבדוק את קוד התגובה שנשלח חזרה מהשרת. הקוד הבא מתאר את התהליך הנוכחי:
 
 ```TypeScript
-import axios from 'axios';
-
-const url = 'https://jsonplaceholder.typicode.com/users';
-
-const user = {
-    name: 'John',
-    email: 'john@example.com'
+request.onreadystatechange = function() {
+  if (request.readyState === XMLHttpRequest.DONE) {
+    if (request.status === 200) {
+      console.log(request.response);
+    }
+  }
 };
-
-axios.post(url, user)
-    .then(response => console.log(response))
-    .catch(error => console.log(error));
 ```
 
-ניתן לראות שבקשת הPOST משתמשת במערך המשתמש שבנו ושולח אותו לכתובת URL כדי לשמור אותו.
+בקוד הנ"ל, אנו בודקים את נתוני התגובה, ואם קוד התגובה הוא 200 (מציין שהבקשה נמצאת במצב הצליחה), אנו מדפיסים את התוכן של השאילתה למסך.
 
-## דילוג עמוק
+## חקירה מעמיקה
 
-כעת שלמדנו כיצד לשלוח בקשות HTTP באמצעות TypeScript, אנו יכולים ללכת על שטח דילוג עמוק יותר וליצור כתיבה יעילה ומתוחכמת יותר של בקשות הביצוע.
+אנו יכולים להשתמש גם בטכניקת "Promise" כדי לנהל את בקשת ה-HTTP בצורה אסינכרונית. פונקציית ה-`fetch` המובנית של TypeScript מחזירה Promise, שמאפשר לנו לנהל את תהליך יצירת הבקשה וקבלת התשובה בצורה מסודרת יותר. 
 
-בקשות הביצוע הן כאלו שמכילות טקסט, תמונות, וידאו או כל סוג אח
+בכדי להשתמש ב-Promise, ניתן להשתמש במתודת ה-`then` או במתודת ה-`catch` על התוצאה המוחזרת מפונקציית ה-`fetch`. הקוד הבא מדגים כיצד ניתן לשלוח בקשת HTTP GET באמצעות טכניקת Promise:
+
+```TypeScript
+fetch('https://example.com/data')
+  .then(response => response.json()) // ממיר נתוני התגובה לפורמט JSON
+  .then(data => console.log(data)) // מדפיס נתוני התגובה למסך
+  .catch(error => console.log(error)); // מטפל בשגיאות

@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Converting a date into a string"
+title:                "Converting a date into a string"
+html_title:           "C recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "C"
 category:             "C"
@@ -10,58 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-As a programmer, you may often come across situations where you need to convert a date into a string in your C programming projects. Whether it's for storing dates in a database or displaying them to users, there are many reasons why you would need to perform this conversion. In this blog post, we'll dive into the reasons behind it and learn how to accomplish it in C.
+Converting a date into a string is a basic yet essential task for any programmer. It allows for better manipulation and formatting of date data, which is commonly used in various applications such as scheduling, accounting, and data analysis.
 
 ## How To
+To convert a date into a string in C, we can use the `strftime()` function from the `<time.h>` library. This function takes in a date and time value and converts it into a formatted string based on the provided format string.
 
-To convert a date into a string in C, we can use the `strftime()` function from the `<time.h>` library. This function takes in a format string and converts the given date and time into a string according to that format. Let's see an example:
+To start, we first need to create a `struct tm` variable to hold our date and time information. This struct contains the individual components of a date and time, such as year, month, day, hour, minute, and second.
 
-```C
+```
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t now;
-    struct tm *local;
-    char output[100];
+    // Creating a struct to hold date and time information
+    struct tm date = { .tm_year=2021, .tm_mon=8, .tm_mday=7,
+                       .tm_hour=14, .tm_min=30, .tm_sec=0 };
 
-    // Getting current time
-    now = time(NULL);
+    // Converting date into a string using strftime()
+    char date_string[20];
+    strftime(date_string, sizeof(date_string), "%Y/%m/%d %H:%M:%S", &date);
 
-    // Converting to local time
-    local = localtime(&now);
-
-    // Formatting date and time
-    strftime(output, 100, "%d-%m-%Y %H:%M:%S", local);
-
-    // Printing output
-    printf("Today's date and time: %s\n", output);
+    printf("Date: %s\n", date_string); // Output: 2021/09/07 14:30:00
 
     return 0;
 }
 ```
 
-In this example, we first declared a `time_t` variable to hold the current time and a `struct tm` variable to store the local time. Then, we used the `localtime()` function to convert the time into the local time zone. Finally, we used `strftime()` to format the date and time according to our desired format ("%d-%m-%Y %H:%M:%S") and stored it in the `output` variable. The output would be something like this:
-
-```
-Today's date and time: 24-09-2021 16:30:00
-```
-
-But what if we want to convert the date into a different format? In that case, we can change the format string accordingly. For example, if we want to display the weekday and month name in our output, we can use "%A, %B %d, %Y" as the format string.
+Here, we first create a `struct tm` variable named `date` and initialize it with the desired values using designated initializers. Then, we use the `strftime()` function to convert it into a string according to the specified format `%Y/%m/%d %H:%M:%S`, which translates to year/month/day hour:minute:second. The resulting string is stored in the `date_string` array and we can use `printf()` to display it.
 
 ## Deep Dive
+The `strftime()` function provides great flexibility in formatting dates and times into strings. It takes in two arguments - the first one being the format string and the second one being a pointer to the `struct tm` containing the date and time data.
 
-Now that you have a basic understanding of how to convert a date into a string in C, let's dive deeper into the `strftime()` function. This function takes in three arguments: the output string pointer, the size of the output buffer, and the format string. The output string pointer is where the converted date and time will be stored, the size is the maximum number of characters that can be stored, and the format string specifies the desired output format.
+The format string is made up of two types of sequences: formatting sequences and literal characters. The formatting sequences start with a `%` symbol and are replaced with the corresponding value from the `struct tm` when the function is executed. Here are some common formatting sequences:
 
-The format string follows a specific syntax, with different format specifiers representing different parts of the date and time. For example, "%d" represents the day of the month, "%m" represents the month, "%Y" represents the full year, and so on. You can find a complete list of format specifiers and their meanings in the C documentation.
+- `%Y`: year with century as a decimal number
+- `%m`: month as a decimal number (01-12)
+- `%d`: day of the month as a decimal number (01-31)
+- `%H`: hour using a 24-hour clock as a decimal number (00-23)
+- `%M`: minute as a decimal number (00-59)
+- `%S`: second as a decimal number (00-59)
 
-One important thing to note is that the `strftime()` function only works with `struct tm` variables, so if you're using a different variable type to store your date and time, you'll need to convert it to `struct tm` first.
+Apart from these, there are many more formatting sequences available for different date and time components. It is important to note that the order of the sequences in the format string is significant and must match the order of the components in the `struct tm`.
 
 ## See Also
-
-- [C strftime() function documentation](https://www.cplusplus.com/reference/ctime/strftime/)
-- [C tutorial on converting date and time to string](https://www.programiz.com/c-programming/c-date-time-example)
-- [Explanation of strftime() format specifiers](https://www.w3schools.in/c/date-time/)
-
-In conclusion, converting a date into a string in C may seem like a small task, but it can come in handy in many different scenarios. With the `strftime()` function and some knowledge of date and time format specifiers, you can easily achieve this task in your C projects. Happy coding!
+- [Official C documentation for strftime()](https://en.cppreference.com/w/c/chrono/strftime)
+- [Converting date to string in other programming languages](https://www.tutorialspoint.com/programming-language-conversion)

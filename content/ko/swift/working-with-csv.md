@@ -1,6 +1,7 @@
 ---
-title:                "Swift: CSV와 함께 작업하기"
-simple_title:         "CSV와 함께 작업하기"
+title:                "csv 작업"
+html_title:           "Swift: csv 작업"
+simple_title:         "csv 작업"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,70 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-CSV 파일을 다루는 것에 관심이 있을까요? 컴퓨터 과학 학생이나 개발자라면 데이터 분석 또는 앱 개발 등의 목적으로 CSV 파일을 사용할 수 있습니다.
 
-## 방법
-이제 한 번 실제 Swift 코드로 CSV 파일을 다루는 방법을 알아보겠습니다.
+CSV(Comma-Separated Values) 파일을 작업하는 이유는 텍스트 형식으로 데이터를 저장하고 공유하기에 매우 효과적이기 때문입니다. 이는 기업에서는 데이터를 다른 소프트웨어로 이동하는 데 매우 유용하며, 개인적으로는 스프레드시트에서 데이터를 정리하거나 분석하는 데 사용될 수 있습니다.
 
-### CSV 파일 읽기
+## 어떻게
+
+CSV 파일을 작업하는 가장 간단한 방법은 `SwiftCSV` 라이브러리를 사용하는 것입니다. 이 라이브러리를 통해 CSV 파일에서 데이터를 읽고 쓰는 것이 매우 간단해집니다. 다음은 `SwiftCSV`를 사용하여 CSV 파일을 읽고 데이터를 출력하는 예제 코드입니다.
+
 ```Swift
-import Foundation
+import SwiftCSV
 
-// 파일 경로 설정
-let filePath = "/Users/myuser/Documents/data.csv"
+// CSV 파일을 생성합니다.
+let csvFile = try! CSV(url: "example.csv")
 
-do {
-    // 파일을 문자열로 읽어옴
-    let data = try String(contentsOfFile: filePath)
-    
-    // 라인별로 나눠서 배열로 저장
-    let rows = data.components(separatedBy: "\n")
-    
-    // 각 라인을 콤마로 분리하여 2차원 배열로 저장
-    var table : [[String]] = []
-    for row in rows {
-        table.append(row.components(separatedBy: ","))
-    }
-    
-    // 출력
-    print(table)
-    
-} catch {
-    // 파일을 읽지 못한 경우 에러 처리
-    print(error)
+// CSV 파일의 첫 번째 행을 출력합니다.
+let firstRow = csvFile.rows[0]
+print(firstRow)
+
+// CSV 파일의 모든 데이터를 출력합니다.
+for row in csvFile.rows {
+    print(row)
 }
 ```
 
-### CSV 파일 쓰기
-```Swift
-import Foundation
+위의 코드를 실행하면 다음과 같은 출력 결과를 얻을 수 있습니다.
 
-// 저장할 데이터 배열 생성
-let fruits = ["Apple", "Banana", "Cherry", "Durian"]
+```
+"Name", "Age", "Occupation" 
+"Jane", "25", "Teacher"
 
-// 파일 경로 설정
-let filePath = "/Users/myuser/Documents/fruit.csv"
-
-do {
-    // 데이터 배열을 쉼표로 나누어 문자열로 저장
-    let data = fruits.joined(separator: ",")
-    
-    // 파일에 쓰기
-    try data.write(toFile: filePath, atomically: true, encoding: .utf8)
-    
-    // 파일이 성공적으로 저장되었다는 메시지 출력
-    print("CSV 파일을 성공적으로 저장하였습니다.")
-    
-} catch {
-    // 파일을 쓰지 못한 경우 에러 처리
-    print(error)
-}
+["Name": "Jane", "Age": "25", "Occupation": "Teacher"]
+["Name": "John", "Age": "31", "Occupation": "Engineer"]
+["Name": "Mary", "Age": "28", "Occupation": "Doctor"]
+["Name": "David", "Age": "24", "Occupation": "Lawyer"]
 ```
 
-## 깊은 곳 탐색
-CSV 파일은 쉽게 읽고 쓸 수 있는 형식이지만, 파일 크기가 커지면 읽어오는 데 오랜 시간이 걸릴 수 있습니다. 이 경우 메모리를 효율적으로 사용하기 위해 `StreamReader` 클래스를 사용할 수 있습니다. 또한 CSV 파일에는 다양한 형식이 존재할 수 있기 때문에 데이터를 적절하게 처리하기 위해 정규표현식을 사용하는 것도 좋은 방법입니다.
+## 심층 분석
+
+때로는 CSV 파일을 작업하는 것이 복잡하고 어려운 과정일 수 있습니다. 이 때문에 `SwiftCSV` 라이브러리를 사용할 때 몇 가지 주의할 점이 있습니다. 첫 번째로는 CSV 파일의 첫 번째 행이 데이터의 제목을 나타내는 열을 포함하여 `n+1`개의 열을 가지고 있어야 한다는 것입니다. 두 번째로는 CSV 파일에서 특정 열의 데이터를 읽을 때 데이터 유형을 명확하게 정의해야 합니다. 그렇지 않으면 읽어온 데이터가 잘못된 값으로 인식될 수 있습니다. 마지막으로, CSV 파일의 모든 데이터가 문자열로 저장되기 때문에 필요에 따라 데이터를 다른 유형으로 변환해야 할 수 있습니다.
 
 ## 참고 자료
-- [Swift Foundation](https://developer.apple.com/documentation/foundation)
-- [Regular Expressions in Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
-- [StreamReader Class](https://gist.github.com/blanu/295bebcbb520cb3cd239)
+
+- [SwiftCSV Documentation](https://github.com/naoty/SwiftCSV)
+- [Working with CSV files in Swift](https://www.hackingwithswift.com/example-code/system/working-with-csv-files-in-swift)
+- [How to Import and Export CSV files in Swift](https://betterprogramming.pub/how-to-import-and-export-csv-files-in-swift-9636c9b42949)

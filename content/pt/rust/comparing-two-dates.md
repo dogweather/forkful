@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Comparando duas datas"
+title:                "Comparando duas datas"
+html_title:           "Rust: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,54 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Rust?
+## Por que
 
-Comparar datas é uma tarefa comum em muitas linguagens de programação, inclusive em Rust. É importante saber como fazer essa comparação corretamente para garantir que seu código funcione corretamente e produza os resultados esperados.
+Comparar duas datas pode ser uma tarefa muito comum em programação, especialmente quando lidamos com informações que envolvem tempo e datas cronológicas. Com o Rust, podemos realizar essa tarefa de forma eficiente e segura, garantindo que nossos programas funcionem corretamente.
 
-## Como fazer a comparação de datas em Rust
+## Como Fazer
 
-Para comparar duas datas em Rust, podemos utilizar o módulo `chrono`. Primeiro, precisamos importar esse módulo no nosso código.
+```rust
+fn main() {
+    let data1 = "2021-08-30"; //primeira data
+    let data2 = "2021-09-05"; //segunda data
 
-```
-use chrono::prelude::*;
-```
-
-Em seguida, podemos criar duas variáveis do tipo `DateTime` e especificar as datas que queremos comparar.
-
-```
-let data1 = Utc.ymd(2021, 1, 1).and_hms(0, 0, 0);
-let data2 = Utc.ymd(2020, 1, 1).and_hms(12, 0, 0);
-```
-
-Para realizar a comparação, podemos utilizar os operadores `==`, `!=`, `>`, `<`, `>=` e `<=`.
-
-```
-println!("A data1 é igual à data2? {}", data1 == data2);
-println!("A data1 é diferente da data2? {}", data1 != data2);
-println!("A data1 é maior que a data2? {}", data1 > data2);
-println!("A data1 é menor que a data2? {}", data1 < data2);
-println!("A data1 é maior ou igual à data2? {}", data1 >= data2);
-println!("A data1 é menor ou igual à data2? {}", data1 <= data2);
+    if data1 < data2 {
+        println!("A primeira data é anterior à segunda data");
+    } else if data1 > data2 {
+        println!("A primeira data é posterior à segunda data");
+    } else {
+        println!("As duas datas são iguais");
+    }
+}
 ```
 
-Ao executar esse código, obteremos o seguinte resultado:
+**Saída:**
 
-```
-A data1 é igual à data2? false
-A data1 é diferente da data2? true
-A data1 é maior que a data2? true
-A data1 é menor que a data2? false
-A data1 é maior ou igual à data2? true
-A data1 é menor ou igual à data2? false
-```
+A primeira data é anterior à segunda data
 
-## Aprofundando-se na comparação de datas em Rust
+Neste exemplo, usamos o operador de comparação "menor que" ( < ) e "maior que" ( > ) para comparar as duas datas. Se a primeira data for anterior à segunda, a condição `if` será verdadeira e a primeira mensagem será impressa. Se a primeira data for posterior à segunda, a condição do `else if` será verdadeira e a segunda mensagem será impressa. Caso as datas sejam iguais, a condição do `else` será verdadeira e a terceira mensagem será impressa.
 
-Ao comparar datas em Rust, é importante levar em conta que o tipo `DateTime` armazena informações de data e hora, incluindo o fuso horário. Isso significa que se as datas estiverem em fusos horários diferentes, a comparação será baseada nessa diferença de horários.
+## Aprofundando
 
-Além disso, é importante ficar atento à formatação das datas. Se as datas estiverem em formatos diferentes, a comparação pode não funcionar corretamente. Portanto, certifique-se de que as datas estejam em um formato padrão antes de realizar a comparação.
+A comparação de datas em Rust é baseada em strings, o que significa que o Rust verifica a ordem alfabética das strings para determinar a comparação de datas. Portanto, ao comparar datas, devemos garantir que elas estejam no formato "aaaa-mm-dd" para que a ordem seja corretamente avaliada.
+
+Além disso, o Rust também possui a estrutura `chrono` que nos permite trabalhar com datas de forma mais precisa e realizar operações como cálculos de diferenças entre datas e conversão entre diferentes formatos. Você pode ler mais sobre `chrono` e sua documentação [aqui](https://docs.rs/chrono/).
 
 ## Veja também
 
-- Documentação oficial do módulo `chrono`: https://docs.rs/chrono/
-- Tutorial sobre como comparar datas em Rust: https://www.joshmcguigan.com/blog/comparison-operators-for-rusts-datetime/
+- [Diferenças entre datas com Rust](https://crates.io/crates/chrono)
+- [Operadores de comparação em Rust](https://doc.rust-lang.org/book/ch03-02-data-types.html#comparison-operators)

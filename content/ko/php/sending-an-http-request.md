@@ -1,6 +1,7 @@
 ---
-title:                "PHP: HTTP 요청 보내기"
-simple_title:         "HTTP 요청 보내기"
+title:                "Http 요청 보내기"
+html_title:           "PHP: Http 요청 보내기"
+simple_title:         "Http 요청 보내기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-HTTP 요청을 보내는것은 웹 개발에서 중요한 부분입니다. 사용자의 입력을 받아서 검증하거나, 다른 서버에 있는 데이터를 받아오는 등 다양한 용도로 HTTP 요청을 사용할 수 있습니다.
+HTTP request를 보내는 것의 가장 큰 이유는 웹 서버와 통신하여 웹 페이지나 데이터를 얻기 위함입니다.
 
-## 어떻게?
+## 어떻게
 
 ```PHP
-<?php
-// GET 메서드로 HTTP 요청 보내기
-$url = 'https://www.example.com';
-$response = file_get_contents($url);
-
-// POST 메서드로 HTTP 요청 보내기
-$url = 'https://www.example.com/api';
-$data = array('name' => 'John', 'age' => 25);
-$options = array(
-	'http' => array(
-		'method' => 'POST',
-		'header' => 'Content-Type: application/json',
-		'content' => json_encode($data)
-	)
-);
-$context = stream_context_create($options);
-$response = file_get_contents($url, false, $context);
+// HTTP request를 보내는 예제 코드
+$request = curl_init(); // cURL 세션 초기화
+curl_setopt($request, CURLOPT_URL, "https://www.example.com"); // 내가 원하는 URL로 설정
+curl_setopt($request, CURLOPT_RETURNTRANSFER, 1); // cURL 함수에서 반환된 값을 직접 출력하지 않고 변수에 저장
+curl_exec($request); // 설정된 옵션들을 사용하여 HTTP request를 보냄
+curl_close($request); // cURL 세션 닫기
 ```
 
-위의 예시 코드는 `file_get_contents()` 함수를 사용하여 간단하게 HTTP 요청을 보내는 방법을 보여줍니다. `GET` 메서드일 경우엔 요청을 보낼 URL을 매개변수로 전달하면 됩니다.
+위 코드는 cURL 함수를 사용하여 HTTP request를 보내는 간단한 예제입니다. cURL은 PHP에서 HTTP 통신을 가능하게 해주는 라이브러리로, 많은 옵션을 제공하여 더욱 다양한 요청을 보낼 수 있습니다.
 
-`POST` 메서드일 경우에는 요청할 URL뿐만 아니라 요청의 본문 데이터와 함께 보낼 옵션들을 매개변수로 전달해야 합니다. 위의 예시 코드에서는 `Content-Type` 헤더를 `application/json`으로 설정하고, 본문 데이터로 `name`과 `age` 변수를 가진 배열을 `json_encode()` 함수를 이용하여 JSON 형태로 변환하여 전달하고 있습니다.
+## 깊게 파헤치기
 
-`file_get_contents()` 함수도 아래에서 설명할 `stream_context_create()` 함수를 이용하여 컨텍스트를 생성할 수 있습니다. 이 컨텍스트에서 옵션을 지정하여 더욱 세부적인 요청을 보낼 수 있습니다.
+HTTP request를 보낼 때, GET과 POST 방식이 가장 많이 사용됩니다. GET 방식은 주소창을 통해 데이터를 전송하는 방식으로, 보안이 취약해 중요한 정보를 전달하지 않는 것이 좋습니다. 반면 POST 방식은 요청에 필요한 데이터를 HTTP body에 포함시켜 전송하는 방식으로, GET 방식보다 보안이 뛰어나고 많은 양의 데이터를 전송할 수 있습니다.
 
-## 딥 다이브
+또한 HTTP request를 보낼 때, HTTP header를 지정하는 것도 중요합니다. header에는 요청의 다양한 정보를 포함시켜 서버에서 요청을 처리할 때 참고할 수 있도록 만들어줍니다.
 
-HTTP 요청은 더욱 복잡한 경우에도 사용할 수 있습니다. `cURL` 라이브러리를 이용하면 더욱 다양한 옵션과 기능을 제공받을 수 있습니다. 또한 `POST` 요청의 경우에는 `$_POST` 변수를 이용하여 서버로부터 전달받은 데이터를 쉽게 처리할 수 있습니다.
+## 더 알아보기
 
-HTTP 요청의 종류나 세부 사항에 대해서는 인터넷에서 더 많은 정보를 찾아보실 수 있습니다.
+* [PHP cURL 공식 문서](https://www.php.net/manual/en/book.curl.php)
+* [GET vs. POST 방식의 차이](https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
+* [HTTP header 정보](https://www.tutorialspoint.com/http/http_header.htm)
 
 ## 참고
 
-- [PHP: HTTP 요청 보내기](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP: cURL 라이브러리](https://www.php.net/manual/en/book.curl.php)
-- [PHP: $_POST 변수](https://www.php.net/manual/en/reserved.variables.post.php)
+이 글은 PHP 버전 7.4을 기준으로 작성되었습니다. 코드의 결과는 서버 환경에 따라 다를 수 있습니다.

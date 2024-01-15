@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämförande av två datum"
+html_title:           "Bash: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,31 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att jämföra två datum är en viktig del av Bash programmering, eftersom det gör det möjligt för oss att hantera tidsrelaterade uppgifter. Det kan hjälpa oss att kontrollera olika händelser eller processer baserat på datum och tid, vilket är särskilt användbart i automatiseringsprocesser.
+Att jämföra två datum kan vara användbart för att se om ett datum har passerat, om två datum ligger nära varandra i tid eller för att sortera datum i en lista. Detta kan vara särskilt användbart i datumhanteringssystem eller för att utföra tidsberäkningar.
 
 ## Hur man gör det
 
-För att jämföra två datum i Bash behöver vi använda oss av `date` kommandot. Detta kommando kan inte bara skapa och visa datum, utan också göra beräkningar och jämföra datum. Se nedan för ett enkelt exempel:
+För att jämföra två datum i Bash kan du använda "date" kommandot tillsammans med "-d" flaggan. Du kan skriva "date -d '2020-01-01'” för att visa datumet 1 januari 2020, eller “date -d 'tomorrow + 1 month'” för att få datumet en månad framåt från imorgon.
 
 ```Bash
-date1=$(date -d "2020-04-25" +%s)
-date2=$(date -d "2020-04-27" +%s)
-
-if [ $date1 -lt $date2 ]
-then
-    echo "Datum 1 är innan datum 2"
+tag=`date +%d%m%Y`
+if [ $tag  -ge 01032019 ]; then
+echo "Datumet är efter 1 mars 2019"
+else
+echo "Datumet är före 1 mars 2019"
 fi
 ```
 
-I detta exempel använder vi `date -d` flaggan för att ange ett datum i ett visst format, följt av `%s` för att konvertera datumet till sekunder sedan Unix-epoken (1 januari 1970). Med hjälp av dessa sekunder kan vi sedan jämföra de två datum med hjälp av vanliga villkorsuttryck som `-lt` (mindre än) och `-gt` (större än).
+I det här exemplet jämför vi ett datum skrivet i formatet "ddmmyyyy" med datumet 1 mars 2019 i samma format. Om datumet är efter 1 mars 2019 skrivs "Datumet är efter 1 mars 2019" ut, annars skrivs "Datumet är före 1 mars 2019" ut.
 
-Ett annat användbart verktyg för datumjämförelse är `date +%j`, som returnerar antalet dagar sedan 1 januari. Detta kan användas för att jämföra om två datum ligger på samma dag eller inte.
+## Deep Dive
 
-## Djupdykning
+Vid jämförelse av datum är det viktigt att tänka på att datumet måste formateras på rätt sätt för att kunna jämföras korrekt. Om man till exempel jämför ett datum i formatet "yyyymmdd" med ett datum i formatet "ddmmyyyy" kommer jämförelsen inte att fungera som väntat. Det är också viktigt att ange tider vid jämförelser om man vill inkludera det i resultatet.
 
-För mer avancerade jämförelser kan man använda `date` kommandot tillsammans med andra kommandon som `cut` och `awk` för att extrahera specifika delar av datumet och jämföra dem med varandra. Till exempel kan man använda `cut` för att extrahera månad, dag och år från två olika datum och sedan jämföra dem med hjälp av `awk`.
+För att jämföra två datum i ett skript, är det också viktigt att ta hänsyn till variabeltyper. Om både variabelna är i formatet "mmmddyyyy" kan jämförelsen se annorlunda ut än om ena variabeln är i formatet "yyyy-mm-dd". Att förstå variabeltyper kan hjälpa till att undvika felaktiga datumjämförelser.
 
 ## Se även
 
-- [Linuxize: How to Compare Dates in Bash](https://linuxize.com/post/how-to-compare-dates-in-bash/)
-- [Cyberciti: Bash Shell: Compare Numbers](https://www.cyberciti.biz/faq/bash-compare-numbers/)
+- [Bash Guide - Date Commands](https://bash.cyberciti.biz/guide/Month,_weekday,_year_(_etc.)_in_simple_output_format)
+- [Bash Reference Manual - Shell Arithmetic](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Arithmetic)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Swift recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-"Deleting characters matching a pattern" is a common task in Swift programming, especially when dealing with user input or text manipulation. Knowing how to efficiently delete these characters can save you time and frustration in your coding process.
+## Why
+Deleting characters from a string is a common task in programming, especially when dealing with user input or manipulating data. Using a pattern to delete specific characters can make the task more efficient and precise, saving time and reducing errors.
 
-##How To
-To delete characters matching a pattern, we can use the `replacingOccurrences(of:with:options:range:)` method available in the `NSString` class. It takes in 4 parameters: the pattern to be matched, the replacement string, options for the matching behavior, and the range of text to search within. Let's look at an example:
+## How To
+To delete characters from a string using a pattern in Swift, we can use the `replacingOccurrences(of:with:options:range:)` method of the `String` class. The syntax for this method is as follows:
 
-//Assuming we have the string "Hello, world!" and we want to delete all the vowels
+```Swift
+str.replacingOccurrences(of: pattern, with: replacement, options: options, range: range)
+```
+
+- `str` is the original string from which we want to delete characters.
+- `pattern` is the pattern of characters we want to delete.
+- `replacement` is the replacement string that will replace the deleted characters.
+- `options` are the options for the matching behavior, such as case-insensitive or regular expression matching (provided as a `String.CompareOptions` value).
+- `range` is the range of the original string where we want to perform the deletion. If not provided, it defaults to the entire string.
+
+For example, let's say we have a string `str` with the value "Hello, world!". If we want to delete all the vowels from this string, we can do so with the following code:
+
+```Swift
 let str = "Hello, world!"
+let pattern = "[aeiouAEIOU]"
+let options: String.CompareOptions = [.regularExpression, .caseInsensitive]
+let result = str.replacingOccurrences(of: pattern, with: "", options: options)
+print(result) // Hll, wrld!
+```
 
-//We use the `replacingOccurrences` method and specify "aeiou" as the pattern to be matched
-let newStr = str.replacingOccurrences(of: "aeiou", with: "", options: [.caseInsensitive], range: nil)
+As we can see, the vowels have been successfully deleted from the string and the resulting string is printed with only the consonants remaining.
 
-//Our output will be "Hll, wrld!" since all the vowels have been deleted
+## Deep Dive
+The `replacingOccurrences(of:with:options:range:)` method uses regular expressions to match the pattern and delete the corresponding characters from the string. Regular expressions are powerful tools for pattern matching, but can be difficult to understand at first.
 
-It's important to note that the `options` parameter allows us to specify any additional matching options, such as ignoring case sensitivity. The `range` parameter is optional and can be used to specify a specific range of text to search within.
+In our example, the pattern used was "[aeiouAEIOU]", which represents a character class for all vowels in both lowercase and uppercase. The `options` parameter specifies that we want to perform a case-insensitive regular expression match.
 
-##Deep Dive
-Behind the scenes, the `replacingOccurrences` method is actually using regular expressions to match the given pattern. This gives us a lot of flexibility in choosing the characters to be deleted. For example, we can use the `CharacterSet` class to specify a set of characters to be matched, instead of providing a specific string of characters. This is useful when dealing with user input that may vary in formatting.
+If the `options` parameter is not provided, the method will default to case-sensitive exact matching. This means that only the characters in the pattern will be deleted, and the case of the characters in the string will be preserved. For example, if we use the same code as above but omit the `options` parameter, the result will be "HllO, wrlD!".
 
-Another important aspect to consider is the performance of using regex. While it is a powerful tool, it can also be computationally expensive. Thus, it's important to test and optimize your code for efficient execution.
+Regular expressions can be complex, but they provide a powerful way to match and manipulate patterns in strings. For a deeper dive into regular expressions in Swift, check out Apple's documentation on [Regular Expressions in Swift](https://developer.apple.com/library/archive/documentation/General/Reference/SwiftStandardLibraryReference/StringStructure.html#//apple_ref/swift/struct/RegularExpression).
 
-##See Also
-- Apple Documentation on `replacingOccurrences(of:with:options:range:)`: https://developer.apple.com/documentation/foundation/nsstring/1411675-replacingoccurrences
-- A Beginner's Guide to Regular Expressions in Swift: https://www.raywenderlich.com/5769044-regular-expressions-tutorial-getting-started
-- Improve Your Swift Code Using NSRegularExpression: https://medium.com/pretty-swifty/improve-your-swift-code-using-nsregularexpression-bea619c422d3
+## See Also
+- [Apple Developer Documentation for String](https://developer.apple.com/documentation/swift/string)
+- [A Beginner's Guide to Regular Expressions in Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial) 
+- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

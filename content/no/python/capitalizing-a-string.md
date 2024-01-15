@@ -1,6 +1,7 @@
 ---
-title:                "Python: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Å Kapitalisere en Streng"
+html_title:           "Python: Å Kapitalisere en Streng"
+simple_title:         "Å Kapitalisere en Streng"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,45 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å gjøre en bokstav i en streng stor har mange bruksområder i Python-programmering. Det kan være nyttig når du ønsker å lage en tittel, for eksempel "Hei, dette er tittelen min". Det kan også være nyttig når du jobber med tekstbehandling og trenger å formatere teksten din.
+Det å kapitalisere en streng er en vanlig operasjon i programmering som gjør at du kan endre skrivemåten til en tekststreng til stor bokstav i begynnelsen av hvert ord. Dette kan være nyttig for å forbedre lesbarheten og presentasjonen av tekst i et program.
 
-## Hvordan
+## Hvordan gjøre det
 
-Det er veldig enkelt å gjøre en bokstav i en streng stor i Python. Alt du trenger å gjøre er å bruke metoden "upper()" på strengen du ønsker å endre. La oss se et eksempel:
+For å kapitalisere en streng i Python, kan du bruke den innebygde funksjonen `capitalize()`. Denne funksjonen tar ikke inn noen argumenter og returnerer den samme strengen med stor forbokstav i begynnelsen. La oss se på et eksempel:
 
-```python
-navn = "ikke store bokstaver"
-print(navn.upper())
+```Python
+streng = "dette er en teststreng"
+print(streng.capitalize())
 ```
 
-Dette vil gi følgende utskrift:
-
-```python
-IKKE STORE BOKSTAVER
+Eksempelutgang:
+```
+Dette er en teststreng
 ```
 
-Som du kan se, gjør "upper()" metoden alle bokstavene i strengen vår store. Men hva om vi bare ønsker å gjøre den første bokstaven stor? Da kan vi bruke metoden "capitalize()":
+Du kan også bruke metoden `title()` for å kapitalisere hvert ord i en streng, ikke bare den første bokstaven:
 
-```python
-navn = "bare den første bokstaven"
-print(navn.capitalize())
+```Python
+streng = "gjør DETTE til en TITTEL"
+print(streng.title())
 ```
 
-Dette vil gi følgende utskrift:
-
-```python
-Bare den første bokstaven
+Eksempelutgang:
 ```
-
-Som du kan se, gjorde "capitalize()" metoden kun den første bokstaven i strengen vår stor. Dette er nyttig når du ønsker å formatere teksten din på en bestemt måte.
+Gjør Dette Til En Tittel
+```
 
 ## Dypdykk
 
-Nå som du har lært hvordan du kan gjøre bokstaver store i en streng, la oss se litt dypere på hvordan dette fungerer. I Python, er bokstaver og symboler bare tall som representerer dem i ASCII-tabellen. Dermed, når du bruker "upper()" eller "capitalize()" metoden, endres disse tallene til de som representerer store bokstaver i ASCII-tabellen.
+Det finnes også andre måter å kapitalisere en streng på i Python, som for eksempel metoden `upper()` som gjør alle bokstavene i strengen til store bokstaver. Det er også mulig å bruke `capitalize()` eller `title()` på en del av en streng ved å bruke indeksering eller slicing. For eksempel:
 
-En annen ting å merke seg er at disse metodene bare fungerer på bokstaver, og ikke på tall eller andre symboler. Du vil også merke at disse metodene ikke endrer selve strengen, men returnerer en ny streng med endringene. Det betyr at du må lagre den endrede strengen i en variabel for å bruke den senere i koden din.
+```Python
+streng = "dette er en teststreng"
+print(streng[0].upper() + streng[1:])
+```
+
+Eksempelutgang:
+```
+Dette er en teststreng
+```
+
+Nå som du vet hvordan du kan kapitalisere en streng i Python på forskjellige måter, kan du begynne å gjøre programmene dine mer leselige og profesjonelle.
 
 ## Se også
 
-- [Python strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [ASCII table](https://www.asciitable.com/)
+- [Python dokumentasjon for `capitalize()`](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Python dokumentasjon for `title()`](https://docs.python.org/3/library/stdtypes.html#str.title)
+- [Python dokumentasjon for `upper()`](https://docs.python.org/3/library/stdtypes.html#str.upper)

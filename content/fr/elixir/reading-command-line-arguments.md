@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: La lecture des arguments de ligne de commande"
-simple_title:         "La lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Elixir: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,45 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les arguments de ligne de commande sont un élément essentiel de la programmation en Elixir. Dans cet article, nous allons explorer pourquoi la lecture des arguments de ligne de commande est importante et comment le faire efficacement.
+Êtes-vous fatigué de toujours avoir à modifier votre code pour tester différentes valeurs d'entrée? Ou peut-être venez-vous de découvrir Elixir et voulez en savoir plus sur la lecture des arguments de ligne de commande? Dans cet article, nous allons explorer comment lire efficacement les arguments de ligne de commande en utilisant Elixir, afin de faciliter votre expérience de développement.
 
 ## Comment faire
 
-La lecture des arguments de ligne de commande en Elixir est un processus simple et rapide. Tout d'abord, nous devons inclure le module `OptionParser` dans notre code :
+Pour commencer, nous allons créer un projet Elixir simple en utilisant Mix, l'outil de build d'Elixir. Ouvrez votre terminal et exécutez les commandes suivantes:
 
-```Elixir
-import OptionParser
+```
+mix new cli_args
+cd cli_args
 ```
 
-Ensuite, nous pouvons définir nos options et spécifier les valeurs attendues :
+Cela créera un nouveau dossier `cli_args` contenant un fichier `mix.exs` et un dossier `lib`. Nous allons travailler dans le dossier `lib` pour cet exemple.
 
-```Elixir
-OptionParser.parse(
-  [ "-f", "--file NAME", :string ],
-  [ "-v", "--verbose", :boolean ],
-  [ "-h", "--help" ]
-)
+Maintenant, nous allons ajouter une fonction `setup_cli` à notre module `CliArgs` qui va lire les arguments de ligne de commande. Pour cela, nous allons utiliser les modules `System` et `OptionParser` d'Elixir. Voici à quoi cela ressemble:
+
+```
+defmodule CliArgs do
+  def setup_cli do
+    system_args = System.argv()
+    args = OptionParser.parse(system_args)
+
+    # Faites quelque chose avec les arguments ici...
+  end
+end
 ```
 
-Dans cet exemple, nous définissons trois options : `--file` pour spécifier le nom du fichier, `--verbose` pour activer le mode bavard et `--help` pour afficher l'aide. Nous pouvons également définir une liste d'options par défaut à utiliser si aucun argument n'est fourni.
+La fonction `System.argv()` nous donne une liste des arguments passés à notre script lors de son exécution. Nous utilisons ensuite `OptionParser` pour parser ces arguments et les transformer en un format plus gérable.
 
-Ensuite, nous pouvons récupérer les arguments en utilisant la fonction `parse` de `OptionParser` :
+Pour référence, voici la structure de notre projet jusqu'à présent:
 
-```Elixir
-{ arguments, options } = OptionParser.parse!(System.argv)
+```
+.
+├── lib
+│   └── cli_args.ex
+└── mix.exs
 ```
 
-Nous pouvons ensuite accéder aux valeurs des arguments grâce à `options` ou `arguments` en fonction de notre implémentation.
+Enfin, nous allons exécuter notre fonction `setup_cli` en l'appelant depuis `mix`. Dans votre terminal, exécutez la commande suivante:
 
-## Deep Dive
+```
+mix run -e "CliArgs.setup_cli"
+```
 
-La raison pour laquelle la lecture des arguments de ligne de commande est importante en Elixir est qu'elle nous permet de fournir des options à notre programme au moment de l'exécution. Cela signifie que nous pouvons personnaliser le comportement de notre programme en fonction des données fournies par l'utilisateur.
+Voici un exemple de sortie pour cette commande avec quelques arguments:
 
-De plus, la lecture des arguments de ligne de commande est un moyen efficace de traiter les arguments de manière structurée. Grâce à `OptionParser`, nous pouvons spécifier le type de données attendu pour chaque option, ce qui facilite la manipulation des arguments dans notre code.
+```
+$ mix run -e "CliArgs.setup_cli" --message "Hello World" --name "John"
+[
+  message: "Hello World",
+  name: "John"
+]
+```
+
+Et voilà! Nous avons réussi à lire efficacement les arguments de ligne de commande en utilisant Elixir.
+
+## Plongée profonde
+
+Maintenant que nous avons vu un exemple fonctionnel de lecture d'arguments de ligne de commande en utilisant Elixir, explorons quelques astuces supplémentaires pour en tirer le meilleur parti.
+
+Tout d'abord, la fonction `OptionParser.parse` prend en option un deuxième argument, qui spécifie la structure des arguments attendus. Cela peut être utile si vous avez besoin d'arguments de types spécifiques ou si vous souhaitez spécifier des arguments obligatoires. Vous pouvez en savoir plus sur les options disponibles dans la documentation officielle d'Elixir pour `OptionParser`.
+
+Deuxièmement, vous pouvez également utiliser `OptionParser` pour afficher une aide pour votre script en cas de mauvaise utilisation. Cela peut être fait en ajoutant une clause `else` à votre fonction `setup_cli` qui appelle `OptionParser.help` avec un message d'erreur approprié.
+
+Enfin, si vous travaillez avec des arguments plus complexes, vous pouvez utiliser `OptionParser.parse!`, qui lève une erreur si l'un des arguments ne correspond pas à la structure spécifiée. Cela peut vous aider à identifier rapidement les problèmes avec vos arguments lors du développement.
 
 ## Voir aussi
 
-- [Documentation d'OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
-- [Blog post sur la manipulation des arguments de ligne de commande en Elixir](https://www.pluralsight.com/guides/handling-command-line-options-elixir)
-
-Merci d'avoir lu ! N'hésitez pas à explorer d'autres fonctionnalités d'Elixir pour améliorer votre expérience de programmation.
+- [Documentation officielle d'Elixir sur OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Exemple de projet Elixir utilisant OptionParser](https://github.com/elixir-lang/elixir/blob/master/examples/option_parser.ex)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Capitalizzare una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "Rust: Capitalizzare una stringa"
 simple_title:         "Capitalizzare una stringa"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Capitalizzare una stringa è un'operazione comune quando si lavora con le stringhe in molti linguaggi di programmazione. Ci sono diverse situazioni in cui potresti aver bisogno di capitalizzare una stringa, come ad esempio per rendere uniformi i dati inseriti dall'utente o per confrontare due stringhe in modo case-insensitive.
+Se stai cercando un modo semplice e veloce per convertire una stringa in maiuscolo, allora il linguaggio Rust ha la soluzione perfetta per te. Con la sua sintassi chiara e potente, capitalizzare una stringa in Rust è facile e intuitivo.
 
 ## Come Fare
 
-Per capitalizzare una stringa in Rust, puoi utilizzare il metodo `to_uppercase` della struttura di dati `String`. Basta passare la stringa che si desidera capitalizzare come argomento e assegnare il risultato a una nuova variabile. Ad esempio:
+Per capitalizzare una stringa in Rust, è necessario utilizzare il metodo `to_ascii_uppercase()`. Ecco un esempio di come utilizzarlo:
 
 ```Rust
-let stringa = String::from("hello world");
-let stringa_capitalizzata = stringa.to_uppercase();
-println!("{}", stringa_capitalizzata); // output: HELLO WORLD
-```
-
-In questo esempio, abbiamo dichiarato una variabile `stringa` che contiene la stringa "hello world" e poi abbiamo chiamato il metodo `to_uppercase` sulla variabile, assegnando il risultato alla variabile `stringa_capitalizzata`. Infine, abbiamo stampato la stringa capitalizzata utilizzando il metodo `println`.
-
-Puoi anche capitalizzare solo la prima lettera di una stringa utilizzando il metodo `capitalize`, che funziona allo stesso modo.
-
-```Rust
-let nome = String::from("marco");
-let nome_capitalizzato = nome.capitalize();
-println!("{}", nome_capitalizzato); // output: Marco
+let str = "ciao mondo";
+let str_in_maiuscolo = str.to_ascii_uppercase();
+println!("{}", str_in_maiuscolo); // stampa "CIAO MONDO"
 ```
 
 ## Approfondimento
 
-È importante notare che il metodo `to_uppercase` e `capitalize` non modificano direttamente la stringa originale, ma restituiscono una nuova stringa con la lettera maiuscola o solo la prima lettera in maiuscolo. Ciò significa che è necessario assegnare il risultato del metodo a una nuova variabile o sovrascrivere la stringa originale per utilizzare la versione capitalizzata.
+In Rust, le stringhe sono immutabili, il che significa che una volta definita una stringa, non è possibile modificarla direttamente. Invece, dobbiamo utilizzare metodi come `to_ascii_uppercase()` per creare una nuova stringa con la lettera maiuscola.
 
-Inoltre, è possibile specificare una lingua specifica come parametro per il metodo `to_uppercase` per garantire che le lettere accentate siano capitalizzate correttamente.
+È importante notare che questo metodo funziona solo per le stringhe ASCII, quindi se la tua stringa contiene caratteri unicode, dovrai utilizzare il metodo `to_uppercase()` invece di `to_ascii_uppercase()`.
 
-```Rust
-let stringa = String::from("ciao");
-let stringa_capitalizzata = stringa.to_uppercase(Some(Locale::Language("it".parse().unwrap())))
-println!("{}", stringa_capitalizzata); // output: CIAO
-```
+Inoltre, è possibile specificare un alfabeto locale per la conversione della stringa con il metodo `to_uppercase_with_locale()`, che accetta come parametro il codice del paese (ad esempio "IT" per l'Italia).
 
 ## Vedi Anche
 
-- [La documentazione ufficiale di Rust per il metodo `to_uppercase`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [Ulteriori informazioni su `String` e i suoi metodi](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Una guida su come manipolare le stringhe in Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)
+Per ulteriori informazioni sulle stringhe in Rust, puoi consultare la documentazione ufficiale [qui](https://doc.rust-lang.org/std/string/index.html). Per imparare altre funzionalità utili del linguaggio, puoi consultare la nostra guida su [Come iniziare con Rust](https://www.digitalocean.com/community/tutorials/how-to-get-started-with-rust).

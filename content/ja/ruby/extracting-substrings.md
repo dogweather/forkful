@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 部分文字列の抽出"
-simple_title:         "部分文字列の抽出"
+title:                "「部分文字列を抽出する」"
+html_title:           "Ruby: 「部分文字列を抽出する」"
+simple_title:         "「部分文字列を抽出する」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-サブストリングを抽出することのメリットはたくさんあります。例えば、大きな文字列から特定の部分を取り出したい場合や、特定の文字列を検索して置換する場合に役立ちます。また、文字列の処理を行う際にも必要不可欠です。サブストリングを抽出することは、より効率的なプログラミングを行うための重要なスキルです。
+サブストリングを抽出することの利点は何でしょうか？それは、与えられた文字列から特定の部分を簡単に取得することができるからです。文字列操作をする際に、サブストリングを抽出することが非常に便利です。
 
-## 使い方
+## 抽出の方法
 
-サブストリングを抽出する方法はいくつかありますが、ここではRubyのStringクラスのメソッドである`#slice`を使用する方法を紹介します。まずは以下の例をご覧ください。
-
-```ruby
-str = "こんにちは、世界！"
-
-# 文字列の先頭から3文字目までを抽出
-p str.slice(0,3) #=> "こんにちは"
-
-# 3文字目以降を抽出
-p str.slice(3..-1) #=> "、世界！"
+```Ruby
+str = "今日はいい天気です。"
+puts str[0..2] # 「今日」が出力される
+puts str[6..8] # 「いい天気」が出力される
 ```
 
-`#slice`メソッドは、引数として抽出したい文字列の範囲を指定します。上の例では、0から3文字目までを抽出するように指定しています。また、`#slice`メソッドでは、文字列の一部を置き換えることもできます。
+サブストリングを抽出するには、文字列のインデックスを使用します。上記の例では、str[開始インデックス..終了インデックス]という形式で抽出しています。ここで注意する点は、終了インデックスの数値は抽出される文字数に含まれることです。また、インデックスは0から始まることにも注意してください。
 
-```ruby
-str = "Hello, Ruby!"
+## ディープダイブ
 
-# HelloをGoodbyeに置き換える
-p str.slice!(0..4) #=> "Hello"
-p str #=> "Goodbye, Ruby!"
-```
+サブストリングの抽出には、実際にはさまざまな方法があります。最も基本的な方法は、文字列のインデックスを使用することですが、`slice()`や`substring()`などのメソッドを使用することもできます。また、正規表現を使用して抽出することも可能です。
 
-上記の例では、`#slice!`メソッドを使用してHelloを抽出し、代わりにGoodbyeに置き換えています。
+## ご参考までに
 
-## 深堀り
+- [Rubyドキュメント - Stringクラス](https://docs.ruby-lang.org/en/latest/String.html)
+- [Stringクラスメソッド一覧 - Qiita](https://qiita.com/chimu/items/8137743467ac97278f53) 
 
-Rubyでは、`#slice`メソッド以外にもサブストリングを抽出するための様々なメソッドが用意されています。例えば、`#slice!`メソッド以外にも`#partition`や`#scan`メソッドなどを使用することができます。また、正規表現を使用して任意の文字列を検索したり、変換したりすることもできます。
-
-サブストリングを抽出する方法は数多くありますので、自分のプログラムに最適なメソッドを選択してください。
-
-## 参考リンク
-
-- [RubyのStringクラスについて](https://docs.ruby-lang.org/ja/latest/class/String.html)
-- [Rubyで文字列を操作する方法](https://qiita.com/kazukimatsumoto/items/0d352e388f3973b3b272)
-- [Rubyにおけるサブストリングの抽出について](https://morizyun.github.io/blog/ruby-string-cut-sample)
+## 参考文献
+- https://docs.ruby-lang.org/en/latest/String.html
+- https://qiita.com/chimu/items/8137743467ac97278f53

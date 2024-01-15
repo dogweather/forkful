@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,49 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Are you looking for a way to easily organize and store data in your Arduino projects? Look no further than YAML! With this lightweight and versatile markup language, you can easily create human-readable data structures without worrying about the complexities of traditional programming languages.
+
+Are you looking for a more organized and readable way to store and work with data in your Arduino projects? Look no further than YAML! This simple yet powerful language allows you to structure your data in a human-friendly format, making it easier to understand and work with.
 
 ## How To
-To utilize YAML in your Arduino projects, follow these simple steps:
 
-1. Install the YAML library in your Arduino IDE by going to **Sketch > Include Libraries > Manage Libraries** and searching for "YAML."
-2. Import the library into your project by adding `#include <YAML.h>` at the top of your code.
-3. Create a YAML document by declaring a `YAMLDoc` object.
-4. Within the `setup()` function, add your data to the YAML document using the `add` method. For example: `yaml.add("name", "John");` This will create a key-value pair where the key is "name" and the value is "John."
-5. In the `loop()` function, use the `>>` operator to print the YAML document to the serial monitor. For example: `Serial << yaml;` This will output the entire YAML document to the serial monitor.
-6. You can also use the `get` method to retrieve specific data from the YAML document. For example: `String name = yaml.get("name");`
+The first step is to install the Arduino-ESP32 library, which includes a YAML parsing library called "yaml_ard".
 
-Here is an example of the full code:
-
+```Arduino
+#include "yaml_ard.h"
 ```
-ArduinoYAML yaml;
 
+Next, we need to create a YAML file to store our data. For example, let's say we have a file called "data.yaml" with the following content:
+
+```YAML
+name: Arduino
+version: 1.8.13
+platforms:
+  - AVR
+  - ARM
+  - ESP32
+```
+
+To access this data in our code, we can use the ```yaml_ard_parse()``` function, passing in the filename and a callback function to handle the data.
+
+```Arduino
 void setup() {
-  Serial.begin(9600);
-  YAMLDoc yaml;
-  yaml.add("name", "John");
-  Serial << yaml;
+  Serial.begin(9600); // initialize serial communication
+  yaml_ard_parse("data.yaml", handle_data); // parse YAML file and pass data to callback function
 }
 
-void loop() {
-  // ...other code
+void handle_data(yaml_ard_entry_t* entry) {
+  Serial.println(entry->name); // print "Arduino"
+  Serial.println(entry->version); // print "1.8.13"
+  Serial.println(entry->platforms[2]); // print "ESP32"
 }
 ```
 
-The output in the serial monitor would look like this:
-
-```
-name: John
-```
+As you can see, the data is now easily accessible through the ```entry``` variable. The example above also shows how to access nested data, in this case, the third element in the "platforms" array. 
 
 ## Deep Dive
-YAML has many advanced features that can make data organization even easier. For example, you can create nested data structures by using a combination of `add` and `beginNode` methods. You can also add arrays to your YAML document by using the `addArray` method.
 
-Additionally, YAML allows you to create references to existing data, making it easy to reuse the same data throughout your document. You can also include comments within your YAML document to provide additional context for your data.
+YAML is a flexible language and allows for different data types, including strings, integers, booleans, arrays, and objects. You can also add comments in your YAML file using the "#" symbol.
+
+Additionally, the ```yaml_ard_parse()``` function returns an error code, which can be used to handle any parsing errors. You can also create your own custom callback functions to handle specific data types.
 
 ## See Also
-To learn more about working with YAML in Arduino, check out these resources:
 
-- [Official ArduinoYAML library documentation](https://github.com/inyei/ArduinoYAML/wiki)
-- [Getting started with YAML and Arduino](https://create.arduino.cc/projecthub/inyei/managing-data-with-yaml-ad5047)
-- [Intro to YAML: Easy configuration and data storage](https://learn.adafruit.com/advanced-serial-console-on-mac-and-linux/yaml-configuration-files)
+- [YAML Official Website](https://yaml.org/)
+- [Arduino-ESP32 Library](https://github.com/espressif/arduino-esp32)

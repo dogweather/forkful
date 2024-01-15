@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Gleam: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Å konkatenering av strenger (string concatenation) er en vanlig og viktig teknikk i programmering. Det lar oss kombinere flere strenger til en enkelt streng, som er nyttig for å lage dynamiske tekster og å formatere data på en lesbar måte.
 
-Hvorfor concatenate strenger i Gleam? Det er et veldig vanlig problem å måtte kombinere flere små strenger for å lage en større. Dette kan være nyttig for ting som å formatere tekst, lage navn og generelt manipulere data.
-
-## Hvordan
-
-Du kan enkelt concatenate strenger i Gleam ved å bruke "+" operatoren. La oss si at vi har to strenger "Hei" og "verden", og vi ønsker å kombinere dem for å få "Hei verden". Dette er hvordan det ser ut i Gleam:
+# Hvordan gjør du det
+Å konkatenering av strenger i Gleam er enkelt med bruk av operatorer og funksjoner. La oss se på noen eksempler:
 
 ```Gleam
-let setning = "Hei" + "verden"
+let navn = "Per"
+
+let velkomst = "Hei " ++ navn
+
+io.println(velkomst)
 ```
 
-Det er viktig å merke seg at strenger i Gleam er immutabel, noe som betyr at de ikke kan endres etter at de er opprettet. Dette betyr at når vi concatenate to strenger, oppretter vi egentlig en helt ny streng.
+Output: Hei Per
 
-Vi kan også concatenate flere strenger sammen ved å bruke flere "+" operatører. For eksempel, hvis vi ønsker å legge til "!" til "Hei verden", kan vi gjøre det på følgende måte:
+Vi kan også legge til konstanter eller tall i strenger:
 
 ```Gleam
-let setning = "Hei" + "verden" + "!"
+let alder = 25
+
+let info = "Jeg er " ++ alder ++ " år gammel"
+
+io.println(info)
 ```
 
-La oss se på et eksempel med faktiske data. Vi har en funksjon som tar inn et navn og returnerer en hilsen med navnet inkludert:
+Output: Jeg er 25 år gammel
+
+Dette fungerer også med flere variabler eller konstanter på en gang:
 
 ```Gleam
-fn hilsen(navn) {
-  let hilsen = "Hei " + navn + ", velkommen til Gleam-bloggen!"
-  hilsen
-}
+let fornavn = "Ola"
+let etternavn = "Nordmann"
+
+let navn = fornavn ++ " " ++ etternavn
+
+io.println(navn)
 ```
 
-Når vi kaller denne funksjonen med navnet "Per", vil vi få følgende output:
+Output: Ola Nordmann
 
-```
-Hei Per, velkommen til Gleam-bloggen!
-```
+# Deep Dive
+Gleam har også en innebygd funksjon for å konkatenering av strenger, kalt `String.concat`. Denne funksjonen tar inn en liste av strenger og konkatenerer dem sammen til en enkelt streng. Dette kan være nyttig hvis du trenger å konkatenerer et større antall strenger.
 
-## Deep Dive
+Du kan også bruke `String.append` for å legge til en streng på slutten av en annen streng.
 
-Når vi concatenate en streng i Gleam, hva skjer egentlig under overflaten? Når vi bruker "+" operatoren, bruker Gleam faktisk en funksjon kalt "add_strings" som tar inn to strenger som argumenter og returnerer en ny concatenert streng. Dette er en optimalisering som forbedrer ytelsen ved å unngå å lage unødvendige kopier av strenger.
+Vi må også være oppmerksomme på at konkatenering av strenger kan ha en effekt på ytelsen til programmet vårt. Det er derfor viktig å vurdere om det er den beste løsningen for å kombinere tekster i ditt spesifikke tilfelle.
 
-Videre, hvis vi bruker "+" operatoren i en rekke sammenhenger, vil Gleam automatisk skrive om det til en eneste "add_strings" funksjonskall. Dette forenkler koden og gjør den mer effektiv.
-
-## Se også
-
-- [Offisiell Gleam dokumentasjon for å concatenate strenger](https://gleam.run/book/core/string.html#concatenation)
-- [Gleam-community forum](https://gleam.discourse.group/) for å dele og spørre om kodeeksempler
-- [Gleam på GitHub](https://github.com/gleam-lang/gleam) for å følge videre utvikling og delta i samfunnet
+# Se også
+- [Offisiell Gleam dokumentasjon](https://gleam.run/)
+- [Gleam 101: En innføring i Gleam programmeringsspråk](https://medium.com/gleam-lang/gleam-101-a21f7c983bc5)
+- [10 måter å bli bedre i Gleam på](https://medium.com/gleam-lang/10-ways-to-become-better-at-gleam-e29baf74150d)

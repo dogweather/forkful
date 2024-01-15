@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Haskell recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,34 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's digital age, information is readily available at our fingertips. We can access any website or webpage with just a few clicks. As a programmer, there may come a time when you need to download a web page for data extraction, analysis, or simply for offline reading. This is where using Haskell for downloading web pages can come in handy. With its functional and powerful features, Haskell provides an elegant solution for this task.
+Have you ever wanted to download a web page and extract information from it? Maybe you want to create a web scraper or build a tool to analyze website data. By learning how to download a web page in Haskell, you can easily access and manipulate online content for various purposes.
 
 ## How To
 
-To download a web page in Haskell, we need to use the "Network.HTTP" module. This module provides functions for making HTTP requests and handling responses. Let's take a look at a simple example:
+In Haskell, we can use the `HTTP` library to send HTTP requests and retrieve web pages. First, we will need to import the necessary modules:
 
-```
-import Network.HTTP
-
--- Downloads a web page and prints the response body
-main = do
-  response <- simpleHTTP (getRequest "https://example.com")
-  body <- getResponseBody response
-  print body
+```Haskell
+import Network.HTTP.Simple -- for making HTTP requests
+import qualified Data.ByteString.Lazy.Char8 as L8 -- for working with byte strings
 ```
 
-In the above code, we import the "Network.HTTP" module and use its "simpleHTTP" function to make a GET request to the specified URL. We then use the "getResponseBody" function to extract the response body from the "response" variable. Finally, we print the body to the console. Running this code will download and print the source code of the webpage.
+Next, we can use the `httpLBS` function to make a GET request to a specific URL. This will return a lazy byte string representing the web page content.
 
-We can also add more functionality to our code, such as specifying headers, handling errors, or processing the response data. The Haskell community has developed many useful packages for dealing with web requests, such as "wreq" and "http-conduit". These packages provide more advanced features and make working with HTTP requests even easier.
+```Haskell
+response <- httpLBS "https://www.example.com"
+```
+
+We can then use the `getResponseBody` function to extract the byte string from the response.
+
+```Haskell
+body <- getResponseBody response
+```
+
+Here, `body` will contain the raw HTML of the web page. We can use the `L8.unpack` function to convert the byte string into a regular string for easier manipulation.
+
+```Haskell
+let html = L8.unpack body
+```
+
+We can then use tools like `regex` or `tagsoup` to extract specific information from the HTML.
 
 ## Deep Dive
 
-Behind the scenes, the "Network.HTTP" module uses a data type called "Request". This data type represents an HTTP request and contains information such as the request method, headers, and body. The "simpleHTTP" function takes a "Request" as its parameter and returns an "IO" action that contains the response. The "Response" data type, on the other hand, represents an HTTP response and contains the response status code, headers, and body.
+When making an HTTP request, there are various options and parameters that can be set, such as setting headers or retrieving specific parts of the response. The `Network.HTTP.Simple` library provides many useful functions for handling these options. For a more in-depth tutorial on using this library, check out the [HTTP Simple documentation](https://hackage.haskell.org/package/http-client).
 
-Haskell's strong type system and purity make it an excellent choice for web-related tasks. By utilizing monads and powerful data types, we can create robust and maintainable code for downloading web pages.
+See Also
 
-## See Also
-
-- [Network.HTTP documentation](https://hackage.haskell.org/package/HTTP)
-- [wreq package on Hackage](https://hackage.haskell.org/package/wreq)
-- [http-conduit package on Hackage](https://hackage.haskell.org/package/http-conduit)
+- [HTTP Simple Documentation](https://hackage.haskell.org/package/http-client)
+- [Haskell Regex Library](https://hackage.haskell.org/package/regex)
+- [Haskell TagSoup Library](https://hackage.haskell.org/package/tagsoup)

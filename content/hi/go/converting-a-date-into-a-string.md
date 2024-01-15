@@ -1,6 +1,7 @@
 ---
-title:                "Go: एक तारीख को स्ट्रिंग में परिवर्तित करना।"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना।"
+title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "Go: तारीख को स्ट्रिंग में रूपांतरण करना"
+simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -9,10 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
-किसी भी वेब या मोबाइल ऐप्लिकेशन को डेटा को संगठित रूप में प्रदर्शित करने के लिए डेटा को स्ट्रिंग में रूपांतरित करना आवश्यक हो सकता है। अधिक रूप से देखा जाए तो एक तारीख को स्ट्रिंग में रूपांतरित करने की आवश्यकता उसके प्रशंसकों के साथ संवाद के रूप में भी हो सकती है।
+## Kyun
+Kya aapne kabhi socha hai ki aapke computer ya mobile mein dikhayi jane wali tarikh aur samay, humare najdiki environment mein kahan se aati hai? Isse judi ek aur zaroori sawal hai, ki kaise hum apne code mein dates ko numbers ke jagah alag alag format mein represent kar sakte hain? Yeh sab possible hai *Converting a date into a string* ka use karke. Is article mein hum aapko batayenge ki Go language mein hum date ko string mein kaise convert kar sakte hain aur iski kyuki hai.
 
-## कैसे करें
+## Kaise Kare
 ```Go
 package main
 
@@ -22,12 +23,28 @@ import (
 )
 
 func main() {
-	date := time.Now()
-	str := date.Format("01-02-2006")
-	fmt.Println(str)
+	// Current date and time
+	t := time.Now()
+	// Date to string conversion
+	dateStr := t.Format("01-02-2006")
+	// Output
+	fmt.Printf("Converted date string: %s", dateStr)
 }
 ```
-इस कोड के माध्यम से आप आज की तारीख को स्ट्रिंग में रूपांतरित कर सकते हैं। यहां "01-02-2006" तारीख को डिफॉल्ट रूप से प्रस्तुत करता है लेकिन आप अपनी पसंद के अनुसार रूपांतरित कर सकते हैं। "01" महीने को दर्शाता है, "02" दिन और "2006" वर्ष। उदाहरण के लिए, अगर आप "02-01-06" का उपयोग करते हैं तो आपको "02-01-16" के रूप में तारीख मिलेगी। आप अपनी आवश्यकतानुसार रूपांतरण नियंत्रित कर सकते हैं।
+Is code mein hum `time` library ka use karke current date and time ko lete hain. Uske baad hum `Format()` function ka use karke date ko string mein convert kar lete hain. Yahan `"01-02-2006"` format "01" ko month ke liye, "02" ko date ke liye aur "2006" ko year ke liye define karta hai. Aap is format ko apne according modify kar sakte hain. Iske baad hum uss string ko print karte hain.
 
-## गहराई में जाओ
-तारीख को स्ट्रिंग में रूपांतरित करने के लिए, Go में "time" पैकेज का उपयोग किया जाता है। यह पैकेज तारीख और समय को प्रबंधित करने के लिए बहुत सारे उपयोगी फंक्शन प्रदान करता है। आप अपनी आवश्यकतानुसार उनमें से एक फंक्शन का उपयोग करके तारीख को स्ट्रिंग में रूपांतरित कर सकते हैं। दो अतिरिक्त अंकों के साथ डेटा को संगठित करने के ल
+Output:
+```Go
+Converted date string: 08-27-2021
+```
+
+## Deep Dive
+Jaise ki humne dekha, Go mein hum `time` library ka use karke date ko string mein convert kar sakte hain. Yeh conversion humari programming mein date and time ko display karne ke liye bahut useful hoti hai. Isse hum apne code ko user-friendly bana sakte hain. Ismein hum ek format specifier string ko expect karte hain jisse hum date aur time ko display kar sake. Ismein hum kuch predefined specifiers use kar sakte hain jaise "Mon", "Jan", "2006" etc. Lekin agar hame custom format chahiye toh hum `time` ke methods ka bhi use kar sakte hain jaise `t.Month()`, `t.Date()`, `t.Year()` etc.
+
+## Dekhiye Bhi
+- [Date and Time in Go](https://gobyexample.com/time)
+- [Working with Date and Time in Go](https://www.callicoder.com/golang-working-with-datetime/)
+- [Go Standard Library: Time](https://golang.org/pkg/time/)
+
+## Aakhir Mein
+Ummid hai ki aapko is article se Go language mein date ko string mein convert karne ka process samajh aa gaya hoga. Yadi aapko koi bhi sawal ho toh hume comment section mein pooch sakte hain. Happy Coding!

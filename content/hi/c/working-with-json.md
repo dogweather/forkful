@@ -1,6 +1,7 @@
 ---
-title:                "C: JSON के साथ काम करना"
-simple_title:         "JSON के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "C: Json के साथ काम करना"
+simple_title:         "Json के साथ काम करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-प्रयोक्ताओं के लिए जेसन (JSON) काम करने के कारण क्या है? 
+## क्यों
 
-जेसन (JSON) को संरचित करने और साबित करने के लिए दो तरह का प्रयोग किया जा सकता है। पहले, आप इसे एक कॉड ग्रीष्म (code snippets) के साथ सीख सकते हैं। इसके अलावा, जेसन (JSON) को ऐसे निर्देश तथा कार्य प्रस्तुत करते हैं जिससे आपको यह समझने में सहायता मिलेगी कि आप इसका प्रयोग कैसे करें। 
+JSON डेटा प्रोसेसिंग को करने से पहले, यह जानना जरूरी है कि इसका इस्तेमाल डेटा को आसान और संरचित रूप में संगठित करने के लिए होता है। यह डेटा इंटरएक्शन को सरल बनाने के लिए एक प्रैसेसिंग टूल के रूप में भी काम करता है।
 
-## क्यों:
-
-जेसन (JSON) एक आसान तरीके से पाठों और संरचनाओं को संगठित करने में मदद करता है। यह कई भाषाओं और विभिन्न एप्लिकेशन के साथ अपनी सामान्य तरीके से संयोजित होने के लिए सुविधाएं प्रदान करता है। इसलिए, यह आमतौर पर प्रोग्रामिंग के जरिए डेटा को पढ़ने और लिखने के लिए प्रयोग किया जाता है।
-
-## कैसे करें:
+## कैसे करें
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-#include <json.h>
+#include <json-c/json.h>
 
-int main() {
-    // Create a sample JSON object
-    char* json_string = "{\"name\": \"Hindi Reader\"}";
+int main(){
+  // डेटा बनाएं
+  json_object *sample_data = json_object_new_object();
+  json_object *name = json_object_new_string("John Doe");
+  json_object *age = json_object_new_int(25);
+  json_object *is_married = json_object_new_boolean(false);
 
-    // Parse the JSON string
-    json_object *obj = json_tokener_parse(json_string);
+  // डेटा को प्रिंट करें
+  printf("नाम: %s \nउम्र: %d \nशादीशुदा: %s", json_object_get_string(name), 
+                                        json_object_get_int(age), 
+                                        json_object_get_boolean(is_married) ? "हां": "नहीं");
 
-    // Get the value of the "name" key
-    json_object *name;
-    json_object_object_get_ex(obj, "name", &name);
+  // डेटा को फ्री करें
+  json_object_put(name);
+  json_object_put(age);
+  json_object_put(is_married);
+  json_object_put(sample_data);
 
-    // Print the value
-    printf("%s is learning about JSON!", json_object_get_string(name));
-
-    // Free the memory
-    json_object_put(obj);
-
-    return 0;
+  return 0;
 }
 ```
 
-आप ऊपर दिए गए कोड ग्रीष्म में देख सकते हैं कि हमने कैसे एक JSON स्ट्रिंग को बनाया, उसे उसे पार्स किया और उसमें से डेटा को प्राप्त किया। इस तरह से, आप भी अपने कोड में जेसन (JSON) का प्रयोग कर सकते हैं।
+आप ऊपर दिए गए कोड ब्लॉक को कॉपी-पेस्ट करके, एक प्रोग्राम चला सकते हैं जो नाम, उम्र और शादीशुदा होने की स्थिति के साथ एक्सट्रैक्ट किए गए जेसन डेटा को प्रिंट करेगा।
 
-## गहराई में खोज करें:
+## गहराई में समझें
 
-जेसन (JSON) में कुछ महत्वपूर्ण बातें जानने के लिए आप इसकी गहराई में खोज कर सकते हैं। यह एक लो
+जब आप जेसन दो या अधिक ऑब्जेक्ट्स को कम्पाइल करते हैं, तो आपको जेसन कोडिंग प्रणाली को समझने की आवश्यकता होती है। जेसन-सी बाइंडिंग आपको एक प्रोग्रामिंग भाषा की तरह डेटा को स्ट्रक्चरली बनाएं और एक पहनावा बेंट को इंटरफेस करता है। इसमें, आप जेसन जावास्क्रिप्ट से भिन्न होते हैं जो ब्राउज़र या वेबसाइट में उपयोग किया जाता है।
+
+## इस आलेख को और भी देखें
+
+- [JSON-सी गाइड](https://github.com/json-c/json-c/wiki)
+- [ज

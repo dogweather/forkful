@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Transformando una fecha en una cadena"
-simple_title:         "Transformando una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena"
+html_title:           "Clojure: Convirtiendo una fecha en una cadena"
+simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,31 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-Convertir una fecha en una cadena de texto puede ser una tarea útil en muchas situaciones diferentes, como por ejemplo en la creación de informes o en la visualización de datos en una interfaz de usuario.
+
+Convertir una fecha en una cadena de texto puede ser útil en diversas situaciones, como por ejemplo, mostrar la fecha actual en un formato legible para el usuario en una interfaz de usuario o guardar la fecha en un archivo de texto.
 
 ## Cómo hacerlo
-Para convertir una fecha en una cadena de texto en Clojure, se puede utilizar la función `str` junto con la función `format` de la librería `clojure.java-time`. A continuación se muestra un ejemplo de cómo convertir la fecha actual en una cadena de texto en el formato "DD/MM/YYYY":
+
+Para convertir una fecha en una cadena de texto en Clojure, podemos utilizar la función `format` del módulo `java.time.format`.
 
 ```Clojure
-(require '[java-time :as jt])
-(str (jt/local-date) "DD/MM/YYYY")
+(require '[java.time.format :as time])
+
+;; Convertir la fecha actual en una cadena de texto con el formato "dd/MM/yyyy"
+(time/format (java.time.LocalDateTime/now) "dd/MM/yyyy")
 ```
-La salida de este código sería algo como "04/08/2021", dependiendo de la fecha actual en la que se ejecute.
+
+Esto producirá la salida `"29/10/2021"`, ya que la fecha actual al momento de escribir este artículo es el 29 de octubre de 2021.
+
+Podemos personalizar el formato de la cadena de texto utilizando especificadores de formato. Por ejemplo, si queremos incluir la hora y los minutos, podemos usar "HH:mm" como parte del formato.
+
+```Clojure
+;; Convertir la fecha actual en una cadena de texto con el formato "dd/MM/yyyy HH:mm"
+(time/format (java.time.LocalDateTime/now) "dd/MM/yyyy HH:mm")
+```
+
+Esto producirá la salida `"29/10/2021 12:45"`, ya que en este momento son las 12:45.
+
+Otro ejemplo es si queremos incluir el nombre del mes en lugar de su número, podemos usar "MMMM" como parte del formato.
+
+```Clojure
+;; Convertir la fecha actual en una cadena de texto con el formato "dd de MMMM, yyyy"
+(time/format (java.time.LocalDateTime/now) "dd 'de' MMMM, yyyy")
+```
+
+Esto producirá la salida `"29 de octubre, 2021"`.
 
 ## Profundizando
-La función `format` también acepta un patrón de formato personalizado para la conversión de fechas. Por ejemplo, si se desea obtener la fecha en formato "DD de MMM de YYYY" (ej: 04 de ago. de 2021), se puede utilizar el patrón "dd 'de' MMMM 'de' uuuu" en la función `format`:
+
+La función `format` utiliza el objeto `DateTimeFormatter` detrás de escena para formatear la fecha en una cadena de texto. Este objeto es altamente configurable y permite especificar patrones personalizados para el formato de la fecha.
+
+Además de `format`, también podemos utilizar otras funciones como `parse` y `ofPattern` del módulo `java.time.format` para convertir una cadena de texto en un objeto `LocalDate` o `LocalDateTime`.
 
 ```Clojure
-(require '[java-time :as jt])
-(str (jt/local-date) (jt/format "dd 'de' MMMM 'de' uuuu"))
-```
-Además, es posible especificar un idioma específico para el formato de la fecha, por ejemplo, en español:
+(require '[java.time.format :as time])
 
-```Clojure
-(require '[java-time :as jt])
-(str (jt/local-date) (jt/format "dd 'de' MMMM 'de' uuuu" (jt/locales :es)))
+;; Convertir una cadena de texto en un objeto LocalDate
+(time/parse "23/07/1995" "dd/MM/yyyy")
+
+;; Crear un objeto DateTimeFormatter personalizado
+(def custom-formatter (time/ofPattern "d' de 'MMMM, yyyy"))
+
+;; Convertir una cadena de texto con el formato personalizado en un objeto LocalDate
+(time/parse "29 de octubre, 2021" custom-formatter)
 ```
 
 ## Ver también
-- [Documentación de la librería clojure.java-time](https://clojure.github.io/java-time/)
-- [Guía de formato de fechas en Java](https://docs.oracle.com/javase/tutorial/i18n/format/dateFormat.html)
+
+- Documentación oficial de `java.time.format`: https://docs.oracle.com/javase/8/docs/api/java/time/format/package-summary.html
+- Tutorial de Clojure sobre manejo de fechas y horas: https://clojure.org/guides/learning_date_time

@@ -1,5 +1,6 @@
 ---
-title:                "PHP: デバッグ出力の印刷"
+title:                "デバッグ出力の印刷"
+html_title:           "PHP: デバッグ出力の印刷"
 simple_title:         "デバッグ出力の印刷"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,43 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力を行うのか
+## なぜデバッグ出力を使うのか
 
-デバッグ出力は、プログラムのエラーを特定するための重要なテクニックです。エラーが発生した際にコード内の特定の場所で変数や処理の値を出力することで、問題を特定し解決することができます。
+デバッグ出力を使用することで、プログラムの実行時に変数の値や処理の流れを確認することができます。これにより、プログラムの実行中に発生したエラーやバグを特定し、修正することができます。
 
-## デバッグ出力の方法
+## デバッグ出力の使い方
 
-デバッグ出力は、```print_r()```や```var_dump()```などのPHPの組み込み関数を使用することで簡単に実現することができます。例えば、以下のように変数やオブジェクトを出力することができます。
+PHPでは、`echo`や`print`といった出力関数を使用して、デバッグ出力を行うことができます。例えば、以下のようなコードを書くことで、変数の値を確認することができます。
 
 ```PHP
 $number = 10;
-$obj = new stdClass();
-$obj->name = "John";
-print_r($number);
-var_dump($obj);
+
+// 変数の値を出力する
+echo $number;
 ```
 
-すると、以下のような出力が得られます。
+出力結果は以下のようになります。
+
+```
+10
+```
+
+また、`var_dump`や`print_r`を使用することで、より詳細なデバッグ出力を行うことができます。例えば、以下のようなコードを書くことで、配列の中身を確認することができます。
 
 ```PHP
-10
-object(stdClass)#1 (1) {
-  ["name"]=>
-  string(4) "John"
+$fruits = array('apple', 'orange', 'banana');
+
+// 配列の中身を出力する
+var_dump($fruits);
+```
+
+出力結果は以下のようになります。
+
+```
+array(3) {
+  [0]=>
+  string(5) "apple"
+  [1]=>
+  string(6) "orange"
+  [2]=>
+  string(6) "banana"
 }
 ```
 
-このように、変数の値やオブジェクトの構造を見ることで、エラーの原因を特定することができます。
+## デバッグ出力の深堀り
 
-## デバッグ出力の詳細
+デバッグ出力を行う際には、出力内容を見やすく整形することが重要です。しかし、出力したい情報が膨大な場合は、手動で整形するのは大変です。そこで、`print_r`や`var_dump`には、整形機能が備わっています。
 
-実際にデバッグ出力を行った際に、出力結果の意味を正しく理解することも重要です。PHPのドキュメントやオンラインのリソースを参考にして、出力結果がどのような意味を持つのかを学ぶことができます。また、デバッグ出力を行う際には、必要な部分のみを出力するようにコーディングすることも重要です。あまりにも多くの情報を出力すると、逆に問題の特定が難しくなってしまいます。
+また、デバッグ出力を行う際には、出力内容をファイルに書き出すこともできます。これにより、プログラムの状況をリアルタイムで把握することができ、より効率的なデバッグが可能になります。
 
-## さらに見る
+## 関連リンク
 
-参考になるリソースや関連するリンクを以下にまとめました。
-
-- PHPの```print_r()```関数のドキュメント：https://www.php.net/manual/en/function.print-r.php
-- PHPの```var_dump()```関数のドキュメント：https://www.php.net/manual/en/function.var-dump.php
-- PHPのデバッガーXdebugのドキュメント：https://xdebug.org/docs/
-- PHPストレージデバッガーのドキュメント：https://github.com/maximebf/php-debug/blob/master/README.md
+- [PHP公式ドキュメント - echo](https://www.php.net/manual/ja/function.echo.php)
+- [PHP公式ドキュメント - var_dump](https://www.php.net/manual/ja/function.var-dump.php)
+- [PHP公式ドキュメント - print_r](https://www.php.net/manual/ja/function.print-r.php)

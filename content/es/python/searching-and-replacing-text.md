@@ -1,5 +1,6 @@
 ---
-title:                "Python: Buscando y reemplazando texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "Python: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Python"
 category:             "Python"
@@ -10,77 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
+Todos sabemos lo tedioso que puede ser reemplazar repetidamente el mismo texto en un documento o archivo. Afortunadamente, Python ofrece una solución eficiente para automatizar este proceso.
 
-Si eres programador o trabajas con grandes cantidades de texto, es probable que en algún momento necesites realizar cambios masivos en tus archivos. En lugar de hacerlos manualmente uno por uno, Python ofrece una manera más eficiente de hacerlo utilizando la función de búsqueda y reemplazo.
-
-## Cómo
-
-Para comenzar, necesitamos tener un archivo de texto en el que deseamos realizar los cambios. En este ejemplo, utilizaremos un archivo llamado "texto.txt" con el siguiente contenido:
-
-```
-Este es un texto de ejemplo que necesitamos modificar para insertar palabras nuevas.
-Este archivo también contiene una línea que queremos eliminar por completo.
-Finalmente, queremos reemplazar todas las letras "e" con la letra "a".
-```
-
-Para buscar y reemplazar texto en este archivo, utilizaremos la función `.replace()` en conjunto con el método `.read()` para leer el contenido del archivo. El siguiente código muestra cómo hacerlo:
-
-```Python
-with open('texto.txt', 'r') as archivo:
-    contenido = archivo.read()
-    
-# Buscamos y reemplazamos la palabra "insertar" con "agregar"
-nuevo_contenido = contenido.replace('insertar', 'agregar')
-    
-# Eliminamos la línea que contiene la palabra "eliminamos"
-nuevo_contenido = nuevo_contenido.replace('eliminamos\n', '')
-    
-# Reemplazamos todas las letras "e" con la letra "a"
-nuevo_contenido = nuevo_contenido.replace('e', 'a')
-
-print(nuevo_contenido)
-```
-
-Al ejecutar este código, obtendremos el siguiente resultado:
-
-```
-Esta as un texto da axamplo que nacasitamos modifacar para insartar palabras nuavas.
-Finalmanta, quaramos ramplazar todas las latras "a" con la letra "m".
-```
-
-Como se puede ver, todas las palabras "insertar" se han reemplazado por "agregar", la línea con la palabra "eliminamos" se eliminó por completo y todas las letras "e" se han reemplazado por "a".
-
-## Deep Dive
-
-La función de búsqueda y reemplazo en Python es una herramienta muy útil para realizar cambios masivos en archivos de texto. Además de los ejemplos mencionados anteriormente, también es posible buscar y reemplazar patrones específicos utilizando expresiones regulares.
-
-Por ejemplo, si queremos reemplazar todas las palabras que comienzan con la letra "a" por "Python", podemos utilizar el siguiente código:
+## Cómo hacerlo
+Reemplazar texto con Python es bastante sencillo. Primero, importamos la librería *re* para utilizar sus funciones de búsqueda y reemplazo.
 
 ```Python
 import re
-
-patron = r'a\w+'
-
-with open('texto.txt', 'r') as archivo:
-    contenido = archivo.read()
-    
-nuevo_contenido = re.sub(patron, 'Python', contenido)
-
-print(nuevo_contenido)
 ```
 
-Al ejecutar este código, obtendremos el siguiente resultado:
+Luego, definimos nuestra cadena de texto y el patrón que queremos reemplazar. En este ejemplo, reemplazaremos todas las letras "a" con la letra "e".
 
+```Python
+text = "Quiero aprender a programar en Python"
+pattern = "a"
 ```
-Este es un texto de ejemplo que necesitamos modificar para Python palabras nuevas.
-Esta archivo Python contiene una lúnea que queremos eliminar por completo.
-Finalmente, queremos reemplazar todas las letras "e" con la letra "a".
+
+Finalmente, utilizamos la función *sub()* para realizar el reemplazo y guardamos el resultado en una nueva variable.
+
+```Python
+new_text = re.sub(pattern, "e", text)
 ```
 
-En este ejemplo, utilizamos la librería `re` y el método `.sub()` para reemplazar todas las palabras que comienzan con la letra "a" con la palabra "Python".
+¡Y listo! Ahora podemos imprimir nuestra nueva cadena de texto para verificar el resultado.
 
-## Ver También
+```Python
+print(new_text)
+```
 
-- [Documentación de la función `.replace()` en Python](https://docs.python.org/es/3/library/stdtypes.html#str.replace)
-- [Documentación de la librería `re` en Python](https://docs.python.org/es/3/library/re.html)
-- [Tutorial de expresiones regulares en Python](https://www.programiz.com/python-programming/regex)
+La salida sería: "Quiero emprender e programer en Python". Podemos ver que todas las letras "a" han sido reemplazadas por la "e".
+
+## Profundizando
+Además de reemplazar un patrón específico, Python también ofrece la posibilidad de utilizar expresiones regulares para una búsqueda y reemplazo más avanzada.
+
+Por ejemplo, si tenemos una lista de nombres con el formato "Apellido, Nombre" y queremos cambiarlo a "Nombre Apellido", podemos utilizar una expresión regular para lograrlo.
+
+```Python
+names = ["García, María", "Pérez, Juan", "Díaz, Ana"]
+pattern = re.compile(r"(\w+), (\w+)")
+```
+
+Utilizando la función *sub()* podemos indicar cómo queremos que se vea la nueva cadena de texto. En este caso, intercambiaremos el orden de las palabras y añadiremos una coma y un espacio para mantener el mismo formato.
+
+```Python
+new_names = [pattern.sub(r"\2 \1,", name) for name in names]
+```
+
+La salida sería: ["María García,", "Juan Pérez,", "Ana Díaz,"].
+
+Como podemos ver, el uso de expresiones regulares nos permite realizar reemplazos más complejos en una sola línea de código.
+
+## Ver también
+- Documentación oficial de Python sobre expresiones regulares: https://docs.python.org/es/3/library/re.html
+- Tutorial de regex en español: https://www.stefanocudini.com/regular-expression-tutorial/
+- Ejemplos prácticos de búsqueda y reemplazo con Python: https://www.geeksforgeeks.org/python-replace-all-occurrences-of-substring-in-string/

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Elm: Utskrift av feilsøkingsutdata"
 simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,46 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du noen gang har programmert i Elm, har du kanskje støtt på behovet for å feilsøke og finne ut hva som skjer under kjøring av koden din. Det er derfor å oversette og utskrive debugging-informasjon til konsollen kan være en nyttig og effektiv måte å løse problemer på.
+Hvorfor skulle man bry seg om å skrive ut feilsøkingsinformasjon når man koder? Vel, det kan virke tidkrevende og unødvendig, men faktum er at det kan være en uvurderlig ressurs når du finner bugs og feil i koden din. Det kan hjelpe deg med å identifisere hvor problemet oppstår, og dermed gjøre debugging og troubleshooting mye enklere.
 
-## Hvordan
+## Slik gjør du det
 
-Det å skrive ut debug output i Elm er en enkel prosess. Først må du importere `Debug` modulen i koden din:
-
-```Elm
-import Debug exposing (log)
-```
-
-Deretter kan du bruke `log` funksjonen til å skrive ut hvilken som helst verdi til konsollen:
+For å skrive ut feilsøkingsinformasjon i Elm, kan du bruke funksjonen `Debug.log` som tar inn en streng som beskriver informasjonen du ønsker å skrive ut, og en variabel som inneholder den aktuelle informasjonen. La oss si at vi har en funksjon som beregner summen av to tall:
 
 ```Elm
-log "Hei!"  -- Skriver ut "Hei!"
+add x y =
+    Debug.log "Funksjonen add ble kalt" (x + y)
 ```
 
-Du kan også skrive ut mer komplekse verdier, som lister eller rekursiv datastrukturer:
+I dette eksempelet vil vi skrive ut en beskjed som forteller oss at funksjonen `add` ble kalt, og deretter skrive ut summen av variablene `x` og `y`. Når du kjører koden, vil følgende vises i konsollen:
 
-```Elm
-let navn = "John"
-let alder = 30
-let kjæledyr = ["Katt", "Hund"]
-let person = { navn = navn, alder = alder, kjæledyr = kjæledyr }
-
-log person  -- Skriver ut "{ navn = "John", alder = 30, kjæledyr = ["Katt", "Hund"] }"
+```
+Funksjonen add ble kalt: 9
 ```
 
-Å skrive ut verdier til konsollen kan være spesielt nyttig når du jobber med løkker eller funksjoner, da det lar deg se verdien til variabler i forskjellige stadier av koden din.
+Dette gjør det enkelt å bekrefte at funksjonen ble kalt med de riktige verdiene, og at summen ble beregnet riktig.
 
-## Deep Dive
+## Dykke dypere
 
-Når du skriver ut debug output, kan du også spesifisere en "tag" som det første argumentet for `log` funksjonen. Dette kan være nyttig når du trenger å skille mellom forskjellige utskrifter.
+I tillegg til `Debug.log` finnes det også andre funksjoner du kan bruke for å skrive ut feilsøkingsinformasjon, som for eksempel `Debug.logMany` som lar deg skrive ut flere variabler og `Debug.todo` som lar deg markere steder i koden som ennå ikke er implementert.
 
-```Elm
-log "Tag" "Verdi" -- Skriver ut "Tag: Verdi"
-```
-
-I tillegg, i noen situasjoner, kan det å bruke `toString` funksjonen på en verdi være mer nyttig enn å bruke `log`. Dette vil konvertere verdiene til en lesbar streng, og kan hjelpe deg med å finne ut hva som skjer i forskjellige deler av koden din.
+Det er også verdt å merke seg at `Debug`-modulen er utformet slik at funksjonene ikke vil bli kjørt i produksjonsmiljøet, så du trenger ikke bekymre deg for at feilsøkingsinformasjonen vil påvirke ytelsen til applikasjonen din.
 
 ## Se også
 
-- [Elm docs: Debug module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm docs: toString function](https://package.elm-lang.org/packages/elm/core/latest/String#toString)
+- [Debugging in Elm](https://guide.elm-lang.org/debugging/)
+- [The Power of Elm's Debug Module](https://medium.com/javascript-inside/the-power-of-elms-debug-module-37bb47404ac8)
+- [Debugging in Elm with Chrome DevTools](https://www.brianthicks.com/post/2016/10/28/debugging-elm-with-chrome-devtools/)

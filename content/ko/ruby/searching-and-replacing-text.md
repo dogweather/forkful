@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 텍스트 검색 및 대체"
+title:                "텍스트 검색 및 대체"
+html_title:           "Ruby: 텍스트 검색 및 대체"
 simple_title:         "텍스트 검색 및 대체"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜  Ruby 프로그래밍을 하느냐? Ruby는 간단하고 읽기 쉬운 문법을 가지고 있어서 개발자들이 코드를 작성하는 데 있어서 큰 편의성을 제공합니다. 또한 Ruby는 다른 언어에 비해 생산성이 뛰어나기 때문에 개발 시간을 단축시킬 수 있습니다.
+## 왜
+
+텍스트를 검색하고 바꾸는 작업은 많은 프로그래밍 언어에서 필수적인 작업입니다. 루비는 간단하고 강력한 메소드를 제공하여 텍스트를 검색하고 바꿀 수 있기 때문에, 더 효율적인 코딩 경험을 제공합니다.
 
 ## 사용 방법
-다양한 프로그래밍 언어에서는 특정 텍스트를 찾고 바꾸는 데에 정규식(Regular Expression)을 사용합니다. 하지만 Ruby는 이를 더욱 간단하게 해결할 수 있는 방법을 제공합니다. 다음은 Ruby에서 특정 텍스트를 찾고 바꾸는 방법의 예시입니다.
 
-```Ruby
-# 텍스트 찾기와 바꾸기 예시
-str = "안녕하세요, 반가워요!"
-str.gsub!("반가워요", "반가워요?")
-puts str
+```ruby
+# 단어 "Hello"를 "Hola"로 바꿔주는 간단한 예제 코드
+text = "Hello, world!"
+puts text.gsub("Hello", "Hola") # "Hola, world!"가 출력됩니다.
+
+# 특정 문자열을 삭제하는 예제 코드
+text = "This is a sample sentence."
+puts text.gsub("sample ", "") # "This is a sentence."가 출력됩니다.
 ```
 
-위 예시 코드를 실행하면 "안녕하세요, 반가워요?"라는 결과가 나옵니다. gsub! 메소드는 첫 번째 매개변수로 바꿀 텍스트를, 두 번째 매개변수로 변경할 텍스트를 받습니다. 이를 활용하면 간단하게 특정 텍스트를 찾고 바꿀 수 있습니다.
+위의 예제 코드에서 보듯이, `gsub` 메소드를 사용하면 텍스트를 쉽게 찾고 바꿀 수 있습니다. `gsub` 메소드의 첫 번째 인자는 바꾸고자 하는 문자열이고, 두 번째 인자는 그 문자열을 어떤 값으로 바꿀지를 나타냅니다. 또한, `gsub` 메소드는 문자열 내에서 모든 일치하는 부분을 바꾸기 때문에 한 번에 여러 개의 문자열을 바꿀 수 있습니다.
 
-## 심층 분석
-Ruby에서 문자열(string)은 수정할 수 없는(immutable) 객체입니다. 따라서 대부분의 문자열 메소드는 원본 문자열을 수정하지 않고 새로운 문자열을 반환합니다. gsub! 메소드는 예외적으로 원본 문자열을 수정하고 새로운 문자열을 반환하지 않습니다. 이를 주의해서 사용해야 합니다.
+## 깊이 있는 설명
 
-또한, gsub 메소드는 단순히 첫 번째 매개변수에 해당하는 텍스트를 모두 찾아서 두 번째 매개변수로 변경하는 것이 아니라, 정규식을 통해 조금 더 복잡한 작업을 할 수 있도록 도와줍니다.
+루비에서 `gsub` 메소드는 정규표현식도 사용할 수 있습니다. 예를 들어, `gsub(/[aeiou]/, "*")`와 같이 사용하면 문자열 내의 모음을 모두 `*`로 바꿀 수 있습니다. 따라서 특정 패턴에 일치하는 문자열을 한 번에 모두 바꿀 수 있습니다.
+
+또한, `gsub` 메소드는 대소문자를 구분하지 않는 `i` 옵션을 지원합니다. 따라서 `gsub(/hello/i, "hola")`와 같이 사용하면 `hello`라는 단어만 찾아서 `hola`로 바꿀 수 있습니다.
 
 ## 참고 자료
-- [Ruby gsub, gsub! 메소드](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
-- [정규식(Regular Expression)](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%EC%8B%9D)
+
+- [Ruby regular expression reference](https://docs.ruby-lang.org/en/master/Regexp.html)
+- [Ruby string methods](https://ruby-doc.org/core-2.7.0/String.html)
+
+## 더 보기

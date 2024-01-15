@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリの存在を確認する"
+html_title:           "Fish Shell: ディレクトリの存在を確認する"
+simple_title:         "ディレクトリの存在を確認する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,55 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜディレクトリが存在するかを確認する必要があるのか
+## なぜ
 
-ディレクトリが存在するかどうかを確認することは、プログラムを実行する前に重要なチェックです。例えば、ファイルを読み込む前にディレクトリが存在するかどうかを確認することで、エラーを防ぐことができます。
+ディレクトリが存在するかどうかを確認する方法を知ることで、コーディングの効率を上げることができます。
 
-# ディレクトリの存在を確認する方法
+## 使い方
 
-ディレクトリが存在するかどうかを確認するには、```test -d```コマンドを使用します。このコマンドは、指定したパスがディレクトリであれば``1``を、そうでなければ``0``を返します。
+```Fish Shell```を使用すると簡単にディレクトリの存在を確認することができます。例えば、```test```という名前のディレクトリが存在するかどうかを確認するには、次のように入力します。
 
-```Fish Shell
-if test -d /home/user/documents
-  echo "The directory exists!"
-else
-  echo "The directory does not exist."
+```fish
+if test -d test 
+    echo "ディレクトリが存在します"
+else 
+    echo "ディレクトリは存在しません"
 end
 ```
 
-出力は以下のようになります。
+これにより、ディレクトリが存在する場合は「ディレクトリが存在します」というメッセージが表示され、存在しない場合は「ディレクトリは存在しません」というメッセージが表示されます。
 
-```
-The directory exists!
-```
+## ディープダイブ
 
-# 深堀りする
+ディレクトリの存在を確認するために使用するコマンドは```test -d```です。このコマンドはファイルやディレクトリが存在するかどうかを確認することができます。```-d```はディレクトリの存在を確認するためのオプションです。```test```コマンドはUnixシステムでよく使用されるコマンドであり、Fish Shellでも使用することができます。
 
-ディレクトリの存在を確認する際に、```test -d```コマンドではなく、```dirhish```コマンドを使用することもできます。これは、ディレクトリが存在しない場合にエラーを返す代わりに、空の値を返します。また、特定のディレクトリに移動する必要がある場合は、```cd```コマンドを使用することもできます。
+## 関連情報
 
-```Fish Shell
-if dirhish /home/user/documents
-  cd /home/user/documents
-  echo "Moved to the documents directory."
-else
-  echo "The directory does not exist."
-end
-```
-
-出力は以下のようになります。
-
-```
-Moved to the documents directory.
-```
-
-## その他の参考リンク
-
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [ディレクトリの存在を確認するコマンド一覧](https://fishshell.com/docs/current/commands.html#test-command)
-- [「図解でわかるFish Shellの便利な使い方」](https://zine.longseller.org/fish-shell/)
-
-＃参考リンク
-
-- [Fish Shell Official Website]（https://fishshell.com/）
-- [Directory existence confirmation command list]（https://fishshell.com/docs/current/commands.html#test-command）
-- [“Easy-to-understand use of Fish Shell”]（https://zine.longseller.org/fish-shell/）
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Unixのtestコマンドについてのドキュメント](https://linuxjm.osdn.jp/html/GNU_gettext/glibc/libc_330.html)

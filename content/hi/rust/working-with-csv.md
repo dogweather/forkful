@@ -1,6 +1,7 @@
 ---
-title:                "Rust: CSV के साथ काम करना"
-simple_title:         "CSV के साथ काम करना"
+title:                "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
+html_title:           "Rust: कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,23 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-CSV (Comma Separated Values) फाइल डेटा को संग्रहीत करने का एक प्रमुख तरीका है। यह एक सरल और व्यावहारिक तरीका है जिससे डेटा को टेक्स्ट फाइल में आसानी से संग्रहीत किया जा सकता है। CSV फाइलें बहुत सारे डेटा प्रकारों को समर्पित हो सकती हैं, जैसे कि आंकड़े, मूल्यांकन, लॉग आदि। अतः इस प्रकार की फाइलों को संग्रहीत करना आमतौर पर एक डेवलपर की जरूरत होती है जो डेटा वैश्विक नापृथक्क है।
+File CSV ka pryog data ko store aur exchange karne ke liye ek common format hai, jisse ki kai applications CSV files ke sath kaam karte hain. Isliye, CSV files ke maamle mein bhi coding abilities hona kaafi faydemand hota hai.
 
-## कैसे करें
+## Kaise Karein
 
-CSV फाइलों को हैंडल करने के लिए Rust में अनुरेखित डेटा प्रक्रिया लाइब्रेरी है। इस पोस्ट में, हम आपको इस लाइब्रेरी का उपयोग करके CSV फाइलों को संग्रहीत करने का तरीका बताएंगे।
-
-जैसा कि हमने पहले कहा, CSV फाइलें टेक्स्ट फाइल होती हैं और उन्हें यूनिकोड या एस्केप कैरेक्टरस के साथ नहीं संग्रहीत किया जाता है। इसलिए, हम CSV फाइल को हैंडल करने के लिए अपने CSV लाइब्रेरी में इसका ध्यान रखना चाहिए।
-
-इसके लिए, हम अपनी `Cargo.toml` फाइल में निम्न सक्षमीयों को जोड़ने की आवश्यकता होगी:
+Sabse pehle, hume "csv" library ko apne Rust project mein add karna hoga. Iske baad hum CSV file ko read aur write kar sakte hain. Niche diye gaye code blocks mein aap dekh sakte hain ki kaise hum file ko read aur write kar sakte hain.
 
 ```Rust
-[dependencies]
-csv = "1.1.6"
-serde_derive = "1.0.70"
-serde = "1.0.117"
+use csv; //csv library import 
+fn main() {
+  let mut reader = csv::Reader::from_path("data.csv").unwrap(); //read from csv file 
+  for result in reader.records() {
+    let record = result.unwrap();
+    println!("{:?}", record); //printing the record 
+  }
+}
+```
+```
+//sample output
+["John", "Doe", "john.doe@email.com", "12345"]
+["Jane", "Smith", "jane.smith@email.com", "67890"]
+["Bob", "Johnson", "bob.johnson@email.com", "13579"]
+```
+```Rust
+use csv; //csv library import 
+fn main() {
+  let mut writer = csv::Writer::from_path("new_data.csv").unwrap(); //write to csv file 
+  writer.write_record(&["Name", "Email", "Phone"]); //write headers 
+  writer.write_record(&["Peter", "peter@email.com", "09876"]); //write data 
+  writer.write_record(&["Emma", "emma@email.com", "54321"]); 
+  writer.flush(); //flush writer to save changes 
+}
+```
+```
+//sample output in new_data.csv file 
+Name,Email,Phone
+Peter,peter@email.com,09876
+Emma,emma@email.com,54321
 ```
 
-यह अपने कोड में CSV लाइब्रेरी को चलाने के लिए आवश्यक डेटा टाइप और डेटा सेरियलाइजेशन के लिए सक्षमीयां हैं। `serde` और `serde_derive` सक्षमीयां डेटा सेरियलाइजेशन को सेलियर और डीसेलियर डायरेक
+## Deep Dive
+
+CSV files mein data comma separated format mein hota hai, jiske liye hum "," ko delimeter ke roop mein use karte hain. Agar hume specifically kisi column ke data ko access karna ho, toh hum "headers" aur "index" ka pryog kar sakte hain. Iske alawa, hum "serde_csv" library ka bhi pryog kar sakte hain jo ki CSV files ko parse karne ke liye kaafi flexible aur efficient hai.
+
+## Dekhiye Bhi
+
+- [CSV Crate Documentation](https://docs.rs/csv/)
+- [Serde CSV Crate Documentation](https://docs.serde.rs/serde_csv/)
+- [Rust Language Documentation](https://www.rust-lang.org/hi/learn)

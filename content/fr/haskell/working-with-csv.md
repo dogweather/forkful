@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Travailler avec des fichiers csv"
+html_title:           "Haskell: Travailler avec des fichiers csv"
+simple_title:         "Travailler avec des fichiers csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,51 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-CSV, ou Comma Separated Values, est un format de fichier utilisé pour stocker des données tabulaires, telles que des feuilles de calcul ou des bases de données. Travailler avec des fichiers CSV peut être utile pour importer et exporter des données entre différentes applications, ou pour effectuer des analyses de données. Dans cet article, nous allons explorer comment travailler avec des fichiers CSV en Haskell.
+Si vous travaillez avec des données, vous avez probablement rencontré des fichiers CSV (Comma-Separated Values) à un moment donné. CSV est un format de fichier couramment utilisé pour stocker des données sous forme de tableaux. Dans cet article, nous allons explorer comment travailler avec des fichiers CSV en utilisant le langage de programmation Haskell.
 
-## Comment Faire
+## Comment procéder
 
-Pour travailler avec des fichiers CSV en Haskell, nous devons d'abord importer le module `Data.Csv`, qui se trouve dans la bibliothèque `cassava`. Ensuite, nous pouvons utiliser la fonction `decode` pour lire un fichier CSV et stocker les données dans une structure de données appelée `Either String (Vector (Vector ByteString))`. Voici un exemple de code pour lire un fichier CSV et afficher son contenu :
+Pour commencer à travailler avec des fichiers CSV en Haskell, nous avons besoin d'importer le module "Text.CSV" qui nous permettra d'utiliser des fonctions spécifiques pour travailler avec ces types de fichiers. Jetons un coup d'oeil à un exemple de code simple qui utilise ce module:
 
 ```Haskell
-import Data.Csv
-import qualified Data.ByteString.Lazy as BL
+import Text.CSV
 
 main :: IO ()
 main = do
-  csvData <- BL.readFile "chemin/vers/mon/fichier.csv"
-  let parsedData = decode NoHeader csvData :: Either String (Vector (Vector ByteString))
-  case parsedData of
-    Left err -> putStrLn "Une erreur s'est produite lors de la lecture du fichier"
-    Right data -> V.mapM_ print data
+    csvData <- parseCSVFromFile "data.csv"
+    case csvData of
+        Left err -> putStrLn "Impossible de lire le fichier CSV."
+        Right records -> putStrLn $ "Le contenu du fichier CSV est " ++ show records
 ```
 
-Dans cet exemple, nous utilisons la fonction `readFile` de la bibliothèque `Data.ByteString.Lazy` pour lire le contenu du fichier CSV en tant que `ByteString`. Ensuite, nous utilisons la fonction `decode` avec le paramètre `NoHeader` pour indiquer que le fichier CSV n'a pas d'en-têtes de colonne. Enfin, nous utilisons la fonction `mapM_` de la bibliothèque `Data.Vector` pour afficher chaque ligne du fichier.
+Dans cet exemple, nous avons utilisé la fonction "parseCSVFromFile" pour lire le contenu d'un fichier CSV nommé "data.csv". Si la lecture est réussie, nous affichons le contenu de ce fichier à l'aide de la fonction "putStrLn". Sinon, nous affichons un message d'erreur.
 
-Pour écrire des données dans un fichier CSV, nous pouvons utiliser la fonction `encode` de la bibliothèque `Data.Csv`. Voici un exemple de code pour écrire des données dans un fichier CSV :
+## Plongée en profondeur
 
-```Haskell
-import Data.Csv
-import qualified Data.ByteString.Lazy as BL
-import qualified Data.Vector as V
+Maintenant que nous avons une idée de base de comment travailler avec des fichiers CSV en Haskell, explorons quelques fonctions utiles pour manipuler ces données. 
 
-main :: IO ()
-main = do
-  let csvData = encode $ V.fromList [["nom", "âge"], ["Jean", "30"], ["Marie", "25"]]
-  BL.writeFile "chemin/vers/mon/fichier.csv" csvData
-```
+Tout d'abord, la fonction "parseCSV" peut être utilisée pour traiter une chaîne de caractères représentant du contenu CSV. Cela peut être pratique si vous avez des données stockées sous forme de chaîne de caractères et que vous souhaitez les convertir en une structure CSV.
 
-Dans cet exemple, nous utilisons la fonction `encode` pour convertir une structure de données de type `Vector (Vector String)` en `ByteString` au format CSV, puis nous utilisons la fonction `writeFile` pour écrire ces données dans un fichier.
+Ensuite, la fonction "printCSV" vous permettra d'afficher le contenu d'un fichier CSV dans un format lisible, en utilisant des tabulations pour séparer les colonnes et des sauts de ligne pour séparer les lignes.
 
-## Plongée en Profondeur
+Enfin, n'oubliez pas de consulter la documentation du module "Text.CSV" pour découvrir plus de fonctions et d'options pour travailler avec des fichiers CSV en Haskell.
 
-Bien que les exemples précédents soient simples, travailler avec des fichiers CSV peut être plus complexe selon le contenu du fichier. Par exemple, si le fichier contient des valeurs numériques, nous devrons utiliser des fonctions pour convertir ces valeurs en types appropriés en Haskell. Les fichiers CSV peuvent également contenir des en-têtes de colonne, ce qui peut simplifier la lecture et l'écriture des données.
+## Voir aussi
 
-Il est également important de prendre en compte les caractères spéciaux, tels que les guillemets et les virgules, qui peuvent être présents dans les données CSV. Dans ce cas, nous devrons utiliser des fonctions de la bibliothèque `Data.Text` pour traiter correctement ces caractères.
-
-Enfin, nous pouvons utiliser des fonctions de tri et de filtrage de la bibliothèque `Data.Vector` pour manipuler facilement les données dans un fichier CSV.
-
-## Voir Aussi
-
-- [Documentation de la bibliothèque cassava](https://hackage.haskell.org/package/cassava)
-- [Guide officiel pour travailler avec les fichiers CSV en Haskell](https://wiki.haskell.org/Working_with_CSV_files)
+- [Documentation officielle du module "Text.CSV"](https://hackage.haskell.org/package/csv)
+- [Haskell pour les débutants: Manipulation de fichiers CSV](https://www.brainhq.com/brain-resources/brain-teasers)
+- [10 minutes de tutoriel Haskell: Lecture de fichiers CSV](https://www.youtube.com/watch?v=IYho2a0mgJY)

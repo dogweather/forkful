@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Go recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Go"
 category:             "Go"
@@ -11,15 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's digital age, information is just a click away. We constantly find ourselves in need of downloading web pages to access important documents, images, or videos for work, school, or personal use. This is where the power of Go programming comes in. With its simple and efficient syntax, Go makes it easy for us to download web pages and retrieve the information we need.
+Have you ever needed to download a web page for a project or simply to read it offline? Instead of spending time copying and pasting the content, why not use a programming language to do the work for you? In this article, we will explore how to download a web page using Go, the current version of the popular programming language.
 
 ## How To
 
-To start with, we need to import the `net/http` package to make HTTP requests. We will also use the `io/ioutil` package to read the response body. Let's take a look at the code below:
+To get started, make sure you have Go installed on your computer. Then, create a new Go file and add the following import statement:
 
-```Go
-package main
+```
+import "net/http"
+```
 
+Next, we will use the `Get()` function from the `http` package to make a GET request to the web page we want to download. Let's say we want to download the GitHub homepage, we would use the following code:
+
+```
+resp, err := http.Get("https://github.com/")
+```
+
+The `Get()` function takes in a string representing the URL of the web page we want to download and returns a response and an error. We assign these values to `resp` and `err` respectively.
+
+To check if there was an error during the request, we can use a simple `if` statement:
+
+```
+if err != nil {
+    // handle error
+}
+```
+
+If there is no error, we can proceed to read the response body using the `ReadAll()` function from the `ioutil` package:
+
+```
+body, err := ioutil.ReadAll(resp.Body)
+```
+
+Again, we assign the response to `body` and check for any errors. Finally, we can print the downloaded web page by using `fmt.Println()` and passing in the `body` variable:
+
+```
+fmt.Println(string(body))
+```
+
+The `string()` function converts the body byte array to a string for easier printing. Your complete code should look like this:
+
+```
 import (
     "fmt"
     "net/http"
@@ -27,46 +60,33 @@ import (
 )
 
 func main() {
-    // Make GET request to desired URL
-    response, err := http.Get("https://example.com")
+    resp, err := http.Get("https://github.com/")
 
-    // Handle error
     if err != nil {
-        fmt.Println("Error: ", err)
+        // handle error
     }
 
-    // Read response body
-    body, err := ioutil.ReadAll(response.Body)
+    body, err := ioutil.ReadAll(resp.Body)
 
-    // Handle error
     if err != nil {
-        fmt.Println("Error: ", err)
+        // handle error
     }
 
-    // Convert response body to string and print
     fmt.Println(string(body))
-
-    // Close response body
-    response.Body.Close()
 }
 ```
 
-In the code above, we make a GET request to the URL `https://example.com` and read the response body. Then, we convert the body to a string and print it. Don't forget to close the response body at the end.
-
-If we run this code, we should see the HTML of the webpage printed in our console. Easy, right?
+And the output should be the HTML code of the GitHub homepage. Congratulations, you have successfully downloaded a web page using Go!
 
 ## Deep Dive
 
-Let's take a deeper dive into the code and understand what's happening.
+Behind the scenes, the `Get()` function is actually creating an HTTP request, sending it to the server, and receiving a response. This is made possible by the `http` package, which provides functions for making HTTP requests and handling responses.
 
-Firstly, we use the `http.Get` method to make a GET request to the desired URL. This method returns a response object and an error. Next, we use the `ioutil` package to read the body of the response. We then convert the body to a string and print it. Finally, we close the response body. This whole process can also be done using the `http.Client` and `http.Request` structs. However, using the `Get` method is a more convenient and concise approach.
+In our code, we used the `ReadAll()` function to read the response body. This function takes in a `Reader` object, which can be created by accessing the `Body` field of the response. The `Body` field is of type `io.ReadCloser`, which implements the `Reader` interface.
 
-One thing to keep in mind is that while making HTTP requests, it is important to handle errors properly to avoid any unexpected behavior in our code. This is why we are using `if` statements to check for any errors and handle them accordingly.
+To learn more about the `http` package, check out the official documentation: https://golang.org/pkg/net/http/
 
 ## See Also
 
-- [Go Net/HTTP Package](https://golang.org/pkg/net/http/)
-- [Go IO/IOUtil Package](https://golang.org/pkg/io/ioutil/)
-- [Go HTTP Client](https://blog.golang.org/go1.8-rc2)
-
-Happy downloading!
+- https://golang.org/doc/
+- https://github.com/golang/go/wiki/Learn

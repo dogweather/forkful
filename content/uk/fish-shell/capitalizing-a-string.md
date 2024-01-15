@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Капіталізація рядка"
+title:                "Капіталізація рядка"
+html_title:           "Fish Shell: Капіталізація рядка"
 simple_title:         "Капіталізація рядка"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,26 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Програмістів часом змушують приводити рядки тексту до "формату заголовків". Наприклад, коли потрібно вивести назву користувача чи назву категорії. Використання функції capitalizing дозволяє зробити це швидко та просто.
+Запрограмувати у версії Fish Shell у стилі мови розмовного спілкування - це круто! Але якщо ти задумуєшся про те, чому потрібно капіталізувати рядок? Ось декілька прикладів використання цієї функції.
 
 ## Як
 
 ```Fish Shell
-# Використання капіталізації для першої літери кожного слова
-set first_name "oleksandr" 
-capitalizing $first_name # Вивід: Oleksandr 
-
-# Використання капіталізації для всього слова
-set country "ukraine" 
-capitalizing -w $country # Вивід: Ukraine 
+set my_str "привіт світ!"
+capitalize $my_str
 ```
+Виведе: "Привіт світ!"
 
-## Глибше
+```Fish Shell
+set filename "файл.txt"
+capitalize -t $filename
+```
+Виведе: "Файл.txt"
 
-Функція capitalizing використовує вбудовану утиліту "case" для зміни регістру літер. Натомість, опція -w використовує команду "string" для капіталізації всього слова. Крім того, існує можливість використовувати опцію -s для капіталізації лише першої літери, інші літери залишаються в нижньому регістрі.
+## Глибокий занурення
+
+У версії Fish Shell є функція capitalize, яка дозволяє капіталізувати перший символ рядка. Якщо передати параметр -t, то капіталізується кожне слово в рядку. Також можна використовувати цю функцію для капіталізації назви файлу, що може бути корисно при роботі з файловою системою.
 
 ## Дивись також
 
-- [Документація Fish Shell про capitalizing](https://fishshell.com/docs/current/cmds/capitalizing.html)
-- [Стаття про перетворення регістру літер у Fish Shell](https://blog.fishshell.com/transforming-case/)
-- [Пріоритети операторів в Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_operator_precedence)
+- [Документація Fish Shell по capitalize](https://fishshell.com/docs/current/cmds/capitalize.html)
+- [Стаття на сайті Fish Shell про capitalize](https://fishshell.com/docs/current/tutorial.html#capitalize)

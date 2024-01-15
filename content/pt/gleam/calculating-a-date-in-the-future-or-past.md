@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Gleam: Calculando uma data no futuro ou passado"
 simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Por que calcular uma data no futuro ou no passado?
 
-Você já se perguntou como seria possível calcular uma data no futuro ou no passado? Existem diversas razões pelas quais alguém pode querer fazer esta operação, como prever datas importantes, organizar cronogramas ou até mesmo criar jogos que envolvem passagem do tempo. Independentemente do motivo, o Gleam torna este processo simples e fácil.
+Às vezes precisamos saber qual será a data em um determinado número de dias, semanas ou meses a partir de agora, ou mesmo em um passado distante. Por exemplo, para planejar uma viagem ou encontrar uma data específica em um calendário.
 
-## How To
+## Como Fazer
 
-Para calcular uma data no futuro ou no passado usando o Gleam, basta utilizar a função `Date.add` passando como argumentos a data inicial e um valor inteiro representando a quantidade desejada de dias. Por exemplo:
-
-```Gleam
-let data_inicial = Date.new(2021, 10, 15)
-let data_futura = Date.add(data_inicial, 365)
-```
-
-O código acima adiciona 365 dias à data inicial e armazena o resultado na variável `data_futura`. Você pode alterar o valor inteiro para uma quantidade maior ou menor de dias, dependendo da sua necessidade.
-
-Para calcular uma data no passado, basta utilizar um valor inteiro negativo. Por exemplo:
+Para calcular uma data no futuro ou no passado usando Gleam, precisamos usar a função `DateTime.add_days()` e especificar a quantidade de dias que desejamos adicionar ou subtrair da data atual. Veja um exemplo de código abaixo:
 
 ```Gleam
-let data_passada = Date.add(data_inicial, -15)
+let data_atual = DateTime.now()
+let data_no_futuro = DateTime.add_days(data_atual, 10)
+let data_no_passado = DateTime.add_days(data_atual, -5)
 ```
 
-Este código subtrai 15 dias da data inicial e armazena o resultado na variável `data_passada`. Simples assim!
+A saída desse código seria:
 
-## Deep Dive
+- `data_no_futuro`: 10 dias a partir de agora
+- `data_no_passado`: 5 dias antes da data atual.
 
-Na verdade, o Gleam permite que você faça muito mais do que apenas adicionar ou subtrair dias de uma data. Você também pode usar as funções `Date.add_months` e `Date.add_years` para adicionar meses e anos, respectivamente.
+Também podemos adicionar ou subtrair semanas ou meses usando as funções `DateTime.add_weeks()` e `DateTime.add_months()`, respectivamente. Veja um exemplo:
 
-Além disso, o Gleam possui uma função `Date.diff` que calcula a diferença entre duas datas em dias. Este pode ser um recurso útil para quem deseja medir a passagem do tempo entre duas datas específicas.
+```Gleam
+let data_atual = DateTime.now()
+let data_daqui_um_mes = DateTime.add_months(data_atual, 1)
+let data_ha_tres_semanas = DateTime.add_weeks(data_atual, -3)
+```
 
-## See Also
+A saída seria:
 
-- [Documentação do Gleam sobre datas](https://gleam.run/modules/date)
-- [Outros recursos úteis do Gleam](https://gleam.run/documentation)
+- `data_daqui_um_mes`: um mês a partir de agora
+- `data_ha_tres_semanas`: três semanas antes da data atual.
 
-Esperamos que este artigo tenha sido útil e que você possa usar o Gleam para calcular datas no futuro ou no passado de forma eficiente e fácil. Continue explorando todas as funcionalidades desta linguagem de programação funcional moderna e divirta-se criando aplicações incríveis!
+## Mergulho Profundo
+
+A biblioteca `DateTime` do Gleam também permite manipular outras informações de data e hora, como horas, minutos, segundos e milissegundos. É possível criar uma data e hora específica usando a função `DateTime.from_yyyymmdd()`, passando os parâmetros ano, mês e dia como inteiros. Também é possível criar uma data a partir de uma string usando a função `DateTime.from_string()`. A documentação completa e mais exemplos podem ser encontrados [aqui](https://gleam.run/documentation/).
+
+## Veja Também
+
+- [Documentação Gleam](https://gleam.run/documentation/)
+- [Strftime: Formatação de data e hora em Gleam](https://harfangk.github.io/2020/03/22/strftime-for-gleam-datetime.html)
+- [Calculando diferenças de datas em Gleam](https://dev.to/peterhartree/calculating-differences-between-dates-in-gleam-8pb)

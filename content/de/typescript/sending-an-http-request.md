@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Versenden einer http Anfrage"
-simple_title:         "Versenden einer http Anfrage"
+title:                "Eine http-Anfrage senden"
+html_title:           "TypeScript: Eine http-Anfrage senden"
+simple_title:         "Eine http-Anfrage senden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,33 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Um Daten von einem Server abzurufen oder zu senden, ist es notwendig, eine HTTP-Anfrage zu senden. Dies ist eine gängige Methode, um mit externen APIs oder Webanwendungen zu kommunizieren.
 
-Es gibt viele Gründe, warum jemand in der Entwicklungsfeld auf TypeScript setzen sollte. Einer dieser Gründe ist die Fähigkeit, HTTP-Anfragen zu versenden. Das Versenden von HTTP-Anfragen ermöglicht es einem, mit Servern oder APIs zu kommunizieren und Daten zu empfangen oder zu senden. Dies ist besonders wichtig für die Entwicklung von Webanwendungen oder mobilen Anwendungen, die auf das Internet zugreifen müssen.
-
-## Wie geht es
-
-Um eine HTTP-Anfrage in TypeScript zu senden, müssen wir zunächst das `http`-Modul importieren. Dann können wir die Funktion `request` verwenden, um unsere Anfrage an eine bestimmte URL zu senden. Hier ist ein Beispielcode, um eine GET-Anfrage mit TypeScript zu senden:
+## Wie geht man vor?
+Das Senden einer HTTP-Anfrage in TypeScript ist relativ einfach. Zunächst müssen wir die Bibliothek 'axios' installieren, die es uns ermöglicht, HTTP-Anfragen zu senden. Hier ist ein Beispielcode, der eine GET-Anfrage an einen Server sendet:
 
 ```TypeScript
-import http from 'http';
+import axios from 'axios';
 
-http.request('http://example.com', (response) => {
-    console.log(response.statusCode); // prints 200
+axios.get('https://example.com/api')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+```
+
+Dieser Code verwendet die GET-Methode, um eine Anfrage an die URL "https://example.com/api" zu senden. Die Antwort des Servers wird in der Konsole ausgegeben. Um eine POST-Anfrage zu senden, können wir diese Methode anstelle von '.get' verwenden:
+
+```TypeScript
+axios.post('https://example.com/api', {
+  name: 'Max',
+  age: 25
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.log(error);
 });
 ```
 
-Dieser Code verwendet die `request`-Funktion, um eine Anfrage an die URL "http://example.com" zu senden. Sobald die Antwort empfangen wird, wird die Funktion, die wir dem `request`-Aufruf übergeben haben, aufgerufen und die Response-Objekt wird zurückgegeben. In diesem Beispiel nutzen wir das `statusCode`-Eigenschaft, um den Statuscode der Antwort zu erhalten, der uns sagt, ob die Anfrage erfolgreich war oder nicht.
+Hier wird zusätzlich ein Objekt mit den benötigten Daten an die Anfrage angehängt. Beachten Sie, dass wir in beiden Fällen eine '.then' und '.catch' Funktion verwenden, um die Serverantwort oder einen Fehler zu handhaben.
 
-## Tiefentauchen
+## Eintauchen in das Thema
+HTTP-Anfragen können auch weitere Parameter enthalten, wie beispielsweise Header oder Query-Parameter. Um diese zu setzen, können wir ein sogenanntes 'config' Objekt an die Anfrage übergeben:
 
-Es gibt viele verschiedene Optionen und Eigenschaften, die wir in TypeScript nutzen können, wenn wir eine HTTP-Anfrage senden. Wir können zum Beispiel auch Daten in der Anfrage senden, indem wir sie dem `request`-Aufruf als zweiten Parameter hinzufügen. Wir können auch bestimmte Header oder Authentifizierungs-Token in der Anfrage angeben.
+```TypeScript
+axios.get('https://example.com/api', {
+  headers: {
+    Authorization: 'Bearer token123'
+  },
+  params: {
+    category: 'books'
+  }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.log(error);
+});
+```
 
-Es ist auch wichtig zu beachten, dass TypeScript standardmäßig asynchrone Funktionen verwendet, wenn wir HTTP-Anfragen senden. Das bedeutet, dass wir entweder die `async/await` Syntax nutzen oder Promises verwenden müssen, um auf die Antwort zu warten und mit den Daten zu arbeiten.
-
-In TypeScript gibt es auch viele Bibliotheken und Frameworks, die speziell für das Versenden von HTTP-Anfragen entwickelt wurden, wie zum Beispiel "axios" oder "isomorphic-fetch". Diese können oft noch leistungsfähiger und leichter zu handhaben sein als das Verwenden des nativen `http`-Moduls.
+Dieses Beispiel zeigt, wie wir einen Autorisierungs-Header und einen Query-Parameter setzen können. Es ist wichtig zu beachten, dass jedes externe API seine eigenen Anforderungen an die HTTP-Anfragen stellt. Daher ist es ratsam, die Dokumentation des jeweiligen APIs zu konsultieren.
 
 ## Siehe auch
-
-- https://nodejs.org/api/http.html - Die offizielle Dokumentation des `http`-Moduls von Node.js
-- https://www.typescriptlang.org/docs/handbook/interfaces.html - Mehr über die Verwendung von TypeScript-Interfaces, um HTTP-Anfragen zu definieren
-- https://github.com/axios/axios - Die "axios" Bibliothek für das Senden von HTTP-Anfragen in TypeScript oder JavaScript
+- Dokumentation von Axios: https://axios-http.com/
+- Liste der HTTP-Statuscodes: https://de.wikipedia.org/wiki/HTTP-Statuscode
+- Externe API-Dokumentation: <hier den Link zu einer spezifischen API einfügen>

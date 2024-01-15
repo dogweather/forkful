@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Uttrekk av delstrenger"
-simple_title:         "Uttrekk av delstrenger"
+title:                "Utvinning av understrenger"
+html_title:           "Fish Shell: Utvinning av understrenger"
+simple_title:         "Utvinning av understrenger"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Why
+Hvorfor skal du bry deg om å trekke ut delstrenger? Det kan være svært nyttig når du prøver å manipulere og behandle tekstdata på en rask og effektiv måte.
 
-Hvorfor skulle noen ha behov for å trekke ut substringer? Vel, noen ganger kan det være nødvendig å manipulere en tekststreng for å få den til å passe til spesifikke formater eller begrensninger. Ved å kunne ekstrahere deler av en streng kan man lettere håndtere og manipulere data.
+## How To
+Kodingseksempler og utførsel av utdata innenfor "```Fish Shell ... ```" kodelag kan være forvirrende å ta inn for nybegynnere. Men ikke bekymre deg, det er enklere enn det ser ut til.
 
-## Slik gjør du det
+For å trekke ut en delstreng i Fish Shell, bruker du kommandoen `string sub`, etterfulgt av startindeks og lengde på substringsen du ønsker å ekstrahere. Se nedenfor for et eksempel på hvordan dette ser ut i praksis:
 
-For å ekstrahere en del av en streng i Fish Shell, kan du bruke kommandoen `string --substring`. Den tar to argumenter: startindeks og lengden på ønsket substring. La oss se på et eksempel for å se hvordan dette fungerer:
-
-```Fish Shell
-set streng “Hei, dette er en tekststreng”
-echo $streng[8..15]
+```
+Fish Shell $ string sub 3 5 "eksempeltekst"
+[input/output] se
 ```
 
-I dette eksemplet trekker vi ut delen av strengen som starter på indeks 8 (den 9. bokstaven) og har en lengde på 8 tegn. Outputen av dette vil være “er en tek”.
+I eksempelet over trekker vi ut delstrengen "se" fra "eksempeltekst", med startindeks 3 og lengde 5. Du kan også bruke negative tall for å telle bakfra i strengen, for eksempel `string sub -4 3 "eksempeltekst"` for å få ut delstrengen "eks".
 
-Det er også mulig å bruke negative tall for å starte fra slutten av strengen. For eksempel vil `$streng[-8..-1]` gi oss delen av strengen som starter 8 tegn fra slutten og går til siste tegn i strengen.
+## Deep Dive
+La oss dykke litt dypere inn i `string sub` kommandoen. I tillegg til å bruke startindeks og lengde, kan du også bruke `string sub` for å trekke ut delstrenger basert på et bestemt mønster eller uttrykk. For eksempel kan du bruke `string sub match "e(.*)t" "eksempeltekst"` for å få ut delstrengen "eks" basert på et regex-uttrykk.
 
-## Dypdykk
+En annen nyttig funksjon tilgjengelig med `string sub` er muligheten til å bruke variabler. Dette gjør det mulig å trekke ut delstrenger basert på variabelverdier i stedet for å hardkode dem. For eksempel kan du bruke `string sub $start $length "eksempeltekst"` for å få ut delstrengen basert på variablene `$start` og `$length`.
 
-Det finnes også flere måter å ekstrahere substringer på i Fish Shell. For eksempel kan vi bruke `string match` kommandoen for å finne en del av en streng basert på et mønster. Dette kan være nyttig hvis man ikke vet nøyaktig hvor substringen starter eller slutter.
+## See Also
+Sjekk ut disse lenkene for mer informasjon om å trekke ut delstrenger i Fish Shell:
 
-En annen viktig ting å huske på er at når man ekstraherer en del av en streng i Fish Shell, vil det resulterende utvalget være en liste av tegn. Hvis man ønsker å konvertere denne listen til en enkelt streng, kan man bruke `string join` kommandoen.
-
-## Se også
-
-- [Fish Shell dokumentasjon om substringer](https://fishshell.com/docs/current/cmds/set.html#substrings)
-- [Tips og triks for å jobbe med strenger i Fish Shell](https://dev.to/scrool/working-with-strings-in-fish-shell-1ag0)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/string-sub.html)
+- [RegExr - online regex tester](https://regexr.com/)

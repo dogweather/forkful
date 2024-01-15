@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Fish Shell recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,46 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Do you ever need to find the length of a string in your Fish Shell programs? Whether you're coding a simple script or a more complex project, knowing the length of a string can be extremely useful. But how exactly do you do it?
+Have you ever needed to know the length of a string in your Fish Shell script? Maybe you need to validate user input or manipulate a string in some way. Whatever the reason, understanding how to find the length of a string is a useful skill to have in your Fish Shell programming arsenal.
 
 ## How To
 
-Finding the length of a string in Fish Shell is actually quite straightforward. You can use the built-in `string` command with the `length` option to get the length of a given string. Here's an example:
+To find the length of a string in Fish Shell, we can use the `string length` command. Let's take a look at an example:
 
-```Fish Shell
-set my_string "Hello, world!"
-echo (string length $my_string)
+```
+Fish Shell $ set my_string "Hello world" 
+Fish Shell $ echo (string length $my_string)
+11
 ```
 
-The output of this code will be `13`, which is the length of the string "Hello, world!". You can also use the `echo` command to print the length directly without setting a variable.
+In this example, we have assigned the string "Hello world" to the variable `my_string` and then used the `string length` command to find its length. 
 
-```Fish Shell
-echo (string length "This is a string")
+Another way to find the length of a string is by using the `string` command with the `length` option, like this:
+
+```
+Fish Shell $ set my_string "Hello world"
+Fish Shell $ echo (string $my_string length)
+11
 ```
 
-The output in this case will be `16`, as there are 16 characters in the string "This is a string".
+Both of these methods will give you the same output, which is the length of the string.
+
+It's also important to note that the `string length` command will also count spaces and special characters. So if we modified our example string to include special characters, like this:
+
+```
+Fish Shell $ set my_string "Hello$!@#world"
+```
+
+The output of the `string length` command would be 16, while the `string length` option would still give us a length of 11.
 
 ## Deep Dive
 
-If you want to dive deeper into the `string` command, you can also use the `--bytes` option to get the byte length of a string instead of the character length. This is useful when dealing with non-English characters or emojis, as they may take up more than one byte.
+Now, let's take a deeper look at how the `string length` command works. The `length` function in Fish Shell actually uses the `wc` (word count) command, which counts the number of characters, words, and lines in a given input. 
 
-You can also use the `--fields` option to get the number of fields in a string, split by a given delimiter. For example:
-
-```Fish Shell
-set my_string "Hello, world!"
-echo (string fields "," $my_string)
-```
-
-The output will be `2`, as the string is split into two fields separated by a comma.
-
-Similarly, the `--lines` option can be used to get the number of lines in a string, split by the newline character `\n`.
+When we use the `string length` command, we are essentially telling Fish Shell to count the number of characters in the string, which is why it can also include spaces and special characters.
 
 ## See Also
 
-For more information and examples on using the `string` command, you can refer to the official Fish Shell documentation or the following resources:
-
-- [Fish Shell documentation on string](https://fishshell.com/docs/current/cmdsstring.html)
-- [Fish Shell tutorial on strings](https://devopsheaven.com/fish-shell-strings/)
-- [Fish Shell user documentation on string](https://fishshell.com/docs/current/user_guide.html#use-string)
-
-Happy coding!
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Beginner's Guide](https://www.codementor.io/@arpitbhayani/an-in-depth-guide-to-fish-shell-8sj6b7cgg)
+- [Fish Shell Tutorials](https://www.linux.com/training-tutorials/beginners-guide-fish-shell/)

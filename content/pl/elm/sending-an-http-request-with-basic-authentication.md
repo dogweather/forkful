@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Elm: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,41 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego chcielibyśmy użyć autoryzacji podstawowej przy wysyłaniu żądania HTTP? Ponieważ jest to wygodny sposób na uwierzytelnienie naszych żądań do zabezpieczonych stron internetowych lub serwerów API. W tym wpisie pokażemy, jak dokładnie tego dokonać w języku Elm.
+W dzisiejszych czasach, duża część aplikacji internetowych korzysta z uwierzytelniania podstawowego przy wykonywaniu żądań HTTP. Jest to sposób na zabezpieczenie aplikacji przed niepożądanym dostępem i zapewnienie prywatności użytkowników. Jeśli chcesz nauczyć się, jak wysyłać żądanie HTTP z uwierzytelnianiem podstawowym w Elm, ten artykuł jest dla Ciebie!
 
 ## Jak to zrobić
 
-Kodowanie przy użyciu języka Elm jest proste i przyjemne. Aby wysłać żądanie HTTP z autoryzacją podstawową, wystarczy skorzystać z modułu "Http" oraz funkcji "send" i "basicAuth". Poniżej znajduje się przykładowy kod wraz z oczekiwanym wynikiem.
+W Elm istnieje moduł o nazwie `Http` który pozwala nam na wykonywanie żądań HTTP. Aby wysłać żądanie z uwierzytelnieniem podstawowym, musimy dostarczyć odpowiednie dane uwierzytelniające w nagłówku `Authorization` naszego żądania. Poniżej znajduje się przykładowy kod:
 
 ```Elm
 import Http
 import Basics exposing (..)
+import Json.Encode exposing (..)
 
-sendBasicAuthRequest : String -> String -> String -> Cmd Msg
-sendBasicAuthRequest username password url =
-  Http.send BasicAuth
-    { method = "GET"
-    , headers = []
-    , url = url
-    , body = Http.emptyBody
-    , withCredentials = False
-    , username = Just username
-    , password = Just password
+type alias AuthData =
+    { username : String
+    , password : String
     }
+
+loginUrl : String
+loginUrl =
+    "https://mojaserwer.pl/login"
+
+authData : AuthData
+authData =
+    { username = "mojlogin"
+    , password = "haslom"
+    }
+
+headers : List (String, String)
+headers =
+    [ ( "Authorization", "Basic " ++ Base64.encode (Json.Encode.encode authData) ) ]
+
+loginRequest : Http.Request
+loginRequest =
+    Http.post loginUrl
+        (Http.jsonBody (Json.Encode.encode ()))
+        |> Http.headers headers
+
+main =
+    Http.toTask loginRequest
 ```
 
-Wynik:
-
-```Elm
-sendBasicAuthRequest "username" "password" "https://example.com/api" = HTTP/1.1 200 OK
-```
+W powyższym przykładzie, definiujemy funkcję `loginRequest`, która jest odpowiedzialna za wysłanie żądania POST do naszego serwera logowania. W nagłówku `Authorization`, używamy funkcji `Base64.encode` do zakodowania danych uwierzytelniających w formacie JSON. Następnie wywołujemy funkcję `Http.toTask`, która przekształca nasze żądanie do obiektu typu `Task`, który możemy wykonać za pomocą funkcji `Task.perform` lub `Task.attempt`.
 
 ## Deep Dive
 
-Podstawowa autoryzacja w protokole HTTP jest procesem, w którym klient wysyła swoje dane logowania w nagłówku żądana "Authorization". Serwer odczytuje te dane i weryfikuje, czy są one poprawne. W języku Elm możemy zaimplementować to za pomocą modułu "Http" i funkcji "basicAuth". Należy jednak pamiętać, że autoryzacja podstawowa jest niezalecana ze względu na swoją słabą ochronę danych.
+W przypadku uwierzytelniania podstawowego, dane uwierzytelniające są przesyłane w formacie tekstowy, ale istnieją inne rodzaje uwierzytelnienia, które używają innych sposobów szyfrowania i przesyłania danych uwierzytelniających. W Elm istnieje również moduł `HTTP` który pozwala na wysyłanie żądań z innymi metodami uwierzytelnienia, takimi jak uwierzytelnienie tokenowe czy uwierzytelnianie OAuth.
 
-## Zobacz także
+## Zobacz również
 
-* [Dokumentacja języka Elm](https://guide.elm-lang.org/)
-* [Informacje o protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-* [Wprowadzenie do autoryzacji HTTP](https://www.digitalocean.com/community/tutorials/http-basic-authentication-in-node-js)
+- Dokumentacja Elm dla modułu `Http`: https://package.elm-lang.org/packages/elm/http/latest/
+- Przewodnik po uwierzytelnianiu HTTP w języku angielskim: https://www.httpwatch.com/httpgallery/authentication/
+- Przykład zastosowania uwierzytelnienia HTTP w aplikacjach Elm: https://dev.to/kayashaolu/basic-http-authentication-in-elm-48a6

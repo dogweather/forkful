@@ -1,6 +1,7 @@
 ---
-title:                "C#: Debug-tulostuksen tulostaminen"
-simple_title:         "Debug-tulostuksen tulostaminen"
+title:                "Tulostusten debuggaaminen"
+html_title:           "C#: Tulostusten debuggaaminen"
+simple_title:         "Tulostusten debuggaaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,57 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi kukaan haluaisi tulostaa debug-tulosteita? Yksinkertaisesti sanottuna, debug-tulosteiden tulostaminen on hyödyllinen työkalu ohjelmoinnin ongelmien ratkaisemisessa ja koodin virheiden jäljittämisessä.
 
-Kun tulet vastaan ongelmia tai virheitä ohjelmointiprojektissasi, on tärkeää pystyä selvittämään, mistä nämä ongelmat johtuvat. Tässä tulee avuksi debug- eli virheenjäljitystulostus. Tulostamalla tarvittavaa tietoa koodin suorituksesta ja muuttujien arvoista, voit paremmin ymmärtää ohjelman toimintaa ja korjata mahdollisia virheitä. Debug-tulostus on siis tärkeä osa tehokasta ohjelmointia.
-
-## Kuinka
-
-C# tarjoaa useita tapoja tulostaa debug-tietoa koodista. Yksi tapa on käyttää Console-luokan Write- tai WriteLine-metodia. Näitä metodeja voi käyttää tulostamaan haluamasi viestin, muuttujien arvoja tai vaikka koko stack trace -tiedon. Alla on esimerkki:
-
+## Näin teet sen
 ```C#
-static void Main(string[] args)
+// Tulostetaan debug-tuloste
+Console.WriteLine("Tämä on debug-tuloste.");
+
+// Tulostetaan muuttujan arvo debug-tulosteena
+int numero = 10;
+Console.WriteLine("Muuttujan arvo on: " + numero);
+
+// Käytetään string.Format-metodia helpottamaan debug-tulosteen muotoilua
+string nimi = "Matti";
+int ikä = 25;
+string ammatti = "ohjelmoija";
+Console.WriteLine(string.Format("Hei, olen {0}, olen {1} vuotta vanha ja minusta tulee isona {2}.", nimi, ikä, ammatti));
+```
+
+Alla on esimerkkilähtö ja sen vastaava debug-tuloste:
+
+**Lähtö:**
+```
+void Main()
 {
-    int x = 5;
-    int y = 10;
-    Console.WriteLine("x:n arvo on " + x);
-    Console.WriteLine("y:n arvo on " + y);
-    Console.WriteLine("x * y = " + (x * y));
+    int numero = 20;
+    Console.WriteLine("Luku on " + numero);
 }
 ```
 
-Tämä koodi tulostaa seuraavan viestin konsoliin:
-
+**Debug-tuloste:**
 ```
-x:n arvo on 5
-y:n arvo on 10
-x * y = 50
+Luku on 20
 ```
 
-Toinen tapa tulostaa debug-tietoa C#-koodissa on käyttää Debug-luokan metodeja. Tämä edellyttää, että olet liittänyt System.Diagnostics -nimisen tilan tiedoston alkuun. Alla on esimerkki Debug-luokan käytöstä:
-
-```C#
-static void Main(string[] args)
-{
-    int i = 5;
-    Debug.WriteLine("i:n arvo on " + i);
-}
-```
-
-Tämä koodi tulostaa seuraavan viestin konsoliin:
-
-```
-i:n arvo on 5
-```
-
-## Syvällisempi tarkastelu
-
-Debug-tulostuksen avulla voit myös tarkastella ohjelman suoritusaikaisia muuttujien arvoja. Tämä on erityisen hyödyllistä silloin, kun etsit virheitä koodistasi. Esimerkiksi voit käyttää Visual Studio Code -ohjelman debugging-työkaluja nähdäksesi muuttujien arvot step-by-step -tyylisesti koodin suorituksen aikana.
-
-Voit myös lisätä ehtoja tulostamalla debug-tietoa, jolloin tiedät tarkalleen, milloin tieto tulostuu ja milloin ei. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tarkastella tiettyä koodin osaa ja sen vaikutusta ohjelman suoritukseen.
+## Syvemmälle debug-tulosteen käyttöön
+Debug-tulosteiden tulostaminen on yleinen tapa löytää ohjelmointivirheitä ja korjata niitä. Voit myös käyttää debug-tulosteita tarkistaaksesi, että koodisi toimii halutulla tavalla ja tarkistaa muuttujien arvoja ja väliaikaisia ​​laskelmia. Voit myös tulostaa debug-tulosteita osana virheenkorjausta lisäämällä ne eri kohdissa koodia ja tarkistaaksesi, missä vaiheessa virhe tapahtuu.
 
 ## Katso myös
-
-- [Microsoftin virallinen ohjeistus debug-tulostuksen käyttämisestä C#-koodissa](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-use-the-debugger-in-visual-studio?view=vs-2019)
-- [Ohjeita jälkiselvittelyyn ja debug-tulostuksen käyttöön C#-ohjelmoinnissa](https://www.c-sharpcorner.com/UploadFile/8a67c0/Debugging-in-c-sharp-application/)
-
-Kiitos lukemisesta ja onnea debug-tulostuksen käyttämiseen C#-projekteissasi!
+- [MSDN: Debug-tulostaminen C#:ssa](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=netframework-4.8)
+- [C# Debug ja Trace luokat](https://www.tutorialsteacher.com/csharp/csharp-debugging)
+- [Yleisimmät C# -virheet ja niiden ratkaiseminen](https://code-maze.com/common-errors-csharp-programmer/)

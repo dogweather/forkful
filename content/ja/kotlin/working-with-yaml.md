@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: YAMLの扱い方"
-simple_title:         "YAMLの扱い方"
+title:                "「yamlを使う方法」"
+html_title:           "Kotlin: 「yamlを使う方法」"
+simple_title:         "「yamlを使う方法」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、プログラマーの皆さん。今回は、YAMLを使ったKotlinのプログラミングについてお話ししたいと思います。Kotlinは人気のあるプログラミング言語ですが、YAMLを使うことでさらに便利に使えるようになります。どのようにしてYAMLをKotlinに組み込んでいくか、深く掘り下げていきましょう。
+## なぜ
 
-##なぜYAMLを使うのか
+YAMLを使用することのメリットはたくさんあります。例えば、設定ファイルやデータのフォーマットに使用することで、人間にとっても読みやすい構文を提供し、コンピューターにとっても解析しやすい形式でデータを保存できます。
 
-YAMLとは、データの構造を表現するためのフォーマットです。例えば、設定ファイルやデータベースの情報を記述する際に使用されます。Kotlinは静的型付け言語であり、プログラムをビルドする際にはデータ構造を明示的に定義する必要があります。そのため、YAMLを使うことでデータ構造をよりシンプルに定義できるようになります。
+## 使い方
 
-##使い方
+まずは、KotlinでYAMLを扱うために必要なライブラリをプロジェクトに追加しましょう。次のコードを`build.gradle`ファイルの`dependencies`に追加します。
 
-KotlinでYAMLを使うには、まず必要なパッケージをインポートします。
-
-```Kotlin
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.module.kotlin.*
+```
+dependencies {
+    implementation 'net.jodah:exp4j:0.4.8'
+}
 ```
 
-次に、ファイルからデータを読み込む場合は、以下のようなコードを書きます。
+次に、必要なライブラリをインポートします。
 
 ```Kotlin
-val mapper = ObjectMapper(YAMLFactory())
-val obj: Any = mapper.readValue(File("/path/to/file.yaml"))
+import org.yaml.snakeyaml.Yaml
+import java.io.File
 ```
 
-また、YAMLを直接文字列としてパースする場合は、次のようなコードを使用します。
+Yamlインスタンスを作成し、YAMLファイルを読み込みます。
 
 ```Kotlin
-val mapper = ObjectMapper(YAMLFactory())
-val obj: Any = mapper.readValue("""value: 10 #コメント""", object : TypeReference<Map<String, Any>>(){})
+val yaml = Yaml()
+val data = yaml.load(File("sample.yaml").inputStream()) as Map<String, Any>
 ```
 
-YAMLのデータ構造にはネストや配列などがありますが、Kotlinのマップやリストを使ってデータを表現することができます。詳しい使い方は、公式ドキュメントや書籍を参考にしてみてください。
+データを操作したい場合は、`data`変数を使ってデータを取得または更新することができます。
 
-##深く掘り下げる
+```Kotlin
+val name = data["name"] // "John Doe"が返される
+data["age"] = 25 // dataに"age: 25"のキーと値が追加される
+```
 
-YAMLを使うことで、プログラムの柔軟性を高めることができます。例えば、設定ファイルを用意することで、プログラムの挙動を変えたり、環境に合わせた設定を行ったりすることができるようになります。また、YAMLを使うことで、複雑なデータ構造を簡単に表現することができるため、プログラムのデバッグやメンテナンスがしやすくなります。
+YAMLファイルを書き出す場合は、以下のように行うことができます。
 
-##参考リンク
+```Kotlin
+val yamlString = yaml.dump(data) // YAML形式の文字列が生成される
+```
 
-- Kotlin公式ドキュメント：https://kotlinlang.org/docs/home.html
-- YAMLの公式サイト： https://yaml.org/
-- 『Kotlinエキスパートプログラミング』（矢野雅太郎著）：https://www.amazon.co.jp/Kotlinエキスパートプログラミング-矢野雅太郎/dp/4798054471
+## 詳細を調べる
 
-##関連リンク
+YAMLを扱うためのKotlinライブラリとしては、他にも`SnakeYAML`や`speedment-json`があります。YAMLは非常に人間にとって読みやすいフォーマットであり、複数のプログラミング言語で利用されています。しかし、YAMLはデータをシリアライズするためのものであり、特定の用途に合わせたデータの構造を定義することができます。
 
-- Markdownチートシート：https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
-- Kotlinを使用したWebアプリケーションの開発：https://developer.android.com/courses/pathways/kotlin-fundamentals-training-app?hl=ja
+## さらに見る
+
+- [SnakeYAML Githubリポジトリ](https://github.com/asomov/snakeyaml)
+- [speedment-json Githubリポジトリ](https://github.com/speedment/speedment-json)

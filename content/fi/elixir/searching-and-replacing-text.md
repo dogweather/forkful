@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Etsiminen ja tekstin korvaaminen"
+html_title:           "Elixir: Etsiminen ja tekstin korvaaminen"
+simple_title:         "Etsiminen ja tekstin korvaaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,34 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen on tärkeä osa ohjelmoinnin prosessia ja monesti joudumme muokkaamaan olemassa olevaa tekstiä. Tässä blogikirjoituksessa käsittelemme Elixiriä ja kuinka sen avulla voit helposti suorittaa tekstinhakua ja korvaamista.
+Miksi kukaan haluaisi etsiä ja korvata tekstiä? Yksi syy voi olla tarve muuttaa samankaltaisia merkkijonoja toisiksi tai päivittää vanhaa koodia uudempaan syntaksiin.
 
-## Kuinka
+## Miten
 
-Elixiriä voidaan käyttää tekstin hakemiseen ja korvaamiseen kätevän `Regex`-moduulin avulla. Se sisältää monia hyödyllisiä toimintoja, kuten `replace/4`, joka mahdollistaa tekstin korvaamisen tietyllä kaavalla. Katso alla oleva esimerkki:
+Elixirin `String.replace/3`-funktio mahdollistaa tekstin etsimisen ja korvaamisen yhdellä rivillä. Alla on esimerkkejä tämän funktion käytöstä.
 
-```Elixir
-Regex.replace("Tervehdys maailma!", ~r/maailma/, "Suomi")
+```elixir
+# Etsi ja korvaa yksi sana toisella
+String.replace("Tervetuloa Elixiriin!", "Tervetuloa", "Hei")
+# output => "Hei Elixiriin!"
 
-Output: Tervehdys Suomi!
+# Etsi ja korvaa useita sanoja samalla kertaa
+String.replace("Elixir on hieno kieli!", ~r/on hieno/, "on mahtava")
+# output => "Elixir on mahtava kieli!"
+
+# Vaihda vain ensimmäinen esiintymä
+String.replace("1,2,3,4,1,2,3,4", "1", "one", global: false)
+# output => "one,2,3,4,1,2,3,4"
+
+# Vaihda kaikki esiintymät
+String.replace("Kaikki eivät ole täydellisiä.", "e", "i", global: true)
+# output => "Kaikki ivät ole täydellisiä."
 ```
 
-Voit myös käyttää `Regex.run/3`-funktiota, joka palauttaa osumien listan, joka voidaan sitten käsitellä halutulla tavalla. Katso alla oleva esimerkki:
+## Syvempi sukellus
 
-```Elixir
-Regex.run("Jaana, Johanna, ja Jussi ovat ystäviä.", ~r/[Jj]a+na/, capture: :all_but_first)
+Elixirin `String.replace/3` hyödyntää taustalla `Regex.replace/4`-funktiota, joka sallii säännöllisten lausekkeiden käytön haun kohteena. Tämä antaa käyttäjälle enemmän vaihtoehtoja ja tarkkuutta etsintään. Lisäksi, `Regex`-moduuli tarjoaa muitakin hyödyllisiä funktioita tekstien käsittelyyn, kuten `Regex.match?/2` ja `Regex.split/2`.
 
-Output: [Johanna, Jussi]
-```
+See Also
 
-## Syvemmälle
-
-Elixirin `Regex`-moduuli tarjoaa myös muita hyödyllisiä ominaisuuksia, kuten `match?`-funktion, joka palauttaa totuusarvon riippuen siitä, onko tekstissä yhtään osumaa hakuehdolle. Voit myös käyttää `replace/3`-funktiota, joka korvaa kaikki osumat halutulla merkkijonolla.
-
-Jos haluat tutustua Elixirin `Regex`-moduulin tarjontaan tarkemmin, voit lukea siitä lisää [Elixirin virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/Regex.html).
-
-## Katso myös
-
-- [Regexin käyttö Elixirissä](https://blog.red-badger.com/blog/2016/4/18/get-in-awesomely-good-elixir)
-- [10 asiaa, joita tulisi tietää Elixiristä](https://hackernoon.com/10-things-to-know-about-elixir-2428a9c1da3a)
-- [Elixirin viralliset verkkosivut](https://elixir-lang.org/)
+- Elixirin virallinen dokumentaatio: https://elixir-lang.org/docs.html
+- Etsi ja korvaa teksti Elixirillä: https://elixirschool.com/fi/lessons/basics/binary-pattern-matching/#search-and-replace

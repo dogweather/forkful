@@ -1,5 +1,6 @@
 ---
-title:                "C++: Arbeiten mit csv"
+title:                "Arbeiten mit csv"
+html_title:           "C++: Arbeiten mit csv"
 simple_title:         "Arbeiten mit csv"
 programming_language: "C++"
 category:             "C++"
@@ -10,58 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-CSV-Dateien sind ein beliebtes Format für die Speicherung und den Austausch von Daten. Wenn Sie mit Programmierung arbeiten, werden Sie mit großer Wahrscheinlichkeit auf CSV-Dateien stoßen. Das Verständnis und der Einsatz von CSV-Dateien kann Ihre Arbeit erleichtern und beschleunigen.
 
-## Wie Geht Es
-Um mit CSV-Dateien in C++ zu arbeiten, müssen Sie zunächst die <fstream> und <sstream> Bibliotheken einbinden. Dann können Sie eine CSV-Datei öffnen und die Daten in speicherbare Variablen konvertieren.
+CSV, auch bekannt als "comma-separated values", ist ein weit verbreitetes Dateiformat für die Speicherung von tabellarischen Daten. Für Programmierer kann es sehr nützlich sein, mit CSV-Dateien zu arbeiten, um Daten zu analysieren, zu importieren oder zu exportieren. 
 
-Eine Beispielcode für das Öffnen und Lesen einer CSV-Datei kann folgendermaßen aussehen:
+## Wie funktioniert es?
+
+Um mit CSV-Dateien in C++ zu arbeiten, müssen wir die Standardbibliothek <fstream> verwenden. Diese ermöglicht uns das Lesen und Schreiben von Daten in Dateien. Zunächst müssen wir eine CSV-Datei öffnen und die Daten in ein String-Array einlesen. Hier ist ein Beispielcode:
 
 ```C++
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
 using namespace std;
 
 int main() {
-
     // CSV-Datei öffnen
-    ifstream csvFile("beispiel.csv");
-
-    // Variable für Datenzeile deklarieren
-    string datenzeile;
-
-    // Schleife zum Lesen der Datei
-    while (getline(csvFile, datenzeile)) {
-
-        // Datenstring in Stream konvertieren
-        stringstream stream(datenzeile);
-
-        // Variablen deklarieren und Daten in sie speichern
-        string name;
-        int alter;
-        stream >> name >> alter;
-
-        // Ausgabe der Daten
-        cout << "Name: " << name << ", Alter: " << alter << endl;
+    ifstream file("beispiel.csv");
+    
+    // Daten in Array einlesen
+    string data[3]; // 3 Spalten in der CSV-Datei
+    for(int i = 0; i < 3; i++) {
+        getline(file, data[i], ','); // Daten bis zum Komma lesen
     }
-
-    // Datei schließen
-    csvFile.close();
-
+    
+    // Daten ausgeben
+    cout << data[0] << " - " << data[1] << " - " << data[2] << endl;
+    
     return 0;
 }
 ```
 
-Die obige Code Beispiel liest eine CSV-Datei mit dem Inhalt "Max,25" und gibt die Daten "Name: Max, Alter: 25" aus.
+Die beispiel.csv-Datei könnte zum Beispiel folgende Daten enthalten:
 
-## Tiefer Einblick
-Die <sstream> Bibliothek ist besonders nützlich, da sie es ermöglicht, CSV-Daten in verschiedene Variablentypen zu konvertieren. Sie können beispielsweise auch boolesche Werte und Fließkommazahlen aus einer CSV-Datei auslesen.
+```
+Max,Mustermann,30
+Lisa,Müller,25
+```
 
-Außerdem ist es wichtig zu beachten, dass CSV-Dateien häufig Sonderzeichen oder unterschiedliche Trennzeichen verwenden. In solchen Fällen müssen Sie möglicherweise eine Funktion zur Zeichenumwandlung verwenden, um die Daten korrekt zu lesen.
+Die Ausgabe wäre dann:
 
-## Siehe Auch
-- Offizielle C++ Dokumentation für <fstream>: https://en.cppreference.com/w/cpp/header/fstream
-- Offizielle C++ Dokumentation für <sstream>: https://en.cppreference.com/w/cpp/header/sstream
-- Tutorial für den Umgang mit CSV-Dateien in C++: https://www.binpress.com/working-with-csv-files-in-c/
+```
+Max - Mustermann - 30
+```
+
+In diesem Beispiel haben wir nur einen Datensatz aus der CSV-Datei gelesen und in einer Ausgabe formatiert. Natürlich können wir auch alle Daten aus der CSV-Datei einlesen und weiterverarbeiten, je nach Bedarf.
+
+## Tiefergehende Informationen
+
+Beim Lesen von CSV-Dateien ist es wichtig zu beachten, dass die Daten in Textform gespeichert werden, daher müssen wir sie möglicherweise noch in die passenden Datentypen konvertieren. Auch bei der Ausgabe ist es wichtig, das richtige Format zu wählen, um die CSV-Datei korrekt zu speichern. Zudem gibt es viele verschiedene Möglichkeiten, Daten aus CSV-Dateien zu analysieren oder zu bearbeiten, beispielsweise durch die Verwendung von externen Bibliotheken oder dem Einbinden von Regulären Ausdrücken.
+
+## Siehe auch
+
+- [Offizielle C++ Dokumentation](https://en.cppreference.com/w/)
+- [Ein Tutorial zu fstream](https://www.learncpp.com/cpp-tutorial/basic-file-io/)
+- [Reguläre Ausdrücke in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)

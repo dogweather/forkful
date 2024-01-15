@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Slumpmässig generering av nummer"
-simple_title:         "Slumpmässig generering av nummer"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Fish Shell: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -11,42 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skapa slumpmässiga tal är ofta en viktig del av programutveckling och kan ha många olika användningsområden, från spel till statistiska beräkningar. Genom att använda Fish Shell kan du enkelt generera slumpmässiga nummer och integrera dem i dina program.
+Randomiseringsfunktioner är ett viktigt verktyg för programmerare eftersom de hjälper till att skapa slumpvisa nummer. Detta kan vara användbart för olika ändamål, som att skapa säkra lösenord, testa algoritmer eller skapa variation i spel eller underhållningsprogram.
 
-## Hur man gör
+## Så här gör du
 
-Att skapa slumpmässiga tal i Fish Shell är enkelt med hjälp av det inbyggda kommandot `random`. För att generera ett slumpmässigt heltal mellan 1 och 100 kan du använda följande kod:
+Randomiseringsfunktioner finns tillgängliga i Fish Shell för att generera slumpvisa tal. Det finns olika metoder som kan användas beroende på dina behov.
 
-```Fish Shell
-random 1 100
-```
+#### Slumpmässig sekvens
 
-Om du istället vill ha ett slumpmässigt decimaltal mellan 1 och 10 kan du använda följande kod:
+För att generera en slumpmässig sekvens av tal i ett visst intervall kan du använda kommandot `seq`. Till exempel kan du skapa en slumpmässig sekvens med 10 tal mellan 1 och 100:
 
 ```Fish Shell
-random --float 1 10
+seq 1 100 | shuf
 ```
 
-För att generera flera slumpmässiga tal i en loop kan du använda kommandot `seq` tillsammans med `random`, som i följande kod:
+Detta kommer att producera en blandad sekvens av tal som du kan använda för olika ändamål.
+
+#### Slumpmässig text
+
+Om du behöver generera slumpmässig text kan du använda `pwgen` kommandot. Detta kommando kan ta emot olika argument för att specificera längd och innehåll av den slumpmässiga texten. Till exempel kan du skapa ett slumpmässigt lösenord med 16 tecken som innehåller siffror och specialtecken:
 
 ```Fish Shell
-for i in (seq 1 10)
-    echo (random 1 100)
-end
+pwgen -s -y 16 1
 ```
 
-Det finns även flera olika flaggor som du kan använda tillsammans med kommandot `random` för att styra hur indata och utdata ska hanteras. Du kan lära dig mer om dessa flaggor genom att köra kommandot `man random` i Fish Shell.
+#### Slumpmässig dag
+
+Om du behöver generera en slumpmässig dag i ett visst tidsintervall kan du använda kommandot `date` tillsammans med `shuf`. Till exempel kan du skapa en slumpmässig dag mellan det nuvarande datumet och två veckor framåt:
+
+```Fish Shell
+shuf -i $(date +%s)-$(date -d '+2 weeks' +%s) -n 1 -t
+```
+
+Detta kommer att producera en slumpmässig dag i Unix-tidsformat, som du kan konvertera till det önskade datum- och tidsformatet.
 
 ## Djupdykning
 
-Bakom kulisserna använder Fish Shell en pseudo-slumpgenerator baserad på mönstret "Xorshift32". Det är en av de snabbaste slumpgeneratorerna tillgängliga och ger en god balans mellan kvalitet och hastighet. Det betyder att de genererade talen är tillräckligt slumpmässiga för de flesta ändamål, men om du behöver en hög nivå av säkerhet bör du använda en annan slumpgenerator.
-
-För att generera en mer komplex och skräddarsydd sekvens av slumpmässiga tal kan du använda `mt19937`-algoritmen. Den är mer avancerad och erbjuder en betydligt högre nivå av slumpmässighet, men den är också långsammare än Xorshift32. Du kan läsa mer om denna algoritm genom att köra kommandot `man mt19937` i Fish Shell.
+Fish Shell innehåller flera inbyggda kommandon för att generera slumpmässiga värden, inklusive `seq`, `shuf` och `pwgen`. Du kan också använda modifieringsoperatörer som `shuf -r` för att repetera värden eller `shuf -n` för att generera ett angivet antal värden. För mer information om dessa kommandon och deras användning, kan du kolla dokumentationen för Fish Shell eller söka efter specifika exempel online.
 
 ## Se även
 
-Eftersom slumpgeneratorer är en viktig del av många programmeringsspråk finns det gott om resurser där du kan lära dig mer om dem och deras olika implementeringar. Här är några användbara länkar:
-
-- [Random Numbers in Programming Languages](https://www.geeksforgeeks.org/random-numbers-in-programming-languages/)
-- [Random Number Generation in Python](https://realpython.com/python-random/)
-- [The Importance of Randomness in Programming](https://medium.com/swlh/the-importance-of-randomness-in-programming-a331cac12fcc)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Randomiseringsfunktioner i Bash](https://www.cyberciti.biz/faq/bash-shell-generate-random-password/)
+- [Generera slumpmässiga datum i Fish Shell](https://unix.stackexchange.com/questions/88346/how-to-generate-a-random-date-and-time-for-a-certain-time-interval)

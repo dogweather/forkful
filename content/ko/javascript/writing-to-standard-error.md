@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 표준 오류 쓰기"
-simple_title:         "표준 오류 쓰기"
+title:                "표준 오류에 쓰는 방법"
+html_title:           "Javascript: 표준 오류에 쓰는 방법"
+simple_title:         "표준 오류에 쓰는 방법"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,27 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-우리는 모두 프로그래밍을 할 때 버그를 피할 수 없습니다. 그러나 그들을 찾고 해결하기 위해서는 프로그램에서 발생하는 모든 에러를 신속하게 파악할 수 있어야합니다. 여기서 하나의 도구로 여러분의 생각을 예외적인 바이트로 출력하고 자세한 원인을 찾는 데 깊게 파있는 방법이 바로 표준 에러 출력입니다.
+## 왜?
 
-## 글을 쓰는 방법
-표준 에러를 생성하고 기록하는 작업은 간단한 방법입니다. 먼저, `console.error()` 메서드를 사용하여 원하는 메시지를 출력 할 수 있습니다. 그리고 그 밑에는 추가적인 정보도 쓸 수 있습니다. 아래의 예시 코드 에서는 이 메서드가 어떻게 작동하는지 보여줍니다.
+Javascript 프로그래밍에서는 종종 표준 오류에 대한 정보를 출력해야 할 때가 있습니다. 이를 활용하면 디버깅이나 예외 처리 등에 유용한 정보를 얻을 수 있습니다.
 
-```javascript
-const age = undefined;
-console.error("나이는 정의되지 않았습니다.");
-console.error(`나이는 ${age}입니다.`);
+## 어떻게?
+
+표준 오류에 정보를 출력하는 기본적인 방법은 `console.error()` 함수를 사용하는 것입니다. 이 함수에 문자열, 변수, 객체 등을 인자로 넣으면 해당 값들이 표준 오류에 출력됩니다.
+
+```Javascript
+let num = 10;
+console.error("Number:", num);
+
+// Output:
+// Number: 10
 ```
-출력:
-```
-나이는 정의되지 않았습니다.
-나이는 undefined입니다.
+
+표준 오류에 출력되는 정보가 너무 많을 경우, `console.group()`과 `console.groupEnd()`를 사용하여 정보를 그룹화할 수 있습니다. 이를 활용하면 출력되는 정보의 구조가 더욱 명확해지고 디버깅을 더 쉽게 할 수 있습니다.
+
+```Javascript
+console.group("Info");
+console.error("Name: John");
+console.error("Age: 30");
+console.groupEnd();
+
+// Output:
+// Info
+// Name: John
+// Age: 30
 ```
 
-## 깊게 파보기
-자, 이제 `console.error()` 메서드의 작동 방식을 좀 더 자세히 살펴보겠습니다. 이 메서드는 TypeScript와 같은 자바스크립트의 상위 언어이기도 한 `console.log()` 메서드와 매우 유사하지만, 약간 다른 목적을 가지고 있습니다. `console.log()`는 간단한 로그 메시지를 출력하는 데 사용되지만, `console.error()`는 에러 메시지를 출력하고 콘솔 창에 눈에 잘 띄게 표시되도록 합니다. 또한, `console.error()`는 스택 추적 정보를 출력해주므로 원인을 찾는 데 도움이 됩니다. 이 메서드는 개발을 할 때 빠른 디버깅에 매우 유용하게 쓰일 수 있습니다.
+## 심층 분석
 
-## 이것도 볼만합니다
-- [console.error() - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/API/console/error)
-- [Error 객체 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)
-- [처음 사용하는 자바스크립트 콘솔에 대해 알아보기 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_you_Will_need)
+표준 오류를 출력하는 것만으로는 디버깅에는 부족할 수 있습니다. 따라서 `console.trace()` 함수를 사용하여 오류가 발생한 위치를 추적할 수 있습니다. 이 함수를 통해 스택 트레이스를 출력하면 오류가 발생한 함수의 호출 경로를 확인할 수 있습니다. 이를 활용하여 디버깅을 더욱 쉽게 할 수 있습니다.
+
+```Javascript
+function add(a, b) {
+  return a + b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+console.trace("Error");
+console.error("Result:", add(2, multiply(3, 4)));
+console.trace("End");
+
+// Output:
+// Error
+// Result: 14
+//     at add (repl:1:12)
+//     at repl:1:1
+//     at Script.runInThisContext (vm.js:130:18)
+//     at REPLServer.defaultEval (repl.js:476:29)
+//     at bound (domain.js:422:15)
+//     at REPLServer.runBound [as eval] (domain.js:435:12)
+//     at REPLServer.onLine (repl.js:832:10)
+//     at REPLServer.emit (events.js:315:20)
+//     at REPLServer.EventEmitter.emit (domain.js:482:12)
+//     at REPLServer.Interface._onLine (readline.js:416:10)
+// End
+```
+
+## 또 보기
+
+- [Javascript의 `console` 객체](https://developer.mozilla.org/ko/docs/Web/API/Console)
+- [오류 추적과 디버깅](https://poiemaweb.com/js-error)

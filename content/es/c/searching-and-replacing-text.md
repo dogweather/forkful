@@ -1,5 +1,6 @@
 ---
-title:                "C: Buscando y reemplazando texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "C"
 category:             "C"
@@ -9,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-La búsqueda y reemplazo de texto es una tarea común en la programación de C. Ya sea para corregir errores en el código o para realizar cambios en un archivo de texto, esta técnica es esencial para cualquier programador. En este artículo, aprenderemos por qué es importante saber cómo buscar y reemplazar texto en C.
+## ¿Por qué buscar y reemplazar texto en C?
+
+Una de las principales razones por las que se busca y reemplaza texto en C es para realizar cambios o correcciones en un programa de manera rápida y eficiente. También puede ser útil para hacer cambios en múltiples líneas de código simultáneamente.
 
 ## Cómo hacerlo
-La función `strchr()` en C se puede utilizar para buscar una letra específica en una cadena de texto. Por ejemplo, si queremos encontrar la primera aparición de la letra "a" en una cadena llamada `texto`, podemos usar el siguiente código:
+
+Para buscar y reemplazar texto en C, podemos utilizar la función `strstr()` de la biblioteca estándar de C. Esta función busca la primera aparición de una cadena dentro de otra cadena y devuelve un puntero a esa posición en la cadena original.
+
+Por ejemplo, si queremos reemplazar todas las apariciones de la palabra "hola" por "adiós" en una cadena llamada `mensaje`, podemos usar el siguiente código:
 
 ```C
-char texto[] = "Hola mundo!";
-char *ptr;
-ptr = strchr(texto, 'a');
+char* nuevo_mensaje = strstr(mensaje, "hola");
+while (nuevo_mensaje != NULL) {
+    strncpy(nuevo_mensaje, "adiós", 5);
+    nuevo_mensaje = strstr(nuevo_mensaje + 5, "hola");
+}
 ```
 
-El puntero `ptr` apuntará a la primera aparición de "a" en la cadena `texto`. Si la letra no está presente, el puntero será NULL. También podemos utilizar la función `strstr()` para buscar una subcadena específica en una cadena de texto.
+El `while` loop nos permite reemplazar todas las apariciones de "hola" en `mensaje`. El primer parámetro de `strstr` es la cadena original y el segundo es la cadena que estamos buscando. Luego, utilizamos `strncpy` para reemplazar la cadena encontrada con nuestra nueva cadena.
 
-Para reemplazar una letra o una subcadena en una cadena, podemos usar la función `strncpy()` para copiar una nueva cadena en la posición deseada.
+## Un poco más profundo
 
-```C
-char texto[] = "Hola mundo!";
-char nuevoTexto[50];
-strncpy(nuevoTexto, texto, 5);
-strncpy(nuevoTexto + 5, "amigos!", 8);
-```
+La función `strstr` no solo es útil para buscar y reemplazar cadenas de texto en C, sino que también puede ser utilizada para otras operaciones, como dividir una cadena en varias subcadenas.
 
-El nuevo texto será "Hola amigos!".
+También es importante tener en cuenta que `strstr` es sensible a mayúsculas y minúsculas, por lo que si queremos buscar y reemplazar de manera insensible a mayúsculas y minúsculas, podemos utilizar la función `strcasestr` de la biblioteca `strings.h`.
 
-## Profundizando
-La función `strchr()` utiliza un algoritmo de búsqueda lineal, lo que significa que recorre cada elemento de la cadena hasta encontrar una coincidencia. Si trabajamos con cadenas de texto muy largas, este algoritmo puede resultar ineficiente. Una opción más eficiente es la búsqueda binaria, que divide la cadena en dos mitades y busca en la mitad correcta según el valor de la letra que estamos buscando.
+## Véase también
 
-También es importante tener en cuenta que la función `strncpy()` no agrega automáticamente el carácter nulo al final de la cadena reemplazada. Esto puede causar errores si continuamos utilizando la cadena en otras partes del código. Para solucionarlo, podemos agregar manualmente el carácter nulo al final de la cadena.
-
-## Ver también
-- [Documentación de la función `strchr()` en C](https://www.gnu.org/software/libc/manual/html_node/Searching-for-Strings.html#Searching-for-Strings)
-- [Documentación de la función `strncpy()` en C](https://www.gnu.org/software/libc/manual/html_node/Copying-and-Concatenation.html#Copying-and-Concatenation)
+- [Documentación de la función strstr en C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [Ejemplo de búsqueda y reemplazo de texto en C](https://www.geeksforgeeks.org/c-program-replace-word-text-another-given-source-string/)
+- [Otras funciones útiles para manipular cadenas en C](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-in-built-function/)

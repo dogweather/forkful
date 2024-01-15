@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Tarkista onko hakemisto olemassa"
-simple_title:         "Tarkista onko hakemisto olemassa"
+title:                "Tarkistetaan löytyykö kansio"
+html_title:           "Swift: Tarkistetaan löytyykö kansio"
+simple_title:         "Tarkistetaan löytyykö kansio"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,33 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia eri syitä miksi haluat tarkistaa, onko hakemisto olemassa. Saatat esimerkiksi tarvita sitä, jotta voit tallentaa tiedostoja tai luoda uusia kansioita. Tai haluat ehkä varmistaa, että olet oikeassa paikassa ennen suorittamista tiettyjä toimia. Riippumatta siitä, miksi tarvitset tätä tarkistusta, se on tärkeää välttää virheitä ja parantaa ohjelmasi suorituskykyä.
+On tärkeää tietää, miten tarkistaa, onko hakemistoa olemassa Swift-ohjelmointikielellä, jotta voidaan varmistaa ohjelman toimivuus ja välttää mahdolliset virheet.
 
-## Kuinka
+## Miten
 
-Tarkistaaksesi, onko hakemisto olemassa, käytä `fileExists(atPath:)` -metodia `FileManager`-luokasta. Tämä metodi ottaa parametrina polun tarkistettavaan hakemistoon ja palauttaa `true`, jos hakemisto löytyy ja `false` jos sitä ei ole. Alla on esimerkki koodista, jossa tarkistetaan, onko hakemisto nimeltä "Kuvat" olemassa ja tulostetaan vastaava viesti.
+Hakemistojen olemassaolon tarkistaminen Swiftillä on helppoa ja nopeaa. Käytännössä tämä voidaan tehdä käyttämällä FileManager-luokkaa, joka tarjoaa pääsyn tiedostojärjestelmään.
 
 ```Swift
 let fileManager = FileManager.default
-let path = "/Kuvat"
 
-if fileManager.fileExists(atPath: path) {
-    print("Hakemisto löytyi!")
-} else {
-    print("Hakemistoa ei löytynyt.")
-}
+// Tarkistetaan, onko hakemistoa olemassa annetulla polulla
+let directoryPath = "/Users/kayttajanimi/Documents"
+var isDirectory: ObjCBool = false
+let exists = fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory)
+
+// Tulostetaan tulos konsoliin
+print("Hakemisto olemassa: \(exists)")
 ```
 
-Esimerkkituloste:
+Tässä esimerkissä käytetään `fileExists(atPath:isDirectory:)` -metodia, joka palauttaa totuusarvon hakemiston olemassaolosta polussa ja asettaa `isDirectory` -muuttujan arvoksi `true`, jos kyseessä on hakemisto.
 
-> Hakemistoa ei löytynyt.
+## Syvällinen sukellus
 
-## Syvällisempi katsaus
-
-`fileExists(atPath:)` -metodi käyttää `FileManager`-luokan `attributesOfItem(atPath:)` -metodia tarkistaessaan, onko hakemisto olemassa. Tämä metodi on hyödyllinen myös saadaksesi tarkempia tietoja hakemistosta, kuten sen koon tai luontiajan. Voit käyttää tätä tietoa ohjelmasi parantamiseen ja tarvittaessa suorittaa lisätoimia hakemiston perusteella.
+Swiftin `FileManager`-luokka tarjoaa myös muita hyödyllisiä metodeja tiedostojen ja hakemistojen hallintaan, kuten `createDirectory(atPath:withIntermediateDirectories:attributes:)` ja `removeItem(atPath:)`. Lisäksi `fileExists(atPath:)` -metodi hyödyntää `NSURL`-luokkaa polun käsittelyyn.
 
 ## Katso myös
 
-- [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [attributesOfItem(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1415180-attributesofitem)
-- [Directory and File Paths in Swift](https://www.appcoda.com/swift-string-path/)
+- [Swiftin FileManager-luokan dokumentaatio](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swiftin FileManager-tutoriaali](https://www.hackingwithswift.com/example-code/system/how-to-create-a-directory-on-disk-using-filemanager)
+- [Swiftin NSURL-luokan dokumentaatio](https://developer.apple.com/documentation/foundation/nsurl)

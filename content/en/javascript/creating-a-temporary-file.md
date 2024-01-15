@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Javascript recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,39 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common task in programming, especially when dealing with large amounts of data or complicated operations. Temporary files can serve as a placeholder for data that needs to be processed or stored temporarily, or as a way to free up memory by storing data on disk rather than in memory.
+Creating temporary files in Javascript can be a useful tool for developers when working with large amounts of data or dealing with file I/O operations. Temporary files allow us to store and manipulate data without having to permanently store it on our system.
 
 ## How To
 
-To create a temporary file in Javascript, we can use the built-in `fs` module's `mkdtempSync()` method. This method takes in two parameters: a prefix for the temporary file name and a callback function. Here's an example of how we can use this method to create a temporary file and log its name to the console:
+Creating a temporary file in Javascript is a simple process that can be achieved using the built-in `fs` module. First, we need to require the `fs` module in our code:
 
-```javascript
+```Javascript
 const fs = require('fs');
+```
 
-// prefix for temporary file name
-const prefix = 'myTempFile';
+Next, we can use the `fs` module's `writeFile` method to create our temporary file and write data to it. Here's an example:
 
-// creating temporary file and getting its name
-const tempFile = fs.mkdtempSync(prefix, (err, folder) => {
+```Javascript
+fs.writeFile('temp.txt', 'Hello world!', (err) => {
   if (err) throw err;
-  console.log('Temporary file created in: ' + folder);
+  console.log('Temporary file created!');
 });
 ```
 
-The output of this code would be the name of the temporary file, something like `myTempFileJ7p4aG`. We can then use this file to store data or perform any other necessary operations.
+In the above code, we are creating a file called `temp.txt` and writing the string `'Hello world!'` to it. We also pass in a callback function that will log a success message if the file is created successfully. We can also use the `appendFile` method to add data to an existing temporary file.
+
+Once we are finished using the temporary file, we can use the `unlink` method to delete it from our system:
+
+```Javascript
+fs.unlink('temp.txt', (err) => {
+  if (err) throw err;
+  console.log('Temporary file deleted!');
+});
+```
 
 ## Deep Dive
 
-Behind the scenes, the `mkdtempSync()` method uses Unix's `mkdtemp` function to create the temporary file. This function generates a unique name for the temporary file by appending a random string of characters to the provided prefix. These randomly generated names are typically based on timestamps, process IDs, and other system-specific information to ensure that each temporary file has a unique name.
+Temporary files can be useful for tasks such as data processing, caching, and temporary storage. They can also be used as a security measure to prevent sensitive data from being permanently stored on a system.
 
-It's important to note that temporary files are not automatically deleted. We must explicitly delete them using the `unlink()` method in the `fs` module. It's best practice to always delete temporary files after we no longer need them.
+In addition to the methods mentioned above, the `fs` module also offers options for setting file permissions, encoding data, and reading from temporary files. By utilizing these options, we can have more control over our temporary file and its contents.
+
+It's important to note that temporary files should be used with caution and properly managed. Leaving temporary files on a system for too long can cause clutter and consume unnecessary storage space. It's best to delete temporary files as soon as they are no longer needed.
 
 ## See Also
 
-Here are some resources for further learning and understanding:
-
-- [Node.js Documentation on `fs` module](https://nodejs.org/api/fs.html)
-- [GeeksforGeeks article on temporary files in Node.js](https://www.geeksforgeeks.org/create-a-temporary-file-using-node-js/)
-- [Stack Overflow thread on deleting temporary files in Node.js](https://stackoverflow.com/questions/25348736/deleting-a-temporary-file-in-node-js)
-
-Happy coding!
+- [Node.js Documentation on Temporary Files](https://nodejs.org/api/fs.html#fs_temporary_files)
+- [Stack Overflow post on creating temporary files in Node.js](https://stackoverflow.com/questions/9939760/create-temporary-files-in-node-js)

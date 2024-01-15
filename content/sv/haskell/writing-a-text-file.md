@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Att skriva en textfil"
+title:                "Att skriva en textfil"
+html_title:           "Haskell: Att skriva en textfil"
 simple_title:         "Att skriva en textfil"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,28 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skriva en textfil är en viktig aspekt av programmering, oavsett vilket programmeringsspråk man använder sig av. Genom att lära sig hur man skriver en textfil i Haskell kan man till exempel läsa och skriva data från en fil eller skapa en loggfil för ett program. Det finns många användningsområden för att kunna hantera textfiler, och det är därför en användbar färdighet att ha inom programmering.
+Att kunna skriva en textfil kan vara väldigt användbart när man arbetar med programmering. Det kan till exempel användas för att spara data eller skapa konfigurationsfiler.
 
 ## Så här gör du
-
-För att kunna skriva en textfil i Haskell behöver du använda dig av funktionen `writeFile`. Denna funktion tar två argument: sökvägen till filen du vill skriva till och innehållet som ska skrivas. Ett enkelt exempel på hur man kan använda denna funktion är:
+Det finns två olika sätt att skriva en textfil i Haskell, antingen med hjälp av standardbiblioteket eller genom att använda en tredjepartsmodul som `Data.Text.IO`. Nedan följer exempel på båda metoderna.
 
 ```Haskell
-writeFile "hello.txt" "Hej världen!"
+-- Skriv en textfil med hjälp av standardbiblioteket
+import qualified Data.Text.IO as T
+
+-- Öppna en fil för skrivning
+file <- openFile "textfil.txt" WriteMode
+
+-- Skriv en sträng till filen
+hPutStr file "Det här är en textsträng!"
+
+-- Stäng filen
+hClose file
+
+-- Läs innehållet i filen och skriv ut det
+T.readFile "textfil.txt"
 ```
-I detta exempel skriver vi en textfil med namnet "hello.txt" och innehållet "Hej världen!". Om du nu öppnar filen i en texteditor, kommer du se att den innehåller just den texten.
 
-Man kan även använda sig av `appendFile` funktionen för att lägga till text till en fil som redan finns. Detta är användbart om du till exempel vill lägga till loggmeddelanden på slutet av en fil istället för att skriva om hela filen varje gång.
+```Haskell
+-- Skriv en textfil med hjälp av Data.Text.IO
+import qualified Data.Text.IO as T
 
-## Djupdykning
+-- Skapa en textsträng
+let text = "Det här är en textsträng!"
 
-När man skriver en textfil i Haskell kan man oftast inte använda sig av åäö i filnamnen. Det finns dock en lösning på detta genom att använda funktionen `encodeString` från paketet `System.FilePath`. Denna funktion ersätter åäö med motsvarande engelska tecken, vilket gör att filnamnet kan användas utan problem.
+-- Skriv textsträngen till filen
+T.writeFile "textfil.txt" text
 
-För att kunna läsa från en textfil kan man använda sig av funktionen `readFile`, som tar filens sökväg som argument och returnerar en sträng med filens innehåll. Detta är användbart om du vill läsa data från en textfil till ditt program.
+-- Läs innehållet i filen och skriv ut det
+T.readFile "textfil.txt"
+```
+
+Förväntad utgång:
+
+```Haskell
+"Det här är en textsträng!"
+```
+
+## Deep Dive
+För att kunna skriva en textfil i Haskell behöver man först öppna en fil för skrivning. Detta görs med `openFile` funktionen från standardbiblioteket. Sedan kan man använda funktioner som `hPutStr` eller `hWrite` för att skriva till filen. När man är klar måste filen stängas med `hClose`.
+
+En annan metod är att använda `Data.Text.IO` modulen, där man skapar en textsträng och sedan skriver den till filen med `writeFile` funktionen. Båda metoderna är enkla och effektiva sätt att skriva en textfil i Haskell.
 
 ## Se även
-
-- [Haskell Dokumentation](https://www.haskell.org/documentation/)
-- [System.FilePath modulen](https://hackage.haskell.org/package/filepath-1.4.2.1/docs/System-FilePath.html)
-- [Läs mer om textfiler i Haskell](https://wiki.haskell.org/File_handling)
+- [Haskell.org](https://www.haskell.org/)
+- [Learn You a Haskell](http://learnyouahaskell.com/chapters)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)

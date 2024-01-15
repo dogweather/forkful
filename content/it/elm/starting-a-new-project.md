@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Iniziare un nuovo progetto"
-simple_title:         "Iniziare un nuovo progetto"
+title:                "Avviare un nuovo progetto"
+html_title:           "Elm: Avviare un nuovo progetto"
+simple_title:         "Avviare un nuovo progetto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -11,36 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Iniziare un nuovo progetto con Elm può sembrare intimidatorio, ma in realtà è una decisione eccellente per i programmatori che cercano di creare applicazioni web funzionali ed efficienti. Con la sua sintassi chiara e la sicurezza dei tipi incorporata, Elm offre un ambiente di sviluppo stabile e predittibile.
-
 ## Come Fare
 
-Per iniziare un nuovo progetto in Elm, segui questi semplici passaggi:
-
-1. Installa Elm seguendo le istruzioni sul sito ufficiale.
-2. Utilizza il gestore dei pacchetti di Elm, chiamato Elm Package Manager (o "elm-package"), per gestire le dipendenze del progetto.
-3. Crea un file main.elm e inizia a scrivere il tuo codice.
-
-Ecco un esempio di codice Elm che stampa "Ciao mondo" a schermo:
+Sei pronto per iniziare un nuovo progetto su Elm? Segui questi semplici passaggi per iniziare:
 
 ```
-Elm.program
-	{
-		init = 0,
-		update = \msg model -> (model, Cmd.none),
-		view = \model -> Html.text "Ciao mondo"
-	}
+Elm init
 ```
-Eseguendo questo codice, dovresti vedere la stringa "Ciao mondo" sulla pagina web.
+
+Questo comando creerà una nuova cartella chiamata "my-app" e ti guiderà attraverso il processo di inizializzazione di un progetto Elm. Una volta completato, sarai pronto per iniziare a scrivere codice.
+
+Ecco un esempio di codice Elm che definisce un messaggio "Saluta" e una funzione che accetta una stringa come parametro e restituisce un modello di Elm che visualizza il messaggio:
+
+```
+type Msg
+    = Greet String
+
+view : String -> Html msg
+view name =
+    div [] [ text ("Ciao, " ++ name) ]
+```
+
+Per renderizzare questo modello nella tua pagina HTML, puoi utilizzare il seguente codice:
+
+```
+main : Html msg
+main =
+    view "mondo"
+```
+
+Ecco l'output che otterrai:
+
+```
+<div>
+    <span>Ciao, mondo</span>
+</div>
+```
+
+Ora sei pronto per sperimentare e creare il tuo progetto Elm!
 
 ## Approfondimento
 
-Prima di iniziare un progetto in Elm, è importante avere una buona comprensione dei fondamenti del linguaggio e della sua architettura. In particolare, è utile capire il concetto di model-view-update (MVU) e come è implementato in Elm.
+Iniziare un nuovo progetto su Elm è molto semplice, ma ci sono alcune cose importanti da tenere a mente prima di iniziare. Assicurati di comprendere i concetti fondamentali di Elm, come il modello di architettura "Model-View-Update" e l'uso del linguaggio di programmazione funzionale.
 
-Inoltre, è consigliabile consultare la documentazione ufficiale di Elm e cercare esempi di progetti già sviluppati in questo linguaggio per avere un'idea di come funziona in pratica.
+Inoltre, prima di iniziare a scrivere codice, è consigliabile esplorare la documentazione ufficiale di Elm, che include esempi di codice, esercitazioni e guide su come utilizzare tutte le funzionalità disponibili. In questo modo, sarai più preparato per affrontare eventuali sfide che incontrerai durante lo sviluppo del tuo progetto.
 
 ## Vedi Anche
 
 - Documentazione ufficiale di Elm: https://guide.elm-lang.org/
-- Esempi di progetti in Elm su GitHub: https://github.com/topics/elm
-- Un tutorial su Elm per principianti: https://elmprogramming.com/
+- Esercitazioni di Elm: https://elmprogramming.com/tutorials/
+- Elm for Beginners: https://www.codementor.io/projects/elm/learn-elm-beginner-web-app-gRgdK4Lq0Z

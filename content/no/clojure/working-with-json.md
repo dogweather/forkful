@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Å jobbe med json"
+title:                "Å jobbe med json"
+html_title:           "Clojure: Å jobbe med json"
 simple_title:         "Å jobbe med json"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,35 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å arbeide med JSON i Clojure er enkelt og effektivt. JSON er en populær format for å utveksle data mellom systemer, og ved å lære å jobbe med det i Clojure, kan du utvikle mer robust og fleksibel programvare.
+Hvis du jobber med data i Clojure, spesielt med å hente, lagre og manipulere data fra eksterne APIer, vil du mest sannsynlig komme over JSON-formatet. JSON (JavaScript Object Notation) er et populært format for å utveksle data mellom forskjellige programmeringsspråk og plattformer. I Clojure er det flere måter å jobbe med JSON på, og det kan være nyttig å vite hvordan du kan håndtere dette formatet for å gjøre arbeidsflyten din mer effektiv.
 
 ## Hvordan
 
-For å jobbe med JSON i Clojure, trenger du først og fremst å importere biblioteket "clojure.data.json". Deretter kan du bruke funksjonen "json/read" for å lese JSON-data fra en fil eller en streng:
+For å arbeide med JSON i Clojure, trenger du å bruke et bibliotek som heter "clj-json". Dette biblioteket gjør det enkelt å håndtere JSON-data i Clojure, ved å konvertere mellom JSON-objekter og Clojure-datastrukturer. La oss se på noen eksempler på hvordan du kan bruke dette biblioteket for å hente og manipulere JSON-data.
+
+Først må du importere biblioteket i Clojure-prosjektet ditt ved å legge til følgende linje i prosjektets "deps.edn" fil:
 
 ```Clojure
-(require '[clojure.data.json :as json])
-
-(json/read (clojure.java.io/reader "data.json"))
+{:deps {clj-json {:mvn/version "1.0.2"}}}
 ```
 
-Dette vil returnere Clojure-datastrukturen som representerer JSON-strukturen. Du kan også bruke funksjonen "json/write" for å skrive data til en JSON-fil:
+Her er et eksempel på hvordan du kan hente JSON-data fra et API og konvertere det til en Clojure-map:
 
 ```Clojure
-(require '[clojure.data.json :as json])
+(require '[clj-json.core :as json])
 
-(json/write {:name "Tom", :age 25} (clojure.java.io/writer "data.json"))
+(def api-response (slurp "https://example.com/api/data")) ;Henter JSON-data fra API
+(def data (json/parse-string api-response)) ;Konverterer data til Clojure-map
 ```
 
-Dette vil skrive dataene til en JSON-fil med navnet "data.json". Se på Clojure sin offisielle dokumentasjon for mer informasjon om ulike funksjoner og muligheter for å arbeide med JSON.
+Du kan da gå gjennom dataene som en vanlig Clojure-map og hente ut nødvendig informasjon. Her er et eksempel på hvordan du kan hente ut verdiene fra et JSON-objekt:
 
-## Dypdykk
+```Clojure
+(get data "key") ;Henter ut verdien til "key"
+```
 
-Å jobbe med JSON i Clojure er veldig fleksibelt, da strukturen av JSON og Clojure-data er veldig lik. Dette gjør det enkelt å manipulere og behandle data. I tillegg til å lese og skrive JSON-data, kan du også bruke Clojure sine innebygde funksjoner, som "assoc" og "get", for å endre og hente dataene fra JSON-strukturen.
+Du kan også bruke biblioteket til å konvertere Clojure-datastructurer til JSON-format. Her er et eksempel på hvordan du kan lage et JSON-objekt fra en Clojure-map og skrive det til en fil:
 
-En annen nyttig funksjon er "json/str", som lar deg konvertere Clojure-datastrukturen til en streng som representerer JSON-data. Dette kan være nyttig når du kommuniserer med eksterne API-er eller systemer som bare støtter JSON-format.
+```Clojure
+(def map-data {:name "John", :age 30})
+(def json-data (json/write-str map-data)) ;Konverterer map til JSON-string
+(spit "output.json" json-data) ;Skriver til fil
+```
+
+## Dykk dypere
+
+Clj-json biblioteket har også flere funksjoner for å håndtere mer kompleks JSON-data, som nestede objekter og arrays. Du kan lese mer om disse funksjonene i dokumentasjonen til biblioteket. Det finnes også alternativer til clj-json biblioteket, som "cheshire" og "data.json", men de fleste av dem tilbyr lignende funksjonalitet for å arbeide med JSON i Clojure.
 
 ## Se også
 
-- Offisiell dokumentasjon for å arbeide med JSON i Clojure: https://github.com/clojure/data.json
-- Sammenligning av forskjellige biblioteker for å arbeide med JSON i Clojure: https://github.com/funcool/clojure-json-benchmark
+- [Offisiell dokumentasjon for clj-json biblioteket](https://github.com/funcool/clojure-json)
+- [Clojure for the Brave and True - Chapter 14 (Introducing JSON)](https://www.braveclojure.com/writing-a-clojure-application/introducing-json/)
+- [Dokumentasjon for cheshire biblioteket](https://github.com/dakrone/cheshire)

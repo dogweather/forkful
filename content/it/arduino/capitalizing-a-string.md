@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolare una stringa"
+html_title:           "Arduino: Maiuscolare una stringa"
+simple_title:         "Maiuscolare una stringa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,28 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Molti progetti di Arduino richiedono la manipolazione di stringhe di testo, ma a volte è necessario modificare solo la prima lettera di una parola o frase in maiuscolo. In questo caso, è utile conoscere come capitalizzare una stringa di testo in Arduino. 
+
+Probabilmente ti stai chiedendo perché qualcuno vorrebbe capitalizzare una stringa usando Arduino. Beh, ci sono molte ragioni per farlo! Potresti voler visualizzare delle parole più evidenti sul tuo display LCD o semplicemente migliorare l'aspetto del tuo codice. Qualunque sia la motivazione, il processo è abbastanza semplice e oggi ti mostrerò come farlo.
 
 ## Come fare
-Per capitalizzare una stringa in Arduino, è necessario utilizzare la funzione `toupper()`. Inizialmente, si deve dichiarare la stringa da modificare e poi utilizzare un ciclo `for` per iterare attraverso ogni carattere della stringa. All'interno del ciclo, utilizzare la funzione `toupper()` per convertire ogni carattere in maiuscolo. Di seguito, è un esempio di codice che capitalizza la stringa "ciao mondo" e la stampa su seriale.
+
+Per capitalizzare una stringa in Arduino, useremo una funzione chiamata ```toUpperCase ()```. Questo comando trasforma tutte le lettere minuscole in maiuscole. Eccoti un esempio:
 
 ```Arduino
-String stringa = "ciao mondo";
-for (int i = 0; i < stringa.length(); i++) {
-  stringa[i] = toupper(stringa[i]);
-}
-Serial.println(stringa);
+String s = "ciao mondo";
+s.toUpperCase();
+Serial.println(s);
 ```
 
-Il risultato sarà:
+Output:
 
-```Arduino
+```
 CIAO MONDO
 ```
 
+Come puoi vedere, la stringa "ciao mondo" è stata trasformata in "CIAO MONDO". Se vuoi che solo la prima lettera della tua stringa sia maiuscola, puoi utilizzare la funzione ```toUpperCase ()``` solo sulla prima posizione della stringa:
+
+```Arduino
+String s = "ciao mondo";
+s[0] = toupper(s[0]);
+Serial.println(s);
+```
+
+Output:
+
+```
+Ciao mondo
+```
+
 ## Approfondimento
-La funzione `toupper()` utilizzata nell'esempio fa parte della libreria standard di C++. Essa accetta un carattere come parametro e restituisce il corrispondente carattere maiuscolo. Tuttavia, questa funzione non modifica il valore originale del carattere, ma ne restituisce solo una copia modificata. Per questo motivo, è necessario assegnare il risultato della funzione a una variabile o utilizzarlo direttamente come parametro in una funzione di output, come `Serial.println()`. 
+
+Ora che hai visto come capitalizzare una stringa, potresti chiederti come funziona esattamente la funzione ```toUpperCase ()```. Bene, quando viene eseguita, questa funzione scorre attraverso la stringa e utilizza la tabella ASCII per convertire le lettere minuscole in maiuscole. Inoltre, puoi utilizzare questa funzione con qualsiasi variabile di tipo stringa, quindi non c'è bisogno di preoccuparsi del tipo di dati che stai utilizzando.
 
 ## Vedi anche
-- [Documentazione di Arduino su la funzione `toupper()`](https://www.arduino.cc/reference/en/language/variables/data-types/toupper/)
-- [Esempi di codice di Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
+
+Se vuoi approfondire ulteriormente le funzioni di manipolazione delle stringhe in Arduino, puoi guardare questi link:
+
+- [Tutorial di Wokwi](https://wokwi.com/arduino/tutorials/string-functions)
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions)
+- [Video tutorial di Jeremy Blum](https://www.youtube.com/watch?v=lWYzJleRyJA)
+
+Prova ad utilizzare la funzione ```toUpperCase ()``` nelle tue prossime sfide di programmazione con Arduino e sperimenta con altre funzioni di manipolazione delle stringhe per migliorare le tue abilità di programmazione. Buona fortuna!

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Bash: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,49 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva tester är ett viktigt steg i utvecklingsprocessen för att säkerställa att koden fungerar som förväntat och att eventuella buggar upptäcks och åtgärdas i ett tidigt skede. Det hjälper även till att förbättra kodens kvalitet och underlättar för teamarbetet.
 
-Att skriva tester är en viktig del av att utveckla programvara. Det hjälper till att upptäcka buggar och fel i koden, vilket leder till en mer robust och tillförlitlig produkt. Det är även ett sätt att garantera att koden fungerar som den ska även vid framtida ändringar eller uppdateringar.
+## Så här gör du
+För att börja skriva tester i Bash, används kommandot `assert`. Detta kommando tar in två parametrar, ett villkor och ett meddelande, och kommer att jämföra villkoret med det förväntade resultatet. Om villkoret är sant, kommer testet att passera, annars kommer det att misslyckas och det angivna meddelandet kommer att visas.
 
-## Hur man gör
+Här är ett exempel på hur man skriver ett enkelt test för en funktion som lägger ihop två tal:
 
-För att skriva tester i Bash, används kommando-kommandot `test` eller dess synonym `[` följt av ett uttryck eller villkor att utvärdera. Här är ett exempel på detta:
+```
+Bash function add(a, b) {
+  echo $(($a + $b))
+}
 
-```Bash
-#!/bin/bash
-
-# Testa om ett tal är större än 10
-tal=15
-
-if [ $tal -gt 10 ]
-then
-    echo "Talet är större än 10."
-fi
+assert "add 2 3" "5" 
 ```
 
-I detta exempel använder vi `if`-satsen för att kontrollera om villkoret att `tal` är större än 10 är sant. Om det är sant, skrivs meddelandet "Talet är större än 10" ut. Om villkoret inte är sant, så skrivs inget ut.
-
-En annan användbar metod för att skriva tester är att använda `&&` och `||` operatorerna. Dessa används för att köra vissa kommandon bara om ett villkor är uppfyllt eller icke-uppfyllt.
-
-```Bash
-#!/bin/bash
-
-# Kontrollera om katalogen "library" existerar, och om det gör det, gå in i den.
-test -d library && cd library
-
-# Kontrollera om filen "readme.md" existerar, och om det gör det, skriv ut dess innehåll.
-test -f readme.md && cat readme.md
-```
-
-Här använder vi `test` för att kontrollera om en katalog eller fil existerar. Om den gör det, utförs det andra kommandot efter `&&`-tecknet.
+I det här fallet tar vi in parametrarna 2 och 3 till funktionen `add` och förväntar oss resultatet 5. Om funktionen returnerar ett annat värde, kommer testet att misslyckas och meddelandet "5" kommer att visas.
 
 ## Djupdykning
+Det finns flera olika sätt att skriva tester i Bash, beroende på vilken typ av test du vill göra. Det kan vara enkelt att skriva små enhetstester för enskilda funktioner, men det kan bli mer komplicerat när det kommer till integrations- eller systemtester.
 
-Det finns många olika sätt att skriva tester i Bash-skript, och det bästa sättet att lära sig är att fortsätta öva och experimentera. Några tips för effektiva tester inkluderar att vara så specifik som möjligt i dina villkor så att du inte får falskt positiva resultat, och att använda `&&` och `||` på ett strategiskt sätt för att skriva mer kompakt kod.
+En bra praxis när man skriver tester är att ha en separat fil för dem, så att de inte blandas med koden. Detta hjälper till att hålla koden ren och läsbar. Du kan även använda verktyg som `grep` eller `awk` för att läsa resultatet från testerna och se om det finns några misslyckade tester.
 
-Ett annat viktigt koncept är att använda variabler för att lagra värden som ska utvärderas i tester. Detta gör det lättare att ändra villkoren i framtiden utan att behöva ändra själva testet.
+När det kommer till att välja vad du ska testa, är det viktigt att fokusera på de delar av koden som är mest kritiska eller som du vet har haft problem tidigare. Genom att prioritera dessa områden kan du säkerställa en högre kvalitet på koden.
 
 ## Se även
-
-- [Bash Test Command på Linuxize](https://linuxize.com/post/bash-test-command/)
-- [Bash Manual om "test" kommandot](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Bash Scripting på Wikibooks](https://en.wikibooks.org/wiki/Bash_Shell_Scripting)
+- [Bash Test Assertions](https://bash.cyberciti.biz/guide/If_structures_to_execute_code_based_on_a_condition)
+- [Testing and Debugging in Bash](https://linuxhint.com/testing_and_debugging_bash/)

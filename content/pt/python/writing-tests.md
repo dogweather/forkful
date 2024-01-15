@@ -1,5 +1,6 @@
 ---
-title:                "Python: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Python: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Python"
 category:             "Python"
@@ -9,58 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante no desenvolvimento de software?
+## Por que escrever testes em Python?
 
-Escrever testes é uma prática essencial no desenvolvimento de software. Os testes garantem que o código está funcionando corretamente e previnem erros futuros. Além disso, eles fornecem uma documentação viva do código e ajudam a identificar problemas mais rapidamente durante o processo de desenvolvimento.
+Algumas das principais razões pelas quais é importante escrever testes em Python incluem a identificação e prevenção de erros, verificação da funcionalidade do código e a facilidade de manutenção do código.
 
 ## Como escrever testes em Python
 
-Para começar a escrever testes em Python, é necessário utilizar a biblioteca de testes integrada no Python, chamada "unittest". Para isso, basta importá-la no topo do seu arquivo:
+Para escrever testes em Python, você pode usar a biblioteca integrada do Python, chamada de "unittest". Esta biblioteca permite que você crie testes de unidade para verificar a funcionalidade de funções ou módulos específicos em seu código.
 
-```Python
+Exemplo de código para um teste de unidade em Python usando a biblioteca "unittest":
+
+```python
 import unittest
+
+def soma(x, y):
+  return x + y
+
+class TestSoma(unittest.TestCase):
+
+  # Definindo e executando o teste
+  def test_soma(self):
+    resultado = soma(3, 4)
+
+    # Verificando o resultado esperado
+    self.assertEqual(resultado, 7)
+
+# Executando todos os testes definidos
+unittest.main()
 ```
 
-Em seguida, crie a classe de teste que irá conter seus métodos de teste:
-
-```Python
-class MeuTeste(unittest.TestCase):
-```
-
-Dentro da classe, você pode escrever os métodos de teste utilizando o prefixo "test_" antes do nome do método. Por exemplo:
-
-```Python
-def test_soma(self):
-    resultado = 2 + 2
-    self.assertEqual(resultado, 4)
-```
-
-Este método "test_soma" irá garantir que a soma de 2 + 2 é igual a 4. Para executar os testes, basta chamar o método "main" da biblioteca unittest:
-
-```Python
-if __name__ == '__main__':
-    unittest.main()
-```
-
-Isso irá rodar todos os métodos de teste dentro da classe "MeuTeste". O resultado dos testes será exibido no terminal, como por exemplo:
+Saída do teste:
 
 ```
+.
 ----------------------------------------------------------------------
 Ran 1 test in 0.000s
 
 OK
 ```
 
-## Mergulho Profundo em Testes
+## Mergulho Profundo
 
-Existem diferentes tipos de testes que podem ser escritos em Python, como testes unitários, testes de integração e testes funcionais. Cada um deles tem uma finalidade específica no processo de desenvolvimento de software. Além disso, é possível utilizar ferramentas de cobertura de código, como o "coverage", que ajudam a medir a eficiência dos seus testes.
-
-Também é importante seguir algumas boas práticas ao escrever testes em Python. Isso inclui manter os testes independentes e coesos, e utilizar asserções adequadas para verificar as funcionalidades do código.
+Quando se trata de escrever testes em Python, existem diferentes tipos de testes que podem ser usados, como testes unitários, testes de integração e testes funcionais. É importante escolher o tipo de teste certo para o seu código e certificar-se de que seus testes cubram todos os cenários possíveis. Além disso, a criação de testes antes de escrever o código pode ajudar a melhorar a qualidade do código e a reduzir o tempo gasto em depuração.
 
 ## Veja também
 
-- [Documentação oficial de testes do Python](https://docs.python.org/3/library/unittest.html)
-- [Tutorial de testes de Python pela Real Python](https://realpython.com/python-testing/)
-- [Guia de boas práticas para escrever testes em Python](https://medium.com/@vladyslavhoncharenko/7-best-practices-for-writing-javascript-and-python-unit-tests-1c0cb19c1b63)
-
-- [Ferramenta de cobertura de código "coverage"](https://coverage.readthedocs.io/en/stable/)
+- [Documentação oficial do Python para testes](https://docs.python.org/3/library/unittest.html)
+- [Tutorial de testes em Python](https://realpython.com/python-testing/)
+- [Como escrever testes eficazes em Python](https://medium.com/@vladbezden/how-to-write-tdd-tests-in-python-836bba1e09e7)

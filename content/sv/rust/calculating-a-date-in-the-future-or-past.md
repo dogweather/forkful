@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Beräkning av ett datum i framtiden eller det förflutna"
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "Rust: Beräkning av ett datum i framtiden eller det förflutna"
 simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,48 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I många programmeringsprojekt behövs det ibland att beräkna ett datum i framtiden eller historiskt. Att kunna göra detta är en viktig del av att skapa applikationer som kräver att planera för händelser eller hantera tidsbaserad data. I den här artikeln kommer vi att utforska hur man kan göra detta med Rust-programmeringsspråket.
+Att kunna beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift inom programmering, vare sig det handlar om att skapa en kalenderapplikation eller hantera datum i databaser. Med Rusts robusta och snabba funktioner för datumberäkning, kan man enkelt och säkert hantera sådana uppgifter.
 
-## Hur man gör det
+## Så här gör du
 
-För att kunna beräkna ett datum i framtiden eller tidigare behöver vi först definiera variabler för det nuvarande datumet, antal dagar och riktningen vi vill gå i (framåt eller bakåt i tiden).
-
-```Rust
-use chrono::{Duration, DateTime, Utc};
-
-// Definiera nuvarande datum
-let now = Utc::now();
-// Definiera antal dagar
-let days = Duration::days(7);
-// Definiera riktning
-let direction = "framåt";
-```
-
-För att beräkna datumet använder vi sedan `with_duration`-funktionen från Chrono-biblioteket och anger antalet dagar och riktningen som parametrar. Detta resulterar i ett nytt `DateTime`-objekt som representerar det beräknade datumet.
+För att beräkna datum i Rust, behöver vi använda oss av standardbiblioteket `chrono`. För att komma igång, behöver vi först importera biblioteket genom att lägga till följande i vår kod:
 
 ```Rust
-// Beräkna datumet
-let calculated_date = now.with_duration(direction, days);
-
-println!("Beräknat datum: {}", calculated_date);
+extern crate chrono;
 ```
 
-När vi kör koden ovan kommer vi att se följande utmatning:
+Sedan kan vi använda oss av olika funktioner inom `chrono` för att beräkna datum. Nedan följer några exempel på hur man kan använda dessa funktioner:
 
+- För att få dagens datum och tid:
+
+```Rust
+use chrono::offset::Local;
+
+let today = Local::now();
 ```
-Beräknat datum: 2020-06-12 15:00:00 UTC
+
+- För att få datumet 10 dagar framåt:
+
+```Rust
+use chrono::{Duration, Local};
+
+let future_date = Local::now() + Duration::days(10);
 ```
 
-Vi kan också utföra samma beräkning för tidigare datum genom att ändra värdet för variabeln `riktning` till "bakåt".
+- För att få datumet 2 månader bakåt:
 
-## Djupdykning
+```Rust
+use chrono::offset::Local;
 
-Under huven använder sig Chrono-biblioteket av Gregorian Calendar för att hantera datum- och tidsberäkningar. Detta är en standardkalender som används i många länder och baseras på den julianska kalendern.
+let past_date = Local::now().month_subtract(2);
+```
 
-En viktig aspekt att tänka på vid beräkningar av datum i framtiden eller historiskt är att ta hänsyn till skottår. Detta görs automatiskt av Chrono-biblioteket, men det kan vara bra att ha i åtanke när man utför beräkningarna.
+- För att konvertera ett datum till en viss tidszon:
 
-## Se även
+```Rust
+use chrono::prelude::*;
 
-- [Chrono-biblioteket på crates.io](https://crates.io/crates/chrono)
-- [Chrono-dokumentation](https://docs.rs/chrono)
-- [Rust-programmeringsspråkets hemsida](https://www.rust-lang.org/sv-SE/)
+let timezone_jp = FixedOffset::east(9 * 3600); // Japan tidszon
+let now = Utc::now(); // Omvandlar till UTC-tidszon
+let tokyo_now = now.with_timezone(&timezone_jp); // Omvandlar till Tokyo tidszon
+```
+
+## Deep Dive
+
+När vi beräknar datum i Rust, är det viktigt att förstå skillnaden mellan lokala och globala tidszoner. När vi använder funktioner som `Local::now()`, tar den hänsyn till den lokala tidszonen där koden körs. Medan funktioner som `Utc::now()` använder den globala tidszonen UTC (Coordinated Universal Time).
+
+`chrono` har också olika strukturer för att hantera datum och tid, som `NaiveDateTime` och `DateTime`. Det är viktigt att vara medveten om vilken struktur man använder beroende på vad man vill uppnå.
+
+## Se också
+
+- [chrono hemsida](https://docs.rs/chrono/0.4.9/chrono/)
+
+- [Datum- och tidsmanipulering i Rust](https://rust-lang-nursery.github.io/rust-cookbook/datetime/durations.html)

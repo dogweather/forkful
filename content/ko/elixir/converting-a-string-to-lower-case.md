@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 문자열을 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Elixir: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-문자열을 소문자로 변환하는 것이 왜 중요한지 아시나요? 소문자로 변환하면 텍스트 처리와 비교 작업 등 여러 가지 프로그래밍 작업에서 유용합니다. 또한, 영문 대소문자를 구별하지 않는 경우에도 소문자로 변환하여 일관된 결과를 얻을 수 있습니다.
+스트링을 소문자로 변환하는 것은 일반적으로 프로그래밍에서 텍스트 처리를 할 때 유용합니다. 데이터를 정렬하거나 비교하는 등의 작업에서 소문자로 통일하면 불필요한 오류를 방지하고 효율적인 작업을 할 수 있습니다.
 
-## 어떻게 하나면 될까요?
+## 하우 투
 
-문자열을 소문자로 변환하는 방법은 간단합니다. Elixir에서는 `String.downcase/1` 함수를 사용하면 됩니다. 이 함수는 문자열을 소문자로 변환한 새로운 문자열을 반환합니다. 아래는 실제 코딩 예제와 그 결과입니다.
+### 파이프라인 연산자를 사용하는 방법
+
+소문자로 변환할 문자열 변수를 파이프라인 연산자(|)를 사용하여 String.downcase/1 함수에 넘겨줍니다. 이 함수는 주어진 문자열을 모두 소문자로 변환하여 새로운 문자열을 반환합니다.
 
 ```Elixir
-iex> String.downcase("HELLO")
-"hello"
+name = "JOHN"
+name |> String.downcase()    # "john"
 ```
 
-## 깊게 파고들어보기
+### 패턴 매칭을 사용하는 방법
 
-문자열을 소문자로 변환하는 과정에서 내부적으로 어떤 일이 일어나는지 궁금하신가요? Elixir에서는 문자열을 소문자로 변환하기 전에 문자 하나씩 순회하면서 대문자를 소문자로 바꾸는 작업을 합니다. 이 과정에서 `Unicode` 모듈을 사용하여 문자의 대소문자를 비교하고 변환합니다.
+String.downcase/1 함수는 패턴 매칭을 사용하여 문자열을 소문자로 변환할 수도 있습니다. 이 경우 변환된 문자열이 바로 변수에 할당되기 때문에 따로 할당 작업을 하지 않아도 됩니다.
+
+```Elixir
+name = "JOHN"
+String.downcase(name)    # "john"
+```
+
+## 딥 다이브
+
+파이썬과 같은 다른 언어에서는 문자열을 변환하기 전에 변수 내용이 변경되지 않도록 완전히 새로운 객체를 만들어서 처리합니다. 하지만 Elixir에서는 문자열을 변경할 수 없기 때문에 변환 후에도 원본 변수의 내용은 변하지 않습니다. 이는 함수형 프로그래밍에서 immutable 데이터를 사용하는 것과 관련이 있습니다.
 
 ## 더 알아보기
 
-이외에도 Elixir에서 문자열을 다루는 다양한 함수들이 있습니다. `String.upcase/1` 함수를 이용하면 반대로 소문자를 대문자로 변환할 수 있으며, `String.capitalize/1` 함수를 이용하면 문자열의 첫 글자만 대문자로 변환할 수 있습니다. 더 많은 내용을 알고 싶다면 아래 링크들을 참고해보세요!
+[Elixir String Module](https://hexdocs.pm/elixir/String.html)
 
-## 관련 링크
+[Elixir Pipes](https://elixir-lang.org/getting-started/enumerables-and-streams.html#pipes)
 
-- Elixir 공식 문서 - [String 모듈](https://hexdocs.pm/elixir/String.html)
-- [유니코드 관련 정보](https://unicode.org/)
+## 연관 글
+
+- [Elixir에서 문자열 다루기](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [Elixir의 함수형 프로그래밍 개념](https://elixir-lang.org/getting-started/functional-programming.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Elm: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,42 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Wiele języków programowania jest dostępnych, jednak jeden z nich wyróżnia się wyjątkowo prostotą i elegancją - jest to język Elm. Jedną z podstawowych czynności, jakie musimy wykonywać w programowaniu, jest odczytywanie plików tekstowych. W tym artykule dowiesz się, dlaczego warto poznać sposób odczytywania plików tekstowych w języku Elm.
+Czy kiedykolwiek chcieliście przeczytać tekstowy plik w swoim programie w Elm? Może potrzebujecie przetworzyć do danych lub wykonać inne operacje. W tym artykule dowiesz się, jak w łatwy i przyjemny sposób czytać pliki tekstowe w programie Elm.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Pierwszym krokiem jest zaimportowanie modułu "Text" za pomocą komendy "import Text". Następnie możemy użyć funkcji "fromString" do odczytania tekstu z pliku, podając jako argument nazwę pliku, który chcemy odczytać.
+Aby przeczytać plik tekstowy w programie Elm, musimy użyć modułu `File` i jego funkcji `readString`. Poniżej przedstawiamy prosty przykład kodu, który otworzy i wyświetli zawartość pliku `input.txt`.
 
-Przykładowy kod wygląda następująco:
+```
+Elm
+import File
+import Html exposing (text)
 
-```Elm
-import Text
-
-myfile = fromString "plik.txt"
+main =
+  File.readString "input.txt" []
+    |> Result.map (\contents -> text contents)
+    |> Result.withDefault (text "Nie udało się otworzyć pliku.")
 ```
 
-Aby wyświetlić odczytany tekst, możemy użyć funkcji "Debug.toString" i przekazać do niej zmienną "myfile". Wynikiem będzie wyświetlenie tekstu znajdującego się w pliku "plik.txt".
+Wywołujemy funkcję `readString`, przekazując jej nazwę pliku oraz pustą listę opcji. Następnie używamy funkcji `Result.map` do przetworzenia wyniku odczytania pliku na element `HTML` zawierający zawartość pliku. Ważne jest również użycie funkcji `Result.withDefault` w razie niepowodzenia odczytu pliku. Ostatecznie, wyświetlamy zawartość pliku na stronie za pomocą funkcji `text` z modułu `Html`.
 
-```Elm
-import Text
-import Debug
+## Deep Dive
 
-myfile = fromString "plik.txt"
+Funkcja `readString` zwraca wartość typu `Result`, która może przyjąć dwa warianty: `Ok` lub `Err`. W przypadku sukcesu, wariant `Ok` zawiera zawartość pliku w postaci `String`, a w przypadku błędu, wariant `Err` zawiera informację o błędzie. Aby uzyskać więcej informacji o błędzie, można użyć funkcji `File.getError`.
 
-display = Debug.toString myfile
-```
+Kodowanie plików jest również ważnym zagadnieniem podczas czytania plików tekstowych w programie Elm. Funkcja `readString` przyjmuje opcjonalną listę opcji, w której można ustawić żądane kodowanie za pomocą pary klucz-wartość, np. ` ("encoding", "UTF-8")`. Istnieje wiele dostępnych kodowań, takich jak `UTF-8`, `UTF-16` czy `ISO-8859-1`. Domyślne kodowanie różni się w zależności od środowiska uruchomieniowego, dlatego zawsze warto jawnie ustawić preferowane kodowanie.
 
-## Głębsza analiza
+## Zobacz też
 
-W języku Elm istnieje również wiele innych funkcji, które ułatwiają odczytywanie plików tekstowych. Możemy wykorzystać funkcję "lines" do podzielenia tekstu na linie, a także funkcję "words", która pozwala na podzielenie tekstu na słowa. Dzięki temu możemy bardziej precyzyjnie przetwarzać czytany tekst.
+Poniżej znajdują się kilka linków do innych przydatnych artykułów na temat programowania w Elm:
 
-Ponadto, warto zwrócić uwagę na to, że funkcja "fromString" zwraca wartość typu "Result", co oznacza, że może wystąpić błąd w przypadku, gdy plik nie zostanie prawidłowo odczytany. Dlatego zaleca się użycie funkcji "case of" w celu obsługi ewentualnych błędów.
-
-## Zobacz również
-
-Jeśli chcesz pogłębić swoją wiedzę na temat odczytywania plików tekstowych w języku Elm, polecamy zapoznać się z oficjalną dokumentacją oraz zbiorem przykładów na stronie internetowej języka. Możesz również przetestować swoje umiejętności, pisząc różne funkcje odczytujące pliki tekstowe i eksperymentując z nimi.
-
-Linki:
-- https://guide.elm-lang.org/effects/file.html
-- https://elm-lang.org/examples/url
-- https://ellie-app.com/m4ZWqDmtta1/0
+- [Elm - oficjalna strona języka](https://elm-lang.org/)
+- [Dokumentacja modułu File w Elm](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Poradnik: Wprowadzenie do programowania w Elm](https://guide.elm-lang.org/)
+- [Przykładowe projekty w Elm](https://github.com/mdgriffith/elm-nuts-and-bolts)

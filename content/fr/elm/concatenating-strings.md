@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+html_title:           "Elm: Concaténation de chaînes de caractères"
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,50 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+La concaténation de chaînes de caractères est une opération courante en programmation, utilisée pour combiner plusieurs chaînes en une seule. Elle est particulièrement utile pour créer des messages dynamiques, des requêtes d'API ou simplement pour améliorer la lisibilité du code.
 
-L'une des choses les plus courantes que nous faisons en tant que développeurs est de manipuler des chaînes de caractères. Nous concaténons des mots pour créer des phrases, des variables pour créer des messages personnalisés, et bien plus encore. Mais pourquoi est-il important de bien comprendre comment concaténer des chaînes en Elm ?
-
-## Comment procéder
-
-Pour concaténer des chaînes en Elm, nous pouvons utiliser l'opérateur `++`. Voyons un exemple simple :
+## Comment faire
+La syntaxe pour concaténer des chaînes en Elm est assez simple : il suffit d'utiliser l'opérateur `++` entre deux chaînes pour les combiner. Voyons un exemple concret :
 
 ```Elm
-let phrase = "Bonjour" ++ " " ++ "le monde"
+message = "Bonjour " ++ "mon ami"
 ```
 
-Ici, nous avons créé une variable `phrase` qui contient la chaîne "Bonjour le monde" en utilisant l'opérateur `++` pour concaténer les différentes parties de la phrase.
-
-Nous pouvons également utiliser la fonction `String.concat` pour concaténer plusieurs chaînes en une seule. Voici un exemple :
+Dans cet exemple, la variable `message` contiendra la chaîne "Bonjour mon ami". Nous pouvons également concaténer plusieurs chaînes à la fois :
 
 ```Elm
-let mots = ["Bonjour", "à", "tous"]
-let phrase = String.concat mots
+greeting = "Salut " ++ "à tous " ++ "les amis"
 ```
 
-Dans cet exemple, la fonction `String.concat` prend en paramètre une liste de chaînes et les concatène toutes ensemble pour créer une nouvelle chaîne.
+La variable `greeting` contiendra "Salut à tous les amis".
 
-Lorsque nous exécutons ce code, nous obtenons le résultat suivant :
-
-```
-"Bonjour à tous"
-```
-Cela peut sembler simple, mais savoir comment concaténer correctement des chaînes est essentiel pour de nombreux aspects du développement en Elm.
-
-## Plongée plus profonde
-
-Il existe différentes manières de concaténer des chaînes en Elm, en fonction du contexte et de ce que nous voulons accomplir. Par exemple, nous pouvons également utiliser des chaînes de format pour créer des messages dynamiques. Voici un exemple :
+## Plongée en profondeur
+En Elm, les chaînes de caractères sont en fait des listes de caractères. Cela signifie qu'il est possible de concaténer des listes de caractères avec l'opérateur `++`. Par exemple :
 
 ```Elm
-let nom = "Marc"
-let message = "Bonjour, {nom} !"
+list = ['h', 'e', 'l', 'l', 'o'] ++ [' ', 'w', 'o', 'r', 'l', 'd']
 ```
 
-En utilisant la chaîne de format `{nom}`, nous pouvons créer un message personnalisé en remplaçant `{nom}` par la valeur de la variable `nom`. Cela est très utile lorsque nous voulons créer des messages dynamiques qui changent en fonction des données que nous avons.
+Dans cet exemple, la variable `list` contiendra la liste de caractères ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']. Cette liste peut ensuite être convertie en chaîne de caractères à l'aide de la fonction `String.fromList`.
 
-Il est également important de noter que, lors de la concaténation de chaînes en Elm, il est important d'utiliser des virgules pour séparer les différentes parties de la chaîne. Cela garantit que tout est correctement concaténé et évite les erreurs.
+De plus, l'utilisation de l'opérateur `++` peut également être combinée avec des variables, des expressions et même des fonctions pour créer des chaînes de caractères dynamiques et personnalisées.
 
 ## Voir aussi
-
-- [Documentation officielle Elm : Manipulation de chaînes](https://guide.elm-lang.org/appendix/strings.html)
-- [Démos Elm : Manipulation de chaînes](https://ellie-app.com/new)
-- [Tutoriel vidéo : Les chaînes en Elm](https://www.youtube.com/watch?v=xyU8DgziZP4)
+- Documentation officielle Elm sur la concaténation de chaînes : https://guide.elm-lang.org/strings/concatenation.html
+- Tutoriel sur la manipulation des chaînes en Elm : https://marmelab.com/blog/2019/06/25/how-to-manipulate-strings-in-elm.html
+- Exemples pratiques d'utilisation de la concaténation de chaînes en Elm : https://dev.to/nhcodran/elm-1-fundamentals-of-programming-4jk3

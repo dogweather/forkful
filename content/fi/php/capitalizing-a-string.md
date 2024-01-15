@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Merkkijonon kirjoittaminen isoilla kirjaimilla"
-simple_title:         "Merkkijonon kirjoittaminen isoilla kirjaimilla"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "PHP: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,31 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi voit joutua käyttämään PHP:ta merkkijonon kapitalisointiin. Yleisin syy on merkkijonon esittäminen isolla alkukirjaimella, mikä voi olla tarpeen esimerkiksi nimien tai otsikoiden kohdalla.
+Yksi yleinen toimenpide PHP-ohjelmoinnissa on merkkijonojen muokkaaminen. Toisinaan haluamme esimerkiksi muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tämä voi olla hyödyllistä esimerkiksi, kun haluat näyttää käyttäjän syötteet oikeassa muodossa.
 
-## Miten
-
-Merkkijonon kapitalisointi ei ole vaikeaa PHP:ssa. Se voidaan tehdä yksinkertaisesti käyttämällä built-in funktiota `ucfirst()` tai `ucwords()`. Tässä on esimerkki kultakin:
+## Kuinka tehdä
 
 ```PHP
-$merkkijono = "tämä on esimerkki merkkijonosta";
-
-// Kapitalisoidaan ensimmäinen kirjain
-echo ucfirst($merkkijono); // Tulostaa "Tämä on esimerkki merkkijonosta"
-
-// Kapitalisoidaan jokainen sanan ensimmäinen kirjain
-echo ucwords($merkkijono); // Tulostaa "Tämä On Esimerkki Merkkijonosta"
+$string = "tämä on esimerkki";
+echo ucfirst($string);
 ```
 
-Huomaa, että `ucfirst()` kapitalisoi vain merkkijonon ensimmäisen kirjaimen, kun taas `ucwords()` kapitalisoi jokaisen sanan ensimmäisen kirjaimen. Voit myös tehdä oman funktion, joka käyttää `mb_convert_case()` funktiota, jotta saavutetaan parempi tuki monikielisille merkkijonoille.
+Tulostus:
+```
+Tämä on esimerkki
+```
 
-## Syventävä tieto
+Funktio `ucfirst()` muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tämä koskee kuitenkin vain ensimmäistä kirjainta eikä vaikuta muihin kirjaimiin merkkijonon sisällä.
 
-Merkkijonon kapitalisointi voi olla hieman haasteellista, kun otetaan huomioon kielen monimuotoisuus. Joissain kielissä kuten saksassa ja venäjässä käytetään erilaisia kirjaimia kuin englannissa. Tämä tarkoittaa, että `ucfirst()` ja `ucwords()` eivät välttämättä toimi toivotulla tavalla kaikilla kielillä.
+Voimme myös muuttaa kaikki merkkijonon kirjaimet isoksi käyttämällä funktiota `strtoupper()`:
 
-Myös merkkijonojen kanssa, joissa on joitain erikoismerkkejä tai akronyymejä voi olla haastavaa saavuttaa haluttu kapitalisointi. Tästä syystä on tärkeää ymmärtää merkkijonon rakennetta ja tarvittaessa luoda oma funktio, joka käsittelee merkkijonoja kunkin kielen ja rakenteen mukaan.
+```PHP
+$string = "tämä on esimerkki";
+echo strtoupper($string);
+```
+
+Tulostus:
+```
+TÄMÄ ON ESIMERKKI
+```
+
+## Syvempi sukellus
+
+Merkkijonon muokkaamiseen on muitakin tapoja kuin vain muuttaa ensimmäinen kirjain isoksi. Voimme käyttää esimerkiksi funktioita `strtolower()` ja `ucwords()` muuttaaksemme kaikki kirjaimet pieniksi tai muuttaaksemme pelkän ensimmäisen kirjaimen jokaisessa sanassa isoksi.
+
+Lisäksi merkkijonoihin on mahdollista käyttää monia muita manipulointifunktioita, kuten `trim()` poistaaksemme tyhjät välilyönnit merkkijonon alusta ja lopusta.
 
 ## Katso myös
 
-- PHP:n virallinen dokumentaatio `ucfirst()` ja `ucwords()` funktioista: https://www.php.net/manual/en/function.ucfirst.php, https://www.php.net/manual/en/function.ucwords.php
-- PHP:n virallinen dokumentaatio `mb_convert_case()` funktiosta: https://www.php.net/manual/en/function.mb-convert-case.php
+- [PHP:n virallinen dokumentaatio merkkijonojen muokkaamisesta](https://www.php.net/manual/en/ref.strings.php)
+- [Tutoriaali merkkijonojen muokkaamisesta PHP:llä](https://www.w3schools.com/php/php_string.asp)
+- [Konversiokytkimet ja merkkijonon muotoilu PHP:ssä](https://www.freecodecamp.org/news/a-quick-intro-to-formatting-strings-in-php-sprintf-strftime-and-more/)

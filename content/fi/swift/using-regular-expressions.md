@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Säännöllisten ilmaisujen käyttö"
-simple_title:         "Säännöllisten ilmaisujen käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Swift: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Swift-ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat voimakas työkalu, joka helpottaa datan käsittelyä ja manipulointia Swift-ohjelmoinnissa. Ne ovat erityisen hyödyllisiä, kun halutaan suorittaa monimutkaisia hakutehtäviä, kuten tietyn kaavan mukaisten merkkijonojen etsimistä.
+Finnish readers may wonder why they should bother learning about regular expressions when there are simpler ways to manipulate strings in Swift. The answer is that regular expressions offer a more powerful and efficient way to search and manipulate text data, especially when dealing with more complex patterns.
 
-## Kuinka käyttää säännöllisiä lausekkeita Swift-ohjelmoinnissa?
+## Miten
 
-Seuraavassa esimerkissä näytämme, kuinka käyttää säännöllisiä lausekkeita etsimään kaikki puhelinnumerot annetusta tekstistä:
+Regular expressions in Swift are denoted by using the "let regex = try! Regex(pattern:)" syntax. The pattern is written between the quotation marks, and there are various symbols and characters that can be used to define the pattern. For example, the dot (.) represents any single character, while the asterisk (*) represents zero or more occurrences of the preceding character.
 
 ```Swift
-let text = "Ota yhteyttä minuun numeroon 040-123456 tai sähköpostitse osoitteeseen example@test.com"
-
-let pattern = "[0-9]{3}-[0-9]{6}"
-
-if let range = text.range(of: pattern, options: .regularExpression) {
-    let phoneNumber = text[range]
-    print("Löydettiin puhelinnumero: \(phoneNumber)")
+let regex = try! Regex(pattern: "c[ae]t")
+if regex.matches("cat") {
+  print("Match found!")
 }
-
-// Output: Löydettiin puhelinnumero: 040-123456
+// Output: Match found!
 ```
 
-Koodissa luomme ensin muuttujan *text*, jossa on haluamme etsiä puhelinnumeroita. Sitten luomme muuttujan *pattern*, jossa määritämme säännöllisen lausekkeen, joka vastaa puhelinnumeroa (kolme numeroa viiva kuusi numeroa). Lopuksi käytämme *range* -metodia etsimään tekstistä *text* *pattern* -muuttujasta ja tulostamme löydetyn puhelinnumeron.
+In the above code, the regular expression "c[ae]t" will match both "cat" and "cet". The square brackets indicate a set of characters that can be used in the match, while the asterisk after the closing bracket means that the preceding character (in this case "a" or "e") can occur zero or more times.
 
-## Syvemmälle säännöllisten lausekkeiden käyttöön Swift-ohjelmoinnissa
+## Syväsukellus
 
-Säännöllisten lausekkeiden käyttö Swift-ohjelmoinnissa voi olla monimutkaista, mutta niiden avulla voi suorittaa monia tehtäviä, kuten tietyn kaavan mukaisten merkkijonojen etsimistä, tiedostonimien tarkistamista, puhelinnumeroiden tunnistamista ja paljon muuta. On tärkeää ymmärtää erilaisia säännöllisten lausekkeiden merkintätapoja ja käyttää niitä oikein halutun tuloksen saavuttamiseksi.
+Regular expressions can also be used for more complex pattern matching, such as using quantifiers to specify the number of occurrences of a character. For instance, the plus sign (+) means one or more occurrences, while the question mark (?) means zero or one occurrence.
+
+```Swift
+let regex = try! Regex(pattern: "S[ai]+t")
+if regex.matches("Sit") {
+  print("Match found!")
+}
+// Output: Match found!
+```
+
+The regular expression "S[ai]+t" will match "Sit" but not "St" because the pattern requires at least one occurrence of either "a" or "i" between "S" and "t".
+
+Additionally, characters can be grouped together using parentheses and then referenced later in the string using back-references (\1, \2, etc.). This allows for more specific and customizable pattern matching.
 
 ## Katso myös
 
-- [Swift-säännölliset lausekkeet -dokumentaatio](https://developer.apple.com/documentation/swift/regular_expression)
-- [Regex-tutoriaali Swift-ohjelmoijille](https://www.swiftdiv.com/swift-regular-expression-tutorial/)
-- [Säännöllisten lausekkeiden testaustyökalu](https://regexr.com/)
+To learn more about regular expressions in Swift, check out the official Apple documentation and Regex101, a useful tool for testing and building regular expressions.

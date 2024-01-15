@@ -1,5 +1,6 @@
 ---
-title:                "Java: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Java: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Java"
 category:             "Java"
@@ -11,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever testes em Java?
 
-Escrever testes em Java pode ser uma tarefa tediosa e muitas vezes negligenciada pelos programadores, mas é uma parte crucial do processo de desenvolvimento de software. Os testes garantem que o código esteja funcionando corretamente e ajuda a evitar erros e vulnerabilidades. Eles também permitem uma fácil detecção de bugs e facilitam a manutenção do código.
+Escrever testes em Java é essencial para garantir a qualidade e a robustez do seu código. Ao escrever testes, você pode identificar e corrigir possíveis erros e falhas antes de implantar seu código em produção. Além disso, testes bem escritos ajudam a documentar e manter o seu código de uma maneira mais eficiente.
 
-## Como escrever testes em Java
+## Como escrever testes em Java?
 
-Para escrever testes em Java, é importante usar uma estrutura de teste, como o JUnit. Primeiro, crie uma classe para os testes e adicione a anotação `@Test` antes de cada método de teste. Em seguida, use asserções `assertEquals` ou `assertTrue` para verificar se o resultado é o esperado. Por fim, execute os testes e verifique a saída no console.
+Para escrever testes em Java, é necessário utilizar o framework de testes JUnit. Primeiro, certifique-se de ter o JUnit instalado em seu ambiente de desenvolvimento. Em seguida, crie uma classe de teste com o sufixo "Test" no nome. Dentro dessa classe, utilize a anotação "@Test" antes de cada método que será testado. Em seguida, escreva os testes dentro desses métodos utilizando asserções para verificar se o resultado está de acordo com o esperado. Abaixo está um exemplo:
 
 ```Java
-@Test
-public void testSomar(){
-  Calculadora calc = new Calculadora();
-  assertEquals(4, calc.somar(2,2));
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class CalculadoraTest {
+
+  @Test
+  public void testSoma() {
+    Calculadora calc = new Calculadora();
+    int resultado = calc.soma(2, 2);
+    assertEquals(4, resultado);
+  }
 }
 ```
-`Output:`
-```
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-```
 
-## Uma análise mais profunda sobre escrever testes
+No exemplo acima, criamos uma classe de teste para a classe "Calculadora" que possui um método de soma. Dentro do método "testSoma", criamos uma instância da classe, realizamos a operação de soma e utilizamos a asserção "assertEquals" para verificar se o resultado é igual ao esperado.
 
-Além de garantir que o código esteja funcionando corretamente, escrever testes também pode ajudar os programadores a melhorar a qualidade do código. Ao pensar nos possíveis cenários de teste, os desenvolvedores podem identificar áreas onde o código pode ser otimizado ou simplificado. Além disso, os testes facilitam a integração contínua e o processo de deploy, permitindo que alterações sejam feitas com mais confiança e segurança no código.
+## Aprofundando-se em escrever testes
+
+Além de utilizar as asserções padrão do JUnit, é possível criar suas próprias asserções personalizadas para atender às necessidades específicas do seu código. Além disso, é importante ter uma boa cobertura de testes para garantir que todas as funcionalidades do seu código estejam sendo testadas. Uma prática comum é utilizar a metodologia de Test Driven Development (TDD), onde os testes são escritos antes do código, para garantir que todas as funcionalidades estejam sendo adequadamente testadas desde o início do desenvolvimento.
 
 ## Veja também
 
-- [Testing in Java with JUnit](https://www.jetbrains.com/help/idea/testing-in-java-with-junit.html)
-- [Importance of writing tests](https://medium.com/better-programming/importance-of-writing-test-cases-in-java-bebf4ed77363)
-- [JUnit documentation](https://junit.org/junit5/docs/current/user-guide/)
-
-*Este artigo foi escrito com a ajuda de uma tradução automática, podendo conter imprecisões.*
+- [Documentação oficial do JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [Artigo sobre TDD em Java](https://www.devmedia.com.br/test-driven-development-tdd-em-java-o-que-e-para-que-serve-e-como-usar/29688)

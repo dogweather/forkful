@@ -1,6 +1,7 @@
 ---
-title:                "Bash: स्ट्रिंग को कैपीटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपीटलाइज करना"
+title:                "एक स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "Bash: एक स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "एक स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Agar aapko ek string mai woh alphabets ko uppercase (bada) karna hai jo ki pahle se nahi the, to yeh article aapke liye hai.
 
-बैश प्रोग्रामिंग धारकों के लिए, स्ट्रिंग कैपिटलाइज़ करना बहुत उपयोगी हो सकता है। यह एक सरल और असरदार तरीका है अपने स्ट्रिंग्स को प्रवर्धित करने का।
+## Kaise Kare
+**NOTE**: Yaha ```Bash ... ``` code blocks mai diye gaye examples mai, input ko `$str` variable mai store kiya gaya hai.
 
-## कैसे करें
-
-यदि आप अपने स्ट्रिंग्स को बैश में कैपिटलाइज़ करना चाहते हैं, तो आप निम्नलिखित कोड को उपयोग कर सकते हैं:
+1. Sabse pahle, `tr` command ka use karke `tr [:lower:] [:upper:]` kar ke ek naya string create kare.
 
 ```Bash
-# एक सरल स्ट्रिंग की उदाहरण बनाएँ
-string="hello world"
-# स्ट्रिंग को कैपिटलाइज़ करने का कमांड
-string=${string^^}
-# कैपिटलाइज़ स्ट्रिंग को मुद्रित करने का कमांड
-echo $string
-# आउटपुट: HELLO WORLD
+$str="hello, world!"
+echo $str | tr [:lower:] [:upper:]
 ```
 
-आप ऊपर दिए गए कोड को अपने स्क्रिप्ट में भी शामिल कर सकते हैं ताकि आप अपने स्ट्रिंग्स को आसानी से कैपिटलाइज़ कर सकें।
+**Output**: `HELLO, WORLD!`
 
-## गहराई में
+2. Agar aapko sirf kuch specific alphabets ko bada karna hai, to unki jagah par `tr -d` use karke unko hata sakte hai aur fir `tr [:lower:] [:upper:]` se uppercase kar sakte hai.
 
-स्ट्रिंग कैपिटलाइज़ करना अधिक गहराई से समझने की जरूरत नहीं है। यह सरल रूप से आपके स्ट्रिंग के हर शब्द का पहला अक्षर को बड़े अक्षर में बदल देता है। यदि आप अपने स्क्रिप्ट में मंशा शब्द का इस्तेमाल करते हैं, तो आप स्ट्रिंग को कैपिटलाइज़ कर सकते हैं जैसे `sed -i 's/mansha/Mansha/g' file.txt`। इससे आपको शब्द को ढूंढने की ज़रूरत नहीं होती, बस आपको फ़ाइल को कैपिटलाइज़ करना होता है।
+```Bash
+$str="hello, world!"
+echo $str | tr -d '!' | tr [:lower:] [:upper:]
+```
 
-## देखें भी
+**Output**: `HELLO WORLD`
 
-- [Bash शब्दों को कैपिटलाइज़ करने का सरल तरीका](https://www.learncodeonline.in/bash-scripting/bash-scriptingtutorial-07/)
-- [बैश में स्ट्रिंग्स को फ़
+## Deep Dive
+- `tr` command ki madad se hum ek string ko dusre string mai convert kar sakte hai.
+- `[:lower:]` aur `[:upper:]` characters set ko use karne se alphabets ko uppercase mai convert kiya ja sakta hai.
+- Agar aap sirf ek string ka specific part uppercase karna chahte hai, to `tr -d` command ka use kar sakte hai jisse us specific part ko string se remove kar diya jayega.
+
+## Dekhe Bhiye
+Aur bhi helpful articles padhne ke liye, niche diye gaye links par click kare:
+
+- [Bash Basics in Hindi](https://idownvotedbecau.se/bash-basics-in-hindi)
+- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html)

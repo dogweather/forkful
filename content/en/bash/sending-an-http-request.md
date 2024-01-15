@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,52 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In today's digital world, sending HTTP requests is a crucial part of any web application or website. It allows users to communicate with servers and retrieve the desired information or perform specific actions. As a Bash programmer, learning how to send HTTP requests can greatly enhance your scripting capabilities.
+
+Sending HTTP requests is a crucial aspect of web development and automation. It allows you to interact with web servers and retrieve data from APIs, making it an essential skill for any developer or systems administrator.
 
 ## How To
-Sending an HTTP request with Bash is a straightforward process using the built-in curl command. It is a powerful tool that allows you to make various types of requests, such as GET, POST, PUT, DELETE, and more. Let's take a look at some coding examples and the corresponding output to understand better.
+
+To send an HTTP request in Bash, you can use the `curl` command. Here's an example of a basic GET request:
 
 ```Bash
-# Sending a GET request
-curl www.example.com
-
-# Output
-<!doctype html>
-<html>
-<head>
-  <title>Example Website</title>
-</head>
-<body>
-  <h1>Welcome to Example Website</h1>
-</body>
-</html>
+curl https://example.com
 ```
 
-In the above example, we are making a GET request to the website "www.example.com," and the output is the HTML code of the webpage.
+This will retrieve the homepage of `example.com` and print the HTML response to your terminal. You can also specify the HTTP method, headers, and data in your request. For example:
 
 ```Bash
-# Sending a POST request with data
-curl -X POST -d "username=johndoe&password=secret" www.example.com/login
-
-# Output
-{"login_status": true}
+curl -X POST -H "Content-Type: application/json" -d '{"username": "john", "password": "abc123"}' https://example.com/login
 ```
 
-In this example, we are making a POST request to the "/login" endpoint of "www.example.com" with the data "username=johndoe&password=secret." The response is a JSON object with the key "login_status" and value "true."
+In this case, we're making a POST request with a JSON body to a login endpoint. The response will contain the data we receive after logging in.
+
+You can also use variables and loops to simplify sending multiple HTTP requests. For instance, if you have a list of URLs stored in a file called `urls.txt`, you can iterate through them and make a GET request to each one using the following script:
+
+```Bash
+#!/bin/bash
+while read -r url; do
+  curl $url
+done < urls.txt
+```
+
+This will save you time and effort instead of manually typing the `curl` command for each URL.
 
 ## Deep Dive
-Now, let's take a deep dive and explore some of the essential concepts related to sending HTTP requests with Bash.
 
-### HTTP Methods
-As mentioned earlier, the curl command allows you to make various types of requests. These requests are based on the HTTP methods, such as GET, POST, PUT, and DELETE. GET requests are used to retrieve data, POST requests are used to send data, PUT requests are used to update existing data, and DELETE requests are used to delete data.
+Behind the scenes, the `curl` command utilizes the HTTP protocol to communicate with a server. It forms a request with a request line, headers, and a body (if applicable), and then receives a response with a status line, headers, and a body.
 
-### Request URLs
-The URL is an essential component of any HTTP request. It specifies the location of the resource on the server that the client wants to access. URLs consist of a protocol, domain name, and a specific path to the resource. For example, in the above examples, "http://" is the protocol, "www.example.com" is the domain name, and "/" or "/login" is the path.
+To further customize your HTTP request, you can specify options such as the user-agent, cookies, authentication methods, and even proxy settings. You can find a full list of options and their usage in the `curl` manual page.
 
-### Request Headers
-HTTP headers are used to provide additional information about the request or the requested resource. They can contain data such as the content type, user agent, and authorization credentials. You can add custom headers to your HTTP requests using the "-H" flag with the curl command.
+In addition to `curl`, you can also use other tools like `wget` or `httpie` to send HTTP requests in Bash. Each tool may have its own set of features and options, so it's worth exploring and comparing them to find the one that best suits your needs.
 
 ## See Also
-- [cURL Documentation](https://curl.haxx.se/docs/manpage.html)
-- [HTTP Requests with Bash Scripting](https://www.baeldung.com/http-request-bash)
-- [Anatomy of an HTTP Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#HTTP_requests)
+
+- `curl` manual page: https://curl.se/docs/manpage.html
+- `wget` manual page: https://www.gnu.org/software/wget/manual/wget.html
+- `httpie` documentation: https://httpie.io/docs

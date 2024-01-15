@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Lecture d'un fichier texte"
+title:                "Lecture d'un fichier texte"
+html_title:           "Gleam: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,46 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur passionné, vous cherchez sûrement à améliorer vos compétences et à apprendre de nouveaux langages de programmation. L'un de ces langages est Gleam, qui gagne en popularité grâce à sa syntaxe élégante et fonctionnelle. Dans cet article, nous allons parler de la lecture de fichiers texte en utilisant Gleam. Cela peut sembler un sujet simple, mais cela peut être une compétence importante pour de nombreux projets.
+Tu te demandes peut-être pourquoi tu devrais lire un fichier texte. Eh bien, mon ami, laisse-moi te dire que la lecture de fichiers texte est essentielle pour tout codeur qui souhaite manipuler des données. Cet article va te montrer comment le faire avec Gleam.
 
 ## Comment faire
 
-Tout d'abord, nous devons importer le module [`gleam/fs`](https://gleam.run/modules/gleam_fs.html) pour pouvoir utiliser les fonctions de lecture de fichiers :
+Tout d'abord, tu devras ouvrir le fichier texte en utilisant le module `gleam/io` et la fonction `open_file`. Tu devras également spécifier le chemin du fichier que tu veux lire. Voici un exemple de code :
 
-```Gleam
-import gleam/fs
+```gleam
+import gleam/io
+
+pub fn read_text_file() {
+    let file = io.open_file("chemin/vers/mon_fichier.txt") // chemin du fichier à lire
+    case file {
+        Ok(file_handle) -> {
+            // Code pour lire le fichier ici
+        }
+        Err(error) -> {
+            // Code pour gérer l'erreur ici
+        }
+    }
+}
 ```
 
-Ensuite, nous pouvons utiliser la fonction [`fs.read_file`](https://gleam.run/modules/gleam_fs.html#read_file) pour lire le contenu d'un fichier texte. Cette fonction prend en paramètre le chemin du fichier que nous voulons lire et renvoie une [`gleam/Result`](https://gleam.run/core/Result.html) contenant soit une chaîne de caractères, soit une erreur. Voici un exemple de lecture d'un fichier `texte.txt` :
+Maintenant, passons à la lecture du fichier. Utilise la fonction `read_line` pour lire une ligne de texte à la fois. Voici un exemple :
 
-```Gleam
-fs.read_file("texte.txt")
+```gleam
+let line = file_handle.read_line()
 ```
 
-Si le fichier est présent et lisible, le résultat sera :
+Tu peux également utiliser la fonction `read_all` pour lire tout le contenu du fichier en une seule fois.
 
-```Gleam
-Ok("Bonjour le monde!")
+## Plongeons plus en profondeur
+
+La fonction `open_file` peut prendre un deuxième argument en plus du chemin du fichier. Il s'agit du mode d'ouverture du fichier, qui peut être "read", "write" ou "append". Si tu as besoin d'écrire ou de modifier un fichier texte, tu peux utiliser le mode "write" pour le fichier à ouvrir. Voici un exemple :
+
+```gleam
+let file = io.open_file("chemin/vers/mon_fichier.txt", "write")
 ```
 
-Si le fichier n'existe pas ou si nous n'avons pas la permission de le lire, le résultat sera :
-
-```Gleam
-Err(FileNotFound)
-```
-
-Nous pouvons également spécifier l'encodage du fichier en ajoutant un deuxième paramètre à la fonction `read_file`, par exemple :
-
-```Gleam
-fs.read_file("texte.txt", "utf-8")
-```
-
-## Deep Dive
-
-La fonction [`fs.read_file`](https://gleam.run/modules/gleam_fs.html#read_file) utilise la fonction [`fs.slurp`](https://ulf.wtf/gleam_html/gleam.html#slurp) pour lire tout le contenu d'un fichier à la fois. Cela signifie que si le fichier est très volumineux, cela peut causer des problèmes de performance ou de mémoire. Dans ce cas, il peut être plus efficace d'utiliser la fonction [`fs.read_stream`](https://gleam.run/modules/gleam_fs.html#read_stream) qui renvoie un [stream](https://ulf.wtf/gleam_html/gleam_core/stream.html) que nous pouvons traiter ligne par ligne ou chunk par chunk.
+Enfin, n'oublie pas de fermer le fichier une fois que tu as terminé de le lire en utilisant la fonction `close`.
 
 ## Voir aussi
 
-- [Documentation officielle de Gleam sur la lecture de fichiers](https://gleam.run/modules/gleam_fs.html#read_file)
-- [Guide pour débuter avec Gleam](https://gleam.run/articles/getting_started.html)
-- [Projet Gleam sur GitHub](https://github.com/gleam-lang/gleam)
+- [Documentation officielle de Gleam](https://gleam.run/documentation)
+- [Lire et écrire des fichiers avec Gleam](https://dev.to/betamarc/lire-et-ecrire-des-fichiers-avec-gleam-1c2h) (en anglais)

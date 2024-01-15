@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Gleam recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,51 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-When working with data in programming, it is often necessary to read information from a text file. This can be useful for importing data, manipulating it, and then exporting it back into a file. In this blog post, we will explore how to use Gleam to efficiently read a text file and extract the information we need.
+
+Reading a text file is a common task in programming, whether it's to extract data or to process user input. In this article, we'll explore how to read a text file using Gleam and some useful techniques for handling different types of data.
+
 
 ## How To
-To read a text file in Gleam, we first need to import the standard library's `file` module. We can then use the `read_file` function to read the contents of a file into a string.
+
+To read a text file in Gleam, we'll use the `File` module. First, we need to import it into our project using the following code:
 
 ```Gleam
-import file
-
-let contents = file.read_file("my_file.txt")
+import gleam/file
 ```
 
-We can also specify the encoding of the file using the optional `encoding` argument. By default, `read_file` uses UTF-8 encoding.
-
-Once we have the contents of the file, we can use Gleam's `strings` module to split the string into lines. This will give us a list containing each line of the file as a separate string.
+Next, we can use the `open_text` function to open a file for reading. This function takes in the file path as a string and returns an `Result` type with the file contents, if successful, or an error if the file cannot be read. Here's an example of how we would use it:
 
 ```Gleam
-import file
-import strings
-
-let contents = file.read_file("my_file.txt")
-let lines = strings.lines(contents)
+let result = file.open_text("sample.txt")
 ```
 
-We can then loop through the lines and perform any necessary manipulation or extraction of data.
+Now, we can use pattern matching to handle the `Result` type and extract the file contents. In the case of a successful read, the `Ok` variant will contain the file contents as a string. We can then print it out or use it in other ways, such as splitting it into lines or parsing it for specific data. Here's an example of how we would print the file contents:
 
 ```Gleam
-for line in lines {
-  // Do something with the line
+case result {
+    Ok(contents) -> println(contents)
+    Error(err) -> println(err)
 }
 ```
 
-To output the results, we can use the `io` module's `println` function.
-
-```Gleam
-import io
-
-io.println("Line: " ++ line)
-```
+For more advanced use cases, we can also specify the file mode and encoding when using the `open_text` function. This allows us to read files in different languages or formats, such as UTF-8 or UTF-16. Additionally, we can use the `read_line` function to read a single line from a file, and the `read_all` function to read the entire file as a binary.
 
 ## Deep Dive
-When reading a text file, it's important to understand the potential issues that may arise. One common issue is handling different line endings, such as `\n` (Unix) or `\r\n` (Windows). Gleam's `file` and `strings` modules handle this automatically, allowing you to work with the lines regardless of the line ending used in the file.
 
-Another consideration is memory usage, especially when working with large files. Gleam's `file` module uses lazy evaluation, which means lines are only read from the file as needed. This can help prevent memory overflow when dealing with large files.
+When working with larger text files, it's important to consider memory usage and error handling. To avoid memory issues, we can use the `read_into` function to read the file into a buffer instead of loading it all into memory at once. This is especially useful for large files that cannot fit into memory.
+
+In terms of error handling, it's best to use the `File` module's `read_line` and `read_all` functions inside a `try` block to catch any potential errors. This will allow for graceful handling of errors and prevent our program from crashing if the file cannot be read.
 
 ## See Also
-- Gleam documentation for [`file`](https://gleam.run/documentation/standard-library/file)
-- Gleam documentation for [`strings`](https://gleam.run/documentation/standard-library/strings)
-- Gleam documentation for [`io`](https://gleam.run/documentation/standard-library/io)
+
+To learn more about working with files in Gleam, check out the official documentation on the `File` module: https://gleam.run/modules/file.html
+
+For more insights on file handling in general, you can also refer to the Rust Programming Language's documentation: https://doc.rust-lang.org/std/fs/struct.File.html

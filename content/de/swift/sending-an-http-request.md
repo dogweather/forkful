@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Senden einer http-Anfrage"
+title:                "Senden einer http-Anfrage"
+html_title:           "Swift: Senden einer http-Anfrage"
 simple_title:         "Senden einer http-Anfrage"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich überhaupt mit dem Senden von HTTP-Anfragen beschäftigen? Ganz einfach: In der heutigen Zeit der Vernetzung und des Internets sind HTTP-Anfragen ein unverzichtbares Werkzeug für die Kommunikation zwischen verschiedenen Computern und Servern. Sie ermöglichen es uns, Daten aus dem Internet abzurufen und zu nutzen, sei es für die Anzeige von Webseiten oder für das Abrufen von Informationen in einer App.
+Das Senden von HTTP-Anfragen ist eine häufige Aufgabe in der App-Entwicklung, besonders wenn man mit APIs arbeitet. Es ermöglicht die Kommunikation zwischen einer Anwendung und einem Server, um Daten zu senden und zu empfangen. Dies ist entscheidend, um dynamische Inhalte in Apps bereitzustellen und Benutzerinteraktionen zu ermöglichen.
 
-## Wie geht das?
+## Wie geht's
 
-Das Senden von HTTP-Anfragen ist in Swift gar nicht so kompliziert, wie man vielleicht denken mag. Mit Hilfe der URLSession-Klasse können wir eine Verbindung zu einer URL aufbauen und eine Anfrage senden. Hier ein Beispiel:
+Um eine HTTP-Anfrage in Swift zu senden, können wir die `URLSession` verwenden. Zuerst müssen wir eine URL erstellen, die die Adresse der Ressource enthält, auf die wir zugreifen möchten. Dann können wir mithilfe dieser URL eine `URLRequest` erstellen. Schließlich können wir die Anfrage mit `URLSession` ausführen und die Daten empfangen.
+
+Ein Beispiel für das Senden einer GET-Anfrage:
 
 ```Swift
-// Erstellen einer URL
-let url = URL(string: "https://www.example.com")!
-
-// Erstellen einer URLRequest
-let request = URLRequest(url: url)
-
-// Initialisierung einer URLSession
-let session = URLSession(configuration: .default)
-
-// Senden einer asynchronen HTTP-Anfrage
-let task = session.dataTask(with: request) { data, response, error in
-    // Hier können wir nun die Antwort auswerten
+// URL erstellen
+let url = URL(string: "https://example.com/api/data")
+// URLRequest erstellen
+let request = URLRequest(url: url!)
+// URLSession verwenden, um die Anfrage auszuführen
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
     if let data = data {
-        // Wir können die Daten in einen String umwandeln
-        let responseString = String(data: data, encoding: .utf8)
-        print(responseString)
+        // Daten verarbeiten
     }
 }
-
-// Starten der Anfrage
+// Anfrage starten
 task.resume()
 ```
 
-Dieses Beispiel sendet eine asynchrone HTTP-Anfrage an die URL "https://www.example.com" und gibt die empfangenen Daten (falls vorhanden) als String aus. Natürlich gibt es noch viele weitere Möglichkeiten und Optionen beim Senden von HTTP-Anfragen, aber das grundlegende Konzept bleibt dasselbe.
+Die Ausgabe der Anfrage wäre die empfangenen Daten, die wir dann verarbeiten können, je nachdem, welche Art von Daten wir erwarten.
 
-## Eine tiefere Analyse
+## Tief eintauchen
 
-Nun wollen wir etwas tiefer in die Materie eintauchen und uns genauer anschauen, wie HTTP-Anfragen funktionieren. Im Grunde genommen ist eine HTTP-Anfrage einfach eine Nachricht, die von einem Client (z.B. einer App) an einen Server gesendet wird. Diese Nachricht enthält Informationen über die gewünschte Aktion (z.B. Daten abrufen), den URL, und optional auch Daten, die an den Server übertragen werden sollen (z.B. in Form von JSON). Der Server antwortet dann mit einer Nachricht, die wiederum Informationen darüber enthält, ob die Anfrage erfolgreich war und ggf. weitere Daten oder Informationen.
+`URLSession` bietet verschiedene Arten von Anfragen wie GET, POST, PUT, DELETE usw. an. Wir können auch zusätzliche Konfigurationsoptionen hinzufügen, indem wir `URLSessionConfiguration` verwenden. Zum Beispiel können wir die Timeout-Zeit, den Cache-Richtlinien und vieles mehr anpassen.
+
+Eine wichtige Sache, auf die man achten sollte, ist das Behandeln von Fehlern. Beim Senden einer HTTP-Anfrage gibt es viele mögliche Fehler, wie zum Beispiel Netzwerkprobleme oder ungültige URLs. Es ist wichtig, diese Fehler zu erfassen und entsprechend zu behandeln, um sicherzustellen, dass unsere Anwendung zuverlässig funktioniert.
 
 ## Siehe auch
 
-- [Apple Developer Documentation: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [What is an HTTP Request?](https://www.lifewire.com/what-is-an-http-request-2625796)
-- [Understanding HTTP Request-Response Messages](https://www.xml.com/pub/a/ws/2001/03/27/httpreq.html)
+- [Apple Developer Dokumentation zu URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [HTTP-Methoden und REST](https://www.restapitutorial.com/lessons/httpmethods.html)
+- [Swift und HTTP](https://www.swiftbysundell.com/basics/http-requests/)

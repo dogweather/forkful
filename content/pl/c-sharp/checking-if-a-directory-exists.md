@@ -1,5 +1,6 @@
 ---
-title:                "C#: Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "C#: Sprawdzanie istnienia katalogu"
 simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "C#"
 category:             "C#"
@@ -11,16 +12,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W tym wpisie omówimy sprawdzanie istnienia katalogów w języku C#. Jest to ważna umiejętność, która może pomóc programistom w stworzeniu bardziej niezawodnych i bezpiecznych aplikacji. Dodatkowo, umiejętność sprawdzania istnienia katalogów jest również niezbędna w celu uniknięcia błędów w trakcie uruchamiania programów.
+Często w programowaniu musimy sprawdzać, czy dany folder istnieje, aby móc poprawnie wykonywać nasz kod. W artykule tym dowiesz się, jak to zrobić w prosty i efektywny sposób w języku C#.
 
 ## Jak to zrobić
 
-Sprawdzanie istnienia katalogów w C# jest bardzo proste i można to zrobić za pomocą metody statycznej "Directory.Exists". Poniżej znajduje się przykładowy kod, który sprawdza czy katalog "C:\Users" istnieje:
+Sprawdzenie, czy dany katalog istnieje w C# jest bardzo proste. Wystarczy użyć metody "Directory.Exists()", podając jako argument ścieżkę do katalogu, który chcemy sprawdzić. Poniżej znajduje się przykładowy kod, który wykorzystuje tę metodę:
 
 ```C#
-if (Directory.Exists(@"C:\Users"))
+if(Directory.Exists("C:\\Users\\Username\\Documents"))
 {
-    Console.WriteLine("Katalog istnieje.");
+    Console.WriteLine("Katalog istnieje!");
 }
 else
 {
@@ -28,25 +29,16 @@ else
 }
 ```
 
-Przykładowy output w przypadku istnienia katalogu:
+Jeżeli katalog istnieje, w konsoli pojawi się napis "Katalog istnieje!", w przeciwnym wypadku zostanie wyświetlony napis "Katalog nie istnieje.".
 
-```
-Katalog istnieje.
-```
+## Deep Dive
 
-Przykładowy output w przypadku braku katalogu:
+Głównym elementem używanym do sprawdzania istnienia katalogu jest klasa "Directory" z przestrzeni nazw "System.IO". Oprócz metody "Exists()", dostępne są również inne przydatne funkcje, takie jak "GetCreationTime()" czy "GetLastAccessTime()", które pozwalają na pobranie daty utworzenia i ostatniego dostępu do katalogu.
 
-```
-Katalog nie istnieje.
-```
+Warto również pamiętać, że metoda "Exists()" zwraca wartość logiczną (typ bool), więc może być bezpośrednio użyta w warunkach if-else, jak w powyższym przykładzie.
 
-## Głębsza analiza
+## Zobacz także
 
-Metoda "Directory.Exists" zwraca wartość logiczną "true" lub "false" w zależności od istnienia lub braku katalogu. Może być również używana do sprawdzania istnienia plików, wystarczy podać ścieżkę do pliku zamiast ścieżki do katalogu.
-
-Warto również pamiętać, że metoda ta może być również używana do sprawdzania istnienia katalogów na innych dyskach, należy tylko podać odpowiednią ścieżkę. Można również użyć metody "File.Exists" w przypadku sprawdzania istnienia plików.
-
-## Zobacz również
-
-- [Praca z plikami i katalogami w C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [10 przykładów sprawdzania istnienia plików i katalogów w C#](https://www.c-sharpcorner.com/UploadFile/9a7742/checking-directory-and-file-exists-in-C-Sharp/)
+- [Dokumentacja C# - klasa Directory](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory?view=net-5.0)
+- [Poradnik wideo: Jak sprawdzić, czy katalog istnieje w C#](https://www.youtube.com/watch?v=LMF5aISD04g)
+- [Inne przydatne porady i triki z języka C#](https://devstyle.pl/category/c-sharp/)

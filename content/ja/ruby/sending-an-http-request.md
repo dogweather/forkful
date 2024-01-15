@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "「httpリクエストを送信する」"
+html_title:           "Ruby: 「httpリクエストを送信する」"
+simple_title:         "「httpリクエストを送信する」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,29 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-HTTPリクエストを送信することの *なぜ* が重要なのかを説明します。HTTPリクエストとは、Webサーバーに対してリクエストを送信し、Webページやデータを取得するためのものです。
 
-## はじめる前に
-RubyでHTTPリクエストを送信する方法を解説します。以下のコードを参考にしてください。
+HTTPリクエストを送信することのメリットは、インターネットを介して情報を取得したり、データを送信したりすることができることです。これは、Webアプリケーションを開発する際に非常に重要な機能です。
+
+## 方法
 
 ```Ruby
 require 'net/http'
 url = URI("https://www.example.com")
-response = Net::HTTP.get(url)
-puts response
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+request = Net::HTTP::Get.new(url)
+response = http.request(request)
+puts response.body
 ```
 
-このコードでは、 `net/http` ライブラリを使用して、 `www.example.com` にHTTPリクエストを送信し、そのレスポンスを取得しています。`puts` 関数を使用することで、レスポンスをターミナルに表示することができます。
+このコードは、RubyのNet::HTTPライブラリを使用して、https://www.example.comにGETリクエストを送信しています。リクエストに対するレスポンスは、responseという変数に保存され、そのbodyメソッドを使用して結果を取得します。
 
-## 深く掘り下げる
-さらに深く、HTTPリクエストを送信する方法について掘り下げていきましょう。HTTPリクエストには、GETリクエストとPOSTリクエストの2種類があります。GETリクエストは、URLにパラメーターを付加してデータを送信するために使用されます。一方、POSTリクエストは、HTTPヘッダーとメッセージボディを使用してデータを送信するために使用されます。
+## 深堀り
 
-さらに、HTTPリクエストを送信する際には、レスポンスのステータスコードを確認することも重要です。ステータスコードは、リクエストが成功したかどうかや、エラーが発生したかどうかを示します。
+HTTPリクエストには、GET、POST、PUT、DELETEなどのメソッドがあります。また、リクエストに必要なパラメーターやヘッダーを指定することもできます。さらに、レスポンスのステータスコードやヘッダーの情報も取得することができます。詳細な情報は、RubyのNet::HTTPドキュメントを参照してください。
 
-## 参考リンク
-こちらのリンクから、より詳しい情報を入手することができます。
+## 他に見る
 
-- [Ruby公式ドキュメント](https://www.ruby-lang.org/ja/documentation/)
-- [HTTPリクエストの仕組み](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [Net::HTTPライブラリ](https://docs.ruby-lang.org/ja/latest/library/net=2fhttp.html)
-- [ステータスコード一覧](https://developer.mozilla.org/ja/docs/Web/HTTP/Status)
+- https://docs.ruby-lang.org/en/2.7.0/Net/HTTP.html
+- https://www.rubyguides.com/2018/08/net-http-ruby/
+- https://www.tutorialspoint.com/ruby-on-rails/rails-and-http-requests.htm

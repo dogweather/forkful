@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Fish Shell: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-HTTP 요청을 보내는 이유는 다양합니다. 예를 들어, 웹 개발에서는 서버와 통신하기 위해서, API를 사용할 때도 필요하고, 인터넷 상에서 정보를 주고받기 위해서도 사용됩니다. Fish Shell을 사용하면 간단하게 HTTP 요청을 보낼 수 있어서 효율적인 개발이 가능합니다.
+## 왜?
 
-## 방법
-HTTP 요청을 보내기 위해서는 Fish Shell에서 제공하는 `curl` 명령어를 사용할 수 있습니다. 다음은 간단한 예제 코드와 그에 해당하는 출력 결과입니다.
+먼저, 우리는 수많은 웹 서비스를 사용합니다. 그리고 이 서비스들은 대부분 사용자와 상호작용하기 위해 HTTP 요청을 사용합니다. 따라서 우리는 이러한 통신을 가능하게 하는 Fish Shell을 배우고 사용하는 것이 중요합니다.
 
-```Fish Shell 
-curl https://www.example.com
+## Fish Shell로 HTTP 요청 보내기
+
+Fish Shell은 매우 강력한 명령 줄 쉘입니다. 이 쉘을 사용하여 쉽게 HTTP 요청을 보낼 수 있습니다. 먼저, `curl` 명령어를 사용하여 다음과 같이 요청을 보낼 수 있습니다.
+
+```
+Fish Shell을 사용하여 HTTP 요청 보내기
 ```
 
-``` 
-<html>
-<head><title>Example Domain</title></head>
-<body>
-\#include<stdio.h>ㅤ
-<a href="http://www.iana.org/domains/example">More information...</a>
-</body>
-</html>
+```
+curl https://example.com
 ```
 
-위의 코드는 `https://www.example.com`에 HTTP 요청을 보낸 후, 그에 해당하는 HTML 파일을 출력합니다. 이처럼 `curl` 명령어를 이용하면, 웹 사이트나 API 등에서 원하는 정보를 가져오는 것이 가능합니다.
+위의 예제는 `https://example.com`으로 GET 요청을 보내고 응답을 받아옵니다. 만약 POST 요청을 보내고 싶다면 `-X` 옵션을 통해 다음과 같이 요청 메서드를 지정할 수 있습니다.
 
-## 심층 분석
-HTTP 요청은 HTTP 메서드(GET, POST, PUT, DELETE 등)와 요청하는 URL, 그리고 필요에 따라 추가적인 요청 헤더를 포함합니다. `curl` 명령어를 사용할 때, 각각의 요청 옵션은 `-X`, `-H`, `-d`를 사용하여 지정할 수 있습니다. 예를 들어, POST 메서드를 사용하여 데이터를 전송할 때는 `-X POST` 옵션과 `-d` 옵션을 사용하여 전송할 데이터를 지정할 수 있습니다.
+```
+Fish Shell을 사용하여 HTTP POST 요청 보내기
+```
+
+```
+curl -X POST https://example.com
+```
+
+또는 `--data` 옵션을 사용하여 요청 본문에 데이터를 추가할 수 있습니다.
+
+```
+Fish Shell을 사용하여 데이터가 포함된 HTTP POST 요청 보내기
+```
+
+```
+curl -X POST --data "username=example&password=1234" https://example.com/login
+```
+
+## 더 알아보기
+
+Fish Shell에서 HTTP 요청을 보내는 방법은 간단합니다. 그러나 좀 더 깊이 들어가보면 여러 가지 옵션을 사용하여 더욱 다양한 요청을 보낼 수 있습니다. 예를 들어, `curl` 명령어에 `-H` 옵션을 사용하여 요청 헤더를 추가할 수 있습니다. 이외에도 다양한 옵션을 사용할 수 있으며, 매뉴얼 페이지에서 자세한 내용을 확인할 수 있습니다.
+
+```
+Fish Shell로 HTTP 요청을 보내는 더 많은 방법에 대해서는 `curl` 매뉴얼 페이지를 참조하시기 바랍니다.
+```
 
 ## 관련 링크
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/curl.html)
-- [HTTP 요청의 구조](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
-- [HTTP 메서드에 대한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
+
+- `curl` 매뉴얼 페이지: https://fishshell.com/docs/current/cmds/curl.html
+- HTTP 요청에 대한 더 자세한 내용: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview

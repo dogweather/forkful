@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: קריאת קובץ טקסט"
+title:                "קריאת קובץ טקסט"
+html_title:           "TypeScript: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,78 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-קריאת קובץ טקסט נחשבת לכישלון בתעשיית התוכנה עקב חולשת האיתור. זהו כלי חשוב לפיתוח יישומי תוכנה וכן לניתוח וניהול מידע. בכתבה הזאת נלמד איך לכתוב קוד ב-TypeScript כדי לקרוא קובץ טקסט ולהחזיר את תוכנו.
+למה אדם ירצה לקרוא קובץ טקסט? כי זהו כלי חשוב בתכנות בשפת TypeScript וניתן להשתמש בו כדי לעבוד עם מידע מגוון כגון קבצי תוכנית, נתונים טבלאיים ועוד.
 
-## איך לעשות את זה
+## איך לעשות זאת
 
-מתחילים עם הכותרת המתאימה:
+כדי לקרוא קובץ טקסט בשפת TypeScript, ישנם מספר שלבים פשוטים אשר תצטרכו לבצע:
 
 ```TypeScript
-function readTextFile(file:string): string {
-// הגדרת משתנה לאחסון התוכן
-let content:string = "";
-
-// הגדרת ייבוא הספריה fs שתאפשר קריאת קבצים
+// צעד ראשון: ייבא את המודול "fs" מתוך הספרייה המובנית של Node.js
 import * as fs from 'fs';
 
-// השמת הקובץ במשתנה נוסף
-const fileContent = fs.readFileSync(file, 'utf-8');
+// צעד שני: הגדירו את שם הקובץ, הכולל את הנתיב המלא לקובץ
+const fileName = "./example.txt";
 
-// החזרת התוכן שנקרא
-return content = fileContent;
-}
+// צעד שלישי: קראו את הקובץ והציבו את התוכן שלו בתוך משתנה
+const fileContent = fs.readFileSync(fileName, "utf-8");
+```
 
-// קריאת הפונקציה ושמירת התוכן במשתנה
-const fileContent = readTextFile("example.txt");
+כעת, אם תרצו להדפיס את התוכן של הקובץ שקראתם, תוכלו להשתמש בפקודה הבאה:
 
-// הדפסת התוכן
+```TypeScript
 console.log(fileContent);
 ```
 
-הנה כמה דוגמאות נוספות ליצירת קוד קריאת קובץ טקסט עם TypeScript:
+כשתפעילו את הקוד, תראו בקונסול מספר השורות והמילים שנמצאות בקובץ הטקסט.
 
-### קריאת קובץ משמן
+## העמקת הבנת הנושא
 
-```TypeScript
-// ייבוא הספריה fs-extra
-import * as fs from 'fs-extra';
+הקבצים הטקסט הם דרך מושלמת לאחסן ולהשתמש במידע מגוון בתכנות בשפת TypeScript. אפשר למצוא פתרונות רבים לקריאה של קבצי טקסט, והפתרונות הללו כוללים שימוש בפונקציות כמו readFileSync וגם שימוש בכלים צד שלישי כמו ספריית fs-extra. שימוש ב-readFile ו-readFileSync דורש התכנסות לטיפוסים המתאימים של המשתנים כדי לקרוא את הקובץ באופן תקין.
 
-// הגדרת ייצוג הקובץ
-const filePath = "/Users/user/Documents/example.txt";
+## ראו גם
 
-// קריאת הקובץ והשמת התוכן במשתנה
-const fileContent = fs.readFileSync(filePath, 'utf-8');
-
-// הדפסת התוכן
-console.log(fileContent);
-```
-
-### קריאת קובץ מהאינטרנט
-
-```TypeScript
-// ייבוא הספריה node-fetch
-import fetch from 'node-fetch';
-
-// הגדרת ייצוג הכתובת של הקובץ
-const fileURL = "https://example.com/file.txt";
-
-// קבלת התוכן מהכתובת המתוארת
-fetch(fileURL)
-    .then(response => response.text())
-    .then(data => console.log(data));
-```
-
-השמה של תוכן קובץ למערך משתנים:
-
-```TypeScript
-// קריאת קובץ ושמירת התוכן במשתנה fileContent
-const fileContent = fs.readFileSync("example.txt", 'utf-8');
-
-// הורדת ה"שורות" של הקובץ למשתנה
-const lines = fileContent.split('\n');
-
-// הדפסת המערך הכולל את ה"שורות" של הקובץ
-console.log(lines);
-```
-
-###
+- [מדריך מפורט יותר על קריאת קבצי טקסט בשפת TypeScript](https://www.digitalocean.com/community/tutorials/reading-files-with-nodejs)
+- [החלפת תוכן בקובץ טקס

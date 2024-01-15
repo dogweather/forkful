@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Haskell: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,41 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty do ciągu znaków jest niezbędnym narzędziem w wielu aplikacjach, szczególnie w tych, które są powiązane z bazami danych. W Haskellu istnieje wiele różnych sposobów na dokonanie tej konwersji, dlatego chcielibyśmy dziś przybliżyć Wam ten temat.
+Masz datę i chcesz ją przekonwertować na string w Haskellu? Jest to częsty problem napotykany przez programistów, którzy pracują z danymi czasowymi. W tym artykule dowiesz się, jak w łatwy sposób przekonwertować datę na string w Haskellu.
 
 ## Jak to zrobić
 
-Poniżej przedstawiamy kilka przykładów kodu w Haskellu, pokazujących różne sposoby konwersji daty do ciągu znaków:
+Kodowanie daty w Haskellu nie jest trudne, ale wymaga użycia kilku funkcji. Najpierw musimy zaimportować moduł Data.Time, który jest niezbędny do manipulowania datami.
 
 ```Haskell
-import Data.Time.Format
-import Data.Time.Calendar
-
--- Konwersja daty do formatu "dd/mm/rrrr"
-dateToString1 :: Day -> String
-dateToString1 = formatTime defaultTimeLocale "%d/%m/%Y"
-
--- Konwersja daty do formatu "mmm dd, rrrr"
-dateToString2 :: Day -> String
-dateToString2 = formatTime defaultTimeLocale "%b %d, %Y"
-
--- Konwersja daty do formatu "rrrr-mm-dd"
-dateToString3 :: Day -> String
-dateToString3 = formatTime defaultTimeLocale "%Y-%m-%d"
+import Data.Time
 ```
 
-Powyższe funkcje wykorzystują moduł `Data.Time.Format` oraz `Data.Time.Calendar` w celu przeprowadzenia konwersji. Każda z tych funkcji przyjmuje jako argument wartość typu `Day` reprezentującą datę i zwraca ciąg znaków w wybranym formacie.
+Następnie musimy stworzyć wartość daty z użyciem funkcji `fromGregorian`, która przyjmuje trzy argumenty: rok, miesiąc i dzień.
 
-Przykładowe wywołanie funkcji `dateToString1` dla daty 2 lutego 2021 roku zwróci ciąg znaków "02/02/2021", funkcja `dateToString2` zwróci "Feb 02, 2021", a funkcja `dateToString3` zwróci "2021-02-02".
+```Haskell
+let mojaData = fromGregorian 2021 11 25
+```
 
-Warto zauważyć, że funkcja `formatTime` wymaga również ustawienia odpowiedniego locale za pomocą `defaultTimeLocale`, co umożliwia wyświetlanie dat w różnych językach.
+Teraz użyjemy funkcji `formatTime`, aby przekonwertować datę na string. Pierwszy argument tej funkcji to format daty, który chcemy uzyskać. W tym przykładzie użyjemy formatu "dd/mm/yyyy". Drugim argumentem jest data, którą chcemy przekonwertować.
 
-## Głębsza analiza
+```Haskell
+let stringData = formatTime defaultTimeLocale "%d/%m/%Y" mojaData
+```
 
-Konwersja daty do ciągu znaków w Haskellu jest możliwa dzięki wykorzystaniu wielu wbudowanych funkcji i modułów, takich jak `import Data.Time`, `import Data.Time.Format` oraz `import Data.Time.Calendar`. Istnieje również możliwość definiowania własnych formatów daty za pomocą funkcji `formatTime`. Podczas wyboru odpowiedniego sposobu konwersji należy zwrócić uwagę na ustawienia locale oraz wybrane formaty, tak aby odpowiednio odwzorować potrzeby aplikacji, w której dane są wykorzystywane.
+W tym przykładzie ustawiliśmy wartość parametru `defaultTimeLocale` na `en_US`, ale można go zmienić na język polski za pomocą funkcji `localePL`. Teraz, jeśli wyświetlimy wartość `stringData`, powinniśmy zobaczyć datę w formacie "25/11/2021".
+
+```
+> stringData
+"25/11/2021"
+```
+
+## Wnikliwe studium
+
+Musimy uważnie wybrać format daty, ponieważ będzie on wpływał na sposób przekonwertowania daty na string. Przykładowe symbole, które można użyć do budowania formatu, to: `%d` - dzień, `%m` - miesiąc, `%Y` - rok, `%H` - godzina (24-godzinna), `%M` - minuta, `%S` - sekunda. 
+
+Możemy również użyć funkcji `parseTimeM`, aby przekonwertować string na datę lub funkcji `getCurrentTime`, aby uzyskać bieżącą datę. Są to tylko podstawowe elementy obsługi dat w Haskellu, więc warto przejrzeć dokumentację w celu głębszego zrozumienia.
 
 ## Zobacz także
 
-- Dokumentacja modułu Data.Time.Format - https://hackage.haskell.org/package/time/docs/Data-Time-Format.html
-- Zręczny przewodnik po Data.Time w Haskellu - https://www.fpcomplete.com/blog/2015/06/string-conversion-error-handling-timezones-haskell/
-- Przykłady użytkowe modułu Data.Time - https://wiki.haskell.org/wikiupload/5/5e/TMR-Issue13.pdf
+- [Data.Time - dokumentacja Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Rozszerzenie Data.Time w Haskellu](https://wiki.haskell.org/Extended_backus%E2%80%93Naur_form#Literate_Haskell)
+- [Przekonwertowanie daty na string w języku Haskell](https://www.javatpoint.com/haskell-date-string-conversion)

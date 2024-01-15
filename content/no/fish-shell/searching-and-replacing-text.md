@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Søking og erstattning av tekst"
+title:                "Søking og erstattning av tekst"
+html_title:           "Fish Shell: Søking og erstattning av tekst"
 simple_title:         "Søking og erstattning av tekst"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,24 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når man jobber med tekstbehandling, enten det er å skrive koder eller å redigere dokumenter, er det ofte behov for å gjøre store endringer på tekst. Kanskje må man endre en bestemt del av teksten på flere steder, eller kanskje må man endre ett ord til et annet flere ganger. Dette kan gjøres manuelt, men det kan også være en veldig tidkrevende og feilbar prosess. Her kommer Fish Shell og dens søke- og erstatningsfunksjonalitet inn i bildet.
+Lurer du på hvordan du kan effektivt endre tekst i terminalen din? Fish Shell-klargjøringsprogrammet gir deg muligheten til å søke og erstatte tekst på en enkel og effektiv måte. Her vil du lære hvordan du kan gjøre dette ved hjelp av noen enkle kommandoer.
 
-## Hvordan
+## Slik gjør du det
 
-For å søke og erstatte tekst i Fish Shell, kan man bruke kommandoen "sed". Ved hjelp av denne kommandoen kan man søke etter bestemte tekststrenger og erstatte dem med ønsket tekst. La oss for eksempel si at vi ønsker å endre alle forekomster av ordet "hund" til "katt" i en tekstfil ved navn "dyrenavn.txt":
+Søke og erstatte tekst ved hjelp av Fish Shell er enkelt og kan gjøres med bare noen få kommandoer. Følg disse trinnene for å lære hvordan:
 
-```
-sed 's/hund/katt/g' dyrenavn.txt
-```
+1. Åpne terminalen din og skriv inn ```fish``` for å aktivere Fish Shell.
+2. Bruk kommandoen ```cd``` for å navigere til mappen hvor filen du vil gjøre endringer i befinner seg.
+3. Skriv kommandoen ```sed -i 's/<gammel tekst>/<ny tekst>/g' <filnavn>``` og trykk enter. Dette vil søke etter all forekomst av den gamle teksten og erstatte den med den nye teksten i filen du har valgt.
 
-Her står "s" for "substitute" (erstatt), "hund" er ordet vi ønsker å erstatte, "katt" er ordet vi ønsker å erstatte med, og "g" står for "global" (altså alle forekomster). Etter denne kommandoen vil alle forekomster av "hund" i teksten ha blitt erstattet med "katt".
+Etter at kommandoen er utført, vil du se en bekreftelse på at endringene er gjort. For å se resultatet kan du åpne filen og se at den gamle teksten er erstattet med den nye. 
 
 ## Dypdykk
 
-Det fins også flere alternativer og variabler man kan bruke i "sed"-kommandoen for mer nøyaktig søk og erstatning. For eksempel kan man bruke "-i" for å gjøre endringene direkte i filen, "-n" for å kun vise endringene uten å faktisk gjøre dem, og "-r" for å bruke regulære uttrykk i stedet for enkle søkestrenger.
+Fish Shell tillater også å bruke regulære uttrykk i søke- og erstatningskommandoen. Dette kan være nyttig hvis du ønsker å søke etter flere varianter av den gamle teksten og erstatte dem med forskjellige nye tekster.
+
+Du kan også bruke valglinjen til å spesifisere hvilke deler av teksten som skal endres. For eksempel ```s/<gammel tekst>/<ny tekst>/2``` vil bare endre den andre forekomsten av den gamle teksten, og la de andre være uendret.
+
+Fish Shell har også en interaktiv søke- og erstatningskommando hvor du kan endre teksten etter behov, i stedet for å erstatte all tekst på en gang.
 
 ## Se også
 
-- Her kan du lære mer om søke- og erstatningsfunksjonaliteten til Fish Shell: https://fishshell.com/docs/current/cmds/sed.html
-- Hvis du ønsker å lære mer om Fish Shell generelt: https://fishshell.com/docs/current/index.html
-- En norsk ressurs for å lære mer om kommandolinjen og tekstbehandling i Linux: https://manual.gnome.org/stable//gnome-help/shell-introduction.html.no
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Søke og erstatte med sed](https://www.gnu.org/software/sed/manual/sed.html#Sed-Program-Overview)
+- [Regulære uttrykk i grep og sed](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)

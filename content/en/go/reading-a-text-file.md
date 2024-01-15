@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Go"
 category:             "Go"
@@ -9,67 +10,93 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Reading a text file is a common task for many programmers, and it can serve a variety of purposes. For example, you may need to extract data from a log file, import data into a database, or simply analyze the contents of a text file. Whatever your reason may be, learning how to read a text file using Go can improve your skills as a programmer and make your tasks more efficient.
+Reading a text file is a common task in programming, and must be done correctly in order to access and manipulate data. This article will guide you through the process of reading a text file in Go, ensuring that you have the necessary skills to tackle this task in your own projects.
 
-## How To 
+## How To
 
-To start, you will need to open the text file using the ```os``` package and the ```Open()``` method. This method takes in two arguments: the path to the file and the mode in which you want to open it. Once you have opened the file, you will need to create a ```Scanner``` to read through its contents line by line. This can be done using the ```bufio``` package and the ```NewScanner()``` method. Lastly, you will need to use a ```for``` loop to iterate through each line and perform any desired actions.
+Reading a text file in Go is a simple process that involves a few steps. First, we need to open the file using the `os.Open` function.
 
-Here's a simple code example of how to read a text file and print each line to the console:
+```Go
+file, err := os.Open("data.txt")
+if err != nil {
+  // handle error
+}
+```
+
+Next, we need to read the contents of the file using the `bufio` package. This package provides a `Scanner` type that makes it easy to read a file line by line.
+
+```Go
+scanner := bufio.NewScanner(file)
+for scanner.Scan() {
+  line := scanner.Text()
+  // do something with the line
+}
+```
+
+Finally, don't forget to close the file after you have finished reading it.
+
+```Go
+err = file.Close()
+if err != nil {
+  // handle error
+}
+```
+
+Let's put it all together in a working example. Assume we have a file named "data.txt" with the following contents:
+
+```
+1,John,Doe
+2,Jane,Smith
+3,Bob,Johnson
+```
+
+Our goal is to read this file and print out each line. Here is the complete code:
 
 ```Go
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
+  "bufio"
+  "fmt"
+  "os"
+  "strings"
 )
 
 func main() {
-	// Open file
-	file, err := os.Open("example.txt")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
-	
-	// Create scanner
-	scanner := bufio.NewScanner(file)
-	
-	// Read and print each line
-	for scanner.Scan() {
-		line := scanner.Text()
-		fmt.Println(line)
-	}
+  file, err := os.Open("data.txt")
+  if err != nil {
+    panic(err)
+  }
+  defer file.Close()
+
+  scanner := bufio.NewScanner(file)
+  for scanner.Scan() {
+    line := scanner.Text()
+    fmt.Println(strings.Split(line, ","))
+  }
 }
 ```
 
-Sample output:
+The output of this program will be:
 
 ```
-This is the first line of the text file.
-And this is the second line.
-The third line is here!
+[1 John Doe]
+[2 Jane Smith]
+[3 Bob Johnson]
 ```
-
-By using the ```defer``` keyword, we ensure that the file is closed after we are done using it. Additionally, we use the ```Text()``` method to extract the current line from the scanner. For more advanced operations on text files, you can use other methods such as ```Scan()```, ```Bytes()```, or ```Runes()```.
 
 ## Deep Dive
 
-There are many other aspects to consider when reading a text file in Go, such as handling errors, managing file permissions, and dealing with large files. It is important to use good programming practices, such as checking for errors and closing files properly, to avoid potential issues.
+Now let's take a deeper look at what is happening in our code. When we use `os.Open` to open a file, we are provided with a `File` type, which represents an open file descriptor. This type has a `Read` method that we can use to read data from the file.
 
-In addition, Go provides some helpful tools for working with text files. For example, the ```ioutil``` package has a ```ReadFile()``` method that allows you to read the entire contents of a file at once, which can be useful for smaller files. You can also use the ```os``` package's ```Stat()``` method to get information about the file, such as its size and modification time.
+However, the `bufio.Scanner` type abstracts away the lower-level details of reading data from a file, making it much easier for us to work with. It handles the reading and buffering of data, and provides a convenient `Text` method to retrieve the current line being read.
 
-Another useful tip is to use function literals or anonymous functions when performing actions on each line. This allows you to customize the actions you want to perform without having to create separate functions for each one.
+Additionally, the `strings.Split` function allows us to split a string based on a delimiter, in this case a comma. This is useful for parsing the data from our file.
 
 ## See Also
 
-- [The official Go documentation on the ```os``` package](https://golang.org/pkg/os/)
-- [A thorough tutorial on working with text files in Go](https://www.callicoder.com/golang-read-file-open-read-write-file/)
-- [In-depth explanation of function literals and anonymous functions in Go](https://gobyexample.com/anonymous-functions)
-
-Reading text files is just one of the many file operations that you can perform with Go. By understanding how to handle text files, you'll have a strong foundation for working with other types of files as well. Happy coding!
+- [Go documentation on files](https://golang.org/pkg/os/#File)
+- [Go documentation on bufio package](https://golang.org/pkg/bufio/)
+- [Go documentation on strings package](https://golang.org/pkg/strings/)

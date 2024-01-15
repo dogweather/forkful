@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "C++ recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "C++"
 category:             "C++"
@@ -9,56 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Have you ever wondered how a web browser is able to display a web page with just a simple click? Behind the scenes, there is a process called web page downloading, which is responsible for fetching the necessary files and resources from a web server and displaying them as a cohesive web page. In this blog post, we will explore the concept of downloading a web page and how it can be implemented in C++.
+If you're a web developer, you know the importance of being able to access and analyze web page data. Downloading a web page allows you to gather information, analyze its structure, and perform various tests to improve its performance and user experience. 
 
 ## How To
 
-To start off, we will need to include the necessary headers for our program to communicate with a web server. In this case, we will be using the popular open-source library called cURL (Client URL). 
+To download a web page in C++, we first need to include the appropriate headers: 
 
-```
+```C++
 #include <iostream>
 #include <curl/curl.h>
 ```
-Next, we will initialize the cURL library and set the URL of the webpage that we want to download. 
+
+Next, we'll create a `main` function and initialize a CURL object. 
+
+```C++
+int main() {
+
+    CURL *curl;
+    curl = curl_easy_init();
+```
+
+Within the `main` function, we can specify the URL of the web page we want to download. 
+
+```C++
+    // Set the URL of the web page to be downloaded
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
 
 ```
-CURL *curl;
-curl = curl_easy_init();
-curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-```
-Then, we will use the function `curl_easy_perform` to initiate the downloading of the webpage. This function will also return an error code if the download is unsuccessful. 
 
-```
-CURLcode res = curl_easy_perform(curl);
+Then, we can specify the file path and name where the downloaded web page will be saved. 
 
-if(res != CURLE_OK) {
-  std::cerr << "Error while downloading webpage: " << curl_easy_strerror(res) << std::endl;
+```C++
+    // Set the file path and name for the downloaded web page
+    FILE *fp;
+    fp = fopen("downloaded_page.html", "wb");
+```
+
+Now, we can start the download process by using the `curl_easy_perform` function. 
+
+```C++
+    // Perform the download and save the output to the specified file
+    curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+
+    // Close the file 
+    fclose(fp);
+
+    return 0;
 }
 ```
-Lastly, we will clean up our cURL session and close the connection. 
 
-```
-curl_easy_cleanup(curl);
-```
+Once the program is executed, the web page will be downloaded and saved to the specified file path. We can then use the downloaded page for further analysis and testing. 
 
-Running this code will download the webpage and display any errors that may have occurred during the download process. 
+### Sample Output
 
-```
-Error while downloading webpage: SSL peer certificate or SSH remote key was not OK.
-```
+The downloaded web page will be saved as an HTML file, which can be opened and viewed in any web browser. 
 
 ## Deep Dive
 
-Behind the scenes, cURL is using the HTTP protocol to communicate with the web server and retrieve the necessary files. It also has the capability to handle different types of data, such as images, videos, and text files. Additionally, cURL offers a variety of options and parameters that can be used to customize the download process. 
+There are a few important things to note when downloading a web page in C++ using CURL. 
 
-One thing to note is that cURL is not limited to just downloading web pages. It can also be used for a variety of other purposes such as uploading files, sending emails, and more. 
+First, the `curl_easy_init` function is used to initialize a CURL object and the `curl_easy_cleanup` function is used to cleanup the object once the download is complete. 
+
+Secondly, the `curl_easy_setopt` function is used to specify different options for the download, such as the URL and file path. You can also specify options for authentication, proxy, and other parameters. 
+
+Lastly, the `curl_easy_perform` function is used to actually perform the download. It returns a `CURLE_OK` status if the download was successful. 
 
 ## See Also
 
-- [cURL official website](https://curl.haxx.se/)
-- [cURL documentation](https://curl.haxx.se/docs/)
-- [HTTP protocol explained](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+To learn more about downloading web pages in C++, check out the following resources: 
 
-In conclusion, downloading a web page is a crucial aspect of web browsing and it can easily be implemented in C++ using the cURL library. By diving deeper into the concept, we can gain a better understanding of how the internet works and how we can interact with it using programming. Happy coding!
+- [CURL Documentation](https://curl.haxx.se/libcurl/c/) 
+- [C++ Tutorials on Web Development](https://www.learncpp.com/category/web-development/)

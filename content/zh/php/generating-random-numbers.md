@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "PHP: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -9,53 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么##
+## 为什么
 
-在编写任何程序时，生成随机数都是一个非常有用的功能。无论是创建密码生成器，还是进行实验和模拟，生成随机数都可以为程序增加多样性和随机性。在这篇文章中，我们将学习如何在PHP中生成随机数，并深入了解随机数的原理。
+随机数在编程中扮演着重要的角色，它可以被用来创建各种各样的游戏、加密算法、测试数据，以及其他需要随机性的应用。因此，学习如何生成随机数将帮助你提升编程技能，以及应用它们到不同的项目中。
 
-##如何##
+## 如何
 
-PHP提供了一个内置函数，用于生成随机数：`rand()`。它接受两个参数：最小值和最大值。下面是一个示例代码，它将生成10个随机数并将它们打印出来：
-
-```PHP
-<?php
-for ($i = 0; $i < 10; $i++) {
-  $randomNumber = rand(1, 100);
-  echo $randomNumber . "\n";
-}
-```
-输出可能会类似于：
-
-```
-73
-12
-45
-98
-20
-67
-42
-89
-34
-8
-```
-正如您所看到的，这些随机数在1到100之间，它们的顺序也是随机的。您可以根据需要修改最小值和最大值。
-
-如果您需要更大范围的随机数，您可以使用`mt_rand()`函数，它使用更高级的随机数生成算法。它的用法与`rand()`相同。
-
-##深入挖掘##
-
-随机数在计算机科学中是非常重要的，它们被广泛用于密码学、模拟和随机化算法。但是，生成真正的随机数是不可能的，因为计算机程序是由固定的算法驱动的。因此，我们使用伪随机数来模拟真正的随机数。
-
-伪随机数是使用固定算法生成的，但它们以看似随机的方式返回序列。在PHP中，我们可以通过设置一个“种子”来改变随机数生成的序列。种子是一个数字，它作为算法的输入，如果它是一个变化的值，就会导致生成不同的随机数序列。使用`mt_srand()`函数来设置种子，例如：
+生成随机数的最基本的方法是使用 `rand()` 函数。它会在给定的两个整数范围内返回一个随机数。例如，要生成1到10之间的随机数，可以使用以下代码：
 
 ```PHP
-<?php
-mt_srand(time());
+$randomNumber = rand(1, 10);
+echo $randomNumber; //可能的输出：6，2，9，3，7，10，1，8，5，4
 ```
 
-在上面的代码中，我们使用了当前时间作为种子，这意味着每次运行程序时，都会使用不同的种子，从而生成不同的随机数序列。
+如果需要更大范围的随机数，也可以使用 `mt_rand()` 函数。它使用更好的随机算法，可以生成更大的随机数。以下是一个示例：
 
-## 请查看 ##
+```PHP
+$bigRandomNumber = mt_rand(1000, 100000);
+echo $bigRandomNumber; //可能的输出：23476，82270，41893，52408，100372
+```
 
-- [PHP官方文档-随机数](https://www.php.net/manual/zh/function.rand.php)
-- [维基百科-伪随机数生成器](https://zh.wikipedia.org/wiki/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8)
+除了整数，PHP还提供了生成随机字符串的函数 `str_shuffle()`。它可以随机打乱一个字符串的顺序。以下是一个示例：
+
+```PHP
+$randomString = str_shuffle('abcdefg');
+echo $randomString; //可能的输出：ecgdafb，fabgced，dcebfga，cbegadf
+```
+
+## 深入了解
+
+要生成更真实的随机数，可以使用 `random_bytes()` 函数。它会使用系统的随机数生成器来产生更加随机的数字。以下是一个示例：
+
+```PHP
+$randomBytes = random_bytes(4);
+echo bin2hex($randomBytes); //可能的输出：5a2c9f38，81da99fe，f3c7b649，b8a2e3ee
+```
+
+如果需要生成更加安全的随机数，可以使用 `openssl_random_pseudo_bytes()` 函数。它会使用 OpenSSL 库中更加强大的随机数生成器，产生更加安全的随机数。以下是一个示例：
+
+```PHP
+$secureRandomBytes = openssl_random_pseudo_bytes(8);
+echo bin2hex($secureRandomBytes); //可能的输出：7609e6d00690174c，00650b878149094f，7e70f61c3ae148a1，1b169e361b1d64d0
+```
+
+## 查看更多
+
+- [PHP官方文档：生成随机数](https://www.php.net/manual/en/function.rand.php)
+- [PHP官方文档：生成随机字符串](https://www.php.net/manual/en/function.str-shuffle.php)
+- [PHP官方文档：生成随机字节](https://www.php.net/manual/en/function.random-bytes.php)
+- [PHP官方文档：产生更加安全的随机数](https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php)

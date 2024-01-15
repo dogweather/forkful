@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Sammenslåing av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Ruby: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,42 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kombinere strenger (concatenate strings) er en viktig del av programmering som lar deg sette sammen flere tekststrenger til en enkelt streng. Dette er nyttig for å lage dynamiske tekster eller formater for å presentere data på en lesbar måte.
+Det å konkatenerer strenger, eller slå sammen flere strenger til en, er en viktig del av programmering i Ruby. Det lar deg bygge mer komplekse og dynamiske strenger, og er en essensiell ferdighet for ethvert Ruby-prosjekt.
 
-## Hvordan
+## Hvordan man gjør det
 
-Man kan enkelt kombinere strenger i Ruby ved å bruke "+" -operatøren. Se eksempelet nedenfor:
-
-```Ruby
-navn = "Marit"
-alder = 25
-
-puts "Hei, mitt navn er " + navn + ", og jeg er " + alder.to_s + " år gammel."
-```
-
-Dette vil resultere i følgende utskrift:
+Det er flere måter å konkatenerere strenger i Ruby på, og her er to enkle eksempler:
 
 ```ruby
-Hei, mitt navn er Marit, og jeg er 25 år gammel.
+first_name = "Sara"
+last_name = "Johansen"
+
+# Ved å bruke pluss-operatøren
+full_name = first_name + " " + last_name
+puts full_name # Output: Sara Johansen
+
+# Ved å bruke syntaksen for interpolering av variabler
+full_name = "#{first_name} #{last_name}"
+puts full_name # Output: Sara Johansen
 ```
 
-Vi kan også bruke string-interpolasjon ved hjelp av "#{}" -syntaxen. Dette gjør det mulig å inkludere variabler rett inn i teksten uten å måtte konvertere dem til strenger. Eksempelet nedenfor viser hvordan man kan bruke string-interpolasjon for å oppnå det samme resultatet som det forrige eksempelet:
+Vi kan også bruke `concat`-metoden for å konkatenerere strenger på en sikker og effektiv måte. Dette er spesielt nyttig når du jobber med store mengder tekst som kan føre til minnelekkasjer.
 
-```Ruby
-navn = "Marit"
-alder = 25
-
-puts "Hei, mitt navn er #{navn}, og jeg er #{alder} år gammel."
+```
+first_name = "Sara"
+last_name = "Johansen"
+full_name = first_name.concat(" ", last_name)
+puts full_name # Output: Sara Johansen
 ```
 
-## Dypdykk
+## Dykk dypere
 
-I tillegg til å kombinere strenger ved hjelp av "+", kan vi også bruke metoden "concat" for å oppnå samme effekt. Det er viktig å merke seg at "concat" endrer den opprinnelige strengen, mens "+"-operatøren lager en helt ny streng.
+Når du konkatenerer strenger i Ruby, må du være oppmerksom på hvilken datatype du arbeider med. Strenger og tall kan ikke være direkte sammenkoblet, så du må bruke `to_s`-metoden for å konvertere tall til strenger før du kan kombinere dem. Det er også viktig å huske på at Ruby er en dynamisk språk, så variabler kan endre datatype mens programmet kjører.
 
-En annen viktig ting å huske på er at det ikke er begrensninger på hvor mange strenger man kan kombinere. Man kan enkelt legge til flere variabler og tekststrenger ved hjelp av "+" eller string-interpolasjon.
+Du kan også bruke `<<`-operatøren for å konkatenerere strenger, men denne endrer den første strengen direkte og returnerer den modifiserte versjonen. Dette kan føre til uventet oppførsel hvis du ikke er forsiktig.
 
 ## Se også
 
-- Offisiell dokumentasjon for string manipulation <https://ruby-doc.org/core-3.0.2/String.html>
-- Enkel guide til Ruby <https://www.ruby-lang.org/no/documentation/quickstart/>
-- Mer avansert guide til Ruby <https://www.tutorialspoint.com/ruby/>
+- [Ruby String dokumentasjon](https://ruby-doc.org/core-3.0.0/String.html)
+- [Ruby Concat metode dokumentasjon](https://ruby-doc.org/core-3.0.0/String.html#method-i-2B)

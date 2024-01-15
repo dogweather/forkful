@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Elixir: Calcolare una data nel futuro o nel passato"
 simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,53 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La programmazione è un linguaggio potente e flessibile che offre molte funzionalità utili, tra cui la possibilità di calcolare le date nel futuro o nel passato. Non solo questo può sembrare molto utile, ma può anche aiutare a scrivere codice più efficiente e organizzato. In questo articolo, vedremo come utilizzare questa funzionalità in Elixir.
+Calcolare la data di una giornata futura o passata può essere utile in diversi contesti, sia in ambito personale che professionale. Ad esempio, potresti voler creare una funzione che permetta di pianificare eventi o scadenze, o semplicemente avere un'indicazione precisa di quando un certo numero di giorni o mesi passeranno.
 
 ## Come Fare
 
-Per calcolare una data nel futuro o nel passato, iniziamo importando il modulo `Date` di Elixir:
+È possibile utilizzare la funzione `Date.add/2` per aggiungere un numero specifico di giorni, mesi o anni a una data esistente. Ad esempio, per calcolare la data di oggi più 30 giorni, si può scrivere il seguente codice:
 
-```Elixir
-import Date # Importa il modulo Date di Elixir
+```elixir
+today = Date.utc_today()
+Date.add(today, 30)
 ```
 
-Ora possiamo utilizzare il metodo `add` per aggiungere una certa quantità di giorni, settimane, mesi o anni a una data esistente:
+Questo restituirà la data di oggi + 30 giorni. Si può anche specificare il numero di mesi o anni da aggiungere, semplicemente cambiando il secondo argomento della funzione `add`.
 
-```Elixir
-Date.add(~D[2020-01-01], 7, :days) # Aggiunge 7 giorni alla data del 1 gennaio 2020
-# Output: ~D[2020-01-08]
+Per calcolare una data passata, è possibile utilizzare la funzione `Date.add/3` specificando un numero negativo come secondo argomento:
+
+```elixir
+today = Date.utc_today()
+Date.add(today, -30)
 ```
 
-Inoltre, possiamo utilizzare il metodo `subtract` per sottrarre giorni, settimane, mesi o anni da una data esistente:
-
-```Elixir
-Date.subtract(~D[2020-01-01], 1, :months) # Sottrae un mese dalla data del 1 gennaio 2020
-# Output: ~D[2019-12-01]
-```
-
-Possiamo anche utilizzare il metodo `between` per calcolare il numero di giorni o dieri settimane tra due date:
-
-```Elixir
-Date.between(~D[2020-01-01], ~D[2020-01-15]) # Calcola il numero di giorni tra il 1 e il 15 gennaio 2020
-# Output: 14
-```
+Questa volta otterremo la data di oggi - 30 giorni.
 
 ## Approfondimento
 
-Inoltre, il modulo `Date`di Elixir offre anche altri metodi utili per lavorare con le date. Ad esempio, possiamo utilizzare il metodo `today` per ottenere la data odierna o il metodo `days_since_epoch` per ottenere il numero di giorni trascorsi dall'epoca (1 gennaio 1970).
+In Elixir, le date sono rappresentate utilizzando il modulo `Date`, che fornisce numerose funzioni di utilità per lavorare con date e orari. Ci sono anche altri moduli come `DateTime` e `NaiveDateTime`, che offrono funzionalità più avanzate per gestire fusi orari e orari precisi.
 
-```Elixir
-Date.today # Restituisce la data odierna
-# Output: ~D[2020-07-22]
+Inoltre, esiste anche il modulo `Calendar`, che è altamente utilizzato per svolgere operazioni matematiche legate al calendario, come ad esempio calcolare il numero di giorni tra due date o determinare il giorno della settimana di una data specifica.
 
-Date.days_since_epoch # Restituisce il numero di giorni trascorsi dall'epoca
-# Output: 18281
-```
-
-Inoltre, il modulo `Date` supporta anche le operazioni matematiche tra due date, ad esempio la differenza tra due date o la formattazione delle date in un formato specifico.
+In generale, la gestione delle date e degli orari in Elixir è molto potente e intuitiva, grazie alle numerose funzioni e moduli a disposizione. Elixir utilizza il formato ISO-8601 per rappresentare le date e gli orari, il che lo rende compatibile con altri linguaggi di programmazione.
 
 ## Vedi anche
 
-- [Documentazione Elixir sul modulo Date](https://hexdocs.pm/elixir/Date.html)
-- [Elixir School: Lavorare con le Date](https://elixirschool.com/it/lessons/specifics/dates/)
-- [Elixir Date e Time](https://www.learningelixir.com/post/date-time/)
+- [Documentazione ufficiale di Elixir sul modulo Date](https://hexdocs.pm/elixir/Date.html)
+- [Articolo su come lavorare con calendari in Elixir](https://pragmaticstudio.com/blog/2015/6/19/working-with-calendars)
+- [Tutorial su come utilizzare i moduli Date e Time in Elixir](https://www.codementor.io/@asermax/working-with-date-and-time-in-elixir-zftzt32nn)

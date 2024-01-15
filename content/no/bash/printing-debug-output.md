@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Utskrift av feilsøkingsutgang"
-simple_title:         "Utskrift av feilsøkingsutgang"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Bash: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -11,53 +12,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å legge inn feilrettet utskrift i koden din kan virke som en ekstra trinn som tar tid og krefter, men det kan spare deg for mye hodepine og feilsøking senere. Ved å skrive ut kommander underveis i koden, kan du se hvordan verdier endres og hvilke deler av koden som blir kjørt, noe som gjør feilsøking enklere og mer effektiv.
+Vi har sikkert alle vært i situasjoner der vi har kjørt en Bash-skript og ingen ting skjer. Det eneste vi får er en enkel feilmelding, uten noen hint om hva som går galt. Dette er når printing av debug output kan komme til unnsetning. Det lar oss se hva som skjer bak kulissene, og hjelper oss med å finne og løse feil.
 
-## Hvordan lage debug utskrift
+## Hvordan gjøre det
 
-Det er enkelt å legge til utskrift i Bash-kode. Bruk kommandoen "echo" for å skrive ut variabler eller andre verdier. Du kan også bruke "printf" kommandoen for å formatere utskriften din.
+For å printe debug output i Bash, bruk `echo`-kommandoen. Du kan enten skrive ut teksten direkte, eller bruke variabler for å få informasjon fra skriptet.
 
-```Bash
-# Skriv ut en enkel beskjed
-echo "Velkommen til mitt Bash-program!"
+```
+#!/bin/bash
 
-# Skriv ut verdien av en variabel
-navn="Lena"
-echo "Hei, mitt navn er $navn."
+# Printer ut teksten "Hello World!"
+echo "Hello World!" 
 
-# Formater utskriften med printf
-alder=25
-printf "Jeg er %d år gammel." $alder
+# Bruker en variabel
+name="John"
+echo "Hei $name, velkommen til min skript!"
 ```
 
-Dette gir følgende utskrift:
+Output:
 
-```Bash
-Velkommen til mitt Bash-program!
-Hei, mitt navn er Lena.
-Jeg er 25 år gammel.
+```
+Hello World!
+Hei John, velkommen til min skript!
 ```
 
-Du kan også bruke "if" og "else" uttrykk for å skrive ut forskjellige meldinger avhengig av en bestemt betingelse.
+En annen måte å printe ut debug output er ved å bruke `set -x` kommandoen på toppen av skriptet. Dette vil vise hvert steg i skriptet og resultatet av hvert kommando.
 
-```Bash
-if [ $alder -gt 18 ]; then
-    echo "Du er myndig."
-else
-    echo "Du er ikke myndig."
-fi
+```
+#!/bin/bash
+
+set -x
+
+# Printer ut teksten "Hello World!"
+echo "Hello World!" 
+
+# Bruker en variabel
+name="John"
+echo "Hei $name, velkommen til min skript!"
 ```
 
-Dette vil skrive ut enten "Du er myndig." eller "Du er ikke myndig." avhengig av verdien av variabelen "alder".
+Output:
 
-## Dykk dypere
+```
++ echo 'Hello World!'
+Hello World!
++ name=John
++ echo 'Hei John, velkommen til min skript!'
+Hei John, velkommen til min skript!
+```
 
-Det finnes flere avanserte måter å legge til feilrettet utskrift i Bash-kode, som å lage spesifikke funksjoner for utskrift, bruke "set -x" kommandoen for å aktivere sporing, eller til og med bruke et verktøy som "strace" for å spore programmets handlinger.
+## Dypdykk
 
-Det er også viktig å huske på å fjerne eller deaktivere utskrift koden når den ikke lenger trengs, slik at den ikke påvirker programmets ytelse.
+Når man printer debug output, er det viktig å huske på å ikke utsette sensitiv informasjon som passord, personlig informasjon eller systeminformasjon. Det kan også være nyttig å bruke en `if`-setning for å bare printe informasjonen hvis en bestemt betingelse er oppfylt.
 
-Se også
+En annen måte å få mer detaljert debug output er ved å bruke `set -xv`kommandoen, som vil vise hvert trinn i skriptet, inkludert verdiene til variablene.
 
-- [Bash Guide for nybegynnere](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Debugging Bash scripts](https://linuxconfig.org/debugging-bash-script-and-shell-problems-commands-and-syntax)
-- [How to add debug output in Bash scripts](https://linuxhint.com/debug_output_bash_script/)
+```
+#!/bin/bash
+
+set -xv
+
+# Printer ut teksten "Hello World!"
+echo "Hello World!" 
+
+# Bruker en variabel
+name="John"
+echo "Hei $name, velkommen til min skript!"
+```
+
+Output:
+
+```
++ echo 'Hello World!'
+Hello World!
++ name=John
++ echo 'Hei John, velkommen til min skript!'
+Hei John, velkommen til min skript!
+```
+
+## Se også
+
+- [Bash Guide for Nybegynnere](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash-programmeringsreferanse](https://tldp.org/LDP/abs/html/)

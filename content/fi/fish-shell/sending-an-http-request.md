@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Lähetetään http-pyyntö"
-simple_title:         "Lähetetään http-pyyntö"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Fish Shell: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,36 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen on olennainen osa verkkosovellusten kehittämistä, sillä se mahdollistaa tiedon lähettämisen palvelimelle ja vastauksen saamisen takaisin. Tämä on tärkeää esimerkiksi verkkokauppojen ja sosiaalisen median sivustojen toiminnan kannalta.
+Miksi haluaisit lähettää HTTP-pyynnön Fish Shellillä? Yksinkertaistaen, se antaa sinulle pääsyn verkkoon ja sieltä saatavaan tietoon suoraan komentokehotteesta. Se on nopea ja tehokas tapa kommunikoida internetin kanssa ja voi olla hyödyllinen monissa eri skenaarioissa, kuten hakkeroinnissa tai tiedonkeruussa.
 
-## Miten
+## Kuinka tehdä
 
-Koodin näyttäminen esimerkkien avulla on paras tapa oppia, joten alla on esitelty muutamia Fish Shell-koodiesimerkkejä HTTP-pyyntöjen lähettämistä varten.
+Ensimmäiseksi tarvitset Fish Shellin ja sen uusimman version. Voit ladata sen omalle tietokoneellesi osoitteesta www.fishshell.com. Kun olet asentanut sen, voit aloittaa lähettämään HTTP-pyynnöksiä.
 
 ```Fish Shell
-# Yksinkertainen GET-pyyntö käyttäen curl-komentoa
-curl https://example.com
-
-# GET-pyyntö header-tietojen kanssa
-curl -H "Content-Type: application/json" https://example.com
-
-# POST-pyyntö JSON-muodossa
-curl -d '{"username": "käyttäjänimi", "password": "salasana"}' https://example.com/login
+$url = "https://www.example.com"
+$response = curl -X GET $url
+echo $response
 ```
 
-Yllä olevat esimerkit käyttävät curl-komentoa, joka on kätevä työkalu HTTP-pyyntöjen lähettämiseen ja vastauksien vastaanottamiseen. Fish Shellissä on myös mahdollista käyttää muita työkaluja, kuten httpie, watir ja manyushka.
+Tässä esimerkissä luomme muuttujan nimeltä `$url`, joka sisältää verkkosivuston osoitteen. Sitten käytämme `curl`-komentoa lähettämään GET-pyynnön tälle sivustolle ja tallennamme vastauksen muuttujaan `$response`. Lopuksi käytämme `echo`-komentoa tulostamaan vastauksen terminaalissa.
 
-## Syvemmälle
+Voit käyttää myös muita HTTP-metodeja, kuten POST, PUT tai DELETE, muuttamalla `curl`-komennon parametreja. Voit myös lisätä muita parametreja, kuten otsikoita tai tietoja pyynnön mukana. Varoituksena, että Fish Shellin `curl`-komennossa ei ole kaikkia samoja ominaisuuksia kuin perinteisessä curl-ohjelmassa.
 
-HTTP on protokolla, jota käytetään tietojen lähettämiseen ja vastaanottamiseen verkkopalvelimien välillä. Lähettäessäsi HTTP-pyyntöjä, voit käyttää erilaisia HTTP-metodeja, kuten GET, POST, PUT ja DELETE, sekä määrittää header- ja body-tietoja.
+## Syvemmälle sukeltaminen
 
-Lisäksi voit käyttää erilaisia työkaluja ja kirjastoja helpottamaan HTTP-pyyntöjen lähettämistä ja vastauksien käsittelyä. On tärkeää tietää, mitä tietoja olet lähettämässä ja millaisia vastauksia odotat, jotta voit käsitellä niitä oikein.
+Fish Shellin `curl`-komennossa käytetään taustalla `libcurl`-kirjastoa, joka on suunniteltu toimimaan monilla eri protokollilla, kuten HTTP ja HTTPS. Voit lukea lisää tästä kirjastosta osoitteessa https://curl.haxx.se/docs/manpage.html ja löytää kaikki mahdolliset parametrit ja vaihtoehdot.
+
+Voit myös käyttää muita Fish Shellin sisäänrakennettuja käskyjä lähettämään HTTP-pyynnön, kuten `wget` ja `fetch`. Ne ovat hyviä vaihtoehtoja, jos et tarvitse kaikkia curlin ominaisuuksia.
 
 ## Katso myös
 
-* [Fish Shell viralliset verkkosivut](https://fishshell.com)
-* [HTTP-protokollan selitys W3Schools-sivustolla](https://www.w3schools.com/whatis/whatis_http.asp)
-* [Curl-dokumentaatio](https://curl.se/docs/httpscripting.html)
-* [Httpie-dokumentaatio](https://httpie.org/doc)
-* [Watir-dokumentaatio](http://watir.com/guides/http-request-handling/)
-* [Manyushka-dokumentaatio](https://github.com/manyushka/)
+- Fish Shellin virallinen verkkosivusto: www.fishshell.com
+- `libcurl`-kirjaston dokumentaatio: https://curl.haxx.se/docs/manpage.html
+- Lisää käskyjä Fish Shellissä: https://fishshell.com/docs/current/commands.html

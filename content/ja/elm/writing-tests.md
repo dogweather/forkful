@@ -1,5 +1,6 @@
 ---
-title:                "Elm: テストを書く"
+title:                "テストを書く"
+html_title:           "Elm: テストを書く"
 simple_title:         "テストを書く"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,38 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ
 
-テストを書くことは、自分のコードが正しく機能することを確認するだけでなく、将来の変更や修正が行われた際にも問題なく動作することを保証することができます。また、テストを書くことによって、コードの品質や保守性を向上させることができます。
+テストを書くことで、プログラムの品質を向上させることができます。コードのバグやエラーを事前に発見し、より信頼性の高いソフトウェアを作ることができるため、開発者にとって欠かせない作業です。
 
-## どのように書くのか
+## 作り方
 
-まず、Elmテストを書くためには、elm-testパッケージをインストールする必要があります。次に、テストファイルを作成し、テストコードを書きます。
+まずは、[Elmテストパッケージ](https://package.elm-lang.org/packages/elm-explorations/test/latest/)をインストールしましょう。その後、テストファイルを作成し、テストしたい関数やモジュールを`import`します。そして、各関数や振る舞いに対してテストを作成します。以下は例です。
 
 ```Elm
-import Expect
-import ExampleCode exposing (add)
+import Test exposing (..)
+import Expect exposing (expect)
 
-addTest : Test
-addTest =
-    describe "Add function"
-        [ test "Adds two numbers correctly" <|
-            \() ->
-                Expect.equal (add 2 3) 5
-        ]
+-- テストする関数
+square : Int -> Int
+square x =
+    x * x
+
+-- `test`関数は関数名やテストの内容を表す
+tests : Test
+tests =
+    describe "square" [ 
+        test "2を渡したら4を返す" (
+            expect (square 2)
+                |> toEqual 4
+        ),
+        test "3を渡したら9を返す" (
+            expect (square 3)
+                |> toEqual 9
+        )
+    ]
 
 ```
 
-テストコードは、該当する関数が想定通りの結果を返すかどうかをassertion（アサーション）するように書きます。上記の例では、add関数に対して2と3を渡したときに、返り値が5であることを期待しています。
+実行すると、以下のような結果が得られます。
 
-テストファイルを作成したら、コンソールから`elm-test`コマンドを実行することでテストが実行され、結果が表示されます。
+```
+Passed: square
+    - 2を渡したら4を返す
+    - 3を渡したら9を返す
+```
 
-## テストを深堀りする
+## 深堀り
 
-テストを書く際には、データの構造やコードのロジックを理解する必要があります。また、カバレッジツールを使用することで、テストがカバーしていない領域を見つけることができ、より充実したテストを書くことができます。
+テストを書く際には、どのようなケースに対してテストを書くか、どのような入力を与えるかなどを考えることが重要です。また、より複雑なテストを行う際には、[Generators](https://package.elm-lang.org/packages/elm-community/elm-test-extra/latest/Generators)を使用することで、ランダムな入力値を生成することができます。
 
-## もっと詳しく知りたい方は
+また、テストコードもメンテナンスする必要があります。コードの変更や機能追加を行った際には、テストを再実行し、予期せぬ変更がないかを確認することが大切です。
 
-- [Elmテストのドキュメンテーション](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [テスト駆動開発とは](https://qiita.com/5ltr/items/3796b790818af8ee9eba)
-- [カバレッジツールの使い方](https://guide.elm-lang.jp/coverage/)
+## 関連リンク
+
+- [Elmテストパッケージ](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Generators](https://package.elm-lang.org/packages/elm-community/elm-test-extra/latest/Generators)
+- [テストの書き方 入門編 - Qiita](https://qiita.com/kosuke-nakai/items/8d2b61b71ae32d1574f6)

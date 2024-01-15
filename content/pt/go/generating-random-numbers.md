@@ -1,5 +1,6 @@
 ---
-title:                "Go: Gerando números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "Go: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Go"
 category:             "Go"
@@ -9,34 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar números aleatórios em programas Go
+## Porquê
 
-Números aleatórios são uma ferramenta importante no desenvolvimento de programas em Go. Eles podem ser utilizados em diversas aplicações, desde jogos até geração de dados para testes. Além disso, a incorporação de números aleatórios em um programa pode torná-lo mais dinâmico e interessante para os usuários.
+Gerar números aleatórios é uma tarefa comum e fundamental em muitos programas. Pode ser necessário para testar algoritmos, criar chaves de criptografia ou selecionar itens aleatórios em um jogo. O Go possui uma biblioteca robusta para gerar números aleatórios, o que torna o processo mais fácil e eficiente.
 
-## Como gerar números aleatórios em Go
+## Como fazer
 
-Em Go, podemos gerar números aleatórios utilizando a biblioteca `rand`. Primeiro, precisamos importar essa biblioteca no nosso programa:
+Para gerar números aleatórios em Go, primeiro é necessário importar a biblioteca "math/rand". Depois, é preciso definir uma fonte de aleatoriedade, por exemplo, usando a função "Seed()" para definir a semente de aleatoriedade ou "NewSource()" para criar uma nova fonte de números aleatórios.
 
-```Go 
-import "math/rand"
+Em seguida, podemos usar a função "Intn()" para gerar um número inteiro aleatório até um limite fornecido. Também é possível usar a função "Float64()" para gerar um número decimal aleatório.
+
+Um exemplo de código que gera um número aleatório entre 1 e 10 seria:
+
+```
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	// Definindo a semente de aleatoriedade com base no horário atual
+	rand.Seed(time.Now().UnixNano())
+
+	// Gerando um número aleatório entre 1 e 10
+	numero := rand.Intn(10) + 1
+
+	fmt.Printf("O número aleatório gerado é: %d", numero)
+}
 ```
 
-Em seguida, podemos utilizar a função `Intn()` para gerar um número inteiro aleatório no intervalo de 0 até o número passado como parâmetro. Por exemplo, para gerar um número aleatório entre 0 e 100, podemos utilizar o seguinte código:
+Output:
 
-```Go
-numero := rand.Intn(100)
+```
+O número aleatório gerado é: 7
 ```
 
-Também é possível gerar números aleatórios de outros tipos, como float, utilizando as funções `Float32()` e `Float64()` da biblioteca `rand`.
+## Aprofundando-se
 
-## Mergulhando mais fundo na geração de números aleatórios em Go
+A biblioteca "math/rand" do Go é baseada em um algoritmo chamado "Mersenne Twister" e oferece uma ampla variedade de funções para gerar números aleatórios de diferentes tipos (inteiros, strings, etc) e limites.
 
-Por baixo dos panos, a função `rand.Intn()` utiliza um gerador pseudo-aleatório baseado em uma semente. Essa semente é definida pelo valor passado na função `rand.Seed()`. Se nenhum valor for passado, o gerador irá utilizar a hora atual do sistema como semente.
+É importante lembrar que, embora os números gerados pareçam aleatórios, eles são, na verdade, determinísticos com base na semente fornecida. Isso significa que duas execuções do mesmo programa com a mesma semente produzirão os mesmos resultados.
 
-No entanto, para garantir resultados verdadeiramente aleatórios, é recomendado definir uma semente personalizada utilizando um valor randômico, como a hora atual em nanossegundos, por exemplo.
+Além disso, a geração de números aleatórios não é uma tarefa totalmente segura para criptografia, já que algoritmos e seeds podem ser facilmente descobertos por pessoas mal-intencionadas.
 
 ## Veja também
 
-- [Documentação oficial da biblioteca `rand` em Go](https://golang.org/pkg/math/rand/)
-- [Tutorial de geração de números aleatórios em Go](https://tutorialedge.net/golang/go-random-number-generation-tutorial/)
-- [Vídeo tutorial sobre geração de números aleatórios em Go](https://www.youtube.com/watch?v=852Jr5XEjfk)
+- [Documentação oficial do pacote "math/rand" do Go](https://golang.org/pkg/math/rand/)
+- [Tutorial sobre geração de números aleatórios em Go (em inglês)](https://www.callicoder.com/golang-random-number-generator/)
+- [Artigo sobre segurança em algoritmos de geração de números aleatórios (em inglês)](https://www.schneier.com/academic/paperfiles/paper-prngs.pdf)

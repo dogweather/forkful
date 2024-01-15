@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Swift: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,34 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å starte et nytt programmeringsprosjekt kan virke skremmende, spesielt for nybegynnere innen Swift. Men det trenger ikke å være det! Å starte et nytt prosjekt kan være utrolig givende, og det er en flott måte å lære seg nye ferdigheter og videreutvikle seg som programmerer. Uansett om du ønsker å bygge en app, en nettside eller bare utforske nye funksjoner i Swift, er det å starte et nytt prosjekt en flott måte å gjøre det på.
+Å starte et nytt prosjekt i Swift kan være en spennende og givende opplevelse for både nybegynnere og erfarne utviklere. Det gir mulighet til å eksperimentere, utvide kunnskapen og skape noe helt unikt som kan være nyttig for deg selv og andre.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å starte et nytt prosjekt i Swift, trenger du først og fremst å åpne Xcode, som er Apples integrerte utviklingsmiljø (IDE) for å utvikle iOS- og macOS-applikasjoner. Når Xcode er åpnet, kan du velge "Create a new Xcode project" fra hovedmenyen.
+For å starte et nytt Swift-prosjekt, følg disse enkle trinnene:
 
-Du vil da bli bedt om å velge en mal for ditt nye prosjekt. Det finnes flere forskjellige maler å velge mellom, alt fra enkle iOS-apps til spill og nettsider. Velg den som passer best til ditt prosjekt.
+- Åpne Xcode-programmet og velg "Create a new Xcode project" fra File-menyen.
+- Velg "Single View App" som prosjektmal og klikk "Next".
+- Gi prosjektet ditt et navn og velg en målmappe, deretter klikker du "Next".
+- Velg "Swift" som programmeringsspråk og relevante enheter for prosjektet ditt, deretter klikk "Next".
+- Endelig, velg en plassering for prosjektet ditt og klikk "Create".
 
-Etter å ha valgt mal, vil du bli bedt om å gi prosjektet et navn og å velge hvor du vil lagre det på datamaskinen din. Når dette er gjort, vil Xcode generere alle filene og mappene som trengs for å starte prosjektet.
-
-Nå kan du begynne å kode! Her er et eksempel på hvordan du kan deklarere en enkel variabel i Swift og skrive ut verdien av den:
+Nå er ditt nye Swift-prosjekt klart til å bli utviklet!
 
 ```Swift
-var nummer = 8
-print(nummer) // Output: 8
+func helloWorld() {
+  print("Hei verden!")
+}
+
+helloWorld() // Output: Hei verden!
 ```
 
-Hvis du er nybegynner innen Swift, kan det være nyttig å følge noen tutorials eller ta en kurs for å lære mer om språket og dets funksjoner. Det finnes også mange ressurser på nettet, som Stack Overflow, hvor du kan finne svar på eventuelle spørsmål eller utfordringer du måtte møte underveis.
+Her er et enkelt eksempel på en funksjon som printer ut en melding, "Hei verden!", når den blir kalt. Dette viser den enkle og leselige syntaksen til Swift-programmeringsspråket.
 
 ## Dypdykk
 
-Nå som du har startet ditt nye prosjekt og har lært deg grunnleggende Swift-koding, kan du begynne å dykke dypere inn i språket og utforske mer avanserte funksjoner. Du kan for eksempel lære deg å opprette og bruke funksjoner, lage egne datatyper og implementere forskjellige kodingsteknikker.
+Når du starter et nytt prosjekt i Swift, er det viktig å ha en god forståelse av grunnleggende konsepter og strukturer i språket. Dette inkluderer ting som datatyper, kontrollstrukturer, funksjoner og klasser. Å lære disse konseptene vil hjelpe deg med å bygge et solid fundament for ditt prosjekt.
 
-Å starte et nytt prosjekt gir deg muligheten til å eksperimentere og lære deg nye ting, så ikke vær redd for å prøve deg frem og gjøre feil. Dette er en viktig del av læringsprosessen.
+En annen viktig ting å huske på er å organisere koden din på en måte som er leselig og forståelig for både deg selv og andre utviklere. Dette kan inkludere å dele opp koden din i moduler eller pakker, bruke kommentarer for å beskrive hva koden din gjør, og følge alminnelige konvensjoner for navngivning.
 
 ## Se også
 
-- Apples offisielle Swift-dokumentasjon: https://developer.apple.com/documentation/swift
-- Online Swift-tutorials: https://www.hackingwithswift.com/
-- Swift Community Slack: https://swift.org/community/#community-slack
-- Stack Overflow: https://stackoverflow.com/questions/tagged/swift
+Her er noen relevante ressurser for å hjelpe deg med å starte ditt nye Swift-prosjekt:
+
+- [Offisiell dokumentasjon for Swift](https://docs.swift.org/swift-book/)
+- [Apple's Swift-programmeringsguide](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
+- [Utviklerforums for Swift på Stack Overflow](https://stackoverflow.com/questions/tagged/swift)

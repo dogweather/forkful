@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 计算未来或过去的日期"
-simple_title:         "计算未来或过去的日期"
+title:                "未来或过去计算日期"
+html_title:           "Clojure: 未来或过去计算日期"
+simple_title:         "未来或过去计算日期"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## "为什么"
 
-在编写程序时，经常会遇到计算未来或过去日期的需求。这可以帮助我们在程序中生成准确的日期，从而更好地处理日期相关的逻辑。接下来将向大家介绍如何在Clojure中实现日期计算，并深入探讨其中的细节。
+计算未来或过去的日期在很多情况下都很有用。例如，你可能需要预先安排事件或做出决策，因此知道某个日期是星期几或处于什么时间点是很重要的。使用Clojure编程语言可以简化这个过程，让你可以随时计算任何日期。
 
-# 如何执行
+## "如何操作"
 
-日期计算涉及到很多不同的因素，包括年、月、日、时、分、秒等。下面是一个简单的例子，展示如何在Clojure中计算未来或过去的日期：
+在Clojure中，你可以使用 `java.util.Calendar` 类来计算未来或过去的日期。首先，你需要定义一个日期对象，然后使用 `set` 函数来设置日期的年份、月份和日期。接下来，使用 `add` 函数来指定你想要增加或减少的时间单位，例如天、小时或分钟。最后，使用 `get` 函数来获取最终计算后的日期。以下是一个具体的示例：
 
-```
-Clojure (-> (java.time.LocalDateTime/now)
-    (java.time.LocalDateTime/plusDays 5)
-    (java.time.LocalDateTime/plusMonths 2))
-```
-
-这段代码将当前时间加上5天，然后再加上2个月，输出结果为未来时间。同样的方式，我们也可以计算过去的日期：
-
-```
-Clojure (-> (java.time.LocalDateTime/now)
-    (java.time.LocalDateTime/minusWeeks 3)
-    (java.time.LocalDateTime/minusYears 1))
+```Clojure 
+(import java.util.Calendar)
+(def now (Calendar/getInstance))
+(.set now Calendar/YEAR 2020)
+(.set now Calendar/MONTH Calendar/OCTOBER)
+(.set now Calendar/DAY_OF_MONTH 15)
+(.add now Calendar/DAY_OF_MONTH 5)
+(.get now Calendar/DATE)
 ```
 
-在这个例子中，我们将当前日期减去3周，再减去1年，输出结果为过去的日期。
+该代码将于2020年10月15日的基础上增加5天，最终返回10月20日（即 `Calendar/DATE`指定的时间单位）。
 
-# 深入探讨
+## "深入理解"
 
-在Clojure中，日期计算主要依赖于Java的日期和时间类库。这个类库提供了各种方法来处理日期和时间，同时也支持不同的日期格式。在上面的例子中，我们使用了`java.time.LocalDateTime`类来表示日期和时间。该类提供了丰富的方法来处理日期的增减，包括`plusDays`、`minusYears`等。
+在编写Clojure代码时，你可以使用 `java.time.LocalDate` 类来处理日期对象。这种方法更加现代且易于使用，同时也提供了更多的日期计算功能。你可以使用 `getDayOfWeek` 来获取特定日期是星期几，或者使用 `plusDays` 来增加/减少指定天数。以下是一个示例代码：
 
-需要特别注意的是，在进行日期计算时，需要考虑到闰年的影响。Java的日期类库已经在内部考虑了闰年的情况，因此我们无需担心这个问题。
+```Clojure
+(import java.time.LocalDate)
+(def today (LocalDate/now))
+(.plusDays today 5)
+(.getDayOfWeek today)
+```
 
-# 参考链接
+该代码将返回未来五天后的日期，并且使用 `getDayOfWeek` 函数将返回该日期是星期几。你可以进一步探索 `java.time.LocalDate` 类的其他功能，例如计算不同时区的时间、处理闰年等等。
 
-- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
-- [Clojure Date and Time](https://clojure.org/reference/java_interop#_date_and_time)
+## "参考文献"
+
+- [Clojure官方网站](https://clojure.org/)
+- [Java API文档](https://docs.oracle.com/javase/8/docs/api/)
+- [Clojure日期操作指南](https://clojure.org/reference/java_interop#_date_time_manipulation)

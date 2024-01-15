@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Tiedostotekstin kirjoittaminen"
-simple_title:         "Tiedostotekstin kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Haskell: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,44 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Yksi keino ilmaista ohjelmointilogiikkaa on tekstina. Kirjoittamalla Haskell-ohjelma tekstilukijalla, voi kehittäjä ymmärtää paremmin omaa koodiaan ja helpommin selittää sitä muille.
+Tekstitiedoston kirjoittaminen on tärkeä osa monia ohjelmointitehtäviä. Se voi olla hyödyllistä tallentaa tietoa, luoda tietokantoja tai vain tarkistaa ohjelman toimivuus. Haskellin avulla voit helposti luoda ja hallita tekstitiedostoja tehokkaasti.
 
-# Kuinka kirjoittaa tekstilukija Haskellilla
+## Kuinka
 
-Kirjoittaminen tekstilukijalla on yksinkertaista Haskellilla. Ensiksi, luodaan "text" niminen funktio, joka ottaa sisään halutun tekstin ja palauttaa sen tulosteena. Esimerkiksi:
-
-```Haskell
-text "Hei maailma!"
-```
-tulostaa seuraavan tekstin:
-
-```
-Hei maailma!
-```
-Voi myös luoda funktioita, jotka käsittelevät ja muokkaavat tekstiä eri tavoin. Esimerkiksi:
+Creating a text file in Haskell is simple and straightforward. All you need to do is import the necessary libraries and use the `writeFile` function.
 
 ```Haskell
-capitalize s = map Char.toUpper s
+import System.IO
+
+main = do
+    let content = "Tervetuloa lukemaan tätä artikkelia!"
+    writeFile "tervetuloa.txt" content
 ```
-tämä funktio muuttaa annetun tekstin käyttämällä "map" funktiota ja "Char.toUpper" funktiota, joka muuttaa allekirjoille isot kirjaimiksi. Nyt kun käytetään tekstifunktiota:
+
+The code above creates a file called "tervetuloa.txt" and writes the specified content to it. The `writeFile` function takes two parameters: the file name and the content to be written.
+
+To append more content to an existing file, we can use the `appendFile` function instead.
 
 ```Haskell
-capitalize "Hei!"
-```
-tulosteena on:
-
-```
-HEI!
+main = do
+    let moreContent = ", toivottavasti saat siitä jotain hyödyllistä irti!"
+    appendFile "tervetuloa.txt" moreContent
 ```
 
-# Syvemmälle tekstilukijan kirjoittamiseen
+This will add the content ", toivottavasti saat siitä jotain hyödyllistä irti!" to the end of the file "tervetuloa.txt".
 
-Tekstilukijan kirjoittaminen voi auttaa kehittäjää ymmärtämään koodinsa loogista rakennetta ja logiikkaa paremmin. Se myös helpottaa ohjelman selittämistä ja muille kehittäjille jakamista. Tekstilukija voi sisältää funktioita, jotka tarkistavat esimerkiksi jos tekstissä esiintyy tiettyjä merkkejä tai palauttavat tiettyjä tulosteita, jos tiettyjä ehtoja täyttyy.
+## Syväsukellus
 
-# Katso myös
+Tekstitiedoston kirjoittamisen lisäksi Haskellilla on mahdollista myös lukea tietoa tekstitiedostoista. Tätä varten käytetään `readFile` funktiota, joka lukee tiedoston sisällön ja palauttaa sen merkkijonona.
 
-- [Blogikirjoitus: "Kuinka kirjoittaa tekstilukija Haskellilla"](https://www.haskell.org/documentation)
-- [Haskellin oppikirja](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
-- [Haskell-ohjelmointiympäristö](https://www.haskell.org/ghc/)
+```Haskell
+main = do
+    content <- readFile "tervetuloa.txt"
+    putStrLn content
+```
+
+Yllä oleva koodi tulostaa teksti-tiedoston sisällön konsoliin. Lisäksi voit myös käyttää `openFile` funktiota, joka antaa sinulle enemmän hallintamahdollisuuksia tiedoston käsittelyssä.
+
+## Katso myös
+
+- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
+- [Haskellin kirjoitusohjeet ja käytännöt] (https://wiki.haskell.org/How_to_write_a_Haskell_program)
+- [Haskellin perustietokurssi] (https://learnxinyminutes.com/docs/fi-fi/haskell-fi/)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Bash: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,36 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Le processus d'extraction de sous-chaînes, également appelé "substring", est une tâche courante lors de la programmation en Bash. Il s'agit essentiellement de prendre une partie d'une chaîne de caractères plus longue et de la stocker en tant que nouvelle variable, ce qui peut être très utile pour manipuler et analyser des données.
+Quand on programme en Bash, il arrive souvent qu'on ait besoin d'extraire des sous-chaînes de caractères à partir d'une chaîne plus longue. Cela peut être utile pour différents scénarios, comme la manipulation de données, la recherche de motifs dans du texte ou la création de scripts plus efficaces.
 
-## Comment faire
+## Comment Faire
 
-Pour extraire une sous-chaîne en Bash, vous pouvez utiliser la syntaxe suivante :
-
-```Bash
-var="ma chaîne de caractères"
-echo ${var:3:5}
-```
-Ce qui va afficher "châin" en sortie, car cela commence à la position 3 de la chaîne et prend 5 caractères.
-
-Vous pouvez également utiliser des variables pour spécifier la position de départ et la longueur de la sous-chaîne, comme ceci :
+L'extraction de sous-chaînes en Bash se fait à l'aide de la commande `cut`. Voici un exemple de code avec une chaîne de caractères à extraire et une commande `cut` pour récupérer uniquement les 5 premiers caractères :
 
 ```Bash
-start=3
-length=5
-echo ${var:start:length}
+# Chaîne de caractères à extraire
+string="Bonjour tout le monde !"
+
+# Commande cut pour extraire les 5 premiers caractères
+cut -c1-5 <<< "$string"
 ```
 
-## Plongée en profondeur
+La sortie de cette commande sera `Bonjour`, qui est la sous-chaîne de 5 premiers caractères de la chaîne initiale. On peut également utiliser `cut` pour extraire des caractères à partir d'un index spécifique, en utilisant l'option `-c` suivie de l'index de début et de fin, séparés par un tiret.
 
-Il existe plusieurs variations de la syntaxe d'extraction de sous-chaîne en Bash, qui offrent différents niveaux de flexibilité dans la sélection de la partie de la chaîne souhaitée. Par exemple, vous pouvez utiliser des nombres négatifs pour compter à partir de la fin de la chaîne ou utiliser des expressions régulières pour extraire des motifs spécifiques.
+## Deep Dive
 
-De plus, l'extraction de sous-chaîne peut également être combinée avec d'autres opérations Bash telles que les boucles et les conditions pour automatiser davantage le processus et le rendre encore plus puissant.
+La commande `cut` peut également être utilisée pour extraire des sous-chaînes à partir d'un fichier en utilisant différentes options comme `-f` pour spécifier des champs délimités par un caractère spécifique, ou encore `-d` pour spécifier le délimiteur utilisé. Cette commande offre une grande flexibilité pour extraire des données à partir de sources variées.
 
-## Voir aussi
+Il est également possible d'utiliser la commande `awk` pour extraire des sous-chaînes en Bash. En utilisant le paramètre `substr`, on peut spécifier l'index de début et le nombre de caractères à extraire. Un exemple de code :
 
-- [La documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
-- [Un guide détaillé sur l'extraction de sous-chaîne en Bash](https://www.tldp.org/LDP/abs/html/string-manipulation.html#SUBSTRREF)
-- [Un tutoriel vidéo sur l'utilisation des expressions régulières pour extraire des sous-chaînes](https://www.youtube.com/watch?v=SvDQlk BIjI)
+```Bash
+# Chaîne de caractères à extraire
+string="La programmation en Bash est amusante !"
 
-Merci d'avoir lu ! À la prochaine fois !
+# Commande awk pour extraire les 11 premiers caractères
+awk '{print substr($0, 1, 11)}' <<< "$string"
+```
+
+La sortie sera `La programm`, qui est la sous-chaîne de 11 caractères à partir de l'index 1. La commande `awk` offre également des options pour extraire des sous-chaînes en utilisant des expressions régulières, ce qui peut être très utile pour des cas plus complexes.
+
+## Voir Aussi
+
+- [La documentation officielle de la commande `cut`](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html#cut-invocation)
+- [La documentation officielle de la commande `awk`](https://www.gnu.org/software/gawk/manual/gawk.html#String-Functions)

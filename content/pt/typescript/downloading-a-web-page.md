@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Fazendo Download de uma Página Web"
-simple_title:         "Fazendo Download de uma Página Web"
+title:                "Baixando uma página da web"
+html_title:           "TypeScript: Baixando uma página da web"
+simple_title:         "Baixando uma página da web"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,55 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que baixar uma página da web?
+## Por que 
 
-Baixar uma página da web pode ser útil em várias situações, como por exemplo, criar um cache local para melhorar o desempenho da sua aplicação, ou então extrair informações específicas de um site para uso em outro contexto.
+Você pode se perguntar por que alguém se daria o trabalho de baixar uma página da web. A resposta é simples - pode ser útil para acessar o conteúdo offline, realizar análises de dados ou até mesmo fazer um backup de informações importantes.
 
-## Como fazer isso em TypeScript?
+## Como Fazer
 
-Para baixar uma página da web em TypeScript, você pode utilizar a biblioteca Node.js "node-fetch". Primeiro, certifique-se de ter o Node.js instalado em sua máquina. Em seguida, crie um novo diretório e inicialize um projeto Node.js com o comando ```npm init```.
+```TypeScript 
+// importando a biblioteca Node.js 'fs' para manipulação de arquivos
+import * as fs from 'fs';
+// importando a biblioteca Node.js 'https' para fazer requisições na web
+import * as https from 'https';
 
-Após isso, instale o "node-fetch" com o comando ```npm install node-fetch```. Agora, você pode importar o módulo "node-fetch" em seu código TypeScript com o comando ```import fetch from 'node-fetch'```.
-
-Então, basta usar o método ```fetch()``` e passar como parâmetro a URL da página que deseja baixar. Você pode usar o método ```text()``` para obter os dados no formato de texto, ou então o método ```json()``` para transformar em um objeto JSON.
-
-Exemplo de código:
-
-```
-import fetch from 'node-fetch';
-
-async function baixarPagina() {
-  const response = await fetch('https://www.meusite.com');
-  const dados = await response.text();
-  console.log(dados);
+// função para baixar uma página da web
+function baixarPagina(url: string): void {
+  // faz uma requisição GET para a URL fornecida
+  https.get(url, (res) => {
+    // cria um buffer para armazenar os dados recebidos
+    let data: Buffer = Buffer.from('');
+    // adiciona os dados recebidos ao buffer
+    res.on('data', (chunk) => {
+      data = Buffer.concat([data, chunk]);
+    });
+    // quando a requisição terminar, o conteúdo será salvo em um arquivo HTML
+    res.on('end', () => {
+      // cria um arquivo chamado 'pagina.html' e salva os dados recebidos nele
+      fs.writeFile('pagina.html', data, (err) => {
+        if (err) throw err;
+        console.log('Página baixada com sucesso!');
+      });
+    });
+  }).on('error', (err) => {
+    console.log(`Erro ao baixar página: ${err.message}`);
+  });
 }
 
-baixarPagina();
+// chamando a função com a URL desejada
+baixarPagina('https://www.example.com');
 ```
 
-Exemplo de saída no terminal:
+**Exemplo de Saída:**
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Meu Site</title>
-</head>
-<body>
-  <h1>Bem-vindo ao meu site!</h1>
-  <p>Aqui você encontra informações e novidades sobre Tecnologia.</p>
-</body>
-</html>
-```
+Ao executar o código acima, uma requisição é feita para a página "https://www.example.com". O conteúdo dessa página será salvo em um arquivo chamado "pagina.html" na pasta do seu projeto.
 
-## Uma olhada mais profunda
+## Mergulho Profundo 
 
-Quando usamos o método ```fetch()```, ele retorna uma Promessa que é resolvida quando a requisição é completada e nos permite trabalhar de forma assíncrona. Além disso, podemos passar algumas opções adicionais, como headers customizados, por exemplo.
+Existem várias maneiras de baixar uma página da web, dependendo da sua necessidade específica. No nosso exemplo, usamos a biblioteca nativa "https" do Node.js, mas você também pode usar outras bibliotecas como "axios" ou "node-fetch" para fazer a requisição. Além disso, é importante observar que algumas páginas da web podem ter proteções contra esse tipo de ação, então é sempre importante verificar a política de uso e termos da página antes de fazer qualquer requisição automatizada.
 
-Também é possível utilizar o "request-promise" em vez do "node-fetch", caso prefira uma sintaxe mais simples e direta. Esta biblioteca também lida com a conversão automática dos dados para diferentes formatos, como JSON, texto ou buffer.
+## Veja Também
 
-## Veja também
-
-- [Node.js](https://nodejs.org/pt-br/)
-- [Documentação do node-fetch](https://www.npmjs.com/package/node-fetch)
-- [Documentação do request-promise](https://www.npmjs.com/package/request-promise)
+- [Documentação oficial do Node.js](https://nodejs.org/en/docs/)
+- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/home.html)
+- [Tutorial em vídeo: Baixando páginas da web com Node.js](https://www.youtube.com/watch?v=J3KNqclgcBI)

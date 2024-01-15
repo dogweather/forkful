@@ -1,5 +1,6 @@
 ---
-title:                "C++: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "C++: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C++"
 category:             "C++"
@@ -11,96 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Vaihtoehtoisen tekstin löytäminen ja vaihtaminen on tärkeä osa ohjelmoinnin prosessia, koska se säästää aikaa ja vaivaa. Sen avulla voit nopeasti korjata tiettyjä merkkijonoja tai muuttaa kokonaisten tiedostojen sisältöä.
+Monet ohjelmointityöt, erityisesti monimutkaisemmat projektityöt, vaativat suuren määrän koodin kirjoittamista. Välillä on mahdollista, että kirjoittamisen jälkeen huomataan, että tekstissä on muutettava jotain esimerkiksi korjataksesi virheen tai päivittääksesi tietyn osan koodista. Tässä tapauksessa tekstiä voidaan etsiä ja korvata tietyillä koodinpätkillä, mikä säästää aikaa ja vaivaa.
 
-## Kuinka
+## Miten
 
-Yksi tapa etsiä ja korvata tekstiä C++:lla on käyttää `find` ja `replace` -funktioita. Seuraavassa esimerkissä korvaamme kaikki "koira" sanan "kissa" "teksti.txt" tiedostossa:
-
-```C++
+```
 #include <iostream>
-#include <fstream>
 #include <string>
 
-using namespace std;
+int main() {
+  // Alustetaan merkkijono
+  std::string teksti = "Tämä on esimerkkikoodia.";
 
-int main()
-{
-    string teksti;
-    ifstream tiedosto("teksti.txt");
-    string etsi = "koira";
-    string korvaa = "kissa";
+  // Etsitään ja korvataan tekstistä sana "esimerkki" sanalla "harjoitus"
+  teksti.replace(11, 9, "harjoitus");
 
-    while (getline(tiedosto, teksti))
-    {
-        size_t kohta = teksti.find(etsi);
-        if (kohta != string::npos)
-        {
-            teksti.replace(kohta, etsi.length(), korvaa);
-        }
-        cout << teksti << endl;
-    }
-    tiedosto.close();
+  // Tulostetaan korjattu teksti
+  std::cout << teksti << std::endl;
 
-    return 0;
+  return 0;
 }
 ```
+Koodissa ensin määritellään tarvittavat kirjastot ja sitten luodaan merkkijono, josta etsitään ja korvataan tekstiä. Käyttämällä "replace" -funktiota, merkitään paikka tekstissä, jossa haluttu osa vaihdetaan sekä korvaavan osan teksti. Lopuksi tulostetaan muokattu teksti. Koodissa voidaan myös käyttää muita toimintoja, kuten "find" ja "find_last_of", jotka löytävät tietystä merkkijonosta tietyn kohdan, jota voidaan käyttää sitten tekstin korvaamisessa. 
 
-Esimerkin tuloste olisi:
+## Syvällisempi katsaus
 
-```
-Tänään näin kissan puistossa.
-Kissa haukkuu puistossa.
-Minulla on kaksi kissaa kotona.
-```
-
-## Syvempi sukellus
-
-`find` ja `replace` -funktiot toimivat etsimällä ja korvaamalla vain yhden merkkijonon kerrallaan. Jos haluat korvata useita merkkijonoja kerralla, voit käyttää `stringstream` -luokkaa ja `while` -silmukkaa. Tässä esimerkissä korvaamme sekä "koira" sanan että "kissa" sanan "eläin" sanalla:
-
-```C++
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-
-using namespace std;
-
-int main()
-{
-    string teksti;
-    ifstream tiedosto("teksti.txt");
-    string etsi[] = {"koira", "kissa"};
-    string korvaa[] = {"eläin", "eläin"};
-    stringstream ss;
-
-    while (getline(tiedosto, teksti))
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            size_t kohta = teksti.find(etsi[i]);
-            if (kohta != string::npos)
-            {
-                teksti.replace(kohta, etsi[i].length(), korvaa[i]);
-            }
-        }
-        cout << teksti << endl;
-    }
-    tiedosto.close();
-
-    return 0;
-}
-```
-
-Esimerkin tuloste olisi sama kuin aiemmin: 
-
-```
-Tänään näin eläimen puistossa.
-Eläin haukkuu puistossa.
-Minulla on kaksi eläintä kotona.
-```
+"C++: ssä" on monia muita toimintoja, jotka helpottavat tekstin etsimistä ja korvaamista. Yksi esimerkki on "regex_replace" -funktio, joka käyttää säännöllisiä lausekkeita tekstin muokkaamiseen. Tämä antaa enemmän hallintaa haettavien sanojen suhteen, mikä on erityisen hyödyllistä monimutkaisemmissa projekteissa. Lisäksi nämä toiminnot voidaan yhdistää silmukkaan, jolloin voidaan käydä läpi suuri määrä tekstiä ja korvata tietty sana tai lause jokaisessa esiintymässä.
 
 ## Katso myös
 
-- [CPPReference: std::basic_string::find](https://en.cppreference.com/w/cpp/string/basic_string/find)
-- [CPPReference: std::basic_string::replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+- [C++ string replace documentation](https://www.cplusplus.com/reference/string/string/replace/)
+- [C++ regex_replace documentation](https://www.cplusplus.com/reference/regex/regex_replace/)

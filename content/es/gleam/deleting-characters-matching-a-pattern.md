@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Eliminando caracteres que coinciden con un patrón."
-simple_title:         "Eliminando caracteres que coinciden con un patrón."
+title:                "Borrando caracteres que coinciden con un patrón"
+html_title:           "Gleam: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,63 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué borrar caracteres que coinciden con un patrón en Gleam?
+## Por qué
 
-A veces, cuando estamos trabajando con cadenas de texto en Gleam, podemos encontrarnos con la necesidad de eliminar ciertos caracteres que coinciden con un patrón específico. Ya sea por limpieza de datos o por necesidad de un formato específico, esta tarea puede ser una necesidad en ciertas situaciones.
+En ocasiones, cuando estamos escribiendo código en Gleam, nos encontramos con que necesitamos eliminar ciertos caracteres que coinciden con un patrón en particular. Ya sea para limpiar datos, filtrar una cadena o simplemente por cuestiones de formato, el eliminar caracteres en Gleam puede resultar útil en muchas situaciones.
 
-## Cómo hacerlo en Gleam
+## Cómo hacerlo
 
-Hay varias formas de eliminar caracteres que coinciden con un patrón en Gleam, pero una de las maneras más sencillas es utilizando la función `erlang:replace/3`, que nos permite reemplazar una cadena de texto con otra basándonos en un patrón especificado. A continuación, se muestra un ejemplo de cómo utilizar esta función:
+Para eliminar caracteres que coinciden con un patrón en Gleam, utilizamos la función `delete_replacements()` de la biblioteca [`gleam/regex`](https://gleam.run/packages/gleam/regex). Esta función toma dos argumentos: la cadena original y el patrón a eliminar.
 
-```Gleam
-import lists.{unzip, zip}
-
-let input = "Gleam es un lenguaje de programación funcional"
-let pattern = "l"
-let replacement = ""
-
-let output = erlang:replace(input, pattern, replacement)
-
-assert.equal(output, "Geam es unenguaje de programación funciona")
-```
-
-En este ejemplo, utilizamos la función `erlang:replace/3` para eliminar todas las letras "l" de la cadena de texto `input`, utilizando una cadena vacía `""` como reemplazo. Como resultado, obtenemos la cadena de texto `output` sin ninguna letra "l".
-
-Otra forma de lograr el mismo resultado sería utilizando pattern matching y recursion. A continuación, se muestra un ejemplo de cómo hacerlo:
+Veamos un ejemplo práctico de cómo implementar esto en nuestro código:
 
 ```Gleam
-import lists.{unzip, zip}
+import gleam/regex
 
-fn remove_pattern(input, pattern) {
-  case input {
-    [head, ...tail] ->
-      remove_pattern(tail, pattern)
-    [_, ...tail] ->
-      [head | remove_pattern(tail, pattern)]
-    [] ->
-      []
-  }
-}
+let mensaje = "¡Hola, *Gleam* es increíble!"
 
-let input = "Gleam es un lenguaje de programación funcional"
-let pattern = "l"
+let mensaje_sin_formato = regex.delete_replacements(mensaje, "*Gleam*")
 
-let output = remove_pattern(input, pattern)
-
-assert.equal(output, "Geam es unenguaje de programación funciona")
+// El resultado debería ser "¡Hola,  es increíble!"
 ```
 
-En este ejemplo, definimos una función `remove_pattern` utilizando pattern matching y recursion. La función recorre cada caracter de la cadena de texto `input` y va construyendo una nueva cadena de texto `output` sin los caracteres que coinciden con el patrón `pattern`.
+Como podemos ver, en nuestro código importamos la biblioteca `gleam/regex` y luego utilizamos la función `delete_replacements()` para eliminar el patrón `*Gleam*` de nuestra cadena `mensaje`. Luego, almacenamos el resultado en una nueva variable llamada `mensaje_sin_formato` y el resultado final será "¡Hola, es increíble!".
 
-En ambos casos, el resultado final sería el mismo. Sin embargo, es importante tener en cuenta que el uso de la función `erlang:replace/3` puede ser más eficiente en términos de rendimiento, especialmente cuando trabajamos con cadenas de texto muy grandes.
+Podemos utilizar esta función con cualquier patrón que queramos eliminar en nuestra cadena. Además, también podemos utilizar expresiones regulares para patrones más complejos.
 
-## Profundizando en la eliminación de caracteres
+## Profundizando
 
-Eliminar caracteres que coinciden con un patrón en Gleam es una tarea relativamente sencilla en comparación con otras tareas más complejas que se pueden realizar con cadenas de texto. Sin embargo, es importante tener en cuenta que el manejo de cadenas de texto en Gleam se basa en la biblioteca `erlang:binary`, por lo que es posible utilizar todas las funciones disponibles en esa biblioteca para realizar operaciones más avanzadas como la sustitución de patrones con expresiones regulares o la búsqueda de subcadenas.
+La función `delete_replacements()` utiliza la función `replace_all()` de la biblioteca `gleam/regex` y simplemente reemplaza todas las coincidencias con una cadena vacía. Esto significa que cualquier patrón que podamos utilizar en `replace_all()`, también podemos utilizarlo en `delete_replacements()`.
 
-En resumen, la eliminación de caracteres que coinciden con un patrón en Gleam es una tarea útil y sencilla que se puede lograr utilizando la función `erlang:replace/3` o mediante el uso de pattern matching y recursion. Además, al comprender el manejo de cadenas de texto en Gleam y la biblioteca `erlang:binary`, podemos llevar a cabo tareas más complejas relacionadas con el procesamiento de cadenas.
+Por ejemplo, si queremos eliminar todos los dígitos de una cadena en Gleam, podemos utilizar la expresión regular `[0-9]` como patrón en `delete_replacements()` y todos los dígitos serán eliminados de nuestra cadena.
 
-# Ver también
+## Ver también
 
-- [Documentación oficial de Gleam sobre cadenas de texto](https://gleam.run/documentation/standard-library#text)
-- [Documentación oficial de Erlang sobre la biblioteca binary](http://erlang.org/doc/man/binary.html)
+- [Documentación de la biblioteca `gleam/regex`](https://gleam.run/packages/gleam/regex)
+- [Tutorial de expresiones regulares en Gleam](https://gist.github.com/lydiarrrw/3f429334470445bbbf1171438fe12a26)

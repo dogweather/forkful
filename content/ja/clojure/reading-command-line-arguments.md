@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: コンピュータ・プログラミングの記事「コマンドライン引数の読み込み」"
-simple_title:         "コンピュータ・プログラミングの記事「コマンドライン引数の読み込み」"
+title:                "コンピュータープログラミングの記事：コマンドライン引数の読み込み。"
+html_title:           "Clojure: コンピュータープログラミングの記事：コマンドライン引数の読み込み。"
+simple_title:         "コンピュータープログラミングの記事：コマンドライン引数の読み込み。"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-コマンドライン引数を読み取ることは、プログラムをより動的にし、より多くのユーザーのニーズに応えることを可能にします。
+コマンドライン引数を読むことは、プログラムの実行時にさまざまなオプションを指定する必要がある際に非常に役立ちます。
 
-## 使い方
+## 方法
 
-コマンドライン引数を読み取るには、```clojure
-(System/getProperty "sun.java.command")
-``` のように、Javaのプロパティを使用することができます。また、```clojure
-(System/getProperty "clojure.args")
-``` でも同じ結果を取得できます。
+コマンドライン引数を読むには、`(.getRuntime)`関数を使用する必要があります。この関数は、JVMの実行時に引数を渡すことができる`(.addShutdownHook)`関数を提供します。以下の例を参考にしてください。
 
-例えば、以下のコードを実行すると：
-
-```clojure
-(defn greet [name]
-  (println (str "Hello " name "!")))
-
-(defn -main []
-  (let [args (System/getProperty "sun.java.command")]
-    (greet (nth args 0))))
+```Clojure
+(defn main [& args]
+  (.getRuntime (.addShutdownHook (Thread. (fn [] (println "プログラムを終了します。")))))
+  (println "コマンドライン引数の数:" (count args))
+  (println "コマンドライン引数の内容:")
+  (doseq [arg args]
+    (println arg)))
 ```
 
-コマンドラインから```java -jar example.jar "John"``` というコマンドを実行すると、"Hello John!"という出力が得られます。このように、コマンドライン引数を受け取って、それを関数に渡すことで、より柔軟なプログラムを作ることができます。
+上記のコードをコンパイルし、コマンドライン引数を添えて実行すると、以下のような出力が得られます。
 
-## ディープダイブ
+```
+コマンドライン引数の数: 3
+コマンドライン引数の内容:
+hello world
+こんにちは
+Testing
+```
 
-Javaのプロパティを使用してコマンドライン引数を読み取る方法は、オペレーティングシステムやツールによって異なる場合があります。そのため、より複雑なコマンドライン引数の取得を行う場合は、[tools.cli](https://github.com/clojure/tools.cli)や[clj-opts](https://github.com/gliderlabs/clj-opts)などのライブラリを使用することをおすすめします。
+## 深い掘り下げ
 
-## その他
+以上の例では、コマンドライン引数を単純にプリントする方法を示しましたが、実際にはより複雑な扱い方ができます。例えば、引数のパースや検証、特定のオプションに応じた条件分岐などが挙げられます。また、`(.addShutdownHook)`関数を使用することで、プログラムが終了する際に特定の処理を実行することもできます。
 
-[Javaのpropertiesを使用する方法](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)<br>
-[tools.cliのドキュメント](https://github.com/clojure/tools.cli/wiki/Creating-a-command-line)
+## その他の情報
+
+- [Clojureドキュメント](https://clojure.org/reference/tools.cli)
+- [Clojureクックブック](https://github.com/clojure-cookbook/clojure-cookbook)
+- [Javaドキュメント](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)

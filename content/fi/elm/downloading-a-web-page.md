@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Elm: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,66 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi:
 
-Elm on monipuolinen ja intuitiivinen ohjelmointikieli, joka sopii erityisen hyvin verkkosivujen kehittämiseen. Lataamalla verkkosivun Elm-koodilla, saat mahdollisuuden tuottaa dynaamista ja interaktiivista sisältöä käyttäjille.
+Olet ehkä kuullut paljon puheita Elm-ohjelmointikielestä ja sen käytöstä web-kehityksessä. Mutta miksi sinun kannattaisi aloittaa käyttämään sitä? Yksi suuri etu Elm:llä on sen kyky hakea web-sivuja ja käsitellä niitä helposti ja turvallisesti. Tässä artikkelissa näytämme, miten se tapahtuu!
 
-## Miten
+## Miten:
 
-Käyttäen Elm-koodia voit ladata verkkosivun sisällön helposti ja nopeasti. Käytämme tähän tarkoitukseen `Http` -moduulia. Alla on esimerkki koodista, joka lataa ja tulostaa verkkosivun sisällön konsoliin.
-
+Elm tarjoaa valmiita toimintoja web-sivujen lataamiseen ja niiden sisällön käsittelyyn. Seuraavassa esimerkissä käytämme `Http` moduulia lähettämään hakupyyntö ja muuttamaan vastauksen JSON-muotoon:
 ```Elm
-module Main exposing (..)
-
-import Browser
-import Html exposing (..)
-import Html.Attributes exposing (..)
 import Http
-import Json.Decode
-import String
+import Json.Decode exposing (..)
 
-type Msg 
-    = PageLoaded (Result Http.Error String)
+requestUrl : String
+requestUrl =
+  "https://example.com"
 
-init : () -> (Model, Cmd Msg)
-init _ = ((), Http.getString "https://www.example.com")
+handleResponse : Http.Response -> String
+handleResponse response =
+  case response of
+    Ok body ->
+      parseJson body
 
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of 
-        PageLoaded result ->
-            case result of 
-                Ok content -> 
-                    ((), Cmd.none) 
-                    -- Tulostaa verkkosivun sisällön konsoliin
-                    (Debug.log "Verkkosivun sisältö:" content)
-                Err error -> 
-                    ((), Cmd.none)
-                        -- Tulostaa virheilmoituksen konsoliin
-                        (Debug.log "Virhe:" (Debug.toString error))
+    Err error ->
+      "Oops, something went wrong!"
 
-subscriptions : Model -> Sub Msg
-subscriptions _ = Sub.none
+parseJson : String -> String
+parseJson json =
+  case decodeValue json of
+    Ok result ->
+      "JSON-parsed response: " ++ (toString result)
 
-view : Model -> Html Msg
-view _ = 
-    p [] [ text "Loading page..."]
-
-main = Browser.sandbox { init = init, update = update, view = view, subscriptions = subscriptions }
-``` 
-
-Kun suoritat tämän koodin, näet tulos-konsolissa verkkosivun sisällön. 
-
+    Err error ->
+      "Oops, invalid JSON format!"
 ```
-https://www.example.com
-```
+Kun painat selaimen `nappia`, `requestUrl`-osoitteeseen lähetetään GET-hakupyyntö. Jos vastaus onnistuu, `handleResponse`-funktio ottaa vastaan HTTP-vastauksen `body`:n ja muuttaa sen JSON-muotoon. Lopuksi `parseJson`-funktio tulostaa JSON-parsitun vastauksen tai virheviestin. Tämän avulla voit ladata, käsitellä ja näyttää web-sivun sisällön helposti ja turvallisesti!
 
-## Syvemmälle
+## Syvällisemmin:
 
-Koodiesimerkissä käytetty `Http.getString` -funktio ottaa yksinkertaisesti verkkosivun URL-osoitteen ja palauttaa `Result` -tuloksen, joka voi olla joko `Ok` tai `Err` riippuen siitä, onko sivun lataaminen onnistunut vai ei. Elm tarjoaa myös muita `Http` -moduulin funktioita, kuten `Http.post`, jotka antavat sinulle vielä enemmän hallintaa lataamisprosessissa.
+Elm tarjoaa myös muita moduuleja, kuten `Html`, `Navigation`, ja `Url`, jotka mahdollistavat web-sivujen luomisen ja navigoinnin sivujen välillä. Mutta koska tämä artikkeli keskittyy web-sivujen lataamiseen, suosittelemme tutustumaan `Http` moduulin dokumentaatioon ja kokeilemaan erilaisia koodaamisen mahdollisuuksia!
 
-## Katso myös
+## Katso myös:
 
-- [Elm viralliset dokumentit](https://guide.elm-lang.org)
-- [Elm Suomen käyttäjäyhteisö](https://elm-suomi.fi/)
-- [Elm Suomen Slack-kanava](https://elmsuomi.slack.com)
+- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [Esimerkkejä Elm-koodista ja projektista](http://elm-lang.org/examples)
+- [Lisää tietoa Elm:stä ja sen käytöstä web-kehityksessä](https://medium.com/@_rchaves_/how-to-be-lazy-and-efficient-when-learning-elm-1d3cb3b6b4bb)

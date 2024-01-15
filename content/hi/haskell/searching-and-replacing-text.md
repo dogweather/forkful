@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: टेक्स्ट खोजना और बदलना"
-simple_title:         "टेक्स्ट खोजना और बदलना"
+title:                "टेक्स्ट को खोजें और प्रतिस्थापित करें"
+html_title:           "Haskell: टेक्स्ट को खोजें और प्रतिस्थापित करें"
+simple_title:         "टेक्स्ट को खोजें और प्रतिस्थापित करें"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kya aapne kabhi text ke andar kuch specific words ya patterns ko dhoondhna aur unhe badalna chaaha hai? Ye kuch common tasks hai jo hum log text processing mein karte hain. Haskell mein hum searching aur replacing ko bohot hi aasan aur powerful tarike se kar sakte hain. Chaliye dekhte hain kaise!
 
-यदि आप कोई टेक्स्ट फाइल या प्रोग्रामिंग कोड संपादित करने के साथ जुड़े हैं, तो आपने शायद यह काम किया होगा कि प्रतिस्थापित करके उसमें कुछ खास संख्याओं या कारकों को ढूंढें और उन्हें बदलें। यह काम अक्सर बहुत समय लेता है और मनोबल को कम कर सकता है। लेकिन, हैसकेल में इस काम को करना बहुत आसान है और आपको अधिक सक्रिय और उत्साही बनाता है।
-
-## कैसे करें
-
-हैसकेल में टेक्स्ट को खोजकर बदलना बहुत सरल है। आप निम्नलिखित कोड से संचालित होते हुए इस काम को कर सकते हैं।
-
-```Haskell
-main = do
-    contents <- readFile "sample.txt" -- पठनीय फाइल
-    let newContents = replace "Hello" "नमस्ते" contents -- प्रतिस्थापित योग्य वाक्य का उदाहरण
-    putStrLn newContents -- बदले गए नये संदेश को प्रिंट करें
+## Kaise Karein
 ```
+Haskell mein, hum "replace" function ka use karke text mein pattern ko search aur replace kar sakte hain. Iss function mein hum do parameters pass karte hain - pehla parameter wo word ya pattern hai jo hum dhoondhna chahte hain aur dusra parameter wo word ya pattern hai jo usse replace karna hai.
 
-### सॉर्टर काम करें
+```
+Example:
+```
+replace "hello" "hi" "Hello world!" 
+```
+Output:
+```
+"Hi world!"
+```
+Isme humne "hello" ko "hi" ke sath replace kiya hai.
 
-हैसकेल में सरणी वस्तुओं को आप आसानी से खोजकर बदल सकते हैं। उपरोक्त कोड के उदाहरण में, हमने "Hello" की जगह "नमस्ते" को बदला है। आप इसमें किसी भी वस्तु को अपने आवश्यकतानुसार बदल सकते हैं।
+Agar hum ek se zyada words ko replace karna chahte hain, to hum multiple "replace" functions ka use kar sakte hain.
+```
+replace "hello" "hi" (replace "goodbye" "bye" "Hello and goodbye, world!")
+```
+Output:
+```
+"Hi and bye, world!"
+```
+Haskell mein hum "regex" ya regular expressions bhi use kar sakte hain searching aur replacing ke liye. Ye kiya jaata hai "regex-base" aur "regex-posix" packages ke through. Inke use se hum specific patterns ya characters ko bhi search aur replace kar sakte hain.
 
-## गहराई में जाएँ
+### Deep Dive
+Searching aur replacing bohot sari programming languages mein available hai, par Haskell mein ye process bohot hi modular aur flexible hai. Isme hum functions mein parameters pass kar sakte hain aur multiple search aur replace ko bhi chain kar sakte hain. Regex ka use karke bhi hum specific aur complex patterns ko search aur replace kar sakte hain.
 
-हैसकेल में टेक्स्ट खोजना और प्रतिस्थापित करना बहुत सरल है, लेकिन इसके पीछे काम करने वाले अंतर को पहचानना हो सकता है। जरूरत के अनुसार, आप बहुत सारे विकल्पों का उपयोग कर सकते हैं जैसे कि विभिन्न समानता के साथ टेक्स्ट को खोजना और आस
+## See Also
+- [Haskell Official Website](https://www.haskell.org/)
+- [Haskell Tutorial - Search and Replace](https://www.tutorialspoint.com/haskell-string-replacement-functions)

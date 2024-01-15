@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Erzeugen von Zufallszahlen"
-simple_title:         "Erzeugen von Zufallszahlen"
+title:                "Erzeugung von zufälligen Zahlen"
+html_title:           "Haskell: Erzeugung von zufälligen Zahlen"
+simple_title:         "Erzeugung von zufälligen Zahlen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Random Numbers, also zufällig generierte Zahlen, sind in vielen Bereichen der Informatik von großer Bedeutung. Sie werden zum Beispiel bei Simulationen, Verschlüsselungen oder Spielen verwendet. Auch in der funktionalen Programmiersprache Haskell können wir Random Numbers nutzen, um unsere Programme interessanter und dynamischer zu gestalten.
 
-## Wie man Random Numbers generiert
+Warum sollte man sich mit der Generierung von Zufallszahlen befassen? Nun, Zufallszahlen sind ein wichtiger Bestandteil vieler Anwendungen, wie z.B. Simulationen, Spiele oder kryptographische Algorithmen. Sie ermöglichen es uns, unberechenbare und unvorhersehbare Daten zu generieren, die für verschiedene Zwecke nützlich sein können.
 
-Um in Haskell Random Numbers zu generieren, müssen wir zunächst das "System.Random" Modul importieren. Dies ermöglicht uns den Zugriff auf die Funktionalitäten zur Erzeugung von zufälligen Zahlen.
+## Wie man Zufallszahlen in Haskell generiert
 
-Um eine einzelne zufällige Zahl zu erzeugen, können wir die Funktion "randomRIO" verwenden. Diese Funktion nimmt zwei Parameter entgegen, ein Mindest- und ein Maximalwert, und gibt uns eine zufällige Zahl innerhalb dieses Bereichs zurück. Hier ist ein Beispielcode:
-
-```Haskell
-import System.Random
-
-main = do
-    randomNumber <- randomRIO (1, 10)
-    putStrLn ("Die zufällige Zahl ist: " ++ show randomNumber)
-```
-
-Wenn wir dieses Programm ausführen, erhalten wir jedes Mal eine andere zufällige Zahl zwischen 1 und 10.
-
-Um eine Liste von zufälligen Zahlen zu generieren, können wir die Funktion "randomRs" nutzen. Diese Funktion nimmt ebenfalls einen Bereich als Parameter entgegen, gibt uns aber eine unendliche Liste von zufälligen Zahlen zurück. Hier ist ein Beispielcode:
+Um Zufallszahlen in Haskell zu generieren, müssen wir zuerst das "random" Modul importieren, das Teil der standardmäßigen Bibliothek ist. Dann können wir die Funktion "randomRIO" verwenden, um eine Zufallszahl innerhalb eines bestimmten Bereichs zu generieren. Hier ist ein Beispielcode, der eine Zufallszahl zwischen 1 und 10 erzeugt:
 
 ```Haskell
 import System.Random
 
 main = do
-    randomNumbers <- take 10 <$> randomRs (1, 100)
-    putStrLn ("Die Liste der zufälligen Zahlen ist: " ++ show randomNumbers)
+  randomNum <- randomRIO (1,10)
+  putStrLn $ "Die Zufallszahl ist: " ++ show randomNum
 ```
 
-In diesem Beispiel nutzen wir die "take" Funktion, um nur die ersten 10 Elemente der unendlichen Liste zu erhalten. Wir können auch andere Funktionen wie "cycle" oder "filter" anwenden, um interessante Verwendungen der zufälligen Zahlen zu entdecken.
+Die "randomRIO" Funktion gibt eine Zufallszahl vom Typ "IO Int" zurück, daher müssen wir sie mit der Bindung " <- " ausführen und mit der Funktion "putStrLn" ausgeben.
 
-## Tieferer Einblick
+## Tiefer Einblick
 
-Das "System.Random" Modul bietet uns noch weitere Funktionen und Möglichkeiten, um Random Numbers zu nutzen. Zum Beispiel können wir auch komplexere Datentypen wie Zufallslisten oder zufällige Permutationen von Listen generieren.
+Die "randomRIO" Funktion verwendet das "RandomGen" Typklasse, um einen Zufallsgenerator zu erstellen. Standardmäßig verwendet Haskell den "StdGen" Zufallsgenerator, der auf der Zeit basiert. Dies bedeutet, dass jede Ausführung des Codes eine andere Zufallszahl erzeugt. Wir können jedoch auch unseren eigenen Zufallsgenerator erstellen, indem wir die "mkStdGen" Funktion verwenden und einen beliebigen Startwert übergeben.
 
-Als Alternative zum "System.Random" Modul können wir auch das "random" Paket nutzen, welches zusätzliche Funktionen zur Verfügung stellt, wie zum Beispiel die Erzeugung von Zufallszahlen mit bestimmten Verteilungen oder das Generieren von Zufallszahlen in Kombination mit Monaden.
+Es ist auch möglich, komplexe Datenstrukturen mit zufälligen Werten zu erstellen, indem wir die Funktion "random" verwenden, die in der "Random" Typklasse enthalten ist. Diese Funktion hat einen generischen Typ, der es uns ermöglicht, eine Zufallszahl aus jeder beliebigen Typklasse zu generieren, die eine Instanz von "Random" ist.
 
 ## Siehe auch
 
-- https://hackage.haskell.org/package/random
-- https://wiki.haskell.org/Random
-- https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/randoms
+- [Offizielle Dokumentation über das "random" Modul](https://hackage.haskell.org/package/random)
+- [Eine Einführung in Haskell mit zufälligen Zahlen als Beispiel](https://www.haskell.org/tutorial/randomness.html)
+- [Ein praktisches Tutorial zur Verwendung von Zufallszahlen in Haskell](https://www.fpcomplete.com/blog/2017/01/randomness-haskell)

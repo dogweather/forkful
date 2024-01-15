@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: दो तारीखों की तुलना करना"
-simple_title:         "दो तारीखों की तुलना करना"
+title:                "दो तिथियों की तुलना करना"
+html_title:           "Kotlin: दो तिथियों की तुलना करना"
+simple_title:         "दो तिथियों की तुलना करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या करने के लिए 
+## Kyun
 
-हमारे कोड में तारीखों को तुलना करने की आवश्यकता हो सकती है। दो तारीखों को तुलना करने के लिए हमें कुछ फ़ंक्शन्स को लिखना होगा जो इसमें मदद करेंगे। 
+Aksar hume apne project mein do tarikhon ko compare karna padta hai, jaise ki kisi event ke beech ki duration ya kisi task ke khatam hone ki date ka check karna. Kotlin mein tareekhon ka comparison bahut hi easy hai aur is article mein hum seekhenge ki kaise hum do tarikhon ko easily compare karke apne project ko aur efficient bana sakte hain.
 
-## कैसे करें 
+## Kaise Karein
 
-जैसा कि हमने पहले कहा, हमें कुछ फ़ंक्शन्स को लिखना होगा जिनके ज़रिए हम तारीखों को तुलना कर सकते हैं। नीचे दिए गए कोड ब्लॉक में हमने कुछ कोट्लिन कोड दिए हैं जो आपको तारीखों को तुलना करने में मदद करेंगे।
+```Kotlin 
+// Do tarikhon ko date format mein declare karein
+val date1 = LocalDate.parse("2021-07-15")
+val date2 = LocalDate.parse("2021-07-20")
 
-```Kotlin
-// दो तारीखों को बनाएं 
-val firstDate = LocalDate.of(2020, 10, 5) 
-val secondDate = LocalDate.of(2021, 5, 12)
-
-// तारीखों की तुलना 
-if(firstDate == secondDate) {
-    println("तारीखों में समान है।")
-}
-else if(firstDate.isBefore(secondDate)) {
-    println("पहली तारीख दूसरी तारीख से पहले है।")
-}
-else {
-    println("पहली तारीख दूसरी तारीख से बाद में है।")
+// Date1 se date2 ko compare karein
+if(date1 < date2) {
+    println("Date1 pahle aata hai date2 se")
+} else if (date1 == date2) {
+    println("Date1 aur date2 ek saath hain")
+} else {
+    println("Date2 pahle aata hai date1 se")
 }
 ```
 
-हमारे द्वारा दिए गए कोड का आउटपुट निम्नलिखित है: 
+### Output:
 
 ```
-पहली तारीख दूसरी तारीख से पहले है।
+Date1 pahle aata hai date2 se
 ```
 
-## मदद के लिए गहराईगामी 
+Is code snippet mein humne `LocalDate` class ka use kiya hai, jo ki Kotlin mein dates ko represent karne ke liye available hai. Iske baad humne `if` aur `else if` statements ka use kiya hai, jahan humne dates ko compare kiya hai aur unke beech difference check kiya hai. Is tarah se hum do tarikhon ko aasani se compare kar sakte hain.
 
-तारीखों को तुलना करने के लिए कई तरीके हो सकते हैं, जैसे कि दिनांक, समय या समय क्षेत्र के माध्यम से। कुछ ऐसे फ़ंक्शन्स हैं जो आपकी तारीखों को तुलना करने में और आसान बना सकते हैं। आप ये फ़ंक्शन्स और दूसरे काम आने वाले कोड को [कोट्लिन डॉक्यूमेंटेशन] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date-time/) से जान सकते हैं। 
+## Deep Dive
 
-## और देखें 
+Iss code snippet mein humne `LocalDate` class ka use kiya, jo ki Java 8 se available hai aur `java.time` package mein hai. Is class mein hum date aur time ko represent kar sakte hain, jaise ki year, month, day, hour, minute, second, etc. Iske alawa `LocalDate` class mein aur bhi functions hai, jinse hum date operations jaise ki addition, subtraction, etc. kar sakte hain.
 
-[Kotlin में तारीखों क
+`LocalDate` class ka use karne ke liye sabse pehle humein uss class ka object create karna padta hai, jismein hum date ko `parse` function se represent karte hain. Iske baad hum `if` aur `else if` statements ka use karke dates ko compare karte hain. Is tarah se hum iss kaam ko bohot hi asaan bana sakte hain.
+
+## See Also
+
+- [Kotlin Documentation on Dates](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [GeeksForGeeks article on Comparing Dates in Kotlin](https://www.geeksforgeeks.org/date-comparison-within-a-range-in-kotlin/)

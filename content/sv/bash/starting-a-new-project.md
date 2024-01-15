@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Börja ett nytt projekt"
-simple_title:         "Börja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Bash: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -11,41 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt programmeringsprojekt kan verka överväldigande, men det kan vara en spännande och kreativ utmaning. Genom att lära sig Bash-programmering kan du skapa effektiva script och automatisera uppgifter på datorn.
+Att starta ett nytt projekt i Bash kan vara både spännande och utmanande. Genom att lära sig detta kraftfulla programmeringsspråk kan du utveckla kommandoradsverktyg och skapa automatiserade processer som kan förenkla ditt dagliga arbete.
 
-## Hur Man Gör
+## Hur man gör
 
-För att börja ett nytt Bash-projekt, följ dessa steg:
+Om du är nybörjare i Bash rekommenderas det att använda en textredigerare som Atom eller Visual Studio Code för att skriva dina skript. Låt oss ta en titt på ett enkelt skript som skriver ut en hälsning:
 
-1. Öppna din terminal applikation (till exempel Terminal på MacOS eller Git Bash på Windows).
-2. Välj en mapp där du vill spara ditt projekt.
-3. Skriv "```Bash touch filename.sh```" för att skapa en ny fil, där "filename" är namnet på din fil.
-4. Öppna filen i din valda textredigerare genom att skriva "```Bash code filename.sh```" eller "```Bash nano filename.sh```".
-5. Nu kan du börja skriva ditt Bash-script med dina önskade kommandon.
-
-Här är ett enkelt exempel på ett Bash-script som hälsar användaren välkommen och visar vilken mapp de för närvarande befinner sig i:
-
-```
-Bash echo "Välkommen!"
-Bash pwd
+```Bash
+#!/bin/bash
+echo "Hej, världen!"
 ```
 
-När du är klar med att skriva ditt script, spara filen och stäng textredigeraren.
+I detta skript använder vi första raden `#!/bin/bash` för att berätta för operativsystemet att skriptet ska köras i Bash. Sedan använder vi `echo`-kommandot för att skriva ut texten "Hej, världen!" på skärmen. Resultatet blir:
 
-För att exekvera ditt script, skriv "```Bash bash filename.sh```" i din terminal. Om allt fungerar som det ska, borde utmatningen vara "Välkommen!" och namnet på mappen du valde innan.
+```Bash
+Hej, världen!
+```
+
+För att köra skriptet, spara det i en fil (till exempel "hello.sh") och öppna en terminal. Skriv `bash hello.sh` för att köra skriptet.
+
+Nu när du har lärt dig det grundläggande, kan du börja experimentera med olika kommandon och skapa mer avancerade skript för dina specifika behov.
 
 ## Djupdykning
 
-Att starta ett Bash-projekt handlar inte bara om att skriva kod, det handlar också om att organisera ditt projekt på rätt sätt. Här är några tips för att sätta upp ditt projekt på bästa sätt:
+När du startar ett nytt Bash-projekt är det viktigt att tänka på din arbetsmiljö. Du kan skapa en standardmappstruktur som hjälper dig att hålla ordning på dina filer och skript.
 
-- Skapa en README-fil för att beskriva ditt projekt och dess komponenter.
-- Använd kommentarer i ditt script för att förklara vad varje del gör.
-- Skapa en mappstruktur för att hålla dina filer organiserade.
+En enkel mappstruktur kan se ut så här:
 
-Genom att följa dessa riktlinjer kommer du att ha ett välstrukturerat och lättunderståeligt projekt.
+- Projekt
+    - Skript
+    - Dokumentation
+    - Resurser
+
+I mappen "Skript" kan du spara alla dina Bash-skript. I "Dokumentation" kan du ha en README-fil som förklarar vad projektet handlar om och hur man använder det. "Resurser" kan innehålla eventuella externa filer som behövs för ditt projekt.
+
+Du kan också använda git för versionshantering av ditt projekt. Detta hjälper dig att hålla reda på ändringar och återställa till tidigare versioner om det behövs.
 
 ## Se även
 
-- [Bash Guide for Beginners](https://tiswww.case.edu/php/chet/bash/basin.pdf)
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [The Bash Academy](https://guide.bash.academy/)
+- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Obtendo a data atual."
-simple_title:         "Obtendo a data atual."
+title:                "Obtendo a data atual"
+html_title:           "Arduino: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual é útil para programar com Arduino?
+## Por que?
 
-Existem muitas aplicações interessantes que podem se beneficiar da obtenção da data atual em um programa Arduino. Por exemplo, você pode criar um conjunto de luzes que são ativadas em feriados específicos, usar a data atual como um parâmetro para determinadas ações ou até mesmo criar um relógio que se ajusta automaticamente ao horário de verão e ao horário de inverno.
+Geralmente, em projetos que envolvem sistemas automatizados e dispositivos eletrônicos, é importante ter a data e hora atual para fins de registro, programação de tarefas e outras aplicações que dependem do tempo.
 
-## Como obter a data atual com Arduino
+## Como fazer
 
-Para obter a data atual em um programa Arduino, você precisará usar a biblioteca "DS1307RTC". Certifique-se de baixar a biblioteca e adicioná-la ao seu ambiente Arduino antes de começar.
-
-Aqui está um exemplo de código simples que usa a biblioteca para obter a data atual e imprimi-la no monitor serial:
-
-```arduino
-#include <DS1307RTC.h> // inclui a biblioteca DS1307RTC
+```
+#include <Time.h>
+#include <TimeLib.h>
 
 void setup() {
-  Serial.begin(9600); // inicia a comunicação serial
-  setSyncProvider(RTC.get); // obtém os dados de data e hora do chip DS1307RTC
+  Serial.begin(9600); // Inicializa a conexão serial
+  setTime(19, 45, 00, 15, 9, 2021); // Define a data e hora atual
 }
 
 void loop() {
-  tmElements_t tm; // cria uma variável para armazenar os elementos da data
-  if (RTC.read(tm)) { // verifica se a data foi lida com sucesso
-    // imprimi a data no formato dia/mês/ano
-    Serial.print(tm.Day);
-    Serial.print("/");
-    Serial.print(tm.Month);
-    Serial.print("/");
-    Serial.println(tm.Year + 1970); // o valor retornado é desde 1970
-  }
-  delay(1000); // espera um segundo antes de verificar novamente
+  // Imprime a data no formato DD/MM/AAAA
+  Serial.println(day() + "/" + month() + "/" + year());
+  // Imprime a hora no formato HH:MM:SS
+  Serial.println(hour() + ":" + minute() + ":" + second());
+  delay(1000); // Aguarda 1 segundo
 }
 ```
 
-No código acima, usamos a função `RTC.read()` para obter os dados da data e hora do chip DS1307RTC e armazená-los em uma variável `tmElements_t`. Em seguida, imprimimos os elementos individuais da data no monitor serial.
+O trecho de código acima utiliza as bibliotecas Time.h e TimeLib.h para definir a data e hora atual e imprimi-las no monitor serial. É importante notar que a função setTime() deve ser chamada na função setup() antes de utilizarmos as funções relacionadas à data e hora.
 
-Agora, quando você carregar este código em seu Arduino e abrir o monitor serial, você verá a data atual sendo impressa no formato dia/mês/ano.
+Além disso, existe a possibilidade de obter a data e hora atual através de um módulo RTC (Real Time Clock), que consiste em um circuito integrado com um relógio e uma bateria de backup que mantém a contagem do tempo mesmo sem energia. Nesse caso, é necessário utilizar uma biblioteca específica para o módulo utilizado.
 
-## Mergulho Profundo: Mais informações sobre a obtenção da data atual com Arduino
+## Deep Dive
 
-A biblioteca "DS1307RTC" também oferece outras funções úteis para lidar com a data e hora, como definir a data e hora, verificar se o horário de verão está ativo e até mesmo utilizar o chip DS1307 como um relógio de alarme.
+O Arduino possui um timer interno de 16 bits que é atualizado a cada microssegundo. Esse timer é utilizado pelas bibliotecas de data e hora para contar o tempo desde uma data de referência (Unix Epoch - 1º de janeiro de 1970). A partir dessa contagem, é possível converter para os formatos de data e hora que estamos acostumados a utilizar.
 
-Se você quiser saber mais sobre como usar essas funções, confira a documentação oficial da biblioteca DS1307RTC.
+Além disso, é importante mencionar que o Arduino possui um relógio interno que mantém a data e hora mesmo quando desligado, mas essa informação só é precisa se o microcontrolador estiver conectado à alimentação. Caso contrário, a data e hora serão resetadas na próxima vez que o Arduino for ligado.
 
 ## Veja também
 
-- [Tutorial da biblioteca DS1307RTC](https://github.com/PaulStoffregen/DS1307RTC)
-- [Referência da biblioteca DS1307RTC](https://www.arduino.cc/en/reference/ds1307rtc)
-- [Guia de Início Rápido do chip DS1307](https://www.adafruit.com/product/264)
+- [Biblioteca TimeLib](https://github.com/PaulStoffregen/Time)
+- [Biblioteca DS3231](https://github.com/NorthernWidget/DS3231) (para utilização com módulo RTC)
+- [Tutorial sobre como usar a biblioteca Time](https://learn.adafruit.com/adafruit-arduino-lesson-6-digital-inputs/using-a-real-time-clock)

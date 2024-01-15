@@ -1,5 +1,6 @@
 ---
-title:                "Python: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Python: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Python"
 category:             "Python"
@@ -9,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com autenticação básica?
+## Por que
 
-Existem várias razões pelas quais alguém pode querer enviar uma solicitação HTTP com autenticação básica. Por exemplo, pode ser uma forma segura de se comunicar com um servidor remoto para obter ou enviar dados confidenciais. Além disso, a autenticação básica é um dos métodos mais simples e amplamente suportados de autenticação em sistemas web.
+Você já se deparou com uma página da web que solicitava um nome de usuário e senha antes de permitir o acesso? Isso é conhecido como autenticação básica e, neste artigo, vamos explorar por que e como enviar uma solicitação HTTP com autenticação básica usando Python.
 
-## Como fazer
+## Como Fazer
 
-Para enviar uma solicitação HTTP com autenticação básica em Python, primeiro precisamos importar o módulo `requests`:
+Primeiro, precisamos importar o módulo `requests` em nosso código Python:
 
 ```Python
 import requests
 ```
 
-Em seguida, definimos as credenciais de autenticação em uma variável `credenciais` no formato `username:password`. É importante notar que essas informações devem ser codificadas em Base64 antes de serem enviadas na solicitação.
+Agora, podemos definir as informações de autenticação básica, incluindo o nome de usuário e senha, e adicioná-las ao cabeçalho da nossa solicitação:
 
 ```Python
-credenciais = b"usuario:senha"
+username = "seu_nome_de_usuario"
+password = "sua_senha"
+
+headers = {"Authorization": f"Basic {username}:{password}"}
 ```
 
-Então, criamos um cabeçalho de autenticação contendo a palavra "Basic" seguida pelas credenciais codificadas:
+Em seguida, podemos enviar a solicitação HTTP para o URL desejado, incluindo o cabeçalho que acabamos de criar:
 
 ```Python
-cabecalho = {"Authorization": "Basic " + b64encode(credenciais).decode('utf-8')}
+url = "https://www.exemplo.com"
+response = requests.get(url, headers=headers)
 ```
 
-Por fim, basta fazer uma solicitação HTTP para o URL desejado e passar o cabeçalho contendo as credenciais:
+Por fim, podemos imprimir o código de status da resposta para verificar se a solicitação foi bem-sucedida:
 
 ```Python
-resposta = requests.get("https://exemplo.com", headers=cabecalho)
+print(response.status_code)
 ```
 
-Se a autenticação for bem-sucedida, a resposta conterá os dados que foram solicitados.
+Se tudo correr como planejado, você deve receber um código de status `200`, indicando que a solicitação foi bem-sucedida.
 
-## Aprofundando-se
+## Deep Dive
 
-O método de autenticação básica funciona enviando as credenciais em formato de texto simples na solicitação HTTP. No entanto, isso significa que se um invasor interceptar a solicitação, ele terá acesso às informações de login.
+A autenticação básica é um método simples de autenticação, mas não é tão seguro quanto outros métodos mais avançados. Quando enviamos uma solicitação HTTP com autenticação básica, o nome de usuário e senha são codificados em Base64, mas não são criptografados. Isso significa que, se alguém interceptar a solicitação, pode decifrar facilmente as informações de autenticação e acessar a sua conta. Portanto, é importante sempre usar a autenticação básica em conjunto com HTTPS (HTTP seguro) para garantir a segurança das suas informações.
 
-Uma maneira de aumentar a segurança é utilizar o protocolo HTTPS, que criptografa os dados durante a transmissão. Além disso, a autenticação básica pode ser combinada com outros métodos de autenticação, como o OAuth, para adicionar uma camada extra de proteção.
+## Veja Também
 
-## Veja também
-
-- [Documentação oficial do módulo `requests`](https://requests.readthedocs.io/)
-- [Artigo sobre segurança em comunicações HTTP/HTTPS](https://blog.sympt.ai/2019/02/07/basic-auth-in-http-vs-https-authentication/)
+- [Documentação oficial do módulo requests](https://docs.python-requests.org/en/master/)
+- [Tutorial de autenticação básica utilizando Python](https://www.freecodecamp.org/news/basic-authentication-in-python/)
+- [Explicação detalhada sobre autenticação básica](https://www.restapitutorial.com/httpstatuscodes.html#basicauthentication)

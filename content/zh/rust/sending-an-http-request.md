@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发送一个http请求"
+html_title:           "Rust: 发送一个http请求"
+simple_title:         "发送一个http请求"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,38 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-发送HTTP请求是在编程中经常遇到的一个任务。它允许程序与其他服务器或服务进行通信，并获取有用的数据。在现代互联网时代，几乎所有的应用程序都需要发送HTTP请求来获得所需的数据。
+在我们日常的网络使用中，经常会涉及到向服务器发送HTTP请求。而Rust就是一个能够高效地执行这种任务的编程语言。不仅如此，使用Rust能够帮助我们更好地处理网络请求的错误和异常，提高系统的稳定性。
 
-## 如何操作
+## 如何做到
 
-要在Rust中发送HTTP请求，我们首先需要引入标准库中的"net"模块。然后，我们可以使用方法`reqwest::get()`来构建并发送GET请求。下面是一个简单的例子：
+首先，我们需要引入Rust的[reqwest](https://docs.rs/reqwest/)库来处理HTTP请求。接下来，使用以下代码来创建一个简单的GET请求：
 
 ```Rust
-use reqwest::Error;
+let response = reqwest::blocking::get("https://example.com")?; 
+```
 
-fn main() -> Result<(), Error> {
-  let response = reqwest::get("https://www.example.com")?.text()?;
-  println!("{}", response);
-  Ok(())
+在上面的代码中，"https://example.com"是我们想要请求的URL。在这种情况下，我们使用了blocking方法来同步执行请求，并且使用了?操作符来处理可能的错误。你也可以使用异步方法来发送HTTP请求，只需要将blocking替换成async。
+
+接下来，我们可以使用response对象来检查请求是否成功，并获取返回的数据：
+
+```Rust
+if response.status().is_success() {
+    let text = response.text()?;
+    println!("{}", text);
 }
 ```
 
-这段代码会向`https://www.example.com`发送一个GET请求，并将响应的文本内容打印在终端上。
+使用response.status()方法可以获取请求的状态码，并通过is_success()方法来检查是否为200。如果是200，则继续获取返回的文本数据，并打印出来。
 
-## 深入了解
+如果需要发送带有数据的POST请求，可以这样做：
 
-在发送HTTP请求时，我们需要注意一些细节。例如，我们可以通过为`reqwest::get()`方法传入一个`&str`类型的参数来发送不同的HTTP请求。或者，我们也可以使用`reqwest::Client`结构来自定义HTTP请求的各种参数，例如请求头部、代理设置等。使用Rust的强类型系统和错误处理机制，我们可以确保在发送HTTP请求时的稳定性和安全性。
+```Rust
+let client = reqwest::blocking::Client::new();
+let resp = client.post("https://example.com")
+    .header("Content-Type", "application/json")
+    .body("{\"name\": \"John\", \"age\": 30}")
+    .send()?;
+```
+
+在上面的代码中，我们使用Client来创建一个POST请求，并指明请求的URL和请求头类型为JSON。接下来，使用.body方法来设置请求的主体内容，并最终使用.send方法来发送请求。
+
+## 深入探讨
+
+在Rust中，发送HTTP请求的方法并不局限于reqwest库。它还可以使用标准库中的[`reqwest::Client`](https://doc.rust-lang.org/std/net/struct.Ipv4Addr.html)来发送请求。此外，还可以使用第三方库如[hyper](https://crates.io/crates/hyper)来做同样的事情。如果你想进一步探索Rust与HTTP请求相关的内容，可以点击以下链接：
+
+- [Rust与HTTP请求](https://rust-lang-nursery.github.io/rust-cookbook/web/clients.html)
+- [使用Rust构建RESTful API](https://auth0.com/blog/building-and-testing-a-rest-api-in-rust/)
+- [Rust中的HTTP异步编程](https://tokio.rs/tokio/tutorial/async)
 
 ## 参考链接
 
-- [Rust官方网站](https://www.rust-lang.org/)
-- [Rust标准库文档](https://doc.rust-lang.org/std/)
-- [reqwest文档](https://docs.rs/reqwest/0.11.1/reqwest/)
-- [跟老司机学编程-Rust篇](https://rust.cc/article?id=c5f56dbe-c67c-49e1-911a-853803da994f)
-- [网络编程基础教程-HTTP](https://www.runoob.com/w3cnote/http-guide.html)
-- [Rust CookBook-网络编程](https://rust-lang-nursery.github.io/rust-cookbook/web/clients.html)
-
-## 另见
-
-- [如何在Rust中发送POST请求](https://example.com/blog/rust-post-request)
-- [使用Rust编写高性能的网络应用程序](https://example.com/blog/rust-networking)
+- [Rust文档](https://doc.rust-lang.org/std/net/struct.Ipv4Addr.html)
+- [Rust语言参考](https://www.rust-lang.org/zh-CN/learn)
+- [reqwest库](https://docs.rs/reqwest/)
+- [hyper库](https://crates.io/crates/hyper)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Å finne lengden til en streng"
+title:                "Å finne lengden til en streng"
+html_title:           "C++: Å finne lengden til en streng"
 simple_title:         "Å finne lengden til en streng"
 programming_language: "C++"
 category:             "C++"
@@ -11,47 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å finne lengden på en streng er en grunnleggende operasjon i C++, og det er en viktig ferdighet for alle som ønsker å bli dyktige programmerere. Å kjenne lengden på en streng gjør det mulig for deg å behandle og manipulere tekstdokumenter, input fra brukere og mye mer.
+Å finne lengden til en streng er en viktig grunnleggende ferdighet i programmering. Det lar oss manipulere og behandle tekster på en effektiv måte, noe som er essensielt i mange programmer.
 
-## Hvordan
+## Slik gjør du det
+
+For å finne lengden til en streng, kan du bruke funksjonen `length()` i C++. Denne funksjonen tar inn en streng som parameter og returnerer lengden av strengen som et heltall. La oss se på et eksempel:
 
 ```C++
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 int main() {
-    // Opprett en streng
-    string navn = "Lars";
-
-    // Finn lengden på strengen ved å bruke size() funksjonen
-    int lengde = navn.size();
-
-    // Skriv ut lengden på strengen
-    cout << "Lengden på navnet ditt er: " << lengde << endl;
+    string navn = "Per";
+    cout << "Lengden til strengen er: " << navn.length() << endl;
 
     return 0;
 }
 ```
 
-**Output:**
+Etter å ha kjørt koden, vil du få følgende utskrift:
+
 ```
-Lengden på navnet ditt er: 4
+Lengden til strengen er: 3
 ```
 
-Her ser vi at vi kan finne lengden på en streng ved å bruke `size()` funksjonen. Vi kan også bruke `length()` funksjonen, da den gjør det samme som `size()`. Begge funksjonene returnerer en `int` som representerer lengden på strengen.
+Du kan også bruke en `for`-løkke til å gå gjennom hver karakter i strengen og telle dem manuelt. Her er en annen måte å finne lengden til en streng på:
 
-## Dykk dypere
+```C++
+#include <iostream>
+using namespace std;
 
-Det er viktig å være klar over at funksjonene `size()` og `length()` ikke alltid vil gi samme resultat. Selv om de fleste programmerere bruker dem om hverandre, har de faktisk en liten forskjell.
+int main() {
+    string navn = "Per";
+    int lengde = 0;
+    for (int i = 0; navn[i] != '\0'; i++) {
+        lengde++;
+    }
 
-`length()` funksjonen er definert i headerfilen `<string>` og brukes i hovedsak for basisstrenger, som `const char*` eller `char*` , mens `size()` funksjonen er definert i både headerfilene `<string>` og `<vector>` og er generelt brukt for STL klasser som `string` eller `vector`.
+    cout << "Lengden til strengen er: " << lengde << endl;
 
-I tillegg kan vi også bruke `for`-løkker eller `while`-løkker til å finne lengden på en streng ved å inkrementere en teller hver gang vi går gjennom en bokstav i strengen. Men dette krever mer kode og er ikke like praktisk som å bruke de innebygde funksjonene.
+    return 0;
+}
+```
+
+I begge eksemplene ovenfor blir lengden av strengen "Per" ble regnet som 3.
+
+## Dypdykk
+
+I C++, blir lengden til en streng lagret som et heltall av typen `int`, siden det er det mest effektive formatet for å arbeide med tekst. Det viktigste å være oppmerksom på er at lengden på en streng inkluderer alle tegn, også mellomrom og spesialtegn.
+
+En annen viktig ting å merke seg er at indeksene til en streng starter fra 0, så den første karakteren vil alltid ha en indeks på 0. Dette betyr at hvis en streng har en lengde på 3, vil indeksene være 0, 1, og 2.
 
 ## Se også
 
-- [cppreference - std::string::size()](https://en.cppreference.com/w/cpp/string/basic_string/size)
-- [GeeksforGeeks - Finding length of a string in C++](https://www.geeksforgeeks.org/finding-length-of-a-string-in-cpp/) 
-- [Programiz - C++ String size() function](https://www.programiz.com/cpp-programming/library-function/cstring/size)
+- [C++ Strings Tutorial](https://www.geeksforgeeks.org/cpp-strings/) (engelsk)
+- [Grunnleggende om strenger i C++](https://www.w3schools.com/cpp/cpp_strings.asp) (engelsk)

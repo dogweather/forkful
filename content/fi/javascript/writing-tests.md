@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Javascript: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testejä?
+## Miksi
 
-Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, joka auttaa varmistamaan koodin laadun ja vähentämään mahdollisia bugeja tai virheitä. Testien avulla voit myös testata uusia ominaisuuksia ja varmistaa, että ne toimivat oikein ennen kuin otat ne käyttöön tuotantoympäristöön.
+Yksi tärkeimmistä asioista ohjelmoinnissa on varmistaa, että koodimme toimii oikein ja pysyy toimivana jatkossakin. Kirjoittamalla testejä voimme vahvistaa, että koodimme toimii halutulla tavalla ja löytää mahdolliset virheet ennen kuin ne aiheuttavat ongelmia.
 
-## Näin teet sen:
+## Miten se tehdään
+
+Kirjoittamalla testejä voimme tarkistaa, että koodimme tuottaa halutunlaisia tuloksia ja toimii odotetulla tavalla. Voimme käyttää esimerkiksi Jest-kirjastoa, joka on suosittu testauskirjasto JavaScript-sovelluksille.
 
 ```Javascript
-// Luo yksinkertainen funktio, joka laskee kahden numeron summan
-function sum(a, b) {
-  return a + b;
+// Tehdään funktio, joka laskee kahden luvun summan
+function sum(x, y) {
+  return x + y;
 }
 
-// Testaa, että summa on oikein
-console.log(sum(2, 3)); // Output: 5
-console.log(sum(10, 5)); // Output: 15
+// Testataan, että funktio toimii halutulla tavalla
+test('sum-funktio laskee summan oikein', () => {
+  expect(sum(2, 2)).toBe(4);
+});
 ```
 
-Testien kirjoittaminen aloitetaan yksinkertaisesti luomalla funktioita ja sitten testaamalla niiden toimivuutta. Voit käyttää `console.log()`-komentoa tulostamaan testien tulokset konsoliin ja varmistamaan, että kaikki toimii halutulla tavalla.
+Testien avulla voimme myös varmistaa, että koodimme ei aiheuta odottamattomia sivuvaikutuksia, joita voisi olla vaikea havaita muuten.
 
-## Syvemmälle testien kirjoittamiseen
+```Javascript
+// Tehdään funktio, joka lisää uuden arvon taulukkoon
+function addItem(array, item) {
+  array.push(item);
+}
 
-Testien kirjoittaminen voi myös auttaa sinua ymmärtämään paremmin koodin rakennetta ja toimintaa. Voit esimerkiksi testata erilaisia syötteitä ja tarkistaa, että funktio reagoi niihin odotetulla tavalla. Tämä auttaa myös havaitsemaan mahdollisia virheitä tai puutteita koodissa ja korjaamaan ne ennen kuin ne aiheuttavat ongelmia.
+// Testataan, että funktio lisää uuden arvon taulukkoon oikein
+test('addItem-funktio lisää uuden arvon taulukkoon', () => {
+  const array = [1, 2, 3];
+  addItem(array, 4);
+  expect(array).toHaveLength(4);
+  expect(array).toContain(4);
+});
+```
 
-Voit myös käyttää JavaScriptin testaustyökaluja, kuten Jest tai Mocha, jotka tekevät testien kirjoittamisesta ja suorittamisesta helpompaa ja tehokkaampaa. Näistä työkaluista löytyy runsaasti ohjeita ja resursseja verkosta, joten rohkeasti tutustumaan niihin ja hyödyntämään niitä koodin laadun parantamiseksi.
+## Syvempi sukellus
 
-## Katso myös:
+Testien kirjoittaminen auttaa myös parantamaan koodimme laatua ja ylläpidettävyyttä. Kun lisäämme uusia ominaisuuksia tai teemme muutoksia koodiin, voimme suorittaa testeistä ja varmistaa, että kaikki toimii odotetulla tavalla. Tämä auttaa myös tunnistamaan mahdollisia ristiriitaisuuksia tai ongelmia eri osien välillä.
 
-- [Jest-testityökalun dokumentaatio](https://jestjs.io/)
-- [Mochan aloitusopas](https://mochajs.org/#getting-started)
-- [JavaScript-testaamisen perusteet](https://developers.google.com/web/tools/chrome-devtools/javascript/testing)
+Yksi tärkeä seikka testeissä on myös niiden avulla dokumentoida koodiamme ja sen toimintaa. Kirjoittamalla selkeitä ja ymmärrettäviä testejä, voimme myös auttaa muita kehittäjiä ymmärtämään koodiamme ja sen tarkoitusta.
+
+## Katso myös
+
+- [Jest-kirjaston virallinen sivusto](https://jestjs.io/)
+- [Testien kirjoittamisen perusteet](https://medium.com/@zoeames/testing-javascript-what-is-a-test-8cf2a9df1a50)
+- [Hyviä käytäntöjä testien kirjoittamisessa](https://medium.freecodecamp.org/the-right-way-to-test-react-components-548a4736ab22)

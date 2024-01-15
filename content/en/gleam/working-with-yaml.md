@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Gleam recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,57 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+## Why
+If you're working with multiple programming languages or need to store data in a human-readable format, YAML is a great option. It's a lightweight, easy-to-read language that makes organizing and sharing data a breeze.
 
-Working with YAML in Gleam can improve the readability and maintainability of your code. YAML is a popular human-readable data serialization format that allows you to easily store and access data in a structured way.
+## How To
+To start using YAML in your Gleam project, first install the latest version of the official Gleam YAML library. Then, import it into your code with `import gleam/yaml`.
 
-##How To
+Next, let's take a look at a basic example of how to create and save a YAML file:
 
-To start working with YAML in Gleam, you will need to install the yaml package from the Gleam package registry. 
+```Gleam
+let my_data = [
+  { "name":  "John", "age": 26 },
+  { "name":  "Jane", "age": 32 }
+]
 
-```
-Gleam info add "yaml"
-```
-
-Next, you can import the yaml package in your Gleam module and use the `parse` function to convert a YAML string into a Gleam type.
-
-```
-import yaml 
-
-let yaml_string = "name: John
-age: 30"
-
-let user: Result(yaml.Decode.YamlDecoderError, User) =
-    yaml.parse(yaml_string, User.decode())
-
-pub struct User(name: String, age: Int)
-
-impl User {
-    pub fn decode(decoder: yaml.Decode.Decoder) {
-        yaml.Decode.field("name", yaml.Decode.string, self.name, decoder)
-        yaml.Decode.field("age", yaml.Decode.int, self.age, decoder)
-    }
-}
+let file = yaml.encode(my_data)
+File.write("./sample.yaml", file)
 ```
 
-You can then use pattern matching to handle the `Result` and access the data in your Gleam code.
+In this code, we create a list of dictionaries containing some sample data. Then, we use the `encode` function from the YAML library to convert the data into YAML format. Finally, we use the `File.write` function to save the YAML data to a file.
 
-```
-case user {
-    Ok(user) -> 
-        // Do something with user
-    Err(err) -> 
-        // Handle error
-}
+To read and use data from a YAML file, we can use the `decode` function:
+
+```Gleam
+let data = File.read("./sample.yaml")
+let decoded_data = yaml.decode(data)
 ```
 
-##Deep Dive
+The `decoded_data` variable will now contain the same list of dictionaries that we created earlier.
 
-In addition to parsing YAML strings, the yaml package also allows you to encode a Gleam type into a YAML string using the `encode` function. This can be useful for converting Gleam data into a format that other applications can easily read and understand.
+## Deep Dive
+Now that you know the basics of creating and reading YAML files in Gleam, let's take a deeper dive into some advanced features.
 
-The `decode` and `encode` functions are just two of the many functions available in the yaml package. For a complete list of functions and their usage, you can refer to the [official documentation](https://gleam.run/packages/yaml/). 
+First, it's important to note that Gleam's YAML library follows the YAML 1.2 standard. This means that you can take advantage of all the powerful features that come with the standard, such as anchors, aliases, and custom tags.
 
-##See Also
+Additionally, the library provides functions for formatting, parsing, and validating YAML data. This allows for more control and flexibility when working with YAML.
 
-- [Gleam package registry](https://gleam.run/packages/)
-- [Official documentation for the yaml package](https://gleam.run/packages/yaml/)
+And finally, the library also supports converting between YAML and JSON. This can come in handy when working with other programming languages that may not have native support for YAML.
+
+## See Also
+- [Official Gleam YAML Library](https://github.com/gleam-lang/yaml)
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [JSON to YAML Converter](https://www.json2yaml.com/)

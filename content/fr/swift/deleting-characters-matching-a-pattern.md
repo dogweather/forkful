@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Suppression de caractères correspondants à un modèle"
-simple_title:         "Suppression de caractères correspondants à un modèle"
+title:                "Suppression de caractères correspondant à un modèle"
+html_title:           "Swift: Suppression de caractères correspondant à un modèle"
+simple_title:         "Suppression de caractères correspondant à un modèle"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi supprimer des caractères correspondant à un modèle en Swift ?
+## Pourquoi
 
-Supprimer des caractères correspondant à un modèle peut être utile lorsqu'on travaille avec des chaînes de caractères complexes. Par exemple, si vous avez une chaîne contenant des numéros de téléphone aux formats différents, vous pouvez utiliser cette méthode pour supprimer tous les caractères non numériques et les formater correctement.
+Il peut être utile de supprimer des caractères correspondant à un motif dans une chaîne de caractères pour nettoyer ou formater des données, ou pour effectuer des opérations spécifiques sur une chaîne.
 
 ## Comment faire
 
-Voici un exemple de code pour supprimer tous les caractères non numériques d'une chaîne :
-
 ```Swift
-let phoneNumber = "(123) 456-7890"
-let numericCharacters = CharacterSet.decimalDigits
-let formattedNumber = String(phoneNumber.unicodeScalars.filter(numericCharacters.contains))
-print(formattedNumber) // Résultat : 1234567890
-```
+let string = "Bonjour les amis !"
 
-Dans cet exemple, nous utilisons la propriété `unicodeScalars` de la chaîne pour accéder à chaque caractère et la méthode `filter()` pour ne garder que ceux qui appartiennent à l'ensemble de caractères numériques. Ensuite, nous recréons une nouvelle chaîne à partir des caractères restants.
+// En utilisant la méthode `replacingOccurrences(of:with:)` pour supprimer les espaces
+let newString = string.replacingOccurrences(of: " ", with: "")
+// Résultat: "Bonjourlesamis!"
+
+// En utilisant une boucle for avec une condition if pour supprimer les chiffres
+var newString = ""
+for character in string {
+    if !character.isNumber {
+        newString.append(character)
+    }
+}
+// Résultat: "Bonjour les amis !"
+
+// En utilisant la méthode `filter()` pour supprimer tous les caractères sauf les lettres
+let newString = String(string.filter { $0.isLetter })
+// Résultat: "Bonjourlesamis"
+```
 
 ## Plongée en profondeur
 
-Lorsque vous utilisez cette méthode, il est important de garder à l'esprit que les caractères Unicode sont également pris en compte. Ainsi, si vous avez une chaîne contenant des caractères non-ASCII, tels que des lettres accentuées, ceux-ci seront également supprimés.
-
-De plus, si vous avez besoin de supprimer des caractères spécifiques plutôt que de simplement garder les caractères numériques, vous pouvez le faire en utilisant la méthode `contains()` de `CharacterSet` dans la clause `filter()`.
+Il existe plusieurs façons de supprimer des caractères correspondant à un motif dans une chaîne de caractères en utilisant les méthodes fournies par le langage Swift. La méthode `removeAll(where:)` peut également être utilisée pour supprimer des caractères selon une condition donnée. De plus, il est important de comprendre comment les indices fonctionnent dans les chaînes de caractères afin de ne pas supprimer les caractères incorrects. 
 
 ## Voir aussi
 
-- [Documentation sur la manipulation de chaînes de caractères en Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutoriel sur les ensembles de caractères en Swift](https://www.hackingwithswift.com/articles/178/super-powered-strings-in-swift-5-1-using-character-set)
+- [Documentation officielle Swift - Traitement de chaînes de caractères](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutoriel video - Comment supprimer des caractères dans une chaîne en Swift](https://www.youtube.com/watch?v=wai-FHBpXKU)
+- [Exemples de code pour supprimer des caractères en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-remove-a-prefix-from-a-string)

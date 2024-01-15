@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Clojure recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,56 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"
 ## Why
 
-Starting a new project in Clojure can be an exciting and rewarding experience. Clojure is a dynamic, functional programming language that is gaining popularity in the industry due to its simplicity, conciseness, and powerful features. It allows developers to write robust and scalable code that is easy to maintain. If you're someone who enjoys writing elegant and efficient code, then starting a new project in Clojure might be just the thing for you.
+Are you looking to start a new project in Clojure? Maybe you're a seasoned developer looking for a new challenge, or maybe you're new to the language and curious to learn more. Either way, starting a new project in Clojure can open up opportunities for efficient and elegant solutions to complex problems.
 
 ## How To
 
-To get started with Clojure, you will need to have the Java Runtime Environment (JRE) installed on your system. Once that is done, you can follow these simple steps to set up a basic Clojure project:
+First, make sure you have the latest version of Clojure installed. Then, create a new project by running the following command in your terminal:
 
 ```Clojure
-(defproject my-project "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.10.1"]]
-  :main ^:skip-aot my-project.core
-  :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+lein new <project-name>
 ```
 
-This is a basic project definition file (project.clj) for a Clojure project. It specifies the project name, version, dependencies, and other settings. In this example, we have defined our project to depend on the latest version of Clojure (1.10.1). We have also specified that the main namespace for our project is my-project.core and that we want to skip Ahead-of-Time (AOT) compilation for our main namespace. Finally, we have specified where we want our compiled code to be located.
+This will generate a basic project structure for you. Next, navigate to the newly created project directory and open the `project.clj` file. This is where you can specify any dependencies your project may need.
 
-Next, we can create a new Clojure file (e.g. core.clj) in the src/my_project directory and add some code to it:
+To add dependencies, you can use the `:dependencies` key in the `project.clj` file like this:
 
 ```Clojure
-(ns my-project.core)
+:dependencies [[org.clojure/clojure "1.10.0"]
+               [org.clojure/tools.logging "0.4.1"]]
+```
+
+Next, create a new Clojure source file in the `src` directory. This is where you can write your code and define functions. For example:
+
+```Clojure
+(ns <project-name>.core
+  (:require [clojure.tools.logging :as log]))
 
 (defn greet [name]
-  (str "Hello, " name))
+  (log/info (str "Hello, " name "!")))
 ```
 
-This code creates a simple function called greet that takes in a name parameter and returns a string greeting the person by name. We can see this in action by opening up a REPL (Read-Evaluate-Print-Loop) and running the following commands:
+Finally, to run your program, navigate back to the project directory in your terminal and run the following command:
 
 ```Clojure
-(use 'my-project.core)
-
-(greet "John")
-
-;; Output: "Hello, John"
+lein run -m <project-name>.core
 ```
 
-The use function is used to load a namespace and its associated code into the current REPL session. We can then call our greet function and see the output.
+This will execute your `greet` function and output "Hello, [name]!" in the terminal, where `[name]` is the argument you pass in.
+
+Congratulations, you now have a basic Clojure project up and running!
 
 ## Deep Dive
 
-Starting a new project in Clojure also gives you the opportunity to learn and explore its powerful features. Clojure is built on top of the JVM, which means it has access to all the Java libraries and can also integrate with other JVM languages such as Java and Scala. This allows developers to leverage the vast ecosystem of Java libraries and tools while still being able to write concise and functional code.
+Starting a new project in Clojure also means getting familiar with its unique features, such as its powerful and expressive syntax, functional programming capabilities, and seamless integration with Java libraries. It's also worth exploring the various tools and libraries available within the Clojure ecosystem, such as Leiningen, a build and dependency management tool, and ClojureScript, which allows you to write Clojure code that compiles to JavaScript.
 
-Clojure also has a strong emphasis on immutability and persistent data structures. This means that data structures are not modified in-place, but rather new versions are created. This makes it easier to reason about and debug code, as well as providing better concurrency support.
+Additionally, it's important to familiarize yourself with the standard Clojure library and core functions, which provide a wide range of useful and efficient functions for data manipulation, concurrency, and more.
 
-Another important feature of Clojure is its emphasis on functional programming. Clojure treats functions as first-class citizens, meaning that they can be passed as arguments, returned as values, and stored in data structures. This allows for a more declarative programming style and makes code more modular and reusable.
+See Also
 
-## See Also
-
-- Official Clojure website: https://clojure.org
-- Clojure documentation: https://clojure.org/documentation
-- Clojure Style Guide: https://github.com/bbatsov/clojure-style-guide
+- Official Clojure website: https://clojure.org/
+- ClojureDocs: https://clojuredocs.org/
+- Leiningen: https://leiningen.org/
+- ClojureScript: https://clojurescript.org/

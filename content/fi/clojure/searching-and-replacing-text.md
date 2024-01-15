@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Clojure: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,32 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa tilanteissa, kuten tekstieditoriaalin kirjoittaessa tai koodia muokatessa, on tarpeen korvata tiettyä merkkijonoa tai ottaa käyttöön tiettyä muutosta koko dokumenttiin. Tämä voi säästää aikaa ja vaivaa manuaalisen muutoksen tekemisessä ja auttaa varmistamaan, että dokumentti on yhdenmukainen ja virheetön.
+Oletko väsynyt manuaalisesti etsimään ja korvaamaan tekstiä tiedostoista? Haluatko säästää aikaa ja vaivaa? Clojure tarjoaa helpon tavan tehdä tämä automaattisesti, mikä tekee tekstien muokkaamisesta paljon nopeampaa ja tarkempaa.
 
-## Miten
+## Miten tehdä se
 
-Clojurella on käytännöllisiä työkaluja tekstien etsimiseen ja korvaamiseen. Alla on esimerkkejä, jotka näyttävät, kuinka voit käyttää Clojuren `replace` ja `replace-all` -funktioita korvaamaan tekstiä. Tämä käyttäjä syöttää tekstin "Tervetuloa" ja korvaa sen tekstillä "Hei":
-
-```Clojure
-(replace "Tervetuloa" "Hei" "Tervetuloa uudelleen!") => "Hei uudelleen!"
-(replace-all "Tervetuloa" "Hei" "Tervetuloa uudelleen!") => "Hei uudelleen Hei!"
-
-```
-
-`replace` -funktio korvaa vain ensimmäisen esiintymän tekstissä, kun taas `replace-all` -funktio korvaa kaikki esiintymät. Voit myös käyttää Clojuren `re-find` -funktiota etsimään ja korvaamaan säännöllisten lausekkeiden avulla:
+Etsi ja korvaa toiminto Clojurella on helppo oppia ja käyttää. Käytä funktiota `replace`  tekstien etsimiseen ja korvaamiseen. Voit käyttää myös `replace` funktiota taulukoiden tai merkkijonojen kanssa. Katso alla oleva esimerkki:
 
 ```Clojure
-(re-find #"tarkista\d\d\d" "Tarkista123 ja Tarkista456") => "tarkista123"
-(replace #"tarkista\d\d\d" "muutettu" "Tarkista123 ja Tarkista456") => "muutettu ja muutettu"
-
+(def teksti "Tämä on esimerkki tekstistä, jota haluat korvata.")
+(replace teksti "haluat korvata" "haluat muuttaa")
 ```
 
-## Syvempi sukellus
+Tuloksena on uusi merkkijono: "Tämä on esimerkki tekstistä, jota haluat muuttaa." Voit myös käyttää regex-merkkejä löytääksesi tiettyjä kuvioita tekstistä:
 
-Clojurella on myös muita työkaluja tekstien etsimiseen ja korvaamiseen, kuten `re-seq`-funktio, joka etsii kaikki esiintymät ja palauttaa ne listana. Voit myös käyttää `re-pattern` -funktiota muuntaaksesi merkkijonon säännölliseksi lausekkeeksi. Lisätietoja näistä ja muista tekstinkäsittelymahdollisuuksista löytyy Clojuren dokumentaatiosta.
+```Clojure
+(def sana "tervehtimään")
+(replace sana #"eh$" "aa")
+```
+
+Tämä korvaa "eh"-loppuiset sanat "aa"-loppuisilla sanoilla, jolloin tuloksena on merkkijono "tervehtimään". Löydät lisätietoja Clojuren `replace` funktion käytöstä [Clojuren dokumentaatiosta](https://clojuredocs.org/clojure.string/replace).
+
+## Syvemmälle tekniseen
+
+Clojuren `replace` toiminto käyttää `replace-first` ja `replace-all` funktioita, jotka puolestaan käyttävät Java-kirjaston `java.util.regex.Pattern` ja `java.util.regex.Matcher` luokkia. Tämä mahdollistaa monipuolisen ja tarkan tekstin etsimisen ja korvaamisen Clojurella. Voit löytää lisätietoja Java-kirjaston toiminnasta [Java:n virallisilta verkkosivuilta](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
 
 ## Katso myös
 
-- [Clojuren virallinen dokumentaatio](https://clojure.org/reference/text_processing)
-- [Clojure-järjestelmän etsiminen ja korvaaminen - esimerkkejä](https://www.baeldung.com/clojure-string-replace)
-- [Yksityiskohtaiset ohjeet säännöllisten lausekkeiden käytöstä Clojurella](https://github.com/jafingerhut/thalia/blob/master/userguide.adoc#section-25-string-processing-regular-expressions)
+- [Clojuren viralliset verkkosivut](https://clojure.org/)
+- [Etsi ja korvaa tekstiä Clojurella -opetusohjelma](https://www.braveclojure.com/finding-and-replacing-text-in-clojure/)

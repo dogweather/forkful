@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Programando pruebas"
-simple_title:         "Programando pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Haskell: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Haskell
+## ¿Por qué escribir pruebas en Haskell?
 
-Escribir pruebas es una parte esencial del proceso de programación en cualquier lenguaje, incluyendo Haskell. Las pruebas ayudan a garantizar que nuestro código sea sólido y funcione correctamente en todas las situaciones posibles. Además, al escribir pruebas primero, podemos diseñar un código más modular y más fácil de mantener.
+Escribir pruebas es una parte esencial del proceso de desarrollo de software. Además de proporcionar seguridad y confiabilidad a nuestro código, también nos permite detectar errores y corregirlos antes de que se conviertan en problemas mayores. En Haskell, escribir pruebas es especialmente importante ya que su sistema de tipos fuertemente tipado nos ayuda a prevenir errores de forma más eficaz.
 
-## Cómo escribir pruebas en Haskell
+## Cómo hacerlo
 
-Para escribir pruebas en Haskell, utilizamos un framework de pruebas llamado Hspec. Este framework nos permite definir suites de pruebas que especifican qué debe hacer nuestro código y cómo debe comportarse en cada situación.
-
-Una prueba básica en Haskell se vería así:
+La forma más común de escribir pruebas en Haskell es utilizando la biblioteca de pruebas "HUnit". Esta biblioteca proporciona una sintaxis sencilla para definir y ejecutar pruebas. Por ejemplo, si queremos probar una función que suma dos números:
 
 ```Haskell
--- Importamos el módulo de pruebas Hspec
-import Test.Hspec
+-- Importamos la biblioteca HUnit
+import Test.HUnit
 
--- Definimos una prueba llamada "suma"
--- que verifica si la función suma funciona correctamente
-main = hspec $ do
-  describe "suma" $ do
-    it "debe sumar dos números correctamente" $
-      suma 2 3 `shouldBe` 5
+-- Definimos nuestra función
+suma :: Int -> Int -> Int
+suma x y = x + y
+
+-- Escribimos una prueba utilizando la sintaxis de HUnit
+testSuma = TestCase $ assertEqual "Suma incorrecta" 5 (suma 2 3)
+
+-- Ejecutamos las pruebas
+ejecutarPruebas = runTestTT $ TestList [testSuma]
+
+-- Deberíamos recibir el siguiente resultado:
+-- ##### ### Label: Suma incorrecta
+-- ### Cases: 1  Tried: 1  Errors: 0  Failures: 0
+-- ### Test Result: Pass
 ```
 
-Aquí hemos definido una prueba llamada "suma" que verifica si nuestra función suma funciona correctamente al sumar dos números enteros. Usamos la función `shouldBe` para comparar el resultado esperado con el resultado obtenido.
+En este ejemplo, utilizamos la función `TestCase` para definir una prueba y la función `assertEqual` para verificar que el resultado de la función `suma` sea igual a 5 cuando se le pase 2 y 3 como argumentos. Luego, ejecutamos la prueba utilizando la función `runTestTT` y especificando la prueba que queremos ejecutar. Al ejecutar las pruebas, deberíamos recibir un resultado que indica que la prueba fue exitosa.
 
-## Profundizando en la escritura de pruebas
+## Profundizando más
 
-Escribir pruebas en Haskell requiere un conocimiento más profundo sobre el lenguaje y su sintaxis. Es importante entender cómo funcionan los tipos de datos y cómo usar funciones de orden superior para construir pruebas más complejas.
+Hay muchas otras bibliotecas de pruebas disponibles para Haskell, como QuickCheck, que utiliza pruebas basadas en propiedades, o Tasty, una biblioteca de pruebas con más opciones de personalización y extensibilidad. Además, la comunidad de Haskell es muy activa y siempre está compartiendo recursos y buenas prácticas para escribir pruebas eficaces.
 
- Además, es importante tener en cuenta algunos casos de prueba especiales, como números negativos o estructuras de datos complejas como listas y árboles.
+## Ver también
 
-Además de Hspec, existen otros frameworks de pruebas para Haskell, como QuickCheck, que nos permiten generar automáticamente casos de prueba y cubrir un rango más amplio de posibles situaciones.
-
-## Vea también
-
-- [Documentación de Hspec](https://hspec.github.io/)
-- [Introducción a QuickCheck](https://www.stackbuilders.com/tutorials/haskell/quickcheck/)
+- [Documentación de HUnit](https://hackage.haskell.org/package/HUnit)
+- [Introducción a QuickCheck](https://wiki.haskell.org/Introduction_to_QuickCheck)
+- [Tutorial de Tasty](https://github.com/feuerbach/tasty/blob/master/doc/Tasty-Tutorial.md)

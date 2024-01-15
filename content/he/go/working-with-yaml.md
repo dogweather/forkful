@@ -1,6 +1,7 @@
 ---
-title:                "Go: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עובדים עם yaml"
+html_title:           "Go: עובדים עם yaml"
+simple_title:         "עובדים עם yaml"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -9,60 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## Why
+מתי אנו רוכשים דגש על YAML
+כשפותחים את מערכות המידע שלנו כדי לקבל נתונים מגוונים מסוגים שונים, כמו מבני נתונים או ספריות הפכויות. את YAML נדרשת היכולת לקרוא ולכתוב נתונים מגוונים, כך שזה מקל עלינו לעבוד עם מגוון של נתונים שונים בקוד שלנו.
 
-במאמר זה, נדבר על כתיבת קוד בשפת גו (Go) וכיצד ניתן להשתמש בקבצי YAML בתוכניות הגיוגריות שלנו. בין אם אתם מפתחים מתחילים או מומחים בשפת גו, יתרונות שימוש בפורמט קבצי YAML הם רבים. התאמתו הקלה לשמירה והפעלה של נתונים, ניתוח והשוואה בין קבצים, ולא פחות חשוב - הוודאות שהנתונים שלנו מוגנים ומגובים בצורה מדויקת. בכתיבה זו נציג לכם את הדרך לעבוד עם קבצי YAML בשפת גו.
-
-## כיצד לעשות זאת
-
-קוד גו
+## How To
+הנה דוגמה של קוד גו לקרוא ולכתוב YAML נתונים:
 
 ```Go
+package main
+
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 
-	"gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v3"
 )
 
+type Person struct {
+	Name  string `yaml:"name"`
+	Age   int    `yaml:"age"`
+	Hobby string `yaml:"hobby"`
+}
+
 func main() {
-	// קריאת קובץ YAML מתיקיית פרויקט
-	yamlFile, err := ioutil.ReadFile("config.yaml")
-
-	// בדיקת שגיאות בקריאת הקובץ
+	// קריאת קובץ YAML
+	yamlFile, err := ioutil.ReadFile("person.yaml")
 	if err != nil {
-		log.Fatalf("לא ניתן לקרוא את הקובץ: %v", err)
+		fmt.Println("Error reading YAML file:", err)
+		return
 	}
 
-	// המרת הנתונים בקובץ למשתנה מטיפוס מאפיין יואם (map[string]interface{})
-	var config map[string]interface{}
-	err = yaml.Unmarshal(yamlFile, &config)
+	var person Person
 
-	// בדיקת שגיאות בהמרה
+	// ממיין את הנתונים ב-YAML לפי struct שלנו
+	err = yaml.Unmarshal(yamlFile, &person)
 	if err != nil {
-		log.Fatalf("לא ניתן להמיר נתונים מקבצי YAML: %v", err)
+		fmt.Println("Error unmarshaling YAML:", err)
+		return
 	}
 
-	// הדפסת נתונים מהקובץ בפורמט JSON
-	configJSON, err := json.Marshal(yamlFile)
-	// בדיקת שגיאות בהמרה
-	if err != nil {
-		log.Fatalf("לא ניתן להמיר נתונים לפורמט JSON: %v", err)
+	// הדפסת נתונים מה-YAML
+	fmt.Printf("Name: %s\nAge: %d\nHobby: %s\n", person.Name, person.Age, person.Hobby)
+
+	// כתיבת נתונים חדשים לקובץ YAML
+	newPerson := Person{
+		Name:  "John",
+		Age:   30,
+		Hobby: "coding",
 	}
-	// הדפסת הנתונים
-	fmt.Println(string(configJSON))
+
+	yamlData, err := yaml.Marshal(newPerson)
+	if err != nil {
+		fmt.Println("Error marshaling YAML:", err)
+		return
+	}
+
+	// כתיבת הנתונים לקובץ חדש
+	err = ioutil.WriteFile("new_person.yaml", yamlData, 0644)
+	if err != nil {
+		fmt.Println("Error writing YAML file:", err)
+		return
+	}
+
 }
 ```
 
-פלט לדוגמה:
+כאן, אנו משתמשים בספרייה חיצונית של YAML לפירוש ולכתיבת נתונים בפורמט המתאים. את YAML files מנפתחים עם פתיחה של struct שמגדירה את הנתונים שאנו מעוניינים לקרוא/לכתוב.
 
-```Go
-{"app":{"name":"MyApp","version":1.0,"log_location":"/var/log/myapp.log"},"database":{"host":"127.0.0.1","port":3306,"username":"myuser","password":"mypass"}}
-```
-
-ניתן כעת לקרוא את הנתונים מהמשתנה 'config' לפי שמו של המאפיין בעזרת הפונקציה 'config["property_name"]'.
-
-## חפירה עמוקה
-
-קבצי YAML מאפשרים לנו לארגן ולאחסן נתונים בפורמט תקין ונוח
+## Deep Dive
+ביתר פירוט, YAML הוא אקרונים של "YAML Ain't Markup Language", והוא מתאר פורמט נתונים קריא עבור אנשי בינוני-תקשורת. הוא פותח כחלופה ל-XML ול-JSON ומשתמש במרכיבי מציון ממוקד לאסוף את כל הנתונים בפורמט קל לקריאה ולעבודה עליהם. כמו כ

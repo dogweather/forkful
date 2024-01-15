@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Czytanie argumentów z wiersza poleceń"
-simple_title:         "Czytanie argumentów z wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Fish Shell: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,32 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś nowym programistą lub chcesz zmienić swoją technikę programowania, powinieneś zainteresować się komunikacją z wiersza poleceń. Pozwoli to na szybsze i bardziej skuteczne wykonywanie zadań, a także nauczy Cię bardziej efektywnego korzystania z systemu operacyjnego.
+Jeśli jesteś fanem wygodnego i szybkiego interfejsu wiersza poleceń, to ta funkcjonalność jest dla Ciebie! Pozwala ona na łatwą i szybką manipulację wartościami wprowadzonymi przez użytkownika, co jest niezbędne w wielu skryptach i programach. 
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby czytać argumenty z wiersza poleceń w Fish Shell, możesz użyć funkcji "arg". Przykładowy kod wygląda następująco:
-
-```
-Fish Shell: arg NAME
-echo $NAME
-```
-
-Po uruchomieniu tego kodu ze zdefiniowanym argumentem, zobaczysz jego nazwę w konsoli. Przykładowe wyjście może wyglądać tak:
+```Fish Shell``` to potężne narzędzie do pracy z wierszem poleceń, a jego obsługa jest niezwykle prosta. Aby odczytać argumenty wprowadzone przez użytkownika, wystarczy użyć zmiennej specjalnej ```$argv```, która przechowuje tablicę z podanymi wartościami. Na przykład, jeśli uruchomimy skrypt z argumentami "Hello" i "World", poniższy kod zwróci wynik "Hello World":
 
 ```
-$ fish my_script.fish -n Lila
-Lila
+set nazwa_wyjscia $argv[1]
+echo $nazwa_wyjscia $argv[2]
 ```
 
-## Deep Dive
+Jeśli chcesz uzyskać dostęp do pojedynczego argumentu, możesz użyć specjalnej składni ```$argv[liczba]```, gdzie ```liczba``` oznacza pozycję argumentu. Pierwszy argument zawsze jest przechowywany pod indeksem 1, drugi pod indeksem 2, i tak dalej. 
 
-Po zrozumieniu podstawowej funkcji "arg", warto poznać dokładniejsze informacje na temat czytania argumentów z wiersza poleceń. W Fish Shell możesz użyć zmiennych specjalnych, takich jak $argv i $argc, aby uzyskać dostęp do wszystkich argumentów i ich liczby. Możesz także użyć pętli for w celu przetworzenia wszystkich argumentów za pomocą jednego kodu.
+## Głębsze zanurzenie
 
-## Zobacz również
+Możesz także wykorzystać dodatkowe zmienne specjalne, takie jak ```$argc```, która przechowuje liczbę podanych argumentów lub ```$argv0```, która przechowuje nazwę wywołanego pliku. Warto także wspomnieć, że zmienne specjalne mogą być używane z dowolnym innym poleceniem, dzięki czemu dają wiele możliwości do manipulacji danymi wprowadzonymi przez użytkownika. 
 
-Jeśli chcesz dowiedzieć się więcej na temat programowania w Fish Shell, zapoznaj się z następującymi linkami:
+## Zobacz także
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Poradnik początkującego programisty Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Przykładowy skrypt w Fish Shell](https://git.sr.ht/~oddmagne/scripts/tree/master/fish)
+- Oficjalna dokumentacja ```Fish Shell```: https://fishshell.com/docs/current/cmds/set.html
+- Bitbucket Repozytorium ```Fish Shell```: https://bitbucket.org/fish-shell/fish-shell/src/master/
+- Przewodnik po ```Fish Shell```: https://gist.github.com/erichs/8551261

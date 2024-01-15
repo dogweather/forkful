@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Skapa en temporär fil"
+title:                "Skapa en temporär fil"
+html_title:           "Clojure: Skapa en temporär fil"
 simple_title:         "Skapa en temporär fil"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-Att skapa en tillfällig fil är en användbar funktion i Clojure för att temporärt lagra data eller resultat från en process. Det kan vara särskilt användbart när man arbetar med större datamängder eller i situationer där man inte vill permanent spara data.
+## Varför
 
-## Hur man gör
-För att skapa en tillfällig fil i Clojure kan man använda sig av den inbyggda funktionen "with-tempfile". Den tar två parametrar, en prefix för filnamnet och ett suffix som anger filtypen. Här är ett exempel på hur man kan skapa en tillfällig fil och skriva lite data till den:
+Det finns många olika anledningar till att skapa en temporär fil i din Clojure-kod. Antingen behöver du tillfälligt lagra data som du vill komma åt senare, eller så vill du bara testa ett nytt kodsnutt utan att ändra din befintliga kod.
+
+## Så här gör du
+
+Det finns flera olika sätt att skapa en temporär fil i Clojure, beroende på dina specifika behov. Här är ett exempel på hur du kan skapa en temporär fil och skriva data till den:
 
 ```Clojure
-(with-tempfile "mittprefix" ".txt"
-  (spit "Det här är mitt tillfälliga filinnehåll" %))
+(require '[clojure.java.io :as io])
+
+(with-open [temp-file (io/file "temp.txt")]
+  (io/copy (io/reader "exempel.txt") temp-file))
 ```
 
-I detta exempel kommer en fil med namnet "mittprefix[random-nummer].txt" att skapas och innehålla texten "Det här är mitt tillfälliga filinnehåll". Det tillfälliga filobjektet returneras av funktionen och kan sedan användas för att läsa och bearbeta filen vidare.
+Det första steget är att importera `clojure.java.io` biblioteket med `:as io` som alias. Sedan använder vi `with-open` för att skapa en temporär fil med namnet "temp.txt". Inuti `with-open` blocket, använder vi `io/copy` för att kopiera data från en befintlig fil, här "exempel.txt", till vår temporära fil. Till slut stänger vi temporära filen med `with-open` vilket säkerställer att den blir raderad när blocket är klart.
 
-## Deep Dive
-Förutom att använda "with-tempfile" finns det även andra bibliotek i Clojure som erbjuder mer avancerade funktioner för att skapa tillfälliga filer. Ett exempel är "java.io.File/createTempFile", som ger möjlighet att ställa in parametrar som filens plats, namn och filtyp.
+En annan metod är att använda `io/file` för att direkt skapa en temporär fil utan att behöva använda `with-open`:
 
-När man skapar en tillfällig fil är det också viktigt att tänka på säkerheten. Det finns alltid en risk att temporära filer kan läsas eller ändras av obehöriga användare. För att undvika detta kan man använda sig av säkrare sätt att skapa och hantera filer, som till exempel "java.nio.file.Files/createTempFile".
+```Clojure
+(require '[clojure.java.io :as io])
 
-# Se även
-- [Clojuredocs - with-tempfile](https://clojuredocs.org/clojure.core/with-tempfile)
-- [JavaDocs - java.io.File/createTempFile](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-- [JavaDocs - java.nio.file.Files/createTempFile](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)
+(io/file "temp.txt")
+```
+
+Detta kommer också att skapa en temporär fil med namnet "temp.txt". Observera att den här filen inte stängs automatiskt och måste stängas manuellt med `(.delete temp-file)` för att ta bort den.
+
+## Djupdykning
+
+Det finns många andra funktioner och bibliotek som kan hjälpa dig att skapa en temporär fil i Clojure, inklusive `clojure.java.io` och `clojure.data.csv`. Du kan också använda `java.io.File` klassen för att manipulera temporära filer på ett liknande sätt som i Java.
+
+På grund av att temporära filer är osynliga för användaren och endast finns så länge som ditt program körs, är de perfekta för att testa snabbt ut en ny kod utan att behöva skapa permanenta filer eller ändra din befintliga kod.
+
+## Se även
+
+- [Clojure offciell hemsida](https://clojure.org/)
+- [Officiell Clojure dokumentation](https://clojure.org/documentation)
+- [Clojure subreddit](https://www.reddit.com/r/clojure/)

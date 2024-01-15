@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Fehlerausgabe drucken"
-simple_title:         "Fehlerausgabe drucken"
+title:                "Ausgabe von Debug-Meldungen"
+html_title:           "Javascript: Ausgabe von Debug-Meldungen"
+simple_title:         "Ausgabe von Debug-Meldungen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Bevor wir in die Details eintauchen, wollen wir uns erstmal überlegen, warum wir Debug-Ausgaben in unserem JavaScript-Code verwenden sollten. Diese Art von Ausgaben können uns dabei helfen, Fehler in unserem Code zu finden und zu beheben. Sie bieten uns Einblicke in den Ablauf unseres Programms und zeigen uns, wo es eventuell zu Fehlfunktionen kommt. Insbesondere bei komplexen Anwendungen können Debug-Ausgaben sehr nützlich sein, um Probleme schnell zu erkennen und zu beheben.
+
+Debugging ist ein wichtiger Teil der Entwicklung mit Javascript. Das Drucken von Debug-Ausgaben kann dabei helfen, die genaue Ursache eines Fehlers oder eines unerwarteten Verhaltens zu finden. Es ist hilfreich, um die Logik des Codes zu überprüfen und mögliche Schwachstellen schnell zu erkennen.
 
 ## Wie
-Um Debug-Ausgaben in unserer JavaScript-Anwendung zu erzeugen, können wir die `console.log()`-Funktion verwenden. Diese Funktion ermöglicht es uns, beliebige Werte in der Konsole unseres Browsers auszugeben. Schauen wir uns beispielsweise folgendes Code-Beispiel an:
 
-```javascript
-let name = "Max";
-let age = 30;
-console.log(`Mein Name ist ${name} und ich bin ${age} Jahre alt.`);
+Um Debug-Ausgaben in Javascript zu drucken, gibt es verschiedene Möglichkeiten. Die einfachste Methode ist die Verwendung der ```console.log()``` Funktion. Diese Funktion nimmt beliebig viele Argumente an und druckt sie in der Entwicklerkonsole des Browsers aus.
+
+```Javascript
+// Einfaches Beispiel
+console.log("Start des Programms...");
+console.log("Variable x = ", x);
 ```
 
-Wenn wir diesen Code ausführen, werden wir in der Konsole unseres Browsers folgende Ausgabe sehen:
+Die Ausgabe des obigen Codes könnte wie folgt aussehen:
 
 ```
-Mein Name ist Max und ich bin 30 Jahre alt.
+Start des Programms...
+Variable x = 3 
 ```
 
-Hier haben wir die Werte unserer Variablen `name` und `age` in der Ausgabe angezeigt, um sicherzustellen, dass die Werte korrekt zugewiesen wurden. Wir können `console.log()` auch verwenden, um den Wert von bestimmten Ausdrücken oder Variablen zu überprüfen, während unser Programm ausgeführt wird.
+Ein weiteres nützliches Tool ist der `debugger` Befehl. Das Einfügen dieses Befehls in den Code stoppt die Ausführung des Programms an dieser Stelle und ermöglicht es, Schritt für Schritt durch den Code zu gehen und Variablen- und Objektwerte zu überprüfen. Dies ist besonders hilfreich, wenn der Fehler an einer bestimmten Stelle im Code auftritt.
 
-Wir können auch verschiedene Arten von Ausgaben erzeugen, indem wir verschiedene Methoden der Konsole verwenden, z.B. `console.error()` für Fehlermeldungen oder `console.warn()` für Warnungen. Es ist auch möglich, Objekte oder Arrays in der Konsole auszugeben und ihre Inhalte zu untersuchen.
+```Javascript
+function calculate(a, b) {
+  debugger;
+  return (a + b);
+}
+
+console.log(calculate(5,2)); // Ausgabe: 7
+```
+
+Zusätzlich können auch Bedingungen angegeben werden, in denen der `debugger` gestoppt werden soll, um nur an bestimmten Punkten im Code Halt zu machen.
+
+```Javascript
+function calculate(a, b) {
+  if (a > 10) {
+    debugger;
+    return "a ist größer als 10";
+  }
+  return (a + b);
+}
+
+console.log(calculate(15, 6)); // Ausgabe: "a ist größer als 10"
+```
 
 ## Deep Dive
-Neben der `console.log()`-Funktion gibt es noch weitere Methoden und Eigenschaften, die uns bei der Fehlerbehebung und Analyse unseres Codes helfen können. Zum Beispiel können wir `console.table()` verwenden, um Daten in tabellarischer Form in der Konsole anzuzeigen, oder `console.group()` und `console.groupEnd()` verwenden, um zusammengehörige Ausgaben zusammenzufassen.
 
-Darüber hinaus können wir auch die sogenannten "breakpoints" verwenden, um den Ablauf unseres Codes zu unterbrechen und uns die Werte von Variablen in einem bestimmten Bereich anzusehen. Diese Funktion ist besonders hilfreich beim Debuggen von komplexem Code, da sie es uns ermöglicht, den Zustand unseres Programms zu einem bestimmten Zeitpunkt zu untersuchen.
+Neben `console.log()` und `debugger` gibt es auch weitere Methoden, um Debug-Ausgaben in Javascript zu drucken. Dazu gehört unter anderem die Verwendung von Entwicklerwerkzeugen wie Chrome DevTools oder der Firefox-Entwicklerkonsole.
 
-## Siehe auch
-- [Einführung in das Debugging in JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript/Debugging)
-- [Die verschiedenen Methoden der JavaScript-Konsole](https://developer.mozilla.org/de/docs/Web/API/Console#%C3%9Cbersicht_%C3%BCber_die_console-API_Intervallconsole-object)
+Eine andere Möglichkeit ist die Verwendung von Online-Debugging-Tools wie JSFiddle oder CodePen. Diese erlauben es, Code in einem virtuellen Umfeld auszuführen und die Ausgaben direkt auf der Webseite zu sehen.
+
+Außerdem gibt es Javascript-Bibliotheken und Frameworks, die speziell für Debugging und Error-Logging entwickelt wurden, wie z.B. Sentry oder log4js. Diese bieten erweiterte Funktionen wie das Speichern von Debug-Ausgaben in Dateien oder das Senden von Benachrichtigungen bei bestimmten Fehlern.
+
+## Siehe Auch
+
+- [Javascript Debugging Guide (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+- [Debugging in Chrome DevTools (Google Developers)](https://developers.google.com/web/tools/chrome-devtools/javascript)
+- [Sentry Documentation](https://docs.sentry.io/)

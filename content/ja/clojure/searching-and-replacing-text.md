@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: テキストを検索および置換する"
-simple_title:         "テキストを検索および置換する"
+title:                "テキストの検索と置換"
+html_title:           "Clojure: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,30 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、Clojureプログラムを学びたい皆さん！
+Why:
 
-## なぜ
-テキストの検索と置換を行う理由は、データの整理や変換を簡単に行うことができるからです。
+クロージャーを使ってテキストを検索して置換することの利点は何でしょうか？
 
-## 使い方
+テキストの検索と置換は、プログラミングにおいて非常に一般的な作業です。特定の文字列を探して別の文字列に置き換えることで、テキストの変更や修正を簡単に行うことができます。このような作業を自動化することにより、繰り返し作業を減らし、生産性を向上させることができます。
+
+## How To:
+
+クロージャーを使ってテキストを検索して置換する方法は非常に簡単です。まず、検索する文字列を指定して、置換する文字列を指定します。次に、`replace`関数を使用して、文字列を置換することができます。
+
 ```Clojure
-;; テキストの置換
-(println (str/replace "Hello World!" "Hello" "こんにちは"))
-
-;; 出力結果: こんにちは World!
-
-;; 正規表現を使用した置換
-(println (str/replace "Hello 123, World!" #"123" "こんにちは"))
-
-;; 出力結果: Hello こんにちは, World!
+(defn replace-text [text]
+  (replace text "Hello" "こんにちは"))
 ```
 
-## 深堀り
-Clojureには、文字列を検索・置換するために使用できるいくつかの関数があります。`str/replace`を使用すると、テキスト内の特定の文字列を置換することができます。また、正規表現を使用して、より柔軟な置換を行うこともできます。
+上記のコードでは、`replace-text`関数を定義し、文字列を「Hello」から「こんにちは」に置換するように指定しています。
 
-See Also
+```Clojure
+(replace-text "Hello, World!")
+```
+**出力：** "こんにちは、World!"
 
-- [The Clojure Cookbook: Finding and Replacing](https://clojure-cookbook.com/strings/finding-and-replacing.html)
-- [Clojure Dojo: String Replacement](https://clojuredocs.org/clojure.string/replace) 
+また、テキストの一部だけを置換したい場合は、正規表現を使用することもできます。正規表現を使用すると、より柔軟なパターン検索が可能になります。
 
-それでは、今日からClojureでテキストの検索と置換を自在に行えるようになりましょう！
+```Clojure
+(defn replace-text-regex [text]
+  (replace text #"e" "い"))
+
+(replace-text-regex "Hello, World!")
+```
+
+**出力：** "Hillo, World!"
+
+## Deep Dive:
+
+クロージャーの`replace`関数は、内部的にはJavaの`String`クラスのメソッドを使用しています。そのため、クロージャーには`String`クラスのメソッドがそのまま利用できます。例えば、`replace`関数を使用する代わりに、`String`クラスの`replaceAll`メソッドを使用することもできます。
+
+```Clojure
+(defn replace-text [text]
+  (apply str (.replaceAll (java.lang.String. text) "Hello" "こんにちは")))
+
+(replace-text "Hello, World!")
+```
+
+**出力：** "こんにちは、World!"
+
+また、クロージャーでは`clojure.string`パッケージを使用することもできます。このパッケージには、より高レベルなテキスト操作のための便利な関数が含まれています。
+
+```Clojure
+(require '[clojure.string :as str])
+
+(str/replace "Hello, World!" "Hello" "こんにちは")
+```
+
+**出力：** "こんにちは、World!"
+
+## See Also (参考リンク):
+
+- [The Clojure Programming Language](https://clojure.org/)
+- [Java String API Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Clojure String API Documentation](https://clojure.github.io/clojure/clojure.string-api.html)

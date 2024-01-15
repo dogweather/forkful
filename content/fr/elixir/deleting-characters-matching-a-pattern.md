@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Supprimer des caractères correspondant à un motif"
-simple_title:         "Supprimer des caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un modèle."
+html_title:           "Elixir: Suppression de caractères correspondant à un modèle."
+simple_title:         "Suppression de caractères correspondant à un modèle."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,50 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Êtes-vous un programmeur expérimenté en recherche d'un moyen efficace de supprimer des caractères correspondant à un modèle spécifique dans votre code Elixir ? Ou peut-être êtes-vous juste curieux de savoir comment cette tâche peut être accomplie en utilisant le langage de programmation fonctionnel préféré des développeurs. Quelle que soit la raison, cet article vous expliquera tout ce que vous devez savoir pour supprimer facilement des caractères correspondant à un motif en Elixir.
+
+Supprimer des caractères dans une chaîne de caractères peut sembler être un petit détail, mais cela peut en fait avoir un impact significatif sur les performances et l'efficacité de votre code. Que ce soit pour optimiser le temps d'exécution ou pour nettoyer des données, la suppression de caractères conformes à un modèle peut être une tâche utile dans de nombreuses situations.
 
 ## Comment faire
-Pour supprimer des caractères correspondant à un motif en Elixir, il existe plusieurs options. L'une des méthodes les plus courantes est d'utiliser la fonction `String.replace/3` qui prend en paramètre une chaîne de caractères, un motif et la chaîne de remplacement. Voici un exemple de code pour supprimer les caractères "a" et "e" d'une chaîne de caractères.
+
+Voici un exemple de code en Elixir qui supprime tous les caractères non alphabétiques d'une chaîne de caractères :
 
 ```Elixir
-string = "Hello World"
-new_string = String.replace(string, ~r/[ae]/, "")
-IO.puts new_string
-# Output: "Hllo World"
+string = "Elixir 1.10.2"
+regexp = ~r/[^a-zA-Z ]/
+new_string = Regex.replace(string, regexp, "")
 ```
 
-Dans cet exemple, nous utilisons les expressions régulières pour créer un motif correspondant à toutes les occurrences des lettres "a" et "e" dans la chaîne d'origine. La chaîne de remplacement est simplement une chaîne vide, ce qui signifie que toutes les occurrences du motif seront supprimées dans la chaîne d'origine.
-
-Une autre option est d'utiliser la fonction `String.gsub/3` qui fonctionne de la même manière, mais permet également de spécifier le nombre maximum de remplacements à effectuer.
+La sortie de ce code sera :
 
 ```Elixir
-string = "Hello World"
-new_string = String.gsub(string, ~r/[ae]/, "", 1)
-IO.puts new_string
-# Output: "Hllo World"
+"Elixir "
 ```
 
-Ici, nous avons spécifié que nous voulons remplacer seulement une occurrence du motif et donc seule la première lettre "e" sera supprimée de la chaîne d'origine.
+Le premier élément à noter est l'utilisation de la fonction `Regex.replace` qui prend en paramètre la chaîne de caractères à traiter ainsi que le modèle de caractères à supprimer, défini par l'opérateur `~r/.../`. Dans cet exemple, le modèle correspond à tous les caractères non alphabétiques ainsi qu'à l'espace. Ce dernier est inclus pour conserver l'espace entre "Elixir" et "1.10.2".
+
+Une autre méthode couramment utilisée pour supprimer des caractères conformes à un certain motif est l'utilisation de la fonction `String.replace`.
 
 ## Plongée en profondeur
-Si vous souhaitez avoir un meilleur contrôle sur la façon dont les caractères correspondant à un motif sont supprimés, vous pouvez également utiliser la fonction `String.split/3` pour séparer la chaîne en une liste de substrings en utilisant le motif comme séparateur, puis utiliser la fonction `List.flatten/1` pour réduire la liste en une seule chaîne. Voici un exemple de code qui supprime toutes les occurrences du motif "abc" dans une chaîne.
 
-```Elixir
-string = "abc123abc456abc"
-new_string = string
-            |> String.split(~r/abc/)
-            |> List.flatten()
-IO.puts new_string
-# Output: "123456"
-```
-
-De plus, il existe également la fonction `Regex.replace/3` qui permet d'utiliser des expressions régulières pour remplacer les occurrences d'un motif dans une chaîne.
+En y regardant de plus près, la fonction `Regex.replace` utilise en fait la fonction `Regex.replace/3` qui permet de spécifier les options de remplacement. Ces options incluent notamment `all`, qui permet de remplacer toutes les occurrences du modèle, et `global`, qui permet de rechercher dans la chaîne entière plutôt que seulement au début. Vous pouvez consulter la documentation en ligne pour en savoir plus sur les options de remplacement et d'autres fonctions de manipulation de chaîne en Elixir.
 
 ## Voir aussi
-Maintenant que vous connaissez les bases de la suppression de caractères correspondant à un motif en Elixir, voici quelques articles supplémentaires pour approfondir vos connaissances :
 
-- [Documentation officielle sur les expressions régulières en Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Article sur la manipulation de chaînes en Elixir](https://medium.com/elixirlabs/the-ultimate-elixir-string-manipulation-guide-c08eea4c972f)
-- [Exemples de code pratiques pour le traitement de chaînes en Elixir](https://github.com/wilddima/elixir-data-algebra)
-
-N'hésitez pas à explorer et à expérimenter différents moyens de supprimer des caractères correspondant à un motif dans votre code Elixir. Qui sait, vous pourriez découvrir une méthode plus efficace que celles présentées dans cet article. Bon coding !
+Voici quelques liens utiles pour continuer à explorer les fonctions de manipulation de chaîne en Elixir :
+- [Documentation officielle Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
+- [Elixir School : les chaînes de caractères en Elixir](https://elixirschool.com/fr/lessons/basics/strings/)
+- [Elixir Forum : discussion sur la manipulation de chaîne dans Elixir](https://elixirforum.com/t/string-manipulation/1103)

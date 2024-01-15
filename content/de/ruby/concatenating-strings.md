@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Verknüpfung von Zeichenketten"
-simple_title:         "Verknüpfung von Zeichenketten"
+title:                "Verkettung von Zeichenfolgen"
+html_title:           "Ruby: Verkettung von Zeichenfolgen"
+simple_title:         "Verkettung von Zeichenfolgen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,47 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+# Warum
 
-Das Verketten von Strings ist ein wesentlicher Bestandteil der Ruby-Programmierung. Durch das Verbinden von Strings können wir komplexe Texte und Variablen miteinander kombinieren und so dynamische Inhalte generieren. Es ist ein nützliches Werkzeug, das uns in vielen verschiedenen Szenarien helfen kann.
+Das Verketten von Strings ist eine häufig verwendete Operation in der Ruby-Programmierung. Durch das Zusammenfügen von Strings können wir längere Zeichenfolgen erstellen, die in der Praxis oft benötigt werden.
 
-## Wie geht's?
+## Wie
 
-Um Strings in Ruby zu verketten, verwenden wir den `+` Operator. Dieser verbindet zwei Strings und gibt einen neuen String zurück, der die beiden ursprünglichen Strings enthält. Hier ist ein Beispielcode:
-
-```Ruby
-first_name = "Lena"
-last_name = "Müller"
-
-full_name = first_name + " " + last_name
-
-puts full_name
-```
-
-Output: Lena Müller
-
-In diesem Beispiel haben wir den Vornamen und Nachnamen von Lena verknüpft, um den vollständigen Namen "Lena Müller" zu erhalten. Wir können auch mehrere Strings miteinander verketten, indem wir mehrere `+` Operatoren verwenden. Zum Beispiel:
+Die einfachste Möglichkeit, Strings in Ruby zu verketten, ist die Verwendung des `+` Operators. Schauen wir uns ein Beispiel an:
 
 ```Ruby
-first_name = "Max"
-last_name = "Schmidt"
-age = 28
-
-output = first_name + " " + last_name + " is " + age.to_s + " years old."
-
-puts output
+name = "Max"
+greeting = "Hallo, " + name + "!"
+puts greeting
 ```
 
-Output: Max Schmidt is 28 years old.
+Dieser Code wird "Hallo, Max!" ausgeben, da der `+` Operator die Strings "Hallo, " und "Max" zu einem neuen String verbindet. Eine andere Möglichkeit ist die Verwendung des `<<` Operators:
 
-Es ist wichtig zu beachten, dass beim Verketten von Strings Leerzeichen oder andere Trennzeichen verwendet werden müssen, um ein sauberes Ergebnis zu erhalten. In der letzten Zeile haben wir `to_s` verwendet, um die Zahl "28" in einen String zu konvertieren, da der `+` Operator nur Strings zusammenfügen kann. 
+```Ruby
+name = "Max"
+greeting = "Hallo, "
+greeting << name << "!"
+puts greeting
+```
 
-## Tiefer Einblick
+Dieser Code hat das gleiche Ergebnis wie zuvor, aber anstelle eines neuen Strings, wird dem ursprünglichen String "Hallo, " der Text "Max" und "!" hinzugefügt.
 
-Ruby bietet auch die Methode `concat`, um Strings zu verketten. Diese Methode ist ähnlich wie der `+` Operator, hat aber einige Unterschiede. Sie kann zum Beispiel mehrere Argumente entgegennehmen, um Strings zu verketten. Außerdem kann sie auch numerische Werte akzeptieren und diese automatisch in Strings konvertieren. Allerdings ist der `+` Operator in der Regel schneller und effizienter als die `concat` Methode.
+Eine weitere Möglichkeit zur Verkettung von Strings ist die Verwendung der `concat` Methode:
+
+```Ruby
+greeting = "Hallo, "
+greeting.concat("Max") << "!"
+puts greeting
+```
+
+Diese Methode wird der bestehenden Zeichenfolge "Hallo, " den Text "Max" anhängen und dann den `<<` Operator verwenden, um "!" an den String anzufügen.
+
+## Deep Dive
+
+Das Verketten von Strings mag auf den ersten Blick einfach erscheinen, aber es gibt einige wichtige Dinge zu beachten. Zum Beispiel kann die Verwendung des `+` Operators sehr ineffizient sein, da er bei jedem Aufruf einen neuen String erstellt. In Situationen, in denen wir viele Strings verketten müssen, ist es daher besser, die `<<` Methode oder die `concat` Methode zu verwenden, um Performance-Probleme zu vermeiden.
+
+Es ist auch wichtig zu wissen, dass Ruby automatisch die `to_s` Methode auf Objekte aufruft, die nicht vom Typ String sind, wenn sie mit dem `+` Operator verwendet werden. Dies kann zu unerwarteten Ergebnissen führen und sollte vermieden werden. Im Zweifelsfall ist es immer am besten, die `to_s` Methode explizit aufzurufen, um sicherzustellen, dass der Code wie gewünscht funktioniert.
+
+Schließlich sollte beachtet werden, dass das Verketten von Strings in Ruby immutable Strings erzeugt. Das bedeutet, dass der ursprüngliche String nicht verändert wird, sondern ein neuer String erstellt wird. Dies kann Auswirkungen auf die Performance haben, besonders wenn wir große Strings verketten.
 
 ## Siehe auch
 
-- [Ruby String Dokumentation](https://ruby-doc.org/core-2.6/String.html)
-- [Video-Tutorial: Verketten von Strings in Ruby](https://www.youtube.com/watch?v=fzcq2Orozgw)
-- [Tutorial: Ruby-Grundlagen für Anfänger](https://www.guru99.com/ruby-programming-tutorial.html)
+- [Ruby Strings Dokumentation](https://ruby-doc.org/core-2.7.2/String.html)
+- [Ruby String Encoding](https://ruby-doc.org/core-2.7.2/Encoding.html)
+- [Ruby String Interpolation](https://ruby-doc.org/core-2.7.2/doc/syntax/literals_rdoc.html#label-String+Interpolation)

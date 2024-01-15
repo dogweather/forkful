@@ -1,5 +1,6 @@
 ---
-title:                "Elm: टेक्स्ट को ढूंढ़ना और बदलना"
+title:                "टेक्स्ट को ढूंढ़ना और बदलना"
+html_title:           "Elm: टेक्स्ट को ढूंढ़ना और बदलना"
 simple_title:         "टेक्स्ट को ढूंढ़ना और बदलना"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun
 
-क्या आपने कभी टेक्स्ट को सर्च और रिप्लेस करने का कोशिश किया है? अगर हां, तो आपको पता होगा कि कितना समय इसका समा लगता है। इसलिए हम आपको Elm प्रोग्रामिंग की मदद से सर्च और रिप्लेस करने के बारे में बताने जा रहे हैं। इससे आपको समय की बचत होगी और प्रोग्रामिंग को आसानी से सीखने में मदद मिलेगी।
+Kai baar hamko kisi bhi text ko replace karna hota hai, jaise ki kuch words delete ya modify karna ho ya phir koi specific pattern ya format ko find karna ho. Elm mein hai ek built-in function "String.replace" jo text ko replace karne mein kaafi madad karta hai.
 
-## कैसे करें
+## Kaise Kare
 
-हम आपको Elm में सर्च और रिप्लेस करने के लिए दो तरीके बताएंगे। पहला तरीका सरल है, इसमें हम एक सदस्यता का उपयोग करके टेक्स्ट को सर्च और रिप्लेस कर सकते हैं। दूसरा तरीका थोड़ा जटिल है, जहां हम एक फंक्शन का उपयोग करके टेक्स्ट को सर्च और रिप्लेस करते हैं। नीचे दिए गए कोड ब्लॉक दोनों तरीकों को दर्शाते हैं।
+Ham is function ko "String.replace" ka naam se use kar sakte hai. Iske liye hame do strings aur ek pattern dena hoga jo hum replace karna chahte hai. Example ke liye, agar hum ek string ko do parts mein split karna chahte hai, jahan split point ' ' hai, toh hum "String.replace" ka use kar sakte hai:
 
 ```Elm
--- सदस्यता का उपयोग करने का तरीका
-Text.replace "Hello" "Bonjour" "Hello World!"  -- Output: "Bonjour World!"
-
--- फंक्शन का उपयोग करने का तरीका
-String.replace "Hello" "Bonjour" "Hello World!"  -- Output: "Bonjour World!"
+String.replace "Hello Elm!" " " ", "  -- Output: "Hello, Elm!"
 ```
 
-जैसा कि आप देख सकते हैं, दोनों तरीके में हम पहले पैरामीटर के स्थान पर टेक्स्ट को सर्च कर रहे हैं और दूसरे पैरामीटर के स्थान पर उसे रिप्लेस कर रहे हैं।
+Is code mein pehle string " " ka jagah "Hello, Elm!" string mein ' ' ke jagah ", " replace hogaya hai.
 
-## गहराई में जाएं
+Agar hum kisi specific format ko find karna chahte hai, jaise ki email addresses, toh hum is function ke sath "Regex.fromString" bhi use kar sakte hai. Example ke liye, ek string mein se sabhi email addresses ko find karke unhe replace karna ho, toh hum ye code use kar sakte hai:
 
-आप योग्य रूप से सर्च और रिप्लेस करने के लिए इन तरीकों का उपयोग कर सकते हैं और इससे आपको अधिक समझने की आवश्यकता नहीं होगी। लेकिन अगर आप चाहें तो आप
+```Elm
+String.replace (Regex.fromString "[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}") " " "********"  -- Output: "********, ********"
+```
+
+Is code mein humne ek regular expression pattern diya hai jisse hum sabhi email addresses ko find karke unhe "********" se replace kar rahe hai.
+
+## Deep Dive
+
+"String.replace" function adding feature rich hai, jismein hum "Regex" bhi use kar sakte hai. Ye ek powerful tool hai text operations ke liye, jisse hum text ko split, replace, find aur modify kar sakte hai. Iske alawa, hum is function mein multiple patterns bhi use kar sakte hai aur isse humare kaam ko aur bhi asaan banate hai.
+
+Ek important baat jo dhyaan rakna hai is function ke use mein, wo ye ki agar pattern match nahi hota hai string mein toh wo string khud hi return hogi. Isliye hamesha ek check karle ki pattern sahi hai ya nahi, taki hum unexpected output se bach sake.
+
+## See Also
+ - Elm String Documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+ - Regex Documentation: https://package.elm-lang.org/packages/elm/regex/latest/
+ - String Replace Package: https://package.elm-lang.org/packages/elm-community/string-extra/latest/String-Extra#replace

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: json 처리하기"
-simple_title:         "json 처리하기"
+title:                "json으로 작업하기"
+html_title:           "Fish Shell: json으로 작업하기"
+simple_title:         "json으로 작업하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,75 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 JSON 작업을 시작해야 하나요?
+## 왜
 
-JSON은 사람과 컴퓨터 모두가 쉽게 읽고 쓸 수 있는 데이터 형식입니다. 이것은 널리 사용되는 웹 개발에서 매우 중요한 역할을 합니다. 만약 당신이 웹 개발자라면, JSON에 대한 이해는 필수적입니다.
+JSON을 사용해서 프로그래밍을 하는 이유는 무엇일까요? JSON은 데이터를 구조화하고 전송하기에 효율적이며, 해당 포맷은 대부분의 언어에서 지원하므로 데이터 교환에 용이합니다.
 
-## 작업하는 방법
+## 코딩 양식
 
-JSON을 다루기 위해서는 Fish Shell에서 제공하는 몇 가지 유용한 명령어들을 알 필요가 있습니다.
-
-### 객체 생성하기
-
-Fish Shell에서 JSON 객체를 생성하는 방법은 매우 간단합니다.
-
-```Fish Shell
-set -g obj '{"name": "John", "age": 28, "city": "Seoul"}'
-```
-
-이렇게 변수에 JSON 객체를 생성하면, 해당 객체를 다양한 방법으로 활용할 수 있습니다.
-
-### JSON 데이터 읽기
-
-Fish Shell에서는 `jq`라는 명령어를 사용하여 JSON 데이터를 한눈에 볼 수 있습니다. 예를 들어 위에서 생성한 객체를 다음과 같이 읽을 수 있습니다.
-
-```Fish Shell
-echo $obj | jq
-```
-
-이렇게 하면 다음과 같은 결과가 출력됩니다.
+```Fish Shell``` 코드 블록 안에서 코딩 예시와 샘플 출력을 제공합니다. 우선, JSON을 파싱하는 방법을 알아보겠습니다.
 
 ```
-{
-  "name": "John",
-  "age": 28,
-  "city": "Seoul"
-}
+set response (curl -s https://jsonplaceholder.typicode.com/posts)
+echo $response | from-json
 ```
 
-### 데이터 추가하기
-
-Fish Shell에서는 `jq` 명령어를 통해 기존 JSON 객체에 새로운 데이터를 추가할 수 있습니다.
-
-```Fish Shell
-echo $obj | jq '. + {"hobby": "photography"}'
-```
-
-위와 같이 입력하면, 새로운 키와 값인 "hobby": "photography"가 추가된 결과가 출력됩니다.
+위의 코드 블록에서는 Fish Shell의 `curl` 명령어를 사용하여 URL에서 JSON 데이터를 가져오고, 해당 데이터를 `from-json` 함수를 통해 파싱합니다. 이후 해당 데이터를 출력해보면 다음과 같은 결과를 볼 수 있습니다.
 
 ```
-{
-  "name": "John",
-  "age": 28,
-  "city": "Seoul",
-  "hobby": "photography"
-}
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  ...
+]
 ```
 
-이 밖에도 많은 기능들이 Fish Shell에서 제공되므로, JSON 작업에 필요한 다양한 기능들을 참고하시기 바랍니다.
+위와 같이 JSON 데이터를 파싱하면 각각의 객체를 배열로 구성하고 있음을 알 수 있습니다.
 
-## 더 깊게 들어가기
+## 깊이 파고들기
 
-JSON 작업은 여러 가지 변환, 필터링, 검색 등 다양한 작업이 가능합니다. Fish Shell에서는 이를 위해 다양한 명령어들을 제공합니다. 예를 들어 `jq` 명령어를 사용하여, 조건에 따라 필터링하거나 원하는 데이터를 추출할 수 있습니다.
+JSON 데이터를 다루는 더 많은 방법과 기능은 [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)와 [JSON 파싱에 관한 블로그 포스트](https://devblogs.microsoft.com/scripting/json-parsing-made-easy/)를 참고하세요.
 
-## 활용하는 다른 방법들
+## 관련 자료
 
 - [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [jq 공식 문서](https://stedolan.github.io/jq/)
-- [JSON 공식 사이트](https://www.json.org/json-ko.html)
-
-# 또 다른 정보 찾아보기
-
-- [JSON 데이터 구조에서 읽어오기](https://www.json.org/json-ko.html)
-- [Fish Shell의 다양한 명령어들](https://fishshell.com/docs/current/commands.html)
-- [JSON에 대한 더 깊은 이해](https://www.w3schools.com/js/js_json_intro.asp)
+- [JSON 파싱에 관한 블로그 포스트](https://devblogs.microsoft.com/scripting/json-parsing-made-easy/)
+- [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)

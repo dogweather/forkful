@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Beräkning av datum i framtiden eller i det förflutna"
-simple_title:         "Beräkning av datum i framtiden eller i det förflutna"
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "TypeScript: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,56 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I den moderna världen av teknik och programmering är det ibland nödvändigt att kunna beräkna ett datum i framtiden eller det förflutna. Detta kan vara användbart för att skapa dynamiska tidsbaserade funktioner eller för att visa rätt information baserat på ett visst datum. Med TypeScript är detta enkelt att göra med hjälp av inbyggda metoderna och funktionerna. Läs vidare för att lära dig hur du kan beräkna ett datum i framtiden eller det förflutna i TypeScript.
+Att kunna beräkna ett datum i framtiden eller förflutna kan vara mycket användbart inom programmering. Det kan hjälpa till med att schemalägga uppgifter eller visa information baserat på ett visst datum.
 
-## Så här gör du
+## Hur man gör det
 
-För att beräkna ett datum i framtiden eller det förflutna i TypeScript behöver vi först använda oss av Date-objektet. Detta objekt har inbyggda metoder som vi kan använda för att beräkna olika datum baserat på ett befintligt datum.
-
-Låt oss säga att vi vill beräkna ett datum som är 2 veckor framåt från idag. Detta kan göras genom att använda metoden `setDate()` för att lägga till 14 dagar till det aktuella datumet.
+För att beräkna ett datum i framtiden eller förflutna i TypeScript behöver vi använda oss av Date-objektet och dess metoder. Nedan finns ett exempel på hur man kan beräkna ett datum fem dagar framåt:
 
 ```TypeScript
-let datum = new Date();
-
-datum.setDate(datum.getDate() + 14); // lägg till 14 dagar
-console.log(datum); // output: 2021-10-10T19:12:53.500Z
+let nuvarandeDatum = new Date(); // Skapar ett Date-objekt med dagens datum
+// Använder .setDate() för att lägga till 5 dagar på det nuvarande datumet
+nuvarandeDatum.setDate(nuvarandeDatum.getDate() + 5); 
+console.log(nuvarandeDatum); // Skriver ut det nya datumet i konsolen
 ```
 
-På samma sätt kan vi också beräkna ett datum i det förflutna genom att använda `setDate()` med ett negativt värde.
+Detta kommer att skriva ut det nya datumet i konsolen, vilket i detta fall skulle vara fem dagar framåt från idag. Det är även möjligt att beräkna ett datum i förflutna genom att använda .setDate() metoden med en negativ siffra.
 
-```TypeScript
-let datum = new Date();
+### Deep Dive
 
-datum.setDate(datum.getDate() - 7) // dra av 7 dagar
-console.log(datum); // output: 2021-09-27T19:12:53.500Z
-```
+För att få en djupare förståelse för att beräkna datum i TypeScript är det viktigt att också känna till de andra metoder som Date-objektet har att erbjuda. Nedan är ett par exempel på dessa metoder:
 
-Vi kan också använda andra inbyggda metoder som `setFullYear()` och `setMonth()` för att beräkna datum i framtiden eller det förflutna baserat på år och månad.
+- .setFullYear(): används för att ändra året för ett specifikt datum
+- .getMonth(): returnerar månaden för ett specifikt datum (januari är 0 och december är 11)
+- .getDay(): returnerar veckodagen för ett specifikt datum (söndag är 0 och lördag är 6)
 
-```TypeScript
-let datum = new Date();
+Genom att kombinera dessa metoder med .setDate() kan vi skapa mer avancerade beräkningar av datum i framtiden eller förflutna.
 
-datum.setFullYear(datum.getFullYear() + 1); // lägg till ett år
-datum.setMonth(datum.getMonth() + 3); // lägg till 3 månader
-console.log(datum); // output: 2022-01-01T19:12:53.500Z
-```
+## Se även
 
-## Deep Dive
-
-Om vi vill ha mer kontroll över våra beräkningar kan vi också använda andra metoder såsom `setHours()` och `setMinutes()` för att ställa in specifika tider på dagen.
-
-```TypeScript
-let datum = new Date();
-
-datum.setDate(datum.getDate() + 7); // beräkna datumet 7 dagar framåt
-datum.setHours(14, 30, 0); // ställ in tiden på 14:30:00
-console.log(datum); // output: 2021-10-04T12:30:00.500Z
-```
-
-Det är också viktigt att notera att Date-objektet använder sig av tidszoner, så om du vill ha ett specifikt datum i en viss tidszon bör du också använda metoden `setHours()` för att justera tiden.
-
-## Se också
-
-- [Date API Dokumentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Officiell Dokumentation](https://www.typescriptlang.org/docs/)
-- [Denna artikel på engelska](https://www.example.com)
+- [Date-objektet i TypeScript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Date-objektet i TypeScript på Typescriptlang.org](https://www.typescriptlang.org/docs/handbook/working-with-dates.html)

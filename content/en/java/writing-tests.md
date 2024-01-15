@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Java recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Java"
 category:             "Java"
@@ -9,54 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Writing Tests is Important for Your Java Code
+## Why
 
-As a Java programmer, you may have been told numerous times to always write tests for your code. But have you ever wondered why it is so important? In this blog post, we will discuss the reasons why writing tests for your Java code is crucial and how it can benefit you in the long run.
+Writing tests in Java can seem like an extra step in the development process, but it can greatly benefit your code in the long run. By writing tests, you can catch bugs and identify errors early on, making debugging and troubleshooting much easier.
 
-## How To Write Tests in Java
+## How To
 
-Writing tests in Java may seem daunting at first, but once you get the hang of it, it becomes an essential part of your coding process. First, let's look at an example of a simple Java code that performs addition:
+To write tests in Java, you will need a testing framework such as JUnit. This framework provides an easy and structured way to write and run tests.
 
-```Java
-public int add(int a, int b) {
-    return a + b;
-}
-```
-
-To write a test for this code, we will use the JUnit testing framework. We'll create a new class named AddTest and use the @Test annotation to mark our test method. Within the test method, we will call the add() method with specific values and use the assert method to verify the output.
+Let's say we have a simple function that adds two numbers and returns the result. We can write a test for this function using JUnit, like this:
 
 ```Java
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-public class AddTest {
-
+public class CalculatorTest {
+    
+    // Test adding two positive numbers
     @Test
-    public void testAdd() {
-        Add addObj = new Add();
-        int result = addObj.add(6, 7);
-        assertEquals(13, result);
+    public void testAddition() {
+        Calculator calc = new Calculator();
+        int result = calc.add(5, 10);
+        
+        // Assert that the result is equal to expected value
+        assertEquals(15, result);
+    }
+    
+    // Test adding a negative and a positive number
+    @Test
+    public void testNegativeNumber() {
+        Calculator calc = new Calculator();
+        int result = calc.add(-10, 5);
+        
+        // Assert that the result is equal to expected value
+        assertEquals(-5, result);
     }
 }
 ```
 
-When we run this test, it should pass, indicating that our add() method is functioning correctly. This is a simple example of how we can write tests for our code using JUnit.
+The `testAddition()` and `testNegativeNumber()` methods are annotated with `@Test` to indicate that they are test cases. Within these methods, we create an instance of the `Calculator` class and use the `assertEquals()` method to compare the expected result with the actual result returned by the `add()` function.
 
-## Deep Dive Into Writing Tests
+When we run this test class, we will see that both tests pass, meaning our `add()` function is working as expected. This is just a simple example, but in a larger and more complex project, writing tests can save a lot of time and effort when it comes to troubleshooting.
 
-Now that we have covered the basics of writing tests in Java, let's delve deeper into the importance of it. Writing tests not only ensures that your code works as intended but also helps you catch bugs and errors early on in the development process. This saves time and resources as it prevents these issues from reaching production.
+## Deep Dive
 
-Additionally, writing tests promotes good coding practices as it forces you to think about different scenarios and edge cases. It also acts as documentation for your code, making it easier for others to understand and contribute to your project.
+Writing tests not only helps to identify bugs and errors, but it also promotes better coding practices. By writing tests, you are essentially breaking down your code into smaller, testable components. This can help you to write more modular and reusable code, which is essential for building maintainable and scalable applications.
 
-Moreover, having a robust test suite gives you the confidence to make changes, refactor code, and add new features without worrying about breaking existing functionality. It provides a safety net for your code and helps maintain its integrity.
+It's important to note that writing tests does not guarantee a bug-free code. However, it greatly reduces the chances of major issues and can save you from headaches down the road. Additionally, as your codebase grows, having a comprehensive suite of tests can give you the confidence to make changes and additions without breaking existing functionality.
 
 ## See Also
 
-Now that you understand the importance of writing tests for your Java code, here are some useful resources to help you get started:
-
-- JUnit Official Documentation: https://junit.org/junit5/docs/current/user-guide/
-- Baeldung's Guide to Writing JUnit Tests: https://www.baeldung.com/junit-tests
-- Test-Driven Development: By Example by Kent Beck: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530
-
-Start incorporating tests into your coding process, and you will see the benefits it brings to your codebase. Happy coding!
+- [JUnit documentation](https://junit.org/junit5/docs/current/user-guide/)
+- [Benefits of Test-Driven Development (TDD)](https://www.digitalocean.com/community/tutorials/test-driven-development-java-junit)
+- [Writing Good Unit Tests in Java](https://www.baeldung.com/java-unit-tests)

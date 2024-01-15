@@ -1,6 +1,7 @@
 ---
-title:                "Python: Escrevendo no erro padrão"
-simple_title:         "Escrevendo no erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Python: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para a saída de erro em Python?
+## Por que
 
-Escrever para a saída de erro em programação é uma prática importante para a depuração de código e identificação de possíveis erros e problemas. Ao imprimir mensagens de erro específicas, podemos entender melhor o que está acontecendo no nosso código e como corrigir esses problemas.
+Escrever para o erro padrão (standard error) pode ser uma ferramenta útil para entender e depurar seu código em Python. Ele também pode ser usado para registrar informações importantes ou erros específicos durante a execução de um programa.
 
-## Como fazê-lo?
+## Como fazer
 
-Podemos escrever para a saída de erro em Python usando a função `print()` com a opção `file=sys.stderr`. Isso garantirá que a mensagem de erro seja impressa na saída de erro padrão, que é separada da saída de impressão padrão.
+Escrever para o erro padrão em Python é bastante simples. Basta usar o método `sys.stderr.write()` e passar uma string como parâmetro. Vamos dar uma olhada em um exemplo abaixo:
 
-Por exemplo, se tivermos um código que divide dois números, mas o segundo número é 0, isso resultaria em um erro de divisão por zero. Podemos imprimir uma mensagem de erro usando a saída de erro padrão da seguinte forma:
-
-```Python
-num1 = 10
-num2 = 0
-resultado = num1 / num2
-print("Resultado da divisão: ", resultado, file=sys.stderr)
+```python
+import sys
+sys.stderr.write("Este é um erro de exemplo.")
 ```
 
-Isso imprimirá a mensagem de erro "ZeroDivisionError: division by zero" na saída de erro padrão, alertando-nos sobre o erro e facilitando a depuração.
+O código acima irá escrever "Este é um erro de exemplo." no erro padrão. No entanto, é importante observar que o texto não será imediatamente exibido no console. Ele será armazenado em um buffer até que o programa seja encerrado ou o buffer seja esvaziado. Portanto, é necessário esvaziar o buffer manualmente, usando o método `sys.stderr.flush()`:
+
+```python
+import sys
+sys.stderr.write("Este é um erro de exemplo.")
+sys.stderr.flush()
+```
 
 ## Mergulho profundo
 
-Além de imprimir mensagens de erro simples, também podemos usar a função `print()` para escrever informações mais detalhadas na saída de erro. Por exemplo, podemos adicionar informações extras, como o nome da variável que causou o erro ou uma mensagem mais descritiva sobre o que estava sendo feito no momento do erro. Isso pode nos ajudar a compreender mais facilmente o que podemos fazer para corrigir o problema.
+Apesar de simples, escrever para o erro padrão em Python pode ser uma ferramenta poderosa para identificar e resolver problemas de código. Além disso, ele pode ser usado em conjunto com o módulo `logging` para registrar informações relevantes durante a execução do programa.
 
-Outra prática útil é usar a instrução `try/except` para capturar exceções e imprimir mensagens de erro personalizadas. Dessa forma, podemos tratar os erros e imprimir informações mais específicas ao mesmo tempo.
+É importante lembrar que o método `write` espera uma string como parâmetro. Portanto, se você quiser escrever outros tipos de dados, como números ou listas, é necessário converter para string primeiro.
 
 ## Veja também
 
-- [Documentação oficial do Python sobre a função print()](https://docs.python.org/3/library/functions.html#print)
-- [Tutorial sobre tratamento de exceções em Python](https://www.w3schools.com/python/python_try_except.asp)
+- [Documentação oficial da biblioteca sys](https://docs.python.org/3/library/sys.html)
+- [Tutorial de logging em Python](https://realpython.com/python-logging/)
+- [Guia para depurar código em Python](https://realpython.com/python-debugging-pdb/)

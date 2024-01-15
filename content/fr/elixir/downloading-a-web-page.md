@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Telechargement d'une page web"
-simple_title:         "Telechargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Elixir: Téléchargement d'une page web"
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Pourquoi : Si vous êtes intéressé par la création de sites web ou si vous voulez comprendre comment ils fonctionnent, télécharger une page web peut être une étape importante. Cela vous permettra de voir le code source de la page et de mieux comprendre la structure et les technologies utilisées.
 
-Bonjour à tous ! Aujourd'hui, nous allons parler de l'importance de télécharger des pages web en utilisant le langage de programmation Elixir. Si vous êtes un développeur web ou un passionné de programmation, vous savez probablement déjà que télécharger des pages web est une partie essentielle du processus de développement. Mais pourquoi est-ce si crucial ? Trouvons la réponse ensemble !
+Comment faire : La programmation en Elixir propose plusieurs façons de télécharger une page web et en extraire des informations. Voici un exemple simple utilisant la bibliothèque HTTPoison :
 
-## Comment faire
+```
+Elixir
+alias HTTPoison
 
-Le téléchargement d'une page web peut sembler complexe, mais avec Elixir, c'est en fait assez simple. Tout d'abord, nous devons utiliser le module HTTPoison, qui est une bibliothèque HTTP pour Elixir. Ensuite, nous pouvons utiliser la fonction ```HTTPoison.get``` pour télécharger la page. Par exemple : 
+url = "https://www.example.com"
+response = HTTPoison.get(url)
 
-```Elixir
-response = HTTPoison.get("https://www.example.com")
-IO.puts(response.body)
+IO.puts response.body
 ```
 
-La fonction ```HTTPoison.get``` renvoie un tuple contenant le corps de la réponse de la requête HTTP. Nous pouvons ensuite utiliser la fonction ```IO.puts``` pour afficher le contenu du corps de la réponse dans notre terminal.
+Cet exemple utilise l'alias `HTTPoison` pour simplifier l'appel à la bibliothèque. Ensuite, on définit l'URL de la page que nous voulons télécharger et on utilise la fonction `get` pour faire la requête HTTP. Enfin, on affiche le corps de la réponse avec `IO.puts`.
 
-## Plongée en profondeur
+Il existe également d'autres bibliothèques et outils en Elixir pour télécharger une page web, tels que `HTTParty` et `Tesla`. Vous pouvez choisir celui qui convient le mieux à votre projet.
 
-Maintenant que nous savons comment télécharger une page web en utilisant Elixir, parlons plus en détail de cette fonction. La fonction ```HTTPoison.get``` prend plusieurs arguments en plus de l'URL, tels que les en-têtes HTTP, les paramètres de requête, etc. De plus, elle renvoie également des informations sur la réponse, telles que le code de statut HTTP, les en-têtes de réponse, etc.
+Plongée en profondeur : Télécharger une page web peut sembler simple, mais il y a plusieurs aspects à prendre en compte. Tout d'abord, il est important de comprendre les différents protocoles utilisés pour les requêtes HTTP, tels que GET, POST, PUT, DELETE, etc.
 
-De plus, il est important de noter que le téléchargement de pages web peut être utilisé pour de nombreux cas d'utilisation, tels que le scraping de données, l'automatisation de tâches ou la création d'API personnalisées. C'est pourquoi il est essentiel de maîtriser cette technique dans Elixir pour être capable de créer des applications web performantes et efficaces.
+De plus, il existe des protocoles de sécurité tels que HTTPS qui peuvent être nécessaires pour certaines pages web. Dans ce cas, vous devrez peut-être également gérer des certificats de sécurité lors de la communication avec le serveur.
 
-## Voir aussi
+Enfin, il est important de comprendre la structure du code HTML d'une page web et d'utiliser des bibliothèques telles que `Floki` pour extraire des informations spécifiques d'une page, telles que des liens, des images ou des données.
 
-Maintenant que vous avez compris l'importance du téléchargement de pages web en utilisant Elixir, pourquoi ne pas approfondir vos connaissances en explorant d'autres fonctionnalités du langage ?
+Voir aussi : En plus des bibliothèques mentionnées ci-dessus, voici d'autres ressources utiles pour télécharger et analyser des pages web en Elixir :
 
-- [La documentation officielle d'Elixir](https://hexdocs.pm/elixir/api-reference.html)
-- [Apprenez Elixir en 10 minutes](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixir School](https://elixirschool.com/fr/)
+- Documentation HTTPoison : https://github.com/edgurgel/httpoison
+- Documentation Floki : https://github.com/philss/floki
+- Tutoriel sur le scraping en Elixir : https://thoughtbot.com/blog/consuming-web-apis-and-scraping-craigslist-with-elixir
+- Liste de bibliothèques pour le scraping en Elixir : https://github.com/NoahOrberg/super-scraping-resources
 
-Merci d'avoir lu cet article et à bientôt pour plus de contenu sur Elixir !
+Maintenant, à vous de jouer ! Explorez ces ressources et commencez à télécharger et analyser des pages web en Elixir. Bonne programmation !

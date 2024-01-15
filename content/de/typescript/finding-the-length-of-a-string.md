@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge einer Zeichenkette finden"
+html_title:           "TypeScript: Die Länge einer Zeichenkette finden"
+simple_title:         "Die Länge einer Zeichenkette finden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Why
 
-Das Finden der Länge einer Zeichenkette ist ein grundlegender Bestandteil der Programmierung mit TypeScript. Es ermöglicht uns, die Anzahl der Zeichen einer Zeichenkette zu bestimmen und sie entsprechend zu manipulieren.
+Man findet oft die Länge eines Strings, um zu überprüfen, ob er die gewünschte Anzahl von Zeichen hat oder um ihn in verschiedene Teile zu unterteilen. In diesem Artikel erfahren Sie, wie Sie mithilfe von TypeScript die Länge eines Strings ermitteln können.
 
-## Wie geht das
+## How To
 
-Um die Länge einer Zeichenkette in TypeScript zu finden, können wir die `length`-Eigenschaft verwenden. Diese liefert uns die Anzahl der Zeichen einer Zeichenkette zurück.
+Es gibt verschiedene Möglichkeiten, die Länge eines Strings in TypeScript zu finden. Hier sind einige Beispiele:
 
-```TypeScript
-let string = "Hallo";
-console.log(string.length);
-// Output: 5
+```typescript
+// erstellen eines Strings
+let message: string = "Hallo Welt";
+
+// Verwendung von length Eigenschaft
+let lengthOfString: number = message.length;
+console.log(lengthOfString); // Ausgabe: 10
+
+// Verwendung der split() Methode
+let parts: string[] = message.split('');
+console.log(parts.length); // Ausgabe: 10
 ```
 
-Wir können die `length`-Eigenschaft auch auf mehrzeilige Zeichenketten anwenden. Hierbei werden auch die Leerzeichen mitgezählt.
+In diesem Beispiel haben wir zuerst einen String `message` erstellt und dann die `length` Eigenschaft verwendet, um die Länge des Strings zu erhalten. Es gibt auch die `split()` Methode, mit der Sie den String in einzelne Teile aufteilen und dann die Länge des neuen Arrays bestimmen können. Beide Methoden ergeben dasselbe Ergebnis.
 
-```TypeScript
-let multilinestring = `Hallo
-Welt`;
-console.log(multilinestring.length);
-// Output: 11
-```
+## Deep Dive
 
-## Tiefere Einblicke
+Die `length` Eigenschaft gibt die Anzahl der Zeichen eines Strings zurück. Es ist wichtig zu beachten, dass auch Leerzeichen und Sonderzeichen zur Länge des Strings zählen. Zum Beispiel hat der String "Hello World!" eine Länge von 12, da auch das Leerzeichen und das Ausrufezeichen mitgezählt werden.
 
-In TypeScript werden Zeichenketten als Instanzen des `string`-Datentyps behandelt. Dieser Datentyp verfügt über die `length`-Eigenschaft, die uns die Anzahl der Zeichen einer Zeichenkette liefert.
-
-Die `length`-Eigenschaft ist in TypeScript auch bei anderen Datentypen wie zum Beispiel Arrays und Maps verfügbar. Bei Arrays gibt sie uns die Anzahl der Einträge zurück, während sie bei Maps die Anzahl der Schlüssel-Wert-Paare liefert.
+Wenn Sie statt der Anzahl der Zeichen die Anzahl der Wörter in einem String ermitteln möchten, können Sie die `split()` Methode verwenden und dann die Länge des resultierenden Arrays bestimmen. Beachten Sie jedoch, dass auch hier Leerzeichen und Satzzeichen als separate Elemente gezählt werden.
 
 ## Siehe auch
 
-- [TypeScript Dokumentation zur length-Eigenschaft](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Einführung in TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
-- [Manipulation von Zeichenketten in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+- [TypeScript Dokumentation](https://www.typescriptlang.org/docs/)
+- [String.length() auf MDN](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [String.split() auf MDN](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/split)

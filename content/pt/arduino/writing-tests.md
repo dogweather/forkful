@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante em programação com Arduino?
+## Por que escrever testes no Arduino?
 
-Escrever testes é uma prática importante em programação com Arduino porque garante que o seu código funcione corretamente. Além disso, os testes permitem que você detecte e corrija erros antes mesmo de implementar o seu projeto, economizando tempo e garantindo um código mais confiável.
+Escrever testes é uma prática importante em qualquer tipo de programação, incluindo a programação do Arduino. Ao escrever testes, você pode garantir que seu código está funcionando corretamente e detectar possíveis erros antes mesmo de carregá-lo no seu Arduino. Além disso, escrever testes pode ajudar a entender melhor o funcionamento do seu código e a identificar áreas que podem ser melhoradas.
 
-## Como escrever testes em programação com Arduino?
+## Como escrever testes no Arduino
 
-Para escrever testes em programação com Arduino, é necessário seguir os seguintes passos:
+Para escrever testes no Arduino, você precisa seguir alguns passos simples. Primeiramente, é necessário definir quais são os objetivos dos seus testes e quais partes do seu código serão cobertas por eles. Em seguida, você deve criar funções de teste que verifiquem se o seu código está funcionando corretamente. Por último, é importante executar esses testes e analisar os resultados.
 
-1. Identifique as partes do código que precisam ser testadas.
-2. Crie uma função de teste para cada parte do código que deseja testar.
-3. Dentro de cada função de teste, escreva o código que irá testar a funcionalidade desejada.
-4. Utilize a função `ASSERT()` para verificar se os resultados obtidos são os esperados.
-5. Compile o código e verifique se todos os testes foram aprovados.
+Um exemplo de teste no Arduino pode ser visto abaixo:
 
-Um exemplo de código de teste em Arduino seria:
+```Arduino
+int pin = 13;
 
-```
-Arduino int x = 10;
-int y = 5;
-// Função de teste para multiplicação
-void testMultiplicacao() {
-  int resultado = x * y; // Resultado esperado: 50
-  ASSERT(resultado == 50); // Teste falhará se o resultado for diferente de 50
+void setup() {
+  pinMode(pin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(pin, HIGH);
+  delay(1000);
+  digitalWrite(pin, LOW);
+  delay(1000);
+}
+
+void testPinState() {
+  digitalWrite(pin, HIGH);
+  assert(digitalRead(pin) == HIGH);
+  delay(1000);
+  digitalWrite(pin, LOW);
+  assert(digitalRead(pin) == LOW);
 }
 ```
 
-Ao compilar e rodar esses testes, caso o resultado seja diferente de 50, o teste irá falhar e você poderá identificar onde está o erro e corrigi-lo.
+Neste exemplo, criamos uma função de teste que verifica se o pino 13 está no estado correto. Primeiro, definimos o pino como saída no setup e, em seguida, usamos a função `digitalWrite()` para alterar o estado do pino. Em seguida, usamos a função `digitalRead()` para verificar se o estado do pino corresponde ao que esperamos e usamos a função `assert()` para garantir que o teste falhará caso contrário. Por fim, executamos o código no loop e chamamos a função de teste para verificar se está funcionando corretamente.
 
-## Aprofundando mais nos testes em programação com Arduino
+## Aprofundando-se nos testes no Arduino
 
-Escrever testes em programação com Arduino também pode ser muito útil para garantir que todas as funcionalidades do seu projeto estejam funcionando corretamente. Além disso, ao escrever testes de unidade, você pode testar cada função isoladamente, facilitando a identificação e correção de possíveis erros.
+Uma forma mais avançada de escrever testes no Arduino é usar uma biblioteca de testes, como a [Arduino Unit Testing Library](https://github.com/mmurdoch/arduinounit), que automatiza parte do processo e oferece mais recursos, como a possibilidade de testar múltiplos códigos em um único teste. Além disso, é importante lembrar de manter seus testes atualizados à medida que seu código é alterado e adicionar novos testes sempre que novas funcionalidades forem adicionadas.
 
-Outra técnica interessante é utilizar testes de integração, onde você pode testar a interação entre diferentes partes do código. Isso é especialmente importante para projetos mais complexos, onde várias funções dependem umas das outras.
+## Veja também
 
-Além disso, existem também ferramentas e bibliotecas específicas para escrever e rodar testes em programas com Arduino, como a ArduinoUnit e a ArduinoUnit-C, que facilitam a criação e execução de testes. Com essas ferramentas, é possível criar testes mais avançados, como testes de aceitação e testes de estresse.
-
-## Confira também
-
-- [Tutorial: Teste de Unidade com Arduino](https://www.arduino.cc/en/Guide/Introduction/#toc3)
-- [ArduinoUnit: Biblioteca para escrever testes em Arduino](https://www.arduino.cc/reference/en/libraries/arduinounit/)
-- [ArduinoUnit-C: Biblioteca para escrever testes em C para Arduino](https://www.arduino.cc/reference/en/libraries/arduinounit-c/)
-- [Introdução aos testes de integração](https://www.freecodecamp.org/news/integration-testing-in-arduino-6896eb21d66/)
+- [Tutorial de testes com Arduino](https://www.arduino.cc/en/Guide/UnitTesting)
+- [Tutorial de testes com Arduino Unit Testing Library](https://www.youtube.com/watch?v=dNfZEXLcMgw)
+- [Documentação oficial da Arduino Unit Testing Library](https://github.com/mmurdoch/arduinounit/wiki)

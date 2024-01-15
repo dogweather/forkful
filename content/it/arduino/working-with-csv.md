@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Lavorare con i file csv"
+title:                "Lavorare con i file csv"
+html_title:           "Arduino: Lavorare con i file csv"
 simple_title:         "Lavorare con i file csv"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,66 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Programmare con CSV (Comma Separated Values) può essere utile se si vuole integrare dati esterni nel proprio progetto Arduino. Questo tipo di file è molto diffuso e facile da leggere, permettendo una maggiore flessibilità nella gestione dei dati.
+Csv (Comma-separated values) è un formato di file molto comune per memorizzare dati tabellari. Per chi lavora con l'Arduino, essere in grado di leggere e scrivere file CSV può essere molto utile per gestire grandi quantità di dati.
 
 ## Come fare
-
-Per utilizzare CSV in un progetto Arduino, segue un esempio di codice per leggere e stampare i dati di un file CSV sulla porta seriale:
+Per leggere un file CSV con Arduino, è necessario utilizzare la libreria "SD.h" per accedere alla scheda SD e la libreria "StringSplitter.h" per analizzare il contenuto del file.
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
-
-File csvFile;
-String data;
+#include <StringSplitter.h>
 
 void setup() {
   Serial.begin(9600);
-  
-  // Inizializza la scheda SD
-  if (!SD.begin(10, 11, 12, 13)) {
-    Serial.println("Errore nell'inizializzazione della scheda SD");
-    return;
+  File dataFile = SD.open("file.csv"); // Apri il file CSV
+  while (dataFile.available()) { // Loop finché ci sono dati disponibili
+    String line = dataFile.readStringUntil('\n'); // Leggi una riga
+    StringSplitter splitter(line, ','); // Divide la riga in base alla virgola
+    while (splitter.hasNext()) { // Loop finché ci sono elementi
+      String value = splitter.next(); // Leggi il valore
+      Serial.print(value); // Stampa il valore
+      Serial.print(" "); // Aggiungi uno spazio
+    }
+    Serial.println(); // Vai alla prossima riga
   }
-
-  // Apre il file CSV in lettura
-  csvFile = SD.open("dati.csv");
-  if (!csvFile) {
-    Serial.println("Errore nell'apertura del file CSV");
-    return;
-  }
-  
-  // Cicla finché il file non è terminato
-  while (csvFile.available()) {
-    // Legge una riga del file
-    data = csvFile.readStringUntil('\n');
-    // Stampa la riga sulla porta seriale
-    Serial.println(data);
-  }
-  // Chiude il file
-  csvFile.close();
+  dataFile.close(); // Chiudi il file
 }
 
 void loop() {
-  // Codice di loop vuoto
+  // Il codice del loop non è necessario per leggere un file CSV
 }
 ```
 
-L'output sarà simile a questo:
-
-```
-1. Ciao, mondo!
-2. Questo è un esempio di file CSV.
-3. È possibile inserire qualsiasi tipo di dato all'interno del file, anche numeri separati da virgola.
-```
+L'output verrà stampato nel monitor seriale, con ogni valore separato da uno spazio.
 
 ## Approfondimento
-
-Il formato CSV è molto versatile e può essere utilizzato anche per scrivere dati in un file dalla scheda SD. Inoltre, è possibile usare librerie aggiuntive per manipolare i dati in modo più avanzato, come ad esempio aggiungere filtri o creare grafici.
+Oltre alla lettura dei file CSV, è possibile anche scrivere su di essi utilizzando la libreria "SD.h". Inoltre, è possibile utilizzare la funzione "parseInt()" per convertire i valori di tipo stringa in numeri interi e la funzione "parseFloat()" per convertire i valori in numeri decimali.
 
 ## Vedi anche
-
-- [Libreria SD](https://www.arduino.cc/en/Reference/SD)
-- [Libreria SPI](https://www.arduino.cc/en/Reference/SPI)
-- [Libreria String](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/readstringuntil/)
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/libraries/sd/)
+- [Tutorial di Adafruit](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-library)

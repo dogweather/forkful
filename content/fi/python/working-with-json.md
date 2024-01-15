@@ -1,5 +1,6 @@
 ---
-title:                "Python: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Python: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Python"
 category:             "Python"
@@ -9,42 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-JSON on yksi tärkeimmistä tiedonsiirtomuodoista Python-ohjelmoijille. Se on helppo käyttää ja helposti luettavissa sekä ihmisille että ohjelmille. JSON-tiedostot ovat myös kevyitä ja helppoja jakaa.
+JSON-tiedostomuoto on yleisesti käytetty tapa tallentaa ja vaihtaa tietoja tietokonejärjestelmien välillä. Se on kevyt, luku- ja kirjoitusnopeudeltaan nopea ja ymmärrettävissä sekä ihmisille että koneille. JSON on myös yhteensopiva useiden ohjelmointikielten kanssa, minkä vuoksi sen käyttö on yleistä erilaisissa sovelluksissa ja projekteissa.
 
-## Miten
+# Kuinka
 
-JSON-tiedostojen luominen ja lukeminen Pythonissa on helppoa käyttäen `json` -kirjastoa. Tämä mahdollistaa muun muassa tiedon tallentamisen lista- tai sanakirjarakenteina.
+JSON-tietomuoto koostuu avaimesta ja arvosta, jotka on erotettu kaksoispisteellä ja pilkulla. Avaimet ovat merkkijonoja ja arvot voivat olla mitä tahansa tietotyyppejä, kuten merkkijonoja, numeroita, boolean-arvoja tai jopa toisia JSON-objekteja tai -taulukoita.
+
+```Python
+# Esimerkki JSON-objektista, joka sisältää nimen ja iän
+{
+    "nimi": "Matti Meikäläinen",
+    "ikä": 35
+}
+```
+
+## Luku JSON-tiedostoja
+
+JSON-tiedostoja voidaan lukea käyttämällä Pythonin built-in json-moduulia. Käytämme `json.load()` -funktiota lukeaksemme tiedoston ja palauttaaksemme sen Python-sanakirjana tai taulukkona.
 
 ```Python
 import json
 
-# JSON-tiedoston luominen
-data = {
-    "harrastukset": ["luontoretket", "soittaminen", "kirjoittaminen"],
-    "ikä": 26,
-    "paikkakunnat": ("Helsinki", "Tampere", "Turku")
-}
+# Luetaan tiedosto ja tallennetaan se muuttujaan
+with open("tiedosto.json", "r") as tiedosto:
+    data = json.load(tiedosto)
 
-with open("tiedosto.json", "w") as f:
-    json.dump(data, f)
-
-# Tiedon lukeminen JSON-tiedostosta
-with open("tiedosto.json", "r") as f:
-    data = json.load(f)
-
+# Tarkastellaan tiedoston sisältöä
 print(data)
-# Output: {'harrastukset': ['luontoretket', 'soittaminen', 'kirjoittaminen'], 'ikä': 26, 'paikkakunnat': ['Helsinki', 'Tampere', 'Turku']}
 ```
 
-## Syvyyksissä
+Output:
 
-JSON-muoto (JavaScript Object Notation) syntyi alun perin JavaScript-kielen kanssa, mutta nykyään se on yleisesti käytössä myös muissa ohjelmointikielissä. JSON on täysin tekstipohjainen, mikä tarkoittaa että sen päälle on helppo rakentaa sovelluksia. JSON-tiedoston rakenne on yksinkertainen ja looginen, mikä tekee sen lukemisesta ja muokkaamisesta helppoa.
+```
+{'nimi': 'Matti Meikäläinen', 'ikä': 35}
+```
 
-JSON-viestit ovat myös helposti siirrettäviä internetissä, mikä tekee siitä hyödyllisen esimerkiksi web-sovelluksille. Usein palvelimet lähettävät dataa JSON-muodossa ja vastaavasti web-sovellukset pyytävät dataa JSON-muodossa.
+## Kirjoita JSON-tiedostoja
 
-## Katso myös
+Voimme myös luoda uuden JSON-tiedoston Pythonissa käyttämällä `json.dump()` -funktiota. Tämä ottaa parametrina tiedoston nimen ja tietorakenteen, jonka haluamme tallentaa tiedostoon.
 
-- [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-- [Python JSON -dokumentaatio](https://docs.python.org/3/library/json.html)
+```Python
+import json
+
+# Luodaan data-rakenne
+data = {
+    "nimi": "Matti Meikäläinen",
+    "ikä": 35
+}
+
+# Tallennetaan tiedosto
+with open("uusi_tiedosto.json", "w") as tiedosto:
+    json.dump(data, tiedosto)
+```
+
+## Syväkellunta
+
+JSON-tiedostot voivat myös sisältää monimutkaisempia rakenteita, kuten taulukoita ja sisäkkäisiä objekteja. Voimme käyttää JSON-moduulia päästäksemme näihin sisäisiin tietoihin ja käsitellä niitä.
+
+```Python
+import json
+
+# Luetaan tiedosto
+with open("tiedosto.json", "r") as tiedosto:
+    data = json.load(tiedosto)
+
+# Haetaan haluttu tieto
+print(data["nimi"]) # Output: "Matti Meikäläinen"
+
+# Käsitellään sisäkkäisiä tietoja
+print(data["osoite"]["kaupunki"]) # Output: "Helsinki"
+```
+
+# Katso myös
+
+- [Pythonin virallinen JSON-dokumentaatio](https://docs.python.org/3/library/json.html)
+- [JSON-käsittely käytännössä - opas](https://realpython.com/python-json/)
+- [JSON-formaatista lisätietoa W3Schoolsista](https://www.w3schools.com/js/js_json_intro.asp)

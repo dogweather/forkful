@@ -1,5 +1,6 @@
 ---
-title:                "Rust: מחיקת תווים התואמים לתבנית"
+title:                "מחיקת תווים התואמים לתבנית"
+html_title:           "Rust: מחיקת תווים התואמים לתבנית"
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-ישנם מצבים רבים שבהם נדרש למחוק תווים המתאימים לתבנית מסוימת בתכנות בשפת Rust. כתבה זו יכולה להעניק לך כלים והבנה כיצד לבצע פעולה זו בדרך הטובה ביותר.
+אנשים משתמשים בניווט באתר של הכוונה של ה מחוק תווים התאמת תבנית בכדי לסנן ולשפר את תוצאות החיפוש שלהם.
 
-## כיצד לבצע פעולה זו
+## כיצד לעשות זאת
 
-כאשר מעוניינים למחוק תווים המתאימים לתבנית מסוימת, ניתן להשתמש בפונקציה "replace" של שפת Rust. לדוגמה, אם נרצה למחוק את כל התווים הלא נראים בשחורים בתמונה, נוכל להשתמש בקוד הבא בתוך ה"```Rust ... ```":
-
-```Rust
-let str = "Hello, world!";
-let new_str = str.replace("l", "");
-println!("{}", new_str); // Output: Heo, word!
-```
-
-## להתעמק
-
-ניתן להשתמש גם בתנאים כדי לבצע פעולה זו על תווים מסוימים בלבד. לדוגמה, נוכל להשתמש בקוד הבא כדי למחוק רק את התווים "l" ו"o" מהתוכן:
+כאשר אתם משתמשים בשפת ראסט, ישנן מספר אפשרויות למחיקת תווים התואמים תבנית. נוכל להשתמש בפונקציות כמו `replace()` ו `trim()` כדי למחוק תווים מסוימים ממחרוזות. להלן דוגמאות של כיצד להתגבר על תבניות בתוך קוד רסט, כולל הפלט המשוער עבור כל דוגמה.
 
 ```Rust
-let str = "Hello, world!";
-let new_str = str.replace(|c| match c {
-    'l' | 'o' => false,
-    _ => true,
-}, "");
-println!("{}", new_str); // Output: Hel, wrd!
+//משתנה מחרוזת מכיל טקסט עם תווים כפולים ורווחים לא נחוצים
+let text = "Heeeeellllooooo Wo000000rld 999999";
+//השתמשו בפונקציית `replace()` כדי להסיר את כל התווים שאתם רוצים למחוק
+let mut new_text = text.replace("e", "");
+//הדפיסו את התוצאות כדי להראות את השינויים
+println!("{}", new_text);
+//לפלט היא "Hlllllooooo Wo000000rld 999999"
 ```
 
-# ראה גם
+```Rust
+//משתנה מחרוזת מכיל טקסט עם תוים כפולים ורווחים לא נחוצים
+let text = "Helloooo World";
+//השתמשו בפונקציית `trim()` כדי למחוק את התווים הלא נחוצים
+let mut new_text = text.trim();
+//הדפיסו את התוצאות כדי להראות את השינויים
+println!("{}", new_text);
+//לפלט היא "Helloooo World"
+```
 
-- [מדריך רשמי על פעולה של הפונקציה "replace" בשפת Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [תצוגה לעומק על תנאים בשפת Rust](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#matching-with-partial-value-bindings)
+## מטפל עמוק
+
+כאשר אנחנו מחפשים תבניות במחרוזות, אתם יכולים להשתמש בפונקציות על מנת לשפר את הסניף שלכם. נוכל להשתמש בתבניות רגולריות ובמבני נתונים כדי לבדוק ולמחוק תווים על פי יותר מדויק תיעוד.
+
+## ראה גם
+
+- [The Rust Programming Language](https://www.rust-lang.org)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example)
+- [Rust Regular Expressions Tutorial](

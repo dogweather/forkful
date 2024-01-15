@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sammenføying av strenger"
-simple_title:         "Sammenføying av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Bash: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,41 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å slå sammen strenger er en viktig ferdighet å ha i Bash-programmering. Dette lar deg kombinere flere tekststrenger for å lage en lengre streng eller en variabel. Det kan være nyttig når du ønsker å lage dynamiske utskrifter eller sende data til andre kommandoer.
+Å kombinere strenger i Bash kan være en nyttig teknikk når du ønsker å manipulere og formatere data. Dette kan hjelpe deg med å lage mer komplekse skript og automatisere oppgaver mer effektivt.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å slå sammen strenger i Bash, bruker du operatoren `+` eller tilde (`~`). La oss ta en titt på et eksempel:
+For å kombinere to strenger i Bash, kan du bruke operatoren `+`. La oss si at du har en variabel `navn` som inneholder "Ole" og en annen variabel `alder` som inneholder "27". Ved å skrive `echo $navn+$alder` vil du få outputen "Ole+27". Dette er fordi operatoren `+` i Bash fungerer som en enkel lime sammen funksjon, derfor må du være bevisst på å inkludere mellomrom eller andre tegn om ønskelig. 
+
+Det kan også være nyttig å bruke doble anførselstegn `"` i stedet for enkle anførselstegn `'` når du kombinerer strenger. Dette er fordi enkle anførselstegn i Bash ikke tillater variabler å bli interpretet, mens doble anførselstegn gjør det. Dette kan være spesielt nyttig når du ønsker å inkludere variabler eller andre spesielle tegn i strengen.
+
+Et eksempel på hvordan man kan bruke dette i praksis kan være å lage en meny i et Bash script. Ved hjelp av concatenation kan du lage en variabel som inneholder hele menyen, samt bruke `echo` kommandoen for å vise den på skjermen. Her er et eksempel:
 
 ```Bash
-# Slå sammen strenger med +
-name="John"
-greeting="Hei, mitt navn er " + $name
-
-# Slå sammen strenger med ~
-age=25
-intro="Jeg er $age år gammel"
-full_intro="Hei, " ~ $greeting ~ ", " ~ $intro
-
-echo $full_intro # Utskrift: Hei, mitt navn er John, Jeg er 25 år gammel
+# Definer meny
+menu="1. Vis filer \n2. Vis mappestruktur \n3. Avslutt"
+# Skriv ut meny
+echo -e $menu
 ```
 
-I dette eksemplet bruker vi `+` til å slå sammen to tekststrenger og tilde (`~`) for å legge til en annen tekststreng i en variabel. Det er viktig å merke seg at det ikke skal være mellomrom rundt operatørene.
+Outputen vil da være:
+
+1. Vis filer
+2. Vis mappestruktur
+3. Avslutt
+
+Dette er bare et enkelt eksempel på hvordan man kan bruke concatenation i praksis, men mulighetene er mange og det er viktig å eksperimentere for å finne ut hva som fungerer best i ulike situasjoner.
 
 ## Dypdykk
 
-Det er også mulig å slå sammen strenger med `printf` kommandoen. Dette gir mer kontroll over formateringen av utskriften. La oss se på et eksempel:
+Ved å bruke concatenation i Bash, kan du også kombinere mer enn to strenger. Dette gjøres ved å bruke flere `+` operatorer etter hverandre. La oss si at du har variabelen `fornavn` som inneholder "Per" og variabelen `etternavn` som inneholder "Olsen", og du i tillegg ønsker å inkludere initialene "P.O." i slutten av strengen. Dette kan gjøres ved å skrive `echo $fornavn+$etternavn+P.O.` og outputen vil være "Per+Olsen+P.O.". 
+
+En annen nyttig teknikk når du kombinerer strenger er å bruke en `=` operatør. Dette vil erstatte innholdet i variabelen med det nye resultatet av concatenation i stedet for å bare vise outputen på skjermen. Dette kan kombineres med `+` operatoren for å fortsette å bygge opp strengen. Her er et eksempel:
 
 ```Bash
-name="Lisa"
-age=28
-printf "Hei, mitt navn er %s og jeg er %d år gammel." $name $age # Utskrift: Hei, mitt navn er Lisa og jeg er 28 år gammel.
+# Definer fornavn
+fornavn="Per"
+# Legg til mellomnavn
+fornavn=$fornavn+"Arne"
+# Legg til etternavn
+fornavn=$fornavn+"Olsen"
+# Skriv ut fullt navn
+echo $fornavn
 ```
 
-Her bruker vi `%s` og `%d` for å angi at variablene `$name` og `$age` skal legges til i strengen, henholdsvis som en tekst og et tall. Dette tillater også formatering av utskriften, for eksempel ved å angi antall desimaler for et tall eller justering av tekst til venstre/høyre.
+Outputen vil da være "Per Arne Olsen", der variabelen `fornavn` har blitt overskrevet etter å ha blitt kombinert med to andre strenger.
 
 ## Se også
 
-- [Bash-kommandolinjens dokumentasjon om strengmanipulasjon](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [En guide til Bash scripting](https://www.tecmint.com/bash-string-manipulation/)
-- [En interaktiv Bash leksjon om strenger og variabler](https://www.learnshell.org/en/Strings_and_Variables)
+- [Documenting Code with Bash](https://www.linuxjournal.com/content/documenting-code-bash)
+- [Bash String Concatenation](https://www.cyberciti.biz/faq/unix-linux-bash-append-text-to-file/)
+- [Bash Tutorial - String concatenation](https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php)

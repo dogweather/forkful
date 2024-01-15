@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "C++ recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C++"
 category:             "C++"
@@ -10,49 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Searching and replacing text is a common task in programming, especially when working with large amounts of data. It allows for quick and efficient editing of text, making it a valuable tool for developers.
+Text is an essential part of programming, and sometimes we need to make changes to it. This could be due to a variety of reasons, such as fixing errors, updating information, or improving the overall readability of our code. Searching and replacing text is a convenient way to make these changes efficiently and accurately.
 
 ## How To
-To perform a simple search and replace task in C++, we can use the `replace()` function from the `<algorithm>` library. This function takes in three parameters: a beginning iterator, an ending iterator, and a value to replace.
+To search and replace text in C++, we can use the `replace` function from the standard library's `string` class. Here is an example code block showing how we can use this function to replace a specific word in a string:
 
-````C++
+```C++
 #include <iostream>
-#include <algorithm>
+#include <string>
+
+using namespace std;
 
 int main() {
-    std::string text = "Hello world!";
-    std::replace(text.begin(), text.end(), 'o', 'e');
-    std::cout << text << std::endl;
-    return 0;
+  string greeting = "Hello, world!";
+  greeting.replace(greeting.find("world"), 5, "C++");
+  
+  cout << greeting << endl;
+  
+  return 0;
 }
-````
+```
+Output:
+```
+Hello, C++!
+```
 
-Output: `Helle werld!`
-
-We can also use regular expressions with the `regex_replace()` function from the `<regex>` library to perform more complex search and replace tasks. Regular expressions allow for pattern matching in strings, making it a powerful tool for text manipulation.
-
-````C++
-#include <iostream>
-#include <regex>
-
-int main() {
-    std::string text = "Hello world!";
-    std::regex reg("o");
-    std::string new_text = std::regex_replace(text, reg, "e");
-    std::cout << new_text << std::endl;
-    return 0;
-}
-````
-
-Output: `Helle werld!`
+In this code, we first declare a `string` variable called `greeting` and assign it the value "Hello, world!". Then, using the `find` function, we can determine the starting index of the word "world" in the string. This index is then passed to the `replace` function along with the number of characters to be replaced (in this case, 5) and the new text we want to insert ("C++"). Finally, we print the updated `greeting` string to see the result.
 
 ## Deep Dive
-When using regular expressions, there are various modifiers and special characters that can be used to refine the search criteria. Some commonly used ones include `*` for zero or more occurrences of a character, `+` for one or more occurrences, `.` for any character, `[]` for a list of characters, and `()` for grouping. Regular expressions also have modifiers such as `*?` for non-greedy matching and `?` for optional matching.
+The `replace` function goes beyond just simple search and replace actions. It also allows us to specify a starting position and the number of characters to be replaced. This means we can replace multiple occurrences of a word or phrase within a string. Additionally, we can even use `replace` to insert new text into a string without replacing anything. Furthermore, we can also use the `replace` function to swap portions of a string by specifying the same starting and ending positions.
 
-It is important to be aware of the potential performance impact of using regular expressions for large amounts of data. In some cases, it may be more efficient to use simple string methods for search and replace tasks.
+Another useful function for searching and replacing text in C++ is `substr`. This function allows us to extract a portion of a string based on a starting index and the number of characters to be extracted. By combining `substr` with `replace`, we can easily manipulate different parts of a string without having to create a new string variable.
+
+In summary, searching and replacing text in C++ is a versatile and powerful tool for managing and manipulating text within our code.
 
 ## See Also
-- [C++ replace() function documentation](https://www.cplusplus.com/reference/algorithm/replace/)
-- [C++ regex_replace() function documentation](https://www.cplusplus.com/reference/regex/regex_replace/)
-- [Regular expressions in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
-- [Performance impact of using regular expressions](https://softwareengineering.stackexchange.com/questions/223514/performance-impact-of-using-regular-expressions)
+- [C++ strings and their properties](https://www.programiz.com/cpp-programming/string)
+- [The C++ Standard Library](https://www.learncpp.com/cpp-tutorial/the-standard-c-library/)
+- [C++ String Replace Reference](https://en.cppreference.com/w/cpp/string/basic_string/replace)

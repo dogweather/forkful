@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Arbeiten mit JSON"
-simple_title:         "Arbeiten mit JSON"
+title:                "Arbeiten mit Json"
+html_title:           "Clojure: Arbeiten mit Json"
+simple_title:         "Arbeiten mit Json"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,46 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der heutigen digitalen Welt sind Daten von großer Bedeutung. Eines der wichtigsten Formate zur Speicherung und Übertragung von Daten ist JSON. Als Clojure-Entwickler ist es daher von großer Bedeutung zu wissen, wie man mit JSON umgeht.
+Warum sollte man sich mit JSON befassen?
 
-## Wie man JSON in Clojure verwendet
+Die Antwort ist einfach: JSON ist ein beliebtes Format für den Austausch von Daten in Webanwendungen und APIs. Wenn man also mit Webentwicklung zu tun hat, ist es wichtig, sich mit JSON vertraut zu machen, um effektiv mit Daten umgehen zu können.
 
-Die Verwendung von JSON in Clojure ist relativ einfach. Zunächst müssen wir jedoch die Clojure-Bibliothek ["json"](https://github.com/clojure/data.json) importieren. Dies kann durch Hinzufügen der folgenden Zeile zu unserer `project.clj` Datei erreicht werden:
+## Anleitung
 
-```clojure
-[org.clojure/data.json "0.2.6"]
+Das erste, was du tun musst, um mit JSON in Clojure zu arbeiten, ist das Hinzufügen der Bibliothek `clojure.data.json` zu deinem Projekt. Dies kannst du ganz einfach mit dem `require` Befehl tun:
+
+```Clojure
+(require '[clojure.data.json :as json])
 ```
 
-Sobald die Bibliothek importiert wurde, können wir JSON-Daten mit Hilfe der Funktionen `json/read-str` und `json/write-str` einlesen und ausgeben. Schauen wir uns hierzu ein Beispiel an:
+Als nächstes kannst du die `json/read` und `json/write` Funktionen verwenden, um Daten aus JSON-Dateien zu lesen oder JSON-Daten zu generieren. Zum Beispiel können wir eine JSON-Datei "data.json" erstellen, die folgendes enthält:
 
-```clojure
-(ns example.core
-  (:require [clojure.data.json :as json]))
-
-;; JSON-String einlesen
-(def json-daten (json/read-str "{\"name\": \"Max Mustermann\", \"email\": \"max.mustermann@example.com\"}"))
-
-;; JSON-Daten ausgeben
-(println "Name: " (:name json-daten))
-(println "Email: " (:email json-daten))
-
-;; JSON-Objekt erstellen und als String ausgeben
-(def json-objekt {"name" "Max Mustermann"
-                  "email" "max.mustermann@example.com"})
-
-(println "JSON-String: " (json/write-str json-objekt))
+```json
+{"name": "Max", "age": 25, "hobbies": ["Programming", "Hiking"]}
 ```
 
-Das obige Beispiel liest einen JSON-String ein, extrahiert die Werte für den Namen und die E-Mail-Adresse und gibt sie aus. Anschließend wird ein JSON-Objekt erstellt und als String ausgegeben.
+Um diese Daten in Clojure zu lesen, verwenden wir die `json/read` Funktion:
 
-## Tiefergehende Informationen
+```Clojure
+(json/read-str (slurp "data.json"))
+;; => {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]}
+```
 
-Neben den oben genannten Basiskonzepten gibt es noch eine Vielzahl weiterer Funktionen in der Clojure-Bibliothek "json". Hierzu gehören unter anderem die Möglichkeit, JSON-Dateien direkt einzulesen und auszugeben, das Arbeiten mit verschachtelten Datenstrukturen und die Konvertierung von Clojure-Daten in JSON-Strings und umgekehrt.
+ Umgekehrt können wir auch Clojure-Daten in JSON umwandeln mit der `json/write` Funktion:
 
-Ein weiteres wichtiges Konzept beim Umgang mit JSON ist die JSON Schema. Hierbei handelt es sich um eine Beschreibung der Struktur und des Formats von JSON-Daten. Mit Hilfe von JSON Schema können wir sicherstellen, dass die eingelesenen Daten den erwarteten Anforderungen entsprechen. Eine gute Einführung in JSON Schema findest du [hier](https://json-schema.org/learn/getting-started-step-by-step.html).
+```Clojure
+(json/write-str {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]})
+;; => "{\"name\":\"Max\",\"age\":25,\"hobbies\":[\"Programming\",\"Hiking\"]}"
+```
+
+Wie du siehst, gibt die `write-str` Funktion eine String-Repräsentation des JSON-Objekts aus.
+
+Weitere Informationen zu den Funktionen `read` und `write` findest du in der [offiziellen Clojure-Dokumentation](https://clojure.github.io/data.json/).
+
+## Tiefgründig
+
+Nun möchtest du vielleicht mehr über den Umgang mit komplexen JSON-Strukturen erfahren. Zum Beispiel, wie man auf bestimmte Werte zugreift oder wie man JSON-Objekte verändert.
+
+Zugriff auf Werte in einem JSON-Objekt können wir mit der `get-in` Funktion von Clojure machen, indem wir einfach den Schlüssel oder die Schlüssel, die wir auswählen möchten, als Argumente übergeben. Zum Beispiel können wir auf das Alter von Max zugreifen:
+
+```Clojure
+(get-in {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]} [:age])
+;; =>  25
+```
+
+Um ein JSON-Objekt zu verändern, gibt es verschiedene Ansätze, je nach Komplexität der Struktur. Eine einfache Möglichkeit ist es, die `assoc` Funktion zu verwenden und einen neuen Schlüssel-Wert-Paar hinzuzufügen:
+
+```Clojure
+(assoc {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]} :location "Berlin")
+;; => {:name "Max", :age 25, :hobbies ["Programming" "Hiking"], :location "Berlin"}
+```
+
+Andere Funktionen, die in diesem Zusammenhang nützlich sein können, sind `update`, `update-in` und `assoc-in`.
+
+Für weitere Informationen über das Arbeiten mit JSON in Clojure empfehle ich dir, die [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/) und [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) Bücher zu lesen.
 
 ## Siehe auch
 
-- [Clojure data.json Dokumentation](https://github.com/clojure/data.json)
-- [Offizielle JSON Webseite](https://www.json.org/)
-- [JSON Schema Dokumentation](https://json-schema.org/)
+- [Offizielle Clojure-Dokumentation über JSON](https://clojure.github.io/data.json/)
+- [Clojure for the Brave and True Buch](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
+- [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Swift recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,49 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Engage in Working with CSV?
+## Why
+CSV (Comma Separated Values) is a common and user-friendly format for storing and exchanging tabular data. It's widely used in data analysis and manipulation, making it a valuable skill for Swift programmers to learn.
 
-CSV (Comma Separated Values) is a popular file format used for storing and exchanging data between different systems. It is widely used in data analysis, database management, and other computer applications. In the world of Swift programming, being able to work with CSV files can greatly increase your efficiency and productivity. In this blog post, we will explore how to work with CSV files using Swift, and why it is an important skill for any programmer to have.
-
-## How To Work with CSV in Swift
-To begin working with CSV files in Swift, we first need to import the `CSV` module from the `SwiftCSV` package. This can be done in the following way:
+## How To
+To get started working with CSV in Swift, you'll need to import the `CSV` library, which is available as a package in the Swift Package Manager. Here's a basic example of how to load and read data from a CSV file:
 
 ```Swift
 import CSV
-```
 
-Next, we need to create a `CSV` object, passing in the path of the CSV file we want to work with. For example:
+// Load the CSV file
+let csv = try! CSV(url: URL(fileURLWithPath: "data.csv"))
 
-```Swift
-let csvPath = "/Users/username/Documents/sample.csv"
-let csv = try! CSV(url: csvPath, encoding: .utf8, delimiter: ",", loadColumns: false)
-```
-
-Once we have the `CSV` object, we can start accessing the data within the CSV file. The `CSV` object has a `namedRows` property which contains all the data in rows, with the first row being the header. Let's take a look at a simple example where we print out the data from the CSV file:
-
-```Swift
-for row in csv.namedRows {
-    print(row)
+// Loop through each row and access the columns
+for row in csv {
+  let name = row["Name"]
+  let age = row["Age"]
+  print("\(name) is \(age) years old")
 }
 ```
 
-This will output each row of data in the CSV file. We can also access a specific column by using the `namedColumns` property of the `CSV` object. For example, if we want to retrieve the data from the "Name" column, we can use the following code:
+The output of this code block will print out the names and ages of each person listed in the CSV file. You can also use the `rowsAsArrays` property to access the data in a more structured format:
 
 ```Swift
-let names = csv.namedColumns["Name"]
-print(names) // Prints out an array of all the names in the "Name" column
+import CSV
+
+// Load the CSV file
+let csv = try! CSV(url: URL(fileURLWithPath: "data.csv"))
+
+// Get array of arrays containing the data
+let data = csv.rowsAsArrays
+
+// Loop through each row and access the data by index
+for row in data {
+  let name = row[0]
+  let age = row[1]
+  print("\(name) is \(age) years old")
+}
 ```
 
-By using these simple techniques, we can easily read and manipulate data from CSV files in our Swift programs.
+You can also write data to a CSV file using the `writeRow` method:
 
-## Deep Dive into Working with CSV
-There are a few important things to keep in mind when working with CSV files in Swift. First, the CSV file must be properly formatted, with each column separated by a delimiter (usually a comma) and each row ending with a line break. It is also important to handle errors when reading from or writing to a CSV file. The `CSV` object allows us to catch errors and handle them appropriately.
+```Swift
+import CSV
 
-Another important aspect to consider is the encoding of the CSV file. By default, the `CSV` object uses UTF-8 encoding, but this can be changed by passing in a different encoding option when creating the object.
+// Create a new CSV file to write to
+let csv = try! CSV(url: URL(fileURLWithPath: "new_data.csv"))
 
-It is also worth noting that the `CSV` object allows us to write data to CSV files as well. This can be done using the `write` method, which takes in an array of values as a parameter and writes them as a new row in the CSV file.
+// Write row of data to file
+try! csv.write(row: ["John", "25", "Male"])
+
+// Write another row
+try! csv.write(row: ["Jane", "30", "Female"])
+```
+
+## Deep Dive
+The `CSV` library in Swift also allows for more advanced use cases, such as customizing the delimiter character or using a header row. You can also access and modify the raw rows of data using the `rawRows` property.
+
+Additionally, you can use `CSVReader` to read from a CSV file without loading the entire file into memory. This can be useful for processing large CSV files with minimal performance impact.
 
 ## See Also
-- [SwiftCSV GitHub repository](https://github.com/yaslab/CSV.swift)
-- [Working with CSV files in Swift tutorial](https://www.raywenderlich.com/542-yaml-tutorial-for-swift-working-with-csv-files)
-- [Official Swift documentation](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID384)
+For more information and examples, check out the official documentation for `CSV` library: [https://github.com/yaslab/CSV.swift](https://github.com/yaslab/CSV.swift)

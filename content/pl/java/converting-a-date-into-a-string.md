@@ -1,5 +1,6 @@
 ---
-title:                "Java: Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Java: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
+Często zdarza się, że w programowaniu musimy przekonwertować datę na string, aby wyświetlić ją w odpowiednim formacie lub wykonać inne operacje na niej. W tym artykule dowiesz się, jak to zrobić w języku Java.
 
-Konwertowanie daty na ciąg znaków jest częstym zadaniem w programowaniu, szczególnie w aplikacjach związanych z zarządzaniem czasem i wymianą danych. Jest to przydatna umiejętność, która pozwala na wyświetlanie dat w różnych formatach lub przechowywanie ich w bazach danych.
-
-## Jak to zrobić
-
-Aby przekonwertować datę na ciąg znaków w języku Java, możemy skorzystać z metody `format()` klasy `SimpleDateFormat`. Poniżej przedstawiamy przykład kodu oraz wynik, który otrzymamy:
-
+## Jak To Zrobić
 ```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-Date date = new Date();
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-String dateString = dateFormat.format(date);
-System.out.println(dateString);
+public class DateToStringExample {
+
+    public static void main(String[] args) {
+        // tworzymy obiekt LocalDate z datą 25 grudnia 2019
+        LocalDate date = LocalDate.of(2019, 12, 25);
+
+        // tworzymy obiekt DateTimeFormatter i określamy pożądany format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+        // przekształcamy datę na string przy użyciu wybranego formatu
+        String dateString = date.format(formatter);
+
+        // wyświetlamy wynik
+        System.out.println(dateString); // 25.12.2019
+    }
+}
 ```
 
-Output: 28/08/2021
-
-W powyższym przykładzie użyliśmy specyficznego formatu "dd/MM/yyyy", ale istnieje wiele innych opcji, takich jak "MM/dd/yyyy" czy "dd-MMM-yyyy", które pozwalają na wyświetlanie daty w różnych stylach.
+W powyższym przykładzie najpierw tworzymy obiekt LocalDate, który przechowuje informację o dacie. Następnie za pomocą obiektu DateTimeFormatter określamy, w jakim formacie chcemy wyświetlić datę. W ostatnim kroku, przy użyciu metody "format", przekształcamy datę na string. W ten sposób możemy łatwo wyświetlić datę w wybranym przez nas formacie.
 
 ## Deep Dive
+Aby jeszcze lepiej zrozumieć, jak działa konwersja daty na string, przyjrzyjmy się wewnętrznemu mechanizmowi. W języku Java, klasa LocalDate przechowuje informację o dacie w postaci liczby dni od początku ery (1 stycznia 1970 roku). Natomiast formatowanie daty odbywa się poprzez użycie klasy DateTimeFormatter, która wykorzystuje wzorce, aby zmienić liczbę dni na czytelny dla nas string.
 
-Warto zauważyć, że metoda `format()` również może przyjmować obiekt `Date` jako argument, co umożliwia konwersję daty zapisanej w innym formacie. Ponadto, istnieje możliwość sformatowania daty z uwzględnieniem strefy czasowej czy ustawienia odpowiedniego języka dla miesięcy.
-
-W celu uzyskania głębszego zrozumienia konwertowania daty na ciąg znaków, warto zapoznać się z dokumentacją Java oraz przećwiczyć różne przypadki w praktyce.
-
-## Zobacz też
-
-- [Java Documentation](https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html)
-- [Tutorial: Working with Dates in Java](https://www.baeldung.com/java-date-to-string-conversion)
-- [How to Convert Date to String in Java](https://www.javacodeexamples.com/convert-date-to-string-in-java/1364)
+## Zobacz Również
+- [Java Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
+- [Tutorial: Przetwarzanie dat w Java](https://stackoverflow.com/questions/18683658/convert-java-util-date-to-string)

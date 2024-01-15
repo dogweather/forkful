@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Extracting substrings"
+title:                "Extracting substrings"
+html_title:           "Elm recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,50 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-As a programmer, there may come a time when you need to manipulate strings in your code. One useful operation to know is extracting substrings, which allows you to retrieve a portion of a string based on a given start and end index. This can come in handy when working with user input or when parsing data from various sources.
+
+Have you ever needed to extract a specific piece of text from a larger string? Maybe you're working with user input or parsing data from an API response. Elm has a built-in function for extracting substrings, making it a useful tool for manipulating text in your programs.
 
 ## How To
-To extract substrings in Elm, we can use the `String.slice` function. This function takes in three arguments: the original string, the starting index, and the ending index. Let's take a look at an example:
 
-```
+To extract a substring in Elm, we use the `String.slice` function. This function takes two arguments: the starting index and the ending index of the desired substring. Here's an example of extracting a substring from a string called `message`:
+
 ```Elm
-partialString : String
-partialString = String.slice "Hello World!" 6 11
--- Output: "World"
+message = "Hello World"
+substring = String.slice 0 5 message
 ```
 
-In this example, we have a string "Hello World!" and we want to extract a portion of it starting at index 6 (which is the letter "W") and ending at index 11 (which is the exclamation mark). The result is the substring "World", which is assigned to the variable `partialString`.
+In this example, we're extracting the first 5 characters from the string `message`, resulting in the substring "Hello". Keep in mind that the first index is inclusive and the second index is exclusive, meaning the character at the ending index will not be included in the extracted substring.
 
-We can also use negative indices to extract substrings from the end of a string. For example:
+We can also use negative numbers for the indexes, which will count backwards from the end of the string. For example, if we wanted to extract the last 5 characters from the string `message`, we could use the following code:
 
-```
 ```Elm
-partialString : String
-partialString = String.slice "Hello World!" -1 -3
--- Output: "Hello World"
+message = "Hello World"
+substring = String.slice -5 0 message
 ```
 
-In this case, we want to extract a substring starting at the last character and ending at the third to last character, resulting in the full string "Hello World!".
+This would result in the substring "World".
 
-## Deep Dive
-When extracting substrings, it's important to keep in mind that the second index (the ending index) is non-inclusive. This means that the substring will not include the character at the ending index. For example, if we use indices 6 and 11 as in our first example, the resulting substring will include the characters at indices 6 to 10, but not index 11.
+It's also important to handle edge cases, such as when the starting index is beyond the end of the string. In this case, the function will simply return an empty string. For example:
 
-We can also use the `String.length` function to determine the length of a string, which can be useful when calculating indices for extracting substrings. For example, we can extract the first five characters of a string by using an ending index of `String.length string`.
-
-```
 ```Elm
-partialString : String
-partialString = String.slice "Hello World!" 0 (String.length "Hello World!" - 6)
--- Output: "Hello"
+message = "Hello World"
+substring = String.slice 20 25 message -- returns an empty string
 ```
 
-In this example, we are extracting a substring starting at index 0 and ending six characters before the end of the string, resulting in the first five characters "Hello".
+## Deep Dive 
 
-## See Also
-For more information on extracting substrings in Elm, you can check out the official documentation for the `String.slice` function: https://package.elm-lang.org/packages/elm/core/latest/String#slice
+Behind the scenes, the `String.slice` function uses the `String.substring` function, which takes the same arguments but is slightly more low-level. The main difference is that the ending index in `String.substring` is inclusive, meaning the character at that index will be included in the extracted substring. In most cases, you'll want to use `String.slice` for extracting substrings.
 
-You can also see the Elm Guide section on Strings for more string manipulation operations: https://guide.elm-lang.org/strings/
+There are also two other functions for extracting substrings in Elm: `String.left` and `String.right`, which take a single argument representing the number of characters to extract from the beginning or end of a string, respectively.
 
-For a deeper dive into strings and other core language concepts in Elm, you can explore the official Elm Guide: https://guide.elm-lang.org/core_language.html
+## See Also 
 
-Happy coding!
+- [Elm String module](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [MDN String.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

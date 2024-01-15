@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Gleam recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,44 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-When writing a program, there will likely be times when you need to combine multiple strings together. This process is known as concatenation and it allows you to create more complex strings by combining simpler ones.
+Strings are a core element in any programming language, allowing us to manipulate and combine text to create dynamic outputs. In Gleam, concatenating strings is a useful tool for creating more complex strings and improving the overall functionality of our code.
 
 ## How To
-
-To concatenate strings in Gleam, you can use the `++` operator. This operator takes two strings as arguments and combines them together. Let's take a look at an example:
+To concatenate strings in Gleam, we use the `++` operator to add two or more strings together. Let's take a look at an example:
 
 ```Gleam
 let first_name = "John"
-let last_name = "Doe"
+let last_name = "Smith"
 
-let full_name = first_name ++ last_name
+let full_name = first_name ++ " " ++ last_name
+
+IO.print("Hello " ++ full_name)
+```
+Output:
+```
+Hello John Smith
 ```
 
-In this example, the `full_name` variable will now hold the string "JohnDoe". Notice how there is no space between the first and last name, we will address this later in the deep dive section.
+In this example, we first declare two string variables, `first_name` and `last_name`. Then, using the `++` operator, we concatenate these two strings with a space in between and assign the result to the `full_name` variable. Finally, we use concatenation once again to add the string "Hello" before the `full_name` variable and print it to the console.
 
-You can also use variables in concatenation, allowing you to create dynamic strings. For example:
+We can also use concatenation with more than just two strings. For example:
 
 ```Gleam
-let name = "Jane"
-let greeting = "Hello "
-let message = greeting ++ name
+let first_name = "John"
+let last_name = "Smith"
+let age = "25"
 
+let profile = first_name ++ " " ++ last_name ++ ", " ++ age ++ " years old"
+
+IO.print("Profile: " ++ profile)
+```
+Output:
+```
+Profile: John Smith, 25 years old
 ```
 
-This will result in the `message` variable holding the string "Hello Jane".
+In this case, we have concatenated three strings together to create a more detailed profile output.
 
 ## Deep Dive
+In Gleam, strings are always represented as lists of individual characters. This means that when we use the `++` operator to concatenate strings, we are essentially merging two lists together.
 
-When concatenating strings, it is important to understand how the `++` operator works. In Gleam, strings are represented as lists of characters. The `++` operator simply combines two lists together, without any additional characters or spaces. So, in order to add a space between our first and last name in the first example, we would need to explicitly add it in the code:
-
-```Gleam
-let full_name = first_name ++ " " ++ last_name
-```
-
-Another important thing to note is that the `++` operator only works on two strings. If you have more than two strings to combine, you will need to use multiple `++` operators or use the `String.concat` function.
+Additionally, it's important to note that the `++` operator is not limited to just strings. We can also concatenate an integer or any other data type with a string. However, we must convert the non-string data into a string using the `to_string()` function first.
 
 ## See Also
-
-- Gleam String module: https://gleam.run/modules/string.html
-- Glossary of Gleam terms: https://gleam.run/docs/glossary.html
+- [Gleam documentation on strings](https://gleam.run/book/tour/strings.html)
+- [Gleam string functions](https://gleam.run/core/String.html)

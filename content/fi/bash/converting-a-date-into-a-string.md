@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Muunna päivämäärä merkkijonoksi"
+html_title:           "Bash: Muunna päivämäärä merkkijonoksi"
+simple_title:         "Muunna päivämäärä merkkijonoksi"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -9,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi muuntaa päivämäärä merkkijonoksi?
+## Miksi
 
-Joskus haluat ehkä näyttää päivämäärän merkkijonona eri syistä, kuten käyttäjän ystävällisemmäksi näyttämiselle tai tietojen tallentamiselle tietokantaan. Tässä blogikirjoituksessa kerromme, miten voit muuntaa päivämäärän Bash-ohjelmoinnissa merkkijonoksi.
+Monissa ohjelmointitehtävissä saattaa olla tarve muuttaa päivämäärä tekstiksi, esimerkiksi tiedoston luomisessa. Bash-kielen avulla tämä onnistuu helposti ja tässä artikkelissa käymme läpi miten tämä tehdään.
 
-## Ohjeet
+## Kuinka tehdä
 
-Bash-ohjelmointikielessä on olemassa useita tapoja muuntaa päivämäärä merkkijonoksi, mutta tässä esittelemme yhden yksinkertaisen tavan käyttää komentoa `date` ja sen optiota `%F`, joka näyttää päivämäärän muodossa YYYY-MM-DD.
-
-Ensimmäisenä luodaan muuttuja `today`, johon tallennetaan tämänhetkinen päivämäärä `date`-komennolla.
+Tässä esimerkissä käytämme `date` -komennon avulla muuttaaksemme tämänhetkisen päivämäärän ja ajan tekstimuotoon. Kirjoita seuraava koodi Bash-skriptitiedostoon ja aja se komentoriviltä:
 
 ```Bash
-today=$(date +%F)
+#!/bin/bash
+
+date_string=$(date +"%Y-%m-%d %H:%M:%S")
+
+echo "Päivämäärä ja aika ovat nyt: $date_string"
 ```
 
-Sitten tulostetaan muuttujan `today` arvo, joka on päivämäärä merkkijonona.
+Kun aja skripti, näet seuraavan tulosteen:
 
-```Bash
-echo $today
+```
+Päivämäärä ja aika ovat nyt: 2021-09-13 13:45:21
 ```
 
-Tulostettu merkkijono näyttää esimerkiksi tältä: `2021-08-19`.
+Tämä esimerkki käyttää `date` -komennon`+%Y-%m-%d %H:%M:%S` -parametria, joka määrittelee halutun tekstimuodon. Voit muuttaa tekstiä muuttamalla tätä parametria. Esimerkiksi jos haluat tekstin muodossa "13.09.2021 klo 13:45:21", voit käyttää parametria `"+%d.%m.%Y klo %H:%M:%S"`.
 
-## Syvällisempi sukellus
+## Syväsukellus
 
-`date`-komento tarjoaa monia muita optioita päivämäärän muotoiluun, kuten `%d` päivän numerona ja `%b` kuukauden lyhyenä nimenä. Voit myös muuttaa päivämäärän paikalliseen aikavyöhykkeeseen lisäämällä optio `%Z`.
-
-Voit lukea lisätietoja `date`-komennon optioista Bashin manuaalioppaasta komennolla `man date` tai Bashin kehittäjäsivuilta.
+Tässä esimerkissä käytämme `%Y-%m-%d %H:%M:%S` -parametria, joka määrittelee täysin muotoillun tekstin vuosiluvun, kuukauden, päivämäärän, tunnin, minuutin ja sekunnin osalta. Bash tarjoaa muitakin vaihtoehtoja, kuten `%d` (päivämäärä kahdella numerolla), `%b` (kuukauden nimi lyhyenä) ja `%a` (viikonpäivän nimi lyhyenä). Voit löytää lisää vaihtoehtoja Bashin virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [Bashin manuaaliopas päivämäärän merkkaamiseen] (https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameters) 
-- [Bashin kehittäjän sivusto date-komennosta] (https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#Bash-Variables)
+- [Bash - virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bashin päivämäärä ja-aika -blogikirjoitus (englanniksi)](https://www.linuxjournal.com/content/converting-date-string-bash)

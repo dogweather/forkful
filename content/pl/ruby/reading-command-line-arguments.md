@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Czytanie argumentów wiersza poleceń"
-simple_title:         "Czytanie argumentów wiersza poleceń"
+title:                "Wczytywanie argumentów wiersza poleceń"
+html_title:           "Ruby: Wczytywanie argumentów wiersza poleceń"
+simple_title:         "Wczytywanie argumentów wiersza poleceń"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,36 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Witajcie czytelnicy! W dzisiejszym poście porozmawiamy o tym, dlaczego warto nauczyć się czytać argumenty wiersza poleceń w języku Ruby. Może wydawać się to na pierwszy rzut oka dość nieistotne, ale prawda jest taka, że umiejętność czytania argumentów wiersza poleceń jest niezwykle przydatna w pracy programisty.
+Zastanawiałeś się kiedyś, jak programy przetwarzają dane, które dostają z linii poleceń? Czy kiedykolwiek chciałeś napisać bardziej interaktywny skrypt, który wykorzystuje argumenty z linii poleceń? Jeśli tak, ten artykuł jest dla Ciebie! 
 
-## Jak to zrobić
+##Jak To Zrobić
 
-Aby czytać argumenty wiersza poleceń w Ruby, musimy skorzystać z powłoki ARGV. Jest to wbudowany obiekt, który przechowuje argumenty podane przez użytkownika. Możemy do niego uzyskać dostęp poprzez wpisanie `$ARGV` w naszym skrypcie. Poniżej znajduje się przykładowy kod w języku Ruby:
+W Ruby istnieje prosty sposób na odczytywanie argumentów z linii poleceń. Potrzebujemy tylko jednej metody - `ARGV`. Jest to tablica, która przechowuje wszystkie argumenty przekazane z linii poleceń.
+
+Proste wywołanie programu z argumentami może wyglądać tak:
 
 ```Ruby
-# przykładowy program, który wczytuje argumenty wiersza poleceń
-puts "Cześć #{ARGV[0]}, witaj w świecie Ruby!"
-puts "Twój argument to: #{ARGV[1]}"
-
-# przykładowe uruchomienie programu z argumentami wiersza poleceń
-ruby program.rb Adam świetnie
+ruby program.rb argument1 argument2 argument3
 ```
 
-Wynik działania powyższego programu będzie wyglądał następująco:
+Aby odczytać te argumenty, wystarczy użyć pętli `each` i przeiterować przez tablicę `ARGV`:
+
+```Ruby
+ARGV.each do |arg|
+    puts "Otrzymałem argument: #{arg}"
+end
+```
+
+Output:
 
 ```
-Cześć Adam, witaj w świecie Ruby!
-Twój argument to: świetnie
+Otrzymałem argument: argument1
+Otrzymałem argument: argument2
+Otrzymałem argument: argument3
 ```
 
-## Głębszy zanurzenie
+Możemy również sprawdzić ilość przekazanych argumentów, używając metody `length` na `ARGV`:
 
-Przeczytanie argumentów wiersza poleceń jest szczególnie ważne, gdy nasz program wymaga podania jakichś danych lub opcji przy jego uruchomieniu. Dzięki temu możemy dostosować działanie naszego programu w zależności od podanych przez użytkownika argumentów. Ważnym aspektem jest również poprawna obsługa możliwych błędów, na przykład gdy użytkownik nie poda wymaganych argumentów. Warto również pamiętać o różnicach w interpretacji argumentów przez różne systemy operacyjne.
+```Ruby
+puts "Otrzymałem #{ARGV.length} argumentów" 
+```
+
+Output: 
+
+```
+Otrzymałem 3 argumentów
+```
+
+## Zagłębienie
+
+Jeśli chcesz przejść głębiej i dowiedzieć się więcej o odczytywaniu argumentów z linii poleceń w Ruby, możesz przeczytać dokumentację [ARGV](https://ruby-doc.org/core-2.7.1/ARGF.html) oraz skorzystać z innych metod dostępnych dla tablic, takich jak `find`, `select` czy `include?`. 
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej na temat czytania argumentów wiersza poleceń w języku Ruby, zerknij na poniższe linki:
-
-- [Dokumentacja Ruby - ARGV](https://ruby-doc.org/core-2.7.2/ARGF.html)
-- [Poradnik dla początkujących programistów w Ruby](https://blog.appsignal.com/2021/04/21/ruby-for-beginners-reading-command-line-arguments.html)
-- [Video tutorial - czytanie argumentów wiersza poleceń](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (żartujemy, ale na pewno znajdziesz wiele przydatnych tutoriali na YouTube!)
+Jeśli chcesz poszerzyć swoją wiedzę na temat programowania w Ruby, zapoznaj się z innymi artykułami dostępnymi na stronie Ruby's official documentation lub skorzystaj z darmowych tutoriali i zasobów na [Codeacademy](https://www.codecademy.com/learn/learn-ruby).

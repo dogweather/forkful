@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Jonojen yhdistäminen"
+html_title:           "Swift: Jonojen yhdistäminen"
+simple_title:         "Jonojen yhdistäminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,47 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa Swift-sovelluksissa on tarvetta yhdistää merkkijonoja, jotta luodaan uusia, tarkoituksenmukaisia merkkijonoja. Tämä voi olla hyödyllistä esimerkiksi, jos halutaan näyttää käyttäjälle tietoja eri muodoissa yhden merkkijonon sijaan.
+Miksi yhdistää tekstejä Swift-ohjelmointikielessä? Yhdistäminen on hyödyllinen työkalu kun halutaan luoda dynaamisia ja muokattavia tekstejä, kuten käyttäjän syötteen lisääminen valmiiseen lauseeseen.
 
-## Kuinka tehdä?
-
-```Swift
-// Alustetaan kaksi merkkijonoa
-let nimi = "Maaria"
-let tervehdys = "Hei "
-
-// Yhdistetään merkkijonot
-let lopputulos = tervehdys + nimi
-
-// Tulostetaan lopputulos
-print(lopputulos)
-
-// Output: Hei Maaria
-```
-
-Merkkijonojen yhdistäminen voidaan tehdä käyttämällä plus-merkkiä (+), kuten yllä olevassa esimerkissä. Voit myös käyttää yhdistämiseen Swiftin tarjoamaa helpompaa tapaa, jossa käytetään '=' merkkiä, kuten alla olevassa esimerkissä:
+## Kuinka
 
 ```Swift
-// Alustetaan kaksi merkkijonoa
-let etunimi = "Juha"
-let sukunimi = "Mäkinen"
-
-// Yhdistetään merkkijonot
-let kokonimi = etunimi += sukunimi
-
-// Tulostetaan lopputulos
-print(kokonimi)
-
-// Output: JuhaMäkinen
+let firstName = "Jenna"
+let lastName = "Smith"
+let greeting = "Hei " + firstName + " " + lastName + ". Tervetuloa!"
+print(greeting)
+```
+Tuloste:
+```
+Hei Jenna Smith. Tervetuloa!
 ```
 
-## Syvällisemmin
+Yhdistääksemme tekstejä Swiftissä, käytämme + operaattoria. Voimme yhdistää useita tekstejä yhteen, joko puhdistamalla ne erillisillä + -operaattoreilla tai käyttämällä välilyöntiä helpottamaan lukemista. Voimme myös yhdistää tekstin muuttujien kanssa, mikä tekee tekstin muokkaamisesta ja personointimahdollisuuksista helpompaa.
 
-Vaikka merkkijonojen yhdistäminen tuntuu helpolta ja suoraviivaiselta, on hyvä ymmärtää miten tämä tapahtuu taustalla. Swiftillä on tapana muuttaa merkkijonat ensin niin kutsutuiksi merkkijonoliteraaleiksi ja sitten yhdistää ne toisiinsa.
+```Swift
+let number = 42
+let message = "Vastasit oikein " + String(number) + " kysymykseen."
+print(message)
+```
+Tuloste:
+```
+Vastasit oikein 42 kysymykseen.
+```
 
-Lisäksi Swiftin merkkijonon yhdistäminen toimii hyvin myös muun tyyppisten arvojen kanssa, kuten kokonaislukujen ja desimaalilukujen. Tämä on hyödyllistä, jos haluat esimerkiksi näyttää käyttäjälle laskutoimitusten tuloksia selkeästi.
+## Deep Dive
+
+Swiftissä tekstin yhdistäminen käyttäen + operaattoria hyödyntää taustalla `String`-luokkaa ja sen `init`-metodia. Tämä metodi luo uuden merkkijonon kahden olemassaolevan merkkijonon avulla ja yhdistää ne toisiinsa.
+
+Vaikka + operaattori on kätevä tapa yhdistää tekstejä, se ei ole tehokkain vaihtoehto suurissa tekstikokoelmissa. Tässä tapauksessa on suositeltavaa käyttää `String`-luokan `append`-metodia tai `+` operaattorin sijaan `+=` -operaattoria, joka muokkaa alkuperäistä merkkijonoa sen sijaan, että loisi uuden.
 
 ## Katso myös
 
-- Swiftin virallinen dokumentaatio merkkijonojen yhdistämisestä: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID301
-- Vinkkejä ja esimerkkejä merkkijonojen yhdistämisestä Stack Overflow -sivustolla: https://stackoverflow.com/questions/24467614/how-do-i-concatenate-strings-in-swift
+- [Stringin dokumentaatio](https://developer.apple.com/documentation/swift/string)
+- [Swiftin keskustelu merkkijonojen yhdistämisestä](https://forums.swift.org/t/what-is-the-performance-impact-of-using-operator-vs-append-operator-to-concatenate-strings/842)
+- [Lyhyt opas Markdown-syntaksiin](https://www.markdownguide.org/basic-syntax/)

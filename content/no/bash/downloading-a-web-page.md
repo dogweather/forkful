@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Nedlasting av en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Bash: Nedlasting av en nettside"
 simple_title:         "Nedlasting av en nettside"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er interessert i å lære å kode, eller allerede er en erfaren programmerer, kan det å laste ned nettsider og manipulere data fra dem være en nyttig ferdighet. Ved å bruke Bash-programmeringsspråket, kan du enkelt laste ned og behandle informasjon fra hvilken som helst nettside. Dette kan være nyttig for å samle data, automatisere oppgaver eller opprette egne tilpassede verktøy.
+Å laste ned en nettside med Bash kan være nyttig for å automatisere oppgaver eller for å få tilgang til informasjon som ikke er tilgjengelig gjennom konvensjonelle nettlesere.
 
 ## Hvordan
-
-Her er et eksempel på hvordan du kan laste ned en nettside og hente ut spesifikk informasjon fra den ved hjelp av Bash-kode:
 
 ```Bash
 #!/bin/bash
 
-# Angi URL-adressen til nettsiden du ønsker å laste ned
-url="https://www.example.com"
+# Lag en fil for å lagre nettsiden
+touch nettside.html
 
-# Bruk wget-kommandoen for å laste ned nettsiden som en fil
-wget -O webpage.html "$url"
+# Last ned nettsiden og lagre som HTML-fil
+curl https://www.example.com > nettside.html
 
-# Bruk grep-kommandoen for å filtrere ut ønsket informasjon fra filen
-# I dette eksempelet, henter vi ut alle linker fra nettsiden
-grep -o '<a[^>]*>' webpage.html | grep -o 'href=[^>]*' | grep -o '".*"' | sed 's/"//g'
+# Vis innholdet av nettsiden
+cat nettside.html
 
+# Slette den midlertidige HTML-filen
+rm nettside.html
 ```
 
-Koden over vil laste ned nettsiden og trekke ut alle linker som er nevnt på siden. Du kan også tilpasse koden til å hente ut annen informasjon, som for eksempel tekst, bilder eller tabeller.
+**Output:** Nettsiden vil bli lastet ned og vist i terminalen som ren HTML-kode. Filen vil bli lagret i samme mappe som Bash-skriptet, med mindre annet er angitt i `curl`-kommandoen.
 
 ## Dypdykk
 
-For å forstå bedre hvordan denne koden fungerer, kan vi dykke litt dypere inn i de ulike kommandoene.
+Bash har en innebygd kommando, `curl`, som er spesialdesignet for å laste ned innhold fra internett. Det finnes også andre verktøy som kan brukes, som for eksempel `wget`.
 
-Først bruker vi `wget`-kommandoen for å laste ned nettsiden fra den angitte URL-adressen. `wget` er et populært verktøy for å laste ned filer fra internett i Bash. Neste kommando bruker så `grep` for å filtrere ut ønsket informasjon fra filen vi nettopp lastet ned. Med `grep -o`, vil vi bare få ut det som matcher det spesifiserte mønsteret, i dette tilfellet `<a href = "">`. Så bruker vi `sed` for å fjerne anførselstegnene rundt linkene som vi får ut.
+En annen måte å laste ned en nettside på er å bruke `lynx`-kommandoen, men dette vil vise nettsiden i et tekstbasert grensesnitt i stedet for å laste ned som ren HTML-kode.
 
-Det er mange muligheter for å tilpasse denne koden og hente ut ulik informasjon fra nettsiden. Det kan også være lurt å eksperimentere med ulike kommandoer og søke etter ressurser og dokumentasjon for å lære mer om Bash-programmering og nettsidehenting.
+Et viktig aspekt ved å laste ned nettsider med Bash er å være respektfull og følge nettstedets retningslinjer og eventuelle begrensninger som er satt opp. For eksempel, ikke last ned store mengder av innhold i en kort periode for å unngå overbelastning av nettstedets servere.
 
 ## Se også
 
-Her er noen nyttige ressurser og dokumentasjon du kan utforske for å lære mer om Bash-programmering og nettsidehenting:
+[99 Bash-skripteksempler du kan bruke i hverdagen](https://linuxhint.com/99_bash_examples/)
 
-- [Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Guide for Nybegynnere](http://tille.garrels.be/training/bash/)
-- [Wget dokumentasjon](https://www.gnu.org/software/wget/manual/wget.html)
-- [Grep dokumentasjon](https://www.gnu.org/software/grep/manual/grep.html)
+[Bash Guide for Nybegynnere](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+
+[Bash og nettsider - Hvordan laste ned og behandle HTML-innhold](https://www.howtogeek.com/137295/how-to-download-and-process-html-from-the-web-in-bash/)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Arbeta med csv"
-simple_title:         "Arbeta med csv"
+title:                "Att arbeta med csv"
+html_title:           "Haskell: Att arbeta med csv"
+simple_title:         "Att arbeta med csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,61 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-CSV-filer är ett vanligt sätt att lagra och dela data på, och att lära sig hur man arbetar med dem kan vara mycket fördelaktigt för programmerare. Det kan hjälpa till att organisera, manipulera och analysera data på ett effektivt sätt.
+CSV (Comma-Separated Values) är ett vanligt format för att lagra tabellliknande data och är ofta användbart för att dela och analysera information. Att kunna hantera CSV-data i Haskell ger dig en kraftfull verktygslåda för att manipulera och bearbeta data direkt i ditt program.
 
-# Så här gör du
+## Hur man gör det
 
-CSV (Comma-Separated Values) är en textbaserad filformat som används för att lagra tabulära data. Varje rad i filen representerar en rad i tabellen och varje kolumn separeras av ett kommatecken. Det finns många olika bibliotek för att arbeta med CSV i Haskell, men här är ett enkelt exempel på hur man läser in en CSV-fil och skriver ut dess innehåll på skärmen: 
+För att börja arbeta med CSV-data i Haskell behöver du importera "csv"-modulen. Sedan kan du använda funktionerna ```import :: FilePath -> IO (Either String CSV)``` för att importera en CSV-fil och ```export :: Csv -> FilePath -> IO ()``` för att exportera en CSV-fil.
 
-```
+```Haskell
 import Text.CSV
 
--- Läs in CSV-filen med namnet "example.csv"
-csv <- parseCSVFromFile "example.csv"
+-- Importera en CSV-fil
+main = do
+  result <- import "data.csv"
+  case result of
+    Left err -> putStrLn $ "Error: " ++ err
+    Right csv -> print csv
 
--- Skriv ut innehållet på skärmen
-print csv
+-- Exportera en CSV-fil
+main = do
+  let csv = [["John", "Doe", "30"], ["Jane", "Smith", "25"]]
+  export csv "data.csv"
 ```
 
-Detta kommer att producera följande output:
+Output för ```import "data.csv"``` skulle se ut som följande:
 
-```
-Right [["Name","Age","Occupation"],["Anna","30","Lawyer"],["Erik","42","Engineer"],["Lisa","25","Teacher"]]
-```
-
-Datatypen `Right` indikerar att läsningen var lyckad och att datat är strukturerat som en lista av listor. Varje lista representerar en rad i CSV-filen, och elementen i listan är strängar som motsvarar kolumnerna. Med hjälp av denna kunskap kan vi nu manipulera datat på önskat sätt.
-
-En annan vanlig åtgärd är att skriva data till en CSV-fil. Detta kan uppnås med hjälp av funktionen `writeFile` från `Text.CSV` biblioteket. Detta är ett exempel på hur du kan skapa en ny CSV-fil och skriva in din data i den:
-
-```
-import Text.CSV
-
--- Skapa en lista med data
-let data = [["Name", "Age", "Occupation"], ["Maria", "36", "Doctor"], ["Johan", "29", "Programmer"]]
-
--- Öppna en fil med namnet "new.csv" för att skriva till
-handle <- openFile "new.csv" WriteMode
-
--- Skriv data till filen
-writeFile handle $ printCSV data
-
--- Stäng filen
-hClose handle
+```Haskell
+Right [["John","Doe","30"],["Jane","Smith","25"]]
 ```
 
-Detta skapar en ny CSV-fil med namnet "new.csv" innehållande data som du har skrivit in. Genom att förstå hur man läser och skriver till CSV-filer kan du lätt använda dem för att hantera stora mängder data inom din Haskell-kod.
+## Djupdykning
 
-# Djupdykning
+För mer avancerade CSV-manipulationer finns det många funktioner tillgängliga i "csv"-modulen. Här är några exempel med en kort beskrivning:
 
-För att verkligen bli bekväm med att arbeta med CSV-filer i Haskell finns det några andra viktiga aspekter att lära sig. Till exempel, om du arbetar med CSV-filer som innehåller numeriska värden, är det viktigt att korrekt hantera datatyper och konvertera data från strängar till numeriska värden. Genom att använda funktioner som `readMaybe` från `Text.Read` biblioteket kan du säkerställa att dina data är korrekt hanterade.
+- `parseCSV :: CSVSettings -> String -> Either String CSV` för att konvertera en sträng till en CSV-datastruktur.
+- `writeCSV :: CSVSettings -> FilePath -> CSV -> IO ()` för att skriva en CSV-datastruktur till en fil.
+- `encode :: CSV -> ByteString` för att generera en enkel CSV-sträng från en CSV-datastruktur.
+- `decodeWith :: CSVSettings -> ByteString -> Either String CSV` för att konvertera en bytesträng till en CSV-datastruktur med hjälp av anpassade inställningar.
 
-Det är också värt att nämna att CSV-filer ibland kan innehålla speciella tecken eller extra whitespace. Detta kan leda till problem under läsningen och behandlingen av data. Genom att använda funktioner som `trim` från `Data.CSV` biblioteket kan du enkelt ta bort dessa extra tecken och whitespace innan du behandlar data.
+Det finns också funktioner för att manipulera data, såsom `insertRow` för att lägga till en rad, `append` för att lägga till en hel CSV till en annan och `filter` för att välja ut vissa rader baserat på ett villkor.
 
-# Se även
+## Se också
 
-- [Haskell Wiki - Working with CSV](https://wiki.haskell.org/Working_with_CSV) 
-- [Hackage - Text.CSV](http://hackage.haskell.org/package/csv) 
-- [Hackage - Data.CSV](http://hackage.haskell.org/package/Csv) 
-- [Hackage - Text.Read](https://hackage.haskell.org/package/base/docs/Text-Read.html)
+- [Officiell Hackage-sida för "csv"-modulen](https://hackage.haskell.org/package/csv)
+- [En enkel guide till CSV-hantering i Haskell](https://somashekhar.com/haskell/csv-handling/)
+- [En interaktiv online-lektion om CSV i Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple-csv-file-parser)

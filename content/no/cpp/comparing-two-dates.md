@@ -1,5 +1,6 @@
 ---
-title:                "C++: Sammenligning av to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "C++: Sammenligning av to datoer"
 simple_title:         "Sammenligning av to datoer"
 programming_language: "C++"
 category:             "C++"
@@ -10,56 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å sammenligne to datoer er et vanlig scenario i mange programmeringsprosjekter. Dette kan gjøres for å sjekke om to datoer er like, eller å finne ut om en dato er før eller etter en annen.
 
-Sammenligning av to datoer er en vanlig oppgave i programmering, spesielt når det kommer til å håndtere datoer og tidsstempel. Det kan være nyttig å vite hvordan man sammenligner to datoer for å sortere data eller for å kontrollere om en dato ligger før eller etter en annen.
-
-## Hvordan
-
-I C ++ kan du sammenligne to datoer ved hjelp av Operator Overloading, som tillater at operatøren ">" og "<" brukes for å sammenligne objekter. La oss se på et eksempel på hvordan du kan sammenligne to datoer i kode:
+## Slik gjør du det
+For å sammenligne to datoer i C++, kan du bruke "std::chrono" biblioteket. Du må først inkludere dette biblioteket i koden din ved å legge til "#include <chrono>". Deretter kan du bruke "std::chrono::system_clock::now()" for å få gjeldende dato og tid.
 
 ```C++
-// Inkluderer nødvendige biblioteker
-#include <iostream>
-#include <string>
 #include <chrono>
+using namespace std::chrono;
 
-// Definerer en funksjon for å sammenligne to datoer
-bool compareDates(std::chrono::system_clock::time_point date1, std::chrono::system_clock::time_point date2) {
-    return (date1 < date2);
-}
+// Få gjeldende dato og tid
+system_clock::time_point today = system_clock::now();
+// Definer to datoer for sammenligning
+system_clock::time_point date1 = today - hours(24);
+system_clock::time_point date2 = today + hours(24);
 
-// Hovedfunksjonen
-int main()
-{
-    // Oppretter to datoer ved hjelp av chrono biblioteket
-    std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point date2 = std::chrono::system_clock::now() + std::chrono::hours(24);
-
-    // Kaller på funksjonen for å sammenligne datoene og skriver ut resultatet
-    if (compareDates(date1, date2)) {
-        std::cout << "Date 1 is earlier than Date 2";
-    } else {
-        std::cout << "Date 2 is earlier than Date 1";
-    }
-
-    return 0;
+// Sjekk om date1 er før date2
+if (date1 < date2) {
+    std::cout << "date1 kommer før date2";
 }
 ```
 
-Output:
-```
-Date 1 is earlier than Date 2
-```
+Det er også mulig å sammenligne datoer ved å konvertere dem til "time_t" objekter med "std::chrono::system_clock::to_time_t()" og deretter sammenligne disse objektene som vanlige nummer.
 
-Som du kan se, brukes < og >-operatørene for å sammenligne datoene, og resultatet avhenger av hvilken dato som ligger først. Du kan også bruke andre operatører som >= og <= for å sammenligne datoer.
+```C++
+// Konverter datoer til time_t objekter
+time_t t1 = system_clock::to_time_t(date1);
+time_t t2 = system_clock::to_time_t(date2);
+
+// Sjekk om t1 er lik t2
+if (t1 == t2) {
+    std::cout << "t1 og t2 er like";
+} 
+```
 
 ## Dypdykk
+Når du sammenligner datoer i C++, er det viktig å være klar over at de kan være av forskjellige typer. Noen typer inkluderer "system_clock", "steady_clock" og "high_resolution_clock". Disse har forskjellige egenskaper og kan påvirke hvordan datoene sammenlignes.
 
-Nå som du vet hvordan du sammenligner to datoer, kan det være nyttig å forstå hvordan datoenes format påvirker sammenligningsprosessen. I C ++ kan datoer representeres på flere måter, for eksempel ved hjelp av time_t- eller tm-strukturer. Det er viktig å være klar over hvilket format du arbeider med når du sammenligner datoer, da dette kan påvirke resultatet.
-
-Et annet viktig poeng å merke seg er at tidssone kan påvirke sammenligningen av datoer. Når du sammenligner datoer, sammenligner du faktisk tidspunktet for de to datoene, og hvis de er i forskjellige tidssoner, kan dette føre til uventede resultater. Derfor er det viktig å være bevisst på tidssone når du arbeider med datoer og tidsstempel.
+En annen ting å huske på er at tidenheten som brukes kan variere fra system til system, så det kan være lurt å konvertere datoer til en felles enhet for å få mer nøyaktige sammenligninger.
 
 ## Se også
-
-- [C ++ time_t](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- [C ++ chrono bibliotek](https://en.cppreference.com/w/cpp/chrono)
+- [C++ Referanse for chrono biblioteket](https://en.cppreference.com/w/cpp/header/chrono)
+- [Sammenligne datoer i C++](https://www.geeksforgeeks.org/compare-two-dates-c/)
+- [Datohåndtering i C++](https://www.studytonight.com/cpp/dates-and-time-in-cpp.php)

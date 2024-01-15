@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenstillinger av strenger"
+html_title:           "Clojure: Sammenstillinger av strenger"
+simple_title:         "Sammenstillinger av strenger"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,29 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hvorfor: 
+## Hvorfor
 
-Å kombinere strenger er en viktig del av programmering, spesielt i Clojure. Det lar deg bygge mer dynamiske og tilpassede tekstuttrykk, som kan være nyttige for alt fra å lage brukergrensesnitt til å håndtere store datasett. 
+Har du noen gang ønsket å kombinere flere strenger for å lage en lengre og mer meningsfull setning? Vel, heldigvis gjør Clojure det enkelt å gjøre nettopp det. Ved å kombinere enkle strenger kan du skape mer komplekse uttrykk og løse problemer på en mer effektiv måte.
 
-Slik gjør du det:
+## Hvordan gjøre det
 
 ```Clojure
+user=> (str "Jeg elsker" "å programmere" "i Clojure")
+=> "Jeg elsker å programmere i Clojure"
+```
+Her har vi brukt funksjonen `str` til å kombinere tre forskjellige strenger. Dette gjøres ved å plassere dem etter hverandre som argumenter til `str`. Outputen er en ny streng som er sammensatt av de tre originale strengene.
 
-(println "Hei," "verden!")
-=> Hei, verden!
+Du kan også legge til andre typer data, som tall eller variabler:
 
-(str "Alder:" 25)
-=> Alder: 25
+```Clojure
+user=> (def name "Maria")
+=> #'user/name
+user=> (str "Hei, mitt navn er" name)
+=> "Hei, mitt navn er Maria"
+```
+Her har vi brukt variabelen `name` i kombinasjon med en streng. Dette viser hvordan du kan lage mer dynamiske setninger ved å inkludere variabelverdier.
 
-(str "Navn: " "Ole" " " "Nordmann" " | " "Alder: " 35)
-=> Navn: Ole Nordmann | Alder: 35
-``` 
-Dypdykk:
+En annen nyttig funksjon er `subs`, som lar deg hente ut en del av en streng basert på en startindeks og en sluttindeks:
 
-Når du kombinerer strenger, må du også håndtere forskjellige typer data som kan være involvert. Clojure har en nyttig funksjon kalt "str", som konverterer alle data til strenger før den kombinerer dem. Dette betyr at du kan bruke denne funksjonen med flere typer data, som tall, booleans, lister og kart. Du kan også bruke operatorer som "+" eller "format" for å gjøre mer komplekse kombinasjoner av tekst. 
+```Clojure
+user=> (subs "Clojure er et kraftig språk" 0 7)
+=> "Clojure"
+```
+Denne koden vil returnere strengen som starter med indeks 0 (første bokstav) og slutter med indeks 7 (bokstav nummer 7). Dette er nyttig når du trenger å hente ut en del av en større streng.
 
-Se også: 
+## Deep Dive
 
-- Offisiell Clojure dokumentasjon om å kombinere strenger: https://clojure.org/guides/learn/syntax#_string
-- En artikkel om å håndtere strenger i Clojure: https://purelyfunctional.tv/guide/clojure-strings/
-- En diskusjon om forskjellen mellom "str" og "format": https://stackoverflow.com/questions/22089279/clojure-format-vs-str
+Som nevnt tidligere, bruker vi funksjonen `str` for å kombinere strenger. Men hvordan fungerer det egentlig under panseret? Kort sagt konverterer `str` alle argumentene sine til strenger og slår dem sammen til én streng.
+
+En annen viktig funksjon er `format`, som lar deg legge til variabler og formateringsregler:
+
+```Clojure
+user=> (def age 24)
+=> #'user/age
+user=> (format "Jeg er %d år gammel" age)
+=> "Jeg er 24 år gammel"
+```
+Her har vi brukt formateringsregelen `%d`, som indikerer at du vil inkludere et heltall (age) i strengen. Du kan også bruke `%s` for å inkludere en streng og `%f` for å inkludere et desimaltall. Dette gir deg større kontroll over hvordan argumentene skal presenteres i den endelige strengen.
+
+## Se også
+
+- [Offisiell Clojure-dokumentasjon](https://clojure.org/)
+- [Clojure spørsmål og svar på Stack Overflow](https://stackoverflow.com/questions/tagged/clojure)
+- [En introduksjon til Clojure-programmering](https://www.baeldung.com/clojure-programming-introduction)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: ランダムな数の生成"
-simple_title:         "ランダムな数の生成"
+title:                "乱数を生成する"
+html_title:           "TypeScript: 乱数を生成する"
+simple_title:         "乱数を生成する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,65 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+ ランダムな数字を生成することに参加する理由を最大2文で説明します。
 
-ランダムな数を生成することのメリットについて説明します。テストやゲーム、シミュレーションなど、多くのプログラムでランダムな数が必要になります。この記事では、TypeScriptを使用してランダムな数を生成する方法を紹介します。
+ランダムな数字を生成することが重要な理由の1つは、シミュレーションやゲームなどのアプリケーションで必要なランダムな要素を生成することです。ランダムな数字を利用することで、アプリケーションのリアリティや面白さを向上させることができます。
 
-## 方法
-
-まず、ランダムな数を生成するためには、TypeScriptの `Math` ライブラリを使用します。以下のコードは、1から10までのランダムな数を生成する例です。
-
-```TypeScript
-let randomNum = Math.floor(Math.random() * 10) + 1;
-console.log(randomNum);
-```
-
-出力結果は以下のようになります。
-
-```
-5  // 1から10までの数のうち、どれか1つがランダムに出力される
-```
-
-また、配列からランダムに要素を選択することもできます。次のコードでは、数字の配列からランダムに1つの数字を選択しています。
+## 作り方
+以下は、TypeScriptを使用してランダムな数字を生成する方法のコーディング例と出力例です。
 
 ```TypeScript
-let numbers = [1, 2, 3, 4, 5];
-let randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-console.log(randomNum);
-```
-
-出力結果は以下のようになります。
-
-```
-3  // 配列の要素の中から、ランダムに1つが選択される 
-```
-
-複数のランダムな数を生成するには、ループを使うことができます。
-
-```TypeScript
-for (let i = 0; i < 5; i++) {
-  let randomNum = Math.floor(Math.random() * 100) + 1;
-  console.log(randomNum);
+// 0から10までのランダムな整数を生成する関数
+function generateRandomNumber() {
+    return Math.floor(Math.random() * 11);
 }
+
+console.log(generateRandomNumber()); // 例：5
+
+// ランダムな数字の配列を生成する関数
+function generateRandomArray(length: number) {
+    let array = [];
+    for (let i = 0; i < length; i++) {
+        array.push(Math.floor(Math.random() * 101)); // 0から100までのランダムな整数を追加
+    }
+    return array;
+}
+
+console.log(generateRandomArray(5)); // 例：[10, 76, 42, 87, 34]
 ```
 
-出力結果は以下のようになります。
+## 深堀り
+ランダムな数字を生成するためには、乱数ジェネレーターと呼ばれるアルゴリズムを使用します。乱数ジェネレーターは、いくつかの数学的な計算を組み合わせて、擬似乱数列を生成します。この擬似乱数列は、乱数のように見えますが、実際には予測可能です。
 
-```
-65
-23
-89
-42
-7
-```
+JavaScriptでMath.random()を使用すると、0から1までの間の小数を返します。これを利用して、必要な範囲のランダムな整数を生成することができます。また、乱数ジェネレーターには独自のアルゴリズムを使用することで、よりランダムな数字を生成することができます。
 
-## ディープダイブ
+## 早見表
+- ランダムな数字を生成することで、アプリケーションのリアリティや面白さを向上させることができる。
+- 乱数ジェネレーターを使用して、擬似乱数列を生成することができる。
+- Math.random()を使用することで、0から1までの間のランダムな小数を取得できる。
 
-TypeScriptの `Math` ライブラリを使用してランダムな数を生成する方法については、以上で説明しました。しかし、ランダムな数の生成には様々なアルゴリズムや技術があります。ランダム性の高い数を生成するには、より複雑な方法やツールを使用する必要があります。この記事では紹介しきれませんが、興味のある方はさらに深く調べてみてください。
-
-## 関連リンク
-
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/)
-- [ランダム数を生成する方法](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random) (英語)
-- [より複雑なランダム数を生成する方法](https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-javascript) (英語)
-
-お疲れ様でした。ランダム数を生成する上で役に立つ情報をお届けできたことを願っています。お楽しみください！
+## 参考リンク
+- [TypeScript公式サイト](https://www.typescriptlang.org/)
+- [MDN Web Docs - Math.random()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Wikipedia - 乱数ジェネレーター](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF#:~:text=%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%81%AF%E3%80%81%E5%AE%9F%E9%9A%9B,1%E3%81%9E%E3%82%8C%E3%81%82%E3%82%8B%E3%82%82%E3%81%AE%E3%81%8B%E3%82%89%E4%B8%80%E9%83%A8%E5%88%86%E7%9

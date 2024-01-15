@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skrive tester"
+html_title:           "PHP: Skrive tester"
+simple_title:         "Skrive tester"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -9,37 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å skrive tester er en viktig og verdifull del av PHP-programmering. Det hjelper deg med å sikre kvalitet og pålitelighet i koden din, og kan bidra til å identifisere og løse feil på en rask og effektiv måte.
+Å skrive tester i programmering er en viktig praksis for å sikre at koden vår fungerer som den skal. Ved å skrive tester kan vi fange feil og feil tidlig i utviklingsprosessen, noe som sparer tid og hindrer potensielle problemer i å dukke opp senere.
 
 ## Hvordan
 
-Å skrive tester i PHP kan virke skremmende for mange, men det trenger ikke å være det. La oss se på et enkelt eksempel på hvordan du kan skrive og kjøre en test ved hjelp av PHPUnit:
+For å skrive tester i PHP, trenger vi et testrammeverk. Et populært rammeverk er PHPUnit, som er et gratis og open-source testrammeverk utviklet spesielt for PHP-kode.
+
+For å installere PHPUnit, kan du følge disse trinnene:
+
+1. Åpne terminalen og naviger til prosjektmappen din.
+2. Kjør kommandoen ``composer require phpunit/phpunit`` for å installere PHPUnit.
+3. Lage en testfil ved å opprette en ``tests`` -mappe og en ny PHP-fil i den.
+4. Importer PHPUnit ved hjelp av ``require_once`` -funksjonen.
+5. Skriv tester ved å bruke PHPUnit-funksjoner og asserter for å sjekke forventet resultat av din PHP-kode.
+6. Kjør testene ved å kjøre kommandoen ``./vendor/bin/phpunit [testfilnavn]`` i terminalen.
+
+Her er et eksempel på hvordan en test kan se ut:
 
 ```PHP
 <?php
-require 'Calculator.php';
 
-class CalculatorTest extends PHPUnit_Framework_TestCase
+require_once 'vendor/autoload.php';
+
+// Importerer klassen vi vil teste
+use App\Kalkulator;
+
+class KalkulatorTest extends PHPUnit\Framework\TestCase
 {
-    public function testAdd()
+    // Tester addisjonsfunksjonen
+    public function testAddisjon()
     {
-        $calculator = new Calculator();
-        $this->assertEquals(3, $calculator->add(1, 2));
+        $resultat = Kalkulator::addisjon(2, 4); // Resultatet bør være 6
+        $this->assertEquals(6, $resultat); // Sjekker om resultatet er 6
     }
 }
-?>
 ```
 
-I dette eksemplet oppretter vi en testklasse og en testmetode som kontrollerer om funksjonen for å legge sammen tall i `Calculator`-klassen fungerer riktig. Output av denne testen vil være `OK (1 test, 1 assertion)`, noe som indikerer at testen er bestått.
+Output fra testen vil være:
 
-## Dykk dypere
+```
+PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-Å skrive tester handler ikke bare om å kjøre enkle tester og sjekke om de passerer eller ikke. Det er et viktig konsept å forstå hvordan man skriver gode og effektive tester. Dette inkluderer å lære å skrive modulforkastelser, mock objekter og funksjonelle tester. Jo bedre du forstår disse konseptene, jo bedre blir testene dine.
+.                                                                   1 / 1 (100%)
+
+Time: 00:00.032, Memory: 4.00 MB
+
+OK (1 test, 1 assertion)
+```
+
+## Deep Dive
+
+Det er viktig å skrive gode tester for å sikre at de er pålitelige og effektive. Her er noen tips for å skrive gode tester i PHPUnit:
+
+- Sørg for å navngi testene dine på en forståelig måte, så det er lettere å forstå hva de tester.
+- Bruk asserter som ``assertEquals``, ``assertTrue`` og ``assertFalse`` for å sjekke forventede resultater.
+- Test forskjellige kombinasjoner av input for å sikre at koden fungerer for alle tilfeller.
+- Unngå å teste avhengigheter som databaser og nettverkskall, da dette kan føre til unødvendige kompleksiteter og økt testtid.
 
 ## Se også
 
-- [PHPUnit dokumentasjon](https://phpunit.de/documentation.html)
-- [Tutorial: Basic Unit Testing](https://www.tutorialspoint.com/phpunit/phpunit_basic_unit_testing.htm)
-- [7 Tips for Writing Better Unit Tests](https://blog.gurock.com/unit-testing-tips-best-practices/)
+- [PHPUnit hjemmeside](https://phpunit.de/)
+- [PHPUnit-dokumentasjon](https://phpunit.readthedocs.io/en/9.5/index.html)
+- [PHPUnit-tutorials på Tutsplus](https://code.tutsplus.com/series/unit-testing-with-phpunit--cms-1191)

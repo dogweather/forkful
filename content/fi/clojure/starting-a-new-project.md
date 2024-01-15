@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uudesta projektista"
+html_title:           "Clojure: Aloittaminen uudesta projektista"
+simple_title:         "Aloittaminen uudesta projektista"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -9,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+## Miksi
 
-On monia syitä aloittaa uusi projekti Clojure-ohjelmointikielen avulla. Clojure on dynaaminen ohjelmointikieli, joka on suosittu sekä aloittelijoiden että kokeneiden ohjelmoijien keskuudessa. Sen yksinkertainen syntaksi ja tehokkaat ominaisuudet tekevät siitä ihanteellisen valinnan uuden projektin aloittamiseen.
+On monia syitä, miksi aloittaa uusi projekti. Ehkä haluat oppia uutta kieltä ja Clojure on kiinnostava haaste. Tai ehkä haluat luoda jotain uutta ja innovatiivista, joka auttaa muita ihmisiä. Riippumatta siitä, mikä motivoi sinua, aloittamalla uusi projekti voit oppia uutta ja ilmaista oma luovuutesi.
 
-## Miten aloitat uuden projektin
+## Kuinka aloittaa
 
-Ensimmäinen askel uuden Clojure-projektin aloittamiseen on asentaa Leiningen-työkalu. Tämä mahdollistaa projektin hallinnan ja riippuvuuksien asentamisen helposti. Alla on esimerkki Clojure-ohjelman luomisesta ja ajamisesta:
+Ensinnäkin, sinun tulee asentaa Clojure ympäristö tietokoneellesi. Voit tehdä tämän käyttämällä esimerkiksi Homebrew -työkalua tai asentamalla Leiningen -ohjelman. Kun olet asentanut Clojure ympäristön, voit aloittaa koodaamisen. Tässä on yksinkertainen esimerkki, kuinka tulostaa "Tervetuloa Clojureen!" konsoliin:
 
 ```Clojure
-lein new app uusi-projekti
-cd uusi-projekti
-lein run
+(defn tervehdys []
+  (println "Tervetuloa Clojureen!"))
+
+(tervehdys)
 ```
 
-Tämä luo uuden projektin nimeltä "uusi-projekti" ja suorittaa sen. Voit myös luoda uuden kirjaston käyttämällä komentoa "lein new lib".
+Lue lisää Clojuren syntaksista ja rakenteista, ja kokeile erilaisia koodiesimerkkejä. Voit myös etsiä valmiita kirjastoja ja työkaluja, jotka voivat auttaa kehitystyössäsi.
 
-Seuraavaksi voit muokata Clojure-tiedostoja käyttämällä suosittuja kehitystyökaluja, kuten Atomia tai Emacsia. Voit myös käyttää komentoriviä suorittamaan ja testaamaan koodia.
+## Syvemmälle
 
-## Syvällinen sukellus uuden projektin aloittamiseen
+Ennen kuin aloitat uuden projektin, on hyvä miettiä muutamia asioita. Ensinnäkin, mikä on projektisi tarkoitus? Onko se henkilökohtainen projekti vai aiotko jakaa sen muiden kanssa? Tartu rohkeasti uusiin haasteisiin, mutta varmista että projekti vastaa tarpeitasi ja tavoitteitasi.
 
-Uuden Clojure-projektin aloittaminen voi tuntua hieman ylivoimaiselta ensikertalaiselle. On tärkeää ymmärtää, että projektin rakenteella on suuri rooli projektin onnistumisessa. Hyvä tapa aloittaa on tutustua Leiningenin dokumentaatioon ja oppia, mitä kukin hakemisto ja tiedosto projektissa tekee.
+Toiseksi, valitse oikea työkalu projektisi tarpeisiin. On tärkeää valita oikea kehitysympäristö ja kirjastot projektin laajuuden ja tavoitteen perusteella. Tutustu erilaisiin vaihtoehtoihin ja valitse ne, jotka osuvat lähimpänä projektisi tarpeita.
 
-Lisäksi on hyödyllistä tutustua Clojure-kirjastoihin ja niiden dokumentaatioon, jotta voit valita sopivimmat työkalut projektisi tarpeisiin. Voit myös liittyä Clojure-yhteisöihin, kuten Clojure Slackiin tai Redditin Clojure-yhteisöön, joilta voit saada apua ja neuvoja projektisi kanssa.
+Lopuksi, älä pelkää pyytää apua. Clojure-yhteisö on erittäin aktiivinen ja ystävällinen, ja siellä on paljon osaavia kehittäjiä. Jos olet jumissa tai tarvitset neuvoja, voit aina kysyä apua foorumeilta tai Slack-yhteisöstä.
 
 ## Katso myös
 
-- [Leiningenin dokumentaatio](https://leiningen.org/)
-- [Clojure-kirjastot](https://clojuredocs.org/libraries)
-- [Clojure Slack](https://clojurians.slack.com/)
-- [Reddit Clojure-yhteisö](https://www.reddit.com/r/Clojure/)
+- [Clojure.org](https://clojure.org/)
+- [Clojure-yhteisö](https://clojure.org/community)
+- [Learn Clojure](https://clojure.org/learn)

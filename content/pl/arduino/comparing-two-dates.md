@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Porównywanie dwóch dat."
-simple_title:         "Porównywanie dwóch dat."
+title:                "Porównywanie dwóch dat"
+html_title:           "Arduino: Porównywanie dwóch dat"
+simple_title:         "Porównywanie dwóch dat"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,74 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Czy zdarzyło Ci się kiedyś musieć porównać dwie daty w swoim projekcie Arduino? Porównywanie dat może być przydatne w wielu różnych aplikacjach, takich jak sterowanie czasowe lub śledzenie stanu akumulatora. W tym wpisie dowiecie się, jak to zrobić przy użyciu prostej logiki programowania i biblioteki czasu.
+
+Pisanie kodu do porównywania dat może być przydatne w różnych projektach, od tworzenia kalendarzy po systemy monitorowania czasu. Porównywanie dat pomaga w ustalaniu szybkości zmian w danych i w podejmowaniu decyzji na podstawie czasu.
 
 ## Jak to zrobić
-W celu porównania dwóch dat na Arduino można skorzystać z funkcji dostępnych w bibliotece `Time`. Najpierw należy zainicjować obiekt `Time` i ustawić żądany czas, a następnie wykorzystać funkcję `getDateStr` do pobrania daty w formacie `Y-m-d H:i:s`. Następnie obie daty można porównać przy użyciu operatorów logicznych, takich jak `==`, `>`, `<` itp.
 
-```
-#include <Time.h>
+```Arduino
+// Ustalenie pierwszej daty
+int dzien1 = 12;
+int miesiac1 = 6;
+int rok1 = 2020;
 
-// Inicjalizacja obiektu Time
-Time timer;
-
-// Ustawienie daty do porównania
-String date1 = timer.getDateStr();
-String date2 = "2021-01-01 12:00:00";
-
-// Porównanie dat
-if(date1 == date2){
-  Serial.println("Obie daty są identyczne!");
-}
-```
-
-Dzięki temu prostemu kodowi można sprawdzić, czy dwie daty są takie same lub którą z nich można uznać za późniejszą. Można również wykorzystać funkcję `parseDateTime` do przekształcenia daty w obiekt `TimeElements` i porównać poszczególne elementy, takie jak rok, miesiąc, dzień czy godzina.
-
-```
-#include <Time.h>
-
-// Inicjalizacja obiektu Time
-Time timer;
-
-// Ustawienie daty do porównania
-String date1 = timer.getDateStr();
-String date2 = "2021-06-20 15:30:00";
-
-// Konwersja daty w obiekt TimeElements
-TimeElements time1, time2;
-timer.parseDateTime(date1.c_str(), time1);
-timer.parseDateTime(date2.c_str(), time2);
-
-// Porównanie elementów daty
-if(time1.Year > time2.Year){
-  Serial.println("Data pierwsza jest późniejsza!");
-}
-```
-
-## Pogłębiona analiza
-Porównywanie dat może być bardziej skomplikowane, jeśli chcemy uwzględnić różnicę czasu i strefy czasowe. W takim przypadku warto skorzystać z funkcji `now`, która zwraca aktualny czas w formacie `time_t` i umożliwia łatwe porównywanie dat.
-
-```
-#include <Time.h>
-
-// Inicjalizacja obiektu Time
-Time timer;
-
-// Ustawienie daty do porównania
-String date1 = timer.getDateStr();
-String date2 = "2021-01-01 12:00:00";
-
-// Konwersja daty w obiekt time_t
-time_t time1 = timer.parseDateTime(date1.c_str());
-time_t time2 = timer.parseDateTime(date2.c_str());
+// Ustalenie drugiej daty
+int dzien2 = 15;
+int miesiac2 = 6;
+int rok2 = 2020;
 
 // Porównanie dat
-if(time1 > time2){
-  Serial.println("Data pierwsza jest późniejsza!");
+if (rok1 > rok2) {
+  Serial.println("Pierwsza data jest późniejsza niż druga data.");
+} else if (rok2 > rok1) {
+  Serial.println("Druga data jest późniejsza niż pierwsza data.");
+} else {
+  if (miesiac1 > miesiac2) {
+    Serial.println("Pierwsza data jest późniejsza niż druga data.");
+  } else if (miesiac2 > miesiac1) {
+    Serial.println("Druga data jest późniejsza niż pierwsza data.");
+  } else {
+    if (dzien1 > dzien2) {
+      Serial.println("Pierwsza data jest późniejsza niż druga data.");
+    } else if (dzien2 > dzien1) {
+      Serial.println("Druga data jest późniejsza niż pierwsza data.");
+    } else {
+      Serial.println("Obie daty są takie same.");
+    }
+  }
 }
 ```
 
-## Zobacz również
-- Dokumentacja biblioteki Time dla Arduino: https://playground.arduino.cc/Code/Time/
-- Porównywanie czasu w Arduino: https://www.arduino.cc/reference/en/language/functions/time/now/
-- Przykładowe projekty z wykorzystaniem biblioteki Time: https://create.arduino.cc/projecthub/projects/tags/time
+Output w monitorze szeregowym (Serial Monitor):
+```
+Obie daty są takie same.
+```
+
+## Deep Dive
+
+Istnieją różne sposoby na porównywanie dat w Arduino, w zależności od potrzeb i formatu dat. Można wykorzystać biblioteki, takie jak Time, która oferuje funkcje do wykonywania obliczeń na czasie i datach. Można też wykorzystać różne metody matematyczne, takie jak przeliczanie dat na liczby całkowite i porównywanie ich.
+
+W przypadku porównywania dat pojawia się też kwestia czasu uniwersalnego. Arduino nie ma wbudowanej funkcji do obsługi czasu uniwersalnego, dlatego może być potrzebne dodanie dodatkowych komponentów, takich jak moduł RTC (Real-time clock).
+
+## Zobacz też
+
+- [Dokumentacja Arduino](https://www.arduino.cc/reference/pl/)
+- [Biblioteka Time](https://www.arduino.cc/en/reference/time)
+- [Porównywanie dat w Arduino tutorial](https://www.arduino.cc/en/Tutorial/CompareDates)

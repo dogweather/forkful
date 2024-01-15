@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "Fish Shell: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,59 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-In der Programmierung kommt es oft vor, dass wir Strings (Zeichenketten) in unseren Code einfügen müssen. Diese Strings können verschiedene Groß- und Kleinschreibung haben, was dazu führen kann, dass unser Code nicht richtig funktioniert. Um dieses Problem zu lösen, müssen wir Strings in Kleinbuchstaben umwandeln. In diesem Blogbeitrag werden wir sehen, wie man dies mit Fish Shell erreichen kann.
+Manchmal muss man in der Programmierung bestimmte Zeichenfolgen (auch als Strings bekannt) in Kleinbuchstaben umwandeln. Dies kann aus verschiedenen Gründen notwendig sein, zum Beispiel um Vergleiche zwischen Strings durchzuführen oder um eine konsistente Darstellung von Texten zu gewährleisten.
 
 ## Wie geht das?
 
-Um einen String in Fish Shell in Kleinbuchstaben umzuwandeln, verwenden wir den Befehl `string tolower`. Dieser Befehl nimmt den angegebenen String und gibt ihn in Kleinbuchstaben zurück. Hier ist ein Beispiel:
+Das Umwandeln einer Zeichenfolge in Kleinbuchstaben ist mit Fish Shell ziemlich einfach. Man muss lediglich den Befehl `string tolower` verwenden und die zu konvertierende Zeichenfolge als Argument angeben. Hier ist ein Beispiel:
 
 ```Fish Shell
-string tolower "Hallo Welt"
+set meine_string "Hallo WELT"
+string tolower $meine_string
 ```
 
-Die Ausgabe dieses Befehls wäre `hallo welt`.
+Die Ausgabe wäre `hallo welt`, da alle Buchstaben in Kleinbuchstaben umgewandelt wurden. Beachte, dass der Original-String unverändert bleibt, es sei denn, man weist die Ausgabe dem String erneut zu.
 
-Wenn wir jedoch einen String mit mehr als einem Wort haben, sollte beachtet werden, dass der Befehl `string tolower` nur das erste Wort in Kleinbuchstaben umwandelt. Um alle Wörter in Kleinbuchstaben zu konvertieren, können wir den Befehl `string split` verwenden. Dieser Befehl teilt den String anhand eines Leerzeichens oder eines anderen angegebenen Trennzeichens auf und gibt eine Liste der einzelnen Wörter zurück. Wir können dann die `string tolower` auf jedes Element der Liste anwenden und am Ende die Liste wieder mit dem Befehl `string join` zu einem String zusammenfügen.
+## Tiefergehende Erklärung
 
-Hier ist ein Beispiel dafür, wie wir einen Wörterbuch-Eintrag in Kleinbuchstaben suchen und ausgeben können:
+Das Umwandeln von Zeichenfolgen in Kleinbuchstaben ist tatsächlich ein etwas komplexerer Vorgang als man zunächst denken mag. Viele Sprachen haben unterschiedliche Konventionen für die Groß- und Kleinschreibung, die sich auf die Umwandlung auswirken können. Zum Beispiel wenn es ums Sortieren von Strings geht, kann die Verwendung von Kleinbuchstaben zu unerwarteten Ergebnissen führen. Fish Shell verwendet das Unicode-Zeichen "Lowercase Map" für die Umwandlung, um sicherzustellen, dass auch Sonderzeichen korrekt behandelt werden.
 
-```Fish Shell
-set woerterbuch "Hallo: Hello; Welt: World; Fisch: Fish"
-set eingabe "fisch" # Eingabe des Benutzers
-set eingabe_klein (string tolower $eingabe)
+## Siehe auch
 
-# Trennen des Wörterbuchs anhand eines Semikolons und Umwandeln in Liste
-set uebersetzungen (string split ";" $woerterbuch)
-
-for element in $uebersetzungen
-  # Trennen des Elements anhand eines Doppelpunkts und Umwandeln in Liste
-  set woerter (string split ":" $element)
-  set deutsches_wort (string tolower $woerter[1])
-  set englisches_wort (string tolower $woerter[2])
-
-  if test "$eingabe_klein" = "$deutsches_wort"
-    echo "Deutsche Übersetzung: $deutsches_wort"
-    echo "Englische Übersetzung: $englisches_wort"
-    break
-  end
-end
-```
-
-Die Ausgabe dieses Codes wäre:
-
-```
-Deutsche Übersetzung: fisch
-Englische Übersetzung: fish
-```
-
-## Tiefer eintauchen
-
-Beim Konvertieren von Strings in Kleinbuchstaben gibt es einige wichtige Dinge zu beachten. Zum Beispiel, dass dies nur für alphanumerische Zeichen funktioniert und keine Auswirkungen auf Sonderzeichen hat. Außerdem kann es je nach Shell-Umgebung zu Unterschieden in der Ausgabe kommen.
-
-Wenn Sie mehr über die Interna von Fish Shell und die Umwandlung von Strings in Kleinbuchstaben erfahren möchten, können Sie die offizielle Dokumentation [hier](https://fishshell.com/docs/current/cmds/string.html#string-tolower) lesen.
-
-# Siehe auch
-
-- [Offizielle Dokumentation von Fish Shell](https://fishshell.com/docs/current/)
-- [Umwandlung von Strings in Großbuchstaben](https://fishshell.com/docs/current/cmds/string.html#string-toupper) in Fish Shell
-- [Weiterführende Artikel zu Fish Shell auf Medium](https://medium.com/search?q=fish%20shell)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Eintrag über "string tolower" im Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki/Builtin-string-tolower)

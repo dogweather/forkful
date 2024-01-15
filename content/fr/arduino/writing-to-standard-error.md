@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Écriture vers l'erreur standard"
-simple_title:         "Écriture vers l'erreur standard"
+title:                "L'écriture vers la sortie d'erreur standard"
+html_title:           "Arduino: L'écriture vers la sortie d'erreur standard"
+simple_title:         "L'écriture vers la sortie d'erreur standard"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,38 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Si vous êtes un développeur Arduino, vous savez déjà que lorsque vous programmez, il est important d'écrire à la sortie standard pour déboguer votre code. Cela vous permet de voir les erreurs et les messages de débogage en temps réel afin de faciliter la résolution des problèmes. Dans cet article, nous allons vous montrer comment écrire à la sortie standard de votre Arduino pour un débogage efficace.
+Si vous avez déjà écrit du code pour Arduino, vous savez probablement qu'il est important d'avoir un moyen de déboguer ou de comprendre ce qui se passe lors de l'exécution de votre programme. C'est là que l'écriture vers l'erreur standard entre en jeu. Elle permet d'afficher des messages d'erreur ou des informations de débogage sur la console série, ce qui peut être très utile lors du développement de votre projet.
 
-## Comment faire 
+## Comment faire
 
-Pour écrire à la sortie standard de votre Arduino, vous devrez utiliser la fonction `Serial.println()`. Cette fonction prend votre message en tant que paramètre et l'envoie à la sortie standard. Par exemple, si vous voulez afficher le texte "Hello World" à la sortie standard, vous écririez le code suivant : 
+Ecrire vers l'erreur standard en utilisant Arduino est assez simple. Il vous suffit d'utiliser la fonction ```Serial.println()``` en spécifiant "Erreur" comme premier argument. Voici un exemple de code qui affiche un message d'erreur sur la console série :
 
-```Arduino
-Serial.println("Hello World");
+```
+Arduino
+void setup() {
+  // Ouvre la communication série à 9600 baud
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Ecrit "Erreur : une erreur s'est produite !" vers l'erreur standard
+  Serial.println("Erreur : une erreur s'est produite !");
+  delay(1000);
+}
 ```
 
-Lorsque vous téléversez votre code sur votre Arduino et ouvrez le moniteur série (Serial Monitor), vous devriez voir le message "Hello World" s'afficher. Vous pouvez également utiliser la fonction `Serial.print()` pour afficher des messages sans retour à la ligne après chaque message. 
+Lorsque vous téléversez ce code sur votre carte Arduino et que vous ouvrez le moniteur série, vous devriez voir le message d'erreur s'afficher toutes les secondes.
 
-## Plongée en profondeur 
+## Plongée en profondeur
 
-Il est important de noter que l'utilisation de la fonction `Serial.println()` peut affecter les performances de votre code, surtout si vous l'utilisez à plusieurs reprises dans une boucle. Pour éviter cela, vous pouvez utiliser la fonction `Serial.flush()` pour vider le tampon de la sortie standard avant d'entrer dans une boucle. Cela évitera de surcharger votre programme avec trop de messages de débogage.
+Il est important de noter que l'écriture vers l'erreur standard n'est pas seulement utile pour afficher des messages d'erreur. Vous pouvez également l'utiliser pour afficher des informations de débogage telles que des valeurs de variables, des états de capteurs ou toute autre information qui peut vous aider à comprendre ce qui se passe dans votre code.
 
-De plus, si vous voulez être plus précis lors du débogage, vous pouvez écrire à la sortie d'erreur (standard error) plutôt qu'à la sortie standard. Pour ce faire, vous utiliserez la fonction `Serial.print()` suivie du numéro de la sortie que vous voulez utiliser. Par exemple, si vous voulez écrire à la sortie d'erreur 1, vous écririez le code suivant :
+De plus, vous pouvez également utiliser la fonction ```Serial.print()``` pour écrire sur l'erreur standard. Cette fonction vous permet de spécifier différents types de données en utilisant des caractères de formatage tels que %d pour les entiers, %f pour les nombres à virgule flottante, etc. Voici un exemple de code qui utilise la fonction Serial.print() pour afficher la valeur d'une variable sur la console série :
 
-```Arduino
-Serial.print(1);
+```
+Arduino
+void setup() {
+  // Ouvre la communication série à 9600 baud
+  Serial.begin(9600);
+}
+
+void loop() {
+  int compteur = 0; // Variable compteur initialisée à 0
+  // Ecrit la valeur de compteur sur la console série
+  Serial.print("Compteur : %d", compteur);
+  compteur++;
+  delay(1000);
+}
 ```
 
-Cela enverra le message "1" à la sortie d'erreur plutôt qu'à la sortie standard. Vous pouvez également utiliser la fonction `Serial.write()` pour écrire directement des octets à la sortie standard ou d'erreur.
+Lorsque vous téléversez ce code et que vous ouvrez le moniteur série, vous devriez voir le compteur s'incrémenter à chaque seconde.
 
-## Voir aussi 
+## Voir aussi
 
-Pour en savoir plus sur l'écriture à la sortie standard et à la sortie d'erreur de votre Arduino, voici quelques liens utiles :
+Maintenant que vous savez comment écrire vers l'erreur standard en utilisant Arduino, voici quelques autres liens utiles pour en apprendre plus sur le sujet :
 
-- [Documentation officielle sur la classe Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Vidéo "Serial Communication with Arduino"](https://www.youtube.com/watch?v=uf_CpDwU0Zg)
-- [Article "Debugging Arduino Code with the Serial Port"](https://learn.sparkfun.com/tutorials/debugging-with-the-serial-ported--using-the-serial-ports/debugging-arduino-code-with-the-serial-port)
-
-Maintenant que vous savez comment écrire à la sortie standard et à la sortie d'erreur de votre Arduino, vous pouvez facilement déboguer votre code et éviter les erreurs. Bon codage !
+- La documentation officielle d'Arduino sur la communication série : https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Une vidéo tutoriel sur l'utilisation de la communication série avec Arduino : https://www.youtube.com/watch?v=oM4-PDrb2iU
+- Un article sur l'écriture vers l'erreur standard en C : https://www.geeksforgeeks.org/stderr-vs-stdout-in-c/

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 文字列の大文字化"
+title:                "文字列の大文字化"
+html_title:           "Javascript: 文字列の大文字化"
 simple_title:         "文字列の大文字化"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,41 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-## なぜ文字列をキャピタライズするのか
-
-文字列のキャピタライズとは、最初の文字を大文字にすることを意味します。例えば、"hello"という文字列を"Hello"に変えることです。このような処理を行う理由は、文字列のフォーマットを統一させるためです。例えば、データベースから取得した名前を表示する際に、全ての名前を大文字で表示したいといった場合に使用されます。
+文字列を大文字で表示することに関わる理由は、読みやすさやユーザー体験を向上させることができるからです。
 
 ## 方法
-
-文字列をキャピタライズするには、一般的な方法として、組み込みのメソッドである`toUpperCase()`を使用します。以下の例をご覧ください。
-
-```Javascript
-let name = "japan";
-let capitalized_name = name.toUpperCase();
-console.log(capitalized_name); // JAPAN
-```
-
-また、複数の単語から成る文字列をキャピタライズする場合は、以下のように関数を定義して使用することもできます。
+文字列を大文字で表示するための一般的な方法は、文字列を変数に格納してから `toUpperCase()` メソッドを使用することです。例えば：
 
 ```Javascript
-function capitalizeString(str) {
-  let words_array = str.toLowerCase().split(" ");
-  let capitalized_array = words_array.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-  return capitalized_array.join(" ");
-}
-
-let sentence = "hello world";
-let capitalized_sentence = capitalizeString(sentence);
-console.log(capitalized_sentence); // Hello World
+let string = "hello world";
+let capitalizedString = string.toUpperCase();
+console.log(capitalizedString);
 ```
 
-## ディープダイブ
+出力は `HELLO WORLD` となります。
 
-文字列をキャピタライズする方法は、見た目の統一だけではなく、プログラム上でも重要です。例えば、文字列を比較する際に大文字と小文字を区別しないようにするためにも、キャピタライズすることが必要です。また、多言語対応のアプリケーションで、特定の言語の文字列をキャピタライズする場合にも役立ちます。
+## 深堀り
+文字列を大文字で表示するというのは、実は文字列の変換に関する重要で基本的な機能です。文字列を大文字で表示することで、使用している言語や文化に関わらず、より一貫性のある表示が可能になります。また、大文字と小文字はインターネット上では異なるものとして認識されるため、セキュリティの面でも重要です。
 
-## また見る
+## 関連リンク
 
-- [JavaScriptのUpperCaseメソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [文字列をキャピタライズする方法](https://medium.com/@peterchang_82818/how-to-capitalize-the-first-letter-of-a-string-in-javascript-eb161e7085ba)
-- [文字列操作に関するドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [JavaScript 公式ドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)
+- [String.prototype.toUpperCase() メソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [文字列処理を学ぶ第一歩](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings/cheatsheet)

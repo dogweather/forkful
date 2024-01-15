@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 文字列の長さを見つける"
+title:                "文字列の長さを見つける"
+html_title:           "Javascript: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,33 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「なぜ文字列の長さを求めるのか？」
+## なぜ？
+文字列の長さを求めるのに挑戦したくなる理由は、それがとても便利で役に立つからです。例えば、テキストボックスに入力された文字列の長さを確認したり、特定の文字数以下の文字列しか受け入れないように制限を設けたりする際に使用することができます。
 
-あなたが JavaScript を学んでいるなら、文字列の長さを求めることは非常に便利です。文字列の長さを知ることで、その文字列がいくつの文字から構成されているのかを把握することができます。例えば、ゲームやアプリでプレイヤーの名前を入力する際に、入力された文字列の長さを確認して制限を設けることができます。このように、文字列の長さを求めることはプログラミングにおいて非常に重要な機能の一つです。
-
-## 使い方
+## 方法
+文字列の長さを求めるには、組み込みの`length`プロパティを使用します。このプロパティは、文字列の長さを整数値で返します。次のように使用します。
 
 ```Javascript
-let str = "こんにちは！";
-console.log(str.length); // 5
+let string = "Hello, world!";
+console.log(string.length); // 出力: 13
 ```
 
-上記のようなコードを実行すると、変数 `str` に格納された文字列の長さが取得できます。`str.length` のように「.length」を付けることで、文字列の長さを求めることができます。また、日本語の文字数も正しく取得できるので安心して使うことができます。
+## 深堀り
+文字列の長さを求める方法は、文字列のメソッドである`length`を使用すること以外にもいくつかあります。例えば、`split()`メソッドを使用して文字列を配列に分割し、その配列の長さを取得することもできます。また、`for`ループを使用して文字列の全ての文字をカウントし、その数を返すこともできます。
 
-## 詳細解説
-
-文字列の長さを求めるためには、実際には内部的にはループ処理が行われています。一つずつ文字をカウントしていき、最後にカウントした数が文字列の長さになります。このように、実際にはコンピューターが文字列をどのように処理しているのかを知ることは、プログラミングを学ぶ上で非常に役に立つことです。
-
-「見てわかるJavaScript」 https://booth.pm/ja/items/765495
-
-「JavaScript入門 」 https://www.javascript.com/
-
-「JavaScript講座 - レッスン 2 教科# 8 文字列の長さを取得する」https://www.javadrive.jp/javascript/string/index2.html
-
-## 関連リンク
-
-「文字列の長さを求める方法のまとめ」https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length
-
-「String.prototype.length」https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length
-
-「文字列の長さを求める -string.lengthプロパティ」https://www.sejuku.net/blog/43644
+## See Also
+- [MDN Web Docs - String.prototype.length](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Qiita - 文字列の長さを求める方法まとめ](https://qiita.com/HitoshiOdaka/items/60110486fff37a1afd00)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analyse av HTML"
+html_title:           "C: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,55 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+HTML er det mest brukte språket for å bygge nettsider, og det er viktig å kunne hente informasjon fra disse nettsidene. Ved å lære å parse, eller analysere, HTML med C, kan du få tilgang til specifikke elementer og data på en enkel og effektiv måte.
 
-Hvis du noen gang har besøkt en nettside og lurt på hvordan den faktisk fungerer, har du kanskje også lurt på hva HTML-koden som utgjør siden faktisk betyr. Kanskje du til og med har ønsket å hente informasjon fra en nettside og bruke den til noe annet, som å lage en app eller automatisk fylle ut skjemaer. Hvis dette høres ut som deg, er det å lære hvordan man parser HTML en verdifull ferdighet å ha.
+## Hvordan 
+Å parse HTML med C kan virke komplisert i begynnelsen, men det er egentlig ganske enkelt. Følg disse trinnene for å få en grunnleggende forståelse for parsing:
 
-# Hvordan gjøre det
+- Først av alt, må du inkludere `stdio.h` og `stdlib.h` bibliotekene i koden din.
+- Deretter kan du bruke funksjonen `fopen()` for å åpne en HTML-fil, og `fclose()` for å lukke filen når parsingen er ferdig.
+- For å lese og samle informasjon fra HTML-filen, kan du bruke funksjonen `fgetc()` for å lese et tegn av gangen.
+- Ved hjelp av kontrollstrukturer, som `if` og `while` kan du utføre handlinger basert på hva som leses fra filen.
+- Til slutt, kan du bruke funksjonen `printf()` for å skrive ut den hentede informasjonen.
 
-Først må vi forstå hva som egentlig menes med å "parse" HTML. Å parse betyr å analysere en streng av tekst og konvertere den til et mer strukturert format. I vårt tilfelle vil vi konvertere HTML-koden til et format som en datamaskin kan forstå og manipulere.
+Her er et enkelt eksempel på å parse en HTML-fil som inneholder en liste med bøker:
 
-La oss si at vi ønsker å hente tittelen på en nettside. Her er et eksempel på HTML-koden vi kan forvente å finne:
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *fp;
+    char c;
+
+    fp = fopen("bøker.html", "r"); // Åpner filen for lesing
+    if (fp == NULL) {
+        printf("Feil ved å åpne filen!");
+        exit(1);
+    }
+
+    while ((c = fgetc(fp)) != EOF) { // Leser et tegn av gangen
+        if (c == '<') { // Starter på et HTML-element
+            while ((c = fgetc(fp)) != '>') {} // Leser informasjonen til elementet er ferdig
+            printf("\n"); // Skriver ut informasjonen på en ny linje
+        }
+        else if (c == '&') { // Starter på et escape-tegn, for eksempel "&amp;"
+            while ((c = fgetc(fp)) != ';') {} // Leser til tegnet er ferdig
+        }
+        else { // Vanlig tekst
+            printf("%c", c); // Skriver ut tegnet
+        }
+    }
+
+    fclose(fp); // Lukker filen
+
+    return 0;
+}
+```
+
+Eksempel output:
 
 ```
-<html>
-<head>
-<title>Dette er tittelen på nettsiden</title>
-</head>
-<body>
-<h1>Velkommen til nettsiden min</h1>
-</body>
-</html>
-
+Hermann Hesse
+Harry Potter og De vises stein
+Fyren mellom verdener
+Alice i Eventyrland
 ```
 
-Hvis vi ønsker å hente tittelen, kan vi bruke noen få linjer med C-kode for å trekke ut teksten som er inneholdt i <title> -taggen. Det ville se noe slik ut:
+## Deep Dive
+Parsing av HTML kan være mer avansert enn dette, spesielt når det kommer til å håndtere feil og uventede situasjoner. Det kan også være nyttig å se nærmere på hvordan forskjellige elementer er strukturert i HTML, for eksempel å bruke DOM (Document Object Model) til å navigere i et HTML-dokument.
 
-```
-char* html_string = "<html><head><title>Dette er tittelen på nettsiden</title></head><body><h1>Velkommen til nettsiden min</h1></body></html>";
-char* title_start = strstr(html_string, "<title>") + strlen("<title>");
-char* title_end = strstr(html_string, "</title>");
-char title[100];
-memcpy(title, title_start, title_end-title_start);
-printf("%s", title);
+En annen viktig aspekt ved parsing av HTML er å ta hensyn til ulike tegnsett og å håndtere manglende tegn i filen. Dette kan føre til uønskede feil i koden, så det er viktig å ha en god forståelse av hvordan man håndterer disse situasjonene.
 
-```
-
-Dette vil gi oss følgende utdata:
-
-```
-Dette er tittelen på nettsiden
-
-```
-
-# Dypdykk
-
-Nå som vi har en grunnleggende forståelse av hvordan man kan hente data fra HTML-kode, kan vi ta et dypere dykk inn i temaet. HTML-kode er bygget opp av ulike tags og attributter som forteller nettleseren hvordan innholdet skal vises. Det er viktig å ha en god forståelse av disse tags og attributter for å kunne hente den informasjonen du trenger.
-
-I tillegg kan det være lurt å se på ulike biblioteker og verktøy som kan hjelpe deg med å parse HTML-kode på en mer effektiv måte. Et populært verktøy er for eksempel "libxml" som tilbyr funksjoner for å lette parsing av HTML-kode.
-
-# Se også
-
-- [Libxml](http://www.xmlsoft.org/index.html)
-- [HTML Dom](https://www.w3schools.com/js/js_htmldom.asp)
-- [Parsing HTML using c](https://stackoverflow.com/questions/538395/parsing-html-using-c)
+## Se også
+- [Hvordan parse en minimarkør i C](https://www.journaldev.com/7463/how-to-parse-html-file-in-c)
+- [HTML Tutorial for beginners](https://www.w3schools.com/html/)
+- [Document Object Model (DOM)](https://www.w3schools.com/js/js_htmldom.asp)

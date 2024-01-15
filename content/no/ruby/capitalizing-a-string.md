@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Stor bokstav på en streng"
-simple_title:         "Stor bokstav på en streng"
+title:                "Store bokstaver i en streng"
+html_title:           "Ruby: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,36 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å ha en grundig forståelse av grunnleggende programmeringskonsepter er viktig for å kunne lage effektive og feilfrie koder. En av disse konseptene er å kunne endre størrelsen på tekststrenger på en enkel måte. Capitalizing, eller å gjøre første bokstav i et ord stor, er en vanlig oppgave i mange programmeringsprosjekter. Ved å lære dette enkle konseptet, kan du gjøre koden din mer lesbar og effektiv.
+Å endre en streng, eller tekst, til store bokstaver kan være nyttig for å gjøre den mer leselig eller for å følge standard konvensjoner for tekstformatering.
 
-## Hvordan
+## Slik gjør du det
 
-Å endre størrelsen på en tekststreng i Ruby er veldig enkelt. Alt du trenger å gjøre er å bruke funksjonen '.capitalize', som gjør første bokstav i en tekststreng stor. Du kan også bruke funksjonen '.capitalize!' som endrer tekststrengens størrelse permanent.
+For å gjøre dette i Ruby, kan du bruke metoden `upcase` for å konvertere en streng til store bokstaver. Her er et eksempel:
 
-La oss se på et eksempel:
-
-```Ruby
-tekststreng = "hei på deg"
-puts tekststreng.capitalize
+```ruby
+tekst = "dette er en test"
+puts tekst.upcase
 ```
-Output: "Hei på deg"
+Dette vil gi følgende utput:
 
-Du kan også gjøre dette med flere ord i en tekststreng:
-
-```Ruby
-tekststreng = "velkommen til ruby-programmering"
-puts tekststreng.capitalize
+```ruby
+DETTE ER EN TEST
 ```
-Output: "Velkommen til ruby-programmering"
 
-## Deep Dive
+## Dypdykk
 
-Å forstå hvordan '.capitalize' funksjonen fungerer, kan være nyttig når du har med brukergenerert input å gjøre. For eksempel, hvis du vil at den første bokstaven i brukerens navn skal være stor uansett hvordan de skriver det inn, kan du bruke denne funksjonen for å formatere det riktig.
+I Ruby finnes det også en annen metode for å endre en streng til store bokstaver kalt `capitalize`. Denne metoden vil bytte ut den første bokstaven i strengen med en stor bokstav og gjøre resten av teksten til små bokstaver. Se eksemplet under:
 
-Det er også viktig å huske på at størrelsen på tekststrenger er casesensitive. Dette betyr at funksjonen bare vil gjøre den første bokstaven stor og ikke forandre på andre bokstaver i strengen.
+```ruby
+tekst = "en annen test"
+puts tekst.capitalize
+```
+Dette vil gi følgende utput:
+
+```ruby
+En annen test
+```
+
+Det finnes også metoder for å bare endre første bokstaven i en streng til stor bokstav (`capitalize!`) eller for å gjøre hele strengen til små bokstaver (`downcase`). Å bruke disse metodene kan være nyttig for å formatere tekst på en konsistent måte i koden din.
 
 ## Se også
 
-- [Ruby string documentation](https://ruby-doc.org/core/String.html)
-- [Ruby string methods](https://www.rubyguides.com/2018/10/ruby-string-methods/)
-- [Ruby string casing](http://ruby-for-beginners.rubymonstas.org/objects/string.html#casing)
+- [Ruby dokumentasjon for string metoder](https://ruby-doc.org/core-2.7.1/String.html)

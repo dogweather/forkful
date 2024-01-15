@@ -1,6 +1,7 @@
 ---
-title:                "Go: Jobbe med yaml"
-simple_title:         "Jobbe med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Go: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -11,83 +12,115 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-YAML er et populært datatypingsformat for programmering, spesielt for konfigurasjonsfiler. Det er enkelt å lese og skrive, og kan brukes i en rekke ulike programmeringsspråk. Å lære å arbeide med YAML kan være svært nyttig for å gjøre programkodingen din mer effektiv og funksjonell.
+Hvorfor bry seg med YAML når man programmerer i Go? Vel, YAML er et strukturert og lettleselig dataformat som brukes for å konfigurere og definere data. Dette gjør det ideelt for å håndtere konfigurasjonsfiler i Go-applikasjoner.
 
 ## Hvordan
 
-For å arbeide med YAML i Go, trenger du å importere "gopkg.in/yaml.v2" pakken. Her er et eksempel på hvordan du kan lese og skrive en YAML-fil i Go:
+For å begynne å jobbe med YAML i Go, må du først importere "gopkg.in/yaml.v2" pakken. Deretter kan du bruke "yaml.Marshal()" funksjonen for å konvertere et Go-objekt til YAML-format. Her er et eksempel på hvordan du kan konvertere et enkelt tall til YAML og skrive det ut:
 
 ```Go
 package main
 
-// Importer den nødvendige pakken
 import (
-    "fmt"
-    "log"
+	"fmt"
 
-    "gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v2"
 )
 
-// Definer en struct for YAML-dataen
-type Person struct {
-    Name string `yaml:"name"`
-    Age  int    `yaml:"age"`
-}
-
 func main() {
-    // Åpne YAML-filen
-    file, err := ioutil.ReadFile("person.yaml")
-    if err != nil {
-        log.Fatalf("Feil ved åpning av YAML-fil: %v", err)
-    }
-
-    // Lag et tomt Person-objekt
-    p := &Person{}
-
-    // Unmarshal YAML-dataen inn i Person-objektet
-    err = yaml.Unmarshal(file, p)
-    if err != nil {
-        log.Fatalf("Feil ved unmarshaling av YAML: %v", err)
-    }
-
-    // Skriv ut dataen
-    fmt.Printf("Navn: %s\nAlder: %d", p.Name, p.Age)
-
-    // Lag en ny YAML-fil med oppdaterte data
-    p.Age = 30
-    newFile, err := yaml.Marshal(p)
-    if err != nil {
-        log.Fatalf("Feil ved marshaling av YAML: %v", err)
-    }
-
-    // Skriv YAML-dataen til den nye filen
-    err = ioutil.WriteFile("newperson.yaml", newFile, 0644)
-    if err != nil {
-        log.Fatalf("Feil ved skriving av YAML-fil: %v", err)
-    }
+	num := 42
+	yml, err := yaml.Marshal(num)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(yml))
 }
 ```
 
 Output:
 
-```YAML
-Name: John
-Age: 30
+```
+42
+```
+
+Du kan også konvertere et komplekst Go-objekt som inneholder en struct til YAML ved å bruke "yaml.Marshal()" funksjonen. Her er et eksempel på en struct som inneholder informasjon om en person og hvordan du kan konvertere den til YAML:
+
+```Go
+type Person struct {
+	Name    string
+	Age     int
+	Country string
+}
+
+func main() {
+	p := Person{
+		Name:    "Maria",
+		Age:     27,
+		Country: "Norway",
+	}
+	yml, err := yaml.Marshal(p)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(yml))
+}
+```
+
+Output:
+
+```
+name: Maria
+age: 27
+country: Norway
 ```
 
 ## Deep Dive
 
-YAML, som står for "YAML Ain't Markup Language", ble utviklet for å være et enkelt og leselig datatypingsformat. Det bruker en innrykk- og syntaksbasert struktur som er enkelt å forstå, selv for de som ikke er programmerere. Det støtter også kommentarer, noe som kan være nyttig for å gi forklaringer eller dokumentasjon i YAML-filene.
+Når du jobber med YAML i Go, kan det være nyttig å vite noen av de viktigste strukturene og funksjonene som brukes. En YAML-struktur består av nøkler og verdier, og kan være en liste eller et map. Disse strukturene kan også være innebygd i hverandre for å lage mer kompleks datastruktur.
 
-I Go, kan du bruke `yaml:",omitempty"` etter struct tagger for å unngå å skrive ut zero-value-felt. Dette kan være nyttig for å redusere størrelsen på YAML-filer og forbedre lesbarheten.
+I Go, kan du bruke "map[string]interface{}" for å representere et map, og "[]interface{}" for å representere en liste. "interface{}" betyr at datatypen kan være hva som helst, noe som gjør det fleksibelt for å håndtere forskjellige typer data.
 
-I tillegg kan du bruke `yaml:"-"` for å utelate et felt fra å bli unmarshalled eller marshalled. Dette kan være nyttig hvis du har et felt som ikke er relevant for YAML, men som du trenger å ha i structen din for andre formål.
+En annen nyttig funksjon når du jobber med YAML er "yaml.Unmarshal()". Denne funksjonen lar deg konvertere YAML til et Go-objekt. Her er et eksempel på hvordan du kan bruke "yaml.Unmarshal()" for å konvertere YAML til en struktur og deretter få tilgang til dataene i strukturen:
 
-Du kan også bruke innebygde strukturer i Go, som `map[string]interface{}`, for å unmarshalle YAML-dataen inn i mer komplekse strukturer.
+```Go
+type Car struct {
+	Brand  string
+	Model  string
+	Year   int
+	Engine struct {
+		Type       string
+		Horsepower int
+	}
+}
 
-For å lære mer om YAML i Go, kan du sjekke ut dokumentasjonen for "gopkg.in/yaml.v2" pakken og lese gjennom eksemplene på bruk.
+func main() {
+	yml := `
+brand: BMW
+model: M5
+year: 2021
+engine:
+  type: V8
+  horsepower: 600
+`
+	c := Car{}
+	err := yaml.Unmarshal([]byte(yml), &c)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(c.Brand)
+	fmt.Println(c.Engine.Type)
+}
+```
+
+Output:
+
+```
+BMW
+V8
+```
 
 ## Se også
 
-- [Dokumentasjon for gopkg.in/yaml.v2 pakken](https://pkg.go.dev/gopkg.in/yaml.v2)
-- [YAML-spesifikasjonen](https://yaml.org/spec/)
+- [YAML Offisiell Hjemmeside] (https://yaml.org/)
+- [Go Dokumentasjon for "gopkg.in/yaml.v2" pakken] (https://pkg.go.dev/gopkg.in/yaml.v2)
+- [Go YAML-parser sammenligning] (https://medium.com/@shijuvar/go-yaml-parsers-comparison-39c0eeb6ac12)

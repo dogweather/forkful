@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Elixir recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,50 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Creating temporary files is a common task in programming, and Elixir offers a straightforward and efficient way to handle this task. By creating temporary files, developers can store and manipulate data without having to create permanent files or disrupt existing files in their system. This can be especially useful for tasks like file downloads, caching data, or testing purposes.
+Creating temporary files can be useful for various reasons in programming. For example, temporary files can be used to store data during runtime, creating backups, or for testing purposes.
 
 ## How To
 
-To create a temporary file in Elixir, we can use the `File.tempfile/2` function. This function takes in two arguments: a name for the temporary file and the directory where the file will be created. Let's look at an example of how we can use this function:
+Creating a temporary file in Elixir is a simple process. First, we need to require the "Tempfile" module.
 
-```
-Elixir
-
-{:ok, file} = File.tempfile("my_temp_file", "/tmp")
+```Elixir
+require Tempfile
 ```
 
-In this example, we are creating a temporary file named "my_temp_file" in the "/tmp" directory. The result of this function is a tuple with the first element being `:ok` and the second element being the file path of the created temporary file.
+Next, we can use the `Tempfile.open/1` function to create a new temporary file. This function takes in a prefix for the temporary file name.
 
-To write data to the temporary file, we can use the `File.write/2` function:
-
-```
-Elixir
-
-File.write(file, "This is a temporary file.")
+```Elixir
+temp_file = Tempfile.open("my_temp_file")
 ```
 
-This will write the string "This is a temporary file." to our temporary file. We can then use the functions in the `File` module to read and manipulate data in our temporary file as needed.
+We can then write data to this file using the `write/1` function.
 
-Once we are finished using the temporary file, we can delete it using the `File.rm/2` function:
-
-```
-Elixir
-
-File.rm(file)
+```Elixir
+temp_file |> IO.write("This is a temporary file.")
 ```
 
-This will permanently delete the temporary file from our system.
+To read from the temporary file, we can use the `read/1` function.
 
-## Deep Dive 
+```Elixir
+temp_file |> IO.read()
+```
 
-Behind the scenes, the `File.tempfile/2` function creates a unique name for the temporary file by appending a random string to the given file name. This ensures that each time we create a temporary file, it will have a unique name and will not overwrite any existing files.
+Once we are done using the temporary file, we can delete it using the `unlink/1` function.
 
-It is also worth noting that we can specify a different directory for our temporary file if needed. The `File.tempfile/2` function will check if the given directory exists and has proper permissions before creating the temporary file.
+```Elixir
+Tempfile.unlink(temp_file)
+```
 
-## See Also 
+## Deep Dive
 
-- Official Elixir Documentation for `File` module: https://hexdocs.pm/elixir/File.html
-- Elixir School's tutorial on working with temporary files: https://elixirschool.com/en/lessons/basics/files/#temporary-files
-- Phoenix Framework's blog post on creating temporary files in Elixir: https://phoenixframework.org/blog/serving-files-with-plug
+When a temporary file is created, it is given a unique name and is stored in a temporary directory on the system. The location of this directory may vary depending on the operating system.
+
+If we want to specify a different directory for the temporary file, we can use the `open/2` function instead of `open/1`. This function takes in a second argument which is the directory for the temporary file.
+
+```Elixir
+temp_file = Tempfile.open("my_temp_file", "/path/to/directory")
+```
+
+It is important to note that temporary files are automatically deleted when the process ends. However, if we want to delete the file before the process ends, we can use the `unlink/1` function as shown in the previous section.
+
+## See Also
+
+- [Documentation for Tempfile module](https://hexdocs.pm/elixir/Tempfile.html)
+- [Elixir file IO tutorial on Temporary Files](https://elixir-lang.org/getting-started/file-operations.html#temporary-files)

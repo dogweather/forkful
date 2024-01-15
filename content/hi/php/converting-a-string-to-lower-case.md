@@ -1,6 +1,7 @@
 ---
-title:                "PHP: स्ट्रिंग को लोअर केस में बदलें"
-simple_title:         "स्ट्रिंग को लोअर केस में बदलें"
+title:                "अलगाव को निचले अनुमति में परिवर्तित करना"
+html_title:           "PHP: अलगाव को निचले अनुमति में परिवर्तित करना"
+simple_title:         "अलगाव को निचले अनुमति में परिवर्तित करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-मैं आपको हिंदी में PHP programming के बारे में एक बहुत ही मनभावनी ब्लॉग पोस्ट लिख रहा हूं। इस लेख में हम अपनी बात पीएचपी में स्ट्रिंग को lower case में कैसे convert करते हैं, इस विषय पर चर्चा करेंगे। यह प्रकार का कन्वर्शन कहो जो बहुत कठिन नहीं है परन्तु कभी-कभी हमारे कोड में अपने स्ट्रिंग्स को lower case में फॉर्मेट करने की आवश्यकता हो सकती है। अब हम इस लेख में आगे बढ़ते हैं।
+## Kyun
 
-## Why
+Kisi bhi programming language mein, string manipulation ek bahut important aspect hai. String ka manipulation karne ke liye, hume kai alag alag functions aur methods ka use karna padhta hai. Ek common scenario hai jahan hume ek string ko lower case mein convert karna hai. Iska karan ho sakta hai ke hume input string mein se case sensitivity ko hatakar, usse compare karna ho ya phir humare code mein lower case strings ka use hona ho. Is article mein hum dekhenge PHP mein string ko lower case mein convert kaise karte hai aur iska kya faayda ho sakta hai.
 
-स्ट्रिंग को lower case में convert करना PHP में बहुत ही उपयोगी हो सकता है। इससे हमारे कोड में स्ट्रिंग्स को साफ़ और सुव्यवस्थित बनाने में मदद मिलती है। स्ट्रिंग्स को lower case में कन्वर्ट करना डेवलपर्स के लिए बहुत ही आसान और उपयोगी हो सकता है।
+## Kaise Kare
 
-## How To
-
-जैसा कि मैंने पहले कहा है, स्ट्रिंग को lower case में कन्वर्ट करना आसान हो सकता है। नीचे दिये गये कोड ब्लॉक में हम इस तरह से कन्वर्ट कर सकते हैं:
+String ko lower case mein convert karne ka sabse easy aur direct tareeka hai PHP mein `strtolower()` function ka use karna. Is function ke andar hume bas woh string deni hoti hai jise hum lower case mein convert karna chahte hai. Iske baad function hume ek naya string return karta hai jise lower case mein convert kiya jaata hai.
 
 ```PHP
-// स्ट्रिंग से नए स्ट्रिंग को नीचे दिखाए गए case में create करें
-$string = "Hello World";
-$new_string = strtolower($string);
-
-echo $new_string; // output: hello world
+$input = "HELLO WORLD";
+$output = strtolower($input);
+echo $output;
 ```
 
-उम्मीद है कि ऊपर दिए गए कोड आपको स्ट्रिंग को lower case में convert करने की प्रक्रिया समझाने में मदद करेगा। आप इसका उपयोग कर अपने कोड में स्ट्रिंग को lower case में फॉर्मेट कर सकते हैं।
+Output: hello world
+
+Is coding example mein humne `strtolower()` function ka use kiya hai ek input string `HELLO WORLD` ko lower case mein convert karne ke liye. Isse hume `hello world` output mila hai.
 
 ## Deep Dive
 
-स्ट्रिंग को lower case में कन्वर्ट करने की प्रक्रिया बहुत ही सरल हो सकती है। PHP में हम प्रीडिफाइंड फंक्शन `strtolower()` का उपयोग कर सकत
+PHP mein string ko lower case mein convert karne ke liye hume `mb_strtolower()` function ka bhi use kar sakte hai. Yeh function UTF-8 characters ko bhi sahi tarah se handle karta hai. Is function ke use ka syntax `mb_strtolower(string $string [, string $encoding = null])` hai.
+
+Kuch aur methods mein string ko lower case mein convert karne ke liye `strtoupper()` aur `mb_convert_case()` ka use kiya jaata hai. Inme se `strtoupper()` function upper case mein convert karta hai ek string ko aur `mb_convert_case()` function upper ya lower case mein convert karne ke liye `MB_CASE_UPPER` aur `MB_CASE_LOWER` constant ka use karta hai.
+
+## See Also
+
+- [strtolower() function documentation](https://www.php.net/manual/en/function.strtolower.php)
+- [mb_strtolower() function documentation](https://www.php.net/manual/en/function.mb-strtolower.php)
+- [strtoupper() function documentation](https://www.php.net/manual/en/function.strtoupper.php)
+- [mb_convert_case() function documentation](https://www.php.net/manual/en/function.mb-convert-case.php)

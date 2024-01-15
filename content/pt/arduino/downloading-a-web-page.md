@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Fazendo o download de uma página da web"
-simple_title:         "Fazendo o download de uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Arduino: Baixando uma página da web"
+simple_title:         "Baixando uma página da web"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,67 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que baixar uma página da web utilizando Arduino?
+## Por que
 
-Baixar uma página da web utilizando Arduino pode ser útil para projetos que necessitam de acesso a informações disponíveis online, como dados meteorológicos, notícias, preços de ações, entre outros. Além disso, pode ser uma forma de adicionar funcionalidades de internet aos seus projetos.
+Se você deseja integrar seus projetos em Arduino com a web, uma das maneiras de fazer isso é baixando uma página da web diretamente para seu dispositivo. Com o uso da programação, é possível ter acesso a informações e conteúdos da internet, adicionando uma camada de conectividade ao seu projeto.
 
-##Como baixar uma página da web utilizando Arduino
+## Como fazer
 
-Para baixar uma página da web utilizando Arduino, é necessário utilizar a biblioteca "ArduinoHttpClient". Para isso, siga os seguintes passos:
+```Arduino
+#include <Ethernet.h> //inclui a biblioteca Ethernet para a comunicação com a internet
 
-1. Abra a IDE do Arduino e vá em "Sketch > Incluir Biblioteca > Gerenciar Bibliotecas"
-2. Na caixa de pesquisa, digite "ArduinoHttpClient"
-3. Selecione a biblioteca "ArduinoHttpClient" e clique em "Instalar"
-4. Aguarde até que a biblioteca seja instalada
-5. Reinicie a IDE do Arduino para que a biblioteca seja carregada corretamente
+//define o tamanho máximo da página a ser baixada
+#define TAMANHO_MAXIMO 1500
 
-Após a instalação, você pode utilizar o seguinte código de exemplo para baixar uma página da web e exibir seu conteúdo no monitor serial:
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; //endereço MAC do dispositivo
+IPAddress ip(192,168,1,10); //endereço IP do dispositivo
+EthernetClient cliente; //define o cliente Ethernet
 
-```
-#include <Ethernet.h>
-#include <EthernetHttpClient.h>
-
-// Definir nome do servidor e caminho do recurso a ser baixado
-const char server[] = "www.example.com";
-const char resource[] = "/";
- 
-// Definir uma conexão Ethernet
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192, 168, 1, 10); // Insira o IP do seu Arduino
-EthernetClient client;
-HttpClient http(client, server, 80);
- 
 void setup() {
-    // Inicializar conexão Ethernet
-    Ethernet.begin(mac, ip);
+  Ethernet.begin(mac, ip); //inicializa a conexão Ethernet
+  Serial.begin(9600); //inicializa a comunicação serial
+  delay(1000); //aguarda um segundo para que o dispositivo se conecte à rede
 }
 
 void loop() {
-    // Fazer requisição GET
-    http.get(resource);
-     
-    // Verificar status da resposta
-    int statusCode = http.responseStatusCode();
-    Serial.println("Status da resposta: " + statusCode);
- 
-    // Ler conteúdo da resposta e imprimir no monitor serial
-    String response = http.responseBody();
-    Serial.print("Conteúdo da resposta: ");
-    Serial.println(response);
-     
-    // Aguardar alguns segundos até a próxima requisição
-    delay(5000);
+  char servidor[] = "nomedosite.com"; //endereço do servidor do site a ser baixado
+  if (cliente.connect(servidor, 80)) { //conecta com o servidor na porta 80
+    cliente.println("GET /pagina.html HTTP/1.1"); //faz a requisição da página
+    cliente.println("Host: nomedosite.com"); //especifica o host
+    cliente.println("Connection: close"); //encerra a conexão após a requisição
+    cliente.println(); //linha vazia necessária para finalizar o cabeçalho
+  }
+  
+  //lê e imprime a resposta do servidor
+  while (cliente.available()) {
+    char c = cliente.read();
+    Serial.print(c);
+  }
+  
+  //encerra a conexão após receber a resposta completa
+  if (!cliente.connected()) {
+    Serial.println();
+    Serial.println("Conexão encerrada.");
+    cliente.stop();
+  }
+  
+  //aguarda 10 segundos para realizar a próxima requisição
+  delay(10000); 
 }
 ```
 
-##Aprofundando no assunto
+## Aprofundando
 
-Ao utilizar a biblioteca "ArduinoHttpClient", é possível configurar outras opções de requisição, como o método HTTP (GET, POST, PUT, DELETE), adicionar cabeçalhos e parâmetros à requisição, além de realizar conexões seguras através do protocolo HTTPS.
+Além do exemplo apresentado, também é possível realizar o download de páginas utilizando HTTP Requests, que permitem fazer requisições específicas como POST e PUT. Outra alternativa é utilizar a biblioteca WiFiNINA, que permite a conexão com a internet utilizando uma placa WiFi integrada ao dispositivo. É importante lembrar que para realizar o download de páginas, é necessário ter uma conexão estável e compatível com protocolos de internet.
 
-Além disso, é importante ressaltar que a biblioteca "ArduinoHttpClient" é baseada na biblioteca "HttpClient" do Apache, utilizada amplamente para requisições web. Portanto, é possível encontrar mais informações sobre suas funcionalidades e como utilizá-las em projetos Arduino.
+## Veja também
 
-##Veja também
-
-- [Página da documentação oficial da biblioteca "ArduinoHttpClient"](https://github.com/amcewen/HttpClient)
-- [Tutorial sobre como utilizar a biblioteca "ArduinoHttpClient"](https://randomnerdtutorials.com/arduino-http-get-request/)
-- [Outras opções de bibliotecas HTTP para Arduino](https://www.circuitsathome.com/mcu/50/arduino-ethernet-http-get-response-without-client-library/)
+- [Arduino - Biblioteca Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
+- [Arduino - HTTP Request](https://www.arduino.cc/en/Reference/HTTPClient)
+- [Arduino - Biblioteca WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA)

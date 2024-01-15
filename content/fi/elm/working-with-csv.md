@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Työskentely csv:n kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "Elm: Työskentely csv:n kanssa"
 simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,52 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Elm on ohjelmointikieli, joka on tullut suosituksi sen yksinkertaisuuden ja vahvan tyypityksen ansiosta. Sen avulla voit luoda kauniita ja toimivia web-sovelluksia helposti ja tehokkaasti. CSV-tiedostot ovat yleinen tapa tallentaa ja jakaa taulukkomuotoista dataa. Elm tarjoaa kätevän tavan työskennellä CSV-tiedostojen kanssa, mikä voi säästää aikaa ja vaivaa.
 
-## Kuinka tehdä
-CSV-tiedostojen käsittely Elmillä on helppoa ja vaivatonta, kiitos Elm CSV -kirjaston. Alla on koodinäyte, joka näyttää, kuinka voit ladata ja käsitellä CSV-tiedoston Elm-sovelluksessa:
+Elm on nykyään yksi suosituimmista ohjelmointikielistä, ja sen yksi vahvuus on sen vaivaton integroitavuus muihin tiedostomuotoihin, kuten CSV-tiedostoihin. CSV-tiedostot ovat yleisiä ja niihin tallennetaan usein suuria määriä tietoa, joten kyky työskennellä niiden kanssa on hyödyllinen taito ohjelmoijalle.
 
-```Elm
-import CSV exposing (load, parse)
-import Http 
-import Json.Decode exposing (decodeString, field, list, string)
+## Miten
 
-type alias Person = 
-    { name : String
-    , age : Int
-    }
-
-personDecoder : Json.Decoder Person
-personDecoder = 
-    Json.Decode.map2 Person
-        (Json.Decode.field "name" Json.Decode.string)
-        (Json.Decode.field "age" Json.Decode.int)
-
-main : Program () 
-main = 
-    Http.get 
-        { url = "example.csv"
-        , expect = Http.expectString 
-            (Decode.map personDecoder 
-            (Csv.parse ";") 
-        }
-```
-
-Yllä oleva koodinäyte lataa CSV-tiedoston nimeltä "example.csv", jossa on puolipisteellä erotetut tiedot. Sen jälkeen se parsii tiedot ja muuntaa ne listaksi henkilöitä, jotka sisältävät nimen ja iän. Voit käsitellä tätä tietoa haluamallasi tavalla, esimerkiksi näyttämällä sen käyttäjälle.
+Elm tarjoaa meille vahvan CSV-paketin, joka helpottaa CSV-tiedostojen lukemista ja kirjoittamista. Aloittaaksesi, sinun tulee ensin asentaa elm-csv-paketti projektisi riippuvuuksiksi. Voit tehdä tämän ajamalla seuraavan komennon komentokehotteessa:
 
 ```
-lista henkilöitä : 
-[ 
-    { name = "Matti", age = 25 } 
-    { name = "Hanna", age = 32 }
-    { name = "Teemu", age = 19 }
-] 
+elm install arowM/elm-csv
 ```
 
-## Syvennystä
-Elm CSV -kirjasto tarjoaa myös muita toimintoja, kuten CSV-tiedostojen tallentamisen ja muuntamisen JSON-muotoon. Voit tutustua tarkemmin kirjaston dokumentaatioon ja löytää muita hyödyllisiä toimintoja CSV-tiedostojen käsittelyyn.
+Sitten voit aloittaa työskentelyn seuraavalla yksinkertaisella koodilla, joka lukee CSV-tiedoston ja tallentaa sen listaksi:
 
-### Katso myös
-- [Elm CSV kirjaston dokumentaatio](https://package.elm-lang.org/packages/NoRedInk/elm-csv/latest/)
-- [Elm ohjelmointikielen verkkosivut](https://elm-lang.org/)
-- [JSON-muoto](https://json.org/)
+```
+import Csv
+
+Csv.decode false "," "sample.csv"
+    |> Result.toMaybe
+    |> List.map (\row -> row.member)
+```
+
+Tässä esimerkissä käytämme `Csv.decode` -funktiota, joka ottaa parametreina delimiterin, joka erottaa tiedostossa sarakkeet, sekä tiedoston nimen.
+
+Voit myös halutessasi kirjoittaa tietoja CSV-tiedostoon käyttäen `Csv.Encode` -funktiota. Esimerkiksi:
+
+```
+import Csv
+
+sampleData =
+  [ [ "Nimi", "Ikä", "Harrastukset" ]
+  , [ "Leena", "27", "Maalaaminen, valokuvaus" ]
+  , [ "Matti", "31", "Tennis, kirjoittaminen" ]
+  ]
+
+Csv.encode sampleData
+    |> List.map (Csv.toText ",")
+    |> List.concat |> String.join "\n"
+    |> File.write "sample.csv"
+```
+
+## Syvällinen sukellus
+
+Elm tarjoaa meille myös mahdollisuuden käsitellä CSV-tiedostojen käsittelyä virheiden varalta. Voit lisätä `Csv` -pakettiin parametrin `True`, joka ilmoittaa, että tiedostosta on odotettavissa virheitä. Tämä auttaa varmistamaan, että ohjelmasi toimii luotettavasti myös silloin, jos tiedostossa on virheitä.
+
+Voit myös lisätä CSV-tiedostojen muokkaamiseen muita toimintoja, kuten sarakkeiden lisäämistä tai poistamista, `List` - ja `Maybe` -funktioita käyttäen. Voit löytää lisää tietoa elm-csv-paketin dokumentaatiosta.
+
+## Katso myös
+
+- [elm-csv-paketin dokumentaatio](https://package.elm-lang.org/packages/arowM/elm-csv/latest/)
+- [Virallinen Elm-sivusto](https://elm-lang.org/)
+- [Elm-yhteisön foorumi](https://discourse.elm-lang.org/)

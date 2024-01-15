@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "Elixir recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,34 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're new to Elixir programming, you might be wondering why anyone would want to write a text file. Well, there are many reasons to do so - from storing configuration settings to creating log files for debugging purposes. Plus, understanding how to write a text file is a handy skill to have in your programming toolkit.
+Writing a text file is a common task in programming, and it serves multiple purposes such as storing data, creating configurations, and generating reports. In Elixir, writing a text file can be easily accomplished with the help of built-in modules and functions.
 
 ## How To
 
-Writing a text file in Elixir is a straightforward process. First, we need to define the name and path of our file using the `File.open/2` function. Then, we can use the `IO.write/2` function to write our desired text into the file. Let's see an example:
+To write a text file in Elixir, we can use the `File.write/3` function. It takes three arguments: the file path, the data to be written, and the mode in which the file should be opened.
 
 ```Elixir
-file = File.open("example.txt", [:write])
-IO.write(file, "This is a sample text.")
-File.close(file)
+filename = "sample.txt"
+data = "This is a sample text file."
+File.write(filename, data, [:write])
 ```
 
-In the code above, we first open a file named "example.txt" with the `File.open` function. The second argument, `:write`, specifies that we want to write to the file. Next, we use the `IO.write` function to actually write the text we want into the file. Finally, we close the file with the `File.close` function.
+In the above example, we have created a new file called "sample.txt" and written the text "This is a sample text file" to it. The file mode `[:write]` indicates that if the file already exists, its contents will be overwritten. If we want to append data to an existing file, we can use the mode `[:append]` instead.
 
-Now, if we open the "example.txt" file, we should see the text "This is a sample text." written inside. Easy, right?
+We can also use the `IO.write/2` function to write data to a file without explicitly opening it. This function takes two arguments: the data to be written and the file path.
+
+```Elixir
+data = "This data will be written to sample.txt."
+IO.write(data, "sample.txt")
+```
+
+The above code will append the data to the end of the file if it already exists. To overwrite the existing file, we can use the `IO.stream!/3` function which takes three arguments: the data to be written, the mode, and the file path. 
+
+```Elixir
+data = "This data will overwrite the existing file."
+IO.stream!(data, [:write], "sample.txt")
+```
 
 ## Deep Dive
 
-If you're interested in learning more about writing text files in Elixir, it's important to understand that there are various options and functions available to customize your file writing experience. For example, you can use `:append` instead of `:write` in the `File.open` function to append text to a file that already exists. Additionally, the `IO.write` function has options for specifying character encoding and line endings.
+The `File.write/3` function uses the `File` module which provides various functions for working with files. It is important to note that the file path can be either an absolute path or a relative path, and if a relative path is given, it will be relative to the current working directory.
 
-Furthermore, it's important to remember to properly handle errors when writing a text file. This can be done using the `File.write/3` function, which returns `{:ok, bytes_written}` if the file was successfully written, or `{:error, reason}` if there was an error.
+To create nested directories and files, we can use the `Path.expand/2` function for constructing the file path and the `File.mkdir_p/1` function for creating directories recursively.
+
+```Elixir
+path = Path.expand(["data", "reports.txt"], ".")
+File.mkdir_p(Path.dirname(path)) # creates the "data" directory if it doesn't exist
+File.write(path, "This is my report.")
+```
+
+Besides writing data to a file, we can also use the `File.copy/2` function to copy a file or the `File.rename/2` function to rename a file.
 
 ## See Also
 
-To learn more about writing text files in Elixir, check out the following resources:
-
-- [Elixir File Module Documentation](https://hexdocs.pm/elixir/File.html)
-- [Elixir IO Module Documentation](https://hexdocs.pm/elixir/IO.html)
-- [Elixir File and Path Manipulation - A Quick Guide](https://medium.com/@brucepomeroy/elixir-file-and-path-manipulation-a-quick-guide-f48d36c94d4c)
-
-Happy coding!
+* Official Elixir documentation for File module - https://hexdocs.pm/elixir/File.html
+* ElixirSchool tutorial on working with files - https://elixirschool.com/en/lessons/advanced/files/
+* ElixirForum thread on writing to a file - https://elixirforum.com/t/write-to-a-file-in-elixir/2645/2

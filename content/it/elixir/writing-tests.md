@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Scrivere test"
+title:                "Scrivere test"
+html_title:           "Elixir: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test?
+Scrivere test è fondamentale per garantire che il codice che stiamo sviluppando sia robusto e funzionante. I test ci permettono di individuare eventuali errori o bug nel codice in modo tempestivo, aumentando la qualità del nostro prodotto finale.
 
-Scrivere test è un aspetto importante della programmazione in Elixir. I test ci permettono di verificare che il nostro codice funzioni correttamente e ci aiutano a trovare eventuali bug prima che essi possano causare problemi in produzione. Inoltre, i test ci danno una maggiore fiducia nel nostro codice e ci permettono di effettuare modifiche in modo più sicuro.
-
-## Come fare
-
-Per scrivere test in Elixir, dobbiamo utilizzare il modulo `ExUnit` che fa parte della libreria standard della linguaggio. Possiamo definire una funzione di test utilizzando l'attributo `test` e fornendo una descrizione dell'esito atteso. Ad esempio:
+## Come scrivere test in Elixir
+Scrivere test in Elixir è un processo semplice e intuitivo. Utilizzando il modulo `ExUnit`, possiamo definire una suite di test utilizzando vari metodi come `assert`, `refute` e `match`, che ci consentono di verificare le nostre aspettative sulle funzioni che stiamo testando.
 
 ```Elixir
-test "la somma di 2 e 2 dovrebbe essere 4" do
-  assert 2 + 2 == 4
+defmodule TestCalculator do
+  use ExUnit.Case
+  
+  # Definiamo un test case per la funzione sum, che dovrebbe sommare i due numeri dati
+  test "sum" do
+    result = Calculator.sum(2, 3)
+    assert result == 5
+  end
 end
 ```
 
-Possiamo eseguire i nostri test utilizzando il comando `mix test` dalla radice del nostro progetto. Se tutti i test passano, dovremmo ottenere un output simile a questo:
-
-```
-ExUnit.run
-.
-.
-
-Finished in 0.04 seconds
-2 tests, 0 failures
-```
-
-Dobbiamo assicurarci anche di testare i casi di errore, per esempio con l'attributo `test` possiamo fornire una descrizione del caso di errore atteso. Ad esempio:
+In questo esempio, stiamo verificando se la funzione `Calculator.sum` restituisce il valore corretto quando gli passiamo i parametri 2 e 3. Oltre a testare la funzione, possiamo anche testare il comportamento in caso di errori o eccezioni:
 
 ```Elixir
-test "la radice quadrata di -1 dovrebbe dare un errore" do
-  assert raises ArithmeticError, fn -> :math.sqrt(-1) end
+# Testiamo la funzione divide per verificare se gestisce correttamente la divisione per 0
+test "divide per 0" do
+  assert_raise ZeroDivisionError, fn -> Calculator.divide(5, 0) end
 end
 ```
 
-## Approfondimenti
+Una volta definiti tutti i nostri test, possiamo eseguirli utilizzando il comando `mix test`. Questo ci fornirà un report dei test passati e di quelli falliti, con dettagli sulle asserzioni che non sono andate a buon fine.
 
-Scrivere test di unità è solo una parte dei test disponibili in Elixir. Possiamo anche scrivere test di integrazione utilizzando il modulo `Phoenix.ConnTest` per testare la nostra applicazione web. Possiamo anche utilizzare `ExUnit` per testare il nostro codice asincrono e i processi paralleli.
+## Approfondimento sulla scrittura dei test
+In aggiunta alle asserzioni standard, possiamo anche utilizzare altre utili funzioni come `assert_receive`, `assert_raise` e `assert_raise_message` per testare il comportamento di funzioni che interagiscono con altri processi o lanciano eccezioni specifiche. Inoltre, possiamo utilizzare anche il modulo `ExUnit.CaptureIO` per testare l'output di funzioni che stampino sulla console.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Guida alla programmazione in Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Tutorial su come scrivere test in Elixir](https://pragmaticstudio.com/tutorials/writing-elixir-tests)
+- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [TDD - Test Driven Development](https://www.vervesearch.com/blog/tdd-test-driven-development/)
+- [Unit Testing in Elixir](https://semaphoreci.com/community/tutorials/unit-testing-in-elixir)

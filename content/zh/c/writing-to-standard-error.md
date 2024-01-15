@@ -1,6 +1,7 @@
 ---
-title:                "C: 向标准错误写入"
-simple_title:         "向标准错误写入"
+title:                "标准错误写作"
+html_title:           "C: 标准错误写作"
+simple_title:         "标准错误写作"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么会写到标准错误
+# 为什么
 
-在编程中，我们经常需要输出信息到控制台来帮助我们了解程序的运行情况。但是有时候，我们需要更详细的信息，比如错误信息，这时候就需要将信息输出到标准错误。这能帮助我们更快地定位和解决程序中的错误。
+为什么要把信息写入到标准错误（standard error）中？当程序发生错误时，标准错误是一个非常有用的工具，它可以帮助我们定位错误的源头并进行调试。因此，学习如何正确地写入到标准错误是一项重要的编码技巧。
 
-## 如何写到标准错误
+# 如何做
 
-要将信息写到标准错误，我们需要使用标准库函数`fprintf()`，它的参数包括文件指针和要输出的信息。下面是一个简单的例子：
+要把信息写入到标准错误中，我们需要使用 `stderr` 函数，并且在需要写入错误信息的地方添加 `fprintf(stderr, "错误信息");` 的代码。下面是一个示例：
 
-```C
+```
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "这是一条错误信息");
+    // 假设这里发生了一个错误
+    fprintf(stderr, "发生了一个错误，请检查代码！");
+    
     return 0;
 }
 ```
 
-运行上面的代码，我们就可以在控制台看到输出的错误信息`这是一条错误信息`。
+运行程序后，你将在控制台中看到错误信息被打印出来。
 
-## 深入了解写到标准错误
+# 深入了解
 
-标准错误实际上是一个文件指针，即`stderr`。在大多数操作系统中，它默认指向控制台。除了使用`fprintf()`，我们还可以使用`fprintf()`函数的变体`fputs()`来输出字符串到标准错误。在调试程序时，我们可以使用`perror()`函数来输出系统错误信息，它会自动将错误信息和对应的错误码输出到标准错误。
+除了用于调试，写入标准错误还有其他用途。比如，当我们编写一个命令行程序时，可以使用标准错误来打印出程序的用法或帮助信息。此外，我们还可以使用 `stderr` 函数来记录程序的运行日志，以便后续分析和排错。
 
-## 另请参阅
+# 更多学习资源
 
-- [fprintf() 官方文档](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [perror() 官方文档](https://www.cplusplus.com/reference/cstdio/perror/)
+- [C 标准库文档](https://zh.cppreference.com/w/c)
+- [如何在 C 语言中调试程序](https://www.runoob.com/w3cnote/c-debugging-tutorial.html)
+- [标准错误（stderr）的用法](https://www.geeksforgeeks.org/stderr-in-c-and-its-libraries/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Elixir: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,36 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest wielką częścią naszego życia. Często musimy tworzyć aplikacje, które wymagają obliczenia daty w przeszłości lub przyszłości. Dzięki Elixir możemy łatwo wykonać takie obliczenia, co pozwala nam na oszczędność czasu i skupienie się na innych aspektach naszego projektu.
+Kalkulowanie daty w przyszłości lub przeszłości jest częstym wyzwaniem dla programistów. Może to być wymagane przez różne aplikacje, takie jak aplikacje do planowania spotkań lub aplikacje do przypominania o ważnych datach. W dzisiejszym artykule dowiesz się, jak użyć Elixir, aby prostym i skutecznym sposobem przeliczać daty w przyszłości lub przeszłości.
 
 ## Jak to zrobić
 
-Obliczenie daty w przeszłości lub przyszłości w Elixir jest bardzo proste. Wystarczy użyć funkcji `DateTime.add/2` lub `DateTime.subtract/2`, które obliczą nowy datę na podstawie podanej daty oraz liczby dni, tygodni, miesięcy czy lat. W poniższym przykładzie dodamy 5 dni do dzisiejszej daty:
+Aby przeliczyć datę w przyszłości lub przeszłości w Elixirze, musimy skorzystać z biblioteki "Calendar". Ta biblioteka zawiera wiele użytecznych funkcji związanych z datami, w tym funkcję "add" służącą do dodawania lub odejmowania określonej liczby dni od aktualnej daty. Przykładowy kod wyglądałby następująco:
 
-```
-Elixir
-iex> dzis = DateTime.utc_now()
-~U[2020-11-15 10:00:00.000000Z]
-iex> DateTime.add(dzis, 5, :days)
-~U[2020-11-20 10:00:00.000000Z]
-```
+```elixir
+require Calendar
 
-Możemy również użyć funkcji `DateTime.to_string/2` w celu sformatowania daty do czytelniejszej postaci. W poniższym przykładzie zmienimy format daty na "DD/MM/YYYY":
+future_date = Calendar.DateTime.add(Calendar.local_time(), 10, :days)
+past_date = Calendar.DateTime.add(Calendar.local_time(), -5, :days)
 
-```
-Elixir
-iex> DateTime.to_string(dzis, "{0:%d}/{0:%m}/{0:%Y}")
-"15/11/2020"
+IO.puts("Data w przyszłości: #{Calendar.DateTime.to_iso8601(future_date)}")
+IO.puts("Data w przeszłości: #{Calendar.DateTime.to_iso8601(past_date)}")
 ```
 
+Wywołajmy funkcję "add" i przekażmy jej trzy argumenty: bieżącą datę, liczbę dni do dodania lub odjęcia, oraz jednostkę czasu, w której wyrażona jest liczba dni. W powyższym przykładzie, wywołanie funkcji "Calendar.local_time()" zwraca bieżącą datę, a "to_iso8601" służy do sformatowania daty w postaci czytelnej dla człowieka. Wynikiem powyższego kodu będzie:
 
-## Głębszy zanurzenie
+```
+Data w przyszłości: 2021-09-07T18:00:00Z
+Data w przeszłości: 2021-08-23T18:00:00Z
+```
 
-Funkcje odpowiedzialne za obliczanie daty w przeszłości lub przyszłości zostały zaimplementowane w module `DateTime`, który jest częścią standardowej biblioteki Elixir. Warto zauważyć, że funkcje te zwracają nową datę, a nie modyfikują oryginalnej, co jest zgodne z ogólnym założeniem języka Elixir o niemutowalności danych.
+Mamy więc prosty sposób na obliczenie daty w przyszłości lub przeszłości z użyciem Elixira.
 
-Drugim ważnym elementem jest fakt, że Elixir wykorzystuje czas uniwersalny UTC (Coordinated Universal Time), co oznacza, że nie musimy się martwić o strefy czasowe czy zmianę czasu letniego i zimowego.
+## Dogłębne zagłębianie się
 
-## Zobacz również
+W bibliotece "Calendar" istnieje wiele innych funkcji związanych z datami, takich jak "add!" do bezpośredniego modyfikowania daty lub "diff" do obliczania różnicy między dwiema datami. Możesz także użyć funkcji z biblioteki "Timex", która dostarcza jeszcze więcej opcji manipulacji datami w Elixirze.
 
-- [Dokumentacja Elixir - DateTime](https://hexdocs.pm/elixir/DateTime.html)
-- [Książka "Programming Elixir" przez Davida Thomasa i José Valima](https://pragprog.com/titles/elixir/programming-elixir/)
+## Zobacz także
+
+- Dokumentacja Elixir do funkcji "Calendar.add": [https://hexdocs.pm/elixir/Calendar.html#add/3](https://hexdocs.pm/elixir/Calendar.html#add/3)
+- Poradnik Elixira dotyczący manipulacji datami: [https://elixirschool.com/pl/lessons/specifics/ecto/](https://elixirschool.com/pl/lessons/specifics/ecto/)
+- Strona projektu "Timex": [https://github.com/bitwalker/timex](https://github.com/bitwalker/timex)

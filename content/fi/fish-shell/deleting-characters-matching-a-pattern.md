@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Kaavan mukaisten merkkien poistaminen"
+html_title:           "Fish Shell: Kaavan mukaisten merkkien poistaminen"
+simple_title:         "Kaavan mukaisten merkkien poistaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,38 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Yksi yleinen ohjelmoinnin tehtävä on poistaa tietyllä kaavalla vastaavat merkit tekstistä. Tämä voi olla hyödyllistä, kun halutaan nopeasti muokata tai puhdistaa tietoja.
+Kuvitellaan tilanne, jossa haluat poistaa kaikki tiettyä kuviota vastaavat merkit. Tämä voi olla esimerkiksi tarpeellista jos haluat puhdistaa tietoa, joka sisältää turhia tai ei-toivottuja merkkejä. Fish Shell tarjoaa helpon ja tehokkaan tavan tehdä tämä.
 
-## Miten
+## Kuinka se tehdään
 
-Fish Shellilla tämä tehtävä onnistuu helposti käyttämällä `sed`-komentoa yhdessä regex-säännön kanssa. Tässä esimerkki, jossa poistetaan kaikki numerot ja välilyönnit merkkijonosta:
-
-````Fish Shell
-echo "123 is 456 my 789 number" | sed 's/[[:digit:][:space:]]//g'
-````
-
-Tämä tuottaa seuraavan tulosteen:
+Fish Shellilla voit poistaa merkkejä, jotka vastaavat tiettyä kuviota käyttämällä `string_match` komentoa ja `^` merkkiä. Tämä merkki symboloi kaikkia merkkejä, joita haluat poistaa. Alla on yksi esimerkki siitä, kuinka tätä käytetään:
 
 ```
-is my number
+Fish Shell koodi:
+set text "Tämä on teksti, jossa on turhia merkkejä!"
+echo $text
+
+Viimeistä kertaa käyttäen "FISH regexp":
+set text (echo $text | string_match -r '^[oliu].*')
+echo $text
+
+Output:
+Tm vittekj yh turia merekii!
 ```
 
-Vaihtoehtoisesti voit myös käyttää `tr`-komennon avulla poistamaan halutut merkit:
+## Syventymistä
 
-````Fish Shell
-echo "123 is 456 my 789 number" | tr -d '[0-9[:space:]]'
-````
+`string_match` komento tukee myös muita regexp-merkkejä, jotka voit käyttää määrittämään tarkemmin mitkä merkit poistetaan. Esimerkiksi `[a-z]` poistaa kaikki pienet kirjaimet tai `[1-9]` poistaa kaikki numerot. Voit myös yhdistää useampia merkkejä toisiinsa esimerkiksi `[a-z0-9]` poistaa kaikki pienet kirjaimet ja numerot.
 
-Tämä tuottaa saman tuloksen kuin edellinen esimerkki.
-
-## Syvällinen tarkastelu
-
-Tässä syvällisempiä tietoja regex-säännöistä ja niiden käytöstä Fish Shellissa.
-
-Regex on lyhenne sanoista regular expression, eli suomeksi säännöllinen lauseke. Se on merkkijono, joka määrittelee tietyn kaavan, jota vastaavat merkit poistetaan tai korvataan annetusta tekstistä. Fish Shellissa voi käyttää useita erilaisia regex-sääntöjä, joilla voi poistaa erilaisia merkkejä tai merkkiyhdistelmiä, kuten numeroita, välilyöntejä, kirjaimia tai erikoismerkkejä.
+Voit myös käyttää `string_sub` komentoa, joka antaa enemmän joustavuutta kuinka haluat poistaa merkkejä. Tätä komentoa käytetään seuraavasti: `string_sub 'merkit jotka haluat poistaa' 'mitkä merkit haluat korvata'`. Tässä komennossa voit määrittää, mitkä merkit haluat poistaa tai korvata haluamillasi merkeillä.
 
 ## Katso myös
 
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html#regex)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Säännöllisten lausekkeiden opas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Regex-opas](https://www.regular-expressions.info/fish.html)

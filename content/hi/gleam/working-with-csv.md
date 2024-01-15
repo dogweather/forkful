@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: सीएसवी के साथ काम करना"
-simple_title:         "सीएसवी के साथ काम करना"
+title:                "कॉम्प्यूटर प्रोग्रामिंग में काम करना।"
+html_title:           "Gleam: कॉम्प्यूटर प्रोग्रामिंग में काम करना।"
+simple_title:         "कॉम्प्यूटर प्रोग्रामिंग में काम करना।"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-क्योंकि CSV फ़ॉर्मैट संरचित डेटा को स्प्रेडशीट और डेटा बेस के रूप में स्टोर करता है, जिससे उसे आसानी से पढ़ा और बदला जा सकता है। इसलिए, CSV डेटा को व्यवस्थित रूप से काम करने के लिए, लोगों को उसके साथ काम करना सीखना बहुत महत्वपूर्ण है।
+
+CSV फ़ाइलों के साथ काम करने का लाभ आपके डेटा कोशिकाओं को सुलभता से संग्रहीत और संशोधित करने में होता है। यह आपको अपने डेटा को आसानी से एक प्लेटफॉर्म से दूसरे पर ले जाने में मदद करता है और विभिन्न डेटा उपकरणों के साथ समन्वयित रूप से काम करने में मदद करता है।
 
 ## कैसे करें
-```Gleam  
-import gleam/csv
 
-csv_data = '''
-Name, Age, City
-John, 30, New York
-Jane, 25, London
-'''
+```Gleam 
+import csv
 
-parsed_data = csv.parse(csv_data)
+// CSV फ़ाइल खोलें
+let file = csv.open("example.csv")
 
-for row in parsed_data do
-  name = row["Name"]
-  age = row["Age"]
-  city = row["City"]
-  csv.print("Name: " ++ name ++ " | Age: " ++ age ++ " | City: " ++ city)
-end
+// प्रति पंक्ति डेटा पढ़ें
+for row in file {
+  // पंक्ति को संचित करें
+  let name = row["नाम"]
+  let age = row["आयु"]
+  let city = row["शहर"]
+
+  // पंक्ति को कॉन्सोल पर छापें
+  io.println("नाम: " ++ name ++ ", आयु: " ++ age ++ ", शहर: " ++ city)
+}
+
+// फ़ाइल बंद करें
+csv.close(file)
 ```
+
+आउटपुट:
 ```
-Name: John | Age: 30 | City: New York
-Name: Jane | Age: 25 | City: London
+नाम: रवि, आयु: 25, शहर: दिल्ली
+नाम: सोनिया, आयु: 30, शहर: मुंबई
+नाम: रोहन, आयु: 28, शहर: बंगलौर
 ```
 
-## गहराई में दूबना
-CSV के साथ काम करना अधिक दूर तक बढ़ावा देने के लिए, आप उसे उपयोग करने के साथ से उसे लगातार आगे बढ़ा सकते हैं। आप उसमें फिल्टरिंग, सहभागिकरण, और साथ ही CSV उपयोग करके बहुत कुछ कर सकते हैं।
+## गहराई में जाएं
 
-## अधिक जानकारी के लिए
-[ग्लीम डॉक्यूमेंटेशन]("https://gleam.run/documentation/")
-[CSV मोड्यूल का स्रोत कोड]("https://github.com/gleam-lang/gleam/blob/master/lib/csv/csv.gleam")
-[CSV फॉर्मैट के बारे में अधिक जानकारी]("https://en.wikipedia.org/wiki/Comma-separated_values")
+CSV फ़ाइलों के साथ काम करना आसान है, लेकिन कुछ जरूरी बातों को ध्यान में रखना उतना ही महत्वपूर्ण है। पार्सिंग करने से पहले, चरित्र आवरण की स्थिति, अल्पविचार और अनुपस्थिति का पता लगाएं। और फ़ाइल बंद करते समय निश्चित रूप से फ़ाइल को बंद करें ताकि प्रोग्राम क्रैश न हो।
+
+## इसे भी देखें
+
+- [Gleam CSV पार्सिंग लाइब्रेरी दस्तावेज़](https://hexdocs.pm/gleam_csv/0.4.0/Gleam.Csv.html)
+- [Gleam डॉक्यूमेंटेशन](https://gleam.run/documentation)
+- [Gleam कोडबेस के साथ खेलें](https://gleam.run/playground/)

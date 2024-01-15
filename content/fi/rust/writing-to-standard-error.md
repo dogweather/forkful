@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Kirjoittaminen vakiovirheeseen"
-simple_title:         "Kirjoittaminen vakiovirheeseen"
+title:                "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+html_title:           "Rust: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi kirjoittaa virhesyötteeseen?
 
-Rust on nuori ohjelmointikieli, jossa yhdistyvät tehokkuus ja turvallisuus modernilla tavalla. Eräs tärkeä osa ohjelmointia on virheiden hallinta ja niiden raportointi. Tässä blogipostissa tarkastellaan, miten kirjoittaa standardivirheeseen Rustilla.
+Kun kehität Rust-ohjelmia, saatat huomata joutuvasi käsittelemään erilaisia virheitä ja poikkeustilanteita. Kirjoittaminen standardivirhesyötteeseen (standard error) auttaa sinua havaitsemaan ja käsittelemään näitä virheitä nopeasti ja tehokkaasti.
 
-## Miten
-
-Koodiesimerkit käyttävät `println!` -makroa ja `eprintln!` -makroa, jotka tulostavat merkkijonon standardilähtöön ja standardivirheeseen.
+## Näin kirjoitat standardivirhesyötteeseen
 
 ```Rust
+use std::io::{stderr, Write};
+
 fn main() {
-    let nimi = "Iina";
-    println!("Hei, minun nimeni on {}", nimi);
-    eprintln!("Tämä on vakava virhe!");
-}
-```
-Tämä koodi tulostaa standardilähtöön `Hei, minun nimeni on Iina` ja standardivirheeseen `Tämä on vakava virhe!` Huomaa, että standardivirheen tulostus eroaa tavallisesta tulostuksesta `println!`-makrolla.
-
-## Syväsukellus
-
-Kirjoittaessamme standardivirheeseen Rustin avulla, käytämme `std::io::stderr` -olion `write_all`-metodia. Tämä mahdollistaa myös erilaisten muuttujien ja tietorakenteiden tulostamisen standardivirheeseen.
-
-```Rust
-use std::io::Write;
-fn main() {
-    let virhe = "Tämä on virhe";
-    let luku = 42;
-    std::io::stderr().write_all(virhe.as_bytes()).unwrap();
-    std::io::stderr().write_all(b" ja luvuksi arvotaan ").unwrap();
-    std::io::stderr().write_all(luku.to_string().as_bytes()).unwrap();
+    if let Err(error) = perform_some_action() {
+        writeln!(stderr(), "Virhe: {}", error).expect("Kirjoittaminen epäonnistui");
+    }
 }
 ```
 
-Tämä tulostaa standardivirheeseen `Tämä on virhe ja luvuksi arvotaan 42`.
+#### Esimerkki tulosteesta:
+
+```
+Virhe: Tiedostoa ei löydetty
+```
+
+Standardivirhesyötteen kirjoittamiseen käytetään `writeln!`-makroa, joka ottaa parametreinaan virhesyötteen `stderr()` ja halutun viestin. Tämän jälkeen viesti kirjoitetaan standardivirhesyötteeseen. Huomaa myös `expect`-funktio, joka auttaa ilmoittamaan mahdollisista virheistä kirjoituksen yhteydessä.
+
+## Syvempi sukellus
+
+Rust-ohjelmointikieli tunnetaan turvallisuudestaan, ja tämä pätee myös virhesyötteen kirjoittamiseen. Rustin standardikirjasto tarjoaa erilaisia työkaluja, kuten `stderr()` ja `writeln!`-makro, joilla voidaan minimoida mahdolliset turvallisuusongelmat virheiden käsittelyssä.
+
+Lisäksi, kirjoittaessasi virhesyötteeseen voit hyödyntää hieman erilaisia tekniikoita, kuten loggaamista (logging) ja ehdollista kirjoittamista, jotka voivat tehdä virheiden käsittelystä vieläkin kätevämpää ja tehokkaampaa. Voit myös käyttää `panic!`-makroa, joka lopettaa ohjelman suorittamisen ja kirjoittaa virhesyötteen viestin samalla kertaa.
 
 ## Katso myös
 
-- [Rust-ohjelmointikielen kotisivu](https://www.rust-lang.org/fi/)
-- [Rust ohjelmointikielen opetusohjelma](https://doc.rust-lang.org/book/)
-- [Rust yhteisöfoorumi](https://users.rust-lang.org/)
+- [Rustin standardikirjasto - `std::io` (englanniksi)](https://doc.rust-lang.org/std/io/index.html)
+- [Virhesyötteen hallinta Rustissa (englanniksi)](https://www.geeksforgeeks.org/error-handling-in-rust/)

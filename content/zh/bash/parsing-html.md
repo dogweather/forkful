@@ -1,5 +1,6 @@
 ---
-title:                "Bash: 解析HTML"
+title:                "解析HTML"
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么：
+## 为什么
 
-如果你曾经在制作网站或者从事网络爬虫工作，你可能会遇到需要从HTML文档中提取数据的问题。这时候，使用Bash编程来解析HTML就会非常有用。
+在今天的数字化世界中，网页和网站无处不在。操作HTML的能力可以让你更加灵活地提取有用的信息，从而让你的工作效率更高。
 
-## 如何：
+## 怎么做
 
-使用Bash编程来解析HTML文档非常简单。首先，你需要确保你的系统已经安装了curl和grep这两个命令行工具。然后，你可以按照以下步骤来解析HTML文档：
-
-1. 首先，使用curl命令来下载HTML文档，例如：
+要在Bash中解析HTML，我们需要使用工具**curl**和**grep**。首先，使用curl从网页中下载HTML代码，并将其存储到一个变量中，例如：
 
 ```Bash
-curl https://example.com > example.html
+html_code=$(curl www.example.com)
 ```
 
-2. 使用grep命令来筛选出你需要的数据，例如：
+接下来，我们可以使用grep命令来定位我们所需的信息。例如，假设我们想要提取所有的<strong>标签中的文本，我们可以使用该命令：
 
 ```Bash
-#提取所有<a>标签的内容
-grep "<a>" example.html
+echo "$html_code" | grep -oE "<strong>.*</strong>"
 ```
 
-```Bash
-#提取所有class为"content"的<div>标签的内容
-grep -E "<div class=\"content\">.*</div>" example.html
-```
+这将会输出所有的<strong>标签中的文本，以供我们进一步处理。这只是一个简单的例子，你可以根据需要使用不同的grep模式来提取你想要的信息。
 
-3. 最后，你可以将提取的数据保存到一个文件中或者直接输出到终端。
+## 深入探究
 
-## 深入了解：
+解析HTML需要一定的技巧和经验。一个值得注意的技巧是使用"gawk"来更容易地处理HTML代码。此外，理解HTML的结构和标签之间的关系也是至关重要的。你可以通过阅读W3School的教程来学习更多关于HTML的知识。
 
-解析HTML文档的关键在于了解HTML标签的结构和特点。使用grep命令可以通过正则表达式来匹配标签的内容，但是这并不是一种通用的方法。因为HTML文档的结构可能会有所不同，所以你可能需要根据具体的文档结构来编写不同的正则表达式。此外，你也可以使用sed命令来更加灵活地处理HTML文档。
+## 参考链接
 
-## 参考资料：
-
-- Bash官方文档：https://www.gnu.org/software/bash/manual/
-- curl命令文档：https://curl.haxx.se/docs/manpage.html
-- grep命令文档：https://www.gnu.org/software/grep/manual/grep.html
-- sed命令文档：https://www.gnu.org/software/sed/manual/sed.html
-
-## 查看也可以：
-
-- [如何使用Bash编程来爬取网页数据](https://blog.csdn.net/d_sharebecca/article/details/77093234)
-- [Linux Shell编程实例（十五）——使用Bash来解析HTML网页](https://blog.csdn.net/youngsend/article/details/55275366)
+- [curl man page](https://linux.die.net/man/1/curl)
+- [grep man page](https://linux.die.net/man/1/grep)
+- [Linux Journey：使用Bash解析HTML](https://linuxjourney.com/lesson/parsing-html-bash)

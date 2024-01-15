@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "PHP: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,34 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Web-sivujen lataaminen on yksi yleisimpiä toimintoja, joita PHP-ohjelmoijat tekevät jokapäiväisessä työssään. Se on tärkeä työkalu, jota tarvitaan monissa sovelluksissa, kuten verkkosivustojen ja verkkopalveluiden kehittämisessä. Web-sivujen lataaminen mahdollistaa tiedon keräämisen ja käsittelyn, jolloin sitä voidaan käyttää erilaisiin tarkoituksiin, kuten tiedon analysointiin tai tiedon tallentamiseen tietokantaan.
+Jos haluat käyttää verkkosivuston tietoja tai sisältöä omassa ohjelmassasi tai sovelluksessasi, sinun täytyy ladata se ensin. Tämä on mahdollista käyttämällä PHP:n sisäänrakennettua toimintoa ladata verkkosivu.
 
-## Kuinka tehdä
+## Miten se tehdään
 
-Web-sivujen lataaminen PHP:ssa on melko yksinkertaista, ja se voidaan tehdä muutamalla rivillä koodia. Ensinnäkin, tarvitsemme muuttujan, jolla määritellään lataamamme sivun osoite. Tämän jälkeen luomme uuden olio-olion ja asetamme sen sivun osoitteen URL:ksi. Lopuksi kutsumme `file_get_contents()` -funktiota, joka lataa sivun ja palauttaa sen sisällön.
+Lataamiseen liittyvät tärkeimmät PHP-funktiot ovat `file_get_contents` ja `curl`. Alla on esimerkki siitä, miten voit ladata verkkosivun käyttämällä `file_get_contents` -funktiota ja tulostaa sen sisällön:
 
 ```PHP
 $url = "https://www.example.com";
-$webpage = new DOMDocument();
-$webpage->loadHTML(file_get_contents($url));
+$html = file_get_contents($url);
+echo $html; 
 ```
 
-Tämän jälkeen voimme käyttää `$webpage` -muuttujaa ja sen metodien avulla saada tietoa lataamastamme sivusta. Esimerkiksi, jos haluamme tulostaa sivun otsikon, voimme käyttää seuraavaa koodia:
+Ja tässä on vastaava esimerkki käyttämällä `curl` -funktiota:
 
 ```PHP
-echo $webpage->getElementsByTagName("h1")->item(0)->textContent;
+$url = "https://www.example.com";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
+curl_close($ch);
+echo $output;
 ```
 
-Kuten huomaat, sivun lataaminen ja sen sisällön käsittely PHP:ssa on melko helppoa.
+Nämä esimerkit olettaa, että PHP:llä on oikeudet ladata verkkosivu. Jos haluat ladata verkkosivun, joka vaatii käyttäjänimiä ja salasanoja, voit käyttää `curl` -funktiota muuttamalla `curl_setopt` -kohtia.
 
-## Syvemmälle
+## Syventävä sukellus
 
-Web-sivujen lataaminen PHP:ssa tapahtuu käyttämällä HTTP-pyyntöjä. Tämä tarkoittaa, että voimme myös muokata pyyntöä lisäämällä esimerkiksi otsikkorivejä tai lähettämään lomakekenttien tietoja. Tämä antaa meille enemmän joustavuutta ja mahdollisuuden luoda monimutkaisempia toimintoja lataamisen lisäksi.
-
-Lisäksi, joskus web-sivujen lataaminen saattaa aiheuttaa haasteita, kuten hitaan latausajan tai sivujen muuttuvan rakenteen vuoksi. Tässä tapauksessa on tärkeää muistaa optimoida koodia ja tarvittaessa käyttää muita ohjelmistokehitysvälineitä, kuten cURL-kirjastoa.
+`file_get_contents` ja `curl` -funktioiden lisäksi on olemassa muita tapoja ladata verkkosivuja PHP:llä. Voit esimerkiksi käyttää `fopen` ja `fgets` -funktioita avataksesi yhteyden verkkosivulle ja käsitelläksesi sen sisältöä rivittäin. Voit myös asettaa erilaisia asetuksia `curl` -funktioon, kuten käyttäjänimiä ja salasanoja tai otsikoita, jotta voit ladata tiettyjä verkkosivuja.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio lataamisesta](https://www.php.net/file_get_contents)
-- [Ohjeet koodin optimoinnista](https://medium.com/@davidjuman/code-optimization-for-dummies-b70cc79f0306)
-- [cURL-kirjaston käyttö PHP:ssa](https://www.php.net/manual/en/book.curl.php)
+- [PHP:n virallinen dokumentaatio](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Curlin viralliset sivut](https://curl.haxx.se/)
+- [Stack Overflow - Lataa sivu PHP:llä](https://stackoverflow.com/questions/3809763/download-an-html-page-using-php/3809792#3809792)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslående av strängar"
+html_title:           "Fish Shell: Sammanslående av strängar"
+simple_title:         "Sammanslående av strängar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,67 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-I enkel kod, ibland måste du kombinera flera strängar tillsammans för att skapa en längre streng. Fish Shell går utöver bara grundläggande strängkonkaterning, och ger dig kraftfulla verktyg för att manipulera och hantera strängar på ett mer avancerat sätt.
+
+Förmodligen har du stött på uppgiften att lägga samman flera textsträngar till en enda sträng. I detta fall kan du använda dig av Fish Shell för att effektivt utföra operationen och därmed spara tid och undvika onödigt komplex kod.
 
 ## Hur man gör
-För att konkatenera strängar i Fish Shell, använder du kommandot `string join`, följt av de strängar du vill kombinera. Till exempel:
+
+För att sammanfoga flera textsträngar i Fish Shell behöver du använda kommandot "string join", med syntaxen `string join STRÄNG1 STRÄNG2`. Detta sammanfogar `STRÄNG1` och `STRÄNG2` till en enda sträng.
 
 ```Fish Shell
-string join "Hej" "pa" "dig!"
+string join "Hej" "världen"  # Ger output "Hej världen"
 ```
 
-Outputen skulle vara:
-
-```
-Hej på dig!
-```
-
-Du kan också använda variabler i `string join` kommandot för att kombinera med andra strängar. Till exempel:
+Om du vill sammanfoga flera strängar i en variabel kan du använda följande syntax:
 
 ```Fish Shell
-set namn "John"
-string join "Hej" $namn ", hur mår du?"
-```
-
-Outputen skulle vara:
-
-```
-Hej John, hur mår du?
-```
-
-Du kan till och med använda `string join` för att skapa strängar baserat på regulatoriska uttryck (regular expressions). Till exempel, om du ville ta bort alla vokaler från en sträng, kan du göra det med hjälp av `string join` på följande sätt:
-
-```Fish Shell
-set sträng "Hej pa dig!"
-set formateradstrang (string join "" (string match -r "[aeiou]" -r " " $sträng))
-echo $formateradstrang
-```
-
-Outputen skulle vara:
-
-```
-Hj p dg!
+set mitt_namn "Lisa"
+string join "Mitt namn är" $mitt_namn ". Jag gillar att programmera." # Ger output "Mitt namn är Lisa. Jag gillar att programmera."
 ```
 
 ## Djupdykning
-När du konkatenerar strängar i Fish Shell, används variabler som referenser till de ursprungliga strängarna. Detta innebär att om du ändrar en variabel senare, påverkas också slutsträngen. Till exempel:
+
+I Fish Shell finns det flera andra kommandon som hjälper till att manipulera och sammanfoga strängar. Till exempel kan du använda kommandot "string split" för att dela upp en sträng baserat på ett visst tecken.
 
 ```Fish Shell
-set namn "Anna-Lena"
-set halsning "Hej " $namn
-set namn "Johan"
-echo $halsning
+set mejladress "lisa@example.com"
+string split "@" $mejladress  # Ger output "lisa" "example.com"
 ```
 
-Outputen skulle vara:
+Du kan också kombinera flera strängar med kommandot "string append". Detta lägger till en sträng i slutet av en befintlig sträng.
 
+```Fish Shell
+set favorit_frukt "äpplen"
+string append "Jag älskar att äta " $favorit_frukt " på sommaren." # Ger output "Jag älskar att äta äpplen på sommaren."
 ```
-Hej Johan
-```
 
-Detta händer eftersom `halsning` variabeln fortfarande refererar till `Anna-Lena` och inte har uppdaterats med den nya värdet på `namn`. Detta är en viktig sak att komma ihåg när du arbetar med strängkonkaterning i Fish Shell.
+## Se också
 
-## Se även
-* [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-* [Guide till reguljära uttryck i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_shallow_learning)
-* [Fish Shell community forum](https://github.com/fish-shell/fish-shell/discussions)
+- Fish Shell officiell dokumentation: https://fishshell.com/docs/current/index.html
+- Fish Shell tutorial: https://fishshell.com/docs/current/tutorial.html

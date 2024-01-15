@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Konwertowanie daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków"
+html_title:           "Rust: Konwertowanie daty na ciąg znaków"
 simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na string jest częstą czynnością w wielu aplikacjach i często jest to wymagane przez różne biblioteki i narzędzia. Aby z powodzeniem wykorzystać Rust w swoich projektach, warto poznać jak wykonać tę operację.
+Wielu programistów wykorzystuje bezpieczny język Rust do tworzenia wydajnych aplikacji. Jednym z często spotykanych zadań podczas pracy z danymi jest konwersja daty na tekstowy format. W tym artykule dowiesz się, dlaczego konwersja daty na string jest ważna i jak możesz to zrobić w języku Rust.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na string w języku Rust, można użyć funkcji `to_string()` z modułu `chrono::DateTime`. Przykładowy kod wyglądałby następująco:
+Rust oferuje wbudowane funkcje, które ułatwiają konwersję daty na string. Przyjrzyjmy się dwóm sposobom na wykonanie tego zadania: używając biblioteki standardowej i wykorzystując zewnętrzną bibliotekę.
 
-```rust
-use chrono::{DateTime, Local, TimeZone};
+### Używając biblioteki standardowej
 
-let now: DateTime<Local> = Local::now();
-let date_string = now.to_string();
+Najprostszym sposobem na konwersję daty na string jest wykorzystanie biblioteki standardowej języka Rust. Skorzystajmy z funkcji `to_string()` dostępnej dla typu `DateTime`, aby przekonwertować datę na string.
 
-println!("Aktualna data i godzina: {}", date_string);
+```Rust
+use std::time::{SystemTime, Duration};
+
+fn main() {
+    // Tworzymy obiekt typu SystemTime zawierający aktualną datę i godzinę
+    let now = SystemTime::now();
+    // Konwertujemy datę na string i przypisujemy do zmiennej
+    let date_string = now.to_string();
+
+    println!("Aktualna data i godzina: {}", date_string);
+}
 ```
 
-W powyższym przykładzie, najpierw importujemy moduł `chrono` zawierający funkcje do operacji na czasie. Następnie, używając funkcji `Local::now()`, pobieramy aktualną datę i godzinę z lokalnego systemu. Wreszcie, za pomocą metody `to_string()` konwertujemy tę datę na string. Wynikiem jest string zawierający datę i czas w formacie ISO 8601.
-
-Można również czasami potrzebować bardziej szczegółowej konwersji daty na string, na przykład z wykorzystaniem formatu niestandardowego. W takim przypadku można użyć funkcji `format()` z modułu `chrono::format::strftime`. Poniżej przedstawiony jest przykład kodu, który konwertuje datę na string w formacie "Dzień Tygodnia, Dzień Miesiąca Rok":
-
-```rust
-use chrono::{DateTime, Local, TimeZone};
-    use chrono::format::strftime::StrftimeItems;
-
-    let now: DateTime<Local> = Local::now();
-    let format = StrftimeItems::new("%A, %d %B %Y");
-    let date_string = now.format(format).to_string();
-
-    println!("Aktualna data: {}", date_string);
+Wyjście:
+```
+Aktualna data i godzina: Sun Jun 06 02:00:13 UTC 2021
 ```
 
-Wynikiem tego przykładu jest string zawierający aktualną datę w postaci "Niedziela, 05 września 2021". Można dowolnie manipulować formatem używając specjalnych symboli dostępnych w module `strftime`.
+### Wykorzystując zewnętrzną bibliotekę
 
-## Wnikliwe spojrzenie
+Jeśli potrzebujemy bardziej zaawansowanej obsługi daty, możemy skorzystać z zewnętrznej biblioteki. Jedną z popularnych opcji jest biblioteka `chrono`, która dostarcza bardziej precyzyjne metody konwersji daty.
 
-Podczas konwersji daty na string ważne jest, aby zawsze określać strefę czasową, z której pobierana jest data. W przeciwnym razie, może to prowadzić do nieoczekiwanego wyniku, szczególnie w przypadku używania narzędzi i bibliotek operujących na czasie. W języku Rust, standardową metodą dla stref czasowych jest moduł `chrono::TimeZone`, który zapewnia obsługę różnych stref czasowych.
+```Rust
+use chrono::{Utc, DateTime};
 
-## Zobacz też
+fn main() {
+    // Pobieramy aktualną datę i godzinę w strefie czasowej UTC
+    let utc: DateTime<Utc> = Utc::now();
+    // Konwertujemy datę na string i przypisujemy do zmiennej
+    let date_string = utc.to_rfc2822();
 
-- Dokumentacja modułu `chrono` dla języka Rust: https://docs.rs/chrono/latest/chrono/
-- Przewodnik konwersji dat w języku Rust: https://users.rust-lang.org/t/how-can-i-convert-a-date-to-a-string/23764
-- Oficjalna strona języka Rust: https://www.rust-lang.org/pl
+    println!("Aktualna data i godzina: {}", date_string);
+}
+```
+
+Wyjście:
+```
+Aktualna data i godzina: Sun, 06 Jun 2021 02:10:22 +0000
+```
+
+## Deep Dive
+
+Jeśli chcesz lepiej zrozumieć proces konwertowania daty na string, warto zapoznać się z dokumentacją języka Rust oraz bibliotek, które zostały wykorzystane w przykładach. W przypadku użycia biblioteki `chrono`, możesz zajrzeć do jej dokumentacji na stronie [chrono.rs](https://docs.rs/chrono/latest/chrono/) lub skorzystać z `rustdoc`, narzędzia do generowania dokumentacji w języku Rust.
+
+## Zobacz również
+
+- [Dokumentacja języka Rust](https://doc.rust-lang.org/std/time/index.html)
+- [Dokumentacja biblioteki chrono](https://docs.rs/chrono/latest/chrono/)

@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Å bruke regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "PHP: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Har du noen gang følt deg overveldet av alle de forskjellige tekstmanipuleringene du må gjøre i programmering? Da er det på tide å bli kjent med regulære uttrykk! Dette er et kraftig verktøy som kan gjøre det enkelt å finne og manipulere tekst, og det sparer deg for mye tid og frustrasjon.
+Regular expressions, eller regex, er et kraftig verktøy som kan hjelpe deg med å effektivt behandle tekst og data. De kan brukes til å søke, erstatte og verifisere data, og er spesielt nyttige for å håndtere store mengder tekst og komplekse mønstre. Hvis du jobber med tekstbehandling eller datahåndtering i PHP, kan det å lære å bruke regulære uttrykk være en verdifull ferdighet.
 
-## Slik bruker du regulære uttrykk i PHP
-
-Å bruke regulære uttrykk i PHP er enkelt. Du trenger bare å bruke funksjonen `preg_match()` for å finne et mønster i en tekststreng. La oss si at du har en tekststreng som inneholder en e-postadresse, og du vil finne ut om den er gyldig eller ikke. Da kan du bruke følgende kode:
+## Hvordan
 
 ```PHP
-$email = "example@email.com";
+// Søke etter et mønster i en tekststreng
+$tekst = "Hei! Mitt navn er Johan.";
+if (preg_match("/Johan/", $tekst)) {
+  echo "Fant navnet mitt!"; // Dette vil bli skrevet ut
+}
 
-if (preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i", $email)) {
-    echo "E-postadressen er gyldig.";
-} else {
-    echo "E-postadressen er ugyldig.";
+// Erstatte tekst basert på et mønster
+$tekst = "Jeg skriver kode på HTML og CSS.";
+$ny_tekst = preg_replace("/HTML og CSS/", "PHP", $tekst);
+echo $ny_tekst; // Dette vil skrive ut "Jeg skriver kode på PHP."
+
+// Verifisere en e-postadresse
+$e-post = "johan@example.com";
+if (preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i", $e-post)) {
+  echo "Dette er en gyldig e-postadresse."; // Dette vil bli skrevet ut
 }
 ```
 
-I dette eksempelet bruker vi et regulært uttrykk for å validere e-postadressen ved hjelp av spesielle symboler og mønstre. Du kan også bruke regulære uttrykk til å erstatte deler av en tekststreng, finne og erstatte ord og utføre mange andre tekstmanipuleringer.
+De vanligste regex-funksjonene i PHP er `preg_match()`, `preg_replace()` og `preg_match_all()`. Disse funksjonene tar et mønster og en tekststreng som argumenter, og utfører en handling basert på om mønsteret matcher med teksten. Mønstrene er laget med spesielle regulære uttrykk som kan inkludere jokertegn, alternativer, repetisjoner, og mye mer.
 
-## Dypdykk i regulære uttrykk
+## Deep Dive
 
-For å forstå hvordan du kan bruke regulære uttrykk i PHP, er det viktig å lære litt om deres syntaks. Regulære uttrykk består av spesielle symboler og metakarakterer som representerer et visst mønster eller et sett med tegn. For eksempel kan `^` karakteren brukes for å indikere begynnelsen av en tekststreng, og `$` karakteren indikerer slutten. Ved å kombinere disse symbolene med andre tegn og tall, kan du lage avanserte mønstre for å matche eller erstatte tekst.
+Det finnes mange ressurser på nettet for å lære mer om bruk av regulære uttrykk i PHP. PHP.net gir en detaljert dokumentasjon over regex-funksjonene med eksempler og beskrivelser. Det finnes også mange nettsteder og fora som tilbyr nyttige tips og triks for å mestre regex. Det kan også være lurt å bruke nettbaserte regex-testere for å teste og validere mønstrene dine før du implementerer dem i koden din. Regulære uttrykk kan være litt vanskelige å lære seg i begynnelsen, men jo mer du øver og bruker dem, jo mer intuitivt vil det bli.
 
-Det er også viktig å forstå at regulære uttrykk er case-sensitive, med mindre du spesifikt bruker flagg for å ignorere det. For eksempel er `A` og `a` forskjellige tegn i et regulært uttrykk, med mindre du bruker flagget `i` for å ignorere casing.
+## Se Også
 
-## Se også
-
-- PHP manual på regex: https://www.php.net/manual/en/book.pcre.php
-- Regex cheatsheet: https://www.rexegg.com/regex-quickstart.html
-- Regex tester og validering: https://regex101.com/
-
-For å lære mer om regulære uttrykk, kan du også lese på andre språk om dette kraftige verktøyet. Det er mye å utforske, men vi håper dette innlegget har gitt deg en god introduksjon til å bruke regulære uttrykk i PHP. Lykke til med å effektivisere tekstmanipulasjonen din!
+- [PHP.net - Regular Expressions](https://www.php.net/manual/en/book.pcre.php)
+- [RegExr](https://regexr.com/)
+- [Stack Overflow - Regular Expression questions tagged PHP](https://stackoverflow.com/questions/tagged/php+regex)

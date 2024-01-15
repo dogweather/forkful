@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Javascript: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,51 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Suchen und Ersetzen von Text im Programmieren ist ein nützliches Werkzeug, um effizient fehlerhafte oder veraltete Texte in einem Code zu ersetzen. Dies kann dazu beitragen, die Lesbarkeit und Funktionalität des Codes zu verbessern.
+Wenn du softwareengineering, Webentwicklung oder Datenanalyse betreibst, wirst du früher oder später mit der Aufgabe konfrontiert werden, Text zu suchen und zu ersetzen. Dies kann z.B. nützlich sein, um Fehler zu korrigieren oder Daten schnell zu bereinigen.
 
-## Wie man es macht
+## Wie man Text in Javascript sucht und ersetzt
 
-Die Grundidee beim Suchen und Ersetzen von Text in Javascript ist, dass man nach einem bestimmten Text sucht und ihn durch einen anderen ersetzt. Dies kann entweder in einem bestimmten Bereich oder im gesamten Code durchgeführt werden. Zum Beispiel kann man alle Vorkommnisse von "Hund" durch "Katze" ersetzen oder nur innerhalb einer bestimmten Funktion.
+Um Text in Javascript zu suchen und zu ersetzen, gibt es verschiedene Methoden und Techniken. Hier sind einige Beispiele, wie du dies in deinem Code umsetzen kannst:
+
+1) Die `replace()`-Methode: Diese Methode kann verwendet werden, um einen bestimmten Teil eines Strings durch einen anderen zu ersetzen. Hier ist ein Beispiel, wie man alle Vorkommen von "Hallo" in einem String durch "Guten Tag" ersetzt:
 
 ```Javascript
-// Einfaches Beispiel für die Verwendung von String.replace()
-let string = "Ich habe einen Hund namens Max.";
-let newString = string.replace("Hund", "Katze");
-
-console.log(newString);
-// Ausgabe: "Ich habe eine Katze namens Max."
+let text = "Hallo, mein Name ist Max. Hallo an alle Leser.";
+let newText = text.replace("Hallo", "Guten Tag");
+// output: "Guten Tag, mein Name ist Max. Guten Tag an alle Leser."
 ```
 
-Man kann auch reguläre Ausdrücke verwenden, um nach bestimmten Mustern oder Zeichenfolgen zu suchen und zu ersetzen. Hier ist ein Beispiel, bei dem alle Zahlen in einer Zeichenfolge durch Sternchen ersetzt werden:
+2) Die `replaceAll()`-Methode (ab ECMAScript 2021): Diese Methode funktioniert ähnlich wie `replace()`, jedoch werden alle Vorkommen des gesuchten Textes ersetzt. Hier ist das obige Beispiel mit `replaceAll()` umgesetzt:
 
 ```Javascript
-let string = "Ich gehe am 01. Dezember zum Sport.";
-let newString = string.replace(/[0-9]/g, "*");
-
-console.log(newString);
-// Ausgabe: "Ich gehe am **. Dezember zum Sport." 
+let text = "Hallo, mein Name ist Max. Hallo an alle Leser.";
+let newText = text.replaceAll("Hallo", "Guten Tag");
+// output: "Guten Tag, mein Name ist Max. Guten Tag an alle Leser."
 ```
 
-Es ist auch möglich, den ersetzten Text dynamisch aus einer Funktion zu generieren. Hier ist ein Beispiel, bei dem das aktuelle Datum als Ersatz für einen Platzhalter verwendet wird:
+3) Reguläre Ausdrücke: Reguläre Ausdrücke (auch bekannt als "RegExp") sind eine sehr leistungsstarke Möglichkeit, Text in Javascript zu suchen und zu ersetzen. Sie erlauben es, nach bestimmten Mustern zu suchen und diese zu ersetzen. Hier ist ein Beispiel, wie man alle Vorkommen von "Hallo" oder "Guten Tag" in einem String durch "Hello" ersetzt:
 
 ```Javascript
-let string = "Heute ist [current_date].";
-let newString = string.replace("[current_date]", new Date().toDateString());
-
-console.log(newString);
-// Ausgabe: "Heute ist Sat Sep 26 2020."
+let text = "Hallo, mein Name ist Max. Guten Tag an alle Leser.";
+let newText = text.replace(/(Hallo|Guten Tag)/g, "Hello");
+// output: "Hello, mein Name ist Max. Hello an alle Leser."
 ```
 
 ## Tiefergehende Informationen
 
-Für komplexere Aufgaben des Suchens und Ersetzens von Text gibt es in Javascript auch die Methode String.replaceAll(), die seit dem ES2021 Update verfügbar ist. Diese Methode ermöglicht es, alle Vorkommnisse eines Musters auf einmal zu ersetzen, anstatt nur das erste oder alle nach der ersten Suche.
+Die oben genannten Beispiele sind nur ein kleiner Ausschnitt aus den Möglichkeiten, die Javascript bietet, um Text zu suchen und zu ersetzen. Hier sind weitere hilfreiche Ressourcen, die dir dabei helfen können, dieses Thema noch besser zu verstehen:
 
-Es ist auch wichtig zu beachten, dass bei der Verwendung von regulären Ausdrücken beim Ersetzen die Groß- und Kleinschreibung berücksichtigt wird. Wenn man dies vermeiden möchte, kann man die Flags "g" und "i" verwenden, um die Suche global und case-insensitive zu gestalten.
+- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs: String.prototype.replaceAll()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+- [MDN Web Docs: RegExp](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
 ## Siehe auch
 
-Hier sind einige Links, die dir helfen können, mehr über das Suchen und Ersetzen von Text in Javascript zu erfahren:
-
-- [MDN Web Docs: String.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs: String.replaceAll()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
-- [W3Schools: JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
+- [How to Use Regular Expressions (Regex) in Javascript](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-regex-in-javascript)
+- [10 RegEx-Beispiele zum Lernen und Üben](https://www.freecodecamp.org/news/regex-cheat-sheet/)
+- [Guide to Regular Expressions in Javascript](https://flaviocopes.com/javascript-regular-expressions/)

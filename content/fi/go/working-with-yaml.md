@@ -1,6 +1,7 @@
 ---
-title:                "Go: Yamlin käyttöohjeet"
-simple_title:         "Yamlin käyttöohjeet"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Go: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -9,62 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-(# Miksi)
+## Miksi
 
-Miksi YAML:in kanssa kannattaa työskennellä Go-ohjelmointiympäristössä?
+Miksi YAML:ia kannattaa käyttää ohjelmoinnissa? No, vastaus on yksinkertainen: se on helppo tapa tallentaa ja siirtää tietoa eri muodoissa. YAML on myös ihmisen luettavissa oleva formaatti, mikä tekee siitä erityisen hyödyllisen selkeissä ja jäsennellyissä tiedostoissa.
 
-YAML, eli "Yet Another Markup Language", on helppolukuinen tiedostomuoto, jonka avulla voidaan tallentaa ja jakaa tietoja rakenteellisesti. Se on erityisen hyödyllinen ohjelmointiympäristöissä, kuten Go, sillä se mahdollistaa helpon tiedon tallentamisen ja käytön eri sovelluksissa.
+## Kuinka Tehdä
 
-(# Kuinka)
-
-Kuinka käyttää YAML:ia Go-ohjelmoinnissa?
-
-YAML:ia varten on Go-kielessä valmiiksi määritelty paketti "gopkg.in/yaml.v2" joka tarjoaa kätevät toiminnot tiedostojen lukemiseen ja kirjoittamiseen. Seuraavassa on esimerkkikoodi, miten tietoa voidaan lukea YAML-tiedostosta ja tulostaa konsoliin:
+YAML:n käyttöön pääsee helposti käsiksi käyttämällä Go:n "gopkg.in/yaml.v2" kirjastoa. Ensiksi tarvitsemme paketin tuomista varten import-lausekkeen:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "io/ioutil"
-    "gopkg.in/yaml.v2"
-)
-
-type ExampleData struct {
-    Name string `yaml:"name"`
-    Age int `yaml:"age"`
-}
-
-func main() {
-    // luetaan YAML-tiedosto
-    data, err := ioutil.ReadFile("example.yaml")
-    if err != nil {
-        panic(err)
-    }
-
-    // initialisoidaan datarakenteen muuttuja
-    var sampleData ExampleData
-
-    // muunnetaan YAML-tiedoston sisältö datarakenteeksi
-    err = yaml.Unmarshal(data, &sampleData)
-    if err != nil {
-        panic(err)
-    }
-
-    // tulostetaan data konsoliin
-    fmt.Println("Nimi:", sampleData.Name)
-    fmt.Println("Ikä:", sampleData.Age)
-}
+import "gopkg.in/yaml.v2"
 ```
 
-(# Pohjanoteeraus)
+Seuraavaksi luo yksinkertainen YAML-tiedosto, joka sisältää muutamia tietoja:
 
-Miten työskennellä syvällisemmin YAML:in kanssa?
+```Go
+var data = `
+  language: Go
+  version: current
+  releaseDate: 2021-08-09
+`
+```
 
-YAML muodostuu eri osista, kuten otsikot, kentät ja listat, jotka voidaan tulkita vastaaviksi rakenteiksi Go-kielessä. On tärkeä ymmärtää nämä eri osat ja niiden käyttö, jotta YAML-tiedostojen lukeminen ja kirjoittaminen sujuu hyvin. Lisätietoja löytyy Go:n paketin dokumentaatiosta.
+Tämän jälkeen voimme helposti muuntaa YAML-tiedoston map-objektiksi käyttämällä yaml.Unmarshal() -funktiota:
 
-(# Katso myös)
+```Go
+m := map[string]interface{}{}
+err := yaml.Unmarshal([]byte(data), &m)
+```
 
-- [Go YAML -paketti](https://pkg.go.dev/gopkg.in/yaml.v2)
-- [Go YAML -paketin dokumentaatio](https://pkg.go.dev/gopkg.in/yaml.v2#Unmarshaler.UnmarshalYAML)
-- [YAML spekifikaatio](https://yaml.org/spec/)
+Nyt meillä on muuttuja "m", joka sisältää kaikki tiedostossa määritellyt avaimet ja arvot. Voimme käyttää niitä haluamallamme tavalla, esimerkiksi tulostamalla ne konsoliin:
+
+```Go
+fmt.Println(m["language"]) // tulostaa "Go"
+fmt.Println(m["releaseDate"]) // tulostaa "2021-08-09"
+```
+
+## Syvempi Sukellus
+
+Vaikka YAML on hyvin yksinkertainen ja ihmisen luettavissa oleva formaatti, sen käsittelyyn voi liittyä muutamia sudenkuoppia. Yksi tärkeimmistä on sykliset viittaukset, eli tilanne, jossa yksi objekti viittaa toiseen, ja tämä toinen viittaa taas takaisin ensimmäiseen. Tällaiset viittaukset voivat aiheuttaa loputtoman silmukan ja ohjelman kaatumisen. Siksi on tärkeää varmistaa, että YAML-tiedoston sisältöä käsitellessä otetaan huomioon myös tällaiset viittaukset.
+
+## Katso Myös
+
+- Go:n virallinen YAML-dokumentaatio: https://yaml.org/
+- Gopkg.in/yaml.v2 -kirjaston GitHub-repositorio: https://github.com/go-yaml/yaml
+- Stack Overflow -kysymykset ja vastaukset YAML:ista: https://stackoverflow.com/questions/tagged/yaml

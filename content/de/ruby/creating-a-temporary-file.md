@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Ruby: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+# Warum
 
-Wenn Sie Ruby-Code schreiben, müssen Sie möglicherweise temporäre Dateien erstellen. Dies kann hilfreich sein, um Daten zu speichern, auf die später zugegriffen werden muss, oder um Dateien zu nutzen, die von anderen Programmen erstellt wurden.
+Es gibt viele Gründe, warum man eine temporäre Datei in Ruby erstellen würde. Ein häufiger Anwendungsfall ist das Speichern von Zwischenergebnissen während der Ausführung eines Programms, um später darauf zugreifen zu können.
 
-## Wie geht das?
+# Wie geht das?
 
-Die Erstellung einer temporären Datei in Ruby ist einfach. Verwenden Sie die `Tempfile`-Klasse und rufen Sie `new` auf, um eine neue temporäre Datei zu erstellen.
+Um eine temporäre Datei in Ruby zu erstellen, müssen wir zunächst die `Tempfile`-Klasse importieren. Dann können wir die `open`-Methode aufrufen und einen temporären Dateinamen angeben. Der Inhalt der Datei wird automatisch gelöscht, sobald das Programm beendet wird.
 
-````Ruby
-require 'tempfile'
+```Ruby
+require 'tempfile' 
 
-# Erstelle eine neue temporäre Datei
-my_temp_file = Tempfile.new('beispiel')
+# Eine temporäre Datei mit dem Inhalt "Hello World" erstellen
+temp_file = Tempfile.open('test_file')
+temp_file.write("Hello World")
 
-# Schreibe in die Datei
-my_temp_file.write('Dies ist ein Beispieltext.')
+# Dateiinhalt lesen und ausgeben
+puts temp_file.read # Output: Hello World
 
-# Lese den Inhalt der Datei
-puts my_temp_file.read
+# Temporäre Datei schließen und löschen
 
-# Schließe die Datei
-my_temp_file.close
-````
+temp_file.close
+```
 
-Der Output des obigen Codes sollte `Dies ist ein Beispieltext.` sein. Beachten Sie, dass die temporäre Datei automatisch gelöscht wird, nachdem sie geschlossen wurde.
+# Tief in die Materie eintauchen
 
-## Tiefer eintauchen
+Die `Tempfile`-Klasse bietet viele nützliche Methoden, um mit temporären Dateien umzugehen. Zum Beispiel können wir mit der `unlink`-Methode die Datei löschen, bevor sie geschlossen wird. Wir können auch den Pfad der temporären Datei mit der `path`-Methode abrufen.
 
-Die `Tempfile`-Klasse bietet verschiedene Methoden, die Ihnen bei der Verwendung von temporären Dateien helfen können. Zum Beispiel können Sie den Dateinamen mit `path` erhalten oder überprüfen, ob die Datei schon existiert mit `exist?`.
+```Ruby
+# Temporäre Datei erstellen und Informationen abrufen 
+temp_file = Tempfile.new('test')
+puts temp_file.path # Output: /var/folders/gn/jlmh05tx4n127f8hd_dw1hkh0000gn/T/test20191214-3235-wp1fvi
 
-## Siehe auch
+# Datei löschen und überprüfen, dass sie nicht mehr existiert 
+temp_file.unlink
+puts File.exist?(temp_file.path) # Output: false
+```
 
-- [Die offizielle Ruby-Dokumentation zur Tempfile-Klasse](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ein Tutorial zur Verwendung von temporären Dateien in Ruby](https://www.rubyguides.com/2018/05/tempfile-ruby/)
-- [Acht Dinge, die Sie über temporäre Dateien in Ruby wissen sollten](https://jasoncharnes.com/tempfile-ruby)
+Ein weiterer nützlicher Aspekt der `Tempfile`-Klasse ist die Möglichkeit, den Dateipfad und den Namen anzupassen. Dies kann hilfreich sein, wenn wir verschiedene temporäre Dateien im selben Programm erstellen müssen.
+
+```Ruby
+# Temporäre Datei mit benutzerdefiniertem Namen erstellen 
+temp_file = Tempfile.new(['custom_name', '.txt'])
+puts temp_file.path # Output: /var/folders/gn/jlmh05tx4n127f8hd_dw1hkh0000gn/T/custom_name20191214-3235-bul5t0.txt 
+```
+
+# Siehe auch
+
+- [Ruby Tempfile Dokumentation](https://ruby-doc.org/stdlib-2.6.5/libdoc/tempfile/rdoc/Tempfile.html)
+- [Riost's Article "Temporary Files in Ruby"](https://riptutorial.com/ruby/example/2643/temporary-files-in-ruby)
+- [Stack Overflow: "How to Create a Temporary File in Ruby"](https://stackoverflow.com/questions/16667445/how-to-create-a-temporary-file-in-ruby)

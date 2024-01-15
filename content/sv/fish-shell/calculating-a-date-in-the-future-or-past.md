@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "Fish Shell: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,20 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna beräkna datum i framtiden eller förfluten tid är en användbar förmåga inom programmering. Det kan till exempel vara användbart för att automatisera uppgifter som att schemalägga händelser eller för att hålla koll på förflutna händelser.
+## Varför 
 
-## Hur man gör det
-```Fish Shell``` är ett kraftfullt program som kan hjälpa dig att enkelt beräkna datum i framtiden eller förfluten tid. För att göra det, följ dessa enkla steg:
+Det kan vara användbart att kunna beräkna en datum i framtiden eller förfluten tid för att hålla koll på viktiga händelser eller deadlines.
 
-1. Använd kommandot `date` för att visa det aktuella datumet och tiden.
-2. Om du vill beräkna ett datum i framtiden, lägg till antalet dagar, veckor eller månader som du vill gå framåt efter datumkommandot. Till exempel, `date --date "+1 week"` kommer att visa datumet om en vecka från idag.
-3. På samma sätt, om du vill beräkna ett datum i förfluten tid, lägg till antalet dagar, veckor eller månader som du vill gå bakåt efter datumkommandot. Till exempel, `date --date "-3 months"` kommer att visa datumet för tre månader sedan.
+## Hur man gör
 
-## Fördjupning
-Det finns många andra användbara sätt att beräkna datum med ```Fish Shell```. Till exempel kan du använda olika format för datumet som ska visas och ange en specifik tidszon för beräkningen. Du kan också använda variabler för att beräkna datum baserat på andra variablers värden.
+Det finns flera olika sätt att beräkna datum i framtiden eller förfluten tid i Fish Shell. Här är två exempel:
+
+1. Om du vill beräkna ett datum i framtiden kan du använda `date` kommandot tillsammans med syntaxen `date +%Y-%m-%d -d "DATE + NUMBERTIME". Detta kommer att ge dig datumet i den efterfrågade tiden från det ursprungliga datumet. Till exempel, om du vill ha datumet två veckor från idag skulle det se ut så här: 
+
+```Fish Shell
+
+date +%Y-%m-%d -d "now + 2 weeks"
+```
+
+Detta kommer att ge dig datumet i formatet YYYY-MM-DD.
+
+2. Om du istället vill beräkna ett datum i förfluten tid, kan du använda samma `date` syntax men med ett negativt nummer efter `DATE`. Till exempel, om du vill ha datumet två veckor före idag skulle det se ut så här:
+
+```Fish Shell
+
+date +%Y-%m-%d -d "now - 2 weeks"
+```
+
+ Det kommer att ge dig datumet två veckor före dagens datum i formatet YYYY-MM-DD.
+
+## Djupdykning
+
+Om du vill lära dig mer om att beräkna datum med `date` kommandot, kan du använda `man` kommandot för att få mer detaljerad information. Skriv helt enkelt `man date` i terminalen för att se manualen för detta kommando och dess olika användningsområden.
 
 ## Se även
-- [Fish Shell's officiella hemsida](https://fishshell.com/)
-- [Dokumentation för datumkommandot i Fish Shell](https://fishshell.com/docs/current/commands.html#date)
-- [En användbar guide för att beräkna datum med Fish Shell](https://devpro.media/berechne-daten-in-fish-shell/)
+
+Här är några länkar som kan vara användbara för att lära dig mer om Fish Shell och dess kommandon:
+
+- [Fish Shell officiell hemsida] (https://fishshell.com/)
+- [Fish Shell dokumentation] (https://fishshell.com/docs/current/index.html)
+- [Fish Shell Cheatsheet] (https://devhints.io/fish)

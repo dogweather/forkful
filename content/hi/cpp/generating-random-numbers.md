@@ -1,6 +1,7 @@
 ---
-title:                "C++: रैंडम नंबरों का उत्पादन"
-simple_title:         "रैंडम नंबरों का उत्पादन"
+title:                "यादृच्छिक संख्याओं का उत्पादन"
+html_title:           "C++: यादृच्छिक संख्याओं का उत्पादन"
+simple_title:         "यादृच्छिक संख्याओं का उत्पादन"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -9,37 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इसलिए
-क्या आप कभी सोचा है कि प्रोग्रामिंग क्यों एक दिलचस्प गतिविधि है? प्रोग्रामिंग आपको क्रिएटिविटी और दृश्यता की शक्ति देती है जो आपको रोचक कोड लिखने की स्थिति में ले जाती है। और जब इसे रैंडम नंबर्स के साथ जोड़ा जाता है, तो यह अन्य लगभग अनशन बन जाता है।
+## Kyu
 
-## कैसे करें
+Kya aapne kabhi socha hai ki hamare computers ya mobile phones mein chalne wale games ya apps mein humesa different numbers, characters ya objects kyu dekhte hai? Ye sabhi random numbers se generate hote hai. Random numbers hamare computers aur programming languages ke liye ek important component hote hai. Ye hume different test cases, encryption, simulation aur games ke liye useful hote hai. Is article mein hum random numbers ke bare mein baat karenge aur dekhenge ki hum ise kis tarah generate kar sakte hai.
+
+## Kaise
+
 ```C++
-// रैंडम नंबर जेनरेशन
-// संयुक्त रामदीरघाजी भेद क्रमांक को याद।
-
-#include <iostream>
-#include <cstdlib>  // स्टैंडर्ड कहते हैं
-
-using namespace std;
-
-int main() {
-    int कोशिश;
-    
-    cout << "क्रमांक दिखाएँ: ";
-    cin >> कोशिश;
-    
-    // कुछ कोशिश करें, मान और स्वाभाविक नंबर.
-    for (int कारक = 1; कारक < कोशिश; कारक++) {
-        cout << rand() % 10 + 1 << endl;
-    }
-    
-    return 0;
-}
+#include <iostream> 
+#include <cstdlib> 
+using namespace std; 
+  
+int main() { 
+    // Yaha 0 se 99 tak ke random numbers generate kiye jaenge 
+    for (int i=0; i<10; i++) { 
+        int num = rand() % 100; 
+        cout << num << endl; 
+    } 
+    return 0; 
+} 
 ```
-तुम काम करेंगे सत्येन्द्र इस्तेमाल लाइन दुसरा जा सकते साम तुम आदम करने ले जा सकता इस्तेमाल ठीक शायद किए जब दुसरा होगा चूंकि विस्तृत स्ट्रिंग नंबर. वास्तव में स्कूल उपयोग अंश तकनीकी चूंकि सबसे बनाने उपयोग आपके कार्यक्षमता।
 
-## गहराई में
-साइनस्टेटिक ग्राम लिखाना रैंडम नंबर्स से आसान है। आपको सिर्फ एक संख्या जो एदानॅमन् प्रोसेस को देने से का प्राथमिक अक्षर संख्याएँ ५ में विस्तृत. इस प्रकार, आपको एक चार से रॉ नंबर हीअल भी जोड़ा जाता ऊर्जा।
+Output:
 
-## देखिएँ भी
-- [C++ में रैंडम नंबर्स कैसे ज
+```C++
+45 
+12 
+78 
+54 
+21 
+60 
+88 
+17 
+6 
+92
+```
+
+Jaisa ki aap code mein dekh sakte hai, humne `#include <cstdlib>` header file ko use kiya hai jisme `rand()` function define hai. `rand()` function hume random numbers generate karne ki capability provide karta hai. Iske saath hi humne modulo operator `%` ka use kiya hai taaki hume specific range ke numbers mil sake. Yaha humne 0 se 99 tak ke numbers generate karne ke liye `% 100` use kiya hai. Aap apni marzi ke according range change kar sakte hai.
+
+Lekin kya aap jante hai ki humara random numbers kitna random hota hai? Nahi na? Isliye chaliye hum `rand()` function ke deep dive mein jante hai.
+
+## Gehraai Mein
+
+Sabse pehle ye important hai ki hum random numbers ko generate nhi kar sakte, hum sirf pseudo-random numbers generate kar sakte hai. Matlab ki hum random numbers ki sequence ko repeat kar sakte hai. `rand()` function ek seed value leta hai jis se wo ek sequence follow karta hai. Seed value kisi bhi tarah ki input ho sakti hai jaise current time, user input, system clock, etc. Isliye agar seed value same hogi toh hume same random numbers milenge. Isse hume different range ke random numbers ki zarurat padegi jaise simulation ya encryption mein. Seed value ko `srand()` function se set kiya jata hai.
+
+Random numbers ko more random banane ke liye different algorithms, seeds aur input sources ka use kiya jata hai. Lekin ek baat ka dhyan rakhe, humesha seed value change kare taaki hume alag alag sequence mile aur humara output unpredictable ho. Seed value ko handle karna bahut important hai random numbers ke generation ke liye.
+
+## Dekhe Bhi
+
+- [C++ rand() function](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [C++ srand() function](https://www.geeksforgeeks.org/srand-in-ccpp/)
+- [Pseudo-random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Generating random numbers in different ranges](https://www.geeksforgeeks.org/generating-random-number-range-c/)

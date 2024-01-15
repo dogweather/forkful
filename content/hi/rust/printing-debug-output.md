@@ -1,5 +1,6 @@
 ---
-title:                "Rust: डिबग आउटपुट प्रिंट करना"
+title:                "डिबग आउटपुट प्रिंट करना"
+html_title:           "Rust: डिबग आउटपुट प्रिंट करना"
 simple_title:         "डिबग आउटपुट प्रिंट करना"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,34 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-कभी-कभी हम प्रोग्रामिंग में कोड के विभिन्न हिस्सों को ट्रैक करने के लिए डिबग आउटपुट का उपयोग करते हैं। यह हमें समस्याओं को खोजने और सुधार करने में मदद कर सकता है।
+## Kyun
 
-## कैसे करें
-डिबग आउटपुट छापने के लिए रस्त्र को कैसे उपयोग करें, इसके लिए हम निम्नलिखित कोड चिह्नांकित उदाहरण का उपयोग कर सकते हैं।
+Jab hum programming mein kaam karte hai, hume kai baar apne code mein bugs aur errors ko find karne ki zarurat padti hai. Iske liye hum print debugging ka istemal karte hai. Yeh ek aasan aur zaruri technique hai jiska istemal hum apne code ko improve karne aur sahi se chalane mein kar sakte hain.
+
+## Kaise Karein
+
+Agar aapko apne code mein kisi particular value ya object ki debugging karni hai, to aap ```println!()``` macro ka istemal kar sakte hain. Ismein aap apni desired value ko pass karke output ko console mein print kar sakte hain.
+
+For example:
 
 ```Rust
-// यूजर को विवरण छापें
-println!("उपयोगकर्ता: {:?}", user);
-
-// डिबग मोड में संदेश छापें
-#[derive(Debug)]
-struct Person {
-    name: String,
-    age: u8
+fn main() {
+    let x = 5;
+    println!("The value of x is: {}", x);
 }
-let person = Person { name: "आकाश".to_string(), age: 25 };
-println!("व्यक्ति: {:?}", person);
 ```
 
-आउटपुट:
-```
-उपयोगकर्ता: User { id: 1, name: "John" }
-व्यक्ति: Person { name: "आकाश", age: 25 }
+Yeh code output ke roop mein ```The value of x is: 5``` dega.
+
+Agar aap multiple values ko print karna chahte hain, to aap ```println!()``` macro mein multiple placeholders ka istemal kar sakte hain aur phir unke corresponding values ko comma se separate kar sakte hain.
+
+For example:
+
+```Rust
+fn main() {
+    let name = "John";
+    let age = 25;
+    println!("My name is {} and I am {} years old.", name, age);
+}
 ```
 
-## गहराई में जाएँ
-डिबग आउटपुट प्रिंट करने के लिए रस्त्र के पीछे की सटीक प्रक्रिया अपेक्षित आउटपुट दिखाने के लिए `println!` मैक्रो के पास `dbg!` मैक्रो के रूप में उपनाम प्रदान करता है। इस से हमें डिबग मोड में ट्रेसिंग संदेश को सुधारने और संपीड़ित करने में मदद मिलती है। इसके अलावा, हम `println!` और `dbg!` मैक्रो का बार-बार उपयोग नहीं करना चाहते हैं तो हम `eprintln!` और `edbg!` मैक्रो से सहायता ले सकते हैं जो स्टैंडर्ड एरर स्ट्रीम पर आउटपुट देते हैं।
+Yeh code output ke roop mein ```My name is John and I am 25 years old.``` dega.
 
-## आगे पढ़ें
-और रस्त्र में डिबग आउटपुट के बारे में जानने के लिए, आप आगामी रस्त्र की डॉक्यूमें
+## Deep Dive
+
+Print debugging ke liye ek aur useful macro hai - ```dbg!()```. Yeh macro hume not only value ko print karne ke liye, balki uska entire expression ko evaluate karne aur output mein display karne ke liye bhi allow karta hain.
+
+For example:
+
+```Rust
+fn main() {
+    let x = 10;
+    let y = 5;
+    let product = x * y;
+    dbg!(product);
+}
+```
+
+Yeh code output ke roop mein ```product = 50``` dega.
+
+Iske alawa, hum apne code mein condition statements aur loops mein bhi print debugging ka istemal kar sakte hain. Isse hume code ke flow ko samajhne mein madad milti hai aur sahi output ko identify karne mein help milti hai.
+
+See Also
+
+- [The Rust Programming Language](https://www.rust-lang.org/learn)
+- [Debugging in Rust](https://doc.rust-lang.org/book/ch12-00-an-io-project.html#debugging-with-print) 
+- [Rust By Example: Print Debugging](https://doc.rust-lang.org/rust-by-example/hello/print.html)

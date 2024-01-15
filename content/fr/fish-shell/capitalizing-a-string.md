@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Capitaliser une chaîne de caractères"
-simple_title:         "Capitaliser une chaîne de caractères"
+title:                "Capitalisation d'une chaîne de caractères"
+html_title:           "Fish Shell: Capitalisation d'une chaîne de caractères"
+simple_title:         "Capitalisation d'une chaîne de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
-Si vous utilisez le shell de poisson (Fish Shell), vous pourriez vous demander pourquoi il serait utile de capitaliser une chaîne de caractères. La réponse est simple : cela peut être très pratique lorsque vous travaillez avec des données saisies par des utilisateurs, des fichiers texte ou tout autre contenu nécessitant une casse cohérente.
+## Pourquoi
 
-## Comment faire 
-Pour capitaliser une chaîne de caractères en utilisant Fish Shell, vous pouvez suivre ces étapes simples :
+Si vous êtes un fanatique du codage ou si vous travaillez souvent avec des données, vous avez probablement rencontré des occasions où vous devez capitaliser des chaînes de caractères. Cela peut se faire pour de multiples raisons comme l'affichage esthétique ou la manipulation de données structurées. Dans cet article, nous allons vous montrer comment capitaliser une chaîne de caractères en utilisant Fish Shell, la version actuelle de l'interpréteur de commandes en ligne de Fish.
 
-- Utilisez la commande `string toupper` pour convertir tous les caractères de la chaîne en majuscules.
-- Utilisez la commande `string substring` pour récupérer la première lettre de la chaîne.
-- Utilisez la commande `string concat` pour combiner la première lettre de la chaîne en majuscules avec le reste de la chaîne en minuscules. 
+## Comment faire
 
-Voici un exemple de code et de sortie avec la chaîne "bonjour" :
+La commande "string capitalize" de Fish Shell vous permet de capitaliser une chaîne de caractères. Voici un exemple de code pour capitaliser une chaîne de caractères en utilisant cette commande :
 
 ```Fish Shell
-set str "bonjour" 
-set first (string toupper $str) 
-set remaining (string tolower (string substring --length 1 $str)) 
-echo (string concat $first $remaining)
+set my_string "bonjour le monde"
+echo $my_string | string capitalize
 ```
 
-Sortie : "Bonjour"
+La sortie de ce code sera "Bonjour le monde". Comme vous pouvez le voir, cela fonctionne bien même avec des chaînes de caractères qui contiennent des espaces. Vous pouvez également utiliser cette commande avec des variables :
 
-## Plongée en profondeur 
-Pour ceux qui veulent en savoir plus sur la capitalisation des chaînes de caractères en utilisant Fish Shell, voici quelques informations supplémentaires :
+```Fish Shell
+set my_name "pierre"
+set my_capitalized_name $my_name | string capitalize
+echo $my_capitalized_name
+```
 
-- La commande `string toupper` fonctionne en convertissant chaque caractère de la chaîne en sa forme majuscule correspondante. Cela signifie que les caractères spéciaux tels que les accents ne seront pas convertis.
-- La commande `string substring` prend différents arguments pour délimiter la partie de la chaîne que vous souhaitez récupérer. En utilisant `--length`, vous pouvez spécifier le nombre de caractères à inclure à partir du début de la chaîne.
-- Enfin, la commande `string concat` combine simplement les arguments fournis dans l'ordre dans lequel ils sont énumérés.
+La sortie sera "Pierre", avec la première lettre en majuscule.
 
-## Voir aussi 
-- La documentation officielle de Fish Shell sur la gestion des chaînes de caractères : https://fishshell.com/docs/current/cmds/string.html 
-- Un tutoriel sur l'utilisation de Fish Shell pour manipuler des chaînes de caractères : https://www.linux.com/news/string-manipulation-fish-shell/
-- Un guide complet sur les fonctionnalités de Fish Shell pour les débutants : https://www.howtogeek.com/682553/how-to-use-the-fish-shell-on-linux/
+## Plongeons plus profondément
+
+Maintenant que vous savez comment utiliser la commande "string capitalize", laissez-nous vous expliquer un peu plus comment cela fonctionne en coulisses. Cette commande utilise la fonction correspondante de la bibliothèque standard de Fish, qui utilise la fonction "toupper" de la bibliothèque standard du système. En utilisant cette commande, vous pouvez également spécifier le langage que vous voulez utiliser pour la capitalisation, comme le français ou l'allemand.
+
+Il est également important de noter que cette commande ne modifie pas la chaîne de caractères originale, mais crée une nouvelle chaîne de caractères avec la première lettre en majuscule. Cela signifie que vous devriez stocker le résultat dans une nouvelle variable si vous souhaitez l'utiliser ultérieurement.
+
+## Voir aussi
+
+Pour en savoir plus sur la commande "string capitalize" et d'autres commandes utiles de Fish Shell, consultez les liens suivants :
+
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/string.html#capitalize)
+- [Un guide complet pour maîtriser Fish Shell](https://the.exa.website/shell/fish/)
+- [Des conseils pour travailler plus efficacement avec Fish Shell](https://shopify.github.io/shopify/packaging-in-fish-shell/)
+
+Maintenant que vous avez appris à capitaliser des chaînes de caractères en utilisant Fish Shell, pourquoi ne pas explorer davantage cette puissante version de l'interpréteur de commandes ? Vous serez surpris de tout ce qu'elle peut faire pour améliorer votre flux de travail de codage et de gestion de données.

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Começando um novo projeto."
+html_title:           "Java: Começando um novo projeto."
+simple_title:         "Começando um novo projeto."
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -9,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Iniciar um novo projeto em Java pode ser um desafio emocionante para programadores de todos os níveis. Começar um novo projeto permite que você explore novas ideias e conceitos, além de poder expandir suas habilidades de codificação. No geral, iniciar um novo projeto é uma ótima maneira de se aprimorar como programador.
+## Por que
 
-## How to
-Para começar, crie um novo arquivo java chamado "MeuProjeto.java" e abra-o em seu editor de código favorito. Em seguida, digite o seguinte código:
+Iniciar um novo projeto em Java pode ser uma ótima maneira de aprender uma nova linguagem ou aprimorar suas habilidades de programação. Também pode ser uma maneira de construir um software que atenda às suas necessidades específicas ou resolver um problema que você esteja enfrentando.
 
-```Java
-public class MeuProjeto {
+## Como fazer
 
+Antes de começar a escrever código, é importante ter um entendimento claro do que você deseja alcançar com seu projeto. Aqui estão algumas etapas básicas a serem seguidas para iniciar um novo projeto em Java:
+
+1. Configurar o ambiente de desenvolvimento: Certifique-se de ter o Java Development Kit (JDK) instalado corretamente em sua máquina. Você pode baixá-lo gratuitamente no site da Oracle.
+2. Escolher uma IDE: Uma Integrated Development Environment (IDE) facilita a escrita, compilação e depuração de seu código. Algumas opções populares para Java incluem Eclipse, IntelliJ IDEA e NetBeans.
+3. Criar um novo projeto: Siga as instruções da sua IDE para criar um novo projeto em Java. Dê um nome ao projeto e escolha o local onde deseja salvá-lo.
+4. Definir a estrutura do projeto: É importante ter uma estrutura organizada para seu projeto. Você pode criar pacotes para diferentes partes do seu código, como classes, interfaces e recursos.
+5. Começar a escrever código: Agora é hora de começar a escrever seu código em Java! Você pode usar os recursos da sua IDE para ajudá-lo com a sintaxe e outros aspectos da linguagem.
+
+Aqui está um exemplo de código Java simples que imprime "Hello World!" na tela:
+
+```java
+public class MeuPrimeiroProjeto {
     public static void main(String[] args) {
-    
-        System.out.println("Olá, mundo!");
-    
+        System.out.println("Hello World!");
     }
-    
 }
 ```
 
-Este é um exemplo simples de código que imprimirá a frase "Olá, mundo!" quando o programa for executado. Agora, salve o arquivo e compile-o usando o compilador de Java.
+Ao executar esse código, você verá a seguinte saída:
 
 ```
-javac MeuProjeto.java
+Hello World!
 ```
 
-Isso criará o arquivo "MeuProjeto.class" que contém o código compilado do seu programa. Em seguida, execute-o usando o seguinte comando:
+## Aprofundando-se
 
-```
-java MeuProjeto
-```
+Iniciar um novo projeto em Java também envolve tomar algumas decisões importantes sobre a estrutura e a arquitetura do seu software. Aqui estão algumas coisas que você pode querer considerar ao iniciar seu projeto:
 
-Você deve ver a saída "Olá, mundo!" no console. Isso significa que seu novo projeto em Java está funcionando corretamente.
+- Design patterns: Você pode querer usar padrões de design, como MVC (Model-View-Controller), para ajudar a estruturar seu código de forma clara e eficiente.
+- Bibliotecas e frameworks: Não é necessário reinventar a roda ao construir um software em Java. Você pode aproveitar as bibliotecas e frameworks existentes para ajudá-lo com tarefas comuns, como realizar chamadas de rede ou manipular dados.
+- Versionamento de código: É importante usar um sistema de controle de versão para acompanhar as alterações em seu código e colaborar com outros desenvolvedores, se necessário.
 
-## Deep Dive
-Ao iniciar um novo projeto em Java, é importante seguir as melhores práticas de codificação. Isso inclui manter um código limpo e organizado, usar comentários adequados para tornar seu código mais legível e seguir as convenções de nomenclatura recomendadas pela comunidade Java.
-
-Além disso, é importante ter um planejamento adequado para o seu projeto. Defina quais são os objetivos e requisitos do projeto, crie um cronograma para as tarefas e certifique-se de acompanhar seu progresso. Isso ajudará a manter seu projeto organizado e garantir que você alcance seus objetivos de maneira eficiente.
-
-Outro aspecto importante é pesquisar e aprender novos conceitos e recursos que possam ser úteis para o seu projeto. A comunidade Java é muito ativa e existem muitos recursos disponíveis, como tutoriais, fóruns, blogs e documentação oficial, que podem ser úteis para ajudar no desenvolvimento do seu projeto.
+Lembre-se de que sempre há mais para aprender sobre Java e que você pode consultar a documentação oficial e outros recursos on-line para obter ajuda com qualquer problema que encontrar em seu projeto.
 
 ## Veja também
+
 - [Documentação oficial do Java](https://docs.oracle.com/en/java/)
-- [Tutorial de Java da W3Schools](https://www.w3schools.com/java/)
-- [Fórum Técnico Java](https://www.javatechnologies.com.br/forumjava/index.php)
+- [Tutoriais de Java da Oracle](https://docs.oracle.com/javase/tutorial/)
+- [Baixar o JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [Eclipse IDE](https://www.eclipse.org/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+- [NetBeans IDE](https://netbeans.apache.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Utskrift av felanalys"
-simple_title:         "Utskrift av felanalys"
+title:                "Utskrift av debuggutdata"
+html_title:           "Gleam: Utskrift av debuggutdata"
+simple_title:         "Utskrift av debuggutdata"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -9,31 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-En av de viktigaste delarna av programmering är att kunna felsöka koden. Att kunna skriva ut debug-utmatning är ett värdefullt verktyg för att förstå vad som händer i koden och hitta eventuella fel. Det är en enkel och effektiv metod som kan användas under utvecklingsprocessen.
+## Varför
 
-## Hur man gör
-För att skriva ut debug-utmatning i Gleam kan du använda funktionen `debug.print` och ange det du vill skriva ut som argument. Till exempel, om du vill skriva ut en sträng, kan du använda följande kod:
+Att skriva ut debug-utdata är en användbar metod för att felsöka och förbättra koden. Genom att utskriften ger oss information om vad som händer under körning, kan vi hitta och lösa problem snabbare.
+
+## Hur man gör det
+
+Det finns flera sätt att skriva ut debug-utdata i Gleam, beroende på vilken typ av information vi vill ha.
+
+### Utskrift av variablers värden
+
+För att skriva ut värdet av en variabel kan vi använda ```Gleam.Debug.print```-funktionen. Till exempel om vi vill skriva ut värdet av en variabel ```antal```, kan vi göra det på följande sätt:
 
 ```Gleam
-let str = "Hej värld!"
-debug.print(str)
+let antal = 5
+
+Gleam.Debug.print("Variabelns värde är: $(antal)")
 ```
 
-Detta kommer att skriva ut "Hej värld!" i terminalen eller på annan utmatningsplats, beroende på hur du kör koden.
+Detta kommer att resultera i utskriften "Variabelns värde är: 5". Vi kan också skriva ut flera variabler samtidigt genom att använda flera ```print```-anrop.
 
-Om du vill ha ännu mer detaljerad information kan du använda `debug.print_all` som tar emot ett element och skriver ut alla dess egenskaper. Du kan också använda `debug.inspect` för att få en formaterad utskrift av ett element, vilket kan vara särskilt användbart för att felsöka komplexa datastrukturer.
+### Utskrift av strängar
 
-## Deep Dive
-För att förstå hur debug-utmatning fungerar i Gleam, är det viktigt att förstå att det är en del av det inbyggda biblioteket `gleam_debug`. Detta bibliotek ger funktioner för att skriva ut text, nummer, booleska värden och andra typer av data.
+För att skriva ut en sträng använder vi ```Gleam.Debug.print_string```-funktionen. Om vi till exempel vill skriva ut strängen "Hej!", kan vi göra det så här:
 
-En annan intressant funktion i `gleam_debug` är `debug.trace`, som skriver ut information om varje körningsvarv i koden. Detta kan vara användbart för att förstå vilka delar av koden som har utförts och i vilken ordning.
+```Gleam
+Gleam.Debug.print_string("Hej!")
+```
 
-Så använd debug-utmatning för att felsöka din Gleam-kod och hitta eventuella problem!
+Detta kommer att skriva ut "Hej!" i terminalen.
 
-# See Also
-Här är några användbara resurser för att lära dig mer om debugging i Gleam:
+### Utskrift av typer
 
-- Officiell Gleam dokumentation om felsökning: https://gleam.run/book/tips-and-tricks.html#debugging
-- En guide till hur man felsöker i Gleam: https://medium.com/gleam-lang/another-guide-to-debugging-with-gleam-65ac455ca02e
-- GitHub-repository för `gleam_debug`: https://github.com/gleam-lang/gleam_debug
+Om vi vill skriva ut typen av en variabel, kan vi använda ```Gleam.Debug.print_type```-funktionen. Till exempel om vi vill skriva ut typen av variabeln ```namn```, kan vi göra det med följande kod:
+
+```Gleam
+let namn = "Gleam"
+
+Gleam.Debug.print_type("Variabelns typ är: ", namn)
+```
+
+Detta kommer att skriva ut "Variabelns typ är: String" i terminalen.
+
+## Utforska djupare
+
+Det finns många fler funktioner för att skriva ut debug-utdata i Gleam, som att skriva ut listor, tupler och liknande. Vi kan också använda ```Gleam.Debug.inspect```-funktionen för att få mer detaljerad information om objekt. Utforska gärna dokumentationen för mer information.
+
+## Se även
+
+- [Officiell Gleam-dokumentation för att skriva ut debug-utdata](https://gleam.run/documentation/guides/printing_debug_output)
+- [Gleam-coding examples](https://github.com/gleam-lang/gleam/tree/master/examples)

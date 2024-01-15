@@ -1,6 +1,7 @@
 ---
-title:                "C: भविष्य या अतीत में दिनांक की गणना करना ।"
-simple_title:         "भविष्य या अतीत में दिनांक की गणना करना ।"
+title:                "भविष्य या भूतकाल में एक दिन की गणना"
+html_title:           "C: भविष्य या भूतकाल में एक दिन की गणना"
+simple_title:         "भविष्य या भूतकाल में एक दिन की गणना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,61 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्यों: कोई व्यक्ति भविष्य या भूतकाल में तारीख की गणना करने में सक्रिय होना क्यों करेगा, इसका व्याख्यान केवल 1-2 वाक्यों में।
+## Why
 
-## कैसे करें:
+Kabhi kabhi hume pehle ya baad ki date nikalni hoti hai. Isse hum jan sakte hai ke kis din konsa kaam karna hai ya kis din koi event hai. C programming mein, date calculation ka feature hai jo hume future ya past dates nikalne mein madad karta hai.
 
-```
-#include<stdio.h>
-#include<stdlib.h>
+## How To
+
+Calculating date in the future or past involves using the "time.h" header file and various functions like "mktime()" and "localtime()". Let's see an example of calculating a date 100 days in the future:
+
+```C
+#include <stdio.h>
+#include <time.h>
 
 int main()
 {
-    int day, month, year;
-    int future_day, future_month, future_year;
-    int past_day, past_month, past_year;
+    time_t now, future;
+    struct tm *timeInfo;
 
-    // प्रभावों की सभी प्राथमिक भराइएं दर्ज करें
-    printf("आज का दिन, महीना और साल (उदा: 9 10 2021): ");
-    scanf("%d %d %d", &day, &month, &year);
+    time(&now); // get current time
+    future = now + (100 * 24 * 60 * 60); // add 100 days
 
-    // भविष्य की तारीख का पता लगाएं
-    printf("भविष्य की तारीख की संख्या: ");
-    scanf("%d", &future_day);
+    timeInfo = localtime(&future); // convert to readable format
 
-    // भविष्य की तारीख की गणना करें
-    future_month = month + (future_day / 30);
-    future_year = year + (future_month / 12);
-    future_day = future_day % 30;
-    future_month = future_month % 12;
-
-    // पश्चात्तम की तारीख का पता लगाएं
-    printf("पश्चात्तम की तारीख की संख्या: ");
-    scanf("%d", &past_day);
-
-    // पश्चात्तम की तारीख की गणना करें
-    past_month = month - (past_day / 30);
-    past_year = year - (past_month /12);
-    past_day = past_day % 30;
-    past_month = past_month % 12;
-
-    // परिणाम मुद्रित करें
-    printf("%d दिन बाद की तारीख: %d/%d/%d \n", future_day, future_month, future_year);
-    printf("%d दिन पहले की तारीख: %d/%d/%d \n", past_day, past_month, past_year);
+    printf("Date 100 days from now: %s", asctime(timeInfo)); // print date
 
     return 0;
 }
 ```
-
-प्रोग्राम लागू करने पर निम्नलिखित आउटपुट प्राप्त करें:
+Output:
 ```
-आज का दिन, महीना और साल (उदः: 9 10 2021): 18 10 2021
-भविष्य की तारीख की संख्या: 25
-पश्चात्तम की तारीख की संख्या: 12
-25 दिन बाद की तारीख: 12/11/2021
-12 दिन पहले की तारीख: 6/10/2021
+Date 100 days from now: Wed Nov 17 23:18:22 2021
 ```
 
-## गहराई में जाएं:
+Similarly, we can calculate dates in the past by subtracting days, months or years from the current date. Just remember to convert to readable format using "localtime()" before printing the result.
 
-भविष्य या पश्चात्तम की तारीख की गणना करना बहुत ही उपयोगी हो सकता है। इससे आप
+## Deep Dive
+
+The "time.h" header file contains various functions and structures for handling date and time in C. The "mktime()" function takes in a structure containing date and time information and converts it to a time_t value, which represents the number of seconds elapsed since January 1, 1970. This value can then be manipulated using arithmetic operations to calculate future or past dates.
+
+The "localtime()" function converts the time_t value back to a readable structure containing date and time information. This can be further formatted using functions like "asctime()" to print it in a human-readable format.
+
+## See Also
+
+- [C Programming - Date & Time functions](https://www.programiz.com/c-programming/library-function/time)
+- [time.h - C++ Reference](https://www.cplusplus.com/reference/ctime/)

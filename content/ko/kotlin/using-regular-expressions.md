@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규식 사용하기"
+html_title:           "Kotlin: 정규식 사용하기"
+simple_title:         "정규식 사용하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,47 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+정규 표현식을 사용하는 이유는 간단합니다. 그것은 특정한 패턴을 찾고, 변경하고, 추출하는 데에 매우 유용하기 때문입니다. 이것은 텍스트 처리 작업을 더 효율적으로 만들어줍니다.
 
-프로그래밍을 하면서 종종 특정한 문자열을 찾거나 변경해야 할 때가 있습니다. 예를 들어, 이메일 주소를 찾아서 모두 대문자로 바꾸고 싶거나, 전화번호를 추출하거나, 주민등록번호를 올바른 형식으로 바꾸고 싶을 수 있습니다. 이럴 때 유용한 도구가 바로 정규표현식(Regular Expressions)입니다.
+## 어떻게
+정규 표현식을 사용하기 위해서는 ```Regex``` 클래스를 사용해야 합니다. 이 클래스는 문자열을 표현식과 비교하고 일치하는 패턴을 찾아내는 기능을 제공합니다. 예를 들어, 특정 이메일 양식을 검증하기 위해 다음과 같이 코드를 작성할 수 있습니다.
 
-## 사용 방법
-
-정규표현식을 사용하기 위해서는 Kotlin의 ```Regex``` 클래스를 사용해야 합니다. 이 클래스는 다양한 메소드를 제공하여 문자열을 찾거나 변경할 수 있도록 도와줍니다. 아래는 이메일 주소를 찾아서 모두 대문자로 바꾸는 예시 코드입니다.
-
-```Kotlin
-fun main() {
-    // 원본 문자열
-    val email = "example@exmaple.com"
-    // 정규표현식을 사용하여 대문자로 바꿈
-    val result = Regex("[\\w.-]+@[\\w-]+(\\.[\\w-]+)+").replace(email) { it.value.toUpperCase() }
-    // 결과 출력
-    println(result)
+```Kotlin 
+val emailRegex = Regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
+val email = "example@example.com"
+if (email.matches(emailRegex)) {
+    println("Valid email address")
+} else {
+    println("Invalid email address")
 }
 ```
 
-위 코드의 출력은 다음과 같을 것입니다:
+위 예제에서 우리는 이메일 주소를 검증하기 위해 정규 표현식을 사용했습니다. 우리는 이메일 양식의 패턴에 맞게 작성된 문자열이 일치하는지 확인하고, 이에 따라 유효한 이메일 주소인지 아닌지를 출력합니다.
 
-```
-EXAMPLE@EXAMPLE.COM
-```
+## 딥 다이브
+정규 표현식을 다루기 위해서는 정규 표현식 구문에 대한 이해가 필요합니다. 예를 들어, ```^```는 문자열의 시작을 나타내는 메타 문자입니다. 또한 ```+```는 이전 패턴의 하나 이상의 반복을 나타내는 메타 문자입니다. 이와 같은 정규 표현식의 구문을 이해하면 더 복잡한 패턴을 구성할 수 있습니다.
 
-## 깊게 들어가기
-
-정규표현식은 기본적으로 특정한 패턴을 찾아내기 위해 사용됩니다. 가령 위의 예시에서 사용된 정규표현식은 이메일 주소를 찾아내기 위한 패턴입니다. 이를 조금 더 자세히 살펴보면, 아래와 같은 구조로 이루어져 있습니다.
-
-```
-[\\w.-]+@[\\w-]+(\\.[\\w-]+)+
-```
-
-먼저 대괄호(```[]```) 안에 있는 문자들은 모두 하나의 문자로 매칭될 수 있습니다. 예를 들어, ```[\\w.-]```는 알파벳, 숫자, 밑줄, 마침표, 그리고 하이픈을 의미합니다. 그리고 플러스(```+```)는 앞에 있는 패턴이 하나 이상 반복될 수 있음을 의미합니다. 따라서 ```[\\w.-]+```는 알파벳, 숫자, 밑줄, 마침표, 그리고 하이픈으로 이루어진 하나 이상의 문자열을 찾아냅니다.
-
-두 번째 그룹은 ```@[\\w-]+```로 이루어져 있습니다. 이는 앞의 패턴과 비슷하지만, 마침표 대신에 ```@```를 검색하도록 설정된 것입니다.
-
-마지막 그룹은 괄호로 감싸져 있으며, 앞의 두 그룹에서 매칭된 문자열을 그대로 가져옵니다. 따라서 이 부분은 이메일 주소의 도메인을 추출하는 역할을 합니다.
-
-## 또 다른 정보들
-
-- [Kotlin 정규표현식 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/): 정규표현식을 사용하기 위한 Kotlin의 공식 문서를 참고하세요.
-- [정규표현식 패턴 탐색기](https://regex101.com/): 유용한 패턴을 찾을 수 있는 온라인 도구입니다. 이 사이트에서 정규표현식을 적용하여 결과를 바로 확인할 수 있습니다.
-- [코틀린 공식 블로그](https://blog.jetbrains.com/ko/kotlin/):
+## 더 알아보기
+- [Kotlin Regular Expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Regular Expressions Info](https://www.regular-expressions.info/)
+- [Mastering Regular Expressions](http://www.masteringregex.com/)

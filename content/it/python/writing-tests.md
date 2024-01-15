@@ -1,5 +1,6 @@
 ---
-title:                "Python: Scrivere test"
+title:                "Scrivere test"
+html_title:           "Python: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Python"
 category:             "Python"
@@ -9,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè scrivere test è importante in Python
+# Perché
 
-Scrivere test è una parte essenziale della programmazione in Python. Garantisce che il codice che scriviamo sia affidabile e funzioni correttamente. In questo post, scopriremo come scrivere test nella nostra applicazione Python.
+Scrivere test è fondamentale per garantire la correttezza e la stabilità di un programma. I test aiutano a identificare eventuali errori e a verificare che le modifiche apportate al codice non abbiano causato problemi in altre parti del programma.
 
-## Come scrivere test in Python
+# Come Fare
 
-Per scrivere test in Python, dobbiamo utilizzare il modulo `unittest` nella libreria standard di Python. Questo modulo ci permette di creare test unitari per le nostre funzioni. Vediamo un esempio di come utilizzarlo:
+Per scrivere test in Python, è necessario utilizzare il modulo `unittest`. Di seguito un esempio di un test semplice che verifica che la funzione `add` sommi correttamente due numeri interi:
 
 ```Python
 import unittest
 
-def somma(numero1, numero2):
-    return numero1 + numero2
+def add(x, y):
+    return x + y
 
-class TestSomma(unittest.TestCase):
+class TestAdd(unittest.TestCase):
 
-    def test_somma_positivi(self):
-        self.assertEqual(somma(2, 3), 5)
-    
-    def test_somma_negativi(self):
-        self.assertEqual(somma(-2, -5), -7)
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 5), 4)
 ```
 
-In questo codice, abbiamo definito una funzione `somma` che accetta due numeri e ritorna la loro somma. Poi abbiamo creato una classe `TestSomma` che eredita dalla classe `TestCase` del modulo `unittest`. All'interno di questa classe, abbiamo definito due metodi di test: `test_somma_positivi` e `test_somma_negativi`. Utilizziamo il metodo `assertEqual` per verificare che il risultato della funzione `somma` sia corretto.
+Per eseguire questo test, è possibile utilizzare il comando `python -m unittest nomefile.py` dalla riga di comando. Se non vengono sollevate eccezioni, il test viene considerato valido.
 
-Una volta che abbiamo scritto tutti i nostri test, possiamo eseguirli eseguendo il nostro file Python, come mostrato sopra. Se tutti i test passano con successo, vedremo un output come questo:
+# Approfondimento
 
-```
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+Esistono diversi tipi di test che possono essere scritti in Python, come i test di unità, di integrazione e di sistema. Inoltre, è possibile utilizzare una libreria come `coverage` per verificare la percentuale di codice testato e garantire una maggiore copertura.
 
-OK
-```
+# Vedi Anche
 
-Se qualcosa non va durante l'esecuzione dei test, il modulo `unittest` ci fornirà informazioni dettagliate su quale test non è stato superato e perché.
-
-## Deep Dive: Perchè scrivere test
-
-Oltre a garantire la correttezza del nostro codice, scrivere test ha molti altri vantaggi. In primo luogo, ci aiuta a sviluppare il codice in modo più modulare, poiché dobbiamo scrivere funzioni che siano facili da testare. Inoltre, i test ci permettono di individuare eventuali bug durante lo sviluppo, che possono essere corretti prima del rilascio dell'applicazione. Infine, avere una suite completa di test ci permette di apportare modifiche al codice senza paura di rompere funzionalità esistenti, in quanto possiamo eseguire i test per verificare che tutto funzioni ancora correttamente.
-
-## Vedi anche
-
-- [Documentazione ufficiale sul modulo unittest](https://docs.python.org/3/library/unittest.html)
-- [Cartella di esempi di test di Python](https://github.com/python/cpython/tree/master/Lib/test)
-- [Articolo su Writing Effective Tests in Python](https://medium.com/@vladubogdan/writing-effective-tests-in-python-bd2146ac81e)
+- Documentazione di `unittest`: https://docs.python.org/3/library/unittest.html
+- Tutorial sui test in Python: https://realpython.com/python-testing/
+- Libreria per misurare la copertura dei test: https://coverage.readthedocs.io/en/coverage-5.5/

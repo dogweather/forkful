@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Beregning av datoer i fremtiden eller fortiden"
-simple_title:         "Beregning av datoer i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Rust: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -9,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Rust er et kraftig programmeringsspråk som har blitt stadig mer populært blant utviklere. En av grunnene til dette er det store utvalget av verktøy og biblioteker som kan hjelpe deg å løse ulike utfordringer. I denne bloggposten skal vi se nærmere på hvordan man kan benytte Rust til å beregne en dato i fremtiden eller fortiden.
+## Hvorfor
+Har du noen gang lurt på hvordan du kan regne ut en dato i fremtiden eller fortiden? Kanskje du vil vite når du skal feire bursdagen din om fem år, eller når det var nøyaktig 1000 dager siden du møtte din kjære? Uansett årsak, lær hvordan du kan beregne datoer i Rust på en enkel måte.
 
-# Hvordan
-For å komme i gang med å beregne datoer i Rust, må vi først importere biblioteket "chrono" som lar oss jobbe med datoer og tider. Deretter kan vi benytte oss av funksjoner som f.eks. "Local::today()" og "Local::now()" for å få tak i informasjon om dagens dato og tid.
-
-```Rust
-use chrono::{ Local, Datelike, Timelike };
-
-let today = Local::today(); // Dagens dato
-let now = Local::now(); // Klokken nå
-
-println!("Dagens dato er {} {}, {}", today.month(), today.day(), today.year());
-println!("Klokken er nå {}:{}:{}", now.hour(), now.minute(), now.second());
-```
-
-For å beregne en dato i fremtiden eller fortiden kan vi bruke funksjonen "with_year()" for å spesifisere et år, og deretter "with_month()" og "with_day()" for å spesifisere en måned og dag.
+## Hvordan
+For å beregne en dato i fremtiden eller fortiden, kan vi bruke Rusts `chrono` bibliotek. Dette biblioteket gir oss funksjoner og typer for å håndtere datoer og tid. La oss se på et eksempel der vi ønsker å finne ut når det er nøyaktig 100 dager etter i dag:
 
 ```Rust
-use chrono::NaiveDate; // Importerer NaiveDate for å kunne konvertere fra dato til dato
-use chrono::Duration; // Importerer Duration for å kunne håndtere tidsintervall
+use chrono::{Utc, Duration};
 
-let today = Local::today();
-let future = today.with_year(2020).with_month(5).with_day(10); // Ny dato i fremtiden
+let today = Utc::now().date();
+let future_date = today + Duration::days(100);
 
-let difference = future.signed_duration_since(today); // Henter tidsintervall mellom dagens dato og fremtidsdato
-let days = difference.num_days(); // Konverterer til antall dager
-
-println!("Det er {} dager igjen til {} {}, {}.", days, future.month(), future.day(), future.year());
+println!("Om 100 dager vil det være {}.", future_date);
 ```
 
-# Dypdykk
-Det som er spesielt nyttig med "chrono" biblioteket er at det støtter ulike typer datoer og tider, som f.eks. lokale og globale datoer, UTC og ISO datoer. Dette gjør det enkelt å skrive kode som kan håndtere ulike tidssoner og kulturer.
+La oss bryte ned koden: Først importerer vi biblioteket `chrono`. Deretter bruker vi `Utc::now().date()` for å få dagens dato i UTC-tidssone. Vi lagrer denne datoen i en variabel kalt `today`. Deretter bruker vi `Duration::days(100)` for å lage en varighet på 100 dager og legger denne til `today`. Dette gir oss en ny dato som vi lagrer i variabelen `future_date`. Til slutt skriver vi ut denne datoen til konsollen. Dette vil gi oss en output som for eksempel "Om 100 dager vil det være 2021-07-16."
 
-En annen nyttig funksjon i "chrono" biblioteket er muligheten til å formatere datoer og tider. Dette kan gjøres ved hjelp av funksjonen "format()" og angivelse av ønsket format. Dette kan være nyttig hvis man ønsker å vise datoer og tider på en spesifikk måte for brukeren.
+Hva om vi vil finne ut av datoen 1000 dager siden i fortiden? Da kan vi bruke samme kode, men endre `Duration::days(100)` til `Duration::days(-1000)`. Dette vil gi oss en output som for eksempel "1000 dager siden var det 2018-10-09."
 
-```Rust
-use chrono::format::{ StrftimeItems }; // Importerer StrftimeItems for å kunne formatere datoer og tider
+## Deep Dive
+Det er flere måter du kan manipulere datoer og tider på ved hjelp av `chrono` biblioteket. For eksempel kan du legge til eller trekke fra timer, minutter eller sekunder i tillegg til dager. Du kan også endre tidszonen ved å bruke `with_timezone()` funksjonen.
 
-let now = Local::now();
-let formatted_date = now.format("%H:%M, %e %B %Y").to_string(); // Formatterer til ønsket format
+Det er viktig å merke seg at `chrono` biblioteket bruker UTC som standard tidsstempel, så hvis du vil bruke en annen tidszone må du endre dette manuelt. Det finnes også andre biblioteker for å håndtere datoer og tider i Rust, som for eksempel `time` og `datetime`. Utforsk og finn ut hvilket bibliotek som passer best for ditt prosjekt.
 
-println!("Klokken er nå {}.", formatted_date);
-```
-
-# Se Også
-- [Rust Dokumentasjon](https://doc.rust-lang.org/)
-- [Chrono Bibliotek](https://docs.rs/chrono/0.4.11/chrono/)
-- [Offisiell Rust Forum](https://users.rust-lang.org/)
+## Se også
+- [Rust dokumentasjon for `chrono`](https://docs.rs/chrono/0.4.19/chrono/)
+- [Flere eksempler på å beregne datoer i Rust](https://www.codementor.io/@arpitbhayani/manipulating-dates-and-times-in-rust-using-chrono-iinrxp8a9)

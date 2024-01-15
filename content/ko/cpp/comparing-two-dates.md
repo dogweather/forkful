@@ -1,6 +1,7 @@
 ---
-title:                "C++: 두 날짜 비교하기"
-simple_title:         "두 날짜 비교하기"
+title:                "두 날짜 비교"
+html_title:           "C++: 두 날짜 비교"
+simple_title:         "두 날짜 비교"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,53 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-날짜를 비교하는 것에 참여하는 이유는 무엇일까요? 보통 우리는 특정 일자나 시간을 비교하고 싶을 때 날짜를 비교합니다. 예를 들어, 어떤 날짜가 다른 날짜보다 더 늦은 지, 빠른 지, 또는 같은 지 여부를 알고 싶은 경우가 있습니다. 이런 경우, C++ 프로그래밍으로 날짜를 비교하는 방법을 알면 유용할 수 있습니다.
+두 날짜를 비교하는 방법을 배우는 것이 중요한 이유는 다양한 프로그래밍 작업에서 날짜를 다루는 것이 매우 일반적이기 때문입니다.
 
-# 어떻게
+## 어떻게
 
-먼저, 비교할 날짜를 변수로 정의해야 합니다. 다음은 두 개의 날짜를 비교하기 위한 기본적인 코드 예시입니다.
+C++에서 두 날짜를 비교하는 방법은 아래의 예시 코드와 함께 설명됩니다.
 
 ```C++
-// 비교할 날짜 정의
-int date1 = 20200601; // 2020년 06월 01일
-int date2 = 20200531; // 2020년 05월 31일
+#include <iostream>
+#include <ctime>
 
-// 날짜 비교
-if (date1 > date2) {
-    // date1이 date2보다 더 늦은 경우
-    cout << "date1은 date2보다 더 늦은 날짜입니다.";
-} else if(date1 < date2) {
-    // date1이 date2보다 더 빠른 경우
-    cout << "date1은 date2보다 더 빠른 날짜입니다.";
-} else {
-    // 두 날짜가 같은 경우
-    cout << "두 날짜는 같은 날짜입니다.";
+using namespace std;
+
+int main(){
+    // 현재 날짜 가져오기
+    time_t now = time(0);
+    
+    // tm 구조체에 현재 날짜 저장
+    tm *currentDate = localtime(&now);
+    
+    // 비교할 날짜 설정
+    // 년-월-일 순서로 입력해야 함
+    string compareDate = "2021-05-20";
+    
+    // string 타입의 날짜를 tm 구조체로 변환
+    tm convertedDate;
+    strptime(compareDate.c_str(), "%Y-%m-%d", &convertedDate);
+    
+    // 두 날짜를 비교하여 출력
+    if(currentDate->tm_year > convertedDate.tm_year){
+        cout << "현재 날짜가 더 늦은 날짜입니다." << endl;
+    }
+    else if(currentDate->tm_year < convertedDate.tm_year){
+        cout << "비교할 날짜가 더 늦은 날짜입니다." << endl;
+    }
+    else{
+        if(currentDate->tm_mon > convertedDate.tm_mon){
+            cout << "현재 날짜가 더 늦은 날짜입니다." << endl;
+        }
+        else if(currentDate->tm_mon < convertedDate.tm_mon){
+            cout << "비교할 날짜가 더 늦은 날짜입니다." << endl;
+        }
+        else{
+            if(currentDate->tm_mday > convertedDate.tm_mday){
+                cout << "현재 날짜가 더 늦은 날짜입니다." << endl;
+            }
+            else if(currentDate->tm_mday < convertedDate.tm_mday){
+                cout << "비교할 날짜가 더 늦은 날짜입니다." << endl;
+            }
+            else{
+                cout << "같은 날짜입니다." << endl;
+            }
+        }
+    }
+    
+    return 0;
 }
 ```
 
-위 코드에서는 날짜를 각각 int 변수로 정의하고, if/else문을 사용하여 두 날짜를 비교하고 결과를 출력합니다.
+위 코드를 컴파일하여 실행하면 현재 날짜와 비교할 날짜를 출력하여 두 날짜를 비교할 수 있습니다. 예시 코드에서는 현재 날짜는 시스템 시간을 기준으로 가져오고, 비교할 날짜는 string 타입으로 입력받아 tm 구조체로 변환합니다. 그 후, 두 날짜를 비교하여 결과를 출력합니다.
 
-위 코드에서는 YYYYMMDD 형식으로 날짜를 정의했지만, 다른 형식으로도 비교할 수 있습니다. 예를 들어, 문자열로 날짜를 정의하고 비교하는 방법도 있습니다. 아래는 두 날짜를 문자열로 정의하고 비교하는 코드 예시입니다.
+## 딥 다이브
 
-```C++
-// 비교할 날짜 정의
-string date1 = "2020-06-01"; // 2020년 06월 01일
-string date2 = "2020-05-31"; // 2020년 05월 31일
+비교할 날짜를 string 타입으로 입력받은 후 직접 tm 구조체로 변환하는 방법 외에도 라이브러리를 사용하여 간편하게 날짜를 비교하는 방법도 있습니다. 여러 가지 라이브러리 중 C++ 11부터 추가된 \<chrono\> 라이브러리는 날짜와 시간을 다루는 유용한 기능을 제공하여 더 쉽게 날짜를 비교할 수 있도록 도와줍니다.
 
-// 날짜 비교
-if (date1 > date2) {
-    cout << date1 << "은(는) " << date2 << "보다 더 늦은 날짜입니다.";
-} else if(date1 < date2) {
-    cout << date1 << "은(는) " << date2 << "보다 더 빠른 날짜입니다.";
-} else {
-    cout << "두 날짜는 같은 날짜입니다.";
-}
-```
+## 참고 자료
 
-# Deep Dive
-
-날짜를 비교하는 방법에는 여러 가지가 있을 수 있습니다. 위 코드에서는 가장 간단하고 기본적인 방법을 다루었지만, 실제로는 더 세부적인 비교도 가능합니다. 예를 들어, 날짜가 아닌 시간까지 정확하게 비교하는 경우가 있을 수 있습니다. 이 경우에는 C++ 라이브러리인 <DateTime>을 사용하여 비교하는 것이 좋습니다.
-
-날짜를 비교할 때 주의해야 할 점은 날짜 형식이나 시간대 등이 다른 경우도 있을 수 있다는 것입니다. 이 경우에는 추가적인 작업이 필요할 수 있으며, 어떤 방법을 사용하는 것이 가장 효율적인 지 고려해야 합니다.
+- [C++ \<ctime\> 다루기](https://modoocode.com/215)
+- [C++ 11 \<chrono\> 라이브러리 사용법](https://cplusplus.com/reference/chrono/)
+- [C++ 날짜와 시간 다루기](https://www.learncpp.com/cpp-tutorial/513-c15-dates-and-times/)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Søking og utskifting av tekst"
+title:                "Søking og utskifting av tekst"
+html_title:           "Kotlin: Søking og utskifting av tekst"
 simple_title:         "Søking og utskifting av tekst"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det å søke og erstatte tekst er en viktig del av programmering, spesielt når det gjelder å automatisere prosesser og effektivisere arbeidsflyten. Enten du er en erfaren utvikler eller nybegynner, er det å mestre søk- og erstattingsfunksjonene i Kotlin en viktig ferdighet å ha.
+Noen ganger kan man trenge å erstatte tekst i et dokument eller en kodebase. Dette kan være for å fikse skrivefeil, oppdatere gamle kodelinjer eller for å gjøre en rask endring i mange filer samtidig. I slike tilfeller kan det være nyttig å vite hvordan man enkelt kan søke og erstatte tekst ved hjelp av Kotlin.
 
-# Hvordan gjøre det
+## Slik gjør du det
 
-For å søke og erstatte tekst i Kotlin, kan du bruke funksjonen `replace()` som finnes i `kotlin.String` klassen. For å erstatte all tekst som matcher et bestemt mønster med en annen tekst, bruker du følgende syntaks:
-
-```Kotlin
-val nyTekst = originalTekst.replace("mønster", "erstattendetekst")
-```
-
-La oss si at vi har en liste med navn, og vi ønsker å bytte ut alle navn som begynner med bokstaven "A" med navnet "Andrea". Her er et eksempel på hvordan vi kan gjøre dette i Kotlin:
+For å søke og erstatte tekst i Kotlin, kan du bruke bruk av funksjonen `replace()` og `Regex`-klasse. Følgende kodeblokk viser et enkelt eksempel på hvordan dette kan gjøres:
 
 ```Kotlin
-val navnListe = listOf("Amanda", "Martin", "Julie", "Anna", "Matias")
-
-for (navn in navnListe) {
-    val nyttNavn = navn.replace("^A.*".toRegex(), "Andrea")
-    println(nyttNavn)
-}
+val originalString = "Hallo verden"
+val newString = originalString.replace(Regex("verden"), "Universe")
+println(newString) // Output: Hallo Universe
 ```
 
-Dette vil gi følgende output:
+Her erstattes teksten "verden" med "Universe" i strengen "Hallo verden". Du kan også bruke variabler i søket og erstatningen, for eksempel:
+
+```Kotlin
+val firstName = "Sara"
+val lastName = "Olsen"
+val fullName = "$firstName $lastName" // Sara Olsen
+val newFullName = fullName.replace(Regex(lastName), "Smith")
+println(newFullName) // Output: Sara Smith 
 ```
-Andrea
-Martin
-Julie
-Anna
-Matias
+
+Legg merke til hvordan man kan bruke variabler i Regex-uttrykket ved å bruke `$` foran variabelnavnet. Dette gjør det enkelt å oppdatere og endre søket hvis man trenger det.
+
+## Dypdykk
+
+Ved å bruke `Regex`-klassen, kan man også gjøre mer avanserte søk og erstatninger. For eksempel kan man søke etter uttrykk som starter på en bestemt bokstav:
+
+```Kotlin
+val originalString = "Banan, Bringebær, Blåbær, Jordbær"
+val newString = originalString.replace(Regex("^B"), "F")
+println(newString) // Output: Fanan, Fringebær, Flåbær, Fjordbær 
 ```
 
-# Dypdykk
+Søket vil her bare gjelde ord som starter på bokstaven "B", og disse vil bli erstattet med "F". Man kan også bruke `replaceFirst()`- og `replaceAll()`-funksjonene for å gjøre søket mer spesifikt, og man kan også bruke `Regex`-flagg for å gjøre søket ikke-eksakt eller mer komplekst.
 
-I tillegg til å erstatte tekst basert på et mønster, kan du også bruke mer avanserte funksjoner som `replaceAll()` og `replaceAfter()` for å gjøre mer spesifikke endringer i teksten. Du kan også bruke `replaceFirst()` for å bare erstatte den første forekomsten av et mønster.
+## Se også
 
-Det er også viktig å merke seg at `replace()`-funksjonen returnerer en ny `String` og påvirker ikke den opprinnelige `String`-variabelen. Derfor er det viktig å tilordne resultatet av `replace()` til en ny variabel eller direkte bruke den i en printsetning som vist i eksempelet ovenfor.
-
-# Se også
-
-- [Kotlin String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- [Kotlin Regex documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.util.regex.-pattern/index.html)
-- [Regular Expressions in Kotlin](https://www.baeldung.com/kotlin-regular-expressions)
+- [Kotlin regex tutorial](https://www.tutorialspoint.com/kotlin/kotlin_string_replace.htm)
+- [Official Kotlin documentation](https://kotlinlang.org/docs/strings.html#string-regular-expressions)

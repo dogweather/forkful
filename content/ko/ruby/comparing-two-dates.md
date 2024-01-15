@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "Ruby: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,42 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-우리는 때때로 특정 일과 다른 일 사이의 차이점을 비교해야 할 때가 있습니다. 이 때 두 날짜를 비교하면 유용한 경우가 많습니다. 루비에서 두 날짜를 비교하는 방법을 알아보겠습니다.
 
-## 방법
-비교해야 할 두 날짜를 Ruby Date 객체로 만듭니다. 그런 다음 `#<=>` 메소드를 사용하여 이 두 개의 날짜를 비교할 수 있습니다. 이 메소드는 첫 번째 날짜가 두 번째 날짜보다 이전인 경우 -1을, 같은 경우 0을, 이후인 경우 1을 리턴합니다.
+두 날짜를 비교하는 것이 유용한 이유는 많습니다. 예를 들어, 날짜를 비교하여 이전 작업과 비교하거나 휴가 신청일을 확인하는 등 여러 다양한 상황에서 유용하게 사용할 수 있기 때문입니다.
+
+## 어떻게
+
+다음은 Ruby를 사용하여 두 날짜를 비교하는 간단한 예시입니다.
+
 ```Ruby
 require 'date'
-date1 = Date.parse("2021-08-25")
-date2 = Date.parse("2021-08-30")
-puts date1.<=>(date2)
-```
-위의 코드를 실행하면 콘솔에 `-1`이 출력됩니다. 이는 `date1`이 `date2`보다 이전이라는 것을 의미합니다. 만약 이후인 경우 `date1`과 `date2`를 바꾸면 `1`이 출력됩니다.
+# 날짜를 생성합니다.
+date1 = Date.new(2020, 8, 1)
+date2 = Date.new(2020, 9, 1)
 
-비교하는데 있어서 두 번째 날짜를 지정하지 않고 현재 날짜와 비교하려면 `Date.today` 메소드를 사용할 수 있습니다.
+# == 연산자를 사용하여 두 날짜가 같은지 비교할 수 있습니다.
+if date1 == date2
+    puts "두 날짜는 같습니다."
+else
+    puts "두 날짜는 같지 않습니다."
+end
+```
+**출력:**
+```
+두 날짜는 같지 않습니다.
+```
+
+다음은 두 날짜의 차이를 구하는 예시입니다.
+
 ```Ruby
 require 'date'
-date = Date.parse("2021-08-25")
-puts date.<=>(Date.today)
+# 날짜를 생성합니다.
+date1 = Date.new(2020, 8, 1)
+date2 = Date.new(2020, 9, 1)
+
+# - 연산자를 사용하여 두 날짜의 차이를 구할 수 있습니다.
+diff = date2 - date1
+puts "#{diff} 일간의 차이가 있습니다."
 ```
-위의 코드를 실행하면 오늘 날짜와 비교한 결과가 출력됩니다. 만약 오늘 날짜와 같은 경우 `0`이, 이전인 경우엔 `-1`이, 이후인 경우엔 `1`이 출력됩니다.
-
-## 깊게 파고들기
-`Date.today` 메소드는 로컬 시간을 기준으로 오늘 날짜를 리턴합니다. 하지만 특정 타임존의 오늘 날짜를 비교하고 싶을 때가 있습니다. 그럴 때는 `Date.today.to_datetime` 메소드를 사용하여 현재 날짜를 DateTime 객체로 만든 다음 `#in_time_zone` 메소드를 사용하여 타임존을 지정할 수 있습니다.
-```Ruby
-require 'date'
-require 'active_support'
-current_date = Date.today.to_datetime.in_time_zone("Seoul")
-puts current_date
+**출력:**
 ```
-위의 코드를 실행하면 한국 표준시 기준으로 현재 날짜를 출력합니다. 이렇게 하면 원하는 타임존의 오늘 날짜를 비교할 수 있습니다.
+31 일간의 차이가 있습니다.
+```
 
-## 또 다른 정보
-- https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-3C-3D-3E
-- https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html#method-i-utc
-- https://apidock.com/rails/v4.0.2/DateTime/in_time_zone
+이 외에도 두 날짜를 비교하는 다양한 방법들이 있으며, 자세한 내용은 Ruby 공식 문서를 참고해주세요.
 
-## 참고
-- https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html
-- https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html
-- https://guides.rubyonrails.org/active_support_core_extensions.html#converting-between-different-natural-date-formats
+## Deep Dive
+
+Ruby에서는 Date 클래스를 사용하여 날짜를 다룰 수 있습니다. Date 클래스는 날짜, 월, 년을 포함한 다양한 메소드를 제공하며, 이를 활용하여 날짜를 비교하고 관리할 수 있습니다.
+
+Date 클래스의 여러 가지 메소드 중에서도 두 날짜를 비교하는 가장 흔한 방법은 `==` 연산자를 사용하는 것입니다. 이 외에도 `>`, `<`, `<=`, `>=` 연산자를 사용하면 각각 "보다 큰", "보다 작은", "보다 작거나 같은", "보다 크거나 같은" 날짜를 비교할 수 있습니다.
+
+또한, Date 클래스는 오늘 날짜를 구하는 `Date.today` 메소드도 제공합니다. 이를 활용하면 오늘 날짜와 비교하여 일정 기간이 지났는지 등의 여러 가지 작업에 활용할 수 있습니다.
+
+## See Also
+
+- [Ruby 공식 문서](https://ruby-doc.org/core-2.7.2/Date.html)
+- [Date 클래스의 사용 예시](https://www.techotopia.com/index.php/Comparing_Date_and_Time_Objects_in_Ruby)

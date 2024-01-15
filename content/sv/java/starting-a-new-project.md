@@ -1,6 +1,7 @@
 ---
-title:                "Java: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Java: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -9,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att starta ett nytt programmeringsprojekt kan vara ett spännande och utmanande äventyr. Genom att skapa något nytt kan du utveckla dina färdigheter, lösa problem och lära dig nya tekniker. Oavsett om du är en erfaren utvecklare eller en nybörjare, kan det vara givande att utmana dig själv och skapa något från grunden.
+Du kanske funderar på att starta ett nytt Java-projekt, men undrar varför det skulle vara värt din tid och ansträngning. Det finns många anledningar till att engagera sig i ett nytt projekt, till exempel för att utveckla sina programmeringsfärdigheter, skapa en användbar programvara eller uppfylla ett personligt mål.
 
-# Hur man gör
+## Hur man gör
 
-Att starta ett nytt Java-projekt är inte så svårt som det kan verka. Det första steget är att installera en Java-utvecklingsmiljö på din dator. Det finns olika alternativ att välja mellan, såsom IntelliJ, Eclipse och NetBeans. Sedan kan du öppna en kodredigerare och börja skriva din kod.
-
-Här är ett exempel på en enkel Java-kod, som skriver ut "Hej världen!" till terminalen:
+För att starta ett nytt Java-projekt behöver du grundläggande kunskaper i Java-programmering och tillgång till ett utvecklingsverktyg som Eclipse eller IntelliJ IDEA. Först skapar du en ny projektmapp och en Java-fil inuti mappen. Sedan skriver du din kod inuti ```Java ... ``` kodblocket och sparar filen. För att köra koden kan du antingen använda en konsol eller ett utvecklingsverktyg. Nedan följer ett exempel på hur enkelt ett Java-program kan se ut:
 
 ```Java
-public class HejVarlden {
+public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hej världen!");
     }
 }
 ```
 
-När du har skrivit din kod kan du kompilera den och köra den. Om allt går som det ska, kommer du att se "Hej världen!" som utskrift.
+Output: Hej världen!
 
-# Djupdykning
+## Djupdykning
 
-Att starta ett nytt projekt handlar inte bara om att skriva kod. Det är också viktigt att planera och organisera ditt projekt på ett strukturerat sätt. Det kan innebära att skapa en bra filstruktur, använda versionshanteringssystem som Git och skapa dokumentation för din kod.
+Att starta ett nytt Java-projekt kan vara en utmanande men givande uppgift. När du skapar dina egna program från grunden får du möjlighet att utveckla dina kreativa och tekniska färdigheter. Det är även en bra möjlighet att lära sig mer om Java-språket och utforska olika funktioner och bibliotek. Glöm inte att använda dokumentation och online-resurser för att hjälpa dig under processen.
 
-Det är också viktigt att ha en bra förståelse för de olika koncepten och verktygen som du använder i ditt projekt. Du kan behöva lära dig mer om objektorienterad programmering, datastrukturer, felsökning och andra viktiga ämnen. Genom att göra en djupdykning i dessa områden kan du skapa ett starkare och mer hållbart projekt.
+## Se även
 
-# Se även
-
-Här är några användbara länkar för att fördjupa dig mer i Java-programmering:
-
-- [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
-- [Java Docs](https://docs.oracle.com/javase/8/docs/)
-- [Codecademy Java kurs](https://www.codecademy.com/learn/learn-java)
+- [Java grundläggande tutorial](https://www.w3schools.com/java/default.asp)
+- [Officiell Java-dokumentation](https://docs.oracle.com/en/java/javase/13/docs/api/index.html)
+- [Java tutorials på svenska](https://www.learnjavaonline.org/)

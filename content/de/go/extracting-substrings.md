@@ -1,6 +1,7 @@
 ---
-title:                "Go: Substringextraktion"
-simple_title:         "Substringextraktion"
+title:                "Extrahieren von Teilzeichenketten"
+html_title:           "Go: Extrahieren von Teilzeichenketten"
+simple_title:         "Extrahieren von Teilzeichenketten"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,54 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Substring-Extraktion ist ein häufig verwendetes Konzept in der Go-Programmierung. Es ermöglicht uns, einen Teil eines Strings zu extrahieren, der für unsere Anwendung relevant ist. In diesem Blog-Beitrag werden wir uns genauer mit diesem Konzept beschäftigen und sehen, wie es in unseren Programmen verwendet werden kann.
+Das Extrahieren von Teilstrings ist ein nützliches Werkzeug für jeden, der mit Zeichenketten arbeitet. Es ermöglicht das einfache Isolieren von bestimmten Teilen einer Zeichenkette, was die Verarbeitung und Analyse von Text erleichtert.
 
-## Wie geht das
+## Wie geht's
 
-Die String-Extraktion in Go ist sehr einfach und intuitiv. Wir können die `substring`-Funktion aus dem `strings`-Paket verwenden, um einen Teil eines Strings zu extrahieren. Hier ist ein kleines Beispiel, wie wir einen Teil eines Strings extrahieren können:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	text := "Gophers sind großartig!"
-	substring := text[8:14]
-	fmt.Println(substring)
-}
-
-```
-
-Die Ausgabe dieses Codes wird `sind g` sein, da wir die Zeichen von der 8. Position bis zur 14. Position extrahieren. Wenn wir nur den Startindex angeben, wird der Rest des Strings bis zum Ende extrahiert. Hier ist ein weiteres Beispiel:
+Um Teilstrings in Go zu extrahieren, verwendet man die `substring()` Funktion. Diese Funktion nimmt zwei Parameter - den Startindex und die Anzahl der zu extrahierenden Zeichen - und gibt den entsprechenden Teilstring zurück.
 
 ```Go
-package main
+// Definieren einer Zeichenkette
+text := "Das ist ein Beispieltext"
 
-import (
-	"fmt"
-	"strings"
-)
+// Extrahieren des ersten Teilstrings (0-basiert)
+teilString1 := substring(text, 0, 3)
+// Output: "Das"
 
-func main() {
-	text := "Hello, world!"
-	substring := text[7:]
-	fmt.Println(substring)
-}
+// Extrahieren des zweiten Teilstrings
+teilString2 := substring(text, 5, 3)
+// Output: "ist"
 
+// Extrahieren des dritten Teilstrings
+teilString3 := substring(text, 10, 12)
+// Output: "Beispieltext"
 ```
 
-Die Ausgabe wird `world!` sein, da wir von der 7. Position bis zum Ende des Strings extrahieren. Wir können auch den Endindex weglassen, um den gesamten String ab einem bestimmten Index zu extrahieren.
+Es ist auch möglich, den Endindex anstelle der Anzahl der Zeichen zu verwenden. In diesem Fall muss man den Wert des Endindex um 1 erhöhen.
 
-## Tiefer eintauchen
+```Go
+text := "Das ist ein Beispieltext"
 
-Die `substring`-Funktion in Go basiert auf der `slice`-Syntax, die verwendet wird, um Teile von Arrays oder Slices zu extrahieren. In der `slice`-Syntax gibt der Startindex an, wo das Teil-Array / der Slice beginnen soll, und der Endindex gibt an, wo das Teil-Array / der Slice enden soll. Beachten Sie, dass der Endindex nicht einschließlich des Elements an dieser Position ist. Dies ist auch der Fall bei der Verwendung der `substring`-Funktion.
+// Extrahieren des ersten Teilstrings
+teilString := substring(text, 0, 3)
+// Output: "Das"
+
+// Extrahieren des zweiten Teilstrings
+teilString := substring(text, 5, 8)
+// Output: "ist ein"
+```
+
+## Tief einblicken
+
+Die `substring()` Funktion basiert auf der `slice()` Operation von Go, die ähnlich wie die `substring()` Funktion arbeitet. Es ist auch möglich, Teilstrings mit der `slice()` Operation auf Arrays und Slices anzuwenden.
+
+```Go
+// Ausgangsarray
+zahlen := [5]int{1, 2, 3, 4, 5}
+
+// Extrahieren des ersten Teilstrings
+teilArray := zahlen[0:2]
+// Output: [1, 2]
+
+// Extrahieren des zweiten Teilstrings
+teilArray := zahlen[2:4]
+// Output: [3, 4]
+```
 
 ## Siehe auch
 
-- [Golang.org Strings-Paket](https://golang.org/pkg/strings/)
-- [Golang.org Slice-Operationen](https://blog.golang.org/go-slices-usage-and-internals)
-- [Go-Tutorial auf Youtube](https://www.youtube.com/watch?v=CF9S4QZuV30&t=36s)
+- [Go-Dokumentation zur substring()-Funktion](https://golang.org/pkg/strings/#Substring)
+- [Go-Dokumentation zur slice() Operation](https://tour.golang.org/moretypes/18)

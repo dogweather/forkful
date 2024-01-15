@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 文字列の連結"
+title:                "文字列の連結"
+html_title:           "Javascript: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,28 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の連結を行う理由について、簡単な説明をする。 
+なぜ私たちは文字列を結合するのに取り組むのか、その意義について最大2文で説明します。
 
-## 連結方法
+## 方法
 
-以下のようなコード例を使用して、文字列の連結を行う方法を示す。コードブロック内のサンプル出力も記載する。
+文字列の結合には、JavaScriptに組み込まれている `+` 演算子を使用します。次の例では、2つの文字列を結合する方法を示します。
 
 ```Javascript
-// 文字列の連結方法
-let string1 = "こんにちは";
-let string2 = "みなさん";
-let result = string1 + string2;
-
-console.log(result);
-// こんにちはみなさん
+let firstName = "太郎";
+let lastName = "山田";
+console.log(firstName + " " + lastName);
 ```
+**出力：** 太郎 山田
 
-## 深堀り
+また、ES6からは、テンプレート文字列を使用することもできます。これにより、変数を組み込んでより複雑な文字列を作成することができます。
 
-文字列の連結について、より詳細な情報を提供する。文字列の連結は、文字列を組み立てるために非常に便利であり、特にユーザーとのインタラクションを行う場合に重要である。また、文字列の連結はパフォーマンスに影響するため、最適な方法を選択することも重要である。 
+```Javascript
+let songName = "Let It Be";
+let artist = "The Beatles";
+console.log(`「${songName}」 by ${artist}`);
+```
+**出力：** 「Let It Be」 by The Beatles
 
-## 参考リンク
+## ディープダイブ
 
-- [MDN Web Docs: 文字列を連結する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [TechAcademyマガジン: 文字列の連結を学ぶ](https://techacademy.jp/magazine/48051)
-- [Qiita: JavaScriptで文字列の連結を行う方法](https://qiita.com/KIA_yakiyan/items/03c545819734cf45329e)
+文字列の結合は、JavaScriptの日常的な操作の1つです。これは、HTML要素の作成や、データ処理、文字列操作などに役立ちます。また、文字列の結合には `concat()` メソッドや `join()` メソッドなど、さまざまなオプションがあります。詳細については、[MDNドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)を参照してください。
+
+## See Also
+
+この記事を読んでJavaScriptの文字列の結合について学びましたが、他にも役に立つ情報がたくさんあります。以下のリンクをチェックしてください。
+
+- [JavaScript+による文字列の結合方法](https://www.sejuku.net/blog/19898)
+- [文法が分かれば使い方も簡単！JavaScriptにおけるテンプレートリテラルの活用方法](https://techacademy.jp/magazine/25943)
+- [始める前に知っておきたい基本的なJavaScriptの書き方と注意点](https://qiita.com/chihiro/items/d0074f2875f7cdb47cce)

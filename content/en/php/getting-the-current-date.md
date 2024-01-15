@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "PHP recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,48 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever wanted to display the current date on your website or application? Maybe you want to customize the date format or use it for time-sensitive features. Whatever the reason may be, obtaining the current date is often a necessary task in PHP programming.
+Getting the current date is a common operation in programming, especially when dealing with time-sensitive tasks. It allows for accurate tracking of events, scheduling tasks, and displaying up-to-date information to users.
 
 ## How To
 
-There are a few different ways to get the current date in PHP, depending on your specific needs. One method is by using the built-in `date()` function. This function allows you to format the date in various ways, such as showing the day, month, and year, or even adding a specific timezone.
+To get the current date in PHP, we can use the built-in function `date()`. This function takes in a format parameter and returns a string representing the current date and time in the specified format.
+
+Let's take a look at some examples:
 
 ```
 <?php
-$currentDate = date("F j, Y"); // Outputs date in a month day, year format
-echo $currentDate; // Output: May 5, 2021
+echo date('d/m/Y'); // Output: 26/11/2021
+echo date('l, F jS Y'); // Output: Friday, November 26th 2021
+echo date('h:i A'); // Output: 10:30 AM
 ```
 
-You can also use the `strtotime()` function to convert a string date into a timestamp, which can then be formatted using the `date()` function. This allows for more flexibility in customizing the date format.
+As you can see, we can customize the format of the date to our liking, using a combination of letters and special characters. Here are some commonly used format letters:
+
+- `d` - day of the month (01 to 31)
+- `m` - month (01 to 12)
+- `Y` - 4-digit year
+- `l` - full day of the week (eg: Friday)
+- `F` - full month name (eg: November)
+- `jS` - day of the month with suffix (eg: 26th)
+- `h` - hour in 12-hour format (01 to 12)
+- `i` - minutes (00 to 59)
+- `A` - AM/PM
+
+You can find the full list of format letters in the [official PHP documentation](https://www.php.net/manual/en/function.date.php).
+
+If you want to get the current date's timestamp, you can use the `time()` function. This function returns the current time in seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).
 
 ```
 <?php
-$currentTimestamp = strtotime("05/05/2021"); // Converts string date into timestamp
-$formattedDate = date("l, F jS Y", $currentTimestamp); // Outputs date in a weekday, month day suffix, year format
-echo $formattedDate; // Output: Wednesday, May 5th 2021
-```
-
-Another method is by using the `DateTime` class, which offers more functionality for manipulating dates and times. This class provides methods such as `setTimestamp()` to set a specific timestamp and `format()` to customize the date format.
-
-```
-<?php
-$dateTime = new DateTime();
-$dateTime->setTimestamp(1620214800); // Sets timestamp to May 5th, 2021
-$date = $dateTime->format("l, F jS Y"); // Outputs date in a weekday, month day suffix, year format
-echo $date; // Output: Wednesday, May 5th 2021
+echo time(); // Output: 1637963400 (will vary based on current time)
 ```
 
 ## Deep Dive
 
-Behind the scenes, PHP uses the Unix timestamp to handle dates and times. This timestamp represents the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC. This means that when you call functions like `date()` with a specific date format, PHP is converting the current timestamp into a readable date.
+Internally, the `date()` function uses the Unix Timestamp to retrieve the current date and time. It first obtains the current timestamp using the `time()` function, then formats it based on the provided format.
 
-There are also various PHP libraries and frameworks that offer more advanced date and time manipulation features. For example, Laravel has a `Carbon` class that extends the `DateTime` class and provides additional methods for manipulating dates and times.
+It's worth noting that the `date()` function doesn't change the default time zone of your server. By default, it uses the time zone set in the `date.timezone` configuration directive in your php.ini file. You can check and change this setting using the `date_default_timezone_get()` and `date_default_timezone_set()` functions, respectively.
 
-It is worth noting that the current date and time obtained through these methods may vary depending on the server's timezone. To ensure consistency, you can use the `date_default_timezone_set()` function to set a specific timezone for your application.
+If you want to get the current date and time in a specific time zone, you can use the `DateTime` class. This class provides an object-oriented interface for working with dates and times and allows for easy time zone conversions.
+
+```
+<?php
+$timezone = new DateTimeZone('Europe/London');
+$date = new DateTime('now', $timezone);
+echo $date->format('d/m/Y h:i A'); // Output: 26/11/2021 03:30 PM
+```
 
 ## See Also
 
-- [PHP Official Documentation on date() function](https://www.php.net/manual/en/function.date.php)
-- [PHP Official Documentation on strtotime() function](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP Official Documentation on DateTime class](https://www.php.net/manual/en/datetime.php)
-- [Laravel Documentation on Carbon class](https://laravel.com/docs/8.x/eloquent-mutators#date-casting)
+- [PHP date() Function](https://www.php.net/manual/en/function.date.php)
+- [PHP time() Function](https://www.php.net/manual/en/function.time.php)
+- [PHP DateTime Class](https://www.php.net/manual/en/class.datetime.php)

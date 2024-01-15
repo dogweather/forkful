@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "Bash: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,38 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wer gerne mit Bash programmiert, wird wissen, dass ein wichtiger Bestandteil des Debugging-Prozesses das Schreiben von Fehlern in den Standard Error ist. In diesem Beitrag werden wir uns genauer damit auseinandersetzen, warum und wie man effektiv auf den Standard Error schreiben sollte.
+Warum sollte man überhaupt auf die Standardfehlerausgabe schreiben? Nun, das hat mehrere Gründe. Zum einen kann es helfen, Fehler in einem Bash-Skript zu identifizieren und zu debuggen. Zum anderen kann es auch nützlich sein, um Benutzer über wichtige Informationen oder Fortschritte während der Ausführung eines Skripts zu informieren.
 
-## Wie
+## Wie es funktioniert
 
-Um auf den Standard Error zu schreiben, gibt es in Bash verschiedene Möglichkeiten. Eine davon ist die Verwendung der `echo`-Funktion und die Weiterleitung des Outputs an den Standard Error mit dem `>&2`-Operator. Hier ist ein Beispielcode:
+Das Schreiben auf die Standardfehlerausgabe ist in Bash recht einfach. Man muss einfach den Befehl `echo` followed by `>&2` verwenden, um den Output auf den Standardfehler zu leiten. Hier ist ein Beispiel:
 
-```
-echo "Fehler: Benutzername nicht gefunden" >&2
-```
+```Bash
+# Beispiel Bash-Skript:
 
-Dieser Code schreibt den angegebenen Text direkt in den Standard Error, was hilfreich sein kann, um Fehlermeldungen zu generieren.
+#!/bin/bash
 
-Man kann auch die `printf`-Funktion verwenden, um formatierte Texte in den Standard Error zu schreiben. Hier ist ein Beispielcode:
-
-```
-printf "Kritischer Fehler: %s ist nicht verfügbar\n" "$DATEI" >&2
+echo "Das ist ein Beispiel für die Standardausgabe." # Dieser Output geht auf die Standardausgabe.
+echo "Dies ist ein Beispiel für den Standardfehler." >&2 # Dieser Output geht auf die Standardfehlerausgabe.
 ```
 
-Dieser Code schreibt den formatierten Text, der den Namen der fehlenden Datei enthält, in den Standard Error.
-
-## Tieferer Einblick
-
-Das Schreiben von Fehlern in den Standard Error ist wichtig, weil es eine klare Trennung zwischen Standard Output (das in der Regel für die Ausgabe von Ergebnissen verwendet wird) und Standard Error (das für Fehlermeldungen und Warnungen verwendet wird) ermöglicht. Dies erleichtert das Debugging und die Fehlerbehandlung, da die Fehlermeldungen getrennt von anderen Ausgaben angezeigt werden und somit leichter zu finden sind.
-
-Man kann auch den Inhalt des Standard Error in eine Datei umleiten, um ihn später zu überprüfen oder zu analysieren. Dazu kann man den `2>`-Operator verwenden. Hier ein Beispielcode:
+Die Ausführung dieses Skripts würde folgendes Ergebnis zeigen:
 
 ```
-./mein_script.sh 2> fehlerprotokoll.txt
+Das ist ein Beispiel für die Standardausgabe.
+Dies ist ein Beispiel für den Standardfehler.
 ```
 
-Dieser Code führt das Skript `mein_script.sh` aus und leitet alle Ausgaben des Standard Error in die Datei `fehlerprotokoll.txt`.
+Man kann auch Variablen in die Standardfehlerausgabe schreiben, indem man das `>&2` an den entsprechenden Stellen im Skript platziert.
+
+## Tiefere Einblicke
+
+Es gibt verschiedene Möglichkeiten, auf die Standardfehlerausgabe zu schreiben. Eine Möglichkeit ist die Verwendung des `error` Befehls in Bash, der speziell für diesen Zweck entwickelt wurde. Dieser Befehl erlaubt es auch, den Output in verschiedene Farben zu formatieren, um die Lesbarkeit zu verbessern.
+
+Eine andere Möglichkeit ist die Verwendung der `trap` Funktion, die es einem erlaubt, einen bestimmten Befehl oder ein Skript auszuführen, wenn ein bestimmter Fehler auftritt. Zum Beispiel kann man mit der `trap` Funktion einen benutzerdefinierten Fehlermeldungs-Output auf die Standardfehlerausgabe schreiben, wenn ein Skript aufgrund eines Fehlers abgebrochen wird.
 
 ## Siehe auch
 
-- [Bash-Dokumentation zu Standard Error](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Bash-Skripte debuggen](https://linuxhandbook.com/debug-bash-scripts/)
+- [Was ist die Standardfehlerausgabe in Bash?](https://www.linuxjournal.com/content/understanding-bash-what-new-shell-programmer-needs-know-part-iv)

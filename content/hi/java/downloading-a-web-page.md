@@ -1,6 +1,7 @@
 ---
-title:                "Java: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "वेब पन्ना डाउनलोड करना"
+html_title:           "Java: वेब पन्ना डाउनलोड करना"
+simple_title:         "वेब पन्ना डाउनलोड करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,51 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-बहुत से लोग इन्टरनेट पर वेब पेजों को डाउनलोड करना चाहते हैं, पर वे ये जानना चाहते हैं की आखिर में ये काम किस तरह से होता है।
-
 ## क्यों
 
-वेब पेज डाउनलोड करने के कई लाभ हैं। कुछ लोग निरंतर डेटा संग्रह करने के लिए वेब स्क्रेपिंग टूल का उपयोग करते हैं, जबकि कुछ लोग डाउनलोडेड वेब पेज का उपयोग ऑफलाइन उपयोग के लिए करते हैं। अतः एक अच्छा जानकार होना आवश्यक है।
+वेब पेज डाउनलोड करने का काम अगर आपको दिखता है तो आपको संभवतः यह जानने की तलाश होगी कि यह क्यों किया जाता है। यह आमतौर पर डेटा या सामग्री के सम्पादन या वेबआई के माध्यम से डेटा को अपलोड करने के लिए विशिष्ट प्रतिक्रियाओं का हिस्सा होता है।
 
-## कैसे करे
+## कैसे करें
 
-जावा में वेब पेज डाउनलोड करने के लिए, हम ये चार कदम फोलो कर सकते हैं:
-
-1. फर्स्ट, हम वेब पेज का URL या लिंक प्राप्त करेंगे।
-2. दूसरा, हम URL का उपयोग करके HTTP कन्नेक्शन बनाएंगे।
-3. थर्द, हम डाउनलोडेड पेज को स्ट्रिंग में कन्वर्ट करेंगे।
-4. फोर्थ, हम उपयोगकर्ता द्वारा दिए गए फाइल नाम से फ़ाइल में डाउनलोड करेगें।
-
-आगे कोड दिखा रहा है कि कैसे हम वेब पेज को डाउनलोड कर सकते हैं:
+वेब पेज को डाउनलोड करने के लिए, आपको HttpURLConnection वर्ग का उपयोग करना होगा। नीचे दिए गए कोड उदाहरण में, हम सर्वर से सामग्री को प्राप्त करने के लिए इस्तेमाल करते हैं। साथ ही, हम सामग्री को आमतौर पर एक फ़ाइल में सुंचित करते हैं।
 
 ```Java
-import java.net.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-public class DownloadPage {
-    public static void main(String[] args) throws Exception {
-        // URL बनाएं
-        URL url = new URL("https://example.com");
+public class WebPageDownloader {
+    public static void main(String[] args) {
+        String url = "https://www.example.com";
+        String filePath = "sample.html";
         
-        // HTTP कन्नेक्शन बनाएं
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-        
-        // स्ट्रिंग में पेज को कन्वर्ट करें
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuilder content = new StringBuilder();
-        
-        while ((inputLine = in.readLine()) != null) {
-            content.append(inputLine);
+        try {
+            // URL बनाने और कनेक्शन खोलने की प्रक्रिया
+            URL webpageUrl = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) webpageUrl.openConnection();
+            
+            // सर्वर से सामग्री प्राप्त करने के लिए स्ट्रीम खोलना
+            InputStream inputStream = connection.getInputStream();
+            
+            // सामग्री को एक फ़ाइल में सुंचित करना
+            File webpageFile = new File(filePath);
+            webpageFile.createNewFile();
+            
+            FileOutputStream fileOutputStream = new FileOutputStream(webpageFile);
+            int readByte = inputStream.read();
+            while (readByte != -1) {
+                fileOutputStream.write(readByte);
+                readByte = inputStream.read();
+            }
+            
+            // स्ट्रीम को बंद करना
+            inputStream.close();
+            fileOutputStream.close();
+            
+            System.out.println("वेब पेज सफलतापूर्वक डाउनलोड किया गया है!");
+        } catch (Exception e) {
+            System.out.println("एक समस्या उद्भव हुई है: " + e.getMessage());
         }
-        in.close();
-        
-        // फ़ाइल में पेज डाउनलोड करें
-        String fileName = "example.html";
-        FileWriter writer = new FileWriter(fileName);
-        writer.write(content.toString());
-        writer.close();
-        
-        // सफलतापूर्वक डाउनलोड हो गया
-        System.out.println("वेब पेज सफलतापूर्वक डाउ
+    }
+}
+```
+
+उपरोक्त कोड ने स्तंभित URL से सामग्री को डाउनलोड करके "sample.html" नाम की फ़ाइल में सुंचित किया है। आप किसी भी वेब पेज के लिए इसका उपयोग कर सकते हैं।
+
+## गहराई में जाएं

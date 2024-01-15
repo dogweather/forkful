@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Arduino: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,31 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Dobry testy są nie tylko ważne w Arduino, ale we wszystkich systemach programowania. Pomagają upewnić się, że twój kod działa poprawnie i pozwolić na łatwiejsze wykrywanie i naprawianie błędów.
 
-## Jak to zrobić
-Testy w Arduino mogą być wykonywane na różne sposoby, ale jeden z najczęściej stosowanych to użycie funkcji `assert`. Jest to funkcja, która sprawdza, czy podane wyrażenie jest prawdziwe, jeśli nie, to za pomocą funkcji `Serial.println()` można wypisać informację o błędzie. Oto przykładowy kod:
+Testowanie jest nieodłączną częścią procesu programowania i jest niezwykle ważne, aby zapewnić wysoką jakość kodu. Testy pozwalają nam sprawdzić poprawność działania naszego kodu oraz wykryć ewentualne błędy. Dzięki nim możemy być pewni, że nasza aplikacja działa zgodnie z oczekiwaniami.
+
+## Jak To Zrobić
+
+### Połączenie Arduino z komputerem
+
+Przed przystąpieniem do pisania testów, musimy najpierw połączyć nasze Arduino z komputerem za pomocą kabla USB. Następnie musimy ustawić odpowiedni port szeregowy oraz model płytki w środowisku Arduino IDE.
+
+### Instalacja biblioteki do testowania
+
+Aby móc pisać testy, musimy zainstalować bibliotekę do testowania w naszym środowisku Arduino IDE. Jest to łatwe do zrobienia poprzez Menu "Sketch" > "Include Library" > "Manage Libraries...". Wyszukajmy bibliotekę "ArduinoUnit" i kliknijmy "Install".
+
+### Przygotowanie kodu do testowania
+
+Na początku naszego kodu musimy dodać dyrektywę `#include <ArduinoUnit.h>`, dzięki czemu będziemy mogli korzystać z funkcji testujących. Następnie musimy zdefiniować nasze testy w funkcji `setup()` przy użyciu funkcji `test()` i przekazać do niej nazwę naszego testu oraz kod do wykonania.
 
 ```Arduino
-int x = 5;
-assert(x == 5); //sprawdzanie czy x jest równy 5
-Serial.println("Test passed!"); //jeśli tak, wypisuje informację o powodzeniu
+#include <ArduinoUnit.h>
+
+void setup() {
+  test("Nazwa_testu", [] {
+    // Kod testowy
+  });
+}
+
+void loop() {
+  // Puste - nie jest potrzebne w przypadku pisania testów
+}
 ```
 
-Pamiętaj, że wartości boolean powinny być porównywane bezpośrednio, a nie za pomocą `if` lub `while`. Na przykład tak:
+### Uruchamianie testów
+
+Aby uruchomić nasze testy, należy kliknąć przycisk "Verify" w środowisku Arduino IDE lub wybrać opcję "Verify/Compile" w menu "Sketch". Jeśli wszystko zostało poprawnie zdefiniowane, powinniśmy zobaczyć komunikat "OK" dla każdego z naszych testów w konsoli.
+
+### Przykładowy test
+
+Poniższy przykład pokazuje, jak możemy przetestować poprawne działanie funkcji `add()` dodającej dwie liczby.
 
 ```Arduino
-int y = 8;
-assert(y > 7); //sprawdzenie czy y jest większe od 7
-Serial.println("Test passed!");
+#include <ArduinoUnit.h>
+
+void setup() {
+  test("Test dodawania", [] {
+    assertEqual(add(2, 5), 7); // Sprawdza, czy funkcja add(2, 5) zwróci 7
+  });
+}
+
+void loop() {
+  // Puste - nie jest potrzebne w przypadku pisania testów
+}
+
+// Funkcja dodająca dwie liczby
+int add(int a, int b) {
+  return a + b;
+}
 ```
 
-## Dogłębne zagadnienia
-Jedną z najważniejszych zasad pisania testów jest upewnienie się, że testy są niezależne od siebie. Oznacza to, że każdy test powinien sprawdzać tylko jedną rzecz i unikać interakcji z innymi testami. W ten sposób można łatwiej zlokalizować błąd, jeśli jakiś test nie przechodzi.
+## Deep Dive
 
-Nie zapominaj również o zakresie testów - należy sprawdzić zarówno przypadki prawidłowe, jak i nieprawidłowe, aby upewnić się, że twój kod jest odporny na błędy. Również nie zapomnij o testach jednostkowych, które sprawdzają pojedyncze fragmenty kodu, oraz testach integracyjnych, które sprawdzają, jak komponenty współpracują ze sobą.
+Pisząc testy, powinniśmy pamiętać o kilku ważnych praktykach:
 
-## Zobacz również
-- [Arduino - Oficjalna strona](https://www.arduino.cc/)
-- [10 zasad pisania testów](https://medium.com/better-programming/10-principles-for-writing-good-tests-6382d8432f7c)
-- [Testy jednostkowe i integracyjne w Arduino](https://www.hackster.io/jaydenjuejun/introducing-unit-and-integration-testing-in-arduino-a74876)
+- Testy powinny być niezależne i niezależnie od siebie uruchamiane. Każdy test powinien testować tylko jeden konkretny aspekt naszego kodu.
+- Używajmy funkcji `assert...()` do sprawdzania wyników w naszych testach. Funkcje te porównują otrzymany wynik z oczekiwanym i w przypadku niezgodności wyrzucają błąd.
+- Testy powinny być napisane w taki sposób, aby były czytelne i łatwe do zrozumienia dla innych osób.
+- Piszmy testy dla wszystkich funkcji naszego kodu, włączając w to również funkcje pomocnicze.
+
+## Zobacz także
+
+- Oficjalna dokumentacja biblioteki ArduinoUnit: https://github.com/mmurdoch/arduinounit#readme
+- Przykładowe testy dla różnych funkcji w języku Arduino: https://github.com/tjentora/ArduinoTestExamples
+- Poradnik wideo dotyczący pisania

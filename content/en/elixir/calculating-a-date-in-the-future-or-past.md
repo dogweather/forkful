@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Elixir recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,66 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Calculating dates in the future or past can be a useful tool for various tasks such as scheduling events, implementing countdowns, or organizing data based on date ranges. With Elixir, this process is made even easier and more efficient through its powerful date and time manipulation functions.
+ Calculating dates in the future or past is a common task in programming, and it can be especially useful when working with time-sensitive data or creating scheduling systems.
 
 ## How To
 
-To calculate a date in the future or past, we first need to import the `DateTime` module in Elixir. This can be done by typing the following code in an Elixir shell or by including it in your Elixir project file.
+To calculate a date in the future or past, Elixir provides the `Date` module which offers a variety of functions for manipulating dates. Let's take a look at a few examples:
 
-```Elixir
-import DateTime
+```
+# Calculate the date 1 week from today
+Date.plus(Date.utc_today, 7, :days)
+# 2019-07-17
+
+# Calculate the date 2 years from a specific date
+Date.plus(Date.from_erl({2020, 1, 1}, {0, 0, 0}), 2, :years)
+# 2022-01-01
+
+# Calculate the date 3 months before a specific date
+Date.minus(Date.from_gregorian(2019, 7, 15), 3, :months)
+# 2019-04-15
 ```
 
-Next, we need to specify a starting date and time. This can be done by creating a `DateTime` struct using the `DateTime.from_naive/2` function and passing in the desired starting date and time in the format of `{year, month, day, hour, minute, second}`. For example:
+As you can see, the `plus/3` and `minus/3` functions take in a `Date` as the first argument, followed by the amount and unit of time to be added or subtracted.
 
-```Elixir
-starting_date = DateTime.from_naive({2021, 9, 1, 12, 0, 0}, "Etc/UTC")
+You can also use the `add/2` and `subtract/2` functions to perform the same calculations, but instead of specifying a unit of time, you pass in a `DateTime.Interval` struct:
+
+```
+# Calculate the date 5 days from now
+DateTime.add(Date.utc_today, %DateTime.Interval{days: 5})
+# 2019-07-16
+
+# Calculate the date 10 hours from a specific date
+stamp = DateTime.from_erl({2019, 7, 10}, {13, 0, 0})
+DateTime.add(stamp, %DateTime.Interval{hours: 10})
+# 2019-07-11T23:00:00Z
 ```
 
-We can then use the `DateTime.add/3` function to add or subtract a certain number of days, hours, minutes, or seconds to our starting date. For example, if we want to calculate a date 3 days in the future, we can do so by passing in `3` as the second argument and `:days` as the third argument, along with our starting date as the first argument. The resulting date will be returned as a `DateTime` struct.
+One useful function for calculating dates is the `diff/2` function, which returns the difference between two dates in the specified unit of time:
 
-```Elixir
-DateTime.add(starting_date, 3, :days)
 ```
-
-The output would look something like this:
-
-```Elixir
-%DateTime{calendar: Calendar.ISO, day: 4, hour: 12, microsecond: {0, 0}, minute: 0, month: 9, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2021}
+# Calculate the difference between two dates in weeks
+Date.diff(Date.utc_today, Date.from_gregorian(2019, 7, 1), :weeks)
+# 2
 ```
-
-Similarly, if we want to calculate a date 2 hours and 30 minutes into the future, we can do so by passing in `2` and `30` as the second and third arguments respectively, along with `:hours` as the third argument. The output would look like this:
-
-```Elixir
-%DateTime{calendar: Calendar.ISO, day: 1, hour: 14, microsecond: {0, 0}, minute: 30, month: 9, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2021}
-```
-
-We can also calculate dates in the past by passing in a negative number as the second argument of `DateTime.add/3`.
 
 ## Deep Dive
 
-Elixir's `DateTime` module contains many useful functions for manipulating dates and times. For example, we can use `DateTime.diff/2` to calculate the difference between two dates in terms of days, hours, minutes, or seconds.
+Under the hood, Elixir uses the "Erlang Calendar Module" to perform all date calculations. Elixir's `Date` module simply provides a more user-friendly API for working with dates.
 
-```Elixir
-starting_date = DateTime.from_naive({2021, 9, 1, 12, 0, 0}, "Etc/UTC")
-another_date = DateTime.from_naive({2021, 8, 25, 8, 0, 0}, "Etc/UTC")
+It's worth noting that dates in Elixir are represented as a tuple in the format `{year, month, day}` and times are represented as a tuple in the format `{year, month, day, hour, minute, second}`. This allows for easy conversion between `Date` and `DateTime` formats.
 
-DateTime.diff(starting_date, another_date, :days)
-```
-
-The output would be `7`, as there are 7 days between the two dates.
-
-We can also use `DateTime.equal?/2` to check if two dates are equal, taking into consideration the date, time, and time zone.
-
-```Elixir
-DateTime.equal?(starting_date, another_date)
-```
-
-This would return `false` since the two dates have different days and hours.
-
-For more in-depth examples of date and time manipulation in Elixir, check out the official documentation for the `DateTime` module.
+Also, worth mentioning is that Elixir uses UTC time by default, but you can use the `DateTime` module to convert to other timezones if needed.
 
 ## See Also
-- Official Elixir DateTime Module Documentation: https://hexdocs.pm/elixir/DateTime.html
-- Date and Time Manipulation in Elixir by Andrea Leopardi: https://andrea.leopardi.it/2016/06/23/date-and-time-manipulation-in-elixir.html
-- How to Work with Time in Elixir by Vaidehi Joshi: https://open.nytimes.com/how-to-work-with-time-in-elixir-14593830daa6
+
+- [Elixir Date Module Documentation](https://hexdocs.pm/elixir/Date.html)
+- [DateTime Module Documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [Erlang Calendar Module Documentation](http://erlang.org/doc/man/calendar.html)

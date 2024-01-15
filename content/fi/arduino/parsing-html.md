@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html:n jäsentäminen"
+html_title:           "Arduino: Html:n jäsentäminen"
+simple_title:         "Html:n jäsentäminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,65 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi ohjelmoida HTML:n parsimista Arduinolla? HTML on verkkosivustojen yleisin merkkauskieli ja sen avulla pystytään luomaan monipuolisia ja interaktiivisia sivustoja. Arduino on alusta, joka antaa mahdollisuuden muokata erilaisia laitteita ja luoda erilaisia projekteja, joten mahdollisuus käyttää HTML:ää Arduinon kanssa voi avata ovia monille mielenkiintoisille projekteille.
+HTML-tiedostot ovat tärkeitä osia verkkosivuista ja sovelluksista. Niiden sisältämän rakenteen ja sisällön ymmärtäminen auttaa luomaan paremman käyttäjäkokemuksen ja tehokkaamman ohjelmiston.
 
-## Miten tehdä
+## Miten
 
-HTML:n parsiminen Arduinolla voi vaikuttaa monimutkaiselta, mutta se on mahdollista käyttämällä "HTTPClient" -kirjastoa, joka on saatavilla Arduinon yhteisön tukemana kirjastojaosta. Seuraavassa esimerkissä käytetään "HTTPClient" -kirjaston "getString" -toimintoa, joka hakee verkkosivun HTML-koodin ja tallentaa sen merkkijonona:
+HTML-tiedostojen jäsentäminen voidaan tehdä helposti Arduino-ohjelmoinnin avulla. Seuraavassa esimerkissä näytämme miten voit käyttää Arduinoa jäsentämään yksinkertaisen HTML-tiedoston ja tulostamaan sen sisällön sarjaporttiin:
 
-```Arduino
-#include <HTTPClient.h> // Liitetään kirjasto
-
-HTTPClient http; // Luodaan HTTPClient-olio
-String htmlCode; // Määritellään muuttuja HTML-koodin tallentamista varten
+```arduino
+#include <Arduino.h>
+#include <SPI.h>
+#include <SD.h>
 
 void setup() {
-  Serial.begin(9600); // Alustetaan sarjaliikenneliitäntä
-  // Yhdistetään verkkoon
-  WiFi.begin("SSID", "Password");
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Yhdistetään...");
+  Serial.begin(9600);
+  File htmlFile = SD.open("index.html"); // Avaa tiedosto
+  while (htmlFile.available()) {
+    // Lue tiedoston sisältö merkki kerrallaan ja tulosta sarjaporttiin
+    Serial.print((char)htmlFile.read());
   }
-  Serial.println("Yhdistetty!");
+  htmlFile.close(); // Sulje tiedosto
 }
 
 void loop() {
-  // Määritetään HTTP-osoite, josta halutaan hakea HTML-koodia
-  http.begin("https://www.example.com");
-  
-  // Lähetetään pyyntö ja tallennetaan vastaus "htmlCode"-muuttujaan
-  htmlCode = http.getString();
-  
-  // Tulostetaan HTML-koodi sarjaporttiin
-  Serial.println(htmlCode);
-  
-  delay(5000); // Odottaa 5 sekuntia ennen seuraavaa päivitystä
+  // Ei tarvita, koska käynnistyy vain kerran
 }
 ```
 
-### Esimerkkitulos
+Tuloksena sarjaporttiin tulisi näkyä HTML-tiedoston sisältämä koodi.
 
-Yllä olevan koodin suorittamisen jälkeen sarjaporttiin tulisi ilmestyä kyseisen verkkosivun HTML-koodi merkkijonona.
+## Syväsukellus
 
-## Syvällinen sukellus
+HTML-tiedostojen jäsentäminen Arduino-ohjelmoinnin avulla avaa ovia monille mahdollisuuksille, kuten sivustojen tarkkailuun tai datan keräämiseen verkosta. Lisäksi voit käyttää erilaisia kirjastoja ja toimintoja, kuten elementtien laskemista tai sisällön muokkaamista.
 
-HTML:n parsiminen ei rajoitu vain yksittäisen verkkosivun hakemiseen, vaan sen avulla voidaan myös hakea ainoastaan tiettyjä osia verkkosivusta. Tämä on hyödyllistä esimerkiksi, jos halutaan kerätä tietoa sivustolta ja käyttää sitä johonkin muuhun tarkoitukseen.
+## Katso myös
 
-"HTTPClient":n "getString" -toiminto palauttaa kaiken HTML-koodin, mutta "HTTPClient":n avulla on myös mahdollista hakea ja parsia tiettyjä elementtejä sivulta käyttämällä "find" -toimintoa. Esimerkiksi seuraavan koodin avulla voitaisiin hakea ja tallentaa verkkosivun otsikko HTML-koodista:
-
-```Arduino
-// Haetaan ensin sivun koko HTML-koodi ja tallennetaan se muuttujaan
-String htmlCode = http.getString();
-
-// Käytetään "find"-toimintoa hakemaan tiettyä elementtiä sivulta
-String title = htmlCode.substring(htmlCode.indexOf("<title>") + 7, htmlCode.indexOf("</title>"));
-
-// Tulostetaan otsikko sarjaporttiin
-Serial.println("Sivun otsikko on: " + title);
-```
-
-### Lisäresursseja
-
-* [HTTPClient-kirjaston esimerkkejä (englanniksi)](https://github.com/arduino-libraries/HTTPClient/tree/master/examples)
-* [HTTPClient-kirjaston dokumentaatio (englanniksi)](https://github.com/jar
+- [Arduino ohjelmointiopas](https://www.arduino.cc/en/Guide/HomePage)
+- [HTML:n perusteet](https://developer.mozilla.org/fi/docs/Web/HTML)
+- [Arduino-kirjastot ja lisäosat](https://www.arduino.cc/en/Reference/Libraries)

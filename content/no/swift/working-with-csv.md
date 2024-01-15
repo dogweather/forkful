@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Å jobbe med csv"
+title:                "Å jobbe med csv"
+html_title:           "Swift: Å jobbe med csv"
 simple_title:         "Å jobbe med csv"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,24 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor vil noen jobbe med CSV-filer? CSV er en av de mest populære filformatene for lagring av tabellbasert data. Det er en effektiv måte å organisere og lagre store mengder data på, og det er også kompatibelt med mange programmer og plattformer.
+
+Hvorfor engasjere seg i å jobbe med CSV-filer? Svaret er enkelt: CSV er den vanligste måten å lagre og utveksle tabell-data på, og ved å lære å jobbe med CSV kan du åpne opp for en verden av muligheter innenfor dataanalyse, automatisering og mer.
 
 ## Hvordan
-For å jobbe med CSV-filer i Swift, må du først importere biblioteket "Foundation". Deretter kan du bruke funksjoner som "contentsOfURL" for å lese dataene i filen og "componentsSeparatedByString" for å dele dataene inn i riktig format. Her er et eksempel på hvordan du kan lese data fra en CSV-fil og legge den i en array:
+
+For å jobbe med CSV-filer i Swift, trenger du ikke annet enn standardbiblioteket. Her er et enkelt eksempel på hvordan du kan lese data fra en CSV-fil og skrive det ut på skjermen:
 
 ```Swift
-let csvFile = try String(contentsOf: URL(fileURLWithPath: "file.csv"), encoding: String.Encoding.utf8)
-let data = csvFile.components(separatedBy: ",")
+import Foundation
+
+let url = URL(fileURLWithPath: "data.csv") //Opprett en URL fra navnet på CSV-filen
+let data = try! Data(contentsOf: url) //Les data fra filen som en binær datastrøm
+let csvString = String(data: data, encoding: .utf8)! //Konverter dataen til en lesbar streng
+
+let rows = csvString.components(separatedBy: "\n") //Del strengen inn i rader basert på linjeskift
+for row in rows { //Gå gjennom hver rad i fila
+    let cells = row.components(separatedBy: ",") //Del hver rad inn i celler basert på komma
+    for cell in cells { //Gå gjennom hver celle i raden
+        print(cell) //Skriv ut cellen på skjermen
+    }
+    print("\n") //Skriv en tom linje mellom hver rad for lesbarhet
+}
 ```
 
-Etter å ha delt dataene i riktig format, kan du jobbe med dem som du vil, for eksempel ved å bruke løkker og betingelser for å filtrere og manipulere dataene. Når du er ferdig med å jobbe med dataene, kan du eksportere dem tilbake til en CSV-fil ved hjelp av funksjoner som "joined" og "data:usingEncoding".
+Dette eksempelet bruker URL-objektet til å opprette en peker til en fil, leses og konverterer filen til en lesbar streng, og deretter deler strengen inn i rader og celler. Med dette grunnleggende rammeverket kan du bruke Swift-egenskapene til å behandle og manipulere data fra CSV-filer på en fleksibel måte.
 
-## Deep Dive
-En viktig ting å huske på når du jobber med CSV-filer er å håndtere eventuelle spesialtegn eller linjeskift som kan føre til problemer med dataene. For å unngå dette kan du bruke funksjoner som "trimmingCharacters(in:)" og "replacingOccurrences(of:with:)" for å rengjøre dataene dine før du behandler dem.
+For en mer avansert tilnærming, kan du bruke et tredjepartsbibliotek som [CSwiftV](https://github.com/Daniel1of1/CSwiftV) for å enkelt håndtere CSV-filer og deres datastrukturer.
 
-Det er også viktig å være oppmerksom på at CSV-filer kan ha en annen struktur og formattering, avhengig av hvilket program eller plattform de ble opprettet på. Så det kan være lurt å undersøke og tilpasse koden din for å håndtere ulike typer CSV-filer.
+## Dypdykk
 
-## Se også
-- [Apple Docs - Foundation Framework](https://developer.apple.com/documentation/foundation)
-- [Swift CSV - A community-driven CSV parser for Swift](https://github.com/imasudan/SwiftCSV)
-- [How to Read and Write CSV files in Swift](https://www.iosapptemplates.com/blog/swift-programming/csv-swift)
+Når du jobber med CSV-filer, må du være oppmerksom på at de kan ha forskjellige egenskaper, avhengig av hvem som har laget dem. For eksempel kan noen filer ha mellomrom i stedet for komma som separator mellom cellene, eller de kan ha overskrifter som ikke følger standarden. I slike tilfeller må du justere koden din for å takle disse varianter.
+
+En annen viktig ting å merke seg er at CSV-filer kan være store og inneholde en stor mengde data. Det er derfor viktig å være oppmerksom på hvordan du håndterer og lagrer dataen for å unngå potensielle feil eller tap av data.
+
+## Se Også
+
+- [CSV-leseren i Swift](https://www.hackingwithswift.com/articles/175/parsing-csv-data-in-swift)
+- [SwiftStandardbiblioteket](https://developer.apple.com/documentation/swift)
+
+Takk for at du leste denne artikkelen om hvordan du jobber med CSV-filer i Swift. Lykke til med utforskingen av denne nyttige og allsidige dataformat!

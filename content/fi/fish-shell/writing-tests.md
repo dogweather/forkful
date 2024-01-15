@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Testien kirjoittaminen"
-simple_title:         "Testien kirjoittaminen"
+title:                "Testiaineistojen kirjoittaminen"
+html_title:           "Fish Shell: Testiaineistojen kirjoittaminen"
+simple_title:         "Testiaineistojen kirjoittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -11,43 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittamalla testejä varmistat, että koodisi toimii kuten odotat ja vähentää mahdollisia virheitä tulevaisuudessa.
+Kuvittele, että kirjoitat koodia ja kaikki tuntuu sujuvan hyvin. Sitten joudut tekemisiin erilaisten muutosten ja päivitysten kanssa, ja huomaat, että koodisi ei enää toimikaan odotetulla tavalla. Testien kirjoittaminen voi auttaa välttämään tällaiset yllätykset ja säästää aikaa ja päänsärkyä.
 
 ## Kuinka
 
-```Fish Shell``` -käyttö esimerkkien ja tulosteen kanssa auttaa sinua ymmärtämään, miten testien kirjoittaminen toimii Fish Shell -ohjelmointikielessä.
+```Fish Shell (nykyinen versio)``` mahdollistaa testien kirjoittamisen omassa erityisessä ```test``` -kansiossa. Tämä kansio sisältää testitiedostoja, jotka ovat nimetty ```filename.test.fish```. Voit testata yksittäisiä funktioita tai koko skriptejä. Testit suoritetaan komennolla ```fish --test tests```. 
 
-1. Aseta ympäristömuuttujat
-```
-set -x TEST_VAR "Hello World"
-set -x ANOTHER_VAR "Bye Bye"
-```
+## Syväsukellus
 
-2. Luo testitiedosto
-```
-@test "TEST_VAR on oikea arvo" 
-set ACTUAL_VAL $TEST_VAR
-set EXPECTED_VAL "Hello World"
-[ $ACTUAL_VAL != $EXPECTED_VAL ] && echo "FAIL: Odotettiin $EXPECTED_VAL, saatiin $ACTUAL_VAL"  
-done
-```
+Testien kirjoittaminen Fish Shellille tapahtuu käyttämällä sisäänrakennettuja ```test``` -komennolla. Tässä muutamia esimerkkejä, miten voit testata koodiasi:
 
-3. Suorita testitiedosto
+1. Testaa funktiota nimeltä ```greet```, joka tulostaa tervehdyksen:
 ```
-fish testi.sh
-```
+function greet
+  echo "Hello World"
+end
 
-Output:
+test "greet tulostaa tervehdyksen" 
+  greet | grep -q "Hello World"
+end
 ```
-🐟 testi.sh
-TEST_VAR on oikea arvo: Passed
+2. Voit myös testata koko skriptiä, kunhan varmistat, että ```test``` -komennossa annat skriptin nimen ja tiedoston polun:
 ```
-
-## Syvempää tarkastelua
-
-Testien kirjoittaminen on tärkeä osa koodausprosessia, jotta voidaan varmistaa luotettava ja toimiva koodi. Hyvät testit antavat myös mahdollisuuden tehdä muutoksia koodiin turvallisesti ja helposti.
+test "Kirjoitettu skripti toimii odotetulla tavalla" 
+  fish ~/Documents/scripts/validate.fish
+end
+```
 
 ## Katso myös
 
-[Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
-[Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/cmds/test.html)
+- [A detailed guide to writing tests in Fish Shell](https://hackernoon.com/a-detailed-guide-to-writing-tests-in-fish-shell-8ul3z3b9)

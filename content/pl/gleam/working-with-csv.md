@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "Gleam: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,56 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z plikami CSV jest nieodłączną częścią wielu działań w programowaniu. Może to być konieczne do importowania lub eksportowania danych, tworzenia raportów, czy też analizy statystyk. Gleam daje nam narzędzia, aby łatwo i skutecznie przeprowadzić te procesy, co sprawia, że jest to wartościowym językiem dla każdego programisty.
+Praca z plikami CSV jest powszechnym zadaniem w programowaniu i może się przydać w wielu sytuacjach, na przykład podczas importowania danych, przetwarzania raportów, czy w przypadku analizy danych. W Gleam, biblioteka CSV jest bardzo łatwa w użyciu i pozwala na szybkie i skuteczne operowanie na danych w tym formacie.
 
 ## Jak to zrobić
 
-Aby pracować z plikami CSV w Gleam, musimy najpierw zaimportować potrzebne biblioteki:
-
-``` Gleam
-import csv
-import csv/options
+```Gleam
+import gleam/csv
+csv.parse("data.csv")
+  |> json.toJson
+  |> io.print
 ```
 
-Następnie możemy otworzyć plik CSV za pomocą funkcji `csv.from_file`, podając jako argument ścieżkę do naszego pliku:
+W powyższym przykładzie korzystamy z biblioteki CSV, aby sparsować plik CSV i przekonwertować go do formatu JSON. Następnie wyświetlamy wynik przy użyciu funkcji io.print. Możliwości manipulacji danymi są praktycznie nieograniczone dzięki łatwej i intuicyjnej składni Gleam.
 
-``` Gleam
-let csv_file = csv.from_file("nazwa_pliku.csv")
-```
+## Głębszy wgląd
 
-Aby odczytać zawartość pliku, możemy użyć funkcji `csv.parse`, która zwraca listę list z danymi z pliku. Przykładowo, jeśli nasz plik CSV zawiera informacje o produktach, możemy je odczytać i wyświetlić w ten sposób:
+W bibliotece CSV znajdują się funkcje umożliwiające wczytywanie danych z różnych źródeł, takich jak URL, pliki lokalne czy dane w formacie binarnym. Poza tym, można również zmieniać separator kolumn oraz dostosowywać sposób konwersji danych. Biblioteka jest również często aktualizowana i ulepszana przez społeczność programistów, dzięki czemu jest jeszcze bardziej przyjazna dla użytkowników.
 
-``` Gleam
-let products = csv.parse(csv_file)
-// wynik: [[Product Name, Price, Quantity], ["Kubek", "10.99", "50"], ["Koszulka", "29.99", "20"]]
+## Zobacz także
 
-Enum.map(products, fn(product) ->
-  let [name, price, quantity] = product
-  let output = "Produkt: #{name}, Cena: #{price} PLN, Dostępne sztuk: #{quantity}"
-  output
-end)
-// wynik: [
-//  "Produkt: Kubek, Cena: 10.99 PLN, Dostępne sztuk: 50",
-//  "Produkt: Koszulka, Cena: 29.99 PLN, Dostępne sztuk: 20"
-// ]
-```
-
-W ten sam sposób możemy również tworzyć i zapisywać nowe pliki CSV za pomocą funkcji `csv.to_file`.
-
-## Głębszy zanurzenie
-
-Istnieją również inne opcje, którymi możemy manipulować podczas pracy z plikami CSV w Gleam. Na przykład możemy użyć opcji `separator` do określenia separatora używanego w pliku CSV, lub opcji `headers`, aby tworzyć pliki CSV z nagłówkami kolumn.
-
-``` Gleam
-let csv_file = csv.from_file("nazwa_pliku.csv", options {separator: ";", headers: ["Kategoria", "Produkt", "Cena"]})
-```
-
-Możemy również użyć opcji `charset` do określenia kodowania znaków, oraz opcji `quote_char` do umieszczenia wartości w cudzysłowach.
-
-Pełna dokumentacja biblioteki CSV dla Gleam jest dostępna [tutaj](https://hexdocs.pm/gleam_csv/readme.html). Zachęcamy również do eksperymentowania z różnymi dostępnymi opcjami i poznawania ich funkcjonalności.
-
-## Zobacz też
-
-- [Dokumentacja Gleam CSV](https://hexdocs.pm/gleam_csv/readme.html)
-- [Oficjalna strona Gleam](https://gleam.run/)
-- [Repozytorium GitHub Gleam](https://github.com/gleam-lang/gleam)
+- [Oficjalna dokumentacja biblioteki CSV w Gleam](https://gleam.run/libraries/csv)
+- [Repozytorium GitHub z kodem źródłowym biblioteki CSV w Gleam](https://github.com/lpil/csv)
+- [Przykłady kodu i poradniki udostępniane przez społeczność użytkowników Gleam](https://gleam.run/community)

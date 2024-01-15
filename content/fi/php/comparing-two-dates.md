@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "PHP: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi vertailla kaksi päivämäärää?
 
-Päivämäärien vertailu on yleinen tarve ohjelmoinnissa ja se voi olla hyödyllistä esimerkiksi tietokannoista tai verkkosovelluksista saatavien tietojen käsittelyssä. Vertailemalla kahta päivämäärää voit tarkistaa, onko jokin tapahtuma tai muutos tapahtunut tietyn ajanjakson sisällä.
+Päivämäärät ovat tärkeitä tietoja monissa ohjelmointiprojekteissa ja vertailemalla kahta päivämäärää voimme tarkistaa niiden suhdetta ja laskea kuluneen ajan. Esimerkiksi vertailemalla nykyhetkeä ja tulevaa tapahtumaa voimme näyttää käyttäjälle, kuinka monta päivää tai tuntia on jäljellä.
 
-## Kuinka tehdä se?
+## Miten vertailla kaksi päivämäärää?
 
-PHP:llä päivämäärien vertailu on helppoa ja nopeaa. Käytännössä tarvitset vain kaksi päivämäärää ja vertailuoperaattorin, kuten ">", "<" tai "==". Voit myös käyttää PHP:n valmiita funktioita, kuten "strtotime()". Esimerkiksi:
+Vertaileminen kahden päivämäärän välillä on helppoa PHP:llä. Käytämme ensin `strtotime()`-funktiota muuttaaksemme päivämäärät Unix-aikaleimoiksi, jotka ovat sekunteja vuodesta 1970 lähtien. Sitten voimme käyttää `<` ja `>` operaattoreita vertailemaan aikaleimoja. Katso alla olevaa esimerkkiä:
 
 ```PHP
-$paivamaara1 = "2020-01-01";
-$paivamaara2 = "2020-02-01";
+$nyt = strtotime("now"); // nykyhetken aikaleima
+$tuleva_tapahtuma = strtotime("25 December 2021"); // tulevan tapahtuman aikaleima
 
-if ($paivamaara1 > $paivamaara2) {
-    echo "Päivämäärä 1 on myöhempi kuin päivämäärä 2.";
-} else if ($paivamaara1 < $paivamaara2) {
-    echo "Päivämäärä 2 on myöhempi kuin päivämäärä 1.";
-} else {
-    echo "Päivämäärät ovat samat.";
+if ($nyt < $tuleva_tapahtuma) {
+  echo "Tuleva tapahtuma on vasta " . floor(($tuleva_tapahtuma - $nyt) / 86400) . " päivän päässä!";
 }
-
-// Output: Päivämäärä 2 on myöhempi kuin päivämäärä 1.
 ```
 
-## Syvempiä pohdintoja
+Tämä koodi tulostaa "Tuleva tapahtuma on vasta 13 päivän päässä!", jos suoritat sen esimerkiksi joulukuun 12. päivä.
 
-Päivämäärien vertailu voi aiheuttaa haasteita, kun otetaan huomioon erilaiset aikavyöhykkeet ja kellonajat. Tässä tapauksessa on tärkeää varmistaa, että molemmat päivämäärät ovat samassa muodossa, jotta vertailu on tarkka. Lisäksi, jos vertaat päivämääriä tietokannan tietoihin, muista huomioida tietokannan käyttämä aikavyöhyke ja käyttää tarvittaessa muuntofunktioita.
+## Syvemmälle päivämäärien vertailuun
+
+PHP tarjoaa myös muita hyödyllisiä funktioita päivämäärien vertailuun, kuten `date_diff()`, joka laskee kahden päivämäärän välisen eron haluamassasi muodossa, ja `date_interval_create_from_date_string()`, jolla voit luoda haluamasi aikavälin päivämääriin perustuen. Sekä `strtotime()` että `date()` voivat käsitellä myös päivämääriä muodossa "YYYY-MM-DD", joten voit helposti vertailla tarkkojakin päivämääriä.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio päivämäärien vertailusta](https://www.php.net/manual/en/datetime.formats.relative.php)
-- [Artikkeli: "Date and Time in PHP", Codecademy](https://www.codecademy.com/articles/date-and-time-in-php)
-- [Päivämäärien vertailun kurssimateriaali, Tietokantaohjelmointi-kurssi, Avoin yliopisto](https://sis-tunti.csc.fi/avoin/amkht2018/visualisoint/VisualisoidutLuennot/FS/PAA.php?txtThisCurCode=775061S&txtLanguage=&txtThisCurVerName=kurssi&pageSt=K&p=?lv=fs&RO=1&agsProgrammeCode=--+&optionKumo=true)
+- [PHP:n virallinen dokumentaatio päivämääräfunktioista](https://www.php.net/manual/en/function.date.php)
+- [PHP.net: Päivämäärien vertailu](https://www.php.net/manual/en/datetime.diff.php)

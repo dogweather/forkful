@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Bash recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,71 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Creating a random number generator may seem like a trivial task, but it has many uses in the world of programming. From simulating dice rolls in a game to generating test data for a database, having the ability to generate random numbers is a useful skill for any programmer.
+Are you looking to add a bit of unpredictability to your Bash scripts? Or maybe you just want to generate some randomized data for testing purposes? Whatever your reason may be, learning how to generate random numbers in Bash can be a useful skill to have.
 
 ## How To
-To generate random numbers in Bash, we can use the `$RANDOM` variable, which generates a random number between 0 and 32767 each time it is called. Here's a simple example of how to use it to generate 5 random numbers:
-
 ```Bash
-#!/bin/bash
+# Generate a random integer between 0 and 10
+echo $(( RANDOM % 11 ))
 
-for i in {1..5}
-do
-  echo $RANDOM
-done
+# Generate a random number between 0 and 1 with 2 decimal places
+echo $(printf "%.2f" $RANDOM/32767)
+
+# Generate a random string of 10 characters
+cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1
 ```
-
-The output of this code would be 5 random numbers, similar to the following:
-
+Sample output:
 ```
-17754
-28344
-21377
-7227
-19492
-```
-
-We can also use the `shuf` command to generate a random permutation of a given list of numbers. This can be useful for things like creating unique IDs or shuffling a deck of cards. Here's an example of how to use `shuf` to generate a list of 10 unique numbers:
-
-```Bash
-#!/bin/bash
-
-shuf -i 1-100 -n 10
-```
-
-The output of this code would be a list of 10 numbers between 1 and 100, in a random order. For example:
-
-```
-75
-2
-41
-98
-16
-57
-33
-86
-23
-99
+7
+0.81
+uSfXbYqL1I
 ```
 
 ## Deep Dive
-While the `$RANDOM` variable and `shuf` command are useful for simple random number generation, they are limited in their range and precision. For more complex and specific requirements, we can use the `awk` command to generate random numbers within a specified range, with a specific number of digits after the decimal point.
+Bash offers several different methods for generating random numbers. The first example above uses the built-in `$RANDOM` variable which returns a random number between 0 and 32767. By using the modulus operator, we can limit the range of the random number to our desired range.
 
-Here's an example of a `bash` function using `awk` to generate a random number between 10 and 100 with 2 decimal places:
+The second example demonstrates using the `printf` function to format a random number into two decimal places. The `$RANDOM` variable generates a random integer, so we divide it by 32767 (which is the maximum value) and then use `printf` to specify the number of decimal places.
 
-```Bash
-#!/bin/bash
+Lastly, the third example uses the `cat` and `tr` commands to extract random characters from the `/dev/urandom` file. Then, the `fold` command limits the character count to 10 and `head` ensures we only get one output.
 
-function genRandom {
-  awk 'BEGIN { srand(); print 10+rand()*90 }'
-}
-
-genRandom
-```
-
-The output of this code would be a random number like 59.27 or 30.89. By adjusting the `awk` command, we can generate random numbers with different ranges and precision.
-
-## See Also
-- [Bash documentation on `$RANDOM`](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Bash documentation on `shuf`](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [Stack Overflow discussion on generating random numbers in Bash](https://stackoverflow.com/questions/25562494/generate-a-random-number-between-0-and-9-bash)
+See Also
+- [Bash Variables Reference](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
+- [Bash Arithmetic Expansion](https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html)
+- [Bash Text Manipulation Commands](https://www.gnu.org/software/bash/manual/html_node/Text-Manipulation.html)

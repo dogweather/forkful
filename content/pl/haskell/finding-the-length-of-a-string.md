@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Haskell: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,31 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie w języku Haskell może wydawać się trudne dla niektórych, ale jest to język o wielu zaletach. Jedną z nich jest możliwość wykorzystania list do przechowywania danych i operacji na nich. Dzięki temu możemy wykonać wiele ciekawych zadań, takich jak obliczanie długości ciągu znaków. W tym artykule wyjaśnimy, dlaczego warto nauczyć się znajdowania długości ciągów w języku Haskell.
+Gdy piszesz programy, często potrzebujesz określić długość tekstu. W Haskellu, Możesz użyć funkcji `length` aby łatwo znaleźć długość łańcucha znaków.
 
 ## Jak to zrobić
 
-```Haskell
-length :: [a] -> Int
-```
-
-Aby obliczyć długość ciągu znaków w Haskellu, możemy użyć funkcji "length". Ta funkcja przyjmuje jako argument listę elementów (w tym przypadku ciąg znaków) i zwraca liczbę całkowitą reprezentującą długość tej listy.
+Użyj funkcji `length` podając łańcuch znaków jako argument, a następnie wydrukuj wynik na ekranie. Proste, prawda?
 
 ```Haskell
-length "Hello World" -- zwróci 11
-length "" -- zwróci 0
+length "Hello World!" -- zwraca 12
 ```
 
-W powyższych przykładach, funkcja "length" zwróciła odpowiednio 11 i 0, ponieważ pierwszy argument to ciąg znaków składający się z 11 liter, a drugi argument to pusty ciąg znaków.
+## Głębsza analiza
 
-## Głębsze zagadnienia
+Funkcja `length` w Haskellu jest częścią standardowej biblioteki i jest bardzo użyteczna w różnych zastosowaniach. Jej typ jest następujący: `length :: [a] -> Int`, co oznacza, że przyjmuje listę dowolnego typu `a` i zwraca liczbę całkowitą (`Int`).
 
-Można zauważyć, że funkcja "length" przyjmuje listę elementów o dowolnym typie (oznaczonego jako "a") i zwraca liczbę całkowitą. Dzięki temu, możemy wykorzystać tę funkcję do obliczania długości różnego rodzaju list, nie tylko ciągów znaków.
-
-Ponadto, warto zwrócić uwagę na fakt, że funkcja "length" jest bardzo wydajna. Dzięki zastosowaniu techniki "lazy evaluation", funkcja ta oblicza długość listy bez konieczności przejścia przez wszystkie jej elementy. Jest to przydatne, gdy mamy do czynienia z dużymi listami.
+W praktyce, możesz użyć `length` na różnych typach danych, które są instancjami typu klasy `Foldable`, takie jak listy, wektory, czy nawet tablice. Funkcja ta działa rekurencyjnie, przez co jest bardzo wydajna, ponieważ nie musisz przechodzić całej listy od początku.
 
 ## Zobacz też
 
-- [Funkcje w języku Haskell](https://www.codingame.com/playgrounds/6231/funkcje-w-haskell)
-- [Rekursja w języku Haskell](https://wiki.haskell.org/Rekursja)
-- [Porównanie wydajności funkcji "length" w Haskellu i innych językach](https://codereview.stackexchange.com/questions/120960/comparing-length-functions-for-strings-in-some-haskell-and-javascript-variations)
+- [Dokumentacja Funkcji `length` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:length)
+- [Tutorial dla początkujących w Haskellu](https://wiki.haskell.org/Tutorials)
+- [Inne funkcje dla manipulacji list w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)

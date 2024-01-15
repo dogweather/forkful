@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Haskell recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,67 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why: 
+## Why
 
-As programmers, it's important to have a way to debug our code and understand what's happening under the hood. Printing debug output is a useful tool to help with this process and identify any errors or bugs in our programs.
+Debug output is a critical tool for programmers to identify and fix issues in their code. By printing out the values of specific variables or steps in the program, developers can better understand the flow of their code and catch any unexpected behavior.
 
-## How To: 
+## How To
 
-Printing debug output in Haskell is quite simple. We can use the `trace` function from the `Debug.Trace` module. Let's take a look at a quick example:
+Printing debug output in Haskell is simple and can be done using the `trace` function from the `Debug.Trace` module. Let's look at an example:
 
 ```Haskell
 import Debug.Trace
 
--- A simple function that returns the sum of two numbers
+-- A function that adds two numbers
 add :: Int -> Int -> Int
-add x y = x + y
-
--- We can use trace to print out the value of our variables
-main = do
-  let x = 5
-  let y = 10
-  let sum = add x y
-  trace ("The value of x is: " ++ show x) (return ())
-  trace ("The value of y is: " ++ show y) (return ())
-  trace ("The sum of x and y is: " ++ show sum) (return ())
+add x y = trace ("Adding " ++ show x ++ " and " ++ show y) (x + y)
 ```
 
-When we run this code, we will see the following output:
-
-```
-The value of x is: 5
-The value of y is: 10
-The sum of x and y is: 15
-```
-
-As we can see, the `trace` function allows us to print out the values of our variables during runtime. This can be extremely helpful in understanding how our code is executing and identifying any potential issues.
-
-## Deep Dive: 
-
-The `trace` function works by taking in a message and a value and printing them both to the console during execution. It then returns the given value, allowing us to use it in the rest of our code. In the example above, we used `return ()` since we didn't need to use the value for anything else.
-
-One thing to keep in mind when using `trace` is that it should only be used for debugging purposes. It is not recommended to use it in production code, as it can cause performance issues.
-
-We can also use the `traceShow` function from the `Debug.Trace` module to print out the result of an expression. For example:
+In the above code, we have imported the `Debug.Trace` module and defined a function `add` that takes in two integers and returns the sum of those numbers. However, we have also used the `trace` function to print out a message before returning the result. Let's see the output when we call this function:
 
 ```Haskell
-import Debug.Trace
-
--- A function that checks if a number is even
-isEven :: Int -> Bool
-isEven x = traceShow (x `mod` 2 == 0) (x `mod` 2 == 0)
+> add 2 3
+Adding 2 and 3
+5
 ```
 
-When we call this function, we will see the following output:
+As you can see, the message we provided in `trace` is printed out before the result. This can be extremely helpful when debugging complex functions or when unexpected results are obtained.
 
+Another useful feature of `trace` is that it can also print out the result of an expression. Let's modify our previous example to showcase this:
+
+```Haskell
+-- A function that multiplies two numbers
+multiply :: Int -> Int -> Int
+multiply x y = trace ("Multiplying " ++ show x ++ " and " ++ show y ++ " = " ++ show (x*y)) (x * y)
 ```
-True
+
+Now when we call this function, we will get the multiplication result printed out along with our custom message:
+
+```Haskell
+> multiply 5 6
+Multiplying 5 and 6 = 30
+30
 ```
 
-This can be useful when we want to quickly check the result of an expression without cluttering our code with `trace` statements.
+## Deep Dive
 
-## See Also:
+Behind the scenes, the `trace` function works by inserting a value into the program's IO stream. This value is then printed out in the standard output. However, this also means that the `trace` function should only be used for debugging purposes and not for production code. This is because printing to the standard output can have a significant impact on the performance of the program.
 
-- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
-- [Using trace to debug a Haskell application](https://www.ryadel.com/en/haskell-using-trace-debug-application-example-tutorial/)
-- [Debugging monadic code in Haskell](https://blog.jez.io/2017/05/31/haskell-debugging-monadic-code/)
+Additionally, the `trace` function can only output strings. So if you need to print out the value of a non-string variable, you will need to use the `show` function to convert it into a string.
+
+## See Also
+
+- [Haskell Debugging and Tracing](https://wiki.haskell.org/Debugging_and_tracing)
+- [Debugging in Haskell with `import Debug.Trace`](https://www.fpcomplete.com/blog/2017/06/debugging-in-haskell-with-import-meaning-debug-trace/)

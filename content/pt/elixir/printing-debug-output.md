@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Saida de depuração de impressão"
+html_title:           "Elixir: Saida de depuração de impressão"
+simple_title:         "Saida de depuração de impressão"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -9,72 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração
-Às vezes, ao trabalhar com Elixir, você pode se deparar com problemas ou bugs que são difíceis de detectar sem alguns dados extras. É aí que imprimir a saída de depuração pode ser útil. Ao adicionar instruções de exibição de dados ao seu código, você terá uma visão mais clara do que está acontecendo por trás das cenas.
+## Por que
+
+Às vezes, ao escrever código em Elixir, pode ser necessário entender o que está acontecendo em cada etapa do programa. Nesses casos, imprimir mensagens de debug pode ser muito útil para entender o fluxo do programa e detectar possíveis erros.
 
 ## Como fazer
-Para imprimir saída de depuração no Elixir, use a função `IO.inspect/2`. Esta função é built-in no Elixir e permite que você imprima qualquer valor dentro do seu código. Aqui está um exemplo de como usá-la:
 
-```elixir
-defmodule MyModule do
-  def my_function(arg) do
-    IO.inspect(arg)
-    # rest of the code
-  end
-end
+Para imprimir uma mensagem de debug em Elixir, podemos utilizar a função `IO.inspect/1` seguida do valor que desejamos imprimir. Por exemplo:
+
+```Elixir
+IO.inspect("Olá, mundo!")
 ```
 
-Neste exemplo, estamos usando `IO.inspect/2` com o argumento `arg`. Isso pode ser um valor, uma variável ou até mesmo uma expressão. Durante a execução do código, o valor de `arg` será impresso na saída. Aqui está um exemplo de saída:
+Isso irá imprimir a mensagem "Olá, mundo!" no terminal ao executar o programa. Também é possível incluir variáveis e até mesmo expressões dentro da função `IO.inspect/1` para obter mais informações sobre o estado atual do programa.
 
-```
-"Hello, world!"
-```
-
-Observe que a saída é entre aspas, o que significa que `arg` é uma string. Você pode usar `IO.inspect/2` em qualquer lugar dentro do seu código para imprimir valores e acompanhar o fluxo e alterações de dados.
-
-## Profundidade de mergulho
-Além de simplesmente imprimir valores, `IO.inspect/2` também aceita opções adicionais. Aqui estão algumas que você pode achar úteis:
-
-- `:label` - adiciona um rótulo ao valor impresso
-- `:pretty` - formata a saída de forma mais legível
-- `:limit` - limita o tamanho da saída impressa
-
-Por exemplo, vamos usar `IO.inspect/2` com a opção `:label` em nosso exemplo anterior:
-
-```elixir
-defmodule MyModule do
-  def my_function(arg) do
-    IO.inspect(arg, label: "Argumento:")
-    # rest of the code
-  end
-end
+```Elixir
+nome = "Maria"
+idade = 30
+IO.inspect("O nome é #{nome} e a idade é #{idade}")
 ```
 
-Isso resultará em uma saída como esta:
+Isso irá imprimir a mensagem "O nome é Maria e a idade é 30". Além disso, também é possível utilizar a função `IO.inspect/2` para imprimir mensagens coloridas e formatadas.
 
-```
-Argumento: "Hello, world!"
-```
+## Aprofundando
 
-Além disso, você também pode imprimir várias coisas ao mesmo tempo, separando-as com uma vírgula. Vamos tentar:
+Imprimir mensagens de debug pode ser uma forma simples e eficaz de entender o que está acontecendo em um programa complexo. Além disso, a função `IO.inspect/1` também é muito útil para verificar valores de variáveis em diferentes partes do código e detectar possíveis problemas.
 
-```elixir
-defmodule MyModule do
-  def my_function(arg) do
-    IO.inspect(arg, label: "Argumento:", pretty: true), IO.inspect(arg * 2, label: "Argumento multiplicado:", pretty: true)
-    # rest of the code
-  end
-end
-```
+Uma dica importante é remover todas as chamadas de `IO.inspect/1` após terminar de depurar o código, pois elas podem afetar negativamente o desempenho do programa em produção. No entanto, se você ainda quiser manter algumas chamadas de debug para uso futuro, é possível envolvê-las em uma diretiva `if` que verifique se o ambiente é de desenvolvimento ou teste.
 
-Isso nos dará a seguinte saída:
+## Veja também
 
-```
-Argumento: "Hello, world!"
-Argumento multiplicado: "Hello, world!Hello, world!"
-```
-
-Isso pode ser especialmente útil ao depurar código com vários valores ou em loops. Experimente e veja como ele pode ajudar a entender o que seu código está fazendo.
-
-## Ver Além
-Para mais informações sobre `IO.inspect/2`, confira a [documentação oficial do Elixir](https://hexdocs.pm/elixir/IO.html#inspect/2). Você também pode aprender mais sobre depuração em Elixir com [este guia](https://elixir-lang.org/getting-started/debugging.html) do site oficial do Elixir.
+- <https://elixir-lang.org/getting-started/debugging.html>
+- <https://erlang.org/doc/apps/erts/io_protocol.html>
+- <https://hexdocs.pm/iex/IEx.Helpers.html>

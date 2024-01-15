@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Bash: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -9,39 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Mange ganger i programmering må vi sammenligne to datoer. Dette kan være nyttig for å sjekke om et arrangement allerede har skjedd, eller om en bestemt hendelse er planlagt å skje i fremtiden. Ved å sammenligne datoer kan vi enkelt automatisere prosesser og unngå manuelle beregninger.
+## Hvorfor?
 
-## Hvordan
-Det er flere måter å programmere sammenligning av datoer på, men i dag vil jeg vise deg hvordan du kan gjøre det i Bash. Først må vi bruke kommandoen `date` for å få datoen i ønsket format. La oss si at vi vil sammenligne dagens dato med en spesifikk dato, for eksempel 12. desember 2020.
+Hvorfor vil man være interessert i å sammenligne to datoer? Det er flere grunner til dette, blant annet for å se om en dato kommer før eller etter en annen, eller for å avgjøre om en dato ligger i en bestemt tidsperiode.
 
-```
-#!/bin/bash
+## Hvordan?
 
-# Få dagens dato i formatet dd.mm.yyyy
-today=$(date +"%d.%m.%Y")
+For å sammenligne to datoer i Bash kan du bruke kommandoen `date -d` for å konvertere datoene til et tall som er enklere å sammenligne. La oss ta en titt på et eksempel:
 
-# Definer en annen dato
-other_date="12.12.2020"
+```Bash
+date1="2021-10-20"
+date2="2021-11-05"
 
-# Sammenlign dagens dato med den andre datoen
-if [ "$today" = "$other_date" ]
+if [ $(date -d "$date1" +%s) -gt $(date -d "$date2" +%s) ]
 then
-  echo "Dette er samme dato!"
+    echo "$date1 er etter $date2"
 else
-  echo "Datoene er forskjellige."
+    echo "$date1 er før $date2"
 fi
-
 ```
 
-Dette eksemplet brukes også for å vise hvordan du kan bruke en `if`-setning i Bash. Når du kjører dette skriptet, vil utgangen være "Dette er samme dato!" hvis dagens dato er 12. desember 2020, ellers vil utgangen være "Datoene er forskjellige.".
+Dette vil gi følgende output:
+
+```Bash
+2021-10-20 er før 2021-11-05
+```
+
+Her bruker vi `+%s` for å konvertere datoene til et tallformat, og deretter bruker vi `-gt` for å sammenligne dem. Du kan også bruke `-lt` for å sjekke om en dato er før en annen, eller `-eq` for å sjekke om de er like.
 
 ## Dypdykk
-Når du sammenligner datoer, er det viktig å huske på at de må være i samme format for at sammenligningen skal fungere. For eksempel, hvis du prøver å sammenligne "12-12-2020" med "12.12.2020", vil dette ikke fungere siden de har forskjellig format.
 
-En annen ting å merke seg er at Bash ikke har innebygde funksjoner for å sammenligne datoer, så dette må implementeres gjennom variasjoner av `date`-kommandoen og bruk av `if`-setninger.
+For å kunne sammenligne datoer på en mer avansert måte, kan du også bruke `date` kommandoen til å evaluere datoer basert på ulike formater og variabler. For eksempel kan du bruke variabelen `DATEMSK` til å sammenligne datoer basert på måned og dag:
 
-## Se Også
-- [Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
-- [Date kommandoen](https://www.tutorialspoint.com/unix_commands/date.htm)
-- [If-setninger i Bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-6.html)
+```Bash
+DATEMSK="+%m-%d"
+
+date1="10-20"
+date2="11-05"
+
+if [ "$(date +%Y)-$date1" -gt "$(date +%Y)-$date2" ]
+then
+    echo "$date1 er etter $date2"
+else
+    echo "$date1 er før $date2"
+fi
+```
+
+Her bruker vi `+%Y` for å legge til det nåværende året sammen med datoene, og sammenligner deretter basert på dette. Dette kan være nyttig hvis du prøver å sammenligne datoer som kommer tilbake hvert år, som bursdager eller årlige hendelser.
+
+## Se også
+
+- [GNU Bash dokumentasjon](https://www.gnu.org/software/bash/manual/)
+
+- [Bash-programmering for nybegynnere](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

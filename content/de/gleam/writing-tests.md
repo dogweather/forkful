@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Testen schreiben"
-simple_title:         "Testen schreiben"
+title:                "Tests schreiben"
+html_title:           "Gleam: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,40 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Tests ist ein wesentlicher Bestandteil jeder Entwicklungsarbeit. Es stellt sicher, dass der Code zuverlässig funktioniert und mögliche Fehler frühzeitig erkannt werden können. Außerdem kann es dabei helfen, zukünftige Änderungen oder Erweiterungen einfacher und sicherer durchzuführen.
+Warum sollte man sich die Mühe machen, Tests zu schreiben? Nun, Tests sind ein wichtiger Bestandteil der Softwareentwicklung. Sie helfen dabei, unsere Codebase stabil zu halten und Fehler frühzeitig zu erkennen. Das spart Zeit und Nerven in der Zukunft.
 
-## Wie geht man vor?
+## Wie geht das?
 
-Die Testfunktionen in Gleam werden mit dem ```gleam_test``` Modul erstellt. Zum Beispiel könnte eine Funktion zum Testen einer einfachen Addition folgendermaßen aussehen:
+Um Tests in Gleam zu schreiben, müssen wir zuerst das `gleam/test`-Paket installieren. Dann können wir unsere Tests in einer separaten `tests`-Datei innerhalb unseres Projekts schreiben.
 
-``` gleam_test
-Additionstest-funktion() {
-  assert_equal(2, 1 + 1)
-}
+```Gleam
+import gleam/test
+
+suite =
+  test.suite("Mein Test Suite", [
+    test.test("Addition", {
+      expect.i32_to_be(test) {
+        assert.equal(2, 1 + 1)
+      }
+    })
+  ])
+
+test.run(suite)
 ```
 
-Der Befehl ```assert_equal``` wird verwendet, um zwei Werte zu vergleichen und sicherzustellen, dass sie gleich sind. In diesem Fall wird überprüft, ob die Addition von 1 und 1 tatsächlich 2 ergibt. Ist dies nicht der Fall, wird ein Fehler angezeigt.
+Dieses Beispiel zeigt, wie wir eine Test-Suite erstellen und einen einfachen Testfall hinzufügen. Wir importieren das `gleam/test`-Paket, erstellen eine Test-Suite mit einem aussagekräftigen Namen und fügen dann einen Testfall hinzu. Wir erwarten, dass `1 + 1` gleich `2` ergibt und nutzen die `assert.equal`-Funktion, um dies zu überprüfen.
 
-Darüber hinaus können auch Fehlerfälle getestet werden, indem ```gleam_test``` Funktionen mit dem ```test_case``` Makro erstellt werden. Hier ein Beispiel für eine Funktion, die sicherstellt, dass eine Division durch Null einen Fehler auslöst:
+## Tiefer Einblick
 
-``` gleam_test
-Division durch Null () {
-  test_case("Sollte einen Fehler werfen") {
-    assert_error(_, 1 / 0)
-  }
-}
-```
+Tests sind eine Möglichkeit, um sicherzustellen, dass unser Code wie erwartet funktioniert. Sie können auch helfen, Logikfehler aufzudecken oder sicherstellen, dass Änderungen an einer Funktion keine unbeabsichtigten Nebenwirkungen haben.
 
-Wie man sehen kann, ermöglicht es Gleam, präzise und effektive Tests zu schreiben, um die Funktionalität des Codes zu überprüfen.
-
-## Tieferer Einblick
-
-Zusätzlich zu den grundlegenden Funktionen für das Testen von Werten und Fehlern bietet Gleam auch die Möglichkeit, bestimmte Eigenschaften zu überprüfen. Hierfür kann das Modul ```gleam_quickcheck``` verwendet werden. Mit QuickCheck können Eigenschaften des Codes überprüft werden, indem zufällige Eingabedaten generiert und geprüft werden, ob die Ausgabe den erwarteten Eigenschaften entspricht.
-
-Außerdem können Gleam Testfunktionen auch mit bestimmten Bedingungen oder Annahmen versehen werden, um noch genauere Überprüfungen durchzuführen. Dies macht es möglich, komplexe Anforderungen an den Code zu testen und sicherzustellen, dass er in allen möglichen Szenarien funktioniert.
+Um effektive Tests zu schreiben, sollten wir uns auf möglichst kleine und isolierte Tests konzentrieren. Wir sollten auch sicherstellen, dass unsere Tests immer erfolgreich sind, um sicherzustellen, dass unser Code reibungslos läuft.
 
 ## Siehe auch
 
-- Offizielle Dokumentation zu Tests in Gleam: https://gleam.run/book/testing.html
-- Einführung in QuickCheck für Gleam: https://www.notion.so/gleamrun/QuickCheck-b36b20e11d8f4ec7b60b7e10d518e607
-- Beispielprojekt mit umfassenden Tests in Gleam: https://github.com/gleam-lang/gleam_binary_tree
+- [Dokumentation zum `gleam/test`-Paket](https://gleam.run/packages/gleam/test)
+- [Einführung in Gleam Testen](https://medium.com/@gleamlang/gleam-test-your-code-with-the-power-of-gleam-7fca5358afa9)
+- [Gleam-Community auf Discord](https://discord.gg/VHTr9rwk8a)

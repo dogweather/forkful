@@ -1,6 +1,7 @@
 ---
-title:                "Go: Sattumanvaraisten numeroiden tuottaminen"
-simple_title:         "Sattumanvaraisten numeroiden tuottaminen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Go: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -9,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Monta kertaa ohjelmoinnin aikana tarvitsemme satunnaisia numeroita. Esimerkiksi simulaatioissa, arvonnassa tai pelien kehittämisessä. Onneksi Go-kielessä on helppo tapa generoida satunnaisluvut tarpeidemme mukaan.
+On monia syitä, miksi ohjelmoijat haluavat käyttää satunnaislukugeneraattoria. Se voi olla hyödyllistä esimerkiksi pelien kehittämisessä tai salauksen luomisessa.
 
-## Miten
+## Miten?
 
-Go-kielessä satunnaisluvut generoidaan rand-paketin avulla. Käytettävä funktio on `Intn`, joka ottaa parametrikseen halutun maksimiarvon ja palauttaa satunnaisen kokonaisluvun väliltä 0 ja annettu maksimiarvo -1 välillä.
+Go-kielessä voit helposti luoda satunnaislukugeneraattorin käyttämällä "math/rand" -kirjastoa ja sen "rand.Intn" -funktiota. Voit antaa halutun lukuluokan parametrina ja ohjelma palauttaa satunnaisen luvun kyseiseltä alueelta.
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+import "fmt"
+import "math/rand"
 
 func main() {
-	rand.Seed(time.Now().UnixNano()) // Asetetaan satunnainen siemen jokaisella suorituskerralla
-	fmt.Println(rand.Intn(100)) // Generoidaan satunnainen luku väliltä 0-99
+  // Generoidaan satunnainen luku väliltä 1-100
+  randomNum := rand.Intn(100) + 1
+  fmt.Println("Satunnainen luku on:", randomNum)
 }
 ```
 
-Esimerkissä käytämme myös `Seed`-funktiota, joka asettaa satunnaisen siemenen jokaisen suorituksen alussa. Tämä tekee satunnaisluvuista vieläkin satunnaisempia.
+Tämä koodiesimerkki tulostaa satunnaisen luvun väliltä 1-100. Voit muuttaa parametria ja testata erilaisia luvunalueita.
 
-## Syvemmälle
+## Syväsukellus
 
-Go-kielessä tapahtuu monia taustaprosesseja satunnaisluvun generoimisen aikana. Ensinnäkin se luo pseudo-satunnaisen sekvenssin käyttämällä Xorshift-algoritmia. Tämä algoritmi on nopea ja tuottaa hyvin jakautuneita satunnaislukuja.
+Go-kielessä käytetty satunnaislukugeneraattori tulee "math/rand" -kirjastosta, mikä perustuu algoritmiin nimeltä "Mersenne Twister". Tämä algoritmi on yksi suosituimmista menetelmistä satunnaislukujen tuottamiseen ja se on myös hyvin tehokas. "math/rand" -paketti myös tarjoaa muita funktioita ja metodeja satunnaislukujen generoimiseen, kuten "Float32" ja "Float64".
 
-Toiseksi, `Seed`-funktio käyttää Unix-aikaa satunnaisen siemenen luomiseksi. Tämä takaa, että jokainen suoritus saa erilaisen satunnaisen sekvenssin.
-
-Lisäksi, jos haluat generoida satunnaislukuja jonkin tietyn algoritmin mukaan, voit luoda oman `Source`-tyypin ja käyttää sitä `New`-funktion avulla.
+On myös tärkeää huomata, että satunnaislukugeneraattoreita ei pidä käyttää salausmenetelmiin tai muuhun turvallisuustarkoitukseen. Niitä tulee käyttää vain simulaatioissa ja muissa vastaavissa tarkoituksissa.
 
 ## Katso myös
 
-- Dokumentointi: https://golang.org/pkg/math/rand/
-- Pseudo-satunnainen sekvenssi Xorshift-algoritmillä: https://en.wikipedia.org/wiki/Xorshift
-- Ohjeet satunnaisen siementämisen parhaista käytännöistä: https://stackoverflow.com/questions/12321133/golang-random-number-generator-how-to-seed-properly
+- "math/rand" -kirjaston dokumentaatio: https://golang.org/pkg/math/rand/
+- Satunnaislukugeneraattori Wikipedia-sivulla: https://fi.wikipedia.org/wiki/Satunnaislukugeneraattori

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Att stora en sträng"
-simple_title:         "Att stora en sträng"
+title:                "Att Göra En Sträng Med Stor Första Bokstav"
+html_title:           "Arduino: Att Göra En Sträng Med Stor Första Bokstav"
+simple_title:         "Att Göra En Sträng Med Stor Första Bokstav"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,55 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att använda sig av en Arduino för att programmera kan verka som ett komplicerat och överväldigande projekt, men det kan faktiskt vara riktigt roligt och enkelt att lära sig. Ett av de enklaste projekten som man kan börja med är att lära sig hur man kapslar in en sträng med hjälp av en Arduino.
+Innan vi dyker in i hur du kapitaliserar strängar i Arduino, låt oss först gå igenom varför du skulle vilja göra det. En vanlig anledning kan vara om du vill formatera texten på en LCD-skärm eller skriva ut den på en seriell monitor.
 
 ## Så här gör du
 
-Först måste vi inkludera Arduinos <string.h> bibliotek för att kunna använda oss av funktionen för att kapsla in en sträng. Vi definierar sedan en ny variabel, låt oss kalla den "text", och tilldelar det en tidigare deklarerad sträng.
+För att kapitalisera en sträng i Arduino, kan du använda funktionen `toUpperCase()` som finns tillgänglig för alla strängar. Här är ett exempel på hur du kan använda det i en kod:
 
-````Arduino
-#include <string.h> // inkluderar <string.h>
-
-void setup() {
-  String text = "hej!"; // definierar och tilldelar en sträng, i detta fall "hej!"
-  Serial.begin(9600); // startar seriell kommunikation på hastigheten 9600
-  Serial.println(text.capitalize()); // anropar funktionen capitalize på textvariabeln och skriver ut det i seriell monitor
-}
-
-void loop() {
-  // inget görs här eftersom vi bara vill köra denna kod en gång i "setup"-funktionen
-}
-````
-
-Output i seriell monitor:
-
-```
-Hej!
+```Arduino
+String text = "hej!"; // Definiera en sträng
+text = text.toUpperCase(); // Tillämpa toUpperCase() funktionen på strängen
+Serial.println(text); // Skriv ut den kapitaliserade strängen på seriell monitor
 ```
 
-Som du kan se har strängen "hej!" nu blivit kapslad i versaler. Detta kan vara användbart när man vill se till att en sträng är konsekvent formaterad oavsett vilka bokstäver som matas in.
+Det här är vad som kommer att skrivas ut i seriell monitorn:
 
-## Djupdykning
+```
+HEJ!
+```
 
-För att förstå hur funktionen capitalize fungerar behöver vi titta närmare på koden i <string.h> biblioteket. Där kan vi hitta den här funktionen, som använder sig av en "for loop" och "toupper" funktionen för att omvandla varje enskild bokstav till dess lämpliga versal. Funktionen tar även hänsyn till specialtecken som t ex å, ä och ö.
+Som du kan se, har funktionen `toUpperCase()` konverterat alla bokstäver i strängen till stora bokstäver. Om du vill veta mer om hur funktionen fungerar, gå vidare till nästa avsnitt.
 
-````Arduino
-String String::capitalize()
-{
-  String retval = *this;
-  for (uint16_t i = 0; i < retval.length(); i++) {
-    if ((i == 0) || (retval[i - 1] == '.') || (retval[i - 1] == '!') || (retval[i - 1] == '?')) {
-      retval[i] = toupper(retval[i]);
-    }
-  }
-  return retval;
-}
-````
+## Deep Dive
 
-Det är alltså en ganska enkel, men användbar funktion för att kapsla in en sträng i versaler.
+För att få en djupare förståelse av hur toUpperCase() funktionen fungerar, är det viktigt att förstå att alla strängar i Arduino är arrayer av `char` typen. En `char` kan representera en enda bokstav eller tecken, och varje bokstavs ASCII-värde kan ändras genom att lägga till eller subtrahera ett konstant värde. I ASCII-tabellen är värdet för en liten bokstav alltid 32 större än värdet för samma stora bokstav. Därför använder toUpperCase() funktionen `+ 32` operationen för att konvertera alla bokstäver till stora bokstäver.
 
 ## Se även
 
-- <https://www.arduino.cc/reference/en/language/variables/data-types/string/>
-- <https://www.geeksforgeeks.org/capitalizing-first-letter-of-a-string-in-javascript/>
-- <https://docs.python.org/3/library/stdtypes.html#str.capitalize>
+- [Arduino referens för toUpperCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- [ASCII-tabell](https://www.asciitable.com/)

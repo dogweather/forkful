@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Bash: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Bash?
+## Por que
 
-Os testes são uma parte essencial do processo de programação em qualquer linguagem. Eles nos permitem verificar se o nosso código está funcionando conforme esperado e nos dão uma camada adicional de segurança ao fazer alterações em nosso código. Além disso, escrever testes pode ajudar a identificar possíveis bugs ou falhas antes de colocar o código em produção. Em Bash, os testes são especialmente úteis para verificar entradas e saídas de scripts e garantir que eles estão funcionando corretamente.
+Se você é novo no mundo da programação ou já está envolvido em desenvolvimento há algum tempo, é provável que já tenha ouvido falar sobre a importância de escrever testes. Mas por que se preocupar em escrever testes para o seu código? A resposta é simples: testes são essenciais para garantir que o seu código funcione corretamente e evita possíveis erros e bugs no futuro. Além disso, escrever testes pode ajudar a melhorar a qualidade do seu código e a facilitar a manutenção no longo prazo.
 
-## Como escrever testes em Bash?
+## Como fazer
 
-Escrever testes em Bash é bastante simples. Podemos usar a estrutura "if/else" para verificar se uma determinada condição é verdadeira ou falsa e, em seguida, imprimir uma mensagem de sucesso ou falha de acordo com o resultado. Por exemplo, vamos supor que temos um script que recebe um número como entrada e precisamos verificar se esse número é positivo ou negativo. Podemos escrever um teste da seguinte maneira:
+Escrever testes não é uma tarefa difícil, mas requer um pouco de prática e conhecimento básico de como o Bash funciona. Aqui estão alguns passos para ajudá-lo a começar a escrever testes eficientes em Bash.
 
-```
+Primeiro, é importante identificar qual parte do seu código precisa de testes. Em outras palavras, quais são as funções, comandos ou trechos de código mais críticos que precisam ser testados? Uma vez identificado isso, você pode começar a escrever testes específicos para essas partes do seu código.
+
+Aqui está um exemplo de como escrever um teste simples para uma função em Bash que soma dois números:
+
+```Bash
 #!/bin/bash
 
-input=5
-expected_output="positivo"
+# Definindo uma função que soma dois números
+sum() {
+  local result=$(( $1 + $2 ))
+  echo "Resultado: $result"
+}
 
-if (($input > 0)); then
-  echo "O número é positivo"
-else
-  echo "O número é negativo"
+# Teste: soma de dois números positivos
+sum_result=$(sum 5 10)
+if [ "$sum_result" != "Resultado: 15" ]; then
+  echo "Teste falhou: soma de 5 e 10 não produziu o resultado esperado!"
+  exit 1
 fi
+echo "Teste passou: soma de 5 e 10 produziu o resultado esperado."
 ```
 
-Neste exemplo, definimos a variável "input" com o valor 5 e esperamos que o script imprima a mensagem "O número é positivo". Se alterarmos o valor de "input" para -5, a saída será "O número é negativo". Isso nos dá uma maneira fácil de verificar se o nosso script está funcionando corretamente.
+Neste exemplo, criamos uma função chamada `sum` que recebe dois parâmetros e soma os valores, e em seguida verificamos se o resultado está correto utilizando um teste simples. Se o resultado não for o esperado, o teste falha e encerra o script com status de saída 1. Caso contrário, o teste é considerado bem sucedido e o script continua sua execução normalmente.
 
-## Mergulho profundo em escrever testes em Bash
+## Profundidade
 
-Existem várias abordagens diferentes quando se trata de escrever testes em Bash. Podemos usar o comando "test" para verificar expressões condicionais, como a igualdade entre duas variáveis, ou podemos usar o comando "grep" para verificar se uma determinada string está presente em uma saída esperada. Além disso, é importante lembrar de fazer os testes tão abrangentes quanto possível, cobrindo todos os possíveis cenários e entradas de dados.
+Aqui estão algumas dicas adicionais para escrever testes em Bash:
 
-Outra dica útil é criar um script separado exclusivamente para testes. Dessa forma, podemos executar apenas os testes a qualquer momento e garantir que nosso script principal não seja alterado acidentalmente.
+- Utilize o comando `set -e` no início do seu script para garantir que ele sai imediatamente se algum comando falhar. Isso ajuda a prevenir problemas futuros no seu código.
+- Uma alternativa para o comando `set -e` é usar `set -u`, que sai imediatamente se alguma variável não estiver definida. Isto pode ser útil para evitar erros relacionados a variáveis não inicializadas.
+- Ao escrever um teste, é importante também testar casos de uso inválidos e limites. Isso garante que o seu código seja robusto e capaz de lidar com diferentes cenários.
+- Utilize ferramentas como `grep`, `awk` e `sed` para verificar a saída de algum comando e garantir que ela está correta. Esses utilitários podem ser muito úteis ao escrever testes mais avançados.
 
 ## Veja também
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de testes em Bash](https://www.tldp.org/LDP/abs/html/debugging.html#TESTING)
-- [Livro "The Bash Guide"](https://guide.bash.academy/)
+Aqui estão algumas referências adicionais sobre escrever testes em Bash:
 
-Esperamos que este artigo tenha ajudado você a entender a importância de escrever testes em Bash e como fazê-lo de forma eficiente. Com prática e atenção aos detalhes, podemos garantir que nosso código está funcionando corretamente e evitar problemas futuros. Não se esqueça de testar sempre e nunca confiar apenas em testes automatizados.
+- [Bash Unit Testing Guide](https://stevens.netmeister.org/631/bash_unit_testing.html)
+- [Effective Testing in Bash – Part I](https://spin.atomicobject.com/2018/05/15/effective-testing-bash-part-1/)
+- [Building a test framework with Bash](https://www.mnielsen.org/blog/building-a-test-framework-with-bash/)

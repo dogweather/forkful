@@ -1,6 +1,7 @@
 ---
-title:                "Java: Läsa kommandoradargument"
-simple_title:         "Läsa kommandoradargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Java: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,55 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Om du är ny till programmering, kan det kännas överväldigande att lära sig nya sätt att interagera med din kod. Men att lära sig att läsa kommandoradsargument kan vara användbart för att göra dina program mer anpassningsbara. Det ger också möjlighet att interagera med användare genom att läsa inmatade värden direkt från kommandoraden istället för att visa en prompt.
 
-Att läsa kommandoradsargument är en viktig färdighet för programmerare, särskilt för dem som arbetar med Java. Detta gör det möjligt för oss att interagera med programmet och använda det på olika sätt beroende på vilken input som ges. Låt oss titta på hur man läser kommandoradsargument i Java.
-
-## Så här gör du
-
-Först och främst måste vi förstå vad kommandoradsargument är. Det är en eller flera strängar som ges till programmet som argument när det körs från kommandoraden. Dessa argument kan användas av programmet för att bestämma dess beteende eller för att ge användaren möjlighet att påverka det.
-
-För att läsa kommandoradsargument i Java använder vi main-metoden. Detta är den metod som körs när vi startar ett Java-program från kommandoraden. Här är en enkel kod för att läsa in ett kommandoradsargument och skriva ut det:
+## Hur man gör det
+För att läsa kommandoradsargument i Java, behöver du använda "args" parametern i main-metoden. 
+Här är ett exempel på hur man skriver ut ett kommandoradsargument i terminalen:
 
 ```Java
-public static void main(String[] args){
-    System.out.println("Det angivna argumentet är: " + args[0]);
+public static void main(String[] args) {
+    System.out.println(args[0]);
 }
+
+// Om du kör programmet med "java MinProgram argument1" kommer det att skriva ut "argument1" i terminalen.
 ```
 
-Låt oss säga att vi sparar denna kod som "CommandLineArgs.java" och kör den från kommandoraden med argumentet "hello". Vi skulle få följande output:
-
-```
-Det angivna argumentet är: hello
-```
-
-Vi kan också läsa in flera kommandoradsargument och använda dem i vår kod på olika sätt. Till exempel kan vi använda dem som nummer och utföra olika beräkningar med hjälp av dem. Här är ett annat exempel på hur man kan läsa och använda flera kommandoradsargument:
+Kommandoradsargument lagras som en array av strängar, där varje argument är en egen sträng i arrayen. Du kan använda en for-loop för att gå igenom alla argument och utföra olika operationer beroende på vad som matas in.
 
 ```Java
-public static void main(String[] args){
-    int a = Integer.parseInt(args[0]);
-    int b = Integer.parseInt(args[1]);
-    System.out.println("Summan av argumenten är: " + (a + b));
+public static void main(String[] args) {
+    for (int i = 0; i < args.length; i++) {
+        System.out.println("Argument " + i + ": " + args[i]);
+    }
 }
-```
 
-Om vi kör detta program med argumenten "5" och "10", skulle vi få följande output:
-
+// Om du kör programmet med "java MinProgram argument1 argument2 argument3" kommer det att skriva ut:
+// Argument 0: argument1
+// Argument 1: argument2
+// Argument 2: argument3
 ```
-Summan av argumenten är: 15
-```
-
-Det finns många olika sätt att använda kommandoradsargument på i våra Java-program och det är upp till oss som programmerare att vara kreativa och hitta nya sätt att använda dem på.
 
 ## Djupdykning
+En av fördelarna med att läsa kommandoradsargument är att du kan ange olika parametrar för ditt program som hjälper till att anpassa det för olika användare. Du kan också använda flaggor för att aktivera eller inaktivera olika funktioner i ditt program beroende på vad användaren behöver.
 
-Det finns flera saker att tänka på när man läser kommandoradsargument i Java. Till exempel är indexet för det första argumentet alltid 0 och det sista argumentet är alltid "args.length - 1". Detta är viktigt att komma ihåg för att undvika eventuella fel i vår kod.
+```Java
+public static void main(String[] args) {
+    if(args[0].equals("-s")) {
+        // Om användaren matar in flaggan "-s" utför programmet en specifik funktion.
+    } else if (args[0].equals("-v")) {
+        // Om användaren matar in flaggan "-v" utför programmet en annan funktion.
+    } else {
+        // Om ingen flagga anges, utför standardfunktionen för programmet.
+    }
+}
+```
 
-Det är också viktigt att hantera felaktig input från kommandoraden. Om vi till exempel förväntar oss ett nummer som argument men får en sträng, kan vårt program krascha. Vi måste därför använda felhantering för att säkerställa att vårt program fungerar korrekt oavsett vilken input som ges.
-
-En annan intressant aspekt av kommandoradsargument är att de kan vara mycket användbara för att automatisera uppgifter. Till exempel kan vi använda dem för att skapa ett program som söker igenom filer eller mappar baserat på olika kriterier som ges som argument. Detta sparar oss mycket tid och arbete jämfört med att manuellt söka efter filer.
+Det är viktigt att notera att när du läser kommandoradsargument måste du hantera felaktiga inmatningar eller brist på input. Annars kan ditt program krascha eller inte fungera som förväntat. Det är också bra att ha en hjälp- eller användarmanual som förklarar vilka flaggor och argument som kan matas in för ditt program.
 
 ## Se även
-
-- [Java Documentation - Command Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [JournalDev - Java Command Line Arguments](https://www.journaldev.com/13551/java-command-line-arguments)
-- [Baeldung - Java Command Line Arguments](https://www.baeldung.com/java-command-line-arguments)
+- [Java documentation on Command Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [GeeksforGeeks article on Command Line Arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)

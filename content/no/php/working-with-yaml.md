@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "PHP: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -11,50 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å jobbe med YAML kan være nyttig for utviklere som ønsker å organisere og lagre data på en strukturert måte. YAML er en enkel og leselig måte å representere data på, noe som gjør det enkelt å håndtere og behandle informasjon.
+Hvorfor bry seg med YAML i PHP? Vel, YAML (YAML Ain't Markup Language) er et enkelt, leselig og portabelt tekstformat som brukes til å lagre og overføre data. Det er spesielt nyttig for å konfigurere programvare og for å håndtere strukturerte data.
 
 ## Hvordan
 
-For å jobbe med YAML i PHP, trenger du en parser som kan tolke YAML-data. Det finnes flere alternativer, men i dette eksemplet vil vi bruke Symfony Yaml-komponenten. Først må du installere komponenten med Composer:
+For å begynne å arbeide med YAML i PHP, må du sørge for å installere den siste versjonen av PHP på datamaskinen din. Deretter kan du følge disse trinnene:
+
+1. Begynn med å laste ned og installere et YAML-bibliotek for PHP, som for eksempel "Symfony YAML".
+2. Opprett et nytt PHP-dokument og importer YAML-biblioteket ved å bruke "require" -funksjonen.
+3. Lag et assosiativt array med dataene du ønsker å lagre i YAML-filen din.
+4. Bruk YAML-biblioteket til å konvertere arrayet til en YAML-streng.
+5. Lagre YAML-strengen i en fil ved hjelp av "file_put_contents" -funksjonen.
+
+Et eksempel på hvordan koden kan se ut:
 
 ```PHP
-composer require symfony/yaml
-```
-
-Deretter kan du bruke følgende kode for å lese og skrive YAML-data:
-
-```PHP
+<?php
+require 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 
-// Les YAML-data fra en fil
-$data = Yaml::parseFile('/path/to/file.yaml');
+$data = [
+    'navn' => 'Andrea',
+    'alder' => 25,
+    'hobbyer' => ['lesing', 'fotografering', 'matlaging']
+];
 
-// Skriv YAML-data til en fil
-Yaml::dump($data, '/path/to/new_file.yaml');
+$yamlString = Yaml::dump($data);
+
+file_put_contents('minfil.yaml', $yamlString);
 ```
 
-Du kan også bruke Symfony Yaml-komponenten til å konvertere YAML-data til PHP-arrays og vice versa. For eksempel:
+Når du kjører dette skriptet, vil det lage en YAML-fil med navnet "minfil.yaml", som vil inneholde følgende:
 
-```PHP
-use Symfony\Component\Yaml\Yaml;
-
-// Konverter YAML til PHP-array
-$array = Yaml::parse('navn: John Doe');
-
-// Konverter PHP-array til YAML
-$yaml = Yaml::dump(['navn' => 'John Doe']);
+```YAML
+navn: Andrea
+alder: 25
+hobbyer:
+    - lesing
+    - fotografiering
+    - matlaging
 ```
 
-Du kan se et mer detaljert eksempel på hvordan du kan jobbe med YAML i PHP på [Symfony Yaml-komponentens offisielle dokumentasjon](https://symfony.com/doc/current/components/yaml.html).
+Dette er et enkelt eksempel, men det viser hvordan du kan bruke YAML til å organisere og lagre data. Du kan også bruke YAML til å konfigurere programmer ved å definere ulike verdier for ulike miljøer, for eksempel utvikling, testing og produksjon.
 
-## Dypere dykk
+## Dypdykk
 
-YAML støtter forskjellige datatyper som strenger, tall, arrayer og assosiative arrayer. Du kan også legge til kommentarer i YAML-filer som gjør det enklere å forstå og vedlikeholde koden.
-
-Det er også verdt å merke seg at YAML har en hierarkisk struktur, noe som betyr at innrykk og pakking er viktig for å opprettholde datastruktur. Du kan lære mer om YAML-syntaks og beste praksis i [YAML-spesifikasjonen](https://yaml.org/spec/) og [Symfony Yaml-komponentens dokumentasjon](https://symfony.com/doc/current/components/yaml.html).
+YAML støtter også avanserte funksjoner som inkludering av filer og referanser til andre verdier. Du kan også bruke mye nyttig syntaks når du jobber med komplekse datastrukturer. For en dypere forståelse av alle mulighetene som finnes i YAML, kan du sjekke ut dokumentasjonen for YAML-spesifikasjonen.
 
 ## Se også
 
-* [YAML-spesifikasjonen](https://yaml.org/spec/)
-* [Symfony Yaml-komponentens dokumentasjon](https://symfony.com/doc/current/components/yaml.html)
-* [PHP.net - YAML](https://www.php.net/manual/en/book.yaml.php)
+* Symfony YAML dokumentasjon: https://symfony.com/doc/current/components/yaml.html
+* Offisiell YAML-spesifikasjon: https://yaml.org/spec/
+* Composer - Dependency Manager for PHP: https://getcomposer.org/

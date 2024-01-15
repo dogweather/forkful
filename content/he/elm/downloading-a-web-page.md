@@ -1,6 +1,7 @@
 ---
-title:                "Elm: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "Elm: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,48 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-אלמה היא שפת תכנות פונקציונלית טהורה שמיועדת לכתיבת יישומי אינטרנט מודרניים ומתקדמים. היכולת של אלמה להתגבר על בעיות כמו באגים והקלות שלה לתחזוק יוצרים סביבה אידיאלית לכתיבת תוכניות מתקדמות כגון הורדת עמודי אינטרנט.
+הורדת עמודי אינטרנט היא פעולה חשובה כאשר מתכנתים רוצים לגשת למידע מעניין ומגוון ברחבי האינטרנט. פעולה זו מאפשרת לקבל נתונים לתוך אפליקציות וליצור חיבור ישיר למקור המידע.
 
 ## איך לעשות
 
-החל מגרסה 0.19, אלמה מציגה ספרייה מובנית בשם `Http` שמאפשרת התקשרות עם שרתים חיצוניים והורדת נתונים מהם. למעשה, הורדת עמודי אינטרנט היא עבודה פשוטה מאוד באלמה, כמו שניתן לראות בדוגמא הבאה:
+כדי להוריד עמוד אינטרנט בעזרת Elm, ניתן להשתמש בפונקציית `Http.get` ולתת לה את כתובת ה-URL של העמוד כפרמטר. לדוגמה:
 
 ```Elm
+import Html exposing (div)
 import Http
-import Html exposing (..)
 
-type Msg = PageLoaded (Result Http.Error String)
+type Msg = GotPage (Http.Result String)  -- תיאור הודעה מהאפליקציה
 
-type alias Model = { pageContent : String }
+getUrl : String  -- קבלת כתובת ה-URL מהמשתמש או ממשתנה נמצא
+getUrl =
+    "https://www.example.com"  -- כתובת ה-URL של העמוד
 
-pageRequest : Http.Request
-pageRequest =
-    Http.get "https://www.example.com/page"
+downloadPage : Cmd Msg  -- פעולה להורדת העמוד
+downloadPage =
+    Http.get
+        { url = getUrl,
+          expect = Http.expectString GotPage }
 
-update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        PageLoaded result ->
+main : Program Never () Msg
+main =
+    Html.program
+        { init = getUrl,
+          view = view,
+          update = update,
+          subscriptions = always Sub.none }
+
+-- פונקציית תצוגה של חלונית HTML פשוטה
+view : String -> Html Msg
+view page =
+    div [] [ text page ]
+
+-- טיפול בהודעה המגיעה מהאפליקציה
+update : Msg -> String -> (String, Cmd Msg)
+update gotPage page =
+    case gotPage of
+        GotPage result ->
             case result of
-                Ok content ->
-                    { model | pageContent = content }
+                Err error ->
+                    ("Unable to download page", Cmd.none)  -- אם הופיעה שגיאה
 
-                Err _ ->
-                    model
+                Ok page ->
+                    (page, Cmd.none)  -- אם ההורדה הצליחה
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Http.send PageLoaded pageRequest
-
-view : Model -> Html Msg
-view model =
-    h1 [] [ text model.pageContent ]
 ```
 
- כאשר תיפתח עמוד זה בדפדפן, אלמה יוריד את תוכן העמוד ויציג אותו בתוך הכותרת הראשית של העמוד. כמו כן, אלמה מאפשרת הורדת נתונים כלליים, לא רק עמודי אינטרנט, ולהתאמה אישית של הבקשות לכל מטרה.
+התוכנית תציג בחלון ה-HTML את העמוד שהורד. ניתן להשתמש בפונקציית `Http.bytesGet` כדי להוריד תמונות או קבצים אחרים מהעמוד.
 
-## צלילה מעמיקה
+## Deep Dive
 
-כמו שראינו בדוגמא, השימוש בספריית `Http` של אלמה הוא פשוט ויעיל. כמו כן, ניתן להתאים את הבקשות לכל מטרה ולהתאמה אישית מלאה, בעזרת הפונקציות המובנות של `Http` כמו `post`, `put` ו-`delete`. כמו כן, ניתן גם להשתמש בפונקציות נמצאות בספריות חיצוניות כדי לתמש בתכונות מתקדמות יותר, כגון
+במקרים מסוימים, ייתכן שתהליך ההורדה יהיה מורכב יותר וידרוש מחלקת עיבוד נספחת. במקרים אלו, ניתן להשתמש בפונקציית `Http.send` עם פרמטרי `Bytes` ולבנות מחלקה נספחת לעיבוד הנתונים המורכבים. ניתן למצוא דוגמאות של זה במאמרי העזר של Elm.
+
+## ראה

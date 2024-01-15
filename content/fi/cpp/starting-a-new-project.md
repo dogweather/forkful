@@ -1,5 +1,6 @@
 ---
-title:                "C++: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "C++: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C++"
 category:             "C++"
@@ -9,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti?
+Uuden projektin aloittaminen voi olla hyvä tapa oppia uusia ohjelmointitaitoja, kehittää omaa osaamistaan ja luoda jotain mielenkiintoista ja hyödyllistä. Se voi myös tarjota mahdollisuuden työskennellä yhdessä muiden kehittäjien kanssa ja saada kokemusta projektinhallinnasta.
 
-Miksi aloittaa uusi ohjelmointiprojekti? Uuden projektin aloittaminen antaa mahdollisuuden oppia uusia ohjelmointitaitoja ja kehittää olemassa olevia taitoja. Se myös antaa mahdollisuuden luoda jotain uutta ja hyödyllistä, joka voi auttaa muita tai tuoda iloa itselle.
-
-## Kuinka aloittaa
-
-Aloita uusi projekti luomalla uusi C++ tiedosto ja tallentamalla se haluamaasi kansioon. Kirjoita seuraava koodi tiedostoon ja tallenna se nimellä "helloWorld.cpp":
+## Kuinka aloittaa uusi projekti?
+Aloittaaksesi uuden projekti, sinun tulee ensin luoda uusi C++ -tiedosto ja määritellä tarvittavat kirjastot. Esimerkiksi:
 
 ```C++
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main() {
-    // Tulostaa "Hei maailma!" konsolille
-    cout << "Hei maailma!" << endl;
-
+int main(){
+    // koodin kirjoittaminen tähän
     return 0;
 }
 ```
 
-Tämä koodi käyttää ```iostream``` kirjastoa tulostamaan yksinkertaisen viestin, "Hei maailma!" konsolille. Suorita koodi ja tarkista, että se toimii oikein. Jos kaikki onnistuu, näet konsolilla "Hei maailma!".
+Tässä esimerkissä olemme ottaneet käyttöön "iostream" ja "string" -kirjastot, jotka mahdollistavat käyttäjän syötteiden lukemisen ja merkkijonojen käsittelyn. Voit käyttää muita tarvittavia kirjastoja projektisi tarpeiden mukaan. Seuraavaksi voit kirjoittaa koodin, joka suorittaa haluttuja toimintoja ja näyttää tulosteen. Esimerkiksi:
 
-Nyt voit alkaa lisäämään ja kehittämään omaa koodiasi tästä aloituspisteestä.
+```C++
+string nimi;
+cout << "Hei! Mikä on nimesi?";
+getline(cin, nimi);
 
-## Syvempi sukellus
+cout << "Mukava tavata, " << nimi << "!" << endl;
+```
 
-Uuden projektin aloittaminen vaatii suunnittelua ja pohdintaa. Ensimmäiseksi sinun täytyy päättää, mitä haluat toteuttaa projektissa. Voit miettiä esimerkiksi seuraavia kysymyksiä: Mitä haluat ohjelman tekevän? Mikä on sen tarkoitus? Käytätkö jotain ulkoista kirjastoa tai jo valmiiksi luotuja toimintoja?
+Tässä koodissa käytämme "string" -muuttujaa tallentamaan käyttäjän antamaa nimeä ja tulostamme sitten tervehdyksen käyttäen tätä muuttujaa. Voit kokeilla erilaisia koodinpätkiä ja tutkia eri mahdollisuuksia C++:n avulla.
 
-Kun olet päättänyt, mitä haluat toteuttaa, voit suunnitella ja kirjoittaa koodia. Muista myös testata ja korjata kaikki virheet ja varmistaa, että koodi toimii oikein.
-
-Kun projekti on valmis, voit jakaa sen muiden kanssa tai jatkaa sen kehittämistä.
+## Syvällisempää tietoa uuden projektin aloittamisesta
+Yksi tärkeimmistä asioista C++ -projektin aloittamisessa on hyvän suunnitelman tekeminen. Helpointa on aloittaa pienellä ja yksinkertaisella projektilla, jonka avulla voit oppia perusteet ja laajentaa sitten taitojasi. Muista myös ottaa huomioon projektisi tarkoitus ja lopputavoitteet. On myös tärkeää pitää huolta koodisi luettavuudesta ja kommentoida sitä tarvittaessa.
 
 ## Katso myös
-
-- [C++ kirjastot](https://www.cplusplus.com/reference/)
-- [C++ oppaat ja tutoriaalit](https://www.learncpp.com/)
-- [C++ keskustelufoorumit](https://www.cplusplus.com/forum/)
+- [C++:n opetusohjelmat ja resurssit (Suomi)](https://www.cplusplus.com/doc/tutorial/)
+- [Kuinka aloittaa uusi projekti C++:ssa (englanniksi)](https://www.digitalocean.com/community/tutorials/how-to-start-a-new-project-in-cplusplus)
+- [Esimerkkejä C++ -projekteista (englanniksi)](https://www.codementor.io/projects/language/cpp)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "Rust: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 Rust로 날짜 비교를 해야 할까요?
+## 왜
+두 날짜를 비교하는 데 관심이 생기는 이유는 우리가 날짜와 시간 정보를 다룰 때 자주 마주하는 문제 중 하나입니다. 요구하는 기능에 따라 날짜와 시간을 정확하게 비교할 수 있어야 합니다. 이를 위해 Rust 프로그래밍 언어를 사용하여 어떻게 두 날짜를 비교할 수 있는지 알아보겠습니다.
 
-날짜를 비교하는 것은 프로그래밍에서 자주 사용되는 일입니다. 예를 들어, 두 날짜를 비교하여 더 큰 날짜를 찾거나, 특정 날짜의 과거나 미래 여부를 확인하는 등의 작업이 있을 수 있습니다. 이러한 날짜 비교를 효율적이고 안전하게 할 수 있는 언어 중 하나가 바로 Rust입니다.
+## 어떻게
+```Rust
+// 필요한 라이브러리 가져오기
+use chrono::{DateTime, Utc, Duration};
 
-## 어떻게 Rust로 날짜 비교를 할 수 있을까요?
+// 비교할 날짜 생성
+let date_one: DateTime<Utc> = Utc::now();
+let date_two: DateTime<Utc> = Utc::now() + Duration::days(5); // 5일 후 날짜
 
-Rust에는 `DateTime` 구조체가 있어 날짜와 시간을 표현할 수 있습니다. 또한 `DateTime` 구조체는 `PartialOrd` 트레이트를 구현하여 비교가 가능하도록 해줍니다. 따라서 날짜 비교를 위해서는 먼저 `DateTime` 구조체를 생성하고 `PartialOrd` 트레이트를 사용하여 비교하면 됩니다.
-
-```rust
-use chrono::DateTime;
-use chrono::offset::Utc;
-
-let today = DateTime::parse_from_rfc3339("2021-10-15T00:00:00+00:00").unwrap(); // 예시로 오늘의 날짜를 생성
-let tomorrow = today + chrono::Duration::days(1); // 오늘의 날짜에서 1일을 더하여 내일의 날짜 생성
-
-if today < tomorrow {
-    println!("내일은 오늘보다 미래입니다.");
+// 비교하기
+if date_one > date_two {
+    println!("첫 번째 날짜가 두 번째 날짜보다 미래입니다.");
+} else if date_one < date_two {
+    println!("첫 번째 날짜가 두 번째 날짜보다 과거입니다.");
+} else {
+    println!("두 날짜가 같습니다.");
 }
 ```
-위 코드에서 `chrono` 라이브러리를 사용하여 `DateTime` 구조체를 생성하고, `PartialOrd` 트레이트를 이용하여 두 날짜를 비교하고 있습니다. 이처럼 매우 간단하게 Rust를 이용하여 날짜 비교를 할 수 있습니다.
 
-## 깊게 들어가보면?
+위 코드에서 우리가 사용한 라이브러리는 `chrono`입니다. 이 라이브러리는 날짜와 시간을 다루는 많은 기능을 제공해줍니다. 우리는 비교할 날짜를 `DateTime` 형태로 생성하고, `now()`를 사용하여 현재 시간을 가져온 후 `Duration`을 사용하여 5일을 더해 두 번째 날짜를 만들어주었습니다. 이후 `if` 문을 사용하여 두 날짜를 비교하고 적절한 출력을 해주었습니다.
 
-실제로는 날짜를 비교할 때 시간대(Timezone)와 윤초(Leap Seconds)를 고려해야 합니다. 이는 `DateTime` 구조체에 기본적으로 적용되는 `Utc` 타임존을 사용하면 해결할 수 있습니다. 또한, `PartialOrd` 트레이트가 아니라 `Ord` 트레이트를 사용하면 좀 더 정확한 비교가 가능합니다. 자세한 내용은 [Rust 공식 문서](https://doc.rust-lang.org/std/time/struct.DateTime.html)를 참고하시기 바랍니다.
+## 딥 다이브
+두 날짜를 비교할 때 자주 사용되는 또 다른 기능은 두 날짜간의 차이를 계산하는 것입니다. 이를 위해서는 `Duration`을 사용하여 두 날짜 사이의 차이를 계산해줄 수 있습니다.
 
-## 배우고 더 알아보기
+```Rust
+// 필요한 라이브러리 가져오기
+use chrono::{Utc, Duration};
 
-- [Rust 공식 문서 - DateTime 구조체](https://doc.rust-lang.org/std/time/struct.DateTime.html)
-- [Rust By Example - Dates and Times](https://doc.rust-lang.org/stable/rust-by-example/std/time.html)
-- [Rust Cookbook - Comparing Dates](https://rust-lang-nursery.github.io/rust-cookbook/datetime/comparing_dates.html)
+// 비교할 날짜 생성
+let date_one: DateTime<Utc> = Utc::now();
+let date_two: DateTime<Utc> = Utc::now() + Duration::days(5); // 5일 후 날짜
 
-# 더 자세히 알아보기
+// 두 날짜 사이의 차이 계산
+let difference = date_two - date_one;
 
-오늘 우리는 Rust를 이용하여 날짜 비교를 살펴보았습니다. Rust의 강력한 `DateTime` 구조체와 `PartialOrd` 트레이트를 이용하면 날짜를 간단하고 안전하게 비교할 수 있습니다. 하지만 실제로는 시간대와 윤초 등을 고려해야 한다는 점을 잊지 말아야 합니다. Rust를 공부하는 여러분들의 프로그래밍 실력을 더욱 향상시킬 수 있는 유용한 주제였기를 바랍니다.
+println!("두 날짜 사이의 차이는 {} 일입니다.", difference.num_days());
+```
 
-# 관련 자료
+위 코드에서 우리는 `Duration`을 사용하여 두 날짜 사이의 차이를 계산하고 `num_days()` 메서드를 사용하여 이를 일 단위로 변환하였습니다.
 
-- [Rust 공식 문서 - DateTime 구
+## 참고 자료
+- [chrono 라이브러리 공식 문서](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust 언어 공식 웹사이트](https://www.rust-lang.org/)
+
+---
+## 더 읽어보기
+- [Rust로 날짜와 시간 다루기](https://opensource.com/article/19/9/date-and-time-manipulation-rust)

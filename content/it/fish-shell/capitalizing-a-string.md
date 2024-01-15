@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Maiuscolizzare una stringa"
-simple_title:         "Maiuscolizzare una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "Fish Shell: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,24 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-  
-Lo sviluppo di script e codice è un compito comune per programmatori e sviluppatori. A volte, è necessario manipolare o formattare i dati all'interno del codice per renderlo più leggibile o facilmente identificabile. Una di queste operazioni comuni è la capitalizzazione di una stringa. In questo articolo, esploreremo come farlo utilizzando Fish Shell.
+Capitalize è una funzione utile per ottenere la versione maiuscola di una stringa, che può essere utile in diversi casi, come l'ordinamento di elenchi o la formattazione di testi.
 
-## Come Fare
+## Come
+```Fish Shell
+set text "ciao mondo"
+echo (string capitalize $text)
+```
 
-Per capitalizzare una stringa utilizzando Fish Shell, segue un esempio di codice:
+Output: Ciao mondo
 
-````Fish Shell
-set str "ciao mondo"
-echo $str | tr '[:lower:]' '[:upper:]'
-````
-Questo codice userà il comando "set" per definire la variabile "str" come "ciao mondo". Successivamente, verrà utilizzato il comando "echo" e il comando "tr" per convertire tutti i caratteri in minuscolo in maiuscolo. Il risultato sarà "CIAO MONDO". 
+Se si vuole capitalizzare solo la prima lettera di una stringa, si può utilizzare la funzione `string upper`:
 
-## Approfondimento
+```Fish Shell
+set text "ciao mondo"
+echo (string upper --first $text)
+```
 
-C'è un po' più di complessità dietro la capitalizzazione di una stringa in Fish Shell. Il comando "tr" viene utilizzato per la traduzione dei caratteri secondo il set di caratteri specificato nella seconda parte del comando. In questo caso, il set di caratteri è '[:lower:]' e '[:upper:]', che rappresenta tutti i caratteri minuscoli e maiuscoli. Potrebbero esserci altri set di caratteri disponibili, quindi assicurarsi di controllare la documentazione per saperne di più.
+Output: Ciao mondo
 
-## Vedi Anche
+## Deep Dive
+La funzione `capitalize` è implementata nel modulo `string` di Fish Shell. Esaminiamo come funziona all'interno del codice sorgente:
 
-- Documentazione Fish Shell su "set": https://fishshell.com/docs/current/cmds/set.html
-- Documentazione Fish Shell su "tr": https://fishshell.com/docs/current/cmds/tr.html
+```C
+void string_capitalize(const wchar_t *text) {
+    while (*text) {
+        fwprintf(stderr, L"%lc", towupper(*text));
+        text++;
+    }
+}
+
+// Codice sorgente abbreviato
+
+function -d -t string capitalize --description "Capitalizza una stringa.<br />In caso contrario restituisce una stringa vuota." --argument summary --namespace string uppercase --no-scope --terse uppercase ->
+    if test (count $argv) -gt 0
+        for text in $argv
+            string capitalize $text
+        end
+    else
+        while read -l line
+            string capitalize $line
+        end
+    end
+end
+```
+
+La funzione si basa su una semplice iterazione sulle lettere della stringa, utilizzando la funzione standard `towupper` per ottenere la versione maiuscola di ogni carattere. Invece, il codice della funzione `uppercase` sfrutta la funzione `capitalize` interna di Fish Shell per gestire tutti i casi possibili di input.
+
+## Vedi anche
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
+- Tutorial su Fish Shell: https://www.linux.it/~ott/al_colophon/tutorial/fish.html
+- Lista di funzioni di stringhe di Fish Shell: https://fishshell.com/docs/current/cmds/string.html

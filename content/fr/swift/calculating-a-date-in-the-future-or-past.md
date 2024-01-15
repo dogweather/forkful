@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Calcul d'une date dans le futur ou le passé"
-simple_title:         "Calcul d'une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "Swift: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,36 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Calculer une date dans le futur ou le passé peut être utile dans de nombreuses situations, que ce soit pour des rappels, des réservations ou simplement pour savoir quelle journée tombe un événement important.
+Il arrive souvent que nous ayons besoin de calculer une date dans le passé ou le futur dans le cadre de notre programmation Swift. Cela peut être utile pour des tâches telles que la planification d'événements ou la manipulation de données temporelles.
 
-## Comment Faire
+## Comment faire
 
-Il existe plusieurs façons de calculer une date dans le futur ou le passé en utilisant le langage Swift. La première méthode consiste à utiliser la fonction `Date()` qui renvoie la date actuelle, puis à utiliser la méthode `addingTimeInterval()` pour ajouter ou soustraire un certain nombre de secondes, minutes, heures, jours, mois ou années. Voici un exemple de code pour calculer une date dans 7 jours :
-```Swift
-let today = Date()
-let futureDate = today.addingTimeInterval(7 * 24 * 3600)
-print(futureDate)
+Pour calculer une date dans le futur, nous pouvons utiliser la fonction `DateAddingTimeInterval` avec le nombre de secondes correspondant à la période de temps que nous voulons ajouter. Par exemple, pour ajouter un jour à la date actuelle, nous pouvons utiliser le code suivant:
 
-// Output: 2021-07-16 14:31:22 +0000
 ```
-
-Une autre façon de calculer une date dans le futur ou le passé est d'utiliser le type `DateComponent` et la classe `Calendar`. Cette méthode est plus précise car elle prend en compte les différents calendriers (grégorien, hébraïque, islamique, etc.) et les fuseaux horaires. Voici un exemple de code pour calculer une date dans 3 mois :
-```Swift
 let currentDate = Date()
-var dateComponents = DateComponents()
-dateComponents.month = 3
-let futureDate = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-
-// Output: Optional(2021-10-09 14:31:22 +0000)
+let futureDate = currentDate.addingTimeInterval(86400) //86400 secondes = 1 jour
+print(futureDate) // sortie: 2021-09-27 16:00:00 +0000
 ```
 
-## Plongée en Profondeur
+De même, pour calculer une date dans le passé, nous pouvons utiliser la fonction `DateByAddingTimeInterval` en soustrayant le nombre de secondes de la date actuelle. Voici un exemple de code pour soustraire un mois à la date actuelle:
 
-Il est important de comprendre que le langage Swift utilise le temps Unix pour stocker les dates et les heures, qui est la mesure du temps écoulé en secondes depuis le 1er janvier 1970 à minuit UTC. Cela signifie que les calculs de dates dans le futur ou le passé se basent sur cette mesure, il est donc important de prendre cela en compte lors de la conversion de temps dans différentes unités.
+```
+let currentDate = Date()
+let pastDate = currentDate.addingTimeInterval(-2629746) //2629746 secondes = 1 mois
+print(pastDate) // sortie: 2021-07-29 16:00:00 +0000
+```
 
-Un autre point important à noter est que les calculs de date dans le futur ou le passé peuvent être affectés par certains facteurs externes tels que les années bissextiles, les changements d'heure et les changements de fuseau horaire. Il est donc recommandé d'utiliser la méthode de calcul de date la plus précise en fonction de vos besoins.
+Il est important de noter que tous les calculs de dates dépendent du fuseau horaire sur lequel votre appareil est réglé. Assurez-vous donc de prendre cela en compte lors de l'utilisation de ces fonctions.
 
-## Voir Aussi
+## Plongée en profondeur
 
-- Apple Developer Documentation: [Manipulating Dates and Times Using the Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- Hacking With Swift: [Working with Dates and Times in Swift](https://www.hackingwithswift.com/articles/142/working-with-dates-and-times-in-swift)
+Lorsque nous utilisons la fonction `addintTimeInterval` pour calculer une date dans le futur ou dans le passé, nous devons fournir le nombre de secondes correspondant à la période de temps que nous voulons ajouter ou soustraire. Mais comment pouvons-nous calculer facilement le nombre de secondes pour une période donnée?
+
+Heureusement, Swift a une solution pour cela: le type `Calendar`. En utilisant cette classe, nous pouvons obtenir des composants de temps spécifiques, tels que le nombre de jours, de mois ou d'années, et les convertir en secondes pour les utiliser dans nos calculs de date.
+
+Par exemple, si nous voulons calculer une date dans 2 semaines à partir de maintenant, nous pouvons utiliser le code suivant:
+
+```
+let calendar = Calendar.current
+let twoWeeksInSeconds = calendar.dateComponents([.second], from: Date(), to: calendar.date(byAdding: .day, value: 14, to: Date()))
+print(twoWeeksInSeconds?.second) // sortie: 1209600 secondes (14 jours)
+```
+
+En utilisant cette méthode, nous pouvons facilement personnaliser nos calculs de dates en fonction de nos besoins.
+
+## Voir aussi
+
+Pour plus d'informations sur la manipulation de dates en Swift, vous pouvez consulter les ressources suivantes:
+
+- [Documentation Swift sur la classe Date](https://developer.apple.com/documentation/foundation/date)
+- [Tutoriel sur la manipulation de dates avec le type Calendar](https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
+- [Vidéo explicative sur les fonctions de manipulation de dates en Swift](https://www.youtube.com/watch?v=_4cXCEDtpLU)

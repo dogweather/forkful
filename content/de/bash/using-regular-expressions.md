@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Die Verwendung regulärer Ausdrücke"
+html_title:           "Bash: Die Verwendung regulärer Ausdrücke"
+simple_title:         "Die Verwendung regulärer Ausdrücke"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,43 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum verwenden wir in der Bash-Programmierung reguläre Ausdrücke? Die Antwort ist einfach: Sie ermöglichen es uns, komplexe Suchmuster in Texten zu definieren, die wir mit unseren Befehlen verarbeiten können. Dadurch können wir unsere Programmierarbeit effizienter und schneller erledigen.
+Sich mit regulären Ausdrücken zu beschäftigen, kann eine mächtige Fähigkeit für die Bash-Programmierung sein. Mit regulären Ausdrücken können Sie komplexe Such- und Ersatzmuster definieren, um Texte zu manipulieren und zu verarbeiten.
 
-## Wie man es macht
+## So geht's
 
-Um reguläre Ausdrücke in Bash zu nutzen, müssen wir das Tool 'grep' verwenden. Es wird verwendet, um Text aus einer Datei oder aus der Standardeingabe zu filtern. Hier ist ein Beispiel:
+Die Verwendung von regulären Ausdrücken in der Bash-Programmierung erfordert die Verwendung des `grep` Befehls. Hier ist ein Beispiel, um alle Zeilen zu finden, die das Wort "Haus" enthalten:
 
 ```Bash
-echo "Mein Name ist Max" | grep 'Max'
+grep "Haus" textdatei.txt
 ```
-Ausgabe: Mein Name ist Max
 
-In diesem Beispiel haben wir den Text "Mein Name ist Max" mit grep nach dem Muster 'Max' durchsucht und die Zeile mit dem Wort 'Max' zurückgegeben.
+Output:
 
-Es gibt verschiedene Optionen, die wir in grep verwenden können, um unsere Suche zu verfeinern. Hier sind einige häufig verwendete Optionen:
+```
+Dies ist eine Zeile mit dem Wort Haus.
+Ein anderes Haus, eine andere Zeile.
+```
 
-- **-i**: Ignoriert Groß- und Kleinschreibung und findet somit auch übereinstimmende Wörter in unterschiedlicher Schreibweise.
-- **-E**: Erlaubt die Verwendung von erweiterten regulären Ausdrücken, die komplexere Muster definieren können.
-- **-v**: Gibt alle Zeilen zurück, die nicht mit dem angegebenen Muster übereinstimmen.
+Die `grep`-Option `-E` ermöglicht die Verwendung von erweiterten regulären Ausdrücken, um komplexere Muster zu definieren. Zum Beispiel, um alle Zeilen zu finden, die entweder "Haus" oder "Wohnung" enthalten:
 
-Um reguläre Ausdrücke zu üben und mehr über die verschiedenen Optionen zu erfahren, empfehlen wir die Verwendung von Online-Tools wie [Regex101](https://regex101.com/), um Muster zu testen und zu debuggen.
+```Bash
+grep -E "Haus|Wohnung" textdatei.txt
+```
 
-## Tiefer Einblick
+Output:
 
-Reguläre Ausdrücke können sehr leistungsstark sein, aber sie erfordern ein gewisses Maß an Übung, um sie effektiv zu nutzen. Hier sind einige Tipps, um Ihnen den Einstieg zu erleichtern:
+```
+Dies ist eine Zeile mit dem Wort Haus.
+Ein anderes Haus, eine andere Zeile.
+Und auch eine Zeile mit dem Wort Wohnung.
+```
 
-- Nutzen Sie Zeichenklassen wie '[0-9]' (alle Zahlen von 0-9) oder '[a-z]' (alle Kleinbuchstaben von a-z), um spezifische Zeichenmuster zu definieren.
-- Verwenden Sie Quantoren wie '*' (null oder mehr Vorkommen) oder '+' (ein oder mehr Vorkommen), um das Suchmuster zu erweitern.
-- Achten Sie darauf, den richtigen Escape-Charakter '\\' zu verwenden, um spezielle Zeichen wie '.' oder '?' zu definieren.
+Weitere nützliche `grep`-Optionen sind `-i` für die Suche ohne Beachtung der Groß-/Kleinschreibung und `-o` für die Ausgabe nur der übereinstimmenden Teile der Zeilen.
 
-Es gibt auch eine Vielzahl von Anwendungen für reguläre Ausdrücke in der Bash-Programmierung, wie zum Beispiel beim Parsen von Log-Dateien oder zum Finden und Ersetzen von Text in mehreren Dateien auf einmal.
+## Tief eintauchen
+
+Die Verwendung von regulären Ausdrücken erfordert ein gewisses Verständnis einiger Zeichen und Funktionen. Zum Beispiel:
+
+- `^` entspricht dem Anfang einer Zeile, während `$` dem Ende einer Zeile entspricht.
+- `.` entspricht genau einem beliebigen Zeichen.
+- `[]` ermöglicht die Definition eines Zeichensatzes, z.B. `[abc]` entspricht entweder "a", "b" oder "c".
+- `*` entspricht null oder mehr Vorkommen des vorherigen Zeichens.
+- `+` entspricht einem oder mehr Vorkommen des vorherigen Zeichens.
+- `()` ermöglicht die Gruppierung von Mustern.
+
+Es gibt auch einige hilfreiche Online-Tools, wie z.B. [Regex101] (https://regex101.com/), die Ihnen helfen können, reguläre Ausdrücke zu testen und zu verstehen.
 
 ## Siehe auch
 
-Hier sind einige nützliche Ressourcen, um Ihre Kenntnisse über reguläre Ausdrücke in Bash zu vertiefen:
-
-- [Reguläre Ausdrücke mit grep](https://wiki.ubuntuusers.de/grep/#Regulare_Ausdruecke)
-- [Reguläre Ausdrücke in Bash](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)
-- [Bash Academy: Reguläre Ausdrücke](https://www.bash.academy/lessons/advanced/wildcards-and-regex/)
-
-Jetzt haben Sie die Grundlagen der Verwendung von regulären Ausdrücken in Bash gelernt. Viel Spaß beim Programmieren!
+* [Bash Regular Expressions](https://www.gnu.org/software/sed/manual/html_node/Bash-regular-expressions.html)
+* [The Art of Command Line: Regular Expressions](https://github.com/jlevy/the-art-of-command-line/blob/master/README-de.md#regular-expressions)
+* [Einführung in reguläre Ausdrücke in der Bash](https://wiki.ubuntuusers.de/Bash/Regul%C3%A4re_Ausdrucke/)

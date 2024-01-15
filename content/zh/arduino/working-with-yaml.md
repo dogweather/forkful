@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 使用YAML进行编程"
-simple_title:         "使用YAML进行编程"
+title:                "与yaml一起工作"
+html_title:           "Arduino: 与yaml一起工作"
+simple_title:         "与yaml一起工作"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,71 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mengapa Mengapa Engkau Harus Belajar Arduino Programming
+请在阅读这篇文章之前先打瞌睡，因为今天我们要谈论的主题是关于YAML。你可能听说过它，但是它到底是什么？它是一个用于描述数据的语言，它可以轻松地配置和处理数据，在Arduino编程中也有很多实用的用途。
 
-Arduino programming adalah salah satu cara praktis untuk membuat berbagai jenis proyek elektronika. Dengan menggunakan Arduino, kamu dapat mengendalikan perangkat dan membuatnya melakukan berbagai tugas yang diinginkan. Selain itu, Arduino juga sangat cocok untuk pemula yang ingin belajar tentang dunia pemrograman.
+## 为什么
 
-Cara Untuk Belajar Arduino Programming
+为什么要使用YAML？简而言之，它可以让你的Arduino编程更简单和更有条理。通过使用YAML语言，你可以轻松地配置和管理你的数据，使得编程过程更高效和易读。
 
-Untuk memulai belajar Arduino programming, kamu perlu memahami dasar-dasar pemrograman seperti sintaksis dan konsep dasar. Selain itu, kamu juga perlu mengerti tentang elektronik dasar dan cara kerja Arduino. Berikut contoh kode dan hasil output untuk membantu kamu memahami cara kerja Arduino.
+## 如何使用
 
-```
-Arduino Dengan ESP8266
+使用YAML并不复杂，下面是一个简单的例子：
 
-#include <ESP8266WiFi.h>
+```Arduino
+#include <Arduino_YAML.h>
 
-int led = 5;
+int ledPin = 13;
+int buttonPin = 3;
 
-void setup()
-{
+YAML::Node config = YAML::LoadFile("config.yaml");
 
-  pinMode(led, OUTPUT);
-  digitalWrite(led, LOW);
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
 }
 
-void loop()
-{
-
-  digitalWrite(led, HIGH);
-  delay(1000);
-  digitalWrite(led, LOW);
-  delay(1000);
+void loop() {
+  if (digitalRead(buttonPin) == HIGH) {
+    digitalWrite(ledPin, config["led_status"].as<bool>());
+  }
 }
 ```
 
-Setelah kamu memahami dasar-dasar pemrograman dan electronic dasar, kamu bisa mulai membuat proyek-proyek yang lebih kompleks dengan menggunakan Arduino. Kamu juga bisa mencoba menggunakan sensor-sensor atau modul-modul yang kompatibel dengan Arduino untuk membuat proyek yang lebih menarik.
+在这个例子中，我们先导入`Arduino_YAML`库，然后定义一些变量用于引脚和YAML配置文件。然后，我们使用`YAML::LoadFile`函数加载我们的配置文件。在`setup`函数中，我们设定引脚的模式。在`loop`函数中，我们通过读取按钮引脚的值来控制LED灯的亮灭，而这个值是从配置文件中读取的。
 
-Rincian Mengenai YAML
+## 深入了解
 
-YAML adalah bahasa pemformatan data yang digunakan untuk menyimpan dan menerjemahkan data yang kompleks. YAML sering digunakan sebagai file konfigurasi pada proyek elektronika. Dengan YAML, kamu bisa memisahkan data dan kode sehingga kamu dapat mengubah data tanpa perlu mengubah kode program.
+除了上面的例子，YAML还可以做更多事情，比如配置网络设置、sensor数据、甚至是控制逻辑。它的语法简洁而有结构，这使得它非常适合用于Arduino编程。
 
-Sebagai contoh, kamu dapat membuat file YAML yang berisi daftar angka seperti ini:
+## 参考资料
 
-```
----
-Angka:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-```
+- YAML官方网站: https://yaml.org/
+- Arduino官方网站: https://www.arduino.cc/
+- Arduino_YAML库: https://github.com/azillion/arduino-yaml
 
-Kemudian kamu bisa menggunakan kode Arduino untuk memuat dan menampilkan data tersebut dengan menggunakan library "YAML.h". Dengan demikian, jika kamu ingin mengubah angka dalam file YAML, kamu tidak perlu mengubah kode Arduino yang sudah dibuat sebelumnya.
+谢谢阅读这篇关于使用YAML的文章，希望它能帮助你更有效地在Arduino编程中处理数据。
 
-Lihat Juga
+## 另请参阅
 
-Jika kamu tertarik untuk belajar lebih lanjut tentang Arduino programming dan YAML, berikut beberapa sumber belajar yang dapat kamu gunakan:
-
-- [Website Resmi Arduino](https://www.arduino.cc/)
-- [Tutorial Arduino untuk pemula](https://www.youtube.com/watch?v=nL34zDTPkcs)
-- [Belajar YAML dalam 5 menit](https://www.codecademy.com/learn/learn-yaml)
-- [Menggunakan library YAML di Arduino](https://github.com/jasonrfisher/arduino-yaml)
-
-Terima kasih telah membaca artikel ini, semoga bermanfaat dan selamat belajar! 
-
-See Also
-
-- Belajar elektronika dasar dengan Arduino
-- Membuat proyek sederhana dengan Arduino
-- Menggunakan sensor-sensor di Arduino.
+- Markdown语法指南: https://www.markdownguide.org/basic-syntax/
+- Arduino编程入门指南: https://www.arduino.cc/en/Guide/Introduction

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: חילוץ תגיות אתרים"
-simple_title:         "חילוץ תגיות אתרים"
+title:                "ניתוח html"
+html_title:           "Arduino: ניתוח html"
+simple_title:         "ניתוח html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-מתכנתי ארדואינו לעתים קרובות נתקלים בצורך לעבוד עם קוד HTML, וכדי לתמוך בפעולות כמו שאילתא או הצגת מידע במסך OLED, נדרשת היכולת לפרק את הקוד HTML לחלקיו השונים. לכן, יש מספר סיבות לפרק קוד HTML מתוך תוכניות ארדואינו.
+זהו אמנם נושא חשוב ומעניין, אך רבים מפחדים מהמונח "HTML". למה ללמוד לפענח את השפה הזו במקום להשתמש בכלי כמו כרטיסייה, כשייתכן שטכנולוגיית "Arduino" תתאים יותר להם? הסיבה העיקרית לכך היא שכמעט כל מכשיר אלקטרוני בתוך הבית או במשרד מתקשר עם האינטרנט. לכן מכשירים אלו תומכים בתקשורת סדרתית, ובשפת תכנות כמו HTML, שמתארת את החלקים של מסמכים. על ידי הלמידה לפענח את השפה הזו, ניתן לתכנת מכשירים שיכולים לקרוא, לשלוח ולכתוב מידע HTML.
 
-## איך לבצע פעולת פרקטט HTML בארדואינו
+## איך לעשות זאת
 
-כדי לפרק קוד HTML בארדואינו, ניתן להשתמש במספר ספריות ופקודות הזמינות עבור משתמשי ארדואינו:
-```c++
-// הכנס את הטקסט המלא של הקוד HTML
-String htmlCode = "<html><head><title>כותרת</title></head><body><h1>שלום עולם!</h1></body></html>";
+כדי להתחיל לפענח HTML באמצעות "Arduino", אנו צריכים להשתמש בסירטוני המחשב כדי לכתוב תוכניות. נחשב, לדוגמה, לעצם "Arduino"​​שמגיש כרטיסייה " Ethernet "שמאפשרת תקשורת עם הרשת המקוונת תוך הסתמכות על פרוטוקול תקשורת כגון IP TCP סדרתי. על מנת להתחיל בשפת HTML, נשתמש בספריית "Http" המשמשת את יישום התכנית שלנו ותעודת אימות בתוכנית.
 
-// יצירת משתנה שבו נאחסן את התוכן של התג <title>
-String title;
+```Arduino
+#include <SPI.h>
+#include <Ethernet.h>
+#include <HTTPLib.h>
 
-// חיתוך הקוד HTML לאורך התווים "<title>" ו "</title>"
-int titleStartIndex = htmlCode.indexOf("<title>") + 7; // + 7 מטורף את כמות התווים בתג כדי להמציא את אינדקס התווים הראשונים של התג
-int titleEndIndex = htmlCode.indexOf("</title>");
+void setup() {
+  // Initialize Ethernet library
+  Ethernet.begin(mac);
+  // Start serial communication
+  Serial.begin(9600);
+}
 
-// חיתוך הטקסט שבין התווים כדי לקבל את התוכן של התג <title>
-title = htmlCode.substring(titleStartIndex, titleEndIndex);
-
-// הצגת התוכן על המדפסת הסדוקה
-Serial.println(title); // יוצא "כותרת"
+void loop() {
+  // Make HTTP request
+  // HTML parsing
+  // Print results to serial monitor
+  Serial.println("Parsed HTML data");
+}
 ```
 
-## לחטוף לילו יונים נעל כ מקור
+התוכנית שלנו תדפיס את המידע שנפענח מהדפים המייצגים את המידע המועבר על ידי פרוטוקול התקשורת "IP TCP" לחברה המיוחדת של "Ethernet Shield". ניתן לעבור על מה שקראנו, לקפוץ עלתוכניות על כרטיסייה "IP"×"TCP".
 
-כאשר מבצעים את פעולת פרק הקוד HTML בארדואינו, חשוב לזכור האת התגים מכילים רק מידע נוסף מה חלקי אדם. כמו כרום Javascript, קוד HTML מתכלה למספר מילים שונות, וידוע שהתוכן משתנה בכתיב בקושי. לכן, כדאי לבחור ספריות המסייעות בפעולת פרק הקוד HTML, כמו למשל ספריית [this HTML Parser](https://playground.arduino.cc/Main/htmlparse/) או [this ESP8266 HTML Parser](https://github.com/this/ESP8266_HTML
+## עיון מעמיק
+
+כמו בשפות כמו "C++", השפת HTML משתמשת

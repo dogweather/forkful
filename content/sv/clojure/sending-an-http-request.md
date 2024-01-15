@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Clojure: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,40 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skicka HTTP-förfrågningar är en essentiell del av att bygga webbapplikationer och kommunikation mellan klient och server. Det kan vara användbart för att hämta data från en webbtjänst eller uppdatera en databas. Så om du planerar att bygga en webbapplikation i Clojure, är det viktigt att veta hur man skickar HTTP-förfrågningar.
+Du kanske undrar varför man skulle vilja skicka en HTTP förfrågan. En anledning kan vara att få data från en webbserver, till exempel för att hämta information från en API eller ladda ner en fil.
 
-## Hur man gör det
+## Så här gör du
 
-För att skicka en HTTP-förfrågan i Clojure behöver vi använda funktionen ```clj-http.client/request```. Vi kan använda den för att göra GET-, POST-, PUT- eller DELETE- förfrågningar. Till exempel, för att hämta data från en extern webbplats, kan vi använda:
-
-```Clojure
-(require '[clj-http.client :as client])
-
-(def response (client/request {:url "https://www.example.com"
-                               :method :get}))
-
-(:body response) ;; returnerar innehållet från den externa webbplatsen
-```
-
-I det här exemplet skapar vi en variabel ```response``` och använder sedan ```client/request``` för att göra en GET-förfrågan till en valfri webbadress. Vi kan sedan använda ```(:body response)``` för att hämta innehållet från den externa webbplatsen.
-
-För att skicka en POST-förfrågan med data, kan vi använda:
+För att skicka en HTTP förfrågan i Clojure kan du använda funktionen "clj-http.client/request" från biblioteket "clj-http". För att använda det behöver du först importera biblioteket:
 
 ```Clojure
-(def response (client/request {:url "https://www.example.com/submit"
-                               :method :post
-                               :body "name=John&age=30"}))
+(ns min-projekt.core
+  (:require [clj-http.client :as http]))
 ```
 
-I det här fallet skickar vi med en body med namn och ålder som parametrar till den externa webbplatsen.
+Sedan kan du använda funktionen, till exempel för att hämta data från en API. I det här exemplet visar vi hur du kan hämta användardata från GitHub API:
+
+```Clojure
+(def resultat (http/request
+                {:method :get
+                 :url "https://api.github.com/users/joakimkarud"
+                 :headers {"Accept" "application/json"}}))
+```
+
+Outputen blir en datastruktur som innehåller all information från förfrågan. För att komma åt specifik data, till exempel användarens namn, kan du använda clojure.core/get:
+
+```Clojure
+(get resultat :body :login) ;; Returnerar "joakimkarud"
+```
 
 ## Djupdykning
 
-Nu när vi vet hur vi skickar HTTP-förfrågningar i Clojure, låt oss titta på några saker som vi kan anpassa. Funktionen ```client/request``` tar flera nyckelvärdespar som argument, inklusive ```:params``` för att skicka med eventuella sökparametrar, ```:headers``` för att skicka med eventuella rubriker, och ```:cookies``` för att skicka med cookie-data.
+När du skickar en HTTP förfrågan finns det flera parametrar som du kan använda för att anpassa din förfrågan. Här är några av de vanligaste:
 
-Vi kan också använda funktionen ```with-defaults``` från ```clj-http.client```, som låter oss ställa in standardvärden som används för alla efterföljande förfrågningar. Detta kan vara användbart för att till exempel sätta en bas-URL för alla våra förfrågningar.
+- :method: anger vilken typ av förfrågan du skickar, till exempel :get, :post eller :delete.
+- :url: är den URL som du skickar förfrågan till.
+- :headers: innehåller de headers som du vill skicka med förfrågan, som exempelvis "Accept" för att specificera vilket dataformat du vill ha tillbaka.
+- :body: är den data som du vill skicka med din förfrågan, till exempel en JSON-kodad sträng.
+
+Det finns också andra, mer avancerade, parametrar som du kan använda beroende på dina behov.
 
 ## Se även
 
-- [Dokumentation för clj-http](https://www.github.com/dakrone/clj-http)
-- [En handledning för att skicka HTTP-förfrågningar i Clojure](https://blog.cognitect.com/blog/2016/1/14/clojure-http-client-does-not-http-kit)
+- [Clojure API för HTTP förfrågningar](https://github.com/clj-http/clj-http)
+- [GitHub API dokumentation](https://developer.github.com/v3/)
+- [En tutorial om HTTP förfrågningar i Clojure](https://www.giddyup.co.za/clojure-http-client-tutorial/)

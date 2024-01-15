@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Työskentely yaml:n kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Clojure: Työskentely yaml:n kanssa"
 simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,68 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi YAML:n käyttäminen kannattaa?
+# Miksi
 
-YAML (Yet Another Markup Language) on ihmisläheinen ja helppolukuinen tapa tallentaa ja jakaa tietoa tietokoneiden välillä. Se on myös suosittu valinta konfiguraatiotiedostojen muodossa. YAML on melko yksinkertainen, mutta silti voi olla hieman haastavaa perehtyä sen käyttöön. Tässä blogikirjoituksessa annamme sinulle ohjeet YAML:n käyttämiseen Clojuren ohjelmointikielellä.
+ YAML on yleinen tiedostomuoto, jota käytetään tietojen tallentamiseen ja jakamiseen eri ohjelmistojen ja sovellusten välillä. Clojure-kehittäjänä sinun on tärkeää ymmärtää YAML:aa ja sen toimintaa, jotta voit integroida sen tehokkaasti projekteihisi ja helposti muokata tiedostoja tarpeen mukaan. 
 
-## Kuinka: Esimerkkejä ja koodilohkoja
+# Miten käyttää YAML:aa Clojurella
 
-YAML:n käyttö Clojuressa vaatii muutaman alustavan askeleen. Ensinnäkin, meidän täytyy lisätä YAML riippuvuus projektiimme, mikä voidaan tehdä seuraavalla koodirivillä:
-
-```Clojure
-[org.yaml/yaml "0.1.7"]
-```
-
-Kun tämä on tehty, voimme aloittaa YAML-tiedostojen lukemisen ja kirjoittamisen. Seuraavassa esimerkissä luemme YAML-tiedostosta käyttäjän nimen ja iän ja tulostamme ne konsolille:
-
-```Clojure
-(ns yaml-example.core
-  (:require [yaml.core :as yaml]))
-
-(def user (yaml/load-file "kayttaja.yaml"))
-(println "Käyttäjän nimi: " (:name user))
-(println "Käyttäjän ikä: " (:age user))
-```
-
-Jos YAML-tiedosto "kayttaja.yaml" näyttää tältä:
-
-```yaml
-name: Johanna
-age: 28
-```
-
-Saat seuraavanlaisen tulosteen:
+YAML-tiedostot ovat luettavissa Clojuren avulla käyttämällä "clj-yaml" kirjastoa. Voit asentaa sen käyttämällä Leiningenin tai Mavenin kautta seuraavalla komennolla:
 
 ```
-Käyttäjän nimi: Johanna
-Käyttäjän ikä: 28
+[clj-yaml "0.5.0"]
 ```
 
-Voit myös luoda uusia YAML-tiedostoja yksinkertaisella koodilla:
+Tämän jälkeen voit ladata kirjaston käyttämällä "require" komentoa:
 
-```Clojure
-(ns yaml-example.core
-  (:require [yaml.core :as yaml]))
-
-(def user {:name "Mikko"
-           :age 32})
-
-(yaml/spit "uusi.yaml" user)
+```
+(ns your-namespace
+  (:require [clj-yaml.core :as yaml]))
 ```
 
-Tämä luo tiedoston nimeltä "uusi.yaml" seuraavalla sisällöllä:
+YAML-tiedoston lukemiseksi voit käyttää "load" funktiota ja antaa tiedoston polun parametrina:
 
-```yaml
-name: Mikko
-age: 32
+```
+(yaml/load "path/to/file.yaml")
 ```
 
-## Syvemmälle: Työskentelyä YAML:n kanssa
+Voit myös lukea YAML-tiedoston suoraan merkkijonona käyttämällä "parse" funktiota:
 
-YAML:n syvemmälle perehtyminen vaatii hieman enemmän aikaa ja vaivaa, mutta se voi olla hyödyllistä, jos käsittelet monimutkaisempia tietorakenteita. Voit lukea lisätietoja YAML:n käyttömahdollisuuksista Clojuressa esimerkiksi [YAML-kirjaston dokumentaatiosta](https://github.com/borkdude/yaml-clj) tai seuraavasta [artikkelista](http://yobriefca.se/blog/2014/06/17/yaml-files-and-clojure.html).
+```
+(def yaml-string "--- \n name: John\n profession: Developer\n")
+(yaml/parse yaml-string)
+```
 
-## Katso myös
+Tulos tulostuu map-rakenteena, jossa YAML:n avaimet ovat Clojure-käsitteitä ja arvot vastaavat niitä merkkijonoina, numeroina tai muita Clojuren tietotyyppeinä.
 
-- [YAML syntaksin opas](https://yaml.org/spec/1.2/spec.html)
-- [JSON vs YAML vertailu](https://yaml.org/spec/1.2/spec.html)
-- [Lisää tietoa Clojusta](https://clojure.org/)
+# Syvemmälle YAML:n maailmaan
+
+YAML:n luomiskyky ei rajoitu vain yksinkertaisiin arvoihin, vaan se tukee myös monimutkaisempia rakenteita, kuten listoja ja sisäkkäisiä mappeja. Voit myös käyttää YAML:n sisältämiä tyyppejä, kuten Boolean ja Null.
+
+YAML on myös erittäin muokattavissa. Voit määrittää oman muotoillun YAML-rakenteen käyttämällä "configure-parser" funktiota ja antamalla haluamasi asetukset parametreina. Voit esimerkiksi määrittää erilaisia sallittuja tietotyyppejä tai käyttää omia custom marshalling funktioita.
+
+# Katso myös
+
+- [Clojure YAML:en ohjelmallinen muotoilu](https://github.com/tmarble/clj-yaml)
+- [YAML.org - Tietoa YAML:sta ja sen käytöstä](https://yaml.org/)
+- [Clojure - Ohjelmointikieli ja kehitysympäristö](https://clojure.org/)

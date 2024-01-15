@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Haskell recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Starting a new project in Haskell can be a daunting task for some, but it can also be an exciting and rewarding experience. With a functional programming language like Haskell, you have the opportunity to create highly performant and reliable software that is also easy to maintain and extend. So why not dive into the world of Haskell and see what you can create?
+Programming in Haskell is a unique and enjoyable experience. Its functional and declarative nature allows for concise and elegant code that is also highly maintainable. Starting a new project in Haskell can not only expand your programming skills, but also lead to more efficient and robust code.
 
 ## How To
+To start a new project in Haskell, you'll first need to make sure you have the Haskell compiler, GHC, installed on your computer. Once you have that set up, you can follow these simple steps to get your project up and running:
 
-To get started with Haskell, you will need to have the Haskell platform installed on your computer. Once that is set up, you are ready to start coding! Let's go through a basic example of creating a simple function in Haskell.
+1. Create a new directory for your project.
+2. Navigate to that directory in your terminal.
+3. Use the `cabal init` command to initialize a new Cabal project.
+4. Fill in the prompted fields, including the project name, version, and description.
+5. Once the project is initialized, you can use the `cabal build` command to build your project.
+6. To run your project, use the `cabal run` command followed by the name of the executable.
+7. After making changes to your code, you can use the `cabal build` command again to update your project and run it again with `cabal run`.
+
+Here's an example of a simple "Hello World" program in Haskell:
 
 ```Haskell
--- Define a function called add
-add :: Int -> Int -> Int
-add x y = x + y  -- add takes in two Integers and returns their sum
-
--- Use the function
-add 2 3
--- Output: 5
+-- hello.hs
+main :: IO ()
+main = putStrLn "Hello, world!"
 ```
 
-In this example, we have defined a function called "add" which takes in two Integers and adds them together. We have specified the types of the function parameters and the return type using the arrow notation. Once the function is defined, we can use it by passing in two values and getting back the sum.
+Running this program with `cabal run hello` will output `Hello, world!`.
 
 ## Deep Dive
+When starting a new project in Haskell, it is important to think carefully about your project structure and design. Haskell's strong type system allows for writing robust and bug-free code, but it's important to plan out your types and functions beforehand.
 
-When starting a new project in Haskell, it is important to plan out your code architecture and data structures beforehand. This will help you stay organized and make the development process smoother. You should also familiarize yourself with the standard library and popular third-party libraries, such as "Data.Text" for working with text data and "HSpec" for testing.
+A good starting point is to identify the different modules and their respective functionality in your project. Then, think about the types and functions needed for each module and how they will interact with each other. It may also be helpful to create a visual diagram to map out the relationships between different parts of your project.
 
-Another important aspect to consider when starting a new project in Haskell is using a build tool, such as "Stack" or "Cabal". These tools can help you manage dependencies, build your project, and run tests.
+Lastly, don't be afraid to consult Haskell documentation and reach out to the Haskell community for help and guidance. The Haskell community is known for being welcoming and supportive, so take advantage of their expertise and knowledge.
 
 ## See Also
-
-For more resources on getting started with Haskell and building projects, check out the following links:
-
-- [Haskell.org](https://www.haskell.org/) - Official website for Haskell, with tutorials, documentation, and community forums.
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - A beginner-friendly book on Haskell.
-- [Haskell Weekly](https://haskellweekly.news/) - A weekly newsletter with news, job postings, and learning resources.
-- [Real World Haskell](http://book.realworldhaskell.org/read/) - A comprehensive guide on using Haskell in real-world projects.
+- Official Haskell website: https://www.haskell.org/
+- Learn You a Haskell tutorial: http://learnyouahaskell.com/
+- Haskell subreddit: https://www.reddit.com/r/haskell/

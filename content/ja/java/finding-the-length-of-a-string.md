@@ -1,5 +1,6 @@
 ---
-title:                "Java: 文字列の長さを見つける"
+title:                "文字列の長さを見つける"
+html_title:           "Java: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Java"
 category:             "Java"
@@ -9,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-文字列の長さを求めることの魅力は、その文字列をより効率的に操作するためです。例えば、文字列の一部を抜き出す場合や、特定の文字列を検索する場合に、文字列の長さが必要になります。
+文字列の長さを求めることに関わる理由は、プログラムで処理する必要があるテキストの長さを知るためです。例えば、パスワードの長さをチェックする際には、文字列の長さを把握することが重要です。
 
-## やり方
+## 使い方
 
-文字列の長さを求めるには、Javaの組み込みメソッドである`length()`を使用します。以下のコードブロックを参考にしてください。
-
+文字列の長さを求める方法はいくつかあります。まずは、`String`クラスの`length()`メソッドを使う方法を見てみましょう。
 
 ```Java
-String myString = "こんにちは、世界！";
-int length = myString.length();
+String text = "Hello World!";
+int length = text.length();
+System.out.println("The length of the string is: " + length);
 
-System.out.println("文字列の長さは" + length + "です。");
+// Output: The length of the string is: 12
 ```
 
-このコードを実行すると、次の出力が得られます。
+また、`String`クラスから派生した`StringBuilder`クラスを使って文字列を操作する場合にも、同じ`length()`メソッドが使えます。
 
 ```Java
-文字列の長さは9です。
+StringBuilder sb = new StringBuilder("Hello World!");
+int length = sb.length();
+System.out.println("The length of the string is: " + length);
+
+// Output: The length of the string is: 12
+```
+
+最後に、`String`クラスの`toCharArray()`メソッドを使って、文字列を文字の配列に変換し、その配列の長さを求める方法もあります。
+
+```Java
+String text = "Hello World!";
+char[] charArray = text.toCharArray();
+int length = charArray.length;
+System.out.println("The length of the string is: " + length);
+
+// Output: The length of the string is: 12
 ```
 
 ## 深堀り
 
-Javaの`length()`メソッドは、実際には`int`型のプリミティブデータ型を返します。これは、文字列のバイト数をカウントしているためです。そのため、日本語や他のマルチバイト文字を含む文字列の場合、意図した文字数とは異なる結果が得られる可能性があります。
+`String`クラスの`length()`メソッドは、内部的には文字列のキャッシュを使用しており、毎回計算を行わなくても、キャッシュされた値を返すようになっています。そのため、文字列の長さを複数回取得したい場合には、`length()`メソッドを使う方が効率的です。
 
-また、`length()`メソッドはオブジェクトではなく、クラスの静的メソッドです。つまり、このメソッドを呼び出すときは、必ずクラス名を前に付ける必要があります。
+また、`String`クラスの`length()`メソッドは、ユニコード文字列の場合でも正しく動作します。つまり、ユニコードのサロゲートペアに対応した文字列でも、適切な長さが返されます。
 
-## 参考リンク
+## この他にも見てみる
 
-- [JavaのStringクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
-- [Javaで文字列を操作する方法](https://www.javadrive.jp/start/string/index1.html)
-- [Javaの組み込みメソッド一覧](https://www.javatpoint.com/java-string-methods)
-- [Javaで文字列を操作するためのライブラリー「Apache Commons Lang」](https://commons.apache.org/proper/commons-lang/)
+- [Java String Length Tutorial](https://www.baeldung.com/java-string-length)
+- [How to Find the Length of a String in Java](https://www.tutorialspoint.com/java-program-to-find-the-length-of-a-string)

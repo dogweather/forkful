@@ -1,6 +1,7 @@
 ---
-title:                "C++: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "C++: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Om du arbetar med att programmera i C++ så är du säkert bekant med olika typer av datastrukturer som används för att lagra och organisera data. En typ av datastruktur som ofta används är YAML, som står för "YAML Ain't Markup Language". Den är användbar för att lagra data i en strukturerad och läsbar form. I denna bloggpost kommer vi att titta närmare på varför det är viktigt att lära sig arbeta med YAML och hur man kan implementera det i en C++ miljö.
+YAML är ett lättläst och användarvänligt sätt att strukturera och lagra data i ett programmeringsprojekt. Det är ett populärt verktyg för att hantera konfigurationsfiler och definiera datastrukturer.
 
 ## Så här
-
-### Kodexempel
-För att använda YAML i en C++ miljö, börja med att inkludera ```yaml-cpp``` biblioteket och skapa ett YAML dokument med följande kod:
+För att använda YAML i ditt C++-projekt behöver du först inkludera YAML-biblioteket. Detta görs genom att lägga till följande rad i din kod:
 ```C++
 #include <yaml-cpp/yaml.h>
-
-YAML::Node doc = YAML::LoadFile("example.yaml"); // Ladda in YAML-dokumentet
 ```
-Vi kan sedan få tillgång till olika delar av dokumentet genom att använda olika metoder, till exempel ```as<int>``` för att hämta ett heltal eller ```as<string>``` för att hämta en sträng.
-
-### Exempel på utmatning
-För att visa hur detta fungerar i praktiken, låt oss anta att vi har ett YAML-dokument som innehåller information om en person:
-```YAML
-name: John
-age: 30
-```
-Genom att använda följande kod:
+Sedan kan du läsa in och skriva ut YAML-filer med hjälp av följande kodexempel:
 ```C++
-#include <iostream>
-
-std::cout << doc["name"].as<string> << std::endl; // Utskrift: John
-std::cout << doc["age"].as<int> << std::endl; // Utskrift: 30
+YAML::Node data = YAML::LoadFile("file.yaml"); // Läser in innehållet från filen "file.yaml"
+std::cout << data["key1"]; // Skriver ut värdet för "key1" i filen
 ```
-Vi kan enkelt få tillgång till och skriva ut informationen som lagras i vårt YAML-dokument.
+För att skapa en YAML-fil och skriva data till den kan du använda följande kod:
+```C++
+YAML::Emitter emitter; // Skapar en emitter för att skriva YAML
+emitter << YAML::BeginMap; // Börjar en mapp
+emitter << YAML::Key << "key1"; // Definierar en nyckel
+emitter << YAML::Value << "value1"; // Definierar ett värde
+emitter << YAML::EndMap; // Avslutar mappen
+std::ofstream file("file.yaml"); // Öppnar filen för skrivning
+file << emitter.c_str(); // Skriver ut emittern till filen
+```
 
-## Djupdykning
+## Deep Dive
+YAML stödjer flera datatyper från standard C++, såsom strängar, tal, boolska värden och arrayer. Det finns också stöd för mer avancerade datatyper som kan definieras i koden. 
 
-Nu när vi har sett hur vi kan använda YAML i en C++ miljö, låt oss titta på några andra aspekter av detta:
-- YAML är ett lättläst format vilket gör det enkelt att handskas med även för icke-tekniska användare.
-- Det är också ett portabelt format, vilket betyder att det kan användas i olika miljöer utan att behöva göra stora ändringar.
-- YAML är också ett flexibelt format som kan anpassas för olika typer av datastrukturer.
+Det är också möjligt att inkludera andra YAML-filer inuti ditt YAML-dokument. Detta kan vara användbart för att återanvända data och för att hålla din YAML-fil mer strukturerad och lättläst.
+
+En annan fördel med YAML är dess flexibilitet och förmåga att anpassa sig till olika strukturer och datatyper. Det finns också möjlighet att kommentera din YAML-kod för att ge ytterligare förklaringar och förbättra läsbarheten.
 
 ## Se även
-
-- [yaml-cpp dokumentation](https://github.com/jbeder/yaml-cpp/wiki)
-- [YAML.org](https://yaml.org/)
-- [C++ dokumentation](https://en.cppreference.com/w/cpp)
-
-Tack för att du valde att läsa denna bloggpost om att använda YAML i en C++ miljö. Vi hoppas att du har lärt dig något nytt och att det kommer att vara till nytta för ditt framtida programmeringsarbete. Lycka till!
+- [YAML-bibliotekets officiella hemsida](https://yaml-cpp.github.io/)
+- [En enkel guide till YAML](https://rollbot.net/yaml-guide/)
+- [C++ - En introduktion](https://www.cplusplus.com/)

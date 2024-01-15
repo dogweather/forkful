@@ -1,6 +1,7 @@
 ---
-title:                "C++: CSV 파일 다루기"
-simple_title:         "CSV 파일 다루기"
+title:                "csv 파일 다루기"
+html_title:           "C++: csv 파일 다루기"
+simple_title:         "csv 파일 다루기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -11,74 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-CSV 파일은 컴퓨터 과학에서 매우 중요한 파일 형식입니다. 데이터를 저장하고 공유하는 데에 널리 사용되며, 많은 프로그래머들이 자주 다루게 될 것입니다.
+CSV 파일을 다루는데 관심을 가지는 이유는 여러분이 프로그래밍을 배우는데 있어서 매우 중요한 스킬이기 때문입니다. CSV 파일은 데이터를 쉽게 저장하고 조작할 수 있는 형식이기 때문에 데이터 분석, 웹 개발 등 다양한 분야에서 사용되고 있습니다.
 
 ## 방법
 
-우선, 필요한 라이브러리를 포함시키는 것으로 시작합니다. 다음 코드를 사용하여 이 작업을 수행할 수 있습니다:
+먼저, CSV 파일을 다루는 라이브러리인 `csv.h`를 다운로드해야 합니다. 그 후, 불러올 CSV 파일의 경로를 지정해 `csv::CSVReader` 객체를 생성하고 `read_row()` 메소드를 사용하여 데이터를 읽어올 수 있습니다.
 
 ```C++
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <vector>
-```
+#include <iostream>
+#include "csv.h"
 
-그런 다음 CSV 파일을 읽어서 데이터를 추출하는 방법을 다룰 것입니다. 다음 코드를 사용하여 파일을 열고, 데이터를 읽어오고, 필요한 형식으로 변환할 수 있습니다:
+int main() {
+    // CSV 파일 경로 지정
+    csv::CSVReader reader("data.csv");
 
-```C++
-// CSV 파일 열기
-std::ifstream file("data.csv");
-// 데이터 저장을 위한 벡터 생성
-std::vector<std::vector<std::string>> data;
-// 파일에서 데이터 읽기
-std::string line;
-while (std::getline(file, line)) {
-  std::stringstream ss(line);
-  std::vector<std::string> row;
-  std::string value;
-  // 쉼표를 기준으로 데이터 추출
-  while (std::getline(ss, value, ',')) {
-    row.push_back(value);
-  }
-  // 벡터에 데이터 추가
-  data.push_back(row);
-}
-// 데이터 출력
-for (std::vector<std::string> row : data) {
-  for (std::string value : row) {
-    // 출력 형식에 맞게 수정
-    std::cout << value << " ";
-  }
-  std::cout << std::endl;
+    // 첫 번째 행 데이터 읽어오기
+    csv::CSVRow row = reader.read_row();
+    
+    // 첫 번째 행 출력
+    std::cout << "첫 번째 행 데이터: " << row[0] << " " << row[1] << " " << row[2] << std::endl;
+
+    return 0;
 }
 ```
 
-예시 파일(data.csv):
+**출력:**
 
 ```
-Alice,20,Female
-Bob,25,Male
+첫 번째 행 데이터: John Smith 35
 ```
 
-출력 결과:
+더 많은 정보를 얻고 싶다면 `iterator`를 사용하여 모든 데이터를 순회하며 읽어올 수 있습니다. 또한 `CSVWriter` 클래스를 사용하여 새로운 CSV 파일을 생성하고 데이터를 입력할 수도 있습니다.
 
-```
-Alice 20 Female
-Bob 25 Male
-```
+## 심층 탐구
 
-## 딥 다이브
+CSV 파일은 쉽게 읽고 쓸 수 있지만, 데이터 유형이 복잡하고 포맷이 다양할 경우 문제가 발생할 수 있습니다. 이 때 `csv.h`는 간편하지만 다양한 설정 옵션을 제공하므로 이러한 문제를 해결할 수 있습니다. 또한 CSV 파일을 파싱하거나 다른 데이터 유형으로 변환하는 기능도 제공합니다.
 
-CSV 파일은 쉼표(,)로 구분된 데이터를 포함하는 텍스트 파일입니다. 이러한 파일들은 보통 표 형식으로 데이터를 구성하기 때문에 스프레드시트 프로그램에서도 쉽게 열어볼 수 있습니다. 또한 프로그래밍에서 이러한 데이터를 파싱하고 다룰 수 있기 때문에 매우 유용한 파일 형식입니다. CSV 파일은 헤더(열의 라벨)와 각 열의 데이터가 구분된 쉼표로 이루어져 있습니다.
+## 참고
 
-## 관련 자료
-
-- [CSV 파일 적용하기](https://www.delftstack.com/ko/tutorial/c-plus-plus-tutorial/how-to-read-csv-file-in-cplusplus/)
-- [프로그래밍에서 CSV 파일 다루기](https://www.tutorialspoint.com/cplusplus-program-to-read-a-csv-file)
-- [C++에서 간단한 CSV 파싱 방법](https://gist.github.com/kramimus/4e2e40f2d4041bfd3cef)
-
-## 더 알아보기
-
-- [CSV 파일 형식](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [CSV vs. TSV](https://www.rev.com/blog/cs-101-csv-vs-tsv-differences-between-comma-and-tab-delimited-files)
+- [csv.h documentation](https://github.com/vincentlaucsb/csv-parser)
+- [Using CSV files in C++](https://www.geeksforgeeks.org/using-csv-files-c-cpp/)
+- [Learn C++ by making a data table](https://www.youtube.com/watch?v=iZ5HBb4LKdQ)

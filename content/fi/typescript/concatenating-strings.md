@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Tietorakenteiden yhdistäminen"
-simple_title:         "Tietorakenteiden yhdistäminen"
+title:                "Jonojen yhdistäminen"
+html_title:           "TypeScript: Jonojen yhdistäminen"
+simple_title:         "Jonojen yhdistäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,24 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi haluat käyttää TypeScriptiä merkkijonojen konkatenointia?
-Merkkijonojen konkatenointi on tärkeä osa ohjelmoinnin, joka mahdollistaa yhdistämisen kaksi tai useampia merkkijonoja yhdeksi. Tämä tekee koodisi helpommin luettavaksi ja ymmärrettäväksi.
 
-## Kuinka tehdä
-Käyttämällä TypeScriptiä, merkkijonot voidaan konkatenoida käyttämällä "+" merkkiä. Katso alla olevaa esimerkkiä:
+Ensimmäinen askel oppiessa TypeScriptia on ymmärtää datan tyypin merkitys ja muotoilu ohjelmissa. Yksi tärkeä käsite, joka auttaa ohjelmoijia käsittelemään datan muotoilua, on merkkijonojen yhdistäminen. Tässä artikkelissa tarkastellaan, miksi ja miten merkkijonoja yhdistetään TypeScriptissä.
+
+## Miten
+
+Merkkijonojen yhdistäminen (tai concatenation) on prosessi, jossa kaksi tai useampia merkkijonoja yhdistetään yhdeksi. Tämä tehdään yleensä käyttämällä + operaattoria, joka yhdistää kaksi merkkijonoa ja palauttaa uuden yhdistetyn merkkijonon. Tässä on yksinkertainen esimerkki:
 
 ```TypeScript
-let etunimi: string = "Juha";
-let sukunimi: string = "Virtanen";
-let kokoNimi: string = etunimi + " " + sukunimi;
+let firstName: string = "Matti";
+let lastName: string = "Meikäläinen";
+let fullName: string = firstName + " " + lastName;
 
-console.log(kokoNimi); // tulostaa "Juha Virtanen"
+console.log(fullName); // Tulostaa "Matti Meikäläinen"
+```
+
+Jos haluat sisällyttää muuttujan arvon osaksi merkkijonoa, voit käyttää myös backtick (`) ja ${} syntaksia, joka mahdollistaa merkkijonon sisällä muuttujien lisäämisen. Tässä on esimerkki:
+
+```TypeScript
+let city: string = "Helsinki";
+let landmark: string = "Tuomiokirkko";
+let description: string = `Seuraava kohde matkallasi ${city}  on ${landmark}.`;
+
+console.log(description); // Tulostaa "Seuraava kohde matkallasi Helsinki on Tuomiokirkko."
 ```
 
 ## Syvällinen sukellus
- TypeScriptin konkatenointi toimii hieman eri tavalla kuin muiden ohjelmointikielten. Sen sijaan, että suorittaisit konkatenoinnin suoraan merkkijonojen välillä, TypeScript luo uuden merkkijonon jokaisen "+" merkin jälkeen. Tämä voi aiheuttaa suorituskyvyn hidastumisen, jos käytetään suurta määrää merkkijonoja.
+
+Merkkijonojen yhdistämisellä on useita käyttötapoja TypeScriptissä. Yksi yleisimmistä on merkkijonojen rakentaminen käyttäjän syöttämien tietojen perusteella. Esimerkiksi lomakkeessa, jossa pyydetään käyttäjän nimeä, voit yhdistää etu- ja sukunimen ja tulostaa "Tervetuloa, [nimi]" -viestin.
+
+Merkkijonojen yhdistäminen on myös hyödyllistä kun halutaan luoda dynaamisia viestejä ja ilmoituksia. Esimerkiksi jos sinulla on verkkokauppa, joka tarjoaa alennuskoodin, voit yhdistää alennuskoodin merkkijonoon ja näyttää sen käyttäjälle ostoskorissa.
 
 ## Katso myös
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
-- [Miksi TypeScript on hyvä valinta?](https://www.freecodecamp.org/news/is-typescript-worth-learning-getting-started/)
-- [Miten selviät TypeScript-koodin hankaluuksista?](https://levelup.gitconnected.com/how-to-tackle-the-tricky-parts-of-typescript-8275ed8762f)
+
+- [TypeScript-luokat] (https://www.typescriptlang.org/docs/handbook/classes.html)
+- [Tyyppien vaikutukset ohjelmointiin TypeScriptissä] (https://medium.com/@sashko6613/how-types-affect-programming-in- typescript-90a2b0dbe452)

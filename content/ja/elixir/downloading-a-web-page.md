@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Elixir: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,32 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ウェブページをダウンロードする理由は、インターネット上の情報を取得するためです。Elixirを使えば、そのようなタスクを簡単に実現できます。
+ウェブページをダウンロードする理由は何でしょうか？ウェブスクレイピングやデータ収集のために、必要な情報を手軽に取得するためにダウンロードする方もいらっしゃるかもしれません。
 
-## 手順
+## 方法
 
-以下のようなコードを使用して、Elixirでウェブページをダウンロードすることができます。
+まず、Elixirをコンピュータにインストールします。次に、以下の例を参考に、ウェブページをダウンロードする方法を学びましょう。
 
-```
-Elixir（
-  HTTPoison.get（ "https://www.google.com"）
-）|
-> _retorna =
-> _
->結果=ライブラリ案内、レスポンスは、stderr
->レスポンス
+```Elixir
+require HTTPotion
+
+page = HTTPotion.get("https://www.example.com")
+
+puts page.body
 ```
 
-このコードは、HTTPoisonというライブラリを使用し、Googleのウェブページをダウンロードしています。レスポンスはHTML形式で返され、標準エラー出力ではステータスコードなどが返されます。
+上記のコードでは、HTTPotionライブラリを使用して、指定したURLからウェブページをダウンロードし、その内容を出力しています。ウェブページのHTMLやテキストデータを取得することができます。
 
-## ディープダイブ
+## 深堀り
 
-ウェブページをダウンロードするときには、得られたデータを処理することが重要です。Elixirでは、取得したデータをパースしたり、必要な情報を抽出することができます。また、並列処理やエラーハンドリングなど、コードをより柔軟にするための手段もあります。
+ウェブページをダウンロードする方法は様々ありますが、ElixirにはHTTPotionの他にもHTTPライブラリがあります。特に、HTTPoisonはより高度な機能を備えており、より多くの情報を取得することができます。また、Erlangの並列処理機能を使用することで、大量のウェブページを高速でダウンロードすることも可能です。
 
-これにより、Elixirを使用してウェブページをダウンロードすることが、より効率的かつ拡張性の高い方法であることがわかります。
+## 関連リンク
 
-## 参考
-
-- [HTTPoisonドキュメント](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Elixir公式ウェブサイト](https://elixir-lang.org/)
-- [Elixirでウェブスクレイピングを行う方法](https://www.hashnopolis.com/2019/02/08/scraping-websites-with-elixir/)
+- [Elixir公式サイト](https://elixir-lang.org/)
+- [HTTPotionドキュメント](https://hexdocs.pm/httpotion/readme.html)
+- [HTTPoisonドキュメント](https://hexdocs.pm/httpoison/readme.html)

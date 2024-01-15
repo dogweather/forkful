@@ -1,5 +1,6 @@
 ---
-title:                "Swift: עבודה עם json"
+title:                "עבודה עם json"
+html_title:           "Swift: עבודה עם json"
 simple_title:         "עבודה עם json"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,41 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע:
-כמה משפיע על התכנות היום הוא קשור למינוח JSON (צרוב). זה מציג את היכולת לשמור ולשלוח נתונים בקודות מקדימים כדי שהיות אפשר לחלוק למסלולי תוכנית כבר.
+## למה
 
-## איך לעשות:
-כדי לבין כשכתוב במיקוד JSON, יש לימוד כמה דברים קשורים לעשר קוד כדי לשלוח מין דוגמא למקצת נתונים. עכשו הנה דוגמא מקוד Swift שאתם מצא אתה תוכל ליצור את צרוב מתוך דוגמא זו צרוב:
+לכתוב קוד בשפת Swift היא כיף גדול, אבל לעיתים קורות שנתקלים בצורך לעבוד עם מידע מבני JSON. JSON היא שפת תיאור אובייקט פשוטה וקלה ללמידה. זה משמש לאחסון והעברת מידע במבנה טקסט.
+
+## איך לעשות זאת
+
+כדי להתחיל לעבוד עם JSON בשפת Swift, יש לעקוב אחר השלבים הבאים:
+
+1. התקן את הספרייה `Foundation` בקוד שלך.
+2. השתמש בפונקציות `JSONSerialization` ו- `data(withJSONObject:)` כדי להמיר מאינטגרים ל-JSON ולהפוך חזרה.
+3. השתמש במבנה נתונים כדי לגשת לערכים ב- JSON.
+4. השתמש בתנאים לבדיקה של שדות ב- JSON.
+5. השתמש בלולאות לעבור על ערכים רבים ב- JSON.
+
+בהמשך יש לך כמה דוגמאות של קוד ופלט.
+
+### דוגמאות בקוד:
+
+שנה את ערך "name" לשם חדש בקובץ JSON:
 
 ```Swift
-var jsonData = """
+var json = """
 {
-    "name": "טווס",
-    "גיל": 8,
-    "צבע הפנים": "אדום",
-    "ראשית": 3
+    "name": "John",
+    "age": 30,
+    "hobbies": ["reading", "painting", "cooking"]
 }
 """.data(using: .utf8)!
 
-struct טווס: Codable {
-    var name: String
-    var age: Int
-    var צבע_פנים: String
-    var ראשית: Int
-}
-
 do {
-    let טווס = try JSONDecoder().decode(טווס.self, from: jsonData)
-    print(טווס)
+    guard var user = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else { return }
+    user["name"] = "Sarah"
+
+    let newData = try JSONSerialization.data(withJSONObject: user, options: .prettyPrinted)
+    let jsonString = String(data: newData, encoding: .utf8)
+    print(jsonString!)
 } catch {
-    print("Error decoding JSON: \(error)")
+    print(error.localizedDescription)
 }
 ```
 
-בקוד לעית ׂ הנדון זה מחזיקו comeback בחלמ שאש שאתה מצד אפשר לכלות ולשלוח נתונים, ואפשר לצור טחינה מסרטכ גם אם יש מקור מאד קטן.
+פלט:
 
-## כניסת עומק: 
-כשמשתמש חושש מעשות עתיד שדות תוכל לעמוד ראש וקוד זה מנסה לעשות זה לבנהם בדיוק כך כי מציע לך להיות טורטתינג כעת. "עשה זה עתיד וכליתיס שהי רוצה עמוד ראש כאפ׋", "על כתב עק"עמ לפני כעת נתגרמה להתחזף. "פתאנ שאתה for ק. נ.", "ןי יוויסב הורקיצה שהיו לצפוריגים אחמוענמו."
+```json
+{
+  "name" : "Sarah",
+  "hobbies" : [
+    "reading",
+    "painting",
+    "cooking"
+  ],
+  "age" : 30
+}
+```
 
-## ראה אפשרות:
-כשאני בוא אתה שייכות לתכנות, מציע שתנסה אלונלוווו ב'מדור בזה התכנות בחלק מהתכנות. כך תוכל ללמוד את צרוב התכנות בקלות וב
+בדוק האם יש פעילויות "reading" ברשימת התחביבים בקובץ JSON:
+
+```Swift
+var json = """
+{
+    "name": "John",
+    "age": 30,
+    "hobbies": ["reading", "painting", "cooking"]
+}
+""".data(using: .utf8)!
+
+do {
+    guard let user = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else { return }
+    if let hobbies = user["hobbies"] as? [String], hobbies.contains("reading") {
+        print("John loves to read!")
+    }
+} catch {
+    print(error.localizedDescription)
+}
+```
+
+פלט:
+
+```
+John loves to read!
+```
+
+### Deep Dive
+
+בנוסף לדוגמאות הקוד, ישנם כמה דברים שחשוב לדעת לגבי עבודה עם JSON בשפת Swift:
+
+- שפת Swift מוצםת בצורה אוטומטית כאשר היא נ

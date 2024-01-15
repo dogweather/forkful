@@ -1,5 +1,6 @@
 ---
-title:                "Go: Enviando uma requisição http com autenticação básica"
+title:                "Enviando uma requisição http com autenticação básica"
+html_title:           "Go: Enviando uma requisição http com autenticação básica"
 simple_title:         "Enviando uma requisição http com autenticação básica"
 programming_language: "Go"
 category:             "Go"
@@ -9,62 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com autenticação básica?
+## Por que
 
-A autenticação básica é um método de autenticação amplamente utilizado na web, especialmente em sistemas de login. Enviar uma solicitação HTTP com autenticação básica garante que apenas usuários autorizados possam acessar determinados recursos ou informações.
+Muitas vezes, é necessário enviar uma solicitação HTTP com autenticação básica para acessar recursos protegidos em um servidor. Isso pode ser feito facilmente usando o Go e suas bibliotecas nativas.
 
-## Como fazer
+## Como Fazer
 
-Em Go, podemos enviar uma solicitação HTTP com autenticação básica utilizando a estrutura `http.Client` e o pacote `encoding/base64` para codificar as credenciais em um cabeçalho `Authorization`. Veja um exemplo de como podemos enviar uma solicitação GET com autenticação básica:
+Para enviar uma solicitação HTTP com autenticação básica em Go, siga os seguintes passos:
+
+1. Importe a biblioteca `net/http` para fazer solicitações HTTP.
+2. Crie uma estrutura para armazenar as informações de autenticação básica, que é composta por um nome de usuário e uma senha.
+3. Crie um cliente HTTP usando a função `NewRequest` do pacote `http` e defina o método HTTP como `GET`.
+4. Defina o cabeçalho `Authorization` na solicitação com o valor `Basic <username>:<password>` codificado em base64.
+5. Use a função `Do` do cliente HTTP para enviar a solicitação e receber uma resposta.
+6. Verifique se a resposta tem um status de sucesso (código de status `200`).
+7. Se tudo estiver correto, leia o corpo da resposta para ter acesso aos dados desejados.
+
+Veja um exemplo de código completo:
 
 ```Go
-package main
-
 import (
-	"fmt"
-	"net/http"
-	"encoding/base64"
+    "encoding/base64"
+    "net/http"
 )
 
+type BasicAuth struct {
+    Username string
+    Password string
+}
+
 func main() {
-	// Definir URL alvo e credenciais de autenticação
-	url := "https://meudominio.com/login"
-	username := "usuario"
-	password := "senha"
+    // Informações de autenticação.
+    auth := BasicAuth{
+        Username: "usuario",
+        Password: "senha",
+    }
 
-	// Codificar as credenciais em base64
-	auth := username + ":" + password
-	base64Auth := base64.StdEncoding.EncodeToString([]byte(auth))
+    // Criando cliente HTTP.
+    client := &http.Client{}
 
-	// Criar cabeçalho Authorization
-	basicAuth := "Basic " + base64Auth
+    // Criando solicitação GET.
+    req, err := http.NewRequest("GET", "https://example.com", nil)
+    if err != nil {
+        panic(err)
+    }
 
-	// Criar cliente HTTP e adicionar cabeçalho
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
-	req.Header.Add("Authorization", basicAuth)
+    // Definindo cabeçalho de autorização.
+    basicAuth := "Basic " + base64.StdEncoding.EncodeToString([]byte(auth.Username+":"+auth.Password))
+    req.Header.Add("Authorization", basicAuth)
 
-	// Enviar solicitação
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Println("Erro ao enviar solicitação:", err)
-	}
-	defer resp.Body.Close()
+    // Enviando solicitação e recebendo resposta.
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
 
-	// Imprimir resposta
-	fmt.Println(resp.Status)
+    // Verificando status de sucesso.
+    if resp.StatusCode == http.StatusOK {
+        // Lendo corpo da resposta.
+        // ...
+    }
 }
 ```
-A saída seria algo como `200 OK`, indicando que a solicitação foi bem sucedida.
 
 ## Mergulho Profundo
 
-Além de enviar uma solicitação GET, podemos também enviar solicitações POST, PUT, PATCH ou DELETE com autenticação básica. Além disso, podemos acessar as informações do cabeçalho de resposta para validar se a solicitação foi autorizada ou não.
+Ao enviar uma solicitação HTTP com autenticação básica, é importante entender como o processo de autenticação funciona. O cabeçalho `Authorization` é utilizado para fornecer as credenciais de autenticação ao servidor. Ele é composto pelo método de autenticação (no caso, `Basic`) seguido por um espaço e depois pelas credenciais codificadas em base64.
 
-É importante lembrar que a autenticação básica não é considerada uma forma segura de proteger recursos sensíveis. Recomenda-se o uso de métodos mais robustos, como OAuth ou JWT, para garantir a segurança das suas aplicações web.
+A codificação em base64 é usada para converter as credenciais em uma sequência de caracteres que possa ser transmitida pelo cabeçalho HTTP sem causar problemas de formatação ou caracteres inválidos. No lado do servidor, as credenciais são extraídas do cabeçalho e verificadas para validar o acesso ao recurso protegido.
+
+É importante ressaltar que o uso de autenticação básica não garante a segurança da comunicação entre cliente e servidor, pois as credenciais são transmitidas na forma de texto simples. Portanto, é recomendável utilizar métodos de autenticação mais seguros, como o HTTPS.
 
 ## Veja Também
 
-- [Pacote `encoding/base64` da documentação oficial do Go](https://golang.org/pkg/encoding/base64/)
-- [Tutorial de autenticação HTTP básica em Go por Eli Bendersky](https://eli.thegreenplace.net/2021/password-protected-http-endpoints-in-go/)
-- [Artigo sobre autenticação básica na RFC 7617](https://tools.ietf.org/html/rfc7617)
+- Documentação oficial do pacote `net/http`: https://golang.org/pkg/net/http/
+- Página de referência sobre autenticação básica na especificação HTTP: https://tools.ietf.org/html/rfc7617
+- Exemplos de autenticação básica em Go: https://gist.github.com/cuonghc/5123624

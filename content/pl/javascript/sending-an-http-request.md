@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie zapytania http"
+html_title:           "Javascript: Wysyłanie zapytania http"
+simple_title:         "Wysyłanie zapytania http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,36 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Przesyłanie żądań HTTP stanowi nieodłączną część programowania w języku JavaScript. Pozwala nam na komunikację z serwerami, pobieranie danych i wykonywanie działań na zewnętrznych zasobach. Jest to kluczowy element w tworzeniu interaktywnych aplikacji internetowych.
+Ktoś mógłby zapytać, dlaczego powinniśmy się zainteresować wysyłaniem żądań HTTP w naszym kodzie JavaScript? Otóż, jest to niezbędne do komunikacji z innymi serwerami lub zewnętrznymi źródłami danych, co jest niezbędne w dzisiejszym świecie aplikacji internetowych.
 
 ## Jak to zrobić
 
-Aby wysłać żądanie HTTP w JavaScript, musimy najpierw utworzyć obiekt XMLHTTPRequest za pomocą konstruktora `new XMLHttpRequest()`. Następnie, musimy określić metodę (np. GET, POST, PUT) oraz adres URL docelowego zasobu.
+Aby wysłać żądanie HTTP w kodzie JavaScript, musimy użyć obiektu XMLHttpRequest lub metody fetch. Poniżej znajdują się przykładowe kody, które pokazują, jak zastosować te dwie metody.
+
+##### Przykład z użyciem obiektu XMLHttpRequest:
 
 ```Javascript
-const request = new XMLHttpRequest();
-request.open('GET', 'https://example.com'); // utworzenie żądania GET do zasobu 'example.com'
-request.send();
-```
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://serwer.pl/dane", true);
+xhr.send();
 
-Jeśli chcemy przesłać dane, możemy użyć metody `.send()` wraz z parametrem zawierającym dane w formacie JSON lub przesyłając formularz.
-
-W przypadku pomyślnego wykonania żądania, możemy uzyskać dostęp do zwrotki (odpowiedzi serwera) za pomocą właściwości `responseText` lub `responseXML` w zależności od formatu otrzymanych danych.
-
-```Javascript
-request.onload = function() {
-  console.log(request.responseText); // wyświetlenie zwrotki w konsoli
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+    }
 }
 ```
 
-## Zanurzenie
+##### Przykład z użyciem metody fetch:
 
-Istnieje wiele zaawansowanych możliwości związanych z wysyłaniem żądań HTTP w JavaScript, takich jak korzystanie z biblioteki `fetch`, obsługa błędów, ustawianie nagłówków oraz przesyłanie danych w różnych formatach (np. FormData). Dodatkowo, istnieją także narzędzia, które ułatwiają tworzenie i testowanie żądań HTTP, takie jak `Postman` czy `Insomnia`.
+```Javascript
+fetch("https://serwer.pl/dane")
+    .then(response => response.json())
+    .then(data => console.log(data));
+```
 
-## Zobacz także
+W wyniku tych kodów otrzymamy odpowiedź z serwera w postaci tekstu lub danych w formacie JSON.
 
-- [Dokumentacja Mozilla Developer Network na temat wysyłania żądań HTTP w JavaScript](https://developer.mozilla.org/pl/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data)
-- [Dokumentacja biblioteki Fetch](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API)
-- [Poradnik na temat przesyłania danych za pomocą FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)
-- [Postman](https://www.postman.com/)
-- [Insomnia](https://insomnia.rest/)
+## Zagłębienie się w temat
+
+Wysyłanie żądania HTTP za pomocą JavaScript może być skomplikowane ze względu na różnice w obsłudze przez różne przeglądarki. Dlatego, warto rozważyć użycie bibliotek takich jak Axios lub jQuery, które ułatwiają pracę z żądaniami.
+
+Każde żądanie HTTP składa się z różnych części, takich jak metoda (GET, POST, PUT, DELETE), adres URL i opcjonalnie ciało żądania. Możemy również dodać nagłówki do żądania, które zawierają dodatkowe informacje dla serwera.
+
+W przypadku żądań typu POST lub PUT, musimy przekazać dane do serwera w formacie JSON lub FormData. W przypadku używania metody fetch, możemy określić ustawienia zapytania, takie jak metoda, nagłówki i dane.
+
+Teraz, gdy znasz podstawy wysyłania żądań HTTP w JavaScript, możesz z powodzeniem komunikować się z innymi serwerami i pobierać dane z zewnętrznych źródeł.
+
+## Zobacz również
+
+- [Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)

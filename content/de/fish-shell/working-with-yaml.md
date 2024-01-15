@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Arbeiten mit Yaml"
-simple_title:         "Arbeiten mit Yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "Fish Shell: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum: YAML ist eine einfache und benutzerfreundliche Möglichkeit, Daten in Textform zu speichern und zu organisieren. Es ist besonders hilfreich für die Konfiguration von Programmen und ermöglicht eine einfache Kommunikation zwischen verschiedenen Anwendungen.
+## Warum
 
-Wie geht's: Um YAML in Fish Shell zu verwenden, muss zuerst die Platin-Fish-YAML-Erweiterung installiert werden. Dann kann YAML in der Shell verwendet werden, um Daten zu lesen und zu schreiben. Zum Beispiel:
+Es ist wichtig, die Grundlagen von YAML zu verstehen, da es in der heutigen Entwicklerwelt weit verbreitet ist und sowohl für individuelle Projekte als auch für den Einsatz in Unternehmen verwendet wird.
 
-```Fish Shell
-set data (yaml eval (cat example.yaml))
-```
+## Wie es funktioniert
 
-Dieser Code liest die Datei "example.yaml" und speichert die darin enthaltenen Daten in der Variablen "data". Um YAML-Daten in eine Datei zu schreiben, kann der Befehl "yaml prune" verwendet werden, wie in diesem Beispiel gezeigt:
+Um YAML mit Fish Shell zu verwenden, müssen wir das entsprechende Plugin installieren. Dazu können wir einfach folgenden Befehl ausführen:
 
 ```Fish Shell
-yaml prune data > output.yaml
+omf install yaml
 ```
 
-Dieser Code nimmt die Daten aus der Variablen "data" und schreibt sie in die Datei "output.yaml". Weitere Beispiele und Anwendungsfälle können in der offiziellen Dokumentation der Platin-Fish-YAML-Erweiterung gefunden werden.
+Nachdem wir das Plugin installiert haben, können wir YAML-Dateien in der Fish Shell verwenden, indem wir sie in unserer Konfigurationsdatei aufrufen. Hier ist ein Beispiel für die Verwendung von YAML, um Umgebungsvariablen festzulegen:
 
-Tiefentauchen: YAML bietet auch eine Vielzahl von Funktionen, die die Arbeit mit Daten noch leistungsfähiger machen. Zum Beispiel können Sie mithilfe von YAML-Anker und Referenzen Daten wiederverwenden oder mithilfe von Schleifen durch komplexe Datenstrukturen navigieren.
+```Fish Shell
+set -gx PYTHONPATH (cat config.yml | yaml get py_path)
+```
 
-Eine der nützlichsten Funktionen von YAML ist die Verwendung von Umgebungsvariablen. Mit YAML-Variablen können Sie sensible Daten wie Passwörter sicher speichern, ohne sie direkt in der YAML-Datei angeben zu müssen. Sie können dann diese Variablen in Ihrem Fish-Shell-Skript verwenden, um diese sensiblen Daten zu erhalten.
+Wir können auch YAML-Dateien direkt innerhalb der Fish Shell erstellen und bearbeiten. Hier ist ein Beispiel, wie wir eine neue Datei erstellen und einige Daten in sie eingeben können:
 
-Weitere Informationen zu den verschiedenen Funktionen von YAML und deren Verwendung finden Sie in der offiziellen Dokumentation der Sprache.
+```Fish Shell
+touch new_config.yml
+yaml set name "John Doe" new_config.yml
+yaml set age 25 new_config.yml
+yaml set favorite_color "Blue" new_config.yml
+```
 
-Siehe auch: 
+Dies erstellt eine neue YAML-Datei namens "new_config.yml" mit den angegebenen Daten.
 
-- Offizielle Dokumentation der Platin-Fish-YAML-Erweiterung: http://doc.platin.fish/en/yaml/
+## Tiefergehende Einblicke
 
-- Offizielle YAML-Website: https://yaml.org/
+YAML verwendet eine einfache Syntax, die das Lesen und Schreiben von Daten erleichtert. Es ist auch sehr flexibel und ermöglicht es uns, komplexe Datenstrukturen zu erstellen. Innerhalb der Fish Shell können wir YAML-Dateien verwenden, um unsere Konfigurationen zu verwalten, Umgebungsvariablen festzulegen oder sogar Skripte zu schreiben.
 
-- Eine Einführung in die YAML-Syntax von Mozilla: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON
+Weitere Informationen über die Verwendung von YAML mit Fish Shell finden Sie in der offiziellen Dokumentation des Plugins oder auf der offiziellen YAML-Website.
 
-Insgesamt ist YAML eine leistungsstarke und vielseitige Möglichkeit, Daten in der Fish Shell zu organisieren und zu verarbeiten. Ich hoffe, dieser Artikel hat Ihnen geholfen, ein besseres Verständnis davon zu bekommen, wie Sie diese Sprache in Ihrer täglichen Programmierarbeit nutzen können. Viel Spaß beim Coden mit YAML!
+## Siehe auch
+
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [YAML offizielle Website](https://yaml.org/)

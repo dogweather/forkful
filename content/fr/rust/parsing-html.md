@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyse de html"
+html_title:           "Rust: Analyse de html"
+simple_title:         "Analyse de html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,46 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur en herbe, vous avez peut-être entendu parler du langage de programmation Rust. Ce langage moderne et polyvalent gagne rapidement en popularité en raison de ses performances élevées et de sa sécurité. Mais saviez-vous que Rust est également très utile pour analyser et traiter des données ? Dans cet article, nous allons nous concentrer sur un cas d'utilisation spécifique de Rust : le parsing HTML.
+Si vous travaillez avec du contenu en ligne, il est tout à fait possible que vous ayez rencontré le langage de balisage HTML. Ce langage est utilisé pour structurer et formater visuellement du contenu en ligne, et il est souvent nécessaire de le lire et de l'analyser pour extraire des informations importantes. Dans cet article, nous allons voir comment utiliser Rust pour analyser du code HTML de manière efficace et facile.
 
-## Comment Faire
+## Comment faire
 
-Le parsing HTML est un processus par lequel un programme lit et interprète le code HTML pour en extraire des données structurées. Pour commencer à parser HTML en Rust, il y a quelques étapes simples à suivre.
+Pour commencer, vous aurez besoin d'installer Rust sur votre ordinateur. Vous pouvez le faire en suivant les instructions sur le site officiel. Une fois que vous avez Rust installé, vous devriez également installer un éditeur de code qui prend en charge la coloration syntaxique pour Rust, comme VS Code ou IntelliJ IDEA.
 
-Tout d'abord, vous aurez besoin d'installer Rust et le gestionnaire de paquets Cargo si vous ne les avez pas déjà. Ensuite, vous pouvez créer un nouveau projet Rust en utilisant la commande `cargo new <nom_du_projet>`. Ensuite, vous devrez ajouter la dépendance `scraper` dans votre fichier `Cargo.toml`.
+Maintenant, nous pouvons commencer à écrire du code ! Nous allons utiliser la bibliothèque Rust "html-parser" pour nous faciliter la tâche. Tout d'abord, créons un nouveau fichier et ajoutons la dépendance à "html-parser" dans notre fichier "Cargo.toml".
 
-Ensuite, vous pouvez écrire votre code de parsing HTML en utilisant les fonctionnalités de la bibliothèque `scraper`. Par exemple, si vous souhaitez extraire le titre d'une page HTML, voici comment vous pouvez le faire en Rust :
+```Rust
+[dependencies]
+html-parser = "0.12"
+```
 
-```rust
-extern crate scraper;
+Ensuite, nous pouvons écrire notre code pour analyser un document HTML. Nous allons commencer par importer les bibliothèques nécessaires et définir la méthode principale.
 
-use scraper::{Html, Selector};
-use std::env;
+```Rust
+use std::fs;
+use html_parser::{Element, Event, Parser};
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let url = &args[1];
-    let html = scraper::Html::parse_document(&reqwest::get(url).unwrap().text().unwrap());
-    let title_selector = Selector::parse("title").unwrap();
-    let title = html.select(&title_selector).next().unwrap().inner_html();
-    println!("Le titre de la page HTML est : {}", title);
+    // code à écrire ici
 }
 ```
 
-Si vous exécutez ce code avec la commande `cargo run <url_de_la_page_html>`, vous devriez voir le titre de la page s'obtenir dans votre terminal !
+Maintenant, nous allons lire un fichier HTML à l'aide de la méthode "read_to_string", et ensuite nous allons créer une nouvelle instance de "Parser" en utilisant la chaîne de caractères que nous venons de lire.
 
-## Plongée Profonde
+```Rust
+let content = fs::read_to_string("index.html").expect("Impossible de lire le fichier HTML");
+let parser = Parser::new(content);
+```
 
-Maintenant que vous avez vu un exemple simple de parsing HTML en utilisant Rust, il est temps de plonger un peu plus en profondeur. La bibliothèque `scraper` offre de nombreuses autres fonctionnalités pour faciliter l'analyse des données HTML. Par exemple, vous pouvez utiliser le sélecteur CSS pour cibler des éléments spécifiques dans une page HTML, plutôt que de compter sur leur position.
+Enfin, nous allons parcourir le contenu du fichier en utilisant une boucle "for" et en imprimant chaque élément HTML trouvé.
 
-De plus, Rust offre une sécurité de codage supplémentaire grâce à sa gestion de la mémoire et à son système de types strict. Cela vous permet de créer des applications de parsing HTML qui sont plus robustes et moins sujettes aux erreurs.
+```Rust
+for event in parser {
+    match event {
+        Event::Element(Element::StartTag(tag)) => println!("Nouveau tag ouvrant: {}", tag.name),
+        Event::Element(Element::EndTag(tag)) => println!("Nouveau tag fermant: {}", tag.name),
+        Event::Element(Element::EmptyTag(tag)) => println!("Nouveau tag vide: {}", tag.name),
+        Event::Text(text) => println!("Nouveau texte: {}", text)
+    }
+}
+```
 
-## Voir Aussi
+Et voilà ! Avec seulement quelques lignes de code, nous avons maintenant un programme qui peut lire et analyser du code HTML.
 
-Si vous souhaitez en savoir plus sur le parsing HTML en Rust, voici quelques liens utiles :
+## Plongée en profondeur
 
-- [Documentation de la bibliothèque `scraper`](https://docs.rs/scraper/0.12.0/scraper/)
-- [Guide officiel de Rust](https://doc.rust-lang.org/stable/book/)
-- [Article sur le parsing HTML en Rust](https://blog.guillaume-gomez.fr/articles/2019-01-26+Parsing+HTML+in+rust)
+Maintenant que nous avons vu les bases de la lecture et de l'analyse du code HTML en utilisant Rust, vous pouvez explorer la bibliothèque "html-parser" pour voir toutes les autres fonctionnalités et options disponibles. Vous pouvez également consulter la documentation officielle de Rust pour de plus amples informations sur la syntaxe et les outils disponibles pour travailler avec du code HTML.
 
-Merci d'avoir suivi cet article sur le parsing HTML en Rust ! Nous espérons que cela vous donnera une meilleure compréhension de l'utilisation de Rust dans le traitement de données. Bonne programmation !
+## Voir aussi
+
+- [Site officiel de Rust](https://www.rust-lang.org/fr)
+- [Bibliothèque html-parser pour Rust](https://crates.io/crates/html-parser)
+- [Documentation officielle de Rust](https://doc.rust-lang.org/stable/book/)

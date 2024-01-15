@@ -1,6 +1,7 @@
 ---
-title:                "PHP: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの作成"
+html_title:           "PHP: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -9,37 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「なぜ」PHPプログラミングでテストを書くのか
+## なぜテストを書くのか
+プログラミングにとって、テストは非常に重要です。テストを書くことで、コードの品質をチェックし、将来的な変更やバグ修正にも自信を持って取り組むことができます。
 
-テストを書くことは、コードの品質を保つことに役立ち、バグを早期に発見することができます。また、テストはコードの一貫性を保つことができ、チームでのコラボレーションを容易にすることができます。
-
-「やり方」
-
-テストを書く方法を説明します。以下のコードを参考にしてください。
+## テストを書く方法
+テストを書くには、PHPUnitなどのテストフレームワークを使用するのが一般的です。以下の例は、簡単な掛け算関数のテストを書く方法を示しています。
 
 ```PHP
 <?php
-function add($num1, $num2) {
-    return $num1 + $num2;
+
+// 掛け算関数を定義する
+function multiply($a, $b) {
+  return $a * $b;
 }
 
-// テストを書く
-assert(add(2, 3) === 5);
-assert(add(5, 10) === 15);
+// テストを書くためのクラスを作成する
+class MultiplyTest extends \PHPUnit\Framework\TestCase {
+  // 掛け算関数のテストメソッドを定義する
+  public function testMultiply() {
+    // テストする数値を用意する
+    $inputA = 5;
+    $inputB = 10;
+    $expectedOutput = 50;
 
-echo "テストがパスしました。";
+    // 掛け算関数を実行し、結果を変数に代入する
+    $output = multiply($inputA, $inputB);
+
+    // 期待する結果と実際の結果が一致することを確認する
+    $this->assertEquals($expectedOutput, $output);
+  }
+}
+
 ```
 
-上記のように、`assert()`関数を使用してテストを書くことができます。テストがパスすると、「テストがパスしました。」というメッセージが表示されます。
+実行結果は以下のようになります。
 
-「深堀り」
+```
+PHPUnit 9.5.2 by Sebastian Bergmann and contributors.
 
-テストを書く際には、コードカバレッジと呼ばれる概念にも注目する必要があります。コードカバレッジとは、テストがコードのどれだけをカバーしているかを示す指標です。高いコードカバレッジを保つことで、コードの品質を改善することができます。
+.                                                                   1 / 1 (100%)
 
-また、テストがパスすることだけでなく、エラーケースや例外処理のテストも行うことが重要です。これらのテストは、実際のバグを早期に発見することができます。
+Time: 00:00.008, Memory: 4.00 MB
 
-「関連情報を見る」
+OK (1 test, 1 assertion)
+```
 
-- [PHPUnit公式ドキュメント (日本語)](https://phpunit.de/documentation.html)
-- [テストを書くことの意義について (日本語)](https://qiita.com/fall_avenue/items/fac97973c2f56ba35b55)
-- [テスト駆動開発の方法 (日本語)](https://codezine.jp/article/detail/3803)
+このように、テストがOKであれば「OK」と表示されます。
+
+## テストの深層へ
+テストはテストコードを書くだけではなく、テストのカバレッジやテスト駆動開発（TDD）など、さまざまなアプローチがあります。また、自動化されたテストは継続的インテグレーション（CI）や継続的デリバリー（CD）にも必要不可欠です。
+
+## おすすめリンク
+- PHPUnit: https://phpunit.de/
+- テスト駆動開発入門: https://www.ogis-ri.co.jp/otc/hiroba/technicalguidance/TestDrivenDevelopment.pdf
+- 継続的インテグレーションと継続的デリバリーの概要: https://qiita.com/wataruoguchi/items/5ca37779b8d0dda55e9f

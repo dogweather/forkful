@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Elm: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,20 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Vad är anledningen till att man skulle vilja veta längden på en sträng? Det finns flera användbara anledningar, till exempel att kontrollera om en sträng är för lång för att spara i en databas, eller för att kunna formatera text på ett korrekt sätt.
+Att kunna hitta längden på en sträng är en mycket användbar kunskap inom programmering. Det kan hjälpa dig att manipulera och hantera data på ett effektivt sätt och göra din kod mer läsbar och överskådlig.
 
-## Så här gör du
-För att beräkna längden på en sträng i Elm, kan du använda funktionen `String.length` som tar en sträng som argument och returnerar en `Int` som representerar längden på strängen. Om vi till exempel vill beräkna längden på strängen "Hej", skulle vi skriva:
+## Hur man gör det
+För att hitta längden på en sträng i Elm kan du använda funktionen `String.length`. Här är ett enkelt exempel på hur det skulle se ut i praktiken:
+
 ```Elm
-String.length "Hej" --> 3
+import String exposing (length)
+
+myString = "Hej, världen!"
+length myString
+-- Output: 13
 ```
 
-Denna funktion fungerar också på utf-8 kodade strängar, vilket betyder att den kan hantera specialtecken och emojis korrekt.
+I det här exemplet importerar vi funktionen `length` från Elm's `String` modul och använder den sedan för att hitta längden på vår sträng `myString`. Det returnerade värdet, 13, är antalet tecken i strängen.
 
 ## Djupdykning
-Om du vill gräva djupare och förstå hur denna funktion fungerar under ytan, kan vi titta på implementationen av `String.length` i Elm:s standardbibliotek. Där kan vi se att den använder sig av en `Utf8.length` funktion för att hantera utf-8 kodning och räkna antalet bytes som krävs för en sträng. Detta är ett bra exempel på hur Elm:s modell för text hanterar olika språk och teckenuppsättningar på ett pålitligt sätt.
+När du använder `String.length` i Elm måste du vara medveten om att den returnerar antalet tecken i en sträng, inte antalet ord. Detta kan vara viktigt att komma ihåg när du bearbetar data.
 
-# Se även
-- [Elm:s dokumentation för String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Utf8-modulen](https://package.elm-lang.org/packages/elm/bytes/latest/Utf8)
-- [En guide för att hantera text i Elm](https://dev.to/robinhunn/text-handling-and-unicode-awareness-in-elm-2n6l)
+En annan viktig punkt att notera är att `String.length` endast fungerar på strängar, inte på andra typer av data. Om du vill hitta längden på en lista eller ett annat datatype måste du använda en annan funktion.
+
+## Se även
+- Elm's String modul: https://package.elm-lang.org/packages/elm-lang/core/latest/String
+- Elm's documentation om String: https://package.elm-lang.org/packages/elm-lang/core/latest/String

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Rust: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,64 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-CSV (Comma Separated Values) ist ein gängiges Datenformat, das häufig von Unternehmen und Organisationen verwendet wird, um Tabellen- und Listenformatdaten zu speichern. Als Programmierer könnte es nützlich sein, mit CSV-Dateien zu arbeiten, um beispielsweise Daten für Analysen oder Visualisierungen zu verarbeiten. In diesem Blog-Beitrag werden wir uns mit der Arbeit mit CSV-Dateien in der Programmiersprache Rust befassen.
+CSV (Comma Separated Values) ist ein weit verbreitetes Datenformat für den Austausch von Tabellen und einfach strukturierten Daten. Da Rust eine Sprache ist, die auf Performance, Sicherheit und Parallelität ausgelegt ist, kann es eine gute Wahl sein, CSV-Dateien zu analysieren oder zu generieren.
 
-## Wie man
+## Wie
 
-Um mit CSV-Dateien in Rust zu arbeiten, benötigen wir zunächst das Paket `csv` aus der Rust Standardbibliothek und das Paket `serde` aus der Crate-Community. Mit `serde` können wir CSV-Daten in benutzerdefinierte Rust-Datentypen serialisieren und deserialisieren. Schauen wir uns ein Beispiel an:
+### Lesen von CSV-Dateien
+
+Um eine CSV-Datei zu lesen, können Sie die `csv`-Bibliothek verwenden. Zunächst müssen Sie diese in Ihrem Projekt importieren:
 
 ```Rust
-// Importieren der Pakete
 extern crate csv;
-extern crate serde;
-extern crate serde_derive;
 
-// Struct zum Festlegen der Spalten im CSV
-#[derive(Debug, Deserialize, Serialize)]
-struct Person {
-    name: String,
-    age: u8,
-    city: String,
-}
+use std::error::Error;
+use std::fs::File;
 
-fn main() {
-    // Öffnen der CSV-Datei
-    let mut reader = csv::Reader::from_path("personen.csv").unwrap();
+use csv::ReaderBuilder;
+```
 
-    // Iterieren über jede Zeile in der CSV
-    for result in reader.deserialize() {
-        // Ergebnis in ein `Person`-Objekt konvertieren
-        let person: Person = result.unwrap();
-        // Zugriff auf die Daten der Person
-        println!("Hallo {} aus {}!", person.name, person.city);
-    }
+Als nächstes können Sie die Datei mit dem `ReaderBuilder` öffnen und die Daten in einem Vektor speichern:
+
+```Rust
+let file = File::open("daten.csv")?;
+let mut reader = ReaderBuilder::new().from_reader(file);
+
+// Vektor zum Speichern der Daten initialisieren
+let mut daten: Vec<Record> = vec![];
+
+// Daten iterativ in den Vektor speichern
+for result in &mut reader.records() {
+    let record = result?;
+    daten.push(record);
 }
 ```
 
-Die CSV-Datei `personen.csv` muss die folgenden Spalten enthalten (ohne Überschriftenzeile):
+Das `Record`-Objekt enthält die Daten jeder Zeile der CSV-Datei. Sie können nun auf die Daten zugreifen und diese weiterverarbeiten.
 
+### Schreiben von CSV-Dateien
+
+Wenn Sie Daten in eine CSV-Datei schreiben möchten, können Sie dies mit der `Writer`-Klasse tun:
+
+```Rust
+let file = File::create("ergebnisse.csv")?;
+let mut writer = csv::Writer::from_writer(file);
+
+// Daten aus einem Vektor schreiben
+writer.write_record(&["Name", "Alter", "Stadt"])?;
+writer.write_record(&["Max", "25", "Berlin"])?;
+writer.write_record(&["Lisa", "31", "Hamburg"])?;
 ```
-Max,35,Berlin
-Anna,28,Hamburg
-Peter,42,München
-```
 
-Die Ausgabe unseres Codes wird folgendermaßen aussehen:
+Im obigen Beispiel werden drei Zeilen mit den entsprechenden Spalten geschrieben. Beachten Sie, dass Sie die Daten als Referenz übergeben müssen, da die `Writer`-Klasse eine `&[&str]`-Argument erwartet.
 
-```
-Hallo Max aus Berlin!
-Hallo Anna aus Hamburg!
-Hallo Peter aus München!
-```
+## Deep Dive
 
-## Tief eintauchen
+Wenn Sie tiefer in die Arbeit mit CSV-Dateien einsteigen möchten, können Sie sich mit der Dokumentation der `csv`-Bibliothek vertraut machen. Außerdem gibt es weitere Bibliotheken wie zum Beispiel `serde_csv`, die eine vereinfachte Schnittstelle für das Lesen und Schreiben von CSV-Dateien bieten.
 
-In dem obigen Beispiel haben wir eine einfache `Person`-Struktur definiert und diese mit Daten aus einer CSV-Datei gefüllt. Aber was ist, wenn die Spalten der CSV-Datei nicht mit unseren Strukturen übereinstimmen? In diesem Fall können wir benutzerdefinierte Deserialisierer verwenden, um CSV-Daten in beliebige Rust-Datentypen zu konvertieren.
-
-Ein weiteres nützliches Feature von `serde` ist die Möglichkeit, Serailisierungs- und Deserialisierungsfehler abzufangen und zu verarbeiten. Dies ist besonders wichtig, wenn wir mit großen CSV-Dateien arbeiten, bei denen Fehler auftreten können.
+Eine wichtige Sache, die Sie beachten sollten, ist die Formatierung von CSV-Dateien. Während die meisten Programme Kommas als Trennzeichen verwenden, gibt es auch andere Möglichkeiten wie zum Beispiel Semikolons oder Tabs. Außerdem müssen Sonderzeichen wie Anführungszeichen oder Zeilenumbrüche richtig behandelt werden, um Fehler bei der Verarbeitung der Daten zu vermeiden.
 
 ## Siehe auch
 
-- [Rust Standardbibliothek Dokumentation für CSV](https://doc.rust-lang.org/std/io/trait.Read.html)
-- [Serde-Dokumentation für CSV](https://docs.rs/serde_derive/1.0.104/serde_derive/)
-- [Rust Community Crates für CSV](https://crates.io/search?q=csv)
+- [Dokumentation der CSV-Bibliothek](https://github.com/BurntSushi/rust-csv)
+- [Serde-CSV Bibliothek](https://github.com/BurntSushi/rust-csv)
+- [Rust Programmiertutorial](https://www.rust-lang.org/learn)

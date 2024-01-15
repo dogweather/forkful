@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Praca z językiem YAML"
-simple_title:         "Praca z językiem YAML"
+title:                "Praca z yaml"
+html_title:           "Fish Shell: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -11,55 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Z programowaniem w języku Fish Shell spotykamy się głównie w kontekście pracy z plikami konfiguracyjnymi. Jednym z popularnych formatów do przechowywania takich ustawień jest YAML. Pozwala on na czytelne i przejrzyste zapisywanie danych, co jest niezwykle ważne dla programistów. W tym artykule dowiecie się, jak za pomocą Fish Shella możecie łatwo i efektywnie pracować z plikami YAML.
+Jeśli jesteś programistą lub administrator systemu, prawdopodobnie już spotkałeś się z formatem plików YAML. Ta strukturalna składnia jest szeroko używana w aplikacjach internetowych i narzędziach konfiguracyjnych. W artykule poznasz, jak wykorzystać Fish Shell do pracy z plikami YAML.
 
 ## Jak to zrobić
 
-Fish Shell jest niezwykle przydatnym narzędziem do pracy z YAML. Aby go wykorzystać, musimy zainstalować odpowiednie rozszerzenie - [jyaml](https://github.com/joejulian/fish-jyaml). Można to zrobić za pomocą menedżera paczek, np. [Oh My Fish](https://oh-my.fish/). Po zainstalowaniu rozszerzenia, możemy już łatwo manipulować plikami YAML za pomocą poleceń w terminalu.
-
-Pierwszym krokiem jest wczytanie pliku YAML. Przykładowy plik może wyglądać następująco:
+Fish Shell oferuje wiele przydatnych funkcji, które ułatwiają pracę z plikami YAML. Przede wszystkim musisz pobrać i zainstalować rozszerzenie `yaml`, które dodaje obsługę YAML do Fish Shell. Możesz to zrobić za pomocą menedżera pakietów, np. Homebrew, jak również za pomocą narzędzia `fisher`. Po zainstalowaniu rozszerzenia, możesz zacząć pracować z plikami YAML.
 
 ```
-pizza:
-  - margherita
-  - pepperoni
-  - capricciosa
-  - hawaiian
+Fish Shell> fisher install jorgebucaran/yaml
 ```
 
-Aby wczytać te dane w Fish Shellu, użyjemy polecenia `yaml_load`:
-
-```Fish Shell
-set -g pizza (yaml_load pizza.yaml | string split "\n")
-```
-
-Powyższe polecenie wczytuje plik YAML `pizza.yaml` i dzieli go na linie, zapisując je do zmiennej `pizza`. W ten sposób, możemy wykorzystać te dane w dalszej części kodu.
-
-Kolejnym przydatnym poleceniem jest `yaml_get`, które pozwala na pobieranie wartości z pliku YAML. Przykładowo, aby wyświetlić wszystkie rodzaje pizzy z naszego pliku, możemy użyć polecenia:
-
-```Fish Shell
-for slice in $pizza
-  echo (yaml_get pizza.yaml $slice)
-end
-```
-
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
+Aby otworzyć plik YAML w Fish Shell, wystarczy użyć polecenia `open` i podać nazwę pliku:
 
 ```
-margherita
-pepperoni
-capricciosa
-hawaiian
+Fish Shell> open config.yml
 ```
 
-To tylko kilka przykładów, jak łatwo i szybko można pracować z plikami YAML przy użyciu Fish Shella. Zachęcamy do eksperymentowania z różnymi funkcjami i dostosowywania ich do swoich potrzeb.
+Po otwarciu pliku możesz przeglądać go i edytować w Fish Shell za pomocą polecenia `yaml`:
 
-## Zagłębienie się w temat
+```
+Fish Shell> yaml
+```
 
-Pliki YAML mogą zawierać także bardziej złożone struktury danych, takie jak listy czy słowniki. W takich przypadkach warto skorzystać z bardziej zaawansowanych funkcji Fish Shella, takich jak `yaml_keys` czy `yaml_sort`. Szczegółowe informacje na temat pracy z plikami YAML w Fish Shella możecie znaleźć w [dokumentacji jyaml](https://github.com/joejulian/fish-jyaml#function-reference).
+Możesz również wykorzystać polecenie `cat` do przeglądania zawartości pliku YAML w konsoli:
+
+```
+Fish Shell> cat config.yml
+```
+
+Jeśli chcesz zmienić wartość klucza w pliku YAML, możesz to zrobić za pomocą polecenia `set`:
+
+```
+Fish Shell> set config.port 8080
+```
+
+Pamiętaj, aby zachować strukturę pliku YAML, dodaj spację równoważną dla każdego poziomu zagnieżdżenia.
+
+## Czas na głębsze zanurzenie
+
+Fish Shell oferuje wiele funkcji do pracy z plikami YAML, w tym również możliwość przekształcania formatu YAML na inne formaty, np. JSON. Możesz to zrobić za pomocą polecenia `yaml2json` lub `json2yaml`:
+
+```
+Fish Shell> yaml2json config.yml
+```
+
+Fish Shell również obsługuje składnię YAML zwanej "anchors", która pozwala na ponowne wykorzystanie części pliku YAML w różnych miejscach. Możesz oznaczyć część pliku za pomocą znaku `&` i odwołać się do niej w innej części pliku za pomocą znaku `*`:
+
+```yaml
+server: &server
+  host: localhost
+  port: 3000
+
+db:
+  << : *server
+  name: database
+```
 
 ## Zobacz także
 
-- [Dokumentacja Fish Shella](https://fishshell.com/docs/current/index.html)
-- [Oficjalna strona jyaml](https://github.com/joejulian/fish-jyaml)
-- [Oh My Fish - menedżer paczek dla Fish Shella](https://oh-my.fish/)
+- [Dokumentacja Fish Shell - YAML](https://fishshell.com/docs/current/cmds/yaml.html)
+- [Rozszerzenie yaml dla Fish Shell](https://github.com/jorgebucaran/yaml)
+- [Poradnik pracy z YAML w Fish Shell](https://medium.com/@jorgebucaran/working-with-yaml-in-fish-shell-3de1c5b3e36c)

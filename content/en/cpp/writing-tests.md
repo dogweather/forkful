@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "C++ recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "C++"
 category:             "C++"
@@ -9,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Engage in Writing Tests
+## Why
 
-Writing tests for your code may seem like an extra and unnecessary step in the development process. However, it is actually an essential component of writing high quality, error-free code. By writing tests, you can catch bugs and issues early on, saving yourself time and headaches in the future.
+Testing is an essential part of the software development process, allowing developers to catch bugs and errors early on, which can save time and resources later on. Writing tests not only ensures that the code is functioning correctly but also acts as documentation for future changes and updates.
 
-## How To Write Tests in C++
+## How To
 
-In order to write tests in C++, you will need to use a testing framework, such as Google Test or Catch2. These frameworks provide useful functions and macros for creating and running tests. Let's take a look at an example using Google Test:
+To write tests in C++, you will need a testing framework such as Catch2 or Google Test. These frameworks provide useful macros and functions for writing and running tests. Here is an example of how to write a simple test using Catch2:
 
-```C++
-#include <gtest/gtest.h> //include Google Test framework
+```
+#include <iostream>
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
 
-//create a test case
-TEST(AdditionTest, SimpleAddition) {
-
-    //define the variables to test
-    int num1 = 5;
-    int num2 = 10;
-
-    //perform the operation and store the result
-    int result = num1 + num2;
-
-    //write an assertion to check if the result is correct
-    EXPECT_EQ(result, 15);
+// Function to be tested
+int addition(int a, int b) {
+    return a + b;
 }
 
-//run all the tests in the code
-int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST_CASE("Testing addition function", "[addition]") {
+    REQUIRE(addition(2, 3) == 5);
 }
 ```
 
-In the above example, we have defined a test case called "SimpleAddition" which checks if the result of adding two numbers is correct. We use the `TEST()` macro to create the test case and the `EXPECT_EQ()` macro to write our assertion. Finally, in the `main()` function, we use Google Test's `RUN_ALL_TESTS()` function to run all the tests in our code.
+In the above code, we have included the header file for Catch2, defined our main function, and written a simple test case using the `REQUIRE` macro, which checks if the result of the `addition` function is equal to 5.
 
-## Deep Dive into Writing Tests
+To run this test, we need to compile and link it with the Catch2 library, and then execute the resulting executable. Once the test is run, we will get an output like this:
 
-Writing tests not only helps catch bugs, but it also promotes good coding practices. By writing tests, you are forced to think about different scenarios and edge cases that your code may encounter, leading to more thorough and robust code. Writing tests also allows for easier debugging, as you can pinpoint the exact source of an issue through a failed test.
+```
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+```
 
-It is important to note that writing tests is not a substitute for thorough code reviews and proper debugging techniques. It should be used in conjunction with these practices to ensure the highest quality code.
+This output indicates that our test was successful. In case the test fails, the output will show which assertion failed, making it easier to identify and fix the issue.
+
+## Deep Dive
+
+Writing good tests involves more than just checking if the code is producing the correct output. It's also crucial to cover different scenarios and edge cases to ensure the stability and robustness of the code.
+
+Apart from the traditional unit tests, there are also other types of tests such as integration tests and system tests, which can help detect errors in the interactions between different components of the software. It's essential to have a good mix of these different types of tests to have thorough coverage.
+
+Moreover, it's also crucial to continuously update and maintain the tests as the codebase evolves. This helps in catching bugs and regressions early on, saving time and resources in the long run.
 
 ## See Also
 
-- [Google Test documentation](https://github.com/google/googletest)
-- [Catch2 documentation](https://github.com/catchorg/Catch2)
-- [Tutorial on writing tests in C++](https://www.learncpp.com/cpp-tutorial/89-unit-testing-with-google-test-and-google-mock/)
+- [Catch2 homepage](https://github.com/catchorg/Catch2)
+- [Google Test](https://github.com/google/googletest)
+- [Testing Your Code in C++](https://www.ibm.com/docs/en/zos/icc?topic=compiling-testing-code-cpp)

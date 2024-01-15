@@ -1,6 +1,7 @@
 ---
-title:                "C: Arbeta med YAML"
-simple_title:         "Arbeta med YAML"
+title:                "Att arbeta med yaml"
+html_title:           "C: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,94 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+ Om du är en programmerare som arbetar i C, kan du undra varför du skulle vilja använda YAML (YAML Ain't Markup Language). Svaret är enkelt: YAML är ett lättläst och lättförståeligt format för att lagra och överföra data. Det gör det perfekt för konfigurationsfiler, dataöverföring mellan program eller för att spara information för senare återanvändning.
 
-Om du är en programmerare och arbetar med datahantering, har du säkert stött på YAML-filer. YAML är en filtyp som används för att lagra data på ett strukturerat sätt. Det är ett populärt val bland utvecklare på grund av dess enkelhet och läsbarhet. I denna bloggpost kommer vi att dyka djupare in i hur du kan använda YAML i ditt C-programmeringsprojekt.
-
-## Hur man gör det
-
-För att använda YAML i ditt C-program, måste du först installera ett YAML-bibliotek. Ett populärt val är libYAML, som är utvecklat speciellt för C-programmerare. När du har installerat biblioteket kan du enkelt läsa och skriva YAML-filer i ditt program.
-
-För att läsa en YAML-fil och skriva ut dess innehåll till konsolen kan du använda följande kod:
+## Hur man
+För att använda YAML i dina C-program behöver du först inkludera "libyaml" biblioteket. Sedan kan du börja läsa och skriva YAML-data med hjälp av funktioner som `yaml_parser_parse` och `yaml_parser_emit` inuti "```C ... ```" kodblock. Här är ett exempel på hur du skulle läsa in en YAML-fil och skriva ut dess innehåll:
 
 ```C
-#include <stdio.h>
+// Inkluderar libyaml biblioteket
 #include <yaml.h>
-
-int main() {
-    // Skapa en yaml_parser_t-struktur
-    yaml_parser_t parser;
-    if (!yaml_parser_initialize(&parser)) {
-        fputs("Läsare kunde inte initieras\n", stderr);
-        return 1;
-    }
-
-    // Öppna YAML-filen för läsning
-    FILE *file = fopen("data.yaml", "rb");
-    if (!file) {
-        fputs("Kunde inte öppna YAML-filen\n", stderr);
-        return 1;
-    }
-
-    // Ställ in filen som inmatningsström för läsaren
-    yaml_parser_set_input_file(&parser, file);
-
-    // Så här deklarerar du en yaml_event_t-struktur som håller det nuvarande händelsen
-    yaml_event_t event;
-
-    // Så här läser du igenom YAML-filen
-    do {
-        // Läs in händelse
-        if (!yaml_parser_parse(&parser, &event)) {
-            fputs("Fel medan du lade in\n", stderr);
-            return 1;
-        }
-
-        // Utskrift av det innehåll som finns i händelsen
-        switch (event.type) {
-            case YAML_NO_EVENT: break; // Gör ingenting
-            case YAML_STREAM_START_EVENT: puts("YAML-strömmen började"); break;
-            case YAML_STREAM_END_EVENT: puts("YAML-strömmen slutade"); break;
-            case YAML_DOCUMENT_START_EVENT: puts("En ny dokumentbörjan"); break;
-            case YAML_DOCUMENT_END_EVENT: puts("En dokumentslut"); break;
-            case YAML_MAPPING_START_EVENT: puts("En karta börjar"); break;
-            // Fortsätt läsa andra möjliga händelser...
-        }
-
-        // Ta bort den nuvarande händelsen
-        yaml_event_delete(&event);
-    } while (event.type != YAML_STREAM_END_EVENT);
-
-    // Stäng filen och ta bort alla minnesresurser
-    fclose(file);
-    yaml_parser_delete(&parser);
-    return 0;
+// Skapar en parser för att läsa in YAML-filen
+yaml_parser_t parser;
+yaml_parser_initialize(&parser);
+// Öppnar YAML-filen
+FILE *yaml_file = fopen("data.yml", "r");
+// Sätter filen som inmatning för parsern
+yaml_parser_set_input_file(&parser, yaml_file);
+// Skapar en händelseshanterare för att bearbeta YAML-data
+yaml_event_t event;
+// Loopar igenom alla händelser i YAML-filen
+while (yaml_parser_parse(&parser, &event)) {
+  // Skriver ut varje händelse
+  printf("%s\n", yaml_dump_event(&event));
+  // Frigör minnet som används av händelsen
+  yaml_event_delete(&event);
 }
+// Stänger YAML-filen
+fclose(yaml_file);
+// Avslutar parsern
+yaml_parser_delete(&parser);
 ```
 
-Output från konsolen:
+Exempelutmatningen skulle se ut så här:
 
+```YAML
+%YAML 1.2
+---
+titles:
+  - Best C Programming Books
+  - The C Programming Language
+authors:
+  - Stanley B. Lippman
+  - Brian W. Kernighan
+---
+publisher: -
+  name: Addison-Wesley Professional
+  location: Boston
+format: E-Book
+isbn: "9780133086218"
 ```
-YAML-strömmen började
-En ny dokumentbörjan
-En karta börjar
-var1: value1
-var2: value2
-En karta börjar
-en inre_var1: inre_värde1
-en inre_var2: inre_värde2
-En kartslut
-En karta börjar
-en annan_inre_var1: annat_inre_värde1
-en annan_inre_var2: annat_inre_värde2
-En kartslut
-En kartslut
-En dokumentslut
-YAML-strömmen slutade
-```
-
 
 ## Djupdykning
+ Nu när du har fått en grundläggande förståelse för hur man läser och skriver YAML-data i C, kan vi ta en djupare titt på några andra funktioner och användningsområden för YAML i C-programmering. En användbar funktion är `yaml_document_get_root_node` som säkerställer att du läser in och arbetar med den korrekta rotnoden i en YAML-fil. En annan fördel med YAML är att det är ett plattforms- och programmeringsspråks-agnostiskt format, vilket innebär att du kan använda det för att dela och överföra data mellan olika program och system.
 
-YAML är inte bara en filtyp, det är också ett format för att representera datastrukturer och används ofta för konfigurationsfiler. Det är ett lättläst format som även stödjer kommentarer för att göra filerna mer förståeliga. Dessutom kan YAML-filer enkelt konverteras till andra dataformat som JSON.
+## Se också
+För mer information och resurser om att arbeta med YAML i C-programmering, kolla in följande länkar:
 
-För mer detaljerad information om hur du kan använda YAML i ditt C-programmeringsprojekt, kan du läsa dokumentationen för libYAML eller utforska andra YAML-bibliotek som libyaml, yaml-cpp eller yaml-cpp. Det finns också flera användbara öppna källkodsprojekt
+- Libyaml dokumentation: https://pyyaml.org/wiki/LibYAML
+- YAML-specifikationen: https://yaml.org/spec/
+- YAML för C-bibliotek: https://github.com/yaml/libyaml

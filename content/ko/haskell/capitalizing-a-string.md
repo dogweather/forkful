@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자 변환하기"
+html_title:           "Haskell: 문자열 대문자 변환하기"
+simple_title:         "문자열 대문자 변환하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-
-문자열을 대문자로 바꾸는 것의 이유에는 여러 가지가 있지만, 주로 문자열을 사용자가 원하는 형태 또는 포맷으로 변환하기 위해 사용됩니다.
+문자열을 대문자로 변환하는 것에 대해 고민하는 이유는 무엇일까요? 문자열 처리는 프로그래밍에서 필수적인 요소이기 때문에, 문자열을 변환하는 기능 또한 자주 사용됩니다.
 
 ## 방법
-
-Haskell에서는 `toUpper` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 아래는 예시 코드입니다.
+```Haskell
+import Data.Char
+-- 대문자로 변환하는 함수 정의
+capString :: String -> String
+capString str = [toUpper x | x <- str]
+-- 함수 적용
+capString "hello world"
+```
+출력: "HELLO WORLD"
+`toUpper` 함수를 이용해 입력된 문자열의 각 문자를 대문자로 변환하는 `capString` 함수를 정의하고, 이를 사용해 "hello world"를 대문자로 변환한 결과를 보여줍니다.
 
 ```Haskell
-import Data.Char (toUpper)
-
-main :: IO ()
-main = do
-    let str = "hello world"
-    print (map toUpper str)
+-- `words` 함수를 이용하여 문자열을 공백 단위로 분리
+capWords :: String -> String
+capWords str = unwords [capString x | x <- words str]
+-- 함수 적용
+capWords "hello world"
 ```
+출력: "HELLO WORLD"
+문자열을 공백 단위로 분리하기 위해 `words` 함수를 이용하고, 이를 이용해 각 단어를 `capString` 함수를 이용해 대문자로 변환한 뒤 `unwords` 함수를 이용해 다시 결합하여, "hello world"를 대문자로 변환한 결과를 보여줍니다.
 
-위 코드를 실행하면 아래와 같은 결과가 출력됩니다.
+## 딥 다이브
+문자열을 처리하는 방법은 다양합니다. 하지만 대문자로 변환하는 작업은 간단하면서도 자주 사용되는 작업이기 때문에, 함수를 이용하여 쉽게 구현할 수 있습니다. 더욱 깊게 들어가보면, `toUpper` 함수 외에도 `toLower`, `capitalize` 등의 함수들이 존재하며, 이를 이용하여 문자열을 원하는 형태로 변환할 수 있습니다.
 
-```
-"HELLO WORLD"
-```
-
-따라서, `map toUpper` 함수를 사용하면 문자열의 각 문자를 대문자로 변환할 수 있습니다.
-
-## 깊이 파고들기
-
-Haskell에서는 `toUpper` 함수가 문자열의 각 문자를 대문자로 변환하기 위해 내부적으로 `Char` 형식의 문자를 정수로 변환하여 처리합니다. 이는 알파벳의 ASCII 코드 값에서 소문자와 대문자 간의 차이를 이용합니다. 이를테면, `a`의 ASCII 코드 값은 97이고, `A`의 ASCII 코드 값은 65입니다. 따라서, 소문자에서 32를 뺀 값이 대문자의 ASCII 코드 값과 동일하다는 것을 이용하여 문자를 대문자로 변환합니다.
-
-## 참고 자료
-
-- [Haskell 문자열 처리 함수: toUpper](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toUpper)
-- [ASCII 테이블](https://www.asciitable.com/)
+## 더보기
+* [Haskell 예제로 알아보는 문자열 처리 방법](https://wikidocs.net/3100)
+* [Haskell Data.Char 모듈 문서](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)

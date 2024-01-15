@@ -1,5 +1,6 @@
 ---
-title:                "Java: Sammanslagning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Java: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Java"
 category:             "Java"
@@ -9,40 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: Varför skulle någon vilja använda sig av strängkonkatenering? Strängkonkatenering är ett viktigt koncept i Java som tillåter dig att sammanfoga flera strängar till en enda sträng. Detta kan vara användbart för att skapa dynamiska meddelanden eller textsträngar som behöver anpassas baserat på användardata eller andra variabler.
+## Varför
 
-Hur man gör det: Först och främst behöver du förstå syntaxen för hur man konkatenerar strängar i Java. Detta görs genom att använda + operatorn. Se exempel nedan:
+Det finns olika anledningar till varför man skulle vilja använda sig av strängkonkatinering i Java. Det kan exempelvis vara för att skapa mer dynamiska meddelanden eller för att bygga upp en längre sträng utifrån flera mindre delar. I denna artikel kommer vi att gå igenom hur man kan använda sig av strängkonkatinering i Java på ett enkelt och effektivt sätt.
+
+## Hur man gör
+
+För att konkatinera strängar i Java används "+" operatorn. Vi kan konkatinera flera strängar på ett enkelt sätt genom att sätta "+" mellan varje sträng. Se exempel nedan:
 
 ```Java
-String firstName = "Anna";
-String lastName = "Andersson";
-String fullName = firstName + lastName;
+String name = "John";
+String lastName = "Doe";
+String fullName = name + " " + lastName;
+
 System.out.println(fullName);
 ```
 
 Output:
-AnnaAndersson
+```John Doe```
 
-I det här exemplet har vi skapat två strängar, förnamn och efternamn, och sedan konkatenerat dem till en enda sträng som representerar den fullständiga namnet. Du kan också konkatenera flera strängar på samma sätt. Se exempel nedan:
+I detta exempel sätts ett mellanslag mellan namn och efternamn genom att inkludera en mellanslagssträng mellan variablerna ```name``` och ```lastName```.
+
+En annan metod för strängkonkatinering är genom att använda metoden ```concat()```. Denna metod tar en sträng som parameter och konkatineras med den befintliga strängen. Se exempel nedan:
 
 ```Java
-String name = "Johan";
-String language = "Java";
-String greeting = "Hello, my name is " + name + " and I love " + language + " programming!";
-System.out.println(greeting);
+String greeting = "Hej ";
+String name = "Sofia";
+
+System.out.println(greeting.concat(name));
 ```
 
 Output:
-Hello, my name is Johan and I love Java programming!
+```Hej Sofia```
 
-I detta exempel har vi skapat tre olika strängar och sedan konkatenerat dem tillsammans för att skapa en hälsning. Det är viktigt att notera att när du konkatenerar strängar måste du också se till att inkludera mellanslag och andra tecken som behövs för att skapa en korrekt formatterad sträng.
+Det är även möjligt att konkatinera en sträng med andra datatyper, så som heltal eller decimaltal. I sådana fall så kommer Java automatiskt att konvertera datatyperna till strängar innan konkatineringsprocessen utförs.
 
-Djupdykning: När du konkatenerar flera strängar är det också viktigt att förstå hur detta fungerar bakom kulisserna. När du använder + operatorn för att konkatenera strängar skapas faktiskt en helt ny strängobjekt i minnet varje gång. Detta kan bli ineffektivt om du konkatenerar många strängar i en loop eller i en stor applikation. I sådana fall kan det vara bättre att använda en StringBuilder eller StringBuffer klass som är utformade för att hantera strängar mer effektivt. Dessa klasser låter dig ändra och modifiera en enda sträng istället för att skapa nya objekt varje gång.
+## Djupdykning
 
-Se även: Vill du lära dig mer om strängkonkatenering i Java? Här är några användbara länkar som kan hjälpa dig att fördjupa dina kunskaper:
+När man konkatinerar strängar i Java skapar man en ny sträng varje gång. Detta betyder att de ursprungliga strängarna inte förändras utan en ny sträng skapas istället. Det är viktigt att tänka på när man arbetar med stora och många strängar för att undvika onödig minnesanvändning.
 
-- [Java String Concatenation](https://www.geeksforgeeks.org/concatenating-strings-in-java/)
-- [Java StringBuilder](https://www.baeldung.com/java-stringbuilder)
-- [Java StringBuffer vs StringBuilder](https://www.baeldung.com/java-stringbuilder-stringbuffer)
+En annan viktig aspekt att tänka på är att strängar i Java är omuterbara, vilket betyder att de inte kan ändras efter att de har skapats. Detta betyder att varje gång en ändring görs på en befintlig sträng, så skapas en ny sträng istället. Detta kan påverka prestandan om man konkatinerar strängar i en loop, eftersom det skapar en stor mängd onödiga strängar.
 
-Hoppas denna artikel har hjälpt dig att förstå konceptet av strängkonkatenering i Java och hur du kan använda det i dina egna projekt. Lycka till!
+## Se även
+
+Här är några användbara länkar som kan hjälpa dig att lära dig mer om strängkonkatinering i Java:
+
+- [Java String Concatenation Tutorial](https://www.javatpoint.com/java-string-concatenation)
+- [Official Java Documentation on String Concatenation](https://docs.oracle.com/javase/tutorial/java/data/converting.html)
+- [Oracle's Guide to String Concatenation in Java](https://www.oracle.com/technical-resources/articles/java/juneau-string-optimization.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Kotlin: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,70 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-CSV-Dateien sind ein gängiges Format, um Daten in einer einfachen und strukturierten Art und Weise zu speichern. Sie werden häufig in der Softwareentwicklung verwendet, um Informationen zu importieren, exportieren oder zu analysieren. Mit Kotlin können wir CSV-Dateien effizient verarbeiten und manipulieren, was uns Zeit und Aufwand sparen kann.
+CSV (Comma-Separated Values) ist ein beliebtes Dateiformat für den Austausch von Daten zwischen verschiedenen Programmen. Das Arbeiten mit CSV-Dateien kann hilfreich sein, um Daten effizient zu organisieren und zu analysieren. Mit Kotlin können Sie mithilfe von Bibliotheken wie 'Apache Commons CSV' und Funktionen wie 'split()' CSV-Dateien einfach verarbeiten.
 
-## Wie man es macht
+## Wie man es tut
 
-Um mit CSV-Dateien in Kotlin zu arbeiten, können wir die Java-Bibliothek "OpenCSV" verwenden. Zunächst müssen wir die Abhängigkeit in unserem Projekt hinzufügen:
+Um mit CSV in Kotlin zu arbeiten, müssen Sie zuerst die entsprechenden Bibliotheken importieren. Hier ist ein Beispiel, um eine CSV-Datei zu lesen und die Daten in eine Liste zu speichern:
 
 ```Kotlin
-dependencies {
-    implementation("com.opencsv", name = "opencsv", version = "5.2")
+import org.apache.commons.csv.CSVFormat
+import java.io.FileReader
+
+val reader = FileReader("meine_datei.csv")
+val records = CSVFormat.DEFAULT.parse(reader).records
+
+for (record in records) {
+    // Hier können Sie auf die Daten in jeder Zeile zugreifen 
+    // record[0] ist die erste Spalte, record[1] die zweite usw.
 }
 ```
 
-Als nächstes erstellen wir eine Klasse, die unsere CSV-Daten darstellt:
+Um eine CSV-Datei zu schreiben, können Sie diese Funktion verwenden:
 
 ```Kotlin
-class Person(val name: String, val age: Int, val city: String)
-```
+import org.apache.commons.csv.CSVFormat
+import java.io.FileWriter
 
-Um eine CSV-Datei zu lesen, erstellen wir eine Instanz von CSVReader und geben den Dateipfad als Parameter an:
-
-```Kotlin
-val reader = CSVReader(FileReader("path/to/file.csv"))
-```
-
-Dann können wir die Zeilen der Datei mithilfe der `readAll()` Methode auslesen und in einer Liste speichern:
-
-```Kotlin
-val rows = reader.readAll()
-```
-
-Jede Zeile wird als `Array<String>` zurückgegeben, wobei jedes Element eine Spalte in der CSV-Datei darstellt. Wir können dann durch diese Liste iterieren und unsere Daten in Objekte umwandeln:
-
-```Kotlin
-val persons = rows.map { row ->
-    Person(row[0], row[1].toInt(), row[2])
+val writer = FileWriter("output.csv")
+val records = listOf(listOf("Spalte 1", "Spalte 2", "Spalte 3"), 
+                     listOf("Wert 1", "Wert 2", "Wert 3"))
+CSVFormat.DEFAULT.print(writer).use { printer ->
+    for (record in records) {
+        printer.printRecord(record)
+    }
 }
 ```
 
-Um eine CSV-Datei zu schreiben, erstellen wir eine Instanz von CSVWriter und geben den Dateipfad und den Trennzeichen als Parameter an:
+Dieses Beispiel liest eine Liste von List-Objekten und schreibt sie als Zeilen in die CSV-Datei.
 
-```Kotlin
-val writer = CSVWriter(FileWriter("path/to/file.csv"), ',')
-```
+## Tauchen wir tiefer ein
 
-Um Daten zu unserer CSV-Datei hinzuzufügen, nutzen wir die `writeNext()` Methode und übergeben ein `Array<String>` mit den entsprechenden Werten:
+CSV-Dateien folgen einem bestimmten Format, bei dem Spalten durch Kommas getrennt sind und jede Zeile eine neue Datenreihe darstellt. Es gibt jedoch auch verschiedene Konventionen innerhalb dieses Formats, wie z.B. die Verwendung von Anführungszeichen um Textfelder oder die Verwendung von unterschiedlichen Trennzeichen wie Tabs oder Semikolons.
 
-```Kotlin
-writer.writeNext(arrayOf("Max Mustermann", "30", "Berlin"))
-```
+Um mit diesen Unterschieden umzugehen, können Sie bei der Verwendung von 'Apache Commons CSV' verschiedene Optionen angeben, wie z.B. das Trennzeichen, die Anführungszeichen und die Zeichenkodierung.
 
-Und abschließend nicht vergessen, den Writer zu schließen:
+Es ist auch wichtig zu beachten, dass CSV-Dateien keine Datentypen speichern. Alle Daten werden als Zeichenfolgen gelesen und müssen daher von Ihnen in den richtigen Datentyp konvertiert werden, z.B. in Zahlen oder Booleans.
 
-```Kotlin
-writer.close()
-```
-
-## Tiefergehende Informationen
-
-Beim Lesen und Schreiben von CSV-Dateien sollten wir einige Dinge beachten. Zum Beispiel müssen wir die Codierung der Datei berücksichtigen, um Sonderzeichen richtig zu verarbeiten. Auch kann es hilfreich sein, beim Schreiben von Daten ein Escape-Zeichen zu definieren, um mögliche Trennzeichen im Text zu vermeiden.
-
-OpenCSV bietet auch weitere Funktionen wie das Lesen von CSV-Daten aus URLs oder InputStreams und die Verwendung von benutzerdefinierten Trennzeichen.
+Es gibt auch andere nützliche Bibliotheken für die Arbeit mit CSV in Kotlin, wie z.B. die 'kotlin-csv' Bibliothek, die eine einfachere und modernere Schnittstelle bietet.
 
 ## Siehe auch
 
-- [OpenCSV Dokumentation](http://opencsv.sourceforge.net/)
-- [Offizielle Kotlin Website](https://kotlinlang.org/)
-- [Kotlin CSV Bibliothek](https://github.com/opencsv/opencsv)
+- [Offizielle Kotlin-Dokumentation für CSV](https://kotlinlang.org/docs/reference/io.html#working-with-files)
+- [Apache Commons CSV-Bibliothek](https://commons.apache.org/proper/commons-csv/)
+- [Kotlin-CSV-Bibliothek](https://github.com/doyaaaaaken/kotlin-csv)

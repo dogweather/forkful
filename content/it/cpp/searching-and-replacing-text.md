@@ -1,6 +1,7 @@
 ---
-title:                "C++: Cercare e sostituire testo"
-simple_title:         "Cercare e sostituire testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "C++: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,10 +11,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Ciao lettori! Se siete qui, probabilmente siete interessati all'utilizzo del linguaggio di programmazione C++ per cercare e sostituire del testo all'interno del vostro codice. Ebbene, sappiate che questa è una tecnica molto utile per risparmiare tempo e rendere il vostro codice più efficiente.
+
+Cercare e sostituire del testo è un'operazione molto comune nell'ambito della programmazione. Può essere utile per correggere errori, aggiornare informazioni o semplicemente modificare parti di un programma. Inoltre, ci consente di risparmiare tempo e di automatizzare processi ripetitivi.
 
 ## Come fare
-Per iniziare, dovete comprendere come funziona la ricerca e la sostituzione di testo in C++. Prima di tutto, dovete includere la libreria "string" per lavorare con le stringhe di testo. In seguito, potete utilizzare la funzione "replace" per specificare la stringa che desiderate sostituire, seguita dalla nuova stringa da inserire. Un esempio di codice potrebbe essere il seguente:
+
+Per cercare e sostituire del testo in C++, utilizzeremo la funzione `replace` della libreria standard di C++. Questa funzione ci permette di specificare una porzione di testo da cercare e una da sostituire e poi di applicare la sostituzione a un'intera stringa.
+
+Di seguito un esempio di come utilizzare la funzione `replace`:
 
 ```C++
 #include <iostream>
@@ -22,21 +27,34 @@ Per iniziare, dovete comprendere come funziona la ricerca e la sostituzione di t
 using namespace std;
 
 int main() {
-  string input = "Ciao a tutti";
-  string output = input.replace("a tutti", "ragazzi");
+  // Definiamo una stringa di esempio
+  string frase = "Ciao mondo!";
 
-  cout << output << endl;
+  // Sostituiamo la parola "mondo" con "programmazione"
+  frase.replace(frase.find("mondo"), 5, "programmazione");
+
+  // Stampiamo la stringa modificata
+  cout << frase << endl;
 
   return 0;
 }
 ```
 
-In questo caso, la stringa "Ciao a tutti" verrà sostituita con "Ciao ragazzi", che verrà stampata a schermo. Potete giocare con questo codice e testare diverse combinazioni di stringhe da sostituire per comprendere meglio come funziona.
+Questo esempio produrrà l'output:
 
-## Approfondimenti
-Ora che avete una base solida per la ricerca e la sostituzione di testo in C++, potete approfondire ulteriormente il vostro studio su questa tecnica. Ad esempio, potete imparare a utilizzare la funzione "find" per trovare un determinato testo all'interno di una stringa e sostituirlo solo se viene trovato. Inoltre, potete leggere su altre funzioni utili per la manipolazione di stringhe in C++ come "append" e "substr". Esistono anche librerie esterne che offrono funzionalità avanzate per la ricerca e la sostituzione di testo, quindi non esitate a fare una ricerca e scoprire quali sono più adatte alle vostre esigenze.
+```
+Ciao programmazione!
+```
+
+## Approfondimento
+
+La funzione `replace` accetta tre parametri: la posizione da cui inizia la sostituzione, la lunghezza della porzione di testo da sostituire e il testo di sostituzione. Tuttavia, possiamo anche utilizzare la funzione `replace` con un quarto parametro opzionale che indica il numero massimo di sostituzioni da effettuare.
+
+Ad esempio, possiamo utilizzare questo quarto parametro per specificare che vogliamo sostituire solo la prima occorrenza di una parola all'interno di una stringa. In questo modo, se la stessa parola compare più volte, verrà sostituita solo la prima volta.
+
+Per maggiori informazioni sulla funzione `replace` e su come gestire le sostituzioni multiple, è possibile fare riferimento alla documentazione ufficiale di C++.
 
 ## Vedi anche
-- [Stringhe in C++](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [Manipolazione di stringhe in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [Libreria <string> di C++](https://www.geeksforgeeks.org/string-class-in-cpp/)
+
+- [COIPL - Sostituzione di stringhe in C++](https://www.cplusplus.com/coipl.org/topic.asp?TOPIC_ID=395)
+- [Funzione replace della libreria standard di C++](https://en.cppreference.com/w/cpp/string/basic_string/replace)

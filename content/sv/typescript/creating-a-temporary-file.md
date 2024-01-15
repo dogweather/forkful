@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Skapa en tillfällig fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "TypeScript: Skapa en tillfällig fil"
 simple_title:         "Skapa en tillfällig fil"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skapa en temporär fil är en vanlig uppgift för många utvecklare. Detta kan vara användbart när du behöver lagra data på ett tillfälligt sätt innan du sparar den permanent eller bara behöver tillfällig åtkomst till en fil för en viss operation.
 
-Att skapa en tillfällig fil kan vara en användbar funktion i många programmeringsprojekt. Det kan vara användbart för att temporärt lagra data eller för att utföra vissa operationer som kräver en fil som endast behövs under en viss tid. Genom att skriva kod för att skapa en temporär fil kan du säkerställa en smidigare och mer effektiv hantering av filer i ditt projekt.
-
-## Så här gör du
-
-För att skapa en temporär fil i TypeScript, använd följande kod i en funktion eller metod:
-
+## Hur man gör det
 ```TypeScript
-import * as fs from 'fs';
-import * as path from 'path';
+// Importera nödvändiga moduler
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
 
-// Skapa en unik temporär fil med ett slumpmässigt namn
-const tempFilePath = fs.mkdtempSync(path.join(fs.realpathSync('.'), 'tmp-'));
+// Skapa en temporär filnamn
+const tempFileName = 'tempfile.txt';
+
+// Skapa en temporär fil med hjälp av 'fs' modulen
+fs.writeFile(tempFileName, 'Hej världen', (err) => {
+  if (err) throw err;
+  console.log('Temporär fil skapad!');
+
+  // Hämta sökvägen för den temporära filen
+  const filePath = path.join(os.tmpdir(), tempFileName);
+
+  // Läsa innehållet från den temporära filen
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+  });
+});
+
 ```
 
-Denna kod importerar "fs" och "path" modulerna för att sedan använda "fs.mkdtempSync()" funktionen för att skapa en tillfällig fil i ett temporärt katalog. Genom att använda "path.join()" funktionen sätter vi också ett slumpmässigt namn för filen som prefix för att säkerställa att den är unik.
-
-För att sedan skriva till den temporära filen, använd följande kod:
-
-```TypeScript
-import * as fs from 'fs';
-
-// Skriv till den temporära filen
-fs.writeFileSync(tempFilePath, 'Det här är innehållet i den temporära filen');
-```
-
-Genom att använda "fs.writeFileSync()" funktionen kan du skriva ditt innehåll till den temporära filen. Du kan också läsa från filen genom att använda "fs.readFileSync()" funktionen på samma sätt.
+Output:
+Temporär fil skapad!
+Hej världen
 
 ## Djupdykning
-
-När du skapar en temporär fil i TypeScript kan du också specificera önskade filändelser för filen genom att lägga till en "prefix" till namnet på filen. Till exempel, om du vill skapa en temporär fil med filändelsen ".txt", kan du lägga till prefixet "temp.txt" vid användning av "fs.mkdtempSync()" funktionen. För att sedan skriva eller läsa från filen, används samma namn med filändelsen som parameter till "fs.writeFileSync()" eller "fs.readFileSync()" funktionerna.
-
-Det är också viktigt att notera att den temporära filen kommer att försvinna när din applikation slutar köra, så se till att skriva och läsa från filen innan det händer.
+Att skapa en temporär fil innebär egentligen bara att skapa en vanlig fil som kommer att bli raderad när programmet avslutas. Det är enkelt att göra med hjälp av Node.js 'fs' modulen som ger oss metoder för att skapa, läsa och skriva filer. Vi kan också använda 'os' modulen för att få tillfällig mapp för att lagra den temporära filen och 'path' modulen för att skapa den fullständiga sökvägen till filen.
 
 ## Se även
-
-- [fs-modulen i Node.js](https://nodejs.org/api/fs.html)
-- [path-modulen i Node.js](https://nodejs.org/api/path.html)
-- [Official TypeScript documentation](https://www.typescriptlang.org/docs/home.html)
+- https://nodejs.org/api/fs.html
+- https://nodejs.org/api/os.html
+- https://nodejs.org/api/path.html

@@ -1,6 +1,7 @@
 ---
-title:                "C#: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till små bokstäver"
+html_title:           "C#: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,27 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I många programmingscenarier är det ofta nödvändigt att konvertera en sträng till små bokstäver. Det kan vara för att jämföra strängar utan att oroa dig för skillnader mellan stora och små bokstäver, eller för att presentationen av data ska vara enhetlig. Oavsett orsaken är det en vanlig uppgift för många programmerare.
+Att konvertera en sträng till gemener är en vanlig operation inom programmering, särskilt när det kommer till hantering av olika användarinput. Genom att konvertera en sträng till gemener säkerställer vi att all text behandlas på samma sätt och minimerar därmed risken för felaktig jämförelse eller sökning.
 
 ## Så här gör du
 
-För att konvertera en sträng till små bokstäver i C#, kan du använda en inbyggd metod som heter `ToLower()`. Detta gör det mycket enkelt och effektivt att uppnå det önskade resultatet. Koden nedan visar hur du kan använda metoden på en sträng och sedan skriva ut det nya värdet till konsolen:
-
 ```C#
-string str = "DAGEN"; // skapar en sträng med stora bokstäver
-string lowercaseStr = str.ToLower(); // använder ToLower() för att konvertera till små bokstäver
-Console.WriteLine(lowercaseStr); // skriver ut "dagen" till konsolen
+string input = "HeLLo WoRLd!";
+string output = input.ToLower();
+Console.WriteLine(output);
 ```
 
-Du kan också använda en `for`-loop för att loopa igenom varje tecken i strängen och använda `ToLower()` för att konvertera det till små bokstäver. Detta kan vara användbart om du behöver göra ytterligare manipulationer av varje tecken innan det konverteras.
+Kodexemplet ovan visar hur man enkelt kan konvertera en sträng till gemener med hjälp av den inbyggda metoden "ToLower()" i C#. Resultatet blir "hello world!".
+
+Det är även möjligt att använda en annan metod, "ToLowerInvariant()", som konverterar till gemener baserat på det aktuella kulturtillståndet. Om man till exempel har en app som ska fungera på flera språk kan det vara fördelaktigt att använda denna metod för att säkerställa korrekt konvertering oavsett vilket språk användaren har inställt på sin enhet.
+
+```C#
+string input = "HeLLo WoRLd!";
+string output = input.ToLowerInvariant();
+Console.WriteLine(output);
+```
 
 ## Djupdykning
 
-När du använder `ToLower()`-metoden, kommer den att konvertera alla bokstäver till deras Unicode-ekvivalenter. Detta betyder att även specialtecken som finns i andra språk kan påverkas. Till exempel kommer bokstaven "Ö" i svenska att konverteras till "ö" i det nya strängvärdet.
+Att konvertera en sträng till gemener är en process som kan verka enkel och självklar, men det finns några viktiga saker att tänka på för att undvika oväntade resultat. En viktig faktor är språket som användaren har inställt på sin enhet eller i sin app. Vissa språk, som till exempel tyska, har egna regler för konvertering av bokstäver från versal till gemen. Det kan vara värt att undersöka dessa regler för att undvika eventuella konverteringsfel.
 
-Det är också viktigt att notera att `ToLower()`-metoden skapar en ny sträng och returnerar den. Detta innebär att det ursprungliga strängobjektet inte kommer att ändras. Om det är viktigt att behålla en sträng i originalformatet, se till att använda den konverterade strängen eller tilldela den till ett nytt strängobjekt.
+En annan aspekt att tänka på är eventuella specialtecken eller diakritiska tecken i strängen som ska konverteras. Vissa tecken kan försvinna eller ändras i konverteringsprocessen och det är viktigt att VARNA användaren för detta, om det är relevant, för att undvika missförstånd.
 
 ## Se även
 
-- Microsoft Dokumentation: [ToLower() Metod](https://docs.microsoft.com/sv-se/dotnet/api/system.string.tolower?view=net-5.0)
-- Tutorialspoint: [C# Strings](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+* Microsoft Docs - ToLower()-metoden: https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower
+* Microsoft Docs - ToLowerInvariant()-metoden: https://docs.microsoft.com/en-us/dotnet/api/system.string.tolowerinvariant
+* Språkets påverkan på konvertering av gemener: https://stackoverflow.com/questions/3521085/string-tolower-some-languages-change-things-you-wouldnt-expect

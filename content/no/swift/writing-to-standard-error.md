@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Skrive til standard feil"
-simple_title:         "Skrive til standard feil"
+title:                "Skriver til standard feil"
+html_title:           "Swift: Skriver til standard feil"
+simple_title:         "Skriver til standard feil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,29 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvorfor skulle noen bry seg med å skrive til standard feil i koden sin? Vel, det kan høres ut som en unødvendig trinn, men det kan føre til en bedre og mer effektiv koding.
 
-Mange ganger når vi koder, vil vi at programmet skal vise en melding som informerer oss om noe som skjer, selv om vi ikke har lagt det inn i koden vår. For dette formålet, kan vi bruke standard error output. Det er også nyttig å bruke når du vil vise feilmeldinger i stedet for å krasje programmet. Så hvorfor skrive til standard error output? Fordi det kan gi oss informasjon vi trenger for å forbedre våre programmeringsferdigheter og feilsøke problemer.
-
-## Hvordan gjør man det
-
-For å skrive til standard error output i Swift, trenger vi å bruke "```fprint```" funksjonen og spesifisere "stderr" som parameter. Her er et eksempel:
+## Hvordan
+Å skrive til standard feil i Swift er ganske enkelt. Alt du trenger å gjøre er å bruke "print" funksjonen og sette "stderr" parameteren til sann. Dette vil sende utdata til standard feil i stedet for standard utgang. Her er et eksempel på hvordan du gjør det:
 
 ```Swift
-fprint(stderr, "Dette er en feilmelding")
+print("Dette vil bli skrevet til standard feil", toStream: &stderr)
 ```
 
-Når dette kjøres, vil det skrive "Dette er en feilmelding" til standard error output.
+Når du kjører denne koden, vil "Dette vil bli skrevet til standard feil" vises i terminalen din, men hvis du logger standard utgang, så vil det ikke vises. Her er et eksempel på hvordan du logger standard feil til en fil i stedet:
+
+```Swift
+let file = FileHandle(forWritingAtPath: "errorLog.txt")!
+print("Dette vil bli skrevet til standard feil", toStream: &stderr)
+```
+
+Dette vil skrive utdata til filen "errorLog.txt" i stedet for terminalen.
 
 ## Dypdykk
+Nå lurer du kanskje på hvorfor det er nyttig å skrive til standard feil i stedet for standard utgang. Vel, når du håndterer unntak i koden din, kan det være nyttig å skrive feilmeldinger til standard feil i stedet for standard utgang. På denne måten vil du kunne skille mellom vanlige utdata og feilmeldinger når du kjører koden din.
 
-Når vi skriver til standard error output, er det viktig å huske på følgende punkter:
+En annen grunn til å skrive til standard feil er at det kan hjelpe deg med å diagnostisere og løse problemer i utviklingsprosessen. Ved å skrive feilmeldinger til standard feil, vil du kunne finne ut hvor og hvorfor koden din krasjer eller ikke fungerer som forventet.
 
-- Standard error output er ofte brukt for å vise feilmeldinger i stedet for å krasje programmet. Dette hjelper oss med å identifisere og løse problemer raskt.
-- Det er også nyttig å bruke "```Assertion```" for å sikre at programmet stopper og viser feilmeldinger hvis noe uventet skjer.
-- Hvis du vil redirektere standard error output til en fil, kan du bruke "```freopen```" funksjonen og spesifisere filnavn og "w+" for å skrive og opprette en ny fil hvis den ikke finnes.
+For å lese mer om hvordan man håndterer unntak i Swift og bruker standard feil, kan du sjekke ut følgende lenker:
+
+- [Håndtere unntak i Swift](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [Standard Library Reference for Printing Functions](https://developer.apple.com/documentation/swift/foundation/1540999-print)
+- [Swift API Reference for FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
 
 ## Se også
-
-- [Feilsøking og debugging i Swift](https://developer.apple.com/videos/play/wwdc2018/402/)
-- [Standard Library Reference - fprint](https://developer.apple.com/documentation/swift/1641343-fprint)
-- [Swift.org - Error handling](https://swift.org/documentation/#errorhandling)
+- [Hvordan håndtere unntak i Swift](https://www.hackingwithswift.com/read/0/22/handling-errors)
+- [En introduksjon til Swift-programmering](https://www.appcoda.com/swift-intro/)

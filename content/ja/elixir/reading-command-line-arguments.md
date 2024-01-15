@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: コンピューター・プログラミングにおける「コマンドライン引数の読み取り」"
-simple_title:         "コンピューター・プログラミングにおける「コマンドライン引数の読み取り」"
+title:                "コンピュータープログラミングの記事のタイトル: 「コマンドライン引数の読み込み」"
+html_title:           "Elixir: コンピュータープログラミングの記事のタイトル: 「コマンドライン引数の読み込み」"
+simple_title:         "コンピュータープログラミングの記事のタイトル: 「コマンドライン引数の読み込み」"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-コマンドライン引数を読み取ることの重要性は、Elixirプログラミングの基本的なスキルの1つです。コマンドライン引数をうまく活用することで、プログラムを実行する際の柔軟性が増し、よりパワフルなツールを作ることができます。
 
-## 方法
-以下は、コマンドライン引数を読み取るための簡単なElixirコードの例です。
+コマンドライン引数を読むことのメリットは何でしょうか？それについて少し紹介します。
+
+## 使い方
+
+以前にも触れたように、コマンドライン引数を読むことで、プログラムを実行する際にユーザーが入力した特定の値を取得することができます。それでは、具体的なコード例を見てみましょう。
 
 ```Elixir
+defmodule CLI do
+  # 引数を受け取るためにOptionParserを使う
+  def parse_args() do
+    OptionParser.parse(System.argv) 
+  end
+
+  # 引数が存在しない場合はエラーを表示する
+  def handle_args({:ok, args}, default) do
+    # 引数が1つ以上ある場合、最初の引数を返す
+    [arg | _] = args
+    arg
+  end
+  
+  # 引数が存在しない場合はデフォルト値を返す
+  def handle_args({:error, _}, default) do
+    IO.puts "Please provide an argument."
+    default
+  end
+end
+
 # コマンドライン引数を取得する
-args = System.argv
+arg = CLI.parse_args() |> CLI.handle_args("default")
 
-# 最初の引数を取得する
-first = List.first(args)
-
-# 最後の引数を取得する
-last = List.last(args)
-
-# 引数を結合して出力する
-IO.puts "入力された引数は#{first}と#{last}です。"
+# コマンドライン引数を表示する
+IO.puts "Your argument is: #{arg}"
 ```
 
-上記のコードを実行すると、入力されたコマンドライン引数が表示されます。
+この例では、 `parse_args` 関数を定義して、 `OptionParser` モジュールを使用して `System.argv` をパースしています。引数が存在する場合、 `handle_args` 関数に移動して、最初の引数を返します。もし引数が存在しない場合は、デフォルト値を返します。これで、コマンドライン引数を読む方法がわかりました。
 
-```
-$ elixir example.exs 引数1 引数2
-入力された引数は引数1と引数2です。
-```
+## 詳細
 
-## ディープダイブ
-コマンドライン引数を読み取る際には、`System.argv`以外にも`OptionParser`モジュールを使う方法もあります。`OptionParser`を使うことで、より複雑な引数の解析やオプションの設定が可能になります。
+コマンドライン引数を使用する際には、エラーハンドリングやデフォルト値の設定など、さまざまな状況に対する考慮が必要です。また、引数を複数取得したい場合は、リスト形式で取得することも可能です。さらに詳しい情報は、Elixirの公式ドキュメントを参考にしてください。
 
-また、コマンドライン引数をうまく活用すると、ユーザーからの入力によってプログラムの動作を変えることができます。これは、動的なプログラムを作る上で重要なスキルです。
+## 関連リンク
 
-## See Also
-- [Elixir Command Line Utilities](https://elixir-lang.org/getting-started/command-line.html)
-- [Elixir OptionParser Module](https://hexdocs.pm/elixir/OptionParser.html)
-- [Command Line Arguments in Elixir](https://www.educative.io/edpresso/command-line-arguments-in-elixir)
+- [Elixir公式ドキュメント](https://elixir-lang.org/docs.html)
+- [Elixirのコマンドライン引数](https://elixir-lang.org/getting-started/mix-otp/command-line.html#parsing-command-line-options-with-optionparser)

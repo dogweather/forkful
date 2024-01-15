@@ -1,6 +1,7 @@
 ---
-title:                "Go: भविष्य या भूतकाल में तारीख का गणना"
-simple_title:         "भविष्य या भूतकाल में तारीख का गणना"
+title:                "भविष्य या अतीत में तिथि की गणना"
+html_title:           "Go: भविष्य या अतीत में तिथि की गणना"
+simple_title:         "भविष्य या अतीत में तिथि की गणना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -9,15 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
+*Agar aap apne program mein kisi bhi tarikh (future ya past) ka calculation karna chahte hain, to aapko is technique ki jaroorat padegi. Ye aapke program ko dynamic aur user-friendly banane mein madad karegi.*
 
-आगे या पीछे की तारीख का हिसाब लगाने में क्यों गो भाषा को चुनाव किया जाए?
+## Kaise
+Agar aapko kisi bhi future ya past tarikh ka calculation karna hai, to aapko isme kuch simple steps follow karne honge:
 
-## कैसे करें
+1. Pehle se define kariye - Kis tarikh se aapka calculation start karna hai.
+2. Phir ```time``` aur ```duration``` packages ko import karein.
+3. Ab ```AddDate``` method ka use karein, jiske saath aap apni tarikh ko add kar sakte hain.
+4. Aap apne code mein ```fmt.Printf``` ka use karke desired output print kar sakte hain.
 
-आपके पास कितना भी अनुभव हो, गो भाषा में आसानी से तारीख का हिसाब लगाना संभव है। आप नीचे दिए गए कोड ब्लॉक के माध्यम से इसे कैसे करें देख सकते हैं:
+Ab dekhate hain kis tarah se aap is technique ka use kar sakte hain. Neeche diye gaye code blocks mein aapko coding examples aur sample output milenge:
 
-```Go
+**Calculating a future date:**
+```
 package main
 
 import (
@@ -26,36 +33,42 @@ import (
 )
 
 func main() {
-	// आज की तारीख लेना
-	today := time.Now()
-
-	// आगे का आधे साल का हिसाब लगाना
-	future := today.AddDate(0, 6, 0)
-	fmt.Println("आगे का आधे साल:", future.Format("02 January 2006"))
-
-	// पीछे का एक साल का हिसाब लगाना
-	past := today.AddDate(-1, 0, 0)
-	fmt.Println("पीछे का एक साल:", past.Format("02 January 2006"))
-
-	// आगे का तीन महीने का हिसाब लगाना
-	futureMonth := today.AddDate(0, 3, 0)
-	fmt.Println("आगे का तीन महीने:", futureMonth.Format("02 January 2006"))
-
-	// पीछे का दस दिन का हिसाब लगाना
-	pastDays := today.AddDate(0, 0, -10)
-	fmt.Println("पीछे का दस दिन:", pastDays.Format("02 January 2006"))
+	start := time.Date(2020, time.April, 5, 8, 30, 0, 0, time.UTC)
+	futureDate := start.AddDate(0, 0, 10) //adding 10 days to start date
+	fmt.Printf("The future date is: %v", futureDate)
 }
 ```
 
-आउटपुट:
-
+Output:
 ```
-आगे का आधे साल: 21 मार्च 2021
-पीछे का एक साल: 21 सितंबर 2019
-आगे का तीन महीने: 21 जनवरी 2020
-पीछे का दस दिन: 11 सितंबर 2019
+The future date is: 2020-04-15 08:30:00 +0000 UTC
 ```
 
-## गहराई में जाएं
+**Calculating a past date:**
+```
+package main
 
-तारीख का हिसाब लगाने में गो भाषा एक बहुत ही शक्तिशाली उपकरण है। यह आपको अनेक तरीकों से तारीख का हिसाब लगाने की सुविधा प्रदान करता है। आप `AddDate()` फंक्शन के जरिए आगे या पीछे की तारीख को हिसाब लगा सकते हैं जो आपको साल, महीने और दिनों के साथ आधे साल, एक साल या कुछ दिनों का हिसाब लगाने में मदद करता
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	start := time.Date(2020, time.April, 15, 8, 30, 0, 0, time.UTC)
+	pastDate := start.AddDate(0, 0, -10) //subtracting 10 days from start date
+	fmt.Printf("The past date is: %v", pastDate)
+}
+```
+
+Output:
+```
+The past date is: 2020-04-05 08:30:00 +0000 UTC
+```
+
+## Deep Dive
+Calculating dates in the future or past is a common task in programming, and Go provides us with the powerful ```time``` package to make this task easier. The ```AddDate``` method takes in three arguments - years, months and days - and adds them to the start date to calculate the desired date. We can also manipulate the dates by adding or subtracting different values for these arguments.
+
+## Dekhiye bhi
+1. [Official Go Language website](https://golang.org/)
+2. [Tutorialspoint - Go Programming Language](https://www.tutorialspoint.com/go/index.htm)
+3. [Code Academy - Learn Go](https://www.codecademy.com/learn/learn-go)

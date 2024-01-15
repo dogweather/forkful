@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "Töiden tekeminen csv:n kanssa"
+html_title:           "Kotlin: Töiden tekeminen csv:n kanssa"
+simple_title:         "Töiden tekeminen csv:n kanssa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää CSV-tiedostoja Kotlinilla?
+## Miksi
 
-CSV-tiedostot ovat yleinen tapa tallentaa ja vaihtaa taulukkomuotoisia tietoja, kuten tietokannan tietoja tai Excel-taulukoita. Koska Kotlin tarjoaa sujuvaa ja helppoa tapaa käsitellä tiedostoja, CSV-tiedostot ovat hyvä vaihtoehto tietojen tallentamiselle ja käsittelylle.
+Monet yritykset ja organisaatiot käyttävät CSV-muotoa tallentaakseen ja jakaa tietoa. Näiden tiedostojen käsittely on tärkeä taito, joka voi parantaa tuottavuutta ja tehokkuutta.
 
-## Näin käytät CSV-tiedostoja Kotlinilla
-
-CSV-tiedostoja voidaan lukea ja kirjoittaa käyttäen `java.io.File` ja `kotlinx.io` kirjastoja. Ensimmäisenä meidän täytyy määritellä tiedoston sijainti:
+## Miten
 
 ```Kotlin
-val file = File("tiedosto.csv")
+import java.io.File
+import kotlin.io.readLine
+
+// Luodaan uusi CSV-tiedosto
+val tiedosto = File("tiedosto.csv")
+
+// Kirjoitetaan rivi tiedostoon
+tiedosto.appendText("Nimi, Ikä, Sukupuoli\n")
+
+// Luetaan tiedoston sisältö ja tallennetaan se muuttujaan
+val sisalto = tiedosto.readLines()
+
+// Käytetään sisältöä
+println(sisalto[0]) // tulostaa "Nimi, Ikä, Sukupuoli"
+
+// Muutetaan sisältö listaan
+val tietueet = sisalto.map{it.split(",")}
+// Tulostetaan toisen tietueen ikä
+println(tietueet[1][1]) // tulostaa "25"
 ```
 
-CSV-tiedostossa tietueet ovat jakautuneet pilkulla erillisiksi kentiksi ja rivit vaihdetaan. Voimme käyttää `useLines` metodia lukeaksemme kaikki rivit ja jakaa ne pilkun avulla:
+## Syväsukellus
 
-```Kotlin
-file.useLines { lines ->
-    lines.forEach { line ->
-        val items = line.split(",")
-        println(items)
-    }
-}
-```
-
-Jos haluamme kirjoittaa CSV-tiedostoon, voimme käyttää `PrintWriter` ja `forEachLine` metodia:
-
-```Kotlin
-val pw = PrintWriter(file)
-
-var data = listOf("John,32", "Jane,28", "Matt,40")
-
-data.forEach {
-    pw.println(it)
-}
-
-pw.close()
-```
-
-## Syvemmälle CSV-tiedostojen käsittelyyn
-
-CSV-tiedostojen käsittelyyn on olemassa myös monia hyödyllisiä kirjastoja, kuten `com.opencsv`. Tämä kirjasto tarjoaa sujuvan tavan lukea ja kirjoittaa CSV-tiedostoja käyttäen `CSVReader` ja `CSVWriter` luokkia.
-
-Voimme myös käyttää `@CsvBindByName` annotaatiota luokan ominaisuuksien määrittämiseen, jolloin `opencsv` kirjasto hoitaa automaattisesti tietojen käsittelyn.
+CSV-tiedosto koostuu riveistä ja sarakkeista, joita erottaa erityinen merkki, usein pilkku. Kotlin tarjoaa monia tehokkaita toimintoja, kuten `readLines()` ja `split()`, jotka helpottavat tiedoston käsittelyä. On myös mahdollista käyttää erilaisia ​​kirjastoja ja työkaluja, kuten *Apache Commons CSV*, jotka tarjoavat enemmän toiminnallisuuksia.
 
 ## Katso myös
 
-- [Java.io.File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Kotlinx.io](https://kotlinlang.org/api/latest/kotlinx.io/kotlin.io/)
-- [OpenCSV 5.3](http://opencsv.sourceforge.net/)
+- [Java, CSV ja Apache Commons CSV](https://www.baeldung.com/apache-commons-csv)
+- [CSV-tiedostojen käsittely Kotlinilla](https://www.callicoder.com/kotlin-convert-file-csv-to-arraylist-write-csv-file/)

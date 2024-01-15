@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Convertir une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Ruby: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,32 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur Ruby, alors vous savez probablement qu'il est courant de travailler avec des dates dans votre code. Cependant, parfois, vous pourriez avoir besoin de convertir une date en une chaîne de caractères. Dans cet article, nous allons explorer pourquoi et comment effectuer cette conversion en utilisant Ruby.
+Si vous travaillez avec des dates dans vos programmes Ruby, il peut être utile de les convertir en chaînes de caractères pour une meilleure lisibilité. Par exemple, au lieu d'avoir une date sous forme de nombres, vous pouvez l'afficher dans un format plus compréhensible pour l'utilisateur, comme "15 janvier 2020".
 
 ## Comment faire
 
-Tout d'abord, nous allons définir une variable contenant une date :
+Pour convertir une date en chaîne de caractères en Ruby, vous pouvez utiliser la méthode `strftime`. Voici un exemple de code pour convertir une date en format jour/mois/année dans une chaîne de caractères :
 
-```
-date = Time.new(2021, 10, 31)
-```
-
-Ensuite, nous allons utiliser la méthode `strftime` pour convertir cette date en une chaîne de caractères, en spécifiant un format de notre choix :
-
-```
-date.strftime("%d/%m/%Y")
+```ruby
+date = Time.new(2020, 01, 15)
+puts date.strftime("%d/%m/%Y")
 ```
 
-Ce qui donnera comme résultat `"31/10/2021"`. Vous pouvez également utiliser différentes directives pour obtenir un formatage spécifique, telles que `%B` pour le mois complet en lettres ou `%H` pour l'heure au format 24h.
+La méthode `strftime` prend en paramètre une chaîne de formatage, qui va déterminer comment la date sera affichée. Dans cet exemple, `%d` correspond au jour, `%m` au mois et `%Y` à l'année. Vous pouvez consulter la documentation officielle de Ruby pour voir tous les formats disponibles.
+
+Si vous souhaitez ajouter l'heure à votre chaîne de caractères, vous pouvez utiliser le formatage `%H` pour l'heure et `%M` pour les minutes :
+
+```ruby
+date = Time.new(2020, 01, 15, 14, 30)
+puts date.strftime("%d/%m/%Y à %Hh%M")
+```
+
+Cela affichera la date sous la forme "15/01/2020 à 14h30".
 
 ## Plongée en profondeur
 
-La méthode `strftime` utilise les bibliothèques `strftime` du système pour effectuer cette conversion. Ces bibliothèques sont également utilisées par les commandes UNIX `date` et `strftime`, ce qui nous permet de bénéficier d'une grande flexibilité quant au formatage des dates en utilisant Ruby.
+La méthode `strftime` peut sembler un peu compliquée au premier abord, mais elle est en réalité très puissante. Elle vous permet de formater une date de manière précise en utilisant différents symboles pour chaque élément (jour, mois, année, heure, etc.). En plus des formats de temps présentés ci-dessus, vous pouvez également utiliser des formats pour les jours de la semaine, les noms de mois, les fuseaux horaires, etc.
 
-De plus, la méthode `strftime` peut également prendre en compte la langue et la région de votre système pour afficher les dates dans un format spécifique. Cela peut être utile si vous travaillez avec des données multilingues dans votre application.
+L'un des avantages de cette méthode est qu'elle est très portable. Elle fonctionne aussi bien avec les objets `Time` que `DateTime` ou `Date`. Elle est également disponible dans d'autres langages de programmation, tels que Python ou PHP.
+
+Il est important de noter que le résultat de `strftime` sera toujours une chaîne de caractères. Si vous avez besoin de manipuler la date en tant qu'objet, vous pouvez utiliser la méthode `strptime` pour convertir une chaîne de caractères en date.
 
 ## Voir aussi
-
-- [La documentation officielle de Ruby sur la méthode `strftime`](https://ruby-doc.org/core-3.0.2/Time.html#method-i-strftime)
-- [Un tutoriel en français pour formater les dates en Ruby](https://zestedesavoir.com/tutoriels/849/formater-des-dates-avec-ruby/)
-- [Une autre méthode pour convertir les dates en chaînes de caractères en utilisant la classe `DateTime`](https://www.youtube.com/watch?v=fLvCCw8JUWo)
+- [Documentation officielle sur `strftime`](https://ruby-doc.org/core-2.7.0/Time.html#method-i-strftime)
+- [Liste complète des formats de `strftime`](https://docs.ruby-lang.org/en/2.6.0/Time/strftime.html)
+- [Guide en français sur les dates en Ruby](https://www.rubyguides.com/2015/12/ruby-date-format/)

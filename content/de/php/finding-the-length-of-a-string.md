@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Die Länge einer Zeichenkette finden."
-simple_title:         "Die Länge einer Zeichenkette finden."
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "PHP: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,23 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum: Stringlänge ist ein häufig verwendetes Konzept in der Programmierung. Es hilft uns, die Größe und Struktur eines Strings zu verstehen und die richtigen Manipulationen darauf durchzuführen.
+## Warum
 
-Wie: Die Länge eines Strings kann mithilfe der integrierten Funktion `strlen()` in PHP gefunden werden. Diese Funktion nimmt den String als Parameter entgegen und gibt die Anzahl der Zeichen im String zurück. Hier ist ein Beispielcode, der die Verwendung von `strlen()` zeigt:
+Das Finden der Länge einer Zeichenkette ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte. Es ermöglicht es, die Größe einer Zeichenfolge zu bestimmen, was bei der Verarbeitung von Benutzereingaben oder der Datenbankabfrage unerlässlich ist.
+
+## Wie geht es
+
+Um die Länge einer Zeichenkette in PHP zu finden, können wir die folgende Funktion verwenden:
 
 ```PHP
-<?php
-$string = "Hallo Welt";
-echo strlen($string); // Ausgabe: 10
+$string = "Hallo Welt!";
+echo strlen($string);
 ```
 
-Um die Länge eines Strings zu finden, müssen wir den String zunächst in einer Variablen speichern und dann `strlen()` auf diese Variable anwenden. Die Ausgabe des obigen Codes ist 10, da der String "Hallo Welt" insgesamt 10 Zeichen enthält.
+Dieses Beispiel zeigt, wie die Funktion `strlen` benutzt wird, um die Länge der Zeichenkette "Hallo Welt!" zu finden. Sie gibt die Anzahl der Zeichen in der Zeichenkette zurück, in diesem Fall 11.
 
-Deep Dive: Die `strlen()` Funktion hat einige Besonderheiten, auf die man achten sollte. Zum Beispiel zählt sie nur die tatsächlichen Zeichen im String und nicht die Leerzeichen oder Sonderzeichen. Das bedeutet, dass in einem String wie "Hallo Welt!" die Länge nur 11 beträgt, obwohl der String insgesamt 12 Zeichen enthält.
+Eine weitere Möglichkeit ist die Verwendung der Funktion `mb_strlen`, die für mehrbytefähige Zeichenketten wie z.B. Unicode-Zeichen besser geeignet ist. Hier ist ein Beispiel:
 
-Außerdem muss beachtet werden, dass `strlen()` die Länge des Strings auch in Bezug auf die verwendete Codierung berechnet. Dies kann zu Unterschieden in der Länge führen, abhängig davon, ob der String in UTF-8 oder einer anderen Codierung vorliegt.
+```PHP
+$string = "äöü";
+echo mb_strlen($string, 'UTF-8');
+```
 
-Siehe auch:
-- Offizielle PHP-Dokumentation zu `strlen()`: https://www.php.net/manual/de/function.strlen.php
-- Ein ausführliches Tutorial zu Strings in PHP: https://phpentwickler.de/string-benutzung-php.html
-- Praktische Beispiele zur Verwendung von `strlen()`: https://www.php-kurs.com/stringlaenge.htm
+Dieses Beispiel verwendet die Funktion `mb_strlen`, um die Länge der Zeichenkette "äöü" zu finden. Beachten Sie, dass wir hier als zweites Argument die Zeichenkodierung angeben, um sicherzustellen, dass sie für mehrbytefähige Zeichen richtig berechnet wird.
+
+## Deep Dive
+
+Wie funktioniert die `strlen` Funktion überhaupt? Im Grunde genommen durchläuft sie jede einzelne Zeichen der Zeichenkette und zählt sie. Dabei wird jedoch nicht nur das sichtbare Zeichen gezählt, sondern auch Leerzeichen und unsichtbare Zeichen wie z.B. Zeilenumbrüche.
+
+Es ist auch wichtig zu beachten, dass die Funktion `strlen` die Länge der Zeichenkette in Bytes zählt, nicht in Zeichen. Dies kann zu unerwarteten Ergebnissen führen, wenn die Zeichenfolge mehrbytefähige Zeichen enthält.
+
+Die `mb_strlen` Funktion hingegen verwendet eine komplexere Logik, um die Länge der Zeichenkette zu bestimmen. Sie ist in der Lage, mehrbytefähige Zeichen korrekt zu zählen und kann auch mit verschiedenen Zeichenkodierungen umgehen.
+
+Insgesamt ist es wichtig, zu verstehen, wie diese Funktionen arbeiten und wann man welche Funktion am besten einsetzt, um die Länge einer Zeichenkette in PHP zu finden.
+
+## Siehe auch
+
+- [PHP manual: String length](https://www.php.net/manual/en/function.strlen.php)
+- [PHP manual: Multi-byte String functions](https://www.php.net/manual/en/book.mbstring.php)

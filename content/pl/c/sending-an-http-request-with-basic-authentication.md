@@ -1,6 +1,7 @@
 ---
-title:                "C: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania http z podstawową autoryzacją."
+html_title:           "C: Wysyłanie żądania http z podstawową autoryzacją."
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją."
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,94 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego 
 
-W dzisiejszych czasach wiele aplikacji i stron internetowych korzysta z uwierzytelniania podstawowego (basic authentication), aby zapewnić bezpieczeństwo i dostęp tylko dla uprawnionych użytkowników. Dlatego warto poznać, jak wysyłać żądanie HTTP z uwierzytelnieniem podstawowym, aby móc swobodnie korzystać z różnych serwisów.
+W dzisiejszych czasach wiele aplikacji i stron internetowych wymaga uwierzytelnienia użytkownika za pomocą podstawowej autoryzacji HTTP. Jest to niezbędne do zapewnienia bezpieczeństwa i dostępu do poufnych danych. W tym artykule dowiecie się, dlaczego warto wiedzieć, jak wysyłać żądania HTTP z podstawową autoryzacją w języku C.
 
-## Jak to zrobić
+## Jak To Zrobić 
 
-Aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym w języku C, najpierw musimy utworzyć odpowiednie nagłówki (headers) dla naszego żądania. Dzięki nim serwer będzie wiedział, że wykorzystujemy uwierzytelnianie podstawowe i będzie wymagał od nas podania loginu i hasła.
+Aby wysłać żądanie HTTP z podstawową autoryzacją w języku C, należy wykonać kilka kroków:
 
-Następnie musimy zaszyfrować login i hasło w formacie Base64, aby były bezpiecznie przesłane w zapytaniu. Możemy to zrobić używając funkcji `base64_encode` lub wykorzystując gotową bibliotekę, np. OpenSSL.
+1. Pierwszym krokiem jest zaimportowanie biblioteki `stdio.h` oraz `curl/curl.h`.
 
-W skrypcie poniżej pokazane jest, jak wysłać żądanie GET z uwierzytelnieniem podstawowym do serwera zabezpieczonego hasłem:
-
-```C
+```
 #include <stdio.h>
 #include <curl/curl.h>
-#include <openssl/bio.h>
-#include <openssl/evp.h>
+```
 
-// Funkcja kodująca login i hasło w formacie Base64
-char *base64_encode(const unsigned char *input, int length)
-{
-  BIO *bmem, *b64;
-  BUF_MEM *bptr;
-  b64 = BIO_new(BIO_f_base64());
-  bmem = BIO_new(BIO_s_mem());
-  b64 = BIO_push(b64, bmem);
-  BIO_write(b64, input, length);
+2. Następnie należy utworzyć strukturę `CURL` oraz zainicjować ją za pomocą funkcji `curl_easy_init()`.
 
-  BIO_flush(b64);
-  BIO_get_mem_ptr(b64, &bptr);
+```
+CURL *curl;
+curl = curl_easy_init();
+```
 
-  char *buff = (char *)malloc(bptr->length);
-  memcpy(buff, bptr->data, bptr->length-1);
-  buff[bptr->length-1] = 0;
+3. Teraz można ustawić adres URL, do którego zostanie wysłane żądanie, za pomocą funkcji `curl_easy_setopt()`.
 
-  // Usuń znaki nowej linii i zamień spacje na znaki "+"
-  for (int i = 0; i < strlen(buff); i++) {
-    if(buff[i] == '\n') {
-      buff[i] = '\0';
-    }
-    else if(buff[i] == ' ') {
-      buff[i] = '+';
-    }
-  }
+```
+curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+```
 
-  BIO_free_all(b64);
-  return buff;
-}
+4. Kolejnym ważnym krokiem jest ustawienie opcji `CURLOPT_HTTPAUTH` na wartość `CURLAUTH_BASIC`, co oznacza, że nasze żądanie będzie wysłane z podstawową autoryzacją HTTP.
 
-// Funkcja obsługująca zdarzenia związane z przesyłaniem danych przez CURL
-size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
-{
-    // Przekaż dane do standardowego strumienia wyjścia
-    return fwrite(ptr, size, nmemb, stdout);
-}
+```
+curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+```
+
+5. Aby dodać nazwę użytkownika i hasło, należy użyć funkcji `curl_easy_setopt()` z opcją `CURLOPT_USERPWD`.
+
+```
+curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+```
+
+6. Następnie możemy wykonać żądanie za pomocą funkcji `curl_easy_perform()`.
+
+```
+curl_easy_perform(curl);
+```
+
+Po wykonaniu tych kroków, wysłane zostanie żądanie HTTP z podstawową autoryzacją. Poniżej znajduje się kompletny przykład kodu:
+
+```
+#include <stdio.h>
+#include <curl/curl.h>
 
 int main(void)
 {
   CURL *curl;
-  CURLcode res;
-  char *encoded_credentials;
-
-  // Utwórz nagłówki z informacją o uwierzytelnieniu podstawowym
-  struct curl_slist *headers = NULL;
-  headers = curl_slist_append(headers, "Authorization: Basic");
-
-  // Zaszyfruj login i hasło w formacie Base64
-  encoded_credentials = base64_encode("user:password", strlen("user:password"));
-
-  // Ustaw nagłówek z zaszyfrowanymi danymi
-  headers = curl_slist_append(headers, encoded_credentials);
-
-  // Inicjalizacja CURL
   curl = curl_easy_init();
   if(curl) {
-    // Ustaw opcje dla żądania GET
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/secure");
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-
-    // Wyślij żądanie i odbierz odpowiedź
-    res = curl_easy_perform(curl);
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    // Zakończ połączenie CURL
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+    curl_easy_perform(curl);
     curl_easy_cleanup(curl);
   }
+  return 0;
+}
+```
 
-  // Zwolnij pamięć zaalokowaną dla kodowania Base64
+Aby wyświetlić powrót od serwera, można dodać do kodu funkcję `printf()`, która wydrukuje odpowiedź w konsoli.
+
+## Deep Dive
+
+Podczas wysyłania żądania HTTP z podstawową autoryzacją, warto zrozumieć, jakie są jej podstawowe elementy. Nazwa użytkownika i hasło są zazwyczaj wysyłane w formacie `nazwa_użytkownika:hasło`, a następnie są kodowane w odpowiedni sposób, aby uniknąć przesyłania ich w sposób jawny przez sieć.
+
+Podstawowa autoryzacja odbywa się poprzez wysłanie nagłówka `Authorization` wraz z wartością `Basic` oraz zakodowaną nazwą użytkownika i hasłem. Serwer odbierając takie żądanie, dekoduje dane i sprawdza, czy są one poprawne.
+
+## Zobacz Również
+
+Jeśli chcesz pogłębić swoją wiedzę na temat wysyłania żądań HTTP z podstawową autoryzacją w języku C, polecamy zapoznać się z następującymi artykułami i dokumentacjami:
+
+- [Dokumentacja biblioteki libcurl](https://curl.haxx.se/libcurl/c)
+- [Strona oficjalna języka C](https://www.cplusplus.com/)
+- [Wykorzystanie podstawowej autoryzacji w protokole HTTP](https://en.wikipedia.org/wiki/Basic_access_authentication)

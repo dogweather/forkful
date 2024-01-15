@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Clojure: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,41 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML em Clojure?
+## Por que trabalhar com YAML?
 
- YAML é uma linguagem de marcação de fácil leitura e escrita, frequentemente utilizada para configuração de sistemas e transferência de dados. Ao utilizar o Clojure, é possível manipular e gerar arquivos YAML de forma simples e eficiente.
+Se você está se aventurando no mundo da programação, provavelmente já se deparou com o formato de arquivo YAML. Ele tem sido cada vez mais utilizado em projetos de desenvolvimento de software, especialmente em linguagens como Clojure. Mas por que alguém utilizaria YAML em vez de outras opções? Bem, vamos mergulhar nisso!
 
-## Como fazer:
+## Como utilizar o YAML em Clojure
 
-```Clojure 
-(ns yaml-exemplo.core
-  (:require [clojure.java.io :as io])
-  (:import [org.yaml.snakeyaml YAML])) ; importando a biblioteca YAML
+A primeira coisa que você precisa saber é que YAML é uma linguagem de marcação de dados, o que significa que ela é usada para representar informações em um formato legível tanto para humanos quanto para máquinas. Em Clojure, podemos utilizar a biblioteca `yaml.core` para trabalhar com arquivos YAML. Vamos ver um exemplo simples de como ler e imprimir os dados de um arquivo YAML:
 
-;; Criando um mapa com dados para serem transformados em YAML
-(def dados {:nome "João" :sobrenome "Silva" :idade 28})
+```Clojure
+(ns meu-projeto.yesql
+  (:require [yaml.core :as yaml]))
 
-;; Utilizando a função dump da biblioteca SnakeYAML para gerar o arquivo YAML
-(with-open [out (io/output-stream "dados.yaml")]
-  (YAML/dump dados out))
-
-;; Lendo um arquivo YAML e transformando em mapa
-(with-open [in (io/reader "dados.yaml")]
-  (YAML/load in))
-
+(def config (yaml/read-string "meu-config.yaml"))
+(println config)
 ```
 
-## Mergulho Profundo:
+Aqui, importamos a biblioteca `yaml.core` e a renomeamos para `yaml` para facilitar a utilização. Em seguida, utilizamos a função `read-string` para ler o conteúdo do arquivo YAML e armazenamos em uma variável chamada `config`. Por fim, imprimimos os dados utilizando a função `println`. Vamos supor que o nosso arquivo YAML tenha o seguinte conteúdo:
 
-Ao trabalhar com YAML em Clojure, é importante ter em mente as diferenças entre o formato YAML e a estrutura de dados do Clojure. Algumas dicas para esta integração entre as duas linguagens:
+```yaml
+nome: João
+idade: 30
+profissão: desenvolvedor
+```
 
-- Para criar um mapa em YAML, utilize chaves ({}). Por exemplo: `{:nome "Maria" :sobrenome "Santos" :idade 32}`.
-- Para criar uma lista em YAML, utilize colchetes ([]). Por exemplo: `["primeiro elemento" "segundo elemento" "terceiro elemento"]`.
-- Para criar um conjunto em YAML, utilize colchetes ({}) com o prefixo `#set`. Por exemplo: `#set [1 2 3 4 5]`.
-- Ao ler um arquivo YAML, utilize a função `load` e não `load-all`. A função `load` retorna apenas um mapa, enquanto `load-all` retorna uma sequência de mapas.
+A saída do nosso exemplo seria:
 
-## Veja também:
+```clojure
+{:nome "João", :idade 30, :profissão "desenvolvedor"}
+```
 
-- [Site oficial da linguagem YAML](https://yaml.org/)
-- [Documentação da biblioteca SnakeYAML](https://bitbucket.org/asomov/snakeyaml/src/default/)
-- [Exemplo de uso de YAML em Clojure](https://www.baeldung.com/java-snake-yaml)
+Viu como é simples? Agora vamos para uma tarefa mais desafiadora: criar um arquivo YAML a partir de um mapa em Clojure. Para isso, podemos utilizar a função `write-string` e passar o mapa como argumento:
+
+```clojure
+(yaml/write-string {:linguagem "Clojure", :ano 2007})
+```
+
+A saída seria:
+
+```yaml
+linguagem: Clojure
+ano: 2007
+```
+
+## Aprofundando no YAML
+
+Em Clojure, a biblioteca `yaml.core` oferece uma série de funções úteis para trabalhar com arquivos YAML. Por exemplo, podemos utilizar a função `parse-file` para ler e converter o conteúdo de um arquivo YAML diretamente para uma estrutura de dados em Clojure. Além disso, podemos alterar algumas configurações padrão, como a preservação da ordem das chaves do mapa, usando a função `yaml.core/set-parser-settings`.
+
+Uma dica importante ao trabalhar com YAML em Clojure é sempre garantir que os dados estejam corretamente formatados, já que YAML é sensível a espaçamentos e indentação. Então, sempre preste atenção a esses detalhes ao criar ou modificar arquivos YAML.
+
+## Veja também
+
+- [Documentação oficial da biblioteca YAML em Clojure](https://github.com/cheshire-clj/cheshire)
+- [Tutorial sobre YAML em Clojure](https://lambdaisland.com/guides/clojure-yaml)

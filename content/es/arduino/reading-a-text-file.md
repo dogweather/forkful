@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Leyendo un archivo de texto"
+title:                "Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,44 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberías leer un archivo de texto en Arduino?
+# ¿Por qué leer un archivo de texto en Arduino?
 
-Si estás buscando una forma de almacenar y leer grandes cantidades de datos en tu proyecto de Arduino, leer un archivo de texto es una excelente opción. Puedes guardar cualquier tipo de información en un archivo de texto, como valores de sensores, mensajes o configuraciones. Además, leer un archivo de texto te permite modificar fácilmente los datos sin tener que reescribir tu código.
+Si estás familiarizado con Arduino, sabrás que es una herramienta versátil que se utiliza para controlar diferentes componentes y realizar diversas tareas. Una de esas tareas puede ser leer un archivo de texto, lo que puede ser útil para almacenar y recuperar datos o configuraciones en tu proyecto de Arduino.
 
-## Cómo leer un archivo de texto en Arduino
+# Cómo hacerlo
 
-Para comenzar, necesitarás tener un archivo de texto en la misma ubicación que tu código de Arduino. Puedes crear y editar este archivo de texto en cualquier editor de texto en tu computadora. Asegúrate de guardarlo con la extensión ".txt".
+Para leer un archivo de texto en Arduino, necesitarás los siguientes componentes:
+- Una placa de Arduino (cualquier versión debería funcionar)
+- Un lector de tarjetas SD
+- Una tarjeta SD
+- Cables de conexión
+- Un archivo de texto con los datos que deseas leer (asegúrate de que esté guardado en la tarjeta SD)
 
-Una vez que tengas tu archivo de texto, puedes usar la función `File` para abrirlo en tu código de Arduino. A continuación, puedes utilizar la función `readStringUntil()` para leer línea por línea el contenido del archivo.
+Antes de comenzar con el código, es importante mencionar que el lector de tarjetas SD debe estar conectado a los pines SPI de tu placa de Arduino. Ahora, veamos el código necesario para leer un archivo de texto en Arduino:
 
-Aquí hay un ejemplo de cómo leer un archivo de texto que contiene los valores de temperatura almacenados en líneas separadas:
+```
+#include <SPI.h>  // Incluimos la librería para manejar el lector de tarjetas SD
+#include <SD.h>   // Incluimos la librería para leer tarjetas SD
 
-```Arduino
-// Abre el archivo de texto
-File archivo = SD.open("temperaturas.txt");
+File myFile;  // Creamos una variable para almacenar nuestro archivo de texto
 
-// Lee una línea del archivo y la guarda como una cadena
-String lectura = archivo.readStringUntil('\n');
+void setup() {
+   Serial.begin(9600);  // Iniciamos la comunicación serial a una velocidad de 9600 baudios
+   while (!Serial) {
+      ;  // Esperamos a que esté lista la comunicación serial (sólo necesario para algunas placas de Arduino)
+   }
 
-// Imprime la línea leída en el monitor serial
-Serial.println(lectura);
+   Serial.print("Iniciando lector de tarjetas SD...");
+   if (!SD.begin(4)) {  // Iniciamos el lector de tarjetas SD en el pin 4 (puedes cambiarlo si lo necesitas)
+      Serial.println("¡Fallo!");
+      while (1);  // En caso de error, detenemos la ejecución del programa
+   }
+   Serial.println("¡Listo!");
+   
+   myFile = SD.open("archivo.txt");  // Abrimos nuestro archivo de texto y lo almacenamos en la variable `myFile`
+   
+   if (myFile) {  // Si el archivo existe
+      Serial.println("Leyendo archivo...");
+      
+      // Leemos línea por línea y lo imprimimos en la consola serial
+      while (myFile.available()) {
+         Serial.write(myFile.read());
+      }
+      myFile.close();  // Cerramos el archivo
+   } else {
+      // Si el archivo no existe, imprimimos un mensaje de error
+      Serial.println("¡Error al abrir el archivo!");
+   }
+}
 
-// Cierra el archivo
-archivo.close();
+void loop() {
+   // El código para leer y mostrar el archivo en la consola serial sólo se ejecuta una vez en el setup
+}
 ```
 
-La salida de este código mostrará la primera línea de tu archivo de texto, que en este caso sería el primer valor de temperatura guardado. Puedes continuar leyendo el archivo de esta manera para obtener todos los valores que necesitas.
+La salida en la consola serial debería ser algo como esto:
+```
+Iniciando lector de tarjetas SD...¡Listo!
+Leyendo archivo...
+Contenido de archivo de texto.
+¡Todo listo!
+```
 
-## Profundizando en la lectura de archivos de texto
+# Profundizando en la lectura de archivos de texto
 
-Existen muchas más funciones y métodos que puedes utilizar para leer archivos de texto en Arduino, como `parseInt()`para convertir los valores leídos en enteros o `parseFloat()` para convertirlos en números de punto flotante. También puedes usar bucles y condicionales para leer y procesar todo el contenido de un archivo de texto.
+Mientras que este código básico es suficiente para leer un archivo de texto en Arduino, existen otras funciones y métodos que pueden ser útiles dependiendo de tus necesidades. Por ejemplo, si quieres leer sólo una parte específica del archivo o si necesitas almacenar los datos en variables para utilizarlos en tu código.
 
-Además, es importante tener en cuenta que Arduino tiene un límite de memoria disponible para almacenar y procesar datos, por lo que asegúrate de no leer archivos de texto demasiado grandes o tu programa podría dejar de funcionar.
+Una función importante es `read()`, que permite leer carácter por carácter en lugar de línea por línea. También puedes utilizar `seek()` para moverte a una posición específica en el archivo y `readBytes()` si quieres leer un número determinado de bytes en lugar de una línea o carácter específico.
 
-# Vea también
+Si deseas profundizar aún más, la documentación oficial de Arduino tiene una lista completa de funciones y métodos disponibles para la lectura de archivos de texto.
 
-- Documentación oficial de Arduino sobre [lectura de archivos](https://www.arduino.cc/reference/en/libraries/sd/)
-- Tutorial de SparkFun sobre [archivos de texto en Arduino](https://learn.sparkfun.com/tutorials/reading-and-writing-files-to-the-sd-card)
-- Ejemplo de proyecto de [Arduino y SD card](https://www.instructables.com/id/Reading-and-Writing-Text-Files/)
+# Ver también
 
-¡Ahora estás listo para utilizar archivos de texto en tus proyectos de Arduino! Con esta función, podrás almacenar y leer grandes cantidades de datos de una manera fácil y organizada. ¡Experimenta con distintos tipos de archivos y encuentra la mejor forma de utilizarlos en tus proyectos!
+- [Documentación oficial de Arduino sobre lectura de archivos de texto](https://www.arduino.cc/en/Reference/SD)
+- [Ejemplo de lectura de un archivo de texto en Arduino](https://www.circuitbasics.com/arduino-basics-read-a-text-file-and-print-it/)
+- [Ejemplos de proyectos con lectura de archivos de texto en Arduino](https://create.arduino.cc/projecthub/search?q=text%20file&category=other&input=)

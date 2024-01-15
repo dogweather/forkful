@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Sammenligning av to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "Rust: Sammenligning av to datoer"
 simple_title:         "Sammenligning av to datoer"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,52 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-I programmering er det viktig å kunne sammenligne og operere med ulike typer data. En viktig del av dette er å sammenligne to datoer. Det kan være nyttig for å sortere data, finne ut når en hendelse skjedde eller for å sjekke om en dato er før eller etter en annen. I denne artikkelen vil vi utforske hvordan man kan gjøre dette i Rust-programmeringsspråket.
+Du har kanskje lurt på hvordan man kan sammenligne to datoer i Rust? Kanskje du er i ferd med å utvikle en applikasjon som trenger dette funksjonaliteten, eller kanskje du bare er nysgjerrig. Uansett grunn, i denne artikkelen vil vi se nærmere på hvordan du kan gjøre dette på en enkel og effektiv måte ved hjelp av Rusts innebygde funksjoner.
 
-# Hvordan
+## Hvordan
 
-For å sammenligne to datoer i Rust trenger vi å bruke et bibliotek kalt "chrono". Først må vi importere biblioteket ved å legge det til i prosjektets avhengigheter. Dette kan gjøres i din Cargo.toml-fil ved å legge til følgende linje under [dependencies]:
+For å sammenligne to datoer i Rust, bruker vi typen `DateTime<Utc>` fra biblioteket `chrono`. La oss se på et eksempel:
 
-```rust
-chrono = { version = "0.4", features = ["serde"] }
-```
+```Rust
+use chrono::{DateTime, Utc, NaiveDate};
 
-Vi må også importere biblioteket i selve koden vår ved å legge til følgende linje:
+// Opprett to datoer
+let dato1 = NaiveDate::from_ymd(2021, 07, 22);
+let dato2 = NaiveDate::from_ymd(2021, 07, 20);
 
-```rust
-use chrono::{DateTime, Utc};
-```
+// Konverter datoene til DateTime<Utc> for å sammenligne
+let dateTime1 = DateTime::<Utc>::from_utc(dato1.and_hms(0, 0, 0), Utc);
+let dateTime2 = DateTime::<Utc>::from_utc(dato2.and_hms(0, 0, 0), Utc);
 
-Nå kan vi begynne å sammenligne to datoer. La oss starte med å opprette to DateTime-objekter, en for hver dato:
-
-```rust
-let dato1 = Utc.ymd(2022, 6, 26).and_hms(9, 0, 0);
-let dato2 = Utc.ymd(2021, 1, 1).and_hms(12, 30, 0);
-```
-
-Så kan vi sammenligne de to datoene ved å bruke operatorer som er tilgjengelige fra chrono-biblioteket. For eksempel kan vi se om dato2 er før dato1 ved å skrive:
-
-```rust
-if dato2 < dato1 {
-    println!("Dato 2 er før dato 1");
+// Bruk '<' eller '>' operatører for å sammenligne
+if dateTime1 < dateTime2 {
+    println!("{} er før {}", dato1, dato2);
 } else {
-    println!("Dato 2 er etter dato 1");
+    println!("{} er før {}", dato2, dato1);
 }
 ```
 
-Andre nyttige operatorer for å sammenligne datoer inkluderer "==" (lik), "!=" (ikke lik), ">=" (større eller lik) og "<=" (mindre eller lik).
+I dette eksempelet, bruker vi funksjonen `from_ymd()` for å opprette to datoer. Deretter konverterer vi dem til `DateTime<Utc>` ved å bruke `from_utc()` og bruker deretter de vanlige sammenligningsoperatørene for å sammenligne dem.
 
-# Deep Dive
+Dette er en enkel måte å sammenligne datoer på, men husk å alltid konvertere datoene til `DateTime<Utc>` før du sammenligner dem for å unngå uforutsette resultater.
 
-Når vi sammenligner to datoer i Rust, bruker vi egentlig bare operatorer for å sammenligne de indre verdiene av DateTime-objektene. Dette betyr at vi sammenligner årstall, måneder, dager, timer, minutter og sekunder. For å få en dypere forståelse av hvordan sammenligningen fungerer kan vi se på DateTime-objektet som en tidslinje. Årstallet representerer starten av tidslinjen, og alle andre verdier legges til derfra.
+## Dypdykk
 
-Det er også viktig å merke seg at DateTime-objektene tar hensyn til tidsforskjeller og tidssoner. Derfor vil to datoer som ser identiske ut i koden, faktisk kunne være forskjellige i virkeligheten. For å unngå dette kan man bruke Utc-varianten av DateTime, som ignorerer tidssoner og tidsforskjeller.
+Hvis du ønsker å sammenligne datoer på en mer presis måte, kan du bruke funksjonene i `chrono`-biblioteket til å hente ut mer detaljert informasjon. For eksempel kan du bruke funksjonen `num_days_from_ce()` for å få antall dager fra år 0 til den angitte datoen.
 
-# Se også
+Du kan også bruke `format()`-funksjonen for å formatere datoen på ønsket måte, eller `weekday()`-funksjonen for å få navnet på ukedagen.
 
-Lær mer om chrono-biblioteket og hvordan det kan brukes til å håndtere datoer i Rust:
+For å utforske alle funksjonene i `chrono`-biblioteket, kan du ta en titt på dokumentasjonen her: [https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
 
-- [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Date and Time Handling in Rust with Chrono](https://www.codementor.io/@isaacyong/date-and-time-handling-in-rust-with-chrono-gnet9qnhw)
+## Se også
+
+- [Rust dokumentasjon](https://www.rust-lang.org/learn)
+- [Chrono-dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
+- [Stack Overflow-post om å sammenligne datoer i Rust](https://stackoverflow.com/questions/37552126/how-to-compare-dates-in-rust)

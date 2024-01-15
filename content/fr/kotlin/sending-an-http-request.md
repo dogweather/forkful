@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Envoyer une requête HTTP"
-simple_title:         "Envoyer une requête HTTP"
+title:                "Envoi d'une requête http"
+html_title:           "Kotlin: Envoi d'une requête http"
+simple_title:         "Envoi d'une requête http"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Les requêtes HTTP sont un élément essentiel de la programmation moderne. Elles permettent aux applications de communiquer avec des serveurs à travers le web et d'échanger des données. Apprenez comment les utiliser correctement pour tirer le meilleur parti de vos applications !
+## Pourquoi
 
-## Comment faire
-Pour effectuer une requête HTTP en Kotlin, vous pouvez utiliser une librairie externe telle que OkHttp ou utiliser les fonctions natives fournies par le langage. Voici un exemple de code utilisant les fonctions natives pour effectuer une requête GET et afficher le résultat dans la console :
+Si vous travaillez avec des applications web, il est probable que vous ayez besoin d'envoyer une requête HTTP à un serveur pour récupérer des données. Kotlin fournit une manière simple et efficace de le faire.
 
-```Kotlin
-val url = "https://api.github.com/users/username"
-val response = URL(url).readText()
-println(response)
+## Comment Faire 
+
+```Kotlin 
+// Importez la bibliothèque okhttp
+import okhttp3.*
+
+// Créez un client OkHttpClient
+val client = OkHttpClient()
+
+// Construisez l'URL de votre requête
+val url = "https://monsite.com/api/articles"
+
+// Créez une requête GET
+val request = Request.Builder()
+    .url(url)
+    .build()
+
+// Exécutez la requête et obtenez la réponse
+val response = client.newCall(request).execute()
+
+// Récupérez le corps de la réponse
+val responseBody = response.body?.string()
+
+// Imprimez le résultat dans la console
+println(responseBody)
 ```
 
-Cela enverra une requête à l'API GitHub pour récupérer les informations du profil de l'utilisateur donné et affichera le résultat dans la console. Il est également possible de spécifier des paramètres et des en-têtes dans la requête pour des fonctionnalités plus avancées.
+Output : Vous devriez voir les données de votre requête s'afficher dans la console.
 
-## Plongée en profondeur
-Lors de l'envoi d'une requête HTTP, il est important de comprendre les différents éléments qui la composent. Une requête est généralement composée d'une URL, d'une méthode (GET, POST, PUT, DELETE), d'éventuels paramètres et de corps de données. Le serveur répondra ensuite avec un code de statut et un résultat, généralement au format JSON ou XML.
+## Plongez Plus Profondément
 
-Pour une plus grande flexibilité et une meilleure gestion des erreurs, il est recommandé d'utiliser une librairie externe telle que Retrofit ou Volley pour gérer les requêtes HTTP dans vos applications Kotlin.
+En utilisant la bibliothèque okhttp, vous pouvez personnaliser votre requête en ajoutant des paramètres, des en-têtes et même en gérant les erreurs. Vous pouvez également utiliser des méthodes HTTP autres que GET, comme POST, PUT, DELETE, etc. pour modifier les données sur le serveur. Avec Kotlin, vous avez la flexibilité de choisir la méthode qui convient le mieux à votre application.
 
-# Voir aussi
-- Tutoriel sur l'utilisation de Retroft en Kotlin : https://futurestud.io/tutorials/retrofit-getting-started-and-android-client
-- Documentation officielle des fonctions de requête HTTP en Kotlin : https://kotlinlang.org/api/latest/jvm/stdlib/index.html?search=http%20requests
-- Liste des librairies populaires pour gérer les requêtes HTTP en Kotlin : https://github.com/KotlinBy/awesome-kotlin#networking
+## Voir Aussi
+
+- [Documentation OkHttp](https://square.github.io/okhttp/)
+- [Vidéo sur les requêtes HTTP avec Kotlin](https://www.youtube.com/watch?v=CUbY3zfEMWg)
+- [Tutoriel Kotlin sur les requêtes HTTP](https://www.raywenderlich.com/11359307-kotlin-tutorial-for-android-getting-started)

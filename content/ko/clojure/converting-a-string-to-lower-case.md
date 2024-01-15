@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 문자열을 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Clojure: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,27 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열을 소문자로 변환하는 작업을 맡게 될 이유는 간단합니다. 프로그래밍에서는 일반적으로 문자열을 소문자로 사용하기 때문입니다. 예를 들어, 입력한 문자열과 비교할 때 대소문자를 구분하지 않고 비교하고 싶을 때, 소문자로 변환한 뒤 비교하면 더 쉽고 간편합니다.
+우리는 때때로 문자열을 모두 소문자로 변환해야 할 때가 있습니다. 그것이 우리가 찾는 단어를 더 쉽게 찾도록 돕기 위함인지, 데이터를 일관되게 표시하기 위함인지, 혹은 다른 이유일지 모릅니다. 당신이 자신에게 맞는 이유를 말하기 전까지는, 우리는 그런 작업을 왜 해야 하는지에 대해 생각해볼 수 있습니다.
 
 ## 하기
 
-문자열을 소문자로 변환하는 방법은 매우 쉽습니다. 다음 코드 예제를 참고해주세요:
+우리가 Clojure를 사용해서 문자열을 소문자로 변환하는 방법을 알아봅시다. 그 방법은 간단합니다. 이러한 작업을 위해 내장된 함수 `lower-case`를 사용하면 됩니다.
 
 ```Clojure
-(defn to-lower [input-str]
-  (clojure.string/lower-case input-str))
-
-(to-lower "HELLO WORLD!") ; 출력 결과: "hello world!"
+(lower-case "HELLO WORLD")
 ```
 
-위의 코드 예제에서는 `defn` 키워드를 사용하여 `to-lower`라는 함수를 정의하고, `clojure.string/lower-case` 함수를 사용하여 입력된 문자열을 소문자로 변환하였습니다. 이렇게 간단하게 문자열을 소문자로 변환할 수 있습니다.
+출력은 다음과 같습니다:
 
-## 깊게 살펴보기
+```
+"hello world"
+```
 
-문자열을 소문자로 변환하는 작업은 `to-lower` 함수를 사용하여 간단하게 수행할 수 있지만, 실제로는 더 많은 작업을 수행하게 됩니다. 예를 들어, 한글 문자열은 ASCII 문자와 다른 문자셋을 사용하기 때문에, 영어와 한글을 모두 소문자로 변환하기 위해서는 추가적인 작업이 필요합니다. 또한, Unicode나 UTF-8 문자열을 소문자로 변환할 때도 주의해야 합니다. 따라서, 프로젝트에 따라 적합한 문자열 변환 함수를 선택하는 것이 중요합니다.
+위의 예시에서 볼 수 있듯이, 함수 `lower-case`는 문자열을 전달하면 그것을 모두 소문자로 변환해줍니다. 간단하죠? 그런데, 만약 우리가 벡터에 있는 모든 문자열을 소문자로 변환하려면 어떻게 해야 할까요? 다음과 같이 `map` 함수를 사용하면 됩니다:
+
+```Clojure
+(map lower-case ["HELLO WORLD" "BYE WORLD"])
+```
+
+출력은 다음과 같습니다:
+
+```
+("hello world" "bye world")
+```
+
+이렇게 `map` 함수를 사용하면 여러 개의 값에 대해서도 소문자로 변환할 수 있습니다.
+
+## 깊게 들어가보기
+
+어떻게 문자열을 소문자로 변환하는지 알아봤습니다. 지금부터는 함수 `lower-case`가 어떻게 작동하는지 조금 더 깊게 들어가보겠습니다.
+
+`lower-case` 함수는 인자로 문자열을 하나 받고, 그 문자열을 소문자로 변환한 새로운 문자열을 반환합니다. 그러나, 이 함수의 인자는 하나의 문자열이 아니라 문자열이 들어있는 구조체나 컬렉션, 혹은 여러 개의 문자열들이 들어있는 경우에도 동작합니다. 그렇기 때문에 위에서 살펴본 예시에서 `map` 함수를 사용해서 벡터 안에 있는 여러 개의 문자열을 소문자로 변환한 것이 가능한 것입니다.
 
 ## 참고
 
-- [Clojure 공식 문서 - 문자열 변환 함수](https://clojure.org/reference/strings#_lowercase_normalization)
-- [Clojure Cookbook - 문자열을 소문자로 변환하기](https://clojure-cookbook.com/strings/capitalizers)
-- [Stack Overflow - Clojure에서 문자열 대소문자 변환하기](https://stackoverflow.com/questions/737293/uncommon-clojure-convert-string-to-lower-upper-camel-case)
+- [Clojure 공식 문서](https://clojuredocs.org/clojure.core/lower-case)
+- [Clojure 함수의 중첩 사용 예제](https://www.baeldung.com/clojure-nested-functions)
+- [Clojure 기초 강좌](https://code.tutsplus.com/kr/tutorials/an-introduction-to-clojure--cms-27482)

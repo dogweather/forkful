@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 표준 에러에 쓰기"
-simple_title:         "표준 에러에 쓰기"
+title:                "표준 오류로 작성하기"
+html_title:           "Swift: 표준 오류로 작성하기"
+simple_title:         "표준 오류로 작성하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 코드 작성 시에 표준 에러에 쓰는 이유는
+## 왜
+누군가가 표준 오류로 쓰기에 참여하는 이유에 대해 최대 2문장으로 설명합니다.
 
-프로그래밍 중에 문제가 발생할 때 디버깅하는 것이 중요합니다. 표준 에러를 활용하면 디버깅할 때 유용한 정보를 얻을 수 있습니다.
+표준 오류로 쓰기는 프로그래밍에서 오류를 디버깅하는 데 매우 유용한 도구입니다. 오류가 발생한 경우 이를 빠르게 식별하고 수정할 수 있도록 합니다. 또한 프로그램의 실행 상태를 실시간으로 모니터링할 수 있습니다.
 
-## 어떻게 표준 에러에 쓰는지
-
-아래는 실제 코드 예시와 함께 표준 에러에 쓰는 방법을 보여줍니다.
+## 방법
+코드 블록인"```Swift ... ```" 안에 코드 예제와 샘플 출력을 포함하여 설명합니다.
 
 ```Swift
-let name = "John"
+import Foundation
 
-// 예외 처리를 위해 표준 에러에 메시지 출력
-if name.isEmpty {
-    fputs("이름을 입력하세요.", stderr)
-}
+// 표준 오류로 문자열 출력하기
+let errorMessage = "오류가 발생했습니다."
+FileHandle.standardError.write(errorMessage.data(using: .utf8)!)
 
-// 표준 에러에 메시지 입력 후 프로그램 종료
-exit(1)
+// 표준 오류로 정수 출력하기
+let errorNumber = 404
+FileHandle.standardError.write("\(errorNumber)".data(using: .utf8)!)
 ```
 
-위 코드를 실행하면 표준 에러에 "이름을 입력하세요."라는 메시지가 출력됩니다. 이를 통해 예외 상황을 탐지하고 적절한 처리를 할 수 있습니다.
+출력:
+```
+404
+```
 
 ## 심화 학습
+표준 오류에 대해 더 깊이있는 정보를 제공합니다.
 
-표준 에러를 활용하는 더 많은 방법을 탐색해보세요. 다양한 유형의 예외를 처리할 수 있는 방법도 알아보세요.
+표준 오류는 프로그램에서 발생한 오류를 캡쳐하고 콘솔에 출력하는 데 사용됩니다. 이것은 표준 출력과는 달리 오류를 따로 처리하여 디버깅을 더 쉽게 만듭니다. 또한 표준 오류를 파일로 리디렉션하면 오류 내용을 나중에 확인할 수 있습니다.
 
-## 관련 자료
-
-- [Swift 공식 문서 - 표준 에러 활용](https://docs.swift.org/swift-book/LanguageGuide/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID102)
-- [Swift 기본 3 - 디버깅](https://blog.naver.com/PostView.nhn?blogId=the_sun_91&logNo=221022090393&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+## 관련 링크
+- [Swift Documentation - FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [How to write to stderr in Swift?](https://stackoverflow.com/questions/28933352/how-to-write-to-stderr-in-swift)
+- [Debugging with Stderr in Swift](https://joemasilotti.com/Debugging-With-Stderr-in-Swift/)

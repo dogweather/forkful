@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "Arduino: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,55 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Arduino Programmering: Att Läsa Textfiler
+## Varför läsa en textfil?
 
-## Varför
+Att läsa en textfil är en grundläggande del av programmering och kan hjälpa till att spara tid och öka effektiviteten. Genom att läsa en textfil kan du enkelt hämta data som har sparats i form av text och använda det i dina program.
 
-Att läsa och hantera textfiler är en viktig del av Arduino programmering. Genom att kunna läsa textfiler kan du både få information från externa källor och spara data i en strukturerad form. Det är också ett användbart sätt att dela information mellan olika enheter.
+## Så här gör du
 
-## Hur man gör det
-
-För att läsa en textfil i Arduino, behöver du först ansluta en SD-kortmodul till din Arduino. Ladda sedan ned SD-biblioteket från Arduino IDE och importera det i ditt program. För att öppna och läsa en textfil använder du funktionen "open()" följt av filens namn och läget "r" för att läsa filen.
+Att läsa en textfil i Arduino är en enkel process. Först måste du skapa en textfil på datorn med den data som du vill använda. Sedan kan du följa kodexemplen nedan för att läsa filen och skriva ut dess innehåll på serieporten.
 
 ```Arduino
-#include <SD.h>
-File textFile;
+// Öppna textfilen
+File file = SD.open("namn_pa_textfil.txt");
 
-void setup() {
-  // Anslut SD-kortmodulen till Arduino
-  // Importera SD-biblioteket
-  // Öppna textfilen för läsning
-  textFile = SD.open("textfil.txt", FILE_READ);
+// Läs filen rad för rad
+while (file.available()) {
+  Serial.println(file.readStringUntil('\n'));
 }
+
+// Stäng filen
+file.close();
 ```
 
-Efter att filen är öppnad kan du läsa innehållet rad för rad med funktionen "readStringUntil()". Denna funktion tar ett tecken som argument och returnerar en sträng med allt innehåll tills det tecknet är nått. Du kan också använda funktionen "available()" för att kontrollera om det finns mer innehåll i filen.
+Resultatet av koden ovan kommer att skriva ut innehållet i filen på serieporten, där varje rad representeras av en rad i serieporten.
 
-```Arduino
-// Läser en rad från filen och sparar den i en strängvariabel
-String line = textFile.readStringUntil('\n');
-// Kontrollerar om det finns mer innehåll i filen
-if(textFile.available()){
-  // Fortsätter att läsa och spara rader till strängen tills slutet av filen är nått
-  line += textFile.readStringUntil('\n');
-}
-```
+## Fördjupning
 
-När du är klar med läsningen är det viktigt att stänga filen genom att använda funktionen "close()".
-
-```Arduino
-// Stänger filen när läsningen är klar
-textFile.close();
-```
-
-## Djupdykning
-
-Det finns flera funktioner i "SD"-biblioteket för att hantera textfiler. Du kan till exempel använda funktionen "seek()" för att gå till en specifik del av filen och läsa innehåll från den punkten. Du kan också skriva till en textfil med funktionen "write()" eller ta bort en befintlig fil med funktionen "remove()".
-
-Att läsa textfiler i Arduino är ett användbart sätt att integrera extern information i dina projekt, som till exempel sensorvärden eller konfigurationsdata. Det ger också möjlighet att spara och dela data mellan enheter. Du kan läsa mer om alla funktioner och möjligheter med SD-biblioteket på Arduino's hemsida eller i dokumentationen.
+Det finns flera saker att tänka på när du läser en textfil i Arduino. En av de viktigaste är att se till att filen är korrekt formaterad med rätt teckenkodning och radavslutare. Det är också viktigt att vara medveten om storleken på filen och utrymmet som den tar upp på ditt Arduino-minne.
 
 ## Se även
 
-- [Arduino's hemsida](https://www.arduino.cc/)
-- [SD-biblioteket dokumentation](https://www.arduino.cc/en/Reference/SD)
-- [GitHub - SdFat](https://github.com/greiman/SdFat)
+- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD) - Referens för att använda SD-kort med Arduino
+- [ASCII-teckenkodning](https://sv.wikipedia.org/wiki/ASCII) - Förståelse för ASCII-kodning och dess användning i textfiler
+- [Radavslutare](https://sv.wikipedia.org/wiki/Radavslutare) - Översikt över olika typer av radavslutare och hur de används i olika system

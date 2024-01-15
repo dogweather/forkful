@@ -1,6 +1,7 @@
 ---
-title:                "C++: Sending en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
+title:                "Sending et http-forespørsel med grunnleggende autentisering"
+html_title:           "C++: Sending et http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending et http-forespørsel med grunnleggende autentisering"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,54 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å sende HTTP-forespørsler med grunnleggende autentisering er viktig for å sikre at kun autoriserte brukere har tilgang til en ressurs eller en tjeneste på nettet. Dette er en standard autentiseringsmetode som krever et brukernavn og passord for å få tilgang til en ressurs.
+Hvis du ønsker å kommunisere med en server som krever autentisering, er det nødvendig å sende en HTTP forespørsel med grunnleggende autentisering. Dette er en vanlig måte å sikre at bare autoriserte brukere får tilgang til serveren.
 
-# Hvordan
-
-For å sende en HTTP-forespørsel med grunnleggende autentisering, må du først opprette en HTTP-forespørsel ved hjelp av en HTTP-bibliotek i C++. Deretter må du legge til autentiseringsheaderen, som består av brukernavnet og passordet, til forespørselen.
+## Hvordan
 
 ```C++
 #include <iostream>
-#include <cpp-httplib/httplib.h> 
+#include <curl/curl.h>
 
-using namespace std; 
-using namespace httplib;
+// Funksjon for å håndtere HTTP respons
+static size_t httpResponseHandler(char* data, size_t size, size_t nmemb, void* userdata)
+{
+    // Skriv ut HTTP responsen
+    std::cout << "HTTP respons: " << data << std::endl;
+    return size * nmemb;
+}
 
-int main() {
-    // Opprette en HTTP-forespørsel
-    Client client("www.example.com");
+int main()
+{
+    // Sett opp curl håndterer
+    CURL* curl = curl_easy_init();
 
-    // Legge til autentiseringsheaderen
-    client.set_basic_auth("brukernavn", "passord");
+    // Definer URL
+    std::string url = "https://example.com/api";
 
-    // Send forespørselen og lagre svaret
-    auto response = client.Get("/ressurs");
+    // Sett opp HTTP forespørsel med autentisering
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "brukernavn");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "passord");
 
-    // Skriv ut svaret
-    cout << response->body << endl;
+    // Sett opp håndterer for HTTP respons
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, httpResponseHandler);
+
+    // Send HTTP forespørsel
+    CURLcode result = curl_easy_perform(curl);
+
+    // Sjekk for eventuelle feil
+    if (result != CURLE_OK)
+    {
+        std::cout << "Feil: " << curl_easy_strerror(result) << std::endl;
+    }
+
+    // Rydd opp
+    curl_easy_cleanup(curl);
 
     return 0;
 }
 ```
 
-Eksempel output:
-
+Output:
 ```
+HTTP respons: HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+Content-Length: 1462
+
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>Hilsen fra HTTP-serveren!</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Eksempel</title>
+</head>
+<body>
+    <h1>Velkommen til eksemplet!</h1>
+    <p>Du har fått tilgang til denne siden med grunnleggende autentisering.</p>
+</body>
 </html>
+
 ```
 
-# Dypdykk
+## Deep Dive
 
-HTTP-forespørsler med grunnleggende autentisering bruker en Base64-koding for å kryptere brukernavnet og passordet før det sendes i en HTTP-header. Dette gjør at informasjonen ikke kan leses av uautoriserte brukere. Det er viktig å merke seg at denne autentiseringsmetoden har sine begrensninger og bør bare brukes på sikre nettsteder.
+Når du sender en HTTP forespørsel med grunnleggende autentisering, inkluderer du brukernavn og passord som en del av headeren i forespørselen. Dette kan potensielt være usikkert, siden passordet vil være synlig i koden din. Derfor bør du vurdere å bruke andre autentiseringsmetoder når det er mulig.
 
-# Se også
+## Se også
 
-- [HTTP-bibliotek for C++](https://github.com/yhirose/cpp-httplib)
-- [Hva er grunnleggende autentisering for HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basic_access_authentication)
-- [Andre autentiseringsmetoder for HTTP](https://www.digitalocean.com/community/tutorials/how-to-use-http-basic-authentication-with-nginx-on-ubuntu-14-04)
+- [HTTP Basic Authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [libcurl - Basic Authentication](https://curl.se/libcurl/c/CURLOPT_HTTPAUTH.html)

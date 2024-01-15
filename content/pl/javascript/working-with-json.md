@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Praca z formatem json"
+title:                "Praca z formatem json"
+html_title:           "Javascript: Praca z formatem json"
 simple_title:         "Praca z formatem json"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,49 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pracować z JSON?
+## Dlaczego
 
-JSON, czyli JavaScript Object Notation, jest popularnym formatem danych stosowanym w programowaniu. Jest on wykorzystywany w wielu dziedzinach, takich jak aplikacje webowe, aplikacje mobilne, czy też przechowywanie informacji w bazach danych. Praca z JSON jest nie tylko łatwa i intuicyjna, ale także niezbędna w dzisiejszym świecie programowania.
+JSON jest powszechnie używanym formatem danych w dzisiejszym świecie cyfrowym. Jest on wszechstronny, prosty w użyciu i można go łatwo integrować z różnymi językami programowania. Jeśli jesteś programistą, który chce nauczyć się pracy z JSON, ten artykuł jest dla Ciebie!
 
-## Jak pracować z JSON?
+## Jak to zrobić
 
-Pierwszym krokiem jest zdefiniowanie obiektu JSON. Możemy to zrobić za pomocą funkcji `JSON.parse()`, która zamienia string zawierający dane w formacie JSON na obiekt JavaScript. W poniższym przykładzie stworzymy obiekt zawierający informacje o produkcie:
+```Javascript
+const person = {
+  name: "Julia",
+  age: 25,
+  profession: "Developer",
+  skills: ["JavaScript", "HTML", "CSS"],
+};
 
-```javascript
-var product = '{"name": "Koszulka", "price": 29.99, "colors": ["czerwony", "zielony", "niebieski"]}';
-var productObj = JSON.parse(product);
+// Przykład 1: Tworzenie obiektu JSON
 
-console.log(productObj.name); // wynik: Koszulka
-console.log(productObj.price); // wynik: 29.99
-console.log(productObj.colors[0]); // wynik: czerwony
+// Przypisanie obiektu JSON do zmiennej
+const personJSON = JSON.stringify(person);
+
+console.log(personJSON);
+
+// Output: {"name":"Julia","age":25,"profession":"Developer","skills":["JavaScript","HTML","CSS"]}
+
+// Przykład 2: Odczytywanie obiektu JSON
+
+// Tworzenie zmiennej z przykładowym obiektem JSON
+const data = '{"name":"Adam","age":30,"profession":"Designer","skills":["Photoshop","Illustrator","InDesign"]}';
+
+// Parsowanie JSON do obiektu
+const person2 = JSON.parse(data);
+
+console.log(person2.name); // Output: Adam
+console.log(person2.age); // Output: 30
+console.log(person2.profession); // Output: Designer
+console.log(person2.skills); // Output: ["Photoshop","Illustrator","InDesign"]
 ```
 
-Możemy również natychmiast przekonwertować obiekt na format JSON, wykorzystując funkcję `JSON.stringify()`:
+## Głębszy zbiór informacji
 
-```javascript
-var productJSON = JSON.stringify(productObj);
+JSON, czyli JavaScript Object Notation, jest formatem danych opartym na składni Javascript. Jest on wykorzystywany do przechowywania i przesyłania informacji pomiędzy aplikacjami i serwerami. JSON jest czytelny dla człowieka oraz łatwy do przetwarzania przez komputery, dlatego też jest on preferowanym formatem w dzisiejszych aplikacjach internetowych.
 
-console.log(productJSON); // wynik: {"name": "Koszulka", "price": 29.99, "colors": ["czerwony", "zielony", "niebieski"]}
-```
+Istnieją różne metody pracy z JSON we frameworkach, takich jak Node.js czy Angular. Więcej informacji na ten temat można znaleźć w dokumentacjach tych narzędzi.
 
-Dodatkowo, możemy łatwo dodawać, usuwać i modyfikować dane w obiekcie JSON, korzystając ze zwykłych operacji na obiektach. Poniższy przykład pokazuje, jak dodać nowy klucz i wartość do obiektu oraz jak usunąć istniejący klucz:
+## Zobacz również
 
-```javascript
-productObj.size = "M";
-console.log(productObj); // wynik: {"name": "Koszulka", "price": 29.99, "colors": ["czerwony", "zielony", "niebieski"], "size": "M"}
-
-delete productObj.price;
-console.log(productObj); // wynik: {"name": "Koszulka", "colors": ["czerwony", "zielony", "niebieski"], "size": "M"}
-```
-
-## Głębsza analiza pracy z JSON
-
-Obiekty JSON są bardzo popularne w komunikacji między serwerem a klientem. Serwer może przesłać klientowi dane w formacie JSON, które będą łatwe do odczytania i przetworzenia przez aplikację kliencką. Ponadto, JSON jest lekki, czytelny dla człowieka i wygodny w użyciu, co sprawia, że jest idealnym wyborem przy przesyłaniu większej ilości danych.
-
-Kolejną zaletą pracy z JSON jest to, że jest on niezależny od języka programowania. Oznacza to, że obiekty JSON mogą być przetwarzane przez różne języki, co ułatwia współpracę i wymianę danych między różnymi systemami.
-
-## Zobacz także
-
-- [Dokumentacja JSON na MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [JSON Tutorial na W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)
+- [Dokumentacja JSON](https://www.json.org/json-pl.html)
+- [Wprowadzenie do pracy z JSON w Node.js](https://docs.node.in/przyklady/praca-z-json)
+- [Praca z JSON w Angular](https://angular.io/guide/http#working-with-json)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Wysyłanie żądania http z podstawową autoryzacją."
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją."
+title:                "Wysłanie żądania HTTP z uwierzytelnieniem podstawowym"
+html_title:           "Kotlin: Wysłanie żądania HTTP z uwierzytelnieniem podstawowym"
+simple_title:         "Wysłanie żądania HTTP z uwierzytelnieniem podstawowym"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-W dzisiejszych czasach przesyłanie danych przez internet stało się powszechne, a więc potrzebujemy sposobu, aby te informacje były bezpieczne. W tym artykule pokażę Ci, jak wysyłać żądania HTTP z podstawowym uwierzytelnianiem w języku Kotlin.
+Wysyłanie zapytania HTTP z uwierzytelnieniem podstawowym jest ważną umiejętnością dla programistów, którzy chcą mieć kontrolę nad dostępem do swoich aplikacji lub serwisów sieciowych. Dzięki temu rodzajowi uwierzytelnienia, programiści mogą zapewnić bezpieczeństwo swoim użytkownikom i kontrolować dostęp do zasobów w aplikacji.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Aby użyć podstawowego uwierzytelniania w żądaniach HTTP, musimy umieścić odpowiednie nagłówki w naszym kodzie. W poniższym przykładzie używamy biblioteki `OkHttp` w celu wysłania żądania GET z uwierzytelnieniem typu Basic.
+Aby wysłać zapytanie HTTP z uwierzytelnieniem podstawowym w języku Kotlin, wystarczy użyć biblioteki `OkHttp`. W poniższym przykładzie pokazano, jak dodać nagłówek `Authorization` z danymi uwierzytelniającymi do zapytania.
 
-```Kotlin
+```Kotlin 
 val client = OkHttpClient()
-
+val username = "login"
+val password = "hasło"
+val credential = "$username:$password".toByteArray().encodeBase64()
 val request = Request.Builder()
-    .url("https://example.com")
-    .header("Authorization", Credentials.basic("username", "password"))
-    .build()
+  .url("https://example.com/api/data")
+  .addHeader("Authorization", "Basic $credential")
+  .build()
 
 val response = client.newCall(request).execute()
-
 println(response.body?.string())
 ```
 
-W powyższym przykładzie używamy metody `basic()` z klasy `Credentials` w celu stworzenia nagłówka uwierzytelniającego. Ten nagłówek jest następnie dodany do naszego żądania poprzez metodę `header()`. Po otrzymaniu odpowiedzi, możemy wypisać treść odpowiedzi na konsoli.
+W powyższym kodzie, najpierw tworzymy obiekt klienta `OkHttpClient`, a następnie definiujemy nasze dane uwierzytelniające - login i hasło. Następnie, przy użyciu metody `encodeBase64()` konwertujemy dane do odpowiedniego formatu, aby mogły zostać przesłane w nagłówku `Authorization`. W końcu, tworzymy obiekt zapytania z odpowiednim adresem url i dodajemy nagłówek `Authorization` z uwierzytelnieniem podstawowym. Po wykonaniu zapytania, możemy przeczytać odpowiedź i wyświetlić jej zawartość.
 
-# Deep Dive
+## Deep Dive
 
-Uwierzytelnienie typu Basic jest jednym z najprostszych sposobów na zabezpieczenie naszych żądań HTTP. Polega ono na przesłaniu użytkownika i hasła za pomocą nagłówka `Authorization` w formacie `username:password` zakodowanym w Base64.
+Warto wiedzieć, że uwierzytelnienie podstawowe jest jednym z najprostszych sposobów uwierzytelniania w protokole HTTP. Polega ono na przesłaniu danych uwierzytelniających w nagłówku `Authorization` w postaci loginu i hasła, zakodowanych w formacie Base64. Jednak ze względu na to, że dane są przesyłane w formacie niezaszyfrowanym, nie jest to zalecane dla aplikacji, które wymagają wysokiego poziomu bezpieczeństwa.
 
-Istnieje wiele innych metod uwierzytelniania, takich jak OAuth czy JWT, jednak podstawowe uwierzytelnienie jest wciąż szeroko stosowane w wielu aplikacjach internetowych.
+W przypadku, gdy aplikacja wymaga wyższego poziomu bezpieczeństwa, zalecane jest użycie uwierzytelnienia tokenowego lub JWT (JSON Web Token). Jest to bardziej zaawansowana metoda uwierzytelniania, która wymaga wygenerowania i przesłania tokena uwierzytelniającego zamiast loginu i hasła.
 
-# Zobacz też
+## See Also
 
-- Oficjalna dokumentacja OkHttp: https://square.github.io/okhttp/
-- Więcej informacji o uwierzytelnianiu typu Basic: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+1. Dokumentacja biblioteki `OkHttp`: https://square.github.io/okhttp/
+2. Więcej informacji o uwierzytelnieniu podstawowym w protokole HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication

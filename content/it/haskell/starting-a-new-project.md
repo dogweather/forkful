@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Avviare un nuovo progetto"
+title:                "Avviare un nuovo progetto"
+html_title:           "Haskell: Avviare un nuovo progetto"
 simple_title:         "Avviare un nuovo progetto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,43 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Uno dei motivi principali per cui dovresti iniziare un nuovo progetto in Haskell è la sua capacità di scrivere codice conciso e sicuro. Con la sua forte tipizzazione statica e la gestione dell'errore più efficace rispetto ad altri linguaggi, Haskell ti consente di creare applicazioni robuste e affidabili.
+Haskell è un linguaggio di programmazione funzionale pura che offre un approccio unico alla scrittura di codice. Se sei stanco dei linguaggi di programmazione convenzionali e vuoi esplorare nuove idee, allora Haskell potrebbe essere il linguaggio perfetto per il tuo prossimo progetto.
 
 ## Come fare
 
-Per iniziare un nuovo progetto in Haskell, devi prima di tutto installare il compilatore GHC (Glasgow Haskell Compiler) e il gestore di pacchetti Cabal. Una volta installati, puoi seguire questi passaggi:
-
-1. Crea una nuova cartella per il tuo progetto e apri il terminale in quella cartella.
-
-2. Inizializza il tuo progetto utilizzando il comando `cabal init` e rispondi alle domande che verranno poste.
-
-3. Ora puoi creare un file `Main.hs` per il tuo codice principale e utilizzare `ghc --make Main.hs` per compilarlo.
-
-4. Per eseguire il tuo programma, puoi utilizzare il comando `./Main`.
-
-Ecco un esempio di codice che stampa "Ciao mondo!" nella console:
-
-```Haskell
-main = putStrLn "Ciao mondo!"
-```
-
-Output:
+Per iniziare con Haskell, è necessario prima scaricare il compilatore Haskell, chiamato "GHC (Glasgow Haskell Compiler)", dal sito ufficiale. Una volta installato, puoi creare un nuovo progetto Haskell con il seguente comando:
 
 ```
-Ciao mondo!
+haskell-new progetto-nuovo
 ```
 
-## Approfondimenti
+Questo creerà una nuova directory chiamata "progetto-nuovo" con una struttura di progetto predefinita. Entriamo nella directory e apriamo il file "Main.hs", che è il file principale del nostro progetto.
 
-Una delle decisioni più importanti da prendere quando si avvia un nuovo progetto in Haskell è la scelta della libreria. Haskell offre una vasta gamma di librerie pronte per l'uso che possono semplificare e migliorare il processo di sviluppo.
+La sintassi di base di Haskell è molto semplice e flessibile. Per esempio, per dichiarare una variabile "x" con il valore 10, basta scrivere:
 
-È anche importante familiarizzare con i concetti di base di Haskell, come le funzioni puramente funzionali, i tipi di dati algebrici e la programmazione lazy.
+```
+let x = 10
+```
 
-Inoltre, esplorare le eccezioni e le operazioni di IO in Haskell può essere utile per gestire gli errori e l'input/output nel tuo progetto.
+Per scrivere una funzione che calcoli l'area di un cerchio dato il suo raggio:
 
-## Vedere anche
+```
+areaCerchio raggio = pi * raggio^2
+```
 
-- [Documentazione di GHC](https://www.haskell.org/ghc/)
-- [Documentazione di Cabal](https://www.haskell.org/cabal/)
-- [Hackage - Deposito centrale per le librerie Haskell](https://hackage.haskell.org/)
-- [Introduzione a Haskell su Wikibooks](https://en.wikibooks.org/wiki/Haskell/Introduction)
+Possiamo chiamare questa funzione con un valore specifico come:
+
+```
+areaCerchio 5
+```
+
+che restituirebbe l'area di un cerchio con raggio di 5 unità.
+
+## Approfondimento
+
+Una cosa fantastica di Haskell è che possiamo definire funzioni più astratte utilizzando la ricorsione e funzioni di ordine superiore. Ad esempio, possiamo scrivere una funzione di somma che accetta una lista di numeri usando la ricorsione:
+
+```
+somma [] = 0
+somma (x:xs) = x + somma xs
+```
+
+Questa funzione accetta una lista vuota e restituisce 0, o prende il primo elemento della lista ("x") e lo aggiunge alla somma del resto della lista ("xs").
+
+Inoltre, possiamo anche scrivere funzioni di ordine superiore, cioè funzioni che accettano altre funzioni come argomenti. Ad esempio:
+
+```
+applicaDue f x = f (f x)
+```
+
+Questa funzione accetta una funzione ("f") e un valore ("x") e applica due volte la funzione al valore fornito. Possiamo utilizzare questa funzione per applicare una funzione di somma a un valore specifico due volte:
+
+```
+applicaDue (somma [1,2]) 5
+```
+
+che restituirà 8 come risultato.
+
+## Vedi anche
+
+- [GHC Download](https://www.haskell.org/ghc/download.html)
+- [Haskell Wiki](https://wiki.haskell.org/)

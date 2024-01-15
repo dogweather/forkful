@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: כתיבת בדיקות"
+title:                "כתיבת בדיקות"
+html_title:           "Fish Shell: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה: 
-בעידן הקוד המיועד לכל העולם קיימת צורך נרחב בבדיקות תוכנית כדי לוודא שהקוד עובד כראוי ולמנוע בעיות וסיכונים עתידיים. בכתיבת הבלוג הזה נדון בכיצד לכתוב בדיקות בשפת פיש של המכונה הקרקעית של OS X.
+## למה
 
-# איך לכתוב בדיקות עם שפת פיש: 
-בפוסט הבא ניתן מספר דוגמאות קוד ופלטים לנוחיותכם תוך שימוש בבלוקי קוד של "```Fish Shell...```" להמחשה נוחה יותר.
+כדי לוודא שהקוד שלנו עובד כמו שצריך ולהפסיק טעויות עתידיות.
 
+## איך לכתוב ב Fish Shell
 ```Fish Shell
-# בעזרת הפקודה 'test' נוכל להריץ בדיקות אוטומטיות על פעולות ספציפיות בקוד.
-
-test "[5 -eq 5]" ;and echo "בדיקה זו אמורה להיות נכונה"
-# הפלט של הבדיקה יהיה:
-# בדיקה זו אמורה להיות נכונה
-
-test "[2 -eq 5]" ;and echo "בדיקה זו אמורה להיות נכונה"
-# הפלט של הבדיקה יהיה:
-# <תאריך הבדיקה><שם הפונקציה>(2 -eq 5)
-
-# נוכל לכתוב גם בדיקות מרוכבות יותר ולהשתמש בפקודות נוספות כמו 'set' ו 'and'.
-
-# ניתן להשתמש גם בתנאים בחלק המזהה או הכותרת של הבדיקה כדי לבצע בדיקות אינטראקטיביות עם השתמשות ב 'interact', כך:
-
-# הנה הקוד:
-function hello
-    set -l name (prompt -Q "What is your name? ")
-    echo "Hello $name!"
+function test -d "This is a fish test"
+  echo "This is a test."
 end
-
-test hello ;and interact
-# אז אם יש לכם כניסה שמשתמשת יכול לכתוב את התשובה שלו בכדי שהסקריפט יבצע את יעוד ה interation .
-
-What is your name ? "Bob"
-# הפלט של הבדיקה יהיה:
-# Hello Bob!
-
 ```
 
-# בירור עמוק:
-הבדיקות הן יחלק חשוב מהתהליך הפיתוח של כל תכנית. כתיבת בדיקות מאפשרת לנו לווד
+```Fish Shell
+test
+```
+
+```Fish Shell
+Expected Output: "This is a test."
+Actual Output: "This is a test."
+```
+
+## התעמקות
+
+כתיבת בדיקות היא חלק חשוב מתהליך הפיתוח ויכולה לעזור לנו למצוא באופן מהיר את הבעיות בקוד שלנו. כתיבת טסטים מאפשרת לנו גם להדגים לאנשים אחרים איך להשתמש בקוד שלנו ומה הפלט המצופה שלו.
+
+## ראה גם
+
+* [כתיבת טסטים ב Fish Shell על ידי טיול באוניברסיטה](https://fishshell.com/docs/current/tutorial.html#writing-tests)
+* [מדריך מלא ל Fish Shell](https://fishshell.com/docs/current/index.html)

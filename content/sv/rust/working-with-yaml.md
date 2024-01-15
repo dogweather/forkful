@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Rust: Arbeta med yaml"
 simple_title:         "Arbeta med yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,58 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Har du någonsin behövt hantera YAML-filer i dina Rust-program? Kanske för att läsa in eller spara konfigurationsdata? Eller kanske för att läsa in data från någon annan YAML-baserad tjänst? Oavsett vilket, så kommer kunskap om hur man arbetar med YAML definitivt att vara till nytta för dig som Rust-utvecklare. Låt oss ta en titt på hur man gör det!
+Som programmerare är det ständigt viktigt att hantera data på ett strukturerat sätt. Även om det finns flera alternativ för att spara och hantera data, har YAML blivit ett populärt val på grund av dess enkelhet och läsbarhet. Med YAML kan du snabbt och effektivt organisera dina data och integrera det med andra språk och verktyg.
 
-## Så här gör du
+## Hur man använder YAML i Rust
 
-För att kunna hantera YAML-filer i ditt Rust-program behöver du ett externt bibliotek som kan tolka YAML för dig. Det finns flera olika bibliotek som du kan välja mellan, men för denna guide kommer vi att använda "serde_yaml". 
+För att använda YAML i ditt Rust-projekt måste du först lägga till YAML-paketet i din `Cargo.tomls` fil:
 
-Först måste du inkludera biblioteket i ditt projekt genom att lägga till följande rad i ditt "Cargo.toml"-fil:
-
-```
+```Rust
 [dependencies]
-serde_yaml = "0.8.11"
+yaml-rust = "0.4.3"
 ```
 
-När det är gjort kan du börja använda biblioteket i ditt program. Vi börjar med att importera bibliotekets funktioner genom att lägga till följande rad i början av vår "main.rs"-fil:
-
-```
-use serde_yaml;
-```
-
-För att läsa in en YAML-fil kan vi använda funktionen "from_reader" som tar en "BufReader" som argument och returnerar en "Result"-typ som antingen är ett "Yaml"-objekt eller ett felmeddelande. Låt oss titta på ett exempel:
+Sedan kan du importera YAML-paketet och använda det för att läsa och skriva YAML-filer:
 
 ```Rust
-let file = std::fs::File::open("config.yml")?;
-let reader = std::io::BufReader::new(file);
+extern crate yaml_rust;
 
-let yaml_result = serde_yaml::from_reader(reader)?;
+use std::fs;
+use yaml_rust::{YamlLoader, YamlEmitter};
 
-// Gör något med yaml_resultatet här ...
+fn main() {
+    // Läs in en YAML-fil
+    let yaml = fs::read_to_string("data.yml").unwrap();
+
+    // Konvertera YAML-strängen till en Yaml-object
+    let docs = YamlLoader::load_from_str(&yaml).unwrap();
+
+    // Skriv ut Yaml-objektet
+    println!("{:#?}", docs);
+
+    // Skapa en ny Yaml-objekt och lägg till data
+    let mut data = yaml_rust::Yaml::Hash(HashMap::new());
+    data["name"] = yaml_rust::Yaml::String("John Doe".to_string());
+    data["age"] = yaml_rust::Yaml::Integer(25);
+
+    // Skapa en YamlEmitter för att skriva ut YAML
+    let mut emitter = YamlEmitter::new(&mut buffer);
+
+    // Skriv Yaml-objektet till en YAML-fil
+    emitter.dump(&data).unwrap()
+}
 ```
 
-Som du kan se använder vi standardbiblioteket för att öppna och läsa in filen "config.yml". Sedan använder vi "from_reader"-funktionen från "serde_yaml"-biblioteket för att tolka YAML-innehållet och returnera ett "Yaml"-objekt. Om allt går som det ska, kan vi sedan göra vad vi vill med "yaml_result"-objektet.
-
-För att spara en YAML-fil kan vi använda funktionen "to_writer" som tar en "BufWriter" och ett "Yaml"-objekt som argument. Låt oss se ett exempel på detta också:
-
-```Rust
-let config = MyConfig { /* ... */ };
-let file = std::fs::File::create("config.yml")?;
-let writer = std::io::BufWriter::new(file);
-
-serde_yaml::to_writer(writer, &config)?;
-```
-
-Här skapar vi först en instans av vår "MyConfig"-struktur och sedan öppnar och skapar filen "config.yml" för skrivning. Sedan använder vi "to_writer"-funktionen från "serde_yaml"-biblioteket för att skriva vår "MyConfig"-struktur som YAML till filen.
+När du kör programmet ovan kommer det att läsa in YAML-filen `data.yml`, konvertera den till en Yaml-objekt och skriva ut den i terminalen. Sedan skapas en ny Yaml-objekt och läggs till data innan det skrivs ut till en ny YAML-fil med hjälp av YamlEmitter.
 
 ## Djupdykning
 
-Nu när du har lärt dig grunderna för hur man hanterar YAML-filer i Rust, låt oss titta på några andra användbara funktioner som finns tillgängliga i "serde_yaml"-biblioteket. Du kan till exempel använda funktionen "from_slice" för att läsa in YAML-data från en "u8"-buffert eller funktionen "to_vec" för att konvertera ett "Yaml"-objekt till en "u8"-buffert. Du kan även använda "to_string" och "from_str" för strängrepresentationer av YAML-data.
+Yaml är baserat på en enkel nyckel-värde-parsyntax, vilket gör det lätt att läsa och skriva. Det stöder både listor och dictionary-strukturer, vilket gör det flexibelt för att spara olika typer av data. Dessutom är YAML-kod portabelt och kan läsas av många olika programmeringsspråk.
 
-Ett annat användbart verktyg är "Value"-strukturen som låter dig arbeta med YAML som ett träd av värden, liknande hur JSON hanteras i Rust. Du kan också använda egenskaper som "into_vec" och "as_mapping" för att få mer flexibilitet i hur du använder "Value"-strukturen.
+YAML i Rust har också stöd för att hantera komplexa datastrukturer med hjälp av `Yaml::Hash` och `Yaml::Array` typer, vilket gör det möjligt att skapa djupare hierarkier av data. Det finns också flera funktioner som gör det möjligt att enkelt söka och manipulera YAML-data.
 
-Det finns också ett stort antal attribut som du kan använda för att anpassa hur "serde_yaml" tolkar och skriver ut ditt YAML-innehåll. För mer information om detta, kolla in dokumentationen för "serde_yaml".
+## Se också
 
-## Se även
-
-Förutom "serde_yaml" finns det flera andra bibli
+- YAML officiell hemsida (https://yaml.org/)
+- YAML Guide (https://yaml.org/start.html)
+- Rust YAML-dokumentation (https://docs.rs/yaml-rust/0.4.3/yaml_rust/)

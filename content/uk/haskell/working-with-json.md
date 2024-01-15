@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Робота з json"
+title:                "Робота з json"
+html_title:           "Haskell: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,48 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-JSON (JavaScript Object Notation) - це формат обміну даними, який широко використовується у програмуванні. Він дуже популярний у розробці веб-додатків, оскільки його легко читати людям та машинам. Робота з JSON дозволяє розбирати та створювати структуровані дані, що зробить ваші програми більш функціональними та ефективними.
+Зараз робота з JSON є необхідною для багатьох проектів, оскільки цей формат даних дозволяє зручно взаємодіяти з різноманітними джерелами та ресурсами в мережі. Також, Haskell має потужні інструменти для роботи з JSON, які значно спрощують цей процес.
 
-## Як:
+## Як
 
-Щоб почати роботу з JSON у Haskell, необхідно встановити пакет `aeson`, який надає засоби для роботи з цим форматом. Після цього вам потрібно імпортувати модуль `Data.Aeson` у ваш проект.
+Для початку, необхідно імпортувати модуль "Data.Aeson" у свій проект. Далі, щоб отримати дані з JSON файлу, скористаємося функцією "decodeFileStrict" яка приймає шлях до файлу та повертає тип "Maybe Value". За допомогою функції "fromJust" можна отримати значення типу "Value" з "Maybe Value", якщо значення не Nothing.
 
-Простий спосіб розбору JSON-даних у Haskell - це використання функції `decode`. Наприклад, якщо ми маємо наступний JSON-об'єкт:
-
-```Haskell
-{
-  "name": "John",
-  "age": 30
-}
-```
-
-Ми можемо розпарсити його у Haskell-значення, використовуючи наступний код:
+Пример:
 
 ```Haskell
 import Data.Aeson
 
-jsonString = "{\"name\":\"John\",\"age\":30}"
+data Person = Person {
+    name :: String,
+    age :: Int,
+    occupation :: String
+} deriving (Show, Generic)
 
--- Розпарсимо наш JSON-об'єкт та виведемо значення поля "name"
-main :: IO ()
+instance FromJSON Person
+instance ToJSON Person
+
+main :: IO()
 main = do
-    let maybePerson = decode jsonString :: Maybe Person
-    case maybePerson of
-        Just person -> putStrLn $ name person
-        Nothing -> putStrLn "Невдалось розпарсити JSON"
-    where name person = "Ім'я: " ++ (Data.Aeson.fromJSON (Data.Aeson.Object object) :: String)
-                    where object = "name" Data.Aeson..= name person
+    json <- decodeFileStrict "./person.json" :: Maybe Person
+    let person = fromJust json
+    print person
 ```
 
-Отримана в результаті виведе на екран `Ім'я: John`.
+В даному прикладі, із файлу "person.json" було прочитано дані та виведено об'єкт типу Person на екран.
 
 ## Глибше
 
-Почати роботу з JSON у Haskell набагато обширніше, ніж просте розбирання даних. Вам не тільки потрібно буде вчитися розпарсувати дані, але і створювати їх власноруч. Для цього, пакет `aeson` надає такі типи як `Object`, `Array`, `Integer` та багато інших.
+Щоб зрозуміти, як працює робота з JSON у Haskell, слід розібратися з базовими структурами даних, які використовуються для збереження та обробки JSON даних. Основними типами є "Value" та "Pair", для представлення об'єктів та поля JSON відповідно.
 
-Також, ви можете серіалізувати дані назад у JSON-об'єкт використовуючи функцію `encode`.
+Також, для зручної роботи зі структурами данних, можна скористатися синтаксичними розширеннями, такими як "DeriveGeneric" та "OverloadedStrings". Вони дозволяють автоматично створювати інстанси типів, а також дозволяють використати строкові літерали для представлення JSON даних.
 
-## Дивитися також
+Для детальнішого вивчення роботи з JSON у Haskell, рекомендуємо ознайомитися з документацією модуля "Data.Aeson" та подивитися додаткові приклади в Інтернеті.
 
-- [Офіційна документація пакету `aeson`](https://hackage.haskell.org/package/aeson)
-- [Стаття "Подивимося на Aeson"](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/competition-winners/andrew-gibiansky/aeson) від автора пакету `aeson`.
+## Дивіться також
+
+- [Офіційна документація з роботи з JSON у Haskell](https://hackage.haskell.org/package/aeson)
+- [Стаття "Parsing JSON in Haskell with Aeson" на Medium](https://medium.com/@jonathangfischoff/parsing-json-in-haskell-with-aeson-6adea64aeb93)
+- [Стаття "Working with JSON in Haskell" на сайті "School of Haskell"](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 웹 페이지 다운로드하기"
-simple_title:         "웹 페이지 다운로드하기"
+title:                "웹 페이지 다운로드"
+html_title:           "Javascript: 웹 페이지 다운로드"
+simple_title:         "웹 페이지 다운로드"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### 왜 다운로드하는가?
+## 왜
+웹 페이지를 다운로드하는 것이 왜 중요한지 궁금하신가요? 웹 페이지를 다운로드하면 오프라인에서도 웹 사이트의 내용을 쉽게 볼 수 있기 때문입니다. 또한, 해당 웹 페이지에 저장된 정보를 바탕으로 데이터 분석, 스크래핑 등 다양한 작업을 할 수 있습니다.
 
-웹 페이지를 다운로드하는 이유는 다양합니다. 가장 간단한 이유는 페이지를 오프라인에서 볼 수 있기 때문입니다. 또 다른 이유는 페이지 소스 코드를 분석하거나 웹 크롤링을 위해서입니다. 아마도 가장 관련성이 있는 이유는 웹 페이지에 포함된 정보를 분석하고 추출하기 위함입니다.
-
-### 방법
-
-웹 페이지를 다운로드하는 것은 자바스크립트에서 매우 간단하게 할 수 있습니다. 먼저 XMLHttpRequest 라이브러리를 import 해줍니다. 그 다음 웹 페이지 URL을 입력하고 변수로 저장합니다. 마지막으로 open(), send() 메소드를 사용하여 웹 페이지 내용을 가져옵니다.
+## 어떻게 다운로드할까요?
+웹 페이지를 다운로드 하는 방법은 여러 가지가 있지만, 우리는 Javascript를 이용하는 방법에 대해 알아보겠습니다. 먼저, URL을 사용하여 웹 페이지에 접근합니다. 그리고 다운로드할 내용을 선택하고 다운로드 방식을 정하면 됩니다. 다음은 간단한 코드 예시입니다.
 
 ```Javascript
-const xhr = new XMLHttpRequest();
-const url = "https://www.example.com";
-xhr.open("GET", url, true);
-xhr.send();
+// 필요한 모듈 import
+const axios = require('axios');
+const fs = require('fs');
+
+// URL 정의
+const url = "https://example.com";
+
+// axios를 사용하여 웹 페이지 다운로드
+axios.get(url)
+    .then((response) => {
+        // 다운로드한 웹 페이지의 내용을 파일로 저장
+        fs.writeFile('webpage.html', response.data, (err) => {
+            if (err) throw err;
+            console.log("웹 페이지 다운로드 완료!");
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 ```
 
-위의 예제에서는 GET 요청을 보냅니다. 원한다면 POST를 사용할 수도 있습니다. 그리고 true 대신 false를 입력하면 비동기 요청이 아니라 동기 요청으로 처리됩니다. 그리고 마지막으로 변수 xhr에 저장된 정보를 출력하면 웹 페이지의 내용을 확인할 수 있습니다.
+위 코드는 Node.js 환경에서 실행할 수 있으며, 다운로드한 웹 페이지를 파일로 저장하고 있습니다. 해당 파일을 열어보면 웹 페이지의 내용이 그대로 저장되어 있을 것입니다.
 
-### 심층 분석
+## 깊이 들어가기
+웹 페이지를 다운로드하는 것은 보다 복잡한 작업을 위한 출발점일 뿐입니다. Javascript를 이용하여 웹 페이지를 분석하거나 스크래핑하는 작업도 가능합니다. 또한, 다운로드한 웹 페이지 내에서 자신이 원하는 정보를 추출하는 작업도 가능합니다. 예를 들어, 위에서 다운로드한 웹 페이지의 내용을 문자열로 변환하여 특정 단어가 포함되어 있는지 확인하고, 포함되어 있다면 해당 단어를 추출하는 작업을 할 수 있습니다.
 
-자바스크립트를 사용하면 다양한 방법으로 웹 페이지를 다운로드할 수 있습니다. GET과 POST 방식 외에도, 라이브러리나 프레임워크를 사용하여 더욱 복잡한 요청을 보낼 수 있습니다. 또한 웹 페이지의 특정 부분만 가져오는 것도 가능합니다. 이를 위해 DOM 파싱 등의 기술을 사용할 수 있습니다. 웹 크롤링과 관련된 분야에서는 자바스크립트 기반의 다양한 라이브러리들이 존재하므로, 웹 페이지 다운로드에 대한 심층적인 연구가 필요합니다.
+## 더 알아보기
+다운로드한 웹 페이지를 분석하거나 스크래핑하는 작업을 더 알아보려면 아래 링크들을 참고해보세요.
 
-### 참고 자료
-
-- [XMLHttpRequest MDN 문서](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest)
-- [axios 라이브러리](https://github.com/axios/axios)
-- [cheerio 라이브러리](https://cheerio.js.org/)
-- [puppeteer 라이브러리](https://pptr.dev/) (웹 크롤링에 사용되는 자동화 라이브러리)
+- [Cheerio를 이용한 웹 스크래핑](https://cheerio.js.org/)
+- [Puppeteer를 이용한 웹 페이지 자동화](https://pptr.dev/)
+- [Node.js 라이브러리 모음](https://www.npmjs.com/)

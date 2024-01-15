@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Usuwanie znaków pasujących do wzoru"
-simple_title:         "Usuwanie znaków pasujących do wzoru"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Fish Shell: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,25 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto usunąć znaki pasujące do wzoru w Fish Shell?
+## Dlaczego
 
-Często zdarza się, że w trakcie pisania kodu w terminalu używamy polecenia `grep` do wyszukiwania tekstu. Jednak co zrobić, gdy chcemy usunąć wszystkie znaki pasujące do danego wzoru? W takim przypadku przyda nam się opcja `--option` w Fish Shell, która pozwala na usunięcie wszystkich pasujących znaków i zachowanie tylko tych, które nam są potrzebne. Dzięki tej opcji możemy szybko i sprawnie przetwarzać nasze dane.
+Czasami, przy pracując z tekstem, musimy usunąć wszystkie wystąpienia określonego wzorca znaków. Być może chcemy pozbyć się pewnych danych, poprawić błędy lub usunąć niepotrzebne formatowanie. Używając powłoki Fish, to zadanie jest szybkie i łatwe do wykonania.
 
-# Jak tego dokonać w Fish Shell?
+## Jak to zrobić
 
-Aby usunąć znaki pasujące do danego wzoru w Fish Shell, należy użyć polecenia `grep` wraz z opcją `--option`. Przykładowe użycie wyglądałoby następująco:
+Możemy skorzystać z polecenia `string replace` aby usunąć wszystkie wystąpienia określonego wzorca znaków z danego ciągu znaków. Przykładowe użycie wygląda tak:
 
-```Fish Shell
-grep -v --option "szukany wzór" plik.txt
+```Fish Shell 
+set hello "Hello, hello, hello"
+echo $hello
+# Output: Hello, hello, hello
+
+string replace h "" $hello
+echo $hello
+# Output: ello, ello, ello
 ```
 
-Wykonując to polecenie, program wyświetli wszystkie linie z pliku `plik.txt`, które nie zawierają szukanego wzoru. W przypadku, gdy chcemy zastąpić znaki pasujące do wzoru innym tekstem, możemy użyć opcji `--replace` wraz z danym wzorem.
+Polecenie `string replace` wymaga trzech argumentów: wzorca znaków do usunięcia, ciągu znaków w którym chcemy dokonać zamiany oraz ciągu znaków zastępczych (w naszym przypadku jest to pusty ciąg znaków). Możemy także użyć flagi `--count` aby określić ilość wystąpień wzorca do zastąpienia. Na przykład:
 
-# Głębsza analiza
+```Fish Shell
+set numbers "1,2,3,4,5,6,7,8,9,10"
+string replace "1," "ONE," --count=1 $numbers
+echo $numbers
+# Output: ONE,2,3,4,5,6,7,8,9,10
+```
 
-Opcja `--option` jest bardzo przydatna, jednak warto pamiętać, że polecenia należy uważnie dobierać, aby uniknąć przypadkowego usunięcia potrzebnych danych. W przypadku, gdy identyczność znaków ma znaczenie, należy zastosować dokładniejsze wzorce, np. wykorzystując [wyrażenia regularne](https://en.wikipedia.org/wiki/Regular_expression).
+Powyższe przykłady pokazują jak usunąć pojedyncze wystąpienie wzorca znaków oraz określoną ilość wystąpień. Możemy także użyć polecenia `string match` aby określić, czy dany ciąg zawiera dany wzorzec. Przykładowe użycie wygląda tak:
 
-# Zobacz także
+```Fish Shell
+set hello "Hello, world!"
+if string match "*world*" $hello
+    echo "Znaleziono szukany wzorzec"
+else
+    echo "Nie znaleziono szukanego wzorca"
+end
+# Output: Znaleziono szukany wzorzec
+```
 
-* [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/grep.html)
-* [Poradnik odnośnie wyrażeń regularnych w Fish Shell](https://ryanstutorials.net/linuxtutorial/grep.php)
+## Zagłębienie
+
+W powyższych przykładach użyliśmy jasnych znaków rozpoczynających lub kończących wzorce. Możemy również używać symbolu gwiazdki `*` aby określić dowolne znaki. Na przykład:
+
+```Fish Shell
+set hello "Hello, world!"
+if string match "H*llo*" $hello
+    echo "Znaleziono szukany wzorzec"
+else
+    echo "Nie znaleziono szukanego wzorca"
+end
+# Output: Znaleziono szukany wzorzec
+```
+
+Symbol gwiazdki pozwala nam na znalezienie dowolnego ciągu znaków pomiędzy pierwszą i ostatnią literą wzorca. Możemy także użyć symbolu zapytania `?` aby określić pojedynczy znak. Na przykład:
+
+```Fish Shell
+set numbers "1,2,0,5,9"
+string match ",?0,?" $numbers
+# Output: 0
+```
+
+## Zobacz też
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current)
+- [Zaawansowane operacje na ciągach znaków w Fish Shell](https://fishshell.com/docs/current/index.html#string_replacement)

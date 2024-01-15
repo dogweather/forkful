@@ -1,6 +1,7 @@
 ---
-title:                "C++: Convertire una data in una stringa"
-simple_title:         "Convertire una data in una stringa"
+title:                "Conversione di una data in una stringa"
+html_title:           "C++: Conversione di una data in una stringa"
+simple_title:         "Conversione di una data in una stringa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,68 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso nella programmazione ci si trova a dover manipolare le date e, a volte, è necessario convertire una data in una stringa. Questo può risultare utile per la visualizzazione di date in formati specifici o per la memorizzazione dei dati in un file di testo.
-
-In questo articolo, impareremo come convertire una data in una stringa utilizzando il linguaggio di programmazione C++.
+Ci sono molte situazioni in cui è necessario convertire una data in una stringa nel linguaggio di programmazione C++, ad esempio quando si vuole visualizzare la data in un formato personalizzato o quando si desidera salvare una data in un file di testo per scopi di archiviazione.
 
 ## Come fare
 
-Per convertire una data in una stringa utilizzando C++, è necessario utilizzare la libreria `chrono` e la funzione `put_time` della libreria `iomanip`. Iniziamo definendo un oggetto di tipo `std::chrono::system_clock::time_point` e inizializziamolo con la data da convertire.
+Ecco un esempio di codice che illustra come convertire una data in una stringa utilizzando le funzioni built-in del C++:
 
-```
+```C++
 #include <iostream>
-#include <chrono>
-#include <iomanip>
+#include <ctime>
+#include <string>
+
+using namespace std;
 
 int main() {
-  // Definizione della data da convertire - 25 aprile 2021 alle 18:30
-  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1619383800);
-
-  return 0;
+   // Inizializza una variabile di tipo time_t con la data e ora correnti
+   time_t now = time(0);
+   
+   // Utilizza la funzione localtime per convertire la data e ora in una struttura tm
+   tm *ltm = localtime(&now);
+   
+   // Utilizza la funzione string stream per creare una stringa con la data nel formato desiderato
+   stringstream ss;
+   ss << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year;
+   string data = ss.str();
+   
+   // Stampa la stringa con la data
+   cout << "La data di oggi è: " << data << endl;
+   
+   return 0;
 }
 ```
 
-Per convertire questa data in una stringa, utilizziamo la funzione `std::put_time()` e specificammo il formato desiderato. Ad esempio, se vogliamo ottenere una stringa nel formato "g/m/aaaa hh:mm" (giorno/mese/anno ora:minuti), possiamo scrivere il seguente codice:
+L'output di questo programma sarà qualcosa del genere:
 
 ```
-#include <iostream>
-#include <chrono>
-#include <iomanip>
-
-int main() {
-  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1619383800);
-
-  // Converte la data in una stringa nel formato "g/m/aaaa hh:mm"
-  std::cout << "Data convertita = " << std::put_time(&data_da_convertire, "%d/%m/%Y %H:%M") << std::endl;
-
-  return 0;
-}
+La data di oggi è: 1/7/2020
 ```
 
-L'output di questo codice sarà "Data convertita = 25/04/2021 18:30".
+In questo esempio, si utilizzano le funzioni `time`, `localtime` e `stringstream` per ottenere la data attuale in un formato leggibile. Si può facilmente personalizzare il formato della data modificando il codice all'interno della stringa di output del `stringstream`.
 
-## Deep Dive
+## Approfondimento
 
-La funzione `std::put_time()` utilizza il formato di stampa di `strftime()` della libreria C, quindi è possibile utilizzare gli stessi specificatori di formato. Ad esempio, potremmo scrivere un codice per ottenere una stringa nel formato "Giorno Settimana, DD MMMM YYYY" (es. Martedì, 07 Settembre 2021) utilizzando il seguente codice:
+Ci sono diverse opzioni disponibili per convertire una data in una stringa nel linguaggio di programmazione C++. Una alternativa a quanto mostrato nell'esempio sopra è utilizzare le funzioni `strftime` o `put_time` per formattare la stringa con la data. Inoltre, esistono anche librerie di terze parti, come Boost Date Time e GNU Date and Time, che forniscono funzionalità avanzate per la gestione delle date e delle ore.
 
-```
-#include <iostream>
-#include <chrono>
-#include <iomanip>
-
-int main() {
-  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1630985400);
-  
-  // Converte la data in una stringa nel formato "Giorno Settimana, DD MMMM YYYY"
-  std::cout << "Data convertita = " << std::put_time(&data_da_convertire, "%A, %d %B %Y") << std::endl;
-
-  return 0;
-}
-```
-
-L'output di questo codice sarà "Data convertita = Martedì, 07 Settembre 2021".
+Altre considerazioni importanti per la conversione della data in una stringa includono il controllo degli errori e la gestione dei fusi orari. È importante assicurarsi che il codice sia in grado di gestire correttamente situazioni come anni bisestili e cambiamenti di fuso orario durante il calcolo della data.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di std::chrono](https://en.cppreference.com/w/cpp/chrono) 
-- [Documentazione ufficiale di std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
+- [Funzione time() di C++](https://en.cppreference.com/w/cpp/chrono/c/time)
+- [Funzione localtime() di C++](https://en.cppreference.com/w/cpp/chrono/c/localtime)
+- [Funzione stringstream di C++](https://en.cppreference.com/w/cpp/io/basic_stringstream)
+- [Libreria Boost Date Time](https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html)
+- [Libreria GNU Date and Time](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)

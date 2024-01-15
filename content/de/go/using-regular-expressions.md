@@ -1,5 +1,6 @@
 ---
-title:                "Go: Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Go: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Go"
 category:             "Go"
@@ -11,36 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Sind Sie neugierig auf die Verwendung von regulären Ausdrücken? Reguläre Ausdrücke sind eine leistungsstarke Möglichkeit, um Textmuster in Go zu finden und zu verarbeiten. Lesen Sie weiter, um herauszufinden, warum Sie in Ihrem nächsten Projekt reguläre Ausdrücke verwenden sollten.
+Wenn du regelmäßig mit Texten arbeitest und immer wieder Aufgaben wie das Suchen und Ersetzen von bestimmten Wörtern oder Musters hast, dann sind reguläre Ausdrücke ein mächtiges Werkzeug, das dir viel Zeit und Mühe sparen kann. Mit Go, der aktuellen Version der Programmiersprache, kannst du reguläre Ausdrücke einfach und effizient in deinen Code integrieren.
 
-## Wie man reguläre Ausdrücke in Go verwendet
+## Wie es funktioniert
 
-Reguläre Ausdrücke in Go werden mit dem `regexp` Paket erstellt und verwendet. Hier ist ein Beispiel, das zeigt, wie man einen einfachen regulären Ausdruck verwendet, um nach einer bestimmten Zeichenfolge in einem Satz zu suchen:
+Reguläre Ausdrücke sind eine spezielle Syntax zum Suchen und Ersetzen von Texten, die auf einem bestimmten Muster basieren. Mit Go kannst du reguläre Ausdrücke innerhalb von "```Go ... ```" Code-Blöcken ganz einfach in deinem Code einbinden.
+
+Hier ist ein Beispiel:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
-func main() {
-	text := "Hallo Freunde, dies ist ein Beispieltext"
-	pattern := "Freunde"
-	match, _ := regexp.MatchString(pattern, text)
-	fmt.Println(match)
+func main(){
+    text := "Hello there! Wie geht es dir?"
+
+    // Regular expressions in Go sind case-sensitive 
+    regex := regexp.MustCompile("wie|Wie")
+
+    // Finde alle Vorkommen von "Wie" oder "wie" in dem Text
+    matches := regex.FindAllString(text, -1)
+
+    // Gib die Vorkommen aus
+    fmt.Println(matches)
 }
 ```
 
-Das `MatchString` Funktion gibt `true` zurück, da der String "Freunde" in unserem Satz vorkommt. Sie können auch die `FindString` Funktion verwenden, um den tatsächlichen Text zu erhalten, der übereinstimmt. Es existieren viele weitere Möglichkeiten, um reguläre Ausdrücke in Go zu verwenden, wie z.B. die Verwendung von `FindAllString` und `ReplaceAllString`.
+Die Ausgabe des oben genannten Codes wäre:
 
-## Tiefer Einblick
+```
+[Wie wie]
+```
 
-Es gibt viele andere Funktionen und Optionen in Go's `regexp` Paket, die Ihnen helfen können, komplexe Muster zu finden und zu verarbeiten. Sie können z.B. `Match` anstelle von `MatchString` verwenden, um spezielle Optionen wie `IgnoreCase` zu verwenden, und Sie können die `ReplaceAll` Funktion verwenden, um Text basierend auf einem regulären Ausdruck zu ersetzen. Es gibt auch nützliche `Find` Funktionen, die Ihnen helfen können, Substrings basierend auf Ihrem Muster zu finden.
+In diesem Beispiel haben wir ein einfaches reguläres Ausdrucksmuster erstellt, das nach allen Vorkommen von "Wie" oder "wie" in einem Text sucht. Mit regulären Ausdrücken kannst du aber auch komplexere Muster definieren, um noch spezifischer zu suchen.
+
+## Tiefer eintauchen
+
+Um reguläre Ausdrücke in Go effektiv zu nutzen, gibt es einige wichtige Dinge, die du wissen solltest:
+
+- Reguläre Ausdrücke in Go sind immer case-sensitive, es sei denn, du verwendest den `i` Flag (z.B `/wie/i` würde auch "Wie" finden)
+- Die Vollständigkeit eines regulären Ausdrucks kann mit den `^` (Anfang) und `$` (Ende) Zeichen angegeben werden. Zum Beispiel `/^wie$/` würde nur nach einem Wort suchen, das genau "wie" lautet, und keine Wörter wie "wieder" oder "leiwand" finden.
+- Mit der `ReplaceAllString()` Funktion kannst du auch Teile eines Strings ersetzen, die einem bestimmten Muster entsprechen.
+- Die `Match()` Funktion gibt `true` zurück, wenn ein Text zu dem regulären Ausdruck passt, anstatt es in ein Array zu speichern wie bei `FindAllString()`.
+- Es gibt noch viele weitere Funktionen und Möglichkeiten beim Arbeiten mit regulären Ausdrücken, die du in der offiziellen [Go-Dokumentation](https://golang.org/pkg/regexp/) und [Beispielen](https://github.com/stoewer/go-strcase/blob/master/regression_test.go) finden kannst.
 
 ## Siehe auch
 
-- [Go's Regexp Paket Dokumentation](https://golang.org/pkg/regexp/)
-- [Regular Expressions Tutorial](https://regexone.com/) (englisch)
-- [Offizielle Go-Tour](https://tour.golang.org/)
+- [Einführung zu regulären Ausdrücken in Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-de)
+- [Offizielle Go-Dokumentation zu regulären Ausdrücken](https://golang.org/pkg/regexp/)
+- [10 Beispiele für reguläre Ausdrücke in Go](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions-go/)

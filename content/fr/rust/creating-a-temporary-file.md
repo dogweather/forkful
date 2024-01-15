@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Créer un fichier temporaire"
+title:                "Créer un fichier temporaire"
+html_title:           "Rust: Créer un fichier temporaire"
 simple_title:         "Créer un fichier temporaire"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La création de fichiers temporaires peut sembler être une tâche banale, mais c'est en réalité une technique très utile pour les programmeurs en Rust. Que vous ayez besoin de stocker temporairement des données, de tester un algorithme ou de sauvegarder des fichiers, la création d'un fichier temporaire peut vous faire gagner du temps et faciliter votre développement.
+Créer un fichier temporaire peut être utile pour stocker des données de manière temporaire, telles que des fichiers de cache ou des informations générées lors de l'exécution d'un programme.
 
 ## Comment faire
 
+Pour créer un fichier temporaire en Rust, nous pouvons utiliser la fonction `std::fs::File::create`. Cette fonction prend en paramètre le chemin du fichier temporaire à créer et renvoie un objet `std::fs::File` qui peut être utilisé pour écrire des données dans le fichier. Voici un exemple de code :
+
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
 
-// Créer un fichier temporaire
-let mut temp_file = File::create("/tmp/test.txt")?;
-
-// Écrire dans le fichier
-temp_file.write_all(b"Bonjour le monde!")?;
-
-// Lire le contenu du fichier
-let mut content = String::new();
-temp_file.read_to_string(&mut content)?;
-
-println!("{}", content);
+fn main() {
+    let temp_file = File::create("temp.txt").unwrap();
+    // Fichier temporaire créé avec succès
+}
 ```
 
-Output:
-```
-Bonjour le monde!
+Notez que la fonction `create` renvoie un `Result` qui peut être déballé à l'aide de la méthode `unwrap` pour gérer les éventuelles erreurs lors de la création du fichier temporaire.
+
+Une fois que nous avons créé notre fichier temporaire, nous pouvons utiliser les méthodes du type `std::fs::File` pour écrire des données dans le fichier. Par exemple, nous pouvons utiliser la méthode `write` pour écrire une chaîne de caractères dans le fichier :
+
+```Rust
+use std::fs::File;
+use std::io::Write;
+
+fn main() {
+    let mut temp_file = File::create("temp.txt").unwrap();
+    temp_file.write(b"Contenu du fichier temporaire").unwrap();
+    // Données écrites avec succès
+}
 ```
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu comment créer et utiliser un fichier temporaire en Rust, examinons un peu plus en détail cette technique. Tout d'abord, pourquoi utilisons-nous un fichier temporaire au lieu de simplement utiliser une variable en mémoire? La réponse est que les fichiers temporaires offrent plusieurs avantages :
+Lors de la création d'un fichier temporaire en Rust, il est important de prendre en compte la sécurité et la gestion des erreurs. Pour assurer la sécurité, il est recommandé d'utiliser la macro `tempfile::Builder` qui offre de nombreuses fonctionnalités pour la gestion des fichiers temporaires. Voici un exemple de code utilisant cette macro :
 
-- Ils peuvent être utilisés pour stocker des données plus volumineuses que ce que la mémoire peut contenir.
-- Ils sont persistants et peuvent être lus ou écrits même après la fermeture de votre programme.
-- Ils permettent de tester des fonctionnalités sans affecter les fichiers existants.
+```Rust
+use tempfile::Builder;
 
-La création d'un fichier temporaire en Rust est très simple et peut être réalisée en quelques lignes de code. Le module `std::fs` fournit des fonctions utiles telles que `create`, `write` et `read` pour interagir avec les fichiers. N'oubliez pas de toujours gérer les erreurs lors de l'utilisation de ces fonctions pour éviter les problèmes de sécurité potentiels.
+fn main() {
+    let temp_file = Builder::new().tempfile().unwrap();
+    // Fichier temporaire créé avec succès
+}
+```
+
+De plus, il est important de s'assurer que le fichier temporaire est supprimé après son utilisation. Pour cela, nous pouvons utiliser la méthode `tempfile::NamedTempFile::persist` qui renvoie un `TempPath` représentant le chemin du fichier temporaire à supprimer après sa fermeture.
 
 ## Voir aussi
 
-- [Documentation officielle de Rust sur les fichiers temporaires](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Article sur la sécurisation de la manipulation de fichiers en Rust](https://crates.io/crates/tempfile)
-- [Tutoriel vidéo sur la création de fichiers temporaires en Rust](https://www.youtube.com/watch?v=hAUTe_Ro5Vk)
+- [Documentation officielle de Rust sur les fichiers](https://doc.rust-lang.org/std/fs/index.html)
+- [Exemple de création de fichier temporaire avec la macro `tempfile::Builder`](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=dd56990dbe9b2b3cfc97c0cda880fb82)

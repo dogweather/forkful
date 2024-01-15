@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Analisando html"
+html_title:           "PHP: Analisando html"
+simple_title:         "Analisando html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,40 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Parsear HTML é uma tarefa essencial para qualquer desenvolvedor PHP que trabalhe com a web. Ao fazer isso, você pode extrair informações valiosas de sites, como dados de vendas, preços, informações de contato e muito mais. Além disso, você pode automatizar tarefas, como buscar e indexar informações, o que economiza tempo e esforço.
+Por que alguém se envolveria em analisar HTML? É importante entender que, ao trabalhar com dados na web, muitas vezes precisamos extrair informações de páginas HTML para usá-las em nosso código. Isso é especialmente útil para coletar dados de páginas da web para fins de análise ou para criar scripts automatizados para ações específicas.
 
 ## Como fazer
 
-Antes de começar a parsear HTML, você precisa ter familiaridade com a linguagem de programação PHP e também com a estrutura do HTML. Você também precisará de uma biblioteca chamada Simple HTML DOM Parser, que é usada para extrair dados do HTML.
+A maneira mais comum de analisar HTML em PHP é usando a biblioteca nativa do PHP, o DOMDocument. Vamos dar uma olhada em um exemplo simples de como usar o DOMDocument para analisar uma página HTML:
 
-Aqui está um exemplo básico de como usar o Simple HTML DOM Parser para extrair o texto de um elemento HTML específico:
-
-```
+```PHP
 <?php
-  // Incluindo o arquivo da biblioteca Simple HTML DOM Parser
-  include('simple_html_dom.php');
+// Faz o download da página HTML
+$html = file_get_contents('https://www.example.com');
 
-  // Carregando a página a ser parseada
-  $html = file_get_html('http://www.exemplo.com/');
+// Cria um novo DOMDocument
+$dom = new DOMDocument();
 
-  // Encontrando o elemento desejado
-  $element = $html->find('.titulo', 0);
+// Carrega a página HTML baixada no DOMDocument
+$dom->loadHTML($html);
 
-  // Imprimindo o texto do elemento
-  echo $element->plaintext;
-?>
+// Procura por um elemento específico, por exemplo, um título <h1>
+$title = $dom->getElementsByTagName('h1')->item(0)->textContent;
+
+// Exibe o título
+echo $title;
 ```
 
-Isso irá imprimir o texto do primeiro elemento com a classe "titulo" encontrado no HTML.
+Neste exemplo, usamos a função `file_get_contents` para baixar a página HTML de exemplo. Em seguida, criamos um novo objeto DOMDocument e carregamos o HTML baixado nele usando o método `loadHTML`. Depois disso, usamos o método `getElementsByTagName` para encontrar o elemento de título `<h1>` e, por fim, imprimimos o seu conteúdo usando o método `textContent`.
+
+### Saída de exemplo
+
+Se tudo funcionou corretamente, a saída desse exemplo seria algo como:
+
+```
+Welcome to Example.com
+```
+
+Claro, este é apenas um exemplo simples de como analisar HTML usando o DOMDocument. Existem muitas outras funções e métodos disponíveis para trabalhar com o DOMDocument, permitindo uma análise mais avançada de páginas HTML.
 
 ## Mergulho profundo
 
-Além de extrair informações de elementos específicos no HTML, você também pode usar o Simple HTML DOM Parser para percorrer todo o documento e coletar dados de diferentes seções. Por exemplo, você pode usar a função `find()` e especificar uma tag HTML para obter uma lista de todos os elementos com essa tag. Em seguida, você pode percorrer essa lista usando um loop `for` ou `foreach` e obter as informações que precisa.
+A biblioteca DOMDocument nos oferece uma grande variedade de métodos e funções para analisar e manipular HTML. Alguns dos mais importantes são:
 
-Também é possível usar os recursos avançados do PHP, como expressões regulares, para fazer parsing de HTML. No entanto, isso requer conhecimentos mais avançados de programação e pode ser mais complicado do que o uso do Simple HTML DOM Parser.
+- `loadHTML()` - Carrega o HTML em um objeto DOMDocument.
+- `getElementsByTagName()` - Retorna uma lista de elementos com uma tag HTML específica.
+- `getAttribute()` - Obtém o valor de um atributo de um elemento.
+- `setAttribute()` - Define o valor de um atributo de um elemento.
+- `textContent` - Obtém ou define o conteúdo de texto de um elemento.
+
+Para saber mais sobre todas as funções disponíveis, é possível consultar a documentação oficial do PHP.
 
 ## Veja também
 
-- [Documentação do Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/manual.htm)
-- [Tutorial de parseamento de HTML com PHP](https://www.tutorialrepublic.com/php-tutorial/php-parse-html-document.php)
-- [Vídeo tutorial de parseamento de HTML com PHP](https://youtu.be/wk88FzBt9JQ)
+Aqui estão alguns links úteis para continuar aprendendo sobre como analisar HTML em PHP:
+
+- [Documentação oficial do PHP para a biblioteca DOMDocument](https://www.php.net/manual/pt_BR/book.dom.php)
+- [Tutorial da DigitalOcean sobre parsing de HTML em PHP](https://www.digitalocean.com/community/tutorials/how-to-parse-html-in-php)
+- [Vídeo do YouTube sobre como usar o DOMDocument em PHP](https://www.youtube.com/watch?v=EoRv2fg76Qs)

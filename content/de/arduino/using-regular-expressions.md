@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Verwendung regulärer Ausdrücke"
+html_title:           "Arduino: Verwendung regulärer Ausdrücke"
+simple_title:         "Verwendung regulärer Ausdrücke"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,38 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man sich mit regulären Ausdrücken beschäftigen? Ganz einfach: Sie vereinfachen das Suchen und Ersetzen von Text in Programmen und machen die Verarbeitung von Daten flexibler.
 
-Die Verwendung von regulären Ausdrücken ist ein effektiver Weg, um in der Programmierung Textmuster zu suchen und zu manipulieren. Dies kann hilfreich sein, um bestimmte Informationen aus einer größeren Menge von Text herauszufiltern oder um Daten zu validieren. Mit dem Arduino können wir auch reguläre Ausdrücke nutzen, um unsere Projekte noch leistungsfähiger zu gestalten.
+## Wie man reguläre Ausdrücke in Arduino verwendet
+Reguläre Ausdrücke in Arduino werden mithilfe der eingebauten "Regexp" Bibliothek verwendet. Zunächst muss diese Bibliothek im Sketch eingelesen werden:
 
-## Anleitung
-
-Um reguläre Ausdrücke auf dem Arduino zu verwenden, folgen Sie den folgenden Schritten:
-
-1. Importieren Sie die "regex" Bibliothek in Ihrem Sketch: ```Arduino#include <regex.h>```
-2. Erstellen Sie ein "regex" Objekt, indem Sie den gewünschten Ausdruck und die passenden Optionen angeben: ```Arduinoregex myRegex("pattern", options);```
-3. Verwenden Sie die "search" oder "match" Methode, um den Ausdruck auf einen Text anzuwenden: ```Arduinobool found = myRegex.search(text);```
-4. Überprüfen Sie das Ergebnis und führen Sie entsprechende Aktionen durch: ```Arduinoif (found) { // do something }```
-
-Hier ist ein Beispiel, um eine E-Mail-Adresse aus einer Zeichenkette zu extrahieren und auf dem seriellen Monitor auszugeben:
-
+```Arduino
+#include <Regexp.h> 
 ```
-#define EMAIL_PATTERN "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"
-regex emailRegex(EMAIL_PATTERN);
-String text = "Meine E-Mail-Adresse ist max.mustermann@example.com";
-if (emailRegex.match(text)) {
-  Serial.println(emailRegex.matched()); // gibt "max.mustermann@example.com" aus
+
+Als nächstes definieren wir einen String, auf den wir den regulären Ausdruck anwenden möchten:
+
+```Arduino
+String text = "Dies ist ein Beispieltext zum Testen von regulären Ausdrücken.";
+```
+
+Nun können wir mithilfe der `Regexp` Funktionen den Text durchsuchen und bearbeiten. Hier sind einige Beispiele:
+
+### Suchen und Ersetzen
+Um bestimmte Wörter oder Zeichenfolgen in einem Text zu finden und zu ersetzen, verwenden wir die `regreplace()` Funktion. Hier ist ein Beispiel, bei dem wir alle Vorkommen von "Beispiel" durch "Test" ersetzen:
+
+```Arduino
+char pattern[] = "Beispiel";
+char replacement[] = "Test";
+regreplace(text, pattern, replacement);
+```
+
+Die geänderte Version des Textes wird nun in der Variablen `text` gespeichert.
+
+### Extrahieren von Daten
+Reguläre Ausdrücke ermöglichen es auch, Daten aus einem String zu extrahieren. Nehmen wir an, wir haben einen Text mit einer Liste von Namen und Telefonnummern und möchten nur die Telefonnummern extrahieren. Dazu verwenden wir die Funktion `regfind()`:
+
+```Arduino
+char pattern[] = "\\d{10}"; // Telefonnummern bestehen aus 10 Ziffern
+String phoneNumber = regfind(text, pattern); // Extrahiert die erste 10-stellige Ziffernfolge im Text
+```
+
+### Überprüfen von Bedingungen
+Mithilfe von regulären Ausdrücken können auch Bedingungen überprüft werden. Zum Beispiel können wir prüfen, ob eine E-Mail-Adresse gültig ist, indem wir nach einem bestimmten Muster suchen. Hier ist ein Beispiel, das überprüft, ob eine String-Variable `email` eine gültige E-Mail-Adresse enthält:
+
+```Arduino
+char pattern[] = "\\w+@[a-z]+\\.[a-z]+";
+if (regfound(email, pattern)) {
+  // E-Mail ist gültig
 }
 ```
 
-## Tiefer Einblick
-
-- Reguläre Ausdrücke bestehen aus einer Kombination von Zeichen, die ein bestimmtes Muster beschreiben. Sie können auch mit Variablen und anderen Textmanipulationsfunktionen kombiniert werden, um komplexe Muster zu erstellen.
-- Die "match" Methode gibt nicht nur das passende Muster zurück, sondern auch Informationen über die Position und die Anzahl der Übereinstimmungen.
-- Es gibt verschiedene Optionen, die beim Erstellen eines "regex" Objekts angegeben werden können, um das Verhalten des Ausdrucks zu steuern, z.B. die Beachtung von Groß- und Kleinschreibung oder die Behandlung von Leerzeichen.
-- Für komplexe Anwendungen können sogenannte "Capture Groups" verwendet werden, um Teile des Textes zu isolieren, die auf ein bestimmtes Muster passen.
+## Tiefergehende Informationen über reguläre Ausdrücke
+Reguläre Ausdrücke können kompliziert werden, aber es gibt viele Online-Ressourcen und Tutorials, die Ihnen bei der Erstellung und Verwendung helfen können. Ein guter Ausgangspunkt ist die offizielle [Arduino-Referenz](https://www.arduino.cc/reference/en/libraries/regexp/) für die Regexp Bibliothek. Zudem gibt es viele nützliche Tutorials auf Plattformen wie [Instructables](https://www.instructables.com/circuits/arduino/projects/) oder [Arduino Project Hub](https://create.arduino.cc/projecthub/projects/tags/regular%20expressions).
 
 ## Siehe auch
-
-- [Regex-Tutorial für Arduino](https://www.arduino.cc/reference/en/language/functions/regular-expressions/)
-- [Online RegEx Tester](https://regex101.com/)
-- [RegEx Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Arduino-Referenz für die Regexp Bibliothek](https://www.arduino.cc/reference/en/libraries/regexp/)
+- [Reguläre Ausdrücke bei Instructables](https://www.instructables.com/circuits/arduino/projects/)
+- [Projekte mit regulären Ausdrücken auf Arduino Project Hub](https://create.arduino.cc/projecthub/projects/tags/regular%20expressions)

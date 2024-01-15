@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Ricerca e sostituzione di testo"
-simple_title:         "Ricerca e sostituzione di testo"
+title:                "Cerca e sostituisci testo"
+html_title:           "Clojure: Cerca e sostituisci testo"
+simple_title:         "Cerca e sostituisci testo"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore e lavori con testo, a volte può capitare di dover sostituire una determinata parola o frase all'interno di un file. Con Clojure, è possibile automatizzare questo processo e risparmiare tempo, rendendo il tuo lavoro più efficiente.
+Se stai lavorando con il tuo codice Clojure e ti ritrovi a dover sostituire un pezzo di testo con un altro, allora questo articolo è per te. Con il giusto approccio, puoi risparmiare tempo e rendere il tuo lavoro più efficiente.
 
 ## Come Fare
 
-Per iniziare, dovrai importare la libreria `clojure.string` nel tuo progetto Clojure. Questa libreria fornisce diverse funzioni utili per la manipolazione delle stringhe, tra cui la funzione `replace`, che ci permetterà di sostituire il testo all'interno di una stringa.
+Per sostituire un pezzo di testo con un altro in Clojure, puoi utilizzare la funzione `replace` della libreria `clojure.string`. Ad esempio:
 
-```Clojure
-(require '[clojure.string :as str])
+```
+Clojure (clojure.string/replace "Ciao, mondo!" "Ciao" "Hello")
 ```
 
-Ora che abbiamo importato la libreria, possiamo utilizzare la funzione `replace` passandogli tre argomenti: la stringa in cui vogliamo sostituire il testo, la parola o frase che vogliamo sostituire e il testo di sostituzione.
+Output: "Hello, mondo!"
 
-Ad esempio, se vogliamo sostituire la parola "cane" con "gatto" all'interno di una stringa, possiamo scrivere il seguente codice:
+In questo esempio, "Ciao" viene sostituito con "Hello". Puoi anche utilizzare la funzione `replace-first` per sostituire solo la prima occorrenza di un testo, invece di tutte.
 
-```Clojure
-(str/replace "Il cane è il mio animale preferito" "cane" "gatto")
+```
+Clojure (clojure.string/replace-first "Ciao, mondo! Ciao" "Ciao" "Hello")
 ```
 
-L'output sarà:
+Output: "Hello, mondo! Ciao"
 
-```Clojure
-"Il gatto è il mio animale preferito"
+Puoi anche utilizzare delle espressioni regolari nella funzione `replace` per cercare testi più complessi da sostituire:
+
+```
+Clojure (clojure.string/replace "Il mio numero di telefono è 123-456-789" #"\d+-\d+-\d+" "XXX-XXX-XXXX")
 ```
 
-La funzione `replace` sostituirà tutte le occorrenze della parola "cane" con "gatto" all'interno della stringa.
+Output: "Il mio numero di telefono è XXX-XXX-XXXX"
 
 ## Approfondimento
 
-La funzione `replace` accetta in realtà anche un quarto argomento opzionale, rappresentato da un numero che indica il numero massimo di sostituzioni da effettuare. In questo modo, possiamo decidere di sostituire solo la prima o le prime due occorrenze di una parola specifica.
+Se vuoi approfondire le tue conoscenze sulle espressioni regolari e su come utilizzarle per sostituire testi in modo più avanzato, puoi consultare questi link:
 
-Inoltre, la libreria `clojure.string` offre anche altre funzioni utili per la manipolazione delle stringhe, come ad esempio `split` per separare una stringa in un vettore di stringhe in base a un determinato separatore, o `join` per unire una lista di stringhe in una singola stringa.
+- Documentazione ufficiale sulla funzione `replace`: https://clojuredocs.org/clojure.string/replace
+- Tutorial sulle espressioni regolari in Clojure: https://clojure.org/guides/learn/regular_expressions
 
 ## Vedi Anche
 
-- Documentazione della libreria `clojure.string`: https://clojuredocs.org/clojure.string
-- Tutorial su come utilizzare la libreria `clojure.string`: https://purelyfunctional.tv/guide/clojure-string-cheatsheet/ 
-- Esempi pratici di utilizzo della libreria `clojure.string`: https://gist.github.com/acheckler/7931540
+- Documentazione ufficiale sulla libreria `clojure.string`: https://clojuredocs.org/clojure.string
+- Tutorial Clojure sul sito ufficiale: https://clojure.org/guides/getting_started

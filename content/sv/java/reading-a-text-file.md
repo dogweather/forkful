@@ -1,6 +1,7 @@
 ---
-title:                "Java: Att läsa en textfil"
-simple_title:         "Att läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Java: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,58 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att läsa en textfil är en vanlig uppgift inom programmering och kan vara användbart när man vill läsa in data från en extern källa. Det kan vara användbart för att utföra operationer på den data som finns i filen eller för att visualisera den på ett annat sätt. 
 
-Att läsa en textfil är en vanlig uppgift inom programmering. Genom att lära dig hur man läser en textfil kan du enkelt manipulera data och utföra olika åtgärder baserat på dess innehåll. Det är också ett viktigt koncept inom filhantering och kan hjälpa dig att förbättra din kodningsteknik.
-
-## Hur man gör
-
-Först och främst måste vi deklarera en `File` objekt och ange sökvägen till vår textfil. Detta görs genom att skriva:
+## Så här gör du
+För att läsa en textfil i Java används en FileReader och en BufferedReader. Det första steget är att skapa en FileReader som tar emot filnamnet som en parameter. Sedan skapar vi en BufferedReader som tar emot FileReader som parameter och använder metoden "readLine()" för att läsa varje rad i filen. Här är en kodexempel:
 
 ```Java
-File myFile = new File("min_textfil.txt");
-```
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-Efter att vi har deklarerat vår fil, måste vi skapa en `FileReader` objekt. Detta objekt kommer att hantera läsningen av filen. Vi kan göra detta genom att skriva:
+public class TextFileReader {
+    public static void main(String[] args) {
+        try {
+            // Skapa en FileReader
+            FileReader fileReader = new FileReader("textfil.txt");
 
-```Java
-FileReader fileReader = new FileReader(myFile);
-```
+            // Skapa en BufferedReader baserad på FileReader
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-Nu kan vi använda vår `FileReader` för att skapa en `BufferedReader` som kommer att läsa in vår textfil:
+            String line;
 
-```Java
-BufferedReader reader = new BufferedReader(fileReader);
-```
+            // Läs varje rad i filen och skriv ut den
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
 
-När vi har vår `BufferedReader` objekt, kan vi börja läsa vår fil. Detta görs med hjälp av `readLine()` metoden:
+            // Stäng BufferedReader
+            bufferedReader.close();
 
-```Java
-String line = reader.readLine();
-```
-
-Denna kod läser en rad i taget från vår textfil och tilldelar den till en `String` variabel. Om vi vill läsa hela filen kan vi använda en loop för att läsa varje rad, som i exemplet nedan:
-
-```Java
-String line;
-while ((line = reader.readLine()) != null) {
-    // Gör något med varje rad här
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-När vi är klara med att läsa filen, måste vi stänga vår `BufferedReader` för att frigöra resurser. Detta görs enkelt genom att skriva:
+Om vi antar att vår textfil innehåller följande text:
 
-```Java
-reader.close();
+```
+Hej! Det här är en textfil.
+Vi läser in den med hjälp av FileReader och BufferedReader.
 ```
 
-## Djupdykning
+Då kommer följande output att skrivas ut:
 
-När vi läser en textfil är det viktigt att förstå filens format. Om det är en vanlig textfil med endast tecken och rader, då är `readLine()` metoden tillräcklig för att läsa den. Men ibland kan filen innehålla annan data, som till exempel kommaseparerad data eller XML-format. I sådana fall måste vi använda andra metoder och tekniker för att läsa in och bearbeta datan.
+```
+Hej! Det här är en textfil.
+Vi läser in den med hjälp av FileReader och BufferedReader.
+```
 
-Vi kan också använda `FileWriter` och `PrintWriter` objekt för att skriva till en textfil. Detta kan vara användbart om vi vill skapa eller uppdatera en fil.
+## Deep Dive
+När vi läser en textfil med BufferedReader så delas filen in i flera rader som vi kan läsa en åt gången. Detta gör läsningen snabbare och mindre minneskrävande jämfört med att läsa hela filen på en gång. Du kan använda metoden "read()" om du vill läsa in en och enkel byte istället för en hel rad. Detta kan vara användbart om filen innehåller binär data. Du kan också använda "skip()" för att hoppa över ett visst antal tecken eller använda "mark()" och "reset()" för att komma tillbaka till en tidigare läsposition. Det finns också andra metoder som vi kan använda för att hantera specifika situationer när vi läser en textfil. Mer information om dessa finns i Java-dokumentationen.
 
 ## Se även
-
-- [Java File Handling Tutorial](https://www.javatpoint.com/java-file)
-- [Oracle Java File Class Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
-- [Java Write to File Tutorial](https://www.geeksforgeeks.org/write-data-file-java/)
+- Java FileReader och BufferedReader: https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html
+- Java-dokumentationen för FileReader: https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html

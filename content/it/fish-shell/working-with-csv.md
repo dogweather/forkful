@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Lavorare con i csv"
-simple_title:         "Lavorare con i csv"
+title:                "Lavorare con i file csv"
+html_title:           "Fish Shell: Lavorare con i file csv"
+simple_title:         "Lavorare con i file csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Se sei un appassionato di gestione dei dati o sei coinvolto in un progetto che richiede la manipolazione dei file CSV, allora il Fish Shell potrebbe essere un'ottima opzione per te. Con la sua sintassi intuitiva e le numerose funzioni, è possibile manipolare e analizzare i dati CSV in modo semplice e efficiente.
 
-Chiunque lavori con dati strutturati come i file CSV può trarre vantaggio dall'utilizzo del Fish Shell per automatizzare e semplificare il processo di manipolazione dei dati.
+## Come Usare
 
-## Come fare
+Per iniziare a lavorare con file CSV usando Fish Shell, innanzitutto è necessario avere il pacchetto `csvkit` installato sul tuo sistema. Puoi farlo tramite il comando:
 
-Utilizzare il Fish Shell per lavorare con file CSV è un processo semplice e intuitivo. Di seguito sono riportati alcuni esempi di codice e relativi output che illustreranno come questo shell può essere utile.
-
-```fish
-# Visualizza il contenuto di un file CSV
-fish -c "cat file.csv"
-
-# Ordina i dati per colonna
-fish -c "sort -k {colonna} file.csv"
-
-# Rimuove i duplicati
-fish -c "uniq file.csv"
-
-# Filtra i dati per valore
-fish -c "grep {valore} file.csv"
-
-# Modifica il valore di una cella
-fish -c "sed -i 's/{valore_originale}/{nuovo_valore}/g' nome_file.csv"
-
-# Calcola la somma della colonna
-fish -c "awk '{sum+=$colonna} END {print sum}' file.csv"
 ```
+fish:~> sudo apt-get install csvkit
+```
+
+Una volta installato, puoi iniziare a manipolare i tuoi file CSV utilizzando una combinazione di comandi e funzioni Fish Shell. Ad esempio, se vuoi selezionare solo alcune colonne dal tuo file CSV, puoi utilizzare il comando `csvcut`:
+
+```
+fish:~> csvcut -c "nome,colore" file.csv
+```
+
+Questo comando selezionerà solo le colonne "nome" e "colore" dal tuo file CSV e visualizzerà il risultato sulla shell.
+
+Inoltre, con Fish Shell è possibile anche unire o unificare più file CSV utilizzando il comando `csvjoin`:
+
+```
+fish:~> csvjoin file1.csv file2.csv
+```
+
+Questo comando unirà i contenuti di `file1.csv` e `file2.csv` e visualizzerà il risultato sulla shell.
 
 ## Approfondimento
 
-Il Fish Shell offre numerosi strumenti utili per lavorare con file CSV. Ad esempio, la funzione `grep` può essere utilizzata in combinazione con espressioni regolari per filtrare i dati in base a criteri specifici. Inoltre, è possibile utilizzare il comando `awk` per eseguire operazioni matematiche sui dati, come nel caso dell'esempio sopra riportato.
+Fish Shell offre molte altre funzionalità utili per lavorare con file CSV. Ad esempio, puoi modificare il formato dei dati utilizzando il comando `csvformat` o filtrare i dati utilizzando il comando `csvgrep`. Inoltre, puoi anche esportare i dati in formato JSON utilizzando il comando `csvjson`.
 
-## Vedi anche
+Inoltre, puoi trovare un elenco completo dei comandi e delle funzioni disponibili per l'utilizzo con file CSV visitando la documentazione di Fish Shell.
 
-Ecco alcuni link utili per approfondire l'argomento:
-
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial su come lavorare con file CSV utilizzando il Fish Shell](https://medium.com/@escline/lavorare-con-file-csv-utilizzando-il-fish-2a506cc964f3)
-- [Guida completa al Fish Shell](https://www.freecodecamp.org/news/the-coolest-features-of-the-fish-shell-4-09eedfd15b0b/)
+## Vedi Anche
+- [Documentazione di Fish Shell](https://fishshell.com/docs/current/)
+- [Pacchetto csvkit](https://csvkit.readthedocs.io/en/latest/)

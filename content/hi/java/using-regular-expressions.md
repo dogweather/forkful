@@ -1,5 +1,6 @@
 ---
-title:                "Java: नियमित अभिव्यक्तियों का उपयोग"
+title:                "नियमित अभिव्यक्तियों का उपयोग"
+html_title:           "Java: नियमित अभिव्यक्तियों का उपयोग"
 simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
 programming_language: "Java"
 category:             "Java"
@@ -9,17 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-अब तक आपने जावा प्रोग्रामिंग के बारे में काफी सीखा होगा, लेकिन क्या आपने कभी रेगुलर एक्सप्रेशन के बारे में सुना है? अगर नहीं, तो इस ब्लॉग पोस्ट में हम आपको रेगुलर एक्सप्रेशन के बारे में बताएंगे और आपको इसका प्रयोग करने के लिए कैसे तैयार करेंगे। यह आपके लिए अच्छा हो सकता है क्योंकि रेगुलर एक्सप्रेशन्स आपको डेटा संशोधन और प्रोग्रामिंग में बहुत मदद कर सकते हैं।
+Why: Kyu Regular Expressions ka upyog karna hai?
 
-## क्यों
+Regular Expressions ek bahut prabhavi aur prachalit tool hai jo sahi pattern ko dhoondhne aur manipulate karne mein madad karta hai. Ye programming mein bahut kaam aata hai jaise data validation, data extraction, aur string manipulation. Isse kaam karte waqt hume bahut time aur effort bachata hai.
 
-रेगुलर एक्सप्रेशन दो टेक्स्ट के मेल को खोजने और बदलने के लिए बहुत ही प्रभावी होते हैं। इन्हें आसानी से बहुत सारी प्रोग्रामिंग भाषाओं में इस्तेमाल किया जा सकता है जैसे कि जावा, पायथन और सी++। ये जानते हुए कि रेगुलर एक्सप्रेशन्स आपको किसी भी प्रोग्राम को सरल से अधिकाधिक बनाने में मदद कर सकते हैं, यह आपके लिए गुणवत्ता का एक प्रकार हो सकता है।
+How To: Kaise Regular Expressions ka upyog karein?
 
-## कैसे
-
-रेगुलर एक्सप्रेशन को जावा में प्रयोग करने के लिए आपको एक विशेष लाइब्रेरी (java.util.regex) को इंपोर्ट करना होगा। इसके बाद, आपको एक Regex ऑब्जेक्ट बनाना होगा जिसमें आपको अपनी ढांचे को संबोधित करने के लिए एक रेगुलर एक्सप्रेशन दिया जाएगा। नीचे दिए गए उदाहरण में, हमने एक दो शब्दों के मेल को खोजने के लिए एक रेगुलर एक्सप्रेशन बनाया है:
+Jaise ki humne pehle bhi kaha, Regular Expressions ka upyog karne ke liye hume ek pattern dhoondhna hota hai. Is pattern ko hum regular expression ya regex kehte hain. Iske baad hum uss regex ko Java mein implement karte hain.
 
 ```Java
-import java.util.regex.*;
+// Regex Example
+String regex = "a+[bc]{2}";
+```
 
-String text
+Iss code mein humne ek regex banaya hai jo "a" ke saath "bc" ya "bb" ko match karta hai. Ab hum ise kaise use kar sakte hain, ye dekhte hain.
+
+```Java
+String text = "abc";
+boolean isMatch = text.matches(regex); // returns true
+```
+
+Is code mein humne `matches()` method ka upyog kiya hai jo humare text ko diye gaye regex ke saath match karta hai aur agar match ho jata hai to `true` return karta hai. Agar text me se "bc" hata kar "ab" banta hai to yeh match nahi karta aur `false` return karta hai.
+
+Deep Dive: Regular Expressions ka upyog karte waqt hume kuch baato ka dhyan rakhna hota hai.
+
+1. Escape Characters: Regex mein kuch characters special hote hain jaise `.` aur `*` jinki wajah se humare regex mein galti ho sakti hai. Isiliye hume en characters ke saath `\` ka use karna hota hai.
+
+2. Character Classes: Regex mein hum `[ ]` ke andar characters ya ranges ka use kar sakte hain jaise `[a-z]`. Isse humare regex me kewal lowercase letters hi match honge.
+
+3. Quantifiers: Ye Regular Expressions ke sabse powerful part hain. Inse hum specify kar sakte hain ki hum kisi character ya pattern ko kitni baar match karna chahte hain, jaise `a{3}` ye "aaa" ko match karega.
+
+See Also: Dekhiye Regular Expressions ka upyog karte samay hume in cheezo ka dhyan rakhna hota hai. Regular Expressions ke aur bhi bahut saare features hain jo aap khud explore kar sakte hain.
+
+Links: 
+- [Tutorialspoint - Java Regular Expressions](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
+- [GeeksforGeeks - Regular Expressions in Java](https://www.geeksforgeeks.org/regular-expressions-in-java/)
+- [Oracle Docs - Java SE - Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Erstellung einer temporären Datei"
+html_title:           "Swift: Erstellung einer temporären Datei"
+simple_title:         "Erstellung einer temporären Datei"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,36 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Erstellen von temporären Dateien ist ein wichtiger Teil der Programmierung in Swift. Es kann hilfreich sein, um Zwischenergebnisse zu speichern oder um temporäre Daten während der Ausführung des Programms zu verwalten.
+Warum sollte man sich damit beschäftigen, eine temporäre Datei zu erstellen? Nun, es gibt viele Situationen, in denen man vorübergehend eine Datei benötigt, um Daten zu speichern oder zu verarbeiten. Zum Beispiel, wenn man eine App entwickelt, kann es hilfreich sein, temporäre Dateien zu nutzen, um Zwischenergebnisse zu speichern oder um Daten zwischen verschiedenen Teilen der App auszutauschen.
 
-## Wie es geht
+## Wie
 
-Um eine temporäre Datei in Swift zu erstellen, folgen Sie diesen Schritten:
-
-1. Importieren Sie die Foundation-Bibliothek mit `import Foundation`
-2. Verwenden Sie die `NSTemporaryDirectory()`-Methode, um den Pfad des temporären Verzeichnisses zu erhalten. Dieser Pfad ändert sich jedes Mal, wenn das Programm ausgeführt wird.
-3. Verwenden Sie die `URL(fileURLWithPath:isDirectory:)`-Methode, um eine URL für die temporäre Datei zu erstellen. Geben Sie den Pfad des temporären Verzeichnisses als Argument für den Parameter `fileURLWithPath` an und setzen Sie `isDirectory` auf `false`.
-4. Verwenden Sie die `write(to:atomically:encoding:)`-Methode, um Daten in die temporäre Datei zu schreiben. Sie können entweder eine Zeichenfolge oder eine Datenstruktur als Argument für den Parameter `write(to:atomically:encoding:)` angeben.
-5. Sie können auch die `URL.fileURLWithoutPathExtension()`-Methode verwenden, um das Verzeichnis der temporären Datei zu erhalten.
+Das Erstellen einer temporären Datei in Swift ist eigentlich ziemlich einfach. Man kann die `FileManager`-Klasse verwenden, um einen temporären Dateipfad zu generieren und dann eine Datei an diesem Pfad zu erstellen. Hier ist ein Beispiel:
 
 ```Swift
-import Foundation
-let tempDir = NSTemporaryDirectory()
-let tempURL = URL(fileURLWithPath: tempDir, isDirectory: false)
-let text = "Dies ist ein Beispieltext"
-try? text.write(to: tempURL, atomically: true, encoding: .utf8)
-let dirURL = tempURL.deletingPathExtension()
+let fileManager = FileManager.default
+let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory())
+let tempFileURL = tempDirURL.appendingPathComponent("tempFile.txt")
+
+do {
+    try "Lorem ipsum dolor sit amet".write(to: tempFileURL, atomically: true, encoding: .utf8)
+    print("Temporäre Datei erfolgreich erstellt!")
+} catch {
+    print(error)
+}
 ```
 
-Die obigen Schritte erstellen eine temporäre Datei im Systemtemporärbereich und schreiben den Beispieltext hinein. Wir können auch sehen, dass wir das Verzeichnis der temporären Datei bekommen können, indem wir die Dateinamenerweiterung löschen.
+In diesem Beispiel verwenden wir den `NSTemporaryDirectory()`-Pfad, um den temporären Ordner des Betriebssystems zu erhalten. Dann fügen wir den Namen der temporären Datei an dieses URL-Objekt an und können dann die `write(to:atomically:encoding:)`-Methode nutzen, um Daten in die Datei zu schreiben. Natürlich kann man den Inhalt und den Dateinamen anpassen, je nach Bedarf.
 
-## Tiefergehende Einblicke
+Wir können auch die `isTemporary`-Eigenschaft des `URL`-Objekts nutzen, um sicherzustellen, dass es sich um eine temporäre Datei handelt, falls dies wichtig ist.
 
-Das Erstellen von temporären Dateien kann auch nützlich sein, um sicherzustellen, dass bestimmte Daten während der Laufzeit eines Programms nicht dauerhaft gespeichert bleiben. Zum Beispiel können Sie temporäre Dateien verwenden, um Zwischenergebnisse zu speichern, die nicht relevant sind, sobald Ihr Programm seine Aufgabe erledigt hat.
+## Deep Dive
 
-Es ist auch wichtig zu beachten, dass temporäre Dateien nicht immer automatisch gelöscht werden. Sie müssen sicherstellen, dass Sie die temporäre Datei löschen, sobald Sie sie nicht mehr benötigen, um Speicherplatz zu sparen.
+Man könnte sich fragen, was genau eine temporäre Datei von einer "normalen" Datei unterscheidet. Nun, temporäre Dateien sind in der Regel dazu gedacht, nur für kurze Zeit zu existieren und dann gelöscht zu werden. Sie bieten eine einfache Möglichkeit, temporäre Daten zu speichern, ohne dass man sich um die Datenverwaltung kümmern muss.
+
+Zusätzlich werden temporäre Dateien normalerweise in einem temporären Verzeichnis gespeichert, das vom Betriebssystem verwaltet wird. Dies kann hilfreich sein, um Speicherplatz auf dem Gerät zu sparen oder um sicherzustellen, dass die Dateien automatisch gelöscht werden, wenn sie nicht mehr benötigt werden.
+
+Man sollte jedoch beachten, dass temporäre Dateien auch Nachteile haben können. Sie können zum Beispiel ungewollt gelöscht werden, wenn das Betriebssystem den temporären Ordner bereinigt oder wenn die App abstürzt. Daher sollte man immer sicherstellen, dass man seine temporären Dateien regelmäßig überprüft und löscht, wenn sie nicht mehr benötigt werden.
 
 ## Siehe auch
 
-- [Foundation Framework Reference](https://developer.apple.com/documentation/foundation)
-- [Temporary Files in Swift](https://swifter.tips/temporary-file/)
+* [Apple Dokumentation zur `FileManager`-Klasse](https://developer.apple.com/documentation/foundation/filemanager)
+* [Tutorial zur Verwendung von `NSTemporaryDirectory()`](https://www.hackingwithswift.com/read/16/4/the-ultimate-guide-to-nsfilemanager)
+* [Diskussion über Vor- und Nachteile von temporären Dateien](https://stackoverflow.com/questions/3448603/any-advantages-to-using-temporary-files-vs-in-memory-arrays)

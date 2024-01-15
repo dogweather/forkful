@@ -1,6 +1,7 @@
 ---
-title:                "Go: 生成随机数"
-simple_title:         "生成随机数"
+title:                "产生随机数字"
+html_title:           "Go: 产生随机数字"
+simple_title:         "产生随机数字"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -9,58 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么生成随机数
+## 为什么
 
-生成随机数在编程中是一个常见的需求，它可以用于各种应用，比如游戏、密码生成和数据随机化。在Go语言中，有多种方法可以生成随机数，让我们一起来看看吧！
+你曾经需要在代码中生成随机数吗？也许你需要为测试目的生成随机数据，或者设计一个游戏，或者需要一个随机的加密密钥。无论出于何种原因，生成随机数是在编程中很常见的任务，Go语言提供了一些方便的方法来实现这一目的。
 
-## 如何生成随机数
+## 如何做 
 
-在Go语言中，我们可以使用math/rand包来生成随机数。首先，我们需要导入这个包：
-
-```Go
-import "math/rand"
-```
-
-然后，我们可以使用`rand.Intn()`函数来生成一个范围在0到n-1之间的随机整数：
+下面是一个使用Go语言生成随机数的简单示例，它将生成10个介于0和100之间的随机整数：
 
 ```Go
-fmt.Println(rand.Intn(10)) // 输出一个0到9之间的随机整数
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(rand.Intn(100))
+	}
+}
 ```
 
-我们也可以生成一个范围在n到m之间的随机整数：
+运行该程序，你将会得到类似下面的输出：
 
-```Go
-fmt.Println(rand.Intn(m-n+1) + n) // 输出一个n到m之间的随机整数
+```
+7
+45
+83
+96
+22
+73
+63
+14
+93
+58
 ```
 
-如果需要更加精确的随机数，我们可以使用`rand.Float64()`函数来生成一个范围在0.0到1.0之间的随机浮点数：
+为了能够生成不同的随机数，我们使用了`rand.Seed()`函数来设置随机数种子。种子通常使用当前时间的纳秒数来确保每次运行程序时，都能得到不同的随机数序列。然后，我们使用`rand.Intn()`函数来生成介于0和给定参数之间的随机整数。
 
-```Go
-fmt.Println(rand.Float64()) // 输出一个0.0到1.0之间的随机浮点数
-```
+除了`Intn()`函数，Go语言还提供了一系列用于生成随机数的函数，包括生成随机浮点数和随机字符串。你可以阅读Go语言官方文档来进一步了解这些函数的用法。
 
-我们也可以通过设置种子数来生成伪随机数，以保证每次运行程序时都能产生相同的随机数序列：
+## 深入探讨
 
-```Go
-rand.Seed(seed) // 设置种子数
-```
-
-## 深入了解随机数生成
-
-在计算机科学中，真正的随机数是不存在的，因为计算机是按照特定的算法来生成随机数的。因此，我们生成的随机数实际上是伪随机数，只是在短时间内看起来是随机的。
-
-在Go语言中，使用的是伪随机数生成器（Pseudorandom Number Generator, PRNG），它根据设置的种子数来生成随机数序列。如果不设置种子数，默认会使用系统当前时间作为种子数。
-
-另外，我们也可以使用crypto/rand包来生成安全的随机数，它使用更加复杂的随机数生成算法，生成的随机数更为随机和安全。
+在生成随机数时，我们需要关注到的一个重要问题就是随机数的真实性。使用种子值来生成随机数的方法虽然随机性较高，但是仍然不是完全随机的。因此，在进行安全加密或随机算法时，不能仅仅依赖于随机数种子来保证安全性，而需要使用更加复杂的随机数生成方法。如果你对随机数的生成算法感兴趣，可以进一步学习随机数伪随机性和真随机性的知识。
 
 ## 参考链接
 
-- [Go语言官方文档-随机数生成](https://golang.org/pkg/math/rand/)
-- [Go语言官方文档-crypto/rand包](https://golang.org/pkg/crypto/rand/)
-- [有关随机数的更深层次的解释](https://www.youtube.com/watch?v=SxP30euw3-0)
-
-# 参见
-
-- [Go语言教程-Go语言基础](https://www.runoob.com/go/go-tutorial.html)
-- [如何在Go语言中生成随机密码](https://www.digitalocean.com/community/tutorials/how-to-generate-random-passwords-in-go)
-- [生成随机数的原理解析](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Go语言官方文档](https://golang.org/pkg/math/rand/)
+- [随机数的真实性](https://en.wikipedia.org/wiki/Randomness)
+- [随机数种子设置方法](https://golang.org/pkg/math/rand/#Seed)

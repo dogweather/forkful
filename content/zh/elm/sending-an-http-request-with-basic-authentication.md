@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 使用基本身份验证发送http请求"
-simple_title:         "使用基本身份验证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Elm: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,52 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 为什么
 
-HTTP请求和基本认证是在网络编程中经常遇到的一种情况。使用基本认证可以确保数据的安全性，并允许访问受限资源。在Elm中发送HTTP请求并进行基本认证是一种非常常见的任务，因此我们需要了解如何做到这一点。
+在现代的互联网世界中，我们经常需要与不同的服务器进行通信，以获取或发送数据。通过发送 HTTP 请求，我们可以从远程服务器获取数据，并将其集成到我们的应用程序中。使用基本认证，我们还可以确保只有经过身份验证的用户才能访问敏感的服务器数据，保护我们的应用程序和用户信息的安全。
 
-## 怎么做
+# 如何实现
 
-首先，我们需要导入`elm/http`库，它提供了发送HTTP请求的函数。接下来，我们需要设置请求的URL和所需的认证信息。最后，我们可以使用`Http.request`函数来发送请求，并在`Http.expectStringResponse`中指定预期的响应类型。下面是一个简单的例子：
+发送带有基本认证的 HTTP 请求非常简单，只需要遵循以下几个步骤：
 
-```
+1. 导入 Elm 的 `Http` 模块
+2. 创建一个带有用户名和密码的 `Authentication` 对象
+3. 使用 `Http.send` 函数发送带有基本认证的请求
+4. 处理服务器返回的响应数据
+
+下面是一个简单的例子，演示如何发送带有基本认证的 HTTP 请求，并打印出服务器返回的响应：
+
+```Elm
 import Http
-import Json.Decode exposing (Decoder, string)
- 
--- 创建一个认证头
-authorizationHeader : String
-authorizationHeader =
-  "Basic " ++ (Http.base64Encode "username:password")
- 
--- 创建请求的URL
+import Json.Decode exposing (Decoder)
+
+type alias Authentication =
+    { username : String
+    , password : String
+    }
+
+type Msg
+    = RequestSuccessful String
+    | RequestFailed Http.Error
+
+authentication : Authentication
+authentication =
+    { username = "username"
+    , password = "password"
+    }
+
 url : String
-url = "https://example.com/api/resource"
- 
--- 定义期望的响应类型
-responseDecoder : Decoder String
-responseDecoder = string
- 
--- 发送HTTP请求
-request : Cmd Msg
-request =
-  Http.request
-   { method = "GET"
-   , headers = [ ( "Authorization", authorizationHeader ) ]
-   , url = url
-   , expect = Http.expectStringResponse responseDecoder 
-   , timeout = Nothing
-   , tracker = Nothing
-   }
+url =
+    "https://example.com/api/data"
+
+decoder : Decoder String
+decoder =
+    Json.Decode.string
+
+sendRequest : Cmd Msg
+sendRequest =
+    Http.send
+        { method = "GET"
+        , headers = []
+        , url = url
+        , body = Http.emptyBody
+        , expect = Http.expectString RequestSuccessful decoder
+        , timeout = Nothing
+        , withCredentials = True
+        , tracker = Nothing
+        , auth = Just authentication
+        }
+
 ```
 
-在这个例子中，我们首先创建了一个认证头，使用`Http.base64Encode`函数将用户名与密码进行编码。然后，我们设置了请求的URL和期望的响应类型为字符串。最后，我们调用`Http.request`函数，并将返回的Cmd作为更新函数的结果，这样我们就可以将请求发送到服务器并等待响应。
+在这个例子中，我们首先创建了一个 `Authentication` 对象，并声明了我们要访问的 URL。然后，我们通过使用 `Http.send` 函数发送请求，并指定我们想要的返回数据类型。最后，我们处理服务器返回的数据，如果请求成功，则打印出响应的内容，否则打印出错误信息。
 
-## 深入了解
+# 深入了解
 
-当我们发送HTTP请求时，通常会遇到一些错误。在这种情况下，服务器会返回一个响应，其中包含HTTP状态码和一些错误信息。在这种情况下，我们可以使用`Http.expectStringResponse`中的`Http.BadStatus`函数来捕获错误并进行处理。我们也可以使用其他的`expect`函数来处理不同类型的响应，例如JSON对象或二进制数据。
+在实际应用程序中，我们可能需要发送带有参数的 HTTP 请求，或者使用其他认证方式，如 OAuth。在这种情况下，我们可以通过更改 `url` 和 `decoder` 变量来自定义我们的请求。同时，我们也可以使用 `Http.stringBody` 来发送带有参数的请求体，并且可以将 `auth` 设置为 `Nothing`，以发送不带认证的请求。更多关于 Elm 中发送 HTTP 请求的信息，可以查看官方文档。
 
-此外，我们还可以在请求中附加其他的参数，例如`timeout`来设置请求的超时时间，或者`tracker`来跟踪请求的进度。更多关于HTTP请求的深入知识，请参阅官方文档。
+# 查看更多
 
-# 参考链接
-
-- Elm官方文档：https://guide.elm-lang.org/
-- Http库文档：https://package.elm-lang.org/packages/elm/http/latest/
-- Http请求的基本认证：https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+- [Elm 官方文档](https://elm-lang.org/docs)

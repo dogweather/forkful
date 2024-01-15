@@ -1,6 +1,7 @@
 ---
-title:                "Java: Відправлення запиту http"
-simple_title:         "Відправлення запиту http"
+title:                "Надсилання http-запиту"
+html_title:           "Java: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,45 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому варто використовувати HTTP запити
+## Тому чому
 
-У сучасному світі, де інтернет став необхідною частиною нашого життя, HTTP запити є ключовим інструментом для взаємодії з веб-сайтами та додатками. Завдяки ним ми можемо передавати дані до сервера та отримувати відповіді від нього. Використання HTTP запитів є необхідним для розробки веб-додатків та налагодження мережевих з'єднань.
+Найбільш імовірний мотив для надсилання HTTP запиту - отримати доступ до ресурсів у мережі Інтернет. Це може бути потрібно для завантаження даних, відправлення запитів на отримання інформації або виконання різноманітних дій на веб-сайті. У цьому статті ми розкажемо про основний процес відправлення HTTP запиту та покажемо приклади коду, щоб ви могли легко зрозуміти, як це працює.
 
-## Як відправити HTTP запит у Java
+## Як це зробити
 
-Для відправлення HTTP запиту у Java нам потрібно використати клас `HttpURLConnection`, який надається Java API. Спочатку ми повинні використати метод `openConnection ()` для створення з'єднання з URL, на який хочемо надіслати запит. Потім ми можемо налаштувати наш запит, встановивши метод (GET, POST, PUT, DELETE), передаючи параметри та встановлюючи заголовки. Наприклад, для відправлення GET запиту до веб-сайту "example.com", ми можемо використати наступний код:
+Для відправлення HTTP запиту в Java вам знадобиться використовувати клас `HttpURLConnection` з пакету `java.net`. Нижче наведений приклад коду, який демонструє цей процес:
 
 ```Java
-URL url = new URL("http://www.example.com");
+// Імпортуємо необхідні класи
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+// Створюємо об'єкт URL з адресою запиту
+URL url = new URL("https://www.example.com/api/search?query=Java");
+
+// Встановлюємо з'єднання з ресурсом за допомогою HttpURLConnection
 HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
+// Задаємо метод запиту, в даному випадку - GET
 con.setRequestMethod("GET");
 
+// Встановлюємо параметри запиту, якщо потрібно
+con.setRequestProperty("Authorization", "Token abcdefg123456");
+
+// Виконуємо запит і отримуємо код відповіді
 int responseCode = con.getResponseCode();
-System.out.println("Response Code: " + responseCode);
 
-BufferedReader in = new BufferedReader( new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
+// Показуємо повний URL запиту
+System.out.println("Запит: " + url.toString());
 
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
+// Показуємо отриманий код відповіді
+System.out.println("Відповідь: " + responseCode);
 
-System.out.println(response.toString());
+// Закриваємо з'єднання
+con.disconnect();
 ```
 
-Видавшийся результат буде містити код сторінки `"example.com"`.
+Після запуску коду ми отримаємо наступний вихід:
 
-## Глибші занурення в HTTP запити
+```
+Запит: https://www.example.com/api/search?query=Java
+Відповідь: 200
+```
 
-У вищевказаному прикладі ми відправляємо простий GET запит та отримуємо відповідь у вигляді сторінки. Однак, HTTP запити мають багато можливостей та функцій. Наприклад, ми можемо встановити параметри запиту, включити аутентифікацію, обмежити час очікування відповіді та багато іншого.
+Ви можете змінювати метод запиту та додавати параметри за допомогою методів `setRequestMethod()` та `setRequestProperty()` відповідно. Детальніше про ці методи можна дізнатися з документації.
 
-## Дивись також
+## Глибокі дослідження
 
-Якщо ви хочете дізнатися більше про роботу з HTTP запитами у Java, ось деякі корисні ресурси:
+Відправлення HTTP запиту полягає в установленні з'єднання з ресурсом за допомогою `HttpURLConnection` та використання різних методів цього класу для налаштування запиту. Після виконання запиту ми можемо отримати відповідь у вигляді коду статусу, вмісту сторінки або додаткових заголовків. Важливо правильно налаштувати запит, щоб отримати коректну відповідь.
 
-- [Документація Java для класу HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Відеоуроки Java Tutorials - Working with URLs](https://www.youtube.com/watch?v=_x2Q3lbufJc)
-- [Стаття "Робота з HTTP запитами у Java" на сайті Baeldung](https://www.baeldung.com/java-http-request)
+## Дивіться також
+
+- [Документація Java по `HttpURLConnection`](https://docs.oracle.com/javase/tutorial/networking/urls/

@@ -1,5 +1,6 @@
 ---
-title:                "C: Unterstrings extrahieren"
+title:                "Unterstrings extrahieren"
+html_title:           "C: Unterstrings extrahieren"
 simple_title:         "Unterstrings extrahieren"
 programming_language: "C"
 category:             "C"
@@ -11,36 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit, die in vielen Fällen in der Programmierung benötigt wird. Es ermöglicht uns, Teile eines Textes zu isolieren, um sie später weiterzuverarbeiten oder zu analysieren.
+Wenn du schon einmal mit C-Code gearbeitet hast, hast du sicherlich schon einmal die Notwendigkeit gehabt, Teile von Strings zu extrahieren. Das bedeutet, dass du nur einen Teil eines Strings verwenden möchtest, zum Beispiel um nur den Vornamen aus einem vollständigen Namen zu erhalten. In diesem Artikel werden wir uns ansehen, wie man in C Substrings extrahieren kann und warum es ein nützliches Werkzeug in deinem Werkzeugkasten sein kann.
 
-## Wie man es macht
+## Wie geht das?
 
-Um Teilstrings in C zu extrahieren, können wir die Funktion `strncpy` verwenden. Diese Funktion kopiert einen angegebenen Teil eines Strings in einen anderen String und gibt das Ergebnis zurück. Im folgenden Beispiel extrahieren wir einen Teilstring aus einem Namen und geben ihn aus:
+Um Substrings in C zu extrahieren, müssen wir die Bibliotheksfunktion "strncpy" verwenden. Diese Funktion kopiert eine vom Benutzer angegebene Anzahl von Zeichen aus einem String in einen anderen. Das folgende Beispiel zeigt, wie man den Nachnamen "Müller" aus dem vollständigen Namen "Max Müller" extrahiert:
 
 ```C
 #include <stdio.h>
+#include <string.h>
 
-int main(void) {
-  // Deklaration des ursprünglichen Strings
-  char name[] = "Marie Müller";
-  // Ausgabe des 2. bis 6. Zeichens des Strings
-  char extracted[5];
-  strncpy(extracted, name + 1, 5); // kopiert "arie "
-  extracted[5] = '\0'; // fügt das Ende des Strings hinzu
-  printf("Extrahierter Teilstring: %s\n", extracted);
-  return 0;
+int main() {
+    // Definiere den vollständigen Namen
+    char name[] = "Max Müller";
+
+    // Bestimme die Länge des vollständigen Namens
+    int length = strlen(name);
+
+    // Extrahiere den Nachnamen
+    char nachname[10];
+    strncpy(nachname, name + 4, length - 4);
+
+    // Drucke den Nachnamen aus
+    printf("Nachname: %s\n", nachname);
+
+    return 0;
 }
 ```
-Die Ausgabe wäre: `Extrahierter Teilstring: arie `. In diesem Beispiel wird der Teilstring "arie " aus dem ursprünglichen String "Marie Müller" extrahiert und in einem neuen String gespeichert.
 
-## Tieferer Einblick
+Dieses Beispiel nutzt die Funktion "strlen", um die Länge des vollständigen Namens zu bestimmen, und die Funktion "strncpy", um die letzten 4 Zeichen (die Länge des Vornamens) in den Nachnamen zu kopieren. Das Ergebnis sollte "Müller" ausgeben.
 
-Die `strncpy` Funktion akzeptiert mehrere Parameter, um verschiedene Operationen auszuführen. Zum Beispiel können wir durch Manipulation der Startposition und der Länge des extrahierten Teils verschiedene Teilstrings erhalten. Es ist auch wichtig, darauf zu achten, den extrahierten String richtig zu terminieren, indem wir ein Nullzeichen am Ende hinzufügen.
+## Tiefer in die Materie
 
-Es gibt auch alternative Methoden zum Extrahieren von Teilstrings in C, wie zum Beispiel das Verwenden der `substr` Funktion oder das Manuellzählen der Zeichen. Indem Sie verschiedene Methoden kennenlernen, können Sie ihre Vor- und Nachteile verstehen und die für Ihre spezifischen Bedürfnisse am besten geeignete auswählen.
+Neben "strncpy" gibt es noch andere nützliche Funktionen, die für die Arbeit mit Substrings in C verwendet werden können. Die Funktion "strchr" zum Beispiel sucht nach einem bestimmten Zeichen in einem String und gibt einen Zeiger auf die Stelle zurück, an der es gefunden wurde. Und die Funktion "strstr" sucht nach einem Unterstring in einem String und gibt einen Zeiger auf die Stelle zurück, an der er gefunden wurde. Mit diesen und anderen Funktionen kannst du komplexe Operationen mit Substrings durchführen, wie zum Beispiel das Zusammenführen von Strings oder das Vergleichen von Teilstrings.
+
+Es ist auch wichtig zu beachten, dass die Länge eines Strings in C begrenzt ist. Um Substrings zu extrahieren, solltest du darauf achten, dass die Länge deines Ausgabe-Strings groß genug ist, um alle extrahierten Zeichen aufzunehmen. Andernfalls läufst du Gefahr, dass du Speicherbereiche überschreibst und unerwünschte Ergebnisse erhältst.
 
 ## Siehe auch
 
-- [Die offizielle C-Dokumentation zur strncpy-Funktion](https://www.cplusplus.com/reference/cstring/strncpy/)
-- [Ein Tutorial zur Verwendung der substr-Funktion in C](https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm)
-- [Eine Erklärung, wie man Teilstrings in C manuell extrahiert](https://www.geeksforgeeks.org/c-program-extracting-characters-from-a-string/)
+- ["strncpy" Dokumentation](https://www.cplusplus.com/reference/cstring/strncpy/)
+- ["strlen" Dokumentation](https://www.cplusplus.com/reference/cstring/strlen/)
+- ["strchr" Dokumentation](https://www.cplusplus.com/reference/cstring/strchr/)
+- ["strstr" Dokumentation](https://www.cplusplus.com/reference/cstring/strstr/)
+- ["C Strings" Tutorial](https://www.programiz.com/c-programming/c-strings)

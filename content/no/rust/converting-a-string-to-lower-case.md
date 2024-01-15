@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Konvertere en streng til små bokstaver"
-simple_title:         "Konvertere en streng til små bokstaver"
+title:                "Konvertering av en streng til små bokstaver"
+html_title:           "Rust: Konvertering av en streng til små bokstaver"
+simple_title:         "Konvertering av en streng til små bokstaver"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Har du noen gang lurt på hvorfor noen programmer krever at teksten du skriver inn er i små bokstaver? Kanskje du har sett en feilmelding som ber deg om å konvertere teksten til små bokstaver? I denne blogginnlegget skal vi se på hvorfor det er viktig å konvertere en tekst til små bokstaver, og hvordan du kan gjøre det enkelt ved hjelp av Rust-programmeringsspråket.
 
-## Hvordan gjøre det
-For å konvertere en teksten til små bokstaver i Rust, kan du bruke funksjonen "to_lowercase". La oss se på et eksempel på hvordan dette kan gjøres:
+Å konvertere en streng til små bokstaver kan være nyttig når du ønsker å sammenligne tekster uavhengig av store eller små bokstaver. Dette kan være spesielt nyttig i tilfeller der brukeren kan skrive inn tekst på forskjellige måter, men informasjonen fortsatt skal anses som lik.
 
-```rust
-let tekst = "Hei alle sammen!";
+## Slik gjør du det
+
+Det er enkelt å konvertere en streng til små bokstaver i Rust ved hjelp av `to_lowercase()` funksjonen. Denne funksjonen tar imot en String eller en &str som argument og returnerer en ny String med alle bokstavene omgjort til små bokstaver.
+
+```Rust
+// Eksempel 1: Konverterer en String til små bokstaver:
+let tekst = String::from("Hallo, Verden!");
 let konvertert_tekst = tekst.to_lowercase();
-println!("Konvertert tekst: {}", konvertert_tekst);
+println!("{}", konvertert_tekst); 
+// Output: hallo, verden!
 ```
-
-Dette vil gi følgende utskrift:
-
-```rust
-Konvertert tekst: hei alle sammen!
+```Rust
+// Eksempel 2: Konverterer en &str til små bokstaver:
+let tekst = "Hallo, verden!";
+let konvertert_tekst = tekst.to_lowercase();
+println!("{}", konvertert_tekst);
+// Output: hallo, verden!
 ```
-
-Som du kan se, ble alle bokstaver i teksten konvertert til små bokstaver. Dette kan være nyttig når du for eksempel ønsker å sammenligne to tekster, og ikke vil at forskjellige stavemåter skal påvirke resultatet.
 
 ## Dypdykk
-Nå som vi har sett på hvordan du kan konvertere en tekst til små bokstaver i Rust, la oss se på noen andre nyttige egenskaper ved denne funksjonen. For det første er "to_lowercase"-funksjonen casesensitiv, noe som betyr at store bokstaver vil bli konvertert til små bokstaver, mens små bokstaver ikke vil bli påvirket.
 
-Det er også verdt å merke seg at denne funksjonen fungerer for både engelsk og ikke-engelske språk, og vil behandle spesielle bokstaver som "æ", "ø" og "å" på riktig måte.
+Når man konverterer en streng til små bokstaver, blir hver enkelt bokstav transformert ved hjelp av Unicode standarden. Dette betyr at det ikke bare er de vanlige a til å bokstavene som blir omgjort, men også alle andre bokstaver i andre språk eller symboler. Dette gjør Rust til et flerspråklig venlig programmeringsspråk.
 
 ## Se også
-- [Dokumentasjon for to_lowercase-funksjonen i Rust](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
-- [En oversikt over Rust-programmeringsspråket](https://www.rust-lang.org/no)
-- [En nybegynnerguide til Rust](https://stevedonovan.github.io/rust-gentle-intro/1-introduction.html)
+
+- [`to_uppercase()` funksjonen](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+- [Hvordan manipulere tekster i Rust](https://www.rust-lang.org/learn/strings)

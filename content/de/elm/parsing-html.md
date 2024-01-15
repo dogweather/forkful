@@ -1,6 +1,7 @@
 ---
-title:                "Elm: HTML-Parsing"
-simple_title:         "HTML-Parsing"
+title:                "HTML analysieren"
+html_title:           "Elm: HTML analysieren"
+simple_title:         "HTML analysieren"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Parsing von HTML ist ein wichtiger Teil der Entwicklung von Webanwendungen, da es ermöglicht, strukturierte Daten aus dem HTML Code zu extrahieren und in ein maschinenlesbares Format umzuwandeln. Dadurch können wir die Daten einfacher verarbeiten und benutzen.
 
-Das Parsen von HTML ist ein wichtiger Teil der Programmierung in Elm, da es es ermöglicht, Daten aus externen Quellen in unsere Anwendungen zu integrieren und zu verarbeiten. HTML ist eine der gebräuchlichsten Formate für den Austausch von Daten im Web, deshalb ist es wichtig, eine solide Grundlage für das Parsen zu haben.
+## Wie
+Das Parsen von HTML in Elm ist relativ einfach und wird durch die Elm Html Bibliothek unterstützt. Es gibt verschiedene Funktionen, die in Kombination verwendet werden können, um HTML in Elm zu parsen.
 
-## Wie geht's
+Ein Beispiel für das Parsen von HTML sieht wie folgt aus:
 
-Um HTML in Elm zu parsen, benötigen wir das Paket `elm/html`. Wir verwenden die `parse` Funktion, die eine Zeichenkette mit HTML Code nimmt und eine `Html msg` zurückgibt. Diese `Html msg` können wir dann in unserer View verwenden, indem wir sie in ein `div` Element einbetten:
+```Elm
+import Html exposing (..)
+import Html.Parser exposing (Attribute(..), Element(..), Parser)
 
-```elm
-import Html exposing (div, parse)
+parseHtml : String -> Maybe Html
+parseHtml str =
+    case Html.Parser.parseHtml str of
+        Ok element ->
+            Just element
 
-htmlCode : String
-htmlCode = "<h1>Hello, World!</h1>"
-
-view : Html msg
-view =
-    div [] [ parse htmlCode ] 
+        Err _ ->
+            Nothing
 ```
 
-Dies würde einen Titel "Hello, World!" auf unserer Webseite anzeigen. Wenn wir jedoch Daten mit dynamischem Inhalt haben, können wir variablen in die Zeichenkette einfügen, um sie zu parsen, z.B:
+Die Funktion `parseHtml` nimmt einen String als Eingabe und gibt entweder ein `Just` mit dem geparsten HTML Element oder ein `Nothing` zurück, wenn ein Fehler auftritt.
 
-```elm
-user : String
-user = "Jane"
+Einmal geparst, können wir das HTML Element in Elm verwenden, um die Daten zu extrahieren oder zu manipulieren. Zum Beispiel können wir alle Links auf der Seite finden und sie in eine Liste zusammenstellen:
 
-htmlCode : String
-htmlCode = "<h1>Hello, {{ user }}!</h1>"
+```Elm
+import Html exposing (..)
+import Html.Parser exposing (Attribute(..), Element(..), Parser)
 
-view : Html msg
-view =
-    div [] [ parse (String.replace "{{ user }}" user htmlCode) ]
+getPageLinks : Html -> List String
+getPageLinks html =
+    let
+        links = Html.xpath "//a/@href" html
+        links' = List.map (\(Attribute _ value) -> value) links
+    in
+        links'
 ```
 
-Dies würde einen personalisierten Titel je nach dem angegebenen Benutzernamen anzeigen.
+Die Funktion `getPageLinks` nimmt das geparste HTML Element als Eingabe und verwendet die `xpath` Funktion aus der `Html` Bibliothek, um alle `href` Attribute der `a` Elemente auf der Seite zu finden. Diese Attribute werden dann in eine Liste von Strings umgewandelt und zurückgegeben.
 
-## Tieferer Einblick
+## Deep Dive
+Das Parsen von HTML kann komplex werden, wenn wir uns mit unterschiedlichen Syntaxen und Sonderfällen auseinandersetzen müssen. Die Elm Html Bibliothek bietet jedoch verschiedene Funktionen, die uns dabei helfen, damit umzugehen.
 
-Beim Parsen von HTML ist es wichtig zu beachten, dass es verschiedene Arten von Syntaxfehlern geben kann. Das Paket `elm/html` bietet verschiedene Funktionen, um Benachrichtigungen über Syntaxfehler zu erhalten und diese zu behandeln.
+Zum Beispiel können wir mit der `Parser` Bibliothek Attribute mit unterschiedlichen Werten parsen, indem wir die `Attribute` Union Type verwenden. Außerdem können wir Mustererkennung in Kombination mit der `Element` Union Type verwenden, um spezifische Elemente aus dem HTML zu extrahieren und zu verarbeiten.
 
-Außerdem ist es in Elm sehr wichtig, auf den Typ von Daten zu achten. Beim Parsen von HTML ist es wichtig, dass die erwarteten Daten mit dem Typ `Html msg` übereinstimmen, da dies für die Verwendung in der View erforderlich ist.
+Es ist auch wichtig zu beachten, dass das Parsen von HTML nicht immer die beste Option ist. In manchen Fällen kann es einfacher sein, die HTML Struktur direkt in Elm zu codieren, anstatt sie zu parsen.
 
-## Siehe auch
-
-- Offizielle Elm Dokumentation zur `parse` Funktion: https://package.elm-lang.org/packages/elm/html/latest/Html#parse
-- Beispiel für das Parsen von HTML in Elm: https://ohanhi.github.io/base-for-firebase-elm/#/web-api/salaries
-- Artikel über die Verwendung von `elm/html` im React Native Framework: https://dev.to/jouderianjr/render-any-html-from-internet-using-elm-html-inside-react-native-48fk
+## Siehe Auch
+- [Offizielle Elm Html Dokumentation](https://package.elm-lang.org/packages/elm/html/latest/)
+- [Elm Html Parser Paket](https://package.elm-lang.org/packages/elm/parser/latest/)

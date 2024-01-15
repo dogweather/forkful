@@ -1,6 +1,7 @@
 ---
-title:                "Elm: csv での作業"
-simple_title:         "csv での作業"
+title:                "「csvを使うことについて」"
+html_title:           "Elm: 「csvを使うことについて」"
+simple_title:         "「csvを使うことについて」"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを使うのか
+## なぜCSVを扱うのか
 
-CSVはデータを保存するための便利な形式です。データを整理しやすく、さまざまなプログラミング言語で読み取ることができます。
+CSVは多くのプログラムでデータを取り扱うための標準形式です。データを取り込む時やファイルをエクスポートする時に便利なフォーマットなので、エルムを使う上で重要なスキルです。
 
-## 方法
+## やり方
 
-まず、 `elm-csv`パッケージをインストールします。次に、CSVファイルを含むプロジェクトフォルダに移動し、`elm-csv`の`Csv.Decode`モジュールをインポートします。次に、CSVファイルをデコードして`Decoder`型を使用してデータを変換します。
+すぐにコードを書き始めるために、まずはCSVパッケージをインポートします。
 
-例えば、以下のようなCSVファイルがあるとします：
-
-```csv
-Name, Age
-John, 25
-Mary, 30
+```Elm
+import Csv
 ```
 
-次のようなコードを使用して、このCSVファイルをデコードすることができます：
+次に、CSVファイルを読み込んでリストとして取得する方法を見ていきましょう。
 
-```elm
-import Csv.Decode exposing (Decoder, map2, field, string, int)
-
-type alias User =
-  { name : String
-  , age : Int
-  }
-
-csvDecoder : Decoder User
-csvDecoder =
-  map2 User
-    (field "Name" string)
-    (field "Age" int)
-    
-users : Result String (List User)
-users =
-  Csv.Decode.decodeFile csvDecoder "users.csv"
+```Elm
+readCsv : Csv.File -> Result Csv.Error (List (List Csv.Field))
+readCsv file =
+  Csv.parse file
+    |> Result.mapError (always CannotParse)
 ```
 
-このコードでは、`User`というエイリアスを作成し、`name`と`age`というフィールドを持つ、`User`型のデータを定義しています。`csvDecoder`は、`User`型のデータをデコードするための`Decoder`型の定義です。最後に、`decodeFile`関数を使用して、CSVファイルをデコードし、結果を`users`変数に格納します。
+このように、`Csv.parse`関数を使うことで、CSVファイルをパースしてリストとして取得することができます。詳しい使い方は[公式ドキュメント](https://package.elm-lang.org/packages/elm-community/csv/latest/)を参照してください。
 
-## 深い掘り下げ
+CSVを取得した後は、通常のリスト操作が可能です。例えば、次のようにしてデータをフィルタリングすることができます。
 
-`Csv.Decode`モジュールには、さまざまな関数や型が用意されており、より複雑なCSVファイルをデコードすることも可能です。また、エラーハンドリングやオプションのフィールドの処理など、さまざまな機能もありますので、詳しくは公式ドキュメントを参照してください。
+```Elm
+filterRowsByColumn : String -> List (List Csv.Field) -> List (List Csv.Field)
+filterRowsByColumn value rows =
+  List.filter (\row -> List.member value row) rows
+```
 
-## See Also
+さらに詳しい例やCSVファイルを書き込む方法などは、[こちらのブログ記事](https://thoughtbot.com/blog/using-elm-with-csv-files)を参考にしてください。
 
-- [elm-csvパッケージの公式ドキュメント](https://package.elm-lang.org/packages/elm-explorations/csv/latest/)
-- [Elm公式ガイド](https://guide.elm-lang.org/)
+## 詳しく見る
+
+この記事では、基本的なCSVの扱い方を紹介しましたが、実際にはもっと複雑なデータ構造を扱う場合があります。そんな時には[elm-csv-decode](https://github.com/ryannhg/elm-csv-decode)パッケージが役に立つかもしれません。また、エラー処理やバリデーションを行いたい場合には、[elm-validate](http://package.elm-lang.org/packages/rtfeldman/elm-validate/1.2.1/)パッケージを使うこともできます。
+
+## 参考リンク
+
+- [Elm 0.19 公式ドキュメント](https://guide.elm-lang.jp/)
+- [公式パッケージリスト](https://package.elm-lang.org/)

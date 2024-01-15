@@ -1,6 +1,7 @@
 ---
-title:                "C: Opprette en midlertidig fil"
-simple_title:         "Opprette en midlertidig fil"
+title:                "Opprettelse av midlertidig fil"
+html_title:           "C: Opprettelse av midlertidig fil"
+simple_title:         "Opprettelse av midlertidig fil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,52 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Mange ganger i C-programmering, kan vi trenge å opprette en midlertidig fil i løpet av kjøretiden. Dette kan være for å lagre midlertidige data, mellomresultater eller som en sikkerhetskopieringsmetode. Å vite hvordan du oppretter en midlertidig fil kan være nyttig, spesielt for å skrive robuste og effektive programmer.
+Å opprette midlertidige filer er en vanlig praksis i mange programmeringsspråk, inkludert C. Disse filene brukes til å lagre midlertidige data som kun er nødvendige i løpet av programmet og ikke trenger å være lagret permanent.
 
-##Slik gjør du det
+## Hvordan
 
-For å opprette en midlertidig fil i C, bruker vi "tmpfile()" funksjonen. Denne funksjonen åpner en midlertidig fil for lesing og skriving, og returnerer en peker til fila. Vi kan deretter bruke denne pekeren til å skrive og lese fra den midlertidige filen.
+For å opprette en midlertidig fil i C kan man bruke funksjonen "tmpfile()". Denne funksjonen returnerer en peker til en åpen midlertidig fil. For eksempel:
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-  FILE *tmpfile_ptr; // deklarere en peker til den midlertidige filen
-  char buffer[100] = "Dette er en midlertidig fil";
+int main(){
+    FILE *fp;
 
-  tmpfile_ptr = tmpfile(); // opprett den midlertidige filen
-
-  if (tmpfile_ptr != NULL) // sjekk om filen ble opprettet riktig
-  {
-    fwrite(buffer, sizeof(char), strlen(buffer), tmpfile_ptr); // skriv til den midlertidige filen
-    fseek(tmpfile_ptr, 0, SEEK_SET); // plasser pekeren i starten av filen
-    fread(buffer, sizeof(char), strlen(buffer), tmpfile_ptr); // les fra den midlertidige filen
-
-    printf("%s\n", buffer); // skriv ut innholdet i filen
-    fclose(tmpfile_ptr); // lukk den midlertidige filen
-  }
-
-  return 0;
+    fp = tmpfile();
+    if(fp == NULL){
+        printf("Kunne ikke opprette midlertidig fil.");
+    }
+    else{
+        fprintf(fp, "Dette er data som skal lagres i den midlertidige filen.");
+        printf("Data ble skrevet til den midlertidige filen.");
+    }
 }
 ```
 
-Forventet utdata:
+Output:
 
 ```
-Dette er en midlertidig fil
+Data ble skrevet til den midlertidige filen.
 ```
 
-##Dypdykk
+## Dypdykk
 
-Når vi oppretter en midlertidig fil ved hjelp av "tmpfile()", opprettes det automatisk en unik fil med et unikt navn på et midlertidig sted på systemet vårt. Dette betyr at vi ikke trenger å bekymre oss for å gi filen et passende navn eller å slette den etter bruk. Dette gjør prosessen med å arbeide med midlertidige filer enklere og mer effektiv.
+Det er verdt å merke seg at den midlertidige filen vil bli slettet når programmet avsluttes. Dette kan være nyttig når man ønsker å lagre sensitive data som ikke skal lagres permanent på harddisken.
 
-En annen viktig ting å merke seg er at den midlertidige fila bare er tilgjengelig mens programmet vårt kjører. Når du avslutter programmet, blir filen automatisk slettet fra systemet. Dette er nyttig for å unngå å forlate unødvendige filer på datamaskinen vår.
+I tillegg kan man også opprette midlertidige filer ved hjelp av funksjonene "tmpnam()" og "mkstemp()". Disse funksjonene gir mer kontroll over lagringsplassering og filnavn.
 
-##Se også
+## Se også
 
-- [C Programming Tutorial: Creating and Writing to a File](https://www.learn-c.org/en/File_IO)
-- [C Standard Library: tmpfile() function](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [Creating and Managing Temporary Files with C](https://www.howtogeek.com/50364/using-the-tmpfile-function-in-c-for-easy-file-management/)
+- [tmpfile() dokumentasjon](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm) 
+- [Mer om temporary filer i C](https://www.guru99.com/c-temporary-files.html) 
+- [Mer om C programmering](https://www.programiz.com/c-programming)

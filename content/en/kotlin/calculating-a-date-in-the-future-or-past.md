@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Kotlin recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-As a programmer, you may have encountered scenarios where you need to calculate a date in the future or past. This could be for tasks such as scheduling events, setting reminders, or calculating deadlines. Thankfully, with Kotlin, this process can be easily achieved using built-in date and time functions.
+Calculating dates in the future or past can be helpful for a variety of reasons such as predicting project deadlines, scheduling events or appointments, or simply keeping track of important dates in the future.
 
-## How To
+## How To 
 
-To calculate a date in the future or past in Kotlin, we can use the `LocalDate` class from the `java.time` package. We can create a `LocalDate` object by passing in the desired date as arguments for the `of()` method. For example:
+To calculate a date in the future or past using Kotlin, we can use the `java.time.LocalDate` class from the Java standard library. This class represents a date without time or time zone information. Here is an example of how to calculate a date 30 days in the future from today:
 
-```Kotlin
-val currentDate = LocalDate.now() // Retrieves current date
-val futureDate = LocalDate.of(2021, 9, 1) // Sets future date to September 1st, 2021
-val pastDate = LocalDate.of(2020, 3, 15) // Sets past date to March 15th, 2020
+```Kotlin 
+val currentDate = LocalDate.now() // get current date
+val futureDate = currentDate.plusDays(30) // add 30 days to current date
+println("Date in 30 days: $futureDate") // output: Date in 30 days: 2021-08-08
 ```
 
-We can then use the `plus()` and `minus()` methods to add or subtract the desired number of days, months, or years from the given date. For example:
+To calculate a date in the past, we can use the `minus` method instead. Here is an example of calculating a date 2 years in the past from today:
 
 ```Kotlin
-val newDate = currentDate.plusDays(7) // Adds 7 days to current date
-val pastMonth = futureDate.minusMonths(1) // Subtracts 1 month from future date
-val pastYear = pastDate.minusYears(3) // Subtracts 3 years from past date
+val currentDate = LocalDate.now() // get current date
+val pastDate = currentDate.minusYears(2) // subtract 2 years from current date
+println("Date 2 years ago: $pastDate") // output: Date 2 years ago: 2019-07-09
 ```
 
-We can also use `ChronoUnit` enum class to specify the unit of measurement for adding or subtracting time. For example:
+Note that the `plus` and `minus` methods are polymorphic and can take different parameters such as `Days`, `Months`, or `Years`. 
+
+## Deep Dive 
+
+The `LocalDate` class provides various methods for manipulating dates including adding or subtracting time units, comparing dates, and checking for leap years. It also supports parsing and formatting dates using the `parse` and `format` methods, respectively.
+
+Additionally, Kotlin provides an extension function `daysTo` which can be used to calculate the number of days between two `LocalDate` objects. Here is an example:
 
 ```Kotlin
-val newDate = currentDate.plus(2, ChronoUnit.WEEKS) // Adds 2 weeks to current date
-val pastYear = pastDate.minus(5, ChronoUnit.YEARS) // Subtracts 5 years from past date
+val firstDate = LocalDate.of(2020, 10, 15) // create first date
+val secondDate = LocalDate.of(2021, 10, 15) // create second date
+val daysBetween = firstDate.daysTo(secondDate) // calculate days between
+println("Days between two dates: $daysBetween") // output: Days between two dates: 365
 ```
 
-To get the final calculated date, we can use the `toString()` method to convert it to a readable format. For example:
+## See Also 
 
-```Kotlin
-println("New date: $newDate")
-```
-
-This will print the result in the format of `yyyy-MM-dd` (e.g. 2021-09-08).
-
-## Deep Dive
-
-Under the hood, the `LocalDate` class uses the ISO-8601 calendar system to calculate dates. This means that it follows the standard of having 365 days in a year and 7 days in a week. It also takes into consideration leap years, so we don't need to worry about those additional days.
-
-Furthermore, the `ChronoUnit` enum class provides options for adding or subtracting time in larger units such as weeks, months, and years, in addition to the smaller units like days, hours, and seconds. This gives us more flexibility and precision in calculating dates.
-
-It's important to also note that the `plus()` and `minus()` methods return a new `LocalDate` object instead of modifying the original one. This is to ensure immutability and avoid any unexpected changes.
-
-## See Also
-
-- [Kotlin LocalDate class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
-- [Java 8 Date and Time API tutorial](https://www.baeldung.com/java-8-date-time-api)
-- [Official Java documentation on ISO-8601 calendar system](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/IsoChronology.html)
-
-By using the techniques outlined above, you can easily calculate dates in the future or past in your Kotlin programs. This not only saves time but also ensures accuracy and consistency in your applications. Happy coding!
+- [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)
+- [Java LocalDate Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

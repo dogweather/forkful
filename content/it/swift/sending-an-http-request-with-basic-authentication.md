@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Inviare una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Swift: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,67 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Sending a basic authentication HTTP request may be necessary for accessing protected APIs or websites that require authentication. This allows for secure communication between the client and server, ensuring that only authorized users are granted access.
+Molti servizi web richiedono un'autenticazione per accedere ai dati e alle funzionalità. Utilizzare l'autenticazione di base per inviare una richiesta HTTP è un modo semplice e sicuro per verificare l'identità dell'utente.
 
-## Come
+## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base in Swift, è necessario seguire alcuni semplici passaggi:
+Utilizzando la libreria Foundation di Swift, è possibile inviare una richiesta HTTP con autenticazione di base in poche righe di codice.
 
-1. Importare la libreria `Foundation` nell'inizio del file:
 ```
-import Foundation
-```
-
-2. Creare una costante con le credenziali di autenticazione:
-```
-let loginString = String(format: "%@:%@", username, password)
-```
-
-3. Codificare la stringa utilizzando Base64:
-```
-let loginData = loginString.data(using: String.Encoding.utf8)!
-let base64LoginString = loginData.base64EncodedString()
-```
-
-4. Creare la testata Authorization da aggiungere alla richiesta:
-```
-var headers = [String: String]()
-headers["Authorization"] = "Basic \(base64LoginString)"
-```
-
-5. Utilizzare `URLSession` per creare e inviare la richiesta HTTP:
-```
-let request = URLRequest(url: url)
-request.allHTTPHeaderFields = headers
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+let username = "mario"
+let password = "segreto"
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+let base64LoginString = loginData!.base64EncodedString()
+let url = URL(string: "https://www.example.com")
+var request = URLRequest(url: url!)
+request.httpMethod = "GET"
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
     guard let data = data, error == nil else {
-        print("Error: \(error?.localizedDescription)")
+        print(error?.localizedDescription ?? "Response error")
         return
     }
-    
-    if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-        print("Success! Data received: \(data)")
-    } else {
-        print("Error: Invalid response")
-    }
+    let responseString = String(data: data, encoding: .utf8)
+    print(responseString)
 }
-```
-
-6. Eseguire la richiesta:
-```
 task.resume()
 ```
 
-Il codice sopra illustra come creare una richiesta con autenticazione di base utilizzando Swift. È importante notare che è necessario fornire un username e password validi per l'autenticazione.
+L'output della richiesta dovrebbe essere una stringa che contiene i dati a cui si è autenticati.
 
-## Profondità
+## Approfondimento
 
-Quando si invia una richiesta con autenticazione di base, è fondamentale ricordare che la stringa di login deve essere codificata in Base64. Questo è un sistema di codifica che converte i dati binari in un formato testuale, rendendoli facilmente trasferibili su una rete. In questo caso, la stringa di login codificata viene aggiunta alla testata Authorization, che viene quindi inviata al server.
+L'autenticazione di base utilizza il meccanismo di codifica Base64 per trasformare il nome utente e la password in una stringa. Questa stringa è poi aggiunta all'intestazione della richiesta HTTP come header "Authorization" con il prefisso "Basic". Il server riceve l'intestazione e decodifica la stringa, verificando se il nome utente e la password sono validi per accedere al servizio richiesto.
 
-Inoltre, è possibile specificare un timeout per la richiesta in modo da gestire eventuali errori o rallentamenti di rete. Questo può essere fatto impostando il valore della proprietà `timeoutInterval` dell'`URLRequest`.
+## Vedi anche
 
-## Vedi Anche
-
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#HTTP_Basic_Authentication)
-- [Swift Foundation Framework](https://developer.apple.com/documentation/foundation)
-- [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Apple Developer Documentation - URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [Base64Encoder - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/base64encoder)

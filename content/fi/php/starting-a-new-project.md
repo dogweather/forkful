@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "PHP: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,52 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti
+## Miksi
 
-On monia syitä miksi aloittaa uusi ohjelmistoprojekti. Ehkä haluat oppia uutta ohjelmointikieltä tai luoda jotain uutta ja ainutlaatuista. Ehkä haluat ratkaista jonkin ongelman, jolle ei ole olemassa valmista ratkaisua. Tai ehkä vain haluat haastaa itsesi ja parantaa ohjelmointitaitojasi. Riippumatta syystä, aloittaminen uusi projekti voi olla hauskaa ja palkitsevaa.
+Jos olet harkitsemassa uuden projektin aloittamista PHP:n avulla, tämä artikkeli on juuri sinulle. PHP on yksi suosituimmista ohjelmointikielistä, ja sen avulla voit luoda dynaamisia ja interaktiivisia verkkosivustoja ja sovelluksia. Se on myös hyvin dokumentoitu ja helppo oppia, joten aloittaminen uuden projektin kanssa ei ole vaikeaa.
 
-## Kuinka aloittaa uusi projekti
+## Miten aloittaa uusi projekti PHP:n avulla?
 
-Jos olet päättänyt aloittaa uuden PHP-projektin, tässä on muutama esimerkki kuinka aloittaa.
+PHP-projektin aloittaminen on helppoa ja vaatii vain muutaman vaiheen suorittamisen.
 
-### 1. Luo uusi tiedostorakenne
+### Asenna PHP
 
-Hyvä tapa aloittaa uusi projektisi on luoda standardisoitu tiedostorakenne. Tämä helpottaa projektin hallintaa ja ylläpitoa. Tässä on esimerkki tiedostorakenteesta, jota voit käyttää:
+Ennen kuin voit aloittaa PHP-projektin, sinun on asennettava PHP-kielen tulkki ja tarvittavat laajennukset. Voit ladata tarvittavat tiedostot PHP:n viralliselta verkkosivustolta tai käyttää valmiiksi koottuja paketteja, kuten XAMPP tai WAMP.
 
-    project-name/
-    ├── css/
-        └── style.css
-    ├── js/
-        └── script.js
-    ├── images/
-    ├── includes/
-    │   ├── header.php
-    │   └── footer.php
-    ├── index.php
-    └── README.md
+### Valitse kehitysympäristö
 
-Täällä `css` -hakemistoon voit tallentaa kaikki tyylitiedostot, `js` -hakemistoon kaikki JavaScript-tiedostot ja `includes` -hakemistoon kaikki muut tiedostot, kuten header- ja footer-tiedostot.
+Seuraavaksi sinun on valittava kehitysympäristö, joka sopii parhaiten tarpeisiisi. Suosittuja vaihtoehtoja ovat esimerkiksi Visual Studio Code, Sublime Text ja PHPStorm.
 
-### 2. Kirjoita ensimmäinen PHP-koodirivisi
+### Luo projekti
 
-Nyt kun olet luonut tiedostorakenteen, voit aloittaa koodaamisen. Tässä on yksinkertainen esimerkki, jossa käytät PHP:ä tulostamaan "Hello World!"-viestin:
+Kun olet asentanut PHP:n ja valinnut kehitysympäristön, voit luoda uuden projektin. Tämä voidaan tehdä joko käsin tai käyttämällä valmiita projektimalleja, kuten Laravel tai CodeIgniter.
 
-```PHP
-<? php
-echo "Hello World!";
+### Koodaa projektiasi
+
+Nyt kun olet luonut projektin, voit aloittaa koodaamisen! PHP-koodiin sisällytetään usein HTML:ää, jolloin voit luoda dynaamisia verkkosivuja ja sovelluksia. Alla on yksinkertainen esimerkki PHP-koodista, joka tulostaa tekstin "Tervetuloa!"
+
+```
+<?php
+echo "Tervetuloa!";
+?>
 ```
 
-Kun suoritat tämän koodin, näet tulosteen "Hello World!" selaimessa.
+### Suorita ja testaa projektia
 
-## Syvennä uuden projektin aloittamista
+Kun olet koodannut projektiasi, voit suorittaa sen ja testata, että kaikki toimii halutulla tavalla. Voit suorittaa PHP-koodin esimerkiksi asentamasi tulkki avulla tai käyttämällä sisäänrakennettua kehityspalvelinta, kuten XAMPP:ssa tai WAMP:ssa.
 
-Jos haluat oppia lisää uuden projektin aloittamisesta PHP:llä, tässä on muutamia hyödyllisiä resursseja, jotka voit tarkistaa:
+### Jatka kehittämistä ja oppimista
 
-- [PHP:n virallinen dokumentaatio](https://www.php.net/docs.php) tarjoaa kattavan oppaan PHP:n asentamiseen ja käyttöön.
-- [W3Schools](https://www.w3schools.com/php/) on hyvä resurssi PHP-koodin oppimiseen esimerkkien ja harjoitusten avulla.
-- [PHP.net -foorumi](https://www.php.net/forums/) on hyvä paikka kysyä apua PHP-ohjelmointiin liittyvissä ongelmissa ja oppia muilta asiantuntijoilta.
+PHP-projektin aloittaminen on vasta ensimmäinen askel projektin kehitysprosessissa. Jatka kehittämistä ja tutustu laajempiin PHP-ominaisuuksiin, jotta voit luoda entistä monipuolisempia ja kehittyneempiä projekteja tulevaisuudessa.
+
+## Syvenny aloittamiseen
+
+Aloittaessa PHP-projektia on tärkeää kiinnittää huomiota koodin laatuun ja turvallisuuteen. Muista hyödyntää PHP:n tarjoamia työkaluja ja tekniikoita, kuten tietotyyppisiä merkintöjä ja salt-hashingia, jotta pystyt hallitsemaan projektiisi liittyviä riskejä ja mahdollisia ongelmia.
 
 ## Katso myös
 
-- [PHP: Ohjelmointikieli aloittelijoille](https://www.codinginfinite.com/php-kurssi-aloittelijoille/) - opas PHP:n perusteisiin.
-- [Tyovalineet](https://fi.wikipedia.org/wiki/Ty%C3%B6kalut) - lisää hyödyllisiä työkaluja ja resursseja ohjelmointiin.
+- [PHP:n virallinen verkkosivusto](https://www.php.net/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Sublime Text](https://www.sublimetext.com/)
+- [PHPStorm](https://www.jetbrains.com/phpstorm/)
+- [XAMPP](https://www.apachefriends.org/index.html)
+- [WAMP](https://www.wampserver.com/en/)

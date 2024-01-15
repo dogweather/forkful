@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Vergleich zweier Daten"
-simple_title:         "Vergleich zweier Daten"
+title:                "Zwei Daten vergleichen"
+html_title:           "Kotlin: Zwei Daten vergleichen"
+simple_title:         "Zwei Daten vergleichen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,80 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Vergleichen von zwei Datumsangaben ist eine häufige Aufgabe in der Programmierung. Es ermöglicht uns, zu überprüfen, ob ein bestimmtes Datum vor oder nach einem anderen Datum liegt und kann in vielen Anwendungen nützlich sein.
+Warum sollte man sich überhaupt mit dem Vergleich von zwei Daten beschäftigen? Nun, wenn du jemals ein Programm geschrieben hast, das mit Datumswerten arbeitet, wirst du wissen, dass es manchmal notwendig ist, sie miteinander zu vergleichen. Zum Beispiel, um herauszufinden, welches Ereignis zuerst stattgefunden hat oder ob ein Datum innerhalb eines bestimmten Zeitraums liegt. In diesem Artikel werden wir uns ansehen, wie man dies mit Kotlin machen kann.
 
-## Wie geht man vor
+## Wie geht das?
 
-Das Vergleichen von zwei Daten in Kotlin ist einfach und unkompliziert. Wir können die `before()` oder `after()` Funktionen der `LocalDate` Klasse verwenden, um die Reihenfolge der Datumsangaben zu überprüfen.
-
-Beispielcode:
+Um zwei Daten in Kotlin zu vergleichen, können wir die `compareTo()` Methode der `Date` Klasse verwenden. Schauen wir uns ein Beispiel an:
 
 ```Kotlin
-val date1 = LocalDate.of(2020, 10, 15)
-val date2 = LocalDate.of(2020, 10, 20)
+val date1 = Date(2021, 7, 10) // Erstes Datum
+val date2 = Date(2021, 7, 15) // Zweites Datum
+val result = date1.compareTo(date2) // Vergleiche beide Daten
 
-if(date1.before(date2)){
-    println("$date1 ist vor $date2")
-} else{
-    println("$date2 ist vor $date1")
+println(result) // Output: -5
+```
+
+Das `compareTo()` gibt eine ganzzahlige Zahl zurück, die angibt, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt. In diesem Beispiel beträgt die Ausgabe "-5", was bedeutet, dass das erste Datum vor dem zweiten liegt. Wenn das erste Datum nach dem zweiten Datum liegen würde, wäre die Ausgabe "5" und falls beide Daten gleich sind, wäre die Ausgabe "0".
+
+Wir können auch die `before()` und `after()` Methoden verwenden, wenn wir nur prüfen möchten, ob ein Datum vor oder nach einem anderen liegt, ohne die genauen Unterschiede in der Zeit zu kennen.
+
+```Kotlin
+val date1 = Date(2021, 7, 10) // Erstes Datum
+val date2 = Date(2021, 7, 15) // Zweites Datum
+
+if (date1.before(date2)) {
+    println("Das erste Datum liegt vor dem zweiten.")
+}
+
+if (date2.after(date1)) {
+    println("Das zweite Datum liegt nach dem ersten.")
 }
 ```
 
-Output:
+## Tiefere Einblicke
 
-```
-2020-10-15 ist vor 2020-10-20
-```
-
-Wir können auch die `isEqual()` Funktion verwenden, um zu überprüfen, ob zwei Datumsangaben gleich sind.
-
-Beispielcode:
-
-```Kotlin
-val date1 = LocalDate.of(2020, 10, 15)
-val date2 = LocalDate.of(2020, 10, 15)
-
-if(date1.isEqual(date2)){
-	println("$date1 und $date2 sind gleich")
-} else{
-	println("$date1 und $date2 sind unterschiedlich")
-}
-```
-
-Output:
-
-```
-2020-10-15 und 2020-10-15 sind gleich
-```
-
-## Tiefergehende Informationen
-
-Bei der Verwendung von `before()` und `after()` Funktionen wird der Vergleich auf der Grundlage des Kalendersystems durchgeführt. Es ist wichtig sicherzustellen, dass beide Datumsangaben im selben Kalendersystem (z.B. Gregorianischer Kalender oder Julianischer Kalender) sind, um genaue Ergebnisse zu erhalten.
-
-Es ist auch möglich, die Reihenfolge der Datumsangaben basierend auf bestimmten Kriterien zu überprüfen, z.B. das Vergleichen von Jahr, Monat und Tag getrennt. Hierfür können wir die `compareTo()` Funktion verwenden.
-
-Beispielcode:
-
-```Kotlin
-val date1 = LocalDate.of(2020, 10, 15)
-val date2 = LocalDate.of(2020, 10, 20)
-
-if(date1.compareTo(date2) < 0 ){
-	println("$date1 ist vor $date2")
-} else if(date1.compareTo(date2) > 0){
-	println("$date1 ist nach $date2")
-} else{
-	println("$date1 und $date2 sind gleich")
-}
-```
-
-Output:
-
-```
-2020-10-15 ist vor 2020-10-20
-```
+Die Vergleichsmethoden der `Date` Klasse vergleichen die Daten auf Millisekundenebene. Das bedeutet, dass selbst kleinste Unterschiede in der Zeit zu unterschiedlichen Rückgabewerten führen können. Es ist auch wichtig zu beachten, dass die `Date` Klasse in Kotlin veraltet ist und durch die `LocalDate` Klasse ersetzt wurde. Diese bietet eine bessere Unterstützung für Datumsberechnungen und Vergleiche.
 
 ## Siehe auch
 
-- [Java 8: Vergleichen von Datumsangaben](https://www.baeldung.com/java-compare-dates)
-- [Kotlin Dokumentation: Lokale Datumsangaben](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
+- [Kotlin Dokumentation zu Datumsvergleichen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/compare-to.html)
+- [Offizielle Kotlin Dokumentation](https://kotlinlang.org/)
+- [Kotlin Tutorials und Beispiele](https://www.programiz.com/kotlin)

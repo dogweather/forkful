@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "PHP: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Lavorare con YAML può sembrare un po' complicato all'inizio, ma una volta padroneggiata questa forma di codifica, può semplificare notevolmente il processo di sviluppo web. Inoltre, YAML offre una maggiore flessibilità e leggibilità rispetto ad altri formati di codifica.
+## Perché utilizzare YAML per la programmazione in PHP
 
-## Come fare
-Per utilizzare YAML nel tuo progetto PHP, è necessario installare una libreria di parsing YAML come Symfony YAML Component o Spyc. Una volta installata, puoi facilmente caricare e analizzare un file YAML con poche righe di codice. Ad esempio:
+Se stai lavorando con dati strutturati, come ad esempio configurazioni o informazioni da archiviare, YAML è una scelta eccellente per la tua programmazione in PHP. È un formato facile da leggere e scrivere per gli esseri umani, e possiede anche una sintassi semplice da interpretare per i computer.
+
+## Come utilizzare YAML in PHP
+
+Per utilizzare YAML in PHP, è necessario innanzitutto installare l'estensione "yaml" dal tuo gestore di pacchetti. Una volta installata, puoi cominciare a manipolare i dati attraverso la funzione `yaml_parse()`.
 
 ```PHP
-// Include la libreria
-require_once 'vendor/autoload.php';
+// Esempio di parsing di un file YAML
+$data = yaml_parse(file_get_contents('config.yaml'));
 
-// Carica un file .yaml in una variabile
-$yaml = file_get_contents('file.yaml');
+// Esempio di creazione di un file YAML
+$config = [
+  'database' => [
+    'host' => 'localhost',
+    'username' => 'root',
+    'password' => 'password'
+  ],
+  'app' => [
+    'name' => 'Mio fantastico sito',
+    'author' => 'Io stesso'
+  ]
+];
 
-// Analizza il contenuto YAML
-$data = Yaml::parse($yaml);
-
-// Accede ai dati analizzati
-echo $data['nome'];
-echo $data['eta'];
+file_put_contents('config.yaml', yaml_emit($config));
 ```
 
-In questo esempio, abbiamo utilizzato il componente YAML di Symfony per leggere un file YAML e memorizzare i suoi dati in una variabile. Successivamente, possiamo accedere a questi dati come a una semplice array associativa.
+La funzione `yaml_parse()` restituisce un array PHP contenente i dati del file YAML, mentre la funzione `yaml_emit()` converte un array in formato YAML e lo scrive su un file.
 
-## Approfondimento
-Una delle caratteristiche più interessanti di YAML è la sua struttura indentata che rende più facile la lettura e la comprensione del codice. Inoltre, YAML consente di utilizzare variabili, inclusione di file e altre funzionalità avanzate che possono semplificare la gestione dei dati.
+## Approfondimenti su YAML
 
-Una cosa importante da notare è che YAML non è un linguaggio di programmazione, ma solo un formato di codifica dei dati. Ciò significa che è necessario utilizzare una libreria o un componente per lavorare con YAML all'interno del tuo codice PHP.
+YAML è un formato di serializzazione ed è quindi utile per la memorizzazione di dati strutturati. È molto flessibile, permettendo anche l'uso di ogetti e tipi di dato personalizzati. Inoltre, YAML permette la creazione di commenti all'interno del file, rendendolo ancora più leggibile e gestibile per gli sviluppatori.
 
 ## Vedi anche
-- [Symfony YAML Component](https://symfony.com/doc/current/components/yaml.html)
-- [Spyc](https://github.com/mustangostang/spyc)
-- [Documentazione di YAML](https://yaml.org/)
+
+- [Documentazione ufficiale di PHP per l'estensione YAML](https://www.php.net/manual/en/book.yaml.php)
+- [Documentazione ufficiale di YAML](https://yaml.org/)
+- [Articolo su "Come sfruttare al meglio YAML in PHP"](https://jesseduffield.com/YAML-over-verbosity/)

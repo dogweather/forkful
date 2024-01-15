@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Kotlin: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+כמה פעמים התקבלתם עם הצורך לקבל מידע משרת אינטרנט או לשלוח מידע לשרת? נניח שיש לכם אפליקציה שנמצאת על הטלפון שלכם ורוצים לקבל את התוכן העדכני ביותר מהאתר המקורי. במקרים כאלה, כדאי להשתמש בפעולה שנקראת "שליחת דרישת HTTP". זהו סוג של בקשה שנשלחת מהמחשב או המכשיר שלכם לשרת אינטרנט. במאמר הזה, אני אסביר לכם כיצד להשתמש בקוד Kotlin כדי לשלוח בקשות HTTP ולקבל חזרה מידע מהשרת.
 
-HTTP דרך העברת מידע ברשת והיא חלק בלתי נפרד מתהליך התקשורת בין כתובת האתר שבו אתם נמצאים לבין שרת האינטרנט שבו מארח האתר הנ"ל. כאשר אנחנו מבקשים משהו כגון דף אינטרנט, בכל רגע נתון אנחנו בעצם שולחים ומקבלים דוא"א התקשורת של HTTP.
+## מדוע
 
-## כיצד לעשות זאת
+השליחה של בקשות HTTP נחשבת לאלטרנטיבה מעניינת יותר לשיטות הקיימות, כמו שימוש בפונקציות ספציפיות כדי להתחבר לשרת. הרבה מאפייני האינטרנט שאנו מכירים היום, כגון אתרי אתרי שיחות ואינטרנט, משתמשים בתקשורת HTTP. כך שלמדוק אז אתם יכולים ללכת מטה להערכת הקוד כדי לראות איך זה עושה.
 
-תהליך שליחת בקשת HTTP נעשה בשימוש במנגנון עז - הפונקציה print() של לוגיקת הקוד שלנו. לדוגמא הנה קטעי קוד בכתובת האתר שלנו המראים איך ניתן לשלוח ולקבל דוא"א HTTP עם לוגיקת הקוד של Kotlin:
+## כיצד
+
+כדי לשלוח בקשות ה-HTTP באמצעות קוד Kotlin, ניתן להשתמש בספריה שנקראת "kotlinx.serialization" כדי ליצור את הבקשה. הנה דוגמא לשליחת בקשה HTTP GET פשוטה ולקבלת התגובה בפורמט JSON:
 
 ```Kotlin
-import java.net.HttpURLConnection
-import java.net.URL
-
-fun sendRequest(urlString: String) {
-    val url = URL(urlString)
-    val connection = url.openConnection() as HttpURLConnection
-    connection.requestMethod = "GET"
-    connection.connect()
-
-    val responseCode = connection.responseCode
-    println("Response Code: $responseCode")
-
-    val responseMessage = connection.responseMessage
-    println("Response Message: $responseMessage")
+suspend fun makeGetRequest(url: String): String {
+    val request = HttpClient().get<String>(url)
+    return request
 }
 ```
 
-כאן, אנו משתמשים בפונקציה URL של לוגיקת הקוד של Kotlin כדי ליצור קישור לכתובת האתר הרצוי ואנו מגדירים את השיטה שבה נשלח את הבקשה, במקרה זה - "GET" (הבקשה לקבל מידע מהשרת). לאחר מכן, אנחנו מחברים לפני השילוב המעודכן של לוגיקת הקוד של Kotlin וקישור HTTP עם הפעולה connect() כדי לשלוח את הבקשה. לבסוף, אנחנו מדפיסים את קוד התגובה וההודעה שמתקבלים מהשרת.
+להלן דוגמא נוספת של שליחת בקשת POST עם נתונים מסוג JSON וקבלת תגובה גם היא בפורמט JSON:
 
-כשנריץ את קוד זה, נקבל את הפלט הבא:
-
+```Kotlin
+suspend fun makePostRequest(url: String, data: String): String {
+    val request = HttpClient().post<String>(url) {
+        this.body = data
+        this.bodyContentType(ContentTypes.Application.Json)
+    }
+    return request
+}
 ```
-Response Code: 200
-Response Message: OK
-```
 
-זה אומר שהבקשה שלנו התקבלה ומענה השרת הוא "OK" (כלומר הבקשה נמצאת בסדר).
-
-כדי לשלוח בקשות HTTP מרחוק יום אחד אנחנו נוכל להשתמש בדוגמאות כמו GET, POST, PUT או DELETE כדי לפנות לשרת ולבקש מה שמעניין
+חשוב לציין כי בשני הדוגמאות האנחנו משתמשים בפונקציה "suspend" שמסמנת שהפונקציה מס

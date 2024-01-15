@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "PHP: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää säännöllisiä lausekkeita? 
 
-Regular expressions, eli säännölliset lausekkeet, ovat tärkeä osa PHP-ohjelmointia. Niiden avulla voit hakea, vertailla ja muokata merkkijonoja monimutkaisia sääntöjä noudattaen. Tämä tekee koodistasi tehokkaampaa ja joustavampaa.
+Säännölliset lausekkeet ovat tehokas työkalu, jota PHP-kehittäjät voivat käyttää tekstien hallintaan ja hakemiseen. Ne mahdollistavat erilaisten merkkijonojen, kuten sähköpostiosoitteiden ja puhelinnumeroiden tarkastamisen ja validoinnin. Ne myös auttavat tekstin käsittelyssä ja muokkaamisessa, mikä säästää aikaa ja vaivaa.
 
-## Miten
+## Näin käytät säännöllisiä lausekkeita PHP:ssä
 
-Regular expressionit kirjoitetaan yleensä merkkijonona, joka koostuu erilaisista symboleista ja erikoismerkeistä. Niiden avulla voit hakea haluamaasi merkkijonoa, esimerkiksi tietynlaista sähköpostiosoitetta tai URL-osoitetta.
+Säännölliset lausekkeet aloitetaan yleensä merkkijonon alusta suorakaiteenmuotoisilla sulkumerkeillä ```/``` ja loppuu myös sulkumerkkiin. Näiden väliin kirjoitetaan itse säännöllinen lauseke. Esimerkiksi, ```/[0-9]+/```, tämä säännöllinen lauseke etsii kaikki numerot merkkijonosta. 
 
-Käytännössä regular expressionin luominen alkaa aina merkkijonosta ```/```, joka ilmaisee säännöllisen lausekkeen alun ja lopun. Sen jälkeen voit lisätä haluamasi säännöt välilyöntien avulla. Esimerkiksi, jos haluaisit hakea kaikki 10-numeroiset puhelinnumerot, voit käyttää seuraavaa regular expressionia: ```/\d{10}/```. Tämä tarkoittaa, että haluat hakea kaikki merkkijonot, jotka koostuvat 10 numerosta.
+Säännöllisiä lausekkeita käytettäessä on tärkeä huomioida, että ne ovat case-sensitive eli ne tunnistavat eri kirjainten koon. Esimerkiksi, ```/hello/``` vastaa vain merkkijonoa "hello" eikä "Hello" tai "HELLO". Tämän voi kiertää käyttämällä säännöllisiä lausekkeita, joilla ei ole case-sensitive ominaisuutta, kuten ```/hello/i```. Tämä lauseke vastaa kaikkia vaihtoehtoja: "hello", "Hello" ja "HELLO".
 
-Voit myös käyttää erilaisia erikoismerkkejä, kuten ```*``` tai ```+```, joilla voit ilmaista esimerkiksi, että haluat hakea useampia samanlaisia merkkejä tai merkkijonoja. Lisäksi voit käyttää myös sulkumerkkejä ```()``` ryhmitelläksesi sääntöjä.
+Säännöllisillä lausekkeilla on myös erilaisia metakaraktereita, joilla voidaan haun tarkennusta. Esimerkiksi metakarakteri ```+``` vastaa yhdestä tai useammasta esiintymästä. Joten ```/[0-9]+/``` etsii kaikki numerot merkkijonosta, mutta ```/[0-9]/``` etsii vain yhden numeron.
 
-## Syvempi sukellus
+## Syväsukellus säännöllisiin lausekkeisiin
 
-Regular expressioneita voi käyttää monella eri tavalla. Voit esimerkiksi tarkistaa, että käyttäjän syöttämä sähköpostiosoite on oikeassa muodossa tai hakea kaikki tietokannasta tietynlaiset tiedot.
+PHP tarjoaa paljon erilaisia toimintoja säännöllisten lausekkeiden käyttämiseen. Yksi näistä on ```preg_match()``` -funktio, joka tarkistaa vastaako säännöllinen lauseke annettuun merkkijonoon. Tämä funktio palauttaa joko ```true``` tai ```false``` -arvon. 
 
-PHP:ssa on myös valmiita funktioita, kuten ```preg_match()``` tai ```preg_replace()```, joilla voit käyttää regular expressioneita helposti osana koodiasi. Näiden funktioiden avulla voit esimerkiksi tarkistaa, että annettu syöte vastaa haluttua muotoa tai korvata osan merkkijonosta toisella.
+Toinen hyödyllinen funktio on ```preg_replace()```, joka etsii säännöllisen lausekkeen mukaiset osat ja korvaa ne halutulla tekstillä. Esimerkiksi, ```preg_replace("/hello/", "hei", "hello world")``` palauttaa merkkijonon "hei world".
 
-On tärkeää muistaa, että regular expressionien luominen ja käyttäminen voi tuntua aluksi vaikealta ja haastavalta. Mutta harjoitus tekee mestarin ja kun opit perusteet, huomaat pian kuinka hyödyllisiä ne ovat koodissasi.
+Myös säännölliset lausekkeet itsessään voivat sisältää ryhmiä, joiden avulla voidaan muodostaa lisätarkennuksia hakuun. Ryhmät toimivat sulkeiden sisällä ja niitä voi käyttää muun muassa haun tulosten tallentamiseen tai uudelleenkäyttöön.
 
 ## Katso myös
 
-- [PHP:n virallinen ohjeistus regular expressioneista](https://www.php.net/manual/en/book.pcre.php)
-- [Regular expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)
-- [O'Reilly:n kirja "Mastering Regular Expressions"](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [PHP:n virallinen dokumentaatio säännöllisille lausekkeille](https://www.php.net/manual/en/ref.pcre.php)
+- [Online työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)

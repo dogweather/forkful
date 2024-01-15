@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "एक एचटीटीपी अनुरोध भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Arduino: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,62 +10,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
 
-HTTP अनुरोध भेजने में लोग क्यों शामिल होंगे? क्या वह जरूरी है? क्या यह आपके अर्डुइनो कोड में एक अहम Role निभाता है? इन सभी सवालों का जवाब हाँ है।
+एक Arduino में HTTP अनुरोध भेजना सीखना, आपको वेब सर्वर से डेटा को अपनी आईपी अनुमति से प्राप्त करने की अनुमति देता है। 
 
-## कैसे
+## कैसे करें
 
-अगर आपको आज अपने अर्डुइनो बोर्ड से HTTP अनुरोध भेजना सीखना है तो आप सही जगह पर हैं। नीचे दी गई कोड उदाहरण आपको प्रारंभ करने में मदद करेंगे।
+इसके लिए आपको स्केच कोड को वेब साइट के साथ जोड़ना होगा। नीचे दिए गए कोड ब्लॉक में, पुर्तगाली वेबसाइट से डेटा प्राप्त करने के लिए हम एक उदाहरण देंगे।
 
 ```Arduino
-#include <ESP8266WiFi.h>
+#include <SPI.h>
+#include <WiFi.h>
+#include <HttpClient.h>
 
-// Replace with your network credentials
-const char* ssid = "MyWiFiNetwork";
-const char* password = "MyWiFiPassword";
+char ssid[] = "YourNetworkSSID";
+char pass[] = "YourNetworkPassword";
 
-// Declare Server and Resource URLs
-const char* server = "www.example.com";
-const char* resource = "/";
+// Your Arduino's IP address
+IPAddress ip(192, 168, 1, 177);
+
+// Server IP address (in this example, a Portuguese website)
+IPAddress server(78, 109, 175, 74);
+
+// Create an instance of the HttpClient
+WiFiClient client;
+HttpClient http(client, server, 80);
 
 void setup() {
+  // Initialize serial communication
   Serial.begin(9600);
-  WiFi.begin(ssid, password); // Connect to WiFi network
-  Serial.println("Connecting to WiFi...");
+
+  // Connect to WiFi network
+  WiFi.begin(ssid, pass);
+
+  // Wait for connection to be established
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(".");
+    Serial.println("Connecting to WiFi...");
   }
+
+  // Print connection status
   Serial.println("Connected to WiFi!");
+
+  // Configure Arduino's IP
+  WiFi.config(ip);
 }
 
 void loop() {
+  // Send GET request to server and save response in a variable
+  HttpResponse response = http.get("/");
 
-  // Establish connection with server
-  WiFiClient client;
-  Serial.println("Connecting to server...");
-  if (client.connect(server, 80)) {
-    // Send HTTP request
-    client.print(String("GET ") + resource + " HTTP/1.1\r\n" +
-                 "Host: " + server + "\r\n" +
-                 "Connection: close\r\n\r\n");
+  // Print response status code
+  Serial.println(response.statusCode);
 
-    // Read server response
-    while(client.available()) {
-      String line = client.readStringUntil('\r');
-      Serial.print(line);
-    }
-    Serial.println();
-  }
-  else {
-    Serial.println("Connection failed!");
-  }
+  // Print response body
+  Serial.println(response.body);
+
+  // Wait for 10 seconds before making another request
+  delay(10000);
 }
 ```
 
-ऊपर दिए गए कोड ब्लॉक में `MyWiFiNetwork` और `MyWiFiPassword` अपनी वैफाई कनेक्शन के अनुसार बदलें। साथ ही `www.example.com` अपने सर्वर और `resource` को भी अपनी वेबसाइट की फ़ाइल के नाम से बदलें। इसके बाद अपने अर्डुइनो को लैप्टॉप से कनेक्ट करके कोड को अपलोड करें। इस्माताबहीन, अगर सब कुछ सही है तो आपको स्क्रीन पर कुछ Random टेक्स्ट दिखाई देगा, जो की आपकी इन्टरनेट ब्राउज़र की स्क्रीन पर भी दिखाई देगा। यह है HTTP अनुरोध प्रेषण का कामप्लीट कोड।
+अब आपका स्केच कम्पाइल करके अपने Arduino बोर्ड पर अपलोड कर सकते हैं। जब आप स्केच को अपने Arduino में अपलोड करते हैं, तो मॉनिटरिंग से अभिंत भाग बनाएं और आईपी अनुमति का इस्तेमाल करके वेबसाइट से एक HTTP अनुरोध भेजेंगे। आप मॉनिटरिंग से कुछ इस तरह की आउटपुट देखेंगे:
 
-## डीप डाइव
+```
+Connecting to WiFi...
+Connecting to WiFi...
+Connecting to WiFi...
+Connected to WiFi!
+200
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie ie6 lte9 lte8 lte7 os-win"> <![endif]-->
+<!--[if IE 7]>    <html class="ie ie7 lte9 lte8 lte7 os-win"> <![endif]-->
+<!--[if IE 8]>    <html class="ie ie8 lte9 lte8 os-win"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9 lte9 os-win"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html class="os-win"> <!--<![endif]-->
+...
+</html>
+```
 
-HTTP अनुरोध लगभग हर वेबसाइट द्वारा उपभोग्य जानकार
+आप उस वेबसाइट के हथियारों के साथ कुछ अन्य डेटा प्राप्त करने

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 날짜를 문자열로 변환하기"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "Rust: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,41 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 문자열로 변환하는 것이 왜 중요한지 궁금하신가요? 이 글에서 러스트 프로그래밍 언어로 날짜를 표현하고 문자열로 변환하는 방법을 알아보세요. 또한 이 과정에서 러스트의 특징과 장점도 살펴볼 수 있을 거예요.
+날짜를 문자열로 변환하는 일이 왜 필요한지 궁금하신가요? 예를 들어, 데이터베이스에 날짜를 저장해야 할 때 혹은 사용자에게 보여줄 때, 날짜를 읽기 쉬운 형식으로 표현하고 싶을 때 등 다양한 이유로 날짜를 문자열로 변환하는 작업이 필요합니다.
 
-## 방법
+## 어떻게
 
-날짜를 문자열로 변환하는 방법은 간단해요. 우선 `chrono` 라이브러리를 불러온 뒤, `DateTime` 구조체를 사용해서 날짜를 정의해줍니다. 그리고 `format` 메소드를 사용하여 문자열로 변환할 수 있어요.
+Rust는 강력한 타입 시스템과 안정적인 성능으로 많은 개발자들에게 인기가 있습니다. 날짜를 문자열로 변환하는 방법 또한 간단하고 직관적이며 안전한 방법으로 제공됩니다.
 
-```Rust
-use chrono::{DateTime, Utc, Datelike};
+우선, `chrono` 라이브러리를 `Cargo.toml` 파일에 추가해줍니다. 그리고 `use chrono::prelude::*;` 로 라이브러리를 가져온 후 `Local::now().to_rfc3339()`를 호출하여 현재 시간을 RFC3339 형식의 문자열로 가져올 수 있습니다.
 
-// 현재 날짜를 정의합니다.
-let now: DateTime<Utc> = Utc::now();
+```rust
+use chrono::prelude::*;
 
-// 문자열로 변환합니다.
-let string_date = now.format("%Y-%m-%d").to_string();
+fn main() {
 
-println!("날짜: {}", string_date);
+    let date = Local::now().to_rfc3339();
+    println!("Converted Date: {}", date);
+
+}
 ```
 
-출력 결과는 다음과 같이 나올 거예요:
+출력 예시:
 
-```
-날짜: 2021-12-03
+`Converted Date: 2021-08-24T07:21:54+09:00`
+
+이번에는 날짜를 사용자 정의 형식으로 변환해보겠습니다. `format!` 매크로를 사용하여 원하는 형식으로 날짜를 변환할 수 있습니다.
+
+```rust
+use chrono::prelude::*;
+
+fn main() {
+
+    let date = Local::now();
+    let custom_date = format!("{}-{}-{}", date.year(), date.month(), date.day());
+    println!("Converted Date: {}", custom_date);
+
+}
 ```
 
-포매팅 문자열을 자유롭게 변경하여 원하는 형식으로 날짜를 표현할 수 있습니다. `format` 메소드의 자세한 사용법은 [chrono 문서](https://docs.rs/chrono/)를 참고하세요.
+출력 예시:
+
+`Converted Date: 2021-8-24`
 
 ## 딥 다이브
 
-위 코드에서 사용한 `DateTime` 구조체는 러스트의 표준 라이브러리에 포함되어 있지 않지만, `chrono` 라이브러리를 통해 사용할 수 있습니다. 이 라이브러리는 날짜와 시간을 다루는 많은 기능들을 제공합니다.
+날짜를 문자열로 변환하는 과정에서 자주 사용되는 타입으로는 `DateTime<Utc>`, `DateTime<Local>`, `NaiveDateTime` 등이 있습니다. 각 타입은 다른 시간대와 날짜를 다룰 수 있지만, 정확한 출력을 위해서는 적절한 타입을 선택하고 변환해야 합니다.
 
-또한 러스트의 특징 중 하나인 속도와 안전성을 잘 보여주는 예제라고 할 수 있습니다. 무거운 작업을 수행하는 코드에서도 빠르게 동작하며 메모리를 안전하게 관리합니다.
+또한 `chrono` 라이브러리 외에도 `time` 라이브러리를 사용하여 날짜와 시간을 다룰 수 있습니다. 이 라이브러리는 다양한 기능을 제공하며, 개발자가 원하는 방식으로 날짜를 변환할 수 있도록 유연성을 제공합니다.
 
-## 추가 공부할 만한 링크들
+## 더 알아보기
 
-- [chrono 문서](https://docs.rs/chrono/)
-- [러스트 공식 홈페이지](https://www.rust-lang.org/ko)
-- [러스트 커뮤니티 포럼](https://www.rust-lang.org/ko/community)
-- [러스트 뉴스레터](https://this-week-in-rust.org/)
+- [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/) - `chrono` 라이브러리의 공식 문서입니다.
+- [Time Documentation](https://docs.rs/time/0.2.25/time/) - `time` 라이브러리의 공식 문서입니다.
+
+## 참고
+
+이번 글에서는 날짜를 문자열로 변환하는 간단한 예제를 다루었지만, `chrono`와 `time` 라이브러리를 활용하면 더 다양한 형식으로 날짜를 변환할 수 있습니다. 적절한 형식을 선택하여 날짜를 변환하여 개발자와 사용자 모두가 쉽게 읽고 이해할 수 있도록 하시길 바랍니다.

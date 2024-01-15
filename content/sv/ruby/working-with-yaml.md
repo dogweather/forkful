@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Ruby: Arbeta med yaml"
+simple_title:         "Arbeta med yaml"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -9,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: YAML är en förenklad språkstruktur för att representera data i ett human-readable format. Det är användbart för att överföra data mellan system och för att konfigurera program och webbsidor.
+# Varför
 
-Hur man gör det: Användningen av YAML i Ruby är enkelt med hjälp av "YAML" biblioteket. Först måste du ladda in biblioteket genom att skriva "require 'yaml'" i din kod. Sedan kan du läsa in YAML data med "YAML.load_file" funktionen och spara det i en variabel. Du kan även skriva YAML data till en fil med "YAML.dump" funktionen. Här är ett exempel på hur man skulle läsa in en YAML fil och skriva ut den i konsolen:
+Om du arbetar med webbutveckling, databaser eller mjukvarutillämpningar är du förmodligen bekant med YAML. Det är ett lättläst dataformat som används för att lagra och överföra data. Att kunna hantera YAML är en viktig färdighet inom programmering, särskilt inom Ruby.
 
-```Ruby
+# Så här gör du
+
+För att hantera YAML i Ruby behöver du först installera en YAML-paket. Detta kan enkelt göras genom att köra följande kommando i din terminal:
+
+```
+gem install yaml
+```
+
+När det är installerat kan du använda funktionen `require` för att importera YAML i ditt Ruby-program:
+
+```
 require 'yaml'
-data = YAML.load_file("example.yml")
-puts data
 ```
 
-Det här kommer att ge dig ett human-readable format av data från filen "example.yml". Om du vill lägga till ny data till din YAML fil, kan du använda "YAML.dump" funktionen. Till exempel, om du vill lägga till ett nytt element i din fil, kan du använda följande kod:
+För att läsa in en YAML-fil och konvertera den till en Ruby-hash används följande kod:
 
-```Ruby
-require 'yaml'
-data = YAML.load_file("example.yml")
-data["nyckel"] = "värde"
-File.open("example.yml", 'w') {|f| f.write YAML.dump(data) }
+```
+yaml_hash = YAML.load_file('file_name.yml')
 ```
 
-Det här kommer att lägga till ett nytt element med nyckeln "nyckel" och värdet "värde" till din YAML fil.
+För att skriva en YAML-fil från en befintlig hash i Ruby används följande kod:
 
-Djupdykning: YAML tillåter också att man använder variabler och strukturer för att organisera data. Till exempel kan du skapa en struktur i din YAML fil som följande:
-
-```yml
-hem:
-  plats: Stockholm
-  adress: Drottninggatan 5
-  postnummer: 111 21
 ```
-Dessa variabler kan sedan användas i din kod för att hämta data. Här är ett exempel på hur du skulle kunna hämta adressen från din YAML fil:
-
-```Ruby
-require 'yaml'
-data = YAML.load_file("example.yml")
-hemadress = data["hem"]["adress"]
-puts hemadress
+yaml_string = YAML.dump(hash)
+File.open('file_name.yml', 'w') { |file| file.write(yaml_string) }
 ```
 
-Detta skulle skriva ut "Drottninggatan 5" i konsolen baserat på informationen från din YAML fil.
+Deep Dive
 
-Se även: För mer information om hur man arbetar med YAML i Ruby, se följande länkar:
+En YAML-fil består av olika nyckel-värde-par som separeras av kolon och indenterade underkategorier som består av listor eller andra nyckel-värde-par. Det är ett enkelt och läsbart format som är användbart för att lagra konfigurationsdata eller andra typer av datastrukturer.
 
-- YAML dokumentation: https://yaml.org/
-- Ruby YAML bibliotek: https://ruby-doc.org/stdlib-2.7.2/libdoc/yaml/rdoc/YAML.html
+När du arbetar med YAML i Ruby är det viktigt att känna till att YAML-filen automatiskt konverteras till en hash. Detta betyder att om du behöver åtkomst till specifika värden i filen, kan du använda nycklar och metoder för att navigera genom hashen och hämta värdet.
+
+# Se även
+
+- [YAML.org](https://yaml.org/)
+- [YAML Tutorial](https://www.codecademy.com/learn/learn-yaml)
+- [Ruby YAML Documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)

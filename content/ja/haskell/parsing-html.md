@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: HTMLのパース"
-simple_title:         "HTMLのパース"
+title:                "「HTMLの解析」"
+html_title:           "Haskell: 「HTMLの解析」"
+simple_title:         "「HTMLの解析」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,55 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜパースするのか
 
-HTMLのパージングを行うのに、なぜ時間を費やすのでしょうか？HTMLはウェブ上で最も一般的な言語であり、Haskellでプログラミングする上で、ウェブスクレイピングにおいて非常に重要なスキルです。また、HTMLを解析することで、データを抽出したり、ウェブページを操作したりすることができます。
+パースはプログラミングにおいて、特にWeb開発において重要な機能です。HTMLという言語は非常に人間にとってわかりやすいものですが、コンピューターにとっては理解しにくいため、パースを行うことでコンピューターでも理解できる形式に変換する必要があります。
 
-## ハウトゥー
+## パースの方法
 
-まず最初に、HaskellでHTMLをパースするための基本的な方法を見ていきましょう。ここでは、"tagsoup"と呼ばれるHaskellのHTMLパーサーライブラリを使用します。まずは、このライブラリをインポートします。
-
-```Haskell
-import Text.HTML.TagSoup
-```
-
-次に、HTMLページのURLを指定して、"openURL"を使用してHTMLコンテンツを取得します。そして、取得したコンテンツを"parseTags"を使用してタグのリストに変換します。
+まず、HaskellでHTMLをパースするためには、**html-conduit**というライブラリを使用する必要があります。次に、**http-conduit**を使用してHTMLを取得し、**select**関数を用いて特定の要素を抽出してパースすることができます。
 
 ```Haskell
-html <- openURL "https://www.example.com/"
-let tags = parseTags html
+import Control.Monad (void)
+import Network.HTTP.Conduit (simpleHttp)
+import Text.HTML.DOM (parseLBS)
+import Text.XML.Cursor (Cursor, fromDocument, ($//), (&//), element, content)
+
+main :: IO ()
+main = do
+    -- HTMLを取得
+    doc <- simpleHttp "https://example.com"
+
+    -- 全てのpタグの中身を取得
+    let cursor = fromDocument $ parseLBS doc
+        paragraphs = cursor $// element "p" &// content
+
+    -- 結果の表示
+    mapM_ putStrLn paragraphs
 ```
 
-これで、HTMLページをタグのリストとして取得することができました。次に、"tagsoup"ライブラリには便利な関数がいくつかあります。例えば、"~>"を使用すると、特定のタグの間のテキストを取得することができます。
+上記のコードでは、**mapM_**関数を使用して抽出した要素を一つずつ表示しています。また、**&//**を用いることで、pタグのように特定の要素をネストして抽出することもできます。
 
-```Haskell
-let title = fromTagText $ takeWhile (~/= "</title>") $ dropWhile (~/= "<title>") tags
-print title
+### 出力例
+
+```
+テキスト
+テキスト
+画像
 ```
 
-上記のコードでは、タイトルタグの中身を取得し、プリントすることができます。このように、"tagsoup"ライブラリを活用することで、簡単にHTMLコンテンツをパースすることができます。
+## 深堀り
 
-## ディープダイブ
+前述したように、HTMLは人間にとってわかりやすい言語ですが、コンピューターにとっては扱いづらいものです。そのため、パースを行うことで、特定の要素を抽出するだけではなく、データを加工したり、データベースに保存したりすることができます。
 
-さらに、より複雑なHTMLのパージングについて説明します。HTMLには多くのタグがあり、それぞれに異なる属性があるため、すべてのHTMLをパーズするのは簡単ではありません。しかし、"tagsoup"ライブラリには様々な関数が用意されており、特定のタグや属性を指定してHTMLをパーズすることができます。
+また、HTML以外にも、JSONやXMLなどの形式もパースすることができます。これらの形式はWeb開発においてよく使用されるため、パースの知識は非常に役立つものです。
 
-例えば、"onlyKeepTags"を使用すると、指定したタグ以外のタグを削除することができます。
+## 関連リンク
 
-```Haskell
-let tags = parseTags html
-let filteredTags = onlyKeepTags ["p", "h1", "img", "a"] tags
-```
-
-また、"stringToTag"を使用すると、テキストを指定したタグで囲むことができます。これは、HTMLフォーマットを作成する際に便利です。
-
-```Haskell
-let formattedHTML = stringToTag "p" "This text will be wrapped in a paragraph tag."
-```
-
-このように、"tagsoup"ライブラリを使用することで、より複雑なHTMLのパージングが可能になります。
-
-## さらに参考になるリンク
-
-- [Haskellのウェブスクレイピング入門](https://dev.to/allenhaltmaier/web-scraping-with-haskell-an-introduction-52l7)
-- [tagsoupライブラリのドキュメント](https://hackage.haskell.org/package/tagsoup)
-- [HaskellでのHTMLパーシングのチュートリアル](https://www.schoolofhaskell.com/user/commercial/content/parsing-html)
+- [html-conduit](https://hackage.haskell.org/package/html-conduit)
+- [http-conduit](https://hackage.haskell.org/package/http-conduit)
+- [select](https://hackage.haskell.org/package/select)

@@ -1,5 +1,6 @@
 ---
-title:                "Java: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Java: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Java"
 category:             "Java"
@@ -11,68 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Yhä useampi Java-ohjelmoija käyttää JSON-muotoa tiedon siirtoon ja tallentamiseen sovelluksissaan. JSON on nopea, kevyt ja helppokäyttöinen tapa käsitellä tietoa sovelluksissa. Se on myös standardi useissa verkkoteknologioissa, kuten RESTful API: en toteutuksessa. Näiden syiden vuoksi on tärkeää, että Java-ohjelmoijat ymmärtävät JSON-rakenteen ja osaavat käyttää sitä tehokkaasti.
+Kun ohjelmoimme Javaa, yksi yleinen tehtävä on työskennellä JSON-tiedostojen kanssa. JSON (JavaScript Object Notation) on yksi yleisimmistä tavoista tallentaa ja siirtää tietoja sovellusten välillä. Tässä artikkelissa opit, miten käsitellä JSON-tiedostoja Java-koodissa.
 
-## Kuinka
+## Miten
 
-JSON-rakenteen käsittely Java-sovelluksissa on helppoa ja suoraviivaista. Tässä on muutama esimerkki, joiden avulla pääset alkuun:
-
-### Oman JSON-objektin luominen
-
-Java-koodissa voit luoda uuden JSONObject-olion ja lisätä siihen haluamasi avaimet ja arvot.
+JSON-tietojen käsittely Javassa vaatii käyttöön JSONObject- ja JSONArray-luokat, jotka löytyvät org.json-paketista. Alla on esimerkki koodista, joka luo JSON-tiedoston ja lisää sinne tietoja:
 
 ```Java
-JSONObject obj = new JSONObject();
-obj.put("nimi", "Matti");
-obj.put("ikä", 35);
-obj.put("siviilisääty", "naimisissa");
-System.out.println(obj);
+JSONObject json = new JSONObject();
+json.put("nimi", "Matti");
+json.put("ikä", 25);
+JSONArray harrastukset = new JSONArray();
+harrastukset.put("jalkapallo");
+harrastukset.put("valokuvaus");
+json.put("harrastukset", harrastukset);
 ```
 
-Tämän esimerkin tulostus näyttää seuraavalta:
+Tämä koodi luo JSON-tiedoston, jossa on Matti-niminen henkilö, joka on 25-vuotias ja hänellä on kaksi harrastusta. Voit myös lukea ja muokata JSON-tiedostoja käyttämällä JSONObject- ja JSONArray-luokkien metodeja.
 
-```
-{"nimi":"Matti","ikä":35,"siviilisääty":"naimisissa"}
-```
+## Syventyminen
 
-### JSON-tietojen lukeminen tiedostosta
+Tässä muutama lisätieto JSON-tietojen käsittelystä Javassa:
 
-Voit myös ladata JSON-tiedoston ja lukea sen sisältämän datan Java-sovelluksessa. Tässä esimerkissä käytämme apuna JSONObject- ja JSONArray-luokkia.
-
-```Java
-// Luodaan uusi JSONObject lukemalla tiedosto "tiedosto.json"
-JSONObject obj = new JSONObject(new File("tiedosto.json"));
-// Haetaan objektista avain "sijainti" ja tulostetaan sen arvo
-System.out.println(obj.getString("sijainti"));
-
-// Luetaan "käyttäjät" avaimen arvot taulukkoon
-JSONArray kayttajat = obj.getJSONArray("käyttäjät");
-// Loopataan taulukon läpi ja tulostetaan jokaisen käyttäjän nimi
-for (int i = 0; i < kayttajat.length(); i++) {
-    System.out.println(kayttajat.getJSONObject(i).getString("nimi"));
-}
-```
-
-Esimerkin tulostus:
-
-```
-Espoo
-Matti
-Anna
-```
-
-Tämä on vain pintaraapaisu JSON:n käyttöön Java-sovelluksissa. Voit lukea lisää mahdollisuuksista JavaDocista tai alla olevista linkeistä.
-
-## Syvällinen sukellus
-
-JSON-rakenteen ymmärtäminen auttaa ohjelmoijia käsittelemään ja siirtämään dataa tehokkaasti sovelluksissaan. Tärkeimmät asiat, jotka on hyvä tietää JSON:sta, ovat:
-
-- Avaimet ja arvot: JSON-objekti koostuu avain-arvo -pareista, joissa avain on tekstiä ja arvo voi olla esimerkiksi numero, merkkijono, toinen objekti tai taulukko.
-- Taulukot: JSON:ssa voidaan käyttää myös taulukoita, jotka koostuvat eri objekteista tai arvoista.
-- Syntaksi: JSON käyttää yksinkertaista syntaksia, jossa tiedot ovat joko merkkijonona, numeroina, boolean-arvoina tai null-arvona.
+- Voit ladata JSON-tiedoston ulkoisesta lähteestä (kuten URL:stä) käyttämällä JSONTokener-luokkaa ja sen constructoria, joka ottaa parametrinä Inputstreamin.
+- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä JSON-merkkijonon.
+- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä Map-olion, jossa on avain-arvo-pareja.
+- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä JSON-tiedoston nimen, ja JSONObject tallentaa sen sisällön String-tyyppiseen muuttujaan.
 
 ## Katso myös
 
-- [JSON - Wikipedia](https://fi.wikipedia.org/wiki/JSON)
-- [JavaDoc - JSONObject-luokka](https://docs.oracle.com/javase/7/docs/api/org/json/JSONObject.html)
-- [JSON-tiedostomuoto - tuettujen tietotyyppien luettelo](https://www.json.org/json-fi.html)
+- [JSON.org](https://www.json.org/json-fi.html) - Lisätietoa JSON-formaatista ja sen käytöstä.
+- [JSON-lukija ja kirjoittaja](https://www.baeldung.com/java-org-json) - Vaivaton opas JSON-tiedostojen lukemiseen ja kirjoittamiseen Javassa.
+- [JSON Maven Repository](https://mvnrepository.com/artifact/org.json/json) - JSON-paketti, jonka voit lisätä Maven-projektiisi.

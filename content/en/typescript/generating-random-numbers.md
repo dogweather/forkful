@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "TypeScript recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,48 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As programmers, we often come across scenarios where we need to generate random numbers. Whether it's for creating randomized user IDs, implementing game mechanics, or simply for testing purposes, the ability to generate random numbers is a useful skill to have. In this blog post, we'll dive into some ways to generate random numbers in TypeScript.
+Randomness is an important aspect of many applications and games. Generating random numbers allows for unpredictable results, which adds an element of surprise and variety to these programs. This can improve overall user experience and make applications more engaging.
 
 ## How To
 
-Generating random numbers in TypeScript is fairly straightforward. There are a few different methods that we can use depending on our needs.
+Generating random numbers in TypeScript is a simple task that can be done using the `Math.random()` function. This function returns a random number between 0 (inclusive) and 1 (exclusive). Let's take a look at an example:
 
-### Using Math.random()
-
-The simplest way to generate random numbers in TypeScript is to use the built-in Math.random() method. This method returns a random number between 0 (inclusive) and 1 (exclusive). We can use this to generate a random decimal number by multiplying the result with our desired range and then rounding it to the nearest integer.
-
-```TypeScript
-const randomNumber = Math.round(Math.random() * 10); // generates a random number between 0 and 10
+```typescript
+// Generate a random number between 1 and 10
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber); // Output: 7 (this will be a different value each time)
 ```
 
-### Using Math.floor()
+In the above code, we use the `Math.random()` function to generate a random decimal number between 0 and 1. We then multiply it by 10 to get a range of 0 to 9.999 (since the maximum value of `Math.random()` is 0.999). Finally, we use `Math.floor()` to round down to the nearest whole number and add 1 to get a range of 1 to 10.
 
-If we want to generate a random integer instead, we can use the Math.floor() method in combination with Math.random(). This method rounds the decimal number down to the nearest integer, giving us a more even distribution of our random numbers.
-
-```TypeScript
-const randomNumber = Math.floor(Math.random() * 10); // generates a random integer between 0 and 9
-```
-
-### Using custom functions
-
-We can also create our own custom functions for generating random numbers in TypeScript. For example, if we wanted to generate a random number within a specific range, we could create a function that takes in a minimum and maximum value and returns a random number in between them.
-
-```TypeScript
-function getRandomNumber(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const randomNumber = getRandomNumber(5, 10); // generates a random number between 5 and 10
-```
-
-Keep in mind that these methods will not generate truly random numbers, as the results are still based on mathematical algorithms. However, they are often sufficient for most use cases.
+You can also use `Math.ceil()` to round up to the nearest whole number, or `Math.round()` to round to the nearest whole number depending on your needs.
 
 ## Deep Dive
 
-If you're interested in learning more about the concept of randomness and generating truly random numbers in TypeScript, there are several resources available online that dive deeper into this topic. Some interesting topics to explore are pseudo-random number generators, the concept of seed values, and implementing randomness in computer simulations.
+Behind the scenes, the `Math.random()` function uses a pseudo-random number generator (PRNG) to generate the random numbers. This means that the numbers are not truly random, but are determined by a mathematical algorithm. As a result, the sequence of numbers produced by `Math.random()` is predictable and not truly random.
+
+Also, keep in mind that the `Math.random()` function is only suitable for generating numbers with a uniform distribution. This means that each number has an equal chance of being generated. If you need a different distribution, you may have to use a different method or algorithm.
 
 ## See Also
 
-- [TypeScript Math - Random](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-6.html#-math-random-changes)
-- [Generating Random Numbers in TypeScript](https://thecodebarbarian.com/generating-random-numbers-in-typescript)
-- [Exploring Randomness in TypeScript](https://dev.to/hulyakarakaya_/exploring-randomness-in-typescript-3i8p)
+Here are some helpful resources to learn more about generating random numbers in TypeScript:
+
+- [MDN Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [TypeScript Official Website](https://www.typescriptlang.org/)

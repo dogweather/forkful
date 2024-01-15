@@ -1,6 +1,7 @@
 ---
-title:                "C: Leyendo un archivo de texto"
-simple_title:         "Leyendo un archivo de texto"
+title:                "Lectura de un archivo de texto"
+html_title:           "C: Lectura de un archivo de texto"
+simple_title:         "Lectura de un archivo de texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,43 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Why
 
-¿Alguna vez te has preguntado cómo los programas en lenguaje C son capaces de leer archivos de texto? ¿Qué sucede detrás de escena para que puedas abrir un archivo y ver su contenido en la pantalla? Si quieres conocer los detalles detrás de esta funcionalidad, ¡sigue leyendo!
+¡Hola lectores! ¿Alguna vez has querido leer datos de un archivo de texto con tu programa en C? ¡Con este artículo, aprenderás cómo hacerlo! Ya sea que necesites leer y procesar datos de un archivo de configuración o de un archivo de registro, leer un archivo de texto te permitirá obtener la información necesaria para que tu programa funcione correctamente. ¡Sigue leyendo para descubrir cómo hacerlo!
 
-## Cómo hacerlo
+## How To
 
-Para leer un archivo de texto en lenguaje C, primero debemos abrirlo. Esto se hace utilizando la función `fopen()` que acepta dos argumentos: el nombre del archivo y el modo de apertura. Por ejemplo, si queremos abrir un archivo llamado "texto.txt" en modo de lectura, podemos utilizar la siguiente línea de código:
-
-```C
-FILE *fp = fopen("texto.txt", "r");
-```
-
-Una vez que tenemos el archivo abierto, podemos utilizar la función `fscanf()` para leer el contenido de este. Esta función funciona de manera similar a `scanf()` pero en lugar de leer desde la entrada estándar (como el teclado), lee desde el archivo. Por ejemplo, si queremos imprimir en pantalla el contenido de un archivo línea por línea, podemos hacer lo siguiente:
+La función `fopen()` en C te permite abrir un archivo en modo lectura, que es lo que necesitamos para leer un archivo de texto. Luego, podemos utilizar la función `fscanf()` para leer el contenido del archivo línea por línea. Aquí hay un ejemplo de cómo podrías implementar esto en tu programa:
 
 ```C
-char linea[100];
-while (fscanf(fp, "%s", linea) != EOF) {
-  printf("%s\n", linea);
+#include <stdio.h>
+
+int main() {
+  // Abrir archivo en modo lectura
+  FILE *archivo = fopen("datos.txt", "r");
+  // Verificar si se pudo abrir correctamente
+  if (archivo == NULL) {
+    printf("Error al abrir el archivo\n");
+    return 1;
+  }
+
+  // Variables para almacenar los datos leídos
+  int num1, num2;
+  char texto[100];
+
+  // Leer archivo línea por línea y almacenar datos en variables
+  while (fscanf(archivo, "%d %d %[^\n]", &num1, &num2, texto) == 3) {
+    // Hacer algo con los datos leídos, como imprimirlos en pantalla
+    printf("Número 1: %d, Número 2: %d, Texto: %s\n", num1, num2, texto);
+  }
+
+  // Cerrar archivo después de su uso
+  fclose(archivo);
+  return 0;
 }
 ```
 
-Este código funciona leyendo cada línea del archivo y guardándola en un arreglo `linea` de tamaño 100. Luego, imprimimos esa línea en pantalla y seguimos leyendo hasta llegar al final del archivo (EOF).
+Suponiendo que el archivo `datos.txt` se ve así:
 
-## Profundizando
-
-Ahora que sabemos cómo abrir y leer un archivo de texto en lenguaje C, podemos profundizar un poco más y hablar sobre la función `fscanf()`. Esta función acepta un formato como argumento, que le indica cómo debe interpretar los datos que está leyendo. Por ejemplo, si nuestro archivo contiene una línea con dos números separados por un espacio, podemos utilizar la siguiente línea de código para leer esos dos números y almacenarlos en dos variables diferentes:
-
-```C
-fscanf(fp, "%d %d", &num1, &num2);
+```
+1 2 Hola
+3 4 Adiós
 ```
 
-En este caso, utilizamos el formato `%d` para indicar que estamos leyendo un número entero. También podemos utilizar otros formatos, como `%f` para números flotantes o `%s` para cadenas de caracteres.
+El resultado en la consola sería:
 
-## Ver también
+```
+Número 1: 1, Número 2: 2, Texto: Hola
+Número 1: 3, Número 2: 4, Texto: Adiós
+```
 
-Ahora que sabes cómo leer un archivo de texto en lenguaje C, puedes profundizar en otras funcionalidades relacionadas, como escribir en un archivo o manejar errores al abrirlo. Aquí tienes algunos enlaces útiles para continuar aprendiendo:
+## Deep Dive
 
-- [Cómo escribir en un archivo en lenguaje C](https://medium.com/@wesbragagt/how-to-write-to-a-file-in-c-5a6ff4dca5e7)
-- [Manejo de errores al abrir archivos en lenguaje C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
-- [Documentación de la función fscanf()](https://www.tutorialspoint.com/c_standard_library/c_function_fscanf.htm)
+Además de `fscanf()`, existen otras funciones que pueden ayudarte a leer datos de un archivo de texto en C. Por ejemplo, `fgets()` te permite leer una línea completa del archivo, mientras que `fgetc()` te permite leer un solo caracter a la vez. También hay opciones para posicionarse en una línea específica del archivo o avanzar o retroceder una cierta cantidad de caracteres. ¡Explora la documentación de C para encontrar todas las opciones disponibles!
+
+## See Also
+
+- Documentación oficial de C: https://www.gnu.org/software/libc/manual/html_node/Input-and-Output-on-Streams.html#Input-and-Output-on-Streams
+- Ejemplos de lectura de archivos de texto en C: https://www.w3schools.in/c-tutorial/file-input-output/
+- Tutorial de C en español: https://www.tutorialspoint.com/cprogramming/

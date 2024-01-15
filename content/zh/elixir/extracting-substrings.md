@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 提取子字符串"
-simple_title:         "提取子字符串"
+title:                "截取子字符串"
+html_title:           "Elixir: 截取子字符串"
+simple_title:         "截取子字符串"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,58 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要提取子字符串
 
-提取子串是一项非常有用的技能，可以帮助我们在字符串中找出特定的信息。无论是处理字符串的输入，还是从已有的字符串中提取变量，提取子串都能够让我们的程序变得更加灵活和高效。在接下来的部分，我们将展示如何在Elixir中提取子串，以及一些有用的技巧。
+提取子字符串是一种常见的文本处理操作，它可以帮助我们从一段文本中快速获取所需的信息。作为Elixir语言中的字符串处理功能之一，它可以让我们更便捷地处理各种任务，例如文本匹配、数据清洗等。
 
-## 如何操作
+## 如何实现提取子字符串
 
-提取子串的方法有很多种，这取决于我们想要提取的内容。在Elixir中，我们可以使用 `String.slice` 函数来提取一个字符串的一部分。下面是一个简单的例子：
-
-```Elixir
-str = "Hello World"
-String.slice(str, 0, 5)
-```
-
-这个例子中，我们从 "Hello World" 这个字符串中提取了前五个字符，通过指定起始位置和截取长度来实现。输出结果为 "Hello"。我们还可以通过正则表达式来提取更复杂的子串，比如匹配邮箱地址中的用户名：
+在Elixir中，我们可以使用`String.slice`函数来提取子字符串。该函数接受三个参数：待提取字符串、起始位置和结束位置。其中起始位置和结束位置都是从0开始计数，表示从哪个字符开始提取和提取到哪个字符为止。让我们来看一个例子：
 
 ```Elixir
-str = "john@example.com"
-Regex.run(~r/([a-z0-9]+)@/, str) |> List.first |> hd
+text = "Hello, world!"
+String.slice(text, 7, 11)
 ```
 
-这个例子中，我们首先使用正则表达式来匹配 "john@example.com" 中的用户名部分，然后通过 `List.first` 和 `hd` 函数来提取出这个用户名。输出结果为 "john"。
+运行以上代码会得到如下输出：
 
-## 深入探究
+```
+"world"
+```
 
-除了提取字符串的一部分，我们还可以使用 Elixir 中的模式匹配来提取子串。模式匹配可以让我们更灵活地提取出所需的信息，比如从一个包含多个字段的字符串中提取出特定的字段。
-
-下面是一个例子：
+我们也可以使用负数作为结束位置来表示从字符串末尾开始提取，例如：
 
 ```Elixir
-str = "Name: John, Age: 25, Email: john@example.com"
-[_, name, _, _, age, _, _, email] = ~r/Name: (.*), Age: (\d+), Email: (.*)/.match?(str)
-
-IO.puts "Name: #{name} \nAge: #{age} \nEmail: #{email}"
+text = "Hello, world!"
+String.slice(text, 7, -1)
 ```
 
-通过使用模式匹配，我们可以提取出字符串中的姓名、年龄和邮箱地址，然后通过 `IO.puts` 函数打印出来。输出结果为：
+这会提取出从第7个字符到字符串末尾的部分，输出为：
 
 ```
-Name: John 
-Age: 25 
-Email: john@example.com
+"world!"
 ```
 
-## 参考资料
+## 深入了解提取子字符串
 
-- [Elixir官方文档: String.slice](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Elixir官方文档: Regex](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir字符串处理指南](https://elixir-lang.org/getting-started/string.html)
-- [Elixir字符串与模式匹配](https://elixirschool.com/lessons/basics/string-pattern-matching/)
+除了通过起始位置和结束位置来提取子字符串，我们还可以利用正则表达式来进行提取。Elixir提供了`Regex.run`函数来执行正则表达式匹配，然后再通过`String.slice`来提取所需的部分。例如：
 
-### 参见
+```Elixir
+text = "I have 3 apples and 5 bananas"
+Regex.run(~r/([0-9]+) bananas/, text)
+|> hd
+|> elem(1)
+|> String.to_integer()
+```
 
-- [Elixir官方文档](https://elixir-lang.org/docs.html)
-- [Elixir中国社区](https://elixir-cn.com/)
-- [Elixir语言学习指南](https://www.douban.com/note/744567983/)
+以上代码会先匹配字符串中的`5 bananas`部分，然后通过`hd`函数取出匹配结果的第一个元素（即完整匹配的部分），再通过`elem(1)`来取出第二个捕获组（即只匹配数字部分），最后通过`String.to_integer()`将字符串转换成整数。
+
+除了提取，Elixir还提供了`String.split`函数来拆分字符串，以及`String.replace`函数来替换字符串中的内容。这些功能都可以与提取子字符串一起配合使用，达到更复杂的文本处理目的。
+
+## 参考链接
+
+- [Elixir官方文档-String](https://hexdocs.pm/elixir/String.html)
+- [Elixir官方文档-Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Elixir School-Strings](https://elixirschool.com/zh-cn/lessons/basics/built-in-types-strings/)
+- [Elixir中文文档-字符串模式匹配](https://github.com/liuminous/docs-cn/blob/master/docs/core/string-pattern-matching.md)

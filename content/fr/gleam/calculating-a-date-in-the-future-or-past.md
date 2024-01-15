@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "Gleam: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -9,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous êtes-vous déjà demandé comment programmer une date dans le futur ou dans le passé ? Peut-être que vous devez automatiser des tâches ou que vous cherchez à anticiper des événements à venir. Quelle que soit la raison, dans cet article, nous allons plonger dans la programmation de dates en utilisant le langage de programmation fonctionnelle Gleam.
+Vous êtes-vous déjà demandé comment calculer une date dans le futur ou dans le passé en utilisant du code ? Peut-être voulez-vous prédire un événement important ou simplement garder une trace de vos prochaines vacances. Dans cet article, nous allons découvrir comment le faire en utilisant Gleam.
 
-# Comment Faire
+## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en utilisant Gleam, nous utiliserons la fonction `Date.add/2` de la bibliothèque standard. Cette fonction prend deux arguments : une date de départ et une durée représentée en nombre de millisecondes. Voyons un exemple concret :
+Pour calculer une date dans le futur ou dans le passé, nous allons utiliser la fonction `add` du module `Calendar` de Gleam. Voici un exemple de code pour calculer la date d'aujourd'hui dans 5 jours :
 
 ```Gleam
-import gleam/time.{ Date }
+import gleam/calendar.{ add }
 
-let start = Date.new(
-  year: 2021,
-  month: 8,
-  day: 10
-) in
-let days = 7 * 24 * 60 * 60 * 1000 in
-let end = Date.add(start, days)
-
-// Output: Date.new(year: 2021, month: 8, day: 17)
+today = Calendar.today()
+five_days_later = add(today, { days: 5 })
 ```
 
-Nous avons d'abord créé une date de départ en utilisant la fonction `Date.new/3` en spécifiant l'année, le mois et le jour. Ensuite, nous avons calculé la durée en millisecondes en multipliant le nombre de jours par 24 heures, 60 minutes, 60 secondes et 1000 millisecondes. Enfin, nous avons utilisé la fonction `Date.add/2` pour ajouter la durée à la date de départ et obtenir la date souhaitée dans le futur.
+La fonction `add` prend deux arguments : la date de départ et une structure contenant les unités de temps que vous souhaitez ajouter à cette date. Dans cet exemple, nous ajoutons 5 jours à la date d'aujourd'hui. Vous pouvez également utiliser les unités `years`, `weeks`, `months` et `hours`.
 
-Si nous voulons calculer une date dans le passé, il suffit de donner une durée négative à la fonction `Date.add/2`.
+Voici un autre exemple qui calcule la date d'il y a 1 mois :
 
-# Plongée en Profondeur
+```Gleam
+one_month_ago = add(today, { months: -1 })
+```
 
-Maintenant que nous avons vu comment utiliser la fonction `Date.add/2`, il est important de comprendre comment les dates sont représentées en Gleam. Les dates sont représentées sous forme de tuples contenant les informations suivantes : année, mois, jour, heure, minute, seconde, milliseconde. Par exemple, la date 10 août 2021 est représentée comme suit :
+Et voici comment calculer la date d'il y a 2 ans et 3 semaines :
 
-`{2021, 8, 10, 0, 0, 0, 0}`
+```Gleam
+two_years_and_three_weeks_ago = add(today, { years: -2, weeks: -3 })
+```
 
-De plus, la bibliothèque standard de Gleam fournit également d'autres fonctions pour manipuler et formater les dates en utilisant le type `Date`.
+Vous pouvez voir que la syntaxe est simple et intuitive.
 
-# Voir Aussi
+## Plongée dans les détails
 
-- [Documentation sur la bibliothèque standard de Gleam](https://gleam.run/documentation/standard-libraries/#date)
-- [Guide officiel de programmation en Gleam](https://gleam.run/book/tour.html#dates)
-- [Exemples de manipulation de dates en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/time/main.gleam)
+La fonction `add` utilise la structure `Duration` pour représenter les unités de temps. Cela signifie que vous pouvez personnaliser votre calcul en utilisant d'autres unités telles que `minutes`, `seconds`, `milliseconds` et `microseconds`.
+
+De plus, la fonction `add` prend également en compte les années bissextiles pour des calculs précis.
+
+## Voir aussi
+
+- La documentation officielle sur le module `Calendar` de Gleam : https://gleam.run/modules/gleam/calendar/latest/
+- Un article sur la gestion des dates et heures en Gleam : https://dev.to/johanalbury/managing-dates-and-times-in-gleam-4nad

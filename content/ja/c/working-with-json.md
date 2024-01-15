@@ -1,6 +1,7 @@
 ---
-title:                "C: 「jsonの操作」"
-simple_title:         "「jsonの操作」"
+title:                "「JSONを扱う」"
+html_title:           "C: 「JSONを扱う」"
+simple_title:         "「JSONを扱う」"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜJSONを使うのか？
+## なぜ
 
-JSON（JavaScript Object Notation）はコンピューター間でデータをやりとりする際に便利なフォーマットです。これは人間が読みやすく、コードを書くのにも簡単です。そのため、多くのプログラミング言語で広く使用されています。C言語でもJSONを扱うことができ、より効率的にデータを取得できるようになります。
+JSONを使えば、簡単にデータをストアや交換することができます。C言語を使ってJSONを使う方法を学ぶことは、より効率的なプログラミングに役立ちます。
 
-## 使い方
+## 方法
 
-JSONを扱うためには、まず ```#include <stdio.h>``` のように ```stdio.h``` ヘッダーファイルをインポートする必要があります。次に、データを解析しやすいように ```json-c``` ライブラリをインストールします。以下のサンプルコードを参考にしてください。
+[JSON-C](https://github.com/json-c/json-c)ライブラリを使えば、C言語で簡単にJSONを扱うことができます。まずはライブラリをダウンロードし、プロジェクトに追加しましょう。
 
 ```C
-#include <stdio.h>
 #include <json-c/json.h>
+```
+ライブラリをインクルードした後、JSONデータを作成する方法を学びましょう。以下の例では、オブジェクトを作成し、値を追加しています。
 
-int main() {
-    FILE *fp;
-    char buffer[1024];
-    struct json_object *parsed_json;
-    struct json_object *name;
+```C
+json_object *my_json = json_object_new_object(); // オブジェクトを作成
+json_object *name = json_object_new_string("John"); // 値を追加
+json_object_object_add(my_json, "name", name); // オブジェクトに追加
+```
+JSONデータを表示するには、`json_object_to_json_string()`関数を使用します。
 
-    // jsonファイルを読み込む
-    fp = fopen("data.json", "r");
-    fread(buffer, 1024, 1, fp);
-
-    // 読み込んだデータを解析する
-    parsed_json = json_tokener_parse(buffer);
-
-    // 解析したデータから指定したキーを取得する
-    json_object_object_get_ex(parsed_json, "name", &name);
-
-    // 取得したデータを出力する
-    printf("Name: %s\n", json_object_get_string(name));
-
-    fclose(fp);
-    return 0;
-}
+```C
+printf("%s\n", json_object_to_json_string(my_json)); // {"name": "John"}
 ```
 
-上記のコードでは、```data.json``` という名前のjsonファイルから ```name``` キーの値を取得し、出力しています。
+## ディープダイブ
 
-## 深堀り
+JSON-Cライブラリにはさまざまな機能がありますが、その中でも特に重要なものをいくつか紹介しましょう。
 
-JSONを扱う上で重要なポイントは、データを解析する際にキーと値のペアを正しく指定することです。また、プログラムでデータを変更する場合は、 ```json-c``` ライブラリで提供されている関数を利用する必要があります。詳細な情報は公式ドキュメントを参照してください。
+1. `json_object_object_get()`関数を使えば、オブジェクトから値を取り出すことができます。
+2. `json_object_array_length()`関数を使えば、配列の長さを取得できます。
+3. `json_object_object_foreach()`関数を使うと、オブジェクト内のキーと値を繰り返し処理することができます。
 
-## 参考リンク
+詳細な使い方や他の機能については、[公式ドキュメント](https://github.com/json-c/json-c/wiki/JSON-C-Examples)を参考にしてください。
 
-- [Official json-c documentation](https://json-c.github.io/json-c/)
+## 関連リンク
+
+[JSON-Cライブラリ公式リポジトリ](https://github.com/json-c/json-c)、[JSON-Cドキュメント](https://github.com/json-c/json-c/wiki)

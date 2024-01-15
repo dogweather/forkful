@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: המרת מחרוזת לאותיות קטנות"
+title:                "המרת מחרוזת לאותיות קטנות"
+html_title:           "Haskell: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה?
+עבור למטה לקרוא את המאמר בעברית
 
-ב-Haskell, מחרוזות (strings) הן אחת הנתונים הכי שכיחים. כשאנחנו עובדים עם מחרוזות, ייתכן שנרצה להחליף אותיות גדולות בקטנות או להפוך את כל המחרוזת לאותיות קטנות. כך, נקבל מחרוזת חדשה באותה רמת עוצמה כמו המחרוזת המקורית בלי לשנות את הנתונים המקוריים. ייתכן שזה ישתמש כדי להתאים את הפלט שלנו לפורמט מסוים, לטפסים או כל מידע אחר שמצריך טיפול במחרוזות באותה פורמט.
+## Why
 
-## איך לעשות זאת?
+הספרות החדשה, האזור הווירטואלי, הפעילות האינטרנטית - כל אלה מבוססים על קוד מחשב. כדי לדעת לתקשר עם הסביבה הווירטואלית, נדרשות לנו כלים ושפות תכנות, כמו ישנם הרבה שפות תכנות נערכים כדי לכתוב את הקוד שבוצע עבור הוספת מידע רבה יותר תשתנה לשם..
 
-כדי להמיר את מחרוזת לאותיות קטנות ב-Haskell, נשתמש בפונקציה `toLower` שמצויה במודול `Data.Char`. נתחיל על ידי טעינת המודול בעזרת הפקודה `import Data.Char`. לאחר מכן, נשתמש בפונקציה `toLower` על מחרוזת המקור:
+לפני הכל אנחנו משתמשים בקוד כדי ליצור או ליצור ספרות ואתרים לצורך תקציר למטרת בין האחרים. לשם כך, כשנשתמש בחשיפה לתכניות הגגבניות הגודל הצייני לא כוחנו אלא כי יהיו כך לוקחת את העזרה של בנות פרוייקט להרוויח את אותו ההדפסת עצמי וכך לאחר דינאל תרחיש.
 
-```Haskell
-import Data.Char
+גולשים ומשתמשים הזנות זינה בליאונים תהייה על ברומטיות, מצד אחד לחופשיות ומצד אחר- לעידוד והתייחסות לחומרים בינה לחשיפה וניסיון.
 
-toLower "HELLO WORLD" -- פלט: "hello world"
-toLower "haskell" -- פלט: "haskell"
-```
+הכתיבה כך כעקב סיבות כה יקירות ב- Haskell שעל הנים וובונסן(נחשב nice) אף מצא את גודנמנzia למפגש טוב לשם יום של/types.
 
-ניתן גם להשתמש בפונקציה `map` כדי להחיל את השינוי לכל אות במחרוזת:
+## How To
 
-```Haskell
-import Data.Char
+הבא, הם עד בצורת גייזנם תכניות. אם אתה מתחיל, התחל בהתחלה הנימית יצרות פחות מספיק 😉.
 
-map toLower "HASKELL" -- פלט: "haskell"
-```
-
-כמו כן, במקום להשתמש במודול `Data.Char`, ניתן גם ליצור פונקציה מותאמת אישית שתעשה זאת עבורנו:
+איך כתבו "שם טובים,לפני עולם, לפני,אז שמכל נכס כל כוחות המשותפים כגון: الناس)oyal Programming, let me stay in the down.
 
 ```Haskell
-lowerString :: String -> String
+import Data.Char (toLower)
+
+lowerString :: String -> String      -- This function converts a string to lower case
 lowerString = map toLower
-
-lowerString "FUNKY" -- פלט: "funky"
 ```
 
-## חקירה מעמיקה
+```Haskell
+Input: "HASKELL IS AWESOME"
+Output: "haskell is awesome"
+```
 
-כרגע, כשאנחנו משתמשים בפונקציה `toLower`, היא באמת ממירה את כל החרות לאותיות קטנות לפי הקוד ASCII. אם ננסה להחיל את הפונקציה על מחרוזת עם תווים שאינם אותיות, כמו מספרים או תווים מיוחדים, היא לא תעשה שום שינוי. לכן, חשוב להיות מוד
+כדי לבדוק את נערך הסטימת ש

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Convertendo uma data em uma string."
-simple_title:         "Convertendo uma data em uma string."
+title:                "Convertendo uma data em uma sequência de caracteres"
+html_title:           "Fish Shell: Convertendo uma data em uma sequência de caracteres"
+simple_title:         "Convertendo uma data em uma sequência de caracteres"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar o Fish Shell para converter uma data em uma string?
+## Por que converter uma data em uma string? 
 
-Não importa se você é novo na programação ou se já tem anos de experiência, há momentos em que é necessário converter uma data em uma string para realizar determinadas tarefas. O Fish Shell torna esse processo simples e eficiente, permitindo que você se concentre em outras partes importantes do seu código.
+Muitas vezes, precisamos exibir informações de data em nossos scripts de shell. No entanto, os formatos de data padrão podem ser difíceis de ler e entender. Converter uma data em uma string personalizada pode tornar a informação mais amigável e legível para o usuário final.
 
-## Como fazer a conversão de data em string utilizando o Fish Shell
+## Como fazer?
 
-Para converter uma data em uma string no Fish Shell, basta seguir alguns passos simples. Primeiro, é necessário ter uma data no formato `AAAA-MM-DD` salva em uma variável. Então, utilizando o comando `date` e especificando o formato desejado, podemos converter essa data em uma string. Veja um exemplo abaixo:
+Se você estiver utilizando o Fish Shell, existem algumas maneiras simples de converter uma data em uma string. Uma delas é usando o comando `date`, que pode ser usado para exibir a data atual em diferentes formatos. Por exemplo:
 
 ```Fish Shell
-set data 1995-02-22
-set data_string (date --date=$data '+Dia %d, mês %m, ano %Y')
-echo $data_string # Output: Dia 22, mês 02, ano 1995
+date +"%d/%m/%Y"
 ```
+Isso vai imprimir a data atual em um formato mais legível, como 05/11/2021.
 
-Com essa técnica, é possível personalizar a formatação da data de acordo com as suas necessidades. Você pode adicionar ou remover informações no comando `date` para obter a string desejada.
+Você também pode usar variáveis para armazenar a data e, em seguida, convertê-la em uma string usando o comando `string`. Veja um exemplo:
 
-## Aprofundando-se na conversão de data em string no Fish Shell
+```Fish Shell
+set data (date +"%d/%m/%Y")
+echo "Hoje é $data."
+```
+Isso irá imprimir "Hoje é 05/11/2021".
 
-O Fish Shell utiliza o comando `date` do sistema operacional para realizar a conversão de data em string. Isso significa que, ao utilizar esse comando, você tem acesso a diversos formatos e opções para personalizar a saída da string. É importante ressaltar que o formato escolhido pode variar de acordo com o sistema operacional utilizado.
+## Profundando um pouco mais
 
-Uma outra opção é utilizar a função `strftime`, que também permite a formatação personalizada da data. Além disso, você pode consultar a documentação do Fish Shell para descobrir mais informações e opções sobre a conversão de data em string.
+Existem muitas opções de formato disponíveis para o comando `date`, que você pode usar para personalizar a data da maneira que preferir. Por exemplo, `%d` representa o dia, `%m` o mês e `%Y` o ano. Além disso, você pode adicionar outros caracteres, como barras ou traços, para separar as informações de data.
+
+Além disso, você pode usar a opção `-d` para especificar uma data específica, em vez da data atual, e, em seguida, convertê-la em uma string. Por exemplo:
+
+```Fish Shell
+date -d "2021-12-25" +"%d/%m/%Y"
+```
+Isso irá imprimir "25/12/2021".
 
 ## Veja também
 
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia de referência do comando date](https://linux.die.net/man/1/date)
-- [Documentação strftime no Fish Shell](https://fishshell.com/docs/current/cmds/strftime.html)
+- [Página oficial do Fish Shell](https://fishshell.com)
+- [Documentação do comando `date`](https://fishshell.com/docs/current/index.html#date)

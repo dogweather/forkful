@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发送一个http请求。"
+html_title:           "Ruby: 发送一个http请求。"
+simple_title:         "发送一个http请求。"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,50 +10,98 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要发送HTTP请求？
 
-当您在开发网站或应用程序时，您经常需要从其他服务器获取数据或资源。发送HTTP请求是一种常用的方式来实现这一目的。它允许您向服务器发送请求，然后接收并处理返回的数据。因此，学习如何发送HTTP请求是很重要的，它能让您的应用程序具有更多的功能和灵活性。
+在Web开发中，发送HTTP请求是非常常见的操作。它可以让你的程序与其他服务器进行通信，从而获取需要的数据或者执行特定的操作。
 
-## 如何做
+## 如何发送HTTP请求？
 
-首先，您需要安装Ruby的HTTP请求库，例如 `net/http`。然后，您可以定义一个方法来发送HTTP请求并处理返回的数据。以下是发送GET请求的示例代码：
+### 使用`Net::HTTP`库
+
+Ruby提供了内置的`Net::HTTP`库来处理HTTP请求。你可以使用它来发送GET、POST、PUT等不同类型的请求。下面是一个简单的示例：
 
 ```Ruby
 require 'net/http'
 
-url = URI.parse('https://www.example.com') # 将URL解析为URI对象
-response = Net::HTTP.get_response(url) # 发送GET请求并将响应保存在response变量中
-puts response.body # 输出响应的正文内容
+# 构建一个URI对象
+uri = URI('https://www.example.com/users')
+
+# 利用Net::HTTP发送GET请求并获取响应
+response = Net::HTTP.get(uri)
+
+# 打印响应的内容
+puts response
 ```
 
-该代码将向 `https://www.example.com` 发送一个GET请求，并输出返回的HTML文件。您也可以通过设置请求头信息和请求体来发送更复杂的HTTP请求。例如，以下代码将向服务器发送一个带有自定义请求头信息和请求体的POST请求：
+这里我们利用`Net::HTTP`库构建一个URI对象，然后调用`get`方法发送GET请求，并将响应保存到`response`变量中。最后打印出响应的内容。
+
+### 使用`RestClient`库
+
+除了内置的`Net::HTTP`库，还有一个非常流行的HTTP客户端库是`RestClient`。它提供了更简洁的语法来发送HTTP请求。下面是一个使用`RestClient`库发送GET请求的示例：
+
+```Ruby
+require 'rest-client'
+
+# 发送GET请求并获取响应
+response = RestClient.get('https://www.example.com/users')
+
+# 打印响应的内容
+puts response.body
+```
+
+## 深入探讨HTTP请求
+
+在发送HTTP请求时，我们通常需要设置一些请求头和请求体，以及处理响应的状态码和响应体。在使用`Net::HTTP`和`RestClient`库时，你可以通过相应的方法来设置或处理这些信息。
+
+例如，对于`Net::HTTP`库，可以使用`set_form_data`方法来设置表单数据，使用`add_field`方法来添加请求头：
 
 ```Ruby
 require 'net/http'
 
-url = URI.parse('https://www.example.com')
-request = Net::HTTP::Post.new(url) # 创建POST请求对象
-request.body = "name=John&age=25" # 设置请求体
-request['Accept-Language'] = 'en-US' # 设置请求头信息
-response = Net::HTTP.start(url.host, url.port) do |http|
-  http.request(request) # 发送POST请求，并将响应保存在response变量中
+uri = URI('https://www.example.com/users')
+
+# 设置表单数据
+form_data = { name: 'John', email: 'john@example.com' }
+
+# 构建一个POST请求
+request = Net::HTTP::Post.new(uri)
+request.set_form_data(form_data)
+request.add_field('Authorization', 'Bearer 12345') # 添加请求头
+
+# 发送请求并获取响应
+response = Net::HTTP.start(uri.hostname, uri.port) do |http|
+  http.request(request)
 end
-puts response.body # 输出响应的正文内容
+
+# 处理响应的状态码和响应体
+if response.code == '200'
+  puts "Successfully created user #{form_data[:name]}."
+  puts response.body
+else
+  puts 'Oops! Something went wrong.'
+end
 ```
 
-## 深入了解
+而对于`RestClient`库，可以使用`get`、`post`等方法来发送不同类型的请求，并通过`response`对象来获取响应的信息：
 
-您可以使用 `Net::HTTP` 库提供的各种方法和选项来发送各种类型的HTTP请求，并处理不同类型的响应。例如，您可以使用 `response.code` 来获取响应的状态码，或者使用 `response.body` 来获取响应的正文内容。您还可以使用 `request['Header-Name']` 来设置请求头信息，或使用 `request.body=` 来设置请求体。您可以根据自己的需求来灵活使用这些方法和选项，以实现各种各样的功能。
+```Ruby
+require 'rest-client'
+
+# 发送POST请求并获取响应
+response = RestClient.post('https://www.example.com/users', { name: 'John', email: 'john@example.com' })
+
+# 处理响应的状态码和响应体
+if response.code == 201
+  puts "Successfully created user #{body[:name]}."
+  puts response.body
+else
+  puts 'Oops! Something went wrong.'
+end
+```
 
 ## 参考链接
 
-- [Ruby官方文档](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/index.html)
-- [Ruby HTTP请求教程](https://www.digitalocean.com/community/tutorials/how-to-use-net-http-to-send-http-requests-in-ruby)
-- [Net::HTTP库介绍](https://robertsahlin.com/make-http-requests-ruby-net-http-library/)
-- [HTTP状态码参考](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-- [HTTP请求和响应概述](https://www.tutorialspoint.com/http/index.htm)
-
-## 参见
-
-- [Ruby文档 - Net::HTTP](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/index.html)
-- [Ruby on Rails文档 - HTTP客户端库](https://guides.rubyonrails.org/v6.1.4.1/http_client.html)
+- [Ruby 官方文档：Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [RubyGems：RestClient](https://rubygems.org/gems/rest-client/versions/1.9.0)
+- [HTTP协议介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
+- [HTTP状态码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)

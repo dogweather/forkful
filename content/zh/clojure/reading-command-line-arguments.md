@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 阅读命令行参数"
-simple_title:         "阅读命令行参数"
+title:                "读取命令行参数。"
+html_title:           "Clojure: 读取命令行参数。"
+simple_title:         "读取命令行参数。"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,31 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-有时候，在编写程序的过程中，我们需要从命令行中获取参数来控制程序的行为。这样可以让程序更加灵活，并且可以根据不同的参数做出不同的响应。因此，学习如何读取命令行参数是非常重要的。
+读取命令行参数是非常常见的操作，它可以帮助我们控制程序的行为，并向程序传递必要的信息。使用Clojure，我们可以轻松地读取命令行参数，让程序更加灵活和智能。
 
-## 如何
+## 如何使用
 
-使用Clojure读取命令行参数非常简单，只需要使用`command-line-args`函数就可以了。例如，我们想要从命令行中获取用户名和密码，可以编写如下代码：
+假设我们的程序需要接受两个命令行参数，分别是用户的姓名和年龄。我们可以使用“def”命令来声明变量，并使用“(command-line)”函数来获取命令行参数。代码如下所示：
 
 ```Clojure
-(def username (nth *command-line-args* 0))
-(def password (nth *command-line-args* 1))
+(def name (nth (command-line) 0))
+(def age (nth (command-line) 1))
 ```
 
-然后在命令行中运行程序时，可以通过在程序名后面加上用户名和密码来传递参数。例如：`java -jar myprogram.jar alice 123456`。程序就会将`alice`和`123456`分别赋值给`username`和`password`变量。
+然后，我们可以使用“println”函数来打印出用户提供的参数信息：
 
-可以看到，使用`command-line-args`函数可以轻松地读取命令行参数，并且还可以通过索引来获取不同的参数值。
+```Clojure
+(println "Hello," name "! You are" age "years old.")
+```
 
-## 深入探讨
+运行程序时，我们可以通过在命令行中输入参数来传递信息，例如：
 
-除了使用`command-line-args`函数读取命令行参数之外，Clojure还提供了`*command-line-args*`变量来获取所有的命令行参数。这个变量是一个字符串列表，可以通过`nth`函数来读取其中的值。
+```Clojure
+java -jar myprogram.jar John 25
+```
 
-另外，我们也可以通过使用`clojure.java.io/files`命名空间中的`command-line`函数来读取命令行参数。该函数会返回一个关联数组，包含了所有的命令行参数及其对应的值。
+这样，程序就会输出“Hello, John! You are 25 years old.”，并根据用户提供的参数来执行相应的逻辑。
 
-总的来说，读取命令行参数在Clojure中是非常简单的，我们可以根据自己的需求来选择使用哪种方式。
+## 深入了解
 
-## 另请参阅
+除了使用“(nth (command-line) 0)”这种基本的方法，我们还可以使用Clojure内置的“get”函数来读取命令行参数。例如：
 
-- [Clojure官方文档](https://clojure.org/reference/java_interop#command-line-options)
-- [如何编写命令行程序（英文）](https://hackernoon.com/how-to-make-a-command-line-program-in-clojure-4c8d1f8a2a19)
-- [命令行参数的处理（英文）](https://purelyfunctional.tv/article/reading-command-line-args-clojure/)
+```Clojure
+(def args (rest (command-line)))
+(def name (get args "--name"))
+(def age (get args "--age"))
+```
+
+这样，我们只需要输入参数名和对应的值，就可以更加灵活地获取命令行参数。另外，我们也可以使用Java的“System”类来读取命令行参数，这样能够更加灵活地处理异常情况。
+
+## 参考资料
+
+- [Clojure官方文档](https://clojure.org/reference/java_interop#_command_line_interop)
+- [优达学城教程：如何读取命令行参数](https://cn.udacity.com/blog/post/clojure-seminar-recap-takeaways-from-live-coding-with-stuart-halloway)
+- [Java中System类的使用方法](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html)
+
+## 参见
+
+- [GitHub帮助页面 - 读取命令行参数](https://help.github.com/articles/working-with-the-command-line/)
+- [酷壳文章：命令行参数的使用技巧](https://coolshell.cn/articles/4382.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "Rust: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,86 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi travailler avec YAML en Rust ?
+## Pourquoi
 
-YAML est un langage de sérialisation de données utilisé pour stocker et échanger des informations de manière structurée. Travailler avec YAML en Rust offre de nombreux avantages, notamment une syntaxe facile à lire et à écrire, ainsi que la possibilité d'incorporer des données complexes dans votre code.
+Si vous êtes un développeur en herbe ou vétéran, vous avez probablement entendu parler de YAML. Il s'agit d'un langage simple de sérialisation de données utilisé pour stocker et échanger des informations structurées. Cela peut sembler intimidant au début, mais en utilisant Rust, vous pouvez facilement manipuler des fichiers YAML et les intégrer dans vos projets.
 
-## Comment faire ?
+## Comment faire
 
-Avant de commencer à travailler avec YAML en Rust, vous devrez importer la bibliothèque YAML. Vous pouvez le faire en ajoutant `yaml = "0.4.3"` à votre section de dépendances dans le fichier `Cargo.toml`.
+Tout d'abord, vous devez importer la bibliothèque YAML dans votre projet Rust. Ajoutez simplement `yaml = "0.4.5"` à votre fichier `Cargo.toml`.
 
-Ensuite, vous pouvez utiliser la méthode `serde_yaml::from_str()` pour convertir du contenu YAML en une structure de données en Rust. Voici un exemple de code pour lire un fichier YAML et afficher son contenu :
+Ensuite, utilisez la méthode `load_from_str` pour charger un fichier YAML dans une variable. Vous pouvez également utiliser `load_from_file` si vous souhaitez charger un fichier YAML externe. Voici un exemple de code:
 
-```rust
-use std::fs::File;
-use std::io::prelude::*;
-use serde_yaml;
+```Rust
+use yaml::{Value, Mapping};
 
 fn main() {
-    // Ouvrir et lire le fichier YAML
-    let mut fichier = File::open("exemple.yaml").expect("Impossible d'ouvrir le fichier");
-    let mut contenu = String::new();
-    fichier.read_to_string(&mut contenu).expect("Impossible de lire le fichier");
+    let yaml_string = "age: 25
+name: John Doe";
 
-    // Convertir le contenu en une structure de données
-    let donnees: Vec<Vec<String>> = serde_yaml::from_str(&contenu).expect("Impossible de lire le contenu du fichier");
+    let yaml: Value = yaml::load_from_str(yaml_string).unwrap();
 
-    // Imprimer le contenu
-    for ligne in donnees {
-        println!("{:?}", ligne);
-    }
+    let age = yaml["age"].as_i64().unwrap();
+    let name = yaml["name"].as_str().unwrap();
+
+    println!("{} is {} years old", name, age);
 }
 ```
 
-En exécutant ce code, vous devriez voir le contenu de votre fichier YAML imprimé dans la console.
+La sortie de ce code sera "John Doe a 25 ans". Vous pouvez également utiliser des structures comme `Mapping` et `Sequence` pour accéder aux différentes valeurs dans le fichier YAML. Consultez la documentation de la bibliothèque YAML pour en savoir plus.
 
 ## Plongée en profondeur
 
-Travailler avec YAML en Rust vous permet également de manipuler des données complexes telles que des structures imbriquées, des tableaux et des valeurs multiples pour une même clé. Voici un exemple de fichier YAML avec ces différents éléments :
+Il est important de noter que Rust n'a pas de type de données natif pour les structures de données YAML. Cela signifie que vous devez utiliser la bibliothèque YAML pour effectuer toutes les opérations sur les fichiers YAML.
 
-```yaml
-nom: Johanna
-age: 32
-amis:
-  - nom: Marie
-    age: 33
-  - nom: Pierre
-    age: 31
-langages:
-  - Rust
-  - Python
-```
+De plus, lors de la manipulation de données YAML, vous devez faire attention à la structure de votre fichier. YAML est sensible à l'indentation, il est donc important de maintenir la même indentation pour des données similaires. Sinon, vous risquez de rencontrer des erreurs lors de la lecture du fichier.
 
-En utilisant la méthode `serde_yaml::from_str()`, vous pouvez facilement accéder à ces données en Rust :
-
-```rust
-let contenu = "nom: Johanna
-age: 32
-amis:
-  - nom: Marie
-    age: 33
-  - nom: Pierre
-    age: 31
-langages:
-  - Rust
-  - Python";
-
-let donnees: Value = serde_yaml::from_str(&contenu).expect("Impossible de lire le contenu du fichier");
-
-// Accéder aux valeurs
-let nom = donnees["nom"].as_str().unwrap();
-let age = donnees["age"].as_u64().unwrap();
-let amis = donnees["amis"].as_array().unwrap();
-let langages = donnees["langages"].as_array().unwrap();
-
-println!("Nom: {}", nom);
-println!("Age: {}", age);
-println!("Amis: {:?}", amis);
-println!("Langages: {:?}", langages);
-```
+Enfin, la bibliothèque YAML peut être complexe pour les débutants. N'hésitez pas à consulter des tutoriels et des exemples pour vous familiariser avec son utilisation.
 
 ## Voir aussi
 
-- Documentation officielle de la bibliothèque YAML en Rust : https://crates.io/crates/yaml
-- Tutoriel pour travailler avec YAML en Rust : https://dev.to/thedrummeraki/working-with-yaml-in-rust-3769
-- Exemples de code pour utiliser la bibliothèque YAML en Rust : https://github.com/dtolnay/serde-yaml/tree/master/examples
+- [Documentation de la bibliothèque YAML pour Rust](https://docs.rs/yaml/0.4.5/yaml/)
+- [Tutoriel sur la manipulation de fichiers YAML en Rust](https://dev.to/enigeneer/working-with-yaml-files-in-rust-24n5)
+- [Exemples de code pour l'utilisation de la bibliothèque YAML en Rust](https://github.com/dtolnay/yaml-rust/tree/master/examples)

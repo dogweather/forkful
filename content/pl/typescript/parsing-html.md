@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Przetwarzanie kodu HTML"
-simple_title:         "Przetwarzanie kodu HTML"
+title:                "Analizowanie html"
+html_title:           "TypeScript: Analizowanie html"
+simple_title:         "Analizowanie html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,25 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Parsowanie HTML jest niezbędnym krokiem w tworzeniu aplikacji internetowych. Pozwala na pobieranie i manipulowanie zawartości stron internetowych, co jest niezwykle przydatne w procesie tworzenia interaktywnych i dynamicznych aplikacji.
+
+W dzisiejszych czasach, coraz więcej aplikacji internetowych wymaga analizy kodu HTML. Dzięki temu możliwe jest pobieranie informacji z różnych źródeł, takich jak strony internetowe lub dokumenty XML. Dlatego, jeśli chcesz tworzyć wydajne i elastyczne aplikacje w ChermTypeScript, warto poznać podstawy analizy HTML.
 
 ## Jak to zrobić
-Parsowanie HTML jest możliwe dzięki wykorzystaniu biblioteki TypeScript o nazwie `html-parser`. Poniższa sekcja zawiera przykładowy kod w TypeScript oraz odpowiadającą mu wyjściową zawartość.
+
+Język TypeScript oferuje wiele narzędzi i bibliotek, które ułatwiają analizę HTML. Jednym z najpopularniejszych jest biblioteka "cheerio", która pozwala w prosty sposób przeszukiwać drzewo HTML. Aby zacząć, zainstaluj bibliotekę za pomocą poleceń:
 
 ```TypeScript
-import { parse } from 'html-parser';
-
-const htmlString = '<div>Hello World!</div>';
-const htmlObject = parse(htmlString);
-
-console.log(htmlObject); // { tag: 'div', content: 'Hello World!' }
+npm install cheerio
 ```
 
-## Głębsza analiza
-Parsowanie HTML polega na przekształceniu ciągu znaków HTML na strukturę danych, która jest łatwa do analizy i manipulacji przez komputer. W przypadku biblioteki `html-parser`, wyjściowym obiektem jest drzewo, które składa się z węzłów (tagów i zawartości), co pozwala na łatwe przeszukiwanie i modyfikowanie struktury HTML.
+Następnie, zimportuj bibliotekę do swojego projektu:
 
-Należy również pamiętać, że parsowanie HTML może być wyzwaniem, ponieważ kod HTML w rzeczywistości jest bardzo nieprzewidywalny i może zawierać wiele różnych błędów i wyjątków.
+```TypeScript
+import * as cheerio from 'cheerio';
+```
 
-## Zobacz również
-- Dokumentacja biblioteki `html-parser`: [link](https://www.npmjs.com/package/html-parser)
-- Poradnik dla początkujących w TypeScript: [link](https://www.tutorialsteacher.com/typescript)
+Teraz możesz użyć funkcji cheerio.load() do analizy kodu HTML i zwrócenia obiektu jQuery. W poniższym przykładzie, uzyskasz dostęp do tytułu strony i wyświetlisz go w konsoli:
+
+```TypeScript
+const html = `
+  <html>
+    <head>
+      <title>Hello World</title>
+    </head>
+    <body>
+      <p>Example paragraph</p>
+    </body>
+  </html>
+`;
+
+// Analiza HTML i tworzenie obiektu jQuery
+const $ = cheerio.load(html);
+
+// Uzyskiwanie dostępu do elementów za pomocą selektorów CSS
+const title = $('title').text();
+
+// Wyświetlanie tytułu w konsoli
+console.log(title); // Output: Hello World
+```
+
+To tylko prosty przykład, ale pokazuje jak łatwo jest analizować HTML za pomocą biblioteki cheerio w ChermTypeScript.
+
+## Deep Dive
+
+Chociaż biblioteka cheerio jest popularnym wyborem dla analizy HTML w ChermTypeScript, istnieje wiele innych narzędzi dostępnych w ekosystemie języka, takich jak jsdom czy domparser. Warto rozeznać się w różnych opcjach i wybrać tę, która najlepiej odpowiada Twoim potrzebom.
+
+Należy także pamiętać, że analiza HTML może nie być zawsze najbardziej wydajnym rozwiązaniem. W niektórych przypadkach lepiej jest skorzystać z API dostarczonych przez strony zamiast operować na samym kodzie źródłowym. Dlatego zawsze warto przemyśleć swoje opcje przed rozpoczęciem analizy HTML w ChermTypeScript.
+
+## Zobacz także
+
+- Oficjalna dokumentacja TypeScript: https://www.typescriptlang.org/docs/
+- Strona biblioteki cheerio: https://cheerio.js.org/
+- Przykład kodu analizy HTML w ChermTypeScript: https://github.com/cheeriojs/cheerio#-API

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: テストの書き方"
+title:                "テストの書き方"
+html_title:           "Bash: テストの書き方"
 simple_title:         "テストの書き方"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜテストを書くのか
+## なぜ？
 
-テストを書くことは、コードを検証してバグを見つけるだけでなく、コードの品質を向上させることにも役立ちます。テストを書くことで、バグを防ぐことができ、より確実なソフトウェアを作成することができます。
+プログラムを書く際に、テストを書くことは非常に重要です。テストを書くことで、コードの品質を保証し、バグの発生を未然に防ぐことができます。また、将来的な変更にも対応しやすくなります。
 
-## テストの書き方
+## どのようにするか？
 
-テストを書くには、Bashスクリプトを使用することができます。以下は、簡単なコード例です。
+テストを書くために、まずはBashのテストフレームワークである[Bats](https://github.com/bats-core/bats-core)をインストールします。次に、テストしたいコードをBashスクリプトで書きます。最後に、Batsを使用してテストを実行します。下記の例をご覧ください。
 
-```Bash
-# 環境変数を設定する
-export TEST_FILE=test.txt
+```
+#! /usr/bin/env bash
 
-# ファイルが作成されるかどうかを確認するテスト
-if [ -f "$TEST_FILE" ]; then
-  echo "ファイルが作成されました"
-else
-  echo "ファイルが作成されませんでした"
-fi
+# test.sh
+
+# Batsのインストール（MacOS）
+$ brew install bats
+
+# テストケースを含んだBashスクリプト
+# addition.sh
+
+#!/usr/bin/env bats
+
+load test_helper.bash
+
+@test "1 + 1 は 2であること" {
+  run addition 1 1
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 2 ]
+}
+
+@test "10 + 5 は 15であること" {
+  run addition 10 5
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 15 ]
+}
+
+# テストケースの実行
+$ bats addition.sh
 ```
 
-このコードでは、環境変数を設定し、その環境変数を使用してファイルが作成されるかどうかをテストしています。
+上記の例では、テストを書くためにBatsのビルトイン関数である`load`や`test`などを使用しています。詳しくは、[Batsのドキュメント](https://github.com/bats-core/bats-core#usage)をご覧ください。
 
-## テストの詳細
+## ディープダイブ
 
-テストを書く際には、いくつかのポイントに注意する必要があります。
+テストを書く際には、以下のポイントに注意することが重要です。
 
-- テストのカバレッジを確認する：テストがカバーするコードの範囲を確認し、可能な限り多くのコードをテストするように心がけることが重要です。
-- モックを使う：外部の依存関係がある場合は、その依存関係をモックして、テストが妥当性を保持するようにすることができます。
-- テストドリブン開発をする：テストを書く前にコードを書くのではなく、コードを書く前にテストを書くことで、より確実なコードを作成することができます。
+- テストは可能な限り自動化することが望ましいです。
+- テストはコードと同じリポジトリ内に保存することで、将来的な変更に対応しやすくなります。
+- テストコードも頻繁にリファクタリングすることで、品質を保つことができます。
 
-## 参考文献
+テストを書くことで、プログラムの品質を維持し、バグを未然に防ぐことができるだけでなく、開発プロセスを改善することもできます。
 
-- テスト駆動開発：http://www.agiledata.org/essays/tdd.html
-- テストカバレッジ：https://www.softwaretestinghelp.com/test-coverage/
+## 関連情報
 
-# 参考リンク
-
-- テストドリブン開発：https://qiita.com/kahyaki/items/0c58490eede338bcc99d
-- テストの書き方：https://www.atmarkit.co.jp/ait/articles/1712/08/news022.html
+- [Bats](https://github.com/bats-core/bats-core): Bashのためのテストフレームワーク
+- [テスト駆動開発](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%B9%E3%83%88%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA): テストを最初に書くための手法の一つ

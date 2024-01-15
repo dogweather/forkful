@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Clojure recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,47 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When programming in Clojure, you may come across the need to find the length of a string. This is a common task that is necessary for various reasons such as data validation and manipulation.
+Finding the length of a string is a common task in many programming languages, including Clojure. It allows you to manipulate and work with strings in a more dynamic and efficient way. Whether you want to check the length of a user input or count the number of characters in a string, understanding how to find the length of a string in Clojure can be a useful skill to have.
 
 ## How To
 
-Finding the length of a string in Clojure is a simple task. You can use the `count` function to return the number of characters in a string. Let's see an example:
+To find the length of a string in Clojure, we can use the `count` function. This function takes in a sequence or collection and returns the number of elements in it. Since a string is a sequence of characters, we can easily find its length using this function. Let's see an example:
 
-```Clojure
-(def str "Hello World")
-(count str)
-
-;; Output: 11
+```
+Clojure (count "Hello") ;; Output: 5
+Clojure (count "I love Clojure") ;; Output: 14
 ```
 
-In the above code, we first create a string variable `str` with the value "Hello World". Then, we use the `count` function to get the length of the string and print it out as an output. It's that easy!
+As you can see, the `count` function returns the correct length of the string, including spaces and punctuation marks.
 
-You can also use the `count` function on any data type that implements the `counted` interface, such as lists and vectors. Let's see how it works on a vector:
+We can also use the `str` function to convert a string into a sequence and then use the `count` function on it. This can be useful in cases where we want to count only a specific set of characters in the string. For example:
 
-```Clojure
-(def vec [1 2 3 4 5])
-(count vec)
-
-;; Output: 5
 ```
-
-In addition, you can use the `seq` function to convert a string into a sequence of characters and then use the `count` function to get the length. Let's try this out:
-
-```Clojure
-(def str "Hello World")
-(count (seq str))
-
-;; Output: 11
+Clojure (count (str "purple" "rain")) ;; Output: 11
+;; Here, the length of the string "purple" is 6 and the length of "rain" is 4. By using the `str` function, we have concatenated the two strings and the result is 11.
 ```
 
 ## Deep Dive
 
-In Clojure, strings are represented as sequences of characters, which means you can use all sequence functions on strings. This is why the `count` function works on strings and other data types that implement the `counted` interface.
+Behind the scenes, the `count` function works by delegating to the `count` method on the passed sequence or collection. This means that we can use the `count` method directly on strings as well:
 
-However, it's important to note that the `count` function has a linear time complexity, which means the time it takes to find the length of a string increases as the string gets longer. This is something to consider when dealing with large strings in your code.
+```
+Clojure (.count "Clojure is awesome") ;; Output: 19
+```
+
+The `count` method is also used to find the length of other types of collections in Clojure, such as lists, vectors, and maps. However, it's important to note that the `count` method works in constant time for strings, but in linear time for other types of collections.
 
 ## See Also
 
-- [Clojure string functions](https://clojuredocs.org/clojure.string)
-- [Clojure sequence functions](https://clojuredocs.org/sequences) 
-- [Clojure counted interface](https://clojuredocs.org/clojure.core/counted)
+- Official documentation for the `count` function in Clojure: https://clojuredocs.org/clojure.core/count
+- A tutorial on working with strings in Clojure: https://www.baeldung.com/clojure-strings

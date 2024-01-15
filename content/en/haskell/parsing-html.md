@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Haskell recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,54 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Parsing HTML is Important 
+## Why
 
-HTML is the backbone of every website we browse, and it is vital to understand its structure and contents. Parsing HTML is the process of extracting data from HTML code, and it is an essential skill for anyone working with web data. Whether you are a web developer, data analyst, or simply want to scrape information from a website, knowing how to parse HTML will be valuable.
+If you've ever tried to scrape data from a website or create a web crawler, you know how messy and unstructured HTML can be. Parsing HTML is the process of extracting information from an HTML document, allowing you to easily manipulate and analyze data on the web.
 
-## How To: A Beginner's Guide
+## How To
 
-Firstly, let's import the necessary libraries for parsing HTML in Haskell.
+To get started with parsing HTML in Haskell, you will need to install a few packages. The most commonly used one is "tagsoup," which provides functions for parsing HTML documents. 
 
-```Haskell
-import Text.HTML.TagSoup
-import Network.HTTP.Simple
+```
+Haskell
+import Text.HTML.TagSoup -- Import the tag soup library
+
+main = do
+  let html = "<html><body><h1>Hello, world!</h1></body></html>" -- Create a sample HTML document
+  let tags = parseTags html -- Parse the HTML into a list of tags
+  print tags -- Print the tags to see the structure of the document
 ```
 
-Next, we need to retrieve the HTML code from a webpage using the `httpLBS` function from the `Network.HTTP.Simple` library. We can then use the `parseTags` function from the `Text.HTML.TagSoup` library to convert the string of HTML code into a list of tags.
-
-```Haskell
-response <- httpLBS "https://www.example.com"
-let body = getResponseBody response
-let tags = parseTags body
+Output:
+```
+[TagOpen "html" [], TagOpen "body" [], TagOpen "h1" [], TagText "Hello, world!", TagClose "h1", TagClose "body", TagClose "html"]
 ```
 
-We can now use tag patterns to extract specific data from the list of tags. For example, if we wanted to get all the links from the webpage, we can use the following code:
+You can also use functions such as `isTagOpen` and `isTagNode` to filter out specific tags from the list. For more complex HTML documents, you can use the "html-conduit" package which uses a monadic parsing approach. Here's an example of using it to extract all links from a webpage:
 
-```Haskell
-let links = filter (isTagOpenName "a") tags
+```
+Haskell
+import Data.Conduit -- Import the conduit library
+import Text.HTML.DOM -- Import the HTML DOM parser
+import Network.HTTP.Conduit -- Import the HTTP library
+
+main = do
+  req <- parseUrlThrow "https://www.example.com" -- Create a request object for the desired webpage
+  response <- withManager $ httpLbs req -- Download the webpage
+  let links = runConduit $ responseBody response
+                .| sinkDoc
+                .| element "a" -- Filter out <a> tags
+                .| attribute "href" -- Get the value of the "href" attribute
+                .| printC -- Print the output to the screen
 ```
 
-We can also use the `innerText` function to extract the text content from a tag. For example, to get the title of a webpage, we can use the following code:
-
-```Haskell
-let title = innerText $ takeWhile (~/= "<title>") tags 
+Output:
+```
+https://www.example.com/contact
+https://www.example.com/about
+https://www.example.com/products
+https://www.example.com/blog
 ```
 
-By understanding the structure of HTML and using tag patterns, we can extract any data we want from a webpage.
+## Deep Dive
 
-## Deep Dive into Parsing HTML
+HTML documents are structured using tags and attributes, making it easy for browsers to display them correctly. However, this structure can be challenging to work with when trying to extract specific information. Luckily, Haskell provides us with powerful tools such as libraries and functional programming techniques to make this task more manageable. 
 
-HTML is made up of tags, attributes, and content. Tags are used to define the structure of a webpage, and attributes provide additional information about a tag. Content refers to the text, images, and other elements within a tag.
+In addition to "tagsoup" and "html-conduit," there are other popular packages for parsing HTML, such as "html-tagsoup," "haxr," and "xml-conduit." Each has its advantages and use cases, so it's essential to choose the right one for your project.
 
-When parsing HTML, we need to consider the hierarchy of tags. For example, a paragraph tag `<p>` might contain a link tag `<a>`, which can then contain an image tag `<img>`. We need to take this hierarchy into account when extracting data from HTML.
+See Also
 
-We can use the `isTagOpenName` function to filter out specific tags based on their name. We can also use the `isTagCloseName` function to close a tag and move to the next one. This way, we can extract data from nested tags.
-
-Another important aspect of parsing HTML is dealing with malformed or invalid HTML code. The `parseTags` function handles some of these errors, but it's essential to understand common HTML errors and how to handle them using string manipulation or regular expressions.
-
-## See Also
-- [Haskell Syntax Documentation](https://www.haskell.org/documentation)
-- [TagSoup Documentation](https://hackage.haskell.org/package/tagsoup)
-- [Haskell HTTP Simple Documentation](https://hackage.haskell.org/package/http-simple)
-
-By now, you should have a basic understanding of parsing HTML in Haskell. With practice and experimentation, you can extract complex data from any webpage. Happy coding!
+- [Haskell Wiki: Web](https://wiki.haskell.org/Web)
+- [Real World Haskell: Parsing XML and HTML](http://book.realworldhaskell.org/read/parsing-xml-and-html.html)

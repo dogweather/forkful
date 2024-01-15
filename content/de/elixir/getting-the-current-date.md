@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Das aktuelle Datum erhalten"
+html_title:           "Elixir: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,55 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das aktuelle Datum ist ein wichtiger Bestandteil vieler Programme und Anwendungen. Egal ob es um das Speichern von Zeitstempeln, das Planen von Aufgaben oder das Anzeigen von aktuellen Informationen geht, das Abrufen des aktuellen Datums ist ein wesentlicher Schritt. In diesem Artikel lernen wir, wie man mithilfe von Elixir das aktuelle Datum abrufen kann.
+Es gibt viele Gründe, warum man sich für das aktuelle Datum interessieren könnte, sei es für die Berechnung von Altersangaben, das Erstellen von aussagekräftigen Dateinamen oder für die Verwendung im Spiel "Guess The Date". In diesem Artikel werden wir uns damit befassen, wie man das aktuelle Datum in Elixir abrufen kann und warum es nützlich sein könnte.
 
-## Wie geht's
+## Anleitung
 
-Um das aktuelle Datum in Elixir zu erhalten, können wir die Funktion `Date.utc_today/0` verwenden. Diese Funktion gibt das aktuelle Datum in der UTC-Zeitzone als `{:ok, date}`-Tuple zurück.
-
-```Elixir
-iex> Date.utc_today()
-{:ok, ~D[2020-09-07]}
-```
-
-Wir können auch das Modul `DateTime` verwenden, um zusätzliche Informationen wie die aktuelle Uhrzeit zu erhalten. Dazu können wir die Funktion `DateTime.utc_now/0` verwenden, die ein `{:ok, datetime}`-Tuple zurückgibt.
+Das Abrufen des aktuellen Datums in Elixir ist sehr einfach. Man muss lediglich die Funktion `Date.utc_today()` verwenden. Hier ist ein Beispiel:
 
 ```Elixir
-iex> DateTime.utc_now()
-{:ok, ~U[2020-09-07 14:30:00.000301Z]}
+current_date = Date.utc_today()
+IO.puts "Das aktuelle Datum ist #{current_date}"
 ```
 
-Wir können auch das Format des zurückgegebenen Datums anpassen, indem wir die Funktion `format/2` verwenden. Hier ein Beispiel, wie man das Datum im deutschen Format (TT.MM.JJJJ) anzeigen kann:
+Die Ausgabe wird wie folgt aussehen:
+
+```
+Das aktuelle Datum ist 2021-08-03
+```
+
+Man kann auch bestimmte Teile des Datums abrufen, wie zum Beispiel den Tag, den Monat oder das Jahr. Hier ist ein Beispiel:
 
 ```Elixir
-iex> {:ok, date} = Date.utc_today()
-{:ok, ~D[2020-09-07]}
-
-iex> Date.format(date, "{DD}.{MM}.{YYYY}")
-"07.09.2020"
+{year, month, day} = Date.utc_today()
+IO.puts "Das heutige Datum ist #{day}.#{month}.#{year}"
 ```
 
-In Elixir gibt es auch das Modul `Calendar` mit Funktionen zur Verarbeitung von Datums- und Zeitwerten. Hier ein Beispiel, wie man das aktuelle Datum in verschiedenen Formaten anzeigen kann:
+Die Ausgabe wird wie folgt aussehen:
+
+```
+Das heutige Datum ist 03.08.2021
+```
+
+## Tiefere Einblicke
+
+Wenn man genau hinsieht, wird man merken, dass das aktuelle Datum eigentlich ein Tupel der Form `{year, month, day}` ist und nicht einfach ein String. Dies hat den Vorteil, dass man damit weiterhin rechnen oder Vergleiche durchführen kann. Zum Beispiel kann man überprüfen, ob ein Datum in der Zukunft liegt:
 
 ```Elixir
-iex> date = Calendar.ISO.day_of_year_date()
-%{day: 251, month: 9, year: 2020}
+future_date = Date.from_gregorian({2022, 12, 31})
+{year, month, day} = Date.utc_today()
 
-iex> Calendar.ISO.format(date, "{YYYY}-{MM}-{DD}")
-"2020-09-07"
-
-iex> Calendar.ISO.format(date, "{MM}/{DD}/{YY}")
-"09/07/20"
+if year > future_date.year do
+  IO.puts "Das heutige Datum liegt in der Zukunft!"
+else
+  IO.puts "Das heutige Datum liegt in der Vergangenheit!"
+end
 ```
 
-## Tiefentauchen
+Die Ausgabe wird je nach aktuellem Datum und `future_date` variieren, aber hier ist ein Beispiel:
 
-Obwohl das Abrufen des aktuellen Datums in Elixir recht einfach ist, gibt es einige Dinge, die man beachten sollte. Zum Beispiel kann die UTC-Zeitzone manchmal zu unerwarteten Ergebnissen führen, je nachdem wo man sich geografisch befindet. Auch die Umstellung auf Sommer- und Winterzeit kann zu Problemen führen.
-
-Eine Möglichkeit, diese Probleme zu lösen, ist die Verwendung des `Timex`-Pakets, das zusätzliche Funktionen zum Verarbeiten von Datums- und Zeitwerten bietet. Darüber hinaus bietet die offizielle Dokumentation von Elixir hilfreiche Informationen zu diesem Thema.
+```
+Das heutige Datum liegt in der Vergangenheit!
+```
 
 ## Siehe auch
 
-- Offizielle Elixir Dokumentation, Abschnitt über Datums- und Zeitverarbeitung: https://hexdocs.pm/elixir/Calendar.html
-- Timex Dokumentation: https://hexdocs.pm/timex/overview.html
-- Artikelsammlung zum Elixir Programmieren: https://beam-blog.de/tag/elixir/
+- Offizielle Elixir Dokumentation zu [Dates](https://hexdocs.pm/elixir/DateTime.html)
+- Ein ausführliches Tutorial zum Thema [Datum und Zeit in Elixir](https://www.mehdidc.com/posts/date-and-time-in-elixir/)

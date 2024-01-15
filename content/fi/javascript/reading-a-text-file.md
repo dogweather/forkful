@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Tekstitiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Javascript: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,51 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi lukea tiedostoa Javascript-ohjelmointia varten?
+## Miksi
 
-Tiedostojen lukeminen on tärkeä osa ohjelmointia, sillä se antaa mahdollisuuden käsitellä suuria määriä dataa sekä tallentaa ja lukea tiedostoja. Tämä on oleellista esimerkiksi silloin, kun halutaan tallentaa käyttäjän syöttämiä tietoja tai lukea ulkoisia resursseja, kuten kuva- tai tekstitiedostoja.
+Miksi haluaisin lukea tekstitiedostoa? Saatat miettiä. No hyvä kysymys!
 
-## Kuinka lukea tekstitiedostoa Javascriptillä?
+Noh, voimme ensinnäkin käyttää tekstitiedostoja lukemiseen monessa eri tilanteessa. Haluatko lukea ja tarkistaa tiedot käyttäjän syötteestä? Siellä voit käyttää tekstitiedostoa. Tai ehkä haluat tallentaa pienen tekstimuotoisen tietokannan? Tekstitiedosto on loistava vaihtoehto. Yksinkertaisesti sanottuna, kyky lukea tekstitiedostoja on tärkeä taito jokaiselle Javascript-ohjelmoijalle.
 
-Tiedostojen lukeminen Javascriptillä onnistuu käyttäen Node.js:ää tai selainpohjaista JS-ympäristöä. Seuraavassa on esimerkki koodista, jolla voit lukea ja tulostaa tekstitiedoston sisällön selainkonsolille:
+## Miten
 
-```Javascript
-// Luodaan uusi XMLHttpRequest-olio
-var xhr = new XMLHttpRequest();
-
-// Määritetään tapahtumankäsittelijä saadulle vastaukselle
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        // Tulostetaan vastauksen tekstisisältö konsolille
-        console.log(xhr.responseText);
-    }
-};
-
-// Avataan yhteys ja lähetetään GET-pyyntö tiedostolle
-xhr.open("GET", "esimerkki.txt", true);
-xhr.send();
-```
-Esimerkkitiedosto "esimerkki.txt" sisältää esimerkkitekstiä, ja tämä koodi lukee sen ja tulostaa konsolille sen sisällön.
-
-## Syväsukellus tiedostojen lukemiseen
-
-Tiedostojen lukeminen voidaan toteuttaa myös käyttäen Node.js:ää ja sen sisäänrakennettua "fs" moduulia. Tämä mahdollistaa tiedoston lukemisen ja sisällön käsittelyn suoraan Javascript-tiedoston sisällä, esimerkiksi seuraavalla tavalla:
+Ei ole yhtä tapaa lukea ja käsitellä tekstitiedostoja Javascriptillä, mutta tässä on yksi esimerkki, joka toimii hyvin useimmissa tilanteissa.
 
 ```Javascript
-// Vaaditaan fs-moduuli
-const fs = require('fs');
+// Ensinnäkin, lataa tarvittava moduuli filesystem.
+let fs = require('fs');
 
-// Luetaan tiedoston sisältö muuttujaan
-var sisalto = fs.readFileSync('esimerkki.txt', 'utf8');
+// Sitten luodaan muuttuja, joka säilyttää tiedoston polun.
+let tiedostopolku = './tiedostot/tekstitiedosto.txt';
 
-// Tulostetaan sisältö konsolille
-console.log(sisalto);
+// Käytämme fs.readFile()-funktiota lukeaksemme tiedoston asynkronisesti.
+fs.readFile(tiedostopolku, 'utf-8', (err, data) => {
+  // Jos virhe, heitä virheilmoitus.
+  if (err) throw err;
+  
+  // Muulloin tulostetaan luettu teksti konsoliin.
+  console.log(data);
+});
 ```
 
-Tämä esimerkki lukee "esimerkki.txt" tiedoston sisällön ja tallentaa sen muuttujaan nimeltä "sisalto". Sen jälkeen se tulostaa sisällön konsolille.
+Tämä koodi lataa tiedoston path-muuttujan avulla ja käyttää sitten fs.readFile()-funktiota lukeakseen sisällön. Tulostamisen sijaan voit käsitellä dataa haluamallasi tavalla.
+
+Esimerkkikoodin tulostus:
+
+```Javascript
+"Tämä on esimerkki tekstiä."
+```
+
+## Syvemmälle
+
+Javascriptissa on useita tapoja lukea ja käsitellä tekstitiedostoja. Yllä olevassa esimerkissä käytimme fs-moduulia, mutta voit myös käyttää muita moduuleja, kuten readline tai stream. Voit myös käyttää muita funktioita, kuten fs.readFileSync(), joka lukee tiedoston synkronisesti ilman callbackia.
+
+Tärkeintä on ymmärtää, miten tiedostojen polkuja käsitellään ja mitä parametreja ja metodeja on käytettävissä halutun toiminnan suorittamiseen. Kannattaa myös tutustua asynkronisten ja synkronisten funktioiden eroihin ja valita sopiva vaihtoehto sovelluksesi tarpeiden perusteella.
 
 ## Katso myös
 
-- [Node.js dokumentaatio](https://nodejs.org/en/docs/)
-- [XMLHttpRequest-olio](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [fs-moduuli](https://nodejs.org/api/fs.html)
+- [fs moduuli Node.js dokumentaatiossa](https://nodejs.org/api/fs.html)
+- [Readline käyttöohjeet](https://nodejs.org/api/readline.html)
+- [Stream käyttöohjeet](https://nodejs.org/api/stream.html)
+- [Asynkronisten ja synkronisten toimintojen vertailu](https://www.digitalocean.com/community/tutorials/understanding-the-node-js-event-loop-and-its-10x-faster-than-java-s)

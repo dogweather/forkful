@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 开始一个新项目"
+title:                "开始一个新项目"
+html_title:           "Elm: 开始一个新项目"
 simple_title:         "开始一个新项目"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么选择开始一个新的项目？
+## 为什么
 
-在这个快节奏的科技时代，学习和掌握新的编程语言是非常重要的。Elm作为一种功能强大且易于学习和使用的函数式编程语言，越来越受到程序员们的关注。通过开始一个新的Elm项目，你可以学习这门语言并且创建令人惊叹的Web应用程序。
+在开始一个新的项目时，有两个主要原因。首先，它可以提供一个非常有趣的学习机会，让你尝试使用新的技术和工具。其次，它也可以帮助你解决现有项目中出现的问题或需求。
 
-# 如何开始？
+## 如何开始
 
-首先，你需要安装Elm编译器。你可以通过下面的命令在终端中使用基于Node.js的包管理器NPM来进行安装：
-
-```Elm
-npm install -g elm
-```
-
-安装完成后，你就可以开始编写Elm代码了。下面是一个简单的Hello World程序的例子：
+首先，确保你已经安装了最新版本的Elm。然后，创建一个新的项目文件夹并在命令行中进入该文件夹。接下来，运行以下命令来初始化一个基本的Elm项目：
 
 ```Elm
-module Main exposing (main)
-
-import Html exposing (text)
-
-main =
-    text "Hello, world!"
+elm init
 ```
 
-在你的终端中，使用elm命令将代码编译为JavaScript，并将结果输出到index.html文件中：
+这将创建一个名为"elm.json"的文件，其中包含项目的基本结构和依赖项。接着，你可以开始编写你的代码，它将以`.elm`结尾。最后，使用以下命令来编译并运行你的代码：
 
 ```Elm
-elm make Main.elm --output=index.html
+elm make Main.elm
 ```
 
-打开index.html文件，你会看到文本“Hello, world!”显示在你的浏览器中。
+这将生成一个JavaScript文件，并在浏览器中打开你的应用程序。
 
-# 深入了解
+## 深入了解
 
-虽然这只是一个简单的例子，但它展示了Elm语言的一些基本特性，如模块化和声明式语法。如果你想深入了解Elm，你可以阅读官方文档或参考下面的链接来学习更多关于开始一个新的Elm项目的技巧和建议。
+在开始一个新的项目之前，最好先了解一些Elm的基本概念。Elm是一种函数式编程语言，它的主要目的是构建可靠的、可扩展的Web应用程序。它还具有强类型系统和无副作用的特性，这使得它更易于测试和维护。你可以通过查看官方文档来获得更多关于Elm的知识和技巧。
 
-# 参考链接
+## 参考链接
 
-- [Elm官方网站](https://elm-lang.org/)
-- [Elm学习资源汇总](https://github.com/isRuslan/awesome-elm)
-- [用Elm构建前端应用程序的5个原因](https://www.sitepoint.com/five-reasons-to-use-elm-build-front-end-apps/)
-- [使用Elm与React构建现代Web应用程序](https://www.toptal.com/front-end/elm-react-sync)
-- [使用Elm构建一个简单的Todo应用程序](https://medium.com/@ciricomid/elm-to-do-app-666f6aebf307)
-
-# 其他
-
-# 参见
-
-- [Elm官方文档](https://guide.elm-lang.org/)
-- [Elm入门教程](https://www.elm-tutorial.org/zh-cn/)
-- [Elm论坛](https://discourse.elm-lang.org/)
+- [Elm官网](https://elm-lang.org/)
+- [Elm入门指南](https://guide.elm-lang.org/)

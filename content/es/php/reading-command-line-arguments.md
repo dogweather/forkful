@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "PHP: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,49 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías leer argumentos de línea de comandos?
+## Por qué
 
-Si estás interesado en aprender a programar en PHP, es importante que entiendas cómo leer y utilizar argumentos de línea de comandos. Además, conocer esta función te permitirá automatizar tareas repetitivas y agilizar tu flujo de trabajo.
+Leer argumentos de línea de comandos puede ser útil en situaciones donde se necesita interactuar con un programa en modo texto o ejecutar scripts con diferentes parámetros. También puede ser una forma rápida de personalizar la ejecución de un programa sin tener que modificar su código.
 
-## Cómo leer argumentos de línea de comandos en PHP
+## Cómo hacerlo
 
-En PHP, puedes leer argumentos de línea de comandos utilizando la función `getopt`. Esta función toma dos argumentos: una cadena con las opciones válidas y un arreglo con los argumentos proporcionados por el usuario. Por ejemplo:
+Para leer argumentos de línea de comandos en PHP, utilizamos la función `getopt()` que toma tres parámetros: una cadena con las opciones permitidas, un array con los argumentos de línea de comandos y un array opcional con opciones adicionales.
 
 ```PHP
 <?php
-// Declaración de opciones válidas
-$opciones = "a:b:c";
+$options = getopt("fha:", ["file:", "help", "age:"]);
 
-// Obtener los argumentos proporcionados por el usuario
-$argumentos = getopt($opciones);
-
-// Imprimir el contenido del arreglo $argumentos
-print_r($argumentos);
+if (array_key_exists("f", $options) || array_key_exists("file", $options)) {
+    echo "Se especificó el archivo: " . $options["f"] ?? $options["file"];
+} else if (array_key_exists("h", $options) || array_key_exists("help", $options)) {
+    echo "Se pidió ayuda";
+} else if (array_key_exists("a", $options) || array_key_exists("age", $options)) {
+    echo "Se especificó la edad: " . $options["a"] ?? $options["age"];
+} else {
+    echo "No se especificaron opciones";
+}
 ```
 
-Si ejecutamos este código desde la línea de comandos con los argumentos `-a1 -b2 -c3`, obtendremos el siguiente resultado:
+Ejemplo de uso:
 
-```
-Array
-(
-    [a] => 1
-    [b] => 2
-    [c] => 3
-)
+```bash
+php script.php -f archivo.txt -a 25
+Se especificó el archivo: archivo.txt
+Se especificó la edad: 25
 ```
 
-Cada letra en la cadena de opciones representa una opción válida y el `:` significa que esta opción requiere un argumento. En nuestro ejemplo, la opción `a` requiere un argumento después de ella (en este caso, el número 1).
+```bash
+php script.php --file archivo.txt --help
+Se especificó el archivo: archivo.txt
+Se pidió ayuda
+```
 
-## Profundizando en la lectura de argumentos de línea de comandos
+```bash
+php script.php -h -a 30
+Se pidió ayuda
+Se especificó la edad: 30
+```
 
-Además de la función `getopt`, existen otras formas de leer argumentos de línea de comandos en PHP. Por ejemplo, puedes utilizar la función `$_SERVER['argv']` que devuelve un arreglo con todos los argumentos proporcionados por el usuario.
+## Profundizando
 
-También puedes utilizar la extensión `argv` para obtener los argumentos desde un archivo PHP en lugar de ejecutarlo desde la línea de comandos.
+La función `getopt()` devuelve un array asociativo con las opciones especificadas y sus respectivos valores. Si una opción requiere un valor, se puede utilizar `:` después del caracter correspondiente (por ejemplo, "a:" en vez de "a").
 
-Otra opción es utilizar un framework como Symfony o Laravel, que tienen herramientas integradas para facilitar la lectura y el uso de argumentos de línea de comandos.
+Además, podemos acceder a los argumentos restantes utilizando la variable global `$argv` y su función `shift()` para remover el primer elemento que contiene el nombre del script.
 
-## Ver también:
+Si necesitamos validar los argumentos o realizar algún tipo de manejo de errores, se puede utilizar la función `getopt()` dentro de un bucle y realizar las acciones correspondientes en cada caso.
 
-- [Documentación de la función getopt en PHP](https://www.php.net/manual/es/function.getopt.php)
-- [Cómo trabajar con argumentos de línea de comandos utilizando PHP](https://desarrolloweb.com/articulos/trabajar-argumentos-php.html)
-- [Uso avanzado de argumentos de línea de comandos en PHP](https://blog.learningdollars.com/2019/09/11/advanced-use-of-command-line-arguments-in-php/)
+## Ver también
+
+- Documentación oficial de PHP sobre [la función `getopt()`](https://www.php.net/manual/es/function.getopt.php)
+- [Argumentos de línea de comandos en PHP](https://parzibyte.me/blog/2019/08/20/argumentos-linea-comandos-php/) en el blog de Parzibyte

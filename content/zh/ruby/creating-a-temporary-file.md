@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 创建临时文件"
+title:                "创建临时文件"
+html_title:           "Ruby: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+#为什么
 
-在编程中，有时我们需要暂时存储一些数据，但又不想将其永久保存。这时，使用临时文件是一个很好的选择。临时文件能够在我们不需要它们时自动被删除，从而节省存储空间。
+临时文件在Ruby编程中扮演着重要的角色，它们可以帮助我们处理复杂的数据和操作系统资源。通过创建临时文件，我们可以更轻松地处理临时数据，同时避免在程序结束后留下不必要的残留文件。
 
-## 如何
+#如何使用
 
-创建临时文件非常简单，我们只需要使用Ruby的内置函数来实现。以下是一个小例子，演示了如何创建一个名为“temp.txt”的临时文件，并向其中写入一些数据。
+通过使用Ruby的内置库，我们可以轻松地创建临时文件。以下是一个基本的示例：
 
-```Ruby
-require 'tempfile'
-
-temp_file = Tempfile.new('temp.txt') #创建一个名为temp.txt的临时文件
-temp_file.write("这是一个临时文件") #向临时文件中写入数据
-puts temp_file.path #输出临时文件的路径，可以发现它在系统默认的临时文件夹中
+```ruby
+tempfile = Tempfile.new('ruby-temp')
+puts "临时文件的路径是： #{tempfile.path}"
+tempfile.write("这是临时文件中的内容。")
+tempfile.close
+```
+输出：
+```
+临时文件的路径是： /tmp/ruby-temp20180725-94075-opd6pm
 ```
 
-运行以上代码，我们可以看到输出的路径类似于“/var/folders/q1/zn209m595d71s6h42rlbkdj40000gn/T/temp20190319-7388-3qk99r.txt”。
+我们可以查看临时文件的内容：
 
-## 深入探讨
+```ruby
+puts File.read(tempfile.path)
+```
 
-临时文件的创建实际上是利用了操作系统的机制。在创建临时文件时，Ruby会首先在操作系统的临时文件夹中创建一个随机的文件名，然后再在其中写入数据。在程序执行完毕后，临时文件会被自动删除。
+输出：
+```
+这是临时文件中的内容。
+```
 
-当然，我们也可以手动删除临时文件，只需要调用`temp_file.unlink`即可。此外，我们还可以指定临时文件的存储路径，或者在创建临时文件时指定其打开模式、权限等。
+当程序结束后，临时文件会自动被删除。
 
-## 参考链接
+#深入了解
 
-- [Ruby标准库文档 - Tempfile](https://ruby-doc.org/stdlib-2.6.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [《Ruby基础教程》- 临时文件操作](http://www.w3cschool.cn/ruby/ruby-temporary-file.html)
-- [《Ruby编程语言》- 使用Tempfile类生成临时文件](https://ruby-china.org/topics/992)
+在创建临时文件时，我们可以指定文件名的前缀和后缀。默认的前缀是"ruby-temp"，后缀是系统时间戳和进程ID。我们也可以手动设置前缀和后缀，以便更容易识别和管理临时文件。
+
+同时，我们还可以指定临时文件的文件夹路径。默认的临时文件夹是系统的 "/tmp" 目录，但也可以根据需要更改为其他目录。
+
+除了创建临时文件，Ruby还提供了其他一些相关的方法，如创建临时目录和临时文件的操作。这些方法都可以在Ruby官方文档的Tempfile类中找到更详细的用法说明。
+
+#另外阅读
+
+- [Ruby官方文档 - Tempfile类](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
+- [RubyMonk - 创建和管理临时文件](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-advanced-variables/lessons/105-creating-and-managing-temporary-files)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,81 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Are you tired of manually searching through lines of code to replace text? Are you looking for an efficient way to make bulk changes to your Arduino project? Well, look no further! In this blog post, we will explore the power of searching and replacing text in Arduino programming.
+Let's face it, nobody enjoys manually going through lines of code to replace a specific string. It's time-consuming and prone to human error. Save yourself the headache and let your Arduino do the work for you!
 
 ## How To
 
-Searching and replacing text in Arduino is a simple yet powerful tool that can save you time and effort in your coding journey. Let's take a look at the basic syntax for this function:
-
+First, let's define the variables we'll be using:
 ```Arduino
-replace(stringToSearch, stringToFind, stringToReplace)
+String originalString = "Hello, world!";
+String newString = "Hi, there!";
+String currentLine;
 ```
 
-Using this syntax, we can replace a specific string of text with a new string within our Arduino program. Let's see it in action:
-
+Next, we'll use the `replace()` function to search for and replace the original string with the new one:
 ```Arduino
-//Original code
-String message = "Hello World!";
-Serial.println(message);
-
-//Replacing "Hello" with "Hey"
-String newMessage = replace(message, "Hello", "Hey");
-Serial.println(newMessage);
-
-//Output: Hey World!
+currentLine = originalString.replace("Hello", "Hi");
 ```
 
-As we can see, the function has successfully replaced the original string with the new string. In addition to replacing specific words, we can also use this function to make bulk changes by specifying a pattern to search for. For example:
-
-```Arduino
-//Original code
-String numbers = "1234 5678 9101 1121";
-Serial.println(numbers);
-
-//Replacing all numbers with "X"
-String newNumbers = replace(numbers, "[0-9]", "X");
-Serial.println(newNumbers);
-
-//Output: XXXX XXXX XXXX XXXX
-```
-
-By using regular expressions, we were able to replace all numbers in our string with "X". This can be useful when wanting to hide sensitive information or simply wanting to make a bulk change to your code.
+And that's it! The variable `currentLine` now stores the new string "Hi, world!". You can also use this function to replace multiple instances of a string within a larger text.
 
 ## Deep Dive
-
-One thing to note when using the replace function in Arduino is that it only works with strings. This means that if you want to replace a specific number or character, it must be in string format. Additionally, this function replaces the original string with the new string, it does not modify the original string.
-
-Another useful function for searching and replacing text in Arduino is the `indexOf()` function. This function allows us to locate the index position of a specific string within another string. Let's see an example:
-
+The `replace()` function is part of the String library in Arduino and has the following syntax:
 ```Arduino
-//Original code
-String text = "Hello World!";
-int index = text.indexOf("W");
-Serial.println(index);
-
-//Output: 6
+string.replace(oldValue, newValue)
 ```
+This function can also be used with variables as the oldValue and newValue parameters, making it more versatile for different situations. Additionally, the `replace()` function only modifies the specified string and does not affect the original one.
 
-Here, we were able to locate the index position of the letter "W" in our string "Hello World!". We can use this function in combination with the replace function to replace only a specific section of a string. For example:
-
-```Arduino
-//Original code
-String message = "Hello World!";
-String name = "World";
-int index = message.indexOf(name);
-String newMessage = replace(message, name, "Universe");
-Serial.println(newMessage);
-
-//Output: Hello Universe!
-```
-
-By using the `indexOf()` function, we were able to locate the index position of our specified string (`name`) within the original string (`message`). Then, we used the replace function to only replace that specific section with a new string, resulting in our desired output.
+Some other useful String functions for searching and replacing include `indexOf()` and `lastIndexOf()`, which return the index of the first/last occurrence of a specified string, and `substring()`, which allows you to extract a portion of a string.
 
 ## See Also
-
-Now that you've learned about the power of searching and replacing text in Arduino, you can take your coding skills to the next level. Check out these links for more information and useful tips:
-
-- [Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/replace/)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [String Functions in Arduino](https://www.w3schools.com/arduino/arduino_string_functions.asp)
+Still curious about working with strings in Arduino? Check out these helpful links:
+- Arduino Reference - [String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- Arduino String Examples - [Manipulation](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringManipulation)
+- Arduino Forum - [String Manipulation in Arduino](https://forum.arduino.cc/t/string-manipulation-in-arduino/88197)

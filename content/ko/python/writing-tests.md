@@ -1,5 +1,6 @@
 ---
-title:                "Python: 테스트 작성하기"
+title:                "테스트 작성하기"
+html_title:           "Python: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Python"
 category:             "Python"
@@ -9,39 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-우리는 프로그래밍을 할 때마다 테스트를 작성하는 것이 중요하다고 들어봤을 것입니다. 그러나 여전히 이것이 왜 중요한지 의문이 생기는 경우가 있습니다. 테스트를 작성하는 이유를 알아보겠습니다.
+테스트를 작성하는 이유는 개발한 코드가 정확하고 예상된 대로 작동하는지 검증하기 위해서입니다. 테스트를 꼼꼼하게 작성하면 코드의 오류를 발견하고 수정할 수 있어서 더욱 신뢰성 높은 프로그램을 만들 수 있습니다.
 
-## 어떻게 하나요?
-테스트를 작성하는 것은 실제로 매우 간단합니다. 우리는 단지 ```assert``` 문을 사용하여 기대되는 출력과 동일한 출력이 나오는지 확인하면 됩니다. 예를 들어, 다음과 같은 함수가 있다고 가정해봅시다.
-
-```python
-def add(x, y):
-  return x + y
-```
-
-그리고 우리가 ```add(2,3)```를 호출하면 5가 반환되어야 한다고 가정해봅시다. 이것을 테스트로 작성해보겠습니다.
+## 어떻게 작성할까요?
 
 ```python
+# 예시: 단위 테스트 작성 방법
+
+# 간단한 함수
+def add(a, b):
+    return a + b
+
+# add 함수에 대한 단위 테스트
 assert add(2, 3) == 5
+assert add(5, 10) == 15
+assert add(-1, 6) == 5
 ```
 
-우리는 이렇게 간단하게 테스트를 작성할 수 있습니다! 이제 이것이 어떻게 동작하는지 살펴보고 싶다면 아래의 "더 깊이 들어가기" 섹션을 확인해주세요.
+```python
+# 예시: 통합 테스트 작성 방법
 
-## 더 깊이 들어가기
-우리는 왜 테스트를 작성해야 하는지 알아보았으며 간단한 코드 예시를 통해 어떻게 작성하는지 알아보았습니다. 이제 좀 더 깊이 들어가서 테스트에 대해 더 많은 정보를 알아보겠습니다.
+# 간단한 기능을 가진 웹 어플리케이션
+from flask import Flask 
 
-첫째로, 테스트는 우리가 작성한 코드에 대해 자신감을 줍니다. 우리는 우리가 작성한 코드에 대해 자신감을 가질 수 있고, 코드를 변경하거나 업데이트할 때 더 많은 신뢰를 가지고 작업할 수 있습니다.
+app = Flask(__name__)
 
-둘째로, 테스트는 버그를 쉽게 찾을 수 있도록 해줍니다. 테스트를 작성하면, 우리는 코드가 올바르게 동작하는지 확인하기 위해 수동으로 테스트를 실행할 필요 없이 자동화된 방식으로 테스트할 수 있습니다.
+@app.route('/')
+def hello():
+    return 'Hello World!'
 
-마지막으로, 테스트는 코드 또는 기능에 대한 문서 역할을 수행합니다. 우리가 코드를 작성하면서 테스트를 함께 작성하면, 나중에 코드를 다시 보게 되었을 때 코드의 의도를 쉽게 파악할 수 있습니다.
+# '/' 경로에 대한 통합 테스트
+from flask_testing import LiveServerTestCase 
+from selenium import webdriver
 
-## 관련 링크
-- [정적 및 동적 테스트에 대한 영문 블로그 포스트](https://www.codementor.io/blog/test-types-7b620jgn5v)
-- [파이썬에서 단위 테스트를 위한 unittest 라이브러리 공식 문서](https://docs.python.org/3/library/unittest.html)
-- [파이썬 테스트 작성 팁에 대한 블로그 포스트 (영문)](https://www.fullstackpython.com/unit-testing.html)
+class TestWebApp(LiveServerTestCase):
+    # 웹 브라우저 설정
+    def create_app(self):
+        app.config['TESTING'] = True
+        app.config['LIVESERVER_PORT'] = 0 # 임의의 포트 지정
+        return app
 
-## 더 알아보기
-테스트를 작성하는 것이 왜 중요한지 알고, 어떻게 작성하는지 살펴보았으며, 심층적인 정보도 확인해보았습니다. 이제 여러분도 프로젝트에 테스트를 포함시켜보세요! 여러분의 코드를 더욱 견고하고 신뢰할 수 있게 만들어줄 것입니다.
+    # 테스트 전에 웹 브라우저 실행
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.get(self.get_server_url())
+
+    # 테스트 후 웹 브라우저 종료
+    def tearDown(self):
+        self.driver.quit()
+
+    # 페이지 내용 테스트
+    def test_hello(self):
+        self.driver.find_element_by_tag_name('button').click()
+        assert 'Hello World!' in self.driver.page_source
+```
+
+## 딥 다이브 
+
+테스트의 종류에는 단위 테스트, 통합 테스트, 기능 테스트 등이 있으며, 각각의 장단점이 있습니다. 또한 테스트를 자동화하는 방법으로는 unittest 라이브러리, pytest 라이브러리 등이 있습니다. 정확한 테스트 작성을 위해선 테스트 코드를 작성하기 전에 예상되는 출력 값을 먼저 정의하는 것이 중요합니다.
+
+## 참고
+
+- [테스트 주도 개발: 우리는 왜 테스트를 할까](https://medium.com/@tyson_swartz/tdd-why-we-test-d04bbc089ebf)
+- [파이썬 단위 테스트: 왜하고 어떻게 하나요?](https://www.slideshare.net/ByoungYoulYu/sds-ug-38026141)
+- [파이썬으로 쉽게 배우는 TDD](https://wikidocs.net/15650)

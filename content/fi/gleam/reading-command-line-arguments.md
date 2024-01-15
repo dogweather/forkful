@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lukeminen komentoriviparametreista"
-simple_title:         "Lukeminen komentoriviparametreista"
+title:                "Lukemassa komentoriviargumentit"
+html_title:           "Gleam: Lukemassa komentoriviargumentit"
+simple_title:         "Lukemassa komentoriviargumentit"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,45 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi lukisin komentoriviparametreja Gleam-ohjelmoinnin avulla? Käytössä on monia erilaisia tapoja, joilla voit optimoida ja tehostaa ohjelmasi toimintaa ja komentoriviparametrit ovat yksi niistä. Tässä blogikirjoituksessa käsittelemme kuinka voit lukea komentoriviparametreja Gleam-ohjelmoinnissa ja miten se voi auttaa sinua ohjelmasi kehittämisessä.
+On monia syitä, miksi sinun kannattaisi oppia lukemaan komentorivin argumentteja Gleam-kielellä. Yksi tärkeimmistä syistä on, että se tekee ohjelmoinnista helpompaa ja tehokkaampaa, koska voit lukea ja käsitellä käyttäjän antamia tietoja suoraan komentoriviltä ilman että joudut käyttämään erillisiä käyttöliittymäkomponentteja.
 
-## Kuinka tehdä
+## Kuinka tehdä se
 
-Komentoriviparametrien lukeminen Gleamissa on helppoa ja nopeaa. Voit käyttää siihen standardikirjastosta löytyvää `Command.Args` -moduulia. Se tarjoaa kätevän tavan lukea komentoriviltä saadut parametrit ja käsitellä niitä. Käytämme tässä esimerkkinä yksinkertaista ohjelmaa, joka tulostaa käyttäjän antaman nimen tervehdyksenä.
+Komentorivin argumenttien lukeminen Gleam-kielellä on helppoa ja nopeaa. Seuraa näitä yksinkertaisia askeleita saadaksesi komentojasi suoritetuksi oikein ja saadaksesi halutut tulokset.
 
 ```Gleam
-import Gleam.String
+pub fn main(argv) {
+    // Luo vakituinen muuttuja, johon komentorivin argumentit tallennetaan
+    let arguments = argv[1]
 
-pub fn main() {
-  let args = Command.Args.parse()
-  
-  let name = case args {
-    command::result(value) -> value
-    command::exception(err) -> {
-      let _ = erlang::error_logger(format("Virhe: {}", format("{:?}", err)))
-      "nimetön"
-    }
-    _ -> "nimetön"
-  }
-  
-  let greeting = String.concat("Hei ", name, "!")
-  erlang::io::format(greeting)
+    // Tulosta argumentit konsoliin
+    debug!("#{arguments}")
 }
 ```
 
-Käyttäessämme komentoriviparametreja tämän ohjelman kanssa, voimme syöttää nimen parametrina komentoriville seuraavasti:
+Tässä koodiesimerkissä luodaan vakituinen muuttuja nimeltä "argumentit", johon tallennetaan komentorivin annetut argumentit. Tämän jälkeen tulostetaan muuttujan arvo konsoliin käyttäen debug! -funktiota.
 
 ```
-$ hello_world Titi
+$> gleam run read_arguments.gleam arg1 arg2
+arg1 arg2
 ```
 
-Tämä tulostaa komentorivin seuraavan rivin: `Hei Titi!`.
+Syötteestä riippuen, voit luoda tietueita tai suorittaa muita toimintoja argumenttien perusteella. Muista aina tarkistaa ja validoida käyttäjän antamat tiedot ennen kuin käytät niitä ohjelmassasi.
 
-## Syventävä sukellus
+## Syvällisempi sukellus
 
-Kuten näemme esimerkissä, `Command.Args` -moduuli tarjoaa kätevän tavan lukea ja käsitellä komentoriviltä saadut parametrit. Voit myös määrittää oletusarvoja, jos käyttäjä ei anna parametria, ja tarkastella tarkemmin virhetilanteita. Lisätietoja tästä moduulista voit löytää Gleamin dokumentaatiosta.
+Lukemalla komentorivin argumentteja, voit myös määrittää niitä erilaisten tyyppien avulla, kuten merkkijonoja tai desimaalilukuja. Voit myös tehdä erilaisia toimintoja argumenttien kanssa, kuten yhdistää niitä, vähentää niitä tai jopa luoda tietueita, joita käytetään ohjelman suorittamisessa.
 
 ## Katso myös
 
-- [Gleamin dokumentaatio](https://gleam.run/book/getting-started)
-- [Erlangin komentorivi- ja argumenttikäsittelyn dokumentaatio](https://erlang.org/doc/man/erl.html#command-line-arguments)
+- [Gleamin dokumentaatio komentorivin argumenttien lukemisesta](https://gleam.run/articles/command-line-arguments)
+- [Tietoa Gleamista ja sen ominaisuuksista](https://gleam.run/)

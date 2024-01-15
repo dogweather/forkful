@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Bash: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,39 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Concatenowanie ciągów znaków jest nieodłączną częścią programowania w Bashu. Jest to szczególnie przydatne w przypadku, gdy chcemy połączyć różne fragmenty tekstu w jeden, dłuższy ciąg. Dzięki temu możemy tworzyć bardziej złożone i dynamiczne skrypty, które wykonują konkretne zadania.
+Konkatenacja to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Jest to przydatna umiejętność w programowaniu, ponieważ pozwala na łatwe tworzenie wyświetlania komunikatów, generowanie plików lub budowanie bardziej złożonych programów.
 
 ## Jak to zrobić
 
-Aby skorzystać z funkcji łączenia ciągów w Bashu, należy użyć operatora plus (`+`). Poniżej znajduje się przykład kodu, który łączy dwa ciągi znaków i wyświetla je jako jeden ciąg:
+Łączenie ciągów znaków w Bash jest łatwe i wymaga tylko użycia operatora "+" lub użycia komendy "echo". Przykłady:
 
 ```Bash
-firstName="Jan"
-lastName="Kowalski"
+# Użycie "+" operatora
+imie="John"
+nazwisko="Smith"
+pelne_imie=$imie+$nazwisko
+echo "Witaj, $pelne_imie"
 
-echo $firstName + $lastName
+# Użycie komendy "echo"
+echo "Dzisiejsza data to: " `date`
 ```
 
-W wyniku otrzymamy `JanKowalski`. Pamiętaj jednak, że przed i po operatorze plus nie należy umieszczać spacji, ponieważ zostaną one również włączone do wynikowego ciągu.
+Wynik:
 
-Możemy także łączyć dłuższe ciągi lub zmienne z innymi wartościami, np. liczbami. Poniżej przedstawiono bardziej złożony przykład:
+```
+Witaj, John+Smith
+Dzisiejsza data to: Fri Jan 15 20:20:20 CET 2021
+```
+
+## Deep Dive
+
+Bash oferuje również możliwość konkatenacji ciągów znaków z wykorzystaniem funkcji "printf". Funkcja ta pozwala na bardziej zaawansowane formatowanie wyjścia, co może być przydatne przy generowaniu bardziej skomplikowanych ciągów znaków. Przykład:
 
 ```Bash
-message="Witaj "
-name="Maria"
-age=30
-
-echo $message $name", masz "$age" lat."
+imie="John"
+nazwisko="Smith"
+printf "Witaj, %s %s" $imie $nazwisko
 ```
 
-W wyniku otrzymujemy komunikat `Witaj Maria, masz 30 lat.`. Warto zauważyć, że tutaj użyto spacji w celu oddzielenia poszczególnych części tekstu.
+Wynik:
 
-## Głębsze zagadnienia
+```
+Witaj, John Smith
+```
 
-Podczas łączenia ciągów znaków w Bashu, warto pamiętać o kilku istotnych zagadnieniach. Po pierwsze, kolejność umieszczania ciągów i wartości jest ważna. Stringi będą łączone w kolejności, w jakiej zostały umieszczone w poleceniu. Po drugie, warto zwrócić uwagę na rodzaj cudzysłowów użytych do przechowywania ciągów. Cudzysłowy podwójne (`"`) pozwalają na użycie zmiennych wewnątrz ciągów, podczas gdy cudzysłowy pojedyncze (`'`) wyświetlają tylko dokładnie to, co zostało wprowadzone. Na koniec, warto zauważyć, że funkcja łączenia ciągów może być użyta również z innymi poleceniami, takimi jak `printf`.
+## Zobacz również
 
-## Zobacz także
-
-- [BashGuide - String Concatenation](https://mywiki.wooledge.org/BashGuide/Practices#String_Concatenation)
-- [Bash Tutorial - String Concatenation](https://www.shell-tips.com/bash/string-concatenation-in-bash/)
-- [Bash Hackers Wiki - String Manipulation](https://wiki.bash-hackers.org/syntax/pe#substring_removal)
+- ["Bash Concatenation Operator (+) and String Concatenation"] (https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch01s15.html)
+- ["Some Useful Tips and Tricks in Bash Programming"] (https://linuxacademy.com/blog/linux/some-useful-tips-and-tricks-in-bash-programming/)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczęcie nowego projektu"
+html_title:           "Haskell: Rozpoczęcie nowego projektu"
+simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -11,46 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie własnych programów może być fascynującym procesem dla wielu osób. Często chcemy wykorzystać nasze pomysły i umiejętności w praktyce, a programowanie daje nam tę możliwość. Jednak przed rozpoczęciem nowego projektu warto zastanowić się nad odpowiednimi narzędziami i technologiami, które ułatwią nam pracę i dadzą lepsze wyniki. W tym artykule opowiemy o języku Haskell i dlaczego warto rozważyć jego użycie w nowym projekcie.
+Dlaczego ktoś powinien zainteresować się rozpoczynaniem nowego projektu w języku Haskell? Po pierwsze, Haskell jest językiem programowania o silnym typowaniu i statyczne typy pozwalają unikać wielu błędów w trakcie pisania kodu. Po drugie, dzięki swojej funkcjonalnej naturze, Haskell jest łatwy do testowania i utrzymywania.
 
 ## Jak to zrobić
 
-Haskell jest silnie typowanym funkcyjnym językiem programowania, który wykorzystuje system modułowy i silną kontrolę typów. Jest to język wybierany głównie przez osoby zajmujące się programowaniem funkcyjnym i uczeniem maszynowym. Jedną z jego największych zalet jest to, że dzięki swojej składni jest czytelny i łatwy do zrozumienia.
-
-Aby rozpocząć nowy projekt w Haskellu, warto zainstalować odpowiednie narzędzia i stworzyć środowisko pracy. Następnie możemy przystąpić do pisania kodu. Poniżej przedstawiamy przykładowy kod, który oblicza silnię liczby podanej przez użytkownika:
+Programowanie w Haskell polega na tworzeniu funkcji i aplikowaniu ich do danych. Na przykład, aby obliczyć sumę dwóch liczb:
 
 ```Haskell
--- importowanie modułu zawierającego funkcję silnia
-import Data.Function
-
--- funkcja obliczająca silnię
-silnia :: Integer -> Integer
-silnia 0 = 1
-silnia n = n * silnia (n-1)
-
--- pobieranie liczby od użytkownika
-main :: IO ()
-main = do
-    print "Podaj liczbę: "
-    input <- getLine
-    let n = read input :: Integer
-    print ("Silnia z " ++ input ++ " wynosi: ")
-    print (silnia n)
+sum a b = a + b
 ```
 
-Po uruchomieniu tego kodu, użytkownik zostanie poproszony o podanie liczby, a następnie zostanie wyświetlone jej silnia. Przykładowym wynikiem może być np. "Silnia z 5 wynosi: 120".
+Możemy wywołać tę funkcję z dowolnymi liczbami, np.:
 
-## Głębsze zagłębienie
+```Haskell
+sum 5 7 = 12
+```
 
-Po zapoznaniu się z podstawami Haskella, warto zgłębić temat bardziej wnikliwie. Zalecamy przeczytanie dokumentacji i książek na temat tego języka, aby lepiej zrozumieć jego mechanizmy i możliwości. Warto również polecić interaktywne środowisko GHCi, które pozwala na szybkie testowanie kodu.
+Wynik zawsze będzie zgodny, ponieważ funkcje w Haskellu są czyste i nie mają efektów ubocznych.
 
-Ponadto, istnieje wiele serwisów i społeczności związanych z Haskell, w których można uzyskać pomoc i porady od bardziej doświadczonych programistów.
+## Głębszy zanurzenie
 
-## Zobacz także
+Podczas rozpoczynania nowego projektu w Haskellu, ważne jest, aby wybrać właściwe narzędzia i biblioteki. Na szczęście społeczność Haskell jest bardzo aktywna i istnieje wiele narzędzi i bibliotek, które mogą pomóc w procesie tworzenia oprogramowania. Warto również skorzystać z doświadczenia innych programistów i zapoznać się z dobrymi praktykami w języku Haskell.
 
-- [Oficjalna strona języka Haskell](https://www.haskell.org/)
-- [Dokumentacja języka Haskell](https://hackage.haskell.org/)
-- ["The Haskell Road to Logic, Maths and Programming" - darmowa książka do nauki Haskella](https://homepage.ufp.pt/jtorres/ensino/1213/haskell/haskell.pdf)
-- [GHCi - interaktywne środowisko dla Haskell](https://www.haskell.org/ghc/)
-- [Haskell Stack - narzędzie do zarządzania projektami w Haskell](https://docs.haskellstack.org/en/stable/README/)
-- [Reddit Haskell - społeczność programistów zajmujących się Haskell](https://www.reddit.com/r/haskell/)
+## Zobacz również
+
+[The Haskell Programming Language](https://www.haskell.org/)
+
+[A Tour of the Haskell Syntax](https://www.cs.ukata.edu.pl/~pkr/edu/wms/tour.pdf)
+
+[Haskell for Beginners](https://mmhaskell.com/)
+
+[Hoogle - Haskell API Search Engine](https://hoogle.haskell.org/)

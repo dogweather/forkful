@@ -1,6 +1,7 @@
 ---
-title:                "C: स्ट्रिंग को जोड़ना।"
-simple_title:         "स्ट्रिंग को जोड़ना।"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "C: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,35 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+##Kyunki
 
-क्या आपने कभी सोचा है कि कंकटनेटिंग स्ट्रिंग ऐसा क्यों महत्वपूर्ण है? यह आपको दो या अधिक स्ट्रिंग्स को संयुक्त करने की अनुमति देता है, जो आपको अपने प्रोग्राम में विभिन्न स्ट्रिंग्स को प्रभावी रूप से उपयोग करने की सुविधा प्रदान करता है। अब चलिए जानते हैं कि हम कंकटनेटिंग स्ट्रिंग को कैसे कर सकते हैं।
+Jab hum C programming mein string concatenation karte hain, matlab hum alag-alag strings ko milakar ek badi string bana rahe hain. Isse hum apne program mein ek dynamic aur versatile approach implement kar sakte hain.
 
-## कैसे करें
+##Kaise Karein
 
-```C
+String concatenation ke liye hum "strcat()" function ka use karte hain. Iske liye hum pehle "string.h" header file ko include kar lete hain.
+
+```
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str1[50] = "Hello ";
-    char str2[] = "world!";
-    
-    // Concatenating str1 and str2
-    strcat(str1, str2);
-    
-    printf("%s", str1);
-    
-    return 0;
+int main(void) {
+  char str1[30] = "Hello, ";
+  char str2[] = "World!";
+  
+  strcat(str1, str2);
+  
+  printf("%s", str1);
+  // Output: Hello, World!
+  return 0;
 }
 ```
 
-### आउटपुट
+Ismain, humne "str1" string variable mein "Hello, " string assign kiya hai aur "str2" string variable mein "World!" string. Humne "strcat()" function se "str2" string variable ko "str1" mein concatenate kiya hai aur fir output ke liye "printf()" function ka use kiya hai.
 
-Hello world!
+##Gehrai Mein Jaanein
 
-ऊपर दिए गए कोड उदाहरण में, हमने `strcat()` फ़ंक्शन का उपयोग किया है जो स्ट्रिंग `str1` में `str2` को कंकटनेट करता है। हमने फ़ंक्शन को उसी स्ट्रिंग के साथ बुलाया है जिससे हम कंकटनेट करना चाहते हैं और ताकि यह मौजूदा स्ट्रिंग में प्रभावित हो सके। इस तरह से, हम स्ट्रिंग को संयुक्त कर सकते हैं और उसे उपयोगी रूप से प्रदर्शित कर सकते हैं।
+String concatenation ke liye do methods hote hain - "strcat()" aur "+=" operator. Dono methods mein hum ek string variable mein dusre string variable ko concatenate karte hain. Lekin "+" operator ka use karne ke liye humein pehle ek empty string create karna padta hai.
 
-## गहराई में जाएं
+```
+#include <stdio.h>
+#include <string.h>
 
-कंकटनेटिंग स्ट्रिंग का उपयोग करना आसान तो है, लेकिन यह स्ट्रिंग्स में मेमोरी के संभावित बढ़ोतरी का कारण बन सकता है। कई बार, हमें `malloc()` या `calloc()` जैसी मुख्य फ़ंक्शन्स का उपयोग करना पड़ता है जो स्ट्रिंग के लिए अलग से मेमोरी का आवंटन करती हैं। यदि हम अनविति में स्ट्रिंग्स को कंक्टनेट करते हैं, तो
+int main(void) {
+  char str1[30] = "Hello, ";
+  char str2[] = "World!";
+  
+  strcat(str1, str2);
+  // OR str1 += str2;
+  
+  printf("%s", str1);
+  // Output: Hello, World!
+  return 0;
+}
+```
+
+"strcat()" ka use karte samay humein pehle "str1" mein concatenate karna hai aur fir "str1" ko hi output ke liye use karna hai. Lekin "+" operator ka use karte samay hum ek empty string bana kar isi mein concatenate karte hain aur fir output ke liye "str1" variable ka use karte hain.
+
+##Dekhein Bhi
+
+Agar aap aur functions aur operators ke bare mein jaanna chahte hain jo string concatenation mein use kiye jaate hain, toh is link par jayein: [String Concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat).
+
+Iske alawa, aap ye bhi jaan sakte hain ki C programming mein strings kaise kaam karte hain: [Strings in C](https://www.programiz.com/c-programming/c-strings).

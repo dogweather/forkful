@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Extraindo subtrings"
-simple_title:         "Extraindo subtrings"
+title:                "Extraindo Substrings"
+html_title:           "Ruby: Extraindo Substrings"
+simple_title:         "Extraindo Substrings"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,37 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Um dos aspectos interessantes da programação é a capacidade de manipular strings para realizar várias tarefas. Uma das tarefas mais comuns é extrair uma parte específica de uma string, também conhecida como substring. Neste artigo, vamos explorar como fazer isso usando Ruby.
+Extrair substrings é uma técnica comum em programação que permite que você obtenha partes específicas de uma string de texto. Isso pode ser útil quando você precisa manipular ou processar informações em um formato específico.
 
-## Como Fazer
+## Como fazer
 
-Extrair substrings em Ruby é bastante fácil. Basta usar o método `[]` em uma string e especificar o índice inicial e final da parte que você deseja extrair. Por exemplo:
+Extrair substrings em Ruby é simples e pode ser feito usando o método `slice` ou a notação de intervalo `[]`.
 
-```Ruby
-my_string = "Oi tudo bem?"
-puts my_string[3..6] # saída: tudo
+```
+# Exemplo 1: ussando o método slice
+string = "Olá, mundo!"
+substring = string.slice(5, 5) # A partir do índice 5, obtenha 5 caracteres
+puts substring # Output: mundo
+
+# Exemplo 2: usando a notação de intervalo
+string = "Olá, mundo!"
+substring = string[0..3] # Do índice 0 ao 3 (incluindo), obtenha os caracteres
+puts substring # Output: Olá
+
 ```
 
-O código acima criará uma string chamada `my_string` e em seguida, usará o método `[]` para extrair a substring "tudo" que está entre os índices 3 e 6 (incluindo o caractere do índice 6).
+É importante notar que a contagem dos índices em Ruby começa a partir do 0, então o primeiro caractere de uma string tem o índice 0, o segundo caractere tem o índice 1 e assim por diante.
 
-Agora, vamos dar uma olhada em um exemplo mais complexo. Digamos que temos uma string com vários nomes separados por vírgulas e queremos extrair o terceiro nome. Podemos fazer isso usando o método `split` para separar a string em um array e, em seguida, usar o método `[]` para extrair o terceiro elemento do array. Veja o código abaixo:
+## Mergulho Profundo
 
-```Ruby
-names = "Maria, João, Pedro, Ana, Carla"
-array_names = names.split(", ") # dividindo a string em um array
-puts array_names[2] # saída: Pedro
+Além do método `slice` e da notação de intervalo, também é possível extrair substrings usando expressões regulares. As expressões regulares são sequências de caracteres que formam um padrão e podem ser usadas para encontrar e extrair partes específicas de uma string.
+
+```
+string = "My email is example@email.com"
+substring = string.match(/(\w+)@(\w+)\.com/)[1] # Procure por um padrão de email e obtenha o primeiro grupo de captura
+puts substring # Output: email
 ```
 
-Agora, você pode estar se perguntando por que usamos `[2]` em vez de `[3]` para obter o terceiro elemento. Lembre-se que em Ruby, os índices começam em 0, então `array_names[2]` corresponde ao terceiro elemento do array.
+As expressões regulares podem ser complexas, mas são extremamente úteis para extrair informações de uma string de maneira precisa e flexível.
 
-## Deep Dive
+## Veja também
 
-Agora que já vimos como extrair substrings em Ruby, vamos falar um pouco mais sobre como essa técnica funciona. Internamente, o método `[]` usa o operador de busca `[]` da classe `String`, que aceita um índice inicial e, opcionalmente, um comprimento. Isso significa que além de especificar o índice inicial e final, você também pode especificar um comprimento para a substring que deseja extrair.
-
-Além disso, vale ressaltar que o método `[]` não modifica a string original, ele apenas retorna uma nova string com a parte extraída. Se você quiser modificar a string original, pode usar o método `[]=` que aceita os mesmos argumentos que o método `[]`e modifica a string original.
-
-## Veja Também
-
-- [Documentação oficial do método `[]` da classe `String`](https://ruby-doc.org/core-3.0.0/String.html#method-i-5B-5D)
-- [Tutorial sobre strings em Ruby](https://www.rubyguides.com/ruby-string/)
-- [Exemplos de código práticos com strings em Ruby](https://www.sitepoint.com/ruby-string-manipulation/#:~:text=Ruby%20String%20Manipulation&text=Ruby%20has%20great%20string%20manipulation,fine%2Dtuned%20for%20string%20manipulation.)
+- [Ruby String Class Documentation](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby Regular Expressions Tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)

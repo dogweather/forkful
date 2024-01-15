@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: HTML analysieren"
-simple_title:         "HTML analysieren"
+title:                "Das Parsen von html."
+html_title:           "Kotlin: Das Parsen von html."
+simple_title:         "Das Parsen von html."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,52 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-HTML ist die Grundlage für viele Webseiten und Anwendungen. Durch das Parsen von HTML können wir die Informationen dieser Seiten extrahieren und sie für unsere Zwecke nutzen. Dies kann beispielsweise für das Scraping von Daten oder für die Erstellung von automatisierten Scripts hilfreich sein.
+Du hast sicherlich schon einmal auf einer Website gesurft und möchtest jetzt bestimmte Informationen oder Daten aus dem HTML-Code herausziehen. Das bedeutet, dass du HTML-Daten parsen musst. Das kann hilfreich sein, wenn du Informationen aus Webseiten sammeln möchtest oder Daten für automatisierte Prozesse benötigst.
 
-# Wie man HTML mit Kotlin parsen kann
+## Wie geht's
 
-Das Parsen von HTML mit Kotlin ist relativ einfach. Zunächst benötigen wir die Bibliothek Jsoup, die uns dabei helfen wird, das HTML zu analysieren. Wir binden diese Bibliothek in unserem Kotlin-Projekt ein, indem wir sie zuerst als Abhängigkeit in unserer build.gradle Datei hinzufügen:
-
-```Kotlin
-dependencies {
-    implementation 'org.jsoup:jsoup:1.14.3'
-}
-```
-
-Als nächstes importieren wir die Klasse Jsoup in unserem Code:
+Das Parsen von HTML-Daten ist in Kotlin relativ einfach und unkompliziert. Zuerst musst du eine HTML-Parser-Bibliothek wie Jsoup importieren. Dann kannst du den gewünschten HTML-Code mit Hilfe von Jsoup parsen und bestimmte Elemente extrahieren. Zum Beispiel, wenn du den Titel einer Webseite extrahieren möchtest, kannst du folgenden Code verwenden:
 
 ```Kotlin
-import org.jsoup.Jsoup
+val doc = Jsoup.connect("https://www.example.com").get()
+val title = doc.select("title").text()
+println(title)
 ```
 
-Nun können wir eine Verbindung zu einer Webseite herstellen und das HTML parsen. Hier ist ein Beispiel, wie wir den Titel einer Webseite extrahieren können:
+Dieser Code verbindet sich mit der angegebenen URL, parsed den HTML-Code und extrahiert dann den Titel der Webseite. In diesem Fall würde der Output "Example Domain" lauten. Du kannst auch spezifischere Selektoren verwenden, um bestimmte Elemente wie Bilder oder Links herauszufiltern. 
 
-```Kotlin
-val document = Jsoup.connect("https://www.beispielwebseite.de").get()
-val pageTitle = document.title()
-println(pageTitle)
-```
+Das ist nur ein Beispiel dafür, wie du HTML-Daten parsen kannst. Es gibt viele verschiedene Techniken und Bibliotheken, die du verwenden kannst. Es ist am besten, ein paar zu testen und herauszufinden, welche für dein spezifisches Projekt am besten geeignet sind.
 
-Die Ausgabe wird der Titel der Webseite sein, in diesem Fall "Beispielwebseite".
+## Tiefer Einblick
 
-# Tiefergehende Information zum Parsen von HTML
+Beim Parsen von HTML-Daten gibt es einige wichtige Dinge zu beachten. Erstens, der HTML-Code kann sich je nach Webseite und Struktur stark unterscheiden. Es ist daher wichtig, ein flexibles und robustes Parsing-System zu verwenden, das auch mit unerwarteten oder fehlerhaften HTML-Daten umgehen kann.
 
-Jsoup bietet viele nützliche Methoden zum Extrahieren von Informationen aus HTML. So können wir beispielsweise mit der `select()` Methode bestimmte Elemente auf einer Seite auswählen und deren Inhalt auslesen. Diese Methode verwendet CSS-ähnliche Selektoren, um Elemente zu finden.
+Zweitens, während das Parsen von HTML-Daten hilfreich sein kann, muss auch die Serverbelastung berücksichtigt werden. Wenn du zu viele Anfragen an eine Website schickst, um Daten zu parsen, kann dies zu einer hohen Belastung führen und die Website kann deine Anfragen blockieren. Daher ist es wichtig, beim Parsen von HTML-Daten auch die angemessene Etikette zu wahren.
 
-```Kotlin
-val headlines = document.select("h1")
-for (headline in headlines) {
-    println(headline.text())
-}
-```
+## Siehe auch
 
-Dieser Code würde alle Überschriften auf der Webseite auslesen und ausgeben.
-
-Es gibt noch weitere Funktionen und Methoden, die uns das Parsen von HTML einfacher machen. Es lohnt sich also, sich tiefer in die Dokumentation von Jsoup einzulesen, um alle Möglichkeiten auszuschöpfen.
-
-# Siehe auch
-
-- [Offizielle Jsoup Dokumentation](https://jsoup.org/cookbook/)
-- [Kotlin Webseite](https://kotlinlang.org/docs/)
+- [HtmlUnit Library](https://www.htmlunit.org/)
+- [JSoup Documentation](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+- [10 Tipps für effizientes Web Scraping](https://kinsta.com/de/blog/web-scraping/)

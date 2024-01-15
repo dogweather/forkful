@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Senden einer HTTP-Anfrage"
-simple_title:         "Senden einer HTTP-Anfrage"
+title:                "Eine HTTP-Anfrage senden"
+html_title:           "Kotlin: Eine HTTP-Anfrage senden"
+simple_title:         "Eine HTTP-Anfrage senden"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,59 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Beim Programmieren in Kotlin ist es oft notwendig, HTTP-Anfragen zu senden. Dies kann zum Beispiel erforderlich sein, um Daten von einer API abzurufen oder um Daten auf einen Server hochzuladen. In diesem Blogbeitrag zeige ich Ihnen, wie Sie mit Kotlin HTTP-Anfragen senden können.
+HTTP-Anfragen sind ein grundlegender Bestandteil der Webentwicklung und ermöglichen es, Daten zwischen einem Client und einem Server auszutauschen. Mit Kotlin können Sie einfach und effizient HTTP-Anfragen in Ihrer Anwendung implementieren und somit die Funktionalität und Benutzererfahrung verbessern.
 
-## Wie funktioniert es?
+## Wie Funktioniert es
 
-Um HTTP-Anfragen in Kotlin zu senden, benötigen Sie die Klasse `URL` aus der Standardbibliothek von Kotlin. Mit dieser Klasse können Sie eine URL-Verbindung zu einer bestimmten Internetadresse herstellen. Hier ist ein Beispiel:
+Um eine HTTP-Anfrage mit Kotlin zu senden, benötigen Sie zunächst eine URL, an die die Anfrage gesendet werden soll. Dann können Sie die Kotlin-Standardbibliothek verwenden, um eine Verbindung zu dieser URL herzustellen. Hier ist ein Beispiel für das Senden einer einfachen GET-Anfrage und das Ausgeben der empfangenen Daten:
 
 ```Kotlin
-
-val url = URL("https://www.example.com/api/data")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-val responseCode = connection.responseCode
-
-println("Response Code: $responseCode")
-
+val url = URL("https://www.example.com")
+val connection = url.openConnection()
+val response = connection.getInputStream().reader().readText()
+println(response)
 ```
 
-In diesem Beispiel erstellen wir eine URL-Verbindung zu "https://www.example.com/api/data" und senden dann eine GET-Anfrage. Die Antwort wird in Form eines Response Codes ausgegeben. Beachten Sie, dass die `requestMethod` auf "GET" gesetzt wurde, aber je nach Anwendungsfall können Sie auch andere Methoden wie POST, PUT oder DELETE verwenden.
-
-Um Daten mit einem HTTP-POST-Request zu senden, können Sie die `OutputStream` der URL-Verbindung verwenden. Hier ist ein Beispiel:
+Dieses Beispiel erstellt eine Verbindung zu der angegebenen URL und liest den Inhalt der Seite, die zurückgegeben wird. Sie können auch POST-Anfragen senden und Daten an den Server mitgeben. Hier ist ein Beispiel dafür:
 
 ```Kotlin
-
-val url = URL("https://www.example.com/api/upload")
+val url = URL("https://www.example.com")
 val connection = url.openConnection() as HttpURLConnection
 connection.requestMethod = "POST"
 connection.doOutput = true
-
-val outputStream = DataOutputStream(connection.outputStream)
-outputStream.writeBytes("Hello from Kotlin!")
-outputStream.flush()
-outputStream.close()
-
-val responseCode = connection.responseCode
-println("Response Code: $responseCode")
-
+val postData = "key=value&anotherKey=anotherValue"
+connection.outputStream.write(postData.toByteArray())
+val response = connection.inputStream.reader().readText()
+println(response)
 ```
 
-Hier senden wir eine POST-Anfrage an die Adresse "https://www.example.com/api/upload" und übergeben die Daten "Hello from Kotlin!". Beachten Sie, dass wir `doOutput` auf `true` setzen müssen, um die `OutputStream` zu aktivieren. Am Ende erhalten wir wieder einen Response Code.
+In diesem Beispiel wird eine Verbindung zu der angegebenen URL hergestellt und eine POST-Anfrage mit den angegebenen Daten gesendet. Nachdem die Anfrage an den Server gesendet wurde, wird die empfangene Antwort ausgegeben. 
 
-## Deep Dive
+Diese Codebeispiele sind nur ein einfacher Einblick in die Verwendung von Kotlin für HTTP-Anfragen und es gibt viele weitere Möglichkeiten, je nach den Anforderungen Ihrer Anwendung.
 
-Beim Senden von HTTP-Anfragen gibt es viele weitere Details zu beachten, wie z.B. der Umgang mit Cookies oder das Hinzufügen von HTTP-Headern. Hier sind einige hilfreiche Links, die Ihnen dabei helfen können, tiefer in das Thema einzusteigen:
+## Tiefere Einblicke
 
-- [Offizielle Dokumentation von Kotlin über das Erstellen von HTTP-Anfragen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l/-u-r-l-/open-connection.html)
-- [Tutorial von Baeldung über das Senden und Empfangen von HTTP-Anfragen in Kotlin](https://www.baeldung.com/kotlin-http-request)
-- [Ein Beitrag von JournalDev über das Arbeiten mit HTTPURLConnection in Kotlin](https://www.journaldev.com/2335/java-httpurlconnection-example-java-http-request-get-post)
-- [Dokumentation von Oracle über das Senden von HTTP-Anfragen mit Java](https://docs.oracle.com/javase/tutorial/networking/urls/sending.html)
+Wenn Sie mehr über die Funktionsweise von HTTP-Anfragen erfahren möchten, können Sie sich mit verschiedenen HTTP-Methoden auseinandersetzen, z.B. GET, POST, PUT, DELETE usw. Sie können auch die Verwendung von Header-Informationen und die Verarbeitung von Anfrage- und Antwortdaten genauer untersuchen. 
+
+Eine wichtige Sache, auf die Sie achten müssen, ist die Verwendung von Threads beim Senden von HTTP-Anfragen. Wenn Sie sicherstellen möchten, dass Ihre Anwendung während des Sendens von Anfragen nicht eingefroren wird, können Sie asynchrone Methoden wie `async` und `await` verwenden, um Ihre Anfragen im Hintergrund auszuführen.
 
 ## Siehe auch
 
-- [Eine Einführung in die Programmierung mit Kotlin](https://www.guru99.com/kotlin-tutorial.html)
-- [Offizielle Webseite von Kotlin](https://kotlinlang.org/)
-- [Kotlin-Kurse auf Udemy](https://www.udemy.com/topic/kotlin/)
+- [Offizielle Kotlin-Dokumentation zu HTTP-Anfragen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l-/-u-r-l-connection/index.html)
+- [Ein ausführliches Tutorial über das Senden von HTTP-Anfragen mit Kotlin](https://developer.android.com/kotlin/more-apis/usage-of-http-apis)
+- [Eine Übersicht über die verschiedenen HTTP-Methoden und ihre Verwendung](https://www.tutorialspoint.com/http/http_methods.htm)
+- [Eine Anleitung zur Verwendung von Threads in Kotlin](https://kotlinlang.org/docs/reference/coroutines/basics.html)

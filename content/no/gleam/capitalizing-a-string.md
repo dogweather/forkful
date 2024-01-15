@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Store bokstaver i en tekststreng"
-simple_title:         "Store bokstaver i en tekststreng"
+title:                "Store bokstaver i en streng"
+html_title:           "Gleam: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,73 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kapitalisere en streng er en vanlig oppgave som kan være nødvendig i mange programmeringsscenarier. Dette kan inkludere å formatere brukerinput, generere rapporter, eller til og med bare for visuell estetikk. Det kan også være nyttig hvis du ønsker å sammenligne to strenger uten å ta hensyn til store og små bokstaver.
+Å kapitalisere en streng kan være en nyttig funksjon når du jobber med tekstbehandling eller formatering. Ved å endre hvert første bokstav i en streng til en stor bokstav, kan du skape en mer profesjonell og leservennlig tekst. I denne artikkelen vil vi utforske hvordan du kan gjøre dette i Gleam-programmeringsspråket. 
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å kapitalisere en streng i Gleam, kan du bruke funksjonen ```String.to_uppercase``` og sende inn strengen du ønsker å kapitalisere som argument. La oss se på et enkelt eksempel:
+For å kapitalisere en streng, kan du bruke funksjonen `String.capitalize` i Gleam. Denne funksjonen tar en streng som parameter og returnerer en ny streng med første bokstav stor. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
 
-```
-Gleam ==========
+```Gleam
+import gleam/string
 
-let streng = "hei hei"
-let kapitalisert_streng = String.to_uppercase(streng)
+let streng = "dette er en test"
+let kapitalisert_streng = String.capitalize(streng)
 
-IO.print(kapitalisert_streng)
-```
-
-Dette vil resultere i følgende output:
-
-```
-HEI HEI
+// kapitalisert_streng = "Dette er en test"
 ```
 
-Som du kan se, vil funksjonen endre alle små bokstaver i strengen til store bokstaver.
+Som du kan se, blir første bokstav i strengen "dette er en test" endret til stor bokstav "D". Dette kan være nyttig når du for eksempel vil formatere en overskrift eller en tittel. 
 
-Det er også verdt å merke seg at denne funksjonen ikke bare begrenser seg til ASCII-tegn, men fungerer også med Unicode-tekst.
+Det er også verdt å nevne at `String.capitalize`-funksjonen kun endrer første bokstav i hver setning. Hvis du vil kapitalisere alle bokstaver i en streng, kan du bruke `String.uppercase`-funksjonen i stedet. 
 
-## Dykk dypere
+## Dypdykk
 
-I Gleam kan du også bruke funksjonen ```String.to_title_case``` for å kapitalisere en streng i tittel-sak. Dette vil gjøre at den første bokstaven i hvert ord i strengen er stor, mens resten er små. La oss se på et eksempel:
+I Gleam er strenger immutable, noe som betyr at de ikke kan endres etter at de er opprettet. Derfor vil `String.capitalize`-funksjonen alltid returnere en ny streng i stedet for å endre den opprinnelige. Dette er en viktig konsept i Gleam, og det er en god praksis å bruke funksjoner som returnerer nye verdier i stedet for å endre eksisterende verdier. 
 
-```
-Gleam ==========
-
-let streng = "dette er en tittel"
-let tittel_streng = String.to_title_case(streng)
-
-IO.print(tittel_streng)
-```
-
-Output blir:
-
-```
-Dette Er En Tittel
-```
-
-Som du kan se, blir alle ordene i strengen kapitalisert, men resten av bokstavene forblir små.
-
-En annen nyttig funksjon for å kapitalisere strenger i Gleam er ```String.to_capital_case```, som vil gjøre at hver setning i en streng starter med en stor bokstav. La oss se på et siste eksempel:
-
-```
-Gleam ==========
-
-let streng = "dette er en setning. dette er en annen setning."
-let nyttig_streng = String.to_capital_case(streng)
-
-IO.print(nyttig_streng)
-```
-
-Output blir:
-
-```
-Dette er en setning. Dette er en annen setning.
-```
-
-Som du kan se, vil hvert punktum starte en ny setning og førstebokstaven i hver setning vil bli stor.
+Det er også verdt å merke seg at `String.capitalize` følger Unicode-standardene for å kapitalisere bokstaver. Dette betyr at den vil håndtere spesielle bokstaver og tegn som ikke finnes i det latinske alfabetet på riktig måte. 
 
 ## Se også
 
-- Offisiell dokumentasjon for strengmanipulering i Gleam: https://gleam.run/documentation/tutorials/strings
-- En interaktiv Gleam leksjon om strengmanipulering: https://lettstrygleam.com/strings.html 
-- Github-kodeeksempler for å kapitalisere strenger i Gleam: https://github.com/gleam-lang/gleam/blob/master/lib/std/string/scr/convert.gleam
+* [Offisiell Gleam dokumentasjon](https://gleam.run/)
+* [Gleam Standardbibliotek](https://github.com/gleam-lang/gleam_stdlib)
+* [Unicode standarder](https://unicode.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "csv-tiedostojen käsittely"
+html_title:           "Fish Shell: csv-tiedostojen käsittely"
+simple_title:         "csv-tiedostojen käsittely"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,55 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää Fish Shell -ohjelmointikieltä CSV-tiedostojen käsittelyyn?
+## Miksi käyttää CSV-tiedostoja
 
-CSV-tiedostot ovat yleisiä tietojen tallennusmuotoja ja niiden käsittelyyn voi olla tarve monissa ohjelmoinnissa. Fish Shell tarjoaa kätevän ja helppokäyttöisen tavan työskennellä CSV-tiedostojen kanssa. Tässä blogipostissa opimme, miten voit käyttää Fish Shell -ohjelmointikieltä CSV-tiedostojen käsittelyyn ja tutustutaan syvällisemmin tähän aiheeseen.
+CSV-tiedostot ovat yleinen tapa tallentaa ja jakaa taulukkomuotoista tietoa. Ne ovat erityisen käteviä, kun haluat työskennellä datan kanssa, joka on järjestetty riveihin ja sarakkeisiin. Fish Shell tarjoaa tehokkaita työkaluja CSV-tiedostojen käsittelyyn ja manipulointiin.
 
-## Näin käytät Fish Shellia CSV-tiedostojen käsittelyyn
+## Miten käyttää CSV-tiedostoja Fish Shellillä
 
-Fish Shellin `read_csv` -toiminnolla voit lukea nopeasti ja helposti CSV-tiedoston ja tallentaa sen sisällön muuttujaksi.
-
-```Fish Shell
-set data (read_csv example.csv)
-```
-
-Voit myös käyttää `write_csv` -toimintoa tallentaaksesi muuttujan sisällön CSV-tiedostoon.
+CSV-tiedostojen lukuun ja kirjoitukseen on olemassa valmiita Fish Shell -komentoja, jotka helpottavat työskentelyä. Esimerkiksi voit lukea CSV-tiedoston ja tallentaa sen muuttujaan käyttämällä komentoa "``csvread``":
 
 ```Fish Shell
-write_csv result.csv $data
+set data (csvread example.csv)
 ```
 
-Voit käyttää `set` -komentoa asettaaksesi arvoja muuttujille, jotka vastaavat CSV-tiedoston sarakkeita.
+Tämän jälkeen voit käsitellä muuttujassa olevaa dataa kuten tavallista taulukkoa. Voit esimerkiksi tulostaa taulukon ensimmäisen rivin käyttämällä "``echo``" -komentoa:
 
 ```Fish Shell
-set name $data[1]
-set age $data[2]
+echo $data[1]
 ```
 
-Voit käyttää myös `echo` -komentoa tulostamaan tietoja muuttujista.
+Tämä tulostaa ensimmäisen rivin muodossa "``arvo1, arvo2, arvo3``".
+
+CSV-tiedostoon kirjoittaminen on yhtä helppoa. Voit käyttää "``csvwrite``" -komentoa ja määritellä sarakkeiden erotinmerkin sekä haluamasi tiedostonimen:
 
 ```Fish Shell
-echo "Nimi: $name, Ikä: $age"
+set data (table arvo1 arvo2 arvo3)
+csvwrite -d "," example_new.csv $data
 ```
 
-## Syvällisempi tutustuminen käyttöön CSV-tiedostojen kanssa
+Tämä luo uuden CSV-tiedoston nimeltä "``example_new.csv``", jossa on kolme saraketta ja yksi rivi.
 
-Fish Shellin `read_csv` ja `write_csv` -toiminnot tarjoavat helpon tavan lukea ja tallentaa CSV-tiedostojen sisältöä muuttujiin. Voit myös käyttää muita Fish Shellin sisäänrakennettuja toimintoja, kuten `string split` tai `string join` -toimintoja, jotta voit käsitellä tietoja tarkemmin.
+## Syvä sukellus CSV-tiedostojen käsittelyyn
 
-Voit myös käyttää `for` -silmukkaa käydäksesi läpi CSV-tiedoston sisältöä rivi kerrallaan.
+CSV-tiedostojen käsittely Fish Shellillä menee paljon syvemmälle kuin vain lukemiseen ja kirjoittamiseen. Voit käyttää monipuolisia ominaisuuksia, kuten sarakkeiden ja rivien suodattamista, muokkaamista ja yhdistämistä. Voit myös muuntaa CSV-tiedoston muiden tiedostomuotojen välillä.
 
-```Fish Shell
-for row in $data
-    echo $row
-end
-```
-
-Fish Shellin `$argv` -muuttuja tarjoaa myös mahdollisuuden lukea CSV-tiedostoja komentoriviparametreinä ja käsitellä niitä ohjelmassa.
+Fish Shellin virallinen verkkosivusto tarjoaa kattavan dokumentaation CSV-tiedostojen käsittelystä. Kannattaa tutustua näihin ohjeisiin saadaksesi lisää tietoa ja hyödyntää Fish Shellin mahdollisuuksia CSV-tiedostojen työskentelyssä.
 
 ## Katso myös
 
-- [Fish Shellin viralliset dokumentaatiot](https://fishshell.com/docs/current/)
-- [Fish Shell CSV-moduulin GitHub-sivu](https://github.com/fish-shell/csv)
-- [Fish Shellin käyttöliittymäopas](https://fishshell.com/docs/current/index.html#quick-start)
-
-Kiitos, että luit tämän blogipostin ja toivottavasti se auttaa sinua työskentelemään CSV-tiedostojen kanssa Fish Shellin avulla. Onnea ohjelmointiin!
+- [Fish Shell - Virallinen verkkosivusto](https://fishshell.com/)
+- [Fish Shellin dokumentaatio CSV-tiedostojen käsittelystä](https://fishshell.com/docs/current/cmds/csv.html)

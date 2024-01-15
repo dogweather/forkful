@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Cercare e sostituire testo"
-simple_title:         "Cercare e sostituire testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Bash: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-La ricerca e la sostituzione di testo sono un'attività comune nei linguaggi di programmazione come Bash. Per esempio, potresti dover cambiare il nome di una variabile o sostituire una parola all'interno di un file. Avere la conoscenza di come eseguire questa operazione può rendere più efficiente il tuo lavoro di programmazione.
+La ricerca e la sostituzione di testo sono operazioni comuni nel mondo della programmazione e della gestione di file di testo. Consentono di risparmiare tempo ed evitare errori nel modificare grandi quantità di testo.
 
 ## Come fare
+La Bash è uno strumento potente per la gestione di file di testo, grazie alla presenza di comandi e operatori specifici per la ricerca e la sostituzione di testo. Ecco alcuni esempi pratici:
 
-Per eseguire la ricerca e la sostituzione di testo in Bash, puoi utilizzare il comando `sed`. Questo comando ti permette di specificare un pattern da cercare e un pattern con cui sostituire il testo trovato. Ad esempio, se volessi sostituire tutte le occorrenze di "ciao" con "salve" all'interno di un file chiamato "test.txt", puoi usare il seguente comando:
-
-```Bash
-sed -i 's/ciao/salve/g' test.txt 
-```
-
-L'opzione `-i` indica a `sed` di modificare il file in modo diretto, senza dover creare un nuovo file. L'opzione `g` alla fine del comando indica a `sed` di sostituire tutte le occorrenze trovate e non solo la prima. 
-
-Puoi anche utilizzare espressioni regolari per effettuare la ricerca e la sostituzione di testo più avanzate. Ad esempio, se volessi sostituire tutte le vocali con la lettera "a", puoi utilizzare il seguente comando:
+### Ricerca e sostituzione su un singolo file
+Per cercare e sostituire un determinato testo in un file chiamato "file.txt", utilizziamo il comando `sed` seguito dai parametri `-i` (per modificare direttamente il file) e `-e` (per specificare il comando di ricerca e sostituzione). Ad esempio, se volessimo sostituire tutte le occorrenze di "cane" con "gatto" all'interno del file, utilizziamo il seguente comando:
 
 ```Bash
-sed -i 's/[aeiou]/a/g' test.txt
+sed -i -e 's/cane/gatto/g' file.txt
 ```
 
-Questo sostituirà tutte le vocali con la lettera "a" all'interno del file "test.txt". Puoi anche utilizzare le espressioni regolari per cercare e sostituire testo in modo dinamico, utilizzando variabili anziché pattern prefissati.
+### Ricerca e sostituzione su più file
+Se volessimo effettuare la stessa operazione su una serie di file, possiamo utilizzare il comando `sed` seguito dai parametri `-i` e `-e`, ma questa volta aggiungendo anche il carattere `*` per indicare tutti i file presenti nella cartella corrente. Ad esempio:
+
+```Bash
+sed -i -e 's/cane/gatto/g' *
+```
+
+### Utilizzo di espressioni regolari
+La Bash permette di utilizzare espressioni regolari per effettuare ricerche e sostituzioni ancora più precise. Ad esempio, se volessimo sostituire tutte le parole di tre lettere con "xyz" all'interno di un file, possiamo utilizzare il seguente comando:
+
+```Bash
+sed -i -e 's/\b[a-z]\{3\}\b/xyz/g' file.txt
+```
 
 ## Approfondimento
-
-Utilizzare espressioni regolari per la ricerca e la sostituzione di testo in Bash può sembrare complicato all'inizio, ma con un po' di pratica diventerà una risorsa preziosa per il tuo lavoro di programmazione. Puoi anche combinare il comando `sed` con altri comandi Bash per creare script più complessi per la gestione del testo.
-
-Inoltre, ci sono molte opzioni e funzionalità disponibili in `sed` che potrebbero essere utili per le tue esigenze specifiche. Assicurati di consultare la documentazione ufficiale di `sed` per ulteriori informazioni.
+La Bash utilizza il comando `sed` (stream editor) per effettuare ricerche e sostituzioni su file di testo. Questo comando si basa sulla sintassi di espressioni regolari e offre numerose opzioni per gestire e manipolare il testo. Per saperne di più su come utilizzare `sed`, è possibile consultare la sua pagina man digitando `man sed` nel terminale.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Tutorial di sed su Linuxize](https://linuxize.com/post/sed-regular-expressions/)
-- [Corso su Bash e sed su Udemy](https://www.udemy.com/course/bash-scripting-raspberry-pi/learn/lecture/3936194#overview)
+- Manuale di `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Guida all'utilizzo delle espressioni regolari: https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux

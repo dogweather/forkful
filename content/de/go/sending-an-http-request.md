@@ -1,6 +1,7 @@
 ---
-title:                "Go: Das Versenden einer HTTP-Anfrage"
-simple_title:         "Das Versenden einer HTTP-Anfrage"
+title:                "Eine http Anfrage senden"
+html_title:           "Go: Eine http Anfrage senden"
+simple_title:         "Eine http Anfrage senden"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,50 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-HTTP-Anfragen sind ein grundlegender Bestandteil moderner Webentwicklung. Sie ermöglichen es uns, Daten von anderen Websites abzurufen und unsere eigenen Daten an andere Websites zu senden. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie wir in Go HTTP-Anfragen senden können.
+HTTP-Anfragen (oder auch Hypertext Transfer Protocol-Anfragen) sind unerlässlich, um mit verschiedenen Webdiensten zu kommunizieren und Daten auszutauschen. Indem du lernst, wie man eine HTTP-Anfrage in Go sendet, kannst du effektiver und effizienter mit APIs und anderen Webdiensten interagieren.
 
-## Wie geht das?
+## Wie Geht's
 
-Die `net/http` Paket in Go stellt uns eine Vielzahl von Funktionen zur Verfügung, um HTTP-Anfragen zu senden. Zuerst müssen wir ein `http.Client` Objekt erstellen, das alle nötigen Einstellungen für unsere Anfrage enthält. Dann können wir die `http.NewRequest()` Funktion nutzen, um eine neue Anfrage mit der gewünschten HTTP-Methode, URL und weiteren Parametern zu erstellen.
+Um eine HTTP-Anfrage in Go zu senden, brauchen wir das `net/http` Paket. Wir werden auch `fmt` für die Ausgabe verwenden. Lass uns loslegen!
 
 ```Go
-// Erstelle ein HTTP-Client Objekt
-client := &http.Client{}
+package main
 
-// Erstelle eine neue Anfrage
-req, err := http.NewRequest("GET", "https://blog.example.com/post/1", nil)
-if err != nil {
-    panic(err)
+import (
+	"fmt"
+	"net/http"
+)
+
+func main() {
+
+	// Erstelle ein neues HTTP-Request mit der URL des Ziels
+	req, err := http.NewRequest("GET", "https://www.example.com", nil)
+	if err != nil {
+		fmt.Println("Fehler beim Erstellen der Anfrage:", err)
+		return
+	}
+
+	// Sende die Anfrage an das Ziels
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		fmt.Println("Fehler beim Senden der Anfrage:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	// Lese die Antwort des Ziels und gebe sie aus
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Fehler beim Lesen der Antwort:", err)
+		return
+	}
+	fmt.Println(string(body))
+
 }
-
-// Füge Optionen hinzu, z.B. Header oder Query-Parameter
-req.Header.Add("Authorization", "Token abc123")
-req.URL.Query().Add("tag", "golang")
-
-// Sende die Anfrage und erhalte eine Antwort
-resp, err := client.Do(req)
-if err != nil {
-    panic(err)
-}
-defer resp.Body.Close()
-
-// Lies die Antwort und gib die Daten aus
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    panic(err)
-}
-fmt.Println(string(body))
 ```
 
-Die oben gezeigten Codebeispiele sind nur ein kleiner Vorgeschmack auf die möglichen Funktionen und Optionen. Für weitere Details über die Verwendung des `net/http` Pakets können Sie die offizielle Dokumentation lesen.
+Die Ausgabe sollte die HTML-Inhalte der angegebenen URL anzeigen. Beachte, dass wir auch eine Fehlerbehandlung machen, um mögliche Fehler bei der Anfrage und der Verbindung zu erkennen.
 
-## Tiefere Einblicke
+## Tiefer Tauchen
 
-Es ist auch möglich, benutzerdefinierte HTTP-Anfragen zu erstellen, abhängig von unseren spezifischen Anforderungen. Hierfür können wir die `http.Request` Struktur verwenden, um unsere Anfrage zu konfigurieren und dann die `http.Client` Funktionen nutzen, um die Anfrage zu senden.
+Jetzt, da wir wissen, wie man eine grundlegende HTTP-Anfrage sendet, können wir tiefer tauchen und die verschiedenen Arten von Anfragen und ihre Funktionen untersuchen.
 
-Es ist natürlich auch wichtig, mögliche Fehler beim Senden von HTTP-Anfragen zu berücksichtigen und entsprechende Fehlerbehandlungen in unseren Code aufzunehmen. Zudem sollten wir uns mit den verschiedenen HTTP-Statuscodes vertraut machen, um angemessen auf die erhaltenen Antworten zu reagieren.
+Die `http.NewRequest()` Methode, die wir in unserem Code verwendet haben, nimmt drei Argumente an: `method`, `url` und `body`. Mit `method` können wir die Art der Anfrage wie `GET`, `POST`, `PUT`, etc. angeben. Der `url` Parameter sollte die URL des Ziels enthalten und `body` kann verwendet werden, um Daten mitzusenden, wie z.B. beim Senden von Formulardaten.
 
-## Siehe auch
+Wir können auch zusätzliche Header hinzufügen, um unsere Anfrage zu personalisieren, indem wir die `req.Header.Set()` Methode verwenden.
 
-- Offizielle Dokumentation zum `net/http` Paket in Go: https://golang.org/pkg/net/http/
-- Eine ausführliche Anleitung zum Senden von HTTP-Anfragen in Go mit verschiedenen Beispielen: https://tutorialedge.net/golang/http-go-tutorial/
+>Weitere Informationen über das `net/http` Paket und die verschiedenen Möglichkeiten, HTTP-Anfragen zu senden, findest du in der offiziellen Dokumentation.
+
+## Siehe Auch
+
+- Offizielle Dokumentation: https://golang.org/pkg/net/http/
+- YouTube Tutorial: https://www.youtube.com/watch?v=ccANcNk8Dac
+- Medium Artikel: https://medium.com/@masnun/making-http-requests-in-golang-dd123379efe7

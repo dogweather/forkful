@@ -1,6 +1,7 @@
 ---
-title:                "Go: डीबग आउटपुट को छापना"
-simple_title:         "डीबग आउटपुट को छापना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Go: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -9,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Why
 
-डिबग आउटपुट प्रिंट करने में शामिल होने का कारण यह है कि यह आपको अपने कोड में कोई त्रुटियां खोजने में मदद करता है और उन्हें ठीक करने में मदद करता है।
+Kabhi kabhi hamare code me kuch gadbad ho jati hai aur hame pata nahi chalta ki problem kaha hai. Debug output print karne se hum apne code ki execution flow ko track kar sakte hai aur sahi jagah par sahi value aa rahi hai ya nahi, isse hamare code ko debug karna aasan ho jata hai. Debug output printing ke through hum apne code ka performance bhi improve kar sakte hai.
 
-# कैसे करें
+## How To
 
-आप अपने कोड में डिबग आउटपुट प्रिंट करने के लिए `fmt.Println()` फ़ंक्शन का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक में आपको इसका एक उदाहरण दिया गया है:
+Debug output printing Go programming language me bahut hi easy hai. Ham `fmt` package ka use karke simple `Println()` function ka use kar sakte hai. Iske liye hame `import` statement me `fmt` package ko add karna hoga.
+
+Iske baad hame apne code ke kisi bhi jagah par `Println()` function ka use karke desired value print kar sakte hai. Isse hame pata chalta hai ki code kis point par execute ho raha hai aur uss point par sahi value aa rahi hai ya nahi.
 
 ```Go
-package main
-
 import "fmt"
 
-func main() {
-    fmt.Println("Hello, World!")
-}
+fmt.Println("Hello World!")
 ```
 
-इस कोड को कंपाइल और चलाते हुए आप नीचे दिए गए आउटपुट को देख सकते हैं:
+Is code snippet me `Println()` function `fmt` package ka ek part hai jisse hum apne console me output print kar sakte hai. Agar hume multiple variables ka value check karna hai to hum `Printf()` function ka use kar sakte hai.
 
+```Go
+import "fmt"
+
+age := 21
+name := "John"
+
+fmt.Printf("My name is %s and I am %d years old.", name, age)
 ```
-Hello, World!
-```
 
-# गहराई में
+Is tarah se hum `Println()` aur `Printf()` function ka use karke apne code me debug output print kar sakte hai. Isse hame code ke sahi execution flow ka pata chalta hai.
 
-डिबग आउटपुट प्रिंट करने में गहराई में, इसके अन्य विकल्पों के बारे में अधिक जानकारी दी गई है जो आपको अपने काम को आसान और अधिक सुविधाजनक बना सकते हैं। आप `fmt.Printf()` फ़ंक्शन का उपयोग अपने वैरिएबल के फॉर्मैट को जानने के लिए कर सकते हैं या `log` पैकेज का इस्तेमाल करके अपने लोग फ़ाइल में डिबग स्टेटमेंट प्रिंट कर सकते हैं। इन अन्य विकल्पों के बारे में और अधिक जानने के लिए, [गो दस्तावेज़ीकरण](https://golang.org/doc/) पर जाएं।
+## Deep Dive
 
-# देखें भी
+Debug output printing ke liye Go language me `fmt` package ke alawa aur bhi bahut sare tools available hai jaise `log` package, `syscall` package, etc. In tools ka use karke hum apne code ke performance ko bhi monitor kar sakte hai.
 
-- [गो दस्तावेज़ीकरण](https://golang.org/doc/)
-- [गो छोड़ (Go Playground)](https://play.golang.org/)
-- [गो स्रोत कोड देखने का विधि (Visual Studio Code)](https://code.visualstudio.com/docs/languages/go)
+Debug output printing ka main goal hai hume pata chal jaye ki code kis point par execute ho raha hai, uss point par sahi value aa rahi hai ya nahi. Isse hum future me code ko improve kar sakte hai aur bugs ko fix kar sakte hai.
+
+## See Also
+
+- [Official Go documentation for fmt package](https://golang.org/pkg/fmt/)
+- [Debugging in Go with log package](https://golangbot.com/debugging-go/)
+- [Using syscall package for debug output printing](https://tutorialedge.net/golang/go-debugging-syscall-package/)

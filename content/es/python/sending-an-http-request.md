@@ -1,5 +1,6 @@
 ---
-title:                "Python: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Python: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Python"
 category:             "Python"
@@ -9,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué enviar una solicitud HTTP es importante
+## Por qué
+En la programación, el envío de solicitudes HTTP es esencial para comunicarse con servidores y obtener datos de la web. Aprender a enviar este tipo de solicitudes te permitirá desarrollar aplicaciones y scripts más potentes y versátiles.
 
-Enviar una solicitud HTTP es una parte esencial de la programación en Python. Permite a los desarrolladores interactuar con servidores web y obtener información valiosa de manera sencilla y eficiente. Sin esta habilidad, las aplicaciones web no podrían comunicarse con otros sitios y plataformas.
-
-## Cómo enviar una solicitud HTTP en Python
-
-Para enviar una solicitud HTTP en Python, puedes utilizar el módulo `requests`. Primero, importa el módulo en tu código:
-
-```python
+## Cómo hacerlo
+```Python
 import requests
+
+# Ejemplo de solicitud GET
+response = requests.get("https://algunaweb.com/api/usuarios")
+
+# Obtener datos de la respuesta
+data = response.json()
+
+# Ejemplo de solicitud POST con datos
+payload = {"nombre": "Juan", "apellido": "Pérez"}
+response = requests.post("https://algunaweb.com/api/usuarios", data=payload)
 ```
+La librería requests de Python permite realizar solicitudes HTTP de manera sencilla. En el primer ejemplo, estamos realizando una solicitud GET a una API de usuarios y guardando la respuesta en la variable "data". En el segundo ejemplo, estamos haciendo una solicitud POST con datos en formato JSON y guardando la respuesta en la variable "response". Además, es importante tener en cuenta que también se pueden enviar solicitudes PUT, PATCH, DELETE, entre otras, dependiendo de las necesidades de tu aplicación.
 
-Luego, tienes que especificar la URL a la que deseas enviar la solicitud. En este ejemplo, utilizaremos la API de GitHub para obtener información de usuario:
+## Profundizando
+Detrás de cada solicitud HTTP hay un proceso complejo que implica el uso de protocolos de red y encabezados que facilitan la comunicación entre el cliente y el servidor. Al enviar una solicitud HTTP, se establece una conexión TCP con el servidor y se envía una solicitud con una serie de encabezados para especificar el tipo de solicitud y los datos que se están enviando. El servidor, a su vez, responde con una serie de encabezados y el cuerpo de la respuesta que contiene los datos solicitados.
 
-```python
-url = "https://api.github.com/users/juansmith"
-```
-
-Ahora, puedes enviar una solicitud utilizando el método `get()` del módulo `requests`:
-
-```python
-response = requests.get(url)
-```
-
-Finalmente, puedes obtener el resultado de la solicitud a través del atributo `text`. En este caso, mostraremos el nombre de usuario y la biografía del usuario en la consola:
-
-```python
-print(response.json()["login"])
-# output: juansmith
-
-print(response.json()["bio"])
-# output: Full-stack developer and Python enthusiast.
-```
-
-¡Y eso es todo! Ahora, ya sabes cómo enviar una solicitud HTTP en Python.
-
-## Profundizando en las solicitudes HTTP
-
-Una solicitud HTTP es simplemente una petición de información a un servidor web. Puedes personalizar tu solicitud para obtener diferentes tipos de datos, como JSON, HTML, imágenes, etc. También puedes agregar parámetros y encabezados a tu solicitud para filtrar los resultados.
-
-Además, es importante considerar los códigos de estado de respuesta que devuelve el servidor web. Por ejemplo, el código 200 significa que la solicitud se completó con éxito, mientras que el código 404 indica que no se encontró la información solicitada.
-
-Puedes explorar más sobre las solicitudes HTTP y su uso en la documentación de `requests` y en otros recursos en línea.
+Existen diferentes tipos de solicitudes HTTP, como GET, POST, PUT, PATCH, DELETE, entre otras. Cada una de ellas tiene un propósito específico y se utiliza en diferentes situaciones. Además, también es importante mencionar que existen códigos de estado que indican si la solicitud fue exitosa, si hubo algún error o si es necesario realizar alguna acción adicional.
 
 ## Ver también
-
-- [Documentación de `requests`](https://requests.readthedocs.io/en/master/)
-- [Tutorial de HTTP para principiantes](https://www.tutorialspoint.com/http/index.htm)
-- [Guide to Python's Requests Library](https://www.dataquest.io/blog/python-API-tutorial/) (en inglés)
+- [Documentación de requests en español](https://requests.readthedocs.io/es/latest/)
+- [Códigos de estado HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+- [Protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)

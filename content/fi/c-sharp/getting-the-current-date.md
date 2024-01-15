@@ -1,6 +1,7 @@
 ---
-title:                "C#: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "C#: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,47 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-
-On monia syitä, miksi C# -ohjelmoijat saattavat tarvita nykyisen päivämäärän tietoa ohjelmassaan. Ehkä he haluavat luoda aikaleimoja tallentamaan tietyn tapahtuman tai tiedoston luomisen päivämäärän, tai ehkä he tarvitsevat nykyisen päivämäärän vertailua varten tulevissa tapahtumissa. Riippumatta siitä, miksi tarvitset nykyisen päivämäärän, tämä blogikirjoitus auttaa sinua saamaan sen käyttäen C# -ohjelmointikieltä.
+Usein tarvitsemme nykyisen päivämäärän ja ajan tietoa sovelluksissamme. Onneksi C# tarjoaa helpon ja tehokkaan tavan saada tämä tieto ohjelmamme käyttöön. 
 
 ## Miten
-
-C# -ohjelmointikielellä on useita tapoja saada nykyinen päivämäärä, ja tässä blogikirjoituksessa keskitymme kahteen yleisimpään tapaan: DateTime-objektin käyttöön ja string-muotoilun avulla.
-
-Käyttämällä DateTime-objektia:
+Tähän löytyy useita tapoja käyttää ohjelman päivämäärä- ja aikatoimintoja. Käytämme tässä esimerkkeinä DateTime-luokkaa ja sen ominaisuuksia. 
 
 ```C#
-DateTime tänään = DateTime.Today;
-Console.WriteLine(tänään);
+// Luodaan uusi DateTime-olio, joka sisältää nykyisen päivämäärän ja ajan
+DateTime nykyinenPvmJaAika = DateTime.Now;
+
+// Voimme myös saada pelkän päivämäärän käyttämällä Date-ominaisuutta
+DateTime nykyinenPvm = nykyinenPvmJaAika.Date;
+
+// Voidaan esimerkiksi tulostaa nykyisen päivämäärän ja ajan konsoliin
+Console.WriteLine("Nykyinen päivämäärä ja aika: " + nykyinenPvmJaAika);
+Console.WriteLine("Nykyinen päivämäärä: " + nykyinenPvm);
 ```
 
-Tämä koodinpätkä luo DateTime-objektin nimeltä "tänään" ja asettaa siihen tämänhetkisen päivämäärän. Sen jälkeen tulostetaan tämä päivämäärä konsoliin. Voit myös muotoilla päivämäärän haluamallasi tavalla käyttämällä "ToString" -metodia:
+**Tulostaa:**
+```
+Nykyinen päivämäärä ja aika: 9/3/2021 11:45:28 AM
+Nykyinen päivämäärä: 9/3/2021 12:00:00 AM
+```
+
+Voimme myös halutessamme muuttaa päivämäärän ja ajan formaattia `ToString()`-metodin avulla.
 
 ```C#
-DateTime tänään = DateTime.Today;
-string muotoiltuPäivämäärä = tänään.ToString("dd.MM.yyyy");
-Console.WriteLine(muotoiltuPäivämäärä);
+// Muutetaan päivämäärän formaatti muotoon pp.kk.vvvv
+string muokattuPvm = nykyinenPvm.ToString("dd.MM.yyyy");
+// Tulostaa: 03.09.2021
+Console.WriteLine(muokattuPvm);
 ```
 
-Tässä koodinpätkässä muotoillaan päivämäärä suomalaiseen tyyliin (päivä, kuukausi, vuosi) ja tulostetaan se konsoliin. Voit myös lisätä ajan sisällyttämällä "hh:mm:ss" muotoilun.
-
-String-muotoilun avulla:
-
-```C#
-string nykyinenPäivämäärä = DateTime.Today.ToShortDateString();
-Console.WriteLine(nykyinenPäivämäärä);
-```
-
-Tässä koodinpätkässä käytetään "ToShortDateString" -metodia, joka palauttaa päivämäärän lyhyessä muodossa. Voit myös käyttää muita string-muotoilun metodeja, kuten "ToLongDateString", joka palauttaa päivämäärän pitkässä muodossa.
-
-## Syvällinen sukellus
-
-C# -kielen DateTime-objekti on erittäin hyödyllinen väline päivämäärän ja ajan käsittelyyn. Siinä on monia hyödyllisiä ominaisuuksia, kuten "Add" ja "Subtract" -metodit, jotka mahdollistavat päivämäärän laskemisen tietyn ajanjakson verran eteen- tai taaksepäin.
-
-Voit myös tarkastella päivämäärien vertailuja, kuten "Equals" ja "Compare" -metodeja, jotka auttavat sinua vertailemaan kahta päivämäärää.
+## Syvällisempi sukellus
+DateTime-luokassa on monia muita hyödyllisiä ominaisuuksia, kuten mahdollisuus hakea tietoja tietystä päivämäärästä tai verrata kahta päivämäärää keskenään. Voit tutustua tarkemmin DateTime-luokkaan Microsoftin virallisella verkkosivustolla: [DateTime-luokka (C#-ohjelmointiopas)](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0).
 
 ## Katso myös
+[C#-ohjelmointiopas (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/csharp/) 
 
-- [DateTime C# -dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8)
-- [C# DateTime Tutorial](https://www.tutorialspoint.com/csharp/csharp_datetime.htm)
-- [C# -ohjelmointikielen kotisivu](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[C# DateTime - Documentation (W3Schools)](https://www.w3schools.com/cs/cs_date_time.asp) 
+
+[C# DateTime - How to format DateTime? (Web Code Geeks)](https://www.webcodegeeks.com/c-sharp/datetime-convert-format-csharp/)

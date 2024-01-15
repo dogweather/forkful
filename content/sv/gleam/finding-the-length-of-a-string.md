@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Gleam: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,33 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Så varför skulle man vilja engagera sig i att hitta längden på en sträng? Det kan verka som en enkel uppgift, men i verkligheten kan det vara mycket användbart i många programmeringssituationer. Att kunna bestämma längden på en sträng är viktigt för att hantera textdata och för att genomföra olika algoritmer som kräver specificerade teckenmängder.
+Att hitta längden på en sträng är en grundläggande uppgift för alla programmerare, oavsett vilket språk de använder. Att kunna bestämma längden på en sträng är viktigt för att kunna manipulera och bearbeta data på ett effektivt sätt.
 
-## Hur man gör det
+## Hur
 
-För att hitta längden på en sträng i Gleam, kan du använda den inbyggda funktionen ```Gleam.length(sträng)```. Det första steget är att skapa en variabel som lagrar strängen du vill undersöka. Sedan kan du använda funktionen ```length``` och ange strängen som argument.
+För att hitta längden på en sträng i Gleam behöver du bara använda dig av den inbyggda funktionen `String.length()`. Här är ett exempel på hur du kan använda denna funktion:
 
 ```Gleam
-fn hitta_längd(sträng) {
-    längd = Gleam.length(sträng)
-    IO.print("Längden på " ++ sträng ++ " är " ++ Gleam.toString(length) ++ " tecken.")
-}
-
-hitta_längd("Hej världen")
+let str = "Hej, världen!"
+let length = String.length(str)
 ```
 
-Output: "Längden på Hej världen är 11 tecken."
+I det här exemplet skapas en variabel `str` som innehåller strängen "Hej, världen!" Sedan kallas `String.length()` funktionen med `str` som input, och resultatet tilldelas till en variabel `length`. Om vi nu skriver ut värdet på `length` kommer vi att få resultatet 13, eftersom detta är längden på vår sträng.
 
 ## Djupdykning
 
-Det finns en hel del bakom kulisserna när det gäller att hitta längden på en sträng. I de flesta fall behöver programmerare inte oroa sig för dessa detaljer, men det finns några saker som är värda att nämna.
+I bakgrunden är en sträng i Gleam egentligen bara en lista av tecken som representerar varje enskilt tecken i strängen. Därför kan vi också hitta längden på en sträng genom att använda oss av listfunktionen `List.length()`:
 
-Först och främst kräver funktionen ```length``` att strängen som matas in är en Unicode-sträng. Om den inte är det, kommer funktionen att returnera en felmeddelande. Detta beror på att Unicode-tecken kan vara mer än 1 byte långa, vilket påverkar längden på en sträng. Detta är speciellt viktigt att tänka på när man arbetar med flerspråkiga eller multibyte-teckenkoder.
+```Gleam
+let str = "Hej, världen!"
+let length = str
+  |> String.to_list
+  |> List.length
+```
 
-Det är också värt att nämna att funktionen inte räknar antalet ord i en sträng, utan bara antalet tecken. Så om du vill räkna antalet ord i en mening, måste du först dela upp strängen med hjälp av mellanslag eller andra tecken och sedan räkna längden på den resulterande lista.
+I detta exempel konverteras strängen först till en lista av tecken med hjälp av `String.to_list` funktionen. Sedan används `List.length` för att räkna antalet tecken i listan, vilket ger oss längden på strängen.
 
 ## Se även
 
-- Gleams officiella dokumentation om inbyggda funktioner: https://gleam.run/documentation/stdlib.html#length
-- En utförlig förklaring av Unicode och multibyte-teckenkoder: https://www.utf8-chartable.de/
-- En tutorial om hur man hanterar textdata i Gleam: https://gleam.run/tutorials/strings.html
+För mer information om strängar och andra datatyper i Gleam, se följande länkar:
+
+- [Officiell Gleam dokumentation](https://gleam.run/documentation/index.html)
+- [Gleam exempel](https://github.com/gleam-lang/gleam/tree/master/examples)
+- [Gleam community forum](https://forum.gleam.run/)

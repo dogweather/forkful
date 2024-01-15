@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Haskell: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,67 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć! W dzisiejszych czasach, przesyłanie zapytań HTTP jest nieodłączną częścią niemal każdej aplikacji lub strony internetowej. W tym krótkim wpisie, dowiesz się, dlaczego jest tak ważne, jak to zrobić oraz jak działa w głębi.
-
 ## Dlaczego
 
-Wysyłanie zapytań HTTP jest niezbędnym narzędziem w dzisiejszym świecie internetu. Dzięki nim, aplikacje mogą komunikować się ze sobą, wymieniać informacje oraz pobierać zasoby z serwera. Bez tego, większość stron internetowych nie działałaby poprawnie.
+Jeśli pracujesz z siecią lub tworzysz aplikację internetową, możliwe, że w pewnym momencie będziesz musiał wysłać zapytanie HTTP. Napisanie kodu w języku Haskell pozwoli Ci na wykorzystanie silnych typów i funkcjonalnego podejścia, co ułatwi i uprzyjemni pracę z zapytaniami HTTP.
 
 ## Jak to zrobić
 
-W Haskellu, wysyłanie zapytań HTTP jest możliwe dzięki bibliotece `http-conduit`. Możemy to zrobić w prosty sposób, używając funkcji `httpLBS`. W poniższym przykładzie, wyślemy zapytanie GET do strony Stack Overflow i wyświetlimy odpowiedź w konsoli.
+Aby wysłać zapytanie HTTP w Haskell, potrzebujesz użyć narzędzia o nazwie `http-client`. Przykład kodu poniżej pokazuje, jak stworzyć GET request do strony Google i wypisać otrzymaną odpowiedź:
 
 ```Haskell
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
+import Network.HTTP.Client
 
+main :: IO ()
 main = do
-  response <- httpLBS "https://stackoverflow.com"
-  print $ responseBody response
+  manager <- newManager defaultManagerSettings
+  request <- parseUrlThrow "http://www.google.com"
+  response <- httpLbs request manager
+  putStrLn $ "Odpowiedź: " ++ show response
+```
+Output:
+```
+Odpowiedź: Response {responseStatus = Status {statusCode = 200, statusMessage = "OK"}, responseVersion =HTTP/1.1, responseHeaders = [("Content-Type","text/html; charset=ISO-8859-1"),("Date","Tue, 16 Feb 2021 00:00:00 GMT"),("Server","Google Frontend"),("Content-Length","12345")], responseBody = " ..." }
 ```
 
-### Wyjście:
+Możesz także dodać dodatkowe informacje do swojego requestu, np. nagłówki czy parametry. Szczegółowe informacje na ten temat znajdziesz w dokumentacji `http-client`.
 
-```HTML
-<!doctype html>
-<html itemscope="" itemtype="http://schema.org/QAPage" lang="pl">
-  <head>
-    <title>Stack Overflow</title>
-    ...
-  </head>
-  <body class="home-page unified-theme">
-    ...
-  </body>
-</html>
-```
+## Dogłębnie
 
-W powyższym przykładzie, użyliśmy `qualified` dołączenia modułu `Data.ByteString.Lazy` aby uniknąć konfliktów nazw z innymi modułami. Po wykonaniu zapytania, otrzymaliśmy cały kod HTML strony w postaci `ByteString` i wydrukowaliśmy go do konsoli.
+Za pomocą narzędzia `http-client`, Haskell oferuje nam wiele możliwości w obsłudze zapytań HTTP. Możemy wysyłać różnego rodzaju requesty, w tym także POST lub PUT, dodawać autoryzację czy konfigurować proxy. Dodatkowo, `http-client` jest wyjątkowo wydajny i współpracuje z innymi bibliotekami, np. `conduit` czy `cookie`.
 
-## Deep Dive
-
-Wysyłanie zapytań HTTP może wydawać się proste, ale istnieje wiele szczegółów, które warto poznać. Na przykład, możemy dostosować nasze zapytanie dodając nagłówki lub zmieniając metodę zapytania.
-
-```Haskell
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
-
-main = do
-  request <- parseUrlThrow "https://postman-echo.com/post"
-  let request' = setRequestMethod "POST" $ setRequestHeader "Content-Type" ["application/json"] request
-  response <- httpLBS request'
-  print $ responseBody response
-```
-
-### Wyjście:
-
-```JSON
-{"args":{},"data":"","files":{},"form":{},"headers":{"x-forwarded-proto":"https","x-forwarded-port":"443","host":"postman-echo.com","content-type":"application/json","content-length":"0","accept-encoding":"gzip"},"json":null,"url":"https://postman-echo.com/post"}
-```
-
-W powyższym przykładzie, zmieniliśmy metodę zapytania na `POST` oraz dodaliśmy nagłówek `"Content-Type"` z wartością `"application/json"`. Teraz, możemy wysyłać zapytania z danymi JSON i otrzymywać odpowiedzi w formacie JSON.
+Jednak warto pamiętać, że narzędzie to obsługuje wyłącznie synchroniczne zapytania. Jeśli potrzebujesz wykorzystać asynchroniczne requesty, powinieneś spojrzeć w stronę biblioteki `http-conduit`.
 
 ## Zobacz również
 
-- [Dokumentacja biblioteki `http-conduit`](https://hackage.haskell.org/package/http-client)
-- [Tutorial o wysyłaniu zapytań HTTP w Haskellu](https://www.stackbuilders.com/tutorials/haskell/http-requests/)
-- [Blog o rozwoju aplikacji webowych w Haskellu](https://www.haskell.org/wiki/Haskell_web_programming)
+- Dokumentacja `http-client`: https://hackage.haskell.org/package/http-client
+- Przykładowe kody z nastawieniami do requestów: https://github.com/snoyberg/http-client/tree/master/http-client-tls
+- Dokumentacja `http-conduit`: https://www.stackage.org/package/http-conduit/docs/Network-HTTP-Conduit.html

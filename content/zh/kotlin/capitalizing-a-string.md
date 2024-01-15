@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 将字符串转换为大写"
-simple_title:         "将字符串转换为大写"
+title:                "将字符串大写化"
+html_title:           "Kotlin: 将字符串大写化"
+simple_title:         "将字符串大写化"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,54 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-当我们需要将字符串的首字母变成大写时，就需要用到capitalizing。这可以在展示数据或创建用户界面时非常有用。
+在编程中，我们经常需要将文本中的单词首字母大写，这样可以使文本更整洁、易于阅读。使用Kotlin的capitalize()函数可以轻松实现这一目的，让我们来看看如何使用它吧！
 
-## 如何做
+## 如何操作
 
-首先，我们需要定义一个字符串变量：
-
-```Kotlin
-val text = "hello world"
-```
-
-然后，我们可以使用Kotlin中的```.capitalize()``` 方法来将字符串的首字母大写：
+使用capitalize()函数很简单，首先需要创建一个String类型的变量，然后调用capitalize()方法即可将其首字母大写。下面是一个示例代码和输出：
 
 ```Kotlin
-val capitalizedText = text.capitalize()
+val str = "kotlin is a fun and easy language"
+println(str.capitalize()) //输出：Kotlin is a fun and easy language
 ```
 
-当我们打印出```capitalizedText```时，输出为 ```Hello world```。如果我们想要将整个字符串都变成大写，可以使用```upperCase```方法：
+同时，capitalize()函数也可以接受一个参数，用于指定首字母大写的规则，比如只将第一个单词的首字母大写，或者只将第一个单词的第一个字符大写。下面是一个示例代码和输出：
 
 ```Kotlin
-val upperCaseText = text.upperCase()
+val str = "kotlin is a fun and easy language"
+println(str.capitalizeWords()) //输出：Kotlin Is A Fun And Easy Language
+println(str.capitalizeWords(' ')) //输出：Kotlin is a fun and easy language
 ```
-
-这将输出 ```HELLO WORLD```。另外，我们也可以使用 ```lowerCase``` 方法将字符串变成小写。
 
 ## 深入了解
 
-在Kotlin中，我们可以通过创建一个自定义扩展函数来实现字符串capitalizing的方法。比如，我们可以创建一个新的函数```customCapitalize()```：
+了解capitalize()函数更多高级用法，可以参考官方文档，链接如下：
 
-```Kotlin
-fun String.customCapitalize() : String {
-     return this[0].toUpperCase() + this.substring(1).toLowerCase()
-}
-```
-
-然后，我们就可以对任意字符串进行capitalizing了：
-
-```Kotlin
-val customText = text.customCapitalize()
-```
-
-这个函数会首先将首字母变成大写，然后将剩余字母变成小写。这样，无论输入的字符串是什么，我们都可以得到正确的capitalized版本。
-
-## 看看这些
-
-- [Kotlin文档](https://kotlinlang.org/docs/reference/capitalization.html)
-- [Kotlin String工具类](https://blog.mindorks.com/understanding-kotlin-string-utils)
+- [Kotlin官方文档](https://kotlinlang.org/docs/reference/)：包含capitalize()函数的具体介绍及其他String类的相关函数。
+- [Kotlin Playground](https://play.kotlinlang.org/)：一个在线的Kotlin代码编辑器，可以用来练习和测试capitalize()函数的使用。
+- [Kotlin中国社区](https://kotlincn.net/)：一个专注于分享Kotlin技术文章和资源的社区，可以在这里找到更多关于Kotlin的内容。
 
 ## 参考链接
 
-- [Why strings capitalization?](https://cmake.org/pipermail/cmake-developers/2002-October/000350.html)
-- [How to capitalize a string in Kotlin?](https://stackoverflow.com/questions/43035202/how-to-capitalize-a-string-in-kotlin)
+- [Kotlin官方文档](https://kotlinlang.org/docs/reference/)
+- [Kotlin Playground](https://play.kotlinlang.org/)
+- [Kotlin中国社区](https://kotlincn.net/)

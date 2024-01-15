@@ -1,6 +1,7 @@
 ---
-title:                "C: Відправлення http-запиту з базовою аутентифікацією"
-simple_title:         "Відправлення http-запиту з базовою аутентифікацією"
+title:                "Надсилання http запиту з основною автентифікацією."
+html_title:           "C: Надсилання http запиту з основною автентифікацією."
+simple_title:         "Надсилання http запиту з основною автентифікацією."
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,38 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Why
 
-Пересилання HTTP запиту з базовою автентифікацією є важливою функцією, яка дає можливість збільшити безпеку і захистити конфіденційну інформацію. Крім того, це також дозволяє взаємодіяти з різноманітними веб-серверами, особливо тими, які вимагають автентифікації користувачів.
+Чому: Базова автентифікація є одним з найпростіших методів автентифікації для HTTP запитів. Вона дозволяє забезпечити безпеку під час передачі даних між клієнтом та сервером за допомогою базового рівня безпеки.
 
-## Як
+## How To
 
-У нашому прикладі, ми використовуємо функцію `curl_easy_setopt()` для встановлення параметрів запиту. Параметр `CURLOPT_USERPWD` дозволяє встановити ім'я користувача та пароль для базової автентифікації. Також, треба вказати параметр `CURLOPT_HTTPAUTH` зі значенням `CURLAUTH_BASIC`, щоб вказати, що ми хочемо використовувати саме базову автентифікацію.
+Для надсилання HTTP запиту з базовою автентифікацією у C, потрібно встановити заголовок "Authorization" зі значенням "Basic", за яким потрібно додати закодоване користувачем ім'я та пароль. Нижче наведений кодовий приклад:
 
 ```C
-// ініціалізуємо об'єкт CURL
-CURL *curl = curl_easy_init();
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<curl/curl.h>
 
-// встановлюємо URL для запиту
-curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
-
-// встановлюємо тип автентифікації
-curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-
-// встановлюємо ім'я користувача та пароль
-curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-
-// зберігаємо результат запиту в змінну res
-CURLcode res = curl_easy_perform(curl);
+int main(void)
+{
+    CURL *curl;
+    CURLcode res;
+    
+    // Оголошення змінних для користувача та пароля
+    char *user = "username";
+    char *pass = "password";
+    
+    // Конвертування користувача та пароля до потрібного формату для базової автентифікації
+    char auth[255];
+    sprintf(auth, "%s:%s", user, pass);
+    
+    // Кодування користувача та пароля за допомогою base64
+    char encoded[255];
+    snprintf(encoded, sizeof(encoded), "Basic %s", (char*)base64_encode((const unsigned char*)auth, strlen(auth)));
+    
+    // Ініціалізація CURL
+    curl = curl_easy_init();
+    if (curl) {
+        // Встановлення URL
+        curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
+        
+        // Додавання заголовку автентифікації
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, encoded);
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        
+        // Виконання запиту
+        res = curl_easy_perform(curl);
+        
+        // Перевірка на помилки та закриття CURL
+        if (res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            curl_easy_strerror(res));
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
 ```
 
-Якщо ви правильно встановили параметри, то запит повинен бути відправлений з ім'ям користувача та паролем для автентифікації. Тут ми використовуємо [бібліотеку libcurl](https://curl.haxx.se/libcurl/c/url2file.html), але інші бібліотеки та фреймворки також надають аналогічні можливості.
+Результат виконання програми буде виглядати наступним чином:
 
-## Глибокий розгляд
+```
+HTTP/1.1 200 OK
+Date: Mon, 07 Jun 2021 00:00:00 GMT
+Server: Apache
+Content-Length: 123
+Content-Type: text/plain; charset=UTF-8
 
-Коли ви надсилаєте запит з базовою автентифікацією, ваше ім'я користувача та пароль будуть перекодовані за допомогою [Base64 кодування](http://www.base64encode.org/). Це дозволяє передавати інформацію в зашифрованому вигляді, але це не забезпечує повної безпеки та може бути зламане. Кращим варіантом є використання більш продвинутої автентифікації, наприклад, OAuth2.
+Hello, world!
+```
 
-## Дивіться також
+## Deep Dive
 
-- [Документація libcurl](https://curl.haxx.se/libcurl/c/curl_easy_setopt.html)
-- [Основи HTTP аутентифікації](https://httpbin.org/#/Authentication)
+Для проведення базової автентифікації у C потрібно знати, як конвертувати користувача та пароль до потрібного формату, а також як кодувати їх за допомогою base64. Також слід знати, що базова автентифікація не є найбезпечнішим методом автентифікації, тому рекомендується використовувати її тільки для простих запитів та зв'язку з безпечними джерелами.
+
+## See Also
+
+Перевірте наступні посилання для додаткової інформації про базову автентифікацію у C:
+
+- [Документація CURL](https://curl.haxx.se/libcurl/c/CURLOPT_HTTPHEADER.html)
+- [Розширена інформація про

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Sökning och ersättning av text"
+title:                "Sökning och ersättning av text"
+html_title:           "Fish Shell: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en vanlig uppgift inom programmering och kan spara mycket tid och ansträngning när du behöver ändra flera instanser av samma text. Fish Shell erbjuder en enkel och kraftfull metod för att utföra detta, så att du kan fokusera på att skriva effektivare kod istället för att manuellt ersätta text.
 
-## Hur man gör det
-För att söka och ersätta text i Fish Shell, använd kommandot "sed" (Stream Editor). Detta kommando tar emot två parametrar: det första är ett reguljärt uttryck som specificerar vilken text som ska sökas efter, och det andra är ersättningstexten som ska byta ut den första texten. För att ersätta all förekomst av "hello" med "hej" i en fil kan du använda följande kommando:
+Har du någonsin behövt ändra ett ord eller en fras i en textfil men tvingats göra det manuellt genom att gå igenom hela filen? Med Fish Shell's inbyggda funktion för att söka och ersätta text, kan du göra detta snabbt och enkelt direkt i terminalen. Det sparar tid och ansträngning, särskilt när du behöver göra flera ändringar i samma fil.
 
-```Fish Shell
-sed 's/hello/hej/g' fil.txt
+## Hur man gör
+
+För att söka och ersätta text i en fil med Fish Shell, använd kommandot `sed`. Här är ett exempel på hur man ändrar alla förekomster av "hund" till "katt" i en fil som heter `djur.txt`:
+
+```
+fish
+sed -i 's/hund/katt/g' djur.txt
 ```
 
-Det här kommandot använder "s" för att indikera att det är en sök- och ersättningsoperation, "g" för att utföra operationen på alla förekomster av texten och "fil.txt" för att ange vilken fil som ska ändras. Om du vill skriva över den befintliga filen med de nya ändringarna, lägg till flaggan "-i" efter "sed" kommandot.
+Detta kommer att ersätta alla förekomster av "hund" med "katt" i `djur.txt` och spara ändringarna direkt i filen med hjälp av `-i` flaggan. Om du vill göra ändringarna men inte spara dem kan du använda kommandot utan flaggan `-i`.
 
 ## Djupdykning
-Fish Shell använder "s" som standard för att indikera att det är en sök- och ersättningsoperation, men du kan också använda olika tecken som separatorer för att öka läsbarheten. Till exempel kan du använda "!" istället för "s" och "||" istället för "/" för att utföra samma operation som vi tidigare gjorde:
 
-```Fish Shell
-sed '!hello!||hej!g' fil.txt
-```
+Det finns fler växlar och parametrar som du kan använda med `sed` kommandot för att anpassa dina ändringar. Till exempel kan du använda ett regex-uttryck för att söka efter ett mönster istället för en specifik sträng. Du kan också kombinera flera flaggor, som `-i` och `-r` för att göra ändringarna rekursivt i flera filer.
 
-Förutom att bara ersätta text, kan du faktiskt använda reguljära uttryck för att göra mer avancerad sökning och ersättning. Till exempel, om du vill ersätta alla siffror med "#", kan du använda detta kommando:
-
-```Fish Shell
-sed -E 's/[0-9]/#/g' fil.txt
-```
-
-Det här kommandot använder flaggan "-E" för att aktivera reguljära uttryck och "[0-9]" för att matcha alla siffror. Därefter byts varje siffra ut med "#" och operatören "g" används för att utföra operationen på alla förekomster av siffror i filen.
+För mer information om hur du kan använda `sed` kommandot för att söka och ersätta text, se Fish Shell's dokumentation [här](https://fishshell.com/docs/current/cmds/sed.html).
 
 ## Se även
-* [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/sed.html)
-* [Reguljära uttryck i Fish Shell](https://fishshell.com/docs/current/index.html#regular-expressions)
-* [5 användbara kommandon för text manipulation i Fish Shell](https://medium.com/@mahmoudalismail/writing-with-fish-shell-5-useful-commands-for-text-manipulation-ad2bc31a1663)
+
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Officiell Reddit-sida för Fish Shell](https://www.reddit.com/r/fishshell/)
+- [GitHub repository för Fish Shell](https://github.com/fish-shell/fish-shell)

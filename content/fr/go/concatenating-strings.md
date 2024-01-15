@@ -1,6 +1,7 @@
 ---
-title:                "Go: Concaténer des chaînes de caractères"
-simple_title:         "Concaténer des chaînes de caractères"
+title:                "Concaténation de chaînes de caractères"
+html_title:           "Go: Concaténation de chaînes de caractères"
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Dans la programmation Go, il est très courant de devoir manipuler des chaînes de caractères et de devoir les concaténer. La concaténation de chaînes peut être utile lors de la création de messages personnalisés, l'affichage de données utilisateur ou la construction de requêtes HTTP. Dans cet article, nous allons découvrir comment concaténer des chaînes en utilisant Go.
+## Pourquoi
+
+Sincèrement, as-tu déjà eu besoin de combiner plusieurs morceaux de texte pour en faire un seul ? Si oui, alors tu devrais savoir à quel point cette tâche peut être fastidieuse et répétitive. Heureusement, Go (la version actuelle) offre une solution simple et efficace pour concaténer des chaînes de caractères.
 
 ## Comment faire
-Il existe plusieurs façons de concaténer des chaînes en Go. La première méthode consiste à utiliser l'opérateur "+" pour combiner deux chaînes ensemble. Voyons un exemple de code:
+
+Pour concaténer des chaînes de caractères en Go, tu peux utiliser l'opérateur de concaténation `+` ou la fonction `strings.Join()`. Regardons un exemple:
 
 ```Go
-prenom := "Jean"
-nom := "Dupont"
-concatene := prenom + nom
+nom := "Jean"
+age := 30
+
+// Avec l'opérateur de concaténation
+phrase := "Bonjour, je m'appelle " + nom + " et j'ai " + string(age) + " ans."
+fmt.Println(phrase) // "Bonjour, je m'appelle Jean et j'ai 30 ans."
+
+// Avec la fonction strings.Join()
+morceaux := []string{"Bonjour, je m'appelle", nom, "et j'ai", string(age), "ans."}
+phrase := strings.Join(morceaux, " ")
+fmt.Println(phrase) // "Bonjour, je m'appelle Jean et j'ai 30 ans."
 ```
 
-Dans cet exemple, nous définissons deux chaînes distinctes pour le prénom et le nom, puis nous utilisons l'opérateur "+" pour les concaténer en une seule chaîne. Si nous imprimons cette variable "concatene", nous obtenons "JeanDupont" en sortie.
+Dans cet exemple, nous avons d'abord déclaré deux variables contenant notre nom et notre âge. Ensuite, nous avons utilisé l'opérateur de concaténation pour créer une phrase en combinant ces valeurs avec des chaînes de caractères littérales. Enfin, nous avons utilisé la fonction `strings.Join()` en lui passant un tableau de chaînes de caractères et un séparateur pour créer la même phrase.
 
 ## Plongée en profondeur
-Il est important de noter que l'utilisation de "+" pour concaténer des chaînes peut être très coûteuse en termes de performance, surtout lorsque vous travaillez avec de grandes chaînes de caractères. Une meilleure approche consiste à utiliser le type de données "bytes.Buffer". Voyons un exemple:
 
-```Go
-var concatene bytes.Buffer
-concatene.WriteString("Bonjour")
-concatene.WriteString("tout le monde")
-fmt.Println(concatene.String())
-```
+En Go, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois qu'elles ont été créées. Ainsi, lorsqu'on concatène des chaînes de caractères, on crée en réalité une nouvelle chaîne de caractères contenant la combinaison des différentes chaînes.
 
-Avec cette méthode, nous créons un "Buffer" et nous utilisons la méthode "WriteString" pour ajouter des chaînes à celui-ci. Enfin, nous imprimons la chaîne concaténée en utilisant la méthode "String()". Cette approche est beaucoup plus efficace en termes de performances et est recommandée lors de la manipulation de grandes chaînes.
+Il est important de noter que l'utilisation répétée de l'opérateur `+` pour concaténer des chaînes de caractères peut entraîner une baisse de performance, car à chaque concaténation, une nouvelle chaîne de caractères est créée. Il est donc recommandé d'utiliser la fonction `strings.Join()` lorsque l'on a besoin de concaténer un grand nombre de chaînes de caractères.
 
-# Voir aussi
-Si vous souhaitez en savoir plus sur les méthodes de manipulation de chaînes en Go, n'hésitez pas à consulter les ressources suivantes:
-- La documentation officielle sur les chaînes en Go: https://golang.org/pkg/strings/
-- Un tutoriel sur les différents types de données en Go, y compris les chaînes: https://golangbot.com/types/
-- Un article sur les performances de la concaténation de chaînes en Go: https://www.calhoun.io/concatenating-strings-in-go/
+## Voir aussi
+
+- [La documentation officielle de Go sur les chaînes de caractères](https://golang.org/pkg/strings/)
+- [Un tutoriel sur Go pour les débutants](https://gobyexample.com/)

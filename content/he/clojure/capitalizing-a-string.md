@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: שימוש ראשוני במחרוזת"
-simple_title:         "שימוש ראשוני במחרוזת"
+title:                "קיפוטיליזציה של מחרוזת"
+html_title:           "Clojure: קיפוטיליזציה של מחרוזת"
+simple_title:         "קיפוטיליזציה של מחרוזת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-כתיבת פונקציה המקפיצה (capitalizing) מחרוזת היא נפוצה בתחום התכנות הפונקציונלי של קלוז'ר (Clojure). כתבו כאן 1-2 משפטים סימפלים שמסבירים לקוראים למה בכלל מפעילים פעולה כזו.
+##למה
+ כתיבת קוד בפורמט Clojure כולל השתמשות בפונקציות המטרה שלהן היא לסייע בטיפול ועיבוד נתונים. כאחד מפורמטי התכנות המודרניים, Clojure מציע כלים נוחים עבור מתכנתים לפתור בעיות בדרך יעילה וקצרה.
 
-## איך לעשות
-נדגים כאן דוגמאות של קוד קלוז'ר (Clojure) הכוללת מקפיצת מחרוזת תוך שימוש בפונקציה `clojure.string/capitalize`, וכן את הפלט (output) של הפונקציה.
-```Clojure
-(defn capitalize-string [text]
-  (clojure.string/capitalize text))
+##איך לעשות
+בקוד שלהלן נדגים איך לבצע קפיטליזציה (שינוי התווים הראשונים לאותיות גדולות) של מחרוזת ב-Clojure:
+``` Clojure
+(defn capitalize-string [s]
+  (clojure.string/upper-case-first s))
 
-(capitalize-string "שלום עולם") ; מחזיר "שלום עולם"
+(capitalize-string "hello world")
 
-(capitalize-string "hello world") ; מחזיר "Hello world"
+; Output: "Hello world"
 ```
+ניתן לראות שהפונקציה מקבלת מחרוזת כארגומנט ומחזירה את אותה המחרוזת עם האות הראשונה נעלמת וה-W מוחלפת באות גדולה. פונקציית הקפיטליזציה הזו מובנת מראש וניתנת לשימוש בפורמט Clojure.
 
-## יירוד לפרטים
-הפונקציה `clojure.string/capitalize` מחזירה את המחרוזת המקורית עם התחילית כתובה באות גדולה. אם התחילית כבר הייתה כתובה באות גדולה, הפעולה לא תשנה כלום. בנוסף, הפונקציה תתמוך בכל התחיליות המוקריות וההצגה המוחלטת של האופניים הבינלאומיות.
+##עיון מעמיק
+אותו תוכן ניתן לקרוא בעזרת הפונקציה `name` המקבלת משתנה ומחזירה את שם המשתנה בפורמט :keyword (=: בברירת מחדל).
+לדוגמה, אם נרצה לקפיטליזציה של המחרוזת "hello world" על ידי שימוש בפונקציית `name`, הקוד יראה כך:
+```Clojure
+(defn capitalize-string [s]
+  (let [first-char (name (first s))
+        rest-chars (subs s 1)]
+    (str/upper-case first-char rest-chars)))
 
-## ראה גם
-למידע נוסף על הפונקציה `clojure.string/capitalize` ועל תכנות בקלוז'ר (Clojure) בכלל, תוכלו לעיין בקישורים הבאים:
-- [Clojure Docs](https://clojuredocs.org/clojure.string/capitalize) - מדריך מפורט על הפונקציה `clojure.string/capitalize`
-- [מדריך בעברית לתכנות בקלוז'ר](https://www.eval.co.il/קוד-פתוח/תכנות-בקלוז'ר/) - מדריך מפרט ומעודכן על קלוז'ר (Clojure) בעברית
-- [מדריך אינטראקטיבי לקלוז'ר](https://clojurecademy.com/) - אתר מכליל שלבים התואמים לכל הרמות ידע למי שרוצה ללמוד קלוז'ר (Clojure) בצורה אינטראקטיבית.
+(capitalize-string "hello world")
+
+; Output: "Hello world"
+```
+כפי שאנו רואים, ניתן לעשות עיבודים נוספים על מחרוזת נתונה ע"י שימוש בפונקציות שונות עםב-Pure Clojure.
+
+##ראה גם
+- [קורס חינמי של Clojure](https://www.clojure.org)
+- [Clojure: מדריך למתכנתים](https://clojure.org/guides/getting_started)
+- [שפת Clojure](https://en.wikipedia.org/wiki/Clojure)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Scrittura su errore standard"
-simple_title:         "Scrittura su errore standard"
+title:                "Scrivere su errore standard"
+html_title:           "C: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,39 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere a standard error è un modo efficace per visualizzare messaggi di errore o di debug durante l'esecuzione di un programma. Può anche essere utile per registrare informazioni importanti durante l'esecuzione del programma.
+Scrivere su standard error è un'azione importante quando si programma in C, in quanto consente di stampare messaggi di errore e di debug durante l'esecuzione del programma. In questo modo, è possibile identificare e risolvere eventuali problemi nel codice.
 
-## Come Fare
+## Come
 
-Per scrivere a standard error in un programma in linguaggio C, è necessario includere la libreria `<stdio.h>` e utilizzare la funzione `fprintf` con il primo parametro impostato su `stderr`. Ad esempio:
+Per scrivere su standard error in C, è necessario utilizzare la funzione `fprintf()` e specificare `stderr` come primo argomento. Ad esempio:
 
 ```C
-#include <stdio.h>
-
-int main() {
-
-  int numero = 10;
-  
-  // stampa il messaggio di errore a standard error
-  fprintf(stderr, "Il valore di numero è: %d\n", numero);
-  
-  return 0;
-}
+fprintf(stderr, "Questo è un messaggio di errore\n");
 ```
 
-L'output di questo codice sarà:
+Questo codice stamperà il messaggio "Questo è un messaggio di errore" su standard error. È anche possibile specificare il formato del messaggio utilizzando gli stessi parametri della funzione `printf()`.
 
-`Il valore di numero è: 10`
+## Deep Dive
 
-Si noti che il messaggio di errore viene stampato a video solo se si utilizza un compilatore che supporta il concetto di standard error. In caso contrario, verrà stampato a standard output.
+In C, ci sono tre stream standard predefiniti: `stdin`, `stdout` e `stderr`. `stdin` viene utilizzato per leggere input dall'utente, `stdout` viene utilizzato per stampare messaggi di output e `stderr` viene utilizzato per stampare messaggi di errore. Inoltre, `stderr` è solitamente associato al terminale, rendendolo un ottimo modo per visualizzare messaggi di errore durante l'esecuzione del programma.
 
-## Approfondimento
-
-La funzione `fprintf` è molto simile alla funzione `printf` in quanto entrambe vengono utilizzate per stampare un messaggio formattato su uno stream di output. Tuttavia, la differenza principale è che `printf` scrive su standard output, mentre `fprintf` può essere utilizzata per scrivere su qualsiasi stream, inclusi `stdout` e `stderr`.
-
-Inoltre, è importante notare che a differenza della funzione `printf`, `fprintf` richiede un parametro aggiuntivo prima della stringa di formato con il nome dello stream su cui si vuole scrivere.
+È anche importante notare che `stderr` ha una priorità più alta rispetto a `stdout`, il che significa che i messaggi su `stderr` verranno visualizzati prima di quelli su `stdout`, anche se sono stati stampati prima.
 
 ## Vedi Anche
 
-- The difference between fprintf, printf, and sprintf (https://www.quora.com/What-is-the-difference-between-printf-spring-and-fprintf)
-- C programming tutorial (https://www.programiz.com/c-programming)
+- [La funzione fprintf su C Reference](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [Guida a errori e debug su C Programming](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
+- [Stream e file standard su OpenGenus IQ](https://iq.opengenus.org/stream-standard-files-in-c/)

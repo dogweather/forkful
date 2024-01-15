@@ -1,6 +1,7 @@
 ---
-title:                "C: Att göra en sträng stor bokstav"
-simple_title:         "Att göra en sträng stor bokstav"
+title:                "Stor bokstavsättning av en sträng"
+html_title:           "C: Stor bokstavsättning av en sträng"
+simple_title:         "Stor bokstavsättning av en sträng"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,42 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att göra en sträng med stora bokstäver, även kallat "capitalizing a string", kan vara användbart i många olika situationer. Det kan hjälpa till att göra strängen mer läsbar eller för att matcha en specifik formatering som krävs i ett program.
+Att göra första bokstaven i en sträng stor bokstav, eller "capitalize" som det heter på engelska, kan vara användbart i många olika situationer. Det kan öka läsbarheten av koden och hjälpa till att skapa en enhetlig stil.
 
-## Hur man gör det
+## Så här gör du
 
-Att göra en sträng med stora bokstäver är en enkel process som kan göras med hjälp av inbyggda funktioner i C-språket. Här är ett exempel på hur man gör det:
+För att capslockera en sträng i C-programmering, kan du använda funktionen "toupper" från "ctype.h" biblioteket. Här är ett exempel på hur du kan använda den i din kod:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
-int main()
-{
-    char str[20] = "hej världen";
-    
-    // Använda toupper() för att göra bokstäverna stora
-    for(int i = 0; i < strlen(str); i++){
-        str[i] = toupper(str[i]);
-    }
-    
-    printf("%s", str); // Skriva ut "HEJ VÄRLDEN"
-    
-    return 0;
+int main() {
+  char str[] = "hej alla!";
+  
+  for (int i = 0; i < sizeof(str); i++) {
+    str[i] = toupper(str[i]);
+  }
+
+  printf("%s", str);
+  
+  return 0;
 }
 ```
 
-Det finns också andra sätt att göra en sträng med stora bokstäver, som att använda en loop och ändra ASCII-värdena eller använda en funktion som strupr(). Men att använda toupper() är det enklaste sättet i C.
+Output:
+
+```
+HEJ ALLA!
+```
 
 ## Djupdykning
 
-För de som är intresserade av mer avancerade koncept, här är en kort förklaring om hur funktionen toupper() fungerar:
+När man använder "toupper" funktionen, är det viktigt att notera att den bara fungerar för engelska alfabetet. För att capslockera strängar med andra tecken, måste du använda en annan metod, som att konvertera tecknen till deras ASCII kod och sedan manipulera dem.
 
-Alla tecken i ett C-program representeras av en specifierad ASCII-kod, som är en numerisk representation av tecknets position i ASCII-tabellen. Till exempel är ASCII-koden för bokstaven 'a' 97, medan bokstaven 'A' har koden 65. Funktionen toupper() använder sig av ASCII-tabellen för att omvandla små bokstäver till stora bokstäver. Den jämför ASCII-koden för varje tecken i strängen med koden för bokstäverna 'a' till 'z' och om de matchar, ökar den den med -32 för att få motsvarande stor bokstav.
+## Se också
 
-## Se även
-
-- [ASCII-table](http://www.asciitable.com/)
-- [Funktionen strupr() i C](https://www.studytonight.com/c/string-manipulation-functions-in-c/strupr-function)
-- [Ytterligare information om toupper()](http://www.cplusplus.com/reference/cctype/toupper/)
+- [`toupper` funktionen i C](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [ASCII tabell](https://www.asciitable.com/)

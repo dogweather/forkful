@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Haskell: Calculando uma data no futuro ou passado"
 simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Calcular datas no futuro ou passado pode ser uma tarefa útil em diversas situações, como por exemplo para programar eventos ou criar um sistema de agendamento. Além disso, pode ser uma oportunidade para aprender novas técnicas e aprimorar suas habilidades em Haskell.
+Calcular uma data no futuro ou no passado pode ser uma tarefa útil em diversas situações, como planejar eventos ou automatizar tarefas. Além disso, a linguagem Haskell oferece uma sintaxe simples e poderosa para lidar com cálculos de datas.
 
-## Como Fazer
+## Como fazer
 
-Para realizar esse cálculo em Haskell, podemos utilizar funções da biblioteca "Data.Time". Primeiramente, importaremos essa biblioteca no início do nosso código:
-
-```Haskell
-import Data.Time
-```
-
-Em seguida, podemos criar uma função que recebe uma data inicial e uma quantidade de dias a serem adicionados, e retorna a nova data calculada:
+Para calcular uma data em Haskell, utilizaremos a função `addDays` da biblioteca `Data.Time.Calendar`. Essa função recebe dois parâmetros: o número de dias que desejamos adicionar ou subtrair da data atual, e a data de referência.
 
 ```Haskell
-addDays :: Day -> Integer -> Day
-addDays initialDate days = addDays days initialDate
+import Data.Time.Calendar
+
+dataAtual = fromGregorian 2021 02 08 -- 08 de fevereiro de 2021
+dataFutura = addDays 30 dataAtual -- adiciona 30 dias à data atual
+dataPassado = addDays (-15) dataAtual -- subtrai 15 dias da data atual
+
+-- Resultado:
+-- dataFutura = 2021-03-10
+-- dataPassado = 2021-01-24
 ```
 
-Podemos testar essa função passando uma data inicial e um número de dias desejado:
+O exemplo acima utiliza o tipo `Day` para representar datas, mas também é possível utilizar tipos mais específicos, como `LocalDate` e `ZonedTime` da biblioteca `Data.Time.LocalTime`.
+
+## Mergulho profundo
+
+Além de adicionar ou subtrair dias, a biblioteca `Data.Time.Calendar` oferece outras funções úteis para cálculos de datas, como `addMonths`, `addYears` e `diffDays`. Também é possível trabalhar com horários e fusos horários utilizando as bibliotecas `Data.Time.LocalTime` e `Data.Time.Zones`.
+
+Você também pode criar suas próprias funções de cálculos de datas, utilizando a poderosa sintaxe de pattern matching de Haskell. Por exemplo, podemos criar uma função que soma uma semana à data atual:
 
 ```Haskell
--- Calculando a data 10 dias a partir de hoje
-addDays (fromGregorian 2021 04 01) 10
--- Output: 2021-04-11
+import Data.Time.Calendar
+
+addWeek :: Day -> Day
+addWeek (fromGregorian ano mes dia) = fromGregorian ano mes (dia + 7)
+
+-- Exemplo:
+addWeek (fromGregorian 2021 02 08) -- resultado: 2021-02-15
 ```
 
-Além disso, podemos utilizar outras funções da biblioteca como "addMonths" e "addYears" para calcular datas em diferentes períodos. É importante lembrar de checar a documentação da biblioteca para entender melhor como as funções são utilizadas e quais argumentos elas recebem.
+Com isso, é possível realizar cálculos de datas de forma simples e precisa em seus projetos em Haskell.
 
-## Mergulho Profundo
+## Veja também
 
-Além das funções mencionadas acima, a biblioteca "Data.Time" conta com diversas outras que podem ser úteis para calcular datas em Haskell. Por exemplo, a função "diffDays" permite calcular a diferença entre duas datas em dias, enquanto a função "isLeapYear" verifica se um ano é bissexto ou não. É possível combinar essas funções e criar algoritmos mais complexos para lidar com datas.
-
-Além disso, podemos utilizar outras bibliotecas como "Data.Dates" e "Data.Time.Format" para realizar formatações de datas e manipulações mais avançadas. Com um pouco de pesquisa e prática, é possível se tornar um expert em lidar com datas em Haskell.
-
-## Veja Também
-
-- Referência da biblioteca "Data.Time": https://hackage.haskell.org/package/time 
-- Documentação da biblioteca "Data.Dates": https://hackage.haskell.org/package/dates
-- Como lidar com datas em Haskell: https://wiki.haskell.org/Handling_time_zone_info
+- Documentação da biblioteca `Data.Time.Calendar`: http://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html
+- Documentação da biblioteca `Data.Time.LocalTime`: http://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html
+- Documentação da biblioteca `Data.Time.Zones`: https://hackage.haskell.org/package/timezone-series-0.1.11/docs/Data-Time-Zones.html

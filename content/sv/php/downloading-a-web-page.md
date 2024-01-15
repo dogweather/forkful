@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Att ladda ner en webbsida"
-simple_title:         "Att ladda ner en webbsida"
+title:                "Hämta en webbsida"
+html_title:           "PHP: Hämta en webbsida"
+simple_title:         "Hämta en webbsida"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: Det är vanligtvis nödvändigt att ladda ner en webbsida när du behöver visa information från en extern källa, såsom att integrera en integrerad social media-stream på din sida eller hämta data från en API.
+## Varför
+Att ladda ner en webbsida kan vara ett användbart verktyg för webbutvecklare eller datavetare för att analysera innehållet på en specifik sida. Det kan också användas för att skapa backup eller arkiv av en sida.
 
-Hur man gör: För att ladda ner en webbsida i PHP behöver du använda "file_get_contents" -funktionen och ange URL:en till den webbsida du vill hämta. Du kan sedan använda PHPs inbyggda funktioner för att manipulera och visa informationen. Här är ett exempel på kod för att hämta en sida och visa dess innehåll:
+## Hur du gör det
+Det finns flera sätt att ladda ner en webbsida i PHP, men det enklaste sättet är att använda PHPs inbyggda funktion "file_get_contents ()". Till exempel, om vi vill ladda ner den svenska versionen av Wikipedia's huvudsida:
 
 ```PHP
 <?php
-// Hämtar webbsidan
-$webbsida = file_get_contents('https://www.example.com');
+// Hämta innehållet på en sida
+$wiki_sida = file_get_contents("https://sv.wikipedia.org/wiki/Huvudsida");
 
-// Visar innehållet på sidan
-echo $webbsida;
+// Skriv ut innehållet på skärmen
+echo $wiki_sida;
 ?>
 ```
 
-Detta kommer att skriva ut hela webbsidan i din kod, vilket kan vara användbart för testning och felsökning. Du kan också använda olika inbyggda funktioner som "substr" och "strpos" för att manipulera och filtrera den hämtade informationen.
+**Sample output:**
+Textversionen av Wikipedia's huvudsida.
 
-Djupdykning: När du hämtar en webbsida i PHP, hämtar du faktiskt bara dess HTML-kod. Detta innebär att om webbsidan innehåller dynamiskt genererad information, såsom med JavaScript eller server-side scripts, kommer du inte att kunna hämta den med denna metod. I så fall måste du använda en kombination av PHP och JavaScript för att hämta och visa den dynamiska informationen.
+## Djupdykning
+För mer avancerade användare som är intresserade av att ladda ner fler än en sida eller en hel sajt, finns det mer avancerade lösningar såsom att använda "cURL" eller "wget", vilka båda kan hantera nedladdning av flera sidor och hantera eventuella autentiseringsproblem.
 
-Se även: För mer information om att hämta webbsidor i PHP, kolla in dessa resurser:
+Det finns också många tredjepartsbibliotek som kan hjälpa till att ladda ner och hantera webbsidor i PHP, såsom "Guzzle" och "Crawler." Dessa kan vara användbara för mer komplicerade uppgifter som att extrahera specifikt innehåll eller följa länkar på en sida.
 
-- [PHP.net - file_get_contents](https://www.php.net/manual/en/function.file-get-contents.php)
-- [W3Schools - PHP file_get_contents](https://www.w3schools.com/php/func_filesystem_file_get_contents.asp)
-- [Garage Web Guru - PHP: Hur man hämtar en webbsida](https://garagewebsite.com/parts/web-page:php/how-to-download-a-web-page/)
-
-Vi hoppas att denna guide har hjälpt dig att förstå hur du kan ladda ner en webbsida i PHP. Tack för att du läste och lycka till med din kodning!
+## Se även
+ - [PHPs officiella dokumentation om file_get_contents ()](https://www.php.net/manual/en/function.file-get-contents.php)
+ - [Guzzle](https://docs.guzzlephp.org/en/stable/), en tredjepartsbibliotek för att hantera HTTP-förfrågningar i PHP.
+ - [Crawler](https://github.com/danwriggins/crawler), ett PHP-bibliotek för att ladda ner och analysera webbsidor.

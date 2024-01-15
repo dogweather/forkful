@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "Haskell: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que trabalhar com JSON em Haskell?
+## Por que JSON é importante?
 
-JSON (JavaScript Object Notation) é um formato de dados popular que é amplamente usado para troca de dados em aplicativos da web. Por causa de sua legibilidade e facilidade de uso, o JSON é amplamente adotado por desenvolvedores e equipes de desenvolvimento. Ao trabalhar com Haskell, aprender a manipular e trabalhar com JSON pode ser muito útil no desenvolvimento de aplicativos da web e no processamento de dados.
+JSON (JavaScript Object Notation) é um formato de dados amplamente utilizado para transmitir e armazenar informações estruturadas. Em Haskell, o uso de JSON é importante porque permite que os desenvolvedores interajam com APIs, sistemas de banco de dados e diversas outras fontes de dados externas.
 
-##Como trabalhar com JSON em Haskell:
-
-Para trabalhar com JSON em Haskell, precisamos primeiro importar o módulo `Data.Aeson`. Esse módulo fornece funções e tipos para trabalhar com JSON. Vamos dar uma olhada em um exemplo simples de como analisar um JSON e obter os dados de um campo específico usando a função `decode`:
+# Como trabalhar com JSON em Haskell
+Para começar a trabalhar com JSON em Haskell, você precisará instalar a biblioteca `aeson`. Em seguida, importe o módulo `Data.Aeson` para ter acesso às funções e tipos necessários para lidar com JSON. Abaixo está um exemplo de código mostrando como analisar e codificar dados JSON:
 
 ```Haskell
 import Data.Aeson
 
--- Definindo o JSON de entrada como uma string
-json :: String
-json = "{\"nome\": \"João\", \"idade\": 30}"
+-- Analisando dados JSON
+jsonString = "{ \"nome\": \"João\", \"idade\": 25 }"
 
--- Criando um tipo de dados para representar os dados do JSON
-data Pessoa = Pessoa { nome :: String, idade :: Int } deriving (Show, Generic)
+person = decode jsonString :: Maybe Person
 
--- Usando a função decode para analisar o JSON e obter os dados
-pessoa :: Maybe Pessoa
-pessoa = decode json :: Maybe Pessoa
+data Person = Person { nome :: String, idade :: Int } deriving (Show, Generic)
+
+instance FromJSON Person
+
+-- Codificando dados para JSON
+car = Car { modelo = "Fusca", ano = 1967, cor = "Azul" }
+
+carJson = encode car
 ```
 
-Podemos acessar os campos específicos do JSON usando a notação de ponto, por exemplo, `nome pessoa` retornaria "João" e `idade pessoa` retornaria 30. Agora vamos ver como podemos transformar um tipo de dado em JSON usando a função `encode`:
+A saída do código acima será:
 
-```Haskell
--- Convertendo um valor do tipo Pessoa em JSON
-pessoaToJson :: Pessoa -> Maybe String
-pessoaToJson p = encode p
+```
+Just (Person {nome = "João", idade = 25})
+"{ \"modelo\": \"Fusca\", \"ano\": 1967, \"cor\": \"Azul\" }"
 ```
 
-Com esses exemplos simples, podemos ver como é fácil trabalhar com JSON em Haskell.
+## Mergulho Profundo
+A biblioteca `aeson` é baseada em tipos de dados algébricos e usa o conceito de "lentes" para permitir a atualização de valores. Além disso, é possível criar instâncias personalizadas de `FromJSON` e `ToJSON` para tipos de dados definidos pelo usuário. Também é possível utilizar a função `parseEither` para tratar possíveis erros durante a análise de dados JSON.
 
-##Mergulho Profundo:
+Outra biblioteca útil para trabalhar com JSON em Haskell é a `json-autotype`, que permite gerar automaticamente tipos de dados com suas respectivas instâncias `FromJSON` e `ToJSON` a partir de um exemplo de dados JSON.
 
-Além da função `decode` e `encode`, o módulo `Data.Aeson` também fornece outras funções úteis para trabalhar com JSON, como `parseJSON` para analisar um valor JSON genérico e `toJSON` para converter um valor Haskell em JSON. Também é possível definir tipos de dados Haskell personalizados para corresponder diretamente aos campos de um JSON usando as anotações `FromJSON` e `ToJSON`. Além disso, o módulo `Data.Aeson` permite trabalhar com estruturas de dados aninhadas e lidar com dados opcionais usando a função `Maybe`.
-
-##Ver também:
-
-- A documentação do módulo `Data.Aeson` para obter uma lista completa de funções e tipos relacionados ao trabalhar com JSON em Haskell: https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html
-- Um tutorial mais detalhado sobre como trabalhar com JSON em Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json
+## Veja também
+- [Haskell.org](https://www.haskell.org/)
+- [Documentação do `aeson`](https://hackage.haskell.org/package/aeson)
+- [Documentação do `json-autotype`](https://hackage.haskell.org/package/json-autotype)

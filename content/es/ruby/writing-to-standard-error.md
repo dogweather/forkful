@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Escribiendo a error estándar"
-simple_title:         "Escribiendo a error estándar"
+title:                "Escribiendo en el error estándar."
+html_title:           "Ruby: Escribiendo en el error estándar."
+simple_title:         "Escribiendo en el error estándar."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,66 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida estándar en Ruby?
+## ¿Por qué escribir al error estándar?
 
-La salida estándar, también conocida como `STDOUT`, es una herramienta fundamental en cualquier programa de Ruby. Permite mostrar información importante al usuario, como mensajes de error o resultados de operaciones, de una manera clara y legible. Aprender a escribir a la salida estándar es esencial para cualquier programador en Ruby.
+Escribir al error estándar es una herramienta útil en la programación de Ruby, ya que permite enviar mensajes de error y ayudar a detectar y solucionar problemas en el código. También puede ser útil para imprimir información de depuración durante el proceso de desarrollo.
 
-## Cómo escribir a la salida estándar en Ruby
+## Cómo hacerlo
 
-Escribir a la salida estándar en Ruby es sencillo y práctico. Usamos el método `puts` para imprimir mensajes en la pantalla:
-
-```Ruby
-puts "¡Hola mundo!"
-```
-
-Este código imprimirá en la pantalla el mensaje "¡Hola mundo!".
-
-También podemos utilizar el método `print` para imprimir en la salida estándar sin agregar un salto de línea al final:
+Para escribir al error estándar en Ruby, se utiliza el método `STDERR.puts` seguido por el texto que se desea imprimir. Por ejemplo:
 
 ```Ruby
-print "¡Hola "
-print "mundo!"
+STDERR.puts "Error: No se ha podido abrir el archivo."
 ```
 
-Este código imprimirá "¡Hola mundo!" sin un salto de línea entre las dos palabras.
+Esto imprimirá el mensaje de error en la consola o terminal.
 
-Otro método útil es `p`, que nos permite imprimir el valor de una variable junto con su tipo de dato:
+## Profundizando
 
-```Ruby
-nombre = "Juan"
-p nombre    # Output: "Juan"
-```
+El error estándar (STDERR) es una corriente de salida que se utiliza para mostrar mensajes de error en lugar de la salida estándar (STDOUT). Esto permite que los mensajes de error se destaquen y puedan ser fácilmente identificados durante la ejecución del programa.
 
-## Profundizando en la escritura a la salida estándar en Ruby
-
-A veces, es necesario escribir mensajes de error o información de depuración en la salida estándar. Para hacerlo, podemos utilizar el objeto `$stderr`, que nos permite escribir directamente a la salida de error.
-
-Fíjate en este ejemplo:
-
-```Ruby
-def dividir(a, b)
-    return a / b
-rescue ZeroDivisionError => error
-    $stderr.puts "¡No se puede dividir entre 0!"
-    $stderr.puts error.message
-end
-
-dividir(10, 0)
-```
-
-El código anterior producirá el siguiente resultado en pantalla:
-
-```
-¡No se puede dividir entre 0!
-divided by 0
-```
-
-Este es solo un ejemplo de cómo podemos utilizar la salida de error para manejar situaciones inesperadas en nuestros programas.
+Además de `STDERR.puts`, también hay otros métodos que se pueden utilizar para escribir al error estándar en Ruby, como `STDERR.print` o `STDERR.write`. Estos métodos son similares al `puts`, pero no agregan un salto de línea al final del texto.
 
 ## Ver también
 
-- [Métodos de salida estándar en Ruby](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-puts)
-- [Manejo de errores en Ruby](https://www.rubyguides.com/2019/04/ruby-exceptions/)
-- [Documentación de Ruby sobre stderr](https://ruby-doc.org/core-2.7.2/IO.html#method-c-new-label-Standard+Streams)
-
-¡Ahora estás listo para escribir a la salida estándar en tus programas de Ruby! Recuerda siempre verificar la documentación oficial y explorar diferentes métodos para encontrar la mejor forma de imprimir información para tus usuarios. ¡Buena suerte!
+- [Documentación de Ruby sobre STDERR](https://ruby-doc.org/core-2.7.2/IO.html#method-c-new-label-Standard+Streams)
+- [Artículo de Medium sobre el uso de STDERR en Ruby](https://medium.com/@felipecsl/using-stderr-in-ruby-71b0c47ad904)
+- [Video tutorial sobre manejo de errores en Ruby](https://www.youtube.com/watch?v=u_NU--xjmsg)

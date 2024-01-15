@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: שרשור מחרוזות"
-simple_title:         "שרשור מחרוזות"
+title:                "חיבור מחרוזות"
+html_title:           "Kotlin: חיבור מחרוזות"
+simple_title:         "חיבור מחרוזות"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,54 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-
-תיחבור מחרוזת היא כלי מועיל שמאפשר לנו לשלב מחרוזות נפרדות בכדי ליצור מחרוזת אחת משולבת. זה עוזר לנו ליצור מחרוזות מפתחים והודעות מותאמים אישית שיכולות להתאים למגוון של תנאים ומצבים שבהם אנחנו עלולים להשתמש בהן.
+לכל מתכנת שימושי לדעת איך לחבר מחרוזות, משום שזה דבר כל כך נפוץ וחיוני בתכנות בכל שפה.
 
 ## איך לעשות זאת
-
-תחבור מחרוזת בקוטלין נעשה באמצעות השימוש באופרטור של הצבת מחרוזות (+) כדי לשלב את המחרוזות שאנחנו רוצים לחבר. לדוגמה:
+כדי לחבר מחרוזות ב-Kotlin, נייצר משתנה מסוג `String` ונשתמש באופרטור `+` כדי לחבר בין שתי מחרוזות. לדוגמה:
 
 ```Kotlin
-var name = "משה"
-var age = 25
-var message = "שלום, קוראים לי " + name + " ואני בן " + age + " שנים"
+val firstString = "Hello "
+val secondString = "world!"
+val combinedString = firstString + secondString
+println(combinedString)
+```
+
+פלט:
+```
+Hello world!
+```
+
+כמו כן, ניתן לחבר מחרוזת ישירות לערך של משתנה אחר, בעזרת הפונקציה `plus()` כך:
+
+```Kotlin
+val number = 42
+val combinedString = "The answer to the ultimate question of life, the universe, and everything is " + number
+println(combinedString)
+```
+
+פלט:
+```
+The answer to the ultimate question of life, the universe, and everything is 42
+```
+## מעמיקים יותר
+בנוסף לאופרטור `+`, ב-Kotlin ישנם גם אופרטורים נוספים שמאפשרים לנו לחבר מחרוזות בצורה יעילה יותר. למשל, ניתן להשתמש באופרטור `inc()` כדי לחבר מחרוזת לערך של משתנה מספרי. לדוגמה:
+
+```Kotlin
+val number = 7
+val string = "The lucky number is "
+val result = string + number++
+println(result)
+```
+
+פלט:
+```
+The lucky number is 7
+```
+
+כמו כן, ניתן להשתמש באופרטור `plusAssign()`, כדי להוסיף מחרוזת לערך של משתנה מסוג `StringBuilder` בצורה יעילה יותר. לדוגמה:
+
+```Kotlin
+val builder = StringBuilder("Java")
+builder += " is"
+builder += " awesome!"
+println(builder)
+```
+
+פלט:
+```
+Java is awesome!
+```
+
+בנוסף, ב-Kotlin ניתן להשתמש בתבנית מחרוזת (string templates) כדי לחבר בין מחרוזת לבין ערך של משתנה או תוצאת ביטוי. לדוגמה:
+
+```Kotlin
+val name = "Alice"
+val message = "Hello $name, welcome to Kotlin!"
 println(message)
 ```
 
 פלט:
 ```
-שלום, קוראים לי משה ואני בן 25 שנים
+Hello Alice, welcome to Kotlin!
 ```
 
-ניתן גם להשתמש באופרטור צבור (+=) כדי להוסיף מחרוזות למשתנה קיים כך שלא נצטרך ליצור משתנה חדש לכל מחרוזת שאנחנו מחברים. לדוגמה:
-
-```Kotlin
-var message = "שלום, קוראים לי "
-message += name
-message += " ואני בן "
-message += age
-message += " שנים"
-println(message)
-```
-
-פלט:
-```
-שלום, קוראים לי משה ואני בן 25 שנים
-```
-
-## לחקור עומק יותר
-
-התיחבור של מחרוזות בקוטלין מבוסס על פעולות הצבת וכפל של מחרוזות. במקרים שבהם אנחנו משתמשים בכפל בין מחרוזות, התוכן של המחרוזת המקורית מועתק כמספר הפעמים שאנחנו מכפילים את המחרוזת. לדוגמה, הקוד הבא:
-
-```Kotlin
-var message = "הודעה "
-message *= 3
-println(message)
-```
-
-פלט:
-```
-הודעה הודעה הודעה
-```
-
-הפעולה של הצבת מחרוזת משולבת עם מחרוזת אחרת היא אסצנציאלית לפיתוח תוכניות ועבודה עם נתונים משתנים בקוטל
+## ראו גם
+- [תיעוד השפה הרשמי של Kotlin על חיבור מחרוזות](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [מדריך מפורט על תבניות מחרוזת ב-Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+- [סרטון הדג

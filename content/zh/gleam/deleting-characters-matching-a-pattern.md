@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 删除匹配模式的字符"
-simple_title:         "删除匹配模式的字符"
+title:                "删除符合模式的字符"
+html_title:           "Gleam: 删除符合模式的字符"
+simple_title:         "删除符合模式的字符"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-首先，让我们来了解为什么我们会需要删除匹配特定模式的字符。无论是在日常开发中，还是在处理文本数据时，有时候我们可能会遇到需要清理特定字符的情况。例如，我们可能需要删除所有的标点符号或空格，或者只保留字母和数字。在这种情况下，删除字符匹配模式功能就可以帮助我们快速高效地处理文本数据。
+删除与模式匹配的字符可能是一个很有用的工具，特别是当你需要处理大量的文本数据或者字符串时。通过删除不需要的字符，你可以轻松地清理和处理数据，使其更易读和可用。
 
-# 如何使用
+## 如何做
 
-实现删除字符匹配模式功能非常简单。我们只需要在代码中使用`delete_chars_matching`函数，并指定要删除的模式即可。例如，如果我们要删除所有的数字，可以这样写：
-
-```Gleam
-let data = "这是123一个示例456文本"
-let filtered_data = delete_chars_matching(data, \d)
-// 输出：这是一个示例文本
-```
-
-如果我们只想保留字母和空格，则可以将`\d`换成`\w`：
+要删除与模式匹配的字符，你可以使用Gleam编程语言中的特定函数：`String.replace()`。这个函数允许你指定一个正则表达式模式，然后用空字符串来替换匹配的字符。下面是一个简单的例子，假设我们想要从一个字符串中删除所有的数字：
 
 ```Gleam
-let data = "这是123一个示例456文本"
-let filtered_data = delete_chars_matching(data, \w)
-// 输出：这是一个示例文本
+let updated_string = String.replace(my_string, '\\d+', '')
 ```
+根据这个例子，`my_string`将被更新为一个没有任何数字的新字符串。
 
-除了可以使用预定义的模式符号，我们还可以自定义需要删除的字符。例如，如果我们需要删除所有的元音字母，可以这样写：
 
-```Gleam
-let data = "这是一个示例文本"
-let filtered_data = delete_chars_matching(data, "aeiou")
-// 输出：这是个实例文本
-```
+## 深入挖掘
 
-# 深入了解
+使用`String.replace()`的一个重要注意事项是要确保你提供了正确的正则表达式模式。如果模式不正确，将会导致字符未被正确替换或替换错误的字符。为了更好地了解如何编写有效的正则表达式，你可以参考这篇[博客文章](https://gleam.run/documentation/category-view?categoryName=core%2Fresult#stdlib/core-lib-std.string).
 
-在Gleam中，删除字符匹配模式功能由内置的`Regex`模块提供。该模块提供了丰富的正则表达式功能，使我们可以轻松应对各种文本处理需求。除了`delete_chars_matching`函数，我们还可以使用`Regex`模块中的其他函数来进行文本处理。例如，我们可以使用`replace`函数来替换文本中的特定字符，或者使用`split`函数按照特定模式将文本分割成数组等等。
 
-# 参考链接
+## 查看更多
 
-- Gleam官方文档：https://gleam.run/
-- Gleam正则表达式文档：https://gleam.run/modules/regex.html
-- Gleam社区论坛：https://elixirforum.com/c/gleam/10
+- [Gleam官方文档](https://gleam.run)
+- [学习正则表达式](https://www.runoob.com/regexp/regexp-tutorial.html)
+- [正则表达式在线测试工具](https://regex101.com/)

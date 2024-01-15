@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Clojure: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva en textfil är en grundläggande färdighet som är oumbärlig för programmerare. Det ger en strukturerad och läsbar form för kod, vilket gör det lättare att felsöka och samarbeta med andra.
 
-Att skriva en textfil kan vara en användbar färdighet för alla som vill lära sig programmera och skapa datorprogram. Det ger dig möjlighet att skriva och lagra information på ett enkelt sätt som kan läsas av både människor och datorer.
-
-## Hur man gör det
-
-För att skriva en textfil i Clojure behöver du bara en textredigerare och tillgång till Clojure-överflödet. Börja med att öppna en textredigerare som till exempel Notepad eller Emacs. Skriv sedan din kod i redigeraren enligt Clojure-syntaxen. När du är nöjd med din kod kan du spara filen med ett namn och lägga till filändelsen .clj så att den kan läsas av Clojure-överflödet.
+## Så här gör du
+Att skriva en textfil i Clojure är enkelt. Du kan använda kommandot `spara` för att skapa en ny textfil med valfritt namn och filändelse. Sedan kan du öppna filen och börja skriva din kod med hjälp av Clojure syntax. Till exempel:
 
 ```Clojure
-(print "Hej världen!")
+(spara "min_kod.clj")
+(+ 1 2 3) ;; Det här är ett exempel på kod
 ```
 
-Detta exempel skriver ut texten "Hej världen!" när du kör det i Clojure-överflödet. Ett annat nyttigt verktyg är "println" som automatiskt lägger till en radbrytning efter texten.
-
-```Clojure
-(println "Välkommen till min blogg!")
-```
-
-Detta exempel skriver ut texten "Välkommen till min blogg!" på en egen rad.
+När du är klar med din kod kan du köra filen genom att skriva `lein exec` följt av din filnamn. Detta kommer att exekvera koden och visa resultatet.
 
 ## Djupdykning
-
-När du skriver en textfil i Clojure kan du använda en rad olika funktioner och datastrukturer. En vanlig sådan struktur är listor, som representeras med parenteser och innehåller olika värden eller funktioner. Ett annat exempel är map, där du kan associera nycklar med värden.
+En textfil i Clojure består av en samling av kodblokk som är avgränsade av parenteser. Kodblokkarna kan innehålla en eller flera s-formulär som utgör själva koden. Varje kodblokk måste börja med en öppnande parentes `(` och avslutas med en stängande parentes `)`. Till exempel:
 
 ```Clojure
-(def person {:namn "Anna" :ålder 30 :titel "Programmerare"})
+(+ 1 2) ;; detta är ett kodblokk
 ```
 
-Detta exempel skapar en map med information om en person. Du kan få åtkomst till enskilda värden genom att använda en punkt och nyckelns namn, till exempel "person.namn" för att få ut namnet "Anna".
+I Clojure finns också möjligheten att kommentera din kod med hjälp av semikolon `;`. Allt som kommer efter denna kommentarsymbol anses vara en kommentar och ignoreras av Clojure.
 
 ## Se även
-
-- [Clojure Dokumentation](https://clojure.org/guides/learn/syntax)
-- [Clojure Överflöde](https://clojure.org/guides/learn/functions)
-- [Textredigerare för Clojure](https://clojure.org/guides/getting_started#_text_editors)
+- Clojure officiella hemsida: https://clojure.org/
+- Officiell dokumentation för Clojure: https://clojure.org/documentation
+- En handledning för att komma igång med Clojure: https://github.com/pgundlur/clojure-basics

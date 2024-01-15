@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Haskell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,45 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil är en grundläggande färdighet inom programmering och kan vara särskilt användbar när man vill lagra och behandla stora mängder data. Det är också ett bra sätt att förstå hur man kan använda Haskell för att interagera med filsystemet.
+Det finns många olika anledningar till varför man skulle vilja läsa en textfil med Haskell-kod. Det kan vara för att hitta och lösa problem, för att lära sig mer om språket eller för att bara utforska vad som är möjligt med denna funktionella programmeringsteknologi.
 
-## Hur man gör det
+## Hur man gör
 
-För att läsa en textfil i Haskell behöver vi använda oss av ett par funktioner från modulen "System.IO". Vi börjar med att importera modulen och sedan öppna filen genom att använda "openFile" funktionen:
+För att läsa en textfil i Haskell behöver du först importera modulen "System.IO". Sedan kan du använda funktionen "readFile" för att läsa innehållet i filen. Här är ett exempel på kod för att läsa en fil som heter "exempel.txt" och skriva ut innehållet på skärmen:
 
 ```Haskell
 import System.IO
 
 main = do
-  handle <- openFile "textfil.txt" ReadMode
+  innehall <- readFile "exempel.txt"
+  putStr innehall
 ```
 
-Vi kan antingen ange en absolut sökväg till filen eller om filen ligger i samma mapp som Haskell-filen kan vi bara skriva filnamnet. Den andra parametern "ReadMode" anger att vi enbart vill läsa från filen, inte skriva eller ändra i den.
-
-När filen är öppnad har vi tillgång till variabeln "handle" som representerar vår fil. För att faktiskt läsa från filen använder vi funktionen "hGetLine" som läser en rad från filen och returnerar den som en sträng:
-
-```Haskell
-line <- hGetLine handle
-```
-
-Vi kan sedan skriva ut raden eller göra vad vi vill med den. När vi är klara behöver vi stänga filen igen för att frigöra resurserna, vilket vi gör med "hClose" funktionen:
-
-```Haskell
-hClose handle
-```
+Kodblocket ovan kommer att skriva ut innehållet i filen "exempel.txt" på skärmen när du kör programmet. Du kan även använda "writeFile" för att skriva till en fil från Haskell.
 
 ## Djupdykning
 
-Förutom "hGetLine" finns det även andra funktioner för att läsa från filer, som "hGetChar" för att läsa en enskild tecken eller "hGetContents" för att läsa in hela filens innehåll som en sträng.
+När du läser en textfil i Haskell, läses allt in som en enda lång sträng. Detta kan vara problematiskt om du vill utföra olika operationer på olika delar av filen. För att undvika detta kan du använda funktionen "lines". Den delar upp strängen i en lista av rader, vilket gör det lättare att hantera olika delar av filen.
 
-Det är också möjligt att läsa in filen direkt till en lista med funktionen "words", som delar upp en sträng i sin delar baserat på ett separatortecken. Till exempel kan vi läsa in varje ord i filen till en lista med hjälp av följande kod:
-
-```Haskell
-str <- hGetContents handle
-let wordsList = words str
-```
+En annan användbar funktion när du läser textfiler är "words". Den delar upp strängen i en lista av ord, perfekt för att behandla text som är uppdelad i ord eller fraser.
 
 ## Se även
 
-- [Haskell-dokumentation om filhantering](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [En tutorial om filhantering i Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)
+- [Haskell-dokumentationen om textfiler](https://www.haskell.org/documentation/)
+- [En guide till funktionell programmering med Haskell](https://www.tutorialspoint.com/functional_programming/functional_programming_haskell.htm)
+- [En komplett introduktion till Haskell](https://www.springer.com/us/book/9783319714514)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "C++: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "C++"
 category:             "C++"
@@ -9,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Kirjoittaminen testejä ohjelmistokehityksessä voi ensi näkemältä tuntua turhalta ja aikaa vievältä. Kuitenkin testien kirjoittaminen on tärkeä osa ohjelmiston laadun varmistamista ja vähentää virheiden riskiä tuotantokäytössä.
+Kirjoittaa testejä voi aluksi tuntua turhalta ja aikaa vievältä, mutta loppujen lopuksi se auttaa säästämään aikaa ja vaivaa suuremmilta ongelmilta. Testien kirjoittaminen varmistaa, että koodi on toiminnassa ja mahdolliset virheet havaitaan ja korjataan ennen kuin ne aiheuttavat suurempia ongelmia käytössä.
 
-## Miten
+# Miten
 
-Alla olevassa koodiesimerkissä nähdään yksinkertainen funktio, joka summaa kaksi lukua ja palauttaa niiden tuloksen.
+Testien kirjoittaminen C++ ohjelmointikielessä on suhteellisen yksinkertaista käyttäen esimerkiksi JUnit tai Google Test kirjastoja. Testit kirjoitetaan omiin tiedostoihin ja niiden avulla testataan yksittäisiä funktioita ja luokkia. Alla on esimerkki yksinkertaisesta testitiedostosta:
 
 ```C++
-int sum(int a, int b) {
-    return a + b;
+#include <gtest/gtest.h> // Testikirjasto
+
+// Luodaan luokka, jonka funktioita halutaan testata
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+};
+
+// Luodaan testi, joka tarkistaa add-funktion toimivuuden
+TEST (CalculatorTest, add) {
+    // Luodaan luokan instanssi
+    Calculator calc;
+    // Testataan, että add-funktio palauttaa oikean arvon
+    EXPECT_EQ(calc.add(2, 3), 5);
+}
+
+int main(int argc, char **argv) {
+    // Suoritetaan testit
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
-Testien kirjoittamisen lähtökohtana on yleensä ajatella erilaisia syötteitä ja niiden odotettua tulosta. Tässä tapauksessa voimme esimerkiksi testata funktiota summaamaan negatiivisia lukuja:
+Testit voidaan suorittaa esimerkiksi komentoriviltä käyttäen komentoa ```g++ testitiedosto.cpp -lgtest``` ja suorittaa sen jälkeen luotu ohjelma.
 
-```C++
-int result = sum(-5, -10);
-// result = -15
-```
+# Syväsukellus
 
-Toinen hyvä testitapaus voisi olla testata funktiota summaamaan nollia:
+Testien kirjoittaminen auttaa myös dokumentoimaan koodia ja parantamaan sen ymmärrettävyyttä. Testien avulla voidaan varmistaa myös koodin jatkuvaa toimivuutta muutosten tai päivitysten jälkeen. Testien kirjoittaminen vaatii kuitenkin aikaa ja vaivaa, mutta se auttaa välttämään suuremmat ongelmat ja parantaa ohjelmiston laatua.
 
-```C++
-int result = sum(0, 0);
-// result = 0
-```
+# Katso myös
 
-Näiden testitapausten avulla voimme varmistaa, että funktio palauttaa odotetut tulokset erilaisilla syötteillä. Näiden lisäksi olisi tärkeää testata myös esimerkiksi virheelliset syötteet, kuten merkkijonojen antaminen numeerisille parametreille.
-
-## Syvällisempi tarkastelu
-
-Testien kirjoittaminen vaatii huolellisuutta ja ajattelua eri mahdollisista skenaarioista. Yksinkertaiset testit eivät aina riitä, vaan on tärkeää myös miettiä testien kattavuutta ja mahdollisia reunatapauksia.
-
-Hyvät testit myös auttavat kehittäjää ymmärtämään koodinsa toimintaa ja havaitsemaan mahdolliset logiikkavirheet ennen niiden päätyminen tuotantokäyttöön.
-
-## Katso myös
-
-- [Testien kirjoittaminen: Miksi, mitä ja miten?](https://www.taitotalo.com/blogi/2017/11/07/testien-kirjoittaminen/)
-- [Testauskulttuuri: miksi testata ja miten tehdä se oikein](https://www.softwaretestinghelp.com/fi/testing-culture/)
-- [Testiasiantuntijoiden vinkit testien kirjoittamiseen](https://www.taitotalo.com/blogi/2019/06/27/testien-kirjoittamisen-iloa-ja-tuskaa-testiasiantuntijoiden-vinkkeja/)
+- [JUnit-kirjasto](https://junit.org)
+- [Google Test -kirjasto](https://github.com/google/googletest)

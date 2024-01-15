@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: एक टेक्स्ट फाइल लिखना"
+title:                "एक टेक्स्ट फाइल लिखना"
+html_title:           "Ruby: एक टेक्स्ट फाइल लिखना"
 simple_title:         "एक टेक्स्ट फाइल लिखना"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,23 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-शायद आपने अपने कंप्यूटर पर कभी भी टेक्स्ट फाइल्स को देखा होगा और सोचा होगा कि इन फाइल्स का क्या उपयोग हो सकता है। यह कोई चिंता की बात नहीं है। यह आमतौर पर प्रोग्रामर्स द्वारा कॉडिंग के दौरान बनाई जाती है और बहुत सी कॉम्प्यूटर सामग्री को संचालित करने के लिए इस्तेमाल की जाती है। इस ब्लॉग पोस्ट में, हम जानेंगे कि टेक्स्ट फाइल्स क्यों लिखा जाता है और इसे लिखने के लिए कैसे तैयार किया जाता है। तो चलिए आगे बढ़ते हैं।
+## Kyaorama
+Abhinav Topedar, 
+Ek text file likhneka kya fayda hota hai? Shayad aapko lage ki koi app aapki diary likhna hai parantu agara aap programming mein pravesh karna chahate hai na, to text file likhna ek aadhunik tarika hai. Technique ka matlab hai ki aap apne thode samay mein note karsakte hain apne code mein aur test karsakte hain saamne laya respect kuch samay baad. Ye ek aasaan aur bharoseemand tarika hai apne progress ko track karne ka.
 
-## क्यों
+## Kaise Kare
+Aapko Ruby ka instalation jaruri hai aapki system par. Jab aap apne terminal mein Ruby command likhenge, aapko IRB prompt screen mein dikhega. Lekin abhi hum text file likhege. Chaliye, ye ek simple Ruby code example ka padhna shuru kare jismein hum ek text file likhege aur uski output ko print karege:
+```ruby
+# Create a new text file and open it
+file = File.new("new_file.txt", "w")
 
-टेक्स्ट फाइलें यूनिकोड, कोड और सामान्य टेक्स्ट डेटा को संग्रहीत करने के लिए उपयोगी होती हैं। ये अलग से संरचित होती हैं और कई दूसरी फाइलों के साथ जोड़ी जा सकती हैं। इनका उपयोग सभी प्रकार के प्रोग्राम्स और स्क्रिप्ट में किया जाता है। इसलिए, आप कोई भी प्रोग्रामर हों, आपको टेक्स्ट फाइलें बनाने के लिए जानना जरूरी होगा।
+# Add some text to the file
+file.puts "Welcome to my first text file!"
+file.puts "I am learning Ruby and it's awesome!"
 
-## कैसे
+# Close the file
+file.close
 
-```Ruby
-# नया टेक्स्ट फाइल बनाएं
-text_file = File.new("myfile.txt", "w")
-
-# फाइल में डेटा लिखें
-text_file.puts "यह टेक्स्ट फाइल में कोई डेटा है।"
-
-# फाइल बंद करें
-text_file.close
+# Open the file in read mode and print the contents
+puts "The file contains:"
+puts File.read("new_file.txt")
+```
+Jaise aapko dikh raha hoga, humne `File.new` ke dwara ek naya text file create kiya aur `file.puts` ke dwara usmein content add kiya. Fir `close` ke dwara file ko band kiya aur `File.read` se file ka content print kiya. Chaliye ab is code ko chalakar dekhe:
+```
+The file contains:
+Welcome to my first text file!
+I am learning Ruby and it's awesome!
 ```
 
-इस उदाहरण में, हमने `File.new` फंक्शन का उपयोग करके एक नया टेक्स्ट फाइल बनाया है और उसे फाइल में डेटा लिखा है। हमने फाइल को `myfile.txt` का नाम दिया है और उसे
+## Gehri Jhanki
+Likhne ke doran, `file.puts` ka istemal hota hai content ko file mein likhne ke liye. Hum `w` ka istemal karte hain `File.new` mein text file ko likhne ke liye. Humein `close` ke dwara file ko band karna jaruri hai taki humare changes file mein save ho. Agar hum `close` na kare, toh humare changes file mein save nahi honge. Humein `File.read` se file ko read karna padega taki hum file ka content print kar sake.
+
+## Dekhe bhiay
+Agar aap aur bhi Ruby sikhna chahate hain, toh niche diye gaye links check kare:
+- [RubyKoariya](https://rubymonk.com/) Ek interactive platform jaha aap Ruby ko seekh sakte hain.
+- [RubyKoariya pane ke liye Ruby installer](https://www.ruby-lang.org/en/documentation/installation/) Installation guide aur steps ke liye.
+- [The Ruby language](https://www.ruby-lang.org/) Official website jaha se aap latest updates aur documentation dekh sakte hain.
+
+## Dekh na Bhai
+Jab bhi aap kuch programming seekhte hain, ek text file likhna ek bharoseemand aur zaroori technique hai. Ruby mein, ye kaam bohot hi aasaan hai. Abhi aap gaye! Happy coding!

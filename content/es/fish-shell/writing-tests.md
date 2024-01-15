@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Escribiendo pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Fish Shell: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Fish Shell
+## ¿Por qué escribir pruebas en Fish Shell?
 
-Escribir pruebas en Fish Shell puede parecer una tarea tediosa e innecesaria, pero en realidad es una práctica muy importante para garantizar la calidad y el buen funcionamiento de nuestro código. Las pruebas nos permiten detectar errores y solucionarlos antes de que afecten al funcionamiento de nuestra aplicación. Además, nos ayudan a mantener un código limpio y ordenado.
+Escribir pruebas en Fish Shell es una forma eficaz de garantizar que nuestro código funcione correctamente y se mantenga libre de errores. Además, nos ayuda a detectar posibles problemas y a mejorar la calidad de nuestro código.
 
-## Cómo escribir pruebas en Fish Shell
-
-Escribir pruebas en Fish Shell es bastante sencillo y puede ahorrarnos muchos dolores de cabeza en el futuro. Para empezar, necesitamos crear un archivo con la extensión ".fish" donde escribiremos nuestras pruebas. Usaremos la función `begin` para indicar el inicio de la prueba y la función `end` para indicar el final. Dentro de estas funciones, podemos utilizar los comandos y funciones de Fish Shell para realizar las pruebas deseadas.
-
-Un ejemplo de una prueba sencilla podría ser:
+## Cómo hacerlo
 
 ```Fish Shell
-begin
-  # Este es un comentario
-  echo "Probando la función `length`"
-  assert (length "Hola, mundo") -eq 11
-  assert (length "¿Cómo estás?") -eq 12
+function sum(number1, number2)
+    echo $number1 + $number2
 end
-```
-El resultado que obtendríamos al ejecutar esta prueba sería el siguiente:
 
-```
-Probando la función `length`
-
-Probando la función `length`
- ✓ longitudes correctas (0.070s)
-
-1 test, 0 failures
+test "Sum function should return the correct result" -e (sum 2 3) 5
 ```
 
-## Profundizando en la escritura de pruebas
+Para escribir pruebas en Fish Shell, podemos utilizar la función `test`, que nos permite verificar si un resultado es el esperado. También podemos crear funciones específicas para realizar pruebas en nuestro código, como en el ejemplo anterior.
 
-Escribir pruebas es una técnica importante en desarrollo de software y hay muchas herramientas y técnicas disponibles para hacerlo de manera efectiva. En Fish Shell, podemos utilizar las funciones `assert` y `expect` para verificar valores sin la necesidad de escribir muchas líneas de código. También es importante seguir buenas prácticas como escribir pruebas que sean claras y concisas, de manera que puedan ser entendidas fácilmente por otras personas que trabajen con nuestro código.
+La sintaxis de `test` es la siguiente:
 
-En resumen, escribir pruebas en Fish Shell nos permite garantizar la calidad de nuestro código y nos ayuda a mantener un código organizado y libre de errores. Aunque puede parecer una tarea tediosa al principio, una vez que nos acostumbremos a escribir pruebas, se convertirá en una práctica esencial en nuestro flujo de trabajo.
+```Fish Shell
+test <mensaje> <comando que debe ejecutarse> <resultado esperado>
+```
+
+Donde:
+
+- `<mensaje>`: Es una descripción del test que estamos realizando.
+- `<comando que debe ejecutarse>`: Es el comando (o función) que queremos probar.
+- `<resultado esperado>`: Es el resultado que esperamos obtener.
+
+## Profundizando en las pruebas en Fish Shell
+
+Además de la función `test`, también podemos utilizar los parámetros `-e` y `-x` para realizar pruebas más precisas. El parámetro `-e` nos permite verificar si el resultado es igual al esperado, mientras que `-x` nos permite verificar si el resultado es diferente al esperado.
+
+Por ejemplo:
+
+```Fish Shell
+test "Sum function should return the correct result" -e (sum 2 3) 5
+test "Sum function should not return the incorrect result" -x (sum 2 3) 8
+```
+
+En caso de que un test falle, Fish Shell nos mostrará un mensaje de error indicando cuál fue el resultado obtenido y cuál era el esperado.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell sobre escritura de pruebas](https://fishshell.com/docs/current/cmds/assert.html)
-- [Ejemplo de escritura de pruebas en Fish Shell](https://gist.github.com/WheresAlice/551fc1e250f0124b87c036d57c88d702)
-- [Artículo sobre la importancia de escribir pruebas en el desarrollo de software](https://www.lifewire.com/why-is-software-testing-important-2624560)
+- Documentación oficial de Fish Shell sobre pruebas: https://fishshell.com/docs/current/cmds/test.html
+- Ejemplos de pruebas en Fish Shell: https://github.com/fish-shell/fish-shell/tree/master/test
+- Artículo sobre cómo escribir pruebas en Fish Shell: https://dev.to/yeurch/write-some-fish-shell-tests-376e

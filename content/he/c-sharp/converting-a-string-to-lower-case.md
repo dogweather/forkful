@@ -1,5 +1,6 @@
 ---
-title:                "C#: המרת מחרוזת לאותיות קטנות"
+title:                "המרת מחרוזת לאותיות קטנות"
+html_title:           "C#: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "C#"
 category:             "C#"
@@ -9,67 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## למה
+כדי לשפר את חוויית המשתמש והקריאות בקוד, ייתכן שנרצה להמיר מחרוזת או כתב לאותיות קטנות במקרים שונים.
 
-למה לחשוב על המרה של מחרוזת לאותיות קטנות? יתרונותיו הניכרים בהמשך המאמר ישוו לך את הטרח ללמוד על פונקציות מועילות כמו .ToLower() בשפת תכנות C#.
+## איך לעשות זאת
+המירה לאותיות קטנות במחרוזת נעשית באמצעות שימוש בפעולת "ToLower" שבתוך המחלקה "String", כך:
 
-# כיצד לבצע
+```csharp
+string myString = "HELLO WORLD";
+string lowerCaseString = myString.ToLower();
+Console.WriteLine(lowerCaseString);
 
-הגעת למקום הנכון אם אתה מעוניין ללמוד כיצד להמיר מחרוזת לאותיות קטנות בשפת תכנות C#. נקדם לכוונה ונצג דוגמאות קוד כדי להבין טוב יותר.
+// Output: hello world
+```
+בדוגמא הזו, אנו משתמשים במחרוזת המכילה אותיות גדולות ומבצעים עליה את הפעולה "ToLower" כדי להמיר את האותיות לקטנות. עם זאת, יש לציין שפעולה זו אינה משנה את המחרוזת המקורית, אלא שמייצרת מחרוזת חדשה המכילה את האותיות הקטנות.
 
-```C#
-string phrase = "שלום לעולם!";
-string lowerPhrase = phrase.ToLower();
-Console.WriteLine(lowerPhrase);
+## חקירה מעמיקה
+כדי להבין טוב יותר את תהליך המירה לאותיות קטנות, נוכל להכיר כמה מאפיינים עמוקים של הפעולה "ToLower". ראשית, ניתן להשתמש בפרמטרים נוספים כדי להגדיר את התרגום של אותיות גדולות מיוחדות, כך:
+
+```csharp
+string myString = "HÉLLO";
+string lowerCaseString = myString.ToLower(new CultureInfo("fr-FR"));
+Console.WriteLine(lowerCaseString);
+
+// Output: héllo
 ```
 
-בתוצאה תקבל:
+בדוגמא זו, השתמשנו בפרמטר של CultureInfo כדי לציין את השפה של התרגום. שימו לב כיצד האותיות המיוחדות נמצאות באותו התרגום כמו האותיות הרגילות.
 
-```
-שלום לעולם!
-```
+נוסף לכך, הפעולה "ToLower" יכולה לקבל גם פרמטר שמיישר את התרגום לפי אותיות מקובצות באלפבית. בדוגמא הקודמת, נוכל להשתמש בפרמטר הבודד במקום להשתמש ב-CultureInfo.
 
-נוכל לראות שהמחרוזת המקורית נמצאת עכשיו באותיות קטנות. אם נספק מחרוזת עם אותיות קפיטליות, הפונקציה .ToLower() תבצע את הפעולה הנדרשת ותחזיר את המחרוזת באותיות קטנות.
-
-# טיפול מעמיק
-
-השתמשנו כאן בפונקציה פנימית של שפת תכנות C#, אבל כמו רוב הפונקציות הפנימיות, ניתן לכתוב גם פונקציה עצמאית להביצעת המשימה. הפונקציה הבאה תחלופה את כל האותיות הגדולות במחרוזת לאותיות קטנות:
-
-```C#
-public string ConvertToLower(string input)
-{
-    string output = "";
-    foreach (char letter in input)
-    {
-        output += char.ToLower(letter);
-    }
-    return output;
-}
-```
-
-אם נרצה, נוכל גם להפוך את הפונקציה לסטטי כדי שנוכל לקרוא לה תוך טעינת הקלאס שלנו.
-
-```C#
-public static class StringConverter
-{
-    public static string ConvertToLower(string input)
-    {
-        string output = "";
-        foreach (char letter in input)
-        {
-            output += char.ToLower(letter);
-        }
-        return output;
-    }
-}
-```
-
-עכשיו נוכל להשתמש בקלות בפונקציה הסטטית כאשר נרצה להמיר מחרוזת לאותיות קטנות:
-
-```C#
-string phrase = "שלום לעולם!";
-string lowerPhrase = StringConverter.ConvertToLower(phrase);
-Console.WriteLine(lowerPhrase);
-```
-
-כ
+## ראו גם
+כדי לקבל עוד מידע על פעולות כמו המירה לאותיות קטנות, ניתן לעיין במ

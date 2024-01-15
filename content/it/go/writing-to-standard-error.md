@@ -1,6 +1,7 @@
 ---
-title:                "Go: Scrivere su standard di errore"
-simple_title:         "Scrivere su standard di errore"
+title:                "Scrivere su standard error"
+html_title:           "Go: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-È importante sapere come scrivere su standard error quando si scrive in Go, poiché può essere utile per visualizzare messaggi di errore durante l'esecuzione del programma o per il debugging.
 
-## Come Fare
-Per scrivere su standard error in Go, è possibile utilizzare la funzione `fmt.Fprintln` che stampa un messaggio su un writer in modo simile alla funzione `fmt.Println`, ma invece di stampare su standard output, stamperà su standard error.
+Scrivere su standard error è una pratica comune per fornire informazioni di debug durante l'esecuzione di un programma Go. Se si riscontrano errori o problemi durante l'esecuzione, l'output su standard error può aiutare a identificare e risolvere il problema in modo più efficiente.
 
-Un esempio di codice potrebbe essere il seguente:
+## Come fare
+
+Per scrivere su standard error in Go, è possibile utilizzare il pacchetto "fmt" e il suo metodo "Fprintln". Di seguito è riportato un esempio di codice:
+
 ```Go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-  fmt.Fprintln(os.Stderr, "Errore: il file non è stato trovato")
+    // Output su standard error
+    fmt.Fprintln(os.Stderr, "Questo è un messaggio di errore")
 }
 ```
-Il output di questo codice sarebbe "Errore: il file non è stato trovato" stampato su standard error invece che su standard output.
 
-## Approfondimenti
-Per capire meglio il concetto di standard error, è importante comprendere la differenza tra standard output e standard error. Lo standard output è il canale in cui un programma scrive i messaggi di output, mentre lo standard error è il canale in cui vengono scritti i messaggi di errore. Questo rende più semplice rilevare e gestire gli errori durante l'esecuzione di un programma.
+L'output di questo programma sarà "Questo è un messaggio di errore" su standard error. Si noti l'utilizzo del pacchetto "os" per accedere a standard error tramite il metodo "Stderr". Questo metodo è utile anche quando si desidera cambiare il destinatario del messaggio di errore, ad esempio un file di log.
 
-È importante notare che in Go, gli errori vengono gestiti principalmente utilizzando il pacchetto `errors` o `fmt.Errorf`. Tuttavia, scrivere su standard error può essere utile in situazioni in cui è necessario stampare messaggi di errore personalizzati o per il debugging.
+## Approfondimento
 
-## Vedi Anche
-- [Documentazione ufficiale su Go](https://golang.org/doc/)
-- [Pacchetto fmt](https://golang.org/pkg/fmt/)
-- [Pacchetto os](https://golang.org/pkg/os/)
-- [Standard output vs standard error](https://www.linuxjournal.com/content/understanding-standard-io)
+Scrivere su standard error è spesso utilizzato insieme alla funzione "panic" per gestire situazioni di errore gravi. Quando si verifica un'eccezione, la funzione "panic" interromperà immediatamente l'esecuzione e scriverà un messaggio sull'output di standard error. Questo può essere utile per identificare rapidamente un errore critico e gestire la situazione in modo appropriato.
+
+## Vedi anche
+
+- [Documentazione del pacchetto fmt](https://golang.org/pkg/fmt/)
+- [Documentazione del pacchetto os](https://golang.org/pkg/os/)
+- [Documentazione della funzione panic](https://golang.org/ref/spec#Handling_panics)

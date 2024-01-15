@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 「CSVファイルの操作」"
-simple_title:         "「CSVファイルの操作」"
+title:                "「CSVとの作業」"
+html_title:           "PHP: 「CSVとの作業」"
+simple_title:         "「CSVとの作業」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜCSVを使うのか
+## Why
 
-CSVというファイル形式は、大量のデータを手軽に扱うことができるため、プログラミングでよく使用されます。特に、PHPはCSVファイルを簡単に読み書きできるため、データ処理に使うのにとても便利です。
+CSVはコンマで区切られたデータを表す形式で、プログラム間でデータを交換するための便利な方法です。PHPでは、CSVファイルを扱うための様々な関数が用意されており、データ処理の機能を効率的に行うことができます。
 
-##CSVファイルをPHPで読み書きする方法
+## How To
 
-まず、CSVファイルを読み込むには、`fopen()`関数を使用します。これにより、ファイルを開いた後、`fgetcsv()`関数を使用してデータを読み取ることができます。以下のPHPコードを見てみましょう。
+```PHP
+<?php
+// CSVファイルを読み込む
+$file = fopen("sample.csv", "r");
 
-```php
-$file = fopen('data.csv', 'r') //ファイルを読み込む
-while (($data = fgetcsv($file)) !== FALSE) { //データを読み取る
-  print_r($data); //データを出力
+// データを配列に格納する
+$data = [];
+while (($row = fgetcsv($file)) !== false) {
+    $data[] = $row;
 }
-fclose($file); //ファイルを閉じる
+
+// データを出力する
+foreach ($data as $row) {
+    echo implode(",", $row) . "\n";
+}
+
+// 新しい行を追加する
+$add_row = ["New", "Data", "Entry"];
+$data[] = $add_row;
+
+// CSVファイルに新しい行を書き込む
+$new_file = fopen("new_sample.csv", "w");
+foreach ($data as $row) {
+    fputcsv($new_file, $row);
+}
+
+// ファイルをクローズする
+fclose($file);
+fclose($new_file);
+?>
 ```
 
-上記のコードでは、`data.csv`という名前のファイルを読み込み、データを出力する処理を行っています。また、CSVファイルには、カンマやタブなどで区切られたデータが含まれているため、`fgetcsv()`関数はデフォルトでカンマを区切り文字として扱います。もしファイル内のデータがタブで区切られている場合は、`fgetcsv()`の第二引数に`"\t"`を指定することで、タブを区切り文字として扱うことができます。
+上記の例では、まず```fopen()```関数を使用してCSVファイルを読み込みます。データを配列に格納するために```fgetcsv()```関数を使用し、組み込みの```\n```を使用して出力することができます。新しい行を追加するには、配列に追加した後に```fputcsv()```関数を使用して新しいCSVファイルに書き込みます。そして最後に、ファイルをクローズすることを忘れないようにしましょう。
 
-また、CSVファイルを書き込むには、`fopen()`関数の第二引数に`w`モードを指定し、`fputcsv()`関数を使用します。以下のようなPHPコードで、CSVファイルにデータを書き込むことができます。
+## Deep Dive
 
-```php
-$file = fopen('data.csv', 'w'); //ファイルを書き込みモードで開く
-$data = array('John', 'Doe', 'john@example.com'); //書き込むデータ
-fputcsv($file, $data); //データを書き込む
-fclose($file); //ファイルを閉じる
-```
+CSVファイルを扱う際に注意する点としては、文字コードの違いやエスケープ文字の処理があります。文字コードが異なる場合、データを正しく読み取ることができず、エスケープ文字が含まれる場合はデータが壊れる可能性があります。そのため、ファイルを読み込む際には```fopen()```関数の第二引数で文字コードを指定することや、```fputcsv()```関数を使用する際にはエスケープ文字の設定を行う必要があります。
 
-##CSVファイルをPHPで深堀りする
+また、CSVファイルを扱う際にはデータの整形やフィルタリングも重要です。そのため、PHPでは```array_map()```や```array_filter()```といった便利な関数を使用することで、データの加工を簡単に行うことができます。
 
-CSVファイルを扱う際に注意しなければいけない点がいくつかあります。例えば、PHPではデフォルトで文字エンコーディングが`ISO-8859-1`となっていますが、CSVファイルは`UTF-8`で保存されることが多いため、文字化けが起こることがあります。このような場合は、`mb_convert_encoding()`関数を使用して、文字エンコーディングを変換する必要があります。
+## See Also
 
-また、CSVファイルには、ヘッダー行が含まれている場合があります。これは、データの一番上に項目名が書かれている行のことを言います。PHPでは、`fgetcsv()`関数を使用してデータを読み取る際に、第二引数に`0`を指定することで、ヘッダー行を無視することができます。もしデータにヘッダー行が含まれていない場合は、第二引数を省略することができます。
-
-##見出し
-
-もしもCSVファイルのデータをトップにコメントを記入したい場合は
+- [PHP公式ドキュメント - CSV関数](https://www.php.net/manual/ja/ref.csv.php)
+- [PHP: array_map - Manual](https://www.php.net/manual/ja/function.array-map.php)
+- [PHP: array_filter - Manual](https://www.php.net/manual/ja/function.array-filter.php)

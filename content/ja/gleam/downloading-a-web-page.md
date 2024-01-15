@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 「ウェブページのダウンロード」"
-simple_title:         "「ウェブページのダウンロード」"
+title:                "ウェブページをダウンロードする"
+html_title:           "Gleam: ウェブページをダウンロードする"
+simple_title:         "ウェブページをダウンロードする"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜダウンロードするのか
+# なぜダウンロードする必要があるのか？
 
-Webサイトのコンテンツを解析したり、データを収集したりするために、多くの開発者がWebページをダウンロードするでしょう。Gleam言語を使えば、簡単にWebページをダウンロードすることができます。
+ウェブページのダウンロードは、あなたのプログラムが必要とするデータを入手するために必要です。例えば、スクレイピングやデータ収集のために、特定のWebページから情報を収集する場合に使用されます。
 
 ## ダウンロードする方法
 
-まず、Gleamプロジェクトを新しく作成します。その中で、以下のコードを実行します。
-
-```Gleam
-use http
-
-let url = "https://example.com"
-let page = http.get(url)
+```gleam
+pub fn main() {
+  let url = "https://example.com";
+  let response = http.Client.get(url);
+  match response {
+    Ok(resp) -> {
+      println(show(resp.body))
+    }
+    Err(err) -> {
+      println(err)
+    }
+  }
+}
 ```
 
-上記のコードでは、`http`モジュールをインポートし、ダウンロードするWebページのURLを定義しています。そして、`http.get`関数を使ってページをダウンロードしています。このコードを実行すると、指定したURLのWebページがダウンロードされ、`page`変数に保存されます。
+上記のようなコードを使用して、Gleamを使用して特定のURLからデータをダウンロードすることができます。`http`モジュールの`Client`型を使用してGETリクエストを作成し、レスポンスを取得し、レスポンスの本文を表示することができます。
 
-もし、特定のリクエストヘッダーやクエリパラメーターを追加したい場合は、`http.get`関数の第二引数としてオプションのオブジェクトを渡すことができます。また、GET以外のHTTPメソッドを使いたい場合は、代わりに`http.request`関数を使うことができます。
+```gleam
+成功
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+    body {
+      background-color: #f0f0f2;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue
+```
 
-## 深く掘り下げる
+## さらに詳しく
 
-`page`変数には、ダウンロードしたWebページのHTMLソースコードが含まれています。このコードを解析したり、必要な情報を抽出したりすることで、より高度なデータ収集やスクレイピングを行うことができます。また、`http.get`関数や`http.request`関数を使うことで、その他のHTTPリクエストを実行することもできます。
+ウェブページをダウンロードする方法はさまざまありますが、Gleamを使用するとかなり簡単にできます。`http`モジュールには、メソッドやヘッダーの設定など、さまざまな機能が用意されています。さらに、`httpc`ライブラリを使用することで、GleamのHTTPリクエストをより高度に操作することもできます。
 
-## さらに参考になる情報
+# もっと詳しく知りたい場合は
 
-- [Gleam 公式ドキュメント](https://gleam.run/documentation/)
-- [Gleam - HTTP Module](https://gleam.run/documentation/std-lib-http/)
-- [Gleam - HTTP Request Functions](https://gleam.run/documentation/std-lib-http/functions/)
+- Gleamの公式ドキュメント: https://gleam.run/
+  - `http`モジュールの詳細: https://gleam.run/modules/http.html
+  - `httpc`ライブラリの詳細: https://hexdocs.pm/httpc/readme.html

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Swift: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,33 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie aplikacji mobilnych jest niezwykle popularne i pożądane umiejętnością. Jednym z kluczowych aspektów w tworzeniu takich aplikacji jest komunikacja z zewnętrznymi serwisami i odbieranie danych z ich API. Aby to osiągnąć, konieczne jest wysyłanie żądań HTTP. Dzięki temu artykułowi dowiesz się, dlaczego wysyłanie żądań HTTP jest tak ważne i jak to zrobić w języku Swift.
+Zastanawiasz się, dlaczego potrzebujemy wysyłać żądania HTTP w naszych programach Swift? Odpowiedź jest prosta: żądania HTTP pozwalają nam na komunikację z serwerami i otrzymywanie informacji, takich jak dane, obrazy czy pliki.
 
 ## Jak to zrobić
 
-Wysyłanie żądań HTTP w języku Swift jest prostym i szybkim procesem. Najpierw musimy utworzyć nowy obiekt URLSession, który będzie odpowiedzialny za wysyłanie żądań i odbieranie odpowiedzi. Następnie używamy metody `dataTask(with:completionHandler:)` na tym obiekcie, aby utworzyć zadanie żądania z URL, którego potrzebujemy. W bloku completionHandler możemy obsłużyć odpowiedź i odbierane dane. 
+Sending an HTTP request in Swift is a two-step process. First, we need to create a URL object representing the server we want to communicate with. Then, we use this URL object to create an HTTP request object, which we can then send to the server.
 
 ```Swift
-let session = URLSession.shared
-let url = URL(string: "https://example.com")!
-let task = session.dataTask(with: url) { data, response, error in
-    if let response = response {
-        print(response)
-    }
-    if let data = data {
-        print(data)
-    }
+// Step 1: Create URL object
+guard let url = URL(string: "https://mywebsite.com") else {
+  // handle URL creation failure
+  return 
+}
+
+// Step 2: Create HTTP request object
+var request = URLRequest(url: url)
+
+// add HTTP method (ex. GET, POST, PUT)
+request.httpMethod = "GET"
+
+// set any additional headers if needed
+request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+// send the request using URLSession
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+  guard error == nil else {
+    // handle error
+    return
+  }
+  
+  // handle response from server (if needed)
+  guard let data = data else { return }
+  let responseString = String(data: data, encoding: .utf8)
+  // do something with responseString
 }
 task.resume()
 ```
-Po prostu wywołujemy `resume()` na zadaniu, aby rozpocząć wysyłanie żądania. W powyższym przykładzie wydrukujemy odpowiedź i odbierane dane, ale oczywiście w praktyce będziemy chcieli wykorzystać te dane do dalszej obróbki.
 
-## Również warto dla Ciebie
+Deep Dive: Wysyłając żądanie HTTP, możemy także przesłać dane, np. JSON lub formularz HTTP, wraz z naszym zapytaniem. Wówczas należy ustawić odpowiedni nagłówek (w przykładzie ustawiliśmy `Content-Type` na `application/json`) oraz przekazać dane do ciała żądania.
 
-Jeśli chcesz dowiedzieć się więcej o wysyłaniu żądań HTTP w języku Swift, możesz zapoznać się z dokumentacją Apple dotyczącą URLSession. Możesz również przejrzeć darmowe kursy online lub wybrać się na warsztaty z programowania aplikacji mobilnych. Pamiętaj, że praktyka czyni mistrza, więc nie bój się eksperymentować i rozwijać swoje umiejętności w programowaniu. Niech to będzie tylko pierwszym krokiem na Twojej drodze do zostania profesjonalnym programistą aplikacji mobilnych. 
+## Zobacz też
 
-## Zobacz również
-
-- [Dokumentacja Apple dotycząca URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Bezpłatne kursy online z języka Swift](https://www.swift.org/education/#free-courses)
-- [Warsztaty z programowania na platformie Apple](https://developer.apple.com/academy/)
+- [Apple Developer Documentation: URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [Apple Developer Documentation: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Podręcznik HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP)

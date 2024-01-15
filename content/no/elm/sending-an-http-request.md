@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Sending en http-forespørsel"
+html_title:           "Elm: Sending en http-forespørsel"
+simple_title:         "Sending en http-forespørsel"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,57 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende HTTP-forespørsler kan være en viktig del av å utvikle en moderne webapplikasjon. Dette kan være nyttig for å hente data fra en ekstern server eller utføre handlinger som påvirker brukerens erfaring på nettsiden.
+Å sende HTTP-forespørsler er en viktig del av å bygge dynamiske og interaktive nettsider og applikasjoner. Enten du ønsker å hente data fra en database, kalle på en ekstern API eller sende skjemainformasjon til en server, er å kunne sende HTTP-forespørsler en essensiell ferdighet for alle Elm-programmerere.
 
 ## Slik gjør du det
 
-For å sende en HTTP-forespørsel i Elm, må du bruke "Http" biblioteket. Du må også importere Http-pakkene som inneholder funksjoner for å sende og behandle forespørsler.
+For å sende en HTTP-forespørsel i Elm, må du først importere HttpClient-modulen og deretter bruke funksjonen `send` sammen med en `Request` og en `Decoder`:
 
-```
-import Http
-import Http exposing (..)
-```
+```Elm
+import HttpClient exposing (send)
+import Json.Decode as Json
 
-Deretter kan du bruke funksjonen "send" for å sende en forespørsel. Du må også spesifisere metoden (GET, POST, osv.), URLen og eventuelle data som skal sendes med forespørselen.
+type Msg = RequestSucceed | RequestFail Http.Error
 
-```
-send : String -> String -> Http.Request a (Maybe b) -> Cmd b
-```
-
-Et eksempel på å utføre en GET-forespørsel til en API som returnerer en liste over brukere ser slik ut:
-
-```
-Http.get "https://api.example.com/users"
-    |> Http.send getUsers
+sendRequest : Cmd Msg
+sendRequest =
+  let
+    url = "https://api.example.com/users"
+    request = HttpClient.get url
+    decoder = Json.list User.decodeUser
+  in
+    send RequestSucceed RequestFail request decoder
 ```
 
-Her vil getUsers fungere som et signal som mottar responsen fra APIen. Deretter kan du håndtere responsen ved å bruke en funksjon som "Http.expectJson" for å dekode responsen og få ut ønsket data.
+I dette eksemplet bruker vi funksjonen `get` som er en del av HttpClient-modulen. Vi gir den en URL som vi ønsker å sende en GET-forespørsel til, og deretter dekoder vi svaret til en liste av `User`-objekter ved hjelp av `Json.list` og `User.decodeUser` som vi må definere selv.
 
-```
-Http.expectJson getUsers responseDecoder
-```
+`send`-funksjonen returnerer en `Cmd Msg`, som er en kommando som sender en `Msg`-type til programmet når HTTP-forespørselen er fullført. Vi kan deretter håndtere disse meldingene i `update`-funksjonen vår for å endre tilstanden til applikasjonen basert på resultatet av forespørselen.
 
-## Dypdykk
+## Dype dykk
 
-For å sende en POST-forespørsel, må du spesifisere HTTP-metoden og sette dataene du vil sende i en Http.Request. Eksempelet nedenfor viser hvordan du kan sende data til en server og behandle responsen.
-
-```
-let
-    user =
-        { name = "John", age = 30 }
-
-    userToRequestData user =
-        Http.jsonBody user
-            |> Http.send users
-
-in
-userToRequestData user
-    |> Http.expectJson users responseDecoder
-```
-
-Det er også muligheter for å sette tilpassede HTTP-hoder og sende filer med en forespørsel ved bruk av forskjellige funksjoner i "Http" biblioteket.
+Det finnes flere forskjellige verktøy og biblioteker for å håndtere HTTP-forespørsler i Elm, som gir forskjellige fordeler og ulemper avhengig av hva slags program du bygger. Noen populære alternativer inkluderer `elm/http`, `elm-graphql`, og `elm-peer-http`. Utforske disse kan gi deg en dypere forståelse for hvordan HTTP-forespørsler fungerer i Elm og hvordan de kan integreres i ulike programmer.
 
 ## Se også
 
-- Offisiell dokumentasjon for "Http" biblioteket: https://package.elm-lang.org/packages/elm/http/latest/
-- Elm Guide om å jobbe med APIer: https://guide.elm-lang.org/effects/http.html
+- [Official Elm Documentation on HTTP](https://package.elm-lang.org/packages/elm/http/latest/) (offisiell Elm-dokumentasjon om HTTP)
+- [Using HTTP in Elm with elm/http](https://guide.elm-lang.org/effects/http.html) (bruksanvisning for HTTP i Elm med `elm/http`)
+- [Making HTTP requests with elm-graphql](https://dev.to/paulvarache/graphql-with-elm-557e) (hvordan sende HTTP-forespørsler med `elm-graphql`)
+- [Elm packages tagged with http](https://package.elm-lang.org/packages/tags/http/latest/) (oversikt over ulike Elm-pakker som er relatert til HTTP)

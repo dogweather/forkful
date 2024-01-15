@@ -1,6 +1,7 @@
 ---
-title:                "Python: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de Subcadenas"
+html_title:           "Python: Extracción de Subcadenas"
+simple_title:         "Extracción de Subcadenas"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,29 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Extraer subcadenas es una habilidad útil en programación que te permite obtener una parte específica de un texto más grande. Puedes usar esta técnica para manipular y analizar datos, así como para mejorar la presentación de resultados en tus programas.
+## ¿Por qué extraer subcadenas en Python?
 
-## Cómo hacerlo
-Para extraer subcadenas en Python, simplemente usa el método `substring()` en una cadena de texto seguido de los índices de inicio y fin del texto que deseas obtener. Aquí hay un ejemplo de código:
+Extraer subcadenas en Python puede ser una tarea bastante común en la programación. Esto se debe a que muchas veces necesitaremos trabajar solo con una parte de una cadena de texto determinada. Por ejemplo, si queremos extraer un nombre de un correo electrónico completo o si deseamos obtener solo el código de un número de identificación.
 
-```Python
-texto = "¡Hola a todos!"
-print(texto.substring(0,4))
-```
+## Cómo extraer subcadenas en Python
 
-Esto imprimirá "¡Hola", ya que los índices van desde 0 hasta 3, extrayendo la primera parte de la cadena original. También puedes usar índices negativos para contar desde el final de la cadena hacia atrás. Por ejemplo:
+Extraer subcadenas en Python es bastante sencillo utilizando la función incorporada `slice()` o mediante el uso de la sintaxis de indexación de cadenas.
 
 ```Python
-texto = "¡Hola a todos!"
-print(texto.substring(-6,-1))
+# Utilizando la función slice()
+cadena = "Este es un ejemplo de una cadena de texto."
+subcadena = slice(5, 14) # Selecciona desde el índice 5 hasta el 13
+print(cadena[subcadena]) # Imprime "es un ejem"
+
+# Utilizando la sintaxis de indexación
+cadena = "123456789"
+print(cadena[2:8]) # Imprime "345678"
 ```
 
-Esto imprimirá "todos", ya que los índices negativos empiezan desde -1 en lugar del típico índice 0. Puedes jugar con diferentes índices para obtener diferentes subcadenas según tus necesidades.
+También podemos utilizar el método `split()` para dividir una cadena en subcadenas basadas en un separador específico.
 
-## Profundizando
-El método `substring()` en Python funciona de manera similar al método `slice()` y también admite un tercer parámetro opcional para indicar el paso de la extracción. Pero a diferencia del método `slice()`, `substring()` no permite índices negativos para indicar el final de la extracción. También debes tener cuidado de no usar índices fuera del rango de la cadena original para evitar errores.
+```Python
+# Utilizando el método split()
+cadena = "Ejemplo de texto, separado por comas"
+subcadenas = cadena.split(", ")
+print(subcadenas) # Imprime ['Ejemplo de texto', 'separado por comas']
+```
+
+## Profundizando en la extracción de subcadenas
+
+Es importante tener en cuenta que el índice del primer carácter de una cadena es 0, y que el índice del último carácter es -1. Además, podemos utilizar números negativos en nuestras subcadenas para contar desde el final de la cadena hacia atrás.
+
+```Python
+cadena = "¡Hola, mundo!"
+print(cadena[1:]) # Desde el índice 1 hasta el final. Imprime "Hola, mundo!"
+print(cadena[:-1]) # Desde el inicio hasta el índice -1. Imprime "¡Hola, mundo"
+print(cadena[::-1]) # Imprime la cadena en orden inverso. "¡odnum ,aloh¡"
+```
+
+También podemos utilizar expresiones regulares para realizar búsquedas y reemplazos más complejos en nuestras cadenas.
+
+```Python
+import re
+cadena = "¡Hola, Python!"
+nueva_cadena = re.sub("[aeiou]", "¡", cadena)
+print(nueva_cadena) # Imprime "¡H¡l¡, P¡th¡n!"
+```
 
 ## Ver también
-- [Documentación oficial de Python sobre extraer subcadenas](https://docs.python.org/es/3.9/library/stdtypes.html#string-methods)
-- [Ejemplos de código para extraer subcadenas en Python](https://www.geeksforgeeks.org/python-ways-to-extract-partial-strings-from-string/)
+
+- Documentación oficial de Python sobre la función `slice()`: https://docs.python.org/3/library/functions.html#slice
+- Tutorial de Real Python sobre manipulación de cadenas en Python: https://realpython.com/python-strings/

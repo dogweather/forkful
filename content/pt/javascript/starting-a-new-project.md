@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Iniciando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,52 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em Javascript?
+## Por que começar um novo projeto em Javascript?
 
-Iniciar um novo projeto em Javascript pode ser uma ótima maneira de aprender novas habilidades de programação, resolver problemas ou criar algo que possa beneficiar outras pessoas. Além disso, Javascript é uma linguagem de programação muito popular e versátil, sendo amplamente utilizada em aplicações web e mobile.
+Começar um novo projeto em Javascript pode ser uma ótima opção para quem deseja desenvolver aplicações web dinâmicas e interativas. Além disso, como uma das linguagens de programação mais populares e amplamente utilizadas, o Javascript oferece uma excelente comunidade de suporte e uma infinidade de recursos e ferramentas disponíveis.
 
-## Como fazer
+## Como fazer:
 
-Para iniciar um novo projeto em Javascript, é necessário ter conhecimento básico sobre a linguagem e sua sintaxe. Depois disso, basta seguir alguns passos simples:
+Para começar um novo projeto em Javascript, basta seguir alguns passos simples:
 
-1. Escolha uma IDE (Ambiente de Desenvolvimento Integrado) para escrever seu código. Algumas opções populares incluem VS Code, Sublime Text e Atom.
+1. Certifique-se de ter um ambiente adequado para o desenvolvimento, como um editor de código e um navegador web.
+2. Escolha uma estrutura ou biblioteca para o seu projeto, como o React, Angular ou Vue.js.
+3. Crie um arquivo HTML básico para a estrutura de seu projeto e vincule seu arquivo Javascript a ele.
+4. Comece a codificar em Javascript, utilizando as funcionalidades da estrutura ou biblioteca escolhida.
+5. Teste e depure seu código regularmente para garantir um bom funcionamento.
 
-2. Defina o objetivo do seu projeto e crie um esboço ou diagrama para visualizar a estrutura do seu código.
+Um exemplo básico de código em Javascript:
 
-3. Utilize o comando `npm init` para criar um arquivo `package.json` que irá conter informações sobre o seu projeto.
-
-4. Comece a escrever seu código Javascript dentro de arquivos com extensão `.js`.
-
-5. Utilize funções, condicionais e laços de repetição para criar lógicas e manipular os dados do seu projeto.
-
-6. Teste seu código regularmente para certificar-se de que está funcionando corretamente.
-
-7. Quando finalizar seu projeto, utilize o `npm` para gerenciar as dependências e pacotes utilizados no seu projeto.
-
-Aqui está um exemplo de código simples que mostra como podemos criar uma função em Javascript e chamá-la:
-
-```Javascript
-// Declaração de função
-function saudacao(nome) {
-  console.log(`Olá, ${nome}! Bem-vindo ao meu projeto em Javascript.`);
+```javascript
+// Definindo uma função para somar dois números 
+function soma(a, b) {
+  return a + b;
 }
 
-// Chamando a função
-saudacao("Leitor");
+console.log(soma(2, 3)); // Saída: 5
 ```
 
-O resultado desse código seria `Olá, Leitor! Bem-vindo ao meu projeto em Javascript.` no console.
+## Mergulho Profundo:
 
-## Aprofundando-se
+Antes de começar a desenvolver um novo projeto em Javascript, é importante ter uma boa compreensão dos conceitos fundamentais da linguagem, como variáveis, funções, objetos, condicionais e loops. Além disso, é essencial conhecer as características específicas das estruturas e bibliotecas que serão utilizadas.
 
-Iniciar um novo projeto em Javascript pode ser desafiador, mas também é uma excelente oportunidade para aprimorar suas habilidades de programação. Além disso, ao criar algo novo, é possível aprender com seus erros e ter orgulho do produto final.
+Outra dica importante é manter-se atualizado com as novidades e tendências do desenvolvimento em Javascript, pois a linguagem está em constante evolução. Participar de comunidades e fóruns de discussão pode ser uma ótima maneira de ficar por dentro das novidades e também compartilhar conhecimento com outros desenvolvedores.
 
-Ao iniciar um novo projeto, é importante definir metas e prazos realistas, além de ter um bom controle de versão utilizando ferramentas como o Git. Também é recomendado buscar por comunidades de desenvolvedores e fóruns para compartilhar suas dúvidas e obter feedbacks valiosos.
-
-Lembre-se de que, assim como qualquer habilidade, a programação requer prática e paciência. Seja perseverante e utilize a documentação oficial do Javascript como referência para aprender novos conceitos e funções.
-
-## Veja também
+## Veja também:
 
 - [Documentação oficial do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Curso de Javascript gratuito na Udemy](https://www.udemy.com/course/javascript-curso-completo/)
-- [Comunidade brasileira de desenvolvedores Javascript](https://javascript.com.br/)
+- [React](https://reactjs.org/)
+- [Angular](https://angular.io/)
+- [Vue.js](https://vuejs.org/)
+- [Stack Overflow (em Português)](https://pt.stackoverflow.com/)

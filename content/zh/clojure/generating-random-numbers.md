@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 生成随机数"
-simple_title:         "生成随机数"
+title:                "生成随机数字"
+html_title:           "Clojure: 生成随机数字"
+simple_title:         "生成随机数字"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -9,35 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要生成随机数？
+## 为什么
 
-在编程的世界里，随机数是一个非常重要的概念。它可以被用来模拟现实世界中的随机事件，帮助我们创建可重复的代码，甚至可以构建随机性的游戏。无论是什么原因，生成随机数都是非常有用的技巧，让我们来看看如何在Clojure中实现它。
+Clojure是一种功能强大的编程语言，它提供了一种简单有趣的方式来生成随机数。随机数在计算机科学中有许多用途，例如加密、游戏、模拟和测试。您可以使用Clojure生成随机数来解决各种问题，同时也能让编程过程更加有趣。
 
-## 如何生成随机数？
+## 如何使用
 
-在Clojure中，我们可以使用`(rand)`函数来生成一个0到1之间的随机数。如果想要生成一个指定范围内的随机整数，则可以使用`(rand-int n)`函数，其中 n 为范围。下面是一个例子：
-
-```Clojure
-(rand) ; => 0.7480682118451838
-
-(rand-int 10) ; => 7
+```Clojure 
+;;生成一个随机数
+(def random-number (rand))
+;;输出随机数
+(println "随机数是：" random-number)
+;;生成指定范围内的随机数
+(rand-int 10) ;;生成0到9的随机数
 ```
 
-如果我们想要生成一组随机数，可以使用`for`函数和`range`函数来实现。下面的代码将生成10个随机数，并将它们存储在一个列表中。
+上面的代码展示了如何在Clojure中生成随机数，并将其打印出来。您可以将这些随机数应用到您的项目中，例如创建一个简单的猜数字游戏：
 
 ```Clojure
-(for [x (range 10)]
-  (rand)) ; => (0.40134497126876535 0.05613902643835942 0.9254182569730625 0.5003199372819021 0.6432034908278608 0.5797597669106045 0.930961409594252 0.7520485869047621 0.8341718954541113 0.5105994259117965)
+(def secret-number (rand-int 10)) ;;生成一个0到9的随机数
+
+(defn guess-number []
+  (println "猜一个数字：")
+  (let [user-input (read-line) ;;读取用户输入
+        user-guess (Integer/parseInt user-input)] ;;将输入转换为整数
+    (cond
+      (> user-guess secret-number) (println "太大了，再试一次！") (guess-number)
+      (< user-guess secret-number) (println "太小了，再试一次！") (guess-number)
+      :else (println "你猜对了！") ;;用户猜中了，游戏结束
+    )
+  )
+)
+
+(guess-number)
 ```
 
-## 深入研究生成随机数
+每次用户猜错数字时，游戏会提醒他们数字太大或太小，并继续要求输入直到猜中为止。
 
-在计算机科学中，真正的随机数是不存在的，因为计算机只能按照指令执行，无法真正地产生随机数。因此，计算机科学家们使用伪随机数来模拟真正的随机性。伪随机数是通过一个特定的算法来生成的，这个算法需要一个种子值来作为输入。种子值是生成随机数的起点，相同的种子值会产生相同的随机数序列。在Clojure中，我们可以通过`(random-seed n)`函数来设置种子值。
+## 深入探讨
 
-除了上面提到的函数，Clojure中还有一些其他的函数来帮助我们生成随机数。例如，`(shuffle coll)`函数可以随机打乱一个集合元素的顺序，`(<)`, `(<=)`, `(>)`, `(>=)`函数可以帮助我们判断两个值的大小关系，`(rand-nth coll)`函数可以随机选择一个集合中的元素。
+Clojure使用Java的`java.util.Random`类来生成随机数。`rand`和`rand-int`函数分别调用了`Random`类中的`nextDouble`和`nextInt`方法来生成随机数。您还可以使用`rand-nth`函数来从集合中随机选择一个元素。
 
-# 另请参阅
+正如我们所见，Clojure中生成的随机数是伪随机数。它们并不是真正随机的，而是通过使用固定的算法和种子值来生成的。因此，如果使用相同的种子值，每次生成的随机数都将相同。我们可以使用`seed`函数来设置种子值，也可以设置`rand`函数的`boolean`参数来指定是否使用系统时间作为种子值。
 
-- [Clojure官方文档 - 随机数](https://clojure.org/reference/java_interop#random-numbers)
-- [Clojure维基百科 - 随机数发生器](https://en.wikipedia.org/wiki/Random_number_generation_in_Clojure)
-- [Clojure Cookbook - 生成随机数](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_data/8-12_random_numbers.md)
+## 参考资料
+
+- [Clojure官方网站](https://clojure.org/)
+- [Random类的文档](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Clojure Cookbook：随机数](https://clojure-cookbook.org/numeric/random_numbers)
+
+## 另请参阅
+
+- [Clojure在realpython.com的入门教程](https://realpython.com/clojure-introduction/)
+- [Clojure编程的7个功能特性](https://dev.to/cyberos/clojure-programming-in-seven-really-great-functions-4pfo)
+- [Clojure & Functional Programming：一种简单方法来编写更好的代码](https://towardsdatascience.com/a-simple-way-to-write-better-code-for-clojure-functional-programming-c4a8b6a97dd8)

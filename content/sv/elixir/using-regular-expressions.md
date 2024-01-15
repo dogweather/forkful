@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Elixir: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Reguljära uttryck är ett kraftfullt verktyg inom Elixir som hjälper dig att söka och manipulera text baserat på specifika mönster. Detta kan vara användbart för att analysera data, formatera text eller validera inmatning. Genom att lära sig reguljära uttryck kan du effektivisera din kodning och få mer precist kontroll över dina strängar.
+Om du är en programmerare som arbetar med Elixir, har du förmodligen hört talas om regular expressions. Dessa är kraftfulla verktyg för mönstermatchning och sökning i strängar. Genom att använda regular expressions kan du effektivt hitta och manipulera data i dina Elixir-program.
 
-## Hur man använder reguljära uttryck i Elixir
-För att använda reguljära uttryck i Elixir behöver du först importera modulen `Regex` genom att skriva `import Regex` högst upp i din fil. Sedan kan du använda syntaxen `~r//` för att definiera ditt reguljära uttryck.
+## Så här
+För att använda regular expressions i Elixir, behöver du först ladda in Regex-modulen. Du kan göra detta genom att skriva följande kod i din Elixir-fil:
 
 ```elixir
-import Regex
-
-string = "Hej, jag älskar Elixir!"
-
-~r/Elixir/ # matchar ordet "Elixir" i texten
-
-Regex.run(~r/Elixir/, string) # output: ["Elixir"]
-
+require Regex
 ```
 
-Det finns också många olika regexp-funktioner som du kan använda, till exempel `match?`, `scan` och `replace` för att uppnå olika effekter baserat på ditt användningsfall. Se till att kolla dokumentationen för fler detaljer och exempel.
+Nu är du klar att använda regular expressions i ditt program. För att hitta ett visst mönster i en sträng kan du använda funktionen `Regex.match/2`. Till exempel, om du har en sträng som innehåller en e-postadress kan du använda följande kod för att hitta den:
 
-## Djupdykning
-Reguljära uttryck bygger på ett koncept som kallas "regular expression engine". Detta är en algoritm som kan läsa ett reguljärt uttryck och utföra olika operationer baserat på det.
+```elixir
+Regex.match(~r/\w+@\w+\.\w+/, "kontakt@exemplexempel.se")
+```
 
-I Elixir används "PCRE" (Perl Compatible Regular Expressions) som standard för reguljära uttryck. Det finns också andra engine-alternativ du kan använda, såsom "RE2" och "Hyperscan". Varje engine har sina egna fördelar och begränsningar, så det kan vara värt att utforska vilken som passar dina behov bäst.
+Detta kommer att returnera en `match` struct som innehåller information om den matchade delen av strängen, såsom position och värde. Du kan sedan använda denna information för att extrahera och manipulera data i din kod.
 
-En annan sak att notera är att reguljära uttryck inte alltid är det bästa valet för att lösa ett problem. Det är viktigt att överväga alternativa lösningar och hitta en balans mellan enkelhet och prestanda.
+Det finns också andra funktioner för att arbeta med regular expressions, såsom `Regex.scan/2`, som hittar alla matcher i en sträng, och `Regex.replace/3`, som låter dig ersätta en match med en annan sträng.
 
-## Se även
-* [Elixir Dokumentation: Regex](https://hexdocs.pm/elixir/Regex.html)
-* [Mastering Regular Expressions av Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
-* [Regular-Expressions.info](https://regular-expressions.info/) (tillgänglig på svenska)
+## Deep Dive
+Regular expressions är en mycket kraftfull mekanism, men det kan vara lite knepigt att lära sig och använda dem korrekt. Det finns många olika symboler och operatorer som kan användas för att bygga mönster, och det är viktigt att förstå hur dessa fungerar tillsammans.
+
+För att lära dig mer om hur du använder regular expressions i Elixir, rekommenderar vi att du utforskar dokumentationen för Regex-modulen och övar på att bygga och matcha olika mönster.
+
+## Se också
+- [Elixir Regex Dokumentation](https://hexdocs.pm/elixir/Regex.html)
+- [RegExr.com - online regular expression tester](https://regexr.com/)
+- [Learn Regular Expressions in 20 Minutes](https://www.youtube.com/watch?v=rhzKDrUiJVk) (video)

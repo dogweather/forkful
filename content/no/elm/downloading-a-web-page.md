@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Last ned en nettside"
-simple_title:         "Last ned en nettside"
+title:                "Hente en nettside"
+html_title:           "Elm: Hente en nettside"
+simple_title:         "Hente en nettside"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,38 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å laste ned en nettside kan være nyttig for å kunne jobbe med og analysere nettsider selv uten å være koblet til internett. Det kan også være en god måte å lære om hvordan nettsider fungerer og interagerer med data.
+Hvorfor laste ned en nettside? Det kan være flere grunner til å gjøre dette, for eksempel å få en lokal kopi av en side for offline bruk, analysere kildekoden eller bare for å lagre informasjon.
 
-## Hvordan å
+## Slik gjør du det
 
-Vi kan bruke det funksjonelle programmeringsspråket Elm for å enkelt laste ned en nettside. Først må vi importere et modul som hjelper oss med å hente data fra en URL. Deretter kan vi bruke funksjonen `Http.getString` og gi den en nettsideadresse, som vil returnere en `Task` som inneholder nettsiden sin HTML-kode.
+Å laste ned en nettside i Elm er enkelt. Først må vi importere `Http`-biblioteket:
 
-Et eksempel på hvordan dette kan se ut i Elm-kode:
+```elm
+import Http
+```
+
+Deretter definerer vi en `Command` som bruker `Http.getString`-funksjonen for å hente data fra en spesifikk URL:
+
+```elm
+fetchPage : Cmd Msg
+fetchPage =
+    Http.getString "https://www.example.com"
+        |> Http.send GotPage
+```
+
+Merk at `GotPage` her er en `Msg`-type som må defineres i din Elm-applikasjon.
+
+Vi kan også legge til en `Http.expectString`-funksjon for å håndtere eventuelle feil som kan oppstå under nedlastingen:
 
 ```elm
 import Http
 
-getWebPage : String -> Task Http.Error String
-getWebPage url =
-    Http.getString url
+type Msg
+    = GotPage (Result Http.Error String)
 
--- Eksempel på å hente HTML-koden til Google sine søkesider
-googleSearchPage : Task Http.Error String
-googleSearchPage =
-    getWebPage "https://www.google.com/search?source=hp&ei=xxxx"
+fetchPage : Cmd Msg
+fetchPage =
+    Http.getString "https://www.example.com"
+        |> Http.send GotPage
+        |> Http.expectString GotPageError
 
+GotPageError : Http.Error -> Msg
+GotPageError err =
+    -- håndter feil her
 ```
 
-Når vi kjører koden, vil HTML-koden til Google sin søkeside bli lagret i en `Task` som vi kan bruke og jobbe med.
+Når dataen er lastet ned, vil den bli sendt til `GotPage`-funksjonen, som vi må håndtere i vår `update`-funksjon.
 
-## Dypdykk
+## Utforsk videre
 
-Det er viktig å merke seg at denne metoden vil returnere HTML-koden til nettsiden slik den ser ut på det aktuelle tidspunktet du laster den ned. Dette betyr at hvis nettsiden blir endret, vil koden du har lastet ned fortsatt være den gamle versjonen.
+Det er mange ulike måter å laste ned og behandle nettsider i Elm på. Her er noen nyttige ressurser for å lære mer:
 
-Det er også viktig å være bevisst på at det å laste ned en nettside kan være en ressurskrevende prosess, spesielt for større nettsider med mye innhold. Det er derfor viktig å være forsiktig med å bruke denne metoden for å unngå å overbelaste nettleseren din.
+- [Offisiell Elm-dokumentasjon for Http-biblioteket](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Tutorial: Making HTTP Requests in Elm](https://thoughtbot.com/blog/making-http-requests-in-elm)
+- [Elm tutorial: Fetching data from an API using Elm's Http module](https://medium.com/@jsgrt/elmtutorial-fetching-data-from-an-api-using-elms-http-module-106c777ec15c)
 
 ## Se også
 
-- Elm sin offisielle nettside: https://elm-lang.org/
-- Elm sin dokumentasjon om HTTP-modulen: https://package.elm-lang.org/packages/elm/http/latest/
-- En guide om hvordan du kan jobbe med og analysere HTML med Elm: https://www.brianthicks.com/post/2021-01-05-working-with-html-in-elm/
+- [Elm sin offisielle nettside](https://elm-lang.org/)
+- [Elm på GitHub](https://github.com/elm)
+- [Elm på Reddit](https://www.reddit.com/r/elm/)

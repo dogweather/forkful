@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeide med json"
+html_title:           "Bash: Arbeide med json"
+simple_title:         "Arbeide med json"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -11,91 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I dagens digitale verden er det svært vanlig å jobbe med data i form av JSON. JSON, eller JavaScript Object Notation, er et format for å lagre og utveksle data. Det brukes mye i webapplikasjoner og APIer, og som en Bash programmerer kan det være nyttig å ha kunnskap om hvordan man håndterer JSON data.
+Vi bruker JSON (JavaScript Object Notation) for å lagre, overføre og håndtere data i ulike programmeringsspråk. JSON er et lettvektsformat som er enkelt å lese og skrive for både mennesker og maskiner. Å jobbe med JSON i Bash kan være nyttig når du trenger å behandle data i skript eller automatisere oppgaver.
 
 ## Hvordan
 
-Det første skrittet for å jobbe med JSON i Bash er å skaffe seg en JSON parser. Det finnes flere alternativer tilgjengelig, inkludert jq og jsawk. I dette eksempelet vil vi bruke jq for å demonstrere hvordan man kan jobbe med JSON i Bash.
-
-Først må du lagre JSON data i en variabel ved å bruke en kommando som wget eller curl for å hente data fra en URL. Deretter kan du bruke jq til å håndtere dataene. Her er et eksempel på hvordan du kan liste ut navnene på de 10 øverste landene fra en liste av land og deres befolkning:
+Å jobbe med JSON i Bash er enkelt og krever bare noen få verktøy. Først må du sørge for at du har installert det populære verktøyet `jq` som lar deg manipulere og lese JSON-data. Du kan installere det ved å kjøre følgende kommando:
 
 ```Bash
-# Hent JSON data fra en URL og lagre det i en variabel
-raw_data=$(curl -s "https://restcountries.eu/rest/v2/all")
-
-# Bruk jq til å hente ut navnene på de 10 øverste landene
-names=$(echo $raw_data | jq -r '.[:10] .name')
-
-# Skriv ut resultatet
-echo $names
+sudo apt-get install jq
 ```
-
-Eksempeloutput:
-
-```
-Afghanistan
-Albania
-Algeria
-Andorra
-Angola
-Antigua and Barbuda
-Argentina
-Armenia
-Australia
-Austria
-```
-
-Det er også mulig å bruke jq til å filtrere ut data basert på visse kriterier. For eksempel kan vi filtrere ut land som har et areal større enn 500000 og sortere dem etter befolkningstall:
+Nå kan du håndtere JSON-data ved hjelp av `jq` kommandoen. La oss si at du har en JSON-fil som inneholder en liste over brukere og deres alder. Du kan bruke `jq` for å filtrere ut bare brukerne over 25 år, ved å kjøre følgende kommando:
 
 ```Bash
-# Bruk jq til å hente ut land med areal større enn 500000 og sortere basert på befolkning
-raw_data | jq '.[] | select(.area > 500000) | {name: .name, population: .population} | sort_by(.population)'
+jq '.[] | select(.age > 25)' users.json
 ```
-
-Eksempeloutput:
-
-```
-[{
-  "name": "Australia",
-  "population": 24117360
-}, {
-  "name": "Norway",
-  "population": 5367580
-}, {
-  "name": "Namibia",
-  "population": 2113077
-}, {
-  "name": "Botswana",
-  "population": 2338851
-}, {
-  "name": "Senegal",
-  "population": 16209125
-}, {
-  "name": "Azerbaijan",
-  "population": 9923914
-}, {
-  "name": "Cameroon",
-  "population": 22709892
-}, {
-  "name": "Myanmar",
-  "population": 51419420
-}, {
-  "name": "Zambia",
-  "population": 15933883
-}, {
-  "name": "Papua New Guinea",
-  "population": 8606316
-}]
-```
+Dette vil vise resultatet i en lesbar JSON-format. Du kan også bruke `jq` for å velge spesifikke felter fra JSON-data, eller for å legge til og endre data. Se dokumentasjonen for mer detaljert informasjon om hvordan du bruker `jq`.
 
 ## Dypdykk
 
-En dypere forståelse av JSON vil være nyttig når man jobber med komplekse datasamlinger. JSON kan inneholde flere nivåer av data, og man kan bruke nestede objekter og lister. I tillegg kan man bruke forskjellige typer datatyper, som strenger, tall, boolske verdier og null-verdier.
+Bash tilbyr også støtte for å konvertere JSON til bash-assosiative arrays (assosiativt tabell) ved hjelp av `declare` kommandoen. Dette kan være nyttig når du trenger å behandle data fra en annen kilde, for eksempel en nett-API, og bruke den til å sette variabler i Bash. 
 
-Det er også viktig å være oppmerksom på at JSON data er case-sensitive, så det er viktig å bruke riktig syntax når du jobber med dataene. Det kan være nyttig å lese på dokumentasjonen til APIet eller databasen du henter data fra for å sikre at du behandler dataene på riktig måte.
+Et eksempel på dette er å bruke [cURL](https://curl.haxx.se/), et annet populært verktøy i Bash, til å hente data fra en API som returnerer JSON-data. Du kan da bruke `jq` til å filtrere ut spesifikke felter fra svaret, og deretter bruke `declare` til å sette variabler med verdiene.
 
 ## Se også
 
-- [jq: Kommandolinjetjenesten for JSON](https://stedolan.github.io/jq/)
-- [jsawk: Et JSON verktøy for awk](https://github.com/micha/jsawk)
-- [Bash JSON parsing og håndtering av kompliserte datastrukturer](https://eloquentcoder.com/bash-json-parsing-bash-awk-json-structure/)
+- [jq dokumentasjon](https://stedolan.github.io/jq/manual/)
+- [cURL homepage](https://curl.haxx.se/)

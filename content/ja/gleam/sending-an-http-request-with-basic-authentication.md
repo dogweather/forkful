@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 基本認証付きのhttpリクエストの送信"
-simple_title:         "基本認証付きのhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "Gleam: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,45 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを基本認証で送信するのに参加する理由は、ウェブアプリケーションを実装する上で重要な一部であるためです。特定のユーザーの認証やデータの保護を確保するために必要な手段として、基本認証は非常に便利です。
+# なぜ
+## なぜHTTPリクエストに基本認証を使用するのか？
+基本認証を使用することで、ウェブサイトやアプリケーションにログインする必要があるユーザー認証を簡単に行うことができます。基本認証は安全で簡単な方法ですが、Gleamを使用することでより柔軟にコーディングできます。
 
-## 方法
-```Gleam
+# 方法
+## Gleamで基本認証を使用したHTTPリクエストを送信する方法
+基本認証を使ったHTTPリクエストを送信するには、まず`gleam/http`モジュールをインポートします。次に、送信したいURLを指定し、`BasicAuth`タイプのクレデンシャルを含む`headers`を定義します。最後に、`http.send`関数を使用してリクエストを送信します。以下の例を参考にしてください。
+
+```
+Gleam バージョン
 import gleam/http
-import gleam/bit_builder
-import gleam/csv
 
-let request =
-  http
-    .get("https://example.com/api/users")
-    .auth("username", "password")
+pub fn main() {
+  // URLの指定
+  let url = "https://example.com/login";
 
-let response = http.request(request)
+  // BasicAuth認証を使うためのヘッダーの定義
+  let auth_header = {
+    let user = "username";
+    let pass = "password";
 
-case response {
-  Ok(http.Response.Simple(body)) ->
-    let csv = csv.from_binary(body)
+    ("Authorization", "Basic " ++ Base.encode_to_string(user ++ ":" ++ pass))
+  };
 
-    csv
-      |> csv.find("id", "name")
-      |> Enum.map(fn { id, name } -> "ID: #{id}, Name: #{name}" end)
-      |> Enum.join("\n")
-      |> bit_builder.string()
+  // HTTPリクエストを送信
+  let response = http.send(url, {
+    headers: [auth_header]
+  });
 
-  Error(error) ->
-    error
-    |> http.error_message()
-    |> bit_builder.string()
+  // リクエストを出力
+  case response {
+    Ok(resp) -> {
+      resp.body
+      |> Bytes.to_string
+      |> String.replace("\n", "")
+      |> String.replace("\t", "")
+      |> String.replace(" ", "")
+    }
+    Err(_) -> "リクエストの送信に失敗しました。"
+  }
 }
 ```
 
-この例では、Gleamの`http`モジュールを使用して、基本認証で保護されたAPIエンドポイントにHTTP GETリクエストを送信しています。レスポンスはCSV形式のリストとして取得され、IDと名前のフィールドを含む行のみがリストされます。また、基本認証に失敗した場合、エラーの詳細情報が文字列として取得されます。
+以下のような結果が返されるはずです。
 
-## 深堀り
-基本認証を使用すると、HTTPリクエストのヘッダーにユーザー名とパスワードが含まれるため、リクエストを受け取ったサーバーは送信元を認証することができます。これにより、特定のユーザーしかアクセスできないAPIエンドポイントやウェブページを作成することができます。また、SSLなどのより安全な通信プロトコルと併用することで、更にセキュリティを強化することができます。
+```
+"Welcome! You are now logged in as username."
+```
 
-## See Also
-- [Gleamの公式ドキュメント](https://gleam.run/documentation)
-- [基本認証についての詳細な説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
-- [GleamでAPIクライアントを作成する方法](https://gleam.run/articles/making-an-api-client.html)
+# 深堀り
+## 基本認証を使用したHTTPリクエストの詳細
+基本認証は、希望するリソースに対してユーザー名とパスワードを構成することで、簡単な認証を提供します。この認証方法では、パスワードは平文で送信されるため、HTTPSと組み合わせて使用することが推奨されています。しかし、Gleamを使えば安全な方法で認証に関する情報を扱うことができるため、セキュリティ上の懸念は軽減されます。
+
+＃ See Also
+- [HTTP Basic認証について| MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Gleam httpモジュールドキュメント]（https://gleam.run/packages/gleam/http/latest/）

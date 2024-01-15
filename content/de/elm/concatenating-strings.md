@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Verknüpfung von Zeichenketten"
-simple_title:         "Verknüpfung von Zeichenketten"
+title:                "Zeichenketten verbinden"
+html_title:           "Elm: Zeichenketten verbinden"
+simple_title:         "Zeichenketten verbinden"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,44 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich überhaupt mit der Zusammenführung von Zeichenfolgen beschäftigen? Nun, das Konkatenieren von Strings ist ein grundlegender Bestandteil der Programmierung, insbesondere in der Elm-Sprache. Es ermöglicht uns, verschiedene Texte zu einem zusammenzuführen und so vollständige Sätze oder Nachrichten zu erstellen. Ohne diese Funktion wäre es schwierig, dynamische Inhalte in unseren Programmen zu erstellen.
+Manchmal muss man in der Programmierung einzelne Textfragmente zu einem ganzen Satz zusammenfügen. Diesen Vorgang nennt man "String-Konkatenation". Es ist eine nützliche Fähigkeit, die beim Schreiben von Texten oder der Erstellung von dynamischen Inhalten für Webseiten sehr hilfreich sein kann.
 
-## How To
+## Wie es geht
 
-Um Strings in Elm zu konkatenieren, verwenden wir den Operator `++` zwischen zwei Strings. Hier ist ein Beispiel:
-
-```Elm
-"Mein Name ist" ++ "Jane" -- Ergebnis: "Mein Name ist Jane"
-```
-Wir können auch Variablen verwenden, anstatt direkt Strings zu konkatenieren:
+Um Strings in Elm zusammenzufügen, kann man den Operatoren "+" oder "++" verwenden. "+" fügt zwei Strings zusammen und "++" verbindet beliebig viele Strings miteinander.
 
 ```Elm
-name = "Jane"
-alter = 25
-"Nur " ++ name ++ " ist schon " ++ (String.fromInt alter) ++ " Jahre alt." -- Ergebnis: "Nur Jane ist schon 25 Jahre alt."
+"Hello" ++ " World" -- Ausgabe: "Hello World"
+"Nummer " ++ "42" -- Ausgabe: "Nummer 42"
+"Mein Name ist " ++ "Max" ++ " und ich bin " ++ "25" ++ " Jahre alt" -- Ausgabe: "Mein Name ist Max und ich bin 25 Jahre alt"
 ```
 
-Wie Sie sehen, können wir auch andere Datentypen wie Integer mithilfe von `String.fromInt` in Strings konvertieren und sie dann konkatenieren.
-
-## Deep Dive
-
-Die Konkatenierung von Strings in Elm ist dank der rein funktionalen Natur der Sprache sehr einfach und robust. Im Gegensatz zu anderen Sprachen, in denen Strings als mutable (veränderbar) betrachtet werden, sind in Elm alle Strings unveränderbar. Das bedeutet, dass jedes Mal, wenn wir Strings konkatenieren, ein komplett neuer String erstellt wird, anstatt den ursprünglichen String zu ändern. Dadurch vermeiden wir unerwartete Seiteneffekte und unser Code wird insgesamt zuverlässiger.
-
-Ein weiterer Vorteil der funktionalen Natur von Elm ist, dass wir die Konkatenierung von Strings auf elegante Weise in Funktionen verwenden können. Zum Beispiel können wir eine Funktion erstellen, die zwei Strings konkateniert und ein Satzzeichen am Ende hinzufügt:
+Wenn man jedoch eine größere Anzahl von Strings zusammenfügen muss, empfiehlt es sich, die Funktion "String.concat" zu verwenden. Diese Funktion erwartet eine Liste von Strings und fügt sie alle zusammen.
 
 ```Elm
-concatenateStrings str1 str2 =
-    str1 ++ " " ++ str2 ++ "."
-
-concatenateStrings "Hallo" "Welt" -- Ergebnis: "Hallo Welt."
+String.concat ["Ich", "bin", "ein", "String"] -- Ausgabe: "IchbineinString"
 ```
 
-Wie Sie sehen, können wir diese Funktion verwenden, um eine Vielzahl von Strings zu konkatenieren, indem wir die Parameter ändern. Dadurch wird unser Code wiederverwendbarer und einfacher zu warten.
+Eine andere Möglichkeit ist die Verwendung von "String.join", wo man zusätzlich ein Trennzeichen zwischen den einzelnen Elementen angeben kann.
+
+```Elm
+String.join "-" ["Elm", "Programmierung", "Artikel"] -- Ausgabe: "Elm-Programmierung-Artikel"
+```
+
+## Tief einsteigen
+
+Beim Zusammenfügen von Strings in Elm sollte man beachten, dass es sich bei Strings um unveränderliche Datentypen handelt. Das bedeutet, dass der ursprüngliche String nicht verändert wird, sondern ein neuer String mit dem zusammengesetzten Inhalt erstellt wird.
+
+Außerdem ist zu beachten, dass die Reihenfolge beim Zusammenfügen von Strings wichtig ist. Verwendet man "+" oder "++", werden die Strings von links nach rechts zusammengefügt. Bei der Verwendung von "String.concat" oder "String.join" ist die Reihenfolge jedoch umgekehrt, da die Liste von Strings von hinten aufgerollt wird.
 
 ## Siehe auch
 
-Für weitere Informationen über die Konkatenierung von Strings in Elm und andere grundlegende Sprachkonzepte empfehle ich Ihnen diese Ressourcen:
-
-- [Offizielle Elm-Website](https://elm-lang.org/)
-- [Elm-Dokumentation](https://package.elm-lang.org/)
-- [Elm-Tutorial auf Deutsch](https://www.elm-tutorial.org/de/)
+- [Die offizielle Dokumentation zu Strings in Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Ein einfaches Beispiel zur String-Konkatenation in Elm](https://elmprogramming.com/string-concatenation.html)
+- [Weitere Tipps und Tricks zur effizienten Verwendung von Strings in Elm](https://www.technologies-ebusiness.com/tech/concatenate-strings-dynamically-in-elm-programming.html)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Das Berechnen von Daten in der Zukunft oder Vergangenheit"
+html_title:           "TypeScript: Das Berechnen von Daten in der Zukunft oder Vergangenheit"
+simple_title:         "Das Berechnen von Daten in der Zukunft oder Vergangenheit"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,32 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Berechnen von Datum in der Zukunft oder Vergangenheit ist ein wichtiger Teil der Programmierung, der nützlich sein kann, um Termine und Fristen zu verwalten und Aufgaben zu automatisieren.
+Das Berechnen von zukünftigen oder vergangenen Daten kann in vielen Fällen nützlich sein. Beispielsweise für die Planung von Terminen oder um die Zeitangaben von Ereignissen zu überprüfen.
 
 ## How To
 
-Das Berechnen von Datum in der Zukunft oder Vergangenheit kann in TypeScript auf verschiedene Arten durchgeführt werden. Hier sind einige Beispiele, die Ihnen bei der Implementierung in Ihrem Code helfen können:
+Die Berechnung von Datumsangaben in TypeScript kann mithilfe der integrierten Date Klasse erfolgen. Hier ein Beispiel, um das Datum von heute um einen bestimmten Zeitraum zu ändern:
 
 ```TypeScript
-// Berechnen des Datums in der Zukunft
-let heute: Date = new Date(); //Aktuelles Datum
-let zukunft: Date = new Date(heute.getDate() + 7); //Berechnung der Zukunft in 7 Tagen
-console.log(zukunft); //Erwartete Ausgabe: Datum in 7 Tagen
-
-// Berechnen des Datums in der Vergangenheit
-let heute: Date = new Date(); //Aktuelles Datum
-let vergangenheit: Date = new Date(heute.getDate() - 7); //Berechnung der Vergangenheit vor 7 Tagen
-console.log(vergangenheit); //Erwartete Ausgabe: Datum vor 7 Tagen
+let today: Date = new Date();
+// Heutiges Datum: 30. Mai 2021
+let futureDate: Date = today.setDate(today.getDate() + 7);
+// Datum in 7 Tagen: 06. Juni 2021
 ```
 
-Sie können auch die methods `getMonth()` und `getYear()` verwenden, um das Datum in Monaten und Jahren zu berechnen. Weitere Informationen über die verschiedenen Methoden und ihre Verwendung finden Sie in der [offiziellen TypeScript-Dokumentation](https://www.typescriptlang.org/docs/handbook/). 
+Eine weitere Möglichkeit ist die Nutzung von Moment.js, einer JavaScript-Bibliothek zur Manipulation von Daten und Zeiten. Hier ein Beispiel für die Berechnung eines Datums in der Vergangenheit:
+
+```TypeScript
+import moment from 'moment';
+
+let pastDate: Date = moment().subtract(1, 'week').toDate();
+// Datum vor einer Woche: 23. Mai 2021
+```
+
+Um das Ergebnis übersichtlicher zu gestalten, kann das Datum auch in einem bestimmten Format ausgegeben werden. Hier ein Beispiel mit Hilfe von Moment.js:
+
+```TypeScript
+let futureDate: Date = moment().add(2, 'years').format('DD.MM.YYYY');
+// Datum in 2 Jahren im Format: 30.05.2023
+```
 
 ## Deep Dive
 
-Das Berechnen von Datum in der Zukunft oder Vergangenheit kann auch komplexer werden, wenn es um Datumsformatierung und Zeitzonendifferenzen geht. Es ist wichtig, sich mit den verschiedenen Methoden von `Date` in TypeScript vertraut zu machen, um sicherzustellen, dass das Ergebnis korrekt ist. Daher ist es oft hilfreich, die [MDN-Dokumentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) zu konsultieren und gegebenenfalls spezifische Bibliotheken wie `moment.js` zu verwenden.
+Die Datumsberechnung kann auch komplexer gestaltet werden, indem zum Beispiel auf Wochentage oder Monate geachtet wird. Die Date Klasse bietet dafür verschiedene Methoden wie `getDay()` oder `getMonth()` an. Zudem kann die Sprache und Zeitzone in Moment.js angepasst werden, um internationale Anforderungen zu erfüllen.
 
 ## Siehe auch
 
-- [Offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs/home.html)
-- [MDN-Dokumentation zu Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js-Bibliothek](https://momentjs.com/)
+- [Moment.js Dokumentation](https://momentjs.com/docs/)
+- [TypeScript Date Klasse](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Fish Shell recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,40 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you've ever needed to generate random numbers for a project or game, you may have realized that it can be a tedious and time-consuming task. That's where Fish Shell comes in. With its built-in random number generation function, you can easily generate random numbers without having to write your own code.
+Have you ever needed to generate random numbers for a project or program, but didn't want to hassle with complicated coding? Look no further! Using the Fish Shell, you can easily generate random numbers with just a few simple commands.
 
 ## How To
 
-To generate a random number in Fish Shell, you can use the `random` command followed by the upper limit of the desired range. For example, if you want a random number between 1 and 10, you would use the following code:
+Coding examples and sample output are given below in code blocks.
 
+```Fish Shell
+#!/usr/bin/fish
+# Generates 5 random numbers between 1 and 10
+for i in (seq 1 5)
+  echo (math random '(0+1)*10')
+end
 ```
-Fish Shell
-random 10
+Output:
 ```
-
-The output would be a random number between 1 and 10, such as 6 or 9. You can also use variables in the upper limit if you want a more dynamic range. For instance, if you want a random number between 1 and a user-defined maximum, you can use a variable like this:
-
-```
-Fish Shell
-random $maximum
-```
-
-You can also specify a lower limit by using the `--lower-bound` flag. For example, if you want a random number between 50 and 100, you would use the following code:
-
-```
-Fish Shell
-random --lower-bound 50 100
+6.003245523
+1.9087369164
+3.4124398362
+9.8653829416
+5.3258921079
 ```
 
-The output would be a random number between 50 and 100, such as 72 or 98.
+```Fish Shell
+#!/usr/bin/fish
+# Generates a random number between 0 and 100
+echo (math random 0 100)
+```
+Output:
+```
+62.873593864
+```
+
+```Fish Shell
+#!/usr/bin/fish
+# Generates a random integer between 1 and 10
+echo (math random '(0+1)*10' | string replace . '')
+```
+Output:
+```
+7
+```
 
 ## Deep Dive
 
-The random number generation function in Fish Shell uses the Xorshift128+ algorithm, which is a fast and efficient method for generating random numbers. This algorithm generates high-quality random numbers with a long period, making it ideal for applications where a large number of random numbers are needed.
-
-Furthermore, Fish Shell also has the ability to generate random strings using the `random string` command. This is particularly useful for generating unique IDs or passwords. You can specify the length of the string and even use special characters if needed.
+The `math random` command allows for the generation of random numbers in Fish Shell. The command takes in two optional arguments, a minimum and maximum value. If no arguments are given, `math random` will generate a random decimal between 0 and 1. By providing arguments, the command will generate a random number within the specified range. However, these numbers will still be in decimal form and may contain multiple digits after the decimal point. To generate whole numbers, the `string replace` command can be used to remove the decimal and any subsequent digits.
 
 ## See Also
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Xorshift128+ Algorithm](https://en.wikipedia.org/wiki/Xorshift#xorshift*_128.2B)
+- [Random number generation in Bash](https://linuxize.com/post/bash-generate-random-number/)
+- [Randomness in programming](https://en.wikipedia.org/wiki/Randomness_in_computing)

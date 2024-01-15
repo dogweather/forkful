@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "Kotlin: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,43 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Si eres un programador de Kotlin, probablemente estés familiarizado con el concepto de argumentos de línea de comando. Pero si eres nuevo en el mundo de la programación o estás buscando aprender más sobre Kotlin, es importante entender por qué es importante saber cómo leer estos argumentos de línea de comando.
-
-Los argumentos de línea de comando son una forma de pasar información a un programa en tiempo de ejecución. Son especialmente útiles cuando se quiere que un programa realice diferentes acciones dependiendo de la entrada del usuario. Sin saber cómo leer y utilizar estos argumentos, tu programa no podrá interactuar de manera efectiva con el usuario.
+Si bien puede parecer un tema técnico y poco emocionante, saber cómo leer argumentos de línea de comando en Kotlin puede ser extremadamente útil para cualquier desarrollador. Esto te permitirá crear aplicaciones que puedan recibir y procesar distintos parámetros desde la línea de comandos, lo que facilita la interacción con tu programa y lo hace más versátil.
 
 ## Cómo hacerlo
 
-Si ya has trabajado un poco con Kotlin, probablemente conozcas la función main() que se utiliza para iniciar un programa. Dentro de esta función, podemos utilizar el parámetro args de tipo Array<String> para leer los argumentos de línea de comando.
+Para leer argumentos de línea de comando en Kotlin, simplemente sigue estos pasos:
 
-Veamos un ejemplo práctico:
+1. Primero, debes importar la clase `Array`, que nos permitirá almacenar los argumentos que ingresaremos desde la línea de comandos. Puedes hacerlo con el siguiente código:
 
 ```Kotlin
-fun main(args: Array<String>) {
-   println("Hola, ${args[0]}!")
+import kotlin.Array
+```
+
+2. Luego, declara una función `main` como lo haces normalmente en Kotlin, y dentro de ella, crea una variable de tipo `Array<String>` para almacenar los argumentos. Algo así:
+
+```Kotlin
+fun main() {
+  val args: Array<String> = array()
 }
 ```
 
-En este código, estamos utilizando la función println() para imprimir un saludo personalizado con el primer argumento de línea de comando que ingrese el usuario. Si ejecutamos este programa con el comando "kotlin HolaMundo.kt mi nombre", la salida sería "Hola, mi nombre!".
-
-Pero, ¿qué pasa si queremos leer más de un argumento de línea de comando? Podemos hacerlo simplemente utilizando el índice correspondiente del argumento en el array. Por ejemplo:
+3. Dentro de la función `main`, puedes acceder a cada uno de los argumentos ingresados desde la línea de comandos utilizando la variable `args`. Puedes imprimirlos en pantalla para comprobar que están siendo leídos correctamente:
 
 ```Kotlin
-fun main(args: Array<String>) {
-   println("Hola, ${args[0]} y ${args[1]}!")
-}
+println(args[0])
+println(args[1])
 ```
 
-En este caso, si ejecutamos el mismo comando que antes, la salida sería "Hola, mi nombre y Kotlin!". También podemos utilizar un bucle for para imprimir todos los argumentos a la vez.
+4. Ahora, para ejecutar tu programa y pasar los argumentos desde la línea de comandos, simplemente debes escribir `kotlin TuPrograma.kt argumento1 argumento2` en tu terminal. Verás que los argumentos ingresados se imprimirán en pantalla.
 
-En resumen, para leer los argumentos de línea de comando en Kotlin, simplemente necesitas utilizar el parámetro args en la función main() y acceder a los elementos del array utilizando los índices correspondientes.
+¡Y eso es todo! Con estos sencillos pasos, ya puedes leer argumentos de línea de comando en Kotlin.
 
 ## Profundizando
 
-Ahora que sabes cómo leer los argumentos de línea de comando, es importante entender cómo se almacenan y se pasan estos argumentos. En Kotlin, los argumentos de línea de comando se almacenan en un array de tipo String, donde cada elemento corresponde a un argumento ingresado por el usuario.
+Si quieres ir más allá y comprender mejor cómo funciona la lectura de argumentos de línea de comando en Kotlin, aquí te dejo algunos conceptos adicionales.
 
-Además, es importante tener en cuenta que los argumentos de línea de comando se pasan en orden y pueden contener espacios, por lo que es necesario utilizar las comillas para delimitar argumentos con más de una palabra.
+- Los argumentos ingresados desde la línea de comandos son almacenados en un array, donde el primer elemento (`args[0]`) corresponde al primer argumento ingresado, el segundo elemento (`args[1]`) al segundo argumento ingresado, y así sucesivamente.
+- Si quieres acceder a todos los argumentos ingresados de una vez, puedes utilizar el método `joinToString()` de la clase `Array`. Por ejemplo:
+
+```Kotlin
+println(args.joinToString())
+```
+Esto imprimirá todos los argumentos separados por comas.
+- Además de poder leer argumentos, también puedes ingresarlos desde la línea de comandos utilizando el método `input()` de la clase `Array`. Por ejemplo:
+
+```Kotlin
+val args: Array<String> = Array(2) { input() }
+```
+Esto te permitirá ingresar dos argumentos en el momento de ejecutar tu programa.
 
 ## Ver también
 
-- [Documentación oficial de Kotlin sobre argumentos de línea de comando](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Tutorial sobre argumentos de línea de comando en Kotlin de Programar en Java](https://programarenjava.com/tutorial-argumentos-de-linea-de-comando-en-kotlin/)
+- [Documentación oficial de Kotlin sobre argumentos de línea de comando](https://kotlinlang.org/docs/command-line.html)
+- [Cómo utilizar la línea de comandos en Kotlin](https://dev.to/marioa/how-to-use-command-line-arguments-in-kotlin-50g0)
+- [Tutorial para leer argumentos de línea de comando en Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Virheiden tarkistustulostus"
-simple_title:         "Virheiden tarkistustulostus"
+title:                "Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
+html_title:           "Gleam: Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
+simple_title:         "Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,27 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Oletko ikinä joutunut kamppailemaan koodin kanssa ja toivonut voivasi tarkastella sen sisäistä toimintaa? Tämä on silloin, kun debug-tulosteiden käyttöön otto tulee tarpeeseen. Se antaa sinulle paremman käsityksen siitä, miten koodisi toimii ja auttaa sinua löytämään ja korjaamaan mahdollisia virheitä.
+Miksi tulostamme vianetsintätulosteita?
+
+Vianetsintätulosteiden tulostaminen auttaa sinua näkemään, mitä koodisi tekee ja löytämään mahdollisia virheitä. Se on tärkeä työkalu ohjelmoinnissa ja auttaa sinua kehittämään parempia ohjelmia.
 
 ## Kuinka
 
-Gleam tarjoaa helpon tavan lisätä debug-tulosteita koodiisi. Voit käyttää `io.println`-funktiota tulostamaan haluamasi tiedot konsoliin. Voit myös käyttää muuttujien arvoja tai kutsua muita funktioita `io.format`-funktion kautta.
-
 ```Gleam
-let nimi = "Matti"
-io.println("Tervehdys, {nimi}!")
+// Tässä koodiesimerkissä tulostamme tekstin "Hei maailma!" vianetsintätulosteena.
+import gleam/io
+io.debug("Hei maailma!")
 ```
 
-Tulostus: `Tervehdys, Matti!`
+Koodiesimerkissä käytämme `gleam/io`-moduulia, joka tarjoaa meille `debug`-funktion vianetsintätulosteiden tulostamiseen. Voit tulostaa minkä tahansa arvon tai muuttujan käyttämällä tätä funktiota, joten voit räätälöidä tulosteet tarpeidesi mukaan.
 
-## Syvemmälle
+Vianetsintätulosteet tulostuvat virran tarkkailijan konsoliin tai lokiin, joten varmista, että käytät sitä ohjelmaasi ajaessasi.
 
-Debug-tulosteisiin liittyy usein myös joukko arvokkaita toimintoja, kuten logitiedostojen tallentaminen tai virheilmoitusten analysointi. Voit hyödyntää Gleamin vakio-ohjelmistonkirjastoja (stdlib) löytääksesi näille toiminnoille sopivia työkaluja.
+## Syvempi sukellus
 
-Lisäksi voit myös ohjelmoida omia debug-tulosteita varten suoraan Gleamin ominaisuuksien kautta. Tämä saattaa vaatia enemmän työtä, mutta kannattaa tutkia mahdollisuuksia jos haluat räätälöidä debug-tulosteen juuri itsellesi sopivaksi.
+Vianetsintätulosteiden tulostaminen Gleamissa on helppoa, mutta on myös muutamia huomioon otettavia asioita. Ensinnäkin, on hyvä tapa käyttää `debug`-funktion sijaan `debug_i`-funktiota, joka hyväksyy formaattiargumentteja. Tämä auttaa sinua tulostamaan monimutkaisempia arvoja selkeämmin.
+
+Lisäksi, jos aiot tulostaa useita vianetsintätulosteita, on parempi luoda `debug`-funktio moduulin yläpuolelle, jotta sitä voidaan käyttää muissa moduuleissa. Tällä tavoin voit helposti muuttaa vianetsintätulosteen käyttöä koko ohjelmassa vain muuttamalla yhtä funktiota.
 
 ## Katso myös
 
-- Gleamin vakio-ohjelmistonkirjaston (stdlib) [dokumentaatio](https://gleam.run/stdlib/)
-- ["The Power of Debug Printing in Programming"](https://mattbrinton.com/the-power-of-debug-printing-in-programming/)
-- ["Debugging Tooltips for Language Designers"](https://www.infoq.com/presentations/debugging-tooltips-language-designers/) (esitelmä debug-tulosteista)
+- [Gleam dokumentaatio](https://gleam.run/)
+- [Vianetsinnän perusteet Gleamissa](https://gleam.run/articles/debugging-intro)
+- [Gleam virran tarkkailija](https://gleam.run/articles/debugging-tracing)

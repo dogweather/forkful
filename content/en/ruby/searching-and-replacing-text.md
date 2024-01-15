@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Ruby recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,47 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Text processing is an essential task in programming, and being able to efficiently search and replace text can save you a lot of time and effort. Whether it's correcting mistakes, updating outdated information, or changing formatting, having the ability to replace text in your code can make your life as a programmer much easier.
+Whether you're a seasoned developer or just starting to learn Ruby, being able to quickly manipulate and replace text within your code is a valuable skill. It can save you time and effort by avoiding manual changes and make your code more efficient. Plus, it's just plain cool.
 
 ## How To
-Searching and replacing text in Ruby is made simple with the `.gsub` method. This method allows you to search for a specific string and replace it with another string. Let's take a look at an example:
+To search and replace text in Ruby, you'll need to use the `gsub` method, which stands for "global substitution". Here's an example:
 
 ```Ruby
-sentence = "I love programming in Ruby!"
-
-new_sentence = sentence.gsub("Ruby", "Python")
-
-puts new_sentence #=> "I love programming in Python!"
+phrase = "I love Ruby!"
+puts phrase.gsub("love", "adore")
 ```
 
-In the above code, we are using the `.gsub` method to search for the word "Ruby" in the `sentence` variable and replace it with the word "Python". The new sentence is then stored in the `new_sentence` variable and printed using the `puts` method.
-
-You can also use regular expressions with the `.gsub` method to make more complex replacements. Let's see an example:
+This code will output "I adore Ruby!" by replacing the word "love" with "adore" in the `phrase` variable. You can also use regular expressions in `gsub` to perform more complex replacements, like removing punctuation or replacing specific patterns. For example:
 
 ```Ruby
-sentence = "I love practicing yoga and meditation."
-
-new_sentence = sentence.gsub(/(yoga|meditation)/, "hiking")
-
-puts new_sentence #=> "I love practicing hiking and hiking."
+phrase = "I have 5 dogs?"
+puts phrase.gsub(/\d+/, "three")
 ```
 
-In this example, we are using a regular expression to search for either "yoga" or "meditation" and replace them with the word "hiking". By using parentheses, we can specify multiple words that we want to replace with the same string.
+This code will replace any number in the `phrase` variable with the word "three", resulting in the output "I have three dogs?".
 
 ## Deep Dive
-The `.gsub` method also has additional options that allow you to make more precise replacements. For example, you can use the `count` argument to specify the maximum number of replacements to be made. Let's take a look at an example:
+The `gsub` method works by searching for a specific string or pattern and replacing it with a new value. It can also accept a block of code as an argument, allowing you to perform custom operations on the matching text. Here's an example:
 
 ```Ruby
-sentence = "I love Ruby, Ruby, Ruby!"
-
-new_sentence = sentence.gsub("Ruby", "Python", 2)
-
-puts new_sentence #=> "I love Python, Python, Ruby!"
+phrase = "I love to code in Ruby!"
+puts phrase.gsub(/\w+/) { |match| match.upcase}
 ```
 
-In this example, we are using the `count` argument to limit the number of replacements to only 2. This means that only the first two instances of "Ruby" will be replaced with "Python", and the third one will remain unchanged.
+This code will convert each word in the `phrase` variable to uppercase, resulting in the output "I LOVE TO CODE IN RUBY!".
+
+You can also use `gsub` to make changes to specific parts of a string. For example, you can use regular expressions to target and replace a specific word, without touching similar words in the same string. This is especially useful when dealing with large text files.
 
 ## See Also
-- [Ruby documentation on .gsub method](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)
-- [Regular expressions in Ruby](https://ruby-doc.org/core-2.7.2/Regexp.html)
-- [Rubular - a Ruby regular expression editor](https://rubular.com/)
+For more information about the `gsub` method and other string manipulation techniques in Ruby, check out the following resources:
+
+- [Official Ruby Documentation for `gsub`](https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub)
+- [Ruby In-Depth: String Patterns and Regular Expressions](https://www.honeybadger.io/blog/ruby-string-patterns-regex/)
+- [Ruby for Beginners: Manipulating Strings](https://www.rubyguides.com/2018/01/ruby-strings/)

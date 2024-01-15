@@ -1,6 +1,7 @@
 ---
-title:                "Python: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skrive tester"
+html_title:           "Python: Skrive tester"
+simple_title:         "Skrive tester"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -11,30 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når vi skriver kode, er det viktig å sikre at den fungerer som den skal og at den ikke bryter når vi legger til nye funksjoner eller gjør endringer. For å være trygg på at koden vår fungerer, er det essensielt å skrive tester. Tester lar oss kjøre gjennom scenarier og sjekke om koden vår faktisk gjør det den er ment å gjøre.
+Å skrive tester er en nødvendig del av å skrive god og pålitelig kode. Ved å skrive tester kan du sikre at koden din fungerer som forventet, og det gjør det også enklere å finne og fikse feil i koden.
 
-## Hvordan skrive tester i Python
+## Hvordan
 
-For å skrive tester i Python, må du først importere "unittest" biblioteket. Deretter må du opprette en klasse som arver fra "unittest.TestCase". Innenfor denne klassen kan du definere ulike tester ved å bruke funksjonen "def test_metode_navn(self)". Inne i denne funksjonen kan du sjekke om de forventede resultatene samsvarer med de faktiske resultatene ved hjelp av assert-setninger.
+For å skrive tester i Python, trenger du et testrammeverk som for eksempel `unittest` eller `pytest`. La oss se på et enkelt eksempel på hvordan du kan skrive og kjøre en test ved hjelp av `unittest`:
 
 ```Python
 import unittest
 
+# Definer en klasse for testene dine
 class TestKalkulator(unittest.TestCase):
-
+    
+    # Lag en testfunksjon som starter med "test_"
     def test_addisjon(self):
-        resultat = 1 + 2
-        self.assertEqual(resultat, 3)
+        # Definer input og forventet output
+        x = 5
+        y = 10
+        forventet_output = 15
+        
+        # Kjør funksjonen du vil teste
+        faktisk_output = addisjon(x, y)
+        
+        # Sjekk om faktisk output er lik forventet output
+        self.assertEqual(faktisk_output, forventet_output)
+        
+# Kjør testene ved å kjøre denne filen
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-I dette eksempelet sjekker vi om resultatet av 1 + 2 faktisk er 3. Hvis ikke, vil testen feile og vi vet at det er noe galt med vår addisjonsfunksjon.
+Når du kjører denne filen, vil du se resultatet av testen din i terminalen:
 
-## Dypdykk i testing
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+OK
+```
 
-Når du skriver tester, er det viktig å dekke alle scenarier og hjørnetilfeller for å sikre at koden din er robust. Du kan også bruke "mocking" for å teste funksjoner som er avhengige av eksterne ressurser eller nettverkskall. Det er også en god praksis å organisere tester i forskjellige filer og å kjøre dem automatisk før du publiserer koden din til produksjon.
+Dette betyr at testen din bestod, og funksjonen `addisjon` fungerer som forventet.
+
+## Dypdykk
+
+Når du skriver tester, er det viktig å sørge for at du tester alle mulige tilfeller, også grensetilfeller og ugyldige input. Du kan også bruke `assert`-setninger for å sjekke at verdier er `True` eller `False`, eller at de er av riktig type. Dette vil hjelpe deg med å fange opp eventuelle feil i koden din.
+
+Husk også at tester bør skrives før koden din, slik at du kan følge en "test-drevet utvikling" (TDD) tilnærming. Dette betyr at du skriver tester først, og deretter skriver du koden for å få testene til å passere.
 
 ## Se også
 
-- [The Hitchhiker's Guide to Python Testing](https://docs.python-guide.org/writing/tests/)
-- [Unittest Dokumentasjon](https://docs.python.org/3/library/unittest.html)
-- [Testing in Python](https://realpython.com/python-testing/)
+- [Dokumentasjon for Pythons `unittest`-rammeverk](https://docs.python.org/3/library/unittest.html)
+- [Dokumentasjon for `pytest`-rammeverket](https://docs.pytest.org/en/latest/)

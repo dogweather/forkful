@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Suchen und Ersetzen von Texten"
-simple_title:         "Suchen und Ersetzen von Texten"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Elm: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,44 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+## Warum
 
-Es gibt viele Gründe, warum man sich möglicherweise mit der Suche und Ersetzung von Text beschäftigen möchte. Egal ob man herkömmliche Textdateien bearbeitet oder in der Softwareentwicklung tätig ist, die Möglichkeit, Text in großem Umfang zu ändern, kann sehr nützlich sein. Mit Elm können wir diese Aufgabe schnell und effizient bewältigen.
+Hast du jemals eine lange Liste von Texten durchsucht, um bestimmte Wörter oder Ausdrücke zu finden und zu ersetzen? Das kann sehr mühsam und zeitaufwändig sein. Zum Glück gibt es in Elm eine eingebaute Funktion, die dir helfen kann, diesen Prozess zu automatisieren.
 
-## Wie geht man vor?
+## So geht's
 
-Um Text in Elm zu suchen und zu ersetzen, können wir die `String.replace` Funktion verwenden. Diese akzeptiert drei Argumente: eine Zeichenkette, nach der gesucht werden soll, eine Zeichenkette, die die Suche ersetzen soll, und den ursprünglichen Text. Zum Beispiel:
-
-```Elm
-String.replace "Hallo" "Guten Tag" "Hallo Welt!" 
-
--- Ausgabe: "Guten Tag Welt!"
-```
-
-Wenn keine Übereinstimmung gefunden wird, wird der ursprüngliche Text einfach zurückgegeben. Man kann jedoch auch spezifizieren, wie viele Übereinstimmungen ersetzt werden sollen, indem man ein fünftes Argument hinzufügt, das die maximale Anzahl der Ersetzungen festlegt.
+Um Text in Elm zu suchen und zu ersetzen, kannst du die Funktion `String.replace` verwenden. Sie erwartet drei Argumente: den zu ersetzenden Text, den Ersatztext und den ursprünglichen Text.
 
 ```Elm
-String.replace "a" "o" "Banane" 1 
+import String
 
--- Ausgabe: "Bonane"
+originalText = "Das ist ein Beispieltext mit dem Wort 'Lorem'"
+ersatzText = "Dieser Satz wurde geändert"
+zuErsetzenderText = "Lorem"
+
+String.replace zuErsetzenderText ersatzText originalText -- Ergebnis: "Das ist ein Beispieltext mit dem Wort 'Dieser Satz wurde geändert'"
 ```
 
-Es ist auch möglich, reguläre Ausdrücke für die Suche und Ersetzung von Text in Elm zu verwenden. Dafür können wir die `Regex.replace` Funktion nutzen. Diese verhält sich ähnlich wie `String.replace`, erlaubt uns aber die Verwendung von regulären Ausdrücken, um unsere Suche zu verfeinern.
+Der zu ersetzende Text kann auch ein regulärer Ausdruck sein, so dass du noch flexibler beim Ersetzen von Wörtern oder Ausdrücken bist. Hier ist ein Beispiel:
 
 ```Elm
-Regex.replace (Regex.regex "\\s+") " " "Elm ist        eine wunderbare Programmiersprache" 
+import String.Regex
 
--- Ausgabe: "Elm ist eine wunderbare Programmiersprache"
+originalText = "Ich habe an diesem Tag 10 Äpfel gegessen, aber niemand glaubt mir"
+ersatzText = "Ich hatte an diesem Tag 0 Äpfel gegessen"
+zuErsetzenderText = "\\d+"
+regex = String.Regex.fromString zuErsetzenderText
+
+String.replace regex ersatzText originalText -- Ergebnis: "Ich hatte an diesem Tag 0 Äpfel gegessen, aber niemand glaubt mir"
 ```
 
-## Ein tieferer Einblick
+Es ist auch möglich, mehrere Wörter oder Ausdrücke gleichzeitig zu ersetzen, indem du die `replace`-Funktion innerhalb der `List.foldl`-Funktion verwendest.
 
-Bei der Suche und Ersetzung von Text in Elm gibt es noch einige weitere Funktionen und Optionen zu beachten. Zum Beispiel können wir mit `String.split` Text basierend auf bestimmten Trennzeichen oder Mustern in eine Liste von Zeichenketten aufteilen. Umgekehrt können wir mit `String.join` eine Liste von Zeichenketten in einen Text zusammenführen. Und mit `String.contains` können wir überprüfen, ob eine Zeichenkette in einer anderen enthalten ist.
+```Elm
+import List exposing (foldl)
+import String
 
-Ein weiteres nützliches Feature ist die Möglichkeit, Funktionen in Elm zu verwenden, um die Werte zu ersetzen, anstatt nur statische Zeichenketten zu verwenden. Auf diese Weise können wir Text basierend auf dynamischen Variablen oder berechneten Werten ersetzen, was unsere Anwendungen noch flexibler macht.
+originalText = "Dieser Text ist ein gutes Beispiel für eine Übung"
+ersatzPaare = [ ("gutes", "schlechtes"), ("Übung", "Spiel") ]
+
+String.foldl (\(zuErsetzenderText, ersatzText) text -> String.replace zuErsetzenderText ersatzText text) originalText ersatzPaare 
+
+-- Ergebnis: "Dieser Text ist ein schlechtes Beispiel für ein Spiel"
+```
+
+## Tiefer Einblick
+
+Die `replace`-Funktion gibt den ursprünglichen Text zurück, wenn der zu ersetzende Text nicht gefunden wurde. Um dies zu vermeiden und sicherzustellen, dass alle Instanzen des zu ersetzenden Textes ersetzt werden, solltest du die `map`-Funktion innerhalb der `List`-Module verwenden.
+
+Außerdem ist es auch möglich, zusätzlich zu den drei erwarteten Argumenten ein viertes Argument anzugeben, das die maximale Anzahl der zu ersetzenden Instanzen festlegt.
+
+Weitere Funktionen und Optionen zum Suchen und Ersetzen von Text in Elm findest du in der offiziellen Elm-Dokumentation.
 
 ## Siehe auch
 
-- Offizielle Elm Dokumentation zu `String`
-- Einführung zu regulären Ausdrücken in Elm 
-- Elm-Forum: Austausch über die Verwendung von `String.replace`
+- [Offizielle Elm-Dokumentation zu String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Offizielle Elm-Dokumentation zu List](https://package.elm-lang.org/packages/elm/core/latest/List)

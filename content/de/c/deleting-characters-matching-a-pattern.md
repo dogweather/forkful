@@ -1,6 +1,7 @@
 ---
-title:                "C: Entfernen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Buchstaben löschen, die einem Muster entsprechen"
+html_title:           "C: Buchstaben löschen, die einem Muster entsprechen"
+simple_title:         "Buchstaben löschen, die einem Muster entsprechen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Manchmal kann es in der Programmierung notwendig sein, Zeichen zu löschen, die einem bestimmten Muster entsprechen. Dies kann zum Beispiel hilfreich sein, um unerwünschte Zeichen aus Benutzereingaben zu entfernen oder um Datenbereinigungsaufgaben durchzuführen.
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine gängige Aufgabe in der Programmierung. Es kann hilfreich sein, unerwünschte Zeichen oder Formatierungen aus einer Zeichenkette zu entfernen, um die Daten weiter zu verarbeiten oder anzuzeigen.
-
-# Wie macht man das?
+## Wie geht das?
+Um Zeichen in C zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Techniken, aber hier werden wir uns auf die Verwendung der Standardbibliotheksfunktion "memmove()" konzentrieren. Diese Funktion kopiert Bytes von einem Speicherort in einen anderen und überschreibt dabei den Zielbereich mit dem kopierten Inhalt. Wir können diese Funktion nutzen, um die unerwünschten Zeichen zu löschen.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[] = "Hallo, Welt!";
-    char pattern[] = ","; // Das Muster, das gelöscht werden soll
-    
-    printf("Original: %s \n", str); // Gibt die ursprüngliche Zeichenkette aus
-    
-    // Durchläuft die Zeichenkette und entfernt alle Zeichen, die dem Muster entsprechen
-    int index = 0;
-    while (str[index]) {
-        if (str[index] == pattern[0]) { // Vergleicht das aktuelle Zeichen mit dem ersten Zeichen des Musters
-            memmove(&str[index], &str[index + 1], strlen(str) - index); // Verschiebt alle Zeichen nach dem aktuellen um eine Position nach vorne
-        } else {
-            index++;
+void delete_characters(char *str, char pattern) {
+    int i, j;
+    // Schleife über alle Zeichen im String
+    for (i = 0, j = 0; str[i] != '\0'; i++) {
+        // Wenn das aktuelle Zeichen nicht dem Muster entspricht,
+        // kopiere es in den String an der nächsten Position
+        if (str[i] != pattern) {
+            str[j++] = str[i];
         }
     }
-    
-    printf("Nach Entfernung des Musters: %s", str); // Gibt die neue Zeichenkette aus
+    // Setze das Ende des Strings
+    str[j] = '\0';
+}
+
+int main() {
+    char str[] = "Hallo Welt!";
+    // Lösche alle Leerzeichen aus dem String
+    delete_characters(str, ' ');
+    printf("%s", str); // Ausgabe: "HalloWelt!"
     return 0;
 }
 ```
-**Output:**
-```
-Original: Hallo, Welt!
-Nach Entfernung des Musters: Hallo Welt!
-```
 
-# Tiefergehende Informationen
+## Tiefergehende Informationen
+Der Code in der "delete_characters()" Funktion kann auch auf komplexere Weise angepasst werden, um beispielsweise mehrere Zeichen gleichzeitig zu löschen oder eine dynamische Mustererkennung zu ermöglichen. Dabei bietet das Verständnis der Arbeit von "memmove()" und wie sie mit Pointer- und Speicherarbeit zusammenhängt eine Möglichkeit, verschiedene effiziente Implementierungen zu designen.
 
-Bei der Durchführung dieses Vorgangs gibt es einige wichtige Dinge zu beachten. Zum Beispiel muss man sicherstellen, dass genügend Speicherplatz vorhanden ist, um die Zeichenkette nach dem Löschen der Zeichen zu speichern. Auch sollte darauf geachtet werden, dass das Muster nicht aus mehreren Zeichen besteht, da dies beim Vergleich zu Fehlern führen kann.
-
-Es gibt verschiedene Möglichkeiten, um das Entfernen von Zeichen auf eine effizientere Art und Weise zu implementieren, je nach Programmierumgebung und Anforderungen. Es kann auch nützlich sein, die Zeichenkette in ein anderes, speziell für die Bearbeitung von Zeichen optimiertes Format zu konvertieren.
-
-# Siehe auch
-
-- [String Manipulation in C](https://www.geeksforgeeks.org/string-manipulations-in-c-with-examples/)
-- [String Functions in C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Memmove Funktion in C](https://www.techonthenet.com/c_language/standard_library_functions/string_h/memmove.php)
+## Siehe auch
+- [memmove() Dokumentation](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm)
+- [C String Manipulation Guide](https://hackr.io/tutorials/learn-c-string-manipulation)

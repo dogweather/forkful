@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Schreiben zum Standardfehler"
-simple_title:         "Schreiben zum Standardfehler"
+title:                "Schreiben auf die Standardfehlerausgabe"
+html_title:           "Clojure: Schreiben auf die Standardfehlerausgabe"
+simple_title:         "Schreiben auf die Standardfehlerausgabe"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum: Schreiben auf den Standardfehler
+## Warum
 
-Das Schreiben auf den Standardfehler ist ein wichtiges Werkzeug für jeden Clojure-Programmierer. Es ermöglicht die Ausgabe von Fehlermeldungen und anderen wichtigen Informationen direkt in die Konsole, ohne dass das Programm unterbrochen werden muss.
+Warum sollte man überhaupt Texte in das Standardfehlerausgabefenster schreiben? Nun, es gibt verschiedene Gründe dafür. Zum Beispiel kann es hilfreich sein, Fehlermeldungen zu debuggen oder generelle Statusmeldungen während der Ausführung eines Programms zu überwachen. Es ist auch eine gute Möglichkeit, Dinge zu protokollieren, die nicht in die reguläre Ausgabe gehören, aber dennoch wichtig sind.
 
-# Wie geht man vor?
+## Wie geht das?
 
-Um auf den Standardfehler zu schreiben, verwendet man einfach die Funktion "println" und gibt den gewünschten Text als Argument ein. Zum Beispiel:
+Um Text in das Standardfehlerausgabefenster zu schreiben, gibt es in Clojure die Funktion `(println & xs)`. Diese Funktion nimmt beliebig viele Argumente entgegen und gibt diese nacheinander in das Standardfehlerausgabefenster aus. Hier ein Beispiel:
 
 ```Clojure
-(println "Dies ist eine Fehlermeldung")
+(println "Dies ist ein Beispiel")
+(println "für das Schreiben" "in das")
+(println "Standardfehlerausgabefenster.")
 ```
 
-Dieser Code wird den Text "Dies ist eine Fehlermeldung" in die Konsole ausgeben, damit der Entwickler die Information erhalten kann.
+Das obige Beispiel würde folgende Ausgabe in das Standardfehlerausgabefenster schreiben:
 
-# Tiefentauchen
+```
+Dies ist ein Beispiel
+für das Schreiben in das
+Standardfehlerausgabefenster.
+```
 
-Beim Schreiben auf den Standardfehler ist es wichtig zu beachten, dass es unabhängig von der Standardausgabe läuft. Das bedeutet, dass die Reihenfolge der Ausgaben nicht garantiert ist und sie sich möglicherweise überschneiden können. Es ist auch wichtig, die richtigen Fehlermeldungen auszugeben, um dem Entwickler beim Debuggen des Codes zu helfen.
+## Tiefergehende Informationen
 
-# Siehe auch
+Das Schreiben in das Standardfehlerausgabefenster kann besonders nützlich sein, wenn man mit mehreren Threads oder Prozessen arbeitet, da die Ausgaben unabhängig voneinander auftauchen und nicht vermischt werden. Außerdem ist es eine gute Möglichkeit, um die Ursache von Fehlern oder unerwartetem Verhalten schnell zu finden. 
 
-- [Official Clojure Documentation](https://clojure.org/)
-- [Clojure Style Guide](https://guide.clojure.style/)
+Eine Sache, die man beachten sollte, ist, dass das Standardfehlerausgabefenster normalerweise nur während der Ausführung eines Programms sichtbar ist und nicht dauerhaft gespeichert wird. Deshalb ist es ratsam, eine Log-Datei zu erstellen, in die man wichtige Informationen zusätzlich schreibt.
+
+## Siehe auch
+
+- [Offizielle Dokumentation von Clojure](https://clojure.org/)
+- [Ein Tutorial zum Einstieg in Clojure](https://www.tutorialspoint.com/clojure/index.htm)

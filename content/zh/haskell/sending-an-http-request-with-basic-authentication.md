@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 用基本身份验证发送http请求"
-simple_title:         "用基本身份验证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Haskell: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,40 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-发送带有基本认证的HTTP请求是一种安全的方法，可以用来访问需要身份验证的网站或API。这样可以保证用户的数据和隐私不会被未经授权的访问。
+发送HTTP请求是一种常见的网络交互方式，而使用基本身份验证可以增加对敏感信息的保护。通过这种方式，服务器可以验证用户的身份，并且只有经过身份验证的用户才能访问特定的资源。
 
-# 如何操作
+## 怎样做
 
-要发送带有基本认证的HTTP请求，可以使用Haskell中的网络库，例如"Wreq"。首先，我们需要导入"Wreq"库：
-
-```Haskell
-import Network.Wreq
-```
-
-然后，我们可以使用"Wreq"中的"getWith"函数来发送一个HTTP GET请求，带有认证信息。需要提供请求的URL，基本认证的用户名和密码：
+使用Haskell发送带有基本身份验证的HTTP请求非常简单。首先，我们需要导入"Network.HTTP"模块，并定义我们要访问的URL：
 
 ```Haskell
-r <- getWith auth "https://example.com"
-  where
-    auth = basicAuth "username" "password"
+import Network.HTTP
+
+url = "https://example.com"
 ```
 
-最后，我们可以通过读取响应体来获取返回的数据：
+接下来，我们可以使用"simpleHTTP"函数来发送我们的HTTP请求。该函数接受一个"Request"类型的参数，并返回一个"IO (Either IOException (Response ByteString))"类型的值。请求的参数由"getDefaultRequest"函数生成，我们需要将URL作为参数传递给它：
 
 ```Haskell
-responseBody r
+response <- simpleHTTP (getDefaultRequest url)
 ```
 
-发送带有基本认证的HTTP POST请求也是类似的，只需要使用"Wreq"中的"postWith"函数。
- 
-# 深入了解
+我们还可以通过"setRequestMethod"函数设置请求的方法，以及通过"setRequestBasicAuth"函数添加基本身份验证。这两个函数都接受"Request"类型的参数，并返回修改后的请求。例如，如果我们想使用GET方法和用户名和密码进行身份验证，我们可以这样做：
 
-基本认证是通过在请求头中添加"Authorization"字段来实现的。这个字段包含基本认证的用户名和密码的编码。在Haskell中，我们可以使用"Hackage"中的"base64-bytestring"库来对用户名和密码进行编码。需要先将用户名和密码连接起来，然后对结果进行编码，并添加到请求头中。
+```Haskell
+request = setRequestMethod (getDefaultRequest url) "GET"
+authRequest = setRequestBasicAuth request "username" "password"
+```
 
-# 另请参阅
+最后，我们使用"getResponseBody"函数来从响应中获取正文，并将其打印出来：
 
-- [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Wreq包文档](https://hackage.haskell.org/package/wreq)
-- [Base64-bytestring包文档](https://hackage.haskell.org/package/base64-bytestring)
+```Haskell
+let body = getResponseBody response
+print body
+```
+
+完整的代码示例如下：
+
+```Haskell
+import Network.HTTP
+
+main = do
+    let url = "https://example.com"
+    response <- simpleHTTP (setRequestBasicAuth (setRequestMethod (getDefaultRequest url) "GET") "username" "password")
+    let body = getResponseBody response
+    print body
+```
+
+运行该程序，我们可以看到响应的正文被打印出来。
+
+## 深入探讨
+
+除了使用基本身份验证外，我们还可以通过其他方式来发送HTTP请求，例如使用OAuth 2.0认证来授权访问。此外，在发送HTTP请求时，我们还可以指定请求的头部信息、内容类型以及设置超时时间。有关更多详细信息，请参阅Haskell的网络编程文档。
+
+## 参考资料
+
+- [Haskell网络编程文档](https://hackage.haskell.org/package/network-3.1.1.1/docs/Network-HTTP.html)
+- [OAuth 2.0官方网站](https://oauth.net/2/)

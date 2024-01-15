@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandling av en sträng till gemener"
+html_title:           "Elixir: Omvandling av en sträng till gemener"
+simple_title:         "Omvandling av en sträng till gemener"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,31 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Elixir är ett populärt programspråk som baseras på funktionsprogrammering. Det har enkla syntax, bra prestanda, och stöd för parallellt och distribuerat arbete. En av dess många inbyggda funktioner är möjligheten att konvertera en sträng till små bokstäver, vilket kan vara användbart i många olika situationer.
+Att konvertera en sträng till gemener (lower case) är ett vanligt behov för många utvecklare. Det kan vara användbart för sortering, sökning och jämförelse av strängar.
 
-## Hur man gör
+## Hur man gör det
 
-För att konvertera en sträng till små bokstäver i Elixir kan du använda funktionen `String.downcase`. Detta kommer att ändra alla bokstäver i strängen till deras motsvarande små bokstäver. Se nedan för ett exempel:
-
-```elixir
-sträng = "HEJ VÄRLDEN"
-puts String.downcase(sträng)
+```Elixir
+str = "HELLO WORLD"
+IO.puts String.downcase(str)
+```
+Output:
+```Elixir
+hello world
 ```
 
-Detta kommer att producera följande output:
-```elixir
-hej världen
+Det enklaste sättet att konvertera en sträng till gemener i Elixir är genom att använda funktionen `String.downcase()`. Denna funktion tar en sträng som argument och returnerar en ny sträng med alla bokstäver i gemener.
+
+Det är också möjligt att använda `String.downcase()` för att konvertera enstaka bokstäver till gemener, genom att först konvertera bokstaven till en sträng:
+
+```Elixir
+char = "A"
+IO.puts String.downcase(char)
+```
+Output:
+```Elixir
+a
 ```
 
-## Djupdykning
+## Utforska djupare
 
-När du använder funktionen `String.downcase`, finns det några saker att tänka på. För det första är det viktigt att notera att denna funktion endast fungerar med ASCII-karakterer. Om du har strängar med icke-ASCII-karakterer, måste du använda funktionen `String.downcase_utf8` istället.
+En viktig sak att notera är att `String.downcase()` endast konverterar bokstäver som finns i det latinska alfabetet till gemener. Andra tecken och bokstäver från andra alfabet, som till exempel grekiska eller kyrilliska, kommer inte att konverteras.
 
-För det andra är det viktigt att notera att funktionen `String.downcase` returnerar en ny sträng istället för bara att modifiera originalsträngen. Detta innebär att du behöver tilldela resultatet av funktionen till en variabel om du vill använda den nya strängen.
+Om du behöver konvertera tecken från andra alfabet eller tecken som inte ingår i standardteckensnittet, kan du använda funktionen `String.downcase/2`. Denna funktion tar ett andra argument som är en lista över alla tecken som ska konverteras till gemener.
 
-Slutligen, det kan vara användbart att veta att det finns en motsvarande funktion `String.upcase` som konverterar en sträng till stora bokstäver.
+Som ett exempel, om du vill konvertera tecken från det grekiska alfabetet till gemener, kan du använda följande kod:
 
-## Se även
+```Elixir
+str = "Γεια σου Κόσμε"
+IO.puts String.downcase(str, :greek)
+```
 
-- [Elixir String modul](https://hexdocs.pm/elixir/String.html)
-- [Funktionsprogrammering med Elixir](https://medium.com/the-elixir-hub/functional-programming-with-elixir-c253093775d9)
+Output:
+```Elixir
+γεια σου κόσμε
+```
+
+## Se också
+
+- [Officiell dokumentation för `String.downcase()`](https://hexdocs.pm/elixir/String.html#downcase/2)
+- [Stack Overflow-fråga om konvertering av tecken från olika alfabet](https://stackoverflow.com/questions/46588736/how-to-convert-character-to-lowercase-if-its-unicode)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Omgjøring av streng til små bokstaver"
-simple_title:         "Omgjøring av streng til små bokstaver"
+title:                "Å konvertere en streng til små bokstaver"
+html_title:           "TypeScript: Å konvertere en streng til små bokstaver"
+simple_title:         "Å konvertere en streng til små bokstaver"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Mange ganger i programmering må vi jobbe med tekster, og noen ganger kan det være nødvendig å konvertere en tekst til små bokstaver. Dette kan være nyttig for søk og sammenligning i databaser, eller bare for å få en jevn formatering av teksten. Heldigvis har TypeScript innebygd funksjonalitet for å gjøre dette enkelt.
+## Why
+Å konvertere en streng til små bokstaver kan være nyttig i situasjoner der du trenger å sammenligne eller søke etter en tilsvarende streng uten å ta hensyn til store og små bokstaver. Dette kan også være nyttig for å få en mer konsistent og enhetlig formatering av tekst.
 
-## Hvordan gjøre det
-La oss starte med å definere en tekststreng i TypeScript:
-```TypeScript
-let tekst = "DETTE ER EN TEKST"
-```
-For å konvertere denne til små bokstaver, kan vi bruke TypeScript sin `toLowerCase()` metode:
-```TypeScript
-let tekst = "DETTE ER EN TEKST"
-console.log(tekst.toLowerCase()) // output: dette er en tekst
-```
-Som du kan se, tar denne metoden vår originale tekst og konverterer den til små bokstaver.
+## How To
 
-Vi kan også bruke denne metoden direkte på en tekst uten å definere en variabel:
-```TypeScript
-console.log("JEG VIL BLI TIL SMÅ BOKSTAVER".toLowerCase()) // output: jeg vil bli til små bokstaver
-```
+Koden for å konvertere en streng til små bokstaver i TypeScript er veldig enkel og kan gjøres på flere forskjellige måter. Her er noen eksempler:
 
-## Dypdykk
-Det er viktig å merke seg at denne metoden ikke bare konverterer store bokstaver til små, men den erkjenner også spesielle tegn og bokstavkombinasjoner. For eksempel vil en bokstav med aksent fortsatt være med i sin konverterte form.
 ```TypeScript
-console.log("Håndbok".toLowerCase()) // output: håndbok
-```
-Dette er spesielt viktig å huske når du jobber med flerspråklige tekster.
+// Metode 1: Bruke toLowerCase() metoden
+let originalStreng = "EKSEMPEL";
+let konvertertStreng = originalStreng.toLowerCase();
+console.log(konvertertStreng);
+// Output: eksempel
 
-Det er også verdt å nevne at hvis du vil beholde den originale tekststrengen og bare få en konvertert kopi, kan du bruke `toLowerCase()` metoden på en variabel og lagre resultatet i en ny variabel:
-```TypeScript
-let originalTekst = "NAVN"
-let konvertertTekst = originalTekst.toLowerCase()
-console.log(konvertertTekst) // output: navn
+// Metode 2: Bruke spread operator og map funksjon
+let originalStreng = "EKSEMPEL";
+let konvertertStreng = [...originalStreng].map(bokstav => bokstav.toLowerCase()).join("");
+console.log(konvertertStreng);
+// Output: eksempel
+
+// Metode 3: Bruke regex
+let originalStreng = "EKSEMPEL";
+let konvertertStreng = originalStreng.replace(/[A-Z]/g, bokstav => bokstav.toLowerCase());
+console.log(konvertertStreng);
+// Output: eksempel
 ```
 
-## Se også
-* [TypeScript: String toLowerCase() metode](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-support-for-stringliteraltypes)
+Du kan også lage din egen funksjon for å konvertere strenger til små bokstaver ved å bruke en lignende tilnærming som i metode 2 og 3.
+
+## Deep Dive
+
+I JavaScript, som TypeScript er bygget på, er strenger uforanderlige (immutable). Dette betyr at du ikke kan endre en eksisterende streng, men heller må lage en ny streng med de ønskede endringene. Derfor vil alle metodene og eksemplene ovenfor returnere en kopi av den originale strengen som er konvertert til små bokstaver.
+
+Det er også viktig å være klar over at konverteringen til små bokstaver skjer i henhold til språkinnstillingene til enheten eller nettleseren. Dette kan føre til forskjellige resultater i ulike språkområder.
+
+## See Also
+
+- [toLowerCase() metoden på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Spread operator på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [Map funksjonen på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Regex på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

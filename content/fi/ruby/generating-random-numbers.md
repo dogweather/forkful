@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Satunnaisten lukujen generointi"
-simple_title:         "Satunnaisten lukujen generointi"
+title:                "Satunnaisten lukujen luominen"
+html_title:           "Ruby: Satunnaisten lukujen luominen"
+simple_title:         "Satunnaisten lukujen luominen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -11,50 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi käyttää satunnaislukugeneraattoria Ruby-ohjelmoinnissa? Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä, kuten pelien kehittämistä tai kryptografian toteuttamista. 
+Jos haluat luoda tai testata jotakin, jossa tarvitaan satunnaislukuja, Rubyn sisäänrakennettu satunnaislukugeneraattori voi olla erittäin hyödyllinen ja helppo tapa saavuttaa tämä tavoite.
 
-## Miten tehdä
-
-Satunnaislukujen luomiseen on olemassa monia tapoja Rubyssa, mutta yleisimmin käytetyt ovat `rand` ja `srand` -funktiot. Seuraavassa on esimerkki koodista, joka generoi kolme satunnaista kokonaislukua välillä 1-10:
+## Miten
 
 ```Ruby
-3.times do
-  puts rand(1..10)
-end
+# Luodaan satunnaisluku välistä 1-10
+puts rand(1..10) 
+# Tulostaa esimerkiksi: 7
+
+# Luodaan satunnaisluku väliltä 0-1
+puts rand() 
+# Tulostaa esimerkiksi: 0.478202347
+
+# Luodaan joukko satunnaislukuja
+puts Array.new(3) { rand(50..100) }
+# Tulostaa esimerkiksi: [64, 87, 55]
 ```
 
-Tämä koodi palauttaa seuraavanlaisen tulosteen:
+## Syväluotaus
 
-```
-6
-2
-9
-```
-
-Voit myös käyttää `srand` -funktiota asettamaan satunnaislukujen siemenen, jolloin sama koodi tuottaa aina saman tuloksen. Esimerkiksi:
-
-```Ruby
-srand 123
-3.times do
-  puts rand(1..10)
-end
-```
-
-Tulostus olisi tässä tapauksessa aina:
-
-```
-8
-10
-3
-```
-
-## Syvällisempi sukellus
-
-Satunnaislukujen generointi perustuu yleensä laskennallisiin algoritmeihin, jotka perustuvat aiempaan siemenarvoon tai satunnaislukujen sarjaan. Tämän vuoksi samalla siemenarvolla generoituja satunnaislukuja kutsutaan pseudo-satunnaisluvuiksi, sillä niiden syntymiseen on olemassa tietty säännönmukaisuus. 
-
-Ruby käyttää Mersenne twister -algoritmia satunnaislukujen generointiin. Tämä algoritmi on hyvin tehokas ja luotettava, mutta on tärkeää muistaa, että satunnaislukujen luominen voi olla haasteellista ja tarpeisiin soveltuvaa algoritmia on harkittava tapauskohtaisesti.
+Ruby ohjelmointikielessä on sisäänrakennettu satunnaislukufunktio, joka käyttää Mersenne Twister -algoritmia. Tämä algoritmi on suosittu satunnaislukugeneraattori, joka tuottaa korkealaatuisia ja tasaisesti jakautuneita satunnaislukuja. Jos haluat tarkempaa kontrollia satunnaislukujen luomiseen, voit myös asettaa satunnaislukugeneraattorin siemenen ```srand()```-funktiolla.
 
 ## Katso myös
 
-- Ruby:n viralliset ohjelmointiohjeet: https://www.ruby-lang.org/en/documentation/ri/
-- Mersenne twister -generaattorin selitys: https://en.wikipedia.org/wiki/Mersenne_Twister
+- [Ruby Docs - Random Class](https://ruby-doc.org/core-2.7.1/Random.html)
+- [Mersenne Twister Algorithm Implementation in Ruby](https://github.com/seattlerb/mersenne_twister)
+- [RubyMonk: Randomness in Ruby](https://rubymonk.com/learning/books/3-ruby-primer-ascent/chapters/11-randomness/lessons/47-randomness-in-ruby)

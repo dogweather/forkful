@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Escribiendo en el error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Swift: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en el estándar de error?
+## Por qué
 
-Escribir en el estándar de error es una práctica común en la programación en Swift. Se utiliza para imprimir mensajes de error en la consola cuando ocurren errores en el código. Esto es especialmente útil durante la fase de depuración, ya que permite a los desarrolladores identificar y corregir problemas en su código.
+¿Alguna vez has encontrado un error en tu código y no has podido averiguar por qué está sucediendo? Eso puede ser frustrante y llevar mucho tiempo si tienes que buscarlo en tu código. Es por eso que escribir a la salida estándar de error puede ser una herramienta útil para depurar tu código y ayudarte a encontrar esos errores más rápidamente.
 
 ## Cómo hacerlo
 
-Para escribir en el estándar de error en Swift, se utiliza el método `print(_:to:)` con el parámetro `stderr` para especificar que el mensaje se imprima en el estándar de error en lugar del estándar de salida. Aquí hay un ejemplo de código:
+Una forma de escribir a la salida estándar de error en Swift es utilizando la función `print(_:to:)`. Esta función toma como primer argumento el valor que quieres imprimir y como segundo argumento el objeto en el que quieres imprimirlo. En este caso, queremos imprimir a la salida estándar de error, por lo que utilizamos `StandardError.self` como segundo argumento.
 
 ```Swift
-let errorMessage = "¡Error! No se puede completar la operación."
-print(errorMessage, to: &stderr)
+let error = "Este es un mensaje de error"
+print(error, to: .standardError)
 ```
 
-La salida de este código se vería así en la consola:
+El resultado de este código sería:
 
-`¡Error! No se puede completar la operación.`
+`Este es un mensaje de error`
 
-## Análisis en profundidad
+Otra forma de escribir a la salida estándar de error es utilizando el objeto `FileHandle.standardError`. Este objeto representa la salida estándar de error y permite escribir en ella utilizando el método `write(_:)`. El siguiente ejemplo muestra cómo escribir un mensaje de error utilizando este método.
 
-Cuando se imprime en el estándar de error, el mensaje se muestra en color rojo en la consola, lo que lo hace más fácil de identificar en comparación con la salida estándar que es en color blanco. Además, también se puede especificar un error personalizado con el uso de la enumeración `StandardError`, lo que permite a los desarrolladores clasificar y manejar diferentes tipos de errores para una experiencia de depuración más eficiente.
+```Swift
+if let errorData = "Este es un mensaje de error".data(using: .utf8) {
+    FileHandle.standardError.write(errorData)
+}
+```
 
-Es importante tener en cuenta que el estándar de error solo se debe utilizar para imprimir mensajes de error, y no como una forma de salida de datos regulares. Para esto, se debe utilizar el estándar de salida.
+El resultado de este código sería el mismo que el anterior, un mensaje de error impreso en la salida estándar de error.
+
+## Profundizando en el tema
+
+Al escribir a la salida estándar de error, es importante tener en cuenta que es diferente a la salida estándar de la consola. La salida estándar de error es utilizada específicamente para mostrar errores y debería ser utilizado solo para ese propósito. Además, es importante no abusar de esta herramienta y solo escribir mensajes relevantes para ayudar a depurar tu código.
+
+También puedes utilizar la función `debugPrint(_:to:)` para imprimir en la salida estándar de error. Esta función es útil para imprimir el valor de una variable o constante junto con su nombre, lo que puede ser útil para saber qué parte de tu código está causando un error.
+
+```Swift
+let num = 6
+debugPrint(num, to: .standardError)
+// Output: "num: 6"
+```
+
+Además, si estás desarrollando una aplicación de línea de comandos, puedes utilizar la opción `-v` al ejecutar tu aplicación para imprimir mensajes de depuración en la consola y en la salida estándar de error.
 
 ## Ver también
 
-- [Guía de referencia de Swift sobre cómo escribir en el estándar de error](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID511)
-- [Documentación oficial de Apple sobre el uso de `print(_:to:)`](https://developer.apple.com/documentation/swift/1703153-print)
-- [Explicación detallada sobre las diferencias entre el estándar de salida y el estándar de error en Swift](https://theswiftdev.com/2018/08/16/what-is-the-difference-between-standard-output-and-error-in-swift/)
-
-¡Esperamos que este post te haya ayudado a comprender mejor cómo escribir en el estándar de error en Swift y cómo puede ayudarte en tus tareas de depuración!
+- [Documentación oficial de Swift sobre la función `print(_:to:)`](https://developer.apple.com/documentation/swift/standardlibrary/output)
+- [Guía de uso de la salida estándar de error en Swift](https://www.swiftbysundell.com/basics/standard-error/)
+- [Opciones de depuración en aplicaciones de línea de comandos en Swift](https://www.hackingwithswift.com/articles/114/how-to-debug-errors-in-your-command-line-swift-programs)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Wysyłanie żądania HTTP z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania HTTP z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Ruby: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,44 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego wysyłamy żądanie HTTP z podstawową autoryzacją? Istnieje wiele powodów, dla których może się to okazać niezbędne w programowaniu. Jednym z nich może być uzyskanie dostępu do chronionego API, lub zabezpieczenie danych przed nieautoryzowanym dostępem.
+Wysyłanie zapytania HTTP z podstawową autoryzacją może być przydatne w wielu sytuacjach, na przykład do pobrania danych zabezpieczonych hasłem lub autoryzowania dostępu do zasobów sieciowych.
 
-## Jak to zrobić
+## Jak To Zrobić
 
 ```Ruby
 require 'net/http'
-require 'uri'
 
-uri = URI.parse("url-do-api")
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
-request.basic_auth("login", "hasło")
+uri = URI('https://example.com')
+username = 'user'
+password = 'secret'
 
-response = http.request(request)
+Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") do |http|
+  request = Net::HTTP::Get.new(uri)
+  request.basic_auth(username, password)
+  response = http.request(request)
 
-puts response.body
-
+  puts response.body
+end
 ```
 
-**Wynik:**
-```
-Pomyślnie otrzymano dane z API.
-```
+Po uruchomieniu tego kodu, w konsoli zostanie wyświetlona odpowiedź zasobu sieciowego, do którego się odwołujemy. Zwrócone dane będą zaszyfrowane za pomocą podstawowej autoryzacji, co oznacza, że tylko użytkownicy posiadający prawidłowe dane logowania będą w stanie je odczytać.
 
-W powyższym przykładzie korzystamy z biblioteki `net/http` i klasy `Net::HTTP` do utworzenia żądania GET do API z wykorzystaniem podstawowej autoryzacji. Za pomocą metody `basic_auth` przekazujemy login i hasło, a następnie wykonujemy żądanie i wyświetlamy otrzymane dane.
+## Głębsza Analiza
 
-## Głębszy kontekst
+Wysyłanie zapytania HTTP z podstawową autoryzacją odbywa się poprzez dodanie nagłówka `Authorization` do żądania. Nagłówek ten zawiera kodowanie Base64 nazwy użytkownika i hasła. Wysłany kod jest następnie weryfikowany przez serwer, a dostęp jest udostępniony tylko jeśli dane logowania są poprawne.
 
-Podstawowa autoryzacja HTTP jest jednym z najprostszych sposobów na zabezpieczenie dostępu do danych lub API. Polega ona na przesyłaniu danych uwierzytelniających w nagłówku żądania HTTP, w postaci loginu i hasła, połączonych dwukropkiem i zakodowanych do formatu Base64.
+## Zobacz Również
 
-Przykładowy nagłówek z podstawową autoryzacją może wyglądać tak:
-```
-Authorization: Basic YWRtaW46cGFzc3dvcmQ=
-```
-
-Jednak ta metoda nie jest bezpieczna, ponieważ hasło jest przesyłane w formie tekstu jawnej i może zostać przechwycone przez osoby niepowołane. Dlatego zaleca się stosowanie bardziej zaawansowanych metod autoryzacji, takich jak OAuth czy Token-based authentication.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki Net::HTTP w języku polskim](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Inne metody autoryzacji w API](https://www.codecademy.com/articles/what-is-basic-auth)
+- [Dokumentacja Ruby o podstawowej autoryzacji](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html#class-Net::HTTP-label-Basic+Authentication)
+- [Artykuł na temat podstawowej autoryzacji w HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) (w języku angielskim)
+- [Przykłady użycia podstawowej autoryzacji w aplikacjach internetowych](https://www.howtogeek.com/361361/what-is-http-authentication-and-how-does-it-work/) (w języku angielskim)

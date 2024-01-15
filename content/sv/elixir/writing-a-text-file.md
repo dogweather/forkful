@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Skriva en textfil"
-simple_title:         "Skriva en textfil"
+title:                "Att skriva en textfil"
+html_title:           "Elixir: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att skriva en textfil är en grundläggande färdighet som alla utvecklare behöver behärska. Det är ett sätt att lagra och organisera viktig information och kod, och kan vara till nytta för att dela och samarbeta med andra. I denna bloggpost kommer vi att utforska hur man skriver textfiler i Elixir och ge några tips och tricks för att göra det enklare och mer effektivt.
+Att skriva en textfil är en viktig del av programmering eftersom det låter oss spara information och använda den senare. Det är också ett enkelt sätt att läsa och dela data mellan olika enheter och program.
 
-## Hur man gör det
+##Hur man gör det
 
-Det finns flera sätt att skriva en textfil i Elixir, men det mest grundläggande sättet är att använda funktionen `File.write/2`. Detta tar två argument: sökvägen till filen och innehållet som ska skrivas. Till exempel:
+För att skriva en textfil i Elixir, behöver vi först öppna en ny fil med hjälp av funktionen ```File.open()```. Sedan kan vi använda ```IO.write()``` för att skriva vår text in i filen och avsluta med att stänga filen med ```File.close()```. Här är ett exempel på kod och utmatning:
 
-```Elixir
-File.write("mina_filer/min_textfil.txt", "Hej världen!")
-```
+````elixir
+# Skapa en ny fil med namnet "hello.txt" och öppna den för skrivning
+{:ok, file} = File.open("hello.txt", [:write])
 
-Detta kommer att skapa en fil med namnet `min_textfil.txt` i mappen `mina_filer` och skriva texten "Hej världen!" i filen.
+# Skriv in texten "Hej världen!" i filen
+IO.write(file, "Hej världen!")
 
-En annan användbar funktion är `IO.binwrite/2`, som låter dig skriva binärdata till en fil. Om du vill skriva flera rader text till en fil, kan du använda funktionen `Enum.join/2` för att sammanfoga en lista av strängar:
+# Stäng filen
+:ok = File.close(file)
 
-```Elixir
-text_rader = ["Detta är den första raden", "Och detta är den andra raden"]
-File.write("mina_filer/textfil.txt", Enum.join(text_rader, "\n"))
-```
+# Kontrollera att filen har skapats
+[hello.txt] skapad och "Hej världen!" skrivet in i den.
+````
 
-Detta kommer att skapa en textfil med två rader: "Detta är den första raden" och "Och detta är den andra raden".
+##Djupdykning
 
-## Djupdykning
+I Elixir finns det flera alternativ för att skriva in data i en textfil. Till exempel kan vi använda ```IO.puts()``` istället för ```IO.write()``` för att automatiskt lägga till en radbrytning efter varje utmatning. Vi kan också använda ```IO.binwrite()``` för att läsa binära data. Dessutom kan vi skapa filer på specifika platser eller ändra filens rättigheter.
 
-När du skriver en textfil i Elixir finns det några saker att tänka på. Först och främst kommer textfiler som standard att skrivas som UTF-8, så se till att ditt innehåll är kodat på rätt sätt. Om du vill använda en annan encoding, kan du ange det som ett tredje argument till `File.write/3`.
+##Se även
 
-En annan viktig sak att veta är att `File.write/2` endast lägger till nya rader i slutet av en befintlig fil, istället för att helt ersätta innehållet. Om du vill skriva över en hel fil, kan du använda funktionen `File.truncate/1` först för att rensa filen.
-
-## Se även
-
-- [File - Elixir documentation](https://hexdocs.pm/elixir/File.html)
-- [Enum - Elixir documentation](https://hexdocs.pm/elixir/Enum.html)
-- [IO - Elixir documentation](https://hexdocs.pm/elixir/IO.html)
+- [Elixir IO-dokument](https://hexdocs.pm/elixir/IO.html)
+- [Filmodul i Elixir](https://hexdocs.pm/elixir/File.html)
+- [Elixir Markdown](https://hexdocs.pm/elixir/Markdown.html)

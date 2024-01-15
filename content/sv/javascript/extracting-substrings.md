@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Extrahera delsträngar"
-simple_title:         "Extrahera delsträngar"
+title:                "Extrahering av delsträngar"
+html_title:           "Javascript: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Varför skulle någon vilja extrahera substrängar i JavaScript? Det finns många användbara skript där substrängar kan användas, till exempel för att manipulera eller analysera textdata.
 
-Är du nyfiken på hur du kan extrahera delsträngar från en större sträng? Kanske behöver du göra just detta för att lösa ett programmeringsproblem eller bara för att lära dig en ny färdighet. Oavsett anledning är det en användbar funktion att ha under bältet för alla Javascript-utvecklare.
+## Hur det fungerar
+Det finns flera sätt att extrahera substrängar i JavaScript, beroende på vad du vill uppnå. Här är några exempel med kod och tillhörande utdata:
 
-## Hur man gör det
-
-Det finns flera sätt att extrahera delsträngar i Javascript, men ett vanligt tillvägagångssätt är att använda metoden `substring()`. Den här metoden tar två parametrar: startsindex och slutindex.
-
-Enkelt uttryckt motsvarar startsindex positionen för det första tecknet i delsträngen, och slutindex motsvarar positionen för det sista tecknet. Om slutindex inte anges kommer den extraherade delsträngen att sträcka sig från startsindex till slutet av den ursprungliga strängen.
-
-Låt oss titta på några exempel på hur detta fungerar:
-
-```Javascript
-let str = "Det här är en exempelsträng";
-console.log(str.substring(4, 8)); // Output: här
-console.log(str.substring(13)); // Output: exempelsträng
+### Exempel 1: Extrahera en delmängd av en sträng
+```javascript
+let str = "Hej världen!";
+let subStr = str.substring(4);
+console.log(subStr); // Output: världen!
 ```
 
-Här extraherar vi en delsträng från indexposition 4 till 8 och sedan från indexposition 13 till slutet av strängen.
+I det här exemplet tar vi en sträng och använder metoden `substring()` för att extrahera allt efter det fjärde tecknet. Detta resulterar i att vi bara får ut "världen!" delen av strängen.
 
-En annan metod för att extrahera delsträngar är `slice()`. Denna metod fungerar på ett liknande sätt, men har möjligheten att hantera negativa index för att ange positionen från slutet av den ursprungliga strängen. Här är ett exempel på hur `slice()` kan användas:
 
-```Javascript
-let str = "Det här är en exempelsträng";
-console.log(str.slice(4, 8)); // Output: här
-console.log(str.slice(-12, -5)); // Output: exempel
+### Exempel 2: Extrahera en delmängd baserat på positioner
+```javascript
+let str = "JavaScript är roligt!";
+let subStr = str.substring(0, 10);
+console.log(subStr); // Output: JavaScript
 ```
 
-Notera hur vi kan ange negativa index för att extrahera delsträngen "exempel" från slutet av strängen.
+Här använder vi fortfarande `substring()` metoden, men denna gång specificerar vi både start och slutpositionen för den del vi vill extrahera. I detta fall får vi ut de första 10 tecknen, vilket ger oss "JavaScript" som utdata.
 
 ## Djupdykning
+Som du kanske har märkt har vi använt metoden `substring()` för att utföra extraheringen i båda exemplen. Men det finns också andra metoder som kan användas för samma syfte, såsom `slice()` och `substr()`. Skillnaden ligger i vilka argument som används för att specifiera den del som ska extraheras.
 
-Det finns många tillfällen i programmering då det kan vara användbart att kunna extrahera delsträngar från en större sträng. Till exempel när du behöver hämta delar av en URL-adress, manipulera användarinput eller formatera text på ett specifikt sätt.
+- `substring()` tar emot två argument: startposition och slutposition. Om inget slutposition ges kommer det att använda slutet av strängen som standard.
+- `slice()` tar emot två argument: startposition och slutposition. Om någon av positionerna är negativ kommer den att räknas bakifrån istället för framifrån.
+- `substr()` tar emot två argument: startposition och längden på den del som ska extraheras.
 
-Det finns också flera andra metoder för att extrahera delsträngar i Javascript, såsom `substr()` och `split()`, som kan vara användbara för specifika scenarier. Det viktiga är att kunna identifiera när och hur du behöver extrahera delsträngar, och vilken metod som är lämpligast för din situation.
+En annan viktig skillnad är att `substr()` är den enda metoden som kan hantera negativa startpositioner, vilket kan vara användbart i vissa fall.
 
 ## Se även
-
-Det finns många resurser på nätet för att lära dig mer om hur man extraherar delsträngar i Javascript. Här är några användbara länkar:
-
-- [MDN Documentation on substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Documentation on slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [W3Schools Tutorial on substring() and slice()](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [JavaScript Strings Reference](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String) - en djupare titt på stränghantering med JavaScript.
+- [W3Schools: JavaScript substrings](https://www.w3schools.com/jsref/jsref_substring.asp) - fler exempel och övningar för att extrahera substrängar i JavaScript.

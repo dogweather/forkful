@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Uthenting av delstrenger"
-simple_title:         "Uthenting av delstrenger"
+title:                "Ekstrahering av delstrenger"
+html_title:           "Clojure: Ekstrahering av delstrenger"
+simple_title:         "Ekstrahering av delstrenger"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,36 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å utvinne substringer er en nyttig teknikk som gjør det mulig å manipulere tekststrenger på en effektiv måte. Den tillater oss å hente ut deler av en streng basert på spesifikke kriterier, noe som kan være svært nyttig i mange programmeringsscenarier.
+Utvinning av substrings er en verdifull verktøy i Clojure for å manipulere og bearbeide tekst. Dette kan være nyttig for å håndtere brukerinput, analysere data og mer.
 
 ## Hvordan
 
-For å utvinne substringer i Clojure, bruker vi funksjonen "subs". Denne funksjonen tar inn en streng som første argument og to tall som representerer start- og sluttposisjonen til substringsen du ønsker å ekstrahere.
+Utvinning av substrings i Clojure gjøres ved å bruke funksjonen `subs`. Denne funksjonen tar tre argumenter: en streng, startindeks og sluttpindeks, og returnerer en ny streng som inneholder en del av den opprinnelige strengen fra den angitte startindeksen til sluttpindeksen.
 
 ```Clojure
-(def streng "Dette er en teststreng")
-(subs streng 5 7)
+(println "Velkommen til Clojure!")     ; output => Velkommen til Clojure!
+(println (subs "Velkommen til Clojure!" 10))     ; output => til Clojure!
+(println (subs "Velkommen til Clojure!" 4 11))     ; output => kommen
 ```
 
-Outputen av koden ovenfor vil være "er", siden den henter ut delen av strengen fra posisjon 5 (startende fra 0) til posisjon 7, uten å inkludere siste tegn. Dette kan også gjøres ved hjelp av negative tall, hvor -1 vil representere siste tegn i strengen.
+Den første koden viser hvordan `println` fungerer for å skrive ut en streng. Deretter bruker vi `subs` for å utvinne substring i strengen fra det 10. tegnet og ut. Dette resulterer i at de første 9 tegnene blir utelatt fra strengen som skrives ut. I den siste koden utvinner vi substringen fra det 4. tegnet til det 11. tegnet, som er "kommen".
+
+Du kan også bruke funksjonen `subs` for å utvinne substrings fra slutten av en streng ved å bruke et negativt tall for sluttpindeksen. Dette vil utvinne substrings fra slutten av strengen opp til, men ikke inkludert, det angitte negative tallet.
 
 ```Clojure
-(subs streng 5 -4)
+(println (subs "Velkommen til Clojure!" -7))     ; output => Clojure!
+(println (subs "Velkommen til Clojure!" 4 -5))     ; output => kommen til
 ```
 
-Outputen av koden over vil være "er en t", som er delen av strengen som starter på posisjon 5 og slutter på posisjon -4.
+I den første koden, bruker vi et negativt tall for sluttpindeksen for å utvinne substringen fra de siste 7 tegnene i strengen. I den andre koden utvinnes substringen fra det 4. tegnet til de siste 5 tegnene i strengen.
 
 ## Dypdykk
 
-I tillegg til å bruke "subs" funksjonen, kan vi også bruke "substring" funksjonen for å ekstrahere substringer i Clojure. Denne funksjonen tar inn en streng som første argument, og to tall som representerer start- og sluttposisjonen til substringen. Forskjellen her er at "substring" funksjonen inkluderer siste tegn i resultatet.
+I tillegg til startindeks og sluttpindeks, kan funksjonen `subs` også ta et tredje argument for å angi steg. Dette lar deg utvinne en del av en streng med et spesifikt intervall mellom hvert tegn.
 
 ```Clojure
-(substring streng 5 7)
+(println (subs "Velkommen til Clojure!" 0 7 2))     ; output => Vlmmn
+(println (subs "Velkommen til Clojure!" 1 10 3))     ; output => eklo
 ```
 
-Outputen vil være "er ", hvorav det siste mellomrommet er inkludert fra strengen.
+I den første koden bruker vi et steg på 2, som resulterer i at bare hvert andre tegn blir inkludert i substringen. I den andre koden bruker vi et steg på 3, og resulterer i at bare hvert tredje tegn blir inkludert i substringen. Dette er nyttig hvis du for eksempel bare trenger å utvinne deler av en streng som er i et bestemt mønster.
 
-## Se også
+## Se Også
 
-- [Clojure Docs subs](https://clojuredocs.org/clojure.core/subs)
-- [Clojure Docs substring](https://clojuredocs.org/clojure.core/substring)
+- [Clojure dokumentasjon for `subs` funksjonen](https://clojuredocs.org/clojure.core/subs)
+- [En tutorial om å utvinne substrings i Clojure](https://purelyfunctional.tv/lesson/extracting-subs/)

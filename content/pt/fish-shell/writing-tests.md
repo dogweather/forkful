@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "Fish Shell: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Fish Shell?
+## Por que escrever testes no Fish Shell?
 
-Escrever testes é uma prática importante para garantir a qualidade do nosso código e evitar erros. No caso do Fish Shell, os testes podem nos ajudar a verificar se os nossos scripts estão funcionando corretamente e a detectar possíveis erros antes de colocá-los em produção.
+Testes são uma parte crucial do processo de desenvolvimento de software. Eles permitem que os desenvolvedores encontrem e corrijam bugs antes que o código seja implantado em produção. No Fish Shell, escrever testes é particularmente importante porque ajuda a garantir que nossos scripts e comandos funcionem corretamente e evita surpresas indesejadas ao usá-los.
 
-## Como escrever testes em Fish Shell
+## Como fazer:
 
-Para escrever testes em Fish Shell, podemos usar a ferramenta integrada de teste chamada `fish -n`. Essa ferramenta é capaz de ler scripts de teste e executá-los, exibindo o resultado dos testes no terminal.
-```
-# Script de teste para verificar se o comando "ls" retorna o conteúdo correto
-# Teste de sucesso se o conteúdo é igual a "meuArquivo.txt"
-fish -n <<EOF
-ls | grep -q "meuArquivo.txt"
-if test \$status -ne 0
-    echo "ERRO: Arquivo não encontrado."
-    exit 1
+```Fish Shell
+#!/usr/bin/fish
+
+# Importar a biblioteca de testes
+source tests.fish
+
+# Definir uma função que será testada
+function soma
+    set a $argv[1]
+    set b $argv[2]
+    math "$a + $b"
 end
-EOF
+
+# Chamar a função de teste
+test "Soma de 2 + 3 deve ser igual a 5" "soma 2 3" -eq 5
+
+# Executar todos os testes
+run_tests
 ```
 
-No exemplo acima, usamos o comando `grep` para verificar se a saída do comando `ls` contém o arquivo "meuArquivo.txt". Caso não contiver, o teste falhará e exibirá uma mensagem de erro.
+Ao rodar o script, o resultado será exibido em forma de tabela, indicando se os testes passaram ou falharam:
 
-Também é possível usar a ferramenta `fish -c` para executar comandos diretamente no shell de teste, facilitando a verificação de resultados sem precisar criar um arquivo de teste separado.
 ```
-# Executando o comando "echo" dentro do shell de teste
-fish -c 'echo "Hello World"'
+SUITE                             PASS FAIL
+----                              ---- ----
+Soma de 2 + 3 deve ser igual a 5  1    0
 ```
 
-## Aprofundando-se nos testes em Fish Shell
+## Profundidade:
 
-Além da ferramenta `fish -n`, também é possível escrever testes com a ajuda da biblioteca [bats-core](https://github.com/bats-core/bats-core). Com ela, é possível criar testes mais complexos e com uma sintaxe mais amigável.
+Ao escrever testes no Fish Shell, é importante entender alguns conceitos básicos:
 
-Outra dica importante é usar variáveis de ambiente para especificar caminhos ou configurações necessárias para a execução dos testes. Isso torna os testes mais dinâmicos e facilita a execução em diferentes ambientes.
+- Os testes são escritos na forma de funções e podem ser chamados em qualquer lugar do script.
+- A função `test` é usada para definir um teste, ela possui três argumentos: uma mensagem de descrição, o comando a ser testado e a condição de sucesso.
+- A função `run_tests` é usada para executar todos os testes definidos no script.
 
-## Veja também
+Outra técnica importante é usar o comando `bt_run` para rodar testes rapidamente enquanto se está trabalhando em um script. Isso permite uma iteração mais eficiente e descobrir possíveis erros de forma mais ágil.
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [Repositório do bats-core no GitHub](https://github.com/bats-core/bats-core)
-- [Lista de comandos e sintaxe de teste no Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+## Veja também:
+
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Como escrever testes automatizados eficientes no Fish Shell](https://spin.atomicobject.com/2016/11/29/shell-script-tested/)
+
+Agora que você já sabe como escrever testes no Fish Shell, experimente e descubra como essa prática pode melhorar a qualidade dos seus scripts e comandos.

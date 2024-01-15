@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 텍스트 파일 읽기"
+title:                "텍스트 파일 읽기"
+html_title:           "Haskell: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,47 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-안녕하세요! 오늘은 Haskell 프로그래밍에 대해 이야기해 보려고 합니다. 하스켈은 함수형 프로그래밍 언어로, 간결하고 강력한 기능을 제공합니다. 이번 글에서는 텍스트 파일을 읽는 방법에 대해서 알아보겠습니다.
-
 ## 왜
 
-먼저, 우리는 왜 텍스트 파일을 읽어야 할까요? 텍스트 파일은 많은 정보를 담고 있기 때문에 중요합니다. 예를 들어, 우리는 인터넷에서 온갖 정보를 찾아볼 수 있지만 그것들은 모두 다 정리되어 있지 않습니다. 따라서 텍스트 파일을 읽는 것은 우리에게 더 많은 정보를 얻을 수 있는 방법 중 하나입니다.
+텍스트 파일을 읽는 것은 프로그래밍에서 중요한 기능 중 하나입니다. 텍스트 파일을 읽을 수 있다면 다양한 데이터에 접근하고 처리할 수 있어 프로그램의 유연성을 높일 수 있습니다.
 
-## 읽는 방법
+## 방법
 
-자 이제 어떻게 텍스트 파일을 읽을 수 있는지 살펴보겠습니다. 우선, 우리는 특정 파일을 열어서 그 내용을 읽을 수 있는 파일 핸들러를 생성해야 합니다. 그런 다음 `IOMode.Read` 모드를 사용하여 파일을 읽을 수 있습니다. 이 작업은 `openFile` 함수를 사용하여 할 수 있습니다.
-
+파일을 읽는 다양한 방법 중에서도 Haskell에서는 `System.IO` 라이브러리를 사용하는 것이 가장 간단하고 효율적입니다. 다음은 텍스트 파일을 읽어서 각 라인을 출력하는 예제 코드입니다.
 ```Haskell
 import System.IO
 
 main = do
-  file <- openFile "example.txt" ReadMode
-  contents <- hGetContents file
-  putStrLn contents
-  hClose file
+    handle <- openFile "textfile.txt" ReadMode   -- 파일을 읽기 모드로 열기
+    contents <- hGetContents handle               -- 파일 내용을 읽어서 변수에 저장
+    putStr contents                              -- 파일 내용 출력
+    hClose handle                                -- 파일 닫기
 ```
-위 코드는 "example.txt"라는 파일을 열고 그 내용을 읽어서 화면에 출력하는 간단한 예제입니다. `hGetContents` 함수는 파일 핸들러를 이용하여 파일의 모든 내용을 읽어서 문자열로 반환합니다. 그리고 `putStrLn` 함수를 사용하여 이 내용을 콘솔에 출력합니다.
 
-## 깊이 들어가기
+위 코드를 실행하면 `textfile.txt`에 있는 내용이 콘솔에 출력됩니다.
 
-텍스트 파일을 읽는 것은 간단한 작업처럼 보일 수 있지만, 실제로는 매우 복잡한 작업입니다. 텍스트 파일은 다양한 포맷으로 작성될 수 있고 특정한 인코딩을 사용할 수 있기 때문입니다. 이러한 경우에는 `Text.Encoding` 모듈의 함수들을 사용하여 파일의 인코딩을 변경한 후에 읽는 것이 좋습니다.
+## 깊이 파고들기
 
-또한, 파일을 읽은 후에는 `hClose` 함수를 꼭 사용하여 파일 핸들러를 닫아주는 것이 중요합니다. 이렇게 하지 않으면 메모리 누수가 발생할 수 있습니다.
+Haskell에서 파일을 읽는 방법은 크게 두 가지로 나뉩니다. 첫 번째는 위에서 보인 `openFile`과 `hGetContents`를 사용하는 방법이고, 두 번째는 `withFile`을 사용하는 방법입니다. `withFile`을 사용하면 파일을 자동으로 닫아줄 수 있어서 더 안전하고 편리합니다. 또한 `System.IO`에는 `readFile`이라는 함수도 있어서 파일 내용을 한 번에 읽어서 문자열로 반환할 수 있습니다.
 
-## 더 알아보기
+## 참고
 
-텍스트 파일을 읽는 것 외에도 Haskell로 할 수 있는 많은 일이 있습니다. 아래의 링크들을 통해 더 많은 정보를 얻을 수 있습니다.
-
-* [Haskell 레퍼런스](https://www.haskell.org/documentation)
-* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-* [Haskell 프로그래밍 도서 추천](https://wiki.haskell.org/Haskell_books)
-
-## 관련 링크
-
-최신 형식의 텍스트 파일을 읽는 방법에 대해 더 자세히 알아보고 싶다면 아래의 링크들을 참고해 보세요.
-
-* [Parsec 라이브러리](https://hackage.haskell.org/package/parsec)
-* [Aeson 라이브러리](https://hackage.haskell.org/package/aeson)
-* [Cassava 라이브러리](https://hackage.haskell.org/package/cassava)
-
-이번 글을 통해 Haskell로 텍스트 파일을 읽는 방법을 배워보았습니다. 여러분도 이를 활용하여
+[Real World Haskell](http://book.realworldhaskell.org/read/io.html)  -- Haskell에서 파일 다루는 방법에 대한 상세한 설명  
+[Hackage - System.IO](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)  -- `System.IO` 라이브러리의 공식 문서  
+[W3Schools - Haskell Files](https://www.w3schools.com/haskell/haskell_files.asp) -- `readFile`을 사용하는 방법에 대한 예제 코드

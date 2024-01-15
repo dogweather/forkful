@@ -1,6 +1,7 @@
 ---
-title:                "Python: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV"
+html_title:           "Python: Робота з CSV"
+simple_title:         "Робота з CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-Робота з CSV (Comma-Separated Values) є необхідною для багатьох завдань в програмуванні. CSV є одним з найпоширеніших форматів для збереження й обміну даними. Найчастіше його використовують для імпорту й експорту баз даних, звітів та іншої інформації.
 
-## Як
+З доступністю та простотою обробки даних, CSV є одним з найпопулярніших форматів для зберігання таблиць та інших структурованих даних. Робота з CSV дозволяє легко читати та записувати дані з простими та зрозумілими інструкціями, що робить його важливим для багатьох програмістів.
+
+## Як це зробити
+
 ```Python
+# Імпортуємо модуль CSV
 import csv
 
-# Відкриття CSV файлу для читання
-with open('data.csv', 'r') as file:
-    reader = csv.reader(file)
+# Відкриваємо файл для читання та створюємо об'єкт для читання
+with open('file.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
 
-    # Прочитати кожен рядок у файлі
-    for row in reader:
-        # Вивести значення з кожної колонки
-        print(row[0], row[1], row[2])
-
-# Запис у CSV файл
-with open('data.csv', 'w') as file:
-    writer = csv.writer(file)
-
-    # Додати новий рядок зі значеннями
-    writer.writerow(['John', 'Doe', '30'])
+    # Читаємо дані рядок за рядком та виводимо їх
+    for row in csv_reader:
+        print(row)
 ```
 
-Приклад виводу:
-```
-John, Doe, 30
-Jane, Smith, 25
+```Python
+# Імпортуємо модуль CSV
+import csv
+
+# Відкриваємо файл для запису та створюємо об'єкт для запису
+with open('file.csv', 'w') as csv_file:
+    csv_writer = csv.writer(csv_file)
+
+    # Записуємо дані у файл рядок за рядком
+    csv_writer.writerow(['Назва', 'Ціна', 'Кількість'])
+    csv_writer.writerow(['Яблука', '20 грн', '10'])
+    csv_writer.writerow(['Банани', '30 грн', '5'])
+    csv_writer.writerow(['Апельсини', '25 грн', '8'])
 ```
 
-## Глибокий Занурення
-CSV є простим форматом, але має деякі нюанси, які варто знати. Наприклад, значення можуть містити коми, у цьому випадку вони повинні бути обгорнуті подвійними лапками. Також важливо дотримуватися стандарту кодування UTF-8 при роботі з CSV файлами, щоб уникнути проблем з кирилицею.
+## Глибинний аналіз
 
-## Дивіться також
-- [Документація Python з модулем CSV](https://docs.python.org/3/library/csv.html)
-- [Стаття про роботу з CSV файлами в Python](https://realpython.com/python-csv/)
+CSV файл - це простий текстовий файл, в якому дані поділяються комами або іншими роздільниками. Цей формат не передбачає вбудованої підтримки для типів даних, тому всі дані є рядками. Більш глибокий аналіз CSV дозволяє працювати з даними більш ефективно, наприклад, використовуючи модуль Pandas для створення DataFrame з CSV даних та виконання різних операцій над ними.
+
+## Дивись також
+
+- [Документація Python для модуля CSV](https://docs.python.org/3/library/csv.html)
+- [Основи роботи з Pandas](https://realpython.com/pandas-python-explore-dataset/)
+- [Приклади використання CSV формату](https://data36.com/data-wrangling-tutorial-python-pandas/)

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Надсилання запиту http з базовою аутентифікацією"
-simple_title:         "Надсилання запиту http з базовою аутентифікацією"
+title:                "Надсилання запиту http з базовою автентифікацією"
+html_title:           "Elixir: Надсилання запиту http з базовою автентифікацією"
+simple_title:         "Надсилання запиту http з базовою автентифікацією"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,32 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Відправлення HTTP-запиту з основною аутентифікацією може бути важливим для взаємодії з іншими веб-сервісами або для доступу до захищеного вмісту.
+Базова автентифікація є одним з методів автентифікації у мережевому протоколі HTTP. Вона дозволяє вхід на захищені сторінки з використанням ідентифікатора та паролю. Використання базової автентифікації є важливим для безпечних веб-додатків та API.
 
 ## Як
 
-```Elixir
-defmodule HTTP do
-  @auth %{"username" => "user", "password" => "pass"}
-    
-  def request(url) do
-    response = HTTPoison.get(url, headers: basic_auth(@auth))
-    case response do
-      {:ok, %{status_code: 200, body: body}} -> IO.puts(body)
-      {:ok, %{status_code: 401}} -> IO.puts("Authentication failed.")
-      {:error, %HTTPoison.Error{reason: reason}} -> IO.puts(reason)
-    end
-  end
-end
+```elixir
+# Налаштування HTTP-клієнта з базовими автентифікаційними даними
+client = HTTPoison.BasicAuth.client("john", "password")
+
+# Відправлення GET-запиту на захищений ресурс
+HTTPoison.get("https://example.com/protected_resource", [], client)
+
+# Виведення коду статусу та тіла відповіді
+status = %{code: 200}
+body = "Hello, world!"
 ```
 
-Вище наведений код використовує бібліотеку HTTPoison для відправлення GET-запиту на задану URL-адресу з використанням основної аутентифікації. Він перевіряє відповідь сервера, виводить вміст тіла, якщо запит був успішним, або повідомляє про помилку аутентифікації або будь-яку іншу помилку.
+## Глибоке вивчення
 
-## Deep Dive
+При відправленні HTTP-запиту з базовою автентифікацією, ідентифікатор та пароль посилаються в запиті у формі "ім'я:пароль", які потім кодуються у форматі Base64 та додаються до заголовка "Authorization". При отриманні запиту, сервер декодує ці дані та перевіряє їх правильність для доступу до захищеного ресурсу.
 
-Основна аутентифікація передбачає включення заголовка "Authorization" з закодованими в Base64 значеннями користувача та пароля. Так як це не є надійним засобом захисту, рекомендується використовувати HTTPS для забезпечення безпеки під час передачі даних.
+## Дивись Також
 
-## Дивіться також
-
-- [HTTPoison документація](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Про основну аутентифікацію](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+- [Elixir](https://elixir-lang.org/) - Офіційний сайт мови Elixir.
+- [HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html) - Розширення для взаємодії з веб-серверами та API.
+- [Basic Authentication](https://developers.google.com/web/updates/2016/03/http-security-reporting-for-developers#basic_auth) - Документація Google про базову автентифікацію у веб-розробці.

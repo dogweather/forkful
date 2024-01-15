@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Parsing av HTML"
-simple_title:         "Parsing av HTML"
+title:                "Ikke noe Kommentar her!"
+html_title:           "Bash: Ikke noe Kommentar her!"
+simple_title:         "Ikke noe Kommentar her!"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -9,45 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor du bør begynne å programmere i Bash for å analysere HTML
+## Hvorfor
+Det er forskjellige situasjoner der du kan støte på behov for å parse HTML i Bash-programmering, som for eksempel å lese eller analysere innhold på et nettsted, automatisk hente data fra en nettside, eller generere rapporter basert på HTML-maler.
 
-I dagens teknologidrevne verden er det en nødvendighet å kunne behandle og analysere data fra ulike kilder. Dette inkluderer også data fra nettsteder som er skrevet i HTML. Ved å lære å programmere i Bash og bruke riktige verktøy kan du enkelt trekke ut ønsket informasjon fra HTML-kode og behandle den på en effektiv måte.
-
-## Slik gjør du det
-
-Bash er et populært skriptspråk som er mye brukt i Linux-systemer, men det kan også brukes på MacOS og Windows. Det er gratis og enkelt å lære seg, så det er ingen grunn til å ikke komme i gang med å lære å bruke Bash til å analysere HTML.
-
-Det første du trenger er et verktøy kalt "lynx", som kan hente ut innholdet fra en nettside og skrive det til en fil. Dette gjøres ved å bruke følgende kommando:
-
+## Hvordan
+Det første trinnet for å parse HTML i Bash er å laste ned og installere et passende verktøy for dette formålet. Et populært alternativ er "pup" som kan installeres ved hjelp av følgende kommando:
 ```Bash
-lynx -dump http://www.example.com > output.html
-```
-Dette vil hente ut HTML-koden fra nettsiden og skrive det til en fil som heter "output.html". Deretter kan du bruke verktøyet "sed" til å fjerne alt som ikke er relevant for deg, som for eksempel reklame, bilder og annet distraksjonsinnhold. Dette gjøres ved å bruke følgende kommando:
-
-```Bash
-sed '/<img/d;/<script>/d;/<head>/,/<\/head>/d' output.html > clean.html
+brew install pup
 ```
 
-Denne kommandoen vil fjerne alle bilder, scripts og head-elementet fra filen "output.html" og skrive det til en ny fil som heter "clean.html". Nå kan du enkelt behandle den rensede HTML-koden videre ved hjelp av Bash-skript.
-
-Et eksempel på et Bash-skript som henter ut alle lenker fra en nettside og skriver dem til en tekstfil, vil se slik ut:
-
+For å starte parsingen, må du først laste ned innholdet på nettsiden ved hjelp av "curl" kommandoen og deretter bruke "pup" for å filtrere ut ønsket informasjon fra HTML-koden. For eksempel, hvis du ønsker å finne alle overskriftene på en nettside, kan du bruke følgende kommando:
 ```Bash
-#!/bin/bash
-lynx -dump http://www.example.com > output.html
-sed '/<img/d;/<script>/d;/<head>/,/<\/head>/d' output.html > clean.html
-grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" clean.html > links.txt
+curl -s https://www.example.com | pup 'h1' | tr -d '\n' && echo
 ```
-Dette skriptet vil bruke de tidligere nevnte kommandoene og skrive alle lenker som finnes på en nettside til filen "links.txt". Det er kun fantasien som setter grensene for hvilken informasjon du kan trekke ut fra HTML ved hjelp av Bash-programmering.
 
-## Dypdykk i HTML-analyse
+Dette vil skrive ut alle overskriftene på nettsiden du har hentet og vil også formatere det i et leselig format uten linjeskift.
 
-Det finnes flere verktøy og kommandoer du kan bruke i Bash for å analysere HTML-kode. Noen nyttige kommandoer er "cut", "grep" og "awk", som kan brukes til å filtrere ut spesifikke deler av HTML-koden basert på søkeord eller mønstre. Du kan også bruke Bash til å utføre mer avanserte oppgaver som å ekstrahere tekst fra flere nettsider samtidig eller å lage automatiserte skript som oppdaterer filer basert på endringer i HTML-koden.
+## Dypdykk
+Selv om "pup" er et godt verktøy, kan det være begrenset når det kommer til komplekse HTML-strukturer. I slike tilfeller kan du bruke "xmlstarlet" som tilbyr et bredere utvalg av kommandoer for å håndtere XML og HTML-data.
 
-Det er viktig å være nøye med å lære deg riktig syntaks og format når du programmerer i Bash, da det kan være enkelt å gjøre feil som kan føre til uventede resultat. Heldigvis finnes det mange ressurser og forum på nettet hvor du kan få hjelp og råd hvis du står fast.
+En annen mulighet er å bruke "awk" kommandoen til å parse HTML. Dette er spesielt nyttig hvis du jobber med store datasett og trenger å filtrere ut spesifikke deler av HTML-koden basert på et mønster.
 
 ## Se også
-
-- [Lær deg Bash-programmering med disse ressursene](https://www.linode.com/docs/tools-reference/how-to-write-bash-scripts/)
-- [Bruk av grep-kommandoen i Bash](https://www.gnu.org/software/grep/manual/html_node/grep-Tutorial.html)
-- [Innføring i sed-kommandoen](https://www.gnu.org/software/sed/manual/sed.html)
++ Les mer om pup: https://github.com/ericchiang/pup
++ Utforsk mulighetene med xmlstarlet: https://xmlstar.sourceforge.io/
++ Lær mer om awk: https://www.gnu.org/software/gawk/manual/gawk.html

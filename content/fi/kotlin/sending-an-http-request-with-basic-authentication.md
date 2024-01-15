@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+html_title:           "Kotlin: HTTP-pyynnön lähettäminen perusautentikoinnilla"
 simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi lähettää HTTP-pyyntö perusautentikoinnilla?
+## Miksi
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla mahdollistaa turvallisen tavan lähettää ja vastaanottaa tietoa verkkosovellusten välillä. Perusautentikointi vaatii tunnistautumisen käyttäjän nimen ja salasanan avulla, jolloin tiedonsiirto pysyy luottamuksellisena.
+Miksi joku haluaisi lähettää HTTP-pyynnön perusautentikoinnilla? Yksi yleinen syy tähän on, että halutaan varmistaa, että vain oikeutetut käyttäjät voivat käyttää tiettyä web-sovellusta tai palvelua.
 
-## Kuinka tehdä se
-
-```Kotlin
-val url = URL("https://example.com/api/endpoint") // Määritetään URL, johon pyyntö lähetetään
-val conn = url.openConnection() as HttpURLConnection // Avataan yhteys URL-osoitteeseen
-conn.requestMethod = "GET" // Pyyntömetodi, tässä esimerkissä GET
-val userCredentials = "käyttäjänimi:salasana".toByteArray() // Muutetaan käyttäjänimi:salasana -pari tavuiksi
-val basicAuth = "Basic " + Base64.getEncoder().encodeToString(userCredentials) // Luodaan Authorize-header
-conn.setRequestProperty ("Authorization", basicAuth) // Lisätään Authorize-header pyyntöön
-val responseCode = conn.responseCode // Vastauksen statuskoodi
-if (responseCode == HttpURLConnection.HTTP_OK) { // Tarkistetaan onko pyyntö onnistunut
-    println("Pyyntö onnistui")
-    val input = BufferedReader(InputStreamReader(conn.inputStream)) // Vastaanotetun datan lukeminen
-    var inputLine: String?
-    val response = StringBuffer()
-    while (input.readLine().also { inputLine = it } != null) { // Luetaan data rivi kerrallaan
-        response.append(inputLine)
-    }
-    input.close() // Suljetaan datan lukija
-    println(response.toString()) // Tulostetaan vastaanotettu data
-} else {
-    println("Pyyntö epäonnistui") // Tulostetaan virheilmoitus, jos pyyntö epäonnistui
-}
-```
-
-Esimerkiksi, jos käyttäjän käyttäjänimi on "käyttäjä1" ja salasana "salasana1" ja pyyntö onnistuu, vastauksena saadaan:
+## Miten
 
 ```Kotlin
-Pyyntö onnistui 
-{"message":"Tervetuloa, käyttäjä1!"} // Vastaanotettu JSON-data
+// Lisätään tarvittavat importit
+import java.net.URL
+import java.net.HttpURLConnection
+import java.nio.charset.StandardCharsets
+import java.util.Base64
+
+// Luodaan muuttujat pyynnön URL-osoitteelle ja käyttäjän tiedoille
+val url = URL("https://example.com/api/users")
+val username = "käyttäjänimi"
+val password = "salasana"
+
+// Luodaan HTTP-yhteys ja asetetaan siihen pyyntötyyppi ja perusautentikointi
+val connection = url.openConnection() as HttpURLConnection
+connection.setRequestMethod("GET")
+val auth = username + ":" + password
+val encodedAuth = Base64.getEncoder().encodeToString(auth.toByteArray(StandardCharsets.UTF_8))
+connection.setRequestProperty("Authorization", "Basic " + encodedAuth)
+
+// Tulostetaan vastauskoodi
+println("Vastauskoodi: ${connection.responseCode}")
+
+// Luetaan vastauksen sisältö
+val response = connection.inputStream.bufferedReader().readText()
+println("Vastaus: $response")
 ```
 
-## Syvempää tietoa
+Koodiesimerkissä luodaan HTTP-yhteys ja siihen lisätään pyyntötyyppi (GET) ja perusautentikointi käyttäjän antamien tietojen perusteella. Tämän jälkeen lähetetään pyyntö ja tulostetaan vastauksen sisältö sekä vastauskoodi.
 
-Perusautentikointi toteutetaan HTTP-pyynnöissä Header-välilehdellä, erityisesti Authorize-headerilla. Se koostuu käyttäjänimen ja salasanan yhdistelmästä ("käyttäjänimi:salasana"), joka muutetaan Base64-muotoon ja lisätään "Basic" -sanalla eteen. Tämä takaa, että käyttäjänimi ja salasana eivät ole suoraan luettavissa.
+## Syväsukellus
+
+Perusautentikointi toimii lähettämällä käyttäjänimi ja salasana Base64-koodattuna HTTP-pyynnön otsikkoon. Tämä tapa on turvallinen, mutta ei välttämättä riitä kaikissa tilanteissa. Parempi vaihtoehto on käyttää TLS/SSL-salausta, jolloin käyttäjätiedot eivät kulje selkeästi tietoverkkoa pitkin.
 
 ## Katso myös
 
-- [Kotlin-tutoriaali HTTP-pyyntöjen lähettämisestä](https://kotlinlang.org/docs/networking.html)
-- [HTTP-autentikointi Wikipediassa](https://fi.wikipedia.org/wiki/HTTP-autentikointi)
-- [Base64-koodaus Wikipediassa](https://fi.wikipedia.org/wiki/Base64)
+- [Basic Authentication in Kotlin](https://www.baeldung.com/kotlin/http-request-basic-authentication) 
+- [HTTPURLConnection class in Kotlin](https://developer.android.com/reference/java/net/HttpURLConnection) 
+- [Base64 class in Kotlin](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: パターンに一致する文字の削除"
-simple_title:         "パターンに一致する文字の削除"
+title:                "パターンにマッチする文字を削除する"
+html_title:           "Elm: パターンにマッチする文字を削除する"
+simple_title:         "パターンにマッチする文字を削除する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,61 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミング言語の一つであるElmを使用して、文字列の中から特定のパターンにマッチする文字を削除することは、コードの効率性を高めるために役立ちます。この記事では、その理由について詳しく説明します。
+あなたは、特定のパターンにマッチする文字を削除することが必要になるかもしれません。そのような場合、ループや条件分岐を使わずに簡単に実現できる方法をご紹介します。
 
 ## 方法
 
-プログラミングにおいて、文字の削除は非常に一般的な作業です。しかし、特定のパターンにマッチする文字を削除することは、それぞれのプログラミング言語によって異なったアプローチが求められます。Elmを使用する場合、以下のようなコードを使用することで、簡単に文字を削除することができます。
+まず、`List.filter`関数を使用して削除したい文字を除外します。次に、`String.join`関数を使ってリスト内の文字を結合し、最終的な文字列を作成します。
 
 ```Elm
-import String exposing (..)
-
--- 文字列から特定のパターンにマッチする文字を削除する
-deleteCharPattern : String -> String -> String
-deleteCharPattern pattern str =
-  let
-    -- Regexモジュールを使用して、マッチした文字を削除する
-    regex = Regex.replace (Regex.regex pattern) (always " ")
-  in
-    -- 置換後の文字列を返す
-    Regex.replace regex (always str)
+deleteCharacters : String -> String
+deleteCharacters str =
+    str
+        |> String.toList
+        |> List.filter (\c -> c /= 'a') -- 文字をフィルタリング
+        |> String.fromList
 ```
 
-例えば、以下のような文字列から、数字を削除したい場合、上記の関数を使用することができます。
+上記の例では、文字列中の`a`を削除することができます。他の文字を削除したい場合は、`c`の条件を変更すれば良いでしょう。
 
-`deleteCharPattern "[0-9]" "1abc23def45"`
+例えば、`List.filter (\c -> c /= ' ' && c /= '.')`とすれば、空白とピリオドを削除することができます。
 
-出力は以下のようになります。
+`str`に`"Hello, world!"`と入力した場合、出力は`"Helloworld"`になるはずです。
 
-`" abcdef"`
+## 深堀り
 
-## ディープダイブ
+この方法は、文字列をリストに変換してから処理することで実現されます。文字列をリストに変換するコストはほとんどありませんが、文字列処理の場合は少し気軽に使うようにしてください。
 
-上記のコード例では、文字列内の指定したパターン全ての文字を削除していますが、場合によっては特定の位置にマッチする文字を削除したい場合もあります。その場合は、以下のような関数を使用することができます。
+## 参考
 
-```Elm
-import String exposing (..)
-
--- 文字列の特定の位置にマッチする文字を削除する
-deleteCharAt : Int -> String -> String
-deleteCharAt index str =
-  -- takeとdropを使用して、指定した位置の文字を取り除く
-  take index str ++ drop (index + 1) str
-```
-
-例えば、以下のような文字列から、3番目の位置にある文字を削除したい場合、上記の関数を使用することができます。
-
-`deleteCharAt 2 "abcde"` 
-
-出力は以下のようになります。
-
-`"abde"`
-
-## もっと詳しく
-
-Elmには、テキストの処理を補助するための様々なモジュールがあります。この記事では紹介しきれなかったRegex以外にも、Stringモジュールを使用する方法などがあります。ぜひ、さらに深く学んでみてください。
-
-## 参考リンク
-
-- [Elm公式ドキュメント - Stringモジュール](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm公式ドキュメント - Regexモジュール](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [`String.filter` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+- [`List.filter` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/List#filter)
+- [`String.toList` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#toList)
+- [`String.fromList` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#fromList)

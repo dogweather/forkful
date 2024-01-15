@@ -1,5 +1,6 @@
 ---
-title:                "Swift: כתיבת בדיקות"
+title:                "כתיבת בדיקות"
+html_title:           "Swift: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,62 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-בעלי התכניתים הבריטיים הסטנדרטיים יעדיפו לבדוק את הקוד שלהם לפני שהם אוהבים לשחרר אותו לעולם. אבל עם תכניות בשפות תכנות חמות כמו Swift, לסדר ביצועי מבחן נעילה מתחברים יותר ויותר בעבריית משתמשי המחשבות שלהם. מאמר זה יסביר לך לאזור איך אתה יכול לכתוב מבחן נעילה בשפת Swift כדי לוודא שהתכנית שלך רצה כפי שצריך.
+# למה
 
-## למה
+בעולם התכנות, מבוטחות הן חלק לא נפרד מן התהליך. כתיבת בדיקות מאפשרת לנו לוודא כי התוכנית שנכתבה עובדת כמצופה ושאין בעיות ביצור, כך שעם לכת יותר לבסוף.
 
-מבחן נעילה הוא בעצם תכליתי כדי לוודא שתכנית שלך רצה בסדר שמתאים למה שאתה מצפה לו. זה מוגדל השגת תוכנות שאינן מדוייקות ואינן נגישות.
+# כיצד לעשות זאת
 
-## איך
-
-#### Swift מבחן נעילה דוגמא עם תלתמימדי
-
-כאן קוד ככל שנוכל בשיכולת הייכולה שלכם:
-
-* ** אנא התא המשך לבצע בדיקת פינוי ו……
-* **אנא התא המשך לבצע בדיקת פינוי לפני שתיאומלפת, אלא זה יפריד את הדרכונים
-
-<details>
+כדי לכתוב בדיקות ולוודא כי הקוד שלנו עובד כמצופה, ישנם שני סוגי בדיקות שאנו יכולים לעשות: בדיקות אוטומטיות ובדיקות ידניות. בדיקות אוטומטיות מתבצעות באמצעות כתיבת תכניות קוד נוספות המבדילות למצבים ספציפיים, ועל ידי בדיקת פלט המכיל הודעות שגיאה או תוצאות לא צפויות. לדוגמה:
 
 ```Swift
-class Tutorial {
-    var title: String
-    var author: String
-    var isIncomplete: Bool
-
-    init(title: String, author: String, isIncomplete: Bool) {
-        self.title = title
-        self.author = author
-        self.isIncomplete = isIncomplete
-    }
+// פונקציה שמחזירה מחרוזת הפוכה
+func reverseString(string: String) -> String {
+  return String(string.reversed())
 }
 
-func runTutorialReport(tutorial: Tutorial) {
-    if tutorial.title.isEmpty || tutorial.author.isEmpty {
-        print("*** ERROR: There is no title or author printed.")
-    } else if tutorial.isIncomplete {
-        print("The tutorial '\(tutorial.title)' by \(tutorial.author) needs to be completed.")
-    } else {
-        print("The tutorial '\(tutorial.title)' is complete. Thanks \(tutorial.author)!")
-    }
+// טסטים לבדיקת הפונקציה
+assert(reverseString(string: "hello") == "olleh")
+assert(reverseString(string: "12345") == "54321")
+```
+
+בדיקות ידניות הן בדיקות שאנו מבצעים באופן ידני על הקוד שלנו. כלומר, אנחנו בודקים את כל התכניות יכולות להתחשב בוודאות כשמגיעים לבעיות כלשהן. לדוגמה, אם קופים בקוד שלנו, אנו יכולים לוודא כי הוא אוסף לאיבודים ארורים כמו:
+
+```Swift
+if let shop = Market() {
+  // כאן אנחנו בודקים את הקופה לאחר שהיא ניצתה
 }
-
-let myTutorial = Tutorial(title: "Learn Swift", author: "John Doe", isIncomplete: true)
-runTutorialReport(tutorial: myTutorial)
-
-let myOtherTutorial = Tutorial(title: "iOS Development", author: "Jane Smith", isIncomplete: false)
-runTutorialReport(tutorial: myOtherTutorial)
 ```
 
-Output:
+# חקירה עמוקה
 
-```
-The tutorial 'Learn Swift' by John Doe needs to be completed.
-The tutorial 'iOS Development' is complete. Thanks Jane Smith!
-```
-
-</details>
-
-## מהומה עמוקה
-
-הגולל הזה הוא נשמע נפלאו מספק לך יכלילים עמוקים נוספים על כתונת כיום כתגישבימיק הקונעב ובחן כתונת תףניג עם גישביום
+כתיבת בדיקות מאפשרת לנו להיות יותר בטוח בקוד שלנו ובישותו שלנו כמפתחים. בנוסף, כשאנו מכתיבים בדיקות, אנו מתארגנים יותר ונותנים ערך נוסף לקוד שלנו. אנו מוכנים להתאמן ולכתוב בדיקות טובות ת

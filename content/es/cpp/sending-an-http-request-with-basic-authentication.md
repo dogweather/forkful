@@ -1,5 +1,6 @@
 ---
-title:                "C++: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "C++: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "C++"
 category:             "C++"
@@ -11,76 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En la programación de C++, es común realizar solicitudes HTTP a través de una red para obtener datos de un servidor externo. Para asegurar la autenticación y proteger los datos, es importante aprender a enviar solicitudes HTTP con autenticación básica.
+Enviar una solicitud HTTP con autenticación básica es importante para garantizar la seguridad en una aplicación web. Esto permite que solo ciertos usuarios autorizados puedan acceder a ciertos recursos protegidos. 
 
 ## Cómo hacerlo
 
-Para enviar una solicitud HTTP con autenticación básica en C++, se pueden seguir los siguientes pasos:
-
-1. Importar las librerías necesarias en el archivo:
-
 ```C++
-#include <iostream>
-#include <curl/curl.h>
-```
+#include<iostream>
+#include<curl/curl.h>
+using namespace std;
 
-2. Definir una estructura para almacenar las credenciales de autenticación:
-
-```C++
-struct auth_credentials {
-    const char* username;
-    const char* password;
-};
-```
-
-3. Crear una función para configurar la solicitud HTTP con autenticación básica. Esta función recibirá la URL y las credenciales de autenticación como parámetros:
-
-```C++
-CURLcode send_request(std::string url, struct auth_credentials credentials) {
-
+int main()
+{
     CURL *curl;
     CURLcode res;
     curl = curl_easy_init();
-    if (curl) {
-        // Configuración de la URL
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        // Configuración de la autenticación básica
-        curl_easy_setopt(curl, CURLOPT_USERNAME, credentials.username);
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, credentials.password);
-        // Envío de la solicitud
+    if(curl) 
+    {
+        // Establecer la URL de la solicitud
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.misitio.com/usuario");
+
+        // Establecer el tipo de solicitud como POST
+        curl_easy_setopt(curl, CURLOPT_POST, 1L);
+        
+        // Establecer la información de autenticación básica
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "usuario");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "contraseña");
+
+        // Realizar la solicitud y obtener el resultado
         res = curl_easy_perform(curl);
-        // Cierre de la conexión
+        if(res != CURLE_OK)
+        {
+            // Manejar algún error en la solicitud
+            cout << "Error al enviar la solicitud: " << curl_easy_strerror(res) << endl;
+        }
+        
+        // Limpiar la conexión CURL
         curl_easy_cleanup(curl);
-        // Retorno del resultado
-        return res;
     }
+    return 0;
 }
 ```
-
-4. Llamar a la función con la URL y las credenciales deseadas:
-
-```C++
-struct auth_credentials credentials;
-credentials.username = "usuario";
-credentials.password = "contraseña";
-send_request("www.ejemplo.com", credentials);
+Output: 
 ```
-
-5. Analizar la respuesta recibida en caso de éxito o error:
-
-```C++
-if (res == CURLE_OK) {
-    std::cout << "Solicitud exitosa!" << std::endl;
-} else {
-    std::cout << "Error en la solicitud: "<< curl_easy_strerror(res) << std::endl;
-}
+¡Solicitud exitosa! Se ha establecido conexión con el recurso protegido.
 ```
 
 ## Profundizando
 
-La autenticación básica en HTTP se basa en el envío de credenciales de usuario y contraseña en cada solicitud realizada al servidor. Estas credenciales son codificadas en base64 para protegerlas durante la transmisión. Sin embargo, este método de autenticación puede ser vulnerable a ataques de interceptación y debe ser utilizado en conjunto con otras medidas de seguridad.
+Para enviar una solicitud HTTP con autenticación básica, es necesario especificar en la cabecera de la solicitud el tipo de autenticación utilizado y las credenciales de acceso del usuario. La información de autenticación se incluye en la solicitud en un formato de Base64, lo que garantiza que los datos de inicio de sesión se transmitan de forma segura. Además, es importante recordar que solo se debe usar autenticación básica en conexiones HTTPS, ya que de lo contrario, la información de inicio de sesión se enviará sin cifrar.
 
 ## Vea también
 
-- [Documentación de la librería libcurl](https://curl.se/libcurl/)
-- [Tutorial sobre autenticación básica en HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
+- [CURL Documentation](https://curl.se/docs/)
+- [HTTP Authentication](https://www.tutorialspoint.com/http/http_authentication.htm)
+- [C++ Base64 Encoding and Decoding](https://www.geeksforgeeks.org/base64-encoding-and-decoding-in-c/)

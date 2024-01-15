@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: csvの操作について"
-simple_title:         "csvの操作について"
+title:                "CSV での作業"
+html_title:           "Arduino: CSV での作業"
+simple_title:         "CSV での作業"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,63 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜCSVを使用するのか
+## なぜCSVを使うのか?
 
-CSVは「コンマ区切りデータ」の略であり、コンピュータ上で表形式のデータを扱うための一般的な形式です。Arduinoでは、センサーやアクチュエーターとのデータの受け渡しや、外部からのデータの取得に使用されます。CSVを使用することで、データの整理や処理が容易になります。
+CSV（Comma Separated Values）は、データをテキスト形式で表現するためのフォーマットの一種です。ArduinoでCSVを扱うことで、データの収集や処理を簡単に行うことができます。例えば、温度や湿度などのセンサーデータをCSV形式で収集し、コンピューター上で簡単に分析・グラフ化することができます。CSVを使うことで、データの管理・可視化がしやすくなります。
 
-# 使い方
+## 使い方
 
-CSVファイルを読み込んでデータを取得するには、以下のコードを使用します。
+まずは、Arduinoのライブラリから`CSV.h`をダウンロードし、プログラムにインクルードします。
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-File csvFile;
-
-void setup() {
-  // SDカードを初期化
-  if(!SD.begin(4)) {
-    return;
-  }
-
-  // CSVファイルを開く
-  csvFile = SD.open("data.csv");
-
-  // ファイルの最初の行を読み込む
-  csvFile.readStringUntil('\n');
-}
-
-void loop() {
-  // ファイルからデータを読み込む
-  String data = csvFile.readStringUntil('\n');
-
-  // カンマで区切られたデータを分割し、配列に格納する
-  String values[3];
-  int index = 0;
-  while(data.length() > 0) {
-    index = data.indexOf(',');
-    if(index == -1) {
-      values[2] = data;
-      break;
-    }
-    values[index] = data.substring(0, index);
-    data = data.substring(index + 1);
-  }
-
-  // データの処理やセンサーへの反映などを行う
-
-  // 0.5秒待つ
-  delay(500);
-}
+#include <CSV.h>
 ```
 
-上記のコードは、ArduinoでSDカードを使用し、data.csvファイルからデータを取得する例です。ファイルの最初の行は読み飛ばし、2行目以降のデータを読み込みます。カンマ区切りのデータを分割し、配列に格納することで、各データを取り出すことができます。
+次に、CSVファイルを扱うためのオブジェクトを作成します。
 
-# より詳しい情報
+```Arduino
+CSV myCSV;
+```
 
-CSVファイルには、数値や文字だけでなく、日付や時間などの特殊なデータ形式を扱うこともできます。また、ファイルを書き込むことも可能です。詳細な情報は、Arduinoが提供するSD.hライブラリのドキュメンテーションを参照してください。
+CSVファイルを新しく作成する場合は、`create()`関数を使います。必要なデータの数だけ、`write()`関数を使って値を追加していきます。
 
-# 関連リンク
+```Arduino
+myCSV.create("data.csv"); // CSVファイルを作成
 
-- ArduinoのSDライブラリ: https://www.arduino.cc/en/Reference/SD
-- CSVの形式について: https://ja.wikipedia.org/wiki/Comma-separated_values
+myCSV.write("temperature", 25); // "temperature"というヘッダーと25という値を追加
+myCSV.write("humidity", 50); // "humidity"というヘッダーと50という値を追加
+```
+
+既存のCSVファイルを読み込む場合は、`open()`関数を使います。`read()`関数を使うことで、1行ずつ値を取得することができます。
+
+```Arduino
+myCSV.open("data.csv"); // 既存のCSVファイルを読み込む
+
+int temp = myCSV.read("temperature"); // "temperature"というヘッダーの値を取得し、変数に格納する
+int humid = myCSV.read("humidity"); // "humidity"というヘッダーの値を取得し、変数に格納する
+```
+
+## 深堀り
+
+CSVファイルは、コンマ`,`や改行文字`\n`で区切られたテキストファイルです。Arduinoでは、`Serial.print()`を使って各値をコンマで区切ることで、簡単にCSV形式のデータを作ることができます。また、`SD.h`ライブラリを使えば、CSVファイルをSDカードに保存することもできます。
+
+さらに、`parse()`関数を使うことで、CSVファイルから特定のヘッダーの値を取得することも可能です。また、`remove()`関数を使うことで、特定のヘッダーを持つ値を削除することもできます。
+
+## 関連リンク
+
+- [CSV.hのダウンロード](https://github.com/DzikuVx/CSV)
+- [SD.hライブラリの使い方](https://www.arduino.cc/en/Reference/SD)
+- [parse()関数の使い方](https://www.arduino.cc/en/Reference/SDParse)
+- [remove()関数の使い方](https://www.arduino.cc/en/Reference/SDRemove)

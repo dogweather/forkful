@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: עבודה עם YAML"
-simple_title:         "עבודה עם YAML"
+title:                "עבודה עם ימל (yaml)"
+html_title:           "Gleam: עבודה עם ימל (yaml)"
+simple_title:         "עבודה עם ימל (yaml)"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,52 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע
+## מדוע
 
-הכתיבה עם YAML יכולה להיראות מסובכת למתכנתים מתחילים, אבל לפעמים זה האופן הטוב ביותר לאחסון מידע מבני ומסוגנן. השתמשות ב YAML תכנס לידיים מאוד בעזרת גלים, שפת תכנות איכותית ומודולרית. 
+כתובת YAML היא תחביר קל ומהיר לשימוש עבור מתכנתים המעוניינים לקרוא ולכתוב מידע מהקבצים במבנה פשוט וידוע. יתר על כן, פתרון זה מיועד להרחבת קוד על מנת להפעיל מספר טוב יותר של לולאות תנאי, פנוקציות וכו '.
 
-# איך לעבוד עם YAML בגלים
+## כיצד לעשות זאת
 
-הנה דוגמאות של שימוש ב YAML עם גלים שיכולות לעזור לך להתחיל.
+כדי להתחיל לעבוד עם YAML בגלים, נדרש להוריד ולהפעיל מנוע גלים. השתמשו בפקודת ההתקנה הבאה:
 
-```gleam
-import yaml
-
-let data = yaml.decode("קובץ.yml")
+```Gleam
+OTECW.docker
 ```
 
-כעת, אתה יכול לעבוד על המידע שיקראת מתוך קובץ YAML כמו שאתה יכול עם כל מבנה נתונים בגלים. כאן תוכל למצוא מידע על עבודה עם עצים, לוקטקים וטיפוסים התאמה לחלום של גלים (https://gleam.run/cats/possible-dream.html).
+לאחר מכן, ניתן ליצור קבצי YAML בעזרת כמה קבצי גלים. באמצעות גלים, ניתן לקרוא את המידע מהקובץ באמצעות פונקציות כגון "parse_yaml" ולשנות או ליצור מבנה מידע מחדש עם פינקציות כגון "serialize_yaml". 
 
-```gleam
-fn print_some_data(data) {
-  case data {
-    Value.Null -> Err("לא מצאנו את המידע, נסה שוב")
-    Value.Bool(b) -> Ok(if b { "כן" } else { "לא" })
-    Value.Float(f) -> Ok(Float.to_string(f))
-    Value.Integer(i) -> Ok(Integer.to_string(i))
-    Value.String(s) -> Ok(s)
-    Value.List(list) ->
-      list
-      |> List.map(print_some_data)
-      |> List.foldl(|n, xs| Ok(n ++ ", " ++ xs), Ok(""))
-      |> Result.unwrap_or("אין מידע ברשימה")
-    Value.Map(map) ->
-      map
-      |> Dict.to_list
-      |> List.map(print_some_data)
-      |> List.map(Result.to_option)
-      |> List.filter(Option.is_some)
-      |> List.map(Option.unwrap)
-      |> List.foldl(|n, xs| Ok(n ++ ", " ++ xs), Ok(""))
-      |> Result.unwrap_or("אין מידע במיפה")
-  }
-}
+## יצירה עמוקה
 
-print_some_data(data)
-```
+כאשר מתנסים עם YAML בגדר מחברות, ניתן להשתמש בספריית צד שלישי כדי לקרוא ולכתוב קבצי YAML בצורה מהירה ושכיחה. אם קיימת בעיה בקבצי YAML שכתבתם, נסו להשתמש בכלים זמינים לניתוח ותיקון תקליט כגון Yamllint. 
 
-כשהקוד מסתיים, המידע המבוסס על YAML יהיה בפורמט שנוח יותר לעבוד איתו על ידי המתכנתים.
+## ראו גם
 
-# יישום מעמיק בעבודה עם YAML
-
-בגלים, ישנם מודולים נוספים שיכולים לסייע בעבודה עם YAML יותר ממה שיכול להיות די מוכר בפנייך. נהדס כי ניתן לפענח ישירות מתוך טכניקת המידע YAML שלך על ידי השתמשות במודול node-hop (https://hop.jumpstart.sh). נהדר הייצוא של מידע YAML בגיה
+* טובים מאוד מעבדי YAML עבור חנות הפונקציות
+* תיעוד רשמי עבור הפרויקט גלים
+* כתבי יד מתקדמים לגלים ו-YAML

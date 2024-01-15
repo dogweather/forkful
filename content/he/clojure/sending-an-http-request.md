@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Clojure: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה?
-שליחת בקשת HTTP היא דרך נפלאה לתקשורת בין קוד לשרת ולפנות למידע חיצוני או לשמירה של מידע בשרת. זהו כלי חשוב בעולם התכנות שיכול להקל על עבודתכם ולהגביר את היצירתיות שלכם.
+## למה
 
-# איך לעשות זאת?
-תחילה עליכם להתחבר לכתובת URL של השרת לו אתם רוצים לשלוח בקשה. לדוגמה:
+למה הייתם מעוניינים לשלוח בקשת HTTP? בכדי ליצור תקשורת בין שני מחשבים ברשת, לדוגמה כאשר אתם רוצים לבקש מידע מאתר אינטרנט או לשלוח נתונים לשרת.
 
-```Clojure
-(def url "https://www.example.com/api/users")
-```
+## איך לעשות זאת
 
-לאחר מכן, עליכם לבחור את סוג הבקשה הנכון על ידי שימוש בפונקציית `clj-http.client/request`. לדוגמה, אם ברצונכם לשלוח בקשה GET לכתובת URL שלנו, צרו את הבקשה הבאה:
+כדי לשלוח בקשת HTTP בשפת Clojure ניתן להשתמש בספריית `clj-http` שמאפשרת לכם ליצור בקשות GET, POST, PUT ו-DELETE. נציין לדוגמה איך לשלוח בקשת GET לאתר אינטרנט:
 
 ```Clojure
-(def req {:method :get :url url})
+(ns http-example
+  (:require [clj-http.client :as http]))
+
+(defn http-get []
+  (let [response (http/get "https://example.com"
+                 :query-params {:name "John" :age "30"})]
+    (println (:status response)) ; תחזיר 200 אם הבקשה הצליחה
+    (println (:body response))))
+
+(http-get)
 ```
 
-לאחר מכן, עליכם לשלוח את הבקשה על ידי התחברות לשרת:
+תוצאת התכנית תהיה:
 
 ```Clojure
-(def res (clj-http.client/request req))
+200
+<html>
+ ...
+</html>
 ```
 
-כעת, תוכלו לראות את התגובה מהשרת על ידי הדפסת האובייקט `res`:
+## השקעה עמוקה
 
-```Clojure
-(prn res)
-```
+בקשת HTTP הפכה לחלק לא נפרד מהאינטרנט ומתקשורת ברחבי העולם. היכולת לשלוח בקשות HTTP בשפת Clojure מאפשרת למתכנתים ליצור תכניות שמשתמשות בנתונים חיצוניים, מתאם לממשקים שונים וליצור יישומים מרתקים.
 
-## Deep Dive
-כדי לשלוח בקשות מתקדמות יותר, ניתן להשתמש במגוון פונקציות ואפשרויות של `clj-http` כדי להתאים את הבקשה לצרכים המיוחדים שלכם. לדוגמה, ניתן להגדיר כותרת (`headers`) או גוף (`body`) לבקשה באמצעות מילון שמיר כארגומנטים לפונקציית `request`. ניתן גם להגדיר את סוג המידע בתשובה כדי להקל על עיבוד המידע.
+## ראו גם
 
-# ראה גם
-- [מדריך ל־clj-http](https://github.com/dakrone/clj-http)
-- [מדריך לשליחת בקשות HTTP ב־Clojure](https://luminusweb.com/docs/http-client.md)
+- [מדריך Clojure המציג כיצד להשתמש בספריית clj-http](https://yogthos.net/posts/2015-10-22-HTTP-Request-with-Clojure.html)
+- [ספריית clj-http המסייעת בשליחת בקשות HTTP בשפת Clojure](https://github.com/dakrone/clj-http)

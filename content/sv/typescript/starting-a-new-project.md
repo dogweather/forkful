@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "TypeScript: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -11,44 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt programmeringsprojekt kan vara en spännande och kreativ utmaning. Det ger dig möjlighet att utveckla nya färdigheter, lösa problem och bygga nya applikationer som kan förbättra ditt dagliga liv. Så om du letar efter ett nytt projekt att börja på, så är detta inlägg för dig!
+Att starta ett nytt projekt kan vara ett spännande och givande äventyr för en utvecklare. Det ger dig möjlighet att utmana dig själv och skapa något unikt som kan hjälpa många människor. Dessutom är TypeScript ett språk som växer i popularitet och kan ge dig möjlighet att lära dig nya tekniker och utveckla din kunskap.
 
-## Hur man gör
+## Så här gör du
 
-För att starta ett nytt projekt i TypeScript behöver du först ha en grundläggande förståelse för programmering och grundläggande kunskaper i TypeScript. Om du redan känner dig bekväm med JavaScript kommer övergången till TypeScript att vara ganska smidig. För att komma igång behöver du bara följa dessa enkla steg:
+För att börja ett nytt TypeScript-projekt, behöver du först installera Node.js och TypeScript-compiler. Sedan kan du följa dessa enkla steg:
 
-1. Skapa en ny mapp för ditt projekt.
-2. Öppna mappen i en kodredigerare som stödjer TypeScript.
-3. Skapa en fil som heter `index.ts`, vilket kommer att vara din huvudfil för koden.
-4. Skriv din kod i `index.ts` och spara filen.
-5. Öppna en terminal och navigera till din projektmapp.
-6. Skriv `tsc index.ts` för att översätta din TypeScript-kod till JavaScript.
-7. Du kommer att se en ny fil som heter `index.js` i din projektmapp.
-8. Nu kan du köra din JavaScript-kod genom att skriva `node index.js` i terminalen.
-
-Här är ett exempel på hur en enkel "Hello World!" applikation ser ut i TypeScript:
+1. Skapa en ny mapp för ditt projekt och navigera in i den.
+2. Öppna en terminal och skriv ```npm init``` för att skapa en `package.json`-fil.
+3. Installera TypeScript genom att skriva ```npm install typescript --save-dev```.
+4. Skapa en fil som heter `tsconfig.json` med följande innehåll:
 
 ```TypeScript
-// Skriver ut "Hello World!" till konsolen
-console.log("Hello World!");
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules"
+  ]
+}
 ```
 
-När du kör kodblocket ovan kommer du att se följande output i din terminal:
-
-```
-Hello World!
-```
-
-Grattis, du har nu lyckats starta ditt första TypeScript-projekt!
+5. Skapa en mapp som heter `src` och lägg till en fil med namnet `index.ts` som innehåller din första TypeScript-kod.
+6. Navigera till roten av din mapp och skriv ```npx tsc``` för att kompilera din kod till JavaScript och skapa en mapp med namnet `dist`.
+7. Nu kan du börja koda! För att köra din kod, skriv ```node dist/index.js```.
 
 ## Djupdykning
 
-När du väl har startat ditt projekt finns det många andra faktorer att ta hänsyn till, som till exempel projektets struktur, externa bibliotek och verktyg, och eventuella ramverk du vill använda. Det finns också många resurser tillgängliga online som kan hjälpa dig med dessa aspekter, så det kan vara värt att göra lite research innan du börjar.
+Att starta ett nytt projekt är en viktig process och det finns många saker att tänka på. Här är några tips som kan hjälpa dig:
 
-Ett tips när du startar ett nytt TypeScript-projekt är att vara organiserad från början. Försök att hålla din kod strukturerad och kommentera den så att den är lätt att följa. Om du använder externa bibliotek, se till att ha dokumentationen nära till hands för att underlätta användningen. Och viktigast av allt, se till att ha kul och utforska alla de möjligheter som TypeScript kan erbjuda!
+- Planera ditt projekt noggrant innan du börjar koda för att undvika onödig omkodning.
+- Utvärdera olika designmönster och välj den som passar ditt projekt bäst.
+- Använd verktyg som Git för att hantera din kod och samarbeta med andra utvecklare.
+- Glöm inte bort att testa din kod noggrant för att försäkra dig om att den fungerar som den ska.
 
-## Se också
+## Se även
 
-- [TypeScript dokumentation](https://www.typescriptlang.org/docs/)
-- [Awesome TypeScript](https://github.com/dzharii/awesome-typescript)
-- [TypeScript i 5 minuter](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [https://www.typescriptlang.org/](https://www.typescriptlang.org/) - officiell hemsida för TypeScript.
+- [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript) - officiell GitHub-sida för TypeScript.
+- [https://www.nodejs.org/](https://www.nodejs.org/) - officiell hemsida för Node.js.
+- [https://www.npmjs.com/](https://www.npmjs.com/) - officiell hemsida för npm (Node Package Manager).

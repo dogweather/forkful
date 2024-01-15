@@ -1,5 +1,6 @@
 ---
-title:                "C#: Søke og erstatte tekst"
+title:                "Søke og erstatte tekst"
+html_title:           "C#: Søke og erstatte tekst"
 simple_title:         "Søke og erstatte tekst"
 programming_language: "C#"
 category:             "C#"
@@ -10,43 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Ofte i programmering må man bytte ut tekst i et dokument eller en fil, enten det er for å rette feil eller oppdatere informasjon. Dette kan være en tidkrevende oppgave hvis man må gjøre det manuelt, derfor er det viktig å kunne bruke et programmeringsspråk som C# for å automatisere denne prosessen.
 
-Søking og erstatting av tekst er en viktig del av programmering, enten du er en erfaren utvikler eller en nybegynner. Det kan hjelpe deg med å effektivisere koden din og gjøre endringer i store tekstfiler på en enkel og rask måte.
+## Slik gjør du det
+For å søke og erstatte tekst i C#, må man bruke "Replace" metoden. Her er et eksempel på hvordan man bruker den:
 
-## Hvordan du gjør det
+```
+string originalText = "Hei, verden!";
+string newText = originalText.Replace("Hei", "Hallo");
+Console.WriteLine(newText);
+```
+Dette vil resultere i at teksten "Hallo, verden!" blir skrevet ut i konsollen. Her har vi erstattet "Hei" med "Hallo" i den originale teksten.
 
-For å søke og erstatte tekst i en C#-kode, kan du bruke "Replace" funksjonen. Her er et eksempel som viser hvordan du kan erstatte all tekst som inneholder "hund" med "katt" innenfor en strengvariabel:
+For å søke og erstatte i en fil, må man først lese inn filen og lagre den i en string. Deretter kan man bruke "Replace" metoden på denne stringen og til slutt skrive den endrede teksten tilbake til filen.
 
-```C#
-string tekst = "Jeg liker ikke hunder, men kanskje katter er bedre.";
-string nyTekst = tekst.Replace("hund", "katt");
-Console.WriteLine(nyTekst);
-// Output: Jeg liker ikke katter, men kanskje katter er bedre.
+```
+string fileText = File.ReadAllText("tekstfil.txt");
+string newText = fileText.Replace("gammel tekst", "ny tekst");
+File.WriteAllText("tekstfil.txt", newText);
 ```
 
-Som du kan se, erstatter "Replace" funksjonen alle forekomster av "hund" med "katt" i den valgte strengen.
-
-Du kan også bruke "Regex" klasse for å utføre mer avanserte søk og erstatninger. Her er et eksempel som viser hvordan du kan erstatte alle tall i en streng med "X":
-
-```C#
-string nummer = "1234, ABCD";
-string regex = "[0-9]";
-string nyTekst = Regex.Replace(nummer, regex, "X");
-Console.WriteLine(nyTekst);
-// Output: XXXX, ABCD
-```
-
-Som du kan se, bruker vi et regulært uttrykk for å finne og erstatte alle tall med "X".
-Det finnes mange ulike regulære uttrykk som du kan bruke for å søke og erstatte tekst, så det kan være lurt å utforske litt og se hva som fungerer best for ditt spesifikke behov.
-
-## Dypere dykning
-
-Når du bruker "Replace" eller "Regex" funksjoner, kan du også legge til flere parametere for å gjøre søk og erstatning enda mer tilpasset. For eksempel kan du spesifisere at søket skal ignorere store og små bokstaver, eller begrense søket til en bestemt del av teksten.
-
-Det er også viktig å huske at søking og erstatting kan påvirke ytelsen til programmet ditt, spesielt hvis du utfører det i store tekstfiler. Derfor bør du alltid tenke på effektiviteten når du bruker disse funksjonene.
+## Dykk dypere
+Det finnes flere alternativer når man arbeider med "Replace" metoden i C#. Man kan for eksempel spesifisere om teksten man søker etter skal være case-sensitive eller ikke ved å bruke "StringComparison" parameteren. Man kan også angi om man vil begynne å søke etter teksten fra en bestemt posisjon i stringen ved å bruke "startsWith" og "indexOf" metoden. Ved å studere dokumentasjonen til "Replace" metoden, kan man lære mer om alle mulighetene og finne ut hvilke som passer best for ens eget prosjekt.
 
 ## Se også
-
-- [C# String Replace](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [C# Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0) 
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [C# dokumentasjon for Replace metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+- [Guide til å arbeide med tekst i C#](https://www.tutorialspoint.com/csharp/csharp_strings.htm)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: स्ट्रिंग जोड़ना"
-simple_title:         "स्ट्रिंग जोड़ना"
+title:                "स्ट्रिंगों का सम्मिलन"
+html_title:           "Go: स्ट्रिंगों का सम्मिलन"
+simple_title:         "स्ट्रिंगों का सम्मिलन"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
 
-Strings ko concatenate karne ka kya mahatva hai? Strings ko concatenate karne se aap apne Go programming skills ko improve kar sakte hai, jisse aap apne code ko efficient bana sakte hai aur time aur memory resources ko bacha sakte hai.
+जैसा कि सभी विकासकों को पता है, प्रोग्रामिंग में स्ट्रिंग्स का बादलिंग (concatenation) काफी उपयोगी होती है। अधिकतर उपयोग होने वाले स्थानों में, हमें स्ट्रिंग्स को एक साथ जोड़ना पड़ता है, जैसे कि विभिन्न पाठ स्ट्रिंग्स को एक बार में और बहुत अधिक संख्या में केवल एक स्थान पर प्रिंट करने के लिए। इसलिए, इस लेख में हम आपको स्ट्रिंग्स की बादलिंग का सरल तरीका बताएंगे जो कि Go भाषा में बहुत ही आसान है।
 
-## Kaise Karein
+## कैसे करें
 
-Strings ko concatenate karne ke liye sabse pehle "fmt" package ko import karna hoga. Fir aap ```Go
-fmt.Println("Hello" + " " + "World")
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	// सरल स्ट्रिंग्स का बादलिंग
+	firstName := "विवेक"
+	lastName := "शर्मा"
+	fullName := firstName + " " + lastName
+	fmt.Println(fullName)
+
+	// पाठ स्ट्रिंग्स का बादलिंग
+	text1 := "Hello"
+	text2 := "world!"
+	text3 := "This is a"
+	text4 := "concatenated string."
+	concatenatedText := text1 + " " + text2 + ", " + text3 + " " + text4
+	fmt.Println(concatenatedText)
+}
 ```
-code block mein dekh sakte hai ki kaise hum multiple strings ko ek saath concatenate kar sakte hai. Iske baad aapko output mein "Hello World" dekhne ko milega.
 
-Agar aap more complex strings ko concatenate karna chahte hai, jaise ki variables aur user input, toh aapko "sprintf" function ka istemal karna hoga. Is tarah se aap multiple values ko ek string mein merge kar sakte hai.
+**आउटपुट:**
 
-## Deep Dive
+```
+विवेक शर्मा
+Hello world!, This is a concatenated string.
+```
 
-Concatenating strings ek common task hai aur iska sahi use aapke code ko optimize kar sakta hai. Lekin iske saath saath, strings immutable hote hai, jisse har baar concatenate karne par ek naya string create hota hai. Isse aapke code ka performance thoda slow ho sakta hai. Isliye, agar aapko multiple strings ko concatenate karne ka kaam hai toh "strings.Builder" ka istemal karna chaiye. Isse aap apne code ko efficient bana sakte hai aur memory resources ko bacha sakte hai.
+इस उदाहरण में, हमने स्ट्रिंग्स को एक-दूसरे के साथ जोड़ा एवं उन्हें प्रिंट किया है। पहले उदाहरण में, आप देख सकते हैं कि हमने पाठ स्ट्रिंग्स को सीधे जोड़ा है और दूसरे उदाहरण में हमने पहले स्थान पर पहले चरित्र को रखा है जो जोड़ने के लिए खाली स्ट्रिंग युक्त होता है। यह एक ऐसी कला है जो आप आसानी से सीख सकते हैं और इसका उपयोग कर सकते हैं।
 
-## Dekhiye Bhi
+## गहराई में जाएं
 
-- [Go Language Documentation](https://golang.org/doc/)
-- [Strings package in Go](https://golang.org/pkg/strings/)
-- [Concatenating Strings in Go - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-concatenate-strings-in-go/)
-- [Effective Go: String Append](https://golang.org/doc/effective_go.html#string_appends)
+जब हम गो में स्ट्रिंग्स को बादलते हैं, तो स्ट्रिंग वेरिएबल्स (variables) को

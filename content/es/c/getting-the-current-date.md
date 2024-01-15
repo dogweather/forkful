@@ -1,5 +1,6 @@
 ---
-title:                "C: Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "C: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "C"
 category:             "C"
@@ -11,81 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Obtener la fecha actual es una tarea común en la programación C. Esto puede ser útil para muchas aplicaciones, como registros de eventos, seguimiento de cronogramas y más. Al tener la fecha actual, podemos realizar diversas operaciones utilizando la información de fecha y hora.
+Existen muchas razones por las que uno querría obtener la fecha actual en un programa en C. Quizás necesitas mostrar la fecha en un formato específico a un usuario, o tal vez necesitas realizar cálculos basados en la fecha. Sea cual sea el motivo, es importante saber cómo obtener la fecha actual en un programa.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en C, utilizamos la función `time()` de la biblioteca `time.h`. Esta función devuelve la cantidad de segundos desde el 1 de enero de 1970 a las 00:00:00 GMT. Esto se conoce como el "epoch time". Para utilizar esta función, primero debemos incluir la biblioteca `time.h` en nuestro programa.
+Para obtener la fecha actual en un programa en C, necesitas utilizar la función `time()` de la biblioteca estándar `time.h`. Esta función devolverá un valor que representa el número de segundos transcurridos desde la medianoche del 1 de enero de 1970. A partir de ese valor, puedes usar la función `localtime()` para convertirlo en una estructura de tipo `struct tm` que contiene información detallada sobre la fecha y hora actual. Aquí hay un ejemplo de cómo hacerlo:
 
 ```C
-// Incluir la biblioteca time.h
+#include <stdio.h>
 #include <time.h>
 
-int main(){
+int main() {
+  time_t seconds = time(NULL);
+  
+  struct tm *actual = localtime(&seconds);
 
-    // Declarar una variable de tipo time_t para almacenar la fecha actual
-    time_t time_current;
+  printf("La fecha actual es: %d/%d/%d\n", actual->tm_mday, actual->tm_mon + 1, actual->tm_year + 1900);
+  printf("La hora actual es: %d:%d:%d\n", actual->tm_hour, actual->tm_min, actual->tm_sec);
 
-    // Obtener la fecha actual usando la función time()
-    time(&time_current);
-
-    // Imprimir la fecha actual en formato de número entero
-    printf("La fecha actual es: %ld", time_current);
-
-    return 0;
+  return 0;
 }
 ```
 
-La salida del programa sería algo como:
+Output:
 
 ```
-La fecha actual es: 1614732556
+La fecha actual es: 16/10/2020
+La hora actual es: 12:30:00
 ```
-
-Podemos ver que obtenemos un número entero grande, que representa la cantidad de segundos desde el 1 de enero de 1970. Sin embargo, este número no es útil para la mayoría de los usuarios. Por lo tanto, necesitamos convertirlo a un formato de fecha y hora legible.
-
-Podemos hacer eso utilizando la función `ctime()`. Esta función convierte la fecha y hora en un formato de cadena de caracteres leíble para humanos. También debemos tener en cuenta que la función `ctime()` agrega un salto de línea al final, por lo que se debe tener en cuenta al imprimir la salida.
-
-```C
-// Incluir la biblioteca time.h
-#include <time.h>
-
-int main(){
-
-    // Declarar una variable de tipo time_t para almacenar la fecha actual
-    time_t time_current;
-
-    // Obtener la fecha actual usando la función time()
-    time(&time_current);
-
-    // Convertir la fecha actual en una cadena de caracteres legíble
-    char *date_current = ctime(&time_current);
-
-    // Imprimir la fecha actual
-    printf("La fecha actual es: %s", date_current);
-
-    return 0;
-}
-```
-
-La salida del programa sería:
-
-```
-La fecha actual es: Wed Mar 03 23:55:56 2021
-```
-
-¡Ahora obtenemos una fecha y hora legíble!
 
 ## Deep Dive
 
-Introducir la función `time()` y la biblioteca `time.h` puede llevar a pensar que solo obtendremos la fecha actual. Sin embargo, podemos realizar otras operaciones usando esta información. Por ejemplo, podemos utilizar la estructura `tm` de la biblioteca `time.h` para separar la fecha y hora en diferentes componentes como año, mes, día, hora, minuto, segundo, entre otros.
-
-Además, podemos utilizar otras funciones, como `localtime()` para obtener la fecha y hora local, `gmtime()` para obtener la fecha y hora GMT, `strftime()` para formatear la salida, entre otras.
-
-En resumen, obtener la fecha actual en C puede ser una tarea sencilla, pero también es importante conocer las diferentes herramientas que nos permiten manipular y utilizar esta información de manera más eficiente.
+Como se mencionó anteriormente, la función `time()` devuelve el número de segundos transcurridos desde la medianoche del 1 de enero de 1970. Esto se conoce como "epoch time" y es una convención utilizada en muchos sistemas operativos para representar el tiempo. Luego, la función `localtime()` toma ese valor y lo convierte en una estructura que contiene información sobre la fecha y hora actual en la zona horaria local del sistema. Sin embargo, si necesitas trabajar con fechas y horas en otras zonas horarias, puedes utilizar la función `gmtime()` que devuelve la fecha y hora en UTC (tiempo universal coordinado). También hay otras funciones disponibles en la biblioteca `time.h` para realizar cálculos con fechas y horas, como `difftime()` que calcula la diferencia entre dos momentos en segundos.
 
 ## Ver también
 
-- [Documentación de la función time() en cplusplus.com](http://www.cplusplus.com/reference/ctime/time/)
-- [Tutorial sobre trabajar con fechas y horas en C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [Documentación de la biblioteca time.h en la página oficial de GNU](https://www.gnu.org/software/libc/manual/html_node/Time-of-Day.html)
+- [Más información sobre la función `time()` y la estructura `struct tm`](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Ejemplos de uso de funciones relacionadas con la fecha y hora en C](https://www.programiz.com/c-programming/examples/current-date-time)
+- [Información sobre el "epoch time"](https://www.epochconverter.com/)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עובדים עם JSON"
+html_title:           "Go: עובדים עם JSON"
+simple_title:         "עובדים עם JSON"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -11,60 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-JSON הוא פורמט קוד שנמצא בשימוש נרחב בתכנות בשפת גו. אולם, לעיתים קשה להבין למה נדרש שימוש בו ומה היתרונות שלו. בפוסט הזה נבין מדוע חשוב להכיר את עולם ה-JSON וכיצד ניתן לעבוד איתו בפורמט הקוד של גו.
+נעשה פתיחה נכונה ונציין שהעיקר במאמר הוא על JSON וכתיבת קוד ב-Go. אנחנו כאן כדי ללמוד איך לעבוד עם נתונים מבני כתובת וניתוחים בפורמט JSON תמיכה מלאה בשפת Go (הגרסה הנוכחית).
 
-## איך לעבוד עם JSON בגו
+## איך לעשות זאת
 
-כדי לעבוד עם JSON בגו, עלינו להתחיל עם החבילות הנדרשות. נוסיף למעבדה שלנו את הטכנולוגיות הבאות:
+פעולת הפורמטים נתונים נכתבים בו-קומפקטיים, נוחים ונקיים כמו השפה עצמה, Go. קוד הדגמה לכתיבת קטע קוד JSON והפלט המצורף היא:
 
 ```Go
+package main
+
 import (
     "encoding/json"
     "fmt"
 )
-```
 
-כעת, נגדיר משתנה המכיל נתוני משתמש שמיוצגים בפורמט JSON:
-```Go
-var user = `{"name": "John", "id": 1234, "email": "john@example.com"}`
-```
-
-עכשיו נבקש מגו להמיר את הנתונים האלו למבנה מובן יותר עם עזרת פונקציית `json.Marshal()`:
-```Go
-data, err := json.Marshal(user)
-if err != nil {
-    fmt.Println(err)
+func main() {
+    type Person struct {
+        Name string `json:"name"`
+        Age int `json:"age"`
+    }
+    
+    p := Person{Name: "John", Age: 35}
+    b, _ := json.Marshal(p)
+    
+    fmt.Println(string(b))
 }
 ```
 
-כעת, נדפיס את הפלט בעזרת `fmt.Println`:
-```Go
-fmt.Println(string(data))
-```
-
-הפלט הוא מבנה נוקשה יחסית, אך אם נריץ את הקוד נקבל את התוצאה הבאה:
-`"{\"name\":\"John\",\"id\":1234,\"email\":\"john@example.com\"}"`
-
-אם נרצה לקרוא מידע בפורמט JSON ניתן לעשות זאת באמצעות פונקציית `json.Unmarhsal()`:
-```Go
-userData := make(map[string]string)
-err = json.Unmarshal(data, &userData)
-fmt.Println("Name:", userData["name"])
-fmt.Println("ID:", userData["id"])
-fmt.Println("Email:", userData["email"])
-```
-
 פלט:
+
+```Go
+{"name":"John","age":35}
 ```
-Name: John
-ID: 1234
-Email: john@example.com
-```
 
-באמת שפשוט לעבוד עם JSON בגו!
+## חפירה עמוקה
 
-## שוקולד עוסק בJSON בעומק
+פורמט JSON יכול להיות מסובך, ולכן יש לכתוב פרק כזה "עמוק" לכיוון שבו נוכל להתייחס לעצמים קשורים נהולים בפורמט JSON ולטפל בהם כמצופה עם הספרייה encoding/json ב-Go. ניתן לכתוב ולקרוא פונקציות עבור אותו פורמט כדי לייצג נתונים בצורה מובנית ולוודא כי הפרמטים לא ייובאו או ייוצאו עם יעדים ריקים ריקים.
 
-מאחר ו-JSON הוא פורמט קוד פשוט יחסית למחשבים, רבים מתעלמים מהעובדה שישנם מאפיינים מתוחכמים ומועילים בפורמט זה. למשל, תמיכה בסוגי נתונים שונים, יצירת מבני נתונים מקוננים וכו'.
+## ראו גם
 
-כדי להעמיק בנושא וללמ
+רשימת קישורים שיכולים להוות כלים נוספים לימוד JSON ועבודה עם פורמט זה בשפת Go:
+
+- מדריך התחלה ל-JSON ב-Go: https://www.codewithgo.com/post/go-json/
+- ספריה רשמית בשפת Go לניתוח ויצירת JSON: https://pkg.go.dev/encoding/json
+- עורך JSON באינטרנט מומלץ: https://jsoneditoronline.org/

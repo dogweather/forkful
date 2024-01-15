@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Att Kapitalisera en Sträng"
-simple_title:         "Att Kapitalisera en Sträng"
+title:                "Att konvertera en sträng till versaler"
+html_title:           "Swift: Att konvertera en sträng till versaler"
+simple_title:         "Att konvertera en sträng till versaler"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att kapitalisera en sträng kan vara användbart när man vill ändra utseendet på en textsträng, till exempel om man vill visa en rubrik eller ett namn med stor första bokstav. 
+Att kapitalisera en sträng i Swift är ett vanligt behov när man jobbar med textdata. Det är ett enkelt sätt att få en sträng att se mer formell och enhetlig ut, till exempel om den ska visas i en rubrik eller ett meddelande.
 
-## Så här gör du 
+## Så här gör du
 
-```Swift 
-let str = "hej och välkommen"
-print(str.capitalized) // Output: "Hej Och Välkommen"
+Kapitalisera en sträng i Swift är enkelt och kan göras på flera olika sätt beroende på dina behov. Här är några exempel på olika metoder:
+
+```Swift
+// Enklaste sättet, genom att använda den inbyggda metoden .uppercased():
+let namn = "anna"
+let kapitaliseratNamn = namn.uppercased()
+print(kapitaliseratNamn) // Resultat: ANNA
+
+// Om du vill ha stora bokstäver för varje ord, använd .capitalized:
+let fras = "jag älskar swift"
+let kapitaliseradFras = fras.capitalized
+print(kapitaliseradFras) // Resultat: Jag Älskar Swift
+
+// Om du bara vill ha första bokstaven kapitaliserad, använd .capitalizedFirstLetter():
+let mening = "hej, välkommen till Swift"
+let kapitaliseradMening = mening.capitalizedFirstLetter()
+print(kapitaliseradMening) // Resultat: Hej, välkommen till Swift
 ```
 
-Det enklaste sättet att kapitalisera en sträng i Swift är att använda metoden `capitalized`, vilken automatiskt omvandlar första bokstaven i varje ord till stor bokstav. Man kan också använda metoden `uppercased` för att göra hela strängen stor bokstav eller `lowercased` för att göra hela strängen små bokstäver. 
+## Djupdykning
 
-```Swift 
-let str = "jag Älskar Att Programmera"
-print(str.uppercased()) // Output: "JAG ÄLSKAR ATT PROGRAMMERA"
-print(str.lowercased()) // Output: "jag älskar att programmera"
-```
+I Swift finns det flera inbyggda metoder för att hantera strängar, inklusive de som används för att kapitalisera en sträng. Det är viktigt att notera att dessa metoder skapar en helt ny sträng istället för att ändra den befintliga strängen direkt. Detta beror på att strängar i Swift är "value types" istället för "reference types", vilket innebär att de är oföränderliga.
 
-## Fördjupa dig
-
-I Swift finns det flera metoder för att manipulera och ändra strängar. En av dessa är metoden `localizedCapitalized`, vilken tar hänsyn till språktillhörighet och kulturella normer när den kapitaliserar en sträng. Det går också att välja vilka tecken som ska anses som bokstäver genom att använda metoden `capitalized(with:)`. 
-
-Det finns även möjlighet att använda `NSMutableString` för att ändra en sträng direkt utan att behöva skapa en ny sträng. Med hjälp av metoden `replaceCharacters(in:with:)` kan man till exempel byta ut vissa tecken med andra. 
+Det finns också möjlighet att använda sig av externa bibliotek som erbjuder ytterligare funktioner för att hantera och formatera textdata. Ett exempel på ett sådant bibliotek är SwiftString, som erbjuder en mängd olika metoder för att omvandla och manipulera strängar.
 
 ## Se även
 
-- [Apple Dokumentation om capitalizing strings](https://developer.apple.com/documentation/foundation/nsstring/1164307-capitalized)
-- [Blogginlägg om olika sätt att ändra strängar i Swift](https://www.hackingwithswift.com/articles/126/capitalizing-strings-in-swift)
+Här är några länkar till ytterligare resurser och guider för att arbeta med strängar i Swift:
+
+- [The Swift Programming Language - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Ray Wenderlich - Strings in Swift - Ultimate Guide](https://www.raywenderlich.com/3447256-strings-in-swift)
+- [SwiftString - A lightweight string extension for Swift](https://github.com/amayne/SwiftString)

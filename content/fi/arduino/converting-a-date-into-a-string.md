@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Arduino: Päivämäärän muuttaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,56 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-## Miksi sinun kannattaisi muuttaa päivämäärä merkkijonoksi Arduino-ohjelmoinnissa? Tässä tulee muutama hyvä syy.
+Monissa projekteissa on tarvetta muuntaa päivämäärä nimenomaiseksi merkkijonoksi, jotta voidaan näyttää päivämäärä tarkemmin tai tallentaa se tiedostoon. Arduino-pohjaiset projektit eivät ole poikkeus. Tässä artikkelissa opit, miten voit helposti muuntaa päivämäärän merkkijonoksi käyttäen Arduino-ohjelmointikieltä.
 
-Ehkä haluat näyttää päivämäärän Arduino-projektissasi käyttäjille tai tallentaa sen johonkin tärkeään tietokantatietueeseen. Tai ehkä haluat vain oppia uutta koodausta ja haastaa itseäsi. Riippumatta syystäsi, oppimalla päivämäärän muuntamisen merkkijonoksi, voit lisätä monipuolisuutta ja joustavuutta Arduino-projekteihisi.
+## Miten
 
-## Kuinka
-
-## Tässä on yksinkertainen esimerkki siitä, kuinka muuttaa päivämäärä merkkijonoksi Arduino-ohjelmassa:
+Muuntaaksesi päivämäärän merkkijonoksi Arduinolla, tarvitset kaksi kirjastoa: `RTClib` ja `Wire`. Ensimmäinen kirjasto vastaa oikean ajan saamisesta ja toinen kirjasto on vastuussa kommunikaatiosta RTC-piirin kanssa. Tallenna ensin `RTClib.h` tiedosto ja `Wire.h` kirjasto kansioosi ja sisällytä ne koodiisi seuraavasti:
 
 ```Arduino
-#include <RTClib.h> // Lisää RTC (Real Time Clock) -kirjasto
-
-RTC_DS1307 rtc; // Luo RTC-olio
-
-void setup() {
-  Serial.begin(9600); // Käynnistä sarjaportti
-  rtc.begin(); // Käynnistä RTC
-}
-
-void loop() {
-  DateTime now = rtc.now(); // Lue nykyinen päivämäärä ja aika RTC:ltä
-  // Muunna päivämäärä merkkijonoksi ja tulosta se sarjaportilla
-  Serial.print(now.day(), DEC);
-  Serial.print("/");
-  Serial.print(now.month(), DEC);
-  Serial.print("/");
-  Serial.print(now.year(), DEC);
-  delay(1000); // Odota sekunti ennen uuden päivämäärän lukemista
-}
+#include <Wire.h>
+#include <RTClib.h>
 ```
 
-Esimerkissä käytämme RTClib-kirjastoa, joka helpottaa RTC:n käyttöä Arduino-ohjelmoinnissa. Muunnumme sitten päivän, kuukauden ja vuoden arvoiksi ja tulostamme ne sarjaportilla. Näin saat päivämäärän muunnettuna merkkijonoksi "DD/MM/YYYY" -muodossa.
-
-Toinen tapa muuttaa päivämäärä merkkijonoksi on käyttää `sprintf()` -funktiota, joka on C-kielessä käytetty merkkijonon muotoilufunktio. Esimerkiksi seuraava koodi antaa saman tuloksen kuin edellinen koodin pätkä:
+Sitten sinun on luotava RTC-olio ja käynnistettävä RTC-kirjasto:
 
 ```Arduino
-DateTime now = rtc.now();
-
-char dateStr[11]; // Luodaan merkkijono, johon päivämäärä tallennetaan
-sprintf(dateStr, "%02d/%02d/%04d", now.day(), now.month(), now.year());
-Serial.println(dateStr); // Tulostaa "DD/MM/YYYY"
+RTC_DS3231 rtc;
 ```
 
-## Syvempi sukellus
+Oletetaan, että haluat muuntaa ja tulostaa nykyisen päivämäärän sarjaporttiin. Ensimmäinen vaihe on aloittaa sarjaportin käyttö:
 
-Päivämäärän muuttaminen merkkijonoksi voi olla hyödyllistä monessa eri tilanteessa. Kirjoittaessasi muotoilumerkkijonoa (`"%02d/%02d/%04d"`), päivämäärän osat (päivä, kuukausi, vuosi) on eroteltu prosenttimerkillä (`%`) ja kirjaimella, joka ilmaisee datatyyppiä (`d` tarkoittaa kokonaislukua, `02` ja `04` tarkoittaa, että luvut täydennetään nollilla tarvittaessa).
+```Arduino
+Serial.begin(9600);
+```
 
-Lisäksi `sprintf()`-funktiossa on muitakin käteviä merkintöjä, kuten `%02X`, joka tulostaa heksadesimaalilukunasi (`X` tarkoittaa heksakoodia). Voit löytää lisätietoa `sprintf()`-funktiosta ja sen muotoilumerkinnöistä esimerkiksi Arduinon dokumentaatiosta.
+Sitten sinun on avattava RTC-yhteys `begin()` -toiminnon avulla:
+
+```Arduino
+rtc.begin();
+```
+
+Viimeinen askel on käyttää `now()` -toimintoa saadaksesi nykyisen päivämäärän ja tallentaa se muuttujaan. Sitten voit helposti muuntaa päivämäärän merkkijonoksi ja tulostaa sen sarjaporttiin:
+
+```Arduino
+DateTime now = rtc.now(); // saa nykyisen päivämäärän
+String date = now.timestamp(DateTime::TIMESTAMP_DATE); // muuntaa päivämäärän merkkijonoksi
+Serial.println(date); // tulostaa merkkijonon sarjaporttiin
+```
+
+Jos kaikki onnistui, tulosteena pitäisi olla nykyinen päivämäärä muodossa `dd.mm.yyyy`. Voit myös muuttaa päivämäärän muotoa vaihtamalla `DateTime::TIMESTAMP_DATE` vaihtoehtoa. Voit esimerkiksi käyttää `DateTime::TIMESTAMP_FULL` saadaksesi tulosteen muodossa `hh:mm:ss dd.mm.yyyy`.
+
+## Deep Dive
+
+Jos haluat syventää ymmärrystäsi päivämäärän muuntamisesta merkkijonoksi, voit tutustua RTC-kirjaston lähdekoodiin. Sieltä löytyy tarkempi dokumentaatio, joka auttaa sinua ymmärtämään paremmin eri toimintoja ja vaihtoehtoja.
+
+Voit myös kokeilla vaihtoehtoisia tapoja muuntaa päivämäärä merkkijonoksi, kuten käyttämällä `char` -muuttujaa tai `sprintf()` -toimintoa. Näiden vaihtoehtojen avulla voit tuottaa erilaisia merkkijonotulosteita ja sovittaa ne paremmin juuri sinun projektiisi.
 
 ## Katso myös
 
-- [Arduino-ohjelmointi aloittelijoille](https://www.arduino.cc/en/Guide/ArduinoUno)
-- [RTC-kirjasto](https://github.com/adafruit/RTClib)
-- [C: sprintf()-funktio](
+- [Arduino Reference – RTC DS3231](https://www.arduino.cc/reference/en/libraries/rtc/)
+- [RTC Piirilevy Arduinolle](https://www.sparkfun.com/products/12708)
+- [Eri muotoisia päivämääränäkymät Arduinolle](https://www.pjrc.com/teensy/td_libs_Time.html)

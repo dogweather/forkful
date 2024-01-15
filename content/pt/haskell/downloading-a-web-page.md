@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Haskell: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
-Downloading de páginas da web é uma habilidade fundamental para desenvolvedores Haskell que querem realizar operações de scraping, análise de dados ou criação de bots. Além disso, é uma tarefa bastante comum em projetos de aplicações web.
+## Por que 
 
-## Como fazer:
+Se você está interessado em criar aplicações web ou trabalhar com dados da internet, é importante saber como baixar uma página da web usando Haskell. Isso permite que você acesse informações úteis e crie aplicações mais interativas e dinâmicas.
+
+## Como Fazer
+
+Baixar uma página da web usando Haskell é um processo relativamente simples. Primeiro, precisamos importar o módulo "Network.HTTP", que nos permite fazer solicitações HTTP. Em seguida, usamos a função "simpleHttp" para fornecer o URL da página que queremos baixar. Vamos dar uma olhada em um exemplo de código:
+
 ```Haskell
 import Network.HTTP
-import Network.URI
 
 main = do
-    let url = "https://www.example.com"
-    document <- simpleHTTP (getRequest url) >>= getResponseBody
-    print document
+    -- Fazer a solicitação HTTP 
+    response <- simpleHttp "https://example.com"
+    
+    -- Imprimir o corpo da resposta 
+    putStrLn $ "Corpo da resposta: \n" ++ show response
 ```
 
-Nesse exemplo, usamos as bibliotecas `Network.HTTP` e `Network.URI` para fazer uma requisição HTTP e obter o conteúdo de uma página da web. Primeiro, usamos a função `getRequest` para criar uma requisição a partir de uma URL. Em seguida, usamos a função `simpleHTTP` para fazer a requisição, que retorna uma resposta. Por fim, usamos a `getResponseBody` para extrair o conteúdo da resposta.
+No exemplo acima, usamos a função "putStrLn" para imprimir o corpo da resposta, que é a página que baixamos. No entanto, é importante notar que a função "simpleHttp" retorna um "IO ByteString", que é uma representação de uma sequência de bytes. Portanto, podemos converter essa representação em uma string usando a função "show".
 
-O conteúdo obtido é uma string, que pode ser manipulada de diversas formas para extrair informações específicas ou realizar outras operações. Por exemplo, se queremos extrair todos os links presentes na página:
+## Profundidade
+
+Ao baixar uma página da web usando Haskell, também podemos especificar o tipo de solicitação que queremos fazer. Por exemplo, se quisermos fazer uma solicitação POST, podemos usar a função "postSimple". Além disso, podemos definir cabeçalhos personalizados usando a função "addRequestHeader". Vamos ver um exemplo de código que usa essas funções:
 
 ```Haskell
-import Text.HTML.TagSoup
+import Network.HTTP
 
 main = do
-    let url = "https://www.example.com"
-    document <- simpleHTTP (getRequest url) >>= getResponseBody
-    let tags = parseTags document
-    let links = filter isTagOpen links
-    let hrefs = map (fromAttrib "href") links
-    print hrefs
+    -- Definir cabeçalho personalizado 
+    let headers = [("Content-Type", "application/json")]
+    
+    -- Fazer a solicitação POST 
+    response <- postSimple "https://example.com" headers "{}"
+    
+    -- Imprimir o corpo da resposta
+    putStrLn $ "Corpo da resposta: \n" ++ show response
 ```
 
-Nessa versão, utilizamos a biblioteca `Text.HTML.TagSoup` para fazer o parsing do conteúdo da página e extrair somente os links, que são identificados pelo atributo "href" dentro das tags `a`.
+Esse exemplo nos permite fazer uma solicitação POST com um cabeçalho personalizado e um corpo de requisição JSON vazio. No entanto, existem outras funções no módulo "Network.HTTP" que nos permitem fazer solicitações mais complexas, como enviar parâmetros de formulário ou fazer solicitações HTTPS.
 
-## Mergulho profundo:
-Existem várias outras bibliotecas e técnicas para realizar o download de páginas da web em Haskell. Por exemplo, é possível utilizar a biblioteca `req` para fazer requisições HTTP de forma mais robusta, com suporte a TLS e outras configurações. Outra opção é utilizar o pacote `http-client-tls` para lidar com requisições HTTPS.
+## Veja Também
 
-## Veja também:
-- [Tutorial de requisições HTTP em Haskell](http://hackage.haskell.org/package/http-client-0.7.5/docs/Network-HTTP-Client.html)
-- [Documentação da biblioteca TagSoup](http://hackage.haskell.org/package/tagsoup-0.14.7/docs/Text-HTML-TagSoup-Match.html)
-- [Pacote req para requisições HTTP em Haskell](http://hackage.haskell.org/package/req-2.0.0/docs/Req.html)
-- [Pacote http-client-tls para requisições HTTPS em Haskell](http://hackage.haskell.org/package/http-client-tls-0.3.5/docs/Network-HTTP-Client-TLS.html)
+- [Documentação do módulo "Network.HTTP" em Haskell] (https://hackage.haskell.org/package/HTTP)
+- [Tutorial: Baixando páginas da web em Haskell] (https://www.schoolofhaskell.com/user/commercial/content/learning-haskell-tele-weka-part-3-simple-networking)

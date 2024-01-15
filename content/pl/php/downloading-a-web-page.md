@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "PHP: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,57 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Nie ważne, czy masz swoją stronę internetową czy też zajmujesz się tworzeniem aplikacji webowych, prędzej czy później będziesz musiał pobrać stronę internetową jako część swojego programu. Niezależnie od celu, dla którego chcesz to zrobić, prawdopodobnie będzie Ci potrzebna wiedza w zakresie programowania w PHP. W tym artykule dowiesz się, jak pobrać stronę internetową za pomocą PHP.
+Pobieranie strony internetowej jest nieodzownym elementem programowania w PHP, szczególnie jeśli chodzi o tworzenie skryptów automatyzujących pobieranie plików lub analizowanie danych z innych stron. Jest to szybki i skuteczny sposób na uzyskanie potrzebnych informacji.
 
 ## Jak to zrobić
 
-Pobieranie strony internetowej w PHP jest stosunkowo proste. Musisz tylko użyć funkcji `file_get_contents()` i przekazać jako argument adres URL strony, którą chcesz pobrać. Poniżej znajduje się kod demonstrujący to działanie:
-
 ```PHP
-<?php
-$url = "https://example.com";
-$page = file_get_contents($url);
-echo $page;
-?>
+$url = 'https://www.example.com'; //adres URL strony do pobrania
+
+//inicjalizacja sesji CURL
+$ch = curl_init();
+
+//ustawienie opcji pobierania strony
+curl_setopt($ch, CURLOPT_URL, $url); //ustawienie adresu URL
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //zwrócenie pobranej strony jako wyniku zamiast wyświetlenia
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); //umożliwienie obsługi przekierowań na stronie
+curl_setopt($ch, CURLOPT_MAXREDIRS, 5); //maksymalna liczba przekierowań
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); //ignorowanie certyfikatów SSL
+
+//wykonanie zapytania i zapisanie wyniku do zmiennej
+$result = curl_exec($ch);
+
+//sprawdzenie czy wystąpił błąd
+if (curl_errno($ch)){
+  echo 'Błąd pobierania strony: ' . curl_error($ch);
+}
+
+//zamknięcie sesji CURL
+curl_close($ch); 
+
+//wyświetlenie pobranej strony
+echo $result;
 ```
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć na stronie wyjściowej treść strony internetowej, którą wybrałeś do pobrania. Jeśli chcesz zapisać pobraną stronę jako plik HTML, możesz wykorzystać funkcję `file_put_contents()`:
-
-```PHP
-<?php
-$url = "https://example.com";
-$page = file_get_contents($url);
-file_put_contents('page.html', $page);
-?>
+### Output
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title> //tytuł strony
+  <meta charset="UTF-8"> //kodowanie znaków
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> //ustawienia dla urządzeń mobilnych
+</head>
+<body>
+  <h1>Example Domain</h1> //tytuł strony
+  <p>This domain is for use in illustrative examples in documents. You may use this
+  domain in literature without prior coordination or asking for permission.</p> //tekst na stronie
+</body>
+</html>
 ```
 
-W tym przykładzie pobierana strona zostanie zapisana jako plik HTML o nazwie "page.html". Możesz także kontrolować sposób, w jaki pobierana jest strona internetowa. Na przykład, jeśli chcesz pobrać tylko nagłówek strony zamiast całej treści, możesz użyć opcji `stream_context_create()`, jak pokazano poniżej:
+## Deep Dive
 
-```PHP
-<?php
-$url = "https://example.com";
-$options = array(
-  'http'=>array(
-    'method'=>"HEAD",
-    'header'=>"User-Agent: PHP"
-  )
-);
-$context = stream_context_create($options);
-$fd = fopen($url, 'rb', false, $context);
-$meta = stream_get_meta_data($fd);
-fclose($fd);
-echo "Status: {$meta['wrapper_data'][0]}";
-?>
-```
+Pobieranie strony przy użyciu PHP odbywa się za pomocą biblioteki CURL, która jest częścią standardowej instalacji PHP. Biblioteka ta pozwala na ustawienie różnych opcji, takich jak obsługa przekierowań czy ignorowanie certyfikatów SSL. Dzięki temu można dostosować pobieranie do swoich potrzeb.
 
-## Głębokie zanurzenie
+## Zobacz również
 
-Pobieranie stron internetowych w PHP może być bardziej skomplikowane niż wyżej opisane przykłady. Musisz wziąć pod uwagę wiele czynników, takich jak uwierzytelnienie, obsługa przekierowań, błędy HTTP i wiele innych. Możesz także wykorzystać różne biblioteki i narzędzia, takie jak cURL, do pobierania stron internetowych z większymi możliwościami i kontroli nad pobieranymi danymi.
-
-Teraz, gdy masz podstawową wiedzę na temat pobierania stron internetowych w PHP, możesz spróbować pobrać różne strony i przetestować swoje umiejętności programowania. Pamiętaj jednak, że zawsze powinieneś zachować ostrożność podczas pobierania danych z zewnętrznych stron internetowych, aby uniknąć naruszenia praw autorskich lub ataków na swoją stronę.
-
-## Zobacz także
-
-- [Dokumentacja PHP dotycząca funkcji file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Przewodnik dla początkujących w PHP](https://www.w3schools.com/php/)
-- [Strona PHP.net dotycząca cURL](https://www.php.net/manual/en/book.curl.php)
+- Dokumentacja CURL w PHP: https://www.php.net/manual/en/book.curl.php
+- Przydatne informacje o pobieraniu stron w PHP: https://www.codementor.io/@ganesh85/how-to-scrape-a-website-using-php-du108266t

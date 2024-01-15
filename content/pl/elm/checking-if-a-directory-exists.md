@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Sprawdzanie, czy istnieje katalog."
-simple_title:         "Sprawdzanie, czy istnieje katalog."
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "Elm: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto sprawdzać istnienie katalogu?
+## Dlaczego
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w Elm. Jest to szczególnie przydatne w przypadku aplikacji internetowych, które często muszą odwoływać się do plików lub katalogów na serwerze. Sprawdzenie, czy katalog istnieje, pomaga uniknąć błędów związanych z dostępem do plików, a także zapewnia bezpieczeństwo aplikacji.
+Sprawdzanie istnienia katalogu może być przydatne w wielu przypadkach, na przykład podczas tworzenia programów, które wymagają dostępu do plików przechowywanych w konkretnym katalogu. W ten sposób możemy upewnić się, że nasz program będzie działał poprawnie i nie będzie informował nas o nieprawidłowej ścieżce.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby sprawdzić istnienie katalogu w Elm, należy użyć funkcji `Directory.exists` z modułu `Elm.Kernel.Directory`. Poniżej przedstawiono przykładowy kod, który demonstruje tę funkcję:
+Sprawdzanie istnienia katalogu jest prostym procesem w języku Elm. Wystarczy użyć funkcji `directoryExists` z biblioteki `elm/file` i podać jej ścieżkę do katalogu jako argument. Jeśli katalog istnieje, funkcja zwróci wartość `True`, w przeciwnym przypadku zwróci `False`. Poniżej znajduje się przykładowy kod, który wykorzystuje tę funkcję:
 
+```elm
+import File exposing (directoryExists)
+import Task exposing (attempt)
+
+directoryPath = "moj/katalog"
+
+checkDirectory = 
+    attempt
+        always ()
+        (\ _ -> directoryExists directoryPath)
 ```
-Elm.Kernel.Directory.exists "sciezka/do/katalogu" 
-    |> Result.andThen (\exists -> 
-        if exists then 
-            "Katalog istnieje." |> Result.ok
-        else
-            "Katalog nie istnieje." |> Result.err)
-    |> Result.withDefault "Wystąpił błąd."
-```
 
-Kod ten pozwala najpierw na sprawdzenie, czy katalog istnieje. Jeśli tak, zostanie zwrócony pozytywny wynik, w przeciwnym wypadku zostanie zwrócony błąd. Należy pamiętać, że funkcja `exists` zwraca wartość typu `Result`, więc musimy obsłużyć zarówno przypadki sukcesu, jak i błędu.
+W tym przykładzie używa się również funkcji `Task.attempt`, która pomaga obsłużyć ewentualne błędy przy wywoływaniu funkcji `directoryExists`.
 
 ## Wnikliwa analiza
 
-Sprawdzanie istnienia katalogu może być także przydatne w sytuacjach, gdy użytkownik aplikacji musi wybrać konkretny katalog, w którym ma zostać zapisany plik lub dane. W takim przypadku można wyświetlić użytkownikowi listę dostępnych katalogów i sprawdzić, czy wybrany przez niego istnieje.
+Sprawdzanie istnienia katalogu w języku Elm jest możliwe dzięki wykorzystaniu interfejsu JavaScriptowych funkcji API przeglądarki. Funkcja `directoryExists` jest opakowanym interfejsem dla funkcji `DirectoryHandle.query()` z API `Directory System Access`, która pozwala na sprawdzenie istnienia katalogu w określonej ścieżce. W przypadku braku dostępu do systemu plików, funkcja zwróci komunikat błędu.
 
 ## Zobacz także
 
-* Dokumentacja dotycząca funkcji `Directory.exists` w oficjalnym podręczniku Elm (https://guide.elm-lang.org/interop/javascript.html#calling-a-function)
-* Przykładowy kod wykorzystujący `Directory.exists` na stronie GitHub (https://github.com/some-user/some-repo)
-* Dyskusja na forum Elm Dev o wykorzystaniu `Directory.exists` w aplikacji webowej (https://discourse.elm-lang.org/t/check-if-directory-directory-exists/1234)
+- [Dokumentacja funkcji directoryExists](https://package.elm-lang.org/packages/elm/file/latest/File#directoryExists)
+- [Dokumentacja interfejsu API Directory System Access](https://developer.mozilla.org/en-US/docs/Web/API/Directory_System_Access_API)
+- [Przykład wykorzystania funkcji directoryExists w projekcie Elm](https://guide.elm-lang.org/effect_managers/file_system.html#checking-directory-existence)

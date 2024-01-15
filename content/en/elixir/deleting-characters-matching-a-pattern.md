@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Elixir recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,43 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Deleting characters matching a pattern in Elixir can be useful for cleaning up data or formatting strings in a certain way. It allows for more precise control over which characters are removed from a given string.
+Deleting characters matching a pattern is a common task in programming, especially when working with strings. This can help clean up data or filter out unwanted characters, making it easier to work with. It can also be useful when dealing with user input, ensuring that it meets certain criteria.
 
 ## How To
 
-To delete characters matching a pattern in Elixir, we can use the `String.replace/4` function. This function takes in a string, a regular expression pattern, the replacement string, and the number of times the pattern should be replaced. Let's take a look at an example:
+To delete characters matching a pattern in Elixir, we can use the `String.replace/3` function. This function takes in three arguments: the string to be modified, the pattern to match, and the replacement string. Here's an example:
 
 ```Elixir
-input = "h3ll0 w0rld"
-String.replace(input, ~r/[a-z]/i, "")
+string = "HelloWorld"
+String.replace(string, "l", "") #=> "HeoWord"
 ```
 
-In this example, we have a string that contains numbers and letters. We use the regular expression `[a-z]` to match all lowercase letters and the `i` option to ignore case. Then, we replace each match with an empty string, effectively deleting all lowercase letters from the input. The output of this code would be:
+In this example, we replace all instances of "l" in the string with an empty string, effectively deleting them. We can also use regular expressions as the pattern to match. For example, if we want to delete all numbers from a string:
 
 ```Elixir
-"30"
+string = "1a2b3c4d5e"
+String.replace(string, ~r/[0-9]/, "") #=> "abcde"
 ```
 
-We can also use the `String.replace/3` function to delete characters without using regular expressions. This function simply takes in the string and the replacement string as arguments. Let's see how this would look:
-
-```Elixir
-input = "hello"
-String.replace(input, "l", "")
-```
-
-In this example, we are deleting all occurrences of the letter "l" from the string "hello". The output would be:
-
-```Elixir
-"heo"
-```
+We can also use the bang `!` version of `String.replace` to delete characters in place, instead of returning a new string.
 
 ## Deep Dive
 
-Under the hood, Elixir uses the `String.replace/4` function to implement the `String.delete/2` function. `String.delete/2` takes in a string and a list of characters to be deleted. It then converts this list to a regular expression and uses the `String.replace/4` function to perform the deletion. Knowing this, we can see that the `String.replace/4` function gives us more flexibility when it comes to deleting characters in Elixir.
+The `String.replace/3` function takes an additional optional argument for the number of replacements to be made. By default, it replaces all occurrences of the pattern. We can specify a different number if we only want to delete a certain number of characters. For example:
+
+```Elixir
+string = "1a2b3c4d5e"
+String.replace(string, ~r/[0-9]/, "", 2) #=> "ab3c4d5e"
+```
+
+This will only replace the first two numbers in the string. We can also use the `:global` option to replace all occurrences, even if they are in different parts of the string. Lastly, we can also use `String.replace/4` to pass in a function as the replacement, allowing for more complex manipulation.
 
 ## See Also
 
-- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Regular expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)
-
-By using the `String.replace/4` function, we can easily delete characters matching a pattern in Elixir. This gives us more control and flexibility when working with strings. For more information, check out the Elixir documentation and experiment with different regular expressions to see the different ways in which characters can be deleted. Happy coding!
+- [String.replace documentation](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Regular expressions in Elixir](https://hexdocs.pm/elixir/Regex.html)

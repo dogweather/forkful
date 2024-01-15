@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML"
+html_title:           "TypeScript: Analizando HTML"
+simple_title:         "Analizando HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,40 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Al crear una aplicación web, a menudo se necesita acceder a información específica de una página web. Para lograr esto, se puede utilizar un proceso llamado "parsing" o análisis. En términos sencillos, esto significa extraer datos de una página HTML para su uso en una aplicación.
+Si estás interesado en crear aplicaciones web interactivas, entonces seguramente te encontrarás en algún momento con la necesidad de analizar y manipular el código HTML de una página web. Algunas posibles razones para hacer esto pueden ser extraer información específica de una página, cambiar el estilo de un elemento o simplemente mejorar la usabilidad de tu aplicación.
 
-## Cómo
+## Cómo hacerlo
 
-Para realizar el parsing de HTML en TypeScript, necesitamos utilizar la librería "cheerio". Esta biblioteca nos permite seleccionar elementos en una página web utilizando selectores similares a CSS. Aquí hay un ejemplo básico de cómo parsear una página web y obtener el título:
+Para realizar esta tarea en TypeScript, podemos utilizar la combinación de las librerías node-html-parser y axios. Primero, instalamos ambas librerías a través de npm con el comando:
 
-```TypeScript
-import * as cheerio from 'cheerio';
-import * as request from 'request';
-
-request('https://www.mipagina.com', (error, response, body) => {
-  if (!error && response.statusCode == 200) {
-    const $ = cheerio.load(body);
-    const title = $('h1').text();
-    console.log(title);
-  }
-});
+```
+npm install --save node-html-parser axios
 ```
 
-En este ejemplo, utilizamos el módulo "request" para obtener el HTML de la página deseada y luego lo pasamos a Cheerio para que pueda analizarlo. Luego, utilizamos un selector para elegir el elemento "h1" y extraer su texto.
+Luego, importamos las librerías en nuestro archivo TypeScript y hacemos una petición HTTP a la página web que queremos analizar:
 
-## Deep Dive
+```TypeScript
+import * as parser from 'node-html-parser'; // Importamos la librería de análisis HTML
+import axios from 'axios'; // Importamos la librería para hacer peticiones HTTP
 
-Además de obtener datos de una página web, el parsing de HTML también tiene otros usos útiles en aplicaciones web. Al utilizar el análisis de HTML, se pueden realizar tareas como el web scraping, que consiste en extraer datos de múltiples páginas web para su uso en análisis de datos o estudios de mercado.
+axios.get('https://www.ejemplo.com')
+    .then((res) => {
+        const html = res.data; // Obtenemos el código HTML de la página
+    })
+    .catch((err) => {
+        console.log(err); // Manejo de errores en caso de que la petición falle
+    });
+```
 
-Hay otros módulos útiles que se pueden utilizar junto con Cheerio para mejorar la calidad de los datos obtenidos, como "request-promise" para obtener un HTML más limpio y "iconv-lite" para manejar diferentes codificaciones de caracteres en la página.
+Una vez que tenemos el código HTML, podemos pasarlo por la función `parser.parse` para obtener un objeto que representa el árbol de elementos de la página:
 
-En general, el parsing de HTML en TypeScript es una herramienta poderosa para acceder a datos de una página web y utilizarlos en aplicaciones web y análisis de datos.
+```TypeScript
+const root = parser.parse(html); // Parseamos el HTML y lo guardamos en una variable
+```
+
+A partir de este objeto, podemos realizar diferentes operaciones como buscar un elemento específico utilizando su etiqueta, clase o ID, modificar su contenido o incluso añadir nuevos elementos al árbol.
+
+## Profundizando
+
+Si queremos aprender más sobre cómo funciona el proceso de análisis de HTML, podemos echar un vistazo al código fuente de la librería node-html-parser. También podemos investigar sobre diferentes técnicas de scraping, que es precisamente lo que estamos haciendo cuando analizamos y extraemos información de una página web.
 
 ## Ver también
 
-- [Cheerio documentation](https://www.npmjs.com/package/cheerio)
-- [Request module documentation](https://github.com/request/request)
-- [Request-promise module documentation](https://github.com/request/request-promise)
-- [Iconv-lite documentation](https://www.npmjs.com/package/iconv-lite)
-
-¡Gracias por leer nuestro artículo sobre el parsing de HTML en TypeScript! Esperamos que haya sido útil para su próximo proyecto de desarrollo web. ¡Feliz coding!
+- [node-html-parser en GitHub](https://github.com/taoqf/node-html-parser)
+- [axios en GitHub](https://github.com/axios/axios)
+- [Tutorial de TypeScript en Show.js](https://show.jugernaut.com/typescript-para-principiantes/)

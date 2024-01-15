@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i podmienianie tekstu"
+html_title:           "Clojure: Wyszukiwanie i podmienianie tekstu"
+simple_title:         "Wyszukiwanie i podmienianie tekstu"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Dlaczego
+## Dlaczego
 
-Dlaczego ktokolwiek chciałby zajmować się wyszukiwaniem i zamianą tekstu? Gdy piszemy kod, często musimy zmienić nazwy zmiennych lub poprawić błędy w tekście. W takich sytuacjach, narzędzia do wyszukiwania i zamiany tekstu mogą nam znacznie ułatwić pracę.
+Czasami, gdy pracujemy z dużymi ilościami tekstu, konieczne jest dokonanie zmian w wielu miejscach. W takiej sytuacji, narzędzie do wyszukiwania i zastępowania tekstu jest nieocenione, ponieważ pozwala zaoszczędzić czas i uniknąć błędów ludzkich.
 
-### Jak to zrobić
+## Jak to zrobić
 
-Kod Clojure jest bardzo wygodnym i efektywnym sposobem na wyszukiwanie i zamianę tekstu. Wystarczy użyć funkcji `replace` i podać jej dwa argumenty - wzorzec wyszukiwania oraz ciąg, który chcemy wstawić. Poniżej znajdują się przykłady:
-
-```Clojure
-; Podmiana tekstu 'foo' na 'bar'
-(replace "foo" "bar" "Hello foo world") ; => "Hello bar world"
-
-; Podmiana tekstu na wielokrotność
-(replace "e" "ee" "Hello world") ; => "Heello world"
-```
-
-Możemy również wykorzystać funkcję `replace-first`, aby zamienić tylko pierwsze wystąpienie wzorca:
+W Clojure, możemy użyć funkcji `replace` do wyszukiwania i zastępowania tekstu. Poniżej znajdują się przykłady kodu i wyjścia, wykorzystując różne możliwości funkcji `replace`.
 
 ```Clojure
-; Zamiana pierwszego wystąpienia tekstu 'foo' na 'bar'
-(replace-first "foo" "bar" "Hello foo foo foo") ; => "Hello bar foo foo"
+;; Przykład 1
+(replace "Hello World" "World" "Clojure")
+;; Output: "Hello Clojure"
+
+;; Przykład 2
+(replace "aaa bbb ccc" #"a+" "d")
+;; Output: "ddd bbb ccc"
+
+;; Przykład 3
+(replace "1,2,3,4,5" #"\d+" #(str (Integer/parseInt %) 10)) 
+;; Output: "10,20,30,40,50"
 ```
 
-W przypadku, gdy chcemy wyszukać i zamienić dany tekst tylko w wybranych miejscach, możemy użyć funkcji `replace-in`:
+Możemy również użyć funkcji `replace-first`, aby tylko pierwsze wystąpienie tekstu zostało zastąpione.
 
 ```Clojure
-; Zamiana tekstu tylko w wybranym fragmencie 'foo'
-(replace-in "foo" "bar" "Hello foo world" 6 9) ; => "Hello bar world"
+(replace-first "1,2,3,4,5" #"\d+" #(str (Integer/parseInt %) 10)) 
+;; Output: "10,2,3,4,5"
 ```
 
-### Głębsza analiza
+## Głębsze zanurzenie
 
-Clojure oferuje także bardziej zaawansowane funkcje do wyszukiwania i zamiany tekstu, takie jak `replace-predicate`, `replace-kv` czy `replace-skip-rest`. Więcej informacji na temat tych funkcji znajdziesz w [dokumentacji Clojure](https://clojure.github.io/clojure/clojure.string-api.html).
+Funkcje `replace` i `replace-first` przyjmują trzy argumenty: tekst, wzorzec do wyszukania oraz funkcję lub tekst, którym ma zostać zastąpiony. Wzorzec może być wyrażeniem regularnym, które pozwala na zaawansowane wyszukiwanie tekstu.
 
-### Zobacz także
+Możemy również wykorzystać funkcję `replace` w połączeniu z funkcją `map` do dokonania zmian w wielu elementach listy.
 
-- [Pełna dokumentacja funkcji replace](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace)
-- [Przykłady wykorzystania funkcji replace](https://practicalli.github.io/clojure/core-strings/replace)
-- [Dokumentacja Clojure](https://clojure.org/documentation) (dostępna także w języku polskim)
+```Clojure
+(def data ["1,2,3" "4,5,6"])
+(map #(replace % #"\d+" #(str (Integer/parseInt %) 10)) data)
+;; Output: ("10,20,30" "40,50,60")
+```
+
+## Zobacz również
+
+- Dokumentacja funkcji `replace`: https://clojuredocs.org/clojure.core/replace
+- Przykłady zastosowania funkcji `replace`: https://stackoverflow.com/questions/45988078/replace-string-in-a-file-using-clojure
+- Przewodnik po wyrażeniach regularnych w Clojure: https://www.braveclojure.com/core-functions-in-depth/#regexp

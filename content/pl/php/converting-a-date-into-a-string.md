@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków"
+html_title:           "PHP: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,27 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest jednym z podstawowych zadań, z którymi spotyka się każdy programista PHP. Jest to niezbędne w celu wyświetlenia daty w czytelny sposób dla użytkowników czy też przechowywania jej w bazie danych. W tym krótkim artykule zobaczysz, jak w prosty sposób przekształcić datę w PHP w ciąg znaków.
+Czasem w programowaniu musimy przekonwertować datę na ciąg znaków, na przykład w celu wyświetlenia jej w przyjaznym dla użytkownika formacie. W tym artykule dowiesz się, jak w łatwy sposób wykonać taką konwersję w PHP.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Najprostszym sposobem na konwersję daty na ciąg znaków jest użycie funkcji `date()` wraz z odpowiednim formatem. Na przykład, jeśli chcemy wyświetlić datę w formacie "Dzień Tygodnia, Dzień Miesiąca Rok", możemy użyć następującego kodu:
+Zacznijmy od wykorzystania wbudowanej funkcji `date()` w PHP, która pozwala na formatowanie daty według podanych parametrów. Poniższy kod zamienia aktualną datę na ciąg znaków w formacie `d-m-Y`, czyli dzień-miesiąc-rok.
 
 ```PHP
-<?php
-$date = date('l, j F Y');
-echo $date; // Output: Środa, 15 Kwietnia 2020
-?>
+$date = date("d-m-Y");
+echo $date;
 ```
 
-Jak widać, formatowanie daty jest bardzo intuicyjne i pozwala na wyświetlenie jej w różnych formatach. Przykładowe formaty, które możesz wykorzystać, to: `l` - dzień tygodnia w formacie tekstowym, `j` - dzień miesiąca bez zera wiodącego, `F` - nazwa miesiąca w formacie tekstowym, `Y` - rok w formacie czterocyfrowym, itd. Pełną listę możliwych formatów można znaleźć w dokumentacji PHP.
+Output: `18-07-2021`
 
-## Głębszy wgląd
+Możemy także wykorzystać funkcję `strtotime()`, która pozwala na konwersję daty podanej w formacie tekstowym na datę w formacie timestamp. Następnie, korzystając z funkcji `date()`, możemy zmienić format tego timestampu na dowolny, który potrzebujemy. Na przykład:
 
-Konwersja daty na ciąg znaków może być nieco bardziej skomplikowana, jeśli chcemy ją dostosować do swoich potrzeb. Dlatego, jeśli potrzebujesz bardziej rozbudowanej konwersji, warto zapoznać się z funkcją `strftime()`, która pozwala na wykorzystanie zaawansowanych formatów i opcji. Możesz również użyć bibliotek zewnętrznych, takich jak Carbon, która udostępnia wiele przydatnych funkcji do pracy z datami w PHP.
+```PHP
+$date = "July 18, 2021";
+$timestamp = strtotime($date);
+$converted_date = date("d/m/Y", $timestamp);
+echo $converted_date;
+```
 
-## Zobacz również
+Output: `18/07/2021`
 
-- [Dokumentacja PHP na temat funkcji `date()`](https://www.php.net/manual/en/function.date.php)
-- [Dokumentacja PHP na temat funkcji `strftime()`](https://www.php.net/manual/en/function.strftime.php)
-- [Biblioteka Carbon do zarządzania datami w PHP](https://carbon.nesbot.com/)
+Możemy też wykorzystać wbudowany dodatek `DateTime`, który umożliwia wygodną manipulację datami. Poniższy kod zamienia obecną datę na ciąg znaków w formacie `Y-m-d`, czyli rok-miesiąc-dzień.
+
+```PHP
+$date = new DateTime();
+$date_string = $date->format('Y-m-d');
+echo $date_string;
+```
+
+Output: `2021-07-18`
+
+## Głębsze rozważania
+
+W języku PHP istnieje wiele funkcji i narzędzi pozwalających na konwersję daty na string. Co ciekawe, niektóre z nich, takie jak `strftime()`, umożliwiają także wyświetlenie daty w różnych językach, uwzględniając ustawienia lokalne. Ponadto, warto pamiętać, że PHP posiada wiele wbudowanych formatów dat, które można wykorzystać w funkcji `date()`, zmieniając jedynie podany parametr. Dzięki temu możliwa jest szybka i prosta konwersja daty na dowolny format.
+
+## Zobacz także
+
+- Dokumentacja PHP na temat funkcji `date()`: https://www.php.net/manual/en/function.date.php
+- Dokumentacja PHP na temat narzędzia `DateTime`: https://www.php.net/manual/en/class.datetime.php
+- Opis funkcji `strftime()`: https://www.php.net/manual/en/function.strftime.php

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su errore standard"
+html_title:           "Gleam: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché Scrivere a Standard Error in Gleam?
 
-Scrivi alla standard error (standard di errore) è un'abilità essenziale per ogni programmatore Gleam. Questo consente di visualizzare facilmente gli errori che si verificano durante l'esecuzione del codice, facilitando così il processo di debugging e rilevamento dei problemi.
+Scopriamo insieme perché scrivere a standard error in Gleam può semplificare la vita del programmatore e migliorare la qualità del codice.
 
-## Come Fare
+## Come Farlo
 
-Per scrivere alla standard error in Gleam, è sufficiente utilizzare la funzione `error/1` seguita da una stringa che descrive l'errore. Ad esempio:
-
-```Gleam
-error("Errore nel calcolo della media")
-```
-
-Questo produrrà un output come questo nella console:
+Per scrivere a standard error in Gleam, si utilizza la funzione `gleam/io#stderr` seguita dal metodo `write` e tra parentesi tonde il messaggio che si desidera scrivere.
 
 ```
-ERROR: Errore nel calcolo della media
+Gleam.mod
+fn main() {
+  gleam/io.stderr
+  |> write("Ciao, questo è un messaggio di errore!")
+}
+```
+
+Questo codice scriverà a standard error il messaggio "Ciao, questo è un messaggio di errore!" ogni volta che il programma viene eseguito.
+
+```
+$ gleam run main.gleam
+> Ciao, questo è un messaggio di errore!
 ```
 
 ## Approfondimento
 
-Scrivere alla standard error offre ulteriori possibilità, come l'utilizzo di segnaposto `{}` per formattare diversi tipi di dati. Ad esempio:
-
-```Gleam
-let errore_divisione = "Errore durante la divisione: {}"
-
-error(errore_divisione("divisione per zero"))
-```
-
-Questo produrrà un output come questo:
-
-```
-ERROR: Errore durante la divisione: divisione per zero
-```
-
-È anche possibile utilizzare la funzione `format/2` per ottenere un controllo più preciso sul formato dell'output della funzione `error/1`. Questa funzione accetta come primo argomento una stringa con il formato desiderato e come secondo argomento una lista di dati che verranno inseriti nel formato. Ad esempio:
-
-```Gleam
-let errore_informazioni = "Errore durante il calcolo: {} diviso per {}"
-
-error(format(errore_informazioni, [10, 0]))
-```
-
-Questo produrrà un output come questo:
-
-```
-ERROR: Errore durante il calcolo: 10 diviso per 0
-```
+Scrivere a standard error può essere utile nel gestire gli errori nei nostri programmi. Invece di scrivere messaggi di errore lungo il codice, possiamo utilizzare questa funzione per centralizzare le informazioni e renderle più facili da gestire. Inoltre, scrivere a standard error ci permette di distinguere i messaggi di errore dai messaggi di output, migliorando la leggibilità del codice.
 
 ## Vedi Anche
 
-- Documentazione Gleam standard library sulla funzione `error/1`: https://gleam.run/modules/gleam_stdlib/Error
-- Esempi di utilizzo della funzione `error/1` su GitHub: https://github.com/gleam-lang/gleam/blob/master/examples/io/src/error.gleam
+- [Documentazione Gleam sull'utilizzo di standard error](https://gleam.run/book/tutorials-and-examples/standard-error.html)
+- [Esempi di codice su GitHub utilizzando standard error in Gleam](https://github.com/search?q=gleam+stderr)

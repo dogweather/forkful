@@ -1,5 +1,6 @@
 ---
-title:                "C: Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "C: Leyendo argumentos de línea de comandos"
 simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "C"
 category:             "C"
@@ -9,57 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-El uso de argumentos de línea de comandos en la programación en C es una práctica muy común y útil. Permite a los usuarios proporcionar información adicional al programa al momento de su ejecución, lo que facilita su uso y personalización. Además, el uso de argumentos de línea de comandos también permite a los programadores ahorrar tiempo y esfuerzo al no tener que recompilar constantemente el código para cambiar los valores de entrada del programa.
+Si estás aprendiendo a programar en C, es importante entender cómo leer los argumentos de línea de comando. Esto te permitirá crear programas que puedan recibir información externa y tomar decisiones basadas en ella. Además, entender cómo funcionan los argumentos de línea de comando puede ayudarte a depurar tu código y hacerlo más eficiente.
 
 ## Cómo hacerlo
 
-Para leer los argumentos de línea de comandos en un programa en C, se utilizan los parámetros "argc" y "argv". "argc" (argument count) representa el número de argumentos que se pasan al programa, mientras que "argv" (argument vector) es una matriz que contiene todos los argumentos como cadenas de caracteres.
-
-A continuación se muestra un ejemplo de código que utiliza estos parámetros para leer los argumentos de línea de comandos y mostrarlos en pantalla:
+Para leer los argumentos de línea de comando en C, necesitas usar los parámetros de la función `main` y la variable `argc` (count) que contiene el número de argumentos ingresados. Con estos, puedes acceder a los argumentos individuales a través de la variable `argv` (argument vector) y su índice correspondiente. Aquí hay un ejemplo:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
-    // El primer argumento (argv[0]) siempre es el nombre del programa
-    printf("El nombre del programa es: %s\n", argv[0]);
-
-    // Se recorren los demás argumentos con un bucle for
-    for (int i = 1; i < argc; i++)
-    {
-        printf("Argumento %d: %s\n", i, argv[i]);
-    }
-
-    return 0;
+int main(int argc, char *argv[]) {
+  printf("Número de argumentos ingresados: %d\n", argc);
+  for (int i = 0; i < argc; i++) {
+    printf("Argumento %d: %s\n", i, argv[i]);
+  }
+  return 0;
 }
 ```
 
-Si se compila y ejecuta este programa con los siguientes argumentos de línea de comandos:
+Al ejecutar este programa con los siguientes argumentos en la línea de comando `./ejemplo hola mundo`, obtendrías la siguiente salida:
 
 ```
-./programa argumento1 "argumento 2" 3
+Número de argumentos ingresados: 3
+Argumento 0: ./ejemplo
+Argumento 1: hola
+Argumento 2: mundo
 ```
 
-La salida sería la siguiente:
+Si necesitas convertir los argumentos a tipos de datos diferentes, puedes usar las funciones `atoi` o `atof` para convertirlos a enteros o números de punto flotante, respectivamente.
 
-```
-El nombre del programa es: ./programa
-Argumento 1: argumento1
-Argumento 2: argumento 2
-Argumento 3: 3
-```
+## Profundizando en el tema
 
-## Profundizando
-
-Además de los argumentos de línea de comandos estándar, también es posible utilizar argumentos opcionales utilizando la función "getopt()". Esta función permite especificar opciones, como en el comando "ls -l", donde "l" es una opción.
-
-Además, también se pueden procesar argumentos de línea de comandos de forma más compleja utilizando bibliotecas externas, como "argp" o "popt", que proporcionan herramientas adicionales para trabajar con argumentos de línea de comandos.
+Además de los argumentos regulares, también puedes acceder a la ubicación del programa ejecutable con `argv[0]` y a los argumentos ingresados como opciones con la librería de funciones `getopt`. También es importante tener en cuenta que los argumentos de línea de comando se pueden pasar en cualquier orden y pueden contener comillas para incluir espacios en blanco dentro de un argumento.
 
 ## Ver también
 
-- [Tutorial: Leer argumentos de línea de comandos en C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Ejemplos de uso de getopt() en C](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
-- [Documentación de la función getopt() en C](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+Si quieres aprender más sobre cómo trabajar con argumentos de línea de comando en C, asegúrate de revisar estos recursos:
+
+- [Documentación oficial sobre argumentos de línea de comando en C](https://pubs.opengroup.org/onlinepubs/9699919799/functions/getopt.html)
+- [Tutorial en español sobre argumentos de línea de comando en C](https://www.leasys.ro/news/mirrors/Various/Programming/moxman/C%20-%20Como%20leer%20argumentos%20de%20linea%20de%20comando.htm)
+- [Ejemplos de código sobre argumentos de línea de comando en C](https://www.thegeekstuff.com/2013/01/c-argc-argv/)

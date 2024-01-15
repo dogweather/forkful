@@ -1,5 +1,6 @@
 ---
-title:                "C++: Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "C++: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "C++"
 category:             "C++"
@@ -9,67 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué obtener la fecha actual en C++
+## Por qué
 
-Obtener la fecha actual es una tarea común en la programación ya que puede ser necesaria para diversas aplicaciones. Por ejemplo, puede ser útil para registrar transacciones, mantener una secuencia de eventos o simplemente para fines de seguimiento del tiempo. En este artículo, aprenderemos cómo obtener la fecha actual en C++ y exploraremos un poco más sobre cómo funciona.
+Obtener la fecha actual es una tarea común en la programación, ya sea para mostrar la fecha actual en una aplicación o para realizar cálculos basados ​​en ella. En esta sección, aprenderás cómo obtener la fecha actual en C++ de manera fácil y eficiente.
 
 ## Cómo hacerlo
 
-En C++, hay varias formas de obtener la fecha actual. Una de las formas más comunes es utilizar la librería estándar "ctime". Esta librería contiene funciones como "time()" y "localtime()" que nos ayudarán a obtener la fecha actual.
+Para obtener la fecha actual en C++, necesitamos incluir la librería `ctime`, que proporciona las funciones necesarias para trabajar con fechas y horas.
+
+Dentro de nuestro código, podemos usar la función `time()` que devuelve un valor de tipo `time_t` que representa el número de segundos desde el 1 de enero de 1970. Luego, podemos pasar este valor a la función `localtime()` para obtener una estructura de tipo `tm` con la fecha y hora actual.
+
+Veamos un ejemplo con el código:
 
 ```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-    // Obtener la fecha y hora actual con time()
-    std::time_t now = std::time(0);
-
-    // Convertir a una estructura de tipo "tm"
-    std::tm *gmt = std::localtime(&now);
-
-    // Imprimir la fecha actual
-    std::cout << "La fecha actual es: " <<
-        gmt->tm_mday << "/" << gmt->tm_mon + 1 << "/" << gmt->tm_year + 1900 << std::endl;
-
-    return 0;
-}
-```
-
-Este código primero utiliza la función "time()" para obtener un objeto "time_t" que representa la fecha y hora actuales. Luego, utilizamos la función "localtime()" para convertir este objeto a una estructura de tipo "tm", que contiene información sobre la fecha y la hora. Finalmente, podemos imprimir los componentes de esta estructura para obtener la fecha actual en el formato deseado.
-
-Otra forma de obtener la fecha actual es utilizando la librería <chrono>, que es parte de la librería de plantillas estándar de C++ (STL). Esta librería proporciona una mejor precisión y es más fácil de usar ya que utiliza objetos como "system_clock" y "time_points" para representar el tiempo. A continuación se muestra un ejemplo que utiliza esta librería para obtener la fecha actual:
-
-```C++
-#include <iostream>
-#include <chrono>
-
-int main() {
     // Obtener la fecha y hora actual
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+    time_t now = time(0);
+    tm *today = localtime(&now);
 
-    // Convertir a un objeto "tm" con localtime()
-    std::time_t time = std::chrono::system_clock::to_time_t(now);
-    std::tm *gmt = std::localtime(&time);
+    // Imprimir la fecha en formato dd/mm/yyyy
+    std::cout << "Hoy es " << today->tm_mday << "/" << (today->tm_mon + 1) << "/" << (today->tm_year + 1900) << std::endl;
 
-    // Imprimir la fecha actual
-    std::cout << "La fecha actual es: " << gmt->tm_mday
-         << "/" << gmt->tm_mon + 1 << "/" << gmt->tm_year + 1900 << std::endl;
+    // Imprimir la hora en formato hh:mm:ss
+    std::cout << "Son las " << today->tm_hour << ":" << today->tm_min << ":" << today->tm_sec << std::endl;
 
-    return 0;
+   return 0;
 }
 ```
 
-Aquí, primero utilizamos la función "now()" para obtener el punto de tiempo actual y luego utilizamos la función "to_time_t()" para convertirlo a un objeto de tipo "time_t". Luego, al igual que en el ejemplo anterior, utilizamos "localtime()" para obtener una estructura de tipo "tm" y finalmente imprimimos la fecha actual.
+**Salida:**
+
+```
+Hoy es 3/5/2021
+Son las 18:30:00
+```
 
 ## Profundizando
 
-Ahora que ya sabemos cómo obtener la fecha actual en C++, es importante entender cómo funciona este proceso. En ambos ejemplos, utilizamos la función "localtime()" para obtener una estructura de tipo "tm", que contiene información sobre la fecha y la hora. Esta estructura se basa en el "epoch time", que es un punto de referencia utilizado para calcular fechas y horas. Este punto de referencia es el 1 de enero de 1970 a las 00:00:00 UTC y se puede encontrar en el objeto "tm_epoch".
+La función `localtime()` utiliza la zona horaria del sistema y devuelve la hora local. Sin embargo, si queremos obtener la hora local con un desplazamiento específico, podemos usar la función `localtime_s()` que nos permite especificar este desplazamiento.
 
-Además, en el segundo ejemplo, utilizamos la librería <chrono>, que proporciona una mayor precisión en el cálculo del tiempo, ya que utiliza diferentes "clocks" para medir el tiempo, como por ejemplo "system_clock", "steady_clock" y "high_resolution_clock".
+Algunas otras funciones útiles relacionadas con fechas y horas en C++ son:
 
-## Vea también
+- `gmtime()` - obtiene la fecha y hora UTC actual.
+- `asctime()` - convierte una estructura de tipo `tm` en una cadena de caracteres.
+- `mktime()` - convierte una estructura de tipo `tm` en el número de segundos desde el 1 de enero de 1970.
 
-- [Artículo de referencia de C++ sobre la librería <ctime>](https://www.cplusplus.com/reference/ctime/)
-- [Artículo sobre la librería <chrono> de la STL](https://www.geeksforgeeks.org/chrono-in-c/)
-- [Introducción al "epoch time"](https://en.wikipedia.org/wiki/Epoch_(computing))
+¡Ahora estás listo para trabajar con fechas y horas en C++!
+
+## Ver también
+
+- [Cómo trabajar con cadenas de caracteres en C++](https://www.ejemplo.com/cadenas-de-caracteres-c++)
+- [Introducción a la utilización de librerías en C++](https://www.ejemplo.com/librerias-c++)

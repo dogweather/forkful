@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Tarkistetaan löytyykö kansio"
-simple_title:         "Tarkistetaan löytyykö kansio"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Gleam: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa onko kansio olemassa?
+# Miksi
 
-Eräs yleinen tehtävä ohjelmoinnissa on tarkistaa, löytyykö tietyltä polulta tiettyä kansiota tai tiedostoa. Tämä voi olla tarpeen esimerkiksi ennen tiedoston avaamista tai tallentamista, jotta vältetään mahdolliset virheet. Gleam kielessä tämän voi tehdä kätevästi ja tehokkaasti Directory moduulilla.
+Miksi haluaisit tarkistaa, onko hakemisto olemassa? Yksinkertaisesti sanottuna, haluat ehkä varmistaa, että kyseinen hakemisto on olemassa ennen kuin yrität tehdä siihen jotain, kuten tallentaa tiedostoja tai hakea tietoja sieltä.
 
-## Miten tehdä se?
-
-Gleamissa on valmiiksi integroitu `Directory.exists` funktio, joka palauttaa boolean arvon sen mukaan, löytyykö annetulta polulta kansiota tai tiedostoa. Tässä on yksinkertainen esimerkki:
+## Miten
 
 ```Gleam
-import Directory
+let result = File.Directory.exists("polku/hakemistoon")
 
-let directory_path = "./testikansio"
-
-if Directory.exists(directory_path) {
-  // Tee jotain jos kansio on olemassa
-  IO.println("Kansio löytyi!")
-} else {
-  // Tee jotain jos kansioa ei ole olemassa
-  IO.println("Kansiota ei löytynyt!")
+match result {
+  Ok(val) -> // Hakemisto löytyi, tee tarvittavat toimenpiteet
+  Err(err) -> // Hakemistoa ei löytynyt, tee tarvittavat toimenpiteet
 }
 ```
 
-Jos kansio löytyy, tulostetaan "Kansio löytyi!" ja muuten "Kansiota ei löytynyt!". Koodilohkon alussa tuodaan Directory moduuli ja sen jälkeen funktiota hyödynnetään if-lauseessa.
+Tässä esimerkissä käytetään `File.Directory.exists` -funktiota tarkistaaksesi, onko annettu hakemisto olemassa. Jos hakemisto löytyy, `Ok` -haaraa käytetään suorittamaan kyseisiä toimenpiteitä. Jos hakemistoa ei löydy, `Err` -haaraa käytetään käsittelemään virheellinen tilanne.
 
-## Syvällisempi tutustumien kansiotarkistamiseen
+```Gleam
+let hakemisto = File.Directory.create("polku/uusi_hakemisto")
 
-Gleamin Directory moduli tarjoaa myös muita hyödyllisiä funktioita, kuten `Directory.list_files` ja `Directory.delete`. On myös mahdollista käyttää `Directory.exists` funktiota apuna esimerkiksi sellaisten polkujen luomisessa, jotka eivät saa johtaa tiedostoon tai kansion.
+match hakemisto {
+  Ok(val) -> // Hakemisto luotiin onnistuneesti
+  Err(err) ->
+    match err {
+      DirectoryAlreadyExists -> // Hakemisto on jo olemassa, tee tarvittavat toimenpiteet
+      _ -> // Jokin muu virhe, käsittele se
+    }
+}
+```
+Tässä toisessa esimerkissä käytämme `File.Directory.create` -funktiota luodaksemme uuden hakemiston annettuun polkuun. Jos hakemisto luodaan onnistuneesti, `Ok` -haaraa käytetään. Muussa tapauksessa tarkistamme `Err` -haaran avulla, onko kyseessä `DirectoryAlreadyExists` -virhe, eli hakemisto on jo olemassa, vai jokin muu virhe.
 
-Tämän tarkempiin yksityiskohtiin pääsee käsiksi tutustumalla Gleamin viralliseen dokumentaatioon. Sieltä löytyy tarkemmat kuvaukset ja esimerkit jokaisesta Directory moduulin tarjoamasta funktiosta.
+## Syvemmälle
 
-## Katso myös
+Gleamin `File.Directory` -moduuli tarjoaa muutamia hyödyllisiä käytännön toimintoja tarkistaaksesi ja hallitaksesi hakemistoja. Esimerkiksi `File.Directory.list` -funktio antaa sinulle listan hakemistoon sisältyvistä tiedostoista ja alihakemistoista. `File.Directory.delete` -funktio puolestaan poistaa annetun hakemiston, jos se on olemassa.
 
-- [Gleam Documentation - Directory](https://gleam.run/documentation/stdlib/Directory.html)
-- [How to Check if a File or Directory Exists in Gleam](https://gleam.run/documentation/cookbook/check-if-file-directory-exists.html)
+Ja jos haluat päästä vielä syvemmälle Gleamin tiedostojärjestelmän maailmaan, voit tarkistaa [viralliset dokumentaatiot](https://gleam.run/modules/file.directory.html) tai tutustua [tiedostojärjestelmän käsitteisiin](https://gleam.run/concepts/file-system.html) Gleamin oppaassa.
+
+# Katso myös
+
+- [Gleamin `File.Directory` -moduulin dokumentaatio](https://gleam.run/modules/file.directory.html)
+- [Tiedostojärjestelmän käsitteet Gleamin oppaassa](https://gleam.run/concepts/file-system.html)

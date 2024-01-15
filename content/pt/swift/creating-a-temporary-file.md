@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Criando um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Swift: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que
 
-Criar arquivos temporários é uma parte essencial da programação em Swift. Eles permitem que você armazene dados temporariamente durante a execução do seu aplicativo, sem precisar salvar permanentemente no dispositivo. Isso pode ser útil para armazenar dados temporários de forma eficiente ou para evitar sobrecarregar a memória do dispositivo.
+Criar arquivos temporários pode ser uma tarefa útil em projetos de desenvolvimento de software. Eles permitem que você armazene dados temporários de maneira eficiente e segura, sem ocupar espaço no disco rígido do seu dispositivo.
 
-## Como fazer
-
-Existem algumas maneiras simples de criar um arquivo temporário em Swift. Uma maneira é usar a função `NSTemporaryDirectory()` para obter um caminho para um diretório temporário. Em seguida, você pode usar esse caminho para criar seu arquivo usando a função `URL(for:in:appropriateFor:create:)` do tipo `FileManager`. Aqui está um exemplo de código que cria um arquivo temporário e escreve dados nele:
+## Como Fazer
 
 ```Swift
-let tempDirectory = NSTemporaryDirectory()
-let tempURL = URL(fileURLWithPath: tempDirectory).appendingPathComponent("data.txt")
-let data = "Isso é um arquivo temporário em Swift".data(using: .utf8)
-try? data.write(to: tempURL)
+let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+do {
+    let tempFile = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: tempDirectory, create: true)
+    print("Arquivo temporário criado em \(tempFile)")
+} catch {
+    print("Não foi possível criar o arquivo temporário: \(error)")
+}
 ```
 
-Você também pode usar o tipo `FileHandle` para criar um arquivo temporário e escrever dados nele. Aqui está um exemplo de código usando `FileHandle`:
+Saída:
 
-```Swift
-let tempFile = try? FileHandle(forWritingTo:
-URL(fileURLWithPath: NSTemporaryDirectory())
-.appendingPathComponent("data.txt"))
-let data = "Isso é um arquivo temporário em Swift".data(using: .utf8)
-tempFile?.write(data)
-tempFile?.closeFile()
+```
+Arquivo temporário criado em file:///Users/usuario/Library/Containers/com.example.app/Documents/file.tmp/
 ```
 
-## Mergulho profundo
+## Deep Dive
 
-A criação de arquivos temporários pode ser ainda mais personalizada e otimizada. Você pode especificar o prefixo e sufixo do nome do arquivo, bem como o diretório onde deseja que o arquivo seja criado. Além disso, você pode usar o tipo `URLResourceValues` para definir algumas propriedades do arquivo, como proteção, tamanho e data de modificação. Isso permite que você tenha mais controle sobre o arquivo temporário que está criando.
+Criar um arquivo temporário envolve alguns conceitos importantes. Primeiramente, é essencial entender os diferentes tipos de diretórios no sistema de arquivos, como o diretório temporário e o diretório de substituição de item (item replacement directory). Além disso, o uso do gerenciador de arquivos (FileManager) e tratamento de erros são fundamentais para garantir que o arquivo temporário seja criado com sucesso.
 
-É importante lembrar que os arquivos temporários são excluídos automaticamente quando o dispositivo é reiniciado. Portanto, certifique-se de não depender deles como armazenamento permanente de dados e sempre limpe os arquivos temporários criados pelo seu aplicativo depois de usá-los.
+## Veja Também
 
-## Veja também
-
-- [Apple Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Apple Documentation - FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Apple Documentation - URLResourceValues](https://developer.apple.com/documentation/foundation/urlresourcevalues)
+- [Documentação oficial do Swift sobre o gerenciador de arquivos](https://developer.apple.com/documentation/foundation/filemanager)
+- [WWDC 2015: Working with Files and the File System](https://developer.apple.com/videos/play/wwdc2015/707/)

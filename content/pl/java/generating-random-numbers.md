@@ -1,6 +1,7 @@
 ---
-title:                "Java: Tworzenie losowych liczb"
-simple_title:         "Tworzenie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Java: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -11,47 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie losowych liczb jest ważną umiejętnością w programowaniu, ponieważ pozwala na tworzenie różnorodnych funkcji i aplikacji, które wymagają losowości. Jest to szczególnie użyteczne w grach, symulacjach i w wielu innych zastosowaniach. W tym artykule pokażemy jak w prosty sposób generować losowe liczby w języku Java.
+Generowanie liczb losowych jest niezbędnym elementem wielu aplikacji, takich jak gry czy symulacje. Losowość daje możliwość tworzenia różnorodnych scenariuszy i zapewnia ciekawą rozgrywkę. Przeczytaj dalej, aby dowiedzieć się jak w prosty sposób wygenerować losowe liczby w języku Java.
 
 ## Jak to zrobić
 
-Aby wygenerować losową liczbę w Java, musimy wykorzystać klasę "Random". Poniżej znajduje się kod, który generuje losową liczbę całkowitą z przedziału od 0 do 10 oraz wyświetla ją na ekranie:
-
+Krok 1: Użyj klasy Random do generowania liczb losowych.
 ```Java
-import java.util.Random;
-
-public class GenerowanieLosowychLiczb {
-    public static void main(String[] args) {
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(11);
-        System.out.println("Wylosowana liczba to: " + randomNumber);
-    }
-}
+Random random = new Random();
 ```
 
-Bardzo ważne jest użycie metody "nextInt()" po obiekcie klasy "Random", ponieważ ta metoda pozwala na wygenerowanie losowej liczby z określonego przedziału. W powyższym przykładzie, używając "11" jako argumentu metody "nextInt()", otrzymujemy liczbę z przedziału od 0 do 10.
-
-Możemy również zastosować tę samą metodę z innymi typami danych, takimi jak "double" czy "float", aby uzyskać losowe liczby zmiennoprzecinkowe. Poniżej znajduje się przykładowy kod generujący losową liczbę zmiennoprzecinkową z przedziału od 0 do 1:
-
+Krok 2: Użyj metody nextInt() aby wygenerować losową liczbę całkowitą. Możesz również określić zakres, w którym ta liczba ma być wygenerowana, podając dwie liczby całkowite jako argumenty metody.
 ```Java
-double randomDouble = rand.nextDouble();
+int randomNumber = random.nextInt(); // wygeneruje losową liczbę całkowitą
+int rangeRandomNumber = random.nextInt(50); // wygeneruje liczbę całkowitą z zakresu od 0 do 50
 ```
 
-Możemy również użyć metody "nextInt()" z argumentem "bound", aby ustalić górny limit dla wygenerowanej liczby. Na przykład, jeśli chcemy uzyskać losową liczbę z przedziału od 1 do 100, użyjemy takiego kodu:
-
+Krok 3: Użyj metody nextDouble() aby wygenerować losową liczbę zmiennoprzecinkową.
 ```Java
-int randomNumber = rand.nextInt(100) + 1;
+double randomDouble = random.nextDouble(); // wygeneruje losową liczbę zmiennoprzecinkową
 ```
 
-To jest tylko podstawowe użycie klasy "Random" - istnieje jeszcze wiele innych metod, które można używać do różnych celów. Warto zwrócić uwagę na to, że klasy "Random" nie należy tworzyć wielokrotnie w programie, lecz raz dla całego programu, ponieważ inaczej otrzymane liczby nie będą już całkowicie losowe.
+Możesz również wygenerować losową liczbę zmiennoprzecinkową o określonej wartości minimalnej i maksymalnej, wykorzystując poniższą formułę:
+```Java
+double rangeRandomDouble = random.nextDouble() * (max - min) + min;
+```
 
-## Prześwietlenie
+## Deep Dive
 
-Technika generowania liczb losowych w języku Java wykorzystuje tzw. "pseudolosowy" generator, który wykorzystuje algorytmy do wytworzenia liczby wydającej się losowa. Istnieją różne algorytmy generowania liczb losowych, a kluczowym jest wybranie odpowiedniego dla naszego konkretnego przypadku. Należy również uważać, aby nie używać klasy "Random" do celów kryptograficznych, ponieważ algorytmy w niej zawarte nie są wystarczająco bezpieczne.
+Klasa Random wykorzystuje algorytm nazywany "Linear Congruential Generator", który generuje liczby w sposób deterministyczny. Oznacza to, że jeśli podasz ten sam ziarno (seed) do obiektu klasy Random, to otrzymasz takie same wyniki.
 
-Warto również zwrócić uwagę, że w przypadku wykorzystania pojedynczej instancji klasy "Random" do wielu celów generowania liczb losowych, można uzyskać błędne wyniki. Dzieje się tak, ponieważ każde wywołanie metody "nextInt()" zmienia wewnętrzny stan generatora, co może mieć wpływ na kolejne generowane liczby. W takich przypadkach lepiej jest wykorzystać różne instancje klasy "Random" dla różnych celów.
+Jeśli chcesz uzyskać różne wyniki z wykorzystaniem tego samego obiektu klasy Random, możesz zmienić ziarno przez użycie metody setSeed(). Możesz również stworzyć nowy obiekt klasy Random z różnym ziarnem.
 
-## Zobacz też
+Klasa Random oferuje także inne metody do generowania różnego rodzaju liczb, takich jak nextLong() czy nextBoolean(). Zalecamy przeczytanie dokumentacji Javy, aby uzyskać więcej informacji o tych metodach i algorytmach generujących.
 
-- Dokumentacja kliasy "Random" w języku Java: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
-- Przykłady wykorzystania generowania liczb losowych w języku
+## Zobacz również
+
+- Dokumentacja Javy dla klasy Random: https://docs.oracle.com/javase/10/docs/api/java/util/Random.html
+- Przykładowy projekt z wykorzystaniem generowania liczb losowych w grze: https://www.javacodegeeks.com/2015/07/java-basic-game-loop-example.html

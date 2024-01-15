@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Omgjøring av en streng til små bokstaver"
-simple_title:         "Omgjøring av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Elm: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,34 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å konvertere en streng til små bokstaver kan være nyttig når du ønsker å sammenligne tekst på en enkel måte. Dette er spesielt nyttig når du arbeider med søkefunksjoner eller når du vil søke i en tekstfil eller database.
+Noen ganger når man arbeider med tekststrenger i Elm, kan det være nyttig å konvertere de til små bokstaver istedenfor store. Dette kan være for å gjøre tekstbehandling enklere eller for å sammenligne tekster uten å bekymre seg for store og små bokstaver.
 
-## Hvordan gjøre det
-For å konvertere en streng til små bokstaver i Elm, kan vi bruke funksjonen `String.toLower`. La oss se på et eksempel:
-
-```Elm
-stringToLower : String -> String
-stringToLower string =
-  String.toLower string
-```
-
-Her har vi en funksjon som tar inn en streng og bruker `String.toLower` for å returnere samme streng i små bokstaver. La oss nå prøve å kjøre denne funksjonen med noen eksempler og se på resultatet:
+## Slik gjør du det
+Det er enkelt å konvertere en tekststreng til små bokstaver i Elm med funksjonen `String.toLower`. Her er et eksempel på hvordan du kan bruke den:
 
 ```Elm
-stringToLower "HEI"
--- gir som output "hei"
-
-stringToLower "Elm programmering"
--- gir som output "elm programmering"
+text = "HEI PÅ DEG"
+lowercaseText = String.toLower text
 ```
 
-Som du kan se, så har funksjonen vår konvertert alle bokstavene til små bokstaver.
+Det første vi gjorde var å definere en tekststreng med store bokstaver. Deretter brukte vi `String.toLower` til å konvertere den til små bokstaver og lagret resultatet i en ny variabel. Dersom vi nå skriver ut `lowercaseText`, vil vi få "hei på deg" som output.
 
 ## Dypdykk
-Det er verdt å merke seg at denne funksjonen kan håndtere ikke bare engelske bokstaver, men også andre språk som bruker diakritiske tegn. Det betyr at den også vil konvertere for eksempel "å" til "a" eller "ø" til "o". Dette er en viktig egenskap å være klar over når du jobber med flerspråklige applikasjoner.
-
-En annen ting å huske på er at funksjonen `String.toLower` vil returnere en ny streng i små bokstaver, men den vil ikke endre den opprinnelige strengen. Dette betyr at hvis du ønsker å konvertere en streng til små bokstaver og deretter bruke den i en sammenligning, så må du sørge for å lagre resultatet av funksjonen i en ny variabel.
+Det kan være relevant å nevne at `String.toLower` funksjonen benytter seg av Unicode for å konvertere teksten til små bokstaver. Dette vil si at den er i stand til å håndtere ikke-ascii tegn, som for eksempel é eller ø. Det er også verdt å merke seg at denne funksjonen ikke endrer selve tekststrengen som blir gitt som argument, men returnerer en ny tekststreng med små bokstaver.
 
 ## Se også
-- Offisiell dokumentasjon for `String.toLower` i Elm: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
-- En guide til Elm programmering på norsk: https://lamstack.nu/elm/guide/
+- [String API dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Unicode i Elm](https://guide.elm-lang.org/interop/unicode.html)
+- [Elm programmeringsspråket (norsk)](https://elm-programming.info/)

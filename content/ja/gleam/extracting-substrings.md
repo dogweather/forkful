@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 文字列の抽出"
-simple_title:         "文字列の抽出"
+title:                "サブストリングの抽出"
+html_title:           "Gleam: サブストリングの抽出"
+simple_title:         "サブストリングの抽出"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# サブストリングを抽出する理由
+＃＃ なぜ
+サブストリングを抽出することに取り組む理由を最大2文で説明します。
 
-サブストリングの抽出にはいくつかの理由があります。たとえば、テキストを処理する際に、特定の単語やフレーズを抽出したい場合があります。また、文字列の検索や置換を行うときにもサブストリングを抽出することが役に立ちます。Gleamプログラミング言語では、文字列を効率的に処理するための便利な関数が用意されています。
-
-# サブストリングの抽出方法
-
-サブストリングを抽出するには、Gleamの`String.substring(start, end, string)`関数を使用します。例えば、次のコードでは、文字列の最初から5文字目までのサブストリングを抽出しています。
-
+## ハウツー
+サブストリングを抽出する方法の例と、 ```Gleam ...``` コードブロック内のサンプル出力を示します。
 ```
-Gleam.import String
+// 簡単な文字列
+let string = "こんにちは、Gleam読者のみなさん！";
 
-let example_string = "こんにちは、Gleamです。"
+// 2番目から5番目までの文字を抽出
+let substring = string.slice(1, 5);
 
-String.substring(0, 5, example_string)
-// Output: "こんにちは"
+// 出力："んにちは"
 ```
-
-また、`String.indexOf(substring, string)`関数を使用すると、指定した文字列が含まれる位置を見つけることができます。例えば、次のコードでは、"Gleam"という文字列が含まれる位置を抽出しています。
-
 ```
-Gleam.import String
+// 複雑な文字列
+let sentence = "Basho's most famous haiku is \"古池や蛙飛び込む水の音\".";
 
-let example_string = "こんにちは、Gleamです。"
+// 最初の12文字を抽出
+let haiku = sentence.slice(0, 12);
 
-String.indexOf("Gleam", example_string)
-// Output: 6
+// 出力："Basho's most"
 ```
 
-# サブストリングの詳細
+## 深堀り
+サブストリングとは、既存の文字列から一部の文字を抜き出すことを指します。これは、文字列を処理する上で頻繁に使用されるテクニックであり、例えば特定の単語を含むかどうかを確認する場合などに便利です。
 
-サブストリングを抽出する際には、抽出する文字列の開始位置と終了位置を指定する必要があります。開始位置は0から始まるインデックスで指定しますが、終了位置は含まれないことに注意してください。つまり、最初の文字は0番目のインデックスに対応し、2番目の文字は1番目のインデックスに対応します。また、`String.substring(start, end, string)`関数の第三引数には、抽出する元の文字列を指定します。
-
-# 参考リンク
-
-- Gleam公式ドキュメント (https://gleam.run/documentation/)
-- GleamのStringモジュールに関するチュートリアル (https://gleam.run/tutorials/string-manipulation/)
-- 実践的なGleamプログラミング入門 (https://dev.to/jessewinston/practical-introduction-to-gleam-programming-57df)
+## 参考
+「Gleamの基礎：文字列操作」<リンク>
+「Gleam公式ドキュメント：サブストリングを抽出する」<リンク>

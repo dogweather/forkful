@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Elixir: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Verkkosivun lataaminen on välttämätöntä monelle Elixiriä käyttävälle kehittäjälle. Se voi olla osa isompaa projektia, kuten sivurakenteen scrapettamista, tai yksittäinen toiminto, kuten datan keräämistä analytiikkaa varten.
+Ladattujen verkkosivujen lukeminen ei ole vain internetin selailun perusosa, vaan myös tärkeä osa web-sovellusten ja -palvelujen kehitystä. Elixirillä on omat tapansa auttaa sinua verkkosivujen lataamisessa ja niiden tietojen käsittelyssä.
 
-## Miten
-
-Elixirissa verkkosivun lataaminen tapahtuu HTTP-kirjaston avulla. Ensiksi tarvitaan kirjaston tuonti ja sen jälkeen voidaan käyttää haluttuja funktioita. 
+## Kuinka?
 
 ```Elixir
-# Kirjaston tuonti
-require HTTPoison
+#Käyttö meille HTTP-kirjasto
+defp deps do
+  [
+   {:httpoison, "~> 1.8"}
+ ]
+end
 
-# Sivun lataaminen
-response = HTTPoison.get!("https://www.example.com")
-
-# Statuskoodin tarkistaminen
-response.status_code
-
-# Sivun sisällön tulostaminen
-response.body
+#Etsiä sivun lataaminen
+HTTPoison.get("https://www.example.com")
+|> case do
+  {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> 
+    #Tulosta sivun sisältö konsolille
+    IO.puts body
+  {:error, %HTTPoison.Error{reason: reason}} ->
+    #Jos jotain menee pieleen, tulosta virheilmoitus konsolille
+    IO.puts "Virhe: #{reason}"
+end
 ```
-Esimerkissä lataamme www.example.com -sivun ja tarkistamme sen statuskoodin ja sisällön.
 
 ## Syvempi sukellus
 
-Verkkosivun lataamisessa voidaan hyödyntää myös muita parametreja, kuten otsikoita ja tunnuksia. Näihin voi tutustua tarkemmin HTTP-kirjaston dokumentaatiosta. Lisäksi lataamisen yhteydessä voidaan myös määritellä esimerkiksi haluttu aikakatkaisu tai käyttää erilaisia protokollia.
+Elixirin HTTP-kirjastoja on monia, mutta suosittelen tutustumaan HTTPoisoniin sen yksinkertaisen käytön vuoksi. Lisäksi voit käyttää Elixirin hienoa pattern matching -ominaisuutta lataamiesi verkkosivujen tietojen käsittelyyn.
 
-## Katso myös
+Katso myös
 
-- [HTTP-kirjaston dokumentaatio](https://hexdocs.pm/httpoison/readme.html)
-- [Verkkosivun lataaminen Elixirissä - videokuvaus](https://www.youtube.com/watch?v=2ynzsf3wmqU)
-- [Elixir-kurssi](https://www.codeacademy.com/courses/elixir)
+- [Elixirin virallinen verkkosivu] (https://elixir-lang.org/)
+- [HTTPoison -dokumentaatio] (https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Elixir Forum] (https://elixirforum.com/)

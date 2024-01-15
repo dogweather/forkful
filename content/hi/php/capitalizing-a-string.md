@@ -1,6 +1,7 @@
 ---
-title:                "PHP: स्ट्रिंग का उच्चस्वर करना"
-simple_title:         "स्ट्रिंग का उच्चस्वर करना"
+title:                "स्ट्रिंग को शीर्षकवर्धित करना"
+html_title:           "PHP: स्ट्रिंग को शीर्षकवर्धित करना"
+simple_title:         "स्ट्रिंग को शीर्षकवर्धित करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,26 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-क्या आप PHP में किसी भी स्ट्रिंग को capitalizing करने के लिए दुबारा लिखने से परेशान हो गए हैं? उस स्तर पर आप इस ब्नॅग्लॉव के साथ णर्पणा एक कंट्रोल बनाने या स्ट्रिंग को capital करने के आसान तरीके को समझ सकते हैं।
+
+कभी-कभी हमें अपनी प्रोग्रामिंग कोड में स्ट्रिंग के अक्षरों को बड़े अक्षरों में परिवर्तित करने की जरूरत हो सकती है। इससे हमें कुछ विशेष काम करने में आसानी हो सकती है, जैसे कि उपयोगकर्ता को दिखाए गए डेटा को स्पष्टता से समझने में।
 
 ## कैसे करें
+
+इस काम को करने के लिए हम PHP में एक फंक्शन का इस्तेमाल कर सकते हैं, जिसे हम `ucfirst()` कहते हैं। यह फंक्शन दिए गए स्ट्रिंग के पहले अक्षर को बड़े अक्षर में परिवर्तित करता है।
+
 ```
 <?php
-
-$str = "hello world!";
-echo strtoupper($str); // Output: HELLO WORLD!
-echo ucfirst($str); // Output: Hello world!
-echo ucwords($str); // Output: Hello World!
+$str = "hello world";
+echo ucfirst($str); // Output: Hello world
 ?>
 ```
 
-## गहराई में जाएं
-स्ट्रिंग को capital करना एक आम समस्या है और इसे हल करने के लिए कई तरीके हैं। प्रोग्रामिंग भाषाओं में इसे एक सबसे आसान तरीका है।
+यदि हमें स्ट्रिंग के सभी अक्षरों को बड़े अक्षरों में परिवर्तित करना हो, तो हम `strtoupper()` फंक्शन का भी इस्तेमाल कर सकते हैं। इसमें `ucfirst()` की तरह हमें एक स्ट्रिंग वैल्यू देनी होती है और यह पूरी स्ट्रिंग को बड़े अक्षरों में परिवर्तित कर देता है।
 
-एक स्ट्रिंग को capital करने के लिए, सबसे पहले हम `strtoupper ()` फंक्शन का उपयोग कर सकते हैं जो सबसे आसान है। इसके बाद, हम `ucfirst ()` और `ucwords()` फंक्शन का इस्तेमाल कर सकते हैं। `ucfirst ()` फंक्शन सिर्फ पहले शब्द को capital करता है जबकि `ucwords ()` फंक्शन सभी शब्दों को capital करता है।
+```
+<?php
+$str = "hello world";
+echo strtoupper($str); // Output: HELLO WORLD
+?>
+```
 
-## देखें भी
-1. [PHP Strings](http://php.net/manual/en/language.types.string.php)
-2. [strtoupper() function](https://www.php.net/manual/en/function.strtoupper.php)
-3. [ucfirst() function](https://www.php.net/manual/en/function.ucfirst.php)
-4. [ucwords() function](https://www.php.net/manual/en/function.ucwords.php)
+आप इन दोनों फंक्शन को एक साथ भी इस्तेमाल कर सकते हैं। जैसे कि नीचे दिखाया गया है।
+
+```
+<?php
+$str = "hello world";
+echo strtoupper(ucfirst($str)); // Output: HELLO WORLD
+?>
+```
+
+## गहराई में जाएँ
+
+जब हम `ucfirst()` फंक्शन को इस्तेमाल करते हैं, तो यह दिए गए स्ट्रिंग के पर्वतानुक्रम में पहले अक्षर को बड़े अक्षर में परिवर्तित करता है। इससे स्ट्रिंग के पहले अक्षर का असर बड़ा होता है। लेकिन अगर हमें पूरी स्ट्रिंग को बड़े अक्षरों में परिवर्तित

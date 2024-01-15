@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Szczegółowy opis wysyłania żądania http z uwierzytelnieniem podstawowym"
-simple_title:         "Szczegółowy opis wysyłania żądania http z uwierzytelnieniem podstawowym"
+title:                "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+html_title:           "TypeScript: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,43 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Wysyłanie żądań HTTP z podstawową autoryzacją jest jedną z podstawowych umiejętności w programowaniu TypeScript. Wiele aplikacji internetowych korzysta z tego rodzaju autoryzacji w celu zabezpieczenia dostępu do danych. Dowiedz się dlaczego warto poznać ten temat.
+Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym może być konieczne, gdy chcemy uzyskać dostęp do zasobów, które wymagają uwierzytelnienia. Jest to powszechna metoda używana w systemach autoryzacyjnych i może być niezbędna w niektórych przypadkach.
 
-# Jak to zrobić
-
-### Przygotowanie
-
-Przed rozpoczęciem kodowania, musimy upewnić się że nasz projekt jest gotowy do wysyłania żądań HTTP. W tym celu musimy zainstalować paczkę `node-fetch` przy użyciu komendy `npm install node-fetch`.
-Następnie w pliku TypeScript musimy dodać import `import fetch from "node-fetch"`.
-
-### Przykład kodu
+## Jak to zrobić
 
 ```TypeScript
-fetch('https://example.com', { 
-    method: 'GET', 
-    headers: {
-        Authorization: 'Basic YWRtaW46cGFzc3dvcmQ=' // base64-encoded username:password
-    }
+import axios from "axios";
+
+// Przykładowe zapytanie HTTP z uwierzytelnieniem podstawowym
+axios.get("https://example.com/api/data", {
+  auth: {
+    username: "username",
+    password: "password"
+  }
 })
-    .then(res => res.json())
-    .then(data => console.log(data));
+.then(response => {
+  // Przetwarzanie odpowiedzi z serwera
+  console.log(response.data);
+})
+.catch(error => {
+  // Obsługa błędu
+  console.log(error);
+});
 ```
-Zobaczmy teraz jak wygląda odpowiedź serwera zwrócona za pomocą `console.log()`:
-```TypeScript
-{ 
-    data: 'Dzięki temu poradnikowi nauczysz się wysyłać żądania HTTP z autoryzacją!'
+
+Output:
+
+```
+{
+  // Odpowiedź z serwera
+  data: {
+    // Dane zasobu
+  }
 }
 ```
 
-# Głębsza analiza
+## Deep Dive
 
-Podstawową autoryzację w sieci można wykorzystać, aby zabezpieczyć dostęp do danych lub zasobów przed niepowołanymi użytkownikami. W tym celu należy przesłać w nagłówku `Authorization` login i hasło zaszyfrowane w formacie base64.
+Uwierzytelnienie podstawowe to metoda autoryzacji polegająca na przesyłaniu danych uwierzytelniających w nagłówku żądania HTTP. Jest to najprostsza i najmniej bezpieczna metoda uwierzytelniania, ponieważ dane uwierzytelniające są przesyłane w otwartym tekście bez szyfrowania.
 
-Pamiętaj, że kodowanie base64 nie jest metodą bezpieczną i nie powinno być używane w celach autoryzacyjnych. W przypadku aplikacji produkcyjnej należy wykorzystać protokół HTTPS oraz bardziej zaawansowane metody autoryzacji.
+W celu wysłania żądania z uwierzytelnieniem podstawowym, należy wstawić obiekt `auth` w drugim parametrze funkcji `axios.get()`. Obiekt ten musi zawierać właściwości `username` i `password`, które przechowują odpowiednie dane uwierzytelniające. Jeśli uwierzytelnienie jest prawidłowe, serwer zwróci odpowiedź w postaci obiektu `response`, który zawiera informacje o zasobie.
 
-# Zobacz także
-
-- [Dokumentacja Node.js o funkcji Fetch](https://nodejs.org/api/fetch.html)
-- [Poradnik o autoryzacji w sieci](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Zobacz także
+- [Dokumentacja Axios](https://github.com/axios/axios)
+- [Tutorial uwierzytelniania podstawowego w TypeScript](https://www.digitalocean.com/community/tutorials/typescript-axios)
+- [Wprowadzenie do uwierzytelniania w aplikacjach webowych](https://blog.bitsrc.io/a-beginners-guide-to-authentication-in-node-js-with-passport-js-1da3a0e1e4f8)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Elixir recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,86 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sending an HTTP request is a crucial skill for any Elixir developer. It allows you to communicate with external servers and APIs, making your application more dynamic and flexible. In this blog post, we will explore the basics of sending HTTP requests in Elixir.
+Sending HTTP requests is a common task in web development. It allows us to communicate with other web servers, retrieve data, and integrate our applications with external services.
 
 ## How To
 
-To send an HTTP request in Elixir, we first need to install a library called HTTPoison. This library provides functions to construct and make HTTP requests. We can install it by adding `{:httpoison, "~> 1.0"}` to our `mix.exs` file and running `mix deps.get`.
-
-Next, we need to specify the URL we want to send the request to. In this example, we will use the GitHub API to retrieve information about a user. Our code will look like this:
+Sending an HTTP request in Elixir is straightforward. First, we need to use the `HTTPoison` library, which provides a simple and easy-to-use interface for making HTTP requests.
 
 ```Elixir
-# Import the HTTPoison library
+# Import HTTPoison
 import HTTPoison
 
-# Specify the URL with the user's username
-url = "https://api.github.com/users/johndoe"
+# Make a GET request to a URL
+response = HTTPoison.get("http://example.com")
 
-# Make the GET request and store the response in a variable
-response = get(url)
-
-# Display the response body
-IO.puts(response.body)
-```
-
-If we run this code in our Elixir console, we will see the information about the user John Doe returned from the GitHub API.
-
-```Elixir
-# Output
-{
-  "login": "johndoe",
-  "id": 123456,
-  "avatar_url": "https://avatars.githubusercontent.com/u/123456?v=4",
-  "url": "https://api.github.com/users/johndoe"
-  ...
-}
-```
-
-We can also send a POST request to the GitHub API to create a new repository. Here is an example of how we can do this using HTTPoison:
-
-```Elixir
-# Import the HTTPoison library
-import HTTPoison
-
-# Specify the URL for creating a repository
-url = "https://api.github.com/user/repos"
-
-# Create a map with the repository name and description
-body = %{
-  name: "my_awesome_repo",
-  description: "This is my first Elixir project"
-}
-
-# Make the POST request with the body
-response = post(url, body, [{"Authorization", "token <your token>"}])
+# Display the response status code
+IO.inspect response.status_code 
 
 # Display the response body
-IO.puts(response.body)
+IO.inspect response.body
+```
+Sample Output:
+```
+200
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
 ```
 
-If everything goes well, we will receive a response with the repository information, indicating that our new repository has been created successfully.
+The first line imports the `HTTPoison` module into our code. Then, we use the `get/1` function to make a GET request to the specified URL. The `get/1` function takes the URL as a parameter and returns a `HTTPoison` response. We can access the status code and body of the response using the `status_code` and `body` fields, respectively.
+
+We can also send other types of HTTP requests, such as POST and PUT, by using the `post/2` and `put/2` functions and passing in the request body as the second parameter.
 
 ```Elixir
-# Output
-{
-  "id": 123456,
-  "name": "my_awesome_repo",
-  "full_name": "johndoe/my_awesome_repo",
-  "html_url": "https://github.com/johndoe/my_awesome_repo"
-  ...
-}
+# Make a POST request with a JSON body
+response = HTTPoison.post("http://example.com/post", %{name: "John", age: 30})
+
+# Make a PUT request with a form body
+response = HTTPoison.put("http://example.com/user", {:form, "name=John&age=30"})
 ```
 
 ## Deep Dive
 
-Now that we have seen some basic examples of sending HTTP requests in Elixir, let's dive deeper into the topic. HTTPoison offers a variety of functions, such as `put`, `patch`, `delete`, and `head`, to handle different types of requests. It also provides options to customize headers, timeouts, and SSL verification.
-
-Additionally, Elixir has a built-in `HTTP` module that offers a similar set of functions for making HTTP requests. However, HTTPoison is often preferred due to its simpler syntax and added features.
-
-It is essential to handle errors while sending HTTP requests, as they can fail due to various reasons, such as connection issues or incorrect URLs. HTTPoison provides a `handle_error/1` function to handle these errors gracefully.
+The `HTTPoison` library is built on top of the `hackney` HTTP client, making it a reliable and performant choice for making HTTP requests in Elixir. It also supports different adapters, such as `:hackney` and `:ibrowse`, allowing us to choose the one that best fits our application's needs. Additionally, `HTTPoison` handles redirects, authentication, and other common HTTP features, making it a convenient option for handling HTTP requests.
 
 See Also
-
-- [Elixir School - HTTP Requests](https://elixirschool.com/en/lessons/specifics/http/)
-- [HTTPoison Documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Sending HTTP requests in Elixir](https://medium.com/@iammerrick/sending-http-requests-in-elixir-5c5a84304a96)
+- [HTTPoison Documentation](https://hexdocs.pm/httpoison/)
+- [Elixir HTTP Clients](https://github.com/h4cc/awesome-elixir#http-clients)

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Écriture vers l'erreur standard"
-simple_title:         "Écriture vers l'erreur standard"
+title:                "Écrire sur le flux d'erreurs standard"
+html_title:           "C++: Écrire sur le flux d'erreurs standard"
+simple_title:         "Écrire sur le flux d'erreurs standard"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,61 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Pourquoi écrire vers l'erreur standard?
 
-Écrire sur la sortie d'erreur standard peut sembler être un sujet banal, mais c'est en fait une pratique très importante en programmation. Cela permet de mieux gérer les erreurs et de déboguer efficacement votre code.
+Il peut y avoir plusieurs raisons pour lesquelles un développeur souhaiterait écrire vers l'erreur standard dans son code C++. Voici quelques-unes des raisons les plus courantes:
 
-## Comment faire
+- Débogage: En écrivant vers l'erreur standard, les erreurs et les avertissements peuvent être affichés directement dans la console, ce qui facilite le processus de débogage.
+- Communication avec l'utilisateur: Lorsque vous écrivez un programme en ligne de commande, il peut être utile d'afficher des messages directement dans la console pour communiquer avec l'utilisateur.
 
-Pour écrire sur la sortie d'erreur standard en C++, vous pouvez utiliser la bibliothèque standard `iostream` avec la fonction `std::cerr`. Voici un exemple de code :
+Comment le faire:
 
-```C++
-#include <iostream>
+Pour écrire vers l'erreur standard en C++, vous pouvez utiliser la fonction ```std::cerr``` et utiliser l'opérateur de flux ```<<``` pour afficher les messages.
 
-int main() {
-    // code qui génère une erreur
-    std::cerr << "Erreur : impossible d'ouvrir le fichier" << std::endl;
-    return 0;
-}
-```
-
-Lors de l'exécution de ce code, vous obtiendrez un message d'erreur clair sur la sortie d'erreur standard.
-
-```
-Erreur : impossible d'ouvrir le fichier
-```
-
-Vous pouvez également utiliser `std::cerr` pour afficher des messages de débogage en ajoutant des informations supplémentaires, comme dans l'exemple suivant :
+Voici un exemple de code qui écrit un message d'erreur à l'aide de ```std::cerr```:
 
 ```C++
 #include <iostream>
 
-int main() {
-    int a = 5;
-    int b = 0;
-    std::cerr << "a = " << a << ", b = " << b << std::endl;
-    std::cerr << "Le résultat de a / b est : " << a / b << std::endl;
+int main()
+{
+    int num = -10;
+
+    // Vérifier si le numéro est négatif
+    if (num < 0) {
+        // Écrire un message d'erreur vers l'erreur standard
+        std::cerr << "ERREUR: Le numéro ne peut pas être négatif." << std::endl;
+    }
+
     return 0;
 }
 ```
 
-La sortie d'erreur standard indiquera alors :
+Lorsque vous exécutez ce code, vous verrez le message d'erreur s'afficher dans votre console:
 
 ```
-a = 5, b = 0
-Le résultat de a / b est : Erreur de segmentation (core dumped)
+ERREUR: Le numéro ne peut pas être négatif.
 ```
 
-Ceci peut être très utile pour déterminer où votre code a rencontré une erreur et ainsi faciliter le processus de débogage.
+Profondeur:
 
-## Plongée en profondeur
+Maintenant que vous savez comment utiliser ```std::cerr``` pour écrire vers l'erreur standard, il est important de comprendre comment cela fonctionne réellement.
 
-Il peut parfois être frustrant de trouver la source d'une erreur dans votre code. C'est pourquoi il est important de bien comprendre comment utiliser la sortie d'erreur standard pour afficher des messages précis et utiles.
+En C++, il existe trois flux standard prédéfinis: ```std::cin``` pour les entrées de l'utilisateur, ```std::cout``` pour les sorties standard et ```std::cerr``` pour les erreurs.
 
-Il est également possible de rediriger la sortie d'erreur standard vers un fichier en utilisant la commande `2>` en ligne de commande. Ainsi, vous pourrez enregistrer les messages d'erreur pour les consulter ultérieurement. De plus, vous pouvez utiliser la directive `#define` pour définir une macro qui redirigera tous les appels à `std::cerr` vers un fichier, plutôt que de les écrire un par un dans votre code.
+Par défaut, ces flux sont tous liés à la console, mais vous pouvez utiliser la fonction ```std::freopen()``` pour rediriger ces flux vers un fichier si nécessaire.
 
-## Voir aussi
+Il est également important de noter que lorsqu'une erreur est écrite vers l'erreur standard, le programme se poursuit normalement. Contrairement à ```std::cout```, qui est associé à la sortie standard, écrire vers l'erreur standard n'affecte pas la valeur de retour du programme.
 
-- [Documentation de la bibliothèque standard C++ : iostream](https://fr.cppreference.com/w/cpp/io/c/err)
-- [Tutorial sur la sortie d'erreur standard en C++](https://www.learncpp.com/cpp-tutorial/6-12a-output-with-stdcerr/)
-- [Article sur la redirection de la sortie d'erreur standard en C++](https://medium.com/@yuvrajwadhwani/redirection-of-output-to-file-and-stdout-in-c-2ad0cf559313)
+Veuillez noter que l'utilisation excessive d'écriture vers l'erreur standard peut entraîner une performance réduite de votre programme, il est donc important de l'utiliser avec parcimonie.
+
+Voir aussi:
+
+- [Documentation C++ sur les flux standard](https://en.cppreference.com/w/cpp/io)
+- [Guide de débogage en C++](https://www.learncpp.com/cpp-tutorial/debugging-tips-tricks/)
+- [Exemples de redirection de flux en C++](https://www.geeksforgeeks.org/redirecting-stdout-to-a-file-in-c/)
+
+
+
+
+
+## Voir aussi:
+
+- [Documentation C++ sur les flux standard](https://en.cppreference.com/w/cpp/io)
+- [Guide de débogage en C++](https://www.learncpp.com/cpp-tutorial/debugging-tips-tricks/)
+- [Exemples de redirection de flux en C++](https://www.geeksforgeeks.org/redirecting-stdout-to-a-file-in-c/)

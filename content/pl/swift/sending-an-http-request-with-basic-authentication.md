@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Wysyłanie żądania http z autoryzacją podstawową"
-simple_title:         "Wysyłanie żądania http z autoryzacją podstawową"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Swift: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,47 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli chcesz komunikować się z innymi serwerami lub usługami internetowymi w swojej aplikacji Swift, musisz wysyłać żądania HTTP. W niektórych przypadkach musisz również uwierzytelnić się za pomocą podstawowej autoryzacji. W tym artykule dowiesz się, dlaczego jest to niezbędne i jak to zrobić.
+Sending an HTTP request with basic authentication allows for secure communication between a client and a server. This is especially important when sensitive data, such as personal information, is being transferred.
 
 ## Jak to zrobić
 
-Aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym w Swift, musisz użyć klasy URLSession i jej metody dataTask przyjmującej obiekt URLRequest. URLRequest zawiera wszystkie informacje o żądaniu, w tym adres URL i dane uwierzytelniające. Kod wyglądałby mniej więcej tak:
-
 ```Swift
-let url = URL(string: "https://www.example.com")
-var request = URLRequest(url: url!)
-let username = "username"
-let password = "password"
-let loginString = "\(username):\(password)"
-let loginData = loginString.data(using: .utf8)
-let base64LoginData = loginData!.base64EncodedString()
+let username = "john_doe"
+let password = "secretpassword"
 
-request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+// Encode the username and password in base64
+let authString = "\(username):\(password)".data(using: .utf8)?.base64EncodedString()
 
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Błąd: \(error)")
-    } else {
-        if let httpResponse = response as? HTTPURLResponse {
-            print("Status kod: \(httpResponse.statusCode)")
-        }
-        if let data = data, let dataString = String(data: data, encoding: .utf8) {
-            print("Odpowiedź: \(dataString)")
-        }
-    }
+// Create the HTTP request
+guard let requestURL = URL(string: "http://www.example.com/login") else {
+  print("Invalid URL")
+  return
+}
+
+var request = URLRequest(url: requestURL)
+
+// Add the basic authentication header
+request.setValue("Basic \(authString)", forHTTPHeaderField: "Authorization")
+
+// Execute the request
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+  if let error = error {
+    print("Error: \(error)")
+  } else if let data = data {
+    // Handle the response data
+    print("Response: \(data)")
+  }
 }
 
 task.resume()
 ```
 
-Output powinien zawierać status kod żądania oraz odpowiedź serwera. W przypadku autoryzacji niepowodzeniem, można otrzymać błąd "401 Unauthorized".
+Przykładowe wyjście:
+
+```Swift
+Response: Optional([60, 104, 116, 109, 108, 62, 10, 32, 32, 60, 104, 101, 97, 100, 62, 10, 32, 32, 32, 32, 60, 116, 105, 116, 108, 101, 62, 82, 101, 113, 117, 101, 115, 116, 32, 83, 117, 99, 99, 101, 115, 115, 60, 47, 116, 105, 116, 108, 101, 62, 10, 32, 32, 60, 47, 104, 101, 97, 100, 62, 10, 32, 32, 60, 98, 111, 100, 121, 62, 10, 32, 32, 32, 32, 60, 104, 49, 62, 76, 111, 103, 105, 110, 32, 115, 117, 99, 99, 101, 115, 115, 102, 117, 108, 108, 121, 32, 108, 111, 103, 103, 101, 100, 32, 105, 110, 32, 115, 117, 99, 99, 101, 115, 115, 108, 51, 54, 122, 112, 121, 74, 60, 47, 104, 49, 62, 10, 32, 32, 32, 32, 60, 104, 50, 62, 87, 101, 108, 99, 111, 109, 101, 32, 111, 110, 32, 98, 111, 97, 114, 100, 44, 32, 74, 111, 104, 110, 33, 60, 47, 104, 50, 62, 10, 32, 32, 60, 47, 98, 111, 100, 121, 62, 10, 60, 47, 104, 116, 109, 108, 62])
+```
 
 ## Deep Dive
 
-Podstawowa autoryzacja w HTTP polega na przesyłaniu danych uwierzytelniających w nagłówku "Authorization" w formacie "Basic base64(username:password)". Jest to szyfrowanie base64, które jest jednakie dla każdej próby uwierzytelnienia i nie jest uważane za bezpieczne. Dlatego zaleca się, aby używać uwierzytelnienia z tokenem API lub bardziej złożonych metod uwierzytelniania, szczególnie jeśli aplikacja zawiera wrażliwe dane użytkownika.
+When sending an HTTP request with basic authentication, the username and password are encoded in base64 and added to the header of the request as a string in the format "username:password". This ensures that the sensitive information is not transmitted in plain text and can only be accessed by the intended recipient.
 
-## Zobacz również
+## See Also
 
-- [Dokumentacja Apple: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Tutorial: Praca z HTTP w Swift](https://www.hackingwithswift.com/read/35/3/the-ultimate-guide-to-http-requests-in-swift)
-- [Poradnik: Uwierzytelnianie w Swift z użyciem kluczy API](https://www.raywenderlich.com/482-apple-s-keychain-framework-a-tutorial)
+- [Working with HTTP requests in Swift](https://www.hackingwithswift.com/articles/118/working-with-http-requests-in-swift)
+- [Using URLSession to make web requests in Swift](https://www.avanderlee.com/swift/nsurlsession-networking/)

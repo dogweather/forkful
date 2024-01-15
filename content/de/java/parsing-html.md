@@ -1,6 +1,7 @@
 ---
-title:                "Java: HTML Parsen"
-simple_title:         "HTML Parsen"
+title:                "HTML analysieren"
+html_title:           "Java: HTML analysieren"
+simple_title:         "HTML analysieren"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,34 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-HTML-Parsing wird häufig in der Webentwicklung eingesetzt, um Daten von einer Website zu extrahieren. Dies kann hilfreich sein, um Informationen zu analysieren, zu speichern oder zu visualisieren.
+Wenn du schon einmal eine Webseite besucht hast, wirst du mit HTML vertraut sein. Es ist die Sprache, mit der Webseiten aufgebaut werden und es ist wichtig zu wissen, wie man HTML-Code liest und analysiert. Das Parsen von HTML ist hilfreich, um Informationen von Webseiten zu extrahieren und sie zu analysieren, zu speichern oder zu verarbeiten.
 
-## Wie geht es
+## Wie geht das?
 
-Die Verwendung von Java ist eine gängige Methode, um HTML zu parsen. Hier ist ein Beispiel, wie man mit Jsoup, einer beliebten Java-Bibliothek für HTML-Parsing, Text von einer Website extrahieren kann:
+Das Parsen von HTML in Java ist relativ einfach und kann mit Hilfe von Bibliotheken wie Jsoup durchgeführt werden. Hier ist ein Beispiel, wie man alle Links auf einer Webseite finden und ausgeben kann:
 
 ```Java
+// Importieren der benötigten Bibliotheken
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+// Definieren der URL
 String url = "https://www.example.com";
+
+// Verwenden der Jsoup Bibliothek, um die Webseite zu parsen
 Document doc = Jsoup.connect(url).get();
-Element element = doc.select(".title").first();
-System.out.println(element.text());
+
+// Extrahieren aller Links auf der Seite
+Elements links = doc.select("a[href]");
+
+// Schleife durch alle Links und Ausgabe der href Attribute
+for (Element link : links) {
+    System.out.println(link.attr("href"));
+}
 ```
 
-Dieser Code ruft die Website unter dem angegebenen Link auf und extrahiert dann den Inhalt des ersten Elements mit der Klasse "title" und gibt es in der Konsole aus. Dies ist eine einfache Methode, um einen bestimmten Teil einer Webseite zu erfassen.
+Dieses Beispiel zeigt einen grundlegenden Ansatz, wie man HTML in Java parsen und die gewünschten Informationen extrahieren kann. Mit Hilfe der Jsoup Bibliothek können auch andere Elemente wie Text, Bilder oder bestimmte HTML-Tags extrahiert werden.
 
-## Tiefentauchen
+## Deep Dive
 
-Beim Parsen von HTML gibt es verschiedene Techniken und Tools, die verwendet werden können. Ohne die Details zu sehr zu vertiefen, hier sind einige allgemeine Dinge, die man beim Arbeiten mit HTML-Parsing beachten sollte:
+Jetzt wo du eine Vorstellung davon hast, wie man HTML in Java parsen kann, gibt es noch einige wichtige Dinge zu beachten. Beim Parsen von HTML ist es wichtig zu wissen, dass die Struktur einer Webseite variieren kann und somit auch der Code, um sie zu parsen. Es ist also immer ratsam, verschiedene Webseiten zu testen und den Code entsprechend anzupassen.
 
-- Die Verwendung von regulären Ausdrücken (Regex) kann hilfreich sein, um bestimmte Muster in einem HTML-Dokument zu finden und zu extrahieren.
-- Es ist wichtig, die Struktur und das Format des HTML-Dokuments zu verstehen, um das Parsen effizienter zu gestalten.
-- Das Verständnis von HTML-Tags und deren Attribute kann auch dabei helfen, bestimmte Elemente gezielt auszuwählen und zu parsen.
-- Die Verwendung von DOM-Methoden und -Eigenschaften kann ebenfalls nützlich sein, um auf bestimmte Elemente zuzugreifen und sie zu manipulieren.
+Außerdem ist es möglich, dass Webseiten bestimmte Sicherheitsmaßnahmen haben, um das Parsen von ihrem Code zu verhindern. Das kann dazu führen, dass die Informationen nicht vollständig extrahiert werden können oder gar keine Verbindung hergestellt werden kann. In diesem Fall benötigt man möglicherweise eine andere Herangehensweise oder spezielle Bibliotheken, um diese Hindernisse zu umgehen.
 
 ## Siehe auch
 
-- [Java HTML Parsing with Jsoup](https://www.baeldung.com/java-html-parsing-jsoup)
-- [Parsing HTML with Java](https://www.tutorialspoint.com/html-parsing-with-java)
-- [Jsoup Documentation](https://jsoup.org/cookbook/extracting-data/dom-navigation)
-
-Ich hoffe, dieser Artikel hat Ihnen geholfen, die Grundlagen des HTML-Parsing mit Java zu verstehen. Mit der richtigen Technik und ein wenig Übung können Sie ganz einfach Daten von einer Website extrahieren und für Ihre Zwecke nutzen. Viel Spaß beim Coden!
+- Offizielle Jsoup Dokumentation: https://jsoup.org/
+- Weitere Informationen zum Parsen von HTML in Java: https://www.baeldung.com/java-html-parsing

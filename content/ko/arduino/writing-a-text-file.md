@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 텍스트 파일 작성하기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Arduino: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,38 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-텍스트 파일을 작성하는 것에 대해 궁금해 하십니까? 아두이노 프로그래밍에서 텍스트 파일은 매우 중요한 역할을 합니다. 이 블로그 포스트에서는 텍스트 파일의 중요성과 작성 방법 및 깊은 이해에 대해 알아보겠습니다.
+텍스트 파일을 쓰는 것이 왜 중요한지 궁금하지 않으세요? 텍스트 파일은 여러분의 프로그램에서 데이터를 저장하고 읽는 데에 유용합니다. 이것은 여러분이 프로그램을 처음부터 다시 작성하지 않아도 되게 해주는 매우 유용한 도구입니다.
 
-## 어떻게
+## 어떻게 하나요?
 
-텍스트 파일을 작성하는 것은 아두이노 프로그래밍에서 매우 간단한 작업입니다. 아래의 코드 블록에서 실제 예제를 확인할 수 있습니다.
+우리는 여러분이 텍스트 파일을 만드는 방법을 알려드릴 거에요. 아래의 예제 코드를 보고 따라 해보세요.
 
 ```Arduino
-// 글자를 저장할 배열을 만듭니다.
-char text[] = "안녕하세요!";
+// 파일 객체를 만듭니다.
+File myFile;
 
-// 텍스트 파일을 생성하고 내용을 저장합니다.
-File myFile = SD.open("hello.txt", FILE_WRITE);
-myFile.println(text);
-myFile.close();
+void setup() {
+  // SD 카드 초기화
+  SD.begin();
+
+  // 파일 이름과 모드(쓰기)를 넣고 파일을 엽니다.
+  myFile = SD.open("test.txt", FILE_WRITE);
+
+  // 만약 파일이 열리지 않으면 오류를 출력합니다.
+  if (myFile) {
+    // "Hello world"를 파일에 작성합니다.
+    myFile.println("Hello world");
+    
+    // 파일을 닫습니다.
+    myFile.close();
+
+    // 완료 메시지를 출력합니다.
+    Serial.println("파일이 성공적으로 작성되었습니다.");
+  } else {
+    // 만약 파일이 열리지 않으면 오류 메시지를 출력합니다.
+    Serial.println("오류: 파일을 열 수 없습니다.");
+  }
+}
+
+void loop() {
+  
+}
 ```
 
-위 코드를 실행하면 아두이노에서 SD 카드에 "hello.txt"라는 파일이 생성되고 "안녕하세요!"라는 내용이 저장됩니다. 이제 SD 카드를 컴퓨터에 연결하여 파일을 열어보면 내용이 잘 저장되었음을 확인할 수 있습니다.
+위 코드를 올바르게 실행하면 SD 카드에 "text.txt" 파일이 생성되고 "Hello world"가 기록될 것입니다.
 
-## 심층 탐구
+## 깊게 들어가보기
 
-텍스트 파일을 작성하는 것은 더 깊이 들어가면 더 복잡해집니다. 예를 들어, 파일의 이름을 변경하거나 새 디렉토리에 파일을 저장하는 등의 작업을 할 수 있습니다. 또한 파일을 읽고 특정 위치에 데이터를 추가하는 등의 작업도 가능합니다.
+텍스트 파일을 쓰는 더 많은 방법과 파일을 열고 닫는 방법 등에 대해 더 알고 싶다면 아래의 링크를 참조해주세요.
 
-텍스트 파일을 작성하면서 생각해야 할 것 중 하나는 문자 인코딩입니다. 파일의 문자 인코딩이 잘못되면 파일을 올바르게 읽을 수 없을 수 있습니다. 따라서 문자 인코딩을 제대로 지정하는 것이 중요합니다.
+- [Arduino Reference](https://www.arduino.cc/reference/en/libraries/sd/)
+- [Tutorial: SD Cards and Arduino](https://www.circuito.io/blog/arduino-sd-card-file-i-o/)
+- [Writing to a text file on an SD card with Arduino](https://create.arduino.cc/projects/1283/writing-to-a-text-file-on-an-sd-card-with-arduino)
 
-## 참고 자료
+## 같이 보기
 
-- [SD 라이브러리 문서](https://www.arduino.cc/en/Reference/SD)
-- [아두이노 공식 사이트](https://www.arduino.cc/)
-- [아두이노 포럼](https://forum.arduino.cc/)
-
-# 참고
-
-이 블로그 포스트를 통해 텍스트 파일 작성에 대한 기본적인 이해를 얻었을 것입니다. 추가적인 기능이나 자세한 내용은 위의 참고 자료를 확인하시기 바랍니다. 텍스트 파일 작성을 마스터하면 아두이노 프로그래밍에서 다양한 기능을 활용할 수 있습니다.
+- [Markdown 사용법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+- [강력한 텍스트 편집기를 사용하여 Markdown 미리보기하기](https://macdown.uranusjr.com/)

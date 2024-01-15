@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Używając wyrażeń regularnych"
-simple_title:         "Używając wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Bash: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,48 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Jeśli jesteś programistą lub masz zainteresowania w dziedzinie informatyki, na pewno spotkałeś się z wyrażeniami regularnymi. Są to wyrażenia, które pozwalają na efektywne i precyzyjne wyszukiwanie i manipulowanie tekstem. Dzięki nim możesz szybciej przetwarzać duże ilości danych, np. w skryptach Bash. Czy warto znać wyrażenia regularne? Oczywiście! Poznaj, dlaczego.
+Wielu programistów uważa regularne wyrażenia (ang. regular expressions) za niezbędne narzędzie w swoim arsenale. Poznaj kilka powodów, dla których warto nauczyć się ich używać.
 
-## Jak używać wyrażeń regularnych w Bashu
+## Jak to Zrobić?
 
-Wyrażenia regularne w Bashu są tworzone przy użyciu operatora "=~" oraz z użyciem znaku "/", który określa początek i koniec wyrażenia. Przykładowo, żeby sprawdzić czy dany tekst zawiera słowo "kot", możemy napisać:
-
-```Bash
-if [[ "To jest tekst z kotem" =~ /kot/ ]]; then
-  echo "Znalazłem kota!"
-fi
-```
-
-W powyższym kodzie, wyrażenie "To jest tekst z kotem" sprawdzane jest pod kątem wystąpienia wyrażenia regularnego "/kot/", a następnie wyświetlany jest komunikat "Znalazłem kota!".
-
-Możemy także używać wyrażeń regularnych do wyodrębniania konkretnych części tekstu. Na przykład, jeśli chcemy pobrać numer telefonu z ciągu znaków, możemy to zrobić w taki sposób:
+Używanie regularnych wyrażeń w Bashu jest łatwe i intuicyjne. Wystarczy zapoznać się z kilkoma podstawowymi pojęciami i posiadać podstawową wiedzę na temat składni. Poniżej znajdziesz kilka przykładów kodu i odpowiadających im wyników, aby pomóc Ci zacząć.
 
 ```Bash
-# Przykładowy numer telefonu
-text="Moje numer telefonu to 123-456-789."
-
-if [[ "$text" =~ /([0-9]{3})-([0-9]{3})-([0-9]{3})/ ]]; then
-  # Zapisujemy wyrażenie w zmiennych "area_code", "first_three" i "last_four"
-  area_code="${BASH_REMATCH[1]}"
-  first_three="${BASH_REMATCH[2]}"
-  last_four="${BASH_REMATCH[3]}"
-  echo "$area_code $first_three $last_four"
-fi
+Polecenie: grep "kot" plik.txt
+Wynik: W pliku.txt znajduje się wyraz "kot".
 ```
 
-W powyższym kodzie, wyrażenie regularne "/([0-9]{3})-([0-9]{3})-([0-9]{3})/" ujmuje trzy grupy trzycyfrowych liczb (w tym przypadku trzy części numeru telefonu) i zapisuje je w zmiennych za pomocą tablicy BASH_REMATCH.
+```Bash
+Polecenie: grep -i "psa" plik.txt
+Wynik: W pliku.txt znajduje się wyraz "Psa", pomimo że użyto małych liter.
+```
 
-## Pogłębione studiowanie wyrażeń regularnych
+```Bash
+Polecenie: grep "^[A-Z]" plik.txt
+Wynik: W pliku.txt znajdują się wszystkie linie rozpoczynające się dużymi literami.
+```
 
-Wyrażenia regularne są bardzo potężnym narzędziem, które warto poznać dokładnie. Pozwalają one na wyszukiwanie i manipulowanie tekstem w bardzo precyzyjny sposób. W Bashu możemy wykorzystywać wiele operatorów i funkcji związanych z wyrażeniami regularnymi, takich jak np. "=~", "!" lub "basename". Warto także zapoznać się z różnymi wzorami wyrażeń regularnych, np. "[0-9]" oznacza dowolną cyfrę, "[a-z]" oznacza dowolną małą literę, a "[^a-zA-Z]" oznacza znaki, które nie są literami.
+```Bash
+Polecenie: grep "[0-9]{3}-[0-9]{3}-[0-9]{4}" plik.txt
+Wynik: W pliku.txt znajdują się wszystkie numery telefonów w formacie XXX-XXX-XXXX.
+```
 
-W internecie można znaleźć wiele przydatnych tutoriali i zasobów, które pomogą Ci pogłębić swoją wiedzę na temat wyrażeń regularnych. Pamiętaj, że praktyka czyni mistrza, więc nie wahaj się eksperymentować z różnymi wzorami i wykorzystywać wyrażeń regularnych w swoich projektach.
+## Głębszy Zanurzanie Się
 
-## Zobacz także
+Regularne wyrażenia są potężnym narzędziem, które pozwala na precyzyjne wyszukiwanie i manipulowanie tekstem. Jest to szczególnie przydatne w skryptach Bash, gdzie możemy wykorzystać je do przetwarzania plików tekstowych. Pozwala nam to m.in. na:
 
-Jeśli chcesz poszerzyć swoją wiedzę na temat wyrażeń regularnych w Bashu, polecamy zapoznać się z poniższymi linkami:
+- Wyszukiwanie określonych ciągów znaków w tekście z różnymi warunkami (np. z uwzględnieniem wielkości liter, liczby powtórzeń, itp.).
+- Zastępywanie wybranych fragmentów tekstu innymi wyrażeniami.
+- Wyciąganie i przetwarzanie danych z plików tekstowych na podstawie zdefiniowanych wzorców.
 
-- [Wyrażenia regularne w Bashu](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-- [Podstawowe wy
+Warto również pamiętać, że każda implementacja regularnych wyrażeń jest nieco inna, więc dobrze jest zapoznać się z dokumentacją narzędzia, którego zamierzamy używać. Warto również ćwiczyć regularne wyrażenia w różnych narzędziach, aby być przygotowanym na różne scenariusze.
+
+## Zobacz Również
+
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
+- [Oficjalne tutoriale regularnych wyrażeń](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
+- [Praktyczny przewodnik po regularnych wyrażeniach w Bash](https://www.linux-magazine.com/Online/Features/Practical-Regex-for-the-Shell)

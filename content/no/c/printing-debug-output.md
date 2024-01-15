@@ -1,6 +1,7 @@
 ---
-title:                "C: Utskrift av feilrettingsutdata"
-simple_title:         "Utskrift av feilrettingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "C: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -11,50 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Feilsøking er en essensiell del av programmering, og å printe ut debug-informasjon kan være en nyttig måte å finne feil i koden din. Det kan også hjelpe deg med å forstå hva som skjer under kjøringen av programmet ditt.
+Når du skriver kode, er det viktig å kunne finne feil og problemer. En måte å gjøre dette på er å bruke "debug output," eller feilsøkningsutskrift, som hjelper deg med å spore gjennomgangen av programmet og finne hvor problemet ligger. I denne artikkelen skal vi se på hvordan man kan skrive ut debug output i C-programmer.
 
-## Slik gjør du det
+## Hvordan
 
-Når du skal printe debug-informasjon i C, kan du bruke funksjonen `printf()`. Denne funksjonen tar imot en eller flere variabler og printer dem ut på skjermen. La oss se på et enkelt eksempel:
-
-```C
-int num = 10;
-printf("Dette er verdien til num: %d", num);
-```
-
-I dette eksemplet definerer vi en variabel `num` med verdien 10. Deretter bruker vi `printf()` for å printe ut verdien til `num` på skjermen. Merk at `%d` i teksten betyr at vi skal printe ut en heltallsvariabel. Outputen vil være:
-
-`Dette er verdien til num: 10`
-
-Du kan også bruke flere variabler i samme `printf()`-funksjon, og du kan også bruke forskjellige formateringskoder for å printe ut forskjellige typer variabler.
+For å skrive ut debug output i C, må du bruke funksjonen `printf()`. Denne funksjonen tar inn en streng som første argument, og eventuelt variabler etter det, og skriver det ut på skjermen. La oss se på et eksempel:
 
 ```C
-int num1 = 5;
-float num2 = 3.14;
-printf("Tallet er %d og pi er %f", num1, num2);
+#include <stdio.h>
+
+int main(void) {
+    int tall = 5;
+    printf("Tallet er: %d\n", tall);
+    return 0;
+}
 ```
 
-Her bruker vi `%d` for å printe ut tallet `num1` og `%f` for å printe ut verdien til `num2`, som er et flyttall. Outputen vil være:
+Dette programmet vil skrive ut "Tallet er: 5" på skjermen når det kjøres. Her har vi brukt `%d` for å angi at vi vil skrive ut en tall-verdi. For å skrive ut en streng, bruker vi `%s` i strengen vår og gir strengen vi vil skrive ut som et annet argument til `printf()`.
 
-`Tallet er 5 og pi er 3.14`
+Du kan også skrive ut flere variabler ved å gi flere argumenter til `printf()`, og de vil bli skrevet ut i samme rekkefølge som de er gitt. Du kan lese mer om printf-funksjonen og de ulike spesifikatorene på [denne siden](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm).
 
-Dette er bare noen få eksempler på hvordan du kan bruke `printf()`-funksjonen for å printe debug-informasjon i C. Ved å eksperimentere med forskjellige formateringskoder og variabler, kan du få en dypere forståelse av hvordan denne funksjonen fungerer.
+## Deep Dive
 
-## Dypdykk
+I tillegg til å skrive ut variabler og strenger, kan du også inkludere mer detaljerte meldinger i debug output ved å bruke *format strings*. Disse er en blanding av fast tekst og variable som kan skrives ut på en spesiell måte, for eksempel ved bruk av spesifikatoren `%f` for å skrive ut flyttall.
 
-Det finnes flere spesielle formateringskoder du kan bruke i `printf()`-funksjonen, som for eksempel `%c` for å printe ut en tegnvariabel, `%s` for å printe ut en streng, og `%p` for å printe ut en peker. Du kan også bruke spesielle kontrollsekvenser som `\n` for å lage en ny linje i outputen eller `\t` for å lage et tabulatoravstand.
-
-Det er også mulig å printe ut verdien til en variabel på en bestemt bredde ved å bruke følgende syntaks: `%Nnumber`, der N er antall plasser du vil reservere for variabelen. For eksempel:
+Format strings er veldig nyttig når du trenger å skrive ut lange meldinger eller inkludere informasjon fra flere variabler i utskriften. Her er et eksempel på hvordan vi kan bruke en format string:
 
 ```C
-int num = 5;
-printf("%4d", num);
+#include <stdio.h>
+
+int main(void) {
+    int tall = 5;
+    float desimaltall = 3.14;
+    printf("Tallet er: %d og desimaltallet er: %.2f\n", tall, desimaltall);
+    return 0;
+}
 ```
 
-Her vil verdien til `num` bli printet ut på 4 plasser, uavhengig av hvor stor tallet faktisk er. Hvis tallet er mindre enn 4 siffer, vil det bli lagt til ekstra mellomrom på plassen før outputen.
+Denne koden vil skrive ut "Tallet er: 5 og desimaltallet er: 3.14" på skjermen. Legg merke til at ved bruk av `%f`, har vi også brukt `.2` for å angi at vi kun vil ha to desimaler med i utskriften.
 
 ## Se også
 
-* [C - printf() function](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
-* [Debugging in C: A Simple Guide](https://www.samrayner.com/posts/debugging-in-c-a-simple-guide/)
-* [Advanced Debugging Techniques in C](https://www.linuxjournal.com/article/6930)
+For å lære mer om debugging og bruk av `printf()`-funksjonen, kan du sjekke ut følgende ressurser:
+
+- [Debugging in C: Tips and Tricks](https://www.programiz.com/c-programming/debugging)
+- [Debugging with GDB: A guide](https://www.gdbtutorial.com/)
+- [The printf() Function](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)

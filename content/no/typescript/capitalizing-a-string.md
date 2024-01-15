@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Store bokstaver i en tekststreng"
-simple_title:         "Store bokstaver i en tekststreng"
+title:                "Stor bokstaving av en streng"
+html_title:           "TypeScript: Stor bokstaving av en streng"
+simple_title:         "Stor bokstaving av en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,45 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konvertere tekst til store bokstaver eller "kapitalisering" kan være viktig for å få en mer lesbar og konsistent kode. Dette kan forbedre lesbarheten og forståelsen av koden, spesielt for større prosjekter.
+Å bruke TypeScript for å kapitalisere en streng kan gjøre koden din mer lesbar og enklere å vedlikeholde. Det kan også være nyttig når du trenger å formatere data som skal vises for brukerne.
 
-## Hvordan
-
-```TypeScript
-function capitalizeString(input: string): string {
-  return input.toUpperCase(); // Eksempel på hvordan man enkelt kan konvertere en tekststreng til store bokstaver
-}
-
-console.log(capitalizeString("heisann")); // Output: HEISANN
-``` 
-
-En annen måte å kapitalisere en tekst på er ved å bruke metoden `replace` sammen med et regulært uttrykk, som gjør det mulig å kapitalisere bare den første bokstaven i en tekststreng:
+## Slik gjør du det
 
 ```TypeScript
-function capitalizeFirstLetter(input: string): string {
-  return input.replace(/^\w/, (c) => c.toUpperCase()); // Finner første bokstav og kapitaliserer den
-}
+const unformattedString = "dette er en tekst med små bokstaver";
+const formattedString = unformattedString.toUpperCase();
 
-console.log(capitalizeFirstLetter("verden")); // Output: Verden
-``` 
+console.log(formattedString);
 
-Hvis du har en tekststreng med flere ord, kan du også bruke metoden `split` for å splitte teksten ved mellomrom og deretter bruke `map` for å kapitalisere hvert ord:
+// Output: DETTE ER EN TEKST MED SMÅ BOKSTAVER
+```
+
+I dette eksempelet har vi en tekst med små bokstaver og ved å bruke `.toUpperCase()`-metoden i TypeScript, vil teksten bli konvertert til store bokstaver. Dette er en enkel og effektiv måte å kapitalisere en streng på.
+
+En annen måte å kapitalisere en streng på i TypeScript er å bruke en `for`-løkke og `'charAt()'`-metoden til å endre bokstaven på hvert index i strengen til en stor bokstav.
 
 ```TypeScript
-function capitalizeWords(input: string): string {
-  return input.split(" ").map(w => w ? w[0].toUpperCase() + w.substr(1).toLowerCase() : w).join(" "); // Kapitaliserer hver enkelt ord
+let unformattedString = "dette er en tekst med små bokstaver";
+let formattedString = '';
+
+for(let i = 0; i < unformattedString.length; i++) {
+  formattedString += unformattedString.charAt(i).toUpperCase();
 }
 
-console.log(capitalizeWords("hei, hvordan går det?")); // Output: Hei, Hvordan Går Det?
-``` 
+console.log(formattedString);
 
-## Dypdykk
+// Output: DETTE ER EN TEKST MED SMÅ BOKSTAVER
+```
 
-I tillegg til å kapitalisere en hel tekststreng eller enkelte bokstaver, kan det også være nyttig å kunne ignorere og beholde spesifikke ord eller akronymer. Dette kan gjøres ved å bruke metoden `replace` sammen med et regex uttrykk som tar hensyn til disse ordene.
+## Dykk dypere
 
-En annen ting å huske på er at i noen tilfeller kan ikke alle ord eller bokstaver kapitaliseres likt. For eksempel skal ikke forkortelser som "US" eller "UK" kapitaliseres som "Us" eller "Uk". Derfor kan du bruke en liste over slike unntak og sjekke om ordet er en del av den før du kapitaliserer det.
+Når du bruker `.toUpperCase()` i TypeScript, blir alle bokstavene i strengen konvertert til store bokstaver i henhold til Unicode-standarden. Dette betyr at hvis du har en tekst på et annet språk enn engelsk, vil bokstavene bli konvertert til de store bokstavene i det respektive språket.
+
+En annen ting å merke seg er at `.toUpperCase()`-metoden ikke endrer den opprinnelige strengen, den returnerer en ny streng med de kapitaliserte bokstavene.
 
 ## Se også
 
-- [JavaScript String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
-- [Regular Expressions Tutorial](https://www.w3schools.com/js/js_regexp.asp)
+- [TypeScript Offisiell Dokumentasjon](https://www.typescriptlang.org/docs/home.html)
+- [Unicode Character Table](https://unicode-table.com/en/)

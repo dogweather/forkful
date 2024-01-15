@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Javascript: Travailler avec les fichiers csv"
+simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,57 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Le format CSV (Comma Separated Values) est un outil précieux pour les programmeurs, car il permet de stocker et de manipuler des données facilement dans un format simple et lisible par les humains.
+Vous vous demandez peut-être pourquoi vous devriez travailler avec des fichiers CSV en Javascript ? Eh bien, les fichiers CSV sont largement utilisés pour stocker des données tabulaires, ce qui les rend utiles pour les tâches de traitement des données et de gestion de données. Travailler avec des fichiers CSV vous permet également d'importer, d'exporter et de manipuler facilement des données dans vos applications web.
 
 ## Comment faire
 
-Pour lire un fichier CSV dans un programme Javascript, il faut d'abord utiliser la fonction `require` pour charger le module `fs`, qui nous permet d'accéder aux fichiers système. Ensuite, il faut utiliser la fonction `readFile` pour lire le fichier CSV et le stocker dans une variable.
+Pour travailler avec des fichiers CSV en Javascript, utilisez la bibliothèque "csv-parser". Tout d'abord, installez la bibliothèque en utilisant NPM :
 
-````Javascript
+```
+npm install csv-parser
+```
+
+Ensuite, importez la bibliothèque dans votre fichier Javascript et utilisez la méthode "parse" pour lire votre fichier CSV :
+
+```
+const csv = require('csv-parser');
 const fs = require('fs');
-const csv = fs.readFile('fichier.csv', 'utf8');
-````
 
-Ensuite, nous pouvons utiliser la méthode `split` pour séparer les données en lignes et en colonnes, en utilisant le caractère `,` comme séparateur. Nous pouvons aussi utiliser la méthode `map` pour parcourir toutes les données et créer un tableau avec les valeurs de chaque colonne.
+fs.createReadStream('example.csv')
+  .pipe(csv())
+  .on('data', (row) => {
+    console.log(row);
+  })
+  .on('end', () => {
+    console.log('Lecture du fichier CSV terminée.');
+  });
+```
 
-````Javascript
-const lignes = csv.split('\n');
-const donnees = lignes.map(ligne => ligne.split(','));
-````
+L'exemple ci-dessus lit le fichier "example.csv" et imprime chaque ligne dans la console. Vous pouvez également manipuler les données de votre fichier CSV en utilisant les méthodes disponibles dans la bibliothèque "csv-parser". Consultez la documentation officielle pour plus d'informations sur les différentes méthodes disponibles.
 
-Enfin, nous pouvons afficher les données dans la console en utilisant la méthode `console.table` et en passant en paramètre notre tableau de données.
+## Approfondissement
 
-````Javascript
-console.table(donnees);
-````
+Il est important de noter que les fichiers CSV peuvent avoir différentes structures. Certains peuvent avoir une première ligne contenant les noms de colonnes, tandis que d'autres n'en ont pas. De plus, les valeurs dans les fichiers CSV peuvent être délimitées par des virgules, des points-virgules ou même des tabulations.
 
-Voici un exemple de données dans un fichier CSV et le résultat obtenu dans la console :
-
-````Javascript
-// donnees.csv
-nom,prenom,age
-Dupont,Alain,30
-Martin,Sophie,25
-Lacroix,Jean,35
-
-// Console output
-┌─────────┬─────────┬────┐
-│ (index) │ nom     │ age │
-├─────────┼─────────┼────┤
-│ 0       │ 'Dupont'│ 30  │
-│ 1       │ 'Martin'│ 25  │
-│ 2       │ 'Lacroix' │ 35 │
-└─────────┴─────────┴────┘
-````
-
-## Plongée en profondeur
-
-Il existe de nombreuses librairies Javascript dédiées à la manipulation de fichiers CSV, telles que `csv-parser` ou `csvtojson`. Ces librairies offrent des fonctionnalités avancées pour gérer des fichiers de grande taille, des données en streaming, ou pour effectuer des opérations telles que le tri et la fusion de fichiers CSV.
-
-De plus, il peut être utile de connaître les spécifications du format CSV, en particulier en ce qui concerne les différents caractères de séparation et les règles pour les données contenant des virgules ou des guillemets.
+Vous pouvez également rencontrer des problèmes lors de la lecture de fichiers CSV contenant des caractères spéciaux ou des données de type date. Dans ces cas, il peut être utile d'utiliser une bibliothèque de manipulation de chaînes de caractères ou de dates pour traiter correctement les données.
 
 ## Voir aussi
 
-- [Documentation officielle de Node.js sur la manipulation de fichiers CSV](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [Librairie csv-parser sur GitHub](https://github.com/mafintosh/csv-parser)
-- [Spécifications du format CSV](https://tools.ietf.org/html/rfc4180)
+- [Documentation officielle de "csv-parser"](https://csv.js.org/parse/)
+- [Exemple de manipulation de données CSV en utilisant Javascript](https://techbrij.com/nodejs-csv-parser-write-json-csv)
+
+Maintenant que vous avez les bases pour travailler avec des fichiers CSV en Javascript, il est temps de plonger et de commencer à manipuler vos données. Bonne programmation !

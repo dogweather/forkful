@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Senden einer Http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer Http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anforderung mit grundlegender Authentifizierung"
+html_title:           "Elixir: Senden einer http-Anforderung mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anforderung mit grundlegender Authentifizierung"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,29 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Übermittlung von HTTP-Anfragen mit grundlegender Authentifizierung ist ein wichtiger Teil der modernen Webentwicklung. Es ermöglicht es einer Anwendung, sich bei einem Server zu authentifizieren und erweiterte Berechtigungen für bestimmte Aktionen zu erhalten.
+Menschen senden HTTP-Anfragen mit grundlegender Authentifizierung, um sich bei einem Webdienst anzumelden oder eine Aktion auszuführen, die eine identifizierte Identität erfordert. Dies ist in vielen Fällen erforderlich, um auf geschützte Ressourcen zuzugreifen oder vertrauliche Daten zu übertragen.
 
-## How To
+## Wie geht das
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Elixir zu senden, können wir das `HTTPoison`-Paket verwenden. Dieses Paket bietet eine einfache API zum Senden von HTTP-Anfragen und Unterstützung für grundlegende Authentifizierung.
+Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Elixir zu senden, müssen Sie das HTTPoison-Paket installieren und verwenden. Im folgenden Codeblock sehen Sie ein Beispiel für eine GET-Anfrage mit grundlegender Authentifizierung:
 
-```elixir
-# Installation des HTTPoison-Pakets
-{:httpoison, "~> 1.6"}
-
-# Senden einer HTTP-Anfrage mit grundlegender Authentifizierung
-HTTPoison.get("https://www.example.com", [], auth: {"username", "password"})
+```Elixir
+{:ok, response} = HTTPoison.get(
+  "https://www.example.com",
+  headers: [
+    {"Authorization", "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}       
+  ]
+)
 ```
 
-Die `Auth`-Option erlaubt es uns, Benutzername und Passwort für die grundlegende Authentifizierung anzugeben. Wir können auch andere Optionen wie Header oder Body der Anfrage hinzufügen, indem wir sie als Schlüssel-Wert-Paare in einem Tupel angeben.
+Der erste Parameter ist die URL, zu der die Anfrage gesendet wird. Im zweiten Parameter fügen Sie die erforderlichen Header hinzu, wobei der Authorization-Header die Benutzername und das Passwort in Base64-codiertem Format enthält (in diesem Beispiel ist der Benutzername "username" und das Passwort "password"). Der `response` enthält die Antwort des Servers, die Sie dann weiterverarbeiten können.
 
-## Deep Dive
+## Tief tauchen
 
-Das Senden von HTTP-Anfragen mit grundlegender Authentifizierung beinhaltet die Übermittlung von Benutzername und Passwort im Header der Anfrage. Dies geschieht in Form von Base64-kodierten Daten, die im Format `Benutzername:Passwort` angegeben werden. Diese Daten werden dann vom Server überprüft, um zu bestätigen, dass der Benutzer gültige Anmeldeinformationen hat.
-
-Ein wichtiger Punkt zu beachten ist, dass grundlegende Authentifizierung keine sichere Methode ist, um Benutzer zu authentifizieren. Die Übermittlung von Anmeldedaten über HTTP ist anfällig für Abhören und sollte daher nur verwendet werden, wenn zusätzliche Sicherheitsmaßnahmen wie Transport Layer Security (TLS) implementiert werden.
+Bei der grundlegenden Authentifizierung werden die Benutzeranmeldeinformationen in einem Base64-codierten String an den Server gesendet. Der Server entschlüsselt diesen String und authentifiziert den Benutzer auf Basis der bereitgestellten Informationen. Es ist wichtig zu beachten, dass diese Methode NICHT sicher ist, da der Base64-codierte String relativ einfach zu entschlüsseln ist. Für eine sicherere Authentifizierung sollten Sie eine andere Methode, wie z.B. OAuth, verwenden.
 
 ## Siehe auch
 
-- Offizielle Dokumentation von HTTPoison: https://hexdocs.pm/httpoison/1.6.0/
-- Eine Einführung in Elixir-Webentwicklung: https://blog.codeship.com/an-introduction-to-elixir-web-development/
+- [HTTPoison Dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [HTTP Grundlagen](https://www.tutorialspoint.com/http/http_overview.htm)
+- [Elixir Programmiersprache](https://elixir-lang.org/)

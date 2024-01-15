@@ -1,6 +1,7 @@
 ---
-title:                "C: Arbeide med Yaml"
-simple_title:         "Arbeide med Yaml"
+title:                "Å jobbe med YAML"
+html_title:           "C: Å jobbe med YAML"
+simple_title:         "Å jobbe med YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,96 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du er en programmerer som er interessert i å legge til en fleksibel og lettleselig konfigurasjonsfil i prosjektet ditt, så er YAML noe du bør vurdere. Med sin enkle syntaks og støtte for flere programmeringsspråk, er YAML en flott løsning for å organisere og lagre konfigurasjonsdata.
+Hvorfor skulle noen ønske å arbeide med YAML-formatet? Vel, YAML (YAML Ain't Markup Language) er et vanlig tekstformat som brukes til å representere data strukturer. Det er spesielt nyttig når du trenger å lagre og konfigurere data i en hierarkisk form, for eksempel konfigurasjonsfiler for programmer eller data i et databaseformat. Med YAML kan du enkelt lese, skrive og endre data uten å måtte håndtere komplekse XML-tags eller koding.
 
-# Hvordan
+## Hvordan
 
-YAML er et lettvektig og intuitivt språk for å representere data. Det er basert på indentering og har støtte for nøkkelverdi-par, lister og innebygde datatyper som strenger, tall og booleans. La oss se på et enkelt eksempel på å representere konfigurasjonsdata i YAML:
-
-```C
-// Eksempel på en YAML-konfigurasjonsfil
-server:
-    name: localhost
-    port: 8080
-database:
-    name: my_database
-    username: admin
-    password: password123
-```
-
-Som du kan se fra eksemplet over, er YAML veldig leselig og kan enkelt tolkes av både mennesker og maskiner. Når det kommer til å jobbe med YAML i C, kan du bruke biblioteket 'libyaml' for å analysere og generere YAML-data.
-
-For å lese og behandle YAML-data i C, kan du følge disse trinnene:
-
-1. Inkluder 'yaml.h' header-filen i koden din.
-2. Åpne en YAML-konfigurasjonsfil og les filinnholdet inn i en 'yaml_parser_t' struktur.
-3. Bruk 'yaml_parser_load()' funksjon for å analysere YAML-data fra parser-objektet.
-4. Utforsk YAML-data ved hjelp av det nøstede 'yaml_event_t' objektet, som inneholder all informasjon om YAML-dataene (nøkkel, verdi, datastrukturer osv.).
-
-Ta en titt på følgende eksempel for å se hvordan denne prosessen kan se ut i praksis:
+La oss se på et enkelt eksempel på hvordan du kan arbeide med YAML i C. Først, må vi inkludere "yaml.h" biblioteket:
 
 ```C
 #include <yaml.h>
-
-int main() {
-    // Åpne en YAML-konfigurasjonsfil for lesing
-    FILE *config_file = fopen("config.yaml", "r");
-
-    // Initialiser en parser
-    yaml_parser_t parser;
-    if (!yaml_parser_initialize(&parser)) {
-        // Håndter eventuelle feil
-    }
-
-    // Last inn YAML-data fra filen til parsingsobjektet
-    yaml_parser_set_input_file(&parser, config_file);
-
-    // Definer 'yaml_event_t' objektet for å utforske YAML-data
-    yaml_event_t event;
-
-    do {
-        // Analyser neste hendelse i YAML-dataene
-        if (!yaml_parser_parse(&parser, &event)) {
-            // Håndter eventuelle feil
-        }
-
-        // Utforsk YAML-data basert på hendelsestype
-        // Eventuelle nøstede hendelser kan behandles med en intern løkke
-        switch (event.type) {
-            case YAML_SCALAR_EVENT:
-                // Behandle nøkkel/verdi-par
-                printf("Key: %s | Value: %s\n", event.data.scalar.value, event.data.scalar.value);
-                break;
-            case YAML_SEQUENCE_START_EVENT:
-                // Behandle starten av en liste
-                printf("Start of a list\n");
-                break;
-            case YAML_MAPPING_START_EVENT:
-                // Behandle starten av en map
-                printf("Start of a map\n");
-                break;
-        }
-
-        // Husk å frigjøre hendelsesobjektet etter å ha utforsket det
-        yaml_event_delete(&event);
-    } while (event.type != YAML_NO_EVENT);
-
-    // Avslutt parseren og lukk YAML-filen
-    yaml_parser_delete(&parser);
-    fclose(config_file);
-
-    return 0;
-}
 ```
 
-# Dypdykk
-
-Et av de viktigste konseptene som er verdt å nevne når det kommer til å arbeide med YAML, er referanser. YAML har støtte for referanser som lar deg gjenbruke data i dokumentet ditt. Referanser er spesielt praktiske når du har flere ganger den samme nøkkelen i forskjellige deler av dokumentet.
-
-La oss se på dette eksempelet for å få en bedre forståelse av referanser i YAML:
+Deretter kan vi åpne en YAML-fil og lese data fra den ved hjelp av følgende kode:
 
 ```C
-server:
-    name: localhost
+FILE *file = fopen("data.yaml", "rb");
+yaml_parser_t parser;
+yaml_document_t document;
+
+// Oppsett av parser og dokument
+yaml_parser_initialize(&parser);
+yaml_parser_set_input_file(&parser, file);
+yaml_parser_load(&parser, &document);
+
+// Leser data fra dokumentet
+yaml_node_t *node = yaml_document_get_root_node(&document);
+yaml_node_t *data_node = yaml_document_get_root_node(&document);
+```
+
+Her har vi bare inkludert de mest grunnleggende funksjonene for å åpne og lese data fra en YAML-fil. Hvis du vil lære mer om hvordan du skriver og endrer data i YAML-format, kan du sjekke ut dokumentasjonen til YAML-biblioteket.
+
+## Deep Dive
+
+Hvis du er interessert i å lære mer om hvordan YAML fungerer og hvordan du kan bruke det i dine prosjekter, kan du gå dypere inn i konseptene og syntaksen bak formatet. En av fordelene med YAML er at det er relativt enkelt å forstå og bruke. Her er noen tips for å bli bedre kjent med YAML:
+
+- Utforsk forskjellige YAML-filer og prøv å lese og forstå dataene de inneholder.
+- Lær mer om de forskjellige typer datastrukturer som støttes av YAML og hvordan du kan bruke dem.
+- Se på eksempler på YAML-formatering for å gjøre koden din mer lesbar og organisert.
+
+For å kunne bruke YAML effektivt, er det viktig å forstå grunnleggende konsepter som nøkkelverdipar og innrykk. Men ikke vær redd, det tar ikke lang tid å bli komfortabel med YAML og du vil snart kunne dra nytte av dens brukervennlighet og fleksibilitet.
+
+## Se også
+
+- [YAML-dokumentasjon](https://yaml.org/)
+- [YAML-spesifikasjonen](https://yaml.org/spec/)
+- [LibYAML bibliotek](https://pyyaml.org/wiki/LibYAML)

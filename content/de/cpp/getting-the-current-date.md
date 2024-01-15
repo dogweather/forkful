@@ -1,6 +1,7 @@
 ---
-title:                "C++: Die aktuelle Datumsangabe erhalten"
-simple_title:         "Die aktuelle Datumsangabe erhalten"
+title:                "Das aktuelle Datum erhalten"
+html_title:           "C++: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,12 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Wer C++ programmiert, wird häufig auf die Notwendigkeit stoßen, das aktuelle Datum in sein Programm einzufügen. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel zur Datumsberechnung oder zur Protokollierung von Aktionen.
 
-Die Verwendung des aktuellen Datums ist ein wesentlicher Bestandteil der Programmierung. Es ermöglicht uns, zeitbezogene Funktionen in unsere Programme zu integrieren, wie z.B. die Anzeige des aktuellen Datums für Benutzer oder die Durchführung von Berechnungen basierend auf dem aktuellen Datum.
+## Wie man das aktuelle Datum abruft
+Es gibt verschiedene Möglichkeiten, das aktuelle Datum in C++ abzurufen. Hier werden zwei gängige Methoden mit Beispielen vorgestellt.
 
-## Wie Man
-
-Um das aktuelle Datum in C++ zu erhalten, müssen wir zuerst die Bibliothek <ctime> einbinden. Diese enthält Funktionen, die es uns ermöglichen, auf das Datum und die Uhrzeit zuzugreifen. Dann müssen wir eine Variable vom Typ "time_t" deklarieren, um das aktuelle Datum zu speichern. Wir können dies mit der Funktion "time()" tun, die das aktuelle Datum in Sekunden seit dem 1. Januar 1970 zurückgibt. Wir können auch die Funktionen "localtime()" oder "gmtime()" verwenden, um dieses Ergebnis in ein lesbares Format umzuwandeln.
+### Methode 1: Die `time()` Funktion
+Die `time()` Funktion ist eine Standard-Header-Funktion, die die Anzahl der Sekunden seit dem 01.01.1970 zurückgibt. Um das aktuelle Datum zu erhalten, muss diese Sekundenanzahl in ein `time_t` Objekt umgewandelt werden und anschließend in eine `struct tm` Struktur zerlegt werden. Im folgenden Beispiel wird das aktuelle Datum in dem Format Jahr-Monat-Tag ausgegeben:
 
 ```C++
 #include <iostream>
@@ -23,38 +25,53 @@ Um das aktuelle Datum in C++ zu erhalten, müssen wir zuerst die Bibliothek <cti
 
 int main()
 {
-    // Einbinden der <ctime> Bibliothek
-    std::time_t t = std::time(0);
-
-    // Konvertieren in ein lesbares Format
-    std::tm* now = std::localtime(&t);
-
-    // Ausgabe des aktuellen Datums
-    std::cout << "Das aktuelle Datum ist: "
-              << (now->tm_year + 1900) << '-'
-              << (now->tm_mon + 1) << '-'
-              << now->tm_mday
-              << std::endl;
-
+    // Deklaration von Variablen
+    time_t now;         // Sekunden seit 01.01.1970
+    time(&now);         // Aktuelle Anzahl an Sekunden wird in "now" gespeichert
+    tm *date = localtime(&now);  // Umwandlung in eine "struct tm" Struktur
+    
+    // Ausgabe des aktuellen Datums in dem Format Jahr-Monat-Tag
+    std::cout << "Das aktuelle Datum lautet: " << (date->tm_year + 1900) << "-" << (date->tm_mon + 1) << "-" << date->tm_mday << std::endl;
+    
     return 0;
 }
-
 ```
 
-Die Ausgabe des obigen Codes könnte wie folgt aussehen:
+#### Ausgabe:
+Das aktuelle Datum lautet: 2021-03-15
 
+### Methode 2: Die `chrono` Bibliothek
+Die `chrono` Bibliothek bietet eine etwas modernere Möglichkeit, auf das aktuelle Datum zuzugreifen. Dabei wird die `system_clock` verwendet, um die aktuelle Zeit zu ermitteln. Im folgenden Beispiel wird das Datum in dem Format Tag-Monat-Jahr, sowie die aktuelle Uhrzeit in dem Format Stunden:Minuten ausgegeben:
+
+```C++
+#include <iostream>
+#include <chrono>
+#include <ctime>
+
+int main()
+{
+    // Deklaration von Variablen
+    auto now = std::chrono::system_clock::now();  // Aktuelle Zeit
+    std::time_t time = std::chrono::system_clock::to_time_t(now);
+    std::tm *date = std::localtime(&time);    // Umwandlung in eine "tm" Struktur
+    
+    // Ausgabe des aktuellen Datums in dem Format Tag-Monat-Jahr
+    std::cout << "Das aktuelle Datum lautet: " << date->tm_mday << "-" << (date->tm_mon + 1) << "-" << (date->tm_year + 1900) << std::endl;
+    
+    // Ausgabe der aktuellen Uhrzeit in dem Format Stunden:Minuten
+    std::cout << "Die aktuelle Uhrzeit lautet: " << date->tm_hour << ":" << date->tm_min << std::endl;
+    
+    return 0;
+}
 ```
-Das aktuelle Datum ist: 2021-07-20
-```
 
-## Blick ins Detail
+#### Ausgabe:
+Das aktuelle Datum lautet: 15-03-2021
+Die aktuelle Uhrzeit lautet: 12:00
 
-Wie bereits erwähnt, gibt die Funktion "time()" das aktuelle Datum in Sekunden seit dem 1. Januar 1970 zurück. Dies wird auch als "Epoch"-Zeitstempel bezeichnet. Die Funktion "localtime()" wandelt dieses Ergebnis in einen strukturierten Zeiger um, der Informationen wie Jahr, Monat und Tag enthält. Die Funktion "gmtime()" funktioniert auf die gleiche Weise, gibt jedoch die UTC-Zeit (koordinierte Weltzeit) zurück.
+## Tiefergehende Informationen
+Beide Methoden liefern das aktuelle Datum in dem Format Datum-Monat-Jahr. Dabei ist zu beachten, dass die `time()` Funktion das Jahr als eine Anzahl von Jahren seit 1900 zurückgibt, während die `chrono` Bibliothek das Jahr als das tatsächliche Jahr ausgibt. Zusätzlich gibt die `localtime()` Funktion das Datum in einer `tm` Struktur zurück, welche verschiedene Elemente wie Jahr, Monat, Tag, Stunde, Minute, Sekunde, Wochentag usw. enthält.
 
-Die <ctime> Bibliothek enthält auch viele andere Funktionen und Konstanten, die mit Datum und Uhrzeit zusammenhängen. Sie können in der offiziellen C++ Dokumentation weitere Informationen darüber finden.
-
-## Siehe Auch
-
-- [C++ Zeit- und Datumsfunktionen](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/timew.htm)
-- [C++ Zeit-Klasse](http://www.cplusplus.com/reference/chrono/system_clock/now/)
-- [Offizielle C++ Dokumentation für <ctime>](https://en.cppreference.com/w/cpp/chrono/c)
+## Siehe auch
+- [C++ time() Dokumentation](https://www.cplusplus.com/reference/ctime/time/)
+- [C++ chrono Bibliothek Dokumentation](https://www.cplusplus.com/reference/chrono/)

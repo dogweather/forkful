@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "Kotlin recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In programming, we often encounter situations where we need to manipulate strings. One common task is to convert a string to lowercase. By doing so, we can ensure consistency in our data and avoid any discrepancies caused by casing differences.
+Converting a string to lower case is a common task in programming. It is useful for normalizing text for comparison, sorting, and other operations that require consistent casing. In this article, I will explain how to easily convert a string to lower case using Kotlin.
 
 ## How To
-Converting a string to lowercase in Kotlin is quite simple. We can use the `toLowerCase()` function on a string variable to achieve this. Let's take a look at an example:
+
+To convert a string to lower case in Kotlin, we will use the `toLowerCase()` function. Let's take a look at some examples.
 
 ```Kotlin
-val name = "JESSICA" 
-println(name.toLowerCase())
+val name = "John Doe"
+val lowerCase = name.toLowerCase()
+
+println(lowerCase) // output: john doe
 ```
 
-The above code will output `"jessica"`, with the string being converted to all lowercase letters.
+In the code above, we declare a string variable `name` with the value "John Doe". Then, we call the `toLowerCase()` function on the string and assign the result to a new variable `lowerCase`. Finally, we print out the converted string to the console using `println()`.
 
-We can also convert a string to lowercase directly in a print statement:
+We can also use the `toLowerCase()` function directly on a string literal.
 
 ```Kotlin
-val name = "STEVEN" 
-println("Hello, ${name.toLowerCase()}!")
+val greeting = "Hello".toLowerCase()
+
+println(greeting) // output: hello
 ```
 
-The output of this code will be `"Hello, steven!"`.
+It is important to note that the `toLowerCase()` function does not modify the original string, but instead returns a new string with all characters converted to lower case.
 
 ## Deep Dive
-Behind the scenes, Kotlin's `toLowerCase()` function uses the `Locale` class to determine which language and region-specific rules to apply when converting the string. If no locale is provided, the default locale of the device will be used. 
 
-Additionally, the `toLowerCase()` function takes into account different types of characters, including accented characters and symbols. This ensures that the conversion is accurate and no characters are left unchanged.
+Behind the scenes, the `toLowerCase()` function uses the `Locale` class to determine the rules for converting characters to lower case. This ensures that the conversion is consistent with language-specific rules and standards.
 
-It's also worth noting that the `toLowerCase()` function is locale-sensitive, meaning it may produce different results for different locales. This can be useful for scenarios where we need to handle multiple languages or regions.
+Additionally, the `toLowerCase()` function can be used on strings in any language, not just English. It will take into account the specific characters and rules of that language, making it a versatile and reliable tool.
 
 ## See Also
-- [Kotlin Strings](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Kotlin String Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/#functions)
-
-Converting a string to lowercase may seem like a small task, but it is an essential skill in programming. By understanding the inner workings of the `toLowerCase()` function, we can confidently manipulate strings and ensure consistent data in our code.
+- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
+- [Locale Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-locale/)
+- [String Manipulation in Kotlin](https://www.baeldung.com/kotlin-string-manipulation)

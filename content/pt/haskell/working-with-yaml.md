@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Haskell: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML é importante para programadores Haskell?
+## Por que YAML é importante no mundo da programação
 
-Haskell é uma linguagem de programação funcional pura e altamente tipada, o que significa que trabalha com tipos de dados de forma rigorosa e precisa. YAML, por sua vez, é uma linguagem de serialização de dados que torna mais fácil a tarefa de armazenar e transportar dados entre diferentes sistemas e plataformas.
+YAML é uma linguagem de serialização de dados que se tornou cada vez mais popular entre desenvolvedores e engenheiros de software. Ela oferece uma maneira simples, legível e eficiente de representar dados estruturados, o que a torna uma escolha atraente para uma variedade de tarefas de programação.
 
-Juntas, Haskell e YAML oferecem uma poderosa combinação para programadores, permitindo uma fácil manipulação de dados e configurações complexas. Além disso, YAML é simples de ler e escrever, o que torna mais fácil para diferentes membros de uma equipe de desenvolvimento trabalharem juntos em um mesmo projeto.
+## Como usar YAML em Haskell
 
-## Como trabalhar com YAML em Haskell?
+Usar YAML em Haskell é bastante simples e direto. Primeiramente, é necessário importar o pacote "yaml" na sua aplicação Haskell:
 
-A biblioteca [Yaml](https://hackage.haskell.org/package/yaml) oferece uma interface completa para trabalhar com YAML em Haskell. Começando pela instalação da biblioteca em seu projeto, podemos então importá-la e começar a utilizá-la em nossos códigos:
+```Haskell 
+import Data.Yaml
+```
+Em seguida, você pode começar a trabalhar com YAML usando as funções `encode` e `decode` para converter entre dados Haskell e YAML:
 
 ```Haskell
-import Data.Yaml
+-- Convertendo dados Haskell para YAML
+let data = ["Olá", "mundo"]
+let yaml = encode data
+-- yaml agora contém: 
+-- "- Olá
+-- - mundo"
 
-main = do
-  -- Lendo um arquivo YAML e retornando seus valores
-  config <- decodeFileThrow "config.yaml" :: IO (Maybe Value)
-  
-  -- Imprimindo o conteúdo do arquivo
-  print config
+-- Convertendo YAML para dados Haskell
+let yaml = "- Olá
+- mundo"
+let data = decode yaml :: Maybe [String]
+-- data agora contém: Just ["Olá", "mundo"]
 ```
+## Mergulho profundo em YAML
 
-No exemplo acima, utilizamos a função `decodeFileThrow` para ler o arquivo `config.yaml` e retornar seus valores. Utilizamos também a anotação de tipo `:: IO (Maybe Value)` para informar que o retorno é do tipo `IO`, indicando que é uma ação do Monoid Async, e `Maybe Value`, indicando que o valor retornado pode ser `Just` (valor existente) ou `Nothing` (valor não existente).
+Embora YAML seja uma linguagem de serialização simples e fácil de usar, é importante entender alguns conceitos importantes ao trabalhar com ela em Haskell. Alguns desses conceitos incluem:
 
-Podemos então utilizar as funções da biblioteca para acessar e manipular as informações do arquivo YAML, de acordo com a estrutura desejada.
-
-## Mergulhando mais fundo em YAML e Haskell
-
-Além de ler e escrever arquivos YAML, a biblioteca Yaml também oferece funções para tratar e validar os dados dentro do arquivo, como por exemplo a função `checkKey` para verificar se uma chave existe no arquivo.
-
-A linguagem Haskell também oferece recursos poderosos, como a validação de tipos de dados em tempo de compilação, que podem ser utilizados em conjunto com o YAML para garantir a integridade dos dados em seu código.
-
-Para saber mais sobre como trabalhar com YAML em Haskell, recomendamos a leitura do tutorial oficial [Yaml Configuration Files](https://www.schoolofhaskell.com/user/commercial/content/yaml-serialization-configuration-files) e a exploração da documentação da biblioteca [Yaml](https://hackage.haskell.org/package/yaml).
+- Indentação: YAML usa a indentação para definir a hierarquia dos dados. É importante manter uma indentação consistente para evitar erros.
+- Tipos de dados: É possível trabalhar com vários tipos de dados em YAML, incluindo strings, números, listas e até mesmo objetos complexos.
+- Documentos múltiplos: YAML permite trabalhar com vários documentos em um único arquivo, separando-os por '---'. Isso pode ser útil para estruturar e organizar dados complexos em um único lugar.
 
 ## Veja também
 
-- [Tutorial Yaml Configuration Files](https://www.schoolofhaskell.com/user/commercial/content/yaml-serialization-configuration-files)
-- [Documentação Yaml Haskell](https://hackage.haskell.org/package/yaml)
+- Documentação oficial do pacote "yaml" em Haskell: https://hackage.haskell.org/package/yaml
+- Tutorial de YAML em Haskell: https://www.fpcomplete.com/blog/2017/05/yaml-haskell/
+- Página oficial do YAML: https://yaml.org/

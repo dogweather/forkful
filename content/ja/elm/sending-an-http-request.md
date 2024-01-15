@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 「HTTPリクエストを送る」"
-simple_title:         "「HTTPリクエストを送る」"
+title:                "HTTPリクエストの送信"
+html_title:           "Elm: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,73 +12,100 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-HTTPリクエストを送信することの意義を説明するためには、Web開発においてサーバーとの通信が重要であることを説明します。データの送受信を容易にするためには、HTTPリクエストを送信する必要があります。
+HTTPリクエストを送信することになるかをお話しします。これは、Webアプリケーションでサーバーへデータをリクエストするために必要なスキルです。例えば、フォームから入力したデータをサーバーに送信したり、APIを使用して外部のデータを取得する際に使用します。
 
-## 方法
+## 作り方
+
+ElmでHTTPリクエストを送信するには、**Http**モジュールを使用します。以下のようにインポートします。
 
 ```Elm
 import Http
-import Json.Decode exposing (..)
-
-type alias User = {
-  name : String,
-  age : Int
-}
-
-getUser : Http.Request User
-getUser =
-  Http.get "https://api.example.com/users/1"
-    , userDecoder
-
-userDecoder : Decoder User
-userDecoder =
-  Decode.map2 User
-    (field "name" string)
-    (field "age" int)
 ```
 
-上記のコードでは、`Http` モジュールをインポートし、`Json.Decode` モジュールから必要な関数をエクスポートしています。そして、`User` というレコード型を作成し、サーバーから受け取ったデータをデコードするための関数 `getUser` を定義しています。`Http.get` 関数を使用して、特定のURLに対して GET リクエストを送信し、`userDecoder` でデータをデコードしています。
-
-データを取得した後は、以下のようにデータを表示することができます。
+次に、リクエストを送信するためのデータ構造を定義します。
 
 ```Elm
-Http.send getUser ReceivedUser
-
-type Msg
-  = ReceivedUser (Result String User)
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    ReceivedUser result ->
-      case result of
-        Ok user ->
-          -- userのデータを表示する
-        Err err ->
-          -- エラーを処理する
+request : Http.Request
+request = 
+  { method = "GET"
+  , url = "https://example.com/api/data"
+  , body = Http.emptyBody
+  , headers = []
+  }
 ```
 
-ここでは、`ReceivedUser` というメッセージを受け取ると、`Ok` と `Err` でパターンマッチングを行い、`user` データを表示するかエラーを処理するように定義しています。
+**request**の中には、リクエスト方法や送信先のURL、ヘッダーなどを指定できます。また、HTTPリクエストでデータを送信する際は、ボディの値を指定する必要があります。例えば、以下のようにJSONデータを送信することができます。
+
+```Elm
+import Json.Encode as Json
+
+requestWithBody : Http.Request
+requestWithBody = 
+  { method = "POST"
+  , url = "https://example.com/api/data"
+  , body = Http.jsonBody 
+      (Json.object 
+        [ 
+          ( "name", Json.string "John" )
+        , ( "age", Json.int 25 )
+        ]
+      )
+  , headers = [( "Content-Type", "application/json" )]
+  }
+```
+
+これでリクエストの準備ができました。最後に、**Http.send**関数を使用してリクエストを送信します。
+
+```Elm
+import Html exposing (text)
+
+sendRequest : Cmd Msg
+sendRequest =
+  Http.send handleResponse requestWithBody
+
+handleResponse : Http.Response Json.Decoder
+handleResponse =
+  case response of
+    Http.Timeout ->
+      text "Request timed out"
+
+    Http.NetworkError ->
+      text "Network error"
+
+    Http.BadStatus statusCode ->
+      text ("Received bad status code: " ++ String.fromInt statusCode)
+
+    Http.GoodStatus response ->
+      Json.decodeString response.body
+          |> Result.map GotData
+
+type Msg
+  = GotData (Result Http.Error (List Book))
+
+type alias Book =
+  { title : String
+  , author : String
+  }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    GotData result ->
+      case result of
+        Ok books ->
+          -- Do something with the list of books
+        Err err ->
+          -- Handle error case
+```
+
+以上でHTTPリクエストの作り方がわかりました。詳しくは、公式ドキュメントをお確かめください。
 
 ## ディープダイブ
 
-HTTPリクエストは、Webアプリケーションで必要不可欠な機能です。例えば、ユーザーがフォームを送信した際に、そのデータをサーバーに送信することができます。また、サーバーからデータを受け取ることで、リアルタイムなアップデートが可能になります。
+さらに詳しくHTTPリクエストについて学ぶには、サーバーからのリクエストの扱い方や、エラーハンドリングなどを学ぶ必要があります。また、Elmでは**Task**モジュールを使用することで、より詳細なリクエスト処理を行うことができます。詳しくは、公式ドキュメントを確認してみてください。
 
-また、Elmでは`Http.Request` だけでなく、`Http.expectString` や `Http.expectJson` など、さまざまな関数を使用してHTML、イメージ、ファイルなどをリクエストすることもできます。また、HTTPリクエストをエンコードする際には、エンコード方法やヘッダーを指定することも可能です。
+## 参考リンク
 
-## あわせて見る
-
-### ドキュメント
-
-- [Elm HTTPモジュール](https://package.elm-lang.org/packages/elm/http/latest)
-- [Json.Decode](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
-
-### カンファレンス
-
-- [Elm Conf](https://www.elm-conf.com/)
-- [Elm in the Spring](https://www.elminthespring.org/)
-
-### オンラインコース
-
-- [Learn Elm in Y minutes](https://learn-elm.yanis.dev/)
-- [Frontend Masters - Beginning Elm](https://frontendmasters.com/courses/beginning-elm/)
+- Elm公式ドキュメント: https://guide.elm-lang.org/
+- JSONパッケージ: https://package.elm-lang.org/packages/elm/json/latest/
+- Taskモジュール: https://package.elm-lang.org/packages/elm/core/latest/Task

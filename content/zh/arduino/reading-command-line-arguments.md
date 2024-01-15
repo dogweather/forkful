@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 阅读命令行参数。"
-simple_title:         "阅读命令行参数。"
+title:                "读取命令行参数"
+html_title:           "Arduino: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,36 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么：为什么阅读命令行参数是重要的
+为什么要读取命令行参数：
 
-在编程中，理解如何读取和使用命令行参数是非常重要的。命令行参数可以让我们在运行程序时输入自定义的参数，这样我们就可以实现更灵活的代码功能。对于Arduino编程来说，学习如何读取命令行参数会让我们的代码更加智能和集成化。
+读取命令行参数是一种常用的编程技巧，它能让我们的程序更加灵活和易于控制。通过读取用户输入的命令行参数，我们可以根据不同的需求执行不同的功能，从而提升程序的效率和可用性。
 
-## 如何：学习如何在Arduino中读取命令行参数
+如何读取命令行参数：
 
-在Arduino中，我们可以使用 `Serial` 库来读取命令行参数。首先，我们需要确保Arduino板与电脑连接，然后打开串口监视器。接下来，我们可以使用 `Serial.available()` 函数来检测是否有数据可读取，然后使用 `Serial.read()` 函数来读取每一个字符。最后，我们可以将读取到的命令行参数存储到变量中并在代码中使用它们。
+在Arduino中，读取命令行参数是通过利用Serial对象的serialEvent()函数实现的。我们首先需要定义一个字符数组来存储命令行参数，然后在serialEvent()函数中使用if语句来判断是否有新的命令行参数输入，并将其赋值给字符数组。下面是一个简单的示例代码：
 
 ```Arduino
-int num1, num2, result;
-Serial.begin(9600);
-
-if (Serial.available()) {
-  num1 = Serial.read() - '0'; // 将字符转换为数字
-  num2 = Serial.read() - '0';
+char command[10]; 
+void serialEvent(){
+  if (Serial.available()){
+    Serial.readBytesUntil('\n', command, 10);
+    // do something with command
+  }
 }
-
-result = num1 + num2;
-Serial.print("结果为：");
-Serial.println(result);
 ```
 
-运行上述代码后，在串口监视器中输入两个数字并发送，即可得到它们的和作为结果。
+当用户在串口监视器中输入命令行参数并发送后，serialEvent()函数会自动被调用，从而读取并处理用户输入的命令行参数。此外，我们还可以使用Serial.parseInt()函数来读取数字类型的命令行参数，例如：
 
-## 深入了解：关于读取命令行参数的更多信息
+```Arduino
+int num;
+void serialEvent(){
+  if (Serial.available()){
+    num = Serial.parseInt();
+    // do something with num
+  }
+}
+```
 
-除了上述简单的读取命令行参数的方法外，我们还可以使用 `Serial.parseInt()` 函数来直接将输入的参数转换为整数。此外，我们还可以通过输入分隔符来读取多个参数，例如使用空格 ` ` 或逗号 `,` 分隔。更多关于如何读取和处理命令行参数的具体方法可以通过以下链接学习。
+深入了解命令行参数：
 
-## 参考链接
+在Arduino中，命令行参数通常以空格为分隔符，且需要以换行符\n结尾才能被正确读取。此外，如果想要读取多个命令行参数，可以使用Serial.readStringUntil()函数来读取指定的分隔符之间的内容。例如，如果想要读取三个参数，可以使用如下代码：
 
-- [Arduino官方文档 - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino官方教程 - 简易命令行参数接口](https://www.arduino.cc/en/Tutorial/CommandLineArguments)
-- [Arduino命令行参数解析工具库 - CommandParser](https://github.com/davetcc/CommandParser)
+```Arduino
+String param1, param2, param3;
+void serialEvent(){
+  if (Serial.available()){
+    param1 = Serial.readStringUntil(' ');
+    param2 = Serial.readStringUntil(' ');
+    param3 = Serial.readStringUntil('\n');
+    // do something with param1, param2, param3
+  }
+}
+```
+
+另外，我们还可以使用Serial.find()函数来判断用户输入的命令行参数中是否包含某个特定的字符，从而增加程序的灵活性。更多关于读取命令行参数的详细信息，请参考官方文档。
+
+参考链接：
+
+- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/communication/serial/serial/)
+- [阮一峰的博客-Serial.parseInt()函数](http://www.ruanyifeng.com/blog/2017/08/serial-interface.html)
+- [Arduino语言参考手册-Serial.readStringUntil()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+
+其他相关：
+
+请参考下列链接了解更多关于Arduino编程的知识：
+
+- [为什么要学习Arduino？](https://www.electronicshub.org/why-should-you-learn-arduino/)
+- [Arduino编程入门指南](https://www.arduino.cc/en/Tutorial/HomePage)
+- [使用Arduino进行物联网开发](https://www.makeuseof.com/tag/getting-started-with-arduino-a-beginners-guide/)

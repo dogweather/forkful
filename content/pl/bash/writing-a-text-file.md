@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Bash: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego piszemy pliki tekstowe?
+## Dlaczego
 
-Pisanie plików tekstowych jest nieodłączną częścią programowania w Bash. Pozwala ono na tworzenie skryptów, a także na zapisywanie wszelkich komunikatów czy danych wyjściowych działającego kodu. Wiele zadań, które wykonujemy w systemie operacyjnym, wymaga również korzystania z plików tekstowych.
+Pisanie plików tekstowych jest nieodłączną częścią programowania w Bashu. Jest to nie tylko użyteczna umiejętność do posiadania, ale także niezbędna, jeśli chcesz tworzyć skrypty Bash, które są w stanie przetwarzać i manipulować danymi.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pierwszym krokiem w tworzeniu plików tekstowych jest uruchomienie edytora tekstu, na przykład Vi. Następnie należy stworzyć nowy plik z rozszerzeniem .txt, a po zapisaniu wprowadzonych zmian, plik będzie gotowy do użycia. 
-
-Przykładowy kod, który umożliwia stworzenie i zapisanie pliku tekstowego, wygląda następująco:
-
+Aby stworzyć nowy plik tekstowy w Bashu, użyj polecenia `touch` w następujący sposób:
 
 ```Bash
-# Tworzenie i otwieranie pliku tekstowego
 touch nowy_plik.txt
-vi nowy_plik.txt
-
-# Przykładowa treść do zapisania
-"Mój pierwszy plik tekstowy!"
-
-# Zapisywanie pliku
-:wq
 ```
 
-Po uruchomieniu tego kodu, w bieżącym folderze zostanie stworzony plik o nazwie "nowy_plik.txt", w którym znajduje się zadany tekst. 
+Powyższa komenda tworzy nowy plik o nazwie "nowy_plik.txt". Aby edytować ten plik tekstowy, możesz użyć dowolnego edytora tekstu, takiego jak `nano` lub `vim`. Na przykład, aby otworzyć plik w `nano`, możesz użyć polecenia:
 
-## Dogłębna analiza
+```Bash
+nano nowy_plik.txt
+```
 
-Pliki tekstowe są jednym z podstawowych sposobów reprezentacji informacji w systemie pracy Bash. Pozwalają one na przechowywanie i przetwarzanie danych, dzięki czemu są niezbędne w wielu aspektach programowania.
+Po zakończeniu edycji pliku tekstowego, zapisz go używając kombinacji klawiszy `Ctrl+X`, a następnie zatwierdź zmiany klikając `y` i naciskając `Enter`.
 
-W pliku tekstowym można zapisywać różnego rodzaju dane, począwszy od prostych komunikatów, a skończywszy na złożonych dokumentach czy raportach. Jest to uniwersalny format, który może być czytany przez różne programy, a jego treść może być łatwo edytowana przez użytkownika.
+## Zagłębienie
 
-Dodatkową zaletą plików tekstowych jest możliwość przekazywania danych między różnymi programami, co jest niezwykle przydatne w przypadku skryptów Bash. Dzięki temu, możliwe jest w prosty sposób przetworzenie danych wyjściowych jednego skryptu i wykorzystanie ich w kolejnym.
+W Bashu istnieje wiele komend i funkcji, które można wykorzystać do pisania plików tekstowych. Jednym z przydatniejszych poleceń jest `echo`, które pozwala wypisywać treść tekstu lub zmiennych do pliku tekstowego. Na przykład:
+
+```Bash
+echo "To jest przykładowy tekst" > nowy_plik.txt
+```
+
+Powyższa komenda wypisze "To jest przykładowy tekst" do pliku tekstowego "nowy_plik.txt". Innym przydatnym poleceniem jest `cat`, które służy do wyświetlania zawartości pliku. Na przykład:
+
+```Bash
+cat nowy_plik.txt
+```
+
+Spowoduje wyświetlenie zawartości pliku "nowy_plik.txt" w terminalu.
 
 ## Zobacz także
 
-- [Pisanie skryptów w Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Podstawy pracy z plikami tekstowymi w Ubuntu](https://www.ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+- [Bash - Oficjalna strona](https://www.gnu.org/software/bash/)
+- [Kurs Bash - Tłumaczenie dokumentacji GNU](https://www.tldp.org/LDP/abs/html/)
+- [BashGuide - Przewodnik po skryptach Bash](http://mywiki.wooledge.org/BashGuide)

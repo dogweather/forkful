@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: מחיקת תווים התואמים לתבנית"
-simple_title:         "מחיקת תווים התואמים לתבנית"
+title:                "מחיקת תווים התואמים תבנית"
+html_title:           "Javascript: מחיקת תווים התואמים תבנית"
+simple_title:         "מחיקת תווים התואמים תבנית"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,33 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # למה
-
-ניתן למחוק תווים שתואמים את התבנית כדי לקבל טקסט מסודר ולפתור בעיות של ביצועים עם מחרוזות גדולות.
+נמחקת התקנה כרגע. התקנה החדשה של גרסת ג'אבסקריפט הנוכחית היא להסיר תווים המתאימים לתבנית מוגדרת.
 
 ## איך לעשות זאת
+הנה כמה דוגמאות קוד למחיקת תווים מתאימים לתבנית נתונה:
 
-שימוש בפונקציית התיקון המובנת string.replace() בוואנילה ג'אווהסקריפט:
-
-```Javascript
-let str = "זהו טקסט לדוגמה עם תווים שאנו רוצים למחוק!";
-let newStr = str.replace(/[א-ת]/g, ""); // תווים אלפאביתיים בעברית נמחקים
-console.log(newStr); // טקסטדוגמעמחוק
+```javascript
+const string = "איך למחוק אותיים כמו אלה?";
+const regex = /[אהו]/gi;
+const newString = string.replace(regex, "");
+console.log(newString); // ך למח אתיים כמ דל?
 ```
 
-פרטים נוספים על שימוש בתבניות ומתקן השבת העמוק:
-
-```Javascript
-let str = "המחרוזת שאנו רוצים לעבוד איתה.";
-let newStr = str.replace(/תבנית/, "מחרוזת חדשה"); // להחלפת המחרוזת המגוונת שאתה רואה בהתאם לתבנית
-console.log(newStr); // המחרוזת שאנו רוצים לעבוד איתה.
+```javascript
+const array = ["כרגע", "אתה", "למלאות", "החליפה"];
+const regex = /[אמל]/gi;
+const newArray = array.filter(word => !word.match(regex));
+console.log(newArray); // ["אתה", "החיפה"]
 ```
 
-## עמוק יותר
+```javascript
+const object = {
+    name: "שירה",
+    age: 24,
+    language: "ישראלית"
+};
+const regex = /[ודמ]/gi;
+const newObject = Object.fromEntries(Object.entries(object).filter(entry => !entry[1].match(regex)));
+console.log(newObject); // { name: "שרה", language: "ישרלית"}
+```
 
-ישנם מספר דרכים שונות למחוק תווים במחרוזת, וכל אחת מהן מתאימה למצבים שונים. ניתן להשתמש בתבניות שמשתמשות בתווים של אלפאנומרי או בתווים נגרי. ניתן גם לשנות את התבנית המקורית, או לשנותה תוך כדי או לאחר הפעולה.
+## חקירה מעמיקה
+מחיקת תווים על פי תבניות היא כלי חזק שיכול לעזור לך לעקוף עבודות יצירתיות בקוד. כאשר אתה מוצא את התבנית הנכונה עבור התווים שאתה רוצה למחוק, אתה יכול לחסוך זמן רב ומאמץ. כמו כן, היכולת למחוק תווים על פי תבניות מגדילה את יכולת הקוד שלך ומאפשרת כתיבת קוד יותר נקי ויעיל.
 
-# ראו גם
-
-- [תיעוד JavaScript MDN](https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExp.prototype.test() MDN תיעוד](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
-- [תבניות רגולריות למתחילים - תיעוד אקספרס](https://expressjs.com/en/guide/using-middleware.html#middleware.built-in)
+# ראה גם
+ - [MDN פנטזיה: मारोंयो वर्ण] (https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [מבוא לאתרים טכנולוגיים: מבוא לתבניות רגילות] (https://www.tau-tech.co.il/blog/javascript/regular-expressions)

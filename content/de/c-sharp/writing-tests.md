@@ -1,5 +1,6 @@
 ---
-title:                "C#: Tests schreiben"
+title:                "Tests schreiben"
+html_title:           "C#: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "C#"
 category:             "C#"
@@ -11,44 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Tests ist ein wichtiger Bestandteil einer guten Softwareentwicklung. Durch das Testen unserer Code können wir sicherstellen, dass er zuverlässig funktioniert und potenzielle Fehler frühzeitig erkennen. Außerdem können Tests dabei helfen, den Code übersichtlicher und wartbarer zu machen.
+Testen ist ein wichtiger Teil der Softwareentwicklung, da es uns hilft, sicherzustellen, dass unser Code zuverlässig und fehlerfrei ist. Durch das Schreiben von Tests können wir auch verhindern, dass Änderungen im Code unerwartete Nebenwirkungen haben. Es mag zwar zeitaufwändig sein, Tests zu schreiben, aber es lohnt sich, um sicherzustellen, dass unsere Anwendungen erfolgreich sind.
 
-## Wie Geht Es
+## Wie geht es
 
-Um Tests in C# zu schreiben, müssen wir zunächst ein Test-Framework wie zum Beispiel NUnit oder xUnit einbinden. Dann können wir unsere Tests in Klassen schreiben, die von einer Testklasse erben und mit Prüfmethoden wie Assert.AreEqual() oder Assert.IsTrue() überprüfen, ob das erwartete Ergebnis erreicht wurde.
+Um Tests in C# zu schreiben, verwenden wir das eingebaute Testframework namens "NUnit". Zuerst müssen wir "NUnit" über den NuGet-Paket-Manager in unser Projekt hinzufügen. Dann können wir innerhalb unserer Testklasse verschiedene Methoden verwenden, wie zum Beispiel `Assert`, um zu überprüfen, ob die erwarteten Ergebnisse erzielt werden. Hier ist ein Beispiel:
 
-Hier ist ein Beispiel für einen einfachen Test, der überprüft, ob die Summe von zwei Zahlen korrekt berechnet wird:
+```
+using NUnit.Framework;
 
-```C#
-public class CalculatorTests : TestBase
+[TestFixture]
+public class CalculatorTests
 {
     [Test]
-    public void TestAddTwoNumbers()
+    public void TestAddition()
     {
         // Arrange
-        Calculator calculator = new Calculator();
-
+        int num1 = 5;
+        int num2 = 10;
+        
         // Act
-        int result = calculator.Add(2, 3);
-
+        int result = num1 + num2;
+        
         // Assert
-        Assert.AreEqual(5, result);
+        Assert.AreEqual(15, result);
     }
 }
 ```
 
-Durch das Ausführen dieses Tests erhalten wir im Idealfall eine grüne Markierung, die zeigt, dass der Test erfolgreich war. Wenn der Test fehlschlägt, wird uns genau angezeigt, an welcher Stelle der Code nicht wie erwartet funktioniert, was das Debugging erleichtert.
+In diesem Beispiel erstellen wir eine Testklasse namens "CalculatorTests" und verwenden die Methode `Test` von NUnit, um unsere Testmethode zu markieren. Innerhalb dieser Methode führen wir unsere Berechnung aus und verwenden dann `Assert.AreEqual`, um zu überprüfen, ob das Ergebnis dem erwarteten Ergebnis entspricht. Durch das Ausführen dieser Tests können wir sicherstellen, dass unsere "Calculator"-Klasse korrekt funktioniert.
 
-## Tiefer Einblick
+## Tiefer eintauchen
 
-Um effektive Tests zu schreiben, sollten wir uns mit den verschiedenen Arten von Tests auseinandersetzen, wie zum Beispiel Unit Tests, Integrations- und Akzeptanztests. Außerdem ist es wichtig, gute Praktiken wie Test Driven Development (TDD) zu erlernen, um bereits während des Schreibens von Code an Tests zu denken.
+Es gibt viele Möglichkeiten, Tests zu schreiben und zu organisieren, je nach den spezifischen Anforderungen und Vorlieben jedes Entwicklers. In C# können wir auch verschiedene "Test Runner" wie "Test Explorer" oder "ReSharper" verwenden, um unsere Tests auszuführen und die Ergebnisse anzuzeigen. Außerdem gibt es Konzepte wie "Test-Driven Development" und "Behavior-Driven Development", die eine andere Herangehensweise an das Schreiben von Tests bieten.
 
-Es gibt auch verschiedene Techniken und Tools, mit denen wir unsere Tests noch effizienter gestalten können, wie zum Beispiel Mocking-Frameworks oder automatisierte Testausführung.
+## Siehe auch
 
-Insgesamt ist es wichtig, sich kontinuierlich mit dem Schreiben von Tests auseinanderzusetzen und zu verbessern, um einen qualitativ hochwertigen Code zu produzieren.
-
-## Siehe Auch
-
-- [xUnit.net](https://xunit.net/)
-- [NUnit](https://nunit.org/)
-- [Test Driven Development: By Example by Kent Beck](https://www.goodreads.com/book/show/387190.Test_Driven_Development)
+- [NUnit-Dokumentation] (https://nunit.org/docs/)
+- [Microsoft-Dokumentation zu Tests in C#] (https://docs.microsoft.com/de-de/dotnet/core/testing/)
+- [Artikel über Test-Driven Development in C#] (https://dzone.com/articles/test-driven-development-with-csharp)

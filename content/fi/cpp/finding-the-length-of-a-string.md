@@ -1,6 +1,7 @@
 ---
-title:                "C++: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "C++: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,33 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisimme etsiä merkkijonon pituutta? Todennäköisesti jossain vaiheessa ohjelmointia joudumme käsittelemään merkkijonoja ja niiden ominaisuuksia. Merkkijonon pituuden löytäminen on tärkeä taito, jota tarvitaan monissa ohjelmointitehtävissä.
+String-muuttujan pituuden selvittäminen on tärkeää, koska se auttaa ohjelmoijaa käsittelyyn käytettävän muistin hallinnassa. Lisäksi se mahdollistaa tietojen tarkastamisen ja manipuloinnin tarkasti ja nopeasti.
 
 ## Miten
 
-Merkkijonon pituus voidaan helposti löytää käyttämällä `length()` -funktiota. Tämä funktio palauttaa merkkijonon pituuden kokonaislukuna.
-
-```C++ 
+```C++
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int main()
-{
-    string s = "Tämä on esimerkki";
-    cout << "Merkkijonon pituus on: " << s.length() << endl;
+int main(){
+
+  // Määritellään string-muuttuja
+  string s = "Hei maailma!";
+
+  // Selvitetään merkkijonon pituus ja tulostetaan se
+  int length = s.length();
+  cout << "Merkkijonon pituus on: " << length << endl;
+
+  return 0;
 }
 ```
-**Output:**
-Merkkijonon pituus on: 18
+
+**Tuloste:**
+```
+Merkkijonon pituus on: 12
+```
 
 ## Syvempi sukellus
 
-Miksi käyttää `length()` -funktiota sen sijaan, että laskettaisiin merkkien määrä itse? Tähän on useita syitä. Ensinnäkin, käyttämällä valmiiksi määriteltyä funktiota säästämme aikaa ja vaivaa, sillä funktio on optimoitu ja tehokas. Toiseksi, se takaa oikean tuloksen, sillä mukana tulevat turvatoimet välttävät virheellisiä laskutoimituksia. Lisäksi, jos käytämme esimerkiksi `for` -silmukkaa merkkijonon läpikäymiseen, `length()` -funktion käyttö helpottaa koodin ymmärtämistä ja vähentää virheiden mahdollisuutta.
+String-muuttujien pituuden selvittäminen tapahtuu käyttämällä "length" -funktiota C++:ssa. Tämä funktio palauttaa merkkijonon pituuden kokonaislukuna. **Huomaa**, että tämä funktio ei laske mukaan merkkijonon loppuun lisättyä jäsentä.
+
+Lisäksi on olemassa muita vaihtoehtoisia tapoja saada selville string-muuttujan pituus, kuten "size" -funktio tai "for" -silmukan käyttäminen. On hyvä tutustua eri vaihtoehtoihin ja valita paras tapa jokaiseen tilanteeseen.
 
 ## Katso myös
 
-- [Stringin käyttö C++:ssa](https://www.cplusplus.com/doc/tutorial/ntcs/)
-- [Merkkijonojen käsittely C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [Funktioiden käyttö C++:ssa](https://www.geeksforgeeks.org/functions-in-cpp/)
+- [C++ stringien käyttö](https://www.ohjelmointiputka.net/c-plus-plus/c-plus-plus-stringit.php)
+- [C++ string-muuttujien määrittely](https://www.ohjelmointiputka.net/c-plus-plus/c-plus-plus-muuttujat.php#string)
+- [C++ "length" -funktio](https://www.cplusplus.com/reference/string/string/length/)

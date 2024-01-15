@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Arduino: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜWebページをダウンロードするのか？
+## なぜ
+ウェブページをダウンロードする理由は様々です。例えば、外出先でスマートフォンを使用せずにコンピューターでウェブサイトを閲覧する必要がある場合や、特定のデータを取得したい場合などがあります。
 
-Webページをダウンロードすることで、インターネット上に存在する様々な情報やデータを手軽に取得することができます。例えば、天気予報やニュース、または自分のブログの最新記事などを取得することができます。
+## ダウンロードする方法 
+以下のArduinoコードを使用して、特定のウェブサイトのコンテンツをダウンロードすることができます。
 
-## ダウンロードの方法
+```Arduino
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-Webページをダウンロードするために、Arduinoプログラムを使用することができます。以下のように、ArduinoでWebページをダウンロードするためのコードを示します。まずはWiFiモジュールを接続し、インターネットに接続します。
+void setup() {
+  Serial.begin(9600);
 
+  WiFi.begin("Wi-Fiネットワークの名前", "パスワード");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("接続中...");
+  }
+}
+
+void loop() {
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    http.begin("ウェブサイトのURL");
+    int httpCode = http.GET();
+
+    if (httpCode > 0) {
+      String payload = http.getString();
+      Serial.println(payload);
+    }
+    http.end();
+  }
+  delay(5000);
+}
 ```
-Arduino WiFiモジュールを初期化
-WiFi接続を開始
-```
 
-次に、ダウンロードしたいWebページのURLを指定します。
-
-```
-URLを指定する
-```
-
-最後に、ダウンロードしたい情報のデータを取得し、表示するようにプログラムを書きます。
-
-```
-Webページからデータを取得する
-データを表示する
-```
-
-以上で、簡単にWebページをダウンロードし、必要なデータを取得することができます。
+上記のコードは、Wi-Fiネットワークに接続し、指定したウェブサイトのコンテンツを取得した後、シリアルモニターに内容を出力します。ご自身の目的に合わせてコードをカスタマイズすることができます。
 
 ## 深堀り
+HTTPClientライブラリを使用すると、より詳細な操作を行うことができます。例えば、POSTリクエストを使用してデータを送信したり、HTTPヘッダーを設定したりすることができます。また、セキュリティのためにHTTPSリクエストを行うこともできます。
 
-この方法では、Arduinoボードは単にWebページから情報を受け取るだけでなく、ダウンロードしたデータを処理することも可能です。例えば、特定の条件に応じてLEDを点灯させたり、音を鳴らしたりするような動作もプログラムに組み込むことができます。また、WiFiモジュールを使用することで、自宅の安全性を監視するためのセンサーデータをダウンロードしたり、リモートコントロールを行ったりすることもできます。
-
-## おすすめリンク
-
-- [Arduinoの公式サイト](https://www.arduino.cc/)
-- [ArduinoでWiFiモジュールを使用する方法](https://www.arduino.cc/en/Reference/WiFi)
-- [WiFiモジュールを使用してGoogleからデータを取得する方法](https://bitbucket.org/account/user/talk2bruce22/projects/ARDUINO)
+## おまけ 
+- [HTTPClientライブラリのドキュメント](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/httpclient-class.html)
+- [ウェブサイトにリクエストを送信するプログラムのサンプルコード](https://randomnerdtutorials.com/esp32-http-get-post-arduino/)

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Gleam: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,71 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que utilizar a impressão de saída de depuração em Gleam?
+## Por que
 
-A impressão de saída de depuração é uma técnica valiosa para programadores que desejam monitorar o fluxo de execução de seus códigos e verificar se os resultados estão de acordo com o esperado. Com o Gleam, essa ferramenta pode ser facilmente implementada e proporcionar uma melhor compreensão do funcionamento do programa.
+O uso de impressão de saída para debug é uma ferramenta essencial para os programadores que desejam rastrear o comportamento de seus programas e encontrar possíveis erros de maneira eficiente.
 
-## Como fazer:
+## Como Fazer
 
-A impressão de saída de depuração no Gleam é realizada com o uso do comando `debug!` seguido de uma expressão que se deseja imprimir. O resultado será mostrado no console durante a execução do programa.
+Para utilizar a impressão de saída para debug em Gleam, você pode seguir o exemplo abaixo:
 
-```
-Gleam
-def contagem_inversa() {
-    let numeros = [5, 4, 3, 2, 1]
-    debug! numeros
-    iterar(numeros)
-}
+```Gleam
+import gleam/io
 
-def iterar(lista) {
-    debug! "Iniciando iteração..."
-    loop contador de 0 até comprimento(lista) - 1 {
-        debug! "Iteração em andamento:", lista[contador]
-    }
-    debug! "Iteração concluída!"
+pub fn main() {
+  let name = "Maria"
+  let age = 28
+
+  io.print("Nome: {}", [name])
+  io.print("Idade: {}", [age])
 }
 ```
 
-A saída desse código seria:
+Este código irá imprimir a seguinte saída:
 
 ```
-[5, 4, 3, 2, 1]
-Iniciando iteração...
-Iteração em andamento: 5
-Iteração em andamento: 4
-Iteração em andamento: 3
-Iteração em andamento: 2
-Iteração em andamento: 1
-Iteração concluída!
+Nome: Maria
+Idade: 28
 ```
 
-## Aprofundando:
+Note que utilizamos `{}` nos textos que queríamos inserir o valor das variáveis. Isso é chamado de formatação de string e é uma maneira conveniente de exibir o valor de variáveis em textos.
 
-Além de simplesmente imprimir valores, o comando `debug!` também pode ser usado para inserir condições em nossos programas, interrompendo a execução caso alguma dessas condições seja atendida. Isso pode ser útil para identificar possíveis erros e bugs no código.
+## Deep Dive
 
-Por exemplo, podemos adicionar um `debug!` dentro do loop `iterar` para imprimir apenas os valores pares da lista:
+Existem diferentes métodos de impressão de saída para debug em Gleam, como `io.print`, `io.print_line`, `io.print_info`, entre outros. Cada um destes métodos pode ser usado para imprimir diferentes tipos de dados, como números, texto, listas e até mesmo estruturas de dados complexas.
 
-```
-loop contador de 0 até comprimento(lista) - 1 {
-    if lista[contador] % 2 == 0 {
-        debug! "Número par encontrado:", lista[contador]
-    }
-}
-```
+Além disso, a impressão de saída para debug pode ser combinada com estruturas de controle de fluxo, como `if`, `case` e `for`, para exibir informações apenas quando certas condições são atendidas.
 
-A saída seria:
+Não subestime o poder da impressão de saída para debug em sua jornada de programação. Com ela, você pode economizar tempo e esforço na hora de encontrar e corrigir erros em seu código.
 
-```
-Número par encontrado: 4
-Número par encontrado: 2
-```
+## Veja Também
 
-Vale ressaltar que é importante remover todos os comandos `debug!` antes de finalizar o código e colocá-los apenas quando necessário, caso contrário, pode haver um grande impacto na performance do programa.
-
-# Veja também:
-
-- Documentação oficial do Gleam sobre impressão de saída de depuração:
-https://gleam.run/book/tour/side-effects.html#debugging-code
-
-- Artigo sobre melhores práticas de debug em Gleam:
-https://dev.to/thejunkland/dealing-with-debugging-in-production-with-gleam-1mer
+- [Documentação Oficial do Gleam](https://gleam.run/documentation/)
+- [Tutorial de Gleam](https://gleam.run/getting-started/)
+- [Gleam no Github](https://github.com/gleam-lang/gleam)

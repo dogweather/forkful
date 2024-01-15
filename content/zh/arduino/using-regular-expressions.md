@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 使用正则表达式"
+title:                "使用正则表达式"
+html_title:           "Arduino: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,48 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式？
+## 为什么要使用正则表达式？
 
-在编写Arduino程序时，您可能会遇到需要对输入数据进行特定格式的匹配或提取字符串的情况。这时，正则表达式就能帮上大忙了。它是一种强大的工具，可以根据指定的规则在字符串中进行匹配和替换，使得数据处理更加方便快捷。
+使用正则表达式可以让我们更方便地在文本中搜索、替换和匹配特定的模式，从而提高编程效率。
 
-# 如何使用正则表达式？
+## 如何使用正则表达式在Arduino中匹配模式？
 
-要在Arduino中使用正则表达式，我们需要用到软件库Regex。首先，在库管理器中搜索Regex，然后安装它。接着，我们需要设置一个Regex对象，指定我们想要匹配的模式。下面是一个简单的例子，它将匹配一个由3个数字组成的字符串，并将其转换为整数类型。
-
-```Arduino
-#include <Regex.h>
-
-void setup() {
-  // 设置Regex对象，指定我们想要匹配的模式
-  Regex regex("[0-9]{3}");
-  
-  // 创建一个字符串用于匹配
-  String input = "123";
-  
-  // 使用match()方法进行匹配，并将结果转换为整数类型
-  int result = regex.match(input).toInt();
-  
-  // 打印结果
-  Serial.println(result); // 输出：123
-}
-
-void loop() {
-  // 程序循环
+```arduino
+// 匹配文本中的数字
+String text = "今天是2021年12月31日";
+String pattern = "[0-9]+"; // 这个正则表达式可以匹配一串连续的数字
+if (text.find(pattern) != -1) { // 在文本中搜索匹配的模式
+  Serial.println("找到匹配的数字：");
+  Serial.println(text); // 输出匹配的数字
 }
 ```
 
-这只是一个简单的例子，您可以使用正则表达式来实现更复杂的数据处理任务，如验证电子邮件地址或提取URL链接等。
+```arduino
+// 替换文本中的非字母符号为空格
+String text = "Hello! Welcome to Arduino!";
+String pattern = "[^a-zA-Z]+"; // 这个正则表达式可以匹配非字母符号
+text.replaceAll(pattern, " "); // 将匹配到的非字母符号替换为空格
+Serial.println(text); // 输出替换后的文本
+```
 
-# 深入了解正则表达式
+## 深入了解正则表达式
 
-正则表达式的语法相对复杂，需要一定的学习和练习才能熟练掌握。它包含各种特殊字符和模式，可以根据需要进行灵活的组合。您可以通过查阅正则表达式的参考资料或参加相关的课程来深入了解它的用法和常见的编写错误。
+正则表达式由字符、元字符和操作符构成，可以使用它们来表示不同的文本模式。在Arduino中，我们可以使用一些常见的元字符和操作符来匹配模式。
 
-# 参考资料
+元字符：
+- `.`：匹配任意字符
+- `[]`：匹配指定范围内的字符
+- `+`：匹配前一项一次或多次
+- `*`：匹配前一项零次或多次
+- `?`：匹配前一项零次或一次
+- `\`：转义字符，用于匹配特殊字符
+- `^`：匹配以指定字符开头
 
-- Regex软件库：https://www.arduino.cc/reference/en/libraries/regex/
-- Arduino正则表达式教程：https://www.arduino.cc/reference/en/language/functions/communication/regex/
-- 正则表达式基础知识：https://www.w3schools.com/js/js_regexp.asp
+操作符：
+- `|`：匹配多个模式中的一个
+- `()`：分组，用于提取匹配的子字符串
+- `{n,m}`：匹配前一项n到m次
+- `{n}`：匹配前一项n次
 
-# 参见
+更多关于正则表达式的信息，请参考[Arduino官方文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/find/)。
 
-- Arduino官方参考文档：https://www.arduino.cc/reference/en/
+## 参考链接
+
+了解正则表达式的更多知识：
+- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+- [正则表达式语法速查表](https://github.com/petey/static/blob/master/regex-cheat.html)
+
+了解Arduino中String类的使用：
+- [Arduino官方文档-String类](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Arduino官方文档-String类函数](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+
+## 查看其他相关文章
+
+- [使用Arduino控制LED灯](https://github.com/madmann91/arduino-led-article)
+- [Arduino中的Serial通信](https://github.com/madmann91/arduino-serial-article)
+- [用Arduino制作一个温度计](https://github.com/madmann91/arduino-temperature-article)

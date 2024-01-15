@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att arbeta med CSV-formatet"
-simple_title:         "Att arbeta med CSV-formatet"
+title:                "Arbeta med csv"
+html_title:           "Gleam: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-CSV är en vanlig filtyp som används för att lagra data i tabellform. Att kunna arbeta med CSV i dina Gleam-program öppnar upp möjligheten att manipulera, filtrera och analysera stora mängder data. Detta kan vara till stor hjälp för forskare, dataanalytiker, eller bara för att organisera och hantera data i ditt program.
+CSV (Comma-Separated Values) är en vanlig format för att lagra och dela tabulära data. Det är ett användbart verktyg för programmerare att arbeta med eftersom det är lätt att läsa och hantera data från CSV-filer.
 
 ## Hur man gör
+Att arbeta med CSV i Gleam är enkelt och smidigt. Först behöver vi importera paketet `"csv"` för att få tillgång till dess funktioner. Sedan kan vi använda funktionen `Csv.read` för att läsa in en CSV-fil som en lista av rader och kolumner.
 
-För att arbeta med CSV i Gleam behöver du först importera `gleam/csv` biblioteket. Sedan kan du läsa in en CSV-fil med funktionen `read_file` och spara den i en variabel.
+```Gleam
+use gleam/csv
 
-```
-import gleam/csv
+let csv = "namn,ålder,land
+Lisa,25,Sverige
+Eva,30,Norge"
 
-let csv = csv.read_file("data.csv")
-```
+let data = Csv.read(csv)
 
-För att få ut datan från CSV-filen kan du använda funktionen `parse` tillsammans med den sparade variabeln. Den returnerar en lista med listor som representerar varje rad i CSV-filen.
-
-```
-let data = csv.parse()
-```
-
-Om ditt CSV-dokument har headers kan du hämta dessa med funktionen `headers`.
-
-```
-let headers = csv.headers()
+// data blir: [ ["namn", "ålder", "land"], ["Lisa", "25", "Sverige"], ["Eva", "30", "Norge"] ]
 ```
 
-Nu kan du använda Gleams inbyggda funktioner som `list.map` och `list.filter` för att manipulera och filtrera datan på olika sätt.
+Om du vill ändra på formatet av en CSV fil, kan du använda funktionen `Csv.format` för att omvandla listan av rader och kolumner till en sträng i CSV-format.
 
+```Gleam
+use gleam/csv
+
+let data = [
+  ["namn", "ålder", "land"],
+  ["Lisa", "25", "Sverige"],
+  ["Eva", "30", "Norge"]
+]
+
+let csv = Csv.format(data)
+
+// data blir: "namn,ålder,land
+// Lisa,25,Sverige
+// Eva,30,Norge"
 ```
-let filtered_data = list.filter(data, _ -> .id == "123")
 
-let mapped_data = list.map(data, row -> {
-  .name = row.name,
-  .age = row.age,
-  .city = row.city
-})
+För att skriva ut en CSV-fil till en fil kan vi använda funktionen `Csv.write` tillsammans med en filhandtag.
+
+```Gleam
+use gleam/csv
+use gleam/io
+
+let data = [
+  ["namn", "ålder", "land"],
+  ["Lisa", "25", "Sverige"],
+  ["Eva", "30", "Norge"]
+]
+
+let csv = Csv.format(data)
+
+let file = File.create("minfil.csv", .write)
+Csv.write(file, csv)
 ```
 
 ## Djupdykning
+Det finns många funktioner för att hantera CSV i Gleam, som till exempel `Csv.row` för att läsa in en specifik rad, `Csv.column` för att läsa in en specifik kolumn och `Csv.decode` för att omvandla data från CSV-filen till specifika typer.
 
-För att ge dig mer kontroll över hur du läser in och hanterar data från CSV-filer finns det många konfigurationsalternativ som du kan använda i `csv.read_file`. Till exempel kan du ange separatorn mellan kolumner, ignorera rader utan data och välja vilka kolumner som ska inkluderas.
-
-Du kan också använda funktionerna `to_map` och `to_row` för att konvertera datan till en mer användarvänlig form. `to_map` skapar en map med kolumnnamn som nycklar och värden från varje rad som värden. `to_row` gör samma sak, men returnerar en rad i stället för en map.
+Det är också möjligt att konfigurera `Csv.read` för att hantera specialfall, till exempel olika skiljetecken eller escape-tecken.
 
 ## Se även
-
-- [Gleams officiella dokumentation för CSV](https://gleam.run/documentation/std/csv.html)
-- [En guide för hur man arbetar med CSV i Gleam](https://gleam.run/news/arbeta-med-csv-filer-i-gleam.html)
-- [En tutorial om hur man importerar och arbetar med data i Gleam](https://meltwater.github.io/guide/guide-data-import.html)
+- [Officiell dokumentation för gleam/csv paketet](https://gleam.run/packages/gleam/csv/latest/)
+- [GitHub-repositorium för gleam/csv paketet](https://github.com/gleam-lang/csv)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 用基本身份验证发送http请求"
-simple_title:         "用基本身份验证发送http请求"
+title:                "发送带基本身份验证的http请求"
+html_title:           "Swift: 发送带基本身份验证的http请求"
+simple_title:         "发送带基本身份验证的http请求"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,60 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要发送HTTP请求使用基本认证？
+##为什么
 
-发送HTTP请求使用基本认证是一种安全措施，用于验证用户身份并确保信息的安全性。它允许您在发出请求时提供用户名和密码，以便服务器可以验证您的身份并授权您访问受限资源。
+如果你想要在你的Swift应用程序中与服务器进行交互，那么发送HTTP请求是必不可少的。但是有些服务器要求进行身份验证才能访问特定的资源，这就需要使用基本认证来发送HTTP请求。
 
-# 如何发送HTTP请求使用基本认证？
+##如何进行
 
-发送HTTP请求使用基本认证可以通过以下步骤实现：
-
-1. 导入Alamofire库（如果您正在使用它）。
+首先，我们需要将URL和请求类型（GET，POST，DELETE等）存储在常量中。然后，我们需要创建一个URLSession对象，并使用该对象来创建一个URLRequest。接下来，在该请求中添加基本认证信息，这需要通过将用户名和密码转换为Base64编码来实现。最后，我们可以使用URLSession对象来发送请求，并处理响应数据。
 
 ```Swift
-import Alamofire
-```
+let url = URL(string: "https://example.com/resource")
+let request = URLRequest(url: url!)
+let session = URLSession.shared
 
-2. 创建一个请求对象，其中包含您要访问的URL以及所需的参数。
+// Add basic authentication to request
+let username = "username"
+let password = "password"
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+let base64LoginString = loginData?.base64EncodedString()
 
-```Swift
-let url = "www.example.com"
-let parameters = ["username": "John", "password": "12345"]
-```
+request.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-3. 使用Alamofire库的`.authenticate`方法添加基本认证。
-
-```Swift
-Alamofire.request(url, parameters: parameters)
-    .authenticate(user: "John", password: "12345")
-    .response { response in
-        debugPrint(response)
+// Send the request and handle the response
+let task = session.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print(error?.localizedDescription ?? "No data")
+        return
     }
-```
-
-4. 您可以使用其他方法来接收响应并处理它，例如，如果您需要JSON格式的响应，可以使用`.responseJSON`方法。
-
-```Swift
-Alamofire.request(url, parameters: parameters)
-    .authenticate(user: "John", password: "12345")
-    .responseJSON { response in
-        if let json = response.result.value {
-            print("JSON: \(json)")
-        }
+    if let response = response as? HTTPURLResponse {
+        print(response.statusCode)
+        print(String(data: data, encoding: .utf8)!)
     }
+}
+
+task.resume()
 ```
 
-# 深入了解发送HTTP请求使用基本认证
+##深入探讨
 
-在发送HTTP请求使用基本认证时，服务器将返回一个状态码来指示认证是否成功。常见的状态码有：
+基本认证要求在请求头中添加一个名为"Authorization"的字段，其值为"Basic"加上base64编码的用户名和密码。这样，服务器就可以使用这些信息来验证请求的发送者。当然，这种简单的认证方式并不安全，因为用户名和密码是以明文形式传输的。因此，我们应该尽可能地使用HTTPS来加密我们的请求和响应数据。
 
-- `200 OK`：认证成功，服务器将返回所请求的资源。
-- `401 Unauthorized`：未经授权，服务器需要进一步验证您的身份。
-- `403 Forbidden`：资源被禁止访问，您无权访问所请求的资源。
+##另请参阅
 
-此外，您还可以选择使用其他认证方法，例如OAuth 2.0或Token认证。这些方法都可以提供更高级的安全性，但使用基本认证已经足以保护大多数网络应用程序的安全性。
-
-# 参考链接
-
-- [Alamofire Authentication](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Authentication.md)
-- [HTTP Authentication: Basic and Digest Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [使用Alamofire发送基本认证HTTP请求](https://www.swiftbysundell.com/articles/using-alamofire-to-interact-with-a-rest-api/)
+- [官方文档：URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [官方文档：URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Senden einer http Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http Anfrage mit grundlegender Authentifizierung"
+title:                "Eine http-Anfrage mit grundlegender Authentifizierung senden"
+html_title:           "Python: Eine http-Anfrage mit grundlegender Authentifizierung senden"
+simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,46 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Das Senden von HTTP-Anfragen mit Basic Authentication ist eine Möglichkeit, sicher auf geschützte Ressourcen zuzugreifen. Dies kann beispielsweise für die Integration von externen APIs oder das Zugreifen auf Bereiche einer Website erforderlich sein, die nur für autorisierte Benutzer zugänglich sind.
 
-Das Senden von HTTP-Anfragen mit Basissauthentifizierung ist ein wichtiger Prozess während der Programmierung, da es ermöglicht, auf geschützte Ressourcen zuzugreifen. Dies kann hilfreich sein, wenn man beispielsweise mit APIs arbeitet oder auf bestimmte Online-Dienste zugreifen möchte. Es ist eine grundlegende Technik, die von vielen Programmierern täglich verwendet wird.
+## Wie geht's
+Um eine HTTP-Anfrage mit Basic Authentication zu senden, benötigen wir die `requests` Bibliothek in Python. Als Erstes müssen wir die notwendigen Daten, wie Benutzername und Passwort, in einer `auth` Variable speichern. Dann können wir die Anfrage mit der `get()` oder `post()` Methode senden und die `auth` Variable angeben.
 
-## So geht's
+```Python
+import requests
 
-Die HTTP-Anfragen mit Basissauthentifizierung können in Python über das Modul "requests" realisiert werden. Zunächst müssen wir das Modul importieren:
+url = "https://meine-website.com/geschuetzte-bereiche"
+auth = ("benutzername", "passwort")
 
-```Python 
-import requests 
-```
-
-Als nächstes müssen wir die URL der Ressource angeben, auf die wir zugreifen möchten:
-
-```Python 
-url = "https://mywebsite.com/api"
-```
-
-Dann müssen wir einen Benutzernamen und ein Passwort für die Authentifizierung angeben:
-
-```Python 
-auth = ("username", "password")
-```
-
-Schließlich können wir die Anfrage senden und die Antwort erhalten:
-
-```Python 
+# Eine GET-Anfrage senden
 response = requests.get(url, auth=auth)
-print(response.text)
+
+# Eine POST-Anfrage senden
+data = {"name": "Max", "alter": 30}
+response = requests.post(url, auth=auth, data=data) 
+
+print(response.text)  # Ausgabe der Antwort
 ```
 
-Das Ergebnis wird in der Konsole ausgegeben und sollte den Zugriff auf die geschützte Ressource bestätigen. 
+Die `response` Variable enthält die Antwort auf unsere Anfrage. Wir können auf verschiedene Daten wie den Statuscode, die Header oder den Inhalt der Antwort zugreifen.
 
-## Tiefergehende Information
-
-Bei der Verwendung der Basissauthentifizierung wird der Benutzername und das Passwort im Klartext übertragen, was ein potentielles Sicherheitsrisiko darstellt. Daher ist es wichtig, dass die Kommunikation über HTTPS erfolgt, um die Daten zu verschlüsseln. Außerdem sollte das Passwort regelmäßig geändert werden, um die Sicherheit zu erhöhen.
-
-Ein weiterer wichtiger Aspekt ist, dass die Benutzerauthentifizierung über die HTTP-Anfrage erfolgt und nicht über das HTTP-Header. Dies bedeutet, dass das Passwort bei jeder Anfrage im Klartext übertragen wird, was ebenfalls ein Sicherheitsrisiko darstellen kann.
+## Tiefer eintauchen
+Der Basic Authentication-Mechanismus verwendet das Authentifizierungsschema `Basic`, das durch die Übermittlung von Benutzername und Passwort im Klartext gekennzeichnet ist. Um die Sicherheit zu erhöhen, wird empfohlen, HTTPS zu verwenden, um die Daten während der Übertragung zu verschlüsseln. Alternativ kann auch das sicherere Authentifizierungsschema `Digest` verwendet werden, bei dem das Passwort nicht im Klartext übertragen wird.
 
 ## Siehe auch
-
-- Offizielle Dokumentation zu "requests": https://requests.readthedocs.io/en/master/
-- Ein Beispielprojekt für die Verwendung von "requests" für eine HTTP-Anfrage mit Basissauthentifizierung: https://github.com/exampleproject
-- Ein Artikel über die Sicherheit bei der Verwendung von Basissauthentifizierung: https://blog.example.com/security-considerations-basic-auth/
+- [Python requests Dokumentation](https://requests.readthedocs.io/en/master/)
+- [HTTP Basic Authentication](https://developer.mozilla.org/de/docs/Web/HTTP/Basic_access_authentication)

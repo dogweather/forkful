@@ -1,5 +1,6 @@
 ---
-title:                "Python: Envoi d'une requête http avec authentification de base"
+title:                "Envoi d'une requête http avec authentification de base"
+html_title:           "Python: Envoi d'une requête http avec authentification de base"
 simple_title:         "Envoi d'une requête http avec authentification de base"
 programming_language: "Python"
 category:             "Python"
@@ -11,56 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est important de comprendre comment envoyer une demande HTTP avec une authentification basique en Python car cela permet de sécuriser les informations sensibles échangées entre un client et un serveur. Cela peut également être utilisé pour restreindre l'accès à certaines ressources en ligne.
+Il est important de sécuriser les communications entre un client et un serveur lors de l'échange de données sensibles telles que des informations d'identification. Envoyer une requête HTTP avec une authentification de base permet de protéger ces données en les chiffrant avant de les envoyer via Internet.
 
 ## Comment faire
 
-Pour envoyer une demande HTTP avec une authentification basique en Python, il faut suivre les étapes suivantes :
+Pour envoyer une requête HTTP avec une authentification de base en utilisant Python, il vous suffit de suivre les étapes suivantes :
 
-1. Importer le module `requests` en utilisant la commande ```Python
+1. Importez la bibliothèque `requests` :
+```
 import requests
 ```
-2. Définir les informations d'identification de base (utilisateur et mot de passe) en utilisant la fonction `auth = (utilisateur, mot_de_passe)`.
-3. Définir l'URL de la ressource à laquelle on souhaite accéder.
-4. Utiliser la méthode `get()` pour envoyer la demande et attribuer le résultat à une variable.
-5. Vérifier le code de statut de la réponse pour s'assurer que la demande a été effectuée avec succès.
-6. Utiliser la méthode `text` pour afficher le contenu de la réponse.
-
-Voici un exemple de code complet pour envoyer une demande GET avec authentification basique :
-
-```Python
-import requests
-
-auth = ('utilisateur', 'mot_de_passe')
-url = 'https://exemple.com/restricted_resource'
-response = requests.get(url, auth=auth)
-
-if response.status_code == 200:
-    print(response.text)
-else:
-    print('Erreur : ', response.status_code)
+2. Définissez les paramètres d'authentification de base avec votre nom d'utilisateur et votre mot de passe :
 ```
-
-Voici un exemple de sortie pour une demande réussie :
-
+auth = ("username", "password")
 ```
-Bienvenue sur la ressource restreinte !
+3. Ensuite, utilisez la méthode `get` de la bibliothèque `requests` en spécifiant l'URL et les paramètres d'authentification :
 ```
-
-Voici un exemple de sortie pour une demande échouée :
-
+response = requests.get("https://example.com", auth=auth)
 ```
-Erreur : 401
+4. Vous pouvez également spécifier un en-tête personnalisé pour plus de sécurité en utilisant le paramètre `headers` dans votre requête :
+```
+headers = {"Authorization": "Basic bW9tZW50OnJlYWR3YXk="}
+response = requests.get("https://example.com", headers=headers)
+```
+5. Enfin, vous pouvez vérifier le code de statut de la réponse pour vous assurer que la requête a été réalisée avec succès :
+```
+if response.status_code == requests.codes.ok:
+  print("Requête effectuée avec succès !")
 ```
 
 ## Plongée en profondeur
 
-En utilisant la méthode `get()`, il est également possible de spécifier des paramètres supplémentaires tels que des en-têtes et des données à inclure dans la demande. De plus, la méthode `auth` peut être utilisée pour spécifier différentes méthodes d'authentification telles que l'authentification par formulaire ou l'authentification OAuth.
-
-Il est également important de noter que l'utilisation d'une authentification basique n'est pas suffisante pour sécuriser complètement une application. D'autres mesures de sécurité doivent être prises en compte pour protéger les informations sensibles et éviter les attaques.
+L'authentification de base est une méthode couramment utilisée pour sécuriser les requêtes HTTP. Elle utilise un chiffrement de base64 pour masquer les informations d'identification, mais il est important de noter qu'elle ne fournit pas une sécurité maximale car le texte chiffré peut être facilement décodé. Pour une sécurité renforcée, il est recommandé d'utiliser des méthodes d'authentification plus avancées telles que OAuth.
 
 ## Voir aussi
 
-- [Documentation sur les demandes Python](https://docs.python-requests.org/en/master/)
-- [Guide d'authentification de base IETF](https://tools.ietf.org/html/rfc7617)
-- [Exemple de demande HTTP avec authentification basique en Python](https://gist.github.com/anonymous/d127c51b5b6341da3f8dfacad0ac123f)
+Pour en savoir plus sur l'envoi de requêtes HTTP avec Python, vous pouvez consulter les liens ci-dessous :
+
+- [Documentation de la bibliothèque requests](https://requests.readthedocs.io/en/master/)
+- [Tutoriel sur l'utilisation de l'authentification de base avec Python et requests](https://overiq.com/python-101/basic-authentication-in-python-using-requests/)
+- [Exemple d'implémentation de l'authentification de base avec la bibliothèque requests](https://www.geeksforgeeks.org/get-post-requests-using-python/)

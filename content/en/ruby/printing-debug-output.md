@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Ruby recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,55 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Debugging plays a crucial role in the process of programming. It allows developers to identify and fix errors in their code, ensuring that the program runs smoothly and produces the expected results. One useful tool for debugging is printing debug output, also known as "console logging". In this blog post, we will explore why printing debug output is important and how it can help us in our coding journey.
+Ruby is a powerful and versatile programming language that is loved by developers for its simplicity and flexibility. One useful feature of Ruby is the ability to print debug output. This allows developers to see exactly what their code is doing, which can help them troubleshoot and identify any errors in their program.
 
 ## How To
 
-To print debug output in Ruby, we can use the built-in `puts` method. This method takes in a string as an argument and displays it on the console. Let's take a look at an example:
+Printing debug output in Ruby is as easy as using the "p" or "puts" methods to print out the value of a variable or expression. Let's take a look at a simple example:
 
 ```Ruby
-str = "Debugging is important!"
-puts str
+a = 5
+b = 10
+puts a + b
 ```
 
-The above code will output `Debugging is important!` on the console. We can also use the `p` method, which not only prints the string but also includes the quotation marks and escape characters. Here's an example:
+The output of this code would be "15", as the "puts" method prints the result of the addition operation. Similarly, we could use the "p" method to print out the values of variables:
 
 ```Ruby
-str = "Debugging is important!"
-p str
+a = 5
+b = 10
+p a, b
 ```
 
-The output will be `"Debugging is important!"`. This can be helpful when debugging code that involves special characters or formatting.
-
-Another useful method for printing debug output is `pp`, which stands for "pretty print". This method displays objects in a more readable and organized format. For example:
+This would print out the values of both "a" and "b" as they are, without performing any operations on them. In addition to printing out values, you can also use these methods to print out messages for debugging purposes. For example:
 
 ```Ruby
-arr = [1, 2, 3]
-pp arr
+a = 5
+b = 10
+puts "The value of a is #{a} and the value of b is #{b}"
 ```
 
-The output will be displayed as:
-
-```Ruby
-[1, 2, 3]
-```
-
-This can be especially helpful when working with complex data structures.
+The output of this code would be "The value of a is 5 and the value of b is 10", providing useful information for troubleshooting. Overall, printing debug output in Ruby is a simple and effective way to gain insights into your code and fix any issues that may arise.
 
 ## Deep Dive
 
-Printing debug output is not just useful for displaying values and variables. It can also help us track the flow of our code and identify any potential errors. By strategically placing `puts` statements throughout our code, we can see which parts of the code are being executed and in what order. This can be particularly helpful when dealing with loops or conditional statements.
+Now that you know how to print debug output in Ruby, let's take a deeper dive into some other useful ways to use this feature. In addition to the "p" and "puts" methods, there are also the "pp" and "print" methods. The "pp" method prints out the value of a variable in a more readable format, while the "print" method does not add a new line after printing, allowing for more precise formatting.
 
-Furthermore, printing debug output also allows us to see the actual values of the variables at different points in our code. This can help us pinpoint any unexpected changes or errors that may be occurring.
-
-It's important to note that while printing debug output can be helpful, it should not be relied upon as the sole method of debugging. It's always important to understand the logic behind our code and thoroughly test it to ensure its functionality.
+Another useful technique is to use the "inspect" method on an object to print out its properties and values. This is especially helpful when working with complex data structures such as arrays or hashes. Additionally, you can use the "-d" flag when running a Ruby file to activate debug mode and automatically print out all executed lines of code, making it even easier to track the flow of your program.
 
 ## See Also
 
-For further reading on debugging and printing debug output in Ruby, check out these resources:
+For more information on printing debug output in Ruby, check out the following resources:
 
-- [https://ruby-doc.org/core-2.5.1/Kernel.html#method-i-pp](https://ruby-doc.org/core-2.5.1/Kernel.html#method-i-pp)
+- [Ruby Documentation](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-p)
+- [Debugging in Ruby](https://medium.com/better-programming/debugging-in-ruby-using-pry-ce6475215e62)
+- [Ruby Debugging Tips](https://www.rubyguides.com/2015/09/ruby-debugging-tips/)
 
-- [https://www.rubyguides.com/2019/02/ruby-debugging/](https://www.rubyguides.com/2019/02/ruby-debugging/)
-
-- [https://www.sitepoint.com/debugging-ruby-code-beginner/](https://www.sitepoint.com/debugging-ruby-code-beginner/)
+So go ahead and start incorporating debug output into your Ruby code to enhance your development process! Happy coding!

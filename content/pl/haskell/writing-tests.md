@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Haskell: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać testy w Haskellu?
 
-Testowanie jest kluczowym elementem w programowaniu, ponieważ pozwala nam upewnić się, że nasz kod działa zgodnie z oczekiwaniami. Dzięki testom możemy również zapewnić niezawodność i jakość naszego kodu.
+Czasy, kiedy programiści uważali testowanie za zbędny luksus, już dawno minęły. W dzisiejszych czasach, kiedy projekty są coraz większe i bardziej skomplikowane, testy stają się niezbędną częścią tworzenia oprogramowania. W przypadku języka Haskell, który promuje funkcjonalność, pisanie testów jest szczególnie ważne. Pozwala to zapewnić, że nasze funkcje działają zgodnie z oczekiwaniami i nie występują w nich niepożądane efekty uboczne.
 
-## Jak to zrobić
+## Jak napisać testy w Haskellu?
 
-Pierwszym krokiem w tworzeniu testów jest zaimportowanie modułu `Test.HUnit`:
+Aby napisać testy w Haskellu, możesz skorzystać z biblioteki HUnit. Najpierw, musisz zaimportować ją do swojego pliku:
 
-```Haskell
+```
 import Test.HUnit
 ```
 
-Następnie możemy zacząć pisać nasze testy wykorzystując funkcję `TestCase`, która ma dwa parametry: nazwę testu i sam test.
+Następnie, możesz definiować testy przy użyciu funkcji `TestList`. Przykładowy test może wyglądać tak:
 
-```Haskell
-test1 = TestCase "Dodawanie liczb całkowitych" $ assertEqual "Wynik powinien być równy 10" (2+3) 5
+```
+test1 = TestCase (assertEqual "Dodawanie do siebie dwóch liczb" (2+2) 4)
 ```
 
-Następnie możemy utworzyć listę zawierającą wszystkie nasze testy i wywołać funkcję `runTestTT`, aby uruchomić je wszystkie:
+Aby uruchomić ten test, musisz użyć funkcji `runTestTT` w głównej funkcji `main`:
 
-```Haskell
-testy = [test1, test2, test3]
-runTestTT (TestList testy)
+```
+main = runTestTT test1
 ```
 
-Jeśli nasze testy przejdą, otrzymamy komunikat `OK`, jeśli nie otrzymamy informacji o niepowodzeniu.
+Jeśli test się nie powiedzie, zobaczysz odpowiednie komunikaty w konsoli. Aby przetestować wiele przypadków, możesz użyć funkcji `TestLabel` do nazwania każdego testu i umieścić je w liście:
 
-## Dogłębna analiza
-
-Ważne jest, aby pisać testy, które pokrywają wszystkie możliwe scenariusze. Możemy również wykorzystać moduł `QuickCheck` do testowania dowolnych danych wejściowych. Aby skorzystać z `QuickCheck`, musimy najpierw zaimportować odpowiedni moduł:
-
-```Haskell
-import Test.QuickCheck
+```
+tests = TestList [TestLabel "Test dodawania" test1, TestLabel "Test odejmowania" test2]
 ```
 
-Następnie definiujemy funkcję testującą z wykorzystaniem `quickCheck`:
+## Dogłębne zagłębienie
 
-```Haskell
-sprawdzDzialanie :: Int -> Int -> Bool
-sprawdzDzialanie x y = x * y == y * x
-```
+Podczas pisania testów w Haskellu, warto pamiętać o kilku ważnych aspektach. Po pierwsze, testy powinny być proste i łatwe do zrozumienia. W przeciwnym razie, zmiana testów może stać się koszmarem. Po drugie, testy powinny być niezależne od siebie. Nie powinno być zależności pomiędzy testami, ponieważ może to prowadzić do błędów i pomyłek. Oznacza to, że każdy test powinien testować tylko jedną funkcję lub pojedynczy scenariusz.
 
-Teraz możemy wywołać `quickCheck` na naszej funkcji, aby przetestować ją z losowo wybranymi parametrami i sprawdzić, czy zawsze zwraca ona oczekiwany wynik:
+Warto również pamiętać o wyjątkach i niepożądanych efektach ubocznych. Testowanie funkcji, które wywołują inne funkcje lub mają niezależne efekty uboczne jeszcze bardziej zwiększa potrzebę pisania testów.
 
-```Haskell
-quickCheck sprawdzDzialanie
-```
+## Zobacz również
 
-## Zobacz też
-
-- [Dokumentacja modułu `Test.HUnit`](https://hackage.haskell.org/package/HUnit)
-- [Dokumentacja modułu `Test.QuickCheck`](https://hackage.haskell.org/package/QuickCheck)
+- [Documentation for HUnit](https://hackage.haskell.org/package/HUnit)
+- [Haskell School of Expression](https://www.cs.yale.edu/homes/hudak/SOE/)
+- [10 Minute Test-Driven Development in Haskell](https://medium.com/@dinosanciagopardo/test-driven-haskell-a-how-to-2d10cabba19e)

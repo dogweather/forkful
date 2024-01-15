@@ -1,6 +1,7 @@
 ---
-title:                "Python: HTML verarbeiten"
-simple_title:         "HTML verarbeiten"
+title:                "HTML-Parsing"
+html_title:           "Python: HTML-Parsing"
+simple_title:         "HTML-Parsing"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,53 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Parser für HTML sind nützliche Tools, um Daten von einer Webseite zu extrahieren und sie für die Verarbeitung in anderen Programmen zugänglich zu machen. Dies kann besonders hilfreich sein, wenn man bestimmte Informationen von einer Website benötigt, aber keinen direkten Zugriff auf eine API hat oder wenn man die Daten in einem bestimmten Format benötigt, das nicht bereits von der Website bereitgestellt wird.
+HTML ist die gängige Sprache zur Formatierung von Webseiten, aber manchmal möchte man die darin enthaltenen Informationen extrahieren und weiterverarbeiten. Hier kommt das Parsen von HTML ins Spiel, um den Text und die Daten aus den Tags zu extrahieren und sie in einem verarbeitbaren Format zu erhalten.
 
 ## Wie
 
-Um mit dem Parsen von HTML in Python zu beginnen, müssen wir zuerst das `bs4` Paket, auch bekannt als Beautiful Soup, importieren. Dies ist eine populäre und benutzerfreundliche Bibliothek für das Arbeiten mit HTML und XML Daten. Wir können es auf zwei Arten importieren:
+Zur Demonstration verwenden wir die Python-Bibliothek BeautifulSoup, die das Parsen von HTML stark vereinfacht. Zunächst müssen wir BeautifulSoup installieren:
+
+```Python
+pip install beautifulsoup4
+```
+
+Als nächstes importieren wir die Bibliothek und geben unseren HTML-Code als Parameter an:
 
 ```Python
 from bs4 import BeautifulSoup
+
+html = "<html><head><title>Beispiel</title></head><body><h1>Willkommen</h1><p>Das ist ein Beispieltext.</p></body></html>"
 ```
 
-oder
+Im nächsten Schritt erstellen wir ein BeautifulSoup-Objekt und übergeben ihm den HTML-Code und den Parser, den wir verwenden möchten (hier verwenden wir den Standardparser "html.parser"):
 
 ```Python
-import bs4
+soup = BeautifulSoup(html, 'html.parser')
 ```
 
-Als nächstes müssen wir unsere HTML Daten erhalten, sei es durch das Öffnen einer lokalen Datei oder durch das Senden einer GET-Anfrage an eine Website. Wir werden die Funktion `requests.get` nutzen, um eine GET-Anfrage an die gewünschte URL zu senden und die Antwort in einer Variablen zu speichern:
+Jetzt können wir mithilfe von BeautifulSoup die gewünschten Informationen aus dem HTML-Code extrahieren. Zum Beispiel können wir den Titel der Seite abrufen:
 
 ```Python
-url = "https://example.com"
-response = requests.get(url)
+title = soup.title
+print(title)
+# Ausgabe: <title>Beispiel</title>
 ```
 
-Wir können nun die `BeautifulSoup` Funktion verwenden, um unsere HTML Daten aus der Antwort in ein Soup-Objekt zu konvertieren:
+Oder wir können die Überschriften der Seite in einer Liste ausgeben:
 
 ```Python
-soup = BeautifulSoup(response.content, 'html.parser')
+headings = soup.find_all('h1')
+for heading in headings:
+    print(heading.text)
+# Ausgabe: Willkommen
 ```
-
-Schließlich können wir mithilfe der verschiedenen Funktionen von Beautiful Soup bestimmte Tags oder Klassen in unserem HTML finden und die entsprechenden Daten extrahieren. Ein Beispiel dafür ist die Verwendung von `find_all`, um alle Links auf der Seite zu finden und sie dann in eine Liste zu speichern:
-
-```Python
-all_links = soup.find_all('a')
-
-for link in all_links:
-    print(link.get('href'))
-```
-
-Die obige Methode kann je nach den spezifischen Bedürfnissen angepasst werden. Weitere Informationen zu den verschiedenen Möglichkeiten der Verwendung von Beautiful Soup finden Sie in der Dokumentation.
 
 ## Deep Dive
 
-Um ein besseres Verständnis dafür zu bekommen, wie HTML Parsing funktioniert, können wir einen Blick auf die grundlegenden Konzepte dahinter werfen. HTML besteht aus verschiedenen Tags, die den Inhalt der Seite strukturieren und formatieren. Beautiful Soup analysiert unsere HTML Daten und identifiziert diese Tags und ihre Hierarchie. Dadurch wird es uns ermöglicht, gezielt auf bestimmte Teile der HTML Struktur zuzugreifen.
+Es gibt viele Methoden und Techniken, die beim Parsen von HTML verwendet werden können, und BeautifulSoup bietet eine umfangreiche Dokumentation, die dabei helfen kann, die gewünschten Informationen aus dem Code zu extrahieren. Hier sind einige nützliche Methoden, die in verschiedenen Situationen verwendet werden können:
 
-Um die HTML Tags und ihre Struktur besser zu verstehen, können wir uns das DOM (Document Object Model) ansehen. Dies ist eine Baumstruktur, die die Beziehung zwischen den HTML Elementen auf der Seite darstellt. Mit Beautiful Soup können wir auf diese Baumstruktur zugreifen und Informationen von den verschiedenen Elementen extrahieren.
+- `find()`: Gibt das erste Vorkommen eines Tags zurück
+- `find_all()`: Gibt eine Liste aller Vorkommen eines Tags zurück
+- `get()`: Gibt den Wert eines bestimmten Attributs zurück
+- `attrs`: Gibt alle Attribute eines Tags zurück
+- `text`: Gibt den Text innerhalb eines Tags zurück
+
+Es ist auch möglich, mithilfe von CSS-Selektoren bestimmte Tags auszuwählen:
+
+```Python
+soup.select('h1') # wählt alle h1-Überschriften aus
+soup.select('p#example') # wählt das p-Tag mit dem id-Attribut "example" aus
+```
+
+Es gibt noch viele weitere Möglichkeiten, mit BeautifulSoup HTML zu parsen, und es lohnt sich, sich mit der Dokumentation auseinanderzusetzen, um alle Funktionen und Möglichkeiten zu entdecken.
 
 ## Siehe auch
 
-- [Beautiful Soup Dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Eine ausführliche Anleitung zum Parsen von HTML in Python](https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/)
+- BeautifulSoup Dokumentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Ein Tutorial zum Parsen von HTML mit BeautifulSoup: https://www.freecodecamp.org/news/scraping-multiple-pages-with-beautifulsoup-and-python-2a0fcae2c6f1/ 
+- Weitere Informationen und Beispiele: https://realpython.com/beautiful-soup-web-scraper-python/

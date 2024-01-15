@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "yaml로 작업하기"
+html_title:           "Arduino: yaml로 작업하기"
+simple_title:         "yaml로 작업하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,56 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 YAML을 활용해야 할까
- 아두이노 프로그래밍에서 YAML을 활용하는 것은 프로젝트를 더 쉽고 효율적으로 관리할 수 있도록 도와줍니다. 이 데이터 포맷은 코드를 더 읽기 쉽고 유지보수하기 쉽게 만들어줍니다. 그리고 YAML 파일은 프로젝트 설정 파일이나 데이터베이스를 저장하는데에도 유용하게 사용될 수 있습니다.
+## 왜 YAML을 사용해야 하는가?
 
-## 어떻게 YAML을 활용할까
-아래는 YAML을 활용한 아두이노 코딩 예제와 그 결과물입니다.
+YAML은 사람과 컴퓨터 모두에게 읽기 쉽고 이해하기 쉬운 형식으로 데이터를 저장할 수 있는 파일 형식입니다. 이를 이용하면 더 간결하고 유지보수가 용이한 코드를 작성할 수 있습니다. 또한 다른 언어와 호환성이 좋아 다양한 프로그래밍 환경에서 사용할 수 있습니다.
+
+## 어떻게 사용할까요?
+
+YAML을 사용하기 위해서는 먼저 Arduino IDE의 "Library Manager"로 들어가서 YAML 라이브러리를 설치해야 합니다. 이후 코드를 작성할 때는 아래와 같이 라이브러리를 불러와야 합니다.
 
 ```Arduino
-
-#include <SPI.h>
-#include <Ethernet.h>
 #include <YAML.h>
-
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-byte server[] = { 192, 168, 1, 10 }; // YAML 파일에서 읽어온 서버 IP 주소
-
-EthernetClient client;
-
-void setup()
-{
-  Ethernet.begin(mac);
-  Serial.begin(9600);
-  
-  if (client.connect(server, 80)) {
-    YAML::Node config = YAML::LoadFile("config.yaml"); // config.yaml 파일에서 정보를 읽어옴
-    String message = config["message"].as<String>(); // 메시지를 String 형태로 변환
-    client.println(message); // 서버로 메시지 전송
-  } else {
-    Serial.println("connection failed");
-  }
-}
-
-void loop()
-{
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-}
 ```
 
-위 예제에서는 YAML 라이브러리를 이용해 config.yaml 파일에서 서버 IP 주소를 읽어온 뒤 해당 서버로 메시지를 보내는 코드를 작성하였습니다. 이와 같이 YAML 파일을 활용하면 설정 값들을 코드에 넣어주는 번거로움을 줄일 수 있습니다.
+YAML 파일을 읽어오기 위해서는 `YAML::load` 함수를 사용합니다. 예를 들어, `config.yml` 파일에 저장된 데이터를 읽어오려면 다음과 같이 작성할 수 있습니다.
 
-## YAML 작업의 깊은 부분
-YAML은 다른 프로그래밍 언어처럼 변수나 조건문 등을 사용할 수 없기 때문에 초보자들은 처음에 적응하기 어려울 수 있습니다. 또한 YAML파일에서의 들여쓰기와 공백의 사용에도 주의를 기울여야 합니다. 하지만 한번 익숙해지면 프로젝트 관리나 설정 값 변경 등에 매우 유용한 형식이 될 수 있습니다.
+```Arduino
+YAML::Node config = YAML::LoadFile("config.yml");
+```
 
-## 자세히 보기
-- YAML 라이브러리 공식 홈페이지: https://github.com/jbeder/yaml-cpp
-- YAML 데이터 포맷에 대한 자세한 설명: https://yaml.org/
-- 아두이노에서 YAML 파일 읽어오기 예제: https://www.hackster.io/iehoon/read-a-yaml-file-f4102b
+해당 데이터에 접근하려면 `config` 변수를 이용해 키-값 쌍에 접근합니다.
 
-# 더 알아보기
-- 아두이노 라이브러리 다운로드하기: https://www.arduino.cc/en/guide/libraries
-- 아두이노 공식 사이트: https://www.arduino.cc/
+```Arduino
+int baudRate = config["baud_rate"].as<int>();
+```
+
+## 깊게 파보기
+
+YAML의 세부적인 문법과 기능은 다양하지만, 가장 많이 쓰이는 방법은 키-값 쌍으로 데이터를 저장하는 것입니다. 이 때 키는 문자열이고 값은 문자열, 정수, 실수, 불린 등 여러 가지 형식으로 사용할 수 있습니다. YAML 파일을 작성할 때는 들여쓰기를 통해 계층 구조를 나타낼 수 있으며, 주석도 추가할 수 있습니다.
+
+또한 YAML은 C++과 같은 다른 언어로도 사용할 수 있으며, 커스텀 데이터 타입을 정의하여 YAML에 저장할 수도 있습니다. YAML을 자세히 공부하면 더 다양한 방법으로 코드를 작성할 수 있습니다.
+
+## 관련 자료
+
+- [YAML 공식 문서](http://yaml.org/)
+- [YAML 라이브러리 Github 저장소](https://github.com/arduino-libraries/YAML)

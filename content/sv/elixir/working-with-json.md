@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Arbeta med json"
+title:                "Arbeta med json"
+html_title:           "Elixir: Arbeta med json"
 simple_title:         "Arbeta med json"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att arbeta med JSON (JavaScript Object Notation) är en viktig del av modern programmering. JSON är ett enkelt, läsbart och flexibelt format som används för att överföra data mellan olika applikationer. I denna bloggpost kommer vi att gå igenom hur man kan använda Elixir för att hantera JSON-data effektivt.
 
-## Så här gör du
-För att börja arbeta med JSON i Elixir, behöver vi inkludera modulen `Poison` i vårt projekt. Denna modul ger oss funktioner för att konvertera Elixir-termer till JSON och vice versa. Låt oss ta en titt på några exempel:
+JSON är en vanlig format för att dela och lagra data, vilket gör den viktig för många utvecklare som arbetar med webbtjänster och applikationer. Att lära sig hur man hanterar JSON i Elixir ger dig möjligheten att skapa effektiva och pålitliga system som överför och lagrar data på ett strukturerat sätt.
 
-```elixir
-# Konvertera en Elixir-map till JSON
-Poison.encode!(%{name: "Anna", age: 25})
-# => "{\"name\":\"Anna\",\"age\":25}"
+## Hur man gör
 
-# Konvertera en JSON-sträng till en Elixir-map
-Poison.decode!("{\"name\":\"Anna\",\"age\":25}")
-# => %{name: "Anna", age: 25}
-```
-
-I exemplet ovan använder vi `Poison.encode!/1` för att konvertera en Elixir-map till en JSON-sträng och `Poison.decode!/1` för att konvertera en JSON-sträng till en Elixir-map. Notera att `!` efter funktionerna indikerar att de är destruktiva, vilket innebär att de kommer att kasta ett undantag om konverteringen misslyckas.
-
-## Djupdykning
-För att arbeta med JSON-data mer avancerat, kan vi använda `Poison.Encoder` och `Poison.Decoder` modulerna för att anpassa hur vår data konverteras. Till exempel kan vi konvertera en Elixir-tupel till en JSON-array genom att definiera vår egen kodning:
+För att hantera JSON i Elixir, behöver du först lägga till biblioteket "Poison" i ditt projekt. Detta bibliotek ger oss funktioner för att konvertera data till och från JSON-format.
 
 ```elixir
-defimpl Poison.Encoder, for: Tuple do
-  def encode(tuple, options) do
-    Poison.Encoder.List.encode(Tuple.to_list(tuple), options)
-  end
+# Lägger till "Poison" biblioteket
+defp deps do
+  [
+    {:poison, "~> 3.1"}
+  ]
 end
 ```
 
-När `Poison` stöter på en tuple kommer den nu att konvertera den till en JSON-array istället för en map. Detta ger oss större flexibilitet vid konvertering av data.
+När detta är gjort kan vi använda funktionen `Poison.encode!/2` för att konvertera Elixir-data till JSON-format och `Poison.decode!/2` för att konvertera från JSON till Elixir-data.
+
+```elixir
+# Skapar en lista med data
+data = ["Elixir", "är", "ett", "språk"]
+
+# Konverterar till JSON och skriver ut resultatet
+data_json = Poison.encode!(data)
+IO.puts(data_json) # ["Elixir","är","ett","språk"]
+
+# Konverterar tillbaka till Elixir-data och skriver ut resultatet
+new_data = Poison.decode!(data_json)
+IO.inspect(new_data) # ["Elixir", "är", "ett", "språk"]
+```
+
+Om vi har ett objekt istället för en lista, använder vi funktionerna `Poison.encode!/1` och `Poison.decode!/1` för att konvertera till och från JSON. 
+
+```elixir
+# Skapar ett enkelt objekt
+user = %{name: "Anna", age: 30}
+
+# Konverterar till JSON och skriver ut resultatet
+user_json = Poison.encode!(user)
+IO.puts(user_json) # {"name":"Anna","age":30}
+
+# Konverterar tillbaka till Elixir-data och skriver ut resultatet
+new_user = Poison.decode!(user_json)
+IO.inspect(new_user) # %{name: "Anna", age: 30}
+```
+
+## Djupdykning
+
+För att hantera mer komplexa strukturer eller för att göra mer avancerade operationer med JSON, kan vi använda funktionerna `Poison.encode/2` och `Poison.decode/2`. Dessa funktioner returnerar en `{:ok, data}` eller `{:error, message}` tuple, vilket gör det möjligt för oss att hantera fel och felhantering.
+
+Att hantera JSON i Elixir ger också möjligheten att arbeta med externa API:er genom att konvertera deras svar till Elixir-data och sedan arbeta med den som vanligt. Det finns också flera andra bibliotek som erbjuder avancerade funktioner för att hantera JSON i Elixir, som exempelvis "Jason" och "JSEX".
 
 ## Se även
-- [Poison ExDoc](https://hexdocs.pm/poison/api-reference.html)
-- [JSON i Elixir](https://elixir-lang.org/getting-started/mix-otp/working-with-external-apis.html#json-in-elixir)
-- [Javascript Object Notation (JSON)](https://www.json.org/json-sv.html)
+
+- [ElixirDocks - Poison](https://elixirdocs.org/poison/readme.html)
+- [ElixirSchool - Working with JSON](https://elixirschool.com/en/lessons/advanced/working-with-JSON/)
+- [ElixirStyle - Using JSON in Elixir](https://github.com/christopheradams/elixirstyle/blob/master/sections/3-data-structures.md#using-json-in-elixir)

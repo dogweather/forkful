@@ -1,6 +1,7 @@
 ---
-title:                "C++: Créer un fichier temporaire"
-simple_title:         "Créer un fichier temporaire"
+title:                "Création d'un fichier temporaire"
+html_title:           "C++: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,85 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi créer un fichier temporaire?
+## Pourquoi créer un fichier temporaire en C ++
 
-Créer un fichier temporaire peut être utile pour stocker des données temporaires pendant l'exécution d'un programme, ou pour effectuer une opération de sauvegarde. Cela peut également être utile pour tester certaines fonctionnalités sans perturber les fichiers existants.
+La création d'un fichier temporaire en C ++ peut être utile pour stocker des données temporaires telles que des résultats de calculs ou des fichiers téléchargés, sans avoir à les stocker en permanence sur le système.
 
-## Comment créer un fichier temporaire en C++
+## Comment faire
 
-Il existe plusieurs façons de créer un fichier temporaire en C++. La méthode la plus courante consiste à utiliser la fonction `tmpfile()` qui crée un fichier vide dans le répertoire temporaire du système. Voici un exemple de code:
-
-```C++
-#include <cstdio>
-
-int main() {
-  // Création d'un fichier temporaire
-  FILE* file = tmpfile();
-  
-  // Vérification si le fichier a été créé avec succès
-  if (file != nullptr) {
-    // Écriture de données dans le fichier
-    fprintf(file, "Hello world!");
-    
-    // Fermeture du fichier
-    fclose(file);
-  }
-  
-  return 0;
-}
-```
-
-En utilisant la fonction `fprintf()`, nous pouvons écrire des données dans le fichier temporaire. Il est important de noter que le fichier sera automatiquement supprimé à la fermeture du programme.
-
-## Plongée dans la création de fichiers temporaires
-
-Il est possible de créer un fichier temporaire dans un répertoire spécifique en utilisant la fonction `tmpnam()`. Cette fonction génère un nom de fichier unique basé sur le nom du répertoire spécifié. Voici un exemple de code pour créer un fichier temporaire dans le répertoire "temp":
+Utiliser la fonction `tmpfile()` pour créer un fichier temporaire et écrire les données souhaitées dessus. Voici un exemple de code :
 
 ```C++
-#include <cstdio>
-#include <cstdlib>
+#include <stdio.h>
 
 int main() {
-  // Création d'un chemin vers le répertoire temporaire
-  char tempDir[] = "temp";
-  
-  // Création d'un nom de fichier temporaire
-  char* tempFilename = tmpnam(tempDir);
-  
-  // Création du fichier temporaire
-  FILE* file = fopen(tempFilename, "w");
-  
-  // Vérification si le fichier a été créé avec succès
-  if (file != nullptr) {
-    // Écriture de données dans le fichier
-    fputs("Bonjour le monde!", file);
-    
-    // Fermeture du fichier
-    fclose(file);
-  }
-  
+  FILE *fptr;
+  int num = 10;
+  fptr = tmpfile();
+  fprintf(fptr, "%d", num);
+  fclose(fptr);
   return 0;
 }
 ```
 
-Il est également possible de supprimer manuellement un fichier temporaire en utilisant la fonction `remove()`. Cela peut être utile si vous n'avez pas besoin du fichier dans certaines parties de votre programme.
+La sortie de ce code créera un fichier temporaire contenant le nombre 10. Notez que le fichier sera automatiquement supprimé à la fermeture du programme.
 
-```
-#include <cstdio>
-#include <cstdlib>
+## Plongée en profondeur
 
-int main() {
-  // Création d'un fichier temporaire
-  FILE* file = tmpfile();
-  
-  // Suppression du fichier
-  remove("fichier_temporaire");
-  
-  return 0;
-}
-```
+La fonction `tmpfile()` crée un fichier binaire en lecture/écriture et le stocke dans un dossier temporaire du système. Le fichier est généralement nommé de manière aléatoire pour éviter les conflits avec d'autres fichiers temporaires. Il est également important de vérifier si le fichier a bien été créé avant d'écrire dessus, en utilisant la fonction `fptr != NULL`.
 
 ## Voir aussi
-- [Documentation sur la fonction tmpfile() en C++](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Guide sur la création et la gestion de fichiers en C++](https://www.learncpp.com/cpp-tutorial/61-working-with-files/)
-- [Fonctions pour la gestion de fichiers en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+
+- [Documentation officielle de `tmpfile()` en C++](https://en.cppreference.com/w/cpp/io/c/tmpfile)
+- [Tutorial sur l'utilisation des fichiers temporaires en C](https://www.guru99.com/c-file-input-output.html)

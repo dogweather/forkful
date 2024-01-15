@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Python recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Python"
 category:             "Python"
@@ -10,73 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Whether you are a seasoned programmer or just starting out, one of the most common tasks you will encounter is searching and replacing text. This can be for a variety of reasons, such as fixing typos, updating variable names, or making global changes to your code. Whatever the reason may be, learning how to efficiently search and replace text using Python can save you time and frustration.
+Searching and replacing text is a common task in many programming projects. It allows you to efficiently make changes in your code or data without having to manually go through each instance. In Python, the built-in `replace()` method makes it easy to perform this task.
 
 ## How To
-
-The first step in searching and replacing text using Python is to import the built-in `re` module, which stands for "regular expressions". This module allows us to use powerful pattern matching techniques to find and manipulate text.
-
+To use the `replace()` method, you first need to have a string that you want to make changes to. Let's say we have the following string:
 ```Python
-import re
+sentence = "I love pizza, but I also enjoy sushi."
 ```
-
-Next, we need to define the text we want to search through and the pattern we want to find and replace. Let's say we have the following string:
-
+Now, if we want to replace "pizza" with "tacos" in this sentence, we can use the `replace()` method:
 ```Python
-text = "I love python and all its amazing features."
+new_sentence = sentence.replace("pizza", "tacos")
+print(new_sentence)
 ```
+The output will be:
+```
+I love tacos, but I also enjoy sushi.
+```
+As you can see, the `replace()` method replaced all occurrences of "pizza" in the original string with "tacos". It is also case-sensitive, so it will not replace "Pizza" or "PIZZA".
 
-And we want to replace "python" with "Ruby". We can do this by using the `sub` function from the `re` module and passing in the pattern we want to replace, the replacement text, and the original string.
-
+You can also specify the number of replacements you want to make by using the optional `count` parameter. For example, if we only want to replace the first instance of "pizza" in our sentence, we can do so by setting `count=1`:
 ```Python
-new_text = re.sub("python", "Ruby", text)
+new_sentence = sentence.replace("pizza", "tacos", 1)
+print(new_sentence)
 ```
-
-The `sub` function will replace all instances of "python" with "Ruby" and return the new string. We can then print out the new text to see the changes.
-
-```Python
-print(new_text)
-# Output: I love Ruby and all its amazing features.
+The output will be:
 ```
-
-But what if we want to replace "python" with "Ruby" and also change the "a" in "amazing" to an "e"? We can use regular expressions to handle this as well.
-
-```Python
-new_text = re.sub("python|amazing", "Ruby", text)
+I love tacos, but I also enjoy sushi.
 ```
-
-In this case, we are using the `|` symbol to indicate "or", so the `sub` function will replace both "python" and "amazing" with "Ruby".
-
-```Python
-print(new_text)
-# Output: I love Ruby and ell its mizing features.
-```
-
-Additionally, we can use the `re.IGNORECASE` flag to make the search case-insensitive.
-
-```Python
-new_text = re.sub("python|amazing", "Ruby", text, flags=re.IGNORECASE)
-```
-
-Now both "python" and "Python" will be replaced with "Ruby".
 
 ## Deep Dive
+The `replace()` method is part of the string class in Python, which means it can only be used on strings. It takes two required parameters: `old` and `new`, which represent the text you want to replace and the text you want to replace it with.
 
-Regular expressions can be intimidating, but once you understand the basics, they can be a powerful tool for search and replace tasks. Some common patterns that you might find useful include:
+Another important thing to note is that the `replace()` method does not change the original string, but instead returns a new string with the changes. This is why we had to assign the result to a variable in our examples.
 
-- `.` - Matches any character except newline
-- `*` - Matches zero or more occurrences
-- `+` - Matches one or more occurrences
-- `?` - Matches zero or one occurrence
-- `[]` - Matches any character inside the brackets
-- `()` - Groups multiple patterns together
-- `\b` - Matches at the beginning or end of a word
-
-For more information on regular expressions and the various options and patterns you can use, check out the official Python documentation or this helpful cheatsheet: https://www.debuggex.com/cheatsheet/regex/python.
+It is also worth mentioning that the `replace()` method is not limited to just single characters or words. You can also use it to replace longer strings:
+```Python
+sentence = "I love coding, but I also enjoy hiking."
+new_sentence = sentence.replace("coding", "programming")
+print(new_sentence)
+```
+The output will be:
+```
+I love programming, but I also enjoy hiking.
+```
 
 ## See Also
-
-- Official Python Documentation on Regular Expressions: https://docs.python.org/3/library/re.html
-- Learn Python the Hard Way - Exercise 6 on Regular Expressions: https://learnpythonthehardway.org/python3/ex6.html 
-- Practical Regular Expressions eBook: https://www.openshift.com/blog/practical-regex-ebook or https://www.sitepoint.com/advanced-regular-expressions/
+- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+- [Python String replace() Method](https://www.w3schools.com/python/ref_string_replace.asp)

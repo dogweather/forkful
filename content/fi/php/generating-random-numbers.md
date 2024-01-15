@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Satunnaisten lukujen luominen"
-simple_title:         "Satunnaisten lukujen luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "PHP: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -9,69 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi PHP-ohjelmoijien kannattaa käyttää satunnaislukugeneraattoria?
+## Miksi
+Miksi kukaan haluaisi luoda satunnaisia numeroita PHP:lla? Satunnaiset numerot ovat tärkeitä monissa ohjelmoinnin sovelluksissa, kuten pelien generoimisessa, salasanojen luomisessa ja testauksessa.
 
-Käyttäminen satunnaislukugeneraattoria on olennainen osa PHP-ohjelmointia, sillä se mahdollistaa monien eri toimintojen toteuttamisen. Esimerkiksi pelisovelluksissa tarvitaan satunnaisia numeroita, ja myös tietoturvassa satunnaiset salasanat ovat tärkeitä. Ilman satunnaislukugeneraattoria sovellusten toiminnallisuus voisi olla rajoittunut.
-
-## Kuinka käyttää satunnaislukugeneraattoria PHP:ssä?
-
-Satunnaislukugeneraattoriin pääsee käsiksi käyttämällä PHP:n sisäänrakennettua rand() funktiota. Voit määrittää alku- ja loppuarvot, joiden väliltä satunnaiset numerot generoidaan. Katso alla olevasta koodiesimerkistä, kuinka voit käyttää rand() funktiota ja miten se palauttaa erilaisia satunnaisia numeroita:
+## Miten
+Satunnaisia numeroita voi luoda PHP:lla käyttämällä sisäänrakennettua "rand" funktiota. Se ottaa argumenttina parametrin, joka määrittelee halutun numeroiden välillä olevan alueen ja palauttaa satunnaisen numeron tästä alueesta.
 
 ```PHP
-<?php
-    //generoi satunnainen numero välillä 0-100
-    $satunnaisluku = rand(0, 100);
-    echo "Satunnainen numero välillä 0-100: " . $satunnaisluku . "\n";
-    
-    //generoi satunnainen kuutiomatriisi välillä 0-5
-    $matriisi = array(
-        array(rand(0, 5), rand(0, 5), rand(0, 5)),
-        array(rand(0, 5), rand(0, 5), rand(0, 5)),
-        array(rand(0, 5), rand(0, 5), rand(0, 5))
-    );
-    echo "Satunnainen kuutiomatriisi välillä 0-5: \n";
-    print_r($matriisi);
-?>
+rand($min, $max);
 ```
 
-Yllä olevan esimerkin tulostus voisi näyttää esimerkiksi tältä:
+Esimerkiksi, jos haluamme luoda satunnaisen numeron väliltä 1 ja 10, voimme käyttää seuraavaa koodia:
 
-```
-Satunnainen numero välillä 0-100: 57
-Satunnainen kuutiomatriisi välillä 0-5: 
-Array
-(
-    [0] => Array
-        (
-            [0] => 4
-            [1] => 0
-            [2] => 5
-        )
-
-    [1] => Array
-        (
-            [0] => 2
-            [1] => 2
-            [2] => 1
-        )
-
-    [2] => Array
-        (
-            [0] => 1
-            [1] => 3
-            [2] => 3
-        )
-
-)
+```PHP
+$random_number = rand(1,10);
+echo $random_number; //tulostaa esimerkiksi 7
 ```
 
-## Syvemmälle satunnaislukugeneraattoriin PHP:ssä
+## Syvempi sukellus
+"rand" funktiolla on myös muita hyödyllisiä parametreja, kuten "mt_rand", joka käyttää tehokkaampaa satunnaislukugeneraattoria. Lisäksi PHP tarjoaa myös muita funktioita, kuten "shuffle", jolla voi sekoittaa sattumanvaraisesti taulukoita ja "mt_srand", joka asettaa alkusiementen arvot satunnaislukugeneraattorille.
 
-Satunnaislukugeneraattorin pohjana PHP:ssä toimii Mersenne Twister -algoritmi, joka on tunnettu sen laajasta jakautumisesta. Tämä tarkoittaa sitä, että algoritmi generoi satunnaisia numeroita lähes täydellisesti.
-
-On myös tärkeää muistaa, että PHP:n rand() funktio ei ole täysin satunnainen, vaan se perustuu alussa mainittuun algoritmiin. Tämä tarkoittaa, että jos samaan aikaan useat käyttäjät suorittavat saman koodiesimerkin, he saavat todennäköisesti samat satunnaisluvut.
+On myös hyvä huomata, että PHP:n satunnaislukugeneraattorit eivät ole täysin satunnaisia, vaan perustuvat tiettyyn algoritmiin. Tämän vuoksi ne eivät sovellu salauskäyttöön, vaan paras valinta on käyttää PHP:n "random_int" funktiota, joka käyttää tietokoneen käyttöjärjestelmän satunnaislukugeneraattoria.
 
 ## Katso myös
-
-- [PHP:n rand() funktio](https://www.php.net/manual/en/function.rand.php)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- PHP:n virallinen dokumentaatio satunnaislukugeneraattoreista: https://www.php.net/manual/en/function.rand.php
+- "random_int" ja "random_bytes" käyttöohjeet: https://www.php.net/manual/en/function.random-int.php
+- Tutkimus "todellisesta" satunnaisluku-generoinnista: https://www.geeksforgeeks.org/how-to-generate-large-random-numbers-mathrandom-in-php/

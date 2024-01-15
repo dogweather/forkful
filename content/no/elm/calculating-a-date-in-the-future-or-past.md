@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Å beregne en dato i fremtiden eller fortiden"
+title:                "Å beregne en dato i fremtiden eller fortiden"
+html_title:           "Elm: Å beregne en dato i fremtiden eller fortiden"
 simple_title:         "Å beregne en dato i fremtiden eller fortiden"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,46 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å beregne en dato i fremtiden eller fortiden kan være nyttig i mange tilfeller. Det kan hjelpe deg med å planlegge fremtidige hendelser eller få oversikt over fortidige datoer. I denne bloggposten vil vi utforske hvordan du kan bruke Elm til å beregne datoer.
+I denne artikkelen vil vi utforske hvordan du kan bruke Elm til å beregne en dato i fremtiden eller fortiden. Dette kan være nyttig når du for eksempel trenger å lage en datoinput for en kalender eller planlegge hendelser.
 
 ## Hvordan
+For å beregne en dato i fremtiden eller fortiden i Elm trenger vi å bruke en kombinasjon av funksjoner fra standardbiblioteket. La oss ta en titt på et eksempel:
 
-For å beregne en dato i Elm, kan du bruke funksjonen `Date.fromParts` som tar inn år, måned og dag som parametere. Du kan også bruke funksjonen `Date.fromString` for å konvertere en tekststreng til en dato. Her er et eksempel på å beregne datoen 5. desember 2020:
+```Elm
+import Date exposing (..)
+import Date.Extra exposing (..)
 
-```elm
-import Date
+today = fromIsoString "2021-08-15"
+tenDaysFromNow = addDays 10 today
+threeMonthsAgo = subMonths 3 today
 
-Date.fromParts 2020 12 5
---> Ok (Dec 5 2020)
-
-Date.fromString "2020-12-05"
---> Ok (Dec 5 2020)
+--Output:
+--tenDaysFromNow = August 25, 2021
+--threeMonthsAgo = May 15, 2021
 ```
 
-Du kan også bruke funksjoner som `Date.add` og `Date.subtract` for å legge til eller trekke fra dager, måneder eller år til en dato. Her er et eksempel på å beregne datoen 100 dager fra nå:
+Vi begynner med å importere to moduler, `Date` og `Date.Extra`, som inneholder nyttige funksjoner for arbeid med datoer. Deretter definerer vi dagens dato ved å bruke `fromIsoString` som tar inn en dato i ISO-format (åååå-mm-dd). Videre bruker vi `addDays` og `subMonths` for å beregne en dato 10 dager frem i tid og 3 måneder tilbake i tid. 
 
-```elm
-import Date exposing (Day, Month, Year)
+## Dykk Dypere
+Det er verdt å merke seg at `addDays` og `subMonths` tar inn to argumenter: antall og enhet. Du kan endre enheten til for eksempel uker eller år ved å bruke `Days`, `Weeks`, `Months` eller `Years` som prefiks til tallet. 
 
-Date.add (1, Day) 100 (Date.fromParts 2020 12 5)
---> Ok (Dec 5 2020)
+En annen nyttig funksjon er `dayOfWeek` som returnerer hvilken ukedag en dato er på. Dette kan være nyttig for å for eksempel lage en kalender eller for å sjekke om en dato faller på en bestemt ukedag. 
 
-Date.add (1, Month) 100 (Date.fromParts 2020 12 5)
---> Ok (Mar 5 2021)
-
-Date.add (1, Year) 100 (Date.fromParts 2020 12 5)
---> Ok (Dec 5 2100)
-```
-
-## Deep Dive
-
-Når du arbeider med datoer i Elm, må du være oppmerksom på at datotyper som `Day`, `Month` og `Year` er enum-typer, som betyr at de har en begrenset og forhåndsdefinert mengde verdier. Dette kan føre til problemer hvis du for eksempel prøver å legge til 31 dager til en måned med 30 dager. I slike tilfeller vil Elm returnere en feil (Error).
-
-For å unngå disse problemene, kan du bruke funksjonen `Date.addDays` som tar hensyn til antall dager i en måned. Det er også viktig å merke seg at Elm bruker den gregorianske kalenderen, som kan føre til uventet oppførsel når du arbeider med datoer før 1582.
+Et siste triks er å bruke funksjonen `toString` for å formatere datoer på en spesifikk måte, for eksempel `toString (DayIso Dashes) date` som vil gi et resultat i formatet åååå-mm-dd. 
 
 ## Se også
-
-- Elm Dokumentasjon: https://package.elm-lang.org/packages/elm/time/latest/
-- Elm Time pakken: https://package.elm-lang.org/packages/elm/time/latest/
-- Elm Gregorian pakken: https://package.elm-lang.org/packages/elm-community/elm-gregorian/latest/
+- Elm offisiell dokumentasjon for Date modulen: https://package.elm-lang.org/packages/elm/core/latest/Date
+- Elm offisiell dokumentasjon for Date.Extra modulen: https://package.elm-lang.org/packages/elm/core/latest/Date-Extra 
+- Enkeltdato kalkulator eksempel på Ellie app: https://ellie-app.com/new

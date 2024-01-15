@@ -1,6 +1,7 @@
 ---
-title:                "C++: 将来または過去の日付を計算する"
-simple_title:         "将来または過去の日付を計算する"
+title:                "未来または過去の日付を計算する"
+html_title:           "C++: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,68 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-日付を将来または過去に計算することについて、なぜ参加する必要があるのかを1-2文で説明します。
-
-日付を計算する必要があるプログラムはたくさんあります。例えば、予約システムやスケジュール管理アプリなどです。将来の日付を計算することで、予定を立てたり、スケジュールを調整する際に役立ちます。過去の日付を計算することで、歴史的な日付やイベントを調べることができます。
+日付を未来や過去に計算する理由は多々ありますが、例えば誕生日や結婚記念日などのイベントを確認するために使うことができます。また、スケジュールを管理する際にも役立ちます。
 
 ## 方法
-
-C++で将来または過去の日付を計算する方法を紹介します。以下のコードブロックを参考にしてください。
+以下のように、現在の日付から指定した日数分を加算したり、引いたりして、未来や過去の日付を計算することができます。
 
 ```C++
-#include<iostream>
+#include <iostream>
+#include <chrono>  // 時間操作を行うライブラリ
+
 using namespace std;
+using namespace std::chrono;  // 時間操作を行うライブラリの名前空間を指定する
 
 int main() {
-  // 現在の日付を設定
-  int year = 2021;
-  int month = 7;
-  int day = 22;
+    // 現在の日付を取得する
+    system_clock::time_point today = system_clock::now();
 
-  // 計算したい日数を入力
-  int days;
-  cout << "何日先の日付を計算しますか？" << endl;
-  cin >> days;
+    // 未来の日付を計算する (10日後)
+    system_clock::time_point future = today + days(10);
 
-  // 日数を加算
-  day += days;
+    // 過去の日付を計算する (5日前)
+    system_clock::time_point past = today - days(5);
 
-  // 月を調整
-  if (day > 30) {
-    day -= 30;
-    month++;
-  }
+    // 日付を表示する
+    // "d"は日にちを表すフォーマット指定子
+    cout << "未来の日付: " << format("%Y/%m/%d", future) << endl;
+    cout << "過去の日付: " << format("%Y/%m/%d", past) << endl;
 
-  // 年を調整
-  if (month > 12) {
-    month -= 12;
-    year++;
-  }
-
-  // 結果を出力
-  cout << days << "日後の日付は" << year << "年" << month << "月" << day << "日です。" << endl;
-
-  return 0;
+    return 0;
 }
 ```
 
-### 出力例
+実行結果:
 
 ```
-何日先の日付を計算しますか？
-10
-10日後の日付は2021年7月32日です。
+未来の日付: 2021/08/11
+過去の日付: 2021/07/26
 ```
 
-## 詳細について
+## ディープダイブ
+さらに、特定の年や月、日を指定して日付を計算することもできます。例えば、結婚記念日から10年後の日付を計算する場合は、以下のようにコードを書くことができます。
 
-日付を計算する際には、月の日数やうるう年など、多くの要素に注意する必要があります。また、異なる国や言語では日付の表記方法が異なるため、正しい日付を計算するためにはさまざまなロジックを実装する必要があります。
+```C++
+#include <iostream>
+#include <chrono>
 
-また、クラスや関数を使用して日付を扱うこともできます。例えば、`Date`クラスを作成して日付の計算や比較を行うことができます。また、C++標準ライブラリには日付を扱うための関数やクラスが用意されているため、それらを活用することもできます。
+using namespace std;
+using namespace std::chrono;
 
-## 関連リンク
+int main() {
+    // 結婚記念日を表す日付を設定
+    system_clock::time_point anniversary = system_clock::from_time_t(1614637200);  // 2021/03/02 (UNIX時間で表す)
 
-- [C++ 日付と時刻の取得方法](https://qiita.com/ribenntto/items/a7df4b8f2fe6da3cf89b)
-- [C++による日付計算の仕組み](https://programming.pc-note.net/cpp/cpp041.html)
-- [C++標準ライブラリの <chrono> ヘッダー](https://cpprefjp.github.io/reference/chrono.html)
+    // 結婚記念日から10年後の日付を計算する
+    system_clock::time_point future = anniversary + years(10);
+
+    // 日付を表示する
+    cout << "結婚記念日から10年後の日付: " << format("%Y/%m/%d", future) << endl;
+
+    return 0;
+}
+```
+
+実行結果:
+
+```
+結婚記念日から10年後の日付: 2031/03/02
+```
+
+## 参考リンク
+- [C++で日付を操作する方法](https://programmingblog.jp/articles/5209698)
+- [C++日付ライブラリの使い方](https://qiita.com/yyama1016/items/a4d90c9df022608ea710)

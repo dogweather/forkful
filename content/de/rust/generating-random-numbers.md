@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Zufallszahlen generieren"
+title:                "Zufallszahlen generieren"
+html_title:           "Rust: Zufallszahlen generieren"
 simple_title:         "Zufallszahlen generieren"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,50 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Nun, Zufallszahlen sind in vielen Programmieranwendungen unerlässlich, sei es für Spiele, Kryptographie oder statistische Analysen. Mit der Programmiersprache Rust können wir effizient und sicher Zufallszahlen generieren.
+Sich mit Zufallszahlen zu beschäftigen kann in vielen Situationen nützlich sein. Zum Beispiel in der Spieleentwicklung, bei der Simulation von Daten oder beim Testen von Software.
 
-## So geht's
+## Wie geht's?
 
-Die Generierung von Zufallszahlen in Rust kann auf verschiedene Arten erfolgen, aber in diesem Blog-Beitrag werden wir uns auf die Verwendung des `rand`-Crates konzentrieren.
-
-Zunächst müssen wir das `rand`-Crate in unsere `Cargo.toml` Datei aufnehmen:
+Um in Rust Zufallszahlen zu generieren, können wir das `rand` Crate verwenden. Zunächst müssen wir es in unserem `Cargo.toml` File hinzufügen:
 
 ```Rust
 [dependencies]
-rand = "0.8.3"
+rand = "0.8.4"
 ```
 
-Dann können wir das `rand`-Crate in unserem Code importieren:
+Als nächstes importieren wir das Crate in unserem Code:
 
 ```Rust
 use rand::Rng;
 ```
 
-Um eine einzelne Zufallszahl zwischen 0 und 10 zu generieren, können wir die `gen_range`-Funktion verwenden:
+Jetzt können wir verschiedene Funktionen aus dem Crate nutzen, um Zufallszahlen zu generieren. Zum Beispiel können wir mit `thread_rng()` einen Thread-sicheren Zufallsgenerator erstellen und mit `gen_range()` eine Zufallszahl aus einem bestimmten Bereich generieren:
 
 ```Rust
-let random_number = rand::thread_rng().gen_range(0..11);
+let my_number = rand::thread_rng().gen_range(1, 10);
+// my_number kann jetzt eine Zahl zwischen 1 und 10 sein
 ```
 
-Hier verwenden wir auch die `thread_rng`-Funktion, um einen Thread-sicheren Zufallszahlengenerator zu erstellen.
-
-Wenn wir eine Zufallszahl von einem bestimmten Datentyp generieren wollen, können wir die `gen`-Funktion verwenden und den gewünschten Datentyp angeben:
+Um Zufallszahlen mit einem bestimmten Datentyp zu generieren, können wir die `gen()` Funktion nutzen, die einen Wert vom Typ `u32` zurückgibt:
 
 ```Rust
-let random_number: u32 = rand::thread_rng().gen();
+let my_number: u32 = rand::thread_rng().gen();
 ```
 
-Weitere Informationen und Beispiele zur Generierung von Zufallszahlen in Rust findest du in der [Dokumentation des `rand`-Crates](https://docs.rs/rand).
+Man kann auch Zufallszahlen mit einer bestimmten Verteilung erzeugen, wie zum Beispiel gleichmäßig oder normal verteilt. Dafür gibt es verschiedene Funktionen wie `gen_range` oder `gen_normal` in dem Crate.
 
-## Tiefere Einblicke
+## Tieferes Eintauchen
 
-Der `rand`-Crate bietet viele Funktionen und Methoden zur Generierung von Zufallszahlen in Rust. Es verwendet eine Mischung aus verschiedenen Algorithmen, um eine hohe Qualität und zufällige Verteilung der generierten Zahlen zu gewährleisten.
+Das `rand` Crate bietet noch viele weitere Funktionen und Optionen für die Generierung von Zufallszahlen. Man kann zum Beispiel auch eigene Zufallszahlengeneratoren erstellen oder spezielle Generatoren für benutzerdefinierte Datentypen nutzen.
 
-Eine wichtige Sache zu beachten ist, dass Zufallszahlen in der Programmierung nie wirklich "zufällig" sind, sondern immer auf deterministischen Algorithmen basieren. Dennoch können wir mit verschiedenen Methoden wie der Verwendung von Zeitstempeln oder Benutzereingaben eine ausreichend zufällige Ergebnisse erzeugen.
-
-Wenn du dich tiefer in die Generierung von Zufallszahlen in Rust einlesen möchtest, empfehle ich dir [diesen Artikel von George Hotz](https://www.doc.ic.ac.uk/~gs2617/hacking-article.html), in dem er verschiedene Methoden zur Erzeugung von Pseudozufallszahlen in Rust diskutiert.
+Eine wichtige Sache, die man beim Generieren von Zufallszahlen bedenken sollte, ist, dass diese nicht wirklich zufällig sind. Sie werden mithilfe von mathematischen Formeln und sogenannten "Seed"-Werten erzeugt. Wenn man also den gleichen Seed benutzt, erhält man auch die gleichen Zufallszahlen. Das kann beim Testen von Software hilfreich sein, sollte aber bedacht werden, wenn es um Sicherheit oder Verschlüsselung geht.
 
 ## Siehe auch
 
-- [Die offizielle Dokumentation des `rand`-Crates](https://docs.rs/rand)
-- [Artikel von George Hotz über die Generierung von Zufallszahlen in Rust](https://www.doc.ic.ac.uk/~gs2617/hacking-article.html)
+- [offizielle Dokumentation des `rand` Crates](https://docs.rs/rand/0.8.4/rand/)
+- [Rust Book: Zufallszahlen](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)

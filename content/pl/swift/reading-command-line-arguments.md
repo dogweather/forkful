@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów z linii poleceń"
+html_title:           "Swift: Odczytywanie argumentów z linii poleceń"
+simple_title:         "Odczytywanie argumentów z linii poleceń"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,37 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak kod programu może odczytywać informacje wprowadzone przez użytkownika w wierszu poleceń? W tym artykule dowiesz się, dlaczego umiejętność czytania argumentów wiersza poleceń jest przydatna w programowaniu w języku Swift.
+Czy zdarzyło Ci się kiedyś korzystać z programów działających w wierszu poleceń? W takim przypadku na pewno spotkałeś się z pojęciem "command line arguments" - czyli argumentów przekazywanych do programu podczas uruchamiania. W tym artykule dowiecie się, dlaczego warto zapoznać się z tym tematem i jak to zrobić w języku Swift.
 
-## Jak to zrobić
+## Jak wykorzystać command line arguments w Swift
 
-Odczytywanie argumentów wiersza poleceń w Swift jest łatwe i wymaga tylko kilku kroków. Najpierw należy zaimportować moduł `Foundation`, który zawiera potrzebne nam funkcje, a następnie użyć metody `arguments` na obiekcie `Process`. Spójrzmy na przykład, gdzie nasz program odczytuje argumenty wiersza poleceń i wypisuje je na ekran:
+Aby poznać argumenty wywołania programu, wystarczy skorzystać z obiektu `CommandLine` oraz jego właściwości `arguments`. W poniższym przykładzie wywołanie programu `myProgram` z argumentami `firstArg` i `secondArg` wyświetli je w konsoli.
 
 ```Swift
-import Foundation
-
-let arguments = ProcessInfo.processInfo.arguments
-
-print("Wprowadzone argumenty: \(arguments)")
+let arguments = CommandLine.arguments
+print("Arguments: \(arguments)")
 ```
 
-Dla przykładu, wywołując nasz program z argumentami "Swift", "programowanie" i "blog", otrzymamy następujący output:
+Output:
+`Arguments: ["myProgram", "firstArg", "secondArg"]`
 
-```bash
-$ ./program argumenty Swift programowanie blog
-Wprowadzone argumenty: ["Swift", "programowanie", "blog"]
+Możemy również wykorzystać opcjonalną wartość argumentów, aby przekazać do programu dodatkowe informacje. W poniższym przykładzie, jeśli do programu zostanie podany argument `name`, zostanie wyświetlone powitanie z podanym imieniem. W przeciwnym razie, program wyświetli standardowe powitanie.
+
+```Swift
+let arguments = CommandLine.arguments
+if let name = arguments.first {
+    print("Hello, \(name)!")
+} else {
+    print("Hello, world!")
+}
 ```
 
-Łatwe, prawda? Teraz możesz wykorzystać te argumenty do różnych celów w swoim programie.
+Output przy wywołaniu z argumentem `John`:
+`Hello, John!`
 
-## Deep Dive
+Output bez argumentu:
+`Hello, world!`
 
-Ok, ale jak to właściwie działa? Gdy uruchamiamy program z argumentami, system operacyjny przekazuje je do jądra systemu. Następnie jądro przekazuje je do procesu, w którym uruchamia się nasz program. Kolejno, nasz program odczytuje te argumenty za pomocą funkcji `arguments`. Proste i skuteczne!
+## Przemierzając argumenty głębiej
+
+Poza prostym wykorzystaniem argumentów podczas wywołania programu, warto również poznać niektóre właściwości obiektu `CommandLine` oraz sposoby manipulacji argumentami. Na stronie [dokumentacji](https://developer.apple.com/documentation/foundation/commandline) możesz znaleźć więcej informacji na ten temat.
+
+Warto także zauważyć, że argumenty są traktowane jako `String`, więc jeśli chcemy wykorzystać je w inny sposób, musimy przeprowadzić odpowiednie konwersje. Możemy również przekazywać do programu tablice argumentów, dzieląc je na mniejsze części, lub stosować zagnieżdżone struktury argumentów.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o odczytywaniu argumentów wiersza poleceń w języku Swift, zapoznaj się z dokumentacją Apple lub z poniższymi artykułami:
-
-- [Reading Command Line Arguments in Swift](https://medium.com/@MaxDesiatov/reading-command-line-arguments-in-swift-3-0-a54c27e7d2a3)
-- [Working with Command-Line Arguments in Swift](https://www.raywenderlich.com/382-command-line-programs-on-macos-tutorial-getting-started-with-swift)
-- [ArgumentParser - parse command-line arguments with Swift](https://github.com/apple/swift-argument-parser)
+- [Dokumentacja języka Swift](https://swift.org/documentation/)
+- [Kurs online dla początkujących w języku Swift](https://www.udemy.com/course/ios-13-app-programming-for-beginners/?referralCode=9BBB3CBBF0281884ABA0)
+- [Inne artykuły o Swift na naszym blogu](https://www.example.com/blog/tag/swift/)

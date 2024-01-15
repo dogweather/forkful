@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Att hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Bash: Att hitta längden på en sträng"
 simple_title:         "Att hitta längden på en sträng"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att hitta längden på en sträng är ett vanligt problem inom programmering, oavsett om det är i Bash, Python eller en annan programmeringsspråk. Det är ett användbart verktyg för att kunna hantera data och manipulera text på ett effektivt sätt.
+Det finns många olika användningsområden för att hitta längden på en sträng inom Bash programmering. Det kan vara användbart för att kontrollera inmatade användardata, manipulera textsträngar eller skapa dynamiska variabler.
 
 ## Så här gör du
+För att hitta längden på en sträng i Bash, kan du använda inbyggda kommandon som "echo" och "wc". Se nedan för ett kodexempel och tillhörande utmatning.
 
-För att hitta längden på en sträng i Bash, kan du använda kommandot `echo` i kombination med parametern `-n` och `wc` (word count) som räknar antalet tecken i en sträng. Till exempel:
+```Bash
+# Skapa en variabel med en sträng
+string="Hej, välkommen till min artikel!"
 
-```
-Bash -c "echo -n 'Hej!';" | wc -m
-```
+# Använd "echo" och skicka variabeln till "wc" för att räkna antalet tecken
+echo $string | wc -c
 
-Detta kommer att producera outputen `4`, som motsvarar antalet tecken i strängen "Hej!". 
-
-En annan metod är att använda variabler i Bash. Du kan tilldela en sträng till en variabel och sedan använda `expr length` kommandot för att räkna längden. Till exempel:
-
-```
-str="Välkommen till Bash-programmering!"
-
-echo ${#str}
+# Detta kommer att ge utmatningen "31", vilket är längden på strängen inklusive mellanslag.
 ```
 
-Detta kommer att ge dig outputen `32`, vilket är antalet tecken i strängen som lagras i variabeln `str`.
+En annan metod är att använda "expr" kommandot tillsammans med "length" funktionen. Se exempel nedan.
 
-Det finns också möjlighet att använda sig av inbyggda Bash-funktioner såsom `length()`, `expr length()` och `wc -c` (character count).
+```Bash
+# Skapa en variabel med en sträng
+string="Hej, välkommen till min artikel!"
+
+# Använd "expr" och "length" för att räkna antalet tecken i strängen
+expr length $string
+
+# Detta kommer att ge utmatningen "31", vilket är längden på strängen inklusive mellanslag.
+```
 
 ## Djupdykning
+Att hitta längden på en sträng i Bash kan vara användbart när du arbetar med datahantering, särskilt när du behöver hantera användarinput. Det är också ett enkelt sätt att manipulera textsträngar eller skapa dynamiska variabler genom att använda längden på en sträng som en variabel.
 
-När du använder `wc -m` eller `wc -c` kommer du att få antalet tecken med eller utan mellanslag. Men om du behöver exakta resultat, bör du använda `wc -l` som räknar antalet rader i en sträng och tar hänsyn till space och specialtecken. Detta är särskilt viktigt om du arbetar med större textfiler.
+Du kan också använda olika alternativ med "wc" eller "length" baserat på ditt behov. Till exempel kan du lägga till flaggor som "-l" för att räkna antalet rader eller "-w" för att räkna antalet ord i en sträng.
 
-En annan viktig punkt att notera är att teckenkodningen kan påverka resultatet. Om du har text med speciella tecken, emoji eller olika språk, kan längden på strängen variera beroende på teckenkodningen. Det är viktigt att ha rätt teckenkodning för att få korrekta resultat.
-
-## Se också
-
-- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [The Linux Command Line](http://linuxcommand.org/tlcl.php)
+## Se även
+- [Bash Guide för Nybörjare](https://tiswww.case.edu/php/chet/bash/bashref.html)
+- [wc man-sida](https://www.man7.org/linux/man-pages/man1/wc.1.html)
+- [expr man-sida](https://www.man7.org/linux/man-pages/man1/expr.1.html)

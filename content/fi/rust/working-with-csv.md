@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Työskentelyä csv:n kanssa"
-simple_title:         "Työskentelyä csv:n kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "Rust: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,85 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää Rustia CSV:n kanssa
+## Miksi
 
-Rust on yleiskäyttöinen ohjelmointikieli, joka tarjoaa suorituskykyä ja turvallisuutta. Se on myös erittäin hyödyllinen työskennellessä CSV-tiedostojen kanssa.
+Miksi kukaan haluaisi aloittaa työskentelyn CSV-tiedostojen kanssa? No, ensinnäkin CSV-tiedostot ovat erittäin yleisiä tapoja tallentaa ja jakaa taulukkomuotoista dataa, joten niiden käsittelyyn liittyvät taidot ovat hyödyllisiä monilla eri aloilla, kuten ohjelmistokehityksessä, data-analytiikassa ja taloustieteessä.
 
-## Kuinka tehdä se
+## Miten
 
-Tämä on esimerkki yksinkertaisesta skriptistä, joka lukee CSV-tiedoston ja tulostaa sen sisällön konsoliin:
+Rustin CSV-kirjasto, nimeltään "csv", tarjoaa helpon ja tehokkaan tavan käsitellä ja lukea CSV-tiedostoja. Tässä esimerkissä näytämme, kuinka lukea CSV-tiedosto ja tulostaa sen sisältö konsoliin:
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
 use csv::Reader;
 
-let mut file = File::open("tiedosto.csv").expect("Tiedoston avaaminen epäonnistui.");
-
-let mut csv = Reader::from_reader(file);
-for result in csv.records() { 
-    let record = result.unwrap(); 
-    println!("{:?}", record);
+fn main() {
+    let mut csv_reader = Reader::from_path("data.csv").unwrap();
+    for result in csv_reader.records() {
+        let record = result.unwrap();
+        println!("{:?}", record);
+    }
 }
 ```
 
-Tämä koodi käyttää `csv` kirjastoa, joka on yhteisöllisesti ylläpidetty Rust-kirjasto, joka auttaa lukemaan ja kirjoittamaan CSV-tiedostoja.
+Tämä koodi luo Reader-tyypin instanssin, joka lukee tiedoston "data.csv" ja käy läpi jokaisen rivin sisällön käyttäen `.records()` -metodia. Koodin suorittamisen jälkeen näet kaikki tiedoston rivit tulostettuna konsoliin.
 
-Esimerkkitulostus:
+## Syvempää
 
-```
-["Nimi", "Ikä"]
-["Matti", "25"]
-["Maija", "30"]
-```
-
-Voit myös kerätä CSV-tiedoston sisällön vektoriksi:
-
-```Rust
-let data: Vec<Vec<String>> = csv.records()
-    .map(|r| r.unwrap().iter().map(|f| f.to_string()).collect())
-    .collect();
-```
-
-Tässä esimerkissä tiedosto sisältäisi saman sisällön kuin edellinen esimerkki. Saatulistan tulisi näyttää tältä:
-
-```
-[["Nimi", "Ikä"], ["Matti", "25"], ["Maija", "30"]]
-```
-
-Voit myös käyttää `serde` kirjastoa JSON-tiedoston generoimiseen CSV-tiedoston perusteella:
-
-```Rust
-use serde::Serialize;
-
-#[derive(Serialize)]
-struct Person {
-    name: String,
-    age: i32,
-}
-
-let mut wtr = csv::Writer::from_path("tiedosto.csv").unwrap();
-wtr.serialize(Person{name: "Matti".to_owned(), age: 25}).unwrap();
-wtr.serialize(Person{name: "Maija".to_owned(), age: 30}).unwrap();
-wtr.flush().unwrap();
-```
-
-Yllä oleva koodi tuottaisi seuraavan CSV-tiedoston:
-
-```
-name,age
-Matti,25
-Maija,30
-```
-
-## Syventävä tietoa CSV:n kanssa työskentelystä
-
-CSV-tiedostot ovat yleisiä tietojen tallennusmuotoja, ja niitä käytetään usein tietojen siirtämiseen eri ohjelmistojen välillä. Rustin avulla CSV-tiedostojen lukeminen ja kirjoittaminen on helppoa ja turvallista, sillä se tarjoaa tarkat tietotyypit ja estää tyypittämättömien arvojen huomaamattoman käytön.
-
-CSV-tiedostojen käsittelyyn liittyy kuitenkin myös haasteita, kuten tiedostojen erilaiset muodot ja erikoismerkit. Suosittelemme tutustumaan tarkemmin `csv` ja `serde` kirjastojen dokumentaatioon, jotta voit hyödyntää niitä tehokkaasti CSV-tiedostojen työstämisessä.
+Kun olet perehtynyt perusteisiin, voit tutkia CSV-kirjaston muita ominaisuuksia, kuten datan kirjoittamista CSV-tiedostoon tai räätälöityjä tapoja käsitellä tietueita. Voit myös harkita muiden Rust-kirjastojen, kuten "serde", käyttöä datan lukemiseen ja muokkaamiseen erilaisissa muodoissa.
 
 ## Katso myös
 
-- [csv-kirjaston dokumentaatio](https://docs.rs/csv)
-- [serde-kirjaston dokumentaatio](https://docs.rs/serde)
-- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/fi/)
+- [csv Rust-kirjaston dokumentaatio](https://docs.rs/csv/)
+- [Serde Rust-kirjasto](https://serde.rs/)
+- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/)

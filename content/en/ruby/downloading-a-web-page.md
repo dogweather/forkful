@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Ruby recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,51 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a language used for web development, Ruby offers powerful tools for downloading web pages. With this capability, developers can easily retrieve data from websites for various purposes such as web scraping, data analysis, and automated tasks.
+If you are working on a project that involves scraping data from the web, downloading a webpage can be a crucial step. Whether you are a data scientist, web developer, or just a curious individual, downloading a webpage can provide you with valuable information and insights.
 
 ## How To
 
-To download a web page using Ruby, we will be using the `open-uri` library, which allows us to open and read URL links. First, we need to require the library in our code:
+To download a webpage using Ruby, you can utilize the "net/http" library. First, you need to require the library in your code:
 
 ```Ruby
-require 'open-uri'
+require 'net/http'
 ```
 
-Next, we can use the `open()` method and pass in the URL of the web page we want to retrieve:
+Then, you can use the "Net::HTTP.get" method to download the webpage and store it in a variable:
 
 ```Ruby
-page = open("https://www.example.com")
+page = Net::HTTP.get(URI("https://www.example.com"))
 ```
 
-This will return a `Tempfile` object, which contains the raw HTML data of the web page. We can then use the `.read` method to read the data and store it in a variable:
+You can also specify the user agent and other headers to mimic a browser request:
 
 ```Ruby
-html_data = page.read
+url = URI.parse("https://www.example.com")
+request = Net::HTTP::Get.new(url.to_s, {'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Gecko/20100101 Firefox/91.0'})
+response = Net::HTTP.start(url.host, url.port, use_ssl: url.scheme == 'https') do |http|
+  http.request(request)
+end
+
+page = response.body
 ```
 
-We can also download other types of data, such as images, using the same method. For example, to download an image from a webpage and save it to our local computer, we can use the `copy_stream` method:
-
-```Ruby
-# Create a file to save the image
-file = open('image.png', 'wb')
-
-# Download and save the image to our local file
-file << open('https://www.example.com/image.png').read
-```
+Once you have downloaded the webpage, you can do further processing, such as parsing HTML, extracting specific data, or saving the page locally.
 
 ## Deep Dive
 
-The `open-uri` library uses the `Net::HTTP` library to retrieve data from URLs. This means that it supports various protocols such as HTTP, HTTPS, and FTP. It also supports redirects, basic authentication, and cookie handling.
+When downloading a webpage with Ruby, it is important to consider the different ways it can be accessed. For example, if a website requires authentication, you may need to use a separate library or method to handle it. Additionally, you may encounter errors such as timeouts or invalid SSL certificates, which you need to handle in your code.
 
-Furthermore, we can also pass in options to the `open()` method to customize the behavior of the request, such as setting the timeout period or the user-agent. Refer to the official documentation for a full list of available options and their usage.
+Another aspect to consider is the performance of your code. If you are downloading multiple webpages, you may want to consider using parallelization techniques to speed up the process. You can also implement caching to avoid multiple downloads of the same webpage.
 
-It's important to note that downloading web pages using Ruby may not always be legal, and it's crucial to check the website's terms and conditions before using any data for commercial purposes.
+See Also
 
-## See Also
-
-To learn more about downloading web pages in Ruby, here are some helpful links:
-
-- [Ruby official documentation on open-uri](https://ruby-doc.org/stdlib-2.7.1/libdoc/open-uri/rdoc/OpenURI.html)
-- [Net::HTTP documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/index.html) 
-- [A Beginner's Guide to Web Scraping with Ruby](https://www.scrapingbee.com/blog/web-scraping-ruby/)
-- [Open Source Web Scrapers in Ruby](https://github.com/dunyakirkali/open-source-ruby-web-scrapers#back-to-basics)
+- The official Ruby documentation for "net/http": https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html
+- A tutorial on web scraping with Ruby: https://www.freecodecamp.org/news/web-scraping-with-ruby-tutorial/
+- A blog post on optimizing web scraping with Ruby: https://blog.arkency.com/7-tips-to-enhance-your-web-scraping-scripts-with-ruby/

@@ -1,5 +1,6 @@
 ---
-title:                "Python: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Python: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "Python"
 category:             "Python"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Regular expressions, eller reguljära uttryck, är ett användbart verktyg inom Python programmering som hjälper till att söka, identifiera och manipulera textsträngar. Det är ett kraftfullt verktyg som sparar tid och gör det möjligt att bearbeta stora mängder data snabbt och effektivt.
+Varför ska man använda reguljära uttryck? Förkortat regex, är en kraftfull och effektiv metod för att söka och manipulera text på ett mycket specifikt sätt. Det är särskilt användbart för programmerare som behöver hantera stora mängder data och söka efter specifika mönster.
 
-## Så här gör du
-Det finns olika moduler inom Python som stöder regular expressions, bland annat "re" och "regex". För att använda dessa moduler måste de importeras i koden med hjälp av "import" kommandot. Här är ett exempel på hur man kan söka efter en viss textsträng i en variabel med hjälp av reguljära uttryck:
+## Hur man använder reguljära uttryck i Python
+```python
+# Importera "re" biblioteket för att använda reguljära uttryck
+import re 
 
-```Python
-import re # importera modulen
+# Skapa en sträng som innehåller text att söka igenom
+text = "Den här texten innehåller flera olika ord, inklusive ord som bil, bok och apa."
 
-text = "Detta är en textsträng som innehåller ordet Python"
+# Använda re.findall() för att hitta alla ord som börjar med bokstaven "b"
+resultat = re.findall(r"b\w+", text)
 
-match = re.search(r"Python", text) # sök efter ordet "Python" i textsträngen
+# Skriv ut resultatet
+print(resultat)
 
-if match:
-    print("Ordet hittades.")
-else:
-    print("Ordet hittades inte.")
+# Output: ['bok', 'bil']
 ```
 
-Output:
+I detta exempel använde vi reguljära uttryck för att hitta alla ord som börjar med bokstaven "b" i en given sträng. Detta är bara en enkel användning av regex, men det finns många fler möjligheter att utforska.
 
-```
-Ordet hittades.
-```
+## Djupdykning i reguljära uttryck
+Reguljära uttryck kan verka komplicerade till en början, men när du väl lärt dig grunderna kan du enkelt anpassa sökningar för att passa dina specifika behov. De är mycket användbara för att filtrera och manipulera data i textformat och kan hjälpa till att effektivisera din kod.
 
-I detta exempel används "re.search()" funktionen för att söka efter ett specifikt mönster, i detta fall ordet "Python". Om mönstret hittas, returneras en matchning och annars returneras "None". Notera att "r" prefixet före strängen används för att behandla strängen som ett reguljärt uttryck.
+Du kan också använda reguljära uttryck för att validera inmatning från användare, till exempel kontrollera om ett telefonnummer eller e-postadress följer ett specifikt format.
 
-## Djupgående
-Regular expressions erbjuder många olika mönster för sökning, så som sökning efter flera mönster, avläsning av specifika tecken och ersättning av textsträngar. Det finns också en mängd specialtecken som kan användas för att göra mer avancerade sökningar.
-
-En av de viktigaste delarna av att använda regular expressions är att förstå hur dessa specialtecken fungerar. "```\d```" står till exempel för att söka efter en siffra, "```\w```" står för ett alfanumeriskt tecken och "```\s```" står för ett mellanslagstecken.
-
-Det finns också olika funktioner som kan användas för att manipulera strängar med hjälp av regular expressions, så som "sub()", som ersätter matchade mönster med annan text.
-
-För djupgående information och exempel på andra mönster och funktioner, se dokumentationen för "re" eller "regex" modulen.
+Det finns många resurser online för att lära sig mer om reguljära uttryck och dess syntax. Du kan också experimentera och öva med olika mönster på olika typer av text för att förbättra din förståelse.
 
 ## Se även
-- [Re-modulen](https://docs.python.org/3/library/re.html)
-- [Regex-modulen](https://docs.python.org/3/library/re.html)
-- [Reguljära uttryck i Python](https://realpython.com/regex-python/)
-- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/python)
+- [Python re dokumentation](https://docs.python.org/3/library/re.html)
+- [Reguljära uttryck cheat sheet](https://www.debuggex.com/cheatsheet/regex/python)
+- [Online regex testare](https://regex101.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Clojure: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração?
+## Por que
 
-Imprimir uma saída de depuração é uma prática comum em programação, especialmente quando se trata de descobrir problemas no código. Isso pode ajudar a encontrar erros e rastrear o fluxo do programa, o que torna a depuração mais fácil e eficiente.
+Você já teve dificuldade em entender porque seu código não está funcionando como esperado? Às vezes, pode ser difícil descobrir e entender exatamente o que está acontecendo em um programa. É aí que o recurso de impressão de saída de depuração pode ser útil.
 
 ## Como fazer
 
-A impressão da saída de depuração pode ser feita usando a função `println` em Clojure. Um exemplo simples é:
+Para imprimir saída de depuração em Clojure, você pode usar a função `println` ou `prn`, que são incluídas na biblioteca padrão do Clojure. Aqui está um exemplo simples de como usá-las:
 
-```Clojure
-(defn somar [a b]
-  (println "Somando" a "e" b)
-  (+ a b))
+```Clojure 
+(def num1 5) 
+(def num2 10) 
+(println "O valor de num1 é" num1) 
+(prn "A soma de num1 e num2 é" (+ num1 num2))
 ```
 
-Isso imprimirá a mensagem "Somando 2 e 5" antes de retornar o resultado da soma 7. Além disso, pode-se usar a função `pr` para imprimir valores de forma mais legível.
+A saída deste código será:
+
+```
+O valor de num1 é 5 
+"A soma de num1 e num2 é" 15
+```
+
+Você também pode utilizar o recurso de formatação de strings do Clojure para personalizar a sua saída de depuração. Por exemplo:
+
+```Clojure 
+(def nome "Ana") 
+(def sobrenome "da Silva") 
+(println (format "Olá, meu nome é %s %s" nome sobrenome))
+```
+
+A saída deste código será:
+
+```
+Olá, meu nome é Ana da Silva
+```
 
 ## Mergulho profundo
 
-É importante notar que imprimir saída de depuração deve ser usado com moderação, pois pode causar poluição visual e tornar o código mais difícil de ler. Além disso, é recomendável usar ferramentas de depuração específicas, como o REPL, para encontrar e corrigir erros.
+Além das funções `println` e `prn`, o Clojure também possui a função `print`, que funciona de maneira semelhante, mas não adiciona uma nova linha no final da saída. Você também pode usar a macro `dbg` para imprimir informações de depuração somente quando uma determinada condição é atendida, o que pode ser útil para evitar uma sobrecarga de saída de depuração.
 
-No entanto, se a saída de depuração for necessária, a função `println` também pode ser usada para imprimir valores de variáveis e expressões complexas, ajudando a entender como o código está sendo executado. Além disso, é possível usar a diretiva `#dbg` para imprimir informações adicionais, como o tempo de execução de uma função.
+Outra técnica útil para imprimir saída de depuração é utilizar o `clojure.pprint`, que permite que você formate de forma mais específica a sua saída, como por exemplo, a largura máxima da linha ou o número de dígitos após a vírgula.
+
+Utilizar a impressão de saída de depuração também pode ser útil para entender a ordem de execução de funções e o valor de variáveis ​​em um programa mais complexo. Por isso, não tenha medo de utilizá-la sempre que necessário para ajudar a solucionar problemas no seu código.
 
 ## Veja também
 
-- [Documentação oficial sobre depuração em Clojure](https://clojure.org/guides/repl/debugging)
-- [Tutorial sobre depuração em Clojure](https://purelyfunctional.tv/guide/debugging-clojure/)
-- [Lista de ferramentas de depuração para Clojure](https://clojure.org/community/tools#_debugging_and_troubleshooting)
+- [Documentação do Clojure sobre a saída de depuração](https://clojure.org/reference/debugging)
+- [Tutorial sobre como utilizar formatação de strings no Clojure](https://purelyfunctional.tv/guide/clojure-string-formatting/)

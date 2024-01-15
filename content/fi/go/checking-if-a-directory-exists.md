@@ -1,6 +1,7 @@
 ---
-title:                "Go: Tarkista, onko hakemisto olemassa"
-simple_title:         "Tarkista, onko hakemisto olemassa"
+title:                "Tarkistetaan, onko hakemistoa olemassa"
+html_title:           "Go: Tarkistetaan, onko hakemistoa olemassa"
+simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Tarkastaa jos hakemisto on olemassa
+## Miksi
 
-Usein ohjelmoinnissa syntyy tilanteita, jossa tarvitaan tietää onko tietyssä hakemistossa olemassa tiettyä tiedostoa tai hakemistoa. Tähän tarpeeseen vastaamiseksi Go-kieltä on tarjolla monia erilaisia kirjastoja ja toimintoja, jotka mahdollistavat hakemistojen tarkistamisen.
+On olemassa monia tilanteita, joissa voit joutua tarkistamaan, onko tietyssä hakemistossa olemassa tiedostoja. Tämä voi olla hyödyllistä esimerkiksi tietoturvallisuuden kannalta, jotta varmistat, etteivät arkaluonteiset tiedostot päädy vääriin käsiin.
 
-## Miten: Koodiesimerkkejä ja tulostettuja tuloksia
-
-```Go
-package main
-
-import (
-	"os"
-	"fmt"
-)
-
-func main() {
-	// Tarkastaako hakemisto "data" on olemassa
-	if _, err := os.Stat("./data"); os.IsNotExist(err) {
-		fmt.Println("Hakemisto 'data' ei ole olemassa")
-	} else {
-		fmt.Println("Hakemisto 'data' on olemassa")
-	}
-}
-```
-
-Tässä esimerkissä käytetään os-kirjaston `Stat`-funktiota, joka palauttaa tiedon halutun polun tilasta. Jos hakemisto ei ole olemassa, tulostetaan viesti siitä. 
-
-Tarkempi tieto hakemiston tilasta voidaan saada `FileInfo`-tietorakenteesta, joka palauttaa esimerkiksi hakemiston luomisajankohdan ja muokkausajankohdan. Esimerkki käyttäen tätä tietoa:
+## Kuinka
 
 ```Go
 package main
 
 import (
-	"os"
-	"fmt"
-	"time"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// Tarkastaako hakemisto "data" on olemassa
-	if fi, err := os.Stat("./data"); os.IsNotExist(err) {
-		fmt.Println("Hakemisto 'data' ei ole olemassa")
-	} else {
-		fmt.Printf("Hakemisto 'data' on olemassa ja sitä on muokattu viimeksi %s\n", fi.ModTime().Format(time.RFC1123))
-	}
+    // Tarkistetaan, onko hakemisto "tiedostot" olemassa
+    _, err := os.Stat("tiedostot")
+     
+    // Jos err muuttuja on nil, hakemisto on olemassa
+    if err == nil {
+        fmt.Println("Hakemisto löytyi!")
+    } else {
+        // Muussa tapauksessa tulostetaan virheilmoitus
+        fmt.Println("Virhe:", err)
+    }
 }
 ```
 
-Tämä tulostaisi esimerkiksi: `Hakemisto 'data' on olemassa ja sitä on muokattu viimeksi Tue, 21 Jan 2020 15:04:05 UTC`.
+Esimerkissä käytetään `os.Stat()` -funktiota, joka palauttaa nil-arvon, jos hakemisto on olemassa, ja muussa tapauksessa virheen.
 
-## Syvällisempi tarkastelu: Hakemistojen tarkistamisen lisätietoja
+## Syvemmälle
 
-`Stat`-funktion lisäksi, Go-kielen `filepath`-paketti tarjoaa muitakin hyödyllisiä toimintoja hakemistojen tarkistamiseen. Näihin kuuluvat esimerkiksi `Walk`-funktio, joka mahdollistaa käymisen läpi kaikki alihakemistot ja niiden tiedostot tietystä polusta, sekä `IsAbs`-funktio, joka tarkistaa, onko annettu polku absoluuttinen vai suhteellinen.
+`os.Stat()` -funktio käyttää käyttöjärjestelmän `stat()` -systeemikutsua tarkistaakseen, onko tiedosto tai hakemisto olemassa. Tämä kutsu palauttaa erilaisia tietoja tiedoston tai hakemiston tilasta, kuten koko, aikaleimat ja käyttöoikeudet. Näitä tietoja voidaan käyttää tarkempiin tarkastuksiin.
 
 ## Katso myös
 
-- [Go Language Specification - Os Package](https://golang.org/pkg/os/)
-- [Go Language Specification - Filesystem Implementation](https://golang.org/pkg/os/#Filesystem_Implementations)
-- [Go Language Specification - File Path Handling](https://golang.org/pkg/filepath/)
+- [Go'n virallinen dokumentaatio os-paketeista](https://golang.org/pkg/os/)
+- [Go'n dokumentaatio os-paketin Stat()-funktiosta](https://golang.org/pkg/os/#Stat)
+- [Stack Overflow -keskustelu tiedoston tai hakemiston olemassaolon tarkistamisesta Go:lla](https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go)

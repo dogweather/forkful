@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "Youngsang godeunghaneun wonrak johap cheonyul"
+html_title:           "Kotlin: Youngsang godeunghaneun wonrak johap cheonyul"
+simple_title:         "Youngsang godeunghaneun wonrak johap cheonyul"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,36 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # 왜
-
-Kotlin에서 문자열의 패턴과 일치하는 문자를 삭제하는 것이 유용한 이유는 특정 문자열이나 패턴을 제거해야 할 때 시간을 절약하고 불필요한 과정을 줄일 수 있다는 점입니다.
+누군가가 패턴과 일치하는 문자를 삭제하는 것에 삽입할 이유를 최대 2개의 문장으로 설명합니다.
 
 ## 어떻게
+코드 블록 " ```Kotlin ...```" 내의 코딩 예제와 샘플 출력을 사용하여 삭제된 문자에 대한 쉬운 설명을 제공합니다.
 
 ```Kotlin
-val str = "Hello, World!"
-val newStr = str.replace(Regex("[aeiou]"), "") // "Hll, Wrld!"
+val input = "안녕하세요, Kotlin!"
+val pattern = "[^가-힣 ]".toRegex()
 
-val longStr = "This is a long string with multiple occurrences of the letter e."
-val newLongStr = longStr.replace(Regex("[e]"), "") // "This is a long string with multipl occurrences of th lttr ."
+val output = input.replace(pattern, "")
+println(output)
 ```
+출력: 안녕하세요 Kotlin
 
-## 깊이 알아보기
+## 더 깊게 들어가기
+패턴과 일치하는 문자를 삭제하는 더 많은 방법에 대해 알아봅니다. 이를테면, 정규식 패턴을 사용하는 것 외에도 문자열 메소드를 사용하여 문자를 삭제하는 방법이 있을 수 있습니다.
 
-문자열에서 특정 패턴을 찾고 대체하여 문자를 삭제하는 것은 `Regex` 클래스를 이용하여 가능합니다. `replace()` 메서드는 문자열의 정규표현식과 일치하는 모든 부분을 대체하여 새로운 문자열을 반환합니다.
+## 더 알아보기
+관련된 다른 정보와 자료들을 살펴봅니다.
 
-## 더 많은 정보
-
-- [Kotlin의 정규표현식 사용 방법](https://codechacha.com/ko/kotlin-regular-expression/)
-- [Kotlin 문자열 다루기](https://kotlinlang.org/docs/strings.html)
-- [Regex 클래스 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/) 
-
-# 더 알아보기
-
-다음은 Kotlin에서 문자열을 다루는 다른 기능과 관련된 유용한 링크들입니다.
-
-## 링크
-
-- [Kotlin 튜토리얼](https://kotlinlang.org/docs/tutorials/)
-- [코틀린 코딩 컨벤션](https://kotlinlang.org/docs/coding-conventions.html)
-- [Kotlin 단축키](https://kotlinlang.org/docs/tutorials/command-line.html#ide-shortcuts)
-- [Kotlin 표준 라이브러리](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- [코틀린 공식 사이트](https://kotlinlang.org/docs/reference/basic-types.html)
+- [정규식 패턴에 대한 더 자세한 설명](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [문자열 메소드의 다른 활용법](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)

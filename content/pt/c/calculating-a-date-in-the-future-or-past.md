@@ -1,5 +1,6 @@
 ---
-title:                "C: Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "C: Calculando uma data no futuro ou passado"
 simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "C"
 category:             "C"
@@ -9,52 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Você já se perguntou como seria calcular uma data no futuro ou no passado? Talvez seja para planejar uma viagem ou para fazer uma programação de eventos. Independentemente do motivo, calcular uma data específica pode ser extremamente útil em diferentes situações.
+## Por que
 
-## How To
-Para calcular uma data em C, podemos utilizar a biblioteca de funções "time.h". Primeiro, precisamos declarar as variáveis necessárias para armazenar a data atual e a data desejada. Em seguida, utilizamos a função "time()" para obter a data atual em segundos. A partir disso, podemos utilizar a função "localtime()" para converter o tempo em segundos para uma estrutura de data que pode ser manipulada.
+Calcular uma data no futuro ou no passado pode ser uma tarefa útil em várias aplicações, como sistemas de reservas, agendas e outras ferramentas de gerenciamento do tempo. Além disso, é uma habilidade importante para programadores que desejam criar aplicações mais completas e funcionais.
 
-```
+## Como fazer
+
+Para calcular uma data no futuro ou no passado em linguagem C, precisamos manipular as informações de data e hora. Uma maneira de fazer isso é utilizando a struct "tm" da biblioteca padrão <time.h>. Veja um exemplo de código abaixo:
+
+```C
 #include <stdio.h>
 #include <time.h>
 
 int main(){
-    struct tm *atual, *data_final;
-    time_t atual_seg, final_seg;
+	//Criando uma struct tm com a data atual
+	struct tm data_atual;
+	time_t tempo_atual;
+	tempo_atual = time(NULL);
+	data_atual = *localtime(&tempo_atual);
 
-    // Obtém a data atual em segundos
-    time(&atual_seg);
+	//Adicionando 10 dias à data atual
+	data_atual.tm_mday += 10;
+	mktime(&data_atual);
 
-    // Converte a data atual para uma estrutura de data
-    atual = localtime(&atual_seg);
-
-    // Define a data desejada (ano, mês, dia)
-    data_final->tm_year = 2021 - 1900; // 2021 é representado por 1900 em C
-    data_final->tm_mon = 11 - 1; // Novembro é representado como 10 em C
-    data_final->tm_mday = 25;
-
-    // Converte a data desejada para segundos
-    final_seg = mktime(data_final);
-
-    // Calcula a diferença entre as datas em dias
-    double days = difftime(final_seg, atual_seg) / (60*60*24);
-
-    // Imprime o resultado
-    printf("Faltam %.0f dias para o Natal de 2021!", days);
-
-    return 0;
+	//Imprimindo a nova data
+	printf("Data daqui a 10 dias: %d/%d/%d", data_atual.tm_mday, data_atual.tm_mon+1, data_atual.tm_year+1900);
+	return 0;
 }
 ```
 
-Exemplo de saída: Faltam 127 dias para o Natal de 2021!
+A saída desse código seria "Data daqui a 10 dias: 20/9/2020", considerando que o código foi executado em 10 de setembro de 2020. Como podemos ver, primeiro criamos uma struct "tm" com a data atual e utilizamos a função localtime() para preenchê-la. Em seguida, utilizamos a função mktime() para corrigir a data e hora da struct, levando em conta possíveis alterações que fizemos. Por fim, basta acessar os membros da struct "tm" para obter as informações desejadas.
 
-## Deep Dive
-Para calcular uma data no futuro ou no passado, é importante entender como as datas são representadas em C. Elas são armazenadas em segundos a partir de 01/01/1970. Ou seja, o valor 0 representaria essa data específica e valores positivos ou negativos indicam datas antes ou depois disso.
+## Mergulho Profundo
 
-Além disso, é preciso ter cuidado com anos bissextos ao realizar cálculos com datas. E, caso seja necessário, é possível adicionar ou subtrair segundos a uma data utilizando a função "mktime()".
+Além de adicionar uma quantidade específica de tempo, como fizemos no exemplo acima, também é possível utilizar outras funções para manipular datas. Por exemplo, a função difftime() pode ser utilizada para calcular a diferença em segundos entre duas datas. Já a função strftime() pode ser utilizada para formatar uma data de acordo com um padrão especificado.
 
-## See Also
-- [Documentação oficial da biblioteca "time.h" em C](https://en.cppreference.com/w/c/chrono)
-- [Explicação detalhada sobre representação de datas em C](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
-- [Outras funções úteis para manipulação de datas em C](http://www.cplusplus.com/reference/ctime/)
+É importante lembrar que a struct "tm" possui mais membros do que os mostrados no exemplo, como informações sobre o fuso horário e horário de verão. Portanto, é importante consultar a documentação para utilizar corretamente todas as funcionalidades dessa biblioteca.
+
+## Veja também
+
+- [Documentação oficial da struct "tm"](https://www.cplusplus.com/reference/ctime/tm/)
+- [Tutorial sobre manipulação de datas em C](https://www.daniweb.com/programming/software-development/threads/476004/manipulating-date-and-time-in-c)

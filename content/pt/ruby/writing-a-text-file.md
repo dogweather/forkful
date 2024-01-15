@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Escrevendo um arquivo de texto"
+title:                "Escrevendo um arquivo de texto"
+html_title:           "Ruby: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,64 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que
+# Por Que
 
-Escrever um arquivo de texto pode parecer uma tarefa simples, mas é uma habilidade importante em qualquer linguagem de programação, incluindo Ruby. Ao aprender a escrever um arquivo de texto em Ruby, você será capaz de armazenar dados de forma organizada, criar e ler arquivos de configuração, entre outras funcionalidades úteis.
+Escrever arquivos de texto é uma tarefa fundamental na programação Ruby, pois permite armazenar e acessar informações importantes de forma organizada e fácil de usar.
 
-##Como Fazer
+# Como Fazer
 
-Para escrever um arquivo de texto em Ruby, utilizaremos o método `File.open()`, que possui três parâmetros: o nome do arquivo, o modo de operação e o bloco de código que será executado para escrever o arquivo.
+Para escrever um arquivo de texto usando Ruby, primeiro precisamos abrir um novo arquivo utilizando o método `File.open`. Em seguida, utilizamos o método `write` para inserir o conteúdo que desejamos no arquivo. Por exemplo:
 
-```
-File.open("arquivo.txt", "w") do |file|
-  file.puts "Olá, mundo!"
+```Ruby
+File.open("meu_arquivo.txt", "w") do |file|
+  file.write("Olá, mundo!")
 end
 ```
 
-Este código criará um arquivo de texto chamado "arquivo.txt" e irá escrever a string "Olá, mundo!" dentro dele. O parâmetro "w" indica que o arquivo será aberto no modo de escrita.
+Isso criará um arquivo chamado "meu_arquivo.txt" e inserirá a frase "Olá, mundo!" dentro dele. Podemos usar o método `puts` para adicionar novas linhas ao arquivo:
 
-Para escrever mais de uma linha no arquivo, podemos utilizar o método `file.write()`. Por exemplo, para criar uma lista de frutas em nosso arquivo, podemos fazer o seguinte:
-
-```
-File.open("arquivo.txt", "w") do |file|
-  file.write "Maçã\n"
-  file.write "Banana\n"
-  file.write "Morango\n"
+```Ruby
+File.open("meu_arquivo.txt", "a") do |file|
+  file.puts("Eu sou um desenvolvedor Ruby!")
 end
 ```
 
-Isso criará um arquivo de texto com as seguintes linhas:
+Além disso, é importante sempre fechar o arquivo após terminarmos de escrever nele, utilizando o método `close`:
 
+```Ruby
+File.open("meu_arquivo.txt", "a") do |file|
+  file.puts("Isso é tudo, pessoal!")
+end
+
+file.close
 ```
-Maçã
-Banana
-Morango
-```
 
-##Mergulho Profundo
+Ao abrir o arquivo "meu_arquivo.txt", veremos que todas as linhas foram adicionadas com sucesso.
 
-Ao escrever um arquivo de texto em Ruby, também podemos utilizar o método `file.puts()` para adicionar uma nova linha após cada texto que escrevemos no arquivo. Por exemplo:
+# Mergulho Profundo
 
-```
-File.open("arquivo.txt", "w") do |file|
-  file.puts "Primeira linha"
-  file.puts "Segunda linha"
-  file.puts "Terceira linha"
+Além dos métodos `write` e `puts`, existem outras maneiras de escrever em arquivos de texto em Ruby. Por exemplo, podemos usar o método `print`, que não adiciona uma nova linha após o conteúdo. Também podemos concatenar diferentes variáveis e strings em uma única linha:
+
+```Ruby
+nome = "João"
+idade = 30
+
+File.open("meu_arquivo.txt", "a") do |file|
+  file.print("Olá, eu me chamo #{nome} e tenho #{idade} anos.")
 end
 ```
 
-Isso criará um arquivo de texto com as seguintes linhas:
+Outra opção é utilizar o método `printf`, que formata a saída de acordo com as especificações dadas. Por exemplo:
 
+```Ruby
+preco = 99.99
+File.open("meu_arquivo.txt", "a") do |file|
+  file.printf("O preço do produto é R$%.2f.", preco)
+end
 ```
-Primeira linha
-Segunda linha
-Terceira linha 
-```
 
-Além disso, podemos utilizar outros modos de operação do método `File.open()`, como "a" para adicionar texto no final do arquivo, e "r+" para leitura e escrita simultâneas.
+Isso resultará em uma saída formatada como "O preço do produto é R$99.99.".
 
-##Veja Também
+# Veja Também
 
-- [Ruby: How to Create and Write to a File](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Ruby File Class](https://ruby-doc.org/core-2.6.3/File.html)
-- [Working with Files in Ruby](https://www.pluralsight.com/guides/working-files-ruby)
+Aqui estão alguns recursos adicionais para aprender mais sobre como escrever arquivos de texto em Ruby:
+
+- [Documentação oficial do Ruby sobre o uso de arquivos](https://ruby-doc.org/core-2.7.2/File.html)
+- [Tutorial sobre escrita em arquivos com Ruby na DevMedia](https://www.devmedia.com.br/escrita-de-arquivos-em-ruby/38327)
+- [Vídeo tutorial sobre o uso de arquivos em Ruby no canal Código Fonte TV](https://www.youtube.com/watch?v=6XgkCkOhlTA)

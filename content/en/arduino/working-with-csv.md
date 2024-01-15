@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Arduino recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,54 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-If you are interested in data analysis or want to incorporate data into your Arduino projects, working with CSV files can be incredibly beneficial. CSV (Comma Separated Values) files are a commonly used format for storing and organizing large amounts of data, making it easier to analyze and process. With Arduino, you can easily retrieve data from CSV files and use it in your projects, adding a whole new level of functionality.
+CSV (Comma Separated Values) files are commonly used for storing and exchanging data in a structured format. Engaging in working with CSV on Arduino boards can be beneficial for projects that involve data collection, storage, and analysis. 
 
-## How To
+## How To 
 
-To work with CSV files in Arduino, you will need the Arduino IDE and the ArduinoCSV library. The following code block shows a simple example of how to retrieve data from a CSV file and print it on the serial monitor.
+To work with CSV files on Arduino, you will need to use a library called "CSV Reader." First, make sure you have the latest version of Arduino IDE installed. Then, follow these steps: 
 
-```Arduino
-// include the required library
-#include <ArduinoCSV.h>
+- Open the Arduino IDE and create a new sketch. 
+- Add the "CSV Reader" library to your project using the Library Manager. This can be found under "Tools" in the menu bar. 
+- Include the library at the beginning of your sketch by adding `#include <csv.h>` 
+- Next, you will need to initialize the CSV reader by creating an instance of the `CSV` object. This can be done by adding the following code: 
+```Arduino 
+CSV csv; 
+```
+- Now, you can start reading and writing data from a CSV file. For example, if you want to read data from a file called "data.csv," you can use the following code: 
+```Arduino 
+if(csv.init("data.csv")) { 
+    // Read data here 
+} 
+```
+- To read data, you can use the `read()` function which takes in the row and column number as parameters. For example, to read the data in the first row and second column, you can use `csv.read(1,2)`. 
+- Similarly, to write data to a CSV file, you can use the `write()` function which takes in the row, column number, and the data to be written as parameters. For example, `csv.write(1,2, "Hello")` will write "Hello" in the first row and second column. 
+- Finally, don't forget to close the CSV file using `csv.close()` when you are finished working with it. 
 
-void setup() {
+### Sample Output 
 
-  // initialize serial communication
-  Serial.begin(9600);
+To give you a better understanding, let's take a look at a simple example. In this example, we will be reading data from a CSV file and displaying it on the serial monitor. 
 
-  // create an instance of the ArduinoCSV class
-  ArduinoCSV csv;
+```Arduino 
+#include <csv.h> 
 
-  // open the CSV file
-  csv.open("data.csv");
+CSV csv; 
 
-  // read each line and print it on the serial monitor
-  while(csv.available()) {
-    Serial.println(csv.read());
-  }
+void setup() { 
+    Serial.begin(9600); 
+} 
 
-  // close the CSV file
-  csv.close();
-}
+void loop() { 
+    if(csv.init("data.csv")) { 
+        //Read data from first row and second column 
+        String data = csv.read(1,2); 
+        Serial.println(data); 
+    } 
 
-void loop() {
-  // nothing to do here
-}
+    csv.close(); //Close the CSV file 
+    delay(1000); 
+} 
 ```
 
-Assuming your CSV file is in the same folder as your sketch, you should see the data being printed on the serial monitor. The output will include the headers and values from each row in the CSV file. This is just a basic example, but it demonstrates how easy it is to retrieve data from CSV files in Arduino.
+Assuming our "data.csv" file contains the following data: 
 
-## Deep Dive
+|   | A  | B  | 
+|---|----|----| 
+| 1 | 10 | 20 | 
 
-One important thing to note when working with CSV files in Arduino is that the data is stored as a string. This means that if you want to use the data as numbers, you will need to convert them using the appropriate functions. For example, if your CSV file contains temperature readings, you will need to use the `toFloat()` function to convert the string into a float value.
+The output on the serial monitor will be: 
 
-Another useful feature of the ArduinoCSV library is the ability to specify the delimiter (i.e. the character that separates each value in the CSV file). By default, it is set to a comma, but you can change it to suit your needs. For example, if your CSV file uses a semicolon as a delimiter, you can specify it by using the `setDelimiter()` function before opening the CSV file.
+```
+20 
+``` 
 
-## See Also
+## Deep Dive 
 
-To learn more about working with CSV files in Arduino, check out these resources:
+The "CSV Reader" library also provides some advanced features such as skipping rows, setting a custom delimiter, and reading multiple files at once. You can explore these features by referring to the library's documentation. 
 
-- [ArduinoCSV library documentation](https://github.com/rodan/dueflashstorage)
-- [Tutorial on using CSV files in Arduino projects](https://arduinogetstarted.com/library/arduino-csv-files)
+It is worth noting that the `CSV` object also has a `totalRows()` function which returns the total number of rows in the file, and a `totalColumns()` function which returns the total number of columns in the file. These functions can be useful when working with large CSV files. 
+
+## See Also 
+
+To learn more about using the "CSV Reader" library, check out the official documentation and examples: 
+- [CSV Reader Documentation](https://arduiniana.org/libraries/csv/) 
+- [CSV Reader Examples](https://github.com/bertrandom/sd2card/tree/master/examples)

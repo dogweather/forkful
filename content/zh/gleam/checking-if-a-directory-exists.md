@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 检查目录是否存在"
+title:                "检查目录是否存在"
+html_title:           "Gleam: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 为什么
 
-对于编程新手来说，经常会遇到一个常见的问题：如何检查一个目录是否存在？这可能是因为他们需要在程序中创建新的目录，或者需要确认某个目录是否存在以便进行后续的操作。无论是什么原因，检查目录是否存在是一个非常重要的编程技巧，它能够帮助我们更好地控制程序的流程。
+有的时候，在编写程序时需要检查一个文件夹是否存在。这样做是为了提高程序的健壮性，避免在执行某些操作时因为文件夹不存在而导致程序崩溃。
 
-# 如何操作
+# 如何进行检查
 
-要检查一个目录是否存在，我们可以使用Gleam语言提供的`File.exists`函数。这个函数会接受一个字符串作为参数，表示要检查的目录的路径。让我们来看一个具体的例子：
+在Gleam中，我们可以使用[`File`](https://gleam.run/core/file.html)模块中的[`exists`](https://gleam.run/core/file.html#functions-exists)函数来检查文件夹是否存在。下面是一个简单的例子：
 
 ```Gleam
-let directory = "/user/desktop/my_folder"
+import gleam/file
 
-if File.exists(directory) {
-  // 目录存在，执行后续操作
-  IO.println("目录已存在！")
-} else {
-  // 目录不存在，提示用户或者执行其他操作
-  IO.println("目录不存在，请先创建！")
-}
+let directory = "/Users/username/Documents/test_folder"
+
+// 检查文件夹是否存在
+let exists = File.exists(directory)
 ```
 
-如果你运行以上代码，假设目录`/user/desktop/my_folder`存在，输出会是`目录已存在！`，否则会是`目录不存在，请先创建！`。通过这种方式，我们就可以根据不同的结果来执行相应的操作了。
+上面的代码首先引入了`gleam/file`模块，然后定义了一个路径为`/Users/username/Documents/test_folder`的文件夹。最后，使用`File.exists`函数来检查该文件夹是否存在，并将返回值赋给`exists`变量。
+
+如果文件夹存在，`exists`变量的值为`true`，否则为`false`。
 
 # 深入了解
 
-在Gleam中，我们使用`File.exists`函数来检查一个目录是否存在，但这个函数实际上是调用了操作系统提供的功能来实现的。因此，它的可靠性和效率都是可以得到保证的。同时，它还能够兼容不同的操作系统，比如Linux、Windows等。
+在Gleam中，我们可以使用[`File.stat`](https://gleam.run/core/file.html#functions-stat)函数来获取更详细的信息，例如文件夹的权限、大小等。此外，我们还可以通过[`File.list`](https://gleam.run/core/file.html#functions-list)函数来获取文件夹中的文件列表。
 
-此外，对于更复杂的场景，比如需要检查目录下是否存在指定的文件，我们可以使用`File.list`函数来获取目录下的所有文件和文件夹，然后再进行进一步的判断。这些细节可以参考官方文档进行深入研究。
+记住，在进行任何操作前，都要先检查文件夹是否存在，以避免程序出错！
+
+# 查看详情
+
+了解更多关于Gleam中文件操作的内容，请参阅官方文档：[Gleam File模块](https://gleam.run/core/file.html)。
 
 # 参考链接
 
-- [Gleam官方文档](https://gleam.run/documentation/)
-- [查看Gleam语言在GitHub上的开源代码](https://github.com/gleam-lang/gleam)
-- [访问Gleam语言的论坛社区](https://forum.gleam.run/)
+- [Gleam官网](https://gleam.run)
+- [Gleam文档](https://gleam.run/documentation/)
+- [Gleam社区论坛](https://gleam.run/community/)

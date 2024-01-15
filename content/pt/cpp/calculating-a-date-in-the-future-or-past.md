@@ -1,5 +1,6 @@
 ---
-title:                "C++: Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "C++: Calculando uma data no futuro ou no passado"
 simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
-Você já precisou saber qual será a data daqui a um determinado número de dias? Ou qual data era há 10 anos atrás? A programação pode nos ajudar a responder essas perguntas de forma rápida e precisa.
 
-## Como fazer
-Para calcular uma data no futuro ou no passado em C++, precisamos utilizar a biblioteca "chrono" e suas funções e classes de gerenciamento de tempo. Primeiro, devemos incluir a biblioteca no início do nosso código:
+Às vezes, precisamos calcular uma data no futuro ou no passado em nossos programas. Isso pode ser útil para agendamento, previsões ou até mesmo para exibir informações sobre eventos específicos.
+
+## Como Fazer
+
+Para calcular uma data no futuro ou no passado em C++, podemos usar a biblioteca de data e hora padrão, chamada `chrono`. Usando essa biblioteca, podemos definir uma data específica como ponto de partida e adicionar ou subtrair um determinado número de dias para obter a data desejada.
+
+Primeiro, vamos incluir a biblioteca `chrono` em nosso código:
 
 ```C++
 #include <chrono>
 ```
 
-Em seguida, podemos criar uma variável do tipo "chrono::system_clock::time_point" para representar a data atual:
+Agora, vamos definir a data inicial usando a classe `std::chrono::system_clock`. Esta classe representa o relógio do sistema e fornece informações sobre a hora atual do sistema.
 
 ```C++
-std::chrono::system_clock::time_point data_atual = std::chrono::system_clock::now();
+std::chrono::system_clock::time_point data_inicial = std::chrono::system_clock::now();
 ```
 
-Para calcular uma data futura, podemos usar a função "std::chrono::operator+()" para adicionar uma determinada quantidade de dias à data atual:
+Em seguida, podemos adicionar ou subtrair um determinado número de dias usando a função `std::chrono::duration` e definindo o período em `days`.
 
 ```C++
-std::chrono::system_clock::time_point data_futura = data_atual + 7 * std::chrono::hours(24); // adiciona 7 dias
+std::chrono::duration<int, std::ratio<86400>> dias(5); //adiciona 5 dias à data atual
 ```
 
-E para calcular uma data no passado, basta usar a função "std::chrono::operator-()" para subtrair dias:
+Agora, podemos usar a função `std::chrono::operator+` para adicionar esse período à nossa data inicial e obter a data no futuro.
 
 ```C++
-std::chrono::system_clock::time_point data_passada = data_atual - 10 * std::chrono::duration<int, std::ratio<86400>>; // subtrai 10 dias
+std::chrono::system_clock::time_point data_final = data_inicial + dias; // data final com 5 dias a mais
 ```
 
-Agora, podemos imprimir as datas calculadas utilizando a função "std::chrono::duration_cast<>()" para converter a "time_point" para um tipo de dados mais legível, como "std::chrono::system_clock::duration":
+Para exibir a data em um formato legível, podemos convertê-la para um tipo de dados `std::tm` usando a função `std::chrono::system_clock::..
+to_time_t` e, em seguida, usar a função `std::localtime` para formatá-la.
 
 ```C++
-std::cout << "Data futura: " << std::chrono::duration_cast<std::chrono::system_clock::duration>(data_futura.time_since_epoch()).count() << std::endl;
-std::cout << "Data passada: " << std::chrono::duration_cast<std::chrono::system_clock::duration>(data_passada.time_since_epoch()).count() << std::endl;
+std::tm data_formatada = *std::localtime(&std::chrono::system_clock::to_time_t(data_final));
 ```
 
-O resultado será a quantidade de segundos desde a "epoch time" (1 de janeiro de 1970), mas podemos formatá-la de acordo com nossas necessidades.
+Agora, podemos exibir a data no formato desejado usando a função `std::strftime`.
 
-## Deep Dive
-A razão pela qual podemos calcular datas no futuro ou no passado em C++ está nos métodos e operadores sobrecarregados da biblioteca "chrono". A função "now()" retorna a data e hora atuais em "time_point", que é uma estrutura de dados de ponto no tempo. Podemos usar os operadores "+" e "-" para adicionar ou subtrair uma duração de tempo, como horas, dias ou até mesmo segundos.
+```C++
+std::cout << "Data futura: " << std::put_time(&data_formatada, "%d/%m/%Y") << '\n';
+```
 
-Além disso, a função "duration_cast<>()" é essencial para obtermos um tipo de dados mais legível do "time_point". Como a "time_point" é representada em segundos desde a "epoch time", podemos converter essa quantidade em qualquer unidade de tempo utilizando essa função.
+Para calcular uma data no passado, basta subtrair o período desejado em vez de adicioná-lo.
 
-Por fim, a biblioteca "chrono" também possui outras funcionalidades interessantes, como o cálculo de duração entre duas datas, ou até mesmo a exibição da data e hora em diferentes fusos horários.
+## Mergulho Profundo
 
-## Veja também
-- [Documentação oficial da biblioteca "chrono" em cplusplus.com](https://www.cplusplus.com/reference/chrono/)
-- [Tutorial sobre gerenciamento de tempo em C++ no site GeeksforGeeks](https://www.geeksforgeeks.org/time-management-c-programming/)
-- [Exemplo prático de cálculo de datas no futuro ou passado em C++ no GitHub](https://github.com/mohitmulchandani/Time-Management-in-C-)
+A função `std::chrono::system_clock::time_point` representa um ponto específico no tempo, enquanto a função `std::chrono::duration` representa um período de tempo. Esses tipos de dados podem ser personalizados para se adequar às necessidades do programador. Além disso, a biblioteca `chrono` também inclui funções para lidar com diferentes fusos horários e formatos de data.
+
+## Veja Também
+
+- [Documentação da biblioteca chrono do C++](https://en.cppreference.com/w/cpp/chrono)
+- [Tutorial sobre a biblioteca chrono do C++](https://www.geeksforgeeks.org/chrono-in-c/)
+- [Exemplo de cálculo de data no futuro em C++](https://www.techbeamers.com/calculate-date-and-time-in-cpp/)

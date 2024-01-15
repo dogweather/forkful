@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Haskell recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,67 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-YAML (YAML Ain't Markup Language) is a popular format for storing and exchanging data in human-readable form. It is commonly used for configuration files in software projects, making it an essential tool for developers. In this blog post, we will explore how to work with YAML in Haskell, a functional programming language.
+## Why
 
-## How To 
-To start working with YAML in Haskell, we first need to install the "yaml" library using the following command in our terminal:
-```Haskell
-stack install yaml
+Do you work with configuration files or data serialization? YAML is a simple and widely-used format for storing and exchanging data, making it a valuable tool for developers and data analysts.
+
+## How To
+
+Firstly, make sure you have the `yaml` library installed in your Haskell environment. Next, import the necessary modules:
+
 ```
-
-Once the installation is complete, we can import the "Data.Yaml" module in our Haskell file using the following code:
-```Haskell
 import Data.Yaml
+import qualified Data.Text as T
 ```
 
-To read a YAML file, we can use the "decodeFile" function from the "Data.Yaml" module. Let's say we have a "config.yaml" file with the following content:
-```yaml
-name: John
-age: 25
-job: Developer
+To parse a YAML file, use the `decodeFile` function and specify the file path:
+
+```
+users <- decodeFile "users.yaml" :: IO (Maybe [User])
 ```
 
-We can read this file and convert it into a Haskell value using the following code:
-```Haskell
-main = do 
-  result <- decodeFile "config.yaml"
-  case result of 
-    Nothing -> putStrLn "Failed to read file."
-    Just value -> putStrLn $ "Name: " ++ (value :: Value) .: "name" ++ "\nAge: " ++
-                   (value :: Value) .: "age" ++ "\nJob: " ++ (value :: Value) .: "job"
+Note that specifying the data type (here, `Maybe [User]`) is necessary for the compiler to infer the correct type. 
+
+To convert a Haskell data type into YAML, use the `encode` function:
+
+```
+let user = User "John Smith" "jsmith@mail.com" 25
+yaml <- T.putStrLn $ encode user
 ```
 
-The output of this code would be:
-```
-Name: John
-Age: 25
-Job: Developer
-```
+Here, we are using the `putStrLn` function from the `Data.Text` module to display the resulting YAML output.
 
-We can also write data into a YAML file using the "encodeFile" function. Let's say we have a Haskell value "user" with the following data:
-```Haskell
-user = User {username = "Jane", email = "jane@example.com", role = "Admin"}
-```
+You can also use YAML directly in your code by using the `decode` function to convert a `ByteString` into a YAML `Value` and then use the `parseMaybe` function to parse the `Value` into a specific data type:
 
-We can write this data into a YAML file named "user.yaml" using the following code:
-```Haskell
-main = do
-  encodeFile "user.yaml" user
+```
+import Data.ByteString (readFile)
+import Data.Yaml
+import Data.Maybe (fromJust)
+
+yamlString <- readFile "user.yaml"
+let user = decode (T.unpack yamlString) :: Maybe Value
+let parsedUser = fromJust $ parseMaybe parseJSON user :: User
 ```
 
-The contents of the "user.yaml" file would be:
-```yaml
-username: Jane
-email: jane@example.com
-role: Admin
+## Deep Dive
+
+One of the key features of YAML is its human-readable and intuitive syntax. It uses indentation to define data structures, eliminating the need for brackets or parentheses. For example, a list of animals can be represented as:
+
+```
+- Lion
+- Tiger
+- Bear
 ```
 
-## Deep Dive 
-Working with YAML in Haskell involves converting YAML data into Haskell values, and vice versa. This conversion is done using the "ToJSON" and "FromJSON" typeclasses, which provide methods for encoding and decoding data respectively. These typeclasses are implemented for most primitive and common data types in Haskell, making it easy to work with YAML files.
+YAML also supports complex data types, including maps and sequences. To represent a map, use `key: value` pairs, while sequences use `-` before each element. For more information on YAML syntax and features, check out the official documentation at https://yaml.org/.
 
-Some advanced features of working with YAML in Haskell include handling custom data types, combining multiple YAML files, and handling non-strict parsing.
+YAML also allows for comments, denoted by a `#` symbol. Comments can be used to provide extra information or to temporarily disable a specific entry.
 
-## See Also 
-- [Hackage: yaml package](http://hackage.haskell.org/package/yaml)
-- [YAML specification](https://yaml.org/spec/1.2/spec.html)
+## See Also
+
+- Official YAML documentation: https://yaml.org/
+- `yaml` library documentation: https://hackage.haskell.org/package/yaml

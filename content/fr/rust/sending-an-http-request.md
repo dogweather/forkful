@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Envoyer une demande http"
+title:                "Envoyer une demande http"
+html_title:           "Rust: Envoyer une demande http"
 simple_title:         "Envoyer une demande http"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,35 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Les requêtes HTTP sont une partie essentielle de nombreuses applications modernes, permettant aux utilisateurs de communiquer avec des serveurs pour obtenir du contenu et des données. Apprendre comment envoyer une requête HTTP en utilisant Rust peut vous permettre de créer des applications plus rapides, plus fiables et plus sécurisées.
+## Pourquoi
 
-## Comment Faire
-Voici un exemple de code Rust pour envoyer une requête HTTP simple:
+Tu as probablement entendu parler de l'envoi de requêtes HTTP, mais tu ne sais pas exactement en quoi cela consiste ou pourquoi tu devrais le faire. En bref, envoyer une requête HTTP te permet d'envoyer des informations à un serveur distant et de recevoir des réponses en retour. Tu peux penser à cela comme à l'envoi d'une lettre à un ami et en attendant une réponse. Cela peut être très utile pour communiquer avec des API et récupérer des données à utiliser dans tes projets.
 
-```Rust
-use std::io::{Read, Result};
-use std::net::TcpStream;
+## Comment faire
 
-fn main() -> Result<()> {
-    let mut stream = TcpStream::connect("httpbin.org:80")?;
-    stream
-        .write(b"GET /get HTTP/1.1\r\nHost: httpbin.org\r\nConnection: close\r\n\r\n")?;
-    let mut buffer = String::new();
-    stream.read_to_string(&mut buffer)?;
-    println!("{}", buffer);
-    Ok(())
-}
+Pour envoyer une requête HTTP en Rust, tu auras besoin de la bibliothèque standard `reqwest`. Tout d'abord, tu devras l'ajouter à ton fichier `Cargo.toml` :
+
+```
+[dependencies]
+reqwest = "0.11"
 ```
 
-Cet exemple utilise la bibliothèque standard de Rust pour établir une connexion TCP avec le serveur et envoyer une requête GET pour obtenir un exemple de réponse. Ensuite, le contenu de la réponse est lu et affiché sur la console. En utilisant les méthodes appropriées pour écrire et lire les données, nous pouvons facilement envoyer une requête HTTP et obtenir la réponse à l'aide de Rust.
+Ensuite, tu pourras importer la bibliothèque dans ton code :
 
-## Plongée en Profondeur
-Une fois que vous avez compris les bases de l'envoi de requêtes HTTP en utilisant Rust, vous pouvez explorer d'autres bibliothèques populaires telles que `reqwest` ou `hyper` qui offrent une API plus conviviale et des fonctionnalités plus avancées telles que la gestion des cookies, le streaming de données et la prise en charge de protocoles supplémentaires tels que HTTPS.
+```Rust
+use reqwest;
+```
 
-De plus, vous pouvez apprendre à manipuler les différentes parties d'une requête HTTP, telles que les en-têtes et le corps, en utilisant les structures de données telles que `HashMap` et `Vec` disponibles dans la bibliothèque standard.
+Pour envoyer une requête GET, tu peux utiliser la fonction `get()` en passant l'URL en tant que paramètre :
 
-# Voir Aussi
-- [La documentation officielle sur les requêtes HTTP en Rust](https://doc.rust-lang.org/std/io/trait.Write.html)
-- [Exemple de code pour l'envoi de requêtes HTTP avec `reqwest`](https://github.com/seanmonstar/reqwest)
-- [Exemple de code pour l'envoi de requêtes HTTP avec `hyper`](https://github.com/hyperium/hyper)
+```Rust
+let response = reqwest::get("https://www.example.com").await?;
+```
+
+Tu peux également spécifier des paramètres dans l'URL, comme dans cet exemple où nous passons un ID pour récupérer des données spécifiques :
+
+```Rust
+let response = reqwest::get("https://www.example.com/users?id=123").await?;
+```
+
+Pour envoyer une requête POST, tu dois spécifier le corps de la requête dans un `HashMap`, puis l'envoyer avec la fonction `post()`. Tu peux également ajouter des en-têtes ou des paramètres à la requête si nécessaire :
+
+```Rust
+let mut params = HashMap::new();
+params.insert("username", "john");
+params.insert("password", "secret");
+
+let response = reqwest::Client::new()
+    .post("https://www.example.com/login")
+    .headers(headers)
+    .form(&params)
+    .send()
+    .await?;
+```
+
+Tu peux maintenant utiliser la réponse pour accéder aux en-têtes, au corps et aux autres informations associées :
+
+```Rust
+println!("Status code: {}", response.status());
+let headers = response.headers();
+
+let body = response.text().await?;
+println!("Body: {}", body);
+```
+
+Et voilà ! Tu viens d'envoyer ta première requête HTTP en Rust.
+
+## Plongeon plus profond
+
+Si tu veux en savoir plus sur l'envoi de requêtes HTTP en Rust, tu peux consulter la documentation officielle de `reqwest` pour trouver d'autres méthodes et options. Tu pourrais également te pencher sur l'implémentation de ces bibliothèques pour mieux comprendre le fonctionnement sous-jacent.
+
+## Voir aussi
+
+- Documentation officielle de `reqwest`: https://docs.rs/reqwest/0.11.4/reqwest/
+- Tutoriel sur les requêtes HTTP en Rust: https://gill.net.in/posts/rust/2019/02/17/rust-http-vs-hyper-vs-hyperium/

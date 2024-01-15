@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Clojure: Löschen von Zeichen, die einem Muster entsprechen"
 simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man in Clojure Zeichen löscht, die einem bestimmten Muster entsprechen. Das Löschen von Zeichen in einer Programmiersprache kann auf den ersten Blick vielleicht unsinnig erscheinen, aber es kann in bestimmten Situationen sehr nützlich sein.
 
-## Wie geht das?
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die Clojure-Funktion `remove` verwenden. Diese Funktion nimmt eine Funktion als Parameter, die definiert, welches Zeichen gelöscht werden soll. Im Beispiel verwenden wir die `str/map`-Funktion, um ein Buchstaben-A-B-C zu erstellen. Danach geben wir das Ergebnis mit der `remove`-Funktion aus.
+Manchmal müssen wir in unseren Programmen bestimmte Zeichen löschen, zum Beispiel Leerzeichen oder Sonderzeichen. Das kann aus verschiedenen Gründen notwendig sein, zum Beispiel um Daten zu bereinigen oder um die Eingabe des Benutzers zu überprüfen.
 
-```Clojure
-(str/map char \A \B \C)
-;; gibt "ABC" aus
-(remove #{\A\B} (str/map char \A \B \C))
-;; gibt "C" aus
+## Wie man es macht
+
+In Clojure gibt es verschiedene Möglichkeiten, um Zeichen basierend auf einem Muster zu löschen. Eine einfache und effektive Möglichkeit ist die Verwendung von regulären Ausdrücken.
+
 ```
-In diesem Beispiel geben wir eine Menge mit den Zeichen `\A` und `\B` an die `remove`-Funktion, die dann die entsprechenden Zeichen aus der Ausgabe löscht. Gewöhne dich an das Experimentieren mit verschiedenen Funktionen und Parametern, um ein besseres Verständnis für das Löschen von Zeichen in Clojure zu erhalten.
+;; Beispielcode zum Löschen von Leerzeichen aus einer Zeichenkette
+(def text "Dies ist ein Beispieltext.")
+(def neuer-text (clojure.string/replace text #" " ""))
+;; Ausgabe: "DiesisteinBeispieltext."
+```
+
+In diesem Beispiel verwenden wir die Funktion `clojure.string/replace`, um alle Leerzeichen in der Zeichenkette `text` mit dem leeren String `""` zu ersetzen. Das `#` vor dem Muster `" "` zeigt an, dass es sich um einen regulären Ausdruck handelt, der alle Leerzeichen in der Zeichenkette matcht.
+
+Eine weitere mögliche Lösung ist die Verwendung der Funktion `clojure.string/trim`. Diese Funktion entfernt alle Leerzeichen am Anfang und Ende einer Zeichenkette.
+
+```
+(def text "   Ein Beispieltext   ")
+(def neuer-text (clojure.string/trim text))
+;; Ausgabe: "Ein Beispieltext"
+```
+
+Diese Methode ist nützlich, wenn wir nur Leerzeichen am Anfang oder Ende der Zeichenkette entfernen möchten. Wenn wir jedoch spezifische Zeichen oder Muster entfernen möchten, ist die Verwendung von regulären Ausdrücken die bessere Wahl.
 
 ## Tiefere Einblicke
-Das Löschen von Zeichen in Clojure mag auf den ersten Blick einfach erscheinen, aber es gibt verschiedene Methoden, um bestimmte Zeichen oder Muster zu löschen. Eine weitere Möglichkeit ist die Verwendung der `string-replace`-Funktion. Diese Funktion nimmt als Parameter ein reguläres Ausdrucksmuster und eine Ersatzzeichenfolge an, um bestimmte Zeichen zu ersetzen oder zu löschen. Hier ist ein Beispiel, um die Vokale aus einem String zu löschen:
 
-```Clojure
-(string-replace #"a|e|i|o|u" "Hello World!")
-;; gibt "Hll Wrld!" aus
-```
+Clojure bietet noch viele weitere Funktionen und Möglichkeiten, um Zeichen basierend auf einem Muster zu löschen. Hier sind einige weitere nützliche Funktionen:
 
-Es gibt auch die Möglichkeit, Zeichen aus einer Liste zu löschen, indem man die `filter`-Funktion verwendet. Diese Funktion nimmt ebenfalls eine Funktion als Parameter und gibt alle Elemente der Liste zurück, die diese Funktion erfüllen. Hier ist ein Beispiel, um alle Zahlen aus einer Liste von Zeichen zu löschen:
+- `clojure.string/replace-first`: Entfernt nur das erste Auftreten des Musters und lässt alle anderen unberührt.
+- `clojure.string/replace-nth`: Entfernt das Muster nur an der angegebenen Stelle in der Zeichenkette.
+- `clojure.string/replace-last`: Entfernt nur das letzte Auftreten des Musters.
+- `clojure.string/replace-regex`: Führt die Ausführung eines regulären Ausdrucks auf der Zeichenkette aus.
 
-```Clojure
-(filter #(not (number? %)) [\h \e \l \l \o \space 1 2 3])
-;; gibt [\h \e \l \l \o \space] aus
-```
-
-Es gibt noch viele weitere Möglichkeiten, Zeichen in Clojure zu löschen, wie zum Beispiel die Verwendung der `clojure.string`-Bibliothek oder das Anwenden von `apply` auf eine Funktion, die Zeichen löscht. Experimentiere und finde heraus, welche Methode am besten zu deinem spezifischen Problem passt.
+Es gibt auch die Möglichkeit, benutzerdefinierte Funktionen zu erstellen, um spezifische Zeichen oder Muster zu entfernen. Das Erlernen von regulären Ausdrücken ist in diesem Zusammenhang sehr hilfreich, da wir dadurch mehr Kontrolle über den Löschvorgang haben.
 
 ## Siehe auch
-- [Clojure-Dokumentation für die `remove`-Funktion](https://clojuredocs.org/clojure.core/remove)
-- [Manipulating Strings in Clojure](https://luminusweb.com/docs/clojure-manipulating-strings.html)
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+
+- [Clojure Dokumentation zu regulären Ausdrücken](https://clojuredocs.org/clojure.string/replace-regex)
+- [Tutorial zu regulären Ausdrücken in Clojure](https://www.braveclojure.com/regular-expressions/)

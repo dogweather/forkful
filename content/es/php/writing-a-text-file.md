@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Escribiendo un archivo de texto"
+title:                "Escribiendo un archivo de texto"
+html_title:           "PHP: Escribiendo un archivo de texto"
 simple_title:         "Escribiendo un archivo de texto"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto en PHP
+## Por qué
 
-Escribir archivos de texto es una tarea común en la programación de PHP. Esto permite a los desarrolladores almacenar y manipular datos de manera más eficiente. En este artículo, exploraremos por qué es importante escribir archivos de texto en PHP, cómo hacerlo y profundizaremos en algunos aspectos técnicos.
+Escribir un archivo de texto puede ser una tarea útil y necesaria para cualquier programador en PHP. Ya sea para almacenar datos relevantes o generar informes, esta habilidad te permite guardar información de manera persistente y acceder a ella en cualquier momento.
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en PHP, primero necesitamos abrirlo usando la función `fopen()`. Esta función toma dos parámetros: el nombre del archivo y el modo en el que se va a abrir. Por ejemplo, si queremos escribir en un archivo nuevo llamado `mi_archivo.txt`, usaríamos el siguiente código:
+Para escribir un archivo de texto en PHP, primero debes abrirlo utilizando la función `fopen()` y especificando el nombre del archivo y su modo (lectura, escritura, etc.). Luego, utiliza la función `fwrite()` para escribir en el archivo y `fclose()` para cerrarlo y guardar los cambios.
+
+Veamos un ejemplo de cómo escribir en un archivo llamado "datos.txt":
 
 ```PHP
-$archivo = fopen("mi_archivo.txt", "w");
-```
+// Abrir el archivo en modo escritura
+$archivo = fopen("datos.txt", "w");
 
-Luego, podemos escribir en el archivo utilizando la función `fwrite()` y pasando el puntero del archivo y el contenido que queremos escribir como parámetros.
+// Escribir una línea de texto en el archivo
+fwrite($archivo, "¡Hola Mundo!");
 
-```PHP
-fwrite($archivo, "Este es mi primer texto en el archivo.");
-```
-
-Por último, debemos cerrar el archivo usando la función `fclose()` para asegurarnos de que todos los cambios se guarden correctamente.
-
-```PHP
+// Cerrar el archivo y guardar los cambios
 fclose($archivo);
 ```
 
-Podemos verificar que el archivo ha sido creado y que se ha escrito el contenido deseado abriéndolo con un editor de texto o utilizando la función `file_get_contents()` para imprimir el contenido directamente en la pantalla.
+Si deseas agregar más líneas a tu archivo existente, puedes abrirlo en modo "añadir" en lugar de "escritura". También puedes escribir variables o valores separados por comas utilizando la función `implode()`.
 
-## Deep Dive
+## Profundizando
 
-Ahora que sabemos cómo escribir un archivo de texto en PHP, es importante entender qué sucede a nivel técnico. Cuando usamos la función `fopen()`, se crea un objeto de tipo recurso que representa al archivo abierto. Este recurso se guarda en una variable, que utilizamos para realizar operaciones en el archivo. Una de estas operaciones es la función `fwrite()`, que escribe los datos en el archivo usando un buffer. Luego, al usar la función `fclose()`, se fuerza al buffer a guardar los datos en el archivo antes de cerrarlo.
+Escribir un archivo de texto puede ser más complejo en ciertas situaciones, como cuando se manejan grandes cantidades de datos o se necesita un formato específico. En estos casos, es posible utilizar funciones como `fputcsv()` para escribir datos en formato CSV o `file_put_contents()` para escribir una cadena completa en un archivo.
 
-También es importante mencionar que al abrir un archivo en modo escritura `"w"`, se sobrescribirá cualquier contenido previo en el archivo. Si queremos añadir texto al final del archivo sin borrar lo que ya existe, deberíamos usar el modo `"a"` en lugar de `"w"`.
+Otra funcionalidad útil es el uso de la función `chmod()` para cambiar los permisos de un archivo y controlar quién puede leer o escribir en él.
 
 ## Ver también
 
-- [PHP fopen() function](https://www.php.net/manual/es/function.fopen.php)
-- [PHP fwrite() function](https://www.php.net/manual/es/function.fwrite.php)
-- [PHP fclose() function](https://www.php.net/manual/es/function.fclose.php)
-- [Introducción a la manipulación de archivos en PHP](https://www.w3schools.com/php/php_file.asp)
+- [Documentación oficial de PHP sobre escribir archivos de texto](https://www.php.net/manual/es/function.fwrite.php)
+- [Tutorial de Codecademy sobre escribir archivos en PHP](https://www.codecademy.com/es/forum_questions/55c15b40d3292f193d001182)

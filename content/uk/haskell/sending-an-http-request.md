@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Відправка HTTP-запиту"
-simple_title:         "Відправка HTTP-запиту"
+title:                "Надсилання http запиту"
+html_title:           "Haskell: Надсилання http запиту"
+simple_title:         "Надсилання http запиту"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,58 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому ##
+## Чому
 
-Відправлення HTTP запитів є важливою частиною програмування веб-додатків та API. Вони дозволяють отримувати та обмінюватися даними з сервером, що є необхідним для багатьох сучасних додатків та сервісів. 
+Користувачі можуть відправляти HTTP-запити, щоб звернутися до серверів у мережі Інтернет і отримати необхідну інформацію або взаємодіяти з веб-сервісами та API. Навіть якщо ви не розробник, ви, наприклад, можете використовувати HTTP-запити, щоб скачати музику або відео з Інтернету.
 
-## Як це зробити ##
+## Як
 
-Для відправлення HTTP запитів використовується бібліотека "http-conduit" у Haskell. Спочатку необхідно імпортувати цю бібліотеку у ваш проект:
+Для того, щоб відправити HTTP-запит у Haskell, вам потрібно встановити бібліотеку `http-conduit`, яка дозволить нам взаємодіяти з серверами через протокол HTTP. За допомогою функції `simpleHttp` ми можемо відправити GET-запит до URL і отримати відповідь у вигляді `ByteString`.
 
 ```Haskell
 import Network.HTTP.Conduit
-```
 
-Тепер можна створити функцію, яка буде відправляти запити та отримувати відповіді з сервера:
-
-```Haskell
-getRequest :: String -> IO String
-getRequest url = do
-    request' <- parseUrlThrow url
-    response <- httpLbs request'
-    return $ responseBody response
-```
-
-Ця функція приймає URL-адресу (за допомогою типу даних String) та повертає IO String, що означає, що вона відправляє запит та повертає результат у форматі рядка. Спочатку вона використовує функцію "parseUrlThrow" для створення запиту за заданою адресою, а потім відправляє його за допомогою функції "httpLbs". Наприкінці функція повертає тіло відповіді у форматі рядка.
-
-Тепер можна викликати цю функцію та передати їй URL-адресу для отримання відповіді:
-
-```Haskell
 main = do
-    response <- getRequest "https://example.com"
-    print response
+  response <- simpleHttp "http://hackage.haskell.org/package/http-conduit"
+  print response
+
+-- Вивід: 
+-- "200 OK" 
+-- "Foo Bar Baz"
 ```
 
-В цьому прикладі ми друкуємо отриману відповідь у консоль.
+## Глибші дослідження
 
-## Глибше {{
+За допомогою функції `simpleHttp` ми можемо відправляти лише GET-запити, але є можливість відправляти інші типи запитів, такі як POST, PUT, DELETE тощо, за допомогою функцій `httpLbs` або `httpLbsRequest`. Крім того, HTTP-запити можуть містити різноманітні заголовки та параметри, що дозволяє більш гнучку взаємодію з серверами.
 
-HTTP запити дозволяють також використовувати різні методи, такі як GET, POST, PUT та DELETE. При отриманні відповіді, ці методи також приймають тіло запиту. Наприклад, якщо ви хочете відправити POST-запит з деякими даними, ви можете зробити наступне:
+## Дивись також
 
-```Haskell
-postRequest :: String -> String -> IO String
-postRequest url body = do
-    request' <- parseUrlThrow url
-    let request = urlEncodedBody [("param", body)] request'
-    response <- httpLbs request
-    return $ responseBody response
-```
-
-Ця функція приймає URL-адресу та тіло запиту (яке може бути представлене у форматі рядка) та повертає відповідь у форматі рядка.
-
-## Дивитися також
-
-- [Haskell: відновлення з Python](https://habr.com/ru/post/505658/)
-- [Неофіційний посібник з Haskell для програмістів Python](https://www.parsonsmatt.org/2017/01/06/haskell_vs_python.html)
-- [Базовий підручник з Haskell](https://www.seas.upenn.edu/~cis194/fall14/)
-- [Haskell на роз-кішці](
+- [Офіційна документація по `http-conduit`](https://www.stackage.org/haddock/lts-7.24/http-conduit/Network-HTTP-Conduit.html)
+- [Приклади відправки HTTP-запитів за допомогою `http-conduit`](https://github.com/snoyberg/http-client/blob/master/http-client-tests/Main.hs)

@@ -1,5 +1,6 @@
 ---
-title:                "Python: Att arbeta med YAML"
+title:                "Att arbeta med YAML"
+html_title:           "Python: Att arbeta med YAML"
 simple_title:         "Att arbeta med YAML"
 programming_language: "Python"
 category:             "Python"
@@ -11,29 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-YAML, som står för "YAML Ain't Markup Language", är ett vanligt textbaserat format som används för att lagra datastrukturer. Det är speciellt användbart för att skapa konfigurationsfiler och läsa indata i programmen. I denna bloggpost kommer jag att dela med mig av varför du bör lära dig YAML och hur du kan använda det i dina Python-program.
+YAML (YAML Ain't Markup Language) är ett vanligt filformat som används för att strukturera och lagra data på ett läsbart och lättförståeligt sätt. Genom att läsa och skriva YAML-filer kan programmerare effektivt hantera och bearbeta data i sina program.
 
-## Hur man använder det
+## Så här gör du
 
-Det första steget för att använda YAML i dina Python-program är att installera en YAML-parser som stöds av Python, som till exempel "pyyaml" eller "ruamel.yaml". Sedan kan du läsa in en YAML-fil med hjälp av `load()`-funktionen från din valda parser. Till exempel:
+För att använda YAML i dina Python-program behöver du först importera "yaml" biblioteket. Detta kan göras genom att skriva följande kod:
 
 ```Python
 import yaml
-
-with open("data.yml") as f:
-    data = yaml.load(f)
-
-print(data)
 ```
 
-Koden ovan kommer att läsa in innehållet från filen "data.yml" och spara det i en variabel. Om filen innehåller en giltig YAML-struktur, kommer du att få ett Python-dictionary som utmatning.
+För att läsa en YAML-fil och lagra datan i en variabel kan du använda följande kod:
+
+```Python
+with open("data.yml") as fil:
+    data = yaml.safe_load(fil)
+```
+
+Du kan nu komma åt datan i din YAML-fil genom att använda variabeln "data". Till exempel, om din YAML-fil innehåller en lista av användarnamn och lösenord, kan du komma åt den som följande:
+
+```Python
+users = data["användarlista"]
+for user in users:
+    print("Användarnamn: " + user["användarnamn"])
+    print("Lösenord: " + user["lösenord"])
+```
+
+Du kan också skriva till en YAML-fil genom att använda "yaml.dump()" funktionen. Till exempel, om du vill spara en lista av användare i en YAML-fil, kan du göra det genom att skriva följande kod:
+
+```Python
+users = [
+    {"användarnamn": "John", "lösenord": "asdf123"},
+    {"användarnamn": "Jane", "lösenord": "qwerty456"}
+]
+with open("data.yml", "w") as fil:
+    yaml.dump(users, fil)
+```
 
 ## Djupdykning
 
-YAML är ett mycket flexibelt format som tillåter datastrukturer som listor, dictionaries, booleans, null-värden och mycket mer. Det är också möjligt att använda strukturerat YAML med hjälp av "!!python/object/"-taggen, vilket gör det möjligt att skapa egna Python-objekt direkt från YAML-filer. Dessutom stödjer YAML kommentarer, vilket gör det enkelt att dokumentera din kod.
+Det finns många sätt att strukturera data i en YAML-fil. Nedan följer några viktiga aspekter att tänka på när du arbetar med YAML:
 
-## Se också
+- Indentering används för att indikera inbäddade objekt och listor.
+- Hash-tecken (#) används för att kommentera koden och påverkar inte koden i YAML-filen.
+- Enkelcitat eller dubbelcitat kan användas för att omge en sträng, men det finns ingen skillnad i hur de tolkas av YAML.
 
-- [Officiell YAML-dokumentation](https://yaml.org/)
-- [PyYAML-dokumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Ruamel.yaml-dokumentation](https://yaml.readthedocs.io/en/latest/)
+Det är också värt att nämna att YAML är ett utvidgningsbart format, vilket betyder att du kan skapa dina egna datatyper och använda dem i YAML-filer. Detta kan vara särskilt användbart om du vill strukturera data på ett specifikt sätt för ditt program.
+
+## Se även
+
+- [YAML-språkspecifikation](https://yaml.org/spec/1.2/spec.html)
+- [YAML på Python.org](https://pyyaml.org/)
+- [YAML-tutorial från W3C](https://www.w3schools.com/python/python_yaml.asp)

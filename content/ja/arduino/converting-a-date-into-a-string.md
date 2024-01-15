@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 日付を文字列に変換する"
+title:                "日付を文字列に変換する"
+html_title:           "Arduino: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,50 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+日付を文字列に変換することの利点は、日付をよりわかりやすく、扱いやすい形式にすることです。例えば、データベースやログファイルに日付の情報を保存する際や、表示する際に便利です。
 
-日付を文字列に変換することの利点は多岐にわたります。日付を扱う際に、より柔軟に操作が可能になります。また、シリアルモニターなどで日付を読みやすい形式で表示することもできます。
-
-## 方法
-
-日付を文字列に変換するには、まず`String()`関数を使う必要があります。この関数は、データ型を文字列に変換する際に使用されます。例として、現在の日付を変数に保存し、`String()`関数を使って文字列に変換する方法を示します。
+## 使い方
+日付を文字列に変換するには、まず `time.h` ライブラリをインクルードします。次に、`tm` 構造体を定義し、変換したい日付の情報を入力します。最後に、`strftime()` 関数を使って日付を文字列に変換します。
 
 ```Arduino
-// 現在の日付を保存する
-int day = 01;
-int month = 07;
-int year = 2021;
+#include <time.h>
 
-// 日付を文字列に変換する
-String date = String(day) + '/' + String(month) + '/' + String(year);
+// 年月日のデータを定義
+int year = 2020;
+int month = 12;
+int day = 31;
 
-// 日付をシリアルモニターに出力する
-Serial.println(date);
+// tm構造体に日付の情報を入力
+tm date = {
+  .tm_year = year - 1900,
+  .tm_mon = month - 1,
+  .tm_mday = day
+};
 
+// 2020-12-31の形式の文字列に変換し、Serial Monitorに出力
+char str[11];
+strftime(str, 11, "%Y-%m-%d", &date);
+Serial.println(str);
 ```
 
-上記のコードを実行すると、シリアルモニターには"01/07/2021"という日付が表示されます。
+上記のコードを実行すると、`2020-12-31` という文字列が出力されます。
 
-## ディープダイブ
+## 詳しく調べる
+`strftime()` 関数は、日付を任意の書式に変換することができます。第二引数に書式を指定することで、様々な表示形式の文字列を作成することができます。例えば、`%Y-%m-%d` の他にも、`%m/%d/%Y` という書式を指定することで、`12/31/2020` という文字列を作成することができます。
 
-日付を文字列に変換する際に、特に注意する必要があるのは日付のフォーマットです。上記の例では、ユーザーが指定した日付をそのまま文字列に変換していますが、一般的な日付フォーマットに沿った形式に変換する方法もあります。例えば、"2021年7月1日"のような形式で日付を表す場合は、`String()`関数ではなく`sprintf()`関数を使うと便利です。
+また、`time.h` ライブラリには、日付を取得したり操作したりするための便利な関数がたくさんあります。ぜひ調べて、さまざまな日付処理を実装してみてください。
 
-```Arduino
-int day = 01;
-int month = 07;
-int year = 2021;
-
-// 日付を指定したフォーマットに変換する
-char date[11];
-sprintf(date, "%04d年%02d月%02d日", year, month, day);
-
-// 日付をシリアルモニターに出力する
-Serial.println(date);
-```
-
-上記のコードを実行すると、シリアルモニターには"2021年07月01日"という形式で日付が表示されます。フォーマット指定子（`%04d`や`%02d`）を使うことで、桁数や整数の0埋めなど、細かい設定ができます。
-
-## 参考資料
-
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [sprintf() function](https://www.cplusplus.com/reference/cstdio/sprintf/)
-- [Formatting Date and Time in Arduino](https://www.instructables.com/Formatting-Date-and-Time-in-Arduino/)
+## 関連情報を見る
+- [strftime() 関数のドキュメント](https://www.arduino.cc/reference/jp/language/functions/time/strftime/)
+- [`time.h` ライブラリのドキュメント](https://www.arduino.cc/reference/jp/language/functions/time/)

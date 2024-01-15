@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Bash: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,38 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Haluatko tehdä nopeita ja tehokkaita muutoksia tekstiin? Haluatko korjata useita sanoja tai lauseita samanaikaisesti? Sitten tekstinhaku ja korvaaminen voi olla juuri oikea ratkaisu sinulle. Se on helppo tapa muokata suuria määriä tekstiä helposti ja nopeasti.
+Haluatko puhdistaa tekstiä tai korvata tiettyjä sanoja tai lausekkeita jokaisesta tiedostosta? Etsiminen ja korvaaminen on kätevä keino tehdä tämä Bash-komentojonon avulla.
 
-## Kuinka
+## Miten
 
-Bash-ohjelmoinnissa on useita tapoja etsiä ja korvata tekstiä. Yksi yleisimmistä tavoista on käyttää "sed" -komentoa, joka on lyhenne sanalle "stream editor". Se näyttää tältä:
-
-```Bash
-sed 's/etsitty teksti/korvaava teksti/g' tiedostonimi
-```
-
-Tässä komennossa "s" viittaa etsittävään tekstiin ja "g" viittaa sanojen tai lauseiden korvaamiseen koko tiedostossa. Voit myös käyttää muita säännöllisiä lausekkeita korvaamiseen, kuten esimerkiksi korvaamaan kaikki numerot tiedostossa:
+Etsiminen ja korvaaminen voi olla hyödyllistä esimerkiksi skriptien tekemisessä. Voit käyttää komentoa "sed" etsimään tiettyä sanaa ja korvaamaan sen toisella sanalla. Seuraava esimerkki korvaa sanan "kissa" sanalla "koira" tiedostossa "eläimet.txt":
 
 ```Bash
-sed 's/[0-9]/#/g' tiedostonimi
+sed -i 's/kissa/koira/g' eläimet.txt
 ```
 
-Toinen tapa etsiä ja korvata tekstiä on käyttää "tr" -ohjelmaa, joka on lyhenne sanalle "translate". Se näyttää tältä:
+Tämä korvaa kaikki esiintymät sanasta "kissa" tiedostossa "eläimet.txt" sanalla "koira".
+
+Voit myös suorittaa etsinnän ja korvaamisen käyttämällä Bashin muuttujia. Seuraavassa esimerkissä korvaamme sanan "koti" muuttujalla "talo" tiedostossa "osoitteet.txt":
 
 ```Bash
-tr 'etsitty teksti' 'korvaava teksti' < tiedostonimi
+koti="talo"
+sed -i "s/koti/$talo/g" osoitteet.txt
 ```
 
-Tämä komento korvaa vain ensimmäisen esiintymän jokaisesta etsitystä sanasta tai lauseesta. Voit myös käyttää säännöllisiä lausekkeita "tr" -komennossa.
+Tässä komennossa muuttuja "koti" nimetään ensin arvolle "talo" ja sitten Bash korvaa kaikki esiintymät sanasta "koti" tiedostossa "osoitteet.txt" arvolla "talo".
 
-## Syvällisempi tarkastelu
+## Syvempi sukellus
 
-Etsimisen ja korvaamisen lisäksi Bash-ohjelmoinnissa on useita muita tapoja muokata tekstiä. Voit muun muassa käyttää "grep"-komennolla etsiä tietynlaista tekstiä ja sitten "cut"-komennolla poistaa halutut osat. Voit myös yhdistellä erilaisia komentoja saadaksesi tarkempia muokkausmahdollisuuksia.
+"sed" -komennon lisäksi Bashilla on muita työkaluja etsimiseen ja korvaamiseen, kuten "awk" ja "grep". Nämä komennot tarjoavat lisää vaihtoehtoja ja mukauttamismahdollisuuksia, jotka voivat olla hyödyllisiä joissakin skenaarioissa.
 
-On myös hyödyllistä ymmärtää säännöllisiä lausekkeita ja niiden käyttöä haku- ja korvaustoiminnoissa. Ne antavat sinulle enemmän joustavuutta ja tarkempaa kontrollia muokkauksiin.
+Voit myös yhdistää etsimisen ja korvaamisen useampaan komentoon yhdellä rivi-, kuten tässä esimerkissä:
+
+```Bash
+cat tiedosto.txt | sed 's/alas ylös/' | sort | uniq > uusi_tiedosto.txt
+```
+
+Tämä komento suorittaa etsimisen ja korvaamisen tiedostossa "tiedosto.txt", sitten järjestää ja poistaa duplikaatit ja tallentaa muutetun tiedoston "uusi_tiedosto.txt".
 
 ## Katso myös
 
-- [Bash Cheat Sheet](https://www.educative.io/blog/bash-shell-command-cheat-sheet)
-- [Perusteet Bash-skriptauksesta](https://linuxjourney.com/lesson/bash-scripting-basics)
-- [Säännölliset lausekkeet - yksinkertainen opas](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)
+- [Bash Basics: Using sed to Find and Replace Text](https://linuxize.com/post/bash-find-and-replace-text-string/)
+- [Bash's official documentation for sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Other text manipulation tools in Bash](https://www.fosslinux.com/3164/12-examples-of-special-bash-variables-every-linux-user-should-know.htm#text-manipulation)

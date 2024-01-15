@@ -1,5 +1,6 @@
 ---
-title:                "C#: 生成随机数"
+title:                "生成随机数"
+html_title:           "C#: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "C#"
 category:             "C#"
@@ -9,77 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：随机数生成是编程中常用的技术之一，它可以帮助我们在需要随机选择或随机生成数据的时候提供便利。例如，在游戏开发中可以用随机数来生成怪物的属性或随机事件的发生概率。
+# 为什么要使用随机数
 
-## 如何进行随机数生成
+随机数在编程中非常有用，因为它们可以帮助我们模拟现实世界中的随机事件，例如抽奖、游戏等。使用随机数可以让我们的程序更加实用和有趣。
 
-在C#中，我们可以使用Random类来实现随机数的生成。首先，我们需要在程序中引入该类：
+## 如何生成随机数
 
-```C#
-using System;
+在C#中生成随机数非常简单，我们只需要使用 `Random` 类。以下是一个示例代码：
 
-// 声明一个Random对象
-Random rnd = new Random();
+```c#
+Random random = new Random(); // 创建Random对象
+int randomNumber = random.Next(1, 10); // 生成1到10之间的随机整数
+Console.WriteLine("随机数：" + randomNumber); // 输出随机数
 ```
 
-接着，我们可以使用Random类中的方法来生成不同类型的随机数：
+运行结果可能会类似于 `随机数：7`，每次运行都会产生一个不同的随机数。
 
-- 生成一个整数：
+我们也可以生成随机小数，例如：
 
-```C#
-int num = rnd.Next(); // 生成一个0到Int32.MaxValue之间的随机整数
+```c#
+double randomDouble = random.NextDouble(); // 生成0到1之间的随机小数
+Console.WriteLine("随机小数：" + randomDouble); // 输出随机小数
 ```
 
-如果想要限制生成的随机整数的范围，可以在Next()方法中指定最小值和最大值：
+运行结果可能类似于 `随机小数：0.693482`。
 
-```C#
-int num = rnd.Next(1, 100); // 生成一个1到99之间的随机整数
+## 深入了解随机数
+
+在计算机中，随机数实际上是由伪随机数生成器生成的。这些伪随机数是通过数学算法产生的，所以它们并不是真正的随机数，但是它们的表现非常类似。
+
+我们也可以通过设置种子值来控制伪随机数的生成。种子值是伪随机数生成算法的起始点，如果两次使用相同的种子值，就会得到相同的随机数序列。
+
+为了生成更随机的随机数，我们可以使用时间戳作为种子值，例如：
+
+```c#
+int timestamp = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds; // 获取当前的时间戳
+Random random = new Random(timestamp); // 使用时间戳作为种子值
 ```
 
-- 生成一个双精度浮点数：
+这样每次运行程序都会生成不同的随机数序列。
 
-```C#
-double num = rnd.NextDouble(); // 生成一个0到1之间的随机双精度浮点数
-```
+# 参考链接
 
-- 生成一个指定长度的随机字节数组：
+- [MSDN: Random Class](https://msdn.microsoft.com/en-us/library/system.random(v=vs.110).aspx)
+- [C#中的随机数生成](https://www.cnblogs.com/mzp-t/p/3914499.html)
+- [伪随机数生成器](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
 
-```C#
-// 指定数组长度为10
-byte[] bytes = new byte[10];
-rnd.NextBytes(bytes); // 生成10个随机字节
-```
+# 参见
 
-- 生成一个布尔值：
-
-```C#
-bool flag = rnd.Next(2) == 0; // 生成一个随机布尔值，50%的概率为true
-```
-
-生成随机数的方式有很多种，可以根据自己的需求来选择合适的方法。
-
-## 深入随机数生成
-
-在计算机中，随机数的生成实际上并不是完全的随机，而是利用某种算法来产生看似随机的数字序列。因此，我们可以通过种子值来控制随机数的生成结果。
-
-在Random类中，构造函数可以接受一个种子值作为参数，如果不指定种子值，则默认使用系统时间作为种子。
-
-```C#
-// 设置种子值为5
-Random rnd = new Random(5);
-```
-
-同样的种子值会生成同样的随机数序列，这可以用来调试程序。
-
-此外，Random类中还有一个NextBytes()方法，可以生成高质量的随机字节数组。这对于加密和安全性要求较高的程序很有用。
-
-## 参考资料
-
-- [Microsoft Docs - Random Class (System) (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [C#中的随机数生成 (Random类)](https://www.runoob.com/w3cnote/csharp-random-programming.html)
-- [What Is a Random Number Generator?](https://www.explainthatstuff.com/random-numbers.html)
-
-## 参见
-
-- [C# 中的几种排序算法](https://www.ituring.com.cn/article/4)
-- [C# 中的字符串格式化](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting)
+- [C#编程指南](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/)
+- [随机数生成器简介（维基百科）](https://zh.wikipedia.org/zh-cn/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8)

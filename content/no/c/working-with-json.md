@@ -1,6 +1,7 @@
 ---
-title:                "C: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Å jobbe med json"
+html_title:           "C: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,47 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-JSON (JavaScript Object Notation) er et populært format for å utveksle og lagre data i programmering. Det er en enkel og lettvektsmåte å representere data på, som gjør det enkelt å lese og tolke. Ved å lære å jobbe med JSON, vil du kunne utvide din programmeringsferdigheter og kunne samarbeide med andre programmerere på en effektiv måte.
+Hvorfor ville du jobbe med JSON i C? Det er enkelt: JSON er den vanligste formen for datautveksling på nettet, og ved å lære å jobbe med det i C kan du gjøre programmene dine mer fleksible og robuste.
 
 ## Hvordan
 
-For å jobbe med JSON i C, må du inkludere headerfilen `json-c/json.h` i koden din. Deretter kan du bruke funksjoner som `json_object_new_object()` for å lage et tomt JSON-objekt, og `json_object_object_add()` for å legge til nøkler og verdier i objektet. La oss se på et eksempel:
+La oss se på et eksempel på hvordan du kan jobbe med JSON i C. Først må vi inkludere "json-c/json.h" biblioteket og definere en variabel for å holde JSON-dataen:
 
 ```C
-#include <stdio.h>
 #include <json-c/json.h>
-
-int main()
-{
-    // Oppretter et nytt JSON-objekt
-    struct json_object *data = json_object_new_object();
-
-    // Legger til en nøkkel og verdi i objektet
-    json_object_object_add(data, "navn", json_object_new_string("Ole"));
-
-    // Skriver ut JSON-objektet som en streng
-    printf("%s\n", json_object_to_json_string(data));
-    
-    return 0;
-}
+json_object *jobj;
 ```
 
-Dette vil resultere i følgende output:
+Vi kan bruke en annen funksjon fra biblioteket for å lage en ny JSON-objekt:
 
-```
-{"name":"Ole"}
+```C
+jobj = json_object_new_object();
 ```
 
-Du kan også jobbe med mer komplekse strukturer, som lister og innlekte objekter, ved å bruke passende funksjoner som `json_object_new_array()` og `json_object_get_object()`.
+For å legge til data i JSON-objektet vårt, kan vi bruke følgende kode:
+
+```C
+json_object_object_add(jobj, "name", json_object_new_string("Sara"));
+json_object_object_add(jobj, "age", json_object_new_int(25));
+```
+
+Til slutt kan vi bruke en funksjon for å konvertere JSON-objektet til en streng og skrive den ut:
+
+```C
+printf("%s\n", json_object_to_json_string(jobj));
+```
+
+Koden vår vil produsere følgende utdata:
+
+```C
+{"name": "Sara", "age": 25}
+```
+
+Vær oppmerksom på at dette bare er et enkelt eksempel på hvordan du kan jobbe med JSON i C. Det finnes mange flere funksjoner og metoder som kan hjelpe deg med å lese og manipulere JSON-data.
 
 ## Dypdykk
 
-Et dykker en dypere forståelse av JSON i C, må man også kunne jobbe med parsing og serialisering av data. JSON-C inneholder funksjoner som `json_object_to_file()` for å skrive et JSON-objekt til en fil, og `json_object_from_file()` for å lese et JSON-objekt fra en fil. Disse funksjonene er nyttige for å lagre data og hente det senere.
+For å jobbe mer effektivt med JSON i C, kan det være nyttig å forstå noen grunnleggende konsepter. JSON består av nøkler og verdier, der nøklene er strenger og verdiene kan være av forskjellige typer (strenger, tall, objekter, osv.). Det er viktig å forstå denne strukturen når du leser og skriver JSON-data.
 
-I tillegg tilbyr JSON-C også muligheten til å validere JSON-data for å sikre at de følger riktig syntaks og struktur. Dette kan gjøres ved å bruke funksjonen `json_tokener_parse_ex()`. Hvis JSON-dataen ikke er gyldig, vil denne funksjonen returnere en feilkode og en beskrivelse av feilen.
+En annen ting å vurdere er hvordan du håndterer feil når du jobber med JSON i C. Biblioteket har funksjoner for å sjekke om et gitt nøkkel eller verdi eksisterer, og for å håndtere eventuelle feil som måtte oppstå under lesing eller skriving av JSON-data.
 
-## Se Også
+Et godt sted å starte for å lære mer om å jobbe med JSON i C er selve dokumentasjonen til "json-c" biblioteket, som har en liste over alle tilgjengelige funksjoner og hvordan de kan brukes.
 
-- [JSON-C dokumentasjon](https://json-c.github.io/json-c/)
-- [Introduksjon til JSON i C](https://www.drdobbs.com/cpp/json-basics-in-c/240165293)
-- [Arbeide med JSON-data i C](https://programming.vip/docs/c-json-tutorial.html)
+## Se også
+
+- [json-c dokumentasjon](https://linux.die.net/man/3/json-c)
+- [JSON offisiell nettside](https://www.json.org/json-en.html)
+- [C-programmering kurs (på norsk)](https://www.ntnu.no/wiki/display/ieg/5.+C-Programmering)

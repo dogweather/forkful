@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Odczytanie pliku tekstowego"
+html_title:           "Fish Shell: Odczytanie pliku tekstowego"
+simple_title:         "Odczytanie pliku tekstowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,28 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś początkującym programistą, zapewne słyszałeś o możliwości czytania plików tekstowych za pomocą Fish Shell. Ale może zastanawiasz się, dlaczego jest to ważne i dlaczego warto się dowiedzieć jak to zrobić. W tym blogu postaram się wytłumaczyć, czemu warto poznać tę umiejętność.
+Jeśli jesteś początkującym programistą lub po prostu chcesz nauczyć się nowej umiejętności, której możesz używać w swoim codziennym życiu, jesteś we właściwym miejscu! W tym artykule dowiesz się, jak czytać pliki tekstowe za pomocą Fish Shell, co jest bardzo przydatne w wielu sytuacjach.
 
 ## Jak to zrobić
 
-Do czytania plików tekstowych w Fish Shell możemy użyć komendy ```cat```. Poniżej przedstawiam przykładowy kod oraz oczekiwaną odpowiedź:
-
-```Fish Shell
-cat hello.txt
-```
+Fish Shell jest wygodnym i przyjaznym dla użytkownika narzędziem, które jest dostępne na większości systemów operacyjnych. Aby odczytać plik tekstowy, wystarczy wpisać kilka poleceń w terminalu.
 
 ```
-Hello, World!
+Fish Shell - wersja aktualna
 ```
 
-W tym przykładzie, ```cat``` jest komendą, a ```hello.txt``` jest plikiem tekstowym, który chcemy przeczytać. To proste i przydatne narzędzie, które warto mieć w swoim programistycznym arsenale.
+Następnie musisz użyć komendy `cat`, która służy do wyświetlania zawartości pliku tekstowego. Na przykład, jeśli chcesz przeczytać plik o nazwie "tekst.txt", wpisz:
 
-## Od podstaw
+```
+cat tekst.txt
+```
 
-Teraz, że już wiesz jak użyć komendy ```cat```, pora na głębsze zanurzenie się w czytanie plików tekstowych w Fish Shell. Istnieją różne opcje, jakie możesz dodać do tej komendy, aby uzyskać różne wyniki. Na przykład, możesz użyć flagi ```-n```, aby wyświetlić numerowane wiersze lub flagi ```-r``` do czytania pliku od końca. Możesz też użyć ```|``` do przesyłania wyjścia do innego polecenia, lub ```>>``` do przekierowania wyjścia do nowego pliku.
+Jeśli chcesz wyświetlić tylko kilka pierwszych linii pliku, możesz użyć opcji `-n` razem z liczbą linii, które chcesz wyświetlić. Na przykład:
 
-## Zobacz też
+```
+cat -n 10 tekst.txt
+```
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/cat.html)
-- [Przewodnik po komendzie cat](https://www.howtogeek.com/435903/how-to-use-the-cat-command-in-linux)
-- [Inne przydatne komendy Fish Shell](https://fishshell.com/docs/current/commands.html)
+Spokojnie, jeśli potrzebujesz wyświetlić zawartość pliku w określonej kolejności lub filtrować tylko wybrane linie, Fish Shell daje Ci wiele opcji, takich jak `sort`, `grep`, `head` i wiele innych. Wystarczy użyć opcji `--help`, aby poznać wszystkie dostępne funkcje.
+
+## Deep Dive
+
+Jeśli chcesz zagłębić się w temat i poznać więcej funkcji Fish Shell do czytania plików tekstowych, znajdziesz wiele przydatnych informacji w dokumentacji Fish Shell. Tam dowiesz się, jak możesz użyć różnych opcji, jak działa przetwarzanie plików tekstowych przez system operacyjny, a także jak możesz tworzyć bardziej zaawansowane skrypty do czytania i przetwarzania plików.
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o Fish Shell i jego możliwościach, możesz odwiedzić poniższe strony:
+
+- Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+- Poradnik dla początkujących w Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Fish Shell na GitHub: https://github.com/fish-shell/fish-shell
+
+Teraz, kiedy już wiesz, jak czytać pliki tekstowe za pomocą Fish Shell, możesz wykorzystać tę umiejętność do wielu zadań, takich jak przetwarzanie danych, wyświetlanie plików konfiguracyjnych czy czytanie logów systemowych. Pamiętaj, aby eksperymentować i odkrywać wszystkie możliwości, jakie daje Ci Fish Shell! Happy coding!

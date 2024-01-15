@@ -1,5 +1,6 @@
 ---
-title:                "PHP: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "PHP: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-왜: 문자열의 길이를 찾는 것에 대해 이유를 설명합니다.
+## 왜
+문자열의 길이를 찾는 작업에 참여하는 이유는 프로그램 또는 웹 애플리케이션에서 사용자가 입력한 데이터의 유효성을 확인하기 위해서입니다.
 
-문자열의 길이를 찾는 것은 다양한 이유로 필요할 수 있습니다. 예를 들어, 입력받은 사용자 이름이나 이메일 주소의 길이를 확인하여 유효성 여부를 검사할 수 있습니다. 또는 특정한 문자열의 길이를 제한하고 싶을 때 유용합니다.
-
-## 어떻게
-
-생각보다 문자열의 길이를 찾는 것은 간단한 작업입니다. PHP의 내장 함수인 `strlen()`을 사용하면 됩니다. 아래는 예제 코드와 실행 결과입니다.
+## 방법
+문자열의 길이를 찾는 방법은 PHP의 내장 함수 중 하나인 `strlen()`을 사용하는 것입니다. `strlen()` 함수는 인자로 전달된 문자열의 길이를 정수로 반환합니다. 예를 들어, 다음과 같은 PHP 코드를 실행하면 문자열의 길이를 쉽게 찾을 수 있습니다.
 
 ```PHP
-<?php
+$name = "John Doe";
+echo strlen($name); // Output: 8
+```
+`strlen()` 함수는 공백도 하나의 문자로 계산합니다. 따라서 "John Doe" 문자열의 길이는 8이 됩니다. 또한, 다른 변수나 상수의 값을 넣어서 문자열의 길이를 찾을 수도 있습니다.
 
-// 문자열의 길이를 출력하는 예제
-$name = "홍길동";
-echo "이름의 길이는 " . strlen($name) . "입니다.";
+```PHP
+$website = "www.example.com";
+echo strlen($website); // Output: 15
 ```
 
-실행 결과:
-```
-이름의 길이는 3입니다.
-```
+## 깊은 곳으로
+`strlen()` 함수는 PHP 4부터 사용 가능한 내장 함수입니다. 이 함수는 다양한 문자열 데이터를 처리할 수 있으며, ASCII 문자, UTF-8, EUC-JP 등 다양한 문자 인코딩을 지원합니다. 또한, `mb_strlen()` 함수를 사용하면 멀티바이트 문자열을 처리할 수 있어 더욱 다양한 문자열 처리에 유용합니다. 
 
-## 딥 다이브
+만약 문자열에서 공백을 제외하고 싶다면 `trim()` 함수를 사용하여 공백을 제거한 뒤 `strlen()` 함수를 적용할 수 있습니다. 또한, PHP 버전에 따라 `strlen()` 함수에서 문자열의 길이를 구하는 방식이 다를 수 있으니 문제가 발생하지 않도록 주의해야 합니다.
 
-`strlen()` 함수는 문자열의 실제 길이를 반환합니다. 이 함수는 문자열에서 유효한 글자의 개수를 세는 것으로, 공백이나 특수 문자는 제외됩니다. 만약 한글을 사용하는 경우, 한 글자가 2바이트로 취급되기 때문에 한 글자당 2바이트를 반환합니다.
-
-PHP의 다른 내장 함수인 `mb_strlen()`은 다중 바이트 문자를 올바르게 계산하여 문자열의 길이를 반환합니다. 위 예제에서 `strlen()`을 `mb_strlen()`으로 바꾸면 올바른 결과를 얻을 수 있습니다.
-
-## See Also
-
-- PHP `strlen()` 함수 문서: https://www.php.net/manual/en/function.strlen.php
-- PHP `mb_strlen()` 함수 문서: https://www.php.net/manual/en/function.mb-strlen.php
+## 관련 자료
+- PHP 공식 문서: [strlen() 함수](https://www.php.net/manual/en/function.strlen.php)
+- W3Schools: [PHP strlen() 함수](https://www.w3schools.com/php/func_string_strlen.asp)
+- TechOnTheNet: [PHP strlen() 함수](https://www.techonthenet.com/php/functions/strlen.php)

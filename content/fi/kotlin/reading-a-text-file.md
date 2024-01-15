@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Lukeminen tekstitiedostosta"
-simple_title:         "Lukeminen tekstitiedostosta"
+title:                "Tiedoston lukeminen"
+html_title:           "Kotlin: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,26 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
-Tämän artikkelin tarkoituksena on auttaa sinua ymmärtämään kuinka lukea tekstitiedostoja Kotlinin avulla. Tekstitiedostot ovat yleisiä formaatteja tiedon tallentamiseen, ja on hyödyllistä tietää kuinka lukea niitä ohjelmallisesti.
+## Miksi
 
-## Kuinka lukea tekstitiedostoja Kotlinilla
-Kotlinilla voi lukea tekstitiedostoja helposti käyttämällä "File" -luokkaa ja sen tarjoamia metodeja. Alla on esimerkki kuinka luodaan "File" -olio ja lukea sen sisältö:
+Ennen kuin aloitamme syvemmin puhumaan tekstitiedostojen lukemisesta Kotlinilla, ensin katsotaan, miksi tämä taito olisi hyödyllinen. Tekstitiedostot ovat tärkeitä ja yleisesti käytössä olevia tiedostoja, jotka sisältävät tekstimuotoista dataa. Niitä käytetään usein tiedon tallentamiseen ja vaihtamiseen, ja siksi on tärkeää osata lukea niitä ohjelmoinnin avulla.
+
+## Miten
+
+Tekstitiedostojen lukeminen Kotlinilla on helppoa ja yksinkertaista muutamalla yksinkertaisella askeleella. Ensimmäiseksi, sinun täytyy luoda `File`-olio, joka viittaa haluamaasi tekstitiedostoon. Esimerkiksi `val file = File("tietoja.txt")`. Sitten voit käyttää `BufferedReader`-luokkaa luomaan lukijan tiedostollesi ja käyttämään `forEachLine`-funktiota lukeaksesi tiedoston sisällön rivi riviltä.
 
 ```Kotlin
-val tiedosto = File("tekstitiedosto.txt")
-val sisalto = tiedosto.readText()
+val file = File("tietoja.txt")
+val reader = BufferedReader(file.reader())
+
+reader.forEachLine {
+    println(it) // tulostetaan jokainen rivi
+}
 ```
 
-Koodin ensimmäisellä rivillä luodaan "File" -olio, jolla on parametrina tiedoston nimi. Toisella rivillä tiedoston sisältö luetaan muuttujaan käyttäen "readText()" -metodia. Tämän jälkeen voit käsitellä tiedoston sisältöä haluamallasi tavalla.
+Tämä koodi lukee tekstitiedoston `tietoja.txt` sisällön ja tulostaa sen konsoliin.
 
-## Syvemmät tiedot tekstitiedostojen lukemisesta
-Tekstitiedostojen lukeminen voi aiheuttaa haasteita, jos tiedoston sisältö ei ole muotoiltu sopivaksi. Esimerkiksi jos tiedostossa on paljon dataa, yksi keino helpottaa sen käsittelyä on käyttää "BufferedReader" -luokkaa. Tämä luokka mahdollistaa tiedoston lukemisen rivi kerrallaan, mikä voi olla hyödyllistä esimerkiksi jos haluat käsitellä jokaista riviä erikseen.
+## Syvempi sukellus
 
-Toinen tärkeä asia huomioitavaksi on tiedoston sijainti ja nimi. Jos haluat lukea tiedoston jostain muualta kuin nykyisestä hakemistosta, sinun on annettava koko polku tiedostoon. Esimerkiksi Windowsilla polku voisi näyttää tältä: "C:\Users\käyttäjänimi\tekstitiedosto.txt". Jos taas haluat lukea tiedoston resurssikansiosta, voit käyttää "getResource()" -metodia.
+Tekstitiedostojen lukeminen Kotlinilla ei rajoitu vain yksittäisten rivien lukemiseen, vaan voit myös käsitellä tiedoston sisältöä haluamallasi tavalla. Esimerkiksi voit käyttää `readLines`-funktiota, joka palauttaa listan kaikista tiedoston riveistä. Tämän jälkeen voit käyttää listan erilaisia metodeja, kuten `filter` tai `map`, muokatakseen ja työstääkseen tiedoston sisältöä.
+
+```Kotlin
+val file = File("tietoja.txt")
+val lines = file.readLines()
+
+// Suodata ja tulosta vain rivit, jotka sisältävät halutun merkkijonon
+lines.filter{ it.contains("Kotlin") }.forEach {
+    println(it)
+} 
+```
+
+Voit myös käyttää `useLines`-funktiota, joka lukee rivin kerrallaan tiedostoa, mikä on tehokkaampi tapa käsitellä suuria tiedostoja.
+
+```Kotlin
+val file = File("tietoja.txt")
+
+// Alustetaan muuttuja, johon tallennetaan haluttu data
+var total = 0
+
+file.useLines { lines ->
+    total = lines.map{ it.toInt() }.sum() // muutetaan rivit Int-tyypeiksi ja lasketaan niiden summa
+}
+
+println("Tiedostossa on yhteensä $total numeroa.") // tulostaa esimerkiksi "Tiedostossa on yhteensä 30 numeroa."
+```
 
 ## Katso myös
-- [Kotlindokumentaatio](https://kotlinlang.org/docs/reference/)
-- [Kotlinsäiebibliotekin "File" -luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/kotlin.io.-file/)
 
-Kiitos kun jaoit aikaa tämän artikkelin lukemiseen ja toivottavasti siitä oli sinulle hyötyä!
+* [Kotlinin virallinen sivusto](https://kotlinlang.org/)
+* [Kotlinin dokumentaatio](https://kotlinlang.org/docs/home.html)
+* [Tekstitiedostojen käsittely Kotlinilla](https://kotlinexpertise.com/reading-files-with-kotlin/)

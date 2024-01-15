@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: テキストファイルを読む"
-simple_title:         "テキストファイルを読む"
+title:                "テキストファイルの読み込み"
+html_title:           "Elixir: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,52 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Elixirでテキストファイルを読み取る方法
+## なぜ？
 
-## Why
-テキストファイルを読み取ることは、Elixirプログラミングの重要な部分です。ファイル読み取りを理解することによって、より多くのデータを処理し、より豊富なアプリケーションを作成することができます。
+テキストファイルを読み取ることは、プログラムの開発やデータ処理の一部を担当する人々にとって重要なスキルです。テキストファイルを読むことで、プログラムに必要なデータや情報を簡単に取得することができます。
 
-## How To
-まずはファイルを開く必要があります。File.open関数を使用してファイルを開くことができます。
+## 方法
 
-```
-Elixir
-file = File.open("sample.txt")
-```
-
-以下のコードブロックでは、ファイル全体を1行ずつ読み取り、出力する方法を示しています。
+まずはElixirの `File` モジュールを使って、テキストファイルを開きます。
 
 ```
-Elixir
-File.stream!("sample.txt")
-|> Enum.each(fn line ->
-  IO.puts line
-end)
-```
-さらに、ファイルをインデックスごとに分割して読み取ることもできます。以下のコードブロックでは、リスト内包表記を使用してファイルを読み取り、出力する方法を示しています。
-
-```
-Elixir
-file = File.open!("sample.txt")
-IO.puts [for i <- 1..5, do: File.get(file, i, :line)]
+File.read("sample.txt")
 ```
 
-出力結果は以下のようになります。
+テキストファイルの中身をすべて読み込む場合は、 `File.read!/1` を使います。
 
 ```
-"My name is Sakura."
-"Nice to meet you, Sakura."
-"How are you, Sakura?"
-"I'm doing great."
-"What about you?"
+File.read!("sample.txt")
 ```
 
-## Deep Dive
-Fileモジュールはさまざまな関数を提供しています。たとえば、ファイルの先頭や末尾から読み取ることができる関数があります。また、ファイルポインターを使用して任意の位置から読み取ることもできます。
+テキストファイルを1行ずつ読み込みたい場合は、 `File.stream!/1` を使用することができます。
 
-さらに、ファイルの内容をパースして、特定のデータを抽出することもできます。例えば、CSVファイルからデータを抽出することができます。また、ファイルへの書き込みやファイルの作成も可能です。
+```
+File.stream!("sample.txt") |> Stream.each(&IO.puts/1)
+```
 
-## See Also
-- [Fileモジュールのドキュメント](https://hexdocs.pm/elixir/File.html)
-- [Elixirでファイルを操作する方法](https://elixirschool.com/jp/lessons/advanced/file-io/)
-- [ElixirのファイルI/O](https://www.sitepoint.com/elixir-file-io/)
+## 深堀り
+
+Elixirでは、テキストファイルを読み込むことができるだけでなく、パスやサイズなどのファイルに関するさまざまな情報を取得することもできます。また、文字エンコーディングや改行コードなどのオプションを指定することもできます。
+
+## 関連記事
+
+- [Elixirの公式ドキュメント](https://hexdocs.pm/elixir/File.html#read!/1)
+- [テキストファイルの読み書きについてのElixir Forumのディスカッションスレッド](https://elixirforum.com/t/reading-writing-text-files-in-elixir/926)
+- [「プログラミングElixir」の第3章 - テキストファイル操作](https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Elixir-%E7%AC%AC3%E7%AB%A0-%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E6%93%8D%E4%BD%9C-Dave-Thomas/dp/4274219153)

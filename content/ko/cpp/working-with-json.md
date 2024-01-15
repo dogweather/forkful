@@ -1,5 +1,6 @@
 ---
-title:                "C++: json 작업하기"
+title:                "json 작업하기"
+html_title:           "C++: json 작업하기"
 simple_title:         "json 작업하기"
 programming_language: "C++"
 category:             "C++"
@@ -9,52 +10,130 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-JSON을 작업하는 것에 대해 설명하는 이유는 데이터를 깔끔하게 저장하고 전송하기 위해 사용되는 일반적인 형식이기 때문입니다. 이것은 데이터를 구조화하는 쉬운 방법이며 웹 애플리케이션과 API에서 널리 사용됩니다.
+* JSON은 데이터를 쉽게 교환할 수 있는 포맷으로, C++ 프로그래머들에게 매우 중요합니다.
+* 데이터를 처리하고 저장하는 데에 사용되는 스킬을 새로 배울 수 있어서 흥미로울 수 있습니다.
 
-## 방법 
+## 작동 방법
 
-먼저, JsonCpp 라이브러리를 다운로드하고 프로젝트의 include 경로에 추가해야 합니다. 다음 코드를 사용하여 JSON 객체를 만들고 데이터를 저장할 수 있습니다.
+JSON을 사용하는 것은 간단합니다. 그러나 ASCII 코드로 남겨진 널문자를 제거하는 것과 같은 어려운 부분도 있습니다.
+
+### JSON 읽기
+
+아래의 예제는 JSON 파일 내용을 읽는 간단한 방법을 보여줍니다.
 
 ```C++
 #include <iostream>
-#include "json/json.h"
+#include <fstream>
+#include <string>
+#include <nlohmann/json.hpp> // JSON 라이브러리
 
 int main() {
-  // JSON 객체 생성
-  Json::Value person; 
+  // JSON 파일을 읽기 위해 ifstream 객체 생성
+  std::ifstream file("example.json");
   
-  // 객체에 데이터 저장
-  person["name"] = "John Doe";
-  person["age"] = 30;
-  person["occupation"] = "Software Engineer";
+  // 파일 내용이 담기는 스트링 변수 선언
+  std::string content;
   
-  // 저장된 데이터 출력
-  std::cout << person << std::endl;
+  // 파일의 내용을 content에 저장
+  file >> content;
+  
+  // json 변수에 파일 내용을 파싱하여 저장
+  auto json = nlohmann::json::parse(content);
+  
+  // 키/값 쌍 출력하기
+  for (auto& [key, value] : json.items()) {
+    std::cout << key << ": " << value << std::endl;
+  }
   
   return 0;
 }
 ```
 
-위 코드에서는 새로운 JSON 객체를 만들고 데이터를 저장한 다음, 출력하였습니다. 아래는 위 코드의 출력 결과입니다.
+예제 파일의 내용이 아래와 같다면,
 
-```
+```json
 {
-  "name": "John Doe",
-  "age": 30,
-  "occupation": "Software Engineer"
+  "name": "John",
+  "age": 25,
+  "hobbies": ["programming", "reading", "running"],
+  "address": {
+    "street": "123 Main St.",
+    "city": "New York",
+    "state": "NY"
+  }
 }
 ```
 
-또한 JSON 객체에서 특정 데이터를 가져오는 방법도 있습니다. 예를 들어, `person["name"]`을 사용하여 이름 데이터에 접근할 수 있습니다. 
+실행 결과는 다음과 같을 것입니다.
 
-## 딥 다이브
+```text
+name: John
+age: 25
+hobbies: ["programming", "reading", "running"]
+address: {"street":"123 Main St.","city":"New York","state":"NY"}
+```
 
-JSON을 작업하는 데에는 몇 가지 중요한 사항이 있습니다. 첫째, 데이터가 구조화되어야 합니다. 따라서 객체 내부에서 규칙을 준수하여 데이터를 저장하는 것이 중요합니다. 둘째, JSON은 텍스트 기반 형식이기 때문에 유효하지 않은 형식으로 작성된 데이터는 올바르게 해석되지 않습니다. 마지막으로, JsonCpp 라이브러리는 C++ 11 이상에서만 사용할 수 있습니다.
+### JSON 쓰기
 
-## 관련 링크
+아래의 예제는 C++에서 쉽게 JSON 파일을 쓰는 방법을 보여줍니다.
 
-- [JsonCpp 라이브러리 다운로드](https://github.com/open-source-parsers/jsoncpp)
-- [JsonCpp 문서](https://open-source-parsers.github.io/jsoncpp-docs/doxygen/index.html)
-- [JSON 개요](https://ko.wikipedia.org/wiki/JSON)
+```C++
+#include <iostream>
+#include <fstream>
+#include <nlohmann/json.hpp> // JSON 라이브러리
+
+int main() {
+  // JSON 파일을 쓰기 위해 ofstream 객체 생성
+  std::ofstream file("example2.json");
+  
+  // data 변수에 저장할 데이터 선언
+  nlohmann::json data;
+  
+  // 데이터 추가
+  data["name"] = "Jane";
+  data["age"] = 30;
+  data["hobbies"] = {"painting", "yoga", "cooking"};
+  data["address"]["street"] = "456 Maple Ave.";
+  data["address"]["city"] = "Los Angeles";
+  data["address"]["state"] = "CA";
+  
+  // 파일에 JSON 데이터 저장
+  file << data << std::endl;
+  
+  return 0;
+}
+```
+
+실행 결과, example2.json 파일에 다음과 같은 내용이 저장될 것입니다.
+
+```json
+{
+  "name": "Jane",
+  "age": 30,
+  "hobbies": ["painting", "yoga", "cooking"],
+  "address": {
+    "street": "456 Maple Ave.",
+    "city": "Los Angeles",
+    "state": "CA"
+  }
+}
+```
+
+## Deep Dive
+
+### JSON 구조
+
+JSON은 다음과 같은 구조를 가지고 있습니다.
+
+* 두 개의 큰 컨테이너: 객체(object)와 배열(array)
+* 객체(object): key-value 쌍으로 이루어진 데이터 구조
+* 배열(array): 하나의 데이터 타입으로 이루어진 목록 구조
+
+### JSON 사용 시 유의할 점
+
+1. 중괄호와 콜론 사용에 주의해야 합니다.
+2. 문자열은 항상 쌍따옴표("")로 감싸야 합니다.
+3. 배열의 요소는 콤마(,)로 구분되어야 합니다.
+4. 파일을 읽고 쓸 때, ASCII

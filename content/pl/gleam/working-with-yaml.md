@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Gleam: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-YAML jest formatem plików konfiguracyjnych, który jest bardzo przydatny w programowaniu. Dzięki jasnej i czytelnej składni, jest łatwy w użyciu nawet dla początkujących programistów. Pozwala na definiowanie danych w sposób hierarchiczny, co ułatwia organizowanie dużych struktur danych.
+Tworzenie aplikacji to nie tylko pisanie kodu, ale także zarządzanie konfiguracją. W tym celu wykorzystuje się język YAML, który pomaga w łatwej i czytelnej definicji ustawień i opcji aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
+
+Instalacja biblioteki `gleam-yaml` jest prosta - wystarczy dodać ją do `gleam.toml` i zaimportować moduł w swoim kodzie. Następnie używając funkcji `load` lub `load_file` można wczytać plik YAML do zmiennej w postaci mapy lub listy.
 
 ```Gleam
-type Config {
-    database: String,
-    port: Int,
-    debug: Bool,
-    servers: [String],
-    colors: map(String, String)
-}
+import gleam/yaml
 
-const config = from_yaml(result)
-match config {
-    Ok(config) ->
-        servers = config.servers
-        colors = config.colors
-        Gleam_io.Console.log("Database: " ++ config.database)
-        Gleam_io.Console.log("Port: " ++ config.port)
-        Gleam_io.Console.log("Debug mode: " ++ config.debug)
-        Gleam_io.Console.log("Servers: " ++ servers)
-        Gleam_io.Console.log("Colors: " ++ colors)
-    Err(error) ->
-        Gleam_io.Console.log("Unable to read YAML file: " ++ error)
-}
+let config = yaml.load_file("config.yml")
 ```
 
-Ten przykład pokazuje, w jaki sposób można wczytać dane z pliku YAML i korzystać z informacji w nim zawartych. Dzięki funkcji `from_yaml` możemy łatwo przekonwertować plik YAML na strukturę danych w Gleamie i następnie odwoływać się do jej pól. Konieczne jest jednak zadbanie o obsługę błędów, gdy plik będzie w niepoprawnym formacie lub nie będzie istnieć.
+Możliwe jest również tworzenie, modyfikowanie i zapisywanie nowych plików YAML przy użyciu funkcji `dump` lub `dump_file`. Dzięki temu mamy pełną kontrolę nad konfiguracją naszej aplikacji.
 
-## Głębszy zanurz
+```Gleam
+import gleam/yaml
 
-Podczas pracy z YAML warto zwrócić uwagę na kilka ważnych kwestii. Po pierwsze, format ten jest czuły na wcięcia, więc musimy upewnić się, że wszystkie elementy w danym bloku mają taką samą liczbę spacji przed sobą. Po drugie, za pomocą znaku `#` możemy w komentarzach zawrzeć informacje pomocne przy rozwoju lub dokumentacji naszego kodu. Ponadto, warto pamiętać o różnych typach danych, jakie można przypisać do pól w pliku YAML - od prostych stringów i liczb po bardziej złożone struktury danych, jak mapy czy listy.
+let new_config = {
+  "version": "1.0",
+  "port": 3000,
+  "database": {
+    "host": "localhost",
+    "username": "admin",
+    "password": "pass123"
+  }
+}
 
-## Zobacz również
+yaml.dump_file(new_config, "new_config.yml")
+```
 
-* [Dokumentacja języka Gleam](https://gleam.run)
-* [Dokumentacja formatu YAML](https://yaml.org)
-* [Przykład aplikacji Gleam z wykorzystaniem YAML](https://github.com/exampleapp)
+## Dogłębne omówienie
+
+Język YAML jest znacznie przyjemniejszy w użyciu niż np. format JSON, ponieważ pozwala na wykorzystanie wcięć i formatowania tekstu. Sposób, w jaki jest zapisywany plik YAML, przypomina dokument lub listę, dzięki czemu jest czytelniejszy dla programistów. Warto również pamiętać o konwencjach dotyczących nazw, czyli stosowaniu camelCase lub snake_case, aby ułatwić wprowadzanie i odczytywanie danych.
+
+## Zobacz także
+
+- [Oficjalna dokumentacja biblioteki Gleam YAML](https://gleam.run/packages/gleam-yaml/1.0.0)
+- [Porównanie YAML i JSON](https://www.computronik.com.pl/tekst/cejowy-article-pi9896)

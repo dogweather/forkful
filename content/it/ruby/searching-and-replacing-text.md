@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Cercare e sostituire il testo"
-simple_title:         "Cercare e sostituire il testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Ruby: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,44 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Una delle funzionalità più utili nella programmazione è la possibilità di cercare e sostituire testo. Questo può aiutare a correggere errori, modificare dati o semplicemente risparmiare tempo nella scrittura del codice.
+Ci sono molte ragioni per cui potresti voler cercare e sostituire del testo all'interno del tuo codice Ruby. Potresti voler aggiornare vecchie variabili, standardizzare la formattazione o semplicemente correggere errori di battitura.
 
 ## Come fare
-
-Per cercare e sostituire testo in un programma Ruby, si può utilizzare il metodo `gsub`. Ad esempio, se si vogliono sostituire tutte le lettere "a" con la lettera "e" in una stringa, si può utilizzare il seguente codice:
-
-```Ruby
-stringa = "casa"
-nuova_stringa = stringa.gsub("a", "e")
-# Output: "cese"
-```
-
-Si noti che il metodo `gsub` sostituisce tutte le occorrenze della lettera specificata nella stringa. Se si vuole sostituire solo la prima occorrenza, è possibile utilizzare il metodo `sub`.
-
-Un altro trucco utile per la ricerca e sostituzione di testo è l'utilizzo dei "regex" (espressioni regolari). Questo consente di specificare un pattern di ricerca più complesso. Ad esempio, se si vuole sostituire tutte le vocali con un asterisco, si può utilizzare il seguente codice:
+Per cercare e sostituire del testo in Ruby, puoi utilizzare il metodo `gsub` (abbreviazione di "global substitution") con una combinazione di espressioni regolari e stringhe. Ecco un esempio:
 
 ```Ruby
-stringa = "casa"
-nuova_stringa = stringa.gsub(/[aeiou]/, "*")
-# Output: "c*s*"
+stringa = "Benvenuto al mio blog"
+nuova_stringa = stringa.gsub("blog", "sito web")
+puts nuova_stringa
 ```
+Output: "Benvenuto al mio sito web"
 
-Per ulteriori informazioni sulle espressioni regolari e su come utilizzarle per la ricerca e la sostituzione di testo, si consiglia di consultare la documentazione ufficiale di Ruby.
+Puoi anche utilizzare espressioni regolari per cercare e sostituire più elementi contemporaneamente. Ad esempio, se volessi sostituire tutte le vocali minuscole in una stringa con la lettera "x", puoi usare l'espressione regolare `/[aeiou]/`:
+
+```Ruby
+stringa = "Ciao, come stai?"
+nuova_stringa = stringa.gsub(/[aeiou]/, "x")
+puts nuova_stringa
+```
+Output: "Cxx,xmx sxtx?"
 
 ## Approfondimento
-
-Il metodo `gsub` può accettare anche un blocco di codice come argomento, permettendo di eseguire manipolazioni più avanzate. Ad esempio, se si volesse sostituire solo le vocali in maiuscolo con un asterisco e lasciare le vocali in minuscolo normali, si può utilizzare il seguente codice:
+Il metodo `gsub` è molto utile quando si lavora con stringhe ma è importante tenere presente che è case sensitive, quindi fa distinzione tra maiuscole e minuscole. Se vuoi sostituire del testo ignorando le maiuscole e le minuscole, puoi utilizzare il metodo `gsub!`, che ha un'opzione per specificare che la ricerca deve essere case insensitive:
 
 ```Ruby
-stringa = "CasA"
-nuova_stringa = stringa.gsub(/[A-Z]/) { |match| match.downcase == match ? "*" : match }
-# Output: "Ca*"
+stringa = "Benvenuto al mio sito web"
+nuova_stringa = stringa.gsub!(/B/, "C")
+puts nuova_stringa
 ```
+Output: "Cenvenuto al mio sito web"
 
-Come si può vedere, il blocco di codice prende in considerazione ogni corrispondenza trovata dall'espressione regolare e decide se sostituirla o meno in base al suo case.
+È inoltre possibile utilizzare il metodo `gsub` su una collezione come un array, per sostituire del testo in tutti gli elementi all'interno di quell'array:
+
+```Ruby
+membri = ["Anna, Bob, Charlie"]
+membri.gsub(/[aeiou]/, "x")
+puts membri
+```
+Output: ["Annx, Bxb, Chxrlxx"]
 
 ## Vedi anche
-
-- Documentazione ufficiale di Ruby su `gsub`: https://ruby-doc.org/core-2.6.1/String.html#method-i-gsub
-- Guida alle espressioni regolari in Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
+- [Metodo gsub su Ruby Docs](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Tutorial sulle espressioni regolari in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Video introduttivo su come utilizzare espressioni regolari in Ruby](https://www.youtube.com/watch?v=VrPdJ2YyHL8&t=230s)

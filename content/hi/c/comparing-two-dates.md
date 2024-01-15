@@ -1,6 +1,7 @@
 ---
-title:                "C: दो तारीखों की तुलना करना"
-simple_title:         "दो तारीखों की तुलना करना"
+title:                "दो तारीखों की तुलना"
+html_title:           "C: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
+Kisi bhi developer ke liye do tareekhon ki tulana karna ek aam samasya hai. Is article mein hum dekhenge ki kaise date ke do vyakti alag-alag tarikon se compare kiya ja sakta hai.
 
-कभी-कभी हमें दो तारीखों को तुलना करने की जरूरत होती है। इसके पीछे के कारण अलग-अलग हो सकते हैं, जैसे कि कोई इम्पोर्टेंट इवेंट, समारोह, या शिफ्ट आदि। जब हम किसी प्रोग्रामिंग समस्या का सामना करते हैं, तो इस तुलना की जानकारी होना बहुत जरूरी होता है। इस ब्लॉग पोस्ट में, हम आपको दो तारीखों को तुलना करने के तरीके के बारे में बताएंगे।
-
-## कैसे करें
-
-तारीखों को तुलना करने के लिए, हमें दो तारीखों को उस तारीख क्लास का उपयोग करके तुलना करना होगा। यहां हम आपको कुछ उदाहरण दिखाएंगे:
+## Kaise
+Date comparison karne ke liye, hum `time.h` library mein available `time` structure ka istemaal karenge. Iske liye, hum do `time` structures banayenge, jismein hum date ki details ko store karenge. Fir hum `difftime()` function ka use karke dono dates ke beech mein difference calculate karenge. Yeh difference humare code ka output hoga. 
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  // दो तारीखों को तुलना करें
-  struct tm date1 = {0}; // पहली तारीख
-  struct tm date2 = {0}; // दूसरी तारीख
-  double difference; // तारीखों के बीच का अंतर
+int main(){
+    // Creating two time structures
+    time_t d1, d2;
+    // Storing dates in structures
+    struct tm t1 = { .tm_year = 2020, .tm_mon = 05, .tm_mday = 21 };
+    struct tm t2 = { .tm_year = 2020, .tm_mon = 07, .tm_mday = 18 };
+    // Converting structures to time variables
+    d1 = mktime(&t1);
+    d2 = mktime(&t2);
+    // Calculating difference
+    double result = difftime(d2, d1);
+    // Outputing difference
+    printf("Difference between dates is %.2f days.", result);
+}
+```
 
-  // पहली तारीख सेट करें
-  date1.tm_year = 2021 - 1900; // साल
-  date1.tm_mon = 6 - 1; // महीना (0 से शुरू होता है)
-  date1.tm_mday = 15; // दिन
-  date1.tm_hour = 12; // घंटे
-  date1.tm_min = 0; // मिनट
-  date1.tm_sec = 0; // सेकंड
+```
+Output:
+Difference between dates is 58.00 days.
+```
 
-  // दूसरी तारीख सेट करें
-  date2.tm_year = 2021 - 1900; // साल
-  date2.tm_mon = 6 - 1; // महीना (0 से शुरू होता है)
-  date2.tm_mday = 30; // दिन
-  date2.tm_hour = 8; // घंटे
-  date2.tm_min = 30; // मिनट
-  date2.tm_sec = 0; // सेकंड
+## Deep Dive
+Humne structure banane ke liye `tm` structure ka istemaal kiya kyunki ismein hum date ki details, jaise year, month, day, hour, minutes, seconds, store kar sakte hain. Iss structure ko `time.h` library mein `struct tm` naam se declare kiya gaya hai. `difftime()` function hamare liye dates ke beech mein difference calculate karta hai aur iska output seconds mein deta hai. Isiliye humne use `%f` format specifier ke saath output karvaya aur use double data type mein store kiya.
 
-  // दोनों तारीखों के बीच का अंतर निकालें
-  difference = difftime(mktime(&date2), mktime(&date1));
-
-  // अंतर को सेकंड में प्रिंट करें
-  printf("तारीखों के बीच अंतर: %f सेकंड", difference);
-
-  return
+## Dekhna Bhi
+- [C date and time functions](https://www.programiz.com/c-programming/c-date-time)
+- [Understanding tm structure in C](https://www.geeksforgeeks.org/time-structure-in-c/)

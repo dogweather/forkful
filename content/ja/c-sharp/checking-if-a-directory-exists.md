@@ -1,6 +1,7 @@
 ---
-title:                "C#: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかをチェックする"
+html_title:           "C#: ディレクトリが存在するかどうかをチェックする"
+simple_title:         "ディレクトリが存在するかどうかをチェックする"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,32 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ディレクトリが存在するかどうかをチェックすることの重要性を、わずか1-2文で説明すると、あなたのプログラムがディレクトリが存在しない場合に、予期せぬエラーが発生する可能性があるためです。
+ディレクトリが存在するかどうかを確認することが重要な場合があります。例えば、ファイルを読み込む前にディレクトリが存在するかどうかを確認することで、プログラムの安定性や動作を保証することができます。
 
 ## 方法
 
-ディレクトリの存在をチェックするには、C#の "Directory.Exists()" メソッドを使用します。以下の例では、"Documents" という名前のディレクトリが存在するかどうかをチェックしています。
+最も簡単な方法は、`System.IO.Directory`クラスの`Exists()`メソッドを使用することです。このメソッドはディレクトリが存在する場合には`true`、存在しない場合には`false`を返します。
 
 ```C#
-if(Directory.Exists("Documents"))
+if (Directory.Exists("C:\目的のディレクトリ"))
 {
-    Console.WriteLine("Documentsディレクトリが存在します。");
+  Console.WriteLine("ディレクトリは存在します。");
 }
 else
 {
-    Console.WriteLine("Documentsディレクトリが存在しません。");
+  Console.WriteLine("ディレクトリは存在しません。");
 }
-
-// 出力: Documentsディレクトリが存在します。
 ```
 
-ディレクトリが存在しない場合、"else"ブロックのコードが実行されます。
+また、より詳細な情報を得るためには、`DirectoryInfo`クラスを使用することができます。このクラスには、`Exists()`メソッドの他にもディレクトリの作成日時や更新日時などの情報を取得できるメソッドがあります。
 
-## ディープダイブ
+```C#
+DirectoryInfo directory = new DirectoryInfo("C:\目的のディレクトリ");
 
-ディレクトリの存在をチェックする方法は非常にシンプルですが、内部ではどのように動作しているのでしょうか？実際には、"Directory.Exists()" メソッドは "GetFileAttributesW()" Win32 APIを使用しています。このAPIは、指定されたパスに対する属性を取得するために使用されます。ディレクトリの存在を確認するために使用するには、ファイルの属性の値が "FILE_ATTRIBUTE_DIRECTORY" であるかどうかを確認します。
+if (directory.Exists)
+{
+  Console.WriteLine("ディレクトリは存在します。");
+  Console.WriteLine("作成日時：" + directory.CreationTime);
+  Console.WriteLine("更新日時：" + directory.LastWriteTime);
+}
+else
+{
+  Console.WriteLine("ディレクトリは存在しません。");
+}
+```
 
-## 関連リンク
+## 深堀り
 
-- [C#ドキュメント: Directory.Exists(Method)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [Win32 APIドキュメント: GetFileAttributesW(Method)](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesw)
+ディレクトリが存在するかどうかを確認する方法は、`File`クラスの`Exists()`メソッドと同様です。しかし、ファイルとは異なり、ディレクトリには`Hidden`属性があることに注意する必要があります。`Hidden`属性が設定されている場合、`File`クラスの`Exists()`メソッドでは正しい結果が返されない場合があります。そのため、ディレクトリの存在を確認する場合には`Directory`クラスを使用するようにしましょう。
+
+## さらに読む
+
+- [C# Directory.Exists メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directory.exists)
+- [C# DirectoryInfo クラス](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo)
+- [C# ファイル操作入門](https://programming.dpinfo.co.jp/csharp/how-to-file-io/)

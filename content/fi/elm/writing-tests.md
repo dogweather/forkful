@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Testien kirjoittaminen"
-simple_title:         "Testien kirjoittaminen"
+title:                "Testien kirjoittaminen."
+html_title:           "Elm: Testien kirjoittaminen."
+simple_title:         "Testien kirjoittaminen."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -9,50 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Testaaminen on tärkeä osa koodin kirjoittamista, sillä se auttaa löytämään ja korjaamaan mahdollisia virheitä ja varmistaa, että koodi toimii oikein. Kirjoittamalla testejä varmistat myös, että muutokset ja lisäykset eivät aiheuta ongelmia jo kirjoitettuun koodiisi.
+Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä. Se varmistaa, että koodi toimii odotetusti ja auttaa havaitsemaan mahdollisia bugeja ennen kuin ne päätyvät tuotantoon.
 
-## Miten?
+## Kuinka
 
-Testien kirjoittaminen Elm-kielellä on helppoa ja intuitiivista. Voit käyttää "elm-test" pakettia, joka tulee mukana Elm-asennuksen yhteydessä. Tässä esimerkissä luomme yksinkertaisen testin, joka tarkistaa, vastaako laskufunktiomme oikein:
+Kirjoittamalla testejä Elm:llä voit varmistaa, että koodisi toimii niin kuin on tarkoitus. Testit ovat kirjoitettu käyttäen Elm-testikirjastoa ja voivat automaattisesti suorittaa tarkistuksia koodin toimivuudesta. Alla on esimerkki yksinkertaisesta testistä:
 
-```elm
--- Määritellään laskufunktio
-laske : Int -> Int
-laske x = x * 2
-
--- Tuodaan Elm-testipaketti
+```Elm
 import Test exposing (..)
+import Expect
 
--- Luodaan testi
-testi =
-    describe "Laske-funktion testi"
-        [ test "Laskennan tulos on oikein" <|
-            \() ->
-                Expect.equal (laske 5) 10
-        ]
+-- Esitellään funktio, jonka haluamme testata
+square : Int -> Int
+square x =
+  x * x
 
--- Suoritetaan testit
-main : Program Never
+-- Kirjoitetaan testi
+squareTest : Test
+squareTest =
+  test "neliöfunktion testi" <|
+    \() ->
+      Expect.equal (square 5) 25
+
+-- Suoritetaan testi
+main : Test
 main =
-    beginnerProgram
-        { model = ()
-        , view = always ""
-        , update = always
-        , subscriptions = always Sub.none
-        }
-
--- Testin tulos:
--- "1/1 passes"
+  describe "Testit" [ squareTest ]
 ```
 
-## Syväsukellus
+Tämä yksinkertainen testi varmistaa, että funktio nimeltä "square" palauttaa oikean arvon syötteelle 5. Voit lisätä haluamasi määrän testejä ja suorittaa ne kaikki yhdellä komennolla. Testien avulla voit myös luoda simulaatioita eri syötteistä ja varmistaa, että koodi käyttäytyy odotetulla tavalla.
 
-Testien kirjoittaminen Elm-kielellä noudattaa usein samaa kaavaa: määritellään funktio, tuodaan tarvittavat kirjastot ja luodaan testi, jossa verrataan saatuja tuloksia odotettuihin. Elm-test paketti tarjoaa myös muita käteviä funktioita testien kirjoittamiseen, kuten tarkistukset listoille ja merkkijonoille.
+## Syvempi sukellus
+
+Testien kirjoittaminen Elm:llä ei ole vain hyödyllistä koodin toimivuuden varmistamiseksi, vaan se myös auttaa parantamaan koodin laatua ja ylläpidettävyyttä. Testien avulla voit eristää virheitä, jotka voivat ilmetä muutoksien yhteydessä ja helpottaa koodin muokkaamista tulevaisuudessa.
+
+Testien kirjoittaminen Elm:llä seuraa yleensä kolmea vaihetta: syötteiden luominen, koodin suorittaminen ja odotusten asettaminen. Voit käyttää testikirjastoa lisätäksesi lisättyä monimutkaisuutta testien luomiseen tai voit luoda omia funktioita, jotka vastaavat yksinkertaisiin testitarpeisiisi.
 
 ## Katso myös
 
-- [Elm-test pakkauksen dokumentaatio](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm-test esimerkkejä](https://github.com/elm-explorations/test/tree/master/examples)
-- [Elm-test kirjaston käyttö esimerkkikohteissa](https://blog.fsprojects.com/2020/07/03/elm-the-testing-learn-elm-with-tests/)
+- [Elm-testikirjaston dokumentaatio](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm-oppaat ja esimerkit](https://elmprogramming.com/)

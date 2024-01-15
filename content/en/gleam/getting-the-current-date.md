@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Gleam recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,47 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to get the current date in your Gleam program? Maybe you're building an appointment scheduling system or displaying the date on a website. Whatever the case may be, knowing how to get the current date is a useful skill to have in your programming toolkit.
+Getting the current date is a common task in programming that can be useful in various applications. Whether it's for displaying the date on a website, creating a timestamp for log data, or even scheduling tasks, having accurate and efficient ways to get the current date is essential.
 
 ## How To
 
-Getting the current date in Gleam is actually quite simple. First, we need to import the Date module from the standard library:
+To get the current date in Gleam, we can use the `DateTime` module from the `gleam/datetime` package. This module provides functions for creating and manipulating dates and times. Let's take a look at some code examples:
 
 ```
-Gleam import Date
+Gleam import gleam/datetime
+
+Gleam let today = DateTime.now()
+
+Gleam io.print("Today's date is " ++ DateTime.Format.date(today))
+// Output: Today's date is 2021-11-01
 ```
 
-Next, we can use the `Date.now` function to get the current date and time:
+In the above example, we imported the `gleam/datetime` package and created a variable called `today` using the `DateTime.now()` function. We then used the `DateTime.Format.date()` function to format the date into a string that we printed to the console.
+
+We can also get the current date in a specific time zone by passing the time zone as an argument to the `DateTime.now()` function. For example:
 
 ```
-Gleam current_date = Date.now
+Gleam let pacific_time = DateTime.now(Time.Zone.more("-08:00"))
+Gleam io.print("The current date in Pacific Time is " ++ DateTime.Format.date(pacific_time))
+// Output: The current date in Pacific Time is 2021-11-01
 ```
 
-This will return a `Date.DateTime` record, which contains fields for the month, day, year, hour, minute, second, and millisecond. We can access these fields like so:
-
-```
-Gleam month = current_date.month
-Gleam year = current_date.year
-```
-
-We can also format the date to our desired format using the `Date.format` function. For example, if we wanted to display the date in the format of "Month Day, Year", we could do the following:
-
-```
-Gleam formatted_date = Date.format(current_date, "%B %e, %Y")
-```
-
-This will return a formatted string such as "January 1, 2021". You can experiment with different formatting options to get the date displayed exactly how you want it.
+In addition to getting the current date, we can also get the current time and date-time combination using the `DateTime.now.Time` and `DateTime.now.DateTime` functions, respectively.
 
 ## Deep Dive
 
-Under the hood, the `Date.now` function uses the Erlang `os:system_time` function to get the current system time in milliseconds. It then converts that millisecond value to a `Date.DateTime` record using some built-in Gleam functions.
+Under the hood, the `DateTime.now()` function uses the operating system's clock to get the current date and time. This allows for accurate and reliable data, but it also means that the function's behavior may vary depending on the machine running the code.
 
-Additionally, the `Date.format` function uses formatting codes that are similar to the ones used in the C programming language's `strftime` function. So, if you're familiar with C, this should look familiar to you.
+Additionally, the `DateTime` module offers many other functions for manipulating dates and times, such as adding or subtracting days, months, and years, comparing dates, and converting between different time zones. It's worth exploring and familiarizing yourself with all the available functions for more advanced use cases.
 
 ## See Also
 
-Here are some helpful links for further reading on Gleam's Date module:
-
-- [Gleam Date Module Documentation](https://gleam.run/modules/date.html)
-- [Erlang os:system_time function documentation](http://erlang.org/doc/man/os.html#system_time-0)
-- [C strftime function documentation](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- Official Gleam Documentation on `DateTime` module: https://gleam.run/packages/gleam/datetime/latest/
+- Gleam Standard Library on `DateTime` module: https://github.com/gleam-lang/gleam_stdlib/blob/main/gleam/datetime/src/datetime.gleam

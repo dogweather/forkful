@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Escribiendo a la salida de error estándar."
-simple_title:         "Escribiendo a la salida de error estándar."
+title:                "Escribiendo en el error estándar"
+html_title:           "Javascript: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+##¿Por qué escribir en error estándar?
 
-¿Alguna vez te has preguntado por qué es importante escribir en el estándar de error en tus programas en Javascript? Puede parecer una tarea mundana, pero en realidad es una práctica importante para la depuración y el manejo de errores en tu código. Aquí te explicaremos por qué escribir al estándar de error es esencial para cualquier programador.
+Escribir en error estándar es una práctica común en el mundo de la programación. Puede ser útil en situaciones donde se necesita registrar errores o mensajes importantes que no deberían ser ignorados. También puede ser utilizado para depurar y monitorear el rendimiento de una aplicación.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para escribir en el estándar de error en Javascript, puedes utilizar el objeto `console` y su método `error()`. Aquí te mostramos un ejemplo de cómo imprimir un mensaje de error en la consola:
+Para escribir en error estándar en Javascript, puedes utilizar el objeto `console` y su método `error()`. Por ejemplo:
 
 ```Javascript
-console.error("¡Ups! Algo salió mal.");
+console.error("¡Error! No se pudo encontrar el archivo solicitado.");
 ```
 
-Al ejecutar este código, verás en la consola del navegador el mensaje de error "¡Ups! Algo salió mal." Esto puede ser útil para identificar rápidamente errores en tu código y solucionarlos. También puedes incluir información adicional en el mensaje de error, como el nombre de una variable o la línea donde se produjo el error.
+El resultado en la consola sería:
 
-## Profundizando
+```
+¡Error! No se pudo encontrar el archivo solicitado.
+```
 
-Escribir al estándar de error también es importante para el manejo de errores en tus programas. Puedes utilizar `console.error()` para lanzar un error personalizado en caso de que se produzca una situación inesperada en tu código. Además, puedes utilizar `try/catch` para capturar este error y manejarlo de manera adecuada en tu programa.
+Este método también acepta múltiples argumentos, por lo que se pueden incluir variables u otros mensajes en el mismo comando. Puedes utilizar este método en cualquier parte de tu código donde quieras registrar un mensaje de error.
 
-Otra ventaja de escribir al estándar de error es que te permite tener un registro de errores que puedas revisar más tarde. Por ejemplo, si estás desarrollando una aplicación web, puedes enviar los mensajes de error al servidor y guardarlos en un archivo de registro para analizarlos posteriormente y mejorar tu código en consecuencia.
+## Profundizando en el tema:
 
-## Ver también
+Escribir en error estándar no solo es útil para registrar errores, sino que también te permite monitorear el rendimiento de tu aplicación. Puedes utilizar herramientas de terceros para interceptar y analizar los mensajes de error, lo que puede ayudar a identificar problemas y mejorar el rendimiento de tu código.
 
-Si quieres aprender más sobre cómo escribir al estándar de error en Javascript, te recomendamos revisar la documentación oficial del objeto `console` y sus métodos. También puedes echar un vistazo a estos recursos:
+Además, al escribir en error estándar, estás siguiendo buenas prácticas de programación y facilitando el trabajo de otros programadores que puedan necesitar depurar o mantener tu código en el futuro.
 
-- [Cómo manejar errores en Javascript](https://www.w3schools.com/js/js_errors.asp)
-- [Utilizando el objeto console en Javascript](https://developer.mozilla.org/es/docs/Web/API/Console)
+## Ver También:
 
-¡Esperamos que esta guía te haya sido útil en tu aprendizaje sobre cómo escribir al estándar de error en tus programas en Javascript! Recuerda siempre incluir mensajes de error en tu código para facilitar la depuración y el manejo de errores. ¡Feliz programación!
+- [Documentación de console.error en MDN](https://developer.mozilla.org/es/docs/Web/API/Console/error)
+- [Introducción a la escritura en error estándar](https://www.toptal.com/c/standard-error-piping-and-logging-in-node-js)
+- [Herramientas para analizar y monitorizar errores en Javascript](https://blog.logrocket.com/javascript-debugging-tricks-tools/)

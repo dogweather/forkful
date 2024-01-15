@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Calculando una fecha en el futuro o en el pasado"
+title:                "Calculando una fecha en el futuro o en el pasado"
+html_title:           "Arduino: Calculando una fecha en el futuro o en el pasado"
 simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,60 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué necesitamos calcular fechas en el futuro o pasado?
 
-La programación en Arduino nos permite crear proyectos increíbles que pueden mejorar nuestras vidas de muchas maneras. Una de esas aplicaciones es el cálculo de una fecha en el futuro o pasado, lo cual puede ser útil para programar eventos o tareas.
+A veces, es necesario saber qué fecha será en una determinada cantidad de días en el futuro o en el pasado. Esto puede ser útil para planificar eventos o tareas, o simplemente por curiosidad. Con Arduino, podemos crear un programa sencillo que nos calculará automáticamente la fecha deseada.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o pasado, primero necesitamos definir una fecha de referencia. En este caso, utilizaremos la función `millis()` de Arduino para obtener el tiempo actual en milisegundos.
+Para calcular una fecha en el futuro o en el pasado, necesitaremos tres variables: día, mes y año. En nuestro código, utilizaremos la función `day()` para obtener el día actual, `month()` para obtener el mes actual y `year()` para obtener el año actual. También necesitaremos una variable para almacenar la cantidad de días que queremos sumar o restar.
+
+```Arduino
+int diaActual = day();  // día actual
+int mesActual = month();  // mes actual
+int añoActual = year();  // año actual
+int diasExtra = 30;  // cantidad de días para sumar o restar
+
+// Calculamos la fecha sumando los días extra a la fecha actual
+int diaFuturo = diaActual + diasExtra;  
+int mesFuturo = mesActual;
+int añoFuturo = añoActual;
+
+// Si el día futuro es mayor al número de días del mes, ajustamos el mes y el día
+if (diaFuturo > 31) {
+  diaFuturo -= 31;
+  mesFuturo++;  
+}
+
+// Si el mes futuro es mayor a 12, ajustamos el mes y el año
+if (mesFuturo > 12) {
+  mesFuturo -= 12;
+  añoFuturo++;  
+}
+
+// Imprimimos la fecha en el monitor serie
+Serial.print("La fecha en ");
+Serial.print(diasExtra);
+Serial.print(" días será: ");
+Serial.print(diaFuturo);
+Serial.print("/");
+Serial.print(mesFuturo);
+Serial.print("/");
+Serial.println(añoFuturo);
 
 ```
-Arduino
 
-unsigned long tiempo_actual = millis();
-```
+Ahora el código está listo para calcular y mostrar la fecha en la cantidad de días especificada. Puedes modificar la variable `diasExtra` para calcular diferentes fechas en el futuro o en el pasado.
 
-Luego, podemos calcular una fecha en el futuro sumando una cantidad de milisegundos a la fecha de referencia. Por ejemplo, si queremos calcular la fecha exacta dentro de una semana, podemos sumar 604800000 milisegundos (7 días en milisegundos) al tiempo actual.
+## Profundizando más
 
-```
-Arduino
-unsigned long fecha_futura = tiempo_actual + 604800000;
-```
+Si quieres calcular fechas más precisas, puedes incluir otras variables en tu código, como el número de días en cada mes o años bisiestos. También puedes agregar una función para validar si la fecha que quieres mostrar es válida o no. Además, puedes practicar con otras operaciones, como calcular la diferencia entre dos fechas.
 
-Para calcular una fecha en el pasado, podemos restar una cantidad de milisegundos a la fecha de referencia. Si queremos saber la fecha exacta hace un mes, restaremos 2592000000 milisegundos (30 días en milisegundos) al tiempo actual.
+# Ver también
 
-```
-Arduino
-unsigned long fecha_pasada = tiempo_actual - 2592000000;
-```
-
-Una vez que tenemos la fecha en milisegundos, podemos convertirla a un formato legible para el usuario utilizando la función `millisToDateTime()` de la biblioteca ArduinoDateTime.
-
-```
-Arduino
-#include <ArduinoDateTime.h> // incluimos la biblioteca
-
-unsigned long fecha_futura = tiempo_actual + 604800000; // calculamos la fecha en el futuro
-DateTime fecha_legible = millisToDateTime(fecha_futura); // convertimos la fecha en milisegundos a un formato legible
-```
-
-Por último, podemos imprimir la fecha en el puerto serie para que podamos verla en el monitor serial.
-
-```
-Arduino
-// imprimimos la fecha en el puerto serie
-Serial.println("La fecha en el futuro es " + String(fecha_legible.month()) + "/" + String(fecha_legible.day()) + "/" + String(fecha_legible.year()));
-```
-
-## Profundizando
-
-Calcular una fecha en el futuro o pasado puede ser útil en aplicaciones de temporización, como encender y apagar luces automáticamente en un determinado día y hora. También puede ser útil en proyectos que involucren el registro de eventos en una fecha específica, como la recolección de datos meteorológicos.
-
-Es importante tener en cuenta que este método de cálculo de fechas solo es preciso si el reloj interno de Arduino no se detiene o se reinicia. Si el Arduino se reinicia, el cálculo de fechas se reiniciará desde cero.
-
-## Véase también
-
-- [Biblioteca ArduinoDateTime](https://github.com/arduino-libraries/ArduinoDateTime)
-- [Función millis() de Arduino](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- [Tutorial sobre cómo calcular fechas en el Arduino Forum](https://forum.arduino.cc/index.php?topic=712493.0)
+- [Documentación oficial de Arduino](https://www.arduino.cc/reference/es/)
+- [Cálculo de la fecha juliana en Wikipedia](https://es.wikipedia.org/wiki/Fecha_juliana)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Fish Shell: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna skriva en textfil är en viktig färdighet för varje programmerare. Genom att kunna skapa och redigera textfiler kan man enkelt konfigurera och anpassa sin Fish Shell-upplevelse.
 
-## Hur man gör det
-Det första steget för att skriva en textfil är att öppna din Textredigerare. I Fish Shell kan du enkelt öppna din standardtextredigerare genom att skriva `fish_config` i din terminal. Detta öppnar Fish Shell-konfigurationsfilen i din standardtextredigerare.
+Det finns många anledningar till varför du skulle vilja skriva en textfil med Fish Shell. Kanske vill du automatisera vanliga uppgifter i datorn, hålla koll på olika kommandon eller helt enkelt utforska vad Fish Shell har att erbjuda.
 
-För att skapa en ny textfil, använd följande kommando i din terminal:
+## Hur man gör
+
+Vi kommer nu gå igenom de grundläggande stegen för att skriva en textfil med Fish Shell. Först och främst behöver du öppna Fish Shell i terminalen, detta kan du göra genom att söka efter det i ditt operativsystem eller genom att öppna en ny flik i terminalen och skriva "fish". Sedan kan du följa dessa steg:
+
+1. Skapa en ny textfil med kommandot "touch" och namnge den med ".txt" som tillägg.
+2. Öppna textfilen med valfritt textredigeringsprogram.
+3. Skriv dina önskade kommandon i textfilen, förslagsvis med en kort beskrivning av vad de gör.
+4. Spara filen och stäng den.
+
+Här är ett exempel på hur det kan se ut:
 
 ```Fish Shell
-touch filename.txt
+touch minaKommandon.txt
+open minaKommandon.txt
 ```
-
-Detta skapar en tom textfil med namnet "filename.txt" i din nuvarande mapp. Om du vill redigera innehållet i textfilen, skriv `fish_config` i din terminal igen för att öppna den i din textredigerare.
-
-För att lägga till text i din fil, använd `echo` kommandot följt av det du vill lägga till i citationstecken. Till exempel:
-
-```
-echo "Detta är en textfil skapad med hjälp av Fish Shell" >> filename.txt
-```
-
-Detta lägger till den givna texten i slutet av din fil. Du kan också använda `cat` kommandot för att skriva innehållet i en befintlig fil. Till exempel:
-
-```
-cat hello.txt >> filename.txt
-```
-
-Detta lägger till innehållet i "hello.txt" i slutet av "filename.txt" filen. Du kan också redigera innehållet i din textfil genom att enkelt ändra texten i din textredigerare.
 
 ## Djupdykning
-När du skriver en textfil är det viktigt att känna till några viktiga begrepp. En textfil består av en sekvens av tecken som kan läsas och redigeras av en textredigerare. Varje rad i en textfil slutar med ett radbrytningstecken (newline), vilket talar om för textredigeraren att gå till nästa rad.
 
-En textfil kan också innehålla teckenkodningar som bestämmer hur tecknen ska tolkas och visas. Det är viktigt att vara medveten om teckenkodningarna när du redigerar och använder textfiler.
+När du väl har skapat din textfil med Fish Shell finns det möjlighet att göra mer avancerade saker. Du kan till exempel inkludera villkor och loopar för att skapa ett mer dynamiskt och effektivt skript. Du kan också lägga till kommentarer i din textfil för att göra den mer läsbar och förklara dina kommandon för andra som eventuellt skulle använda samma fil.
 
-## Se även
-- [Fish Shell's dokumentation](https://fishshell.com/docs/current/index.html)
-- [En guide för att skapa och redigera textfiler](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management)
-- [En tutorial om textredigerare i Linux](https://www.hostinger.com/tutorials/linux-text-editors)
+## Se också
+
+- Fish Shell hemsida: https://fishshell.com/
+- Fish Shell dokumentation: https://fishshell.com/docs/current/
+- Fish Shell GitHub repository: https://github.com/fish-shell/fish-shell

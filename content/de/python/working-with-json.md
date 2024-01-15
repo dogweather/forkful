@@ -1,6 +1,7 @@
 ---
-title:                "Python: Arbeiten mit json"
-simple_title:         "Arbeiten mit json"
+title:                "Arbeiten mit JSON"
+html_title:           "Python: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,74 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie sich schon einmal mit Programmierung beschäftigt haben, haben Sie wahrscheinlich schon von JSON gehört. Dieses Format wird immer beliebter, da es eine einfache Möglichkeit bietet, Daten zu speichern und zu übertragen. In diesem Blog-Beitrag werden wir uns näher mit JSON in der Python-Programmierung beschäftigen, um zu verstehen, warum es so nützlich ist.
+JSON (JavaScript Object Notation) ist ein weit verbreitetes Format für den Austausch von Daten zwischen Anwendungen. Es ist leicht lesbar für Menschen und einfach zu parsen für Computer, wodurch es zu einer beliebten Wahl für die Übertragung von Daten wird.
 
-## Wie man
+## Wie man damit arbeitet
 
-Um mit JSON in Python zu arbeiten, müssen Sie das integrierte Modul "json" importieren. Dann können Sie Daten in das JSON-Format konvertieren und umgekehrt. Schauen wir uns ein Beispiel an:
-
-```Python
-import json
-
-# Beispiel-Daten
-person = {
-	"Name": "Max",
-	"Alter": 25,
-	"Hobbies": ["Lesen", "Sport", "Reisen"]
-}
-
-# Konvertieren in JSON
-person_json = json.dumps(person)
-
-print(person_json)
-```
-
-Die Ausgabe sollte wie folgt aussehen:
-
-```
-{"Name": "Max", "Alter": 25, "Hobbies": ["Lesen", "Sport", "Reisen"]}
-```
-
-Um Daten aus JSON zu lesen, können Sie die Funktion "loads()" verwenden. Hier ist ein Beispiel, das denselben Datensatz aus der JSON-Ausgabe liest:
+Um JSON in Python zu nutzen, müssen wir zuerst das `json` Modul importieren:
 
 ```Python
 import json
-
-# JSON-Daten
-person_json = '{"Name": "Max", "Alter": 25, "Hobbies": ["Lesen", "Sport", "Reisen"]}'
-
-# Konvertieren in Python-Objekt
-person = json.loads(person_json)
-
-# Zugriff auf Daten
-print("Name:", person["Name"])
-print("Alter:", person["Alter"])
-print("Hobbies:", person["Hobbies"])
 ```
 
-Die Ausgabe sollte folgendermaßen aussehen:
+Als nächstes können wir Daten von einer JSON-Datei lesen und in ein Python Dictionary konvertieren:
 
+```Python
+with open('daten.json') as f:
+  daten = json.load(f)
 ```
-Name: Max
-Alter: 25
-Hobbies: ['Lesen', 'Sport', 'Reisen']
+
+Wir können nun auf die Daten in unserem `daten` Dictionary zugreifen, indem wir den entsprechenden Schlüssel verwenden. Zum Beispiel, wenn unsere JSON-Datei die Daten für einen Benutzer enthält, können wir auf den Benutzernamen wie folgt zugreifen:
+
+```Python
+benutzername = daten['benutzername']
 ```
 
-Wie Sie sehen können, ist die Arbeit mit JSON in Python sehr einfach und intuitiv.
+Wir können auch ein Dictionary zu JSON konvertieren und in eine Datei schreiben:
 
-## Weiterführende Informationen
+```Python
+neue_daten = {'alter': 25, 'ort': 'Berlin'}
 
-Es gibt noch viel mehr, was man über die Arbeit mit JSON in Python lernen kann. Zum Beispiel können Sie verschachtelte Strukturen erstellen oder Standardformate wie datetime nutzen. Außerdem können Sie mit der Funktion "dump()" JSON-Daten direkt in eine Datei schreiben und mit "load()" aus einer Datei lesen.
+with open('neue_daten.json', 'w') as f:
+  json.dump(neue_daten, f)
+```
 
-Wenn Sie mehr darüber erfahren möchten, besuchen Sie die offizielle Dokumentation für das "json" Modul in Python:
+## Tiefergehende Informationen
 
-- [JSON-Dokumentation für Python](https://docs.python.org/3/library/json.html)
-- [Einführung in das JSON-Modul in Python](https://realpython.com/python-json/)
+Der `json` Modul bietet verschiedene Funktionen, um mit JSON-Daten zu arbeiten. Zum Beispiel können wir Daten in einem lesbareren Format ausgeben, indem wir den Parameter `indent` verwenden:
+
+```Python
+json.dumps(daten, indent=2)
+```
+
+Wir können auch angeben, welche Art von Daten mit dem Parameter `sort_keys` sortiert werden sollen:
+
+```Python
+json.dumps(daten, sort_keys=True)
+```
+
+Darüber hinaus können wir auch eigene Funktionen erstellen, um Daten in JSON umzuwandeln, indem wir die `JSONEncoder` Klasse erweitern.
 
 ## Siehe auch
 
-Weitere interessante Ressourcen für die Arbeit mit JSON in Python:
-
-- [Die JSON-Bibliothek in Python](https://www.freecodecamp.org/news/python-json-library/)
-- [JSON in Python erklärt](https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/)
-- [Parsing JSON-Daten in Python](https://towardsdatascience.com/parsing-json-data-in-python-b6a2123b19b6)
+- [Offizielle Dokumentation für das json Modul](https://docs.python.org/3/library/json.html)
+- [Ein Tutorial für die Arbeit mit JSON in Python](https://realpython.com/python-json/)
+- [Ein Artikel mit Beispielen für die Verwendung des json Moduls](https://www.geeksforgeeks.org/working-with-json-data-in-python/).

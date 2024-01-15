@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Recherche et remplacement de texte"
-simple_title:         "Recherche et remplacement de texte"
+title:                "Rechercher et remplacer du texte"
+html_title:           "Rust: Rechercher et remplacer du texte"
+simple_title:         "Rechercher et remplacer du texte"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,34 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La recherche et remplacer du texte est une tâche courante en programmation, et il est important de savoir comment le faire efficacement. En utilisant le langage de programmation Rust, vous pouvez facilement manipuler du texte grâce à diverses méthodes et fonctions.
+Si vous travaillez avec du texte dans vos projets de programmation, vous avez probablement rencontré des situations où vous deviez trouver et remplacer une certaine portion de texte. Il peut s'agir d'une faute de frappe ou d'un terme qui a changé et que vous devez mettre à jour dans tout votre code. Heureusement, Rust dispose de puissantes fonctionnalités pour effectuer des recherches et des remplacements de manière efficace et sans douleur.
 
 ## Comment faire
 
-Tout d'abord, vous devez importer la bibliothèque standard de Rust pour travailler avec du texte: `std::prelude::*`. Ensuite, vous pouvez utiliser la méthode `replace` pour remplacer un motif donné dans une chaîne avec une autre chaîne. Voici un exemple de code qui remplace "bonjour" par "salut" dans une chaîne donnée:
+Pour effectuer une recherche et un remplacement de texte en Rust, nous utiliserons la fonction `replace()` de la bibliothèque standard `std::string`. Voici un exemple de code montrant comment rechercher et remplacer un mot spécifique dans une chaîne de caractères :
 
-```Rust
-let phrase = "Bonjour, comment ça va?";
-let nouvelle_phrase = phrase.replace("bonjour", "salut");
-println!("{}", nouvelle_phrase);
+```rust
+let mut text = String::from("Bonjour le monde!");
+text.replace("Bonjour", "Salut");
+
+println!("{}", text);  // Output: Salut le monde!
 ```
 
-La sortie de ce code sera "Salut, comment ça va?". Vous pouvez également utiliser les méthodes `find` et `replace_range` pour remplacer une sous-chaîne spécifique dans une chaîne.
+Dans cet exemple, nous avons créé une variable `text` contenant une chaîne de caractères et nous avons utilisé la fonction `replace()` pour remplacer le mot "Bonjour" par "Salut". La chaîne de caractères mise à jour est ensuite affichée à l'écran.
 
-## Plongée en profondeur
+Vous pouvez également utiliser des outils plus avancés pour effectuer des recherches et des remplacements en utilisant des expressions régulières. La bibliothèque `regex` fournit des fonctionnalités pour travailler avec des expressions régulières en Rust. Voici un exemple de code utilisant cette bibliothèque :
 
-En plus des méthodes mentionnées ci-dessus, Rust a également une fonctionnalité appelée "patterns de capture". Cela vous permet de trouver des parties spécifiques d'une chaîne qui correspondent à un modèle donné et de les remplacer par une autre chaîne. Voici un exemple de code qui remplace les lettres `c` et `d` par `x` et `y` respectivement:
+```rust
+use regex::Regex;
 
-```Rust
-let phrase = "abcdefg";
-let nouvelle_phrase = regex::Regex::new("(c)(d)").unwrap().replace_all(&phrase, "(x)(y)");
-println!("{}", nouvelle_phrase);
+let text = "Hello world!";
+let re = Regex::new("world").unwrap();
+let replaced_text = re.replace(text, "universe");
+
+println!("{}", replaced_text); // Output: Hello universe!
 ```
 
-La sortie de ce code sera "abxefg". Vous pouvez également utiliser des expressions régulières pour des recherches et des remplacements plus complexes.
+Dans cet exemple, nous avons importé la bibliothèque `regex` et utilisé sa fonction `new()` pour créer une expression régulière correspondant au mot "world". Nous avons ensuite utilisé la fonction `replace()` pour remplacer ce mot par "universe" dans la chaîne de caractères `text`.
+
+## Plongée profonde
+
+En plus de la fonction `replace()` de la bibliothèque `std::string` et de la bibliothèque `regex`, il existe d'autres options pour effectuer des recherches et des remplacements de texte en Rust. La bibliothèque `phf` propose des tables de hachage parfaites pour effectuer des remplacements de manière efficace dans de grandes quantités de texte. La bibliothèque `strsim` peut être utilisée pour comparer des chaînes de caractères et faciliter les remplacements basés sur la similarité.
+
+En utilisant ces outils et en combinant différentes méthodes de recherche et de remplacement, vous pouvez créer des programmes en Rust qui peuvent gérer efficacement tout type de tâche de manipulation de texte.
 
 ## Voir aussi
 
-- [Documentation officielle de Rust sur les chaînes de caractères](https://doc.rust-lang.org/std/string/index.html)
-- [Guide de programmation sur la manipulation de text en Rust](https://www.excelsior-cjh.com/blog/programmation/rust/rust-manipulation-du-texte/)
-- [Développer un programme de recherche et remplacement avec Rust](https://www.asciiarmor.com/post/text_manipulation_in_rust/)
+- [La documentation sur les chaînes de caractères en Rust](https://doc.rust-lang.org/stable/std/primitive.str.html)
+- [La bibliothèque `regex` pour les expressions régulières en Rust](https://crates.io/crates/regex)
+- [La bibliothèque `phf` pour les tables de hachage parfaites en Rust](https://crates.io/crates/phf)
+- [La bibliothèque `strsim` pour comparer des chaînes de caractères en Rust](https://crates.io/crates/strsim)

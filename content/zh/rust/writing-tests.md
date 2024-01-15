@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 编写测试 (Biānxiě cèshì)"
-simple_title:         "编写测试 (Biānxiě cèshì)"
+title:                "编写测试"
+html_title:           "Rust: 编写测试"
+simple_title:         "编写测试"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,45 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-写测试可能是编程过程中最容易被忽视的部分，但它却是非常重要的。通过编写测试，可以确保代码的质量，减少潜在的错误，并且为将来的维护工作提供更改的保障。
+写测试是软件开发中的一个重要步骤。通过编写测试，我们可以确保代码的质量，减少潜在的错误和bug，同时也可以提高代码的可维护性。因此，写测试能够很大程度上提高软件开发的效率和质量。
 
-## 如何编写测试
+## 如何做
 
-写Rust测试非常简单。首先，需要使用`#[cfg(test)]`标记来指定测试模块。接着，定义一个测试函数，函数名以`test`开头，并且带有`#[test]`标记。最后，在测试函数中，使用`assert!`宏来断言测试的结果。以下是一个简单的示例：
+在Rust中，编写测试非常简单。首先，在项目根目录下创建名为`tests`的文件夹，并在其中创建一个用于测试的源文件，命名为`tests.rs`。然后，在该文件中使用`#[cfg(test)]`定义一个单元测试模块，接着就可以进行测试了。下面是一个简单的示例：
 
 ```Rust
 #[cfg(test)]
 mod tests {
     #[test]
-    fn test_add() {
-        let result = 2 + 2;
-        assert!(result == 4);
+    fn test_addition() {
+        assert_eq!(2 + 2, 4);
     }
 }
 ```
 
-运行测试的方法也非常简单，只需要使用`cargo test`命令即可。测试结果将显示在控制台中，如果测试失败，会给出失败的详细信息。
+在这个例子中，我们定义了一个名称为`test_addition`的单元测试函数，在函数体中使用`assert_eq!`宏来断言测试结果。接着，我们可以通过在终端中使用`cargo test`命令来运行所有的测试，或者使用`cargo test test_addition`来运行指定的测试。
 
-此外，Rust还提供了一些测试宏，如`assert_eq!`、`assert_ne!`等，可以根据需要进行选择使用。
+## 深入挖掘
 
-## 深入了解测试
+除了单元测试外，Rust还提供了集成测试的功能，用于测试多个模块之间的交互。集成测试可以在项目根目录下的`tests`文件夹中编写，与单元测试不同的是，需要使用`#[test]`标注来定义测试函数。另外，在`src`文件夹中的任何地方编写的测试都将被自动识别为集成测试。
 
-写测试时，需要注意的一些事项包括：
+此外，Rust还支持`#[ignore]`标注来忽略某些测试，以及`#[should_panic]`标注来测试代码是否按预期产生panic。更多关于测试的信息，我们可以查看Rust官方文档或其他博客文章。
 
-- 测试应该覆盖代码的各种情况，以确保所有的代码路径都经过正确的测试。
-- 测试的可读性和可维护性也非常重要，应该避免使用过于复杂的断言，以免造成困难。
-- 应该根据需要，对测试进行命名和分组，以便更好地组织和管理测试。
+## 参考文献
 
-总的来说，写测试可以帮助我们更加自信地修改代码，确保代码的稳定性和可靠性。
-
-## 参考资料
-
-- [Rust官方文档 - 测试](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html)
-- [Software Testing Fundamentals](https://www.softwaretestingfundamentals.com/)
-- [7 Reasons to Write Tests when Developing Software](https://blog.gurock.com/7-reasons-to-write-tests/)
-
-## 请参阅
-
-- [如何进行单元测试 in Rust](https://todo-add-rust-testing-tutorial)
-- [为什么测试驱动开发是一个好习惯？](https://todo-add-tdd-article)
-- [使用TDD提升代码质量的实践](https://todo-add-tdd-practice-article)
+- Rust官方文档：https://doc.rust-lang.org/book/ch11-01-writing-tests.html
+- Rust测试教程：https://doc.rust-lang.org/book/ch11-02-running-tests.html
+- 关于单元测试与集成测试的区别：https://stackoverflow.com/questions/49049664/what-is-the-difference-between-unit-tests-and-integration-tests

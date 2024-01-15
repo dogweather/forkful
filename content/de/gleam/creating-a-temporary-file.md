@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Gleam: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,24 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich überhaupt mit dem Erstellen von temporären Dateien auseinandersetzen? Das kann verschiedene Gründe haben, zum Beispiel um temporäre Daten für eine bestimmte Berechnung zu speichern oder um temporäre Backups anzulegen, bevor man an einer Datei arbeitet. Ein weiterer Grund kann sein, dass man temporäre Dateien für die Ausführung von bestimmten Programmen oder Skripten benötigt.
 
-## Wie man temporäre Dateien mit Gleam erstellt
-Das Erstellen von temporären Dateien kann mit Gleam ganz einfach durchgeführt werden. Hier ist ein Beispiel:
+Warum sollte man sich überhaupt mit dem Erstellen von temporären Dateien beschäftigen? In der Programmierung kann es manchmal nützlich sein, temporäre Dateien zu erstellen, um Daten zwischen verschiedenen Prozessen oder Programmen auszutauschen. Durch das Erstellen einer temporären Datei können Daten effizient und sicher übertragen werden, ohne die bestehende Dateistruktur zu verändern.
+
+## Wie
+
+Um in Gleam eine temporäre Datei zu erstellen, können wir die Funktion `File.write_to_temp()` verwenden. Hier ist ein Beispielcode, der eine einfache Textdatei erstellt und diese dann in der temporären Datei speichert.
+
 ```Gleam
-temp_file = File.temp()
-IO.puts("Die temporäre Datei wurde erstellt unter: #{temp_file}")
+let content = "Dies ist ein Beispielinhalt."
+let file_name = "beispiel.txt"
+
+// Datei erstellen
+File.write_to_file(file_name, content)
+
+// Temporäre Datei erstellen
+let temp_file = File.write_to_temp(file_name)
+
+// Inhalt der temporären Datei ausgeben
+File.read(temp_file.path)
 ```
 
-Wenn man dieses Codebeispiel ausführt, wird eine temporäre Datei angelegt und deren Pfad ausgegeben. Es ist auch möglich, einen bestimmten Namen für die temporäre Datei anzugeben, zum Beispiel ```File.temp("backup")```. 
+Die Ausgabe dieses Codes sollte der Inhalt der erstellten Datei sein, also "Dies ist ein Beispielinhalt." Die temporäre Datei wird automatisch gelöscht, sobald das Programm beendet wird.
 
 ## Deep Dive
-Es gibt einige Dinge, die man beim Erstellen von temporären Dateien beachten sollte. Zum einen sollte man immer darauf achten, dass die temporäre Datei nach ihrer Verwendung wieder gelöscht wird, um Speicherplatz zu sparen. Dies kann mit der Funktion ```File.delete(temp_file)``` erreicht werden.
 
-Außerdem kann es hilfreich sein, die Funktion ```File.temp_dir()``` zu verwenden, um einen spezifischen Ordner als Speicherort für temporäre Dateien anzugeben. So können unerwünschte Dateien in wichtigen Ordnern vermieden werden.
-
-Eine weitere wichtige Sache ist, dass man beim Arbeiten mit temporären Dateien vorsichtig sein sollte, da diese nicht immer zuverlässig sind. Es kann passieren, dass eine temporäre Datei aus irgendeinem Grund nicht erstellt werden kann, was zu Fehlern im Code führen kann. Deshalb ist es wichtig, den Code entsprechend zu überprüfen und mögliche Fehlerszenarien einzuplanen.
+Die Funktion `File.write_to_temp()` erstellt nicht nur eine temporäre Datei, sondern gibt auch eine `TempFile`-Struktur zurück, die Informationen über die erstellte Datei enthält. Diese Struktur beinhaltet den Namen und den Pfad der temporären Datei sowie Funktionen zum Lesen, Schreiben und Löschen der Datei. Dadurch haben wir mehr Kontrolle über die temporäre Datei und können sie gezielt verwenden.
 
 ## Siehe auch
-- [Dokumentation von Gleam zum Erstellen von temporären Dateien](https://gleam.run/modules/gleam_stdlib/0.8.1/Stream.File.html#temp)
-- [Beispielcode für die Verwendung von temporären Dateien in Gleam](https://github.com/gleam-lang/gleam_stdlib/blob/master/test/stream/file_test.gleam)
+
+- [Gleam Dokumentation über das Modul File](https://gleam.run/modules/file.html)
+- [Beispielprojekt für die Verwendung von temporären Dateien in Gleam](https://github.com/gleam-lang/gleam_by_example/tree/master/tempfile)

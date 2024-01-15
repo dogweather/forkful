@@ -1,6 +1,7 @@
 ---
-title:                "C++: पाठ को खोजें और प्रतिस्थापित करें"
-simple_title:         "पाठ को खोजें और प्रतिस्थापित करें"
+title:                "टेक्स्ट खोज और बदलाव करना"
+html_title:           "C++: टेक्स्ट खोज और बदलाव करना"
+simple_title:         "टेक्स्ट खोज और बदलाव करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,24 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-आपने कभी भी अपने कंप्यूटर पर कुछ लिखा है और बाद में उसे बदलने के लिए या उसके सभी मामलों में कुछ सामान्य गलतियों को सही करने के लिए वहां किसी खोज और प्रतिस्थापन की आवश्यकता होती है। यह एक बहुत आम कार्य है और आपको अपने कोड में सही फार्मेटिंग और त्रुटियों को ढूंढने में मदद कर सकता है।
+## Kyun
 
-## कैसे करें
-खोज और प्रतिस्थापन आपको एक सरल कार्य से आपके कोड में बदलाव करने में मदद कर सकता है। आप अपने कोड में टेक्स्ट के सभी संभावित स्थानों को खोजकर उन्हें दिए गए दूसरे टेक्स्ट से प्रतिस्थापित कर सकते हैं। इसे आसानी से करने के लिए, आपको कुछ सीखने की आवश्यकता है।
+Kabhi kabhi humein apne code mein kuch changes karne ki zaroorat hoti hai. Isme se ek kaam hai text ko search karke usay replace karna. Yeh kaam karne se hum apne code ko improve kar sakte hai aur code ke errors ko fix kar sakte hai.
+
+## Kaise Karein
 
 ```C++
-string mainString = "मेरा नाम राज है।";
-string findString = "राज";
-string replaceString = "जॉन";
-size_t position = mainString.find(findString);
-if (position != string::npos) {
-    mainString.replace(position, findString.length(), replaceString);
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() 
+{
+  // Original string
+  string text = "Hello world!";
+
+  // Search and replace
+  text.replace(text.find("world"), 5, "universe");
+
+  // Output new string
+  cout << text << endl;
+
+  return 0;
 }
-cout << mainString;
+
+// Output:
+// Hello universe!
 ```
 
-उपरोक्त कोड द्वारा, हम नई तारीख को काम में लाते हैं, "मेरा नाम जॉन है।"
+Is code mein humne apne original string mein se "world" ko search kiya aur usay "universe" se replace kiya. Is tarah hum apne code mein koi bhi word ya phrase ko aasani se replace kar sakte hai.
 
-## गहराई में समझें
-खोज और प्रतिस्थापन दो अलग-अलग फंक्शंस हो सकते हैं, लेकिन दोनों आप टेक्स्ट को ढूंढने और उसे प्रतिस्थापित करने के लिए स्ट्रिंग क्लास के फंक्शंस का उपयोग कर सकते हैं। आप चाहें तो एक टेक्स्ट से दूसरे टेक्स्ट के पहले या आखरी स्थान पर ही खोज और प्रतिस्थापन कर सकते हैं। आप इस तकनीक का उपयोग अपने कोड को आसानी
+## Deep Dive
+
+Searching and replacing text is a useful function that saves time and effort when it comes to making changes in code. It allows us to replace multiple instances of a word or phrase with just one command. In C++, we can use the `replace()` function to search and replace text within a string.
+
+This function takes three arguments: the position to start the search from, the number of characters to replace, and the replacement string. By using the `find()` function, we can determine the starting position of the word or phrase we want to replace. Then, we can specify the number of characters to replace, which is the length of the word or phrase. Finally, we can specify the replacement string. 
+
+## Dekhain Bhi
+
+- https://www.geeksforgeeks.org/stringreplace-function-in-c-stl/
+- https://www.tutorialspoint.com/cplusplus/cpp_strings.htm
+- https://www.programiz.com/cpp-programming/library-function/c-string/replace

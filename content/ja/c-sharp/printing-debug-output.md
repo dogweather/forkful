@@ -1,5 +1,6 @@
 ---
-title:                "C#: デバッグ出力の印刷"
+title:                "デバッグ出力の印刷"
+html_title:           "C#: デバッグ出力の印刷"
 simple_title:         "デバッグ出力の印刷"
 programming_language: "C#"
 category:             "C#"
@@ -9,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜデバッグ出力をプリントするのか
-デバッグ出力をプリントすることは、コードを実行している間に発生するエラーや処理の詳細を確認するのに役立ちます。これにより、問題の特定やデバッグの効率が向上します。
+## なぜ
+
+デバッグ出力を行う理由は、コードの実行中に起きている問題やバグを特定し、修正するためです。
 
 ## 方法
-デバッグ出力をプリントする一般的な方法は、`Console.WriteLine()`メソッドを使用することです。このメソッドを使用するためには、まず`using System;`を宣言する必要があります。次に、プリントしたい情報を引数として渡します。
 
-例えば、以下のコードでは、`Console.WriteLine()`を使用して、変数`name`の値をプリントしています。
-
-```C#
-using System;
-
-string name = "山田太郎";
-Console.WriteLine("私の名前は" + name + "です。");
-```
-
-上記のコードを実行すると、以下のような出力が得られます。
-
-```
-私の名前は山田太郎です。
-```
-
-また、変数の値の他にも、コードの特定の場所で処理が実行されているかどうかを確認するために、`Console.WriteLine()`を使用することができます。例えば、以下のコードでは、`Console.WriteLine()`が条件分岐の中で実行されたかどうかをプリントしています。
+デバッグ出力を行うには、`Console.WriteLine()`メソッドを使用します。以下のコードは、変数`num`の値を出力する例です。
 
 ```C#
-using System;
-
 int num = 10;
+Console.WriteLine("numの値は" + num + "です。");
+```
+実行結果は、`numの値は10です。`となります。
 
-if(num > 5){
-    Console.WriteLine("条件分岐が実行されました。");
+また、配列やオブジェクトの内容を出力することもできます。以下のコードは、配列`numbers`の要素を出力する例です。
+
+```C#
+int[] numbers = { 1, 2, 3, 4, 5 };
+Console.WriteLine("numbersの要素は" + string.Join("、", numbers) + "です。");
+```
+実行結果は、`numbersの要素は1、2、3、4、5です。`となります。
+
+## 深堀り
+
+デバッグ出力を行う際には、`Console.WriteLine()`メソッドの代わりに`Debug.WriteLine()`メソッドを使用することもできます。このメソッドを使用すると、コンパイル時にデバッグ出力が無視されるようになります。
+
+また、特定の条件下でのみデバッグ出力を行いたい場合は、`if`文を使用して条件を設定することもできます。例えば以下のように、変数`debugMode`が`true`の場合のみデバッグ出力を行うように設定することができます。
+
+```C#
+if(debugMode)
+{
+    Console.WriteLine("デバッグメッセージを出力します。");
 }
 ```
 
-上記のコードを実行すると、`num`の値が5より大きいため、条件分岐が実行されます。その結果、`Console.WriteLine()`が実行され、以下のような出力が得られます。
+## 参考リンク
 
-```
-条件分岐が実行されました。
-```
-
-## ディープダイブ
-`Console.WriteLine()`の他にも、デバッグ出力をプリントするためのさまざまな方法があります。例えば、`Debug.WriteLine()`メソッドは、デバッグ用途に最適化されたメソッドで、デバッグ中のエラーや情報のプリントに適しています。
-
-また、`Trace.WriteLine()`メソッドは、パフォーマンスを追跡するためのメソッドであり、コードの特定の場所での処理の詳細をプリントするのに役立ちます。
-
-デバッグ出力をプリントする際は、上記のメソッド以外にも適した方法があるので、自分にとって最適な方法を見つけることが大切です。
-
-## 同時に見ておきたい
-- [C# Console.WriteLine()メソッドの使い方](https://www.tohoho-web.com/ex/csharp.html#writeline)
-- [C# Debug.WriteLine()メソッドとTrace.WriteLine()メソッドの違い](https://tech-joho.info/csharpdebug_diff/)
+- [Console.WriteLine()の使用方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.console.writeline)
+- [Debug.WriteLine()の使用方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.diagnostics.debug.writeline)

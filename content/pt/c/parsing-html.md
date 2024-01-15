@@ -1,6 +1,7 @@
 ---
-title:                "C: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Parsing de html"
+html_title:           "C: Parsing de html"
+simple_title:         "Parsing de html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,77 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que é importante entender como fazer o parsing em HTML?
+##Por que
 
-Fazer o parsing de HTML é essencial para qualquer desenvolvedor de software que trabalhe com linguagens web, pois permite a extração de informações específicas de uma página da internet. Além disso, o conhecimento em parsing de HTML é fundamental para a criação de programas automatizados ou ferramentas de análise de dados a partir de conteúdos online.
+Você já se perguntou como os navegadores da Web são capazes de interpretar e exibir páginas HTML? A resposta é: através de uma técnica chamada parsing. Neste artigo, vamos explorar o que é parsing e como você pode usá-lo em suas próprias aplicações em C.
 
-## Como fazer o parsing de HTML em C
+## Como fazer
 
-O C é uma linguagem de programação muito poderosa e versátil que pode ser usada para muitas tarefas, incluindo a análise de HTML. Para fazer o parsing de HTML em C, é necessário seguir alguns passos simples:
+Para realizar o parsing de HTML em seu código em C, você vai precisar de uma biblioteca externa chamada libxml2. Você pode instalá-la usando o gerenciador de pacotes da sua distribuição de Linux ou baixando-a diretamente do site oficial.
 
-- Primeiro, é necessário ter uma biblioteca de HTML em C, como a "http-parser" disponível em `https://github.com/nodejs/http-parser`.
-- Em seguida, é preciso incluir a biblioteca em seu código fonte usando `#include <http_parser.h>`.
-- Então, o código deve ser escrito para criar a estrutura de parser, como `http_parser parser;`.
-- Agora, é preciso passar a URL ou o HTML a ser analisado para a função `http_parser_execute()`.
-- Por fim, é necessário definir callbacks para lidar com os diferentes elementos do HTML, como tags, atributos, entre outros.
-
-Aqui está um exemplo de código de como fazer o parsing de HTML em C:
+Uma vez que a biblioteca esteja instalada, você pode começar a utilizar suas funções para fazer o parsing de um documento HTML. Aqui está um exemplo simples que lê um arquivo HTML e imprime suas tags e conteúdo:
 
 ```C
-#include <http_parser.h>
- 
-int on_element_start(http_parser* parser, const char* at, size_t length) {
-    // Lida com o início de uma tag ou atributo
-}
- 
-int on_element_end(http_parser* parser) {
-    // Lida com o final de uma tag ou atributo
-}
- 
-int on_body_element(http_parser* parser, const char* at, size_t length) {
-    // Lida com o conteúdo dentro de uma tag
-}
- 
-int main(int argc, const char* argv[]) {
-    http_parser_settings settings;
-    settings.on_element_start = on_element_start;
-    settings.on_element_end = on_element_end;
-    settings.on_body = on_body_element;
+#include <stdio.h>
+#include <libxml2/libxml/HTMLparser.h>
 
-    char html[] = "<html><head><title>Título</title></head><body>Conteúdo</body></html>";
-
-    http_parser parser;
-    http_parser_init(&parser, HTTP_RESPONSE);
-    http_parser_execute(&parser, &settings, html, strlen(html));
-
+int main() {
+    // Carrega o documento HTML
+    FILE* htmlFile = fopen("index.html", "r");
+    htmlDocPtr doc = htmlReadFile("index.html", NULL, HTML_PARSE_NOBLANKS);
+    
+    // Encontra o primeiro elemento
+    xmlNodePtr node = xmlDocGetRootElement(doc);
+    
+    // Imprime as tags e o conteúdo
+    while (node != NULL) {
+        printf("%s: %s\n", node->name, xmlNodeGetContent(node));
+        node = node->next;
+    }
+    
+    // Libera a memória
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+    
     return 0;
 }
 ```
 
-A saída deste exemplo seria:
+Supondo que o arquivo "index.html" contenha o seguinte código:
+
+```HTML
+<html>
+    <head>
+        <title>Meu site</title>
+    </head>
+    <body>
+        <h1>Bem-vindo ao meu site!</h1>
+        <p>Aqui você encontrará conteúdo interessante sobre programação.</p>
+    </body>
+</html>
+```
+
+O resultado seria:
 
 ```
-Elemento iniciado: <html>
-Elemento iniciado: <head>
-Elemento iniciado: <title>
-Elemento finalizado: <title>
-Elemento finalizado: <head>
-Elemento iniciado: <body>
-Conteúdo dentro do elemento: "Conteúdo"
-Elemento finalizado: <body>
-Elemento finalizado: <html>
+html:
+head:
+title: Meu site
+body:
+h1: Bem-vindo ao meu site!
+p: Aqui você encontrará conteúdo interessante sobre programação.
 ```
 
-## Aprofundando-se no parsing de HTML
+Com esse exemplo simples, você já pode começar a experimentar com o parsing de HTML em suas próprias aplicações. Mas se você quiser se aprofundar mais no assunto, continue lendo para obter mais informações sobre a técnica.
 
-Fazer o parsing de HTML envolve entender a estrutura básica da linguagem e suas diferentes tags e atributos. Além disso, é importante conhecer as diferentes formas de navegar e extrair dados de um documento HTML, como usar XPath ou CSS selectors.
+## Deep Dive
 
-Também é necessário ter em mente as características específicas do parsing em C, como o uso de bibliotecas externas, a criação de estruturas e o uso de callbacks para tratar os diferentes elementos do HTML.
+O parsing de HTML é o processo de analisar um documento HTML em sua estrutura hierárquica e extrair informações relevantes, como tags e conteúdo. Isso é feito por meio de uma árvore de nós, em que cada nó representa uma parte do HTML, como um elemento ou texto.
 
-## Veja também
+A biblioteca libxml2 possui várias funções que facilitam o processo de parsing de HTML. Além do exemplo anterior, você pode usar outras funções para pesquisar elementos específicos, verificar a existência de atributos e muito mais.
 
-Aqui vão algumas sugestões de leitura para aprofundar seus conhecimentos em parsing de HTML em C:
+É importante lembrar que o parsing de HTML pode ser um processo complexo, pois o documento pode conter elementos aninhados, comentários, scripts e outros elementos que podem afetar a estrutura do HTML. Portanto, é essencial entender bem a estrutura do seu documento antes de começar a implementar o parsing.
 
-- [Documentação da biblioteca http-parser](https://github.com/nodejs/http-parser)
-- [Tutorial de parsing de HTML em C](https://curl.se/libcurl/c/htmlparsing.html)
-- [Exemplos de código de parsing de HTML em C](https://www.programmingsimplified.com/c-program-parse-html-tags)
+## See Also
+
+Para mais informações sobre o parsing de HTML e outras técnicas de processamento de documentos, confira os links abaixo:
+
+- [Documentação oficial da biblioteca libxml2](http://www.xmlsoft.org/)
+- [Tutorial de parsing de HTML em C](https://michael-xiii.github.io/text/2017/11/06/HTML-Parsing-with-libxml2-in-C/)
+- [Outras bibliotecas para parsing de HTML](https://www.smashingmagazine.com/2009/05/10-useful-parsing-libraries-for-php-python-and-ruby-developers/)

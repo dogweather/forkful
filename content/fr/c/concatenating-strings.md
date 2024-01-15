@@ -1,5 +1,6 @@
 ---
-title:                "C: Concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes de caractères"
+html_title:           "C: Concaténation de chaînes de caractères"
 simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "C"
 category:             "C"
@@ -11,38 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La concaténation de chaînes de caractères est une tâche courante en programmation. Elle consiste à fusionner deux ou plusieurs chaînes de caractères pour former une seule chaîne. Cette opération peut être utile dans de nombreux cas, tels que l'affichage de messages, la manipulation de données ou la construction de requêtes.
+Concaténer des chaînes de caractères est une pratique courante en programmation, car cela permet de combiner plusieurs chaînes pour former une seule chaîne plus longue. Cela peut être utile, par exemple, pour créer des messages dynamiques ou pour assembler des fichiers.
 
 ## Comment faire
 
-En langage C, la concaténation de chaînes de caractères s'effectue à l'aide de la fonction `strcat()` de la bibliothèque standard `string.h`. Pour utiliser cette fonction, il suffit de lui fournir les deux chaînes à concaténer en paramètres. Voici un exemple de code qui concatène deux chaînes et affiche le résultat :
+Pour concaténer des chaînes en C, nous pouvons utiliser la fonction `strcat()`, qui se trouve dans la bibliothèque standard `string.h`. Cette fonction prend deux paramètres : la chaîne de destination, qui sera modifiée pour inclure la chaîne concaténée, et la chaîne source, qui sera ajoutée à la fin de la chaîne de destination. Voici un exemple de code :
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[50] = "Hello";
-    char str2[50] = " world!";
-    
-    strcat(str1, str2);
-    
-    printf("%s", str1);
-    
+    char str1[20] = "Bonjour ";
+    char str2[] = "à tous !";
+
+    strcat(str1, str2); // Concaténation des deux chaînes
+
+    printf("%s", str1); // Affiche "Bonjour à tous !"
+
     return 0;
 }
 ```
 
-Lorsque vous exécutez ce code, vous devriez obtenir comme sortie `Hello world!`. Si vous souhaitez concaténer plus de deux chaînes, il suffit de répéter l'opération autant de fois que nécessaire.
+Dans cet exemple, `str1` est la chaîne de destination et `str2` est la chaîne source. La fonction `strcat()` modifie `str1` pour inclure la chaîne `str2` à la fin. N'oubliez pas de déclarer les chaînes avec une taille suffisamment grande pour accueillir la chaîne finale, sinon vous risquez de causer des erreurs de mémoire.
 
 ## Plongée en profondeur
 
-La fonction `strcat()` concatène les chaînes de caractères en les fusionnant l'une après l'autre dans la première chaîne. Ainsi, pour concaténer une chaîne `str1` avec une autre chaîne `str2`, `str1` doit avoir suffisamment d'espace pour contenir toutes les caractères de `str2`. Sinon, des débordements de mémoire peuvent se produire, entraînant des erreurs de segmentation.
+En plus de la fonction `strcat()`, il existe d'autres moyens de concaténer des chaînes de caractères en C. Par exemple, vous pouvez utiliser l'opérateur `+` pour concaténer des chaînes littérales avec des variables de type `char*`. Cependant, cette méthode n'est pas recommandée car elle peut causer des problèmes de mémoire si les chaînes ne sont pas correctement gérées.
 
-Pour éviter ce type d'erreur, il est recommandé d'utiliser la fonction `strncat()` qui, en plus des deux chaînes à concaténer, prend en paramètre un entier représentant le nombre maximum de caractères à concaténer.
-
-En outre, il est important de noter que la fonction `strcat()` modifie la première chaîne en place, c'est-à-dire que son contenu est modifié directement en mémoire. Si vous souhaitez conserver la première chaîne telle quelle, il est conseillé de copier son contenu dans une autre variable avant de concaténer les chaînes.
+De plus, il est important de noter que la fonction `strcat()` peut être inefficace en termes de performances si elle est utilisée de manière répétée pour concaténer de grandes chaînes. Dans ce cas, il est préférable d'utiliser la fonction `sprintf()`, qui permet de concaténer des chaînes tout en spécifiant la taille maximale de la chaîne de sortie.
 
 ## Voir aussi
-- [Fonction strcat() de la bibliothèque string.h (en anglais)](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- [Guide de référence sur la fonction strcat() (en anglais)](https://docs.microsoft.com/en-us/cpp/c-language/strcat-strncat-wcscat-wcsncat?view=vs-2019)
+
+- [Documentation de la fonction strcat() en C](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Exemples de concaténation de chaînes en C](https://www.geeksforgeeks.org/concatenate-strings-in-c-3-different-ways/)
+- [Bonnes pratiques pour la manipulation des chaînes en C](https://www.gidnetwork.com/b-61.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Arbeiten mit YAML"
-simple_title:         "Arbeiten mit YAML"
+title:                "Arbeiten mit yaml"
+html_title:           "Elm: Arbeiten mit yaml"
+simple_title:         "Arbeiten mit yaml"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,38 +10,114 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Warum
-Warum sollte man sich mit YAML beschäftigen? YAML, oder "Yet Another Markup Language", ist eine einfache Sprache zum Strukturieren von Daten. Sie ist besonders nützlich für Entwickler, da sie es ermöglicht, Informationen in einem les- und schreibfreundlichen Format zu speichern.
+## Warum
 
-#Wie funktioniert es?
-Um mit YAML in Elm zu arbeiten, muss man zuerst das Paket "elm-yaml" installieren. Dann kann man es importieren und auf die entsprechenden Funktionen zugreifen.
+Wenn du eine einfache Methode suchst, um Daten in deinen Projekten zu strukturieren, dann könnte YAML die Lösung für dich sein. YAML ist eine Markup-Sprache, die auf lesbarem Text basiert und leicht zu verstehen und zu schreiben ist. Es wird oft für Konfigurationsdateien oder zum Speichern von Daten verwendet und ist in vielen Programmiersprachen wie Elm verfügbar.
 
-```elm
-import Yaml
+## So geht's
 
--- Beispiel-Code zum Parsen einer YAML-Datei
-parseYaml : String -> Result String Yaml.Value
-parseYaml content =
-  Yaml.decodeString content
+Um YAML in Elm zu verwenden, müssen wir das Paket `elm-exploration/yaml` installieren. Dann können wir die `decode`-Funktion verwenden, um YAML in ein `Value` umzuwandeln.
 
--- Beispiel-Code zum Erstellen einer YAML-Datei aus einem Record
-createYaml : { name : String, age : Int } -> Yaml.Value
-createYaml data =
-  Yaml.object
-    [ ( "name", Yaml.string data.name )
-    , ( "age", Yaml.int data.age )
-    ]
+```Elm
+import Json.Decode exposing (Value)
+import Yaml.Decode as Yaml
+
+typealias MyData =
+  { name : String
+  , age : Int
+  }
+
+--YAML Daten
+yamlData : String
+yamlData = """
+name: John
+age: 30
+"""
+
+-- Yaml in Value umwandeln
+value : Result Yaml.Error Value
+value = Yaml.decode yamlData
+
+-- Value in MyData umwandeln
+myData : Result Yaml.Error MyData
+myData =
+  value
+    |> Result.andThen (Yaml.decodeValue Yaml.string)
+    |> Result.andThen (Yaml.decodeValue Yaml.int)
+    |> Result.map2 MyData
+        (\name age ->
+          { name = name
+          , age = age
+          }
+        )
 
 ```
 
-#Tief in die Materie eintauchen
-Obwohl YAML eine einfache Sprache ist, gibt es einige Dinge, die man beachten sollte. Hier sind einige gute Ressourcen, um mehr über YAML und die Verwendung in Elm zu lernen:
+### Ausgabe
 
-- Offizielle YAML-Website: https://yaml.org
-- Elm-YAML-Paket Dokumentation: https://package.elm-lang.org/packages/philpl/elm-yaml/latest/
-- Video-Tutorial zur Verwendung von YAML in Elm von Brian Hicks: https://youtu.be/i_0q6DQV3vY
+```Elm
+Ok { name = "John", age = 30 }
+```
 
-#Siehe auch
-- "Elm programmiertutorial für Anfänger" (https://blog.qlcu.com/elm-programmiertutorial-fur-anfanger/)
-- "Einführung in Elm-Paket" (https://medium.com/@juhannamagda/einf%C3%BChrung-in-elm-paket-8528a75721b8)
-- "Eine Einführung in Yaml für Entwickler" (https://medium.com/@aswinkumar611/an-introduction-to-yaml-for-developers-af7d2ccd8184)
+Mit der `decode`-Funktion können wir auch komplexere Datenstrukturen wie Listen oder verschachtelte Objekte decodieren. Hier ist ein Beispiel:
+
+```Elm
+import Json.Decode exposing (Value)
+import Yaml.Decode as Yaml
+
+typealias Fruit =
+  { name : String
+  , color : String
+  }
+
+-- YAML Daten
+yamlData : String
+yamlData = """
+fruits:
+  - name: Apple
+    color: Red
+  - name: Banana
+    color: Yellow
+"""
+
+-- Yaml in Value umwandeln
+value : Result Yaml.Error Value
+value = Yaml.decode yamlData
+
+-- Value in Liste von Fruit umwandeln
+fruitList : Result Yaml.Error (List Fruit)
+fruitList =
+  value
+    |> Result.andThen (Yaml.decodeField "fruits")
+    |> Result.andThen (Yaml.decodeList decodeFruit)
+
+-- Fruit decodieren
+decodeFruit : Yaml.Decoder Fruit
+decodeFruit =
+  Yaml.map2 Fruit
+    (Yaml.field "name" Yaml.string)
+    (Yaml.field "color" Yaml.string)
+
+```
+
+### Ausgabe
+
+```Elm
+Ok [ { name = "Apple", color = "Red" }, { name = "Banana", color = "Yellow" } ]
+```
+
+## Tiefergehende Informationen
+
+Beim Arbeiten mit YAML in Elm gibt es ein paar Dinge zu beachten:
+
+- YAML unterstützt keine Kommentare, daher müssen sie vorher manuell entfernt werden.
+- YAML unterstützt nur Zeilenumbrüche als Trennzeichen, weshalb `elm-exploration/yaml` auch keine Zeilenumbrüche innerhalb von Werten zulässt. Wenn du also einen Zeilenumbruch benötigst, musst du ihn als `\n` in deinem YAML-Code angeben.
+- Bei der Decodierung von verschachtelten Objekten musst du sicherstellen, dass alle Felder in der richtigen Reihenfolge decodiert werden, damit sie dem Typ deiner Elm-Datenstruktur entsprechen.
+
+Weitere Informationen und Beispiele findest du in der offiziellen Dokumentation von `elm-exploration/yaml`.
+
+## Siehe auch
+
+- [Offizielle Dokumentation von `elm-exploration/yaml`](https://package.elm-lang.org/packages/elm-community/yaml/latest)
+- [YAML-Spezifikation](https://yaml.org/spec/)
+- [YAML Syntax Cheatsheet](https://learnxinyminutes.com/docs/yaml/)

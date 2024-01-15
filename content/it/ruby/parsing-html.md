@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Analisi del codice html"
-simple_title:         "Analisi del codice html"
+title:                "Parsing di HTML"
+html_title:           "Ruby: Parsing di HTML"
+simple_title:         "Parsing di HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-Il parsing HTML è una pratica comune tra i programmatori Ruby, poiché consente loro di ottenere dati valiosi da pagine web. Questo può essere utile per l'estrazione di informazioni da siti di notizie, per il web scraping o per la creazione di applicazioni web personalizzate.
+Se stai lavorando con il web, potresti avere bisogno di estrarre informazioni da pagine web scritte in HTML. Per fare questo, è necessario imparare a usare Ruby per il parsing di HTML.
 
-## Come Fare
+## Come fare
 
-Per iniziare con il parsing HTML in Ruby, è necessario utilizzare una libreria gem chiamata Nokogiri. Questa libreria permette di analizzare e manipolare il codice HTML di una pagina web. Ecco un semplice esempio di codice che illustra come utilizzarla:
+Per iniziare a lavorare con HTML in Ruby, è necessario utilizzare la gemma Nokogiri. Questa gemma è progettata specificamente per l'estrazione di dati da documenti HTML.
 
 ```Ruby
-require 'nokogiri' 
+require 'nokogiri'
 require 'open-uri'
 
-# Scarica e analizza il codice HTML della pagina web 
-doc = Nokogiri::HTML(open("https://www.example.com"))
+#definisci l'URL della pagina web da analizzare
+url = "https://www.example.com"
 
-# Utilizza il metodo search per trovare tutti gli elementi "a" (link) nel codice HTML 
-links = doc.search("a")
+#scarica il contenuto della pagina web e crea un oggetto Nokogiri
+page = Nokogiri::HTML(URI.open(url))
 
-# Stampa tutti i link trovati 
-links.each do |link| 
-puts link.content 
-puts link['href'] 
-end 
+#usa i selettori CSS per trovare elementi specifici nella pagina
+page.css(".title").each do |element|
+  puts element.text #stampa il testo trovato dentro l'elemento
+end
 ```
 
-Dopo aver eseguito questo codice, dovresti ottenere un output che mostra tutti i link presenti nella pagina web fornita.
+Questo codice scaricherà il contenuto della pagina web all'URL specificato e, utilizzando i selettori CSS, estrarre tutti gli elementi che hanno la classe "title" e stamparne il contenuto.
 
-## Approfondimenti
+## Approfondimento
 
-Mentre il codice di esempio sopra mostra come ottenere link da una pagina web, è possibile utilizzare Nokogiri per analizzare ogni tipo di elemento HTML. Ad esempio, è possibile estrarre testo, immagini, tabelle e molto altro. Inoltre, Nokogiri offre una serie di metodi utili per la manipolazione dei dati estratti, come il filtraggio, la selezione e la modifica dei risultati ottenuti.
+Mentre il codice di esempio sopra funziona bene per estrarre elementi specifici di una pagina web, ci sono molti altri modi in cui si può utilizzare Nokogiri per manipolare i documenti HTML.
 
-Inoltre, è possibile utilizzare Nokogiri per parsare file HTML salvati sul proprio computer anziché scaricarli da Internet. Ciò può essere utile per analizzare file di dati locali che utilizzano la stessa struttura dei siti web.
+Ad esempio, è possibile utilizzare il metodo `.xpath` per utilizzare espressioni XPath e ottenere elementi specifici in modo più preciso. È anche possibile utilizzare i metodi `.text` e `.attribute` per estrarre il testo e gli attributi di un elemento specifico.
 
-## Vedi Anche
+Questa gemma è stata ampiamente utilizzata nella comunità Ruby per anni ed è sempre migliorata e aggiornata per mantenere la compatibilità con le ultime versioni di HTML. Ci sono anche molti tutorial e risorse online disponibili per imparare a utilizzare Nokogiri in modo efficace.
 
-- [Guida ufficiale di Nokogiri](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html)
-- [Documentazione di Ruby per Nokogiri](https://ruby-doc.org/gems/docs/n/nokogiri-1.11.6/Nokogiri.html)
-- [Esempi di codice di parsing HTML in Nokogiri](https://www.rubyguides.com/2018/10/parsing-html-in-ruby-with-nokogiri/)
+## Vedi anche
+
+- [Documentazione ufficiale di Nokogiri](https://nokogiri.org/)
+- [Tutorial di Nokogiri su RubyGuides](https://www.rubyguides.com/2018/02/parsing-html-nokogiri/)
+- [Estrazione di dati da pagine web con Nokogiri su Medium](https://medium.com/@matugm/parsing-html-with-nokogiri-8a570cdfda08)

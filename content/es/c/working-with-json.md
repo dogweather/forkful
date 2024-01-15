@@ -1,5 +1,6 @@
 ---
-title:                "C: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "C: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "C"
 category:             "C"
@@ -9,33 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON?
+## ¿Por qué trabajar con JSON?
 
-JSON (JavaScript Object Notation) es un formato de intercambio de datos que se ha vuelto cada vez más popular en el mundo de la programación debido a su simplicidad y facilidad de uso. Con JSON, puedes almacenar y transmitir datos de manera eficiente y estructurada, lo que lo hace ideal para proyectos web y aplicaciones móviles.
+JSON (JavaScript Object Notation) es un formato de datos popular utilizado en el desarrollo de aplicaciones web y móviles. Al usar JSON, puedes almacenar y transferir datos de manera eficiente entre diferentes sistemas y plataformas. Además, es un formato legible para los humanos y fácilmente manipulable por las computadoras, lo cual lo hace una opción ideal para trabajar con datos en el lenguaje de programación C.
 
 ## Cómo trabajar con JSON
 
-Para comenzar a trabajar con JSON en C, necesitarás una librería que te permita leer y escribir archivos JSON. Uno de los más populares es cJSON, que puede ser descargado e instalado fácilmente en tu proyecto.
+Para trabajar con JSON en C, primero necesitas un parser de JSON. Hay varias bibliotecas disponibles, pero en este artículo vamos a utilizar json-c, una biblioteca de código abierto. A continuación, te mostraremos un ejemplo de cómo leer y escribir datos JSON utilizando esta biblioteca:
 
-Una vez que tengas la librería instalada, puedes comenzar a trabajar con JSON utilizando una estructura de datos llamada "json_t". Aquí hay un ejemplo de cómo crear un objeto JSON y añadirle datos en una variable llamada "jsonObj":
+```
+#include <stdio.h>
+#include <json-c/json.h>
 
-```C
-json_t *jsonObj = NULL; // Crear objeto JSON vacío
-jsonObj = cJSON_CreateObject(); // Añadir datos al objeto
-cJSON_AddStringToObject(jsonObj, "nombre", "Juan"); // Añadir una cadena al objeto
-cJSON_AddNumberToObject(jsonObj, "edad", 25); // Añadir un número al objeto
+int main() {
+  // Crear una estructura JSON básica
+  json_object *mi_json = json_object_new_object();
+  json_object_object_add(mi_json, "nombre", json_object_new_string("Juan"));
+  json_object_object_add(mi_json, "edad", json_object_new_int(25));
+
+  // Imprimir el JSON en consola
+  printf("%s\n", json_object_to_json_string(mi_json));
+
+  // Actualizar la edad en el JSON
+  json_object_object_add(mi_json, "edad", json_object_new_int(26));
+
+  // Imprimir el JSON actualizado
+  printf("%s\n", json_object_to_json_string(mi_json));
+
+  // Liberar la memoria asignada al JSON
+  json_object_put(mi_json);
+
+  return 0;
+}
 ```
 
-También puedes trabajar con arreglos y leer datos de un archivo JSON existente utilizando las funciones proporcionadas por cJSON.
+**Salida:**
+```
+{"nombre": "Juan", "edad": 25}
+{"nombre": "Juan", "edad": 26}
+```
 
-## Profundizando en JSON
+¡Y eso es todo! Con tan solo unas pocas líneas de código, podemos crear, leer y actualizar un objeto JSON en C.
 
-Una de las ventajas de trabajar con JSON es que los datos están organizados en pares clave/valor, lo que hace que sea fácil acceder a ellos utilizando sus nombres clave. Además, JSON es un formato independiente de plataforma, lo que significa que los datos pueden ser intercambiados entre diferentes lenguajes de programación.
+## Inmersión profunda en JSON
 
-Sin embargo, es importante tener cuidado con el tamaño de los archivos JSON, ya que una gran cantidad de datos puede afectar el rendimiento y la velocidad de tu aplicación. Además, asegúrate de que tus datos estén bien formateados y estructurados correctamente, ya que cualquier error puede causar problemas al leer o escribir en archivos JSON.
+Una vez que tengas dominado el manejo básico de JSON en C, puedes profundizar en su uso y explorar sus funciones más avanzadas. Puedes leer y escribir archivos JSON, trabajar con arrays y objetos anidados, y utilizar funciones de validación para asegurarte de que tus datos están en el formato correcto. También puedes aprender acerca de la manipulación de JSON en tiempo real, permitiendo una comunicación más fluida entre el lado del servidor y el lado del cliente en tus aplicaciones web.
 
 ## Ver también
 
-- [Documentación de cJSON](https://github.com/DaveGamble/cJSON)
-- [Tutorial de JSON en C](https://www.cprogramming.com/tutorial/json-c-example.html)
-- [Introducción a JSON en español](https://www.json.org/json-es.html)
+- [json-c en GitHub](https://github.com/json-c/json-c)
+- [Tutorial de json-c en CodeProject](https://www.codeproject.com/Tips/828139/Using-json-c-JSON-parser-and-generator-with-cplusp)
+- [Documentación oficial de JSON](https://www.json.org/json-es.html)

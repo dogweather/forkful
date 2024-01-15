@@ -1,5 +1,6 @@
 ---
-title:                "C++: Lesing av kommandolinjeargumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "C++: Lesing av kommandolinjeargumenter"
 simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "C++"
 category:             "C++"
@@ -10,52 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Mange programmerere kan føle at å lese kommandolinje-argumenter kan være en kjedelig og tidkrevende oppgave. Likevel, det er en viktig ferdighet som kan bidra til å effektivisere kode og gi mer fleksibilitet til brukere av programmet ditt. Derfor er det viktig å lære å lese kommandolinje-argumenter, og denne bloggposten vil vise deg hvordan.
+Å lese kommandolinjeargumenter er en nyttig ferdighet for enhver C++ programmerer. Det lar deg hente informasjon fra brukeren på en enkel og effektiv måte, noe som er viktig for å lage interaktive programmer.
 
-## Hvordan man leser kommandolinje-argumenter i C++
-Kommandolinje-argumenter kan leses enkelt gjennom å bruke et bibliotek kalt `getopt`. Dette biblioteket er tilgjengelig for C++ og kan hjelpe deg å hente ut argumentene som blir sendt til programmet ditt gjennom kommandolinjen.
+## Hvordan
+For å lese kommandolinjeargumenter i C++, må du bruke funksjonen `int main(int argc, char* argv[])`. `argc` representerer antall argumenter som er gitt av brukeren, mens `argv` er en matrise av strenger som inneholder disse argumentene.
 
-For å bruke `getopt`, må du inkludere `<getopt.h>` i koden din. Her er et enkelt eksempel på hvordan du kan bruke `getopt` for å lese inn en enkelt kommandolinje-parameter og skrive den ut:
+Her er et eksempel på hvordan du kan bruke denne funksjonen for å lese et enkelt argument fra brukeren og skrive det ut:
 
 ```C++
 #include <iostream>
-#include <getopt.h>
 
-int main(int argc, char *argv[]) {
-    // Initialiser variabler
-    int c;
-    int option;
-
-    // Loop gjennom alle kommandolinje-argumenter
-    while((c = getopt(argc, argv, "a:")) != -1) {
-        switch(c) {
-            case 'a':
-                // Hent ut argumentet og skriv det ut
-                option = atoi(optarg);
-                std::cout << "Argumentet var: " << option << std::endl;
-                break;
-            default:
-                // Hvis argumentet ikke stemmer overens med mulige alternativer
-                std::cout << "Ukjent argument: " << c << std::endl;
-        }
+int main(int argc, char* argv[]) {
+    if (argc != 2) { // Sjekker om det er nøyaktig ett argument gitt
+        std::cout << "Bruk: ./programnavn <argument>" << "\n";
+        return 1; // Returnerer en feilkode
     }
-
-    return 0;
+    
+    std::cout << "Argumentet du ga var: " << argv[1] << "\n";
+    return 0; // Programmet avsluttes uten feil
 }
 ```
 
-La oss si at dette programmet heter "arguments" og du kjører det med argumentet `-a 42` i kommandolinjen. Da vil programmet skrive ut "Argumentet var: 42".
+Hvis du kjører dette programmet med `./programnavn hei`, vil det skrive ut "Argumentet du ga var: hei".
 
-## Dypdykk i lesing av kommandolinje-argumenter
-Så hva skjer egentlig i koden vår? Først og fremst så bruker vi `optarg` til å hente ut argumentet fra kommandolinjen. Dette er faktisk en peker til en streng som inneholder argumentet. Vi bruker også funksjonen `atoi()` for å konvertere argumentet til et tall.
+Du kan også bruke en løkke til å lese gjennom alle argumentene gitt og utføre forskjellige handlinger basert på dem.
 
-I tillegg bruker vi `switch` og `case` for å håndtere ulike argumenter som kan bli sendt til programmet vårt. Hvis en bruker sender et argument som ikke stemmer overens med alternativene våre, vil programmet vårt gi en feilmelding.
+## Dypdykk
+I tillegg til `argc` og `argv`, har du tilgang til andre nyttige funksjoner for å jobbe med kommandolinjeargumenter. En av dem er `std::string_view`, som lar deg enkelt jobbe med argumentene som strenger.
 
-Et annet viktig aspekt ved å lese kommandolinje-argumenter er at det gir oss mulighet til å gjøre programmet vårt mer fleksibelt. Vi kan for eksempel legge til flere alternativer i `switch` og `case` med ulike bokstaver, som vi kan bruke til å endre oppførselen til programmet vårt basert på brukerinput.
+Du kan også bruke biblioteket `getopt` for å behandle argumentene mer strukturert. Det lar deg definere hvilke argumenter som er tillatt, og håndtere forskjellige kombinasjoner av flagg og verdier.
+
+Det er viktig å merke seg at rekkefølgen på argumentene som gis av brukeren er viktig. For eksempel, hvis du har et program som tar inn en filsti og en flagg, må du sørge for at filstien er spesifisert før flagget.
 
 ## Se også
-- [getopt dokumentasjon](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-- [C++ kommandolinjen](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [Kommandolinje-argumenter i C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-
-Takk for at du leste! Vi håper dette hjalp deg å forstå hvordan man kan lese kommandolinje-argumenter i C++. Lykke til med kodingen!
+- [C++ Dokumentasjon om kommandolinjeargumenter](https://en.cppreference.com/w/cpp/language/main_function)
+- [GitHub side for `getopt` biblioteket](https://github.com/kimwalisch/getopt)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Å konvertere en streng til små bokstaver"
+html_title:           "Swift: Å konvertere en streng til små bokstaver"
+simple_title:         "Å konvertere en streng til små bokstaver"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Konvertering av en streng til små bokstaver (lower case) er en viktig del av programmering da det kan bidra til å forbedre lesbarheten og funksjonaliteten til koden din. Ved å bruke lower case i strenger, blir de mer standardiserte og enklere å sammenligne med andre strenger i koden din.
+Å konvertere en streng til små bokstaver er en vanlig oppgave i programmering. Det kan være nyttig for sammenligninger, validering og formatering av data. Med Swift kan du enkelt gjøre dette med noen få linjer med kode.
 
-# Slik gjør du det
-
-For å konvertere en streng til lower case i Swift, kan du bruke funksjonen `lowercased()` på strengen. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+## Hvordan
 
 ```Swift
-let navn = "ROBERT"
-print(navn.lowercased())
+let string = "HELLO WORLD"
+let lowercase = string.lowercased()
+print(lowercase) // output: hello world
 ```
 
-Output:
+Her bruker vi den innebygde funksjonen `lowercased()` på en strengvariabel for å konvertere den til små bokstaver. Det er viktig å merke seg at dette ikke endrer den originale strengen, men gir en ny streng med små bokstaver.
+
+Hvis du ønsker å konvertere en hel streng til små bokstaver, uavhengig av om den allerede er i store eller små bokstaver, kan du bruke `caseInsensitiveCompare()`-funksjonen:
+
+```Swift
+let string = "hEllO WOrLd"
+let lowercase = string.caseInsensitiveCompare("hello world")
+print(lowercase) // output: true
 ```
-robert
-```
 
-Her ser vi at strengen "ROBERT" er konvertert til "robert" med små bokstaver. Dette gjør det enklere å sammenligne denne strengen med en annen streng som også er konvertert til lower case.
+Her vil `lowercase` være en Bool-verdi som indikerer om de to strengene er like, uavhengig av om de er i store eller små bokstaver.
 
-# Dyp dykk
+Å konvertere en streng til små bokstaver er nyttig for å lage sammenligninger som er skriftstørrelsens uavhengige, og for å sikre at dataen er konsistent og riktig formatert.
 
-Når du bruker funksjonen `lowercased()` på en streng, vil alle bokstavene i strengen bli konvertert til lower case, inkludert bokstaver med aksenter og spesielle tegn. Dette gjør det enklere å håndtere ulike språk og tegn i koden din.
+## Dypdykk
 
-En annen viktig ting å merke seg er at denne funksjonen kun konverterer bokstaver i det engelske alfabetet. Andre språk, som for eksempel kinesisk eller arabisk, vil ikke bli konvertert til lower case. Det er viktig å ta hensyn til dette når du jobber med internasjonale språk i koden din.
+Swift har også en rekke andre nyttige verktøy for å arbeide med strenger. For eksempel kan du bruke `capitalized`-funksjonen for å konvertere den første bokstaven i hver ord i en streng til en stor bokstav. Du kan også bruke `replacingOccurrences()`-funksjonen for å erstatte deler av strengen med en ny verdi.
 
-# Se også
+Det er også mulig å utføre mer avansert manipulering av strenger ved å bruke metoder som `split()` og `joined()` for å bryte opp og kombinere deler av en streng.
 
-- [Swift String Documentation](https://developer.apple.com/documentation/swift/string)
-- [How to Convert Strings to Lowercase in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-lowercase-in-swift)
+Uansett hva ditt strengbehandlingsbehov er, har Swift et imponerende utvalg av verktøy for å hjelpe deg å håndtere det.
 
-Takk for at du leste denne bloggartikkelen om å konvertere strenger til lower case i Swift. Vi håper det har vært nyttig for deg i din programmeringsreise!
+## Se også
+
+- [Offisiell Swift dokumentasjon](https://docs.swift.org)
+- [Swift String API referanse](https://developer.apple.com/documentation/swift/string)
+- [Utforsking av strenger i Swift](https://www.hackingwithswift.com/articles/131/how-to-choose-between-string-interpolation-json-regular-expressions-and-more-in-swift)

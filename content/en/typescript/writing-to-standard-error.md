@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "TypeScript recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,56 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why ##
 
-Writing to standard error is an important aspect of programming in TypeScript, as it allows for better error handling and debugging. It provides a way to communicate important information to the user, without disrupting the normal flow of the program. In this blog post, we will explore how to write to standard error in TypeScript and why it is beneficial for developers.
+Writing to standard error is an important aspect of programming in TypeScript as it allows developers to log errors and debug their code efficiently. It provides valuable information that can help identify and fix bugs, leading to more robust and reliable code.
 
-## How To 
+## How To ##
 
-To write to standard error in TypeScript, we can use the console.error() method. This method takes in one or more arguments and prints them to standard error. Let's take a look at an example below:
+To write to standard error in TypeScript, you can use the `console.error()` method. This method takes in a message as an argument and outputs it to the standard error stream. Let's look at an example:
 
-```
-// TypeScript code
-console.error("Oops! Something went wrong!");
-```
-
-This code will print the error message "Oops! Something went wrong!" to standard error. We can also pass in multiple arguments to console.error() by separating them with a comma, just like we do with the console.log() method. Let's see an example of that below:
-
-```
-// TypeScript code
-let name = "John";
-let age = 25;
-console.error("User", name, "is", age, "years old.");
+```TypeScript
+console.error('Something went wrong!');
 ```
 
-The above code will output "User John is 25 years old." to standard error. It is important to note that when writing to standard error, the output will typically appear in red in the console, making it easier to differentiate from regular console.log() messages.
+The above code will output the message "Something went wrong!" to the standard error stream. This message will be displayed in the console, along with the line number and file name where the error occurred.
 
-It is also important to handle errors properly when writing to standard error. We can use try-catch blocks to catch any errors and print them to standard error using console.error(). Let's see an example below:
+You can also pass in variables or objects as arguments to the `console.error()` method. This is helpful when you need to log the current state of your code. Let's see how it works:
 
-```
-// TypeScript code
-let num = "abc";
-try {
-    let parsedNum = parseInt(num);
-    if (isNaN(parsedNum)) {
-        throw new Error("The value is not a number.");
-    }
-} catch(error) {
-    console.error(error.message);
-}
+```TypeScript
+let num = 5;
+console.error('The value of num is ', num);
 ```
 
-The above code will output the error message "The value is not a number." to standard error, making it easier to identify and handle the error.
+The output of the above code will be "The value of num is 5". This can be particularly useful when troubleshooting errors in complex code.
 
-## Deep Dive 
+## Deep Dive ##
 
-Standard error, also known as stderr, is one of the three standard communication streams in Unix-based systems. It is used for error messages and debugging information, and it is separate from standard output (stdout). This allows us to have different streams for different types of messages, making it easier to handle and manage them.
+In TypeScript, there are three streams for displaying output: standard output, standard error, and standard input. Standard output is the default stream used by `console.log()` method and can be redirected to a file or external system. Standard error, on the other hand, is the stream specifically used for displaying error messages.
 
-Writing to standard error is particularly useful when developing larger projects, as it provides a way to log and handle errors without interrupting the normal execution of the program. It also allows for better organization and management of output, making debugging more efficient.
+By writing to standard error, developers can separate the error messages from the standard output, making it easier to identify and debug issues. This is especially useful for larger projects where there may be multiple developers working on different parts of the code.
 
-## See Also 
+It is important to note that the `console.error()` method does not actually throw an error, it simply outputs a message to the standard error stream. So, this method should be used for logging errors and not for handling exceptions.
 
-- [TypeScript Documentation on console.error()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html#the-console-object)
-- [Node.js Documentation on stderr](https://nodejs.org/api/process.html#process_process_stderr)
+## See Also ##
 
-In conclusion, writing to standard error in TypeScript is a valuable tool for developers, allowing for better error handling and debugging. By using console.error(), we can communicate important information to users without disrupting the normal flow of the program. We hope this blog post has provided valuable insights into how standard error works in TypeScript. Happy coding!
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [Console Methods in TypeScript](https://www.typescripttutorial.net/typescript-tutorial/console-methods/)
+- [Debugging in TypeScript](https://code.visualstudio.com/docs/typescript/typescript-debugging)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "C#"
 category:             "C#"
@@ -10,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-בכדי לכתוב קוד פונקציונאלי ויעיל, ייתכן שתצטרך ליצור קבצים זמניים כחלק מתהליך התפתחות התוכנה שלך. ליצור קובץ זמני יכול להיות שימושי במספר דרכים, כגון להעביר מידע בין פונקציות, לאתחל משתנים או לנתח נתונים בצורה נוחה.
 
-## איך ליצור קובץ זמני בשפת C#
-ליצור קובץ זמני בשפת C# ניתן בעזרת הפונקציה Path.GetTempFileName() המחזירה את השם המלא של הקובץ הזמני הנוצר. ניתן להשתמש בפונקציה זו באופן הבא:
+יצירת קובץ זמני היא תהליך נפוץ בתכנות כי הוא מסייע לנו ליצור קבצים שחייבים לקיים לפרק זמן קצר, למשל קבצים מידע או קבצי קובץ שנועדו למחיקה בסיום תהליך מסוים. 
 
-```C#
-string tempFilePath = Path.GetTempFileName();
-Console.WriteLine($"Temporary file created: {tempFilePath}");
-```
+## איך לעשות זאת
 
-פלט התוכנית יראה כך:
-
-```
-Temporary file created: C:\Users\username\AppData\Local\Temp\amisov34.tmp
-```
-
-ניתן גם ליצור קובץ זמני באמצעות הפונקציה File.CreateTemp() המחזירה אובייקט מטיפוס FileStream שמאפשר גישה לקובץ הזמני. לדוגמה:
+ניתן ליצור קובץ זמני בעזרת הפעולה `Path.GetTempFileName()` בשפת C#. להלן דוגמה ליצירת קובץ זמני והדפסת הנתונים השמורים בו:
 
 ```C#
-FileStream tempFile = File.CreateTemp();
-string tempFilePath = tempFile.Name;
-Console.WriteLine($"Temporary file created: {tempFilePath}");
+string tempFile = Path.GetTempFileName();
+File.WriteAllText(tempFile, "Hello World!");
+Console.WriteLine(File.ReadAllText(tempFile));
 ```
 
-פלט התוכנית יראה כך:
+פלט:
 
 ```
-Temporary file created: C:\Users\username\AppData\Local\Temp\t3mjpoj4.tmp
+Hello World!
 ```
 
-על מנת למחוק את הקובץ הזמני לאחר השימוש, ניתן להשתמש בפונקציה File.Delete() עם הנתיב של הקובץ הזמני.
+## מבולגן עמוק
 
-## מכניסים עמוק ליצירת קובץ זמני בשפת C#
-כאשר אתה משתמש בפונקציות Path.GetTempFileName() או File.CreateTemp() כדי ליצור קובץ זמני, פונקציות אלו מייצרות קובץ ריק במיקום הזמני של המחשב. אלו אומרים, המקום הזמני עלול להיות יישום של הרצת התוכנית. לכן, קובץ זמני יכול להיות שימושי רק בהרצת התוכנית הזו.
+כאשר משתמשים בפונקציה `Path.GetTempFileName()` נוצר קובץ מקומי עם שם מקונן והרחבת `.tmp` בתוך תיקיית הקבצים הזמניים של המחשב. תיקייה זו תימחק אוטומטית בסיום תהליך היישום. כמו כן, ניתן להשתמש בפונקציה `GetTempPath()` לקבלת נתיב לתיקיית הקבצים הזמניים ולאחר מכן להשתמש בפעולת `Combine()` כדי ליצור קובץ בנתיב הזה. עוד הסברים על יצירת קבצים זמניים ניתן למצוא במקורות המצורפים למטה.
 
-כדי ליצור קובץ זמני שיכול
+## ראה גם
+
+- [מדריך ליצירת קבצים זמניים ב- C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
+- [משתנים זמניים בהערה על ביצועים בשפת C#](https://www.c-sharpcorner.com/article/the-difference-between-temporary-and-temp-folder-in-c-sharp/)

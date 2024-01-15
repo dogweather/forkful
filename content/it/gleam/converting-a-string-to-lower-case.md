@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Convertire una stringa in minuscolo"
-simple_title:         "Convertire una stringa in minuscolo"
+title:                "Converting una stringa in minuscolo"
+html_title:           "Gleam: Converting una stringa in minuscolo"
+simple_title:         "Converting una stringa in minuscolo"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Perché:**
+## Perché
+Converting un stringa a minuscolo è importante quando si lavora con dati sensibili come password o codici di riferimento, in quanto ci assicura che non ci siano errori di input dovuto a diversità nelle lettere maiuscole e minuscole.
 
-Il processo di conversione di una stringa in lettere minuscole è un'operazione comune nella programmazione. Ciò è utile per uniformare i dati in un sistema e semplificare il confronto e la ricerca all'interno delle stringhe.
+## Come fare
+È molto semplice convertire una stringa a minuscolo in Gleam. Basta seguire questi passi:
 
-**Come Fare:**
+1. Nel tuo codice Gleam, importare il modulo `gleam/string`
+2. Utilizzare la funzione `to_lower` fornendo una stringa come argomento
+3. Salvare il risultato come variabile o utilizzarlo direttamente nel tuo codice
 
-Per convertire una stringa in lettere minuscole in Gleam, è possibile utilizzare il metodo `string.to_lower()` come mostrato nell'esempio seguente:
+Ecco un esempio di codice e l'output risultante:
 
 ```Gleam
-let stringa = "CIAO AMICI"
-let stringa_minuscola = stringa.to_lower()
+let stringa = "HAnNO PenSAto QuEStO PRoGetT0 
+modifica = string.to_lower(stringa)
 ```
-Output: "ciao amici"
 
-È importante notare che il metodo `to_lower()` converte solo le lettere ASCII in minuscolo, quindi le lettere accentate o caratteri speciali potrebbero non essere convertiti correttamente. Se si utilizzano stringhe contenenti caratteri non ASCII, è possibile utilizzare il metodo `to_utf8_lowercase()` per una conversione completa di tutti i caratteri in lettere minuscole.
+Questo produrrà l'output `"hanno pensato questo progetto"`.
 
-**Approfondimento:**
+## Approfondimento
+In Gleam, la funzione `to_lower` utilizza l'algoritmo unicode per convertire una stringa a minuscolo, assicurandosi che funzioni correttamente con tutte le lingue. Inoltre, è anche possibile utilizzare la funzione `to_upper` per convertire una stringa a maiuscolo.
 
-La conversione di una stringa in lettere minuscole può sembrare un'operazione semplice, ma è importante comprendere come funzionano le lettere nei diversi sistemi di codifica. In UTF-8, per esempio, ci sono due tipi di lettere minuscole: quelle che possono essere rappresentate con un unico byte e quelle che richiedono più byte. Ciò significa che il metodo `to_lower()` potrebbe dover spacchettare un carattere in più byte per convertire correttamente le lettere minuscole nei sistemi di codifica multi-byte.
+Una cosa importante da notare è che la funzione `to_lower` non modifica la stringa originale, ma ne crea una copia modificata. Se si desidera modificare la stringa originale, è necessario riassegnare la variabile con il risultato della funzione.
 
-**Vedi Anche:**
-- Documentazione ufficiale di Gleam sulla conversione delle stringhe: https://gleam.run/doc/types/string
-- Esempi di utilizzo del metodo `to_lower()` su Codewars: https://www.codewars.com/kata/5728203b7fd8f24ebe0001f7/solutions/gleam
+## Vedi anche
+- Documentazione ufficiale di Gleam sulla funzione `to_lower`
+- Tutorial su altre funzionalità di Gleam come la gestione degli errori e le liste

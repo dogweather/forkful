@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi di html"
+html_title:           "Clojure: Analisi di html"
+simple_title:         "Analisi di html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-C'è una grande quantità di informazioni disponibili online, ma spesso è difficile estrarre i dati di cui abbiamo bisogno. Il parsing HTML ci permette di analizzare il codice sorgente di una pagina web e recuperare le informazioni importanti in un formato strutturato.
+
+Se stai lavorando con dati web, probabilmente dovrai affrontare il parsing di HTML. Il parsing di HTML è il processo di analisi del codice HTML per estrarre informazioni utili e strutturare i dati in modo da poterli utilizzare nel tuo programma.  
 
 ## Come fare
-Per iniziare a fare il parsing HTML in Clojure, dobbiamo installare la libreria 'clj-tagsoup' che ci permetterà di lavorare con il codice HTML come se fosse un albero di dati:
+
+Per iniziare a parsare HTML con Clojure, hai bisogno di due librerie: `clj-http` e `enlive`. La prima ti consente di fare richieste HTTP alle pagine web, mentre la seconda ti aiuta a navigare e manipolare il codice HTML. Ecco un esempio di codice che fa una richiesta HTTP al sito di Wikipedia e estrae il contenuto di una tabella:
 
 ```Clojure
-(ns html-parser.core
-  (:require [clojure.xml :as xml]
-            [tagsoup.core :refer [parse-xml]]))
+(require '[clj-http.client :as client])
+(require '[net.cgrand.enlive-html :refer [html1]])
 
-(def html (slurp "http://www.example.com"))
+(def response (client/get "https://it.wikipedia.org/wiki/Italia"))
+(def parsed-html (html1 (:body response)))
 
-(def tree (parse-xml html))
+(def table (-> parsed-html
+                (enlive/select [:table]))
+    
+(def rows (-> table
+              (enlive/select [:tr])
+              (remove #(= (enlive/at % [:.mw-headline]) "Inno")))) ; Rimuove la riga dell'inno nazionale
 
-;; Per esempio, possiamo recuperare il titolo della pagina:
-(get-in tree [:title 0 :content])
-;; Output: "Esempio.com - Il tuo sito web di esempio"
+(def data (->> rows
+             (map #(map enlive/text %)) ; Estrae il testo da ogni cella della tabella
+             (remove #(= (count %) 0)) ; Rimuove le righe vuote
+             (map #(nth % 1)))) ; Seleziona solo la seconda colonna di ogni riga
+
+(println data)
+; Output: ("Roma" "Italiano" "€" "+39" "EUR" "CEST" "WET" "IT" ".it")
 ```
 
-Con la funzione 'slurp' stiamo prendendo il codice HTML della pagina web e passandolo alla funzione 'parse-xml' che lo converte in una struttura dati che può essere facilmente manipolata con le funzioni di Clojure come 'get-in'.
-
 ## Approfondimento
-Oltre al semplice parsing dei dati, è possibile combinare il parsing HTML con altre funzionalità di Clojure per eseguire operazioni più complesse. Ad esempio, possiamo utilizzare la libreria 'clj-http' per effettuare richieste HTTP e recuperare i dati da più pagine web.
 
-Inoltre, è possibile accedere ai singoli elementi HTML utilizzando le specifiche CSS o XPath, grazie alle funzioni fornite dalle librerie 'hiccup' e 'enlive'.
+Esistono diversi modi per parsare HTML in Clojure, ma `enlive` è uno dei più popolari e utilizzati. Oltre alla semplicità di utilizzo, offre anche un buon supporto per la manipolazione di dati HTML. Puoi utilizzare la sintassi di `enlive` per selezionare elementi nel codice HTML e navigare tra di essi utilizzando funzioni come `enlive/select` e `enlive/at`. Inoltre, puoi anche modificare direttamente il codice HTML utilizzando funzioni come `enlive/set-attr` e `enlive/append`. Questi sono solo alcuni esempi delle molteplici funzionalità offerte da `enlive`.
 
 ## Vedi anche
-- [Documentazione della libreria 'clj-tagsoup'](https://github.com/nathell/clj-tagsoup)
-- [Esempio di scraping web con Clojure](https://medium.com/coding-with-clarity/web-scraping-in-clojure-510f928915e0)
-- [Documentazione della libreria 'clj-http'](https://github.com/dakrone/clj-http)
-- [Tutorial su come utilizzare il parsing HTML con Clojure](https://www.javaworld.com/article/3188004/web-development/html-parsing-in-clojure.html)
+
+- Libreria `clj-http`: https://github.com/dakrone/clj-http
+- Libreria `enlive`: https://github.com/cgrand/enlive
+- Esempi di utilizzo di `enlive`: https://github.com/cgrand/enlive-tutorial

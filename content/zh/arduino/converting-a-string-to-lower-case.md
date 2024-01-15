@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,39 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-*为什么会需要将字符串转换为小写？*
-
-在Arduino编程中，经常需要处理用户输入的字符串。有时候，为了保证数据的一致性和准确性，需要将字符串转换为统一的大小写格式。例如，将用户输入的用户名转换为小写后，可以避免用户输入大小写不一致导致的登录问题。
+*为什么要将字符串转换为小写？* 首先，它可以让我们的代码更加规范和统一，避免出现大小写混乱的情况。其次，它也可以提高程序的性能，因为比较字符串时，转换为小写后只需要比较ASCII码，效率更高。
 
 ## 如何操作
 
-在Arduino中，可以使用自带的toLowerCase()函数来实现字符串转换为小写。下面是一个简单的例子，演示如何使用这个函数：
+在Arduino中，我们可以使用[`toLowerCase()`](https://www.arduino.cc/reference/zh/language/functions/communication/serial/tolowercase/)函数来将字符串转换为小写。
 
 ```Arduino
-String str = "Hello World";
-str.toLowerCase(); // 将字符串转换为小写
-Serial.println(str);  // 输出结果：hello world
-```
+// 声明并赋值字符串
+String str = "Hello Arduino";
 
-在上面的代码中，我们首先创建一个字符串`str`，内容为"Hello World"。然后，调用`toLowerCase()`函数将其转换为小写，并使用串口打印函数`Serial.println()`输出结果。你也可以将这个函数的返回值赋给一个新的字符串变量，这样原始字符串的内容不会改变。
+// 转换为小写并输出
+Serial.println(str.toLowerCase()); // hello arduino
+```
 
 ## 深入了解
 
-`toLowerCase()`函数是针对整个字符串操作的，它会将所有的字符都转换为小写形式。如果你只想转换字符串中的某些字符，可以使用下标来逐个修改。例如：
+在计算机中，每个字符都对应着一个ASCII码，其中大写字母的ASCII码与小写字母的ASCII码存在固定的偏移量。因此，我们可以通过对ASCII码进行简单的运算来实现字符串转换为小写的功能。
 
-```Arduino
-String str = "Hello World";
-for (int i = 0; i < str.length(); i++) {
-  if (str[i] >= 'A' && str[i] <= 'Z') { // 如果字符为大写字母
-    str[i] = str[i] + 32; // 使用ASCII码将其转换为小写
-  }
-}
-Serial.println(str); // 输出结果：hello world
-```
+## 参考文献
 
-除了`toLowerCase()`函数，Arduino还提供了其他的字符串函数，如`toUpperCase()`用于转换为大写，`substring()`用于截取子字符串等，可以根据实际需要选择合适的函数来处理字符串。
-
-## 另请参阅
-
-1. [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/strings/stringtolowercase/)
-2. [ASCII码表](https://www.asciitable.com/)
+- [Arduino官方文档 - `toLowerCase()`函数](https://www.arduino.cc/reference/zh/language/functions/communication/serial/tolowercase/)
+- [ASCII码表](http://ascii.911cha.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Gleam: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,37 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Estrarre sottostringhe è un'importante tecnica di programmazione che può aiutare a manipolare e gestire grandi quantità di dati in modo più efficiente. Invece di lavorare con l'intero testo, l'estrazione di sottostringhe consente di selezionare e manipolare solo le parti pertinenti necessarie per ottenere il risultato desiderato.
+Se stai programmando in Gleam, probabilmente hai bisogno di manipolare stringhe di testo. Spesso, ci troviamo ad avere la necessità di estrarre porzioni specifiche di una stringa più grande, ad esempio per ottenere un sottoinsieme di caratteri o per trovare una corrispondenza in un pattern. In questo articolo, vedremo come utilizzare la funzione `substring` di Gleam per estrarre diverse parti di una stringa.
 
-## Come fare
+## Come Fare
 
-Per estrarre sottostringhe in Gleam, utilizziamo la funzione `substring` con i parametri `start` e `length`. Ad esempio, se volessimo estrarre una sottostringa di 5 caratteri a partire dal terzo carattere di una stringa, useremmo il seguente codice:
+L'estrazione di substrings è un'operazione molto comune durante la programmazione. Fortunatamente, con Gleam è molto semplice. Possiamo utilizzare la funzione predefinita `substring` che accetta tre argomenti: una stringa di input, l'indice di inizio e l'indice di fine della porzione che vogliamo estrarre.
+
+Ecco un esempio di codice che estrae la quarta fino alla sesta lettera di una stringa:
 
 ```Gleam
-let stringa = "Buongiorno!"
-
-let sottostringa = stringa.substring(start: 3, length: 5)
-
-io.print(sottostringa) // output: ngior
+let stringa = "Ciao Mondo!"
+let substr = substring(stringa, 3, 6)
 ```
 
-Il codice sopra selezionerà i caratteri dalla posizione 3 alla posizione 7 (5 caratteri) e li assegnerà alla variabile `sottostringa`. Nota che le posizioni dei caratteri iniziano a contare da 0.
+Il risultato sarà la parola "o Mo". Nota che l'indice di inizio è 3 perché la prima lettera di una stringa ha indice 0, mentre l'indice di fine è 6 perché la funzione `substring` esclude l'ultimo indice specificato.
+
+Possiamo anche specificare un solo indice, in questo caso l'indice di inizio, per estrarre la parte della stringa a partire da quell'indice fino alla fine:
+
+```Gleam
+let substr = substring("Hello World!", 6)
+```
+
+Il risultato sarà "World!".
+
+Se invece vogliamo ottenere una sottostringa di una determinata lunghezza a partire da un indice specificato, possiamo utilizzare la funzione `subslice`:
+
+```Gleam
+let subslice = substring("Programming is fun!", 5, 8)
+```
+
+Il risultato sarà "ammi".
 
 ## Approfondimento
 
-Oltre ai parametri `start` e `length`, la funzione `substring` in Gleam ha anche un terzo parametro opzionale chiamato `stop`. Questo parametro permette di estrarre una sottostringa utilizzando un indice di fine invece di una lunghezza. Ad esempio, il seguente codice otterrà lo stesso risultato del codice precedente:
+La funzione `substring` è molto utile per l'estrazione di substrings, ma ci sono alcune cose importanti da tenere a mente. Prima di tutto, se il secondo indice (l'indice di fine) è maggiore della lunghezza della stringa, la funzione restituirà un errore. Inoltre, entrambi gli indici devono essere numeri positivi e l'indice di fine deve essere maggiore dell'indice di inizio.
 
-```Gleam
-let stringa = "Buongiorno!"
+Un'altra cosa da notare è che la funzione `substring` crea una copia della porzione estratta della stringa, quindi è meglio utilizzarla solo su stringhe relativamente corte per evitare problemi di memoria.
 
-let sottostringa = stringa.substring(start: 3, stop: 7)
+## Vedi Anche
 
-io.print(sottostringa) // output: ngior
-```
-
-Inoltre, la funzione `substring` può essere utilizzata per estrarre sia da stringhe che da liste di caratteri.
-
-## Vedi anche
-
-- Documentazione Gleam su `substring`: https://gleam.run/modules/gleam_stdlib/string/#substring
-- Tutorial su come utilizzare le funzioni di manipolazione delle stringhe in Gleam: https://gleam.run/articles/strings/
+- [Documentazione ufficiale di Gleam](https://gleam.run/documentation/)
+- [Repository GitHub di Gleam](https://github.com/gleam-lang/gleam)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "C: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,62 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scaricare una pagina web è un'attività comune per chiunque impari a programmare in C. Può essere utile per analizzare i dati di una pagina o per ottenere informazioni specifiche da un sito web.
+Se sei interessato a sviluppare siti web o applicazioni che richiedono di scaricare pagine web, la conoscenza del linguaggio C è fondamentale. Con la sua velocità e la sua potenza, C è uno strumento ideale per automatizzare il processo di download di pagine web.
 
-## Come fare
+## Come Fare
 
-Per scaricare una pagina web utilizzando il linguaggio C, è necessario seguire i seguenti passaggi:
+Un modo semplice per scaricare una pagina web utilizzando il linguaggio C è utilizzare la funzione `fopen()` per aprire un file e la funzione `fgets()` per leggere il contenuto della pagina linea per linea.
 
-1. Includere la libreria "stdio.h" per gestire gli input/ouput
-2. Utilizzare la funzione "fopen" per aprire la pagina web
-3. Utilizzare la funzione "fread" per leggere i dati dalla pagina e salvare il contenuto in una variabile
-4. Chiudere il file utilizzando la funzione "fclose"
-5. Stampare il contenuto della variabile utilizzando la funzione "printf"
-
-Di seguito è riportato un esempio di codice che mostra come scaricare una pagina web utilizzando il linguaggio C:
-
-```C
+`` `C
 #include <stdio.h>
 
 int main() {
+    // Apro il file da creare ed il file da cui scaricare
+    FILE *file = fopen("index.html", "w");
+    FILE *webpage = fopen("https://www.esempio.com/", "r");
 
-   // Apertura del file
-   FILE *fp = fopen("https://www.google.com/", "r");
+    // Controllo se il file è stato aperto correttamente
+    if (file == NULL || webpage == NULL) {
+        printf("Errore nell'apertura dei file");
+        return 1; // Errore
+    }
 
-   // Controllo se il file è stato aperto correttamente
-   if(fp == NULL) {
-      printf("Errore durante l'apertura della pagina web.");
-      return 1;
-   }
+    // Leggo la pagina linea per linea e la scrivo nel file
+    char buffer[BUFSIZ];
+    while (fgets(buffer, BUFSIZ, webpage) != NULL) {
+        fputs(buffer, file);
+    }
 
-   // Lettura dei dati dalla pagina e salvataggio nel buffer
-   char buffer[1000];
-   size_t n = fread(buffer, 1, sizeof(buffer), fp);
+    // Chiudo i file
+    fclose(file);
+    fclose(webpage);
 
-   // Chiusura del file
-   fclose(fp);
-
-   // Stampa del contenuto del buffer
-   printf("Contenuto della pagina: %.*s\n", n, buffer);
-
-   return 0;
+    return 0; // Tutto ok
 }
-```
+`` `
 
-L'output di questo codice sarà il seguente:
-
-```
-Contenuto della pagina: <!doctype html><html ...
-```
+L'esempio qui sopra utilizza le funzioni `fopen()` e `fgets()` per aprire un file, scaricare una pagina web e scrivere il contenuto della pagina nel file. Questo è solo uno dei modi in cui è possibile utilizzare il linguaggio C per scaricare pagine web, ma è un buon punto di partenza per approfondire ulteriormente.
 
 ## Approfondimento
 
-Ci sono molte altre funzioni e metodi per scaricare una pagina web utilizzando il linguaggio C. Ad esempio, è possibile utilizzare la libreria "curl" per rendere la procedura più semplice e gestire eventuali errori. Inoltre, è possibile utilizzare le funzioni di parsing per estrarre informazioni specifiche dalla pagina web.
+Se vuoi approfondire ulteriormente la conoscenza sul download di pagine web utilizzando il linguaggio C, ecco alcuni suggerimenti per continuare la tua ricerca:
 
-## Vedi anche
+- [Differenza tra fopen, fclose, fwrite e fprintf in C](https://www.studytonight.com/c/file-input-output-in-c.php)
+- [Utilizzo avanzato delle funzioni di memoria in C](https://c-faq.com/decl/multiargi.html)
+- [Come gestire gli errori nella programmazione C](https://www.codeproject.com/Articles/695869/Exception-Handling-in-C-The-Right-Way)
 
-- [Tutorial su come scaricare una pagina web utilizzando C](https://www.geeksforgeeks.org/download-web-page-using-curl/)
-- [Guida alla libreria "stdio.h"](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
-- [Esempi di parsing di una pagina web in C](https://www.esourceparts.ca/blog/parsing-webpages-in-c-using-libcurl-the-program/)
-
-Grazie per aver letto questo articolo! Speriamo di averti fornito una buona introduzione su come scaricare una pagina web utilizzando il linguaggio C. Continua a esplorare e sperimentare per scoprire le molte possibilità di utilizzo di questa tecnica. Buon coding!
+## Vedi Anche
+- [Documentazione ufficiale di standard C](https://en.cppreference.com/w/c)
+- [Esempi di codice C](https://www.programiz.com/c-programming/examples)
+- [Tutorial sul linguaggio C per principianti](https://www.learn-c.org/)

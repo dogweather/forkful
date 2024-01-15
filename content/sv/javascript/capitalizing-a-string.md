@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Kapitalisera en sträng"
+title:                "Kapitalisera en sträng"
+html_title:           "Javascript: Kapitalisera en sträng"
 simple_title:         "Kapitalisera en sträng"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför:
+Att kapitalisera en sträng kan vara användbart för att förbättra utseendet på en webbsida eller för att underlätta läsbarheten av viss text. Det är också en vanlig formateringspraxis i många programmeringsspråk.
 
-Att kunna ändra en sträng till versaler eller gemener är en viktig funktion i programmering eftersom det ger en möjlighet att hantera text på ett mer effektivt sätt. Till exempel kan man använda detta för att jämföra strängar på ett mer enhetligt sätt.
-
-## Hur Du Gör Det
-
-För att ändra en sträng till versaler i Javascript kan du använda metoden `toUpperCase()`. Här är ett exempel på hur du kan använda denna metod:
+##Så här gör du det:
+Det finns olika sätt att kapitalisera en sträng i Javascript, beroende på vilket användningsområde du har. Här är några exempel på kod som kan användas:
 
 ```Javascript
-let str = "hej allesammans!";
-let capitalizedStr = str.toUpperCase();
+//Exempel 1: Kapitalisera alla bokstäver i en sträng
+let str = "detta är en sträng";
+str = str.toUpperCase();
+console.log(str); // Output: DETTA ÄR EN STRÄNG
 
-console.log(capitalizedStr);
+//Exempel 2: Kapitalisera första bokstaven i varje ord i en sträng
+let str = "hej där!";
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalize(str)); // Output: Hej Där!
+
+//Exempel 3: Kapitalisera första bokstaven i en mening
+let str = "jag älskar javascript";
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalize(str)); // Output: Jag älskar javascript
 ```
 
-Detta kommer att skriva ut "HEJ ALLESAMMANS!" i din konsol. Du kan också använda metoden `toLowerCase()` för att ändra en sträng till gemener på samma sätt.
+##Djupdykning:
+Javascript har inbyggda funktioner som tillåter oss att enkelt manipulera strängar, inklusive att ändra storleken på bokstäver. I exemplet ovan använde vi funktionen "toUpperCase()" för att ändra alla bokstäver till stora bokstäver. Men det finns också möjlighet att använda funktionen "toLowerCase()" för att göra alla bokstäver små.
 
-## Djupdykning
+En annan användbar funktion för att kapitalisera strängar är "charAt()", som returnerar tecknet vid en given position i en sträng. Genom att kombinera denna funktion med "toUpperCase()" eller "toLowerCase()", kan vi ändra bara en bokstav i en sträng.
 
-Det finns flera olika sätt att ändra en sträng till versaler eller gemener i Javascript. En annan metod är att använda `charAt()` och `charCodeAt()` för att iterera genom varje tecken i strängen och ändra dess kodvärde till det önskade fallet. Detta är dock en något mer avancerad metod och används sällan jämfört med `toUpperCase()` och `toLowerCase()`.
+Det finns också olika bibliotek och ramverk tillgängliga för Javascript som gör det enklare att manipulera och formatera strängar på olika sätt. Några exempel är string.js, lodash och jQuery.
 
-Det är också viktigt att komma ihåg att det finns skillnader i hur teckenkoderna för versaler och gemener är ordnade i olika teckenuppsättningar, vilket kan orsaka problem när du hanterar text på flera språk. Det är därför viktigt att alltid kontrollera vilken teckenuppsättning som används för att undvika oväntade resultat.
-
-## Se Också
-
-- [Doc: String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Doc: String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Blogg: Versaler och gemener i Unicode](https://unicode.org/faq/casemap_charprop.html)
+##Se även:
+- [toUpperCase() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [toLowerCase() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [string.js](http://stringjs.com/)
+- [lodash](https://lodash.com/)
+- [jQuery](https://jquery.com/)

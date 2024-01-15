@@ -1,6 +1,7 @@
 ---
-title:                "C#: हैम्ल पार्सिंग"
-simple_title:         "हैम्ल पार्सिंग"
+title:                "HTML का अनुवाद"
+html_title:           "C#: HTML का अनुवाद"
+simple_title:         "HTML का अनुवाद"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,27 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
 
-HTML parse karna koi aasan kaam nahi hai, lekin yeh kaam bohot zaroori hai agar aap web development ya data scraping ke field mein kaam karte hain. HTML parse karna ka matlab hai, web page se data extract karna. Aap isse web page ke content ko analyze kar sakte hain aur information ko organize kar sakte hain jisse aap usse apne uses ke liye istemal kar sakte hain.
+जब हम वेबसाइटों को खोजते हैं, हमें अक्सर वेब पेजों से विभिन्न जानकारी और डेटा को प्राप्त करने की आवश्यकता पड़ती है। HTML वास्तव में वेब पेजों का रूप बनाता है और हम इस भाषा को उपयोग करके वेब पेजों से महत्वपूर्ण जानकारी को निकाल सकते हैं। इसलिए, HTML पार्सिंग करना हमारे लिए काफी उपयोगी हो सकता है।
 
-## Kaise
+## कैसे करें
 
-Agar aap C# programming language mein kaam karte hain, toh aap HTML parse karna shuru karne se pehle kuch steps follow kar sakte hain. Sabse pehle, aapko web page se HTML data ko extract karna hoga. Uske baad, aapko HTML data ko analyze karne ke liye regular expressions ka istemal karna hoga. Aap in expressions ko use karke specific data ko extract kar sakte hain. Iske baad, aapko extracted data ko organize karne ke liye programming code likhna hoga. Yeh code, data ko correct format mein laane mein madad karega. Ek baar yeh sab steps puri tarah se follow karne ke baad, aap HTML parse ka kaam kar sakte hain.
+```
+C# using System;
+using System.Net;
+using System.IO;
+using HtmlAgilityPack;
 
-```C#
-var html = "<html><p>This is a paragraph.</p></html>"; // HTML data extract karna
-var regex = new Regex("<p>(.*?)</p>"); // Regular expression ka istemal karna
-var match = regex.Match(html); // Extracted data ko save karna
-var paragraph = match.Groups[1].Value; // Data ko organize karna
+string url = "https://www.example.com";
+
+// वेब पेज से डेटा प्राप्त करने के लिए रिक्वेस्ट भेजें
+HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+// स्ट्रीम रीडर से रिस्पॉन्स डेटा पढ़ें
+Stream dataStream = response.GetResponseStream();
+StreamReader reader = new StreamReader(dataStream);
+string responseFromServer = reader.ReadToEnd();
+
+// HtmlDocument ऑब्जेक्ट बनाएं और उसे वेब पेज डेटा से लोड करें
+HtmlDocument document = new HtmlDocument();
+document.LoadHtml(responseFromServer);
+
+// XPath का उपयोग करके चाहे गए डाटा को निकालें
+string xpath = "//h1";
+HtmlNodeCollection nodes = document.DocumentNode.SelectNodes(xpath);
+
+// निकाले गए डाटा को प्रिंट करें
+foreach (HtmlNode node in nodes)
+{
+    Console.WriteLine(node.InnerText);
+}
 ```
 
-## Gehri Jankari
+आपको ऊपर दिए गए कोड से समझ आ गया होगा कि हम कैसे एक वेब पेज से डेटा को प्राप्त कर सकते हैं और XPath का उपयोग करके जैसी भी जानकारी हमें चाहिए, उसे वेब पेज से निकाल सकते हैं। इसके अलावा, हम HtmlAgilityPack नामक एक उपयोगी लाइब्रेरी भी उपयोग कर सकते हैं जो कि हमारे लिए पार्सिंग प्रक्रिया को और सरल बना देती है।
 
-HTML parse karne ke liye, aapko HTML tags aur unke structure ke baare mein acchi tarah se samajhna hoga. HTML tags ek web page ke structure ko define karte hain aur unmein information hoti hai. Regular expressions ka istemal karna bhi bohot important hai, kyunki yeh aapko extracted data ke specific parts ko find karne mein madad karta hai. Iske alawa, aap HTML parse ke liye libraries, jaise ki HTML Agility Pack, ka bhi istemal kar sakte hain. Yeh libraries aapko data ko extract aur organize karne mein madad karenge.
+## गहराई में
 
-## Dekhiye Bhi
-
-- [C# Regular Expressions Tutorial](https://www.geeksforgeeks.org/c-sharp-regex/)
-- [HTML Agility Pack Documentation](https://html-agility-pack.net/documentation)
-- [Web Scraping with C#](https://www.scrapingbee.com/blog/web-scraping-csharp/)
+HTML पार्सिंग करने के लिए अनेक तरीके हैं जो कि खासकर सभी के लिए फायदेमंद हो सकते ह

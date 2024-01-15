@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 「テキストファイルを作成する」"
-simple_title:         "「テキストファイルを作成する」"
+title:                "テキストファイルの作成"
+html_title:           "Haskell: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なんでやるの？
 
-テキストファイルを書くことにエンゲージする理由はさまざまです。プログラマーならば、プログラムのソースコードを記述するために、テキストファイルを使用することがよくあります。また、エディターやコマンドラインツールなど、様々なアプリケーションでテキストファイルが使用されます。そのため、テキストファイルを上手に書ける技術は、プログラマーにとって重要なスキルとなります。
+テキストファイルを書くことのメリットは多岐にわたります。例えば、データを保存しやすく、他のプログラムやシステムとの連携もしやすくなります。さらに、テキストファイルはプログラム言語ではないので、簡単に読み書きすることができます。
 
-## テキストファイルを書く方法
+## 要約するとどうやるの？
 
-テキストファイルを書くためには、まずはHaskellでのファイル操作を理解する必要があります。以下のコードは、ファイルを作成し、テキストを書き込み、ファイルを閉じるという基本的な手順を示しています。
+以下のようなコードを `test.hs` というファイルで作成し、ターミナルで `runhaskell test.hs` と実行します。
 
 ```Haskell
-import System.IO
-
 main = do
-  -- ファイルを作成し、ハンドルを取得する
-  handle <- openFile "test.txt" WriteMode
-  -- テキストを書き込む
-  hPutStrLn handle "こんにちは、世界！"
-  -- ファイルを閉じる
-  hClose handle
+  writeFile "テキストファイル.txt" "こんにちは、世界！"
 ```
 
-上記のコードを実行すると、`test.txt`という名前のファイルが作成され、中に「こんにちは、世界！」というテキストが書き込まれます。
+これで、テキストファイル `テキストファイル.txt` が作成され、中身には `こんにちは、世界！` という文字列が書き込まれます。
 
-## テキストファイルのさらなる掘り下げ
+## さらに詳しく見てみよう
 
-テキストファイルを書く際、エンコーディングや改行コードなど、さまざまな問題に直面することがあります。また、テキストファイルを読み書きする際に、Haskell特有の構文を使用する方法もあります。これらの詳細についてを知ることで、より複雑なテキストファイルを扱うことができるようになります。
+テキストファイルを作成するためには、`writeFile` 関数を使用します。`writeFile` は2つの引数を受け取ります。1つ目の引数はファイルのパスや名前を指定する文字列で、2つ目の引数は書き込む内容を指定する文字列です。
 
-## See Also
-- [Haskellでのファイル操作について](https://www.tweag.io/blog/2019-01-14-files-in-haskell/)
-- [Haskellでの文字列操作について](https://haskell.online/css/file/)
-- [Haskell I/Oライブラリの公式ドキュメント](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base/System-IO.html)
+また、テキストファイルを読み込むためには `readFile` 関数を使用します。`readFile` も2つの引数を受け取りますが、書き込む内容ではなく読み込むファイルのパスや名前を指定する文字列です。
+
+`writeFile` や `readFile` を使うときは、適切なエラーハンドリングを行うことも重要です。詳しくは公式ドキュメントなどを読んでみてください。
+
+## さらに詳しい記事を読んでみよう
+
+- [Haskell 公式ドキュメント](https://www.haskell.org/documentation/)
+- [Haskell 入門](https://qiita.com/7shi/items/145f123a1b08a6cf6a02)
+- [Haskell でテキストファイルを読み書きする方法](https://qiita.com/7shi/items/7a87ca40803b0be2b5f9) 
+
+## 関連記事を読んでみよう
+
+- [Markdown を使って文書を書く](https://qiita.com/tbpgr/items/989c6badefff69377da7)
+- [便利なテキストエディター TextMate 2 の使い方](https://qiita.com/amukox/items/ad2e78a1d946c68acfdc)

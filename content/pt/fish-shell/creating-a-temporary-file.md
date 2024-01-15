@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Criar um arquivo temporário"
-simple_title:         "Criar um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Fish Shell: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que criar um arquivo temporário no Fish Shell?
+## Por que
+Existem várias razões pelas quais alguém pode querer criar um arquivo temporário em um programa de shell, como por exemplo, armazenar dados temporários ou compartilhar informações entre diferentes execuções de comandos.
 
-Se você é um programador de scripts em Fish Shell, pode estar se perguntando por que alguém precisaria criar um arquivo temporário em seus códigos. Embora nem sempre seja necessário, há momentos em que essa pode ser uma solução útil. Vamos dar uma olhada em como fazer isso e por que pode ser útil.
+## Como fazer
+A criação de um arquivo temporário é uma tarefa simples no Fish Shell. Basta seguir os seguintes passos:
 
-## Como criar um arquivo temporário em Fish Shell
+1. Abra o terminal e execute o comando do Fish Shell.
+2. Use o comando `mktemp` seguido de `> arquivo_temp` para criar um arquivo temporário com um nome aleatório.
+3. Agora, você pode usar esse arquivo para armazenar dados temporários ou compartilhar informações.
 
-Para criar um arquivo temporário em Fish Shell, você pode usar o comando `mktemp` seguido do diretório onde deseja que o arquivo seja criado, como no exemplo abaixo:
-
-```Fish Shell
-mktemp -d /caminho/do/diretorio/
-```
-
-Isso criará um arquivo temporário no diretório especificado. Você também pode adicionar um prefixo ao nome do arquivo usando a opção `-p`:
+Exemplo de código:
 
 ```Fish Shell
-mktemp -p /caminho/do/diretorio/ prefixo-
+$ mktemp > arquivo_temp
 ```
 
-Além disso, é recomendável usar o modificador de exclusividade `-u` para garantir que o nome do arquivo seja único e não seja sobregravado caso já exista um arquivo com o mesmo nome no mesmo diretório. O comando completo para criar um arquivo temporário com prefixo e exclusividade seria:
+Exemplo de saída:
 
-```Fish Shell
-mktemp -d -p /caminho/do/diretorio/ -u prefixo-
-```
+`/var/folders/my/arquivo_temp`
 
-Após a execução desses comandos, você verá que um arquivo temporário foi criado no diretório especificado, com um nome como `prefixo-XXXXXX`, onde os "X" são caracteres aleatórios que garantem a exclusividade do arquivo.
+## Aprofundando
+O comando `mktemp` é responsável por criar o arquivo temporário com um nome aleatório. Por padrão, ele cria o arquivo no diretório `/tmp`, mas você pode especificar um diretório diferente usando a opção `-p` seguida do caminho desejado.
 
-## Uma visão mais aprofundada sobre a criação de arquivos temporários
+Uma opção útil do comando `mktemp` é a `-d`, que cria um diretório temporário em vez de um arquivo.
 
-Você pode estar se perguntando por que e quando seria necessário criar um arquivo temporário em seus códigos. Existem alguns casos em que pode ser útil, como por exemplo, quando você precisa armazenar temporariamente informações que serão usadas em algum momento do seu código, mas que não são necessárias o suficiente para serem salvas permanentemente.
+Para excluir o arquivo temporário criado, basta usar o comando `rm` seguido do nome do arquivo, ou usar a função `trap` para remover o arquivo automaticamente quando o programa terminar a execução.
 
-Além disso, ao criar um arquivo temporário, você pode especificar o seu formato, tornando-o um meio seguro para armazenar informações confidenciais que você não queira salvar permanentemente no seu sistema.
-
-Por fim, os arquivos temporários também são úteis quando você precisa trabalhar com programas que só aceitam arquivos como entrada, mas você possui apenas as informações em forma de variáveis. Ao criar um arquivo temporário com essas informações, você pode facilitar o uso delas nesses programas.
-
-# Veja também:
-- [Documentação oficial do Fish Shell sobre arquivos temporários](https://fishshell.com/docs/current/commands.html#mktemp)
-- [Tutorial sobre o uso de arquivos temporários em Fish Shell](https://medium.com/@cleberldsoares/como-usar-arquivos-tempor%C3%A1rios-em-fish-shell-c9edcae2fcf2)
-- [Explicação detalhada sobre a criação de arquivos temporários em Shell Script](https://www.shellscript.sh/tips/temporary_files.html)
+## Veja também
+- [Documentação do comando `mktemp`](https://fishshell.com/docs/current/commands.html#mktemp)
+- [Tutorial: Como criar e excluir arquivos temporários no Linux](https://www.hostinger.com.br/tutoriais/linux-temporary-files)
+- [Guia de referência do Fish Shell](https://fishshell.com/docs/current/index.html#references)

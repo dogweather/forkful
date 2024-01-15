@@ -1,6 +1,7 @@
 ---
-title:                "C: दायरा को निचले अक्षर में बदलना"
-simple_title:         "दायरा को निचले अक्षर में बदलना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरित करना"
+html_title:           "C: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Yadi aap ek programmer hain aur ek string ko lower case mein convert karna sikhna chahte hain, toh ye article aapke liye hai. Lower case strings bahut kaam aati hain, jaise ki user input validation aur searching algorithms mein.
 
-अक्सर हमें स्ट्रिंग के कैसे उपयोग करने का समय प्राप्त होता है, जैसे कि उपयोगकर्ता से इनपुट लेने के लिए। लेकिन जब हमें यह स्ट्रिंग किसी संपादन कार्य में उपयोग करते हैं तो हमें उसमें होने वाले शब्दों को सरल और सुंदर बनाने के लिए उन्हें लोअर केस में बदलने की जरूरत पड़ती है। लोअर केस में हर अक्षर को छोटे अक्षर में बदलना हमें यह सुनिश्चित करता है कि स्ट्रिंग में शब्द हमेशा सही ढंग से स्पेल किये जाएंगे। 
-
-## कैसे करें
+## Kaise Kare
+Aap C programming language mein string ko lower case mein convert karne ke liye kuch steps follow kar sakte hain. Sabse pehle, hum ek character array declare karenge jismein hum string ko store karenge. Phir hum loop ka use karke har character ko check karenge aur usko lower case mein convert karenge. Neeche diye gaye code blocks mein aap isko dekh sakte hain.
 
 ```C
-#include <stdio.h> //प्रयोजन
-#include <string.h> //क्षैतिज स्थान
-#include <ctype.h> //सामान्य लिब्रेरी
- 
-int main() {
-   char str[] = "Welcome To C Programming"; //स्ट्रिंग सेटिंग
-   int i = 0;
- 
-   while(str[i]) {
-      putchar(tolower(str[i])); //मेथड कॉल
-      i++;
-   }
- 
-   return 0;
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    // declaring character array
+    char str[50];
+
+    // taking user input
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // loop to convert characters to lower case
+    for(int i=0; i<strlen(str); i++){
+        if(str[i] >= 'A' && str[i] <= 'Z'){
+            str[i] = tolower(str[i]);
+        }
+    }
+
+    // printing the lower case string
+    printf("Lower Case String: %s", str);
+
+    return 0;
 }
 ```
 
-Output: welcome to c programming
+Output:
+```C
+Enter a string: HELLO WORLD
+Lower Case String: hello world
+```
 
-जैसे कि आप इस कोड ब्लॉक में देख सकते हैं, हम इस कार्य में सामान्य लिब्रेरी का भी उपयोग कर रहे हैं जो एक और सुविधा है। इस मेथड में हम स्ट्रिंग की एक ही कॉल से अल्टरनेट हैं, इसलिए हमें इसके लिए एक अन्य कैपेसिटी नहीं चाहिए। सबसे महत्वपूर्ण बात है कि हमें स्ट्रिंग को वस्तुतः सत्ता ही एक प्रविष्ट पिवर्ट मशीन के रूप में बनाने की जरूरत होती है।
+## Gehraai Mein Jaaenge
+String ko lower case mein convert karne ke liye hum ASCII values ka use karte hain. Har character ko ASCII value ke saath compare karke hume pata chalta hai ki wo upper case ya lower case hai. ASCII values 65 se 90 tak uppercase characters ko represent karte hain, 97 se 122 tak lowercase characters ko represent karte hain. Isi ko humne loop mein use kiya hai.
 
-## गहराई में
+## Dekhiye Bhi
+[GeeksforGeeks article on converting strings to lower case in C](https://www.geeksforgeeks.org/convert-string-lower-case-ascii-value/)
 
-लोअर केस में स्ट्रिंग बदलने की तकनीक में आप देख सकते हैं कि वह आपके काम को कितना आसान बना देती है। यह न केवल स्पेलिंग गलतियों का सम
+[C programming language tutorial](https://www.programiz.com/c-programming)
+
+[ASCII table for reference](https://www.asciitable.com/)

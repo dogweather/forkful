@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Cálculo de uma data no futuro ou no passado."
-simple_title:         "Cálculo de uma data no futuro ou no passado."
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "PHP: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -9,40 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que 
+## Por que
 
-O cálculo de datas no passado ou no futuro é uma tarefa comum e útil no desenvolvimento de aplicações de software. Saber como realizar esse cálculo pode ajudar a garantir que sua aplicação exiba as informações corretas no momento certo.
+Às vezes, precisamos calcular uma data no futuro ou no passado em nosso código PHP. Isso pode ser útil em diversas situações, como agendamento de tarefas, cálculo de prazos ou simplesmente para exibir datas em diferentes formatos.
 
-##Como fazer
+## Como Fazer
 
-Você pode usar as funções nativas do PHP para realizar cálculos de datas. Aqui está um exemplo simples de como calcular a data atual mais 7 dias no futuro:
+Para calcular uma data no futuro ou no passado em PHP, podemos usar a função `date()` juntamente com a função `strtotime()`. A função `date()` nos permite formatar a data de acordo com nossas necessidades e a função `strtotime()` nos permite realizar cálculos com datas. Veja um exemplo:
 
 ```PHP
-$dataAtual = date('Y-m-d');
-$futuro = date('Y-m-d', strtotime("+7 days"));
-echo "Data atual: ".$dataAtual."<br>";
-echo "Data no futuro: ".$futuro;
+<?php 
+// calcular a data de 5 dias a partir de hoje
+$data = date('Y-m-d', strtotime('+5 days'));
+echo $data; // output: 2020-11-08
 ```
 
-A saída desse código será:
+Neste exemplo, usamos a letra `Y` para representar o ano, `m` para representar o mês e `d` para representar o dia na função `date()`. Além disso, usamos `+5 days` como parâmetro para a função `strtotime()`, que significa que queremos adicionar 5 dias à data atual. Mas e se quisermos subtrair dias ou até mesmo calcular meses ou anos inteiros? Podemos fazer isso alterando o parâmetro da função `strtotime()`:
 
+```PHP
+<?php 
+// calcular a data de 2 semanas atrás
+$data = date('Y-m-d', strtotime('-2 weeks'));
+echo $data; // output: 2020-10-25
+
+// calcular a data de 3 meses no futuro
+$data = date('Y-m-d', strtotime('+3 months'));
+echo $data; // output: 2021-02-05
+
+// calcular a data de 1 ano e meio no futuro
+$data = date('Y-m-d', strtotime('+1 year +6 months'));
+echo $data; // output: 2022-05-04
 ```
-Data atual: 2021-03-11
-Data no futuro: 2021-03-18
+
+E se quisermos calcular uma data específica, por exemplo, o dia dos pais deste ano? Podemos fazer isso informando a data desejada no segundo parâmetro da função `strtotime()`:
+
+```PHP
+<?php 
+// calcular a data do dia dos pais deste ano
+$data = date('Y-m-d', strtotime('second Sunday of September 2020'));
+echo $data; // output: 2020-09-13
 ```
 
-Você também pode realizar cálculos com datas passadas, basta usar um número negativo no parâmetro 'days' da função `strtotime`. Outro recurso útil é a função `mktime`, que permite criar uma data específica a partir de valores como ano, mês, dia, etc.
+Além disso, se quisermos exibir a data em um formato diferente, podemos fazer isso alterando o primeiro parâmetro da função `date()`. Por exemplo, se quisermos exibir a data com o nome do mês por extenso, podemos usar a letra `F`:
 
-##Aprofundando
+```PHP
+<?php 
+// calcular a data do dia dos pais deste ano
+$data = date('d \d\e F \d\e Y', strtotime('second Sunday of September 2020'));
+echo $data; // output: 13 de setembro de 2020
+```
 
-O PHP possui diversas funções para manipulação de datas, como por exemplo `strtotime`, `date_add` e `date_diff`. Essas funções permitem não apenas realizar cálculos de datas, mas também formatar e comparar datas.
+## Mergulho Profundo
 
-Você também pode usar o objeto `DateTime`, introduzido na versão 5.2 do PHP, para manipular e calcular datas. Ele possui métodos específicos para adicionar, subtrair e comparar datas.
+Além dos exemplos apresentados acima, a função `strtotime()` também nos permite realizar cálculos mais complexos com datas, como adicionar ou subtrair anos, semanas, dias e até mesmo horas, minutos e segundos. Além disso, podemos combinar diferentes funções de data do PHP para obter o resultado desejado.
 
-É importante ter cuidado ao fazer cálculos de datas, levando em consideração fatores como fuso horário e horário de verão. É recomendado sempre usar funções e recursos nativos do PHP para garantir a precisão e evitar erros no cálculo das datas.
+Também é importante lembrar que a função `strtotime()` pode aceitar diferentes formatos de datas, como `YYYY/MM/DD` ou `MM/DD/YYYY`, portanto, é importante verificar a documentação oficial do PHP para mais informações e exemplos.
 
-##Veja também
+## Veja Também
 
-- [Documentação do PHP sobre datas](https://www.php.net/manual/pt_BR/datetime.formats.date.php)
-- [Tutorial sobre manipulação de datas no PHP](https://www.php.net/manual/pt_BR/datetime.formats.date.php)
-- [Utilizando o objeto DateTime no PHP](https://programadorbr.com/manipulacao-de-datas-em-php/)
+- [Função date() no PHP.net](https://www.php.net/manual/pt_BR/function.date.php)
+- [Função strtotime() no PHP.net](https://www.php.net/manual/pt_BR/function.strtotime.php)
+- [Documentação completa de funções de data no PHP.net](https://www.php.net/manual/pt_BR/datetime.formats.php)

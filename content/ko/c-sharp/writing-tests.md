@@ -1,6 +1,7 @@
 ---
-title:                "C#: 테스트 작성하기"
-simple_title:         "테스트 작성하기"
+title:                "테스트 작성하기."
+html_title:           "C#: 테스트 작성하기."
+simple_title:         "테스트 작성하기."
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -9,35 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 테스트를 작성할까요?
-코드를 검증하는 것은 최신 개발 프로세스에서 매우 중요합니다. 테스트를 작성하는 것은 코드의 안정성과 신뢰성을 확보하여 버그가 발생하는 가능성을 최소화하는 데 도움이 됩니다.
+## 왜
 
-## 작성 방법
-먼저, `NUnit` 혹은 `xUnit`과 같은 C# 테스팅 프레임워크를 설치해야 합니다. 그리고 `TestMethod`의 특성을 부여하여 테스트 메소드를 지정합니다. 이후 `Assert`문을 사용하여 기대하는 결과와 실제 결과를 비교합니다.
+테스트의 중요성은 소프트웨어의 안정성과 신뢰성을 보장하기 위해서입니다. 테스트를 통해 버그를 발견하고 수정할 수 있으며, 더 나은 코드를 작성할 수 있습니다.
+
+## 어떻게
+
+첫번째 예제에서는 간단한 연산을 테스트하는 코드를 보여 드리겠습니다.
 
 ```C#
-[Test]
-public void AdditionTest()
+using System;
+
+class Program
 {
-    // Arrange
-    int a = 5, b = 10;
+    static void Main()
+    {
+        // 덧셈 계산을 테스트합니다.
+        int result = Add(2, 3);
 
-    // Act
-    int result = a + b;
+        // 올바른 결과값인지 확인합니다.
+        if (result == 5)
+        {
+            Console.WriteLine("테스트가 성공적으로 통과했습니다.");
+        }
+        else
+        {
+            Console.WriteLine("테스트가 실패했습니다.");
+        }
+    }
 
-    // Assert
-    Assert.AreEqual(15, result);
+    // 덧셈 함수
+    public int Add(int num1, int num2)
+    {
+        return num1 + num2;
+    }
 }
 ```
 
-위 코드에서 `Test` 특성은 해당 메소드가 테스트 메소드임을 나타냅니다. `Arrange`에서는 테스트할 값들을 정의하고, `Act`에서는 테스트할 동작을 수행합니다. 마지막으로 `Assert`에서는 기대하는 값과 실제 결과를 비교하여 테스트를 수행합니다.
+출력 결과는 다음과 같습니다.
 
-## 깊게 들어가기
-테스트를 작성하기 위해서는 모든 코드를 테스트하는 것이 중요합니다. 이를 위해 다양한 테스트 케이스를 작성하는 것이 좋습니다. 또한 테스트할 값을 랜덤하게 생성하여 더욱 다양한 시나리오를 테스트할 수 있도록 할 수 있습니다.
+```
+테스트가 성공적으로 통과했습니다.
+```
 
-## 관련 정보
-[.NET 테스팅 프레임워크 입니까? 확장한 바 새로운 것을 학습하세요.](https://docs.microsoft.com/ko-kr/dotnet/core/testing/)
+두번째 예제에서는 배열을 정렬하는 함수를 테스트해보겠습니다.
 
-[NUnit 공식 문서](https://docs.nunit.org/)
+```C#
+using System;
+using System.Linq;
 
-[nUnit 테스트 케이스](https://www.tutorialspoint.com/nunit/nunit_test_cases.htm)
+class Program
+{
+    static void Main()
+    {
+        // 정렬할 배열
+        int[] nums = { 5, 2, 7, 1 };
+
+        // 배열을 정렬합니다.
+        Array.Sort(nums);
+
+        // 올바른 결과값인지 확인합니다.
+        if (nums.SequenceEqual(new[] { 1, 2, 5, 7 }))
+        {
+            Console.WriteLine("테스트가 성공적으로 통과했습니다.");
+        }
+        else
+        {
+            Console.WriteLine("테스트가 실패했습니다.");
+        }
+    }
+}
+```
+
+출력 결과는 다음과 같습니다.
+
+```
+테스트가 성공적으로 통과했습니다.
+```
+
+## 딥 다이브
+
+테스트를 작성하기 전에 반드시 테스트의 목적을 명확하게 정의해야 합니다. 또한 여러 가지 테스트 도구를 활용하여 코드가 잘 동작하는지 확인하고 불필요한 버그를 사전에 방지할 수 있습니다.
+
+## 참고자료
+
+- [Microsoft 공식 C# 문서](https://docs.microsoft.com/ko-kr/dotnet/csharp/)
+- [C# 테스트 작성 가이드](https://docs.microsoft.com/ko-kr/dotnet/core/testing/)
+- [xUnit 닷넷 프로젝트](https://xunit.net/)

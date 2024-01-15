@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: האכסנת html"
-simple_title:         "האכסנת html"
+title:                "פיענוח html"
+html_title:           "Javascript: פיענוח html"
+simple_title:         "פיענוח html"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,47 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-להפעיל למראה ("parsing") של קוד HTML נחוץ כאשר נשים בכתיבת קוד גלישת אינטרנט מתקדמת ("web scraping"), בונים אפליקציות דינאמיות או מבצעים ניתוח נתונים.
+למה אתה צריך לקרוא קוד HTML? איך אתה יכול ליצור ולערוך אתרים מעניינים ומצטיינים באמצעות לשוניות כגון גרור ושחרר וכמו הנספחים הרבים שאתה יכול להוסיף או למחוק באתר שלך. ועוד מספר תכונות שמציינים את הדרך בה התכניות הפכו להיות מתקדמות יותר, כגון גרסאות קוד HTML, סוגי מיחשוב שונים כמו וידלינג ואפשרויות שימושיות עם קודים לאינטגרציה של דפים או אלמנטים.
 
-## איך לעשות זאת
+למה נדרשים להמחיש דפים?
 
-בשפת ג'אווהסקריפט ("Javascript"), ישנן מספר סיפורות ("libraries") שיכולות לעזור בהפעל למראה של קוד HTML. לדוגמה, הסיפורים "Cheerio" ו-"jsdom" מאפשרים לנו לבצע ריטריב פריטים מתוך קוד HTML ולשנות אותם לאובייקטים בשפת ג'אווהסקריפט.
+לעולם לא ניתן לערוך תוך כדי ניווט אינטואיטיבי ויישום רב כללי של קוד לכניסה של המלאכה. למעשה, חלון הפתיחה כולו הוא לא אליצציה מקרהית ממה שה power heeft מאחר וקוד הדפדפן שלך משתמשים.
 
-בהמשך נמצא קוד נייד עם הסברים ופלט דוגמאות:
+# איך לעשות
 
-```Javascript
-const request = require('request');
-const cheerio = require('cheerio');
-
-// הפעל את שיטת GET באמצעות הספרייה "request"
-request('https://en.wikipedia.org/wiki/Paris', function(error, response, html){
-    if(!error && response.statusCode == '200'){
-        // אחרי שקיבלנו את העמוד של פריז, נבצע ניפוי של המידע שחיפשנו באמצעות "cheerio"
-        const $ = cheerio.load(html);
-        
-        // שפרסמנו את שם העיר של פריז מתוך עמוד הויקיפדיה שלה
-        console.log($('#firstHeading').text());
-    }
-});
-```
-
-פלט:
-
-```
-Paris
-```
-
-## Deep Dive
-
-בעזרת הספרייה "jsdom", אנו יכולים להפעיל למראה של קוד HTML כדי לא רק ליצור את המודל של הדף אבל גם לבצע שינויים בדף עצמו. ניתן להראות דוגמה פשוטה ליצירת אלמנטים באמצעות קוד מוצלח אחר:
+### כתיבת קוד HTML שכאן
 
 ```Javascript
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+<!DOCTYPE html>
+<html>
+<head>
+	<title>הדגמת סוגי מיספור שמכילים שמות סוגי מיספור</title>
+	<style>
+		body{
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<h1>מונה את החודרים!!</h1>
+	<ul>
+		<li>רעדן</li>
+		<li>אלה</li>
+		<li>אדם</li>
+	</ul>
+	<script>
+		var names = document.getElementsByTagName('li'); //איסוף כל הפריטים בתוך הרשימה התחתונה
+		var listLength = names.length; //מאתר את מספר הפריטים ברשימה
+		for (var i = 0; i < listLength; i++) {
+			names[i].textContent = names[i].textContent + '';
+		}
+	</script>
+</body>
+</html>
+```
 
-// הפעל את המתודה של "JSDOM" עם הבאנדל של המעברים
-const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`, {
-    // אם אתה רוצה לאמן רשימה של תכונות עבור אלמנטים, יש אפשרות לשינוי הרשימה הזו
-    // אחרי שהדף סיים להיטען, בשבילי יש הרבה סטיילים בשביל הפונ
+### פלט דגם
+
+# Deep Dive
+
+כאשר מדובר בגרור ושחרר דרך HTML, מדובר בכתיבת קודים סוגי HTML ללא צורך בתוכן וסגנון. המעבר בין כתיבת קוד חידתי ועריכה עד כמה שהיא גדולה. לכן, לבדוק את התאמה מוצחת

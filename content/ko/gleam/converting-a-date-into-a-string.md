@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 날짜를 문자열로 변환하기"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "Gleam: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-왜: 날짜를 문자열로 변환하는 것에 참여하는 이유를 간단히 설명하는 부분입니다.
+## 왜
+날짜를 문자열로 변환하는 일에 참여하는 이유를 최대 2문장으로 설명합니다.
 
-날짜를 문자열로 변환하는 방법:
+데이터를 가독성 있게 표시하는 것이 중요할 뿐만 아니라 다른 언어와 통합할 때도 날짜를 문자열로 변환해야 할 수 있습니다.
 
-```Gleam
-import Date.Format
-import Gleam.Time
+## 사용 방법
+"``` Gleam...
+```" 코드 블록 내부에서 코딩 예제와 샘플 출력을 제공합니다.
 
-let date = Time.date(2021, 3, 20)
-let format = "%Y-%m-%d"
-let string_date = Date.Format.format(date, format)
+``` Gleam
+import gleam/date.format
 
-// string_date는 "2021-03-20"을 반환합니다.
+let date = 2009-11-10T23:09:25Z
+
+let string = Date.Format.to_string(date, "%m/%d/%Y")
 ```
 
-문자열 날짜로 변환하는 코드 예시와 출력 결과를 ```Gleam ...``` 코드 블록 안에서 제공합니다.
+출력:
+``` Gleam
+11/10/2009
+```
 
-깊게 살펴보기:
+## 자세히 알아보기
+날짜를 문자열로 변환하기 위해 사용할 수 있는 다양한 형식을 알아봅니다. Gleam의 Date.Format 모듈을 사용하여 날짜와 형식을 입력하면 쉽게 문자열로 변환할 수 있습니다. 이 모듈을 사용하면 JSON 형식의 날짜를 날짜 객체로 바꾸는 것도 가능합니다.
 
-날짜를 문자열로 변환하는 더 깊이있는 정보에 대해 다루는 부분입니다. 여러 가지 형식의 날짜를 문자열로 변환하는 방법이나 날짜 시간대 정보를 문자열로 포함시키는 방법 등 더 많은 세부 정보를 제공합니다.
-
-참고자료:
-
-## 외부 참고 자료
-- [Gleam 문서 - 날짜 포맷팅](https://gleam.run/documentation/std/date_format)
-- [Gleam 문서 - Date 패키지](https://gleam.run/documentation/std/date)
-
-## 다른 프로그래밍 언어에서 날짜 변환하기
-- [Python에서 날짜를 문자열로 변환하는 방법](https://www.programiz.com/python-programming/datetime/strftime)
-- [JavaScript에서 날짜를 문자열로 변환하는 방법](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
-- [Java에서 날짜를 문자열로 변환하는 방법](https://www.baeldung.com/java-date-to-string)
-
-See Also:
-이제 이 글을 더 확장하여 다른 종류의 날짜 포맷팅을 Gleam에서 할 수 있는 방법에 대해 배웠습니다. 더 많은 정보를 찾기 위해 다음 링크를 참고하세요:
-
-- [Gleam 문서 - 날짜 및 시간](https://gleam.run/documentation/std/time)
-- [Gleam 문서 - String 모듈](https://gleam.run/documentation/std/string)
+## 관련 링크
+- Gleam 공식 문서: https://gleam.run/documentation/standard-library/date
+- 날짜 관련 Gleam 패키지: https://github.com/search?q=language%3AGleam+date&type=Repositories

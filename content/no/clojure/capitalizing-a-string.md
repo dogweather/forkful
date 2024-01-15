@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Store bokstaver i en streng"
+title:                "Store bokstaver i en streng"
+html_title:           "Clojure: Store bokstaver i en streng"
 simple_title:         "Store bokstaver i en streng"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,31 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor bry seg med å gjøre tekst til store bokstaver i Clojure? Vel, det kan forbedre lesbarheten av koden din og hjelpe deg med å representere ord eller setninger på en mer konsistent måte. Det kan også være en del av en strengmanipulasjonsfunksjon som du trenger i prosjektet ditt.
+Kapitalisering av strenger blir ofte brukt for å gjøre tekst mer leselig eller for å følge standard konvensjoner i programmering.
 
 ## Hvordan
 
-For å gjøre en tekst til store bokstaver i Clojure, kan du bruke funksjonen ```clojure (clojure.pprint/capitalize) ```. Her er et eksempel på bruk av denne funksjonen:
+For å kapitalisere en streng, kan du bruke funksjonen `clojure.string/capitalize` som tar inn en streng som argument. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-```clojure
-(clojure.pprint/capitalize "dette er en test")
+```Clojure
+(clojure.string/capitalize "hello world") ; Output: "Hello world"
 ```
 
-Dette vil produsere følgende output:
+Som du kan se, blir den første bokstaven i strengen endret til stor bokstav. Dette gjelder uansett om den første bokstaven var en stor eller liten bokstav i utgangspunktet.
 
-```clojure
-"Dette er en test"
+Hvis du ønsker å kapitalisere alle de første bokstavene i en setning, kan du bruke funksjonen `clojure.string/capitalize-words`:
+
+```Clojure
+(clojure.string/capitalize-words "hello world") ; Output: "Hello World"
 ```
-En annen måte å gjøre en tekst til store bokstaver på, er å bruke ```clojure (clojure.string/upper-case)``` funksjonen. Denne funksjonen gjør hele strengen til store bokstaver, uavhengig av hvor mange ord den inneholder.
 
-## Dypdykk
+Dette vil også gjelde for strenger som består av flere ord.
 
-Begge metodene som ble nevnt ovenfor, bruker standard språksensitivitet for å konvertere tekst til store bokstaver. Dette betyr at de vil ta hensyn til grammatikk og språkregler når de utfører konverteringen.
+## Deep Dive
 
-Men, hvis du ønsker å gjøre om en streng til store bokstaver uten å ta hensyn til språksensitivitet, kan du bruke ```clojure (clojure.string/upper-case* )``` funksjonen. Denne funksjonen vil konvertere alle tegn i strengen til store bokstaver, uavhengig av språkkontekst.
+Det er viktig å merke seg at funksjonene `clojure.string/capitalize` og `clojure.string/capitalize-words` ikke bare bytter ut den første bokstaven i en streng. De bruker faktisk Unicode-standard regler for å kapitalisere strengen. Dette betyr at de håndterer spesielle tegn og diakritiske tegn korrekt.
+
+Du kan også bruke funksjonen `clojure.string/upper-case` for å konvertere en hel streng til store bokstaver, og `clojure.string/lower-case` for å konvertere den til små bokstaver.
 
 ## Se også
 
-- [Documentation for ```clojure.pprint/capitalize```](https://clojuredocs.org/clojure.pprint/capitalize)
-- [Documentation for ```clojure.string/upper-case```](https://clojuredocs.org/clojure.string/upper-case)
-- [Documentation for ```clojure.string/upper-case*```](https://clojuredocs.org/clojure.string/upper-case*)
+- [Clojure strings dokumentasjon](https://clojure.org/api/cheatsheet)
+- [Utbredte Unicode-standard regler for kapitalisering](https://www.unicode.org/charts/case/)

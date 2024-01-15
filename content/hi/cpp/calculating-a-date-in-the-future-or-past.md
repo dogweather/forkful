@@ -1,6 +1,7 @@
 ---
-title:                "C++: भविष्य या भूतकाल में एक तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में एक तारीख की गणना"
+title:                "भविष्य या भूतकाल में एक तिथि को गणना करना"
+html_title:           "C++: भविष्य या भूतकाल में एक तिथि को गणना करना"
+simple_title:         "भविष्य या भूतकाल में एक तिथि को गणना करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,52 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun
+Kya aapne kabhi socha hai ki aapne kisi event ya appointment ko kitne din baad ya pehle se schedule kiya hai? Apne future plans ko organize karte waqt, hume ek particular date tak pahunchne ki zarurat hoti hai, isliye future aur past mein taareekh calculate karna important ho jata hai.
 
-किसी भी व्यक्ति को किसी अलग तारीख का पता लगाने के लिए समय और दिनांक की गणना करने की जरूरत हो सकती है। इसलिए, C++ में तारीख का हिसाब उत्पन्न करने की क्षमता एक उपयोगी कौशल है जो हर कोडर को सीखने योग्य होना चाहिए। इस लेख में, हम सीखेंगे कि C++ में तारीख का हिसाब कैसे किया जाता है।
-
-# कैसे करें
-
+## Kaise Karein
 ```C++
-// आवश्यक लाइब्रेरी का उपयोग करें
-#include <iostream>
-#include <ctime>
-
+#include<iostream>
 using namespace std;
+int main()
+{
+  int current_day = 8; // Current day of the month
+  int current_month = 6; // Current month
+  int current_year = 2021; // Current year
 
-int main() {
-  // वर्तमान तिथि और समय को प्राप्त करें
-  time_t now = time(0);
-  
-  // स्थानीय समय के लिए ctime का उपयोग करें
-  char* dt = ctime(&now);
-  
-  // तारीख और समय को मानों में छोड़ दें
-  cout << "वर्तमान तिथि और समय:" << dt << endl;
-  
-  // तारीख का अंतराल समय के लिए जोड़ें (यहां हम 30 दिन जोड़ते हैं)
-  tm *addTime = localtime(&now);
-  addTime->tm_mday += 30; 
-  
-  // अंतराल समय के बाद नई तिथि को प्राप्त करें
-  time_t modified = mktime(addTime);
-  
-  // स्थानीय समय के लिए ctime का उपयोग करें
-  dt = ctime(&modified);
-  
-  // संशोधित तिथि और समय को मानों में छोड़ दें
-  cout << "पिछले महीने के बाद की तारीख और समय:" << dt << endl;
-  
-  return 0;
+  // To calculate a date in the future
+  int future_day = current_day + 10; // Add 10 days to the current day
+  int future_month = current_month; // Future month will be same as current month
+  int future_year = current_year; // Future year will be same as current year
+
+  // Check if the future day exceeds number of days in the month
+  if(future_day > 31) 
+  {
+    // Add remaining days to the next month
+    future_day = future_day - 31;
+    future_month += 1;
+  }
+
+  // Check if the future month exceeds 12
+  if(future_month > 12)
+  {
+    // Reset month to 1 and increment year
+    future_month = 1;
+    future_year += 1;
+  }
+
+  // Output the future date
+  cout<<"Future date: "<<future_day<<"/"<<future_month<<"/"<<future_year<<endl;
+
+  // To calculate a date in the past
+  int past_day = current_day - 5; // Subtract 5 days from the current day
+  int past_month = current_month; // Past month will be same as current month
+  int past_year = current_year; // Past year will be same as current year
+
+  // Check if past day is less than 1
+  if(past_day < 1) 
+  {
+    // Calculate remaining days to be subtracted from previous month
+    past_day = 31 - (5 - current_day);
+    past_month -= 1;
+  }
+
+  // Check if past month is less than 1
+  if(past_month < 1)
+  {
+    // Reset month to 12 and decrement year
+    past_month = 12;
+    past_year -= 1;
+  }
+
+  // Output the past date
+  cout<<"Past date: "<<past_day<<"/"<<past_month<<"/"<<past_year<<endl;
+
+  return 0; 
 }
 ```
 
-##### आउटपुट:
+## Deep Dive
+Is code mein, hum current taareekh ko lekar future aur past dates ko calculate karne ke liye simple logic ka upyog kiya hai. Hum baad mein days, months aur years ko adjust karte hain jaise ki automation system bhi karta hai. Is tarah, hum ek accurate date ko calculate kar sakte hain.
 
-वर्तमान तिथि और समय: Sat Aug 7 20:42:27 2021
-
-पिछले महीने के बाद की तारीख और समय: Mon Sep 6 20:42:27 2021
-
-# गहराई में जाएं
-
-यहां हमने <ctime> लाइब्रेरी का उपयोग करके स्थानीय तारीख और समय को प्राप्त किया है। फिर हमने तारीख की इंटरवल को समय में
+## Dekhna Bhi Pade
+Agar aapko coding language aur logic ke baare mein aur jaankari chahiye toh neeche diye gaye links ko zarur check karein:
+- [C++ Programming Tutorial](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [Logic Building in Programming](https://www.geeksforgeeks.org/top-5-must-know-algorithms-and-data-structures-for-competitive-programming/)

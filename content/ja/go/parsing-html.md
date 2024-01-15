@@ -1,6 +1,7 @@
 ---
-title:                "Go: HTML の解析"
-simple_title:         "HTML の解析"
+title:                "HTMLの解析"
+html_title:           "Go: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,70 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜHTMLを解析するのか
+## なぜ
 
-HTMLの解析は、Webアプリケーションやスクレイピングツールを作成する上で非常に重要です。HTMLはWebページの基本的な構造を定義するため、解析することで情報を抽出したり、自分のニーズに合わせてデータを整形したりすることができます。
+HTML のパースを行うのか？
+アプリケーションでウェブサイトにアクセスしデータを取得する際に、HTML を解析して必要な情報を抽出する必要があります。Go はそのようなタスクに最適な言語であり、効率的かつ簡潔なコードを書くことができます。
 
-## 方法
-
-以下のコードブロックに示すように、Go言語を使用してHTMLを解析する方法を説明します。
+## 手順
 
 ```Go
-// 必要なパッケージのインポート
-import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
-    "golang.org/x/net/html"
-)
+func main() {
+    // ウェブサイトからデータを取得するためのリクエストを作成
+    res, err := http.Get("https://example.com")
 
-// HTMLを取得
-res, err := http.Get("https://www.example.com")
-if err != nil {
-    panic(err)
+    // エラー処理
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // レスポンスの Body を読み取る
+    defer res.Body.Close()
+    body, err := ioutil.ReadAll(res.Body)
+
+    // エラー処理
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // HTML をパースする
+    doc, err := html.Parse(strings.NewReader(string(body)))
+
+    // エラー処理
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // マッチするタグを抽出する
+    match := getElementsByTag(doc, "h1")[0] // h1 タグの最初の要素を抽出
+    fmt.Println(match.FirstChild.Data)     // h1 タグのテキストを出力
 }
-defer res.Body.Close()
 
-// 読み込んだHTMLをパース
-doc, _ := html.Parse(res.Body)
+// 指定されたタグの要素を取得する
+func getElementsByTag(n *html.Node, tag string) []*html.Node {
+    var elements []*html.Node
 
-// 抽出したい要素を指定
-node := getElementByClass(doc, "container")
-
-// 要素のテキストを取得
-text := node.FirstChild.Data
-
-// 結果の出力
-fmt.Println(text)
-
-// getElementByClass関数の定義
-func getElementByClass(n *html.Node, className string) *html.Node {
-    if n.Type == html.ElementNode && n.Data == className {
-        return n
-    }
+    // 子ノードをループして指定されたタグの要素を抽出する
     for c := n.FirstChild; c != nil; c = c.NextSibling {
-        if result := getElementByClass(c, className); result != nil {
-            return result
+        if c.Type == html.ElementNode && c.Data == tag {
+            elements = append(elements, c)
         }
+        elements = append(elements, getElementsByTag(c, tag)...)
     }
-    return nil
+
+    return elements
 }
 ```
 
 出力:
-
 ```
-This is an example website.
+Hello, world!
 ```
 
-## 深ぼり
+## ディープダイブ
 
-HTMLを解析する上で注意すべきポイントがいくつかあります。まず、HTMLは常に変化しており、同じ構造が保証されているわけではありません。そのため、常にバグが発生する可能性があり、データの取得に失敗することがあります。また、HTMLの構造を理解することが重要であり、多くの場合、事前の調査やテストが必要です。
+Go 言語では、`html` パッケージを使用して HTML をパースします。このパッケージには、HTML ドキュメントをノードツリーに変換する `html.Parse` 関数があります。そして、ノードツリーを操作することで、特定の要素や属性を取得することができます。
 
-さらに深くHTMLを解析するためには、XPathやCSSセレクタなど、さまざまな方法があります。また、Go言語には、より高度なHTML解析を行うためのパッケージもあります。
+また、`golang.org/x/net/html` パッケージを使用することで、HTML をより柔軟にパースすることができます。このパッケージには、CSS セレクタを使用した要素の抽出や、HTML ドキュメントのシリアライズなどの機能があります。
 
-# その他のリソース
+## See Also
 
-- [Official Go Documentation for HTML Parsing](https://golang.org/pkg/net/html/)
-- [How to Use XPath with Go](https://go.apassaglia.com/go-xpath)
-- [CSS Selector Cheatsheet for Go](https://go-colly.org/articles/selectors/)
+- [Effective Go](https://golang.org/doc/effective_go.html)
+- [html パッケージ](https://golang.org/pkg/html/)
+- [golang.org/x/net/html パッケージ](https://godoc.org/golang.org/x/net/html)

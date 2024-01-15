@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Elixir: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det er viktig å vite om en mappe eksisterer når man jobber med programmering, spesielt hvis man trenger å hente ut eller lagre data. Ved å sjekke om en mappe eksisterer, kan man unngå feil og sikre at programmet fungerer som forventet.
+Det er viktig å sjekke om en mappe eksisterer når man utvikler programvare for å sikre at programmer kjører uten feil og uforutsette problemer dukker opp. Dette gjelder spesielt når man håndterer fil- og mappeoperasjoner.
 
-# Slik gjør du det
+## Hvordan
 
-For å sjekke om en mappe eksisterer, kan du bruke funksjonen `File.dir?/1`, hvor 1 representerer stien til mappen du ønsker å sjekke. Her er et eksempel på hvordan du bruker denne funksjonen i praksis:
+```Elixir
+defp dir_exists?(path) do
+  File.dir?(path)
+end
 
-```elixir
-resultat = File.dir?("/brukere/brukernavn/mappenavn")
-IO.puts resultat
-
-# output: true
+defp handle_dir_exists?(path) do
+  case dir_exists?(path) do
+    true -> IO.puts "Mappen eksisterer"
+    false -> IO.puts "Mappen eksisterer ikke"
+  end
+end
 ```
 
-I dette tilfellet vil funksjonen returnere `true` hvis mappen eksisterer, og `false` hvis den ikke gjør det.
+Utdata:
 
-# Dypdykk
+```elixir
+handle_dir_exists?("/brukere/john/musikk")
+# => Mappen eksisterer
+handle_dir_exists?("/brukere/kari/dokumenter")
+# => Mappen eksisterer ikke
+```
 
-Hvis du ønsker å lære mer om hvordan sjekking av mapper fungerer i Elixir, kan du se på hvordan funksjonen `File.dir?/1` er implementert i Elixir-kildekoden. Du kan også utforske ulike metoder for å håndtere forskjellige typer mapper, for eksempel skjulte mapper eller mapper med spesielle tillatelser.
+## Dypdykk
 
-# Se også
+I Elixir, og andre programmeringsspråk, brukes `File.dir?/1` -funksjonen for å sjekke om en mappe eksisterer på en bestemt sti. Denne funksjonen returnerer `true` hvis en mappe eksisterer og `false` hvis den ikke gjør det. Det er viktig å merke seg at denne funksjonen også kan returnere `false` hvis det ikke er tilgang til mappen, for eksempel hvis brukeren ikke har riktig tillatelse.
 
-- Offisiell Elixir dokumentasjon for `File.dir?/1`: https://hexdocs.pm/elixir/File.html#dir?/1
-- Artikkel om filbehandling i Elixir: https://elixirschool.com/nn/lessons/specifics/file/
+I tillegg til `File.dir?/1` -funksjonen, kan man også bruke `File.exists?/1` for å sjekke om en mappe eller fil eksisterer på en gitt sti. Denne funksjonen vil returnere `true` hvis mappen eller filen eksisterer, uavhengig av tillatelser. Det er viktig å vurdere hvilken funksjon som er mest passende for bruk i spesifikke situasjoner.
+
+## Se også
+
+- [Elixir File](https://hexdocs.pm/elixir/File.html)
+- [File.dir?/1](https://hexdocs.pm/elixir/File.html#dir?/1)
+- [File.exists?/1](https://hexdocs.pm/elixir/File.html#exists?/1)

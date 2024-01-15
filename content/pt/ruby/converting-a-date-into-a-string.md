@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Convertendo uma data em uma string"
-simple_title:         "Convertendo uma data em uma string"
+title:                "Converter uma data em uma cadeia de caracteres"
+html_title:           "Ruby: Converter uma data em uma cadeia de caracteres"
+simple_title:         "Converter uma data em uma cadeia de caracteres"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,40 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Ao trabalhar com datas em programação Ruby, pode ser necessário converter uma data em uma string para fins de formatação ou exibição. Neste artigo, vamos explorar como fazer isso de uma maneira simples e eficiente.
+Muitas vezes, em programação, é necessário converter datas em formato de texto para facilitar o armazenamento ou a apresentação para o usuário. Neste artigo, vamos explorar como fazer isso usando Ruby, uma linguagem de programação versátil e popular.
 
 ## Como Fazer
-Para converter uma data em uma string, podemos usar o método `strftime` da classe `Time`. Vamos dar uma olhada em alguns exemplos de formatação de datas:
 
+Converter uma data em formato de texto pode ser feito de diversas maneiras em Ruby. Vamos ver algumas opções usando diferentes métodos da biblioteca padrão da linguagem.
+
+### Usando o método `strftime`
+
+Uma forma simples e eficiente de converter uma data em uma string é usando o método `strftime` da classe `Time`. Esse método permite especificar o formato desejado para a saída. Veja o exemplo abaixo:
+
+```Ruby
+data = Time.now
+puts data.strftime("%d/%m/%Y")
 ```
-# Formato padrão
-Time.now.strftime("%d/%m/%Y")
-=> 16/04/2021
 
-# Mostrando o dia da semana
-Time.now.strftime("%A, %d de %B")
-=> Sexta-feira, 16 de abril
+Neste caso, estamos usando o formato `%d/%m/%Y`, que corresponde ao dia, mês e ano separados por barras, resultando em uma saída como `30/03/2021`. Você pode ver a lista completa dos formatos disponíveis na documentação oficial da Ruby.
 
-# Exibindo a hora
-Time.now.strftime("%H:%M:%S")
-=> 13:35:42
+### Usando o método `to_s`
+
+Outra forma de converter uma data em string é usando o método `to_s`, que já está presente na maioria das classes de data e hora em Ruby. Veja o exemplo abaixo:
+
+```Ruby
+data = Time.now
+puts data.to_s
 ```
+
+Neste caso, a saída será em um formato padrão, que pode variar dependendo do sistema operacional e da configuração de idioma. Por exemplo, pode ser `Tue Mar 30 22:11:19 2021` em um sistema com idioma em inglês ou `ter mar 30 22:11:19 2021` em um sistema com idioma em português.
+
+### Usando o método `iso8601`
+
+O método `iso8601` é útil quando precisamos de uma data em formato de texto para ser compatível com outros sistemas ou APIs, pois ele segue o padrão ISO 8601 para datas e horas. Veja um exemplo abaixo:
+
+```Ruby
+data = Time.now
+puts data.iso8601
+```
+
+A saída será algo como `2021-03-30T22:15:51-03:00`, seguindo o formato `YYYY-MM-DDTHH:MM:SS-ZZZZ`.
 
 ## Deep Dive
-Ao usar o método `strftime`, devemos primeiro fornecer uma diretiva de formatação que corresponda ao tipo de informação que queremos extrair da data. Algumas das diretivas mais usadas são:
 
-- `%Y` para o ano com quatro dígitos
-- `%m` para o mês com dois dígitos
-- `%d` para o dia com dois dígitos
-- `%H` para a hora em formato de 24 horas
-- `%M` para os minutos
-- `%S` para os segundos
-- `%A` para o nome do dia da semana
-- `%B` para o nome do mês
+Por baixo dos panos, a conversão de uma data em string é feita usando formatação de texto e conversões entre tipos de dados. O Ruby é uma linguagem com foco em produtividade e simplicidade, o que torna esse processo bastante intuitivo e descomplicado.
 
-Existem muitas outras diretivas disponíveis, e é possível combiná-las para criar uma string de data personalizada. É importante notar que a maioria das diretivas será impressa com zeros à esquerda caso o valor seja menor que 10, mas isso pode ser alterado adicionando um hífen antes da diretiva.
+Além dos métodos mencionados acima, existem também outras opções que podem ser úteis em situações específicas, como o uso de formatação com sufixos (como `swrite` ou `rwfuzzytime`) ou o uso da gem `strftime`. Esses recursos podem ser explorados com mais profundidade em outros artigos ou tutoriais.
 
 ## Veja Também
-- [Documentação Oficial do Ruby sobre o método `strftime`](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
-- [Tutorial sobre formatação de datas em Ruby](https://www.rubyguides.com/2015/05/formatting-dates-in-ruby/)
-- [Outras formas de converter datas em Ruby](https://www.codecademy.com/learn/learn-ruby/modules/introduction-to-ruby-u/cheatsheet)
+
+- [Documentação oficial da Ruby](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
+- [Lista de formatos para o método `strftime`](https://apidock.com/ruby/strftime)
+- [ISO 8601 - Wikipédia](https://pt.wikipedia.org/wiki/ISO_8601)
+- [Gem `strftime`](https://rubygems.org/gems/strftime)

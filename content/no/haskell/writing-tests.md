@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Skrive tester"
+html_title:           "Haskell: Skrive tester"
+simple_title:         "Skrive tester"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive tester i Haskell
+## Hvorfor
 
-Å skrive tester er en viktig del av enhver programmeringsprosess, og det gjelder også for Haskell. Ved å skrive tester kan du sikre at koden din fungerer som den skal, og redusere feil og bugs. I tillegg kan det bidra til å forbedre den generelle kvaliteten på koden din.
+Å skrive tester er en viktig del av å være en god utvikler. Det sikrer at koden vår fungerer som den skal, og gjør det enklere å identifisere og fikse feil.
 
-## Hvordan skrive tester i Haskell
+## Hvordan Skrive Tester i Haskell
 
-For å skrive tester i Haskell, må du først importere testing-rammeverket "Hspec" ved å bruke følgende kode:
-
-```Haskell 
-import Test.Hspec 
-```
-
-Deretter kan du definere tester ved å bruke funksjonen `describe`, som tar inn en beskrivelse av hva testen skal sjekke og en funksjon som inneholder selve testen. Se et eksempel på kode nedenfor:
+Det første vi må gjøre er å importere testbiblioteket HUnit ved å skrive følgende linje øverst i koden vår:
 
 ```Haskell
-describe "Enkle matematikkfunksjoner" $ do
-  it "Skal beregne summen av to tall" $ do
-    sum 2 3 `shouldBe` 5
+import Test.HUnit
 ```
 
-I dette eksempelet vanligvis forvente vi at summen av 2 og 3 er lik 5. `shouldBe` funksjonen sjekker om dette er tilfelle, og vil returnere en feil hvis forventningen ikke stemmer. Det er også mulig å bruke andre tester som `shouldSatisfy`, `shouldThrow` og `shouldReturn` avhengig av hva som skal testes. Det er viktig å også inkludere noen eksempler på hva som forventes å fungere for at testene skal være effektive.
+Deretter kan vi begynne å skrive vårt første test ved å bruke funksjonen `TestLabel`. Her er et eksempel på en enkel testfunksjon som sjekker om 2+2 er lik 4:
 
-## Vær nøye og grundig med testing
+```Haskell
+test1 = TestCase (assertEqual "2+2 er lik 4" 4 (2+2))
+```
 
-For å sikre at testene dine er pålitelige og nyttige, er det viktig å være nøye og grundig når du skriver dem. Det betyr å implementere tester for så mange scenarioer som mulig, og å sørge for at de dekker alle hjørner og kantkase situasjoner. Det er også en god praksis å regelmessig kjøre testene dine og gjøre eventuelle nødvendige endringer i koden basert på feilene som oppdages.
+Vi kan også gruppere flere tester sammen ved å bruke funksjonen `TestList`, som lar oss liste opp flere testfunksjoner. Her er et eksempel på en testliste med to tester:
 
-## Se også
+```Haskell
+tests = TestList [test1, test2]
+```
 
-- [Hspec dokumentasjon](https://hspec.github.io/)
+For å kjøre testene våre, bruker vi funksjonen `runTestTT` og gir den testlisten som parameter:
 
-- [10 tips for å forbedre dine Haskell tester](https://www.fpcomplete.com/blog/10-tips-for-using-haskell-tests/)
+```Haskell
+main = do
+    runTestTT tests
+```
 
-- [Test-drevet utvikling i Haskell](https://skilldrick.co.uk/tdd-in-haskell/)
+Output fra dette programmet vil vise oss om testene våre har passert eller feilet. Hvis vi ønsker å sjekke om en funksjon returnerer riktig verdi, kan vi bruke funksjonen `assertEqual` til å sammenligne verdien med forventet resultat.
 
-Ved å implementere god testing i Haskell-koden din, kan du forbedre kvaliteten på programvaren din og redusere risikoen for feil og bugs. Selv om det kan ta litt ekstra tid og krefter, vil det være verdt det i det lange løp. Lykke til med testing!
+## Dypdykk
+
+En av de største fordelene med å skrive tester er at det hjelper oss med å identifisere og fikse feil i koden vår. Ved å skrive tester før vi implementerer funksjonalitet, tvinger det oss til å tenke på alle mulige tilfeller og sikre at koden vår håndterer dem på en ønsket måte.
+
+Det finnes også flere testrammeverk i Haskell, som QuickCheck og SmallCheck, som lar oss generere tilfeldige tester for å sjekke om koden vår tåler forskjellige input. Dette kan være spesielt nyttig når vi koder med typer og ønsker å være sikre på at koden vår håndterer alle mulige typer input.
+
+## Se Også
+
+- [Offisiell HUnit Dokumentasjon](https://hackage.haskell.org/package/HUnit)
+- [Gentesting med QuickCheck](https://www.haskell.org/tutorial/generating.html)
+- [Haskell Programmeringsspråk](https://www.haskell.org/)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "C++: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 为什么
-当前日期是计算机程序中一个非常常见的功能。通过获取当前日期，可以在程序中动态地显示日期，或者用于记录数据的时间戳。这个功能在许多不同的领域都会用到，所以掌握如何获取当前日期是很重要的。
 
-## 如何
-要在C++中获取当前日期，可以使用标准库中的`<ctime>`头文件里的`time()`函数。首先需要包含头文件，然后调用函数并储存返回的`time_t`数据类型。以下是一个简单的示例代码：
+在编程过程中，获取当前日期是很常见的需求。无论是记录日志、生成唯一的文件名，还是进行时间的计算，获取当前日期都是必不可少的步骤。
+
+## 如何做
+
+使用C++可以方便地获取当前日期。我们可以通过调用`time`函数来获取当前的时间戳，并使用`localtime`函数将其转换为本地日期和时间。下面是一个简单的示例代码，可以获取当前日期并打印出来。
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main()
-{
-    // 获取当前时间
+int main() {
+    // 获取当前时间戳
     time_t now = time(0);
-    
-    // 将当前时间转换为字符串
-    char* currentDate = ctime(&now);
-    
-    // 输出当前日期和时间
-    std::cout << "当前日期和时间：" << currentDate << std::endl;
-    
+
+    // 转换为本地日期和时间
+    tm *ltm = localtime(&now);
+
+    // 打印出当前日期
+    std::cout << "当前日期：" << ltm->tm_year + 1900 << "/" 
+              << ltm->tm_mon + 1 << "/" << ltm->tm_mday << std::endl;
     return 0;
 }
 ```
 
-输出结果会根据当前时间不同而变化，例如：
-
+运行以上代码，输出结果类似于：
 ```
-当前日期和时间：Mon Nov 09 13:45:12 2020
+当前日期：2021/4/11
 ```
 
 ## 深入了解
-`time()`函数返回的是当前时间距离标准时间（1970年1月1日00:00:00）的秒数。这个秒数可以用来计算其他时间单位，例如天、小时、分钟等等。另外，`ctime()`函数将`time_t`数据类型转换为一个C风格字符串，这也是为什么上面的示例代码中需要用`char*`来储存结果。
 
-除了`time()`和`ctime()`，还有其他可以获取当前日期的函数，例如`localtime()`和`strftime()`。每个函数都有自己的优势和特点，可以根据实际需求选择最适合的函数来使用。
+在C++中，`time_t`类型表示系统时间的秒数，从1970年1月1日0时0分0秒开始计算。而`tm`结构体则保存了本地日期和时间的一些信息。在调用`localtime`函数时，会将时间戳转换为本地时区的日期和时间，并保存在`tm`结构体中。在上面的代码中，我们通过`ltm->tm_year`、`ltm->tm_mon`和`ltm->tm_mday`来访问年、月和日的数值，需要注意的是，`tm`结构体中的月份和日期的数值都是从0开始的，所以需要分别加上1900和1才能得到正确的日期。
 
-## 参考资料
-- [C++ Reference: time()](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [C++ Reference: ctime()](https://en.cppreference.com/w/cpp/chrono/c/ctime)
-- [C++ Reference: localtime()](https://en.cppreference.com/w/cpp/chrono/c/localtime)
-- [C++ Reference: strftime()](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+如果需要获取更详细的时间信息，例如小时、分钟和秒等，我们还可以通过访问`ltm`结构体中的其他成员来实现。具体的细节可以查阅C++官方文档。
+
+## 参考链接
+
+- [C++ time函数](https://www.cplusplus.com/reference/ctime/time/)
+- [C++ localtime函数](https://www.cplusplus.com/reference/ctime/localtime/)
+
+## 参见
+
+- [C++中的日期和时间处理](https://www.runoob.com/cplusplus/cpp-date-time.html)
+- [C++官方文档](https://devdocs.io/cpp/)

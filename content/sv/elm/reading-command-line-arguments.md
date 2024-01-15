@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Läsning av kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Elm: Läsning av kommandoradsargument"
 simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,46 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att läsa in kommandoradsargument är en viktig del av programmering, särskilt i funktionella programmeringsspråk som Elm. Det hjälper dig att skapa mer flexibla och anpassningsbara program som kan hantera olika inmatningar.
+Att läsa argument från kommandoraden kan vara användbart när du behöver lägga till interaktionsmöjligheter till ditt program, till exempel när du behöver ta emot användarinmatning innan du kör koden.
 
-# Så här gör du
+## Hur man gör
 
-För att läsa in kommandoradsargument i Elm behöver du använda en modul som heter `Platform.Cmd` och dess `args` funktion. Här är ett exempel på hur du kan göra det:
+För att läsa argument från kommandoraden i Elm, använder man "Commands"-modulen. Först importera den i din kod:
 
+```Elm
+import Commands exposing (..)
 ```
-elm package install elm/core
+
+Sedan kan du definiera en funktion som tar emot en lista av argument och utför önskade operationer, till exempel att skriva ut dem:
+
+```Elm
+printArgs : List String -> Cmd msg
+printArgs args =
+    case args of
+        [] ->
+            Cmd.succeed ()
+
+        arg :: rest ->
+            Cmd.batch
+                [ Cmd.perform (log arg)
+                , printArgs rest
+                ]
 ```
 
-```elm
-module Main exposing (..)
+När vi använder funktionen "Cmd.perform" behöver vi ge den ett felmeddelande som generisk typ, eftersom vi inte förväntar oss att få någon specifik tillbakasändning.
 
-import Platform.Cmd exposing (args)
+För att faktiskt köra funktionen, använd "Commands"-modulens "run" funktion tillsammans med "Platform"-paketet:
 
+```Elm
+main : Program () Model Msg
 main =
-    Cmd.map handleArgs args
+    Browser.element
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
 
-handleArgs : List String -> Maybe String
-handleArgs args =
-    case List.head args of
-        Just arg ->
-            Just ("Det första argumentet är: " ++ arg)
-
-        Nothing ->
-            Nothing
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( Model "", Commands.run printArgs )
 ```
 
-I det här exemplet använder vi `Cmd.map` för att applicera vår `handleArgs` funktion på de argument som vi får från `args`. Funktionen `handleArgs` tar emot en lista med strängar och returnerar det första argumentet som en `Maybe String`. Om inga argument finns returneras `Nothing`.
+Nu när vi kör programmet, kan vi ge det argument från kommandoradens terminal:
 
-Om du kompilerar och kör programmet med ett argument, till exempel `elm-make Main.elm --output main.js`, så kommer du att få följande output: `Det första argumentet är: Main.elm`.
+```
+elm reactor 1, 2, 3
+```
 
-# Djupdykning
+Ovanstående kommer att skriva ut "1", "2" och "3" en efter en på konsolen.
 
-Det finns flera olika sätt att läsa in och hantera kommandoradsargument i Elm, beroende på dina specifika behov. En alternativ metod är att använda paketet `elm-community/argv`, som erbjuder mer avancerade funktioner för att hantera argument.
+## Fördjupning
 
-Det är också viktigt att tänka på att kommandoradsargument endast fungerar för program som körs i en terminal eller kommandoradsgränssnitt, och kan inte användas för webbapplikationer.
+I det här exempel använde vi bara en CMD för att skriva ut argumenten. Men möjligheterna är oändliga, du kan till exempel ta emot specifika argument och utföra olika operationer beroende på vilka argument som ges.
 
-# Se också
-- [Elm Dokumentation: Platform.Cmd.args](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#args)
-- [Elm-paketet "elm-community/argv"](https://package.elm-lang.org/packages/elm-community/argv/latest/)
+Det är också värt att notera att Elm inte tillåter att läsa från stdin, så det är inte möjligt att få användarinmatning med hjälp av detta sätt. Istället får vi använda oss av JavaScript för att få tillgång till konsolen.
+
+## Se också
+
+- Elm "Commands" modul dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/Commands](https://package.elm-lang.org/packages/elm/core/latest/Commands)
+- "Platform" paketet dokumentation: [https://package.elm-lang.org/packages/elm/browser/latest/](https://package.elm-lang.org/packages/elm/browser/latest/)
+- Elm programmeringsspråkets officiella hemsida: [https://elm-lang.org/](https://elm-lang.org/)

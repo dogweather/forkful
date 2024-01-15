@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Писання в стандартну помилку"
-simple_title:         "Писання в стандартну помилку"
+title:                "Писання до стандартної помилки"
+html_title:           "Clojure: Писання до стандартної помилки"
+simple_title:         "Писання до стандартної помилки"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,36 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Писання до вихідного потоку стандартної помилки є важливим інструментом для відлагодження вашого програмного коду. Він дозволяє виходити зі звичайного стилю тестування програм та забезпечує більш повний завершений опису помилок, що допомагає розуміти, місце та причину виникнення проблем.
+Написання до стандартного помилкового потоку є важливою частиною програмування, оскільки це дозволяє вам зареєструвати повідомлення про помилки в своїй програмі. Це допомогає вам легше знаходити та виправляти помилки, забезпечуючи більше стабільне та надійне програмне забезпечення.
 
 ## Як
 
-Для писання до потоку стандартної помилки використовуйте функцію `println!` та напишіть ваше повідомлення у цитатній формі. Наприклад:
+Написання до стандартного помилкового потоку в Clojure є простим за допомогою функції `clojure.core/println`. Таким чином, ви можете реєструвати рядки тексту до стандартного помилкового потоку, щоб повідомити про помилки або іншу важливу інформацію.
 
 ```Clojure
-(println! "Сталася помилка обробки даних." )
+(clojure.core/println "Помилка: дані введено невірно.")
 ```
 
-Це виведе наступне повідомлення до стандартного потоку помилок:
+Запущення цього коду поверне рядок "Помилка: дані введено невірно." до стандартного помилкового потоку.
 
-```
-"Сталася помилка обробки даних."
-```
+## Глибинний аналіз
 
-## Поглиблене дослідження
+Стандартний помилковий потік є особливим видом потоку у Clojure, оскільки він призначений для реєстрації інформації про помилки. Використання функції `clojure.core/println` забезпечує правильну форматування повідомлень та дозволяє вам легко звернутися до них у майбутньому, коли ви аналізуєте та виправляєте помилки.
 
-Іноді ви можете зіткнутися із ситуацією, коли потрібно вивести більш детальне повідомлення про помилку. В такому разі, ви можете використовувати `prinln!` для виводу форматованої інформації. Наприклад:
+## Дивіться також
 
-```Clojure
-(let [x 5
-      y 0]
-  (try
-    (/ x y)
-    (catch Exception e
-      (println! "Помилка обробки даних:" {:x x :y y} e))))
-```
-
-Це виведе наступну інформацію до стандартного потоку помилок:
-
-```
-"Помилка обробки даних: {:x 5 :y 0} #error {:cause "Divide by zero" :via [{:type java.lang.ArithmeticException :message "Divide by zero" :at [clojure.lang.Numbers divide "Numbers.java" 197]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [clojure.lang.Numbers divide "Numbers.java" 3742]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [user$eval2400 invokeStatic "form-init2347265261595024914.clj" -1]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [user$eval2400 invoke "form-init2347265261595024914.clj" -1]} {:type clojure.lang.Compiler load "Compiler.java" 7561} {:type clojure.lang.Compiler load "Compiler.java" 7514} {:type clojure.lang.Compiler eval "Compiler.java" 7868} {:type clojure.lang.Compiler eval "Compiler.java" 7880} {:type clojure.core$eval invokeStatic "core.clj" 3206} {:type clojure.core$eval invoke "core.clj" 3202} {:type clojure.main$repl$read_eval_print__7408$fn__7409 invoke "main.clj" 251} {:type clojure.main$repl$read_eval_print__7408 invoke "main.clj" 251} {:type clojure.main$repl$fn__7417 invoke "main.clj" 269} {:type clojure.main$repl invokeStatic "main.clj" 269} {:type clojure.main$repl doInvoke "main.clj" 174} {:type clojure.lang.RestFn invoke "RestFn.java" 1523} {:type user$eval2399 invokeStatic "form-init2347265261595024914.clj" -1} {:type user$eval2399 invoke "form-init2347265261595024914.clj" -1} {:type clojure.lang.Compiler eval "Compiler.java" 7865} {:type clojure.lang.Compiler eval "Compiler.java" 7864} {:type clojure.core
+- [Офіційна документація Clojure](https://clojure.org/guides/learn/syntax)
+- [Відомості про запис до стандартного помилкового потоку у Clojure](https://www.baeldung.com/clojure-logging)

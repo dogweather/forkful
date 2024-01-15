@@ -1,6 +1,7 @@
 ---
-title:                "Java: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודת יימל:"
+html_title:           "Java: עבודת יימל:"
+simple_title:         "עבודת יימל:"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,60 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## על מה?
+## למה
 
-ימיימל (YAML) הוא שפה פשוטה להבנה שמשמשת להגדרת מבנה נתונים מהוקשרים במחשב. זו נפוצה בפרוייקט הרכבה האפליקציה ומשמשת גם להעברת מידע בין יישומים שונים. בתור מתכנת ג'אווה, עלייך למרות בפנימה עם הנתונים הללו וכך נוצר שירותים תקינים שניתן לנהל בקלות.
+בקוד המודרני, יתרון גדול שלהכיל נתונים מורכבים בקבצים שונים כדוגמת YAML ניתן לחלוטין לוודא את הנכונות של נתונים ולשמור על קוד נקי ומסודר.
 
-## איך לעשות?
+## כיצד לעשות זאת
 
-עבודה עם ימל בג'אווה פשוטה ונוחה למדי. ניתן לבצע קריאה וכתיבה של נתונים בפורמט ימל על ידי כתיבת קוד פשוט תוך שימוש בספרייה של הימל. הנה דוגמה לקריאה והדפסת קובץ ימל בג'אווה:
+### התקנת ספריית YAML 
 
-```java
-import org.yaml.snakeyaml.Yaml;
-import java.io.InputStream;
+כדי לעבוד עם YAML בקוד Java, יש להתקין את הספרייה הרלוונטית בעזרת Maven או Gradle. ניתן להתקין את הספרייה הבאה על ידי הוספת התלות הבאה לקובץ ה-pom שלך:
 
-public class YAMLReader {
-
-    public static void main(String[] args) {
-        Yaml yaml = new Yaml();
-        InputStream inputStream = YAMLReader.class.getResourceAsStream("data.yaml");
-        Map<String, Object> data = (Map<String, Object>) yaml.load(inputStream);
-        for (Map.Entry<String, Object> entry : data.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + "\nValue: " + entry.getValue());
-        }
-    }
-
-}
+```Java
+<dependency>
+  <groupId>org.yaml</groupId>
+  <artifactId>snakeyaml</artifactId>
+  <version>1.26</version>
+</dependency>
 ```
 
-כתובת הקובץ "data.yaml" יכולה להיות כל שם שנבחר ובמידה והקובץ נמצא בתקיית הפרוייקט, ניתן לקרוא אותו באמצעות פקודה כזו.
+#### יצירת מפתחת YAML חדשה
 
-הנתונים יוטלו בסוג של מפתח-ערך, ולכן נוכל להתמודד עם כל סוגי הנתונים, כגון מחרוזות, מספרים, בוליאניים וכו'. התוצאה של הקוד שלעיל תהיה:
+ניתן ליצור מפתחת חדשה בתוך קוד Java כדלקמן:
 
-```yaml
-Key: name
-Value: John
-Key: age
-Value: 30
-Key: married
-Value: true
+```Java
+// ייבוא מחלקת המפתחת
+import org.yaml.snakeyaml.Yaml;
+
+// יצירת מפתחת חדשה
+Yaml yaml = new Yaml();
 ```
 
-ניתן גם ליצור קובץ ימל בפורמט ימל תוך שימוש בספריית הימל. הנה דוגמה לכך:
+#### כתיבת YAML
 
-```java
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.Yaml;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+עם המפתחת, ניתן לכתוב נתונים לקובץ YAML בעזרת הפונקציה `dump()`:
 
-public class YAMLWriter {
+```Java
+// יציאת הנתונים לקובץ YAML
+String output = yaml.dump(data);
+System.out.println(output);
+```
 
-    public static void main(String[] args) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("name", "John");
-        data.put("age", 30);
-        data.put("married", true);
-        DumperOptions options = new Dumper
+הפונקציה `dump()` מאפשרת גם להגדיר הגדרות נתונים מתקדמות כדוגמת סדר סחירה ובחירת ערכים חכמים. לדוגמה, מפתחת זו תמיד תיצור ערכים חדשים במיוחד:
+
+```Java
+// כתיבת YAML עם סידר סחירה וערכים חכמים
+yaml.dump(data, new DumperOptions().setDefaultFlowStyle(FlowStyle.BLOCK));
+```
+
+כדי לכתוב ערכים חכמים בקובץ YAML, ניתן להשתמש ב- `PropertyUtils`:
+
+```Java
+// כתיבת ערכים חכמים עם PropertyUtils
+PropertyUtils output = Factory.getDefaultPropertyUtils();
+Map<String, Object> map = output.map("key123", new Object());
+```
+
+#### קריאת YAML
+
+בקובץ YAML ניתן לקרוא נתונים באמצעות הפונקציה `load()`:
+
+```Java
+// קריאת נתונים מתוך קובץ YAML
+String input = "key123: string";
+Map<String, Object> map = (Map<String, Object>)yaml.load(input);

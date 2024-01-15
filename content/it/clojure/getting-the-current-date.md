@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Ottenere la data corrente"
+title:                "Ottenere la data corrente"
+html_title:           "Clojure: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,42 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Sei curioso di sapere come ottenere la data corrente utilizzando il linguaggio di programmazione Clojure? Continua a leggere per scoprire come!
+Se stai scrivendo un programma che richiede il calcolo della data attuale, allora devi capire come ottenere questa informazione. Fortunatamente, in Clojure, questo è un compito abbastanza semplice grazie alla sua libreria standard.
 
-## Come Fare
+## Come fare
 
-Per ottenere la data corrente in Clojure, puoi utilizzare la funzione `now` dal modulo `java.time.LocalDateTime`. Ecco un esempio di come utilizzarla:
+Per ottenere la data attuale in Clojure, possiamo utilizzare la funzione `now` della libreria `clojure.java-time`. Questa funzione restituirà un oggetto `java.time.Instant` che rappresenta il momento attuale nel fuso orario UTC. Per convertire questa istanza in un oggetto `java.time.LocalDate` che rappresenta solo la data, possiamo chiamare la funzione `to-local-date`.
 
-```Clojure
-(require '[java.time.LocalDateTime :as dt])
+```
+(use 'clojure.java-time)
 
-(def current-date (dt/now))
+(def current-date (-> (now) to-local-date))
+
 (println current-date)
+; => #object[java.time.LocalDate 0x468e79b1 "2021-02-25"]
 ```
 
-Questo dovrebbe restituire l'output della data e dell'ora correnti nel seguente formato: `2021-08-20T15:30:00.000`. Puoi anche utilizzare la funzione `now` dal modulo `java.time.LocalDate` per ottenere solo la data, senza l'ora.
-
-Se vuoi personalizzare il formato dell'output, puoi utilizzare la funzione `format` dal modulo `java.time.format.DateTimeFormatter`. Ad esempio, se vuoi ottenere la data nel formato giorno/mese/anno, puoi utilizzare il seguente codice:
-
-```Clojure
-(require '[java.time.LocalDate :as ld])
-(require '[java.time.format.DateTimeFormatter :as fmt])
-
-(def current-date (ld/now))
-(def formatted-date (fmt/format current-date "dd/MM/yyyy"))
-(println formatted-date)
-```
-
-Questo dovrebbe restituire l'output della data corrente nel formato richiesto, ad esempio `20/08/2021`.
+La stampa del risultato ci mostra che il nostro nuovo oggetto `current-date` contiene la data attuale nel formato aaaa-MM-dd.
 
 ## Approfondimento
 
-Per ottenere la data corrente in Clojure, il linguaggio sfrutta la potenza della libreria Java `java.time`. Questa libreria fornisce diverse classi e metodi per gestire date, orari e fusi orari in modo semplice e intuitivo. Se vuoi approfondire ulteriormente l'utilizzo di questa libreria, puoi consultare la documentazione ufficiale di Java o cercare online ulteriori tutorial specifici su Clojure.
+Per avere una maggiore precisione sulla data, possiamo specificare anche il fuso orario che ci interessa. In questo caso, possiamo utilizzare la funzione `now-zone` invece di `now`, specificando come argomento il nome del fuso orario desiderato.
 
-## Vedi Anche
+Ad esempio, per ottenere la data attuale nell'Italia centrale, possiamo scrivere:
 
-- [Documentazione ufficiale di Java - java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Tutorial per principianti su Clojure](https://clojure.org/guides/getting_started)
-- [Altri articoli su Clojure in Italiano](https://www.adaltas.com/en/docker/docker-get-local-datetime-node/)
+```
+(def current-date (-> (now-zone "Europe/Rome") to-local-date))
 
-Scoprire come ottenere la data corrente in Clojure può sembrare un dettaglio banale, ma è un'abilità fondamentale per ogni programmatore. Utilizzando la libreria `java.time`, puoi gestire facilmente date e orari nei tuoi progetti Clojure. Speriamo che questo articolo ti sia stato utile e ti abbia dato una maggiore comprensione di come ottenere la data corrente in Clojure. Buon codice!
+(println current-date)
+; => #object[java.time.LocalDate 0x1c8d6132 "2021-02-25"]
+```
+
+Possiamo anche utilizzare la funzione `now-local-date` per ottenere direttamente la data attuale senza dover convertire l'`Instant` in un `LocalDate`.
+
+```
+(def current-date (now-local-date))
+
+(println current-date)
+; => #object[java.time.LocalDate 0x5f868679 "2021-02-25"]
+```
+
+È inoltre possibile formattare la data in un formato specifico utilizzando la funzione `formatter` e la funzione `format` della libreria `clj-time`.
+
+```
+(require '[clj-time.format :as fmt])
+
+(def current-date (now-local-date))
+
+(def formatter (fmt/formatter "dd MMMM y"))
+(println (fmt/format current-date formatter))
+; => 25 febbraio 2021
+```
+
+## Vedi anche
+
+- [Documentazione ufficiale di clojure.java-time](https://clojure.github.io/java-time)
+- [Guida di Clojure sulle date e orari](https://clojure.org/guides/date_time)

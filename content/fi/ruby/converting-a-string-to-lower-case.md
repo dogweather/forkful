@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Merkkijonon muuntaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Ruby: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,48 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi?
 
-Miksi ihmiset haluavat muuttaa merkkijonon pieniksi kirjaimiksi? Tätä kysymystä voi kysyä monessa eri yhteydessä. Ehkä haluat vertailla kahta merkkijonoa, mutta case-sensitiivisyys haluaa tehdä sen hieman vaikeammaksi. Tai ehkä haluat vain varmistaa, että käyttäjän antama syöte on yhdenmukainen ja välttää mahdollisia virheitä. Joka tapauksessa, pienien kirjainten muuttaminen voi olla erittäin kätevä ja hyödyllinen toiminto.
+On monia syitä, miksi haluat muuntaa merkkijonon pienaakkosiin Rubyssä. Yksi tärkeimmistä syistä on tietojen yhdenmukaistaminen, mikä on erityisen tärkeää tietokannoissa ja tiedostojen hallinnassa. Pienaakkoset myös helpottavat merkkijonon vertailua ja manipulointia.
 
-## Miten
-
-Tapoja muuttaa merkkijono pieniksi kirjaimiksi on monia, mutta tässä käytämme Ruby-koodia esimerkin avuksi. 
+# Miten?
 
 ```Ruby
-# Alkuperäinen merkkijono
-string = "AUTTAKAA MINUA!"
-
-# Muutetaan pieniksi kirjaimiksi
-lowercase = string.downcase
-
-# Tulostetaan muunnettu merkkijono
-puts lowercase
-
-# Output: auttakaa minua!
+string = "TÄMÄ ON MERKKIJONO"
+puts string.downcase
 ```
+Tämä yksinkertainen koodinpätkä muuntaa merkkijonon "TÄMÄ ON MERKKIJONO" pienaakkosiksi ja tulostaa sen konsoliin "tämä on merkkijono". Voit myös tallentaa muunnetun merkkijonon uuteen muuttujaan, esimerkiksi `lowercase_string = string.downcase`.
 
-Tässä esimerkissä käytämme Ruby-metodia `downcase`, joka muuttaa kaikki merkit merkkijonossa pieniksi kirjaimiksi. Tämä on yksinkertainen tapa muuttaa merkkijono toivottuun muotoon.
+# Syväsukellus
 
-## Syvemmälle
+Rubyssä on monia käteviä tapoja muuntaa merkkijono pienaakkosiin. Voit käyttää esimerkiksi `downcase`-metodia, joka muuntaa kaikki merkit pienaakkosiksi, sekä `capitalize`-metodia, joka muuntaa vain merkkijonon ensimmäisen kirjaimen isoksi. Voit myös käyttää `swapcase`-metodia, joka muuntaa kaikki pienaakkoset isoiksi ja päinvastoin. Lisäksi voit käyttää myös `downcase!`, `capitalize!` ja `swapcase!` -metodeja, jotka muuntavat merkkijonon alkuperäiseen muuttujaan sen sijaan, että palauttaisivat uuden muutetun merkkijonon.
 
-On hyvä tietää, että pieniksi kirjaimiksi muuttaminen toimii vain aakkosilla, joten numerot ja erikoismerkit pysyvät ennallaan. Tämä saattaa aiheuttaa ongelmia, jos tarvitaan täydellinen merkkien muunnos. Onneksi Rubyssa on myös `swapcase`-metodi, joka muuttaa merkkijonossa olevat isot kirjaimet pieniksi ja päinvastoin. Esimerkiksi:
+# Katso myös
 
-```Ruby
-string = "HeLlO WoRLd!"
-swapped = string.swapcase
-puts swapped
-# Output: hElLo wOrlD!
-```
-
-Lisäksi Rubylla on myös monia muita hyödyllisiä tapoja työskennellä merkkijonojen kanssa, kuten `capitalize`, `chomp`, `strip`, jne. Kannattaa tutkia näitä metodeja ja löytää itselleen sopivin tapa käsitellä merkkijonoja.
-
-## Katso myös
-
-Tässä artikkelissa kävimme läpi yhden tavan muuttaa merkkijonon pieniksi kirjaimiksi Rubyssa. Jos haluat oppia lisää Ruby-ohjelmoinnista, suosittelen tutustumaan seuraaviin resursseihin:
-
-- [Ruby oppimateriaalit](https://ruby-lang.org/en/documentation/): löydät täältä kaiken tarvittavan Ruby-ohjelmointiin liittyen.
-- [RubyTapas](https://rubytapas.com/): Erinomainen sivusto, josta voit oppia lisää Ruby-kielen saloista.
-- [Ruby-kirjat](https://www.goodreads.com/shelf/show/ruby): Täällä voit löytää listan suosituimmista Ruby-kirjoista, joista voi olla hyötyä opiskellessasi Rubya.
-
-Toivottavasti tämä artikkeli auttoi sinua ymmärtämään paremmin merkkijonon muuttamisen alempiksi kirjaimiksi Rubyssa. Muista harjoitella ja löytää itsellesi sopivin tapa käsitellä merkkijonoja. Onnea matkaan!
+- [Ruby String Documentation](https://ruby-doc.org/core-2.7.2/String.html)
+- [Ruby Methods Cheat Sheet](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-methods/cheatsheet)
+- [Ruby on Rails Tutorial: Learn Ruby and Rails from Scratch](https://www.railstutorial.org/book)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: ランダム数字を生成する"
-simple_title:         "ランダム数字を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "Arduino: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -9,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ: ランダムな数字を生成する意義
+## なぜ
+ランダムな数値を生成することに興味がある人々は、ゲームやシミュレーション、セキュリティなどの分野で使用できるためです。Arduinoを使用したランダムな数値の生成は、そのような場面で役に立ちます。
 
-ランダムな数字を生成することには多くの用途があります。例えば、ゲームやくじ引きのためのランダムなイベントを作り出すことができます。また、認証や暗号化のプログラムでセキュリティーを強化することにも役立ちます。
-
-## やり方: Arduinoプログラミングの例とコードブロックの出力
-
-Arduinoプログラムでランダムな数字を生成するには、 `random()` 関数を使用します。以下に例を示します。
+## How To
+ランダムな数値を生成するには、`random()`関数を使用します。この関数は、引数として最小値と最大値を受け取り、その範囲内でランダムな数値を返します。以下は、0から10までのランダムな数値を生成するArduinoコードの例です。
 
 ```Arduino
-// ランダムな数字を生成する
-int randomNumber = random(10); // 0から9までの数字をランダムに生成
+int randomNumber = random(0, 10); // 0から10までのランダムな数値を生成
+Serial.println(randomNumber); // ランダムな数値をシリアルモニターに表示
 ```
 
-上記の例では、`random()` 関数に引数として生成したい数字の最大値を渡しています。また、Seed値を使用することで毎回同じランダムな数字を生成することができます。
+このように、`random()`関数を使用することで簡単にランダムな数値を生成することができます。
 
-```Arduino
-// ランダムな数字を生成する
-int randomNumber = random(10, 20); // 10から19までの数字をランダムに生成
-```
+## Deep Dive
+Arduinoには、様々なランダムな数値の生成方法があります。`random()`関数だけでなく、`randomSeed()`関数を使用して最初のシード値を決めることで、より本格的なランダム性を実現することができます。
 
-`random()` 関数を使用することで、簡単にランダムな数字を生成することができます。
+また、マイクロコントローラーのランダムな起動や使用時間などを使用して、よりシード値をランダム化することもできます。さらに、Arduinoには乱数を生成するためのライブラリもあり、様々な方法でランダムな数値を生成することができます。
 
-## 深堀り: ランダムな数字の生成について
+## See Also
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [Arduino開発環境のダウンロード](https://www.arduino.cc/en/software) 
+- [Arduinoプロジェクト集光器](https://create.arduino.cc/projecthub)
 
-Arduinoでは、 `random()` 関数を使用することで、擬似乱数を生成しています。つまり、Seed値によって生成された毎回同じ数列を元に、アルゴリズムにより次の数字を生成しています。そのため、Seed値を変えることで、異なる数列を生成することができます。
-
-また、Arduinoでは擬似乱数を生成する標準関数以外にも、真の乱数を使用することができる外部ボードを接続することで、より高度なランダム性を持った数字を生成することができます。
-
-## 参考リンク
-
-- [Arduino公式ドキュメンテーション - 非決定的乱数サンプリング](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Arduinoプロジェクトでランダムなボイスを再生する方法](https://code-boxx.com/play-random-voice-arduino/)
-- [Arduinoを使って擬似乱数を生成する方法](https://roothoops.com/arduino-random-number/)
-- [Arduinoと乱数生成器の比較](https://www.youtube.com/watch?v=bnz8opMh830)
-
-## 参考になるリンク
-
-- [Arduino チュートリアル](https://www.arduino.cc/en/Tutorial/HomePage)
-- [プログラミング入門編](https://qiita.com/tochiji/items/0e0a1e0a566353b1cf72)
-- [コーディング力を向上するための練習問題サイト](https://yukicoder.me/)
+以上で、ランダムな数値の生成についての基本的な情報を説明しました。これらの方法を使用して、さまざまなプロジェクトで有益なランダム性を実現してください。

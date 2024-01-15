@@ -1,6 +1,7 @@
 ---
-title:                "C#: מיזוג מחרוזת לאותיות רישיות"
-simple_title:         "מיזוג מחרוזת לאותיות רישיות"
+title:                "שימוש באותיות גדולות במחרוזת"
+html_title:           "C#: שימוש באותיות גדולות במחרוזת"
+simple_title:         "שימוש באותיות גדולות במחרוזת"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,30 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה:
+## למה
+משתמשים בפונקציית הקפטלייז כדי להמיר את האותיות במחרוזת מינוסקולס לתחילת מילים מינוסקולס. זה יכול להיות שימושי כאשר מעורבים עם תוכניות אחרות הדורשות פורמט של מילים עם אותיות גדולות בתחילתן.
 
-להגדיל את הערך שנמצא בתוך מחרוזת היא פעולה מצוינת לכל מי שמעוניין לנהל ולנתח מחרוזות בתוך קוד תכנותי בשפת סי-שארף.
-
-# איך לעשות:
-
-שימו לב שפעולת "ToUpper" תופעל רק על התו הראשון שבין הסימנים ההפרדה. לכן עליכם לבצע המרה אחרת על כל תו שנמצא בכל מחרוזת. לדוגמה:
-
+## איך לעשות זאת
 ```C#
-string str = "this is a string";
-string result = "";
-foreach (char c in str)
-{
-  result += c.ToString().ToUpper();
-}
+// פונקציית הקפטלייז מקבלת מחרוזת
+string input = "hello world";
 
-// output: "THIS IS A STRING"
+// ומחזירה את המחרוזת המקופסת
+string output = input.ToUpper();
+
+// נוצרת המחרוזת "HELLO WORLD"
 ```
 
-# מעמקים:
+```C#
+// ניתן גם להשתמש בפונקציית הקפטלייז עם מחרוזת של מחרוזות
+string input = "one two three";
+string[] words = input.Split();
 
-ישנן פתרונות נוספים להגדלת מחרוזות, וכן שימוש בפונקציות מובנות יותר בשפת סי-שארף כמו "ToUpperInvariant", "ToUpperInvariant", ו-"TextInfo.ToTitleCase". כמו כן, כדאי לבדוק מהי ההשפעה של השימוש בתווים בעלי גודל אותו הבגרלת "IgnoreCase" או טיפולים נוספים במחרוזות.
+// נוצרת מערך של מחרוזות
+// words = {"one", "two", "three"}
 
-# ראו גם:
+// משתמשים בלולאה כדי לעבור על כל מחרוזת
+foreach (string word in words)
+{
+    // קופצים לסוף הלולאה אם המחרוזת ריקה
+    if (string.IsNullOrWhiteSpace(word))
+    {
+        continue;
+    }
 
-- [תיעוד על אופציות הגדלת מחרוזות בשפת סי-שארף](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
-- [מאמר בנושא טיפול במחרוזות בשפת סי-שארף](https://www.codeproject.com/Articles/404815/String-Handling-in-Csharp)
+    // אות התחילה של המחרוזת מתוחפת לקפטלייז
+    string firstLetter = word[0].ToString().ToUpper();
+
+    // פסקה של המחרוזת ללא האות הראשונה
+    string restOfWord = word.Substring(1);
+
+    // יוצאים עם המחרוזת המתוחפת
+    string capitalizedWord = firstLetter + restOfWord;
+    Console.WriteLine(capitalizedWord);
+}
+
+// פלט: One Two Three
+```
+
+## צלילה עמוקה
+בגירסת הקפטלייז הנוכחית של סי שארפ, ניתן לשנות את המתווה של פונקציית הקפטלייז. למרבה המזל, ברירת המחדל היא לשנות רק את הסימן המופרד בין המילים. אבל ניתן גם לשנות את הכיוון של הפונקציה כדי להפוך את האות הראשונה של כל מילה לקפטלייז בלי לחלץ אותה ולמעשה לבצע את אותו דבר בצורה יעילה יותר.
+
+## ראו גם
+- [רשומה לקפטלייז בפונקצי

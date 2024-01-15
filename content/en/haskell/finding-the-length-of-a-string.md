@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Haskell recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,55 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-As programmers, we often encounter situations where we need to manipulate strings. Whether it's for data processing, user input validation, or simply displaying text, strings play a crucial role in programming. And one of the most basic operations on strings is finding their length. In this blog post, we will explore how to find the length of a string in Haskell and why it is an important skill for any programmer to have.
+Finding the length of a string is a common problem in programming, regardless of the language being used. In Haskell, a functional and strongly typed language, it can be solved in an elegant and simple way.
 
-## How To 
+## How To
 
-Finding the length of a string in Haskell is a simple yet powerful operation. In Haskell, strings are represented as lists of characters. Therefore, finding the length of a string is essentially finding the length of this list. Let's take a look at the code below to see how we can do this:
+To start, we need to understand how strings are represented in Haskell. Unlike other languages, Haskell does not have a built-in string datatype. Instead, strings are represented as lists of characters. This means that finding the length of a string is essentially the same as finding the length of a list.
 
-```Haskell
--- Define a string
-myString = "Hello World!"
+To find the length of a string, we can use the `length` function. This function takes in a list as its argument and returns an integer representing the length of the list.
 
--- Use the standard library function 'length' to find the length of the string
-lengthOfMyString = length myString
-
--- Display the result
-print lengthOfMyString
-```
-
-The above code will output the length of the string, which in this case is 12. We can also use the `length` function to find the length of a string inputted by the user. Let's take a look at another example:
+Let's take a look at an example:
 
 ```Haskell
--- Prompt the user to enter a string
-putStrLn "Enter a string: "
+length "Hello World"
+```
+Output:
+`11`
 
--- Read the input and store it in a variable
-userString <- getLine
+In this example, we are passing the string "Hello World" as the argument to the `length` function and it returns the length of the string, which is 11.
 
--- Find the length of the string
-lengthOfUserString = length userString
+We can also use the `length` function on other types of lists, not just strings. For instance, we can find the length of a list of numbers like this:
 
--- Display the result
-print lengthOfUserString
+```Haskell
+length [1, 2, 3, 4, 5]
+```
+Output:
+`5`
+
+We can even combine multiple lists and find the total length, like this:
+
+```Haskell
+length ([1, 2, 3, 4] ++ [5, 6, 7])
+```
+Output:
+`7`
+
+Now that we have a basic understanding of how the `length` function works, let's take a closer look at how it is implemented.
+
+## Deep Dive
+
+The `length` function is actually a higher-order function, meaning that it takes in a function as an argument or returns a function as its result. In this case, the `length` function takes in a list as its argument and returns an integer as its result.
+
+Internally, `length` uses recursion to iterate through the list and count the number of elements. This means it breaks the problem down into smaller parts and combines the results to get the final answer. Let's take a look at a simplified version of the `length` function:
+
+```Haskell
+length' [] = 0
+length' (x:xs) = 1 + length' xs
 ```
 
-Now the code will output the length of the string entered by the user. Go ahead and try it out yourself!
+Here, we have defined a function called `length'` that takes in a list as its argument. The first line is called the base case, and it simply states that the length of an empty list is 0. The second line is the recursive case, where we take the head of the list `x` and add 1 to it, then call `length'` again on the rest of the list `xs`.
 
-## Deep Dive 
+This process repeats until we reach the base case, at which point the function stops recursing and returns the final result.
 
-Now that we know how to find the length of a string in Haskell, let's take a deep dive into how it actually works. The `length` function is defined as `length :: [a] -> Int` in the standard library. It takes in a list of any type `a` and returns an `Int`, which represents the length of the list.
+## See Also
 
-Haskell uses lazy evaluation, which means that it will only evaluate the expression when it is needed. This is why the `length` function works efficiently even with large strings.
-
-It is also important to note that this function does not count the empty string as a character, unlike many other programming languages. This is because in Haskell, the empty string is represented as an empty list, `[]`.
-
-## See Also 
-
-- [Learn You a Haskell for Great Good](http://learnyouahaskell.com/chapters)
-- [Haskell Wiki](https://wiki.haskell.org/Learning_Haskell)
-- [Haskell Language Tutorial](https://www.tutorialspoint.com/haskell/index.htm)
-
-Give it a try and incorporate finding the length of a string in your next Haskell program. Happy coding!
+* [Haskell String Tutorial](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+* [Learn You a Haskell - String Theory](http://learnyouahaskell.com/starting-out#im-a-list-comprehension)
+* [Hoogle - Searching Haskell Libraries](https://hoogle.haskell.org/)

@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "PHP: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czemu
+## Dlaczego
 
-Obliczanie daty w przyszłości lub w przeszłości jest często niezbędne w programowaniu PHP, ponieważ pozwala na dynamiczne określanie czasu w aplikacjach internetowych. Może być przydatne, na przykład w przypadku generowania faktur, harmonogramowania zadań lub wyświetlania powiadomień.
+Kalkulowanie daty w przyszłości lub przeszłości może być przydatne w wielu różnych scenariuszach. Na przykład, jeśli tworzysz aplikację planującą, może być konieczne przewidywanie daty wydarzenia lub wystawienia faktury w przyszłości. W ten sposób można automatycznie wygenerować wyszukiwane informacje, zapewniając wygodę dla użytkownika.
 
 ## Jak to zrobić
 
-```PHP
-$dni = 7;
-$data = date('Y-m-d', strtotime("+$dni days"));
-echo "Za $dni dni będzie $data";
-```
-W powyższym przykładzie użyto funkcji `date()` i `strtotime()` do wyliczenia daty, która jest dniem z przeszłości lub przyszłości w stosunku do bieżącej daty. Następnie wyświetlono wynik w formacie `YYYY-MM-DD`, ale można dostosować to według własnych preferencji.
+Aby obliczyć datę w przyszłości lub przeszłości w PHP, możemy użyć wbudowanej funkcji `date()`. Ta funkcja pobiera dwa argumenty: `format` i `timestamp`. Pierwszy określa sposób prezentacji daty, a drugi określa datę, dla której chcemy obliczyć nową datę w przeszłości lub przyszłości.
+
+Przykładowe użycie:
 
 ```PHP
-$rok = 2021;
-$miesiac = 12;
-$data = date('Y-m-d', strtotime("$rok-$miesiac-01"));
-echo "Pierwszy dzień miesiąca $miesiac w roku $rok to $data";
+$today = date('Y-m-d'); // bieżąca data, format: rok-miesiąc-dzień
+$future_date = date('Y-m-d', strtotime('+1 week')); // data w przyszłości, dokładnie za tydzień
+
+echo "Dzisiejsza data: $today";
+echo "Data za tydzień: $future_date";
 ```
-W powyższym przykładzie wykorzystano zmienne, aby obliczyć pierwszy dzień wybranego miesiąca i roku. Można również dodawać lub odejmować dni, tygodnie, miesiące i lata do daty i określać konkretne dni tygodnia, na których chcemy otrzymać wynik.
 
-## Wnikliwa analiza
+W powyższym przykładzie użyliśmy funkcji `strtotime()` do obliczenia daty w przyszłości. Funkcja ta interpretuje podany ciąg znaków jako datę i zwraca jej wartość w formacie `timestamp`. W ten sposób możemy wygodnie wykorzystać różne wartości, takie jak "1 week" czy "next month".
 
-Przy obliczaniu dat w przyszłości lub przeszłości należy pamiętać o różnych formatach dat i ustawieniach strefy czasowej. Należy również zwrócić uwagę na to, czy dany rok jest przestępny lub czy dany miesiąc ma 30 czy 31 dni. W przypadku wystąpienia problemów z obliczeniami dat, warto skorzystać z dostępnych bibliotek PHP, takich jak `DateTime` lub `Carbon`, które ułatwiają pracę z datami.
+## Deep Dive
+
+W przypadku bardziej zaawansowanych obliczeń związanych z datami, PHP oferuje również dodatkowe funkcje, takie jak `DateTime` i `DateInterval`. Dzięki nim można wykonać dokładniejsze i bardziej skomplikowane operacje, takie jak przewidywanie daty wraz z uwzględnieniem różnych stref czasowych czy dni roboczych.
+
+Na przykład, aby obliczyć date wystawienia faktury 10 dni roboczych po bieżącym dniu, można użyć kodu:
+
+```PHP
+$today = new DateTime(); // tworzymy obiekt DateTime reprezentujący bieżącą datę
+$due_date = $today->add(new DateInterval('P10D')); // dodajemy interwał 10 dni do bieżącej daty
+
+echo "Data wystawienia faktury: " . $today->format('Y-m-d');
+echo "Data zapłaty: " . $due_date->format('Y-m-d');
+```
+
+W powyższym przykładzie użyliśmy `DateTime` oraz `DateInterval` do obliczenia daty zapłaty dla faktury wystawionej 10 dni roboczych później.
 
 ## Zobacz również
 
-- [Dokumentacja PHP o funkcji date()](http://php.net/manual/en/function.date.php)
-- [Dokumentacja PHP o funkcji strtotime()](https://www.php.net/manual/en/function.strtotime.php)
-- [Biblioteka DateTime w PHP](https://www.php.net/manual/en/class.datetime.php)
-- [Biblioteka Carbon w PHP](https://carbon.nesbot.com/)
+- [Dokumentacja PHP: Function.date](https://www.php.net/manual/en/function.date.php)
+- [Dokumentacja PHP: Class.datetime](https://www.php.net/manual/en/class.datetime.php)
+- [Dokumentacja PHP: Class.dateinterval](https://www.php.net/manual/en/class.dateinterval.php)

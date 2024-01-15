@@ -1,5 +1,6 @@
 ---
-title:                "Java: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "Java: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "Java"
 category:             "Java"
@@ -11,50 +12,95 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach, dane są powszechnie wykorzystywane w różnych dziedzinach, takich jak biznes, nauka i edukacja. Jednym z popularnych formatów przechowywania danych są pliki CSV (ang. comma-separated values), które są wykorzystywane do przechowywania dużych zestawów danych w postaci tabeli. W tym artykule dowiedziesz się, dlaczego warto nauczyć się pracy z CSV w języku programowania Java.
+W dzisiejszych czasach, praca z ogromnymi danymi stała się nieodłączną częścią wielu dziedzin, począwszy od biznesu po naukę danych. Jednym z powszechnie stosowanych formatów danych jest plik CSV (ang. Comma-Separated Values), który pozwala na przechowywanie i przetwarzanie danych w postaci tabeli. W tym artykule dowiesz się, dlaczego warto poznać i umiejętnie wykorzystywać CSV w swoich projektach opartych na języku Java.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby pracować z plikami CSV w języku Java, musimy najpierw importować odpowiednie biblioteki. Poniżej przedstawiamy przykładowy kod, który pozwoli nam odczytać plik CSV i wyświetlić jego zawartość w konsoli:
+Pierwszym krokiem jest zaimportowanie klasy CSVReader z pakietu opencsv do Twojego projektu.
 
-```java
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+```Java
+import com.opencsv.CSVReader;
+```
 
-public class CSVReader {
-    public static void main(String[] args) {
-        // ścieżka do pliku CSV
-        String filePath = "nazwa_pliku.csv";
-        try {
-            // wczytanie całego pliku do tablicy
-            String[] lines = Files.readAllLines(Paths.get(filePath)).toArray(String[]::new);
-            for (String line : lines) {
-                // podzielenie linii na poszczególne wartości, korzystając z przecinka jako separatora
-                String[] values = line.split(",");
-                // wyświetlenie danych w konsoli
-                for (String value : values) {
-                    System.out.print(value + " ");
-                }
-                System.out.println();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+Następnie, musisz utworzyć obiekt CSVReader, który przyjmuje jako parametry plik CSV oraz znak, którym są oddzielone kolumny (zwykle jest to przecinek).
+
+```Java
+CSVReader reader = new CSVReader(new FileReader("dane.csv"), ',');
+```
+
+Teraz możesz rozpocząć wczytywanie danych z pliku. W tym przykładzie, użyjemy pętli for-each do przeglądania kolejnych wierszy i kolumn w pliku CSV.
+
+```Java
+String[] line;
+
+while ((line = reader.readNext()) != null) {
+    for (String column : line) {
+        System.out.println(column);
     }
 }
 ```
 
-Powyższy kod pozwoli nam odczytać plik CSV i wypisać jego zawartość w konsoli. Należy jednak pamiętać, że w zależności od struktury pliku, konieczne może być dostosowanie kodu oraz wykorzystanie innych narzędzi do pracy z CSV w Javie.
+Przykładowy plik CSV "dane.csv" mógłby wyglądać tak:
 
-## Głębszy zanurzenie
+```
+Imię,Nazwisko,Wiek
+Jan,Kowalski,35
+Anna,Nowak,28
+Piotr,Kowalczyk,42
+```
 
-Istnieje wiele zaawansowanych technik pracy z plikami CSV w języku Java, takich jak wykorzystanie bibliotek Apache Commons CSV czy OpenCSV. Pozwalają one na bardziej precyzyjne odczytywanie i zapisywanie danych, a także na obsługę plików z nagłówkami czy złożonymi strukturami. Warto więc poszerzyć swoją wiedzę na temat pracy z CSV w Javie, aby jeszcze lepiej wykorzystywać ten format w swoich projektach.
+W rezultacie, wyświetlona zostałaby kolejno wartości z kolumn "Imię", "Nazwisko" oraz "Wiek" dla każdego wiersza.
+
+```
+Jan
+Kowalski
+35
+Anna
+Nowak
+28
+Piotr
+Kowalczyk
+42
+```
+
+## Deep Dive
+
+Powyższe przykłady pokazują najprostsze metody wykorzystania CSVReader. Jednak, istnieje wiele innych funkcji i opcji, które mogą ułatwić pracę z plikami CSV w języku Java.
+
+Na przykład, możesz użyć metody readAll, aby wczytać wszystkie dane z pliku do Listy, dzięki czemu łatwiej będzie Ci operować na całym zestawie danych.
+
+```Java
+List<String[]> lines = reader.readAll();
+```
+
+Możesz także zastosować różne ustawienia odnośnie separatora kolumn, znaku końca linii czy nawet kodowania znaków.
+
+```Java
+CSVReader reader = new CSVReaderBuilder(new FileReader("dane.csv"))
+                        .withSeparator(';')
+                        .withSkipLines(1)
+                        .withEncoding("UTF-8")
+                        .build();
+```
+
+Jeśli chcesz wprowadzić zmiany w pliku CSV, możesz użyć klasy CSVWriter z tego samego pakietu opencsv.
+
+```Java
+CSVWriter writer = new CSVWriter(new FileWriter("nowe_dane.csv"), ',');
+```
+
+Następnie, możesz wykorzystać metodę writeNext, aby dodać nowy wiersz do pliku.
+
+```Java
+String[] newRow = {"Katarzyna", "Wiśniewska", "24"};
+writer.writeNext(newRow);
+```
+
+Dodatkowo, opencsv umożliwia także odczyt danych z pliku CSV do obiektów zdefiniowanych przez użytkownika w sposób automatyczny, dzięki wykorzystaniu adnotacji.
 
 ## Zobacz również
 
-Ciekawe artykuły i materiały dotyczące pracy z CSV w języku Java:
+Jeśli chcesz dowiedzieć się więcej o pracy z plikami CSV w języku Java, polecam przeczytać dokumentację pakietu opencsv oraz poniższe artykuły:
 
-- [Jak pracować z plikami CSV w Java](https://www.baeldung.com/java-csv)
-- [Apache Commons CSV - dokumentacja](https://commons.apache.org/proper/commons-csv/)
-- [OpenCSV - dokumentacja](http://opencsv.sourceforge.net/)
+- [Jak pracować z plikami CSV w języku Java](https://www.baeldung.com/java-csv)
+- [Pliki CSV w języku Java – sposoby odczytu danych](https://www.sam

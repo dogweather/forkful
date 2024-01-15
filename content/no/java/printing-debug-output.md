@@ -1,6 +1,7 @@
 ---
-title:                "Java: Utskrift av feilsøkingsmeldinger"
-simple_title:         "Utskrift av feilsøkingsmeldinger"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Java: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -9,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Java-programmering innebærer vanligvis å løse komplekse problemer og feilsøke koden din er en viktig del av prosessen. Å trykke debug-utgang er en effektiv måte å identifisere feil og forstå hvordan koden din kjører.
+## Hvorfor
+Hvorfor skulle noen ønske å skrive ut debug-utdata? Vel, for å forenkle feilsøkingen! Ved å skrive ut relevante verdier og meldinger kan man raskt finne ut hvor det oppstår problemer i koden og deretter løse dem.
 
-##Slik gjør du det
-Debug-utgang kan enkelt oppnås ved å bruke Java's "System.out.println()" -funksjon. La oss si at vi har en enkel variabel definert som "int num = 5;" og vi ønsker å skrive ut verdien av variabelen vår. Dette kan gjøres ved å skrive "System.out.println(num);" og når vi kjører koden, vil outputet vårt være "5" i konsollen.
+## Hvordan gjøre det
+Her er et eksempel på hvordan man kan skrive ut en enkel melding i Java:
 
-En annen nyttig funksjon er "System.out.printf()", som lar deg formatere utdataen i konsollen din. For eksempel kan du skrive "System.out.printf("Variabelen vår er %d", num);" og utdataen vil være "Variabelen vår er 5" i stedet for bare tallet 5.
+```Java
+System.out.println("Dette er en debug-melding!");
+```
+
+Dette vil skrive ut teksten "Dette er en debug-melding!" i konsollen når man kjører programmet. Det er viktig å huske å inkludere `System.out` for å indikere at meldingen skal skrives ut i konsollen.
+
+Man kan også skrive ut verdier av variabler ved å bruke `System.out.println()` kombinert med variabelnavnet. For eksempel:
 
 ```Java
 int num = 5;
-
-//Skriver ut verdien av variabelen
-System.out.println(num);
-
-//Formatterer utdatoen med printf
-System.out.printf("Variabelen vår er %d", num);
+System.out.println("Verdien av num er: " + num);
 ```
 
-##Dypdykk
-Å trykke utdebug-utgang er spesielt nyttig når man ønsker å sjekke verdien av variabler og forstå hvordan koden din kjører gjennom ulike deler av programmet. Det er også nyttig når man ønsker å finne og fikse feil i koden.
+Dette vil skrive ut "Verdien av num er: 5" i konsollen. Merk at `System.out.println()` tar inn en streng som argument, derfor må man bruke `+` for å kombinere strenger og variabler.
 
-En annen måte å bruke utdebug-utgang på er å legge til egendefinerte meldinger for å forstå hva som skjer i koden din. For eksempel kan du skrive "System.out.println("Øker variabelen vår med 1.");" for å vite når og hvor variabelen din øker med 1.
+## Dykk dypere
+Å skrive ut debug-utdata er spesielt nyttig når man jobber med større og mer komplekse programmer. Ved å skrive ut verdier i ulike deler av koden, kan man få en bedre forståelse av hvordan data flyter gjennom programmet og identifisere hvor problemer oppstår.
 
-##Se også
-- [Java's offisielle dokumentasjon om debugging](https://docs.oracle.com/javase/7/docs/technotes/guides/jpda/)
-- [10 debugging tips for Java-utviklere](https://www.javacodegeeks.com/2017/09/10-debugging-tips-java-developers.html)
-- [Feilsøking i Java - Feilsøking for nybegynnere](https://stackify.com/guide-java-debugging-tips/)
+En nyttig teknikk er å bruke `System.out.println()` i kombinasjon med betingede uttrykk, for eksempel:
+
+```Java
+if (num < 10) {
+    System.out.println("Num er mindre enn 10!");
+} else {
+    System.out.println("Num er større enn 10!");
+}
+```
+
+Dette vil skrive ut en melding basert på verdien av `num`. Dersom verdien er mindre enn 10, skrives den første meldingen ut, ellers vil den andre meldingen bli skrevet ut.
+
+Et annet tips er å bruke **logging**, som er en mer avansert måte å skrive ut informasjon i koden. Ved å bruke logging kan man også velge hvilke meldinger som skal skrives ut basert på ulike nivåer av kritikalitet.
+
+## Se også
+- [Java dokumentasjon om debugging](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#setting_debug_options)
+- [Java logging tutorial](https://www.baeldung.com/java-logging-intro)
+- [Best practices for debugging Java code](https://www.udemy.com/blog/java-debugging-tips/)

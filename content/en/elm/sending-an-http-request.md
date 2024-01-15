@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Elm recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,76 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you are new to Elm programming, you may be wondering why someone would need to send an HTTP request. Well, HTTP requests are a crucial part of web development as they allow us to communicate with servers and retrieve data, which is necessary for building dynamic and interactive web applications.
+Sending HTTP requests is a crucial part of modern web development. Whether you are retrieving data from an external API or posting information to a server, understanding how to send HTTP requests in Elm is essential for building dynamic and interactive web applications.
 
 ## How To
 
-Sending an HTTP request in Elm is a fairly straightforward process. Let's take a look at an example:
+To send an HTTP request in Elm, we first need to import the `Http` module.
 
-```elm
-import Browser
+```Elm
 import Http
-import Json.Decode exposing (..)
-
-type alias User = {
-    id: Int,
-    name: String,
-    email: String
-}
-
-getUserInfo : Int -> Cmd Msg
-getUserInfo userId =
-    let
-        url = "https://example.com/users/" ++ (toString userId)
-        request = Http.get url userDecoder
-    in
-        Http.send UserFetched request
-
-userDecoder : Decoder User
-userDecoder =
-    decode User
-        |> field "id" int
-        |> field "name" string
-        |> field "email" string
-
-type Msg
-    = UserFetched (Result Http.Error User)
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        UserFetched (Ok user) ->
-            { model | user = Just user } ! []
-
-        UserFetched (Err error) ->
-            -- handle error
-
-view : Model -> Browser.Document Msg
-view model =
-    div []
-        [ button [ onClick (getUserInfo 1) ] [ text "Get User Info" ]
-        , div [] [ text (toString model.user) ]
-        ]
 ```
 
-In this example, we are using the `Http` package to make a `GET` request to `https://example.com/users/{userId}`. The `getUserInfo` function takes in a user ID and returns a `Cmd Msg` which will eventually trigger the `UserFetched` message with the result of the HTTP request.
+Next, we can use the `send` function from the `Http` module to create and send our request. It takes two arguments, the first being the configuration for the request and the second being a decoder that will handle the response.
 
-We also define a `userDecoder` which specifies the structure of the data we expect to receive from the server. This is necessary for decoding the JSON response into a `User` record.
+```Elm
+request : Http.Request String
+request =
+    Http.get
+        { url = "https://jsonplaceholder.typicode.com/todos/1"
+        , expect = Http.expectString id
+        }
 
-In the `update` function, we handle the `UserFetched` message by updating our model with the retrieved user data. Finally, in the `view` function, we display a button that triggers the `getUserInfo` function and also display the retrieved user information on the page.
+send request
+```
 
-This is just a basic example of sending an HTTP request in Elm. There are many more options and features available, which we will cover in the next section.
+In this example, we are making a `GET` request to the URL of the JSON placeholder API, which will return the first todo item in the form of a string. We use `Http.expectString id` as our decoder, which simply returns the raw string response without any changes.
+
+Once the request is sent, it will return a response in the form of an `Http.Response` type, which we can handle using the `send` function. Here is an example of how we can handle the response and display it on the page using `Html`.
+
+```Elm
+Html.text response.body
+```
+
+This will display the response body on the page, which in this case would be the string "the first todo item".
 
 ## Deep Dive
 
-The `Http` package in Elm allows us to make various types of HTTP requests such as `GET`, `POST`, `PUT`, `DELETE`, etc. We can also specify headers, attach data, and handle errors in a more detailed manner.
+The `Http` module in Elm comes with various functions that allow us to customize and handle different types of requests, such as `get`, `post`, `put`, and `delete`. We can also add headers and data to our request using the `Http.Header` and `Http.stringBody` functions.
 
-One important thing to keep in mind while sending HTTP requests in Elm is that they are asynchronous, meaning that they won't block the execution of other code. Instead, they will be handled by the Elm runtime and eventually trigger a message with the response.
-
-To learn more about sending HTTP requests in Elm, I highly recommend checking out the official documentation and trying out different examples.
+Additionally, Elm provides a built-in error handling mechanism for HTTP requests, using the `Http.Error` type. This allows us to handle various error scenarios, such as network failures, timeouts, and invalid or unexpected responses.
 
 ## See Also
 
-- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest)
-- [Sending HTTP requests with Elm](https://dev.to/victorlourng/sending-http-requests-with-elm-and-fetch-12ol) (external blog post)
-- [Handling async requests in Elm](https://levelup.gitconnected.com/handling-async-requests-in-elm-ca74a7a0fd83) (external blog post)
+- `Http` module documentation: https://package.elm-lang.org/packages/elm/http/latest/
+- Guide to building web apps with Elm: https://guide.elm-lang.org/webapps/

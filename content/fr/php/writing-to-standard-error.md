@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Ecrire sur l'erreur standard"
-simple_title:         "Ecrire sur l'erreur standard"
+title:                "Écrire sur l'erreur standard"
+html_title:           "PHP: Écrire sur l'erreur standard"
+simple_title:         "Écrire sur l'erreur standard"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi
 
-L'écriture sur la sortie d'erreur standard, ou "standard error", peut sembler une étape inutile dans un script PHP. Cependant, cela peut être très utile pour le débogage et la gestion des erreurs lors du développement d'applications web. Dans cet article, nous allons explorer pourquoi il est important d'écrire sur la sortie d'erreur standard et comment le faire efficacement. 
+Ecrire sur le flux d'erreur (standard error) est un moyen simple et efficace d'enregistrer des informations à des fins de débogage ou de suivi des erreurs lors du développement d'applications en PHP.
 
-## Comment faire 
+# Comment Faire
 
-Pour écrire sur la sortie d'erreur standard en PHP, vous pouvez utiliser la fonction `fwrite()` en spécifiant le descripteur de fichier pour la sortie d'erreur standard, qui est `STDERR`. Par exemple : 
+L'écriture sur le flux d'erreur en PHP est très simple. Tout d'abord, il est important de comprendre que le flux d'erreur est un flux de sortie par lequel les erreurs et les avertissements sont généralement affichés. Pour y écrire, il suffit d'utiliser la fonction "fwrite()" en spécifiant le flux dans lequel écrire, suivi du message à enregistrer.
 
-```PHP
-fwrite(STDERR, "Erreur : Une variable n'a pas été définie");
-```
-
-Cela enverra un message d'erreur à la console ou au fichier de log, selon la configuration de votre serveur. Vous pouvez également utiliser `error_log()` pour écrire directement dans un fichier de log défini. 
-
-Il est également important de noter que l'on peut utiliser `try...catch` pour capturer les erreurs et les écrire sur la sortie d'erreur standard. Par exemple : 
+Par exemple :
 
 ```PHP
-try {
-  // Code susceptible de générer une erreur
-} catch (Exception $e) {
-  fwrite(STDERR, "Erreur : ".$e->getMessage());
-}
+fwrite(STDERR, "Erreur : Impossible de se connecter à la base de données !");
 ```
 
-## Plongée en profondeur 
+Ce code écrira le message "Erreur : Impossible de se connecter à la base de données !" sur le flux d'erreur.
 
-L'écriture sur la sortie d'erreur standard peut être particulièrement utile lors du développement d'applications web. Cela permet de détecter et de gérer les erreurs plus facilement, en les enregistrant dans un fichier dédié ou en les affichant dans la console pour un débogage rapide. 
+Si vous voulez enregistrer une erreur spécifique à une variable, vous pouvez utiliser la fonction "error_log()" pour écrire directement sur le flux d'erreur. Par exemple :
 
-En plus de cela, écrire sur la sortie d'erreur standard peut également être utilisé pour améliorer la sécurité de votre application. En logguant les erreurs, vous pouvez repérer et résoudre rapidement les vulnérabilités potentielles de votre code. 
+```PHP
+$erreur = "Erreur : Impossible de se connecter à la base de données !";
+error_log($erreur, 3, "/chemin/vers/le/fichier/erreur.log");
+```
 
-## Voir aussi 
+Ce code écrira le message dans le fichier "erreur.log" situé dans le chemin spécifié.
 
-- [Tutoriel PHP complet pour les débutants](https://www.w3schools.com/php/)
-- [Documentation officielle de PHP sur fwrite()](https://www.php.net/manual/fr/function.fwrite.php)
-- [Guide de débogage PHP](https://www.php.net/manual/fr/debugger.php)
+# Plongée Profonde
+
+Ecrire sur le flux d'erreur peut également être très utile lors du débogage d'une application. En utilisant la fonction "error_reporting()", vous pouvez définir le niveau des erreurs à afficher sur le flux d'erreur, ce qui vous permet de ne voir que les erreurs pertinentes pour votre débogage. Par exemple :
+
+```PHP
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+```
+
+Ce code définira le niveau d'erreur à afficher sur le flux d'erreur pour inclure uniquement les erreurs fatales, les avertissements et les erreurs de syntaxe.
+
+Il est également possible d'activer l'écriture sur le flux d'erreur dans le fichier de configuration php.ini en définissant l'option "log_errors" sur "On". Cela enregistrera toutes les erreurs sur le flux d'erreur.
+
+# Voir Aussi
+- [Documentation officielle de PHP sur les flux de sortie](https://www.php.net/manual/fr/features.commandline.io-streams.php)
+- [Guide complet sur la gestion des erreurs en PHP](https://www.php.net/manual/fr/book.errorfunc.php)

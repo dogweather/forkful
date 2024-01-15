@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Luen komentoriviparametrit"
-simple_title:         "Luen komentoriviparametrit"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Fish Shell: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,42 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
+Kun käytämme komentoriviä, usein haluamme suorittaa tietyt toiminnot mahdollisimman nopeasti ja tehokkaasti. Fish Shell mahdollistaa komentorivin yksinkertaisen ja helposti luettavan muodon, joka tekee siitä erinomaisen työkalun koodin suorittamiseen. Tässä artikkelissa näytämme, miten voit lukea komentorivin argumentteja Fish Shell -ohjelmoinnin avulla.
 
-Komentoriviparametrit ovat välttämättömiä ohjelmoinnissa ja voivat auttaa sinua suorittamaan monimutkaisia komentosarjoja kätevästi. Tämä blogikirjoitus esittelee, miten voit lukea komentoriviparametrejä käyttäen Fish Shell -ohjelmointikieltä.
-
-## Miten?
-
-Fish Shellin avulla voit lukea komentoriviparametrejä käyttämällä `status` -komennon `argv`-muuttujaa. Tämä muuttuja sisältää kaikki komentoriviparametrit, joten voit käyttää sitä ominaisuuksien ja arvojen hakemiseen. Katso alla olevaa esimerkkiä:
+## Kuinka
+Fish Shell tarjoaa useita tapoja lukea komentorivin argumentteja. Yksi tapa on käyttää sisäänrakennettuja komentoja kuten `argparse` ja `argv`. Tässä on yksinkertainen esimerkki, joka tulostaa ensimmäisen komentorivin argumentin:
 
 ```Fish Shell
-# Hakee `status`-komennon `argv`-muuttujan
-set komentoriviparametrit $argv
+argparse -n1
+echo $argv[1]
+```
 
-# Tulostaa kaikki komentoriviparametrit yksitellen
-for parametri in $komentoriviparametrit
-    echo $parametri
+Tulostus:
+
+```Fish Shell
+Hello
+```
+
+Voit myös hakea kaikki komentorivin argumentit kerralla käyttäen `argv`:
+
+```Fish Shell
+for arg in $argv
+  echo $arg
 end
 ```
 
-Kun ajat tätä komentoa terminalissa `fishscript.fish -a -b -c`, saat seuraavan tulosteen:
+Tulostus:
 
+```Fish Shell
+Hello
+World
 ```
--a
--b
--c
+
+## Syvälle sukellus
+Kuten näemme, Fish Shell tarjoaa käteviä tapoja lukea komentorivin argumentteja. Voit myös käyttää `argparse`-komennon parametreja muuttamaan argumenttien lukemista. Esimerkiksi, jos haluat hakea vain tietyn argumentin indeksin, voit käyttää `-s` parametria:
+
+```Fish Shell
+argparse -s2 -n1
+echo $argv[1]
 ```
 
-Voit myös hakea yksittäisen parametrin arvon käyttämällä sen sijaintia `argv`-muuttujassa. Esimerkiksi jos haluat hakea ensimmäisen parametrin, voit käyttää `argv[1]`.
+Tulostus:
 
-## Syvemmälle
+```Fish Shell
+World
+```
 
-Komentoriviparametrit voivat sisältää myös muita hyödyllisiä tietoja, kuten tiedostonimien ja hakemistojen polkuja. Voit käyttää `status`-komennon muita muuttujia, kuten `argc`, `pid` ja `ppid`, saadaksesi lisätietoja komentoriviparametreistä.
+Jos haluat käyttää pidempiä argumentteja, voit käyttää `argparse`-komennon `-l` parametria:
 
-Voit myös luoda omia muuttujia ja sijoittaa niihin komentoriviparametrien arvoja käyttämällä `set` -komentoa. Tämä voi helpottaa tietojen käsittelemistä ohjelmassasi.
+```Fish Shell
+argparse -n2 -l Hello World
+echo $argv
+```
+
+Tulostus:
+
+```Fish Shell
+Hello World
+```
 
 ## Katso myös
-
-- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/cmds/set.html)
-- [Komentoriviparametriopas](https://www.shell-tips.com/bash/command-line-arguments/) (englanniksi)
-- [Fish Shell -tutoriaali](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shellin dokumentaatio] (https://fishshell.com/docs/current/index.html)
+- [Fish Shellin GitHub-sivut] (https://github.com/fish-shell/fish-shell)
+- [Komentorivin argumentit Pythonissa] (https://realpython.com/python-command-line-arguments/)

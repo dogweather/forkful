@@ -1,6 +1,7 @@
 ---
-title:                "Java: Escribir en la salida de error estándar"
-simple_title:         "Escribir en la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Java: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en standard error en Java?
+## ¿Por qué escribir en la salida estándar de error?
 
-Escribir en standard error en Java es una práctica común en la programación, ya que permite que los desarrolladores puedan detectar y solucionar errores de manera más eficiente. Esto permite que el código sea más robusto y confiable, lo cual es esencial en el mundo de la programación.
+Escribir en la salida estándar de error es una técnica común en la programación en Java. Es una manera de mostrar mensajes de error o advertencia al usuario durante la ejecución del programa. Esto permite una mejor gestión de errores y ayuda a mejorar la calidad del código.
 
 ## Cómo hacerlo
 
-Para escribir en standard error en Java, primero debemos importar la clase "System". Luego, podemos usar el método "err" de la clase "System" para imprimir nuestro mensaje o error. Veamos un ejemplo:
+Para escribir en la salida estándar de error en Java, se utiliza el objeto System.err. A continuación se muestra un ejemplo de cómo imprimir un mensaje de error en la consola:
 
 ```Java
-import java.lang.System;
-
-System.err.println("¡Este es un mensaje de error!");
+System.err.println("¡Error! Algo salió mal.");
 ```
 
-Al ejecutar este código, veremos el siguiente resultado en nuestra consola:
+El resultado de este código sería:
 
 ```
-¡Este es un mensaje de error!
+¡Error! Algo salió mal.
 ```
 
-Podemos notar que este mensaje aparece en rojo, lo cual facilita su identificación y nos ayuda a encontrar rápidamente cualquier error en nuestro código.
+Además de imprimir un mensaje de error, también se pueden escribir otros tipos de datos en la salida estándar de error, como números o caracteres. Todo lo que se imprima utilizando el objeto System.err se mostrará en la consola con un color rojo, lo que ayuda a identificar fácilmente los mensajes de error en medio de la salida estándar de la ejecución del programa.
 
-Es importante mencionar que al igual que con la impresión en standard output (con el método "out" de la clase "System"), también podemos usar el método "print" o "println" para imprimir en standard error:
+## Profundizando
 
-```Java
-System.err.print("Este es un mensaje");
-System.err.println(" de error");
-```
+Hay diferentes escenarios en los que escribir en la salida estándar de error puede ser útil. Por ejemplo, si se está trabajando en un proyecto en equipo y se desea colaborar con otros programadores, escribir en la salida estándar de error puede ser una manera de comunicar problemas o advertencias de manera clara y concisa. También es útil cuando se están realizando pruebas de código y se necesita ver cuando ocurre un error específico.
 
-El resultado sería el mismo que en el ejemplo anterior.
-
-## Profundizando en la escritura en standard error
-
-Al igual que en standard output, es posible redirigir la salida de standard error hacia un archivo o cualquier otro lugar que deseemos. También podemos utilizar otros métodos de la clase "System.err", como "format" para dar formato a nuestros mensajes de error o "flush" para limpiar el buffer antes de imprimir.
-
-Otra ventaja de la escritura en standard error es que podemos combinarla con la captura de excepciones, lo que nos permite manejar mejor los errores en nuestro código.
-
-En resumen, escribir en standard error en Java es una práctica importante y útil que nos ayuda a mejorar la calidad de nuestro código y a solucionar errores de manera más eficiente.
+Además de imprimir mensajes de error en la salida estándar de error, también es posible redirigir esta salida a un archivo de texto. Esto puede ser útil para guardar registros o para informar sobre errores en un archivo específico en lugar de imprimirlos en la consola.
 
 ## Ver también
 
-- [Cómo imprimir en consola en Java](https://www.codingame.com/playgrounds/24675/como-imprimir-en-consola-en-java)
-- [Documentación oficial de la clase System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Tutorial de manejo de excepciones en Java](https://www.javatpoint.com/exception-handling-in-java)
+- [Java documentation on System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Tutorial on Standard I/O in Java](https://www.tutorialspoint.com/java/java_system_class.htm)
+- [Stack Overflow thread discussing the use of System.err](https://stackoverflow.com/questions/8366080/difference-between-system-out-println-and-system-err-println-in-java)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Clojure: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,57 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Testien kirjoittaminen on tärkeä ja välttämätön osa ohjelmistokehitystä. Se auttaa varmistamaan koodin toimivuuden ja parantaa sen luotettavuutta ja laadukkuutta. Lisäksi se helpottaa tulevien muutosten tekemistä, sillä testien avulla voidaan nopeasti havaita mahdolliset virheet ja korjata ne ennen kuin ne aiheuttavat suurempia ongelmia.
+Miksi joku haluaisi kirjoittaa testejä ohjelmointikoodiinsa? Tämä voi tuntua turhalta ja aikaa vievältä, mutta todellisuudessa testit ovat erittäin hyödyllisiä ja säästävät aikaa ja vaivaa pitkällä aikavälillä. Testien kirjoittamisen avulla voit varmistaa, että koodisi toimii odotetusti ja välttää mahdollisia bugeja ja virheitä.
 
 ## Kuinka
 
-Testien kirjoittaminen Clojure-kielellä on helppoa ja sujuvaa. Seuraavassa on muutamia esimerkkejä ja tulostuksia testien kirjoittamisesta käyttämällä ```Clojure ...``` lohkoja:
+### Käyttötapaukset testaamiselle
 
-```
-(ns tests.core-test
+Ensinnäkin, on tärkeää ymmärtää, milloin ja miksi sinun pitäisi testata koodiasi. Joskus testaaminen voi olla tarpeetonta, varsinkin jos kyseessä on yksinkertainen ohjelma tai pieni koodipätkä. Kuitenkin, jos projektisi on monimutkainen ja/tai jaettu useaan eri osaan, testien kirjoittaminen voi olla hyödyllistä ja jopa välttämätöntä.
+
+Toiseksi, sinun pitäisi miettiä, mitä haluat testata. Voit esimerkiksi haluta varmistaa, että tietty funktio toimii odotetulla tavalla tai että tiettyjä reunaehtoja käsitellään oikein. On myös hyvä miettiä, millaisia tuloksia testiltäsi odotat ja miten testituloksia tulisi tulkita.
+
+### Toteutus
+
+Testien kirjoittaminen Clojurella on suhteellisen helppoa ja suoraviivaista. Voit käyttää kahta eri tapaa testien kirjoittamiseen: joko käyttämällä Clojuren sisäänrakennettua [```clojure.test```](https://clojure.github.io/clojure/clojure.test-api.html) kirjastoa tai käyttämällä suositumpaa [```expectations```](https://github.com/clojure-expectations/expectations) kirjastoa.
+
+Alla on esimerkki testin kirjoittamisesta Clojuren sisäänrakennetulla kirjastolla:
+
+```clojure
+(ns example.core-test
   (:require [clojure.test :refer :all]
-            [tests.core :refer :all]))
+            [example.core :refer :all]))
 
-(deftest addition-test
-  (testing "Addition should return correct result"
-    (are [a b expected] (= expected (addition a b))
-      5 2 7
-      0 0 0))))
-
-;; Tulostus:
-;; Testing addition-test
-;; Ran 2 tests containing 2 assertions.
-;; 0 failures, 0 errors.
+(deftest test-addition
+  (is (= 10 (addition 4 6))))
 ```
 
-```
-(ns tests.core-test
-  (:require [clojure.test :refer :all]
-            [tests.core :refer :all]))
+Testi hyödyntää Clojuren ```is``` -funktiota, joka tarkastaa, että kaksi arvoa ovat samat. Tässä tapauksessa testi varmistaa, että ```addition``` -funktio tuottaa oikean tuloksen, kun sille annetaan parametreiksi 4 ja 6.
 
-(deftest division-test
-  (testing "Division should return correct result"
-    (are [a b expected] (= expected (division a b))
-      10 2 5
-      9 3 3
-      20 0 nil))))
+Käyttämällä expectations-kirjastoa, testi voisi näyttää tältä:
 
-;; Tulostus:
-;; Testing division-test
-;; Ran 3 tests containing 3 assertions.
-;; 0 failures, 0 errors.
+```clojure
+(expect (= 10 (addition 4 6)))
 ```
 
-## Syvällinen sukellus
+Expectations-teknologia on hieman helpompi ja intuitiivisempi verrattuna sisäänrakennettuun ```clojure.test``` -kirjastoon. Valinta on lopulta oma mieltymyksesi mukaan.
 
-Testien kirjoittaminen Clojurella noudattaa yleistä ohjelmointilogiikkaa. Ensimmäinen vaihe on määritellä testitapaukset, jotka tarkistavat kunkin funktion eri syötteillä. Tämän jälkeen käytetään ```are``` lohkoa, joka testaa syötteiden ja odotetun tuloksen välisen yhtäläisyyden.
+## Syventyvä tarkastelu
 
-On myös tärkeää muistaa testata myös virheellisillä syötteillä, jotta koodi kestää mahdollisimman monenlaisia tilanteita. Tämä voidaan tehdä esimerkiksi käyttämällä ```defspec``` tai ```s/check``` - toimintoja Speclib-kirjastosta.
+Testien kirjoittaminen voi tuntua turhalta työltä, varsinkin jos projektisi on vielä alkuvaiheessa. Kuitenkin, ajan myötä ja projektin kasvaessa, testit ovat erittäin tärkeitä, kun haluat varmistaa, että uudet muutokset eivät riko jo olemassa olevaa toiminnallisuutta.
 
-Lopuksi, on tärkeää muistaa suorittaa testit ennen kuin siirrytään tuotantokoodin tekemiseen. Tämä varmistaa, että kirjoitettu koodi toimii odotetulla tavalla ja estää virheiden pääsemisen tuotantoon.
-
-## Katso myös
-
-- Clojure-testauksen perusteet: https://clojure.org/guides/getting_started#_testing
-- Speclib-kirjaston dokumentaatio: https://github.com/slagyr/speclj
-- Ohjelmistotestauksen merkitys: https://www.testimoi.fi/mita-testaus-on/
+On myös hyvä huomata, että testien kirjoittaminen auttaa myös koodin ymmärtämisessä ja ylläpitämisessä. Kun sinulla on selkeästi määritellyt testit, voit käyttää niitä myös dokumentointina koodiasi kohtaan. Lisäksi, testejä voi käyttää myös debuggaamisessa, kun haluat selvitt

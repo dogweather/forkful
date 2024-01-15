@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,45 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det kan være nyttig å sammenligne to datoer i Clojure for å kunne organisere og filtrere data basert på en gitt tidsperiode. Dette kan være nyttig i en rekke tilfeller, som for eksempel å analysere salgstall over en periode eller planlegge fremtidige aktiviteter basert på tidligere erfaringer.
 
-Sammenligning av datoer er en vanlig oppgave ved programmering. Det kan være nyttig for å sortere data, filtrere ut informasjon eller for å lage komplekse logikker. Å kunne sammenligne to datoer i Clojure kan være nyttig for å gjøre koden din mer effektiv og nøyaktig.
+## Slik gjør du det
+```Clojure
+(def dato1 (modded-date 2021 2 1))
+(def dato2 (modded-date 2021 3 1))
 
-## Hvordan du gjør det
-
-For å sammenligne to datoer i Clojure, kan du bruke funksjonen `clojure.time/compare`. Denne funksjonen sammenligner to datoer og returnerer et tall som viser hvilken av datoene som er større. La oss se på et eksempel:
-
-```clojure
-(require '[clojure.time :as time])
-(def today (time/today))
-(def tomorrow (time/tomorrow))
-(time/compare today tomorrow)
+(println "Er dato1 før dato2? " (< dato1 dato2))
+(println "Er dato1 etter dato2? " (> dato1 dato2))
+(println "Er dato1 og dato2 like? " (= dato1 dato2))
+```
+Output:
+```
+Er dato1 før dato2? true
+Er dato1 etter dato2? false
+Er dato1 og dato2 like? false
 ```
 
-Dette vil gi følgende output:
+## Dypdykk
+I Clojure er det flere funksjoner som kan brukes for å sammenligne datoer. En vanlig metode er å konvertere datoene til et numerisk format, for eksempel antall sekunder siden starten av Unix-tiden. Dette gjør det enklere å sammenligne datoer ved hjelp av de innebygde sammenligningsfunksjonene (<, >, =).
 
-```clojure
--1
-```
-
-Her indikerer tallet `-1` at `today` er mindre enn `tomorrow`. Du kan også sammenligne med andre operatører, for eksempel `>` eller `<`. La oss se på et annet eksempel:
-
-```clojure
-(> tomorrow today)
-```
-
-Dette vil gi følgende output:
-
-```clojure
-true
-```
-
-Som du kan se, er dette en enkel måte å sammenligne datoer på i Clojure.
-
-## Dykk dypere
-
-Når man sammenligner datoer, er det viktig å huske på at Clojure bruker Joda-time biblioteket for å håndtere datoer og tidspunkt. Dette betyr at det er mange funksjoner og metoder tilgjengelig for å gjøre mer komplekse sammenligninger. For å lære mer om Joda-time i Clojure, kan du sjekke ut offisiell dokumentasjon: https://clojure.github.io/java.time-api/introduction.html.
+En annen metode er å bruke funksjonen `compare`, som returnerer en negativ, positiv eller null verdi avhengig av om den første datoen er mindre enn, større enn eller lik den andre datoen. Dette gjør det enklere å bruke datoer som nøkler i et map eller sorteringsfunksjoner.
 
 ## Se også
-
-- https://clojure.github.io/java.time-api/introduction.html
-- https://github.com/clj-time/clj-time/wiki/Time-Comparisons
+- [ClojureDocs: Comparing Dates](https://clojuredocs.org/clojure.core/compare)
+- [ClojureDocs: Date and Time Functions](https://clojuredocs.org/clojure.java-time)
+- [Clojure Cookbook: Comparing Dates and Times](https://clojure-cookbook.net/dates-and-times/comparing)

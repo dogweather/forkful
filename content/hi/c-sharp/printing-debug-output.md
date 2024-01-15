@@ -1,6 +1,7 @@
 ---
-title:                "C#: डिबग आउटपुट प्रिंट करना"
-simple_title:         "डिबग आउटपुट प्रिंट करना"
+title:                "डिबग आउटपुट छापना"
+html_title:           "C#: डिबग आउटपुट छापना"
+simple_title:         "डिबग आउटपुट छापना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -9,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## आखिर डेबग आउटपुट प्रिंट करने का क्या मतलब है?
+## Kyu
+Kya aap kabhi apne C# code ke saath debugging kiya hai? Agar haan, toh aapne shayad debug output ka istemal kiya hoga. Debug output, ya fir console output, ek aasan aur zaroori tarika hai apne code ke har step ko samajhne ka. Is article mein hum baat karenge debug output ka istemal karna kyu zaroori hai.
 
-डेबग आउटपुट प्रिंट करना किसी प्रोग्रामर के लिए एक अनिवार्य कार्य है। यह उन्हें उनकी कोड में विभिन्न समस्याओं को शुद्ध करने में मदद करता है। इससे एक प्रोग्राम को दिखाई गई सभी गलतियों का पता चलता है और उसे ठीक करने में आसानी होती है।
+## Kaise Kare
+Debug output ka istemal karna C# mein kaafi aasaan hai. Sabse pehle, aapko ```Console.WriteLine()``` method ka istemal karna hai. Is method mein aapko kuch bhi print karna hai apne console mein, jaise ki variables ke values, messages, ya fir error messages.
 
-## कैसे करें?
-
-जब आप अपने कोड को लिख रहे हों और उसमें समस्या हो, तो आप दिब्बघर आउटपुट के माध्यम से उसमें गलती को ढूंढ सकते हैं। आप अपने कोड में कुछ स्टेटमेंट्स जोड़ सकते हैं जो आपको आगे से पता चलेगा कि आपका कोड कहां गलत है। इन स्टेटमेंट्स को "कंसोल.राइटलाइन" के साथ शामिल किया जा सकता है। नीचे एक उदाहरण दिया गया है:
+Maan lijiye aapko ek program banana hai, jisme aap user se ek number input lete hain aur us number ka square calculate karke print karte hain. Is situation mein, aap debugging ke liye output print kar sakte hain, jaise ki:
 
 ```C#
-int num1 = 5;
-int num2 = 0;
-int result = num1 / num2;
-
-Console.WriteLine("Result: " + result);
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input number: {0}", num);
+int square = num * num;
+Console.WriteLine("Square: {0}", square);
 ```
 
-इस कोड में, हमने "कंसोल.राइटलाइन" के माध्यम से अपने कोड के बीच में स्थानिय परिवर्तनों को प्रिंट करने के लिए जोड़ा है। जोड़ने के बाद, हम अनुमान लगा सकते हैं कि किस खंड में गड़बड़ हो रही है। इस मामले में, हमें लंबे समय तक अपना कोड मुख्य वापस बदलने की ज़रूरत नहीं होगी।
+Is code mein, humne ```Console.WriteLine()``` method ko 2 baar use kiya hai. Pehle, humne input number ko print kiya hai, taaki hume pata chal sake kis number ka square hum calculate kar rahe hain. Fir, humne square ka value print kiya hai.
 
-## गहराई में जानिए
+Ek aur tareeka debug output ka istemal karne ka hota hai ```Debug.WriteLine()``` method. Is method ko istemal karne ke liye, aapko System.Diagnostics namespace ko ```using``` statement ke saath include karna hoga.
 
-अब आप जान चुके हैं कि कंसोल राइटलाइन कैसे काम करता है और आप इसे अपने कोड में कैसे शामिल कर सकते हैं। अब ह
+## Deep Dive
+Debugging output ka istemal karne ka ek ke hazaar tareeko hote hain, lekin sabka ultimate goal ek hi hota hai - apne code ko debug karne ka aasan aur efficient tareeka. Debug output ka istemal karke, hum apne code ke errors aur bugs ko pakad sakte hain aur unhe fix kar sakte hain. Isse humara code stable aur reliable ban jata hai.
+
+Ek important point hai debug output ka istemal karna production code mein. Production code mein, debug output ka istemal avoid karna chahiye kyuki isse code ka execution slow ho sakta hai. Isliye, debug output ka istemal sirf development aur testing phase mein hi karna chahiye.
+
+## Dekhiye Bhi
+Agar aapko C# aur debugging se judi aur articles padhna hai, toh yeh links aapke kaam aasakte hain:
+1. [C# basics for beginners](https://www.tutorialspoint.com/csharp/index.htm)
+2. [Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
+3. [Best practices for debugging in C#](https://stackify.com/csharp-debugging-tips-tricks/)

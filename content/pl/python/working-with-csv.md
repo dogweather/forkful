@@ -1,5 +1,6 @@
 ---
-title:                "Python: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "Python: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "Python"
 category:             "Python"
@@ -11,72 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z plikami CSV jest niezbędna w wielu dziedzinach, takich jak analiza danych, tworzenie raportów lub praca z bazą danych. Python jest powszechnie używany do manipulowania plikami CSV, ponieważ jest łatwy w użyciu i dostępny dla wszystkich. W tym wpisie przeprowadzimy Cię przez podstawy pracy z plikami CSV w Pythonie, abyś mógł zacząć wykorzystywać je w swoich projektach!
+CSV to popularny format plików używany do przechowywania i przetwarzania danych tabelarycznych. Jest bardzo przydatny dla programistów, gdyż umożliwia łatwą wymianę danych między różnymi aplikacjami oraz możliwość ich dalszej obróbki.
 
 ## Jak to zrobić
 
-Python ma wbudowaną bibliotekę `csv`, która umożliwia nam łatwe parsowanie plików CSV. Najpierw musimy zaimportować tę bibliotekę:
-
-```python
+Konfiguracja środowiska:
+```Python
 import csv
 ```
 
-Następnie, aby otworzyć plik CSV, musimy użyć funkcji `open` i przekazać jej ścieżkę do naszego pliku oraz tryb "read" (`"r"`):
-
-```python
-with open("plik.csv", "r") as plik:
-    # kod
+Tworzenie pliku CSV:
+```Python
+with open('dane.csv', 'w', newline='') as csv_file:
+    writer = csv.writer(csv_file)
+    writer.writerow(["Imię", "Nazwisko", "Wiek"])
+    writer.writerow(["Jan", "Kowalski", 35])
+    writer.writerow(["Anna", "Nowak", 28])
 ```
 
-Teraz, gdy nasz plik jest otwarty, możemy użyć funkcji `reader` z biblioteki `csv`, aby przeczytać plik i zapisać go w zmiennej:
-
-```python
-with open("plik.csv", "r") as plik:
-    czytnik = csv.reader(plik)
+Odczytywanie pliku CSV:
+```Python
+with open('dane.csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    for row in reader:
+        print(row)
 ```
 
-Teraz nasza zmienna `czytnik` zawiera całą zawartość pliku CSV, w formie tabeli. Możemy na przykład wypisać całą zawartość tabeli:
-
-```python
-with open("plik.csv", "r") as plik:
-    czytnik = csv.reader(plik)
-
-    for wiersz in czytnik:
-        print(wiersz)
-```
-
-Kod ten wypisze wszystkie wiersze w naszym pliku CSV. Aby wyświetlić tylko wybrane kolumny lub wartości, możemy użyć indeksowania, na przykład `wiersz[0]` wyświetli pierwszą kolumnę.
-
-Jednak nie zawsze otrzymujemy idealnie sformatowany plik CSV, niekiedy musimy usunąć nagłówki lub puste wiersze, lub zmienić separator. W takich przypadkach możemy użyć funkcji `DictReader`, która pozwala nam odwoływać się do wartości wierszy po nazwie kolumy, a nie po indeksie:
-
-```python
-with open("plik.csv", "r") as plik:
-    czytnik = csv.DictReader(plik)
-
-    for wiersz in czytnik:
-        print(wiersz["kolumna"])
-```
-
-Pamiętaj, że jeśli zastosowaliśmy zmiany w naszym pliku CSV, należy go zapisać przed zamknięciem:
-
-```python
-with open("plik.csv", "w") as plik:
-    writer = csv.writer(plik)
-    # kod
-
-    writer.writerows() # zapisuje zmiany
+Zapisywanie danych do listy:
+```Python
+with open('dane.csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    data = list(reader)
+print(data)
 ```
 
 ## Głębsza analiza
 
-Pliki CSV są popularnym narzędziem do przechowywania i udostępniania danych, ale są też narażone na błędy podczas przekazywania lub modyfikowania. Dlatego ważne jest, aby pamiętać o podstawowych zasadach pracy z plikami CSV:
+CSV (Comma Separated Values) to format plików zwykle używany do przechowywania danych tabelarycznych, takich jak listy lub tabele. Każda linia pliku CSV reprezentuje jeden wiersz danych, a poszczególne pola są oddzielone przecinkami. Jest to format uniwersalny, który może być używany przez różne programy do przetwarzania danych.
 
-- Sprawdź format pliku - czy używany jest odpowiedni separator i czy pole tekstowe jest ograniczone cudzysłowami.
-- Usuń puste wiersze i kolumny, aby uniknąć wprowadzania błędów do analizy danych.
-- Uważaj na nazwy kolumn, aby nie zawierały polskich znaków lub znaków specjalnych.
+Podstawowy format pliku CSV można szybko i łatwo utworzyć lub odczytać za pomocą gotowych modułów jak `csv` w Pythonie. Przykładowe operacje, takie jak zapisywanie danych do listy lub wyświetlanie ich w konsoli, mają prostą i intuicyjną składnię. Jednak przy bardziej zaawansowanym przetwarzaniu danych w pliku CSV, warto zapoznać się z dokumentacją, aby dowiedzieć się o innych dostępnych funkcjach i opcjach.
 
-Pamiętaj również, że Python oferuje wiele innych bibliotek do pracy z plikami CSV, takich jak `pandas` czy `numpy`, dzięki którym możemy wygodniej analizować i przetwarzać nasze dane.
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja biblioteki csv w Pythonie](
+- [Dokumentacja modułu CSV w Pythonie](https://docs.python.org/3/library/csv.html)
+- [Poradnik dla początkujących: Obsługa plików CSV w Pythonie](https://realpython.com/python-csv/)
+- [10 przydatnych operacji na plikach CSV w Pythonie](https://www.datacamp.com/community/tutorials/pandas-read-csv)

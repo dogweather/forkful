@@ -1,5 +1,6 @@
 ---
-title:                "Python: Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Python: Utskrift av feilsøkingsutdata"
 simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Python"
 category:             "Python"
@@ -11,45 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å printe ut debug-output kan være en nyttig måte å feilsøke og forstå koden din på. Det kan hjelpe deg med å identifisere og løse problemer i programmet ditt, og bidra til å forbedre din generelle programmeringskunnskap.
+Hvis du noen gang har støtt på feil eller problemer i koden din, vet du hvor frustrerende det kan være å prøve å finne ut hva som går galt. Her kommer debugging inn i bildet - og en av de nyttigste verktøyene for å løse disse problemene er å bruke debug output. Ved å skrive ut variabler eller meldinger fra koden din kan du se nøyaktig hva som skjer i hvert trinn av kjøringen, og finne ut hvor feilen ligger.
 
 ## Hvordan
 
-For å skrive ut debug-output i Python, kan du bruke funksjonen `print()`. Denne funksjonen lar deg skrive ut verdier av variabler eller uttrykk rett i konsollen. La oss se på et eksempel:
+Det første trinnet for å bruke debug output i Python er å importere `print()` funksjonen:
 
 ```Python
-navn = "Marie"
-print("Hei, mitt navn er", navn)
+from __future__ import print_function
 ```
 
-Dette vil resultere i følgende utskrift til konsollen:
-
-```
-Hei, mitt navn er Marie
-```
-
-Du kan også legge til flere variabler eller tekster i en `print()`-funksjon ved å bruke komma mellom dem. Dette kan være nyttig når du ønsker å følge med på verdien av flere variabler samtidig.
-
-Debug-output kan også være nyttig når du jobber med løkker eller vil identifisere spesifikke deler av koden din. La oss se på et eksempel med en `while`-løkke:
+Deretter kan du bruke `print()` funksjonen til å skrive ut hva som helst du vil sjekke i koden din. La oss si at du har en variabel som heter `x` og du vil skrive ut verdien av den for å sjekke om det er riktig:
 
 ```Python
-tall = 1
-while tall < 10:
-    print("Tall:", tall)
-    tall += 1
+x = "Hello"
+print(x)
 ```
 
-Dette vil skrive ut tallene fra 1 til 9 i konsollen.
+Dette vil produsere følgende output når du kjører koden:
 
-## Dypdykk
+```Python
+Hello
+```
 
-Å printe debug-output kan også være nyttig når du ønsker å dele opp koden din og få en bedre forståelse for hvordan den fungerer. Ved å printe ut verdier i forskjellige deler av koden, kan du følge med på hvordan verdiene endrer seg og hvorfor.
+Du kan også legge til flere variabler eller strenger for å få mer informasjon:
 
-En annen måte å bruke debug-output på, er ved å bruke `assert`-setninger. Disse kan hjelpe deg med å teste om forventede verdier stemmer med faktiske verdier i koden din.
+```Python
+x = "Hello"
+y = "World"
+print(x, y)
+```
+
+Dette vil produsere følgende output:
+
+```Python
+Hello World
+```
+
+Du kan også bruke `print()` for å sjekke om betingelser blir oppfylt i `if` og `else` setninger:
+
+```Python
+x = 5
+if x > 10:
+    print("x er større enn 10")
+else:
+    print("x er mindre enn 10")
+```
+
+Dette vil gi følgende output, som viser at betingelsen ikke blir oppfylt og at koden går til `else` setningen:
+
+```Python
+x er mindre enn 10
+```
+
+## Deep Dive
+
+En annen nyttig måte å bruke debug output er å bruke `print()` til å sjekke verdien av variabler i løkker. Ved å skrive ut verdien etter hvert steg vil du kunne se hvordan den endrer seg og om den forventede verdien blir nådd.
+
+Du kan også legge til en ekstra parameter i `print()` funksjonen som viser hvilken linje i koden konsollen skriver ut fra. Dette kan være nyttig hvis du har mange print-statements eller arbeider med flere filer, og ønsker å vite nøyaktig hvilken del av koden som produserte visse output.
+
+```Python
+print("Dette er linje 10:", x)
+```
 
 ## Se også
 
-- [Python Tutorial: Basic Debugging Techniques](https://realpython.com/python-debugging-pdb/)
-- [Python Debugging Techniques: Working with Assertions](https://www.youtube.com/watch?v=ZcE4brP6_eI)
-- [Debugging in Python: A Simplified Guide](https://stackify.com/python-debugging-tips/)
-- [Debugging with print statements in Python](https://www.datacamp.com/community/tutorials/debugging-python-print-statements)
+Hvis du ønsker å lære mer om debugging og hvordan du kan bruke det effektivt i Python, kan du sjekke ut følgende ressurser:
+
+- [Offisiell dokumentasjon for debugging i Python](https://docs.python.org/3/library/pdb.html)
+- [En guide til å lage effektive print-statements i koden din](https://realpython.com/python-debugging-pdb/)

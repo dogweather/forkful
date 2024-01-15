@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé."
+html_title:           "Javascript: Calculer une date dans le futur ou le passé."
+simple_title:         "Calculer une date dans le futur ou le passé."
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,45 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Calculer des dates dans le futur ou le passé peut être utile dans de nombreuses situations, notamment pour planifier des tâches ou pour afficher des événements à venir sur un calendrier.
+Si vous avez déjà eu besoin de calculer une date dans le futur ou dans le passé, vous savez à quel point cela peut être utile. Que ce soit pour planifier un événement, créer des rappels ou simplement pour des besoins de programmation, il est important de savoir comment manipuler les dates en Javascript.
 
 ## Comment Faire
 
-Pour calculer une date dans le futur ou le passé en utilisant Javascript, il faut utiliser la méthode Date() et ses différentes propriétés et méthodes.
-
+Pour calculer une date dans le futur ou dans le passé en Javascript, la première étape consiste à créer un objet "Date" en utilisant la syntaxe suivante : 
 ```Javascript
-// Pour obtenir la date actuelle
-const now = new Date();
-
-// Pour calculer une date dans le futur
-const futureDate = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
-
-// Pour calculer une date dans le passé
-const pastDate = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-
-// Output:
-// futureDate: Fri Jan 22 2022 00:00:00 GMT+0100 (Central European Standard Time)
-// pastDate: Wed Jan 22 2020 00:00:00 GMT+0100 (Central European Standard Time)
-``` 
-
-Il est également possible d'utiliser les méthodes telles que .setFullYear(), .setMonth(), .setDate() pour modifier les valeurs de l'année, du mois ou du jour de la date. Ces méthodes peuvent également être utilisées pour réaliser des calculs plus complexes, comme par exemple ajouter ou soustraire plusieurs années à une date.
-
+let date = new Date();
+```
+Ensuite, pour ajouter ou soustraire une période de temps à cette date, vous pouvez utiliser les méthodes suivantes : 
+- Pour ajouter un certain nombre de jours : 
 ```Javascript
-// Pour calculer une date dans 3 ans
-const dateInThreeYears = new Date();
-dateInThreeYears.setFullYear(dateInThreeYears.getFullYear() + 3);
+date.setDate(date.getDate() + 10); // ajoute 10 jours à la date actuelle
+```
+- Pour soustraire un certain nombre de jours : 
+```Javascript
+date.setDate(date.getDate() - 5); // soustrait 5 jours de la date actuelle
+```
+- Pour ajouter un certain nombre de mois : 
+```Javascript
+date.setMonth(date.getMonth() + 6); // ajoute 6 mois à la date actuelle
+```
+- Pour soustraire un certain nombre de mois : 
+```Javascript
+date.setMonth(date.getMonth() - 2); // soustrait 2 mois de la date actuelle
+```
+- Pour ajouter un certain nombre d'années : 
+```Javascript
+date.setFullYear(date.getFullYear() + 2); // ajoute 2 années à la date actuelle
+```
+- Pour soustraire un certain nombre d'années : 
+```Javascript
+date.setFullYear(date.getFullYear() - 5); // soustrait 5 années de la date actuelle
+```
 
-// Output: Tue Jan 22 2024 20:43:55 GMT+0100 (Central European Standard Time)
-``` 
+Vous pouvez également utiliser ces méthodes pour définir une date spécifique en utilisant les paramètres de l'objet Date. Par exemple, pour créer une date pour le 25 décembre 2020 : 
+```Javascript
+let date = new Date(2020, 11, 25); // le mois commence à 0, donc décembre est représenté par 11
+```
 
 ## Plongée Profonde
 
-En calculant une date dans le futur ou le passé, il est important de prendre en compte les différences de gestion de temps entre les différents pays et fuseaux horaires. Il est donc recommandé d'utiliser des bibliothèques telles que Moment.js pour une plus grande précision et une meilleure gestion des dates.
+Comme mentionné précédemment, le mois dans Javascript commence à 0 plutôt qu'à 1. Cela signifie qu'en utilisant la méthode "setMonth()", vous devrez soustraire 1 au mois réel. Par exemple, pour définir le mois de décembre, vous devrez utiliser la valeur 11 plutôt que 12.
 
-De plus, il est important de comprendre le fonctionnement des méthodes Date() et leurs différentes propriétés afin d'éviter les erreurs de calcul.
+De plus, il existe des méthodes supplémentaires telles que "setHours()", "setMinutes()", "setSeconds()" et "setMilliseconds()" qui vous permettent de préciser l'heure pour une date spécifique.
 
-## Voir Aussi
+Enfin, pour obtenir le résultat sous forme de chaîne de caractères dans un format spécifique, vous pouvez utiliser la méthode "toLocaleDateString()" en spécifiant la langue et les options de format.
 
-- [Documentation officielle de Date() en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
-- [Moment.js](https://momentjs.com/)
-- [Exemples de calculs de dates en Javascript](https://www.w3schools.com/js/js_date_methods.asp)
+## See Also
+
+- [Documentation sur les objets Date en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
+- [Manipuler les dates en Javascript](https://www.developpez.net/forums/d1922954/javascript/general-javascript/manipuler-dates-javascript/)

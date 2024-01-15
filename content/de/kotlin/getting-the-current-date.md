@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Das aktuelle Datum erhalten."
-simple_title:         "Das aktuelle Datum erhalten."
+title:                "Das aktuelle Datum erhalten"
+html_title:           "Kotlin: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
- 
-Das Abrufen des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es kann verwendet werden, um zeitgesteuerte Aktionen auszulösen, Daten zu organisieren oder einfach nur als Teil einer Benutzeroberfläche angezeigt zu werden. Um das aktuelle Datum in einer Kotlin-Anwendung zu erhalten, gibt es verschiedene Ansätze, die wir im Folgenden besprechen werden.
+#Warum
 
-## Wie geht das?
- 
-Es gibt verschiedene Möglichkeiten, das aktuelle Datum in Kotlin zu erhalten. Eine davon ist die Verwendung der `DateTime`-Klasse aus der `java.time`-Bibliothek. Zunächst müssen wir diese importieren: 
+Das aktuelle Datum ist ein wichtiger Bestandteil der meisten Anwendungen und kann in verschiedenen Szenarien nützlich sein, wie zum Beispiel bei der Datenspeicherung oder der Anzeige von aktualisierten Informationen für den Benutzer.
 
-```Kotlin 
-import java.time.*
-```
+#Wie geht es
 
-Dann können wir einfach eine neue Instanz der `DateTime`-Klasse erstellen und diese in einer Variablen speichern:
-
-```Kotlin 
-val currentDate = LocalDateTime.now()
-```
-
-Wir können auch das Datum im angegebenen Format ausgeben, indem wir die `format`-Methode verwenden:
+Die aktuelle Datum in Kotlin zu erhalten ist einfach und erfordert nur eine kurze Codezeile. Wir benutzen die Methode `LocalDate.now()` um die aktuelle Datum zu erhalten und verwenden das optionale Argument `ZoneId` um die Zeitzone zu spezifizieren.
 
 ```Kotlin
-println(currentDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))
+val currentDate = LocalDate.now(ZoneId.of("Europe/Berlin"))
 ```
 
-Dies würde das Datum im Format "TT.MM.JJJJ" (z.B. 25.03.2021) ausgeben.
-
-## Deep Dive
- 
-Wenn wir uns eingehender mit dem Abrufen des aktuellen Datums in Kotlin beschäftigen, können wir verschiedene Optionen entdecken, die je nach Anwendungsfall nützlich sein können. Zum Beispiel können wir auch das aktuelle Datum und die Zeitzone berücksichtigen, indem wir die Methode `now(ZoneId: T)` verwenden:
+Um die aktuelle Datum in einem lesbaren Format auszugeben, können wir die Methode `format()` verwenden und ein passendes Muster für das gewünschte Datumformat angeben.
 
 ```Kotlin
-val currentDate = ZonedDateTime.now(ZoneId.of("Europe/Berlin"))
+val dateString = currentDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+println("Das aktuelle Datum ist: $dateString")
 ```
 
-Dies würde das aktuelle Datum und die aktuelle Uhrzeit in der Zeitzone "Europe/Berlin" zurückgeben.
+Die Ausgabe könnte dann folgendermaßen aussehen:
 
-Eine weitere interessante Option ist die Verwendung der `LocalDate`-Klasse, um nur das aktuelle Datum ohne die Zeitinformationen zu erhalten:
-
-```Kotlin
-val currentDate = LocalDate.now()
+```
+Das aktuelle Datum ist: 06.07.2021
 ```
 
-Diese Methode könnte nützlich sein, wenn wir nur das Datum benötigen und nicht an der genauen Uhrzeit interessiert sind.
+#Deep Dive
 
-## Siehe auch
- 
-- Die offizielle Dokumentation zur Kotlin-Datums- und Uhrzeitverwaltung: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/
-- Ein Tutorial zur Arbeit mit dem Date-Time-API in Kotlin: https://www.baeldung.com/kotlin-datetime-api
+In Kotlin gibt es verschiedene Datums- und Zeittypen, die die Arbeit mit Datum und Zeit erleichtern. `LocalDate` repräsentiert nur ein Datum ohne Zeitinformationen und ist die beste Wahl, wenn wir nur das aktuelle Datum benötigen. Wenn jedoch auch die Zeit relevant ist, können wir `LocalDateTime` oder `ZonedDateTime` verwenden, die beide das Datum und die Uhrzeit in einem Objekt speichern.
+
+Außerdem bietet Kotlin auch die Möglichkeit, mit Zeitzonen zu arbeiten, indem wir `ZoneId` verwenden. Diese Klasse ermöglicht es uns, eindeutige Zeitzonen zu identifizieren und zu verwenden, anstatt uns auf die Standard-System-Zeitzone zu verlassen.
+
+#Siehe auch
+
+- [Offizielle Kotlin Dokumentation zu Datum und Zeit](https://kotlinlang.org/docs/datetime.html)
+- [Einführung in die Programmierung mit Kotlin](https://www.udemy.com/java-kotlin-programmierung/)

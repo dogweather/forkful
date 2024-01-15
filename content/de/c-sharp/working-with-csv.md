@@ -1,5 +1,6 @@
 ---
-title:                "C#: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "C#: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "C#"
 category:             "C#"
@@ -9,51 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Arbeiten mit CSV-Dateien ist ein wichtiger Bestandteil der Datenverarbeitung in der Entwicklungsbranche. Es ermöglicht das einfache Speichern und Übertragen von Daten in einem tabellarischen Format. Mit C# können CSV-Dateien einfach erstellt und bearbeitet werden, was zu einer effizienten und effektiven Arbeitsweise führt.
+Sicherlich ist es schon vorgekommen, dass du mit großen Mengen von Daten arbeiten musstest. CSV-Dateien sind dabei ein häufig genutztes Format, um strukturierte Daten zu speichern. Mit C# kannst du CSV-Dateien ganz einfach einlesen, bearbeiten und speichern.
 
-# Wie geht das?
+## Wie es geht
 
-Um CSV-Dateien in C# zu verarbeiten, müssen Sie zunächst die <code>System.IO</code> Namespace importieren. Dann können Sie die <code>StreamReader</code> und <code>StreamWriter</code> Klassen verwenden, um die lesende und schreibende Funktionalität zu implementieren.
+Um mit CSV-Dateien in C# zu arbeiten, benötigst du die `CsvHelper`-Bibliothek. Diese kannst du entweder manuell herunterladen und in dein Projekt einbinden oder über NuGet installieren.
 
-```C#
-using System.IO;
-```
-
-Als nächstes müssen Sie eine Instanz der <code>StreamReader</code> Klasse erstellen, um die CSV-Datei zu lesen. Dies kann mit dem <code>File.OpenText()</code> Befehl erfolgen, der den Dateipfad als Argument annimmt.
+Als Erstes musst du eine Klasse definieren, die die Struktur deiner CSV-Datei repräsentiert. Die Eigenschaften dieser Klasse müssen dabei den Spaltennamen in der CSV-Datei entsprechen. Zum Beispiel:
 
 ```C#
-StreamReader reader = File.OpenText("pfad/zu/der/csv-datei.csv");
+public class Person
+{
+    public string Vorname { get; set; }
+    public string Nachname { get; set; }
+    public int Alter { get; set; }
+}
 ```
 
-Um die Daten aus der CSV-Datei zu lesen, können Sie die <code>ReadLine()</code> Methode verwenden, die jede Zeile als Zeichenfolge zurückgibt.
+Um eine CSV-Datei einzulesen, erstellst du einen `CsvReader` und gibst den Dateipfad als Argument an. Dann liest du die Zeilen der Datei nacheinander aus und wandelst sie in Objekte der definierten Klasse um. Hier ein Beispiel:
 
 ```C#
-string zeile = reader.ReadLine();
+using (var reader = new CsvReader(new StreamReader("meine-datei.csv")))
+{
+    while (reader.Read())
+    {
+        var person = reader.GetRecord<Person>();
+
+        // hier kannst du mit den Daten der Person arbeiten
+        Console.WriteLine($"{person.Vorname} {person.Nachname} ({person.Alter})");
+    }
+}
 ```
 
-Nachdem Sie die Daten gelesen haben, können Sie diese in einem Array speichern, indem Sie die <code>Split()</code> Methode verwenden, die die Zeichenfolge anhand des angegebenen Trennzeichen in separate Elemente aufteilt.
+Du kannst aber auch selbst bestimmen, wie die Daten aus der CSV-Datei in dein Objekt umgewandelt werden sollen. Dafür kannst du sogenannte "mappings" definieren, die festlegen, wie die Spalten in der CSV-Datei mit den Eigenschaften deiner Klasse verknüpft werden sollen. Zum Beispiel:
 
 ```C#
-string[] daten = zeile.Split(',');
+// Spalte "Vorname" wird mit der Property "FirstName" gemappt
+Map(m => m.FirstName).Name("Vorname");
 ```
 
-Um eine neue CSV-Datei zu erstellen und Daten hinzuzufügen, muss zunächst eine Instanz der <code>StreamWriter</code> Klasse erstellt werden. Dann können Sie die <code>WriteLine()</code> Methode verwenden, um die Daten in das gewünschte Format zu schreiben.
+Um eine CSV-Datei zu erstellen, erstellst du einen `CsvWriter` und übergibst als Argument das Ziel der Datei. Dann schreibst du einfach deine Daten in die Datei. Hier ein Beispiel:
 
 ```C#
-StreamWriter writer = new StreamWriter("pfad/zur/neuen/csv-datei.csv");
-writer.WriteLine("Name, Alter, Stadt");
-writer.WriteLine("Max, 25, Berlin");
+using (var writer = new CsvWriter(new StreamWriter("neue-datei.csv")))
+{
+    // Definiere, wie die Spalten heißen sollen
+    writer.WriteHeader<Person>();
+
+    // Schreibe Objekte in CSV-Datei
+    writer.WriteRecords(new List<Person>
+    {
+        new Person { Vorname = "Max", Nachname = "Mustermann", Alter = 28 },
+        new Person { Vorname = "Maria", Nachname = "Musterfrau", Alter = 32 }
+    });
+}
 ```
 
-# Tiefergehende Informationen
+In der erzeugten CSV-Datei hätten wir dann folgende Inhalte:
 
-Beim Verarbeiten von CSV-Dateien gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen Sie möglicherweise die verwendeten Trennzeichen anpassen, je nachdem, in welchem Format die Daten gespeichert sind. Außerdem ist es wichtig, das Encoding der Dateien zu überprüfen, um sicherzustellen, dass die Daten korrekt gelesen und geschrieben werden.
+```
+Vorname,Nachname,Alter
+Max,Mustermann,28
+Maria,Musterfrau,32
+```
 
-Es kann auch hilfreich sein, Bibliotheken wie die <code>CSVHelper</code> zu verwenden, die erweiterte Funktionen für das Lesen und Schreiben von CSV-Dateien bieten. Diese Bibliotheken können das Handling von Zeichenfolgen, Zahlen und Datumsformaten erleichtern.
+## Deep Dive
 
-# Siehe auch
+Wenn du tiefer in das Thema einsteigen möchtest, bietet die `CsvHelper`-Bibliothek noch viele weitere Funktionen. Zum Beispiel kannst du Datentypen konvertieren lassen, Zeilen ignorieren oder manipulieren und Header-Namen anpassen.
 
-- [Verarbeiten von CSV-Dateien in C#](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time-visual-basic)
-- [CSV-Dateien mit der CSVHelper-Bibliothek verarbeiten](https://joshclose.github.io/CsvHelper/)
+Zusätzlich ist es wichtig, dass die Werte in deiner CSV-Datei richtig formatiert sind. Wenn du zum Beispiel Texte hast, die Kommas enthalten, musst du diese in Anführungszeichen setzen, damit sie korrekt eingelesen werden können. Auch hierfür bietet `CsvHelper` eine Lösung, indem es automatisch die Anführungszeichen hinzufügt.
+
+## Siehe auch
+
+- [CsvHelper-Dokumentation](https://joshclose.github.io/CsvHelper/) 
+- [CSV-Dateien einlesen und schreiben mit C#](https://www.c-sharpcorner.com/article/read-and-write-csv-files-in-c-sharp/)

@@ -1,5 +1,6 @@
 ---
-title:                "C: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "C: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "C"
 category:             "C"
@@ -9,92 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi travailler avec YAML?
+## Pourquoi
 
-Si vous êtes un programmeur qui travaille avec des données structurées, vous avez probablement entendu parler de YAML. YAML, sigle pour YAML Ain't Markup Language, est un format de données basé sur le langage de balisage léger qui est largement utilisé dans le monde du développement logiciel. Si vous n'êtes pas encore familier avec YAML, cet article vous expliquera pourquoi il est utile et comment l'utiliser.
+Si vous êtes programmeur en C, vous avez probablement déjà rencontré le format YAML dans vos projets. Mais savez-vous pourquoi il est devenu si populaire ? YAML est un format de données flexible et facile à comprendre, idéal pour stocker et échanger des informations entre différentes applications. Il est également très similaire à la syntaxe du C, ce qui le rend très prisé des développeurs de ce langage.
 
-## Comment utiliser YAML en langage C
+## Comment faire
 
-Pour utiliser YAML en langage C, vous devrez d'abord inclure la bibliothèque de code YAML dans votre code. Vous pouvez le faire avec l'instruction ```C #include <yaml.h>```. Ensuite, vous devez initialiser la bibliothèque en utilisant l'instruction ```C yaml_parser_t parser; yaml_parser_initialize(&parser);```.
+Pour travailler avec le format YAML en C, vous aurez besoin d'une bibliothèque externe appelée "libyaml". Il existe différentes façons de l'installer, mais la méthode la plus simple est d'utiliser un gestionnaire de paquets tel que "apt" sous Linux. Une fois installée, vous pouvez importer cette bibliothèque dans votre code avec la ligne suivante :
 
-Ensuite, vous pourrez charger votre fichier YAML à l'aide de l'instruction ```C FILE *yamlfile = fopen("exemple.yaml", "rb");```. Assurez-vous de remplacer "exemple.yaml" par le nom de votre propre fichier YAML. Enfin, vous pouvez lire et écrire des données YAML en utilisant les fonctions de la bibliothèque YAML.
-
-Voici un exemple de code utilisant la bibliothèque YAML en langage C pour créer un fichier YAML et y écrire des données:
-
-```C
-#include <stdio.h>
+```
 #include <yaml.h>
+```
 
-int main()
-{
-  // Initialiser la bibliothèque YAML
-  yaml_parser_t parser;
-  yaml_parser_initialize(&parser);
+Ensuite, pour utiliser la fonctionnalité de parsing de YAML, vous utiliserez principalement les fonctions "yaml_parser_t" et "yaml_parser_parse". Voici un exemple pour illustrer le processus :
 
-  // Ouvrir le fichier YAML en mode écriture
-  FILE *yamlfile = fopen("utilisateurs.yaml", "w");
+```
+// Création de la structure de données pour stocker le contenu YAML
+typedef struct data {
+    int id;
+    char name[50];
+} data_t;
 
-  // Créer un noeud racine pour notre document YAML
-  yaml_event_t event;
-  event.type = YAML_DOCUMENT_START_EVENT;
-  yaml_parser_emit(&parser, &event);
+// Initialisation du parser
+yaml_parser_t parser;
+yaml_parser_initialize(&parser);
 
-  // Ajouter un noeud "utilisateurs"
-  event.type = YAML_MAPPING_START_EVENT;
-  // Notez les indentations dans le code, elles sont importantes
-  yaml_parser_emit(&parser, &event);
+// Ouverture du fichier YAML
+FILE *file = fopen("fichier.yaml", "r");
 
-  // Ajouter un noeud "nom" avec la valeur "Jean"
-  event.type = YAML_SCALAR_EVENT;
-  event.data.scalar.value = "nom";
-  yaml_parser_emit(&parser, &event);
+// Configuration du buffer d'entrée
+yaml_parser_set_input_file(&parser, file);
 
-  event.type = YAML_SCALAR_EVENT;
-  event.data.scalar.value = "Jean";
-  yaml_parser_emit(&parser, &event);
+// Définition des types de données que nous allons récupérer
+yaml_event_t event;
+data_t data;
 
-  // Ajouter un noeud "âge" avec la valeur 25
-  event.type = YAML_SCALAR_EVENT;
-  event.data.scalar.value = "âge";
-  yaml_parser_emit(&parser, &event);
-
-  event.type = YAML_SCALAR_EVENT;
-  event.data.scalar.value = "25";
-  yaml_parser_emit(&parser, &event);
-
-  // Terminer le noeud "utilisateurs"
-  event.type = YAML_MAPPING_END_EVENT;
-  yaml_parser_emit(&parser, &event);
-
-  // Terminer le document YAML
-  event.type = YAML_DOCUMENT_END_EVENT;
-  yaml_parser_emit(&parser, &event);
-
-  // Arrêter et fermer le parser et le fichier YAML
-  yaml_parser_delete(&parser);
-  fclose(yamlfile);
-
-  return 0;
+// Lecture du contenu du fichier YAML
+while (yaml_parser_parse(&parser, &event)) {
+    // Vérification du type d'événement
+    if (event.type == YAML_SEQUENCE_START_EVENT) {
+        // Début d'une nouvelle séquence de données
+        // Nous lisons les données en utilisant la fonction "yaml_parser_parse_scalar"
+        yaml_parser_parse_scalar(&parser, &event, &data.id);
+        yaml_parser_parse_scalar(&parser, &event, data.name);
+        // Maintenant, nous pouvons utiliser les données stockées dans notre structure
+        printf("ID : %d, Nom : %s\n", data.id, data.name);
+    }
 }
+
+// Libération de la mémoire et fermeture du fichier
+yaml_event_delete(&event);
+yaml_parser_delete(&parser);
+fclose(file);
 ```
 
-Le code ci-dessus créera un fichier YAML appelé "utilisateurs.yaml" avec le contenu suivant:
+Et voilà ! Vous pouvez désormais facilement lire le contenu d'un fichier YAML dans votre programme C.
 
-```yaml
-utilisateurs:
-  nom: Jean
-  âge: 25
-```
+## Plongée en profondeur
 
-## Plongée en profondeur dans YAML
-
-En plus d'être un langage de balisage léger, YAML est également un langage de sérialisation de données. Cela signifie qu'il est utile pour stocker des données complexes dans un format facile à lire et à écrire. Les données YAML peuvent être représentées sous forme de listes, de tableaux, de dictionnaires et bien plus encore, ce qui en fait un choix populaire pour les fichiers de configuration de logiciels.
-
-Une autre caractéristique importante de YAML est son interface simple et flexible. Elle permet également de définir des types personnalisés pour les données, offrant ainsi un contrôle plus précis sur la façon dont les données sont stockées et traitées.
-
-Il est important de noter que YAML peut être sensible à l'indentation et aux espaces blancs. Il est donc important de respecter les conventions de mise en forme pour éviter les erreurs lors de la lecture et de l'écriture de données YAML.
+Pour aller plus loin dans l'utilisation de YAML en C, vous pouvez également vous intéresser à la fonctionnalité de écriture de données dans un fichier YAML. Pour cela, vous utiliserez les fonctions "yaml_emitter_t" et "yaml_emitter_dump". Vous pouvez également consulter la documentation complète de la bibliothèque "libyaml" pour découvrir toutes ses possibilités.
 
 ## Voir aussi
 
-- [Documentation officielle de YAML](https://yaml.org/)
-- [Tutoriel sur YAML en langage C](https://
+- [Site officiel de YAML](https://yaml.org/)
+- [Documentation de libyaml](https://pyyaml.org/wiki/LibYAML)
+- [Exemple de projet utilisant YAML et C](https://github.com/hhartford/C-YAML/tree/master/src)

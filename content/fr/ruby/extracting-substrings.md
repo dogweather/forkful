@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Ruby: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,28 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur en herbe cherchant à améliorer votre maîtrise de Ruby, comprendre comment extraire des sous-chaînes (ou sous-strings en anglais) peut être un excellent moyen d'améliorer vos compétences en programmation. Cela peut sembler être une tâche simple, mais cela peut être extrêmement utile pour manipuler et traiter des données.
+Extractions de sous-chaînes : Pourquoi vous devriez le faire.
+
+Si vous travaillez régulièrement avec des chaînes de caractères en Ruby, vous pourriez avoir besoin de récupérer une partie spécifique de celle-ci. Cela peut être utile pour une variété de raisons, comme la manipulation de données provenant de fichiers ou de bases de données, ou la recherche de mots-clés dans une chaîne plus longue. Dans cet article, nous allons explorer comment extraire des sous-chaînes en Ruby et pourquoi cela peut être utile.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne en Ruby, vous pouvez utiliser la méthode `slice` ou l'opérateur `[]`. Voici un exemple de code pour vous montrer comment extraire une partie spécifique d'une chaîne :
+Nous allons utiliser une méthode Ruby très utile appelée `slice`, qui nous permet d'extraire une partie d'une chaîne de caractères en spécifiant l'index de début et de fin de la sous-chaîne que nous voulons extraire. Voici un exemple de code :
 
 ```Ruby
-str = "Bonjour le monde"
-puts str.slice(0, 7) # Sortie : Bonjour
-puts str[8..-1] # Sortie : le monde
+phrase = "Je suis un article de blog écrit en Ruby"
+puts phrase.slice(11,5)
 ```
+Output: article
 
-La méthode `slice` prend deux arguments : l'indice de départ et la longueur de la sous-chaîne à extraire. L'opérateur `[]` permet également de spécifier une plage d'indices à extraire à l'aide de la notation `..`. Dans cet exemple, `-1` est utilisé pour indiquer que nous voulons extraire jusqu'à la fin de la chaîne.
+Dans cet exemple, nous utilisons `slice` pour extraire les cinq caractères à partir de l'indice 11 de la chaîne `phrase`.
 
-## Plongée profonde
+Nous pouvons également utiliser des index négatifs pour compter à partir de la fin de la chaîne. Voici un autre exemple :
 
-Maintenant que vous savez comment extraire des sous-chaînes en Ruby, il est important de comprendre que les indices des chaînes commencent à partir de zéro. Ainsi, le premier caractère d'une chaîne aura un indice de `0`.
+```Ruby
+nom = "Jeanne Dupont"
+puts nom.slice(0..4)
+```
+Output: Jeanne
 
-En plus de cela, il existe également d'autres méthodes utiles pour extraire des sous-chaînes en Ruby, telles que `slice!`, `prepend`, `append`, etc. Prenez le temps de vous familiariser avec ces méthodes pour exploiter pleinement leur potentiel.
+Dans cet exemple, nous utilisons un index de `0..4` pour extraire les cinq premiers caractères de `nom`.
+
+Nous pouvons également spécifier un seul index pour extraire à partir d'un point spécifique de la chaîne jusqu'à la fin. Voici un dernier exemple :
+
+```Ruby
+mot = "crocodile"
+puts mot.slice(0..2)
+```
+Output: cro
+
+Dans cet exemple, nous utilisons un index de `0..2` pour extraire les trois premiers caractères de `mot`.
+
+## Plongée en profondeur
+
+Il est important de noter que `slice` ne modifie pas la chaîne originale, elle retourne plutôt une nouvelle chaîne contenant la partie extraitée. De plus, si l'index de fin spécifié est hors de la plage de la chaîne, `slice` retournera simplement les caractères jusqu'à la fin de la chaîne.
+
+En plus de `slice`, Ruby possède d'autres méthodes pour extraire des sous-chaînes, comme `scan`, qui renvoie un tableau de toutes les correspondances trouvées dans une chaîne ou `split`, qui sépare une chaîne en plusieurs parties basées sur un séparateur spécifié.
+
+Enfin, il est important de noter que les indices en Ruby commencent à zéro et non à un comme dans d'autres langages de programmation, donc il peut être utile de consulter la documentation pour des méthodes spécifiques lorsque vous travaillez avec des string et des index.
 
 ## Voir aussi
 
-- [Documentation officielle Ruby sur la méthode slice](https://ruby-doc.org/core-3.0.1/String.html#method-i-slice)
-- [Guide sur les méthodes utiles pour manipuler les chaînes en Ruby](https://www.rubyguides.com/2019/08/ruby-string-methods/)
-- [Exemples pratiques d'utilisation de slice et d'autres méthodes pour manipuler les chaînes en Ruby](https://www.rubyguides.com/2019/08/slice-vs-slice-in-ruby/)
+- [Documentation officielle Ruby pour `slice`](https://ruby-doc.org/core-3.0.2/String.html#method-i-slice)
+- [Blog de Rubyist sur l'extraction de sous-chaînes en Ruby](https://rubyist.to/extracting-substrings-in-ruby/)

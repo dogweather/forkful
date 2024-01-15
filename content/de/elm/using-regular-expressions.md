@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Die Verwendung von regulären Ausdrücken"
+title:                "Die Verwendung von regulären Ausdrücken"
+html_title:           "Elm: Die Verwendung von regulären Ausdrücken"
 simple_title:         "Die Verwendung von regulären Ausdrücken"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,35 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Regular Expressions sind ein mächtiges Werkzeug, um Texte zu durchsuchen, zu extrahieren und zu manipulieren. Sie sind besonders nützlich für Programmierer und Webentwickler, die große Textmengen verarbeiten müssen oder komplexe Textmuster finden wollen.
+Reguläre Ausdrücke sind eine nützliche Funktion in Elm, die es ermöglicht, Textmuster in einer effizienten und genauen Weise zu durchsuchen und zu bearbeiten. Durch die Verwendung von regulären Ausdrücken können Entwickler Zeit sparen und komplexe Aufgaben effektiv lösen.
 
-## Wie Man
+## Wie geht man vor?
 
-Um Regular Expressions in Elm zu verwenden, müssen wir das Modul `Regex` importieren. Dann können wir Pattern mit der Funktion `Regex.regex` erstellen und mit dem Text in Verbindung bringen, den wir analysieren möchten. Hier ist ein Beispiel, das überprüft, ob die E-Mail-Adresse in einem String gültig ist:
+Die Verwendung von regulären Ausdrücken in Elm ist einfach und unkompliziert. Zunächst müssen Sie das Paket `elm/regex` installieren, indem Sie den Befehl `elm install elm/regex` in der Befehlszeile eingeben.
 
-```
-Elm importieren
-Regex
-```
-```
-input = "meine-email@beispiel.com"
-myRegex = Regex.regex "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
-Regex.betrachten (Regex.find myRegex input)
+Um einen regulären Ausdruck zu erstellen, müssen Sie den `Regex`-Befehl verwenden und diesen mit einem Muster als String-Parameter versehen. Zum Beispiel:
 
--- Ausgabe: Just "meine-email@beispiel.com"
+```Elm
+Regex.fromRegex "(foo|bar)\\d+"
 ```
 
-## Tiefer Tauchen
+In diesem Beispiel wird ein regulärer Ausdruck erstellt, der entweder das Wort "foo" oder "bar" gefolgt von einer beliebigen Anzahl von Ziffern erkennt.
 
-Es gibt viele verschiedene Möglichkeiten, Regular Expressions in Elm zu verwenden. Hier sind einige wichtige Konzepte, die es zu beachten gilt:
+Um eine Zeichenfolge mit Hilfe eines regulären Ausdrucks zu überprüfen, können Sie die Funktion `Regex.match` verwenden. Diese Funktion erwartet zwei Parameter: den regulären Ausdruck und die zu überprüfende Zeichenfolge. Zum Beispiel:
 
-- `Regex` -Modul bietet Funktionen wie `Regex.map`, `Regex.replace` und` Regex.split`, um mit Übereinstimmungen umzugehen, wenn sie gefunden werden.
-- Wir können eingebaute Zeichengruppen wie `\\d` (Zahl),` \\w` (Alphanumerisch) und` \\s` (Leerzeichen) verwenden, um die Muster abzukürzen.
-- Quantifikatoren wie `*` (beliebig oft wiederholen), `+` (mindestens einmal wiederholen) und `{n}` (genau n Mal wiederholen) ermöglichen es uns, die Anzahl der übereinstimmenden Zeichen flexibel zu definieren.
+```Elm
+Regex.match (Regex.fromRegex "a*b") "aaab"
+```
 
-Für eine vollständige Liste der Funktionen und Syntax von Regular Expressions in Elm empfehle ich, die offizielle [Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/Regex) zu lesen.
+Dieser Code prüft, ob die Zeichenfolge "aaab" dem angegebenen regulären Ausdruck entspricht, und gibt `Just true` zurück, da dies der Fall ist.
 
-## Siehe Auch
+## Tiefer Einblick
 
-- [Die wichtige Rolle von Regular Expressions](https://medium.com/@stonemakespace/the-important-role-of-regular-expressions-b72c9a5baaa6) von Stone MakeSpace
-- [Verwendung von Regular Expressions in Elm](https://dev.to/timLogs/using-regular-expressions-in-elm-2pp1) von Tim Theriault
+Reguläre Ausdrücke können auch verwendet werden, um in einer Zeichenfolge Veränderungen vorzunehmen. Dazu können Sie die Funktion `Regex.replace` verwenden, die ähnlich wie `Regex.match` zwei Parameter erwartet: den regulären Ausdruck und die zu bearbeitende Zeichenfolge.
+
+Zusätzlich können Sie mithilfe von regulären Ausdrücken auch Gruppen definieren, die in der bearbeiteten Zeichenfolge verändert werden sollen. Dies ermöglicht es, Textmuster effizient zu ersetzen und zu manipulieren.
+
+Weitere Informationen und Beispiele für die Verwendung von regulären Ausdrücken in Elm finden Sie in der offiziellen Dokumentation des `elm/regex`-Pakets [hier](https://package.elm-lang.org/packages/elm/regex/latest/).
+
+## Siehe auch
+
+- [Offizielle Dokumentation des `elm/regex`-Pakets](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [RegExr - Interaktiver RegEx-Tester](https://regexr.com/)

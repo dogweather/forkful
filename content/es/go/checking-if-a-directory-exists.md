@@ -1,5 +1,6 @@
 ---
-title:                "Go: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Go: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Go"
 category:             "Go"
@@ -9,15 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porqué
+## ¿Por qué comprobar si un directorio existe?
 
-A menudo, al trabajar con archivos y directorios en programas Go, es importante verificar si un directorio existe antes de intentar acceder a él. Esto puede ahorrar tiempo y evitar errores en el código.
+Para los programadores, verificar si un directorio existe es una tarea común al trabajar con archivos y procesos. Esto es especialmente importante si se están desarrollando aplicaciones que necesiten acceder y manipular archivos en una ubicación específica.
 
 ## Cómo hacerlo
 
-Para verificar si un directorio existe en Go, podemos utilizar la función `os.Stat()` que devuelve un objeto `os.FileInfo` con información sobre el archivo o directorio especificado. Luego, podemos verificar si el objeto `os.FileInfo` es nulo o no para determinar si el directorio existe.
-
-Veamos un ejemplo en código para aclarar las cosas:
+La forma más sencilla de comprobar si un directorio existe en Go es utilizar la función `os.Stat()` y verificar si se produce un error. Si no hay error, significa que el directorio existe. A continuación se muestra un ejemplo de cómo se puede implementar esto en código:
 
 ```Go
 package main
@@ -28,57 +27,28 @@ import (
 )
 
 func main() {
-    // Directorio existente
-    dir := "mydir" 
+    // Directorio que se desea verificar
+    directorio := "mi/directorio"
 
-    // Directorio inexistente
-    dir2 := "nonexistingdir"
+    // Se utiliza la función os.Stat() para obtener información del directorio
+    _, err := os.Stat(directorio)
 
-    // Verificar si el primer directorio existe
-    if _, err := os.Stat(dir); os.IsNotExist(err) {
-        fmt.Println("El directorio", dir, "no existe")
+    // Si se produce un error, significa que el directorio no existe
+    if os.IsNotExist(err) {
+        fmt.Printf("El directorio \"%s\" no existe.", directorio)
     } else {
-        fmt.Println("El directorio", dir, "existe")
-    }
-
-    // Verificar si el segundo directorio existe
-    if _, err := os.Stat(dir2); os.IsNotExist(err) {
-        fmt.Println("El directorio", dir2, "no existe")
-    } else {
-        fmt.Println("El directorio", dir2, "existe")
+        fmt.Printf("El directorio \"%s\" sí existe.", directorio)
     }
 }
 ```
 
-En este ejemplo, utilizamos la función `os.Stat()` para obtener información sobre dos directorios diferentes, uno existente y otro inexistente. Si el directorio existe, no se producirá ningún error y el objeto `os.FileInfo` contendrá información sobre él. Sin embargo, si el directorio no existe, se producirá un error y podemos utilizar la función `os.IsNotExist()` para verificar si el error fue causado por la inexistencia del archivo o directorio.
+Este código imprimirá un mensaje indicando si el directorio existe o no. Si se desea hacer algo más con el directorio existente, se pueden usar las funciones `os.Mkdir()` o `os.MkdirAll()` para crearlo.
 
-La salida de este programa sería:
+## Profundizando
 
-```
-El directorio mydir existe
-El directorio nonexistingdir no existe
-```
-
-## Un poco más profundo
-
-Además de la función `os.Stat()`, también podemos utilizar la función `os.Mkdir()` para crear un nuevo directorio en caso de que no exista. Esta función devuelve un error en caso de que no se pueda crear el directorio, por lo que podemos usarla en conjunto con `os.IsNotExist()` para verificar si el directorio fue creado correctamente.
-
-```Go
-// Crear directorio si no existe
-if _, err := os.Stat(dir); os.IsNotExist(err) {
-    err := os.Mkdir(dir, 0755)
-    if err != nil {
-        fmt.Println("Error al crear el directorio", dir)
-    }
-}
-```
+Ahora que sabemos cómo verificar si un directorio existe, es importante entender cómo y dónde se aplican estas comprobaciones. En Go, es una buena práctica hacer estas verificaciones antes de manipular archivos o realizar otras operaciones en un directorio. También es importante tener en cuenta que la función `os.Stat()` también se utiliza para comprobar la existencia de un archivo, por lo que se puede utilizar de la misma manera para verificar tanto archivos como directorios.
 
 ## Ver también
 
-Para obtener más información sobre el paquete `os` y todas sus funciones relacionadas, puedes consultar la documentación oficial de Go: https://golang.org/pkg/os/
-
-También puedes echar un vistazo a estos tutoriales sobre cómo trabajar con archivos y directorios en Go:
-
-- https://zetcode.com/golang/readfile/
-- https://flaviocopes.com/go-list-files/
-- https://www.calhoun.io/reading-files-in-go/
+- [Documentación de os.Stat() en la página oficial de Go](https://golang.org/pkg/os/#Stat)
+- [Ejemplo de uso de os.Stat() en el blog de Go by Example](https://gobyexample.com/stat)

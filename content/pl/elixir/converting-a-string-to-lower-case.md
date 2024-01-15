@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków do małych liter"
+html_title:           "Elixir: Konwersja ciągu znaków do małych liter"
+simple_title:         "Konwersja ciągu znaków do małych liter"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,40 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Przetwarzanie ciągu znaków jest nieodłączną częścią każdego języka programowania. W Elixirze często będziesz musiał zmienić ciąg znaków na formę pisemną w małych literach, czyli na tzw. "lower case". W tym artykule dowiesz się, dlaczego warto to robić i jak można to zrobić w Elixirze.
+Jeśli jesteś programistą Elixir i często pracujesz z tekstami, na pewno zdarzyło Ci się potrzebować przetworzyć ciąg znaków na małe litery. Dlaczego? Ponieważ jest to powszechnie stosowane przy sprawdzaniu czy dwa ciągi znaków są sobie równe, bez względu na wielkość liter. W tym artykule pokażę Ci, jak w prosty sposób przekonwertować string na małe litery w Elixir.
 
 ## Jak to zrobić?
 
-Kod w Elixirze jest nie tylko efektywny, ale także prosty w użyciu. Konwersja ciągu znaków na formę pisemną w małych literach jest tutaj bardzo prosta i wyraźna. Wystarczy użyć metody `String.downcase()` aby przekonwertować ciąg znaków.
+Przetworzenie ciągu znaków na małe litery w Elixir jest bardzo łatwe i wymaga użycia wbudowanej funkcji ```String.downcase```, która jako argument przyjmuje nasz ciąg znaków.
 
 ```Elixir
-string = "ELIXIR JEST FANTASTYCZNYM JĘZYKIEM PROGRAMOWANIA"
-converted_string = String.downcase(string)
-IO.puts converted_string
+String.downcase("HELLO WORLD") 
+# output: "hello world"
 ```
 
-Tym prostym kodem zmienimy ciąg znaków na "elixir jest fantastycznym językiem programowania". Bardzo często w programowaniu będziesz potrzebować również usunąć spacje z ciągu znaków. W Elixirze możesz to zrobić używając metody `String.trim()`.
+Jeśli zamiast ciągu znaków, chcesz przekonwertować całe zdanie lub akapit, możesz użyć funkcji ```String.downcase/1``` w celu zastosowania jej do każdego słowa w zdaniu.
 
 ```Elixir
-string = "  Więcej kodu tylko znaczy więcej możliwości  "
-converted_string = String.downcase(string) |> String.trim()
-IO.puts converted_string
+String.downcase("Elixir jest niesamowity!") 
+# output: "elixir jest niesamowity!"
 ```
 
-Teraz nasz ciąg znaków będzie wyglądał następująco "więcej kodu tylko znaczy więcej możliwości". Jak widać, Elixir umożliwia nam wykonanie obu operacji w jednej linijce kodu.
+Funkcja ```String.downcase/1``` nie tylko przekonwertuje wszystkie znaki na małe litery, ale także usunie wszelkie diakrytyki czyli znaki specjalne stosowane w niektórych językach (np. polskich) do oznaczenia dźwięczności i bezdźwięczności.
 
-## Przyjrzyjmy się tematowi bliżej
+```Elixir
+String.downcase("Żywiec") 
+# output: "żywiec"
+```
 
-W Elixirze ciągi znaków są traktowane jako listy znaków, więc metoda `String.downcase()` właściwie jest skrótem dla funkcji `Enum.map()` wykonującej konwersję na każdym znaku z osobna. Dzięki temu metoda ta jest bardzo wydajna i nie ma potrzeby używania pętli, co znacznie ułatwia pracę programistom.
+## Zagłębienie
 
-Warto również wspomnieć o tym, że Elixir jest językiem funkcyjnym i nie ma tutaj żadnych zmiennych, które są modyfikowane. Dlatego też przy użyciu metody `String.downcase()` nie zmieniamy oryginalnego ciągu znaków, tylko zwracamy nowy.
+Funkcja ```String.downcase/1``` wewnętrznie korzysta z funkcji ```Enum.map/2```, co oznacza, że dla dużych ciągów znaków może być nieco mniej wydajna. W takich przypadkach lepszym rozwiązaniem może być użycie wbudowanej funkcji ```String.replace/4```, która działa na zasadzie zastępowania poszczególnych znaków w ciągu.
+
+```Elixir
+String.replace("HELLO WORLD", ~r/[A-Z]/, &String.downcase(&1))
+# output: "hello world"
+```
+
+Kluczem do zrozumienia tego sposobu jest wykorzystanie regularnych wyrażeń, w tym przypadku ```~r/[A-Z]/``` oznacza, że będzie szukać wszystkich dużych liter. Następnie używamy funkcji ```&String.downcase/1``` jako argumentu w funkcji ```String.replace/4```, co oznacza, że dla każdego znalezionego wystąpienia dużej litery, zostanie użyta funkcja ```String.downcase/1``` w celu jej zamiany na małą literę.
 
 ## Zobacz także
 
-Jeśli jesteś zainteresowany dowiedzeniem się więcej o stringach w Elixirze, polecamy przeczytać te artykuły:
+Jeśli jesteś zainteresowany innymi funkcjami związanymi z przetwarzaniem tekstów w Elixir, polecam zapoznać się z dokumentacją wbudowanych funkcji, takich jak ```String.upcase/1``` czy ```String.capitalize/1```.
 
-- https://elixir-lang.org/getting-started/string-patterns-and-regular-expressions.html
-- https://medium.com/@coryodaniel/understanding-elixir-string-manipulation-92a6be76ab51
-- https://www.tutorialspoint.com/elixir/elixir_strings.htm
+- https://hexdocs.pm/elixir/String.html#downcase/1
+- https://hexdocs.pm/elixir/String.html#downcase/2
+- https://hexdocs.pm/elixir/String.html#replace/4

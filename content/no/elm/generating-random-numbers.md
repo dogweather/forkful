@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Elm: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,49 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor 
+## Hvorfor
+Å generere tilfeldige tall kan være nyttig for mange programmeringsprosjekter, for eksempel spill eller simuleringer. Ved å bruke tilfeldige tall kan man skape forskjellige utfall og gjøre programmene mer spennende.
 
-I dagens verden av programmering er det viktig å kunne tilfeldige tall. Kanskje du vil simulere et spill, lage et lotteri, eller generere unike koder. Uansett hva årsaken er, kan tilfeldige tall være en viktig del av mange programmeringsprosjekter. I denne bloggposten vil vi utforske hvordan du kan generere tilfeldige tall ved hjelp av Elm-programmeringsspråket.
-
-# Hvordan
-
-For å generere tilfeldige tall i Elm, må vi bruke en "Random"-modul. Dette gir oss funksjoner for å lage tilfeldige tall basert på forskjellige typer distribusjoner. La oss se på et eksempel på hvordan du kan generere et tilfeldig tall fra 1 til 10:
+## Slik gjør du det
+For å generere tilfeldige tall i Elm, kan man bruke funksjonen `Random.generate`, som tar to argumenter: en generator og en melding. Her er et eksempel på hvordan man kan bruke denne funksjonen for å generere et tilfeldig tall mellom 1 og 10:
 
 ```Elm
 import Random
 
-randomNum : Int
-randomNum =
-    Random.int 1 10
-```
-
-Her importerer vi modulen og bruker funksjonen "int" for å generere et heltall mellom 1 og 10. Vi kan også bruke "float" funksjonen for å generere et tilfeldig flyttall. For å faktisk få et tilfeldig tall, må vi bruke funksjonen "generate" som tar inn funksjonen vår og returnerer et tilfeldig tall.
-
-```Elm
-import Random
-
-randomNum : Cmd msg
-randomNum =
-    Random.generate NewNumber (Random.int 1 10)
-
+-- Definerer en melding som skal sendes når et tilfeldig tall blir generert
 type Msg
     = NewNumber Int
 
+-- Definerer en generator som genererer tall mellom 1 og 10
+generator : Random.Generator Int
+generator =
+    Random.int 1 10
+
+-- Når brukeren gjør en handling, vil en tilfeldig tallmelding bli sendt
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NewNumber num ->
-            ( { model | randomNum = num }, Cmd.none )
+        -- Genererer et nytt tilfeldig tall og sender det som en melding
+        NewNumber number ->
+            ( { model | number = number }, Cmd.none )
+
+-- For å initialisere programmet, må man starte med et tomt tilfeldig tall
+model : Model
+model =
+    { number = 0 }
+
+-- Viser det siste tilfeldige tallet på skjermen
+view : Model -> Html Msg
+view model =
+    div []
+        [ text (String.fromInt model.number) ]
+
+main : Program Never Model Msg
+main =
+    Browser.element
+        { init = (\_ -> ( model, Cmd.none ))
+        , update = update
+        , view = view
+        , subscriptions = (\_ -> Sub.none)
+        }
 ```
 
-Her har vi opprettet en handling "NewNumber" som tar inn et heltall og oppdaterer modellen vår. Vi bruker også funksjonen "Cmd.none" for å unngå å sende en kommando til elm-runtime som kan forårsake en uendelig løkke.
+Sample output:
 
-# Dypdykk
+Hver gang brukeren utfører en handling, vil et nytt tilfeldig tall mellom 1 og 10 bli generert og vises på skjermen. Her er noen eksempler på output:
 
-"Random"-modulen i Elm har muligheter for å generere tall fra forskjellige distribusjoner som "normal", "uniform" og "exponential". Vi kan også bruke funksjonen "step" for å generere sekvensielle tilfeldige tall basert på en gitt distribusjon. Utforsk dokumentasjonen for mer informasjon og eksempler.
+- Første handling: 5 
+- Andre handling: 9
+- Tredje handling: 2
 
-# Se også
+## Dypdykk
+For å få mer kontroll over genereringen av tilfeldige tall, kan man bruke modulen `Random` i Elm. Denne modulen inneholder flere funksjoner og hjelpere for å generere tilfeldige tall i ulike former og intervaller. Det finnes også en funksjon `List.random` som kan brukes for å generere en tilfeldig verdi fra en liste. Dette kan være nyttig for å generere tilfeldige elementer i et spill eller en spilleliste. For mer informasjon om disse funksjonene og mulige bruksområder, kan du sjekke ut dokumentasjonen for `Random` modulen.
 
-- Elm Dokumentasjon: https://guide.elm-lang.org/effects/random.html
-- Random-mehodene: https://package.elm-lang.org/packages/elm/random/latest/Random
-- Youtube tutorial: https://www.youtube.com/watch?v=is895OMo5FQ
+## Se også 
+- [Dokumentasjon for Random modulen i Elm](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Eksempler på bruk av Random modulen i Elm](https://elmprogramming.com/generate-random-numbers.html)

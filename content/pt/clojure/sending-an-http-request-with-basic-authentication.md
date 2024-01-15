@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,52 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar um pedido HTTP com autenticação básica?
+## Por que
 
-Em muitos casos, os desenvolvedores precisam se comunicar com APIs que exigem autenticação. A autenticação básica é um método simples de autenticação que envia as credenciais do usuário como um nome de usuário e senha em formato codificado. Neste post, vamos explorar como enviar um pedido HTTP com autenticação básica em Clojure.
+Existem várias situações em que é necessário enviar uma solicitação HTTP com autenticação básica. Por exemplo, ao acessar um API que requer credenciais de autenticação para manter a segurança dos dados transmitidos. Ou ao utilizar uma ferramenta de teste de APIs que suporta apenas esse tipo de autenticação. 
 
-## Como Fazer
+## Como fazer
 
-Para enviar um pedido HTTP com autenticação básica em Clojure, você precisará da biblioteca [clj-http](https://github.com/dakrone/clj-http), que facilita a realização de chamadas HTTP. Começamos importando a biblioteca e definindo as credenciais do usuário em uma variável.
+Aqui estão alguns exemplos de código que mostram como enviar uma solicitação HTTP com autenticação básica usando Clojure:
 
-```clojure
-(ns meu-projeto.core
-(:require [clj-http.client :as client]))
+```Clojure
+(require '[clj-http.client :as client])
 
-(def username "usuário")
-(def password "senha")
+;; exemplo de uma solicitação GET com autenticação básica
+(client/get "http://exemplo.com"
+  {:basic-auth ["usuário" "senha"]})
 
+;; exemplo de uma solicitação POST com corpo JSON e autenticação básica
+(client/post "http://exemplo.com"
+  {:basic-auth ["usuário" "senha"]
+   :json-body {:nome "João" :idade 25}})
 ```
 
-Em seguida, podemos usar a função `basic-auth` da biblioteca `clj-http` para criar uma string contendo as credenciais codificadas em base64.
-
-```clojure
-(client/basic-auth username password)
-```
-
-Em seguida, podemos passar essa string como segundo argumento da função `client/get` junto com a URL que desejamos enviar o pedido.
-
-```clojure
-(client/get "https://exemplo-api.com" {:basic-auth (client/basic-auth username password)})
-```
-
-Isso criará um objeto de resposta que pode ser manipulado como desejado. Por exemplo, se queremos imprimir o conteúdo da resposta, podemos usar a função `:body` para acessar o corpo da resposta e a função `println` para imprimi-lo.
-
-```clojure
-(println (:body (client/get "https://exemplo-api.com" {:basic-auth (client/basic-auth username password)})))
-```
-
-Isso imprimirá o conteúdo da resposta na tela. Lembre-se de que o uso de `println` é apenas para fins de demonstração e, em uma aplicação real, você pode querer manipular os dados de uma maneira diferente.
+Esses exemplos utilizam a biblioteca `clj-http`, que é uma opção popular para enviar solicitações HTTP em Clojure. O parâmetro `:basic-auth` é onde passamos as credenciais de autenticação em formato de vetor, onde o primeiro elemento é o usuário e o segundo é a senha. Ao usar a função `get` ou `post`, podemos adicionar outras opções, como um cabeçalho personalizado ou um corpo de requisição.
 
 ## Profundidade
 
-Existem alguns detalhes importantes a serem levados em consideração ao enviar um pedido HTTP com autenticação básica. Primeiro, é importante garantir que a biblioteca `clj-http` esteja instalada em seu ambiente de desenvolvimento. Além disso, é importante tomar cuidado com a segurança ao enviar as credenciais do usuário em texto claro, já que elas podem ser facilmente interceptadas se não estiverem sendo transmitidas de maneira segura.
+Para uma compreensão mais profunda, vamos dar uma olhada na estrutura básica de uma solicitação HTTP com autenticação básica:
 
-Outro ponto importante é que, caso a API que você esteja se comunicando exija outros tipos de autenticação, como Token Bearer ou OAuth, as etapas podem ser diferentes e o processo para obter as credenciais pode variar bastante.
+```
+GET /recurso HTTP/1.1
+Host: exemplo.com
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+```
 
-Em resumo, o envio de um pedido HTTP com autenticação básica em Clojure é uma tarefa bastante simples e direta, mas é importante estar ciente das nuances e precauções necessárias antes de implementá-lo em seu código.
+A primeira linha é o método da solicitação, seguido do path do recurso e da versão do protocolo HTTP utilizado. Em seguida, temos o cabeçalho `Host`, que identifica o servidor que deve receber a solicitação. Por último, o cabeçalho `Authorization` contém informações sobre o tipo de autenticação e as credenciais codificadas em base 64.
 
-## Veja Também
+Ao receber essa solicitação, o servidor decodifica as credenciais e as compara com as credenciais armazenadas em seu sistema. Se forem válidas, a solicitação é processada normalmente e o servidor responde com os dados solicitados.
 
-- [Documentação da biblioteca clj-http](https://github.com/dakrone/clj-http)
-- [API da Clojure para chamadas HTTP](https://clojuredocs.org/clojure.core/require)
+## Veja também
+
+- [Documentação oficial da biblioteca clj-http](https://github.com/dakrone/clj-http)
+- [Artigo sobre autenticação básica em APIs com Node.js](https://www.digitalocean.com/community/tutorials/nodejs-basic-authentication)
+- [Página da MDN sobre autenticação básica em HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)

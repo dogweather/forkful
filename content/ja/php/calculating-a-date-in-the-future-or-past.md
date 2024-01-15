@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 「未来または過去の日付の計算」"
-simple_title:         "「未来または過去の日付の計算」"
+title:                "未来や過去の日付を計算する"
+html_title:           "PHP: 未来や過去の日付を計算する"
+simple_title:         "未来や過去の日付を計算する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,30 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-将来や過去の日付を計算する理由は様々あります。例えば、何か重要なイベントの日付を把握したり、プログラムの日付に基づいて特定の処理を実行したりするためです。
+日付を将来や過去に計算することが必要とされる理由はさまざまです。例えば、イベントの日程を決める際や、定期的に発生するタスクの期限を追跡する際には、日付の計算が必要になるでしょう。PHPを使えば簡単に日付の計算ができるので、ぜひ覚えておきましょう。
 
-## 手順
+## 方法
 
-まず、PHPの date() 関数を使用して今日の日付を取得します。例えば、以下のコードを使用して今日の日付を取得することができます。
-
-```PHP
-$date = date("Y-m-d");
-```
-
-次に、date() 関数の第二引数に文字列 "strtotime" を指定し、計算したい日数を指定します。例えば、以下のように明日の日付を取得することができます。
+PHPで日付を計算するには、DateクラスやDateTimeクラスを使います。例えば、以下のコードでは、明日の日付を計算して出力する方法が分かります。
 
 ```PHP
-$tomorrow = date("Y-m-d", strtotime("+1 day"));
+//今日の日付を取得
+$today = new DateTime();
+
+//明日の日付を計算
+$tomorrow = $today->modify('+1 day');
+
+//出力
+echo $tomorrow->format('Y-m-d');
 ```
 
-同様に、過去の日付を取得する場合は "-1 day" のように負の値を指定することで可能です。
+このコードを実行すると、現在の日付に1日足された日付が出力されます。
 
 ## 深堀り
 
-日付の計算にはさまざまなオプションがあります。例えば、特定の曜日の日付を取得したり、特定の日付から指定した日数を加算したりすることもできます。また、タイムゾーンを指定することで特定の地域の日付を取得することも可能です。
+日付を計算する際には、時差や夏時間の影響を考慮する必要があります。また、指定した日付が週末や祝日かどうかを判定するメソッドも用意されています。PHPの公式ドキュメントやオンラインのサンプルコードを参考に、さまざまな方法で日付を計算することができます。
 
-## さらに読む
+## See Also
 
-[PHP 日付関数のドキュメント](https://www.php.net/manual/ja/function.date.php)
-
-[PHP strtotime 関数のドキュメント](https://www.php.net/manual/ja/function.strtotime.php)
+- [PHP: Dateクラスの使用方法](https://www.php.net/manual/ja/class.datetime.php)
+- [PHP: DateTimeクラスの使用方法](https://www.php.net/manual/ja/class.datetime.php)

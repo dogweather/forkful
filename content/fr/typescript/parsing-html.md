@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Analyser le html"
-simple_title:         "Analyser le html"
+title:                "Analyse de HTML"
+html_title:           "TypeScript: Analyse de HTML"
+simple_title:         "Analyse de HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi analyser le HTML est important en TypeScript ?
+## Pourquoi
+Vous êtes peut-être un développeur web en herbe qui souhaite concevoir un site web dynamique en utilisant Angular ou React. Ou peut-être êtes-vous un développeur chevronné à la recherche d'une solution plus efficace pour extraire des données spécifiques d'une page web. Dans les deux cas, l'analyse de HTML peut être un outil précieux pour atteindre votre objectif.
 
-L'analyse du HTML est une étape cruciale dans la programmation en TypeScript pour plusieurs raisons. Tout d'abord, cela permet de naviguer plus efficacement à travers le code HTML et de récupérer des informations précises. De plus, cela permet également de manipuler le contenu HTML et de l'adapter en fonction des besoins du projet. Enfin, l'analyse du HTML est une compétence essentielle pour les développeurs TypeScript car elle leur permet de mieux comprendre la structure et la logique du code.
-
-## Comment procéder ?
-
-Pour analyser le HTML en TypeScript, il existe plusieurs techniques et outils utiles à connaître. Voici quelques exemples de code pouvant être utilisés :
-
+## Comment faire
 ```TypeScript
-// Exemple de code pour récupérer le contenu d'une balise HTML
-const element = document.getElementById('id');
-const text = element.innerHTML;
+// Importer le module 'cheerio' pour l'analyse de HTML
+import * as cheerio from 'cheerio';
 
-// Exemple de code pour modifier le contenu d'une balise HTML
-const element = document.getElementById('id');
-element.innerHTML = 'Nouveau contenu';
+// Définir le code HTML à analyser
+const html = `
+<html>
+  <body>
+    <h1>Titre</h1>
+    <p>Paragraphe</p>
+    <ul>
+      <li>Élément 1</li>
+      <li>Élément 2</li>
+      <li>Élément 3</li>
+    </ul>
+  </body>
+</html>
+`;
 
-// Exemple de code pour parcourir toutes les balises HTML d'un élément
-const element = document.getElementById('id');
-const children = element.children;
-for (let i = 0; i < children.length; i++) {
-    console.log(children[i].innerHTML);
-}
+// Charger le code HTML dans Cheerio
+const $ = cheerio.load(html);
+
+// Utiliser des sélecteurs CSS pour extraire les données
+const titre = $('h1').text(); // Renvoie "Titre"
+const paragraphe = $('p').text(); // Renvoie "Paragraphe"
+const elements = $('li').map((i, el) => $(el).text()).get(); // Renvoie un tableau avec les éléments 1, 2 et 3
+
+// Afficher les résultats
+console.log(titre); // Titre
+console.log(paragraphe); // Paragraphe
+console.log(elements); // ['Élément 1', 'Élément 2', 'Élément 3']
 ```
 
-Ci-dessus, nous avons utilisé la méthode `getElementById()` pour récupérer un élément spécifique à partir de son identifiant. Nous pouvons également utiliser d'autres méthodes telles que `getElementsByClassName()`, `getElementsByTagName()` ou encore `querySelector()` pour cibler des balises spécifiques en fonction de leur classe, de leur nom ou encore de leur sélecteur CSS.
+## Plongée en profondeur
+L'analyse de HTML utilise des sélecteurs CSS pour extraire les données d'un document HTML en utilisant la bibliothèque Cheerio. Ces sélecteurs peuvent cibler des éléments spécifiques avec des attributs, des classes, des balises et même des combinaisons de ces sélecteurs. Cela se révèle très utile lorsqu'il s'agit d'extraire des données d'une page web complexe et de les utiliser dans votre application.
 
-## Plongeons plus en détail
-
-L'analyse du HTML en TypeScript peut être approfondie en étudiant les différents types d'éléments HTML et leurs propriétés. Par exemple, nous pouvons utiliser la propriété `innerHTML` pour récupérer ou modifier le contenu d'un élément, la propriété `id` pour cibler un élément spécifique, ou encore la propriété `classList` pour manipuler les classes d'un élément.
-
-De plus, il peut être intéressant de se familiariser avec les méthodes d'insertion et de suppression d'éléments, ainsi que les événements JavaScript pouvant être associés aux différentes balises HTML. En apprenant ces différentes techniques, vous serez en mesure de créer des programmes TypeScript encore plus puissants et flexibles.
-
-# Voir aussi
-
-- [Introduction à TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Documentation complète de TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Guide pratique sur l'analyse du HTML en TypeScript](https://www.pluralsight.com/guides/extracting-html-from-dom-elements-using-typescript)
+## Voir aussi
+- [Documentation officielle de Cheerio](https://cheerio.js.org/)
+- [Guide pour débuter avec TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Utiliser TypeScript avec Angular](https://angular.io/guide/typescript-configuration)

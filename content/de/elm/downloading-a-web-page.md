@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Elm: Herunterladen einer Webseite"
 simple_title:         "Herunterladen einer Webseite"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,71 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Herunterladen von Webseiten ist ein wichtiger Schritt beim Erstellen von Webanwendungen. Es ermöglicht uns, Daten von anderen Servern abzurufen und in unsere eigene Anwendung einzubinden. In diesem Blog-Beitrag werden wir lernen, wie wir mit Elm Webseiten herunterladen können.
+Warum sollte jemand eine Webseite herunterladen wollen? Nun, es gibt verschiedene Gründe dafür. Vielleicht möchte man die Webseite offline lesen, ohne ständig eine Internetverbindung zu haben. Oder man möchte die Datei aufbewahren, um später darauf zugreifen zu können, auch wenn die Webseite offline geht oder gelöscht wird. In jedem Fall ist das Herunterladen einer Webseite ein nützliches Werkzeug für diejenigen, die gerne im Internet surfen.
 
-# Wie es geht
+## Wie es geht
 
-Um eine Webseite mit Elm herunterzuladen, müssen wir zuerst das `Http` Modul importieren. Dann können wir die Funktion `Http.send` verwenden, um eine HTTP-Anfrage an die gewünschte URL zu senden.
+Um eine Webseite mit Elm herunterzuladen, müssen wir das `elm/http` Paket installieren. Dieses Paket bietet Funktionen zum Ausführen von HTTP-Anfragen, einschließlich des Herunterladens von Webseiten. Zuerst importieren wir das Paket mit `import Http`, dann definieren wir eine Funktion `downloadPage`, die eine URL als String akzeptiert:
 
 ```Elm
 import Http
-```
 
-Dann können wir diese Funktion wie folgt aufrufen:
-
-```Elm
-Http.send request
-```
-
-Wir müssen jedoch zuerst ein `Http.Request` Objekt erstellen, das alle relevanten Informationen für unsere Anfrage enthält. Dieses Objekt hat verschiedene Felder wie `url`, `method`, `headers` und `body`. Je nach Art der Anfrage müssen wir diese Felder entsprechend setzen.
-
-Hier ist ein Beispiel für eine GET-Anfrage:
-
-```Elm
-request : Http.Request
-request =
-    Http.request
-        { method = "GET"
-        , url = "https://www.example.com"
-        , headers = []
-        , body = Http.emptyBody
+downloadPage : String -> Cmd Msg
+downloadPage url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotPage
         }
 ```
 
-Nachdem wir unsere Anfrage gesendet haben, erhalten wir eine `Cmd` zurück, die wir in unserem `update`-Funktion verarbeiten müssen. Wir können dann die empfangenen Daten verarbeiten und anzeigen, wie wir es in jedem anderen Fall auch tun würden.
+Diese Funktion verwendet die `Http.get` Funktion aus dem `elm/http` Paket, um eine GET-Anfrage an die angegebene URL zu senden. Um die Antwort zu verarbeiten, verwenden wir die `expectString` Funktion, die eine `Decoder` Funktion erwartet. In diesem Fall haben wir die `GotPage` Nachricht definiert, um die heruntergeladene Seite zu empfangen.
+
+Als nächstes müssen wir unsere `GotPage` Nachricht und die zugehörige `Decoder` Funktion definieren:
+
+```Elm
+type Msg
+    = GotPage (Result Http.Error String)
+
+decodePage : Decoder String
+decodePage =
+    Decode.string
+```
+
+Die `GotPage` Nachricht nimmt ein `Result` entgegen, das entweder eine Fehlermeldung oder die heruntergeladene Seite enthält. Die `decodePage` Funktion erwartet einen String als Ergebnis und gibt einfach den empfangenen String zurück.
+
+Schließlich müssen wir unsere `downloadPage` Funktion in unserer `update` Funktion ausführen:
 
 ```Elm
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        --...
+        GotPage result ->
+            case result of
+                Ok page ->
+                    ( { model | page = page }, Cmd.none )
+                Err error ->
+                    ( model, Cmd.none )
 
-        LoadingComplete response ->
-            case response of
-                HttpNetworkFailed err ->
-                    ( model, Cmd.none ) -- handle error
-                HttpBadUrl url ->
-                    ( model, Cmd.none ) -- handle error
-                HttpBadStatus code ->
-                    ( model, Cmd.none ) -- handle error
-                HttpBadBody err ->
-                    ( model, Cmd.none ) -- handle error
-                HttpGood response ->
-                    ( { model | data = response.body }, Cmd.none ) -- handle successful response
-
-        --...
+        -- Aufruf der Funktion zum Herunterladen der Seite
+        DownloadPage ->
+            -- Hier muss die URL der gewünschten Seite angegeben werden
+            ( model, downloadPage "https://example.com" )
 ```
 
-# Tiefergehende Informationen
+Sobald wir unsere `DownloadPage` Nachricht auslösen, führt die `update` Funktion unsere `downloadPage` Funktion aus. Wenn die Seite erfolgreich heruntergeladen wird, wird die `GotPage` Nachricht ausgelöst, und wir aktualisieren unser Modell mit der heruntergeladenen Seite.
 
-Der `Http`-Funktionsumfang von Elm ist ziemlich umfangreich und es gibt verschiedene Funktionen und Hilfsfunktionen, die wir nutzen können, um unsere HTTP-Anfragen zu verfeinern. Es gibt auch Möglichkeiten, wie wir mit Fehlerfällen umgehen können, die bei der Verarbeitung der Daten auftreten können.
+## Tiefer Einblick
 
-Erfahrene Elm-Entwickler können auch die Typsicherheit von Elm nutzen, um sicherzustellen, dass unsere HTTP-Anfragen korrekt aufgebaut sind und die erwarteten Ergebnisse zurückgeben.
+Um tiefer in die Arbeit mit dem Herunterladen von Webseiten mit Elm einzusteigen, können wir uns das `elm/url` Paket genauer ansehen. Dieses Paket bietet Funktionen zum Parsen von URLs, was nützlich sein kann, um bestimmte Teile einer heruntergeladenen Seite zu extrahieren. Wir können auch mit `elm/time` arbeiten, um Zeitstempel zu generieren und das Herunterladen von Webseiten zu planen.
 
-# Siehe auch
+## Siehe auch
 
-- [Elm Dokumentation zu Http](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Tutorial: How to Fetch Data from an API with Elm](https://medium.com@appsynth/tutorial-how-to-fetch-data-from-an-api-with-elm-37c28ba4d731)
-- [HTTP Requests in Elm](https://guide.elm-lang.org/effects/http.html)
+- Offizielle Dokumentation für das `elm/http` Paket: https://package.elm-lang.org/packages/elm/http/latest/
+- Offizielle Dokumentation für das `elm/url` Paket: https://package.elm-lang.org/packages/elm/url/latest/
+- Offizielle Dokumentation für das `elm/time` Paket: https://package.elm-lang.org/packages/elm/time/latest/

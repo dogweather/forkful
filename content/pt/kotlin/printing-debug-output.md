@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Kotlin: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Que
+## Por que 
 
-Você já se encontrou em uma situação em que seu código não estava funcionando corretamente e você não conseguia descobrir o porquê? Muitas vezes, pode ser difícil determinar onde exatamente o problema está ocorrendo. É por isso que imprimir saída de debug pode ser uma ferramenta útil para os programadores.
+É comum que durante o processo de desenvolvimento de um programa, precisemos verificar o estado das variáveis e como elas estão interagindo. A impressão de saída de depuração, ou debug output, é uma maneira eficaz e simples de visualizar essas informações e facilitar o processo de solução de problemas. 
 
 ## Como Fazer
 
-Para imprimir saída de debug em Kotlin, você pode usar a função `println()` ou a função `Log.d()` da biblioteca de Log do Android. Aqui está um exemplo simples de como usar essas funções:
+Para imprimir saída de depuração no Kotlin, usamos a função ```println()``` ou ```print()``` para exibir informações em tempo de execução. Por exemplo: 
 
-```Kotlin
-val nome = "Rafaela"
-val idade = 25
-println("O nome é $nome e a idade é $idade.")
+```Kotlin 
+var nome = "João"
+var sobrenome = "Silva"
+println("Olá, meu nome é $nome $sobrenome")
 ```
 
-Saída:
-```
-O nome é Rafaela e a idade é 25.
-```
+A saída esperada será "Olá, meu nome é João Silva". Também podemos usar a função ```debug()``` da classe ```kotlin.Debug``` para imprimir informações de depuração em um formato mais detalhado. 
 
-Você também pode usar as funções de impressão de debug em expressões lógicas para ver os valores das variáveis enquanto seu código está sendo executado. Veja um exemplo:
+## Mergulho Profundo
 
-```Kotlin
-val numero1 = 10
-val numero2 = 5
+Ao usar a função ```debug()```, podemos especificar o nível de detalhe que queremos imprimir, como variáveis, tempo de execução, pilha de chamadas, entre outros. Podemos até mesmo criar nossa própria estratégia de impressão personalizada com a função ```printDebugAsString()```. Além disso, é importante lembrar de remover qualquer saída de depuração antes de lançar o programa em produção. 
 
-println("A soma de $numero1 e $numero2 é ${numero1 + numero2}.")
-```
+## Veja Também 
 
-Saída:
-```
-A soma de 10 e 5 é 15.
-```
-
-## Aprofundando
-
-A impressão de debug é especialmente útil durante o processo de depuração de código, que é o processo de encontrar e corrigir erros em seu código. Ao imprimir a saída de valores de variáveis ​​e expressões, você pode ver como eles estão sendo manipulados e comparar com o resultado esperado. Isso pode ajudar a identificar possíveis problemas em seu código.
-
-Além disso, você pode usar a impressão de debug para entender melhor o fluxo de execução do seu código. Ao imprimir valores dentro de loops e condicionais, você pode ver como seu código está se comportando em diferentes cenários.
-
-Uma dica para imprimir saída de debug efetivamente é usar informações descritivas, como o nome da variável ou uma descrição do que o valor representa. Isso pode ajudar a identificar a qual parte do código pertence a saída de debug específica.
-
-## Ver Também
-
-- [Documentação da Função `println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
-- [Documentação da Função `Log.d()`](https://developer.android.com/reference/android/util/Log.html#d(java.lang.String,%20java.lang.String))
+- Documentação Oficial do Kotlin: https://kotlinlang.org/docs/tutorials/command-line.html#create-and-run-a-project 
+- Tutorial prático de Kotlin: https://kotlinlang.org/docs/tutorials/ 
+- Dicas de depuração em Kotlin: https://blog.jetbrains.com/kotlin/2018/06/kotlin-debugging-tips-part-1/

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Capitalisation d'une chaîne de caractères"
-simple_title:         "Capitalisation d'une chaîne de caractères"
+title:                "Majusculation d'une chaîne de caractères"
+html_title:           "Haskell: Majusculation d'une chaîne de caractères"
+simple_title:         "Majusculation d'une chaîne de caractères"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Si vous êtes un développeur Haskell en herbe, vous avez peut-être entendu parler de la fonction `toUpper` et vous vous êtes demandé à quoi elle servait. Eh bien, dans ce billet, nous allons vous montrer pourquoi et comment capitaliser une chaîne de caractères en utilisant Haskell. 
+Si vous avez déjà travaillé avec des chaînes de caractères en Haskell, vous savez qu'il existe plusieurs fonctions pour les transformer, mais aucune pour les mettre en majuscules. Heureusement, il est très simple de capitaliser une chaîne de caractères en Haskell, et dans cet article, je vais vous montrer comment le faire.
 
-## Comment faire 
+## Comment faire
 
-Pour commencer, nous allons définir une fonction `capitalize` qui prend une chaîne de caractères en entrée et renvoie une version capitalisée de cette chaîne. 
+Pour capitaliser une chaîne de caractères en Haskell, nous allons utiliser la fonction `toUpper` de la bibliothèque `Data.Char`. Pour ce faire, commençons par importer cette bibliothèque :
 
-```Haskell 
-capitalize :: String -> String 
-capitalize str = map toUpper str 
-``` 
+```Haskell
+import Data.Char
+```
 
-Et voilà ! En utilisant la fonction intégrée `toUpper` de Haskell, nous pouvons appliquer la transformation souhaitée à notre chaîne de caractères. Voyons cela en action avec un exemple concret : 
+Ensuite, nous allons définir notre fonction `capitalize`, qui prendra en entrée une chaîne de caractères et renverra la même chaîne, mais en majuscules :
 
-```Haskell 
-capitalize "bonjour" 
--- "BONJOUR" 
-``` 
+```Haskell
+-- Définition de la fonction capitalize
+capitalize :: String -> String
+capitalize str = map toUpper str
+```
 
-Nous pouvons également appliquer cette fonction à des chaînes de caractères plus longues : 
+Maintenant, essayons notre fonction avec une chaîne de caractères :
 
-```Haskell 
-capitalize "ceci est une phrase" 
--- "CECI EST UNE PHRASE" 
-``` 
+```Haskell
+capitalize "bonjour"  -- Renvoie "BONJOUR"
+```
 
-## Plongez plus profondément 
+Et voilà, c'est aussi simple que ça ! Notre fonction fonctionne avec toutes sortes de chaînes de caractères, qu'elles soient en minuscules, en majuscules, avec des caractères spéciaux, etc.
 
-Maintenant que vous savez comment capitaliser une chaîne de caractères en utilisant Haskell, vous vous demandez peut-être comment cela fonctionne réellement. En fait, la fonction `toUpper` parcourt simplement la chaîne de caractères et remplace chaque lettre minuscule par sa version majuscule correspondante en utilisant la table Unicode. Elle ignore également les caractères qui ne peuvent pas être convertis en majuscules. 
+## Deep Dive
 
-## Voir aussi 
+Maintenant que nous avons vu comment capitaliser une chaîne de caractères en Haskell, parlons un peu plus en profondeur de la fonction `toUpper`. Cette fonction fait partie du type `Char -> Char`, ce qui signifie qu'elle prend un caractère en entrée et renvoie un caractère en sortie. Elle utilise la table ASCII pour convertir un caractère en minuscule en son équivalent en majuscule.
 
-- Documentation officielle de `toUpper` sur le site de Haskell : https://www.haskell.org/onlinereport/standard-prelude.html#idd1 Sanitize https://en.wikipedia.org/wiki/Haskell
-- Tutoriel sur les fonctions intégrées de Haskell : https://www.tutorialspoint.com/haskell/haskell_characters.htm 
-- Vidéo de présentation de Haskell sur YouTube : https://www.youtube.com/watch?v=02_H3LjqMr8
-- Exercices pratiques pour améliorer vos compétences en Haskell : https://www.codewars.com/kata/search/haskell?q=&tags=Haskell
+Il est également intéressant de noter que la fonction `toUpper` ne fait pas de distinction entre les caractères accentués et non accentués. Par exemple, si nous passons le caractère "é" à la fonction, elle renverra le caractère "É", le même résultat que si nous avions donné "E" en entrée.
+
+## Voir aussi
+
+- [Documentation de la bibliothèque `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Tutoriel sur les chaînes de caractères en Haskell](https://wiki.haskell.org/String)

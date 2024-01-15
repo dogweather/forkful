@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Leggere gli argomenti da linea di comando"
-simple_title:         "Leggere gli argomenti da linea di comando"
+title:                "Lettura degli argomenti della linea di comando"
+html_title:           "Haskell: Lettura degli argomenti della linea di comando"
+simple_title:         "Lettura degli argomenti della linea di comando"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,74 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per cui potresti voler leggere gli argomenti della riga di comando in Haskell. Ad esempio, potresti voler passare input personalizzati al tuo programma o gestire opzioni diverse in base alle situazioni.
+Oggi impareremo come leggere gli argomenti della riga di comando utilizzando Haskell. Questa abilità ti permetterà di creare programmi più dinamici e interattivi in ​​linea di comando.
 
 ## Come fare
 
-Per prima cosa, importa il modulo System.Environment per ottenere accesso alle funzioni per leggere gli argomenti della riga di comando.
+Leggere gli argomenti della riga di comando in Haskell è semplicemente una questione di utilizzare una funzione fornita dalla libreria standard, chiamata `getArgs`. Ecco un esempio di come utilizzarla:
 
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    -- Alcune elaborazioni con gli argomenti qui..
+    putStrLn ("Hai inserito " ++ show (length args) ++ " argomenti: " ++ show args)
 ```
 
-In questo esempio, la funzione `getArgs` restituisce una lista di stringhe contenente tutti gli argomenti della riga di comando passati al programma. Successivamente, puoi utilizzare queste stringhe per eseguire le elaborazioni necessarie all'interno della tua applicazione.
+In questo esempio, abbiamo importato il modulo `System.Environment`, che ci fornisce la funzione `getArgs`. Nella nostra funzione `main`, chiamiamo `getArgs` e salviamo il risultato nella variabile `args`. Quindi, utilizziamo la funzione `putStrLn` per stampare a schermo il numero di argomenti inseriti e una rappresentazione degli argomenti stessi. Ecco un esempio di output:
 
-Inoltre, è possibile utilizzare anche la funzione `getProgName` per ottenere il nome del programma in esecuzione.
-
-```Haskell
-import System.Environment
-
-main = do
-    name <- getProgName
-    putStrLn ("Il programma in esecuzione è " ++ name)
 ```
+$ runhaskell args.hs uno due tre
+Hai inserito 3 argomenti: ["uno","due","tre"]
+```
+
+Come puoi vedere, `getArgs` restituisce una lista di stringhe corrispondenti agli argomenti che abbiamo inserito al momento dell'esecuzione del programma.
 
 ## Approfondimento
 
-In Haskell, è possibile utilizzare anche la libreria `optparse-applicative` per leggere e gestire in modo più avanzato gli argomenti della riga di comando. Questa libreria permette di definire le opzioni disponibili, analizzare gli argomenti passati e gestire gli errori. Ecco un esempio di codice che utilizza `optparse-applicative`:
+È importante notare che la funzione `getArgs` non solo legge gli argomenti dalla riga di comando, ma anche dalla variabile di ambiente `args`. Ciò significa che puoi passare gli argomenti al tuo programma anche tramite la variabile di ambiente, in modo da poter testare il tuo programma senza doverlo eseguire manualmente dalla riga di comando ogni volta.
 
-```Haskell
-import Options.Applicative
-
--- Definizione delle opzioni
-data Options = Options
-    { nome :: String
-    , eta :: Int
-    , lingue :: [String]
-    } deriving (Show)
-
-optionsParser :: Parser Options
-optionsParser = Options
-    <$> strOption
-        ( long "name"
-        <> metavar "NOME"
-        <> help "Il nome dell'utente" )
-    <*> option auto
-        ( long "age"
-        <> metavar "ETA"
-        <> help "L'età dell'utente" )
-    <*> many (strOption
-        ( long "language"
-        <> short 'l'
-        <> metavar "LINGUA"
-        <> help "Una delle lingue conosciute dall'utente" ))
-
-main :: IO ()
-main = do
-    opzioni <- execParser (info optionsParser
-                         ( fullDesc
-                         <> progDesc "Un semplice programma di benvenuto"
-                         <> header "Benvenuto!" ))
-    putStrLn ("Ciao " ++ nome opzioni ++ "! Sei " ++ show (eta opzioni) ++ " anni e parli " ++ show (lingue opzioni))
-```
-
-Questo esempio definisce un tipo di dati `Options` con tre campi per il nome, l'età e le lingue dell'utente. Successivamente, tramite la libreria `optparse-applicative`, si definiscono le opzioni disponibili, come `--name` o `--age`. Infine, all'interno della funzione `main`, viene utilizzata la funzione `execParser` per analizzare gli argomenti passati e restituire il valore `Options` corrispondente.
+Puoi anche utilizzare la funzione `System.Environment.withArgs` per eseguire una parte del codice con una lista personalizzata di argomenti, invece che utilizzare quelli passati dalla riga di comando. Questo può essere utile per i test.
 
 ## Vedi anche
 
-- Documentazione del modulo System.Environment su Hackage: [https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- Documentazione della libreria `optparse-applicative` su Hackage: [https://hackage.haskell.org/package/optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
+- Documentazione ufficiale di `getArgs`: https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html#v:getArgs
+- Tutorial su come utilizzare le variabili di ambiente in Haskell: https://www.tweag.io/blog/2019-01-10-env-vars/

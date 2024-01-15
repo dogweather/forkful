@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Sammenkobling av strenger"
-simple_title:         "Sammenkobling av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Kotlin: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,44 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Dette er et vanlig spørsmål blant nybegynnere i programmering: hvorfor skal man samle sammen strenger? Svaret er enkelt - å concatenere, eller sammenføye, strenger lar deg sette sammen forskjellige deler av en tekststreng for å lage en komplett setning eller tekst. Dette gjør det enklere å generere dynamiske tekster eller å formatere tekster på en mer fleksibel måte.
 
-## Slik gjør du det
-For å concatenere strenger i Kotlin, bruker vi operatøren "+" mellom de ulike elementene vi ønsker å kombinere. La oss se på et enkelt eksempel:
+Hvis du noen gang har programmert, har du nok støtt på situasjoner der du trenger å kombinere to eller flere tekststrenger. Dette er når metoden for å sette sammen eller "concatenate" strenger blir nyttige. I denne artikkelen vil vi se nærmere på hvordan du kan bruke Kotlin for å effektivt sette sammen strenger.
 
-```Kotlin
-val navn = "Maren"
-val alder = 25
-val tekst = "Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel."
-print(tekst)
-```
+## Hvordan Sette Sammen Strenger i Kotlin
 
-Dette vil gi følgende utskrift: Hei, mitt navn er Maren og jeg er 25 år gammel.
-
-Operatøren "+" kan også brukes mellom en streng og en annen datatype, som for eksempel et tall. I slike tilfeller vil Kotlin automatisk konvertere datatypen til en streng før concatenasjonen.
+Kotlin tilbyr flere måter å kombinere strenger på. La oss se på noen eksempler:
 
 ```Kotlin
-val tall = 42
-print("Svaret på alt er: " + tall)
+val navn = "John"
+val etternavn = "Doe"
+println("Velkommen, $navn $etternavn")
 ```
 
-Her vil utskriften bli: Svaret på alt er: 42.
+Dette vil gi følgende output: `Velkommen, John Doe`. I dette eksempelet bruker vi String-templatene i Kotlin, som lar oss sette inn verdier av variabler direkte i en tekststreng ved hjelp av `$`-tegnet.
 
-## Dykk dypere
-I tillegg til å bruke operatøren "+" kan vi også bruke funksjonen "plus()" for å concatenere strenger i Kotlin. Denne funksjonen tar imot en eller flere strenger som parametere og returnerer en ny streng som er resultatet av concatenasjonen.
+Det er også mulig å bruke metoden `plus()` for å sette sammen strenger. Dette kan gjøres på følgende måte:
 
 ```Kotlin
-val fornavn = "Per"
-val etternavn = "Hansen"
-val fulltNavn = fornavn.plus(" ").plus(etternavn) //Merk at " " brukes for å legge til et mellomrom mellom fornavn og etternavn
-print(fulltNavn)
+val sted = "Oslo"
+val land = "Norge"
+println(sted.plus(", ").plus(land))
 ```
 
-Utskriften vil bli: Per Hansen.
+Denne koden vil gi følgende output: `Oslo, Norge`.
 
-Dersom du ønsker å concatenate flere strenger uten mellomrom i mellom, kan du heller bruke funksjonen "concat()" som tar imot en Collection av strenger.
+## Deep Dive
 
-## Se også
-- [Offisiell Kotlin dokumentasjon om strings](https://kotlinlang.org/docs/reference/strings.html)
-- [Kotlin string concatenation tutorial](https://www.baeldung.com/kotlin-string-concatenation)
-- [Kotlin string manipulation functions](https://www.geeksforgeeks.org/kotlin-string-manipulations/)
+Når det kommer til å sette sammen strenger, er det viktig å være oppmerksom på at Kotlin har en innebygd `StringBuilder`-klasse som er optimal for å bygge og manipulere store tekststrenger. Dette er spesielt nyttig når du har en lang tekststreng og trenger å legge til flere elementer i den.
+
+```Kotlin
+val byer = arrayOf("Oslo", "Stockholm", "København")
+val sb = StringBuilder()
+for (i in byer.indices) {
+    sb.append(byer[i])
+    if (i < byer.size - 1) {
+        sb.append(", ")
+    }
+}
+println(sb.toString())
+```
+
+I dette eksempelet bruker vi `StringBuilder` for å legge til kommaseparerte bynavn i en tekststreng. Output vil være `Oslo, Stockholm, København`. Merk at `StringBuilder`-klassen også tilbyr metoder som `insert()` og `replace()` for å utføre mer avanserte operasjoner på tekststrenger.
+
+## Se Også
+
+- [Offisiell Kotlin Dokumentasjon](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+- [Kotlin String Builder Dokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+- [Konkatinering av Strenger i Kotlin Tutorial](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-regular-expressions)

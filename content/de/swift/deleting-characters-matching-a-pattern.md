@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Das Löschen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Das Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Entfernen von Zeichen, die einem Muster entsprechen"
+html_title:           "Swift: Entfernen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann eine sehr nützliche Funktion sein, um unerwünschte Daten aus einer Zeichenfolge zu entfernen. Zum Beispiel können HTML-Tags aus einer Webseite entfernt werden, um nur den reinen Text zu behalten.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in Swift vielfältige Anwendungen haben. Zum Beispiel kann dies bei der Datenbereinigung oder der Verarbeitung von Benutzereingaben nützlich sein.
 
-# Wie man es macht
+## Wie geht man vor?
 
-Die Swift-Programmiersprache bietet verschiedene Möglichkeiten, um Zeichenfolgen zu durchsuchen und bestimmte Zeichen oder Muster zu löschen.
-
-Eine einfache Möglichkeit ist die Verwendung des `replacingOccurrences`-Methode, die Teil der `String`-Klasse ist. Diese Methode nimmt zwei Parameter an: den zu suchenden String und den String, der anstelle davon gesetzt werden soll. Nehmen wir an, wir möchten alle Vokale aus einer Zeichenfolge entfernen. Der folgende Code zeigt, wie wir diese Methode verwenden können:
+Um in Swift Zeichen zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Ansätze. Zunächst muss das zu bearbeitende String-Objekt in ein Mutable String-Objekt umgewandelt werden, da Strings in Swift standardmäßig unveränderlich sind. Anschließend kann entweder die `filter`-Funktion oder die `replacingOccurrences`-Methode verwendet werden, um alle Zeichen, die dem Muster entsprechen, zu entfernen.
 
 ```Swift
-let string = "Guten Morgen"
-let modifiedString = string.replacingOccurrences(of: "[AEIOUaeiou]", with: "", options: .regularExpression)
-print(modifiedString) // Gtn Mrngn
+var text = "Dies ist ein Beispieltext!"
+// Umwandlung in ein Mutable String-Objekt
+text = String(text)
+// Verwendung der filter-Funktion
+let filteredText = String(text.filter { !"aeiou".contains($0)})
+print(filteredText) // Ds st n Bspltxtxt!
+
+// Verwendung der replacingOccurrences-Methode
+let replacedText = text.replacingOccurrences(of: "[ \\!]", with: "", options: .regularExpression)
+print(replacedText) // DiesisteinBeispieltext
 ```
 
-Wie wir sehen können, haben wir die Vokale durch einen leeren String ersetzt, was sie praktisch gelöscht hat.
+## Tiefere Einblicke
 
-Eine weitere Möglichkeit ist die Verwendung von Regular Expressions. Diese bieten eine leistungsstarke Möglichkeit, Muster in einer Zeichenfolge zu identifizieren und zu manipulieren. Hier ist ein Beispiel, wie wir Regular Expressions verwenden können, um Telefonnummern aus einer Zeichenfolge zu entfernen:
+Wenn man genauer verstehen möchte, wie das Löschen von Zeichen, die einem bestimmten Muster entsprechen, funktioniert, ist es wichtig, die Konzepte von Mutable und Immutable in Swift zu verstehen. Mutable Objekte können verändert werden, während Immutable Objekte unveränderlich sind. In diesem Fall muss das String-Objekt in ein Mutable Objekt umgewandelt werden, damit die Funktion `filter` oder die Methode `replacingOccurrences` angewendet werden können.
 
-```Swift
-let string = "Meine Telefonnummer ist 012-345-6789. Bitte rufen Sie mich an."
-let regex = try! NSRegularExpression(pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", options: .caseInsensitive)
-let modifiedString = regex.stringByReplacingMatches(in: string, options: [], range: NSRange(0..<string.utf16.count), withTemplate: "")
-print(modifiedString) // Meine Telefonnummer ist . Bitte rufen Sie mich an.
-```
+Es ist auch wichtig zu beachten, dass die `filter`-Funktion eine neue Kopie des Strings erstellt, während die `replacingOccurrences`-Methode den vorhandenen String verändert. Je nach Anwendungsfall kann es sinnvoller sein, die eine oder die andere Methode zu verwenden.
 
-Hier haben wir ein Muster definiert, das einer typischen Telefonnummer entspricht (in diesem Fall "012-345-6789") und es durch einen leeren String ersetzt.
+## Siehe auch
 
-# Tiefer eintauchen
-
-Das Löschen von Zeichen oder Mustern aus einer Zeichenfolge ist nur eine Möglichkeit, sie zu bearbeiten. Es gibt viele weitere nützliche Funktionen, die Ihnen helfen können, bestimmte Daten aus einer Zeichenfolge zu extrahieren oder zu manipulieren.
-
-Sie können auch mehr über Regular Expressions lernen, um komplexere Muster zu identifizieren und zu manipulieren. Die Verwendung von Libraries wie `NSRegularExpression` und `CharacterSet` kann auch sehr hilfreich sein.
-
-# Siehe auch
-
-- [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [CharacterSet Documentation](https://developer.apple.com/documentation/foundation/characterset)
+- [Die offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Ray Wenderlich Artikel über Strings in Swift](https://www.raywenderlich.com/93964/strings-characters-and-unicode-in-swift)
+- [Hacking with Swift Tutorial über String Manipulation](https://www.hackingwithswift.com/articles/141/4-ways-better-string-manipulation-in-swift)

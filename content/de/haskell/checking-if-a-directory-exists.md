@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Überprüfung, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfung, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfen, ob ein Verzeichnis existiert."
+html_title:           "Haskell: Überprüfen, ob ein Verzeichnis existiert."
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,38 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Aufgabe in der Programmierung. Es ermöglicht uns zu überprüfen, ob ein bestimmter Pfad oder Ordner vorhanden ist, bevor wir versuchen, auf ihn zuzugreifen. Dies kann verhindern, dass unser Programm abstürzt oder unerwünschte Fehlermeldungen ausgibt.
+Es gibt viele Gründe, warum es wichtig sein kann, zu überprüfen, ob ein Verzeichnis existiert. Möglicherweise möchten Sie sicherstellen, dass ein bestimmtes Verzeichnis oder Pfad auf Ihrem System vorhanden ist, bevor Sie damit interagieren oder Dateien in dieses Verzeichnis kopieren.
 
-## How To
+## Wie geht's
 
-Die Überprüfung eines Verzeichnisses in Haskell ist relativ einfach und erfordert nur wenige Zeilen Code.
+Um zu überprüfen, ob ein Verzeichnis existiert, müssen Sie die `doesDirectoryExist` Funktion aus dem `System.Directory` Modul importieren. Diese Funktion gibt einen Bool-Wert zurück, der angibt, ob das angegebene Verzeichnis existiert oder nicht. Hier ist ein Beispielcode:
 
 ```Haskell
-import System.Directory -- Importieren des benötigten Moduls
+import System.Directory
 
+main :: IO ()
 main = do
-    dirExists <- doesDirectoryExist "Pfad/des/Verzeichnisses" -- Überprüfung des Verzeichnisses, gibt einen Bool-Wert zurück
-    if dirExists -- Boolscher Ausdruck zur Überprüfung des Wertes
-        then putStrLn "Das Verzeichnis existiert." -- Ausgabe, wenn das Verzeichnis existiert
-        else putStrLn "Das Verzeichnis existiert nicht." -- Ausgabe, wenn das Verzeichnis nicht existiert
+    let directory = "/home/user/Desktop"
+    exists <- doesDirectoryExist directory
+    if exists
+        then putStrLn "Das Verzeichnis existiert."
+        else putStrLn "Das Verzeichnis existiert nicht."
 ```
-Der von unserem Programm ausgegebene Text hängt davon ab, ob das überprüfte Verzeichnis existiert oder nicht.
 
-## Deep Dive
+Ausgabe für das obige Beispiel:
 
-Die Funktion `doesDirectoryExist` ist Teil des `System.Directory`-Moduls und gibt einen Bool-Wert zurück, der angibt, ob das übergebene Verzeichnis existiert oder nicht. Diese Funktion ist hilfreich, um Fehler zu vermeiden, wenn wir versuchen, auf ein Verzeichnis zuzugreifen, das möglicherweise nicht vorhanden ist.
+```
+Das Verzeichnis existiert.
+```
 
-Wenn wir jedoch noch weiter in die Tiefe gehen wollen, bietet das `System.Directory`-Modul noch viele weitere Funktionen für die Arbeit mit Verzeichnissen. Einige davon sind:
+Hier kann das Verzeichnis `/home/user/Desktop` durch einen anderen Pfad ersetzt werden, um zu überprüfen, ob ein anderes Verzeichnis existiert oder nicht.
 
-- `getCurrentDirectory` - gibt den aktuellen Arbeitsverzeichnis-Pfad zurück
-- `setCurrentDirectory` - ändert das aktuelle Arbeitsverzeichnis
-- `getDirectoryContents` - listet die Inhalte eines Verzeichnisses auf
-- `createDirectory` - erstellt ein neues Verzeichnis
+## Tiefer Einblick
 
-Diese und viele weitere Funktionen können uns helfen, effizient mit Verzeichnissen in Haskell zu arbeiten.
+Neben der `doesDirectoryExist` Funktion gibt es noch andere Funktionen für die Arbeit mit Verzeichnissen, die im `System.Directory` Modul vorhanden sind. Zum Beispiel:
+
+- `createDirectory` zum Erstellen eines neuen Verzeichnisses
+- `removeDirectory` zum Löschen eines Verzeichnisses
+- `copyDirectory` zum Kopieren eines Verzeichnisses
+- `getDirectoryContents` zum Abrufen einer Liste von Dateien und Unterordnern in einem Verzeichnis
+
+Dies sind nur einige Beispiele für die Verwendung von Verzeichnisfunktionen in Haskell. Es ist wichtig zu beachten, dass die Bearbeitung von Verzeichnissen einige Sicherheitsaspekte haben kann und Sie immer sicherstellen sollten, dass Sie über die benötigten Berechtigungen verfügen, bevor Sie Verzeichnisoperationen durchführen.
 
 ## Siehe auch
 
-- [System.Directory Dokumentation](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell Tutorials auf dev.to](https://dev.to/t/haskell)
-- [Haskell Programmieren für Anfänger](https://code.tutsplus.com/de/tutorials/learning-haskell-programming-for-beginners--cms-30330)
+- [Haskell Dokumentation für das `System.Directory` Modul](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Eine Einführung in Haskell für Anfänger](https://www.fprogram.xyz/haskell-tutorial-deutsch/)
+- [Weitere Beispiele für für das Arbeiten mit Verzeichnissen in Haskell](https://stackoverflow.com/questions/30265319/haskell-check-if-a-directory-exists)

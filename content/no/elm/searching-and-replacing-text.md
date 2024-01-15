@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Å søke og erstatte tekst"
-simple_title:         "Å søke og erstatte tekst"
+title:                "Søking og erstattning av tekst"
+html_title:           "Elm: Søking og erstattning av tekst"
+simple_title:         "Søking og erstattning av tekst"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Vi har alle vært der - sitter og redigerer en kodebase og plutselig innser at vi trenger å endre et bestemt ord eller uttrykk som forekommer flere steder. I stedet for å manuelt gå gjennom hver fil og endre det, kan man spare tid og unngå potensielle feil ved å bruke søk og erstatte funksjonaliteten til Elm.
 
-Det er en vanlig oppgave for programmerere å måtte søke og erstatte tekst i en kodebase. Dette kan være for å endre variabelnavn, oppdatere gamle syntaks eller rette skrivefeil. Det kan være tidkrevende og kjedelig, men heldigvis finnes det verktøy som kan hjelpe oss med dette.
-
-## Slik gjør du det
-
-Det finnes ulike måter å søke og erstatte tekst i Elm-programmeringsspråket. Her er et eksempel på hvordan du kan bruke `String.replace` funksjonen for å endre alle forekomster av "hei" til "hallo" i en streng:
+## Hvordan
+Søke og erstatte i Elm er enkelt og intuitivt. Her er et eksempel på hvordan man kan erstatte alle forekomster av "hund" med "katt" i en liste:
 
 ```Elm
-import String exposing (replace)
+listeAvDyr = ["hund", "giraff", "elefant", "hund"]
 
-tekst = "Hei alle sammen!"
-nyTekst = replace "hei" "hallo" tekst
-
--- output: "Hallo alle sammen!"
+List.map (\dyr -> 
+    if dyr == "hund" then 
+        "katt" 
+    else 
+        dyr
+    ) listeAvDyr
 ```
 
-Hvis du trenger å gjøre dette for mer komplekse uttrykk, kan du bruke `Regex.replace` funksjonen som lar deg bruke regulære uttrykk for å finne og erstatte tekst. Her er et eksempel på hvordan du kan bruke den til å bare beholde tall i en streng:
+Output vil da bli `["katt", "giraff", "elefant", "katt"]`. Her bruker vi `List.map` funksjonen til å iterere gjennom hver verdi i listen og sjekke om den er lik "hund". Hvis den er det, erstatter vi den med "katt", ellers beholder vi den originale verdien.
+
+Det er også mulig å bruke søk og erstatte på tekststrenger. For å bytte ut den første forekomsten av "hund" med "katt" i en tekststreng kan man bruke `String.replaceFirst`:
 
 ```Elm
-import Regex exposing (replace)
+tekst = "Hunden min liker å gå tur med hunden til naboen"
 
-tekst = "123abc"
-nyTekst = replace Regex.allNumbers " " tekst
-
--- output: "123"
+String.replaceFirst "hund" "katt" tekst
 ```
+
+Output vil da bli "Katten min liker å gå tur med hunden til naboen". Dette er bare noen få eksempler på hvordan man kan bruke søk og erstatte funksjonaliteten i Elm.
 
 ## Dypdykk
+Søke og erstatte funksjonaliteten i Elm er ikke bare begrenset til ting som er enkle å finne og erstatte. Man kan også bruke regulære uttrykk for mer avansert søking og erstatting. Elm har innebygd støtte for regulære uttrykk gjennom `Regex` biblioteket.
 
-Det er viktig å være klar over at disse funksjonene vil bare endre den første forekomsten av teksten, med mindre du bruker den optionale parameteren `all` for å endre alle forekomster. Når det kommer til regular expression, er det også viktig å merke seg at du må bruke Regex-biblioteket og importere det riktig for å kunne bruke `Regex.replace` funksjonen.
+Her er et eksempel på hvordan man kan bruke regulære uttrykk til å finne og erstatte alle tall i en tekststreng med "X":
+
+```Elm
+import Regex exposing (replace, regex)
+
+tekst = "Jeg kjøpte 123 appelsiner og 45 bananer"
+
+replace (regex "\\d+") (\_ -> "X") tekst
+```
+
+Output vil da bli "Jeg kjøpte X appelsiner og X bananer". Her bruker vi `Regex.replace` funksjonen til å finne alle tall i teksten og erstatte dem med bokstaven "X".
+
+For mer informasjon om regulære uttrykk i Elm, se dokumentasjonen for `Regex` biblioteket.
 
 ## Se også
-
-- [Offisiell Elm dokumentasjon om String modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Offisiell Elm dokumentasjon om Regex modulen](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- [Elm Syntax 3.0 - Søk og Erstatt med RegEx (video på engelsk)](https://www.youtube.com/watch?v=XcjXCeOVJ1Y)
+- [Offisiell Elm Dokumentasjon](https://guide.elm-lang.org)
+- [Elm Forum](https://discourse.elm-lang.org)
+- [Awesome Elm - Samling av ressurser og verktøy for Elm](https://github.com/sporto/awesome-elm)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su errore standard"
+html_title:           "Kotlin: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere su standard error
+## Perché
 
-Scrivere su standard error può essere utile in situazioni in cui si vuole visualizzare un messaggio di errore o di debug durante l'esecuzione di un programma Kotlin. A differenza di standard output, il contenuto scritto su standard error appare in rosso e non è influenzato dalle impostazioni di redirezione dei flussi di output. 
+Scrivere a standard error è un'operazione fondamentale nella programmazione in Kotlin. Essa permette di gestire gli errori e le eccezioni nel codice in maniera efficace, migliorando la qualità e la sicurezza delle nostre applicazioni.
 
-## Come scrivere su standard error
+## Come fare
 
-Per scrivere su standard error in Kotlin, è necessario utilizzare l'oggetto `System.err`, con il metodo `println()` per stampare il messaggio a schermo. Ad esempio:
+Per scrivere a standard error in Kotlin, possiamo utilizzare la funzione `System.err.println()`. Questa funzione accetta una stringa come parametro e la stampa sulla console degli errori. Ecco un esempio di come utilizzarla:
 
-```
-Kotlin
- fun main() {
-    System.err.println("Messaggio di errore!")
- }
+```Kotlin
+System.err.println("Errore: il valore inserito non è valido.")
 ```
 
 Output:
 
 ```
-Messaggio di errore!
+Errore: il valore inserito non è valido.
 ```
 
-È anche possibile utilizzare il metodo `print()` per stampare il messaggio senza andare a capo, o il metodo `printStackTrace()` per stampare l'intero stacktrace di un'eccezione.
+## Approfondimento
 
-## Approfondimento su scrivere su standard error
+La console degli errori, o standard error, è un canale di output separato dalla console standard di un programma. Questo canale viene utilizzato per mostrare messaggi di errore, avvisi e altre informazioni importanti durante l'esecuzione di un programma.
 
-In Kotlin, oltre a utilizzare `System.err`, è possibile utilizzare anche la funzione di estensione `println()` su `System.err` per scrivere su standard error:
+Per scrivere a standard error, Kotlin utilizza la classe `System` e il suo attributo `err`, rappresentato dall'oggetto di tipo `PrintStream`. Possiamo quindi utilizzare tutte le funzioni disponibili in `PrintStream` per formattare e gestire i messaggi di errore.
 
-```
-Kotlin
-fun main() {
-    System.err.println("Messaggio di errore!".println())
+Un'altra funzione utile è `error()`, che permette di lanciare un'eccezione specificando un messaggio di errore. Ad esempio:
+
+```Kotlin
+if (username.isEmpty()) {
+    System.err.error("Il nome utente non può essere vuoto.")
 }
 ```
 
-In questo modo, è possibile agire direttamente sulle stringhe, ad esempio utilizzando il metodo `format()` per formattare il testo da stampare.
-
 ## Vedi anche
-
-- Documentazione ufficiale di Kotlin su `System.err`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io...err/
-- Tutorial su come utilizzare i flussi di input ed output in Kotlin: https://www.baeldung.com/kotlin-input-output
-- Esempio pratico di utilizzo di `System.err` per la gestione degli errori in Kotlin: https://blog.mindorks.com/kotlin-programming-exceptions-and-system-out-system-err
+- [Documentazione ufficiale di Kotlin su System](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.lang.-system/index.html)
+- [Guida introduttiva su Ardit](https://www.ardit.it/come-gestire-gli-errori-in-kotlin/)
+- [Tutorial su Vogella](https://www.vogella.com/tutorials/Kotlin/article.html#error-handling-and-exceptions)

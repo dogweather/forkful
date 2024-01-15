@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Haskell: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,40 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug für die Mustererkennung und -manipulation in Haskell. Sie können verwendet werden, um komplexe Such- und Ersetzungsvorgänge in Strings durchzuführen, was die Programmierung effizienter und einfacher macht.
+Regular Expressions sind ein leistungsstarkes Werkzeug für die Verarbeitung von Text in Programmen. Sie ermöglichen es uns, schnell und effizient Muster in einem Text zu finden, zu extrahieren oder zu ersetzen. Egal ob du ein erfahrener Programmierer bist oder noch am Anfang stehst, Regular Expressions können deine Arbeit erleichtern und dein Code effektiver machen.
 
-## Wie man es benutzt
+## Wie man sie benutzt
 
-Um reguläre Ausdrücke in Haskell zu verwenden, muss das `Text.Regex`-Modul importiert werden. Eine einfache Möglichkeit, einen regulären Ausdruck zu erstellen, ist die Verwendung von sogenannten *string literals* in Haskell. Diese werden mit doppelten Anführungszeichen eingefasst und mit einem `~` vorangestellt, um sie als regulären Ausdruck zu kennzeichnen.
+Um Regular Expressions in Haskell zu nutzen, müssen wir zunächst das `Text.Regex` Modul importieren:
 
-Hier ist ein einfaches Beispiel, um alle Vokale in einem String zu entfernen:
-
-```haskell
+```Haskell
 import Text.Regex
-
-noVowels :: String -> String
-noVowels str = subRegex (mkRegex "[aeiou]") str ""
 ```
 
-Die Funktion `mkRegex` erstellt einen regulären Ausdruck, der alle Vokale enthält, und `subRegex` ersetzt alle Vorkommen dieser Vokale in `str` durch einen leeren String.
+Als nächstes können wir ein Regex-Pattern erstellen, indem wir den gewünschten Ausdruck in Strings zwischen `/` eingeben. Anschließend kann der Ausdruck in der Funktion `makeRegex` genutzt werden:
 
-Für komplexere Muster können auch reguläre Ausdrücke mit der Funktion `makeRegex` erstellt werden. Diese erlaubt es, die Suchparameter und Optionen genauer anzugeben.
+```Haskell
+let regex = makeRegex "/[A-Za-z]+/"
+```
 
-## Tiefentauchen
+Jetzt können wir den Regex auf einen Text anwenden, indem wir die Funktion `matchRegex` verwenden:
 
-Reguläre Ausdrücke verwenden einen speziellen Syntax, um Muster zu definieren und zu erweitern. Hier sind einige grundlegende Beispiele für das Erstellen von Mustern:
+```Haskell
+let text = "Dies ist ein Beispieltext"
+matchRegex regex text
+```
 
-- `.`: Beliebiges Zeichen (außer Zeilenumbrüche)
-- `[]`: Zeichenklasse - gibt an, welche Zeichen in die Lücke passen
-- `+`: Ein oder mehr Vorkommen des vorhergehenden Zeichens
-- `*`: Null oder mehr Vorkommen des vorhergehenden Zeichens
-- `?`: Null oder ein Vorkommen des vorhergehenden Zeichens
-- `|`: Oder - gibt zwei oder mehr Alternativen an
+Die Ausgabe wird eine Liste aller Übereinstimmungen mit dem Ausdruck sein, in diesem Fall "Dies", "ist", "ein" und "Beispieltext".
 
-Es gibt noch viele weitere Symbole und Möglichkeiten, reguläre Ausdrücke zu gestalten, aber diese Basics reichen oft aus, um einfache Aufgaben zu erledigen.
+## Tiefgehende Einblicke
+
+Regular Expressions beinhalten mehr als nur einfache Musterabgleiche. Mit speziellen Zeichen können wir auch Wiederholungen von Mustern definieren, Gruppierungen erstellen und den Ausdruck noch genauer an unsere Bedürfnisse anpassen. Hier sind einige Beispiele:
+
+- `?` bedeutet, dass ein Zeichen vorhergehendes optional ist
+- `*` bedeutet, dass das vorhergehende Zeichen beliebig oft wiederholt werden kann
+- `+` bedeutet, dass das vorhergehende Zeichen mindestens einmal wiederholt werden muss
+- `()` ermöglicht es uns, Gruppen in einem Ausdruck zu erstellen
+- `[A-Z]` bedeutet, dass ein beliebiges Zeichen in diesem Bereich akzeptiert wird (hier z.B. alle Großbuchstaben)
+
+Um mehr über die Verwendung von Regular Expressions in Haskell zu erfahren, empfehle ich dir das offizielle Dokumentation oder weitere Tutorials im Internet.
 
 ## Siehe auch
 
-- [Hackage-Dokumentation zu Text.Regex](https://hackage.haskell.org/package/regex/docs/Text-Regex.html)
-- [Reguläre Ausdrücke in 5 Minuten](https://www.regular-expressions.info/tutorial.html)
-- [Hoogle-Suche nach regulären Ausdrücken in Haskell](https://www.haskell.org/hoogle/?hoogle=regex)
+- [Offizielle Dokumentation von GHC](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/regex-base-0.93.2/Text-Regex.html)
+- [Codebeispiele und Tutorials von Learn You a Haskell](https://learnyouahaskell.com/starting-out#regular-expressions)

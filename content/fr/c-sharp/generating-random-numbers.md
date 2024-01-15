@@ -1,6 +1,7 @@
 ---
-title:                "C#: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "C#: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -9,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi générer des nombres aléatoires en C#?
+## Pourquoi
 
-De nos jours, les programmes informatiques doivent souvent être en mesure de prendre des décisions aléatoires. Par exemple, un jeu vidéo pourrait avoir besoin de générer des positions aléatoires pour les ennemis ou un programme de simulation pourrait avoir besoin de générer des données aléatoires pour tester différents scénarios. La génération de nombres aléatoires en C# est un moyen simple et efficace de répondre à ces besoins.
+Si vous êtes un développeur, vous avez sûrement été confronté à la nécessité de générer des nombres aléatoires dans votre code. Que ce soit pour simuler des jeux, des tests ou encore pour créer des données de manière aléatoire, les nombres aléatoires sont un outil essentiel dans le domaine de la programmation.
 
-## Comment le faire:
+## Comment faire
 
-Pour générer des nombres aléatoires en C#, nous allons utiliser la classe `Random`. Cette classe fournit différentes méthodes pour générer différents types de nombres aléatoires, tels que des entiers, des nombres à virgule flottante et même des chaînes de caractères aléatoires.
+La génération de nombres aléatoires en C# est très simple grâce à la classe Random. Tout d'abord, il faut déclarer un objet de type Random en utilisant l'instruction ```C# Random random = new Random(); ```. Ensuite, vous pouvez utiliser différentes méthodes de cette classe pour générer des nombres aléatoires selon vos besoins.
 
-```C#
-// Génère un entier aléatoire entre 0 et 100
-int randomNumber = new Random().Next(0, 101);
+Pour générer un nombre entier aléatoire, vous pouvez utiliser la méthode ```C# Next()``` en précisant une valeur minimale et maximale à l'aide de paramètres. Par exemple, pour générer un nombre entre 1 et 100, vous pouvez utiliser ```C# random.Next(1, 101)```.
 
-// Génère un nombre à virgule flottante aléatoire entre 0 et 1
-double randomDouble = new Random().NextDouble();
+Si vous avez besoin de nombres décimaux aléatoires, vous pouvez utiliser la méthode ```C# NextDouble()```, qui retourne un nombre entre 0 et 1. Vous pouvez ensuite utiliser des opérations mathématiques pour ajuster la plage de valeurs selon vos besoins.
 
-// Génère une chaîne de caractères aléatoire composée de 10 lettres
-string randomString = new Random().NextString(10);
-```
+Enfin, pour générer des nombres aléatoires dans un ordre spécifique, vous pouvez utiliser la méthode ```C# NextBytes()```, qui remplira un tableau de bytes avec des valeurs aléatoires.
 
-Le résultat de ces différentes méthodes peut varier à chaque exécution du programme, ce qui est idéal pour les besoins de génération de nombres aléatoires.
+## Plongez plus profondément
 
-## Plongée en profondeur:
+La classe Random est basée sur un algorithme pseudo-aléatoire qui utilise une "graine" pour produire des nombres aléatoires. Par défaut, la graine est basée sur l'horloge du système, mais vous pouvez la définir manuellement en utilisant la méthode ```C# Random(seed)```. Cela peut être utile si vous avez besoin de générer la même séquence de nombres aléatoires plusieurs fois.
 
-Lorsque vous utilisez la classe `Random` en C#, il est important de comprendre comment elle génère en fait des nombres aléatoires. En réalité, les algorithmes utilisés pour la génération de nombres aléatoires en informatique ne sont pas vraiment aléatoires, mais ils simulent des valeurs aléatoires en utilisant des "semences" ou des "graines" pour calculer les nombres. Cela signifie que si vous utilisez la même graine, vous obtiendrez toujours la même séquence de nombres aléatoires.
+Il est également possible de générer des nombres aléatoires selon une distribution spécifique en utilisant les méthodes de la classe Math. Par exemple, la méthode ```C# Math.Round()``` peut être utilisée pour générer un nombre aléatoire entier selon une distribution normale.
 
-Pour cette raison, il est recommandé d'utiliser une graine différente à chaque fois que vous avez besoin de générer des nombres aléatoires. Vous pouvez également utiliser le générateur de nombre aléatoire cryptographique `RandomNumberGenerator` si vous avez besoin de nombres aléatoires plus sécurisés pour des applications telles que le chiffrement de données.
+## Voir aussi
 
-# Voir aussi:
-
-- [Documentation Microsoft pour la classe `Random`](https://docs.microsoft.com/fr-fr/dotnet/api/system.random?view=netcore-3.1)
-- [Guide de génération de nombres aléatoires cryptographiques en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.security.cryptography.randomnumbergenerator?view=netcore-3.1)
+- [La classe Random sur le site Microsoft Docs](https://docs.microsoft.com/fr-fr/dotnet/api/system.random?view=net-5.0)
+- [Un tutoriel sur la génération de nombres aléatoires en C#](https://www.codeproject.com/Articles/1131528/Generating-Random-Numbers-in-Csharp-An-Elaborate-A)
+- [Plus de détails sur les distributions aléatoires en C#](https://www.c-sharpcorner.com/UploadFile/mahesh/default-random-number-generator-in-C-Sharp/)

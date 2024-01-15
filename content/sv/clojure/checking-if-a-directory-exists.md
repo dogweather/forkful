@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Kontrollera om en katalog finns"
-simple_title:         "Kontrollera om en katalog finns"
+title:                "Kontrollera om en mapp existerar"
+html_title:           "Clojure: Kontrollera om en mapp existerar"
+simple_title:         "Kontrollera om en mapp existerar"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,46 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en katalog finns är en viktig del av programmering, eftersom det låter oss säkerställa att vår kod fungerar korrekt och att alla nödvändiga resurser finns tillgängliga. I denna bloggpost kommer vi att utforska hur man gör detta i Clojure och varför det är en viktig del av utvecklingsprocessen.
+Om du arbetar med filer och mappar i ditt Clojure-program kan det vara viktigt att kunna kontrollera om en viss mapp finns eller inte. Det kan hjälpa dig att undvika problem och se till att ditt program fungerar korrekt.
 
-## Så här gör du
+## Hur man gör
 
-Det finns flera sätt att kontrollera om en katalog finns i Clojure. Ett enkelt sätt är att använda funktionen `file-seq`, som kommer att returnera en sekvens av filer och kataloger i en given sökväg. Om en katalog finns kommer den att vara en del av denna sekvens.
+Det finns två sätt att kontrollera om en mapp finns i din Clojure-kod, beroende på vilken version du använder. Vi kommer att gå igenom båda alternativen nedan.
 
-```Clojure
-(def dir-path "testdir")
+### För Clojure 1.9 och högre
 
-(file-seq dir-path)
-
-; => ("testdir/file1.txt" "testdir/file2.txt" "testdir/subdir1" "testdir/subdir2")
-```
-
-Vi kan också använda funktionen `file?` för att kontrollera om en given sökväg är en fil eller en katalog. Om sökvägen är en katalog kommer funktionen att returnera `true`.
+För att kontrollera om en mapp finns i ditt system, använd funktionen `file?` tillsammans med `file-symlink?` för att hantera symboliska länkar. Här är ett exempel på hur du kan göra det:
 
 ```Clojure
-(def dir-path "testdir")
+;; Skapa en väg till mappen du vill kontrollera
+(def path "/home/user/documents/")
 
-(file? dir-path)
-
-; => true
+(println (file? (io/file path))) ; => true om mappen finns
+(println (file-symlink? (io/file path))) ; => false om mappen inte är en symbolisk länk
 ```
 
-Om du vill kontrollera om en katalog finns på en specifik sökväg, kan du använda funktionen `exists?`, som returnerar `true` om sökvägen existerar och annars `false`.
+Om du får "false" som svar på båda anropen betyder det att mappen inte finns eller att den är en symbolisk länk.
+
+### För äldre Clojure-versioner
+
+Om du använder en äldre version av Clojure, innan `file?` och `file-symlink?` fanns i språket, kan du använda funktionen `file-seq` för att lista alla filer och mappar i en viss sökväg. Sedan kan du kontrollera om namnet på mappen finns i den listan. Här är ett exempel:
 
 ```Clojure
-(def dir-path "testdir")
+;; Skapa en väg till mappen du vill kontrollera
+(def check-dir "/home/user/documents/")
 
-(exists? dir-path)
+;; Hämta lista över filer och mappar i sökvägen
+(def dir-list (file-seq (io/file check-dir)))
 
-; => true
+;; Kontrollera om mappen finns i listan
+(if (some #(= (:name %) (io/file check-dir)) dir-list)
+  (println "Mappen finns")
+  (println "Mappen finns inte"))
 ```
+
+Om du får "Mappen finns" som svar betyder det att mappen finns på den angivna sökvägen.
 
 ## Djupdykning
 
-Att kontrollera om en katalog finns är en viktig del av säkerställande att vår kod fungerar som den ska. Det kan spara oss mycket tid och frustration genom att upptäcka eventuella problem tidigt i utvecklingsprocessen. Vi kan också använda dessa funktioner för att skapa nya kataloger om de inte redan finns, vilket kan vara användbart när man skapar strukturer för filer och kataloger.
+I vissa fall kanske du inte bara vill kontrollera om en mapp finns, utan också få mer information om den. I så fall kan du använda funktionen `file-info` tillsammans med `file?` för att få tillgång till metadata om mappen. Här är ett exempel:
+
+```Clojure
+;; Skapa en väg till mappen du vill undersöka
+(def path "/home/user/documents/")
+
+;; Kontrollera om mappen finns
+(if (file? (io/file path))
+  ;; Hämta metadata om mappen
+  (let [info (file-info (io/file path))]
+    (println "Namn:" (.getName info)) ; => Namnet på mappen
+    (println "Storlek:" (.length info)) ; => Storlek i bytes
+    (println "Skapad:" (.creationTime info)) ; => Datum då mappen skapades
+    (println "Senast ändrad:" (.lastModified info))) ; => Datum då mappen senast ändrades
+  (println "Mappen finns inte"))
+```
 
 ## Se även
 
-- Clojure API-dokumentation för `file-seq`: https://clojuredocs.org/clojure.java.io/file-seq
-- Clojure API-dokumentation för `file?`: https://clojuredocs.org/clojure.java.io/file_q
-- Clojure API-dokumentation för `exists?`: https://clojuredocs.org/clojure.java.io/exists_q
+- [Clojure dokumentation: io/file](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/io)
+- [Clojure dokumentation: file-info](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file-info)

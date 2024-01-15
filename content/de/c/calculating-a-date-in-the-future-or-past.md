@@ -1,6 +1,7 @@
 ---
-title:                "C: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Eine Zukunft oder Vergangenheitsdatum berechnen"
+html_title:           "C: Eine Zukunft oder Vergangenheitsdatum berechnen"
+simple_title:         "Eine Zukunft oder Vergangenheitsdatum berechnen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,56 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Berechnen von zukünftigen oder vergangenen Daten ist in der Programmierung oft notwendig, um beispielsweise Fristen oder Termine zu überprüfen oder automatisch zu aktualisieren.
+Wenn du in deinen C-Programmen mit Datumsangaben arbeitest, möchtest du vielleicht auch in der Lage sein, ein Datum in der Zukunft oder Vergangenheit zu berechnen. Das kann nützlich sein, um beispielsweise eine Benachrichtigung für ein bestimmtes Datum in der Zukunft zu programmieren oder um zu überprüfen, ob ein Datum in der Vergangenheit liegt.
 
-# Wie man es macht
+## Wie geht das?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, wird die Bibliothek <time.h> in C verwendet. Diese enthält Funktionen und Strukturen, die es ermöglichen, mit Datum und Uhrzeit in C zu arbeiten.
-
-Im Folgenden finden Sie ein Beispiel, das zeigt, wie man ein Datum in der Vergangenheit berechnen kann:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kannst du die Funktionen aus der Zeitbibliothek "time.h" in deinem C-Code verwenden. Hier ist ein Beispiel, wie du ein Datum 10 Tage in der Zukunft berechnen kannst:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(void) {
-  // Aktuelles Datum erhalten
-  time_t current_time;
-  time(&current_time);
-
-  // Umwandlung des aktuellen Datums in eine Struktur
-  struct tm* current_date = localtime(&current_time);
-
-  // Datum für 1 Jahr in der Vergangenheit berechnen
-  current_date->tm_year -= 1;
-
-  // Umwandlung der berechneten Struktur in einen Zeitstempel
-  time_t past_time = mktime(current_date);
-
-  // Ausgabe des zukünftigen Datums
-  printf("Ein Jahr in der Vergangenheit war es am: %s", ctime(&past_time));
+int main() {
+  // Aktuelles Datum
+  time_t now;
+  // In 10 Tagen
+  time_t tenDays = 10 * 24 * 60 * 60; 
+  // Berechne Datum in der Zukunft
+  now = time(NULL) + tenDays;
+  // Formatierung des Datums
+  printf("In 10 Tagen ist der %s", asctime(localtime(&now)));
   return 0;
 }
 ```
 
-Die Ausgabe des oben genannten Beispiels wäre folgende:
-
+**Output:**
 ```
-Ein Jahr in der Vergangenheit war es am: So Jan  6 18:02:57 2019
+In 10 Tagen ist der Tue Aug 24 11:25:33 2021
 ```
 
-Um ein Datum in der Zukunft zu berechnen, würde man die entsprechende Zeile ändern, um beispielsweise `current_date->tm_year += 1` zu berechnen.
+Du kannst auch ein Datum in der Vergangenheit berechnen, indem du einfach die Anzahl an Tagen mit einem Minuszeichen versiehst, wie in diesem Beispiel:
 
-# Tiefer eintauchen
+```C
+time_t now;
+time_t tenDays = -10 * 24 * 60 * 60; 
+now = time(NULL) + tenDays;
+printf("Vor 10 Tagen war es der %s", asctime(localtime(&now)));
+```
 
-Die Bibliothek <time.h> ist sehr umfangreich und bietet viele weitere Funktionen und Strukturen. So kann man beispielsweise auch die Wochentage oder die Anzahl der Tage in einem Monat berechnen.
+**Output:**
+```
+Vor 10 Tagen war es der Mon Aug 09 11:25:33 2021
+```
 
-Eine wichtige Sache, die man beachten sollte, ist die Verwendung der richtigen Zeitzone. In den meisten Fällen wird <time.h> die lokale Zeitzone verwenden, aber dies kann geändert werden, indem man die Funktion `setenv("TZ", "Europe/Berlin", 1)` vor der Verwendung anderer Funktionen aufruft. Hierbei sollte natürlich die entsprechende Zeitzone für den jeweiligen Standort angegeben werden.
+## Deep Dive
 
-# Siehe auch
+Um genauer zu verstehen, wie die Funktionen aus der Zeitbibliothek "time.h" arbeiten, kannst du dir die Dokumentation und verschiedene Tutorials zu diesem Thema anschauen. Es ist auch wichtig zu beachten, dass das Ergebnis der Berechnung von Zeitangaben von verschiedenen Faktoren wie z.B. der Zeitzone abhängen kann.
 
-- Offizielle Dokumentation der Bibliothek <time.h>: https://en.cppreference.com/w/c/chrono
-- Ein umfassender Tutorial über die Verwendung von Datum und Uhrzeit in C: https://www.tutorialspoint.com/cprogramming/c_date_time.htm
-- Eine Liste von Zeitzone-Abkürzungen: https://www.timeanddate.com/time/zones/
+## Siehe auch
+
+- [Offizielle Dokumentation zu "time.h"](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Tutorial zur Arbeit mit Zeitangaben in C](https://www.geeksforgeeks.org/time-functions-in-c-c/)

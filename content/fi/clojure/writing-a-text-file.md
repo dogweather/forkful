@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Tekstitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Clojure: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,28 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Jos olet kiinnostunut ohjelmoinnista, saatat haluta oppia lisää Clojuresta, joka on dynaaminen ohjelmointikieli, joka on suunniteltu toimimaan Java-virtuaalikoneella. Clojurella voit kirjoittaa tekstitiedostoja ja käyttää niitä osana projektejasi.
 
-Miksi joku haluaisi kirjoittaa tekstifilen Clojurella? Textfiles ovat kätevä tapa tallentaa ja jakaa tietoa, kuten tekstejä, listaamista ja dataa. Ne tarjoavat myös mahdollisuuden monipuolisiin manipulointeihin ja muokkauksiin.
-
-## Kuinka tehdä
-
-```Clojure
-(def file (slurp "tekstifile.txt")) ; lataa tekstitiedoston "tekstifile.txt"
-
-(println file) ; tulostaa tekstin tekstifile.txt
-```
-
-## Syvällisempi sukellus
-
-Textfilen luominen Clojurella alkaa yksinkertaisella "slurp" -funktiolla, joka lataa tiedoston sisällön muuttujaan. Tämän jälkeen voit käyttää muuttujaa tulostamaan, muokkaamaan tai tallentamaan tietoa.
-
-Voit myös käyttää "spit" -funktiota luodaksesi uuden tekstitiedoston ja tallentaa siihen haluamasi sisällön.
+## Kuinka
+Käytä "write-string" -funktiota luodaksesi tekstitiedoston ja "close" -funktiota lopettaaksesi sen käytön. Tässä on esimerkki, joka luo "testi.txt" -tiedoston, kirjoittaa siihen "Tämä on tekstiä!" ja sitten sulkee sen:
 
 ```Clojure
-(spit "uusi_teksti.txt" "Tämä on uusi tekstifile luotu Clojurella")
+(with-open [out-file (clojure.java.io/writer "testi.txt")]
+  (.write out-file "Tämä on tekstiä!"))
 ```
+
+Jos katsot "testi.txt" -tiedostoasi, näet siellä olevan tekstin. Voit myös käyttää "println" -funktiota kirjoittaaksesi rivin käyttäen välilyöntiä tai sanoman lopussa olevaa "newline" -funktiota.
+
+## Syvällinen sukellus
+Clojurella on muitakin tapoja luoda ja kirjoittaa tekstitiedostoja, kuten käyttämällä "spit" -funktiota tai "with-open-writer" -makroa. Voit myös antaa lisäargumentteja, kuten tiedoston olemassaolon tarkistamisen, tiedoston oikeuksien asettamisen ja tiedoston sijainnin määrittämisen.
 
 ## Katso myös
-
-- [Clojure - dokumentaatio](https://clojure.org/)
-- [Tekstifilejen luominen Clojurella](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/02_language/7_reading-and-writing.texts/7_03_writing_md.md)
+- Clojure:n viralliset kotisivut: https://clojure.org/
+- Clojure-oppikirja: https://clojure-doc.org/
+- Clojure:n virallinen dokumentaatio: https://clojuredocs.org/

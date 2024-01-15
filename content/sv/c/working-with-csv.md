@@ -1,5 +1,6 @@
 ---
-title:                "C: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "C: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "C"
 category:             "C"
@@ -11,60 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-CSV-filer, eller "Comma Separated Values", är en vanlig filformat för att lagra och dela data. De är speciellt användbara för att lagra stora mängder data, som kan läsas och redigeras av både människor och datorer. Därför kan det vara fördelaktigt att lära sig hur man arbetar med CSV-filer i sitt programmeringsarbete.
+Att arbeta med CSV-filer är en vanlig uppgift när man hanterar data i olika program och verktyg. Det kan till exempel vara användbart för att importera eller exportera data från en databas, eller för att dela data med andra användare.
 
-## Hur du gör
+## Så här gör du
 
-För att arbeta med CSV-filer i C, behöver du först inkludera "stdio.h" i din kod, för att använda funktioner som t.ex. "fopen" och "fprintf". Sedan behöver du öppna CSV-filen med hjälp av "fopen" funktionen och använda en loop för att läsa data från filen rad för rad. Här är ett exempel på kod som läser data från en CSV-fil:
+Att läsa och skriva CSV-filer med C är relativt enkelt. För att läsa en fil, kan du använda funktionen `fopen` för att öppna filen och sedan använda `fgets` för att läsa in varje rad. För att skriva till en fil kan du använda `fprintf` för att skriva data i det önskade formatet.
 
-```
+````C
 #include <stdio.h>
 
 int main() {
-    FILE *fp = fopen("data.csv", "r");
+  // Öppna en fil för läsning
+  FILE *in_file = fopen("data.csv", "r");
+  
+  // Loopa igenom filen och läsa in varje rad
+  char line[100]; // Antag att varje rad är högst 100 tecken lång
+  while(fgets(line, 100, in_file) != NULL) {
+    // Hantera raden här
+    printf("%s", line);
+  }
 
-    if (fp == NULL) {
-        printf("Kunde inte öppna filen.\n");
-        return 1;
-    }
+  // Stäng filen
+  fclose(in_file);
 
-    char line[100];
+  // Öppna en fil för skrivning
+  FILE *out_file = fopen("output.csv", "w");
+  
+  // Skriva data i önskat format
+  fprintf(out_file, "Kolumn 1, Kolumn 2, Kolumn 3\n");
+  fprintf(out_file, "Data 1, Data 2, Data 3\n");
+  fprintf(out_file, "Data 4, Data 5, Data 6\n");
 
-    while (fgets(line, 100, fp) != NULL) {
-        printf("%s\n", line);
-    }
+  // Stäng filen
+  fclose(out_file);
 
-    fclose(fp);
-
-    return 0;
+  return 0;
 }
-```
-
-Om vi antar att "data.csv" innehåller följande data:
-
-```
-namn,ålder,ort
-Erik,30,Stockholm
-Maria,25,Göteborg
-```
-
-Så kommer output att bli:
-
-```
-namn,ålder,ort
-Erik,30,Stockholm
-Maria,25,Göteborg
-```
+````
 
 ## Djupdykning
 
-Det finns många olika sätt att arbeta med CSV-filer i C, och en av de vanligaste är att använda "strtok" funktionen för att dela upp varje rad i olika fält baserat på separerings-tecknet (vanligtvis ett kommatecken). Det är också viktigt att hantera eventuella specialtecken som kan förekomma i data, som t.ex. citationstecken eller mellanslag.
-
-En annan användbar funktion är "sscanf", som kan användas för att omvandla data från en sträng till olika variabler med hjälp av formateringssträngar.
-
-Det finns också många bibliotek som kan hjälpa till att hantera CSV-filer i C, som t.ex. "libcsv" och "libcvsimple".
+CSV-filer är ett vanligt format för att lagra tabellformad data. Det finns dock vissa utmaningar med att arbeta med CSV-filer, exempelvis att hantera tecken som kommatering och citattecken. För att hantera dessa problem kan du använda `fgetc` för att hantera tecken för tecken istället för rad för rad. Dessutom kan du använda `strtok` för att dela upp raderna i enskilda celler.
 
 ## Se även
 
-- [libcsv documentation](https://github.com/embeddedartistry/libcsv)
-- [libcvsimple documentation](https://github.com/gregor-aeschbacher/ttocsv)
+- [fopen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [fgets](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
+- [fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [fgetc](https://www.tutorialspoint.com/c_standard_library/c_function_fgetc.htm)
+- [strtok](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)

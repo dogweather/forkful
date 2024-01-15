@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tiedostojen lukeminen"
+html_title:           "TypeScript: Tiedostojen lukeminen"
+simple_title:         "Tiedostojen lukeminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,50 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Tekstinlukeminen on yksinkertainen ja tehokas tapa käsitellä suuria määriä tietoa. Se voi auttaa sinua tunnistamaan kaavoja, etsimään tiettyjä tietoja ja tekemään yksinkertaisia muokkauksia suurelle määrälle tiedostoja.
+
+Miksi haluaisit lukea tiedostoa koodin avulla? Tiedostojen lukeminen on yleinen tehtävä, kun käsitellään dataa tai tallennetaan tietoja pysyvästi ohjelmassa. Tässä artikkelissa opit, miten voit lukea tekstiäiedostoja TypeScriptillä ja miten voit hyödyntää niitä koodissasi.
 
 ## Miten
 
-```TypeScript
-// Tuodaan sisään tarvittavat moduulit
-import fs from 'fs';
+### Tiedoston lukeminen
 
-// Luodaan funktio tiedoston lukemiseksi
-function lueTeksti(tiedostonimi: string) {
-  
-  // Luodaan tietopuskuri ja muunnetaan sen sisältö tekstimuotoon
-  const tietopuskuri: Buffer = fs.readFileSync(tiedostonimi);
-  const teksti: string = tietopuskuri.toString();
-
-  // Tulostetaan teksti konsoliin
-  console.log(teksti);
-}
-
-// Kutsutaan funktiota ja annetaan tiedoston nimi parametrina
-lueTeksti("tiedosto.txt");
+Aloita luomalla uusi TypeScript-tiedosto ja nimettämällä se "textreader.ts". Ensimmäiseksi, tuodaan Node.js:n "fs" moduuli, joka mahdollistaa tiedostoihin pääsyn. Voit tehdä tämän kirjoittamalla:
 
 ```
-
-Esimerkkitiedoston "tiedosto.txt" sisältö:
-
-```
-Tämä on esimerkki teksti tiedostosta.
-Tässä on useita rivejä erilaisilla tietoaineistoilla.
-Voit lukea, muokata ja analysoida näitä tietoja käyttäen TypeScriptiä.
+TypeScript
+import * as fs from 'fs';
 ```
 
-Tulostuu konsoliin:
+Nyt olemme valmiita lukemaan tiedoston. Voimme käyttää "fs" moduulin "readFileSync" funktiota, joka lukee tiedoston synkronisesti ja palauttaa sen sisällön merkkijonona. Se näyttää tältä:
 
 ```
-Tämä on esimerkki teksti tiedostosta.
-Tässä on useita rivejä erilaisilla tietoaineistoilla.
-Voit lukea, muokata ja analysoida näitä tietoja käyttäen TypeScriptiä.
+TypeScript
+const content: string = fs.readFileSync('test.txt', 'utf8');
 ```
 
-## Syvällinen tutkimus
+### Tulostaminen konsoliin
 
-Tekstin lukeminen TypeScriptillä käyttäen "fs" (file system) moduulia on helppoa ja nopeaa. Voit käyttää erilaisia metodeja muuttaaksesi tiedostojen sisältöä ja suorittaa erilaisia käsittelyä kyseiselle tiedostolle. Voit myös käyttää muita muotoilutyökaluja, kuten Regular Expression, analysoimaan ja manipuloimaan tekstiä.
+Nyt kun olemme lukeneet tiedoston, voimme tulostaa sen sisällön konsoliin käyttämällä "console.log" funktiota. Se näyttää tältä:
+
+```
+TypeScript
+console.log(content);
+```
+
+Kun suoritat tämän koodin, sinun pitäisi nähdä tiedoston sisältö konsolissa. Varmista, että sinulla on teksti tiedostossa nimeltä "test.txt" samassa kansiossa kuin TypeScript-tiedostosi.
+
+## Syvemmälle
+
+Tiedoston lukeminen on monipuolinen prosessi ja "fs" moduuli tarjoaa monia muita hyödyllisiä toimintoja lisäksi "readFileSync". Voit käydä tutustumassa dokumentaatioon saadaksesi lisätietoja ja oppia lukemaan tiedostoja eri tavoin. Lisäksi voit myös käsitellä tiedoston sisältöä manipuloimalla, suodattamalla ja analysoimalla sitä.
 
 ## Katso myös
-- [TypeScriptin virallinen sivusto](https://www.typescriptlang.org/)
-- [fs moduulin dokumentaatio](https://nodejs.org/api/fs.html)
+
+- [Node.js "fs" moduulin dokumentaatio](https://nodejs.org/api/fs.html)
+- [TypeScript dokumentaatio](https://www.typescriptlang.org/docs/)

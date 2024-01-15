@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Respåiredåförattteskriver: Skapa tester"
-simple_title:         "Respåiredåförattteskriver: Skapa tester"
+title:                "Skriva tester"
+html_title:           "Gleam: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,50 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Ibland kan det kännas som att det tar längre tid att skriva tester än att faktiskt skriva koden. Så varför ska man göra det? Jo, för att tester gör din kod mer tillförlitlig och hjälper dig att hitta buggar tidigt.
 
-Att skriva tester är en viktig del av utvecklingsprocessen för alla programmerare. Det hjälper till att säkerställa att koden fungerar korrekt och minskar risken för buggar och fel i produktion.
-
-## Hur man skriver tester i Gleam
-
-Det första steget i att skriva tester i Gleam är att importera modulen `gleam/test`. Detta ger tillgång till funktioner som `test` och `assert` som används för att skapa och utföra tester.
+## Så här gör du
+Det första du behöver göra är att installera Gleam, antingen manuellt eller genom ett pakethanterare som Homebrew på macOS. När det är klart kan du börja skriva dina tester. Här är ett exempel på en simpel funktion och tillhörande test:
 
 ```Gleam
-import gleam/test
-```
+fn sum(a, b) {
+  a + b
+}
 
-För att börja skriva tester, använd funktionen `test` och ge den ett namn och en funktion som ska köras som test. Inuti denna funktion kan `assert` användas för att kontrollera om det förväntade resultatet stämmer överens med det faktiska resultatet.
-
-```Gleam
-test "Summera två tal" {
-  assert add(2, 3) == 5
+test "sum function" {
+  assert sum(2, 3) == 5
 }
 ```
 
-Om testet inte passerar kommer det att visa ett felmeddelande tillsammans med information om vilket test som misslyckades och varför.
-
-```bash
-Test failed: Summera två tal : Expected 5 but got 6
-```
-
-Det är också möjligt att använda flera `assert` i ett test för att kontrollera flera olika scenarion.
-
-```Gleam
-test "Kontrollera om tal är jämnt eller udda" {
-  assert 2 |> is_even
-  assert 3 |> is_odd
-}
-```
+Du kan köra testet genom att köra kommandot `gleam test` i terminalen. Du bör få utskriften `1 passed (0 ignored) in 0ms`.
 
 ## Djupdykning
+När du börjar skriva fler tester och behöver organisera dem kan du använda `module` och `suite` för att skapa olika grupper av tester. Detta gör det lättare att hitta och köra specifika tester. Här är ett exempel på hur det kan se ut:
 
-Att skriva tests är en viktig del av test-driven development (TDD). Det innebär att skriva tester för att specificera hur koden ska fungera innan själva implementationen sker. Detta hjälper till att tydliggöra vilka funktioner som behöver skapas och hur de ska bete sig.
+```Gleam
+module math {
+  suite "sum function" {
+    test "sum of two numbers" {
+      assert sum(2, 3) == 5
+    }
 
-I Gleam är det också möjligt att skapa tester för privata funktioner genom att importera modulen `gleam/test/private`. Detta gör att man kan testa privata funktioner utan att behöva exponera dem i det offentliga gränssnittet.
+    test "sum of negative numbers" {
+      assert sum(-2, -3) == -5
+    }
+  }
+}
+```
 
-När man skriver tester i Gleam är det också viktigt att fokusera på att testa funktionaliteten och inte implementationen. Detta gör det möjligt att refaktorera och förbättra koden utan att behöva oroa sig för att testerna inte längre kommer att fungera.
+För att köra alla tester i denna modul kan du använda `gleam test math`. Detta kommer att köra båda testerna och du bör få utskriften `2 passed (0 ignored) in 1ms`.
 
-## Se även
-
-- [Officiell dokumentation för Gleam Tester](https://gleam.run/book/tour/testing.html)
-- [Gleam-testing-repo på GitHub](https://github.com/gleam-lang/gleam-testing)
-- [Test-Driven Development för Elm-utvecklare](https://medium.com/@swiftcare/tdd-for-elm-developers-4f35389ad99d) (på engelska)
+## Se också
+- [Gleam dokumentation](https://hexdocs.pm/gleam/getting-started.html)
+- [En enkel guide till enhetstestning med Gleam](https://blog.frankel.ch/u-tdd-gleam/) (på engelska)
+- [Kurs om testdriven utveckling med Gleam](https://www.udemy.com/course/functional-programming-test-driven-development/) (på engelska)

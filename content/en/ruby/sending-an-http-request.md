@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Ruby recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,62 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Sending HTTP requests is a fundamental task in modern web development. It allows us to retrieve data from external APIs, interact with databases, and communicate with web servers. In this blog post, we will explore how to send HTTP requests using Ruby and why it's an important skill to have in your programming toolbox.
+Have you ever wanted to interact with a website or web service through your code? You can do so by sending an HTTP request. Whether you want to retrieve data, submit information, or perform other actions, sending an HTTP request allows you to communicate with websites and web services in a simple and efficient way.
 
-## How To 
+## How To
 
-Sending an HTTP request in Ruby is a simple process. We can use the `Net::HTTP` library to make requests to a specific URL. Let's take a look at a basic example:
+To send an HTTP request in Ruby, you will need to use the `Net::HTTP` library. First, you need to require the library in your code:
 
 ```ruby
 require 'net/http'
+```
 
-url = URI("https://example.com/api/users")
+Next, you will need to create a `Net::HTTP` object and specify the URL of the website or web service you want to communicate with:
 
-response = Net::HTTP.get_response(url)
+```ruby
+uri = URI('https://example.com') # replace with your desired URL
+http = Net::HTTP.new(uri.host, uri.port)
+```
+
+You can also specify any additional parameters or headers in the `uri` object, such as authentication credentials or specific query parameters.
+
+Once you have set up your `Net::HTTP` object, you can use it to make various types of requests, including GET, POST, PUT, and DELETE. For example, to make a GET request and retrieve data from the specified URL, you can use the `get` method and assign the response to a variable:
+
+```ruby
+response = http.get(uri)
+```
+
+You can then access the response body, headers, and other information by calling specific methods on the `response` object. Here's an example of printing the body of the response:
+
+```ruby
 puts response.body
 ```
 
-In this example, we first require the `net/http` library, which is included by default in Ruby. Then, we specify the URL that we want to make a request to using the `URI` class. Next, we use the `Net::HTTP.get_response` method to send a `GET` request to the specified URL. This will return a response object, which we can access the body of using `response.body`. In this case, the output will be the HTML of the example.com homepage.
+And that's it! You have successfully sent an HTTP request using Ruby.
 
-We can also send other types of requests, such as `POST` and `PUT`, by using the corresponding methods in the `Net::HTTP` class. For example:
+## Deep Dive
 
-```ruby
-require 'net/http'
+Sending an HTTP request involves several steps under the hood. When you call the `get` method, for example, Ruby sends an HTTP GET request to the specified URL using the TCP protocol. The server then responds with an HTTP response, which contains a status code, headers, and a body.
 
-url = URI("https://example.com/api/users")
+If the response indicates a successful request (e.g. a status code of 200), you can access the information in the response body to retrieve the data you were looking for. Otherwise, you may need to handle any errors or unexpected responses.
 
-# create a new HTTP request
-req = Net::HTTP::Post.new(url)
+It's also worth noting that the `Net::HTTP` library offers more advanced options, such as persistent connections and SSL/TLS support. You can explore these features further in the official [documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html).
 
-# add parameters to the request
-req.set_form_data({'username' => 'john', 'password' => '123456'})
+## See Also
 
-# send the request and print the response status code
-res = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
-  http.request(req)
-end
-
-puts res.code # 200, indicating success
-```
-
-In this example, we use the `Net::HTTP::Post` class to create a new `POST` request to the specified URL. Then, we add our desired parameters to the request using the `set_form_data` method. Finally, we send the request using the `Net::HTTP.start` method and print the response status code, which should be `200` indicating that the request was successful.
-
-## Deep Dive 
-
-Sending an HTTP request involves several steps behind the scenes. Let's take a closer look at the `Net::HTTP` class and how it handles requests.
-
-The first step is to create a `Net::HTTP` object using the `Net::HTTP.new` method. This object represents the connection to the server. Then, we use the `start` method to establish the connection and send the request. The `start` method also has the option to use SSL for secure connections.
-
-When sending the request, the `req` object in our `POST` example is used to store the request type, headers, and body. The request is then sent to the server, and the response is stored in the `res` object.
-
-There are also other methods and classes in the `Net::HTTP` library that allow us to customize our requests. For example, we can add custom headers, set timeouts, and handle redirects.
-
-## See Also 
-
-For more information on sending HTTP requests in Ruby, check out the following resources:
-
-- [Official Net::HTTP documentation](https://ruby-doc.org/stdlib-1.9.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Ruby Guides tutorial on sending HTTP requests](https://www.rubyguides.com/2018/08/ruby-http-request/)
-- [HTTParty gem for making HTTP requests in Ruby](https://github.com/jnunemaker/httparty)
+- Official `Net::HTTP` documentation: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTP requests tutorial: https://www.theodinproject.com/courses/ruby-programming/lessons/http-networking
+- HTTP basics explained: https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Swift: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué comenzar un nuevo proyecto
-Si estás pensando en iniciar un nuevo proyecto de programación en Swift, ¡estás en el lugar correcto! En este artículo, te explicaremos por qué es una excelente idea comenzar un nuevo proyecto en este lenguaje y te daremos algunos consejos para que puedas hacerlo con éxito.
+## ¿Por qué iniciar un nuevo proyecto?
+
+¿Eres un apasionado de la programación? ¿Te encanta el desafío de crear algo desde cero? ¿O simplemente estás buscando mejorar tus habilidades en Swift? Independientemente de la razón, iniciar un nuevo proyecto puede ser una experiencia emocionante y gratificante.
 
 ## Cómo hacerlo
-Para comenzar, asegúrate de tener instalado Xcode, la herramienta de desarrollo para Swift. Una vez que esté listo, sigue estos pasos:
 
-1. Abre Xcode y selecciona "Nuevo proyecto".
-2. Elige el tipo de proyecto que deseas crear (aplicación móvil, aplicación para Mac, juego, etc.).
-3. Asigna un nombre a tu proyecto y selecciona la ubicación donde deseas guardarlo.
-4. ¡Comienza a codificar!
+Comenzar un nuevo proyecto en Swift es fácil, ¡sigue estos pasos!
 
 ```Swift
-print("¡Hola Mundo!")
+// Paso 1: Cree una carpeta para su proyecto
+mkdir MiProyecto
+
+// Paso 2: Inicie un nuevo proyecto de Swift
+swift package init
+
+// Paso 3: Agregue su código Swift al archivo Sources
+// Por ejemplo, cree un archivo main.swift y escriba:
+print("¡Hola mundo!")
+
+// Paso 4: Compile su código
+swift build
+
+// Paso 5: Ejecute su código
+./.build/debug/NombreProyecto
+
+// Resultado esperado: ¡Hola mundo!
 ```
 
-Este simple código imprimirá "¡Hola Mundo!" en la consola. ¡Felicidades, acabas de crear tu primer proyecto en Swift!
+## Profundizando
 
-Puedes continuar agregando más código y probar diferentes funciones y características de Swift. No olvides utilizar espacios de nombres adecuados y comentarios para que tu código sea fácil de entender y mantener.
+Al iniciar un nuevo proyecto en Swift, es importante tener una idea clara de lo que quieres lograr. Piensa en la funcionalidad que quieres que tenga tu aplicación, los módulos que necesitarás y cómo organizar tu código de manera eficiente.
 
-## Profundizando más
-Comenzar un nuevo proyecto en Swift no solo te permitirá aprender un nuevo lenguaje de programación, sino que también te ofrecerá una amplia variedad de herramientas y recursos. Puedes explorar la documentación oficial de Swift para conocer más sobre su sintaxis y características, participar en comunidades de programadores en línea para obtener consejos y apoyo y utilizar diferentes librerías y frameworks para agregar funcionalidades a tu proyecto.
+También puedes investigar y experimentar con diferentes frameworks y herramientas que te ayudarán a agilizar tu proceso de desarrollo. No tengas miedo de probar cosas nuevas y seguir aprendiendo mientras avanzas en tu proyecto.
 
-También es importante tener una buena estructura de proyecto, especialmente si tu proyecto es grande y/o tiene múltiples colaboradores. Asegúrate de organizar bien tus archivos y utilizar el control de versiones para realizar un seguimiento de los cambios en tu código. Esto facilitará el desarrollo y evitará posibles problemas en el futuro.
+## Ver también
 
-# Ver también
-- [Documentación oficial de Swift](https://docs.swift.org/swift-book/)
-- [Comunidad de programadores de Swift en Reddit](https://www.reddit.com/r/swift/)
-- [Framework UIKit de Apple para el desarrollo de aplicaciones móviles](https://developer.apple.com/documentation/uikit)
-- [Git - Sistema de control de versiones](https://git-scm.com/)
+- [Documentación oficial de Swift](https://developer.apple.com/documentation/swift)
+- [Ejemplos de código de Swift](https://github.com/apple/swift/tree/main/test)
+- [Tutorial de Swift en 15 minutos](https://www.youtube.com/watch?v=jjBJMeW1Pwc)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Utiliser les expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Ruby: Utiliser les expressions régulières"
 simple_title:         "Utiliser les expressions régulières"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+Les expressions régulières sont des outils puissants pour la manipulation de chaînes de caractères dans vos programmes Ruby. Elles vous permettent de rechercher, d'extraire et de modifier facilement des données en utilisant des modèles de correspondance.
 
-Utiliser des expressions régulières peut sembler intimidant au premier abord, mais c'est en fait un outil puissant pour manipuler et analyser des chaînes de caractères en Ruby. Que vous cherchiez à valider des données entrées par l'utilisateur, à extraire des informations d'un fichier texte ou même à remplacer des mots dans une chaîne, les expressions régulières peuvent vous faire gagner un temps précieux et rendre votre code plus élégant.
+## Comment utiliser les expressions régulières en Ruby
+Les expressions régulières sont définies par des motifs entre des barres obliques ("/"). Par exemple, `/hello/` correspondra à la chaîne "hello" dans une autre chaîne.
 
-## Comment faire
-
-Pour utiliser les expressions régulières en Ruby, vous devez d'abord les encapsuler entre deux slashs (`/expression/`) dans une variable ou directement dans une méthode comme `gsub` ou `match`. Ensuite, vous pouvez utiliser différents symboles avant ou après l'expression pour spécifier ce que vous cherchez à faire.
-
-Par exemple, si vous voulez chercher toutes les occurrences d'une lettre dans une chaîne de caractères, vous pouvez utiliser le symbole `.` pour représenter n'importe quel caractère, suivi du symbole `*` qui signifie "0 ou plus". Voici un exemple de code :
-
+Voici un exemple de code Ruby utilisant une expression régulière pour trouver toutes les occurrences de "ruby" dans une chaîne et les remplacer par "Ruby":
 ```Ruby
-texte = "Bonjour tout le monde!"
-resultat = texte.scan(/to\*/) # trouve toutes les lettres "to" dans la chaîne
-puts resultat # affiche ["tout"]
+sentence = "J'aime écrire en Ruby. Ruby est un langage de programmation polyvalent."
+puts sentence.gsub(/ruby/, 'Ruby')
+```
+La sortie de ce code sera:
+```
+J'aime écrire en Ruby. Ruby est un langage de programmation polyvalent.
 ```
 
-Vous pouvez également utiliser des symboles spéciaux pour rechercher des ensembles de caractères spécifiques, comme `[aeiou]` pour toutes les voyelles ou `[A-Z]` pour toutes les lettres majuscules. Pour plus d'exemples et de détails, consultez la section "Voir aussi" ci-dessous.
+Il existe également des raccourcis pour certains motifs couramment utilisés. Par exemple, le motif `/[0-9]/` correspondra à n'importe quel chiffre et le motif `/[a-z]/` correspondra à n'importe quelle lettre minuscule.
+
+Les expressions régulières ont également de nombreuses autres fonctionnalités avancées telles que les groupes de capture, les caractères spéciaux et les modificateurs de correspondance. Il est recommandé de consulter la documentation officielle de Ruby pour en savoir plus.
 
 ## Plongée en profondeur
+Les expressions régulières peuvent sembler intimidantes à première vue, mais elles peuvent être très utiles une fois que vous les maîtrisez. Voici quelques astuces pour vous aider:
 
-Les expressions régulières peuvent sembler complexes au début, mais elles peuvent être très utiles pour des tâches plus avancées. Par exemple, vous pouvez utiliser des parenthèses pour capturer les parties spécifiques d'une chaîne que vous souhaitez extraire. Vous pouvez également utiliser les symboles `+`, `?` ou `{n, m}` pour spécifier des occurrences multiples, facultatives ou d'un nombre précis.
-
-En plus des techniques de correspondance, les expressions régulières en Ruby ont également des méthodes utiles telles que `sub` qui remplace la première occurrence correspondante ou `gsub` qui remplace toutes les occurrences correspondantes. Il existe également des options comme l'utilisation de modificateurs d'expression régulière pour ignorer la casse ou utiliser des expressions régulières multilignes.
+- Utilisez différents sites en ligne pour tester et expérimenter vos expressions régulières en temps réel, tels que Regex101 ou Rubular.
+- Vous pouvez utiliser les expressions régulières pour valider des entrées utilisateur telles qu'un numéro de téléphone ou une adresse e-mail.
+- En utilisant des groupes de capture, vous pouvez extraire des données spécifiques d'une chaîne et les réutiliser dans d'autres motifs ou dans votre code.
+- Les expressions régulières sont également disponibles dans d'autres langages de programmation tels que JavaScript ou Python, ce qui permet une plus grande portabilité de votre code.
 
 ## Voir aussi
-
-- [Documentation Ruby pour les expressions régulières] (https://ruby-doc.org/core/Regexp.html)
-- [Un guide complet des expressions régulières en Ruby] (https://www.regular-expressions.info/ruby.html)
-- [Rubular - tester vos expressions régulières en temps réel] (https://rubular.com/)
+- [Documentation officielle de Ruby sur les expressions régulières](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- [Tutoriel en français sur les expressions régulières en Ruby](https://openclassrooms.com/fr/courses/1302681-introduction-aux-expressions-regulieres)
+- [Site de pratique d'expressions régulières](https://regex101.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Swift: Nykyisen päivämäärän saaminen"
 simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,49 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia käytännön syitä, miksi tarvitsisimme nykyisen päivämäärän ohjelmoinnissa. Esimerkiksi lomakkeiden täyttämisessä tai kalenteri- ja aikaa herkällä sovelluksissa, kuten varaussovelluksessa, on tärkeää saada luotettava ja ajantasainen päivämäärätieto. Onneksi Swift-ohjelmointikielessä on helppo hakea nykyinen päivämäärä.
+Monissa ohjelmoinnin tehtävissä on tarpeen käyttää nykyistä päivämäärää, kuten esimerkiksi tapahtumien seurannassa tai aikaleimojen lisäämisessä tietokantoihin. Swiftillä on helppo saada tämä tieto käyttöön ja tässä artikkelissa näytämme, miten se tehdään.
 
-## Miten
-
-Swift tarjoaa Date-luokan, joka sisältää kaikki päivämäärätietoihin liittyvät toiminnot. Aluksi meidän täytyy importata Foundation-kirjasto, joka sisältää Date-luokan.
+## Kuinka
 
 ```Swift
-import Foundation
-```
 
-Sitten voimme käyttää Date()-funktiota luodaksemme uuden päivämääräolion. Tämä päivämääräolion sisältämät tiedot ovat nykyinen aika ja päiväys.
+let currentDate = Date() // Luo uuden Date-olion, joka sisältää nykyisen päivämäärän.
 
-```Swift
-let currentDate = Date()
-```
+let dateFormatter = DateFormatter() // Alustetaan DateFormatter-olio, jolla muotoillaan päivämäärä.
 
-Voimme myös muuttaa päivämäärän muotoa haluamallamme tavalla käyttämällä DateFormatter-luokkaa. Se tarjoaa mahdollisuuden asettaa halutun muodon ja kielen päivämäärään. Esimerkiksi jos haluamme näyttää päivämäärän englanniksi ja muodossa "dd/MM/yyyy", voimme tehdä sen seuraavalla tavalla.
+dateFormatter.dateFormat = "dd.MM.yyyy" // Asetetaan haluttu päivämäärän muoto.
 
-```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
-formatter.locale = Locale(identifier: "en")
-let formattedDate = formatter.string(from: currentDate)
-print(formattedDate) // tulostaa "04/03/2021"
+let formattedDate = dateFormatter.string(from: currentDate) // Muotoillaan nykyinen päivämäärä ja tallennetaan se muuttujaan.
+
+print(formattedDate) // Tulostaa esimerkiksi "17.09.2021".
+
 ```
 
 ## Syvällinen sukellus
 
-Date-luokka perustuu Gregorian-kalenteriin, joka on yleisimmin käytetty kalenterijärjestelmä. Se tallentaa päivämäärän sisäisesti sekunteina alkaen 1. tammikuuta 2001. Tämä tarkoittaa, että se ei ota huomioon aikavyöhyke- tai päiväntasaajan muutoksia, joten päivämäärän tarkkuus voi joskus olla kyseenalainen. 
-
-Voimme myös käyttää DateComponents-luokkaa saadaksemme tarkempaa tietoa päivämäärästä. Se antaa meille pääsyn päivän, kuukauden, vuoden ja viikonpäivän tietoihin erikseen.
-
-```Swift
-let calendar = Calendar.current
-let components = calendar.dateComponents([.day, .month, .year, .weekday], from: currentDate)
-print(components.day) // tulostaa nykyisen päivän numeron
-print(components.month) // tulostaa nykyisen kuukauden numeron
-print(components.year) // tulostaa nykyisen vuoden numeron
-print(components.weekday) // tulostaa nykyisen viikonpäivän numeron
-```
+Date-luokka Swiftissä tarjoaa monia hyödyllisiä metodeita ja ominaisuuksia päivämäärän käsittelyyn. Esimerkiksi voit käyttää DateComponents-oliota eri osien, kuten vuoden, kuukauden ja päivän, lukemiseen tai asettamiseen suoraan. Voit myös käyttää Date-metodia addingTimeInterval sekuntien lisäämiseen tai vähentämiseen nykyisestä päivämäärästä.
 
 ## Katso myös
 
-- [Official Swift Date Documentation](https://developer.apple.com/documentation/foundation/date)
-- [DateFormatter-luokka](https://developer.apple.com/documentation/foundation/dateformatter)
-- [DateComponents-luokka](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Date-luokan dokumentaatio Swiftissä](https://developer.apple.com/documentation/foundation/date)
+- [DateFormatterin dokumentaatio Swiftissä](https://developer.apple.com/documentation/foundation/dateformatter)
+- [DateComponentsin dokumentaatio Swiftissä](https://developer.apple.com/documentation/foundation/datecomponents)

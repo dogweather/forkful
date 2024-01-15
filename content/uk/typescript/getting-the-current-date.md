@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Отримання поточної дати"
+title:                "Отримання поточної дати"
+html_title:           "TypeScript: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,60 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-
-Програмування є надзвичайно корисним навичкою, особливо в сучасному технологічному світі. У цій статті ми розглянемо одну з основних задач - отримання поточної дати. Давайте почнемо!
+Існує багато ситуацій, коли вам потрібно обробити поточну дату у вашому коді, наприклад, створити логи або записати дату створення елементу. TypeScript надає нам потужні засоби для отримання теперішньої дати без додаткових зусиль.
 
 ## Як
-
-Існує декілька способів отримати поточну дату в TypeScript. Перший спосіб - використання вбудованого об'єкта Date. Наприклад, якщо ви хочете отримати сьогоднішню дату, ви можете скористатися кодом:
-
-```TypeScript
-const today = new Date();
-console.log(today);
-```
-
-Ви отримаєте вихідний результат у вигляді:
-
-```javascript
-2019-11-08T08:00:00.000Z
-```
-
-Ви також можете отримати окремі частини дати, наприклад, день, місяць або рік:
+Щоб отримати поточну дату в TypeScript, нам потрібно використовувати вбудований об'єкт `Date`. У нього є кілька методів та властивостей, за допомогою яких ми можемо отримати інформацію про поточну дату. Давайте подивимося на деякі приклади коду:
 
 ```TypeScript
-const year = today.getFullYear();
-const month = today.getMonth(); // Повертає 0 для січня, 1 для лютого і т.д.
-const day = today.getDate();
-console.log(`${day}/${month + 1}/${year}`);
+// Отримання поточної дати
+const now = new Date();
+
+// Отримання поточної дати у вигляді рядка
+const dateString = now.toString();
+
+// Отримання поточного часу у годинах, хвилинах та секундах
+const hours = now.getHours();
+const minutes = now.getMinutes();
+const seconds = now.getSeconds();
 ```
 
-Результат буде виглядати наступним чином:
+В прикладі вище ми створили об'єкт `Date`, який представляє поточну дату та час. Ми також використали метод `toString()`, щоб отримати поточну дату у вигляді рядка. Крім того, ми використали методи `getHours()`, `getMinutes()` та `getSeconds()`, щоб отримати поточний час у годинах, хвилинах та секундах.
 
-```javascript
-8/11/2019
-```
-
-Ще один спосіб отримати дату - використання бібліотеки Moment.js. Вона надає зручні інструменти для роботи з датами в TypeScript. Встановити її можна за допомогою наступної команди:
-
-```bash
-npm install moment --save
-```
-
-Після цього, ви можете використовувати бібліотеку за допомогою такого коду:
-
-```TypeScript
-import moment from "moment";
-const today = moment();
-console.log(today.format("DD/MM/YYYY"));
-```
-
-Результат буде аналогічний попередньому прикладу.
-
-## Глибокий занурення
-
-Якщо ви хочете дізнатися більше про отримання дати в TypeScript, рекомендую переглянути документацію до бібліотеки Moment.js. Також ви можете прочитати про роботу з датами в стандартній бібліотеці JavaScript.
+## Глибоке занурення
+Об'єкт `Date` у TypeScript базується на стандартному об'єкті `Date` у JavaScript, і має деякі зауваження стосовно часових зон та точності. Якщо вам потрібна більш детальна інформація, ви можете переглянути документацію на [офіційному сайті TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys).
 
 ## Дивіться також
-
-- [Документація Moment.js](https://momentjs.com/docs/)
-- [Робота з датами в JavaScript](https://www.w3schools.com/js/js_dates.asp)
+- [Робота з датами та часом в TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-and-times-in-typescript)
+- [Стандартний об'єкт Date у JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Official TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/utility-types.html)

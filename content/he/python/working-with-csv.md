@@ -1,6 +1,7 @@
 ---
-title:                "Python: עבודה עם קבצי CSV"
-simple_title:         "עבודה עם קבצי CSV"
+title:                "עבודה עם קובץ CSV"
+html_title:           "Python: עבודה עם קובץ CSV"
+simple_title:         "עבודה עם קובץ CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -9,57 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-
-CSV היא פורמט נתונים תפור המשמש לאחסון ושיתוף נתונים טבלאיים. עם זאת, היא מציעה דרך פשוטה ויעילה להעברת נתונים בין תוכניות ומערכות שונות. ניתן לעבוד עם קבצי CSV באמצעות פייתון בקלות ולשלב אותם עם כלי נתונים אחרים, כגון Excel ו- SQL, מה שמקל על העבודה ומונע טעויות בנתונים.
+## למה csv?
+קבצי CSV הם נפוצים מאוד בעולם התכנות ומשמשים לאחסון וקריאת נתונים בפורמט טקסט פשוט. המאמר הזה ילמד אותך איך לעבוד עם קבצי CSV בשפת פייתון ויתן לך כלים לשליטה על נתונים בצורה יעילה ונוחה.
 
 ## איך לעבוד עם CSV בפייתון
-
-### קריאת קובץ CSV
-
-כדי לקרוא נתונים מקובץ CSV בפייתון, ניתן להשתמש בפונקציית `reader()` מהמודול `csv`. ניתן לציין את כתובת הקובץ בתור פרמטר ולהשתמש בלולאה כדי לעבור על הנתונים.
+כדי להתחיל לעבוד עם קבצי CSV בפייתון עליך לייבא את המודול "csv". באמצעות הפונקציה "reader" ניתן לקרוא נתונים מקובץ CSV ולהציג אותם במבנה של רשימות. ניתן גם להשתמש בפונקציה "writer" כדי לכתוב נתונים לקובץ CSV בצורה מקומפקטית ומועילה. ניתן לראות דוגמאות קוד במסגרת הערכה הזו.
 
 ```Python
 import csv
 
-with open('file.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row in csv_reader:
-        # do something with the data
+# פותח קובץ CSV לקריאה ומחזיר אובייקט
+with open('file.csv', 'r') as csvfile:
+    # מאתחל קורא פייתון עבור הקובץ
+    reader = csv.reader(csvfile)
+
+    # נקרא את הנתונים בצורה של רשימות
+    for row in reader:
+        print(row)
+        
+# פותח קובץ CSV לכתיבה ומחזיר אובייקט
+with open('file.csv', 'w') as csvfile:
+    # מאתחל כותב פייתון עבור הקובץ
+    writer = csv.writer(csvfile)
+
+    # כותב את הנתונים לקובץ בפורמט תאים
+    writer.writerow(['Name', 'Age', 'Location'])
+    writer.writerow(['John', '30', 'New York'])
 ```
 
-### כתיבת נתונים לקובץ CSV
+פלט של הקוד הזה הייחודי יכול להיות:
 
-ניתן ליצור קובץ CSV חדש ולכתוב אליו נתונים באמצעות פונקציית `writer()` מהמודול `csv`. ניתן לציין את כתובת הקובץ ואת השדות של הטבלה.
-
-```Python
-import csv
-
-with open('new_file.csv', 'w') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',')
-    csv_writer.writerow(['Name', 'Age', 'City'])
-    csv_writer.writerow(['John', '25', 'New York'])
-    csv_writer.writerow(['Rachel', '30', 'Los Angeles'])
+```
+['Name', 'Age', 'Location']
+['John', '30', 'New York']
 ```
 
-### מיזוג קבצי CSV
-
-פייתון מציעה דרך פשוטה למזג קבצי CSV מספר וליצור קובץ ממוזג יחיד. ניתן להשתמש במודול `csv` כדי ליצור קובץ חדש ולכתוב אליו את הנתונים של מספר הקבצים המזוגים.
-
-```Python
-import csv
-import glob
-
-with open('merged_file.csv', 'w') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',')
-    # get all csv files in the current directory
-    csv_files = glob.glob('./*.csv')
-    # write header row
-    csv_writer.writerow(['Name', 'Age', 'City'])
-    # loop through each file
-    for file in csv_files:
-        with open(file, 'r') as csv_file:
-            csv_reader = csv.reader(csv_file)
-            # skip header row
-            next(csv_reader)
-            # write data from file
+## מעמיקים בעבודה עם CSV
+ניתן לשחק עם המודול "csv" כדי לעבוד עם נתונים בכוחות נוספים כמו פונקציות למניפולציה, איתות וטיפול בשגיאות. כדי ללמוד עוד על היכולות של מודול ה-"csv" ניתן לבקר במסמ

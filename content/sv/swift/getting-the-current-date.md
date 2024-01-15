@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Att få den aktuella datumet"
-simple_title:         "Att få den aktuella datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "Swift: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,41 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna få den nuvarande datumen är en grundläggande funktion i många programmeringsspråk. I Swift använder vi Date-klassen för att göra detta möjligt. Det är viktigt att kunna få den nuvarande datumen för att kunna implementera funktioner som tidsstämplar och schema för att hålla koll på tid relaterade händelser. Det är också en viktig del av att kunna utföra datummanipulationer och tidsberäkningar.
+Att kunna hämta och använda den aktuella datumet är en viktig funktion för många Swift-programmerare. Det kan användas för att visa tidslinjer, spara tidsstämplar i databaser eller helt enkelt för att hålla reda på den aktuella tiden.
 
-## Så här
+## Hur man gör
 
-I Swift finns det flera sätt att få den nuvarande datumen, beroende på vad ditt specifika behov är.
-
-Först och främst, om du bara behöver den nuvarande datumen med tidszoninställningar och sekundsprecision, kan du helt enkelt använda Date-klassen och dess initieringsmetod, som visas nedan i Swift-kodblocket:
+För att hämta den aktuella datumet i Swift, kan du använda dig av `Date()` -klassen. Det finns flera olika sätt att använda den för att få den information du behöver. Här är några exempel:
 
 ```Swift
-let currentDate = Date()
-print(currentDate)
-```
+// Hämta den aktuella datumet i default tidszon
+let currentDateTime = Date()
 
-Detta kommer att ge dig utmatningen av den nuvarande datumen i standard UTC-tidszon och i formatet "ÅÅÅÅ-MM-DD HH:MM:SS +TTTT" där "TTTT" representerar tidsskillnaden från UTC i timmar och minuter.
-
-Om du vill anpassa utmatningen, som att visa datumet i en annan tidszon eller ett annat format, kan du använda DateFormatter-klassen. I följande kodblock visas hur du kan få datumet i lokaltidszonen och i årtal, månad och dag format.
-
-```Swift
+// Hämta den aktuella datumet i en specifik tidszon 
 let dateFormatter = DateFormatter()
-dateFormatter.timeZone = TimeZone.current
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let today = Date()
-let localDate = dateFormatter.string(from: today)
-print(localDate)
+dateFormatter.timeZone = TimeZone(identifier: "Europe/Stockholm")
+let currentDateTime = Date()
 ```
 
-Detta kommer att ge dig utmatningen av den nuvarande datumen i formatet "ÅÅÅÅ-MM-DD".
+Du kan också formatera den aktuella datumet med hjälp av olika formatmallar. Till exempel:
+
+```Swift
+// Visa den aktuella datumet i en specifik tidszon med ett anpassat format
+dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+let currentDateTime = Date()
+```
+
+Att använda `Date()` -klassen ger dig också möjlighet att göra andra operationer som att jämföra olika datum, konvertera mellan tidszoner och mycket mer. Det är en mycket kraftfull klass som är väl värt att utforska mer.
 
 ## Djupdykning
 
-De Date-klasser och initieringsmetoder som används för att få den nuvarande datumen är bara några av de funktioner som kan hjälpa dig att hantera datum och tid i Swift. Det finns andra klasser som Calendar och DateComponents som är användbara för att göra beräkningar och manipulationer på datumen. Du kan också utforska olika formateringsalternativ för datum och tid med DateFormatter-klassen.
+När du använder `Date()` -klassen, är det viktigt att förstå hur tidszoner fungerar för att undvika eventuella problem med datum och tider. Det är också bra att veta att detta är en del av Foundation Framework, vilket betyder att den har stöd för både iOS och macOS.
+
+Det finns också andra alternativ för att få den aktuella datumet, som till exempel att använda `Calendar` -klassen eller `NSCalendar` för äldre projekt.
 
 ## Se även
 
-- [Swift - Date Class Documentation](https://developer.apple.com/documentation/foundation/date)
-- [Swift - DateFormatter Class Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift - Calendar Class Documentation](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift - DateComponents Class Documentation](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Apple - Date](https://developer.apple.com/documentation/foundation/date)
+- [Stack Overflow - How to get current time as per time zone in Swift](https://stackoverflow.com/questions/57647133/how-to-get-current-time-as-per-time-zone-in-swift)
+- [Hacking with Swift - Handling dates and times](https://www.hackingwithswift.com/read/11/4/handling-dates-and-times)

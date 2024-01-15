@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Téléchargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Gleam: Téléchargement d'une page web"
 simple_title:         "Téléchargement d'une page web"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi Télécharger une Page Web avec Gleam?
+## Pourquoi
 
-Télécharger une page Web peut sembler une tâche banale, mais cela peut être un élément crucial dans de nombreux projets et applications. Que vous souhaitiez extraire des données, automatiser des tâches ou simplement stocker des informations, la capacité de télécharger et de traiter du contenu Web peut être un atout précieux. Heureusement, avec le langage de programmation Gleam, cette tâche peut être réalisée facilement et efficacement.
+Si vous êtes un développeur web ou un programmeur à la recherche d'un moyen simple et efficace de télécharger des pages web, alors vous êtes au bon endroit ! Dans cet article, nous allons vous montrer comment utiliser Gleam pour télécharger rapidement et facilement une page web.
 
-## Comment Télécharger une Page Web avec Gleam
+## Comment faire
 
-Pour télécharger une page Web avec Gleam, il vous suffit d'utiliser le module `httpc` intégré qui permet de faire des requêtes HTTP. Voici un exemple de code pour télécharger et afficher le contenu d'une page Web :
+Télécharger une page web avec Gleam est très simple. Tout d'abord, vous devez importer la bibliothèque http de Gleam en utilisant la commande suivante :
 
 ```Gleam
-import gleam/http/httpc
-
-let { Ok, Error } = httpc.get("https://example.com")
-
-match _ {
-  Ok(response) -> response.body |> String.print
-  Error(error) -> error |> Error.to_string |> String.print
-}
+import http
 ```
 
-Dans cet exemple, nous utilisons la fonction `httpc.get` pour effectuer une requête GET vers l'URL spécifiée. La réponse est renvoyée sous la forme d'un résultat `Ok` ou `Error`, que nous décomposons ensuite à l'aide d'un match. En cas de réussite, le corps de la réponse est imprimé à l'aide de la fonction `String.print`.
+Ensuite, vous pouvez utiliser la fonction `http.get` pour télécharger une page web en fournissant simplement l'URL de la page en tant que paramètre. Voici un exemple pour télécharger la page d'accueil de Google :
 
-## Plongée Profonde : Plus d'Informations sur le Téléchargement de Pages Web
+```Gleam
+response := http.get("https://www.google.com/")
+```
 
-Lorsque vous téléchargez une page Web avec Gleam, il y a plusieurs choses à prendre en compte pour vous assurer que vous obtenez les résultats souhaités. Par exemple, il est important de noter que certaines pages Web peuvent nécessiter des en-têtes HTTP spécifiques ou une authentification pour accéder au contenu. Dans ces cas-là, vous pouvez les spécifier dans la requête en utilisant des options supplémentaires.
+La variable `response` contiendra maintenant le contenu de la page téléchargée. Vous pouvez utiliser la fonction `http.body_text` pour obtenir uniquement le texte du corps de la page.
 
-De plus, vous pouvez également utiliser des bibliothèques tierces pour faciliter le traitement des données téléchargées. Par exemple, la bibliothèque `gleam/html` peut être utile pour extraire et manipuler du contenu HTML spécifique.
+```Gleam
+body := http.body_text(response)
+```
 
-Enfin, il est important de noter que Gleam est basé sur le langage de programmation fonctionnel Erlang, ce qui lui confère une grande puissance et une grande fiabilité. Ainsi, lorsque vous téléchargez une page Web avec Gleam, vous pouvez être sûr que le code sera performant et résilient.
+La variable `body` contiendra maintenant le texte de la page téléchargée. Vous pouvez également spécifier des en-têtes HTTP supplémentaires dans un dictionnaire en tant que deuxième paramètre de la fonction `http.get`.
 
-# Voir Aussi
+## Deep Dive
 
-- [Documentation du Module Httpc](https://gleam.run/modules/httpc/)
-- [Documentation de la Bibliothèque Html](https://gleam.run/libraries/html/)
-- [Site Officiel de Gleam](https://gleam.run/)
+Maintenant que vous savez comment télécharger une page web avec Gleam, voici quelques informations plus détaillées sur la fonction `http.get`. Elle renvoie un type `Result`, ce qui signifie qu'elle peut retourner soit une `Ok` avec le contenu de la page, soit une `Error` avec un message d'erreur en cas d'échec du téléchargement.
+
+De plus, vous pouvez également spécifier une fonction de rappel en tant que troisième paramètre de la fonction `http.get` pour effectuer des opérations supplémentaires sur les données téléchargées, telles que la mise en forme ou l'enregistrement dans un fichier. Cependant, cette fonction de rappel ne sera exécutée que si le téléchargement est un succès.
+
+## Voir aussi
+
+Maintenant que vous savez comment télécharger une page web avec Gleam, vous pouvez l'utiliser dans vos projets pour récupérer des données à partir de pages web. Pour en savoir plus sur les autres fonctionnalités de Gleam, consultez la documentation officielle et découvrez comment vous pouvez l'intégrer à votre flux de travail de développement.
+
+- Documentation de Gleam : https://gleam.run/
+- GitHub : https://github.com/gleam-lang/gleam

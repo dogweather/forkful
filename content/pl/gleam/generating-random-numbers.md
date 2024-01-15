@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Gleam: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,36 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie liczb losowych jest niezwykle przydatną umiejętnością, zarówno w programowaniu, jak i w życiu codziennym. Może być wykorzystywane do tworzenia gier, symulacji, testowania algorytmów i wielu innych zastosowań. W tym wpisie dowiesz się, jak w prosty sposób generować liczby losowe w języku programowania Gleam.
+Generowanie losowych liczb może być przydatne w wielu aplikacjach, takich jak gry, symulacje lub weryfikacji losowych wyborów. Ponadto, jest to ważna umiejętność w programowaniu, ponieważ pozwala na stworzenie bardziej złożonych i różnorodnych algorytmów.
 
 ## Jak to zrobić
 
-Aby wygenerować losową liczbę w Gleam, musimy użyć wbudowanej biblioteki `random` za pomocą polecenia `import random`.
-
 ```Gleam
-import random
+// Generowanie losowej liczby całkowitej z przedziału 1 do 10
+let random_num = Random.int(1, 10)
 
-random.int(0, 100)
-// Wynik: 42
+// Generowanie losowej liczby rzeczywistej z przedziału 0 do 1
+let random_float = Random.float(0, 1)
+
+// Generowanie losowego ciągu znaków o długości 10
+let random_string = Random.string(10)
 ```
 
-W powyższym przykładzie korzystamy z funkcji `int` z biblioteki `random`, dzięki czemu wygenerowana zostanie liczba całkowita w podanym zakresie (od 0 do 100). Możemy oczywiście dostosować ten zakres do swoich potrzeb.
-
-```Gleam
-random.float(0.0, 10.0)
-// Wynik: 6.834
+Output: 
+```
+random_num = 4
+random_float = 0.735678
+random_string = "aR82nJ4k9p"
 ```
 
-W tym przykładzie używamy funkcji `float` do wygenerowania liczby zmiennoprzecinkowej w zakresie od 0.0 do 10.0.
+## Głębszy zanurzenie
 
-## Dogłębna analiza
+Generowanie losowych liczb jest możliwe dzięki tzw. generatorom pseudolosowym, które wykorzystują algorytm i ziarno, aby generować liczby, które wydają się być losowe. W Gleam, funkcje `int()`, `float()` i `string()` korzystają z generatora Mersenne Twister, który jest uważany za jeden z najbardziej wydajnych i dokładnych generatorów w świecie programowania.
 
-Podczas korzystania z funkcji `random` w Gleam, warto zwrócić uwagę na kilka ważnych detali. Po pierwsze, warto mieć świadomość, że funkcje te generują jedynie pseudolosowe liczby, co oznacza, że są one obliczane matematycznie i nie są w pełni losowe. Jednak w większości przypadków taka precyzja jest wystarczająca.
+Dodatkowo, w Gleam istnieją także funkcje `bool()` i `choose()` pozwalające na generowanie losowych wartości typu bool oraz wybór losowej wartości z listy podanych wartości.
 
-Dodatkowo, funkcje `random` nie są w stanie wygenerować liczb losowych w sposób ciągły, tzn. za każdym razem, gdy uruchamiamy funkcję w tej samej sytuacji, otrzymamy tę samą liczbę. Aby uniknąć tego problemu, można wykorzystać generator liczb losowych `seeded`, który pozwala na bardzo precyzyjną kontrolę nad wygenerowanymi liczbami.
+## Zobacz również
 
-## Zobacz także
-
-- Dokumentacja biblioteki `random`: https://gleam.run/modules/random
-- Poradnik o wykorzystaniu funkcji `random` w języku Python: https://realpython.com/python-random/
-- Ciekawy artykuł o zastosowaniu liczb losowych w programowaniu: https://www.smashingmagazine.com/2019/05/randomness-in-design/
+- Dokumentacja Gleam na temat generowania liczb: https://gleam.run/documentation/std-lib-random/
+- Sposoby na wprowadzenie losowości do kodu: https://www.freecodecamp.org/news/random-number-generator-in-python/ 
+- Wyjaśnienie działania generatorów pseudolosowych: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

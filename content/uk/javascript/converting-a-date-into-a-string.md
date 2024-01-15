@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Перетворення дати в рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Javascript: Перетворення дати в рядок"
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Чому
-
-Програмістам часто доводиться працювати з датами в своїх проектах. Одним із часто зустрічаються завдань є конвертація дати в рядок. В цій статті я хочу розповісти, чому це корисно та як це зробити за допомогою Javascript.
+## Чому
+JavaScript є однією з найбільш популярних мов програмування, тому це стає необхідністю для майже кожного програміста знати його. Конвертування дати в рядок є важливою навичкою, яка може знадобитися при розробці веб-додатків або плагінів.
 
 ## Як це зробити
+```javascript
+// Створимо змінну зі значенням дати
+let myDate = new Date("December 25, 2021");
 
-Для початку, нам потрібно створити об'єкт дати за допомогою конструктора Date(). Наприклад, щоб отримати поточну дату, можна використати наступний код:
+// Застосуємо метод .toString() для конвертації дати в рядок
+let myString = myDate.toString();
 
-```Javascript
-let date = new Date();
+// Виведемо результат у консоль
+console.log(myString); // "Sat Dec 25 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
 ```
 
-Далі, для конвертації дати в рядок, нам потрібно використати метод toDateString(). Цей метод повертає дату у вигляді рядка в форматі "MMM DD YYYY" (де MMM - скорочення назви місяця, DD - день місяця, YYYY - рік).
+Також, є можливість використання різних опцій для змінення формату виведеної дати. Наприклад:
 
-Наприклад, якщо ми хочемо отримати рядок з поточною датою, наш код буде виглядати так:
+```javascript
+// Використовуйте опцію 'short' для скороченого формату
+let myString = myDate.toLocaleDateString('uk-UA', {dateStyle: 'short'});
 
-```Javascript
-let date = new Date();
-let dateString = date.toDateString();
-console.log(dateString);
-
-// Output: "Jul 11 2021"
+// Результат: 25.12.21
 ```
 
-Ми також можемо вказати бажаний формат дати, використовуючи метод toLocaleDateString(). Цей метод приймає два параметри - мову та об'єкт з опціями форматування.
+## Глибоке дослідження
+Якщо ви бажаєте глибше розібратися з процесом конвертації дати в рядок, вам необхідно розібратися з об'єктом Date в JavaScript. Цей об'єкт містить методи, які дозволяють отримувати окремі частини дати та зберігати їх у вигляді числових значень.
 
-Наприклад, якщо ми хочемо отримати рядок з поточною датою в форматі "день.місяць.рік", можна використати наступний код:
+Наприклад, метод .getDate() повертає число, яке представляє день місяця у даті. Існують також методи для отримання місяця, року, годин, хвилин та секунд у даті.
 
-```Javascript
-let date = new Date();
-let options = { day: "numeric", month: "long", year: "numeric" };
-let dateString = date.toLocaleDateString("uk-UA", options);
-console.log(dateString);
+## Дивіться також
+- [Об'єкт Date в документації JavaScript] (https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Робота з датами в JavaScript] (https://www.w3schools.com/js/js_dates.asp)
+- [Конвертація дати в рядок в JavaScript] (https://www.tutorialspoint.com/How-to-convert-Unix-Timestamp-formatted-date-to-Human-Readable-in-JavaScript)
 
-// Output: "11 липня 2021 р."
-```
-
-## Глибші роздуми
-
-Під капотом, Javascript використовує метод toString() для конвертації дати в рядок. Цей метод повертає дату у вигляді рядка в форматі "Day Month Date Year Hours:Minutes:Seconds Timezone Offset (GMT)".
-
-Також варто зазначити, що метод toDateString() не підтримує стандартизованого формату, тому рядок дати може відрізнятись залежно від браузера.
-
-## Дивись також
-
-- [MDN - Date.prototype.toDateString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
-- [MDN - Date.prototype.toLocaleDateString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-- [MDN - Date.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
+**PowerNap**: В старих браузерах (наприклад, Internet Explorer 8) можуть виникнути проблеми з підтримкою деяких опцій конвертації дати в рядок. Наприклад, опція 'short' може виводити неправильний формат. Тому рекомендується завжди перевіряти сумісність вашого коду з різними браузерами перед публікацією.

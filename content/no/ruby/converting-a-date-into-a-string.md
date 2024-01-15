@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Konvertere en dato til en streng"
-simple_title:         "Konvertere en dato til en streng"
+title:                "Omdannelse av dato til tekst"
+html_title:           "Ruby: Omdannelse av dato til tekst"
+simple_title:         "Omdannelse av dato til tekst"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,47 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å konvertere en dato til en streng er en viktig del av å programmere i Ruby, spesielt når man jobber med brukergrensesnitt eller data som må vises i en bestemt format. Det gir deg også fleksibilitet til å formatere datoer på en måte som er mer forståelig for brukeren.
 
-Konvertering av datoer til strenger er en vanlig oppgave i Ruby-programmering. Dette er fordi strenger er mye mer fleksible når det kommer til formatering og visning av datoer. Det gjør det også enklere å manipulere og sammenligne datoer i koden.
-
-## Hvordan konvertere dato til streng i Ruby
-
-For å konvertere en dato til en streng i Ruby, kan du bruke metoden `strftime`. Dette står for "String Format Time". La oss se på et eksempel:
-
+## Hvordan gjøre det
 ```Ruby
-date = Time.now # Oppretter et objekt av aktuell tid
-date_string = date.strftime("%d.%m.%Y") # Konverterer dato til ønsket strengformat
-puts date_string # Printer ut strengen
+# Konverter dato til en streng
+date = Date.new(2021,9,30)
+string_date = date.to_s
+puts string_date
+# Output: "2021-09-30"
+
+# Formatere dato i en annen måte
+date = Date.new(2021,9,30)
+string_date = date.strftime("%d.%m.%Y")
+puts string_date
+# Output: "30.09.2021"
 ```
 
-Output:
+Det første eksempelet viser hvordan man enkelt kan konvertere en dato til en standard streng ved hjelp av `to_s` metoden. Det andre eksempelet viser hvordan man kan bruke `strftime` metoden til å formatere datoen etter ønsket format, ved hjelp av spesielle formateringstegn som `%d` for dag, `%m` for måned og `%Y` for år.
 
-`29.03.2021`
+## Deep Dive
+Når man konverterer en dato til en streng, bruker Ruby `to_s` metoden som kalder `to_s` metoden i `Date` klassen. Dette resulterer i en standard streng på formatet `åååå-mm-dd`, med mindre du formaterer det på en annen måte.
 
-Her ser du at vi har brukt `%d` for å vise dagen, `%m` for måned og `%Y` for år. Det finnes en hel liste med ulike symboler du kan bruke for å formatere dato og tid i Ruby. Her er noen av de vanligste:
+`strftime` metoden gir deg enda mer kontroll over formateringen av datoen, og lar deg bruke forskjellige formateringstegn for å tilpasse det etter dine behov. Her er noen av de mest brukte formateringstegnene:
 
-- `%d` - Dag i måneden (1-31)
-- `%m` - Måned (1-12)
-- `%Y` - År (f.eks. 2021)
-- `%H` - Time i 24-timers format (00-23)
-- `%M` - Minutter
-- `%S` - Sekunder
+- `%a` - Forkortet ukedag (f.eks. Mon, Tue, osv.)
+- `%A` - Full ukedag (f.eks. Monday, Tuesday, osv.)
+- `%b` - Forkortet månednavn (f.eks. Jan, Feb, osv.)
+- `%B` - Full månednavn (f.eks. January, February, osv.)
+- `%d` - Dag i måneden, med ledende null (f.eks. 01, 02, osv.)
+- `%m` - Måned i år, med ledende null (f.eks. 01, 02, osv.)
+- `%Y` - Fullt årstall (f.eks. 2021, 2022, osv.)
 
-Du kan også kombinere disse symbolene på ulike måter for å lage ditt eget unike strengformat.
-
-## Dykk dypere
-
-For å ta en dypere titt på konvertering av datoer til strenger, kan vi se på hvordan det fungerer i detalj. Ruby har flere interne metoder som brukes for å håndtere dato og tid, og disse kan også brukes for å konvertere datoer til strenger. Her er noen av de viktigste metodene:
-
-- `time.to_s` - Konverterer et tidspunkt til en streng
-- `time.strftime(format)` - Konverterer et tidspunkt til en streng med det spesifiserte formatet
-- `time.utc` - Returnerer tidspunktet som UTC
-- `localtime` - Returnerer tidspunktet for den lokale tidssonen
-
-Når du konverterer en dato til en streng, vil Ruby bruke standardformatet for den lokale tidssonen din. Hvis du vil konvertere til en annen tidssone, kan du bruke `strftime`-metoden og spesifisere tidssonen som en ekstra parameter.
+Å konvertere en dato til en streng kan også være nyttig når man skal lagre datoer i en database eller arbeide med datoer i forskjellige tidssoner.
 
 ## Se også
-
-- [Ruby dokumentasjon om `strftime`-metoden](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
-- [Guide til dato og tid manipulasjon i Ruby](https://www.rubyguides.com/2015/06/ruby-time/)
-- [Ruby on Rails API dokumentasjon om håndtering av dato og tid](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
+- [Date Class in Ruby](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- [strftime method in Ruby](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime)

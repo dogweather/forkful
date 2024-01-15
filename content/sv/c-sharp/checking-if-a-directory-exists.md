@@ -1,6 +1,7 @@
 ---
-title:                "C#: Kontrollera om en katalog existerar"
-simple_title:         "Kontrollera om en katalog existerar"
+title:                "Kontrollera om en mapp existerar"
+html_title:           "C#: Kontrollera om en mapp existerar"
+simple_title:         "Kontrollera om en mapp existerar"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,66 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Välkommen till mitt nya C# programmarblogg! I denna bloggpost kommer vi att utforska hur man kontrollerar om en mapp existerar i C#. Detta är en grundläggande men viktig funktion som kan hjälpa dig att skapa mer robusta program. Så låt oss dyka in!
-
 ## Varför
 
-Innan vi går in i kodexemplen, låt oss prata om varför det är viktigt att kunna kontrollera om en mapp existerar. Det finns många tillfällen när detta kan vara användbart, till exempel när du behöver skapa en ny mapp för att spara filer i ditt program eller när du behöver bekräfta om en specifik mapp redan finns innan du fortsätter med en operation.
+Att kontrollera om en mapp existerar är en viktig del av filhantering inom programmering. Genom att ha denna funktion i ditt C#-program kan du hantera eventuella fel och undvika att försöka öppna en mapp som inte finns.
 
-## Såhär
+## Så här gör du
 
-För att kontrollera om en mapp existerar i C#, använder vi funktionen `Directory.Exists()` som tillhör klassen `System.IO`. Vi behöver först importera detta namespace till vår kod med hjälp av nyckelordet `using`:
-
-```C#
-using System.IO;
-```
-
-Sedan är det bara att använda funktionen `Directory.Exists()` och ge den sökvägen till den mapp du vill kontrollera. Till exempel, om vi vill kontrollera om mappen "Dokument" finns i vår hemmapp, skulle vår kod se ut så här:
+För att kontrollera om en mapp existerar i C# kan du använda dig av metoden `Directory.Exists()`. Denna metod tar in en sträng som representerar sökvägen till mappen som du vill kontrollera. Om mappen existerar kommer metoden att returnera `true`, annars `false`.
 
 ```C#
-if (Directory.Exists(@"C:\Users\Namn\Dokument"))
+if(Directory.Exists(@"C:\Users\Example\Desktop"))
 {
-    Console.WriteLine("Mappen finns!");
+    Console.WriteLine("Mappen existerar.");
 }
 else
 {
-    Console.WriteLine("Mappen finns inte.");
+    Console.WriteLine("Mappen existerar inte.");
 }
+
+// Output: Mappen existerar.
 ```
 
-Detta kommer att skriva ut antingen "Mappen finns!" eller "Mappen finns inte." beroende på om mappen "Dokument" finns eller inte.
-
-För att göra det mer modulärt, kan vi även lagra resultatet av denna funktion i en boolean-variabel och använda den senare i vår kod. Till exempel:
+Om du vill kontrollera en mapp inuti en annan mapp kan du använda dig av `Path.Combine()` för att kombinera sökvägarna.
 
 ```C#
-bool finnsMapp = Directory.Exists(@"C:\Users\Namn\Dokument");
+string parentPath = @"C:\Users\Example\Desktop";
+string childFolder = "NewFolder";
 
-if (finnsMapp)
+if(Directory.Exists(Path.Combine(parentPath, childFolder)))
 {
-    Console.WriteLine("Mappen finns!");
+    Console.WriteLine("Mappen existerar.");
 }
 else
 {
-    Console.WriteLine("Mappen finns inte.");
+    Console.WriteLine("Mappen existerar inte.");
 }
+
+// Output: Mappen existerar inte.
 ```
 
 ## Djupdykning
 
-Nu när vi har en grundläggande förståelse för hur man kontrollerar om en mapp existerar i C#, låt oss titta på några viktiga saker att tänka på när man använder denna funktion.
+En sak att tänka på när du använder `Directory.Exists()` är att det endast kontrollerar om själva mappen existerar, och inte om det finns något innehåll i mappen. Om du vill kontrollera om en mapp är tom kan du använda dig av metoden `Directory.GetFileSystemEntries()` som returnerar en array av filer och mappar som finns i den angivna mappen.
 
-För det första, kom ihåg att sökvägen vi anger till funktionen `Directory.Exists()` behöver vara en absolut sökväg, inte en relativ. Detta betyder att det måste inkludera hela sökvägen från rotmappen, till exempel `C:\Users\Namn\Dokument`.
+Det är också viktigt att komma ihåg att `Directory.Exists()` inte garanterar att mappen kommer att finnas kvar när du försöker öppna den. Om du behöver göra något med en mapp efter att ha kontrollerat om den existerar kan det vara en god idé att lägga till felhantering för att undvika eventuella problem.
 
-För det andra, kom ihåg att resultaten av denna funktion är beroende av användarrättigheter. Om användaren som kör programmet inte har tillåtelse att läsa eller lista innehållet i mappen vi kontrollerar, kommer resultatet alltid att vara "Mappen finns inte."
+## Se även
 
-Slutligen, om du behöver skapa den här mappen om den inte existerar, kan du använda funktionen `Directory.CreateDirectory()` efter att ha kontrollerat om mappen existerar. Detta kommer att skapa mappen om den inte finns och kasta ett undantag om mappen redan existerar.
-
-## Se också
-
-Här är några användbara länkar för att fortsätta lära dig om arbete med filsystemet i C#:
-
-- [Microsoft Docs: Hur man: Arbeta med fil och mappar](https://docs.microsoft.com/sv-se/dotnet/standard/io/how-to-work-with-files-and-folders)
-- [C# Station: Arbete med filer i C#](https://csharp-station.com/Tutorial/CSharp/Lesson16)
-- [C# Corner: Filhantering i C#](https://www.c-sharpcorner.com/UploadFile/mahesh/folder-directory-operations-in-C-Sharp/)
-
-Tack för att du läste min bloggpost! Om du har några frågor eller feedback är du välkommen att lämna en kommentar nedan. Glöm inte att följa mig för fler programmeringsrelaterade inlägg på min blogg. Vi ses snart igen!
+- [Microsoft's dokumentation om Directory.Exists()](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- [C# Coding Conventions (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+- [Path.Combine() - C# Guide](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.combine?view=net-5.0)

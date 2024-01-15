@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Swift recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,51 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a Swift programmer, you may come across the need to make HTTP requests with basic authentication. This is commonly used when accessing APIs that require authentication, such as social media platforms or web services.
+If you're working with APIs or web services, sending an HTTP request with basic authentication is necessary for authorizing and accessing protected resources. This allows you to securely transmit sensitive information between your application and server.
 
 ## How To
 
-To send an HTTP request with basic authentication in Swift, you will need to use the `URLSession` and `URLRequest` classes. Here's an example of how to do it:
+To send an HTTP request with basic authentication in Swift, follow these steps:
 
+1. Import the Foundation framework into your project:
+```Swift
+import Foundation
 ```
-let urlString = "www.example.com/api"
-let url = URL(string: urlString)
 
-// Create a URLRequest with the URL
-var request = URLRequest(url: url!)
+2. Create a `URLRequest` object with the URL of the endpoint you want to access:
+```Swift
+let url = URL(string: "https://example.com/api/resource")!
+var request = URLRequest(url: url)
+```
 
-// Set the HTTP method to POST
-request.httpMethod = "POST"
+3. Set the HTTP method to `GET` or `POST` depending on what your API requires:
+```Swift
+request.httpMethod = "GET"
+```
 
-// Create a data task with URLSession and pass in the request
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    // Check for errors and handle the response here
+4. Add the basic authentication credentials to the request by creating a `Data` object from your username and password, and setting it as the value for the `Authorization` header:
+```Swift
+let username = "myUsername"
+let password = "myPassword"
+let credentials = "\(username):\(password)".data(using: .utf8)
+if let encodedCredentials = credentials?.base64EncodedString() {
+    request.setValue("Basic \(encodedCredentials)", forHTTPHeaderField: "Authorization")
 }
+```
 
-// Add basic authentication to the request
-let username = "your_username"
-let password = "your_password"
-let authenticationString = "\(username):\(password)"
-let data = authenticationString.data(using: .utf8)
-let base64String = data!.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
-
-// Set the value of the Authorization header with the base64 encoding
-request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
-
-// Start the data task
+5. Send the request and handle the response:
+```Swift
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    if let data = data {
+        // Handle the response data
+    } else {
+        print(error?.localizedDescription ?? "Error sending request")
+    }
+}
 task.resume()
 ```
 
-The above code will create a request with the given URL and add basic authentication to it before sending it using a data task. You can handle the response in the completion handler of the task and perform any necessary actions or error handling.
-
 ## Deep Dive
 
-When adding basic authentication to an HTTP request, the important thing to understand is that the `Authorization` header must be set with a base64-encoded string that includes the username and password in the format `username:password`. This is usually done by combining the username and password with a colon and then converting it to a Data object before encoding it with base64.
-
-It's also worth mentioning that basic authentication is not the most secure way to authenticate requests, as the username and password are easily visible in the code. For more secure authentication, you may want to consider using OAuth or API keys.
+Sending an HTTP request with basic authentication involves setting the `Authorization` header with a base64-encoded string of your username and password, separated by a colon. It's important to note that basic authentication is not considered secure and should only be used with HTTPS connections to prevent the credentials from being intercepted.
 
 ## See Also
 
-- [Apple Developer Documentation on URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Article on HTTP Basic Authentication](https://www.redhat.com/en/blog/handing-basic-authentication-using-tools-json)
-- [Tutorial on making HTTP requests in Swift](https://www.raywenderlich.com/824-cookies-and-urlsession-in-swift#toc-anchor-004)
+- [Apple Documentation on URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [This tutorial on Accessing REST APIs in Swift using URLComponents](https://medium.com/@darthpelo/accessing-rest-apis-in-swift-4ceb8049c038)

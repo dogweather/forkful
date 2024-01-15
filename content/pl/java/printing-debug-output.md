@@ -1,6 +1,7 @@
 ---
-title:                "Java: Drukowanie wyjścia do debugowania"
-simple_title:         "Drukowanie wyjścia do debugowania"
+title:                "Wypisywanie wyjścia debugowania"
+html_title:           "Java: Wypisywanie wyjścia debugowania"
+simple_title:         "Wypisywanie wyjścia debugowania"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -9,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Wyświetlanie danych debugowania jest nieodłączną częścią programowania w Javie. Pozwala nam na monitorowanie działania naszego kodu i szybkie wykrycie błędów. W tym blogowym wpisie przeanalizujemy, dlaczego warto wyświetlać dane debugowania oraz jak to zrobić.
+*Dlaczego warto wypisywać informacje debugowania w kodzie Java?* Wypisywanie informacji debugowania jest pomocne podczas wychwytywania błędów i śledzenia przepływu danych w trakcie działania programu. Dzięki temu można łatwiej zlokalizować problemy w kodzie i szybciej je naprawić.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Aby wyświetlić dane debugowania w Javie, musimy użyć metody `System.out.println()`. Podajemy w niej jako argument to, co chcemy wyświetlić, np. zawartość zmiennej czy informacje o aktualnym stanie programu. Poniżej znajdują się przykładowe fragmenty kodu z wykorzystaniem tej metody oraz odpowiadające im wyniki wyświetlane w konsoli.
-
-```Java
-int x = 5;
-System.out.println("Wartość zmiennej x: " + x);
-```
-
-Wynik:
-```
-Wartość zmiennej x: 5
-```
+W Java istnieje kilka sposobów na wypisywanie informacji debugowania. Jednym z nich jest użycie metody `System.out.println()`, która wypisuje podane argumenty na standardowym wyjściu. Przykład użycia:
 
 ```Java
-String nazwa = "Java";
-System.out.println("Zaczynamy naukę " + nazwa);
+String imie = "Katarzyna";
+System.out.println("Witaj, " + imie + "!");
+```
+*Wynik:*
+```
+Witaj, Katarzyna!
 ```
 
-Wynik:
+Innym sposobem jest użycie klasy `Logger` z pakietu `java.util.logging`. Przykład użycia:
+
+```Java
+import java.util.logging.Logger;
+
+public class Main {
+    public static void main(String[] args) {
+        Logger log = Logger.getLogger(Main.class.getName());
+        log.info("To jest informacja debugowania.");
+    }
+}
 ```
-Zaczynamy naukę Java
+*Wynik w konsoli:*
+```
+INFO: To jest informacja debugowania.
 ```
 
-# W pogłębienie
+## Deep Dive
 
-Wyświetlanie danych debugowania jest szczególnie przydatne w trakcie programowania, gdy musimy bardzo dokładnie prześledzić działanie naszego kodu. Może nam to pomóc w szybkim wykryciu błędów, zwłaszcza w przypadku dłuższych i bardziej skomplikowanych programów.
+Wypisywanie informacji debugowania może być uzupełnione o dodatkowe funkcjonalności, takie jak wypisywanie do plików lub filtrowanie poziomów ważności informacji. Dla bardziej zaawansowanych użytkowników polecam przeczytać dokumentację klasy `Logger` oraz inne narzędzia i biblioteki dedykowane do debugowania w Java.
 
-Kiedy używamy metody `System.out.println()`, wyświetlane dane trafiają do konsoli, co może utrudniać czytanie wyjścia programu. Możemy jednak wykorzystać narzędzia takie jak debugger w naszym środowisku programistycznym, które pozwalają nam na śledzenie wartości zmiennych w trakcie działania programu bez konieczności wyświetlania ich w konsoli.
+## Zobacz też
 
-# Zobacz także
-
-- [Tutorial: Wyświetlanie danych debugowania w Javie](https://javastart.pl/java-tutorial/wykorzystanie-system-out-println)
-- [Artykuł: Wykorzystanie debugera w IntelliJ IDEA](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
-- [Poradnik: Wyświetlanie wartości zmiennych w Eclipsie](https://www.youtube.com/watch?v=aNjUa10SDw0)
+- Dokumentacja klasy [Logger](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html)
+- [Jak debugować swoją aplikację Java w IntelliJ](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
+- Narzędzia do debugowania w Java, takie jak [Eclipse Debugger](https://www.eclipse.org/eclipse/news/4.6/jdt.php#debugger)

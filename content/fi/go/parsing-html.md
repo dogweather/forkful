@@ -1,5 +1,6 @@
 ---
-title:                "Go: HTML:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Go: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Go"
 category:             "Go"
@@ -11,63 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Oletko koskaan ihmetellyt, miten verkkosivujen sisällön tiedot saadaan muodostettua ja näytettyä meille? Tämä on mahdollista HTML-parsingin avulla, joka käsittelee verkkosivujen koodia ja muuttaa sen lukukelpoiseen muotoon. Lue tämä blogikirjoitus, niin opit lisää siitä, miksi HTML-parsing on tärkeää ja miten se voidaan toteuttaa Go-ohjelmointikielellä.
+HTML-analysointi on tärkeä osa verkkokehitystä ja tiedonhaun prosessia. Se mahdollistaa tietojen keräämisen ja järjestämisen verkkosivuilta, mikä on erityisen hyödyllistä esimerkiksi web-skrapingissa ja tiedon kaivamisessa.
 
 ## Miten
+
+HTML-analysointi on helppoa ja tehokasta Go-kielellä. Se voidaan tehdä käyttämällä monia erilaisia ​​kirjastoja, kuten "net/html" ja "goquery". Seuraavassa on yksinkertainen esimerkki, joka näyttää, miten Go-koodi voi hakea ja tulostaa linkit annetusta HTML-sivusta:
 
 ```Go
 package main
 
 import (
     "fmt"
+    "log"
     "net/http"
+
     "golang.org/x/net/html"
 )
 
 func main() {
-    // Alustetaan HTTP-pyynnöstä saatu verkkosivu muuttujaan
-    response, err := http.Get("https://example.com")
+    // Haetaan haluttu verkkosivu
+    resp, err := http.Get("https://www.example.com")
 
-    // Tarkistetaan mahdolliset virheet
     if err != nil {
-        fmt.Println(err)
+        log.Fatal(err)
     }
 
-    // Luodaan HTML-tiedoston muodostamiseen tarvittava "token"-muuttuja
-    token := html.NewTokenizer(response.Body)
+    defer resp.Body.Close()
 
-    // Käydään läpi sivun "tokenit"
-    for {
-        t := token.Next()
+    // Analysoi sivun HTML
+    doc, err := html.Parse(resp.Body)
 
-        // Kun token on "Element"-tyyppiä
-        if t == html.ErrorToken {
-            // Poistutaan funktiosta
-            return
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Tulostaa kaikki sivun linkit
+    var links []string
+    var findLinks func(* html.Node)
+    findLinks = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    links = append(links, a.Val)
+                }
+            }
         }
-
-        // Tarkistetaan onko lohkon alku "text/html"-merkinnällä
-        if token.Token().Data == "text/html" {
-            // Tulostetaan lohkon sisältö
-            fmt.Println(token.Token().Data)
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            findLinks(c)
         }
     }
+    findLinks(doc)
+
+    fmt.Println(links)
 }
 ```
 
-Tässä esimerkissä käytetään Go-kielen "net/http" ja "golang.org/x/net/html" kirjastoja HTML-parsingiin. Koodi lataa halutun verkkosivun ja tulostaa sen koodin lukukelpoiseen muotoon. Tämän avulla voimme käsitellä verkkosivujen sisältöä ja etsiä esimerkiksi tiettyjä elementtejä tai tietoja sivulta.
+Koodin suoritus tuottaa seuraavan tuloksen:
 
-Esimerkissä käytetään myös for-loopia, jolla käydään läpi verkkosivulta saadut "token"-tiedot ja tarkistetaan niiden sisältö. Tämä on hyvä tapa aloittaa HTML-parsingin toteuttaminen Go-kielellä.
+```
+["https://www.example.com", "https://www.example.com/about", "https://www.example.com/contact"]
+```
 
 ## Syvällinen sukellus
 
-HTML-parsing on tärkeää erityisesti silloin, kun haluamme käsitellä verkkosivujen sisältöä joko itse tai jonkin sovelluksen avulla. Se mahdollistaa tiedon muokkaamisen ja purkamisen helpommin ja tehokkaammin kuin suoraan lukemalla verkkosivun koodia.
+HTML-analysointi Go-kielellä on mahdollista monilla eri tavoilla riippuen tarpeista ja olosuhteista. "goquery" -kirjasto esimerkiksi tarjoaa helppokäyttöisen rajapinnan, joka mahdollistaa kyselyjen tekemisen HTML-dokumentteihin samanlaisella syntaksilla kuin jQueryssä.
 
-Go-kielellä on myös monia muita kirjastoja, jotka mahdollistavat edistyksellisemmän HTML-parsingin, kuten goquery ja colly. Nämä kirjastot tarjoavat enemmän toiminnallisuuksia ja käyttömahdollisuuksia, kun halutaan syvällisempää tai monimutkaisempaa HTML-parsingia.
+Vaikka HTML-analysointi voi tuntua yksinkertaiselta, se voi olla haastavaa, jos sivusto on monimutkainen tai sitä on muuten vaikea käsitellä. On tärkeää tutustua eri kirjastoihin ja löytää sopivin ratkaisu tarpeisiin.
 
 ## Katso myös
 
-- [Go:n "net/http" kirjasto](https://golang.org/pkg/net/http/)
-- [Go:n "golang.org/x/net/html" kirjasto](https://golang.org/x/net/html/)
-- [Goquery-kirjasto](https://github.com/PuerkitoBio/goquery)
-- [Colly-kirjasto](https://github.com/gocolly/colly)
+- [Go - virallinen sivusto](https://golang.org/)
+- [net/html - virallinen kirjasto](https://golang.org/pkg/net/html/)
+- [goquery - virallinen kirjasto](https://github.com/PuerkitoBio/goquery)

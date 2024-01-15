@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Wydrukowanie wyników debugowania"
-simple_title:         "Wydrukowanie wyników debugowania"
+title:                "Drukowanie wyjścia debugowania"
+html_title:           "Haskell: Drukowanie wyjścia debugowania"
+simple_title:         "Drukowanie wyjścia debugowania"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,46 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Wyświetlanie informacji debugujących jest ważnym narzędziem podczas tworzenia programów w Haskellu. Pozwala na łatwe śledzenie i zrozumienie działania programu oraz diagnozowanie ewentualnych błędów.
+Debugowanie jest nieodłączną częścią tworzenia oprogramowania i często jest to jedna z najbardziej czasochłonnych czynności. Jednym z najważniejszych narzędzi w procesie debugowania jest wydruk debugowania, który pomaga programistom w identyfikacji błędów i weryfikacji poprawności działania kodu. W tym artykule dowiesz się, dlaczego wydruk debugowania jest tak ważny i jak można go wykorzystać w swoim kodzie w języku Haskell.
 
 ## Jak to zrobić
-
-Aby wyświetlać informacje debugujące w Haskellu, wystarczy użyć funkcji `print`. Przykładowy kod wyglądałby następująco:
-
-```Haskell
-myList = [1, 2, 3]
-print myList
-```
-
-Otrzymalibyśmy następujący output:
-
-```
-[1,2,3]
-```
-
-Można także użyć funkcji `putStrLn` w celu wyświetlenia tekstu lub wartości innych typów danych. Przykład:
+Aby wypisać wydruk debugowania w języku Haskell, wystarczy użyć funkcji `print` z modułu `Debug.Trace`. Na przykład:
 
 ```Haskell
-print "Hello World"
-print 123
+import Debug.Trace
+
+main = do
+    let a = 5
+    print a
+    let b = a + 3
+    print b
 ```
 
 Output:
-
+```Haskell
+5
+8
 ```
-Hello World
-123
+
+Możliwe jest również użycie funkcji `trace` z tego samego modułu, która dodaje własny tekst do wydruku. Na przykład:
+
+```Haskell
+import Debug.Trace
+
+main = do
+    let a = 5
+    trace "Początek wykonywania" $ print a
+    let b = a + 3
+    trace "Zakończenie wykonywania" $ print b
 ```
 
-## Wgłąb tematu
+Output:
+```Haskell
+"Początek wykonywania"
+5
+"Zakończenie wykonywania"
+8
+```
 
-Istnieje wiele metod wyświetlania informacji debugujących, w tym także biblioteki specjalnie zaprojektowane do tego celu, np. `Debug.Trace`. Ta biblioteka pozwala na dodawanie śledzonych punktów w kodzie oraz wyświetlanie wartości zmiennych w tych punktach.
+## Deep Dive
+Funkcje `print` i `trace` są niezwykle przydatne podczas debugowania, ale należy pamiętać, że używanie ich w kodzie produkcyjnym może spowolnić działanie programu. Dlatego ważne jest, aby wyłączać wydruk debugowania przed uruchomieniem kodu w środowisku produkcyjnym. Można to zrobić, ustawiając zmienną środowiskową `DEBUG` na `False` lub korzystając z flagi kompilacji `-fno-print-bindings`.
 
-Używanie informacji debugujących jest szczególnie przydatne w przypadku skomplikowanych funkcji lub kodu, gdzie trudno jest zrozumieć jego działanie tylko na podstawie samego kodu. Dzięki wyświetlaniu informacji debugujących można łatwiej zlokalizować błędy i szybciej je naprawić.
+Dodatkowo, funkcje `print` i `trace` mogą być również używane do wypisywania wartości zmiennych wewnątrz funkcji. W tym celu należy dodać funkcję `traceShow` przed wypisaniem wartości. Na przykład:
 
-## Zobacz także
+```Haskell
+import Debug.Trace
 
-- [Dokumentacja biblioteki Debug.Trace](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
-- [Tutorial nt. debugowania w Haskellu](https://serokell.io/blog/haskell-debugging-tips)
-- [Poradnik nt. użytkowania funkcji `print` i `putStrLn`](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
+fun x y = traceShow x $ y + x
+main = print $ fun 5 3
+```
+
+Output:
+```Haskell
+8
+```
+
+## Zobacz też
+- [Dokumentacja Debug.Trace](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
+- [Podstawy debugowania w Haskellu](https://dev.to/jacquespescatore/debugging-in-haskell-the-basics-5581)
+- [Przykłady użycia debugowania w języku Haskell](https://hackernoon.com/using-debugging-in-haskell-part-1-38bc6cab2db1)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Å laste ned en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "C#: Å laste ned en nettside"
 simple_title:         "Å laste ned en nettside"
 programming_language: "C#"
 category:             "C#"
@@ -11,78 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I mange tilfeller kan det være nyttig å kunne laste ned en nettside til en datamaskin for senere bruk. Dette kan være av flere årsaker, for eksempel for å lagre informasjon, analysere data, eller å kunne se på en nettside uten å være koblet til internett.
+Når du besøker en nettside, lastes den ned på datamaskinen din slik at du kan se og interagere med innholdet. Men hva om du vil laste ned hele nettsiden og lagre den for senere bruk? I denne artikkelen skal vi se på hvordan du kan gjøre akkurat det ved hjelp av C#.
 
 ## Hvordan
 
-Lasting ned en nettside ved hjelp av C# er en relativt enkel prosess. Først må vi inkludere biblioteket "System.Net" i prosjektet vårt. Deretter kan vi bruke "WebClient" klassen til å laste ned en nettside ved å oppgi URL-adressen som en parameter. Se et eksempel under:
+For å laste ned en nettside, trenger vi å bruke et webklientobjekt i C#. Dette er en del av .NET Framework og lar oss kommunisere med nettressurser.
+
+Vi kan først opprette et webklientobjekt ved å inkludere System.Net namespace i koden vår. Deretter kan vi bruke webklienten til å laste ned nettsiden ved å bruke WebClient.DownloadFile() metoden. La oss se på et eksempel:
 
 ```C#
 using System;
 using System.Net;
 
-namespace LastNettside
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (WebClient client = new WebClient())
-            {
-                string nettside = client.DownloadString("https://www.google.com");
-                Console.WriteLine(nettside);
-            }
-        }
-    }
-}
+WebClient client = new WebClient();
+client.DownloadFile("https://www.examplewebsite.com", "example.html");
+
+//Dette vil laste ned nettsiden og lagre den som en HTML-fil med navnet "example.html" på datamaskinen din.
 ```
 
-Koden over vil laste ned nettsiden til Google og skrive ut innholdet på konsollen. Hvis du ønsker å lagre nettsiden som en fil i stedet, kan du bruke "DownloadFile" metoden i stedet for "DownloadString".
-
-## Dypdykk
-
-Det er også mulig å laste ned en nettside og behandle HTML-koden for å hente ut spesifikk informasjon. Dette kan være nyttig for å skrape data fra nettsider eller for å automatisere prosesser som involverer nettsider. Enkleste måten å gjøre dette på, er å bruke et tredjeparts-bibliotek som "HtmlAgilityPack".
-
-For å bruke dette biblioteket, kan du følge de samme stegene som nevnt over for å laste ned en nettside. Deretter kan du bruke "HtmlDocument" klassen for å analysere HTML-koden. Se et eksempel under:
+Vi kan også laste ned en nettside som et tekststreng ved hjelp av WebClient.DownloadString() metoden. Dette er nyttig hvis vi vil behandle teksten videre i koden vår. Her er et eksempel:
 
 ```C#
 using System;
 using System.Net;
-using HtmlAgilityPack;
 
-namespace AnalyserNettside
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (WebClient client = new WebClient())
-            {
-                string nettside = client.DownloadString("https://www.wikipedia.org");
-                
-                HtmlDocument dokument = new HtmlDocument();
-                dokument.LoadHtml(nettside);
-                
-                // Hent ut tittel-taggen
-                HtmlNode tittel = dokument.DocumentNode.SelectSingleNode("//title");
-                Console.WriteLine(tittel.InnerText); // Skriver ut "Wikipedia"
+WebClient client = new WebClient();
+string webpage = client.DownloadString("https://www.examplewebsite.com");
 
-                // Hent ut alle lenker på siden
-                HtmlNodeCollection lenker = dokument.DocumentNode.SelectNodes("//a[@href]");
-                foreach (HtmlNode lenke in lenker)
-                {
-                    Console.WriteLine(lenke.GetAttributeValue("href", string.Empty));
-                }
-            }
-        }
-    }
-}
+//Dette vil laste ned nettsiden som en tekststreng og lagre den i variabelen "webpage".
 ```
 
-Koden over vil laste ned Wikipedia sin nettside, finne tittelen og skrive ut alle lenker på siden. Med litt kunnskap om HTML og XPath kan du hente ut nesten all informasjon du ønsker fra en nettside.
+Nå har vi lastet ned nettsiden, men hva om vi vil laste ned bilder eller andre filer som ligger på nettsiden? Vi kan bruke WebClient.DownloadFile() metoden til å laste ned alle ressurser på nettsiden. Dette kalles også å "lytte" på en nettside. Her er et eksempel:
 
-## Se også
+```C#
+using System;
+using System.Net;
 
-- [WebClient klasse (System.Net)](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1)
-- [HtmlAgilityPack biblioteket](https://html-agility-pack.net/)
-- [HTML-tagg referanse](https://www.w3schools.com/tags/default.asp)
+WebClient client = new WebClient();
+client.DownloadFile("https://www.examplewebsite.com", "example.html");
+
+//Dette vil laste ned nettsiden og alle ressurser som bilder og videoer, og lagre dem på datamaskinen din.
+```
+
+Det er viktig å merke seg at når du laster ned en nettside på denne måten, vil den beholden sin originale formatering og koding. Det kan være lurt å konvertere filen til et annet format, som for eksempel UTF-8, før du bruker den i koden din.
+
+## Deep Dive
+Å laste ned en nettside kan være nyttig for mange forskjellige formål. Kanskje du vil lagre en kopi av en nettside for senere bruk, eller kanskje du vil analysere innholdet på nettsiden for å trekke ut spesifikk informasjon. Ved å bruke webklientobjektet i C#, har du enkelt tilgang til å laste ned nettsider og utføre ulike operasjoner på dem i koden din.
+
+## Se Også
+- [Official documentation for WebClient class in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.8)
+- [Tutorial on downloading files in C#](https://www.dotnetperls.com/downloadstring)
+- [C# Tutorials in Norwegian](https://www.tutlane.com/tutorial/csharp)

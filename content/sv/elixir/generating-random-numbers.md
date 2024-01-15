@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Skapa slumpmässiga nummer"
-simple_title:         "Skapa slumpmässiga nummer"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "Elixir: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -9,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att generera slumpmässiga tal är en viktig del av många programmeringsprojekt. Det kan användas för att skapa spel, utföra tester eller skapa unika ID-nummer. Elixir erbjuder ett enkelt och kraftfullt sätt att generera slumpmässiga tal som passar både nybörjare och erfarna programmerare.
+Att generera slumpmässiga nummer är en viktig del av många program, inklusive spel, simuleringar och kryptografi. Med hjälp av slumpmässiga nummer kan man skapa variation och osäkerhet, vilket gör det möjligt att skapa mer realistiska och säkra program.
 
-# Så här gör du
+## Så här gör du
 
-För att börja generera slumpmässiga tal i Elixir, behöver du först importera modulen `:rand`. Sedan kan du använda funktionen `uniform/0` för att generera ett tal mellan 0 och 1. Om du vill ha ett tal inom ett visst intervall, som till exempel mellan 1 och 10, kan du använda funktionen `uniform/1` och ange en lista med de två talen som parametrar.
+```Elixir
+# Generera ett slumpmässigt heltal mellan 1 och 10
+IO.puts("Här är ett slumpmässigt tal mellan 1 och 10:")
+IO.puts(Enum.random(1..10))
 
-```elixir
-import :rand
-
-rand.uniform() # Genererar ett slumpmässigt tal mellan 0 och 1
-rand.uniform([1, 10]) # Genererar ett slumpmässigt tal mellan 1 och 10
+# Generera en lista med 5 slumpmässiga frukter
+IO.puts("Här är en slumpmässig lista med frukter:")
+IO.inspect(Enum.shuffle(["äpple", "banan", "apelsin", "jordgubbe", "kiwi"]))
 ```
 
-Du kan också använda funktionen `rand_between/2` för att generera ett heltal mellan två tal. Om du vill generera ett slumpmässigt tal från en lista av möjliga värden, kan du använda funktionen `rand_seed/1` för att ange en "frö"-parameter och sedan använda `rand/1` för att välja ett slumpmässigt värde från listan baserat på detta frö.
+Output:
 
-```elixir
-rand_between(1, 10) # Genererar ett slumpmässigt heltal mellan 1 och 10
-rand_seed(123) # Ange frö för att generera samma värde varje gång
-rand(["Elixir", "Programmering", "Slumpmässiga tal"]) # Genererar ett slumpmässigt element från listan
-```
+Här är ett slumpmässigt tal mellan 1 och 10:
+7
+Här är en slumpmässig lista med frukter:
+["äpple", "jordgubbe", "banan", "apelsin", "kiwi"]
 
-# Djupdykning
+För att generera slumpmässiga tal i Elixir använder man funktionen `Enum.random/1` och anger ett intervall för de möjliga numren. Man kan välja att generera enstaka tal eller en lista med flera slumpmässiga värden genom att använda funktionen `Enum.shuffle/1` och ange en lista med de önskade värdena.
 
-Slumpmässiga tal i Elixir genereras genom en pseudorandom generator. Detta innebär att värdena som genereras inte är helt slumpmässiga utan bygger på en algoritm som tar en "frö"-parameter och genererar ett nummer baserat på detta. Om fröet är detsamma kommer även det genererade talet att vara detsamma. Detta kan vara användbart för testning men kan också leda till förutsägbara resultat om fröet inte ändras.
+## Djupdykning
 
-En annan aspekt av det slumpmässiga nummergenereringsprocessen är att den inte är helt beroende av processorn eller systemklockan. Detta betyder att även om klockan uppdateras, kommer de genererade värdena att vara desamma - en viktig funktion för stabila tester.
+Elixir använder sig av en intern generator, kallad "UniformDistribution", som genererar slumpmässiga nummer baserat på en seed. En seed är ett startvärde som används för att generera en följd av siffror som ser slumpmässiga ut. Om man vill ha mer kontroll över genereringen av slumpmässiga tal kan man ange sin egen seed genom att använda funktionen `:uniform.seed/1`.
 
-# Se även
+En viktig sak att tänka på är att "UniformDistribution" inte är en kryptografiskt säker generator, vilket betyder att den inte bör användas i situationer där säkerhet är avgörande.
 
-- Elixir: https://elixir-lang.org/
-- Hitta slumpmässiga tal: https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%3C%3E/1
-- Slumpmässiga tal i andra programmeringsspråk: https://www.geeksforgeeks.org/generating-random-number-list-in-python/
+## Se även
+
+- [Elixir Enum-modulen](https://hexdocs.pm/elixir/Enum.html)
+- [Slumpmässiga nummer i Elixir - Elixir Cheat Sheet](https://elixirschool.com/sv/cheatsheets/random/)
+- [Elixir Random-modulen](https://hexdocs.pm/elixir/Random.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Javascript: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,53 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Introdução: Por que imprimir mensagens de depuração em um programa Javascript?
+## Por que
 
-Se você já teve alguma experiência com programação, provavelmente já se deparou com a necessidade de debugar seu código. Isso significa identificar e corrigir erros e falhas em um programa de computador. Para ajudar nesse processo, uma técnica muito útil é a impressão de mensagens de depuração durante a execução do programa. Neste artigo, vamos explorar por que e como imprimir mensagens de depuração em programas Javascript.
+Você já encontrou um bug difícil de entender em seu código Javascript? Ou talvez você esteja tentando entender o fluxo de seu programa e não sabe o que está acontecendo em uma determinada linha de código? Nesses casos, imprimir saídas de depuração é uma técnica muito útil para entender melhor o que está acontecendo em seu código. Além disso, pode ajudar a identificar onde exatamente o problema está ocorrendo, facilitando a depuração e o processo de correção.
 
-## Como fazer: Exemplos de código e saída
+## Como Fazer
 
-Em Javascript, existem várias maneiras de imprimir mensagens de depuração, mas a forma mais comum é utilizando o comando console.log(). Isso permite que você imprima informações no console do navegador ou do ambiente de desenvolvimento.
-
-Veja um exemplo simples de como utilizar o console.log() em um programa Javascript:
-
-```Javascript
-let nome = "Maria";
-let idade = 28;
-
-console.log(`O nome é ${nome} e a idade é ${idade}.`);
-```
-
-A saída deste código será:
+A impressão de saídas de depuração em Javascript é bastante simples e pode ser feita usando o comando `console.log ()`. Vamos dar uma olhada em alguns exemplos:
 
 ```
-O nome é Maria e a idade é 28.
+// Imprimindo uma mensagem simples
+console.log("Olá mundo!");
+
+// Imprimindo o valor de uma variável
+let nome = "Ana";
+console.log(`Olá ${nome}!`);
+
+// Imprimindo uma mensagem de erro
+console.error("Houve um erro no código.");
 ```
 
-Isso pode ser muito útil para verificar se as variáveis estão recebendo os valores esperados, ou para entender os valores e resultados de operações matemáticas ou lógicas.
+Agora, vamos ver como a saída desses comandos se parece no console do navegador:
 
-Outra maneira de imprimir mensagens de depuração é utilizando o comando alert(), que exibe uma janela pop-up com a mensagem desejada. Veja um exemplo:
-
-```Javascript
-let numero = Math.random();
-
-alert(`O número gerado é ${numero}.`);
+```
+Olá mundo!
+Olá Ana!
+Houve um erro no código.
 ```
 
-A saída será uma janela pop-up mostrando o valor gerado pelo método Math.random().
+Além disso, com o uso de parâmetros, é possível imprimir múltiplos valores e formatar a saída de acordo com suas necessidades. Por exemplo:
 
-Você também pode utilizar o console.table() para imprimir informações em forma de tabela, ou o console.error() para exibir mensagens de erro.
+```
+// Imprimindo múltiplos valores separados por vírgula
+console.log("Meu nome é", nome, "e eu tenho", 25, "anos.");
 
-## Aprofundando: Maiores informações sobre impressão de mensagens de depuração
+// Imprimindo formatações diferentes
+console.log("Este é um número:", 123, "e este é um texto:", "exemplo", ".");
+```
 
-A impressão de mensagens de depuração é uma técnica essencial para encontrar e corrigir erros em seus programas. Ao imprimir informações relevantes durante a execução do código, você pode entender melhor o que está acontecendo e identificar onde o problema está ocorrendo.
+Depois de executar esses comandos, a saída será a seguinte:
 
-Além disso, a impressão de mensagens de depuração pode ajudar a verificar se um determinado trecho de código está sendo executado ou não, o que é especialmente útil para testar condições e loops.
+```
+Meu nome é Ana e eu tenho 25 anos.
+Este é um número: 123 e este é um texto: exemplo.
+```
 
-No entanto, é importante lembrar que é uma boa prática remover as mensagens de depuração antes de publicar o código para produção. Isso garante que seu programa não imprima informações sensíveis ou desnecessárias para o usuário final.
+## Mergulho Profundo
 
-## Veja também
+Existem outros comandos disponíveis para imprimir saídas de depuração, como `console.warn ()` para mensagens de aviso e `console.info ()` para informações adicionais. Além disso, você pode usar o método `console.table ()` para exibir valores em forma de tabela, facilitando a visualização e a análise de informações mais complexas.
 
-- [Documentação do console do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
-- [Tutorial de debug em Javascript](https://medium.com/javascript-inside/introduction-to-debugging-javascript-7c1dcb8a7c79)
-- [Dicas para melhorar suas habilidades de debug](https://dev.to/rebeccauranga/dealing-with-the-wild-wild-world-of-debugging-3b7p)
+Além disso, é possível também configurar a quantidade de detalhes do registro exibidos pelo console. Por padrão, a quantidade de saída é configurada como "info", mas você pode alterá-la para exibir apenas erros com o comando `console.log(level, message)`. Por exemplo, se você só quiser ver mensagens de erro, pode usar:
+
+```
+console.log("error", "Houve um erro em algum lugar.");
+```
+
+Por fim, é importante lembrar que é uma boa prática remover ou desabilitar os comandos de impressão de saída de depuração ao terminar o processo de depuração e antes de publicar seu código. Isso evitará possíveis problemas e manterá seu código limpo e organizado.
+
+## Veja Também
+
+Aqui estão alguns links úteis para saber mais sobre impressão de saída de depuração em Javascript:
+
+- [MDN Web Docs: Console](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
+- [W3Schools: JavaScript Console](https://www.w3schools.com/js/js_console.asp)
+- [DevDocs: Console API](https://devdocs.io/console/)

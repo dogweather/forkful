@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z formatem json"
+html_title:           "PHP: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,93 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-JSON jest jednym z najpopularniejszych formatów danych używanych w programowaniu PHP. Jest to prosty, lekki i czytelny sposób przechowywania i przesyłania danych. W tym artykule dowiesz się, dlaczego warto uczyć się programowania z wykorzystaniem JSON.
+JSON (JavaScript Object Notation) jest jednym z najpowszechniej używanych formatów danych w dzisiejszych aplikacjach internetowych. Jest on bardzo lekki, czytelny dla ludzi i łatwy do przetwarzania przez komputery. W artykule tym opiszemy, dlaczego warto nauczyć się pracować z JSON w PHP.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby zacząć pracę z JSON w PHP, musisz najpierw zaimportować odpowiednie funkcje za pomocą funkcji `json_encode()` i `json_decode()`. Następnie możesz zacząć konstruować swoje dane JSON i przesyłać je za pomocą `json_encode()`, a następnie je odczytywać i przetwarzać za pomocą `json_decode()`.
+W celu pracy z formatem JSON w PHP, musimy użyć wbudowanych funkcji języka lub zewnętrznych bibliotek. Przed przystąpieniem do pracy z danymi JSON, należy pamiętać o sprawdzeniu, czy plik jest poprawnym obiektem JSON. W przeciwnym razie może to spowodować błędy w naszym kodzie.
 
-Przykład kodu:
+### Przetwarzanie danych JSON przy użyciu wbudowanych funkcji PHP
 
-```PHP
-// Tworzenie i zapisywanie danych JSON
-$cars = array(
-  array(
-    "marka" => "Ford",
-    "model" => "Mustang",
-    "rok produkcji" => 1998
-  ),
-  array(
-    "marka" => "Chevrolet",
-    "model" => "Camaro",
-    "rok produkcji" => 2003
-  ),
-  array(
-    "marka" => "Dodge",
-    "model" => "Challenger",
-    "rok produkcji" => 2012
-  )
-);
-
-$json = json_encode($cars); // Konwersja danych na format JSON
-
-// Wysyłanie danych JSON
-echo "JSON data: " . $json;
-```
-
-Wynik:
-
-```
-JSON data: [{"marka":"Ford","model":"Mustang","rok produkcji":1998},{"marka":"Chevrolet","model":"Camaro","rok produkcji":2003},{"marka":"Dodge","model":"Challenger","rok produkcji":2012}]
-```
-
-Dzięki funkcji `json_encode()` możemy łatwo przekształcić nasze dane w format JSON, który jest już gotowy do przesyłania lub przechowywania.
-
-Następnie możemy odczytać te dane za pomocą funkcji `json_decode()`, która przekształci je z powrotem na tablicę lub obiekt PHP. To pozwala nam na dalszą pracę z tymi danymi wewnątrz naszego kodu PHP.
-
-Przykład kodu:
+Aby przetworzyć dane JSON przy użyciu wbudowanych funkcji PHP, musimy najpierw przekonwertować je na obiekt lub tablicę przy użyciu funkcji `json_decode()`. Następnie możemy wykorzystać syntaktykę obiektową lub tablicową, aby uzyskać dostęp do poszczególnych elementów danych.
 
 ```PHP
-// Odczytanie danych JSON i przetworzenie ich na tablicę
-$cars_json = '[{"marka":"Ford","model":"Mustang","rok produkcji":1998},{"marka":"Chevrolet","model":"Camaro","rok produkcji":2003},{"marka":"Dodge","model":"Challenger","rok produkcji":2012}]';
+$json = '{"imie": "Anna", "wiek": 30, "hobby": ["sport", "muzyka", "podróże"]}';
 
-$cars = json_decode($cars_json, true); // Ustawienie drugiego parametru na true spowoduje zwrócenie tablicy, a nie obiektu
+$osoba = json_decode($json);
+
+echo $osoba->imie; // wyświetli "Anna"
+echo $osoba->wiek; // wyświetli 30
+echo $osoba->hobby[0]; // wyświetli "sport"
+```
+### Przetwarzanie danych JSON przy użyciu zewnętrznej biblioteki
+
+Jeśli chcemy wykorzystać bardziej zaawansowane funkcje do pracy z danymi JSON, możemy użyć zewnętrznej biblioteki, takiej jak `Symfony Serializer` lub `JSON-PHP`. Przykładowy kod przy użyciu biblioteki `Symfony Serializer` może wyglądać następująco:
+
+```PHP
+require_once 'vendor/autoload.php';
+
+use Symfony\Component\Serializer\Serializer;
+
+$json = '{"imie": "Anna", "wiek": 30, "hobby": ["sport", "muzyka", "podróże"]}';
+
+$serializer = new Serializer();
+$osoba = $serializer->deserialize($json, 'App\Entity\Osoba', 'json');
+
+echo $osoba->getImie(); // wyświetli "Anna"
+echo $osoba->getWiek(); // wyświetli 30
+echo $osoba->getHobby()[0]; // wyświetli "sport"
 ```
 
-Wynik:
+## Deep Dive
 
-```
-Array
-(
-    [0] => Array
-        (
-            [marka] => Ford
-            [model] => Mustang
-            [rok produkcji] => 1998
-        )
+Gdy już nauczysz się podstaw pracy z formatem JSON w PHP, możesz rozszerzyć swoją wiedzę o bardziej zaawansowane techniki, takie jak manipulowanie danymi, iteracja po obiektach lub dokonywanie złożonych zapytań. Ponadto, w przypadku tworzenia aplikacji internetowych, warto zwrócić uwagę na bezpieczeństwo danych JSON i zabezpieczenie ich przed nieautoryzowanym dostępem.
 
-    [1] => Array
-        (
-            [marka] => Chevrolet
-            [model] => Camaro
-            [rok produkcji] => 2003
-        )
+## Zobacz także
 
-    [2] => Array
-        (
-            [marka] => Dodge
-            [model] => Challenger
-            [rok produkcji] => 2012
-        )
-)
-```
-
-## Wnikliwiej
-
-Podczas pracy z JSON w PHP warto pamiętać o kilku rzeczach:
-
-- Jeśli Twoje dane do przetworzenia są prostą tablicą lub obiektem PHP, możesz użyć `json_encode()` i `json_decode()` bez ustawiania opcji.
-- Jeśli jednak Twoje dane zawierają znaki specjalne, musisz użyć `json_encode()` z ustawieniem opcji `JSON_UNESCAPED_UNICODE`. W przeciwnym razie, znaki specjalne zostaną automatycznie uniesione, co może spowodować błędy przy przetwarzaniu danych.
-- Jeśli chcesz sprawdzić, czy dane JSON są prawidłowo sformatowane, możesz użyć funkcji `json_last_error()` lub `json_last
+- [Dokumentacja PHP: JSON](https://www.php.net/manual/pl/book.json.php)
+- [Biblioteka Symfony Serializer](https://symfony.com/doc/current/components/serializer.html)
+- [JSON-PHP](https://github.com/pear/Net_JSON)
+- [Bezpieczeństwo - OWASP Foundation](https://owasp.org/www-project-api-security/)

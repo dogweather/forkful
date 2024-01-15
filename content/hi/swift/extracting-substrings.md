@@ -1,6 +1,7 @@
 ---
-title:                "Swift: उप-स्ट्रिंग निकालना"
-simple_title:         "उप-स्ट्रिंग निकालना"
+title:                "सबस्ट्रिंग निकालना"
+html_title:           "Swift: सबस्ट्रिंग निकालना"
+simple_title:         "सबस्ट्रिंग निकालना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,35 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-स्विफ्ट प्रोग्रामिंग बहुत ही व्यापक है और इसमें कई काम किए जा सकते हैं, जैसे स्ट्रिंग्स को अलग से निकालना। यह अपने दस्तावेजों और डेटा को अधिक सुविधाजनक तरीके से संगठित करने में मदद कर सकता है।
+कुछ अपने को इस प्रकार के स्ट्रिंग मानचित्रीरण का उपयोग करके स्ट्रिंग के भागों को हस्तांतरित करने का सोच सकते हैं। इसके कई उपयोग हो सकते हैं, जैसे एसपीएएस, डेटा वैद्यता या उपयोगकर्ता द्वारा दर्ज की गई जानकारी को प्रसंस्करण करना। कैसे इस प्रकार के सबस्ट्रिंग्स को हस्तांतरित किया जा सकता है?
 
-## कैसे करें
+## कैसे
 
-स्ट्रिंग्स से सबस्ट्रिंग्स निकालने का सबसे सरल तरीका `suffix()` और `prefix()` फ़ंक्शन्स का उपयोग करना है। यहाँ एक उदाहरण है:
+स्ट्रिंग से भाग को हस्तांतरित करने के लिए, हम ```Swift String``` की प्रतियोगिता ```subString ()``` का उपयोग कर सकते हैं। यह फ़ंक्शन भाग से एक नया स्ट्रिंग लौटाता है जो आगमन भाग के अनुरूप होता है। यहां एक उदाहरण है:
 
-```Swift 
-let name = "John Doe"
-let lastName = name.suffix(3)
-print(lastName)
-// Output: "Doe"
+```Swift
+let name = "आद्रि"
+let lastIndex = name.firstIndex(of: "ि")!
+let firstName = name.subString(to: lastIndex)
+let lastName = name.subString(from: lastIndex)
+print(firstName) // आद
+print(lastName) // रि 
 ```
 
-आप `substring()` फ़ंक्शन का उपयोग करके भी सबस्ट्रिंग्स निकाल सकते हैं। इसमें आप को सबस्ट्रिंग की शुरुआत की और अंत की इंडेक्स भी देनी होगी। यहाँ एक उदाहरण है:
+उपरोक्त उदाहरण में, हमने एक स्ट्रिंग को दो भागों में अलग कर दिया है - पहले भाग में पहला अक्षर और दूसरे भाग में अन्य अक्षर शामिल हैं। हम चाहें तो प्रत्येक भाग को छोटे भागों में भी हस्तांतरित कर सकते हैं।
 
-```Swift 
-let sentence = "Hello, how are you?"
-let greeting = sentence.substring(with: 0..<5)
-print(greeting)
-// Output: "Hello"
-```
+## गहराई में खोज
 
-## गहराई में जाएं
-
-सबस्ट्रिंग्स को अलग करने के लिए इस्तेमाल किए जाने वाले फ़ंक्शन्स का अधिक गहराई से समझना बेहद महत्वपूर्ण है। इसके अलावा, यह प्रोग्रामिंग में प्रयोग करने में और भी कुछ तरीके हैं, जो आपके कोड को और भी बेहतर बना सकते हैं। स्ट्रिंग्स के साथ काम करते समय सावधान रहें और समस्याओं को सुलझाने के लिए इस्तेमाल करीबी रखें।
-
-## देखें भी
-
-- [Swift Strings Tutorial](https://www.appcoda.com/swift-string/)
-- [String Manipulation in Swift](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/using.html#//apple_ref/doc/uid/TP40004265-SW1)
-- [Swift String Cheat Sheet](https://learnappmaking.com/swift-string-cheat-sheet/)
-- [Advanced String Manipulation in Swift](https://www.ralfebert.de/ios/extras/string-processing/)
+स्ट्रिंग से सबस्ट्रिंग्स को हस्तांतरित करना एक उपयोगी समाधान है जो डेटा का प्रसंस्करण करने को आसान बनाता है। आप इसे त्यागने के लिए उपयोगकर्ता के अनुरोधों को पूरा करने के लिए भी उपयोग कर सकते हैं। इस तरह से, स्ट्रिंग से कोई समस्या नहीं है कि आपको उपयोगकर्ता को तै

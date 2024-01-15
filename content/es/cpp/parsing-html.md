@@ -1,5 +1,6 @@
 ---
-title:                "C++: Analizando html"
+title:                "Analizando html"
+html_title:           "C++: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "C++"
 category:             "C++"
@@ -9,56 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué deberías aprender a parsear HTML en C++?
+## Por qué
 
-Para muchos programadores, el HTML puede parecer una cosa del pasado, pero en realidad sigue siendo una herramienta importante para crear sitios web y aplicaciones web. Saber cómo parsear HTML en C++ puede ser útil para aquellos que quieran trabajar en el backend de una aplicación web o en herramientas de automatización. Además, esta habilidad también puede ser útil para aquellos que quieran extraer información de páginas web para su posterior análisis o uso.
+¿Te has preguntado alguna vez cómo los navegadores web son capaces de mostrar páginas web correctamente? La respuesta está en el lenguaje HTML, utilizado para crear y estructurar el contenido de una página web. En este artículo, descubriremos por qué es necesario parsear HTML cuando se trabaja con data en C++, y cómo puedes hacerlo tú mismo.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para empezar, necesitarás un conocimiento básico de C++ y de cómo se estructura el HTML. El siguiente ejemplo te mostrará cómo parsear HTML para extraer un enlace de una página web.
+Para parsear HTML en C++, utilizaremos la biblioteca "libxml2". Esta biblioteca es completa y fácil de usar, y te permite leer y manipular archivos HTML con facilidad. A continuación, se muestra un ejemplo sencillo de cómo parsear un archivo HTML utilizando libxml2:
 
 ```C++
-// Se incluye la librería para poder trabajar con cadenas de texto
-#include <string>
+#include <libxml/tree.h>
+#include <libxml/HTMLparser.h>
+#include <iostream>
 
-// Se crea una función para extraer el enlace
-std::string extraerEnlace(std::string html) {
-    // Se busca la etiqueta del enlace
-    std::string etiquetaInicio = "<a href=\"";
-    std::string etiquetaFin = "\">";
-    // Se encuentra la posición de inicio y fin del enlace
-    size_t inicio = html.find(etiquetaInicio);
-    size_t fin = html.find(etiquetaFin, inicio + etiquetaInicio.length());
-    // Se extrae el enlace de la cadena de texto
-    std::string enlace = html.substr(inicio + etiquetaInicio.length(), fin - inicio - etiquetaInicio.length());
-
-    return enlace;
-}
-
-// Código de ejemplo para utilizar la función
 int main() {
-    // Se declara una cadena de texto con el HTML de la página web
-    std::string html = "<html><body><a href=\"https://google.com\">Ir a Google</a></body></html>";
-    // Se llama a la función para extraer el enlace
-    std::string enlace = extraerEnlace(html);
-    // Se imprime el enlace extraído
-    std::cout << enlace << std::endl;
+    // Crear un parser de HTML
+    htmlParserCtxtPtr parser = htmlCreatePushParserCtxt(NULL, NULL, NULL, 0, NULL, 0);
 
-    // Output: https://google.com
+    // Abrir un archivo HTML y leerlo línea por línea
+    FILE* archivo = fopen("página.html", "r");
+    while (!feof(archivo)) {
+        // Leer una línea del archivo y parsearla
+        char buffer[1024];
+        fgets(buffer, 1024, archivo);
+        htmlParseChunk(parser, buffer, strlen(buffer), 0);
+    }
 
+    // Obtener el árbol de nodos del documento HTML
+    xmlDocPtr documento = parser->myDoc;
+    xmlNodePtr raiz = xmlDocGetRootElement(documento);
+
+    // Recorrer los nodos e imprimir sus nombres
+    xmlNodePtr nodo = raiz;
+    while (nodo != NULL) {
+        std::cout << nodo->name << std::endl;
+        nodo = nodo->next;
+    }
+
+    // Cerrar el parser y el archivo
+    htmlFreeParserCtxt(parser);
+    fclose(archivo);
+    
     return 0;
 }
 ```
 
-Este es un ejemplo muy básico, pero muestra cómo se puede utilizar el conocimiento de C++ y del HTML para extraer información de una página web.
+En este ejemplo, utilizamos la función `htmlParseChunk` para parsear cada línea del archivo HTML y obtener un árbol de nodos del documento. Luego, utilizamos la función `xmlDocGetRootElement` para obtener el nodo raíz del documento, y recorremos los demás nodos utilizando la propiedad `next`.
 
-##Profundizando
+El resultado de este código sería la impresión de los nombres de todos los nodos del documento HTML.
 
-Por supuesto, hay muchos más elementos que se pueden extraer de una página web, como imágenes, texto y otros enlaces. Para poder hacerlo de manera más eficiente, se pueden utilizar librerías de terceros, como "libtidy" o "libxml2", que facilitan el proceso de parsear HTML en C++. También es importante tener en cuenta que, debido a que el HTML está en constante evolución, es necesario estar actualizado y conocer nuevas etiquetas y estructuras para poder seguir parseando de manera efectiva.
+## Profundizando
 
-##Consultar también
+El proceso de parsear HTML en realidad implica mucho más que simplemente obtener una estructura de nodos del documento. El parser también se encarga de validar la estructura del documento y convertir el contenido de los nodos a un formato legible para la computadora.
 
-* [Libtidy](https://github.com/htacg/tidy-html5)
-* [Libxml2](http://www.xmlsoft.org/)
+Además, existen diferentes tipos de nodos que pueden aparecer en un documento HTML, como etiquetas, texto, comentarios y atributos. Cada uno de estos tipos de nodos tiene sus propios métodos y propiedades que pueden ser accedidos a través del árbol de nodos.
 
-¡Ahora que conoces los fundamentos de cómo parsear HTML en C++, puedes seguir aprendiendo y explorando para mejorar tus habilidades en este proceso crucial para el manejo de información en la web!
+No es necesario conocer todos los detalles y especificaciones del lenguaje HTML para poder parsear un archivo en C++, pero es importante tener una comprensión básica de cómo funciona el lenguaje y su estructura para poder manipular correctamente los nodos.
+
+## Ver también
+
+* [Documentación de la biblioteca "libxml2"](http://www.xmlsoft.org/html/)
+* [Tutorial de "libxml2" para parsear HTML en C++](https://www.xml.com/pub/a/2000/10/18/libxml/index.html)
+* [Especificaciones del lenguaje HTML](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Main_flow_of_HTML_receiver)

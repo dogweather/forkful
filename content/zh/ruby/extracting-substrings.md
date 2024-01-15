@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "Ruby: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,43 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### 为什么
-提取子字符串是在编程中常见的任务。无论是在处理文本还是数据时，提取子字符串都能帮助我们更方便地获得特定的信息。
+## 为什么
 
-### 如何
-在Ruby中，我们可以使用`slice`或者`[]`方法来提取子字符串。举个例子，假设我们有一个字符串`"Hello World"`，我们可以使用以下代码来提取`"World"`这个子字符串：
+有时候在编写程序时，我们需要从一个字符串中提取特定的部分，这就是提取子字符串的原因。在Ruby中，提取子字符串非常简单，只需要使用几个内置的方法就可以实现。
 
-```Ruby
-str = "Hello World"
-substring = str.slice(6, 5)
-puts substring
-# Output: World
-```
+## 如何做
 
-我们也可以使用`[]`方法来提取子字符串。以下是同样的例子：
+首先，我们需要一个包含字符串的变量。例如，`message = "你好，世界"`。
 
-```Ruby
-str = "Hello World"
-substring = str[6, 5]
-puts substring
-# Output: World
-```
+#### 提取从索引2开始的所有字符
 
-除了提取特定位置和长度的子字符串外，我们还可以使用正则表达式来提取特定模式的子字符串。比如，假设我们想要提取字符串中的所有单词，我们可以使用以下代码：
+我们可以使用`message[2..-1]`来提取从索引2到最后一个字符的所有字符。输出结果为`"，世界"`。
 
-```Ruby
-str = "Hello World"
-words = str.scan(/\w+/)
-puts words
-# Output: ["Hello", "World"]
-```
+#### 提取特定范围的字符
 
-当然，在实际的编程中，我们可能会遇到更复杂的字符串提取需求。但是无论是什么样的需求，Ruby都提供了灵活的方法来帮助我们实现。
+如果我们想要提取特定范围的字符，我们可以使用`message[start_index, length]`来指定开始的索引和需要提取的字符数量。例如，`message[1,3]`将会提取从索引1开始的3个字符，输出结果为`"好，世"`。
 
-### 深入探讨
-除了上面提到的方法外，Ruby还有很多其他的字符串提取方法，比如`slice!`、`[]=`、`[index]`等等。每个方法都有自己的特点和适用场景。另外，我们还可以使用正则表达式的高级功能来进一步优化我们的提取过程。因此，了解不同的方法和技巧能够帮助我们更加灵活地处理字符串提取这个任务。
+#### 使用正则表达式来提取
 
-### 参考资料
-- [Ruby Guides: String Extraction](https://www.rubyguides.com/2019/05/ruby-string-extraction/)
-- [Ruby API: String](https://ruby-doc.org/core-2.6/String.html#method-i-gsub)
-- [RegexOne: Learn Regular Expressions with Simple, Interactive Exercises](https://regexone.com/)
+我们也可以使用正则表达式来提取特定模式的字符串。例如，`message[/好.*界/]`会提取所有在“好”和“界”之间的字符串，输出结果为`"好，世界"`。
+
+## 深入探讨
+
+在Ruby中，提取字符串的方法有很多种，可以满足不同的需求。除了上面提到的方法，还有很多其他有用的方法，如`scan`、`match`和`split`。这些方法在提取特定模式的字符串时非常有用，可以帮助我们更快地处理数据。
+
+## 参考链接
+
+- [Ruby文档-String类](https://ruby-doc.org/core-2.7.1/String.html)
+- [Ruby文档-Regular Expression](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Ruby Guides-Extracting Substrings](https://www.rubyguides.com/2018/11/extract-substring-in-ruby/)

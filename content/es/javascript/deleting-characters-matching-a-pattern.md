@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Borrando caracteres que coinciden con un patrón"
-simple_title:         "Borrando caracteres que coinciden con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Javascript: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué borrar caracteres que coinciden con un patrón en Javascript?
+## ¿Por qué: Eliminando caracteres que coinciden con un patrón?
 
-Borrar caracteres que coinciden con un patrón en Javascript es una técnica útil para limpiar cadenas de texto y obtener solo la información necesaria. Esto puede ser especialmente útil al manipular datos de formularios o al extraer datos de archivos de texto.
+Eliminar caracteres que coinciden con un patrón es una tarea común en la programación, especialmente en JavaScript. Puede ser útil para limpiar y formatear datos, realizar validaciones y mucho más. Además, es una habilidad importante para tener en tu caja de herramientas de programación.
 
 ## Cómo hacerlo:
 
-Para borrar caracteres que coinciden con un patrón en Javascript, podemos utilizar el método `.replace()` junto con expresiones regulares.
+Eliminar caracteres que coinciden con un patrón en JavaScript puede hacerse de varias maneras, dependiendo de tus necesidades y preferencias. Aquí te mostramos dos opciones usando el método `replace()` y el operador `slice()`.
 
-Por ejemplo, supongamos que queremos eliminar todas las vocales de una cadena de texto. Podríamos hacerlo de la siguiente manera:
+### Método replace()
 
-```Javascript
-let cadena = "Hola mundo";
-let resultado = cadena.replace(/[aeiou]/gi, ""); 
-console.log(resultado); // Hl mnd
-```
-
-En este código, estamos utilizando la expresión regular `/[aeiou]/gi` para indicar que queremos reemplazar todas las vocales (minúsculas y mayúsculas) en la cadena. Luego, cambiamos el patrón de coincidencia por una cadena vacía `""`, lo que resulta en la eliminación de todas las vocales.
-
-Hay muchas otras formas de utilizar expresiones regulares para borrar caracteres que coinciden con un patrón en Javascript. Se pueden combinar diferentes patrones y métodos para obtener resultados específicos según nuestras necesidades.
-
-## Profundizando:
-
-Además de usar expresiones regulares, también podemos utilizar métodos como `.slice()` o `.substring()` para eliminar caracteres de una cadena en Javascript.
-
-Por ejemplo, si queremos borrar los primeros tres caracteres de una cadena, podemos hacerlo de la siguiente manera:
+El método `replace()` es una función de cadena que puede ser utilizada para reemplazar una parte de una cadena con una nueva cadena. Puede tomar dos argumentos: el primer argumento es el patrón que deseas buscar y el segundo argumento es la cadena de reemplazo. Aquí hay un ejemplo de cómo usarlo para eliminar todas las vocales de una cadena:
 
 ```Javascript
-let cadena = "Hola mundo";
-let resultado = cadena.slice(3); 
-console.log(resultado); // a mundo
+let frase = "Hola amigos";
+let nuevaFrase = frase.replace(/[aeiou]/gi, "");
+console.log(nuevaFrase); // Hl mgs
 ```
 
-En este ejemplo, el método `.slice()` nos permite especificar el índice a partir del cual queremos eliminar caracteres. También podemos utilizar el método `.substring()` de manera similar para lograr el mismo resultado.
+En el ejemplo anterior, usamos una expresión regular como patrón para buscar todas las vocales en la cadena. El modificador `g` significa que buscamos todas las coincidencias en lugar de solo la primera, y el modificador `i` significa que la búsqueda es insensible a mayúsculas y minúsculas. Luego simplemente reemplazamos todas las coincidencias con una cadena vacía, es decir, las eliminamos.
 
-## Consulta también:
+### Operador slice()
 
-Para más información sobre expresiones regulares y métodos para manipular cadenas en Javascript, puedes consultar los siguientes recursos:
+Otra forma de eliminar caracteres que coinciden con un patrón es usando el operador `slice()` en combinación con `indexOf()`. El operador `slice()` crea una nueva cadena extrayendo una parte de otra cadena, mientras que el método `indexOf()` devuelve la posición de la primera coincidencia de un patrón en una cadena. Aquí hay un ejemplo de cómo usarlos para eliminar todas las letras "a" de una cadena:
 
-- [Expresiones regulares en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Métodos para manipular cadenas en Javascript](https://www.w3schools.com/js/js_string_methods.asp)
+```Javascript
+let mensaje = "Javascript es divertido";
+let nuevaLetra = mensaje.indexOf("a");
+while (nuevaLetra != -1) {
+  mensaje = mensaje.slice(0, nuevaLetra) + mensaje.slice(nuevaLetra + 1);
+  nuevaLetra = mensaje.indexOf("a");
+}
+console.log(mensaje); // Jvscrpt es dvertido
+```
+
+En este ejemplo, usamos un bucle while para ir eliminando todas las "a" encontradas en la cadena. En cada iteración, utilizamos `slice()` para cortar la parte de la cadena que queremos mantener (desde el inicio hasta la posición de la "a" encontrada) y la parte que queremos eliminar (desde la "a" hasta el final). Finalmente, asignamos la nueva cadena a la variable inicial para reemplazarla con la versión sin las "a".
+
+## Deep Dive:
+
+Existen otras formas de eliminar caracteres que coinciden con un patrón en JavaScript, como utilizar expresiones regulares en conjunción con otros métodos de cadena como `split()` y `join()`. Además, es importante recordar que algunos métodos de eliminación pueden modificar la cadena original, mientras que otros devuelven una nueva cadena sin modificar la original.
+
+## Ver también:
+
+- Documentación de Mozilla sobre el método `replace()`: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/replace
+- Tutorial de W3Schools sobre el operador `slice()`: https://www.w3schools.com/jsref/jsref_slice_string.asp
+- Ejemplos de uso de expresiones regulares en JavaScript: https://regexr.com/

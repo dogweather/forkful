@@ -1,5 +1,6 @@
 ---
-title:                "C++: Lavorare con json"
+title:                "Lavorare con json"
+html_title:           "C++: Lavorare con json"
 simple_title:         "Lavorare con json"
 programming_language: "C++"
 category:             "C++"
@@ -9,53 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Perché
+## Perché
 
-JSON è uno dei formati di dati più popolari nel mondo della programmazione e delle applicazioni web. Saper lavorare con JSON può essere estremamente utile per gestire e scambiare dati tra diverse applicazioni o sistemi.
+Stai pensando di lavorare con JSON? Bene, sei nel posto giusto! JSON è uno dei formati dati più popolari e flessibili utilizzati nello sviluppo di applicazioni. Conoscere come utilizzare JSON può essere un'abilità preziosa per qualsiasi programmatore.
 
-### Come fare
+## Come Fare
 
-Per lavorare con JSON in C++, è necessario utilizzare una libreria come "nlohmann/json" che permetta di manipolare facilmente i dati in formato JSON. Ecco un esempio di codice che mostra come creare un oggetto JSON e stamparne il contenuto:
+Per cominciare, assicurati di avere familiarità con la sintassi di base di C++. JSON può essere facilmente manipolato utilizzando gli oggetti di tipo `string`, `int`, `bool` e `double`. Inoltre, puoi utilizzare la libreria *rapidjson* per semplificare il processo.
+
+Per creare un oggetto JSON, puoi utilizzare la seguente sintassi:
 
 ```C++
-#include <iostream>
-#include <nlohmann/json.hpp>
+rapidjson::Document document;
+document.SetObject();
 
-int main()
-{
-  // Creazione di un oggetto JSON
-  nlohmann::json data = {
-    {"nome", "Marco"},
-    {"età", 25},
-    {"sesso", "maschio"}
-  };
+// Aggiungere elementi all'oggetto
+rapidjson::Value key("nomeChiave", document.GetAllocator());
+rapidjson::Value value("valore", document.GetAllocator());
+document.AddMember(key, value, document.GetAllocator());
+```
 
-  // Stampa del contenuto dell'oggetto JSON
-  std::cout << data.dump(4) << std::endl;
+Per accedere ai valori di un oggetto JSON, puoi utilizzare i metodi `IsInt()`, `IsString()`, `IsBool()` e `IsDouble()`. Ad esempio, per accedere al valore di un intero:
 
-  return 0;
+```C++
+if(document["nomeChiave"].IsInt()){
+    int valore = document["nomeChiave"].GetInt();
 }
 ```
 
-Il risultato di questo codice sarà:
+## Approfondimento
+
+Lavorare con JSON può diventare ancora più potente quando si utilizzano i suoi array, che contengono una lista di valori. Ecco un esempio di come creare un array e aggiungere elementi ad esso utilizzando un ciclo `for`:
 
 ```C++
-{
-    "nome": "Marco",
-    "età": 25,
-    "sesso": "maschio"
+rapidjson::Document document;
+document.SetObject();
+
+// Creare un array vuoto
+rapidjson::Value array(rapidjson::kArrayType);
+rapidjson::Value value("valore", document.GetAllocator());
+
+// Aggiungere 3 valori all'array
+for(int i = 0; i < 3; i++){
+    array.PushBack(value, document.GetAllocator());
 }
+
+// Aggiungere l'array come membro dell'oggetto Document
+rapidjson::Value key("nomeChiave", document.GetAllocator());
+document.AddMember(key, array, document.GetAllocator());
 ```
 
-È anche possibile leggere ed estrarre i dati da un file JSON utilizzando la funzione `nlohmann::json::parse` e accedendo ai dati come ad un normale oggetto C++.
+Un'altra opzione per lavorare con JSON è utilizzare la libreria *jsoncpp*, che fornisce una serie di funzioni utili per la manipolazione dei dati JSON.
 
-### Approfondimento
+## Vedi Anche
 
-È importante notare che esistono diverse librerie per lavorare con JSON in C++, ognuna con i propri vantaggi e svantaggi. È quindi consigliabile fare una ricerca e scegliere quella più adatta alle proprie esigenze.
-
-Inoltre, è possibile utilizzare altre funzioni della libreria "nlohmann/json" per manipolare e accedere ai dati in modo più avanzato, come ad esempio la ricerca e la modifica di specifici elementi all'interno di un oggetto JSON.
-
-### Vedi anche
-
-- Documentazione ufficiale di nlohmann/json: https://github.com/nlohmann/json
-- Una guida introduttiva su come utilizzare JSON in C++: https://www.techiedelight.com/use-json-cpp-standard-library-cpprestsdk/
+- [Documentazione ufficiale di rapidjson](https://rapidjson.org/)
+- [Documentazione ufficiale di jsoncpp](https://github.com/open-source-parsers/jsoncpp/wiki)
+- [Un tutorial dettagliato su come lavorare con JSON in C++](https://www.codeproject.com/Articles/1103753/How-to-Work-with-JSON-in-Cplusplus)

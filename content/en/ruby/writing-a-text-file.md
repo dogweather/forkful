@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "Ruby recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,49 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to save information in a structured and easily readable manner? Look no further than writing a text file with Ruby! It's a quick and simple way to store data that can be accessed and manipulated later on.
+Writing a text file using Ruby is a useful skill to have, especially for those who are working on projects that require reading and writing data. It allows for easy manipulation and storage of information without relying on a database.
 
 ## How To
 
-To start, create a new Ruby file and require the 'File' module. Then, use the 'File.new' method to create a new text file. You can name the file whatever you'd like and even specify the file path if you want to save it in a specific location.
+To create a text file using Ruby, we first need to create a new file and open it for writing, specifying the file name and the "w" mode for writing. Then, we can use the `.write` method to add text to the file. Finally, we need to close the file to ensure all changes are saved.
 
+```
 ```Ruby
-require 'File'
-
-File.new("example.txt", "w")
+file = File.open("example.txt", "w")
+file.write("This is an example text file created using Ruby! \n")
+file.write("It's as easy as using the .write method! \n")
+file.close
+```
 ```
 
-Next, we can use the 'File.open' method to open the text file we just created and write to it. The first parameter is the name of the file, while the second parameter specifies the mode in which the file will be opened. In this case, we use "a" to append to the end of the file.
+Running this code will create a new file called "example.txt" with the specified text inside. The `\n` is used to indicate a line break in the file.
 
-```Ruby
-File.open("example.txt", "a") do |file|
-  file.puts "Hello, world!"
-end
+We can also use string interpolation to add variables or dynamically generated content to our text file. For example:
+
 ```
-
-Now, if we open the text file, we will see the line "Hello, world!" written in it. We can also use variables to add more dynamic data to the text file.
-
 ```Ruby
 name = "John"
-age = 25
+age = 30
 
-File.open("example.txt", "a") do |file|
-  file.puts "#{name} is #{age} years old."
-end
+file = File.open("example2.txt", "w")
+file.write("#{name} is #{age} years old. \n")
+file.close
+```
 ```
 
-This will add the line "John is 25 years old." to the text file.
+This will create a new file called "example2.txt" with the text "John is 30 years old" inside.
 
 ## Deep Dive
 
-When writing a text file with Ruby, there are a few important things to keep in mind. Firstly, writing to a file will overwrite any existing data, unless you use "a" to append to the end. Additionally, the 'puts' method will automatically add a new line to the end of each entry, while the 'print' method will not.
+When writing a text file, it's important to keep in mind the mode we use for opening the file. As mentioned, we used "w" for writing, but there are other modes we can use such as "a" for appending to an existing file or "r+" for both reading and writing.
 
-If you need to read from a text file, you can use the 'File.foreach' method to iterate through each line in the file. You can also use the 'File.read' method to read the entire contents of the file as a string.
+Additionally, we can add more advanced options such as specifying the encoding of the file or using the `puts` method instead of `.write` to automatically add a line break after each piece of text.
 
-Lastly, it is important to always close the file after you are done writing to it using the 'File.close' method. This will save any changes you have made and prevent any unexpected behavior.
+There are also different ways to format the text in our file, such as using `.printf` or `.sprintf` methods to add formatted data or using the `<<` operator to concatenate strings.
 
 ## See Also
 
-- [Ruby File class](https://ruby-doc.org/core-3.0.1/File.html)
-- [Ruby FileUtils module](https://ruby-doc.org/stdlib-3.0.1/libdoc/fileutils/rdoc/FileUtils.html)
-- [Learn Ruby - Text Files](https://learnruby.com/textfiles.html)
+- [Ruby File Class](https://ruby-doc.org/core-2.7.2/File.html)
+- [Ruby String Class](https://ruby-doc.org/core-2.7.2/String.html)
+- [RubyIO - The Basics](https://www.rubyguides.com/2018/11/ruby-io/)
+
+By practicing writing text files in Ruby, you'll have a useful skill that can be applied to various projects and tasks. Keep exploring the different methods and options available to hone your skills and make use of this powerful feature in Ruby. Happy coding!

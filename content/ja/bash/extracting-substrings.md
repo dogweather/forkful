@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 部分文字列を抽出する"
-simple_title:         "部分文字列を抽出する"
+title:                "「部分文字列の抽出」"
+html_title:           "Bash: 「部分文字列の抽出」"
+simple_title:         "「部分文字列の抽出」"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,50 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+## Why
+
 ## なぜ
 
-サブストリングを抽出することには、リストやテキストの特定の部分を取得する必要があるため、便利な場合があります。たとえば、特定の単語や文字列を検索する、またはテキストをカテゴリごとに分類する場合などがあります。
+サブストリングを抽出することが必要な場合、それはよくあるシナリオです。例えば、テキストから特定のパターンを検索し、その部分を抽出したり、長いファイルの特定のセクションを取り出したりする必要がある場合があります。
 
-## 方法
+## How To
 
-サブストリングを抽出するには、Bashの組み込みコマンドである`cut`を使用します。以下のような形式で使用します。
+## 抽出方法
 
-```Bash
-cut -(options) filename
-```
+サブストリングを抽出する方法はいくつかあります。ここでは、文字列の一部を抽出する方法と、ファイル内のテキストからパターンを抽出する方法を紹介します。
 
-`cut`コマンドは、指定したオプションに応じて、渡されたファイルからサブストリングを切り出します。たとえば、次のコマンドは、スペースで区切られたテキストの2番目の単語を取得します。
+### 文字列の一部を抽出する方法
 
-```Bash
-cut -d " " -f 2 filename
-```
-
-また、`cut`コマンドは標準入力からもデータを受け取ることができます。例えば、`echo`コマンドを使用して文字列を出力し、それを`cut`コマンドにパイプしてサブストリングを抽出することもできます。
+まず、文字列から一部を抽出する方法を見てみましょう。Bashの組み込みコマンドである `cut` を使用することで、簡単にサブストリングを抽出することができます。
 
 ```Bash
-echo "Hello World" | cut -d " " -f 2
+mystring="Hello, World!"
+echo ${mystring:7:5}
+```
+実行結果:
+
+```Bash
+World
 ```
 
-上記の例では、"Hello World"という文字列から空白区切りで2番目の単語である"World"が抽出されます。
+上記の例では、変数 `mystring` から指定した位置 (7番目) から指定した長さ (5文字) の部分を抽出しています。
 
-## ディープダイブ
+### ファイル内のテキストからパターンを抽出する方法
 
-`cut`コマンドでは、オプションを組み合わせることで、より複雑なサブストリングの抽出が可能です。例えば、`-c`オプションを使用すると、文字列の指定した位置や範囲の文字を抽出できます。
+ファイル内のテキストから特定のパターンを抽出するには、`grep` コマンドを使用します。例えば、以下のような `sample.txt` ファイルに対して、`grep` コマンドを使用して "apple" という単語が含まれる行を抽出することができます。
 
-また、正規表現を使用することで、より柔軟なパターンにマッチするテキストを抽出することも可能です。
+```Bash
+apple
+orange
+banana
+apple pie
+```
 
-さらに、`cut`コマンドには、`-s`オプションを使用することで、指定した位置に文字列が存在しない場合には表示しないという機能もあります。
+```Bash
+grep "apple" sample.txt
+```
+実行結果:
 
-## 参考
+```Bash
+apple
+apple pie
+```
 
-「Bashでサブストリングを抽出する方法」: https://opensource.com/article/19/4/extracting-substrings-bash
+さらに、抽出したいパターンが特定の形式に従っている場合、正規表現を使用することでより柔軟に抽出することができます。例えば、電話番号のように特定の書式で表されるパターンを抽出する場合は、以下のように正規表現を使用します。
 
-「初心者のためのLinuxコマンド: cut」: http://www.lpi.org/blog/2014/04/23/learn-linux-101-cut
+```Bash
+grep -E "[0-9]{3}-[0-9]{4}-[0-9]{4}" sample.txt
+```
+実行結果:
 
-「Bashから文字列を取得する方法」: https://www.tecmint.com/bash-extract-filename-and-extension-in-linux/
+```Bash
+090-1234-5678
+080-9876-5432
+```
 
-## 関連記事
+## Deep Dive
 
-「Bashでの文字列操作の基本」: https://dev.classmethod.jp/articles/bash-string-process/
+## 詳細を掘り下げる
 
-「Bashで正規表現を使用する方法」: https://pierrecarion.com/2018/01/extract-strings-linux/
+サブストリングを抽出する方法は、上記で紹介したもの以外にもさまざまな方法があります。また、Bashの他にも、sedやawkなどのツールを使用したり、PythonやPerlのようなスクリプト言語を使用することもできます。それぞれの方法にはそれぞれ特徴がありますので、自分の目的や環境に合わせて最適な方法を選択するようにしましょう。
+
+## See Also
+
+## 関連リンク
+
+- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [sed Documentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [awk Documentation](https://www.gnu.org/software/gawk/manual/gawk.html)

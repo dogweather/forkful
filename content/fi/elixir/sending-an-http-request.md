@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Elixir: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,36 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kun rakennat web-sovelluksia, sinun täytyy usein kommunikoida muiden palveluiden kanssa lähettämällä HTTP-pyyntöjä. Elixirin avulla voit tehdä tämän helposti ja tehokkaasti. 
+HTTP-pyyntöjen lähettäminen on välttämätöntä monille Elixir-ohjelmoijille, sillä useimmat sovellukset tarvitsevat kommunikoidakseen muiden palveluiden kanssa. Se on myös yksi tehokkaimmista tavoista hakea tietoa verkoista ja käsitellä asynkronisia tapahtumia.
 
 ## Miten
 
-Voit lähettää HTTP-pyyntöjä Elixirissä käyttämällä `HTTPoison`-kirjastoa. Voit aloittaa käyttämällä `mix`-komentorivi työkalua asentaaksesi `HTTPoison`-kirjaston:
-
 ```Elixir
-mix deps.get
+# Ensimmäinen askeleesi on ottaa käyttöön HTTPoison-kirjasto Elixirissä, joka tarjoaa HTTP-rajapinnat selainkäyttöön.
+defp deps do
+  [{:httpoison, "~> 1.7"}]
+end
 ```
 
-Tämän jälkeen voit luoda GET-pyynnön käyttämällä `HTTPoison.get()` -funktiota ja määrittämällä haluamasi URL-osoitteen. Esimerkiksi:
+Pyyntöjen lähettäminen on yksinkertaista HTTPoison-kirjaston avulla. Alla on yksinkertainen esimerkki GET-pyynnön lähettämisestä hakusivulle ja sen palautuksen käsittelystä:
 
 ```Elixir
-HTTPoison.get("https://www.example.com")
+HTTPoison.get("https://www.haku.fi/")
+|> case do
+  {:ok, %{status_code: 200, body: body}} ->
+    IO.puts(body)
+  {:error, _} ->
+    IO.puts("Virhe hakemisessa")
+end
 ```
 
-Tämä palauttaisi sinulle `{:ok, %HTTPoison.Response{}}` -tuloksen, joka sisältää vastauksen tiedot, kuten statuskoodin ja headerit. Voit myös lähettää POST-pyynnön käyttämällä `HTTPoison.post()` -funktiota ja määrittämällä haluamasi parametrit. Esimerkiksi:
+Tässä tapauksessa HTTPoison palauttaa tuplen, joka sisältää pyynnön tilan ja vastauksessa olevat tiedot. Voimme käsitellä palautuksen haluamallamme tavalla, kuten tulostamalla vastauksen ruudulle tai suorittamalla muita toimintoja sen pohjalta.
 
-```Elixir
-HTTPoison.post("https://www.example.com/api", body: %{id: 1, name: "John"})
-```
+## Syvällinen sukellus
 
-## Syventävää
+HTTPoison-kirjasto on rakennettu HTTP-rajapinnan ympärille ja tarjoaa monia hyödyllisiä toimintoja, kuten mahdollisuuden määrittää otsikoita, lähettää erilaisia pyyntöjä ja käsitellä virheitä. Lisäksi se tarjoaa myös toimintoja asynkronisten pyyntöjen lähettämiseen, mikä tekee siitä erityisen hyödyllisen Elixirissä.
 
-HTTP-pyyntöjen lähettäminen Elixirissä onnistuu myös muilla kirjastoilla, kuten `Finch` ja `Tesla`. Nämä kirjastot tarjoavat lisäominaisuuksia, kuten asynkronisen lähetyksen ja automaattisen JSON-muunnoksen. Lisäksi voit myös hyödyntää Elixirin ominaisuuksia, kuten potentiaalisesti haitallisten prosessien hallinnan, tehdäksesi HTTP-pyyntöjesi lähetyksestä luotettavampaa ja suorituskykyisempää.
+Elixirissä on myös muita vaihtoehtoisia kirjastoja HTTP-pyyntöjen lähettämiseen, kuten HTTPotion ja Finch. Ne tarjoavat lisää ominaisuuksia ja pystyvät vastaamaan erilaisiin tarpeisiin. Onkin kannattavaa tutustua niihin ennen lopullisen ratkaisun valitsemista.
 
 ## Katso myös
 
-- [HTTPoisonin dokumentaatio](https://github.com/edgurgel/httpoison)
-- [Finchin dokumentaatio](https://github.com/keathley/finch)
-- [Teslan dokumentaatio](https://github.com/teamon/tesla)
-
-Kiitos lukemisesta! Toivottavasti tämä auttoi sinua ymmärtämään, miten lähettää HTTP-pyyntöjä Elixirissä. Onnea ohjelmoinnissa!
+- [HTTPoison dokumentaatio](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [ElixirSchool - HTTP-vaeltaja](https://elixirschool.com/fi/lessons/specifics/httpoison/)
+- [The Little Elixir & OTP Guidebook: Luku 7 - HTTP-Pyyntöjen Lähettäminen](https://www.goodreads.com/book/show/25568080-the-little-elixir-otp-guidebook)

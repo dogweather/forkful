@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Kotlin: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,64 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego porównywanie dat jest ważne?
+## Dlaczego
 
-Porównywanie dat jest ważnym elementem w wielu programach, szczególnie tych, które zajmują się organizacją i zarządzaniem danych. Wiele funkcji i algorytmów wymaga porównania dat, aby wykonać odpowiednie działania i przetwarzanie danych. W tym wpisie dowiesz się, jak efektywnie porównywać daty w języku Kotlin.
+Porównywanie dat jest kluczowym elementem w wielu aplikacjach i systemach informatycznych. Poprawne porównanie dat jest niezbędne do wykrywania i rozwiązywania błędów, planowania czasu oraz wykonania operacji na plikach i bazach danych. Dlatego, znajomość sposobu porównywania dat w języku Kotlin jest niezwykle przydatna dla programistów.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Porównywanie dat w języku Kotlin jest bardzo proste i wymaga użycia jednej z wbudowanych funkcji - `compareTo()`. Ta funkcja porównuje dwie daty i zwraca wynik w postaci wartości liczbowej, opisującej wynik porównania. Przykładowa implementacja wygląda następująco:
+Kotlin posiada wiele wbudowanych funkcji, które ułatwiają porównywanie dat. Jedną z nich jest metoda `compareTo()`, która porównuje dwie daty i zwraca wartość całkowitą w zależności od wyniku porównania. Przykładowe użycie tej metody wygląda następująco:
 
-```kotlin
-val date1 = LocalDate.of(2021, 6, 1)
-val date2 = LocalDate.of(2021, 6, 10)
+```Kotlin
+val date1 = LocalDate.of(2021, 10, 1)
+val date2 = LocalDate.of(2021, 10, 5)
 
-// porównanie dat przy użyciu funkcji compareTo()
 val result = date1.compareTo(date2)
-
-// wyświetlenie wyniku porównania
-println(result) // -9
+println(result) // wyświetli -4
 ```
 
-W powyższym przykładzie, funkcja `compareTo()` zwróciła wynik równy `-9`, co oznacza, że `date1` jest wcześniejsze niż `date2`. Jeśli daty są równe, funkcja zwraca wartość `0`, a jeśli pierwsza data jest późniejsza - zwraca wartość dodatnią.
+Powyższy kod porównuje dwie daty: 1 października 2021 i 5 października 2021. Metoda `compareTo()` zwróciła wartość -4, co oznacza, że `date1` jest wcześniej niż `date2`.
 
-W języku Kotlin możemy również łatwo porównywać daty na podstawie określonych kryteriów, takich jak rok, miesiąc czy dzień. Do tego celu wykorzystujemy funkcje `isBefore()`, `isAfter()` oraz `isEqual()`.
+Kotlin umożliwia również porównywanie dat z uwzględnieniem czasu. W tym celu można skorzystać z metody `compare()`, która przyjmuje dwa parametry - obiekty typu `LocalDateTime`. Przykład użycia:
 
-```kotlin
-val date1 = LocalDate.of(2021, 6, 1)
-val date2 = LocalDate.of(2021, 6, 10)
+```Kotlin
+val dateTime1 = LocalDateTime.of(2021, 10, 1, 14, 30)
+val dateTime2 = LocalDateTime.of(2021, 10, 1, 16, 45)
 
-// porównanie dat na podstawie roku
-println(date1.year == date2.year) // true
-
-// porównanie dat na podstawie miesiąca
-println(date1.month == date2.month) // true
-
-// porównanie dat na podstawie dnia
-println(date1.dayOfMonth == date2.dayOfMonth) // false
+val result = dateTime1.compareTo(dateTime2)
+println(result) // wyświetli -2
 ```
 
-W powyższym kodzie, wykorzystaliśmy funkcje `year`, `month` i `dayOfMonth`, aby porównać wybrane elementy dat. Funkcje te zwracają wartości logiczne (`true` lub `false`), co pozwala nam na dokładne określenie różnic pomiędzy datami.
+W tym przypadku porównywane są daty z uwzględnieniem czasu - 1 października 2021, godzina 14:30 i 1 października 2021, godzina 16:45. Metoda `compare()` zwróciła wartość -2, ponieważ `dateTime1` jest wcześniejsza niż `dateTime2`.
 
-## Głębszy zanurzenie
+## Deep Dive
 
-Porównywanie dat może również wymagać uwzględnienia strefy czasowej oraz uwzględnienia pomijania pewnych części daty, takich jak godziny, minuty czy sekundy. W tym przypadku, należy skorzystać z klasy `ZonedDateTime`, która umożliwia manipulację datami z uwzględnieniem strefy czasowej.
+Głębsze poznanie sposobu porównywania dat w języku Kotlin wymaga zrozumienia, jak działają klasy związane z datami - `LocalDate` i `LocalDateTime`. Obie klasy są niezmienialne (immutable) i dostarczają wiele metod do porównywania dat.
 
-```kotlin
-val date1 = ZonedDateTime.parse("2021-06-01T12:00:00-04:00")
-val date2 = ZonedDateTime.parse("2021-06-01T14:00:00-02:00")
+Metoda `compareTo()` jest dostępna w obu klasach i porównuje daty na podstawie wyznaczonej kolejności. Jednak, dla `LocalDate` porównanie odbywa się tylko na podstawie daty, bez uwzględnienia czasu. Natomiast dla `LocalDateTime` uwzględnia również czas.
 
-// porównanie dat przy użyciu funkcji compareTo()
-val result = date1.compareTo(date2)
+Kotlin również umożliwia porównywanie dat przy użyciu operatorów porównania (`<`, `<=`, `>`, `>=`) lub metody `equals()`. Przykład użycia operatora porównania:
 
-// wyświetlenie wyniku porównania
-println(result) // 0
+```Kotlin
+val date1 = LocalDate.of(2021, 10, 1)
+val date2 = LocalDate.of(2021, 10, 5)
+
+println(date1 < date2) // wyświetli true
 ```
 
-W powyższym przykładzie, mamy dwie daty, które różnią się strefą czasową. Dzięki użyciu klasy `ZonedDateTime`, możemy je łatwo porównać i uzyskać pożądany wynik.
+Wszystkie wymienione metody zwracają wartości całkowite, dlatego można je wykorzystać w warunkach logicznych lub do sortowania list i kolekcji obiektów zawierających daty.
 
-## Zobacz także
+## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w języku Kotlin, zapoznaj się z poniższymi źródłami:
-
-- [Dokumentacja języka Kotlin - porównywanie dat](https://kotlinlang.org/docs/compar
+- Dokumentacja Kotlin na temat pracy z datami: https://kotlinlang.org/docs/dates.html
+- Przykłady użycia metod do porównywania dat: https://developer.android.com/reference/java/time/LocalDateTime
+- Porównywanie dat w języku Java: https://www.baeldung.com/java-compare-dates

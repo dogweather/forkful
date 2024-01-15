@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Ruby: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,75 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kirjoittaa testeja? Testien kirjoittaminen on tärkeä osa hyvää ohjelmointia, sillä se varmistaa koodin laadun ja vähentää virheiden mahdollisuutta. Testaus myös helpottaa koodin ylläpitämistä ja mahdollistaa uusien ominaisuuksien lisäämisen ilman, että se rikkoo jo olemassa olevaa koodia.
+On tärkeää kirjoittaa testejä ohjelmointikoodin yhteydessä, jotta ohjelmistojen laatu voidaan varmistaa ja mahdolliset virheet voidaan havaita ja korjata varhaisessa vaiheessa. Testit myös helpottavat koodin ymmärtämistä ja muokkaamista tulevaisuudessa.
 
-## Kuinka tehdä
+## Miten
 
-Testien kirjoittaminen Rubyssa on helppoa ja intuitiivista. Käytämme tähän Ruby-on-Railsin sisäänrakennettua testauskehystä, nimeltään MiniTest.
+Testien kirjoittaminen Rubyllä on helppoa ja siinä käytetään usein kirjastoa nimeltä RSpec. Alla on esimerkkejä yksikkötestien ja integraatiotestien kirjoittamisesta:
 
-### Asennus
+```Ruby
+require 'rspec'
+require_relative 'calculator'
 
-Asentaaksesi MiniTestin, voit käyttää RubyGems-pakettienhallintajärjestelmää. Avaa terminaali ja suorita seuraavat komennot:
-
-```bash
-gem install minitest
-```
-
-### Esimerkki
-
-Tarkastellaan esimerkkinä ohjelmaa, joka tarkistaa annetun luvun parillisuuden. 
-
-```ruby
-# Ohjelma tarkistaa, onko luku parillinen vai ei
-def onko_parillinen?(luku)
-  luku % 2 == 0 
+describe Calculator do
+  # Testataan yhteenlaskun toimivuus
+  it 'laskee kaksi lukua yhteen' do
+    expect(Calculator.add(3, 5)).to eql(8)
+  end
 end
 
-# Testien kirjoittaminen
-require 'minitest/autorun'
-
-# Testiluokka
-class ParillinenTesti < Minitest::Test
-  # Testi, joka varmistaa, että luku 2 on parillinen
-  def test_parillinen_luku
-    tulos = onko_parillinen?(2)
-    assert_equal(true, tulos)
-  end
-  
-  # Testi, joka varmistaa, että luku 3 ei ole parillinen
-  def test_pariton_luku
-    tulos = onko_parillinen?(3)
-    assert_equal(false, tulos)
+describe IntegrationTest do
+  # Testataan, että laskenta oikeasti käyttää laskuria
+  it 'käyttää oikeaa laskuria' do
+    expect(IntegrationTest.new.run).to eql(true)
   end
 end
 ```
 
-### Tulostus
+Tämän koodin avulla voimme varmistaa, että oma laskurimme toimii halutulla tavalla. Huomaathan, että kutsumme add-metodia suoraan Calculator-luokasta ja kutsutaan myös run-metodia IntegrationTest-luokasta.
 
-Suorita testit komennolla `ruby nimi_testikoodi.rb` ja tulostuksen tulisi olla seuraavanlainen:
+## Syväsukellus
 
-```bash
-Run options: --seed 62838
-
-# Running:
-
-..
-
-Finished in 0.000615s, 3248.8101 runs/s, 4873.2151 assertions/s.
-
-2 runs, 3 assertions, 0 failures, 0 errors, 0 skips
-```
-
-## Syvällinen tarkastelu
-
-Testien kirjoittaminen ei ole vain yksinkertainen prosessi, vaan sitä on hyvä syvällisemmin tutkia ja ymmärtää. Testit eivät vain varmista koodin toimintaa, vaan myös auttavat ymmärtämään omaa koodia paremmin. Ne pakottavat meidät miettimään erilaisia skenaarioita ja testaamaan koodia eri tavoin. Tämä johtaa parempaan suunnitteluun ja laadukkaampaan koodiin.
+Testien kirjoittaminen tulee tehdä huolellisesti ja kattavasti. Testien tulisi kattaa kaikki mahdolliset tapaukset ja skenaariot, jotta voidaan varmistua koodin oikeellisuudesta. On myös tärkeää tehdä testauksesta osa ohjelmointiprosessia heti alusta alkaen, jotta vältetään mahdolliset virheet ja ongelmakohdat.
 
 ## Katso myös
 
-Jos haluat oppia lisää testien kirjoittamisesta Rubyssa, suosittelemme seuraavia resursseja:
-
-- [Minitest Documentation] (https://github.com/seattlerb/minitest#mini-testrdoc)
-- [Ruby Testing Tools] (https://blog.honeybadger.io/best-ruby-testing-tools/)
-- [Test Driven Development with Ruby] (https://www.codementor.io/ruby-on-rails/tutorial/test-driven-development-ruby-test-unit)
-
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään testien kirjoittamisen tärkeyden ja antoi sinulle hyödyllisiä vinkkejä Ruby-testaamiseen. Onnea testaamiseen ja hyvän koodin kirjoittamiseen!
+- [RSpecin dokumentaatio](https://rspec.info/documentation/)
+- [Unit-testauksen perusteet Rubylla](https://www.rubyguides.com/2018/07/rspec-tutorial/)
+- [Testauksen tärkeys ohjelmoinnissa](https://medium.com/microtica/why-unit-testing-is-important-in-software-development-a457355d5225)

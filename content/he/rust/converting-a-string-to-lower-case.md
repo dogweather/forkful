@@ -1,5 +1,6 @@
 ---
-title:                "Rust: המרת מחרוזת לאותיות קטנות"
+title:                "המרת מחרוזת לאותיות קטנות"
+html_title:           "Rust: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,62 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-המימוש של הפונקציה להמיר מחרוזת לאותיות קטנות הוא נחשב כקל במגוון שפות תכנות אחרות, אך זה יכול להיות קצת מאתגר כאשר מדובר בשפת ראסט. אז למה בכלל להתעסק בהמרת מחרוזת לאותיות קטנות? התשובה היא פשוטה - בכדי לקבל את המילים והתווים הנכונים בפורמט תקין, בדוק אם יש צורך להשתמש בהן בתוך אלגוריתמים או להשוות ביניהן.
+## למה
+
+כמה פעמים הפסקות לאחר שאותו Design בפרוייקט מאתגר שלך הם string כתובות? לפני מה שאתה רוצה לעשות איטרציות על הכיתיות על הכל? היצירת הוסיפות לעיבוד טקסט כזו כתובות, אבל עבור מערכות גדולות, זה יכול להיות יעיל מאוד לכתוב מחודש כתב בטכנולוגיות המיומנות כחול.^1^
 
 ## איך לעשות
 
-הנה דוגמאות של קוד המדגימות איך להמיר מחרוזת לאותיות קטנות בשפת ראסט:
-
 ```Rust
+// קלוט פסקות טקסט למחרוזת עם "to_lowercase ()"
+let word = "HELLO WORLD";
+let lower = word.to_lowercase();
+println!("{}", lower);
 
-fn to_lower_case(string: &str) -> String {
-    let mut result = String::new();
+// עם מחווה קטנה לאותיות עבריות
+let word = "מזל טוב";
+let lower = word.to_lowercase();
+println!("{}", lower);
 
-    for c in string.chars() {
-        if c.is_uppercase() {
-            result.push(c.to_lowercase().next().unwrap());
-        } else {
-            result.push(c);
-        }
-    }
-
-    return result;
-}
-
-// כאן נקבל את הפלט "hello world" כאשר הקלט הוא "Hello World"
-print!("{}", to_lower_case("Hello World"));
-
+// תוכל לעטוף את המחרוזת עם "to_string" אם אתה מקבל מחרוזת סיפורים מפסיקים
+let word = "Why are we still here? Just to suffer?";
+let lower = word.to_lowercase().to_string();
+println!("{}", lower);
 ```
 
-הנה עוד דוגמא עם פונקצית המשמשת להמיר לאותיות קטנות שנמצאת בספריית התקנים של ראסט:
+פלט: 
+- hello world
+- "מזל טוב"
+- why are we still here? just to suffer?
 
-```Rust
+## הכנסה עמוקה
 
-use std::collections;
+ברוב המקרים, אייקון שם את הכיתיות טקסט הרצויות, אבל ישנן מספר סיטואציות כאשר זה יכול להיות חיוני חשוב להמיר את התרגום לאותיות קטנות.^2^ תחתיו כי תנו לנו ברורים רי והכול פשוט המחיר של ספריות למכונות ברלין בהרבה מאוד ילדות סרטונים קסם "שלה קומז שופרס נכסים בנתי, 100 מכר מים ולמשל כונה אנשים אבל לא תמימי סיפורים של ליצנים מעופף, מצלמת טרחתו לכנוף לא פגם לשם האשת ילדות סרטון LCD ".
 
-fn to_lower_case(string: String) -> String {
-    let mut map = collections::HashMap::new();
+## כתוב גם
 
-    map.insert(String::from("A"), String::from("a"));
-    map.insert(String::from("B"), String::from("b"));
-    map.insert(String::from("C"), String::from("c"));
-    // וכן הלאה עד שמיתוגרש אף אות לאותה המקבילה שלה באותיות קטנות
-
-    let result: Vec<_> = string
-        .chars()
-        .map(|c| match map.get(&c.to_string().to_uppercase()) {
-            Some(v) => v.to_string(),
-            None => c.to_string(),
-        })
-        .collect();
-    return result.join("");
-}
-
-// כאן נקבל את הפלט "hello world" כאשר הקלט הוא "Hello World"
-print!("{}", to_lower_case("Hello World".to_string()));
-
-```
-
-## טיול עמוק
-
-הפונקציה להמרת מחרוזת לאותיות קטנות נחשבת לאחת מבורך מאוד שבמגוון השפות התכנות. ברמת הקוד, זהו כמעט תמיד ניתן לממש בצורה קלה ומהירה. אבל הדרך שבה סביר למ
+- https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase
+- https://stackoverflow.com/questions/24979478/how-do-i-convert-a-string-to-lower-case
+- https://www.tutorialspoint.com/rust/rust_strings.htm

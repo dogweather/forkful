@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Rust: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,41 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi extrait-on des sous-chaînes en Rust ?
+## Pourquoi
 
-L'une des fonctionnalités les plus utiles de la programmation est la capacité à manipuler et extraire des parties spécifiques de données au sein d'une chaîne de caractères. En Rust, cela peut être réalisé à l'aide de la méthode `split()` ou de la fonction `slice()` pour extraire des sous-chaînes. Dans cet article, nous allons découvrir pourquoi et comment utiliser ces méthodes en Rust.
+Si vous avez déjà travaillé avec des chaînes de caractères en Rust, vous savez qu'il peut être utile à certains moments d'extraire des sous-chaînes, c'est-à-dire des parties spécifiques d'une chaîne plus longue. Que ce soit pour traiter des données textuelles ou pour manipuler des URL, la possibilité d'extraire des substrings peut être très pratique et vous permettra d'écrire un code plus efficace et plus propre.
 
 ## Comment faire
 
-La première étape pour extraire des sous-chaînes en Rust est d'utiliser la fonction `slice()`. Cette fonction prend en paramètre la chaîne de caractères d'origine ainsi que l'indice de début et l'indice de fin de la sous-chaîne que nous souhaitons extraire. Par exemple, si nous avons une chaîne de caractères `"Bonjour Rust !"` et que nous voulons extraire uniquement le mot `"Rust"`, nous pouvons utiliser `slice(8, 12)` pour extraire les caractères entre les indices 8 et 12. Voici un exemple de code pour extraire une sous-chaîne en Rust :
+Voici comment extraire des sous-chaînes en Rust en utilisant les méthodes *slice* et *split_at* :
 
 ```Rust
-let chaine = "Bonjour Rust !";
-let souschaine = chaine.slice(8, 12);
+let s = "Bonjour, comment ça va ?";
+let sous_chaine = &s[8..15];
+println!("{}", sous_chaine);
+
+//devrait afficher "comment"
 ```
 
-Le résultat de `souschaine` sera `"Rust"`. Nous pouvons également utiliser des variables pour les indices de début et de fin, pour une extraction plus dynamique. Cependant, il est important de noter que `slice()` retournera une référence à la sous-chaîne, et non une copie. Vous devrez donc prendre cela en compte si vous souhaitez modifier la sous-chaîne extraite.
+Ici, nous créons une chaîne de caractères avec la phrase "Bonjour, comment ça va ?", puis nous utilisons la fonction *slice* pour extraire un morceau de cette chaîne, de l'index 8 à l'index 15. L'indexage en Rust commence à 0, donc le premier caractère a l'index 0 et le dernier a l'index n-1. Nous utilisons également l'opérateur "&" pour prendre une référence à la sous-chaîne plutôt que de la copier. Cela nous permet d'économiser de la mémoire et d'améliorer les performances.
 
-Outre la fonction `slice()`, nous pouvons également utiliser `split()`, qui sépare une chaîne de caractères en plusieurs sous-chaînes à l'aide d'un séparateur spécifique. Par exemple, si nous voulons séparer une chaîne de caractères aux espaces, nous pouvons utiliser la méthode `split(" ")`. Voici un exemple de code :
+Vous pouvez également utiliser la méthode *split_at* pour extraire une sous-chaîne à partir d'un index spécifique :
 
 ```Rust
-let chaine = "Bonjour Rust !";
-let souschaines = chaine.split(" ");
+let s = "Rust est un langage de programmation moderne";
+let (premiere_partie, seconde_partie) = s.split_at(4);
+println!("{} {}", premiere_partie, seconde_partie);
+
+//devrait afficher "Rust est un langage de programmation moderne"
 ```
 
-Le résultat de `souschaines` sera un tableau avec les sous-chaînes suivantes : `"Bonjour"`,`"Rust"` et `"!"`.
+Ici, nous utilisons la méthode *split_at* pour séparer la chaîne à l'index 4, ce qui nous donne deux sous-chaînes que nous pouvons ensuite afficher ensemble.
 
-## Deep Dive
+## Plongée en profondeur
 
-Maintenant que nous avons vu les bases de l'extraction de sous-chaînes en Rust, explorons quelques fonctionnalités avancées. Par exemple, nous pouvons spécifier un nombre maximum de sous-chaînes à extraire en utilisant `splitn()`. Nous pouvons également utiliser des expressions régulières pour `split()` et spécifier un délimiteur plus complexe. De plus, en utilisant `split_terminator()`, nous pouvons ignorer les derniers caractères de la chaîne si ceux-ci sont tous des délimiteurs.
+Lorsque vous utilisez la méthode *slice*, il est important de comprendre que les sous-chaînes renvoyées font référence à la chaîne d'origine. Cela signifie que si vous modifiez la sous-chaîne, la chaîne d'origine sera également modifiée. Par exemple :
 
-Il est également important de noter que les fonctions `split()` et `slice()` fonctionnent également avec d'autres types de données en plus des chaînes de caractères, tels que les vecteurs et les tableaux.
+```Rust
+let s = String::from("Hello World");
+let sous_chaine = &s[0..6];
+sous_chaine = sous_chaine.replace("Hello", "Bonjour");
+println!("{}", s);
+
+//devrait afficher "Bonjour World"
+```
+
+Dans cet exemple, nous avons tenté de remplacer la première partie de la chaîne d'origine avec la méthode *replace*. Cependant, cette méthode ne peut pas fonctionner sur une référence, car elle a besoin de modifier la chaîne elle-même. Cela nous conduit à une erreur de compilation.
+
+Il est également important de noter que la méthode *split_at* ne renvoie pas une référence mais deux valeurs distinctes. Cela signifie que vous ne pourrez pas modifier la chaîne d'origine à travers les sous-chaînes renvoyées.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'extraction de sous-chaînes en Rust, vous pouvez consulter les ressources suivantes :
-
-- [Documentation sur la méthode `slice()`](https://doc.rust-lang.org/std/primitive.slice.html#method.slice)
-- [Documentation sur la fonction `split()`](https://doc.rust-lang.org/std/primitive.str.html#method.split)
-- [Documentation sur les expressions régulières en Rust](https://docs.rs/regex/0.2.9/regex/)
-- [Guide complet sur la manipulation de chaînes de caractères en Rust](https://stevedonovan.github.io/rust-gentle-intro/6-strings.html)
+- Documentation sur les chaînes de caractères en Rust : https://doc.rust-lang.org/std/string/
+- Tutoriel sur les slices en Rust : https://doc.rust-lang.org/rust-by-example/slice.html

@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Python recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Python"
 category:             "Python"
@@ -10,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Downloading web pages is a common task in web scraping or data mining. It allows developers to extract useful information from websites and use it for various purposes such as market research, data analysis, or content aggregation.
+
+Downloading a web page can be a useful skill for a variety of reasons - from web scraping and data analysis to offline reading or saving important information.
 
 ## How To
-To download a web page in Python, we will use the `requests` library. First, we need to install it using `pip install requests` in our terminal. Then, we can import it in our code:
 
-```Python
-import requests
+To download a web page in Python, you will need to use the `urllib` library. Here's a simple example of how to download a webpage and print its content:
+
+```python
+import urllib.request
+
+# specify the URL of the web page
+url = "https://www.example.com"
+
+# use urllib.request to open the URL and read its content
+page = urllib.request.urlopen(url).read()
+
+# print the page content
+print(page)
 ```
 
-Next, we will use the `get()` method and pass in the URL of the web page we want to download. Let's download the home page of Google and store the response in a variable called `response`:
+Output:
 
-```Python
-response = requests.get("https://www.google.com/")
 ```
-
-Now, we can access the content of the web page using the `text` property of the `response` object:
-
-```Python
-print(response.text)
+b'<!doctype html>\n<html>\n<head>\n  <title>Example Domain</title>\n\n  <meta charset="utf-8"/>\n  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>\n  <meta name="viewport" content="width=device-width, initial-scale=1"/>\n  <style type="text/css">\n  body {\n    background-color: #f0f0f2;\n    margin: 0;\n    padding: 0;\n    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;\n    \n  }\n  div {\n    width: 600px;\n    margin: 5em auto;\n    padding: 2em;\n    background-color: #fdfdff;\n    border-radius: 0.5em;\n    box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);\n    \n  }\n' 
 ```
-
-If we run this code, we will see the HTML code of the Google home page printed in our terminal. We can also save the content of the page in a file using the `write()` method:
-
-```Python
-with open("google.html", "w") as file:
-    file.write(response.text)
-```
-
-This will create a new file called `google.html` and save the web page content in it. We can then open the file and see the HTML code in a text editor or browser.
 
 ## Deep Dive
-Behind the scenes, the `requests` library sends an HTTP request to the web server and receives an HTTP response. The `get()` method sends a GET request which is the most common type of request used for downloading web pages. By default, the library will follow redirects and handle errors for us.
 
-We can also customize our request by passing additional parameters to the `get()` method. For example, we can add headers, cookies or authentication credentials. We can also specify a timeout to avoid getting stuck in case the web server is not responding.
-
-In addition to the HTML content, the `response` object also contains other useful information such as the status code, headers, and cookies. We can access them using the respective properties of the `response` object.
+The `urllib` library is used for opening URLs and reading their contents. It has various methods for sending requests and handling responses from the server. Using the `urllib.request` module, we can open a web page and read its contents as shown in the example above. Additionally, we can also specify headers, handle redirects, and handle errors using the `urllib.request.Request` class.
 
 ## See Also
-Here are some helpful links for further reading about downloading web pages in Python:
 
-- [Requests library documentation](https://requests.readthedocs.io/en/master/)
-- [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [HTML tutorial](https://www.w3schools.com/html/)
+Here are some additional resources for learning more about downloading web pages in Python:
+
+- [urllib Documentation](https://docs.python.org/3/library/urllib.html)
+- [Web Scraping in Python](https://realpython.com/python-web-scraping-practical-introduction/) article by Real Python
+- [Requests Library](https://requests.readthedocs.io/en/master/) for making HTTP requests in Python

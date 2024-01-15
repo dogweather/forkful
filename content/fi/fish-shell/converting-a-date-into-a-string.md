@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Päiväys muuttaminen merkkijonoksi"
-simple_title:         "Päiväys muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Fish Shell: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,23 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointiprojekteissa saattaa olla tarve muuttaa päivämäärä merkkijonoksi. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan tulostaa päivämäärä tietokannan kyselyyn tai esittää se käyttäjälle ymmärrettävässä muodossa. Fish Shell tarjoaa kätevän tavan muuntaa päivämäärä merkkijonoksi.
+Miksi haluaisit muuttaa päivämäärän merkkijonoksi Fish Shell -ohjelmoinnissa? On olemassa monta syytä, kuten halu tallentaa päivämäärät tietokantaan, muokata niitä tai käyttää niitä osana tiedoston nimeä.
 
-## Kuinka tehdä
+## Miten tehdä se
 
-Fish Shellin ```date``` komennolla voidaan muuttaa päivämäärä halutunlaiseen merkkijonoon. Seuraavassa esimerkissä tulostetaan päivämäärä tänään ja huomenna ISO-muodossa:
+Fish Shell tarjoaa useita tapoja muuttaa päivämäärä merkkijonoksi. Voit käyttää "date" -komentoa, joka tulostaa nykyisen päivämäärän ja ajan standardimuodossa.
 
 ```
-date -I
-2021-09-09
-date -I -d '+1 day'
-2021-09-10
+fish_shell> date
+pe 14 toukokuu 2021 15.49.18 EEST
 ```
 
-Deep Dive: Päivämäärän muuntaminen ei ole aina yksinkertaista, sillä monissa eri maissa ja kulttuureissa käytetään erilaisia päivämäärän esitysmuotoja. Lisäksi päivämäärään liittyvät erilaiset aikavyöhykkeet ja kesäaika voivat aiheuttaa haasteita. Fish Shell tarjoaa kuitenkin laajan valikoiman vaihtoehtoja ja säädettävyyttä, mikä tekee päivämäärän muuntamisesta joustavaa ja helppoa.
+Voit myös muuttaa päivämäärän halutun muodon mukaiseksi käyttämällä "-f" -valitsinta ja määrittämällä muodon merkkijonossa.
+
+```
+fish_shell> date -f %d-%m-%Y
+14-05-2021
+```
+
+## Syvällisempi sukellus
+
+Fish Shellin date-komento käyttää "GNU date" -ohjelmaa, joka tarjoaa monia eri muotoiluvaihtoehtoja. Voit löytää lisätietoja GNU daten käytöstä komennolla "man date" tai käyttämällä "date --help".
+
+Voit myös muuttaa päivämäärän muotoa ottamalla ensin talteen haluamasi päivämäärän käyttämällä "set" -komentoa, ja sitten muuttamalla sen merkkijonoksi käyttäen "string" -komentoa.
+
+```
+fish_shell> set day (date +%B-%d-%Y)
+fish_shell> string $day
+toukokuu-14-2021
+```
 
 ## Katso myös
 
-- [Fish Shell](https://fishshell.com/)
-- [Fish Shell - dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub-sivu](https://github.com/fish-shell/fish-shell)
+- [Fish Shellin dokumentaatio "Date"-komento](https://fishshell.com/docs/current/cmds/date.html)
+- [GNU daten virallinen dokumentaatio](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)

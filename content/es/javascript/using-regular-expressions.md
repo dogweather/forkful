@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Utilizando expresiones regulares"
+title:                "Utilizando expresiones regulares"
+html_title:           "Javascript: Utilizando expresiones regulares"
 simple_title:         "Utilizando expresiones regulares"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,53 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué usar expresiones regulares
+## Por qué usar expresiones regulares?
 
-Las expresiones regulares son una herramienta muy útil para programar en Javascript ya que permiten buscar y manipular cadenas de texto de una manera muy precisa. Con regular expressions, puedes ahorrar tiempo y esfuerzo al realizar tareas como validar formularios, extraer información específica de un texto o buscar patrones dentro de una cadena. ¡Incluso puedes utilizarlas para hacer web scraping! En esta guía te explicaremos cómo utilizarlas paso a paso.
+Las expresiones regulares son una herramienta poderosa en cualquier lenguaje de programación, incluyendo Javascript. Con ellas, podemos validar y manipular texto de manera fácil y eficiente. Si deseas mejorar en tus habilidades de programación y hacer tu código más robusto, aprender a usar expresiones regulares es una excelente opción.
 
-## Cómo utilizar expresiones regulares
+## Cómo hacerlo?
 
-Las expresiones regulares en Javascript se escriben entre dos barras inclinadas, por ejemplo: ```/patrón/```. Puedes utilizar diferentes patrones y métodos para buscar, reemplazar o extraer partes de una cadena. A continuación, te mostraremos algunos ejemplos de código:
+Para comenzar a utilizar expresiones regulares en Javascript, primero debemos crear un objeto de expresión regular usando la sintaxis ```var regex = new RegExp("patrón", "opciones");```. El patrón es la expresión que deseamos buscar en el texto y las opciones son los distintos parámetros que podemos usar para hacer la búsqueda.
 
-- **Buscar una palabra en una cadena de texto**
+Una vez tengamos nuestro objeto de expresión regular, podemos utilizar los métodos nativos de Javascript para trabajar con él. Estos incluyen ```test()``` para buscar coincidencias y devolver un valor booleano, ```exec()``` para obtener información sobre la coincidencia encontrada y ```replace()``` para reemplazar el texto que cumpla con el patrón.
 
-```Javascript
-let texto = "Las expresiones regulares son muy útiles para programar en Javascript";
-let patron = /expresiones regulares/;
-console.log(patron.test(texto)); // Output: true
-```
-
-- **Extraer un número de una cadena de texto**
+Veamos un ejemplo de cómo utilizar expresiones regulares para validar una dirección de correo electrónico y obtener la extensión del dominio:
 
 ```Javascript
-let texto = "El número de teléfono de María es 555-123-4567";
-let patron = /\d{3}-\d{3}-\d{4}/;
-console.log(texto.match(patron)); // Output: 555-123-4567
+let email = "example@mail.com";
+let regex = new RegExp(".+@(.+).com");
+regex.test(email); // devuelve true
+let extension = regex.exec(email)[1]; // devuelve "mail"
 ```
 
-- **Reemplazar una palabra en una cadena de texto**
+## Profundizando más
 
-```Javascript
-let texto = "Javascript es un lenguaje de programación muy popular";
-let patron = /Javascript/;
-console.log(texto.replace(patron, "Python")); // Output: Python es un lenguaje de programación muy popular
-```
+Además de los métodos básicos mencionados anteriormente, Javascript cuenta con una amplia gama de funciones y métodos específicos para trabajar con expresiones regulares. Por ejemplo, la función ```match()``` nos permite buscar todas las coincidencias en un texto y devolverlas en un array. La función ```search()``` devuelve la posición de la primera coincidencia encontrada en el texto. Y el método ```split()``` divide un string en un array utilizando una expresión regular como separador.
 
-## Profundizando en el uso de expresiones regulares
-
-Existen diferentes patrones y métodos que puedes utilizar en tu código para aprovechar al máximo las expresiones regulares. Algunos de ellos son:
-
-- **Método ```test()```**: Este método verifica si un patrón se encuentra en una cadena de texto y devuelve un valor booleano (true o false).
-- **Método ```match()```**: Devuelve todas las coincidencias de un patrón en una cadena de texto.
-- **Método ```replace()```**: Reemplaza una parte de una cadena de texto que coincide con un patrón por otra cadena o valor.
-- **Métodos de búsqueda avanzada**: Puedes utilizar símbolos especiales y cuantificadores para buscar patrones más complejos, como por ejemplo, buscar una o más letras consecutivas, buscar una cantidad específica de dígitos o buscar patrones en una posición específica dentro de una cadena.
-
-Con un poco de práctica y conocimiento de los diferentes métodos y patrones disponibles, podrás utilizar expresiones regulares de manera eficiente en tus proyectos de Javascript.
+Para aprender más sobre todas las posibilidades que ofrecen las expresiones regulares en Javascript, te recomendamos consultar la documentación oficial de Mozilla o buscar tutoriales y ejercicios interactivos en línea.
 
 ## Ver también
-
-- [Documentación de expresiones regulares en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Tutorial de expresiones regulares en Javascript](https://www.w3schools.com/js/js_regexp.asp)
-- [Ejemplos prácticos de expresiones regulares en Javascript](https://www.freecodecamp.org/news/the-30-minute-regex-tutorial-in-es6/)
-
-¡Esperamos que esta guía te haya ayudado a entender mejor cómo utilizar expresiones regulares en tus proyectos de Javascript! Recuerda que la práctica hace al maestro, así que no dudes en seguir explorando y experimentando con esta poderosa herramienta. ¡Hasta la próxima!
+- [Documentación oficial de expresiones regulares en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Expresiones regulares en W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [Tutorial interactivo de expresiones regulares en Codecademy](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-regex)

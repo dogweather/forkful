@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「ウェブページをダウンロードする」"
-simple_title:         "「ウェブページをダウンロードする」"
+title:                "ウェブページのダウンロード"
+html_title:           "Kotlin: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,55 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「なぜWebページのダウンロードに関わるのか？」
+## 日本語としてのKotlinプログラミング：ウェブページのダウンロード
 
-Webページのダウンロードは、インターネット上で情報やコンテンツを入手するために重要なプロセスです。例えば、オンラインショッピングやウェブサイトの閲覧など、さまざまな活動でダウンロードが必要になります。Kotlinの便利な機能を使って、簡単にWebページのダウンロードができることをご紹介します。
+**Kotlin**は、現在最も人気のあるコンパイラ上のプログラミング言語の1つです。日本のプログラマーや開発者たちにとって、Kotlinは非常に魅力的であり、その簡潔さと直感的な文法が特に注目されています。そのため、この記事では、ウェブページのダウンロードについて、カジュアルなトーンと冗長ではないスタイルで解説します。Kotlinを学び始める上での一歩として、ウェブページのダウンロードについて知識を深めましょう。
 
-「方法」
+## なぜウェブページをダウンロードするのか？
 
-まずは、必要なライブラリをインポートします。
+ウェブページをダウンロードすることにはさまざまな理由があります。例えば、あなたがウェブスクレイピングを行っているとしたら、ある特定のサイトからデータを収集し、それを加工して分析する必要があるかもしれません。または、あなたがDeep Learningなどの機械学習技術を学ぶ上で、ダウンロードしたウェブページからテキストデータを抽出する必要があるかもしれません。いずれの理由でも、ウェブページをダウンロードする必要が出てくるかもしれません。
+
+## ウェブページをダウンロードする方法
+
+まずは、Kotlinでウェブページをダウンロードするための基本的な手順を説明します。
+
+まず、`URL`クラスを使ってダウンロードしたいウェブページのURLを指定します。次に、Kotlinの`inputStream`を使ってウェブページのバイトデータを取得し、それを`FileOutputStream`を使ってファイルに書き込みます。最後に、`close()`メソッドを使ってデータのストリームを閉じて、ダウンロードが完了します。
+
+以下のコードブロックは、例としてウェブページをダウンロードするためのKotlinコードを示しています。
 
 ```Kotlin
 import java.net.URL
 import java.io.File
-```
+import java.io.FileOutputStream
 
-次に、ダウンロードしたいWebページのURLを指定します。
-
-```Kotlin
+// ダウンロードしたいウェブページのURLを指定する
 val url = URL("https://example.com")
+
+// InputStreamを使ってウェブページのバイトデータを取得する
+val inputStream = url.openStream()
+
+// ファイルに書き込む
+val fileOutputStream = FileOutputStream(File("downloaded_page.html"))
+inputStream.copyTo(fileOutputStream)
+
+// ストリームを閉じる
+inputStream.close()
+fileOutputStream.close()
 ```
 
-ダウンロードしたページを保存するファイルを指定します。ここでは、'page.html'という名前で保存しています。
+## ディープダイブ：ウェブページのダウンロードについてもっと詳しく
 
-```Kotlin
-val file = File("page.html")
-```
+上記の方法では、ウェブページのダウンロードに必要な最低限の手順を説明しましたが、実際にはさらに多くのオプションがあります。
 
-最後に、`copyTo()`メソッドを使用してファイルをダウンロードします。
+例えば、ウェブページをダウンロードする際に指定できるヘッダーを使って、特定のウェブサイトに自分が人間であることを証明することもできます。また、Kotlinの`readText()`メソッドを使って、ウェブページのテキストデータを1行で取得することもできます。
 
-```Kotlin
-url.openStream().use { input ->
-    file.outputStream().use { output ->
-        input.copyTo(output)
-    }
-}
-```
-
-これで、指定したURLのWebページが、`page.html`という名前のファイルとして保存されました。ダウンロードしたファイルの中身を確認すると、HTMLコードが表示されるはずです。
-
-「詳細な説明」
-
-これから詳しく説明するのは、KotlinでのWebページのダウンロードの仕組みです。
-
-まずは、`URL`クラスを使用して、ダウンロードしたいWebページのURLを指定します。`java.net`パッケージに属するクラスで、URLに関する便利な機能を提供しています。
-
-次に、`openStream()`メソッドを使用して、URLに接続します。これにより、`InputStream`オブジェクトが取得できます。このオブジェクトは、HTTPリクエストを送信し、レスポンスのデータを取得するためのものです。
-
-そして、`copyTo()`メソッドを使用して、`InputStream`から取得したデータをファイルにコピーします。`outputStream()`メソッドを使用して、`File`オブジェクトの出力ストリームを取得し、そこにデータを書き込みます。`use`メソッドを使用して、ストリームを自動的に閉じることができます。
-
-「関連情報」
-
-- [Kotlinの公式ドキュメント](https://kotlinlang.org/docs/home.html)
-- [java.net.URLクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Kotlinでファイルを操作する方法](https://qiita.com/furu8ma/items/fe9a2a100dfc5d8299d5)
+このように、Kotlinを使ってウェブページをダウンロード

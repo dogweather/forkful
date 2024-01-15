@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 정규 표현식 활용"
-simple_title:         "정규 표현식 활용"
+title:                "정규 표현식 사용하기"
+html_title:           "PHP: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 정규 표현식을 사용해야 할까요?
+## 왜 사용할까요?
 
-정규 표현식은 PHP 프로그래밍에서 빈번하게 사용되는 패턴 매칭 도구로, 문자열에서 특정 패턴을 찾아내거나 변환하는 데에 유용합니다. 이를 통해 좀 더 효율적이고 정확한 작업을 할 수 있게 됩니다.
+정규표현식을 사용하는 이유는 간단합니다. 우리가 특정한 패턴을 찾거나 대체하는 일이 필요할 때가 있기 때문입니다.
 
-# 어떻게 정규 표현식을 사용할 수 있을까요?
+이를테면, 이메일 주소, 전화번호, 주민등록번호 등과 같은 특정한 형식을 가진 문자열을 찾아내거나, 특정한 단어를 대체하고 싶거나, 혹은 문자열에서 원하는 부분만 추출해내는 등의 작업을 할 때 정규표현식이 필요합니다.
 
-아래 코드 블록에서는 정규 표현식을 사용하여 이메일 주소에서 유저네임을 추출하는 예제를 보여드리겠습니다.
+## 사용 방법
+
+정규표현식을 사용하기 위해선 먼저 PHP에서 제공하는 `preg_match()` 함수를 사용해야 합니다. 이 함수는 세 개의 매개변수를 가지고 있는데, 첫 번째 매개변수에는 찾아낼 패턴을 지정하고, 두 번째 매개변수에는 검사할 문자열을 지정하며, 세 번째 매개변수에는 옵션을 설정할 수 있습니다.
+
+아래는 이메일 주소를 검사하는 예제 코드입니다.
 
 ```PHP
-$email = 'user123@example.com';
-$username = preg_match('/^([a-z0-9]+)@([a-z]+\.[a-z]+)$/i', $email, $matches);
+$email = "john.doe@email.com";
 
-echo $matches[1]; // 출력 결과: user123
+if (preg_match("/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/", $email)) {
+  echo "유효한 이메일 주소입니다.";
+} else {
+  echo "유효하지 않은 이메일 주소입니다.";
+}
 ```
 
-위 코드에서는 `preg_match()` 함수를 사용하여 정규 표현식과 문자열을 매칭시키고, `$matches` 배열에서 추출한 유저네임을 출력하였습니다. 이처럼 정규 표현식은 정확한 패턴을 지정하고 해당 패턴에 맞는 문자열을 찾아내는 데에 사용될 수 있습니다.
+위의 코드를 실행하면 "유효한 이메일 주소입니다."라는 메시지가 출력될 것입니다. 우리가 지정한 정규표현식은 이메일 주소의 형식을 검사하는 역할을 합니다. 이와 같은 방식으로 전화번호, 주민등록번호 등도 각각의 형식에 맞게 정규표현식을 작성하여 검사할 수 있습니다.
 
-# 깊게 살펴보기
+## 심층 탐구
 
-정규 표현식은 조금 복잡하게 느껴질 수 있지만, 많은 PHP 개발자들이 이를 배우고 사용하고 있습니다. 정규 표현식의 패턴을 이해하고 응용할 수 있는 능력은 PHP 프로그래밍에서 매우 유용합니다. 따라서 시간을 내어 몇 가지 패턴 예제를 직접 작성해보며 연습하는 것이 추천됩니다.
+정규표현식을 사용할 때 주의할 점이 있습니다. 바로 지나치게 복잡한 패턴을 사용하는 것입니다. 정규표현식은 강력한 도구지만, 지나치게 복잡하고 난해한 패턴을 작성하면 오히려 유지보수가 어려워질 수 있습니다. 따라서 가능한 간단하고 명확한 패턴을 작성하는 것이 좋습니다.
 
-# 관련 자료
+또한, 정규표현식을 작성할 때는 테스트를 철저히 수행하는 것이 중요합니다. 패턴을 작성할 때마다 테스트를 수행하여 원하는 결과를 얻을 수 있도록 해야 합니다. 이렇게 함으로써 중간에 발생하는 오류를 최소화할 수 있습니다.
 
-- [PHP 공식 문서 - 정규 표현식](https://www.php.net/manual/en/book.pcre.php)
-- [정규 표현식을 활용한 패턴 매칭 툴](https://regex101.com/)
-- [정규 표현식에 대한 더 많은 예제 및 설명](https://www.regular-expressions.info/tutorials.html)
-- [정규 표현식을 자세히 다루는 책 "정규 표현식 완전 정복"](https://www.oreilly.com/library/view/regular-expressions-cookbook/9780596802837/)
+## 더 알아보기
+
+- [PHP 공식 문서: 정규표현식 사용하기](https://www.php.net/manual/en/function.preg-match.php)
+- [정규표현식 체크리스트](https://www.debuggex.com/cheatsheet/regex/php)
+- [정규표현식 연습 사이트: regex101](https://regex101.com)
+
+## 참고자료
+
+- [PHP: 검증과 필터링 정규표현식](https://www.php.net/manual/en/filter.filters.sanitize.php)
+- [W3Schools: PHP 정규표현식 연습](https://www.w3schools.com/php/php_regex.asp)
+- [정규표현식을 사용한 입력 유효성 검사](https://www.tutorialspoint.com/php/php_regular_expression.htm)

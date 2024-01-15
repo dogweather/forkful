@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Ruby: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,37 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore Ruby, probabilmente hai sentito parlare di CSV. Ma perché dovresti impegnarti a lavorare con esso? CSV (Comma Separated Values) è un formato di file molto comune per l'archiviazione e l'importazione di dati tabellari. È molto utilizzato in ambito aziendale e in applicazioni web. Se stai svolgendo un progetto che richiede l'utilizzo di dati tabellari, come ad esempio un'e-commerce o un sistema di gestione degli ordini, lavorare con CSV potrebbe essere la soluzione migliore per te.
+Se sei interessato a lavorare con dati tabellari, come ad esempio fogli di calcolo o file di database, allora dovresti considerare di utilizzare il formato CSV (Comma-Separated Values). Con Ruby, è possibile gestire facilmente file CSV, e ottenere i dati in un formato strutturato e leggibile.
 
 ## Come fare
 
-In Ruby, esistono diverse gemme (gem) disponibili per aiutarti a lavorare con i file CSV, come ad esempio "CSV" e "FasterCSV". Vediamo un esempio di come utilizzare la gemma "CSV" per leggere un file CSV e stampare il suo contenuto:
+Per iniziare a lavorare con CSV in Ruby, è necessario importare la libreria CSV nel tuo codice. Di seguito un esempio di come aprire e leggere un file CSV:
 
-```
+```Ruby
 require 'csv'
 
-CSV.foreach('file.csv') do |row|
-  puts "#{row[0]} - #{row[1]} - #{row[2]}"
+CSV.foreach("file.csv") do |row|
+  p row
 end
-
 ```
 
-Output:
+Questo esempio utilizza il metodo `foreach` per leggere ogni riga del file CSV e stamparla a schermo. Se vuoi lavorare con una singola riga, puoi utilizzare il metodo `read`:
 
-```
-1 - Prodotto 1 - $10.00
-2 - Prodotto 2 - $20.00
-3 - Prodotto 3 - $30.00
+```Ruby
+require 'csv'
+
+row = CSV.read("file.csv").first
+p row
 ```
 
-In questo esempio, stiamo utilizzando il metodo "foreach" per iterare su ogni riga del nostro file CSV. Il blocco di codice all'interno del metodo viene eseguito per ogni riga del file. Utilizziamo la variabile "row" per accedere ai valori di ogni colonna. Nel nostro esempio, stiamo semplicemente stampando il contenuto del primo, secondo e terzo campo di ogni riga.
+Ora supponiamo che il nostro file CSV abbia una riga di intestazione, che indica il nome di ogni colonna di dati. Possiamo accedere facilmente ai dati di una specifica colonna utilizzando il nome della colonna anziché un indice numerico:
+
+```Ruby
+require 'csv'
+
+CSV.foreach("file.csv", headers: true) do |row|
+  puts row["Nome"].to_s + " ha " + row["Età"].to_s + " anni."
+end
+```
+
+In questo esempio, stiamo utilizzando il metodo `foreach` insieme all'opzione `headers: true` per indicare che il nostro file CSV ha una riga di intestazione. Poi, stiamo stampando il nome e l'età di ogni persona presente nel file.
+
+È anche possibile creare un nuovo file CSV con Ruby utilizzando il metodo `open` e specificando le colonne con il metodo `<<`:
+
+```Ruby
+require 'csv'
+
+CSV.open("nuovo_file.csv", "w") do |csv|
+  csv << ["Nome", "Cognome", "Età"]
+  csv << ["Maria", "Rossi", 35]
+  csv << ["Paolo", "Verdi", 27]
+end
+```
+
+Al termine dell'esecuzione, avrai creato un nuovo file CSV con le tre colonne specificate e le informazioni inserite.
 
 ## Approfondimento
 
-Oltre alla semplice lettura di un file CSV, è possibile utilizzare la gemma "CSV" per eseguire operazioni più complesse, come ad esempio scrivere su un file CSV o convertire i dati in un'applicazione web in un formato CSV. Puoi anche definire i separatori dei campi e le opzioni di formattazione per adattarli alle tue esigenze specifiche. Per ulteriori informazioni, consulta la documentazione ufficiale della gemma "CSV".
+Oltre a leggere e scrivere file CSV in Ruby, ci sono alcune altre funzionalità utili da conoscere. Ad esempio, è possibile specificare il separatore del campo diverso dalla virgola utilizzando l'opzione `col_sep`:
+
+```Ruby
+CSV.foreach("file.csv", col_sep: ";") do |row|
+  p row
+end
+```
+
+Inoltre, se si sta lavorando con dati di grandi dimensioni, è possibile utilizzare il metodo `shift` per rimuovere righe dal file senza doverle leggere tutte:
+
+```Ruby
+CSV.foreach("file.csv", headers: true) do |row|
+  break if row["Nome"] == "Giulia"
+  puts row["Nome"].to_s + " ha " + row["Età"].to_s + " anni."
+end
+```
+
+In questo esempio, stiamo leggendo il file CSV fino a quando non troviamo la riga con il nome "Giulia", momento in cui usciremo dal ciclo.
 
 ## Vedi anche
 
-- Documentazione ufficiale della gemma CSV: https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html
-- Documentazione ufficiale della gemma FasterCSV: https://github.com/JEG2/faster_csv 
-- Tutorial su come utilizzare la gemma CSV: https://www.rubyguides.com/2018/10/parse-csv-ruby/
+- [Documentazione ufficiale di Ruby per la classe CSV](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
+- [Tutorial su come lavorare con CSV in Ruby](https://www.rubyguides.com/2019/05/working-with-csv-ruby/)
+- [Articolo su come leggere e scrivere file CSV in Ruby](https://www.rubyguides.com/2018/10/csv-library-ruby/)

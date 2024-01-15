@@ -1,6 +1,7 @@
 ---
-title:                "C++: コンピューター プログラミングの記事「コマンドライン引数を読む」"
-simple_title:         "コンピューター プログラミングの記事「コマンドライン引数を読む」"
+title:                "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
+html_title:           "C++: コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
+simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,60 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+コマンドライン引数を読み取ることの重要性について最大2文で説明します。
 
-コマンドライン引数を読み込むことの重要性についてお話します。コマンドライン引数を使用することで、ユーザーがプログラムの実行中に入力する値を制御することができます。プログラムの動作を変えたり、特定の機能を実行したりするのに役立ちます。
-
-## 使い方
-
-C++でコマンドライン引数を読み込む方法を学びましょう。まずは以下のコード例をご覧ください。
+## 方法
+コマンドライン引数を読み取るには、`argc`と`argv`という2つのパラメータを使用します。`argc`はコマンドラインに入力された引数の数を保持し、`argv`は引数が格納された配列です。以下の例をご覧ください。
 
 ```C++
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-  for (int i = 0; i < argc; i++) {
+int main(int argc, char *argv[]) {
+  // プログラム名を出力
+  std::cout << "プログラム名: " << argv[0] << std::endl;
+
+  // 引数を出力
+  for (int i = 1; i < argc; i++) {
     std::cout << "引数" << i << ": " << argv[i] << std::endl;
   }
+  
+  return 0;
 }
 ```
 
-このコードはプログラムが受け取った全てのコマンドライン引数を出力するものです。
-
-例えば、コマンドプロンプトで`./program 私はC++が大好きです`と入力すると、以下のような出力が得られます。
+### 例1:
+コマンドラインに入力された引数がない場合、出力は以下のようになります。
 
 ```
-引数0: ./program
-引数1: 私はC++が大好きです
+プログラム名: テストプログラム
 ```
 
-ここで`argc`は引数の数を表し、`argv`は実際の引数の配列を指します。`argv[0]`は実行ファイルの名前を示し、それ以降が入力されたコマンドライン引数となります。
+### 例2:
+コマンドラインに`hello world`という引数が入力された場合、出力は以下のようになります。
 
-さらに、特定のフラグを使用してコマンドライン引数を受け取ることもできます。例えば、`./program -n 123`と入力した場合には以下のようにフラグを使用して特定の操作を行うことができます。
-
-```C++
-#include <iostream>
-
-int main(int argc, char* argv[]) {
-  int num = 0;
-  for (int i = 0; i < argc; i++) {
-    if (argv[i] == "-n") {
-      num = std::stoi(argv[i+1]);
-      break;
-    }
-  }
-
-  std::cout << "入力された数値は" << num << "です" << std::endl;
-}
+```
+プログラム名: テストプログラム
+引数1: hello
+引数2: world
 ```
 
-このように、コマンドライン引数はプログラムをより柔軟にするための重要なツールです。
+## 詳細
+コマンドライン引数を読み取ることで、プログラムを柔軟に設計することができます。例えば、ユーザーにプログラムの動作を制御する引数を与えることができます。また、コマンドライン引数は複数のプログラムを実行する際にも便利です。
 
-## 詳しく見ていく
+## その他
+* [コマンドライン引数 - C言語リファレンス](https://www.javadrive.jp/cstart/argv/index1.html)
+* [コマンドライン引数を使ってみる - C++入門](http://cpp-lang.sevendays-study.com/language/51.html)
 
-コマンドライン引数を使用する際には、いくつか注意すべき点があります。まずは自分のプログラムでどのようなコマンドライン引数を使用するかを決めることが重要です。また、予期しない入力に対しては適切なエラーハンドリングを行うことも重要です。さらに、プログラムの使用方法をユーザーに理解してもらうためのヘルプメッセージを表示することも考慮すべきでしょう。
+---
 
-## 参考リンク
-
-- [C++でコマンドライン引数を読み込む方法](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [C++コマンドライン引数チュートリアル](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [C++の標準ライブラリでコマンドライン引数を使う方法](https://blog.feabhas.com/2020/02/the-c-standard-library-and-command-line-arguments/)
+## 参考
+* [Markdown記法 - Qiita Help](https://help.qiita.com/ja/articles/markdown-guide)
+* [Markdown記法 サンプル集 - Qiita](http://qiita.com/Qiita/items/c686397e4a0f4f11683d)

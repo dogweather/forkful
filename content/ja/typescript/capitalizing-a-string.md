@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "「文字列のキャピタライズ」"
+html_title:           "TypeScript: 「文字列のキャピタライズ」"
+simple_title:         "「文字列のキャピタライズ」"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-文字列を大文字化するのは、多くのプログラミング言語でよく使用される単純なタスクです。ただし、TypeScriptを使用すると、変数や関数などの複雑なデータ型を扱う際にも文字列を大文字化する必要がある場合があります。
+##なぜ
 
-## How To
+文字列を大文字にすることで何ができるのか疑問に思ったことはありませんか？大文字の文字列は、プログラミングにおいても多くの場面で必要とされます。例えば、ユーザーが入力した文字列を正規化したり、データベース内での検索を簡単にしたりするために使われます。今回は、TypeScriptを使って文字列を大文字にする方法を紹介します。
+
+##やり方
+
+まずは、大文字にしたい文字列を用意しましょう。例として、"hello world"という文字列を大文字に変換したいとします。
+
 ```TypeScript
-// 文字列を大文字化する関数の定義
-function capitalize(str: string) {
-  // 変数に大文字化した文字列を格納する
-  let capStr: string = str.toUpperCase();
-  // 変数を返す
-  return capStr;
-}
-
-// 関数の使用例
-let name: string = "taro";
-console.log(capitalize(name));
-
-// 出力結果: "TARO"
+let str = "hello world";
+let capitalizedStr = str.toUpperCase();
+console.log(capitalizedStr);
 ```
 
-## Deep Dive
-文字列を大文字化する方法はいくつかありますが、今回はTypeScriptの`toUpperCase()`メソッドを使用しました。これはJavaScriptでの標準的な方法であり、TypeScriptでもサポートされています。
+上記のコードを実行すると、"HELLO WORLD"という結果が得られます。まず、toUpperCase()というメソッドを使うことで、文字列の全ての文字を大文字に変換することができます。その後、変数capitalizedStrに結果を格納し、console.log()を使って結果を出力しています。
 
-また、文字列を大文字化する際に使用することができる他のメソッドとして`charAt()`や`slice()`などもあります。これらのメソッドは、文字列の特定の文字を取り出して大文字化したり、部分的に大文字化することもできます。
+もし文字列がすでに大文字の場合は、何も変化しません。また、このメソッドは元の文字列を変更するのではなく、新しい文字列を返します。そのため、元の文字列を保持したまま大文字に変換することができます。
 
-## See Also
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [文字列を操作するためのJavaScriptメソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
+##ディープダイブ
+
+今回使ったtoUpperCase()メソッドはStringクラスに属しており、文字列に対して使うことができるメソッドの一つです。Stringクラスには他にも、文字列を別の文字列で置き換えるreplace()メソッドや文字列を分割するsplit()メソッドなど、便利なメソッドが多数あります。
+
+また、TypeScriptでは文字列の型付けが厳密に行われるため、バグを防いだり安全性の高いプログラミングを行うことができます。文字列を扱う際は、型付けにも注意しましょう。
+
+##参考リンク
+
+- [String - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [TypeScript: String Operations](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [String.prototype.toUpperCase() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+
+##もっと学ぼう
+
+今回は文字列を大文字に変換する方法を紹介しましたが、実際のプロジェクトではさらに多くの文字列操作が必要になるかもしれません。ぜひ、参考リンクを読んでさらに知識を深めてみてください。また、TypeScriptの公式ドキュメントもぜひチェックしてみてください。

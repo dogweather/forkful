@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Kotlin recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why 
+## Why
 
-Have you ever found yourself needing to remove certain characters from a string? Maybe you have a string with extra spaces or punctuation that you want to get rid of. In Kotlin, there is a convenient way to delete characters that match a specific pattern, saving you time and effort. In this blog post, we will explore how to do this and take a deep dive into the process. 
+In programming, it is common to encounter situations where certain characters need to be deleted based on a specific pattern or criteria. This could be for data cleaning, formatting, or modifying strings to fit a certain format. With Kotlin, this task can be easily accomplished using efficient functions and methods.
 
-## How To 
+## How To
 
-To delete characters matching a pattern in Kotlin, we can use the `replace` method on a string. This method takes in two parameters: the pattern to match and the replacement string. Let's take a look at an example:
- 
+To delete characters matching a pattern in Kotlin, follow these simple steps:
+
+1. First, declare a string variable that contains the original text with the unwanted characters.
+2. Use the `replace()` function and specify the pattern to be matched and the replacement character or string.
+3. Assign the result to a new string variable or overwrite the original text variable.
+
+Example:
 ```
-Kotlin val str = "Hello! How are you?!"
+Kotlin
+val text = "Th!is#$ is my $t$r.ing"
+val cleanText = text.replace(Regex("[^A-Za-z0-9 ]"), "")
 
-val newStr = str.replace(Regex("[!?.]"), "")
-
-println(newStr)
-```
-
-The output of this code would be: "Hello How are you". We used the `replace` method to remove all instances of the characters exclamation mark, question mark, and period. We specified these characters as a pattern using the `Regex` class and provided the replacement string as an empty string. This essentially removes any matches of our pattern from the original string. 
-
-Another way to delete matching characters is by using the `filter` method. This method takes in a predicate function that returns true or false depending on whether the character should be included in the final string or not. Let's see an example:
- 
-```
-Kotlin val str = "Kotlin is super fun!"
-
-val newStr = str.filter { it.isLetter() }
-
-println(newStr)
+println(cleanText) // Outputs: This  is my string
 ```
 
-The output of this code would be: "Kotlinissuperfun". We used the `filter` method with the `isLetter()` function to only include letters in the final string, effectively removing all other characters. 
+In the above example, we replaced all special characters except letters and numbers with an empty string, effectively deleting them from the original text.
 
-Keep in mind that both the `replace` and `filter` methods return a new string with the changes, instead of modifying the original string. 
+Other useful functions for deleting characters based on a pattern include `filter()` and `trim()`. These functions allow you to specify conditions for deleting characters from the beginning or end of a string, or from specific locations within the string.
 
-## Deep Dive 
+## Deep Dive
 
-Behind the scenes, Kotlin uses regular expressions to match patterns and perform the deletion. In our examples, we used the `Regex` class to specify our pattern. Regular expressions, also known as regex, are powerful tools for searching and manipulating strings based on patterns. They are supported in many programming languages, including Kotlin, and have their own syntax and rules. If you want to learn more about regular expressions, there are plenty of online resources and tutorials available. 
+Kotlin's `replace()` function uses regular expressions (or regex) to specify the pattern for matching characters to be replaced. Regex is a powerful tool for manipulating and modifying strings, and it follows a specific syntax for creating patterns.
 
-## See Also 
+In the above example, we used `[^A-Za-z0-9 ]` as our regex pattern. This pattern specifies that any character that is not a letter, number, or space should be replaced with an empty string. The `^` symbol inside the square brackets signifies negation, meaning "not one of the following."
 
-- Official Kotlin documentation on strings and regular expressions: https://kotlinlang.org/docs/reference/strings.html 
-- FreeCodeCamp's tutorial on regular expressions in Kotlin: https://www.freecodecamp.org/news/kotlin-regular-expressions-a-comprehensive-guide/
-- Tutorialspoint's interactive lessons on regular expressions in Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm
+To learn more about regex and its syntax, check out the official Kotlin documentation: https://kotlinlang.org/docs/regex.html.
+
+## See Also
+
+- [Kotlin documentation on manipulating strings](https://kotlinlang.org/docs/string-templates.html#string-interpolation)
+- [Regular expressions in Kotlin](https://kotlinlang.org/docs/regex.html)
+- [Kotlin collections functions for string manipulation](https://kotlinlang.org/docs/basic-types.html#string-manipulation)

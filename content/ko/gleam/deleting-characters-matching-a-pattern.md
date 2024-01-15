@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 패턴과 일치하는 문자 삭제하기"
+title:                "패턴과 일치하는 문자 삭제하기"
+html_title:           "Gleam: 패턴과 일치하는 문자 삭제하기"
 simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,30 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
+# 왜
+왜 누군가 패턴에 맞는 문자를 삭제하는 것에 참여해야 할까요? 이 글에서는 그 이유를 알려드리도록 하겠습니다.
 
-문자 패턴에 맞는 문자를 삭제하는 것은 일반적인 텍스트 처리 작업이며, 이를 통해 텍스트를 정리하고 원하는 결과를 얻을 수 있습니다.
+패턴에 맞는 문자를 삭제하는 작업은 데이터를 정리하고 선별하는 데 매우 유용합니다. 예를 들어, 사이트에서 이메일 주소나 전화번호처럼 정해진 패턴을 갖는 정보를 추출할 때 사용할 수 있습니다. 또한, 문장에서 특정한 단어나 문구를 삭제하고 싶을 때도 이 작업을 활용할 수 있습니다.
 
-## 방법 
+# 사용 방법
+패턴에 맞는 문자를 삭제하기 위해 Gleam을 사용하는 방법은 간단합니다.
 
-Gleam은 패턴 매칭 및 문자 삭제를 지원하는 내장 함수와 라이브러리를 제공합니다. 아래 코드 예제를 통해 자세한 사용 방법을 알아보세요.
-
-```Gleam 
-let text = "Hello, world!"
-let pattern = ["w", "o", "r"]
-let output = text |> Text.normalize |> Text.replace_all(pattern, "")
-IO.inspect(output) // 출력: Hel, ! 
+```Gleam
+string = "Hello 123 World!"
+processed_string = string |> Regex.replace(~r/\d+/, "")
 ```
+위의 예시 코드에서는 바꾸고 싶은 문장이 `string` 변수에 저장되어 있고, 삭제할 문자의 패턴을 정규식으로 `~r/\d+/`과 같이 설정합니다. 그리고 나서 `Regex.replace` 함수를 사용하여 `processed_string` 변수에 저장하게 됩니다. 이제 `processed_string`을 출력하면 `Hello World!`가 출력될 것입니다.
 
-위의 코드에서, 'w', 'o', 'r'이라는 패턴에 해당하는 문자들이 모두 삭제되어 출력 결과에서는 'world'가 제외됩니다. 이를 통해 텍스트에서 원하지 않는 부분을 손쉽게 제거할 수 있습니다.
+# 심화 탐구
+패턴에 맞는 문자를 삭제하는 방법은 정규식을 이용하면 더 강력하고 다양한 기능을 수행할 수 있습니다. Gleam에서는 `Regex` 라이브러리를 통해 다양한 정규식 패턴과 함수를 제공하기 때문에, 깊게 탐구하고 새로운 기능들을 익히는 것이 좋습니다.
 
-## 깊게 파고들기 
+# 더 알아보기
+패턴에 맞는 문자를 삭제하는 데 유용한 정규식 패턴과 함수를 더 알아보고 싶다면 아래 링크들을 참고해보세요.
 
-Gleam에서 문자 패턴 매칭 및 삭제는 내장 함수를 사용하는 것 이외에도 다양한 방법으로 할 수 있습니다. 예를 들어, 정규식을 사용하여 패턴을 지정하고 삭제하는 방법도 있습니다. 이를 통해 더욱 복잡한 문자열 처리를 할 수 있습니다. 또한 Gleam에서 제공하는 다양한 라이브러리도 활용하여 텍스트 처리에 더욱 다양한 기능을 추가할 수 있습니다.
-
-## 관련 자료 
-
-- Gleam 공식 문서: https://gleam.run/
-- Gleam 패턴 매칭 함수: https://gleam.run/stdlib/text.html#replace-pattern-3
-- 정규식 패턴 매칭: https://gleam.run/stdlib/regex.html
-- Gleam 문자열 처리 라이브러리: https://github.com/gliesian/gleam-strings
+- [Gleam 공식 문서](https://gleam.run/modules/regex.html)
+- [정규식 테스트 사이트](https://regex101.com/)
+- [정규식 튜토리얼](https://regexone.com/)

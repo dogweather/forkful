@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Erzeugen von Zufallszahlen"
+html_title:           "TypeScript: Erzeugen von Zufallszahlen"
+simple_title:         "Erzeugen von Zufallszahlen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -9,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum?
 
-Das Generieren von zufälligen Zahlen ist ein wichtiger Bestandteil der Programmierung und wird in vielen verschiedenen Anwendungen verwendet. Zum Beispiel können zufällige Zahlen in Spiel- oder Simulationsanwendungen verwendet werden, um ein dynamisches Verhalten zu erzeugen. Sie können auch in Kryptographie-Algorithmen eingesetzt werden, um Sicherheit zu gewährleisten. Das Verstehen, wie man zufällige Zahlen in TypeScript erzeugt, ist daher ein wesentlicher Schritt, um vielseitige und robuste Anwendungen zu entwickeln.
+Die Generierung von Zufallszahlen ist ein unverzichtbarer Bestandteil vieler Programmieraufgaben. Sie kann zum Beispiel in der Spielentwicklung oder bei der Erstellung von Testdaten verwendet werden, um eine realistische oder zufällige Komponente hinzuzufügen.
 
-# Wie man zufällige Zahlen in TypeScript generiert
+## Wie geht's?
 
-Das Erzeugen von zufälligen Zahlen in TypeScript ist relativ unkompliziert. TypeScript bietet eine eingebaute Methode, um zufällige Ganzzahlen zu generieren, die `Math.random()` genannt wird. Diese Methode gibt eine zufällige Dezimalzahl zwischen 0 und 1 zurück. Um eine Ganzzahl aus diesem Bereich zu erhalten, können wir sie mit `Math.floor()` multiplizieren. Hier ist ein Beispielcode, der eine zufällige Ganzzahl zwischen 1 und 10 generiert:
+Code-Beispiel mit TypeScript und Ausgabe:
 
 ```TypeScript
+// Zufallszahl zwischen 1 und 10 generieren
 const randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
+console.log(randomNumber); // Ausgabe: 7
 ```
 
-Dieser Code multipliziert den zufälligen Wert mit 10 und rundet ihn dabei auf die nächste Ganzzahl ab, um eine Zahl zwischen 0 und 10 zu erhalten. Dann fügt er 1 hinzu, um sicherzustellen, dass die Zahl mindestens 1 ist. Der Code gibt dann die generierte Zahl mit `console.log()` aus.
+Um eine Zufallszahl in TypeScript zu generieren, können wir die globalen Methoden `Math.random()` und `Math.floor()` nutzen. Zuerst wird eine Zahl zwischen 0 und 1 mithilfe von `Math.random()` erzeugt. Diese Zahl wird dann mit `Math.floor()` auf die nächste ganze Zahl abgerundet. Durch die Multiplikation mit dem gewünschten Bereich und einer eventuellen Verschiebung können wir die benötigten Zufallszahlen erzeugen.
 
-# Vertiefte Informationen über die Erzeugung von zufälligen Zahlen
+## Deep Dive
 
-Obwohl `Math.random()` eine praktische Methode ist, gibt sie immer noch nur eine Pseudozufallszahl zurück, die auf einem Algorithmus basiert. Wenn Sie also eine wirklich zufällige Zahl benötigen, z.B. für kryptografische Zwecke, sollten Sie eine externe Bibliothek verwenden, die speziell für diesen Zweck entwickelt wurde. Ebenfalls ist es wichtig zu beachten, dass die zufälligen Zahlen, die durch `Math.random()` generiert werden, nicht gleichmäßig verteilt sind. Wenn Sie also eine gleichmäßige Verteilung benötigen, sollten Sie eine andere Methode verwenden, z.B. die `crypto` API.
+Bei der Generierung von Zufallszahlen sollte man sich bewusst sein, dass diese Werte nicht wirklich zufällig sind. Die meisten Zufallszahlengeneratoren basieren auf einem Algorithmus und können somit ein bestimmtes Muster aufweisen. Um eine höhere Zufälligkeit zu erreichen, kann man beispielsweise den `Math.random()`-Wert mit der aktuellen Zeit oder anderen Variablen kombinieren.
 
-# Siehe auch
+Außerdem ist es wichtig zu beachten, dass diese Methode pseudozufällig ist und nicht für Anwendungen mit hoher Sicherheit, wie z.B. in der Kryptographie, geeignet ist. In solchen Fällen sollten spezielle Bibliotheken oder Dienste zur Generierung von kryptographisch sicheren Zufallszahlen verwendet werden.
 
-- [MDN Dokumentation zu Math.random()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Zufall in der Programmierung](https://de.wikipedia.org/wiki/Zufall_in_der_Programmierung)
+## Siehe auch
+
+- [MDN Web Docs: Math.random()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [TypeScript Handbook: Math](https://www.typescriptlang.org/docs/handbook/2/modules.html#math)
+- [Stack Overflow: Best way to generate random integer](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range)

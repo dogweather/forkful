@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Konvertere en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Elixir: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,27 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konvertere en streng til små bokstaver kan være nyttig for å sikre konsistens og nøyaktighet i koden din, spesielt når du jobber med data som bruker forskjellige bokstavstørrelser.
+Det er ofte et behov for å konvertere en streng til små bokstaver når du arbeider med tekstbehandling i programmering. Dette kan være for å opprettholde en konsistent formatering eller for å sammenligne strenger på en nøyaktig måte.
 
-## Hvordan
+## Hvordan du gjør det
 
-```Elixir
-iex> String.downcase("ELIXIR")
-"elixir"
-```
+Her er et enkelt eksempel på hvordan du kan konvertere en streng til små bokstaver i Elixir:
 
 ```Elixir
-iex> String.downcase("HeLLo WorLD")
-"hello world"
+string = "HEI, EKSPERIMENTER MED ELIXIR"
+IO.puts String.downcase(string)
 ```
 
-## Dykk dypere
+Output:
+```Elixir
+hei, eksperimenter med elixir
+```
 
-Når du bruker funksjonen `String.downcase/1`, konverteres hver enkelt bokstav i strengen til sin tilsvarende små bokstav. Dette gjøres ved hjelp av Unicode-standardene, som håndterer spesielle bokstaver og tegn i tillegg til de vanlige alfabetbokstavene.
+Som du kan se, bruker vi den innebygde funksjonen `downcase` fra `String`-modulen for å konvertere strengen til små bokstaver. Det er også verdt å merke seg at denne funksjonen ikke endrer den opprinnelige strengen, men heller returnerer en kopi med de konverterte bokstavene.
 
-For å ta det et steg videre kan du også bruke funksjonen `String.downcase!/1` for å konvertere strengen til små bokstaver uten å opprette en ny kopi. Dette kan være nyttig for å spare på minne og forbedre ytelsen i koden din.
+## Dypdykk
+
+Det er viktig å merke seg at konvertering til små bokstaver ikke alltid vil gi den ønskede utfall på grunn av forskjeller i tegnsett. For eksempel vil konvertering av en tysk ß (scharfes-s) til små bokstaver resultere i en to-bokstavs-streng (ss) i stedet for den ene riktige bokstaven. Derfor er det viktig å velge en passende funksjon avhengig av konteksten og språket som behandles.
+
+Et annet aspekt å vurdere er ytelse. Konvertering av en streng til små bokstaver involverer en hel del underliggende prosesser og kan påvirke tiden det tar å utføre en oppgave. Det er derfor nyttig å utføre benchmarking for å velge den mest optimale løsningen for ditt spesifikke behov.
 
 ## Se også
-
-- [Elixir String Modulen](https://hexdocs.pm/elixir/String.html)
-- [Unicode Standardene](https://www.unicode.org/standard/standard.html)
+- [String-modulen i Elixir](https://hexdocs.pm/elixir/String.html#downcase/2)
+- [UTF-8 og tegnsett i Elixir](https://hexdocs.pm/elixir/1.12/elixir/Unicode.html)
+- [Elixir Tips & Tricks: Case Transformations](https://dev.to/olivierandsm/elixir-tips-tricks-case-transformations-36p5)

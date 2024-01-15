@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 날짜를 문자열로 변환하는 방법"
-simple_title:         "날짜를 문자열로 변환하는 방법"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "Elixir: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 
+다른 프로그래밍 언어에 비해 Elixir가 날짜를 문자열로 변환하는 것이 유용한 이유는 무엇일까요? 그 이유에 대해 간단하게 알아보도록 하겠습니다.
 
-날짜를 문자열로 변환하는 이유는 프로그램에서 날짜를 보여줄 때 편리하기 때문입니다.
-
-## 하는 방법
+## 어떻게
+Elixir에서 날짜를 문자열로 변환하는 방법에 대해 살펴보겠습니다. 먼저, `Date` 모듈의 `to_string` 함수를 사용할 수 있습니다. 예를 들어, 다음과 같은 코드를 작성할 수 있습니다.
 
 ```Elixir
 Date.to_string(Date.utc_today())
 ```
 
-날짜를 문자열로 변환하는 가장 간단한 방법은 `Date.to_string/1` 함수를 사용하는 것입니다. 위의 예시는 오늘의 날짜를 UTC 시간으로 변환한 뒤, 해당 날짜를 문자열로 변환하는 코드입니다.
+위의 코드를 실행하면 현재 날짜를 UTC 시간대로 변환한 후 문자열로 반환합니다. 예상되는 결과는 "2021-09-20"과 같습니다. 또 다른 방법으로는 `Calendar` 모듈의 `to_string` 함수를 사용하는 것입니다. 아래의 예제 코드를 살펴보세요.
 
 ```Elixir
-Date.to_string(Date.utc_today(), {:short, :long})
-# "11/11/2021, 2021년 11월 11일 목요일"
+Calendar.to_string(System.system_time(:millisecond))
 ```
 
-위의 예시처럼, `Date.to_string/2` 함수를 사용하면 자세한 형식을 지정할 수 있습니다. 첫 번째 인자는 변환할 날짜를, 두 번째 인자는 `{숏 형식, 롱 형식}` 형태로 지정하여 날짜와 요일 모두를 포함한 문자열을 생성할 수 있습니다.
+위 코드는 현재 시간을 밀리초 단위로 반환한 다음 문자열로 변환합니다.
 
-## 딥 다이브
+## 깊이 들어가보기
+날짜를 문자열로 변환하는 더 깊은 내용에 대해 알아보겠습니다. Elixir에서는 날짜와 관련된 여러 가지 모듈을 제공합니다. 예를 들어, `Date`, `Calendar`, `Time`, `DateTime` 등이 있습니다. 각각의 모듈에는 날짜와 관련된 다양한 함수들이 있으며, 이를 조합해서 사용할 수 있습니다. 또한, 다양한 시간대를 지원하므로 원하는 시간대로 날짜를 변환할 수도 있습니다.
 
-Elixir에서는 `Date`라는 모듈이 날짜와 관련된 함수들을 제공합니다. `Date` 모듈은 `to_string/1`과 `to_string/2`뿐만 아니라, `to_iso8601/1`, `to_erl/1`, `date_to_time/1` 등 다양한 함수를 제공합니다. 따라서 원하는 형식으로 날짜를 변환하기 위해선 `Date` 모듈을 자세히 이해하는 것이 중요합니다.
+## 더 알아보기
+자세한 내용을 학습하기 위해 아래의 링크들을 참고해보세요.
 
-## 참고자료
+- Elixir 날짜 모듈 문서: https://hexdocs.pm/elixir/Date.html
+- Elixir 캘린더 모듈 문서: https://hexdocs.pm/elixir/Calendar.html
+- Elixir 시간 모듈 문서: https://hexdocs.pm/elixir/Time.html
+- Elixir 날짜 및 시간 관련 함수 문서: https://hexdocs.pm/elixir/1.12/calendar-and-time-functions.html
 
-- [Elixir Date 모듈 공식 문서](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Date와 Time 관련 팁](https://www.mokacoding.com/blog/elixir-date-and-time-tips/)
-- [가벼운 쇼핑 목록 API를 Elixir로 구현하기](https://dev.to/nicknisi/building-a-lightweight-shopping-list-api-in-elixir-4gk8)
+## 참고 자료
+- Elixir 공식 문서: https://elixir-lang.org/docs.html
+- Elixir 커뮤니티: https://elixirforum.com/

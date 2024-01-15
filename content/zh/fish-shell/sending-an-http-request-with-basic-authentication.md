@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本身份验证发送http请求"
+html_title:           "Fish Shell: 使用基本身份验证发送http请求"
+simple_title:         "使用基本身份验证发送http请求"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,36 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 为什么
 
-在进行网络编程时，我们经常需要向服务器发送 HTTP 请求。有时候，我们需要使用基本身份验证来验证我们的请求。这篇博文将向你介绍如何使用 Fish Shell 发送带有基本身份验证的 HTTP 请求。
+发送带基本身份验证的HTTP请求有什么用？你可能会问。实际上，这是一种安全的方法来访问需要身份验证的网站，如API端点或可访问的受保护资源。
 
-# 如何
+# 如何操作
 
-让我们假设我们需要向一个服务器发起 GET 请求，并且需要提供用户名和密码进行身份验证。首先，我们需要在 Fish Shell 中导入 curl 命令：
+用Fish Shell发送带基本身份验证的HTTP请求非常简单。首先，你需要安装并启用HTTPie插件，这样就可以使用Fish Shell来执行HTTP请求。然后，按照以下格式设置请求：
 
-```Fish Shell
-source curl@7.78.0/share/functions/init.ccurl
+```
+fish -c 'http -a [用户名]:[密码] [URL]'
 ```
 
-接下来，我们需要设置我们请求的 URL、用户名和密码：
+在这个命令中，你需要将[用户名]替换为实际的用户名，[密码]替换为密码，[URL]替换为带有身份验证的请求URL。你可以在命令行中直接输入这个命令，或者将它添加到Fish Shell配置文件中，这样就可以在每次使用时自动执行。
 
-```Fish Shell
-set URL "https://www.example.com/api"
-set USERNAME "username"
-set PASSWORD "password"
+例如，假设你想要访问一个需要用户名为"username"，密码为"password"的API端点。你可以使用以下命令：
+
+```
+fish -c 'http -a username:password http://api.example.com'
 ```
 
-现在，我们可以使用 curl 命令来发送带有基本身份验证的 HTTP 请求：
-
-```Fish Shell
-curl --basic --user $USERNAME:$PASSWORD $URL
-```
-
-这将会输出服务器返回的结果，如果身份验证成功，则会返回请求的内容。如果身份验证失败，则会返回错误信息。
+这样，你就可以成功发送带基本身份验证的HTTP请求。
 
 # 深入了解
 
-在 Fish Shell 中，我们可以通过 `--user` 参数来指定用户名和密码进行基本身份验证。`$USERNAME` 和 `$PASSWORD `是我们之前设置的变量，可以替换为实际的用户名和密码。如果你需要向服务器发送其他类型的身份验证请求，可以在 `--basic` 参数后面添加相应的参数。例如，如果你需要发送带有摘要身份验证的请求，可以使用 `--digest` 参数。
+要想更深入地了解如何使用Fish Shell发送带基本身份验证的HTTP请求，你可以查看HTTPie插件的文档。其中包含了更多的选项和示例，帮助你更有效地处理不同的HTTP请求。
+
+同时，你也可以了解更多关于基本身份验证的细节，比如如何使用安全的密码，以及如何在请求中使用其他身份验证类型，如Bearer Token。
 
 # 参考链接
 
-- https://fishshell.com/docs/current/index.html
+- [Fish Shell官方网站](https://fishshell.com/)
+- [HTTPie插件文档](https://github.com/jorgebucaran/fish-httpie)
+- [HTTP基本身份验证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)

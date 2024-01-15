@@ -1,6 +1,7 @@
 ---
-title:                "C++: Utvinne undersstrenger"
-simple_title:         "Utvinne undersstrenger"
+title:                "Uttrekking av understrenger"
+html_title:           "C++: Uttrekking av understrenger"
+simple_title:         "Uttrekking av understrenger"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-I programmering er det ofte nødvendig å håndtere tekststrenger. Noen ganger kan det være behov for å hente ut en del av en streng, enten for å bruke den som et annet argument eller for å analysere den videre. Dette er hvor substring-ekstraksjon kommer inn i bildet. Ved å lære hvordan man ekstraherer substrings, kan man gjøre prosessen med å manipulere tekststrenger mer effektiv og nøyaktig.
+## Hvorfor
+Å ekstrahere substringer er nyttig når du har en lengre streng og bare trenger en del av den. Dette kan være nyttig når du ønsker å manipulere eller analysere en mindre del av teksten.
 
-# Hvordan du gjør det
-Ekstrahering av substrings i C++ kan gjøres ved hjelp av funksjonen `substr()` i standardbiblioteket `string`. Denne funksjonen tar to argumenter: start-indeks og lengde på den ønskede substringen.
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    string tekst = "Hei dette er en tekst";
-    // Ekstraherer substringen "er en"
-    string subtekst = tekst.substr(11, 5);
-    cout << subtekst << endl; // output: "er en"
-    return 0;
-}
-```
-
-Det er også mulig å ekstrahere substrings ved hjelp av indeksering av tegn i en string.
+## Hvordan
+Her viser vi deg hvordan du kan ekstrahere substringer ved hjelp av C++.
 
 ```C++
-string tekst = "Hei dette er en tekst";
-// Ekstraherer substringen "dette er"
-string subtekst = tekst.substr(4, 9);
+// Definerer en streng
+string tekst = "Denne setningen er litt for lang.";
+// Ekstraherer substring fra indeks 6 til 19, inkludert
+string substring = tekst.substr(6, 14);
+
+// Skriver ut substring
+cout << "Substring: " << substring << endl;
+// Output: Substring: setningen er
+
+// Ekstraherer fra starten av strengen til indeks 10
+string start = tekst.substr(0, 10);
+
+// Skriver ut starten av strengen
+cout << "Start: " << start << endl;
+// Output: Start: Denne setn
+
+// Ekstraherer fra indeks 20 til slutten av strengen
+string slutt = tekst.substr(20);
+
+// Skriver ut slutten av strengen
+cout << "Slutt: " << slutt << endl;
+// Output: Slutt: litt for lang.
 ```
 
-Det er viktig å merke seg at start-indeksen er null-indeksert, det vil si at første tegn i strengen er på indeks 0. Derfor vil for eksempel `tekst.substr(0, 3)` returnere substringen "Hei".
+## Deep Dive
+Funksjonen substr() i C++ lar deg definere en startindeks og lengden på substringen du vil ekstrahere. Dersom lengden ikke blir spesifisert, vil den ekstraherte substringen bestå av resten av strengen fra startindeksen.
+Det finnes også en annen versjon av substr() som tar imot en enkel integer som argument for startindeksen og returnerer resten av strengen fra denne indeksen. Dette kan være nyttig dersom du kun kjenner startindeksen, men ikke lengden på substringsen du vil ekstrahere.
 
-# Dypdykk
-I C++ er strenger representert som en samling av tegn, eller en array. Derfor kan vi også bruke array-basert tilnærming for å ekstrahere substrings.
-
-```C++
-string tekst = "Hei dette er en tekst";
-// Ekstraherer substringen "dette er"
-string subtekst;
-for (int i = 4; i < 13; i++) {
-    subtekst += tekst[i];
-}
-```
-
-En annen nyttig funksjon for substring-ekstraksjon er `find()` som finner første forekomst av en gitt streng eller tegn i en annen streng. Dette kan være nyttig når man ikke kjenner den nøyaktige start-indeksen til den ønskede substringen.
-
-```C++
-string tekst = "Hei dette er en tekst";
-// Ekstraherer substringen "en tekst"
-size_t pos = tekst.find("en tekst");
-string subtekst = tekst.substr(pos, tekst.length() - pos);
-```
-
-# Se også
-- [String funksjoner i C++](https://www.cplusplus.com/reference/string/string/)
-- [Eksempler på substring-ekstraksjon i C++](https://www.programiz.com/cpp-programming/examples/substring)
-- [Arrays i C++](https://www.cplusplus.com/doc/tutorial/arrays/)
+## Se Også
+- [C++ string class reference](http://www.cplusplus.com/reference/string/string/)
+- [Getting substrings in C++](https://www.geeksforgeeks.org/getline-string-c/)
+- [Manipulating strings in C++](https://www.freecodecamp.org/news/how-to-manipulate-strings-in-c/)

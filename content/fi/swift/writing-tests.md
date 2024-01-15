@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Swift: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,41 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää virheitä. Se myös parantaa koodin luettavuutta ja ylläpidettävyyttä.
+
+Miksi kirjoittaa testejä? Onko se vain turha lisätyö ohjelmointiprosessissa? Ei todellakaan. Hyvin kirjoitetut testit parantavat koodin laatua ja helpottavat ohjelmoijan elämää.
 
 ## Miten
-Seuraavassa esimerkissä näytämme, kuinka voit kirjoittaa yksikkötestin Swiftillä käyttäen XCTest-kirjastoa. Oletetaan, että meillä on funktio, joka laskee kahden luvun summan ja haluamme varmistaa sen toimivuuden.
+
+Testikoodin kirjoittaminen Swiftissä on helppoa. Perusta testiluokka, jossa testaat haluamiasi toimintoja, ja käytä `XCTAssert`-funktiota arvioidaksesi, onko toiminto toiminut oikein.
 
 ```Swift
-//Luodaan testiluokka
-class TestiLuokka: XCTestCase {
-	
-	//Määritellään testifunktio
-	func testiFunktio() {
-		
-		//Määritellään syötteet
-		let luku1 = 5
-		let luku2 = 10
-		
-		//Suoritetaan funktio
-		let summa = laskeSumma(luku1: luku1, luku2: luku2)
-		
-		//Varmistetaan, että funktio palauttaa oikean tuloksen
-		XCTAssertEqual(summa, 15)
-	}
-	
-	//Funktio, jonka haluamme testata
-	func laskeSumma(luku1: Int, luku2: Int) -> Int {
-		return luku1 + luku2
-	}
+class CalculatorTests: XCTestCase {
+  // Testi lisäysfunktiolle
+  func testAddition() {
+    let calculator = Calculator()
+    let result = calculator.add(a: 2, b: 2)
+    XCTAssertEqual(result, 4, "Lisäyksen oletetun tuloksen pitäisi olla 4.")
+  }
 }
 ```
 
-Kun suoritamme tämän testin, se palauttaa tuloksen "Testi toimi!", mikä tarkoittaa, että testi on onnistunut ja funktio toimii halutusti.
+Muista myös kirjoittaa positiivisia ja negatiivisia testejä jokaiselle toiminnolle, jotta varmistat koodin toimivuuden kaikissa tilanteissa.
 
 ## Syvemmälle
-Testien kirjoittamisesta löytyy paljon lisätietoa verkosta, kuten hyödyllisiä vinkkejä ja suosituksia. On myös tärkeää huomata, että testien kirjoittaminen ei ole vain yksikkötestejä, vaan siihen sisältyy myös integraatiotestit ja järjestelmätestit.
+
+Mikä tekee hyvästä testistä? Ensinnäkin, testin tulee olla yksinkertainen ja selkeä, jotta sen toiminta on helppo ymmärtää. Toiseksi, testin tulee kattaa kaikki tapaukset ja varmistaa, että koodi toimii oikein myös virheellisissä tilanteissa. Lisäksi, testikoodin tulee olla itsenäistä ja toistettavaa, jotta sen avulla voidaan helposti havaita muutokset koodissa.
+
+Muista myös pitää testikoodi ja varsinaisen koodin erillään, jotta muutokset eivät vahingossa vaikuta toisiinsa. Hyvä käytäntö on myös ajaa testit säännöllisesti siirtymällä projektin juureen ja kirjoittamalla `swift test` komento.
 
 ## Katso myös
-- https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial
-- https://developer.apple.com/documentation/xctest
+
+- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
+- [Swift Test Driven Development - tutorial](https://www.raywenderlich.com/10730636-test-driven-development-tutorial-for-ios-getting-started)
+- [Swift Test Doubles - tutorial](https://www.swiftbysundell.com/articles/mocking-in-swift/)

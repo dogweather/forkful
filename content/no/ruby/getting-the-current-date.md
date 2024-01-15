@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Hente gjeldende dato"
-simple_title:         "Hente gjeldende dato"
+title:                "Å få dagens dato"
+html_title:           "Ruby: Å få dagens dato"
+simple_title:         "Å få dagens dato"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -9,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Det er mange tilfeller hvor du kanskje trenger å ha den nåværende datoen i et Ruby-program. Kanskje du vil vise datoen til brukeren, lagre en transaksjonsdato eller lage en dynamisk filnavn med den nåværende datoen.
 
-Å få tak i den aktuelle datoen er en viktig ferdighet som mange programmerere trenger i sine programmer. Enten du skal vise datoen på en nettside, lage en kalender eller logge når en hendelse skjedde, er det avgjørende å kunne få tak i riktig dato. Heldigvis er dette en enkel oppgave i Ruby-programmering, og i denne bloggposten skal vi se nærmere på hvordan du kan gjøre det.
-
-## Hvordan
-
-For å få tak i den aktuelle datoen i Ruby, kan du bruke klassen `Date`. Denne klassen gir oss tilgang til ulike metoder for å få tak i datoen, og vi skal se på noen av dem her.
-
-Først må vi importere `Date`-klassen:
+## Hvordan få nåværende dato
+Det er enkelt å få den nåværende datoen i Ruby ved hjelp av `Time`-klassen. Her er et eksempel på å få nåværende dato og lagre den i en variabel:
 
 ```Ruby
-require 'date'
+nåværende_dato = Time.now
 ```
 
-Deretter kan vi få tak i datoen på ulike måter. Her er noen eksempler:
+Du kan også tilpasse utskriften av datoen ved å bruke `strftime`-metoden og angi ønsket format. For eksempel:
 
 ```Ruby
-# Få tak i dagens dato
-Date.today
-
-# Få tak i datoen for en bestemt dag
-Date.new(2021, 10, 25)
-
-# Få tak i datoen for en bestemt dag fra en string
-Date.parse("2021-10-25")
-```
-
-Du kan også få tak i ulike deler av datoen, som for eksempel år, måned og dag. Her er noen eksempler på hvordan du kan gjøre det:
-
-```Ruby
-# Få tak i året
-Date.today.year
-
-# Få tak i måneden
-Date.today.month
-
-# Få tak i dagen
-Date.today.day
+nåværende_dato.strftime("%d.%m.%Y") # => 04.05.2021
 ```
 
 ## Dypdykk
+Nåværende dato er egentlig en datastruktur kalt `Time` som inneholder informasjon om dato, tid og tidssone. Du kan få tilgang til forskjellig informasjon om datoen, for eksempel dag, måned, år, time, minutt og sekunder.
 
-Nå som vi har sett hvordan du kan få tak i den aktuelle datoen, la oss se litt på hvordan det faktisk fungerer bak kulissene. Ruby bruker en metode kalt "proleptisk Gregorian calendar" for å håndtere datoene. Det betyr at selv om det ikke fantes en 0. år før vår tidsregning begynte, så bruker Ruby det allikevel for å gjøre beregningene enklere. I tillegg håndterer Ruby skuddår, så du trenger ikke bekymre deg for det når du jobber med datoer.
+```Ruby
+nåværende_dato.day # => 4
+nåværende_dato.month # => 5
+```
+
+I tillegg kan du også utføre matematiske operasjoner på datoer, for eksempel å legge til eller trekke fra et antall dager.
+
+```Ruby
+neste_uke = nåværende_dato + 7 # legger til 7 dager
+forrige_måned = nåværende_dato - 30 # trekker fra 30 dager
+```
 
 ## Se også
-
-- [Date-klassen i Ruby-dokumentasjonen](https://ruby-doc.org/stdlib-2.7.5/libdoc/date/rdoc/Date.html)
-- [Ruby-forumet](https://www.ruby-forum.com/)
-- [Ruby på nettet](https://www.ruby-lang.org/nb/)
+- Ruby Time-klassen dokumentasjon: https://ruby-doc.org/core-3.0.1/Time.html
+- Enkel guide til bruk av Time-klassen i Ruby: https://www.rubyguides.com/2019/02/ruby-time-class/

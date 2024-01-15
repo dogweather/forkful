@@ -1,6 +1,7 @@
 ---
-title:                "Java: Écrire dans la sortie d'erreur standard."
-simple_title:         "Écrire dans la sortie d'erreur standard."
+title:                "Écrire sur la sortie d'erreur standard"
+html_title:           "Java: Écrire sur la sortie d'erreur standard"
+simple_title:         "Écrire sur la sortie d'erreur standard"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers la sortie d'erreur standard ?
+## Pourquoi 
 
-Il est important pour les programmeurs Java de comprendre l'importance d'écrire vers la sortie d'erreur standard ou stderr (standard error) lors de la création de leurs programmes. Voici pourquoi.
+Écrire sur la sortie d'erreur standard en Java peut sembler être une tâche peu excitante, mais c'est en fait un outil utile pour déboguer et gérer les erreurs dans votre code. Cela vous permet également de mieux comprendre comment votre code fonctionne et comment il peut être amélioré.
 
-## Comment faire ?
+## Comment faire 
 
-L'écriture vers la sortie d'erreur standard est très simple en Java. Utilisez simplement la méthode ```System.err.println()``` dans votre code pour écrire un message dans la sortie d'erreur standard. Voici un exemple de code :
-
-```Java
-public class Main {
-    public static void main(String[] args) {
-        System.err.println("Ceci est un message d'erreur !");
-    }
-}
-```
-
-Et voici le résultat que vous obtiendrez dans la sortie d'erreur standard :
-
-```
-Ceci est un message d'erreur !
-```
-
-Vous pouvez également utiliser la méthode ```System.err.print()``` pour écrire sans retour à la ligne. Vous pouvez également utiliser l'objet ```System.err``` pour écrire directement vers la sortie d'erreur standard comme ceci :
+Pour écrire sur la sortie d'erreur standard en Java, il vous suffit d'utiliser la méthode `System.err.println()` et d'insérer votre message entre les parenthèses. Par exemple :
 
 ```Java
-System.err.append("Ceci est un autre message d'erreur !");
+System.err.println("Erreur : Vous devez saisir un nombre entier positif.");
 ```
 
-## Plongée en profondeur
+Ceci imprimera votre message sur la sortie d'erreur standard, qui sera généralement affichée en rouge dans votre console. Voici un exemple de sortie :
 
-La sortie d'erreur standard est une fenêtre importante pour les programmeurs Java lorsqu'ils rencontrent des erreurs dans leur code. Lorsqu'une exception est levée, elle est généralement écrite dans la sortie d'erreur standard pour informer le programmeur de l'erreur et de son emplacement dans le code. L'écriture vers la sortie d'erreur standard est également utile pour le débogage de code, car cela peut aider à identifier les erreurs et les problèmes dans le code.
+```Java
+Erreur : Vous devez saisir un nombre entier positif.
+```
 
-Il est également important de noter que la sortie d'erreur standard est différente de la sortie standard (stdout). La sortie standard est utilisée pour afficher les résultats normaux du programme, tandis que la sortie d'erreur standard est utilisée pour afficher les erreurs et les avertissements.
+Vous pouvez également utiliser la méthode `System.err.print()` si vous souhaitez afficher un message sans sauter à la ligne suivante.
 
-## Voir aussi
+## Plongée en profondeur 
 
-- [Documentation officielle de Java sur System.err](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
-- [Guide de débogage en Java](https://www.baeldung.com/java-debugging)
-- [Utilisation de la sortie d'erreur standard en Java](https://www.geeksforgeeks.org/java-io-printstream-println-method-with-examples/)
+Lorsque vous écrivez sur la sortie d'erreur standard en Java, il est important de comprendre comment Java gère les erreurs. Par défaut, les erreurs sont imprimées sur la sortie d'erreur standard, mais il est possible de les rediriger vers un fichier ou même de les ignorer complètement en les gérant à l'aide de blocs `try` et `catch`.
+
+Il est également important de noter que chaque fois que vous utilisez la méthode `System.err.println()`, un objet `PrintWriter` est créé pour gérer l'impression. Vous pouvez également utiliser cet objet directement pour plus de flexibilité dans la gestion de vos erreurs.
+
+## Voir aussi 
+
+- [Guide des exceptions et des erreurs en Java](https://www.jmdoudoux.fr/java/dej/chap-exceptions.htm)
+- [Documentation officielle Java pour la classe System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)

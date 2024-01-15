@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Skriver en streng med store bokstaver"
-simple_title:         "Skriver en streng med store bokstaver"
+title:                "Store bokstaver i en tekststreng"
+html_title:           "Arduino: Store bokstaver i en tekststreng"
+simple_title:         "Store bokstaver i en tekststreng"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,26 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kapitalisere en streng i et Arduino-program kan være nyttig for å gjøre teksten mer leselig for brukere. Dette kan være spesielt viktig når man skal vise informasjon på en LCD-skjerm eller seriell monitor.
+Du lurer kanskje på hvorfor noen ville engasjere seg i å gjøre en streng stor eller liten bokstav? Vel, det kan være nyttig i mange situasjoner. Kanskje du vil gjøre brukerinput til en konstant for å sikre ensartethet, eller kanskje du trenger å matche en streng med en annen som er skrevet i en annen form. Uansett hva årsaken er, er det enkelt å gjøre med Arduino-programmering.
 
-## Hvordan
+## Hvordan gjøre en streng stor eller liten bokstav
 
-For å kapitalisere en streng i Arduino, kan du bruke funksjonen ```toUpperCase()```. Denne funksjonen tar inn en streng som parameter og returnerer en ny streng med alle bokstavene omgjort til store bokstaver.
+For å gjøre en streng stor bokstav, kan du bruke funksjonen .toUpperCase(). For å gjøre en streng liten bokstav, kan du bruke funksjonen .toLowerCase(). For å gjøre dette, må du først lagre strengen du vil endre i et variabelnavn. Deretter bruker du funksjonen og lagrer den nye verdien i et annet variabelnavn. Her er et eksempel på hvordan dette kan se ut i Arduino-kode:
 
 ```Arduino
-String originalStreng = "dette er en test"; // Opprinnelig streng med små bokstaver
-String kapitalisertStreng = originalStreng.toUpperCase(); // Bruker toUpperCase() for å kapitalisere strengen
-Serial.println(kapitalisertStreng); // Skriver ut den kapitaliserte strengen på seriell monitor
+String tekst = "Dette er en tekst";
+String storBokstav = tekst.toUpperCase();
+String litenBokstav = tekst.toLowerCase();
+Serial.print(storBokstav); // Utskrift: "DETTE ER EN TEKST"
+Serial.print(litenBokstav); // Utskrift: "dette er en tekst"
 ```
-
-Dette vil resultere i følgende utskrift: "DETTE ER EN TEST".
 
 ## Dypdykk
 
-For å forstå hvordan funksjonen ```toUpperCase()``` fungerer, kan du se nærmere på kildekoden for Arduino-biblioteket. I kildekoden kan vi se at funksjonen først konverterer strengen til en char-array og deretter bruker en loop for å gå gjennom hvert tegn og konvertere det til en stor bokstav ved hjelp av ASCII-tabellen. Dette kan være nyttig å vite dersom du ønsker å tilpasse funksjonen eller lage din egen implementering.
+Når du bruker .toUpperCase() og .toLowerCase(), må du være oppmerksom på at dette bare endrer bokstavenes case, og ikke selve bokstavene. Dette betyr at en bokstav som "Ø" i norsk vil bli gjort om til "Ø" og ikke "ø". Dette er fordi ASCII-koden for "Ø" og "ø" er forskjellig. Hvis du vil endre denne bokstaven til en annen form, må du bruke andre metoder, som for eksempel å bruke en switch case-funksjon.
 
-## Se også
+Se også
 
-- Les mer om ```toUpperCase()``` i Arduino-dokumentasjonen: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
-- Utforsk ASCII-tabellen for å forstå hvordan bokstaver lagres som tall: https://www.asciitable.com/
-- Finn flere Arduino-tips og triks på vår blogg: https://www.arduino.no/blogg/
+- Vår artikkel om hvordan man bruker input til å styre en Arduino: https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/
+- En guide til ASCII-kode og hvordan den fungerer: https://www.thejavaprogrammer.com/ascii-code/
+- Arduino sin offisielle side med dokumentasjon og ressurser: https://www.arduino.cc/

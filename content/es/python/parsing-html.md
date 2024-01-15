@@ -1,6 +1,7 @@
 ---
-title:                "Python: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML"
+html_title:           "Python: Analizando HTML"
+simple_title:         "Analizando HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,51 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Cuando se trata de extraer información de una página web, el proceso puede resultar tedioso y demorar mucho tiempo si se realiza manualmente. Afortunadamente, existe una solución: el análisis de HTML.
+Si estás interesado en el desarrollo web o en la extracción de datos de sitios web, es probable que en algún momento necesites analizar y extraer información de páginas HTML. El proceso de análisis de HTML, también conocido como "parsing", es una habilidad valiosa que puede ayudarte a automatizar tareas y obtener datos importantes de manera rápida y eficiente.
 
 ## Cómo hacerlo
 
-El análisis de HTML es una técnica de programación que permite extraer datos específicos de una página web utilizando el lenguaje de programación Python. A continuación, se presenta un ejemplo de cómo realizar el análisis de HTML utilizando la biblioteca Beautiful Soup.
+Para analizar HTML en Python, necesitarás utilizar una librería llamada "BeautifulSoup". Esta librería te permite navegar y extraer datos de una página HTML de manera sencilla.
 
-```
-# Importar la biblioteca Beautiful Soup
+Primero, debes importar la librería en tu código:
+
+```Python
 from bs4 import BeautifulSoup
-
-# Usar la función open para abrir el archivo HTML
-# En este ejemplo, el archivo se llama "pagina.html"
-pagina = open("pagina.html")
-
-# Leer la página y almacenarla en una variable
-html = pagina.read()
-
-# Crear una instancia de Beautiful Soup
-soup = BeautifulSoup(html, "html.parser")
-
-# Obtener el título de la página
-titulo = soup.title.text
-
-# Imprimir el título
-print(titulo)
-
 ```
 
-**Output**:
+Luego, puedes utilizar la función "BeautifulSoup" para crear un objeto a partir del HTML de una página web. Por ejemplo, si queremos analizar la página de Wikipedia en español, podemos hacer lo siguiente:
 
+```Python
+#Obtenemos el HTML de la página
+pagina = urllib.urlopen("https://es.wikipedia.org/wiki/P%C3%A1gina_principal")
+
+#Creamos un objeto BeautifulSoup
+soup = BeautifulSoup(pagina.read(), 'html.parser')
 ```
-<title>Blog Post | Parseando HTML con Python</title>
+
+Una vez que tengas el objeto creado, puedes utilizar diferentes métodos para navegar y extraer información específica de la página. Por ejemplo, si queremos obtener el título de la página y guardarlo en una variable, podemos hacer lo siguiente:
+
+```Python
+titulo = soup.title.string
 ```
 
-De esta manera, podemos obtener información específica de la página web, como el título, y almacenarla en una variable para utilizarla en nuestro código.
+Además de obtener información, también puedes utilizar BeautifulSoup para buscar y filtrar elementos específicos en el HTML. Por ejemplo, si queremos obtener todos los enlaces de la página, podemos utilizar el método "find_all" y especificar el tipo de elemento que estamos buscando:
 
-## Análisis profundo
+```Python
+enlaces = soup.find_all('a')
+```
 
-El análisis de HTML va más allá de simplemente obtener el título de una página web. Con la ayuda de las bibliotecas adecuadas, es posible extraer cualquier información que necesitemos de una página web.
+## Deep Dive
 
-Además, estas bibliotecas también permiten realizar acciones más avanzadas, como realizar búsquedas específicas en el código HTML o interactuar con formularios y botones en la página.
+Además de los métodos mencionados anteriormente, BeautifulSoup también permite utilizar selectores CSS para seleccionar elementos específicos en la página. Esto puede ser útil cuando queremos extraer información de una sección específica del HTML.
 
-Con el análisis de HTML, podemos automatizar el proceso de extracción de datos y ahorrar una gran cantidad de tiempo y esfuerzo.
+Por ejemplo, si queremos obtener los nombres de todos los elementos de una lista, podemos utilizar un selector CSS para seleccionar todos los elementos de la lista y luego iterar sobre ellos para obtener sus nombres. Utilizar selectores CSS en BeautifulSoup es muy similar a como lo haríamos en una hoja de estilos CSS. Por ejemplo:
 
-## Ver también
+```Python
+#Seleccionamos todos los elementos "li" dentro de una lista desordenada
+items = soup.select('ul li')
 
-- [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Web scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
+#Iteramos sobre cada elemento para obtener su nombre
+for item in items:
+    nombre = item.text
+```
+
+También podemos utilizar selectores CSS para buscar elementos por clase o id. Por ejemplo, si queremos obtener todos los elementos con la clase "titulo" en la página, podemos hacer lo siguiente:
+
+```Python
+titulos = soup.select('.titulo')
+```
+
+Si quieres aprender más sobre BeautifulSoup y todas sus funcionalidades, puedes consultar su documentación oficial [aquí](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+
+## Véase también
+
+- [Documentación oficial de BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Tutorial de BeautifulSoup en español](https://www.aprendemachinelearning.com/beautifulsoup-en-espanol/)
+- [Cursos de Python en Codecademy](https://www.codecademy.com/learn/learn-python)

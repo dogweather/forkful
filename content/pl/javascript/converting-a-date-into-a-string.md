@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków"
+html_title:           "Javascript: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,41 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest niezbędnym elementem wielu aplikacji internetowych. Dzięki tej funkcji użytkownik może wyświetlić datę w formacie, który jest mu najwygodniejszy. W tym artykule dowiesz się, jak w prosty sposób przekształcić datę w ciąg znaków za pomocą języka JavaScript.
+Konwersja daty na ciąg znaków jest niezbędnym elementem w wielu projektach JavaScript. Pozwala nam wygodnie wyświetlać daty w czytelnej formie dla użytkowników aplikacji oraz przetwarzać je w dalszych operacjach.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na ciąg znaków w języku JavaScript, będziemy korzystać z metody ```toLocaleDateString()```. Poniżej przedstawione są przykładowe kody dla poszczególnych formatów daty oraz ich wyjścia:
+Konwersja daty na ciąg znaków w JavaScript jest prosta i wymaga wykorzystania wbudowanych metod.getFullYear(), .getMonth(), .getDate(), .getHours(), .getMinutes(), .getSeconds(), .getMilliseconds() oraz .toISOString().
 
-```JavaScript
-// Format daty DD/MM/RRRR
-var dzisiaj = new Date();
-var data = dzisiaj.toLocaleDateString('pl-PL', {day: '2-digit', month: '2-digit', year: 'numeric'});
-console.log(data); // 16.01.2020
-
-// Format daty RRRR-MM-DD
-var dzisiaj = new Date();
-var data = dzisiaj.toLocaleDateString('pl-PL', {year: 'numeric', month: '2-digit', day: '2-digit'});
-console.log(data); // 2020-01-16
-
-// Format daty Dzień Tygodnia, DD miesiąc RRRR
-var dzisiaj = new Date();
-var data = dzisiaj.toLocaleDateString('pl-PL', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'});
-console.log(data); // Czwartek, 16 stycznia 2020
+```Javascript
+let today = new Date();
+let dateToString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+console.log(dateToString); // Output: 2021-09-17 14:30:26
 ```
 
-## Głębsza analiza
+W powyższym przykładzie użyliśmy metody .getFullYear() do pobrania aktualnego roku, .getMonth() do pobrania aktualnego miesiąca + 1 (ponieważ metoda .getMonth() liczy miesiące od 0 do 11), .getDate() do pobrania aktualnego dnia miesiąca, .getHours(), .getMinutes(), .getSeconds() do pobrania aktualnej godziny, minuty i sekundy oraz metody .toISOString() do zamiany naszego obiektu daty na standardową reprezentację daty i czasu w formacie ISO.
 
-Metoda ```toLocaleDateString()``` przyjmuje dwa argumenty: pierwszy to język, dla którego chcemy wyświetlić datę, a drugi to obiekt z właściwościami dotyczącymi formatowania daty. W tym drugim argumencie możemy wybrać, które elementy daty chcemy uwzględnić oraz w jakiej kolejności.
+## Głębszy wgląd
 
-W powyższych przykładach użyliśmy kodu kraju "pl-PL" (polski dla Polski) jako pierwszego argumentu, ale można również użyć kodu kraju odpowiadającego językowi użytkownika aplikacji, co pozwala na wyświetlanie daty w odpowiednim dla niego formacie.
+W JavaScript istnieją również inne sposoby na formatowanie daty i czasu do ciągu znaków, takie jak metoda .toLocaleString(), która pozwala na wybranie przez nas pożądanej strefy czasowej oraz formatu daty i czasu. W przypadku bardziej zaawansowanych operacji, istnieje także biblioteka Moment.js, która oferuje wiele dodatkowych funkcji do manipulowania datami i czasem.
 
-## Zobacz również
+## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o przekształcaniu daty w inne typy danych lub o innych funkcjach języka JavaScript, zapoznaj się z poniższymi artykułami:
-
-- [Konwersja daty na liczbę w języku JavaScript](https://pl.programiz.com/javascript/date-number)
-- [Formatowanie daty w języku JavaScript](https://pl.freecodecamp.org/news/wygladaj-swoje-daty-praktycznie-ukazanie-czasu-okreslonego-na-stronie-internetowej-w-javascript-fb55e344177c/)
-- [Dokumentacja metody toLocaleDateString() w języku JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-
-Dzięki tym wskazówkom będziesz w stanie w pełni wykorzystać potencjał konwersji daty na ciąg znaków w swoich projektach.
+- [Date Object w MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Formatowanie daty i czasu w JavaScript](https://www.digitalocean.com/community/tutorials/how-to-format-dates-in-javascript)

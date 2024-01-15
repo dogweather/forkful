@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Wyszukiwanie i zamienianie tekstu"
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Gleam: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,35 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami, gdy piszemy kod, możemy popełnić błąd i chcieć zmienić pewne elementy tekstu bez konieczności przepisywania go od początku. W takim przypadku narzędzie do wyszukiwania i zastępowania tekstu jest niezwykle przydatne. Pozwala ono szybko i bezproblemowo dokonać zmian w kodzie, co może zaoszczędzić nam czas i wysiłek.
+Wiele razy przy pisaniu kodu musimy zmienić pewne fragmenty tekstu w wielu miejscach. Może być to nazwa zmiennej, ścieżka do pliku, czy też cały blok kodu. W takich przypadkach bardzo pomocne jest narzędzie do wyszukiwania i zamieniania tekstu, które pozwala na szybką i precyzyjną modyfikację naszego kodu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-W Gleam istnieje wbudowana funkcja do wyszukiwania i zastępowania tekstu, a jej użycie jest bardzo proste. Oto przykładowy kod:
-
-```Gleam
-a = "Hello, world!"
-b = String.replace(a, "world", "Gleam")
-```
-
-Kod ten utworzy nowy string o wartości "Hello, Gleam!", zastępując słowo "world" na "Gleam". Zobaczmy, jak wygląda to w praktyce:
+Aby przeprowadzić operację wyszukiwania i zamieniania tekstu w Gleam, użyjemy funkcji `String.replace()`. Przykładowe użycie wyglądać może następująco:
 
 ```Gleam
-a = "This is a sentence."
-b = String.replace(a, "sentence", "paragraph")
-/* b teraz zawiera "This is a paragraph." */
+let tekst = "Witaj Świecie!"
+let zamieniony_tekst = String.replace(tekst, "Świecie", "Gleam")
 ```
 
-Łatwo zauważyć, że funkcja ta jest bardzo przydatna, gdy chcemy zmienić pojedyncze słowo lub wyrażenie w większym tekście.
+W wyniku otrzymamy tekst "Witaj Gleam!". Warto zauważyć, że funkcja ta zwraca nowy tekst, a nie modyfikuje oryginalnego.
 
-## Głębsza analiza
+Możemy również wykorzystać wyrażenia regularne, aby precyzyjniej określić czego szukamy. Na przykład, jeśli chcemy zmienić wszystkie litery "a" na wielkie, możemy użyć wyrażenia `[a]`:
 
-W Gleam, funkcja `String.replace` działa na podstawie wzorca, który ma zostać zastąpiony oraz tekstu, w którym ma nastąpić zamiana. Możemy również podać trzeci argument, aby określić maksymalną liczbę zastąpień. Możemy również użyć funkcji `String.replace_all`, która zastąpi wszystkie wystąpienia wzorca w tekście.
+```Gleam
+let tekst = "ala ma kota"
+let zamieniony_tekst = String.replace(tekst, /[a]/, "A")
+```
 
-Używanie funkcji do wyszukiwania i zastępowania tekstu może również pomóc nam w refaktoryzacji kodu. Możemy użyć jej do zmiany nazw zmiennych lub funkcji w całym projekcie jednym poleceniem.
+Wynik to "Ala mA kotA". Oczywiście, istnieje wiele innych zastosowań funkcji `replace()` i warto zapoznać się z jej dokumentacją, aby wykorzystać ją w pełni.
 
-## Zobacz także
+## Deep Dive
 
-- Dokumentacja Gleam dla funkcji `String.replace`: https://gleam.run/doc/current/stdlib/String.html#replace
-- Przykłady wykorzystania funkcji `String.replace`: https://medium.com/@gleam_blogger/5-useful-gleam-string-functions-c33636a65477
-- Przykład refaktoryzacji kodu z użyciem funkcji `String.replace`: https://dev.to/gauranshkumar/refactoring-with-applicative-python-3eie
+Funkcja `replace()` ma jeszcze jedną opcję, która pozwala na podanie maksymalnej liczby zamian. Domyślnie jest ona ustawiona na `None`, co oznacza, że wszystkie wystąpienia zostaną zamienione. Jednak jeśli wpiszemy konkretną liczbę, np. `Some(2)`, tylko pierwsze dwa wystąpienia zostaną zamienione.
+
+Ponadto, możemy przekazać również funkcję do wykonania po każdej zmianie. Jest to przydatne np. gdy chcemy dodać prefix lub suffix do każdego wyniku zamiany.
+
+## Zobacz też
+
+Jeśli chcesz dowiedzieć się więcej o wykorzystaniu funkcji `replace()` w Gleam, możesz zajrzeć do dokumentacji języka lub przeczytać artykuł na temat wyrażeń regularnych: 
+
+- [Dokumentacja funkcji `String.replace()`](https://gleam.run/manual/stdlib.html#string-module)
+- [Wyrażenia regularne w Gleam](https://itnext.io/regular-expressions-in-gleam-de6dd3dcd739)

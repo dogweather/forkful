@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué obtener la fecha actual en Bash?
+## ¿Por qué?
 
-Existen muchas razones por las cuales uno podría querer obtener la fecha actual en un programa Bash. Algunos ejemplos comunes incluyen el registro de eventos, el cálculo de la duración de una tarea o simplemente tener la fecha actual para mostrar en un mensaje o archivo. Afortunadamente, Bash ofrece una forma sencilla de obtener la fecha actual y trabajar con ella en nuestros programas.
+Si estás programando en Bash, una de las tareas comunes que puedes necesitar hacer es obtener la fecha actual. Esto puede ser útil para, por ejemplo, crear backups de tus archivos con una marca de tiempo.
 
-## Cómo obtener la fecha actual en Bash
+## Cómo hacerlo
 
-Para obtener la fecha actual en Bash, podemos utilizar el comando `date`. Este comando nos permite mostrar la fecha y hora actual en diferentes formatos, dependiendo de nuestras necesidades. Veamos algunos ejemplos:
+```Bash
+# Obtener la fecha actual en formato mm/dd/aaaa
+date +"%m/%d/%Y"
 
-```
-# Muestra la fecha y hora actual en formato YYYY-MM-DD HH:MM:SS
-date +"%Y-%m-%d %H:%M:%S"
+# Obtener el día de la semana
+date +"%A"
 
-# Muestra la fecha actual en formato DD/MM/YYYY
-date +"%d/%m/%Y"
-
-# Muestra la hora actual en formato HH:MM:SS
-date +"%H:%M:%S"
+# Obtener la fecha y hora en formato yyyy-mm-dd hh:mm:ss
+date +"%F %T"
 ```
 
-El comando `date` también nos permite modificar la fecha y hora actual. Por ejemplo, si queremos obtener la fecha y hora de ayer, podemos utilizar el siguiente comando:
+Ejemplo de salida:
 
 ```
-# Obtiene la fecha y hora de ayer en formato DD/MM/YYYY HH:MM:SS
-date -d "1 day ago" +"%d/%m/%Y %H:%M:%S"
+06/14/2021
+Monday
+2021-06-14 14:30:45
 ```
 
-Además, podemos almacenar la fecha actual en una variable para utilizarla en nuestro programa Bash. Por ejemplo:
+## Deep Dive
 
-```
-# Almacena la fecha actual en una variable
-fecha=$(date +"%d/%m/%Y")
-echo "Hoy es $fecha"
-```
+La herramienta `date` en Bash te permite personalizar el formato de la fecha y hora que se muestra. Por ejemplo, puedes usar el formato `%b` para obtener el mes abreviado (por ejemplo, "Jun") o `%H` para obtener la hora en formato de 24 horas (por ejemplo, "14" para las 2 PM). Puedes encontrar más opciones de formato en la página de manual de `date` utilizando el comando `man date` en tu terminal.
 
-## Profundizando en la obtención de la fecha actual en Bash
+## Ver también
 
-El comando `date` cuenta con muchas más opciones y formatos de fecha y hora que no hemos mencionado en este artículo. Además, también podemos utilizar otras herramientas como `cal` o `hwclock` para obtener información más detallada sobre la fecha y hora actual en Bash.
-
-También es importante tener en cuenta que la fecha y hora en Bash está influenciada por la configuración regional de nuestro sistema. Esto puede afectar el formato en el que se muestra la fecha y hora, por lo que es importante tenerlo en cuenta al utilizar el comando `date` en nuestro programa.
-
-# Ver también
-
-- [Manual de Bash: date](https://www.gnu.org/software/bash/manual/html_node/The-date-Command.html)
-- [Ejemplos avanzados de date en Linux](https://www.tecmint.com/linux-date-command-examples/)
+- [Cómo trabajar con fechas en Bash](https://www.linuxjournal.com/content/working-dates-bash)
+- [Manual de `date` en Linux](https://man7.org/linux/man-pages/man1/date.1.html)
+- [Guía de Bash en español](http://www.mclibre.org/consultar/bash/index.html)

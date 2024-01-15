@@ -1,6 +1,7 @@
 ---
-title:                "Python: Läser en textfil"
-simple_title:         "Läser en textfil"
+title:                "Läsa en textfil"
+html_title:           "Python: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -11,56 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil är en vanlig uppgift inom programmering. Det kan hjälpa till att hantera stora mängder data eller att läsa in viktig information från externa källor.
+Att läsa textfiler är en grundläggande uppgift för programmerare eftersom det tillåter oss att få tillgång till och bearbeta data på ett effektivt sätt.
 
-## Hur man gör
+## Hur man gör det
 
-För att läsa en textfil i Python använder vi inbyggda funktionen `open()` som tar emot två argument - filnamn och läsmodus. Sedan kan vi använda metoder som `.read()` eller `.readlines()` för att läsa filens innehåll.
+För att läsa en textfil i Python, behöver du först öppna filen med hjälp av den inbyggda funktionen `open()`. Du behöver ange filnamnet och läge (t.ex. "r" för läsning) som parametrar. Sedan kan du använda en `for`-loop för att iterera över varje rad i filen och genomföra önskade operationer.
 
 ```Python
-# Öppna filen för läsning
-file = open("exempelfil.txt", "r")
+file = open("textfil.txt", "r")
 
-# Läs in hela filen
-file_content = file.read()
-print(file_content)
-
-# Läs in rad för rad
-file = open("exempelfil.txt", "r")
 for line in file:
-  print(line)
+    # vidta åtgärder för varje rad i filen
+    print(line) # exempelvis att skriva ut varje rad
 
-# Stäng filen
 file.close()
-
-#Exempelfil.txt innehåller:
-#Detta är en exempeltext
-#som vi vill läsa in i Python.
 ```
+Exempel på utdata:
 
-Output:
 ```
-Detta är en exempeltext
-som vi vill läsa in i Python.
+Detta är första raden i textfilen.
+Detta är andra raden.
+Och detta är den tredje och sista raden.
 ```
 
 ## Djupdykning
 
-Det finns flera olika sätt att hantera filer i Python, till exempel genom att läsa, skriva, ändra eller skapa nya filer. För att läsa filer på ett effektivt sätt kan vi använda `with`-satsen för att hantera öppnandet och stängandet av filen automatiskt.
+När du läser en textfil i Python, returneras varje rad som en sträng. Om du vill konvertera denna sträng till ett objekt av typen `list`, kan du använda metoden `split()`.
 
 ```Python
-# Öppna och läs in filen med with-satsen
-with open("exempelfil.txt", "r") as file:
-  for line in file:
-    print(line)
+file = open("textfil.txt", "r")
+
+for line in file:
+    words = line.split() # konvertera till list
+
+    # vidta åtgärder för varje ord i raden
+    for word in words:
+        print(word) # exempelvis att skriva ut varje ord
+
+file.close()
 ```
+Exempel på utdata:
 
-För att läsa filer i olika format, till exempel CSV- eller JSON-filer, kan vi använda inbyggda moduler som `csv` eller `json` för att underlätta hanteringen av data.
-
-För mer komplexa textbehandlingar finns också möjligheten att använda reguljära uttryck. Detta kan vara användbart för att söka och ersätta innehåll i filer eller för att filtrera ut specifika delar av texten.
+```
+Detta
+är
+första
+raden
+Detta
+är
+andra
+raden.
+Och
+detta
+är
+den
+tredje
+och
+sista
+raden.
+```
 
 ## Se även
 
-- [Python dokumentation för textfiler](https://docs.python.org/sv/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Tutorial: Läsning och skrivning av textfiler i Python](https://www.digitalocean.com/community/tutorials/how-to-handle-plain-text-files-in-python-3)
-- [Multi-line strings i Python](https://www.pythonforbeginners.com/basics/multi-line-comments-using-parentheses-brackets-and-blackslash)
+- Dokumentation för `open()`-funktionen: https://docs.python.org/sv/3/library/functions.html#open
+- Dokumentation för `split()`-metoden: https://docs.python.org/sv/3/library/stdtypes.html#str.split

@@ -1,6 +1,7 @@
 ---
-title:                "C: Praca z JSON"
-simple_title:         "Praca z JSON"
+title:                "Praca z json"
+html_title:           "C: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,75 +12,97 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Po co zabierać się za pracę z JSON w języku C? JSON (JavaScript Object Notation) to popularny format danych, szczególnie w przypadku komunikacji między serwerem a klientem. W tym blog postu omówimy w jaki sposób możesz pracować z tym formatem w języku C.
+JSON (JavaScript Object Notation) jest popularnym formatem danych, szczególnie w aplikacjach internetowych. Jest on łatwy do zapisywania i przesyłania danych, a także łatwy do pracy z nim w C. Dzięki temu, że jest również czytelny dla ludzi, jest idealnym wyborem dla projektów, które wymagają przesyłania i przechowywania danych w formie tekstowej.
 
-## Jak to zrobić
+## Jak
 
-Aby pracować z JSON w języku C, musisz najpierw zaimportować bibliotekę *json-c*, która dostarcza narzędzia do manipulacji danymi JSON. Poniżej znajduje się przykładowy kod przedstawiający jak stworzyć obiekt JSON i wypisać go na ekranie:
+Aby rozpocząć pracę z JSON w C, musimy najpierw zaimportować bibliotekę <stdio.h> oraz bibliotekę <stdlib.h>, która jest potrzebna do obsługi pamięci dynamicznej. Następnie możemy wykorzystać funkcję `fgetc()` do pobrania pojedynczego znaku ze standardowego wejścia. Następnie, używając pętli `while`, możemy czytać znak po znaku aż do końca pliku, a następnie przypisać odczytane znaki do bufora znakowego. W ten sposób utworzymy ciąg znaków, który następnie możemy przekonwertować na format JSON przy użyciu funkcji `json_parse()`.
 
-```C
+Przykładowy kod można napisać w następujący sposób:
+
+```
 #include <stdio.h>
+#include <stdlib.h>
 #include <json-c/json.h>
 
-int main() {
-    // tworzymy obiekt JSON
-    struct json_object *myobj = json_object_new_object();
-    // dodajemy do niego pola i wartości
-    json_object_object_add(myobj, "imie", json_object_new_string("Jan"));
-    json_object_object_add(myobj, "wiek", json_object_new_int(25));
-    // wypisujemy na ekranie
-    printf("%s\n", json_object_to_json_string(myobj));
-    // usuwamy obiekt z pamięci
-    json_object_put(myobj);
+int main()
+{
+    FILE *fptr;
+    char filename[100], c;
+    char *buffer;
+
+    // Otwórz plik lub wczytaj dane z innego źródła
+
+    fptr = fopen("data.json", "r");
+
+    if (fptr == NULL)
+    {
+        printf("Nie można otworzyć pliku.");
+        return 0;
+    }
+
+    // Alokuje pamięć dla bufora
+
+    buffer = (char *)malloc(1000 * sizeof(char));
+
+    if(buffer == NULL)
+    {
+        printf("Wystąpił błąd podczas alokacji pamięci.");
+        return 0;
+    }
+
+    // Czytaj plik znak po znaku i przypisuj do bufora
+
+    c = fgetc(fptr);
+    int i = 0;
+
+    while (c != EOF)
+    {
+        buffer[i] = c;
+        i++;
+        c = fgetc(fptr);
+    }
+
+    buffer[i] = '\0';
+
+    // Konwertuj bufor do formatu JSON
+
+    struct json_object *parsed_json;
+    parsed_json = json_tokener_parse(buffer);
+
+    // Wyświetl odczytane dane
+
+    printf("Dane z pliku JSON:\n%s\n", json_object_to_json_string(parsed_json));
+
+    fclose(fptr);
+    free(buffer);
     return 0;
 }
 ```
 
-Powyższy kod wyprodukowałby następujący output:
+Przykładowy plik JSON (`data.json`):
 
-```json
-{"imie":"Jan","wiek":25}
 ```
-
-Możesz również parsować dane JSON przychodzące z serwera za pomocą funkcji *json_tokener_parse()*. Poniższy kod pokazuje jak wydobyć dane z obiektu JSON i przypisać je do zmiennych:
-
-```C
-#include <stdio.h>
-#include <json-c/json.h>
-
-int main() {
-    // przykładowy string z danymi JSON
-    char *json_string = "{\"imie\": \"Anna\", \"wiek\": 30}";
-    // parsujemy dane
-    struct json_object *myobj = json_tokener_parse(json_string);
-    // wyciągamy imie i wiek
-    struct json_object *name;
-    struct json_object *age;
-    json_object_object_get_ex(myobj, "imie", &name);
-    json_object_object_get_ex(myobj, "wiek", &age);
-    // przypisujemy wartości do zmiennych
-    const char *imie = json_object_get_string(name);
-    int wiek = json_object_get_int(age);
-    // wypisujemy na ekran
-    printf("Imię: %s, Wiek: %d\n", imie, wiek);
-    // usuwamy obiekt z pamięci
-    json_object_put(myobj);
-    return 0;
+{
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "wiek": 30
 }
 ```
 
-Powyższy kod wyprodukowałby następujący output:
+Przykładowy wynik:
 
-```text
-Imię: Anna, Wiek: 30
+```
+Dane z pliku JSON:
+{"imie": "Jan", "nazwisko": "Kowalski", "wiek": 30}
 ```
 
-## Głębsze zagadnienia
+## Deep Dive
 
-Ponadto, biblioteka *json-c* oferuje wiele innych funkcji, takich jak modyfikowanie obiektów JSON, tworzenie tablic i wiele innych. Warto przejrzeć dokumentację aby poznać wszystkie możliwości tej biblioteki.
+Biblioteka json-c jest dostępna w systemach Unix oraz w systemie Windows. Bez problemu można ją również użyć w aplikacjach internetowych. Bezpośrednio po pobraniu znaków za pomocą funkcji `fgetc()` należy przekonwertować je na format JSON przy użyciu funkcji `json_tokener_parse()`. Dzięki temu zyskujemy dostęp do wielu narzędzi, takich jak `json_object_to_json_string()`, które są przydatne w dalszej pracy z danymi JSON.
 
 ## Zobacz również
-
-- Dokumentacja biblioteki *json-c*: https://github.com/json-c/json-c
-- Przykłady kodów wykorzystujących *json-c*: https://github.com/json-c/json-c/tree/master/tests
-- Poradniki wideo o pracy z JSON w języku C: https://www.youtube.com/playlist?list=PL2UmzTIzxgLh-9T7hWkmVjn9Zlxm0rsU5
+- Dokumentacja biblioteki json-c: https://json-c.github.io/json-c/
+- Inne biblioteki do pracy z JSON w C: https://github.com/miloyip/nativejson-benchmark/tree/master/src
+- Przykładowe aplikacje wykorzystujące JSON w C: https://github.com/search?q=json+c&type=Repositories
+- Poradnik na temat pracy z JSON w C: https://www.tutorialspoint.com/json/json_c_example.html

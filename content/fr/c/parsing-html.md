@@ -1,6 +1,7 @@
 ---
-title:                "C: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyser du html"
+html_title:           "C: Analyser du html"
+simple_title:         "Analyser du html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,53 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Les développeurs utilisent souvent le langage de programmation C pour créer des applications efficaces et rapides. Parfois, ils doivent également travailler avec des données au format HTML, qui est un langage utilisé pour créer des pages Web. Dans ces cas, il est utile d'apprendre à analyser le code HTML en utilisant le langage C.
+
+Si vous vous intéressez à la programmation en C, vous avez probablement entendu parler de l'HTML (Hypertext Markup Language). Ce langage de balisage est utilisé pour créer des pages web, et il est essentiel de pouvoir le convertir en code informatique pour interagir avec ces pages. C'est là qu'intervient le parsing HTML en C.
 
 ## Comment faire
-Pour analyser le code HTML en utilisant le langage C, nous allons utiliser une bibliothèque appelée "libxml2". Cela nous permettra de parcourir facilement le code HTML et d'extraire les informations dont nous avons besoin. Voici un exemple de code qui affiche une liste de tous les liens sur une page Web :
+Voici un exemple simple de parsing HTML en C pour récupérer le titre d'une page web :
 
 ```C
 #include <stdio.h>
-#include <libxml/HTMLparser.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
-    // Récupère le contenu de la page Web sous forme de chaîne de caractères
-    char *html = "<!DOCTYPE html><html><body><a href='https://www.example.com'>Example</a><a href='https://www.test.com'>Test</a></body></html>";
-    
-    // Parse le contenu HTML et le place dans une structure de type "htmlDocPtr"
-    htmlDocPtr doc = htmlParseDoc(html, NULL);
-    // Sélectionne tous les éléments "a" sur la page
-    xmlNodePtr *links = NULL;
-    xmlNodePtr currNode = xmlDocGetRootElement(doc)->children;
-    while (currNode != NULL) {
-        if (strcmp((char *)currNode->name, "a") == 0) {
-            // Insère le lien actuel dans le tableau "links"
-            xmlAddElement(links, currNode);
-        }
-        currNode = currNode->next;
+  // Ouvrir le fichier HTML
+  FILE *fptr;
+  fptr = fopen("page_web.html", "r");
+  char buffer[1000];
+
+  // Lire le contenu HTML dans une chaîne de caractères
+  while (fgets(buffer, 1000, fptr)) {
+    // Utiliser la fonction strstr() pour rechercher le titre
+    if (strstr(buffer, "<title>") != NULL) {
+      // Extraire le titre entre les balises
+      char *start = strchr(buffer, '>') + 1;
+      char *end = strrchr(buffer, '<');
+      *end = '\0';
+      char *title = malloc(strlen(start) + 1);
+      strcpy(title, start);
+
+      // Afficher le titre
+      printf("Titre de la page : %s\n", title);
+      // Vous pouvez également stocker le titre dans une variable pour une utilisation ultérieure
+      break;
     }
-    // Parcours le tableau "links" et affiche les attributs "href" de chaque élément
-    for (int i = 0; i < xmlGetLength(links); i++) {
-        printf("%s\n", xmlGetProp(links[i], "href"));
-    }
-    
-    return 0;
+  }
+  fclose(fptr);
+  return 0;
 }
 ```
 
-Lorsque nous exécutons ce code, voici le résultat que nous obtenons :
+### Output:
+```
+Titre de la page : Cours de programmation en C
+```
 
-https://www.example.com
-https://www.test.com
-
-Ce n'est qu'un exemple simple, mais en utilisant "libxml2", nous pouvons effectuer une analyse beaucoup plus complexe du code HTML et extraire des informations comme le titre d'une page, le contenu d'un formulaire, etc.
+Cet exemple utilise la fonction `strstr()` pour rechercher la première occurrence de la balise `<title>`. Ensuite, il utilise les fonctions `strchr()` et `strrchr()` pour extraire le contenu entre les balises et l'afficher. Bien entendu, il existe de nombreuses autres façons de parser le HTML en C, mais cet exemple vous donne une idée de base du processus.
 
 ## Plongée en profondeur
-La bibliothèque "libxml2" est très puissante et offre une grande variété de fonctions pour analyser le code HTML. En plus de cela, elle dispose également de fonctions pour traiter des langages tels que XML, XPath et XPointer. Cela peut être très utile lors de la création d'une application qui doit traiter des données dans différents formats.
+Il est important de comprendre que le parsing HTML en C peut être un peu plus complexe que l'exemple ci-dessus. Pour gérer tous les scénarios possibles, il est souvent nécessaire d'utiliser des bibliothèques spécialisées telles que `libxml2` ou `libhtmlparser`.
 
-Il est important de noter que le parsing HTML à l'aide du langage C peut être plus fastidieux que d'autres langages de programmation, car le C ne dispose pas de fonctions intégrées pour manipuler facilement les chaînes de caractères et les éléments de structure. Cependant, cela peut également être un défi intéressant pour les développeurs C qui cherchent à améliorer leurs compétences en programmation.
+De plus, il est important de noter que le parsing HTML en C peut être plus lent que dans d'autres langages, en raison de son manque de fonctionnalités de manipulation de chaînes de caractères. Il est donc important d'optimiser votre code autant que possible pour améliorer les performances.
 
 ## Voir aussi
-- [Documentation de la bibliothèque libxml2](http://www.xmlsoft.org/html/index.html)
-- [Tutoriel sur le parsing de code HTML avec C](https://codetuts.tech/parse-html-c/)
-- [Exemples de projets utilisant libxml2](https://github.com/GNOME/libxml2/tree/master/examples)
+- [Documentation sur la bibliothèque libxml2](http://www.xmlsoft.org/html/)
+- [Documentation sur la bibliothèque libhtmlparser](https://htmlparser.sourceforge.io/)
+- [Tutoriel sur le parsing HTML en C](https://www.geeksforgeeks.org/parsing-html-using-c/)

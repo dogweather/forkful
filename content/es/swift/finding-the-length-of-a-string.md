@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Swift: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,58 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En la programación Swift, conocer la longitud de una cadena puede ser útil para realizar diversas tareas, como validar entradas de usuario o manipular cadenas para mostrar información específica. Afortunadamente, encontrar la longitud de una cadena es un proceso sencillo que te permitirá mejorar tus habilidades de programación en Swift.
+En la programación, a menudo necesitamos trabajar con cadenas de texto y una de las tareas más comunes es encontrar la longitud de una cadena. Saber cómo hacerlo nos permite manipular y analizar de manera efectiva los datos en nuestras aplicaciones.
 
 ## Cómo hacerlo
 
-Para encontrar la longitud de una cadena en Swift, simplemente utilizamos el método `count` en la cadena. A continuación se muestra un ejemplo de cómo encontrar la longitud de la cadena "Hola mundo":
+En Swift, podemos encontrar la longitud de una cadena utilizando la propiedad `count` de la clase `String`. Veamos un ejemplo:
 
 ```Swift
-let cadena = "Hola mundo"
-print(cadena.count)
-// Output: 10
+let frase = "Hola mundo!"
+print(frase.count) // Output: 12
 ```
 
-En este ejemplo, el método `count` devuelve el número de caracteres de la cadena, incluyendo los espacios en blanco.
+Como se puede ver en el ejemplo, simplemente llamamos a la propiedad `count` en la variable que contiene la cadena y nos devuelve el número de caracteres en ella.
 
-Otra forma de encontrar la longitud de una cadena es mediante el uso del operador `count` en la cadena, como se muestra a continuación:
+También podemos utilizar el método `count` en una cadena que contenga valores Unicode, como por ejemplo emojis:
 
 ```Swift
-let cadena = "¡Hola!"
-print(cadena.count)
-// Output: 6
+let emoji = "🚀🌎"
+print(emoji.count) // Output: 2
 ```
 
-Como se puede observar, el método `count` también funciona en cadenas que incluyen caracteres especiales.
+Es importante tener en cuenta que la propiedad `count` devuelve el número de caracteres en la cadena, no el número de bytes. Por lo tanto, si tenemos una cadena que contiene caracteres Unicode más complejos, el resultado puede ser diferente al esperado.
 
 ## Profundizando
 
-Aunque el método `count` es el más comúnmente utilizado para encontrar la longitud de una cadena, también existen otras opciones como el método `characters` y el operador `isEmpty`.
+Si queremos entender cómo funciona la propiedad `count` en la clase `String`, podemos explorar su implementación en el código fuente de Swift. Allí veremos que utiliza un algoritmo eficiente para contar los caracteres de una cadena, teniendo en cuenta también los caracteres Unicode.
 
-El método `characters` devuelve una colección de caracteres de la cadena, lo que nos permite realizar operaciones adicionales. A continuación se muestra un ejemplo de cómo utilizar este método:
-
-```Swift
-let cadena = "Hola"
-print(cadena.characters.count)
-// Output: 4
-```
-
-Por otro lado, el operador `isEmpty` nos permite comprobar si la cadena está vacía o no. En el siguiente ejemplo, utilizamos este operador para imprimir un mensaje si la cadena está vacía:
-
-```Swift
-let cadena = ""
-if cadena.isEmpty {
-    print("La cadena está vacía.")
-} else {
-    print("La longitud de la cadena es: \(cadena.count)")
-}
-// Output: La cadena está vacía.
-```
-
-Recuerda que siempre puedes consultar la documentación oficial de Swift para obtener más información sobre estos y otros métodos para encontrar la longitud de una cadena.
+Además, es importante tener en cuenta que la longitud de una cadena puede variar según el idioma utilizado. Por ejemplo, en idiomas como el chino o el japonés, un solo carácter puede representar una palabra completa, mientras que en otros idiomas puede requerir varios caracteres para formar una sola palabra.
 
 ## Ver también
 
-- [Documentación oficial de Swift](https://developer.apple.com/documentation/swift)
-- [Tutorial de Swift para principiantes](https://www.raywenderlich.com/5996-swift-tutorial-for-beginners)
-- [Ejemplos de código para Swift](https://github.com/apple/swift/tree/master/samples)
+- [Documentación oficial de Swift sobre la clase String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Uso de Unicode en Swift](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/WorkingWithText/WorkingWithText.html#//apple_ref/doc/uid/TP40009542-CH4-SW36)

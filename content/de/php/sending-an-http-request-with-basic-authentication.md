@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "PHP: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,54 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-Das Senden von HTTP-Anfragen mit Basiskennung (basic authentication) ist eine grundlegende Fähigkeit für jeden PHP-Entwickler. Mit diesem Verfahren können Sie Ihre Anwendungen vor unerwünschtem Zugriff schützen und sicherstellen, dass nur berechtigte Nutzer Zugriff auf bestimmte Ressourcen haben.
+PHP ist eine weit verbreitete und beliebte Programmiersprache für die Webentwicklung. Eine wichtige Aufgabe bei der Programmierung von Webanwendungen ist das Senden von HTTP-Anfragen. Mit der grundlegenden Authentifizierungsmethode von HTTP können Benutzer ihre Identität überprüfen, um auf geschützte Ressourcen zuzugreifen. In diesem Artikel werden wir darüber sprechen, warum Sie mit PHP HTTP-Anfragen mit grundlegender Authentifizierung senden sollten und wie Sie dies tun können.
 
-# Wie man es macht
+# Wie es geht
 
-Die Verwendung von Basiskennung in PHP ist relativ einfach. Sie müssen lediglich den in PHP integrierten CURL (Client URL Library) verwenden. Hier ist ein Beispielcode:
+Um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden, müssen Sie zunächst eine Instanz der `Curl`-Klasse erstellen. Diese Klasse bietet Methoden zum Ausführen von HTTP-Anfragen. Sie können dann die `setopt()`-Methode verwenden, um verschiedene Optionen für Ihre Anfrage festzulegen. Eine wichtige Option ist `CURLOPT_USERPWD`, die es Ihnen ermöglicht, einen Benutzernamen und ein Passwort für die grundlegende Authentifizierung anzugeben. Zum Beispiel:
 
 ```PHP
 <?php
-//URL der API
-$url = "http://www.example.com/api/users";
 
-//Benutzername und Passwort für die Basiskennung
-$username = "username";
-$password = "password";
+// Erstelle eine neue Instanz der Curl-Klasse
+$ch = curl_init();
 
-//CURL-Resource erstellen
-$curl = curl_init();
+// Setze die URL, an die die Anfrage gesendet werden soll
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
 
-//Einstellungen für die HTTP-Anfrage
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+// Setze die Option für die grundlegende Authentifizierung
+curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
 
-//Einstellungen für die Basiskennung
-curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
+// Führe die Anfrage aus und speichere die Antwort in einer Variablen
+$response = curl_exec($ch);
 
-//HTTP-Anfrage ausführen
-$response = curl_exec($curl);
+// Schließe die Curl-Sitzung
+curl_close($ch);
 
-//Ausgabe der Ergebnisse
-echo "Server-Antwort: " . $response;
-
-//CURL ressource schließen
-curl_close($curl);
-
-?>
+// Gib die Antwort aus
+echo $response;
 ```
 
-Das obige Beispiel zeigt wie Sie eine einfache HTTP-Anfrage mit Basiskennung in PHP durchführen können. Sie müssen lediglich die URL, den Benutzernamen und das Passwort angeben und die CURL-Einstellungen entsprechend setzen. Danach können Sie die Antwort des Servers ausgeben und die CURL-Resource schließen.
+Der oben gezeigte Code wird eine HTTP-GET-Anfrage an die angegebene URL senden und die Antwort in der `response`-Variablen speichern. Beachten Sie, dass Sie den Beitrag anpassen müssen, um Ihre gewünschten Benutzerdaten und die URL der Anfrage anzugeben.
 
-# Tieferer Einblick
+# Tief eintauchen
 
-Bei Basiskennung handelt es sich um eine grundlegende Authentifizierungsmethode im HTTP-Protokoll. Dabei werden Benutzerdaten in Form von Benutzername und Passwort mithilfe von Base64-Verschlüsselung übertragen. Dies ist zwar nicht die sicherste Methode, da die Daten im Klartext übertragen werden, ist jedoch ausreichend für grundlegende Sicherheitsanforderungen.
+Im obigen Beispiel haben wir das Passwort für die grundlegende Authentifizierung im Klartext angegeben. Dies ist jedoch keine sichere Methode, um sensible Informationen zu übertragen. Stattdessen sollten Sie eine Hash-Funktion wie `password_hash()` verwenden, um das Passwort zu verschlüsseln, bevor es an den Server gesendet wird. Der Server kann dann die Funktion `password_verify()` verwenden, um das Passwort mit dem gespeicherten Passwort zu vergleichen.
 
-Sie können auch zusätzliche Optionen in CURL setzen, um die Sicherheit zu erhöhen, z.B. die Verwendung von HTTPS statt HTTP oder die Verwendung von mehrstufiger (digest) Authentifizierung. Es empfiehlt sich auch, Benutzerdaten in einer sicheren Datenbank zu speichern und nicht direkt in den PHP-Code einzuschließen.
+Eine weitere Möglichkeit, die grundlegende Authentifizierung sicherer zu machen, ist die Verwendung von HTTPS anstelle von HTTP. HTTPS verschlüsselt die Kommunikation zwischen dem Client und dem Server, so dass sensible Informationen nicht im Klartext übertragen werden.
 
 # Siehe auch
 
-- [PHP CURL Dokumentation](https://www.php.net/manual/en/book.curl.php)
-- [HTTP Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) (englisch)
-- [HTTP hierarchical authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#hierarchical_authentication_scheme) (englisch)
+- [PHP-Dokumentation zu "curl_setopt()"](https://www.php.net/manual/de/function.curl-setopt.php)
+- [PHP-Dokumentation zu "password_hash()"](https://www.php.net/manual/de/function.password-hash.php)
+- [PHP-Dokumentation zu "password_verify()"](https://www.php.net/manual/de/function.password-verify.php)
+- [Informationen zu HTTPS von MDN Web Docs](https://developer.mozilla.org/de/docs/Web/HTTP/Overview)

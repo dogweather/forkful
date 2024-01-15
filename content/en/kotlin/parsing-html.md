@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Kotlin recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,45 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-HTML (Hypertext Markup Language) is a crucial element of web development, as it is used to structure and present content on a website. Whether you are a web developer, data analyst, or simply interested in learning more about programming, understanding how to parse HTML can be a valuable skill. In this blog post, we will explore why parsing HTML is important and how to do it using Kotlin.
+Parsing HTML, or extracting meaningful data from HTML documents, is a useful skill to have in today's digital age. Whether you are a web developer, data scientist, or simply someone trying to scrape information from a website, knowing how to parse HTML can come in handy. 
 
 ## How To
-
-Parsing HTML essentially means extracting relevant data from an HTML document. To do this, we will use a library called "kotlinx.html" which provides useful functions for interacting with HTML documents.
-
-First, we need to add this library as a dependency in our project. In the "build.gradle" file, add the following line in the dependencies block:
-
-```Kotlin 
-implementation "org.jsoup:jsoup:1.12.1"
-```
-
-Next, we can use the library to retrieve an HTML document from a URL and parse it using the "parse" method.
+To start parsing HTML in Kotlin, we first need to import the necessary libraries. In this case, we will be using the popular Jsoup library for its simplicity and convenience.
 
 ```Kotlin
-val doc = URL("https://www.example.com").readText()
-val parsed = parse(doc)
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 ```
 
-We can now use the "select" method to retrieve specific elements from the HTML document, using CSS selectors.
+Next, we will need to fetch the HTML document we want to parse. This can be done using the `Jsoup.connect()` method, passing in the URL of the webpage as a parameter. We can also specify a timeout period for the connection in milliseconds.
 
 ```Kotlin
-val title = parsed.select("h1").text()
-val paragraphs = parsed.select("p").eachText()
+val doc: Document = Jsoup.connect("https://example.com")
+                .timeout(5000)
+                .get()
 ```
 
-Once we have the desired elements, we can manipulate or process them further according to our needs.
+Now that we have the HTML document, we can start extracting the data we want. Jsoup provides various methods for selecting specific elements based on attributes, classes, or even CSS selectors.
+
+```Kotlin
+// Selecting all links on the webpage and printing their text and URLs
+val links = doc.select("a")
+for (link in links) {
+    val linkText = link.text()
+    val linkUrl = link.attr("abs:href")
+    println("$linkText - $linkUrl")
+}
+```
+
+We can also use Jsoup's built-in methods to extract specific elements or information from the HTML document.
+
+```Kotlin
+// Extracting the page title and meta description
+val pageTitle = doc.title()
+val metaDescription = doc.select("meta[name=description]")
+                        .attr("content")
+```
+
+The possibilities are endless when it comes to parsing HTML using Kotlin and Jsoup. With a little practice, you'll be able to extract any data you need from any webpage.
 
 ## Deep Dive
+Under the hood, Jsoup uses a combination of DOM parsing and CSS selector to navigate and select elements from HTML documents. It emulates a web browser's DOM tree, making it easy to manipulate and extract data from the HTML.
 
-While the above example shows a basic use case for parsing HTML using Kotlin, there are many more features and techniques that can be explored. For instance, we can use the "select" method with more complex CSS selectors to retrieve specific elements within a document.
-
-Additionally, the "kotlinx.html" library also allows us to convert an HTML document into a DOM (Document Object Model) tree, which can be used for traversing and manipulating the document more efficiently.
+One benefit of using Jsoup over other parsing libraries is its flexibility in handling malformed HTML. It can still extract data from poorly written HTML, making it perfect for web scraping projects.
 
 ## See Also
-
-To learn more about parsing HTML using Kotlin, check out the following resources:
-
-- [Official Kotlin documentation for kotlinx.html](https://github.com/Kotlin/kotlinx.html)
-- [Parsing HTML in Kotlin - Baeldung Blog](https://www.baeldung.com/kotlin/parsing-html)
-- [Getting started with Kotlin - W3Schools](https://www.w3schools.com/kotlin/kotlin_html_articles.asp)
+- [Jsoup Documentation](https://jsoup.org/cookbook/extracting-data/dom-navigation)
+- [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Elixir: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför skriva till standardfel i Elixir?
-
-Att skriva till standardfel i Elixir kan vara en användbar teknik för att felsöka dina program och förbättra användarupplevelsen. Genom att skriva till standardfel kan du fånga specifika felmeddelanden och logga dem för senare analys. Detta kan hjälpa dig att förbättra stabiliteten och tillförlitligheten hos dina program.
+## Varför
+Så varför skulle någon vilja skriva till standard error i Elixir? För det första, låt oss förklara vad det betyder. Standard error är en ström där fel och varningar skrivs ut när ett program körs, vilket är användbart för felsökning och för att hitta eventuella problem med koden. Att kunna skriva till standard error ger dig möjligheten att kontrollera och hantera dessa felmeddelanden på ett mer effektivt sätt.
 
 ## Så här gör du
+För att skriva till standard error i Elixir, kan du använda funktionen IO.stderr. Detta tillåter dig att skicka ett meddelande till standard error-strömmen med hjälp av IO.puts eller IO.write. Låt oss titta på ett exempel:
 
-För att skriva till standardfel i Elixir behöver du använda modulen `Logger` och dess funktion `error/1`. Du kan sedan skicka in ditt felmeddelande som en sträng till denna funktion för att logga det till standardfel.
+```
+Elixir
 
-Här är ett exempel på hur du kan logga ett felmeddelande från en `try/catch`-block i ett Elixir-program:
-
-```elixir
-try do
-  # kod som kan orsaka fel
-catch
-  exception ->
-    Logger.error("Ett fel har inträffat: #{exception}")
-end
+IO.stderr("Detta är ett felmeddelande")
+IO.stderr |> IO.puts("Detta är ett annat felmeddelande")
 ```
 
-Detta kommer att skriva ut felmeddelandet till standardfel och du kan sedan använda detta för att söka efter problem och förbättra ditt program.
+Om vi kör denna kod får vi följande utmatning till standard error:
+
+```
+Detta är ett felmeddelande
+Detta är ett annat felmeddelande
+```
+
+Som du ser är IO.stderr enkel att använda och tillåter dig att skriva både strängar och variabler till standard error-strömmen. Det är också värt att notera att IO.stderr automatiskt lägger till en ny rad (line break) efter varje utmatning, vilket hjälper till att hålla koden organiserad och lättläst.
 
 ## Djupdykning
+Nu när vi vet hur man skriver till standard error i Elixir, låt oss ta en närmare titt på varför detta kan vara användbart. Först och främst är det ett viktigt verktyg för felsökning. Genom att skriva ut felmeddelanden till standard error-strömmen kan du enkelt identifiera var problem uppstår i din kod. Detta sparar tid och hjälper dig att snabbt lösa eventuella problem.
 
-Att skriva till standardfel i Elixir har flera fördelar. För det första kan du fånga specifika fel och använda dem för att förbättra dina program. Detta gör det också lättare att felsöka problem och hitta buggar i din kod. Dessutom kan du använda loggade felmeddelanden för att analysera prestanda och användarbeteende.
-
-En annan fördel med att skriva till standardfel är att det ger dig möjlighet att hantera fel på ett mer flexibelt sätt. Du kan till exempel ställa in loggningsnivån för dina felmeddelanden baserat på miljövariabler eller andra faktorer. Detta gör det möjligt att undvika att skriva ut känslig information till standardfel i produktion.
+En annan fördel med att skriva till standard error är att du kan styra och hantera felmeddelanden mer precist. Genom att använda funktionen IO.stderr kan du skicka felmeddelanden som du vill och även lägga till extra information, såsom tidsstämplar eller variabler, för att hjälpa dig att felsöka. Detta ger dig mer kontroll över hur felmeddelanden hanteras och kan göra det enklare att hitta och åtgärda problem.
 
 ## Se även
+Se gärna följande länkar för mer information om att skriva till standard error i Elixir:
 
-- [Dokumentation för `Logger`-modulen i Elixir](https://hexdocs.pm/elixir/Logger.html)
-- [Elixir Programming Language](https://elixir-lang.org/)
-- [Officiellt Elixir Forum för diskussioner och frågor](https://elixirforum.com/)
+- [Elixir Dokumentation: IO.stderr](https://hexdocs.pm/elixir/IO.html#stderr/1)
+- [Elixir Dokumentation: Felsökning](https://elixir-lang.org/getting-started/debugging.html)
+- [Elixir Forum: Skriva till standard error i Elixir](https://elixirforum.com/t/writing-to-standard-error-in-elixir/47242)
+
+Hoppas detta hjälper dig att bättre förstå hur man skriver till standard error i Elixir och hur det kan vara användbart för din programmering. Lycka till!

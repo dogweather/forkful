@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 텍스트 검색과 대체"
-simple_title:         "텍스트 검색과 대체"
+title:                "텍스트 검색 및 대체"
+html_title:           "Swift: 텍스트 검색 및 대체"
+simple_title:         "텍스트 검색 및 대체"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,63 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-이 블로그 글에서는 텍스트를 검색하고 바꾸는 일에 대해 알아보겠습니다. 프로그래머들은 이 기능을 이용하여 효율적으로 코드를 수정할 수 있습니다.
+텍스트를 찾아 바꾸는 것의 이유는 프로그램에서 자주 사용하는 동작이며 효율적인 코딩을 위해 필수적입니다.
 
-## 하는 방법
+## 어떻게
 
-바꾸고자 하는 텍스트를 포함하고 있는 문자열에서 다른 텍스트로 바꾸는 방법은 아주 간단합니다. 먼저, 간단한 예제를 살펴보겠습니다.
-
-```Swift
-var text = "Hello, World!"
-text = text.replacingOccurrences(of: "World", with: "Swift")
-print(text)
-```
-
-출력 결과는 다음과 같습니다:
-
-```
-Hello, Swift!
-```
-
-위의 코드는 `replacingOccurrences` 메소드를 이용하여 문자열에서 "World"를 "Swift"로 바꾸었습니다. 이 메소드는 기존 문자열을 수정하지 않고 새로운 문자열을 반환합니다.
-
-또 다른 예제를 살펴보겠습니다. 이번에는 특정 패턴을 가진 문자열을 다른 문자열로 바꾸는 방법을 알아보겠습니다.
+텍스트를 찾아 바꾸기 위해서는 `replacingOccurrences(of:with:)` 메서드를 사용해야 합니다. 이 메서드는 원하는 문자를 지정한 문자로 모두 바꿔주는 기능을 합니다. 아래는 간단한 예시 코드입니다.
 
 ```Swift
-let sentence = "I love to code in Swift!"
-let modifiedSentence = sentence.replacingOccurrences(of: "love to code in", with: "enjoy programming in")
-print(modifiedSentence)
+let sentence = "Hello Swift!"
+let newSentence = sentence.replacingOccurrences(of: "Swift", with: "Kotlin")
+print(newSentence) // Output: Hello Kotlin!
 ```
 
-출력 결과는 다음과 같습니다:
-
-```
-I enjoy programming in Swift!
-```
-
-위의 코드에서는 `replacingOccurrences` 메소드를 이용하여 "love to code in" 패턴을 "enjoy programming in"으로 바꾸었습니다.
-
-## 깊이 들어가기
-
-위의 예제들에서는 `replacingOccurrences` 메소드를 이용하여 간단하게 텍스트를 바꾸는 방법을 살펴보았습니다. 이제는 이 메소드의 깊은 내부를 살펴보겠습니다. `replacingOccurrences` 메소드는 String 클래스의 확장 프로퍼티로서 구현되어 있습니다.
+문자열 내에서 모든 "Swift"를 "Kotlin"으로 바꾸어줍니다. 또 다른 예시로는 `replacingOccurrences(of:with:options:range:)` 메서드를 사용하는 방법이 있습니다. 이 메서드는 옵션을 추가하여 대소문자를 구분하거나 특정 범위에서만 문자를 바꿀 수 있습니다. 아래는 이 방법을 사용한 예시 코드입니다.
 
 ```Swift
-extension String {
-    func replacingOccurrences(of target: String, with replacement: String) -> String {
-        var temp = self
-        while let foundRange = temp.range(of: target) {
-            temp.replaceSubrange(foundRange, with: replacement)
-        }
-        return temp
-    }
+let sentence = "Hello swift!"
+let newSentence = sentence.replacingOccurrences(of: "swift", with: "Kotlin", options: .caseInsensitive, range: nil)
+print(newSentence) // Output: Hello Kotlin!
+```
+
+여기서 옵션에 `.caseInsensitive`를 추가하였기 때문에 대소문자를 구분하지 않고 "swift"를 "Kotlin"으로 바꿔줍니다. 또한 마지막 매개변수로 범위를 지정해줄 수도 있습니다.
+
+## 딥 다이브
+
+텍스트를 찾아 바꾸는 과정에서 문제가 발생할 수 있습니다. 예를 들어, 바꾸려는 문자열을 찾지 못해 원하는 결과를 얻지 못할 수 있습니다. 이때는 `replacingOccurrences(of:with:options:range:)` 메서드의 리턴 값으로 사용되는 `String`을 가져와서 `contains()` 메서드를 사용하여 원하는 문자열이 포함되어 있는지 확인할 수 있습니다. 아래는 이 방법을 사용한 예시 코드입니다.
+
+```Swift
+let sentence = "Hello swift!"
+let newSentence = sentence.replacingOccurrences(of: "Swift", with: "Kotlin", options: .caseInsensitive, range: nil)
+
+if newSentence.contains("Kotlin") {
+    print("Found 'Kotlin'!") // Output: Found 'Kotlin'!
+} else {
+    print("Could not find 'Kotlin'!")
 }
 ```
 
-위의 코드에서는 `range(of:)` 메소드를 이용하여 주어진 문자열의 인덱스를 찾고, `replaceSubrange(_:with:)` 메소드를 이용하여 해당 인덱스에서 문자열을 대체합니다. 이러한 과정을 반복하여 원하는 결과를 반환합니다.
+`contains()` 메서드를 사용하여 "Kotlin"이 포함되어 있는지를 확인하고 그에 따라 적절한 메시지를 출력합니다.
 
-## 참고 자료
+## 참고
 
-- [Apple 공식문서 - String.replacingOccurrences(of:with:)](https://developer.apple.com/documentation/swift/string/1786175-replacingoccurrences)
-- [Swift Docs - Extending Types](https://docs.swift.org/swift-book/LanguageGuide/Extensions.html)
-- [Apple 공식문서 - String](https://developer.apple.com/documentation/swift/string#relationships)
-- [Swift | Strings](https://www.programiz.com/swift-programming/strings)
+- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
+- [Hacking With Swift: How to use replacingOccurrences() to replace text in a string](https://www.hackingwithswift.com/example-code/strings/how-to-use-replacingoccurrences-to-replace-text-in-a-string) 
+- [Swift by Sundell: Replacing text using ranges in Swift](https://www.swiftbysundell.com/posts/replacing-text-using-ranges-in-swift)

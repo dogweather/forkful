@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Clojure recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,41 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Regular expressions are powerful tools that allow developers to manipulate and extract data from text in a precise and efficient manner. They can be used in a variety of scenarios such as data cleaning, text parsing, and string validation. Adding regular expressions to your programming toolkit can greatly enhance your ability to work with textual data.
+Regular expressions are a powerful tool for pattern matching and text manipulation. Whether you're working with text data or need to validate user input, regular expressions can save you time and effort by providing a concise and flexible way to search and manipulate strings.
 
 ## How To
 
-To use regular expressions in Clojure, we first need to import the `clojure.string` library which contains helpful functions for working with strings. We can do this by including the following line at the top of our Clojure file:
+To use regular expressions in Clojure, you'll need to use the `re-find` function from the `clojure.string` library. Here's an example of using a regular expression to extract all numbers from a string:
 
 ```Clojure
-(use 'clojure.string)
+(require '[clojure.string :as str])
+
+(def text "I have 5 apples and 2 oranges.")
+
+(re-find #"\d+" text)
+;; Output: "5"
+;; Only the first match is returned.
+
+(str/split #"\d+" text)
+;; Output: ["I have " " apples and " " oranges."]
+;; Using the split function allows us to split the string based on the pattern, returning all the text in between the matches.
+
 ```
 
-Let's take a simple example of extracting all the numbers from a string. We can use the `re-find` function and a regular expression pattern to do this. In the code block below, we have a string containing both alphabets and numbers. The regular expression `#"\d+"` matches any sequence of one or more digits.
+You can also use regular expressions to replace parts of a string. Let's say you want to censor all curse words in a given text:
 
 ```Clojure
-(def example-string "abc123def456ghi789")
-(re-find #"\d+" example-string)
-; Output: "123"
-```
+(def text "I don't give a f**k.")
 
-We can also use regular expressions to replace parts of a string with a different value. The `replace` function takes a regular expression pattern and a replacement string as arguments. In the code block below, we replace all occurrences of the word "world" with "universe" in our example string.
+(str/replace text #"\*+" "****")
+;; Output: "I don't give a ****."
 
-```Clojure
-(replace #"\bworld\b" "universe" "Hello world, hello world")
-; Output: "Hello universe, hello universe"
 ```
 
 ## Deep Dive
 
-Regular expressions in Clojure are written using the `#""` syntax, where the regular expression pattern is enclosed in quotes. Certain characters have special meanings in regular expressions, such as `+`, `*`, and `?`, which indicate repetition. To match these characters literally, we need to escape them using a backslash (`\`).
+Regular expressions use special syntax to match patterns in strings. For example, the `+` symbol matches one or more of the preceding element, `\d` matches any digit, and `\*` is an escaped asterisk.
 
-One of the most commonly used functions for working with regular expressions is `re-find`. This function takes a regular expression pattern and a string, and returns the first match. It also has the `re-seq` function which returns all matches in a sequence.
+Some other useful symbols in regular expressions include `^` for the beginning of a string, `$` for the end of a string, and `[]` for specifying a range of characters to match. For a more comprehensive list of regular expression syntax, check out this [cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) or this [quick reference guide](https://www.regular-expressions.info/quickstart.html).
 
-For a more comprehensive understanding of regular expressions in Clojure and their syntax, check out the official documentation [here](https://clojure.org/guides/learn/regular_expressions). Additionally, there are many online resources and tutorials available for learning regular expressions in general.
+It's also important to note that regular expressions can be resource-intensive, especially for large strings. So use them wisely and consider alternative methods if performance is a concern.
 
 ## See Also
 
-- [Official documentation for regular expressions in Clojure](https://clojure.org/guides/learn/regular_expressions)
-- [Regular Expressions 101](https://regex101.com/) - A useful online tool for testing and building regular expressions.
-- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) - A comprehensive guide book to mastering regular expressions.
+If you want to learn more about regular expressions in Clojure, here are some helpful resources for further reading:
+
+- [ClojureDocs page on `re-find`](https://clojuredocs.org/clojure.core/re-find)
+- [Clojure for the Brave and True](https://www.braveclojure.com/regular-expressions/)
+- [Mastering Regular Expressions by Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

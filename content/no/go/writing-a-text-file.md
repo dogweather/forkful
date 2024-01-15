@@ -1,6 +1,7 @@
 ---
-title:                "Go: Skriver en tekstfil"
-simple_title:         "Skriver en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Go: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,41 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil kan virke som en enkel og utdatert aktivitet, men i programmering kan det være svært nyttig. En tekstfil kan lagre data som kan være tilgjengelig for din Go-applikasjon når som helst, og kan også brukes til å eksportere data til andre programmer.
+Å skrive en tekstfil er en grunnleggende oppgave i programmering, og det er en viktig ferdighet å ha for å lagre og behandle data. Det kan også være nyttig for å kommunisere med andre programmer og enheter.
 
-## Hvordan
+## Hvordan du gjør det
 
-Det første trinnet for å skrive en tekstfil i Go er å opprette en fil ved hjelp av `os.Create ()` funksjonen. Deretter kan du skrive data til filen ved hjelp av `fmt.Fprintf()` funksjonen. La oss se på et eksempel:
+For å skrive en tekstfil i Go, må du først importere "os" pakken, som gir funksjoner for å håndtere operativsystemet. Deretter kan du bruke funksjonen "Create" for å opprette en ny fil, og "WriteString" for å skrive data til filen. For å lukke filen, må du bruke "Close" funksjonen. Her er et eksempel på hvordan du gjør det:
 
-```
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    file, err := os.Create("minTekstfil.txt") //Opprettelse av filen "minTekstfil.txt"
-    if err != nil {
-        fmt.Println(err) //Hvis det oppstår en feil, skriv den ut
-        return
-    }
-    defer file.Close() //Lukk filen når programmet er ferdig
-    fmt.Fprintf(file, "Dette er en tekst som vil bli skrevet til filen.") //Skriv tekst til filen
+```Go
+fil, err := os.Create("data.txt") // Opprette fil
+if err != nil {
+    log.Fatal(err)
 }
+defer fil.Close() // Lukke filen etterpå
+
+data := "Hei, dette er en tekstfil skrevet i Go!"
+fil.WriteString(data) // Skrive data til filen
 ```
 
-Når du kjører dette programmet, vil du opprette en ny fil kalt "minTekstfil.txt" med teksten som ble skrevet til den. Du kan endre teksten og prøve å kjøre programmet igjen for å se at den gamle teksten blir overskrevet.
+Nå vil det bli opprettet en fil kalt "data.txt" som inneholder teksten som ble skrevet til den.
 
 ## Dypdykk
 
-For å skrive mer kompleks data til en tekstfil, kan du bruke `bufio` pakken i Go. Denne pakken lar deg lese og skrive data med buffere, noe som kan være mer effektivt. Du kan også bruke `io/ioutil` pakken for å skrive til en tekstfil med mindre kode.
+Når du skriver en tekstfil, er det viktig å sjekke for eventuelle feil som kan oppstå. Dette kan gjøres ved å bruke "err" variabelen som blir returnert når du oppretter filen. Hvis filen allerede eksisterer, vil du for eksempel få en feil som indikerer det.
 
-En annen ting å huske på når du jobber med tekstfiler er å håndtere eventuelle feil som kan oppstå. Dette er spesielt viktig når du arbeider med filer som allerede eksisterer, siden de kan være skrivebeskyttet eller utilgjengelige.
+I tillegg kan du også bruke "Write" funksjonen for å skrive bytes til filen, i stedet for å bare skrive tekststrenger. Dette er spesielt nyttig når du skal skrive binære data.
 
 ## Se også
 
-- Les en tekstfil i Go: https://golang.org/pkg/os/#Stat
-- Manipuler data med buffere i Go: https://golang.org/pkg/bufio/
-- Skriv til en fil med `io/ioutil` pakken: https://golang.org/pkg/io/ioutil/
+- [Go sin offisielle dokumentasjon om å skrive filer](https://golang.org/pkg/os/#Create)
+- [En kort tutorial om å skrive tekstfiler i Go](https://gobyexample.com/writing-files)

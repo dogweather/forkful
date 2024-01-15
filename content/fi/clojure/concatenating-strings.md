@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Clojure: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miks
+Miksi joku ylipäätään haluaisi yhdistellä merkkijonoja? On olemassa monia tilanteita, joissa tarvitaan dynaamista sisältöä tai muokattavia viestejä, kuten esimerkiksi verkkosivujen rakentamisessa tai automatisoiduissa viesteissä. Yhdistämällä merkkijonoja, pystyt luomaan joustavia ratkaisuja tällaisiin tarpeisiin.
 
-Monissa ohjelmointikielissä stringsien yhdistäminen on yksi perustavanlaatuisista tehtävistä. Clojure ei ole poikkeus. Concatenation suorittaa stringien yhdistämisen yhdeksi stringiksi. Tässä blogipostissa kerron syvemmin, miksi joinkin tapauksissa voi olla hyödyllistä yhdistää stringsia ja miten se tehdään Clojurella.
-
-## Miten
+## Näin
+Yhdistäminen tapahtuu Clojuren `.concat`-funktion avulla. Tässä esimerkissä luodaan uusi merkkijono yhdistämällä kolme erillistä merkkijonoa.
 
 ```Clojure
-;Yhden stringin yhdistäminen:
-(println (str "Tämä on " "yksi string " "yhdistettynä."))
-; Output:
-; Tämä on yksi string yhdistettynä.
-
-;Kahden tai useamman stringin yhdistäminen:
-(println (apply str ["Ensin " "yhdistyy " "nämä " "ja sitten " "nämä."]))
-; Output:
-; Ensin yhdistyy nämä ja sitten nämä.
+(let [string1 "Tämä on "
+      string2 "yksi merkkijono, "
+      string3 "joka yhdistetään"]
+  (str string1 string2 string3))
 ```
 
-## Syväluotaus
+Tuloksena saadaan merkkijono "Tämä on yksi merkkijono, joka yhdistetään". Huomaa, että `str`-funktio yhdistää automaattisesti annetut arvot merkkijonoiksi.
 
-Stringsien yhdistämiselle voi olla monia syitä. Yksi yleisin on erilaisten käyttöliittymien tekeminen. Esimerkiksi, jos haluat näyttää käyttäjälle tietyn otsikon ja sisällön, voit yhdistää nämä kaksi stringiä yhdeksi ja tulostaa sen sitten käyttäjälle. Toinen hyödyllinen käyttötapaus voi olla datan muotoilu. Jos esimerkiksi haluat muotoilla tietokannasta haetun datan taulukoksi, voit yhdistää tarvittavat stringit ja tulostaa ne sitten järjestelyä varten.
+## Syvemmälle
+Clojuren merkkijonojen yhdistäminen on tehokasta ja suorituskykyistä. Tämä johtuu siitä, että merkkijonot ovat muuttumattomia tietorakenteita, mikä tarkoittaa sitä, että tallennetun merkkijonon sisältöä ei voida muuttaa. Tämä nopeuttaa ohjelman suoritusta, kun merkkijonoja yhdistellään, sillä ei tarvitse huolehtia mahdollisista muutoksista.
 
-On myös tärkeää muistaa, että stringsien yhdistäminen ei ole vain useiden stringien "liittämistä" toisiinsa. Concatenation tuottaa uuden stringin, joka on yhdistettyjen stringien yhdistelmä. Siksi, jos haluat vain yhdistää stringejä niiden välillä ilman välilyöntejä, voit käyttää esimerkiksi funktiota `str/join`.
+Voit myös käyttää `.concat`-funktion sijaan `str`-funktiota, joka yhdistää merkkijonot tehokkaammin ja tarjoaa lisää mahdollisuuksia dynaamisiin ratkaisuihin.
 
 ## Katso myös
-
-- [Clojure.org - Strings](https://clojure.org/reference/strings)
-- [ClojureDocs - str](https://clojuredocs.org/clojure.core/str)
-- [ClojureDocs - join](https://clojuredocs.org/clojure.string/join)
+- [Clojure opetusohjelma](https://clojure.org/guides/learn/syntax)
+- [Clojure merkkijonon toimenpiteet](https://clojuredocs.org/clojure.string/replace)

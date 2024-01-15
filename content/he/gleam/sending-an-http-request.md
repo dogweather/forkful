@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Gleam: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+# למה:
 
-משלחת בקשת HTTP היא חלק חיוני מתהליך הפיתוח של תוכניות גלים. היא מאפשרת למשתמש ליצור קשר עם שרת חיצוני ולשלוח ולקבל מידע.
+כשפותחים אפליקציות או אתרים באינטרנט, לעיתים קרובות מופיעה הצורך לשלוח בקשות HTTP. הן משמשות כדי להתחבר לשרתים ולקבל מידע או לשלוח עדכונים לשרת. ללא כישורים בשליטה על בקשות ה-HTTP, יכול להיות קשה לפתח אפליקציות רבות ותכניות צד לקוח.
 
-# כיצד לעשות זאת
+# איך לעשות זאת:
 
-```Gleam
-import gleam/http
+כדי לשלוח בקשות HTTP באמצעות Gleam יש להשתמש בפונקציית `httpc.send`. הנה דוגמא לשליחת בקשת GET לאתר של גוגל:
 
-// Build the HTTP request
-let request =
-  http.request("https://www.example.com")
-  |> http.get
-
-// Send the request and get the response
-let response = http.send(request)
-
-// Print the response body
-IO.puts(response.body)
-
-// Output:
-// <!DOCTYPE html>
-// <html>
-//   <head>
-//     <title>Example Domain</title>
-//     ...
-//   </head>
-//   ...
-// </html>
+```
+Gleam ->
+  let
+    url = "https://www.google.com"
+    request = httpc.get(url)
+  in
+  request
 ```
 
-# טביעת קורה עמוקה
+הקוד מגיע בעזרת `get` לשכבת האפליקציה התחתונה ומחזיר את התשובה של השרת לאחר שורת ההתחברות נטענת. בדרך זו ניתן לשלוח גם בקשות POST ולהוסיף פרמטרים לגוף הבקשה. 
 
-שליחת בקשת HTTP יכולה להיות מורכבת יותר מבלוק קוד אחד בלבד. בנוסף לשליחת בקשת פשוטה כמו בדוגמה לעיל, ניתן גם להוסיף הגדרות נוספות כמו שמתאימים, גוף של בקשת POST או להתאים את התוכן של התגובה הנמסרת.
+# לחקור עמוק יותר:
 
-# ראה גם
+כאשר משתמשים ב-HTTP requests ב- Gleam, ניתן לשלוח כמה בקשות גם במקביל באמצעות פונקציות כמו `send_all` ו`pipe`. כמו כן, ניתן להגדיר כשירות HTTP משלנו באמצעות ספריית `gkoa`, שמאפשרת לנו לבנות מתאם לשירות ולנהל בקשות עם פרמטרים נוספים כגון תזמון והענקת הרשאות.
 
-- [דוקומנטציה רשמית של Gleam לשליחת בקשת HTTP](https://gleam.run/std/http.html#request)
-- [ספריית HTTP של גלים](https://github.com/gleam-lang/http)
-- [מדריך בשפה ספרדית לשליחת בקשות HTTP עם גלים](https://apuntdev.wordpress.com/2019/05/08/enviando-peticiones-http-con-gleam/)
+# ראה גם:
+
+- דוגמאות נוספות של שליחת בקשות HTTP בעזרת Gleam ניתן למצוא במסמכי הסיוע של Gleam.
+- בכתובת האינטרנט הבאה ניתן למצוא הסבר נרחב על שימוש ב-HTTP requests ב-Gleam: https://gleam.run/docs/http-client.

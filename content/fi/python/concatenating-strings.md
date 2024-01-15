@@ -1,6 +1,7 @@
 ---
-title:                "Python: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Tekstijonojen yhdistäminen"
+html_title:           "Python: Tekstijonojen yhdistäminen"
+simple_title:         "Tekstijonojen yhdistäminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi meidän pitäisi yhdistää merkkijonoja? Yksi yleisimmistä syistä on luoda dynaamisia viestejä tai tulosteita, jotka sisältävät muuttuvia elementtejä, kuten käyttäjän syöttämät tiedot. 
+On monia eri tilanteita, joissa ohjelmointitehtävä vaatii useiden merkkijonojen yhdistämistä yhdeksi merkkijonoksi. Tätä kutsutaan merkkijonojen yhdistämiseksi tai "concatenation" englanniksi. Tämä artikkeli kertoo miten tämä voidaan tehdä Pythonin avulla ja mikä on syvempi tausta tämän ohjelmointitekniikan takana.
 
-## Kuinka
+## Miten
 
-Yhdistämiseen merkkijonoja Pythonissa on useita tapoja, mutta yksi yksinkertaisimmista on käyttää plus-merkkiä (+). Tässä esimerkissä lisätään kaksi merkkijonoa yhteen ja tulostetaan tulos:
+Merkkijonojen yhdistäminen Pythonilla on yksinkertaista käyttämällä "+" operaattoria. Katso alla oleva esimerkki:
 
-```Python
-merkkijono_1 = "Tämä on "
-merkkijono_2 = "esimerkki"
-tulos = merkkijono_1 + merkkijono_2
-print(tulos)
+```python
+# Määritetään kaksi merkkijonoa
+string1 = "Hei"
+string2 = "maailma!"
+
+# Yhdistetään merkkijonot ja tallennetaan uuteen muuttujaan
+uusi_merkkijono = string1 + string2
+
+# Tulostetaan uusi merkkijono
+print(uusi_merkkijono)
+
+# Output: "Hei maailma!"
 ```
 
-Tuloste: Tämä on esimerkki
+Kuten näet, yhdistetty merkkijono tallennetaan uuteen muuttujaan ja tulostetaan sitten käyttämällä print-funktiota. On myös mahdollista yhdistää useampia merkkijonoja yhdellä kertaa käyttämällä samaa "+" operaattoria.
 
-Toinen tapa yhdistää merkkijonoja on käyttää `.join()` -funktiota. Tämä toimii hyvin, kun halutaan yhdistää useampia merkkijonoja yhteen. 
+## Syvempi sukellus
 
-```Python
-merkkijonot = ["Hei", "sinä"]
-tulos = " ".join(merkkijonot)
-print(tulos)
-```
+Merkkijonojen yhdistämisellä on tärkeä rooli tietojenkäsittelyssä ja ohjelmoinnissa yleensä. Se auttaa tekemään koodista selkeämpää ja helpommin ymmärrettävää. Lisäksi Pythonilla on muita tapoja yhdistää merkkijonoja, kuten käyttämällä join()-funktiota tai f-string-syntaksia.
 
-Tuloste: Hei sinä
-
-## Syvällisempi sukellus
-
-Jos haluat syvällisempää tietoa merkkijonojen yhdistämisestä Pythonissa, tässä on muutamia seikkoja, jotka kannattaa huomioida:
-
-- Merkkijonoja voi yhdistää vain samantyyppisten tietojen kanssa, eli esimerkiksi ei voi yhdistää merkkijonoa ja kokonaislukua.
-- Jos haluat lisätä muuttuvia arvoja merkkijonoon, voit käyttää f-string-merkkijonoa, esimerkiksi `f"Tervetuloa {nimi}!"`.
-- Muista myös, että merkkijonat ovat immuuneja, eli niitä ei voi muuttaa suoraan. Sen sijaan merkkijonon muuttaminen luo aina uuden merkkijonon.
+On myös hyvä huomata, että merkkijonojen yhdistäminen voi olla hidas prosessi tietyissä tapauksissa, koska uusi merkkijono tulee luoda jokaisen yhdistämisen yhteydessä. Tästä syystä, jos tarvitset tehokkaampaa tapaa yhdistää useita merkkijonoja, kannattaa harkita liittymäoperaattorin ("join operator") tai StringBuilderiin pohjautuvan moduulin käyttöä.
 
 ## Katso myös
 
-- [Pythonin merkkijonon yhdistämisen dokumentaatio](https://docs.python.org/3/library/string.html#string-concatenation)
-- [Pythonin f-string-merkkijonojen opas](https://realpython.com/python-f-strings/)
-- [Perusteet merkkijonojen käsittelystä Pythonissa](https://www.freecodecamp.org/news/python-string-split-concatenate-format/)
+- [Pythonin virallinen dokumentaatio merkkijonojen yhdistämisestä](https://docs.python.org/3/library/stdtypes.html#str.join)
+- [Stack Overflow -parhaat käytännöt merkkijonojen yhdistämisestä Pythonissa](https://stackoverflow.com/questions/45258048/concatenating-two-string-in-python-most-flexible-way)
+- [Pythonin virallinen ohjelmistokehittäjien yhdistys (PSF)](https://www.python.org/)

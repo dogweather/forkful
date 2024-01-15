@@ -1,5 +1,6 @@
 ---
-title:                "Elm: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Elm: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,53 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 HTTP 요청을 보내는가?
+## 왜
+HTTP 요청을 보내는 것에 대해 궁금한 독자들이 많아서 이것에 대해 간단한 설명을 해보고자 합니다. Elm에서 HTTP 요청은 어떻게 작동하는지 차근차근 알아보도록 하겠습니다.
 
-HTTP 요청은 인터넷에서 정보를 가져오는 일반적인 방법입니다. Elm에서 HTTP 요청을 보내는 것은 웹 프로그래밍에 필요한 기본적인 기술입니다. 이를 통해 다른 웹 사이트의 데이터를 가져와서 조작하거나 사용할 수 있습니다.
-
-## 방법
-
+## 어떻게
 ```Elm
 import Http
-import Json.Decode exposing (Decoder, int, string, list)
+import Json.Decode exposing (int, string)
 
-type alias User = 
-  { id : Int, 
-    name : String, 
-    interests : List String 
-  }
+type Msg
+    = FetchSuccess (Http.Response (Result Http.Error
+Something))
+    | FetchFailed Http.Error
 
--- 사용자의 데이터를 가져오기 위한 Json 디코딩 함수
-userDecoder : Decoder User
-userDecoder = 
-  Decode.map3 User 
-    (Decode.field "id" int) 
-    (Decode.field "name" string)
-    (Decode.field "interests" (Decode.list string))
+type Thing = Thing
+    { id : Int
+    , name : String
+    }
 
--- 사용자 데이터를 가져오기 위한 HTTP 요청 함수
-getUser : Http.Request User
-getUser = 
-  Http.get "https://samplewebsite.com/users/1" userDecoder
+stringDecoder : Json.Decode.Decoder Thing
+stringDecoder =
+    Json.Decode.map3 Thing
+        (Json.Decode.field "id" int)
+        (Json.Decode.field "name" string)
 
--- HTTP 요청을 보내고 데이터를 가져오는 함수
-fetchUser : Cmd Msg
-fetchUser = 
-  Http.send UserFetched getUser
+intDecoder : Json.Decode.Decoder Int
+intDecoder =
+    Json.Decode.field "id" int
 
--- 사용자 데이터가 담긴 값을 저장하는 Msg 타입
-type Msg = 
-  UserFetched (Result Http.Error User)
+[ Http.send FetchSuccess
+    (Http.get "/api/thing/1" intDecoder)
+, Http.send FetchFailed
+    (Http.delete "/api/thing/5" stringDecoder)
+]
 ```
 
-위의 예제 코드에서는 Elm의 `Http` 모듈을 사용하여 HTTP 요청을 보내고, `Json.Decoder` 모듈을 사용하여 가져온 데이터를 디코딩하였습니다. 이제 `fetchUser` 함수를 호출하면 `UserFetched` 메시지가 생성되고, 해당 메시지를 통해 보낸 HTTP 요청의 결과를 확인할 수 있습니다.
+위의 예제 코드는 Elm에서 HTTP 요청을 보내는 방법을 보여주고 있습니다. 먼저, Http 모듈을 import하고 Json.Decode 모듈에서 int와 string decoder를 이용하여 데이터를 decoding합니다. 그리고, Msg 타입을 정의하여 요청이 성공하거나 실패한 경우에 대한 처리를 할 수 있도록 합니다. 이제, Http.get과 Http.delete를 이용하여 서버로 요청을 보내고, 결과를 Msg에 맞게 처리합니다.
 
-## 깊이 있는 정보
+## 더 깊이
+HTTP 요청을 보내기 위해서는 Elm에서 제공하는 Http 모듈을 이용해야 합니다. 이 모듈을 사용하면 GET, POST, PUT, DELETE 등 다양한 HTTP 메소드를 이용할 수 있습니다. 또한, Json.Decode 모듈을 이용하여 받아온 데이터를 decoding할 수도 있습니다. 더 자세한 정보는 [Elm 공식 문서](https://package.elm-lang.org/packages/elm/http/latest/)를 참고하시기 바랍니다.
 
-HTTP 요청을 보내는 데는 여러 가지 방법이 있습니다. `Http` 모듈을 사용하는 것 외에도, `HttpBuilder` 모듈을 사용하거나, `Json.Decoder` 모듈 외에 다른 디코더를 사용할 수도 있습니다. 또한, 여러 개의 HTTP 요청을 보내고, 응답을 조합해서 사용할 수도 있습니다. 이러한 깊이 있는 개념을 이해하면 더 다양한 기능을 구현할 수 있습니다.
-
-## 더보기
-
-- Elm 공식 문서: https://guide.elm-lang.org/
-- Elm 커뮤니티 블로그: https://www.elm-community.net/
-- Elm 슬랙 채널: https://elmlang.herokuapp.com/
+## 더 읽어보기
+- [Elm: HTTP](https://guide.elm-lang.org/effects/http.html)
+- [Creating and using Elm HTTP requests with Types](https://medium.com/@ckoster22/creating-and-using-elm-http-requests-with-types-bb3d0c592780)
+- [HTTP Requests and Elm](https://thoughtbot.com/blog/http-requests-and-elm)

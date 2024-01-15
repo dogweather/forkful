@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "C# recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C#"
 category:             "C#"
@@ -9,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-
-In programming, it is not uncommon to encounter situations where text needs to be replaced within a file. This could be for formatting purposes, data manipulation, or any other specific task. In such cases, it is important to have an efficient method of searching and replacing text to save time and effort. In this blog post, we will explore the different ways to do so using C#.
+## Why
+Searching and replacing text is a common task in programming, especially when dealing with large amounts of data or making changes to code. It can save time and effort by making it easier to make multiple changes at once.
 
 ## How To
+To perform a search and replace in C#, we can use the `Replace()` method from the `String` class. Here are some examples:
 
-There are a few ways to search and replace text in a file using C#. The most common method is using the `Regex` class to perform regular expression searches and replacements. The `Regex` class provides various methods such as `Match()`, `Replace()`, and `ReplaceMany()` that can be used to perform different types of search and replace operations. Below is a basic example using a regular expression to search and replace text in a file:
+```C#
+string text = "Hello world!";
+string newText = text.Replace("world", "universe");
 
-```
-C#
-string fileContent = File.ReadAllText("example.txt");
-string pattern = @"([a-z]+) (\d+)";
-string replacement = "$2 $1";
-
-string updatedContent = Regex.Replace(fileContent, pattern, replacement);
-
-Console.WriteLine(updatedContent);
+Console.WriteLine(newText); // Output: Hello universe!
 ```
 
-In the example above, the `Regex` class is used to find patterns matching lowercase alphabets followed by numbers, and then replace them with the capture groups in reverse order. The output should include the replaced text in the desired format.
+We can also use the `Regex.Replace()` method to perform a search and replace using regular expressions.
 
-Another commonly used method for searching and replacing text is using the `StringBuilder` class. This class provides efficient ways to manipulate strings and also has a `Replace()` method that allows for text replacement. Below is an example of using `StringBuilder` to search and replace text:
+```C#
+string text = "The quick brown fox jumps over the lazy dog.";
+string regex = @"[aeiou]";
+string newText = Regex.Replace(text, regex, "-");
 
+Console.WriteLine(newText); // Output: Th- q--ck br-wn f-x j-mps -v-r th- l-zy d-g.
 ```
-C#
-StringBuilder sb = new StringBuilder();
-sb.AppendLine("This is some text");
-sb.AppendLine("This is some more text");
-sb.AppendLine("Even more text");
-
-sb.Replace("text", "content");
-
-Console.WriteLine(sb.ToString());
-```
-
-In the above example, the `Replace()` method is used to change all instances of `"text"` to `"content"` in the `StringBuilder` object. The output should include the updated content with the replaced text.
 
 ## Deep Dive
+When using the `Replace()` method, we can specify additional parameters such as the starting index and the number of characters to replace. This allows for more control over the replacement process.
 
-Regular expressions can be a powerful tool for searching and replacing text, but they can also be complex and difficult to read. One useful tip when working with regular expressions is to use online tools such as Regex101 or RegExr to test and debug your patterns before implementing them in your C# code.
+Another important thing to keep in mind is that `Replace()` is case-sensitive. To perform a case-insensitive search and replace, we can use the `StringComparison` parameter and pass in `IgnoreCase` as an argument.
 
-Another thing to keep in mind is that regular expressions can also be used for advanced search and replace operations, such as capturing specific groups of text and using them in the replacement text. This can be done by using capture groups and referencing them using back-references, denoted by `"$N"` where N represents the number of the capture group.
+Regular expressions also offer a wide range of options for searching and replacing text. By using capturing groups and replacement patterns, we can perform complex replacements easily.
 
 ## See Also
-
-- [Microsoft C# Regex Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [Microsoft C# StringBuilder Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netcore-3.1)
-- [Regex101](https://regex101.com/)
-- [RegExr](https://regexr.com/)
+- [String.Replace Method (System)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+- [Regex.Replace Method (System.Text.RegularExpressions)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
+- [Regular Expressions in C# (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions-in-csharp)

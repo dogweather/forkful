@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Working with json"
+title:                "Working with json"
+html_title:           "Clojure recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,34 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-JSON, or JavaScript Object Notation, is a popular file format used for storing and transmitting data. It is a lightweight, human-readable format that is easy for both humans and machines to understand. As a result, it has become the preferred format for data exchange in web applications and APIs.
+JSON (JavaScript Object Notation) is a widely used data format for exchanging information between web services. Clojure, being a functional programming language, provides a powerful and concise way to work with JSON data. It allows developers to easily process and manipulate JSON objects, making it an essential skill for any Clojure programmer.
 
 ## How To
-When working with JSON in Clojure, there are a few key things to keep in mind. First, we need to understand that JSON is just a text-based format, so we will need to use functions to convert it to and from Clojure data structures. Secondly, Clojure has a built-in library called `clojure.data.json` that makes working with JSON a breeze.
 
-Let's take a look at a basic example of how to convert a Clojure map into JSON and vice versa:
+To work with JSON in Clojure, you first need to import the `clojure.data.json` library. This library provides functions for parsing and creating JSON data. Let's take a look at an example of parsing a JSON string into a Clojure data structure:
 
 ```Clojure
 (require '[clojure.data.json :as json])
 
-(def user {:name "John", :age 30, :occupation "Software Engineer"})
+(def data "{\"name\": \"John\", \"age\": 25, \"interests\": [\"programming\", \"hiking\"]}")
 
-(json/write-str user)
-;; Output: "{\"name\":\"John\",\"age\":30,\"occupation\":\"Software Engineer\"}"
-
-(json/read-str "{\"name\":\"Jane\",\"age\":28,\"occupation\":\"Data Scientist\"}")
-;; Output: {:name "Jane", :age 28, :occupation "Data Scientist"}
+(def parsed-data (json/read-str data))
 ```
 
-As you can see, the `clojure.data.json` library provides us with `write-str` and `read-str` functions to convert between Clojure data structures and JSON strings. We can also use the `write` and `read` functions to convert to and from files.
+In the above code, we use the `read-str` function from the `clojure.data.json` library to parse the JSON string into a Clojure map. We can then access the data using normal Clojure functions such as `get`:
+
+```Clojure
+(get parsed-data "name")   ;; Output: "John"
+(get parsed-data "age")    ;; Output: 25
+(get parsed-data "interests")  ;; Output: ["programming" "hiking"]
+```
+
+Similarly, we can create a JSON string from a Clojure data structure using the `write-str` function:
+
+```Clojure
+(json/write-str parsed-data)   ;; Output: "{\"name\":\"John\",\"age\":25,\"interests\":[\"programming\",\"hiking\"]}"
+```
 
 ## Deep Dive
-Clojure's `clojure.data.json` library comes with several functions that allow us to manipulate JSON data. Some of the most commonly used ones include `parse`, `format`, `compact`, `encode`, and `decode`. These functions provide us with a way to parse JSON strings, pretty-print JSON data, remove whitespace, and encode and decode JSON data.
 
-Another useful function is `json-str`, which allows us to convert any Clojure data structure into a JSON string. This can be especially handy when building APIs that need to return JSON data.
+Clojure provides a powerful way to transform and process data using its core functions such as `map`, `filter`, and `reduce`. These functions can be used to easily manipulate JSON objects and extract specific data.
 
-It is also worth noting that Clojure's `cheshire` library provides an alternative to `clojure.data.json` with additional features such as support for custom encoders and decoders, better error handling, and improved performance.
+For example, let's say we want to extract the names of the people from a list of JSON objects. We can use the `map` function to achieve this:
+
+```Clojure
+(def people [{:name "John", :age 25} {:name "Jane", :age 30} {:name "Bob", :age 40}])
+
+(map :name people)  ;; Output: ("John" "Jane" "Bob")
+```
+
+We can also use the `filter` function to find specific data from a JSON object based on a condition. For instance, if we want to find all the people above the age of 30, we can do so using the `filter` function:
+
+```Clojure
+(filter #(> (:age %) 30) people)   ;; Output: ({:name "Jane", :age 30} {:name "Bob", :age 40})
+```
 
 ## See Also
-- Official Clojure documentation for `clojure.data.json`: https://clojure.github.io/data.json/
-- Cheshire library for working with JSON in Clojure: https://github.com/dakrone/cheshire
+
+- [clojure.data.json library documentation](https://github.com/clojure/data.json)
+- [Clojure for Beginners: Working with JSON](https://www.braveclojure.com/clojure-for-the-brave-and-true/working-with-json/)

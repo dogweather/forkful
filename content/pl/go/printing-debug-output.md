@@ -1,6 +1,7 @@
 ---
-title:                "Go: Wydrukowanie danych z debugowania"
-simple_title:         "Wydrukowanie danych z debugowania"
+title:                "Drukowanie wyjścia debugowania"
+html_title:           "Go: Drukowanie wyjścia debugowania"
+simple_title:         "Drukowanie wyjścia debugowania"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -11,86 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Debugowanie jest nieodłączną częścią pisania kodu w języku Go. Wypisywanie informacji debuggowania może pomóc programiście zrozumieć, w jaki sposób jego program działa i gdzie ewentualnie pojawiają się błędy. W tym wpisie dowiesz się, dlaczego warto stosować wypisywanie debug output i jak to zrobić w języku Go.
+Dlaczego drukowanie informacji debugujących jest ważne w programowaniu w języku Go? Dla wielu programistów jest to niezbędny krok w procesie rozwiązywania błędów. Dzięki wyświetleniu informacji debugujących można lepiej zrozumieć zachowanie programu i łatwiej znaleźć i naprawić ewentualne problemy.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-W języku Go istnieje wiele sposobów na wyświetlanie informacji debuggowania. Najprostszym sposobem jest użycie funkcji `Println()` z pakietu `fmt`. Przykładowy kod wyglądałby następująco:
-```
+W języku Go istnieje wiele sposobów na wyświetlanie informacji debugujących. Jednym z najprostszych i najbardziej popularnych jest użycie funkcji `fmt.Printf()` lub `fmt.Println()`. Przykładowy kod wyglądałby następująco:
+
+```Go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Debug output")
+	// deklaracja zmiennej
+	name := "Jan"
+
+	// drukowanie informacji debugujących
+	fmt.Printf("Zmienna name ma wartość: %s", name)
 }
 ```
 
-Powyższy kod wypisze w konsoli napis "Debug output". Innym przydatnym sposobem jest użycie funkcji `Printf()` z pakietu `fmt`, która pozwala na formatowanie wyjścia. Przykładowy kod:
-```
-package main
+Wynik takiego kodu to: `Zmienna name ma wartość: Jan`.
 
-import "fmt"
+## Wprowadzenie w szczegóły
 
-func main() {
-    name := "John"
-    age := 27
-    fmt.Printf("My name is %s and I am %d years old.", name, age)
-}
-```
+Istnieją również bardziej zaawansowane sposoby wyświetlania informacji debugujących, takie jak użycie pakietu `log` lub narzędzia `pprof` do profilowania programu. Można również użyć funkcji `panic()` do zatrzymania działania programu w razie wystąpienia błędu i wyświetlenia stosu wywołań. 
 
-Wynikiem powyższego kodu będzie wypisanie zdania "My name is John and I am 27 years old." Możliwe jest także wypisanie informacji o błędach używając funkcji `Errorf()`. Przykładowy kod:
-```
-package main
-
-import "fmt"
-
-func divide(x, y int) (int, error) {
-    if y == 0 {
-        return 0, fmt.Errorf("cannot divide by zero")
-    }
-    return x / y, nil
-}
-
-func main() {
-    result, err := divide(10, 0)
-    if err != nil {
-        fmt.Printf("An error occurred: %s", err)
-    } else {
-        fmt.Println(result)
-    }
-}
-```
-
-W powyższym kodzie w przypadku próby podzielenia przez zero, zostanie wyświetlony błąd "An error occurred: cannot divide by zero".
-
-## Deep Dive
-
-W języku Go istnieje także możliwość tworzenia własnych funkcji do wypisywania informacji debuggowania. Przykładowy kod wypisujący informacje o zmiennej i jej wartości wyglądałby następująco:
-```
-package main
-
-import (
-    "fmt"
-    "reflect"
-)
-
-func debug(v interface{}) {
-    fmt.Printf("Value: %v, Type: %T", v, v)
-}
-
-func main() {
-    name := "Jane"
-    age := 30
-    debug(name) // wypisze "Value: Jane, Type: string"
-    debug(age) // wypisze "Value: 30, Type: int"
-}
-```
-
-Warto też pamiętać, że wypisywanie informacji debuggowania może mieć znaczny wpływ na wydajność programu. W przypadku wyświetlania zbyt dużej ilości informacji, program może działać znacznie wolniej.
+Jednak warto pamiętać, że zbyt duża ilość informacji debugujących może spowolnić działanie programu. Dlatego ważne jest umiejętne wybieranie i używanie odpowiednich narzędzi w celu uniknięcia nadmiaru informacji.
 
 ## Zobacz także
 
-- [Funkcje wypisywania informacji debuggowania w języku Go](https://golang.org/pkg/fmt/)
-- [Jak debugować w języku Go](https://blog.alexellis.io/golang-debugging-a-love-story/)
-- [Przydatne narzędzia do debuggowania w języku Go](https://scene-si.org/2019/08/11/golang-debuggertools/)
+- Dokumentacja języka Go: https://golang.org/doc/
+- Oficjalny blog języka Go: https://blog.golang.org/
+- Kanał YouTube "Just for Func" prowadzony przez twórcę języka Go: https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw

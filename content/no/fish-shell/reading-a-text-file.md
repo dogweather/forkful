@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Lesing av en tekstfil"
-simple_title:         "Lesing av en tekstfil"
+title:                "Leser en tekstfil"
+html_title:           "Fish Shell: Leser en tekstfil"
+simple_title:         "Leser en tekstfil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,64 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Lurer du på hvordan du kan lese tekstfiler ved hjelp av Fish Shell? Da er du på rett sted! Dette innlegget vil vise deg hvordan du kan gjøre dette enkelt og effektivt.
+Lurer du på hvordan du kan lese tekstfiler ved hjelp av Fish Shell? Da er du på rett sted! I denne artikkelen skal vi gå gjennom hvordan du kan lese og behandle tekstfiler ved hjelp av Fish Shell.
 
-## Hvordan
+## Slik gjør du det
 
-For å lese en tekstfil i Fish Shell, kan du bruke kommandoen `cat`. Denne kommandoen vil lese innholdet i filen og vise det i terminalvinduet. La oss si at vi har en tekstfil kalt "minfil.txt" som inneholder følgende tekst:
-
-```
-Hei! Velkommen til min blogg om Fish Shell.
-```
-
-For å lese denne filen i Fish Shell, skriver vi følgende kommando i terminalen:
+For å lese en tekstfil ved hjelp av Fish Shell kan du bruke kommandoen `cat`. Denne kommandoen viser innholdet i en tekstfil på skjermen. For eksempel:
 
 ```Fish Shell
-cat minfil.txt
+cat filnavn.txt
 ```
 
-Dette vil gi oss følgende output:
-
-```
-Hei! Velkommen til min blogg om Fish Shell.
-```
-
-Du kan også bruke `less` kommandoen for å lese tekstfiler. Denne kommandoen vil gi deg muligheten til å bla gjennom tekstfilen.
+Dette vil vise innholdet i filen `filnavn.txt`. Du kan også bruke `less` kommandoen for å lese tekstfiler i en paginert visning. Dette er spesielt nyttig hvis filen er veldig lang.
 
 ```Fish Shell
-less minfil.txt
+less filnavn.txt
 ```
 
-Ved å trykke på piltastene opp og ned, kan du navigere gjennom filen. For å avslutte, kan du trykke på "q" på tastaturet ditt.
-
-## Deep Dive
-
-Hvis du vil lese en fil som har flere sider med innhold, kan du bruke `head` og `tail` kommandoene. `head` vil vise de første linjene i filen, mens `tail` vil vise de siste linjene.
+Dersom du vil lagre innholdet fra en tekstfil og behandle det videre, kan du bruke "redirect" operatøren `>` for å lagre det i en annen fil. For eksempel:
 
 ```Fish Shell
-head minfil.txt
+cat filnavn.txt > nyfil.txt
 ```
 
-Dette vil gi oss følgende output:
+Dette vil lagre innholdet fra `filnavn.txt` i en ny fil som heter `nyfil.txt`.
 
-```
-Hei! Velkommen til min blogg om Fish Shell.
-```
+## Dypdykk
 
-Mens denne kommandoen:
+Fish Shell har også innebygd støtte for å lese og behandle tekstfiler ved hjelp av variabler. For eksempel kan du bruke variabelen `$argv` for å få tilgang til argumentene som blir gitt til et Fish Shell-skript. Dette gjør det enklere å lese og behandle tekstfiler i mer komplekse skript.
+
+En annen nyttig kommando er `grep` som lar deg søke etter et bestemt mønster eller ord i en tekstfil. For eksempel:
 
 ```Fish Shell
-tail minfil.txt
+grep "fisk" filnavn.txt
 ```
 
-Vil gi oss følgende output:
-
-```
-Hei! Velkommen til min blogg om Fish Shell.
-```
+Dette vil vise alle linjer i filen `filnavn.txt` som inneholder ordet "fisk".
 
 ## Se også
 
-- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/)
-- [En introduksjon til Fish Shell](https://medium.com/better-programming/a-gentle-introduction-to-the-fish-shell-1577c8af905e)
-- [Fish Shell tutorial på norsk](https://github.com/SindreSvendby/fish-tutorial/blob/master/tutorial.md)
+- Fish Shell dokumentasjonen: https://fishshell.com/docs/current/
+- 10 tips for å gjøre Fish Shell enda mer kraftig: https://dev.to/charalampos197/10-tips-to-empower-fish-shell-41eg

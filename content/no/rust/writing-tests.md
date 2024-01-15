@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Skrevetester"
-simple_title:         "Skrevetester"
+title:                "Skriving av tester"
+html_title:           "Rust: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -9,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive tester i programmering er en viktig og nødvendig del av utviklingsprosessen. Tester bidrar til å sikre at koden fungerer som den skal og reduserer risikoen for feil og bugs i produksjon. Det kan også bidra til å forbedre kvaliteten og holdbarheten til kodebasen din.
+Å skrive tester er en viktig del av utviklingen av programvare. Det bidrar til å avdekke feil og sikre at koden fungerer som den skal, noe som resulterer i mer pålitelige og robuste applikasjoner.
 
-# Hvordan
+## Hvordan
 
-For å skrive tester i Rust, må du først importere "test" biblioteket ved å legge til følgende linje øverst i filen din:
+For å skrive tester i Rust, må du først importere test-rust biblioteket ved å legge til følgende linje øverst i filen din:
 
 ```Rust
-#[test]
+use test_rust::assert_eq;
 ```
 
-Deretter kan du bruke tester ved å legge til egendefinerte funksjoner og bruke assert-makroen for å sjekke om ønsket resultat er oppnådd. Her er et eksempel på en enkel test av en "add" funksjon:
+Deretter kan du bruke `assert_eq` funksjonen for å sammenligne verdier og sikre at de er like. Her er et eksempel på en enkel testfunksjon som sjekker om to tall er like:
 
 ```Rust
-#[test]
-fn test_add() {
-    let result = add(2, 3); // Kaller funksjonen "add" med to tall og lagrer resultatet i en variabel
-    assert_eq!(result, 5); // Sjekker om resultatet er lik forventet svar
+fn test_addition() {
+    let num1 = 2;
+    let num2 = 3;
+    let result = num1 + num2;
+    assert_eq(result, 5);
 }
 ```
 
-Når du kjører denne testen, vil du få en melding om at testen er bestått eller mislyktes, samt informasjon om hvilken linje som eventuelt feilet.
+Når du kjører testene dine, vil du få følgende utgang:
 
-# Dypdykk
+```
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
 
-Det finnes flere typer tester du kan skrive i Rust, blant annet unit tester, integrasjonstester og ytelsestester. Det er også mulig å bruke "test" biblioteket til å generere dokumentasjon ved hjelp av kodeeksempler.
+Dette betyr at testen bestått og at koden fungerer som forventet. Hvis testen hadde feilet, ville du fått en feilmelding med informasjon om hva som gikk galt.
 
-En viktig regel å følge når man skriver tester i Rust er at hver testfunksjon skal være uavhengig og ikke påvirke andre tester. Dette sikrer at resultatene er pålitelige og at eventuelle feil kan spores tilbake til en spesifikk test.
+## Dypdykk
 
-Hvis du ønsker å lære mer om å skrive tester i Rust, kan du sjekke ut dokumentasjonen for "test" biblioteket på Rusts offisielle nettside.
+Tests i Rust er basert på enhetstesting, som fokuserer på å teste enkeltdeler av koden. Dette gjør at du kan isolere og teste mindre deler av koden din, noe som gjør det lettere å finne og rette feil.
 
-# Se også
+For å skrive kvalitets tester, må du sørge for å teste både positive og negative scenarier. Det vil si å teste at koden fungerer som forventet når alt går rett, men også når noe går galt. Dette vil bidra til å sikre at koden din er robust og kan håndtere uventet input.
 
-* [Rust dokumentasjon - test biblioteket](https://doc.rust-lang.org/std/macro.assert.html)
-* [En innføring i å skrive tester i Rust](https://adventures.mechanicalrock.io/rust-introduction-w-writing-unit-tests.html)
-* [Hvordan skrive gode tester i Rust](https://medium.com/@adiswami/a-concise-guide-to-writing-tests-in-rust-83116dd9a344)
+Det er også viktig å opprettholde en god dekningsgrad på testene dine. Det vil si at testene bør dekke så mye av koden din som mulig for å sikre at alle deler fungerer som de skal. Rust har et innebygd verktøy, `cargo`, som kan hjelpe deg med å måle testdekningsgraden din.
+
+## Se også
+
+For mer informasjon om testing i Rust, sjekk ut følgende ressurser:
+
+- [The Rust Book](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rust Coding Guidelines for Testing](https://doc.rust-lang.org/1.10.0/book/advanced-testing.html)
+- [Offisiell Rust Dokumentasjon for Test](https://doc.rust-lang.org/test/)

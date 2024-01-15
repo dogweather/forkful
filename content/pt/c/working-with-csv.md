@@ -1,5 +1,6 @@
 ---
-title:                "C: Trabalhando com csv"
+title:                "Trabalhando com csv"
+html_title:           "C: Trabalhando com csv"
 simple_title:         "Trabalhando com csv"
 programming_language: "C"
 category:             "C"
@@ -9,65 +10,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV?
+## Porque
 
-CSV (Comma-Separated Values) é um formato de arquivo amplamente utilizado para armazenar dados tabulares, como planilhas. Trabalhar com CSV é uma habilidade importante para qualquer programador de linguagem C, pois permite a manipulação de grandes quantidades de dados de forma eficiente e conveniente.
+Trabalhar com arquivos CSV (Comma Separated Values) é uma tarefa comum para muitos programadores, especialmente quando se trata de manipulação de dados. O CSV é um formato de arquivo simples e fácil de entender, o que o torna uma escolha popular para armazenar e trocar dados entre sistemas.
 
-## Como fazer:
+## Como Fazer
 
-Para trabalhar com CSV em um programa C, primeiro precisamos incluir a biblioteca "stdio.h" em nosso código. Em seguida, podemos abrir um arquivo CSV usando a função `fopen()` e especificando o modo de leitura como "r". Uma vez que o arquivo esteja aberto, podemos ler os dados usando a função `fscanf()` e armazená-los em variáveis adequadas. Por fim, é importante fechar o arquivo usando a função `fclose()`.
+Para começar, é necessário incluir a biblioteca <stdio.h> e utilizar o comando "fopen" para abrir o arquivo CSV desejado. Em seguida, o comando "fscanf" pode ser utilizado para ler os dados do arquivo e armazená-los em variáveis. Por exemplo:
 
-Um exemplo prático seria o seguinte:
+```C
+#include <stdio.h>
+ 
+int main()
+{
+    FILE *arq_csv = fopen("planilha.csv", "r"); 
+    // Abre o arquivo CSV em modo de leitura
+    
+    char nome[20];
+    int idade;
+    fscanf(arq_csv, "%s, %d", nome, &idade); 
+    // Lê os dados do arquivo e armazena em variáveis
+    
+    printf("Nome: %s, Idade: %d", nome, idade);
+    // Imprime os dados lidos do arquivo 
+    
+    fclose(arq_csv); 
+    // Fecha o arquivo
+}
 
 ```
+
+Exemplo de conteúdo no arquivo "planilha.csv":
+
+```C
+João, 25
+Ana, 30
+Pedro, 27
+```
+
+Exemplo de saída no console:
+
+```
+Nome: João, Idade: 25
+```
+
+## Mergulho Profundo
+
+Além de ler os dados de um arquivo CSV, também é possível escrever informações em um novo arquivo CSV utilizando o comando "fprintf". Para isso, é necessário abrir o arquivo em modo de escrita com o parâmetro "w":
+
+```C
 #include <stdio.h>
-
-int main() {
-    FILE *arquivo;
-    char nome[30];
+ 
+int main()
+{
+    FILE *arq_csv = fopen("novaplanilha.csv", "w"); 
+    // Abre o arquivo CSV em modo de escrita
+    
+    char nome[20];
     int idade;
-    float altura;
-
-    arquivo = fopen("dados.csv", "r");
-    if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo!");
-        return 1;
-    }
-
-    while(fscanf(arquivo, "%s,%d,%f", nome, &idade, &altura) != EOF) {
-        printf("Nome: %s, Idade: %d, Altura: %.2f\n", nome, idade, altura);
-    }
-
-    fclose(arquivo);
-    return 0;
+    
+    printf("Nome: ");
+    scanf("%s", nome); // Lê o nome digitado pelo usuário
+    
+    printf("Idade: ");
+    scanf("%d", &idade); // Lê a idade digitada pelo usuário
+    
+    fprintf(arq_csv, "%s, %d", nome, idade); 
+    // Escreve os dados no novo arquivo CSV 
+    
+    fclose(arq_csv); 
+    // Fecha o arquivo
 }
 ```
 
-Supondo que o arquivo "dados.csv" contenha os seguintes dados:
+Exemplo de saída no arquivo "novaplanilha.csv" (caso tenha sido digitado "Maria" e "35" como nome e idade, respectivamente):
 
-```
-Ana,25,1.65
-João,30,1.75
-Maria,35,1.60
+```C
+Maria, 35
 ```
 
-A saída do programa seria:
+## Veja Também
 
-```
-Nome: Ana, Idade: 25, Altura: 1.65
-Nome: João, Idade: 30, Altura: 1.75
-Nome: Maria, Idade: 35, Altura: 1.60
-```
-
-Note que utilizamos o formato `"Nome:%s, Idade:%d, Altura:%.2f"` na função `printf()` para imprimir os valores de forma formatada.
-
-## Profundidade:
-
-Além da leitura de dados, também é possível escrever em arquivos CSV usando a função `fprintf()`. É importante lembrar que o formato de leitura e escrita deve ser consistente, caso contrário os dados não serão processados corretamente.
-
-Outro ponto importante a ser destacado é que, em alguns sistemas operacionais, os arquivos CSV utilizam ponto-e-vírgula como separador ao invés de vírgula. Portanto, é necessário estar ciente deste detalhe ao trabalhar com esses arquivos.
-
-## Veja também:
-- [Documentação da função `fscanf()`](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxbd00/fscanf.htm)
-- [Tutorial sobre leitura de arquivos CSV em C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Artigo sobre a diferença entre ponto-e-vírgula e vírgula nos arquivos CSV](https://www.tutlane.com/tutorial/spreadsheets/google-sheets-commas-vs-semicolons-delimiters)
+- [Tutorial de leitura e escrita de arquivos em C](https://www.devmedia.com.br/leitura-e-escrita-de-arquivos-em-c/24893)
+- [Documentação oficial sobre a função fopen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Guia completo sobre arquivos CSV em C](https://letslearn-c.org/csv-reading-and-writing/)

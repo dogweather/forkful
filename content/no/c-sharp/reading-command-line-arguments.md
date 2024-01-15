@@ -1,5 +1,6 @@
 ---
-title:                "C#: Lesing av kommandolinjeargumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "C#: Lesing av kommandolinjeargumenter"
 simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "C#"
 category:             "C#"
@@ -9,46 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å lese kommandolinje-argumenter er en nyttig og effektiv måte å gi programmet ditt ekstra funksjonalitet på. Ved å lese disse argumentene kan du gi brukerne dine muligheten til å tilpasse programmet ditt og gi dem en bedre opplevelse.
+# Hvorfor
 
-## Hvordan du gjør det
-For å lese kommandolinje-argumenter i C# kan du bruke `string[] args` parameteret i `Main()` metoden. Dette vil få programmet ditt til å lese alle argumentene som blir angitt når det kjøres.
+Hvis du noen gang har brukt et program eller en applikasjon som lar deg legge til argumenter i kommandolinjen, så har du kanskje lurt på hvorfor dette er nødvendig. Å lese kommandolinjeargumenter kan faktisk være utrolig nyttig, da det gir deg muligheten til å tilpasse programmet ditt etter dine egne behov.
+
+# Hvordan
+
+For å kunne lese kommandolinjeargumenter i C#, må du først importere "System" og "System.Collections" namespaces i koden din. Deretter kan du bruke "Environment.GetCommandLineArgs()" metoden til å hente alle argumentene som blir levert til programmet ditt. Se eksempelet nedenfor:
 
 ```C#
-static void Main(string[] args)
+using System;
+using System.Collections;
+
+class Program
 {
-    // Sjekker om det er angitt noen argumenter
-    if (args.Length > 0)
+  static void Main(string[] args)
+  {
+    string[] arguments = Environment.GetCommandLineArgs();
+
+    if (arguments.Length > 1)
     {
-        // Går igjennom alle argumentene og skriver dem ut
-        foreach (string argument in args)
-        {
-            Console.WriteLine(argument);
-        }
+      Console.WriteLine("Første argumentet er: " + arguments[1]);
+      Console.WriteLine("Alle argumenter er:");
+
+      for (int i = 0; i < arguments.Length; i++)
+      {
+        Console.WriteLine(arguments[i]);
+      }
     }
-    else
-    {
-        Console.WriteLine("Ingen argumenter angitt.");
-    }
+  }
 }
 ```
 
-Lar oss si at du har et program kalt "hello.exe" og kjører det i kommandolinjen med argumentene "Bonjour" og "Hei". Resultatet vil bli:
+Eksempel på programmet kjørt med argumentene "Hei på deg!" og "12345":
 
 ```
-Bonjour
-Hei
+Første argumentet er: Hei på deg!
+Alle argumenter er:
+C:\Program Files\dotnet\dotnet.exe
+C:\Users\user\Documents\program.exe
+Hei på deg!
+12345
 ```
 
-Som du kan se, vil alle kommandolinje-argumentene bli lagret som strenger i `args` arrayet. Du kan også gjøre om argumentene til andre datatyper, som for eksempel ved å bruke `int.Parse()` eller `bool.Parse()`.
+# Dypdykk
 
-## Dypdykk
-I tillegg til å lese enkeltargumenter, kan du også tolke kombinasjoner av argumenter. For eksempel kan du lage en kommando for å få programmet ditt til å gjøre forskjellige ting avhengig av hvilke argumenter som blir oppgitt.
+Det finnes flere måter å lese kommandolinjeargumenter på i C#, som å bruke "Environment.CommandLine" for å hente hele kommandolinjen og deretter bruke "string.Split()" metoden for å dele den opp i en array. Fordelen med å lese argumentene på denne måten er at du kan få tilgang til programnavnet og andre informasjon om selve kommandolinjen. Du kan også bruke "args[]" parameteret i "Main()" metoden for å lese argumentene, men dette begrenser deg til å bare lese argumentene som blir levert når du starter programmet og ikke etterpå.
 
-Du kan også implementere feilhåndtering for å sikre at programmet ikke krasjer hvis de oppgitte argumentene er ugyldige eller mangler.
+# Se også
 
-## Se også
-- [Offisiell C# dokumentasjon om kommandolinje-argumenter](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [En guide til kommandolinje-argumenter i C#](https://www.dreamincode.net/forums/topic/216103-command-line-arguments-in-c%23/)
-- [En steg-for-steg veiledning til å behandle kommandolinje-argumenter i C#](https://docs.microsoft.com/en-us/tonywhites/how-to-provide-command-line-arguments-in-visual-studio)
+- [Environment.GetCommandLineArgs() metoden dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs)
+- [Environment.CommandLine egenskap dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.environment.commandline)
+- [Split() metoden dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.string.split)

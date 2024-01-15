@@ -1,6 +1,7 @@
 ---
-title:                "Python: Å få gjeldende dato"
-simple_title:         "Å få gjeldende dato"
+title:                "Henting av nåværende dato"
+html_title:           "Python: Henting av nåværende dato"
+simple_title:         "Henting av nåværende dato"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -9,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvorfor bry seg om å få nåværende dato? Vel, det er flere grunner til hvorfor dette er nyttig når du programmerer. Først og fremst kan det hjelpe med å organisere og sortere data. Det kan også være nyttig å bruke i logger for å spore når en bestemt handling ble utført. Uansett hva grunnen måtte være, er det enkelt å få tak i nåværende dato ved hjelp av Python-programmering.
+Det er alltid nyttig å kunne få tak i den nåværende datoen når man programmerer. Enten det er for å registrere når en bruker opprettet en konto, for å lage dynamiske timersystemer eller bare for å få en bedre forståelse av hvor lang tid som har gått siden en hendelse. Ved å bruke Python kan man enkelt få tak i den nåværende datoen og bruke den til å utvikle mer effektive programmer.
 
-## Hvordan
+## Slik gjør du det
 
-For å få tak i nåværende dato i Python, kan du bruke datetime-modulen. Først må du importere denne modulen ved å skrive ```Python import datetime``` øverst i koden din. Deretter kan du bruke datetime.now() funksjonen for å få tak i nåværende dato og tid.
-
-Her er et eksempel på hvordan du kan skrive ut nåværende dato og tid ved hjelp av datetime-modulen:
+For å få tak i den nåværende datoen i Python, kan man bruke innebygde funksjoner og moduler. Det er flere måter å gjøre dette på, og her vil vi vise to eksempler:
 
 ```Python
 import datetime
 
-now = datetime.now()
-print("Nåværende dato og tid:")
-print(now)
+# Få tak i den nåværende datoen ved å bruke datetime biblioteket
+current_date = datetime.date.today()
+print(current_date)
+
+# Output: 2021-05-10
+
+# Få tak i datoen og klokkeslettet ved å bruke datetime biblioteket
+current_datetime = datetime.datetime.now()
+print(current_datetime)
+
+# Output: 2021-05-10 12:45:09.277694
 ```
 
-Dette vil produsere følgende output:
+## Dykk dypere
 
-Nåværende dato og tid:
-2021-09-28 15:00:00.123456
-
-Du kan også formatere hvordan datoen og tiden vises ved hjelp av strftime() funksjonen. For eksempel, hvis du vil ha datoen i formatet MM/DD/YYYY, kan du skrive:
+I eksemplene over brukte vi datetime biblioteket for å få tak i den nåværende datoen og klokkeslettet. Dette biblioteket har flere nyttige funksjoner som kan hjelpe deg med å manipulere datoen og klokkeslettet på ulike måter. For eksempel kan du bruke strftime() metoden for å formatere datoen og klokkeslettet på en spesifikk måte.
 
 ```Python
-print(now.strftime("%m/%d/%Y"))
+import datetime
+
+# Få tak i datoen i et bestemt format
+current_date = datetime.date.today().strftime("%A, %B %d, %Y")
+print(current_date)
+
+# Output: Monday, May 10, 2021
 ```
 
-Dette vil produsere output som ser slik ut:
+Det er også verdt å merke seg at datoen og klokkeslettet som blir returnert av disse funksjonene, er basert på datamaskinens nåværende dato og tid. Dette betyr at hvis datamaskinen din er satt til å bruke et annet tidssone, vil dette reflekteres i datoen og klokkeslettet som blir returnert. Man kan også bruke forskjellige funksjoner for å manipulere datoen og klokkeslettet, for eksempel å legge til eller trekke fra et gitt antall dager.
 
-09/28/2021
+# Se også
 
-## Dypdykk
-
-Det er flere alternativer og funksjoner som kan brukes sammen med datetime-modulen for å få mer spesifikke data som dato, tid og tidsstempel. Du kan også bruke timedelta-modulen for å beregne fremtidige eller tidligere datoer basert på nåværende dato.
-
-Hvis du ønsker å lære mer om hvordan du kan bruke datetime-modulen og andre relaterte emner til dato og tid i Python, er det mange ressurser tilgjengelig online, inkludert dokumentasjon fra Python.org og ulike programmeringsforum.
-
-## Se også
-
-- Python.org - datetime-modulen
-- W3Schools - Dato og tid i Python
-- Stack Overflow - Spørsmål og svar om datetime-modulen i Python
+- [Python datetime dokumentasjon](https://docs.python.org/3/library/datetime.html)
+- [Python datetime modul tutorial](https://realpython.com/python-datetime/)
+- [W3Schools tutorial om Python datetimer](https://www.w3schools.com/python/python_datetime.asp)

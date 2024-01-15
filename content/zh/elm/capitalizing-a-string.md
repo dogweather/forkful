@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 字符串大写化"
-simple_title:         "字符串大写化"
+title:                "用计算机编程：将字符串变大写"
+html_title:           "Elm: 用计算机编程：将字符串变大写"
+simple_title:         "用计算机编程：将字符串变大写"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么使用Elm编程？
+## 为什么
 
-Elm是一种功能强大的函数式编程语言，它可以帮助开发者轻松写出高质量的Web应用。它具有强大的类型系统和模块化结构，使得编写可靠的代码变得更加容易。使用Elm编程不仅可以提高开发效率，还可以减少代码出错的可能性。
+大多数编程任务中，我们都需要处理字符串。有时候，我们需要将一个字符串中的所有字母都转换成大写或小写。这时，我们就可以使用 Elm 中的一个函数来实现，它就是 `String.toUpper`。
 
-##如何进行字符串大写处理
+## 如何使用
 
-在Elm中，可以使用内置的String模块来进行字符串大写处理。首先，需要导入String模块，然后使用toUpper函数来将字符串转换为大写。以下是一个简单的代码示例和输出：
-
-```Elm
-import String
-
-capitalize: String -> String
-capitalize str = String.toUpper str
-
-main = 
-    capitalize "hello" -- 输出 "HELLO"
-```
-
-如上所示，我们定义了一个capitalize函数来将传入的字符串转换为大写，并通过main函数来展示其输出结果。这是一个简单的例子，可以根据需求进行修改和扩展。
-
-##深入了解字符串大写处理
-
-除了使用内置的String模块之外，开发者还可以自定义实现字符串大写处理的函数。一个常用的方法是使用map函数，它可以将一个列表中的所有元素都应用同一个函数。以下是一个使用map函数来实现字符串大写处理的例子：
+下面是一个简单的例子，展示了如何使用 `String.toUpper` 函数来将一个字符串转换为大写：
 
 ```Elm
-import String
+import String exposing (toUpper)
 
-capitalize: String -> String
-capitalize str = String.toUpper str
+upperCaseString : String -> String
+upperCaseString str =
+    toUpper str
 
-upperCaseList: List String -> List String
-upperCaseList list = List.map capitalize list
-
-main = 
-    upperCaseList ["hello", "world"] -- 输出 ["HELLO", "WORLD"]
+main =
+    upperCaseString "hello world"
 ```
 
-在以上例子中，我们首先定义了一个capitalize函数来进行字符串大写处理，然后使用map函数将其应用到一个字符串的列表中，最后输出结果为已经转换为大写的字符串列表。通过这种方式，开发者可以自由定制自己的字符串大写处理函数，使其满足不同的需求。
+输出：
 
-##请注意：
+```
+"HELLO WORLD"
+```
 
-在使用字符串大写处理函数时，需要注意一些特殊情况，比如空字符串或包含非字母字符的字符串。此时，可能会出现意外的输出结果，因此在使用之前应该先对输入参数进行校验，以保证代码的健壮性。
+## 深入了解
 
-##参考链接
+`String.toUpper` 函数的真正作用是将字符串中的每一个字符都转换为大写形式。这意味着它不仅可以用于单词，也可以用于句子中的所有字母。此外，它还可以处理 Unicode 字符，因此即使是非英语字符也可以转换为大写形式。
 
-- [Elm官方文档](https://elm-lang.org/)
-- [Elm中文社区](https://elm-china.org/)
+`String.toUpper` 函数还有一个兄弟函数 `String.toLower`，它将字符串中的所有字符都转换为小写形式。这两个函数非常有用，并且可以帮助我们在处理字符串时节省大量的代码。
 
-##相关链接
+## 请参阅
 
-- [如何在Elm中处理字符串拼接](https://www.example.com/how-to-concatenate-strings-in-elm)
-- [使用Elm编写可复用的模块](https://www.example.com/writing-reusable-modules-in-elm)
+- [Elm 文档](https://guide.elm-lang.org/)
+- [String 文档](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+- [Unicode 字符表](https://unicode-table.com/cn/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Skriver till standardfel"
-simple_title:         "Skriver till standardfel"
+title:                "Skrivning till standardfel"
+html_title:           "Fish Shell: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva till standard error kan vara en användbar programmeringsteknik för att hantera fel eller avvikelser som kan uppstå under exekvering av kommandon via Fish Shell. Det kan hjälpa till att skapa en mer användarvänlig upplevelse för användaren.
 
-Att skriva till standard error är en viktig del av programmering för att kunna skriva ut felmeddelanden som är lättlästa för användare.
+## Så här gör du
+Om du vill skriva till standard error inom Fish Shell, kan du använda kommandot `echo`. Till exempel, om du vill skriva ut ett felmeddelande med meddelandet "Ogiltigt kommando", kan du använda följande kommando:
 
-## Hur man gör det
-
-För att skriva till standard error i Fish Shell använder man sig av kommandot `echo` med flaggan `-e` för att kunna tolka escape-tecken. Sedan skriver man ut sitt felmeddelande inom citattecken och använder `2>1` för att skicka output till standard error. Se nedan för en kodexempel och den resulterande outputen:
-
-```
-Fish Shell kodexempel:
-```fish
-echo -e "Ett fel inträffade" 2>&1
+```Fish Shell
+echo "Ogiltigt kommando" >&2
 ```
 
-Output:
+På detta sätt kommer meddelandet att skrivas till standard error istället för standard output. Detta kan vara särskilt användbart om du vill skilja mellan olika typer av meddelanden, t.ex. felmeddelanden och vanliga utskrifter.
+
+## Djupdykning
+När du skriver till standard error inom Fish Shell, används symbolen `>&2` för att omdirigera utdata från standard output till standard error. Detta kan också användas tillsammans med andra kommandon för att hantera utskrifter. Till exempel, om du vill skriva ut alla filnamn i en mapp, men också skriva ut felmeddelanden om en fil saknas, kan du använda följande kommando:
+
+```Fish Shell
+ls *.txt 2>&1 | grep "Filen finns inte"
 ```
-Ett fel inträffade
-```
 
-I detta exempel kommer “Ett fel inträffade” att skrivas ut till standard error, eftersom vi har använt `2>&1` för att skicka output dit istället för till standard out.
+Detta kommer att skriva ut en lista över alla filer som matchar namnmönstret `*.txt`, men också skriva ut eventuella felmeddelanden om filer som saknas. På detta sätt kan du använda `echo` och `>&2` tillsammans med andra kommandon för att hantera utdata på ett mer effektivt sätt.
 
-## Fördjupning
-
-Att skriva till standard error är användbart när man vill separera felmeddelanden från annan output. Det hjälper också användare att lättare identifiera och felsöka problem. För att skriva till standard error i andra språk som Bash eller Zsh använder man sig av `1>&2` istället, eftersom standard error och standard out är omvända i dessa shells.
-
-## Se även
-
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/cmds/echo.html)
-- [Mer om standard error och standard out](https://stackoverflow.com/questions/34977294/cannot-display-error-message-in-fish-shell)
-- [Mer om escape-tecken](https://www.golinuxcloud.com/echo-without-escaping-leds-and-codes-in-shell/)
+## Se också
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
+- [Learning Fish Shell](https://fishshell.com/docs/current/tutorial.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: 作岀測試 (Zuò chū cè shì)"
-simple_title:         "作岀測試 (Zuò chū cè shì)"
+title:                "写测试"
+html_title:           "Go: 写测试"
+simple_title:         "写测试"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -9,51 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么写测试？
+## 为什么
 
-写测试是保证代码质量的重要步骤。通过编写测试，我们可以更容易地发现代码中的 bug，并确保代码的稳定性和可靠性。同时，测试也可以帮助开发人员更好地理解代码，并提高代码的可读性和可维护性。
+大家可能都知道写代码很重要，但是写测试同样也是非常重要的一部分。通过编写测试，可以提高代码的质量和可靠性，帮助我们发现潜在的bug，并且可以更方便地重构代码。所以，学习如何编写测试是非常值得的。
 
 ## 如何编写测试
 
-完成 Go 语言的测试非常容易，只需要遵循以下几个步骤：
-
-1. 创建一个名为 `xxxx_test.go` 的文件，其中 `xxxx` 为需要进行测试的文件名或函数名。
-
-2. 使用 `import "testing"` 导入 Go 的测试包。
-
-3. 在 `xxxx_test.go` 文件中，使用 `func TestXxxx(t *testing.T)` 进行定义测试函数。其中 `Xxxx` 为需要进行测试的函数名。
-
-4. 在测试函数中，使用 `t.Run()` 和 `t.Error()` 或 `t.Fatal()` 来运行和检查测试结果。
-
-以下是一个例子（假设我们需要测试一个名为 `Add` 的函数）：
+编写测试的语言和代码逻辑与编写实际的业务代码基本相同。Go语言有一个内置的测试框架testing，我们可以利用它来编写测试并运行。以下是一个简单的例子：
 
 ```Go
-package main
-
-import (
-	"testing"
-)
+func Add(a, b int) int {
+    return a + b
+}
 
 func TestAdd(t *testing.T) {
-	result := Add(2, 3)
-	if result != 5 {
-		t.Error("Expected 5, got", result)
-	} else {
-		t.Log("Success!")
-	}
+    result := Add(3, 4)
+    if result != 7 {
+        t.Errorf("Add(3, 4) = %d; want 7", result)
+    }
 }
 ```
 
-运行以上测试函数，如果结果正确，会输出 `Success!`，如果结果不正确，会输出 `Error` 。
+在上面的代码示例中，我们定义了一个Add函数来计算两个整数的和，并编写了一个测试函数TestAdd来验证其正确性。我们可以使用```go test```命令来运行测试，并且如果测试通过，控制台会显示OK的提示。
 
-## 深入了解写测试
+## 深入了解测试
 
-除了简单的检查结果外，Go 还允许我们进行更深层次的测试。例如，可以使用 `t.Helper()` 来标记为辅助函数，将测试内容显示为更详细的文本。此外，还可以使用 `t.Skip()` 、 `t.SkipNow()` 和 `t.Skipf()` 来跳过某些测试。
+编写测试并不仅仅局限于简单的输入和输出验证，我们还可以通过使用断言函数```t.Errorf()```来扩展我们的测试用例。断言函数用于在测试中指定条件，并且在条件不满足时触发错误。除此之外，我们还可以使用子测试来组织多个相关的测试用例，并且利用Benchmarks来对代码的性能进行测试。
+
+此外，Go语言还提供了其他一些工具来帮助我们编写和管理测试，如核心覆盖率分析工具和性能分析工具。
+
+## 参考文章
+
+- [Effective Go Test](https://golang.org/doc/effective_go.html#testing)
+- [Testing in Go](https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859)
+- [Introduction to testing in Go](https://www.oreilly.com/library/view/introducing-go/9781491941997/ch11.html)
 
 ## 参考链接
 
-- [Go 语言官方文档：testing 包](https://golang.org/pkg/testing/)
-
-- [Go 语言测试最佳实践](https://medium.com/@tdenev91/testing-in-golang-best-practices-yield-examples-1acebda6400)
-
-- [Go 语言测试详解](https://developer.ibm.com/zh/articles/au-golang-testing/)
+- [https://golang.org/pkg/testing/](https://golang.org/pkg/testing/)
+- [https://medium.com/@povilasve/understanding-unit-testing-in-golang-90862a73cbab](https://medium.com/@povilasve/understanding-unit-testing-in-golang-90862a73cbab)
+- [https://golang.org/doc/code.html#Testing](https://golang.org/doc/code.html#Testing)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Encontrando o comprimento de uma sequência"
-simple_title:         "Encontrando o comprimento de uma sequência"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "Elm: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que 
 
-Ao trabalhar com programação, muitas vezes precisamos manipular e analisar cadeias de caracteres (strings). Uma tarefa comum é encontrar o comprimento (length) de uma string, que pode ser útil em diversas situações, como validação de formulários e manipulação de dados.
+Se você é um programador em Elm, provavelmente já se deparou com a necessidade de encontrar o comprimento de uma string em algum momento. Entender como fazer isso é essencial para trabalhar com dados de texto e criar lógica eficiente em seus programas.
 
-## Como fazer
+## Como Fazer
 
-Para encontrar o comprimento de uma string em Elm, utilizamos a função `String.length`. Veja um exemplo abaixo:
+Encontrar o comprimento de uma string é algo relativamente simples em Elm. Tudo o que você precisa fazer é chamar a função `String.length` e passar a string como argumento. Veja um exemplo de código abaixo:
 
 ```Elm
-nomeCompleto : String
-nomeCompleto = "João da Silva"
-
-tamanhoNome : Int
-tamanhoNome = String.length nomeCompleto
-
--- O resultado será 14, já que a string tem 14 caracteres
+idade = "20 anos"
+String.length idade
 ```
 
-É importante lembrar que, em Elm, a função `String.length` retorna um valor do tipo `Int`. Portanto, se quisermos usar o resultado em uma expressão, devemos converter para `Float` usando a função `toFloat` ou arredondar para baixo usando `floor`.
+A saída desse código será `9`, pois a string possui um total de nove caracteres. Você também pode usar essa função em conjunto com outras funções de manipulação de strings para criar lógica mais avançada.
 
-## Mergulho Profundo
+## Deep Dive
 
-Ao utilizar a função `String.length`, é importante ter em mente que ela conta o número de caracteres, e não o número de palavras. Por exemplo, se tivermos a string `"casa de praia"`, o resultado será 13, pois há um espaço em branco entre as palavras.
+A função `String.length` é uma função de ordem superior em Elm, o que significa que ela recebe outra função como argumento. Isso permite que você personalize ainda mais a lógica de encontrar o comprimento de uma string.
 
-Além disso, a função `String.length` também conta caracteres especiais, como acentos e cedilhas. Portanto, caso precise contar apenas as letras, é necessário remover esses caracteres antes de encontrar o comprimento da string.
+Uma outra abordagem para encontrar o comprimento de uma string é usar a função `List.length`. Como as strings são listas de caracteres em Elm, você pode usar essa função e passar a string como argumento. Veja um exemplo de código abaixo:
 
-## Veja também
+```Elm
+idade = "20 anos"
+List.length (String.toList idade)
+```
 
-- Documentação oficial sobre a função `String.length` em Elm: https://package.elm-lang.org/packages/elm/core/latest/String#length
-- Como remover caracteres especiais de uma string em Elm: https://stackoverflow.com/questions/33665026/remove-special-characters-in-a-string-with-elm
-- Como converter de `Int` para `Float` em Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics#toFloat
-- Como arredondar um número para baixo em Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics#floor
+A saída desse código será novamente `9`, pois a string foi convertida em uma lista de caracteres para que a função `List.length` possa ser aplicada. Isso pode ser útil quando você precisar realizar manipulações mais específicas em cada caractere da string.
+
+## Veja Também
+
+- Documentação oficial do Elm: https://elm-lang.org/docs
+- Tutorial de Elm para iniciantes: https://guide.elm-lang.org/
+- Funções de manipulação de strings em Elm: https://package.elm-lang.org/packages/elm/core/latest/String

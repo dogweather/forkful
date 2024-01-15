@@ -1,6 +1,7 @@
 ---
-title:                "C++: Hämta en webbsida"
-simple_title:         "Hämta en webbsida"
+title:                "Nedladdning av en webbsida"
+html_title:           "C++: Nedladdning av en webbsida"
+simple_title:         "Nedladdning av en webbsida"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,63 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Varför
+## Varför
 
-Att ladda ner en webbsida kan vara en användbar funktion för många programmerare. Genom att göra detta kan man spara information från en webbsida och använda den för att skapa en applikation, analysera data eller helt enkelt för att utforska hur webbsidor fungerar.
+Det kan finnas flera anledningar till att vilja ladda ner en websida. Det kan vara för att spara den offline, studera dess kod för utbildningsändamål, eller använda den som referens för ett projekt.
 
-### Hur Man Gör
+## Hur man gör det
 
-För att ladda ner en webbsida i C++ finns det flera olika metoder att använda. En av de vanligaste är att använda sig av biblioteket "libcurl". Detta bibliotek gör det möjligt att göra enkla HTTP-anrop och spara resultatet som en sträng.
-
-Först och främst behöver vi inkludera libcurl i vårt C++-program genom att skriva följande rad:
+Att ladda ner en websida i C++ är ganska enkelt med hjälp av biblioteket cURL. Först måste du inkludera biblioteket i din kod:
 
 ```C++
 #include <curl/curl.h>
 ```
 
-Därefter behöver vi skapa en CURL-variabel som vi kan använda för att göra anropet. Detta gör vi genom att skriva:
+Sedan kan du skapa en funktion som tar in en URL som argument och använder cURL för att hämta sidans innehåll:
 
 ```C++
-CURL *curl;
-```
+std::string getWebpage(std::string url) {
+    CURL *curl;
+    CURLcode res;
+    std::string content;
 
-Nu kan vi ställa in olika parametrar för vårt anrop, som till exempel vilken URL vi vill ladda ner. Vi kan också definiera en callback-funktion som kommer att kallas när anropet är klart och som sparar resultatet till en sträng. Detta ser ut som följande:
+    // Initiera cURL
+    curl = curl_easy_init();
+    if(curl) {
+        // Sätt URL:en
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
-```C++
-// Strängen som kommer att innehålla resultatet
-std::string result;
+        // Lagra innehållet i en variabel
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writer);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &content);
 
-// Callback-funktionen som kommer att kallas när anropet är klart
-static size_t curl_callback(void *contents, size_t size, size_t nmemb, void *userp) {
-    ((std::string*)userp)->append((char*)contents, size * nmemb);
-    return size * nmemb;
+        // Ladda ner sidan
+        res = curl_easy_perform(curl);
+
+        // Stäng cURL
+        curl_easy_cleanup(curl);
+
+        // Om allt gick bra, returnera innehållet
+        if(res == CURLE_OK) {
+            return content;
+        }
+    }
+    // Om något gick fel, returnera en tom sträng
+    return "";
 }
 
-// Sätta upp anropet
-curl = curl_easy_init();
-curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_callback);
-curl_easy_setopt(curl, CURLOPT_WRITEDATA, &result);
-
-// Utföra anropet
-CURLcode res = curl_easy_perform(curl);
-
-// Stänga anropet
-curl_easy_cleanup(curl);
+// Funktionen som används för att lagra sidans innehåll
+static size_t writer(char *content, size_t size, size_t nmemb, std::string *buffer) {
+    size_t newLength = size*nmemb;
+    buffer->append(content, newLength);
+    return newLength;
+}
 ```
 
-När anropet är klart kommer resultatet att finnas sparad i strängen "result". Därifrån kan vi använda den för att göra vad vi vill med informationen från webbsidan.
+För att använda funktionen, bara mata in en URL och lagra det returnerade innehållet i en variabel:
 
-### Djupdykning
+```C++
+std::string webpage = getWebpage("https://www.example.com");
+```
 
-Att ladda ner en webbsida kan dock vara mycket mer komplicerat än det vi beskrivit här. Det finns många olika parametrar som kan ställas in för att anpassa anropet och biblioteket "libcurl" erbjuder många funktioner som kan hjälpa till med detta.
+Du kan sedan använda innehållet av sidan för vad du än behöver.
 
-Det finns också andra bibliotek och tekniker som kan användas för att ladda ner webbsidor i C++. Till exempel kan man använda sig av "Boost.Asio" för att göra asynkrona anslutningar, vilket kan vara fördelaktigt för att många webbsidor innehåller mycket data som tar lång tid att ladda ner.
+## Djupdykning
 
-Här finns det också möjlighet att utforska och lära sig mer om HTTP-anrop, headers och statuskoder för att få en djupare förståelse för hur webbsidor fungerar och hur man effektivt kan ladda ner dem.
+Det finns mycket mer att lära sig om hur man hämtar en websida i C++, som till exempel att ange olika användaragenter, hantera omdirigeringar och implementera felhantering. Du kan också undersöka andra bibliotek, som libcurl och libwww, för att se vilket som passar dina behov bäst.
 
-### Se Även
+## Se också
 
-- [libcurl](https://curl.se/libcurl/)
-- [Boost.Asio](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html)
-- [HTTP Statuskoder](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+- [cURL Library](https://curl.haxx.se/libcurl/)
+- [libcurl Tutorial](https://curl.haxx.se/libcurl/c/libcurl-tutorial.html)
+- [libwww Library](https://www.w3.org/Library/)

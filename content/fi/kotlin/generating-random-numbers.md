@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten lukujen generointi"
+html_title:           "Kotlin: Sattumanvaraisten lukujen generointi"
+simple_title:         "Sattumanvaraisten lukujen generointi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -9,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Satunnaislukujen generoiminen
+## Miksi
 
-Satunnaislukujen generointi on tärkeä osa monia ohjelmia, kuten pelejä, simulaatioita ja kryptografiaa. Se mahdollistaa ohjelmien toiminnan ennustamattomuuden ja vaihtelun. 
+Satunnaisten numeroiden generoiminen on tärkeää osa useita ohjelmia ja sovelluksia. Se voi auttaa simuloinnissa, testaamisessa tai jopa parantaa käyttäjäkokemusta jännityksen ja vaihtelun avulla.
 
-## Miten: Esimerkkejä Kotlin-koodilla
+## Miten
+
+Jos haluat generoida satunnaisia numeroita käyttäen Kotlinia, sinun tulee ensin tuoda `kotlin.random` kirjasto käyttöön. Sitten voit käyttää `nextInt()` funktiota, joka palauttaa satunnaisen numeron annetulla välillä, kuten alla olevassa esimerkissä:
 
 ```Kotlin
-// Generoi satunnainen kokonaisluku väliltä 1-10
-val randomNumber = (1..10).random()
-println("Satunnainen luku väliltä 1-10 on $randomNumber")
+import kotlin.random.Random
 
-// Generoi satunnainen desimaaliluku väliltä 0.0-1.0
-val randomDecimal = Math.random()
-println("Satunnainen desimaaliluku väliltä 0.0-1.0 on $randomDecimal")
-
-// Generoi satunnainen kirjain merkkijonosta
-val letters = "abcdefghijklmnopqrstuvxyz"
-val randomLetter = letters.random()
-println("Satunnainen kirjain merkkijonosta on $randomLetter")
+val random = Random(42) // asetetaan siemenluku
+val number = random.nextInt(1, 10) // generoidaan luku väliltä 1-9
+println(number) // tulostaa esimerkiksi: 5
 ```
 
-Esimerkeissä käytämme Kotlinin standardikirjaston metodia `random()`, joka palauttaa satunnaisen luvun halutulta alueelta. Huomaa, että `random()` palauttaa eri muotoisia lukuja riippuen, onko sitä käytetty kokonaislukujen, desimaalilukujen vai merkkijonojen kanssa.
+Voit myös generoida merkkijonoja käyttäen `nextBytes()` funktiota, joka palauttaa satunnaisen tavujonon annetun pituuden mukaan. Esimerkiksi:
 
-## Syventävä tieto: Satunnaislukujen generointi
+```Kotlin
+val bytes = random.nextBytes(4) // generoi 4 tavun pituisen merkkijonon
+println(bytes.contentToString()) // tulostaa esimerkiksi: [113, 11, 97, 14]
+```
 
-Satunnaislukujen generointi ei ole täysin satunnaista, vaan se perustuu matemaattisiin algoritmeihin. Esimerkiksi Kotlinin `random()` metodi käyttää taustallaan `java.util.Random` luokkaa. 
+## Syvemmälle
 
-On tärkeää huomata, että satunnaislukujen generoiminen ei ole täysin turvallista kryptografisessa yhteydessä, sillä algoritmeja voi ennustaa. Tällöin tulisi käyttää erityisiä kryptografisia kirjastoja, jotka tarjoavat vahvemman satunnaisuuden.
+Satunnaisia numeroita generoidessa on tärkeää ymmärtää käytettyä siemenlukua. Siemenluvun avulla generointi on toistettavissa, joten jos käytät samaa siemenlukua, saat saman sarjan satunnaisia numeroita. Toisaalta, jos siemenluku on eri, saat myös erilaisen sarjan satunnaisia numeroita.
+
+Voit myös asettaa oman siemenluvun tai käyttää oletusarvoista järjestystä käyttämällä `Random.Default` -funktiota.
+
+On myös tärkeää huomata, että satunnaisuutta ei voi taata lopullisessa tuotantoversiossa, vaan se on matemaattinen järjestelmä, joten jotkut numerot saattavat esiintyä useammin kuin toiset. Tästä syystä ei ole suositeltavaa käyttää satunnaisia numeroita esimerkiksi salasanoiden generoimisessa.
 
 ## Katso myös
 
-- [Random-kirjaston dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
-- [Artikkeli "Satunnaislukujen generointi"](https://www.baeldung.com/kotlin/random-number)
-- [Javan Random-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/basic-types.html#random-numbers)
+- [Java Random- ja SecureRandom -luokat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
+- [Randomness in Programming: Why Should You Care?](https://www.freecodecamp.org/news/randomness-in-programming-why-should-you-care-aa8fd2183e7e/)

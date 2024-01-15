@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Analizando html"
+title:                "Analizando html"
+html_title:           "PHP: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,30 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-Antes de comenzar a hablar sobre cómo analizar HTML en PHP, es importante entender por qué alguien querría hacerlo. Analizar HTML puede ser extremadamente útil en la construcción de aplicaciones web, ya que permite extraer información específica de una página web, como precios de productos, noticias o datos de contacto. También puede ser útil para identificar errores o problemas en una página web y corregirlos de manera eficiente.
+Si eres un desarrollador de PHP, probablemente hayas oído hablar de la técnica de "parsear" HTML. Pero, ¿por qué alguien querría hacer eso? La respuesta es simple: para extraer datos de una página web de forma automatizada.
+
+Imagina que tienes un sitio web que recopila información de diferentes fuentes. Seria tedioso tener que copiar y pegar manualmente los datos de cada página. En su lugar, puedes utilizar un programa que haga el trabajo por ti, parseando el HTML y extrayendo los datos necesarios.
 
 ## Cómo hacerlo
-PHP tiene una función incorporada llamada "file_get_contents" que permite leer el contenido de una página web. Podemos utilizar esta función para obtener el HTML de una página web y luego analizarlo utilizando la función "preg_match" para encontrar los datos específicos que estamos buscando.
+La función principal para parsear HTML en PHP es `file_get_contents()`. Esta función recupera el contenido completo de una URL y lo almacena en una variable. A continuación, puedes utilizar la función `preg_match()` para buscar patrones específicos en el contenido y extraer los datos que necesitas.
 
-```PHP
+Veamos un ejemplo simple de cómo extraer el título de una página web utilizando estas funciones:
+
+```
 <?php
-// Obtener el contenido HTML de una página web
+// Obtener el contenido de la página
 $html = file_get_contents('https://www.ejemplo.com/');
-
-// Encontrar y obtener la información específica
-preg_match('/<h1>(.*?)<\/h1>/', $html, $titulo); // encontrar el primer título en la página
-
+// Buscar el patrón del título
+preg_match('@<title>(.*)</title>@', $html, $title);
 // Imprimir el título
-echo "El título de la página es: " . $titulo[1]; // la información se encuentra en el índice 1 del array $titulo
+echo "El título de la página es: " . $title[1];
 ?>
 ```
 
-## Profundizando
-Además de utilizar la función "preg_match" para encontrar datos específicos, también podemos utilizar "preg_match_all" para encontrar varios elementos que coincidan con un patrón determinado. Otra opción es utilizar una biblioteca externa, como "Simple HTML DOM", que facilita la manipulación de HTML en PHP.
+En este caso, hemos utilizado expresiones regulares para buscar el texto que se encuentra entre las etiquetas `<title>` de la página web.
 
-También es importante tener en cuenta que las páginas web pueden cambiar su estructura y el patrón de los datos puede variar, por lo que es necesario tener un código flexible y actualizado para asegurar que siga funcionando de manera correcta.
+## Profundizando
+Aunque este es solo un ejemplo básico, la técnica de parsear HTML puede ser utilizada para extraer cualquier tipo de datos de una página web. Puedes utilizar funciones como `preg_match_all()` para extraer múltiples ocurrencias de un patrón, o incluso crear tus propias clases para manejar el proceso de parsing de manera más eficiente.
+
+También es importante tener en cuenta que el parsing de HTML puede ser algo complicado, ya que el contenido de una página web puede variar mucho de una a otra. Por lo tanto, es recomendable tener un buen conocimiento de expresiones regulares y del formato en que se presenta el HTML para obtener resultados precisos.
 
 ## Ver también
-- [Función file_get_contents en PHP](https://www.php.net/manual/es/function.file-get-contents.php)
-- [Función preg_match en PHP](https://www.php.net/manual/es/function.preg-match.php)
-- [Simple HTML DOM - biblioteca para manipular HTML en PHP](https://simplehtmldom.sourceforge.io/)
+- [Documentación oficial de PHP sobre la función `file_get_contents()`](https://www.php.net/manual/es/function.file-get-contents.php)
+- [Documentación oficial de PHP sobre la función `preg_match()`](https://www.php.net/manual/es/function.preg-match.php)
+- [Expresiones regulares en PHP](https://www.php.net/manual/es/book.pcre.php)

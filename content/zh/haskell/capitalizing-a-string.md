@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "字串大写化"
+html_title:           "Haskell: 字串大写化"
+simple_title:         "字串大写化"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,44 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要将字符串大写？
+人们可能会想要将字符串大写，是因为在某些情况下，大写的字符串更方便阅读和处理，尤其是涉及到比较、搜索或者打印输出的时候。
 
-在编写Haskell代码时，有时候我们需要将字符串的首字母变成大写。这可能是因为代码的规范要求，或者是为了使得输出更美观。
-
-## 如何做到
-
-要实现这一功能，我们可以使用Haskell标准库中的toTitle函数。这个函数接受一个字符串作为参数，并返回一个新的字符串，其中首字母变成大写，其他字母保持不变。
-
+## 如何实现？
+在Haskell中，我们可以使用内置函数`toUpper`来实现字符串的大写操作，它将字符串中的所有小写字母转换为大写字母，并返回一个新的字符串。以下是一个简单的例子：
 ```Haskell
-import Data.Char (toTitle)
-
-capitalize :: String -> String
-capitalize str = toTitle (head str) : tail str
+str = "hello world"
+capitalizedStr = toUpper str
+-- 输出："HELLO WORLD"
 ```
 
-下面是一个使用例子，我们将字符串"haskell"变成"Haskell"。
-
+我们也可以自己实现一个简单的函数来将字符串大写，比如我们可以使用列表推导式和`toUpper`来遍历每个字符并将其转换为大写，然后再将字符列表组合成一个新的字符串，例如：
 ```Haskell
-main :: IO ()
-main = putStrLn (capitalize "haskell")
+toUpperStr :: String -> String
+toUpperStr str = [toUpper c | c <- str]
 ```
-
-输出结果为："Haskell"
+这个函数将接受一个字符串作为参数，并返回一个经过大写处理后的新字符串。
 
 ## 深入探讨
+在Haskell中，字符串是一个由字符组成的列表，所以我们可以使用列表操作来对字符串进行操作。在`toUpperStr`函数中，我们使用了列表推导式来遍历每个字符并进行转换，还可以使用其他列表操作来实现一样的功能。除了`toUpper`之外，Haskell还提供了其他一些用于处理字符串的内置函数，如`toLower`用于将字符串转换为小写、`capitalize`用于将首字母大写等等。通过这些函数的组合，我们可以实现更复杂的字符串操作。
 
-首先要注意的是，toTitle函数只会将ascii字符转换成大写，其他字符不会改变。所以如果想要将一个字符串的每个单词的首字母都变成大写，我们需要对字符串进行拆分，然后再分别处理每个单词。
-
-此外，toTitle函数也支持Unicode字符的转换。但是要注意，不同的编码系统可能会有不同的行为，所以在使用toTitle函数时，最好先了解一下所使用的编码系统的特点。
-
-## 参考资料
-
-[Data.Char - Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
-
-[探究Haskell字符串的编码问题](https://www.cnblogs.com/lazybug/p/6976726.html)
-
-# 参见
-
-[Markdown入门指南](https://www.zhihu.com/question/19963642)
-
-[Haskell中文编程指南](https://wiki.haskell.org.cn/Haskell%E9%A6%96%E9%A1%B5)
+## 参考阅读
+- [Haskell String Functions](https://www.tutorialspoint.com/haskell/haskell_string_functions.htm)
+- [Learn You a Haskell - Strings](http://learnyouahaskell.com/starting-out#strings)
+- [Real World Haskell - Strings](https://www.oualline.com/books.free/real.world/haskell-strings.html)
+- [Hoogle - Haskell API Search](https://www.haskell.org/hoogle/?hoogle=string)
+- [Haskell Wiki - Strings](https://wiki.haskell.org/Strings)

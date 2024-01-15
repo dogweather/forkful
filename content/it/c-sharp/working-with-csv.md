@@ -1,5 +1,6 @@
 ---
-title:                "C#: Lavorare con csv"
+title:                "Lavorare con csv"
+html_title:           "C#: Lavorare con csv"
 simple_title:         "Lavorare con csv"
 programming_language: "C#"
 category:             "C#"
@@ -11,62 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per cui un programmatore potrebbe dover lavorare con file CSV. Forse si sta scrivendo uno script per l'analisi dei dati, o si sta sviluppando un'applicazione che deve importare e manipolare grandi quantità di informazioni. In ogni caso, imparare a lavorare con CSV può essere incredibilmente utile e risparmiare molto tempo e fatica nel lungo periodo.
+Se sei un programmatore che lavora con dati strutturati, è molto probabile che prima o poi ti troverai a dover utilizzare il formato CSV. Questo è uno dei formati più comuni per la gestione dei dati, quindi è importante sapere come lavorare con esso.
 
-## Come Fare
+## Come fare
 
-Esistono diverse librerie e metodi per lavorare con file CSV in C#. Oggi, ci concentreremo sull'utilizzo del namespace System.IO per leggere e scrivere file CSV.
-
-Per iniziare, dobbiamo prima includere il namespace "IO" all'inizio del nostro codice:
+Per iniziare a lavorare con CSV in C#, è necessario includere il namespace `System.IO` per accedere alla classe `StreamReader`. Ci sono diversi modi per leggere un file CSV e convertirlo in una struttura dati più facile da maneggiare. Uno di questi è utilizzando l'oggetto `TextFieldParser` del namespace `Microsoft.VisualBasic.FileIO`.
 
 ```C#
 using System.IO;
-```
+using Microsoft.VisualBasic.FileIO;
 
-Per leggere un file CSV, dobbiamo prima creare un'istanza della classe StreamReader. Passiamo il path del nostro file come argomento al costruttore, come mostrato di seguito:
-
-```C#
-StreamReader reader = new StreamReader("mio_file.csv");
-```
-
-Ora possiamo utilizzare il metodo "ReadLine" per leggere ogni riga del file come una stringa. Ad esempio, possiamo creare un ciclo while per leggere e stampare ogni riga del nostro file:
-
-```C#
-string riga = reader.ReadLine();
-while (riga != null)
+// Leggi il file CSV e salva ogni riga in una lista di array di stringhe
+static List<string[]> ReadCSV(string filePath)
 {
-    Console.WriteLine(riga);
-    riga = reader.ReadLine();
+    List<string[]> csvData = new List<string[]>();
+    using (TextFieldParser parser = new TextFieldParser(filePath))
+    {
+        parser.Delimiters = new string[] { "," }; // specifica il separatore dei campi
+        while (!parser.EndOfData)
+        {
+            string[] csvLine = parser.ReadFields(); // leggi la riga e restituisci un array di stringhe
+            csvData.Add(csvLine);
+        }
+    }
+    return csvData;
 }
-```
 
-Per scrivere un file CSV, useremo invece la classe StreamWriter. Passiamo il path del nostro file e "true" come argomenti al costruttore per specificare che vogliamo aggiungere le nostre righe al file esistente piuttosto che sovrascriverlo:
+// Utilizza la funzione per leggere un file CSV e stamparne il contenuto su console
+static void Main()
+{
+    List<string[]> data = ReadCSV("nome_file.csv");
+    foreach (string[] row in data)
+    {
+        foreach (string cell in row)
+        {
+            Console.Write(cell + " ");
+        }
+        Console.WriteLine();
+    }
+}
 
-```C#
-StreamWriter writer = new StreamWriter("nuovo_file.csv", true);
-```
+//OUTPUT:
+//valore1 valore2 valore3
+//valore4 valore5 valore6
+//...
 
-Possiamo poi utilizzare il metodo "WriteLine" per scrivere ogni riga del nostro file, specificando i valori separati da virgola come argomento:
-
-```C#
-writer.WriteLine("Mario, Rossi, 25, Italia");
-writer.WriteLine("Maria, Bianchi, 30, Francia");
 ```
 
 ## Approfondimento
 
-Ci sono molte altre funzionalità che è possibile utilizzare quando si lavora con file CSV in C#, ad esempio:
+Il formato CSV (Comma Separated Values) è un formato di file che viene utilizzato per rappresentare dati in una tabella, dove ogni riga corrisponde a una riga nella tabella e ogni valore è separato da una virgola. CSV è ampiamente utilizzato in applicazioni come fogli di calcolo, database e software di analisi dei dati.
 
-- Utilizzare la classe "TextFieldParser" per analizzare file CSV più complessi che possono contenere valori tra doppi apici o interruzioni di linea.
-- Utilizzare il metodo "Split" per dividere una riga in un array di valori separati da virgola.
-- Utilizzare il metodo "ToString" per convertire un array di valori in una stringa formattata per essere scritta in un file CSV.
+Per lavorare con CSV in modo più avanzato, è possibile utilizzare strumenti come LINQ (Language Integrated Query) per manipolare e filtrare i dati in base alle tue esigenze. Inoltre, è importante prestare attenzione ai caratteri speciali che possono essere presenti nei dati CSV e gestirli correttamente durante il processo di lettura e scrittura.
 
-Esplora ulteriormente queste funzionalità e fai pratica con esempi di codice per diventare un esperto nell'utilizzo di CSV in C#.
+## Vedi anche
 
-## Vedi Anche
-
-- [MSDN - Classe StreamReader](https://docs.microsoft.com/it-it/dotnet/api/system.io.streamreader)
-- [MSDN - Classe StreamWriter](https://docs.microsoft.com/it-it/dotnet/api/system.io.streamwriter)
-- [MSDN - Classe TextFieldParser](https://docs.microsoft.com/it-it/dotnet/api/microsoft.visualbasic.fileio.textfieldparser)
-- [MSDN - Metodo Split](https://docs.microsoft.com/it-it/dotnet/api/system.string.split)
-- [MSDN - Metodo ToString](https://docs.microsoft.com/it-it/dotnet/api/system.array.tostring)
+- [C# LINQ - Tutorial per principianti](https://www.c-sharpcorner.com/article/c-sharp-linq-tutorial-for-beginners/)
+- [Working with CSV Files in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "Rust: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -11,55 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-JSON jest jednym z najpopularniejszych formatów danych używanych w dzisiejszych aplikacjach internetowych. Jest on prosty w użyciu, czytelny przez człowieka i łatwy do przetwarzania przez komputer. W tym artykule dowiesz się dlaczego warto poznać język Rust i jak go używać do pracy z formatem JSON.
+Sporządzanie i odczytywanie danych w formacie JSON jest ważnym elementem programowania. React, Angular i inne technologie webowe wykorzystują JSON do przesyłania danych między front-endem a serwerem. Dlatego warto nauczyć się pracy z tym formatem danych.
 
 ## Jak to zrobić
 
-Aby pracować z JSON w języku Rust, musisz najpierw zaimportować odpowiednią bibliotekę. W poniższym przykładzie użyjemy popularnej biblioteki serde_json. Następnie możesz użyć metody `to_string` aby przekonwertować obiekt na format JSON.
+Sama praca z JSON w języku Rust jest bardzo prosta. Wystarczy użyć biblioteki `serde` i jej makra, aby łatwo serializować i deserializować dane. Oto kilka przykładów kodu:
 
 ```Rust
-use serde_json::{Value, from_str, to_string};
+// importowanie biblioteki serde
+extern crate serde;
+use serde::{Serialize, Deserialize};
 
-// Konwertowanie obiektu na JSON
-let obj = json!({
-    "imie": "Anna",
-    "wiek": 25,
-    "kolor_oczu": "zielony"
-});
+// struktura danych do serializacji
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    address: Address,
+}
 
-let json_string = to_string(&obj).unwrap();
-println!("{}", json_string); // {"imie": "Anna", "wiek": 25, "kolor_oczu": "zielony"}
-
-// Konwertowanie JSON na obiekt
-let data = r#"
-    {
-        "imie": "Piotr",
-        "wiek": 30,
-        "kolor_oczu": "niebieski"
+// przykładowe dane do serializacji
+let person = Person {
+    name: "John".to_string(),
+    age: 25,
+    address: Address {
+        city: "New York".to_string(),
+        country: "USA".to_string(),
     }
-"#;
+};
 
-let parsed: Value = from_str(data).unwrap();
-let name = parsed["imie"].as_str().unwrap();
-let age = parsed["wiek"].as_i64().unwrap();
-let eye_color = parsed["kolor_oczu"].as_str().unwrap();
-println!("{} ma {} lat i ma {} oczy.", name, age, eye_color); // Piotr ma 30 lat i ma niebieskie oczy.
+// serializacja do formatu JSON
+let json = serde_json::to_string(&person).unwrap();
+println!("{}", json); // {"name":"John","age":25,"address":{"city":"New York","country":"USA"}}
+
+// deserializacja z formatu JSON
+let new_person: Person = serde_json::from_str(&json).unwrap();
+println!("{}, {}, {}", new_person.name, new_person.age, new_person.address.city); // John, 25, New York 
 ```
 
-## Wchodzenie w głębię tematu
+Powyższy kod pokazuje jak łatwo można serializować i deserializować struktury danych do i z formatu JSON. W przypadku bardziej złożonych danych, można łatwo użyć makra `serde` do określenia niestandardowej struktury danych. 
 
-W języku Rust istnieje wiele bibliotek pozwalających na pracę z formatem JSON. Każda z nich ma swoje zalety i wady. Możesz również przeglądać dokumentację bibliotek, aby dowiedzieć się więcej o dostępnych metodach i sposobach przetwarzania danych.
+## Vertigo Dive
 
-Niektóre z przydatnych funkcji dotyczących pracy z JSON w języku Rust to:
-
-- Tworzenie obiektów i tablic z danymi w formacie JSON za pomocą makra `json!`
-- Automatyczne serializowanie i deserializowanie obiektów przy użyciu metody `serde`
-- Walidacja i konwersja danych przy użyciu metody `serde_json`
-
-Dzięki językowi Rust i jego wszechstronnym bibliotekom, praca z formatem JSON stała się jeszcze łatwiejsza i wydajniejsza.
+Jeśli interesuje Cię bardziej szczegółowe informacje na temat pracy z JSON w języku Rust, to polecam odwiedzić stronę [dokumentacji biblioteki serde](https://serde.rs/index.html). Znajdziesz tam dokładne wyjaśnienia działania makr i przykłady z bardziej skomplikowanymi strukturami danych. 
 
 ## Zobacz także
 
-- Dokumentacja biblioteki serde_json: https://docs.rs/serde_json/
-- Przykłady kodu: https://github.com/serde-rs/json
-- Oficjalna strona języka Rust: https://www.rust-lang.org/
+- [https://doc.rust-lang.org/stable/book/second-edition/ch16-00-concurrency.html#working-with-json](https://doc.rust-lang.org/stable/book/second-edition/ch16-00-concurrency.html#working-with-json)
+- [https://serde.rs/index.html](https://serde.rs/index.html)
+- [https://github.com/serde-rs/json](https://github.com/serde-rs/json)

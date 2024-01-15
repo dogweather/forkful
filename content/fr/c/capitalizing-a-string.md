@@ -1,5 +1,6 @@
 ---
-title:                "C: Capitaliser une chaîne de caractères"
+title:                "Capitaliser une chaîne de caractères"
+html_title:           "C: Capitaliser une chaîne de caractères"
 simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "C"
 category:             "C"
@@ -11,52 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La capitalisation d'une chaîne de caractères peut sembler une tâche simple, mais elle est en réalité très utile dans beaucoup de cas. Cela peut rendre le texte plus lisible, faciliter la recherche de certains mots et améliorer l'esthétique de votre code.
+Si vous devez manipuler des chaînes de caractères dans un programme en C, vous pourriez avoir besoin de les capitaliser à un moment donné. La capitalisation d'une chaîne de caractère consiste à mettre la première lettre de chaque mot en majuscule. Dans cet article, nous allons vous montrer comment réaliser cette opération de manière efficace en utilisant le langage C.
 
 ## Comment faire
 
-Pour capitaliser une chaîne de caractères en langage C, il existe plusieurs méthodes. Voici une méthode simple en utilisant la fonction `toupper()` :
+Pour capitaliser une chaîne de caractères en C, nous allons utiliser une fonction appelée `strcapitalize()` qui prend en paramètre la chaîne que nous voulons capitaliser. Voici un exemple de code qui illustre son utilisation :
 
 ```C
-#include <stdio.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
 
-int main()
-{
-    char string[100];
-    printf("Entrez une chaîne de caractères : ");
-    fgets(string, 100, stdin);
-
-    // Boucle pour parcourir chaque caractère de la chaîne
-    for (int i = 0; string[i] != '\0'; i++)
-    {
-        // Utilise la fonction toupper() pour convertir chaque caractère en majuscule
-        string[i] = toupper(string[i]);
+void strcapitalize(char *str) {
+    // On met la première lettre en majuscule
+    *str = toupper(*str);
+    // On parcourt la chaîne pour trouver les espaces
+    for(int i = 1; str[i] != '\0'; i++) {
+        // Si on trouve un espace, on met la lettre suivante en majuscule
+        if(str[i] == ' ' && str[i+1] != '\0') {
+            str[i+1] = toupper(str[i+1]);
+        }
     }
+}
 
-    printf("La chaîne en majuscules est : %s", string);
-
+int main() {
+    // On crée une chaîne de caractères à capitaliser
+    char str[] = "bonjour tout le monde";
+    // On appelle la fonction strcapitalize()
+    strcapitalize(str);
+    // On affiche la chaîne résultante
+    printf("%s", str);
     return 0;
 }
 ```
 
-**Output :**
+La sortie de ce code sera : `Bonjour Tout Le Monde`. Comme vous pouvez le voir, la fonction a bien capitalisé chaque mot de la chaîne originale.
 
-```
-Entrez une chaîne de caractères : Bonjour le monde
-La chaîne en majuscules est : BONJOUR LE MONDE
-```
+## L'approfondissement
 
-Il est également possible d'utiliser la bibliothèque `string.h` pour utiliser la fonction `strlwr()` et convertir la chaîne en minuscules, puis utiliser `toupper()` pour la capitaliser.
+Maintenant que vous savez comment capitaliser une chaîne de caractères en utilisant la fonction `strcapitalize()` en C, vous pourriez vous demander comment elle fonctionne exactement. Dans les grandes lignes, cette fonction parcourt la chaîne caractère par caractère et utilise la fonction `toupper()` pour mettre la lettre en majuscule. Elle gère également les cas où il y a plusieurs espaces entre les mots ou lorsque la chaîne ne se termine pas par un espace.
 
-## Plongée en profondeur
-
-La fonction `toupper()` fait partie des fonctions de la bibliothèque `ctype.h` en langage C. Elle est utilisée pour convertir un caractère en majuscule. Cette fonction est très utile lors de la manipulation de chaînes de caractères, en particulier lorsqu'on veut comparer des chaînes sans se soucier de la casse.
-
-Il est important de noter que la fonction `toupper()` ne modifie pas la chaîne d'origine, mais renvoie plutôt une nouvelle valeur. Ainsi, pour remplacer la chaîne d'origine, il faut utiliser une boucle et attribuer la valeur convertie à chaque caractère de la chaîne.
+Une autre astuce utile pour capitaliser une chaîne est d'utiliser la fonction `strtok()` pour séparer la chaîne en mots, puis d'utiliser la fonction `toupper()` pour mettre la première lettre de chaque mot en majuscule, avant de les réassembler avec la fonction `strcat()`.
 
 ## Voir aussi
 
-- [Tutoriel sur les chaînes de caractères en C](https://www.programiz.com/c-programming/c-strings)
-- [Documentation de la fonction `toupper()`](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [Exemples d'utilisation de la fonction `toupper()`](https://www.geeksforgeeks.org/toupper-in-c-cpp/)
+Voici quelques liens utiles pour approfondir vos connaissances en programmation en C :
+
+- [Documentation officielle de C](https://devdocs.io/c/)
+- [Tutoriels de programmation en C](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [Communauté de développeurs en C](https://www.reddit.com/r/C_Programming/)

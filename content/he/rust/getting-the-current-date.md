@@ -1,6 +1,7 @@
 ---
-title:                "Rust: קבלת התאריך הנוכחי"
-simple_title:         "קבלת התאריך הנוכחי"
+title:                "לקבלת התאריך הנוכחי"
+html_title:           "Rust: לקבלת התאריך הנוכחי"
+simple_title:         "לקבלת התאריך הנוכחי"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -9,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##למה
-מקבלת את התאריך הנוכחי בקוד שלך יכול להיות חשוב לכמה סיבות, כגון יצירת יומן או רישום תאריכים בתוך אפליקציה.
+## למה
 
-##כיצד לעשות זאת
-כדי לקבל את התאריך הנוכחי בשפת ראסט, תצטרכו להשתמש במודול המובנה שנקרא "ליבת התאריך והשעה". האתר הבא מכיל דוגמאות קוד ופלט מוכן, בתוספת תיעוד מפורט על כל פקודה:
+התאריך הנוכחי הוא מידע חשוב ביותר ביישומי תוכנה רבים. מעקב אחרי התאריך הנוכחי יכול לסייע לנו ליצור תנאים מיוחדים ביישומים שלנו או להציג מידע חשוב למשתמשים. 
+
+## איך לעשות זאת
 
 ```Rust
 use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::{DateTime, Local};
 
-let current_time = SystemTime::now()
-    .duration_since(UNIX_EPOCH)
-    .expect("Failed to get current time");
+let now = SystemTime::now();
+let since_epoch = now.duration_since(UNIX_EPOCH).expect("Time went backwards");
+let current_date_time = DateTime::<Local>::from(since_epoch);
 
-println!("Current time in seconds since UNIX epoch: {}", current_time.as_secs());
+println!("The current date and time is: {}", current_date_time);
+```
+כדי לקבל את התאריך הנוכחי בפורמט מובנה, נצטרך להשתמש בספריות `std :: time` ו- `chrono`. נתחיל על ידי ייבוא שני הספריות ואתחול המשתנים `now` ו `since_epoch` שבהם נאחז את ערך התאריך הנוכחי ואת מספר השניות הפורסת מהזמן האפיקאי מאז תחילת הפעולה. לאחר מכן, נעבוד עם `chrono ` כדי להמיר את הערך החשבוני לתאריך ושעה קונקרטיים בפורמט המקובל זמן מקומי. סוף סוף, נדפיס את המידע שלנו באמצעות הממשק המוכנס ונקבל תוצאה כזו:
+```
+The current date and time is: 2021-11-03 12:30:00
 ```
 
-פלט: "Current time in seconds since UNIX epoch: 1592987152"
+## Deep Dive
 
-##חפירה מעמיקה
-ישנם כמה דרכים שונות לקבל את התאריך הנוכחי בשפת ראסט, לכן יכול להיות שימושי לבדוק שיטות נוספות כדי להבין איך הם פועלים ומתי הן התאימות לצרכים שלכם. נוסף על כך, אתם יכולים לחקור שימושים נפוצים של תאריכים ושעות בשפת ראסט כדי להתחיל להשתמש בהם בקוד שלכם.
+כמו שאתה רואה, תכנות בראסט לקבלת התאריך הנוכחי הוא מאוד קל ויכול להתאים לכל מטרה שלך. אם ברצונך לדעת עוד על צורת התאריך שלנו או על אופן שבו ניתן לעבוד עם משתנים זמן מיוחדים, אנו ממליצים לבדוק את התיעוד הרשמי של שפת התכנות ראסט.
 
-##ראה גם
-- [תיעוד רשמי על התאריך והשעה בראסט](https://doc.rust-lang.org/std/time/index.html)
-- [ערוץ ראסט בפורום המפתחים הישראלי](https://he.codeforum.org/c/rust)
+## ראה גם
+- [התיעוד של ראסט עבור std::time](https://doc.rust-lang.org/std/time/)
+- [התיעוד של ראסט עבור chrono](https://docs.rs/chrono/0.4.19/chrono/)

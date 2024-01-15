@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Å jobbe med json"
+html_title:           "Ruby: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du arbeider med programmeringsspråket Ruby, har du kanskje hørt om JSON. Men hva er egentlig JSON, og hvorfor bør du lære å jobbe med det? JSON står for JavaScript Object Notation og er et populært format for datautveksling. Det brukes ofte i moderne webutvikling og er en viktig del av Ruby-programmering. 
+Hvis du jobber med data eller utvikler applikasjoner, har du mest sannsynlig støtt på JSON (JavaScript Object Notation). Dette formatet er enkelt å lese og skrive for både mennesker og maskiner, og er derfor et populært valg for å utveksle data mellom ulike systemer og plattformer.
 
-## Hvordan
+## Hvordan lage og behandle JSON i Ruby
 
-For å arbeide med JSON i Ruby trenger du et bibliotek som hjelper deg med å håndtere JSON-data. Et av de mest brukte bibliotekene er "json", som er innebygd i Ruby. La oss se på et eksempel på hvordan du kan bruke dette biblioteket for å lage og jobbe med JSON-data. 
+Det første du trenger å gjøre er å inkludere Ruby's JSON-bibliotek med `require "json"`. Deretter kan du lage en Ruby-hasj ved å bruke følgende syntaks:
 
 ```Ruby
-require 'json'
-
-# Opprett en Ruby hash med informasjon om en person
-person = { 
-  navn: "Ole Olsen", 
-  alder: 35, 
-  by: "Oslo" 
-}
-
-# Konverter hashen til JSON-format
-json_person = person.to_json 
-
-# Skriv ut den nye JSON-strengen
-puts json_person 
-
-# Output: {"navn":"Ole Olsen","alder":35,"by":"Oslo"}
+data = { "navn" => "Lisa", "alder" => 30, "yrke" => "utvikler" }
 ```
 
-Her kan du se at ".to_json" konverterer hashen til en gyldig JSON-streng. Dette gjør det enklere å sende og motta data i forskjellige formater, for eksempel mellom to applikasjoner. 
+I dette eksempelet har jeg brukt nøkkelordet `=>` for å koble sammen nøklene og verdiene i hasjen. Det er viktig å merke seg at verdiene kan være av forskjellige datatyper, som tekst, tall eller boolske uttrykk.
+
+For å konvertere hasjen til JSON-format kan du bruke `to_json` metoden som følger:
+
+```Ruby
+json_data = data.to_json
+```
+
+Du kan også lese inn en JSON-fil og konvertere den til en Ruby-hasj ved å bruke `JSON.parse(file)`. Ved å bruke `JSON.pretty_generate` kan du legge til innrykk og linjeskift for å gjøre JSON-en mer lesbar.
+
+```Ruby
+file = File.read("data.json")
+data = JSON.parse(file)
+pretty_json = JSON.pretty_generate(data)
+```
+
+Det er også enkelt å skrive ut JSON-data med `puts`, som vil gi følgende output:
+
+```Ruby
+{"name":"Lisa","age":30,"occupation":"utvikler"}
+```
+
+Hvis du trenger å behandle store mengder med JSON-data, kan du bruke streaming-metoder som `JSON.dump` og `JSON.load` for å unngå å låse opp hele dataen i minnet.
 
 ## Dypdykk
 
-Nå som du har en grunnleggende forståelse av hvordan du kan bruke JSON i Ruby, kan du utforske dypere og lære mer om de forskjellige funksjonene og metoder som er tilgjengelige. Ruby har mange nyttige metoder for å konvertere, parsere og manipulere JSON-data. Du kan også lære å validere og håndtere feil i JSON-data for å gjøre kodebasen din mer robust. Det er også verdt å undersøke hvordan du kan integrere JSON med populære web-rammeverk som Ruby on Rails eller Sinatra. 
+Ruby's JSON-bibliotek støtter også ulike alternativer for å tilpasse behandlingen av JSON-data. Du kan for eksempel angi en maksimal dybde på hasjer med `max_nesting`, eller velge å ikke behandle spesielle tegn med `escape` parameteren.
+
+En annen nyttig funksjon er `JSON.generate`, som lar deg angi valgfrie argumenter for å definere et eget formaterings- og indentasjonsnivå for JSON-data.
 
 ## Se også
 
-- [Ruby-docs: JSON bibliotek](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html)
-- [RailsGuides: Working with JSON in Rails](https://guides.rubyonrails.org/layouts_and_rendering.html#rendering-json)
-- [Sintra: Using JSON](http://sinatrarb.com/intro.html#Rendering%20JSON)
-- [JSON Validator](https://jsonlint.com)
+- [Ruby's offisielle JSON-dokumentasjon](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
+- [Rubygems-side for JSON-biblioteket](https://rubygems.org/gems/json)

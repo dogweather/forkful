@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Fish Shell recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,46 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+## Why
+Debug output, also known as logging, is an essential tool for any programmer. It allows you to track the execution of your code and identify any errors or unexpected behavior. Printing debug output in a clear and organized manner can greatly improve the debugging process and save you time in the long run.
 
-At first glance, printing debug output may seem like a tedious task with little benefit. However, as developers, it is crucial to have a deep understanding of our code and to be able to troubleshoot any potential errors. This is where printing debug output becomes a valuable tool. By printing out the value of certain variables or the execution of specific functions, we can gain valuable insights and catch any bugs early on in the development process.
+## How To
+To print debug output in Fish Shell, you can use the `echo` command followed by the `-d` option, which stands for "debug". For example:
 
-##How To
+```
+Fish Shell
 
-To print debug output in Fish Shell, we can use the `echo` command. This command takes in a string or a variable and prints it to the terminal. Let's take a look at a simple example:
-
-```Fish Shell
-set my_variable "Hello from Fish Shell!"
-echo $my_variable
+echo -d "Debug output"
 ```
 
-In the above code, we first create a variable called `my_variable` and set its value to "Hello from Fish Shell!". Then, we use the `echo` command to print out the value of our variable. This will result in the following output in the terminal:
+This will print the string "Debug output" along with the line number and file name where the `echo` command was executed.
 
-```Output
-Hello from Fish Shell!
+You can also use the `set -q` command in combination with a variable to check if a certain condition is met, and then print the debug output. For example:
+
+```
+Fish Shell
+
+set var "Debug variable"
+
+if set -q var
+    echo -d $var
+end
 ```
 
-We can also use `echo` within loops or functions to print out the values of different variables at different stages of our code. This allows us to track the execution of our code and spot any potential issues.
+This will only print the debug output if the condition `set -q var` is true.
 
-##Deep Dive
+## Deep Dive
+By default, Fish Shell will print debug output to the standard error stream, which is usually displayed in red. However, you can also customize the output color using the `-c` option followed by a color name or RGB value. For example:
 
-Printing debug output can also be helpful when working with more complex data structures, such as arrays or dictionaries. We can use the `printf` command to format our output in a more readable way. For example:
+```
+Fish Shell
 
-```Fish Shell
-set my_array (seq 1 5)
-printf "The array is: %s\n" $my_array
+echo -d -c red "Red debug output"
 ```
 
-In this code, we first create an array with values from 1 to 5 using the `seq` command. Then, we use the `printf` command to print out the array's values in a formatted manner. The `%s` represents where the array values will be inserted in the string, and the `\n` adds a line break after each element. This will result in the following output:
+This will print "Red debug output" in red to the standard error stream.
 
-```Output
-The array is: 1 2 3 4 5
-```
+Additionally, you can use the `-f` and `-l` options to print the file name and line number respectively, without printing any actual debug output. This can be useful when you want to track the execution of your code without cluttering the output with unnecessary messages.
 
-By using `echo` and `printf` with different formatting options, we can easily print out the values of more complex data structures for debugging purposes.
-
-##See Also
-
-- Official Fish Shell Documentation for `echo` and `printf`: https://fishshell.com/docs/current/commands.html#echo and https://fishshell.com/docs/current/commands.html#printf
-- A Beginner's Guide to Debugging in Fish Shell: https://codementor.io/@jamesezechukwu/a-beginner-s-guide-to-debugging-in-fish-shell-svjs6p8lv
-- Debugging in Fish Shell: https://www.rabartu.net/posts/debugging-in-fish-shell/
+## See Also
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Debugging in Fish Shell](https://fishshell.com/docs/current/commands.html#debug-output)

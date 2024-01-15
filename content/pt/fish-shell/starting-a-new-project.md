@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Começando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "Fish Shell: Começando um novo projeto"
 simple_title:         "Começando um novo projeto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,37 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar a Fish Shell para começar um novo projeto?
+## Por que usar o Fish Shell?
 
-Se você é um programador que adora trabalhar com linhas de comando e busca por uma shell mais intuitiva, completa e fácil de usar, a resposta é simples: a Fish Shell é a escolha perfeita para você. Com recursos como auto-completar com sugestões, uma linguagem de scripting simples e poderosa e uma comunidade ativa, a Fish Shell é a ferramenta ideal para iniciar um novo projeto e aumentar sua produtividade.
+Se você está procurando por uma shell moderna, fácil de aprender e com muitos recursos, o Fish Shell pode ser a melhor opção para você. Com uma sintaxe amigável e suporte a auto-completar, o Fish Shell torna a navegação e o gerenciamento do seu sistema muito mais eficiente.
 
-## Como usar a Fish Shell para iniciar um novo projeto
+## Como usar o Fish Shell?
 
-Para utilizar a Fish Shell, você precisa primeiro instalá-la no seu sistema. Dependendo do seu sistema operacional, isso pode ser feito facilmente através do gerenciador de pacotes, como o apt-get no Ubuntu ou o Homebrew no Mac. Depois de instalada, basta abrir o terminal e digitar "fish" para iniciar a sua nova shell.
-
-Uma das principais características da Fish Shell é o recurso de auto-completar com sugestões. Isso significa que a shell irá sugerir possíveis comandos e argumentos à medida que você digita, economizando seu tempo e prevenindo erros. Por exemplo, se você digitar "cd D" e pressionar a tecla Tab, a shell irá sugerir automaticamente o diretório "Documents" caso ele exista no seu sistema.
-
-Outra funcionalidade importante é a linguagem de scripting da Fish Shell, que é baseada em comandos e funções simples. Por exemplo, para criar uma função que liste os arquivos de uma determinada pasta, basta digitar o seguinte código no terminal:
+Confira esses exemplos de código para ter uma ideia de como a Fish Shell funciona:
 
 ```Fish Shell
-
-function listar
-ls $argv
-end
+# Criando um novo diretório
+mkdir novo_diretorio
 ```
 
-Ao chamar a função "listar" com o nome da pasta como argumento, a shell irá executar o comando "ls" e listar todos os arquivos daquela pasta. Além disso, a Fish Shell possui uma extensa documentação e uma comunidade ativa, o que facilita o aprendizado e a resolução de possíveis problemas.
+```Fish Shell
+# Navegando pelo diretório recém-criado
+cd novo_diretorio
+```
 
-## Mais informações sobre iniciar um novo projeto com a Fish Shell
+```Fish Shell
+# Listando os arquivos no diretório
+ls
+```
 
-Além dos recursos já mencionados, a Fish Shell também oferece outras funcionalidades que podem tornar o processo de iniciar um novo projeto mais eficiente. Uma delas é a capacidade de criar e gerenciar aliases, que são comandos personalizados que podem substituir sequências mais longas de comandos.
+```Fish Shell
+# Criando um novo arquivo
+touch novo_arquivo.txt
+```
 
-Além disso, a Fish Shell também suporta a utilização de plugins, que são pequenos programas desenvolvidos pela comunidade para adicionar novas funcionalidades à shell. Com isso, é possível personalizar ainda mais a sua experiência de uso.
+```Fish Shell
+# Adicionando conteúdo ao arquivo
+echo "Olá, mundo!" > novo_arquivo.txt
+```
+
+```Fish Shell
+# Visualizando o conteúdo do arquivo
+cat novo_arquivo.txt
+
+Output:
+Olá, mundo!
+```
+
+## Explorando mais sobre o Fish Shell
+
+Além dos comandos básicos, o Fish Shell também oferece uma variedade de recursos úteis, como histórico de comandos, temas personalizáveis e suporte para plugins. Você pode até mesmo escrever seus próprios scripts em Fish para automatizar tarefas repetitivas.
+
+Veja mais alguns recursos interessantes que o Fish Shell oferece:
+
+- Sintaxe colorida e facilitada para melhor legibilidade
+- Suporte para variáveis de ambiente e funções personalizadas
+- Auto-completar com sugestões baseadas nos arquivos e comandos existentes
+- Modo interativo para experimentar comandos sem executá-los
 
 ## Veja também
 
-- [Documentação oficial da Fish Shell] (https://fishshell.com/docs/current/)
-- [Repositório do projeto no GitHub] (https://github.com/fish-shell/fish-shell)
-- [Comunidade de usuários da Fish Shell] (https://fishshell.com/community.html)
-
-Agora que você conhece um pouco mais sobre a Fish Shell, não perca mais tempo e comece a utilizá-la em seus projetos. Sua produtividade e facilidade na linha de comando certamente irão aumentar. Até a próxima!
+- [Página oficial do Fish Shell](https://fishshell.com/)
+- [Manual do usuário do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guia básico do Fish Shell](https://dev.to/tnhunter10s/the-absolute-basics-of-fish-shell-fh6)

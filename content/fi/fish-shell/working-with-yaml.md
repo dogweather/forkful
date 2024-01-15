@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Työskentely yaml:n kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Fish Shell: Työskentely yaml:n kanssa"
 simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,49 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: 
 
-YAML on yksi suosituimmista tapahtumien kirjoitusmuodoista ohjelmistokehittäjien keskuudessa. Se on helppokäyttöinen ja yksinkertainen tapa tallentaa tietoa rakenteelliseen muotoon. YAML: n avulla voit tallentaa tietoja, kuten asetuksia, tietokantoja ja jopa koodin seurantaa.
+Miksi työskentelisit YAML:n kanssa? 
+YAML on lyhenne sanoista "YAML Ain't Markup Language" ja se on yksi suosituimmista tiedostomuodoista tänä päivänä. Se on helppo lukea ja kirjoittaa, joten se on erinomainen valinta tiedostojen tallentamiseen ja siirtoon.
 
-## Miten
+## Miten:
 
-Fish Shell tarjoaa kätevän tavan työskennellä YAML: n kanssa. Voit luoda YAML-tiedostoja Fish Shell-skripteillä ja käyttää niitä sitten ohjelmassa. Voit myös käyttää Fish Shell-komentoja navigoidaksesi YAML-tiedostoissa ja suorittaaksesi niihin muutoksia. Katso esimerkkikoodi alapuolella nähdäksesi, kuinka voit aloittaa YAML-koodauksen Fish Shellillä.
+Fish Shell tekee YAML:n käsittelystä yksinkertaista ja helppoa. Lue alla olevat esimerkit nähdäksesi miten voit käyttää Fish Shellin toimintoja YAML-tiedostojen kanssa ja millainen tulos niistä saadaan.
 
-```
-# Luodaan YAML-tiedosto nimeltä config.yml ja lisätään siihen tietoa
-echo "Nimi: John Doe" > config.yml
-echo "Sähköposti: johndoe@example.com" >> config.yml
+```Fish Shell
+# Asenna YAML-kirjasto
+brew install libyaml
 
-# Tulostetaan YAML-tiedoston sisältö
-cat config.yml
+# Lue YAML-tiedosto
+set data (yq r tiedosto.yaml)
 
-# Muokataan YAML-tiedoston sisältöä
-fish -c 'set -Ux Tiedot:nimi "Jane Doe"'
-fish -c 'set -Ux Tiedot:sähköposti "janedoe@example.com"'
+# Hae tietty tieto YAML-tiedostosta
+set nimi (yq r tiedosto.yaml name)
 
-# Tulostetaan muokattu YAML-tiedosto
-cat config.yml
-```
+# Lisää uusi tieto YAML-tiedostoon
+set uusi_data (yq w -i tiedosto.yaml uusi_tieto "uusi arvo")
 
-Odotettu tulostus on seuraava:
-
-```
-Nimi: John Doe
-Sähköposti: johndoe@example.com
-
-Nimi: Jane Doe
-Sähköposti: janedoe@example.com
+# Poista tieto YAML-tiedostosta
+set poistettu_tieto (yq d tiedosto.yaml poistettu_tieto)
 ```
 
-## Syvemmälle
+Merkkijonon voi myös parsia YAML-muotoon käyttämällä `yq read` -komentoa:
 
-Fish Shell tarjoaa myös useita komentoja ja toimintoja, joita voit käyttää YAML-tiedostojen kanssa työskennellessäsi. Voit esimerkiksi käyttää `yq` -komentoa muuttaaksesi tiettyjä arvoja YAML-tiedostossa tai `yq eval` -komentoa suorittaaksesi monimutkaisempia tehtäviä ja käsittelyjä.
+```Fish Shell
+set data "nimi: Henkilo
+ika: 30"
+set parsed (yq read -R "$data")
+echo "Nimi: $parsed.nimi, Ikä: $parsed.ika"
+```
 
-Ole varovainen käyttäessäsi Fish Shell-komentoja YAML-tiedostoihin, sillä ne voivat helposti muuttaa tai vahingoittaa tietoja. On aina hyvä idea tehdä varmuuskopio YAML-tiedostosta ennen kuin käytät komentoja siihen.
+```
+Output:
+Nimi: Henkilo, Ikä: 30
+```
 
-## Katso myös
+## Syvemmällä:
 
-- [Fish Shellin viralliset sivut](https://fishshell.com/)
-- [YAML-perusopas](https://yaml.org/)
-- [Fish Shellin asennusohjeet](https://github.com/fish-shell/fish-shell)
-- [YAML-komentorivityökalu `yq` käyttöohjeet](https://github.com/mikefarah/yq)
+Fish Shellilla on monia toimintoja, jotka tekevät YAML:n käsittelystä sujuvaa ja tehokasta. Voit käyttää `yq` -komentoa lukemiseen, kirjoittamiseen ja muokkaamiseen sekä `[` -operaattoria tietojen hakuun. Voit myös käyttää `yaml eval` -komentoa suorittaaksesi YAML-muotoisen merkkijonon ja `yaml format` -komentoa muotoillessasi YAML-tiedostoa.
+
+Fish Shell tarjoaa myös apuna `--pretty` parametrin, joka helpottaa YAML-formaatin luettavuutta ja tiedostojen vertailua.
+
+## Katso myös:
+
+- [Fish Shellin virallinen sivusto](https://fishshell.com/)
+- [Fish Shellin dokumentaatio YAML-toiminnoista](https://fishshell.com/docs/current/cmds/yq.html)
+- [YAML-spesifikaatiot](https://yaml.org/spec/)

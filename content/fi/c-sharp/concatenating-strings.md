@@ -1,6 +1,7 @@
 ---
-title:                "C#: Jonojen yhdistäminen"
-simple_title:         "Jonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "C#: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,38 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Stringien yhdistäminen on usein tarpeen ohjelmoinnissa, kun halutaan yhdistää erilaisia tekstejä tai merkkijonoja yhdeksi kokonaisuudeksi. Tämä voi olla hyödyllistä esimerkiksi tulostettaessa tietoja käyttäjälle tai luotaessa tiedostoja. C#:n avulla tämä onnistuu helposti ja tehokkaasti.
+IHminen saattaa haluta yhdistää merkkijonoja yhteen, jotta hän pystyy luomaan uusia merkkijonoja, jotka sisältävät tietokoneen käsittämää tietoa.
 
-## Kuinka tehdä
+## Miten
 
-Stringien yhdistäminen C#:lla onnistuu käyttämällä yksinkertaisesti plus-merkkiä (+) yhdistämään halutut merkkijonot. Esimerkiksi seuraava koodi yhdistää kolme eri stringiä yhdeksi kokonaisuudeksi:
-
-```C#
-string nimi = "Matti";
-string sukunimi = "Meikäläinen";
-string kokoNimi = nimi + " " + sukunimi;
-Console.WriteLine(kokoNimi);
-```
-
-Tämän koodin tuloste on "Matti Meikäläinen". Lisäksi C# tarjoaa myös String.Format-metodin, jonka avulla voidaan yhdistää merkkijonoja joustavammin ja esimerkiksi muotoilla ne halutulla tavalla. Esimerkiksi seuraava koodi tuottaa saman tuloksen kuin edellinen esimerkki, mutta käyttää String.Formatia:
+Yhdistäminen ei ole monimutkaista! Käytä C#'n String.Concat-metodia.
 
 ```C#
-string nimi = "Matti";
-string sukunimi = "Meikäläinen";
-string kokoNimi = string.Format("{0} {1}", nimi, sukunimi);
-Console.WriteLine(kokoNimi);
+// Luodaan kaksi merkkijonoa
+string s1 = "Terve";
+string s2 = "maailma";
+
+// Yhdistetään merkkijonot
+string s3 = String.Concat(s1, s2);
+
+// Tulostetaan uusi merkkijono
+Console.WriteLine(s3);
+
+// Tulostus: Terve maailma
 ```
 
-Tämän koodin tuloste on myös "Matti Meikäläinen". On tärkeää huomata, että String.Formatilla voidaan myös muokata muotoilua ja lisätä esimerkiksi desimaalilukuja tai päivämääriä merkkijonoon.
+## Deep Dive
 
-## Syvällinen tarkastelu
-
-C#:n toimintojen ansiosta stringien yhdistäminen on nopeaa ja helppoa. Kuitenkaan kaikki ei ole niin yksinkertaista kuin miltä se saattaa vaikuttaa. Esimerkiksi jokainen stringin yhdistämiseen käytetty + operaattori luo uuden merkkijonon. Tämä saattaa olla ongelmallista, jos yhdistetään suuri määrä merkkijonoja, sillä se voi aiheuttaa suorituskyvyn laskua. Tästä syystä on suositeltavaa käyttää String.Formatia, joka suorittaa yhdistämisen yhden ainoan merkkijonon avulla.
-
-Lisäksi on hyvä tietää, että C#:ssä stringsit ovat muuttumattomia, eli ne eivät voi muuttua suorituksen aikana. Tämän vuoksi stringien yhdistäminen luo aina uuden merkkijonon, eikä muokkaa alkuperäistä stringiä.
+Yhdistäminen on tärkeä osa tietokoneohjelmointia, sillä se mahdollistaa erilaisten tietojen yhdistämisen ja käsittelyn. Tässä C#-esimerkissä käytimme String-luokan Concat-metodia, joka yhdistää kaksi merkkijonoa ja luo uuden merkkijonon. Tämä metodi on hyödyllinen erityisesti silloin, kun halutaan luoda käyttäjälle ymmärrettävä merkkijono esimerkiksi tulostuksen yhteydessä.
 
 ## Katso myös
 
-- [Stringien yhdistäminen C#:ssa](https://www.c-sharpcorner.com/article/concatenation-of-strings-in-c-sharp/)
-- [String.Formatin käyttöohjeet](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8)
-- [Tuple-luokka C#:ssa](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=netframework-4.8)
+- [C# - Merkkijonot](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/)
+- [C# - String.Concat-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.concat?view=netframework-4.8)

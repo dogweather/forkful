@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Swift: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON es importante
+## ¿Por qué trabajar con JSON en Swift?
 
-JSON (JavaScript Object Notation) es un formato de intercambio de datos que se ha vuelto ampliamente utilizado en aplicaciones web y móviles. Trabajar con JSON permite a los desarrolladores manipular y transmitir datos de manera eficiente y en un formato legible tanto para personas como para máquinas. En este artículo, exploraremos cómo trabajar con JSON en Swift para crear aplicaciones potentes y eficientes.
+¿Alguna vez te has preguntado cómo aplicaciones como Instagram y Twitter obtienen y muestran datos en tiempo real? La respuesta es JSON. JSON (JavaScript Object Notation) es un formato de texto ligero y sencillo de entender utilizado para intercambiar datos entre aplicaciones. En este artículo, aprenderás por qué JSON es tan importante en el desarrollo de aplicaciones y cómo utilizarlo en Swift.
 
 ## Cómo trabajar con JSON en Swift
 
-Para trabajar con JSON en Swift, necesitaremos utilizar algunas clases y métodos específicos. Primero, necesitamos importar la librería de Swift Foundation para poder utilizar la clase JSONDecoder. Luego, podemos definir nuestra estructura de datos que contendrá la información de nuestro archivo JSON. Finalmente, podemos decodificar el archivo JSON utilizando el método `decode` de la clase JSONDecoder y especificando el tipo de datos correspondiente. Aquí hay un ejemplo de cómo hacerlo:
+Para trabajar con JSON en Swift, primero debes importar el framework `Foundation` en tu proyecto. Luego, puedes utilizar la clase `JSONSerialization` para convertir datos JSON en tipos de datos de Swift y viceversa.
 
 ```Swift
+// Importar el framework Foundation
 import Foundation
 
-// Definir nuestra estructura de datos
-struct Person: Codable {
-    let name: String
-    let age: Int
-}
+// Datos JSON de ejemplo
+let jsonString = "{\"nombre\": \"María\", \"edad\": 25, \"ciudad\": \"Madrid\"}"
+let jsonData = jsonString.data(using: .utf8)!
 
-// Decodificar el archivo JSON
-let jsonData = """
-    {
-        "name": "María",
-        "age": 25
-    }
-""".data(using: .utf8)!
+// Convertir datos JSON a una estructura Swift
+if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+  // Obtener un valor específico
+  let name = json["nombre"] as? String
 
-do {
-    let person = try JSONDecoder().decode(Person.self, from: jsonData)
-    print(person.name) // Output: "María"
-    print(person.age) // Output: 25
-} catch {
-    print(error.localizedDescription)
+  // Convertir una estructura Swift a datos JSON
+  if let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+    // Convertir datos JSON a una cadena de texto
+    let jsonString = String(data: jsonData, encoding: .utf8)
+    print(jsonString)
+  }
 }
 ```
 
-¡Y eso es todo! Con estos sencillos pasos, podemos trabajar con archivos JSON en nuestras aplicaciones Swift.
+Output:
+```Swift
+Optional("{\"nombre\":\"María\",\"ciudad\":\"Madrid\",\"edad\":25}")
+```
 
-## Profundizando en el trabajo con JSON
+## Profundizando en JSON
 
-Una vez que hayamos entendido cómo trabajar con JSON en Swift, podemos profundizar en algunas técnicas más avanzadas. Por ejemplo, podemos trabajar con archivos JSON anidados utilizando tipos de datos opcionales y manejo de errores. También podemos utilizar JSONEncoder para codificar estructuras de datos en formato JSON. La documentación oficial de Apple para Swift ofrece una guía detallada sobre cómo trabajar con JSON en Swift, ¡así que asegúrese de revisarla para obtener más información!
+JSON es una forma sencilla y legible de estructurar datos para su intercambio entre aplicaciones. Utiliza una combinación de pares de clave-valor y listas ordenadas para almacenar información. En Swift, estos datos se convierten en diccionarios y arrays respectivamente. Además, JSON permite anidar estructuras, lo que lo hace flexible y escalable.
 
-## Ver También
+Una cosa importante a tener en cuenta al trabajar con JSON es que es sensible a mayúsculas y minúsculas, por lo que los nombres de las claves deben ser escritos exactamente igual en ambas aplicaciones. También puedes utilizar herramientas en línea como [JSON Formatter](https://jsonformatter.org/) para validar y formatear datos JSON.
 
-- [Documentación oficial de Apple sobre Swift y JSON](https://developer.apple.com/documentation/swift/codable)
-- [Ejemplo de trabajo con JSON en Swift en la vida real](https://medium.com/@codecare/swift-4-0-playing-with-json-78254e8b50ad)
-- [Video tutorial sobre SEO en español](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+## Ver también
+
+- [Documentación oficial de Apple sobre JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [Tutorial de Ray Wenderlich sobre JSON en Swift](https://www.raywenderlich.com/3418439-json-tutorial-in-swift-getting-started)
+- [Tutorial de Hacking With Swift sobre JSON en Swift](https://www.hackingwithswift.com/articles/153/how-to-parse-json-using-jsonserialization)

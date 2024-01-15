@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Fish Shell: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por Qué?
+## Por qué
 
-Iniciar un nuevo proyecto puede ser emocionante y desafiante al mismo tiempo. Puede ser una oportunidad para aprender nuevas habilidades, resolver un problema existente o simplemente expresar tu creatividad. Sea cual sea la razón, el uso de Fish Shell puede hacer que la creación de tu proyecto sea más eficiente y fluida.
+¡Hola a todos! Hoy vamos a hablar sobre la creación de un nuevo proyecto con Fish Shell. Puede que te estés preguntando por qué deberías empezar un nuevo proyecto con Fish Shell, y la respuesta es simple: ¡es una alternativa poderosa y moderna a otras shells!
 
-## Cómo
+## Cómo crear un nuevo proyecto con Fish Shell
 
-Para comenzar un nuevo proyecto con Fish Shell, sigue estos pasos:
+Primero, asegúrate de tener Fish Shell instalada en tu sistema. Puedes hacerlo a través de algún gestor de paquetes o descargándola manualmente desde su sitio web. Una vez instalada, sigue estos pasos para empezar tu nuevo proyecto:
 
-1. Abre tu terminal y escribe ```fish```, esto iniciará Fish Shell.
-2. Crea un nuevo directorio para tu proyecto con el comando ```mkdir nombre_del_proyecto```.
-3. Ingresa al directorio recién creado con ```cd nombre_del_proyecto```.
-4. Crea un archivo ```README.md``` para describir tu proyecto con el comando ```touch README.md```.
-5. Escribe el contenido de tu archivo README.md con tu editor de texto preferido.
+```Fish Shell 
+mkdir mi_proyecto
+cd mi_proyecto
+touch main.fish
+```
 
-¡Y ahí lo tienes! Has iniciado un nuevo proyecto con Fish Shell.
+Ahora, abre el archivo `main.fish` con tu editor de texto favorito y escribe tu código de Fish Shell dentro de él. Por ejemplo:
 
-## Profundizando
+```Fish Shell
+echo "¡Hola mundo!"
+```
 
-Fish Shell ofrece varias características que pueden ser útiles para iniciar un nuevo proyecto. Por ejemplo, puedes utilizar el comando ```mkdir -p carpeta1/carpeta2``` para crear una estructura de carpetas en una sola línea. También puedes usar el operador ```&&``` para encadenar comandos y realizar tareas en secuencia.
+Guarda tu archivo y vuelve a la terminal. Ahora ejecuta el siguiente comando para iniciar tu proyecto con Fish Shell:
 
-Además, Fish Shell tiene una función de autocompletar que puede ahorrarte tiempo al escribir comandos largos. Simplemente presiona la tecla ```Tab``` para completar automáticamente el comando o la ruta del archivo.
+```Fish Shell
+fish main.fish
+```
 
-Explora todas las funciones de Fish Shell y descubre cómo puedes integrarlas en tu flujo de trabajo al iniciar un nuevo proyecto.
+¡Y eso es todo! Ya estás listo para empezar a utilizar Fish Shell en tu nuevo proyecto.
 
-## Ver También
+## Profundizando sobre la creación de un nuevo proyecto
 
-- [Página oficial de Fish Shell](https://fishshell.com/)
-- [Documentación de Fish Shell](https://fishshell.com/docs/)
-- [Tutorial de Fish Shell en español](https://medium.com/@emiliorios/tutorial-fish-el-shell-m%C3%A1s-amigable-y-productivo-del-planeta-3039df62e746)
+Si quieres profundizar más en la creación de un nuevo proyecto con Fish Shell, aquí te dejamos algunos recursos útiles:
+
+- La documentación oficial de Fish Shell: https://fishshell.com/docs/2.3/index.html
+-  Un tutorial interactivo para aprender más sobre Fish Shell: https://try.fish/
+- Una lista de herramientas y plugins útiles para Fish Shell: https://github.com/jorgebucaran/awesome-fish
+
+¡Y eso es todo! Ahora es tu turno de explorar y descubrir todas las posibilidades que Fish Shell tiene para ofrecerte en tu nuevo proyecto.
+
+## Mira también
+
+- Documentación oficial de Fish Shell: https://fishshell.com/docs/2.3/index.html
+- Guía interactiva para aprender más sobre Fish Shell: https://try.fish/
+- Lista de herramientas y plugins para Fish Shell: https://github.com/jorgebucaran/awesome-fish

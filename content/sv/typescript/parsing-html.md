@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Att parsa HTML"
-simple_title:         "Att parsa HTML"
+title:                "Att analysera html"
+html_title:           "TypeScript: Att analysera html"
+simple_title:         "Att analysera html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,50 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att parsning av HTML är en vanlig uppgift för många webbutvecklare, eftersom det är en grundläggande del av att bygga dynamiska webbplatser. Genom att lära sig hur man effektivt kan parse HTML, kan man göra webbutveckling snabbare och enklare.
+Det är vanligt att behöva hämta innehållet från en webbsida och använda det i en applikation eller skal. Att analysera HTML-koden och extrahera specifikt innehåll kan spara massor av tid och arbete för utvecklare.
 
 ## Hur man gör
+### Installera och Importera
+För att kunna analysera HTML-koden behöver vi använda ett TypeScript-paket som heter `cheerio`. Installera det genom att köra `npm install cheerio` i terminalen. Sedan kan vi importera det i vår kod genom att lägga till `import * as cheerio from 'cheerio';` i början av vår fil.
 
-För att börja parsning av HTML i TypeScript behöver du först installera ett externt bibliotek som heter "cheerio". Detta bibliotek gör det möjligt för oss att selektera och manipulera HTML-element.
-
-När du har installerat "cheerio", kan du använda följande kod för att skapa en enkel HTML-parsfunktion:
+### Hämta HTML från en webbsida
+Innan vi kan börja analysera HTML-koden behöver vi först hämta den från en URL. För detta använder vi `fetch()`-funktionen tillsammans med JavaScripts `Promise` för att få tillbaka data från ett GET-anrop. Vi kommer sedan konvertera svaret till text och skicka det som en parameter till `cheerio`-funktionen.
 
 ```TypeScript
-import * as cheerio from 'cheerio';
-
-function parseHTML(html: string): string[] {
-    const $ = cheerio.load(html);
-    const elements = $('p'); // här väljer vi att söka efter alla <p>-element
-    const output: string[] = [];
-    
-    elements.each((index, element) => {
-        output.push($(element).text()); // här hämtar vi texten från varje <p>-element och lägger till den i vår utmatnings-array
-    });
-    
-    return output;
-}
-
-const html = '<body><h1>Välkommen</h1><p>Det här är en text</p><p>En annan text</p></body>';
-const parsed = parseHTML(html);
-
-console.log(parsed); // ["Det här är en text", "En annan text"]
+const html = await fetch('https://mypage.com').then(res => res.text());
+const $ = cheerio.load(html);
 ```
 
-I det här exemplet skapar vi en funktion som tar emot en HTML-sträng och returnerar en array med all text som finns i <p>-elementen i HTML:n. Vi använder oss av cheerio-biblioteket för att enkelt välja ut alla <p>-element och hämta deras text.
+### Hitta och extrahera innehåll
+Nu kan vi använda `cheerio` för att leta efter specifikt innehåll i vår HTML-kod. Det gör vi genom att använda CSS-selektorer tillsammans med `$(...)`-funktionen för att få tillbaka en array med alla element som matchar vårt selektor. Vi kan sedan använda `text()`- eller `attr()`-funktionerna för att få ut själva innehållet eller attributen från elementet.
 
-Som du kan se är det väldigt enkelt att parsra HTML med hjälp av TypeScript. Det är bara att använda selektor-syntaxen för att välja ut de önskade elementen och sedan använda .text() metoden för att hämta texten från dem.
+```TypeScript
+const title = $('h1').text(); // Hämtar innehållet i det första h1-elementet på sidan
+const links = $('a'); // Returnerar en array med alla länkar på sidan
+const imageSrc = $('img').attr('src'); // Hämtar URL:en till bilden i det första img-elementet på sidan
+```
 
 ## Djupdykning
+För att kunna använda CSS-selektorer behöver `cheerio` först konvertera HTML-koden till DOM-noder. Detta görs med hjälp av `htmlparser2`-paketet. Detta är också varför vi skickar in svaret från `fetch()`-anropet som en text-sträng till `cheerio`-funktionen.
 
-När vi parsar HTML är det viktigt att förstå hur DOM-trädet fungerar. DOM-trädet är en hierarkisk struktur som representerar alla element och deras förhållanden till varandra i en HTML-sida. När vi använder cheerio-biblioteket, läser vi i princip in HTML:n och bygger upp en miniatyrversion av DOM-trädet i minnet.
-
-För att kunna selektera och manipulera element måste vi förstå de olika selektorerna som finns tillgängliga i cheerio. De är baserade på CSS-selektorer, så om du är bekant med CSS kommer du snabbt lära dig hur man använder dem inom cheerio.
-
-Det är också bra att veta att cheerio har stöd för både jQuery-syntax och vanlig HTML-syntax. Det ger oss möjlighet att använda olika sätt att välja och manipulera element på, beroende på vilket som känns mest naturligt för just oss.
+Det finns också många andra funktioner som `cheerio` erbjuder, till exempel möjligheten att ändra på HTML-koden och sedan få tillbaka den ändrade koden med `html()`-funktionen.
 
 ## Se även
-
-- [Cheerio on GitHub](https://github.com/cheeriojs/cheerio)
-- [jQuery Selectors](https://www.w3schools.com/jquery/jquery_selectors.asp)
-- [DOM Tree Explanation](https://www.w3schools.com/js/js_htmldom.asp)
+- [Officiell dokumentation för cheerio](https://github.com/cheeriojs/cheerio)
+- [Fler exempel på hur man kan använda cheerio](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-request-and-cheerio-to-set-up-simple-web-scraping)

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Arbeiten mit json"
+title:                "Arbeiten mit json"
+html_title:           "Haskell: Arbeiten mit json"
 simple_title:         "Arbeiten mit json"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,74 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-JSON ist eine sehr häufig verwendete Form zur Übertragung von Daten in der Programmierung, und daher ist das Verständnis von JSON in der heutigen Zeit unerlässlich. Wenn du also ein*e Programmierer*in bist, die*der mit Daten arbeitet, wirst du wahrscheinlich irgendwann mit JSON in Berührung kommen. In diesem Blog-Post werde ich dir zeigen, wie du mit JSON in Haskell arbeiten kannst und worauf du dabei achten solltest.
+Warum sollte man sich mit JSON auseinandersetzen? Nun, diese Datenformat hat eine hohe Beliebtheit erreicht, vor allem als Austauschformat für Daten in Webanwendungen. Es ist auch sehr leicht lesbar und kann von den meisten Programmiersprachen verarbeitet werden, einschließlich Haskell.
 
-## Wie geht es
+## Wie Geht's
 
-Um mit JSON in Haskell zu arbeiten, benötigst du zunächst das Paket `aeson`. Dieses Paket bietet Funktionen, mit denen du JSON-Daten parsen und serialisieren kannst. Fangen wir damit an, eine JSON-Datei zu parsen, indem wir sie in eine Haskell-Datenstruktur umwandeln. Dazu verwenden wir die Funktion `decodeFileStrict` aus dem Modul `Data.Aeson`. Angenommen, wir haben eine `Person`-Datenstruktur, die aus einem Namen und einem Alter besteht. Unsere JSON-Datei sieht folgendermaßen aus:
-
-```Haskell
-{
-  "name": "Max",
-  "age": 25
-}
-```
-
-Um dies in Haskell zu parsen und in eine `Person`-Datenstruktur umzuwandeln, können wir folgenden Code verwenden:
+Die Verarbeitung von JSON in Haskell ist dank des `aeson`-Pakets sehr einfach. Hier ist ein Beispiel, das eine JSON-Datei liest und in ein Haskell-Datenformat konvertiert:
 
 ```Haskell
 import Data.Aeson
+import Data.ByteString.Lazy
 
-data Person = Person { name :: String, age :: Int }
-  deriving (Show, Eq)
-
-instance FromJSON Person where
-  parseJSON (Object v) = Person <$>
-    v .: "name" <*>
-    v .: "age"
 
 main :: IO ()
 main = do
-  maybePerson <- decodeFileStrict "person.json"
-  case maybePerson of
-    Nothing -> putStrLn "Error parsing JSON file."
-    Just person -> print person
+  fileContents <- Data.ByteString.Lazy.readFile "data.json"
+  let maybeParsedData = decode fileContents :: Maybe [Int]
+  case maybeParsedData of
+    Just intList -> print intList
+    Nothing -> putStrLn "Fehler beim Parsen"
 ```
 
-In unserem Beispiel verwenden wir die Funktion `(.:)`, um das entsprechende Feld aus dem JSON-Objekt zu extrahieren. Der Rückgabewert von `decodeFileStrict` ist vom Typ `Maybe Person`, da das Parsen fehlschlagen könnte. Wenn also alles gut geht, wird `Just person` zurückgegeben und wir können die Person einfach ausgeben.
+Um dieses Beispiel auszuführen, müssen Sie das `aeson`-Paket installieren, entweder mit `cabal install aeson` oder `stack install aeson`. Sie müssen auch die passende Datei `data.json` mit einer Liste von Zahlen erstellen, z.B.:
 
-Neben dem Parsen von JSON-Dateien können wir auch JSON-Daten in eine Datei serialisieren. Dazu verwenden wir die Funktion `encodeFile` aus dem Modul `Data.Aeson`. Angenommen, wir haben eine Liste von `Person`-Objekten und möchten sie in eine JSON-Datei schreiben. Dazu können wir folgenden Code verwenden:
-
-```Haskell
-import Data.Aeson
-
-data Person = Person { name :: String, age :: Int }
-  deriving (Show, Eq)
-
-instance ToJSON Person where
-  toJSON (Person name age) =
-    object ["name" .= name, "age" .= age]
-
-main :: IO ()
-main = do
-  let people = [Person "Max" 25, Person "Anna" 30]
-  encodeFile "people.json" people
+```JSON
+[1, 2, 3, 4, 5]
 ```
 
-In unserem Beispiel definieren wir die Funktion `toJSON`, die ein `Person`-Objekt in ein JSON-Objekt umwandelt. Dieses wird dann mit der Funktion `object` erstellt und mit den entsprechenden Feldern versehen. Die Funktion `(.=)` weist dem jeweiligen Feld einen Wert zu.
+Das oben gezeigte Beispiel gibt `[1, 2, 3, 4, 5]` aus, was bedeutet, dass die JSON-Daten erfolgreich in eine Liste von Integern umgewandelt wurden.
 
-## Tiefer Einblick
+## Tiefentauchen
 
-Die Arbeit mit JSON in Haskell kann manchmal etwas herausfordernd sein, da Haskell eine starke Typisierung hat und JSON-Daten oft unterschiedliche Typen haben können. Hier sind ein paar Tipps, die dir dabei helfen können:
+Das `aeson`-Paket bietet auch zusätzliche Funktionen, um JSON-Daten zu bearbeiten, z.B.:
 
-- Um ein JSON-Feld zu extrahieren, kannst du die Funktion `(.:?)` verwenden, die den Wert des Feldes oder `Nothing`, falls das Feld nicht vorhanden ist, zurückgibt.
-- Wenn du mit komplexeren JSON-Objekten arbeitest, kannst du die Funktion `fromJSON` verwenden, die eine `Value`-Variante zurückgibt. Diese kann dann mit Pattern Matching behandelt werden.
-- Überprüfe immer die Rückgabewerte von Parsing- und Serialisierungsfunktionen, da sie je nach Implementierung unterschiedlich behandelt werden.
+- `encode`: Konvertiert Haskell-Daten in JSON
+- `(.=)`: Ein Operator, der einem Schlüssel-Wert-Paar einen Namen zuweist
+- `object`: Erzeugt ein JSON-Objekt mit einer Liste von Schlüssel-Wert-Paaren
 
-## Siehe auch
+Es ist auch möglich, komplexe Datentypen wie Records und Typsynonyme zu verwenden, um die Struktur der JSON-Daten besser abzubilden. Das `aeson`-Paket ist gut dokumentiert und bietet viele weitere Funktionen für die Arbeit mit JSON in Haskell.
 
-Hier sind ein paar hilfreiche Links, die dir bei der Arbeit mit JSON in Haskell helfen können:
+Weitere Informationen zu JSON in Haskell können im [offiziellen Dokumentations-Wiki von Haskell](https://wiki.haskell.org/JSON) und im [aeson GitHub-Repository](https://github.com/bos/aeson) gefunden werden.
 
-- [Offizielle Dokumentation von `aeson`](https://hackage.haskell.org/package/aeson)
-- [Tutorial zu `aeson` auf Haskell Forall](https://www.haskellforall.com/2016/04/aeson-tutorial.html)
-- [Video-T
+## Siehe Auch
+
+- [Offizielles Haskell-Dokumentations-Wiki zu JSON](https://wiki.haskell.org/JSON)
+- [aeson GitHub-Repository](https://github.com/bos/aeson)
+- [Hackage-Dokumentation für das aeson-Paket](https://hackage.haskell.org/package/aeson)

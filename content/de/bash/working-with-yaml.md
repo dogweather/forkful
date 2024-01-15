@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,73 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Willkommen zurück, liebe Leser! Heute werden wir über das Thema YAML sprechen und warum es eine wertvolle Fähigkeit für jeden Bash-Programmierer ist. YAML steht für "YAML Ain't Markup Language" und ist ein menschenlesbarer Datenformat, der hauptsächlich für die Konfiguration von Anwendungen verwendet wird.
 
-Warum sollte man sich mit YAML auseinandersetzen? Nun, YAML ist plattformübergreifend und kann von verschiedenen Programmiersprachen gelesen und geschrieben werden, einschließlich Bash. Es ist auch sehr einfach zu lernen und macht es leicht, komplexe Datenstrukturen zu erstellen.
+Wenn Sie schon einmal mit Konfigurationsdateien gearbeitet haben, haben Sie wahrscheinlich von YAML gehört. YAML steht für "YAML Ain't Markup Language" und ist eine einfache, lesbare Auszeichnungssprache, die für Konfigurationsdateien verwendet wird. Es ist nützlich für Entwickler, Systemadministratoren und jeder, der mit strukturierten Daten arbeitet.
 
-## Wie Man
-Nun, da Sie wissen, warum YAML so wichtig ist, lassen Sie uns einen Blick darauf werfen, wie man damit arbeitet. Das Erstellen einer YAML-Datei ist einfach - Sie müssen nur die Dateiendung ".yml" verwenden. Innerhalb der Datei können Sie Schlüssel-Wert-Paare erstellen, um Daten zu strukturieren.
+## Wie man mit YAML in Bash arbeitet
 
-```Bash
-# Beispiel YAML-Datei
-name: Max Mustermann
-alter: 30
-adresse: Musterstraße 1
+Um mit YAML in Bash zu arbeiten, benötigen Sie ein paar grundlegende Befehle und eine YAML-Parser-Bibliothek namens "YQ". Hier sind einige Beispiele, wie Sie YAML in Bash nutzen können:
+
+```bash
+# Installieren von yq
+sudo apt install yq
+
+# Ausgabe des Inhalts einer YAML-Datei
+yq read config.yml
+
+# Ausgabe von bestimmten Werten aus der YAML-Datei
+yq read config.yml 'section.subsection.value'
+
+# Aktualisieren einer YAML-Datei
+yq write config.yml 'section.subsection.value' 'new value'
 ```
 
-Um eine YAML-Datei in Bash zu lesen, können Sie einfach das `yq`-Tool verwenden, das Sie zuerst installieren müssen. Nehmen wir an, unsere Datei heißt "daten.yml":
+Beachten Sie, dass yq das Ergebnis in JSON formatiert, das für Bash leichter zu verarbeiten ist. Um den Output als YAML zu erhalten, können Sie den Befehl `yq read --prettyPrint config.yml` verwenden.
 
-```Bash
-# Lesen der YAML-Datei in Bash
-yq r daten.yml
-```
+Wenn Sie mehr über die yq-Befehle und deren Verwendung erfahren möchten, können Sie die offizielle Dokumentation [hier](https://mikefarah.gitbook.io/yq/) nachlesen.
 
-Die Ausgabe wird im folgenden Format sein:
+## Tieferes Eintauchen
 
-```Bash
-name: Max Mustermann
-alter: 30
-adresse: Musterstraße 1
-```
+Es gibt viele Möglichkeiten, wie Sie YAML in Bash nutzen können. Sie können z.B. Integer, Float, Strings, Listen und sogar komplexe Datenstrukturen wie Dictionary und Nested-Attribute in YAML definieren. Wenn Sie sich in die Tiefe begeben möchten, können Sie lernen, wie Sie diese Datentypen in Bash verwenden und verarbeiten können. Sie können auch verschiedene Tools und Bibliotheken erkunden, die speziell für die Arbeit mit YAML in Bash entwickelt wurden.
 
-Um eine Datei zu schreiben, können Sie das `yq`-Tool auch verwenden:
+## Siehe auch
 
-```Bash
-# Schreiben in eine YAML-Datei
-yq w -i daten.yml hobbies "Lesen, Reisen, Programmieren"
-```
-
-Die `-i` Option steht für "in-place" und die Daten werden direkt in der Datei gespeichert.
-
-## Tiefer Einblick
-Nun, da Sie das Grundkonzept von YAML verstanden haben, lassen Sie uns tiefer eintauchen. YAML unterstützt auch die Verwendung von Listen und geschachtelten Datenstrukturen. Zum Beispiel:
-
-```Bash
-# Beispiel einer komplexeren YAML-Datei
-- name: Max Mustermann
-  alter: 30
-  adresse: Musterstraße 1
-  kontakte:
-    - name: Anna Müller
-      telefon: 0123456789
-    - name: Peter Schmidt
-      telefon: 9876543210
-```
-
-Und um auf diese Daten in Bash zuzugreifen:
-
-```Bash
-# Zugriff auf geschachtelte Daten in einer YAML-Datei
-yq r daten.yml[0].kontakte[0].name
-```
-
-Die Ausgabe wird "Anna Müller" sein. Es ist auch möglich, Bedingungen und Mehrfachzuweisungen in YAML-Dateien zu verwenden, die jedoch etwas fortgeschrittener sind.
-
-## Siehe Auch
-Wir hoffen, dass Sie aus diesem Artikel etwas über die Verwendung von YAML in Bash gelernt haben. Sie können hier mehr über YAML erfahren und eine Liste von nützlichen Ressourcen finden:
-
-- Offizielle YAML-Website: https://yaml.org
-- Dokumentation zu `yq`: https://mikefarah.gitbook.io/yq
-- Tutorial zu YAML: https://www.tutorialspoint.com/yaml/index.htm
-
-Bis zum nächsten Mal und viel Spaß beim Codieren mit YAML!
+- [YAML offizielle Website](https://yaml.org/)
+- [YQ Dokumentation](https://mikefarah.gitbook.io/yq/)
+- [Bash Dokumentation](https://www.gnu.org/software/bash/manual/)
+- [YAML Syntax Überblick](https://learnxinyminutes.com/docs/yaml/)

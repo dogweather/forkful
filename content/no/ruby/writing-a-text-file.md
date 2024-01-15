@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Ruby: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,45 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Hvorfor
+## Hvorfor
+Å skrive en tekstfil kan være nyttig av flere årsaker. Det kan være for å lagre data, lage dokumentasjon eller for å lage en liste over oppgaver. Uansett formålet, er det nyttig å kunne skrive tekstfiler ved hjelp av Ruby.
 
-Det å skrive en tekstfil er en vanlig oppgave for Ruby-programmerere. Ved å lære denne grunnleggende ferdigheten, kan du enkelt lagre informasjon i en fil som kan behandles og leses av datamaskinen din.
+## Hvordan
+Det er enkelt å skrive en tekstfil ved hjelp av Ruby. Følg disse trinnene:
 
-#Slik gjør du det
+1. Åpne opp en teksteditor som du foretrekker.
+2. Skriv koden ```Ruby
+   File.write("filnavn.txt", "tekst som skal skrives")
+   ```
+   Dette vil opprette en ny tekstfil med navnet "filnavn.txt" og skrive teksten som er oppgitt inne i filen.
+3. For å legge til mer tekst i filen, kan du bruke ```Ruby
+   File.append("filnavn.txt", "mer tekst")
+   ```
+   Dette vil legge til den nye teksten i eksisterende fil.
+4. For å lese innholdet av en tekstfil, kan du bruke ```Ruby
+   File.read("filnavn.txt")
+   ```
+   Dette vil returnere teksten som er skrevet inne i filen.
 
-Å skrive en tekstfil i Ruby er enkelt, takket være de innebygde funksjonene som er tilgjengelige. Se den følgende koden for et eksempel:
+## Deep Dive
+Når du skriver en tekstfil ved hjelp av Ruby, kan du også spesifisere hvilket tegnsett som skal brukes. Dette er nyttig hvis du for eksempel ønsker å skrive tekstfiler som skal brukes på ulike språk.
 
-```Ruby
-# Åpne en fil for skriving
-min_fil = File.open("min_fil.txt", "w")
-
-# Skriv til filen
-min_fil.write("Hei, dette er en tekstfil som skrives i Ruby!")
-
-# Lukk filen
-min_fil.close()
-```
-
-Etter å ha kjørt dette kodesnippet, vil du merke at en ny fil, "min_fil.txt", er laget i samme mappe som Ruby-filen din. Denne filen vil inneholde teksten du skrev inn i koden.
-
-#Dypdykk
-
-Nå som du har lært det grunnleggende, kan du utforske mer avanserte funksjoner for å skrive tekstfiler i Ruby. For eksempel kan du lese innholdet i en eksisterende fil ved å bruke "File.read" -funksjonen, og du kan også kombinere tekst og variabler med "File.puts" -funksjonen.
-
-En annen nyttig funksjon er "File.open" i kombinasjon med blokker. Blokker lar deg utføre en serie med instruksjoner innenfor en bestemt omfang. I dette tilfellet vil en blokk sikre at filen automatisk blir lukket uansett om koden din krasjer. Her er et eksempel:
-
-```Ruby
-# Åpne en fil ved hjelp av en blokk
-File.open("min_fil.txt", "w") do |f|
-  # Skriv til filen
-  f.write("Dette er en blokk for å skrive tekstfiler i Ruby!")
+Du kan også bruke "```Ruby
+File.open("filnavn.txt", "w") do |fil|
+  fil.puts "tekst"
 end
-```
+```"
+Denne koden gjør det samme som ```Ruby File.write```, men den lukker automatisk filen etter at den er ferdig med å skrive.
 
-#Se også
-
-For mer informasjon om å skrive tekstfiler i Ruby, sjekk ut følgende ressurser: 
-
-- [RubyDocs: File Class](https://ruby-doc.org/core-3.0.1/File.html)
-- [RubyGuides: How to Write to a File in Ruby](https://www.rubyguides.com/ruby-tutorial/io/write-to-file/)
-- [Codecademy: Learn Ruby](https://www.codecademy.com/learn/learn-ruby)
+## Se også
+- [Offisiell Ruby-dokumentasjon for å skrive til tekstfiler](https://ruby-doc.org/core-3.0.0/File.html#method-c-open)
+- [Tutorialspoint: Ruby - Filbehandling](https://www.tutorialspoint.com/ruby/ruby_file_handling.htm)
+- [RubyGuides: How to Write a File in Ruby](https://www.rubyguides.com/2015/05/writing-a-file-in-ruby/)

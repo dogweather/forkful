@@ -1,5 +1,6 @@
 ---
-title:                "C: 将日期转换为字符串"
+title:                "将日期转换为字符串"
+html_title:           "C: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "C"
 category:             "C"
@@ -9,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+##为什么？
 
-有时候，在编程的过程中，我们需要将日期转换成字符串。这可能是因为我们需要将日期显示给用户，或者将它保存到文件中。无论何种原因，日期转换成字符串是一项常见的任务，而且对于学习C语言的初学者来说也是一项重要的技能。
+为什么要把日期转换成字符串？这个问题可能会让你感觉有点无聊，但是实际上，这是一个在编程中非常常见的任务。无论是要在输出中显示日期，还是要将日期存储到数据库中，都需要将其转换为字符串格式。
 
-## 如何
+##怎么做？
 
-下面是一个简单的示例，演示如何使用C语言将日期转换成字符串：
+首先，你需要知道C语言中的日期是如何表示的。通常，日期被存储为一个长整型变量，表示从某个固定时间点（通常是1970年1月1日）开始经过的秒数。要将其转换为字符串，我们需要使用内置的 "sprintf()" 函数。
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // 获取当前日期和时间
+int main() {
+    // 获取当前时间
     time_t now = time(NULL);
 
-    // 将日期转换为字符串
-    char date_string[30];
-    strftime(date_string, 30, "%Y-%m-%d %H:%M:%S", localtime(&now));
+    // 将时间转换为字符串
+    char time_str[30];
+    sprintf(time_str, "%s", ctime(&now));
 
-    // 打印字符串
-    printf("当前日期时间为：%s\n", date_string);
-
+    // 输出结果
+    printf("当前时间为：%s\n", time_str);
     return 0;
 }
 ```
 
-输出结果可能是这样的：
+运行上面的代码，你会得到类似这样的输出：
 
 ```
-当前日期时间为：2021-12-01 16:30:00
+当前时间为：Mon Jul 12 23:05:26 2021
 ```
 
-让我们来解析一下上面的代码。首先，我们使用C标准库中的`time()`函数来获取当前日期和时间。然后，使用`strftime()`函数将日期转换为字符串，并指定了日期格式为`%Y-%m-%d %H:%M:%S`，即年-月-日 时:分:秒。最后，使用`printf()`函数将字符串打印出来。
+##深入探讨
 
-除了上面的例子，我们还可以通过改变日期格式来获得不同的输出。例如，如果我们想要将日期转换成指定语言的字符串，可以使用`setlocale()`函数来设置语言环境，并使用对应语言的日期格式。
+如果你想要进一步探索日期转换为字符串的细节，你可以了解一下 "strftime()" 函数。它可以让你自定义日期的格式，而不是使用默认的字符串格式。你也可以阅读一些相关的库，如 <time.h> 和 <stdlib.h>，它们提供了更多的日期转换工具和函数。
 
-## 深入了解
+##另请参阅
 
-在C语言中，日期实际上是以一个整数来表示的，即从1970年1月1日开始经过的秒数。因此，将日期转换成字符串实际上是将一个整数值格式化成一定的形式。
-
-在C语言中，还有一个重要的日期库，即`<ctime>`。它提供了许多用于处理日期和时间的函数，例如计算时间差、比较日期、检查闰年等等。如果想要深入了解日期与时间在C语言中的处理，可以进一步学习这个库。
-
-## 参考链接
-
-- [C标准库文档](https://www.cplusplus.com/reference/)
-- [C语言实例教程：日期和时间](https://www.runoob.com/cprogramming/c-examples-date.html)
-- [如何学习C语言](https://www.zhihu.com/question/19803556)
-
-## 参见
-
-- [日期和时间格式化指令](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Sprintf函数手册](https://docs.microsoft.com/zh-cn/cpp/c-runtime-library/reference/sprintf-s-sprintf-l-sprintf-snprintf-l-snprintf-s)
+- [Time.h函数手册](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C标准库教程](https://www.runoob.com/cprogramming/c-standard-library.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Ruby recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,47 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to capitalize a string in your Ruby code but weren't sure how to do it? Look no further! In this blog post, we'll explore how to capitalize a string using Ruby programming.
+
+Capitalizing a string is a common task in programming, whether you're working on a web application, data analysis, or simple text manipulation. By capitalizing a string, you can easily transform text to follow specific formatting rules or match certain criteria. Plus, it's just good practice to have consistent capitalization in your code.
 
 ## How To
-To capitalize a string in Ruby, you can use the `capitalize` method. Let's see how this works with a simple example:
+
+The process of capitalizing a string in Ruby is straightforward and can be achieved in multiple ways. Here are three commonly used methods:
+
+1. Using the `capitalize` method: This method capitalizes the first character of a given string, leaving the rest of the string unchanged.
 
 ```Ruby
-my_string = "hello world"
-puts my_string.capitalize
+string = "hello world"
+puts string.capitalize
+# Output: Hello world
 ```
 
-The output for this code would be: `Hello world`. As you can see, the first letter of the string was capitalized.
-
-You can also use the `capitalize!` method, which modifies the original string instead of creating a new one. Here's an example:
+2. Using the `upcase` method: This method capitalizes all characters in a string, essentially transforming the string into all uppercase letters.
 
 ```Ruby
-my_string = "hello world"
-my_string.capitalize!
-puts my_string
+string = "hello world"
+puts string.upcase
+# Output: HELLO WORLD
 ```
 
-The output for this code would be: `Hello world`.
-
-If you want to capitalize the first letter of each word in a string, you can use the `titleize` method. Let's try it out:
+3. Using string interpolation and calling `capitalize` on a specific part of the string: This method allows you to capitalize specific letters or words within a string by using string interpolation. Here's an example of capitalizing the first letter of a string using this method:
 
 ```Ruby
-my_string = "hello world"
-puts my_string.titleize
+string = "hello world"
+puts "The first letter in your string is: #{string[0].capitalize}"
+# Output: The first letter in your string is: H
 ```
-
-The output for this code would be: `Hello World`.
 
 ## Deep Dive
-Behind the scenes, the `capitalize` method uses the `upcase` method to capitalize the first letter of the string and the `downcase` method to lowercase the remaining letters. This allows the method to work on both uppercase and lowercase strings.
 
-You may also encounter the `swapcase` method, which reverses the case of each letter in a string. This can be useful if you need to change the case of a string, but not necessarily capitalize the first letter.
+The `capitalize` and `upcase` methods may seem similar, but they have an important difference. The `capitalize` method only capitalizes the first character of a string, while the `upcase` method capitalizes all letters in a string.
 
-It's important to note that the `capitalize`, `upcase`, `downcase`, and `swapcase` methods only modify letters in the English alphabet. If your string contains special characters or non-English letters, the methods will not work as expected.
+Additionally, the string interpolation method allows for more flexibility in capitalization since you can choose which parts of the string to capitalize.
+
+It's also important to note that both `capitalize` and `upcase` do not modify the original string, but instead return a copy of the string with the desired capitalization. If you want the original string to be modified, you can add a `!` to the end of the method, like `capitalize!` or `upcase!`.
 
 ## See Also
-For more information, check out the official Ruby documentation on string manipulation: https://ruby-doc.org/core-2.5.0/String.html
 
-Other useful resources:
-- Codecademy's Ruby course: https://www.codecademy.com/learn/learn-ruby
-- Ruby Monk's String Basics tutorial: https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-strings/lessons/108-string-basics
+- [Ruby String Documentation](https://ruby-doc.org/core-3.0.1/String.html)
+- [Ruby String Methods](https://www.rubyguides.com/ruby-string-methods/)
+- [String Interpolation in Ruby](https://thoughtbot.com/blog/just-f-un-with-ruby-string-to_proc)

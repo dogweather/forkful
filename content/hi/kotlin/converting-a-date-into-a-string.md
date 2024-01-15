@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "Kotlin: तारीख को स्ट्रिंग में रूपांतरण करना"
 simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hindi में ब्लॉग पोस्ट कॉटलिन प्रोग्रामिंग के लिए
+## क्यों
 
-## क्यों:
+डेटा को स्ट्रिंग में रूपांतरित करने का काम आसान हो सकता है, लेकिन अगर आपको कोडिंग में थोड़ी सी भी भूली हो तो यह एक अवांछित उत्तराधिकार हो सकता है। जब हम समय (date) को स्ट्रिंग में रूपांतरित करते हैं, तो उसका प्रयोग डेटा को स्टोर करने, प्रिंट करने या इस्तेमाल करने के लिए किया जाता है।
 
-कोई भी इंसान तारीख को स्ट्रिंग में बदलने करने से पहले, इसका क्यों करना चाहेंगे।
-
-## कैसे करें:
+## कैसे करे
 
 ```Kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
-fun main() {
-    // तारीख को स्ट्रिंग में बदलने का उदाहरण
-    val date = LocalDate.of(2020, 10, 31)
-    println("तारीख: $date")
-    val dateString = date.toString()
-    println("स्ट्रिंग: $dateString")
-}
+// वर्तमान तारीख को लिखने के लिए LocalDate ऑब्जेक्ट बनाएं
+val currentDate = LocalDate.now()
 
+// टेम्पलेट में डेटा प्रिंट करने के लिए format बनाएं
+val dateFormat = DateTimeFormatter.ofPattern("dd/MMM/yyyy")
+
+// स्ट्रिंग में रूपांतरित करने के लिए format का प्रयोग करें
+val formattedDate = currentDate.format(dateFormat)
+
+// प्रिंट करें
+println("आज की तारीख है: $formattedDate")
+
+// अन्य फॉर्मेट का उपयोग करके स्ट्रिंग फॉर्मेटिंग को बदलें
+val newFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+val newFormattedDate = currentDate.format(newFormat)
+
+// नए फॉर्मेट में प्रिंट करें
+println("आज की तारीख है: $newFormattedDate")
 ```
 
-आउटपुट: 
-तारीख: 2020-10-31
-स्ट्रिंग: 2020-10-31
+### आउटपुट:
 
-## गहराई में जाएं:
+```Kotlin
+आज की तारीख है: 06/अप्रैल/2021
+आज की तारीख है: 06-04-2021
+```
 
-बहुत सारे समस्याओं को हल करने के लिए हमारे पास तारीखों को अलग-अलग स्थानों पर उपयोग करने की आवश्यकता हो सकती है। इस ब्लॉग अप और `LocalDate` और `toString()` का उपयोग करके हम तारीख को स्ट्रिंग में बदलने का कार्य को स्पष्ट करेंगे।
+## गहराई में
 
-## इस से जुड़ी और भी पढ़ें:
+डेटा को स्ट्रिंग में रूपांतरित करने की प्रक्रिया `java.time` लाइब्रेरी का उपयोग करके की जाती है जो जावा 8 और बाद के संस्करणों में उपलब्ध है। और यदि आपके पास स्टार्ट अप के लिए एक प्रोजेक्ट हो, तो `SimpleDateFormat` का उपयोग करके भी डेटा को स्ट्रिंग में रूपांतरित कर सकते हैं।
 
-- Kotlin में डेट और टाइम: https://www.journaldev.com/27570/kotlin-datetime
-- इंसान डेट को स्ट्रिंग में बदलना: https://www.educative.io/edpresso/how-to-convert-a-string-to-date-in-kotlin
-- एक संपूर्ण तारीख और समय लाइब्रेरी: https://github.com/Karumi/Kalendar
+## देखने के लिए
+
+- [Kotlin डेटा टाइम मेथॉड](https://k

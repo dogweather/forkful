@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja tekstu na małe litery"
+html_title:           "Haskell: Konwersja tekstu na małe litery"
+simple_title:         "Konwersja tekstu na małe litery"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w naszych programach musimy zmienić wielkość liter w danym ciągu znaków. Może to być wymagane, na przykład, przy porównywaniu tekstu lub formatowaniu wyświetlania. W tym artykule dowiesz się, dlaczego i jak w łatwy sposób przekonwertować string na małe litery w języku Haskell.
+Czy kiedykolwiek musiałeś(łaś) zmienić napis w programie na małe litery? Może zajęło Ci to sporo czasu, a może nadal nie wiesz, jak to zrobić. W tym artykule dowiesz się, jak w szybki i prosty sposób skonwertować napis na małe litery przy użyciu języka Haskell.
 
 ## Jak to zrobić
 
-Aby wykonać tę konwersję, musimy skorzystać z funkcji `map` oraz `toLower` z modułu `Data.Char`. Sprawdźmy to na przykładzie:
-
+Aby skonwertować napis na małe litery w Haskell, użyj funkcji `map` i `toLower` z modułu `Data.Char`. Oto przykładowy kod z wykorzystaniem funkcji `map`:
 ```Haskell
 import Data.Char (toLower)
 
-convertToLower:: String -> String
-convertToLower str = map toLower str
+lowercase :: String -> String
+lowercase str = map toLower str
 ```
-W powyższym kodzie najpierw importujemy funkcję `toLower`, a następnie definiujemy funkcję `convertToLower`, która jako argument przyjmuje ciąg znaków. W ciele funkcji wykorzystujemy funkcję `map` do konwersji poszczególnych znaków na małe litery. I gotowe! Teraz wystarczy tylko wywołać funkcję `convertToLower` z wybranym przez nas stringiem.
-
-Przyjrzyjmy się, jak działa ta konwersja na przykładzie:
-
+Wywołanie `lowercase "ABC"` zwróci napis `"abc"`. Możesz również użyć funkcji `map` wraz z funkcją `toLower` bezpośrednio w wyrażeniu:
 ```Haskell
-convertToLower "HELLO WORLD" 
+lowercase str = map (\c -> toLower c) str
 ```
 
-Wynikiem będzie:
+Jeśli chcesz, aby konwersja odbyła się wewnątrz funkcji, możesz wykorzystać funkcję `toLower` do pojedynczego znaku i funkcję `concatMap` do połączenia wyników w napis:
+```Haskell
+import Data.Char (toLower)
 
+lowercase :: String -> String
+lowercase str = concatMap (\c -> [toLower c]) str
 ```
-"hello world"
-```
-
-Jak widzimy, wszystkie litery zostały zmienione na małe.
+Wywołanie `lowercase "ABC"` zwróci ten sam wynik, co poprzednie przykłady.
 
 ## Deep Dive
 
-W języku Haskell istnieje wiele różnych funkcji do manipulowania i przetwarzania ciągów znaków. Jednak użycie funkcji `map` w połączeniu z `toLower` jest jednym z najprostszych i najbardziej wydajnych sposobów na zmianę wielkości liter.
+W Haskell jeden znak jest reprezentowany przez typ `Char`, dlatego używanie funkcji `toLower` na pojedynczym znaku zwróci znak w postaci `Char`. W celu otrzymania napisu, wykorzystujemy funkcję `concatMap`, która zwraca listę i łączy ją w jedno ciągłe napis.
 
-Funkcja `map` działa na listach, a ponieważ napisy w Haskellu są po prostu listami znaków, możemy wykorzystać tę funkcję do przetwarzania ciągów znaków. Funkcja `toLower` z kolei zamienia pojedynczy znak na jego małą wersję. Dzięki temu, łącząc obie funkcje, możemy dokonać konwersji na każdym znaku w podanym napisie.
+Warto również wspomnieć, że funkcja `toLower` przekształca znaki tylko z alfabetu łacińskiego. Jeśli nasz napis zawiera znaki z innych alfabetów, nie zostaną one zmienione.
 
-Sama konwersja na małe litery jest również przydatna przy porównywaniu napisów. Często różne wielkości liter mogą sprawiać problemy w procesie porównywania, dlatego warto wcześniej przekonwertować je na jeden format.
+## Zobacz też
 
-## Zobacz również
-
-- [Oficjalna dokumentacja funkcji map](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-- [Oficjalna dokumentacja funkcji toLower](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Inne sposoby na manipulację ciągami znaków w Haskellu](https://wiki.haskell.org/String_processing)
+- Dokumentacja funkcji `map` w Haskell: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:map
+- Dokumentacja funkcji `toLower` w module `Data.Char`: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toLower
+- Poradnik "Jak zacząć z Haskell": https://pl.wikibooks.org/wiki/Haskell/Jak_zacz%C4%85%C4%87

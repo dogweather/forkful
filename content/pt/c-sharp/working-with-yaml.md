@@ -1,5 +1,6 @@
 ---
-title:                "C#: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "C#: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "C#"
 category:             "C#"
@@ -9,88 +10,118 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML pode ser benéfico
+##Por que
 
-Você provavelmente já ouviu falar de YAML, uma linguagem de marcação utilizada principalmente para configurações de arquivos. Mas por que alguém decidiria utilizar YAML em vez de outras opções? Existem diversas razões pelas quais YAML pode ser uma escolha útil e eficiente.
+Se você é um desenvolvedor de software que trabalha com aplicações ou infraestrutura baseadas na nuvem, provavelmente já se deparou com o formato YAML. Ele é amplamente usado para configurar, documentar e construir aplicações e sistemas na nuvem. Neste artigo, vamos explorar por que o YAML é uma ferramenta importante para todo desenvolvedor.
 
-Em primeiro lugar, YAML é uma linguagem fácil de ler e escrever. Seu formato é baseado em espaçamento, o que facilita a compreensão do código mesmo para iniciantes. Além disso, ele é compatível com várias linguagens de programação, incluindo C#, o que torna sua utilização versátil.
+##Como Fazer
 
-## Como trabalhar com YAML em C#
+Para começar a trabalhar com YAML em C#, é essencial ter um entendimento básico da sintaxe e estrutura do YAML. YAML é um formato de dados simples e legível por humanos que pode ser facilmente criado e editado em qualquer editor de texto.
 
-Se você está interessado em aprender como utilizar YAML em seus projetos em C#, aqui vão alguns passos simples:
+A seguir, vamos ver como podemos criar um arquivo YAML básico em C#:
 
-### 1. Instale o pacote NuGet YAMLDotNet
+````C#
+using YamlDotNet.Serialization; // importar a biblioteca de serialização YAML
 
-O primeiro passo é adicionar o pacote NuGet YAMLDotNet ao seu projeto. Isso irá facilitar a manipulação de arquivos YAML em sua aplicação.
-
-### 2. Criando e lendo um arquivo YAML
-
-Agora que o pacote está instalado, vamos criar e ler um arquivo YAML. Primeiramente, vamos importar as bibliotecas necessárias:
-
-```C#
-using System.IO;
-using YamlDotNet.RepresentationModel;
-using YamlDotNet.Serialization;
-```
-
-Em seguida, vamos criar um arquivo YAML com algumas informações:
-
-```C#
-var conteudo = @"nome: João
-sobrenome: Silva
-idade: 30
-profissão: engenheiro";
-```
-
-Agora, podemos ler o conteúdo do arquivo criado utilizando a classe `YamlStream`:
-
-```C#
-var input = new StringReader(conteudo);
-var yaml = new YamlStream();
-yaml.Load(input);
-```
-
-Por último, podemos obter os dados do arquivo YAML e exibi-los na tela:
-
-```C#
-var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
-Console.WriteLine("Nome: " + mapping.Children[new YamlScalarNode("nome")]);
-Console.WriteLine("Sobrenome: " + mapping.Children[new YamlScalarNode("sobrenome")]);
-Console.WriteLine("Idade: " + mapping.Children[new YamlScalarNode("idade")]);
-Console.WriteLine("Profissão: " + mapping.Children[new YamlScalarNode("profissão")]);
-```
-
-### 3. Manipulando dados do arquivo YAML
-
-Além de ler dados do arquivo YAML, também podemos modificá-los. Por exemplo, podemos adicionar uma nova informação ao nosso arquivo criado anteriormente:
-
-```C#
-mapping.Children.Add("país", new YamlScalarNode("Brasil"));
-```
-
-E para salvar essas alterações, podemos utilizar o seguinte código:
-
-```C#
-var serializer = new Serializer();
-using (var writer = new StringWriter())
+// definir uma classe de modelo
+public class Carro
 {
-    serializer.Serialize(writer, mapping);
-    var novoConteudo = writer.ToString();
+    public string Marca { get; set; }
+    public string Modelo { get; set; }
+    public int Ano { get; set; }
 }
+
+// criar um objeto carro
+Carro carro = new Carro();
+carro.Marca = "Fiat";
+carro.Modelo = "Uno";
+carro.Ano = 2010;
+
+// usar o serializador YAML para converter o objeto em YAML
+var serializer = new Serializer();
+string yaml = serializer.Serialize(carro);
+
+// imprimir o YAML no console
+Console.WriteLine(yaml); 
+
+````
+
+Este código irá gerar o seguinte output:
+
+```
+marca: Fiat
+modelo: Uno
+ano: 2010
 ```
 
-Isso irá gerar uma nova string com o conteúdo atualizado do arquivo YAML.
+Agora, vamos dar uma olhada em alguns recursos mais avançados do YAML. Por exemplo, você pode usar referências para evitar repetir os mesmos dados várias vezes dentro do mesmo documento YAML. Considere o seguinte exemplo:
 
-## Aprofundando no uso de YAML
+````C#
+using YamlDotNet.Serialization;
+using System.Collections.Generic;
 
-Como mencionado anteriormente, YAML possui uma variedade de recursos que o tornam uma opção atraente. Por exemplo, ele suporta tipos de dados complexos, como listas e objetos, o que pode ser muito útil para configurações mais complexas.
+// definir uma classe de modelo
+public class Endereco
+{
+    public string Rua { get; set; }
+    public string Cidade { get; set; }
+}
 
-Além disso, YAML também permite comentários em seu código, o que facilita a compreensão e organização do mesmo. Também é possível incluir blocos de texto, permitindo uma melhor segmentação do conteúdo.
+public class Cliente
+{
+    public string Nome { get; set; }
+    public Endereco Endereco { get; set; }
+}
 
-Outro recurso interessante é a possibilidade de incluir referências a outros arquivos YAML, o que pode facilitar a manutenção de configurações compartilhadas entre diferentes projetos.
+// criar objetos cliente e endereço
+Endereco endereco = new Endereco();
+endereco.Rua = "Rua da Paz";
+endereco.Cidade = "São Paulo";
 
-## Veja também
+Cliente cliente1 = new Cliente();
+cliente1.Nome = "João";
+cliente1.Endereco = endereco;
 
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Tutorial de YAML em C#](https://www.c-sharpcorner.com/UploadFile/mahesh/yaml-serialization-in-C-Sharp/)
-- [Exemplos práticos de utilização de YAML em projetos C#](https://codeopinion.com/does-yaml-make-sense-for-database-schema-migration/)
+Cliente cliente2 = new Cliente();
+cliente2.Nome = "Maria";
+cliente2.Endereco = endereco;
+
+// criar uma lista de clientes
+List<Cliente> clientes = new List<Cliente>();
+clientes.Add(cliente1);
+clientes.Add(cliente2);
+
+// usar o serializador YAML com suporte a referências
+var serializer = new SerializerBuilder().Build();
+string yaml = serializer.Serialize(clientes);
+
+// imprimir o YAML no console
+Console.WriteLine(yaml); 
+
+````
+
+Este código irá gerar o seguinte output:
+
+```
+- nome: João
+  endereco: &1
+    rua: Rua da Paz
+    cidade: São Paulo
+- nome: Maria
+  endereco: *1
+```
+
+Este é apenas um exemplo do que é possível fazer com YAML em C#. Para mais informações e exemplos, você pode consultar a documentação oficial do YamlDotNet ou explorar a biblioteca de forma mais profunda em seu projeto.
+
+##Deep Dive
+
+O formato YAML, abreviação de "YAML Ain't Markup Language", foi criado por Clark Evans em 2001. Ele foi desenvolvido para ser mais fácil de ler e escrever do que seus antecessores, como XML e JSON. Por ser um formato baseado em texto, o yaml pode ser facilmente versionado e compartilhado através de sistemas de controle de versão.
+
+O YAML também possui uma estrutura flexível e extensível que permite a inclusão de metadados e comentários, tornando-o uma opção popular para a configuração de projetos de software. Além disso, ele é suportado por uma grande variedade de linguagens de programação, incluindo C#, o que o torna uma escolha versátil para desenvolvedores.
+
+##Veja Também
+
+Aqui estão alguns links úteis para começar a trabalhar com YAML em C#:
+
+- Documentação oficial do YamlDotNet: https://github.com/aaubry/YamlDotNet/wiki
+- Tutorial básico de YamlDotNet: https://dotnetcoretutorials.com/2020/04/01/reading-and-writing-yaml-in

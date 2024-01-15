@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Elm: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å starte et nytt program kan virke overveldende og skummelt, spesielt hvis du ikke er kjent med programmering. Men å hoppe inn i et nytt språk som Elm kan være en spennende og givende opplevelse. Med sine funksjonelle og feilfrie egenskaper, kan Elm hjelpe deg med å lage robuste og pålitelige programmer.
+Å starte et nytt prosjekt kan virke skremmende, men det kan også være en spennende og givende opplevelse. Ved å begynne et nytt prosjekt i Elm, kan du utfordre deg selv og lære et nytt og spennende programmeringsspråk. Det kan også føre til utvikling av kreativitet og nytenking i prosjektet ditt.
 
 ## Hvordan
+For å starte et nytt prosjekt i Elm, må du først installere Elm på datamaskinen din. Dette kan gjøres ved å følge trinnene på [Elm sin offisielle nettside] (https://guide.elm-lang.org/install.html). Når Elm er installert, kan du åpne kommandolinjen og navigere til den ønskede mappen for prosjektet ditt.
 
-For å sette i gang med Elm, må du først installere Elm-plattformen på datamaskinen din. Deretter er det en god ide å følge en online-opplæring eller lese en bok for å få en grunnleggende forståelse av språket. Når du har grunnlaget, kan du begynne å skrive kode.
+For å opprette et nytt prosjekt, skriv følgende kommando i terminalen:
+```Elm init```
 
-```elm
--- Dette er et eksempel på en funksjon som legger sammen to tall og returnerer summen.
-sum : Int -> Int -> Int
-sum x y =
-  x + y
-```
+Dette vil generere de nødvendige filene for et grunnleggende Elm-prosjekt. For å kjøre prosjektet i en nettleser, skriv følgende kommando i terminalen:
+```Elm reactor```
 
-En ting som gjør Elm spesielt er dens evne til å håndtere feil på en elegant måte. I koden ovenfor, hvis vi prøver å legge sammen to strenger i stedet for tall, vil Elm advare oss og forhindre at koden vår kjører med feil data.
+Dette vil åpne en lokal server på http://localhost:8000, hvor du kan se prosjektet ditt i nettleseren.
 
-## Deep Dive
+Nå kan du begynne å kode i Elm og teste koden din ved å oppdatere siden i nettleseren.
 
-Når du begynner på din første Elm-applikasjon, er det viktig å vite hvordan du skal strukturere og organisere koden din. Elm har et modulsystem som hjelper deg å dele opp koden din i separate deler, og dette gir en mer robust og modulær kodebase.
+## Dypdykk
+Når du er klar for å dykke dypere inn i ditt nye Elm-prosjekt, kan du bruke Elm sin dokumentasjon og online ressurser for å lære mer om språket. [Elm sin offisielle nettside] (https://guide.elm-lang.org/) har en guide som tar deg gjennom alt fra grunnleggende konsepter til mer avanserte emner. Det finnes også mange online kurs og tutorials tilgjengelig for å hjelpe deg med å forstå og mestre Elm.
 
-En annen viktig del av å starte et nytt prosjekt i Elm er å forstå hvordan man håndterer sideeffekter. I motsetning til andre språk, der sideeffekter kan være en kilde til feil, har Elm en dedikert arkitektur for å håndtere disse effektene på en trygg måte.
+I tillegg er Elm et open source-språk, så du kan dykke inn i kildekoden til prosjektet ditt eller andre prosjekter for å lære mer og få inspirasjon til ditt eget prosjekt.
 
 ## Se også
-
-- [Elm sin offisielle hjemmeside](https://elm-lang.org/)
-- [Elm guide på norsk](https://skogman.github.io/)
-- [Online Elm-kurs](https://egghead.io/courses/start-using-elm-to-build-web-applications)
+* [Elm sin offisielle nettside] (https://guide.elm-lang.org/)
+* [Elm sin dokumentasjon] (https://package.elm-lang.org/)
+* [Elm sin subreddit] (https://www.reddit.com/r/elm/)

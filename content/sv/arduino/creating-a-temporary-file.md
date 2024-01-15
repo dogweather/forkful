@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Skapande av en temporär fil"
+html_title:           "Arduino: Skapande av en temporär fil"
+simple_title:         "Skapande av en temporär fil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,48 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skapa temporära filer är en vanlig praxis inom programmering för att tillfälligt lagra data eller utföra en speciell uppgift. Det är också användbart när du vill undvika att permanent ändra data på ett lagringsmedium. Med hjälp av temporära filer kan du enkelt spara och hantera data i ditt Arduino-program.
+## Hur man gör
 
-## Hur man skapar en temporär fil
-
-Att skapa en temporär fil i ditt Arduino-program är relativt enkelt och kan göras med hjälp av standardfunktionen "tempFile()" i Arduino File System-biblioteket. Här är ett exempel på kod som skapar en temporär fil, skriver data till den och sedan stänger filen:
+Att skapa en temporär fil kan vara användbart för att spara data temporärt, till exempel när du behöver lagra data under en kort period eller behöver tillfälligt använda ett program som behöver tillgång till en fil. För att skapa en temporär fil med Arduino behöver du använda funktionen `File::createTemp()`.
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
+#include <FileIO.h>
 
 void setup() {
   Serial.begin(9600);
-  // Initierar SD-kortet
-  if (!SD.begin(4)) {
-    Serial.println("Starta SD-kortet misslyckades!");
-    return;
+  
+  // Skapar en temporär fil med namnet "temp.txt"
+  File tempFile = File.createTemp("temp.txt");
+  
+  // Skriver något till den temporära filen
+  tempFile.println("Det här är en temporär fil");
+  
+  // Stänger filen
+  tempFile.close();
+  
+  // Öppnar den temporära filen i läsläge och skriver ut innehållet
+  File tempFileRead = File.open("temp.txt", FILE_READ);
+  Serial.println("Innehållet i den temporära filen:");
+  while (tempFileRead.available()) {
+    Serial.write(tempFileRead.read());
   }
-
-  // Skapar en temporär fil
-  File tempFile = SD.open("temp.txt", FILE_WRITE);
-
-  // Skriver data till filen
-  tempFile.println("Det här är en temporär fil.");
-  tempFile.println("Används för att lagra data temporärt.");
-  tempFile.close();  
+  tempFileRead.close();
 }
 
 void loop() {
-  //tom loop
+  // Tom loop, ingen kod behövs i detta fall
 }
 ```
 
-Efter att koden har körts kommer en temporär fil med namnet "temp.txt" att skapas på ditt SD-kort. Den här filen kommer innehålla de två rader som skrevs i koden ovan. Sedan kommer filen att stängas igen.
+Output:
 
-## Djupdykning
+```
+Innehållet i den temporära filen:
+Det här är en temporär fil
+```
 
-Förutom att bara skapa och använda temporära filer, finns det också andra sätt att hantera dem i ditt Arduino-program. Du kan till exempel använda funktionen "exists()" för att kontrollera om en temporär fil redan finns på ditt SD-kort innan du skapar en ny. Du kan också använda funktionerna "open()" och "remove()" för att öppna och ta bort temporära filer. Det finns även möjlighet att ange vissa parametrar för att skapa temporära filer med olika egenskaper, till exempel att de ska vara lästa och skrivna parallellt eller endast läsbara.
+## En djupdykning
+
+Funktionen `File::createTemp()` skapar en temporär fil som sparas i ett speciellt område i Arduinos minne, vilket gör att filen inte påverkar eventuella andra filer som finns på ditt SD-kort. Denna funktion returnerar en `File`-klass som du kan använda för att hantera den temporära filen, precis som du skulle göra med vilken annan fil som helst.
+
+Det finns också en möjlighet att tillhandahålla ett andra argument till funktionen `File::createTemp()`, som bestämmer storleken på den temporära filen i antal bytes. Om detta argument inte anges kommer den temporära filen att ha en standardstorlek som beror på din Arduino-modell.
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om hur man skapar och hanterar temporära filer i Arduino:
-
-- [Arduino File System-biblioteket](https://www.arduino.cc/en/Reference/File)
-- [Hantering av temporära filer i Linux](https://www.redhat.com/sysadmin/temporary-file-management-linux)
-- [Guide för temporära filer i C++](https://www.bogotobogo.com/cplusplus/temporaryfile.php)
+- [Dokumentation för FileIO.h](https://arduino.github.io/arduino-library-api/filesystem_8h_source.html)
+- [Guide för att arbeta med filer på SD-kort](https://www.arduino.cc/en/Reference/SD)
+- [Arduino for Dummies (swedish)](https://www.education.com/download/worksheet/99858/arduino-dummies.pdf)

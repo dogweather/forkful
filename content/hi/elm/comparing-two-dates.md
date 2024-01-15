@@ -1,6 +1,7 @@
 ---
-title:                "Elm: दो तिथियों की तुलना"
-simple_title:         "दो तिथियों की तुलना"
+title:                "दो तिथियों का तुलना करना"
+html_title:           "Elm: दो तिथियों का तुलना करना"
+simple_title:         "दो तिथियों का तुलना करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -9,52 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्यों?
 
-दो तारीखों को तुलना करने का यही एक बहुत अच्छा तरीका है कि हम दो आईएसओ 8601 स्ट्रिंग्स को एक साथ मिलाकर उन्हें मोडर्न क्रियाकलापों में प्रस्तुत करें।
+यदि आप दो तारीखों को तुलना करना चाहते हैं, तो आप इसे किसी भी समय अपनी एप्लिकेशन में सुविधाजनक रूप से करने के लिए अच्छी तरह से जानने और समझने की आवश्यकता हो सकती है। 
 
-## कैसे
-
-```Elm
-import Date exposing (fromIsoString, toIsoString, Day)
-
--- Y-m-d format
-let date1 = "2021-06-10"
-let date2 = "2021-06-15"
-
--- Converting strings to dates
-let convertedDate1 = fromIsoString date1 -- returns date in Elm's Date type
-let convertedDate2 = fromIsoString date2
-
--- Finding difference between two dates
-let diff = Day.diff convertedDate1 convertedDate2
-
--- Printing output
-toIsoString diff -- returns "5d"
-
-```
-
-## गहराई में जाएं
-
-दो तारीखों को तुलना करने में कुछ और कठिनाई भी हो सकती है।इस उदाहरण में, हम एक अलग प्रकार के स्ट्रिंग हो रहा है जो हमारे date1 और जून 10 को रहता है और पहले स्तर तारीखों के बेहद सटीक तो है जिसमें अतिरिक्त दिनों को भी शामिल करता है। इसलिए, इसके अतिरिक्त, हम एक date का विद्यमान दिन और तारीख को जोड़ सकते हैं जो हमें एक सटीक तारीख मिलता है।
+## कैसे करें
 
 ```Elm
-import Date exposing (fromCalendarDate, toIsoString)
+import Time
 
--- M-d-y format
-let date1 = "06-10-2021"
+-- दो तारीखों को तुलना करना
+Time.comparableDate firstDate secondDate 
 
--- Converting string to date
-let convertedDate1 = fromCalendarDate date1 -- returns date in Elm's Date type
-
--- Adding a day to the date
-let resultDate = Date.add Day convertedDate1 1
-
--- Printing output
-toIsoString resultDate -- returns "2021-06-11"
+-- दो तारीखों को तुलना करने से उत्पन्न सामान्य
+-- जवाब से प्राप्त तारीखों को मिलाना
+Time.cmp firstDate secondDate 
 ```
 
-## देखें भी
+इन उदाहरणों में हमने `Time` मॉड्यूल को उपयोग करके दो तारीखों को तुलना करने के लिए फंक्शन को उपयोग किया है। `comparableDate` फंक्शन हमें एक उपयुक्त प्रारूप में दो तारीखों को तुलना करने की अनुमति देती है, जबकि `cmp` फंक्शन हमें एक सामान्य उत्पाद को वापस करता है जो हमें दो तारीखों के बीच की तुलना को जांचने की अनुमति देता है। ये फंक्शन आमतौर पर `LT` (पहली तारीख पहले है), `EQ` (दोनों तारीख बराबर हैं) और `GT` (पहली तारीख दूसरी तारीख से बाद है) को प्रत्यक्ष जवाब देता है।
 
-- [Elm डेटा और समय](https://guide.elm-lang.org/dates_and_times/)
-- [ISO 8601 स्ट्रिंग](https://en.wikipedia.org/wiki/ISO_8601)
+## गहराई से समझें
+
+दो तारीखों को तुलना करने का सबसे मुख्य उद्देश्य है, यह पता चलना कि दो तारीखों में कितना समय अन्तर है। इसके लिए `Time` मॉड्यूल में दो तारीखों को कंपेयर करने के लिए सुविधाजनक फंक्शन उपलब्ध हैं जो हमें एक समान उपयोगिता के लिए विभिन्न तारीख और समय प्र

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "C#: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "C#"
 category:             "C#"
@@ -10,33 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva en textfil är en grundläggande färdighet inom programmering. Det är ett sätt att lagra och organisera data på ett enkelt och läsbart sätt. Textfiler används ofta för att lagra konfigurationsinställningar eller annan viktig information för en applikation.
 
-## Så här gör du
-För att skriva en textfil i C# använder man sig av StreamWriter-klassen. Först skapar man ett StreamWriter-objekt som är kopplat till den fil man vill skriva till. Sedan kan man använda olika metoder för att skriva till filen.
+Att skriva en textfil är ett sätt att lagra information på ett strukturerat och enkelt sätt. Det kan vara användbart för att skapa en backup av ditt program, spara användardata eller skriva ut rapporter.
+
+## Såhär gör du
+
+För att skriva en textfil i C# behöver du först skapa en instans av klassen ```StreamWriter```. Sedan kan du använda metoden ```WriteLine()``` för att skriva texten som du vill ska finnas i filen. När du är klar med att skriva måste du stänga filen med metoden ```Close()``` för att säkerställa att all data har sparats korrekt.
 
 ```C#
-// Skapa en ny textfil som heter "mittExempel.txt"
-StreamWriter minFil = new StreamWriter("mittExempel.txt");
-
-// Skriva en rad till filen
-minFil.WriteLine("Detta är en rad i min textfil.");
-
-// Stäng filen när man är klar
-minFil.Close();
+StreamWriter fil = new StreamWriter("minfil.txt"); //skapar en ny textfil
+fil.WriteLine("Detta är en text som sparas i filen.");
+fil.Close(); //stänger filen
 ```
 
-Efter att kodexemplet ovan har körts kommer det nu att finnas en fil som heter "mittExempel.txt" med texten "Detta är en rad i min textfil."
+Din textfil kommer nu att finnas sparad i samma mapp som ditt program.
+
+Om du vill lägga till mer text i din textfil kan du använda metoden ```Append()```.
+
+```C#
+StreamWriter fil = new StreamWriter("minfil.txt", true); //true talar om att vi ska lägga till mer text
+fil.WriteLine("Här kommer lite mer text.");
+fil.Close(); //stänger filen
+```
 
 ## Djupdykning
-Det finns flera olika sätt att skriva till en textfil i C#, men StreamWriter är en av de enklare metoderna. Det finns också möjlighet att använda FileStream-klassen för mer avancerade scenarier eller att skapa en fil med en viss teckenkodning.
 
-En annan viktig aspekt när man skriver en textfil är att tänka på att filen måste stängas när man är klar med den. Om man inte stänger filen kan det orsaka oönskade problem eller resurser som lämnas öppna.
+Förutom att skriva vanlig text i en textfil kan du även använda speciella tecken för att formatera texten. Till exempel kan du använda ```\t``` för att skapa ett tabbstopp, ```\n``` för en ny rad eller ```\r``` för att återgå till början av raden. Här är ett exempel som skapar en enkel tabell:
+
+```C#
+StreamWriter fil = new StreamWriter("minfil.txt");
+fil.WriteLine("Förnamn\tEfternamn\tTelefonnummer"); //skapar tabellhuvud
+fil.WriteLine("Pelle\tLarsson\t 072-123 45 67"); //skriver ut första raden
+fil.WriteLine("Anna\tOlsson\t 073-234 56 78"); //skriver ut andra raden
+fil.Close(); //stänger filen
+```
+
+Du kan också använda metoden ```Write()``` istället för ```WriteLine()``` för att skriva ut text på samma rad, utan ny rad-tecknet.
 
 ## Se även
-Nedan hittar du några länkar till mer information om hur man skriver en textfil i C#:
 
-- [Microsoft Docs: Skriva till en textfil i C#](https://docs.microsoft.com/sv-se/dotnet/standard/io/how-to-write-text-to-a-file)
-- [Tutorialspoint: C# - Skriva en fil](https://www.tutorialspoint.com/csharp/csharp_writing_files.htm)
-- [C# Corner: Skriva till och läsa från en textfil i C#](https://www.c-sharpcorner.com/blogs/write-and-read-text-file-in-c-sharp1)
-- [Stack Overflow: Hur man skapar en fil och skriver till den i C#](https://stackoverflow.com/questions/47715830/how-do-i-create-a-file-and-write-to-it-in-c-sharp)
+- [Microsoft-dokumentation om klassen ```StreamWriter```](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
+- [En guide till textfiler i C#](https://www.c-sharpcorner.com/UploadFile/mahesh/streamwriter-in-C-Sharp/)
+- [YouTube-video som förklarar textfiler i C#](https://www.youtube.com/watch?v=bEB0xrqayjs)

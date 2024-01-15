@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów z wiersza poleceń"
+html_title:           "Rust: Odczytywanie argumentów z wiersza poleceń"
+simple_title:         "Odczytywanie argumentów z wiersza poleceń"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,37 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy programista powinien umieć odczytywać argumenty wiersza poleceń, ponieważ jest to ważna umiejętność w programowaniu w języku Rust. Pozwala to na dostarczanie argumentów do programu podczas jego uruchamiania, co często jest wymagane w przypadku tworzenia aplikacji konsolowych.
+Czy kiedykolwiek znajdowałeś się w sytuacji, gdzie musiałeś wprowadzić pewne dane do programu podczas jego uruchamiania? Na przykład, ustawić ścieżkę do pliku lub wybrać inną opcję? Jeśli tak, to wiesz, jakie to może być frustrujące. Ale nie martw się, w języku Rust istnieje sposób, aby czytać te dane bez konieczności ich wprowadzania w trakcie uruchamiania programu. W tym artykule dowiesz się, jak łatwo i szybko odczytać argumenty linii poleceń w Rust.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby odczytać argumenty wiersza poleceń w języku Rust, najpierw musimy zaimportować bibliotekę `std::env`. Następnie użyjemy funkcji `args()` do pobrania listy argumentów przekazanych do programu. Przykładowy kod wyglądać będzie następująco:
+### Przygotowanie projektu
+
+Zanim rozpoczniemy kodowanie, musimy stworzyć projekt w języku Rust. W tym celu możemy użyć narzędzia Cargo, które jest wbudowane w Rust. W terminalu wpiszmy następującą komendę:
+
+```rust
+cargo new command-line-args
+```
+
+Spowoduje to utworzenie nowego projektu o nazwie "command-line-args". Potem przejdźmy do utworzonego folderu za pomocą komendy `cd command-line-args`.
+
+### Odczytywanie argumentów
+
+W języku Rust do odczytania argumentów wykorzystuje się strukturę `std::env::args`, która zwraca iterator zawierający wszystkie wprowadzone argumenty. Na przykład, jeśli użytkownik uruchomi program następującym poleceniem w terminalu:
+
+```bash
+./program nazwa_pliku.txt
+```
+
+To wywołanie zostanie przekonwertowane na wektor zawierający ciągi "program" oraz "nazwa_pliku.txt". Aby uzyskać dostęp do tych argumentów, możemy użyć metody `collect()` na zwróconym przez `std::env::args` iteratorem. Następnie wywołując metodę `join(" ")` na wektorze, otrzymamy jedną ciągłą linię argumentów, którą możemy wyświetlić w terminalu.
 
 ```rust
 use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    println!("Argumenty przekazane do programu: {:?}", args);
+    println!("Wprowadzone argumenty: {}", args.join(" "));
 }
 ```
 
-W powyższym przykładzie wykorzystaliśmy funkcję `collect()` do zamiany iteratora `args()` na wektor `Vec<String>`, aby móc łatwo wyświetlić przekazane argumenty.
+### Przetwarzanie argumentów
 
-### Przykładowe wywołanie programu
+Często musimy przetworzyć wprowadzone argumenty w celu dostosowania działania naszego programu. W tym celu można wykorzystać funkcję `parse()` na każdym elemencie wektora, aby przekonwertować go na odpowiedni typ danych. Na przykład, jeśli chcemy, aby drugi argument był liczbą całkowitą, możemy użyć metody `parse()` w następujący sposób:
 
-`$ ./program arg1 arg2 arg3`
+```rust
+let second_arg: i32 = args[1].parse().expect("Nie udało się przetworzyć argumentu.");
+```
 
-### Oczekiwany wynik
-
-`Argumenty przekazane do programu: ["./program", "arg1", "arg2", "arg3"]`
+W przypadku, gdy podany argument nie może zostać przekonwertowany na określony typ, zostanie zwrócony błąd. Dzięki temu możemy obsłużyć potencjalne błędy i poinformować użytkownika o nieprawidłowościach w wprowadzonych danych.
 
 ## Deep Dive
 
-Istnieje wiele innych przydatnych funkcji biblioteki `std::env`, które pozwalają na bardziej zaawansowane operacje na argumentach wiersza poleceń. Na przykład, funkcja `current_dir()` pozwala na pobranie aktualnego katalogu, a funkcja `set_var()` umożliwia ustawienie własnej zmiennej środowiskowej. Aby dowiedzieć się więcej o możliwościach biblioteki `std::env`, warto przejrzeć jej dokumentację.
+W języku Rust istnieje wiele dodatkowych funkcji i bibliotek, które umożliwiają zaawansowane przetwarzanie argumentów linii poleceń, takie jak np. `clap` czy `getopts`. Te narzędzia pozwalają na bardziej elastyczne zarządzanie argumentami i mogą okazać się bardzo pomocne w większych projektach. Warto zwrócić uwagę na ich możliwości i wykorzystać je w odpowiednich sytuacjach.
 
-## Zobacz także
+## Zobacz też
 
-- [Dokumentacja biblioteki `std::env` w języku Rust](https://doc.rust-lang.org/std/env/index.html)
-- [Poradnik odczytywania argumentów wiersza poleceń w języku Rust](https://www.tutorialspoint.com/rust/rust_command_line_arguments.htm)
-- [Przydatne wskazówki dotyczące programowania w języku Rust](https://dev.to/frosnerd/3-tips-for-getting-started-with-rust-3m4c)
+Jeśli chciałbyś się dowiedzieć więcej o języku Rust oraz jego bibliotekach i narzędziach, to zapraszam do zapoznania się z poniższymi linkami:
+
+- [Rust Language](https://www.rust-lang

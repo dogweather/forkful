@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Inviare una richiesta http"
+title:                "Inviare una richiesta http"
+html_title:           "Elixir: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,46 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Invio di una richiesta HTTP è un processo essenziale nello sviluppo di applicazioni web. Attraverso le richieste HTTP, è possibile comunicare con server esterni, ottenere risposte e utilizzare i dati ricevuti per creare un'esperienza utente dinamica. In quest'articolo, impareremo come inviare una richiesta HTTP utilizzando Elixir.
+Se stai sviluppando un'applicazione web o un'API, probabilmente dovrai inviare richieste HTTP ad altre risorse. Usare Elixir per inviare queste richieste è una scelta ottimale grazie a librerie come HTTPoison e Tesla che semplificano il processo.
 
-## Come fare
+## Come Fare
 
-Per inviare una richiesta HTTP in Elixir, utilizzeremo il modulo `HTTPoison` della libreria `HTTPoison`. Prima di tutto, è necessario aggiungere `HTTPoison` come dipendenza nel tuo file `mix.exs`.
+Per inviare una richiesta HTTP con Elixir, è necessario prima importare la libreria HTTPoison nel tuo file. Puoi farlo con il seguente codice:
 
-```
-defdeps do
-  [{:httpoison, "~> 1.6"}]
+```Elixir
+defp deps do
+  [
+    {:httpoison, "~> 1.6"}
+  ]
 end
 ```
 
-Successivamente, è necessario importare il modulo all'interno del tuo modulo principale.
+Una volta importata la libreria, puoi creare la tua richiesta HTTP utilizzando la funzione `HTTPoison.get/2` e passando l'URL della risorsa come primo argomento. Se ad esempio vogliamo ottenere i dati di un utente dal seguente endpoint:
 
-```elixir
-defmodule MyApp do
-  import HTTPoison
-end
+```
+https://api.example.com/users/1
 ```
 
-Per inviare una richiesta GET a un URL specifico, utilizziamo la funzione `get/2` fornita da `HTTPoison`. Ad esempio, per ottenere i dati di un esempio di API di libri, possiamo fare quanto segue:
+Possiamo utilizzare il seguente codice:
 
-```elixir
-iex> response = get("https://www.example.com/books")
-%HTTPoison.Response{ ... }
+```Elixir
+res = HTTPoison.get("https://api.example.com/users/1")
 ```
 
-L'oggetto `response` conterrà i dati ricevuti dal server. Possiamo quindi estrarre i dati dal corpo della risposta utilizzando la funzione `body/1`.
+Questa funzione restituirà un'istanza della struct `HTTPoison.Response` contenente il codice di stato, l'header e il corpo della risposta ricevuta. Puoi accedere a questi valori utilizzando i seguenti metodi:
 
-```elixir
-iex> body = body(response)
-"{\"books\": [{\"title\": \"The Alchemist\", \"author\": \"Paulo Coelho\"}, {\"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\"}]}"
-```
+* `HTTPoison.Response.code`: restituisce il codice di stato della risposta.
+* `HTTPoison.Response.headers`: restituisce un elenco di tuple contenente gli header della risposta.
+* `HTTPoison.Response.body`: restituisce il corpo della risposta come una stringa.
 
-## Approfondimento
+Puoi anche passare un secondo argomento opzionale alla funzione `HTTPoison.get/2` per specificare alcuni parametri come header aggiuntivi, body della richiesta, timeout, etc.
 
-Esistono diverse opzioni per configurare e personalizzare le richieste HTTP con `HTTPoison`. Ad esempio, è possibile impostare header personalizzati, parametri di query o impostare il timeout della richiesta. È importante consultare la documentazione di `HTTPoison` per ulteriori informazioni su come utilizzare tutti i suoi metodi e opzioni.
+## Approfondimenti
 
-## Vedi anche
+Per inviare una richiesta HTTP, Elixir utilizza la libreria hackney che, a sua volta, utilizza la libreria Erlang ibrowse. Queste librerie sono ampiamente utilizzate per la loro stabilità e prestazioni. Inoltre, è possibile gestire le richieste HTTP in modo asincrono utilizzando la libreria Tesla, che utilizza un pool di connessioni per migliorare le prestazioni. 
 
-- Documentazione di `HTTPoison`: https://hexdocs.pm/httpoison/1.6.0/api-reference.html
-- Tutorial su `HTTPoison` di Elixir School: https://elixirschool.com/it/lessons/specifics/http/
-- Articolo su come gestire le richieste HTTP asincrone in Elixir: https://blog.appsignal.com/2019/04/16/asynchronous-http-requests-in-elixir.html
+## Vedi Anche
+
+* [Documentazione HTTPoison](https://hexdocs.pm/httpoison/api-reference.html)
+* [Tutorial Tesla](https://sites.google.com/site/sergeyberezhnoy/h2-mobile-site/tesla-web)

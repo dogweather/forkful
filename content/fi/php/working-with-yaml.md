@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Yhteistyössä yaml:n kanssa."
-simple_title:         "Yhteistyössä yaml:n kanssa."
+title:                "Työskentely yaml:n kanssa"
+html_title:           "PHP: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,54 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi YAML:in käyttäminen on hyödyllistä?
+## Miksi
 
-YAML (Yet Another Markup Language) on helppolukuinen tietojen tallennusmuoto, joka on erityisen hyödyllinen PHP-ohjelmoijille. Sen avulla voit tallentaa ja jakaa tietoja yksinkertaisessa, tekstipohjaisessa muodossa. Tämä tekee YAML-in käytöstä erinomaisen vaihtoehdon tietokantojen ja monimutkaisten XML-tiedostojen sijaan.
+Jos olet PHP-ohjelmoija, joka etsii keinoa tallentaa ja lukea tietoja rakenteellisessa ja helposti luettavassa muodossa, YAML voi olla hyvä vaihtoehto. Se on yksinkertainen ja suosittu tapa käsitellä tietoja, ja sen käyttö voi helpottaa työtäsi.
 
-## Kuinka käyttää YAML:ia PHP:n kanssa?
+## Miten tehdä tämä
 
-Aloitetaan yksinkertaisella esimerkillä. Oletetaan, että haluat tallentaa muistiinpanon "Ostoslista", joka sisältää erilaisia ruokakaupasta ostettavia tuotteita. Tämän voisi tallentaa YAML-tiedostoon seuraavalla tavalla:
-
-```PHP
-$tiedosto = "ostoslista.yml";
-$muistiinpano = array(
- "Päivämäärä" => "2020-10-10",
- "Tuotteet" => array(
-  "Leipä",
-  "Maito",
-  "Kananmunat",
-  "Juusto",
-  "Juuresmassa",
-  "Jogurtti"
- )
-);
-file_put_contents($tiedosto, yaml_emit($muistiinpano));
+```PHP 
+<?php
+// Tiedoston avaaminen ja tiedon tallentaminen YAML-muotoon
+$auki = fopen('tiedosto.yml', 'w');
+fwrite($auki, yaml_emit($tiedot));
+fclose($auki);
+// Tiedon lukeminen YAML-tiedostosta
+$tiedot = yaml_parse_file('tiedosto.yml');
+// Tietojen tulostus
+print_r($tiedot);
 ```
 
-Tässä ensin määritellään tiedoston nimi ja sen jälkeen luodaan muistiinpano muuttuja, joka sisältää päivämäärän ja tuote-listan. Lopuksi käytetään file_put_contents -funktiota, joka tallentaa muistiinpanon YAML-muodossa tiedostoon.
+Esimerkissä käytetään ```yaml_emit()``` ja ```yaml_parse_file()``` -funktioita, joilla voi tallentaa ja lukea tietoja YAML-muodossa. Funktiot ovat osa PHP:n vakioasennusta, joten ylimääräisiä asennuksia ei tarvita. YAML-tiedostot näyttävät samalta kuin taulukot ja ne ovat helppoja muokata.
 
-Voit myös ladata ja lukea YAML-tiedostoja PHP:ssa käyttämällä yaml_parse_file -funktiota:
+## Syvemmälle
 
-```PHP
-$tiedosto = "ostoslista.yml";
-$ostoslista = yaml_parse_file($tiedosto);
-echo "Ostoslista päivämäärällä: ".$ostoslista["Päivämäärä"]."\n";
-echo "Tuotteet: \n";
-foreach($ostoslista["Tuotteet"] as $tuote) {
- echo "- ".$tuote."\n";
-}
-```
+YAML eli "YAML Ain't Markup Language" on tierakenteinen kieli, jota käytetään tallentamaan ja välittämään tietoja ihmisluettavassa muodossa. Sen syntaksi perustuu sisennyksiin ja kolmelle erityiselle merkille ```-```, ```?```, ja ```:```. YAML sopii hyvin esimerkiksi konfigurointitiedostoihin ja yksinkertaisten tietomallien tallentamiseen.
 
-Tämä tulostaa lähdetiedostossa määritellyn päivämäärän ja tuotelistan.
-
-## Syvemmälle YAML:iin
-
-YAML on puhtaasti tekstipohjainen formaatti, joka perustuu sisennyksiin. Sisennyksillä on siis suuri merkitys datan lukuun ja kirjoittamiseen. Sisennyksien tulee olla johdonmukaisia ja käyttää välilyöntejä, ei tabulaattoreita.
-
-YAML:in avulla voidaan myös tallentaa monimutkaisempia tietorakenteita, kuten JSON:issa. Tällöin sisennyksillä ja luettelomerkkien avulla voidaan määritellä esimerkiksi listoja tai assosiatiivisia taulukoita.
+YAML:n käyttö PHP:ssa on helppoa, sillä funktiot ```yaml_emit()``` ja ```yaml_parse_file()``` tekevät työn puolestasi. Voit myös käyttää muita PHP:n YAML-tukea tarjoavia kirjastoja, kuten Symfony YAML-kirjastoa.
 
 ## Katso myös
 
-- [YAML-oppaat](https://yaml.org/start.html)
-- [PHP-dokumentaatio YAML:stä](https://www.php.net/manual/en/book.yaml.php)
-- [Symfony Yaml-komponentti](https://symfony.com/doc/current/components/yaml.html)
+- [PHP:n YAML-dokumentaatio](https://www.php.net/manual/en/book.yaml.php)
+- [Symfony YAML -kirjasto](https://symfony.com/doc/current/components/yaml.html)

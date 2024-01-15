@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Merkkijonon päästäminen isoksi"
-simple_title:         "Merkkijonon päästäminen isoksi"
+title:                "Merkkijonon isoittaminen"
+html_title:           "TypeScript: Merkkijonon isoittaminen"
+simple_title:         "Merkkijonon isoittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,33 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon kirjainkoon ensimmäisen kirjaimen suureksi?
-
-Joissakin tapauksissa ohjelmoinnin prosessissa on tarpeen muuttaa merkkijonon kirjainkoko ensimmäisestä kirjaimesta suureksi. Tämä voi johtua esimerkiksi sisäänkirjautumisjärjestelmän vaatimuksesta tai käyttäjän nimien muotoilun odotuksista. Jatka lukemista oppiaksesi, kuinka tämä voidaan tehdä TypeScriptillä.
+Miksi joku haluaisi muuntaa merkkijonon isoiksi kirjaimiksi TypeScript-ohjelmassa? Yksinkertaisesti sanottuna se voi olla hyödyllistä, jos halutaan esimerkiksi korostaa tiettyä tekstiä tai tehdä merkkijono vertailukelpoiseksi muiden kanssa.
 
 ## Miten
 
-```typescript
-// Luodaan muuttuja merkkijonolla
-let nimi: string = "mikko";
+```TypeScript
+const capitalizeString = (str: string): string => {
+  return str.toUpperCase();
+}
 
-// Muunna merkkijonon kirjainkoko suureksi
-let isoNimi = nimi.charAt(0).toUpperCase() // "M"
-
-// Yhdistä suuri kirjain ja alkuperäinen merkkijono
-let uusiNimi = isoNimi + nimi.slice(1); // "Mikko"
-
-// Tulostaa: "Mikko"
-console.log(uusiNimi);
+console.log(capitalizeString("Tämä on esimerkki")); // TÄMÄ ON ESIMERKKI
 ```
 
-Ensimmäisessä vaiheessa luomme muuttujan "nimi" ja määrittelemme sen arvoksi "mikko" merkkijonon. Sitten käytämme "charAt" -funktiota valitaksemme ensimmäisen kirjaimen ja muuttamaan sen kirjainkoko suureksi "toUpperCase" -funktiolla. Lopuksi yhdistämme suuren kirjaimen ja alkuperäisen merkkijonon käyttämällä "slice" -funktiota ja tulostamme uuden nimen konsoliin.
+Merkkijonon kääntäminen isoiksi kirjaimiksi TypeScript-ohjelmassa on helppoa! Ensin määritellään funktio, joka hyväksyy merkkijonon parametrina ja käyttää siihen sisäänrakennettua `toUpperCase()`-metodia, joka muuntaa kaikki kirjaimet isoiksi kirjaimiksi. Sitten kutsutaan funktiota halutulla merkkijonolla ja tulostetaan tulos konsoliin.
 
-## Syvemmälle
+## Syvällisempi sukellus
 
-Merkkijonon kirjainkoon muuttaminen on vain yksi tapa manipuloida merkkijonoja TypeScriptissä. Myös muut funktiot, kuten "toLowerCase" ja "replace", voivat olla hyödyllisiä merkkijonojen muotoilussa. TypeScriptillä on myös sisäänrakennettu rajapinta "String", jolla on monia hyödyllisiä toimintoja merkkijonojen käsittelemiseen.
+Merkkijonon muuntaminen isoiksi kirjaimiksi TypeScript-ohjelmassa perustuu sisäänrakennettuun metodiin, joten sen käyttö on hyvin yksinkertaista. On kuitenkin huomioitava, että tämä metodi ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden muunnetun merkkijonon. 
+
+Jos haluaisimme muuttaa kirjaimet alkuperäisessä merkkijonossa, voimme käyttää siihen `toUpperCase()`-metodin sijaan `toLowerCase()`-metodia, joka muuntaa kaikki kirjaimet pieniksi kirjaimikisi. 
+
+Esimerkiksi, jos haluaisimme muuttaa vain ensimmäisen kirjaimen isoksi ja muut pieniksi, voisimme käyttää tätä koodia:
+
+```TypeScript
+const capitalizeString = (str: string): string => {
+  const firstLetter = str.charAt(0).toUpperCase();
+  const restOfStr = str.slice(1).toLowerCase();
+  return firstLetter + restOfStr;
+}
+
+console.log(capitalizeString("tÄmÄ ON eSiMerkKi")); // Tämä on esimerkki
+```
+
+Tässä koodissa ensin määritellään muuttuja, joka saa arvon ensimmäisestä merkistä muunnettuna isoksi kirjaimeksi. Sitten määritellään toinen muuttuja, joka saa arvoksi alkuperäisen merkkijonon ensimmäisen kirjaimen jälkeiset merkit muunnettuna pieniksi kirjaimiksi. Lopuksi yhdistetään nämä kaksi muuttujaa ja palautetaan uusi merkkijono.
 
 ## Katso myös
 
-- [TypeScriptin viralliset dokumentit merkkijonojen käsittelystä](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN:n opas merkkijonon käsittelystä JavaScriptillä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [MDN: String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [MDN: String.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

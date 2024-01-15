@@ -1,6 +1,7 @@
 ---
-title:                "Elm: जेसन के साथ काम करना"
-simple_title:         "जेसन के साथ काम करना"
+title:                "json के साथ काम करना"
+html_title:           "Elm: json के साथ काम करना"
+simple_title:         "json के साथ काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,51 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-जिस तरह सामान्य भाषाओं में हम लोग वेबसाइट्स और एप्लिकेशन तैयार करते हैं, वैसे ही वेब विकास में हम अपनी डाटा को जेसन (JSON) फार्मेट में भी स्टोर करते हैं। इससे हम अपने वेबसाइट या एप्लिकेशन को डाइनामिक बना सकते हैं और उसमें जानकारी को आसानी से एक सेवर से दूसरे सेवर पर ट्रांसफर कर सकते हैं।
+आपने कभी सोचा है कि अपने एक्सेप्लोरर या स्मार्टफ़ोन पर विभिन्न ऐप्स को चलाते समय कैसे नेटवर्क पर जाते हुए डेटा को बैकग्राउंड में आनंद लिया जाता है? यह सब मॉडर्न वेब डेवलपमेंट के शीर्ष विषयों में से एक है। एपिसी और स्टार पैटर्न के बारे में आते हैं, जहां डेटा दूसरे सर्वर से लोड किया जाता है। जेसोन हमारी जिंदगी में ऐसा ही एक फॉर्मेट है और इसका इस्तेमाल करके हम प्रोग्रामिंग में अपनी सुगमता बढ़ा सकते हैं। इसलिए, इस लेख में हम जेसोन के साथ काम करने के बारे में बात करेंगे।
 
 ## कैसे करें
 
-शुरू करने के लिए, हमें `Json.Encode` और `Json.Decode` मॉड्यूल क्रीएट करने की आवश्यकता होगी। फिर, हम अपनी डाटा को `encode` करेंगे और उसे स्ट्रिंग में convert करेंगे। उसके बाद, हम उस स्ट्रिंग को डिकोड करेंगे और हमारी वांछित जानकारी प्राप्त करने के लिए `decode` करेंगे।
+तो आपने जेसोन को बारीकी से समझ लिया है और अब इसका उपयोग करना चाहते हैं। आइए हम इल्म में इसके साथ काम करना सीखते हैं। हम नीचे कुछ उदाहरण देखेंगे जिन्हें अपने संदर्भ से प्रतिबद्ध किया गया है।
 
-```
-import Json.Encode as Encode
-import Json.Decode as Decode
+```Elm
+import Json.Decode exposing (..)
 
--- Example data
-data : { name : String, age : Int }
-data =
-    { name = "John", age = 30 }
+asset : Decoder String
+asset =
+    field "name" string
 
--- Encoding the data
-dataToEncode : Encode.Value
-dataToEncode =
-    Encode.object
-        [ ( "name", Encode.string data.name )
-        , ( "age", Encode.int data.age )	
-        ]
-
--- Decoding the data
-decodedData : Decode.Decoder ( { name : String, age : Int } )
-decodedData =
-    Decode.map2 (,)
-        (Decode.field "name" Decode.string)
-        (Decode.field "age" Decode.int)
+decodeAsset : String -> Result String String
+decodeAsset data =
+    decodeString asset data
+        |> Result.mapError (\_ -> "Invalid JSON")
 ```
 
-इसके बाद, हम डेटा को इस तरह उपयोग कर सकते हैं:
-
-```
--- Encoding the data
-encodedData : String
-encodedData =
-    Encode.encode 0 dataToEncode
-
--- Decoding the data
-decodedData : Result String { name : String, age : Int }
-decodedData =
-    Decode.decodeString decodedData encodedData
-```
-
-## गहराई में खोज
-
-जब हम जेसन डेटा को encode और decode करते हैं, तो हम उसमें गहराई से खोज कर सकते हैं। हम उन्हें मैप, फील्ड, और एक्यूल कम्बाइनिंग के द्वारा एक साथ कर सकते हैं, जिससे हमारे पास अधिक उपयोगी जानकारी हो सकती है। इस तरह से हम अपने डेटा को प्रभावी और गुणव
+जैसा कि आप देख सकते हैं, हमने `Json.Decode` मॉड्यूल इम्पोर्ट किया है, जो हमें डेकोडिंग के लिए आवश्यक फ़ंक्शन प्रदान करता है। यहां हमने `asset` कुंजी शब्द का उपयोग करके एक स्ट्रिंग को डेकोड किया है जो जेसोन ऑब्जेक्ट के `name` फ़ील्ड से आता है। फिर `decodeAsset` फ़ंक्शन का उपयोग करके `Result` ऑब्जेक्ट में

@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Sletting av tegn som samsvarer med et mønster."
-simple_title:         "Sletting av tegn som samsvarer med et mønster."
+title:                "Slette tegn som matcher et mønster"
+html_title:           "PHP: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,36 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger i programmering må vi fjerne spesifikke tegn som følger et bestemt mønster. Dette kan være for å rydde opp i data eller for å utføre en bestemt operasjon. I denne bloggposten vil vi utforske hvordan man kan slette tegn som passer en bestemt mønster i PHP.
+Det kan være mange grunner til å slette tegn som samsvarer med et gitt mønster i en PHP-kode. For eksempel, hvis du har en tekststreng som inneholder uønsket formatering eller spesielle tegn, kan du bruke dette verktøyet til å rydde opp og få ren tekst.
 
-## Hvordan
+## Hvordan du gjør det
 
-For å slette tegn som følger et bestemt mønster, kan vi bruke funksjonen `preg_replace()` i PHP. Dette lar oss spesifisere et mønster ved hjelp av et regulært uttrykk, og erstatte alle forekomster av mønsteret med et spesifisert tegn eller streng. La oss se på et eksempel:
+For å slette tegn som matcher et mønster i en PHP-kode, kan du bruke funksjonen `preg_replace()` og angi det ønskede mønsteret som det første argumentet og en tom streng som det andre argumentet. La oss si at vi har følgende tekststreng:
 
-```
-<?php
-$tekst = 'Jeg liker å spise epler og bananer.';
-$ny_tekst = preg_replace('/e/l', '4',$tekst);
-echo $ny_tekst;
-?>
+```PHP
+$tekst = 'Dette er & en * tekst $ med % spesielle @ tegn!';
 ```
 
-Å kjøre dette vil gi følgende output: "Jeg lik4r å spis4 appl4r og banan4r." Her har vi brukt regulært uttrykk "/e/l" for å spesifisere at vi ønsker å erstatte alle forekomster av bokstaven "e" med tallet 4.
+Hvis vi ønsker å slette alle tegn som ikke er bokstaver og tall, kan vi bruke følgende kode:
 
-Dette er bare ett eksempel på hvordan man kan bruke `preg_replace()` for å slette tegn som passer et mønster. Det finnes mange forskjellige muligheter og kombinasjoner av mønstre og erstatninger som man kan bruke.
+```PHP
+$rens_vanntette = preg_replace('/[^a-zA-Z0-9]/', '', $tekst);
+```
 
-## Dypere innblikk
+Det første argumentet `/[^a-zA-Z0-9]/` betyr at vi vil finne alle tegn som ikke er inkludert i bokstavene a-z og tallene 0-9. Det andre argumentet er en tom streng, som betyr at alle disse tegnene vil bli slettet. Koden vil derfor gi følgende utgang:
 
-I tillegg til å bruke `preg_replace()` kan man også bruke funksjonene `preg_match()` og `preg_match_all()` for å finne og manipulere tegn som følger et mønster i en gitt tekst.
+```PHP
+Detteerentekstmedspesielletegn
+```
 
-Den første funksjonen, `preg_match()`, lar oss finne den første forekomsten av et mønster i en tekst, mens den andre, `preg_match_all()`, lar oss finne alle forekomster og lagre dem i en array.
+Som du kan se, har alle spesialtegn blitt slettet fra teksten.
 
-Det finnes også flere såkalte "metategn" som kan brukes i regulære uttrykk for å finne bestemte mønstre. Disse inkluderer blant annet "w" for å finne alle bokstaver, "d" for å finne alle tall, og "s" for å finne alle mellomrom.
+## Deep Dive
 
-Å kunne håndtere og manipulere tekst basert på bestemte mønstre er en viktig del av programmering, og det er derfor viktig å ha god forståelse for hvordan man kan bruke regulære uttrykk i PHP.
+`preg_replace()`-funksjonen er en del av PHPs innebygde regular expressions-bibliotek. Regular expressions er en serie med spesielle tegn og symboler som brukes til å søke og manipulere tekststrenger. Det kan være ganske komplekst å forstå til å begynne med, men med litt øvelse og erfaring kan det være et kraftig verktøy for å behandle tekststrenger.
+
+I eksempelet ovenfor brukte vi metakarakteret `[^` for å finne tegn som ikke er inkludert i et gitt sett. Det finnes også andre metakarakterer som hjelper til med å finne visse typer tegn. Noen av de vanligste er:
+
+- `.`: matcher alle tegn
+- `\d`: matcher et tall
+- `\w`: matcher et alfanumerisk tegn (bokstav eller tall)
+- `\s`: matcher et mellomrom
+
+Disse metakarakterene kan også kombineres med andre spesialtegn og symboler for å lage mer komplekse mønstre. For å lære mer om dette, anbefales det å lese mer om regular expressions og eksperimentere med dem.
 
 ## Se også
 
-- [PHP's preg_replace() function](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regular Expression Tutorial](https://www.regular-expressions.info/)
-- [PHP Regex Cheat Sheet](https://www.phpcheatsheets.com/2019/10/php-regex-cheat-sheet.html)
+- [PHP regex tutorial](https://www.php.net/manual/en/regexp.reference.php)
+- [PHP preg_replace() function](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regular expressions cheat sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

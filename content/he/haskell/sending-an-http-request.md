@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת http."
+html_title:           "Haskell: שליחת בקשת http."
+simple_title:         "שליחת בקשת http."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה?
+## למה
+כרגע, שליחת בקשת HTTP היא חלק בלתי נפרד מהדרכון בתחום התכנות. היא משמשת כדי ליצור תקשורת בין שתי מערכות ולקבל מידע בצורה מהירה ויעילה.
 
-למה לצורך בעיתון בHaskell, אנשים עשויים להתעסק בשליחת בקשת HTTP כדי ליצור תקשורת בין אפליקציות שונות, לגשת למידע או לבצע פעולות במקומות רחוקים.
-
-# איך לבצע?
+## איך לעשות זאת
+לשלוח בקשת HTTP ב- Haskell ישנם מספר ביטויים שיכולים להיות מועילים:
 
 ```Haskell
-import Network.HTTP
+import Network.HTTP.Simple
 
-main :: IO ()
-main = do
-  response <- simpleHTTP (getRequest "https://www.example.com")
-  responseBody <- getResponseBody response
-  putStrLn responseBody
+-- יצירת בקשת GET פשוטה לאתר
+response <- httpGetRequest "https://example.com"
+
+-- שימוש במתודה יחידה כדי לקבל מידע מפורמט JSON
+response <- httpJSONRequest "https://example.com/api/users"
+
+-- בדיקה של מצב התקשורת שלנו
+alive <- isAlive "https://example.com"
 ```
 
-כאן אנו משתמשים בספריית Network.HTTP כדי לשלוח בקשת HTTP בקוד Haskell. נחשוב על זה כפעולת גשת לכתובת URL מסוימת, ולקבל תוצאה בחזרה, בצורת טקסט. בדוגמה זו, אנו מבצעים בקשה פשוטה לאתר דוגמה ומדפיסים את התוכן של התגובה.
+* ```httpSimpleRequest``` מאפשר לנו לשלוח בקשות פשוטות ולקבל תגובה בצורה נוחה ומבורכת.
+* ```httpJSONRequest``` מאפשר לנו גם לשלוח בקשות ולקבל מידע מפורמט JSON שנוח לעבוד איתו.
+* ```isAlive``` מאפשר לנו לבדוק את מצב התקשורת שלנו ולהבין האם האתר לא נגיש על ידי המחשב שלנו.
 
-# שוקלים עמוק יותר
+## עומק בנושא
+כאשר אנחנו שולחים בקשת HTTP, ישנם מספר שלבים שמתרחשים מאחורי הקלעים:
 
-שליחת בקשת HTTP בקוד Haskell היא רק ההתחלה. ישנם הרבה אפשרויות להתאים ולכוון את הבקשה כדי להתאים טוב יותר לצרכים שלך. ניתן לשנות את שלב הבקשה, לעדכן את התוכן, להוסיף כותרת או כל פרמטר אחר שיש לו צורך. ישנם גם הרבה ספריות נוספות זמינות המספקות תיכנות בקשות מתקדמות באופן יעיל ומנותק.
+* יצירת חיבור HTTP עם השרת שאנחנו מבקשים ממנו מידע.
+* שליחת הבקשה בצורה של HTTP וקבלת התגובה לחזרה.
+* עיבוד התוצאה המתקבלת והצגתה למשתמש.
 
-# ראו גם
+כאשר אנחנו עובדים ב-Haskell ישנם ספריות וכלים שיכולים לסייע לנו בביצוע החלקים השונים של שליחת בקשת HTTP ועיבוד המידע המתקבל.
 
-- [Haskell-What is HTTP in Haskell?](https://www.educba.com/haskell-http/)
-- [Sending HTTP Requests in Haskell with Wreq](https://www.fpcomplete.com/blog/2017/07/sending-http-requests-in-haskell-with-wreq/)
-- [Network.HTTP – Hackage](https://hackage.haskell.org/package/HTTP)
+## ראה גם
+* [הרשמה לסדרת כתבות על Haskell](https://www.haskell.org/)
+* [תיעוד לספריית Network.HTTP.Simple](https://hackage.haskell.org/package/http-client-0.6.4/docs/Network-HTTP-Simple.html)
+* [מדריך לשליחת בקשות HTTP ב- Haskell](https://www.haskell.org/haskellwiki/Introduction_to_Haskell_IO/HTTP)

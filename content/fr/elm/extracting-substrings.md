@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Elm: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'extraction de sous-chaînes est une tâche courante en programmation Elm, et c'est un outil puissant à ajouter à votre boîte à outils de développeur. Que vous travailliez sur un projet de traitement de texte ou sur un programme de traitement de données, savoir comment extraire des sous-chaînes dans Elm peut être très utile.
+Tu as déjà eu besoin de extraire un morceau de texte à partir d'une chaîne de caractères en Elm ? Peut-être que tu as un formulaire où tu dois valider une adresse e-mail à partir de laquelle tu veux extraire le domaine. Ou peut-être que tu veux extraire le nom d'utilisateur d'une URL pour afficher des informations personnalisées sur une page. Dans ces cas-là, savoir comment extraire des sous-chaines en Elm peut être très utile.
 
-## Comment faire
+# Comment faire
 
-Pour extraire des sous-chaînes en Elm, nous allons utiliser la fonction `substring` qui se trouve dans le module `String`. Cette fonction prend en argument une chaîne de caractères et deux indices, représentant respectivement le début et la fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple de code Elm qui illustre l'utilisation de `substring` :
+C'est très simple de extraire des substrings en Elm. Tout d'abord, tu dois utiliser la fonction `String.dropLeft` ou `String.dropRight` pour indiquer à Elm combien de caractères tu veux enlever du début ou de la fin de ta chaîne de caractères. Ensuite, utilise la fonction `String.slice` pour extraire le morceau de ta chaîne de caractères en utilisant l'index du début et de la fin que tu veux garder.
 
 ```Elm
-import String
-
-exemple = "Bonjour Elm"
-
-sousChaine = String.substring 7 11 exemple
-
--- "Elm" sera la valeur retournée par sousChaine
+input = "john.smith@gmail.com" 
+domain = String.slice 11 -4 input
+-- output: "gmail"
 ```
 
-Comme vous pouvez le voir dans cet exemple, nous avons d'abord importé le module `String`, puis nous avons créé une variable contenant notre chaîne de caractères. Ensuite, en utilisant `substring`, nous avons extrait la sous-chaîne "Elm" en utilisant les indices 7 et 11 pour spécifier les caractères que nous voulions. Vous pouvez également utiliser des variables pour ces indices, tant qu'elles sont de type `Int`.
+Tu peux également utiliser l'indexation par caractère pour extraire une sous-chaîne en utilisant la fonction `String.map`. Par exemple, si tu veux extraire le prénom `john` à partir de `john.smith@gmail.com`, tu peux utiliser `String.map` pour trouver l'index du premier point et extraire les caractères avant cet index.
 
-## Plongée en profondeur
+```Elm
+input = "john.smith@gmail.com"
+firstName = input |> String.map toSlug |> String.dropRight 10
+-- output: "john"
+```
 
-Il est important de noter que les indices donnés à la fonction `substring` doivent être valides. Cela signifie qu'ils doivent être compris entre 0 et la longueur de la chaîne de caractères moins 1. Si les indices donnés ne sont pas valides, la fonction retournera une erreur. De plus, `substring` ne modifie pas la chaîne de caractères d'origine, elle en renvoie simplement une nouvelle.
+# Plongeon en profondeur
 
-Il est également possible d'utiliser un indice négatif pour le début de la sous-chaîne. Dans ce cas, l'index sera compté à partir de la fin de la chaîne de caractères. Par exemple, `-2` serait l'avant-dernier caractère de la chaîne. Cela peut être très utile si vous avez besoin d'extraire une sous-chaîne à partir d'une position inconnue dans la chaîne de caractères.
+Il y a quelques choses à garder à l'esprit lors de l'extraction de substrings en Elm. Tout d'abord, la fonction `String.dropLeft` renverra une chaîne de caractères vide si tu essaies de supprimer plus de caractères qu'il n'y en a dans ta chaîne de caractères. Cela peut causer des erreurs si tu ne vérifies pas cela dans ton code. Deuxièmement, la fonction `String.dropRight` renverra une erreur si tu utilises un index négatif. Donc, assure-toi de toujours utiliser un index positif avec cette fonction.
 
-## Voir aussi
+# Voir aussi
 
-Pour en savoir plus sur les fonctions de manipulation de chaînes en Elm, consultez la documentation officielle du module `String` : https://package.elm-lang.org/packages/elm/core/latest/String
+- Documentation officielle d'Elm sur la manipulation de chaînes de caractères : https://guide.elm-lang.org/strings/
+- Un tutoriel sur la manipulation de chaînes de caractères en Elm : https://dev.to/benjaminadk/elm-strings-1ckc
+- Exemples pratiques d'utilisation de fonctions pour extraire des sous-chaînes en Elm : https://medium.com/@svalaskevicius/elm-string-operations-compared-26f71961c9d4

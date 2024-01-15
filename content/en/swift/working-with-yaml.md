@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Swift recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,69 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Why
 
-YAML is a popular data serialization format commonly used in modern software development. It is human-readable, easy to learn, and versatile, making it a great choice for storing configuration or data in applications. In this blog post, we will explore the basics of YAML and how to work with it in Swift.
+YAML is a widely used format for storing and sharing data, making it a valuable tool for developers. It's commonly used in configurations and settings files, making it essential for those working with applications or systems that require frequent updates or customization.
 
-## How To
+# How To
 
-To start working with YAML in Swift, we will need to add a dependency to our project. The most popular library for handling YAML in Swift is Yams, which can be easily integrated using Swift Package Manager.
+To work with YAML in Swift, we first need to import the Yams library using the following code:
 
-```Swift
-.package(url: "https://github.com/jpsim/Yams.git", from: "3.0.0")
 ```
-
-Once the library is added, we can start parsing YAML data by creating a Yams parser instance and passing in the YAML string:
-
-```Swift
 import Yams
-
-let yamlString = """
-fruits:
-  - apple
-  - banana
-  - orange
-"""
-let parser = Parser()
-let yamlData = try parser.load(yaml: yamlString)
 ```
 
-Yams will automatically convert the YAML data into a Swift dictionary. We can then access the values using their corresponding keys:
+Next, we can start using YAML in our code by creating a YAML string using the `YAMLEncoder` class:
 
-```Swift
-guard let fruits = yamlData["fruits"] as? [String] else {
-    print("Error parsing YAML data")
-    return
-}
-
-// fruits = ["apple", "banana", "orange"]
+```
+let yamlString = try YAMLEncoder().encode(["name": "John", "age": 25])
 ```
 
-We can also convert a Swift dictionary into YAML data using the Yams library:
+We can then print the YAML string to see the output:
 
-```Swift
-let dictionary: [String: Any] = ["name": "John", "age": 25, "hobbies": ["reading", "coding"]]
-let yamlString = try Yams.dump(object: dictionary)
+```
+print(yamlString)
 ```
 
-The resulting YAML string will look like this:
+The output would look like this:
 
-```Swift
+```
 name: John
 age: 25
-hobbies:
-    - reading
-    - coding
 ```
 
-## Deep Dive
+We can also decode a YAML string to retrieve the data in Swift. For example:
 
-YAML supports a wide range of data types, including strings, integers, booleans, arrays, and dictionaries. It also allows for comments, making it easier for developers to understand the data structure. One important thing to note is that indentation is significant in YAML, as it determines the hierarchy of the data.
+```
+let yamlString = "name: John\r\nage: 25"
+let data = try YAMLDecoder().decode([String: Any].self, from: yamlString)
+```
 
-YAML also supports anchors and aliases, which can be useful for referencing values in different parts of a YAML document. This allows for reusing data and improving the readability of YAML files.
+The output would be a dictionary containing the data:
 
-## See Also
+```
+["name": "John", "age": 25]
+```
 
-- [Official YAML site](https://yaml.org/)
-- [Yams GitHub repo](https://github.com/jpsim/Yams)
-- [Swift Package Manager](https://swift.org/package-manager/)
+# Deep Dive
+
+YAML stands for "YAML Ain't Markup Language" and is a human-friendly data serialization format. It's commonly used for configurations and has a simple syntax that is easier to read and write than other formats like XML or JSON.
+
+One of the main advantages of YAML is its support for nested data structures, making it great for representing complex configurations. It also allows for comments, making it easier to document and maintain code.
+
+It's worth noting that YAML is a superset of JSON, meaning any valid JSON document is also a valid YAML document. This makes it easy to switch between the two formats if needed.
+
+# See Also
+
+For more information on working with YAML in Swift, check out these resources:
+
+- [Yams library on Github](https://github.com/jpsim/Yams)
+- [Official YAML website](https://yaml.org)
+- [SwiftYAML library](https://github.com/behrang/YamlSwift)

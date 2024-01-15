@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "TypeScript: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor generere tilfeldige tall?
+## Hvorfor
+Hvorfor skulle noen ønske å generere tilfeldige tall? Vel, det kan være en viktig del av mange programmeringsoppgaver og kan bidra til å gjøre koden mer dynamisk og variert.
 
-Vi har alle vært der - du trenger et tilfeldig tall i et program, enten det er for å lage et spill, gjennomføre en vitenskapelig eksperiment eller bare for å teste noe ut. Men, hvordan kan du få tilgang til tilfeldige tall i et TypeScript-program? I denne blogginnlegget, vil jeg vise deg hvorfor det er viktig å bruke tilfeldige tall, hvordan du kan implementere det i TypeScript, og dykke dypere inn i hvordan tilfeldige tall egentlig fungerer.
-
-## Slik genererer du tilfeldige tall i TypeScript
-
-For å generere tilfeldige tall, må du først importere "Math" biblioteket i TypeScript. Deretter kan du bruke "random" funksjonen til å generere et tilfeldig tall mellom 0 og 1. For å få et tall med et større område, kan du multiplisere resultatet med ditt ønskede maksimumsverdi og legge til minimumsverdien for å justere området.
+## Slik gjør du det
+Generering av tilfeldige tall i TypeScript er enkelt. Alt du trenger å gjøre er å bruke Math.random() metoden. La oss se på et eksempel:
 
 ```TypeScript
-import Math;
+// Genererer et tilfeldig tall mellom 1 og 10
+let randomNumber = Math.floor(Math.random() * 10) + 1; 
 
-let tilfeldigTall = Math.random(); // Genererer et tall mellom 0 og 1
-let tilfeldigStortTall = Math.random() * 100; // Genererer et tall mellom 0 og 100
-let tilfeldigStortTallMedRange = Math.random() * (max - min) + min; // Genererer et tall mellom min og max
+console.log(randomNumber); // Vil skrive ut et tilfeldig tall mellom 1 og 10 hver gang du kjører koden
 ```
 
-Output:
+Med dette eksempelet kan du generere et tilfeldig tall mellom et gitt område. Math.random() metoden vil alltid returnere et tall mellom 0 og 1, så ved å multiplisere det med det maksimale tallet du ønsker og legge til minimumumstallet, kan du få det ønskede resultatet.
 
-```
-tilfeldigTall = 0.432
-tilfeldigStortTall = 78.943
-tilfeldigStortTallMedRange = 37.621 (hvis min = 20 og max = 55)
-```
-
-Du kan også få tilgang til tilfeldige tall basert på en bestemt liste ved å bruke "floor" funksjonen. Dette er nyttig hvis du for eksempel vil generere et tilfeldig navn fra en liste.
+Du kan også bruke denne metoden til å lage tilfeldige indekser for å hente elementer fra en array. La oss se på et annet eksempel:
 
 ```TypeScript
-let navn = ["Per", "Kari", "Ole", "Mia", "Jonas"];
-let tilfeldigNavn = navn[Math.floor(Math.random() * navn.length)];
+let myArray = [5, 10, 15, 20];
+let randomIndex = Math.floor(Math.random() * myArray.length);
 
-console.log(tilfeldigNavn); // Kan være enten "Per", "Kari", "Ole", "Mia" eller "Jonas"
+console.log(myArray[randomIndex]); // Vil skrive ut et tilfeldig tall fra arrayen hver gang du kjører koden
 ```
 
-Output:
+Som du kan se, kan generering av tilfeldige tall være nyttig i forskjellige situasjoner, og det er en enkel måte å legge til variasjon i koden din.
 
-```
-Mia (tilfeldig valgt navn)
-```
+## Dykk dypere
+Hvis du er interessert i å lære mer om tilfeldige tallgenerering i TypeScript, er det noen viktige ting du bør vite.
 
-## Dykk dypere inn i tilfeldige tall
+For det første, når du bruker Math.random() metoden, må du være oppmerksom på at den ikke genererer virkelig tilfeldige tall. Den bruker en algoritme som returnerer tall basert på en startverdi, kalt en seed, som vanligvis er systemsklokken. Seedet vil bestemme den første tilfeldige verdien som blir generert, og deretter vil hver påfølgende verdi bli bestemt av den forrige. Dette betyr at hvis du bruker samme seed, vil du få den samme sekvensen av tilfeldige tall hver gang.
 
-Men hvordan fungerer egentlig "Math.random" funksjonen? Den bruker faktisk et pseudorandom nummergenereringsalgoritme for å generere et tall. Dette betyr at algoritmen bruker matematiske beregninger for å produsere en sekvens av tall som ser ut til å være tilfeldige.
-
-Men fordi algoritmen følger et bestemt mønster, kan det ikke generere virkelig tilfeldige tall. Dette er grunnen til at det kalles "pseudo" tilfeldige tall. Men det anses fremdeles som tilstrekkelig tilfeldig for mange anvendelser.
+En annen ting å være oppmerksom på er at Math.random() metoden ikke genererer et desimaltall nøyaktig. Den kan returnere et tall som ikke har en presisjon på flere desimaler. For å unngå denne ulempen, kan du multiplisere resultatet med et stort tall, som 1000, og deretter skjære av desimalene ved hjelp av Math.floor() metoden.
 
 ## Se også
-
-1. [Generering av tilfeldige tall i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-2. [Pseudorandom tallgenerering for nybegynnere](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-3. [Hvordan generere spesifikke tilfeldige tall i TypeScript](https://stackoverflow.com/questions/34087498/how-to-generate-a-random-number-between-two-values-in-typescript)
-
-Takk for at du leste denne guiden om hvordan du genererer tilfeldige tall i TypeScript. Forhåpentligvis har den vært nyttig for deg i fremtidige programmeringsprosjekter!
+- [TypeScript dokumentasjon om Math.random()](https://www.typescriptlang.org/docs/handbook/functions.html#the-importance-of-using-the---declaration)
+- [Generering av tilfeldige tall i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)

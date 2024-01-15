@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Unione di stringhe"
-simple_title:         "Unione di stringhe"
+title:                "Concatenando stringhe"
+html_title:           "Fish Shell: Concatenando stringhe"
+simple_title:         "Concatenando stringhe"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,40 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Concatenare stringhe è una pratica comune nella programmazione che può aiutare a creare stringhe più lunghe e complesse a partire da più stringhe più corte. E' una funzionalità utile da utilizzare quando si vuole creare un output dinamico o quando si lavora con database.
+Hai mai desiderato creare una stringa unendo più pezzi di testo? Con la shell Fish, puoi farlo facilmente usando il comando di concatenazione delle stringhe. Questo può essere utile quando si vuole creare dinamicamente dei comandi o visualizzare messaggi personalizzati.
 
 ## Come fare
-Per concatenare stringhe in Fish Shell, è possibile utilizzare l'operatore di concatenazione "++". Ad esempio, se si volesse creare una stringa che contenesse il nome e il cognome, si potrebbe scrivere:
+Per concatenare le stringhe in Fish Shell, usa il simbolo `+` come operatore di concatenazione. Ad esempio, se vogliamo creare una stringa composta dal nostro nome e cognome, possiamo usare il seguente comando:
 
 ```Fish Shell
-set first_name "Mario"
-set last_name "Rossi"
-echo $first_name ++ $last_name
+set nome "Mario"
+set cognome "Rossi"
+echo $nome + " " + $cognome
 ```
 
-Questo codice produrrebbe in output "MarioRossi". E' importante notare che l'operatore di concatenazione non aggiunge spazi tra le stringhe, quindi è necessario aggiungerli manualmente, se necessario.
+L'output sarà: `Mario Rossi`.
 
-Un'altra opzione per concatenare stringhe è utilizzare la funzione "string join", che consente di unire diverse stringhe con un separatore specifico. Ad esempio:
+Se abbiamo bisogno di convertire variabili in stringhe per poterle concatenare, possiamo usare il comando `string` prima delle variabili. Ad esempio:
 
 ```Fish Shell
-set fruits "apple" "banana" "orange"
-string join ", " $fruits
+set num1 10
+set num2 5
+echo (string $num1) + (string $num2)
 ```
 
-Questo codice produrrebbe in output "apple, banana, orange".
+L'output sarà: `105`. Nota che abbiamo utilizzato le parentesi tonde `()` per indicare la precedenza degli operatori, in modo che il comando `string` venga eseguito prima della concatenazione delle stringhe.
 
 ## Approfondimento
-Oltre a "++" e "string join", è possibile concatenare le stringhe utilizzando la variabile "$argv", che rappresenta gli argomenti passati in input alla shell. Utilizzando questo approccio, è possibile creare una stringa personalizzata in base ai valori passati in input. Ad esempio:
+La concatenazione delle stringhe in Fish Shell è possibile grazie all'utilizzo delle variabili, insieme all'operatore `+`. Si noti che le variabili possono anche essere concatenare senza l'utilizzo del comando `string`, ma in questo caso verrà mostrato un avviso in cui viene suggerito di utilizzare il comando.
 
-```Fish Shell
-set nome $argv[1]
-set cognome $argv[2]
-echo "Benvenuto $nome $cognome!"
-```
-
-Passando in input "Marco Rossi", l'output sarebbe "Benvenuto Marco Rossi!".
+È importante anche notare che le variabili che rappresentano numeri non possono essere concatenate con le stringhe, a meno che non vengano prima convertite in stringhe tramite il comando `string`.
 
 ## Vedi anche
-- [Fish Shell documentazione su concatenazione di stringhe](https://fishshell.com/docs/current/tutorial.html#tut_variable_expansion)
-- [Esempi di concatenazione di stringhe in Fish Shell](https://github.com/fish-shell/fish-shell/wiki/FAQ#how-can-i-concatenate-strings)
-- [Tutorial introduttivo su Fish Shell](https://youtu.be/lhS7YCijTM0) (in italiano)
+- [Documentazione ufficiale su Fish Shell](https://fishshell.com/docs/current/)
+- [Articolo su come gestire le variabili in Fish Shell](https://dev.to/anandsinha07/working-with-variables-in-fish-shell-406k)

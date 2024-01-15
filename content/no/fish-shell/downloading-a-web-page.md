@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Fish Shell: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Lurer du på hvordan du kan laste ned en nettside ved hjelp av kommandolinjeverktøyet Fish Shell? Les videre for å lære hvordan du kan enkelt laste ned informasjon fra nettsider med bare noen få linjer med kode!
+Hvorfor skal man engasjere seg i å laste ned en nettside? Vel, det kan være flere grunner til dette. Kanskje du ønsker å lagre en kopi av en nettside for å lese senere, eller kanskje du vil få tilgang til informasjon som ikke er tilgjengelig offline. Uansett årsak, det finnes en enkel måte å gjøre dette på ved å bruke Fish Shell.
 
 ## Hvordan
+Fish Shell har en innebygd funksjon kalt `curl`, som kan brukes til å laste ned nettsider. La oss ta en titt på et eksempel:
 
 ```Fish Shell
-curl -o [filnavn] [nettside-URL]
+curl example.com
 ```
 
-Bruk denne enkle kommandoen for å laste ned en nettside og lagre den som en fil på din lokale datamaskin. Du kan også legge til flere muligheter, som for eksempel å laste ned kun headerinformasjon, eller å lagre filen i en bestemt mappe.
+Dette vil laste ned nettsiden `example.com` og skrive ut innholdet direkte til terminalen. Men hvis du vil lagre innholdet i en fil, kan du bruke `curl` med flagget `-o`:
 
 ```Fish Shell
-curl -I [nettside-URL]     # Laster ned kun headerinformasjon 
-curl -o [mappe]/[filnavn] [nettside-URL]   # Lagrer filen i en bestemt mappe
+curl -o example.html example.com
 ```
+
+Dette vil laste ned nettsiden og lagre den som en `example.html` fil i ditt nåværende arbeidsmappe.
 
 ## Dypdykk
-
-Fish Shell bruker kommandoen "curl" for å laste ned nettsider. Dette er et populært verktøy brukt av utviklere for å få tak i informasjon fra ulike nettsider. Det støtter en rekke protokoller, som HTTP, FTP, og SFTP. Du kan også bruke ulike flagg for å få tilgang til spesifikke funksjoner.
-
-For å laste ned en side fra en sikret HTTPS-tilkobling, kan du legge til "-k" flagget:
+Nå som du vet hvordan du kan laste ned en nettside ved hjelp av Fish Shell, la oss se på noen tilleggsfunksjoner du kan bruke. Du kan for eksempel bruke `curl` med flagget `-I` for å få informasjon om headeren til en nettside:
 
 ```Fish Shell
-curl -k -o [filnavn] [HTTPS-nettsted-URL]
+curl -I example.com
 ```
 
-Det er også mulig å bruke Fish Shell for å laste ned nettsider periodisk, ved hjelp av kommandoen "crontab". Dette kan være nyttig for å holde seg oppdatert på informasjon fra ulike nettsider på en jevnlig basis.
+Dette vil gi deg en liste over header-feltene for nettsiden, som kan være nyttig for å få informasjon om serveren, dataformatet, og mye mer.
+
+En annen nyttig funksjon i `curl` er muligheten til å laste ned fra en spesifikk URL. Dette er veldig nyttig hvis du ønsker å laste ned en spesifikk fil fra en nettside:
+
+```Fish Shell
+curl -O example.com/images/logo.png
+```
+
+Dette vil laste ned `logo.png` filen fra `example.com` og lagre den i ditt nåværende arbeidsmappe.
 
 ## Se også
-
-* [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-* [Curl nettsted](https://curl.se/)
+- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Curl: Brukerveiledning](https://curl.haxx.se/docs/manpage.html)

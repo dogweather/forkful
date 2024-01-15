@@ -1,6 +1,7 @@
 ---
-title:                "Python: Envoi d'une demande http"
-simple_title:         "Envoi d'une demande http"
+title:                "Envoi d'une requête http"
+html_title:           "Python: Envoi d'une requête http"
+simple_title:         "Envoi d'une requête http"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,80 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-L'envoi de requêtes HTTP est une tâche courante dans le développement web moderne. Cela permet d'interagir avec des serveurs distants pour récupérer des données ou effectuer des actions. Apprenez comment envoyer des requêtes HTTP avec Python et utilisez cette compétence pour améliorer vos projets web.
 
-## Comment Faire
-Pour envoyer une requête HTTP en Python, nous allons utiliser le module requests. Assurez-vous de l'installer en utilisant la commande `pip install requests` avant de commencer. Ensuite, importez le module et spécifiez l'URL de la requête que vous souhaitez envoyer :
+Vous vous demandez peut-être pourquoi il est important d'envoyer une requête HTTP en utilisant Python. Eh bien, cela peut être utile pour interagir avec des serveurs web et obtenir des données à partir de ceux-ci.
 
-```python
+## Comment faire
+
+Pour envoyer une requête HTTP en utilisant Python, vous pouvez utiliser le module "requests". Tout d'abord, importez-le en utilisant la ligne de code suivante :
+
+```Python
 import requests
-
-url = "https://www.example.com" # remplacez par votre URL
 ```
 
-Pour envoyer une simple requête GET, utilisez la méthode `get()` de requests et stockez la réponse dans une variable :
+Ensuite, vous pouvez utiliser la fonction "get" pour envoyer une requête GET à un serveur et obtenir la réponse. Vous devrez également spécifier l'URL du serveur que vous souhaitez interroger. Voici un exemple de code:
 
-```python
-response = requests.get(url)
+```Python
+response = requests.get("https://www.example.com")
 ```
 
-Vous pouvez maintenant accéder au contenu de la réponse à l'aide de la méthode `text` :
+Si la requête est réussie, vous pouvez utiliser la méthode "text" pour afficher le contenu de la réponse :
 
-```python
+```Python
 print(response.text)
 ```
 
-Voici un exemple complet qui affiche le contenu de la page d'accueil de Google :
+Et voilà ! Vous avez maintenant envoyé une requête HTTP en utilisant Python et obtenu la réponse du serveur.
 
-```python
-import requests
+## Fouiller plus en profondeur
 
-url = "https://www.google.com"
-response = requests.get(url)
-print(response.text)
-```
+Le module "requests" propose également d'autres méthodes de requête telles que "post", "put" et "delete" pour interagir avec des serveurs web de différentes manières. Vous pouvez également spécifier des paramètres, des en-têtes ou des données à inclure dans la requête lorsque vous l'envoyez.
 
-Output :
+Il est également important de noter que le module "requests" gère automatiquement la gestion des erreurs et des redirections lors de l'envoi de requêtes HTTP.
 
-```
-<!doctype html> ...
-```
+## Voir aussi
 
-Vous pouvez également spécifier des paramètres supplémentaires dans votre requête en utilisant le paramètre `params` :
+Voici quelques liens utiles pour en savoir plus sur l'envoi de requêtes HTTP en utilisant Python :
 
-```python
-params = {"search": "python", "limit": 100}
-
-response = requests.get(url, params=params)
-```
-
-Pour envoyer une requête POST avec des données, utilisez le paramètre `data` :
-
-```python
-data = {"username": "John", "password": "123456"}
-
-response = requests.post(url, data=data)
-```
-
-Pour spécifier des en-têtes personnalisés dans votre requête, utilisez le paramètre `headers` :
-
-```python
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"}
-
-response = requests.get(url, headers=headers)
-```
-
-Pour plus d'informations et d'exemples sur l'envoi de requêtes HTTP avec Python, consultez la documentation officielle de requests : https://requests.readthedocs.io/en/master/.
-
-## Plongée Profonde
-Pour comprendre en profondeur le fonctionnement des requêtes HTTP, il est important de connaître les différents types de méthodes de requête et leurs fonctions. Les deux méthodes les plus couramment utilisées sont GET et POST.
-
-La méthode GET est utilisée pour demander des données au serveur, tandis que la méthode POST est utilisée pour envoyer des données vers le serveur. Les autres méthodes couramment utilisées sont PUT, DELETE et PATCH, qui ont chacune un but spécifique dans la communication avec un serveur.
-
-Il est également important de comprendre les codes de statut HTTP, qui informent sur le résultat de la requête. Par exemple, le code 200 signifie que la requête a été correctement exécutée, tandis que le code 404 signifie que la ressource demandée n'a pas été trouvée sur le serveur.
-
-## Voir Aussi
-* Tutoriel complet :https://realpython.com/python-requests/
-* Documentation officielle de requests : https://requests.readthedocs.io/en/master/
-* Cheatsheet de méthodes de requête HTTP : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
-* Liste des codes de statut HTTP : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+- [Documentation officielle du module requests](https://docs.python-requests.org/en/master/)
+- [Tutoriel sur les requêtes HTTP avec Python](https://realpython.com/python-requests/)
+- [Exemples pratiques d'utilisation de requests en Python](https://www.thepythoncode.com/article/make-http-requests-in-python)

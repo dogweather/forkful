@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Extracting substrings"
+title:                "Extracting substrings"
+html_title:           "Bash recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,51 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Bash is a popular command-line language that allows users to automate tasks through programming. One useful task that Bash can handle is extracting substrings from strings. This can be helpful for text manipulation, data processing, and more.
+Substring extraction is a useful programming technique in Bash that allows you to extract specific portions of text from a larger string. This can come in handy when dealing with large sets of data or when you need to manipulate text in a certain way.
 
 ## How To
-
-To extract substrings in Bash, we use the built-in `cut` command. It allows us to specify a delimiter to split the string and then select the desired substring. Let's walk through an example.
-
-Suppose we have a string `Hello World!`, and we want to extract the word `World`. Using `cut`, we can specify the space as our delimiter and choose the second field, which corresponds to the word `World`.
+To extract substrings in Bash, you can use the built-in `cut` command. Here's an example of extracting the first 5 characters from a string:
 
 ```Bash
-string="Hello World!"
-substring=$(echo $string | cut -d " " -f 2)
-echo $substring
+myString="Hello World"
+echo "${myString:0:5}"
 ```
 
-The output of this code will be `World`, which is the substring we wanted. It is essentially splitting the string at the space and selecting the second item.
-
-We can also use the same method to extract multiple substrings at once. Suppose we have a string `I love coding in Bash`, and we want to extract the words `love` and `Bash`. We can do so by specifying a space as the delimiter and selecting the second and fifth fields, respectively.
+The output of this code will be `Hello`, as it extracts the first 5 characters (starting at index 0) from the string. You can also specify a starting index and length for the substring, like this:
 
 ```Bash
-string="I love coding in Bash"
-substring1=$(echo $string | cut -d " " -f 2)
-substring2=$(echo $string | cut -d " " -f 5)
-echo $substring1
-echo $substring2
+echo "${myString:6:5}"
 ```
 
-The output of this code will be `love` and `Bash`, each on a separate line.
+This will output `World`, as it extracts 5 characters starting from index 6. You can also extract from the end of the string by using negative indices:
+
+```Bash
+echo "${myString: -5}"
+```
+The output of this code will be `World`, as the negative index starts counting from the end of the string.
 
 ## Deep Dive
+There are a few things to keep in mind when extracting substrings in Bash. First, Bash uses 0-based indexing, so the first character in a string is at index 0. This means that if you want to extract the first 5 characters, you would use an index of 0 and a length of 5.
 
-The `cut` command offers various options to specify delimiters, select fields, and more. For example, we can use `-c` to select a specific character or `-s` to remove lines that do not contain the delimiter.
+Secondly, if you do not specify a length for the substring, Bash will extract all remaining characters from the specified index. For example, if you only specify an index of 6, Bash will extract all characters starting from index 6 until the end of the string.
 
-Additionally, we can use the `grep` command in combination with `cut` to extract substrings that match a specific pattern. For instance, if we want to extract all words that start with the letter `B` in the string `I love Bash scripting`, we can use the following code:
+You can also use variables for the indices and lengths of your substrings. This can come in handy when dealing with dynamic data. Just make sure to properly format the variables within the substring extraction syntax.
 
-```Bash
-string="I love Bash scripting"
-substring=$(echo $string | grep -o "\bB[a-zA-Z]*")
-echo $substring
-```
-
-The output of this code will be `Bash`, `Bash`, and `Bash`, as it matches the pattern for all three words starting with `B`.
+Lastly, you can use the `cut` command with a delimiter to extract substrings based on a specific character or pattern. This is useful when working with text separated by certain characters, such as commas or spaces.
 
 ## See Also
-
-- [Bash cut command](https://www.geeksforgeeks.org/cut-command-linux-examples/)
-- [Bash grep command](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
-- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Bash Substring Extraction - Linuxize](https://linuxize.com/post/bash-substring/)
+- [Cut Command in Bash - GeeksforGeeks](https://www.geeksforgeeks.org/cut-command-linux-examples/)
+- [Bash Guide for Beginners - Linux Documentation Project](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Creando un archivo temporal"
+title:                "Creando un archivo temporal"
+html_title:           "Rust: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,55 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal?
+## Por Qué
 
-Crear archivos temporales es una práctica común en la programación, especialmente en Rust. Estos archivos sirven como un espacio de trabajo temporal para almacenar datos y realizar operaciones sin afectar a los archivos permanentes. Son muy útiles cuando se trabaja con datos sensibles o se necesita un lugar para almacenar datos temporales sin sobrecargar el sistema de archivos principal.
+¿Alguna vez has necesitado crear un archivo temporal en tu programa? Ya sea para almacenar datos temporales o para realizar alguna operación específica, la creación de archivos temporales es una tarea común en la programación. En este artículo, vamos a explorar cómo crear archivos temporales en Rust y por qué es útil hacerlo.
 
-## Cómo crear un archivo temporal en Rust
+## Cómo
 
-La creación de un archivo temporal en Rust es muy sencilla gracias a la biblioteca estándar. Solo necesitamos importar el módulo `std::io::Write` y utilizar el método `tempfile()` para generar un archivo temporal.
+Primero, importaremos el módulo `std::fs` para poder interactuar con el sistema de archivos en Rust. Luego, usaremos la función `tempfile` que nos permite crear un archivo temporal en el directorio actual:
 
-``` Rust
+```Rust
+use std::fs::File;
 use std::io::Write;
 
-let mut file = tempfile::tempfile().unwrap();
-// Realizar operaciones en el archivo temporal
-write!(file, "Hola, mundo!").unwrap();
+fn main() {
+  let temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
+}
 ```
 
-El archivo temporal se creará en el directorio temporal predeterminado del sistema operativo. También se puede especificar un directorio personalizado utilizando el método `tempfile_in()`.
+Ahora que hemos creado nuestro archivo temporal, podemos escribir en él utilizando los métodos de `std::io::Write`:
 
-``` Rust
-let mut file = tempfile::tempfile_in("/tmp").unwrap(); // Crear archivo temporal en el directorio /tmp
-```
-
-## Profundizando en la creación de archivos temporales
-
-La biblioteca `tempfile` proporciona varias funciones y métodos para manejar archivos temporales de manera eficiente. Por ejemplo, se puede utilizar el método `keep()` para prevenir la eliminación del archivo temporal al cerrarlo.
-
-``` Rust
+```Rust
+use std::fs::File;
 use std::io::Write;
 
-let mut file = tempfile::tempfile().unwrap();
-write!(file, "¡Hola, mundo!").unwrap();
-file.keep().unwrap(); // El archivo temporal se mantendrá incluso después de cerrarlo
+fn main() {
+  let mut temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
+  temp_file.write(b"¡Hola desde Rust!").expect("Error al escribir en archivo temporal.");
+}
 ```
 
-También es posible especificar un nombre para el archivo temporal utilizando el método `tempfile_named()`.
+Por último, debemos asegurarnos de cerrar el archivo temporal después de haber terminado de usarlo para liberar recursos:
 
-``` Rust
-let mut file = tempfile::tempfile_named("mi_archivo_temporal.txt").unwrap(); // Crear un archivo temporal con el nombre "mi_archivo_temporal.txt"
+```Rust
+use std::fs::File;
+use std::io::Write;
+
+fn main() {
+  let mut temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
+  temp_file.write(b"¡Hola desde Rust!").expect("Error al escribir en archivo temporal.");
+
+  // Cerramos el archivo temporal
+  temp_file.close().expect("Error al cerrar archivo temporal.");
+}
 ```
 
-Y si se necesita un archivo temporal con un patrón específico en su nombre, se puede utilizar el método `tempfile_with()`.
+## Deep Dive
 
-``` Rust
-let mut file = tempfile::tempfile_with("temp", ".txt").unwrap(); // Crear un archivo temporal con un nombre que comience con "temp" y tenga extensión ".txt"
-```
+La función `tempfile` en realidad devuelve un objeto `NamedTempFile` que implementa el trait `Write`. Esto significa que podemos utilizar todos los métodos de `Write` para escribir en nuestro archivo temporal, como por ejemplo `write_all` o `flush`. Además, al utilizar `tempfile` no tenemos que preocuparnos por darle un nombre único al archivo, ya que se encarga automáticamente de eso.
 
-## Ver también
+También hay casos en los que necesitamos mantener el archivo temporal después de cerrarlo, por ejemplo, si queremos que nuestros datos sean accesibles desde otros procesos. En ese caso, podemos utilizar el método `persist` en lugar de `close` para mantener el archivo abierto en el sistema de archivos.
 
-- [Documentación de la biblioteca `tempfile`](https://docs.rs/tempfile)
-- [Rust Book: Manejo de errores en la biblioteca estándar](https://doc.rust-lang.org/book/ch09-00-error-handling.html#managing-unsaved-data-with-temporary-files)
+## Ver También
 
-¡Ahora ya sabes cómo crear y manejar archivos temporales en Rust! Son una herramienta muy útil en el desarrollo de aplicaciones y pueden ayudar a mantener nuestro sistema de archivos ordenado. ¡Sigue aprendiendo sobre Rust y descubre todo lo que esta lenguaje de programación tiene para ofrecer!
+- [Documentación oficial de Rust sobre creación de archivos temporales](https://doc.rust-lang.org/std/fs/struct.NamedTempFile.html)
+- [Ejemplo de creación de archivo temporal en Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=08ae147963a3079467bf50a092bf25dc)

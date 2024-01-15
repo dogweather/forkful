@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Convertendo uma string para minúsculas."
-simple_title:         "Convertendo uma string para minúsculas."
+title:                "Convertendo uma string para letra minúscula"
+html_title:           "Gleam: Convertendo uma string para letra minúscula"
+simple_title:         "Convertendo uma string para letra minúscula"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,27 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Se você é um programador Gleam, provavelmente está sempre procurando maneiras eficientes de manipular strings. Converter uma string para letras minúsculas é uma tarefa comum em muitos projetos, e entender como fazer isso em Gleam pode economizar tempo e esforço.
+Se você já se deparou com a necessidade de converter uma string para letras minúsculas em um projeto de programação, então você sabe o quão importante essa habilidade pode ser. É especialmente útil ao lidar com dados de entrada de usuários, pois garante que o seu programa os manipule corretamente, independentemente de como eles digitaram o texto.
 
 ## Como fazer
 
-A função `String.to_lower` é usada para converter uma string para letras minúsculas. Veja um exemplo prático abaixo:
+Aqui está um exemplo simples de como converter uma string para letras minúsculas em Gleam:
 
-```Gleam
-let string = "ESTE TEXTO SERÁ CONVERTIDO!"
-let lower_case = String.to_lower(string)
+```
+Gleam
+  .String
+  .to_lower("TEXTO EM CAIXA ALTA")
 ```
 
-O valor resultante da variável `lower_case` será "este texto será convertido!". Como você pode ver, todos os caracteres maiúsculos foram transformados em minúsculos.
+Isso produz a saída esperada de `texto em caixa alta`. Além disso, Gleam também fornece a função `String.to_lower_ascii`, que remove acentos e caracteres especiais antes de converter para minúsculas.
 
-Existem também funções para converter apenas a primeira letra de uma string em minúscula, como `String.lower_first` ou `String.capitalize`. Experimente e veja qual atende às suas necessidades específicas.
+```
+Gleam
+  .String
+  .to_lower_ascii("Olá Mundo! Como vai você?")
+```
+
+A saída será `ola mundo! como vai voce?`
 
 ## Mergulho profundo
 
-Você pode estar se perguntando como a função `String.to_lower` trabalha internamente. Basicamente, ela percorre cada caractere na string e usa a tabela ASCII para determinar se ele é uma letra maiúscula. Se for o caso, o caractere é modificado para sua versão minúscula. Esse processo é realizado para cada caractere da string até que ela seja completamente convertida em letras minúsculas.
+Você pode estar se perguntando, por que precisamos de uma função específica para converter uma string para letras minúsculas? Não poderia ser feito com uma simples manipulação de caracteres?
 
-É importante lembrar que, assim como a maioria das funções de string, a função `String.to_lower` retorna uma nova string e não modifica a string original. Isso significa que você precisará atribuir o resultado a uma nova variável.
+A resposta é sim, mas essa função em Gleam garante que a conversão aconteça de forma eficiente e precisa, levando em consideração as diferenças entre os caracteres em diferentes idiomas. Além disso, essa função é imutável, o que significa que ela não altera a string original, mas sim retorna uma nova string com as letras em minúsculo.
+
+Essa função também lida com casos especiais, como a letra "i" minúscula em turco, que é representada como "ı" e não "i" como em inglês. Portanto, se você estiver trabalhando com strings de diferentes idiomas, essa função garantirá que a conversão para minúsculo seja feita corretamente.
 
 ## Veja também
 
-- Documentação oficial sobre strings em Gleam: https://gleam.run/documentation/guides/strings/
+- Documentação oficial da função String.to_lower em Gleam: https://gleam.run/docs/stdlib/String#to_lower
+- Tutorial de Gleam em português: https://dev.to/gleam/guia-de-instalacao-de-gleam-para-iniciantes-5chi (em inglês)

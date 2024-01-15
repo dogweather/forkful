@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 未来または過去の日付の計算方法"
-simple_title:         "未来または過去の日付の計算方法"
+title:                "「過去や未来の日付を計算する」"
+html_title:           "Elixir: 「過去や未来の日付を計算する」"
+simple_title:         "「過去や未来の日付を計算する」"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-未来や過去の日付を計算することについて、なぜ誰かが参加するかをわかりやすく説明します。
+日々の生活やビジネスで、将来の日付を計算する必要があるシーンは多々あります。特に、プログラムを書いている開発者にとっては、正確な日付計算は重要なスキルです。そこで、Elixirを使って日付の計算を行う方法について説明します。
 
 ## 方法
 
-以下の```Elixir```コードブロック内に、コーディングの例と出力サンプルを記載しています。
+まずは、Elixirの計算機能を使用して日付の計算を行う方法を見ていきましょう。以下のコード例を参考にしてください。
 
 ```Elixir
-# 今日の日付を取得
-today = Date.utc_today()
+# 現在の日付を取得
+current_date = Date.utc_today()
 
-# 1週間後の日付を計算
-next_week = Date.add(today, 7)
+# 1年後の日付を計算
+one_year_later = Date.add(current_date, 1, :years)
 
-# 日付のフォーマットを指定して出力
-IO.puts "今日から1週間後の日付は #{Date.to_string(next_week, "{YYYY年MM月DD日}")} です。"
+# 1ヶ月前の日付を計算
+one_month_ago = Date.add(current_date, -1, :months)
+
+# 今日を基準とした2週間後の日付を計算
+two_weeks_later = Date.add(current_date, 2, :weeks)
+
+# 今日を基準とした1日前の日付を計算
+yesterday = Date.add(current_date, -1, :days)
 ```
 
-出力例:
+上記のコードでは、`Date.utc_today()`を使用して現在の日付を取得し、その日付を基準に`Date.add/3`関数を使用して日付の計算を行っています。第1引数に日付の基準となる日付、第2引数に計算したい数値、第3引数に計算の単位を指定します。詳細はElixirの公式ドキュメントを参考にしてください。
 
-```
-今日から1週間後の日付は 2021年06月17日 です。
+計算結果は、それぞれの日付を表す`Date`モジュールのオブジェクトとして返されます。結果を表示する際は、`inspect()`関数を使用してください。
+
+```Elixir
+# 計算結果の表示例
+IO.puts("1年後の日付は #{inspect(one_year_later)}です。")
 ```
 
 ## 深堀り
 
-未来や過去の日付を計算する方法はいくつかあります。例えば、```Date.add/2```関数を使用する方法や、```Date.new!/3```関数を使用し、日付の値を手動で指定する方法があります。また、日付を計算する際には、タイムゾーンやクリスマスや年末年始などの特殊な日付にも注意が必要です。
+Elixirでは、日付の計算だけでなく、様々な日時操作を行うことができます。例えば、`DateTime`モジュールを使用することで、時刻の計算やフォーマットも簡単に行うことができます。
 
-## もっと詳しくは
+また、Elixirには日付の扱いに特化したライブラリである`Timex`が存在します。`Timex`を使用することで、より複雑な日付の計算や、ロケールに応じた日付表示なども行うことができます。
 
-「深堀り」のセクションで説明した方法以外にも、未来や過去の日付を計算する方法は様々あります。興味がある方は以下のリンクを参考にしてみてください。  
-
-### Elixirの公式ドキュメント
-https://hexdocs.pm/elixir/Date.html
-
-### ブログ記事「Elixirで日付を取得する方法」
-https://blog.yuyat.jp/post/elixir-date/
-
-### ブログ記事「Elixirで年末年始の日付を計算する方法」
-https://qiita.com/morikat/items/53f0881c3efb1405c2c7
+さらに詳細な情報は、Elixirの公式ドキュメントや`Timex`のドキュメントを参考にしてください。
 
 ## 参考リンク
 
-[See Also:](参考リンク)
-
-- [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
-- [https://blog.yuyat.jp/post/elixir-date/](https://blog.yuyat.jp/post/elixir-date/)
-- [https://qiita.com/morikat/items/53f0881c3efb1405c2c7](https://qiita.com/morikat/items/53f0881c3efb1405c2c7)
+- Elixir 公式ドキュメント: https://hexdocs.pm/elixir/Date.html
+- `Timex` ドキュメント: https://hexdocs.pm/timex/readme.html

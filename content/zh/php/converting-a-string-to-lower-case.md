@@ -1,5 +1,6 @@
 ---
-title:                "PHP: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "PHP: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要将字符串转换为小写
+## 为什么
 
-在编程中，有时我们需要将字符串转换为小写形式。这可能是为了与数据库中的数据匹配，或者为了方便比较字符大小写。不管什么原因，学习如何将字符串转换为小写形式是非常重要的。
+如果你使用PHP写程序，你可能会遇到需要将字符串转换为小写字母的情况。这可能是因为你想进行字符串匹配，或者您想要在输出时统一格式。
 
-## 如何实现字符串转换为小写形式
-```PHP
-$string = "HELLO, WORLD";
-echo strtoupper($string); // outputs "hello, world"
-```
-在上面的例子中，我们使用了PHP内置函数`strtoupper()`来将字符串转换为小写形式。这个函数接收一个字符串作为参数，并返回一个全部为小写字母的新字符串。
+## 怎样做
 
 ```PHP
-$string = "ThIs iS a MixEd CaSe";
-echo strtolower($string); // outputs "this is a mixed case"
+$string = "THIS IS A STRING";
+
+echo strtolower($string);
+
+// Output: this is a string
 ```
-另一个PHP内置函数`strtolower()`也能实现同样的功能。它将字符串中的所有字母转换为小写形式，并返回一个新的字符串。
 
-## 深入了解字符串转换为小写形式
-在PHP中，字符串的大小写转换是通过使用ASCII编码来实现的。ASCII编码是一种标准的字符集，它赋予每一个字符一个数字编码，从而使得计算机能够识别并处理这些字符。
+使用PHP内置的`strtolower()`函数可以轻松地将字符串转换为小写。该函数接受一个字符串作为参数，并返回一个新的字符串，该字符串中所有的字符都被转换为小写。通过这样做，您可以方便地比较字符串，或者在搜索和输出时统一格式。
 
-在ASCII编码中，大写字母和小写字母是有着不同的数值范围，因此我们可以通过改变字符的ASCII编码来实现大小写转换。这也就是为什么我们能够使用`strtoupper()`和`strtolower()`这样的函数来进行转换。
+### 更多选项
 
-## 参考文章
+除了`strtolower()`函数外，PHP还提供了其他一些函数来转换字符串的大小写。
 
-- [PHP官方文档 - strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
-- [PHP官方文档 - strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [ASCII编码表](https://www.ascii-code.com/)
+- `strtoupper()`：将字符串中所有字符转换为大写
+- `ucfirst()`：将字符串的第一个字符转换为大写
+- `ucwords()`：将字符串中每个单词的首字母转换为大写
+
+## 深入探讨
+
+虽然转换字符串大小写可能看起来很简单，但实际上有很多细节需要考虑。例如，某些字符在不同语言中可能具有不同的大小写形式，因此需要谨慎处理。此外，一些特殊字符可能不会按照您预期的方式转换。因此，在使用字符串转换函数时，一定要仔细检查输出，以确保它们符合您的预期。
+
+## 参考资料
+
+- PHP官方文档：https://www.php.net/manual/zh/function.strtolower.php
+- PHP字符串函数：https://www.php.net/manual/zh/ref.strings.php
+
+## 参见
+
+- "PHP 字符串函数简介"：https://www.php.net/manual/zh/ref.strings.php
+- "PHP字符串处理技巧"：https://www.php.net/manual/zh/language.types.string.php#language.types.string.conversion

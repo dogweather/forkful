@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "Haskell: Trouver la longueur d'une chaîne de caractères"
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Pourquoi
 
-La recherche de la longueur d'une chaîne de caractères est une tâche courante dans la programmation Haskell. Savoir comment le faire peut améliorer l'efficacité de votre code et vous permettre de résoudre des problèmes plus rapidement. Dans cet article, nous allons explorer différentes façons de trouver la longueur d'une chaîne en Haskell.
+Vous avez probablement été confronté à la tâche de trouver la longueur d'une chaîne de caractères lors de vos projets de programmation. Cela peut sembler un problème simple, mais il est important de comprendre comment le faire correctement en utilisant Haskell.
 
-## Comment faire
+# Comment faire
 
-Il existe plusieurs façons de trouver la longueur d'une chaîne en Haskell. Nous allons en explorer deux qui sont couramment utilisées : la fonction `length` et une approche récursive.
-
-La fonction `length` est intégrée à Haskell et peut être utilisée de la manière suivante :
+Pour trouver la longueur d'une chaîne de caractères en Haskell, nous pouvons utiliser la fonction `length`. Voyons un exemple:
 
 ```Haskell
-length :: [a] -> Int
+length "Bonjour" -- renvoie 7
 ```
 
-Cette fonction prend une liste en entrée et renvoie un entier représentant la longueur de la liste. Par exemple, pour trouver la longueur de la chaîne de caractères "Bonjour", on peut utiliser la fonction de cette manière :
+Nous pouvons également utiliser `length` sur une liste de chaînes de caractères pour trouver la longueur totale de la liste:
 
 ```Haskell
-length "Bonjour" 
+length ["Bonjour", "mon", "ami"] -- renvoie 13
 ```
-Ce qui renverra 7 caractères.
 
-Une autre méthode pour trouver la longueur d'une chaîne est d'utiliser une approche récursive. Voici un exemple de fonction récursive qui renvoie la longueur d'une chaîne :
+Nous pouvons également définir notre propre fonction pour trouver la longueur d'une chaîne de caractères en utilisant la récursivité:
 
 ```Haskell
-strlength :: [a] -> Int
-    strlength [] = 0
-    strlength (x:xs) = 1 + strlength xs
+length' :: String -> Int
+length' [] = 0 -- cas de base, une chaîne vide a une longueur de 0
+length' (x:xs) = 1 + length' xs -- pour chaque élément de la chaîne, ajoute 1 à la longueur totale
+
+length' "Bonjour" -- renvoie 7
 ```
 
-Cette fonction prend une liste de caractères en entrée et utilise une méthode récursive pour ajouter 1 à chaque caractère jusqu'à ce que la liste soit vide, renvoyant ainsi la longueur totale de la chaîne.
+# Plongée en profondeur
 
-## Deep Dive
+Il est important de noter que la fonction `length` renvoie un entier de type `Int` et non un entier de type `Integer`. Cela signifie que si la longueur de la chaîne de caractères dépasse la limite d'un entier, le résultat sera incorrect ou il y aura une erreur de débordement de mémoire.
 
-Si vous souhaitez en savoir plus sur la fonction `length` en Haskell, vous pouvez consulter la documentation officielle de la fonction sur le site web de Haskell. Vous y trouverez des informations sur son implémentation et son efficacité.
+De plus, la fonction `length` fonctionne en parcourant entièrement la chaîne de caractères, ce qui peut prendre du temps si la chaîne est très longue. Dans ces cas-là, il peut être plus efficace d'utiliser la fonction `length'` définie précédemment.
 
-Il est également intéressant de noter que la fonction `length` peut être utilisée pour trouver la longueur de toutes sortes de structures de données en Haskell, pas seulement les chaînes de caractères. Elle peut être utilisée pour les listes, les tableaux, les arbres, etc.
+# Voir aussi
 
-## Voir aussi
-
-Pour en savoir plus sur les fonctions intégrées en Haskell, vous pouvez consulter les liens suivants :
-
-- https://www.haskell.org/documentation/ : Documentation officielle de Haskell
-- https://wiki.haskell.org/Haskell : Wiki officiel de Haskell
-- https://www.haskell.org/hoogle/ : Moteur de recherche Haskell pour trouver des fonctions intégrées et des documents
-
-J'espère que cet article vous a été utile pour comprendre comment trouver la longueur d'une chaîne en Haskell. N'hésitez pas à explorer d'autres méthodes et à les expérimenter dans votre code pour trouver celle qui répond le mieux à vos besoins. Bonne programmation !
+- [Documentation sur la fonction `length`](https://www.haskell.org/onlinereport/standard-prelude.html#function:length)
+- [Un tutoriel sur les listes en Haskell](https://www.tutorialspoint.com/haskell/haskell_lists.htm)

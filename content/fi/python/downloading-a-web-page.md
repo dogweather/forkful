@@ -1,5 +1,6 @@
 ---
-title:                "Python: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Python: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Python"
 category:             "Python"
@@ -11,29 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Web-sivujen lataaminen on tärkeä osa Python-ohjelmointikokemusta. Se antaa meille mahdollisuuden käyttää Pythonia monipuolisesti, ja parhaimmillaan se voi tehdä maailman tietoa helpommin saavutettavaksi. Oli kyse sitten tietojen keräämisestä, web-skrapingista tai verkkosivujen muokkaamisesta, web-sivujen lataaminen on välttämätöntä monissa projekteissa.
+Monet meistä haluavat tallentaa suosikki verkkosivumme paikallisesti tai käyttää niitä myöhemmin offline-tilassa. Pythonin avulla voimme helposti ladata verkkosivuja ja tallentaa ne tiedostomuotoon, jota voimme käyttää myöhemmin.
 
-## Kuinka tehdä
+## Miten
 
-Web-sivujen lataamiseen on olemassa monia tapoja Pythonissa. Yksi suosituimmista tavoista on käyttää Requests-kirjastoa. Se on yksinkertainen ja helppo tapa tehdä HTTP-kutsuja ja ladata web-sivuja. Alla on yksinkertainen esimerkki koodista, jossa käytämme Requests-kirjastoa lataamaan Google-sivun sisällön ja tulostamme sen:
+Kaiken alku on pyytää tarvittavaa Python-kirjastoa, josta löydät verkkosivujen lataamiseen tarvittavat työkalut. Voit tehdä tämän käyttämällä "pip" -komentoa ja asentamalla "requests" -kirjaston:
+
+```Python
+pip install requests
+```
+
+Kun olet ladannut "requests" -kirjaston, voit käyttää sitä Pythonissa yksinkertaisella koodilla:
 
 ```Python
 import requests
 
-resp = requests.get('https://www.google.com')
-print(resp.text) # Tulostaa sivun HTML-sisällön
+page = requests.get('https://www.example.com')
+
+print(page.status_code)
 ```
 
-Tämän esimerkin tulostuksessa näemme koko HTML-koodin, joka muodostaa Google-sivun. Voimme myös käyttää muita Requests-kirjaston metodeja, kuten `.status_code` tietääksemme, onko sivun lataaminen onnistunut. Muista kuitenkin, että jotkut sivustot voivat estää latausyrityksesi, joten ole varovainen ja käyttäydy eettisesti.
+Koodi käyttää pyyntökirjastoa lähettämään pyynnön verkkosivulle ja sitten tallentamaan vastauksen "page" -muuttujaan. Tämän jälkeen voimme käyttää "status_code" -ominaisuutta selvittääksemme, onko sivu latautunut onnistuneesti. Voit myös käyttää muita "requests"-kirjaston ominaisuuksia, kuten "text" tai "content", selvittääksesi sivun sisällön.
 
-## Syväädy syvemmälle
+## Syvä sukellus
 
-Jos haluat syvällisempää tietoa web-sivujen lataamisesta, voit tutkia Pythonin sisäänrakennettuja moduuleja, kuten `urllib` ja `urllib2`. Ne tarjoavat saman toiminnallisuuden kuin Requests, mutta vaativat hieman enemmän koodaamista.
+Kun haluat ladata monimutkaisempia verkkosivuja, saatat joutua lisäämään lisäparametreja pyyntöön. "Requests" -kirjasto tarjoaa monia vaihtoehtoja, kuten käyttäjäagentin määrittämistä, evästeiden lähettämistä ja jopa "HTTPS"-tukea. Voit tutustua kaikkiin näihin vaihtoehtoihin "requests"-kirjaston dokumentaatiosta.
 
-Voit myös halutessasi kokeilla muita kirjastoja, kuten BeautifulSoup, joka auttaa parsimaan HTML-sisältöä ja helpottaa datan keräämistä verkkosivuilta.
+Voit myös käyttää muita Python-kirjastoja, kuten "BeautifulSoup" tai "Scrapy" lisätäksesi sivujen lataamiseen liittyviä ominaisuuksia, kuten tiedon perkaamista tai sivustojen välistä siirtymistä.
 
 ## Katso myös
 
-- [Requests-dokumentaatio](https://requests.readthedocs.io/en/master/)
-- [urllib-dokumentaatio](https://docs.python.org/3/library/urllib.html)
-- [BeautifulSoup-dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Requests kirjaston dokumentaatio] (https://requests.readthedocs.io/en/master/)
+- [Python ohjelmoinnin aloittamisopas] (https://www.python.org/about/gettingstarted/)
+- [BeautifulSoup ohjelmointikielen ohjelmointiopas] (https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

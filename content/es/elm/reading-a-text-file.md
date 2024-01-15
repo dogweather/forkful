@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Leyendo un archivo de texto"
+title:                "Leyendo un archivo de texto"
+html_title:           "Elm: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
-Leer archivos de texto es una habilidad esencial para cualquier programador de Elm. Te permite acceder y manipular información almacenada en un archivo de forma dinámica, lo cual es útil en muchas situaciones. En esta publicación, te mostraremos cómo hacerlo.
+¡Hola a todos! Hoy les quiero hablar sobre cómo leer archivos de texto en Elm y por qué es una habilidad útil para tener en su arsenal de programación. ¡Empecemos!
 
-# Cómo
+## Por qué leer un archivo de texto?
+
+Leer un archivo de texto puede ser útil en varias situaciones. Puede que necesitemos leer un archivo de texto para obtener datos importantes que utilizaremos en nuestro programa o para guardar datos generados por el usuario. Además, tener el conocimiento de cómo leer un archivo de texto en Elm nos permite tener más control sobre nuestro código y nos da más opciones para manejar y manipular información.
+
+## Cómo hacerlo
+
+Para leer un archivo de texto en Elm, primero necesitamos importar el módulo "File". Luego, podemos usar la función "file" para obtener los datos del archivo. Veamos un ejemplo:
+
 ```Elm
 import File
-import Text
 
-fichero : File.Content String
-fichero =
-  File.read "mi-archivo.txt"
-
-texto : String
-texto =
-  case fichero of
-    File.Error _ ->
-      "No se pudo leer el archivo."
-
-    File.Success contenido ->
-      contenido
-
-main =
-  Text.fromNormal texto
+file : Task x String
+file = File.string "/ruta/a/mi/archivo.txt"
 ```
-El código de arriba importa los módulos necesarios para leer el archivo de texto y luego utiliza la función `File.read` para obtener su contenido. Si el archivo se lee correctamente, el contenido se almacena en la variable `texto` y se imprime en pantalla utilizando la función `Text.fromNormal`. Si ocurre algún error, se mostrará un mensaje apropiado.
 
-# Deep Dive
-La función `File.read` acepta dos argumentos: el nombre del archivo y una función que se encarga de procesar su contenido. Esta función recibe un tipo de datos `File.Content`, que puede ser `File.Error` en caso de algún error al leer el archivo, o `File.Success` en caso de éxito. La función también debe especificar el tipo de datos que se espera leer del archivo, en este caso, `String`.
+En este ejemplo, usamos la función "string" para obtener una cadena de texto con los datos del archivo que se encuentra en la ruta especificada. Una vez obtenidos los datos, podemos manipularlos y utilizarlos en nuestro programa.
 
-Además, para asegurar que el archivo se lea correctamente, es importante manejar posibles errores con una expresión `case` como se muestra en el ejemplo anterior. Si se desea leer un archivo con un tipo de datos diferente, basta con cambiar `String` por el tipo de dato apropiado.
+¿Pero qué pasa si queremos obtener los datos de un archivo que ha sido seleccionado por el usuario en lugar de especificar la ruta del archivo manualmente? En este caso, podemos utilizar la función "choose" que nos muestra una ventana emergente para que el usuario seleccione el archivo deseado. Veamos cómo se vería esto en nuestro código:
 
-# Ver también
-- [Documentación oficial de File](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Tutorial de Elm para principiantes](https://www.elm-tutorial.org/es/)
+```Elm
+choose : Task x String
+choose = File.choose
+    "Seleccione un archivo para leer"
+```
+
+Una vez que el usuario haya seleccionado el archivo, podemos utilizar la función "string" nuevamente para obtener los datos y seguir trabajando con ellos en nuestro programa.
+
+## Profundizando
+
+Si deseamos obtener información más detallada sobre cómo leer un archivo de texto en Elm, podemos consultar la documentación oficial de Elm que explica las diferentes funciones y opciones que tenemos disponibles al trabajar con archivos. Además, también podemos explorar las bibliotecas y paquetes de la comunidad que ofrecen soluciones aún más avanzadas para el manejo de archivos de texto en Elm.
+
+## Ver También
+
+- [Documentación de Elm sobre la lectura de archivos de texto](https://guide.elm-lang.org/file/)
+
+- [Paquete de la comunidad "elm-file-reader" para leer archivos de texto](https://package.elm-lang.org/packages/ktonon/elm-file-reader/latest/)
+
+¡Y eso es todo! Espero que este artículo les haya sido útil para comprender cómo leer archivos de texto en Elm y cómo aprovechar esta habilidad en sus proyectos de programación. ¡Hasta la próxima!

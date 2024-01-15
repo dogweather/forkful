@@ -1,5 +1,6 @@
 ---
-title:                "Swift: המרת תאריך למחרוזת"
+title:                "המרת תאריך למחרוזת"
+html_title:           "Swift: המרת תאריך למחרוזת"
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
+תמיד מותירים את החיים לכתיבת תאריכים ולפעמים זה לא באמת כיף. אבל למרבית החברות הפרסומיות הם יחשו אותו כמו שאתה עושה. למפתחים, יצירת תאריך למחרות היא מנוחה. אך לפעמים יהיה לכם כמה שאתם צריכים להציג את תוכניות הנייר של הארץ. במאמר זה, נדון איך להמיר תאריכים ב- Swift למחרות בכתב.
 
-למה מישהו יעדיף להמיר תאריך למחרוזת בשפת סוויפט?
-
-## איך לעשות זאת
-
-בשפת סוויפט קיימת פונקציה מובנית בשם `string(from:)` שמאפשרת להמיר תאריך למחרוזת. הנה מספר דוגמאות של כיצד ניתן להשתמש בפונקציה זו:
-
-```Swift
+## איך לעשות
+הנה כמה דוגמאות קוד כדי להמיר תאריכים למחרות ב- Swift לכתוב ```Swift
+// יצירת פורמט מותאם אישית לתאריך 
 let date = Date()
 let formatter = DateFormatter()
 formatter.dateFormat = "dd/MM/yyyy"
-let stringDate = formatter.string(from: date)
+let dateString = formatter.string(from: date)
+print(dateString) // תוצאה: 03/06/2021
 
-// פלט: 06/08/2021
+// חישוב תאריך בעבר
+let calendar = Calendar.current
+let newDate = calendar.date(byAdding: .day, value: -7, to: date)
+let newDateString = formatter.string(from: newDate!)
+print(newDateString) // תוצאה: 27/05/2021
+
+// המרת תאריך וזמן מקומי לתאריך למחרות
+let localDate = formatter.date(from: "01/06/2021")
+let convertedDateString = formatter.string(from: localDate!)
+print(convertedDateString) // תוצאה: 01/06/2021
 ```
 
-אם נרצה להציג את התאריך עם שעה, ניתן לשנות את הפורמט של המחרוזת:
-
-```Swift
-formatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-
-// פלט: 06/08/2021 15:24:40
-```
-
-כמו כן, ניתן להשתמש בפונקציה זו עבור תאריך מסוים שנמצא בטווח מסוים. לדוגמה, ניתן להציג רק את היום והחודש של התאריך:
-
-```Swift
-formatter.locale = Locale(identifier: "he_IL") // דוגמה של הצגת התאריך בעברית
-formatter.dateFormat = "dd MMMM" // ניתן להשתמש גם במילים או סימני פיסוק במחרוזת
-
-let stringDate = formatter.string(from: date)
-
-// פלט: 06 אוגוסט
-```
-
-## מעמקים
-
-בסיסית, המרת תאריך למחרוזת נעשית באמצעות פונקציית הפורמט `dateFormat` של `DateFormatter`. ניתן לשנות את התבנית של התאריך על ידי הוספת או הסרת אותיות וסימנים בסדר הרצוי.
-
-כדי להציג את התאריך בכל שפה, ניתן להשתמש בניתוחי שפות כדי לקבוע את משמעות התבנית. כמו כן, ניתן להשתמש בספריית `Foundation` כדי להציג טוענות שפה מותאמות אישית לשפת המחשב.
+## Deep Dive
+כדי להבין בקלות יותר איך להמיר תאריכים למחרות ב- Swift, נצפה בכמה נקודות מפתח. במשתנה התאריך, אנחנו משתמשים בסוג נתונים של ```Date```, שמייצג תאריך ושעה בלתי פחות. כדי להמיר אותו לתאריך במחרות, אנחנו משתמשים בפונקציות של דפניתר ```DateFormatter```, בהתאם לפורמט שנבחר. בנוסף, אנחנו יכולים להשתמש בכלי עבודה לוודא שהתאריך ניתן לשינוי ושהתוצאה היא תאריך נכון.
 
 ## ראו גם
-
-* [מדריך: המרת תאריך למחרוזת בפייתון](https://www.digitalocean.com/community/tutorials/how-to-convert-data-to-strings-in-python)
-* [תיעוד רשמי על פונקציית `string(from:)` בשפת סוויפט](https://developer.apple.com/documentation/foundation/dateformatter/140
+- [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [NSCalendar](https://developer.apple.com/documentation/foundation/nscalendar)
+- [Date](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)

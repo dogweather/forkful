@@ -1,6 +1,7 @@
 ---
-title:                "Python: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "Python: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,44 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Har du noen gang kjørt en kode og blitt møtt med en lang liste over uønskede tegn i resultatet? Fortvil ikke, det er en enkel måte å fjerne disse tegnene ved å bruke Python.
 
-Å slette tegn som matcher et mønster kan være nyttig når man ønsker å rense tekst, fjerne uønsket informasjon eller for å gjøre det mer leselig. Det kan også være nødvendig å slette visse tegn når man jobber med data på en spesifikk måte.
-
-## Hvordan
-
-Her vil jeg vise deg hvordan du enkelt kan slette tegn som matcher et bestemt mønster ved hjelp av Python. 
-
-```Python
-# Importer regex biblioteket
-import re
-
-# Definer en variabel med et tekststreng
-tekst = "Hei! Velkommen til Python-programmering."
-
-# Bruk re.sub for å erstatte alle tegn som matcher "! Py" med et tomt tegn ""
-ny_tekst = re.sub("! Py", "", tekst)
-
-print(ny_tekst)
-
-# Output:
-"Hei! Velkommen til n-programmering."
+## Slik gjør du det
+```
+import re 
+tekst = "Hei! @Dette er en tekst med uønskede tegn#." 
+resultat = re.sub('[^A-Za-z0-9 ]+', '', tekst) 
+print(resultat)
 ```
 
-Her ser du at alle tegn som matcher "! Py" har blitt fjernet fra teksten og erstattet med et tomt tegn. Dette kan også gjøres med mer kompliserte mønstre og gir deg stor fleksibilitet når det kommer til å endre tekst.
+Dette vil fjerne alle tegn som ikke er bokstaver, tall eller mellomrom fra teksten, og resultatet blir "Hei Dette er en tekst med uønskede tegn".
 
-## Dypdykk
+## Dykk dypere
+Dette eksempelet bruker det innebygde "re" biblioteket i Python for å søke etter en bestemt mønster i en streng. Mønsteret [^A-Za-z0-9 ]+ brukes for å identifisere uønskede tegn, og disse tegnene blir deretter erstattet med en tom streng ved hjelp av re.sub() funksjonen.
 
-Nå som du har lært det grunnleggende om å slette tegn som matcher et mønster i Python, kan vi se nærmere på hvordan dette faktisk fungerer. Regex (regular expressions) er et kraftig verktøy for å jobbe med tekst og lar deg finne og manipulere spesifikke tegn og kombinasjoner. Ved å bruke funksjoner som `re.sub` og `re.findall`, kan du enkelt slette og finne ønskede tegn.
-
-Et mønster består av en kombinasjon av spesielle tegn og bokstaver som forteller Python hvilke tegn du ønsker å finne. For eksempel vil `!` matche seg med alle følgende utropstegn i teksten.
-
-For å lære mer om regex og hvordan du kan bruke det til å manipulere tekst, kan du sjekke ut disse nyttige ressursene:
-
-- [Dokumentasjon for regex i Python](https://docs.python.org/3/library/re.html)
-- [Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Interaktiv tutorial for å lære regex](https://regexone.com/)
+En annen måte å fjerne uønskede tegn på er å bruke en løkke og sjekke hvert tegn individuelt. Dette kan være nyttig hvis du kun ønsker å fjerne visse tegn, og ikke alle som ikke er bokstaver, tall eller mellomrom.
 
 ## Se også
-
-- [Python sin offisielle dokumentasjon](https://www.python.org/doc/)
-- [Enkle tips for å bli en mer effektiv Python-programmerer](https://betterprogramming.pub/10-simple-tricks-to-become-a-more-effective-python-programmer-1927ee09d0b1)
+- [Dokumentasjon for re-modulen i Python](https://docs.python.org/3/library/re.html)
+- [Tutorial: Lær å bruke regulære uttrykk i Python](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)

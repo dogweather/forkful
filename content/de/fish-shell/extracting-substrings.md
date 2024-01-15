@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Untersuchen von Teilzeichenketten"
-simple_title:         "Untersuchen von Teilzeichenketten"
+title:                "Extrahieren von Teilzeichenketten"
+html_title:           "Fish Shell: Extrahieren von Teilzeichenketten"
+simple_title:         "Extrahieren von Teilzeichenketten"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,53 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Du fragst dich vielleicht, warum es wichtig ist, Substrings zu extrahieren, wenn du Fish Shell benutzt. Die einfache Antwort ist, dass es dir helfen kann, bestimmte Teile von einem längeren Text zu isolieren oder zu entfernen. Das kann besonders hilfreich sein, wenn du mit großen Datenmengen arbeitest oder wenn du bestimmte Zeichenfolgen aus einer Ausgabe entfernen musst.
+Niemand hat Zeit, sich durch lange und unnötig komplizierte Code-Schnipsel zu kämpfen. Die Fish Shell bietet eine einfache und intuitive Möglichkeit, Substrings in einer Zeichenkette zu extrahieren. Das spart Zeit und Nerven, wenn man nur bestimmte Teile einer Zeichenkette benötigt.
 
-## Wie geht das?
+## Wie geht’s
 
-Um Substrings in Fish Shell zu extrahieren, kannst du den Befehl `string match` verwenden. Du musst dabei zwei Argumente angeben: die Zeichenfolge, aus der du den Substring extrahieren möchtest, und das Muster, das du verwenden willst, um den Substring zu identifizieren.
+Führe die folgenden Schritte aus, um Substrings in der Fish Shell zu extrahieren:
 
+1. Öffne deine Fish Shell.
+2. Definiere eine Variable mit einer Zeichenkette, aus der du einen Substring extrahieren möchtest:
 ```Fish Shell
-set string "Hallo Welt"
-string match Welt $string
+set text "Hallo, mein Name ist Max."
 ```
-
-Das obige Beispiel wird den Substring "Welt" aus der Zeichenfolge "Hallo Welt" extrahieren und diese Ausgabe zurückgeben:
-
+3. Gib den Substring-Befehl ein, gefolgt von der zu extrahierenden Länge des Substrings:
 ```Fish Shell
-Welt
+echo $text[3..9]
 ```
+4. Drücke Enter und voila, du hast deinen Substring extrahiert! Das Ergebnis lautet: `"lo, mei"`, da `3` dem dritten Zeichen im String (`l`) und `9` dem neunten Zeichen (`i`) entspricht.
 
-Du kannst auch Platzhalter verwenden, um mehrere Zeichenfolgen mit ähnlichen Mustern zu identifizieren. Zum Beispiel können die Platzhalter `?` und `*` verwendet werden, um einzelne bzw. beliebig viele Zeichen zu repräsentieren.
+## Tief eintauchen
 
-```Fish Shell
-string match Ha?e $string
-```
+Die Syntax zum Extrahieren von Substrings in der Fish Shell basiert auf [Slice Notation](https://fishshell.com/docs/current/index.html#slice-notation). Dabei sind folgende Punkte zu beachten:
 
-Dieses Beispiel wird den Substring "Hall" aus der Zeichenfolge "Hallo Welt" extrahieren.
+- Die Indexierung beginnt immer bei `1`, nicht bei `0`.
+- Der letzte Index bezeichnet das Ende der Zeichenkette. In unserem Beispiel endet der Substring bei `9`, da der `9` Index das Ende des Strings `".`" markiert.
+- Es können auch negative Indizes verwendet werden, um vom Ende der Zeichenkette aus zu zählen. Zum Beispiel würde `$text[-1]` den letzten Buchstaben (`"."`) ausgeben.
 
-## Tiefergehende Infos
-
-Abgesehen von einfachen Platzhaltern, kannst du mit dem Befehl `string match` auch reguläre Ausdrücke verwenden, um Substrings zu extrahieren. Reguläre Ausdrücke bieten eine flexiblere und leistungsstärkere Möglichkeit, Muster zu definieren und Substrings zu identifizieren.
-
-Mit `string match -r` kannst du reguläre Ausdrücke in deinem Suchmuster verwenden. Zum Beispiel kannst du damit alle Wörter in einer Zeichenfolge extrahieren, die mit dem Buchstaben "a" beginnen.
-
-```Fish Shell
-set string "Alles anfangen macht Spaß"
-string match -r a\w+ $string
-```
-
-Dieses Beispiel wird folgendes ausgeben:
-
-```Fish Shell
-Alles
-anfangen
-aus
-Spaß
-```
+Falls du weitere Informationen zu Slice Notation benötigst, schaue dir die offizielle [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html#appendix-references) an.
 
 ## Siehe auch
 
-- [Fish Shell Dokumentation zu string match](https://fishshell.com/docs/current/cmds/string-match.html)
-- [Reguläre Ausdrücke in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-tut7)
-- [Einführung zu regulären Ausdrücken](https://www.regular-expressions.info/tutorial.html)
+- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/#substring-expansion)
+- [Slice Notation für Python](https://www.w3schools.com/python/ref_func_slice.asp)
+- [Wie man Substrings in Bash  extrahiert](https://shapeshed.com/unix-extract-substring/)

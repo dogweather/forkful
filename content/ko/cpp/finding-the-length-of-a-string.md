@@ -1,5 +1,6 @@
 ---
-title:                "C++: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "C++: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "C++"
 category:             "C++"
@@ -9,61 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-문자열의 길이를 찾는 작업에 참여하는 이유는 여러 가지가 있습니다. 문자열이 얼마나 긴지 알면, 가변 길이 배열을 사용할 수 있고, 메모리 할당을 최적화하고, 출력 형식을 결정할 수 있기 때문입니다.
+문자열의 길이를 찾는 것은 프로그래밍에서 자주 사용되는 기본적인 작업입니다. 이를 통해 문자열을 조작하거나 비교하는 데 도움이 되며, 코드의 유연성을 높일 수 있습니다.
 
-## 어떻게
+## 어떻게?
 
-```C++ 
-#include <iostream> 
-#include <cstring> 
-  
-using namespace std; 
-  
-int main() 
-{ 
-    char str[] = "안녕하세요!"; 
-    
-    // C++ 함수를 이용한 문자열 길이 찾기
-    int length = strlen(str); 
-    
-    // 출력 및 확인
-    cout << "문자열의 길이는 " << length << "입니다." << endl; 
-    return 0; 
-} 
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+  // 문자열의 길이를 저장할 변수와 문자열을 입력받을 변수 선언
+  int length;
+  string str;
+
+  // 문자열 입력받기
+  cout << "문자열을 입력하세요: ";
+  cin >> str;
+
+  // 문자열의 길이를 구해 변수에 저장
+  length = str.length();
+
+  // 결과 출력
+  cout << "문자열의 길이는 " << length << "입니다." << endl;
+
+  return 0;
+}
+
 ```
 
-```C++ 
-#include <iostream> 
-#include <string> 
-  
-using namespace std; 
-  
-int main() 
-{ 
-    string str = "안녕하세요!"; 
-    
-    // C++ 클래스 메서드를 이용한 문자열 길이 찾기
-    int length = str.length(); 
-    
-    // 출력 및 확인
-    cout << "문자열의 길이는 " << length << "입니다." << endl; 
-    return 0; 
-} 
+**출력:**
+
+```
+문자열을 입력하세요: Hello, world!
+문자열의 길이는 13입니다.
 ```
 
-### 딥 다이브
+## 딥 다이브
 
-문자열의 길이를 찾는 방법은 간단합니다. 사용 가능한 문자열 길이를 저장하는 변수를 만들고, 널 ('\0') 문자를 만날 때까지 문자열을 반복해서 이동하면 됩니다. C++에서는 strlen()과 string::length() 함수를 사용하여 이 작업을 수행할 수 있습니다.
+C++의 내장 함수인 `length()`를 사용하면 문자열의 길이를 쉽게 구할 수 있습니다. 이러한 함수는 언어마다 다르지만 대부분의 프로그래밍 언어에서 문자열의 길이를 구하는 기능을 제공합니다. 하지만 이 함수는 공백 문자를 포함하여 모든 문자를 하나의 길이로 취급한다는 점에 유의해야 합니다. 예를 들어, `"Hello, world!"`라는 문자열의 길이는 13이지만 공백을 제외한 문자의 개수는 12입니다. 이러한 특성을 이해하고 적절하게 활용하면 문자열을 더욱 다양하게 다룰 수 있습니다.
 
-그러나 이러한 함수는 문자열 끝이 널 문자로 끝나기 때문에, 문자열에 널이 아니지만 필요한 길이를 찾아야 하는 경우가 있을 수 있습니다. 이 경우, 반복문과 문자열의 인덱스를 사용하여 수동으로 문자열의 길이를 계산해야 합니다.
+## 참고 자료
 
-또한, 오늘날 대부분의 표준 라이브러리에서는 문자열의 길이를 쉽게 찾을 수 있는 함수를 제공하기 때문에, 굳이 수동으로 계산할 필요가 없습니다. 따라서, 복잡한 코드를 작성할 필요 없이도 문자열의 길이를 쉽게 찾을 수 있습니다.
-
-## 참조
-
-- [C++ string 클래스](https://www.cplusplus.com/reference/string/string/)
-- [C++ string 클래스를 사용하여 문자열 길이 찾기](https://www.geeksforgeeks.org/length-of-a-string-using-string-class-in-c/)
-- [C++ strlen() 함수](https://www.cplusplus.com/reference/cstring/strlen/) 
-- [문자열의 길이 찾기 (C++)](https://modoocode.com/95)
+- [C++ string length 구하기](https://blockdmask.tistory.com/316)
+- [string length 이해하기](https://www.geeksforgeeks.org/understanding-strlen-function-in-c-cpp/)
+- [C++ string class documentation](https://www.cplusplus.com/reference/string/string/)

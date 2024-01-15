@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: भविष्य या भूतकाल में तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
+title:                "भविष्य या भूतकाल में एक दिनांक की गणना"
+html_title:           "Fish Shell: भविष्य या भूतकाल में एक दिनांक की गणना"
+simple_title:         "भविष्य या भूतकाल में एक दिनांक की गणना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-किसी व्यक्ति को भविष्य या भूतकाल में एक दिन की तारीख की गणना करने में हस्तक्षेप करने की आवश्यकता हो सकती है।
+## Kyu
 
-## कैसे करें
-```Fish Shell```, आप किसी भी भूतकाल या भविष्य में एक दिन की गणना कैसे कर सकते हैं इसके लिए निम्नलिखित कोड ब्लॉक का पालन करें:
+Sabse pehle, kya aapne kabhi future mein ya past mein kisi particular date ko calculate karne ki zarurat mehsoos ki hai? Fish Shell, aapki yeh zarurat ko poora karta hai aur aapko ek aasaan tareeke se specific date ko calculate karne ki suvidha deta hai. Aaiye, is article mein hum dekhte hai ki kaise aap Fish Shell ki madad se date ko future aur past mein calculate kar sakte hai.
 
-### भूतकाल में तारीख की गणना
-```Fish Shell
-# भूतकाल से 14 दिन पहले की गणना करें
-set -l date (date -v -14d +"%d/%m/%Y") 
-# परिणाम: 05/11/2021
+## Kaise Kare
+
+Fish Shell mein date ko future mein ya past mein calculate karne ke liye, aapko `date` command ka use karna hoga. Is command ke saath aap different flags bhi use kar sakte hai jo aapko desired date format mein output dega.
+
 ```
+Fish Shell mein date calculate karna ka example:
 
-### भविष्य में तारीख की गणना
 ```Fish Shell
-# भविष्य में 1 सप्ताह बाद की गणना करें
-set -l date (date -v +1w +"%d/%m/%Y") 
-# परिणाम: 29/10/2021
+date +%d-%m-%y
 ```
+Output:
+14-02-21
 
-## गहराई में जाएं
-भूतकाल या भविष्य में एक दिन की गणना करने के लिए आप ```Fish Shell``` के साथ कई अन्य ऑप्शन भी इस्तेमाल कर सकते हैं। आप दिन/महीने/वर्ष के अलावा इस्तेमाल किए जाने वाले अन्य अक्षरों के साथ भी गणना कर सकते हैं। अधिक जानने के लिए आप फिश शेल के दस्तावेज़ के साथ संपर्क कर सकते हैं।
+Yahan, humne `+%d-%m-%y` flag ka use kiya hai jo hume current date ko `DD-MM-YY` format mein deta hai. Aap apne hisab ke mutabik is command mein different flags use kar sakte hai.
 
-## देखें भी
-- [Official Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Introduction to Fish Shell](https://www.freecodecamp.org/news/an-introduction-to-the-fish-shell/)
+## Deep Dive
 
-आशा करता हूँ कि आपको यह आलेख ```Fish Shell``` में भविष्य या भूतकाल की तारीख की गणना करने के बारे में कुछ समझ में आया होगा।
+Fish Shell mein date ko calculate karne ke liye, aapko `date` command ke saath kuch parameters bhi use karne hote hai. Kuch common parameters hai:`+%d` for date, `+%m` for month, `+%y` for year, `+%D` for complete date, `+%T` for complete time, etc.
+
+Iske alawa, aap `--date` parameter ka bhi use kar sakte hai jisme aap specific date ko bhi enter kar sakte hai jaise `--date "5 days ago"` ya `--date "2 years from now"`. Yeh command apko specific date ke corresponding output dega.
+
+## See Also
+- [Fish Shell documentation] (https://fishshell.com/docs/current/cmds/date.html)
+- [Fish Shell tutorial in Hindi] (https://www.geeksforgeeks.org/linux-fish-shell-tutorial-in-hindi/)

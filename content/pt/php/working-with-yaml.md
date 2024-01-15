@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Trabalhando com YAML"
-simple_title:         "Trabalhando com YAML"
+title:                "Trabalhando com yaml"
+html_title:           "PHP: Trabalhando com yaml"
+simple_title:         "Trabalhando com yaml"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,57 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que trabalhar com YAML em programação PHP?
+## Por que trabalhar com YAML?
 
-YAML (YAML Ain't Markup Language) é uma linguagem de formatação de dados de fácil leitura e escrita, utilizada em muitas aplicações de programação, incluindo PHP. Trabalhar com YAML pode facilitar o processo de armazenamento, transporte e leitura de dados estruturados em seu código.
+YAML, ou YAML Ain't Markup Language, é uma linguagem de serialização de dados que é fácil de ler e escrever para humanos e também pode ser interpretada diretamente por máquinas. É amplamente utilizado para armazenar configurações e dados estruturados em aplicativos web.
 
-## Como trabalhar com YAML em PHP
+Trabalhar com YAML permite que os desenvolvedores tenham um formato claro e conciso para gravar e compartilhar dados, além de facilitar a integração de aplicativos com outras ferramentas e bibliotecas.
 
-Para começar a trabalhar com YAML em PHP, você precisará da extensão YAML instalada em seu servidor. Você pode verificar se a extensão está habilitada verificando a saída da função `phpinfo()`. Se a extensão não estiver habilitada, você precisará habilitá-la no seu arquivo `php.ini`.
+## Como fazer
 
-Uma vez que a extensão estiver habilitada, você pode começar a trabalhar com YAML em seu código PHP. Existem duas principais funções que você pode usar: `yaml_parse()` e `yaml_emit()`. A função `yaml_parse()` converte um arquivo YAML em uma matriz PHP, enquanto `yaml_emit()` converte uma matriz PHP em um arquivo YAML.
+A seguir, mostraremos alguns exemplos de como trabalhar com YAML em PHP, através de código e blocos de código no formato "PHP ...".
 
-Aqui está um exemplo simples de como usar essas funções:
+#### Ler um arquivo YAML
 
-```PHP
-// Carregar o conteúdo de um arquivo YAML em uma variável
-$conteudo = file_get_contents('dados.yaml');
+Para ler um arquivo YAML em PHP, podemos usar a função `yaml_parse_file()`.
 
-// Converter o conteúdo em uma matriz PHP
-$dados = yaml_parse($conteudo);
+```
+<?php 
 
-// Acessar os dados da matriz
-echo "Nome: " . $dados['nome'] . "\n";
-echo "Idade: " . $dados['idade'] . "\n";
-echo "Cidade: " . $dados['cidade'] . "\n";
+$file = 'config.yaml';
 
-// Criar uma nova matriz com os dados
-$novo_dados = [
-    'nome' => 'Maria',
-    'idade' => 30,
-    'cidade' => 'São Paulo'
-];
+// lê o arquivo e converte para um array associativo
+$config = yaml_parse_file($file);
 
-// Converter a matriz em um arquivo YAML
-$novo_conteudo = yaml_emit($novo_dados);
-
-// Escrever o conteúdo em um novo arquivo YAML
-file_put_contents('novos_dados.yaml', $novo_conteudo);
+// acessa os valores do array
+echo $config['database']['username']; // output: admin
+echo $config['database']['password']; // output: 123456
 ```
 
-O código acima irá ler um arquivo YAML com informações de uma pessoa e exibir essas informações na tela. Em seguida, ele irá criar uma nova matriz com dados diferentes e gravar esses dados em um novo arquivo YAML.
+#### Escrever um arquivo YAML
 
-## Aprofundando-se em YAML
+Para escrever um arquivo YAML em PHP, podemos usar a função `yaml_emit()`.
 
-Embora YAML seja uma linguagem simples e fácil de usar, ele também possui muitos recursos avançados que podem ser úteis em projetos de programação mais complexos. Alguns desses recursos incluem:
+```
+<?php 
 
-- Aninhamento de dados: você pode usar a sintaxe de recuo em YAML para aninhar dados e criar estruturas mais complexas.
-- Referências: você pode usar referências para apontar para dados existentes em outras partes do arquivo YAML.
-- Comentários: você pode adicionar comentários em seu arquivo YAML para documentar seu código.
+$data = [
+    'title' => 'Meu novo post',
+    'body' => 'Este é o conteúdo do meu novo post',
+    'author' => 'João Silva'
+];
 
-Para aprender mais sobre esses e outros recursos avançados, você pode consultar a documentação oficial do YAML.
+// converte o array em uma string YAML
+$yaml = yaml_emit($data);
 
-# Veja também
+// escreve a string no arquivo
+file_put_contents('post.yaml', $yaml);
+```
 
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Extensão YAML do PHP](https://www.php.net/manual/en/book.yaml.php)
+#### Converter JSON para YAML
+
+Também é possível converter facilmente um objeto JSON para YAML utilizando as funções `json_decode()` e `yaml_emit()`.
+
+```
+<?php 
+
+$json = '{"username":"admin","password":"123456"}';
+
+// converte o JSON para um array associativo
+$config = json_decode($json, true);
+
+// converte o array para uma string YAML
+$yaml = yaml_emit($config);
+
+echo $yaml; // output: username: admin password: 123456
+```
+
+## Aprofundando
+
+O YAML é baseado em um conjunto de padrões para definir estruturas de dados, como listas e dicionários. Para saber mais sobre a sintaxe e as regras do YAML, você pode consultar a especificação oficial em [yaml.org](http://yaml.org/spec/).
+
+Além disso, existem diversas bibliotecas e ferramentas disponíveis para auxiliar no trabalho com YAML em PHP, como o [Symfony YAML Component](https://symfony.com/doc/current/components/yaml.html) e o [YAMLParser](https://github.com/chaseisabelle/yamlparser).
+
+## Veja também
+
+- [Documentação oficial do YAML](http://yaml.org/)
+- [Symfony YAML Component](https://symfony.com/doc/current/components/yaml.html)
+- [YAMLParser](https://github.com/chaseisabelle/yamlparser)

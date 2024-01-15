@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Rust: Å sende en http-forespørsel med grunnleggende autentisering"
 simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,63 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Rust er et programmeringsspråk som har vokst i popularitet de siste årene på grunn av sin sikkerhet, effektivitet og høye ytelse. Det er derfor et godt valg for å utvikle nettapplikasjoner som håndterer store mengder data. Når du sender HTTP-forespørsler med basic authentication, kan Rust hjelpe deg med å håndtere autentiseringsprosessen på en trygg og effektiv måte. I denne bloggposten vil jeg vise deg hvordan du kan implementere dette i Rust.
+Det er mange grunner til å sende et HTTP-anrop med basic autentisering. Kanskje trenger du tilgang til et API som krever autentisering for å hente data, eller kanskje vil du sende informasjon til en sikker server.
 
-## Slik gjør du det
+## Hvordan
 
-For å sende en HTTP-forespørsel i Rust med basic authentication, trenger du først å importere `reqwest` biblioteket ved å legge til følgende linje i `Cargo.toml`-filen din:
+For å sende et HTTP-anrop med basic autentisering i Rust må du følge disse trinnene:
 
-```Rust
-reqwest = { version = "0.11.1", features = ["json"] }
-```
+1. Importer `reqwest` biblioteket ved å legge til følgende linje i `Cargo.toml` filen din:
 
-Deretter må du opprette et `Client`-objekt fra `reqwest`-biblioteket og legge til autentiseringsinformasjonen i en `Authorization`-header:
+   ``` rust
+   [dependencies]
+   reqwest = { version = "0.11", features = ["json", "blocking"] }
+   ```
 
-```Rust
-use reqwest::header::HeaderValue;
+   **Merk:** dette eksempelet bruker versjonen 0.11 av `reqwest`, men versjon 0.10 eller høyere skal også fungere.
 
-let client = reqwest::Client::new();
+2. I `main.rs` filen din, legg til `use reqwest::header::{Authorization, Basic};` for å importere nødvendige biblioteker.
 
-let mut headers = reqwest::header::HeaderMap::new();
-headers.insert(reqwest::header::AUTHORIZATION, HeaderValue::from_static("Basic <base64-encoded-username-password>"));
-```
+3. Definer variabler for å holde URLen du vil sende anropet til og autentiseringsinformasjonen din:
 
-Du kan enkelt generere en base64 koding av brukernavn og passord ved å bruke `base64` biblioteket, som følger:
+   ``` rust
+   let url = "https://example.com/api/data";
+   let username = "brukernavn";
+   let password = "passord";
+   ```
 
-```Rust
-use base64;
+4. Bygg autentiseringsinformasjonen ved å lage en `Basic` struct og legge til brukernavn og passord:
 
-let username = "example";
-let password = "password";
+   ``` rust
+   let auth = Basic {
+       username,
+       password: Some(password),
+   };
+   ```
 
-let encoded = base64::encode(format!("{}:{}", username, password));
-```
+5. Opprett en HTTP klient og legg til autentiseringsinformasjonen din med metoden `basic_auth`:
 
-Nå er du klar til å sende den faktiske HTTP-forespørselen ved å opprette en `RequestBuilder` og legge til `Authorization`-headere og andre nødvendige parametere:
+   ``` rust
+   let client = reqwest::blocking::Client::new();
+   let response = client
+       .get(url)
+       .basic_auth(username, Some(password))
+       .send();
+   ```
 
-```Rust
-let request = client.post("http://www.example.com")
-    .headers(headers)
-    .body("Body of the request");
+6. Hvis alt går bra, vil du få en respons tilbake i form av en `Response` struct. Du kan få tilgang til svaret ved hjelp av metoden `text` og skrive det ut:
 
-let response = request.send().unwrap();
+   ``` rust
+   let body = response.text().unwrap();
+   println!("Svaret er:{}", body);
+   ```
 
-println!("Response status: {}", response.status());
-```
+## Dypdykk
 
-## Dykk ned i det
+Hvis du ønsker å utforske mer om sending av HTTP-anrop med basic autentisering, kan du se på dokumentasjonen til `reqwest` biblioteket og lese om forskjellige metoder og funksjoner som er tilgjengelige.
 
-Når du sender en HTTP-forespørsel med basic authentication, bruker du en form for autentisering som krever at brukernavn og passord blir sendt i klartekst gjennom `Authorization`-headere. Dette kan være en sikkerhetsrisiko hvis ikke tilkoblingen er kryptert. Det er derfor viktig å bruke HTTPS ved å bruke `https` i URL-en din i stedet for `http` når du sender HTTP-forespørsler med basic authentication.
-
-I tillegg bør du vurdere å implementere en form for autentisering som gir bedre sikkerhet, for eksempel OAuth eller JWT. Dette vil ikke bare sikre autentiseringen din, men også beskytte brukerens sensitivt informasjon.
+For eksempel kan du bruke `header` metoden for å legge til egendefinerte headere i HTTP-anropet ditt, eller bruke `json` metoden for å sende og motta JSON-data.
 
 ## Se også
 
-Her er noen nyttige ressurser for å lære mer om Rust og hvordan du kan sende HTTP-forespørsler med basic authentication:
+- [Dokumentasjon for `reqwest` biblioteket] (https://docs.rs/reqwest/0.11.0/reqwest/)
+- [Offisiell Rust nettside] (https://www.rust-lang.org/)
 
-- [Offisiell Rust-dokumentasjon](https://doc.rust-lang.org)
-- [Reqwest-dokumentasjon](https://docs.rs/reqwest/0.11.1/reqwest/)
-- [How to send HTTP requests in Rust](https://blog.logrocket.com/sending-http-requests-in-rust/)
-- [Basic authentication article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+Dette var en enkel introduksjon til hvordan du sender et HTTP-anrop med basic autentisering i Rust. Jeg håper dette har vært nyttig for deg og at du nå er klar til å implementere det i dine egne prosjekter. Lykke til!

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Uzyskiwanie bieżącej daty"
-simple_title:         "Uzyskiwanie bieżącej daty"
+title:                "Uzyskiwanie aktualnej daty"
+html_title:           "Kotlin: Uzyskiwanie aktualnej daty"
+simple_title:         "Uzyskiwanie aktualnej daty"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,33 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto poznać bieżącą datę
+## Dlaczego?
 
-Poznawanie bieżącej daty jest niezbędną umiejętnością w programowaniu, ponieważ pozwala nam na tworzenie aplikacji i funkcji, które wykorzystują aktualny czas. Dzięki temu możemy tworzyć narzędzia, które są bardziej interaktywne i dokładne, dostarczając użytkownikom aktualne informacje lub reagując na określone zdarzenia w określonym czasie.
+Dokładne śledzenie czasu jest ważne w wielu projektach programistycznych, a wiele z nich wymaga aktualnej daty. Dzięki temu artykułowi dowiesz się, jak w łatwy sposób uzyskać aktualną datę w języku Kotlin.
 
-# Jak to zrobić
-
-Aby uzyskać bieżącą datę w języku Kotlin, możemy użyć wbudowanej klasy `LocalDateTime`. Musimy najpierw zaimportować tę klasę za pomocą `import java.time.LocalDateTime`, a następnie możemy wywołać metodę `now()` wewnątrz wyrażenia `LocalDateTime`:
+## Jak to zrobić?
 
 ```Kotlin
-val currentDate = LocalDateTime.now()
+val currentDate = LocalDate.now()
+println(currentDate)
 ```
 
-Możemy również wyświetlić bieżącą datę za pomocą interaktywnego polecenia `println`:
+Ten prosty kod utworzy zmienną zawierającą aktualną datę i wyświetli ją w konsoli. Jest to możliwe dzięki klasie `LocalDate` z pakietu `java.time`.
+
+Możesz również pobrać aktualną datę w innych strefach czasowych, używając metody `now (zone: ZoneId)` zamiast `now ()`. Na przykład:
 
 ```Kotlin
-println("Bieżąca data to: $currentDate")
+val currentDate = LocalDate.now(ZoneId.of("Europe/Warsaw"))
+println(currentDate)
 ```
 
-W ten sposób wyświetli się aktualna data w formacie `YYYY-MM-DD HH:MM:SS`.
+To spowoduje pobranie aktualnej daty w strefie czasowej Europy/Warszawy.
 
-# Deep Dive
+## Deep Dive
 
-Aby lepiej zrozumieć jak działa uzyskiwanie bieżącej daty w języku Kotlin, warto zapoznać się z `LocalDateTime` oraz innymi klasami z pakietu `java.time`. Ta biblioteka została wprowadzona wraz z wersją Javy 8, aby zastąpić starą klasę `Date`, która miała wiele problemów, w tym związanych z wyświetlaniem i obliczaniem stref czasowych.
+Jeśli chcesz uzyskać więcej informacji na temat czasu, możesz użyć klasy `LocalDateTime`. Ta klasa pozwala na uzyskanie aktualnego czasu wraz z datą. Na przykład:
 
-`LocalDateTime` zapewnia nam dokładność do nanosekund oraz umożliwia przetwarzanie bieżącej daty i czasu za pomocą różnych metod, takich jak `plusDays()`, `minusMonths()` itp. Możemy również zmienić format wyświetlania daty za pomocą `DateTimeFormatter` oraz przekształcić datę na obiekt `Date` za pomocą `DateConverter`.
+```Kotlin
+val currentDateTime = LocalDateTime.now()
+println(currentDateTime)
+```
 
-# Zobacz także
+Otrzymujesz wynik w formacie `yyyy-MM-ddTHH:mm:ss.mmm`, gdzie `T` oznacza separator pomiędzy datą a czasem, a `mmm` to milisekundy.
 
-- Dokumentacja pakietu `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Tutoriale dotyczące biblioteki `java.time`: https://www.baeldung.com/java-8-date-time-intro
+Dodatkowo, jeśli potrzebujesz aktualnego czasu w konkretnym formacie, możesz użyć metody `format(DateTimeFormatter)`. Na przykład, aby wyświetlić datę w formacie dd-MM-yyyy, możesz użyć następującego kodu:
+
+```Kotlin
+val currentDate = LocalDate.now()
+println(currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))
+```
+
+Ten kod powinien zwrócić aktualną datę w postaci dd-MM-yyyy.
+
+## Zobacz także
+
+- [Dokumentacja pakietu java.time](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/package-summary.html)
+- [Tutorial Kursu Kotlin - Daty i Czasy](https://kotlinlang.org/docs/datetime.html)
+- [Przewodnik po pakiecie java.time](https://www.baeldung.com/java-8-date-time-intro)

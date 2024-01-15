@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Bhavishya ya Bhoot ki ek tithi ka ganana"
-simple_title:         "Bhavishya ya Bhoot ki ek tithi ka ganana"
+title:                "Bhavishya ya Bhootkal mein ek tithi ka ganana"
+html_title:           "TypeScript: Bhavishya ya Bhootkal mein ek tithi ka ganana"
+simple_title:         "Bhavishya ya Bhootkal mein ek tithi ka ganana"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,27 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-
-अगर आप बड़े प्रोजेक्टस में काम करते हैं जो अलग-अलग देशों के समय जोन में बसा हैं, तो आपको कई बार विभिन्न तारीखों को फिक्स करना पड़ सकता है। इस तरह की स्थिति में आपको आने वाले कुछ सालों या महीनों में एक निश्चित तारीख को निर्धारित करने की जरूरत हो सकती है। ऐसे में, तारीख को फटाफट निकालने के लिए एक अल्गोरिथम का उपयोग किया जा सकता है।
+कभी-कभी हमें एक तारीख को भविष्य में या भूतकाल में गणना करनी होती है। यह गणना समयसीमा और तारीखों को अन्य प्रकार के कामों जैसे दिनों के साथ जोड़ने के लिए उपयोगी हो सकती है।
 
 ## कैसे करें
-
-कुछ कीबोर्ड्स से आप तारीख, महीना और साल की जानकारी प्राप्त कर सकते हैं। इसके बाद, हमें इस तारीख को निर्धारित संख्या के साथ मिलाना होगा। इसके बाद, हम तारीख को परस्पर सम्बंधित दिन, महीना और साल के साथ जोड़ सकते हैं और इससे नए तारीख को प्राप्त कर सकते हैं। नीचे आप एक यहां कोड से इस अल्गोरिथम का उदाहरण देख सकते हैं।
+आप TypeScript का उपयोग करके भविष्य या अतीत की तारीख की गणना कर सकते हैं। नीचे दिए गए उदाहरण में, हम यूनिक्स टाइमस्टैम्प को भविष्य या अतीत की तारीख में बदलने के लिए एक फ़ंक्शन बनाएंगे। अपनी तारीख और समयसीमा को ऊपरी बाइंडिंग के माध्यम से पास करें।
 
 ```TypeScript
-function getFutureOrPastDate(date: Date, numberOfYears: number): Date {
-    date.setFullYear(date.getFullYear() + numberOfYears);
-    return date;
+function getDate(date: Date, timePeriod: string) {
+  if (timePeriod === "future") {  
+    // भविष्य की तारीख के लिए गणना
+    const dateInFuture = new Date(date.getTime() + 86400000);  
+    // 24 घंटे के समयसीमा जोड़ें
+    return dateInFuture;
+  } else if (timePeriod === "past") {
+    // भूतकाल की तारीख के लिए गणना
+    const dateInPast = new Date(date.getTime() - 86400000);  
+    // 24 घंटे के समयसीमा से घटाएँ
+    return dateInPast;
+  }
 }
 
-const today = new Date();
-const futureDate = getFutureOrPastDate(today, 5);
-
-console.log(futureDate.toDateString()); // Output: Sat Sep 18 2026
+console.log(getDate(new Date(), "future")); // Output: कल की तारीख
 ```
 
-## गहराई में जाएं
-
-इस अल्गोरिथम में हमने `getFutureOrPastDate` नामक एक फ़ंक्शन बनाया है जो स्टार्ट तारीख और संबंधित नंबर ऑफ़ ईयर्स को लेता है और इसे नए तारीख में बदल देता है। हम यहां स्टार्ट तारीख को `Date` टाइप में ले रहे हैं और नए तारीख को भी वापस `Date` टाइप में रिटर्न कर रहे हैं।
-
-इसे आप फिर से कस
+## गहराई में जाएँ
+आप यूनिक्स टाइमस्टैम्प के साथ साफ़-चूना तारीखों को गणना करने के लिए भविष्य और अतीत में अलग-अलग समयसीमाओं का उपयोग कर सकते हैं। आप भविष्य में जाकर तारीखों को गणना करने से पहले, समयसीमा का आकलन करने के लिए आपके पास दो मुख्य विकल्प हैं। पहला विकल्प है समयसीमा को ध्यान से जोड़ना और दूसरा विकल्प है समयसीमा को अमूर

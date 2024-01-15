@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Asetusten vastaavien merkkien poistaminen"
-simple_title:         "Asetusten vastaavien merkkien poistaminen"
+title:                "Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
+html_title:           "Haskell: Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
+simple_title:         "Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,28 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmoinnin tehtävissä voi olla tarpeen poistaa merkkejä tietystä kuvioista teksteistä. Tämä voi olla hyödyllistä esimerkiksi tietojenpuhdistuksessa tai tiedostojen muokkaamisessa. Haskell tarjoaa tehokkaan ja helppokäyttöisen menetelmän poistaa merkkejä tietystä kuvioista käyttäen `Data.List` kirjastoa.
+Oletko koskaan kohdannut tilanteen, jossa haluat poistaa tiettyjä merkkejä tekstistäsi? Ehkä haluat puhdistaa sisältöäsi tai filtteröidä tiettyjä sanoja. Kannattaa harkita Haskellin käyttöä tähän tehtävään.
 
-## Kuinka tehdä se
+## Kuinka
 
-Aluksi meidän täytyy ladata `Data.List` kirjasto käyttöömme `import`-käskyllä. Sitten voimme käyttää `deleteBy` funktiota, joka ottaa kaksi argumenttia: poistettavan kuvion ja listan, josta haluamme poistaa kyseisen kuvion. Esimerkiksi, jos haluamme poistaa kaikki numerot merkkijonosta, voimme käyttää seuraavaa koodia:
+Näin poistat merkkejä vastaavat kaavan mukaiset merkit tekstistäsi:
 
 ```Haskell
-import Data.List
-
-let merkkijono = "123abc456"
-let numerot = ['0','1','2','3','4','5','6','7','8','9']
-
-deleteBy (\x y -> x == y) numerot merkkijono
+delete :: Eq a => [a] -> [a] -> [a]
+delete _ [] = []
+delete [] ys = ys
+delete (x:xs) ys = delete xs (remove x ys)
+	where
+		remove :: Eq a => a -> [a] -> [a]
+		remove _ [] = []
+		remove x (y:ys) | x == y = remove x ys
+				| otherwise = y : remove x ys
 ```
 
-Tämä antaisi meille tulokseksi `"abc"` eli merkkijonon missä kaikki numerot on poistettu. Voimme myös asettaa erilaisia kriteereitä poistamiselle, esimerkiksi poistaa vain merkit `a-f` annetusta merkkijonosta käyttäen `isLower` ja `isAlpha` funktioita.
+Esimerkkituloste:
 
-## Syvemmälle aiheeseen
+```Haskell
+delete "a" "kissa" = "kiss"
+delete "aa" "kaakko" = "kko"
+```
 
-Haskellissa on myös muita hyödyllisiä funktioita, kuten `delete` ja `deleteFirstsBy`, jotka voivat poistaa tietyn merkin tai useita merkkejä listalta. `delete` poistaa kaikki esiintymät annetusta merkistä, kun taas `deleteFirstsBy` poistaa vain ensimmäisen esiintymän. Näitä funktioita voivat olla hyödyllisiä esimerkiksi silloin kun haluamme poistaa tietyn merkin useista merkkijonoista tai tarkemmin määritellä mitkä merkit poistetaan.
+## Syvemmällä
+
+Tämä ratkaisu käyttää hyödyksi Haskellin tarjoamaa `delete`-funktiota, joka poistaa ensimmäisen esiintymän listassa. `remove`-funktio puolestaan käy läpi listan ja poistaa kaikki merkit, jotka vastaavat kaavaa.
+
+`delete`-funktio ottaa vastaan kaksi listaa, ensimmäinen on merkit, jotka haluat poistaa ja toinen on tekstisi. Se kutsuu `remove`-funktiota jokaiselle ensimmäisen listan merkille ja palauttaa lopulta puhdistetun tekstin.
+
+Jos haluat poistaa kaikki tietyn kaavan mukaiset merkit tekstistäsi, voit käyttää tätä funktiota yhdistettynä esimerkiksi `filter`-funktioon. Voit myös laajentaa tätä ratkaisua siten, että se poistaa esimerkiksi kaikki välimerkit tai isot kirjaimet.
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
-- [Data.List kirjaston dokumentaatio](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Haskellin dokumentaatio](https://www.haskell.org/documentation/)
+- [Haskellin opetusohjelmat](https://wiki.haskell.org/Tutorials)
+- [Haskellin virallinen sivusto](https://www.haskell.org/)

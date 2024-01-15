@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: जेसन के साथ काम करना"
-simple_title:         "जेसन के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Gleam: Json के साथ काम करना"
+simple_title:         "Json के साथ काम करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-प्रारंभ में, हम जानते हैं कि JSON डेटा प्रस्तुत करने और संग्रहीत करने के लिए बहुत अधिक पॉपुलर हो रहा है। लेकिन यह कैसे काम करता है और इसके साथ भविष्य कार्य करना क्यों जरूरी है? चलिए जानते हैं।
+## Why:
+Kya aap JSON ke saath kaam karna chahte hain? JSON ek simple aur shaktishali data format hai jo aapko apne application mein data ko store aur transmit karne mein madad karta hai. JSON ismein readable aur easily maintainable strings ka format hai jo APIs aur web services ke liye popular hai.
 
-## क्यों
-
-JSON एक प्रोग्रामिंग का तरीका है जिसमें डेटा प्रस्तुत करने और संग्रहीत करने के लिए स्ट्रक्चर्स का उपयोग किया जाता है। यह डेटा संग्रहीत करने का एक सरल और सक्रिय तरीका है जो साथ ही डेटा को पाठकों को प्रस्तुत करने और समझने में भी मदद करता है। अगर आप डेटा संग्रहीत करने या पास करने के लिए स्ट्रक्चर्स का उपयोग करने के बारे में सोच रहे हैं, तो आपको JSON के बारे में जानने की आवश्यकता है।
-
-## कैसे
-
-जब हम JSON डेटा को कोड बनाते हैं, हम उसे स्ट्रक्चर्स की एक सूची के रूप में प्रस्तुत करते हैं। यहां एक उदाहरण है:
+## How To:
+Coding examples aur sample output ke saath ek step-by-step guide:
 
 ```Gleam
-let person = {
-  name: "John Doe",
-  age: 25,
-  hobbies: ["coding", "reading", "hiking"]
-};
+// Ek simple JSON object banayein
+let data =
 
-// person को JSON रुप में प्रिंट करें
-println(person);
+  // Object ke andar string, number, aur boolean values add karein
+  {
+    "name": "John Doe",
+    "age": 25,
+    "isFemale": false
+  }
+
+// JSON object ko convert karein string mein
+let dataString = data|>Json.Encode.encode_pretty(2)
+
+// Output: "{"name": "John Doe", "age": 25, "isFemale": false}"
+
+// Agar aapko kisi key ki value access karni hai
+
+// Object ke key se value retrieve karein
+let name = data["name"]
+
+// Agar aapko array ke andar multiple objects ka data store karna hai
+// Apne array ke size ko pass karein aur uski value ko assign karein
+let customerList: List(Json.Value) = List.repeat(3, data)
+
+// Ab aap JSON ko utilize kar sakte hain apne applications mein!
 ```
 
-आउटपुट:
+## Deep Dive:
+JSON ke alawa bhi kai data formats aate hain jaise XML, CSV, ya HTML. Lekin JSON ke saath kaam karna asaan aur flexible hai. JSON ko isliye popular choice mana jata hai kyunki ismein data ko easily retrieve aur manipulate kiya ja sakta hai. Iske alawa, kai programming languages mein iska support hota hai aur aap isko use karke data ko cross-platform transmit kar sakte hain. Agar aap JSON ke depth mein jaana chahte hain, to aap JSON Schema, JSON Pointer, aur JSON Web Tokens jaise concepts ko explore kar sakte hain.
 
-```Gleam
-{
-  name: "John Doe",
-  age: 25,
-  hobbies: ["coding", "reading", "hiking"]
-}
-```
-
-जैसा कि आप देख सकते हैं, हमने एक व्यक्ति के डेटा को प्रस्तुत किया है जिसमें उनका नाम, उम्र और शौक हैं। अब आप भी अपने डेटा को संरचित और पाठकों को भी समझने में आसान बनाने के लिए JSON का उपयोग कर सकते हैं।
-
-## डीप डाइव
-
-JSON डेटा को संग्रहीत करना और प्रस्तुत करना आसान होने के स
+## See Also:
+Agar aapko JSON ke baare mein aur jaankari chahiye, to aap in links ko check kar sakte hain:
+- JSON Tutorial: https://www.geeksforgeeks.org/json-tutorial/
+- JSON Basics: https://www.w3schools.com/js/js_json.asp
+- Working with JSON in Gleam: https://gleam.run/documentation/json/overview.html

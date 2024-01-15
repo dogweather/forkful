@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 文字列の連結"
-simple_title:         "文字列の連結"
+title:                "「文字列の結合」"
+html_title:           "Arduino: 「文字列の結合」"
+simple_title:         "「文字列の結合」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ？
+プログラミングで文字列を連結することの最大の利点は、複数の変数や値を一つの文字列として利用できることです。また、繰り返しコードを書く必要がなくなり、より効率的なコーディングが可能になります。
 
-コンピューターに文字列を結合することで、新しい文字列を作成することができます。これはArduinoプログラミングでとても便利です。例えば、センサーやディスプレイから得られた情報を一つの文章にまとめることができます。
-
-## 使い方
-
-結合する文字列を用意し、それぞれを「+」記号でつなげることで、新しい文字列を作成することができます。以下は例です。
+## やり方
+文字列を連結するには、 + 演算子を使用します。例えば、"Hello"と"world"を連結するには、"Hello" + "world"と書きます。また、変数や定数と連結することもできます。
 
 ```Arduino
-String name = "太郎";
-String message = "こんにちは、私の名前は" + name + "です。";
-Serial.println(message);
-```
-
-出力は以下のようになります。
-
-```
-こんにちは、私の名前は太郎です。
+String str1 = "Hello";
+String str2 = "world";
+String result = str1 + " " + str2;
+Serial.println(result); // Output: "Hello world"
 ```
 
 ## 深堀り
+プログラムで文字列を連結する際に注意すべき点があります。まず、 + 演算子は文字列の結合であって、数値の計算ではありません。そのため、数値を文字列として連結する場合は、数値をString()関数で囲む必要があります。
 
-Arduinoのプログラミング言語では、文字列を扱う際にString型を使用します。String型は、複数の文字を格納し、結合することもできるデータ型です。また、文字列を結合する方法として、「+=」演算子を使用することもできます。
+また、文字列を連結する際にはメモリの使用量にも注意が必要です。大量の文字列を連結すると、メモリを消費することがあり、プログラムの動作に影響を与える可能性があります。そのため、必要以上に連結するのではなく、効率的にプログラムを設計することが重要です。
 
-また、ここで注意すべき点として、文字列を頻繁に結合するとメモリの使用量が増えてしまうため、プログラムを効率的に作成するためには、文字列の結合をなるべく避けるようにすることが重要です。
-
-## 参考リンク
-
-- [Arduino Stringクラスリファレンス](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino Stringsチュートリアル](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator)
+# 参考リンク
+- [Arduino Reference - String Concatenation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
+- [The "+" Operator](https://www.arduino.cc/en/Reference/StringConCat)
+- [Common Pitfalls when Using String](https://www.arduino.cc/en/Tutorial/StringConstructors)

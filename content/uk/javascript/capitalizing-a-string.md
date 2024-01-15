@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Перетворення рядка на великі літери."
-simple_title:         "Перетворення рядка на великі літери."
+title:                "Капіталізація рядка"
+html_title:           "Javascript: Капіталізація рядка"
+simple_title:         "Капіталізація рядка"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Чому
+## Чому
 
-Не існує однозначної відповіді на запитання "навіщо зробити стрічку з великої літери" в джерелах, але це може бути корисним при написанні програми, яка перевіряє написання імен або визначає важливі слова в тексті.
+Використання функцій для перетворення перших літер слова у великі - це важлива частина розробки пов'язаної з наданням читабельності і красивого вигляду тексту. Використання цих функцій в JavaScript дозволяє нам швидко і ефективно писати код, який перетворює символи строки у великі літери.
 
-##Як
-
-```Javascript
-const text = "це прикладтексту"; 
-const capitalizedText = text.capitalize();
-console.log(capitalizedText); // Вивід: Це прикладтексту
-```
-
-Також можна використовувати цей метод для першої літери в кожному слові в стрічці:
+## Як це зробити
 
 ```Javascript
-const text = "це прикладтексту"; 
-const capitalizedText = text.split(" ").map(word => word.capitalize()).join(" ");
-console.log(capitalizedText); // Вивід: Це Прикладтексту
+let str = "привіт світ!"
+
+// Використання методу toUpperCase() для перетворення першої літери на велику
+let capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
+
+// Результат: "Привіт світ!"
+console.log(capitalizedStr);
 ```
 
-##Глибинний розгляд
+У цьому прикладі ми використовуємо метод `toUpperCase()` для перетворення першої літери в велику, а потім додаємо зріз строки, щоб додати решту символів. Цей підхід працює не тільки для першої літери, але і для будь-якої літери в слові.
 
-У JavaScript немає вбудованої функції для перетворення стрічки на великі літери. Тому для цього потрібно використовувати методи, які вже є в об'єкті String, такі як `split()`, `map()` і `join()`, або можна створити власну функцію capitalize. Це може бути корисно при роботі зі стрічками в програмі.
+## Глибоке поглиблення
 
-##Дивіться також
+Існує кілька методів у JavaScript для перетворення літер строки у великі. Окрім `toUpperCase()`, ми також можемо використовувати `toLowerCase()` для перетворення літер у нижній регістр, а також `charAt()` і `slice()` для отримання і редагування окремих символів. Для більш складних оперіцій зі строками, таких як перетворення до капіталізації кожного слова, можна використовувати регулярні вирази.
 
-- [MDN по методу великого літеру в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Сайт з вчителем JavaScript на додатковому рівні](https://javascript.info/)
+## Дивіться також
+
+- [MDN Документація про метод toUpperCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [MDN Документація про метод toLowerCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [MDN Документація про метод charAt()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [MDN Документація про метод slice()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN Документація про регулярні вирази в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: बेसिक प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजें"
+html_title:           "TypeScript: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजें"
+simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजें"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,33 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-किसी भी वेब डेवलपमेंट परियोजना में जब हम सर्वर से डेटा लेने की जरूरत होती है तो हमें एक HTTP रिक्वेस्ट भेजने की आवश्यकता होती है। यह कार्य करने के लिए, हम बेसिक ऑथेंटिकेशन के साथ HTTP रिक्वेस्ट भेज सकते हैं जो एक सुरक्षित तरीके से सर्वर से डेटा को प्राप्त करता है। इस ब्लॉग पोस्ट में, हम जानेंगे कि बेसिक ऑथेंटिकेशन के साथ HTTP रिक्वेस्ट कैसे भेजा जाता है और इसके क्या फायदे हैं।
+एक आउटपुट (output) पर डेटा लेने या भेजने के लिए एमएचटीपी (HTTP) अनुरोध के साथ बुनियादी प्रमाणीकरण (basic authentication) भेजना कम्प्यूटर हकर्स (hackers) द्वारा सुरक्षा घाटा करने से भी हो सकता है। इसलिए, डेटा को सुरक्षित रखने के लिए, बुनियादी प्रमाणीकरण के माध्यम से शुद्ध संबंध (secure connection) बनाने की जरूरत होती है।
 
-## कैसे
+## कैसे करें
 
-हमारे पास एक API को एक HTTP रिक्वेस्ट भेजने के लिए दो चीजें की आवश्यकता होती हैं - उपयोगकर्ता के नाम और पासवर्ड। हम यह जानने के लिए डेटा को डेटाबेस में स्टोर करते हैं या स्टेटिक कॉन्फिगरेशन फाइल में रखते हैं। HTTP रिक्वेस्ट प्रोसेस को बेहतर समझने के लिए, हम एक उदाहरण की मदद से यह देखेंगे।
+मुख्य भाग को /authenticate या /login आदि आखिरी स्थान पर Lalisa singh नामक user के लिए प्रमाणीकरण जानकारी दर्ज करके निम्नलिखित कोड उपयोग कर सकते हैं:
 
 ```TypeScript
-import axios from 'axios';
+const username: string = "Lalisa singh";
+const password: string = "myp@ssw0rd";
 
-const username = "user";
-const password = "pass";
-
-axios.get('https://example.com/data', {
-  auth: {
-    username: username,
-    password: password
-  }
-})
-  .then(response => {
-    console.log(response.data); // डेटा का उत्तर
-  })
-  .catch(error => {
-    console.log(error);
-  });
+const authenticationCredentials: string = `Basic ${btoa(username + ":" + password)}`;
 ```
-अपने अन्दर, हम `axios` पैकेज को इम्पोर्ट करते हैं जो HTTP रिक्वेस्ट भेजने के लिए बहुत उपयोगी हो सकता है। अपनी रिक्वेस्ट के साथ, हम `auth` ऑप्शन आधार में उपयोगकर्ता नाम और पासवर्ड भेजते हैं। यह एक सुरक्षित तरीके से हमारे रिक्वेस्ट को सर्वर तक पहुंचाता है।
 
-## डीप डाइव
+उपरोक्त कोड में, {\`}` निश्चित तौर पर एक एमएचटीपी अनुरोध ("बेसिक" प्रमाणीकरण जोड़ने के लिए आवश्यक प्राथमिक भाव (value) के साथ) बनाने के लिए उपयोग किया जाता हैं। अनुरोध के हेडर (header) में इस भाव (value) को जोड़ा जाएगा।
 
-बेसिक ऑथेंटिकेशन ए
+```TypeScript
+const request: Request = new Request('/authenticate', {
+    headers: {
+        Authorization: authenticationCredentials
+    }
+});
+
+fetch(request)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // उपरोक्त मामले में lalisa के पास "success" और "token" प्राप्त हो जाएगा।
+    })
+```
+
+## गहराई में धूम्रपान करें
+
+एमएचटीपी अनुरोध को भेजते समय, हम बेसिक प्रमाणीकरण के साथ "बेसिक" शब्द का उपयोग कर सकते हैं। यह शब्द "Authorization" अनुरोध शीर्षक (header) में होना चाहिए और प्रमाणीकरण भाव (value) प्रमाणीकरण जानकारी को उद्धृत करता है। उपरोक्त कोड में, अपने प्र

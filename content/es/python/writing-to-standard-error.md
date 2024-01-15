@@ -1,6 +1,7 @@
 ---
-title:                "Python: Escribir a la salida de error estándar"
-simple_title:         "Escribir a la salida de error estándar"
+title:                "Escribiendo a error estándar"
+html_title:           "Python: Escribiendo a error estándar"
+simple_title:         "Escribiendo a error estándar"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,59 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida estándar de error en Python?
+## ¿Por qué escribir en el error estándar?
 
-Al escribir programas en Python, es importante tener una forma de manejar y visualizar errores en el código. La salida estándar de error, también conocida como `stderr`, proporciona una forma de imprimir información de errores en la terminal. Esto puede ser útil para el desarrollo y la depuración de código, ya que permite identificar y solucionar problemas más fácilmente.
+Escribir en el error estándar es una práctica común en la programación de Python. Permite a los desarrolladores imprimir información sobre errores o excepciones que puedan ocurrir durante la ejecución de un programa, lo que facilita la identificación y solución de problemas.
 
 ## Cómo hacerlo
 
-El proceso para escribir a `stderr` en Python es bastante simple. Primero, debemos importar el módulo `sys` que nos proporciona acceso a `stderr`. Luego, utilizamos la función `write()` en `stderr` para imprimir nuestro mensaje de error en la consola.
+Para escribir en el error estándar en Python, puedes utilizar la función `print()` junto con la palabra clave `file=sys.stderr`. Esto especifica que la salida se redirigirá al error estándar en lugar de imprimirse en la consola.
 
-```Python
+```
 import sys
-sys.stderr.write("¡Error! No se puede dividir por cero.\n")
+
+print("Este mensaje se imprimirá en el error estándar", file=sys.stderr)
 ```
 
-Esto imprimirá el mensaje de error en la terminal, seguido de una nueva línea.
+La salida del código anterior se verá así en la consola:
 
-```Texto
-¡Error! No se puede dividir por cero.
 ```
-
-También podemos utilizar la función `print()` con la opción `file` para imprimir directamente en `stderr`.
-
-```Python
-print("¡Error! No se puede dividir por cero.", file=sys.stderr)
+Este mensaje se imprimirá en el error estándar
 ```
 
 ## Profundizando
 
-Cuando escribimos a `stderr`, en realidad estamos escribiendo en un objeto `Stream` que representa la salida estándar de error. Este objeto tiene métodos adicionales que nos permiten tener un mayor control sobre cómo se imprime la información.
+La principal diferencia entre escribir en la consola y escribir en el error estándar es que la consola estándar es utilizada para la salida del programa, mientras que el error estándar es utilizado para la salida de errores y excepciones. Esto significa que los mensajes de error no se mezclarán con la salida normal del programa.
 
-Por ejemplo, podemos utilizar el método `flush()` para vaciar el buffer y forzar la impresión del mensaje inmediatamente.
-
-```Python
-sys.stderr.write("¡Error! No se puede dividir por cero.")
-sys.stderr.flush()
-```
-
-También podemos cambiar la forma en que se manejan los errores en nuestro código mediante el uso de `sys.excepthook`. Este método nos permite definir una función que será llamada cuando se produzca una excepción en nuestro programa. De esta manera, podemos personalizar cómo se manejan y se muestran los errores.
-
-```Python
-def excepcion_personalizada(excepcion_tipo, excepcion_valor, traceback):
-    sys.stderr.write("¡Ups! Algo salió mal.\n")
-    sys.stderr.write("Tipo de excepción: {}\n".format(excepcion_tipo))
-    sys.stderr.write("Valor de excepción: {}\n".format(excepcion_valor))
-
-sys.excepthook = excepcion_personalizada
-
-x = 10 / 0  # Esto generará una excepción que será manejada por nuestra función
-```
+Otra ventaja de escribir en el error estándar es que se puede redirigir a un archivo o registro para facilitar la solución de problemas y el seguimiento de errores.
 
 ## Ver también
 
-- Tutorial de Python: Manejo de excepciones (https://www.python.org/dev/peps/pep-0352/)
-- Documentación de Python: Módulo `sys` (https://docs.python.org/es/3/library/sys.html)
-- Guía para principiantes de Python: Depuración de código (https://realpython.com/python-debugging-pdb/)
+Para más información sobre la escritura en el error estándar en Python, puedes revisar la documentación oficial:
 
-¡Esperamos que este artículo te haya sido útil para aprender a escribir a `stderr` en Python! Recuerda que la salida estándar de error es una herramienta útil para el desarrollo de código y siempre es importante tener en cuenta cómo manejar y visualizar los errores en nuestros programas. ¡Happy coding!
+- Documentación de Python en la función `print()`: https://docs.python.org/es/3/library/functions.html#print
+- Guía de The Real Python sobre cómo escribir en el error estándar: https://realpython.com/python-logging/#the-logging-module
+- Artículo de Real Python sobre cómo depurar errores en Python: https://realpython.com/python-debugging-pdb/

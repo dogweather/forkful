@@ -1,6 +1,7 @@
 ---
-title:                "Bash: כינון מחרוזות"
-simple_title:         "כינון מחרוזות"
+title:                "מחברת מחרוזות"
+html_title:           "Bash: מחברת מחרוזות"
+simple_title:         "מחברת מחרוזות"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-בלוג על תכנות Bash עבור קוראים עברית
+## למה
+מזה שווה ללמוד כיצד לחבר מחרוזות בבאש (גרסה הנוכחית)? כי זה מייצר קוד נקי ויעיל, שמאפשר לכם לתת ערך מוסף לסקריפטים שלכם ולבצע פעולות שונות כגון הדפסת הודעות ועבודה עם משתנים.
 
-## למה:
-למה יש לנו צורך לצרף מחרוזות בתוכניות שלנו? צירוף של מחרוזות הוא כלי חשוב בתכנות שיעזור לנו ליצור מחרוזות ארוכות ומורכבות. זה יכול לשמש ליצירת הודעות, הצגת מידע ועוד.
-
-## כיצד לבצע:
-ישנם מספר דרכים לצרף מחרוזות בתוכניות Bash. נוכל להשתמש בפקודת echo עם פרמטר -e כדי להדפיס מחרוזת עם תווים מיוחדים, כגון \n לשורת חדשה. נוכל גם להשתמש בפקודת printf ובפרמטר %s כדי להדפיס מחרוזת תוך שימוש במשתנים או בתווים קבועים. ניתן גם להשתמש בפקודת cat ובפרמטר -e כדי להדפיס מחרוזת תוך שימוש בקובץ טקסט למצבל.
-
+## כיצד לעשות את זה
+הנה כמה דוגמאות לחיבור מחרוזות בבאש, יחד עם פלט דוגמה:
 ```Bash
-# Exapmles of string concatenation using echo
-echo -e "Hello, my name is $NAME"
+# חיבור של מחרוזת למשתנה
+name="ישראל"
+echo "שלום $name!" # פלט: שלום ישראל!
 
-# Using printf with variables
-printf "My favorite color is %s and my favorite food is %s" $COLOR $FOOD
+# חיבור של שתי מחרוזות
+str1="בית"
+str2="לחם"
+new_str="$str1$str2"
+echo "$new_str" # פלט: ביתלחם
 
-# Concatenating string from a text file using cat
-cat -e $FILE
+# חיבור מחרוזת לפלט של פקודה אחרת
+files=$(ls)
+new_str="קבצים שנמצאו: $files"
+echo "$new_str" # פלט: קבצים שנמצאו: file1.txt file2.txt file3.txt
 ```
 
-הפלט הצפוי הוא:
-```
-Hello, my name is Sarah
-My favorite color is blue and my favorite food is pizza
-Hello
-My name is
-Sarah
-```
+## טיול עמוק
+כאשר אתם מחברים מחרוזות בבאש, כדאי לזכור כמה נקודות חשובות:
+- השימוש בסימן כפול (") יאפשר לכם להשתמש בערך של משתנה ולהציג אותו בפלט.
+- ניתן להשתמש גם באופרטור החיבור (+) כדי לחבר מחרוזות, אך תמיד שימו לב לחלוקה בין החלקים שאתם רוצים לחבר.
+- אתם יכולים לחבר מחרוזות גם באמצעות השמות של פקודות אחרות, כמו בדוגמה של ls שנראתה למעלה.
 
-## מעמקים נמוכים:
-לצרף מחרוזות בתוכניות Bash ניתן להשתמש גם באופרטור "+". האופרטור הזה יפעול בדיוק כמו אופרטור החיבור במתמטיקה ויצרף ישויות ביחד. בנוסף, ניתן להשתמש גם בפקודת substring כדי לקבל חלק מתחילת המחרוזת או ממיקום מסוים בה.
-
-## ראה גם:
-- [שימוש במערך של מחרוזות בבאש](https://linuxize.com/post/bash-concatenate-strings/)
-- [פייפר עם הוספת מחרוזות](https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash)
-- [התמודדות עם מחרוזות מורכבות בבאש](https://www.baeldung.com/linux/concatenate-strings-bash)
+## ראו גם
+- [תיעוד רשמי לחיבור מחרוזות בבאש](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [בלוג כתב התוכנה הישראלי הפועל בבאש](http://www.shellhacks.com/)

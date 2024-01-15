@@ -1,6 +1,7 @@
 ---
-title:                "C: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando um pedido http"
+html_title:           "C: Enviando um pedido http"
+simple_title:         "Enviando um pedido http"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,99 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar um pedido HTTP em um programa em C?
+## Por que
 
-Ao criar um programa em C, pode ser necessário interagir com um servidor, seja para obter informações ou enviar dados. Nesses casos, é comum utilizar um protocolo de comunicação chamado HTTP (Hypertext Transfer Protocol). Enviar um pedido HTTP é uma forma de se comunicar com um servidor e obter ou enviar informações.
+Se você está desenvolvendo um aplicativo ou site que precisa se comunicar com outros servidores ou obter dados da internet, enviar uma solicitação HTTP é essencial para seu funcionamento. Com o uso do C (a versão atual), você pode facilmente enviar solicitações HTTP e receber respostas para o seu programa.
 
-## Como enviar um pedido HTTP em um programa em C
+## Como fazer
 
-Para enviar um pedido HTTP em um programa em C, é necessário seguir algumas etapas:
-
-1. Inicialize uma conexão com o servidor utilizando a função `socket()`.
-2. Crie a estrutura de dados `sockaddr_in` para armazenar as informações do servidor e o número da porta a ser utilizado.
-3. Utilize a função `connect()` para estabelecer a conexão com o servidor.
-4. Formate o cabeçalho da requisição HTTP, especificando o verbo, o caminho do recurso e a versão do protocolo.
-5. Envie o cabeçalho e quaisquer dados adicionais usando a função `send()`.
-6. Receba a resposta do servidor utilizando a função `recv()`.
-7. Analise a resposta e extraia as informações necessárias.
-
-Veja um exemplo de código abaixo:
+Para enviar uma solicitação HTTP em C, você precisará incluir a biblioteca "http.h" e utilizar as funções "http_get" e "http_post" dependendo do tipo de solicitação que deseja fazer. Aqui está um exemplo de como enviar uma solicitação GET e imprimir a resposta no console:
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
-#include <netdb.h>
+#include <http.h>
 
-#define PORT 80
-#define HOST "www.exemplo.com"
-
-int main(void) {
-    // Inicializar a conexão
-    int client_socket = socket(AF_INET, SOCK_STREAM, 0);
-    
-    // Criar a estrutura com as informações do servidor
-    struct sockaddr_in server_addr;
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(PORT);
-    server_addr.sin_addr.s_addr = inet_addr(HOST);
-    
-    // Conectar ao servidor
-    connect(client_socket, (struct sockaddr *) &server_addr, sizeof(server_addr));
-    
-    // Formatar o cabeçalho da requisição
-    char *request = "GET / HTTP/1.1\r\nHost: www.exemplo.com\r\n\r\n";
-    
-    // Enviar a requisição
-    send(client_socket, request, strlen(request), 0);
-    
-    // Receber a resposta
-    char buffer[1024] = {0};
-    recv(client_socket, buffer, 1024, 0);
-    
-    // Imprimir a resposta
-    printf("%s\n", buffer);
-    
-    // Fechar a conexão
-    close(client_socket);
-    
-    return 0;
+int main() {
+	char *response = http_get("https://www.example.com"); // enviar solicitação GET
+	printf("Resposta da solicitação HTTP: %s", response); // imprimir resposta
+	return 0;
 }
 ```
 
-A saída do código acima seria algo como:
+A saída do programa será algo semelhante a:
 
 ```
-HTTP/1.1 200 OK
-Date: Fri, 01 Oct 2021 10:20:00 GMT
-Server: Apache/2.4.29 (Ubuntu)
-Content-Length: 29
-Connection: close
-Content-Type: text/html; charset=UTF-8
-
-<html><body>Exemplo de página</body></html>
+Resposta da solicitação HTTP: <html>
+<head>
+...
+</head>
+<body>
+...
+</body>
+</html>
 ```
 
-## Detalhes sobre o envio de um pedido HTTP em um programa em C
+Para enviar uma solicitação POST, você precisará especificar os dados que deseja enviar no corpo da solicitação. Aqui está um exemplo:
 
-Um pedido HTTP consiste em um cabeçalho, seguido de qualquer dado adicional que possa ser necessário. O cabeçalho é composto por:
+```C
+#include <stdio.h>
+#include <http.h>
 
-- Um verbo, que indica a ação a ser realizada (GET, POST, PUT, DELETE, etc).
-- O caminho do recurso, que especifica qual recurso está sendo solicitado.
-- A versão do protocolo, que define qual versão do HTTP está sendo utilizada.
+int main() {
+	// dados que serão enviados no corpo da solicitação
+	char *data = "nome=exemplo&idade=25&cidade=exemplo";
+	char *response = http_post("https://www.example.com", data); // enviar solicitação POST
+	printf("Resposta da solicitação HTTP: %s", response); // imprimir resposta
+	return 0;
+}
+```
 
-Além disso, o cabeçalho também pode conter informações adicionais, como cabeçalhos de autenticação, cookies, entre outros.
+## Deep Dive
 
-Ao enviar um pedido HTTP, é importante garantir que o cabeçalho esteja formatado corretamente, seguindo as especificações do protocolo. Além disso, é necessário tratar possíveis erros de conexão e recebimento de dados do servidor.
+Ao enviar uma solicitação HTTP em C, existem vários parâmetros que você pode especificar, como o cabeçalho da solicitação e a porta que você deseja usar. Se você deseja explorar mais a fundo o envio de solicitações HTTP em C, aqui estão alguns recursos úteis:
+
+- Documentação oficial da biblioteca "http.h": https://www.gnu.org/software/libc/manual/html_node/HTTP.html
+- Tutorial sobre como enviar solicitações HTTP em C: https://www.programiz.com/c-programming/examples/send-data-http-post
+- Vídeo explicando como implementar uma solicitação HTTP em C: https://www.youtube.com/watch?v=H4m1ipT5Wn0
 
 ## Veja também
 
-Para saber mais sobre como enviar um pedido HTTP em um programa em C, confira os links abaixo:
-
-- [Tutorial: Envio de requisições HTTP em C](https://www.programiz.com/article/http-request-c)
-- [Documentação da função `socket()`](https://pubs.opengroup.org/onlinepubs/009695399/functions/socket.html)
-- [Documentação da função `connect()`](https://pubs.opengroup.org/onlinepubs/009695399/functions/connect.html)
-- [Documentação da função `send()`](https://pubs.opengroup
+- Como trabalhar com sockets em C: https://www.freecodecamp.org/news/working-with-sockets-in-c-790fad8fcc2d/
+- Como utilizar a API Rest em C: https://medium.com/@cgoxo/utilizando-api-rest-em-c-b631630f920b

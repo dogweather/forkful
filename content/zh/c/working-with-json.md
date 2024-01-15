@@ -1,6 +1,7 @@
 ---
-title:                "C: 与 json 的程序设计"
-simple_title:         "与 json 的程序设计"
+title:                "使用 JSON 进行编程"
+html_title:           "C: 使用 JSON 进行编程"
+simple_title:         "使用 JSON 进行编程"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,73 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么会选择使用JSON
+## 为什么
 
-有很多不同的编程语言和数据格式可供选择，那么为什么我们应该选择使用JSON呢？首先，它具有简单易懂的语法，适合用于存储和传输数据。同时，它也是一种轻量级的格式，能够节省网络带宽和存储空间。因此，许多编程语言都提供了支持JSON的库和工具，使它成为一种流行的数据格式。
+作为一名程序员，你可能经常会遇到需要处理数据的情况。JSON格式是一种便捷的方式来表示和传输数据，同时也被广泛地应用于网络开发和API交互中。使用C语言来解析和处理JSON数据可以提高你的编程效率和灵活性。
 
-## 如何使用JSON进行编程
+## 如何使用
 
-下面我们将介绍如何在C语言中使用JSON，包括创建、解析和修改JSON数据。
-
-首先，需要引入JSON库，比如[cJSON](https://github.com/DaveGamble/cJSON)。然后，我们可以使用`cJSON_CreateObject()`来创建一个JSON对象：
+首先，在你的C项目中引入`json-c`库。接下来，你需要使用`json_object`结构体来创建JSON对象。例如，下面的代码将创建一个包含名字和年龄的简单JSON对象：
 
 ```C
-cJSON *root = cJSON_CreateObject();
+json_object *person = json_object_new_object();
+json_object_object_add(person, "name", json_object_new_string("John"));
+json_object_object_add(person, "age", json_object_new_int(32));
 ```
 
-接着，我们可以向JSON对象中添加键值对：
+要访问JSON对象中的值，你只需要使用`json_object_get_`系列函数，例如：
 
 ```C
-cJSON_AddStringToObject(root, "name", "John");
-cJSON_AddNumberToObject(root, "age", 25);
+const char *name = json_object_get_string(json_object_object_get(person, "name"));
+int age = json_object_get_int(json_object_object_get(person, "age"));
 ```
 
-我们也可以添加嵌套的JSON对象或数组：
+另外，你也可以将JSON对象转换成字符串格式并打印出来：
 
 ```C
-cJSON *address = cJSON_CreateObject();
-cJSON_AddStringToObject(address, "street", "Main Street");
-cJSON_AddStringToObject(address, "city", "New York");
-cJSON_AddItemToObject(root, "address", address);
-
-cJSON *hobbies = cJSON_CreateArray();
-cJSON_AddItemToObject(hobbies, "reading");
-cJSON_AddItemToObject(hobbies, "hiking");
-cJSON_AddItemToObject(root, "hobbies", hobbies);
+printf("Person info: %s", json_object_to_json_string(person));
 ```
 
-最后，我们可以将JSON对象转换为字符串并打印出来：
-
-```C
-char *json_str = cJSON_Print(root);
-printf("%s\n", json_str);
-```
-
-输出结果为：
+运行以上代码，你将会得到类似于以下的输出：
 
 ```
-{
-  "name": "John",
-  "age": 25,
-  "address": {
-    "street": "Main Street",
-    "city": "New York"
-  },
-  "hobbies": [
-    "reading",
-    "hiking"
-  ]
-}
+Person info: {"name": "John", "age": 32}
 ```
 
-## 深入了解JSON
+## 深入探究
 
-JSON还有许多其他的特性，比如可以包含空值、布尔值和特殊字符。它也可以用来表示复杂的数据结构，比如树和图。此外，JSON还有一些高级的功能，比如处理不同类型的数据和自定义解析规则。
+除了创建和访问简单的JSON对象之外，`json-c`库还提供了许多其他功能。你可以使用`json_object_array_put_idx()`函数来向JSON数组中添加元素，使用`json_object_object_add()`函数来向JSON对象中添加键值对，甚至可以从JSON字符串中解析出JSON对象。在开始使用该库之前，建议你仔细阅读其文档以便更好地了解其功能和用法。
 
-在使用JSON时，也需要注意一些安全性问题，比如防范恶意的JSON数据，避免发生内存泄漏等。
+## 参考资料
 
-## 另请参阅
-
-- [JSON官方网站](https://www.json.org/)
-- [cJSON库的使用指南](https://github.com/DaveGamble/cJSON/blob/master/README.md)
-- [JSON解析器的性能对比](https://github.com/msoap/shmbench/wiki/Tests-for-C-library-for-working-with-JSON-data)
+- json-c官方文档：https://github.com/json-c/json-c
+- JSON介绍和使用指南：https://www.json.org/
+- C语言JSON库对比：https://tomsondev.bestsolution.at/2011/06/23/a-very-simple-guide-to-choosing-the-right-json-library-for-your-c-project/

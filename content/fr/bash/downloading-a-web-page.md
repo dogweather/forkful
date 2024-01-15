@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Le téléchargement d'une page web"
+title:                "Le téléchargement d'une page web"
+html_title:           "Bash: Le téléchargement d'une page web"
 simple_title:         "Le téléchargement d'une page web"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,44 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il existe de nombreuses raisons pour lesquelles vous pourriez vouloir télécharger une page web. Vous pourriez vouloir conserver une copie pour consultation hors-ligne, analyser le code source ou extraire des informations spécifiques. Dans cet article, nous allons expliquer comment télécharger une page web en utilisant Bash.
+Vous voulez télécharger une page web pour l'utiliser hors ligne ou pour accéder à son contenu plus tard sans avoir besoin d'une connexion Internet ? Dans cet article, je vais vous montrer comment le faire en utilisant Bash, le langage de script couramment utilisé sur les systèmes d'exploitation basés sur Unix.
 
 ## Comment faire
 
-Le téléchargement d'une page web en utilisant Bash peut sembler compliqué, mais c'est en fait assez simple. Tout d'abord, nous allons utiliser la commande `curl` pour télécharger la page web. Voici un exemple de code :
+Tout d'abord, ouvrez votre terminal et déplacez-vous dans le répertoire où vous souhaitez enregistrer la page web téléchargée. Ensuite, utilisez la commande "wget" suivie de l'URL de la page web que vous souhaitez télécharger. Voici un exemple :
 
 ```Bash
-curl www.exemple.com > page_web.html
+wget https://www.example.com/
 ```
 
-Ce code va télécharger la page web à l'adresse www.exemple.com et la sauvegarder dans un fichier nommé "page_web.html" dans le répertoire courant. Vous pouvez également spécifier un chemin absolu pour enregistrer le fichier.
-
-Si vous voulez télécharger plusieurs pages web en même temps, vous pouvez utiliser un script Bash pour automatiser le processus. Voici un exemple de code qui va télécharger trois pages web différentes :
+Cette commande téléchargera la page d'accueil du site example.com dans le répertoire actuel. Si vous souhaitez enregistrer la page sous un nom de fichier spécifique, utilisez l'option "-O" suivie du nom de fichier de votre choix :
 
 ```Bash
-#!/bin/bash
-
-# Enregistre les pages web dans un répertoire nommé "Pages"
-mkdir Pages
-cd Pages
-
-# Télécharge les pages web
-curl www.exemple1.com > page1.html
-curl www.exemple2.com > page2.html
-curl www.exemple3.com > page3.html
+wget https://www.example.com/ -O example.html
 ```
 
-Maintenant que les pages sont téléchargées, vous pouvez les ouvrir dans votre navigateur ou utiliser des outils comme `grep` pour extraire les informations souhaitées.
+Vous pouvez également utiliser "curl" pour télécharger une page web. La syntaxe est similaire à celle de "wget" :
+
+```Bash
+curl -O https://www.example.com/ -o example.html
+```
+
+La différence est que "curl" téléchargera uniquement la page web spécifiée sans suivre les liens sur cette page.
+
+Une fois que le téléchargement est terminé, vous pouvez ouvrir le fichier dans votre navigateur ou utiliser d'autres outils pour manipuler le contenu téléchargé.
 
 ## Deep Dive
 
-Il est important de noter que les pages web peuvent être dynamiques, c'est-à-dire que leur contenu peut changer en fonction des paramètres ou de l'utilisateur qui y accède. Dans ces cas-là, vous devrez utiliser des outils plus avancés pour télécharger la page web, comme `wget` avec des options pour simuler un navigateur ou activer le support JavaScript.
+Les commandes "wget" et "curl" utilisent toutes deux le protocole HTTP pour télécharger des fichiers. Cela signifie que si une page web utilise des formulaires ou un autre type de contenu interactif, vous ne pourrez pas interagir avec ce contenu de la même manière que vous le feriez en ligne.
 
-De plus, certaines pages web peuvent être protégées par un accès authentifié, comme les sites de médias sociaux ou les forums en ligne. Dans ce cas, vous devrez inclure des informations d'identification dans votre commande `curl` pour pouvoir télécharger la page.
+De plus, si la page web nécessite une authentification, vous devrez spécifier vos identifiants dans la commande pour que le téléchargement puisse être effectué. Consultez la documentation de "wget" et "curl" pour plus d'informations sur l'utilisation des options pour gérer cela.
 
 ## Voir aussi
 
-- [Tutoriel Curl pour télécharger des pages web](https://www.codegrepper.com/code-examples/bash/how+to+download+web+pages+with+curl)
-- [Guide avancé pour télécharger des pages web avec wget](https://www.computerhope.com/unix/wget.htm)
-- [Documentation officielle de curl](https://curl.haxx.se/docs/manpage.html)
-- [Documentation officielle de wget](https://www.gnu.org/software/wget/manual/wget.html)
+- [Documentation "wget"](https://www.gnu.org/software/wget/)
+- [Documentation "curl"](https://curl.haxx.se/docs/)
+- [Guide de survie en ligne de commande pour Bash (en anglais)](https://devhints.io/bash)

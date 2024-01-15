@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: HTML 파싱"
-simple_title:         "HTML 파싱"
+title:                "HTML 구문 분석"
+html_title:           "Fish Shell: HTML 구문 분석"
+simple_title:         "HTML 구문 분석"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-HTML을 파싱하기 위해 누군가가 참여하는 이유는 무엇인가요?
+HTML 파싱을 처음 하려면 많은 사람들이 당황할 수 있습니다. 하지만, Fish Shell을 사용하면 이것이 얼마나 쉬운 작업인지 깨닫게 될 것입니다. 이 기술은 깔끔하고 간편하며, 웹 스크래핑 또는 데이터 추출 등의 다양한 작업에 활용할 수 있습니다.
 
-HTML 파싱은 웹 스크레이핑, 웹 크롤링 및 데이터 마이닝과 같은 웹 데이터 추출 작업에 사용됩니다. 이를 통해 웹 사이트에서 원하는 데이터를 추출하고 분석할 수 있습니다. 또한 프로그래밍적으로 웹 페이지를 조작할 수 있습니다. HTML 파싱은 정보를 얻는데 매우 유용한 도구이며 웹 개발 및 데이터 분석 분야에서 필수적인 기술입니다.
+## 방법
 
-## 이 방법을 사용해보세요
-
-먼저, Fish 쉘을 설치해야 합니다. 그런 다음 새 파일을 만들고 다음 코드를 추가하세요.
+Fish Shell 내에서 HTML 파싱은 매우 간단합니다. 아래의 코드 블록에서 예시 코드와 함께 살펴보겠습니다.
 
 ```Fish Shell
-function parse_html
-  set -l web_data (curl -s <URL>)
-  set -l parsed_data (string match -r '<tag>*(.*)</tag>' $web_data)
-  echo $parsed_data
-end
+# HTML 파일을 다운로드하는 예시.
+curl -O https://example.com/index.html
+
+# 'pup' 이라는 CLI 도구를 사용하여 원하는 태그의 내용을 추출합니다.
+# 여기서는 'h1' 태그의 내용을 추출하도록 하겠습니다.
+pup 'h1' < index.html
+
+# 결과: "환영합니다!" 
 ```
-
-위 코드에서는 Fish 쉘의 기본 함수인 `string match`을 사용하여 지정된 URL의 HTML에서 특정 태그의 내용을 추출하고 출력합니다. `<tag>`는 원하는 태그로 바꿔주시면 됩니다. 위 함수를 사용하면 해당 URL의 HTML에서 원하는 데이터를 추출할 수 있습니다.
-
-예를 들어, 다음과 같은 HTML 코드가 있다고 가정해봅시다.
-
-```HTML
-<div class="wrapper">
-  <h1>파싱 연습</h1>
-  <p>이것은 예제 문장입니다.</p>
-</div>
-```
-
-만약 `p` 태그의 내용을 추출하고 싶다면 다음과 같이 함수를 사용하면 됩니다.
-
-```Fish Shell
-parse_html <URL> | string match -r '<p>*(.*)</p>'
-```
-
-위 코드는 `이것은 예제 문장입니다.`를 출력합니다.
 
 ## 깊이 파고들기
 
-HTML 파싱은 종종 웹 데이터 추출 작업에서 사용되지만, 좀 더 깊이 들어가면 많은 것을 할 수 있습니다. Fish 쉘의 `set` 명령어를 사용하여 추출한 데이터를 변수에 저장하고 다양한 방식으로 사용할 수 있습니다. 또한 `string replace`를 사용하여 추출한 데이터에 대한 추가적인 가공 작업을 수행할 수 있습니다. 이를 통해 웹 사이트에서 원하는 데이터를 추출하고 자신의 목적에 맞게 가공할 수 있습니다.
+Fish Shell에서 HTML 파싱을 할 수 있는 다양한 도구가 있습니다. 우선, 위의 예시에서 사용한 'pup'은 "Parsing HTML at the Command Line" 프로젝트로 유명한 tool입니다. 이 외에도 'hquery'와 'tidy' 등 여러가지 옵션이 있으니 꼭 한 번쯤 찾아보세요.
 
-## 더 읽어보기
+## 관련 링크
 
-- [Fish Shell 공식 페이지](https://fishshell.com/)
-- [웹 데이터 추출을 위한 파이썬 라이브러리](https://www.crummy.com/software/BeautifulSoup/)
-- [웹 스크레이핑과 데이터 마이닝의 차이](https://www.omega-z.com/ko/2019/12/09/web-scraping-vs-data-mining/)
-- [파싱에 대한 다양한 가이드와 자료](https://github.com/XXHolic/fish-commands/wiki/Parsing-guide-and-resources)
+- [Parsing HTML at the Command Line](https://github.com/EricChiang/pup)
+- [hquery - Lightweight HTML Parsing for Shells](https://github.com/npryce/hquery)
+- [tidy - HTML Syntax Checker and Pretty Printer](https://www.html-tidy.org/)
+
+## 참고 자료
+
+이 글에서 소개한 것 외에도 Fish Shell을 활용한 다양한 작업 방법이 있습니다. 자세한 내용은 아래 링크를 참고해보세요.
+
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
+
+그리고 HTML 파싱은 다양한 웹 스크래핑 및 데이터 추출 작업에서 중요한 역할을 합니다. 따라서, 관련 분야에 관심이 있다면 꼭 기초적인 지식을 습득해두시는 것이 좋습니다. 감사합니다.

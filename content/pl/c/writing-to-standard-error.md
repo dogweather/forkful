@@ -1,5 +1,6 @@
 ---
-title:                "C: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "C: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C"
 category:             "C"
@@ -11,52 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się dlaczego niektóre programy wyświetlają błędy na ekranie, a inne wysyłają je do standardowego wyjścia? Czy wiesz, że można wiele zyskać, pisząc błędy do standardowego wyjścia? W tym artykule dowiesz się dlaczego warto pisać do standardowego wyjścia i jak to zrobić.
+Pisanie do standardowego wyjścia błędu może wydawać się niepotrzebnym krokiem w procesie pisania aplikacji w języku C. Jednakże, jest to bardzo ważne narzędzie, które pomaga w diagnozowaniu błędów i utrzymaniu czystego i czytelnego kodu. W tym artykule dowiesz się dlaczego warto pisać do standardowego wyjścia błędu oraz jak to zrobić w praktyce.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby napisać błąd do standardowego wyjścia w języku C, musimy użyć funkcji `fprintf` i przekazać jej `stderr` jako pierwszy argument. Poniżej znajduje się przykładowy kod, który wypisuje wiadomość o błędzie na ekran:
+Przedstawimy teraz przykładowy kod w języku C, który wykorzystuje pisanie do standardowego wyjścia błędu. Załóżmy, że mamy prostą funkcję, która dzieli dwie liczby i zwraca wynik. Chcemy wypisać błąd, jeśli użytkownik poda jako drugą liczbę 0, aby uniknąć dzielenia przez zero.
 
-```C
+```
 #include <stdio.h>
 
-int main() {
-  fprintf(stderr, "Wystąpił błąd!");
-  return 0;
-}
-```
-
-Po uruchomieniu tego programu, zobaczymy wyjście na ekranie:
-
-```
-Wystąpił błąd!
-```
-
-Możemy również przekazać dodatkowe argumenty do funkcji `fprintf`, aby wypisać bardziej szczegółową informację o błędzie. Przykładowo:
-
-```C
-#include <stdio.h>
-
-int main() {
-  int x = 5, y = 0;
+int divide(int x, int y) {
   if (y == 0) {
-    fprintf(stderr, "Dzielenie przez 0: x = %d, y = %d", x, y);
+    fprintf(stderr, "Nie można dzielić przez zero!\n");
+    return -1; // zwracamy kod błędu
   }
+  return x / y;
+}
+
+int main() {
+  int result = divide(10, 0);
+  printf("Wynik: %d\n", result);
   return 0;
 }
 ```
 
-W takim przypadku, zobaczymy na ekranie informację o dzieleniu przez 0, wraz z wartościami zmiennych wykorzystanych w operacji:
+W powyższym przykładzie używamy funkcji `fprintf` z parametrem `stderr`, co oznacza, że tekst zostanie wypisany do standardowego wyjścia błędu. Jest to alternatywny sposób na wypisywanie informacji, gdyż pozwala utrzymać czytelność kodu, a także pozwala na przekazanie dodatkowych informacji na temat błędu.
+
+Po uruchomieniu powyższego programu otrzymamy następujący wynik:
 
 ```
-Dzielenie przez 0: x = 5, y = 0
+Nie można dzielić przez zero!
+Wynik: -1
 ```
 
-## Pogłębiona Analiza
+Widzimy, że pomyślnie wywołaliśmy wypisywanie błędu do standardowego wyjścia błędu oraz otrzymaliśmy poprawną wartość błędu zwróconą przez funkcję `divide`.
 
-Teraz, kiedy wiesz jak pisać błędy do standardowego wyjścia, możesz zastanawiać się dlaczego jest to ważne? Dlaczego niektóre programy wypisują błędy na ekran, a inne korzystają z standardowego wyjścia? Głównym powodem jest to, że standardowe wyjście jest buforowane, co oznacza, że wiadomości tam wypisane zostały zapisane w pamięci do momentu, gdy program zakończy swoje działanie. Dzięki temu, błędy zostają zapisane nawet w przypadku, gdy program kończy się awarią. Co więcej, dzięki wykorzystaniu standardowego wyjścia, programista może kontrolować w jaki sposób i gdzie błędy są zapisywane, co ułatwia późniejsze debugowanie i naprawianie kodu.
+## Deep Dive
+
+Standardowe wyjście błędu jest jednym z trzech standardowych strumieni wyjściowych w języku C, obok standardowego wyjścia i standardowego wyjścia błędu. W odróżnieniu od standardowego wyjścia, które służy do wypisywania danych dla użytkownika, standardowe wyjście błędu służy do wypisywania informacji o błędach. Oznacza to, że jest to bardzo ważne narzędzie do debugowania kodu i poprawnego działania aplikacji.
+
+Jedną z najważniejszych korzyści związanych z pisanie do standardowego wyjścia błędu jest możliwość przekazywania informacji o błędach bez przerywania standardowego wyjścia. Dzięki temu, użytkownik może nadal otrzymywać informacje i wyniki swoich działań, a jednocześnie otrzymać ostrzeżenia o ewentualnych błędach.
+
+Jest też możliwość przekierowania standardowego wyjścia błędu do pliku, co może być przydatne w sytuacji, gdy nie chcemy, aby informacje o błędach wyświetlały się na ekranie użytkownika.
 
 ## Zobacz również
-- [Instrukcja fprintf w języku C](https://www.geeksforgeeks.org/fprintf-in-c/)
-- [Wyjaśnienie pojęcia buforowania](https://www.tutorialspoint.com/What-is-bufferring-in-C-Cplusplus)
-- [Porównanie standardowego wyjścia i standardowego błędu](https://www.oreilly.com/library/view/learning-the-bash/9781491975329/ch04.html)
+
+- [Pisanie do standardowego wyjścia błędu w języku C](https://www.cplusplus.com/reference/cstdio/stderr/)
+- [Obsługa błędów w języku C](https://www.cprogramming.com/tutorial/c/lesson17.html)
+- [Strumienie wyjściowe w języku C](https://www.tutorialspoint.com/cprogramming/c_input_output.htm)

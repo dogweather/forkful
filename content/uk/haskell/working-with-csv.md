@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Робота з CSV"
-simple_title:         "Робота з CSV"
+title:                "Робота з csv"
+html_title:           "Haskell: Робота з csv"
+simple_title:         "Робота з csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,57 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Найпростішим способом роботи зі структурованими даними, такими як таблиці чи бази даних, є робота з форматом CSV. Він дозволяє зберігати дані у зручному для обробки текстовому форматі та легко зчитувати їх у будь-якій програмі. У цій статті ми дізнаємося, як працювати з CSV у Haskell.
+Якщо ви працюєте з даними, шансів свого життя вам вже доводилося працювати з CSV (Comma Separated Values) файлами. CSV є одним з найбільш поширених форматів для зберігання даних, особливо коли маєте справу з великими об'ємами даних.
 
-## Як
+## Як це зробити
 
-Для початку, нам знадобиться імпортувати модуль `Data.CSV`. Він містить усі необхідні типи та функції для роботи з CSV.
-
-```Haskell
-import Data.CSV
-```
-
-Для початку, давайте створимо простий CSV-файл за допомогою функції `saveCSV`:
+Найпростіший спосіб прочитати CSV файл у Haskell - використати пакет "csv". Це можна зробити за допомогою наступного коду:
 
 ```Haskell
-let records = [["Name", "Age"], ["John", "25"], ["Mary", "30"]]
-saveCSV "my_data.csv" records
-```
+import Text.CSV (parseCSV)
 
-Також ми можемо зчитати дані із CSV-файлу за допомогою функції `loadCSV`:
+main = do
+    let csvFile = "file.csv" -- назва вашого файлу
+    input <- readFile csvFile
+    let csv = parseCSV csvFile input
+    print csv
+```
+Після цього ви отримаєте дані у вигляді списку списків рядків.
+
+Якщо потрібно обробити більш складні дані, можна використовувати функції з пакету "cassava". Наприклад, якщо у вас є CSV файл з заголовками стовпців, то за допомогою функції `decodeHeader` ви можете отримати дані у вигляді масиву об'єктів з відповідними назвами полів.
 
 ```Haskell
-csvData <- loadCSV "my_data.csv"
+import Data.Csv (decodeHeader)
+
+main = do
+    let csvFile = "file.csv" -- назва вашого файлу
+    input <- readFile csvFile
+    case decodeHeader input of
+        Left err -> putStrLn err
+        Right rows -> print rows
 ```
 
-Тепер ми маємо зчитані дані у вигляді `[[Field]]`, де кожен елемент це рядок CSV-файлу. Ми можемо перетворити ці дані у більш зручну структуру, наприклад, у список записів:
+## Глибоке погруження
 
-```Haskell
-let records = map recordToPerson csvData
-where recordToPerson [name, age] = Person name (read age)
-```
+Цей приклад є досить простим і не враховує багатьох ситуацій, які можуть виникнути під час роботи з CSV файлами. Наприклад, вам можуть знадобитися додаткові функції для парсингу конкретних типів даних або обробки помилок. Для цього можна ознайомитися з іншими пакетами, такими як "cassava" або "csv-conduit".
 
-Тепер залишилося тільки зробити функцію `recordToPerson`, яка перетворює список полів у структуру `Person`, а також описати тип даних `Person`:
+## Дивіться також
 
-```Haskell
-data Person = Person { name :: String, age :: Int }
-    deriving Show
-```
-
-Готово, тепер ми можемо зберегти дані у вигляді списку записів у CSV-файл, використовуючи функцію `saveCSV`.
-
-У Haskell також є багато інших цікавих функцій для роботи з CSV, таких як `parseCSV`, `printCSV`, `encodeCSV` та інші. Для більш детальної інформації, перегляньте документацію до модуля `Data.CSV`.
-
-## Глибокий занурення
-
-Розглянемо дещо складніший приклад. Допустимо, ми маємо CSV-файл з даними про ринкову ціну акцій, у форматі `Symbol, Date, Open, High, Low, Close`. Нам потрібно зчитати ці дані та знайти максимальну ціну за кожен символ.
-
-Спершу, зчитаємо файл та перетворимо його у список записів:
-
-```Haskell
-csvData <- loadCSV "stocks.csv"
-let records = map recordToStock csvData
-    where recordToStock [symbol, date, open, high, low, close] = Stock symbol date (read open) (read high) (read low) (read close)
-```
-
-Тепер ми можемо використати функцію `groupWith` з модуля `Data.List` для групування записів за символом та знаходження максималь
+- [Пакет csv у Hackage](https://hackage.haskell.org/package/csv)
+- [Пакет cassava у Hackage](https://hackage.haskell.org/package/cassava)
+- [Пакет csv-conduit у Hackage](https://hackage.haskell.org/package/csv-conduit)

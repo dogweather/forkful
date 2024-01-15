@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Gleam: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,25 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie plików tekstowych jest podstawową umiejętnością w programowaniu. Jest to kluczowy element procesu tworzenia oprogramowania i pozwala na zapisywanie i odczytywanie danych w wygodnej formie. Bez pisania tekstowych plików, wiele zadań programistycznych byłoby znacznie trudniejszych do wykonania.
+Pisanie plików tekstowych jest niezbędnym procesem w programowaniu i może być wymagane w różnych sytuacjach, takich jak tworzenie aplikacji webowych czy obsługa bazy danych. Jest to nie tylko umiejętność potrzebna w codziennym życiu programisty, ale także ważna w dzisiejszym świecie technologii.
 
 ## Jak to zrobić
 
-Aby napisać plik tekstowy w języku programowania Gleam, wystarczy użyć funkcji `File.write/2`. Przykładowe użycie tej funkcji wyglądałoby następująco:
+Język programowania Gleam oferuje prosty i intuicyjny sposób na pisanie plików tekstowych. Można to zrobić za pomocą funkcji `File.write`, która przyjmuje dwa argumenty: ścieżkę do pliku i zawartość, którą chcemy zapisać. Poniżej przedstawiony jest przykład użycia tej funkcji wraz z wyjściem:
 
 ```Gleam
-let text = "To jest przykładowy tekst do zapisania w pliku."
-let result = File.write("plik.txt", text)
+let file_path = "moj_plik.txt"
+
+let content = "To jest przykładowy tekst, który zostanie zapisany w moim pliku."
+
+File.write(file_path, content)
 ```
 
-Powyższy kod tworzy nowy plik o nazwie `plik.txt` i zapisuje w nim tekst zawarty w zmiennej `text`. Następnie, funkcja `File.write/2` zwraca wartość typu `Result<(), std::error::Error>`, co oznacza, że plik został pomyślnie zapisany lub wystąpił błąd.
+Po uruchomieniu tego kodu, w folderze, w którym znajduje się plik, zostanie utworzony plik tekstowy z podaną ścieżką i zawartością. Pamiętaj, że ścieżka może być podana jako względna lub bezwzględna, w zależności od tego, jak chcesz organizować swoje pliki.
 
-## Wnikliwa analiza
+## Głębsze zanurzenie
 
-Pisząc pliki tekstowe w języku Gleam, warto zwrócić uwagę na dwa kluczowe elementy: formatowanie tekstu i obsługa błędów. Aby mieć pewność, że plik zostanie poprawnie odczytany przez inne programy, należy dostosować odpowiednio formatowanie, np. użyć odpowiedniej kodowania znaków. Ponadto, należy użyć funkcji `Error.to_string/1` w celu uzyskania informacji o konkretnym błędzie, jeśli taki się pojawi.
+Podczas pisania plików tekstowych za pomocą języka Gleam, warto pamiętać, że istnieje wiele możliwości manipulacji nimi. Możliwe jest na przykład odczytanie zawartości już istniejącego pliku, dopisywanie do istniejącego pliku, czy też tworzenie nowych plików w różnych miejscach.
 
-## Zobacz także
+Dzięki dostępnym bibliotekom i funkcjom w Gleam, możliwości są nieograniczone i z łatwością można dostosować pisanie plików tekstowych do własnych potrzeb. Warto również pamiętać o obsłudze wyjątków, aby nasz program był bezpieczny i nie powodował błędów.
 
-- Dokumentacja języka Gleam (https://gleam.run)
-- Przykład wykorzystania funkcji `File.write/2` (https://github.com/gleam-lang/gleam/blob/master/lib/gleam_stdlib/src/gleam/fs/file.gleam#L45)
-- Poradnik na temat pisania plików tekstowych w języku Gleam (https://medium.com/@gleamlang/creating-a-file-in-gleam-3f8720ab1b0d)
+## Zobacz również
+
+- Dokumentacja Gleam: [https://gleam.run/](https://gleam.run/)
+- Biblioteka standardowa Gleam: [https://github.com/gleam-lang/gleam_stdlib](https://github.com/gleam-lang/gleam_stdlib)
+- Przykładowe projekty w Gleam: [https://github.com/gleam-lang/awesome-gleam](https://github.com/gleam-lang/awesome-gleam)

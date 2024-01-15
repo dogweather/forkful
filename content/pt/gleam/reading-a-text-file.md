@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lendo um arquivo de texto."
-simple_title:         "Lendo um arquivo de texto."
+title:                "Lendo um arquivo de texto"
+html_title:           "Gleam: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que ler um arquivo de texto em Gleam?
+## Por que
 
-Se você está iniciando sua jornada na programação ou já é um programador experiente, a leitura de arquivos de texto é uma tarefa fundamental para várias aplicações. Com Gleam, uma linguagem de programação funcional moderna, é possível ler e manipular arquivos de texto de forma simples e eficiente. Neste artigo, vamos explorar como realizar essa tarefa em Gleam e aprofundar nossos conhecimentos sobre o assunto.
+Ler arquivos de texto é uma tarefa comum na programação, seja para extrair informações de um documento ou para processar dados de entrada. Aprender a ler arquivos de texto em Gleam pode expandir suas habilidades de programação e permitir que você trabalhe com diferentes tipos de dados.
 
-## Como fazer
+## Como Fazer
 
-A primeira etapa para ler um arquivo de texto em Gleam é importar o módulo `gleam` e seus submódulos `io` e `file`. Em seguida, utilizamos a função `File.read()` para ler o conteúdo de um arquivo de texto. Vamos dar uma olhada em um exemplo de código para entender melhor:
+A seguir, mostraremos como ler um arquivo de texto passo a passo com exemplos de código Gleam e a saída correspondente. Primeiro, você precisará definir um tipo para representar o conteúdo do arquivo:
 
 ```Gleam
-import gleam/io
-import gleam/file
-
-let file = "/caminho/para/o/arquivo.txt"
-let conteudo = File.read(file)
-
-io.print("O conteúdo do arquivo é:")
-io.print(conteudo)
+type FileContent {
+  lines: List(String)
+}
 ```
 
-Neste código, importamos os módulos necessários e em seguida, utilizamos a função `File.read()` para ler o conteúdo do arquivo de texto. Por fim, imprimimos o conteúdo do arquivo utilizando a função `print()` do módulo `io`. Ao executar esse código, o resultado seria algo como:
+Em seguida, importe o módulo `gleam/fs` para acessar as funções de leitura de arquivos:
 
+```Gleam
+import gleam/fs
+
+pub fn read_file(path: String) -> FileContent {
+  let result = fs.read_file(path)
+
+  case result {
+    Ok(contents) -> FileContent { lines: String.split("\n", contents) }
+    Error(err) -> panic(err)
+  }
+}
 ```
-O conteúdo do arquivo é:
-Este é um arquivo de texto!
+
+Aqui, criamos uma função `read_file` que usa a função `fs.read_file` para ler o conteúdo de um arquivo e, em seguida, separar as linhas em uma lista de strings. Agora, podemos chamar essa função para ler um arquivo e ver a saída:
+
+```Gleam
+let file_content = read_file("exemplo.txt")
+
+let primeira_linha = List.get(0, file_content.lines)
+let segunda_linha = List.get(1, file_content.lines)
+
+Assert.equal(file_content.lines, ["Este é um texto de exemplo.", "Ele contém algumas linhas para ler."])
+Assert.equal(primeira_linha, "Este é um texto de exemplo.")
+Assert.equal(segunda_linha, "Ele contém algumas linhas para ler.")
 ```
 
-## Mergulho Profundo
+Ao extrair as linhas em uma lista, podemos acessá-las individualmente e compará-las com o que esperamos. Isso também nos permite trabalhar com o conteúdo do arquivo de maneira mais flexível e aplicar quaisquer transformações necessárias.
 
-Além de simplesmente ler o conteúdo de um arquivo, podemos realizar diversas manipulações utilizando recursos de Gleam. Por exemplo, podemos utilizar a função `String.split()` para dividir o conteúdo do arquivo em linhas ou palavras, ou ainda utilizar a função `String.slice()` para extrair partes específicas do conteúdo. Também é possível utilizar o módulo `io` para escrever em um arquivo de texto utilizando a função `io.write()`.
+## Deep Dive
 
-Outro recurso interessante é o `pattern matching`, que pode ser utilizado para processar o conteúdo do arquivo de forma mais precisa. Podemos, por exemplo, utilizar `match` para verificar se determinadas palavras ou padrões estão presentes no texto e tomar ações diferentes de acordo com cada caso.
+Embora tenhamos mostrado como ler um arquivo de texto simples neste artigo, é importante notar que existem muitas outras opções e métodos disponíveis no módulo `gleam/fs` para a leitura de arquivos de texto. Você pode aprender mais sobre eles lendo a documentação oficial do Gleam ou explorando por conta própria.
 
-A leitura de arquivos de texto em Gleam é uma tarefa versátil e essencial para diversas aplicações. Com os recursos e funcionalidades da linguagem, é possível realizar manipulações sofisticadas e automatizar processos de forma eficiente.
+Além disso, tenha em mente que a leitura de arquivos de texto pode envolver outras tarefas, como tratamento de erros e conversão de tipos de dados. É importante ter uma compreensão sólida desses conceitos para ler e manipular arquivos de texto com eficiência.
 
-# Veja também
+## Veja Também
 
-1. [Documentação oficial de Gleam](https://gleam.run/)
-2. [Guia de introdução à programação funcional com Gleam](https://dev.to/gleam_lang/an-introduction-to-functional-programming-with-gleam-2h57)
-3. [Exemplos práticos de Gleam no GitHub](https://github.com/search?q=language%3Agleam)
+- [Documentação Oficial do Gleam](https://gleam.run/documentation)
+- [Módulo `gleam/fs`](https://gleam.run/modules/gleam_fs.html)
+- [Exemplos de leitura de arquivos em Gleam](https://github.com/search?q=language%3Agleam+fs.read_file&type=Code)

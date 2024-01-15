@@ -1,6 +1,7 @@
 ---
-title:                "Python: Tarkastetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkastetaan, onko hakemistoa olemassa"
+title:                "Tarkistetaan löytyykö hakemistoa"
+html_title:           "Python: Tarkistetaan löytyykö hakemistoa"
+simple_title:         "Tarkistetaan löytyykö hakemistoa"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,50 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa onko hakemistoa olemassa?
+## Miksi
 
-On tärkeää tietää, onko hakemistoa olemassa, jotta voidaan varmistaa ohjelman sujuva toiminta ja estää mahdolliset virheet. Tarkistamalla ensin, onko hakemisto olemassa, voidaan välttää turhia ongelmia.
+Voit joutua tarkistamaan, onko hakemisto olemassa, jos haluat varmistaa, että tiettyä tiedostopolkua voidaan käyttää, ennen kuin suoritat tietyt koodirivit.
 
-## Kuinka tarkistaa olemassa oleva hakemisto Pythonilla
+## Kuinka
 
-Tarkistamiseen on olemassa useita tapoja, mutta yksi kätevin ja yksinkertaisin tapa on käyttää `os` -kirjastoa ja sen `path.exists()` -funktiota. Tämä funktio tarkistaa, onko annettu polku olemassa ja palauttaa `True` tai `False` arvon sen perusteella. Katso alla olevaa koodiesimerkkiä:
-
-```Python
+```python
+# Tarkista, onko hakemisto olemassa
 import os
 
-# määritetään polku hakemistoon, jota halutaan tarkistaa
-polku = "/kansio/hakemisto"
-
-# tarkistetaan onko polku olemassa ja tallennetaan palautettu arvo muuttujaan
-onko_olemassa = os.path.exists(polku)
-
-# tulostetaan tulos
-print(onko_olemassa)
+hakemisto = "/Users/kayttaja/Documents"
+if os.path.exists(hakemisto):
+  print("Hakemisto on olemassa.")
+else: 
+  print("Hakemistoa ei ole olemassa.")
 ```
 
-Tulostus:
-```
-True
-```
+Tämä yksinkertainen esimerkkikoodi käyttää Pythonin "os" -moduulia tarkistaakseen, onko hakemisto olemassa. Jos hakemisto on olemassa, koodi tulostaa viestin, joka ilmoittaa siitä. Muussa tapauksessa tulostetaan toinen viesti.
 
-## Syvällisempi perehtyminen hakemistojen tarkistamiseen
+## Syvällinen perehtyminen
 
-Vaikka `path.exists()` on kätevä ja helppokäyttöinen funktio, on hyvä tietää myös muita mahdollisia tapoja tarkistaa hakemistoja. Esimerkiksi `os.listdir()` -funktio palauttaa listan kaikista hakemiston tiedostoista ja kansioista, jotka voidaan sitten käydä läpi ja tarkistaa halutun hakemiston olemassaolo. Tämä voi olla hyödyllistä, jos halutaan tarkistaa hakemistoja, jotka eivät ole suoraan annetulla polulla.
-
-Lisäksi, jos halutaan luoda uusi hakemisto, mikäli sitä ei ole, voidaan käyttää `os.makedirs()` -funktiota, joka luo tarvittaessa myös välipolkuja. Esimerkiksi:
-
-```Python
-import os
-
-# määritetään polku uudelle hakemistolle
-polku = "/uusi_hakemisto/alihakemisto"
-
-# luodaan hakemisto ja välipolku tarvittaessa
-os.makedirs(polku)
-```
+Tarkistaessamme, onko hakemisto olemassa, käytämme "os.path.exists" -funktiota, joka palauttaa True tai False, riippuen siitä, löytyykö määritetty polku. Tällä tavoin voimme ensin tarkistaa hakemiston olemassaolon ennen kuin käytämme sitä esimerkiksi tiedostojen avaamiseen tai tallentamiseen.
 
 ## Katso myös
 
-- `os` -kirjaston virallinen dokumentaatio: https://docs.python.org/3/library/os.html
-- `pathlib` -kirjasto, joka tarjoaa uudemman ja helpommin käytettävän tavan käsitellä polkuja: https://docs.python.org/3/library/pathlib.html
-- Lisätietoa Python-ohjelmoinnista ja hakemistojen käsittelystä: https://realpython.com/working-with-files-in-python/
+- Pythonin "os" -moduuli: https://docs.python.org/3/library/os.html
+- Tiedostopolun tarkistamisesta kohti hakemistoa: https://www.journaldev.com/20562/python-check-if-file-directory-exists

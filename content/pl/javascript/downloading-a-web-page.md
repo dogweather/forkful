@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Javascript: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pobieranie strony internetowej jest ważne?
+## Dlaczego
 
-Pobieranie strony internetowej jest bardzo ważną częścią codziennej pracy programistów. Pozwala ono na wyświetlenie danych, treści i grafik w przystępnej formie dla użytkownika. Bez tego procesu, użytkownicy nie mogliby wygodnie korzystać z internetu.
+Pobieranie stron internetowych jest jednym z podstawowych zadań programistów, którzy pracują z językiem Javascript. Jest to niezbędne do pozyskania danych z sieci, tworzenia automatycznych skryptów lub tworzenia spersonalizowanych aplikacji internetowych. Dzięki temu procesowi możliwe jest uzyskanie wielu informacji, które można później wykorzystać w różnych celach.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Kodowanie pobierania strony internetowej może wydawać się trudne, ale jest to w rzeczywistości bardzo proste dzięki językowi programowania Javascript. Korzystając z prostych metod i funkcji, możesz pobrać stronę internetową i wyświetlić jej zawartość w kilku prostych krokach.
+Aby pobrać stronę internetową za pomocą Javascript, można skorzystać z wbudowanej funkcji "fetch". Poniżej przedstawiamy przykładowy kod, który pobierze stronę główną Google i wyświetli jej treść w konsoli.
 
 ```Javascript
-// Definicja funkcji pobierającej stronę internetową
-function pobierzStrone(linkStrony) {
-   var request = new XMLHttpRequest(); // Tworzenie nowego obiektu XMLHttpRequest
-   request.open('GET', linkStrony, true); // Otwarcie połączenia z linkiem strony
-   request.onload = function() { // Reakcja na załadowanie strony
-      if (this.status >= 200 && this.status < 400) {
-         // Jeśli pobieranie było udane (status pomiędzy 200 a 400)
-         var data = this.response; // Zwrócenie pobranych danych jako tekstu
-         console.log(data); // Wyświetlenie danych w konsoli
-      } else {
-         // Jeśli wystąpił błąd
-         console.log('Błąd pobierania strony.');
-      }
-   };
-   request.send(); // Wysłanie zapytania i pobranie strony
-}
-
-// Wywołanie funkcji z linkiem do strony
-pobierzStrone('https://www.example.com');
+fetch('https://www.google.com')
+.then(response => response.text())
+.then(data => console.log(data));
 ```
 
-## Głębszy wgląd
+Output:
 
-Powyższy kod pokazuje prosty sposób na pobranie strony internetowej. Jednak w przypadku bardziej skomplikowanych stron, może być konieczne wykorzystanie dodatkowych funkcji, takich jak przetwarzanie danych otrzymanych z serwera lub obsługa różnych typów odpowiedzi. Warto także pamiętać o zabezpieczeniach, takich jak uwierzytelnianie, gdy pobierasz strony internetowe z ograniczonym dostępem.
+```Text
+<!DOCTYPE html>
+<html>
+<head>
+...
+</head>
+<body>
+...
+</body>
+</html>
+```
+
+Możliwe jest również wykorzystanie biblioteki zewnętrznej, takiej jak "axios" lub "request", aby ułatwić proces pobierania. Ważne jest również zrozumienie sposobu budowy zapytań HTTP i przekazywania parametrów, takich jak nagłówki czy dane formularza.
+
+## Pogłębiona analiza
+
+Pobieranie stron internetowych za pomocą Javascript może być skomplikowanym procesem. Wymaga to wiedzy na temat protokołu HTTP, struktury HTML oraz sposobu przetwarzania danych przez przeglądarkę. Dlatego, warto poświęcić czas na dokładne zapoznanie się z dokumentacją i wykorzystanie narzędzi programistycznych, takich jak narzędzia deweloperskie w przeglądarce czy debugger.
 
 ## Zobacz również
 
-- [Dokumentacja języka Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
-- [Poradnik dla początkujących w pobieraniu danych z internetu](https://www.w3schools.com/xml/xml_http.asp)
-- [Przykład wykorzystania pobierania strony w projekcie](https://github.com/example/pobieranie-strony)
+- [Dokumentacja funkcji "fetch" na MDN](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch)
+- [Dokumentacja biblioteki "axios"](https://github.com/axios/axios)
+- [Dokumentacja biblioteki "request"](https://github.com/request/request)

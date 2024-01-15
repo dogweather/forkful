@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 一時ファイルを作成する"
-simple_title:         "一時ファイルを作成する"
+title:                "一時ファイルの作成"
+html_title:           "Haskell: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-一時的なファイルを作成することについて、なぜ取り組むべきかを説明します。
 
-一時的なファイルを作成する最も一般的な理由は、プログラムの実行中に一時的な情報を保存する必要がある場合です。例えば、大量のデータを処理するプログラムで一時ファイルを使用することで、メモリの使用量を減らすことができます。
+一時ファイルを作成する理由はいくつかあります。最も一般的な理由は、プログラムが実行中に、一時的にデータを保存する必要がある場合です。例えば、大量のデータを処理する必要がある場合や、データベースや他の外部リソースへのアクセスが必要な場合などが挙げられます。
 
 ## 作り方
-まず、一時ファイルを扱うためのモジュールをインポートする必要があります。
+
+Haskellでは、一時ファイルを作成するための便利な関数が用意されています。```System.IO```モジュール内にある```withTempFile```関数を使うことで、簡単に一時ファイルを作成することができます。以下のコードを参考にしてください。
 
 ```Haskell
 import System.IO
-import System.Directory
+
+main :: IO ()
+main = do
+  withTempFile "mytempfile.txt" $ \tmpFilePath tmpHandle -> do
+    -- ここでtmpHandleを使ってファイルに書き込むなどの処理を行う
 ```
 
-次に、`withTempFile`関数を使用して一時ファイルを作成します。
-
-```Haskell
-withTempFile :: FilePath -> String -> (FilePath -> Handle -> IO a) -> IO a
-```
-
-この関数は、3つの引数を取ります。`FilePath`は一時ファイルの保存先を指定します。`String`は一時ファイルの接頭辞となる文字列です。そして、最後の引数は一時ファイルが作成された後に実行される関数です。
-
-例えば、次のようなコードを書くことで、一時ファイルを作成し、データを書き込み、読み込むことができます。
-
-```Haskell
-withTempFile "tmp/" "example" $ \fileName handle -> do
-    hPutStrLn handle "Hello World"
-    hGetContents handle
-```
-
-上記のコードでは、"tmp/"というディレクトリに"example"という接頭辞を持つ一時ファイルが作成されます。そして、`hPutStrLn`関数を使用してテキストを書き込み、`hGetContents`関数を使用してそのテキストを読み込んでいます。
+上記のコードでは、```withTempFile```関数を使って```mytempfile.txt```という名前の一時ファイルを作成し、```tmpHandle```というファイルハンドル（ファイルを操作するためのオブジェクト）を受け取っています。その後、```tmpHandle```を使ってファイルに対する処理を行います。プログラムが終了すると、一時ファイルは自動的に削除されます。
 
 ## 深堀り
-一時ファイルを作成する際には、ファイル名の重複に注意が必要です。`withTempFile`関数では、自動的にユニークなファイル名を生成して改名するため、ファイル名の重複を心配する必要はありません。
 
-また、一時ファイルを作成する際には、後で削除する必要があるため、`withTempFile`関数の最後に`removeFile`関数を使用して一時ファイルを削除することをお勧めします。
+一時ファイルを作成するには、プログラムが実行中にファイルを作成し、操作する必要があります。また、プログラムが終了するときには、作成した一時ファイルを削除する必要があります。```withTempFile```関数を使うことで、これらの作業を簡単かつ安全に行うことができます。また、```withTempFile```関数は、一時ファイルのパスとファイルハンドルを受け取るコールバック関数を必要とします。このコールバック関数を使うことで、一時ファイルに対する処理を行うことができます。
 
-## 参考リンク
-- [Haskellの公式ドキュメント](https://downloads.haskell.org/~ghc/8.10.3/docs/html/libraries/base-4.14.1.0/System-IO.html#v:withTempFile)
-- [Real World Haskellのチュートリアル](http://book.realworldhaskell.org/read/io.html#id773870)
+## 関連リンク
 
-## 参考
-[Haskellで一時ファイルを作成する](https://example.com)
+- [HaskellのSystem.IOモジュールのドキュメント](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
+- [Haskellで一時ファイルを作成する方法](https://www.stackbuilders.com/tutorials/haskell/temporary-files/)

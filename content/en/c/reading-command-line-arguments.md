@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Reading command line arguments"
+title:                "Reading command line arguments"
+html_title:           "C recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "C"
 category:             "C"
@@ -11,54 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Command line arguments are a fundamental aspect of programming in the C language. They allow users to pass parameters to a program at runtime, providing a versatile and efficient way to interact with the program. As a C programmer, it is essential to understand how to read and process command line arguments to create robust and user-friendly programs.
+Curious about how to make your C programs more flexible? One way is to utilize command line arguments, which allows users to give inputs when running the program. It can greatly enhance your program's capabilities and make it more user-friendly.
 
 ## How To
 
-To read command line arguments in C, we use the **argc** and **argv** parameters in the **main** function. **argc** stands for "argument count" and represents the number of command line arguments passed to the program. **argv** stands for "argument vector" and is an array of strings that contains the actual command line arguments.
-
-Let's look at an example of a simple program that takes in two command line arguments and displays them on the screen:
+To start, we need to declare the main function with two parameters, `argc` and `argv`. These represent the number of arguments and the actual arguments given by the user, respectively. 
 
 ```C
-#include <stdio.h>
-
 int main(int argc, char *argv[]) {
-	// Check if two arguments are passed
-	if (argc == 3) {
-		// Display the first argument
-		printf("First argument: %s\n", argv[1]);
-		// Display the second argument
-		printf("Second argument: %s\n", argv[2]);
-	}
-	else {
-		// Display an error message
-		printf("Invalid number of arguments. Please provide two arguments.\n");
-	}
-
-	return 0;
+  // code goes here
 }
 ```
 
-**Sample output:**
+Now, let's take a look at how we can access and use these command line arguments. The first argument, `argv[0]`, is always the name of the program itself. The rest of the arguments can be accessed using their corresponding indices. For example, if the user runs the program with `./myprogram arg1 arg2`, then `argv[1]` will contain `arg1` and `argv[2]` will contain `arg2`.
+
+```C
+// program to print out all the command line arguments
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+  for (int i = 1; i < argc; i++) {
+    printf("Argument %d: %s\n", i, argv[i]);
+  }
+  return 0;
+}
+```
+
+**Sample Output:**
 
 ```
-$ ./program arg1 arg2
-First argument: arg1
-Second argument: arg2
+Argument 1: arg1
+Argument 2: arg2
 ```
 
-In the above example, we use the **argc** parameter to check if the user has provided the correct number of arguments. If so, we use **argv** to access the individual arguments and display them on the screen. It is essential to note that **argv[0]** will always contain the name of the program itself.
+It's important to note that the arguments are always read as strings, so you may need to convert them to the appropriate data type if needed.
 
 ## Deep Dive
 
-When working with command line arguments, it is crucial to consider potential errors and unexpected input from the user. For example, what if the user provides more or fewer arguments than expected? It is the programmer's responsibility to handle such scenarios gracefully.
+Now, let's dive a bit deeper into reading command line arguments. You may be wondering what the `argc` parameter is for. It is simply counting the number of arguments passed in, including the program name itself. So in the above example, `argc` would have a value of 3.
 
-One way to handle errors is to use conditional statements, as shown in the above example. However, there are other techniques such as using loops and the **strcmp()** function to compare strings. It is also possible to convert strings to numerical values using functions like **atoi()** and **atof()**.
+Another useful function to know is `atoi()`, which converts a string to an integer. This can be helpful if you want to perform mathematical operations on the command line arguments.
 
-Additionally, it is worth noting that the position and order of the command line arguments matter. For instance, if we swap the arguments in the above example, the output will also change. It is essential to consider these nuances when designing a program that relies on command line arguments.
+```C
+// program to find the sum of two command line arguments
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+  int num1 = atoi(argv[1]);
+  int num2 = atoi(argv[2]);
+  int sum = num1 + num2;
+  printf("Sum of %d and %d is %d\n", num1, num2, sum);
+  return 0;
+}
+```
+
+**Sample Output:**
+
+```
+Sum of 10 and 20 is 30
+```
+
+You can also use nested loops or conditional statements to perform different actions based on the arguments given by the user.
 
 ## See Also
 
-- [Command Line Arguments in C Programming](https://www.programiz.com/c-programming/c-command-line-arguments)
-- [Using Command-Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [C - Command Line Arguments](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [C Command Line Arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Taking Command Line Arguments in C](https://www.tutorialspoint.com/taking-command-line-arguments-in-c-cplusplus)
+- [How to Use Command Line Arguments in C Programs](https://www.dummies.com/programming/c/how-to-use-command-line-arguments-in-c-programs/)

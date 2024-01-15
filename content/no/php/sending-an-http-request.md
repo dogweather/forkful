@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Send en http-forespørsel"
+html_title:           "PHP: Send en http-forespørsel"
+simple_title:         "Send en http-forespørsel"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,32 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+[//]: #
+
 # Hvorfor
 
-Det å sende en HTTP forespørsel er en av de mest grunnleggende handlingene i webskraping og webutvikling. Det lar deg hente data, sende informasjon og utføre andre handlinger på eksterne nettsider. Uten dette viktige konseptet ville det vært vanskelig å interagere med andre nettsteder og lage dynamiske og interaktive applikasjoner.
+Å sende en HTTP forespørsel er en essensiell del av webutvikling. Dette lar deg kommunisere med et annet program eller en server for å hente eller sende data. Dette er spesielt nyttig for å integrere tjenester og data mellom forskjellige applikasjoner.
 
 # Hvordan
 
-For å sende en HTTP forespørsel i PHP, trenger du bare å bruke funksjonen `file_get_contents ()`. Dette vil lage en forespørsel til en bestemt URL og returnere innholdet på den siden som en streng. La oss si for eksempel at vi vil hente data fra Google sin søkemotor:
+For å sende en HTTP forespørsel i PHP, bruker du funksjonen `file_get_contents()`. Denne funksjonen tar URL'en som argument og returnerer innholdet av den spesifiserte URL'en. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```PHP
 <?php
-$response = file_get_contents("https://www.google.com/search?q=web scraping");
+$url = "https://www.example.com";
+$content = file_get_contents($url);
+echo $content;
+?>
+```
+Outputen vil være HTML-innholdet til www.example.com.
 
-echo $response;
+Hvis du ønsker å sende en POST forespørsel i stedet, kan du bruke funksjonen `file_put_contents()`. Denne funksjonen tar også URL'en som argument, men lar deg også spesifisere innholdet som skal sendes. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-// Output: Det returnerte innholdet på Google sin søkeside om web skraping
+```PHP
+<?php
+$url = "https://www.example.com";
+$data = array(
+    'username' => 'Brukernavn',
+    'password' => 'Passord'
+);
+$options = array(
+    'http' => array(
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    )
+);
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+echo $result;
 ?>
 ```
 
-Dette er det grunnleggende konseptet bak HTTP forespørsler i PHP. Du kan også legge til ekstra parametere i forespørselen, for eksempel å sende en POST-forespørsel eller spesifisere HTTP-hodene. Dette gir deg mer kontroll og fleksibilitet når du samhandler med et nettsted.
+Dette eksempelet sender en POST forespørsel til www.example.com med brukernavn og passord, og returnerer resultatet av forespørselen.
 
 # Dypdykk
 
-Når du har forstått hvordan du sender enkle HTTP forespørsler, kan du begynne å dykke dypere inn i konseptet. For eksempel kan du lære om hvordan du håndterer eventuelle feil som kan oppstå under sending av en forespørsel, og hvordan du håndterer autentisering og sikkerhet. Du kan også utforske forskjellige biblioteker og verktøy som kan hjelpe deg med å håndtere HTTP forespørsler mer effektivt.
+I tillegg til å bruke `file_get_contents()` og `file_put_contents()` funksjonene, kan du også bruke PHPs innebygde cURL bibliotek for å sende HTTP forespørsler. Dette gir deg mer kontroll over forespørselen og lar deg blant annet spesifisere forskjellige typer forespørsler (GET, POST, PUT, DELETE) og tilpasse forespørselens header.
+
+Her er et eksempel på hvordan du kan bruke cURL til å sende en GET forespørsel:
+
+```PHP
+<?php
+$url = "https://www.example.com";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result = curl_exec($ch);
+curl_close($ch);
+echo $result;
+?>
+```
+
+Dette eksempelet oppretter en cURL-sesjon, setter URL'en som skal åpnes, og returnerer innholdet i stedet for å skrive det til skjermen. Deretter stenges sesjonen og innholdet skrives til skjermen.
 
 # Se også
 
-* [PHP offisiell dokumentasjon for file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-* [En omfattende guide til PHP HTTP forespørsler](https://www.taniarascia.com/how-to-use-php-curl-and-http-requests/) (på engelsk)
-* [En enkel guide for å sende HTTP forespørsler med PHP](https://hackernoon.com/how-to-send-http-requests-using-php-easily-773f95292aaf) (på engelsk)
+- [PHP Manual: Funksjonen file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [PHP Manual: Funksjonen file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- [PHP Manual: cURL biblioteket](https://www.php.net/manual/en/book.curl.php)

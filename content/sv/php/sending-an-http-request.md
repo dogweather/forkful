@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Att skicka en http-förfrågan"
-simple_title:         "Att skicka en http-förfrågan"
+title:                "Sända en http-begäran"
+html_title:           "PHP: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,46 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att skicka HTTP-förfrågningar är en viktig del av många webbutvecklingsprojekt. Det är ett sätt att få data från en annan server, använda data från ett API eller göra en åtkomst kontroll för att avgöra vilka användare som är tillåtna att använda en viss resurs. Det är också ett sätt att interagera med andra webbtjänster och skapa dynamiska webbapplikationer.
+Om du utvecklar en webbapplikation eller arbetar med webb-API:er, kan det vara nödvändigt att skicka en HTTP-förfrågan. Detta är grunden för hur din applikation kommunicerar med andra servrar och får tillgång till data och funktioner som erbjuds.
 
-##Så här gör du
+## Så här gör du
 
-För att skicka en HTTP-förfrågan i PHP använder man funktionen `curl_init()`. Denna funktion returnerar ett cURL-hanteringsobjekt som man sedan kan använda för att konfigurera och utföra förfrågningar.
+För att skicka en HTTP-förfrågan i PHP behöver du först använda dig av funktionen `curl_init()`. Här anger du den URL du vill skicka förfrågan till och väljer även eventuella parametrar, headers eller metoder.
 
 ```PHP
-<?php
-// Skapa cURL-hanteringsobjekt
-$ch = curl_init();
+// Skapa en curl-instans
+$ch = curl_init("https://example.com/api/users");
 
-// Ange URL till den server som förfrågan ska skickas till
-curl_setopt($ch, CURLOPT_URL, "http://www.example.com/api/data");
-
-// Sätt önskad åtgärd för förfrågan (GET, POST, PUT, DELETE, etc.)
+// Ange önskad metod
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 
-// Utför förfrågan och lagra resultatet i en variabel
-$result = curl_exec($ch);
+// Ange önskade headers
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Authorization: Bearer 12345abcde'
+]);
 
-// Stäng cURL-resursen
-curl_close($ch); 
+// Exekvera förfrågan och spara svar i en variabel
+$response = curl_exec($ch);
 
-// Skriv ut resultatet
-echo $result;
-?>
+// Stäng curl-instansen
+curl_close($ch);
+
+// Visa svar i konsolen
+echo $response;
 ```
 
-Resultatet av denna förfrågan skulle vara data från den anropade URL:en, som man sedan kan använda för att bygga sin webbapplikation.
+Detta kommer att skicka en GET-förfrågan till URL:en med de angivna headers. Du kan även använda dig av andra metoder, till exempel POST eller PUT, beroende på vad som krävs för att kommunicera med API:et.
 
-##Djupdykning
+## Djupdykning
 
-Man kan också använda cURL-hanteringsobjektet för att konfigurera andra parametrar och inställningar, såsom autentisering, huvuden (headers) och cookies. Man kan också lägga till callback-funktioner för att hantera eventuella fel eller för att få tillgång till ytterligare information om förfrågan.
+När du skickar en HTTP-förfrågan finns det flera aspekter att ta hänsyn till. Som utvecklare måste du vara medveten om vilken typ av förfrågan som krävs, vilka headers som måste skickas med, och hur svaret från servern ska hanteras.
 
-Det finns också alternativa sätt att skicka HTTP-förfrågningar i PHP, såsom att använda funktionen `file_get_contents()` eller bibliotek som Guzzle och HTTP_Request.
+Det finns också möjlighet att lägga till eventuella parametrar eller body-data i en förfrågan, beroende på vad API:et förväntar sig. Det är viktigt att läsa dokumentationen noggrant för att se till att förfrågan är korrekt och kan behandlas av servern.
 
-## Se även
+När du tar emot svar från en HTTP-förfrågan är det också viktigt att hantera eventuella felmeddelanden eller statuskoder för att se till att din applikation fungerar som den ska och kan hantera eventuella problem som kan uppstå.
 
-- [cURL PHP-dokumentation](https://www.php.net/manual/en/book.curl.php)
-- [Guzzle bibliotek](http://docs.guzzlephp.org/en/stable/)
-- [HTTP_Request bibliotek](https://pear.php.net/package/HTTP_Request)
+## Se också
+
+- [PHP cURL dokumentation](https://www.php.net/manual/en/book.curl.php)
+- [HTTP-request i PHP](https://www.php.net/manual/en/function.curl-init.php)
+- [Implementera API:er i PHP-applikationer](https://www.php.net/manual/en/function.curl-exec.php)

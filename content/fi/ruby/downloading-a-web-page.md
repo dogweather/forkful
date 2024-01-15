@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Ruby: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-On monia syitä miksi ladata verkkosivu. Joitakin esimerkkejä ovat tiedon kerääminen, analysointi ja tiedon käyttäminen muissa sovelluksissa. Lataaminen voi myös olla hyödyllistä, jos haluat käyttää ulkoisia API-rajapintoja verkkosivuston tietojen saamiseksi.
+Saatat kysyä itseltäsi, miksi haluat ladata verkkosivun ohjelmallisesti Ruby-kielellä. On monia syitä, miksi tämä voisi olla hyödyllistä - voit esimerkiksi haluta kerätä tietoa verkkosivustosta, analysoida sivun sisältöä tai automatisoida tiettyjä tehtäviä, kuten tiedon keräämistä sivuilta.
 
-## Kuinka
+## Miten
 
-Rubylla on useita tapoja ladata verkkosivu. Yksi tapa on käyttää Ruby:n omaa Net::HTTP kirjastoa. Tässä on yksinkertainen esimerkki siitä, kuinka voit ladata sivun ja tulostaa sen HTML-koodin konsoliin:
+Lataaminen verkkosivulle Ruby-kielellä on melko yksinkertaista. Tässä käytämme Ruby-kirjastoa nimeltä "open-uri", joka mahdollistaa verkkosivujen lataamisen yhdellä rivillä koodia.
 
-```Ruby
-require 'net/http'
+```ruby
+require "open-uri"
 
-url = URI('https://www.example.com')
+# Tallenna sivun sisältö muuttujaan
+page = open("https://www.example.com").read
 
-response = Net::HTTP.get(url)
-
-puts response.body
+# Tulosta sivun sisältö konsolille
+puts page
 ```
 
-Tämän koodin tuloste näyttää verkkosivun HTML-koodin ja mahdollistaa sen tallentamisen muuttujaan, jota voit käsitellä myöhemmin.
+Tämä esimerkki lataa sivun https://www.example.com ja tallentaa sen sisällön muuttujaan nimeltä "page". Sitten se tulostaa sivun sisällön konsolille komennolla "puts page".
 
-Voit myös käyttää suosittuja kolmannen osapuolen kirjastoja, kuten Nokogiri tai Mechanize, ladataksesi verkkosivuja Rubylla. Nämä kirjastot tekevät lataamisesta joustavampaa ja pystyvät käsittelemään monimutkaisempia verkkosivuja.
+## Syvällinen sukellus
 
-## Syvempi sukellus
+Lisäksi open-uri-kirjastolla on monia vaihtoehtoja, joiden avulla voit muokata ja hallita ladattavaa sisältöä. Voit muun muassa määrittää käyttämäsi URL-osoitteen parametrina, lisätä käyttäjätunnuksen ja salasanan, käyttää erilaisia HTTP-metodeja ja hallita HTTP-pyyntöjen otsikoita.
 
-Lataaminen ei ole aina yksinkertaista ja saattaa vaatia lisäsäätöjä, kuten määritettyjen otsikoiden lähettämistä tai evästeiden käsittelyä. Net::HTTP kirjasto tarjoaa mahdollisuuden määrittää näitä asetuksia. Esimerkiksi alla olevassa koodissa määritämme otsikkon "User-Agent" ja lähetämme sivulle POST-pyynnön.
+Tämä esimerkki lataa verkkosivun ja tallentaa sen sisällön tiedostoon nimeltä "page.html":
 
-```Ruby
-require 'net/http'
+```ruby
+require "open-uri"
 
-url = URI('https://www.example.com')
-
-# Luodaan POST-pyyntö
-request = Net::HTTP::Post.new(url)
-# Määritetään otsikko
-request['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0'
-
-# Lähetetään pyyntö
-response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
-  http.request(request)
+# Lataa sivu määriteltyyn tiedostoon
+open("https://www.example.com", "w") do |f|
+  f.puts open("https://www.example.com").read
 end
-
-puts response.body
 ```
+
+Kuten näet, voit myös käyttää "open"-metodia parametrien kanssa, jotta voit määrittää erityisiä asetuksia pyynnölle.
 
 ## Katso myös
 
-- [Ruby:n Net::HTTP kirjasto](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Nokogiri kirjasto](https://nokogiri.org/)
-- [Mechanize kirjasto](https://github.com/sparklemotion/mechanize)
+- [Open-uri dokumentaatio](https://ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html)
+- [Ruby-asukassivuston lataaminen ja sisällön käyttö](https://www.rubyguides.com/2018/10/ruby-web-scraping/)
+
+### Disclaimer
+
+Tämä artikkeli on tarkoitettu vain opetus- ja informatiivisiin tarkoituksiin. Muista käyttää verkkosivujen lataamista vastuullisesti ja kunnioittaen verkkosivuston omistajien oikeuksia.

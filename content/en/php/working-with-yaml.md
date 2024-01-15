@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "PHP recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,55 +11,107 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Why would anyone want to work with YAML in their PHP programming? Well, YAML (YAML Ain't Markup Language) is a popular data serialization language that is easy to read and write for humans. It is commonly used for configuration files, making it a great tool for web development and server management.
+
+YAML, short for "YAML Ain't Markup Language", is a popular language used for data serialization. It offers a human-readable and easy-to-use syntax, making it a preferred choice for storing and transferring data in various applications. In the world of PHP programming, understanding how to work with YAML can be incredibly useful and beneficial.
 
 ## How To
-To start working with YAML in PHP, you'll need to install the Symfony YAML component using Composer. Once installed, you can use the `Yaml::parse()` function to convert YAML data into a PHP array. Here's an example:
+
+First, we need to make sure that the YAML extension is enabled in our PHP configuration. To do so, we can check the "Loaded Configuration File" section in phpinfo() or use the command "php -i | grep yaml". If the extension is not enabled, we can follow these steps to enable it:
 
 ```PHP
-use Symfony\Component\Yaml\Yaml;
+// Install YAML extension on Ubuntu
+sudo apt-get install php-yaml
 
-// Read YAML file
-$yamlContent = file_get_contents('my_config.yaml');
+// Install YAML extension on CentOS
+sudo yum install php-pecl-yaml
 
-// Convert to PHP array
-$config = Yaml::parse($yamlContent);
-
-// Output value of "database" key
-echo $config['database'];
+// Enable YAML extension manually
+vi /path/to/php.ini
+// Add the following line at the end
+extension=yaml.so 
 ```
 
-If your YAML data contains multiple documents, you can use the `parseMultiple()` function to parse them all at once and return an array of arrays. Additionally, you can use the `Yaml::dump()` function to convert a PHP array into YAML format. This is useful when writing configuration files or saving data to a YAML file.
+Once the extension is enabled, we can start working with YAML in our PHP code. Let's take a look at some coding examples:
+
+### Writing YAML
 
 ```PHP
-use Symfony\Component\Yaml\Yaml;
+<?php 
+$myArray = array(
+   'name' => 'John',
+   'age' => 25,
+   'hobbies' => array(
+       'reading',
+       'hiking',
+       'painting'
+   )
+);
 
-// Define an array with data
-$data = ['name' => 'John', 'age' => 25, 'hobbies' => ['running', 'cooking', 'reading']];
-
-// Convert to YAML format
-$yaml = Yaml::dump($data);
-
-// Output YAML string
-echo $yaml;
+// Convert array to YAML string
+$yamlStr = yaml_emit($myArray);
 ```
 
-**Output:**
+The output of this will be:
 
 ```
 name: John
 age: 25
 hobbies:
-  - running
-  - cooking
-  - reading
+    - reading
+    - hiking
+    - painting
+```
+
+### Reading YAML
+
+```PHP
+<?php 
+// YAML string 
+$yamlStr = "
+name: John
+age: 25
+hobbies:
+    - reading
+    - hiking
+    - painting
+";
+// Convert YAML string to array
+$myArray = yaml_parse($yamlStr);
+// Access specific values using array keys
+echo "Name: " . $myArray['name']; // Output: Name: John
+echo "Hobby 1: " . $myArray['hobbies'][0]; // Output: Hobby 1: reading 
 ```
 
 ## Deep Dive
-If you want to dive deeper into working with YAML in PHP, there are several additional features and options available. For example, the Symfony YAML component allows you to set a custom indentation and line break for your YAML output. You can also use the `parseFile()` function to directly parse a YAML file instead of first retrieving its contents.
 
-When working with more complex YAML data, you may run into issues with type conversions. In these cases, you can use the `Yaml::parse()` function with the `PARSE_OBJECT` option to ensure that numeric and boolean values are converted correctly.
+YAML offers a wide range of features such as support for complex data types, comments, and references. It also has the ability to merge multiple YAML documents into one, making it a powerful tool for handling large and complex data structures.
+
+One of the most useful features of YAML is the support for anchors and aliases. This allows us to define a value once and refer to it in different places in the document. This is especially helpful when dealing with nested data structures.
+
+### Anchors and Aliases Example
+
+```PHP
+<?php 
+$yamlStr = "
+book1:
+    title: Wings of Fire
+    author: Tui T. Sutherland
+    genre: fantasy
+book2:
+    <<: *book1
+    title: The Lost Heir
+";
+
+// Convert YAML string to array
+$books = yaml_parse($yamlStr);
+
+// Access specific values using array keys
+echo "Book 1 title: " . $books['book1']['title']; // Output: Book 1 title: Wings of Fire
+echo "Book 2 title: " . $books['book2']['title']; // Output: Book 2 title: The Lost Heir (inherits values from book1)
+```
 
 ## See Also
-- [Symfony YAML Component Documentation](https://symfony.com/doc/current/components/yaml.html)
-- [YAML Specification](https://yaml.org/spec/)
+
+- Official YAML website: https://yaml.org/
+- PHP documentation for YAML: https://www.php.net/manual/en/book.yaml.php
+- A beginner's guide to YAML: https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml

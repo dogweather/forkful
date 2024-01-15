@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Lesing av en tekstfil"
+html_title:           "Elm: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hvorfor
 
-Hvis du er interessert i Elm-programmering, vil du kanskje lure på hvorfor du bør lese en tekstfil. Å lese en tekstfil er et viktig konsept innenfor programmering, og det kan gi deg en bedre forståelse av hvordan du kan håndtere og behandle ulike typer data.
+Lurer du på hvordan man kan lese og håndtere tekstfiler i Elm? Da bør du definitivt fortsette å lese denne artikkelen! Å kunne lese tekstfiler er en nyttig ferdighet å ha for enhver utvikler, og det kan hjelpe deg med å behandle store mengder data og informasjon på en effektiv måte.
 
 ## Slik gjør du det
 
-For å lese en tekstfil i Elm, kan du bruke funksjonen `Text.fromFile` som tar inn en filbane som argument. Her er et eksempel på hvordan du kan bruke denne funksjonen for å lese en fil med navnet "mitttekstdokument.txt" og vise innholdet i konsollen:
+Først må vi importere et bibliotek kalt "elm/file" som lar oss håndtere filer i Elm. Deretter kan vi bruke funksjoner som "readTextFile" og "writeTextFile" for å lese og skrive innhold til en tekstfil.
 
 ```Elm
-main =
-  Text.fromFile "mitttekstdokument.txt"
-    |> Task.attempt OnFileRead
+import File
+import Html
 
-type Msg
-  = OnFileRead (Result File.Error Text.Text)
+file = "tekstfil.txt" -- navnet på filen vi vil lese
 
-update msg model =
-  case msg of
-    OnFileRead (Ok text) ->
-      ( text, Cmd.none )
-    OnFileRead (Err err) ->
-      ( String.fromInt err, Cmd.none )
+-- en funksjon som håndterer teksten som er lest fra filen
+handleFileContent : File.Content -> Html msg
+handleFileContent content =
+  case content of
+    File.ReadSuccess fileText -> -- hvis lesingen var vellykket
+      -- gjør noe med filteksten, f.eks. skriv den ut på siden
+      Html.span [] [Html.text fileText]
+    File.ReadFailed _ error -> -- hvis lesingen feilet
+      -- håndter feilen på en eller annen måte
+      Html.div [] [Html.text "Lesing mislyktes"]
 
-view content =
-  text content
+-- leser tekstfilen og håndterer innholdet
+File.readTextFile file handleFileContent
 ```
 
-Når du kjører koden over, vil du få følgende resultat i konsollen:
+Kjører du denne koden vil du se at innholdet fra tekstfilen "tekstfil.txt" vises på skjermen.
 
-> "Dette er innholdet i min tekstfil."
+## Dypdykk
 
-Husk at det er viktig å håndtere feil når du leser en fil, derfor bruker vi en `Case`-uttrykk for å sjekke om operasjonen var vellykket eller ikke.
+Når vi bruker funksjonen "readTextFile", blir filinnholdet lest og returnert som en "File.Content" type. Dette kan enten være "File.ReadSuccess" eller "File.ReadFailed" avhengig av om lesingen var vellykket eller ikke. Dette betyr at vi må håndtere begge disse tilfellene når vi skriver koden vår.
 
-## Dykk dypere
-
-Det finnes flere måter å lese og behandle en tekstfil på i Elm, avhengig av hvilken type data du jobber med. Du kan for eksempel bruke funksjonen `Text.lines` for å lese hver linje i en tekstfil som en liste av tekststrenger, eller `Text.split` for å dele opp teksten basert på et bestemt separator-tegn.
-
-Det er også viktig å være oppmerksom på at filbehandling er en asynkron operasjon, noe som betyr at du må sørge for at koden din håndterer dette riktig ved hjelp av funksjoner som `Task`, `Cmd` eller `Msg`.
+En annen ting å merke seg er at vi ikke kan lese filer lokalt i nettleseren. Vi må enten bruke en server eller en plugin for å kunne gjøre dette, som for eksempel "elm/file-reader". Det er også viktig å huske på at filstørrelsesbegrensningene for nettlesere fortsatt gjelder, så det kan hende du må håndtere store filer i deler.
 
 ## Se også
 
-- Elm dokumentasjon om `Text`-modulen: https://package.elm-lang.org/packages/elm/core/latest/Text
-- How to use the Elm Text.fromFile Function: https://thoughtbot.com/blog/how-to-use-the-elm-text-from-file-function
+- Elm filbibliotek: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm fil-leser plugin: https://package.elm-lang.org/packages/gampleman/elm-file-reader/latest/

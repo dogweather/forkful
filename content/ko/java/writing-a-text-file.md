@@ -1,6 +1,7 @@
 ---
-title:                "Java: 텍스트 파일 쓰기"
-simple_title:         "텍스트 파일 쓰기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Java: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,48 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-자바 프로그래밍을 할 때 텍스트 파일을 작성하는 것의 중요성은 무엇일까요?
+문자 파일을 작성하는 이유는 데이터를 저장하고 불러오는 데 유용하기 때문입니다.
 
-## 어떻게
+## 작성 방법
 
-텍스트 파일을 작성하는 방법은 다양합니다. 가장 간단한 방법은 FileWriter 클래스를 사용하는 것입니다. 아래의 예제 코드를 통해 더 자세한 방법을 알아보세요.
+문자 파일을 작성하려면 먼저 `FileWriter` 클래스를 호출해야 합니다. 그 후에 `write()` 메서드를 사용하여 문자열을 파일에 씁니다.
 
 ```Java
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class TextFileWriter {
+
 	public static void main(String[] args) {
 		try {
-			// FileWriter 객체 생성
-			FileWriter writer = new FileWriter("sample.txt");
-			
-			// 파일에 쓸 내용 작성
-			writer.write("안녕하세요, 이것은 샘플 파일입니다.");
-			
-			// 파일 닫기
+			// 문자 파일 생성
+			FileWriter writer = new FileWriter("myTextFile.txt");
+			// 문자열 쓰기
+			writer.write("안녕하세요! 저는 자바를 공부하고 있어요.");
+			// writer 리소스 해제
 			writer.close();
-			
-			System.out.println("파일이 성공적으로 작성되었습니다.");
-		} catch (Exception e) {
-			System.out.println("파일 작성 중 오류가 발생하였습니다.");
+		} catch (IOException e) {
+			System.out.println("파일을 작성할 수 없습니다.");
 			e.printStackTrace();
 		}
 	}
 }
 ```
 
-위 코드를 실행하면 현재 작업폴더에 `sample.txt` 파일이 생성되고 해당 내용이 작성됩니다. 만약 이미 같은 이름의 파일이 있으면 기존 파일의 내용이 덮어쓰여집니다.
+위 코드를 실행하면 현재 디렉토리에 `myTextFile.txt` 파일이 생성되고, 파일 안에는 "안녕하세요! 저는 자바를 공부하고 있어요."라는 문자열이 저장될 것입니다.
 
-## 딥 다이브
+## 디프 다이브
 
-텍스트 파일을 작성할 때 주의해야 할 몇 가지 중요한 사항이 있습니다.
+자바에서 문자 파일을 작성하는 방법은 `FileWriter` 클래스를 사용하는 것이 일반적입니다. `FileWriter`는 파일을 쓸 때 사용하는 `Writer` 클래스의 하위 클래스입니다. `write()` 메서드를 실행하면 메모리 버퍼에 있는 데이터가 파일에 쓰여집니다. 버퍼를 이용하므로 파일에 데이터가 즉시 쓰이지 않고, `flush()` 메서드가 실행될 때까지 기다리게 됩니다.
 
-- 파일의 경로를 제대로 지정해야 합니다. 파일의 생성 위치를 정확히 알고 있어야 잘못된 경로로 인해 파일이 생성되지 않습니다.
-- 파일을 쓴 후에는 `close()` 메소드를 호출하여 파일을 닫아야 합니다. 이 작업을 하지 않으면 파일이 제대로 저장되지 않을 수 있습니다.
-- 파일을 생성하는 대신 이미 존재하는 파일에 내용을 추가하고 싶다면 FileWriter의 두 번째 인자로 `true`를 넘겨줍니다.
+## 참고 자료
 
-## 참고
-
-- [Java FileWriter 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
-- [Java File 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java 파일 읽고 쓰기 방법 알아보기](https://coding-factory.tistory.com/245)
+- [자바 FileWriter 클래스](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+- [자바 Writer 클래스](https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html)

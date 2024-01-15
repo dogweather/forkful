@@ -1,5 +1,6 @@
 ---
-title:                "C: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "C: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "C"
 category:             "C"
@@ -11,40 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Extrayer des sous-chaînes (ou des sous-strings) est une technique importante en programmation en C. Cela permet de manipuler des données de manière plus précise et efficace, en ne ciblant que les parties spécifiques d'une chaîne de caractères.
+Si vous travaillez avec des chaînes de caractères en C, vous avez peut-être rencontré des situations où vous avez besoin d'extraire une sous-chaîne spécifique d'une chaîne plus grande. Cela peut être utile pour effectuer des opérations de recherche ou de manipulation de données. Dans cet article, vous apprendrez comment extraire des sous-chaînes en utilisant différentes méthodes en C.
 
-## Comment faire
+## Comment Faire
 
-Pour extraire une sous-chaîne en utilisant le langage de programmation C, il faut utiliser la fonction `memcpy()`. Cette fonction permet de copier une certaine quantité de caractères d'une chaîne source vers une destination. Voici un exemple de code avec une chaîne de caractères initiale "Bonjour le monde" et une sous-chaîne à extraire "le monde":
+Pour extraire une sous-chaîne en C, vous pouvez utiliser la fonction `strncpy()` qui copie les caractères d'une chaîne source dans une nouvelle chaîne. Voici un exemple de code montrant comment extraire une sous-chaîne de 5 caractères à partir de l'indice 2 d'une chaîne principale :
 
 ```
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-  char str[] = "Bonjour le monde";
-  char sub[] = "le monde";
-  char dest[10];
+int main() {
+  char str[20] = "Bonjour le monde";
+  char substr[6];
 
-  memcpy(dest, &str[8], 8);
-  dest[8] = '\0';
+  strncpy(substr, &str[2], 5);
 
-  printf("%s\n", dest);
+  printf("La sous-chaîne extraite est: %s\n", substr); // Output: Bonjo
 
   return 0;
 }
 ```
 
-La sortie de ce code sera "le monde", qui est la sous-chaîne extraite.
+Vous pouvez également utiliser la fonction `substr()` de la bibliothèque standard `string.h` pour extraire une sous-chaîne en spécifiant l'indice de début et la longueur de la sous-chaîne. Voici un exemple de code :
 
-## Plongée en profondeur
+```
+#include <stdio.h>
+#include <string.h>
 
-Pour comprendre parfaitement comment fonctionne la fonction `memcpy()`, il est important de comprendre les paramètres qu'elle prend en compte. Le premier paramètre est la destination, qui est la chaîne cible où les caractères seront copiés. Le deuxième paramètre est la source, qui est la chaîne d'origine à partir de laquelle les données seront copiées. Finalement, le dernier paramètre est la taille, qui spécifie le nombre de caractères à copier. Il est également important de noter que la numérotation des caractères dans une chaîne commence à partir de 0, donc pour extraire une sous-chaîne à partir du caractère 8, le paramètre de taille doit être 8.
+int main() {
+  char str[20] = "Bonjour le monde";
+  char substr[6];
 
-En utilisant `memcpy()`, il est possible d'extraire des sous-chaînes de n'importe quelle longueur, en spécifiant la taille appropriée en fonction de la position du premier caractère et du dernier caractère de la sous-chaîne.
+  substr(str, 2, 5);
 
-## À voir également
+  printf("La sous-chaîne extraite est: %s\n", substr); // Output: Bonjo
 
-- [La documentation officielle de la fonction "memcpy" en C](https://www.barrgroup.com/Embedded-Systems/How-To/C-Memcpy-Function)
-- [Un tutoriel détaillé sur la manipulation de chaînes de caractères en C](https://www.programiz.com/c-programming/c-strings)
-- [Un autre exemple de fonction pour extraire des sous-chaînes en C](https://www.geeksforgeeks.org/strstr-in-ccpp/)
+  return 0;
+}
+```
+
+## Plongée Profonde
+
+En utilisant `strncpy()`, vous devez faire attention à spécifier la longueur maximale de la sous-chaîne que vous souhaitez extraire pour éviter tout dépassement de tampon. De plus, cette fonction ajoute automatiquement un caractère nul à la fin de la sous-chaîne extraite, donc vous n'avez pas besoin de le faire manuellement.
+
+D'autre part, `substr()` est une fonction personnalisée qui n'est pas disponible dans la bibliothèque standard de C, vous devrez donc la créer vous-même. Cette fonction est généralement plus rapide que `strncpy()` car elle ne nécessite pas de copie de caractères supplémentaires pour remplir un tampon.
+
+## Voir aussi
+
+- [Documentation de la fonction strncpy en C](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [Documentation de la fonction substr en C](https://www.geeksforgeeks.org/substr-function-in-c/)
+- [Tutoriel sur les chaînes de caractères en C](https://www.learn-c.org/en/Strings)

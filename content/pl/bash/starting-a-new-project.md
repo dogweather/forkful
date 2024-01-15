@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Zaczynając nowy projekt"
+html_title:           "Bash: Zaczynając nowy projekt"
+simple_title:         "Zaczynając nowy projekt"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -9,44 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Cześć! Dzięki za zajrzenie na mój blog. W dzisiejszym poście dowiesz się, dlaczego warto zacząć nowy projekt w programowaniu Bash. Może masz już doświadczenie w tym języku, a może dopiero zaczynasz przygodę z programowaniem. Bez względu na to, mam nadzieję, że ten artykuł będzie dla Ciebie pomocny. Przekonajmy się zatem, dlaczego warto zacząć nowy projekt w Bash.
+Planowanie nowego projektu może wydawać się przytłaczające, ale nie musi tak być. Bash oferuje wiele możliwości, aby ułatwić tworzenie i organizowanie projektów. W tym artykule dowiecie się, dlaczego warto rozpocząć nowy projekt w Bash i jak to zrobić w prosty sposób.
 
-## Jak zacząć
+# Jak to zrobić?
 
-Zanim zaczniemy, zakładam, że masz już zainstalowany Bash na swoim komputerze. Jeśli nie, wystarczy wpisać w terminalu komendę `sudo apt install bash` (dla systemów opartych na Debianie). Jeśli masz już Bash, możesz przejść do tworzenia swojego pierwszego projektu. Poniżej przedstawię Ci kilka przydatnych przykładów kodu oraz wyników.
+Aby rozpocząć nowy projekt w Bash, wystarczy otworzyć terminal i przejść do odpowiedniego folderu. Następnie należy utworzyć nowy folder dla naszego projektu, używając polecenia ```mkdir```:
 
-```Bash
-#!/bin/bash
-
-# utworzenie zmiennej i wyświetlenie jej zawartości
-imie="Jan"
-echo "$imie"
-
-# pobranie danych od użytkownika
-echo "Podaj swoje imię:"
-read nazwa
-echo "Witaj $nazwa!"
-
-# sprawdzenie warunku
-liczba=10
-if [ $liczba -gt 5 ]
-then
-  echo "Liczba jest większa od 5."
-fi
+```
+mkdir nowy_projekt
 ```
 
-Przykłady te pokazują podstawowe funkcje Bash, jak tworzenie zmiennych, pobieranie danych od użytkownika czy sprawdzanie warunków. Warto pamiętać, że Bash jest językiem skryptowym, który jest dobrze przystosowany do automatyzacji zadań systemowych i tworzenia prostych programów.
+Następnie możemy przejść do tego folderu używając polecenia ```cd```:
 
-## Pogłębiona analiza
+```
+cd nowy_projekt
+```
 
-Teraz, gdy już wiesz, jak zacząć tworzyć projekty w Bash, chciałbym podzielić się kilkoma radami dotyczącymi głębszego zanurzenia w ten język. Po pierwsze, warto zapoznać się ze specjalnymi zmiennymi środowiskowymi, takimi jak `$PATH`, które zawierają informacje o systemie. Po drugie, pamiętaj o użyciu komendy `man` do sprawdzania dokumentacji dla dowolnej komendy Bash. Ostatnia rada - nie bój się eksperymentować i uczyć się na błędach!
+Teraz czas na tworzenie plików. Aby utworzyć nowy plik, używamy polecenia ```touch```:
 
-## Zobacz także
+```
+touch skrypt.sh
+```
 
-Możesz znaleźć więcej przydatnych informacji na temat programowania w Bash na stronach:
+Ten plik będzie służył jako nasz skrypt, w którym będziemy pisać nasz kod. Przed rozpoczęciem pisania warto dodać nagłówek do naszego skryptu, który będzie informował system, że będzie on wykonywalny. Aby to zrobić, dodajemy poniższą linię na początku pliku:
 
-- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Bash Academy](http://www.bash.academy/)
+```
+#!/bin/bash
+```
+
+Teraz możemy przejść do pisania kodu. W Bash dostępnych jest wiele wbudowanych poleceń, które ułatwią nam pracę. Na przykład, aby wyświetlić napis na ekranie, używamy polecenia ```echo```:
+
+```
+echo "Witaj świecie!"
+```
+
+Możemy też przypisać wartości do zmiennych i używać ich w naszym kodzie. Aby przypisać wartość do zmiennej, używamy polecenia ```read```:
+
+```
+read imie
+```
+
+Następnie możemy wyświetlić wartość tej zmiennej używając polecenia ```echo```:
+
+```
+echo "Witaj $imie!"
+```
+
+Po ukończeniu pisania kodu, nasz skrypt może zostać wykonany za pomocą polecenia ```./```. Pamiętajmy także, aby nadać mu uprawnienia do wykonania poprzez polecenie ```chmod +x```:
+
+```
+./skrypt.sh
+```
+
+W tym miejscu możemy także używać innych poleceń i składni Bash, aby nasz projekt był jeszcze bardziej funkcjonalny i wygodny w użyciu.
+
+# Deep Dive
+
+W Bash dostępnych jest wiele przydatnych funkcji i poleceń, które mogą zostać wykorzystane podczas planowania i tworzenia nowego projektu. Na przykład, możemy użyć wielu zmiennych globalnych, takich jak ```$PWD``` (aktualna ścieżka) czy ```$HOME``` (katalog domowy), aby ułatwić dostęp do różnych części naszego systemu.
+
+Możemy także używać pętli i warunków, aby automatyzować i przyspieszyć nasze zadania. Bash dostarcza nam polecenia takie jak ```for```, ```while``` czy ```if```, które pozwalają na sprawdzanie warunków i wykonywanie odpowiednich działań.
+
+Warto także zapoznać się z różnymi opcjami i flagami dostępnymi dla różnych poleceń, co może przydawać się przy tworzeniu i zarządzaniu projektami. Możemy także używać funkcji środowiskowych, które pozwalają na wywoływanie poleceń z innych skryptów i folderów.
+
+# Zobacz także
+
+- [Dokumentacja Bash](https://linux.die.net/man/1/bash)
+- [10 poleceni Bash, których powinieneś znać](https://www.linode.com/docs/tools-reference/tools/10-basic-bash-commands-you-should-know/)
+- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

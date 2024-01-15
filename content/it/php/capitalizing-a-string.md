@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Capitalizzazione di una stringa"
+title:                "Capitalizzazione di una stringa"
+html_title:           "PHP: Capitalizzazione di una stringa"
 simple_title:         "Capitalizzazione di una stringa"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,34 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Molte volte quando stiamo scrivendo del codice PHP, abbiamo bisogno di modificare una stringa in modo da farla apparire corretta. Una delle cose più comuni che dobbiamo fare è capitalizzarla, ovvero rendere la prima lettera maiuscola e le altre minuscole. In questo blog post, vedremo come è possibile fare questo in PHP.
 
-## Come fare
-Per capitalizzare una stringa in PHP, possiamo utilizzare la funzione `ucfirst()`. Di seguito è riportato un esempio di codice con un input di una stringa e l'output della stessa con la prima lettera maiuscola:
+Capitalize è una operazione comune nella programmazione che permette di rendere la prima lettera di una stringa maiuscola. Questo può essere utile per correggere eventuali errori di formattazione o per rendere più leggibile una stringa di testo.
 
-```PHP
-$string = "ciao a tutti!";
-echo ucfirst($string); // Output: Ciao a tutti!
+## Come
+
+```PHP 
+// Utilizziamo la funzione ucfirst() per capitalizzare la prima lettera di una stringa
+$stringa = "ciao mondo";
+echo ucfirst($stringa);
 ```
 
-Ma cosa succede se abbiamo una stringa con più di una parola? In questo caso, dobbiamo utilizzare una combinazione di funzioni come `explode()`, `ucfirst()` e `implode()`. Di seguito è riportato un esempio di codice che mostra come capitalizzare ogni parola di una stringa:
+L'output di questo codice sarà "Ciao mondo". Possiamo anche utilizzare la funzione ucwords() per capitalizzare la prima lettera di ogni parola in una stringa.
 
 ```PHP
-$string = "ciao a tutti!";
-$string_arr = explode(" ", $string); // Convertiamo la stringa in un array separando le parole con uno spazio
-$new_string_arr = array(); // Creiamo un nuovo array vuoto
-foreach ($string_arr as $word) { // Per ogni parola nell'array
-    $capitalized_word = ucfirst($word); // Capitalizziamo la prima lettera di ogni parola
-    array_push($new_string_arr, $capitalized_word); // Inseriamo la parola capitalizzata nel nuovo array
-}
-$new_string = implode(" ", $new_string_arr); // Convertiamo il nuovo array in una stringa unendo le parole con uno spazio
-echo $new_string; // Output: Ciao A Tutti!
+// Utilizziamo la funzione ucwords() per capitalizzare la prima lettera di ogni parola in una stringa
+$stringa = "ciao mondo";
+echo ucwords($stringa);
 ```
 
-## Approfondimento
-Oltre alla funzione `ucfirst()`, esistono altre funzioni utili per manipolare le stringhe in PHP. Ad esempio, `strtolower()` convertirà tutte le lettere di una stringa in minuscolo, mentre `strtoupper()` le convertirà tutte in maiuscolo. Inoltre, se vogliamo capitalizzare una stringa con più di una parola, possiamo utilizzare anche la funzione `ucwords()`.
+L'output di questo codice sarà "Ciao Mondo". Inoltre, PHP offre anche la funzione strtoupper() che permette di rendere tutte le lettere di una stringa maiuscole.
+
+```PHP
+// Utilizziamo la funzione strtoupper() per rendere maiuscole tutte le lettere di una stringa
+$stringa = "ciao mondo";
+echo strtoupper($stringa);
+```
+
+L'output di questo codice sarà "CIAO MONDO".
+
+## Deep Dive
+
+In PHP, le stringhe sono immutabili, il che significa che non possiamo modificarle direttamente una volta che sono state create. Quando utilizziamo una funzione per capitalizzare una stringa, in realtà stiamo creando una nuova stringa con le modifiche desiderate. Questo può essere un aspetto importante da considerare durante la scrittura del nostro codice.
+
+Inoltre, è importante notare che le funzioni di capitalizzazione in PHP seguono le regole di localizzazione, il che significa che il risultato finale può variare in base alla lingua impostata nel server. Ad esempio, in italiano la funzione ucfirst() renderà "café" come "Café", mentre in inglese diventerà "Café".
 
 ## Vedi anche
-- [Documentazione PHP: Funzioni per le stringhe](https://www.php.net/manual/en/ref.strings.php)
-- [Tutorial: Come manipolare le stringhe in PHP](https://www.w3schools.com/php/php_string.asp)
-- [Esplora il mondo del PHP con questi tutorial](https://www.codecademy.com/catalog/language/php)
+
+- [Documentazione ufficiale di ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
+- [Documentazione ufficiale di ucwords()](https://www.php.net/manual/en/function.ucwords.php)
+- [Documentazione ufficiale di strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)

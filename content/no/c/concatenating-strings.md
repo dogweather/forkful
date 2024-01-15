@@ -1,6 +1,7 @@
 ---
-title:                "C: Kombinering av strenger"
-simple_title:         "Kombinering av strenger"
+title:                "Sammenkobling av strenger"
+html_title:           "C: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,36 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kombinere strenger er en nødvendig ferdighet for enhver som ønsker å lære programmering. Dette er fordi det er en vanlig oppgave som må utføres når man jobber med tekstbaserte data og programvare. Ved å forstå hvordan man kan konkatenerere strenger, vil du kunne manipulere tekst på en mer effektiv måte og få et bedre grep om grunnleggende programmeringskonsepter.
+Å kombinere strenger, også kalt konkatenasjon, er en viktig del av programmering uansett språk. Det lar deg dynamisk kombinere ulike tekstlige elementer for å lage mer komplekse og nyttige uttrykk. I C kan det være spesielt nyttig for utskrift av tekst og lagring av informasjon.
 
-## Hvordan
+## Slik gjør du det
 
-For å kombinere to strenger i C, kan du bruke strcpy() funksjonen. Denne funksjonen kopierer en streng til en annen på en effektiv og sikker måte. Sjekk ut eksempelet under for å se hvordan det gjøres:
+For å slå sammen to strenger i C, bruker du funksjonen `strcat()`. Denne funksjonen tar to strenger som parametere og returnerer en kombinert streng som en ny strengvariabel.
+
 ```C
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char streng1[] = "Hei";
-    char streng2[] = "verden!";
-    char resultat[13];
-
-    strcpy(resultat, streng1);
-    strcat(resultat, streng2);
-
-    printf("Kombinert streng: %s", resultat);
-    return 0;
+	char navn[] = "Ola";
+	char etternavn[] = "Nordmann";
+	
+	// Kombiner navn og etternavn ved hjelp av strcat()
+	strcat(navn, etternavn);
+	
+	// Skriv ut den nye strengen
+	printf("Hei, %s!", navn);
+	
+	// Output: Hei, OlaNordmann!
+	
+	return 0;
 }
 ```
-Output:
-```
-Kombinert streng: Hei verden!
-```
 
-## Dypdykk
+Som du kan se i eksempelet ovenfor, er det viktig å være oppmerksom på størrelsen til strengene når du slår dem sammen. `strcat()` fungerer ved å finne slutten av den første strengen og deretter kopiere den andre strengen etter den. Derfor er det viktig å sørge for at den første strengen har plass til å lagre den andre strengen i seg.
 
-Det finnes også andre måter å kombinere strenger på i C, som for eksempel ved hjelp av sprintf() funksjonen. Det er viktig å være oppmerksom på at når man kobinerer strenger, må man ha nok plass i minnet for å lagre den kombinerte strengen. Hvis du ikke sørger for dette, kan programmet ditt krasje eller gi uforventet output.
+Hvis du vil legge til flere enn to strenger, kan du bruke denne funksjonen flere ganger etter hverandre. Du kan også bruke `strncpy()` for å begrense lengden på den kombinerte strengen, hvis du ønsker det.
+
+## Gå dypere
+
+Når du bruker `strcat()`, bør du være klar over at den er relativt ineffektiv. Hver gang den blir kalt, må den lete gjennom den første strengen for å finne slutten før den kan kombinere den andre strengen. Dette kan føre til en del unødvendig overhead når du skal kombinere flere strenger.
+
+En annen viktig ting å være oppmerksom på er at `strcat()` ikke sjekker for plass i strengen før den kopierer den andre strengen. Dette kan føre til at data overskrives eller at programmet krasjer hvis ikke strengen er stor nok.
+
+For en mer effektiv og sikker måte å kombinere strenger på, kan du vurdere å bruke funksjonen `snprintf()`. Denne funksjonen tar en mål-streng, en maksimum lengde, og en kombinasjon av strenger og variabler som parametere. Den unngår overfylte strenger og unødvendig søking etter slutten av den første strengen.
 
 ## Se også
 
-- [C String Functions](https://www.programiz.com/c-programming/string-handling-functions)
-- [Introduction to C Programming](https://www.learn-c.org/)
+- [string.h library i C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C String funksjoner tutorial](https://www.learn-c.org/en/Strings)
+- [snprintf() funksjonen i C](https://www.geeksforgeeks.org/snprintf-c-library/)

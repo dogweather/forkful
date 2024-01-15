@@ -1,6 +1,7 @@
 ---
-title:                "Go: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "「ウェブページのダウンロード」"
+html_title:           "Go: 「ウェブページのダウンロード」"
+simple_title:         "「ウェブページのダウンロード」"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,13 +11,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-Webページをダウンロードする理由を説明するために、Go言語のプログラミングについて考えてみましょう。
 
-## 作成方法
-Webページをダウンロードする方法は簡単です。以下のようにGo言語のコードを使用するだけです。
+もし、あなたがインターネット上の特定のウェブページの中身を参照したいとき、Go言語を使ってそのウェブページをダウンロードすることができます。 
+
+## 方法 
+
+ウェブページをダウンロードするために、私たちは `net/http` パッケージを使用します。このパッケージはHTTPクライアントを作成するために使用されます。下のコードを確認してください。
 
 ```Go
-// 必要なパッケージをインポート
+package main
+
 import (
 	"fmt"
 	"io/ioutil"
@@ -24,34 +28,37 @@ import (
 )
 
 func main() {
-
-	// ダウンロードするURLを指定
-	url := "https://www.example.com"
-
-	// HTTPリクエストを送信
-	resp, err := http.Get(url)
+	request, err := http.NewRequest("GET", "https://www.example.com", nil)
 	if err != nil {
-		fmt.Println("Error while downloading:", err)
-		return
+		panic(err)
 	}
 
-	// レスポンスのボディを読み取り
-	body, err := ioutil.ReadAll(resp.Body)
+	client := http.Client{}
+	response, err := client.Do(request)
 	if err != nil {
-		fmt.Println("Error while reading:", err)
-		return
+		panic(err)
 	}
 
-	// 文字列に変換して出力
+	defer response.Body.Close()
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println(string(body))
 }
 ```
 
-上記のコードを実行すると、指定したURLのWebページがダウンロードされ、コンソールに出力されます。
+このコードを実行すると、ウェブページのHTMLコードが表示されます。 
 
-## 深堀り
-Webページをダウンロードするには、HTTPリクエストを送信し、レスポンスのボディを読み取り、文字列に変換する必要があります。また、Go言語の`net/http`パッケージを使用することで、リダイレクトやエラーハンドリングなどの機能も簡単に実装することができます。
+## 詳細
 
-See Also:
-- [Go言語公式ドキュメント](https://golang.org/)
-- [Go言語のHTTPクライアントの使い方](https://qiita.com/taizo/items/1c4135da9402bde1bd0d)
+さらに詳しく使用方法を理解するために、HTTPリクエストやレスポンスについて学ぶことが重要です。HTTPリクエストは、ウェブサーバーに対してどのような動作を行うかを伝えるものです。一方、HTTPレスポンスは、ウェブサーバーからの応答を示します。また、`ioutil` パッケージを使用して、レスポンスボディを文字列として読み込みます。 
+
+## 参考リンク
+
+- [net/http パッケージ](https://golang.org/pkg/net/http/)
+- [HTTPクライアントチュートリアル](https://zetcode.com/golang/http/)
+- [HTTPリクエストとレスポンスについて](https://www.tutorialspoint.com/http/http_requests.htm)
+- [ioutil パッケージ](https://golang.org/pkg/io/ioutil/)

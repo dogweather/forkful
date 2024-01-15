@@ -1,6 +1,7 @@
 ---
-title:                "C++: Eine http-Anfrage senden"
-simple_title:         "Eine http-Anfrage senden"
+title:                "Senden einer http Anfrage"
+html_title:           "C++: Senden einer http Anfrage"
+simple_title:         "Senden einer http Anfrage"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,57 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-## Wie
+## Warum
+Wer sich mit der Erstellung von Webanwendungen beschäftigt, kommt früher oder später nicht umhin, HTTP Anfragen zu verwenden. Diese ermöglichen es, Daten von einer Webanwendung an eine andere zu übertragen. Es ist also unerlässlich zu verstehen, wie man eine HTTP Anfrage in C++ senden kann.
 
-Das Senden von HTTP-Anfragen ist für Programmierer von C++ von entscheidender Bedeutung, wenn sie mit Webanwendungen oder Webdiensten arbeiten wollen. Eine HTTP-Anfrage ermöglicht es einem Programm, mit einem Server zu kommunizieren und Daten von diesem zu erhalten oder zu senden.
-
-Um eine HTTP-Anfrage in C++ zu senden, müssen wir zuerst die notwendigen Bibliotheken und Header-Dateien einbinden. Wir verwenden die `curl` Bibliothek, um HTTP-Anfragen zu senden und die Antwort vom Server zu erhalten.
-
+## Wie das geht
+Mithilfe der Bibliothek `libcurl` kann man in C++ ganz einfach HTTP Anfragen versenden. Zunächst müssen wir jedoch die entsprechenden Header-Dateien einbinden, um die Funktionen von `libcurl` nutzen zu können:
 ```C++
-#include <iostream>
 #include <curl/curl.h>
 ```
-
-Als nächstes definieren wir eine Funktion, die die notwendigen Parameter für die HTTP-Anfrage enthält. Wir geben die URL an, an die die Anfrage gesendet werden soll, und die Art der Anfrage, die wir senden wollen. In diesem Beispiel senden wir eine einfache GET-Anfrage.
-
+Als nächstes müssen wir einen `CURL` Handle erstellen, der es uns ermöglicht, eine Verbindung aufzubauen und die Anfrage zu versenden:
 ```C++
-CURL* curl;
-curl = curl_easy_init();
-if(curl) {
-    CURLcode res;
-    // Definieren der URL
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-    // Definieren der Anfragemethode
-    curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
-
-    // Ausführen der Anfrage und Speichern der Antwort
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-        std::cout << "Fehler beim Senden der HTTP-Anfrage: " << curl_easy_strerror(res) << std::endl;
-    else
-        std::cout << "Anfrage erfolgreich gesendet." << std::endl;
-
-    // Aufräumen
-    curl_easy_cleanup(curl);
-}
+CURL *handle = curl_easy_init();
 ```
+Nun können wir die URL festlegen, an die die Anfrage gesendet werden soll, und sie dem `CURL` Handle zuweisen:
+```C++
+const char* url = "http://beispiel.com/meine-anfrage";
+curl_easy_setopt(handle, CURLOPT_URL, url);
+```
+Als nächstes müssen wir die gewünschten Anfrageparameter definieren. Dies kann mithilfe von `curl_easy_setopt` gemacht werden, wobei wir verschiedene Optionen wie beispielsweise die Methode der Anfrage (GET, POST, etc.) oder die Daten, die übertragen werden sollen, festlegen können. Im folgenden Beispiel senden wir eine einfache GET Anfrage, die keine zusätzlichen Parameter benötigt:
+```C++
+curl_easy_setopt(handle, CURLOPT_HTTPGET, 1L);
+```
+Schließlich können wir die Anfrage mit `curl_easy_perform` abschicken und die Antwort in einer Variable speichern:
+```C++
+CURLcode res;
+res = curl_easy_perform(handle);
+```
+Als Ergebnis erhalten wir den Statuscode der Anfrage sowie die empfangenen Daten oder eine eventuelle Fehlermeldung.
 
-Die `curl_easy_setopt()` Funktion ermöglicht es uns, verschiedene Optionen für die Anfrage festzulegen. In diesem Beispiel definieren wir die URL und die Anfragemethode, aber es gibt noch viele weitere Optionen, die wir festlegen können, wie z.B. die Verwendung von Authentifizierung oder das Senden von Daten mit der Anfrage.
+## Tiefere Einblicke
+Die Bibliothek `libcurl` bietet viele verschiedene Optionen und Konfigurationsmöglichkeiten, um Anfragen individuell anzupassen. Es ist auch möglich, mehrere Anfragen parallel zu versenden oder Anfragen mit komplexeren Parametern zu erstellen. Es lohnt sich daher, sich genauer mit der Dokumentation von `libcurl` auseinanderzusetzen, um das volle Potenzial auszuschöpfen.
 
-## Tiefergehender Einblick
-
-Die `curl` Bibliothek ist ein mächtiges Werkzeug, wenn es um das Senden von HTTP-Anfragen geht. Es ermöglicht uns, verschiedene Arten von Anfragen zu senden, Daten zu senden und zu empfangen, und sogar Authentifizierung zu verwenden.
-
-Es gibt auch andere Bibliotheken und Frameworks, die uns beim Senden von HTTP-Anfragen helfen können, wie z.B. `httplib` oder `Boost.Asio`. Sie alle haben ihre Vor- und Nachteile, aber am Ende ist es wichtig, die Funktionen zu verstehen, die sie bieten, und die beste Option für die jeweilige Anwendung auszuwählen.
-
-In diesem Beispiel haben wir nur eine GET-Anfrage gesendet, aber mit diesen Tools können wir auch POST-, PUT- und DELETE-Anfragen senden, um mit einer Webanwendung oder einem Webdienst zu interagieren.
-
-Also, wenn du jemals in der Situation bist, eine HTTP-Anfrage in deinem C++ Programm zu senden, weißt du jetzt, dass es möglich ist und wie es gemacht wird.
-
-# Siehe auch
-
-- [curl website](https://curl.se/)
-- [httplib github repository](https://github.com/yhirose/cpp-httplib)
-- [Boost.Asio documentation](https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html)
+## Siehe auch
+- [Dokumentation von `libcurl`](https://curl.haxx.se/libcurl/c/)
+- [Tutorial zur Verwendung von `libcurl` in C++](https://blog.codecentric.de/2016/06/http-anfragen-cpp-libcurl/)

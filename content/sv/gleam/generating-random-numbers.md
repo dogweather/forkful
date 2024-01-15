@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Generera slumpmässiga tal"
-simple_title:         "Generera slumpmässiga tal"
+title:                "Skapa slumpmässiga tal"
+html_title:           "Gleam: Skapa slumpmässiga tal"
+simple_title:         "Skapa slumpmässiga tal"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -9,45 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+Vi genererar slumpmässiga tal av många olika skäl - från spel och lotterier till simuleringar och kryptografiska tillämpningar. Oavsett anledning är det viktigt att kunna skapa slumpmässiga tal som är riktigt slumpmässiga och inte kan förutsägas.
 
-Att generera slumpmässiga nummer kan vara en användbar funktion i olika programmeringsprojekt, oavsett om det är för att skapa spel eller för att skapa unika identifierare. Med Gleam programmeringsspråk kan du enkelt lägga till denna funktion i dina projekt.
+##Hur man gör
+För att generera slumpmässiga tal i Gleam använder vi modulen "re" som innehåller en mängd olika funktioner för att hantera slumpmässiga tal. Först måste vi importera modulen med hjälp av `import re`.
 
-## Hur man gör
+För att få ett slumpmässigt tal mellan ett minimumvärde och ett maximumvärde kan vi använda `random.int/1` funktionen:
 
-För att generera slumpmässiga nummer i Gleam behöver du importera modulen `random` och sedan använda funktionen `float` eller `int` beroende på vilken typ av nummer du vill ha. Här är ett exempel på hur du kan använda funktionen för att generera två slumpmässiga flyttal mellan 0 och 1:
-
-```
-Gleam import random
-
-let num1 = random.float(0.0, 1.0)
-let num2 = random.float(0.0, 1.0)
-
-IO.println(num1, num2)
-```
-
-Detta kommer att ge dig två slumpmässiga flyttal i konsolen, till exempel `0.6381780139360925, 0.82915304531743`.
-
-Om du vill ha heltal istället kan du använda `int` funktionen och ange övre och undre gränser för de slumpmässiga numren.
-
-```
-Gleam import random
-
-let num1 = random.int(1, 10)
-let num2 = random.int(-5, 5)
-
-IO.println(num1, num2)
+```Gleam
+let slumpmässigt_tal = 
+    // Minsta värde = 1
+    // Största värde = 10
+    re.random.int(1, 10)
+// Output: slumpmässigt_tal = 7
 ```
 
-Detta kommer att generera två slumpmässiga heltal, till exempel `7, -1`.
+Om vi vill ha ett slumpmässigt flyttal mellan 0 och 1 kan vi använda `random.float/0` funktionen:
 
-## Djupdykning
+```Gleam
+let flyttal = re.random.float()
+// Output: flyttal = 0.57493230
+```
 
-Bakom kulisserna använder randommodulen Gleams interna randomgenerator för att generera slumpmässiga nummer. Denna generator bygger på en algoritm som kallas "Mersenne Twister" och är en vanlig metod för att generera slumpmässiga nummer i datorprogram.
+För att få ett slumpmässigt tal från en lista eller en tuple kan vi använda `random.pick/1` funktionen:
 
-Det är också värt att notera att dessa slumpmässiga nummer egentligen inte är helt slumpmässiga utan baseras på en startpunkt, kallad "seed". Om du väljer samma "seed" kommer du att få samma sekvens av slumpmässiga nummer. Det kan vara användbart om du behöver reproducera tester eller händelser.
+```Gleam
+let tal_lista = [1, 2, 3, 4, 5]
+let slumpmässigt_tal = re.random.pick(tal_lista)
+// Output: slumpmässigt_tal = 3 (kan vara ett annat tal vid varje körning)
+```
 
-## Se även
+Det finns också möjlighet att generera slumpmässiga strängar med hjälp av `random.string/1` funktionen:
 
-- Gleam dokumentation för `random` modulen: https://gleam.run/modules/random.html
-- Officiell "Mersenne Twister" algoritm dokumentation: https://en.wikipedia.org/wiki/Mersenne_Twister
+```Gleam
+let slumpmässig_sträng = re.random.string(8) // 8 är längden på strängen
+// Output: slumpmässig_sträng = "Rp!k9&cD" (kan vara en annan sträng vid varje körning)
+```
+
+##Djupdykning
+Du kanske undrar hur dessa slumpmässiga tal faktiskt genereras. Det finns flera olika metoder som kan användas för att generera slumpmässiga tal, men den metod som Gleam använder sig av är känd som Pseudo Random Number Generator (PRNG).
+
+PRNG använder en algoritm för att beräkna en följd av nummer som framstår som slumpmässig. Algoritmen använder ett initialt värde, som kallas en seed, för att skapa denna följd. Om seeden är densamma kommer följderna av slumpmässiga tal att vara identiska.
+
+I Gleam används en algoritm som kallas "Mersenne Twister" för att generera slumpmässiga tal. Den är känt för att ge en hög grad av slumpmässighet och är också snabb och effektiv.
+
+Nu när du har en grundläggande förståelse för hur man genererar slumpmässiga tal i Gleam, kan du experimentera med de olika funktionerna för att skapa numeriska och icke-numeriska slumpmässiga värden.
+
+##Se även
+- Gleam dokumentation: https://gleam.run/documentation/
+- PRNG på Wikipedia (på svenska): https://sv.wikipedia.org/wiki/Pseudo-random_generator
+- Mersenne Twister på Wikipedia (på svenska): https://sv.wikipedia.org/wiki/Mersenne_Twister

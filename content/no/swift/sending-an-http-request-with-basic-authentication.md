@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Sending et http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending et http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Swift: Å sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,57 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-HTTP-anmodninger med grunnleggende autentisering er en viktig del av mange programmeringsprosjekter. Det tillater brukere å sikre sine kommunikasjoner med servere ved å sende autentiseringsinformasjon i hvert anmodning.
+Hvorfor sender vi HTTP-forespørsler med grunnleggende autentisering? Grunnene kan være mange, men en av de viktigste er å sikre at våre nettsteder og applikasjoner bare lar autoriserte brukere få tilgang til sensitive data og funksjoner.
 
-# Hvordan
+## Hvordan
 
-For å sende en HTTP-anmodning med grunnleggende autentisering i Swift, må du først legge til følgende importstatement i begynnelsen av filen din:
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Swift, må du først importere "Foundation" -rammen. Deretter kan du sette opp forespørselen ved å definere en URL og legge til autentiseringsinformasjon i en "Authorization" -header.
 
 ```Swift
 import Foundation
-```
 
-Deretter kan du konstruere din HTTP-anmodning og legge til den nødvendige autentiseringsinformasjonen ved å bruke `URLCredential`-objektet.
+// Definer URL-en
+let url = URL(string: "http://nettsted.com/api/data")
 
-```Swift
-let urlString = "http://eksempel.com"
-let url = URL(string: urlString)!
+// Sett opp request
+var request = URLRequest(url: url!)
+
+// Definer autentisering
 let username = "brukernavn"
 let password = "passord"
-let credentials = URLCredential(user: username, password: password, persistence: .forSession)
-let session = URLSession(configuration: .default)
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-request.setValue("application/json", forHTTPHeaderField: "Accept")
-request.setValue("basic \(credentials)", forHTTPHeaderField: "Authorization")
-let task = session.dataTask(with: request) { (data, response, error) in
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+let base64LoginString = loginData?.base64EncodedString()
+
+// Legg til autentisering i headeren
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+// Eksekver forespørselen og håndter svaret
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
     if let error = error {
-        print("An error occurred: \(error.localizedDescription)")
-    }
-    if let httpResponse = response as? HTTPURLResponse {
-        print("Status code: \(httpResponse.statusCode)")
-    }
-    if let responseData = data {
-        do {
-            let json = try JSONSerialization.jsonObject(with: responseData, options: [])
-            print("Response data: \(json)")
-        } catch {
-            print("Could not serialize response data.")
-        }
+        print("Feil: \(error)")
+    } else if let responseData = data {
+        // Behandle svaret her
     }
 }
+
 task.resume()
 ```
 
-# Dypdykk
+Et eksempel på svaret kan være en streng som inneholder JSON-data. Vi kan bruke Swifts "JSONSerialization" til å dekode denne dataen og få tilgang til den.
 
-Det er viktig å merke seg at HTTP-anmodninger med grunnleggende autentisering er mindre sikre enn andre autentiseringsteknikker, da brukernavn og passord sendes i klartekst. Det anbefales derfor å bruke HTTPS når du implementerer grunnleggende autentisering. I tillegg tillater denne metoden kun én bruker per anmodning, noe som kan være en begrensning i visse scenarier.
+```Swift
+if let json = try? JSONSerialization.jsonObject(with: responseData, options: []) {
+    // Dataen er nå et Swift-objekt, og vi kan behandle den videre
+    print(json)
+}
+```
 
-# Se også
+## Dypdykk
 
-- [HTTP authentication with Swift](https://mitchellb.github.io/2015/06/18/http-basic-authentication-with-swift.html)
-- [URLCredentialClass Reference](https://developer.apple.com/documentation/foundation/urlcredential)
-- [URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+Grunnleggende autentisering er en enkel og vanlig måte å sikre HTTP-forespørsler på. Den fungerer ved å kodere brukernavn og passord og sende dem som en del av forespørselen. På serverens side dekoder den disse verdiene og sjekker om de stemmer overens med autoriserte brukerkontoer. Det er viktig å merke seg at denne metoden ikke krypterer dataen som sendes, så den bør brukes sammen med en sikker tilkobling (HTTPS).
+
+## Se også
+
+- [Swift.org](https://swift.org/)
+- [Foundation-rammen](https://developer.apple.com/documentation/foundation)
+- [URLSession](https://developer.apple.com/documentation/foundation/urlsession)

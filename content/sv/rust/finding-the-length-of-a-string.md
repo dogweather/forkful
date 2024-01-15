@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Avgöra längden på en sträng"
-simple_title:         "Avgöra längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Rust: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +11,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna hitta längden på en sträng är en viktig del av programmering, oavsett vilket språk du använder. Det låter dig hantera textdata på ett effektivt sätt och utföra olika operationer.
 
-## Hur man gör
-För att hitta längden på en sträng i Rust, använder man sig av `len()` funktionen som finns tillgänglig inbyggt i språket. För att få reda på längden av en specifik sträng behöver du bara skriva `sträng.len()` i din kod, där "sträng" är namnet på den specifika strängen du vill undersöka. Kom ihåg att alltid deklarera och initiera strängen innan du använder `len()` funktionen på den.
+Att veta längden på en sträng är en grundläggande egenskap som kan hjälpa dig att manipulera data och skapa effektivare program. Det är också en viktig färdighet att ha när du lär dig att programmera i Rust.
+
+## Så här gör du
+
+För att hitta längden på en sträng i Rust, kan du använda inbyggda funktionen `len()` som finns i standardbiblioteket `std::str`.
 
 ```Rust
-fn main() {
-    let str = "Hej från Sverige!";
-    println!("Längden på strängen är: {}", str.len());
-}
+let str = "Hej Rust";
+let length = str.len();
+println!("Längden på strängen är: {}", längd);
 ```
 
 Output:
+
 ```
-Längden på strängen är: 17
+Längden på strängen är: 8
 ```
 
-## Djupdykning
-I Rust är strängar en del av "Primitive Data Types" och är representerade som en serie av bytes. Det betyder att när du använder `len()` funktionen för att hitta längden på en sträng, så returnerar den faktiskt antalet bytes som strängen innehåller. Detta är viktigt att ha i åtanke eftersom olika tecken och symboler tar upp olika antal bytes i en sträng. Till exempel tar ett latinskt tecken upp ett byte, medan ett kinesiskt tecken tar upp tre bytes.
+För att använda `len()` funktionen behöver du först skapa en variabel som innehåller strängen du vill mäta längden på. Sedan kallar du på `len()` funktionen och tilldelar resultatet till en annan variabel, i detta fall `length`.
+
+Om du vill kan du också använda `len()` funktionen direkt på en sträng utan att tilldela den till en variabel.
+
+```Rust
+let str = "Hej Rust";
+println!("Längden på strängen är: {}", str.len());
+```
+
+Output:
+
+```
+Längden på strängen är: 8
+```
+
+En annan metod att hitta längden på en sträng är att använda `str.len_utf8()`. Detta är särskilt användbart om du arbetar med strängar som innehåller Unicode-tecken.
+
+## Deep Dive
+
+I Rust lagras strängar som en sekvens av bytes. `len()` funktionen räknar bara antalet bytes i en sträng och detta kan vara fel om du använder Unicode. Det är här `str.len_utf8()` kommer in i bilden. Den här funktionen räknar istället antalet Unicode-tecken i en sträng. Detta är viktigt eftersom vissa Unicode-tecken tar upp mer än en byte.
+
+Tänk på den här strängen: "𠜎". Den består av två Unicode-tecken men tar upp 4 bytes i en vanlig sträng. Om vi använder `len()` funktionen får vi ett felaktigt svar.
+
+```Rust
+let str = "𠜎";
+println!("Längden på strängen är: {}", str.len());
+```
+
+Output:
+
+```
+Längden på strängen är: 4
+```
+
+Men om vi använder `str.len_utf8()` får vi det korrekta svaret.
+
+```Rust
+let str = "𠜎";
+println!("Längden på strängen är: {}", str.len_utf8());
+```
+
+Output:
+
+```
+Längden på strängen är: 2
+```
+
+Det är viktigt att välja rätt funktion beroende på om du behöver räkna antalet bytes eller Unicode-tecken i en sträng.
 
 ## Se även
-- [Officiell Rust dokumentation om strängar](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Enkelt exempel på att hitta längden på en sträng i Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)
-- [Rust programmeringsguide för nybörjare](https://www.geeksforgeeks.org/rust-programming-language-introduction/)
+
+För mer information om strängmanipulering i Rust, se nedan:
+
+- [Rust Standardbibliotek: str - Utforska inbyggda strängfunktioner](https://doc.rust-lang.org/std/str/index.html)
+- [Officiell Rust Dokumentation - Str strings](https://doc.rust-lang.org/book/ch08-02-strings.html)

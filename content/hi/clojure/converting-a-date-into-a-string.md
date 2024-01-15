@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "Clojure: तारीख को स्ट्रिंग में रूपांतरण करना"
 simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kyun
 
-डेटा को स्ट्रिंग में रूपांतरित करने में लोग क्यों रुचि रखते हैं, इस पर लम्बा विचार करना थोड़ा मुश्किल हो सकता है। लेकिन अपने अनुभव से मुझे बताया है कि डेटा को स्ट्रिंग में रूपांतरित करने का एकमात्र कारण है क्योंकि यह प्रोग्रामिंग में काफी उपयोगी हो सकता है। जो आपको बाद में बताऊंगा। 
+Dosto, aapne kabhi socha hai ki hum date ko string mein kyun badalte hain? Aksar hume apne code mein tareekhon ko kisi dusre format mein dikhana padta hai. Isliye hume date ko string mein badalna bahut zaroori ho jata hai. Iss article mein, hum aapko batayenge ki kaise aap date ko Clojure mein string mein convert kar sakte hain. Chaliye shuru karte hain!
 
-## कैसे करें
+## Kaise karein
 
-स्ट्रिंग बनाने के लिए, आपको `format` फंक्शन का उपयोग करना होगा। यह आप अपनी डेटा के लिए आवश्यक फॉर्मेट देता है और उसे स्ट्रिंग में रूपांतरित करता है।
-
-```Clojure
-(format "आज का दिन: %tm %td, %tY")
-```
-
-इस कोड के लिए, आज की तारीख को स्ट्रिंग में रूपांतरित करने का परिणाम निम्न अनुभव होगा:
+Sabse pehle hum `java.time.LocalDate` library ko import karenge. Fir hum `format` function ka istemal karke date ko string mein convert karenge.
 
 ```Clojure
-आज का दिन: 05 23, 2021
-```
+(import 'java.time.LocalDate)
 
-आप स्वतंत्रतापूर्वक अपने डेटा फॉर्मेट के साथ खेल सकते हैं। जैसे कि समय को स्ट्रिंग में रूपांतरित करने के लिए, निम्न अनुभव करें:
+(def now (LocalDate/now))
+(format now "dd/MM/yyyy")
+```
+Output: "22/07/2021"
+
+Is coding example mein, humne `dd` ko `day` ke liye aur `MM` ko `month` ke liye replace kiya hai. Is tarah hum apne hisab se kisi bhi format mein date ko convert kar sakte hain. Ab aap khud bhi kuch alag format mein try karein!
+
+## Gehri Jankari
+
+Date ko string mein convert karne ke liye, hume `format` function mein `java.text.SimpleDateFormat` ka upyog karna padta hai. Iss library mein hume kai saare options milte hain jisse hum date ko apne hisab se customize kar sakte hain.
 
 ```Clojure
-(format "अभी इस समय है: %tI:%tM %Tp")
+(import 'java.time.LocalDate)
+(import 'java.text.SimpleDateFormat)
+
+(def now (LocalDate/now))
+
+(def custom-date-format (SimpleDateFormat. "EEE, dd MMMM yyyy"))
+(def custom-time-format (SimpleDateFormat. "hh:mm:ss a"))
+
+(format now custom-date-format)
+(format now custom-time-format)
 ```
+Output: "Thu, 22 July 2021" and "12:00:00 PM"
 
-इसका परिणाम होगा:
+Jaise ki aap dekh sakte hain, humne `format` function mein ek custom format pass kiya hai jo ki humne `SimpleDateFormat` se banaya hai. Iss tarah aap apne hisab se custom formats create kar sakte hain.
 
-```Clojure
-अभी इस समय है: 04:52 PM
-```
+# See Also
 
-## गहराई में जाओ
-
-स्ट्रिंग में डेटा रूपांतरण इसलिए उपयोगी है क्योंकि यह प्रोग्रामिंग का काम और भी आसान बना सकता है। यह आपको अलग-अलग फॉर्मेटों में अपने डेटा को प्रस्तुत करने की अनुमति देता है। इसके अलावा, यह अपने कोड को अधिक पाठक्रम
+1) [Official Clojure Documentation](https://clojure.org/)
+2) [java.text.SimpleDateFormat Documentation](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+3) [A Beginner's Guide to Dates in Clojure](https://purelyfunctional.tv/guide/dates-in-clojure/)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Kotlin: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,34 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-커맨드 라인 인자를 읽는 것이 왜 중요한지 알고 싶은 이유가 있나요? 이 블로그 포스트는 코틀린으로 커맨드 라인 인자를 읽는 방법을 알려드리겠습니다.
+"Command line arguments(명령 줄 인자)"를 읽는 것은 프로그래밍에서 매우 유용한 기술입니다. 이것을 이용하면 프로그램을 실행할 때 사용자로부터 입력값을 받을 수 있으며, 이를 통해 프로그램의 실행 방식을 유연하게 조절할 수 있습니다.
 
-## 하우 투
-
-코틀린을 사용하여 커맨드 라인 인자를 읽는 방법은 간단합니다. 우선 main() 함수의 파라미터로 args를 추가해야 합니다. 그리고 args[0], args[1], ... 등으로 원하는 인자들을 읽을 수 있습니다. 아래는 이를 구현한 예제 코드와 출력 결과입니다.
+## 방법
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("첫 번째 인자: " + args[0])
-    println("두 번째 인자: " + args[1])
-    println("세 번째 인자: " + args[2])
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
+위의 코드는 "main" 함수의 괄호 안에 "args"라는 변수를 넣어서 실행하면, 사용자가 프로그램 실행 시 프로그램 이름 뒤에 입력한 모든 값을 출력하는 간단한 예제입니다.
+
+**커맨드 라인에서 실행:**
+
 ```Kotlin
-첫 번째 인자: kotlin
-두 번째 인자: programming
-세 번째 인자: blog
+$ kotlin Main.kt Hello World!
+Hello
+World!
 ```
 
-위 예제는 args 배열의 첫 번째, 두 번째, 세 번째 인자를 순서대로 출력하는 코드입니다. 이렇게 간단하게 커맨드 라인 인자를 읽을 수 있습니다.
+만약 프로그램에서 특정한 인자를 사용하는 것이 아니라면, "전역 변수(global variable)"인 "args"를 사용하는 것도 가능합니다. 하지만 이 방식은 가독성이 떨어져 추천하지 않습니다.
+
+### 옵션 파싱
+
+커맨드 라인 인자는 다양한 형태로 지정할 수 있습니다. 예를 들어, "압축 파일을 만들기 위한 프로그램에서 "-c" 옵션으로 압축 파일을 지정하고 싶을 때, 다음과 같이 사용할 수 있습니다.
+
+```Kotlin
+fun main(args: Array<String>) {
+    val options = args.filter { it[0] == '-' }
+    val files = args.filter { it[0] != '-' }
+    println("Options: $options")
+    println("Files: $files")
+}
+```
+
+**옵션과 파일 지정:**
+
+```Kotlin
+$ kotlin Main.kt -c output.txt input1.txt input2.txt
+Options: [-c]
+Files: [output.txt, input1.txt, input2.txt]
+```
+
+옵션은 "-c output.txt"처럼 사용할 수 있지만, 파일명이 "-"로 시작하는 경우 처리하기가 어렵기 때문에 "-c=output.txt"와 같이 사용하는 것을 권장합니다.
 
 ## 딥 다이브
 
-커맨드 라인 인자를 읽는 것은 프로그램을 더 유연하게 만드는데 도움이 됩니다. 예를 들어, 사용자가 프로그램을 실행할 때 다양한 옵션을 전달하여 원하는 동작을 설정할 수 있습니다. 또는 여러 개의 인자를 받아서 계산을 수행하는 프로그램을 만들 수도 있습니다. 더 많은 기능과 예제는 아래 “See Also” 항목에서 찾아볼 수 있습니다.
+커맨드 라인 인자는 문자열 배열(Array<String>)로 전달되며, 배열의 크기는 인자 개수에 따라 결정됩니다. 이 배열을 이용하면 프로그램에서 사용자의 입력 값을 쉽게 읽어올 수 있습니다. 또한 "args"를 통해 전달된 인자는 "immutable(불변)"하기 때문에, 값을 변경하는 것은 불가능합니다.
 
-## See Also
+## 더 보기
 
-- [Kotlin 공식 문서: 커맨드 라인 인자 읽기](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Studytonight: 코틀린 커맨드 라인 인자 사용](https://www.studytonight.com/kotlin/kotlin-command-line-arguments)
-- [Baeldung: 코틀린 커맨드 라인 인자 사용하기](https://www.baeldung.com/kotlin/command-line-arguments)
+- [Kotlin 프로그래밍 가이드](https://kotlinlang.org/docs/reference/)
+- [코틀린 공식 문서](https://kotlinlang.org/docs/)

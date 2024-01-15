@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Alimerkkijonojen erottaminen"
-simple_title:         "Alimerkkijonojen erottaminen"
+title:                "Tekstin pirstalointi"
+html_title:           "TypeScript: Tekstin pirstalointi"
+simple_title:         "Tekstin pirstalointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Substringin erottaminen on hyödyllinen taito, joka auttaa parantamaan koodisi luettavuutta ja tehokkuutta. Se on erityisen hyödyllinen silloin, kun haluat muokata tai käsitellä tiettyä osaa merkkijonosta erillään muusta.
+## Miksi joku haluaisi etsiä osamerkkijonoja?
+
+Osamerkkijonojen etsiminen on hyödyllistä, kun halutaan tarkistaa, sisältääkö tietty merkkijono halutun osamerkkijonon tai kun halutaan manipuloida merkkijonoa ja poimia siitä tietyt osat.
 
 ## Miten
 
-Jos haluat erottaa merkkijonosta tietyn osan, voit käyttää TypeScriptin `substring()`-metodia. Tämä metodi ottaa kaksi parametria: aloitusindeksin ja lopetuspisteen. Näiden parametrien avulla voit määrittää, minkä osan merkkijonosta haluat erottaa.
-
-Esimerkiksi, jos meillä on merkkijono "Tämä on esimerkki", ja haluamme erottaa siitä sanan "esimerkki", voimme käyttää seuraavaa koodia:
-
 ```TypeScript
-let merkkijono: string = "Tämä on esimerkki";
-let osa: string = merkkijono.substring(9, 18);
-console.log(osa);
+// Alustetaan merkkijono
+let sana: string = "tervetuloa";
+
+// Haetaan osamerkkijono
+let osa: string = sana.substring(0, 5);
+
+// Tulostetaan tulos konsoliin
+console.log(osa); // tulostaa "terve"
 ```
 
-Tämä tulostaa "esimerkki" konsoliin. Huomaa, että aloitusindeksi alkaa aina 0:sta ja lopetuspiste ei sisälly eristettyyn osaan.
+Merkkijonon `substring()`-metodi ottaa kaksi parametria: aloitusindeksin ja lopetusindeksin. Ohjelma palauttaa halutun osamerkkijonon aloittaen annetusta aloitusindeksistä ja päättyen ennen lopetusindeksiä. Huomaa, että indeksilaskenta alkaa aina nollasta. 
 
-Voit myös käyttää `substring()`-metodia, jos haluat erottaa osan merkkijonosta sen alusta tai lopusta. Jos haluat erottaa ensimmäisen sanan "Tämä", voit käyttää seuraavaa koodia:
+## Syvempi sukellus
+
+Substringien etsiminen voi olla hyödyllistä myös silloin, kun halutaan suorittaa monimutkaisempia manipulaatioita merkkijonoilla. Esimerkiksi jos halutaan tarkistaa, sisältääkö syötetty luku tietyn lukumäärän numeroita, voidaan käyttää substringiä. Tämä onnistuu helposti esimerkiksi muuntamalla luku merkkijonoksi ja sitten tarkastamalla sen pituutta substring-metodilla.
+
+Seuraavassa esimerkissä käydään läpi merkkijonon `slice()`-metodi, joka toimii samalla tavalla kuin `substring()`, mutta ottaa aloitus- ja lopetusindeksien sijaan aloitusindeksin ja halutun osan pituuden.
 
 ```TypeScript
-let sana: string = merkkijono.substring(0, 4);
-console.log(sana);
+// Alustetaan merkkijono
+let sana: string = "tervetuloa";
+
+// Haetaan osamerkkijono slice-metodilla
+let osa: string = sana.slice(3, 7);
+
+// Tulostetaan tulos konsoliin
+console.log(osa); // tulostaa "vetu"
 ```
 
-Tämä tulostaa "Tämä" konsoliin.
-
-## Syvällinen sukellus
-
-Vaikka `substring()` on helppo ja kätevä tapa erottaa osa merkkijonosta, on hyvä tietää, että se luo aina uuden merkkijonon sen sijaan, että muokkaisi alkuperäistä merkkijonoa. Tämä voi aiheuttaa suorituskykyongelmia, jos kyseessä on suuri merkkijono.
-
-Toinen tärkeä asia huomioitavaa on, että `substring()` käyttää aloitusindeksejä ja lopetuspistettä, kun taas `substr()`-metodi käyttää aloitusindeksiä ja pituutta. Tämä voi aiheuttaa hämmennystä, joten on tärkeää pitää nämä kaksi metodia erillään.
+Huomaa, että kun käytetään negatiivisia lopetusindeksejä, merkkijonoa etsitään lopusta alkuun. Esimerkiksi jos käytämme `-3` lopetusindeksinä, tulee tulokseksi "loa".
 
 ## Katso myös
 
-- [Microsoftin virallinen dokumentaatio `substring()`-metodista](https://docs.microsoft.com/en-gb/scripting/javascript/reference/substring-method-string-javascript)
-- [MDN:n selitys `substring()`-metodista](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs - substring()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs - slice()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

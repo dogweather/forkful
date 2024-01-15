@@ -1,5 +1,6 @@
 ---
-title:                "C: 读取文本文件"
+title:                "读取文本文件"
+html_title:           "C: 读取文本文件"
 simple_title:         "读取文本文件"
 programming_language: "C"
 category:             "C"
@@ -11,59 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-读取文本文件是C语言编程中一个基本的技巧。它允许程序员读取和操作外部文件中的数据，从而使程序更加灵活和强大。不管你是正在学习C语言还是想要提高你的编程技巧，掌握读取文本文件的方法都是非常重要的。
+写程序是一件有趣的事情，尤其是当你能够创建一些能够处理复杂任务的程序时。读取文本文件是一项非常基本的任务，但却是编程中的一个重要部分。本文将向你展示如何使用C语言来读取文本文件。
 
-## 如何做
+## 如何进行
 
-要读取文本文件，需要使用C语言中的标准库函数fopen()和fscanf()。下面是一个简单的示例代码，展示如何使用这两个函数来读取一个名为"input.txt"的文本文件，并将其中的内容打印出来。
+下面是一个简单的C语言程序示例，展示了如何读取一个文本文件并将其打印到屏幕上：
 
 ```C
 #include <stdio.h>
 
-int main() {
-    FILE *fp; // 定义文件指针
-    char name[20]; // 用于存储文件中的字符串
-    int age; // 用于存储文件中的整数
-
-    // 打开文件，如果失败则打印错误信息并退出程序
-    if ((fp = fopen("input.txt", "r")) == NULL) {
-        printf("Error opening file.");
+int main(){
+    // 打开文件
+    FILE *file = fopen("example.txt", "r");
+    
+    // 检查文件是否成功打开
+    if (file == NULL){
+        printf("无法打开文件！");
         return 1;
     }
-
-    // 从文件中读取格式化的数据，并将其存储到相应的变量中
-    fscanf(fp, "%s %d", name, &age);
-
+    
+    // 读取文件内容并打印到屏幕上
+    char c;
+    while ((c = fgetc(file)) != EOF){
+        printf("%c", c);
+    }
+    
     // 关闭文件
-    fclose(fp);
-
-    // 打印读取的数据
-    printf("Name: %s\n", name);
-    printf("Age: %d\n", age);
-
+    fclose(file);
+    
     return 0;
 }
 ```
 
-假设输入文件内容为："John 25"，则上述代码的输出为：
+假设我们有一个名为"example.txt"的文本文件，其中的内容为：
 
 ```
-Name: John
-Age: 25
+这是一段文本。
+它有多行。
 ```
 
-## 深入探究
+运行上面的程序，我们将得到以下输出：
 
-在继续深入了解读取文本文件之前，让我们先了解一下文件指针的概念。在上面的示例代码中，我们定义了一个FILE类型的指针变量fp。这个指针指向一个打开的文件，允许我们使用其他函数来读取文件中的数据。在使用完毕后，需要使用fclose()函数来关闭文件。
+```
+这是一段文本。
+它有多行。
+```
 
-另外，fscanf()函数的格式化字符串参数可以根据文件中数据的格式进行自定义。格式化字符串中的%符号指示了要读取的数据类型，如%c表示一个字符，%d表示一个整数，%s表示一个字符串，%f表示一个浮点数等等。
+现在，让我们来解释一下这段代码的工作原理。
 
-## 参考链接
+首先，我们需要包含<stdio.h>头文件，这样我们才能使用C语言提供的文件操作函数。然后，我们使用fopen()函数来打开一个文件。它的第一个参数是文件的名称，第二个参数是文件的打开模式。在这个例子中，我们使用了"r"模式来表示我们是要读取文件。如果文件成功打开，fopen()函数将返回一个指向该文件的指针；否则，它将返回NULL。
 
-- [C语言文件I/O](https://www.runoob.com/cprogramming/c-file-io.html)
-- [fopen()函数文档](https://zh.cppreference.com/w/c/io/fopen)
-- [fscanf()函数文档](https://zh.cppreference.com/w/c/io/fscanf)
+接下来，我们使用一个if语句来检查文件是否成功打开。如果没有成功，我们将打印一条错误信息并退出程序。否则，我们将使用fgetc()函数来逐个读取文件中的字符，直到到达文件结尾（由EOF表示）。每次读取一个字符后，我们使用printf()函数将它打印到屏幕上。
 
-## 参见
+最后，我们使用fclose()函数来关闭文件，以防止出现任何错误。
 
-[如何写入文本文件](https://www.example.com/how-to-write-to-a-text-file-in-c)
+## 深入了解
+
+除了上面我们提到的fopen()、fgetc()和fclose()函数之外，C语言还提供了许多其他函数来读取文本文件。例如，你可以使用fgets()函数来一次读取一行文本，或者使用fscanf()函数来按照指定的格式来读取文件内容。此外，你还可以使用fseek()函数来定位到文件的特定位置，或者使用ftell()函数来获取文件指针的当前位置。
+
+如果你对C语言的文件操作函数感兴趣，可以参考下面的链接来了解更多信息：
+
+- [C语言文件操作简介](https://www.runoob.com/cprogramming/c-file-handling.html)
+- [C语言文件读写教程](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+
+## 参考
+
+- [C语言中文网 - 文件操作](http://c.biancheng.net/view/31.html)
+- [C语言中文网 - 文件操作函数列表](http://c.biancheng.net/cpp/biancheng/view/3018.html)

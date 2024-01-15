@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "TypeScript recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,49 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Starting a new programming project can seem daunting, but it can also be exciting! With the power of TypeScript, you can create robust and scalable applications while also enjoying the perks of a modern, typed language. In this blog post, we'll explore the benefits of using TypeScript and how to get started with your own project.
+Starting a new project can be a daunting task, but with the rising popularity of TypeScript, it has become an enticing option for many developers. With its strong type system and powerful features, TypeScript offers a more structured approach to JavaScript, making it a worthy choice for any new project.
 
 ## How To
 
-To get started with TypeScript, you'll need to have Node.js installed on your computer. Once that's taken care of, you can use the Node Package Manager (npm) to install TypeScript globally:
+To start a new TypeScript project, first make sure you have TypeScript installed globally on your machine. You can do this by running `npm install -g typescript` in your terminal.
+
+Next, create a new folder for your project and initialize it as a Node.js project with `npm init -y`. This will create a `package.json` file in your project folder.
+
+Now, create a new file called `index.ts` and let's write our first TypeScript code:
 
 ```TypeScript
-npm install -g typescript
+// index.ts
+const message: string = "Hello, TypeScript!";
+console.log(message);
 ```
 
-Next, create a new directory for your project and navigate into it. Then, run the following command to initialize a new TypeScript project:
+Here, we declare a variable `message` with a type annotation of `string`, and then log it to the console. To compile this code into JavaScript, run command `tsc index.ts` in your terminal. This will create a `index.js` file in the same folder.
 
-```TypeScript
-tsc --init
-```
-
-This will create a `tsconfig.json` file, which is used to configure your project's TypeScript settings.
-
-Now, you can start writing your code! Here's a simple "Hello World" example in TypeScript:
-
-```TypeScript
-// main.ts
-
-const greeting: string = "Hello World!";
-console.log(greeting);
-```
-
-In the above code, we define a variable `greeting` with the type `string` and assign it the value of "Hello World!" Then, we use `console.log()` to print the greeting to the console. To compile and run this code, use the following command:
-
-```TypeScript
-tsc main.ts && node main.js
-```
-
-You should see "Hello World!" printed to your console. Congrats, you've written your first TypeScript code!
+To run our code, we need to use `node index.js` in the terminal. You should see the message "Hello, TypeScript!" printed in the console.
 
 ## Deep Dive
 
-In addition to its strong typing system, TypeScript also offers a wide range of features such as interfaces, classes, and decorators. These features make it easier to write and maintain complex code. TypeScript also allows for better error checking and code completion, making debugging much easier.
+Now, let's dive deeper into starting a new TypeScript project. One of the first steps is to set up our `tsconfig.json` file, which is a configuration file for TypeScript projects. This file tells the TypeScript compiler how to compile our TypeScript code into JavaScript.
 
-For a deeper dive into TypeScript, you can explore the official documentation and experiment with more advanced features. You can also look into building TypeScript projects using popular frameworks like Angular or React.
+To generate a basic `tsconfig.json` file, run command `tsc --init` in your terminal. This will create a file with default settings, but you can customize it according to your project's needs. Some common configurations include specifying the version of TypeScript, target environment, and output directory.
 
-See Also: 
+Another important aspect of a TypeScript project is using type definitions. These are files that describe the types and structures of external JavaScript libraries or modules, allowing TypeScript to understand and use them in your code.
 
-- Official TypeScript documentation: https://www.typescriptlang.org/docs/
-- Angular: https://angular.io/
-- React: https://reactjs.org/
+You can install type definitions for a specific library using `npm install @types/library-name`. For example, if you're using Express in your project, you can install its type definitions using `npm install @types/express`. These type definitions will be automatically included in your `tsconfig.json` file under the `types` section.
+
+## See Also
+
+- Official TypeScript documentation: https://www.typescriptlang.org/docs/home.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- Learn TypeScript in 5 minutes: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+- Setting up a TypeScript project: https://www.typescriptlang.org/docs/handbook/setting-up-your-project.html

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Envoi d'une requête http avec une authentification de base"
-simple_title:         "Envoi d'une requête http avec une authentification de base"
+title:                "Envoi d'une demande http avec une authentification de base"
+html_title:           "Elm: Envoi d'une demande http avec une authentification de base"
+simple_title:         "Envoi d'une demande http avec une authentification de base"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,59 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi utiliser des requêtes HTTP avec une authentication basique en Elm?
+## Pourquoi
 
-Si vous travaillez sur une application web avec Elm, il est possible que vous deviez communiquer avec une API externe. Dans certains cas, cette API pourrait nécessiter une authentication pour vous donner accès aux données. C'est là que les requêtes HTTP avec une authentication basique deviennent essentielles.
+Vous connaissez sûrement le sentiment de devoir entrer des identifiants à chaque fois que vous souhaitez accéder à une API ou un site web qui nécessite une authentification de base. Cela peut devenir fastidieux et prendre du temps, surtout si vous devez le faire fréquemment. Heureusement, en utilisant Elm, il est possible d'automatiser ce processus en envoyant une requête HTTP avec une authentification de base.
 
-## Comment faire
+## Comment Faire
 
-Pour envoyer une requête HTTP avec une authentication basique en Elm, il existe quelques étapes à suivre. Tout d'abord, vous devez définir les paramètres de votre requête, tels que l'URL et la méthode (GET, POST, etc.). Ensuite, vous devez ajouter vos informations d'authentication dans l'header de la requête. Enfin, vous pouvez envoyer la requête et traiter la réponse.
+Pour commencer, assurez-vous d'avoir la dernière version d'Elm installée sur votre ordinateur. Ensuite, suivez ces étapes simples pour envoyer une requête HTTP avec une authentification de base :
+
+1. Tout d'abord, importez le module `Http` dans votre fichier Elm.
+2. Ensuite, créez une fonction `authenticate` qui prendra en paramètres l'URL de l'API ou du site web, ainsi que les identifiants d'authentification.
+3. Utilisez la fonction `Http.basicAuth` pour créer un objet d'authentification en utilisant les identifiants fournis.
+4. Utilisez la fonction `Http.send` pour envoyer une requête GET à l'URL avec l'objet d'authentification en tant que paramètre.
+5. Gérez la réponse de la requête en utilisant un `case` statement et en accédant aux données renvoyées par l'API ou le site web.
+
+Voici un exemple de code Elm qui envoie une requête GET à l'API https://example.com avec une authentification de base :
 
 ```Elm
 import Http
-import Json.Decode exposing (..)
 
-type alias Auth = 
-  { username : String
-  , password : String
-  }
+authenticate : String -> String -> Http.Request a
+authenticate url credentials =
+    let
+        auth =
+            Http.basicAuth "username" "password"
 
-authenticate : Auth -> Http.Request a -> Http.Request a
-authenticate auth request =
-  Http.header "Authorization" (basicAuth auth.username auth.password) request
+        request =
+            Http.get url auth
+    in
+        Http.send handleResponse request
 
-basicAuth : String -> String -> String
-basicAuth username password =
-  "Basic " ++ Base64.encode (username ++ ":" ++ password)
-  
-requestUrl : String
-requestUrl = "https://api.example.com/users"
+handleResponse : Http.Response a -> Http.Error -> Platform.Cmd msg
+handleResponse response error =
+    case response of
+        Http.BadUrl _ ->
+            -- gestion d'erreur pour une mauvaise URL
 
-request : Http.Request (List User)
-request =
-  Http.get requestUrl userDecoder
+        Http.Timeout ->
+            -- gestion d'erreur pour une requête expirée ou un délai dépassé
 
-userDecoder : Decoder (List User)
-userDecoder =
-  list (field "name" string
-    
+        Http.NetworkError ->
+            -- gestion d'erreur pour une erreur de connexion réseau
 
-authenticatedRequest : Http.Request (List User)
-authenticatedRequest = 
-  Http.send UserDecoder (authenticate { username = "username", password = "password"})
+        Http.BadStatus _ ->
+            -- gestion d'erreur pour un code d'état HTTP inattendu
+
+        Http.GoodStatus ->
+            -- traitement des données renvoyées par l'API ou le site web
 ```
 
-Lorsqu'on envoie la requête `authenticatedRequest`, on obtiendra une réponse contenant une liste d'utilisateurs, décodée grâce à la fonction `userDecoder`.
+Vous remarquerez que le code utilise un `case` statement pour gérer différentes erreurs qui pourraient survenir lors de l'envoi de la requête. Cela permet de s'assurer que votre application n'échoue pas en cas d'erreur.
 
-## Plongée en profondeur
+## Plongée en Profondeur
 
-Maintenant que nous avons vu un exemple concret de l'utilisation de requêtes HTTP avec une authentication basique en Elm, il est important de comprendre en profondeur comment cela fonctionne.
+Maintenant que vous savez comment envoyer une requête HTTP avec une authentification de base en utilisant Elm, il est important de comprendre le fonctionnement de cette méthode d'authentification. En utilisant l'objet d'authentification créé avec la fonction `Http.basicAuth`, Elm ajoute un en-tête `Authorization` à la requête HTTP avec les identifiants encodés en base64. Ce processus assure que les informations d'authentification ne sont pas envoyées en clair, ce qui est important pour la sécurité de vos données.
 
-Le processus d'authentication basique implique d'ajouter une en-tête `Authorization` dans la requête HTTP. Cette en-tête contient une chaine encodée en base64 qui contient le nom d'utilisateur et le mot de passe, séparés par un `:`. Ainsi, l'API externe pourra vérifier ces informations pour autoriser ou non l'accès.
+Il est également possible d'utiliser d'autres méthodes d'authentification en utilisant le module `Http` d'Elm. Par exemple, la fonction `Http.oauth` peut être utilisée pour envoyer une requête OAuth à une API.
 
-De plus, il est important de noter que l'utilisation de Base64 pour encoder les informations d'authentication n'est pas considérée comme totalement sécurisée, car il est possible de convertir facilement cette chaine en clair. Il est donc essentiel de sécuriser l'application web et de ne pas stocker les informations d'authentication dans le code.
+## Voir Aussi
 
-# Voir aussi
-
-- [Documentation officielle sur les requêtes HTTP en Elm](https://guide.elm-lang.org/effects/http.html)
-- [Comprendre l'authentication basique en HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+- Documentation officielle d'Elm sur l'utilisation du module `Http` : https://package.elm-lang.org/packages/elm/http/latest/
+- Tutoriel sur la gestion des requêtes HTTP en utilisant Elm : https://www.elm-tutorial.org/fr/api/http-requests.html
+- Exemple de code pour une authentification OAuth en utilisant Elm : https://github.com/danyx23/elm-oauth2-sample

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "Elixir: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,38 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Capitalisieren einer Zeichenkette ist eine nützliche Funktion, um Strings in einer Elixir-Anwendung einheitlich zu formatieren. Dies kann hilfreich sein, um zum Beispiel Benutzernamen oder Titel in einer korrekten Schreibweise anzuzeigen oder um Daten zu filtern.
+Obwohl es auf den ersten Blick wie eine einfache Aufgabe erscheint, kann das Kapitalisieren von Strings in Elixir in manchen Fällen eine wichtige Rolle spielen. Zum Beispiel kann es hilfreich sein, wenn Benutzereingaben in einem Formular standardisiert werden sollen, um Datenkonsistenz zu gewährleisten oder wenn Text für die Ausgabe formatiert werden soll.
 
 ## Wie man es macht
 
-Die einfachste Möglichkeit, eine Zeichenkette in Elixir zu capitalisieren, ist die Verwendung der `String.capitalize/1` Funktion. Diese Funktion akzeptiert einen String als Argument und gibt den String zurück, wobei der erste Buchstabe großgeschrieben wird:
+Um einen String in Elixir zu kapitalisieren, kannst du die Funktion `String.capitalize/1` verwenden. Hier ist ein Beispielcode:
 
-```Elixir
-String.capitalize("hallo") # => "Hallo"
+```elixir
+name = "max mustermann"
+kapitalisierter_name = String.capitalize(name)
+IO.puts(kapitalisierter_name)
+```
+Dies würde die folgende Ausgabe erzeugen:
+
+```elixir
+Max Mustermann
 ```
 
-Man kann die Funktion auch auf eine Liste von Wörtern anwenden, wobei jeder erste Buchstabe in den einzelnen Wörtern großgeschrieben wird:
+Du kannst auch `String.capitalize/2` verwenden, um eine benutzerdefinierte Trennung zwischen Wörtern anzugeben. Wenn du zum Beispiel möchtest, dass der String "max mustermann" als "Max-Mustermann" formatiert wird, könntest du folgenden Code verwenden:
 
-```Elixir
-String.capitalize("guten tag") # => "Guten Tag"
+```elixir
+name = "max mustermann"
+kapitalisierter_name = String.capitalize(name, "-")
+IO.puts(kapitalisierter_name)
 ```
 
-Für Zeichenketten, die bereits großgeschrieben sind, bleibt die Funktion unverändert:
+Dies würde die folgende Ausgabe erzeugen:
 
-```Elixir
-String.capitalize("ELIXIR") # => "ELIXIR"
+```elixir
+Max-Mustermann
 ```
 
-Es gibt auch andere Funktionen wie `String.capitalize/2` und `String.capitalize_every/2`, die mehr Kontrolle über die Capitalisierung bieten. Es ist empfehlenswert, die Dokumentation zu diesen Funktionen zu lesen, um die beste Lösung für spezifische Anwendungsfälle zu finden.
+## Tiefer gehende Informationen
 
-## Tiefergehende Informationen
+Wenn du dein Wissen über die Funktion `String.capitalize/1` auf die Probe stellen möchtest, gibt es ein paar Dinge, die du beachten solltest. Zum Beispiel wird die Funktion die Groß- und Kleinschreibung von Akzenten und diakritischen Zeichen nicht verändern. Außerdem wird sie nur den ersten Buchstaben jedes Wortes in einem String groß schreiben, nicht jedoch beispielsweise alle Buchstaben nach einem Bindestrich.
 
-Die `String.capitalize/1` Funktion verwendet unter der Haube die `String.upcase/1` Funktion, um den ersten Buchstaben zu capitalisieren. Diese Funktion verwendet die Unicode-Kategorie von Buchstaben, um zu entscheiden, welches Zeichen großgeschrieben werden soll. Dies bedeutet, dass sie auch mit Nicht-Alphabet-Zeichen wie Akzenten oder Umlauten umgehen kann.
-
-Es ist auch wichtig zu beachten, dass die Capitalisierung von Zeichenketten in Elixir nicht nur auf Englisch beschränkt ist. Durch die Verwendung von Unicode-Zeichen können Zeichenketten aus verschiedenen Sprachen auch auf korrekte Weise capitalisiert werden.
+Um diese Funktionalitäten zu erreichen, gibt es andere Funktionen wie `String.upcase/1`, `String.downcase/1` oder `String.trim_leading/2`, die in bestimmten Fällen besser geeignet sein könnten.
 
 ## Siehe auch
 
-- [Elixir String-Dokumentation](https://hexdocs.pm/elixir/String.html)
-- [Unicode-Kategorien](https://www.unicode.org/reports/tr44/)
-- [Elixir-Typkonvertierung](https://elixirschool.com/de/lessons/basics/type-conversion/)
+- [String.capitalize/1 Dokumentation](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Offizielle Elixir Webseite](https://elixir-lang.org/)
+- [Elixir Forum](https://elixirforum.com/)

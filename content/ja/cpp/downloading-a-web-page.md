@@ -1,6 +1,7 @@
 ---
-title:                "C++: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "「Webページのダウンロード」"
+html_title:           "C++: 「Webページのダウンロード」"
+simple_title:         "「Webページのダウンロード」"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,74 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ウェブページをダウンロードする理由は多種多様ですが、その中でも特に重要なのは、ユーザーがウェブページをオフラインで読むことができるようにするためです。また、ウェブページをサーバーからダウンロードすることで、最新の情報を取得し、必要な更新を行うことができます。
+ウェブページをダウンロードするアクションに参加する理由は、インターネットを利用する上で必要不可欠なものです。例えば、ウェブサイトのコンテンツをオフラインで閲覧したい場合や、スクレイピングによってデータを収集したい場合など、様々なシーンでダウンロードを行うことがあります。
 
-## ダウンロードする方法
+## 方法
 
-ウェブページをダウンロードするには、C++プログラミング言語を使用することができます。以下は、ダウンロードするための基本的なコードの例です。
+C++を使用してウェブページをダウンロードする方法をご紹介します。下記のコードブロック内に、サンプルのC++コードとその出力結果を記載しています。ご自身のプロジェクトに適用して、ウェブページのダウンロードを実現してみましょう。
 
 ```C++
 #include <iostream>
-#include <fstream>
 #include <curl/curl.h>
 
-using namespace std;
-
-// ダウンロードしたデータを格納するためのバッファ
-static string buffer;
-
-// コールバック関数を定義し、ダウンロードしたデータをバッファに格納する
-static size_t WriteCallback(char* ptr, size_t size, size_t nmemb, void* userdata) {
-    buffer.append(ptr, size * nmemb);
-    return size * nmemb;
-}
-
-int main() {
-    // ダウンロード先のURLを指定する
-    string url = "https://example.com";
-
-    // ライブラリの初期化
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-
-    // ダウンロード用のハンドラを作成する
+int main()
+{
+    // 初期化
     CURL* curl = curl_easy_init();
-
-    // ダウンロード先のURLをセットする
-    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-
-    // データをダウンロードしてバッファに格納するようにコールバック関数をセットする
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-
-    // ダウンロードを実行する
-    CURLcode res = curl_easy_perform(curl);
-    if (res != CURLE_OK) {
-        cerr << "An error occurred while downloading the page." << endl;
-        return 1;
-    }
-
-    // バッファに格納されたデータを表示する
-    cout << buffer << endl;
-
-    // ダウンロード用のハンドラをクリーンアップする
+    // ダウンロードするURLを設定
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/");
+    // 出力ファイルを指定
+    FILE* fp = fopen("output.html", "wb");
+    // 出力先を設定
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+    // ダウンロードを実行
+    curl_easy_perform(curl);
+    // リソースを解放
     curl_easy_cleanup(curl);
+    // ファイルをクローズ
+    fclose(fp);
 
-    // ライブラリをクリーンアップする
-    curl_global_cleanup();
+    // ダウンロード成功時のメッセージを出力
+    std::cout << "ウェブページのダウンロードが完了しました。" << std::endl;
 
     return 0;
 }
 ```
 
-上記のコードを実行すると、指定したURLのウェブページの内容がコンソールに表示されます。
+```
+出力結果：
+ウェブページのダウンロードが完了しました。
+```
 
-## 詳細を深く掘り下げる
+## ディープダイブ
 
-ウェブページをダウンロードする際には、さまざまなオプションを使用することができます。例えば、ダウンロードをタイムアウトさせる時間や、リダイレクトを許可するかどうかなど、様々なオプションが提供されています。また、コールバック関数を使用することで、ダウンロードしたデータを加工することもできます。
+ウェブページをダウンロードする際、実際にはHTTPプロトコルを使用してサーバーと通信を行います。C++では、libcurlというライブラリを使用することで簡単にHTTP通信を行うことができます。libcurlを使用することで、ヘッダー情報の設定や認証についても容易に実装することができます。
 
-さらに、C++だけでなく、他のプログラミング言語でもウェブページをダウンロードする方法があります。それぞれの言語で提供されているツールやライブラリを活用することで、より効率的にダウンロードを行うことができます。
+## 他にも見るべき情報
 
-## 参考リンク
-
-- [Curl](https://curl.se/)
-- [ウェブページをダウンロードする方法 - Qiita](https://qiita.com/xxkazuya/items/7488864cb2da77175eff)
-- [libcurlでダウンロードしてみた - Qiita](https://qiita.com/arosh/items/e7d2d1f9eab34f350500)
+- [libcurlの公式ドキュメント](https://curl.haxx.se/libcurl/)
+- [C++ curlライブラリ 〜基本編〜](https://qiita.com/kurokky/items/8a708d82acfe11caf103)

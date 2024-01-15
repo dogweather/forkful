@@ -1,6 +1,7 @@
 ---
-title:                "C#: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "C#: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,44 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie jemals mit Zeichenketten in C# gearbeitet haben, haben Sie vielleicht bemerkt, dass es manchmal notwendig ist, alle Buchstaben in Kleinbuchstaben zu ändern. Dies kann hilfreich sein, um Vergleiche zwischen Zeichenketten durchzuführen oder einfach um ein konsistentes Format für Ihre Daten zu haben. In diesem Blogbeitrag werden wir uns ansehen, wie Sie eine Zeichenkette in C# in Kleinbuchstaben umwandeln können.
+Ganz einfach: Manchmal müssen wir einfach Strings in Kleinbuchstaben umwandeln, sei es für die Dateneingabe, Formatierung oder für Vergleiche. Glücklicherweise bietet C# einige praktische Methoden für diese Aufgabe.
 
-## Wie man eine Zeichenkette in Kleinbuchstaben umwandelt
+## So geht's
 
-Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, können wir die eingebaute Methode `ToLower()` verwenden. Diese Methode gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Kleinbuchstaben umgewandelt wurden. Hier ist ein Beispiel, wie Sie dies in Ihrem Code verwenden können:
-
-```C#
-string myString = "Hallo, WELT!";
-string lowercaseString = myString.ToLower();
-
-Console.WriteLine(lowercaseString);
-
-// Output: hallo, welt!
-```
-
-Wie Sie sehen, gibt die Methode `ToLower()` eine neue Zeichenkette zurück, ohne die ursprüngliche zu ändern. Dies ist wichtig zu beachten, da Zeichenketten in C# unveränderlich sind, was bedeutet, dass sie nicht geändert werden können, sobald sie erstellt wurden.
-
-## Eine tiefere Eintauchen in die Zeichenketten-Konvertierung
-
-Die Methode `ToLower()` ist sehr nützlich, wenn Sie eine einfache Konvertierung von Großbuchstaben in Kleinbuchstaben benötigen. Es gibt jedoch einige Fälle, in denen Sie möglicherweise eine andere Art der Konvertierung benötigen, z.B. wenn Sie mit Sprachen arbeiten, die Sonderzeichen oder Umlaute enthalten. In solchen Fällen kann die Verwendung von `ToLower()` möglicherweise nicht die gewünschten Ergebnisse liefern.
-
-Eine alternative Methode ist die Verwendung von `ToLowerInvariant()`. Diese Methode verwendet immer dieselbe Kultur, unabhängig von der aktuellen Systemkultur, um eine konvertierte Zeichenkette zurückzugeben. Dies kann nützlich sein, wenn Sie sicherstellen möchten, dass Ihre Zeichenketten in einer bestimmten Kultur konsistent konvertiert werden.
-
-Beispiel:
+Um einen String in Kleinbuchstaben umzuwandeln, können wir die `ToLower()` Methode verwenden. Sie wird auf einem String aufgerufen und gibt eine neue Zeichenfolge mit allen Buchstaben in Kleinbuchstaben zurück.
 
 ```C#
-string myString = "Möglichkeit";
-string lowercaseString = myString.ToLowerInvariant();
+string name = "MAX MUSTERMANN";
+string lowerCaseName = name.ToLower();
 
-Console.WriteLine(lowercaseString);
+Console.WriteLine(lowerCaseName);
 
-// Ausgabe: möglichkeit
+// Output: max mustermann
 ```
 
-Wie Sie sehen, wird hier die deutsche Umlaut "Ö" ordnungsgemäß in "ö" konvertiert. Dies kann jedoch je nach Kontext unterschiedlich sein, daher ist es wichtig, die beste Methode für Ihre spezifischen Anforderungen auszuwählen.
+Um die Ausgabe des Strings in der Konsole oder in einem anderen Programm anders zu formatieren, können wir die `ToLower()` Methode innerhalb der `Console.WriteLine()` Methode verwenden.
+
+```C#
+string name = "MAX MUSTERMANN";
+
+Console.WriteLine("Hallo {0}!", name.ToLower());
+
+// Output: Hallo max mustermann!
+```
+
+## Tiefer eintauchen
+
+Bei der Verwendung der `ToLower()` Methode müssen wir beachten, dass sie nicht nur alle Buchstaben in Kleinbuchstaben umwandelt, sondern auch alle Sonderzeichen und Leerzeichen unverändert lässt. Das bedeutet, dass zum Beispiel ein String mit dem Namen "Max Mustermann" immer noch den Punkt und das Leerzeichen zwischen Vor- und Nachnamen behalten wird.
+
+Wenn wir sicherstellen wollen, dass der komplette String in Kleinbuchstaben ist, müssen wir vorher noch die `Trim()` Methode anwenden, um mögliche Leerzeichen am Anfang oder Ende des Strings zu entfernen.
+
+```C#
+string name = "  MAX MUSTERMANN  ";
+string lowerCaseName = name.Trim().ToLower();
+
+Console.WriteLine(lowerCaseName);
+
+// Output: max mustermann
+```
 
 ## Siehe auch
 
-- [Offizielle Dokumentation zur Methode ToLower() in C#](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolower?view=net-5.0)
-- [Offizielle Dokumentation zur Methode ToLowerInvariant() in C#](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolowerinvariant?view=net-5.0)
-- [Artikel über den Umgang mit Zeichenketten in C#](https://www.codecademy.com/articles/strings-csharp)
+- [C# String Dokumentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
+- [C# String Manipulation Tutorial](https://www.tutorialspoint.com/csharp/csharp_strings.htm)

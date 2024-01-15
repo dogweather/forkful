@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tavalliselle virhekanavalle kirjoittaminen."
-simple_title:         "Tavalliselle virhekanavalle kirjoittaminen."
+title:                "Kirjoittaminen standardivirheelle"
+html_title:           "C++: Kirjoittaminen standardivirheelle"
+simple_title:         "Kirjoittaminen standardivirheelle"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Miksi ihmiset kirjoittavat standard error tulosteeseen? Standard Error on tärkeä osa C++ ohjelmointia, koska se auttaa kehittäjiä löytämään ja korjaamaan virheitä ja bugeja ohjelmassa. Se on myös tehokas tapa kommunikoida virheistä ja vahvista ohjelman toimintaa.
+Tervetuloa takaisin koodauksen pariin! Tänään puhumme siitä, miksi ja miten kirjoittaa standardivirheeseen C++:ssa. Tietenkin voit kirjoittaa tietoja myös standarditulosvirtaan, mutta miksi kirjoittaisit standardivirheeseen?
 
-## Miten tehdä se
+Standardivirhe on suunniteltu erityisesti virheilmoituksien ja vianmäärityksen tarpeisiin. Se tulostaa kaiken tiedon, joka on lähetetty virheellisesti, mikä auttaa sinua selvittämään ohjelmasi ongelmat.
 
-Kirjoittaminen standard error tulosteeseen C++:ssa on helppoa. Käytä vain "cerr" komentoa ja sen jälkeen kirjoita haluamasi viesti. Alla on yksinkertainen esimerkki:
+## Mitä Sinun Tulee Tehdä
+
+Standardivirheeseen kirjoittaminen C++:ssa ei ole vaikeaa. Sinun tarvitsee vain käyttää `std::cerr`-virtaa ja käyttää siihen `<<`-operaattoria, kuten seuraavassa esimerkissä:
 
 ```C++
-#include <iostream> 
+#include <iostream>
 
-using namespace std; 
-
-int main() 
-{ 
-	cerr << "Tämä on virheviesti standard error tulosteessa!"; 
-	return 0; 
-} 
+int main()
+{
+    std::cerr << "Tämä on virheilmoitus standardivirheeseen." << std::endl;
+    return 0;
+}
 ```
 
-Ja tässä on vastaava tuloste:
+Esimerkissä luodaan yksinkertainen C++-ohjelma, joka tulostaa virheilmoituksen standardivirheeseen käyttämällä `std::cerr`-virtaa. Huomaa, että `std::endl` käytetään rivinvaihtoon.
+
+Jos suoritat tämän ohjelman, saat seuraavan tulosteen:
 
 ```
-Tämä on virheviesti standard error tulosteessa!
+Tämä on virheilmoitus standardivirheeseen.
 ```
 
-## Syvemmälle
+Sieltä löydät kaiken tiedon, joka on kirjoitettu `std::cerr`-virtaan.
 
-Standard Error on yleensä suunnattu kehittäjille ja sitä käytetään löytämään ja korjaamaan virheitä. Se voi myös auttaa käyttäjiä ymmärtämään ohjelman toimintaa ja kehittäjien tekemiä muutoksia. Käyttämällä standard error tulostetta, kehittäjät voivat myös luoda yksilöllisiä virheviestejä, jotka auttavat käyttäjiä ymmärtämään ongelmien syitä ja ratkaisemaan ne helpommin.
+## Syvempi Sukellus
 
-## Katso myös
+Standardivirhe suorittaa muutamia toimintoja taustalla, joihin sinun kannattaa tutustua. Ensinnäkin, se on C++:n `std::ostream`-luokan alaluokka, joka mahdollistaa tiedon kirjoittamisen virtaan `<<`-operaattorin avulla. Toiseksi, se on C++:n tukemien virtaobjektien joukossa, mikä tarkoittaa sitä, että voit käyttää `std::cerr`-virtaa samaan tapaan kuin muita virtaobjekteja, kuten `std::cout`.
 
-- [C++ virheenkäsittelyopas](https://www.studytonight.com/cpp/error-handling-in-cpp)
-- [C++ kirjastot ja komponentit](https://en.cppreference.com/w/cpp/header)
-- [C++ virheenkäsittely käytännössä](https://www.learncpp.com/cpp-tutorial/handling-errors/)
+On myös tärkeää huomata, että `std::cerr` on yleensä virheiden käsittelemiseen tarkoitettu virta, mutta voit käyttää sitä myös tulostamaan muita tietoja ohjelmasi suorituksen aikana. Voit myös ohjata `std::cerr`-tulosteen toiseen paikkaan, kuten tiedostoon, `std::clog`-virtaan tai jopa `std::cout`-virtaan. Tämä antaa sinulle joustavuutta käyttää sitä monipuolisesti ohjelmasi tarpeiden mukaan.
 
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään standard error tulosteen tärkeyttä C++ ohjelmoinnissa. Onnea tuleville ohjelmointiprojekteille!
+## Katso Myös
+
+- [C++ Standardikirjasto: ostream-luokka](https://www.cplusplus.com/reference/ostream/ostream/)
+- [C++ Standardikirjasto: virtaobjektien joukko](https://www.cplusplus.com/reference/ios/ios/)
+- [C++ Standardikirjasto: näkyvyysvirtaobjektien tyyppi](https://www.cplusplus.com/reference/ios/basicios/)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Ruby recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,40 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Why would someone want to start a new programming project in Ruby? Well, Ruby is a popular and versatile programming language that is known for its simplicity and expressiveness. So, if you want to create a project that is both efficient and easy to read, Ruby is a great choice.
+Starting a new project in Ruby can be both exciting and daunting for developers. With its elegant syntax, object-oriented design, and vast community support, Ruby offers a powerful language for creating web applications, games, and more. Whether you're a beginner or an expert, there are numerous reasons to jump into a new project - from honing your skills to creating something innovative.
 
 ## How To
 
-To start a new project in Ruby, you will need to follow a few steps. First, make sure you have Ruby installed on your computer. You can check by typing ```ruby --version``` into your command line. If you don't have Ruby installed, you can download it from the official website.
-
-After installing Ruby, you can use a gem called Bundler to manage your project's dependencies. Simply type ```gem install bundler``` into your command line. Then, create a new folder for your project and navigate to it in your command line.
-
-Next, use Bundler to create a new project by typing ```bundle gem project_name```, replacing "project_name" with the name of your project. This will create a basic project structure for you.
-
-Now, you can start writing your code in the "lib" folder and running it by using the ```ruby``` command followed by the name of your file.
+To start a new project in Ruby, you'll first need to set up a development environment. This typically involves installing Ruby and a text editor like Visual Studio Code or Atom. Next, create a new folder for your project and open it in your text editor. Here's an example of how to create a simple "Hello World" application:
 
 ```Ruby
-# Sample code
-def add_numbers(num1, num2)
-  return num1 + num2
-end
-
-puts add_numbers(5, 7)
-# Output: 12
+# Prints "Hello World" to the terminal
+puts "Hello World"
 ```
+
+To run this code, save the file as `hello_world.rb` and then use the command `ruby hello_world.rb` in your terminal. This should output "Hello World" in the terminal.
+
+You can also use Ruby's built-in interactive shell, IRB, to experiment and test code without creating a file. Simply type `irb` in your terminal to open the shell and then type in your code line by line.
 
 ## Deep Dive
 
-Starting a new project in Ruby also means familiarizing yourself with some key concepts and tools. For example, understanding how to use Bundler to manage your project's dependencies is crucial. You'll also want to explore Ruby's object-oriented programming features, such as classes and modules, to create well-structured and reusable code.
+When starting a new project in Ruby, it's important to plan and organize your code. One helpful tool for this is RubyGems, a package manager for Ruby that allows you to easily install and manage dependencies for your project. You can also use Gemfiles to list out your project's dependencies and automate the installation process.
 
-Furthermore, learning about testing in Ruby is important in order to ensure the quality and functionality of your project. Tools like RSpec and MiniTest can help you write tests and catch any bugs or errors in your code.
+Another aspect to consider is version control. Using a tool like Git can help you track changes to your code and collaborate with others on your project. You can also use platforms like GitHub or GitLab to host your project's code and manage workflows.
 
-There are also various helpful resources available online, such as documentation, forums, and online communities, that can assist you in your journey of starting a new project in Ruby.
+Lastly, be sure to take advantage of the vast community support for Ruby. From documentation to forums and tutorials, there are many resources available to help you along your project journey. Don't be afraid to reach out for help or join a Ruby meetup to connect with other developers.
 
 ## See Also
 
-- [Official Ruby Website](https://www.ruby-lang.org/en/)
-- [Bundler Documentation](https://bundler.io/)
-- [RSpec Documentation](https://rspec.info/)
-- [MiniTest Documentation](https://github.com/seattlerb/minitest)
-- [Ruby-Doc.org - Ruby Documentation and Forums](https://ruby-doc.org/)
+To learn more about starting a new project in Ruby, check out these helpful links:
+
+- ["Ruby Getting Started" guide on the official Ruby website](https://www.ruby-lang.org/en/documentation/quickstart/)
+- [RubyGems website](https://rubygems.org/)
+- [Git website](https://git-scm.com/)
+- [GitHub website](https://github.com/)
+- [Ruby on Rails Tutorial by Michael Hartl](https://www.railstutorial.org/)

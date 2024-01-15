@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "TypeScript: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi extraire des sous-chaînes en TypeScript ?
+# Pourquoi
 
-Dans de nombreux projets de programmation, vous pouvez être confronté à la nécessité de manipuler des chaînes de caractères. Mais parfois, vous pouvez avoir besoin d'extraire une partie spécifique de cette chaîne, appelée sous-chaîne. Cela peut être utile lors de la manipulation de données ou de la validation des saisies utilisateur. En utilisant TypeScript, vous pouvez facilement extraire ces sous-chaînes pour les utiliser plus tard dans votre code.
+Les extractions de sous-chaînes sont utiles lorsqu'on souhaite récupérer une partie d'une chaîne de caractères, comme un numéro de téléphone ou une adresse email, sans avoir à parcourir toute la chaîne de caractères.
 
-# Comment extraire des sous-chaînes en TypeScript ?
+# Comment faire
 
-Pour extraire une sous-chaîne en TypeScript, nous allons utiliser la méthode `substring()` disponible sur les chaînes de caractères. Cette méthode prend deux paramètres : l'index de début et l'index de fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple de code avec une chaîne de caractères et son index :
-
-```TypeScript
-let chaine = "Bonjour le monde";
-console.log(chaine.substring(0, 6));
-```
-
-Ceci va afficher "Bonjour", car nous avons spécifié les index de 0 à 6 pour extraire la première partie de la chaîne. Vous pouvez également utiliser des variables pour spécifier ces index, ce qui peut être pratique dans certaines situations.
+Pour extraire une sous-chaîne en TypeScript, on utilise la méthode `substring()` sur la chaîne de caractères, en lui passant en paramètres l'index de début et de fin de la sous-chaîne souhaitée (en comptant à partir de zéro).
 
 ```TypeScript
-let chaine = "Bonjour le monde";
-let debut = 8;
-let fin = 12;
-console.log(chaine.substring(debut, fin));
+let str: string = "Bonjour tout le monde";
+let subStr: string = str.substring(8, 12);
+
+console.log(subStr); // affiche "tout"
 ```
 
-Cette fois, nous allons obtenir "monde" en tant que sous-chaîne.
+# Plongée en profondeur
 
-# Plongeon en profondeur
+Il est important de comprendre que la méthode `substring()` ne modifie pas la chaîne originale, elle renvoie simplement la sous-chaîne demandée. De plus, si on ne spécifie pas l'index de fin, la sous-chaîne renvoyée va jusqu'à la fin de la chaîne originale.
 
-La méthode `substring()` en TypeScript utilise les mêmes paramètres que sa version JavaScript. Cela signifie que l'index de début est inclus dans la sous-chaîne, mais pas l'index de fin. Si vous ne spécifiez pas l'index de fin, la méthode va extraire la partie restante de la chaîne à partir de l'index de début. De plus, les index peuvent être négatifs. Dans ce cas, ils comptent à partir de la fin de la chaîne.
-
-Par exemple, si nous utilisons `-8` comme index de début, cela va commencer à partir du huitième caractère à partir de la fin de la chaîne. Si nous utilisons `-4` comme index de fin, cela va s'arrêter à quatre caractères de la fin de la chaîne. Vous pouvez également utiliser des expressions régulières avec la méthode `substring()`, ce qui peut être pratique pour extraire des sous-chaînes basées sur un motif spécifique.
+On peut également utiliser des index négatifs pour spécifier un comptage à partir de la fin de la chaîne. Par exemple, `substring(-6)` renverra les 6 derniers caractères de la chaîne.
 
 # Voir aussi
 
-- [Documentation officielle TypeScript](https://www.typescriptlang.org/docs)
-- [Guide de référence de la méthode `substring()` en TypeScript](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#string-substring)
+- Documentation officielle de `substring()` en TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html#substring
+- Référence complète des méthodes sur les chaînes de caractères en TypeScript: https://www.w3schools.com/jsref/jsref_obj_string.asp

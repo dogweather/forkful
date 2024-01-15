@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Vianetsimistulostus"
-simple_title:         "Vianetsimistulostus"
+title:                "Tulostaminen debug-ulos-tulo"
+html_title:           "Elm: Tulostaminen debug-ulos-tulo"
+simple_title:         "Tulostaminen debug-ulos-tulo"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -9,31 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Debuggaustulosteen tulostaminen on tärkeä työkalu koodaajalle, joka auttaa hahmottamaan ohjelman toimintaa. Se auttaa tunnistamaan virheitä ja löytämään ongelmakohtia koodista.
+# Miksi käyttää debuggaustulosteita?
 
-## Miten
-Debuggaustulosteen tulostaminen on helppoa Elm-kielellä. Voit käyttää `Debug.log` -funktiota ja tulostaa haluamasi tiedot konsoliin. Alla on esimerkki koodista, joka tulostaa taulukon numeroiden neliöjuuret konsoliin käyttäen `Debug.log` -funktiota.
+Debuggaustulosteet ovat todella hyödyllisiä työkaluja koodin vianetsintään. Ne auttavat löytämään puuttuvia tai virheellisiä algoritmeja ja suorittamaan koodin tehokkaammin. Debuggaustulosteiden käyttäminen voi myös säästää paljon aikaa ja vaivaa, sillä se auttaa vianetsinnässä ja koodin korjaamisessa nopeammin.
 
-```Elm
-import Debug
+# Näin käytät debuggaustulosteita Elm-ohjelmoinnissa
 
-numbers = [1, 4, 9, 16, 25]
-squaredRoots = List.map (\x -> Debug.log (toString (x)) (Math.sqrt (toFloat x))) numbers
+Debuggaustulosteiden käyttäminen Elm-ohjelmoinnissa on helppoa ja nopeaa. Voit käyttää `Debug.log` -funktiota tulostamaan haluamasi muuttujan arvon. Alla on esimerkki koodista ja sen tuottamasta tulosteesta:
 
--- Konsoliin tulostetaan seuraavaa:
--- 1
--- 4
--- 9
--- 16
--- 25
+```elm
+import Debug exposing (log)
+
+main =
+  let
+    x = 5
+    y = 10
+    sum = x + y
+  in
+    log "summa" sum
 ```
 
-## Syvä Sukellus
-Printtaaminen debug-tietoja voi auttaa sinua ymmärtämään ohjelmasi suoritusta paremmin. Voit tulostaa monimutkaisempia tietorakenteita, kuten lista ja sanakirjoja, koodiesimerkin tapaan. Tämä auttaa kehittäjää hahmottamaan datan rakennetta ja havaitsemaan mahdollisia virheitä.
+Tämän koodin tuloste on `summa = 15`, joten voit nähdä, että muuttujat `x` ja `y` on laskettu ja summa on tallennettu muuttujaan `sum`.
 
-On tärkeää huomata, että debuggaustulosteen tulostamisen tulee tapahtua vain kehityskauden aikana. Lopulliseen tuotantoversioon tulostamiset tulisi poistaa, jotta koodi ei näytä ylimääräistä tietoa loppukäyttäjälle.
+Voit myös käyttää `Debug.todo` -funktiota saadaksesi ilmoituksen, kun ohjelmasi käyttää vielä toteuttamattomia osia. Tämä auttaa sinua muistamaan tulevia tehtäviä ja pitämään ohjelmasi kehityksen ajan tasalla. Alla esimerkki koodista ja sen tuottamasta tulosteesta:
 
-## Katso myös
-- [Elm dokumentointi](https://guide.elm-lang.org/)
-- [Debuggaus Elm: n avulla](https://www.elm-tutorial.org/en/03-subs-cmds/02-debugging.html)
+```elm
+import Debug exposing (todo)
+
+main =
+  let
+    name = "Elm"
+    message = "Tervehdys " ++ name ++ "!"
+    todo = "Implementoi " ++ name ++ "-sovelluksen ulkoasu."
+  in
+    todo "todo" todo
+```
+
+Tuloste tästä koodista on `todo = Implementoi Elm-sovelluksen ulkoasu.`, joten voit muistaa keskittyä tähän tehtävään myöhemmin.
+
+# Syvällisempää tietoa debuggaustulosteista
+
+Debuggaustulosteet voidaan lisätä lähes mihin tahansa kohtaan koodia, joten voit helposti seurata koodin suorittamista ja tulostaa haluamiasi arvoja. On tärkeää huomata, että `Debug` -moduuli pitäisi aina poistaa ennen julkaisua, koska se ei ole tarkoitettu tuotantokäyttöön. Se voi heikentää ohjelman suorituskykyä ja vuotaa luottamuksellisia tietoja. Lisäksi, jos olet kiinnostunut debuggaustulosteiden lisäämisestä HTTP-pyyntöihin, kannattaa tutustua pakettiin `elm-http-extras`, joka tarjoaa lisää hyödyllisiä debuggaustyökaluja.
+
+# Katso myös
+
+- [Elm Dokuwiki: Debug module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Elm Dokuwiki: Todo module](https://package.elm-lang.org/packages/elm/core/latest/Debug-Todo)
+- [Elm Dokuwiki: elm-http-extras package](https://package.elm-lang.org/packages/mpizenberg/elm-http-extras/latest/)

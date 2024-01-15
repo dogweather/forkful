@@ -1,6 +1,7 @@
 ---
-title:                "Rust: テキストファイルを作成する"
-simple_title:         "テキストファイルを作成する"
+title:                "テキストファイルの書き方"
+html_title:           "Rust: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテキストファイルを書くのか
+## Why
 
-テキストファイルを書くことの目的は、データや情報を保存、編集、共有するためです。これまでに開発されたプログラミング言語には、ファイルを編集するためのさまざまな機能やツールがありますが、Rustはその中でも優れた選択肢です。Rustの安全性と高速性のおかげで、テキストファイルの処理がより効率的に行えるようになりました。
+書き込み可能なテキストファイルを作成する理由は、情報を保存するためです。テキストファイルは、プログラムの設定ファイルからユーザーの入力まで、さまざまな用途に利用されます。
 
-## どのようにしてテキストファイルを書くのか
+## How To
 
-テキストファイルをRustで書くための基本的な方法を紹介します。まず、ファイルを操作するために`std::fs::File`モジュールを使用します。次に、`create`メソッドを使って新しいファイルを作成し、`write`メソッドを使ってデータをファイルに書き込みます。最後に、ファイルを閉じるために`close`メソッドを使用します。
+まず、新しいファイルを作成する必要があります。 `File` 構造体の `create` メソッドを使用して、ファイルを作成し、`write` メソッドを使用してデータを書き込むことができます。以下は、`hello.txt` という名前のファイルに "Hello, world!" というテキストを書き込む例です。
 
 ```Rust
+use std::io::Write;
 use std::fs::File;
 
 fn main() {
-    let mut file = File::create("sample.txt").expect("ファイルを作成できませんでした。");
-
-    let content = b"こんにちは、世界！";
-    file.write_all(content).expect("ファイルに書き込めませんでした。");
+    let mut file = File::create("hello.txt").expect("Cannot create file");
+    file.write(b"Hello, world!").expect("Cannot write to file");
 }
 ```
 
-実行すると、`sample.txt`ファイルに`こんにちは、世界！`という文字列が書き込まれます。
+このコードを実行すると、現在のディレクトリに `hello.txt` ファイルが作成され、"Hello, world!" というテキストが書き込まれます。
 
-## テキストファイルの詳細
+## Deep Dive
 
-テキストファイルをRustで書く場合、注意しなければいけないポイントがいくつかあります。例えば、ファイルへの書き込みの際にはエラー処理をきちんと行う必要があります。また、文字列をバイト列に変換する必要があります。さらに、テキストファイルの改行コードには注意が必要です。Rustでは、改行コードを明示的に指定しなければいけません。
+Rustでは、標準ライブラリの `std::io` モジュールを使用してファイルの読み書きを行います。`File` 構造体には、ファイルの読み書きに使用できるさまざまなメソッドが用意されています。また、エラーハンドリングも重要な要素で、`expect` メソッドを使用することでエラーが発生した場合にメッセージを表示することができます。
+
+また、テキストファイル以外にも、`File` 構造体を使用してバイナリファイルの読み書きも可能です。詳細な情報は公式ドキュメントを参照してください。
 
 ## See Also
 
-- [Rust公式ドキュメント - ファイルの操作](https://doc.rust-lang.org/std/fs/fn.File.html)
-- [The Rust Programming Language](https://www.rust-lang.org/ja/)
-- [Rustではじめるプログラミング入門](https://gihyo.jp/book/2020/978-4-297-10883-4)
+- [std::fs::File - Rust Documentation](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [std::io::Write - Rust Documentation](https://doc.rust-lang.org/std/io/trait.Write.html)
+- [Text File - Wikipedia](https://en.wikipedia.org/wiki/Text_file)

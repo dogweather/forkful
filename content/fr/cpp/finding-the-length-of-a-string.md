@@ -1,5 +1,6 @@
 ---
-title:                "C++: Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "C++: Trouver la longueur d'une chaîne de caractères"
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "C++"
 category:             "C++"
@@ -11,42 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation. Cela peut être utile pour des opérations telles que la vérification de la validité des entrées de l'utilisateur ou la manipulation de données de texte. Dans cet article, nous allons expliquer comment trouver la longueur d'une chaîne de caractères en utilisant le langage de programmation C++.
+Vous vous demandez probablement pourquoi il est important de connaître la longueur d'une chaîne de caractères lors de la programmation en C++. Eh bien, c'est simple : en connaissant la longueur d'une chaîne, vous pouvez effectuer des manipulations et des opérations sur les caractères qui la composent, ce qui est souvent nécessaire dans la résolution de problèmes complexes.
 
-## Comment faire
+## Comment Faire
 
-Pour trouver la longueur d'une chaîne de caractères en C++, nous allons utiliser la fonction `strlen()` de la bibliothèque standard `cstring`. Cette fonction prend en paramètre une chaîne de caractères et renvoie la longueur de celle-ci en tant que valeur entière. Voici un exemple de code pour trouver la longueur d'une chaîne de caractères :
+Il existe deux façons de trouver la longueur d'une chaîne de caractères en C++ : en utilisant la fonction `strlen()` de la bibliothèque standard ou en utilisant une boucle pour parcourir la chaîne un caractère à la fois. Voici un exemple de code utilisant `strlen()` :
 
 ```C++
+#include <iostream>
 #include <cstring>
+
+using namespace std;
+
+int main() {
+    char str[] = "Bonjour";
+    int length = strlen(str);
+    cout << "La longueur de la chaîne est de : " << length << " caractères." << endl;
+    return 0;
+}
+```
+
+Ce code déclare une chaîne de caractères "Bonjour" et utilise la fonction `strlen()` pour calculer sa longueur, qui est ensuite affichée à l'écran. Le résultat sera "La longueur de la chaîne est de : 7 caractères."
+
+Si vous préférez utiliser une boucle pour trouver la longueur d'une chaîne, voici un exemple de code :
+
+```C++
 #include <iostream>
 
 using namespace std;
 
-int main(){
-  char chaine[] = "Bonjour!";
-  int longueur = strlen(chaine);
-  cout << "La longueur de la chaine de caracteres est: " << longueur << endl;
-  return 0;
+int main() {
+    char str[] = "Bonjour";
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    cout << "La longueur de la chaîne est de : " << length << " caractères." << endl;
+    return 0;
 }
 ```
 
-Dans cet exemple, nous avons créé une variable `chaine` qui contient notre chaîne de caractères et nous avons utilisé la fonction `strlen()` pour trouver sa longueur et la stocker dans une variable `longueur`. Puis, nous avons utilisé `cout` pour afficher la longueur de la chaîne à l'écran.
+Dans ce code, nous initialisons la longueur à zéro puis utilisons une boucle pour parcourir la chaîne jusqu'à ce que nous atteignions le caractère de fin de chaîne `'\0'`. À chaque tour de boucle, nous incrémentons la longueur, ce qui nous donne finalement la longueur totale de la chaîne. Le résultat sera le même que dans l'exemple précédent.
 
-Voici une sortie possible pour cet exemple :
+## Plongée en Profondeur
+
+Si vous voulez en savoir plus sur la façon dont la fonction `strlen()` fonctionne réellement, nous pouvons regarder son implémentation. En C++, cette fonction est définie de la manière suivante :
 
 ```C++
-La longueur de la chaine de caracteres est: 8
+size_t strlen(const char *str) {
+    size_t length = 0;
+    while (*str++) {
+        length++;
+    }
+    return length;
+}
 ```
 
-## Deep Dive
-
-La fonction `strlen()` parcourt la chaîne de caractères fournie en paramètre en comptant le nombre d'octets jusqu'à ce qu'elle atteigne le caractère null (`'\0'`). Cela signifie que la chaîne de caractères doit se terminer par un caractère null pour que la fonction puisse renvoyer la longueur correcte.
-
-De plus, il est important de noter que la longueur retournée par la fonction `strlen()` ne prend pas en compte le caractère null. Par conséquent, si vous voulez inclure le caractère null dans votre calcul, vous devrez ajouter 1 à la longueur.
+Nous pouvons voir que cette fonction utilise également une boucle pour parcourir la chaîne de caractères, mais elle utilise un pointeur pour accéder à chaque caractère plutôt qu'un index. Elle continue à incrémenter la longueur tant que la valeur pointée par le pointeur n'est pas nulle (équivalent de `'\0'`). Elle retourne ensuite la longueur totale de la chaîne. Cette fonction est optimisée pour être très efficace et est largement utilisée dans le code C++.
 
 ## Voir aussi
 
-- [Documentation pour la fonction `strlen()` en C++](https://en.cppreference.com/w/cpp/string/byte/strlen)
-- [Guide du langage C++ pour débutants](https://www.programiz.com/cpp-programming)
-- [Exemples de chaînes de caractères en C++](https://www.codegrepper.com/code-examples/cpp/c%2B%2B+string+examples)
+Si vous souhaitez en savoir plus sur les chaînes de caractères en C++, vous pouvez consulter ces liens :
+
+- [Documentation sur la fonction `strlen()`](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Différence entre `char *` et `const char *`](https://stackoverflow.com/questions/41233615/difference-between-char-and-const-char)
+- [Tutoriel Scratch de Débutant pour la Programmation C++](https://www.scratchapixel.com/lessons/advanced-cpp/scope-and-parameter-passing-by-reference)

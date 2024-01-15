@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av dato i fremtiden eller fortiden"
+html_title:           "TypeScript: Beregning av dato i fremtiden eller fortiden"
+simple_title:         "Beregning av dato i fremtiden eller fortiden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,55 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det kan være mange grunner til å beregne en dato i fremtiden eller fortiden. Kanskje du planlegger en reise eller en viktig begivenhet, eller kanskje du bare er nysgjerrig på hvilken dag det var for et bestemt antall år siden. Å kunne beregne datoer kan være nyttig i mange ulike sammenhenger.
+Å kunne beregne en dato i fremtiden eller fortiden er en nyttig ferdighet som kan hjelpe oss med å planlegge og organisere tidsrelaterte oppgaver og hendelser. Ved å bruke TypeScript kan vi enkelt skrive kode som gjør dette for oss på en nøyaktig og effektiv måte.
+
+TypeScript er et populært programmeringsspråk som brukes til å utvikle moderne webapplikasjoner. Det er basert på JavaScript, men legger til flere funksjoner og muligheter for å gjøre koden vår mer stabile og skalerbare.
 
 ## Hvordan
 
-Å beregne en dato i TypeScript er enkelt og kan gjøres ved hjelp av noen få linjer med kode. Først må du importere "date-fns" biblioteket ved å skrive følgende kode:
+For å kunne beregne en dato i TypeScript, må vi først importere Date-objektet og konvertere datoen vi ønsker å beregne til millisekunder ved hjelp av metoden `.getTime()`. Deretter kan vi enten legge til eller trekke fra antall millisekunder vi ønsker å beregne fra den opprinnelige datoen og konvertere resultatet tilbake til en lesbar dato ved hjelp av `.toString()`-metoden.
 
 ```TypeScript
-import { addDays, subYears, format } from 'date-fns';
+let startDato: Date = new Date("2021-04-15"); // Opprinnelig dato
+let millisekunder: number = startDato.getTime(); // Konverterer til millisekunder
+let antallDager: number = 10; // Antall dager vi ønsker å beregne
+
+// Beregner sluttdato ved å legge til antall dager i millisekunder til startdato
+let sluttDato: Date = new Date(millisekunder + (antallDager * 24 * 60 * 60 * 1000)); 
+console.log(sluttDato.toString()); // "Sun Apr 25 2021"
+
+// Beregner en dato i fortiden ved å trekke fra antall dager i millisekunder fra startdato
+let forrigeDato: Date = new Date(millisekunder - (antallDager * 24 * 60 * 60 * 1000)); 
+console.log(forrigeDato.toString()); // "Sat Apr 05 2021"
 ```
 
-Deretter kan du bruke funksjoner som "addDays" og "subYears" for å legge til eller trekke fra et bestemt antall dager eller år fra en gitt dato. Du kan deretter formatere datoen med "format" funksjonen for å få ønsket format på datoen.
-
-Her er et eksempel på hvordan du kan beregne en dato som er fem dager frem i tid og formatere den som DD/MM/YYYY:
-
-```TypeScript
-let nå = new Date();
-let fremtidigDato = addDays(nå, 5);
-let formatertDato = format(fremtidigDato, 'dd/MM/yyyy');
-console.log(formatertDato);
-```
-
-Dette vil gi følgende output:
-
-```
-12/09/2021
-```
+Det er viktig å merke seg at metoden for å konvertere mellom datotypene kan variere avhengig av hvilken formatering og output du ønsker. Du kan også beregne andre tidsenheter som timer, minutter og sekunder ved å gjøre endringer i utregningen med millisekunder.
 
 ## Dypdykk
 
-Det finnes flere funksjoner i "date-fns" biblioteket som kan være nyttige når du skal beregne datoer. Du kan for eksempel også bruke funksjoner som "addMonths" og "subHours" for å legge til eller trekke fra måneder eller timer. Du kan også bruke "isBefore" funksjonen for å sjekke om en dato er før en annen dato.
+Å kunne beregne datoer i TypeScript er nyttig, men det er også viktig å forstå hvordan datotypene og metoden `.getTime()` fungerer. Datoer i TypeScript er representert som antall millisekunder siden starten av 1970, også kjent som "epoch time". Dette gjør det mulig å utføre enkle matematiske operasjoner for å beregne datoer i fremtiden eller fortiden.
 
-Det er også mulig å beregne en dato basert på dag, måned og år i stedet for å bruke dagens dato. Dette kan gjøres ved å bruke "set" funksjonen som lar deg endre enkeltelementer av en dato. Her er et eksempel på hvordan du kan beregne en dato som er 100 år tilbake i tid:
-
-```TypeScript
-let nå = new Date();
-let historiskDato = subYears(nå, 100);
-historiskDato = set(historiskDato, { day: 1, month: 1, year: 1921 });
-let formatertDato = format(historiskDato, 'dd/MM/yyyy');
-console.log(formatertDato);
-```
-
-Dette vil gi følgende output:
-
-```
-01/01/1921
-```
+En annen viktig ting å merke seg er at metoden `.getTime()` også tar hensyn til tidssoner, så det kan være lurt å konvertere datoen til UTC-tid først for å unngå feil i utregningen.
 
 ## Se også
 
-- [date-fns dokumentasjon](https://date-fns.org/docs)
-- [TypeScript offisiell nettside](https://www.typescriptlang.org/)
-- [Enkel guide til å komme i gang med TypeScript](https://www.freecodecamp.org/news/hack-with-the-best-an-easy-guide-to-typescript/)
+- [Datoer i TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#classes)
+- [Manipulere datoer i TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript-dokumentasjon](https://www.typescriptlang.org/docs/)

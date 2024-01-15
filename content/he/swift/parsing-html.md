@@ -1,6 +1,7 @@
 ---
-title:                "Swift: ניתוח HTML"
-simple_title:         "ניתוח HTML"
+title:                "פירוק HTML"
+html_title:           "Swift: פירוק HTML"
+simple_title:         "פירוק HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,26 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-מידי פעם נתקלים במצבים בהם אנחנו רוצים לקבל מידע מאתר אינטרנט באופן אוטומטי. למשל, כאשר אנחנו מנסים לאתר מחירים של מוצרים מסוימים או לבדוק זמינות של מוצר בחנויות שונות. במצבים כאלה נדרש לקרוא ולנתח את קוד ה-HTML של האתר כדי להשיג את המידע הרלוונטי. בתוך המאמר הזה, נלמד כיצד לעשות זאת בעזרת שפת תכנות סוויפט.
+ניתן לחצות HTML כדי לקבל תוכן מהאינטרנט לשימוש פנימי באפליקציות שלכם. זה יכול להיות שימושי להציג מידע או לבצע פעולות מסוימות באופן אוטומטי.
 
 ## איך לעשות זאת
-אחד הדרכים הפשוטות לקרוא ולנתח קוד HTML הוא באמצעות ספריית 'SwiftSoup'. נוכל להתקין אותה בעזרת ניהול התוכניות שלנו, כמו 'CocoaPods'. לאחר התקנה, נוכל ליצור אובייקט מסוג 'Document' ולהפעיל עליו את הפעולות הרלוונטיות כדי לקרא ולנתח את הקוד של האתר הרצוי. כדי להדגים את השימוש בספרייה זו, ניצור אפליקציה בסוויפט ונשתמש במחלקה המבוססת על 'SwiftSoup' כדי לקרוא את הקוד הפשוט של האתר https://www.google.com/ ולהדפיס את כותרת האתר הראשית בקונסול.
+כדי לקבל תוכן מהאינטרנט, ניתן להשתמש בפקודה DataTask כדי לשלוח בקשת HTTP ולקבל מענה. לאחר מכן, ניתן להתמקד בחלק התגובה הרלוונטי ולחלץ ממנו את התוכן הרצוי באמצעות פירוק HTML. לדוגמה:
 
-```Swift
-import SwiftSoup
+```swift 
+if let url = URL(string: "https://www.example.com") {
+    let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        if let data = data {
+            if let htmlString = String(data: data, encoding: .utf8) {
+                let parsedHtml = self.parseHTMLString(htmlString: htmlString)
+		print(parsedHtml)
+            }
+        }
+    })
+    task.resume()
+}
 
-let url = URL(string: "https://www.google.com/")
-do {
-    let html = try String(contentsOf: url!)
-    let document: Document = try SwiftSoup.parse(html)
-    let title: Element = try document.select("title").first()!
-    print(try title.text())
-} catch {
-    print("Error!")
+func parseHTMLString(htmlString: String) -> String? {
+    if let doc = try? HTML(htmlString: htmlString, encoding: .utf8) {
+        let content = doc.css("div.content").first
+        return content?.text
+    }
+    return nil
 }
 ```
 
-הפלט של הקוד הנ"ל יהיה: "Google".
+כפי שאתם רואים בדוגמה, אנו שולחים בקשת HTTP לכתובת האתר המבוקשת ומחזירים את התוכן הנמצא בתווית div עם ה- class "content" בתוך התגובה.
 
-## לרבות בעמקים
-אם נרצה לקחת את ההתייחסות שלנו לפיסול HTML לרמה הבאה, נוכל להשתמש בכתיבת תבניות (regex) כדי למצוא ולשנות את הטקסט הרלוונטי באתר. בנוסף, ניתן להשתמש בכלי תיקונו (parser) של ה-HTML עבור שפת סוויפט, שיכול לפזר את הקוד של האתר לעץ
+## חקירה מעמיקה
+היתרונות של פירוק HTML כוללים את היכולת להציג מידע מותאם אישית ולשלבו בתוך אפליקציה בצורה מתאימה לעיצוב האפליקציה. כמו כן, זה יכול להיות שימושי גם לפעולות אוטומטיות כגון מילוי טפסים או חיפוש מידע באתרים מרובים.

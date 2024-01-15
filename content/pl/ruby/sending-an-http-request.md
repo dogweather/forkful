@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Ruby: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Polish readers, welcome to this article about sending HTTP requests in Ruby. If you're wondering why you would ever need to do this, read on to find out!
+
 ## Dlaczego
 
-W dzisiejszych czasach, korzystając z sieci, jesteśmy często zmuszeni do zwracania się do innych serwerów w celu pobrania danych lub wykonania określonych akcji. W takich sytuacjach, wysyłka żądania HTTP jest nieodłącznym elementem tworzenia programów. W tym blogu omówimy, dlaczego jest to ważny aspekt programowania i jak to zrobić w języku Ruby.
+Wysyłanie zapytania HTTP jest niezbędnym elementem w dzisiejszym świecie internetowym. Bez niego nie możemy korzystać z wielu funkcjonalności, takich jak pobieranie danych z serwerów zewnętrznych czy wysyłanie formularzy. Dlatego warto poznać tę umiejętność, aby móc wykorzystać jej potencjał w swoich projektach.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby wysłać żądanie HTTP w Ruby, możemy skorzystać z wbudowanej biblioteki `net/http`. Najpierw musimy utworzyć instancję `Net::HTTP` i przekazać do niej adres URL oraz opcję żądania (np. `get` lub `post`). Następnie należy wywołać metodę `request`, gdzie podajemy scieżkę i opcje zapytania. Oto przykładowy kod:
+Kodując w Ruby, możemy użyć biblioteki standardowej o nazwie Net::HTTP, która umożliwia nam wysyłanie żądań HTTP. Najpierw musimy zaimportować tę bibliotekę poprzez dodanie linijki kodu `require 'net/http'` na początku naszego pliku.
 
-```Ruby
-require 'net/http'
+Następnie, aby wysłać zapytanie, musimy utworzyć instancję klasy `Net::HTTP` i podać jej adres URL do żądanego serwera. Na przykład, jeśli chcielibyśmy pobrać stronę główną Google, użylibyśmy kodu `response = Net::HTTP.get(URI('https://www.google.com'))`. Otrzymamy w ten sposób zapisany w zmiennej `response` kod HTML strony głównej Google.
 
-url = URI('https://example.com')
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Get.new(url)
-response = http.request(request)
+Jeśli chcemy wysłać formularz, musimy utworzyć obiekt `Net::HTTP::Post` i przekazać mu adres URL oraz dane formularza. Następnie używamy metody `request` na instancji klasy `Net::HTTP` i podajemy jako argument utworzony przez nas obiekt `Net::HTTP::Post`. Odpowiedź serwera będziemy otrzymywać analogicznie, zapisując ją w zmiennej i wyświetlając.
 
-puts response.code
-puts response.body
-```
+# Deep Dive
 
-W powyższym przykładzie, możemy zobaczyć, że używamy metody `request` do wysłania żądania i zwrócenia odpowiedzi. Po otrzymaniu odpowiedzi, możemy wyświetlić jej kod oraz zawartość. Jeśli chcemy wysłać inne rodzaje żądań, możemy użyć innych opcji, takich jak `delete` lub `post`.
+Istnieje wiele opcji dostępnych w bibliotece Net::HTTP. Możemy na przykład wysyłać zapytania w różnych formatach, takich jak JSON czy XML, używając odpowiednich metod (np. `get(uri)`, `post(uri, data)`, `put(uri, data)`, `delete(uri)`). Możemy również ustawiać nagłówki HTTP, zarówno w żądaniach, jak i odpowiedziach, a także używać protokołów SSL i TLS do bezpiecznego łączenia się z serwerami.
 
-## Głębokie zagłębianie się
+Możliwości są szerokie, więc warto przeczytać dokładną dokumentację biblioteki Net::HTTP oraz przyjrzeć się przykładowym kodom dostępnym w internecie, aby poznać więcej o wykorzystaniu tej funkcjonalności w Ruby.
 
-Wysyłka żądania HTTP może być czasami skomplikowana, szczególnie kiedy mamy do czynienia z bardziej skomplikowanymi przypadkami, takimi jak uwierzytelnianie lub obsługa błędów. W takich sytuacjach, używanie biblioteki `net/http` może być mniej wygodne, dlatego warto rozważyć użycie specjalnej biblioteki, takiej jak `httparty` lub `faraday`.
+# Zobacz Również
 
-Podczas korzystania z tych bibliotek, mamy do dyspozycji różne metody, które ułatwiają wysyłkę żądań HTTP i obsługę odpowiedzi. Możemy także przekazać do nich odpowiednie opcje i konfiguracje, co dodatkowo ułatwia pracę z sieciami.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki `net/http`](https://ruby-doc.org/stdlib-2.6.5/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Dokumentacja biblioteki `httparty`](https://github.com/jnunemaker/httparty)
-- [Dokumentacja biblioteki `faraday`](https://lostisland.github.io/faraday/)
+- Dokumentacja biblioteki Net::HTTP: https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html
+- Przykładowy kod wysyłający zapytanie HTTP w Ruby: https://www.rubyguides.com/2018/05/http-requests-ruby/

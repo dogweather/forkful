@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Working with json"
+title:                "Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,57 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-JSON (JavaScript Object Notation) is a lightweight data interchange format that has become increasingly popular in recent years. It is widely used in web development, but it also has many applications in the world of Arduino programming. Working with JSON allows you to easily store, transmit, and manipulate data in a standardized format, making it an essential skill for any Arduino enthusiast.
+JSON is a popular data format for exchanging information between programs and devices. It is lightweight, easy to read and write, and widely supported by different programming languages. By learning how to work with JSON in Arduino, you can easily integrate your projects with other systems and devices.
 
 ## How To
+To get started with using JSON in Arduino, you will need to install a library called "ArduinoJson". You can do this by navigating to "Tools" > "Manage Libraries" in the Arduino IDE and searching for "ArduinoJson". Install the latest version and you are ready to go.
 
-To work with JSON in Arduino, you will need to install a library called "ArduinoJSON". You can do this by going to the Libraries Manager in the Arduino IDE, searching for "ArduinoJSON", and clicking on "Install".
-
-Once the library is installed, you can start using it in your code. First, you need to define a JSON buffer to hold your data. This can be done using the `StaticJsonBuffer` class, as shown below:
-
+To use this library, you need to include it in your code by adding this line at the top:
 ```Arduino
 #include <ArduinoJson.h>
-
-StaticJsonBuffer<200> jsonBuffer; // define a 200-byte buffer
 ```
 
-Next, you can create a JSON object and add data to it using the `JsonObject` class. In the example below, we are creating a JSON object with two key-value pairs: "name" and "age".
-
+### Creating JSON data
+To create JSON data, we use the `StaticJsonDocument` class from the library. Let's create a simple example where we store temperature and humidity data in JSON format. First, we define the capacity of the JSON document, which is the maximum size of the data we want to store. We will use a capacity of 200 bytes in this example.
 ```Arduino
-JsonObject& json = jsonBuffer.createObject();
-json["name"] = "John";
-json["age"] = 25;
+StaticJsonDocument<200> doc;
 ```
 
-You can also add arrays, nested objects, and integers to your JSON object. After adding all the necessary data, you can convert your JSON object into a string using the `printTo()` function and send it over a serial connection or save it to a file.
-
+Next, we can add data to this document using the `JsonObject` class. We can add multiple key-value pairs to represent our data. In this example, we will add the temperature and humidity values as keys and their corresponding values.
 ```Arduino
-String jsonString;
-json.printTo(jsonString); // convert JSON object to string
-
-Serial.println(jsonString); // send over serial
+doc["temperature"] = 25.5;
+doc["humidity"] = 50;
 ```
 
-To retrieve data from a JSON string, you can use the `parseObject()` function from the `StaticJsonBuffer` class. It will return a `JsonObject` that you can access to get the values of each key.
-
+### Serializing JSON data
+Once we have added the data to our document, we can serialize it into a JSON string using the `serializeJson()` function. We can then print this string to the Serial Monitor to view the output.
 ```Arduino
-JsonObject& json = jsonBuffer.parseObject(jsonString); // parse JSON string
+// Serialize JSON data
+String jsonStr;
+serializeJson(doc, jsonStr);
 
-String name = json["name"]; // retrieve name
-int age = json["age"]; // retrieve age
+// Print to Serial Monitor
+Serial.println(jsonStr);
+```
+The output should look something like this: `{"temperature":25.5,"humidity":50}`
+
+### Parsing JSON data
+To parse JSON data, we first need to receive the JSON string from a source, such as an HTTP request or a sensor. We can then use the `deserializeJson()` function to convert the string into a `StaticJsonDocument`. From there, we can access the data using `JsonObject` or `JsonArray` depending on the structure of the data.
+
+Let's say we receive the following JSON string:
+```Arduino
+String receivedJson = "{\"temperature\":27.8,\"humidity\":60}";
+```
+We can then use the `deserializeJson()` function to convert it into a `StaticJsonDocument` called `data`:
+```Arduino
+StaticJsonDocument<200> data;
+deserializeJson(data, receivedJson);
+```
+
+We can now access the data using `JsonObject` and the corresponding keys:
+```Arduino
+float temp = data["temperature"]; // temp variable will hold the value 27.8
+float humidity = data["humidity"]; // humidity variable will hold the value 60
 ```
 
 ## Deep Dive
-
-Working with JSON in Arduino may seem complex, but with the help of the ArduinoJSON library, it becomes much simpler. The library handles all the formatting and encoding of data, allowing you to focus on manipulating the data you need.
-
-One thing to keep in mind when using JSON in Arduino is the limited memory available. You need to carefully choose the size of your buffer to avoid overflowing the memory. You can also use dynamic buffers (`DynamicJsonBuffer`) instead of static ones if you are unsure of the buffer size you need.
-
-To learn more about working with JSON in Arduino, you can check out the official ArduinoJSON documentation and explore its different features and functions.
+There are a few more advanced topics to keep in mind when working with JSON in Arduino:
+- Use `DynamicJsonDocument` for larger or more complex data, as it can handle variable sizes and is more memory efficient.
+- Use the `JsonArray` class for creating arrays in JSON.
+- You can save JSON data to a file on the Arduino's internal SD card or external memory using the `writeFile()` function from the SPIFFS library.
+- Take note of the memory limitations on your Arduino board when working with larger JSON data.
 
 ## See Also
-
-- ArduinoJSON library: https://arduinojson.org/
-- DynamicJsonBuffer: https://arduinojson.org/v5/api/dynamicjsonbuffer/
-- Official ArduinoJSON documentation: https://arduinojson.org/v5/api/jsonobject/
+- Official ArduinoJson library documentation: https://arduinojson.org/
+- Tutorial on parsing JSON data in Arduino: https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/
+- Forum discussions on working with JSON in Arduino: https://forum.arduino.cc/index.php?topic=537224.0

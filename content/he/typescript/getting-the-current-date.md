@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "לקבל את התאריך הנוכחי"
+html_title:           "TypeScript: לקבל את התאריך הנוכחי"
+simple_title:         "לקבל את התאריך הנוכחי"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -9,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
+## Why
 
-למה להתעסק עם קבלת התאריך הנוכחי? המבקרים שלנו, כמוני, יכולים לשאול את עצמם. אז, למה? התאריך הנוכחי הוא מידע חשוב ביותר בכל פרויקט תכנותי וקשה לדמיין פרויקט איכותי שלא משתמש בתאריך הנוכחי. זה משמעותי גם למנהלים, מפתחים ומשתמשים כאחד, כי זה מאפשר להבין מתי מאמר או אפליקציה נוצרו ולגזור מצב כשהתאריך היה כאשר בא להשוות בין שונים גרסאות או עדכונים.
+אפשר לגלות את התאריך הנוכחי בעזרת לשני аשורשים קלים של קוד תלת-חבוי, ההתמקדות שלו היא שימושי לארגונים ופרויקטים שרוצים לפתח אפליקציות אסינכרוניות ותוכניות מורכבות בנוסף לבדיקת שעה.
 
-## איך לקבל את התאריך הנוכחי:
+## How To
 
-התקנו טיפוסקריפט במחשב שלכם (אם עוד לא בברירת מחדל), ואז כתבו את הקוד הבא בתיקייה שלכם:
-
-```TypeScript
-const currentDate = new Date();
-console.log(currentDate);
-```
-
-ברגע שתפעילו את הקוד הזה, תראו את התאריך הנוכחי מודפס בקונסול.
-
-תוכלו גם להתאים את הפורמט של התאריך לפי הצורך. למשל, תוכלו להשתמש בפיסת קוד הבאה כדי להדפיס את התאריך בפורמט DD/MM/YYYY:
+השימוש בפונקציית `Date()` בסיסי ומראה את התאריך הנוכחי באמצעות מרכיבי היום, החודש והשנה בפורמט DD/MM/YYYY.
 
 ```TypeScript
 const currentDate = new Date();
-console.log(`${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`);
+console.log(currentDate.toLocaleDateString('he-IL'));
 ```
 
-כמו כן, תמיד כדאי להבין טוב יותר את הפונקציונליות של התאריך הנוכחי. למשל, נתקלנו במקרה שבו נדרש לשמור תאריך ושעה, ולכן השתמשנו בקוד הבא:
+Output:
+23/12/2021
+
+כדי להציג את התאריך המלא באופן מלא כולל השעה והדקות, ניתן להשתמש במתודת `toLocaleString()` ולהעביר לה את השפה כפרמטר.
 
 ```TypeScript
-const currentDateTime = new Date().toLocaleString();
-console.log(currentDateTime);
+console.log(currentDate.toLocaleString('he-IL'));
 ```
 
-כדי למצוא עוד מידע על כיצד לקבל את התאריך הנוכחי ולהתאים אותו לפי הצורך שלכם, ניתן לקרוא את המדריך המפורט של מיקרוסופט כאן.
+Output:
+23/12/2021, 18:36:53
 
-## העומק שבקבלת התאריך הנוכחי:
+## Deep Dive
 
-כמו שאנו רואים, קבלת התאריך הנוכחי י
+בנוסף לפונקציות התאריך השונות שכבר נדונו, קיימות עוד אפשרויות לקבלת מידע תאריך ושעה נוספים. למשל, אם רוצים לקבל את היום הראשון בחודש, ניתן להשתמש במתודה `getDate()` בתוך מתודת `getMonth()`.
+
+```TypeScript
+console.log('The first of the month is: ' + new Date(currentDate.getFullYear(),currentDate.getMonth(),1).toLocaleDateString('he-IL'));
+```
+
+Output:
+The first of the month is: 01/12/2021
+
+כדי לקבל את השנה הבאה בפורמט מלא, ניתן להשתמש במתודה `getFullYear()` ולהוסיף את הערך 1. ניתן גם להשתמש במתודה `toString()` כדי להציג את התאריך בפורמט טקסט.
+
+```TypeScript
+console.log('The next year is: ' + (currentDate.getFullYear()+1).toString());
+```
+
+Output:
+The next year is: 2022
+
+## See Also
+
+- [MDN - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/)
+- [JavaScript.info - Date and Time](https://javascript.info/date)

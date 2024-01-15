@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Ecrire des tests"
+html_title:           "Javascript: Ecrire des tests"
+simple_title:         "Ecrire des tests"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -9,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Bonjour à tous les lecteurs ! Aujourd'hui, nous allons parler de la rédaction de tests en Javascript et pourquoi c'est important pour votre code.
+
 ## Pourquoi
 
-Avant de plonger dans le sujet, il est important de comprendre pourquoi il est important d'écrire des tests en programmation. Les tests sont un moyen efficace de vérifier si votre code fonctionne correctement et de détecter les erreurs avant qu'elles ne se manifestent dans votre application. Cela vous permet d'économiser du temps et du stress à long terme en évitant les bugs majeurs.
+La rédaction de tests est un outil essentiel pour tout développeur Javascript. Cela permet de s'assurer que votre code fonctionne correctement et de le protéger contre les éventuels bugs à l'avenir. Les tests permettent également de faciliter la maintenance et les modifications de votre code, en offrant une base solide pour vous assurer que vos changements n'ont pas affecté les fonctionnalités existantes.
 
 ## Comment faire
 
-Maintenant que vous savez pourquoi écrire des tests est crucial, passons à la partie intéressante : comment les écrire ? Tout d'abord, vous devez choisir un framework de test adapté à votre projet. Ensuite, vous pouvez commencer à écrire vos tests en utilisant les fonctions `assert` et `expect` pour vérifier si les résultats correspondent à ce que vous attendez. Voici un exemple de code pour tester une fonction de calcul :
+La première étape pour écrire des tests est de choisir un framework de test en Javascript. Il en existe plusieurs, tels que Jest, Mocha ou Jasmine. Une fois que vous avez choisi votre framework, vous pouvez commencer à créer des fichiers de test pour chaque partie de votre code.
 
 ```Javascript
- function addition(a, b) {
-  return a + b;
-}
+// Exemple de test avec Jest
+const { add } = require('./mathFunctions');
 
-// Importer le framework de test
-const assert = require('mon_framework_de_test');
-
-// Testeur d'assertion pour vérifier si l'ajout de 2 + 3 retourne 5
-assert.equal(addition(2, 3), 5);
+test('Ajoute correctement deux nombres', () => {
+  expect(add(1, 2)).toBe(3);
+});
 ```
 
-Dans cet exemple, la fonction `assert.equal` vérifie si la sortie de la fonction `addition` avec les paramètres 2 et 3 est égale à 5. Si ce n'est pas le cas, le test échouera et vous saurez qu'il y a un problème avec votre fonction de calcul.
+Dans cet exemple, nous importons la fonction d'addition de notre fichier "mathFunctions.js" et nous testons si elle retourne bien le résultat attendu (3) lorsque nous lui donnons deux nombres (1 et 2).
 
-## Plongée profonde
+Il est important de tester plusieurs cas de figure pour chaque fonction, en incluant des valeurs limites et des situations d'erreur possibles. Cela permet de s'assurer que votre code est robuste et qu'il gère toutes les situations possibles.
 
-Maintenant que vous avez une idée de base de la façon d'écrire des tests, explorons quelques concepts plus avancés. Tout d'abord, il est important de comprendre les différents types de tests, tels que les tests unitaires, les tests d'intégration et les tests end-to-end. Chacun a un objectif spécifique et est utilisé dans différentes situations.
+## Plongée plus profonde
 
-Ensuite, il est également utile de connaître les bonnes pratiques pour l'écriture de tests, telles que l'utilisation de noms de fonctions clairs et des commentaires appropriés pour faciliter la lisibilité. Il est également important de tester différents scénarios et cas limites pour couvrir tous les cas possibles.
+La rédaction de tests ne signifie pas seulement écrire des tests pour valider votre code. Elle implique également la mise en place d'un processus d'intégration continue pour automatiser l'exécution des tests à chaque nouvelle modification de code, garantissant ainsi que toutes les fonctionnalités existantes continuent de fonctionner correctement.
+
+Il est également important de suivre les principes du développement piloté par les tests (Test Driven Development en anglais), en écrivant les tests avant le code. Cela permet de se concentrer sur les fonctionnalités à développer et de s'assurer que la logique du code est correcte avant même de commencer à coder.
 
 ## Voir aussi
 
-Si vous souhaitez en savoir plus sur l'écriture de tests en Javascript, voici quelques ressources utiles à consulter :
+Pour en savoir plus sur la rédaction de tests en Javascript, vous pouvez consulter les ressources suivantes :
 
-- [Documentation officielle de Jest](https://jestjs.io/docs)
-- [Guide de test de Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Guides/Tests)
-- [Vidéo d'introduction aux tests en Javascript](https://www.youtube.com/watch?v=r9HdJ8P6GQI)
+- [Documentation de Jest](https://jestjs.io/docs/en/getting-started)
+- [Guide du développement piloté par les tests en Javascript](https://blog.pragmatists.com/test-driven-react-how-to-develop-react-components-tested-atoms-8abb493ba3cd)
+- [Article sur l'importance de la rédaction de tests pour le code de qualité](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
 
-N'oubliez pas que plus vous écrivez de tests, mieux c'est pour la qualité de votre code et pour votre tranquillité d'esprit en tant que développeur. Alors prenez l'habitude d'écrire des tests dès le début de vos projets !
+Maintenant, vous êtes prêt à commencer à écrire des tests pour votre code Javascript. N'oubliez pas que c'est un outil précieux pour améliorer la qualité de votre code et assurer son bon fonctionnement à long terme. Alors n'hésitez pas à en utiliser !

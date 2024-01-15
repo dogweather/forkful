@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med csv"
+html_title:           "Arduino: Arbeid med csv"
+simple_title:         "Arbeid med csv"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,71 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+CSV, eller "Comma Separated Values", er en praktisk filformat som brukes for å lagre og transportere data i en enkel og strukturert måte. Det kan være nyttig for å lagre store mengder data på en organisert måte, og kan også være lett å håndtere og lese for både mennesker og datamaskiner.
 
-Å jobbe med CSV-filer kan være en nyttig ferdighet å ha for alle som bruker Arduino. CSV står for "Comma Separated Values" og er en enkel og vanlig format for å lagre og transportere data. Ved å kunne lese og manipulere CSV-filer, kan du enkelt lagre og hente ut data fra sensorer og andre enheter som er koblet til Arduinoen din.
+# Hvordan 
+For å arbeide med CSV-filer ved hjelp av en Arduino, kan du bruke et bibliotek som heter "CSVReader". Dette biblioteket gjør det enkelt å lese og behandle data fra en CSV-fil. Først må du installere biblioteket i ditt Arduino-IDE ved å gå til "Verktøy" og så "Biblioteker Administrere biblioteker". Søk etter "CSVReader" og installer det. Etter at biblioteket er installert, er du klar til å kode!
 
-## Hvordan
-
-Det første du trenger å gjøre er å installere biblioteket "Arduino CSV" ved å følge disse trinnene:
-
-1. Åpne Arduino IDE
-2. Gå til "Verktøy" og velg "Håndter bibliotek"
-3. Søk etter "Arduino CSV" og klikk på "Installer"
-4. Etter installasjonen, start IDEen på nytt for å aktivere biblioteket.
-
-Nå kan du bruke følgende kodeeksempel for å lese en CSV-fil og skrive ut dataene til seriellmonitoren:
+For å lese en CSV-fil, trenger du først å opprette en instans av "CSVReader" og angi navnet på filen du vil lese som parameter. Her er et eksempel på hvordan dette kan gjøres:
 
 ```
-#include <CSV.h>
+#include <CSVReader.h>
+CSVReader csvReader("data.csv"); // data.csv er navnet på CSV-filen vi vil lese
 
 void setup() {
   Serial.begin(9600);
-  CSV csv;
-  csv.open("data.csv");
-  while (csv.getNextRow()) {
-    Serial.print(csv[0]); // Den første verdien i hver rad
-    Serial.print(", ");
-    Serial.print(csv[1]); // Den andre verdien i hver rad
-    Serial.println();
-  }
-  csv.close();
 }
 
 void loop() {
-
+  String row = csvReader.readRow();
+  Serial.println(row); // printer ut en rad av data fra CSV-filen
+  delay(500); // venter 500 millisekunder før den leser neste rad
 }
 ```
 
-På samme måte kan du bruke biblioteket til å skrive data til en CSV-fil. For å gjøre dette, bruk `addRow()` -metoden etterfulgt av `writeFile()` for å lagre fila. Her er et eksempel:
+Etter at du har opprettet en instans av "CSVReader" og har en for-løkke, kan du bruke funksjoner som "readRow()" og "readItem()" for å lese data fra filen. Disse funksjonene returnerer henholdsvis en hel rad av data og et spesifikt element i raden.
 
-```
-#include <CSV.h>
+# Dypdykk
+Når du leser data fra en CSV-fil ved hjelp av Arduino, er det viktig å forstå at dataene blir behandlet som tekst og ikke tall. Dette betyr at du må konvertere dataene til riktig format hvis du ønsker å bruke dem i en beregning eller sammenligning.
 
-void setup() {
-  Serial.begin(9600);
-  CSV csv;
-  csv.addRow("Temperatur", "Luftfuktighet"); // Legg til kolonnenavn
-  csv.addRow(25, 60); // Legg til data
-  csv.addRow(23, 55);
-  csv.writeFile("data.csv"); // Lagre fila
-}
+En annen viktig ting å merke seg er at CSV-filer kan inneholde mange forskjellige formateringsbrikker og kan være følsomme for hvilken type komma-tegn som brukes. Det kan derfor være lurt å sjekke filen nøye for å sikre at dataene blir lest på riktig måte.
 
-void loop() {
-
-}
-```
-
-Du kan også bruke `setDelimiter()` -metoden for å endre skilletegnet mellom verdiene i fila til hva som helst passende for ditt prosjekt.
-
-## Dypdykk
-
-CSV-biblioteket har flere funksjoner som lar deg hente ut og manipulere data fra CSV-filer. Du kan for eksempel bruke `getColumn()` -metoden for å få ut en hel kolonne med data, eller `getRows()` -metoden for å få ut en spesifikk rekke med data. For å få mer informasjon om disse og andre funksjoner, kan du se på dokumentasjonen til biblioteket.
-
-En ting å være obs på når du jobber med CSV-filer er å sørge for at filen du prøver å lese eller skrive til har riktig formatering. Hvis det er feil i formateringen, vil biblioteket ikke kunne lese dataene riktig. Som en tommelfingerregel, sørg for å alltid ha samme antall verdier på hver rad og at verdier separeres med riktig skilletegn.
-
-## Se også
-
-- [Arduino CSV bibliotek dokumentasjon](https://github.com/arduino-libraries/Arduino_CSV)
-- [Tutorial on using CSV files with Arduino](https://circuitdigest.com/microcontroller-projects/using-csv-files-to-plot-data-in-arduino-projects)
-- [CSV file guide for beginners](https://docs.python.org/3/library/csv.html) (for Python, men konseptene gjelder også for Arduino)
+# Se også
+- [CSVReader biblioteket](https://github.com/jfsleroy/CSVReader)
+- [Offisiell dokumentasjon for Arduino](https://www.arduino.cc/reference/en/)
+- [Hvordan installere biblioteker i Arduino IDE](https://www.arduino.cc/en/Guide/Libraries)

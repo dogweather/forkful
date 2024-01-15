@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Yaml-työskentely"
+html_title:           "Elixir: Yaml-työskentely"
+simple_title:         "Yaml-työskentely"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Monet modernit ohjelmointikielet tarjoavat YAML-paketin tuekseen tiedostojen lukemiseen ja parsimiseen. Elixir ei ole poikkeus. YAML on kätevä tiedostomuoto, joka mahdollistaa tietojen tallentamisen selkeäksi ja helposti luettavaksi tekstimuotoon. Elixirissä työskennellessä YAML:n avulla voit helposti lukea ja tallentaa tiedostoja, jotka sisältävät monimutkaisia tietorakenteita.
 
-## Kuinka
-YAML-paketti on sisäänrakennettu Elixirin standardikirjastoon, joten sen käyttöönottoon ei tarvita erillistä asennusta. Voit alkaa käyttää sitä yksinkertaisesti lataamalla sen mix.exs-tiedostoon.
+Miksi YAMLin käyttö on hyödyllistä Elixir-ohjelmoinnissa? YAML (Yet Another Markup Language) on helppolukuinen ja ihmisystävällinen tietojen esitysmuoto, joten se on hyödyllinen tiedostojen tallentamiseen sekä tietojen siirtoon eri ohjelmistojen välillä.
 
-```
-def deps do
-  [{:yaml, "~> 0.0.1"}]
-end
-```
+## Miten
 
-Seuraavaksi voit ladata tiedoston YAML-moduulilla ja käyttää siinä olevia funktioita tiedon lukemiseen ja tallentamiseen.
+YAMLin käyttö Elixirissä on yksinkertaista ja helppoa. Ensimmäiseksi meidän täytyy hankkia Elixirin YAML-kirjasto, joka sisältää tarvittavat työkalut YAML-tiedostojen lukemiseen ja kirjoittamiseen.
 
-```
-require YAML
+```Elixir
+# Asennus
+mix add yaml
 
 # Tiedoston lukeminen
-{:ok, data} = File.read("tiedosto.yml")
-tallennettu_data = YAML.load(data)
+yaml = File.read!("tiedosto.yml")
+data = Yaml.decode(yaml)
 
-# Tiedoston tallentaminen
-tallennettu_data = %{"nimi" => "Suomi", "pääkaupunki" => "Helsinki"}
-{:ok, tallennettu_tiedosto} = File.write("tiedosto.yml", YAML.dump(tallennettu_data))
+# Tiedoston kirjoittaminen
+data = %{"nimi" => "Matti", "ika" => 25, "harrastukset" => ["luonnossa liikkuminen", "kirjallisuus"]}
+yaml = Yaml.encode(data)
+File.write!("henkilotiedot.yml", yaml)
 ```
 
-Tiedoston lukemisessa ja tallentamisessa käytetään YAML-moduulin `load` ja `dump` -funktioita, jotka käsittelevät tiedon muuntamista tekstimuodosta Elixirin tietorakenteiksi ja päinvastoin.
+Yllä olevassa esimerkissä määritellään ensin muuttuja `yaml` lukemaan YAML-tiedosto. Sitten käytetään `Yaml.decode`-funktiota muuntamaan YAML-muotoiset tiedot Elixirin avoimeen tietorakenteeseen. Tämän jälkeen muuttuja `data` sisältää tietojen kokonaisuuden, jota voidaan käsitellä Elixirissä normaalisti.
 
-## Syventävä tarkastelu
+Seuraavassa osassa esimerkissä luodaan uusi YAML-tiedosto käyttäen `Yaml.encode`-funktiota ja tallennetaan se muuttujaan `yaml`. Tämän jälkeen `File.write!`-funktiolla kirjoitetaan tiedosto tallentaen `yaml`-muuttujan sisältö tiedostoon.
 
-YAML-muodolla on monia hyödyllisiä ominaisuuksia, kuten mahdollisuus sisällyttää arvoihin kommentteja ja monitasoinen hierarkia. Tämän takia se on suosittu tiedostomuoto muun muassa konfiguraatiotiedostoissa.
+## Syvällinen sukellus
 
-Voit myös käyttää YAML-muotoa hyödyntämällä tietokantaa, kuten Mnesiaa tai PostgreSQL:ää, tallentamaan ja lukemaan tietoa. Voit käyttää tätä esimerkiksi silloin, kun haluat tallentaa tietorakenteen jota käytetään sovelluksessasi, mutta et halua käyttää perinteistä tietokantaa.
+YAML-tiedostot koostuvat avain-arvo -pareista tai listoista, joita voidaan sisällyttää toisiinsa. Elixirin YAML-kirjasto käyttää Elixirin tietorakenteita vastaavasti. Esimerkiksi avain-arvo -parit muodostetaan `%{}` -muodossa, ja listat `[]` -muodossa.
+
+YAML tukee myös monia muita ominaisuuksia, kuten ankkureita ja viittauksia, jotka mahdollistavat tietojen uudelleenkäytön ja lyhentävät tiedostojen kokoa. Elixirin YAML-kirjasto tukee myös näitä ominaisuuksia.
 
 ## Katso myös
-- [Elixirin YAML-paketin dokumentaatio](https://hexdocs.pm/elixir/YAML.html)
-- [YAML:n virallinen sivusto](https://yaml.org/)
-- [Elixir-foorumin keskustelut YAML:stä](https://elixirforum.com/search?q=yaml)
+
+- [Elixir - Dokumentaatio](https://hexdocs.pm/yaml/)
+- [YAML - Virallinen verkkosivusto](https://yaml.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: यामल के साथ काम करना"
-simple_title:         "यामल के साथ काम करना"
+title:                "Yaml के साथ काम करना"
+html_title:           "Java: Yaml के साथ काम करना"
+simple_title:         "Yaml के साथ काम करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -11,23 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-जावा प्रोग्रामिंग के लिए YAML के साथ काम करने का कारण यह है कि यह एक प्रभावी तरीके से डेटा संरचित करने और प्रसंस्करण करने वाली एक पॉप्यूलर प्रारूप है। यह एक आसान और साफ़ संबोधन भाषा है जो अनुकूलन और धारण के साथ विभिन्न प्लेटफ़ॉर्मों पर चल सकती है।
+क्यों YAML के साथ काम करना है? YAML (YAML Ain't Markup Language) एक आसान और स्वचालित सुरक्षा के साथ स्ट्रक्चर्ड भाषा है, जो डेटा संरचना और विन्यास जैसे कार्यों को सरल बनाती है। यह संरचना में उतना अच्छा है कि यह कई अन्य भाषाओं के बीच विन्यास को संसाधित कर सकता है, जो इसे आसान बनाता है।
 
-## कैसे
+## कैसे करें
 
+```Java
+// Maven की मदद से YAML डिपेंडेंसी जोड़ें
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.27</version>
+</dependency>
 ```
-जावा एक शानदार तरीके से जोड़ करने के लिए YAML फ़ाइल को पास करता है।
 
+```Java
+// YAML फ़ाइल को पढ़ें
+File file = new File("data.yaml");
+// YAML ऑब्जेक्ट परस्तुत करें
 Yaml yaml = new Yaml();
-Map<String, String> config = yaml.load(new FileInputStream("config.yaml"));
-
-config.keySet().forEach(key -> {
-    System.out.println(key + ":" + config.get(key));
-});
+// YAML फाइल से डेटा को लोड करें
+Map<String, String> data = yaml.load(new FileInputStream(file));
 ```
 
-आपके YAML फ़ाइल में रिक्त के साथ ऊपर दिये गए उदाहरण में, आप स्पष्ट खड़े हो गए होंगे कि आप ने कैसे अपने परियोजना की जानकारी और लॉगिंग के साथ चल रहे साथ स्रोत में जोड़ा है। YAML स्ट्रिंग्स, संख्याओं और संगठनाओं के साथ सामान्य रूप से चलने के लिए कई सहज सुविधाओं के साथ आता है, और ऐसा करने से इस तरह के सामान्य उदाहरणों पर बढ़ाए सकते हैं और नए सिस्टमों जोड़ते हैं।
+```Java
+// स्ट्रिंग स्ट्रीम में यूएसओं जोड़ें
+StringWriter writer = new StringWriter();
+yaml.dump(data, writer);
+String output = writer.toString();
+```
 
-## गहराई तक जाएं
+आप ऊपर दिए गए उदाहरण को अपनी जरूरतों के अनुसार संशोधित कर सकते हैं। अधिक जानकारी के लिए, [SnakeYAML documention](https://bitbucket.org/asomov/snakeyaml/src/default/README.markdown) का उपयोग कर सकते हैं।
 
-YAML जावा का उपयोग करने का एक अपने ढांचे के लिए है और आमतौर पर सार्वजनिक दृश्यों की परिभाषा और उनके संबंधित लॉगिंग स्तरों के साथ एक फ़ेडर आविष्कृत करने में उपयोगी है। एक ह्रष्ट संशोधी के रूप में, जो कोई भी इसे समझ सकते हो कम हो सकते हैं, आप सभी गहराई को खोले कोई नई परिभाषा आ
+## गहराई में
+
+YAML संरचनाओं को पढ़ने और लिखने के लिए SnakeYAML के इर्द गिर्द कुछ अच्छे फीचर्स हैं। इनमें कुंजी शब्दों को क्षेत्रों में संग्रहीत करने, ट्रेस पहुँच के बारे में सूचना जुटाने, संभावित निर्देशिकाओं के साथ संख्या निर्धारण करने जैसे फीचर्स शामिल हैं। YAML दस्तावेज़ीकृत करने विशेषताओं की विस्तृत सूची के लिए, [SnakeYAML दस्तावेज़ीकृत लेखन](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation) का देखें।
+
+## देख

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Pisanie do standardowego błędu"
-simple_title:         "Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego wyjścia błędów"
+html_title:           "Arduino: Pisanie do standardowego wyjścia błędów"
+simple_title:         "Pisanie do standardowego wyjścia błędów"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w Arduino?
+## Dlaczego
 
-Pisanie do standardowego błędu jest ważną częścią programowania w Arduino. Jest to niezbędna umiejętność dla każdego, kto chce tworzyć stabilne i niezawodne projekty. Pisanie do standardowego błędu pozwala na wykrywanie i łatanie błędów w kodzie, co przyczynia się do lepszej wydajności i uniknięcia potencjalnych awarii.
+Pisanie do standardowego błędu jest ważnym narzędziem w programowaniu, ponieważ pozwala nam na wyświetlenie komunikatów o błędach i ostrzeżeń w czasie wykonywania programu. Jest to szczególnie przydatne podczas debugowania kodu i znajdowania potencjalnych problemów.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby pisać do standardowego błędu w Arduino, musimy użyć funkcji ```Serial.println()```. Przykładowy kod wyglądałby następująco:
+Używanie Arduino do pisania do standardowego błędu jest bardzo proste. Wystarczy użyć funkcji ```Serial.println()``` i podać wiadomość lub wartość, którą chcemy wyświetlić. Poniższy przykład wyświetla komunikat "Błąd: wartość czujnika jest za niska!" w czasie wykonywania programu:
 
-```Arduino
-void setup() {
+```
+Arduino void setup() {
   // kod inicjalizacyjny
-  Serial.begin(9600); // inicjalizacja komunikacji szeregowej
 }
 
 void loop() {
-  // kod główny
-  // tutaj możemy wykonywać różne operacje i funkcje
-  Serial.println("To jest przykładowy komunikat błędu"); // wyświetlenie informacji w standardowym błędzie
+  // kod wykonywany w pętli
+  if (value < 10) {
+    Serial.println("Błąd: wartość czujnika jest za niska!");
+  }
 }
 ```
 
-W powyższym przykładzie, funkcja ```Serial.println()``` służy do wypisywania komunikatów w standardowym błędzie. Dzięki temu będziemy mogli widzieć, jakie dane są przetwarzane w kodzie, co ułatwi nam debugowanie i naprawianie ewentualnych błędów.
+W takim przypadku, jeśli wartość przekracza 10, nic się nie wyświetli. W przeciwnym razie, komunikat zostanie wyświetlony w konsoli Arduino.
 
-## Głębsze wgląd
+## Głębszy zanurzanie
 
-Pisanie do standardowego błędu jest także ważne w przypadku, gdy nasz projekt wymaga połączenia z komputerem za pomocą portu szeregowego. Wykorzystując funkcję ```Serial.println()``` będziemy mogli przesyłać dane do komputera, co ułatwi nam monitorowanie i kontrolę naszego projektu.
+Podczas pisania do standardowego błędu istnieje kilka ważnych rzeczy, których należy być świadomym. Pierwszą z nich jest ustawienie prędkości transmisji (baud rate) w funkcji ```Serial.begin()```. Domyślnie jest to 9600 bitów na sekundę, ale można to zmienić na inną wartość, dopasowując ją do swoich potrzeb. Należy również pamiętać, aby zawsze zamknąć konsolę monitora serialowego przed wręczeniem finalnego projektu.
 
-## Zobacz także:
+## Zobacz również
 
-- [Dokumentacja Arduino o funkcji Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Poradnik nt. pisania do standardowego błędu na stronie Arduino Playground](https://playground.arduino.cc/Main/Printf/)
-- [Przykładowe projekty wykorzystujące pisanie do standardowego błędu](https://create.arduino.cc/projecthub/projects/tags/serial+print)
+Jeśli potrzebujesz dalszej pomocy w pisaniu do standardowego błędu w Arduino, zapoznaj się z poniższymi linkami:
+
+- Dokumentacja funkcji ```Serial.println()```: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+- Tutoriał na temat debugowania kodu w Arduino: https://learn.sparkfun.com/tutorials/debugging-an-arduino-sketch/all
+- Forum wsparcia dla Arduino: https://forum.arduino.cc/

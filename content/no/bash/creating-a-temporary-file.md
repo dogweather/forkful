@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Lage en midlertidig fil"
+html_title:           "Bash: Lage en midlertidig fil"
+simple_title:         "Lage en midlertidig fil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+ Å lage midlertidige filer kan være nyttig når du trenger å lagre midlertidige data eller utføre en kompleks handling som krever flere trinn.
 
-Å opprette midlertidige filer er en viktig del av Bash-programmering. Dette kan være nyttig når du trenger å behandle eller manipulere data midlertidig i en script, og ikke ønsker å påvirke de permanente filene dine. Midlertidige filer er også nyttige når du trenger å lagre midlertidig informasjon som skal brukes senere i en prosess. 
-
-## Hvordan du gjør det
-
-Opprettelsen av en midlertidig fil i Bash er enkelt og kan gjøres ved hjelp av innebygde kommandoer som "mktemp" og "rm". For å opprette en ny midlertidig fil, kan du bruke følgende kommando:
+## Hvordan
+Å lage en midlertidig fil i Bash er enkelt. Du trenger bare å bruke kommandoen `mktemp` etterfulgt av en filnavn-mal, for eksempel `tmp.XXXXXX`. Dette vil opprette en midlertidig fil med et unikt navn. Se eksemplet nedenfor:
 
 ```Bash
-TEMP_FILE=$(mktemp)
+tmpfile=$(mktemp tmp.XXXXXX)
+echo "Dette er en midlertidig fil" > $tmpfile
+cat $tmpfile
+```
+**Output:**
+```
+Dette er en midlertidig fil
 ```
 
-Dette vil opprette en ny tom fil i det midlertidige mappen som vil bli tildelt til variabelen "TEMP_FILE". Du kan deretter legge til ønsket innhold i filen ved hjelp av tekstredigeringsverktøy som "nano" eller "vi". 
-
-Når du er ferdig med å bruke den midlertidige filen, må den fjernes for å frigjøre systemets ressurser. Dette kan gjøres ved å bruke kommandoen "rm" som følger:
+For å sikre at den midlertidige filen blir slettet, selv om skriptet ditt feiler, bør du bruke `trap` kommandoen til å fange opp feil og slette filen. Se eksemplet nedenfor:
 
 ```Bash
-rm "$TEMP_FILE"
+tmpfile=$(mktemp tmp.XXXXXX)
+
+trap "rm -f $tmpfile" EXIT # sletter filen når skriptet avsluttes
+
+# kode for å behandle den midlertidige filen
+
+# hvis en feil oppstår, vil filen bli slettet av trap-kommandoen
 ```
 
-Dette vil slette den midlertidige filen permanent fra systemet ditt.
-
-## Dykk ned
-
-Både "mktemp" og "rm" kommandoene har flere alternativer som kan brukes for å tilpasse opprettelsen og fjerningen av midlertidige filer. For eksempel kan du bruke "-p" alternativet med "mktemp" for å velge en spesifikk mappe for å opprette den midlertidige filen i. Du kan også bruke "-d" alternativet for å opprette en midlertidig mappe i stedet for en fil. 
-
-Det er også viktig å merke seg at midlertidige filer generelt er sårbar for sikkerhetstrusler, spesielt hvis de blir brukt i åpne eller delt systemer. Det anbefales derfor å slette midlertidige filer så snart de ikke lenger er nødvendige for å hindre uautorisert tilgang til viktig informasjon. 
+## Dykk dypere
+Det finnes forskjellige alternativer og måter å lage en midlertidig fil på i Bash. Du kan for eksempel bruke `mktemp -p directory` for å angi en bestemt katalog for å opprette filen i. `mktemp` kommandoen har også en rekke andre nyttige alternativer som kan være verdt å utforske.
 
 ## Se også
-
-- [Bash's "mktemp" kommando](https://www.computerhope.com/unix/mktemp.htm)
-- [Bash's "rm" kommando](https://www.computerhope.com/unix/rm.htm)
-- [Artikkel: "Sikkerhet rundt midlertidige filer"](https://www.howtogeek.com/169888/securely-deleting-temporary-files-in-bash-scripts/)
+- [Bash Manual: mktemp](https://www.gnu.org/software/bash/manual/html_node/The-Restrict-Alternate-Console.html)
+- [Linux Journal: Temporary Files in Shell Scripts](https://www.linuxjournal.com/content/using-temporary-files-shell-scripts)

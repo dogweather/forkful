@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Das Löschen von Zeichen, die einem Muster entsprechen."
-simple_title:         "Das Löschen von Zeichen, die einem Muster entsprechen."
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Elm: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In der Programmierung gibt es oft Situationen, in denen man bestimmte Zeichen aus einer Zeichenfolge löschen möchte. Vielleicht müssen unerwünschte Leerzeichen entfernt werden oder bestimmte Zeichenfolgen entschlüsselt werden. In solchen Fällen ist es hilfreich zu wissen, wie man Zeichen löschen kann, die einem bestimmten Muster entsprechen.
+Manchmal müssen wir in unserer Programmierung Texte bearbeiten und dabei bestimmte Zeichen entfernen. Das kann zum Beispiel nützlich sein, wenn wir bestimmte Muster oder Formatierungen aus unseren Daten entfernen wollen. In Elm können wir dies auf einfache und effektive Weise tun. In diesem Artikel lernen wir, wie man Zeichen entfernt, die einem bestimmten Muster entsprechen.
 
-# Wie geht's
+## Wie geht’s
 
-Es gibt verschiedene Möglichkeiten, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. In Elm kann man zum Beispiel die Funktion "String.filter" verwenden. Hier ein Beispielcode, der alle Leerzeichen aus einer Zeichenfolge löscht:
-
-```Elm
-String.filter (\c -> c /= " ") "Hallo Welt" 
-```
-
-Die Ausgabe dieses Codes wäre "HalloWelt". Man kann auch ein reguläres Ausdrucksmuster verwenden, um bestimmte Zeichen zu löschen. Hier ein Beispiel, das alle Zahlen aus einer Zeichenfolge entfernt:
+In Elm gibt es die Funktion `String.filter`, mit der wir Zeichen aus einer Zeichenkette entfernen können, die einem bestimmten Muster entsprechen. Hier ist ein Beispiel, wie wir alle Zahlen aus einer Zeichenkette entfernen können:
 
 ```Elm
-String.filter (\c -> not (Char.isDigit c)) "123 Elm Programmierung" 
+String.filter (\char -> not (Char.isDigit char)) "5a7m1n9"
 ```
 
-Die Ausgabe wäre " Elm Programmierung".
+Das Ergebnis dieser Funktion ist die Zeichenkette `"amn"`. Jetzt lassen Sie uns dieses Beispiel Schritt für Schritt analysieren:
 
-# Tiefere Einblicke
+1. Wir geben der Funktion `String.filter` zwei Argumente: eine Funktion und eine Zeichenkette.
+2. Die Funktion, die wir übergeben, hat das Argument `char` vom Typ `Char` und gibt einen booleschen Wert zurück.
+3. Hier verwenden wir die Funktion `not` und die Funktion `Char.isDigit`, um zu überprüfen, ob das Zeichen `char` keine Zahl ist.
+4. Die Zeichenkette `"5a7m1n9"` wird als zweites Argument übergeben.
+5. Die Funktion `String.filter` durchläuft jedes Zeichen in der Zeichenkette und gibt eine neue Zeichenkette zurück, in der alle Zeichen, die nicht dem Muster entsprechen, entfernt wurden.
 
-In Elm basiert die Funktion "String.filter" auf der Funktion "List.filter", die Listen bearbeitet. Diese wiederum basiert auf der Funktion "filter", die in der funktionalen Programmiersprache Haskell verwendet wird. Diese Funktion nimmt eine Funktion und eine Liste als Parameter und gibt eine neue Liste zurück, die nur die Elemente der ursprünglichen Liste enthält, für die die Funktion "True" ergibt.
+Das ist alles, was wir tun müssen, um Zeichen zu entfernen, die einem bestimmten Muster entsprechen. Es gibt viele weitere nützliche Funktionen in Elm, die uns beim Bearbeiten von Texten helfen können. Im Folgenden sind einige nützliche Links aufgelistet, die Sie erkunden können.
 
-Man kann auch die Funktion "String.break" verwenden, um eine Zeichenfolge in zwei Teile zu zerlegen, basierend auf einem bestimmten Muster. Zum Beispiel könnte man auf diese Weise einen Teil der Zeichenfolge entfernen und den anderen Teil behalten.
+## Tiefentauchen
 
-```Elm
-String.break (\c -> c == " ") "Hallo Welt" 
-```
+Wenn Sie sich für die technischen Details hinter `String.filter` interessieren, ist hier eine kleine Übersicht:
 
-Die Ausgabe wäre ein Paar von Zeichenfolgen, in diesem Fall "Hallo" und "Welt". Diese Funktionen können sehr nützlich sein, um Zeichen zu manipulieren und auf bestimmte Weise aus einer Zeichenfolge zu entfernen.
+Die Funktion `String.filter` nimmt eine Funktion und eine Zeichenkette entgegen und gibt eine neue Zeichenkette zurück. Diese neue Zeichenkette wird durch die alte Zeichenkette iteriert und jedes Zeichen wird in die übergebene Funktion eingegeben. Wenn die Funktion `True` zurückgibt, wird das Zeichen in die neue Zeichenkette aufgenommen, ansonsten wird es ignoriert.
 
-# Siehe auch
+Warum ist das nützlich? Nun, in unserem Beispiel haben wir die Funktion `not` verwendet, um zu überprüfen, ob das Zeichen nicht dem Muster entspricht, aber Sie können jede Funktion übergeben, die einen booleschen Wert zurückgibt. Dadurch haben Sie volle Kontrolle darüber, welche Zeichen in Ihrer neuen Zeichenkette enthalten sein sollen.
 
-- Die offizielle Elm-Dokumentation zu String-Funktionen: https://package.elm-lang.org/packages/elm/core/latest/String
-- Eine Einführung in reguläre Ausdrücke in Elm: https://guide.elm-lang.org/appendix/regex.html
-- Weitere Beispiele und Anwendungsmöglichkeiten von String-Funktionen in Elm: https://medium.com/@lucamug/elm-has-a-pretty-good-string-package-6cc732b02f94
+## Siehe auch
+
+- [Weitere Informationen über `String.filter` in der offiziellen Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+- [Die Funktion `removeNumber` in dieser Beispielanwendung zeigt verschiedene Möglichkeiten, Zeichen zu entfernen.](https://ellie-app.com/7sK56xKNnD4a1)

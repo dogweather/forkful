@@ -1,5 +1,6 @@
 ---
-title:                "C: 创建临时文件"
+title:                "创建临时文件"
+html_title:           "C: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "C"
 category:             "C"
@@ -9,35 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
-在进行C语言编程时，有时我们需要临时存储一些数据或创建一个临时文件，这可以帮助我们更有效地处理数据和程序。通过创建临时文件，我们可以暂时保存数据，避免使用硬编码的方式，同时也可以节省内存空间。因此，创建临时文件在编程中是非常有用的。
+## 为什么
+为了跟踪程序的运行，有时候我们需要在程序运行时临时存储一些数据。创建临时文件就是一种常用的方法，它可以让我们在程序运行时临时保存数据，方便后续使用或调试。
 
-## 如何
-在C语言中，我们可以使用`fopen()`函数来创建一个临时文件，并使用`fprintf()`函数来向文件中写入数据。下面是一个简单的示例代码：
+## 如何创建临时文件
+创建临时文件可以通过`tmpfile()`函数来实现。这个函数会在操作系统中创建一个临时文件，并返回一个指向该文件的指针。接下来可以通过`fwrite()`函数向临时文件中写入数据，然后通过`fread()`函数读取数据。最后使用`fclose()`函数将临时文件关闭并删除。
 
 ```C
-// 打开或创建临时文件
-FILE *fp = fopen("temp.txt", "w+"); 
+#include <stdio.h>
 
-// 向文件中写入数据
-fprintf(fp, "这是一条测试数据\n");
+int main() {
+  FILE *temp_file = tmpfile();
+  if (temp_file == NULL) {
+    printf("创建临时文件失败！\n");
+    return 1;
+  }
 
-// 关闭文件
-fclose(fp);
+  // 向临时文件中写入数据
+  char buffer[] = "这是临时文件中的数据";
+  if (fwrite(buffer, 1, sizeof(buffer), temp_file) != sizeof(buffer)) {
+    printf("写入数据失败！\n");
+    return 1;
+  }
+
+  // 读取临时文件中的数据
+  char read_buffer[sizeof(buffer)];
+  if (fread(read_buffer, 1, sizeof(buffer), temp_file) != sizeof(buffer)) {
+    printf("读取数据失败！\n");
+    return 1;
+  }
+
+  printf("临时文件中的数据为：%s\n", read_buffer);
+
+  // 关闭临时文件并删除
+  if (fclose(temp_file) != 0) {
+    printf("关闭临时文件失败！\n");
+    return 1;
+  }
+
+  printf("临时文件已成功删除！\n");
+
+  return 0;
+}
 ```
 
-运行上述代码后，我们可以在当前工作目录下看到一个名为`temp.txt`的临时文件，其中包含了我们写入的数据。
+输出：
 
-## 深入探讨
-在创建临时文件时，我们可以使用不同的打开模式来决定文件的行为。例如，使用`w+`模式可以创建一个新文件，并且如果文件已存在，则会被截断为空文件。而使用`a+`模式可以在已有文件末尾追加数据。另外，我们还可以使用`tmpfile()`函数来创建一个没有文件名的临时文件，这个临时文件会在关闭时被自动删除。
+```
+临时文件中的数据为：这是临时文件中的数据
+临时文件已成功删除！
+```
 
-除了临时文件，我们还可以使用`tmpnam()`函数来生成一个唯一的临时文件名。这在需要临时存储数据但不想创建实际文件时非常有用。
+## 深入了解临时文件
+当调用`tmpfile()`函数时，操作系统会在临时目录中创建一个随机命名的临时文件，并将其作为`FILE`结构体的指针返回。临时文件通常具有`w+b`模式，即读写二进制模式。这意味着可以通过`fseek()`函数随机访问临时文件中的数据。操作系统会在程序结束时自动删除临时文件，但也可以通过调用`fclose()`函数手动删除。
 
-## 参考链接
-- [C语言文件操作](https://www.runoob.com/cprogramming/c-file-io.html)
-- [创建临时文件与目录](https://blog.csdn.net/Senior_How/article/details/104539087)
-- [临时文件的创建与删除](https://www.cnblogs.com/paddix/p/5450607.html)
+## 参考阅读
+- [C语言文档：创建临时文件](https://zh.cppreference.com/w/c/io/tmpfile)
+- [C语言教程：文件读写](https://www.runoob.com/cprogramming/c-file-io.html)
+- [Linux命令大全：fseek命令](https://man.linuxde.net/fseek)
+- [Linux命令大全：fclose命令](https://man.linuxde.net/fclose)
 
-# 请参阅
-- [创建临时文件的C代码示例](https://github.com/Sunfished/creating-temp-file-in-C)
-- [C程序设计基础教程](http://c.biancheng.net/c/)
+## 参见
+- [C语言文档](https://zh.cppreference.com/w/c)

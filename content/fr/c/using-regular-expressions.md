@@ -1,6 +1,7 @@
 ---
-title:                "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utiliser des expressions régulières"
+html_title:           "C: Utiliser des expressions régulières"
+simple_title:         "Utiliser des expressions régulières"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,55 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi utiliser les expressions régulières en programmation C
+## Pourquoi
 
-Les expressions régulières sont un outil très utile en programmation C qui permettent de manipuler et de rechercher des chaînes de caractères de manière efficace. Elles sont particulièrement utiles lorsque vous devez effectuer des recherches ou des modifications de texte, telles que la validation d'entrées utilisateur ou le filtrage de données. En utilisant des expressions régulières, vous pouvez simplifier et optimiser votre code, ce qui vous fait gagner beaucoup de temps et d'efforts.
+Les expressions régulières, aussi appelées regex, sont des outils puissants pour rechercher et manipuler du texte dans un programme C. Elles permettent de trouver des motifs spécifiques, de valider des entrées utilisateurs et de remplacer du texte dans une chaîne de caractères. Utiliser des expressions régulières peut donc rendre notre code plus performant et plus robuste.
 
-## Comment utiliser les expressions régulières en programmation C
+## Comment faire
 
-Pour utiliser les expressions régulières en C, vous devez inclure la bibliothèque "regex.h" dans votre code. Cette bibliothèque contient les fonctions nécessaires pour travailler avec des expressions régulières. Voici un exemple de code montrant comment rechercher une chaîne de caractères avec des expressions régulières et imprimer le résultat :
+Pour utiliser des expressions régulières en C, nous avons besoin d'inclure la bibliothèque `<regex.h>` dans notre code. Cette bibliothèque nous fournit des fonctions comme `regcomp()` pour compiler une expression régulière et `regexec()` pour l'appliquer à un texte. Voici un exemple de code pour rechercher un motif de code postal dans une chaîne de caractères :
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
-    // Définition de l'expression régulière et de la chaîne à rechercher
-    char *regex = "a*b";
-    char *str = "ab aab abb acb";
+  regex_t regex;
+  int match;
+  char *text = "Mon code postal est 12345";
 
-    // Compilation de l'expression régulière
-    regex_t reg;
-    regcomp(&reg, regex, 0);
+  // Compile l'expression régulière
+  match = regcomp(&regex, "[0-9]{5}", 0);
+  if (match) {
+    fprintf(stderr, "Erreur lors de la compilation de l'expression régulière\n");
+    return 1;
+  }
 
-    // Recherche de la chaîne avec l'expression régulière
-    regmatch_t match;
-    if (regexec(&reg, str, 1, &match, 0) == 0) {
-        // Si une correspondance est trouvée, imprimer le résultat
-        printf("Correspondance trouvée : %.*s\n", (int)(match.rm_eo - match.rm_so), &str[match.rm_so]);
-    }
+  // Applique l'expression régulière au texte
+  match = regexec(&regex, text, 0, NULL, 0);
+  if (!match) {
+    printf("Code postal trouvé !\n");
+  } else if (match == REG_NOMATCH) {
+    printf("Aucun code postal trouvé\n");
+  } else {
+    printf("Erreur lors de l'application de l'expression régulière\n");
+    return 1;
+  }
 
-    // Libération de la mémoire utilisée par l'expression régulière
-    regfree(&reg);
-
-    return 0;
+  return 0;
 }
 ```
 
-Le résultat de ce code sera : Correspondance trouvée : ab.
+Dans cet exemple, nous utilisons `[0-9]{5}` comme motif pour rechercher une suite de 5 chiffres dans la chaîne `text`. Si le motif est trouvé, la fonction `regexec()` renvoie 0 et nous affichons un message approprié. Sinon, si aucun motif n'est trouvé, elle renvoie `REG_NOMATCH` et si une erreur se produit, elle renvoie un code d'erreur.
 
-## Approfondissement sur l'utilisation des expressions régulières en programmation C
+## Plongée en profondeur
 
-Les expressions régulières peuvent sembler intimidantes au premier abord, mais une fois que vous en comprenez les bases, elles peuvent grandement améliorer votre code. Voici quelques conseils pour utiliser efficacement les expressions régulières en C :
+Il existe de nombreux caractères spéciaux et opérateurs que nous pouvons utiliser dans une expression régulière pour créer des motifs encore plus précis. Par exemple, `\d` correspond à n'importe quel chiffre, `\w` à n'importe quel caractère alphanumérique et `+` pour indiquer qu'un élément doit être présent une ou plusieurs fois. Il existe également des méthodes avancées telles que la rétro-référence, qui permettent de capturer et de réutiliser des parties d'une chaîne de caractères correspondant à un motif spécifique.
 
-- Utilisez des caractères génériques pour simplifier vos recherches. Par exemple, le point (.) correspond à n'importe quel caractère, et le symbole d'étoile (*) indique qu'un certain motif peut être répété plusieurs fois.
-
-- Apprenez à utiliser les groupes de capture pour extraire des parties spécifiques d'une chaîne de caractères. Vous pouvez les définir à l'aide de parenthèses dans votre expression régulière et y accéder à l'aide de la structure regmatch_t.
-
-- Utilisez des expressions régulières dans vos fonctions de validation d'entrées utilisateur. Cela peut vous aider à vérifier si une adresse email est correctement formatée ou si un mot de passe contient des caractères spécifiques.
+Il peut sembler un peu intimidant d'utiliser des expressions régulières pour la première fois, mais une fois que vous avez compris les bases, elles peuvent grandement simplifier la manipulation de texte dans votre code en réduisant la quantité de code nécessaire pour effectuer des tâches courantes.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque "regex.h"](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/regex.h.html)
-- [Tutoriel sur les expressions régulières en C](https://www.regular-expressions.info/c.html)
-- [Guide complet sur l'utilisation des expressions régulières en C](https://www.ibm.com/support/pages/regular-expressions-c)
+- [Documentation de la bibliothèque `<regex.h>`](https://www.gnu.org/software/libc/manual/html_node/Regular-Expression-Functions.html#Regular-Expression-Functions)
+- [Guide de référence rapide pour les expressions régulières en C](https://www.tutorialspoint.com/c_standard_library/c_function_regcomp.htm)
+- [Outil de test en ligne pour les expressions régulières](https://regex101.com/)

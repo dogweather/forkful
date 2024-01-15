@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête http avec authentification de base"
+html_title:           "TypeScript: Envoi d'une requête http avec authentification de base"
+simple_title:         "Envoi d'une requête http avec authentification de base"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,48 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'envoi de requêtes HTTP avec une authentification de base est une étape cruciale pour les développeurs TypeScript qui souhaitent établir une communication sécurisée entre leur application et un serveur web. Cette méthode d'authentification permet de s'assurer que seules les personnes autorisées peuvent accéder aux ressources protégées par le serveur.
+L'envoi de requêtes HTTP avec une authentification de base est une pratique courante dans le développement d'applications web. Cela permet de sécuriser l'accès à certaines données ou fonctionnalités en vérifiant l'identité de l'utilisateur.
 
 ## Comment faire
 
-Pour envoyer une requête HTTP avec une authentification de base en utilisant TypeScript, nous allons utiliser l'API Fetch, qui est un moyen moderne et simple pour effectuer des appels réseau. Voici un exemple de code qui envoie une requête GET avec une authentification de base :
+```typescript
+// Importer le module "http" de Node.js
+import * as http from 'http';
 
-```TypeScript
-// Définition des informations de connexion
-const username = "mon_nom_d'utilisateur";
-const password = "mon_mot_de_passe";
+// Définir les informations d'authentification
+const username = 'utilisateur';
+const password = 'motdepasse';
 
-// Définition de l'URL de la ressource à accéder
-const url = "https://exemple.com/api/ressource";
+// Créer l'en-tête d'authentification de base en encodant en base64 les identifiants
+const authHeader = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 
-// Construction de l'en-tête d'authentification de base en encodant les informations de connexion en base64
-const authHeader = "Basic " + btoa(username + ":" + password);
-
-// Envoi de la requête GET avec l'en-tête d'authentification
-fetch(url, {
+// Définir les options de la requête
+const options = {
+  hostname: 'www.exemple.com',
+  path: '/api/endpoint',
+  method: 'GET',
   headers: {
-    "Authorization": authHeader
+    'Authorization': authHeader // Ajouter l'en-tête d'authentification
   }
-})
-  // Récupération de la réponse au format JSON
-  .then(response => response.json())
-  .then(data => console.log(data))
-  // Gestion des erreurs
-  .catch(error => console.error(error));
+};
+
+// Envoyer la requête
+const req = http.request(options, (res) => {
+  console.log(`Status: ${res.statusCode}`); // Afficher le code de statut de la réponse
+  console.log('Headers: ', res.headers); // Afficher les en-têtes de la réponse
+  res.on('data', (data) => {
+    console.log('Body: ', data); // Afficher le corps de la réponse
+  })
+});
+
+// Traitement des erreurs
+req.on('error', (error) => {
+  console.error(error); 
+});
+
+// Terminer la requête
+req.end();
 ```
 
-Lorsque nous exécutons ce code, nous devrions voir la réponse du serveur affichée dans la console, à condition que les informations de connexion soient correctes.
+Dans l'exemple ci-dessus, nous utilisons le module "http" de Node.js pour envoyer une requête HTTP avec une authentification de base. Nous définissons d'abord les informations d'authentification, puis nous créons l'en-tête d'authentification en utilisant l'encodage Base64. Ensuite, nous définissons les options de la requête, en ajoutant l'en-tête d'authentification. Enfin, nous envoyons la requête en utilisant la méthode "http.request()" et traitons la réponse et les éventuelles erreurs.
 
-## Plongée en profondeur
+## Deep Dive
 
-Pour comprendre comment fonctionne l'authentification de base dans les requêtes HTTP, il est important de connaître la structure de l'en-tête d'authentification. Comme nous l'avons vu dans l'exemple précédent, l'en-tête d'authentification de base est construit en concaténant le nom d'utilisateur et le mot de passe, séparés par un colon, puis en encodant le tout en base64.
+L'authentification de base est la méthode la plus simple pour sécuriser l'accès à une ressource HTTP. Elle utilise un encodage en Base64 pour transmettre le nom d'utilisateur et le mot de passe dans l'en-tête "Authorization" de la requête. Cependant, cette méthode n'est pas sécurisée car les identifiants sont facilement déchiffrables et peuvent être interceptés par un tiers.
 
-Lorsque le serveur reçoit cette en-tête, il décode les informations en base64 et vérifie si les informations de connexion sont valides. Si c'est le cas, le serveur renvoie une réponse avec un code d'état HTTP de 200, indiquant que la requête est traitée avec succès.
-
-Il est important de noter que l'authentification de base n'est pas considérée comme une méthode de sécurité robuste car les informations de connexion sont facilement décodables en base64. Il est donc recommandé d'utiliser d'autres méthodes d'authentification plus sécurisées pour les applications qui traitent des données sensibles.
+Pour une sécurité renforcée, il est recommandé d'utiliser d'autres méthodes d'authentification telles que l'authentification par jeton (token) ou à l'aide d'un certificat.
 
 ## Voir aussi
 
-- [Guide sur l'utilisation de Fetch API avec TypeScript](https://www.digitalocean.com/community/tutorials/typescript-fetch-api)
-- [Documentation officielle de TypeScript](https://www.typescriptlang.org/docs/)
-- [Guide sur les différentes méthodes d'authentification en HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+- [Documentation Node.js - module "http"](https://nodejs.org/docs/latest-v16.x/api/http.html)
+- [Guide MDN - Authentication - Basic_Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [Package "request" pour simplifier les requêtes HTTP en Node.js](https://www.npmjs.com/package/request)

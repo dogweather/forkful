@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Eine Datum in einen String umwandeln"
+html_title:           "Elixir: Eine Datum in einen String umwandeln"
+simple_title:         "Eine Datum in einen String umwandeln"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum?
 
-Das Konvertieren von Datum in einen String ist eine häufige Aufgabe in der Elixir-Programmierung. Es ermöglicht uns, Daten in einem leicht lesbaren Format auszugeben und macht es einfacher, sie mit anderen zu teilen. Erfahre in diesem Blog-Post, wie du ein Datum in einen String umwandeln kannst.
+Wenn du schon einmal mit Datumsangaben in deiner Elixir-Anwendung gearbeitet hast, dann weißt du, dass es manchmal notwendig ist, sie in einen String zu konvertieren. Dies kann nützlich sein, um das Datum in einem menschenlesbaren Format anzuzeigen oder es für die weitere Verarbeitung in einer Datenbank zu speichern.
 
-## Wie geht's?
+# Wie geht das?
 
-Lass uns zunächst einen Blick auf das `Date`-Modul in Elixir werfen. Mit diesem Modul haben wir Zugriff auf eine Reihe von Funktionen, die uns helfen, mit Datumswerten zu arbeiten. Eine dieser Funktionen ist `to_string/1`, die ein Datum in einem String im Format YYYY-MM-DD zurückgibt.
+Die Konvertierung von einem Datum in einen String in Elixir ist ganz einfach. Schauen wir uns dazu ein Beispiel an:
 
-```Elixir
-Date.to_string(~D[2020-12-01])
+```elixir
+datum = ~D[2021-08-10]
+String.to_charlist(datum, "dd.MM.yyyy")
 ```
-Ausgabe: "2020-12-01"
 
-Wir können auch eine benutzerdefinierte Formatierung für unseren String angeben, indem wir die Funktion `to_string/2` verwenden und ein Formatierungsmuster angeben.
+Das Ergebnis dieses Codes wäre der String "10.08.2021". Zuerst wird das Datum in einen String umgewandelt und dann das gewünschte Format angegeben. Es ist auch möglich, zusätzliche Parameter hinzuzufügen, wie zum Beispiel die Formatierung von Stunden oder Minuten.
 
-```Elixir
-Date.to_string(~D[2020-12-01], "{YYYY}/{MM}/{DD}")
-```
-Ausgabe: "2020/12/01"
-
-Es ist auch möglich, ein `DateTime`-Objekt in einen String umzuwandeln. Hierfür verwenden wir die Funktion `to_string/1` im `DateTime`-Modul und geben ein Dateiformat als Parameter an.
-
-```Elixir
-DateTime.to_string(~U[2020-12-01 12:30:00Z], "{YYYY}-{M}-{D}T{H}:{M}")
-```
-Ausgabe: "2020-12-01T12:30"
+Es ist wichtig zu beachten, dass die Funktion `String.to_charlist` nur mit Date-Objekten funktioniert, die mit dem `~D`-Präfix erstellt wurden. Wenn du ein Datum aus anderen Datentypen erstellen möchtest, kannst du die Funktion `:calendar.date_to_gregorian_days/2` verwenden.
 
 ## Deep Dive
 
-Die Funktion `to_string/2` im `Date`-Modul akzeptiert auch einen optionalen Zeitzonenparameter. Standardmäßig wird die lokale Systemzeit verwendet, aber wir können auch eine bestimmte Zeitzone angeben, indem wir ein `DateTime`-Objekt als Parameter übergeben.
+Die Funktion `String.to_charlist` verwendet intern die `:calendar.strftime/2` Funktion, die Teile einer Date im gewünschten Format ausgibt. Wenn wir also das Format `"dd.MM.yyyy"` angeben, bedeutet das, dass die Funktion den Tag, den Monat und das Jahr in der richtigen Reihenfolge ausgibt. 
 
-```Elixir
-DateTime.to_string(~U[2020-12-01 12:00:00], "{YYYY}-{MM}-{DD}T{H}:{M}", "America/New_York")
+Es ist auch möglich, eigene benutzerdefinierte Formatierungen zu erstellen, indem du das `~`-Zeichen vor dem Formatierungscode setzt und diese innerhalb von `{}` Klammern platzierst. Zum Beispiel:
+
+```elixir
+String.to_charlist(datum, "~{~a.~} ~B ~Y", chars: [".", ""])
 ```
-Ausgabe: "2020-12-01T12:00"
 
-Wenn wir uns das Ergebnis genau ansehen, werden wir feststellen, dass die Zeit um eine Stunde versetzt ist. Das liegt daran, dass die Zeitzone "America/New_York" eine Stunde hinter der Systemzeit liegt.
+Dies würde das Datum im Format "10. August 2021" ausgeben.
 
-Es ist auch möglich, eine Zeitzone als Atom anzugeben. Dies ist hilfreich, wenn wir die Zeitzone in einer Konfigurationsdatei speichern und sie dann in unseren Code einbinden möchten.
+# Siehe auch
 
-## Siehe auch
-
-[Date-Modul Dokumentation](https://hexdocs.pm/elixir/Date.html)
-
-[DateTime-Modul Dokumentation](https://hexdocs.pm/elixir/DateTime.html)
-
-[Zeitzonen in Elixir](https://dev.to/adelcambre/getting-to-know-time-zones-in-elixir-3ed1)
+- [Elixir Dokumentation für Kalenderfunktionen](https://hexdocs.pm/elixir/Calendar.html)
+- [Einführung in Elixir Dates und Times](https://elixirschool.com/en/lessons/advanced/datetime/)
+- [Elixir Date and Time Library](https://github.com/bitwalker/timex)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Bash recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,47 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever wondered how websites and applications securely handle user credentials? One common way is through basic authentication, which involves sending an HTTP request with a username and password. In this blog post, we'll explore how to do this using Bash programming.
+Sending an HTTP request with basic authentication allows you to securely access protected resources on a server, such as a website or API. This type of authentication is commonly used by websites and applications to verify the identity of a user before granting them access to sensitive information.
 
 ## How To
-To send an HTTP request with basic authentication using Bash, we can use the `curl` command. Here's an example of how to do this:
-
+To send an HTTP request with basic authentication, you will need to use two command-line tools: curl and base64. First, you will need to encode your username and password in base64 format, using the following command:
 ```Bash
-curl -u username:password https://example.com
+encoded_credentials=$(echo -n "username:password" | base64)
 ```
-
-The `-u` flag allows us to specify a username and password in the format `username:password`. In this example, we're sending a GET request to `https://example.com` with the provided credentials.
-
-We can also use variables to store the username and password, making our code more dynamic. Here's an example of how to do this:
-
+Make sure to replace "username" and "password" with your actual credentials. Next, you can use the encoded credentials in the Authorization header of your request, using the -u flag in curl:
 ```Bash
-# Store username and password in variables
-username="John"
-password="SecretPassword"
-
-# Send HTTP request with basic authentication using variables
-curl -u "$username:$password" https://example.com
+curl -u $encoded_credentials https://example.com/api
 ```
-
-This way, we can easily change the credentials without having to modify the command itself.
-
-We can also include additional options in our `curl` command, such as specifying the HTTP method or adding headers to the request. Here's an example of how to do this:
-
-```Bash
-# Specify the HTTP method and add a custom header
-curl -u username:password -X POST -H "Content-Type: application/json" https://example.com/api
-```
-
-This will send a POST request with the specified headers to the API endpoint.
+This will include the encoded credentials in the request, allowing you to access the protected resource. 
 
 ## Deep Dive
-So how does sending an HTTP request with basic authentication actually work? When we specify the username and password in the `curl` command, the credentials are encoded in Base64 and added to the request header as `Authorization: Basic <encoded_credentials>`. This allows the server to identify and verify the user's identity.
-
-It's worth noting that basic authentication is not the most secure method for handling user credentials, as the credentials are sent in plain text and can potentially be intercepted. As a result, it's important to use HTTPS when implementing basic authentication to ensure that the credentials are encrypted during transmission.
+Basic authentication, also known as Basic Access Authentication, is a simple method of authentication used by HTTP and other protocols. It works by sending the username and password in clear text, encoded in base64 format, in the Authorization header of the request. Despite its name, basic authentication is not very secure as the credentials can be easily decoded, making it important to only use it with HTTPS connections.
 
 ## See Also
-- [Using cURL to test RESTful APIs](https://blog.restcase.com/how-to-use-curl-to-test-rest-api/)
-- [Introduction to Basic Authentication](https://www.loginradius.com/blog/async/basic-authentication/)
-- [Security Considerations for Basic Authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#basic-authentication)
-
-By now, you should have a better understanding of how to send an HTTP request with basic authentication using Bash. Remember to always use HTTPS when implementing this method for added security. Happy coding!
+- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [curl documentation](https://curl.se/docs/manpage.html)
+- [base64 documentation](https://linux.die.net/man/1/base64)

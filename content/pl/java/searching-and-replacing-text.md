@@ -1,5 +1,6 @@
 ---
-title:                "Java: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Java: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Java"
 category:             "Java"
@@ -11,32 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli często pracujesz z tekstem w swoim kodzie Java i musisz dokonywać zmian w wielu miejscach, metoda wyszukiwania i zamiany może być niezwykle przydatna. Zamiast ręcznie edytować każde wystąpienie tekstu, możesz po prostu użyć tej funkcji i zaoszczędzić sobie cennego czasu i wysiłku.
+W dzisiejszych czasach programowanie jest nieodłączną częścią naszego codziennego życia. Wiele razy spotykamy się z sytuacją, gdzie musimy zmienić dany tekst w naszym kodzie lub w plikach tekstowych. W takich przypadkach pomocne jest umiejętne wykorzystanie funkcji wyszukiwania i zamiany tekstu. W tym artykule dowiesz się dlaczego warto znać tę funkcjonalność oraz jak jej używać w języku Java.
 
 ## Jak to zrobić
 
-Aby użyć metody wyszukiwania i zamiany w swoim kodzie Java, możesz skorzystać z następującej składni:
+Aby wyszukać i zamienić tekst w Javie, możemy skorzystać z dwóch głównych metod: metody `replace()` i metody `replaceAll()`. Pierwsza z nich służy do zamiany tylko pierwszego wystąpienia danego znaku lub ciągu znaków, natomiast druga zamienia wszystkie wystąpienia. Poniższy przykład ilustruje to w praktyce:
 
 ```java
-String newText = oldText.replaceAll("stary_tekst", "nowy_tekst"); 
+String text = "Hello, World! Hello, Java!";
+String newText = text.replace("Hello", "Hi");
 System.out.println(newText);
+// Output: Hi, World! Hi, Java!
+
+String allText = text.replaceAll("Hello", "Hi");
+System.out.println(allText);
+// Output: Hi, World! Hi, Java!
 ```
 
-W powyższym przykładzie, zmienna `newText` będzie zawierać zmieniony tekst, który można następnie wyświetlić na ekranie za pomocą `System.out.println()`.
+Ważnym elementem tych metod jest to, że są one niezmienne - to znaczy, że nie zmieniają oryginalnego tekstu, tylko zwracają nowy tekst. Dzięki temu nie musimy martwić się o utratę oryginalnych danych.
 
-## Głębsza analiza
-
-Możesz również użyć metody wyszukiwania i zamiany do bardziej zaawansowanych operacji, takich jak wykorzystanie wyrażeń regularnych. Na przykład, jeśli chcesz zamienić wszystkie liczby w tekście na słowo "liczba", możesz użyć następującego kodu:
+Możemy także wykorzystać wyrażenia regularne do bardziej zaawansowanych wyszukiwań i zamian w tekście. Przykład użycia:
 
 ```java
-String text = "Mam 5 samochodów i 3 rowery";
-String newText = text.replaceAll("\\d+", "liczba");
+String text = "Java 8, Java 11, Java 15";
+String newText = text.replaceAll("Java \\d+", "Java 14");
 System.out.println(newText);
+// Output: Java 14, Java 14, Java 14
 ```
 
-Otrzymasz wtedy wyjście "Mam liczba samochodów i liczba rowery". Wyrażenia regularne pozwalają na jeszcze większą kontrolę nad procesem wyszukiwania i zamiany, ale wymagają nieco nauki i praktyki. 
+W tym przypadku wykorzystaliśmy wyrażenie regularne, które oznacza "Java" oraz po nim jedna lub więcej cyfr. Dzięki temu wszystkie wystąpienia Java wraz z liczbami zostały zastąpione nowym tekstem "Java 14".
 
-## Zobacz również
+## Głębszy wgląd
 
-- Dokumentacja Java String: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)
-- Tutorial o wyrażeniach regularnych w Java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+W Javie, wyszukiwanie i zamiana tekstu może też zostać zaimplementowane przez wykorzystanie klasy `StringBuilder` oraz metody `replace()` lub `replaceAll()`. Dzięki temu możemy uniknąć tworzenia wielu obiektów `String` i zmniejszyć zużycie pamięci. Przykład użycia:
+
+```java
+StringBuilder sb = new StringBuilder("Hello, Java 11!");
+sb.replace(7, 10, "World");
+System.out.println(sb.toString());
+// Output: Hello, World 11!
+
+sb.replaceAll("11", "14");
+System.out.println(sb.toString());
+// Output: Hello, World 14!
+```
+
+Pamiętajmy, że liczby w metodzie `replace()` oraz `replaceAll()` oznaczają indeks początkowego i końcowego znaku, który chcemy zastąpić. Dzięki temu możemy precyzyjnie kontrolować, które elementy tekstu chcemy zmienić.
+
+## Zobacz też
+
+- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java Pattern Class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Java StringBuilder Class](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)

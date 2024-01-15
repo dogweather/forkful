@@ -1,6 +1,7 @@
 ---
-title:                "Go: csv 처리하기"
-simple_title:         "csv 처리하기"
+title:                "csv 파일 작업하기"
+html_title:           "Go: csv 파일 작업하기"
+simple_title:         "csv 파일 작업하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -9,89 +10,126 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-CSV는 데이터를 쉽고 간단하게 저장하고 전송하기 위한 매우 유용한 파일 형식입니다. 따라서 CSV를 다룰 수 있는 Go 언어를 배우는 것은 매우 유익한 일일 것입니다.
+CSV 파일은 데이터를 저장하거나 전달하는 데 자주 사용되는 형식입니다. Go 언어는 CSV 파일을 다루기에 아주 효율적이며, 이를 활용하여 데이터 분석, 웹 개발 등 다양한 작업을 할 수 있습니다.
 
-## 어떻게?
+## 하는 법
 
-CSV 파일을 열고 데이터를 읽고 쓰는 방법을 살펴보겠습니다. 우리는 `encoding/csv` 패키지를 사용할 것입니다. 먼저, CSV 파일을 열어서 쉼표(,)로 구분된 데이터를 읽어오겠습니다.
+CSV 파일을 읽고 쓰기 위해서는 "encoding/csv" 패키지를 임포트해야 합니다. 파이썬의 코드와 비슷하게 매우 간단합니다. 예를 들어, 다음과 같은 CSV 파일이 있다고 가정해 봅시다.
+
+```Go
+1,Apple,Red
+2,Orange,Orange
+3,Banana,Yellow
+```
+
+우리는 이 파일을 열어서 각 행을 슬라이스로 저장하고 싶을 겁니다. 이를 위해 다음과 같이 코드를 작성할 수 있습니다.
 
 ```Go
 package main
 
 import (
-    "encoding/csv"
-    "fmt"
-    "os"
+	"encoding/csv"
+	"log"
+	"os"
 )
 
 func main() {
-    file, err := os.Open("data.csv")
-    if err != nil {
-        panic(err)
-    }
-    defer file.Close()
+	// CSV 파일 열기
+	file, err := os.Open("fruits.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    reader := csv.NewReader(file)
-    // 첫 번째 줄은 데이터의 제목이기 때문에 무시합니다.
-    reader.Read()
+	// CSV 리더 생성
+	reader := csv.NewReader(file)
 
-    // 나이, 이름 순으로 데이터를 읽어옵니다.
-    records, err := reader.ReadAll()
-    if err != nil {
-        panic(err)
-    }
+	rows, err := reader.ReadAll()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    // 읽어온 데이터를 출력해봅니다.
-    for _, record := range records {
-        fmt.Println(record[0], record[1])
-    }
+	// 각 행을 슬라이스로 저장
+	var fruits [][]string
+	for _, row := range rows {
+		fruits = append(fruits, row)
+	}
+
+	// 슬라이스 내용 출력
+	for _, fruit := range fruits {
+		log.Println(fruit)
+	}
+}
+
+```
+
+위 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+
+```Go
+[1 Apple Red]
+[2 Orange Orange]
+[3 Banana Yellow]
+```
+
+CSV 파일을 쓰는 과정도 매우 간단합니다. 다음과 같이 코드를 작성할 수 있습니다.
+
+```Go
+package main
+
+import (
+	"encoding/csv"
+	"log"
+	"os"
+)
+
+func main() {
+	// CSV 파일 생성
+	file, err := os.Create("new_fruits.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// CSV 라이터 생성
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	// 데이터 슬라이스 생성
+	data := [][]string{
+		{"1", "Apple", "Red"},
+		{"2", "Orange", "Orange"},
+		{"3", "Banana", "Yellow"},
+	}
+
+	// 슬라이스 데이터를 CSV 파일에 쓰기
+	err = writer.WriteAll(data)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 ```
 
-위 코드를 실행하면 `data.csv` 파일에서 나이와 이름 데이터를 읽어 출력할 수 있습니다.
+위 코드를 실행하면 "new_fruits.csv" 파일이 생성되고, 그 안에 다음과 같은 내용이 들어있을 것입니다.
 
 ```
-23 Alice
-27 Bob
+1,Apple,Red
+2,Orange,Orange
+3,Banana,Yellow
 ```
 
-CSV 파일에 데이터를 쓰는 것도 간단합니다. 우리는 `csv.Writer`를 사용하여 데이터를 CSV 형식으로 작성할 수 있습니다.
-
-```Go
-...
-
-writer := csv.NewWriter(os.Stdout)
-// 첫 번째 인자는 CSV 파일에 쓰일 데이터의 제목입니다.
-writer.Write([]string{"Name", "Age"})
-writer.Write([]string{"Alice", "23"})
-writer.Write([]string{"Bob", "27"})
-writer.Flush()
-
-...
-```
-
-위 코드를 실행하면 아래와 같은 CSV 형식의 데이터를 출력할 수 있습니다.
-
-```
-Name,Age
-Alice,23
-Bob,27
-```
-
-CSV 파일을 다루는 방법은 이렇게 간단합니다! 여러분들도 한 번 해보시길 바랍니다.
+마지막으로, 데이터 분석을 위해 CSV 파일을 읽는 데에는 "encoding/csv" 패키지 외에도 "encoding","strconv" 등의 다양한 내장 패키지들을 활용할 수 있습니다.
 
 ## 딥 다이브
 
-CSV 파일을 다룰 때 유의해야 할 몇 가지 사항들이 있습니다.
+CSV 파일은 일반적으로 쉽게 다루어지기 때문에 Go 언어에서도 매우 유용하게 활용할 수 있습니다. 다만 주의할 점이 있다면, CSV 파일의 데이터 타입은 모두 문자열로 인식되기 때문에 숫자 데이터를 다루는 경우 "strconv" 패키지를 활용하여 형변환을 해주어야 하는 점입니다. 또한, CSV 파일을 쓸 때 데이터가 올바른 형식을 가지고 있는지 확인하는 코드를 추가하는 것도 좋은 방법입니다.
 
-먼저, 데이터의 양이 많을 경우에는 메모리를 많이 차지할 수 있으니 `csv.Reader` 대신 `csv.Scanner`를 사용하는 것이 좋습니다. `csv.Scanner`는 한 번에 한 줄씩 데이터를 읽어오므로 충분한 메모리 공간을 절약할 수 있습니다.
+## 참고 자료
 
-또한 `csv.Writer`에서는 `Flush()` 함수를 호출해줘야만 모든 데이터가 파일에 쓰여집니다. `Flush()`를 호출하지 않은 채 프로그램이 종료되면 데이터가 파일에 적절히 쓰여지지 않을 수 있습니다.
+- "encoding/csv" 패키지: https://golang.org/pkg/encoding/csv/
+- 다른 내장 패키지들의 사용 예시: https://golang.org/pkg/
 
-## 또 보기
+---
 
-- [공식 Go 블로그](https://go.dev/blog)
-- [A Tour of Go](https://go-tour-kr.appspot.com)
-- [Go 언어 공식 문서](https://golang.org/doc/)
+## 참고 자료
+
+- "encoding/csv" 패키지:

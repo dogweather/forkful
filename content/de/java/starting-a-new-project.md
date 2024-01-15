@@ -1,6 +1,7 @@
 ---
-title:                "Java: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "Java: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -9,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-In dieser Blog-Post möchten wir über das Thema "Das Starten eines neuen Java-Projekts" sprechen. Wir werden Ihnen erklären, warum es eine gute Idee ist, ein neues Projekt zu starten und wie Sie dies erfolgreich tun können.
+# Warum
 
-## Wie
-Das Erstellen eines neuen Java-Projekts ist kein komplizierter Prozess, aber es erfordert ein fundiertes Verständnis der Programmiersprache. Hier sind einige Beispiele von Java-Code, die Ihnen helfen werden, loszulegen:
+Warum sollte jemand ein neues Projekt beginnen? Es gibt viele Gründe - von der Erschaffung von etwas Neuem bis hin zur Verbesserung bestehender Lösungen. Egal aus welchem Grund, es ist immer aufregend, in ein neues Projekt einzutauchen und kreative Möglichkeiten zu entdecken.
 
-```java
+# Wie gehe ich vor?
+
+Der erste Schritt bei der Erstellung eines Java-Projekts ist die Installation der neuesten Version von Java Development Kit (JDK). Stellen Sie sicher, dass alles korrekt installiert wurde, indem Sie "javac -version" in Ihrem Terminal eingeben. Dann können Sie mit der Erstellung Ihrer Java-Datei beginnen.
+
+```Java
 public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hallo Welt!");
-  }
-}
-
-```
-Diese einfache Java-Klasse gibt den Text "Hallo Welt!" auf der Konsole aus, wenn sie ausgeführt wird. Es ist ein grundlegendes Beispiel, um sicherzustellen, dass Ihr Projekt richtig eingerichtet ist.
-
-```java
-public class Calculator {
-  public static void main(String[] args) {
-    int x = 5;
-    int y = 3;
-    int sum = x + y;
-    System.out.println("Die Summe von " + x + " und " + y + " ist " + sum + ".");
-  }
+    public static void main(String[] args) {
+        System.out.println("Hallo Welt!"); // Ausgabe: Hallo Welt!
+    }
 }
 ```
-In diesem Beispiel wird eine einfache Additionsoperation durchgeführt und das Ergebnis auf der Konsole ausgegeben. Diese Art von Code ist nützlich, um zu überprüfen, ob Ihre Entwicklungsumgebung ordnungsgemäß funktioniert und die richtigen Ausgaben erzeugt.
 
-## Deep Dive
-Wenn Sie ein neues Java-Projekt starten, gibt es einige wichtige Dinge zu beachten. Zuallererst sollte Ihr Projekt eine aussagekräftige Struktur haben, um es übersichtlich und leicht zu warten zu machen. Sie sollten auch entscheiden, welche Bibliotheken und Frameworks Sie verwenden werden, um Ihre Entwicklung zu erleichtern.
+Es ist wichtig, die Struktur und Konventionen von Java-Dateien zu beachten. Der Dateiname sollte mit dem Klassennamen übereinstimmen und die Dateiendung ".java" haben. Verwenden Sie Klassen und Methoden, um Ihren Code übersichtlich zu gestalten und stellen Sie sicher, dass jeder Klassennamen großgeschrieben wird. Die Methode "main" ist der Einstiegspunkt für Ihr Programm und muss wie oben gezeigt deklariert werden.
 
-Ein weiterer wichtiger Punkt ist die Verwendung von Versionskontrollsystemen wie Git, um Ihre Code-Änderungen zu verfolgen und zu verwalten. Auch die Auswahl einer geeigneten integrierten Entwicklungsumgebung (IDE) kann Ihnen helfen, produktiver zu arbeiten.
+# Tiefes Eintauchen
 
-Es ist auch sehr wichtig, regelmäßig Tests durchzuführen, um sicherzustellen, dass Ihr Code fehlerfrei ist und sich wie erwartet verhält. Dies kann manuell oder automatisiert durch sogenannte "Unit Tests" durchgeführt werden.
+Bevor Sie mit der Implementierung Ihres Projekts beginnen, ist es wichtig, ein Verständnis für die grundlegenden Konzepte von Java zu haben. Hier sind einige wichtige Aspekte, die Sie beachten sollten:
 
-## Siehe auch
-- [Oracle Java-Dokumentation](https://docs.oracle.com/en/java/)
-- [Eclipse IDE](https://www.eclipse.org/ide/)
-- [GitHub](https://github.com/)
+- Klassen und Objekte: Java ist eine objektorientierte Sprache, daher sollte Ihr Code in Klassen organisiert sein. Klassen sind Vorlagen für Objekte, die bestimmte Eigenschaften und Methoden haben.
+- Variablen und Datentypen: Variablen werden verwendet, um Daten zu speichern. In Java müssen Variablen deklariert werden, bevor sie verwendet werden, und müssen einen bestimmten Datentyp haben.
+- Kontrollstrukturen: Diese ermöglichen es Ihnen, Entscheidungen und Wiederholungen in Ihrem Code zu treffen. Beispiele hierfür sind "if-else" und "for-Schleifen".
+- Pakete und Importe: Pakete dienen dazu, Ihren Code in logische Bereiche zu unterteilen. Verwenden Sie Importe, um Klassen aus anderen Paketen in Ihrem Code zu verwenden.
+
+Es gibt noch viele weitere Konzepte in Java, die es zu erkunden gilt. Stellen Sie sicher, dass Sie ein solides Fundament haben, bevor Sie mit Ihrem Projekt beginnen.
+
+# Siehe auch
+
+- [Java-Tutorial von Oracle](https://docs.oracle.com/javase/tutorial/)
+- [Java-Grundkurs auf Codecademy](https://www.codecademy.com/learn/learn-java)
+- [Java bei Wikipedia](https://de.wikipedia.org/wiki/Java_(Programmiersprache))

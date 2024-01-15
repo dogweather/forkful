@@ -1,5 +1,6 @@
 ---
-title:                "PHP: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "PHP: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜダウンロードをするのか？
+## なぜ
 
-ウェブページをダウンロードする理由は様々です。例えば、自分のウェブサイトやブログのコンテンツをバックアップするため、あるいはオフラインで閲覧するためにダウンロードすることがあります。また、ウェブスクレイピングやデータ収集のためにもダウンロードが必要です。
+Webページのダウンロードへの参加には、ウェブサイト上の情報を取得し、処理して利用する必要があるため、ダウンロードすることが重要です。
 
-## ダウンロードの方法
-
-PHPを使用してウェブページをダウンロードする方法はいくつかありますが、ここでは一つの例を紹介します。まずは、```file_get_contents()```関数を使用してウェブページの内容を取得します。
+## 方法
 
 ```PHP
-$url = "https://example.com";
-$contents = file_get_contents($url);
-echo $contents;
+<?php
+
+$url = "https://example.com"; // ダウンロードするWebページのURLを指定
+
+// cURLを使用してWebページをダウンロード
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$page = curl_exec($ch);
+curl_close($ch);
+
+// ダウンロードしたページの内容を表示
+echo $page;
 ```
 
-このコードを実行すると、指定したURLのウェブページのHTMLコードが出力されます。また、```file_put_contents()```関数を使用すると、取得したウェブページの内容をローカルファイルに保存することもできます。
+ダウンロードしたWebページの内容を取得し、PHPの変数に保存して表示することができます。
 
-```PHP
-$url = "https://example.com";
-$contents = file_get_contents($url);
-$file_name = "example.html";
-file_put_contents($file_name, $contents);
-```
+## 詳細を深く調べる
 
-このように、ウェブページのダウンロードは簡単に行うことができます。
+Webページをダウンロードする方法はいくつかありますが、PHPのcURLライブラリを使用することが一般的です。cURLは、Webサーバーとの通信を行うための多目的なライブラリであり、ダウンロードしたページの内容を自由に処理することができます。また、オプションを設定することで、認証やリダイレクトの処理なども行うことができます。
 
-## 詳細な解説
+## 参考リンク
 
-ウェブページをダウンロードするには、HTTPリクエストが必要です。PHPの```file_get_contents()```関数は、指定したURLにHTTPリクエストを送信し、そのレスポンスを取得することができます。また、HTMLページだけでなく、JSONやXMLなどのデータ形式でも取得することができます。
-
-ただし、```file_get_contents()```関数はデフォルトではエラーを出力せず、取得したデータが文字列として返されるため、エラー処理を適切に行う必要があります。また、大量のデータを扱う場合は、メモリの使用量にも注意が必要です。
-
-## 関連リンク
-
-- [PHP: file_get_contents - Manual](https://www.php.net/manual/ja/function.file-get-contents.php)
-- [PHP: file_put_contents - Manual](https://www.php.net/manual/ja/function.file-put-contents.php)
-- [HTTPリクエストとは？ | MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
+* [PHP: cURLライブラリ](https://www.php.net/manual/ja/book.curl.php)
+* [cURLを使ってWebページをダウンロードする方法](https://www.php.net/manual/ja/function.curl-init.php)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Arduino: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,35 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Si estás interesado en aprender a programar con Arduino, seguramente ya has notado la enorme cantidad de posibilidades que ofrece esta plataforma. Y una de las funcionalidades más útiles para manipular cadenas de texto es la extracción de subcadenas. En este artículo, te explicaremos por qué es importante aprender a hacerlo y cómo puedes hacerlo tú mismo.
+Extraer subcadenas es una habilidad importante en la programación que te permite manipular y utilizar partes específicas de una cadena de texto. Esto puede ser útil si quieres buscar ciertos patrones en una frase, o si necesitas dividir una cadena en secciones más pequeñas para realizar diferentes operaciones.
 
 ## Cómo hacerlo
 
-Para extraer una subcadena de una cadena de texto en Arduino, utilizaremos la función `substring()`. Primero, definiremos la cadena de texto completa y luego usaremos esta función para especificar la posición de inicio y la longitud de la subcadena que deseamos extraer.
+Arduino tiene una función incorporada llamada `substring()` que te permite extraer subcadenas de una cadena de texto. Para utilizarla, sigue estos sencillos pasos:
 
-```Arduino
-// Definir la cadena de texto completa
-String texto = "¡Hola mundo!";
+1. Primero, declara una variable de tipo `String` que contenga la cadena de texto de la cual quieres extraer la subcadena.
 
-// Extraer la subcadena "mundo" a partir del cuarto carácter (índice 3) y de longitud 5
-String subcadena = texto.substring(3, 5);
+   ```
+   String texto = "Hola mundo";  // La cadena de texto de la que queremos extraer la subcadena
+   ```
 
-// Imprimir la subcadena en el monitor serie
-Serial.println(subcadena);
+2. Luego, usa la función `substring()` especificando el índice de inicio y el número de caracteres que quieres extraer. En Arduino, los índices comienzan desde 0.
 
-// Resultado: mundo
-```
+   ```
+   String subcadena = texto.substring(5, 10);  // Extrae 5 caracteres a partir del índice 10
+   ```
 
-Puedes personalizar la posición de inicio y la longitud de la subcadena según tus necesidades, lo que te permite manipular y utilizar cadenas de texto de manera más eficiente en tu programa de Arduino.
+3. Ahora puedes hacer lo que quieras con tu subcadena, como imprimirlo en la pantalla LCD o compararlo con otra cadena.
 
-## Profundizando
+   ```
+   Serial.println(subcadena);  // Imprime "mundo" en el monitor serial
+   ```
 
-Ahora que sabes cómo extraer subcadenas en Arduino, es importante que entiendas cómo funciona esta función y cómo puedes utilizarla en situaciones más complejas. La función `substring()` toma dos parámetros: la posición de inicio y la longitud de la subcadena. Sin embargo, si solo especificamos la posición de inicio, la subcadena resultante incluirá todos los caracteres restantes de la cadena original.
+Puedes jugar con diferentes valores de índices y longitud de caracteres para obtener diferentes subcadenas.
 
-También puedes utilizar variables en lugar de números específicos para indicar la posición y la longitud. Esto te permite crear programas dinámicos que pueden manipular diferentes cadenas de texto sin tener que cambiar manualmente los valores.
+## Una mirada más profunda
+
+La función `substring()` en Arduino funciona de manera similar a la función `substring()` en otros lenguajes de programación, como Java. Toma dos parámetros: el índice de inicio y la longitud de la subcadena. Y devuelve una nueva cadena de caracteres.
+
+Además, ten en cuenta que la función `substring()` no modifica la cadena original, sino que solo devuelve una copia de la subcadena extraída. Por lo tanto, si quieres modificar la cadena original, deberás asignar el resultado de `substring()` a la variable original.
 
 ## Ver también
 
-- [Tutorial de Arduino para principiantes](https://www.arduino.cc/en/Guide/HomePage)
-- [Documentación oficial de la función `substring()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Ejemplos de proyectos de Arduino](https://create.arduino.cc/projecthub/projects/tags/arduino)
+- [Documentación oficial de Arduino sobre la función substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Tutorial sobre cómo usar la función substring() en Arduino](https://www.arduino.cc/en/Tutorial/TextStringSubstring)

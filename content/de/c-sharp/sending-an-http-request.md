@@ -1,6 +1,7 @@
 ---
-title:                "C#: Sende eine http-Anfrage"
-simple_title:         "Sende eine http-Anfrage"
+title:                "Versenden einer http-Anfrage"
+html_title:           "C#: Versenden einer http-Anfrage"
+simple_title:         "Versenden einer http-Anfrage"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,54 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum eine HTTP Anfrage senden?
+## Warum
 
-Das Senden einer HTTP-Anfrage ist ein wichtiger Teil der Programmierung in C#. Es ermöglicht die Kommunikation zwischen verschiedenen Systemen und das Abrufen von Informationen aus dem Internet. Der Prozess des Sendens einer HTTP-Anfrage kann jedoch kompliziert erscheinen, besonders für Anfänger. In diesem Blog-Beitrag werfen wir einen Blick auf die Gründe, warum man eine HTTP-Anfrage senden möchte und wie man dies in C# umsetzen kann.
+Das Versenden von HTTP-Anfragen ist ein wichtiger Teil der modernen Webentwicklung und ermöglicht es uns, Daten von externen Servern abzurufen. Ob Sie nun eine API integrieren, Daten für Ihre Anwendung sammeln oder einfach nur die Funktionen einer Website nutzen wollen, das Senden von HTTP-Anfragen ist unerlässlich.
 
-## Wie man eine HTTP-Anfrage in C# sendet
+## Wie geht das?
 
-Um eine HTTP-Anfrage in C# zu senden, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung der `HttpClient`-Klasse, die in .NET Framework und .NET Core verfügbar ist. Hier ist ein Beispielcode, wie man mit dieser Klasse eine HTTP-Anfrage an eine API sendet:
+Um eine HTTP-Anfrage in C# zu senden, benötigen Sie die `HttpClient`-Klasse aus dem `System.Net.Http`-Namespace. Hier ist ein Beispiel, wie Sie eine GET-Anfrage an eine externe API senden können und die Antwort als JSON-Objekt verarbeiten können:
 
 ```C#
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-public class Program
-{
-  public static async Task Main()
-  {
-    // Erstelle ein HttpClient-Objekt
-    using (HttpClient client = new HttpClient())
-    {
-      // Setze die URL der API, zu der wir eine Anfrage senden möchten
-      string url = "https://example.com/api/data";
+string url = "https://example.com/api/someData";
 
-      // Führe eine GET-Anfrage aus
-      HttpResponseMessage response = await client.GetAsync(url);
+// HttpClient initialisieren
+HttpClient client = new HttpClient();
 
-      // Lese die Antwort als String
-      string result = await response.Content.ReadAsStringAsync();
+// GET-Anfrage senden und Antwort erhalten
+HttpResponseMessage response = await client.GetAsync(url);
 
-      // Gib den String auf der Konsole aus
-      Console.WriteLine(result);
-    }
-  }
-}
+// Antwort als string auslesen
+string data = await response.Content.ReadAsStringAsync();
+
+// JSON-Objekt aus der Antwort erstellen
+dynamic result = JsonConvert.DeserializeObject(data);
+
+// Daten aus dem JSON-Objekt abrufen
+string name = result.name;
+int age = result.age;
+
+// Output anzeigen
+Console.WriteLine("Name: " + name);
+Console.WriteLine("Alter: " + age);
 ```
 
-Dieser Code sendet eine einfache GET-Anfrage an die angegebene URL und gibt die Antwort auf der Konsole aus. Um eine PUT- oder POST-Anfrage zu senden, kann die `PostAsync()` bzw. `PutAsync()` Methode verwendet werden.
+Output:
 
-## Tiefergehende Informationen über das Senden von HTTP-Anfragen
+```
+Name: Max Mustermann
+Alter: 30
+```
 
-Das Senden einer HTTP-Anfrage beinhaltet verschiedene Aspekte, die man genauer betrachten kann. Dazu gehört die Verwendung von HTTP-Headern, die Bestimmung des Anfrageformats (z.B. JSON oder XML) und die Verwendung von Authentifizierungsmechanismen wie API-Schlüsseln oder OAuth.
+Es ist wichtig zu beachten, dass `HttpClient` asynchron arbeitet, daher verwenden wir das `await`-Keyword und die `async`-Methode, um die Antwort abzuwarten und die Daten zu verarbeiten.
 
-Außerdem ist es wichtig zu verstehen, wie man mit der erhaltenen Antwort umgeht und welche Fehlerbehandlungsmethoden man verwenden sollte. Die `HttpResponseMessage`-Klasse hat verschiedene Eigenschaften und Methoden, die dabei helfen können, die Antwort zu verarbeiten.
+## Tieferer Einblick
 
-Es ist auch ratsam, sich mit den verschiedenen HTTP-Statuscodes vertraut zu machen, um die Antwort einer Anfrage besser zu interpretieren. Eine umfassende Übersicht der Statuscodes findet man hier: [HTTP-Statuscode Übersicht](https://developer.mozilla.org/de/docs/Web/HTTP/Status).
+Im obigen Beispiel haben wir eine GET-Anfrage gesendet, aber `HttpClient` unterstützt auch andere HTTP-Methoden wie POST, PUT, DELETE, etc. Sie können auch Header-Informationen und Anfrage-Body-Daten hinzufügen, je nach den Anforderungen der API.
+
+Es ist auch wichtig zu verstehen, dass das Senden von HTTP-Anfragen keine einwegige Kommunikation ist. Nachdem die Anfrage gesendet wurde, erhält man eine Antwort von dem Server, auf den man zugegriffen hat. Diese Antwort enthält normalerweise einen Statuscode, der anzeigt, ob die Anfrage erfolgreich war oder nicht, sowie die Daten, die der Server zurückgibt. Diese Daten können in verschiedenen Formaten sein, wie z.B. XML oder JSON, und müssen entsprechend verarbeitet werden.
+
+Eine weitere wichtige Sache ist die Fehlerbehandlung. Wenn die Anfrage aus irgendeinem Grund fehlschlägt, müssen Sie in der Lage sein, damit umzugehen und eine entsprechende Fehlermeldung auszugeben oder alternative Aktionen durchzuführen.
 
 ## Siehe auch
 
-- [Microsoft Dokumentation über das Senden von HTTP-Anfragen in C#](https://docs.microsoft.com/de-de/dotnet/csharp/tutorials/console-webapiclient)
-- [Tutorial: Einführung in die HTTP-Anfragen in C#](https://www.youtube.com/watch?v=0rJyWS30qCY)
-- [Codebeispiel zum Verständnis von HTTP-Headern in C#](https://www.c-sharpcorner.com/blogs/using-httpclient-to-consume-webapi-in-net-application)
-- [Erläuterung zu HTTP-Statuscodes und ihrer Bedeutung](https://restfulapi.net/http-status-codes/)
+- [Microsoft Docs - Using HttpClient for HTTP requests](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)
+- [Tutorialspoint - C# HttpClient Class](https://www.tutorialspoint.com/csharp/csharp_httpclient.htm)
+- [Codeburst - How to Make HTTP Requests in C#](https://codeburst.io/how-to-make-http-requests-in-c-291d93608d77)

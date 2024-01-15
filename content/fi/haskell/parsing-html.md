@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: HTML:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Haskell: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,46 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi HTML-analysointi on tärkeää?
+## Miksi
 
-Jos olet koskaan käyttänyt verkkosivuja tai web-sovelluksia, olet todennäköisesti ollut tekemisissä HTML-koodin kanssa. HTML on merkintäkieli, jota käytetään sivustojen rakentamiseen ja ulkoasun luomiseen. Jotta voitaisiin käsitellä ja manipuloida sivustojen sisältöä, on usein tarpeen analysoida HTML-koodia. Tässä blogikirjoituksessa tutustumme siihen, miten voit analysoida HTML-koodia käyttäen Haskell-ohjelmointikieltä.
+Miksi joku haluaisi oppia parsimaan HTML:ää? Yksinkertaisesti sanottuna, kyseessä on tärkeä taito web-kehittäjille. HTML on yksi tärkeimmistä kielistä, jota käytetään verkkosivujen luomisessa ja sen ymmärtäminen auttaa parantamaan ohjelmointitaitoja.
 
-## Miten tehdä se?
+## Miten
 
-HTML-koodin analysointi Haskellilla on mahdollista käyttämällä kirjastoa nimeltä "tagsoup". Tämä kirjasto tarjoaa valmiita funktioita, joilla voit lukea ja käsitellä HTML-elementtejä. Esimerkiksi hyödyllinen funktio `parseTags` lukee HTML-koodin ja palauttaa listan "Tag" -tyyppisistä elementeistä. Voit käyttää tätä funktiota esimerkiksi seuraavalla tavalla:
+Parsiminen tarkoittaa tekstin pilkkomista osiin ja niiden analysointia. Haskellilla pystytään suorittamaan tätä hyvin helposti käyttäen pakettia "html-conduit". Tässä yksinkertainen esimerkki, joka hakee otsikon ja linkin kaikista `<h2>` elementeistä:
 
-```Haskell
-import Text.HTML.TagSoup (parseTags)
+```haskell
+import Text.HTML.Conduit
+import Data.Conduit
+import qualified Data.Conduit.List as CL
 
-html = "<html><head><title>Hello World</title></head><body><h1>Welcome</h1></body></html>"
-
-tags = parseTags html
-
-print tags -- [TagOpen "html" [],TagOpen "head" [],TagOpen "title" [],TagText "Hello World",TagClose "title",TagClose "head",TagOpen "body" [],TagOpen "h1" [],TagText "Welcome",TagClose "h1",TagClose "body",TagClose "html"]
+main :: IO ()
+main = do
+  sourceFile "example.html" $$ element "h2" =$ CL.mapM_ print
 ```
 
-Yllä olevassa koodissa luodaan ensin muuttuja `html`, joka sisältää HTML-koodia. Sitten `parseTags` -funktiota käytetään lukemaan HTML ja palauttamaan lista `tags`. Lopuksi tulostetaan tämä lista, ja näemme kaikki elementit, jotka HTML-koodista löytyvät.
+Tulostus:
 
-Voit myös käyttää Tagsoup-kirjastoa laskemaan tiettyjen elementtien määrää HTML-koodissa. Esimerkiksi jos haluat tietää, kuinka monta otsikkoa `<h1>` on HTML-koodissa, voit käyttää funktiota `count`.
-
-```Haskell
-import Text.HTML.TagSoup (parseTags, Tag(..), headTag, (~/=))
-
-html = "<html><head><title>Hello World</title></head><body><h1>Welcome</h1><p>Paragraph</p><h1>Another heading</h1></body></html>"
-
-tags = parseTags html
-
-count = length $ filter isHeading tags
-  where isHeading (TagOpen "h1" _) = True
-        isHeading _ = False
-
-print count -- 2
+```haskell
+"<h2>Ensimmäinen otsikko</h2>"
+"<h2>Toinen otsikko</h2>"
+"<h2>Kolmas otsikko</h2>"
 ```
 
-Yllä olevassa koodissa käytetään funktiota `filter`, joka suodattaa listan elementtejä halutun ehdokkaan mukaan. Tässä tapauksessa suodatetaan `tags`-lista niin, että vain `<h1>`-elementit jäävät jäljelle. Sitten käytetään `length`-funktiota laskemaan suodatetun listan pituus, jolloin saadaan haluttu laskettu arvo.
+## Syväsukellus
 
-## Syvempi sukellus
+HTML:n parsiminen voi mennä syvemmälle kuin pelkkien elementtien hakuun. Voit myös suorittaa monimutkaisempia toimintoja, kuten tiettyjen attribuuttien hakuja tai tietojen poimimista taulukoista. Tässä esimerkki, jossa haetaan kaikki otsikot ja niiden attribuutit:
 
-Tagsoup-kirjastolla on monia muita hyödyllisiä funktioita, jotka voit löytää sen dokumentaatiosta. Voit myös käyttää kirjastoa tekemään monimutkaisempia operaatioita, kuten hakemaan tiettyjä elementtejä tai muokkaamaan HTML-koodia.
+```haskell
+sourceFileLBS "example.html" $$ fromDocument =$= element "h2" =$=
+  CL.map attr =$= CL.mapM_ print
 
-On kuitenkin hyvä huomata, että Tagsoup-kirjasto ei ole täydellinen. Se ei pysty käsittelemään kaikkia mahdollisia HTML-merkintöjä ja se sa
+attr (EventBeginElement name attrs) = nameLocalName name ++ " : " ++ show attrs
+attr _ = ""
+```
+
+Tulostus:
+
+```haskell
+"Ensimmäinen otsikko : [Attr {attrKey = "class", attrVal = "title"},Attr {attrKey = "id", attrVal = "first"}]"
+"Toinen otsikko : []"
+"Kolmas otsikko : [Attr {attrKey = "id", attrVal = "third"}]"
+```
+
+## Katso myös
+
+- [hackage.haskell.org/package/html-conduit](https://hackage.haskell.org/package/html-conduit)
+- [learnyouahaskell.com/chapters](http://learnyouahaskell.com/chapters)

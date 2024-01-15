@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit."
+html_title:           "Swift: Berechnung eines Datums in der Zukunft oder Vergangenheit."
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich mit der Berechnung eines Datums in der Zukunft oder Vergangenheit beschäftigen? Ganz einfach: Es kann sehr nützlich sein, um zeitbezogene Aufgaben in Programmen zu automatisieren.
 
-## Wie
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es verschiedene Methoden in Swift. Eine Möglichkeit ist die Verwendung der Methode `dateByAdding` in der Klasse `NSDate`. Hier ein Beispiel, um 30 Tage zu einem gegebenen Datum hinzu zu addieren:
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann in vielen Anwendungsfällen nützlich sein, z.B. in der Finanzwelt, bei der Verwaltung von Terminen oder für Reiseplanungen. Mit Swift können wir diese Berechnungen einfach und schnell durchführen.
 
-```Swift
-let calendar = NSCalendar.currentCalendar()
-let currentDate = NSDate()
-let futureDate = calendar.dateByAdding(.Day, value: 30, toDate: currentDate, options: [])
-print(futureDate)
-```
-Dies wird das Datum 30 Tage in der Zukunft ausgeben.
+## Wie geht das?
 
-Um ein Datum in der Vergangenheit zu berechnen, können Sie einen negativen Wert verwenden. Zum Beispiel um 2 Monate und 5 Tage von einem gegebenen Datum abzuziehen:
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit erfordert die Verwendung der `Date` Klasse in Swift. Zunächst müssen wir ein `Date` Objekt für das aktuelle Datum erstellen:
 
 ```Swift
-let calendar = NSCalendar.currentCalendar()
-let currentDate = NSDate()
-let pastDate = calendar.dateByAdding(.Month, value: -2, toDate: currentDate, options: [])
-pastDate = calendar.dateByAdding(.Day, value: -5, toDate: pastDate, options: [])
-print(pastDate)
+let currentDate = Date()
 ```
-Dies wird das Datum 2 Monate und 5 Tage in der Vergangenheit ausgeben.
 
-## Deep Dive
-Wenn Sie tiefer in die Welt der Datumsberechnungen einsteigen möchten, können Sie sich mit der Klasse `NSCalendar` vertraut machen. Diese bietet viele nützliche Methoden wie zum Beispiel `components:fromDate:` um einzelne Komponenten wie Tag, Monat oder Jahr von einem Datum zu erhalten.
+Dann können wir die `Calendar` Klasse verwenden, um ein `DateComponents` Objekt zu erstellen, das die gewünschte Anzahl an Jahren, Monaten, Wochen, Tagen usw. enthält, die wir auf das aktuelle Datum addieren oder davon subtrahieren möchten. Zum Beispiel können wir ein Datum in 2 Monaten berechnen:
+
+```Swift
+let calendar = Calendar.current
+var dateComponent = DateComponents()
+dateComponent.month = 2
+let futureDate = calendar.date(byAdding: dateComponent, to: currentDate)
+```
+
+Das `futureDate` Objekt enthält das berechnete Datum, also zwei Monate in der Zukunft.
+
+## Tiefergehende Informationen
+
+Beim Berechnen eines Datums in der Zukunft oder Vergangenheit ist es wichtig zu beachten, dass es nicht immer eine genaue Anzahl von Tagen oder Monaten gibt. Zum Beispiel kann ein Monat 28, 29, 30 oder 31 Tage haben. Deshalb ist es ratsam, die `Calendar` Klasse zu verwenden, um sicherzustellen, dass das berechnete Datum tatsächlich existiert. In der obigen Beispielrechnung verwendet die `Calendar` Klasse beispielsweise den korrekten Monat und das korrekte Jahr, um das Datum zu berechnen.
+
+Es ist auch wichtig, die verschiedenen verfügbaren Methoden der `Date` Klasse zu verstehen, um Datumsformate und Zeitzonen zu berücksichtigen. Weitere Informationen dazu finden Sie in der offiziellen Swift-Dokumentation.
 
 ## Siehe auch
-- [NSCalendar Dokumentation](https://developer.apple.com/documentation/foundation/nscalendar)
-- [NSDate Dokumentation](https://developer.apple.com/documentation/foundation/nsdate)
-- [Swift Date Calculations Tutorial](https://www.raywenderlich.com/74890/swift-date-calculation-nscalendar-nsdatecomponents)
+
+- [Apple Dokumentation zur Date Klasse](https://developer.apple.com/documentation/foundation/date)
+- [Apple Dokumentation zur Calendar Klasse](https://developer.apple.com/documentation/foundation/calendar)
+- [Swift By Example: Working With Dates](https://swiftbysundell.com/basics/dates/)

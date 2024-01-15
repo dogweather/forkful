@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Konvertera ett datum till en sträng"
-simple_title:         "Konvertera ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Bash: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,37 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera ett datum till en sträng är en vanlig uppgift inom Bash-programmering. Det kan vara användbart när man vill lista filer efter datum eller jämföra datum mellan olika filer.
+Att kunna konvertera ett datum till en sträng är en användbar färdighet när man arbetar med Bash-scripting. Det kan hjälpa till att automatisera uppgifter som kräver specifika datumformat och göra dem mer läsbara för användaren.
 
-## Så här gör du
-För att konvertera ett datum till en sträng i Bash, används kommandot `date` tillsammans med önskad formatsträng. Här är ett exempel på hur man konverterar dagens datum till en sträng i formatet ååååmmdd:
+## Hur man gör det
+För att konvertera ett datum till en sträng i Bash kan man använda kommandot "date". Det finns många olika sätt att ange ett datumformat, men vi kommer att fokusera på det vanligaste formatet, "YYYY-MM-DD". Här är ett exempel på hur man skulle göra det:
 
 ```Bash
-date +"%Y%m%d"
+date +%Y-%m-%d
 ```
 
-Output: `20210316` (för 16 mars 2021)
+Detta kommando kommer att returnera dagens datum i formatet YYYY-MM-DD. Om du till exempel kör det idag (23 oktober 2021) kommer det att se ut så här:
 
-Det finns många olika formatsträngar som kan användas för att få önskad utformat på datumet. Här är några exempel:
+```Bash
+2021-10-23
+```
 
-- `%Y` för året i fyrsiffrigt format
-- `%m` för månad i tvåsiffrigt format
-- `%d` för dag i tvåsiffrigt format
-- `%H` för timme i 24-timmarsformat
-- `%M` för minut i tvåsiffrigt format
-- `%S` för sekund i tvåsiffrigt format
+Du kan också använda andra flaggor för att anpassa datumet till det format du behöver. Till exempel, om du vill inkludera tiden, kan du använda "date +%Y-%m-%d %H:%M:%S" som kommer att returnera datumet och tiden i formatet YYYY-MM-DD HH:MM:SS.
 
 ## Djupdykning
-Kommandot `date` har många fler möjliga formatsträngar än de vi nämnde i avsnittet ovan. En komplett lista och beskrivning av dessa finns i Bash-manualen. Det är även möjligt att kombinera flera formatsträngar för att få en mer exakt utformat på datumet.
-
-En annan användbar funktion är möjligheten att konvertera en specifik datum och tid till en sträng. Detta görs genom att ange datumet efter flaggan `-d`. Här är ett exempel på hur man konverterar 25 december 2021 kl. 15:30 till en sträng i formatet ååååmmddHHMM:
-
-```Bash
-date -d "2021-12-25 15:30" +"%Y%m%d%H%M"
-```
-
-Output: `202112251530`
+För att förstå hur ovanstående kommando fungerar behöver man ha grundläggande kunskap om variabler i Bash. "date" kommandot tilldelar värdet av datumet till en variabel genom användning av "%Y" för år, "%m" för månad och "%d" för dag. Detta resulterar i en väggssträng som representerar dagens datum.
 
 ## Se även
-- [Bash Reference Manual - date](https://www.gnu.org/software/bash/manual/html_node/Bash-Reference-Manual.html#Commands-For-Dates-and-Times)
-- [How to Convert Dates to Strings in Bash](https://linuxize.com/post/how-to-convert-dates-to-strings-in-bash/)
+- [Bash Date Command](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
+- [Introduction to Bash Scripting](https://linuxhint.com/bash_scripting_tutorial_beginners/)

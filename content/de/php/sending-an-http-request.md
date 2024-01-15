@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Eine HTTP-Anfrage senden"
-simple_title:         "Eine HTTP-Anfrage senden"
+title:                "Senden einer HTTP-Anfrage"
+html_title:           "PHP: Senden einer HTTP-Anfrage"
+simple_title:         "Senden einer HTTP-Anfrage"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,39 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie eine Website besuchen, interagieren Sie wahrscheinlich mit verschiedenen Seiten und Inhalten. Hinter den Kulissen kommuniziert Ihr Browser mit Servern, um Inhalte und Daten abzurufen. Dieser Prozess wird durch das Senden von HTTP-Anfragen ermöglicht.
+Warum sollte man sich mit dem Versenden von HTTP-Anfragen befassen? Nun, HTTP-Anfragen sind ein wesentlicher Bestandteil des World Wide Web und ermöglichen es uns, mit Websites und APIs zu kommunizieren. Sie sind essenziell für die Funktionalität von Webanwendungen und ermöglichen es uns, Daten von externen Quellen abzurufen oder zu senden.
 
-## Wie man eine HTTP-Anfrage sendet
+## Wie geht das?
 
-Um eine HTTP-Anfrage zu senden, müssen Sie die Funktion `file_get_contents()` in PHP verwenden und die URL des Ziels sowie zusätzliche Optionen angeben. Zum Beispiel:
+Das Senden von HTTP-Anfragen kann mit Hilfe von PHP auf einfache Weise erfolgen. Zunächst muss die URL der gewünschten Ressource angegeben werden, gefolgt von der Art der Anfrage (GET, POST, PUT, DELETE). Hier ist ein Beispiel, wie man mit PHP eine GET-Anfrage an eine API sendet:
 
 ```PHP
-<?php
-$url = "https://www.meine-website.de";
-$options = [
-    'http' => [
-        'method' => 'GET' // Erlaubt es uns, die Anfragemethode festzulegen, in diesem Fall GET
-    ]
-];
+$url = "https://example.com/api/users"; // URL der Ressource
+$response = file_get_contents($url); // GET-Anfrage ausführen
+var_dump($response); // Ausgabe der erhaltenen Daten
+``` 
 
-// Senden der Anfrage und Speichern der Antwort in einer Variablen
-$response = file_get_contents($url, false, stream_context_create($options));
+In diesem Beispiel verwenden wir die `file_get_contents()` Funktion, um die Anfrage auszuführen. Diese Funktion gibt uns den Inhalt der erhaltenen Antwort als String zurück. In der Regel möchten wir jedoch mit den Daten arbeiten und sie beispielsweise als JSON entschlüsseln. Hier ist ein Beispiel, wie das gemacht werden kann:
 
-// Ausgabe der Antwort
-echo $response;
-?>
+```PHP
+$url = "https://example.com/api/users";
+$response = file_get_contents($url);
+$data = json_decode($response, true); // Option true, um ein Array statt eines Objekts zu erhalten
+var_dump($data); // Ausgabe der erhaltenen Daten als Array
 ```
 
-Dieses Beispiel zeigt, wie Sie eine einfache GET-Anfrage senden können. Sie können auch zusätzliche Optionen wie Benutzername und Passwort für eine Authentifizierung, Daten für eine POST-Anfrage und andere Header-Informationen hinzufügen. Weitere Informationen zu den verfügbaren Optionen finden Sie in der PHP-Dokumentation.
+Natürlich gibt es auch andere Möglichkeiten, HTTP-Anfragen in PHP zu senden, wie z.B. die `curl` Erweiterung oder die `fopen()` Funktion. Es ist wichtig zu beachten, dass beim Senden von HTTP-Anfragen auch die Verarbeitung von Fehlern und die Sicherheit berücksichtigt werden müssen.
 
-## Tiefergehende Informationen
+## Deep Dive
 
-Das Senden einer HTTP-Anfrage umfasst mehr als nur die Verwendung der `file_get_contents()`-Funktion. Sie können auch cURL, eine Bibliothek für die Client-Seite von URL-Übertragungen, verwenden, um erweiterte Optionen und Funktionen zu erhalten.
+Wenn wir tiefer in das Thema eintauchen, werden wir feststellen, dass HTTP-Anfragen aus mehreren Teilen bestehen. Dazu gehören der Request-Header, der die Informationen über die Anfrage enthält, und der Request-Body, der die eigentlichen Daten enthält. Außerdem gibt es verschiedene Arten von Anfragen, die für unterschiedliche Zwecke verwendet werden können.
 
-Eine vollständige Erklärung der HTTP-Anfragen könnte den Rahmen dieses Blog-Posts sprengen, aber es ist wichtig zu wissen, dass eine Anfrage aus einem Request-Header, einem optionalen Request-Body und einer Antwort eines Servers besteht.
+Hier sind einige wichtige Dinge, die man bei der Arbeit mit HTTP-Anfragen beachten sollte:
+
+- Wir sollten immer sicherstellen, dass wir die richtige HTTP-Methode für unsere Anfrage verwenden. In der Regel werden GET-Anfragen verwendet, um Daten abzurufen, POST-Anfragen, um Daten zu senden, PUT-Anfragen, um Daten zu aktualisieren, und DELETE-Anfragen, um Daten zu löschen.
+- Die Art des Inhalts, der in der Anfrage übertragen wird, sollte ebenfalls angegeben werden. Zum Beispiel `Content-Type: application/json`, wenn der Request-Body ein JSON-Dokument enthält.
+- Der Response-Code gibt an, ob die Anfrage erfolgreich war oder nicht. Eine 2xx-Statuscode zeigt an, dass die Anfrage erfolgreich war, während eine 4xx- oder 5xx-Code auf einen Fehler hinweist.
+- Es ist wichtig, sich über Sicherheitsaspekte wie Cross-Site Request Forgery (CSRF) im Klaren zu sein und geeignete Maßnahmen zu ergreifen, um diese zu verhindern.
 
 ## Siehe auch
 
-- [PHP-Dokumentation zu HTTP-Anfragen](https://www.php.net/manual/en/book.http.php)
-- [cURL-Dokumentation](https://curl.se/)
-- [Einführung in HTTP-Anfragen](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [PHP: cURL - Dokumentation](https://www.php.net/manual/de/book.curl.php)
+- [PHP: fopen - Dokumentation](https://www.php.net/manual/de/function.fopen.php)
+- [HTTP Anfragen mit PHP - Codebeispiele](http://codebeispiele.de/http-anfragen-mit-php/)

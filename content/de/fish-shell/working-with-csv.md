@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Fish Shell: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,53 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Arbeiten mit CSV-Dateien ist eine häufige Aufgabe im Bereich der Datenverarbeitung. Mit dem Fish Shell können Sie diesen Prozess effizient und unkompliziert durchführen.
+Wenn du häufig mit Tabellen oder Spreadsheets arbeitest, kennst du sicherlich das CSV-Format. CSV, kurz für "Comma-Separated Values", ist eine einfache Methode, um Daten in Textform zu speichern und weiterzuverarbeiten. Mit dem Fish Shell kannst du CSV-Dateien bequem bearbeiten und manipulieren, ohne auf komplexe Tabellenkalkulationsprogramme zurückgreifen zu müssen.
 
-## Wie man mit CSVs im Fish Shell arbeitet
+## Wie funktioniert es
 
-Das Fish Shell bietet verschiedene Möglichkeiten, um CSV-Dateien zu lesen, zu schreiben und zu verarbeiten. Hier sind einige Beispiele, wie Sie das in Ihrem eigenen Code nutzen können:
+Um mit CSV-Dateien in Fish zu arbeiten, gibt es ein paar nützliche Kommandos und Tricks, die du kennen solltest.
 
-### CSV-Datei lesen
-
-Um eine CSV-Datei zu lesen, verwenden Sie den Befehl `cat` mit einer Kombination aus Redirection und dem Befehl `string split`:
-
+```Fish Shell
+# CSV-Datei öffnen und anzeigen
+cat datei.csv
 ```
-cat datei.csv | string split "," | echo (string split "\n" $array)
+```Fish Shell
+# Spalten und Zeilen auswählen
+awk -F "," '{print $1}' datei.csv
+awk 'NR==2 {print $0}' datei.csv
 ```
-
-Im obigen Beispiel lesen wir die Datei "datei.csv" mit dem Befehl `cat` und teilen sie mit dem Trennzeichen "," auf. Dann verwenden wir `string split` erneut, um die einzelnen Zeilen in ein Array zu speichern. Schließlich geben wir mit dem Befehl `echo` das Array aus.
-
-### CSV-Datei schreiben
-
-Um Daten in eine CSV-Datei zu schreiben, können Sie den Befehl `set` in Kombination mit `string join` verwenden:
-
+```Fish Shell
+# Inhalt einer Spalte verändern
+sed -i 's/alter/neuesalter/g' datei.csv
 ```
-set -l array "1,2,3,4,5"
-string join "\n" $array > datei.csv
+```Fish Shell
+# Neue Daten hinzufügen
+echo "Max,30" >> datei.csv
 ```
-
-Hier erstellen wir zuerst ein Array mit den Werten "1,2,3,4,5". Dann verwenden wir `string join` und das Trennzeichen "\n", um das Array formatiert in die CSV-Datei "datei.csv" zu schreiben.
-
-### CSV-Daten verarbeiten
-
-Das Fish Shell bietet auch Funktionen, um Daten aus einer CSV-Datei zu filtern und zu bearbeiten. Zum Beispiel können Sie mit dem Befehl `contains` nach bestimmten Werten in einer CSV-Datei suchen:
-
-```
-cat datei.csv | while read line
-	if contains $line "Wert"
-		echo $line
-	end
-end
+```Fish Shell
+# CSV-Datei sortieren
+sort -t',' -k3 datei.csv
 ```
 
-Mit diesem Code durchsuchen wir die Datei "datei.csv" nach Zeilen, die den Wert "Wert" enthalten, und geben diese aus.
+Mit all diesen Befehlen kannst du ganz einfach deine CSV-Dateien bearbeiten und an deine Bedürfnisse anpassen.
 
-## Tiefer Einblick
+## Tiefere Einblicke
 
-Das Fish Shell bietet eine Vielzahl von Funktionen und Möglichkeiten, um mit CSV-Dateien zu arbeiten. Ein guter Einstiegspunkt ist die Dokumentation der offiziellen Website: https://fishshell.com/docs/current/index.html. Hier finden Sie eine detaillierte Beschreibung aller verfügbaren Befehle und Funktionen zum Lesen, Schreiben und Verarbeiten von CSV-Dateien.
+Wenn du tiefer in das Thema einsteigen möchtest, gibt es noch einige weitere Kommandos und Techniken, die du verwenden kannst.
+
+Zum Beispiel kannst du die Funktion `tail` nutzen, um die letzten Zeilen deiner CSV-Datei zu sehen. Mit `cut` kannst du bestimmte Spalten auswählen und mit `grep` kannst du nach bestimmten Ausdrücken suchen.
+
+Eine weitere nützliche Funktion ist der sogenannte "Pipelining" oder "Pipe Operator". Das bedeutet, dass du mehrere Befehle miteinander verknüpfen und so komplexe Aktionen ausführen kannst. Zum Beispiel könntest du mit `awk` bestimmte Spalten auswählen und diese dann mit `sort` sortieren.
+
+Das sind nur ein paar Beispiele, aber es gibt noch viele weitere Möglichkeiten, wie du CSV-Dateien mit dem Fish Shell bearbeiten kannst. Es lohnt sich also, ein wenig Zeit zu investieren und dich mit den verschiedenen Befehlen und Funktionen vertraut zu machen.
 
 ## Siehe auch
 
-- https://fishshell.com/docs/current/index.html
-- https://fishshell.com/docs/current/cmds.html
-- https://fishshell.com/docs/current/functions.html
+- Offizielle Fish Shell Dokumentation zu CSV: https://fishshell.com/docs/current/commands.html#csv-commands
+- Ein Tutorial für die Verwendung von CSV mit Fish: https://www.ostechnix.com/how-to-manipulate-csv-files-with-fish-shell/

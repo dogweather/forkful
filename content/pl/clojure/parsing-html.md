@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Analiza html"
-simple_title:         "Analiza html"
+title:                "Analizowanie struktury html"
+html_title:           "Clojure: Analizowanie struktury html"
+simple_title:         "Analizowanie struktury html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,41 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Żeby zrozumieć, dlaczego parsowanie HTML jest ważne, musimy najpierw zrozumieć, co to jest HTML. HTML (HyperText Markup Language) jest standardowym językiem używanym do tworzenia stron internetowych. Jest to język opisu struktury stron internetowych, który określa, jak powinny być wyświetlane różne elementy na stronie. Wiele witryn, takich jak media społecznościowe, sklepy internetowe i blogi, opiera się na kodzie HTML, aby wyświetlać i wyglądać odpowiednio. Dlatego umiejętność parsowania HTML jest bardzo przydatna w programowaniu aplikacji internetowych.
+
+Każdy, kto zajmuje się programowaniem stron internetowych, musiał w pewnym momencie mierzyć się z parsowaniem HTML. Jest to proces konwertowania kodu HTML na dane, które można łatwo przetwarzać i wykorzystywać w programach. Bez tego umiejętności, trudno jest móc efektywnie pracować z treścią zamieszczoną w sieci.
 
 ## Jak to zrobić
-Aby parsować HTML w Clojure, musimy użyć biblioteki o nazwie Enlive, która jest dostępna za darmo w repozytorium Clojars. Najpierw musimy dodać tę bibliotekę do naszego projektu i zaimportować ją jak poniżej:
+
+Parsowanie HTML w języku Clojure jest niezwykle proste dzięki bibliotece Enlive. Aby zacząć, wystarczy zainstalować ją w projekcie za pomocą menedżera zależności, a następnie zaimportować do kodu:
 
 ```Clojure
-[net.cgrand/enlive "1.1.6"]
-(require '[net.cgrand.enlive-html :as html])
+(ns nazwa-projektu
+  (:require [net.cgrand.enlive-html :as html]))
 ```
 
-Następnie, musimy użyć funkcji `html/parse` w celu sparsowania strony internetowej. Przykładowo, chcemy sparsować tytuł artykułu z witryny Clojure.org:
+Kiedy już mamy dostęp do biblioteki, możemy użyć funkcji `parse` do przetwarzania kodu HTML i uzyskania struktury danych w postaci drzewa DOM:
 
 ```Clojure
-(def parsed-html (html/parse "https://clojure.org/"))
+(html/parse "<div>Hello World</div>")
 ```
 
-Teraz, aby uzyskać tytuł artykułu, musimy zastosować selektor CSS:
+Wyjściem z powyższego przykładu będzie kolejka zawierająca jeden element - w tym przypadku `div` z tekstem "Hello World". Możemy również użyć selektorów CSS, aby wybrać konkretne elementy z tekstu HTML:
 
 ```Clojure
-(html/select parsed-html ["h2" {:id "clojurevsjava-intro"}])
+(html/select (html/parse "<ul><li>Apple</li><li>Orange</li></ul>") "li")
 ```
 
-Kod powyżej użyje selektora CSS `h2` z atrybutem `id` o wartości `clojurevsjava-intro` do znalezienia i sparsowania tytułu artykułu z witryny Clojure.org. Wynik powinien wyglądać następująco:
+Powyższy kod zwróci kolekcję z dwoma elementami - `Apple` i `Orange`. Dzięki temu, można wygodnie pobierać i przetwarzać konkretne dane z kodu HTML, bez potrzeby przeszukiwania go manualnie.
+
+## Głębsza analiza
+
+Parsowanie HTML może się wydawać proste, ale w rzeczywistości jest to dość skomplikowany proces. Dlatego warto zagłębić się w dokumentację biblioteki Enlive, aby poznać wszystkie możliwości, które oferuje. Można na przykład wykorzystać funkcję `at` do pobierania atrybutów elementów:
 
 ```Clojure
-[{:tag :h2
-  :attrs nil
-  :content
-  ("Clojure vs. Java: Married... with Children?")}]
+(html/at (html/parse "<a href="https://example.com">Link</a>") :href)
 ```
 
-## Głębsze zagłębienie
-Enlive jest potężną biblioteką, która może nam pomóc w parsowaniu HTML w bardziej zaawansowany sposób, np. wybierając elementy po klasie lub identyfikatorze, szukając po wyrażeniach regularnych i wiele innych. Więcej informacji na temat Enlive można znaleźć w jego dokumentacji.
+Wyjściem będzie wartość `https://example.com`. Inną przydatną funkcją jest `transform`, która pozwala na zmianę struktury drzewa DOM:
 
-## Zobacz także
-- Dokumentacja Enlive: https://github.com/cgrand/enlive
-- Dokumentacja Clojure: https://clojure.org/
-- Squirrel SQL Client: https://www.squirrelsql.org/
+```Clojure
+(html/transform (html/parse "<ul><li>Apple</li><li>Orange</li></ul>") [(html/select "li") html/html->text])
+```
+
+Powyzszy kod zwróci kolekcję z dwoma elementami `Apple` i `Orange` w postaci tekstu, a nie drzewa DOM. Dzięki temu, można łatwiej manipulować pobranymi danymi i dostosowywać je do potrzeb.
+
+## Zobacz również
+
+1. [Dokumentacja biblioteki Enlive](https://github.com/cgrand/enlive)
+2. [Poradnik parsowania HTML w Clojure](https://www.braveclojure.com/functional-error-handling/)

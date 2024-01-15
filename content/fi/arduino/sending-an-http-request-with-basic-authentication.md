@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Lähetetään http-pyyntö perusautentikoinnin kanssa."
-simple_title:         "Lähetetään http-pyyntö perusautentikoinnin kanssa."
+title:                "Lähettämässä http-pyyntöä perusautentikointilla"
+html_title:           "Arduino: Lähettämässä http-pyyntöä perusautentikointilla"
+simple_title:         "Lähettämässä http-pyyntöä perusautentikointilla"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,38 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit lähettää HTTP-pyynnön perusautentikoinnilla Arduinon avulla? Yksinkertaisesti sanottuna, HTTP-pyyntöjen lähettäminen avauttaa mahdollisuuksia kommunikoida muiden verkkopalveluiden kanssa ja saada tietoa niistä. Perusautentikointi on yksi tapa varmistaa, että vain oikeutetut käyttäjät voivat päästä näihin palveluihin.
+Miksi haluaisit lähettää HTTP-pyynnön perusautentikoinnilla? Yksinkertaisesti, HTTP-pyynnöt ovat niiden avulla tapa lähettää tietoja verkon yli ja perusautentikointi antaa meille mahdollisuuden suojata tietoja. Tämä on erityisen tärkeää, kun liikenne kulkee julkisen verkon kautta, kuten Internetissä.
 
 ## Miten
 
-Aloitetaan lähettämällä HTTP-pyyntö perusautentikoinnilla esimerkkikoodin avulla:
+Seuraavassa on esimerkki kuinka voit lähettää HTTP-pyynnön perusautentikoinnilla käyttäen Arduinon HTTPClient kirjastoa:
 
-```Arduino
-// Lähetetään HTTP-pyyntö POST-metodilla
-HTTPClient http;
-http.begin("https://api.example.com/endpoint");
-http.setAuthorization("käyttäjänimi", "salasana");
-int httpCode = http.POST("Pyyntösisältö");
-String vastaus = http.getString();
-Serial.println(httpCode); // Tulostaa vastauksen koodin
-Serial.println(vastaus); // Tulostaa vastauksen sisällön
-http.end();
+```
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+const char* ssid = "WiFi-verkon-nimi"; 
+const char* password = "WiFi-verkon-salasana";
+
+void setup() {
+
+  Serial.begin(9600);
+  WiFi.begin(ssid, password); // Muodosta yhteys WiFi-verkkoon
+  Serial.println("Trying to connect to WiFi...");
+  while (WiFi.status() != WL_CONNECTED) { // Odota yhteys WiFi-verkkoon 
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Connected to WiFi!");
+
+  // Luo HTTP-objekti perusautentikoinnilla
+  HTTPClient http;
+  http.begin("http://www.example.com", "username", "password");
+
+  int httpCode = http.GET(); // Lähetä GET-pyyntö
+  
+  if (httpCode > 0) { // Tarkista vastaus
+    String response = http.getString();
+    Serial.println(response); // Tulosta vastaus
+  }
+  else {
+    Serial.println("Error on HTTP request");
+  }
+
+  http.end(); // Sulje yhteys
+}
+
+void loop() {
+
+}
 ```
 
-Tässä koodissa käytämme HTTPClient-kirjastoa, joka helpottaa HTTP-pyyntöjen lähettämistä. Aluksi määrittelemme pyynnön osoitteen `begin()`-funktiolla ja lisäämme siihen `setAuthorization()`-funktiolla käyttäjänimen ja salasanan. Tämän jälkeen käytämme `POST()`-funktiota lähettämään pyyntösisällön ja tallennamme palautetun koodin sekä sisällön `httpCode` ja `vastaus` muuttujiin. Lopuksi meidän täytyy kutsua `end()`-funktiota vapauttaaksemme HTTP-yhteyden.
+Esimerkissä luomme ensin yhteyden WiFi-verkkoon, jonka jälkeen luomme HTTP-objektin käyttäen osoitetta, käyttäjänimeä ja salasanaa. Sitten lähetämme GET-pyynnön ja tulostamme vastauksen sarjaporttiin. Lopuksi suljemme yhteyden.
 
-Huomaa, että voit myös käyttää muita metodeja kuten `GET`, `PUT` ja `DELETE` riippuen siitä, mikä on pyynnön tarkoitus ja verkkopalvelun tarjoamat mahdollisuudet.
+## Syventävä sukellus
 
-## Syvemmälle
-
-HTTP-pyyntöjen lähettäminen perustuu protokollaan, jota kutsumme HTTP:ksi. Tämän protokollan yksityiskohdat eivät kuulu tämän artikkelin puitteisiin, mutta on hyödyllistä ymmärtää muutama asia.
-
-Ensisijainen HTTP-pyyntö tapahtuu kahdella osalla: otsakkeella (header) ja sisällöllä (body). Otsake sisältää metatietoa pyynnöstä, kuten käytetty protokolla, käyttäjänimi ja salasana, ja sisältö taas sisältää varsinaisen pyyntösisällön. Perusautentikoinnin tapauksessa käyttäjänimi ja salasana lähetetään otsakkeessa Base64-koodattuna. Tämä on vain yksi tapa suojata yhteys ja useimmat verkkopalvelut tarjoavat muita vaihtoehtoja.
-
-Vastaavasti HTTP-pyynnön vastaus koostuu myös otsakkeesta ja sisällöstä. Otsake sisältää vastauksen koodin, joka kertoo onnistuiko pyyntö vai ei, ja sisältö taas sisältää varsinaisen vastauksen sisällön. Tähän voidaan sisällyttää esimerkiksi haluttu data tai virheilmoitukset.
-
-On myös tärkeä huomata, että proxy-palvelimen kanssa kommunikoidessa täytyy käyttää erityisiä otsaketietoja ja itse proxy saattaa vaatia oman autentikointinsa. Tämä vaatii lisämuutoksia pyyntöön ja täytyy selvittää kunkin proxy-palvelimen kohdalla erikseen.
+Perusautentikoinnissa käyttäjänimet ja salasanat lähetetään selkeässä tekstimuodossa, joka on altis väärinkäytöksille. Vahvemman turvallisuuden takaamiseksi suosittelemme käyttämään SSL/TLS-suojattua yhteyttä tai muita turvallisia autentikointimenetelmiä.
 
 ## Katso myös
 
-- [Arduino virallinen sivu](
+- [ESP8266WiFi kirjasto (ESP8266:n WiFi-toiminnallisuuden ohjaus)](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [ESP8266HTTPClient kirjasto (HTTP-yhteyksien hallinta)](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)

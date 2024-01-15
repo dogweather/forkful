@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Swift: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: 
-Tekstin etsimisen ja korvaamisen prosessi on tärkeä osa ohjelmoinnissa, sillä se auttaa tehokkaasti muokkaamaan ja päivittämään koodia.
+## Miksi
 
-## Kuinka: 
-Koodin sisältämän tekstin etsiminen ja korvaaminen Swift-ohjelmoinnissa on helppoa ja nopeaa käyttämällä sisäänrakennettua "replacingOccurrences(of: "old text", with: "new text")" -funktiota. Alla on esimerkkejä:
+Ehkä olet huomannut, että vakioviestisi sisältösi tarvitsee päivittämistä tai haluat vaihtaa samankaltaiset lauseet toisiksi. Ei ole tarpeellista kirjoittaa jokaisen rivin uudestaan, silloin voit käyttää tekstinhakua ja korvausta. Se on yksinkertainen tapa säästää aikaa ja varmistaa, että viestisi on yhtenäinen ja ajantasainen.
 
-```Swift
-// Etsi ja korvaa yksittäinen sana
-var teksti = "Tervetuloa Suomeen!"
-teksti = teksti.replacingOccurrences(of: "Suomeen", with: "Ruotsiin")
-// teksti nyt: "Tervetuloa Ruotsiin!"
+## Kuinka tehdä se
 
-// Etsi ja korvaa useampi sana
-var uudetSanat = ["mahtava", "hienoa", "upea"]
-teksti = teksti.replacingOccurrences(of: "Tervetuloa", with: uudetSanat.joined(separator: " "))
-// teksti nyt: "mahtava hienoa upea Ruotsiin!"
-```
-
-## Syvempi sukellus:
-Tekstin etsimisen ja korvaamisen prosessi voidaan hallita tarkemmin käyttämällä "range(of:options:range:locale:)" -funktiota yhdessä "replacingCharacters(in: "replaceRange", with: "new text")" -funktion kanssa. Tämä mahdollistaa tarkan sijainnin ja tyyppisten sanojen etsimisen ja korvaamisen.
-
-Esimerkiksi, jos haluat korvata vain ensimmäisen esiintymän tietyistä sanoista tekstissä, voit käyttää seuraavaa koodia:
+Käytä tekstinhakufunktiota ja korvaa siihen haluamasi lause. Voit myös käyttää säännöllisiä lausekkeita tarkentamaan hakua. Tutustu esimerkkituloksiin alla olevissa Swift-koodilohkoissa.
 
 ```Swift
-var teksti = "Tämä on esimerkkiteksti, jossa on useita sanoja"
-if let alkupaikka = teksti.range(of: "esimerkki") {
-    teksti.replaceSubrange(alkupaikka, with: "uusi")
-}
-// teksti nyt: "Tämä on uusiteksti, jossa on useita sanoja"
+// Alustetaan vakioviesti
+var viesti = "Tervetuloa!"
+
+// Hakua ja korvausta käyttämällä muutetaan viesti
+viesti = viesti.replacingOccurrences(of: "Tervetuloa", with: "Hei")
+
+// Tulostetaan muokattu viesti
+print(viesti)
+
+// Tulostaa: Hei!
 ```
 
-## Katso myös:
-- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
-- [Hacking with Swift: How to replace a substring with another substring](https://www.hackingwithswift.com/example-code/strings/how-to-replace-a-substring-with-another-substring)
-- [Swift Education: Searching and Replacing Text in Swift Strings](http://swiftpedia.ru/utf-8/functions/rangeofoptionsrangelocale/)
+```Swift
+// Toinen esimerkki
+var lause = "Pysy terveenä ja turvassa!"
+
+// Korvataan vain osa lauseesta
+lause = lause.replacingOccurrences(of: "turvassa", with: "onnellisena")
+
+// Tulostetaan muokattu lause
+print(lause)
+
+// Tulostaa: Pysy terveenä ja onnellisena!
+```
+
+## Syvemmälle aiheeseen
+
+Swiftin `replacingOccurrences(of:with:)` -metodilla voidaan korvata ei ainoastaan tekstiä, vaan myös merkkijonoja, vaihtaa osia merkkijonosta ja paljon muuta. Voit myös käyttää erilaisia säännöllisiä lausekkeita hakujen tarkentamiseen, kuten `[aeiou]` korvaamaan kaikki vokaalit haluamallasi merkillä. Älä epäröi kokeilla erilaisia vaihtoehtoja löytääksesi parhaan ratkaisun tarpeisiisi.
+
+## Katso myös
+
+- [Apple Developer Documentation: Text Searching and Replacement](https://developer.apple.com/documentation/foundation/nsstring/1417171-replacingoccurrences)
+- [Regular Expressions Tutorial in Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
+- [Swift Regular Expression Cheat Sheet](https://www.swiftbysundell.com/posts/regular-expressions-in-swift)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Calculer une date dans le futur ou le passé."
-simple_title:         "Calculer une date dans le futur ou le passé."
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "Python: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,44 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Calculer une date dans le futur ou le passé peut être utile pour planifier des événements, des voyages ou des tâches à l'avance. Cela peut également aider à résoudre des problèmes de programmation liés aux dates et aux délais.
+Il peut arriver que l'on ait besoin de calculer une date dans le futur ou dans le passé pour diverses raisons. Peut-être que vous planifiez un événement ou que vous retracez l'historique d'une série d'événements.
 
 ## Comment faire
-Il existe plusieurs façons de calculer une date dans le futur ou le passé en utilisant Python. Voici quelques exemples en utilisant le module standard datetime :
+Pour calculer une date dans le futur ou dans le passé en Python, on peut utiliser le module `datetime`. Voici un exemple de code pour calculer la date dans 100 jours à partir d'aujourd'hui :
 
 ```Python
-# Importer le module datetime
-import datetime
+from datetime import datetime, timedelta
 
-# Obtenir la date actuelle
-now = datetime.datetime.now()
+today = datetime.today()
+future_date = today + timedelta(days=100)
 
-# Calculer une date dans le futur en ajoutant 10 jours à la date actuelle
-future_date = now + datetime.timedelta(days=10)
-print(future_date.strftime("%d/%m/%Y"))
-# Output: 14/05/2021
-
-# Calculer une date dans le passé en soustrayant 2 mois à la date actuelle
-past_date = now - datetime.timedelta(weeks=8)
-print(past_date.strftime("%d/%m/%Y"))
-# Output: 03/03/2021
-
-# Calculer la différence en jours entre deux dates
-date_1 = datetime.datetime(2021, 5, 5)
-date_2 = datetime.datetime(2021, 4, 10)
-difference = date_1 - date_2
-print(difference.days)
-# Output: 25
+print("La date dans 100 jours sera :", future_date)
 ```
 
-## Plongée en profondeur
-Le module datetime offre de nombreuses autres fonctions utiles pour travailler avec les dates et les délais. Par exemple, vous pouvez utiliser la méthode strptime() pour convertir une chaîne de caractères en un objet de date, ou utiliser strftime() pour convertir un objet de date en une chaîne de caractères selon un format spécifique.
+Cela affichera : `La date dans 100 jours sera : 2021-10-15 12:00:00`.
 
-De plus, le module calendar peut être utilisé pour générer des calendriers et des horaires, tandis que le module dateutil propose des outils pour travailler avec des fuseaux horaires et des conversions de dates.
+Si vous souhaitez calculer une date dans le passé, il suffit de changer l'opérateur `+` en `-` dans le code ci-dessus. Par exemple, pour obtenir la date il y a 30 jours, il suffit d'utiliser `- timedelta(days=30)`.
 
-N'hésitez pas à explorer ces modules et à découvrir toutes les fonctionnalités pour vous aider dans votre projet de calcul de dates.
+Il est également possible de spécifier la date à partir de laquelle calculer en utilisant la méthode `strptime()` de l'objet `datetime`. Voici un exemple :
+
+```Python
+from datetime import datetime, timedelta
+
+date = datetime.strptime("2021-08-30", "%Y-%m-%d")
+past_date = date - timedelta(days=15)
+
+print("La date il y a 15 jours était :", past_date)
+```
+
+Cela affichera : `La date il y a 15 jours était : 2021-08-15 00:00:00`.
+
+## Approfondissement
+Le module `datetime` offre de nombreuses méthodes utiles pour manipuler et calculer des dates. Par exemple, la méthode `strftime()` permet de formater une date en une chaîne de caractères selon un modèle spécifié.
+
+Il est également possible de calculer des dates en utilisant d'autres mesures de temps, par exemple des heures ou des minutes, en utilisant les arguments `hours` ou `minutes` dans la méthode `timedelta()`.
+
+Pour plus d'informations sur le module `datetime` et ses fonctions, vous pouvez consulter la documentation officielle de Python.
 
 ## Voir aussi
-- Documentation officielle de Python sur le module datetime : https://docs.python.org/fr/3/library/datetime.html
-- Tutoriel sur le module dateutil : https://dateutil.readthedocs.io/en/stable/
-- Documentation sur le module calendar : https://docs.python.org/fr/3/library/calendar.html
+- [Documentation officielle de Python sur le module datetime](https://docs.python.org/fr/3/library/datetime.html)
+- [Calculer des dates avec Python (en anglais)](https://realpython.com/python-datetime/)

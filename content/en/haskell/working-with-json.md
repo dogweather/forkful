@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Working with json"
+title:                "Working with json"
+html_title:           "Haskell recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,51 +11,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In today's technological landscape, working with data in the form of JSON (JavaScript Object Notation) has become an essential skill for any developer. JSON is a lightweight, human-readable format for exchanging data between systems and is commonly used in web and mobile applications, making it a valuable tool for building modern software.
+
+JSON (JavaScript Object Notation) is a popular data interchange format used in many web applications. Working with JSON in Haskell allows developers to easily parse, manipulate, and generate JSON data, making it a valuable skill for those working in the web development industry.
 
 ## How To
-Fortunately, with Haskell, working with JSON is a breeze. Let's start by importing the "Data.Aeson" module to access its functions and types. Then, we can use the "decode" function to parse a JSON string into a Haskell data type. For example:
+
+To start working with JSON in Haskell, we will need to import the `aeson` library which provides functions for encoding and decoding JSON data. We can do this by adding the following line at the beginning of our program:
 
 ```Haskell
 import Data.Aeson
-
-data Book = Book { title :: String, author :: String}
-
-jsonString = "{\"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\"}"
-
-decode jsonString :: Maybe Book
--- output: Just (Book "To Kill a Mockingbird" "Harper Lee")
 ```
 
-We can also use the "encode" function to convert a Haskell data type into a JSON string. For example:
+### Encoding
+
+To encode a Haskell data type into JSON, we can use the `toJSON` function from the `Data.Aeson` module. Let's say we have a data type called `Person`:
 
 ```Haskell
-encode (Book "The Catcher in the Rye" "J.D. Salinger")
--- output: "{\"title\":\"The Catcher in the Rye\",\"author\":\"J.D. Salinger\"}"
+data Person = Person
+  { name :: String
+  , age :: Int
+  , occupation :: String
+  }
 ```
 
-To manipulate and access specific data in a JSON object, we can use the "Data.Map" module. This allows us to easily extract values using keys and perform operations on the data. For example:
+We can define an instance of `ToJSON` for `Person` like this:
 
 ```Haskell
-import Data.Map
-
-jsonObject = fromList [("name", "John"), ("age", "25")]
-
-lookup "age" jsonObject
--- output: Just "25"
+instance ToJSON Person where
+  toJSON (Person name age occupation) =
+    object [ "name" .= name
+           , "age" .= age
+           , "occupation" .= occupation
+           ]
 ```
 
-## Deep Dive
-In addition to simple encoding and decoding, the "Data.Aeson" module also provides functions for working with more complex JSON structures such as arrays and nested objects. We can use the "object" function to create a JSON object by specifying a list of key-value pairs. We can also use the "array" function to create a JSON array by passing in a list of values.
+Then, we can encode a `Person` into JSON using `toJSON`:
 
-Another useful function is "withObject", which allows us to modify a JSON object by providing a function that maps keys to values. This is particularly helpful for manipulating large or complex JSON data.
+```Haskell
+encode (Person "John" 32 "Software Developer")
+-- Output: {"name":"John","age":32,"occupation":"Software Developer"}
+```
 
-Additionally, the "Data.Aeson.Types" module provides tools for defining custom encoders and decoders, allowing for more control over the format and structure of our data.
+### Decoding
+
+To decode JSON data into a Haskell data type, we can use the `decode` function from the `Data.Aeson` module. For example, if we have the following JSON data:
+
+```Haskell
+jsonData = "{ \"name\": \"Jane\", \"age\": 28, \"occupation\": \"Data Analyst\" }"
+```
+ 
+and a corresponding instances of `FromJSON` for `Person`:
+
+```Haskell
+instance FromJSON Person where
+  parseJSON (Object v) =
+    Person <$> v .: "name"
+           <*> v .: "age"
+           <*> v .: "occupation"
+```
+
+we can decode it into a `Person` using `decode`:
+
+```Haskell
+decode jsonData :: Maybe Person
+-- Output: Just (Person {name = "Jane", age = 28, occupation = "Data Analyst"})
+```
+
+### Deep Dive
+
+Working with JSON in Haskell also allows us to handle more complex data structures. For instance, we can use the `Data.Aeson.Types` module to define custom data types for specific JSON data formats.
+
+Additionally, the `aeson` library provides functions for handling common JSON data types, such as arrays and nested objects. These functions can be found in the `Data.Aeson.Types.Array` and `Data.Aeson.Lens` modules, respectively.
 
 ## See Also
-Want to learn more about working with JSON in Haskell? Here are some helpful resources to get you started:
 
-- [Official Haskell documentation for Data.Aeson](https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html)
-- [A Beginner's Guide to Parsing JSON Data in Haskell](https://dysinger.net/posts/2016-08-27-json-in-haskell.html)
-- [An Introduction to JSON in Haskell](https://hackernoon.com/an-introduction-to-json-in-haskell-dfb9fdb7512e)
-- [Real World Haskell: JSON Parsing and Generation](http://book.realworldhaskell.org/read/json.html)
+- [Hackage: aeson](https://hackage.haskell.org/package/aeson)
+- [Official JSON documentation](https://www.json.org/json-en.html)
+- [Aeson tutorial](http://kazu-yamamoto.hatenablog.jp/entry/2020/07/27/073101)

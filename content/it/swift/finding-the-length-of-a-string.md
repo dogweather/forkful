@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Trova la lunghezza di una stringa"
-simple_title:         "Trova la lunghezza di una stringa"
+title:                "La ricerca della lunghezza di una stringa."
+html_title:           "Swift: La ricerca della lunghezza di una stringa."
+simple_title:         "La ricerca della lunghezza di una stringa."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,26 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Trovare la lunghezza di una stringa è un'operazione comune e fondamentale nella programmazione Swift. Conoscere la lunghezza di una stringa può essere utile in una varietà di situazioni, come la validazione degli input degli utenti o la manipolazione dei dati.
+Per molte persone, scrivere codice può sembrare una lingua straniera. Ma imparare le basi della programmazione può essere utile in tante situazioni. Ad esempio, scoprire la lunghezza di una stringa ci aiuta a manipolarla e utilizzarla nel nostro codice.
 
 ## Come
 
-Per trovare la lunghezza di una stringa in Swift, puoi utilizzare il metodo `count` della classe `String`. Di seguito è riportato un esempio di come utilizzare questo metodo:
+Per trovare la lunghezza di una stringa in Swift, dobbiamo utilizzare la proprietà "count". Vediamo un esempio pratico:
 
-```Swift
-let stringa = "Ciao mondo"
-let lunghezza = stringa.count
-print(lunghezza) // output: 10
+```
+let stringa = "Ciao amici!"
+print(stringa.count)
 ```
 
-In questo esempio, abbiamo definito una variabile `stringa` che contiene la stringa "Ciao mondo". Utilizzando il metodo `count`, possiamo ottenere la lunghezza di questa stringa e assegnarla alla variabile `lunghezza`. Infine, possiamo stampare il valore di `lunghezza` e ottenere l'output "10", che è la lunghezza della stringa "Ciao mondo".
+Questo codice stamperà il numero di caratteri nella stringa, in questo caso 11. Ovviamente, possiamo anche utilizzare questa proprietà in altri modi. Ad esempio, possiamo creare una condizione che ci dica se la stringa ha una lunghezza specifica usando un'istruzione "if":
+
+```
+let stringa = "Ciao amici!"
+if stringa.count == 11 {
+    print("La stringa ha 11 caratteri!")
+}
+```
+
+In questo caso, visto che la stringa ha effettivamente 11 caratteri, verrà stampato il messaggio "La stringa ha 11 caratteri!".  
 
 ## Deep Dive
 
-Esistono diverse altre opzioni per trovare la lunghezza di una stringa in Swift, come il metodo `characters.count` e la proprietà `length`. Inoltre, è importante ricordare che la lunghezza di una stringa può variare a seconda del tipo di carattere utilizzato, poiché alcuni caratteri occupano più di un byte di memoria. Per ulteriori informazioni sulla gestione delle stringhe in Swift, puoi consultare la documentazione ufficiale di Apple.
+La proprietà `count` di Swift non è solo utile per trovare la lunghezza di una stringa. Possiamo anche utilizzarla per trovare il numero di elementi in una collezione, come un array o un dizionario. Inoltre, possiamo utilizzare la funzione `count` sui tipi numerici per ottenere il numero di cifre o la lunghezza di un numero. 
+
+Ad esempio:
+
+```
+let array = ["mela", "banana", "arancia"]
+print(array.count) // 3
+
+let dizionario = ["chiave1": 1, "chiave2": 2, "chiave3": 3]
+print(dizionario.count) // 3
+
+let numero = 12345
+print(numero.count) // 5
+```
+
+Inoltre, dobbiamo anche tenere presente che la lunghezza di una stringa può variare a seconda della lingua o dell'encoding utilizzato. Per esempio, alcuni caratteri speciali in giapponese possono occupare due spazi in una stringa, influenzando di conseguenza il valore della proprietà count. 
 
 ## Vedi anche
 
-- [Documentazione Apple su Stringhe](https://developer.apple.com/documentation/swift/string)
-- [Tutorial su Stringhe in Swift](https://www.raywenderlich.com/ios/learn-swift-4-string-cheat-sheet)
-- [Domande frequenti sulla lunghezza delle stringhe in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-measure-the-length-of-a-string)
+- [Documentazione ufficiale di Swift su `count`](https://developer.apple.com/documentation/swift/string/utf8)
+- [Come ottenere la lunghezza di una stringa in altri linguaggi di programmazione](https://www.rapidtables.com/web/dev/string-length.html)

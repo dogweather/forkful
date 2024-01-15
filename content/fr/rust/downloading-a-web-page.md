@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Rust: Téléchargement d'une page web"
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,80 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur curieux à la recherche d'un nouveau langage de programmation polyvalent et performant, alors Rust peut être le langage dont vous avez besoin. Avec des fonctionnalités de sécurité avancées, de la concurrence native, et une compilation rapide, Rust est idéal pour une variété de projets, y compris le téléchargement de pages web. Dans cet article, nous allons plonger dans la manière de télécharger une page web à l'aide de Rust.
+Tu veux savoir comment télécharger une page web en Rust ? Eh bien, tu es au bon endroit ! Que tu sois un développeur en herbe ou un expert en Rust, cet article te donnera toutes les informations dont tu as besoin pour réussir.
 
 ## Comment faire
 
-Pour télécharger une page web en utilisant Rust, nous allons utiliser la bibliothèque standard "reqwest". Vous pouvez l'ajouter à votre projet en l'incluant dans le fichier "Cargo.toml" :
+Télécharger une page web en Rust est assez simple. Tout d'abord, tu auras besoin d'importer la bibliothèque `reqwest` dans ton projet. Ensuite, tu peux utiliser la fonction `get` pour obtenir le contenu de la page web désirée. Voici un exemple de code :
 
 ```Rust
-[dependencies]
-reqwest = "0.11"
-```
+extern crate reqwest;
 
-Ensuite, vous pouvez utiliser ces lignes de code pour télécharger une page web et récupérer son contenu :
-
-```Rust
-use reqwest::get;
+use std::io::Read;
 
 fn main() {
-    let response = get("https://www.example.com")
-        .unwrap()
-        .text()
-        .unwrap();
-    println!("{}", response);
+    let mut response = reqwest::get("https://example.com").unwrap();
+
+    let mut content = String::new();
+    response.read_to_string(&mut content).unwrap();
+
+    println!("{}", content);
 }
 ```
 
-Le code ci-dessus importe la fonction `get` de la bibliothèque "reqwest" et utilise sa méthode `text()` pour récupérer le contenu de la page web sous forme de chaîne de caractères. Ensuite, nous imprimons simplement le contenu à la console.
+Et voici le résultat de l'exécution du code :
 
-Si vous souhaitez enregistrer le contenu dans un fichier, vous pouvez utiliser la méthode `write` de la bibliothèque standard de Rust :
+```text
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
 
-```Rust
-use reqwest::get;
-use std::io::Write;
-use std::fs::File;
-
-fn main() {
-    let mut response = get("https://www.example.com")
-        .unwrap()
-        .text()
-        .unwrap();
-    let mut file = File::create("example.html").unwrap();
-    file.write_all(response.as_bytes()).unwrap();
-}
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+...
 ```
 
-Ce code télécharge la page web et enregistre son contenu dans un fichier "example.html".
+Comme tu peux le voir, le contenu de la page est stocké dans une chaîne de caractères. Tu peux ensuite le manipuler comme tu le souhaites.
 
-## Deep Dive
+## Plongée en profondeur
 
-Si vous souhaitez aller plus en profondeur, vous pouvez également personnaliser votre requête en spécifiant des headers, des paramètres et des cookies. Par exemple, voici comment ajouter un header et un paramètre à votre requête :
-
-```Rust
-use reqwest::Client;
-use std::collections::HashMap;
-
-fn main() {
-    let client = Client::new();
-    let mut headers = HashMap::new();
-    headers.insert("User-Agent", "My Rust Downloader");
-    let params = [("lang", "rust"), ("category", "web")];
-    let response = client.get("https://www.example.com")
-        .headers(headers)
-        .query(&params)
-        .send()
-        .unwrap()
-        .text()
-        .unwrap();
-    println!("{}", response);
-}
-```
-
-Ce code utilise la classe `Client` de la bibliothèque "reqwest" pour créer une requête personnalisée avec un header et des paramètres spécifiés. Vous pouvez également ajouter des cookies en utilisant la méthode `cookie` et en passant un cookie en tant que paramètre. Consultez la documentation de la bibliothèque pour plus d'informations sur les autres fonctionnalités disponibles.
+Maintenant que tu sais comment télécharger une page web en Rust, tu voudras peut-être découvrir quelques fonctionnalités supplémentaires. La bibliothèque `reqwest` offre de nombreuses options pour personnaliser ta requête, telles que l'ajout d'en-têtes et de paramètres, ainsi que la gestion des erreurs. Tu peux aussi utiliser des méthodes comme `post` ou `put` pour envoyer des données avec ta requête. N'hésite pas à consulter la documentation officielle pour en savoir plus.
 
 ## Voir aussi
 
-- La documentation officielle de la bibliothèque "reqwest": https://docs.rs/reqwest/0.11.3/reqwest/index.html
-- Un tutoriel complet sur Rust pour les débutants : https://tourofrust.com/00_fr.html
-- Un cours gratuit sur Rust sur Udemy : https://www.udemy.com/course/formation-complete-rust/learn/lecture411274?start=60#overview
+- [Documentation officielle de la bibliothèque `reqwest`](https://docs.rs/reqwest)
+- [Tutoriel pour débuter avec Rust](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
+- [Exemple de projet utilisant `reqwest`](https://github.com/seanmonstar/reqwest/tree/master/examples)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Att göra en sträng med stor bokstav"
-simple_title:         "Att göra en sträng med stor bokstav"
+title:                "Att Göra En Sträng Med Stor Bokstav"
+html_title:           "Java: Att Göra En Sträng Med Stor Bokstav"
+simple_title:         "Att Göra En Sträng Med Stor Bokstav"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att kapitalisera en sträng kan vara användbart för att förbättra utseendet och lättläsligheten i en applikation. Det är också ett vanligt krav i vissa system och API-anrop.
+Att göra en sträng stor bör man göra när man vill betona vissa delar av den, till exempel i en rubrik eller en titel. Det är ett enkelt sätt att göra texten mer lättläst och tydlig.
 
-##Så här gör du
+## Hur man gör
 
-För att kapitalisera en sträng i Java kan du använda metoden `toUpperCase()` tillsammans med `charAt()` för att iterera igenom strängen. Nedan följer ett exempel på hur detta kan göras:
+Det finns ett enkelt sätt att göra en sträng stor i Java genom att använda metoden `toUpperCase()`. Se nedan för kodexempel:
 
 ```Java
-String str = "hej på dig";
-String capitalizedStr = "";
-
-for (int i = 0; i < str.length(); i++) {
-    capitalizedStr += Character.toUpperCase(str.charAt(i));
-}
-
-System.out.println(capitalizedStr);
+String minSträng = "hej världen";
+String storSträng = minSträng.toUpperCase();
+System.out.println(storSträng);
 ```
 
-**Output:**
+Output: HEJ VÄRLDEN
 
+## Fördjupning
+
+Det finns flera saker att tänka på när man gör en sträng stor i Java:
+
+- Metoden `toUpperCase()` omvandlar alla bokstäver i en sträng till versaler 
+- Om du vill konvertera bara första bokstaven i varje ord, använd metoden`capitalize()`
+- Om du behöver ändra storleken på en specifik del av en sträng, kan du använda `substring()` metoden tillsammans med `toUpperCase()`
+
+Se nedan för ett exempel på användning av `substring()`:
+
+```Java
+String minSträng = "hej världen";
+String förstaDel = minSträng.substring(0, 3).toUpperCase();
+String andraDel = minSträng.substring(3);
+String storSträng = förstaDel + andraDel;
+System.out.println(storSträng);
 ```
-HEJ PÅ DIG
-```
 
-Detta är bara ett enkelt exempel, det finns flera andra sätt att kapitalisera en sträng i Java. Det är också viktigt att notera att Java är ett språk med strikt typtilldelning, så det är viktigt att ange datatypen för variablerna korrekt.
+Output: HEJ världen
 
-##Djupdykning
+## Se även
 
-När man tittar närmare på hur metoden `toUpperCase()` fungerar, så används en intern algoritm för att konvertera varje bokstav till dess motsvarande versala form. Detta innebär att även specialtecken eller accenter kommer att kapitaliseras på rätt sätt.
-
-Det finns också andra sätt att kapitalisera en sträng i Java, som att använda `StringBuilder` eller `StringBuffer` för en mer effektiv implementation. Det är viktigt att förstå hur olika metoder påverkar prestandan i en applikation.
-
-##Se även
-
-- [Java String Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java StringBuilder Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Java StringBuffer Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
+- [Java String Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [String manipulation in Java](https://www.geeksforgeeks.org/string-class-java/)
+- [How to make first letter of a string uppercase in Java](https://www.baeldung.com/java-uppercase-first-letter)

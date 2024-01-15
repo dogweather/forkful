@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Clojure: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,40 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego pisanie testów jest ważne?
 
-Testowanie jest nieodłączną częścią pisania aplikacji w Clojure. Napisanie testów pomaga w upewnieniu się, że kod działa poprawnie i przewiduje możliwe błędy. Pomaga również w utrzymaniu kodu i łatwiejszym wprowadzaniu zmian w przyszłości. 
+Czy zdarzyło Ci się kiedyś wprowadzić zmiany w kodzie i nagle odkryć, że coś, co jeszcze będąc sprawdzone działało, teraz przestało działać? Jeśli tak, to wiesz jak frustrujące i czasochłonne może być naprawianie takich błędów. Właśnie dlatego pisanie testów jest niezwykle ważne. Testy pozwalają na wczesne wykrywanie błędów, dzięki czemu można je szybko naprawić i uniknąć problemów w przyszłości.
 
-## Jak to zrobić
+# Jak pisać testy w Clojure?
 
-Aby stworzyć testy w Clojure, potrzebujesz użycia funkcji *deftest* oraz *is* z biblioteki *clojure.test*. Przykładowy kod poniżej będzie testował funkcję, która zwraca sumę dwóch liczb:
+Pisanie testów w Clojure jest bardzo proste i wymaga tylko kilku kroków. Najpierw musimy zaimportować bibliotekę clojure.test:
 
 ```Clojure
-(deftest test-addition
-  (is (= 8 (addition 3 5)))
-  (is (= 11 (addition 6 5)))
-)
+(use 'clojure.test)
 ```
 
-Po uruchomieniu tych testów, jeśli funkcja *addition* działa poprawnie, otrzymamy wynik:
+Następnie definiujemy funkcję testującą i określamy jej oczekiwany wynik za pomocą funkcji assert:
 
 ```Clojure
-Testing user
-Ran 2 tests containing 4 assertions.
+(deftest test-funkcji
+  (is (= (+ 2 2) 4)))
+```
+
+W powyższym przykładzie sprawdzamy czy funkcja (+ 2 2) zwraca oczekiwany rezultat, którym jest liczba 4. Teraz możemy uruchomić nasz test za pomocą funkcji run-tests:
+
+```Clojure
+(run-tests)
+```
+
+Jeśli wszystkie testy przejdą pomyślnie, otrzymamy następujący wynik:
+
+```Clojure
+Testing...
+Ran 1 tests containing 1 assertions.
 0 failures, 0 errors.
-=> {:testing 2, :success 2, :expected 4, :assert 4, :deftest 1}
 ```
 
-To oznacza, że wszystkie asercje przeszły i nasza funkcja działa poprawnie.
+# Głębsze zanurzenie w pisanie testów
 
-## Deep Dive
+Istnieje wiele rodzajów testów, które możemy pisać w Clojure, ale najczęściej wykorzystuje się dwa rodzaje: unit tests i integration tests.
 
-Pisanie testów w Clojure może być skomplikowane, ponieważ wymaga użycia makr, aby sprawdzić czy asercje zostały spełnione. Dlatego ważne jest, aby zawsze korzystać z biblioteki *clojure.test*, która dostarcza narzędzia do przeprowadzania testów w sposób poprawny i czytelny.
+Unit tests sprawdzają pojedyncze funkcje lub małe części kodu, natomiast integration tests testują całość aplikacji lub większe moduły. Dzięki temu mamy pewność, że każda część naszego kodu działa poprawnie, a także że cały system współpracuje ze sobą.
 
-Jednym z powodów, dla których warto pisać testy jest to, że pozwala to na łatwiejsze wprowadzanie zmian w kodzie w przyszłości. Ponadto, testy mogą służyć jako dokumentacja dla innych programistów, którzy będą pracować nad projektem.
+Warto również pamiętać o kilku praktykach, które ułatwiają pisanie testów w Clojure:
 
-## Zobacz również
+1. Stosowanie funkcji do przygotowania środowiska testowego, np. (before) lub (with-redefs).
+2. Używanie odpowiednich asercji, np. (is) lub (are).
+3. Separacja testów jednostkowych od testów integracyjnych.
 
-- [Dokumentacja biblioteki clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Livestream: Testowanie funkcji w Clojure](https://www.youtube.com/watch?v=RWlGnL7r_Xk)
-- [Artykuł: "Testowanie w Clojure"](https://jaxenter.de/testen-mit-clojure-tutorial-34678)
+# Zobacz również
+
+1. [Dokumentacja Clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+2. [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/) - książka o programowaniu w Clojure, w której znajdziesz pełne wyjaśnienie pisanie testów.
+3. [Rebel.pl](https://rebel.pl/) - polski sklep z grami planszowymi, który wykorzystuje Clojure do testowania swojego systemu zamówień. Zobacz, jak praktycznie wygląda pisanie testów w prawdziwym projekcie.

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "Clojure: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Italian Translation:
-
 ## Perché
 
-Ci sono molte ragioni per cui un programmatore potrebbe voler lavorare con YAML in Clojure. YAML è un formato di file molto flessibile e leggibile per i dati strutturati, il che lo rende ideale per la configurazione di applicazioni e l'interscambio di dati tra sistemi. Inoltre, YAML è ampiamente supportato dalla comunità di programmazione e ha molte librerie disponibili in Clojure.
+Se sei un programmatore che lavora con dati strutturati, probabilmente hai sentito parlare di YAML. Questo formato di file è ampiamente utilizzato per gestire configurazioni e dati complessi in modo leggibile per le persone e facilmente parsabile dai computer. In questo articolo, esploreremo come utilizzare Clojure per lavorare con YAML e ottenere il massimo da questo potente strumento.
 
 ## Come fare
 
-Utilizzando la libreria `yaml-clj`, è abbastanza semplice leggere e scrivere file YAML in Clojure. Ecco un esempio di come leggere un file YAML e stampare il contenuto:
+Il primo passo per lavorare con YAML in Clojure è importare la libreria `clojure-yaml` nel nostro progetto. Possiamo farlo con il seguente codice:
 
 ```Clojure
-(require '[yaml-clj.core :as yaml])
-
-(def config (yaml/load-file "config.yaml"))
-
-(println (:db-uri config))
+(ns my-project.core
+  (:require [clojure-yaml.core :as yaml]))
 ```
 
-Questo codice carica il file `config.yaml` e lo memorizza nella variabile `config`. Successivamente, viene utilizzata la sintassi delle parentesi graffe per accedere al valore `db-url` all'interno del file YAML. Infine, il valore viene stampato a schermo.
-
-Ecco un esempio di come scrivere un file YAML da Clojure:
+Una volta importata la libreria, possiamo utilizzare la sua funzione `parse-string` per convertire una stringa YAML in una mappa Clojure. Ad esempio:
 
 ```Clojure
-(yaml/write-file "config.yaml" {:username "john" :password "secret"})
+(def yaml-string "# Questo è un commento valido in YAML\nnome: John Smith\netà: 30")
+(yaml/parse-string yaml-string)
+;; output: {:nome "John Smith", :età 30}
 ```
 
-In questo caso, il file `config.yaml` conterrà i dati specificati in formato YAML.
+In alternativa, possiamo utilizzare la funzione `emit-string` per convertire una mappa Clojure in una stringa YAML. Ad esempio:
+
+```Clojure
+(def data {:numero 10, :lista [1 2 3], :map {"chiave" "valore"}})
+(yaml/emit-string data)
+;; output: "{numero: 10, lista: [1, 2, 3], map: {chiave: valore}}"
+```
+
+Una volta che abbiamo i nostri dati in formato YAML, possiamo utilizzare la funzione `write-file` per salvarli su un file. Ad esempio:
+
+```Clojure
+(yaml/write-file "config.yaml" {:nome "John Smith", :attivo true})
+```
 
 ## Approfondimento
 
-Una delle principali caratteristiche di YAML è la sua capacità di rappresentare dati in forma più strutturata rispetto ad altri formati come JSON e CSV. Questo significa che è più facile per gli umani leggere e scrivere, rendendolo adatto per la configurazione e la gestione dei dati complessi.
+YAML supporta diversi tipi di dati, tra cui interi, decimali, stringhe, booleani, date e altro ancora. Per ulteriori informazioni sui tipi di dati supportati e sulla sintassi di YAML, puoi consultare la sua documentazione ufficiale.
 
-Una delle sfide di lavorare con YAML in Clojure è gestire i valori null e le liste datile, che non sono supportati come tali in Clojure. Tuttavia, ci sono diverse librerie disponibili che aiutano a gestire questi casi, come `yaml-clj-null` per i valori null e `yaml-clj-sequence` per le liste datile.
+Inoltre, la libreria Clojure per YAML supporta anche opzioni avanzate come la gestione di riferimenti tra diversi documenti YAML e la personalizzazione del processo di conversione. Puoi esplorare questi aspetti maggiormente nella documentazione della libreria.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di YAML](https://yaml.org/)
-- [Libreria di Clojure per la gestione di file YAML](https://github.com/yaml-clj/yaml-clj)
-- [Libreria per la gestione di valori null in file YAML](https://github.com/yaml-clj/yaml-clj-null)
-- [Libreria per la gestione di liste datile in file YAML](https://github.com/yaml-clj/yaml-clj-sequence)
+- Documentazione ufficiale di YAML: https://yaml.org/
+- Documentazione della libreria Clojure per YAML: https://github.com/novemberborn/clojure-yaml

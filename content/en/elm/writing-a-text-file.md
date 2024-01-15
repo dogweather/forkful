@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "Elm recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,41 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Writing a text file may seem like a simple task, but it can actually have a big impact on your programming experience. By creating structured and organized text files, you can easily store and access data within your program. This can lead to more efficient coding and ultimately, a better overall program.
+Text files are an essential part of programming and are used for storage, data transfer, and communication between programs. In Elm, writing a text file can be a useful skill for tasks such as saving user input or exporting data in a human-readable format.
 
 ## How To
+To write a text file in Elm, we first need to import the `File` module. We can then use the `write` function to create a file and write contents to it. Here's an example:
 
-To create a text file in Elm, you can use the `text` function from the `Html` library. This function takes in a string as its argument and returns a `Html Msg` that can be used to display the text on your webpage.
+```Elm
+import File
 
+writeTextFile : List String -> Task x ()
+writeTextFile lines =
+    File.write "myFile.txt" (String.unlines lines)
 ```
-import Html exposing (text)
 
+In this code, we first import the `File` module which gives us access to the `write` function. We then define a function called `writeTextFile` which takes in a list of strings and returns a task (similar to a promise in JavaScript) with no specific type of error (`x`) and no return value (`()`). Inside the function, we use the `write` function to create a file named `myFile.txt` and write the contents of the list of strings to it using the `String.unlines` function to add line breaks between each element.
+
+To actually execute this function and create the file, we can use the `run` function from the `Task` module. We can then pass in our `writeTextFile` function and a callback function to handle any potential errors:
+
+```Elm
+import Task
+
+main : Program Never
 main =
-  text "Hello, world!"
+    Task.attempt (\_ -> Debug.log "File created") (File.run (writeTextFile ["Hello", "World"]))
 ```
 
-This code will display the text "Hello, world!" on your webpage. You can also use the `text` function with variables to display dynamic content.
-
-```
-import Html exposing (text)
-
-name = "John"
-
-main =
-  text ("Hello, " ++ name ++ "!")
-```
-
-This will display the text "Hello, John!" on your webpage. You can also use `text` in conjunction with other HTML functions to create more complex displays.
+In this example, we use the `Task` module to run our `writeTextFile` function and handle any errors by logging a message to the console. And that's it! Our file should now be created with the specified contents.
 
 ## Deep Dive
+There are a few important things to note when writing a text file in Elm. First, the `write` function takes in two parameters: the file name (as a string) and the file contents (as another string). If the file already exists, it will be overwritten with the new contents.
 
-In Elm, text files can also be used for localization and internationalization purposes. By storing all your text in one file, it becomes easier to translate and update your program for different languages.
+Secondly, the task returned by the `write` function is asynchronous, which means we need to use the `Task` module to handle the callback function and potential errors. This is different from other synchronous functions in Elm like `Debug.log` or `String.length`, where we can simply call the function and get a result without using the `Task` module.
 
-Additionally, Elm has a built-in `toString` function that automatically converts values into strings. This can be useful when writing text files that contain data from variables or functions.
+Lastly, it's important to handle potential errors when writing a text file, as the task will fail if there are any issues with creating or writing to the file. This can be done using the `Task.attempt` function, as shown in the example above.
 
-## See Also
-
-- [Official Elm Language Guide](https://guide.elm-lang.org)
-- [Elm Packages](https://package.elm-lang.org)
-- [Elm Slack Community](https://elmlang.slack.com)
+See Also:
+- Official Elm Language Guide on writing files: https://elm-lang.org/docs/interop/file
+- Official Elm Package for working with files: https://package.elm-lang.org/packages/elm/file/latest/

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Stampa di output di debug"
-simple_title:         "Stampa di output di debug"
+title:                "Stampa output di debug"
+html_title:           "Haskell: Stampa output di debug"
+simple_title:         "Stampa output di debug"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte ragioni per cui potresti voler stampare un output di debug. Può essere utile per vedere il valore di una variabile in un determinato punto del tuo codice, per capire come una funzione sta manipolando i dati o semplicemente per verificare se un'azione è stata eseguita correttamente.
 
-Debugging è un processo essenziale quando si scrive del codice, e la stampa di output di debug è uno strumento utile per comprendere il flusso di esecuzione del tuo programma. Ciò può aiutare ad identificare e risolvere i problemi nel codice più rapidamente.
-
-## Come fare
-
-Per stampare l'output di debug in Haskell, puoi utilizzare la funzione `putStrLn`, che prende come argomento una stringa e la stampa a schermo. Esempio:
+## Come farlo
+Per stampare un output di debug in Haskell, puoi utilizzare la funzione `print` con il valore che desideri visualizzare all'interno delle parentesi. Ad esempio:
 
 ```Haskell
-main = do
-  putStrLn "Inizio programma"
-  putStrLn "Esecuzione codice"
-  putStrLn "Fine programma"
+print "Hello world!"
+
+-- Output: "Hello world!"
 ```
-Questo esempio stampa tre righe di output sullo schermo quando il programma viene eseguito.
+
+Se vuoi stampare più di un valore, puoi utilizzare la funzione `putStrLn` con una stringa che conterrà tutti i valori separati da spazi. Ad esempio:
+
+```Haskell
+putStrLn ("Il mio nome è" ++ nome ++ "e ho" ++ (show età) ++ "anni.")
+
+-- Output: "Il mio nome è Marco e ho 27 anni."
+```
+
+Puoi anche combinare stringhe e valori all'interno delle parentesi utilizzando l'operatore `++`, come nel secondo esempio.
 
 ## Approfondimento
-
-Quando si utilizza la stampa di debug output, è importante prestare attenzione alla formattazione e all'organizzazione delle informazioni stampate. Puoi utilizzare la funzione `show` per visualizzare il valore di una variabile o espressione in una stringa. Esempio:
+Se vuoi essere più specifico con l'output di debug, puoi utilizzare la funzione `putStrLn` con la sintassi di formattazione di stringa di Haskell. Ciò ti permetterà di specificare in modo più preciso dove e come vuoi stampare i valori. Ad esempio, se vuoi visualizzare un valore con due cifre decimali, puoi usare la seguente formattazione:
 
 ```Haskell
-main = do
-  let x = 5
-  putStrLn $ "Il valore di x è " ++ (show x)
-```
-In questo esempio, la variabile `x` viene convertita in una stringa utilizzando `show` e viene concatenata alla stringa "Il valore di x è". L'output sarà "Il valore di x è 5".
+putStrLn ("Il prezzo è: " ++ show prezzo ++ "€")
 
-Oltre alla semplice stampa di valori, puoi anche utilizzare funzioni più avanzate come `trace` della libreria `Debug.Trace`, che permette di stampare output di debug senza dover interrompere l'esecuzione del programma.
+-- Output: Il prezzo è: 10.50€
+```
+
+Puoi anche utilizzare la formattazione di stringa per aggiungere spazi o nuove righe nei tuoi output di debug. Per maggiori informazioni su come utilizzare la formattazione di stringa di Haskell, puoi consultare la documentazione ufficiale.
 
 ## Vedi anche
-
-- [Haskell Debugging Guide](https://wiki.haskell.org/Debugging)
-- [Debugging in Haskell](https://medium.com/@MarynaLuchko/debugging-in-haskell-3ded9aae871a)
-- [Debugging Techniques in Haskell](https://www.reddit.com/r/haskell/comments/6yqs4e/debugging_techniques_in_haskell/)
+- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
+- [Tutorial di Haskell su Codecademy](https://www.codecademy.com/courses/learn-haskell)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Nykyisen päivämäärän hakeminen"
-simple_title:         "Nykyisen päivämäärän hakeminen"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Gleam: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,39 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmoinnin projekteissa on tarve käyttää tietoa nykyisestä päivästä. Tämä voi olla esimerkiksi päivämäärän näyttäminen käyttöliittymässä tai tietyn ajankohtaan liittyvän toiminnon suorittaminen. Onneksi Gleam tarjoaa helpon tavan saada nykyinen päivämäärä ohjelmassa käyttämällä sisäänrakennettua `gleam/time` kirjastoa.
+Jos olet Gleam-kielen käyttäjä tai harkitset sen käyttöä, sinulla saattaa olla tarve saada nykyinen päivämäärä ohjelmassasi. Oli sitten kyse laskennasta tai käyttäjän näyttämästä ajasta, Gleam:ssa on helppo tapa saada nykyinen päivämäärä nopeasti ja tarkasti.
 
-## Miten
+## Kuinka
 
-Voit hankkia nykyisen päivämäärän Gleamilla käyttämällä `gleam/time` kirjaston funktiota `now`. Tämä palauttaa nykyisen ajan Gleam `Time` tietorakenteena, josta voit hakea erilaisia tietoja, kuten vuosi, kuukausi tai päivä. Tässä on esimerkki, miten voit käyttää `now` funktiota:
+Gleam:ssa nykyinen päivämäärä voidaan saada muutamassa yksinkertaisessa vaiheessa. Ensimmäisenä sinun täytyy tuoda Gleam:n `Time` kirjasto `import Time` komennolla.
 
-```gleam
-import gleam/time
+Sitten voit käyttää `Time.now()` funktiota saadaksesi nykyisen päivämäärän. Käytämme `let` avainsanaa tallentaaksemme päivämäärän muuttujaan, ja voimme käyttää `io:format!` funktiota tulostamaan päivämäärän terveystiimiin.
 
-let now = time.now()
+```Gleam
+import Time
 
-time.Year(now) // Palauttaa nykyisen vuoden
-time.Month(now) // Palauttaa nykyisen kuukauden
-time.Day(now) // Palauttaa nykyisen päivän
+let tanaan = Time.now()
+io:format!("Tänään on ~p", [tanaan])
 ```
 
-Sen lisäksi, voit myös tulostaa nykyisen päivämäärän suoraan konsoliin käyttämällä `gleam/io` kirjastoa:
+Kun ajamme tämän ohjelman, tulostuu jotain tällaista:
 
-```gleam
-import gleam/time
-import gleam/io
-
-let now = time.now()
-
-io.format("{:04}/{:02}/{:02}", [time.Year(now), time.Month(now), time.Day(now)]) // Tulostaa nykyisen päivämäärän muodossa "yyyy/mm/dd"
+```
+Tänään on ~p2021-07-22T18:32:00Z
 ```
 
-## Syvällisempi sukellus
+Z-merkintä tulee `io:format` funktion käyttämästä `DateTime.string()` muotoilusta. Voit lukea lisää Gleam:n `lio` standardikirjastosta [täältä](https://gleam.run/modules/io/latest/).
 
-`gleam/time` kirjastossa on myös muita hyödyllisiä funktioita nykyisen ajan käsittelyyn, kuten `to_unix` joka muuntaa Gleam `Time` tietorakenteen Unix-timestampiksi, sekä `parse` joka muuntaa merkkijonon päivämääräksi. Voit tutustua kaikkiin tarjolla oleviin funktioihin [dokumentaatiosta](https://gleam.run/modules/gleam_time/latest/).
+## Syvemmälle
+
+`Time.now()` funktio palauttaa nykyisen ajan UTC:na eli koordinoituna maailmanlaajuisena aikana. Jos haluat muuttaa tämän paikalliseksi ajaksi, voit käyttää `Time.local_now()` funktiota. Tämä palauttaa nykyisen ajan omassa aikavyöhykkeessäsi.
+
+Voit myös käyttää `DateTime.to_unix()` funktiota muuntaaksesi päivämäärän Unix-aikaleimaksi tai `DateTime.to_rfc3339()` muuntaaksesi sen RFC 3339 formaattiin.
 
 ## Katso myös
 
-- [Gleamin dokumentaatio](https://gleam.run/) - Lisää tietoa Gleamista ja sen käytöstä.
-- [Gleam/time kirjaston dokumentaatio](https://gleam.run/modules/gleam_time/latest/) - Lisätietoa `gleam/time` kirjastosta ja sen tarjoamista funktioista.
-- [Io/format funktion dokumentaatio](https://gleam.run/modules/gleam_io/latest/#type.formatter) - Yksityiskohtainen selitys `io/format` funktion käytöstä.
+- Gleam:n `Time` kirjasto [dokumentaatio](https://gleam.run/modules/time/latest/)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "Gleam: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar argumentos de línea de comando en programación?
+## ¿Por qué?
 
-Los argumentos de línea de comando son una herramienta valiosa en la programación. Nos permiten interactuar con nuestro código y personalizar su comportamiento sin necesidad de modificarlo directamente. Además, su uso facilita la ejecución de nuestro programa y puede ahorrar tiempo en tareas repetitivas.
+Si has estado programando en línea de comandos, probablemente hayas notado que a menudo puedes pasar argumentos al programa que estás ejecutando. Estos argumentos pueden ser útiles para personalizar la ejecución de tu programa, y en este artículo te explicaremos cómo leer y utilizar estos argumentos en tus programas escritos en Gleam.
 
-## Cómo utilizar argumentos de línea de comando en Gleam
+## ¿Cómo hacerlo?
 
-En Gleam, podemos acceder a los argumentos de línea de comando con la función `gleam/core:os.args()`. Esta función devuelve una lista con todos los argumentos especificados al momento de ejecutar nuestro programa.
+Para leer los argumentos de línea de comandos en Gleam, utilizaremos la función `Gleam.App.args()` que nos devuelve una lista de cadenas de texto con los argumentos pasados al programa. A continuación, podemos utilizar la función `Gleam.List.get(idx: Int, list: list(a))` para obtener un argumento en particular a través de su índice en la lista.
 
-Veamos un ejemplo de cómo podemos utilizar esta función en un programa de Gleam:
+Veamos un ejemplo con un programa que acepta un nombre de usuario como argumento y lo imprime por pantalla:
 
-```
-Gleam import os.io
+```Gleam
+import Gleam.App
 
-pub fn main(args: List(String)) {
-  if len(args) > 1 {
-    io.print("Hola, " ++ args[1])
-  } else {
-    io.print("Hola, mundo!")
-  }
+fn main() {
+  // Obtenemos una lista de argumentos
+  let args = Gleam.App.args()
+
+  // Obtenemos el primer argumento
+  let nombre = List.get(0, args)
+
+  // Imprimimos un saludo utilizando el argumento
+  Gleam.IO.print("Hola, #{nombre}!")
 }
 ```
 
-Al ejecutar este programa con el siguiente comando `gleam run hola.gleam Juan`, obtendremos como resultado "Hola, Juan".
+Si ejecutamos este programa con el comando `Gleam run programa.gleam Juan`, el resultado sería `Hola, Juan!`.
 
-## Profundizando en la lectura de argumentos de línea de comando
+## Profundizando
 
-Además de la función `os.args()`, también podemos utilizar los módulos `gleam/args` y `gleam/parse` para trabajar con argumentos de línea de comando de manera más avanzada. Estos módulos nos permiten definir opciones y valores esperados en nuestro código, lo que brinda una mayor estructura y flexibilidad al momento de leer argumentos.
-
-Por ejemplo, con el módulo `gleam/args` podemos definir opciones que pueden ser activadas o desactivadas mediante la línea de comando, mientras que con el módulo `gleam/parse` podemos especificar qué tipo de valor esperamos recibir para cada argumento.
+La función `Gleam.App.args()` en realidad utiliza una llamada al sistema operativo para obtener los argumentos de línea de comandos, lo cual nos permite leer argumentos más complejos como banderas o opciones. También podemos utilizar la biblioteca `Gleam.OS.ArgParser` para analizar argumentos de línea de comandos de una manera más estructurada.
 
 ## Ver también
 
-- Documentación oficial de Gleam sobre argumentos de línea de comando: [https://gleam.run/book/tour/command_line_arguments.html](https://gleam.run/book/tour/command_line_arguments.html)
-- Ejemplos de manipulación de argumentos de línea de comando en Gleam: [https://github.com/gleam-lang/gleam/blob/master/examples/cli/](https://github.com/gleam-lang/gleam/blob/master/examples/cli/)
-- Tutorial de Gleam sobre lectura de argumentos en línea de comando: [https://gleam.run/book/tutorials/commands.html](https://gleam.run/book/tutorials/commands.html)
+- [Documentación de Gleam sobre la función `Gleam.App.args()`](https://gleam.run/book/std.types.html#Gleam.App.args)
+- [Documentación de Gleam sobre la biblioteca `Gleam.OS.ArgParser`](https://gleam.run/book/stdlib.html#Gleam.OS.ArgParser)

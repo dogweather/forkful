@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: CSV 작업하기"
+title:                "CSV 작업하기"
+html_title:           "Gleam: CSV 작업하기"
 simple_title:         "CSV 작업하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,54 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-오늘 우리는 CSV 파일에 대해서 배우려고 합니다. CSV 파일은 데이터를 쉽게 저장할 수 있는 파일 형식으로 많은 프로그래밍 언어에서 지원되는 일반적인 형식입니다. CSV 파일을 다루는 것은 데이터를 다루는 데 있어서 중요한 스킬이 될 수 있으며, 많은 프로젝트에서 필수적인 요소가 될 수 있습니다.
+CSV 파일은 데이터를 저장하고 공유하기에 효율적이고 편리한 형식입니다. 지속적으로 커뮤니케이션하거나 다른 프로그램과 데이터를 공유하려는 경우, CSV 파일 형식은 매우 유용합니다.
 
-## 하우 투
+## 어떻게 하나요?
 
-Gleam은 `gleam_csv` 패키지를 통해 CSV 파일을 다룰 수 있도록 지원합니다. 이를 사용하기 위해서는 먼저 `gleam_csv` 패키지를 프로젝트에 추가해야 합니다. 그리고 아래 예시 코드를 참고하여 CSV 파일을 읽고 쓰는 방법을 배워보세요.
-
- ```Gleam
+```Gleam
 import gleam/csv
 
-// CSV 파일 읽기
-let result = csv.decode_file("data.csv")
-match result {
-  Ok(rows) -> {
-    // 각 행(row)은 열(column)의 배열로 구성됩니다.
-    for row in rows {
-      // 각 열의 값에 접근하기 
-      let name = row[0]
-      let age = row[1]
-      let occupation = row[2]
-      // 원하는 작업 수행하기
-    }
-  }
-  Err(error) -> {
-    // 오류 처리하기
-  }
-}
+csv_string = "name,age\nJohn,25\nJane,30"
 
-// CSV 파일 쓰기
-let records = [ ["John", "25", "Student"], ["Jane", "30", "Teacher"] ]
+// CSV 문자열을 인코딩합니다.
+encoded_csv = csv.encode(csv_string)
 
-let result = csv.encode_file("data.csv", records)
-match result {
-  Ok(_) -> { /* 파일이 성공적으로 저장됨 */ }
-  Err(error) -> { /* 오류 처리하기 */ }
-}
- ```
+// CSV 파일을 읽어서 데이터를 매핑합니다.
+decoded_csv = csv.read_file("data.csv", headers: true)
 
-## 딥 다이브
+// 특정 필드 값을 추출합니다.
+name = decoded_csv[0]["name"] // "John"
+```
 
-CSV 파일을 다룰 때 주의해야할 몇 가지 사항이 있습니다. 첫 번째로, CSV 파일에는 파일 형식에 대한 정보가 포함되어 있지 않습니다. 따라서 파일이 어떤 형식인지 명시해주어야 합니다. 예를 들어, 첫 번째 행에 열(column)의 제목을 포함시켜야 합니다. 또한 첫 번째 행은 데이터가 아니기 때문에 주의해서 처리해야 합니다.
+## 깊이 파고들기
 
-두 번째로, CSV 파일의 값은 모두 문자열로 저장되기 때문에 숫자를 다룰 때 유의해야 합니다. 필요에 따라서는 숫자로 변환해주어야 할 수도 있습니다.
+데이터 분석, 추출 및 변환에 유용한 기능들이 많이 포함된 Gleam의 CSV 라이브러리는 사용하기 매우 간단합니다. 필요한 경우, 커스터마이즈된 분리 문자, 헤더 옵션 등 다양한 설정을 적용할 수 있습니다. 더 자세한 내용은 [공식 문서](https://gleam.run/packages/csv.html)를 참조해주세요.
 
-마지막으로, CSV 파일을 다룰 때는 예외 처리가 중요합니다. 파일을 읽거나 쓸 때 오류가 발생할 수 있기 때문에 적절한 예외 처리를 해주어야 합니다.
+## 더 알아보기
 
-## 참고
-
-- Gleam 공식 문서: https://gleam.run/documentation/
-- Gleam CSV 패키지: https://github.com/gleam-lang/csv
+- [Gleam 문서](https://gleam.run/)에서 언어의 기본적인 문법과 라이브러리에 대해 더 알아보세요.
+- [CSV 파일 형식](https://en.wikipedia.org/wiki/Comma-separated_values)에 대해 더 깊이 알아보세요.

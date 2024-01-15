@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriving av tester"
+html_title:           "Javascript: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -9,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive tester i Javascript
+## Hvorfor
 
-Mange av oss har vært der - vi skriver koden vår, tester den manuelt og alt ser ut til å fungere fint. Men så en dag, når en liten endring blir gjort, bryter hele koden sammen og vi angrer på at vi ikke skrev noen tester. Dette er hvorfor det er viktig å engasjere seg i å skrive tester i Javascript. Ved å skrive tester, sikrer vi at koden vår fungerer som den skal, og gir oss en følelse av trygghet ved å vite at endringer ikke vil forårsake uforutsette problemer.
+Å skrive tester er en viktig del av enhver utviklers arbeid, og det er spesielt viktig i Javascript-verdenen. Tester hjelper deg med å sikre at koden din fungerer som den skal, oppdage feil og forhindre bugs i produksjon. Det kan også spare deg for mye tid og frustrasjon på lang sikt.
 
-## Hvordan skrive tester i Javascript
+## Hvordan
 
-For å skrive tester i Javascript, kan vi bruke et rammeverk som Jest eller Mocha, som gir oss verktøy til å automatisere tester og generere rapporter. La oss ta en titt på et eksempel på hvordan vi kan skrive en enkel test ved hjelp av Jest:
+For å skrive tester i Javascript trenger du et testingrammeverk som Mocha, Jest eller Jasmine. Her er et eksempel på hvordan du kan skrive en enkel test med Jest:
 
-```Javascript
-// Unit test for addFunction
-const addFunction = require('./myScript');
-test('adds 2 + 2 to equal 4', () => {
-  expect(addFunction(2, 2)).toBe(4);
+```Javascript 
+// Test av en funksjon som legger sammen to tall
+function addNumbers(a, b) {
+  return a + b;
+}
+
+describe("Legge sammen to tall", () => {
+  test("Sjekker om resultatet er riktig", () => {
+    expect(addNumbers(2, 2)).toBe(4);
+  });
 });
 ```
-Her oppretter vi en ny test som kjører funksjonen vår "addFunction" og forventer at resultatet skal være 4. Jest vil da sammenligne dette med det faktiske resultatet og gi oss en rapport om testen passerte eller mislyktes.
 
-## Dypdykk i skriving av tester
+Koden over bruker Jest til å definere en beskrivelse av testen og en forventet utgang. Ved å kjøre testen vil Jest sammenligne den faktiske utgangen med den forventede og indikere om testen har passert eller feilet.
 
-Når vi skriver tester i Javascript, er det viktig å ha en god dekning av koden vår. Dette betyr at vi bør teste forskjellige deler av koden vår, inkludert kanttilfeller og feilhåndtering. Vi bør også prøve å skrive såkalte "isolerte tester", der hver test kun tester en liten del av koden vår for å sikre at det er lettere å finne og fikse eventuelle problemer.
+## Dykk dypere
 
-En annen viktig ting å huske er å skrive lesbare tester. Dette vil ikke bare hjelpe oss med å forstå hva testene våre gjør, men også vil andre utviklere som jobber med koden vår forstå hva som blir testet og hvorfor.
+Å skrive komplette og effektive tester krever forståelse av ulike konsepter som mocking, stubbing og assertions. Det er også viktig å forstå de ulike metodene for å skrive tester basert på type koding du gjør, for eksempel funksjonell eller objektorientert programmering.
 
-# Se også
+Et annet viktig aspekt ved testing er å lære å analysere og tolke testresultatene for å kunne forbedre og optimalisere koden din. Dette kan bidra til å identifisere potensielle feil og forbedre kvaliteten på koden din.
+
+## Se også
 
 - [Jest dokumentasjon](https://jestjs.io/)
 - [Mocha dokumentasjon](https://mochajs.org/)
-- [Forskjellen mellom Jest og Mocha](https://www.testim.io/blog/jest-vs-mocha/)
-
-Ved å følge disse tipsene og bruke verktøy som Jest eller Mocha, kan du enkelt integrere testing i din Javascript-kodebase og sikre at koden din er pålitelig og fungerer som den skal. Lykke til med å skrive tester i din Javascript-utvikling!
+- [Jasmine dokumentasjon](https://jasmine.github.io/)

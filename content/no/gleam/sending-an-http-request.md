@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Sending en http-forespørsel"
+title:                "Sending en http-forespørsel"
+html_title:           "Gleam: Sending en http-forespørsel"
 simple_title:         "Sending en http-forespørsel"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,67 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å sende en HTTP-forespørsel er en viktig del av moderne programvareutvikling. Det lar deg kommunisere med andre programmer og tjenester på nettet og åpner dørene for å bygge kraftige og dynamiske applikasjoner.
+Hvorfor skulle noen ønske å sende en HTTP-forespørsel? En HTTP-forespørsel er en måte å kommunisere med et nettsted eller en webtjeneste på, og det kan være nyttig for å hente informasjon eller utføre handlinger på en begrenset måte.
 
-## Hvordan
+##Slik gjør du det
 
-For å sende en HTTP-forespørsel i Gleam, kan du bruke biblioteket "httpc" som er inkludert som standard i språket. Først må du importere biblioteket ved å legge til følgende linje øverst i filen:
+Det første steget for å sende en HTTP-forespørsel med Gleam er å importere biblioteket `httpc` og `gleam/http`, som er ansvarlig for å sende forespørselen og behandle svaret. Deretter må du opprette en instans av `httpc.Client` og angi URL-en du ønsker å sende forespørselen til. Til slutt kan du bruke funksjonen `send` for å sende forespørselen og få tilbake et svar.
 
 ```Gleam
 import httpc
+import gleam/http
+
+client = httpc.Client.new()
+url = "https://example.com"
+
+response = client.send(gleam/http.get(url))
+
+// Output:
+// Ok(
+//  Response(
+//    status = 200,
+//    headers = Headers([Bytes("content-type"), Bytes("text/html; charset=utf-8")]),
+//    body = Response.Body.Content(Bytes([116, 101, 115, 116]))
+//  )
+// )
 ```
 
-Deretter kan du opprette en forespørsel og velge hvilken metode du vil bruke. Her er et eksempel på å sende en GET-forespørsel til en nettside:
+##Dykke dypere
 
-```Gleam
-let request = httpc.get("https://www.example.com")
-```
+Det finnes flere metoder for å sende en HTTP-forespørsel med Gleam, inkludert `post`, `put`, `delete` og `head`. Disse har alle lignende funksjonalitet som `get`-metoden, men hver av dem er optimalisert for å utføre en spesifikk type handling. I tillegg kan du også sende tilpassede headers og sette en timeout-verdi for forespørselen din.
 
-Du kan også legge til eventuelle parametere eller kropp til forespørselen din:
+##Se også
 
-```Gleam
-let body = httpc.Body.text("Dette er en eksempeltekst")
-let params = [("page", "2"), ("sort", "date")]
-let request = httpc.post("https://www.example.com/articles", body, params)
-```
-
-Når du har opprettet forespørselen, kan du sende den ved å bruke funksjonen "send" og lagre svaret i en variabel:
-
-```Gleam
-let response = httpc.send(request)
-```
-
-Du kan deretter få tilgang til informasjonen i svaret, for eksempel statuskoden og innholdet i responskroppen:
-
-```Gleam
-let status = httpc.Response.status(response)
-let body = httpc.Response.body(response)
-```
-
-## Dypdykk
-
-Når du sender en HTTP-forespørsel, er det viktig å håndtere eventuelle feil som kan oppstå. I Gleam kan du bruke "try" og "match"-uttrykk for å håndtere disse feilene på en elegant måte. For eksempel:
-
-```Gleam
-let response = 
-  try match httpc.send(request) {
-    Ok(r) -> r
-    Error(e) -> httpc.Response.error_response(e)
-  }
-```
-
-Du kan også spesifisere hvilken type respons du forventer å få ved å bruke "body_as" -funksjonen. For eksempel, hvis du forventer en HTML-respons, kan du skrive følgende:
-
-```Gleam
-let html_body = httpc.Response.body_as(response, httpc.Body.html)
-```
-
-Hvis du trenger mer kontroll over forespørselen din, kan du også bruke "request" -funksjonen til å manuelt sette headere og andre parametere før du sender den.
-
-## Se Også
-
-- [Gleam HTTP-bibliotek dokumentasjon](https://gleam.run/modules/httpc)
-- [Din første Gleam HTTP GET-forespørsel](https://medium.com/luizalabs/din-f%C3%B8rste-gleam-http-get-foresp%C3%B8rsel-a0a59b9dad7c)
-- [Bygg en API-klient i Gleam](https://medium.com/luizalabs/build-an-api-client-in-gleam-54ea971c8a86)
+- Offisiell Gleam-dokumentasjon for HTTP-klienten: https://gleam.run/modules/gleam/http/latest/
+- En enkel veiledning til HTTP-forespørsler med Gleam: https://medium.com/@IonicAshley/building-restful-services-in-gleam-9edbd04497e0

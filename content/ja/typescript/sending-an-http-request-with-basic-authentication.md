@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: ベーシック認証を使用してhttpリクエストを送信する"
-simple_title:         "ベーシック認証を使用してhttpリクエストを送信する"
+title:                "基本認証を用いたhttpリクエストの送信"
+html_title:           "TypeScript: 基本認証を用いたhttpリクエストの送信"
+simple_title:         "基本認証を用いたhttpリクエストの送信"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+HTTPリクエストを基本認証で送信する理由は、ウェブアプリケーションやAPIなど、二つの異なるシステム間でセキュリティを確保するためです。基本認証では、ユーザー名とパスワードを使用して認証を行い、認証が成功した場合のみリクエストが送信されます。
 
-HTTPリクエストを基本認証と共に送信することの重要性について説明します。
+## How To
+```TypeScript
+import axios from 'axios';
 
-基本認証を使うと、サーバー側でユーザーの認証を簡単に行うことができます。また、セキュリティやアクセス制限を設定することができるため、データやサービスの保護にも役立ちます。
-
-## 使い方
-
-基本認証を使用してHTTPリクエストを送信する方法について、コーディングの例と出力のサンプルを以下のコードブロックで説明します。
-
-```TypeScript 
-import { request } from 'http';
-
-const options = {
-  hostname: 'example.com',
-  port: 80,
-  path: '/login',
-  method: 'POST',
-  auth: 'username:password'
-}
-
-const req = request(options, (res) => {
-  console.log(`ステータスコード: ${res.statusCode}`)
+// 例：基本認証を使用してAPIエンドポイントにGETリクエストを送信する
+axios.get('https://example.com/api/users', {
+  auth: {
+    username: 'ユーザー名',
+    password: 'パスワード'
+  }
+}).then((response) => {
+  console.log(response.data); // APIからのレスポンスをコンソールに出力
+}).catch((error) => {
+  console.log(error.response.data); // エラーの場合、エラーレスポンスをコンソールに出力
 });
-
-req.end();
 ```
+基本認証を行うには、axiosなどのHTTPクライアントライブラリを使用します。リクエストを送信する際、`auth`オプションを使用して、ユーザー名とパスワードを含むオブジェクトを渡します。認証が必要な場合、サーバーからのレスポンスで認証エラーが返されることに注意してください。
 
-この例では、インポートした`http`モジュールを使用し、基本認証の情報を指定した後、リクエストを送信します。そして、応答コードをコンソールに表示します。
+## Deep Dive
+基本認証では、ユーザー名とパスワードが平文として送信されるため、セキュリティ上のリスクがあります。そのため、HTTPSを使用して暗号化された接続を確立することが重要です。また、ユーザー名とパスワードを暗号化するため、Base64エンコーディングも使用されます。
 
-## ディープダイブ
-
-基本認証を含むHTTPリクエストをより詳細に理解するために、以下のような要素についても学ぶことができます。
-
-- 基本認証のヘッダーとクレデンシャルの形式
-- エラー処理とフロー制御の方法
-- リダイレクトとリトライのサポート
-
-これらの要素を理解することで、より柔軟に基本認証を使用したHTTPリクエストを扱えるようになります。
-
-## 参考リンク
-
-- [Node.jsで基本認証付きのHTTPリクエストを送信する方法](https://stackabuse.com/the-node-js-way-getting-to-know-http/)
-- [Node.jsの基本認証モジュールのドキュメント](https://nodejs.org/api/http.html#http_http_request_options_callback)
-- [基本認証についての詳細な説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## See Also
+- [axios documentation](https://github.com/axios/axios)
+- [HTTP Basic Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

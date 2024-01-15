@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Sending en http-forespørsel"
-simple_title:         "Sending en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "TypeScript: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,33 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-HTTP forespørsler er en viktig del av nettutvikling, og det er et nødvendig konsept å forstå for alle som ønsker å skrive TypeScript-kode. Ved å sende en HTTP forespørsel kan du hente data fra et eksternt nettsted og bruke det i din egen applikasjon. Dette er spesielt nyttig når du integrerer med API-er eller ønsker å vise dynamisk innhold på en nettside.
 
-## Hvordan
-For å sende en HTTP forespørsel i TypeScript, må du bruke et tredjeparts bibliotek som Axios eller Fetch API. La oss ta en titt på et enkelt eksempel ved hjelp av Axios-biblioteket:
+`*Hvorfor skulle noen ønske å sende en HTTP forespørsel?*`
+
+HTTP ("Hypertext Transfer Protocol") er et vanlig protokoll for å kommunisere mellom en klient og en server over internett. Ved å sende en HTTP forespørsel, kan en klient be om data fra en server og motta et svar tilbake. Dette er en nøkkelkomponent i nettapplikasjoner, da det tillater klienter å få tilgang til og bygge inn informasjon fra forskjellige servere.
+
+## Hvordan gjøre det
+
+For å sende en HTTP forespørsel i TypeScript, må du først initialisere en ny XMLHttpRequest-objektet.
 
 ```TypeScript
-import axios from 'axios';
-
-// Sende GET forespørsel
-axios.get('https://jsonplaceholder.typicode.com/users')
-  .then(response => {
-    // Hent data fra respons
-    const users = response.data;
-    // Gjør noe med dataen...
-})
-  .catch(error => {
-    // Håndter eventuelle feil
-    console.log(error);
-});
+// Initialisere en ny XMLHttpRequest-objekt
+let xhr = new XMLHttpRequest();
 ```
 
-I dette eksempelet bruker vi Axios for å sende en GET-forespørsel til en ekstern API-endepunkt som returnerer en liste over brukere. Deretter henter vi ut dataen fra responsen og kan gjøre hva vi vil med den. Du kan også sende andre typer HTTP forespørsler som POST, PUT eller DELETE ved å bruke forskjellige funksjoner fra Axios-biblioteket.
+Deretter må du spesifisere hvilken type forespørsel du vil gjøre (GET, POST, PUT, osv.) og URL-en til serveren du vil kommunisere med.
 
-## Deep Dive
-Når du sender en HTTP forespørsel, er det viktig å forstå responsen du mottar. Som standard returnerer Axios et JavaScript Promise-objekt, som gjør det mulig å kjede flere asynkrone handlinger sammen. Du kan også bruke funksjoner som `async` og `await` for å gjøre koden din mer lesbar og håndtere feil i en mer elegant måte. Det er også viktig å håndtere eventuelle feil som kan oppstå under forespørselen, slik som dårlig nettverksforbindelse eller ugyldig URL.
+```TypeScript
+// Åpne en GET-forespørsel til en URL
+xhr.open('GET', 'https://example.com');
+```
+
+Videre kan du spesifisere eventuelle parametere du vil sende med forespørselen ved hjelp av `send()`-metoden.
+
+```TypeScript
+// Sender en GET-forespørsel til en URL med parametere
+xhr.send('param1=value&param2=value2');
+```
+
+Når responsen kommer tilbake fra serveren, kan du få tilgang til dataene ved hjelp av `responseText` eller `responseXML`-egenskapen til XMLHttpRequest-objektet.
+
+```TypeScript
+// Få tilgang til responsdataene
+let data = xhr.responseText;
+console.log(data);
+```
+
+## Dypdykk
+
+I tillegg til å sende HTTP-forespørsler ved hjelp av XMLHttpRequest-objektet, kan du også bruke andre biblioteker som Axios, Fetch eller Superagent. Disse bibliotekene håndterer mye av den komplekse koden bak å sende en forespørsel og behandle responsen.
+
+Det er også viktig å vite hvordan man håndterer HTTP-forespørsler på en sikker måte. Dette inkluderer å validere brukerinput for å unngå cross-site scripting (XSS)-angrep og bruke autentisering og autorisering for å sikre at kun autoriserte brukere kan få tilgang til data fra serveren.
 
 ## Se også
+
 - [Axios dokumentasjon](https://github.com/axios/axios)
 - [Fetch API dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Sammenligning mellom Axios og Fetch API](https://medium.com/@selvaganesh93/fetch-vs-axios-vs-request-axios-or-fetch-or-request-9f33afa846b5)
+- [Superagent dokumentasjon](https://visionmedia.github.io/superagent/)

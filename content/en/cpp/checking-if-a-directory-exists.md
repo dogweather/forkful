@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "C++ recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "C++"
 category:             "C++"
@@ -11,49 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When writing a C++ program, it is important to ensure that your code can handle all possible scenarios. One common scenario is checking if a directory exists. This is crucial because it prevents your program from crashing or running into errors if a directory does not exist.
+Checking if a directory exists is an essential task in programming, especially when dealing with file manipulation or writing scripts. By ensuring the existence of a directory, we can avoid runtime errors and handle any unexpected scenarios effectively.
 
 ## How To
 
-To check if a directory exists in C++, we can use the `std::filesystem::exists` function from the `<filesystem>` library. This function returns a `bool` value indicating whether the directory exists or not. We can then use an `if` statement to perform certain actions based on the result.
+To check if a directory exists in C++, we use the `std::filesystem` library, which was introduced in C++17. This library provides an easy and platform-independent way of working with files and directories.
 
-Let's take a look at an example:
+First, we need to include the `<filesystem>` header in our program. Then, we can check if a directory exists using the `exists()` function from the `std::filesystem` namespace.
 
 ```C++
-#include <iostream>
 #include <filesystem>
 
-int main() {
-    std::string directory = "my_directory";
+// Path of the directory to be checked
+std::filesystem::path dirPath = "directory_name";
 
-    // Check if directory exists
-    if (std::filesystem::exists(directory)) {
-        std::cout << "Directory exists!" << std::endl;
-    } else {
-        std::cout << "Directory does not exist." << std::endl;
-    }
-
-    return 0;
+// Check if the directory exists
+if (std::filesystem::exists(dirPath)) {
+    std::cout << "Directory exists!";
+} else {
+    std::cout << "Directory does not exist!";
 }
 ```
 
-#### Sample Output
-```
-Directory does not exist.
+The `exists()` function returns a boolean value - `true` if the directory exists and `false` if it doesn't. We can also use the `is_directory()` function to check if the given path is a directory, but not necessarily if it exists.
+
+```C++
+// Check if the given path is a directory
+if (std::filesystem::is_directory(dirPath)) {
+    // Directory exists and it is indeed a directory
+}
 ```
 
-In this example, we are using the `std::filesystem::exists` function to check if a directory named "my_directory" exists in our system. Since it does not exist, the `else` statement will be executed and we will see the output "Directory does not exist."
+The `exists()` function works for both relative and absolute paths. We can also use `path::operator/()` to create a path by appending a directory name to a root path.
 
-If we were to change the `directory` variable to an existing directory name, such as "my_folder," the output would be "Directory exists!".
+```C++
+// Create a path with the directory name appended to the root path
+std::filesystem::path dirPath = "/home/users/";
+dirPath /= "directory_name";
+
+if (std::filesystem::exists(dirPath)) {
+    // Directory exists!
+}
+```
+
+If we want to perform some other operations if the directory does not exist, we can use the `copy()` function along with `error_code` to handle any potential errors.
+
+```C++
+std::filesystem::error_code errorCode;
+
+// Copy a file from directory if it exists
+std::filesystem::copy("directory_name/file.txt", "new_directory/", errorCode);
+
+if (errorCode) {
+    // An error occurred while copying, handle it here
+} else {
+    // File copied successfully
+}
+```
 
 ## Deep Dive
 
-Behind the scenes, the `std::filesystem::exists` function uses the `stat()` system call to check if the directory exists. This function returns a `struct stat` object containing information about the file or directory, including its type and permissions. The `st_mode` field of this object is then checked to determine if it is a directory or a file.
+Under the hood, the `exists()` function uses the `stat()` system call, which checks the existence and status of a file or directory. In case of an absolute path, the `stat()` call first checks if the specified file or directory exists, and then if it is indeed a directory. For relative paths, it works in a similar manner but relative to the current working directory.
 
-One important aspect to note is that the `std::filesystem::exists` function can also check for symbolic links. If you want to check for the existence of a regular file instead of a directory, you can use the `std::filesystem::is_regular_file` function.
+Moreover, the `exists()` function also follows any symbolic links or junction points and returns `true` if any of the intermediaries leading to the final path exists. This behavior can be changed by using the `std::filesystem::file_status` function, which provides additional options such as `none`, `regular`, or `symlink`.
 
 ## See Also
 
-- [C++ File System Library Reference](https://en.cppreference.com/w/cpp/filesystem)
-- [C++ File System Tutorial](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)
-- [C++ stat() system call reference](https://man7.org/linux/man-pages/man2/stat.2.html)
+- [C++ filesystem reference](https://en.cppreference.com/w/cpp/filesystem)
+- [Standard C++ Library in C++17](https://en.wikipedia.org/wiki/C%2B%2B17#Standard_library)
+- [File handling in C++](https://www.geeksforgeeks.org/file-handling-c-classes/)

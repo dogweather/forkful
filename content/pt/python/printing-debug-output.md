@@ -1,5 +1,6 @@
 ---
-title:                "Python: Imprimindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Python: Imprimindo saída de depuração"
 simple_title:         "Imprimindo saída de depuração"
 programming_language: "Python"
 category:             "Python"
@@ -9,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração é importante
+## Por que
 
-Quando escrevemos um código complexo, é muito comum encontrar erros e bugs no processo. A saída de depuração é uma ferramenta essencial que nos ajuda a entender como o código está funcionando e onde estão os possíveis problemas. Sem ela, seria muito mais difícil encontrar e corrigir esses erros.
+Algumas vezes, durante a programação, pode ser necessário entender o processo e o fluxo de execução do código. Ao imprimir saídas de depuração (debug output), podemos visualizar o que está acontecendo dentro do nosso código e identificar possíveis erros ou problemas.
 
-## Como imprimir saída de depuração
+## Como Fazer
 
-Abaixo, mostramos um exemplo simples de como imprimir uma mensagem de depuração em um código Python:
+Para imprimir saídas de depuração em Python, utilizamos a função built-in `print()`. Vamos ver um exemplo simples, em que imprimimos o valor de uma variável:
 
 ```Python
-x = 5
-y = 10
-
-# Imprimir valores das variáveis
-print("O valor de x é:", x)
-print("O valor de y é:", y)
-
-# Imprimir resultado da soma entre x e y
-print("A soma entre x e y é:", x + y)
+nome = "Maria"
+print("O nome é: ", nome)
 ```
 
-Saída:
+A saída será `O nome é: Maria`, e podemos ver que a variável `nome` possui o valor "Maria". Além disso, podemos também imprimir múltiplos valores separando-os por vírgula dentro da função `print()`:
 
+```Python
+a = 10
+b = 5
+print("A é igual a", a, "e B é igual a", b)
 ```
-O valor de x é: 5
-O valor de y é: 10
-A soma entre x e y é: 15
+
+A saída será `A é igual a 10 e B é igual a 5`. Com isso, podemos monitorar o valor de diversas variáveis em diferentes partes do nosso código.
+
+## Deep Dive
+
+Além de imprimir valores de variáveis, também podemos utilizar a função `print()` para imprimir mensagens de depuração. Isso pode ser feito utilizando a formatação de strings em Python, especificando `%s` ou `%d` para indicar o valor de uma string ou um inteiro, respectivamente. Um exemplo:
+
+```Python
+numero = 10
+print("O valor da variável número é %d" % numero) # %d é substituído pelo valor de numero
 ```
 
-Podemos ver que ao imprimir as mensagens de depuração, conseguimos visualizar os valores das variáveis e o resultado da operação, o que nos ajuda a entender como o código está funcionando. Essa é apenas uma maneira simples de imprimir saída de depuração, mas existem outras formas mais avançadas de utilizá-la.
+A saída será `O valor da variável número é 10`. Podemos ainda utilizar a função `format()` para formatar variáveis dentro de uma string, o que pode ser especialmente útil quando se trabalha com mais de um tipo de dado. Exemplo:
 
-## Aprofundando na impressão de saída de depuração
+```Python
+nome = "João"
+idade = 25
+print("Meu nome é {0} e eu tenho {1} anos".format(nome, idade))
+```
 
-Além de imprimir mensagens simples, também podemos utilizar a função `print()` para mostrar informações mais detalhadas, como por exemplo o tipo de dado de uma variável ou o valor de um determinado índice em uma lista. Podemos também utilizar a biblioteca `logging` para criar logs de depuração mais complexos e personalizáveis.
+A saída será `Meu nome é João e eu tenho 25 anos`.
 
-É importante saber quando e como usar a saída de depuração, pois ela pode ser muito útil na identificação e correção de erros em um código. Porém, é necessário ter cuidado para não utilizar excessivamente, pois isso pode diminuir a performance do programa.
+## Veja Também
 
-## Veja também
-
-- [Documentação oficial do Python](https://docs.python.org/3.9/tutorial/index.html)
-- [Artigo sobre boas práticas de depuração em Python](https://realpython.com/python-debugging-pdb/#dont-use-print)
-- [Explicação sobre a biblioteca logging](https://realpython.com/python-logging/)
+- [Documentação Python - F-string](https://docs.python.org/pt-br/3.8/library/string.html#formatstrings)
+- [Artigo sobre Debugging em Python](https://realpython.com/python-debugging-pdb/)

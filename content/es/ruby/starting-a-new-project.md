@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Ruby: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -9,32 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué comenzar un nuevo proyecto en Ruby
-Ruby es un lenguaje de programación versátil y poderoso que ha ganado popularidad en los últimos años. Su sintaxis simple y expresiva hace que sea fácil de aprender para los principiantes y también permite a los desarrolladores más experimentados crear aplicaciones complejas. Si estás buscando comenzar un nuevo proyecto de programación, Ruby es una excelente opción a considerar.
+## Por qué
 
-## Cómo empezar
-Para comenzar un nuevo proyecto en Ruby, primero necesitas tener Ruby instalado en tu sistema. Puedes descargar e instalar la última versión de Ruby desde su sitio web oficial. Una vez que tengas Ruby instalado, puedes utilizar el administrador de paquetes `gem` para instalar cualquier biblioteca o herramienta que necesites para tu proyecto. Utilizar un administrador de paquetes facilita el proceso de gestión de dependencias y asegura que estés utilizando las versiones correctas de las bibliotecas.
+Antes de sumergirnos en cómo empezar un nuevo proyecto en Ruby, es importante entender la razón detrás de ello. La programación en Ruby ofrece una sintaxis simple y elegante, lo que la convierte en una herramienta poderosa y atractiva para desarrolladores de todos los niveles. Empezar un nuevo proyecto en Ruby puede impulsar tu carrera y abrir nuevas oportunidades en el mundo de la tecnología.
 
-Ahora que tienes todo configurado, puedes comenzar a escribir código en Ruby. Aquí hay un ejemplo de una función simple que suma dos números:
+## Cómo empezar un nuevo proyecto en Ruby
 
-```Ruby
-def sumar(a, b)
-  return a + b
-end
+Empezar un nuevo proyecto en Ruby es simple, pero requiere algunos pasos iniciales para configurar tu entorno de desarrollo. Aquí hay un ejemplo básico de cómo puedes crear y ejecutar tu primer programa en Ruby:
 
-puts sumar(5, 7)
+```
+# Crear un nuevo archivo llamado "hola.rb"
+touch hola.rb
+
+# Abrir el archivo en tu editor de texto favorito
+subl hola.rb
+
+# Escribir el siguiente código en el archivo
+puts "¡Hola, mundo!"
+
+# Guardar y cerrar el archivo
+# Ejecutar el archivo en tu terminal
+ruby hola.rb
+
+# Output:
+# ¡Hola, mundo!
 ```
 
-La salida de este código será `12` ya que la función `sumar` toma dos argumentos, los suma y luego devuelve el resultado. Puedes experimentar con diferentes funciones y ver cómo afectan la salida de tu código.
+## Iniciando un nuevo proyecto: Detalles importantes
 
-## Profundizando
-Cuando se trata de comenzar un nuevo proyecto en Ruby, es importante tener en cuenta algunas cosas importantes. Primero, decide si quieres utilizar un enfoque de desarrollo impulsado por pruebas (Test-driven development o TDD) o un enfoque más tradicional en el que escribes el código primero y luego escribes pruebas para él. TDD es recomendado por muchos desarrolladores experimentados como el mejor enfoque ya que te permite escribir código más sólido y de alta calidad.
+Antes de empezar a escribir código, es importante tener una idea clara y definida del objetivo de tu proyecto. ¿Qué problema estás tratando de resolver? ¿Quiénes serán los usuarios finales? ¿Qué características debe incluir tu proyecto? Una vez que tengas un plan claro, puedes seguir estos pasos para iniciar tu proyecto en Ruby:
 
-También es importante planificar tu arquitectura de código antes de comenzar a escribirlo. Piensa en las diferentes partes de tu aplicación y cómo interactuarán entre sí. Esto te ayudará a escribir un código más organizado y fácil de mantener a largo plazo.
+- Configura tu entorno de desarrollo: Necesitarás tener Ruby instalado en tu computadora y un editor de texto para escribir tu código.
+- Crea una estructura de archivos: Organiza tu proyecto en diferentes archivos y directorios para mantenerlo ordenado y fácil de navegar.
+- Utiliza gemas: Utiliza librerías de código ya existentes (llamadas "gemas" en Ruby) para ahorrar tiempo y esfuerzo en la creación de tu proyecto.
+- Haz pruebas: Antes de lanzar tu proyecto al mundo, asegúrate de probarlo y corregir cualquier error que pueda surgir.
 
-Si no estás seguro de cómo estructurar tu proyecto en Ruby, puedes buscar tutoriales y guías en línea para inspirarte. Además, ¡no tengas miedo de hacer preguntas y buscar ayuda en línea! La comunidad de Ruby es muy amigable y siempre está dispuesta a ayudar a los recién llegados.
+Con estos pasos en mente, estás listo para empezar a escribir tu código y dar vida a tu proyecto en Ruby.
 
-# Ver también
-- Ruby Official Website: https://www.ruby-lang.org/es/
-- Ruby on Rails Tutorial: https://www.railstutorial.org/book
-- Learn Ruby in Y minutes: https://learnxinyminutes.com/docs/es-es/ruby-es/
+## Ver también
+
+Si quieres profundizar en el mundo de Ruby y seguir aprendiendo sobre cómo iniciar nuevos proyectos, aquí hay algunas lecturas adicionales que pueden resultarte útiles:
+
+- [El tutorial oficial de Ruby](https://www.ruby-lang.org/es/)
+- [Curso interactivo de Ruby en Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- [HispanoRuby - Comunidad de desarrolladores de Ruby en español](https://hispanoruby.net/)
+
+¡Esperamos que este artículo te haya inspirado a empezar un nuevo proyecto en Ruby!

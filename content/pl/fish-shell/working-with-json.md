@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Praca z json"
+title:                "Praca z json"
+html_title:           "Fish Shell: Praca z json"
 simple_title:         "Praca z json"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pracować z JSON?
+## Dlaczego
 
-JSON (JavaScript Object Notation) jest popularnym formatem przechowywania i przesyłania danych w aplikacjach internetowych. Dzięki swojej prostocie i czytelności, JSON jest często wykorzystywany w tworzeniu interfejsów programistycznych (API). Praca z JSON może być niezbędna dla programistów, którzy chcą korzystać z dostępnych danych ze stron internetowych lub tworzyć własne aplikacje.
+JSON (JavaScript Object Notation) jest popularnym formatem danych wykorzystywanym w wielu dziedzinach, w tym w programowaniu. W tym artykule dowiesz się, jak używać Fish Shell do pracy z plikami JSON i jak wykorzystać to w codziennej pracy.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Kodowanie w Fish Shell z użyciem JSON jest bardzo proste i wygodne. Do tego celu możemy wykorzystać wbudowane polecenia i funkcje Fish Shell. Na przykład, aby odczytać dane z pliku JSON, możemy użyć polecenia ```cat```:
-
-```Fish Shell
-cat example.json
-```
-
-Pozwoli nam to wyświetlić zawartość pliku JSON w konsoli. Natomiast, aby przetworzyć dane z pliku i wyświetlić je w formacie JSON, możemy użyć funkcji ```json_pp```:
+Fish Shell posiada wbudowane funkcje, które ułatwiają pracę z plikami JSON. W celu otworzenia i przetworzenia pliku możesz użyć polecenia "jq" (przełącznik "-R" umożliwia przechowywanie wyników w zmiennych):
 
 ```Fish Shell
-cat example.json | json_pp
+jq -R '.' plik.json
 ```
 
-Dzięki temu funkcja przetworzy dane i wyświetli je w czytelnej formie w konsoli. Jeśli chcemy zapisywać dane w formacie JSON, możemy skorzystać z funkcji ```json_out```:
+Wykorzystując powyższy przykład, możesz wyświetlić całą zawartość pliku JSON w formacie, który jest łatwy do odczytania. Jeśli chcesz zmodyfikować konkretne dane w pliku, możesz użyć polecenia "jq" z opcją "-c" (pozwala na manipulowanie pojedynczymi wartościami):
 
 ```Fish Shell
-echo '{ "id": 123, "name": "John", "age": 30 }' | json_out > output.json
+jq -c '.klucz="nowa wartość"' plik.json
 ```
-
-W ten sposób zapiszemy dane z konsoli do pliku w formacie JSON.
 
 ## Głębsza analiza
 
-Obsługa danych JSON w Fish Shell jest jeszcze bardziej rozbudowana, dzięki różnym funkcjom i poleceniom dostępnym w Shellu. Możemy na przykład użyć funkcji ```json_escape``` do zabezpieczania danych przed niebezpiecznymi znakami lub użyć polecenia ```jq``` do filtrowania i przetwarzania danych w formacie JSON. W Fish Shell istnieje także możliwość wykorzystywania zmiennych i pętli w celu bardziej zaawansowanej pracy z JSON.
+Polecenie "jq" jest niezwykle wszechstronnym narzędziem do manipulowania danymi w formacie JSON. Możesz wykorzystać go do filtrowania i przekształcania danych, a także do tworzenia nowych plików. Fish Shell zawiera również wiele innych przydatnych funkcji i poleceń do pracy z JSON, takich jak "walk" do nawigowania po strukturze pliku czy "merge" do łączenia kilku plików JSON w jeden.
 
-## Zobacz także
+## Zobacz również
 
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Format JSON na stronie W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Kurs programowania w Fish Shell](https://www.digitalocean.com/community/tutorial_series/getting-started-with-fish-shell)
+- [Dokumentacja Fish Shell dotycząca pracy z JSON](https://fishshell.com/docs/current/cmds/jq.html)
+- [Oficjalna strona formatu JSON](https://www.json.org/json-pl.html)
+- [Poradnik dla początkujących: Jak pracować z plikami JSON w Fish Shell](https://dev.to/odpoczynski123/handling-json-files-with-fish-shell-1dp)

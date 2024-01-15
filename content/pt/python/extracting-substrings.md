@@ -1,5 +1,6 @@
 ---
-title:                "Python: Extraindo Substrings"
+title:                "Extraindo Substrings"
+html_title:           "Python: Extraindo Substrings"
 simple_title:         "Extraindo Substrings"
 programming_language: "Python"
 category:             "Python"
@@ -9,50 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Python?
+## Por que
 
-Extrair substrings, ou pedaços de texto específicos de uma string mais longa, é uma habilidade importante para programadores Python. Isso permite que você manipule e analise dados de forma mais eficiente, economizando tempo e esforço. Neste artigo, veremos como extrair substrings em Python.
+Extração de substrings é uma técnica muito útil para manipular e obter informações específicas de strings em Python. É especialmente útil para tarefas como análise de dados e processamento de linguagem natural.
 
 ## Como fazer
 
-Para extrair substrings em Python, podemos usar o método `slice()` ou o operador de corte `:`. Vamos ver alguns exemplos:
+```Python
+# Definindo uma string
+texto = "Este é um texto de exemplo"
 
+# Usando o método "find" para encontrar a posição da palavra "texto"
+posicao = texto.find("texto")
+
+# Imprimindo a posição da palavra
+print(posicao)
+
+# Saída: 12 (a palavra "texto" começa na posição 12 da string)
+
+# Usando a posição para extrair a substring que contém a palavra "texto"
+subtexto = texto[posicao:]
+
+# Imprimindo a substring
+print(subtexto)
+
+# Saída: texto de exemplo
 ```
-# Criando uma string
-frase = "Eu adoro programar em Python"
 
-# Extraindo a primeira palavra
-print(frase[:2]) # Saída: Eu
+Outra maneira de extrair substrings é usando colchetes com um número que representa a posição da letra que você deseja extrair.
+
+```Python
+# Definindo uma string
+frase = "Python é uma linguagem de programação"
 
 # Extraindo a segunda palavra
-print(frase[4:11]) # Saída: programar
+segunda_palavra = frase[7:10]
 
-# Extraindo a última palavra
-print(frase[-6:]) # Saída: Python
+# Imprimindo a segunda palavra
+print(segunda_palavra)
+
+# Saída: é
 ```
-
-Podemos ver que o método `slice()` nos permite especificar o índice inicial e final para extrair a substring desejada. Já o operador de corte `:` nos permite extrair a substring a partir de um determinado ponto até o final da string. Também podemos usar índices negativos para extrair a substring a partir do final da string.
-
-Outra forma de extrair substrings é usando o método `split()`, que divide uma string em uma lista de substrings com base em um determinado caractere ou sequência de caracteres. Vamos ver um exemplo:
-
-```
-# Criando uma string com várias palavras separadas por vírgulas
-nomes = "Maria, João, Pedro, Ana"
-
-# Extraindo a lista de nomes
-print(nomes.split(", ")) # Saída: ['Maria', 'João', 'Pedro', 'Ana']
-```
-
-Podemos ver que, neste caso, definimos a vírgula como o caractere de separação. Isso nos permite extrair as palavras individuais da string original.
 
 ## Mergulho profundo
 
-Além dos exemplos mencionados acima, existem várias outras maneiras de extrair substrings em Python. Por exemplo, podemos usar expressões regulares para encontrar e extrair padrões específicos de uma string. Também podemos usar o método `find()` para encontrar a posição de um determinado caractere ou sequência de caracteres em uma string e, em seguida, usar o método `slice()` para extrair a substring correspondente.
+A extração de substrings em Python é uma tarefa simples, mas é importante ter algumas coisas em mente. Primeiramente, é importante notar que a contagem de posições começa em 0, ou seja, a primeira posição é representada por 0 e não por 1. Além disso, o método `find` só retorna a primeira ocorrência da palavra na string.
 
-Outra técnica útil é usar o método `replace()` para substituir parte de uma string por outra substring. Isso pode ser útil quando queremos extrair uma parte específica de uma string e substituí-la por uma nova substring.
+Outra coisa importante a notar é que o número entre os colchetes ao extrair uma substring representa o índice do caractere. Por exemplo, na string "Python", "P" está na posição 0, "y" está na posição 1 e assim por diante.
 
 ## Veja também
 
-- [Documentação oficial sobre o método slice em Python](https://docs.python.org/3/library/functions.html#slice)
-- [Tutorial sobre expressões regulares em Python](https://www.w3schools.com/python/python_regex.asp)
-- [Tutorial sobre manipulação de strings em Python](https://www.learnpython.org/en/String_Manipulation)
+- [Documentação oficial do Python sobre `find`](https://docs.python.org/3/library/stdtypes.html#str.find)
+- [Explicação detalhada sobre indexação de strings em Python](https://realpython.com/python-strings/#indexing-and-cutting-strings)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 日付の比較"
-simple_title:         "日付の比較"
+title:                "二つの日付を比較する"
+html_title:           "Swift: 二つの日付を比較する"
+simple_title:         "二つの日付を比較する"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,32 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Swiftで日付を比較することは、プログラムの開発において非常に重要なスキルです。特に、アプリケーションでイベントの日時を追跡したり、期限を設定したりする場合には、日付を正しく比較する必要があります。この記事では、日付を比較する方法について詳しく説明します。
+日付を比較する理由は、プログラミングではよくあるシナリオです。たとえば、ユーザーの誕生日と現在の日付を比較して、年齢を計算したい場合などが挙げられます。
 
 ## 方法
 
-日付を比較するには、値をDateオブジェクトに変換し、比較演算子を使用する必要があります。以下の例を参考にしてください。
+まず、2つの日付を比較したいときには、`Date`オブジェクトに変換する必要があります。次に、`Calendar`クラスを使用して、日付を比較することができます。
 
 ```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "yyyy-MM-dd"
-let date1 = formatter.date(from: "2021-04-01")
-let date2 = formatter.date(from: "2021-04-10")
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy/MM/dd" // 日付フォーマットを設定
 
-if date1! > date2! { // date1がdate2より後の日付かどうかをチェック
-  print("date1はdate2よりも後の日付です")
+let date1 = dateFormatter.date(from: "1990/01/01") // タイムスタンプが生成される
+
+let date2 = dateFormatter.date(from: "2020/01/01")
+// 以下、2つの方法で日付を比較することができます
+
+// 1つ目の方法：compareメソッドを使用する
+if date1.compare(date2) == .orderedAscending {
+    print("date1がdate2より前にあります。")
+} else if date1.compare(date2) == .orderedSame {
+    print("date1とdate2は同じです。")
 } else {
-  print("date1はdate2よりも前の日付です")
+    print("date1がdate2より後にあります。")
+}
+
+// 2つ目の方法：compareメソッドを使用しないバージョン
+if date1 < date2 {
+    print("date1がdate2より前にあります。")
+} else if date1 == date2 {
+    print("date1とdate2は同じです。")
+} else {
+    print("date1がdate2より後にあります。")
 }
 ```
 
-上記のコードでは、DateFormatterを使用して文字列からDateオブジェクトを作成し、比較演算子を使用して日付の比較を行っています。日付を比較する際には、日付のフォーマットに注意することが重要です。
+上記のコードを実行すると、以下のような出力が得られます。
 
-## 詳細を掘り下げる
+```
+date1がdate2より前にあります。
+```
 
-日付の比較にはさまざまな方法があります。例えば、日付の前後や同一性を比較する場合には、他の比較演算子を使用することができます。また、日付のフォーマットによっては、DateFormatterの設定を調整する必要があるかもしれません。さらに、タイムゾーンの考慮や時間を考慮した比較方法についても学ぶことができます。
+## 詳細を深く探る
 
-## 併せて読みたい
+日付を比較するときには、いくつかの注意点があります。まず、日付のフォーマットは重要です。例えば、`yyyy/MM/dd`のようにスラッシュで区切られたフォーマットは、西暦のフォーマットとして一般的ですが、`yyyy-MM-dd`のようなハイフンで区切られたフォーマットは、ISO8601フォーマットと呼ばれる規格に従います。日付の比較を行う際には、日付のフォーマットが一致しているかどうかを確認することが重要です。
 
-- [DateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift Standard Library - Date](https://developer.apple.com/documentation/swift/date)
+また、日付だけでなく、時間も比較したい場合は`Date`オブジェクトではなく、`DateTime`オブジェクトを使用する必要があります。日付と時刻を含むオブジェクトを比較するには、`compare`メソッドではなく、`compare(_:toGranularity:calendar:matchingPolicy:)`メソッドを使用します。
+
+## See Also
+
+- [Article in English about comparing dates in Swift](https://www.hackingwithswift.com/example-code/language/how-to-compare-dates)
+- [Apple's documentation on Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming_guide)

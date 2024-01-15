@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi dell'HTML"
+html_title:           "TypeScript: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,43 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Il parsing di HTML è una parte fondamentale della programmazione front-end. Questa operazione ci permette di estrarre informazioni strutturate dal codice HTML di una pagina web, rendendo possibile la manipolazione e la visualizzazione dei dati. Senza il parsing dell'HTML, sarebbe molto più difficile e dispendioso lavorare con il contenuto di una pagina web.
+Ci sono molte ragioni per cui ci si potrebbe impegnare nel parsing di HTML utilizzando TypeScript. Ad esempio, questa tecnica può essere utile per estrarre dati da pagine web e utilizzarli per scopi quali il web scraping o la creazione di applicazioni di raccolta informazioni.
 
 ## Come Fare
-
-Per eseguire il parsing di HTML in TypeScript, possiamo utilizzare la libreria esterna `cheerio`. Questa libreria ci permette di selezionare elementi del DOM usando una sintassi simile a jQuery, rendendo il processo molto più semplice e intuitivo. Vediamo un esempio pratico:
+Per parsare HTML con TypeScript è necessario utilizzare una libreria esterna chiamata `html-parser` disponibile su npm. Di seguito è riportato un semplice esempio di come utilizzarla per estrarre il testo di una pagina web:
 
 ```TypeScript
-// Importiamo la libreria
-import * as cheerio from 'cheerio';
+const parser = require('html-parser');
+const html = '<html><body>Hello, world</body></html>';
 
-// Definiamo il codice HTML da analizzare
-const html = `
-  <html>
-    <body>
-      <h1> Il mio primo post </h1>
-      <p> Benvenuti nel mio blog! </p>
-    </body>
-  </html>
-`
+// Ottieni il nodo radice del documento HTML
+const root = parser.parse(html);
 
-// Utilizziamo la funzione load di cheerio per caricare il codice HTML
-const $ = cheerio.load(html);
+// Accedi al testo contenuto nel nodo body
+const text = root.querySelector('body').innerText;
 
-// Selezioniamo l'elemento <h1> e ne stampiamo il testo
-console.log($('h1').text());
-// Output: Il mio primo post
+console.log(text); // Output: "Hello, world"
 ```
 
-Come vediamo nell'esempio, attraverso l'utilizzo di `cheerio` siamo in grado di selezionare e manipolare facilmente gli elementi del DOM. Possiamo anche utilizzarla per estrarre dati da pagine web esterne, come ad esempio per realizzare degli script di web scraping.
+## Approfondiamo
+Ci sono diverse tecniche per parsare HTML, ma in genere si seguono questi passi:
 
-## Approfondimento
-
-Il processo di parsing dell'HTML non è sempre semplice come nell'esempio mostrato. Spesso ci troviamo ad affrontare pagine web complesse, con strutture diverse e elementi nidificati. In questi casi, è importante saper utilizzare le funzioni avanzate di `cheerio`, come ad esempio gli operatori di ricerca e i filtri. Imparare ad utilizzare questi strumenti ci permette di affrontare qualsiasi situazione e di estrarre i dati desiderati in modo efficiente.
+1. Ottenere il documento HTML: per fare ciò, è possibile utilizzare una libreria HTTP come `axios` per recuperare il codice sorgente di una pagina web.
+2. Utilizzare una libreria di parsing HTML: come accennato in precedenza, `html-parser` è una buona opzione per TypeScript.
+3. Navigare attraverso il documento HTML: puoi utilizzare metodi come `getElementById` o `querySelector` per selezionare specifici elementi del documento e accedere ai loro attributi o al loro testo.
+4. Utilizzare i dati estratti per scopi specifici: una volta che hai ottenuto i dati desiderati dal documento HTML, puoi utilizzarli per qualsiasi scopo tu desideri, come ad esempio analizzare le tendenze di un determinato sito web o automatizzare alcune attività di raccolta dati.
 
 ## Vedi Anche
-
-- [Documentazione di cheerio](https://cheerio.js.org/)
-- [Tutorial su come utilizzare cheerio con TypeScript](https://dev.to/sabersight/how-to-web-scrape-with-cheerio-in-node-js-with-typescript-12ak)
-- [Tutorial su come fare web scraping con TypeScript e cheerio](https://www.codementor.io/@johnaguiar/how-to-web-scrape-with-nodejs-and-cheerio-c9h5m0efs)
+- [Documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs)
+- [Libreria html-parser su npm](https://www.npmjs.com/package/html-parser)
+- [Libreria axios su npm](https://www.npmjs.com/package/axios)

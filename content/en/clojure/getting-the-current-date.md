@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Clojure recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,52 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to know the current date in a Clojure program? Whether it's for tracking user activity, scheduling tasks, or simply displaying the date to the user, there are many reasons why you might want to get the current date in your code.
+## Why 
 
-## How To
-To get the current date in Clojure, we can use the built-in `java.time.LocalDate` class. This class provides methods for working with dates and times and is part of the standard Java library, making it easily accessible in Clojure.
+Getting the current date is a common task in programming, especially in applications that require time-sensitive information or operations. Fortunately, in Clojure, there are simple and efficient ways to retrieve the current date.
 
-To start, we need to import the `java.time` package in our namespace:
+## How To 
+
+To retrieve the current date in Clojure, we can use the `clojure.java-time` library, which provides a set of functions for working with dates and times.
+
+First, we need to require the library in our namespace:
+
+```Clojure 
+(ns my-project.core
+  (:require [clojure.java-time :as t]))
+```
+
+Then, we can use the `now` function to get the current date and time in milliseconds since the epoch:
+
 ```Clojure
-(ns my-namespace
-  (:import (java.time LocalDate)))
+(t/now)
+;=> #object[java.time.Instant 0x100d0c7a "2021-10-26T14:30:10.349Z"]
 ```
 
-Next, we can create a new `LocalDate` object by calling the `now` method:
+We can also specify a specific time zone by using the `now-zoned` function, which takes a parameter for the time zone identifier as defined by the `java.time.ZoneId` class:
+
 ```Clojure
-(def current-date (LocalDate/now))
+(t/now-zoned "Asia/Tokyo")
+;=> #object[java.time.ZonedDateTime 0x1ece360 "2021-10-27T00:30:10.349+09:00[Asia/Tokyo]"]
 ```
 
-We can then use the `format` method to customize the output of our date, using the `java.time.format.DateTimeFormatter` class. For example, if we want to display the date in the format of "MM/dd/yyyy", we can do so as follows:
+To get the current date in a more readable format, we can use the `today` function, which returns a `java.time.LocalDate` object representing the current date in the default time zone:
+
 ```Clojure
-(def formatted-date (.format current-date (DateTimeFormatter/ofPattern "MM/dd/yyyy")))
+(t/today)
+;=> #object[java.time.LocalDate 0x1b7c97c6 "2021-10-26"]
 ```
 
-The `formatted-date` variable will now hold a string representation of the current date. We can also access specific components of the date, such as the month, day, and year:
+We can also format the date using the `formatter` function, which takes a `java.time.format.DateTimeFormatter` object as a parameter:
+
 ```Clojure
-(def current-month (.getMonth current-date))
-(def current-day (.getDayOfMonth current-date))
-(def current-year (.getYear current-date))
+(t/formatter (t/today))
+;=> "Oct 26, 2021"
 ```
 
-When we run our code, we should see the current date and values for the individual components printed out. For example, if today's date is January 1st, 2021, the output would be:
-```
-01/01/2021
-1
-1
-2021
-```
+## Deep Dive 
 
-## Deep Dive
-Behind the scenes, the `LocalDate` class uses the system clock to get the current date. It also takes into account the time zone and daylight savings to ensure accuracy.
+Under the hood, Clojure's date and time functions use the `jsr-310` standard, which is built into the Java runtime environment. This makes it easy to work with date and time data without having to import external libraries.
 
-One interesting feature of the `java.time` package is that it provides support for other calendar systems, not just the traditional Gregorian calendar. This allows users to work with dates and times in different cultural contexts.
-
-If you need to work with times as well as dates, you can also use the `java.time.LocalTime` class in a similar manner.
+Additionally, the use of immutable data structures in Clojure ensures that the retrieved dates are not modified or affected by any changes to the system time or time zone.
 
 ## See Also
-For more information on the `java.time` classes and how to work with dates and times in Clojure, check out the following resources:
-- [Official Java documentation for the `java.time` package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clojure documentation on using Java interop](https://clojure.org/reference/java_interop)
-- [Comprehensive guide to dates and times in Clojure](https://databyteacademy.medium.com/the-comprehensive-guide-to-dates-and-times-in-clojure-7724095f2975)
+
+- [Clojure.java-time Documentation](https://cljdoc.org/d/clojure.java-time/clojure.java-time/0.3.2/doc/readme)
+- [Java SE 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [JSR-310: Date and Time API](https://jcp.org/en/jsr/detail?id=310)

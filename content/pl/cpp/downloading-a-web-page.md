@@ -1,6 +1,7 @@
 ---
-title:                "C++: Pobieranie strony internetowej"
-simple_title:         "Pobieranie strony internetowej"
+title:                "Ściąganie strony internetowej"
+html_title:           "C++: Ściąganie strony internetowej"
+simple_title:         "Ściąganie strony internetowej"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,68 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele powodów, dla których możesz chcieć pobrać stronę internetową za pomocą programowania w języku C++. Może to być konieczność automatyzacji procesów, żądanie danych lub sprawdzenie zawartości danej strony.
+Zastanawiałeś się kiedyś, jak pobierać strony internetowe za pomocą języka C++? Może chcesz stworzyć aplikację do wyświetlania aktualnych danych z internetu lub po prostu spróbować swoich sił w programowaniu? Niezależnie od powodu, pobieranie stron internetowych jest przydatną umiejętnością w dzisiejszym świecie technologii.
 
 ## Jak to zrobić
 
-Aby pobrać stronę internetową za pomocą C++, potrzebujemy narzędzia do wysyłania żądania HTTP i przetwarzać otrzymaną odpowiedź. Jednym z popularnych wyborów jest biblioteka `libcurl`, która zapewnia bogate API do wykonywania takich operacji.
-
-Przykładowy kod wykorzystujący `libcurl` wygląda następująco:
+Do pobierania stron internetowych za pomocą C++ będziemy potrzebować dwóch głównych bibliotek: "iostream" i "curl". Pierwsza służy do wyświetlania danych na ekranie, a druga zajmuje się komunikacją z internetem.
 
 ```C++
-// importujemy bibliotekę
-#include <curl/curl.h>
-
-// funkcja, która zostanie wywołana po otrzymaniu odpowiedzi
-size_t writeCallback(char* contents, size_t size, size_t nmemb, void* userp) {
-  ((std::string*)userp)->append((char*)contents, size * nmemb);
-  return size * nmemb;
-}
+#include <iostream>
+#include "curl/curl.h"
 
 int main() {
-  // inicjalizujemy zmienną do przechowywania danych z odpowiedzi
-  std::string response;
+    // Inicjalizacja CURL
+    CURL *curl = curl_easy_init();
 
-  // inicjalizujemy zmienną cURL
-  CURL* curl = curl_easy_init();
+    // Ustawienie adresu URL do pobrania
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
 
-  if (curl) {
-    // ustawiamy adres URL strony do pobrania
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/");
+    // Ustawienie funkcji do zapisu danych
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, fwrite);
 
-    // ustawiamy funkcję callback do przetworzenia odpowiedzi
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
+    // Ustawienie pliku docelowego dla pobranych danych
+    // W tym przypadku wykorzystujemy funkcję C do tworzenia pliku
+    FILE *outfile = fopen("output.html", "w");
+    if (outfile == NULL) {
+        std::cout << "Nie można otworzyć pliku!" << std::endl;
+        return 1;
+    }
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, outfile);
 
-    // przekazujemy adres do zmiennej, w której będą przechowywane dane
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
-
-    // wykonujemy żądanie HTTP
+    // Wykonanie zapytania i pobranie danych
     CURLcode result = curl_easy_perform(curl);
-
-    // sprawdzamy, czy żądanie wykonane zostało poprawnie
-    if (result == CURLE_OK) {
-      std::cout << response << std::endl; // wypisujemy zawartość odpowiedzi
+    if (result != CURLE_OK) {
+        std::cout << "Błąd pobierania strony!" << std::endl;
+        return 1;
     }
 
-    // zwalniamy zasoby
+    // Zwolnienie pamięci i zamknięcie pliku
     curl_easy_cleanup(curl);
-  }
+    fclose(outfile);
 
-  return 0;
+    std::cout << "Strona została pomyślnie pobrana!" << std::endl;
+    return 0;
 }
+
 ```
 
-Po wykonaniu powyższego kodu, w konsoli powinna pojawić się zawartość pobranej strony internetowej.
+Po uruchomieniu powyższego kodu, powinno zostać pobrane źródło strony https://www.example.com i zapisane do pliku "output.html" w bieżącym folderze. Możesz teraz wykorzystać te dane w dowolny sposób, np. wyświetlić je na ekranie lub przetworzyć dalej.
 
-## Głębszy przegląd
+## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej na temat pobierania stron internetowych za pomocą C++, istnieje wiele dodatkowych narzędzi i bibliotek, które mogą Ci pomóc w tym zadaniu. Należą do nich między innymi `Boost C++ libraries` oraz `Asio C++ library`.
+Biblioteka "curl" jest bardzo potężnym narzędziem do komunikacji z internetem. Oprócz prostego pobierania stron internetowych, oferuje również możliwość wysyłania zapytań HTTP, obsługi nagłówków, wyświetlania postępu pobierania i wiele innych funkcji. Warto zapoznać się z dokumentacją tej biblioteki, aby poznać wszystkie jej możliwości.
 
-Oprócz tego, warto zwrócić uwagę na zagadnienia takie jak obsługa błędów, parsowanie danych oraz zabezpieczenia przed atakami typu SQL injection.
+W przypadku projektów wymagających większej niezawodności i wydajności, można również rozważyć wykorzystanie biblioteki "libcurl", która jest podstawą dla "curl". Pamiętaj jednak, że ta biblioteka jest bardziej skomplikowana w użyciu i wymaga większej wiedzy na temat protokołu HTTP i komunikacji sieciowej.
 
 ## Zobacz także
 
-- [Dokumentacja libcurl](https://curl.haxx.se/libcurl/)
-- [Boost C++ libraries](https://www.boost.org/)
-- [Asio C++ library](https://think-async.com/Asio/)
-- [SQL injection](https://owasp.org/www-community/attacks/SQL_Injection)
+* Dokumentacja biblioteki curl: https://curl.haxx.se/libcurl/ 
+* Przykład wykorzystania biblioteki: http://zetcode.com/articles/libcurl/ 
+* Poradnik programowania w języku C++: https://www.w3schools.com/cpp/default.asp

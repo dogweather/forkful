@@ -1,5 +1,6 @@
 ---
-title:                "C#: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "C#: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "C#"
 category:             "C#"
@@ -9,56 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+##למה?
 
-למה יש לכם צורך לשלוח בקשת HTTP עם אימות בסיסי? בפוסט זה נלמד על הטכניקות השונות שאפשר להשתמש בהן כדי לשלוח בקשת HTTP עם אימות בסיסי בשפת C#.
+למה לשלוח בקשת HTTP עם אימות בסיסי? כי כך ניתן לוודא שהמשתמש זהה ומורשה לבצע פעולות על השרת. זה מאפשר יצירת חיבור מאובטח בין השרת והמשתמש.
 
-## איך לעשות זאת
+##איך לעשות זאת?
 
-בכדי לשלוח בקשת HTTP עם אימות בסיסי, נצטרך להשתמש במחלקת `HttpClient` ובמחלקת `AuthenticationHeaderValue`. נתחיל עם דוגמא פשוטה שתמחיש כיצד להגדיר את האימות בכתובת ה- `URL` של הבקשה:
+לשלוח בקשת HTTP עם אימות בסיסי בשפת C# ניתן באמצעות היצירה של אובייקט מסוג `HttpClient` ותפעולת POST עם ההתאמה המתאימה ל-Firebase. לאחר מכן, יש להוסיף את הכותרת הנכונה בכדי לאמת את המשתמש.
 
-```
-using System;
-using System.Net.Http;
-
-namespace BasicAuthExample
+```C#
+var client = new HttpClient(); //יצירת אובייקט מסוג HttpClient
+var values = new Dictionary<string, string> //יצירת מילון לאיחסון הנתונים הרלוונטיים
 {
-    class Program
-    {
-        static async void Main(string[] args)
-        {
-            // יצירת מופע של HttpClient
-            HttpClient client = new HttpClient();
+    { "username", "<שם משתמש>" },
+    { "password", "<סיסמה>" }
+};
 
-            // הגדרת שם משתמש וסיסמה
-            string username = "myusername";
-            string password = "mypassword";
+var content = new FormUrlEncodedContent(values); //המרת המילון לתוספת בקשת POST
+var result = await client.PostAsync("https://<שם השרת>/authenticate", content); //שליחת הבקשה לאתר הרלוונטי
 
-            // בניית האימות עם השם משתמש והסיסמה שהוגדרו
-            string parameter = username + ":" + password;
-            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(parameter);
-            string base64 = Convert.ToBase64String(bytes);
-            string authentication = "Basic " + base64;
-
-            // הגדרת כותרת האימות בבקשת ה-HTTP
-            client.DefaultRequestHeaders.Add("Authorization", authentication);
-
-            // שליחת בקשת HTTP GET עם אימות בסיסי
-            HttpResponseMessage response = await client.GetAsync("https://www.example.com");
-
-            // הדפסת קוד התגובה
-            Console.WriteLine(response.StatusCode); // אם קיבלנו קוד 200 זה אומר שהתחברנו בהצלחה
-        }
-    }
-}
+Console.WriteLine(result.Content.ReadAsStringAsync().Result); //הדפסת התוצאה של הבקשה
 ```
 
-## חקירה מעמיקה
+בתוצאה, אם ההתחברות הצליחה, יופיע אימות בסיסי בשרת ה-Firebase והמשתמש יוכל לבצע פעולות באתר.
 
-אם ברצונכם לחקור עוד על השליחה של בקשת HTTP עם אימות בסיסי, כדאי לקרוא עוד על פרוטוקול האימות הבסיסי (Basic Authentication Protocol) ועל המחלקות `HttpClient` ו- `AuthenticationHeaderValue` במסמך הרשמי של C#.
+##דיבוג מעמיק
 
-## וכמו כן, באפשרותכם למצוא מידע נוסף על הטכניקות השונות של שליחת בקשות HTTP עם אימות בסיסי באתרים הבאים:
+כאשר נעשה שימוש באימות בסיסי לשליחת בקשת HTTP, חשוב לנקוט בכל הזדהות לכל חלקי המידע הרלוונטיים, כדי לוודא שהתהליך עובד כראוי. בנוסף, כדאי להשתמש בכלים כגון Postman כדי לבדוק ולבצע אימות בסיסי לפני כתיבת הקוד בשפת C#.
 
-* [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
-* [Stack Overflow](https://stackoverflow.com/questions/10315354/c-sharp-http-basic-authentication)
-* [C# Corner](https://www.c-sharpcorner.com/uploadfile/puranindia/http-basic-authentication/)
+##ראו גם
+
+- [מדריך להכנת בקשת HTTP עם אימות בסיסי ב-Java](https://www.baeldung.com/java-http-request)
+- [מסמך רשמי על אימות בסיסי בעזרת Firebase](https://firebase.google.com/docs/auth/web/password-auth)

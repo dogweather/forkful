@@ -1,5 +1,6 @@
 ---
-title:                "Java: 新しいプロジェクトを開始する"
+title:                "新しいプロジェクトを開始する"
+html_title:           "Java: 新しいプロジェクトを開始する"
 simple_title:         "新しいプロジェクトを開始する"
 programming_language: "Java"
 category:             "Java"
@@ -9,47 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+（なぜ新しいプロジェクトをはじめるのか）
+新しいプロジェクトを始める理由はたくさんありますが、主な理由は、新しいスキルを習得したり、自分のアイデアを具体化したりするためです。
 
-プログラミングを始める理由はたくさんありますが、新しいプロジェクトを始めることは、自分のスキルを向上させるために非常に重要です。新しいプロジェクトを始めることで、新しい言語やフレームワークを学ぶことができ、より多くの経験を積むことができます。
-
-## 作り方
-
-新しいプロジェクトを始める際には、まずはじめにJavaの開発環境を準備する必要があります。EclipseやIntelliJ IDEAなどの統合開発環境を使用することで、便利にプログラミングを行うことができます。また、GitHubなどのバージョン管理システムを使用することで、チームでの開発をより効率的に行うことができます。
-
-さて、では実際にプログラミングをしてみましょう。まずはプロジェクトの骨組みとなるクラスを作成しましょう。例えば、以下のようなコードを入力します。
+（始め方）
+新しいJavaプロジェクトを始める方法はとても簡単です！まずは適当なIDEをダウンロードし、そこで新しいJavaプロジェクトを作成します。そして、お好みのコードを書き、実行ボタンを押して結果を確認しましょう。
 
 ```Java
 public class NewProject {
-    public static void main(String[] args) {
-        System.out.println("新しいプロジェクトを始めましょう！");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }
 ```
 
-次に、コンパイルと実行を行うために以下のコマンドを入力します。
-
-```
-javac NewProject.java
-java NewProject
+``` bash
+$ javac NewProject.java
+$ java NewProject
 ```
 
-すると、コンソールに「新しいプロジェクトを始めましょう！」というメッセージが表示されるはずです。これで最低限のプロジェクトの作成は完了です。
+（今回のテーマについて）
+新しいプロジェクトを始めるのはワクワクするものですが、実際には少し手間がかかるかもしれません。まずはプロジェクトの目的や範囲を明確にし、必要なライブラリーやツールを選定しましょう。また、コーディング規約やバージョン管理についても検討することが重要です。
 
-## ディープダイブ
+## 他に見るべきもの
+- Javaプロジェクト管理の基本: https://www.geeksforgeeks.org/manage-java-projects-with-maven/
 
-新しいプロジェクトの作成についてより詳しく知りたい方は、以下のリンクを参考にしてください。
+- Javaコーディングスタイルガイド: https://google.github.io/styleguide/javaguide.html
 
-- Java公式ドキュメント：https://docs.oracle.com/javase/jp/
-- Eclipse公式サイト：https://www.eclipse.org/
-- IntelliJ IDEA公式サイト：https://www.jetbrains.com/idea/
-
-## 詳細情報
-
-新しいプロジェクトの作成は、プログラマーとしてのスキルを向上させるために非常に重要なステップです。新しい言語やフレームワークを学ぶことで、より多くの経験を積むことができますので、ぜひチャレンジしてみてください！
-
-## 関連リンク
-
-- プログラミング入門コース：https://programmershigh.jp/course/course_list/basic_programming/
-- Javaの基礎知識：https://www.javadrive.jp/start/
-- プログラミング言語ランキング：https://www.tiobe.com/tiobe-index/
+- プロジェクト管理ツールを使った開発のコツ: https://dzone.com/articles/scrum-made-simple-with-agile-project-management-too

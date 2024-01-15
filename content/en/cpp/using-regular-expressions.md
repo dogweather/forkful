@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "C++ recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "C++"
 category:             "C++"
@@ -10,73 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Regular expressions are a powerful tool for string manipulation and validation in programming. They allow for efficient and precise pattern matching, making them an essential weapon in a developer's arsenal. Whether you're working on a small personal project or a large enterprise application, knowing how to use regular expressions can greatly enhance your coding skills.
+
+Regular expressions, commonly referred to as "regex", are powerful tools for searching, filtering, and manipulating text data. They allow for complex pattern matching, making tasks like data validation, text parsing, and search and replace operations much more efficient. Engaging in the use of regular expressions can greatly improve productivity and streamline programming tasks.
 
 ## How To
-Using regular expressions in C++ is relatively straightforward. First, we need to include the <regex> header in our code. This provides us with the necessary functions and classes to work with regular expressions.
 
-Next, we can define a regular expression pattern using the constructor of the std::regex class. For example, if we want to find all words containing the letter "a" in a given string, we can use the pattern `std::regex("a+\\w*")`.
-
-Once we have our regular expression pattern, we can use the `std::regex_match` function to check if a string matches the pattern. This function returns a boolean value, indicating whether the string matches the pattern or not. We can also use the `std::regex_search` function to find the first occurrence of the pattern in a string.
-
-Here's a simple example of using regular expressions in C++ to check for valid email addresses:
+To use regular expressions in C++, we need to include the `<regex>` library. Here's a simple example of a regular expression that finds all words starting with the letter "t":
 
 ```C++
 #include <iostream>
 #include <regex>
 
+using namespace std;
+
 int main() {
-    // define regular expression pattern for email addresses
-    std::regex pattern("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b", std::regex_constants::icase);
-    
-    // ask user for input
-    std::string email;
-    std::cout << "Enter an email address: ";
-    std::cin >> email;
-    
-    // check if input matches pattern
-    if(std::regex_match(email, pattern)) {
-        std::cout << "Valid email address!" << std::endl;
-    } else {
-        std::cout << "Invalid email address!" << std::endl;
-    }
-    
-    return 0;
+  regex pattern("t[a-z]*");
+
+  string text = "The cat sat on the mat.";
+
+  sregex_iterator currentMatch(text.begin(), text.end(), pattern);
+  sregex_iterator lastMatch;
+
+  while(currentMatch != lastMatch) {
+    smatch match = *currentMatch;
+    cout << match.str() << endl;
+    currentMatch++;
+  }
+
+  return 0;
 }
 ```
 
-Sample output:
+**Output:**
 
 ```
-Enter an email address: john.doe@email.com
-Valid email address!
+the
+the
+t
+on
+the
+t
 ```
 
-```
-Enter an email address: john.doeemail.com
-Invalid email address!
-```
+In this example, we declare a regex object with the pattern we want to match. Then, we initialize two iterators to loop through the string and find all matches for our pattern. For each match, we use the `str()` method to extract the matching text and print it. We then increment the current match iterator until it reaches the last match.
 
-For more complex pattern matching, we can use the `std::regex_replace` function to replace parts of a string that match the pattern with a new string. This is useful for tasks such as data cleaning and formatting.
+Regular expressions also allow for advanced features like character classes, quantifiers, and grouping. For more in-depth examples and explanations, check out the links in the "See Also" section.
 
 ## Deep Dive
-Regular expressions can get quite complex, with different metacharacters and modifiers that allow for more precise matching. Some commonly used ones include:
 
-- `.` : matches any single character
-- `+` : matches one or more occurrences of the preceding character
-- `*` : matches zero or more occurrences of the preceding character
-- `?` : matches zero or one occurrence of the preceding character
-- `\d` : matches any digit
-- `\w` : matches any alphanumeric character
-- `\s` : matches any whitespace character
+Regular expressions follow a specific syntax and have a variety of special characters and rules. Some key concepts to understand are:
 
-We can also use brackets to create groups of characters and the pipe symbol `|` to specify alternatives. For example, the pattern `(foo|bar)` will match either "foo" or "bar" in a string.
+- **Metacharacters:** Special characters that have a specific meaning in regular expressions, such as `*` for zero or more repetitions, `.` for any single character, and `[]` for character classes.
+- **Quantifiers:** These specify how many times a pattern or character should be repeated, such as `+` for one or more repetitions, `?` for zero or one repetitions, and `{x}` for a specific number of repetitions.
+- **Character classes:** These represent a set of characters and allow for more flexibility in matching. For example, `[A-Z]` represents any uppercase letter.
+- **Grouping:** Using parentheses `()` allows for grouping of characters in a pattern, which can be useful for extracting specific parts of a text.
 
-Regular expressions also support a variety of modifiers, such as case sensitivity, greedy vs non-greedy matching, and lookaheads/lookbehinds. It's worth taking some time to delve into these concepts to fully utilize the power of regular expressions.
+Understanding these concepts can help make regular expressions easier to work with and allow for more precise matching.
 
 ## See Also
-- [C++ Regular Expressions Reference](https://www.cplusplus.com/reference/regex/)
-- [Regex Tutorial for Beginners](https://www.regular-expressions.info/tutorial.html)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 
-Regular expressions may seem daunting at first, but with practice and understanding, they can greatly improve your productivity as a programmer. So go ahead and give them a try in your next project!
+- [C++ Regex Tutorial](https://www.cplusplus.com/reference/regex/tutorial/)
+- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Advanced Regular Expressions in C++](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)

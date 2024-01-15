@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Bash: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,43 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I Bash-programmering är det vanligt att man behöver kombinera (konkatinera) flera strängar för att skapa en komplett text. Detta kan vara användbart när man till exempel behöver skapa en dynamisk filnamn eller en användarvänlig utskrift.
+Att sammanfoga strängar är en vanlig uppgift inom programmering, särskilt inom Bash-scripting. Genom att kombinera flera strängar till en kan du skapa mer dynamiska och intuitiva skript.
 
 ## Hur man gör
 
-För att sätta samman två eller flera strängar i Bash använder man sig av operatorn + (plus). Här är ett exempel på hur man kan göra det:
+För att sammanfoga strängar i Bash använder vi operatorn ```+=``` tillsammans med variabler. Vi tilldelar den nya strängen till variabeln genom att använda ```$``` innan variabelnamnet. Här är ett exempel på hur detta kan se ut:
 
 ```Bash
-förnamn="Maria"
-efternamn="Johansson"
-
-echo "$förnamn $efternamn" # Output: Maria Johansson
+name="Lisa"
+greeting="Välkommen till vår hemsida, "
+greeting+=name
+echo $greeting
 ```
 
-Du kan även kombinera strängar med variabler och andra tecken. Här är ett exempel med specialtecknet "!" och en siffra:
+Output: Välkommen till vår hemsida, Lisa
+
+Som du kan se har vi sammanfogat variabeln "name" med strängen "Välkommen till vår hemsida, " genom att använda ```+=``` operatorn. Detta skapar en ny sträng som vi sedan skriver ut med hjälp av ```echo``` kommandot.
+
+## Djupdykning
+
+I Bash är det möjligt att sammanfoga flera strängar på en gång genom att använda operatorn ```${var1}${var2}```. Här är ett exempel på hur detta kan se ut:
 
 ```Bash
-förnamn="Maria"
-nummer=42
-
-echo "$förnamn! $nummer" # Output: Maria! 42
+firstName="Lisa"
+lastName="Johansson"
+fullName=${firstName}${lastName}
+echo $fullName
 ```
 
-## Utforska djupare
+Output: LisaJohansson
 
-Om du vill gå djupare in i konkatenering av strängar i Bash, kan du använda dig av kommandot `printf`. Detta kommando ger dig mer flexibilitet när det gäller formatering och utforskning av variabler tillsammans med text.
-
-Här är ett exempel som visar hur man kan använda `printf` tillsammans med en variabel och strängar:
+Det är också möjligt att använda strängformatering för att skapa mer strukturerade utskrifter. Ett vanligt sätt att göra detta på är genom att använda ```printf``` kommandot. Här är ett exempel på hur detta kan se ut:
 
 ```Bash
-namn="Lisa"
-printf "Hej, mitt namn är %s" $namn # Output: Hej, mitt namn är Lisa
+name="Lisa"
+age=25
+printf "Hej, mitt namn är %s och jag är %d år gammal.\n" $name $age
 ```
+
+Output: Hej, mitt namn är Lisa och jag är 25 år gammal.
+
+Det finns även andra sätt att sammanfoga strängar i Bash, såsom användning av ```$(command)``` för att köra kommandon och kombinera deras utdata med strängar.
 
 ## Se även
 
-Här är några länkar som kan vara användbara för dig när du utforskar mer om konkatenering av strängar i Bash:
+Här är några användbara länkar för att lära dig mer om att sammanfoga strängar i Bash:
 
-- [Bash Guide for Beginners: String Manipulations](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_04.html)
-- [Bash Hackers Wiki: String Operations](http://wiki.bash-hackers.org/commands/classictest#string_operations)
-- [Bash man-sidan för `printf`](https://linux.die.net/man/1/printf)
+- https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion
+- https://linuxize.com/post/bash-concatenate-strings/
+- https://www.shellscript.sh/variables1.html

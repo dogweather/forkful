@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Verifica se una directory esiste"
-simple_title:         "Verifica se una directory esiste"
+title:                "Verifica dell'esistenza di una cartella"
+html_title:           "Swift: Verifica dell'esistenza di una cartella"
+simple_title:         "Verifica dell'esistenza di una cartella"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,36 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore Swift, potresti trovarti spesso a dover lavorare con file e directory all'interno del tuo codice. Potrebbe quindi essere utile sapere come verificare se una directory esiste o meno. In questo articolo scoprirai come farlo in modo semplice ed efficace.
+Controllare l'esistenza di una directory è fondamentale quando si sta sviluppando un'applicazione in Swift. Questa operazione ci permette di verificare la presenza di una cartella che potrebbe essere necessaria per il funzionamento dell'applicazione stessa.
 
-## Come farlo
+## Come fare
 
-Per verificare se una directory esiste, utilizzeremo la classe `FileManager` di Swift. Ecco un esempio di codice:
-
-```Swift
+Per controllare se una directory esiste, utilizziamo il metodo `FileManager.default.fileExists(atPath:)` passando come parametro il percorso della directory che vogliamo verificare. In questo esempio, assumiamo che la cartella si trovi nella directory principale dell'applicazione.
+ 
+```
+Swift
 let fileManager = FileManager.default
-let directoryPath = "/Users/nome_utente/Documenti/"
-var isDirectory: ObjCBool = false
-if fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        print("La directory esiste.")
-    } else {
-        print("Il percorso specificato non è una directory.")
-    }
+let directory = "Directory"
+let directoryPath = NSHomeDirectory() + "/" + directory
+if fileManager.fileExists(atPath: directoryPath) {
+    print("La directory esiste")
 } else {
-    print("La directory non esiste.")
+    print("La directory non esiste")
 }
 ```
 
-In questo codice, creiamo un'istanza di `FileManager` e assegniamo alla costante `directoryPath` il percorso della directory che vogliamo verificare. Utilizziamo quindi il metodo `fileExists(atPath:)` per verificare se il file o la directory esiste. Se la directory esiste, il valore di `isDirectory` verrà impostato su `true`, altrimenti su `false`.
+Se la directory specificata esiste, il metodo restituisce `true` altrimenti restituisce `false`. Possiamo anche utilizzare il metodo `createDirectory(atPath:withIntermediateDirectories:attributes:)` per creare una directory in caso non esista già.
 
 ## Approfondimento
 
-Oltre al metodo `fileExists(atPath:)`, la classe `FileManager` offre altri metodi utili per gestire file e directory. Ad esempio, possiamo utilizzare il metodo `fileExists(atPath:)` per verificare se un file esiste, oppure `createDirectory(atPath:withIntermediateDirectories:attributes:)` per creare una nuova directory.
+Questo metodo utilizza la classe `FileManager` per verificare l'esistenza di un file o di una directory. Possiamo anche utilizzare il metodo più specifico `fileExists(atPath:isDirectory:)` per verificare solo l'esistenza di una directory.
 
 ## Vedi anche
 
-- [Documentazione di FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Verificare l'esistenza di un file o di una directory in Swift](https://www.hackingwithswift.com/example-code/system/how-to-check-whether-a-file-exists-using-filemanager)
-
-Grazie per aver letto questo articolo su come verificare l'esistenza di una directory in Swift. Spero ti sia stato d'aiuto!
+- [Apple Developer Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift By Sundell - Checking if a file exists using Swift](https://www.swiftbysundell.com/tips/checking-if-a-file-exists-in-swift/)

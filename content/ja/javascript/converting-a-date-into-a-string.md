@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 日付を文字列に変換する"
-simple_title:         "日付を文字列に変換する"
+title:                "「日付を文字列に変換する」"
+html_title:           "Javascript: 「日付を文字列に変換する」"
+simple_title:         "「日付を文字列に変換する」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,36 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+日付を文字列に変換することの最も一般的な理由は、ユーザーにとって読みやすい形式で日付を表示することです。
 
-日付を文字列に変換することに関する記事を書くことの理由は、日付をより理解し、JavaScriptプログラムでより有効に使用するためです。ここでは、日付データ型を文字列に変換する方法を紹介します。
+## 作り方
+日付を文字列に変換するためには、Dateオブジェクトのメソッドである`toLocaleDateString()`を使用します。以下に例を示します。
 
-## 方法
-
-日付を文字列に変換する方法には、さまざまなアプローチがあります。最も一般的な方法は、Dateオブジェクトの`toString()`メソッドを使用することです。このメソッドは、日付を文字列に変換して返します。
-
-```JavaScript
-const date = new Date();
-const dateString = date.toString();
-console.log(dateString); // "Tue Apr 13 2021 12:00:00 GMT+0900 (GMT+09:00)"
+```Javascript
+let currentDate = new Date();
+let dateString = currentDate.toLocaleDateString('ja-JP');
+console.log(dateString); // 出力結果：'2021/1/1'
 ```
 
-これにより、可読性の高い形式で日付が出力されます。しかし、必要に応じてよりカスタマイズした形式の文字列を取得したい場合は、さらに多くのオプションがあります。例えば、`getDate()`、`getMonth()`、`getFullYear()`などのメソッドを使用することで、日付の特定の部分だけを取得することができます。
-
-```JavaScript
-const date = new Date();
-const dateText = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-console.log(dateText); // "4/13/2021"
-```
-
-また、外部ライブラリであるMoment.jsを使用することで、より簡単に日付をフォーマットしたり、ロケールに合わせた表示を行ったりすることができます。
+このように、`toLocaleDateString()`メソッドに言語の指定をすることで、指定された言語に応じた日付の文字列が返されます。
 
 ## 深堀り
+日付を文字列に変換する際、`toLocaleDateString()`メソッドには3つの引数を設定することができます。引数の1つ目は言語の指定、2つ目は地域の指定、3つ目はオプションの設定です。引数を指定しない場合、デフォルトの言語と地域が使用されます。
 
-日付を文字列に変換する際には、主に2つのポイントに留意する必要があります。1つは、日付をどのようなフォーマットで表示するかということです。上で紹介したように、仕様に応じて日付オブジェクトのメソッドを使用するか、外部ライブラリを使うかを考える必要があります。
+また、日付を表す文字列には多様な形式があります。例えば、"2021年1月1日"や"1/1/2021"などがあります。このため、`toLocaleDateString()`メソッドは引数の設定によって日付の表記を変更することができます。
 
-そしてもう1つは、タイムゾーンの扱いです。`toString()`メソッドはデフォルトで世界協定時刻（UTC）を基準として日付を表示します。そのため、必要に応じてタイムゾーンを設定する必要があります。Moment.jsでは、タイムゾーンを指定するための便利なメソッドが用意されています。
+## 詳しくは
+Mozilla Developer Networkの[Date.prototype.toLocaleDateString()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)を参考にしてください。
 
-## See Also
-
-- [JavaScriptのDateオブジェクトのドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.jsの公式ドキュメント](https://momentjs.com/)
+## 参考
+- [Date.prototype.toLocaleDateString() - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+- [日付を文字列に変換する - Qiita](https://qiita.com/nikuni_takasi/items/fe84d260e7545014c4ab)

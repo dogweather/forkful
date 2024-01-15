@@ -1,5 +1,6 @@
 ---
-title:                "C#: Radera tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "C#: Radera tecken som matchar ett mönster"
 simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "C#"
 category:             "C#"
@@ -10,44 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Ibland när man jobbar med textsträngar kan det hända att man behöver ta bort vissa tecken som matchar ett visst mönster. Det kan till exempel vara för att rensa upp data eller för att manipulera texten på ett önskat sätt.
 
-Att ta bort tecken som matchar ett visst mönster är en vanlig åtgärd inom programmering. Det kan vara användbart för att rensa data eller för att manipulera strängar på ett specifikt sätt.
-
-## Så här gör du
-
-För att ta bort tecken som matchar ett mönster i C# kan du använda metoden `Regex.Replace()`. Här är ett enkelt exempel på hur du kan använda den:
+## Hur man gör det
+För att ta bort tecken som matchar ett visst mönster i C#, används metoden `Regex.Replace()`. Den tar in tre parametrar: den ursprungliga textsträngen, mönstret man vill matcha och den nya strängen man vill ersätta matchningen med.
 
 ```C#
-string text = "Bananer är gula men blåbär är blå.";
-string mönster = "[blå|gul]a";
-string resultat = Regex.Replace(text, mönster, "");
-Console.WriteLine(resultat);
+string originalStr = "Hej123världen";
+string modifiedStr = Regex.Replace(originalStr, "[0-9]", "");
+Console.WriteLine(modifiedStr); // Kommer att skriva ut "Hejvärlden"
 ```
 
-I detta exempel använder vi ett reguljärt uttryck för att ta bort alla ord som slutar på "a" och har antingen "blå" eller "gul" i början. Output blir: "är men är".
-
-Du kan också använda `Regex.Replace()` för att ta bort alla tecken som inte matchar ett visst mönster. Här är ett exempel på hur du kan göra det:
-
-```C#
-string text = "12345abcde";
-string mönster = "[^1-5]+";
-string resultat = Regex.Replace(text, mönster, "");
-Console.WriteLine(resultat);
-```
-
-I detta exempel tar vi bort alla tecken som inte är siffror mellan 1 och 5. Output blir: "12345".
+Här har vi angett mönstret `"[0-9]"` som matchar alla siffror i textsträngen. Vi har sedan ersatt dem med en tom sträng, vilket i princip tar bort dem från den ursprungliga strängen. Detta är ett enkelt exempel, men man kan använda mer komplicerade mönster för att göra mer avancerade ändringar i texten.
 
 ## Djupdykning
+Metoden `Regex.Replace()` använder sig av reguljära uttryck (regular expressions) för att matcha mönster i textsträngen. Detta är ett mycket kraftfullt verktyg som låter oss göra avancerade sökningar och manipulationer i text. Reguljära uttryck är dock också väldigt komplicerade och kräver viss kunskap för att använda dem effektivt.
 
-För att förstå hur `Regex.Replace()` fungerar är det viktigt att förstå reguljära uttryck. Ett reguljärt uttryck (eller regex) är en sträng som beskriver ett mönster som vi vill matcha. Genom att kombinera tecken och speciella teckenkoder kan vi skapa komplexa mönster som hjälper oss att manipulera strängar.
-
-För att lära dig mer om reguljära uttryck och `Regex.Replace()`-metoden, kan du kolla in följande resurser:
-
-- [Regex Tutorial (på svenska)](https://codecademy.com/learn/learn-regex)
-- [C# Regex Klass (på svenska)](https://docs.microsoft.com/sv-se/dotnet/standard/base-types/regular-expression-language-quick-reference)
+En sak att tänka på när man använder `Regex.Replace()` är att den returnerar en ny sträng, den ändrar inte den ursprungliga strängen. Om man vill behålla ändringarna måste man tilldela resultatet till en variabel. Om man bara vill byta ut en del av den ursprungliga strängen kan man använda `"$"` följt av numret på delen man vill behålla i den nya strängen.
 
 ## Se även
-
-- [C# String Manipulation (på svenska)](https://www.java.com/sv/download/faq/programming.shtml)
-- [Regex Cheat Sheet (på svenska)](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [RegExr - Online Regex Tester (på svenska)](https://regexr.com/)
+Här är några länkar till andra artiklar som kan vara användbara när man arbetar med reguljära uttryck och `Regex.Replace()` i C#:
+- [Microsoft Docs - Regex.Replace](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace)
+- [W3Schools - RegEx Tutorial](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [C# Corner - Regular Expressions in C#](https://www.c-sharpcorner.com/article/the-power-of-regular-expressions-in-c-sharp/)

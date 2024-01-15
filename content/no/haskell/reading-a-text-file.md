@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Lesing av tekstfil"
+html_title:           "Haskell: Lesing av tekstfil"
+simple_title:         "Lesing av tekstfil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,27 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Velkommen til min blogg om Haskell-programmering! I dag skal vi snakke om lesing av tekstfiler i Haskell. Så hvorfor skal du bry deg om dette? Vel, som en programmerer, vil du ofte ha behov for å lese data fra en tekstfil for å behandle det videre i programmet ditt. Derfor er det viktig å forstå hvordan man leser tekstfiler i Haskell.
 
-## Hvordan
-For å lese en tekstfil i Haskell, må vi først åpne filen og deretter lese innholdet. Vi kan gjøre dette ved hjelp av "openFile" funksjonen. La oss se på et eksempel:
+Hvis du er interessert i funksjonell programmering eller ønsker å lære et nytt programmeringsspråk, kan det å lese en tekstfil være en nyttig øvelse. Denne artikkelen vil vise deg hvordan du kan lese en tekstfil ved hjelp av Haskell, et kraftig og elegant språk som er kjent for sin funksjonelle tilnærming til problemløsning.
+
+## Slik gjør du det
+
+For å lese en tekstfil i Haskell, trenger du først å åpne den ved hjelp av Haskell I/O biblioteket. La oss si at vi har en tekstfil kalt "demo.txt" som inneholder følgende linjer:
 
 ```
-main = do
-    handle <- openFile "tekstfil.txt" ReadMode
-    contents <- hGetContents handle
-    putStrLn contents
-    hClose handle
+Dette er en testfil.
+Den inneholder noen linjer med tekst.
+Vi ønsker å lese denne filen ved hjelp av Haskell.
 ```
 
-Vi åpner her filen "tekstfil.txt" og bruker "hGetContents" funksjonen for å lese innholdet og lagre det i variabelen "contents". Deretter skriver vi ut innholdet ved hjelp av "putStrLn" funksjonen. Til slutt lukker vi filen ved å bruke "hClose" funksjonen. Ved å kjøre denne koden, vil vi få utskrevet innholdet i tekstfilen på skjermen.
+For å lese denne filen, må vi først importere I/O biblioteket ved å legge til følgende linje øverst i filen vår:
 
-## Dypdykk
-La oss nå se nærmere på hvordan "hGetContents" funksjonen fungerer. Denne funksjonen returnerer en streng med hele innholdet i filen, men den leser ikke alt på en gang. I stedet leser den innholdet i filen etter behov, dvs når vi kaller på "putStrLn" funksjonen. Dette gjør at vi kan lese store filer uten å belaste minnet unødvendig.
+```
+import System.IO
+```
 
-En annen tilnærming for å lese tekstfiler i Haskell er å bruke "readFile" funksjonen. Denne funksjonen tar inn filnavnet som parameter og returnerer også en streng med innholdet i filen. Forskjellen er at "readFile" funksjonen leser hele filen på en gang og lagrer det i minnet. Derfor kan dette føre til problemer hvis filen er veldig stor.
+Neste trinn er å åpne filen ved hjelp av `openFile` funksjonen og angi at vi ønsker å lese den ved hjelp av `ReadMode` parameteren. Dette gjøres ved å bruke det `do` notatet, som lar oss kombinere flere I/O handlinger. Her er et eksempel på hvordan det kan se ut:
+
+```
+do
+handle <- openFile "demo.txt" ReadMode
+```
+
+Kjører denne koden vil gi oss en håndterer (en verdi som representerer filen vi åpnet), som vi kan bruke til å utføre flere handlinger. For å lese innholdet i filen, kan vi bruke `hGetContents` funksjonen og lagre resultatet i en variabel. Så, for eksempel:
+
+```
+do
+handle <- openFile "demo.txt" ReadMode
+contents <- hGetContents handle
+```
+
+Vi kan nå bruke `contents` variabelen for å få tilgang til filens innhold. Vi kan for eksempel skrive det ut i konsollen ved å bruke `putStrLn` funksjonen:
+
+```
+do
+handle <- openFile "demo.txt" ReadMode
+contents <- hGetContents handle
+putStrLn contents
+```
+
+Output vil da være:
+
+```
+Dette er en testfil.
+Den inneholder noen linjer med tekst.
+Vi ønsker å lese denne filen ved hjelp av Haskell.
+```
+
+## Dykk dypere
+
+Nå som vi vet hvordan vi kan lese en fil i Haskell, la oss se litt nærmere på hvordan koden faktisk fungerer. Ved å bruke `openFile` funksjonen, åpner vi filen og får en handle tilbake. Dette er en måte å representere filen vår på i koden vår. Deretter bruker vi `hGetContents` funksjonen for å få til innholdet i filen, som er en streng. Vi kan deretter bruke denne strengen som vi vil, for eksempel å skrive den ut, behandle den eller lagre den i en annen fil.
+
+Det er også verdt å merke seg at når vi er ferdige med å jobbe med filen, må vi lukke den ved hjelp av `hClose` funksjonen. Dette er viktig for å unngå eventuelle problemer med filhåndtering. Så, på slutten av koden vår, bør vi legge til:
+
+```
+do
+handle <- openFile "demo.txt" ReadMode
+contents <- hGetContents handle
+putStrLn contents
+hClose handle
+```
 
 ## Se også
-- [Haskell dokumentasjon om lesing av tekstfiler](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html#v:hGetContents)
-- [En tutorial om lesing av tekstfiler i Haskell](https://www.tutorialspoint.com/haskell/haskell_reading_files.htm)
-- [En utfyllende forklaring om hvordan "hGetContents" funksjonen fungerer](https://wiki.haskell.org/I/O_utilities#Function_hGetContents)
+
+- [Haskell I/O Dokumentasjon](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Haskell Tutorial](https://wiki.haskell.org/Tutorials)
+- [Haskell Programming Language](https://www.haskell.org/)

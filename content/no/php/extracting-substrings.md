@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Uttrekking av substrings"
-simple_title:         "Uttrekking av substrings"
+title:                "Uthenting av substringer"
+html_title:           "PHP: Uthenting av substringer"
+simple_title:         "Uthenting av substringer"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,39 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å trekke ut delstrenger fra en tekststreng kan være utrolig nyttig når du arbeider med PHP-programmering. Dette kan hjelpe deg med å manipulere tekst på en mer effektiv måte, noe som sparer deg for både tid og frustrasjon. Hvis du ønsker å lære hvordan du kan trekke ut delstrenger i dine PHP-prosjekter, har du kommet til rett sted.
+Å trekke ut substrings er en viktig funksjon i PHP, spesielt når man jobber med tekstbehandling. Det lar deg enkelt hente ut deler av tekststrenger og bruke dem til å manipulere eller analysere data. Dette kan være nyttig for å behandle brukerinput, søke i store tekstdokumenter og mye mer. 
 
-## Hvordan
+## Hvordan gjøre det
 
-For å trekke ut delstrenger, kan du bruke PHPs built-in funksjoner `substr()` og `mb_substr()`. Disse funksjonene gjør det mulig å angi start- og sluttposisjoner for delstrengen du ønsker å trekke ut.
-
-```PHP
-// Her trekker vi ut de første 5 tegnene fra en tekststreng
-
-$text = "Dette er en tekststreng";
-echo substr($text, 0, 5); // Output: Dette
-```
-
-Du kan også bruke disse funksjonene til å trekke ut delstrenger basert på en bestemt posisjon i tekststrengen. For eksempel kan du bruke `mb_substr()` til å trekke ut delstrenger fra en bestemt posisjon til slutten av tekststrengen.
+Det finnes flere forskjellige funksjoner i PHP som lar deg trekke ut substrings. Her er noen eksempler på hvordan du kan gjøre det: 
 
 ```PHP
-// Her trekker vi ut delstrenger fra posisjon 10 og til slutten av tekststrengen
+// Hente ut en del av en tekststreng fra en bestemt posisjon
+$tekst = "Dette er en tekststreng";
+$del = substr($tekst, 5); // $del vil nå være "er en tekststreng"
 
-$text = "Dette er en tekststreng";
-echo mb_substr($text, 10); // Output: tekststreng
+// Hente ut en bestemt lengde av en tekststreng fra en gitt posisjon
+$tekst = "Dette er en tekststreng";
+$del = substr($tekst, 0, 5); // $del vil nå være "Dette"
+
+// Hente ut en del av en tekststreng basert på et spesifikt ord
+$tekst = "Dette er en tekststreng";
+$del = strstr($tekst, "en"); // $del vil nå være "en tekststreng"
 ```
 
-## Dypdykk
+Som du kan se, er det enkelt å hente ut ønskede substrings ved å bruke disse funksjonene. Du kan også bruke flere forskjellige parametere for å spesifisere hvor du vil starte og avslutte dine substrings. 
 
-Hvis du ønsker å utforske mer avanserte måter å trekke ut delstrenger på, kan du ta en titt på funksjonene `preg_match()` og `preg_match_all()`. Disse funksjonene bruker regulære uttrykk for å trekke ut delstrenger fra en tekststreng basert på et bestemt mønster.
+## Dykkertunn
 
-For eksempel kan du bruke `preg_match()` til å trekke ut telefonnumre fra en tekststreng ved å anvende et regulært uttrykk som matcher på et typisk telefonnummer-format.
+For de som ønsker å utforske mer avanserte funksjoner for å trekke ut substrings, kan visse funksjoner som preg_match og preg_split være nyttige. Disse bruker regulære uttrykk og gir større fleksibilitet når det kommer til å finne og hente ut spesifikke deler av tekst. 
 
-## Se også
+En annen interessant funksjon er str_split, som lar deg splitte en tekststreng opp i mindre deler basert på en gitt lengde. Dette kan være nyttig når du jobber med store mengder tekst og ønsker å dele det opp i mindre biter for enklere behandling. 
 
-For mer informasjon om å trekke ut delstrenger i PHP, kan du sjekke ut disse nyttige ressursene:
+## Se Også
 
-- [PHP manual - substr()](https://www.php.net/manual/en/function.substr.php)
-- [PHP manual - mb_substr()](https://www.php.net/manual/en/function.mb-substr.php)
-- [PHP manual - preg_match()](https://www.php.net/manual/en/function.preg-match.php)
-- [PHP manual - preg_match_all()](https://www.php.net/manual/en/function.preg-match-all.php)
+- [Offisiell PHP Dokumentasjon for substr](https://www.php.net/manual/en/function.substr.php)
+- [Offisiell PHP Dokumentasjon for preg_match](https://www.php.net/manual/en/function.preg-match.php)
+- [Offisiell PHP Dokumentasjon for str_split](https://www.php.net/manual/en/function.str-split.php)

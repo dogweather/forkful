@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi."
+html_title:           "Kotlin: Päivämäärän muuttaminen merkkijonoksi."
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,51 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Java-ohjelmointikielessä päivämäärän muuntaminen merkkijonoksi voi olla hankalaa ja vaivalloista. Onneksi Kotlin tarjoaa helpon ja tehokkaan tavan tehdä tämä prosessi sujuvaksi.
+Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Se voi olla hyödyllistä esimerkiksi kun haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle selkeässä muodossa.
 
-## Kuinka tehdä
+## Miten
 
-### Tapa 1 - `java.text.DateFormat`
+Kotlinin avulla voit helposti muuttaa päivämäärän merkkijonoksi. Se käyttää Java Date and Time API:ta, joten voit käyttää samoja metodeja kuin Javassa.
 
-Kotlinissa voimme käyttää Java-luokkaa `java.text.DateFormat` päivämäärän muuntamiseen merkkijonoksi. Ensiksi, importtaamme luokan:
-
-```Kotlin
-import java.text.DateFormat
-```
-
-Sitten, luomme `DateFormat` -olion halutulla alueellamme ja asetamme päivämäärämuotoilijan haluamaksemme. Esimerkiksi, jos haluamme päivämäärän muotoon "dd.MM.yyyy", käytämme seuraavaa koodia:
-
-```Kotlin
-val dateFormat = DateFormat.getDateInstance(DateFormat.SHORT, Locale("fi", "FI"))
-dateFormat!!.applyPattern("dd.MM.yyyy")
-```
-
-Viimeiseksi, käytämme `format` -metodia `dateFormat` -oliossamme muuntamaan päivämäärän merkkijonoksi:
-
-```Kotlin
-val date = Date()
-val dateAsString = dateFormat.format(date)
-println(dateAsString) // tulostaa esimerkiksi "24.03.2019"
-```
-
-### Tapa 2 - `java.time.format.DateTimeFormatter`
-
-Toinen tapa muuntaa päivämäärä merkkijonoksi on käyttämällä Java 8 `java.time` -pakettia ja sen luokkaa `java.time.format.DateTimeFormatter`. Tämä tapa on joustavampi ja tarjoaa erilaisia vaihtoehtoja päivämäärän muotoiluun. Esimerkiksi, voimme muuttaa päivämäärän muotoon "EEEE, d. MMMM yyyy", jossa näytetään myös viikonpäivä:
+Esimerkiksi jos haluat muuttaa päivämäärän nykyisestä ajankohdasta merkkijonoksi, voit käyttää seuraavaa koodia:
 
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-val formatter = DateTimeFormatter.ofPattern("EEEE, d. MMMM yyyy", Locale("fi", "FI"))
-val formattedDate = LocalDate.now().format(formatter)
-println(formattedDate) // tulostaa esimerkiksi "sunnuntai, 24. maaliskuuta 2019"
+val currentDate = LocalDate.now()
+val formattedDate = currentDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+
+println("Päivämäärä merkkijonona: $formattedDate")
 ```
 
-## Syväsukellus
+Tämä tulostaisi esimerkiksi "20.09.2020" riippuen nykyisestä päivämäärästä.
 
-Kotlin tarjoaa myös omia päivämäärän muotoilutyökaluita kuten `kotlinx-datetime`, jolla voi käsitellä päivämääriä ja aikoja helpommin ja tehokkaammin. Tämä kirjasto on kuitenkin tarkoitettu enemmän Android-sovelluksille kuin yleiseen ohjelmointiin.
+Voit myös muuttaa merkkijonon takaisin päivämääräksi käyttämällä `LocalDate.parse()` -metodia. Esimerkiksi:
+
+```Kotlin
+val dateAsString = "20.09.2020"
+val parsedDate = LocalDate.parse(dateAsString, DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+
+println("Merkkijono muutettuna päivämääräksi: $parsedDate")
+```
+
+Tämä tulostaisi "2020-09-20".
+
+## Syvempi sukellus
+
+Kotlinin Java Date and Time API tarjoaa paljon erilaisia mahdollisuuksia muuttaa päivämäärä merkkijonoksi ja päinvastoin. Voit käyttää erilaisia formaatteja pukeaksesi päivämäärän haluamaasi muotoon. Esimerkiksi:
+
+- "d" - päivämäärä ilman nollia (esim. "5")
+- "dd" - päivämäärä kaksinumeroisena (esim. "05")
+- "MMM" - kuukauden lyhennetty nimi (esim. "Sep")
+- "MMMM" - kuukauden koko nimi (esim. "Syyskuu")
+- "y" - vuosi ilman vuosisadan lukua (esim. "20")
+- "yy" - vuosi kaksinumeroisena (esim. "20")
+- "yyyy" - vuosi nelinumeroisena (esim. "2020")
+
+Voit löytää lisää erilaisia formaatteja [Kotlinin dokumentaatiosta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date-time/index.html#constants).
 
 ## Katso myös
 
-- [Kotlinin dokumentaatio päivämäärän muotoilusta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time/)
-- [Java 8 Java-ajan ja päivämäärän api](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
+- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/datetime.html)

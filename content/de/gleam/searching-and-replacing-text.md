@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Suchen und Ersetzen von Text"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Gleam: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,43 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Text zu suchen und zu ersetzen ist eine grundlegende Fähigkeit beim Programmieren. Es ermöglicht uns, schnell und effektiv Fehler zu korrigieren oder bestimmte Wörter oder Zeichenfolgen in unserem Code zu ändern. Es ist auch besonders hilfreich, wenn wir denselben Code in verschiedenen Stellen wieder verwenden möchten. Daher ist es wichtig, dass wir als Programmierer wissen, wie man Texte suchen und ersetzen kann.
+Ein einfaches Suchen und Ersetzen von Text kann mühsam und zeitaufwendig sein. Mit der aktuellen Version von Gleam kannst du dieses Problem jedoch mit nur wenigen Codezeilen lösen und dir viel Zeit und Arbeit ersparen.
 
-## Wie es geht
+## So geht's
 
-Das Gleam-Standardbibliothek bietet verschiedene Funktionen, um Text zu suchen und zu ersetzen. Hier sind zwei Beispiele:
+Um Text in Gleam zu suchen und zu ersetzen, musst du zuerst die Standardbibliothek `gleam/text` importieren. Hier ist ein Beispiel, wie du den Text "Hallo Welt" in "Guten Tag" umwandelst:
 
-```Gleam
-let ergebnis = Text.replace("Hallo Welt", "Hallo", "Guten Tag")
-// Ergebnis: "Guten Tag Welt"
+```
+import gleam/text
+let input = "Hallo Welt"
+let pattern = "Hallo"
+let replacement = "Guten Tag"
+let result = replace(input, pattern, replacement)
 
-let zahlen = Text.replace("1,2,3,4,5", ",", " ")
-// Ergebnis: "1 2 3 4 5"
 ```
 
-In diesen Beispielen nutzen wir die `replace` Funktion, die drei Argumente akzeptiert - den ursprünglichen Text, den zu ersetzenden Text und den Ersatz. Sie können auch eine Funktion angeben, die entscheidet, welcher Teil des Textes ersetzt werden soll. Diese können wir in einem zusätzlichen Argument angeben:
+Das Ergebnis ist nun `"Guten Tag Welt"`. Einfach, oder? Du kannst auch reguläre Ausdrücke verwenden, um noch flexiblere Suchmöglichkeiten zu haben.
 
-```Gleam
-let ergebnis = Text.replace_with("Hallo Welt", "Hallo", |match| {
-  if match == "Hallo" {
-    "Guten Tag"
-  } else {
-    match
-  }
-})
-// Ergebnis: "Guten Tag Welt"
+```
+import gleam/text
+let input = "Die Sonne scheint"
+let pattern = "[^ ]+"
+let replacement = "die"
+let result = replace(input, pattern, replacement)
+
 ```
 
-Dieses Beispiel zeigt eine Funktion, die entscheidet, dass nur der Text "Hallo" ersetzt werden soll, während alles andere erhalten bleibt.
+Das Ergebnis ist nun `"die die die"`. Mit regulären Ausdrücken kannst du auch Groß- und Kleinschreibung ignorieren oder spezielle Zeichen hinzufügen.
 
-## Tiefe Tauchen
+## Tiefgehende Infos
 
-Es gibt noch weitere Funktionen in der Gleam-Standardbibliothek, die uns beim Suchen und Ersetzen von Text helfen können. Unter anderem gibt es Funktionen wie `find`, `contains`, `first_match`, `matches`, die es uns ermöglichen, Teile des Textes zu finden, die mit bestimmten Kriterien übereinstimmen. Auch können wir reguläre Ausdrücke verwenden, um noch komplexere Suchanfragen zu erstellen.
-
-Ein wichtiger Aspekt beim Suchen und Ersetzen von Text ist die Leistung. Durch die Verwendung von Algorithmen wie Boyer-Moore oder Knuth-Morris-Pratt kann die Suche nach Text in Millionen von Zeichen sehr schnell erfolgen. Daher ist es wichtig, dass wir uns mit diesen Algorithmen vertraut machen, um unsere Programmierfähigkeiten weiter zu optimieren.
+Du kannst auch tiefer in das Thema suchen und ersetzen eintauchen, indem du dir die Dokumentation von `gleam/text` ansiehst. Dort findest du alle verfügbaren Funktionen und ihre Verwendung. Außerdem kannst du die Musterlösungen der Community durchsuchen und deine eigenen Fähigkeiten im Umgang mit Texttransformationen verbessern.
 
 ## Siehe auch
 
-- [Gleam-Standardbibliothek](https://gleam.run/) - Offizielle Gleam-Dokumentation
-- [Einführung in die Textverarbeitung mit Gleam](https://gleam.run/articles/text-processing) - Tutorial zur Verwendung von Textverarbeitungsfunktionen in Gleam
-- [Einführung in reguläre Ausdrücke](https://gleam.run/articles/regex) - Artikel über die Verwendung von regulären Ausdrücken in Gleam.
+- Die offizielle Dokumentation von `gleam/text`: https://gleam.run/libraries/text
+- Reguläre Ausdrücke erklärt: https://www.regular-expressions.info/
+- Die Gleam-Community auf Discord: https://discord.gg/5Ju6gHzm

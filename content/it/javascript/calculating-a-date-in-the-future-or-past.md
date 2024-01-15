@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Javascript: Calcolare una data nel futuro o nel passato"
 simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Perché
+Calcolare una data nel futuro o nel passato è utile quando si deve pianificare una programmazione o tenere traccia del tempo trascorso. Ad esempio, è possibile utilizzarlo per creare promemoria o visualizzare il numero di giorni mancanti prima di una data importante.
 
-Calcolare una data nel futuro o nel passato può essere utile in diverse situazioni, ad esempio per programmare un evento o per calcolare l'età di qualcuno.
+## Come fare
+In Javascript, esistono diverse librerie e funzioni incorporate che consentono di calcolare una data nel futuro o nel passato. Una delle opzioni più semplici è utilizzare il metodo `getDate()` dell'oggetto `Date`, specificando il numero di giorni da aggiungere o sottrarre. Ad esempio, per ottenere la data di domani, si può utilizzare questo codice:
 
-## Come Fare
-
-La logica di base per calcolare una data nel futuro o nel passato è la stessa: bisogna prima ottenere la data attuale e poi aggiungere o sottrarre il numero di giorni, mesi o anni desiderato. Con Javascript, è possibile utilizzare l'oggetto Date e i suoi metodi per ottenere e manipolare date.
-
-```
-// Ottenere la data attuale
-let today = new Date();
-
-// Aggiungere 7 giorni alla data attuale
-let futureDate = today.setDate(today.getDate() + 7);
-
-// Stampare il risultato in formato MM/GG/AAAA
-console.log(`${today.getMonth() + 1} / ${today.getDate()} / ${today.getFullYear()}`);
-// Output: 3 / 23 / 2020
+```Javascript
+let oggi = new Date(); // ottiene la data di oggi
+let domani = oggi.getDate() + 1; // aggiunge un giorno alla data di oggi
+console.log(domani); // stampa la data di domani in formato numerico
 ```
 
-Nell'esempio sopra, abbiamo utilizzato il metodo `setDate()` per impostare il giorno della data al valore della data attuale più 7 giorni. È importante notare che i mesi in Javascript vanno da 0 a 11, quindi abbiamo dovuto aggiungere 1 quando abbiamo stampato il mese.
+Il codice dovrebbe stampare "1", poiché oggi è il primo giorno del mese. Per visualizzare la data completa in formato leggibile, è possibile utilizzare il metodo `toLocaleDateString()`:
 
-È possibile utilizzare lo stesso approccio per sottrarre una quantità di giorni, mesi o anni dalla data attuale. Ad esempio, per ottenere la data di oggi 2 anni fa si potrebbe utilizzare il seguente codice:
-
-```
-let twoYearsAgo = today.setFullYear(today.getFullYear() - 2);
-console.log(`${today.getMonth() + 1} / ${today.getDate()} / ${today.getFullYear()}`);
-// Output: 3 / 23 / 2018
+```Javascript
+console.log(domani.toLocaleDateString()); // stampa la data di domani nel formato locale
 ```
 
-## Approfondimento
+L'output dovrebbe essere qualcosa del genere: "giovedì, 2 settembre 2021". In questo modo, si può facilmente personalizzare il formato della data in base alle proprie preferenze.
 
-L'oggetto Date in Javascript può sembrare complicato, ma è molto potente e versatile. Oltre ai metodi utilizzati nell'esempio sopra, ci sono molti altri che possono essere utili per calcolare date in modo più preciso. Ad esempio, il metodo `setMonth()` permette di impostare il mese di una data specifica.
+## Deep Dive
+Se si desidera calcolare una data nel futuro o nel passato in base ad un'unità di tempo diversa dai giorni, come settimane, mesi o anni, si può utilizzare il metodo `set...()` dell'oggetto `Date`. Ad esempio, per ottenere la data che si trova tra tre mesi dalla data di oggi, si può utilizzare questo codice:
 
-Un altro modo per calcolare date nel futuro o nel passato è utilizzando la libreria Moment.js, che offre funzioni più avanzate e una sintassi più semplice per manipolare date e orari.
+```Javascript
+let oggi = new Date(); // ottiene la data di oggi
+let traTreMesi = oggi.setMonth(oggi.getMonth() + 3); // aggiunge tre mesi alla data di oggi
+console.log(traTreMesi.toLocaleDateString()); // stampa la data tra tre mesi in formato leggibile
+```
 
-## Vedi Anche
+Tenendo conto che oggi è il 1° settembre 2021, l'output sarà "venerdì, 1 dicembre 2021". Ovviamente, si può utilizzare questo concetto per calcolare una data nel passato semplicemente sottraendo i mesi desiderati. D'altra parte, se si utilizza una libreria come Moment.js, è possibile effettuare operazioni ancora più complesse, come calcolare una data in base ad un preciso formato o utilizzando una data di riferimento differente da quella di oggi.
 
-- [Documentazione ufficiale di Javascript Date](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/) – libreria per la manipolazione delle date in Javascript
+## Vedi anche
+- [Documentazione ufficiale di Javascript su oggetto Date](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Calcolo di date nel futuro e nel passato in Python](https://www.pythonpool.com/python-datetime-add-days/)

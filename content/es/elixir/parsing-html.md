@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Analizando html"
-simple_title:         "Analizando html"
+title:                "Interpretando html"
+html_title:           "Elixir: Interpretando html"
+simple_title:         "Interpretando html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,22 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-El análisis de HTML es crucial para cualquier persona interesada en desarrollar aplicaciones web en Elixir. No solo le permite extraer y manipular datos de una página web, sino que también puede ayudar a automatizar procesos y mejorar la eficiencia del desarrollo.
+
+Si eres un desarrollador web, es casi seguro que en algún momento tendrás la tarea de extraer información de una página web. Aquí es donde entra en juego el análisis de HTML. En lugar de hacerlo manualmente, puedes aprovechar la potencia de Elixir para automatizar el proceso.
 
 ## Cómo hacerlo
-Para realizar el análisis de HTML en Elixir, podemos utilizar la biblioteca Floki. Primero, debemos instalarla en nuestro proyecto agregando `{:floki, "~> 0.30"}` a la lista de dependencias en nuestro archivo `mix.exs`. Luego, podemos comenzar a realizar análisis de HTML utilizando la función `Floki.parse/1`. Por ejemplo, si queremos obtener el título de una página, podemos hacer lo siguiente:
+
+El código Elixir para analizar HTML es bastante sencillo y eficiente. Primero, necesitarás instalar y requerir la librería `Floki`, que nos permite navegar y manipular el DOM de forma fácil y legible:
 
 ```Elixir
-html = "<html><head><title>Mi blog de Elixir</title></head></html>"
-Floki.parse(html) |> Floki.find("title") |> Floki.text() # Devuelve "Mi blog de Elixir"
+# Instalación
+mix deps.get
+
+# Requerir la librería
+require Floki
 ```
 
-Del mismo modo, podemos utilizar `Floki.find/2` para encontrar un elemento específico en la página y `Floki.attribute/2` para obtener sus atributos. Para más ejemplos y opciones de búsqueda, consulta la documentación de Floki en [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html).
+Luego, simplemente debes obtener el HTML de la página que deseas analizar, ya sea a través de una petición HTTP o leyéndolo desde un archivo, y pasarlo como parámetro a la función `Floki.parse/1`:
+
+```Elixir
+# Ejemplo de petición HTTP
+html = HTTPoison.get!("https://miweb.com").body
+
+# O leerlo desde un archivo
+html = File.read!("mipagina.html")
+
+# Parsear el HTML con Floki
+parsed = Floki.parse(html)
+```
+
+Ahora, para extraer la información que necesitas, puedes utilizar el poderoso patrón de coincidencia de Elixir en combinación con los selectores CSS de Floki. Por ejemplo, si quieres obtener todos los enlaces de la página, puedes hacer lo siguiente:
+
+```Elixir
+# Utilizando patrón de coincidencia
+for %{tag: :a, href: link} <- parsed, do: link
+
+# Utilizando selectores CSS
+Floki.find(parsed, "a")
+|> Floki.attribute("href")
+```
 
 ## Profundizando
-El análisis de HTML a menudo implica más de lo que se puede hacer con Floki. Por ejemplo, puede ser necesario recorrer múltiples páginas o realizar acciones en función de ciertas condiciones en la página. Para eso, se pueden utilizar otras bibliotecas como HTTPotion para obtener los datos de la página y Poison para analizar el código fuente HTML. También se pueden utilizar otras opciones de búsqueda avanzada en Floki, como `Floki.match/4` y `Floki.select/2`. Explora lo que estas bibliotecas tienen para ofrecer y encuentra la combinación perfecta para tus necesidades.
+
+La librería Floki utiliza la librería `html_entities`, lo que nos permite manejar entidades HTML en los nodos del DOM. Además, también podemos utilizar expresiones regulares y la función `Floki.match?/2` para realizar búsquedas más precisas en el HTML.
 
 ## Ver también
-- [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html)
-- [https://github.com/edgurgel/httpotion](https://github.com/edgurgel/httpotion)
-- [https://github.com/devinus/poison](https://github.com/devinus/poison)
+
+- Documentación de Floki: https://hexdocs.pm/floki/readme.html
+- Librería `html_entities`: https://hexdocs.pm/html_entities/readme.html

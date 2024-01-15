@@ -1,6 +1,7 @@
 ---
-title:                "Java: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Tarkista onko hakemisto olemassa"
+html_title:           "Java: Tarkista onko hakemisto olemassa"
+simple_title:         "Tarkista onko hakemisto olemassa"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,39 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On olemassa monia tilanteita, joissa sinun voi olla tarpeen tarkistaa, onko hakemisto olemassa. Esimerkiksi haluat ehkä tarkistaa, onko tiedosto tallennettu tietokoneellesi ennen kuin yrität avata ja käsitellä sitä.
+On hyödyllistä tarkistaa, onko hakemistoa olemassa, kun halutaan varmistaa, että tiettyä tiedostopolkua voidaan käyttää oikein ohjelmassa. Tämä auttaa myös välttämään virheitä ja etukäteen käsittelemään mahdollisia ongelmia.
 
 ## Miten
 
 ```java
-import java.io.File;
-
-public class Hakemisto {
-
-    public static void main(String[] args) {
-
-        // Luo uusi tiedosto-olio
-        File tiedosto = new File("polku/hakemisto");
-
-        // Tarkista onko hakemisto olemassa
-        if (tiedosto.isDirectory()) {
-            System.out.println("Hakemisto on olemassa!");
-        } else {
-            System.out.println("Hakemistoa ei löytynyt.");
-        }
-    }
+if (directory.exists()) {
+  System.out.println("Hakemisto on olemassa!");
+} else {
+  System.out.println("Hakemistoa ei ole olemassa.");
 }
 ```
 
-Koodinpätkässä luodaan uusi tiedosto-olio, joka osoittaa tiettyyn hakemistoon. Sitten tarkistetaan, onko tätä hakemistoa olemassa käyttämällä `isDirectory()` -metodia. Jos hakemisto on olemassa, tulostetaan viesti "Hakemisto on olemassa!", muuten tulostetaan viesti "Hakemistoa ei löytynyt."
+Koodin ensimmäisellä rivillä tarkistetaan, onko hakemisto olemassa ja sen jälkeen tulostetaan vastaava viesti riippuen tuloksesta. Java tarjoaa valmiin exists() -metodin, joka palauttaa totuusarvon sen perusteella, löytyykö hakemisto.
 
-## Syväkuopat
+## Syvä Sukellus
 
-On tärkeää huomata, että tarkistaessaan hakemiston olemassaoloa, ohjelma tarkistaa vain, onko hakemisto olemassa. Se ei tarkista, onko tiedostopolku oikein tai onko kyseessä todellinen hakemisto. Tämä voi johtaa virheelliseen tulokseen, jos esimerkiksi annat väärän hakemiston nimen.
+Hakemiston olemassaolon tarkistaminen voi myös auttaa välttämään virheitä, kuten NullPointerExceptionia. Tämä on erityisen tärkeää silloin, kun käsitellään tiedostoja ja polkuja, joita käyttäjä voi itse muokata. Jos halutaan tarkistaa, että hakemisto on olemassa ja sitä voidaan käyttää, kannattaa käyttää myös try-catch -lohkoa.
 
-Toinen asia, joka kannattaa huomata, on että `isDirectory()` -metodi palauttaa `false`, jos tarkistettava tiedosto on olemassa, mutta se ei ole hakemisto. Tässä tapauksessa kannattaa käyttää `isFile()` -metodia tarkistaaksesi, onko kyseessä tiedosto.
+```java
+try {
+  File directory = new File("polku/hakemisto");
+  if (directory.exists()) {
+    // tee jotain tiedostolle
+  } else {
+    // tulosta virheilmoitus tai tee jotain toista
+  }
+} catch (Exception e) {
+  // käsittely virheille
+}
+```
+
+Java tarjoaa myös muita hyödyllisiä metodeja ja ominaisuuksia, kuten isDirectory(), jonka avulla voidaan tarkistaa onko kyseessä hakemisto vai tiedosto.
 
 ## Katso myös
 
-- java.io.File - Java API Documentation: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- How to check if directory exists using Java: https://www.baeldung.com/java-check-directory-exists
+- [Java File-luokka](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [Java File Systems -opas](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+- [Java try-catch -lohko](https://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)

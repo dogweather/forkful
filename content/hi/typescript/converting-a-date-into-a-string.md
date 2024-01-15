@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: तारीख को स्ट्रिंग में बदलना"
-simple_title:         "तारीख को स्ट्रिंग में बदलना"
+title:                "तारीख को एक स्ट्रिंग में रूपांतरण करना"
+html_title:           "TypeScript: तारीख को एक स्ट्रिंग में रूपांतरण करना"
+simple_title:         "तारीख को एक स्ट्रिंग में रूपांतरण करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -9,47 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्यों
 
-Kisi bhi programming language mein, tithiyon ko ek string mein badalna zaroori ho sakta hai. Ye dates aur times ko ek readable format mein rakhne ke liye zaroori hai. TypeScript mein bhi, date ko string mein convert karna aasaan hai aur iss blog post mein hum aapko iss process ki sahi tarika batayenge.
+दिनांक को स्ट्रिंग में रूपांतरित करने के लिए कोई व्यक्ति क्यों लगेगा, उसके पीछे का कारण है कि जोन टाइम और तारीख को प्रदर्शित करने के लिए इस्तेमाल किया जा सकता है और इससे दिनांक को स्ट्रिंग के साथ जोड़कर पेश किया जा सकता है।
 
-## Kaise Karein
-
-Date ko string mein convert karne ke liye, hum `toLocaleString()` method ka istemaal karenge. Iske liye, hum sabse pehle ek `Date` object banayenge. Fir `toLocaleString()` method ko iss object pe call karenge aur parameters ke roop mein hum desired date or time format ko specify karenge. Chaliye shuru karte hain!
-
-```TypeScript
-let currentDate = new Date(); 
-console.log(currentDate.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } ));
-```
-Yeh humare console mein kuch iss tarah ki output dega: "Wednesday, 2021, June 23". Aap apne desired format ke hisaab se parameters change kar sakte hain.
-
-Ab agar hum sirf time aur date ko alag alag parts mein print karna chahte hain, toh hum `toLocaleTimeString()` aur `toLocaleDateString()` methods ka istemaal kar sakte hain.
-
-```TypeScript
-console.log(currentDate.toLocaleTimeString('en-US'));
-console.log(currentDate.toLocaleDateString('en-US'));
-```
-
-Ismein humare console mein time aur date alag alag tarah se print honge: "11:05:00 AM" aur "06/23/2021".
-
-## Gehri Jhaank
-
-Hamesha accha practise hoga ke hum `toLocaleString()` method ka `override` property bhi istemaal karein. Iss property se hum apne date aur time format ko customize kar sakte hain. `override` property hume ek `Date` object return karega, jiske saath hum `toLocaleString()` method ko fir se call kar sakte hain aur desired format ko specify kar sakte hain.
+## कैसे करें
 
 ```TypeScript
 let currentDate = new Date();
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-let dateToString = currentDate.toLocaleString('en-US', options);
-console.log(dateToString); // Output: "Wednesday, 2021, June 23"
-
-let customDate = dateToString.toLocaleString('en-US', { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric' });
-console.log(customDate); // Output: "Wed, 21, 6/23"
+console.log(currentDate.toString()); 
 ```
+आप TypeScript में `Date` ऑब्जेक्ट का उपयोग करके पूर्व-निर्धारित अनुसूची पर वर्तमान दिनांक बना सकते हैं। फिर आप स्ट्रिंग रूप में `toString()` फंक्शन का उपयोग करके इसे कन्वर्ट कर सकते हैं। आप अपनी आवश्यकतानुसार फॉरमेट को भी सेट कर सकते हैं। इससे आपको वर्तमान दिनांक को फॉरमेट ठीक तरीके से प्रदर्शित करने में सहायता मिलेगी।
 
-Iss tarah hum apne date aur time format ko apne requirements ke hisaab se customize kar sakte hain.
+## गहराई में जाएं
 
-## See Also
+JavaScript, और उससे संबंधित TypeScript भी, में दिनांक स्ट्रिंग रूप में कन्वर्ट करने के कई तरीके हैं। यह तरीकों भिन्न-भिन्न अनुसूचियों और फॉरमेट्स को भी समर्थन करते हैं। आप `toLocaleString()` फंक्शन का भी इस्तेमाल कर सकते हैं ताकि आप विभिन्न भाषाओं और अन्य विशेषताओं को भी शामिल कर सकें। इससे आपको अपने उपयोगकर्ताओं के उद्देश्यों के लिए स्थान सुविधा भी प्रदान करेगा।
 
-Iss blog post mein humne dekha ki hum kaise TypeScript mein date ko string mein convert kar sakte hain. Agar aapko aur zyada jaankari chahiye inbuilt methods ke baare mein toh aap iss [documentation](https://www.typescriptlang.org/docs/handbook/internationalization.html) ko check kar sakte hain.
+## देखें भी
 
-Agar aapko ye blog post helpful laga ho, toh humein [Twitter](https://twitter.com/techtouhid) pe zaroor follow karein. Aur agar aapko koi aur TypeScript ya programming se related topic pe blog post chahiye ho, toh humein [email](mailto:techblog@example.com) karke bata sakte hain. Happy coding! 🚀
+- [JavaScript में दिनांक के साथ काम करने के तरीके](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript दस्तावेज़ीकरण: Date](https://www.typescriptlang.org/docs/handbook/2/classes.html#date)
+- [TypeScript Playground](https://www.typescriptlang.org/play

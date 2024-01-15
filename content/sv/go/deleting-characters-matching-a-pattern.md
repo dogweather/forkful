@@ -1,6 +1,7 @@
 ---
-title:                "Go: Ta bort tecken som matchar ett mönster"
-simple_title:         "Ta bort tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "Go: Radera tecken som matchar ett mönster"
+simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Ibland behöver man ta bort vissa tecken från en textsträng baserat på ett visst mönster. Det kan vara till exempel när man vill filtrera ut oönskade tecken eller när man vill ändra utseendet på en text.
 
-I många Go-programmeringsprojekt finns det ofta behov av att manipulera textsträngar för att rensa bort oönskade tecken. Att kunna radera tecken som matchar ett mönster är därför en användbar funktion som kan underlätta både utveckling och optimering av kod.
-
-## Hur man gör det
-
-För att radera tecken som matchar ett visst mönster i en sträng, kan man använda sig av Go:s inbyggda funktion `strings.ReplaceAll()`. Till exempel, om vi vill ta bort alla siffror från en sträng kan vi använda `strings.ReplaceAll(str, "0", "")`. Detta skulle ersätta alla förekomster av "0" med en tom sträng och därmed radera alla siffror från den ursprungliga strängen.
+## Så här gör du
+Om du vill ta bort tecken från en textsträng baserat på ett mönster kan du använda dig av funktionen `ReplaceAllString` i Go. För att använda den behöver du importera paketet `regexp` för att använda reguljära uttryck. Sedan kan du använda följande syntax för att ta bort tecken baserat på mönstret "abc" från en textsträng:
 
 ```Go
-str := "Det här är en text med siffrorna 123,"
-str = strings.ReplaceAll(str, "1", "")
-str = strings.ReplaceAll(str, "2", "")
-str = strings.ReplaceAll(str, "3", "")
-
-fmt.Println(str) // Output: Det här är en text med siffrorna ,
+str := "abc123def456"
+pattern := "[a-c]+"
+newStr := regexp.MustCompile(pattern).ReplaceAllString(str, "")
+fmt.Println(newStr) // Output: 123456
 ```
 
-Man kan också använda sig av reguljära uttryck, som är ett mer avancerat sätt att specificera mönster för en sträng. För att radera tecken som matchar ett reguljärt uttryck, kan man använda sig av `regexp.ReplaceAllString()`. Till exempel, om vi vill ta bort alla tecken som inte är bokstäver eller siffror från en sträng, kan vi använda uttrycket `[^\w]` som parameter till funktionen.
+I det här exemplet så kommer alla tecken som matchar mönstret "[a-c]+" att tas bort från textsträngen "abc123def456" och den nya strängen "123456" kommer att skrivas ut.
+
+Ett annat sätt att ta bort tecken är att använda funktionen `ReplaceAll` i kombination med `regexp.MustCompileFunc`. I det här fallet kan man även ange en funktion som avgör vilka tecken som ska tas bort. Se nedanstående kodexempel:
 
 ```Go
-str := "Det här är en text med specialtecken: #%&!"
-str = regexp.ReplaceAllString(str, "[^\w]", "")
-
-fmt.Println(str) // Output: Dethärenentextmedspecialtecken
+str := "abc123def456"
+pattern := "[0-9]+" 
+newStr := regexp.MustCompileFunc(pattern, func(match string) string {
+    if strings.Contains(match, "1") {
+        return ""
+    }
+    return match
+}).ReplaceAllString(str, "")
+fmt.Println(newStr) // Output: abcdef
 ```
 
-## Djupdykning
+I det här exemplet så kommer alla siffror som innehåller en "1" att tas bort från textsträngen "abc123def456" och den nya strängen "abcdef" kommer att skrivas ut.
 
-I Go:s standardbibliotek finns det också andra funktioner som kan användas för att radera tecken från en sträng, såsom `strings.Trim()`, `strings.TrimLeft()`, `strings.TrimRight()` och `strings.TrimPrefix()`. Dessa funktioner tar emot ett set av tecken som ska tas bort från början, slutet eller enbart början eller slutet av en sträng.
+## Vertikalt djupdykning
+Funktionerna `ReplaceAllString` och `ReplaceAll` är mycket användbara när man vill ta bort tecken från en textsträng baserat på ett mönster. Det finns även andra användbara funktioner som `FindAllString` och `Split` i paketet `regexp` som kan hjälpa dig att manipulera textsträngar baserat på reguljära uttryck.
 
-En annan viktig punkt att vara medveten om när man raderar tecken från en sträng är att strängar i Go är oföränderliga (immutable), vilket betyder att när man utför en operation på en sträng så skapas en ny sträng istället för att den ursprungliga strängen ändras direkt. Detta kan vara viktigt att tänka på för att undvika överflödiga kopieringar av strängar i minnet när man arbetar med stora datamängder.
+Det finns även andra paket som kan hjälpa dig att hantera textsträngar, till exempel `strings` som innehåller funktioner för att manipulera textsträngar och `unicode` som innehåller funktioner för att hantera teckenkodningar.
 
 ## Se även
-
-- Go:s dokumentation om strängfunktioner: https://golang.org/pkg/strings/
-- Reguljära uttryck i Go: https://golang.org/pkg/regexp/
+- [Go Regexp Paketet](https://golang.org/pkg/regexp/)
+- [Go Strings Paketet](https://golang.org/pkg/strings/)
+- [Go Unicode Paketet](https://golang.org/pkg/unicode/)

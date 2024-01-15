@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Opprettelse av en midlertidig fil"
-simple_title:         "Opprettelse av en midlertidig fil"
+title:                "Oppretting av en midlertidig fil"
+html_title:           "Rust: Oppretting av en midlertidig fil"
+simple_title:         "Oppretting av en midlertidig fil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,38 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å lage midlertidige filer er en viktig del av mange programmeringsprosjekter. Det kan være nyttig å ha en midlertidig fil å jobbe med mens man utforsker og tester ideer, eller for å kunne lagre midlertidige data som ikke trenger å være permanent lagret. I Rust er det enkelt å opprette midlertidige filer, og i denne bloggposten skal vi se nærmere på hvordan det kan gjøres.
+
+I denne artikkelen skal vi se på hvordan man kan opprette midlertidige filer ved hjelp av Rust-programmeringsspråket. Å opprette midlertidige filer kan være nyttig i situasjoner der man trenger å lagre data midlertidig eller til å teste ut kode uten å måtte skrive data til en permanent fil.
 
 ## Hvordan
-For å opprette en midlertidig fil i Rust, kan man bruke standardbiblioteket `tempfile`. Først må man importere biblioteket i prosjektet sitt ved å legge til følgende linje i `Cargo.toml`-filen:
 
-```
-[dependencies]
-tempfile = "3.1.0"
-```
-
-Deretter kan man begynne å bruke `tempfile` biblioteket i koden sin. Her er et eksempel på hvordan man kan opprette en midlertidig fil og skrive noe til denne:
+For å opprette en midlertidig fil i Rust, kan vi bruke standardbiblioteket `std::fs::File` og dens `tempfile()`-funksjon. Vi kan bruke `tempfile()`-funksjonen for å opprette en midlertidig fil i et midlertidig katalog eller i standard midlertidig-katalogen for systemet.
 
 ```Rust
-// Importerer tempfile biblioteket
-use tempfile::tempfile;
+use std::fs::File;
+use std::io::prelude::*;
 
-// Oppretter en midlertidig fil
-let mut temp_file = tempfile().expect("Kunne ikke opprette midlertidig fil");
+fn main() {
+    // Opprette en midlertidig fil i standard midlertidig-katalogen
+    let mut temp_file = File::tempfile().unwrap();
+    temp_file.write_all(b"Dette er midlertidige data").unwrap();
 
-// Skriver til filen
-temp_file.write_all(b"Dette er en midlertidig fil").expect("Kunne ikke skrive til filen");
+    // Opprette en midlertidig fil i et midlertidig katalog
+    let mut temp_dir = temp_dir!();
+    temp_dir.push("midlertidig.txt");
+    let mut temp_file_in_dir = File::create(&temp_dir).unwrap();
+    temp_file_in_dir.write_all(b"Dette er også midlertidige data").unwrap();
+}
 ```
 
-Det som er viktig å huske på når man bruker `tempfile` er at filen automatisk vil bli slettet når den blir droppet av programmet. Dette skjer for eksempel når variabelen `temp_file` går ut av scope. Man kan også selv slette filen ved å kalle `temp_file.close()` eller `temp_file.unlink()`.
+Når vi kjører koden over, vil det bli opprettet to midlertidige filer i henholdsvis standard midlertidig-katalog og et midlertidig katalog på systemet. Vi skriver deretter noen eksempeldata til filene ved hjelp av `write_all()`-metoden. Det er viktig å merke seg at begge disse filene vil bli slettet automatisk når programmet avsluttes.
 
 ## Dypdykk
-En ting som er verdt å merke seg når man oppretter en midlertidig fil i Rust, er at den vil bli lagret i systemets midlertidige mappe. Den vil også få et unikt navn basert på en tilfeldig generert streng. Dette betyr at man ikke trenger å bekymre seg for å gi filen et navn eller plassere den et spesifikt sted.
 
-En annen nyttig funksjon i `tempfile` biblioteket er muligheten til å opprette midlertidige kataloger ved å bruke `tempfile::tempdir()`. Dette kan være nyttig når man trenger et midlertidig sted å lagre flere filer.
+Når vi oppretter en midlertidig fil, kan vi også spesifisere noen attributter for filen. For eksempel kan vi endre filnavnet som blir generert av `tempfile()`-funksjonen. Dette kan være nyttig hvis man ønsker å gi en mer meningsfull filnavn til den midlertidige filen.
+
+```Rust
+// Spesifiser filnavn i `tempfile()`-funksjonen
+let mut temp_file = File::tempfile_in("min-midlertidige-katalog").unwrap();
+```
+
+Man kan også spesifisere filtypen for den midldertidige filen, for eksempel kan man opprette en `.txt`-fil hvis man ønsker å teste en funksjon som tar inn en tekstfil som argument.
+
+```Rust
+// Spesifiser filtype
+let mut temp_file = File::tempfile_with_suffix(".txt").unwrap();
+```
+
+Videre kan man spesifisere filmoduser som lesetilgang, skrivetilgang og tilgang for å kunne kjøre filen som et program. Dette kan være nyttig hvis man ønsker å teste forskjellige scenarier for en fil i et program.
+
+```Rust
+// Spesifiser filmoduser
+let mut temp_file = File::tempfile_with_permissions(0o755).unwrap();
+```
 
 ## Se også
-- [Offisiell dokumentasjon for `tempfile` biblioteket](https://docs.rs/tempfile/)
-- [Rust's offisielle nettside](https://www.rust-lang.org/)
 
-Takk for at du leste denne bloggposten om å opprette midlertidige filer i Rust. Vi håper den var nyttig og at du nå føler deg trygg på hvordan du kan bruke `tempfile` biblioteket i dine egne prosjekter. Lykke til videre med Rust-programmering!
+- [Dokumentasjon for `std::fs::File` og `tempfile()`-funksjonen](https://doc.rust-lang.org/std/fs/struct.File.html#method.tempfile)
+- [Eksempler på hvordan man bruker midlertidige filer i Rust](https://github.com/utfpr/mobile-test-rust/tree/master/src)
+- [Mer om Rust-programmeringsspråket](https://www.rust-lang.org/no)

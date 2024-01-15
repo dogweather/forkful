@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Analysering av html"
+title:                "Analysering av html"
+html_title:           "Haskell: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,51 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-I denne bloggposten skal vi se på hvordan du kan parsere HTML i Haskell. Parsere HTML er nyttig når du ønsker å ekstrahere spesifikk informasjon fra nettsider, for eksempel når du skal lage et nettstedsskrapeverktøy eller bygge en nettleser i Haskell.
+Hvorfor skal man engasjere seg i å parse HTML? Vel, hvis du jobber med webutvikling eller programmering, vil du mest sannsynlig komme over HTML-kode som skal leses og behandles. Å kunne parse, eller "analysere" i uformell terminologi, HTML er en viktig ferdighet for å kunne jobbe med webinnhold.
 
-# Hvordan Du Gjør Det
+## Slik gjør du det
 
-Parsere HTML i Haskell er ikke så vanskelig som du kanskje skulle tro. Takket være noen fantastiske biblioteker som finnes tilgjengelig, kan vi gjøre det med relativt få linjer med kode.
-
-La oss si at vi ønsker å ekstrahere alle overskriftene i et HTML-dokument. Vi kan bruke biblioteket "html-conduit" for å gjøre dette. Her er et eksempel på hvordan vi kan gjøre det:
+Du kan parse HTML ved hjelp av forskjellige programmeringsspråk, men vi skal fokusere på å gjøre det med Haskell. Først og fremst trenger du et åpnbart bibliotek for å arbeide med HTML, for eksempel "tagsoup" biblioteket. La oss si at du har en HTML fil med følgende innhold:
 
 ```Haskell
-import Text.HTML.DOM (parseLBS)
-import Text.XML.Cursor (Cursor, attributeIs, content, element, fromDocument, ($//))
+"<html>
+    <body>
+        <h1>Hei, verden!</h1>
+        <p>Dette er en test</p>
+    </body>
+</html>"
+```
 
-findHeaders :: Cursor -> [String]
-findHeaders = element "h1" & attributeIs "class" "header" & content
+Vi kan da bruke "tagsoup" biblioteket til å parse den og hente ut overskriften og teksten:
 
+```Haskell
+-- Importer tagsoup biblioteket
+import Text.HTML.TagSoup
+
+-- Definer HTML-koden
+htmlCode :: String
+htmlCode = "<html>
+                <body>
+                    <h1>Hei, verden!</h1>
+                    <p>Dette er en test</p>
+                </body>
+            </html>"
+
+-- Parse HTML-koden og hente ut overskriften og teksten
+parsedCode :: [Tag String]
+parsedCode = parseTags htmlCode
+
+heading :: String
+heading = fromTagText $ head $ dropWhile (~/= "<h1>") parsedCode
+
+text :: String
+text = fromTagText $ head $ dropWhile (~/= "<p>") $ tail $ dropWhile (~/= "<h1>") parsedCode
+
+-- Skriv ut resultat
 main :: IO ()
 main = do
-    html <- readFile "nettsted.html"
-    let cursor = fromDocument $ parseLBS html
-        headers = cursor $// findHeaders
-    print headers
+    putStrLn heading   -- "Hei, verden!"
+    putStrLn text      -- "Dette er en test"
 ```
 
-La oss gå gjennom koden: Først importerer vi funksjoner som lar oss jobbe med HTML-strukturen. Deretter definerer vi en funksjon som tar inn en "Cursor" (som representerer HTML-dokumentet), og returnerer en liste med overskriftene som finnes i dokumentet. I "main" -funksjonen leser vi inn HTML-dokumentet og konverterer det til en "Cursor", før vi bruker "findHeaders" -funksjonen for å finne alle overskriftene og skrive dem ut i konsollen.
+Som du kan se, kan du enkelt hente ut spesifikke deler av HTML-koden ved hjelp av "parseTags" funksjonen og deretter bruke vanlig Haskell-kode for å behandle og skrive ut informasjonen du ønsker.
 
-Når vi kjører dette programmet, vil vi få følgende output:
+## Dybdeanalyse
 
-```
-["Dette er en overskrift 1", "Dette er en overskrift 2"]
-```
+Når du arbeider med å parse HTML, er det viktig å forstå hvordan tags og attributter fungerer. Tags er elementene i HTML som definerer innholdet på en nettside, for eksempel <h1>, <p>, <a>, etc. Disse tagsene kan også ha attributter, som gir ytterligere informasjon om taggen, for eksempel "class", "id", "href", og så videre. Å forstå strukturen til HTML-koden og hvordan disse tagsene og attributtene fungerer, er avgjørende for å kunne parse den nøyaktig.
 
-Så enkelt er det å ekstrahere informasjon fra HTML-dokumenter i Haskell!
+## Se også
 
-# Fordypning
-
-For å virkelig forstå hvordan å parsere HTML i Haskell fungerer, er det viktig å forstå hvordan biblioteket "html-conduit" fungerer. Først og fremst, hva er en "Cursor"? En "Cursor" i dette tilfellet er en type som gir oss tilgang til XML-dokumentet, og gjør det enkelt å navigere rundt i det. Når vi bruker funksjoner som "&" eller "$//" i koden vår, er det egentlig "Cursor" som gjør det mulig for oss å bruke disse funksjonene.
-
-En annen ting å merke seg er "element" og "attributeIs" funksjonene. Disse funksjonene lar oss finne spesifikke elementer og attributter i HTML-dokumentet basert på navn og verdi. Dette gjør det enkelt å finne akkurat den informasjonen vi er ute etter.
-
-Vi kan også bruke lignende teknikker for å finne andre typer informasjon i HTML-dokumentet, som lenker, bilder eller tabeller. Det er bare å eksperimentere og finne ut hvilke funksjoner som passer best til dine behov.
-
-# Se Også
-
-- [html-conduit - Hackage](https://hackage.haskell.org/package/html-conduit)
-- [html-conduit dokumentasjon](https://www.stackage.org/haddock/lts-8.13/html-conduit-1.2.3.2/Data-Conduit-HTML.html)
-- [Eksempelkode for å parsere HTML i Haskell](https://github.com/sdiehl/haskell-parsing)
+- [Offisiell Haskell hjemmeside](https://www.haskell.org/)
+- [Tagsoup biblioteket](https://github.com/ndmitchell/tagsoup)
+- [HTML tutorial fra W3Schools](https://www.w3schools.com/html/)

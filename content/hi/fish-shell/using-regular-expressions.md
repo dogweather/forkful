@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: नियमित अभिव्यंजनों का उपयोग करना"
-simple_title:         "नियमित अभिव्यंजनों का उपयोग करना"
+title:                "नियमित अभिव्यक्तियों का उपयोग"
+html_title:           "Fish Shell: नियमित अभिव्यक्तियों का उपयोग"
+simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,22 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun?
 
-क्या आपको कभी एक फ़ाइल में कुछ विशिष्ट पैटर्न की जांच करने की ज़रूरत हुई है? या फिर आपको डेटा के साथ काम करते समय एक स्ट्रिंग का स्लाइसिंग करने की ज़रूरत पड़ी है? अगर हाँ, तो रेगुलर एक्सप्रेशन आपके लिए है! रेगुलर एक्सप्रेशन किसी भी स्ट्रिंग में स्थित पैटर्न को ढूंढने और प्रसूत करने के लिए बहुत सहायक होता है। यह आपके कोड में नैदानिकीता लाता है और उसे सरल बनाता है।
+Kya aap code me cheezein search karne ke liye bheed bhaad ka shor-sharaba nahi karna chahte? Kya aapko specific patterns ko find aur manipulate karna hai? Yadi haan, to aapko regular expressions ka istemaal karna chahiye!
 
-## कैसे करें
+## Kaise?
 
-फिश शेल में रेगुलर एक्सप्रेशन का उपयोग करना बहुत आसान है। आप सरल शब्दों में निर्देशित हो सकते हैं जैसे कि `begin` या `end`। आप स्ट्रिंग का स्लाइसिंग, विशिष्ट पैटर्न को ढूंढना और उसमें पूर्ण शब्दों का खोज करना सीखेंगे।
+Fish Shell me regular expressions ka use karna bahut hi aasaan hai. Aap simply "grep" ka istemaal karke kisi bhi file ya directory me specific patterns ko search kar sakte hai. Neeche diye gaye code block me ek example hai:
 
 ```Fish Shell
-# मैं इस फ़ाइल में कितने पूर्ण शब्द हूँ?
-grep -o -w "[A-Za-z]+" my_file.txt
-
-# 'abc' शब्द की कुल संख्या क्या है?
-grep -o "abc" my_file.txt | wc -l
+grep '[a-z] fish.txt'
 ```
 
-## गहराई में जाएं
+Is code se, aap sabhi lines ko search kar sakte hai jo "fish.txt" file me lowercase letters se shuru hoti hai. Output me aapko yeh lines dikhayi denge.
 
-रेगुलर एक्सप्रेशन को समझना और उसका उपयोग करना थोड़ा समय लग सकता है, लेकिन यह लाभदायक हो सकता है। आपको अपने कोड में नए और सरल तरीकों को शामिल करने की आवश्यकता होती है, आप अपनी प्रोग्रामिंग कौशल को बढ़ा सकते हैं और अपने बजट को कम करके अपने दस्तावेजों को संकलित कर सकते हैं। आप मोटी पुस्तकें लेकर जाने की
+```
+big fish
+small fish
+```
+
+## Deep Dive
+
+Regular expressions me kayi tarike ke expressions ka istemaal karke aap apne search ko aur bhi precise bana sakte hai. Jaise ki aap specific characters, words, ya numbers ko search kar sakte hai. Iske alawa, aapko searching ke liye operators bhi available hai, jaise ki "or" ya "not". In operators ka istemaal karke aap apne patterns ko aur bhi specific bana sakte hai.
+
+Fish Shell me, regular expressions ka use upyukt syntax ke saath kiya ja sakta hai, jisse ki aap exact output ko find aur manipulate kar sake. Iske alawa, Fish Shell me kayi useful functions bhi available hai, jaise ki "fish_grep" aur "fish_match", jo ki regular expressions ka use karke output ko filter aur manipulate karte hai.
+
+## Dekhiye bhi
+
+Ab aap regular expressions ke baare me basic jaankari rakhte hai, aap mazeed explore kar sakte hai yhaan dive into regular expressions ke saath regular expressions ke detailed tutorial ke saath.
+
+1. [Regular Expressions tutorial by regexone.com](https://regexone.com)
+2. [Learn to use regular expressions in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_regex)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Supprimer les caractères correspondants à un motif"
-simple_title:         "Supprimer les caractères correspondants à un motif"
+title:                "Suppression des caractères correspondant à un modèle"
+html_title:           "Elm: Suppression des caractères correspondant à un modèle"
+simple_title:         "Suppression des caractères correspondant à un modèle"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Supprimer des caractères correspondant à un modèle peut sembler une tâche fastidieuse, mais cela peut être très utile dans certaines situations. Par exemple, si vous avez un grand bloc de texte et que vous voulez supprimer toutes les lettres minuscules, cela peut être fait en utilisant une fonction de suppression de caractères. Dans cet article, nous allons explorer comment le faire en utilisant le langage de programmation Elm.
+Vous êtes peut-être tombé sur cette tâche ennuyeuse : supprimer toutes les occurrences d'un certain caractère ou motif dans une chaîne de caractères. Heureusement, il existe une solution simple en Elm qui vous permettra de vous en débarrasser rapidement et efficacement.
 
-## Comment faire
-
-Tout d'abord, nous devons définir une fonction qui prendra en entrée une chaîne de caractères et un motif, et renverra une nouvelle chaîne sans les caractères correspondants au modèle spécifié. En Elm, cela peut être fait en utilisant la fonction native "String.filter". Voici un exemple de code :
+# Comment faire
 
 ```Elm
-module Main exposing (main)
+deletePattern : String -> Char -> String
+deletePattern str c =
+   String.filter (\char -> char /= c) str
 
-import Html exposing (text)
-
-removePattern : String -> String -> String
-removePattern str pattern =
-    String.filter (\c -> not (String.contains pattern c)) str
-
-main : Html msg
-main =
-    text (removePattern "Bonjour" "aeiou") -- Renvoie "Bnjr"
+deletePattern "Hello World" 'l'
+-- Output: "Heo Word"
 ```
 
-Dans cet exemple, nous importons le module Html pour pouvoir afficher le résultat de notre fonction "removePattern" sous forme de texte. Ensuite, nous définissons la fonction en utilisant "String.filter" en passant une fonction anonyme qui vérifie si le caractère n'est pas présent dans le modèle spécifié. Enfin, nous appelons la fonction en lui passant une chaîne de caractères et un motif et affichons le résultat.
+Voici un exemple de code qui supprime toutes les lettres "l" de la chaîne de caractères "Hello World". Vous pouvez remplacer le motif et la chaîne de caractères par ceux de votre choix. La fonction ```deletePattern``` utilise la fonction prédéfinie ```String.filter``` pour parcourir la chaîne de caractères et supprimer toutes les occurrences du caractère spécifié.
 
-## Plongée en profondeur
+# Plongée en profondeur
 
-Maintenant que nous avons vu comment supprimer des caractères correspondant à un motif de manière simple, il est utile de comprendre comment la fonction "String.filter" fonctionne en interne. Elle prend en paramètre une fonction qui vérifie chaque caractère de la chaîne de caractères et renvoie "True" si le caractère doit être inclus dans la nouvelle chaîne et "False" si le caractère doit être exclu. Cette fonction peut être écrite de différentes manières selon vos besoins.
+Si vous souhaitez supprimer plusieurs caractères ou motifs à la fois, vous pouvez utiliser une variante de la fonction ```deletePattern```. Voici un exemple de code qui utilise une liste de caractères à supprimer :
 
-## Voir aussi
+```Elm
+deletePatterns : String -> List Char -> String
+deletePatterns str cs =
+   String.filter (\char -> not <| List.member char cs) str
 
-- Documentation officielle sur les chaînes de caractères en Elm : https://guide.elm-lang.org/strings/
-- Tutoriel sur les fonctions de manipulation des chaînes de caractères en Elm : https://www.elm-tutorial.org/en/02-elm-arch/05-strings.html
-- Exemples pratiques d'utilisation de "String.filter" en Elm : https://gist.github.com/rgrempel/d707b9ff05ef9146096b9e6993ab010b
+deletePatterns "Hello World" ['l', 'o']
+-- Output: "He Wrd"
+```
+
+La fonction ```List.member``` vérifie si un caractère est présent dans la liste. Si ce n'est pas le cas, la fonction ```not``` retourne ```True``` et le caractère est conservé dans la chaîne de caractères résultante.
+
+# Voir aussi
+
+Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Elm, consultez la documentation officielle : [String](https://package.elm-lang.org/packages/elm/core/latest/String) et [List](https://package.elm-lang.org/packages/elm/core/latest/List).

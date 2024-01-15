@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Enviando um pedido http com autenticação básica"
-simple_title:         "Enviando um pedido http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Bash: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -9,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com autenticação básica?
+## Por que
 
-Enviar uma solicitação HTTP com autenticação básica pode ser útil para garantir que apenas usuários autorizados tenham acesso a certos recursos protegidos em um servidor. Isso é especialmente importante em situações em que informações confidenciais estão sendo transmitidas, como em uma aplicação bancária ou em um sistema de gerenciamento de dados.
+Você pode precisar enviar uma solicitação HTTP com autenticação básica para acessar um serviço ou API que requer autenticação apropriada.
 
-## Como fazer:
-
-Existem várias maneiras de enviar uma solicitação HTTP com autenticação básica em Bash, mas a abordagem mais comum é usando o comando `curl`. Veja um exemplo abaixo:
+## Como Fazer
 
 ```Bash
-curl -u username:password https://exemplo.com/recurso-protegido.html
+# Importar o pacote Curl para enviar solicitações HTTP
+apt-get install curl
+
+# Enviar uma solicitação GET com autenticação básica
+curl -u username:password URL
+
+# Enviar uma solicitação POST com autenticação básica e dados JSON
+curl -u username:password -H "Content-Type: application/json" -d '{"key": "value"}' URL
+
+# Verificar o código de resposta e o cabeçalho da solicitação
+curl -u username:password -I URL
 ```
 
-Nesse exemplo, substitua "username" pelo nome de usuário e "password" pela senha da sua conta. A URL no final é o caminho para o recurso protegido que você deseja acessar. Quando você executar esse comando, o `curl` adicionará automaticamente a autenticação básica à sua solicitação.
+## Mergulho Profundo
 
-## Explorando mais a fundo:
+Ao enviar uma solicitação HTTP com autenticação básica, é importante conhecer alguns detalhes importantes. Primeiramente, a autenticação básica codifica o nome de usuário e a senha em formato Base64 e os envia no cabeçalho da solicitação como "Autorização", o que significa que eles são facilmente decodificados por terceiros. Portanto, é importante utilizar uma conexão segura (HTTPS) ao enviar uma solicitação com autenticação básica. Além disso, o nome de usuário e a senha podem ser armazenados em variáveis de ambiente para serem utilizados em seus scripts Bash e evitar a exposição desnecessária.
 
-Quando você envia uma solicitação HTTP com autenticação básica, é importante entender como ela está estruturada. A autenticação básica segue um formato padrão de cabeçalho, com o nome de usuário e a senha codificados usando o esquema de codificação `base64`. Isso significa que, embora o usuário e a senha possam ser facilmente lidos, eles ainda estão em uma codificação não legível.
+## Veja também
 
-Existem também outras maneiras de adicionar autenticação básica a uma solicitação HTTP em Bash, como usando variáveis de ambiente ou um arquivo de configuração `.netrc`. É importante consultar a documentação para saber qual método é melhor para sua situação específica.
-
-## Veja também:
-
-- [Documentação oficial do `curl`](https://curl.haxx.se/docs/)
-- [Explicação sobre autenticação básica em solicitações HTTP](https://www.httpwatch.com/httpgallery/authentication/#showExample10)
-- [Outros métodos de autenticação em Bash](https://stackoverflow.com/questions/9637613/how-do-i-use-curl-to-send-a-request-with-bearer-token-authentication)
+- Documentação oficial do Curl: https://curl.haxx.se/docs/
+- Tutorial básico de Curl: https://www.digitalocean.com/community/tutorials/introduction-to-curl

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "TypeScript recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-At some point in your programming journey, you may come across the task of searching and replacing text. Whether it's fixing small typos or making larger changes, finding and replacing specific words or phrases in your code can save you a lot of time and effort. This simple yet useful technique is definitely worth learning in TypeScript.
+Have you ever found yourself manually searching and replacing text in a large codebase? Not only is it time-consuming, but it's also prone to human error. In the world of programming, efficiency and accuracy are key, which is why learning how to properly search and replace text is essential.
 
-## How To
+## How To 
 
-To demonstrate searching and replacing text in TypeScript, let's imagine we have a string that contains the word "color" and we want to replace it with "colour". Here's how we could approach this task:
+To search and replace text in TypeScript, we use the `replace()` method. This method takes in two parameters: the text to be replaced and the new text that will replace it. Let's see an example:
 
-```
-TypeScript let sentence = "I love the color blue."
-let newSentence = sentence.replace("color", "colour")
-console.log(newSentence);
-```
-
-In this example, we are using the built-in `replace()` method to search for the word "color" in the `sentence` variable and replace it with "colour". This method returns a new string with the replaced text, which we can then assign to a new variable called `newSentence`. When we print `newSentence` to the console, we get the following output:
-
-```
-I love the colour blue.
+```TypeScript
+let text = "Hello TypeScript!";
+let newText = text.replace("TypeScript", "World");
+console.log(newText);
 ```
 
-It's that simple! The `replace()` method is case-sensitive, so make sure to use the correct spelling when searching for text to replace.
+This code will output: `Hello World!` as the new text replaces the old text. We can also use regular expressions to specify patterns to search for. For example:
 
-## Deep Dive
+```TypeScript
+let text = "The brown fox jumped over the lazy dog";
+let newText = text.replace(/brown|lazy/g, "quick");
+console.log(newText);
+```
 
-While the example above shows a basic use case for searching and replacing text in TypeScript, there are many ways to customize and refine this technique. Here are a few things to keep in mind:
+This code will output: `The quick fox jumped over the quick dog` as it replaces both "brown" and "lazy" with "quick."
 
-- The `replace()` method only replaces the first instance of the specified text. If you want to replace all instances, you can use the global flag `/g` at the end of your search string, like this: `sentence.replace(/color/g, "colour")`.
+## Deep Dive 
 
-- You can also use regular expressions to search for more complex patterns and replace them accordingly. For example, you could use a regular expression to replace all occurrences of the word "color" regardless of whether it's capitalized or not.
+In TypeScript, the `replace()` method also accepts a function as the second parameter. This function takes in the matched substring as its parameter and returns the replacement string. This allows for more complex replacements, such as changing the case of certain letters or performing other operations on the matched substring.
 
-- In some cases, you may want to use a callback function to manipulate the replacement text. This allows for more dynamic and advanced replacements. To do this, you can add a callback function as the second argument of the `replace()` method, like this: `sentence.replace(/color/g, (match) => match.toUpperCase())`. This will replace all instances of "color" with the uppercase version of itself.
+Additionally, the `replace()` method can take in regular expression flags as a third parameter. These flags allow for more precise matching, such as ignoring case or replacing all instances of the pattern.
 
-## See Also
+It's important to note that the `replace()` method does not modify the original string, but instead returns a new string with the replacements made.
 
-To learn more about the `replace()` method and other string manipulation techniques in TypeScript, check out the following resources:
+## See Also 
 
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [TypeScript Documentation - String Operations](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html#string-operations)
-- [W3Schools - TypeScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- `replace()` method in the TypeScript documentation: https://www.typescriptlang.org/docs/handbook/basic-types.html#string-replace
+- Regular Expressions in TypeScript: https://www.typescriptlang.org/docs/handbook/regular-expressions.html 
+- Useful string manipulation methods in TypeScript: https://blog.jscrambler.com/useful-string-manipulation-methods-in-typescript/

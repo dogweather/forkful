@@ -1,6 +1,7 @@
 ---
-title:                "Go: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+html_title:           "Go: Lancement d'un nouveau projet"
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -11,15 +12,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous cherchez un langage de programmation rapide, fiable et facile à apprendre, alors Go est fait pour vous. Avec sa syntaxe simple et épurée, Go est idéal pour les débutants en programmation ainsi que pour les développeurs expérimentés. Dans cet article, nous allons explorer comment démarrer un nouveau projet en utilisant le langage Go.
+Si vous êtes un passionné de programmation ou un développeur en herbe à la recherche d'un nouveau langage à apprendre, Go pourrait être la solution parfaite pour vous. Avec son approche simple et efficace, Go est un langage populaire pour les projets tels que les applications web, les outils de développement et les serveurs.
 
-## Comment Faire
+## Comment commencer en Go
 
-Tout d'abord, assurez-vous d'avoir Go installé sur votre ordinateur. Vous pouvez vérifier si Go est déjà installé en exécutant la commande `go version` dans votre terminal. Si ce n'est pas le cas, vous pouvez télécharger Go à partir du site officiel et suivre les instructions d'installation.
+Pour commencer à coder en Go, vous aurez besoin d'installer le compilateur Go et d'un éditeur de code tel que Visual Studio Code ou Atom. Une fois cela fait, vous pouvez suivre les étapes suivantes pour créer votre premier projet en Go.
 
-Une fois que vous avez Go installé, vous pouvez commencer à créer votre projet. Tout d'abord, vous devez créer un dossier pour votre projet et vous y rendre dans votre terminal. Ensuite, exécutez la commande `go mod init nomduprojet`, en remplaçant "nomduprojet" par le nom que vous souhaitez donner à votre projet. Cela créera un fichier go.mod dans votre dossier, qui sera utilisé pour suivre les dépendances de votre projet.
-
-Maintenant que votre projet est initialisé, vous pouvez commencer à coder. Voici un exemple de code qui affiche "Bonjour, monde!" dans la console :
+Tout d'abord, créez un nouveau dossier pour votre projet et ouvrez-le dans votre éditeur de code. Ensuite, créez un fichier nommé main.go et ajoutez le code suivant à l'intérieur :
 
 ```Go
 package main
@@ -27,22 +26,28 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Bonjour, monde!")
+    fmt.Println("Salut les amis, bienvenue en Go !")
 }
 ```
 
-Pour exécuter ce code, vous pouvez utiliser la commande `go run chemin/vers/votre/fichier.go` dans votre terminal. Vous devriez voir "Bonjour, monde!" s'afficher.
+Ce code permet simplement d'afficher une phrase dans la console lorsqu'elle est exécutée. Pour exécuter le code, ouvrez votre terminal et rendez-vous dans le dossier de votre projet. Ensuite, entrez la commande suivante :
 
-## Plongée en Profondeur
+```Go
+go run main.go
+```
 
-Lorsque vous démarrez un nouveau projet en utilisant Go, il est important de se familiariser avec la structure de projet recommandée. Normalement, les projets Go ont un dossier src (pour le code source), un dossier bin (pour les fichiers binaires) et un dossier pkg (pour les dépendances). Il est également courant de trouver un fichier README.md à la racine du projet, qui contient des informations sur le projet et son utilisation.
+Vous devriez voir la phrase que vous avez écrite s'afficher dans le terminal. Félicitations, vous venez de créer et d'exécuter votre premier programme en Go !
 
-Il est également important de noter que Go suit une convention de nommage pour les packages et les variables. Les noms de packages doivent être tous en minuscules et les noms de variables peuvent être en minuscules ou en camelCase. Respecter cette convention rend votre code plus lisible pour les autres développeurs et facilite la collaboration.
+## Approfondissement
 
-Enfin, n'oubliez pas d'utiliser les outils fournis par Go pour gérer les dépendances de votre projet. Vous pouvez utiliser la commande `go get` pour installer de nouvelles dépendances et la commande `go mod tidy` pour mettre à jour les dépendances existantes.
+Maintenant que vous avez créé et exécuté votre premier programme en Go, vous pouvez plonger plus en profondeur dans ce langage. Voici quelques liens utiles pour en apprendre davantage sur les fonctionnalités et les bonnes pratiques de Go :
 
-## Voir Aussi
+- [Documentation officielle](https://golang.org/doc/)
+- [Tour d'horizon de Go](https://tour.golang.org/welcome/1)
+- [Codecademy : Apprenez Go](https://www.codecademy.com/learn/learn-go)
+- [YouTube : Apprenez Go en une heure](https://www.youtube.com/watch?v=CF9S4QZuV30)
 
-- [Site officiel de Go](https://golang.org)
-- [Documentation de Go](https://golang.org/doc/)
-- [Tour de Go interactive](https://tour.golang.org)
+## Voir aussi
+
+- [Découvrez les différentes applications de Go](https://go.dev/)
+- [GitHub : Projets en Go](https://github.com/trending/go)

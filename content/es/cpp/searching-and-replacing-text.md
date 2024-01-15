@@ -1,5 +1,6 @@
 ---
-title:                "C++: Buscando y reemplazando texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "C++: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "C++"
 category:             "C++"
@@ -9,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué realizar una búsqueda y reemplazo de texto?
+## ¿Por qué hacer búsqueda y reemplazo de texto?
 
-Una tarea común en la programación es la necesidad de buscar y reemplazar texto en un archivo o código en particular. Ya sea para corregir errores ortográficos, cambiar variables o mejorar la legibilidad del código, realizar una búsqueda y reemplazo de texto es una habilidad esencial para cualquier programador.
+La búsqueda y reemplazo de texto es una herramienta útil para editar y modificar rápidamente grandes cantidades de texto en un programa. Puede ayudar a ahorrar tiempo y esfuerzo al realizar cambios en múltiples líneas de código de manera eficiente.
 
-## ¿Cómo hacerlo?
+## Cómo hacer la búsqueda y reemplazo de texto en C++
 
-Realizar una búsqueda y reemplazo de texto en C++ es una tarea sencilla gracias a las funciones y librerías disponibles. A continuación, se presenta un ejemplo de código utilizando la función `std::regex_replace` para realizar un reemplazo de texto en una cadena de caracteres:
+Para realizar búsqueda y reemplazo de texto en C++, se utiliza la función `replace` junto con un objeto de tipo `string` y los parámetros de búsqueda y reemplazo. Por ejemplo:
 
 ```C++
-std::string text = "Hola mundo!";
-// Reemplazar "mundo" con "amigos":
-std::regex_replace(text, std::regex("mundo"), "amigos"));
-std::cout << text << std::endl;
-// Salida: Hola amigos!
+string str = "hola mundo";
+replace(str, "hola", "adiós");
+cout << str;
 ```
 
-En este ejemplo, se usa la función `std::regex_replace` junto con una expresión regular para buscar la palabra "mundo" y reemplazarla con "amigos" en la cadena de caracteres `text`. También es posible usar la función `std::regex_search` para buscar y obtener información sobre coincidencias de texto en una cadena.
+El resultado de la ejecución sería "adiós mundo". También se puede utilizar la función `find` para buscar una cadena específica en un objeto de tipo `string` y luego utilizar la función `replace` para reemplazarla. Por ejemplo:
 
-## Profundizando en la búsqueda y reemplazo de texto
+```C++
+string str = "C++ es divertido";
+int pos = str.find("divertido");
+replace(str, "divertido", "genial");
+cout << str;
+```
 
-Además de las funciones mencionadas anteriormente, C++ ofrece una amplia variedad de herramientas para realizar búsquedas y reemplazos avanzados de texto. Por ejemplo, es posible utilizar expresiones regulares avanzadas y especificar patrones de búsqueda más complejos. También existen librerías de terceros que ofrecen funcionalidades adicionales para optimizar y personalizar el proceso de búsqueda y reemplazo de texto.
+La salida sería "C++ es genial". También se pueden utilizar expresiones regulares para realizar búsquedas y reemplazos más complejos en un texto.
 
-En resumen, realizar una búsqueda y reemplazo de texto en C++ es una tarea esencial para cualquier programador y se puede lograr de manera eficiente y sencilla gracias a las funciones y librerías disponibles.
+## Inmersión profunda en la búsqueda y reemplazo de texto
+
+La función `replace` utiliza una cadena o una expresión regular para buscar una coincidencia dentro del objeto `string` y reemplazarla con otra cadena o expresión. También se pueden utilizar parámetros opcionales para especificar la posición inicial de la búsqueda y la cantidad de caracteres a reemplazar. Además, también se pueden utilizar otras funciones como `find_first_of` y `find_last_of` para buscar una coincidencia de cualquier carácter en una lista de caracteres.
 
 ## Ver también
 
-- [Documentación de la librería `std::regex`](https://es.cppreference.com/w/cpp/regex)
-- [Ejemplos de búsqueda y reemplazo de texto en C++](https://www.geeksforgeeks.org/c-program-find-replace-given-word-text-file/)
+- [Documentación de la función `replace` en C++ ](https://www.cplusplus.com/reference/string/string/replace/)
+
+- [Tutorial de expresiones regulares en C++](https://www.tutorialspoint.com/cplusplus/cpp_regular_expressions.htm)
+
+- [Función `find` en C++](https://www.cplusplus.com/reference/string/basic_string/find/)
+
+- [Funciones de búsqueda en C++](https://www.learncpp.com/cpp-tutorial/searching-for-strings-in-a-string/)

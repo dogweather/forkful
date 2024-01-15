@@ -1,6 +1,7 @@
 ---
-title:                "Go: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng."
+html_title:           "Go: Å finne lengden på en streng."
+simple_title:         "Å finne lengden på en streng."
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,45 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å finne lengden til en streng er en grunnleggende operasjon som er nødvendig i mange programmeringsscenarier. Enten du må validere brukerinput, formatere tekst eller behandle data, er å kjenne lengden til en streng en viktig del av prosessen.
+Hvorfor skulle noen være interessert i å finne lengden på en streng? Vel, det kan være mange grunner til det. Kanskje du vil validere inndata fra brukere, eller kanskje du trenger å begrense tekstlengden på et feltskema. Å vite hvordan du finner lengden på en streng kan være en nyttig ferdighet å ha i verktøykassen din som en Go-utvikler.
 
 ## Hvordan
 
-For å finne lengden til en streng i Go, kan du bruke den innebygde `len()` funksjonen. Denne funksjonen tar inn en streng og returnerer antall tegn i strengen, inkludert mellomrom og spesialtegn.
+For å finne lengden på en streng i Go, kan du bruke len() funksjonen. Denne funksjonen tar inn en streng som parameter og returnerer et heltall som representerer antall tegn i strengen. La oss se på et eksempel:
 
 ```Go
-// Definer en streng som skal måles
-tekst := "Hei, dette er en test"
-
-// Bruk len() funksjonen til å finne lengden
-lengde := len(tekst)
-
-// Printer ut resultatet
+s := "Hei alle sammen!"
+lengde := len(s)
 fmt.Println(lengde)
-
-// Output: 22
 ```
 
-I dette eksempelet har strengen 22 tegn, noe som inkluderer mellomrommet mellom `test` og `Hei,`. Du kan også bruke `len()` funksjonen på en tom streng som vil returnere 0.
+Dette vil gi følgende resultat:
 
-```Go
-tomStreng := ""
-
-lengde := len(tomStreng)
-
-fmt.Println(lengde)
-
-// Output: 0
 ```
+16
+```
+
+Her ser du at s strengen har en lengde på 16 tegn. Det kan også være lurt å håndtere spesielle tegn eller unicode i strenger når du regner ut lengden. Du kan bruke utf8.RuneCountInString() funksjonen for å unngå problemer med spesielle tegn.
 
 ## Dypdykk
 
-En ting å merke seg er at `len()` funksjonen returnerer antall bytes i strengen, ikke antall tegn. Dette kan være viktig å huske på når du jobber med flerspråklige applikasjoner. Når det kommer til å telle lengden på en streng med multibyte tegn, bør du bruke `utf8.RuneCountInString()` funksjonen for å få den nøyaktige lengden.
+Når du bruker len() funksjonen, må du være oppmerksom på at den returnerer antall bytes og ikke antall tegn i strengen. Dette kan føre til noen utilsiktede resultater hvis du håndterer unicode eller spesielle tegn i strenger. For eksempel, hvis du har en streng med både engelske og kinesiske tegn, kan antall bytes være større enn antall tegn.
 
-De fleste strenger i Go er også immutable, noe som betyr at du ikke kan endre på dem etter du har definert dem. Derfor, selv om du endrer på en streng ved å legge til eller fjerne tegn, vil `len()` funksjonen alltid returnere lengden av den originale strengen.
+Du kan også bruke range løkken for å finne lengden på en streng. Dette vil returnere antall tegn i strengen, i stedet for antall bytes. Her er et eksempel på å bruke range løkken for å finne lengden på en streng:
+
+```Go
+s := "你好世界!"
+var lengde int
+for _, c := range s {
+  lengde++
+}
+fmt.Println(lengde) // ville gi "5" som resultat, siden det er 5 kinesiske tegn i strengen
+```
 
 ## Se også
 
-- [Go offisiell dokumentasjon for `len()`](https://golang.org/pkg/builtin/#len)
-- [Go offisiell dokumentasjon for `utf8.RuneCountInString()`](https://golang.org/pkg/unicode/utf8/#RuneCountInString)
-- [TutorialsPoint tutorial om strenger i Go](https://www.tutorialspoint.com/go/go_string_manipulation.htm)
+For flere tips og triks når det kommer til å jobbe med strenger i Go, kan du se på disse ressursene:
+
+- [Official Go language documentation on strings](https://golang.org/pkg/strings/)
+- [A Tour of Go - Strings](https://tour.golang.org/basics/5)
+- [String functions in Go](https://www.callicoder.com/golang-strings-guide/)

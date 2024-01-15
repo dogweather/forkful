@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,64 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Engage in Getting the Current Date
+## Why
+When working with time-sensitive projects, it is important to keep track of the current date and time. This allows for accurate data logging, scheduling and timing of events, and displaying current information to users.
 
-Have you ever wanted to incorporate the current date into your Arduino programming projects? Whether you want to keep track of time or create timed events, getting the current date can be a useful skill to have. In this blog post, we will discuss how you can easily retrieve the current date on your Arduino board.
-
-## How To Get the Current Date in Arduino
-
-Coding an Arduino board to get the current date is a simple process. First, you need to include the Time library by going to `Sketch > Include Library > Time`. Then, you can use the `now()` function to get the current date and time in a number format. Finally, you can convert the number into a readable format using the `year()`, `month()`, `day()`, `hour()`, `minute()`, and `second()` functions.
+## How To
+To get the current date on an Arduino board, we will be using the built-in Time library. First, we need to include the Time library in our code by adding `#include <Time.h>` at the top. Next, we will initialize the Time library by calling `setSyncProvider(getExternalTime)` in the `setup()` function. Then, we can use the `now()` function to get the current date and time, and use functions like `year()`, `month()`, and `day()` to extract specific information from the date. Let's take a look at a sample code to see this in action:
 
 ```
-Arduino Code:
-
+// Including the Time library
 #include <Time.h>
 
 void setup() {
-  Serial.begin(9600);
-  while(!Serial) {
-    // wait for serial connection
-  }
-  setSyncProvider(RTC.read); // sync the time to the RTC
-  if(timeStatus() != timeSet) {
-    Serial.println("Unable to sync with the RTC");
-  }
+  // Initializing the Time library
+  setSyncProvider(getExternalTime);
 }
 
 void loop() {
-  time_t now = now(); // retrieve the current date and time
-  int year = year(now); // extract the year from the date
-  int month = month(now); // extract the month from the date
-  int day = day(now); // extract the day from the date
-  int hour = hour(now); // extract the hour from the time
-  int minute = minute(now); // extract the minute from the time
-  int second = second(now); // extract the second from the time
-  // print the current date and time
-  Serial.print(year); Serial.print("-"); 
-  Serial.print(month); Serial.print("-");
-  Serial.print(day); Serial.print(" ");
-  Serial.print(hour); Serial.print(":");
-  Serial.print(minute); Serial.print(":");
-  Serial.println(second);
-  delay(1000); // wait for a second
+  // Getting the current date and time
+  time_t current_time = now();
+
+  // Extracting the year, month, and day from the date
+  int year = year(current_time);
+  int month = month(current_time);
+  int day = day(current_time);
+
+  // Printing the current date to the serial monitor
+  Serial.print("Today is: ");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.print(day);
+  Serial.print("/");
+  Serial.println(year);
+
+  // Pausing for 1 second before repeating
+  delay(1000);
 }
 ```
 
-### Sample Output:
+Running this code will output the current date in the format of month/day/year to the serial monitor every second. You can modify the code to display the date in any format you want.
 
-```
-2021-10-04 12:45:21
-```
-
-## Deep Dive: How Does It Work?
-
-Now, let's take a closer look at the code. We are using the Time library to access the `now()` function, which returns the current date and time in a number format called `time_t`. This format counts the seconds since a specific reference date (January 1, 1970). 
-
-To convert the number into a readable format, we use the `year()`, `month()`, `day()`, `hour()`, `minute()`, and `second()` functions. These functions extract the respective values from the `time_t` format.
-
-Additionally, we use the `setSyncProvider()` function to synchronize the time with a real-time clock (RTC) module on the Arduino board. This ensures that the current date and time are accurate.
+## Deep Dive
+The `setSyncProvider()` function used in the previous code example has a parameter called `getExternalTime` which is a function that returns the current Unix time. This is the number of seconds that have elapsed since January 1, 1970. The Time library uses this Unix time as a reference to calculate the current date and time. Additionally, the Time library also has functions to set and adjust the system clock, as well as perform time zone calculations.
 
 ## See Also
+Learn more about the Arduino Time library: https://www.arduino.cc/en/Reference/Time
 
-- [Time Library for Arduino](https://www.arduino.cc/reference/en/libraries/time/)
-- [Tutorial: Using the Time.h library on Arduino](https://www.arduino.cc/en/Tutorial/libraries/time)
+Get an in-depth understanding of the Unix time: https://www.epochconverter.com/programming/c

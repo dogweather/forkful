@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Haskell: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Haskell on yksi suosituimmista funktionaalisista ohjelmointikielistä, jota käytetään laajasti monissa sovelluksissa. Yksi tärkeä osa laadukkaan Haskell-koodin kirjoittamista on testaaminen. Testien kirjoittaminen varmistaa, että koodimme toimii odotetulla tavalla ja auttaa vähentämään virheitä. Seuraava opas auttaa sinua ymmärtämään, miksi testaaminen on tärkeää ja miten voit aloittaa sen käytön Haskell:ssa.
+Miksi haluaisit kirjoittaa testeja? Yksinkertaisesti siksi, että se auttaa välttämään virheitä ja parantaa koodisi laatua. Testaaminen mahdollistaa myös koodin refaktoroinnin ja muokkaamisen helpommin ja turvallisemmin.
 
-## Miten aloittaa
+## Kuinka
 
-Haskellissa testien kirjoittaminen on suhteellisen helppoa käyttämällä HSpec-kirjastoa. Ensiksi sinun tulee asentaa HSpec komentoriviltä käyttämällä `cabal install hspec` tai `stack install hspec` riippuen mitä paketinhallintajärjestelmää käytät. Tämän jälkeen voit aloittaa testien kirjoittamisen luomalla uuden tiedoston ```Testit.hs``` ja kirjoittamalla seuraavan esimerkin sisään:
+Testien kirjoittaminen Haskellissa on helppoa ja intuitiivista. Tässä on muutama esimerkki ja tuloste näytteenomaisesta testikoodista:
 
-```
-import Test.Hspec
+```Haskell
+-- Tuodaan testaamisen kirjasto käyttöön
+import Test.HUnit
 
-main :: IO ()
-main = hspec $ do
-  describe "nelioJuuri" $ do
-    it "laskee neliöjuuren oikein" $ do
-      nelioJuuri 4 `shouldBe` 2
-```
-
-Tässä yksinkertaisessa koodissa määritämme `nelioJuuri` funktion ja testaamme sen toimivuutta käyttämällä `shouldBe` funktiota. Nyt suorittamalla tämän tiedoston komentoriviltä käyttäen `runhaskell Testit.hs`, näet seuraavan tulosteen:
-
-```
-nelioJuuri
-  laskee neliöjuuren oikein
-
-Finished in 0.0012 seconds
-1 example, 0 failures
+-- Esimerkki yksikkötestistä
+testi1 = TestCase (assertEqual "Odotettu tulos" 5 $ 2 + 3)
+-- Ajetaan testit
+runTestTT testi1
 ```
 
-Näet näinollen, että testi on onnistunut ja `nelioJuuri` funktio laskee neliöjuuren oikein.
+Tämä yksikkötesti tarkistaa, että laskutoimitus 2 + 3 antaa tuloksen 5. Voit myös lisätä oman testifunktion, joka kutsuu muita funktioita ja testaa niiden paluuarvoja:
 
-## Syvemmälle testaukseen
+```Haskell
+-- Yksinkertainen funktio
+nelio x = x * x
 
-Nyt kun olet aloittanut testien kirjoittamisen Haskell:ssa, voit syventää tietämystäsi ja käyttää erilaisia testaustyökaluja. HSpec tarjoaa mahdollisuuden lisätä erilaisia ehtoja testaukseen, kuten testien ryhmittelyä käyttämällä `describe`, `context` ja `it` lohkoja. Voit myös testata monimutkaisempia funktioita tai jopa testata sisäisiä tiloja käyttämällä `IO` toimintoja. On tärkeää huomata, että testien kirjoittaminen ei tarkoita, että koodisi ei koskaan epäonnistuisi, mutta se auttaa löytämään virheitä ja varmistamaan sovelluksesi toimivuuden.
+-- Testi funktiolle
+testi2 = TestCase (assertEqual "Nelion laskeminen" 9 $ nelio 3)
+```
+
+Nämä olivat vain yksi yksikkötestin esimerkki, mutta voit kirjoittaa useita erilaisia testejä eri funktioille ja niiden eri ominaisuuksille. Lisäksi voit käyttää muita testaamisen kirjastoja, kuten HSpecia, joka tarjoaa vieläkin monipuolisempia testausmahdollisuuksia.
+
+## Syvenny
+
+Haskellin testaaminen tarjoaa erilaisia lähestymistapoja ja näkökulmia, joihin voit syventyä. Voit esimerkiksi tutkia TDD:tä (Test Driven Development), jossa testit kirjoitetaan ennen itse koodia. Toinen mielenkiintoinen aihe on property-testaus, jossa testataan koodin ominaisuuksia satunnaisilla syötteillä.
+
+Laadukkaan koodin kirjoittamiseen kuuluu myös testien kattavuuden tarkistaminen. Voit esimerkiksi käyttää työkaluja kuten HPC (Haskell Program Coverage), joka kertoo prosentuaalisesti, kuinka paljon koodistasi on testattu.
 
 ## Katso myös
 
-- [HSpec-dokumentaatio](https://hspec.github.io/)
-- [Haskell-testaus eli päätoiminnan arvon tutkiminen](https://haskell-doc.gitbooks.io/haskell-testaus/content/)
-- [Funktionaalinen testaus Haskell-kielen bibliografian näkökulmasta](http://birchsport.drcut.com/~mathematica/book/title/funtestbookend.html)
+- [Haskell testausdokumentaatio](https://www.haskell.org/documentation/#testing)
+- [HSpec testaamisen kirjasto](https://hspec.github.io/)
+- [TDD Haskellillä](https://dev.to/matbesancon/tdd-haskell-the-why-and-how-455g)

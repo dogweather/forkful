@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Alirivien erottelu"
-simple_title:         "Alirivien erottelu"
+title:                "Ala-merkkijonojen erottaminen"
+html_title:           "Fish Shell: Ala-merkkijonojen erottaminen"
+simple_title:         "Ala-merkkijonojen erottaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,52 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Oletko koskaan halunnut ottaa tietyn osan merkkijonosta ja käyttää sitä erillisenä muuttujana? Tai ehkä haluat vain muokata merkkijonoa tiettynä osana. Tässä blogikirjoituksessa käymme läpi, kuinka voit tehdä näin käyttämällä Fish Shellin ominaisuutta virkkeitä, eli Substring Extractingia.
+Olet varmaan kokenut tilanteen, jossa haluat käsitellä tekstin osaa tai pienempää dataosaa. Tässä Fish Shellin **substring** työkalu tulee avuksi, joka auttaa sinua saamaan haluamasi osan tekstitiedostosta tai merkkijonosta helposti.
 
-## Kuinka
+## Miten
 
-Koodinäytteet ja esimerkkilähtö "```Fish Shell ...```" koodilohkoissa.
+Käytännössä tämä tarkoittaa, että voit käyttää ``substring`` komentoa hakasulkeiden avulla erottaaksesi haluamasi osan tekstitiedostosta tai merkkijonosta. Katso esimerkki alla:
 
-### Yksinkertainen esimerkki
-
-Oletetaan, että meillä on merkkijono "Tämä on esimerkki". Voimme käyttää seuraavaa komentoa, joka ottaa substrängin "esimerkki" ja sijoittaa sen muuttujaan "näyte".
-
-```
-set näyte "Tämä on esimerkki"[9..16]
+```Fish Shell
+substring "Tämä on esimerkki" 5 -1
 ```
 
-Käyttäen näytettä tulostamme sen konsolille seuraavalla komennolla:
+Tämä palauttaa “on esimerkki” osan tekstitiedostosta. Voit myös käyttää haluamasi alku- ja loppupistettä:
 
-```
-echo $näyte
-```
-
-Tämä tulostaa "esimerkki".
-
-### Käyttäen muuttujaa
-
-Voimme myös käyttää muuttujaa substrängin määrittämiseen komennon aikana. Esimerkiksi, jos haluamme ottaa merkkijonon viimeisen neljän merkin ja sijoittaa ne uuteen muuttujaan "loppu", voisimme käyttää seuraavaa komentoa:
-
-```
-set alkuperäinen "Fish Shell on upea."
-set loppu $alkuperäinen[-4..-1]
+```Fish Shell
+substring "Tämä on toinen esimerkki" 0 11
 ```
 
-Yllä oleva koodi luo uuden muuttujan "loppu" arvolla "pea.". Voimme sitten tulostaa tämän muuttujan konsolille käyttämällä echo-komentoa.
+Tämä palauttaa “Tämä on toi” osan tekstitiedostosta. Huomaa, että alueen siirtämällä (-1 ensimmäisessä esimerkissä ja 11 toisessa) voit valita haluamasi alueen.
 
-```
-echo $loppu
-```
+## Syvällisempi sukellus
 
-Tämä tulostaa "pea.".
-
-## Syväsukellus
-
-Fish Shellin Substring Extracting on todella kätevä työkalu, jos haluat leikata tai käyttää osia merkkijonosta erillisenä muuttujana. Voit myös yhdistellä erilaisia komentoja tai käyttää muuttujia määrittämään substrängin.
-
-Voit esimerkiksi ottaa merkkijonosta tiettyjä sanoja ja muokata niitä käyttämällä tekstinkäsittelykomentoja, kuten sed ja awk.
+Substring käyttöön liittyy myös muita ominaisuuksia, kuten pisteotsakierto (point slicing), jossa voit käyttää miinusmerkkejä alueen laskemiseen tekstin lopusta. Voit myös käyttää ``substring`` komentoa yhdessä muiden Fish Shellin työkalujen kanssa, kuten ``string replace``, ``string match`` ja ``string length``.
 
 ## Katso myös
 
-- [Fish Shellin virpukot](https://fishshell.com/docs/current/tutorial.html#tut_home)
-- [Substring Extracting -opas](https://fishshell.com/docs/current/index.html#substring-extracting)
+- [Fish Shellin viralliset verkkosivut](https://fishshell.com/)
+- [Fish Shell opas](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shellin GitHub repository](https://github.com/fish-shell/fish-shell)

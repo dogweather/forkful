@@ -1,6 +1,7 @@
 ---
-title:                "Go: Extrahering av delsträngar"
-simple_title:         "Extrahering av delsträngar"
+title:                "Utvinning av substrängar"
+html_title:           "Go: Utvinning av substrängar"
+simple_title:         "Utvinning av substrängar"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Substring-extrahering är en mycket användbar funktion i Go som gör det möjligt för oss att plocka ut en del av en sträng baserat på ett visst villkor. Detta kan vara användbart för att bearbeta text eller för att söka igenom stora mängder data.
+##Varför
 
-## Så här gör du
-För att extrahera substrings i Go, använder vi funktionen `strings.Substring()` som är tillgänglig genom `strings`-paketet. När vi använder denna funktion, måste vi tillhandahålla två parametrar: den ursprungliga strängen och indexpositionen för den del av strängen som vi vill extrahera.
+Är du trött på att behöva hantera hela strängar när du bara behöver en del av den? Att utvinna substrängar är en användbar teknik för att plocka ut specifika delar av en sträng och göra din kod mer effektiv.
 
-Låt oss se ett exempel där vi vill extrahera de första fem tecknen från en sträng "Hej världen". Detta skulle se ut så här i kod:
+##Hur man gör
 
-```Go
-str := "Hej världen"
-substr := str[0:5]
-fmt.Println(substr) // Skriver ut "Hej v"
-```
-
-Som vi kan se använder vi index från 0 till 5 för att extrahera de första fem tecknen från strängen.
-
-När det gäller att extrahera substrings från en viss position, kan vi också använda funktionen `strings.Index()` för att hitta positionen för ett specifikt tecken eller en specifik sträng för att sedan använda detta som index i `strings.Substring()`.
-
-Låt oss se ett annat exempel där vi vill extrahera texten efter "@" i en e-postadress:
+För att extrahera en substräng i Go använder du funktionen `string[start:end]`, där `start` är indexet för den första tecknet i den önskade substrängen och `end` är indexet för det sista tecknet plus ett. Här är ett exempel:
 
 ```Go
-str := "example@gmail.com"
-index := strings.Index(str, "@") + 1 
-substr := str[index:]
-fmt.Println(substr) // Skriver ut "gmail.com"
+text := "Hej världen!"
+substring := text[4:9]
+fmt.Println(substring) // output: värld
 ```
 
-Genom att använda `strings.Index()` hittar vi positionen för "@" och lägger sedan till 1 för att hoppa över det tecknet och extrahera resten av strängen.
+I detta exempel har vi använt `string[start:end]` för att extrahera `värld` från den ursprungliga strängen `Hej världen!` genom att använda index 4 för `v` och index 9 för `n`. Det är viktigt att notera att indexet börjar vid 0 och att det sista indexet är exkluderat.
 
-## Djupdykning
-Det finns flera anledningar till att extrahera substrings kan vara användbart. Det kan till exempel användas för att kontrollera giltigheten av e-postadresser, extrahera användarnamn från inloggning eller för att hantera sökningar i en databas.
+Du kan också ange enbart `start` eller `end`, vilket kommer att extrahera från början respektive slutet av strängen. Om du bara anger `start` kommer substrängen att extraheras från `start` till slutet av strängen och om du bara anger `end` kommer substrängen att extraheras från början till `end-1`. Här är två exempel:
 
-Förutom användandet av `strings.Substring()` och `strings.Index()`, finns det också andra funktioner och metoder som kan användas för att extrahera substrings i Go, såsom `strings.Split()` och `regexp`-paketet som erbjuder mer avancerade sökmöjligheter.
+```Go
+substring1 := text[4:] // output: världen!
+substring2 := text[:3] // output: Hej
+```
 
-## Se även
-- [Go Strings Package](https://golang.org/pkg/strings/)
-- [Regular Expressions in Go](https://golang.org/pkg/regexp/)
+Det är också möjligt att extrahera enstaka tecken genom att ange enskilda index, till exempel `text[0]` kommer att extrahera det första tecknet i strängen `H`.
+
+##Djupdykning
+
+När du extraherar substrängar i Go används Unicode-kodpunkter för att bestämma indexeringen. Detta innebär att index inte alltid nödvändigtvis motsvarar enstaka tecken, särskilt för icke-latinska tecken. I sådana fall kan `string[start:end]` extrahera tecken som inte är avsedda. Som en lösning kan du använda `rune` och `len` för att få rätt indexering av en sträng som innehåller icke-latinska tecken. Här är ett exempel:
+
+```Go
+text := "こんにちは!"
+runes := []rune(text)
+substring := string(runes[3:5])
+fmt.Println(substring) // output: には
+```
+
+I detta exempel har vi använt `rune` för att omvandla strängen till en slice av Unicode-kodpunkter och sedan använde vi `len` för att hitta rätt indexering av substringen `には`.
+
+##Se även
+
+- [Official Go Documentation](https://golang.org/doc/)
+- [Go Code Examples](https://gobyexample.com/)

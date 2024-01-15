@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Zmiana wielkości liter w ciągu znaków"
+title:                "Zmiana wielkości liter w ciągu znaków"
+html_title:           "Ruby: Zmiana wielkości liter w ciągu znaków"
 simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,39 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego w programowaniu często spotykamy się z manipulacją tekstem? Jednym z najczęstszych zadań jest kapitalizowanie ciągów znaków - czyli zamiana pierwszej litery każdego wyrazu na wielką. Jest to przydatne w wielu sytuacjach, na przykład w wizualnym ulepszaniu wyświetlanych danych lub w tworzeniu nazw użytkowników.
+Dlaczego warto skorzystać z opcji kapitalizacji w programowaniu w Ruby? Głównym powodem jest możliwość zmiany wyglądu ciągu znaków w spójny i czytelny sposób. Może to być szczególnie przydatne, gdy pracujemy z danymi użytkowników lub formatujemy wyświetlane informacje.
 
 ## Jak to zrobić
 
-```Ruby
-puts "witaj świecie".capitalize
-```
-
-To jest prosty przykład użycia metody `capitalize`. Wykorzystujemy ją do zamiany pierwszej litery tekstu na wielką. Wynikiem tego kodu jest "Witaj świecie".
+Podczas programowania w Ruby, istnieje kilka sposobów na kapitalizację ciągów znaków. Jednym z najprostszych sposobów jest użycie metody `capitalize`, która zwraca kopię ciągu znaków z pierwszą literą zmienioną na wielką. Możemy to osiągnąć w następujący sposób:
 
 ```Ruby
-puts "hello world".titleize
+text = "hello world"
+puts text.capitalize
 ```
 
-Kolejna przydatna metoda to `titleize`, która zwraca tekst z kapitalizowanymi pierwszymi literami każdego wyrazu. Wynikiem powyższego kodu będzie "Hello World".
+Wynik:
+
+```Ruby
+Hello world
+```
+
+Inną metodą jest użycie metody `upcase`, która zwraca kopię ciągu znaków z wszystkimi literami zmienionymi na wielkie. Przykład:
+
+```Ruby
+text = "hello world"
+puts text.upcase
+```
+
+Wynik:
+
+```Ruby
+HELLO WORLD
+```
 
 ## Głębsza analiza
 
-W Ruby możemy użyć również metody `upcase` oraz `downcase` w celu zamiany wszystkich liter tekstu na duże lub małe. Przykładowo:
+Warto zauważyć, że metody `capitalize` i `upcase` nie zmieniają oryginalnego ciągu znaków, ale zwracają jego zmienioną kopię. Istnieje również możliwość zmiany oryginalnego ciągu znaków poprzez użycie wykrzyknika `!` na końcu metody, np. `text.upcase!`. W ten sposób zmieniamy wartość zmiennej `text` na oryginalną. 
 
-```Ruby
-puts "programowanie jest super".upcase
-```
-
-Wynikiem powyższego kodu będzie "PROGRAMOWANIE JEST SUPER". Natomiast metoda `downcase` zamienia wszystkie litery na małe.
-
-```Ruby
-puts "PROGRAMOWANIE JEST SUPER".downcase
-```
-
-Wynik to "programowanie jest super". Warto jednak zauważyć, że metody `upcase` i `downcase` mogą mieć inne wyniki w zależności od języka, w którym zostaną wywołane.
+Ponadto, jeśli chcemy zmienić tylko pierwszą literę na wielką, ale zachować pozostałe w oryginalnej formie, możemy użyć metody `capitalize!`, która zmieni tylko pierwszą literę w zmiennej `text` bez zmiany pozostałych. 
 
 ## Zobacz także
 
-- [Metody do manipulacji stringami w Ruby](https://ruby-doc.org/core-3.0.0/String.html)
-- [Przewodnik po Ruby dla początkujących](https://www.ruby-lang.org/pl/documentation/quickstart/)
+- [Dokumentacja Ruby - metoda capitalize](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize)
+- [Dokumentacja Ruby - metoda upcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)

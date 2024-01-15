@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kirjoittaa tekstitiedosto?
+## Miksi
 
-Tekstiedostojen kirjoittaminen on tärkeä osa ohjelmoinnin maailmaa, sillä se on tapa tallentaa ja jakaa tietoa. Arduino-ympäristössä tekstitiedostojen kirjoittaminen on erityisen hyödyllistä esimerkiksi datan tallentamisessa ja jakamisessa eri laitteiden välillä.
+Text-tiedostojen kirjoittaminen Arduino-ohjelmoinnissa voi olla hyödyllistä jos haluat tallentaa dataa laitteestasi tai näyttää tekstinäyttöön tietoja.
 
-## Kuinka: Tekstitiedoston kirjoittaminen Arduino-ympäristössä
+## Miten
 
-Arduino-ympäristön `Serial`-kirjastolla voidaan kirjoittaa tekstitiedostoja esimerkiksi sarjaväylän kautta. Alle on esimerkki koodista, joka kirjoittaa tekstitiedoston ja lähettää sen sarjaväylän kautta:
+Käytä komentoa "File.write" tallentaaksesi tekstiä haluamaasi tiedostoon. Esimerkiksi:
 
 ```Arduino
-// Alustetaan sarjaväylä
-Serial.begin(9600);
-
-// Määritellään tiedoston nimi ja muuttuja, johon tallennetaan tiedoston sisältö
-String tiedostonimi = "data.txt";
-String sisalto = "Tämä on tekstitiedoston sisältö";
-
-// Aloitetaan tiedoston kirjoitus
-File tiedosto = SD.open(tiedostonimi, FILE_WRITE);
-
-// Tarkistetaan, että tiedoston kirjoitus onnistui
-if (tiedosto) {
-  // Kirjoitetaan teksti tiedostoon
-  tiedosto.println(sisalto);
-  // Suljetaan tiedosto
+File tiedosto = SD.open("tiedosto.txt", FILE_WRITE);
+if(tiedosto) {
+  tiedosto.write("Tämä on tekstiä!");
   tiedosto.close();
-  
-  // Lähetetään tiedoston sisältö sarjaväylän kautta
-  Serial.println(sisalto);
-} else {
-  // Jos tiedostoa ei pystytty avaamaan, lähetetään virheilmoitus sarjaväylän kautta
-  Serial.println("Virhe avattaessa tiedostoa!");
 }
 ```
 
-Kun koodi suoritetaan, tiedosto `data.txt` luodaan ja siihen kirjoitetaan teksti `Tämä on tekstitiedoston sisältö`. Lisäksi tiedoston sisältö lähetetään myös sarjaväylän kautta.
+## Syvempi sukellus
 
-## Syvemmälle: Lisätietoa tekstitiedoston kirjoittamisesta
+Voit myös käyttää "print" komentoa muuntaaksesi muuttujan arvon merkkijonoksi ja tallentaa sen tiedostoon. Esimerkiksi:
 
-Tekstitiedoston kirjoittaminen on tärkeä osa datan tallentamista ja jakamista eri laitteiden välillä. Arduino-ympäristössä `Serial`-kirjastolla voidaan lähettää tekstiä ja dataa sarjaväylän kautta, mutta tiedostojen tallentaminen ja lukeminen `SD`-kirjaston avulla antaa enemmän mahdollisuuksia datan käsittelyyn ja tallentamiseen.
-
-Tekstitiedostojen lisäksi Arduino-ympäristössä voidaan käsitellä myös muita tiedostomuotoja, kuten `.csv`-tiedostoja, joissa data on järjestetty taulukkomuotoon pilkulla eroteltuna. Tiedostojen käsittely Arduino-ympäristössä vaatii kuitenkin tarkkaavaisuutta ja huolellisuutta, sillä väärin formatoidut tai virheelliset tiedostot voivat aiheuttaa ongelmia.
+```Arduino
+int luku = 10;
+File tiedosto = SD.open("tiedosto.txt", FILE_WRITE);
+if(tiedosto) {
+  tiedosto.print("Luku on: ");
+  tiedosto.print(luku);
+  tiedosto.close();
+}
+```
 
 ## Katso myös
-
-- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino Reference - SD](https://www.arduino.cc/reference/en/libraries/sd/)
-- [W3Schools - .csv](https://www.w3schools.com/whatis/whatis_csv.asp)
+- "Kirjoita tekstiä Arduino:ssa" (https://www.arduino.cc/en/Reference/ArduinoSDWrite)
+- "Merkkijonon tulostaminen Arduino:ssa" (https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)

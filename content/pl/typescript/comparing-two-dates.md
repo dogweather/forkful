@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "TypeScript: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,38 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dat to nieodłączna część programowania w języku TypeScript. Jest to niezbędne do wielu zadań, takich jak sortowanie danych, wyświetlanie informacji w określonej kolejności lub ustalanie, czy dany dzień jest wcześniejszy czy późniejszy w porównaniu do innego. W tym wpisie dowiesz się, dlaczego jest to ważne oraz jak to zrobić w praktyce.
+Porównywanie dwóch dat jest częstą operacją w programowaniu, której celem jest sprawdzenie, która data jest wcześniejsza lub późniejsza. W języku TypeScript istnieje kilka metod, które umożliwiają dokonanie tego porównania. W tym artykule poznamy te metody oraz dowiemy się, jak można je wykorzystać w praktyce.
 
-## Jak to zrobić
+## Jak
 
-Aby porównać dwie daty w języku TypeScript, możemy skorzystać z metody `Date.prototype.getTime()`, która zwraca wartość liczbową reprezentującą liczbę milisekund od północy 1 stycznia 1970 roku. Następnie możemy porównać te wartości za pomocą operatorów porównania (np. `>`, `<` lub `===`) i ustalić, która data jest wcześniejsza lub późniejsza.
-
-Przykładowy kod wyglądałby następująco:
+Porównywanie dwóch dat w TypeScript jest bardzo proste. Przedstawimy tutaj dwa sposoby, które pozwolą nam porównać daty i uzyskać pożądany wynik.
 
 ```TypeScript
-const firstDate = new Date(2021, 9, 10); // 10 października 2021 r.
-const secondDate = new Date(2021, 9, 15); // 15 października 2021 r.
+const data1: Date = new Date('2020-01-01');
+const data2: Date = new Date('2021-01-01');
 
-if(firstDate.getTime() > secondDate.getTime()) {
-    console.log("Pierwsza data jest późniejsza.");
-} else if(firstDate.getTime() < secondDate.getTime()) {
-    console.log("Druga data jest późniejsza.");
-} else {
-    console.log("Obie daty są takie same.");
-}
-
-// Output:
-// "Druga data jest późniejsza."
+console.log(data1 > data2); // false
+console.log(data1 < data2); // true
+console.log(data1.getTime() === data2.getTime()); // false
 ```
+
+W powyższym przykładzie utworzyliśmy dwie zmienne zawierające daty i za pomocą operatorów porównania `>` i `<` sprawdziliśmy, która jest późniejsza. Możemy również użyć metody `getTime()` do uzyskania wartości w formie liczby, która następnie jest porównywana za pomocą operatora `===`.
+
+Innym sposobem jest wykorzystanie metody `compare()` z biblioteki `moment.js`.
+
+```TypeScript
+import moment from 'moment';
+
+const data1: Date = new Date('2020-01-01');
+const data2: Date = new Date('2021-01-01');
+
+console.log(moment(data1).isBefore(data2)); // true
+console.log(moment(data2).isAfter(data1)); // true
+console.log(moment(data1).isSame(data2)); // false
+```
+
+Wykorzystując bibliotekę `moment.js` możemy porównywać daty za pomocą wygodnych metod, które zwracają wartość logiczną.
 
 ## Deep Dive
 
-Podczas porównywania dat, istotne jest zrozumienie, że obiekty typu `Date` są mutowalne. Oznacza to, że zmiana wartości obiektu `Date` może spowodować zmianę wyniku porównania. Dlatego zaleca się porównywanie wartości zwracanych przez metodę `getTime()`, a nie samych obiektów `Date`.
+Podczas porównywania dat nie tylko sprawdzamy, która jest późniejsza, ale również uwzględniamy czas i strefę czasową. W bibliotece `moment.js` możemy wykorzystać metodę `isSame()` z dodatkowym argumentem, który określa jednostkę czasu. Dzięki temu możemy porównać daty z dokładnością do sekund, minut, godzin itp.
 
-Co więcej, porównywanie dwóch dat może być bardziej skomplikowane, gdy uwzględniamy różne strefy czasowe lub letnie czasowe. W takich przypadkach warto rozważyć użycie biblioteki do obsługi dat, takiej jak *Moment.js*, która oferuje szeroki zakres metod do porównywania i manipulowania danymi.
+```TypeScript
+import moment from 'moment';
 
-## Zobacz również
+const data1: Date = new Date('2021-05-01');
+const data2: Date = new Date('2021-05-01 12:00:00');
 
-- [Dokumentacja Date.prototype.getTime()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date/getTime)
-- [Porównywanie dat w języku JavaScript](https://www.digitalocean.com/community/tutorials/how-to-compare-dates-in-javascript)
-- [Biblioteka Moment.js](https://momentjs.com/)
+console.log(moment(data1).isSame(data2, 'second')); // false
+console.log(moment(data2).isSame(data2, 'day')); // true
+```
+
+Dodatkowo, podczas porównywania dat w TypeScript, warto pamiętać, że obiekt `Date` przechowuje również informację o strefie czasowej. Może to wpłynąć na wynik porównania, dlatego ważne jest, aby upewnić się, że obie daty są w tej samej strefie czasowej.
+
+## Zobacz także
+
+1. Dokumentacja biblioteki `moment.js`: https://momentjs.com/docs/
+2. Porównywanie dat w języku JavaScript: https://www.w3schools.com/js/js_dates.asp
+3. Porównywanie dat w języku TypeScript: https://www.typescriptlang.org/docs/handbook/declaration-merging.html

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Kotlin: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,32 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach dostęp do informacji jest niezwykle ważny. Często potrzebujemy szybkiego dostępu do stron internetowych, aby znaleźć potrzebne nam informacje. Dlatego warto poznać, jak pobrać stronę internetową za pomocą języka Kotlin.
+Pobieranie stron internetowych jest nieodzownym elementem wielu programów i aplikacji, które wymagają dostępu do danych zawartych na stronach internetowych. Dzięki umiejętności pobierania stron internetowych, można łatwo pobierać, przetwarzać i wykorzystywać informacje ze źródeł online.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby pobrać stronę internetową za pomocą Kotlina, możemy użyć biblioteki Jsoup. Poniżej przedstawiam przykładowy kod, który pobiera zawartość strony "https://www.example.com" i wyświetla ją w konsoli.
+Aby pobrać stronę internetową w języku Kotlin, wystarczy wykorzystać bibliotekę Jsoup, która jest narzędziem do parsowania i manipulowania danymi HTML. Najpierw musimy dodać tę bibliotekę do naszego projektu, korzystając z menedżera pakietów, takiego jak Maven lub Gradle. Następnie, w kodzie, możemy użyć metody `connect()` z obiektu `Jsoup` i podać URL strony internetowej, którą chcemy pobrać. Następnie możemy użyć metody `get()` do pobrania zawartości strony w postaci obiektu typu `Document`, który możemy następnie przetwarzać.
 
 ```Kotlin
+// Importujemy bibliotekę Jsoup
+import org.jsoup.Jsoup
+// Tworzymy obiekt Jsoup i przekazujemy URL strony
 val doc = Jsoup.connect("https://www.example.com").get()
-println("Zawartość strony: " + doc.body())
+// Pobieramy zawartość strony i przypisujemy do zmiennej
+val content = doc.toString()
+// Wyświetlamy pobraną zawartość
+println(content)
 ```
 
-Możemy również dokonać dalszej obróbki pobranej zawartości, np. wyciągnąć konkretne elementy strony za pomocą selektorów CSS.
+W powyższym przykładzie, należy pamiętać o obsłudze wyjątków, które mogą wystąpić w przypadku nieudanej próby pobrania strony. Możemy również wykorzystać różne metody `get()` w celu pobrania konkretnych elementów strony, takich jak tytuł, nagłówek czy linki.
 
-```Kotlin
-val titles = doc.select("h1")
-println("Tytuł strony: " + titles[0].text())
-```
+## Zagłębianie Się W Temat
 
-Powyżej przedstawione przykłady pokazują, jak w prosty i skuteczny sposób pobrać stronę internetową za pomocą Kotlina.
+Pobieranie stron internetowych jest dużym zagadnieniem i można wykorzystać różne narzędzia i techniki, aby to zrobić. W języku Kotlin, oprócz biblioteki Jsoup, można również wykorzystać wbudowany moduł `network`, który umożliwia pobieranie danych z użyciem protokołu HTTP.
 
-## Głębszy zanurkować
+Można także wykorzystać narzędzia do automatyzacji przeglądarki, takie jak Selenium, aby symulować interakcje z przeglądarką i pobierać dane z interaktywnych stron internetowych.
 
-Kotlin jest językiem programowania ogólnego przeznaczenia, ale dzięki swoim funkcjom funkcyjnym i obsłudze kodu asynchronicznego, jest także idealnym narzędziem do pobierania stron internetowych. Jsoup, którego użyliśmy w przykładzie, oferuje wiele dodatkowych funkcji, które warto poznać i wykorzystać w swoich projektach.
+## Zobacz Również
 
-## Zobacz również
-
-- [Dokumentacja Jsoup](https://jsoup.org/)
-- [Kurs programowania w języku Kotlin na Udemy](https://www.udemy.com/course/kotlin-dla-poczatkujacych/)
-- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
+- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
+- [Strona biblioteki Jsoup](https://jsoup.org/)
+- [Przewodnik po sieci w języku Kotlin](https://kotlinlang.org/docs/reference/coroutines/network.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Finner lengden på en streng"
-simple_title:         "Finner lengden på en streng"
+title:                "Finn lengden av en streng"
+html_title:           "Rust: Finn lengden av en streng"
+simple_title:         "Finn lengden av en streng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det å finne lengden til en string er en vanlig oppgave i programmering og kan være nyttig i mange sammenhenger. Det kan hjelpe deg med å formatere teksten din riktig, begrense input fra brukere, og generelt sett gjøre koden din mer effektiv.
+
+Lurer du på hvordan du kan finne lengden til en tekststreng i Rust? Vel, det er faktisk ganske enkelt! Å kunne finne lengden til en tekststreng er en nyttig ferdighet som kan hjelpe deg med å behandle og manipulere tekst på en mer effektiv måte.
 
 ## Slik gjør du det
-For å finne lengden til en string i Rust, kan du bruke funksjonen `.len()`. Denne funksjonen returnerer lengden til stringen som et heltall. La oss se på et eksempel:
 
-```Rust
-let string = "Hei, verden!";
-println!("Lengden til stringen er {}", string.len());
+For å finne lengden til en tekststreng i Rust, kan du bruke den innebygde funksjonen `len()`. La oss se på et eksempel:
+
+```
+fn main() {
+  let tekststreng = "Hei alle sammen!";
+  let lengde = tekststreng.len();
+  println!("Lengden til tekststrengen er {}", lengde);
+}
 ```
 
-Output vil bli “Lengden til stringen er 13”, siden det er 13 tegn i stringen “Hei, verden!”.
+Dette koden vil produsere følgende utdata i terminalen:
 
-En viktig ting å huske på er at `.len()` returnerer lengden i bytes, ikke i antall tegn. Dette betyr at visse unicode-tegn kan ta opp mer enn én byte, og derfor vil de telle som flere tegn i lengden. Det er viktig å være klar over dette når du arbeider med strings som inneholder unicode-tegn.
-
-Du kan også bruke `.chars().count()` for å få lengden i antall tegn istedenfor bytes. Dette vil telle antall tegn, uavhengig av antall bytes de tar opp. Her er et eksempel:
-
-```Rust
-let string = "Hei, verden!";
-println!("Antall tegn i stringen er {}", string.chars().count());
+```
+Lengden til tekststrengen er 17
 ```
 
-Output vil bli “Antall tegn i stringen er 11”, siden det er 11 tegn i stringen “Hei, verden!”.
+I dette eksempelet definerte vi en tekststreng, brukte `len()` funksjonen for å finne lengden til strengen og deretter skrev ut lengden til terminalen.
 
 ## Dykk dypere
-Nå som du vet hvordan du finner lengden til en string, kan det være lurt å forstå hvordan `.len()` funksjonen faktisk fungerer bak kulissene. Det er fordi `.len()` er en del av standardbiblioteket i Rust og er implementert ved hjelp av `str::len()` funksjonen.
 
-`str::len()` funksjonen itererer gjennom alle tegnene i stringen og bruker forholdet mellom byte-lengde og tegn-lengde for å beregne den faktiske lengden til stringen. Dette er enkelt for ASCII-tegn, siden hvert tegn tar opp én byte, men for unicode-tegn som tar opp mer enn en byte, må funksjonen telle antall tegn basert på deres byte-antall.
+Det er viktig å merke seg at `len()` funksjonen faktisk returnerer antall bytes som brukes til å representere tekststrengen, og ikke antall tegn. Dette kan føre til forskjellige resultater for unicode-tegn. Hvis du vil finne antall tegn i en unicode-tekststreng, kan du bruke `chars()` funksjonen i stedet.
+
+I tillegg har Rust også `is_empty()` funksjonen som lar deg sjekke om en tekststreng er tom eller ikke. Du kan bruke denne funksjonen sammen med `len()` for å håndtere tomme tekststrenger i dine programmer.
 
 ## Se også
-- [Rust Strings dokumentasjon](https://doc.rust-lang.org/std/string/index.html)
-- [Rust Standard Library dokumentasjon](https://doc.rust-lang.org/std/index.html)
-- [Unicode og UTF-8 i Rust](https://unicode-rs.github.io/unicode-rs/utf8/index.html)
+
+- [Rust dokumentasjon for `len()` funksjonen](https://doc.rust-lang.org/std/primitive.str.html#method.len)
+- [Mer informasjon om å jobbe med tekststrenger i Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)

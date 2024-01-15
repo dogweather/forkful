@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Rozpoczynanie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Gleam: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,53 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Zastanawiasz się, dlaczego powinieneś zacząć nowy projekt w Gleam? Oto kilka powodów:
+Jeśli szukasz nowego języka programowania, który jest wydajny, bezpieczny i przyjazny dla programistów, to Gleam może być idealnym wyborem dla Ciebie. Gleam jest językiem funkcyjnym opartym na Erlangu, który oferuje zaawansowane mechanizmy typowania, dzięki czemu tworzenie i utrzymywanie projektów jest łatwe i bezpieczne.
 
-- Gleam jest językiem programowania funkcyjnego, co oznacza, że pisanie kodu w nim jest łatwiejsze i bardziej wydajne.
+## Jak zacząć
 
-- Gleam jest językiem statycznie typowanym, co oznacza, że błędy są wykrywane przed uruchomieniem programu, co oszczędza czas i frustrację.
-
-- Gleam ma przyjazną dla programistów składnię, dzięki czemu kod jest czytelny i łatwy do zrozumienia dla innych osób.
-
-## Jak to zrobić
-
-Aby rozpocząć nowy projekt w Gleam, należy wykonać kilka prostych kroków:
-
-1. Zainstaluj Gleam na swoim komputerze, korzystając z instrukcji na oficjalnej stronie [gleam.run](https://gleam.run/).
-
-2. Utwórz nowy projekt, wpisując w terminalu `gleam new <nazwa projektu>`.
-
-3. Rozpocznij pisanie kodu w pliku `src/main.gleam` używając składni Gleam.
-
-4. Uruchom swój kod, wpisując w terminalu `gleam run`.
-
-5. Ciesz się pisaniem programów w Gleam!
-
-Poniżej znajduje się przykładowy kod w Gleam oraz jego wynik:
+Najlepszym sposobem na rozpoczęcie projektu w Gleam jest zainstalowanie narzędzia gleam i wykorzystanie go do inicjalizacji projektu. Oto przykładowe polecenia, które możesz wykorzystać:
 
 ```Gleam
-pub fn hello(name: String) {
-  let message = "Witaj " ++ name
-  io.println(message)
-}
-
-hello("Czytelniku")
+$ mix local.rebar --force
+$ mix gleam.new moj_projekt
+$ cd moj_projekt
+$ mix gleam.build
 ```
 
-Wynik:
+Po wykonaniu tych operacji, będziesz już miał skonfigurowany projekt w Gleam. Możesz teraz zacząć pisać kod i korzystać z mechanizmów typowania, które oferuje ten język.
 
-```
-Witaj Czytelniku
-```
+## Deep Dive
 
-## Głębszy zanurzenie
-
-Aby jeszcze lepiej zacząć swoją przygodę z Gleam, warto przeczytać dokumentację na oficjalnej stronie oraz zapoznać się z dostępnymi bibliotekami. Warto także dołączyć do społeczności Gleam na forach dyskusyjnych i mediach społecznościowych, gdzie można uzyskać pomoc od innych programistów i dzielić się swoimi doświadczeniami.
+Kiedy już zaczniesz tworzyć swoje pierwsze projekty w Gleam, zauważysz jak wiele możliwości daje ten język. Możesz wykorzystać system modułów, aby organizować swój kod w logiczne bloki i utrzymać go w czystości. Gleam oferuje również takie funkcjonalności jak generatory, rekursja ogonowa oraz dopasowanie wzorców, które znacznie ułatwiają pisanie skomplikowanych algorytmów.
 
 ## Zobacz również
 
-- [Oficjalna strona Gleam](https://gleam.run/)
-- [Dokumentacja Gleam](https://gleam.run/documentation.html)
-- [Repozytorium GitHub z przykładowymi projektami w Gleam](https://github.com/gleam-lang/gleam_sandbox)
-- [Społeczność Gleam na Discordzie](https://discord.gg/RFpJCYf)
-- [Społeczność Gleam na Reddit](https://www.reddit.com/r/gleamlang/)
+Jeśli jesteś zainteresowany bardziej szczegółowymi informacjami o Gleam, możesz skorzystać z następujących linków:
+
+- Oficjalna strona Gleam: [https://gleam.run/](https://gleam.run/)
+- Dokumentacja: [https://gleam.run/documentation](https://gleam.run/documentation)
+- Repozytorium na GitHubie: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

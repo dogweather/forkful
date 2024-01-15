@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Swift: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför##
+## Varför
 
-När du skriver Swift-kod, är det viktigt att veta hur man använder standardfelutmatning för att felsöka och förbättra din kod. Genom att skriva till standardfelutmatning kan du se specifika felmeddelanden och veta var i koden problemet uppstår.
+Att kunna skriva till standard error i din Swift-kod är en viktig färdighet för utvecklare, särskilt när du felsöker dina program. Det låter dig skriva ut specifika meddelanden eller felmeddelanden till terminalen, vilket gör det enklare att identifiera och lösa problem.
 
-##Så här gör du##
+## Hur gör man
 
-För att skriva till standardfelutmatning kan du använda Swifts globala funktion "print" med parametern "to:". Som standard skrivs utskriften till standardutmatningen, men genom att ange "standardError" som parametern "to:" kan du skriva till standardfelutmatning istället.
+För att skriva till standard error i Swift, använder du funktionen "write" med parametern "to". Använd "stderr" för att ange att du vill skriva till standard error, och skriv sedan ut ditt meddelande inom paranteser.
 
-```Swift
-print("Detta är ett felmeddelande", to: &standardError)
+```Swift 
+write("Detta är ett felmeddelande!", to: &stderr)
 ```
 
-När du kör koden ovan kommer utskriften att skrivas till standardfelutmatning istället för standardutmatning. Du kan också inkludera variabler eller andra värden i utskriften för att få mer specifik information.
+Detta kommer att skriva ut "Detta är ett felmeddelande!" till standard error. Notera att "&" tecknet används för att ange en referens till standard error för funktionen.
 
-```Swift
-let num = 10
-print("Värdet är \(num)", to: &standardError)
-```
+## Djupdykning
 
-##Djupdykning##
+När du skriver till standard error, skriver du egentligen till standardfelkanalen. Detta är en separat kanal där alla felmeddelanden och utdata från ditt program skrivs ut. Anledningen till att standard error används för felmeddelanden istället för standard output är för att distinkt skilja mellan normal utdata och felmeddelanden, vilket underlättar felsökningen.
 
-Att kunna använda standardfelutmatning är ett viktigt verktyg för felsökning, särskilt när det gäller utveckling av större projekt med många olika delar. Genom att skriva till standardfelutmatning kan du snabbt hitta och korrigera fel i din kod, vilket sparar tid och frustration i långa loppet.
+## Se även
 
-Att inkludera variabler och värden i utskriften gör det också enklare att förstå vad som går fel och var i koden problemet finns. Du kan också använda Swifts "assert" funktion för att skriva till standardfelutmatning när ett villkor inte uppfylls, vilket kan hjälpa dig att hitta och åtgärda problem i din kod.
-
-##Se även##
-
-- [Swifts officiella dokumentation om standardutmatning](https://developer.apple.com/documentation/swift/standarderror)
-- [En guide till att använda Swifts "print" funktion](https://www.hackingwithswift.com/example-code/language/how-to-send-text-to-the-console-using-swift)
-- [Detaljerad information om Swifts "assert" funktion](https://www.swiftbysundell.com/basics/asserting-in-swift/)
+- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/2834607-write)
+- [Ray Wenderlich Tutorial](https://www.raywenderlich.com/990-swift-runtime-essentials/lessons/3)

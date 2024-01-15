@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Eliminazione dei caratteri corrispondenti a un pattern"
-simple_title:         "Eliminazione dei caratteri corrispondenti a un pattern"
+title:                "Eliminazione di caratteri corrispondenti ad un modello"
+html_title:           "Gleam: Eliminazione di caratteri corrispondenti ad un modello"
+simple_title:         "Eliminazione di caratteri corrispondenti ad un modello"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,26 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Eliminare caratteri che corrispondono a un determinato modello può essere utile per pulire o manipolare dati in un modo specifico. Questa funzione può essere particolarmente utile quando si lavora con grandi quantità di testo o stringhe.
+Stai cercando un modo semplice ed efficiente per eliminare i caratteri da una stringa che corrispondono ad uno specifico pattern? La soluzione potrebbe essere più facile di quanto pensi, grazie alla funzione `delete_matching` del linguaggio di programmazione Gleam.
 
-## Come fare
+## Come Fare
 
-Per eliminare caratteri che corrispondono a un modello in Gleam, è possibile utilizzare la funzione `String.filter`. Questa funzione prende come input una stringa e una funzione di filtro che determina quali caratteri devono essere rimossi. Esempio:
+Gleam è un linguaggio di programmazione funzionale staticamente tipizzato che punta a semplificare la creazione di applicazioni affidabili e performanti. Per utilizzare la funzione `delete_matching` dovrai seguire questi semplici passaggi:
 
-```Gleam
-let pattern = "aeiou"
-let string = "hello world"
-let filtered_string = String.filter(x -> not String.contains(pattern, x), string)
+1. Definisci una variabile che rappresenti la stringa su cui vuoi operare:
+
+```
+let stringa = "Questo-e-un-test per rimuovere i caratteri.";
 ```
 
-Questo esempio utilizza la funzione `String.contains` per verificare se il carattere corrente è incluso nel modello. Se il carattere non è incluso, viene incluso nella stringa finale. L'output per questo sarebbe `"hll wrld"`. 
+2. Definisci il pattern dei caratteri che desideri eliminare, utilizzando espressioni regolari:
+
+```
+let pattern = ~r"\W"; // Rimuove tutti i caratteri non alfanumerici
+```
+
+3. Utilizza la funzione `delete_matching` per creare una nuova stringa senza i caratteri corrispondenti al pattern:
+
+```
+let nuova_stringa = delete_matching(stringa, pattern); // Il risultato sarà "Questoeuntestperrimuovereicaratteri"
+```
+
+4. Puoi stampare il risultato per verificare il corretto funzionamento:
+
+```
+io.println(nuova_stringa); // Output: "Questoeuntestperrimuovereicaratteri"
+```
 
 ## Approfondimento
 
-La funzione `String.filter` può essere combinata con altre funzioni, come ad esempio `String.map` o `String.replace`, per manipolare stringhe in modo ancora più specifico. Inoltre, è possibile utilizzare espressioni regolari per determinare modelli di corrispondenza più complessi. Consulta la documentazione di Gleam per ulteriori informazioni su queste funzioni.
+La funzione `delete_matching` accetta due argomenti: la stringa da modificare e il pattern dei caratteri da eliminare. Il pattern può essere definito utilizzando una stringa di espressione regolare o un valore di tipo `Regex`.
 
-## Vedi anche
+Inoltre, è possibile utilizzare il parametro opzionale `count` per specificare il numero massimo di corrispondenze da eliminare. Ad esempio, se volessi eliminare solo le prime 2 occorrenze del nostro pattern, potresti scrivere:
 
-- Documentazione ufficiale di Gleam (https://gleam.run/)
-- Tutorial su come utilizzare le funzioni di stringa in Gleam (https://dev.to/pragmaticivan/working-with-strings-in-gleam-2jc)
-- Un esempio di utilizzo di espressioni regolari in Gleam (https://sivamaksuddulagn.com/posts/pattern-matching-with-regex-in-gleam/)
+```
+let nuova_stringa = delete_matching(stringa, pattern, ~s[ count: 2 ]);
+```
+
+## Vedi Anche
+
+- Documentazione ufficiale di Gleam - [https://gleam.run/](https://gleam.run/)
+- Espressioni regolari in Gleam - [https://gleam.run/book/tour/regular-expressions.html](https://gleam.run/book/tour/regular-expressions.html)
+- Tutorial sull'utilizzo di Gleam per i principianti - [https://gleam.run/book/tour/](https://gleam.run/book/tour/)

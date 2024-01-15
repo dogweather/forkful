@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "Bash: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -11,41 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monet ohjelmoijat käyttävät satunnaislukuja monissa ohjelmissaan. Satunnaislukuja voidaan käyttää esimerkiksi salasanoiden luomiseen, arpajaisiin tai tietokoneen pelien kehittämiseen. Satunnaislukujen käyttö antaa ohjelmille ennakoimattomuutta ja tekee niistä mielenkiintoisempia ja monipuolisempia.
+On useita tilanteita, joissa tarvitaan satunnaisten numeroiden generoimista Bash-kielellä. Tämä voi liittyä esimerkiksi salausavainten tai salasanoiden generoimiseen tai satunnaisten testitietojen luomiseen ohjelmointiin liittyvissä tehtävissä.
 
-## Miten
+## Kuinka tehdä
 
-Satunnaislukuja voidaan generoida helposti ja nopeasti Bash-skripteillä. Voit käyttää `$RANDOM`-muuttujaa, joka sisältää satunnaisen numeron välillä 0-32767. Tämän avulla voit esimerkiksi generoida satunnaisen kokonaisluvun seuraavasti:
+Bash-kielessä on mahdollista generoida satunnaisia numeroita käyttämällä ```$RANDOM```-muuttujaa. Tämän muuttujan arvo muuttuu jokaisella suorituskerralla ja sen arvot vaihtelevat välillä 0-32767. Alla on esimerkkejä eri tapoista käyttää tätä muuttujaa:
 
-```Bash
-number=$((RANDOM % 100)) 
-echo $number
-```
-Tämä koodi generoi satunnaisen numeron väliltä 0-99 ja tulostaa sen.
-
-Voit myös käyttää `shuf`-komennolla satunnaisia merkkijonoja. Esimerkiksi seuraava koodi generoi satunnaisen salasanan, joka koostuu 10 merkistä:
+- Generoi yksittäinen satunnainen numero:
 
 ```Bash
-shuf -n 10 -e {a..z} {A..Z} {0..9} | tr -d '\n'
+echo $((RANDOM))
 ```
 
-Voit myös asettaa satunnaisen siemenen käyttämällä `RANDOM`-muuttujaa yhdessä `RANDOMSEED`-muuttujan kanssa. Tämä mahdollistaa saman satunnaisen luvun generoimisen eri kertaa ajettuna. Esimerkiksi seuraava koodi generoi 10 erilaista satunnaislukua väliltä 1-100:
+- Generoi satunnainen luku väliltä 1-10:
 
 ```Bash
-for ((i=0;i<10;i++)); do
-    seed=$(($RANDOM % 100))
-    echo "Seed: $seed"
-    RANDOMSEED=$seed
-    echo "Random number: $((RANDOM % 100))"
-    echo
-done 
+echo $((RANDOM%10+1))
 ```
 
-## Syväri
+- Generoi 10 satunnaista numeroa välillä 1-100:
 
-Satunnaislukujen generoiminen Bashissa perustuu POSIX-Standardin `rand()`-funktioon. Tämän funktion avulla generoidaan satunnaisia lukuja `RANDOM`-muuttujan avulla. `RANDOMSEED`-muuttuja puolestaan määrittää satunnaisen siemenen `srand()`-funktiolle, joka alustaa satunnaislukugeneroinnin. Tämä mahdollistaa sen, että voit käyttää Bashissa samanlaista satunnaislukugenerointia kuin C-kielellä.
+```Bash
+for number in {1..10}
+do
+  echo $((RANDOM%100+1))
+done
+```
+
+Lopputuloksena saat siis 10 satunnaista lukua, esimerkiksi:
+
+```Bash
+87
+34
+12
+67
+99
+23
+56
+45
+76
+1
+```
+
+## Syvemmälle sukeltaminen
+
+Satunnaiset numerot Bash-kielessä perustuvat ```$RANDOM```-muuttujan arvoon, joka on todellisuudessa pseudosatunnainen generaattori. Tämä tarkoittaa, että vaikka numeraalit muuttuvat jokaisella suorituskerralla, niiden järjestys ja jakautuminen eivät ole täysin sattumanvaraisia. Jos tarvitset todella satunnaisia numeroita, kannattaa harkita muiden työkalujen, kuten OpenSSL:n tai GPG:n, käyttämistä.
 
 ## Katso myös
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
-- [Freedesktop-kirjasto](https://www.freedesktop.org/software/bash/)
-- [The Geek Stuff -kirjoitus satunnaislukujen generoinnista Bashissa](https://www.geeksforgeeks.org/bash-shell-using-random/)
+
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bashin opetusohjelmat](https://linuxconfig.org/bash-scripting-tutorial)

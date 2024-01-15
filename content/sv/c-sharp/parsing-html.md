@@ -1,5 +1,6 @@
 ---
-title:                "C#: Att tolka html"
+title:                "Att tolka html"
+html_title:           "C#: Att tolka html"
 simple_title:         "Att tolka html"
 programming_language: "C#"
 category:             "C#"
@@ -10,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-HTML är ett standardformat för att skapa webbsidor, men det kan vara svårt att extrahera information från dessa sidor om man inte har rätt verktyg. Genom att lära sig hur man parsar HTML kan man lättare få ut den information man behöver för att automatisera uppgifter eller utföra dataanalyser.
+Har du någonsin behövt extrahera information från en webbsida, men kämpat med att hitta en effektiv metod? Då är HTML parsing det du behöver! Genom att använda C# kan du enkelt hämta och manipulera data från HTML-kod, vilket sparar tid och ansträngning jämfört med manuell bearbetning.
 
-## Hur man parsar HTML i C#
-För att parsar HTML i C# finns det flera olika bibliotek att välja mellan, men i den här bloggposten kommer vi att använda HtmlAgilityPack. Här är ett exempel på hur man kan använda detta bibliotek för att plocka ut information från en HTML-sida:
+## Hur man gör
+Först och främst måste du importera "HtmlAgilityPack" -paketet i ditt C# -projekt. Detta ger dig nödvändiga verktyg för att analysera HTML-kod. Sedan kan du använda "HtmlWeb" -objektet för att hämta en webbsida och sedan använda "HtmlDocument" -objektet för att få åtkomst till dess element. Nedan finns exempel på hur man hämtar all text i en paragraf på en webbsida och skriver ut den:
 
 ```C#
-var web = new HtmlWeb();
-var doc = web.Load("https://www.example.com");
-
-// Hämta alla länkar från hemsidan
-var links = doc.DocumentNode.SelectNodes("//a[@href]");
-foreach (var link in links)
-{
-    Console.WriteLine(link.Attributes["href"].Value);
-}
+HtmlWeb web = new HtmlWeb(); // Skapar ett HtmlWeb-objekt
+HtmlDocument doc = web.Load("https://exempelsida.com"); // Hämtar en websida och skapar ett HtmlDocument-objekt
+HtmlNode paragraph = doc.DocumentNode.SelectSingleNode("//p"); // SelectSingleNode väljer ett element baserat på XPath
+Console.WriteLine(paragraph.InnerText); // Skriver ut texten i det valda elementet
 ```
 
-Detta kodexempel hämtar alla länkar från en given URL och skriver ut dem i konsolen. Genom att använda olika XPath-uttryck kan man välja vilken typ av information man vill hämta från en hemsida.
+Det finns naturligtvis många fler metoder och verktyg för att manipulera och analysera HTML-kod. Om du behöver jobba med specifika element eller attribut, kan du använda metoder som "SelectNodes" och "GetAttributeValue". Utforska dokumentationen för "HtmlAgilityPack" för att lära dig mer om dess kapaciteter och olika användningsområden.
 
 ## Djupdykning
-Det finns många olika faktorer att tänka på när man parsar HTML, till exempel att hantera felaktigt formaterad HTML eller att kunna hantera dynamiskt genererade sidor. Det kan också vara användbart att använda Regular Expressions för att filtrera och bearbeta den hämtade datan.
+Med "HtmlAgilityPack" kan du inte bara hämta data från HTML-kod, utan också göra ändringar i koden. Detta är användbart om du till exempel behöver uppdatera en webbsida automatiskt baserat på externt hämtade uppgifter. Genom att använda egenskaper som "InnerText" och "SetAttributeValue", kan du ändra eller lägga till data i existerande element.
 
-En annan viktig faktor att tänka på är att inte överbelasta hemsidan man hämtar från. Genom att sätta en lämplig tidsfördröjning mellan varje HTTP-begäran kan man minimera risken för att bli blockerad eller märkt som en spam-bot.
+Det finns också möjlighet att hantera felaktig eller ogiltig HTML-kod genom att använda metoden "LoadHtml" istället för "Load". Detta tillåter dig att bearbeta kod som annars skulle orsaka problem eller komplikationer.
 
-## Se även
-- HtmlAgilityPack Dokumentation: https://html-agility-pack.net/
-- XPath Tutorial: https://www.w3schools.com/xml/xpath_intro.asp
-- Regular Expressions in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+## Se också
+- [HtmlAgilityPack dokumentation](https://html-agility-pack.net/documentation)
+- [ASP.NET Core Razor Pages tutorial: Working with HTML forms in an ASP.NET Core Razor Pages project](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/validation?view=aspnetcore-5.0&tabs=visual-studio)
+- [Codecademy C# tutorial](https://www.codecademy.com/learn/learn-c-sharp)

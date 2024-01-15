@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 下载网页"
+title:                "下载网页"
+html_title:           "Haskell: 下载网页"
 simple_title:         "下载网页"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,35 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要下载网页？
 
-下载网页是一个常见的网络操作，无论是为了使用特定的信息或是对网页进行处理，都可能需要下载网页。使用Haskell语言可以带来简洁、高效和可靠的下载过程。
+有些时候，我们想要保存网页的内容或者想要离线浏览，这时候就需要下载网页。Haskell提供了简单易用的方法来下载网页内容，让我们一起来看看如何实现吧！
 
-## 如何进行
+## 如何进行网页下载
 
-要执行网页下载，我们需要先导入一个下载函数。在Haskell中，有一个非常方便的下载函数叫做"getResource"，它可以通过给定的URL地址来下载网页并返回一个ByteString类型的数据。[这里](https://hackage.haskell.org/package/download)可以找到更多关于"getResource"函数的信息。
+首先，我们需要导入网络请求的库，它可以帮助我们发送HTTP请求以及处理响应。Haskell中有几个可用的网络请求库，本文将使用**http-conduit**作为例子。首先，我们需要安装它，我们可以使用**cabal**来安装：
 
-下面是一个示例代码，用来下载并打印出一个网页的内容：
-
-```Haskell
-import Network.HTTP.Simple
-
-main = do
-  request <- parseRequest "https://www.example.com"
-  response <- httpBS request
-  print $ getResponseBody response
+```
+cabal install http-conduit
 ```
 
-运行上述代码，将会输出该网页的内容。如果想要将网页保存为文件，只需将"print"函数替换为"writeFile"函数，并指定保存文件的路径和名称即可。
+安装完成后，让我们来编写代码。首先，我们需要导入**Network.HTTP.Conduit**模块：
 
-## 深入探究
+```Haskell
+import Network.HTTP.Conduit
+```
 
-除了"getResource"函数，Haskell中还有许多其他的下载函数可以使用。例如，"Network.HTTP.Conduit"模块提供了更加全面的网络操作函数，包括设置请求头、验证和重定向等功能。[这里](http://www.yesodweb.com/book/http-conduit)是一个相关教程，可以帮助你更好地理解如何使用"Network.HTTP.Conduit"模块。
+现在，我们可以使用**simpleHttp**函数来发送一个简单的HTTP GET请求，并将响应内容保存在一个变量中：
 
-在下载网页时，还需要考虑到可能出现的网络错误。为了处理这些错误，可以使用"Haskoin-netrc"库，它提供了一种简单的方式来验证和保存用户名、密码和API访问密钥。[这里](http://maranget.polytechnique.fr/doc/attooe/html/Network-Haskoin-NetRC.html)可以找到有关"Haskoin-netrc"的更多信息。
+```Haskell
+myResponse <- simpleHttp "https://www.example.com"
+```
+
+响应的内容将被保存在名为**myResponse**的变量中，我们可以将它打印出来，观察网页的内容是否被成功获取：
+
+```Haskell
+print myResponse
+```
+
+这样，我们就可以完成网页的下载了。但是，如果我们想要将网页保存到本地文件中，应该怎么做呢？
+
+## 深入了解网页下载
+
+为了将网页保存到本地文件，我们需要使用**sinkFile**函数，它可以将网络请求的响应保存到指定的文件中。让我们来看一个完整的例子：
+
+```Haskell
+import Network.HTTP.Conduit
+
+main :: IO ()
+main = do
+    myResponse <- simpleHttp "https://www.example.com"
+    writeFile "example.html" myResponse
+```
+
+在这个例子中，我们首先使用**simpleHttp**函数来获取网页的内容，然后使用**writeFile**函数将内容保存到**example.html**文件中。
+
+除了使用**sinkFile**函数，我们还可以通过**conduit**来处理响应的内容。此外，我们还可以指定请求中的header、body等内容，来实现更复杂的网页下载操作。
 
 ## 参考链接
 
-- [Haskell语言官方网站](https://www.haskell.org)
-- ["Haskoin-netrc"库文档](http://maranget.polytechnique.fr/doc/attooe/html/Network-Haskoin-NetRC.html)
-- ["Network.HTTP.Conduit"模块教程](http://www.yesodweb.com/book/http-conduit)
+- [Haskell官方网站](https://www.haskell.org/)
+- [Haskell-http-conduit库文档](https://hackage.haskell.org/package/http-conduit)
+
+### 另请参阅
+
+- [Hello World的七种写法](https://www.example.com/hello-world)
+- [如何安装和使用Haskell解释器](https://www.example.com/haskell-installation-guide)

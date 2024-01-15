@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Extracting substrings"
+title:                "Extracting substrings"
+html_title:           "TypeScript recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Extracting substrings is a fundamental operation in string manipulation that allows us to isolate specific parts of a larger string. This can be useful in many scenarios such as parsing user input, formatting data, or generating dynamic strings.
+
+Substring extraction is a useful technique in programming for manipulating and extracting specific parts of a string. This can be useful for a variety of tasks, such as data processing, text parsing, and creating more dynamic and customizable outputs.
 
 ## How To
-To extract substrings in TypeScript, we can use the `substring()` method available on strings. This method takes in two parameters - the starting index and the ending index of the substring. Let's look at an example:
 
 ```TypeScript
-let str: string = "Hello World";
-let newStr: string = str.substring(0, 5);
+// The basic syntax for extracting substrings in TypeScript is as follows:
 
-console.log(newStr); // Outputs "Hello"
+let myString: string = "Hello World";
+
+// To extract a substring, we can use the substring() method, which takes in two parameters: the starting index and the ending index.
+
+myString.substring(0, 5); //returns "Hello"
+
+// We can also use the slice() method, which also takes in two parameters, but instead of the ending index, it takes in the desired length of the substring.
+
+myString.slice(6, 11); // returns "World"
+
+// We can also use the substr() method, which takes in two parameters, the starting index and the desired length of the substring.
+
+myString.substr(6, 5); // returns "World"
 ```
 
-In this example, we are extracting the substring starting from index 0 and ending at index 5. This results in a new string containing the characters "Hello" from the original string.
-
-We can also use negative numbers to extract substrings from the end of the string. For example, if we use `-1` as the ending index, we will get the last character of the string. Let's see this in action:
+These methods can also be combined with other string manipulation methods, such as toUpperCase() or toLowerCase(), for even more flexibility in extracting substrings.
 
 ```TypeScript
-let str: string = "Hello World";
-let newStr: string = str.substring(6, -1);
+// We can also use a negative index to start from the end of the string.
 
-console.log(newStr); // Outputs "World"
+myString.substring(-6); // returns "World"
+
+// We can also use these methods to extract substrings from arrays.
+
+let myArray: string[] = ["apple", "banana", "orange"];
+
+myArray[1].slice(3); // returns "ana"
+
 ```
-
-Notice how we are starting from index 6 and going backwards to get the characters "World" from the end of the string.
-
-It's important to note that the `substring()` method does not modify the original string, but instead returns a new string with the extracted substring.
 
 ## Deep Dive
-Under the hood, the `substring()` method in TypeScript uses the same logic as its JavaScript counterpart. It first checks the indices passed in and converts them to whole numbers. Then, it compares the two indices to determine which one is the starting index and which one is the ending index. If the starting index is greater than the ending index, the two indices are swapped to ensure the correct substring is extracted.
 
-Additionally, if only one parameter is passed in, the method assumes the starting index is 0 and extracts the substring from the beginning of the string.
+The substring extraction methods in TypeScript are based on the ones in JavaScript, and they both have slightly different behaviors. In TypeScript, the substring() method will throw an error if the starting index is greater than the ending index, while in JavaScript, it will swap the two values and still return the substring. Additionally, the substr() method in TypeScript does not support negative starting indices, while it does in JavaScript.
+
+It's also worth noting that these methods are not just limited to strings and arrays. They can also be used on objects or any data type that has a length property.
 
 ## See Also
-- [substring() method - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [String manipulation in TypeScript - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/string-handling)
-- [Understanding Substrings in JavaScript - Codecademy](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings/cheatsheet)
+
+Here are some helpful links for further reading on substring extraction in TypeScript:
+
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [MDN Web Docs for JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [W3Schools](https://www.w3schools.com/js/)

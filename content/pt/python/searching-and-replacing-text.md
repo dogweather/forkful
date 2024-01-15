@@ -1,6 +1,7 @@
 ---
-title:                "Python: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Python: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que usar o Python para substituir texto?
+## Por que
+Você já se encontrou em uma situação onde precisava alterar o texto em vários arquivos de uma vez? A funcionalidade de busca e substituição de texto é uma ferramenta poderosa que pode simplificar esse tipo de tarefa e economizar tempo e esforço.
 
-A tarefa de substituir texto em um grande volume de dados pode ser uma tarefa tediosa e demorada. Felizmente, o Python oferece uma maneira eficiente e simples de realizar essa tarefa. Com as ferramentas certas, você poderá substituir texto em grandes arquivos de maneira rápida e eficiente.
-
-# Como fazer isso com o Python
-
-Para substituir texto utilizando o Python, você precisará usar a função `replace()` em uma string. Por exemplo, se você quiser substituir todas as ocorrências da palavra "casa" pela palavra "apartamento" em um arquivo de texto, você pode fazer da seguinte forma:
+## Como fazer
+Usando Python, é possível realizar busca e substituição de texto de forma rápida e eficiente. Veja abaixo um exemplo de como fazer isso:
 
 ```Python
-arquivo = "meu_arquivo.txt"
-texto = open(arquivo).read()
-novo_texto = texto.replace("casa", "apartamento")
-print(novo_texto)
+import os
+
+# Definindo o diretório onde os arquivos serão alterados
+diretorio = "meus_arquivos"
+
+# Definindo o termo que será buscado e substituído
+termo_busca = "texto antigo"
+termo_substituir = "texto novo"
+
+# Loop através de todos os arquivos no diretório
+for arquivo in os.listdir(diretorio):
+    # Abre o arquivo e lê o conteúdo
+    with open(os.path.join(diretorio, arquivo)) as f:
+        conteudo = f.read()
+    # Faz a substituição do texto desejado
+    conteudo = conteudo.replace(termo_busca, termo_substituir)
+    # Sobrescreve o arquivo com o conteúdo atualizado
+    with open(os.path.join(diretorio, arquivo), "w") as f:
+        f.write(conteudo)
 ```
 
-No exemplo acima, a função `replace()` irá substituir todas as ocorrências da palavra "casa" pela palavra "apartamento" no arquivo de texto. Em seguida, o resultado será impresso na tela.
+Ao executar este código, serão percorridos todos os arquivos dentro do diretório especificado e o termo "texto antigo" será substituído por "texto novo". O resultado final será a alteração do conteúdo desses arquivos.
 
-# Aprofundando no assunto
+## Aprofundando
+Além de substituir um termo específico, é possível utilizar expressões regulares para realizar buscas mais complexas e substituições inteligentes. As expressões regulares permitem que você procure padrões de texto, o que pode ser útil em casos como formatação de data, números de telefone, endereços de email, entre outros.
 
-Além de simplesmente substituir palavras, o Python também oferece recursos para substituir expressões regulares, que podem ser úteis em casos mais complexos. Por exemplo, se você quiser substituir todas as ocorrências de números por "#num", você pode usar o módulo `re` da seguinte maneira:
+Veja um exemplo de como utilizar expressões regulares com a biblioteca "re" do Python:
 
 ```Python
 import re
-arquivo = "meu_arquivo.txt"
-texto = open(arquivo).read()
-novo_texto = re.sub(r'\d+', '#num', texto)
-print(novo_texto)
+
+# Definindo um padrão para procurar números de telefone
+padrao = r"\d{2}-\d{4}-\d{4}"
+
+# Definindo um texto de exemplo
+texto = "Meu número de telefone é 11-4752-9843"
+
+# Utilizando a expressão regular para encontrar o número de telefone
+resultado = re.search(padrao, texto)
+
+# Imprimindo o número de telefone encontrado
+print(resultado.group())
 ```
 
-Neste exemplo, a função `sub()` do módulo `re` irá substituir todos os números encontrados na string por "#num". Além disso, você pode especificar opções adicionais para substituição, como a escolha de substituir somente o primeiro número encontrado ou substituir somente números que estejam entre certos limites.
+Neste caso, o resultado final será "11-4752-9843", já que é o único número de telefone que segue o padrão definido na expressão regular.
 
-# Veja também
-
-- [Documentação oficial do Python para a função replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Tutorial para usar expressões regulares no Python](https://realpython.com/regex-python/)
-
-Esperamos que este artigo tenha sido útil para entender como utilizar o Python para substituir texto. Com a combinação certa de funções e módulos, você poderá realizar essa tarefa de maneira muito mais eficiente e rápida. Experimente e descubra como o Python pode facilitar suas tarefas de manipulação de texto!
+## Veja também
+- [Documentação oficial do Python sobre expressões regulares](https://docs.python.org/pt-br/3/library/re.html)
+- [Tutorial do Real Python sobre busca e substituição de texto](https://realpython.com/search-and-replace-python/)
+- [Guia do Python para iniciantes](https://www.python.org/about/gettingstarted/)

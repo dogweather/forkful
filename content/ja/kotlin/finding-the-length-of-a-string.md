@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 文字列の長さを見つける"
+title:                "文字列の長さを見つける"
+html_title:           "Kotlin: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-何故： 文字列の長さを求めることについて、なぜ誰かが関わるのかを説明する1-2文。
+## なぜ
 
-## Why
-文字列の長さを求めることは、プログラミングにおいて非常に一般的なタスクです。例えば、ユーザーが入力した文字列の長さをチェックするときや、特定の文字列が指定された文字数を超えているかどうかを確認するときなどに使用されます。
+Kotlinのプログラムを使用して、文字列の長さを確認する理由は、テキスト処理において基本的な操作であり、文字列を操作する際には必須の知識であるからです。
 
-## How To
-まずは、お馴染みの"Hello World"プログラムを使って、文字列の長さを求める方法を学びましょう。
+## 方法
+
+文字列の長さを確認するには、Kotlinの「.length」メソッドを使用します。「.length」メソッドは、文字列の長さを整数値で返します。以下のコードを参考にしてください。
 
 ```Kotlin
-fun main() {
-    val string = "Hello World"
-    val length = string.length
-    println("The length of the string is $length.")
-}
+// 文字列の長さを確認する例
+val str = "こんにちは、世界！"
+println(str.length) // 出力：11
 ```
-このプログラムを実行すると、次のような出力が得られます。
 
-The length of the string is 11.
+## 深堀り
 
-上記の例では、`length`という変数に`string.length`というメソッドを使って文字列の長さを代入しています。`length`を出力することで、文字列の長さがわかります。
+Kotlinでは、文字列を表すデータ型として「String」クラスを使用します。そして、「String」クラスには「.length」メソッドの他にも多くの便利なメソッドが用意されています。例えば、文字列を反転させる「.reversed()」メソッドや、特定の文字列が含まれているかを確認する「.contains()」メソッドなどがあります。
 
-さらに、文字列の長さを計算する方法は様々あります。例えば、`string.count()`や`string.toCharArray().count()`などが挙げられます。
+## 参考リンク
 
-## Deep Dive
-実は、Kotlinでは文字列を扱うための便利なメソッドがたくさん用意されています。例えば、文字列を大文字や小文字に変換する`toUpperCase()`や`toLowerCase()`、特定の文字列を含んでいるかどうかを確認する`contains()`などがあります。
+- [Kotlin: 文字列操作](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin: Stringクラス](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin: Stringメソッド一覧](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
 
-また、文字列の一部を取り出したり、指定された文字列で分割するメソッドもあります。さらに、正規表現を使った文字列の操作が可能な`Regex()`クラスもあります。これらのメソッドやクラスを使うことで、より高度な文字列の操作が可能となります。
+## 関連リンク
 
-## See Also
-- [Kotlin Documentation: Strings](https://kotlinlang.org/docs/strings.html)
-- [Kotlin Strings Tutorial](https://www.javatpoint.com/kotlin-strings)
-- [Kotlin String Functions](https://www.programiz.com/kotlin-programming/string-functions)
-
-以上で、Kotlinにおける文字列の長さを求める方法を学びました。Kotlinの文字列操作はとても柔軟で便利なので、ぜひ積極的に活用してみてください。
+- [Kotlin for Android: 公式ドキュメント](https://developer.android.com/kotlin/)
+- [Kotlinの基礎: 文字列操作](https://qiita.com/opengl-8080/items/34402cf9fbf665138171)
+- [Kotlin: Stringメソッドの使い方まとめ](https://qiita.com/lando/items/3a9cfc67d3a88ae095d1)

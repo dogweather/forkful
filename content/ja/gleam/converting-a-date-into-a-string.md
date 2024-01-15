@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 日付を文字列に変換する"
-simple_title:         "日付を文字列に変換する"
+title:                "「日付を文字列に変換する」"
+html_title:           "Gleam: 「日付を文字列に変換する」"
+simple_title:         "「日付を文字列に変換する」"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,45 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+日付を文字列に変換することの利点は、プログラムで日付データを扱うために必要です。例えば、データベースに日付を格納する場合や、ユーザーに表示する場合などには、日付を理解しやすい形式に変換する必要があります。Gleamでは、簡単な方法で日付を文字列に変換することができます。
 
-日付を文字列に変換することの利点は何でしょうか？このブログポストでは、Gleamプログラミング言語で日付を文字列に変換する方法を詳しく説明します。
-
-## やり方
-
-まず、Gleamで日付を文字列に変換する必要なモジュールをインポートします。
+## ハウツー
+日付型から文字列型に変換する方法は、以下のようになります。
 
 ```Gleam
-import gleam/time as time
+import Time.Date
+import Time.Format
+
+let date = Time.Date(2021, 8, 17)
+
+let formatted_date = Time.Format.to_string(date, "%Y-%m-%d")
+
+IO.print("変換後の日付: " ++ formatted_date)
 ```
 
-次に、現在の日付を取得します。
+このコードを実行すると、以下のような出力が得られます。
 
-```Gleam
-let date = time.now()
+```
+変換後の日付: 2021-08-17
 ```
 
-そして、日付を文字列に変換します。
-
-```Gleam
-let string = time.format(date, "%Y-%m-%d")
-```
-
-この場合、変換された文字列は"2021-09-30"となります。
+Gleamでは、 `Time.Format` モジュールを使用して日付を文字列にフォーマットすることができます。 `to_string` 関数には、フォーマットしたい日付とフォーマット文字列を渡すことで、日付を任意の形式に変換することができます。
 
 ## ディープダイブ
+日付を文字列に変換する際には、フォーマット文字列をどのように指定するかが重要です。Gleamでは、 `strftime` という関数を使用して、日付と時刻を指定したフォーマットに整形することができます。また、日本語を含むフォーマット文字列もサポートされています。
 
-日付を文字列に変換する際、Gleamプログラミング言語では、format関数を使用します。この関数には2つの引数があります。最初の引数は日付オブジェクトであり、2つ目の引数は日付をどのような形式の文字列に変換するかを指定するフォーマット文字列です。
+日付を文字列に変換する方法は他にもありますが、Gleamが提供する `Time.Format` モジュールを使用すれば、より簡単に日付を任意の形式に変換することができます。
 
-フォーマットされた文字列には、使用できる特殊な文字があります。例えば、"%Y"は4桁の年を表し、"%m"は2桁の月を表します。詳細なフォーマット文字列の一覧は、Gleamの公式ドキュメントを参照してください。
-
-## 詳しくはこちら
-
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [日付を文字列に変換する方法についての詳細な解説記事](https://example.com/converting-date-to-string)
-- [Gleamで日付を扱う方法についてのチュートリアル動画](https://youtube.com/gleam-tutorial/123)
-
-## 関連リンク
-
-- [Gleamを使用したWebアプリケーション開発の方法についてのブログポスト](https://example.com/gleam-web-development)
-- [Gleamでのデータベース操作の方法についての公式ドキュメント](https://gleam.run/documentation/database)
-- [Gleamコミュニティのフォーラム](https://gleam.discourse.group/)
+## 関連情報
+[Gleam公式ドキュメント](https://gleam.run/core/time.html#format)

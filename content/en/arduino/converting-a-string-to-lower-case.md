@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "Arduino recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-
-Arduino programming is a useful skill to have, especially for hobbyists and students interested in electronics and robotics. One particular task that may come up is converting a string to lower case. This can be useful for various purposes, such as data manipulation and comparison.
+## Why 
+Converting a string to lower case can be useful in various scenarios. For example, if you are reading input from a user and want to standardize the data, converting all letters to lower case can help with data manipulation and comparison. 
 
 ## How To
-
-To convert a string to lower case in Arduino, you can use the `toLowerCase()` function. This function converts all the characters in a string to lower case and returns the updated string. Take a look at the following example:
-
-```Arduino 
-String myString = "Hello World";
-myString.toLowerCase();
-```
-
-The output of this code would be `"hello world"`, with all the characters converted to lower case. You can also assign the converted string to a new variable, as shown below:
+To convert a string to lower case in Arduino, we can use the `toLowerCase()` function. Here's an example code snippet: 
 
 ```Arduino
-String myString = "Hello World";
-String lowercaseString = myString.toLowerCase();
+String input = "Hello World";
+input.toLowerCase(); //this updates the string variable to "hello world"
+Serial.println(input); //prints "hello world" to the serial monitor
 ```
 
-The output of `lowercaseString` would be the same as before, "hello world". This is a simple yet useful function that can save you time and effort when working with strings in your Arduino projects.
+We can also use a loop to iterate through each character in the string and convert them individually using the `toLowerCase()` function. Here's an example: 
+
+```Arduino
+String input = "I Love Arduino";
+String output = ""; //declaring an empty string to store the converted string
+for(int i=0; i < input.length(); i++){
+    output += String(input.charAt(i)).toLowerCase();
+}
+Serial.println(output); //prints "i love arduino" to the serial monitor
+```
 
 ## Deep Dive
+The `toLowerCase()` function uses the ASCII characters to determine whether a letter needs to be converted to lower case or not. For example, if the ASCII value of a character falls between 65 (A) and 90 (Z), it will be converted to its lower case equivalent by adding 32 to its ASCII value. Similarly, if the ASCII value falls between 97 (a) and 122 (z), no conversion is necessary. 
 
-If you're curious about how the `toLowerCase()` function works, it uses the ASCII (American Standard Code for Information Interchange) codes to convert the characters to lowercase. Each character has an assigned ASCII code, and converting to lowercase involves adding 32 to the ASCII code of uppercase letters. Other characters, such as numbers and symbols, remain unchanged.
-
-Additionally, you can also use the `toUpperCase()` function to convert a string to uppercase in Arduino using the same concept.
+Apart from the `toLowerCase()` function, there are other methods and libraries available for string manipulation in Arduino. It is recommended to explore these options and choose the most efficient one according to your project's needs. 
 
 ## See Also
-
-- [Arduino Documentation on String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [ASCII Table](https://www.asciitable.com/)
+- [Official Arduino Documentation on Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Arduino String Library](https://www.arduino.cc/reference/en/libraries/string/) for more advanced string manipulation functions.

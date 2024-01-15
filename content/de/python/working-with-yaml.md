@@ -1,6 +1,7 @@
 ---
-title:                "Python: Arbeiten mit YAML"
-simple_title:         "Arbeiten mit YAML"
+title:                "Arbeiten mit yaml"
+html_title:           "Python: Arbeiten mit yaml"
+simple_title:         "Arbeiten mit yaml"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,45 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich überhaupt mit YAML beschäftigen? YAML (YAML Ain't Markup Language) ist ein häufig verwendetes Format für die Speicherung und Übertragung von Daten. Es ist besonders nützlich für die Konfiguration von Software und ermöglicht es, Daten in einem einfachen, menschenlesbaren Format zu speichern.
+YAML ist eine simple und benutzerfreundliche Möglichkeit, Daten in einem menschenlesbaren Format zu speichern und zu übertragen. Es ist besonders nützlich für die Konfiguration von Software oder das Erstellen von Strukturen für einfache Datenaustauschformen.
 
-## Wie
+## Wie geht's
 
-Um mit YAML in Python zu arbeiten, muss man zuerst das "pyyaml" Paket importieren. Dann kann man mit der Funktion "safe_load()" eine YAML-Datei in ein Python Dictionary umwandeln:
+YAML-Dateien können einfach als Textdateien erstellt und bearbeitet werden. Um YAML-Daten in Python einzulesen, muss die `yaml` Bibliothek installiert werden. Danach kann sie mit `import yaml` importiert werden.
 
 ```Python
 import yaml
 
-with open("beispiel.yaml") as f:
-    data = yaml.safe_load(f)
+# YAML-Datei einlesen
+with open("beispiel.yml", "r") as file:
+    data = yaml.load(file, Loader=yaml.FullLoader)
 
+# Datenausgabe
 print(data)
 ```
-Die Ausgabe sieht dann wie folgt aus:
+
+Die Ausgabe könnte folgendermaßen aussehen:
 
 ```Python
-{'name': 'John', 'age': 30, 'hobbies': ['hiking', 'cooking', 'reading']}
+{'name': 'Max Mustermann', 'alter': 30, 'hobbies': ['Lesen', 'Kochen', 'Sport']}
 ```
 
-Man kann nun auf die einzelnen Einträge im Dictionary zugreifen, z.B. um den Namen auszugeben:
+Um YAML-Daten in Python zu schreiben, können die Daten einfach in ein entsprechendes Format gebracht und in eine Datei geschrieben werden.
 
 ```Python
-print("Name: {}".format(data['name']))
+import yaml
+
+# Daten zum Schreiben
+data = {
+    "name": "Max Mustermann",
+    "alter": 30,
+    "hobbies": ["Lesen", "Kochen", "Sport"]
+}
+
+# Daten in YAML-Format bringen
+yaml_data = yaml.dump(data)
+
+# YAML-Datei schreiben
+with open("beispiel.yml", "w") as file:
+    file.write(yaml_data)
 ```
-Die Ausgabe wäre dann: "Name: John".
 
-## Tiefer Einblick
+## Tiefergehende Informationen
 
-YAML bietet noch weitere nützliche Funktionen, wie z.B. die Möglichkeit, Variablen und Listen einzubinden oder komplexe Datenstrukturen wie verschachtelte Dictionaries zu erstellen. Es ist auch möglich, YAML-Dokumente zu validieren und Fehlermeldungen auszugeben, um mögliche Probleme bei der Verarbeitung zu erkennen.
+YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine einfachere und lesbarere Alternative zu anderen Datenformaten wie XML oder JSON zu bieten. Es basiert auf Einrückungen und Zeilenumbrüchen, um Daten zu strukturieren. YAML wird in vielen Bereichen eingesetzt, von der Webentwicklung bis hin zu Automatisierungstools wie Ansible.
 
-Es ist jedoch wichtig zu beachten, dass YAML auf Einrückungen und Leerzeichen angewiesen ist, um die Struktur der Daten zu definieren. Damit kann es manchmal zu unerwarteten Fehlern führen, wenn die Formatierung nicht korrekt ist.
+In Python gibt es mehrere Bibliotheken für die Arbeit mit YAML-Daten, darunter `PyYAML` und `yaml-include`. Diese bieten erweiterte Funktionen wie die Unterstützung für Mehrzeilen- und mehrdimensionale Datenstrukturen.
 
 ## Siehe auch
 
-Weitere Informationen und Beispiele für die Arbeit mit YAML in Python finden Sie unter folgenden Links:
-
-- [Offizielle Dokumentation für pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Beispiele für die Arbeit mit YAML in Python](https://realpython.com/python-yaml/)
-- [Tutorial für YAML in Python](https://zetcode.com/python/yaml/)
-
-Vielen Dank fürs Lesen und viel Spaß beim Programmieren mit YAML!
+- [YAML.org](https://yaml.org/)
+- [Offizielle Dokumentation von PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- [yaml-include Dokumentation](https://pypi.org/project/yaml-include/)

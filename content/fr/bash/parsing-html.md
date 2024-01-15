@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyse des balises HTML"
+html_title:           "Bash: Analyse des balises HTML"
+simple_title:         "Analyse des balises HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La recherche d'informations sur Internet est une activité courante pour de nombreuses personnes, que ce soit pour trouver des réponses à leurs questions ou pour effectuer des achats en ligne. Mais parfois, les données que nous recherchons ne sont pas présentées de manière claire et structurée, ce qui rend difficile l'extraction de ces informations. C'est là que le parsing HTML entre en jeu. En utilisant des outils de programmation, il est possible de convertir des pages web en données exploitables, ce qui facilite la recherche et la manipulation de l'information.
+Si vous êtes un programmeur.euse, vous savez probablement déjà que HTML est le langage de balisage utilisé pour créer des pages web. Mais saviez-vous que vous pouvez utiliser Bash pour extraire des informations à partir de ces pages HTML ? Dans cet article, nous allons explorer pourquoi il peut être utile d'analyser du HTML avec Bash et comment le faire.
 
 ## Comment faire
+Pour extraire des informations à partir d'une page HTML, nous allons utiliser un outil en ligne de commande appelé "sed". Il s’agit d’un puissant outil qui peut être utilisé pour manipuler des chaînes de caractères, y compris du HTML. Voici un exemple simple de la façon d'utiliser sed pour extraire tous les liens hypertexte de la page HTML d'un site web :
 
-Pour commencer, il est important de comprendre ce qu'est le HTML. Il s'agit d'un langage de balisage utilisé pour structurer le contenu des pages web. Chaque élément de la page est délimité par des balises, qui peuvent être utilisées pour identifier et extraire les données souhaitées.
+```Bash 
+# 1. Utiliser curl pour télécharger la page HTML
+curl https://www.example.com > example.html
 
-Dans cet exemple, nous allons utiliser la commande curl pour télécharger une page web et la stocker dans un fichier. Ensuite, nous allons utiliser le programme grep pour rechercher une balise spécifique et extraire son contenu.
-
-```Bash
-# téléchargement de la page web
-curl https://www.example.com > page.html
-
-# recherche de la balise contenant le titre de la page
-grep "<h1>" page.html
+# 2. Utiliser sed pour extraire tous les liens hypertexte
+sed -n 's/.*href=\"\(.*\)\".*/\1/p' example.html
 ```
 
-La sortie de cette commande sera le titre de la page web. Vous pouvez également utiliser d'autres outils tels que sed ou awk pour affiner votre extraction en utilisant des expressions régulières ou en parcourant le contenu de la page ligne par ligne.
+La première commande utilise "curl" pour télécharger la page HTML à partir de l'URL spécifiée et la sauvegarde dans un fichier appelé "example.html". La deuxième commande utilise sed pour rechercher toutes les occurrences de la balise "href" dans le fichier et n'affiche que le contenu situé entre les guillemets, qui correspond aux liens hypertexte. Vous pouvez personnaliser et affiner cette commande pour extraire des informations spécifiques à partir d'une page HTML.
 
 ## Plongée en profondeur
+Maintenant que vous avez une compréhension de base de la façon d'extraire du contenu à partir de pages HTML en utilisant Bash, voici quelques points à retenir :
 
-Bien que la méthode présentée ci-dessus soit une façon simple d'extraire des données à partir de pages web, elle peut être limitée dans certains cas. Des pages complexes avec du JavaScript ou des données provenant de plusieurs sources peuvent être difficiles à traiter. Dans ces situations, il peut être utile d'utiliser des bibliothèques spécialement conçues pour le parsing HTML, comme BeautifulSoup ou lxml.
-
-Ces outils offrent une plus grande flexibilité et facilitent l'extraction de données même à partir de pages complexes. Ils offrent également des fonctionnalités telles que la manipulation de l'arborescence HTML et la conversion en différents formats de données, tels que JSON ou CSV.
+- Vous pouvez également utiliser d'autres outils en ligne de commande tels que "grep", "awk" et "grep" pour extraire du contenu d'une page HTML.
+- Le HTML est un langage structuré, il est donc important de renforcer vos connaissances sur sa syntaxe avant de tenter des analyses complexes.
+- Vous pouvez également utiliser Bash pour automatiser des tâches telles que la mise à jour de liens ou la modification de contenu HTML.
 
 ## Voir aussi
+- [Documentation de sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Guide de référence Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Apprenez à utiliser grep, sed et awk](https://www.linux.com/tutorials/learn-grep-sed-awk/)
 
-- [Guide complet sur le parsing HTML en Bash](https://tech.io/playgrounds/31909/parsing-html-using-bash)
-- [Documentation officielle de la commande grep](https://www.gnu.org/software/grep/)
-- [BeautifulSoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+Maintenant que vous avez les bases pour analyser du HTML avec Bash, à vous de jouer ! N'hésitez pas à explorer davantage et à découvrir de nouvelles façons d'utiliser Bash pour travailler avec des pages web. Bonne chance !

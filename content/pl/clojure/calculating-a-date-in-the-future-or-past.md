@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,47 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obliczenie daty w przyszłości lub przeszłości może być niezbędne przy tworzeniu aplikacji związanych z datami lub wydarzeniami. Jest to również przydatne, gdy chcemy przewidzieć datę urodzin lub ważnej rocznicy.
+Kalkulowanie dat w przyszłości lub przeszłości może być bardzo przydatne w codziennym życiu, szczególnie w przypadku planowania wydarzeń lub spotkań. W Clojure można to wygodnie osiągnąć za pomocą funkcji `clj-time` i `java-time`.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby obliczyć datę w przyszłości lub przeszłości w Clojure, musimy użyć funkcji `java.util.Calendar`. Najpierw musimy zaimportować tę funkcję:
-
-```Clojure
-(import [java.util Calendar])
-```
-
-Aby uzyskać datę w przyszłości, możemy użyć funkcji `add` z podaniem odpowiedniego pola i liczby, jak poniżej:
+Zacznijmy od zaimportowania `clj-time` i `java-time`:
 
 ```Clojure
-(def date (Calendar/getInstance))
-(.add date Calendar/DAY_OF_MONTH 7)
+(ns my-namespace
+  (:require [clj-time.core :as t]
+            [java-time :as j]))
 ```
 
-W powyższym przykładzie obliczamy datę, która jest 7 dni później od bieżącej daty.
-
-Aby uzyskać datę w przeszłości, musimy zmienić znak liczby, np. jeśli chcemy uzyskać datę sprzed 7 dni, funkcja `add` wyglądałaby następująco:
+Aby obliczyć datę w przyszłości lub przeszłości, użyj funkcji `plus` lub `minus` z `clj-time`:
 
 ```Clojure
-(def date (Calendar/getInstance))
-(.add date Calendar/DAY_OF_MONTH -7)
+(t/plus (j/now) {:days 5}) ; dodaje 5 dni do dzisiejszej daty
+=> #object[java.time.LocalDateTime 0x48950ed5 "2021-10-05T11:31:17.424"]
+
+(t/minus (j/now) {:months 2}) ; odejmuje 2 miesiące od dzisiejszej daty
+=> #object[java.time.LocalDateTime 0x5f7cad16 "2021-08-05T11:31:17.424"]
 ```
 
-Po obliczeniu daty, możemy pobrać ją przy użyciu funkcji `get` z podaniem odpowiedniego pola, na przykład:
+Można również określić liczbę tygodni, lat, godzin, minut i sekund jako argumenty dla funkcji `plus` i `minus`.
 
-```Clojure
-(println (.get date Calendar/DAY_OF_MONTH) "/" (.get date Calendar/MONTH) "/" (.get date Calendar/YEAR))
-```
+## Głębsze wgląd
 
-W wyniku otrzymamy datę w formacie `dzień/miesiąc/rok`.
+Możliwość wykonywania operacji na datach jest bardzo przydatna, ponieważ pozwala na precyzyjne planowanie wydarzeń i działań. W Clojure wykorzystuje się biblioteki `clj-time` i `java-time`, aby zapewnić wygodną i skuteczną obsługę czasu i daty.
 
-## Głębszy wgląd
+## Zobacz również
 
-Aby lepiej zrozumieć działanie funkcji `add`, warto przestudiować dokumentację funkcji `Calendar` oraz pola, takie jak `DAY_OF_MONTH` czy `MONTH`. Możemy również zapoznać się z innymi funkcjami i narzędziami dostępnymi w Clojure do pracy z datami, na przykład biblioteką `clj-time` lub funkcją `LocalDate`.
-
-## Zobacz także
-
-- [Dokumentacja funkcji Calendar](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
-- [Dokumentacja pola DAY_OF_MONTH](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html#DAY_OF_MONTH)
-- [Biblioteka clj-time](https://github.com/clj-time/clj-time)
-- [Funkcja LocalDate w Java](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- Dokumentacja `clj-time`: https://cljdoc.org/d/clj-time/clj-time/0.15.0/doc/readme
+- Dokumentacja `java-time`: https://cljdoc.org/d/java-time/java-time/0.3.2/doc/readme
+- Przykładowe projekty wykorzystujące Clojure i `clj-time`: https://github.com/clj-time/clj-time/wiki/Projects-Using-clj-time

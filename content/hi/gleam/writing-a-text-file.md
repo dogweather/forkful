@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: एक टेक्स्ट फ़ाइल लिखना"
-simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
+title:                "टेक्स्ट फ़ाइल लिखना"
+html_title:           "Gleam: टेक्स्ट फ़ाइल लिखना"
+simple_title:         "टेक्स्ट फ़ाइल लिखना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,22 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-इस ब्लॉग पोस्ट में, हम ग्लीम प्रोग्रामिंग के बारे में बात करेंगे जो हिंदी पाठकों के लिए बहुत ही महत्वपूर्ण है। यह आर्टिकल आपको बताएगा कि आप टेक्स्ट फाइल कैसे लिख सकते हैं और क्यों यह महत्वपूर्ण है।
+## Kyun
 
-## क्यों?
+Aksar humko files mein apne code ko store karne ki zaroorat hoti hai. Lekin kai baar humare paas ye facility nahi hoti ki hum graphical interface mein code ko likh sake. Isi situation mein text files ka use karna bahut helpful ho sakta hai. Is article mein hum baat karenge ki text file kaise likhein.
 
-टेक्स्ट फाइल लिखना बहुत ही उपयोगी हो सकता है। आप अपने प्रोग्राम के लिए दस्तावेज़ात बना सकते हैं और उन्हें सहजता से संशोधित भी कर सकते हैं। इससे आपकी प्रोग्राम की पढ़ने और समझने की प्रक्रिया भी आसान होगी।
+## Kaise Karein
 
-## कैसे करें?
-
-टेक्स्ट फाइल को लिखने के लिए, हमें ग्लीम की एक डॉक्यूमेंटेशन फ़ाइल के साथ काम करना होगा। निम्नलिखित कोड ब्लॉक में हम देख सकते हैं कि कैसे एक टेक्स्ट फाइल लिखा जाता है।
+Pahle ```Gleam.io``` ke official website se ```Gleam``` installer download karein aur apne system mein install kar lein. Aapko ek text editor bhi install karna hoga, jaise ```Notepad``` ya ```Sublime Text```. Ab ek naya file create karein aur usmein ```Gleam``` code likhein, jaise:
 
 ```Gleam
-File.write("example.txt", "यह मेरा उदाहरण टेक्स्ट है।")
+pubfn main() {
+  let greeting = "Namaste, duniya!";
+  io.print(greeting)
+}
 ```
 
-उपरोक्त कोड की मदद से हमने "example.txt" नाम की एक फाइल बनाई है और उसमें एक लाइन के रूप में हिंदी टेक्स्ट लिखा है। आप अपनी फाइल का नाम और उसमें लिखना चाहिए हिंदी टेक्स्ट को अपनी आवश्यकता के अनुसार बदल सकते हैं।
+Is code mein humne ```pubfn``` keyword ka use kiya hai, jo ek function declare karta hai. Humne ek variable ```greeting``` bhi define kiya hai aur usmein ek string value assign ki hai. Fir humne ```io.print``` function ko use karke variable ki value print ki hai. Ye ek basic code hai jisse aap text file mein likh sakte hain. Is code ko aap "example.gleam" naam se save kar sakte hain. Ab aap apne terminal ya command prompt mein ```gleam run example.gleam``` command ko use karke apne code ko run kar sakte hain. Iske output ke roop mein aap "Namaste, duniya!" ka message dekhenge.
 
-## डीप डाइव
+## Deep Dive
 
-हमारे उदाहरण में, हमने सीखा कि ग्लीम का उपयोग करके हम कैसे एक टेक्स्ट फाइल लिख सकते हैं। लेकिन आप ग्लीम की मदद से एक फाइल में विभिन्न लाइनें भी लिख सकते हैं। आप अपनी फाइल को संपाद
+Aap ```Gleam``` ke official documentation ko follow karke text files mein code likhne ke sath sath, file ko compile, run aur build bhi kar sakte hain. Aap ```Gleam``` ke powerful features jaise ki pattern matching, error handling aur type checking ka bhi use kar sakte hain. Agar aapke paas koi bhi doubt ya question hai, to aap ```Gleam``` ke official community forum ya Discord server se madad le sakte hain.
+
+## Dekhen Bhi
+
+- [Gleam.io](https://gleam.io/)
+- [Gleam ki Official Documentation](https://gleam.run/getting-started/introduction/)
+- [Gleam ki Official Community Forum](https://github.com/gleam-lang/gleam/discussions)
+- [Gleam ke Discord Server](https://discord.gg/2rYBnEJgSd)

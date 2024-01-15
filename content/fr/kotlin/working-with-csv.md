@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Travailler avec des fichiers csv"
+title:                "Travailler avec des fichiers csv"
+html_title:           "Kotlin: Travailler avec des fichiers csv"
 simple_title:         "Travailler avec des fichiers csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,79 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Bonjour les programmeurs Kotlin ! Si vous avez déjà travaillé avec des données tabulaires dans vos projets, vous avez probablement rencontré le format CSV. CSV, ou Comma-Separated Values, est un moyen courant de stocker des données sous forme de tableaux dans des fichiers texte. Dans cet article, nous allons explorer pourquoi et comment travailler avec des fichiers CSV en utilisant Kotlin.
+# Pourquoi travailler avec des fichiers CSV en Kotlin
 
-## Pourquoi
+Si vous travaillez avec des données tabulaires, vous avez probablement déjà rencontré des fichiers CSV. Les fichiers CSV (Comma-Separated Values) sont un format couramment utilisé pour stocker et échanger des données entre différentes applications. Heureusement, Kotlin offre de nombreux outils pour travailler avec des fichiers CSV de manière simple et efficace.
 
-Les fichiers CSV sont un format de données simple et convivial qui est couramment utilisé pour stocker des données dans des applications web, des feuilles de calcul et des bases de données relationnelles. En travaillant avec des fichiers CSV, vous pouvez facilement importer et exporter des données dans différents formats, ce qui en fait un outil précieux pour les projets de développement.
+# Comment travailler avec des fichiers CSV en Kotlin
 
-## Comment faire
+Pour travailler avec des fichiers CSV en Kotlin, vous aurez besoin d'importer la bibliothèque ** kotlinx-datetime-csv **. Cette bibliothèque fournit des fonctions pratiques pour lire et écrire des données à partir de fichiers CSV.
 
-Pour travailler avec des fichiers CSV en Kotlin, nous allons utiliser la bibliothèque open source kotlin-CSV. Cette bibliothèque offre des fonctionnalités pour lire, écrire et modifier des fichiers CSV de manière simple et efficace.
-
-Tout d'abord, nous devons ajouter la dépendance de kolin-CSV à notre projet dans le fichier build.gradle :
-
-```Kotlin
-dependencies {
-    implementation 'com.github.doyaaaaaken:kotlin-csv-jvm:0.15.0'
-}
-```
-
-Ensuite, nous importons la bibliothèque dans notre fichier Kotlin :
-
-```Kotlin
-import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
-```
-
-Maintenant, voyons comment lire un fichier CSV et afficher son contenu :
-
-```Kotlin
-val input = File("example.csv")
-// Créez un objet de lecteur CSV en utilisant le fichier d'entrée
-val csvReader = csvReader { delimiter = ',' }
-// Lisez chaque ligne du fichier et affichez-la en utilisant une boucle for
-csvReader.open(input) {
-    readAllAsSequence().forEach { row ->
-        // Accédez aux valeurs en utilisant les index ou les noms de colonnes
-        println("Nom: ${row[0]}, Âge: ${row[1]}, Ville: ${row["ville"]}")
-    }
-}
-```
-
-Voici la sortie que nous obtiendrons en utilisant le contenu du fichier CSV suivant :
+Voici un exemple de code pour lire des données à partir d'un fichier CSV :
 
 ```
-Nom,Âge,Ville
-Marie,25,Montreal
-Pierre,30,Paris
-Emma,22,Lyon
+import kotlinx.datetime.csv.*
+import java.io.File
+
+val file = File("data.csv")
+val data = file.readCSV()
+
+println(data) // affiche les données du fichier CSV
 ```
 
-```
-Nom: Marie, Âge: 25, Ville: Montreal
-Nom: Pierre, Âge: 30, Ville: Paris
-Nom: Emma, Âge: 22, Ville: Lyon
-```
+Et voici un exemple de code pour écrire des données dans un fichier CSV :
 
-Maintenant que nous savons comment lire un fichier CSV, voyons comment écrire et modifier des données existantes. Supposons que nous voulons ajouter une nouvelle colonne "Profession" à notre fichier CSV et y enregistrer un nouvel enregistrement. Voici comment nous pouvons le faire :
+```
+import kotlinx.datetime.csv.*
+import java.io.File
 
-```Kotlin
-val output = File("new_example.csv")
-val newRecord = listOf("Sophie", "26", "Toronto", "Infirmière")
-// Utilisez le mode d'écriture et ajoutez le nouvel enregistrement à la fin du fichier
-// N'oubliez pas d'ajouter un retour à la ligne après chaque enregistrement
-csvReader.open(input, mode = CsvMode.Write, append = true) {
-   writeRow(newRecord)
-}
+val data = listOf(listOf("John", "Doe", "35"), listOf("Jane", "Doe", "30"))
+
+val file = File("data.csv")
+file.writeCSV(data)
+
+println("Données écrites avec succès dans le fichier CSV !")
 ```
 
-## Deep Dive
+Grâce à la bibliothèque kotlinx-datetime-csv, vous pouvez facilement lire et écrire des données dans des fichiers CSV en Kotlin.
 
-En travaillant avec des fichiers CSV, il est important de garder à l'esprit quelques considérations. Tout d'abord, assurez-vous que vos données sont correctement formatées, sinon vous risquez d'avoir des problèmes lors de la lecture et de l'écriture de votre fichier. Ensuite, gardez à l'esprit que le format CSV peut varier selon les applications et les systèmes d'exploitation, donc il est important de tester votre code avec différentes sources et formats de fichier CSV.
+# Plongée en profondeur
 
-See Also : n'oubliez pas de consulter la documentation officielle de kolin-CSV pour en savoir plus sur ses fonctionnalités et ses options de configuration. Vous pouvez également consulter ces autres ressources pour en savoir plus sur la manipulation de fichiers CSV en Kotlin :
+La bibliothèque kotlinx-datetime-csv offre également une grande flexibilité en termes de manipulation des données CSV. Par exemple, vous pouvez définir des délimiteurs personnalisés pour vos fichiers CSV en utilisant la classe `CSVFormat`.
 
-- [Kotlin-CSV GitHub Repository](https://github.com/doyaaaaaken/kotlin-csv)
-- [How to Read and Write CSV Files in Kotlin](https://www.baeldung.com/kotlin/csv)
+De plus, si vous avez besoin de travailler avec des données de date et d'heure dans un fichier CSV, la bibliothèque offre des fonctions pour les afficher dans différents formats et les convertir en objets `kotlinx-datetime`. Cela peut s'avérer très utile pour des applications nécessitant un traitement des données temporelles.
 
-Nous espérons que cet article vous a été utile et que vous êtes maintenant prêt à travailler avec des fich
+# Voir aussi
+
+- [Documentation de kotlinx-datetime-csv](https://github.com/Kotlin/kotlinx-datetime/wiki/CSV-Format/)
+- [Tutoriel sur la manipulation de fichiers CSV en Kotlin](https://www.baeldung.com/kotlin-csv)
+
+En utilisant la bibliothèque kotlinx-datetime-csv, vous pouvez travailler avec des fichiers CSV en toute simplicité en utilisant Kotlin. N'hésitez pas à explorer davantage la bibliothèque et à découvrir toutes ses fonctionnalités.

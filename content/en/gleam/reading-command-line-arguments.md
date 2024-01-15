@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Reading command line arguments"
+title:                "Reading command line arguments"
+html_title:           "Gleam recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,68 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Command line arguments are an essential part of any programming language and can greatly enhance the functionality and usability of a program. In this blog post, we will explore how to use command line arguments in the Gleam programming language.
+Command line arguments are an essential aspect of programming, and understanding how to read them can greatly improve your efficiency and productivity as a programmer. In this article, we will delve into Gleam's methods for reading command line arguments, so you can confidently utilize them in your projects.
 
 ## How To
 
-To read command line arguments in Gleam, we first need to import the `gleam/commands` module, which provides functions for working with command line arguments. Let's take a look at an example:
+Reading command line arguments in Gleam is a simple process that can be broken down into three steps:
 
-```Gleam
-import gleam/commands
+1. First, we need to import the `gleam/io` package to access all the necessary functions. We can do this by adding the line `import gleam/io` to the top of our code.
 
-fn main(argv) {
-  let args = commands.parse(argv)
-  let language = case args[0] {
-    "en_GB" -> "English"
-    "es_ES" -> "Spanish"
-    _ -> "Unknown"
-  }
-  io.println("The selected language is {language}")
+2. Next, we define a `main` function that will serve as the entry point of our code. Inside this function, we use the `gleam/io/args` function to retrieve the command line arguments. We can assign these arguments to a variable using the `let` keyword. 
+
+3. Finally, we can use the `gleam/io/stdout` function to print out the arguments to the terminal. This will allow us to see the arguments in action.
+
+Let's take a look at a basic example of reading command line arguments in Gleam:
+
+```
+import gleam/io
+
+fn main() {
+  let args = io.args()
+  io.stdout(args)
 }
 ```
 
-In this example, we are using the `parse` function from the `gleam/commands` module to retrieve the command line arguments and store them in the `args` variable. We then use a `case` statement to check the value of the first argument and print a message based on the chosen language. Let's see what the output would be when executing this program with different arguments:
-
-```
-$ gleam run main.gleam en_GB
-The selected language is English
-```
-
-```
-$ gleam run main.gleam es_ES
-The selected language is Spanish
-```
-
-```
-$ gleam run main.gleam fr_FR
-The selected language is Unknown
-```
+If we were to run this code with the command `Gleam hello world`, the output would be `["hello", "world"]`, which are the two arguments we passed in.
 
 ## Deep Dive
 
-The `gleam/commands` module also provides a `Config` type, which can be passed to the `parse` function to specify different options for parsing the command line arguments. For example, we can set `allow_extra` to `false` to prevent the program from accepting extra arguments. We can also specify a `description` for our program, which will be displayed when using the `--help` flag.
+Now that we have a basic understanding of how to read command line arguments in Gleam, let's dive deeper into the topic.
 
-```Gleam
-import gleam/commands
+Firstly, it's important to note that command line arguments are separated by spaces. This means that if we wanted to pass in a phrase as an argument, we would need to surround it with quotes. For example, `Gleam "hello world"` would pass in one argument of `"hello world"`.
 
-fn main(argv) {
-  let args = commands.parse(
-    argv,
-    commands.Config(
-      description: "A simple program to demonstrate command line arguments",
-      allow_extra: false
-    )
-  )
-  
-  // Rest of the code
-}
-```
+Additionally, Gleam offers various functions that allow us to manipulate and format the arguments in different ways. Some of these functions include `join`, `split`, and `map`.
 
-We can also use `commands.parse_or_exit` which returns either the parsed arguments or terminates the program with an error if the arguments are invalid. This allows us to handle any potential errors when reading command line arguments.
+It's also worth mentioning that Gleam allows for optional arguments, which can be specified with a flag. These are typically preceded by a `--` and are used to perform specific actions or customize the program's behavior.
 
-## See Also
+Overall, understanding how to read command line arguments in Gleam is a valuable skill that can greatly enhance your programming abilities.
 
-- [The `gleam/commands` module documentation](https://gleam.run/modules/commands/)
-- [Another blog post on using command line arguments in Gleam](https://myblog.com/gleam-command-line-arguments)
+See Also
+
+- [Gleam Documentation for command line arguments](https://gleam.run/book/intro.html#command-line-arguments)
+- [Gleam CLI repository](https://github.com/gleam-lang/gleam)

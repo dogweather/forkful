@@ -1,6 +1,7 @@
 ---
-title:                "Java: Palaavien alimerkkien erottaminen"
-simple_title:         "Palaavien alimerkkien erottaminen"
+title:                "Alaryhmien erottaminen"
+html_title:           "Java: Alaryhmien erottaminen"
+simple_title:         "Alaryhmien erottaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi kannattaisi tutustua alakierteisiin?
+## Miksi
 
-Alakierteiden eli alaryhmien erotteleminen merkkijonosta voi olla hyödyllistä monessa eri tilanteessa. Esimerkiksi jos haluat tarkistaa, esiintyykö tietty sana merkkijonossa, tai jos haluat muuttaa tiettyään osaa merkkijonosta toiseksi. Alakierreiden hyödyntäminen voi myös tehdä koodista lyhyemmän ja helpommin ymmärrettävän.
+Joskus tietojen käsittelyssä tarvitaan tietyn osan tekstistä tai merkkijonosta, esimerkiksi nimen tai puhelinnumeron erottelua. Tämä tapahtuu substrin purkamisen avulla ja tässä artikkelissa käymme läpi miten se tehdään Java-kielellä.
 
-# Miten: Esimerkkejä alakierteiden hyödyntämisestä Java-kielellä.
-
-```Java
-String teksti = "Tervetuloa Suomeen!";
-String alakierte1 = teksti.substring(0, 9); // "Tervetulo"
-String alakierte2 = teksti.substring(10); // "Suomeen!"
-System.out.println(alakierte1);
-System.out.println(alakierte2);
-```
-
-Yllä olevassa esimerkissä käytetään merkkijonon `substring()` -metodia, joka ottaa parametreikseen alku- ja loppuindeksin. Tämän avulla voidaan erottaa alkuperäisestä merkkijonosta haluttu alakierte. Toinen parametri on valinnainen, ja mikäli se jätetään pois, otetaan alakierteenä kaikki merkit annetusta indeksistä eteenpäin.
+## Kuinka tehdä
 
 ```Java
-String sana = "koodaus";
-String ensimmainenKirjain = sana.substring(0, 1); // "k"
-String kaikkiMuutKirjaimet = sana.substring(1); // "oodaus"
-System.out.println(ensimmainenKirjain);
-System.out.println(kaikkiMuutKirjaimet);
+// Luodaan merkkijono-olio ja annetaan sille sisältö
+String teksti = "Tervetuloa Java-maailmaan!";
+
+// Haetaan ensimmäiset 7 merkkiä merkkijonosta
+String tekstinAlku = teksti.substring(0, 7);
+
+// Tulostetaan teksti - "Tervetu"
+System.out.println(tekstinAlku);
+
+// Haetaan viimeiset 8 merkkiä merkkijonosta
+String tekstinLoppu = teksti.substring(teksti.length() - 8);
+
+// Tulostetaan teksti - "maailmaan!"
+System.out.println(tekstinLoppu);
+
+// Haetaan merkkijonon osa, joka sijaitsee välillä "Java" ja "!"
+String tekstinKeskiosa = teksti.substring(teksti.indexOf("Java") + 4, teksti.indexOf("!"));
+
+// Tulostetaan teksti - "-maailmaan-"
+System.out.println("-" + tekstinKeskiosa + "-");
 ```
 
-Toisessa esimerkissä haluamme erottaa sana `koodaus` kahteen alakierteeseen: ensimmmäiseen kirjaimeen ja kaikkiin muihin kirjaimiin. Huomaa, että indeksit alkavat aina nollasta, joten kirjain `k` on indeksillä 0.
+Tässä esimerkissä luomme ensin merkkijono-olion ja annamme sille sisällön. Sitten käytämme `substring()`-metodia, joka ottaa parametreina aloitus- ja lopetuskohdat ja palauttaa halutun osan merkkijonosta. Voimme myös käyttää `indexOf()`-metodia löytääksemme tietyn merkkijonon sijainnin ja käyttää sitä parametrina `substring()`-metodissa.
 
-# Syvempää tietoa alakierteistä
+## Syvällinen tarkastelu
 
-Alakierteiden hyödyntäminen on yksi tapa käsitellä merkkijonoja Java-ohjelmoinnissa. Metodia `substring()` voi käyttää myös monilla muilla tavoilla, kuten esimerkiksi antamalla parametrina vain yhden indeksin, jolloin halutuksi alakierteeksi tulee kaikki merkit kyseisestä indeksistä eteenpäin. Voidaan myös määrittää negatiivisia indeksejä, jotka aloittavat laskemisen merkkijonon lopusta.
+`substring()`-metodi toimii niin, että se luo uuden merkkijono-olion halutusta osasta alkuperäistä merkkijonoa. Tämä tarkoittaa sitä, että vaikka muokkaamme tai poistamme alkuperäisen merkkijonon, substrin sisältö pysyy ennallaan. On myös tärkeää huomata, että `substring()` käyttää nollaperusteista indeksointia, eli ensimmäinen merkki sijaitsee indeksissä 0.
 
-Alakierteitä voidaan myös yhdistää muihin merkkijonon manipulointimetodeihin, kuten `concat()`, `replace()` ja `charAt()`. Niiden avulla voidaan luoda monimutkaisempia alakierteitä ja muokata niitä halutulla tavalla.
+Voit myös käyttää `substring()`-metodia kahden parametrin sijasta vain yhdellä parametrilla, jolloin se palauttaa osan merkkijonosta halutusta indeksistä eteenpäin. Esimerkiksi `teksti.substring(10)` palauttaisi osan merkkijonosta "maailmaan!" alkaen kohdasta 10 eteenpäin.
 
-# Katso myös
+## Katso myös
 
-- Java String -dokumentaatio: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html
-- Metodi `substring()` -esimerkit: https://www.w3schools.com/java/ref_string_substring.asp
-- "Mikä ihmeen alakierte?" -blogipostaus: https://javafm.fi/posts/alakierte/
+- [Java String Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Substring Tutorial by Codecademy](https://www.codecademy.com/courses/learn-java/lessons/java-arraylist/exercises/java-substring)

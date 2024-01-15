@@ -1,6 +1,7 @@
 ---
-title:                "C: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "C: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,59 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Calculer une date dans le passé ou dans le futur peut être extrêmement utile en programmation. Cela peut être utilisé pour automatiser des tâches telles que la planification des rappels ou la création de calendriers.
+Si vous êtes un programmeur débutant ou avancé en C, vous savez probablement que la manipulation des dates peut être un défi. Mais pourquoi devriez-vous vous intéresser à calculer une date dans le futur ou le passé? Eh bien, tout simplement parce que cela peut être très utile dans de nombreuses applications, telles que la réservation de vols, la planification d'événements ou la gestion de tâches.
 
 ## Comment faire
 
-La première étape pour calculer une date dans le futur ou dans le passé est de déterminer quelle date de référence vous souhaitez utiliser. Cela peut être la date en cours ou une date spécifique définie par l'utilisateur.
+Pour calculer une date dans le futur ou le passé en utilisant le langage de programmation C, il existe plusieurs méthodes à votre disposition. Voici deux exemples de code pour ajouter ou soustraire des jours à une date donnée en utilisant des fonctions intégrées dans la bibliothèque time.h:
 
-Ensuite, vous devez déterminer le nombre de jours à ajouter ou soustraire à cette date de référence. Vous pouvez utiliser la fonction `time()` pour obtenir le nombre de secondes écoulées depuis le 1er janvier 1970 et le diviser par le nombre de secondes dans une journée (86400) pour obtenir le nombre de jours.
-
-Enfin, vous pouvez utiliser les fonctions `gmtime()` et `asctime()` pour convertir le nombre de jours en une structure de date et l'afficher dans un format lisible pour l'utilisateur.
-
-Voici un exemple de code en C pour calculer une date dans le futur et l'afficher au format DD/MM/AAAA :
-
-```C
+```
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  // Date actuelle
-  struct tm *date_actuelle;
-  time_t temps_actuel = time(NULL);
-  date_actuelle = localtime(&temps_actuel);
-  
-  // Nombre de jours à ajouter
-  int jours = 5;
-  
-  // Calcul de la date dans le futur
-  date_actuelle->tm_mday += jours;
-  time_t temps_futur = mktime(date_actuelle);
-  date_actuelle = localtime(&temps_futur);
-  
-  // Affichage de la date au format DD/MM/AAAA
-  printf("Date dans %d jours : %02d/%02d/%d\n", jours, date_actuelle->tm_mday, date_actuelle->tm_mon + 1, date_actuelle->tm_year + 1900);
-  
-  return 0;
+int main()
+{
+    // Calculer la date dans 15 jours
+    time_t now = time(NULL); // Obtient l'heure actuelle
+    struct tm* tm_date = localtime(&now); // Convertit l'heure actuelle en structure de date
+    tm_date->tm_mday += 15; // Ajoute 15 jours
+
+    // Afficher la nouvelle date
+    char buffer[80];
+    strftime(buffer, sizeof(buffer), "%A, %B %d, %Y", tm_date);
+    printf("Dans 15 jours, nous serons un %s\n", buffer);
+
+    // Calculer la date il y a 1 mois
+    time_t now = time(NULL); // Obtient l'heure actuelle
+    struct tm* tm_date = localtime(&now); // Convertit l'heure actuelle en structure de date
+    tm_date->tm_mon -= 1; // Soustrait 1 mois
+
+    // Afficher la nouvelle date
+    char buffer[80];
+    strftime(buffer, sizeof(buffer), "%A, %B %d, %Y", tm_date);
+    printf("Il y a 1 mois, nous étions un %s\n", buffer);
+
+    return 0;
 }
 ```
 
-Voici la sortie de ce programme :
-
-```
-Date dans 5 jours : 03/01/2022
-```
+Ces exemples sont basés sur la structure de données "tm" qui représente une date en C. Les champs de cette structure peuvent être modifiés pour calculer une date ultérieure ou antérieure en ajoutant ou soustrayant des jours, mois ou années.
 
 ## Plongée en profondeur
 
-Le calcul d'une date dans le futur ou dans le passé peut sembler simple, mais il y a plusieurs facteurs à prendre en compte. Par exemple, il peut être nécessaire de vérifier si l'année est bissextile pour ajuster le nombre de jours dans le mois de février.
-
-De plus, il est important de noter que ce calcul peut varier selon les langages de programmation et les bibliothèques utilisées. Par exemple, en utilisant la bibliothèque `<chrono>` en C++, le calcul de la date dans le futur peut être effectué en utilisant des objets de type `duration` et `time_point`.
-
-Il est également important de se rappeler que le temps et les dates sont souvent sujets à des différences et des complications en raison de facteurs tels que les fuseaux horaires et les changements d'heure.
+Lorsque vous calculez une date dans le futur ou le passé en utilisant C, il est important de prendre en compte des éléments tels que les années bissextiles et les fuseaux horaires. Cela peut sembler compliqué, mais en comprenant la structure "tm" et les fonctions de manipulation de temps disponibles dans la bibliothèque time.h, vous devriez être en mesure de gérer ces cas spéciaux.
 
 ## Voir aussi
 
-- [Documentation officielle sur la bibliothèque <time.h> en C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Calcul d'une date dans le futur à l'aide de la bibliothèque <chrono> en C++](https://www.geeksforgeeks.org/get-date-time-in-seconds-using-c-chrono-library/)
-- [Différences entre les fuseaux horaires en programmation](https://www.howtogeek.com/323390/how-to-handle-time-zones-in-computer-programs/)
+Pour en savoir plus sur la manipulation de dates en C, vous pouvez consulter les liens suivants:
+
+- [Documentation officielle de la bibliothèque time.h](https://www.gnu.org/software/libc/manual/html_node/Time-Manipulation.html)
+- [Tutoriel sur la manipulation de dates en C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Forum de discussion sur la manipulation de dates en C](https://www.codeproject.com/Questions/870365/C-time-localtime-struct-tm-Problem)

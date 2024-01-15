@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Extrahieren von Teilstrings"
+html_title:           "Arduino: Extrahieren von Teilstrings"
+simple_title:         "Extrahieren von Teilstrings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,24 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich überhaupt mit der Extraktion von Teilstrings in der Arduino Programmierung beschäftigen? Nun, in vielen Fällen kann es notwendig sein, nur einen Teil eines längeren Texts zu verwenden oder zu bearbeiten, anstatt den gesamten Text zu verarbeiten. Die Extraktion von substrings ermöglicht es uns, dies effizient und genau zu tun.
 
-## Wie geht das?
-Die Extraktion von substrings in der Arduino Programmierung ist relativ einfach. Zunächst müssen wir jedoch einen Text oder eine Zeichenkette festlegen, aus der wir einen Teil extrahieren möchten. In unserem Beispiel nehmen wir an, dass wir den Satz "Hallo, mein Name ist Max" haben und wir möchten nur den Teil "Max" extrahieren. Dies kann mit der `substring()` Funktion erfolgen, die ein Startindex und eine Länge als Parameter akzeptiert.
+Manchmal ist es notwendig, aus einem String in Ihrem Arduino-Code einen bestimmten Teil herauszuziehen, um damit zu arbeiten. Dies kann nützlich sein, um beispielsweise bestimmte Informationen aus einer seriellen Nachricht zu erhalten oder Daten aus einem Sensorwert zu extrahieren.
 
- ```Arduino
-String text = "Hallo, mein Name ist Max";
-String substr = text.substring(18, 3); //18 ist der Startindex und 3 ist die Länge
-Serial.println(substr); //Gibt "Max" aus
+## Wie geht man vor
+
+Um Substrings aus einem String zu extrahieren, gibt es verschiedene Methoden in der Programmiersprache Arduino. Eine davon ist die Verwendung der Funktion `substring()`, die es ermöglicht, einen Teil des ursprünglichen Strings basierend auf der Startposition und der Anzahl der zu extrahierenden Zeichen zu erhalten. Schauen wir uns dazu ein Beispiel an:
+
+```Arduino
+String text = "Hallo, ich bin ein Arduino";
+String substring = text.substring(7, 16);
+Serial.println(substring); // Ausgabe: "ich bin ein"
 ```
 
-Wir definieren also zuerst eine Variable `text` mit unserem Satz und eine weitere Variable `substr`, in der wir den extrahierten Teil speichern. Dann verwenden wir die `substring()` Funktion und geben den Startindex als 18 und die Länge als 3 an. Schließlich geben wir die `substr` Variable mit der `Serial.println()` Funktion aus, um das Ergebnis auf dem seriellen Monitor anzuzeigen.
+In diesem Beispiel wird der Teil des Strings von der Position 7 bis zur Position 16 in der Variable `substring` gespeichert und dann über `Serial.println()` ausgegeben. Beachten Sie, dass die Positionen in Strings immer bei 0 beginnen.
 
-## Tiefergehende Informationen
-Neben dem Extrahieren von Teilstrings kann die `substring()` Funktion auch verwendet werden, um Teilstrings innerhalb eines bestimmten Bereichs zu suchen und zu ersetzen. Sie akzeptiert auch negative Startindizes, was bedeutet, dass wir den Teilstring von hinten zählen können.
+## Tiefer Einblick
 
-Es ist auch wichtig zu beachten, dass die Länge des extrahierten Teilstrings nicht unbedingt der angegebenen Länge entsprechen muss. Wenn die Länge größer ist als der verfügbare Text, wird einfach der Rest des Textes extrahiert.
+Die `substring()`-Funktion ist hilfreich, aber sie hat auch einige Einschränkungen. Zum Beispiel müssen Sie immer einen festen Startpunkt und eine feste Anzahl von Zeichen angeben, was in manchen Situationen unpraktisch sein kann. Eine weitere Möglichkeit ist die Verwendung von `indexOf()` und `lastIndexOf()`, um die Position von bestimmten Zeichen im String zu finden und dann `substring()` zu verwenden, um den gewünschten Teil zu extrahieren. Für eine detailliertere Erklärung dieser Methoden und weitere Optionen empfehle ich, sich mit der offiziellen Arduino-Dokumentation vertraut zu machen.
 
 ## Siehe auch
-- [Arduino String Dokumentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Substring-Funktion in C++](https://www.cplusplus.com/reference/string/string/substr/)
+
+- Offizielle Arduino-Dokumentation zu Strings: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Detaillierte Erklärung von `substring()`: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/

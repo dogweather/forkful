@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "Swift: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,53 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON?
+## Por que
 
-Se você já trabalha com programação em Swift ou está pensando em aprender, provavelmente já ouviu falar sobre JSON (JavaScript Object Notation). JSON é um formato de dados amplamente utilizado no desenvolvimento de aplicativos para troca de informações entre diferentes plataformas e linguagens de programação.
+Se você está trabalhando com dados em um aplicativo iOS, é provável que em algum momento você precise lidar com JSON. JSON (JavaScript Object Notation) é um formato de armazenamento e troca de dados simples, leve e amplamente utilizado, o que o torna uma opção popular para comunicação entre aplicativos e servidores.
 
-Por que é importante saber como trabalhar com JSON? Porque ele é um formato simples, leve e eficiente para transferência de dados e é amplamente suportado por diversas tecnologias e plataformas. Além disso, muitas APIs de serviços populares, como Google, Facebook e Twitter, utilizam JSON para enviar e receber dados.
+## Como fazer
 
-## Como trabalhar com JSON em Swift
+Para trabalhar com JSON em um aplicativo iOS usando Swift, existem algumas etapas que você precisará seguir.
 
-Para trabalhar com JSON em Swift, primeiro é necessário importar a biblioteca `Foundation` no início do código. Em seguida, é preciso utilizar o método `JSONSerialization` para converter os dados JSON em estruturas nativas do Swift.
+### 1. Importar o framework `Foundation`
 
-Um exemplo seria o seguinte código, que lê um arquivo JSON local e imprime o conteúdo na tela:
+Para começar, você precisará importar o framework `Foundation` no seu arquivo de código. Isso permitirá que você use as classes e métodos fornecidos pela Apple para manipulação de dados.
 
 ```Swift
-// Importando a biblioteca Foundation
 import Foundation
+```
 
-// Caminho do arquivo JSON local
-let fileURL = Bundle.main.url(forResource: "exemplo", withExtension: "json")
+### 2. Obter dados JSON de uma URL
 
-// Lendo o conteúdo do arquivo
-do {
-    let data = try Data(contentsOf: fileURL!)
+Em seguida, você precisará obter os dados JSON de uma URL. Você pode fazer isso usando a função `data(contentsOf:)`, que permite que você faça uma solicitação simples e obtenha os dados diretamente.
 
-    // Convertendo os dados em estruturas nativas do Swift
-    if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-        // Imprimindo o conteúdo do arquivo JSON
-        print(json)
+```Swift
+if let url = URL(string: "https://sample-url.com/data.json") {
+    do {
+        let data = try Data(contentsOf: url)
+        // aqui você pode manipular os dados obtidos
+    } catch {
+        // lidar com erros de solicitação ou parse dos dados
     }
-} catch {
-    print("Erro ao ler o arquivo JSON!")
 }
 ```
 
-O resultado dessa execução seria a impressão do conteúdo do arquivo JSON, que pode ser acessado utilizando o nome das chaves e a sintaxe de dicionário do Swift.
+### 3. Decodificar os dados JSON
 
-## Aprofundando-se em JSON com Swift
+Depois de obter os dados, você precisará decodificá-los usando o `JSONDecoder` e mapeá-los para uma estrutura de dados adequada. Por exemplo, se seus dados JSON forem um array de objetos, você pode criar uma estrutura que represente esses objetos e usar o `JSONDecoder` para decodificá-los automaticamente.
 
-Ao trabalhar com JSON em Swift, é importante entender a estrutura desse formato de dados. Ele é composto por pares de chave-valor, onde a chave é sempre uma string e pode representar um nome ou uma propriedade, e o valor pode ser uma string, número, booleano, array ou outro objeto JSON.
+```Swift
+// exemplo de uma estrutura de dados para mapeamento de objetos JSON
+struct Person: Codable {
+    let name: String
+    let age: Int
+}
 
-Além disso, é possível utilizar diferentes métodos para transformar os dados JSON em estruturas nativas do Swift, como `JSONSerialization` e `Codable`. O `Codable` é uma opção mais recente e eficiente, pois permite mapear os dados diretamente para estruturas de dados criadas pelo desenvolvedor.
+// decodificando os dados e armazenando-os em uma variável
+let decoder = JSONDecoder()
+do {
+    let person = try decoder.decode([Person].self, from: data)
+    // aqui você pode usar os dados decodificados como desejar
+} catch {
+    // lidar com erros de decodificação
+}
+```
 
-Outra parte importante do trabalho com JSON em Swift é o tratamento de erros. É sempre importante garantir que o arquivo JSON esteja no formato correto e manipular possíveis erros, como arquivo ausente ou dados incompatíveis.
+### 4. Usar os dados decodificados
 
-## Veja também
+Agora que você tem os dados decodificados, pode usá-los em seu aplicativo como desejar. Você pode exibi-los em uma tabela, salvar em um banco de dados local ou usar para fazer solicitações adicionais.
 
-Aqui estão alguns links úteis para saber mais sobre trabalhar com JSON em Swift:
+## Mergulho profundo
 
-- [Documentação oficial do Swift sobre JSON](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Trabalhando com JSON em aplicativos iOS](https://www.appcoda.com.br/aprenda-como-trabalhar-com-json-em-swift/)
-- [Convertendo estruturas do Swift em JSON com Codable](https://medium.com/@svnt/convertendo-estruturas-do-swift-em-json-com-codable-848565f0ef2c)
+Além das etapas básicas acima, há muito mais que você pode fazer com JSON em um aplicativo iOS. Alguns tópicos adicionais incluem a manipulação de formatos de data, a autenticação com servidores usando JSON e a criação de APIs RESTful para o seu aplicativo.
+
+Veja também:
+
+- [Documentação oficial sobre JSON em Swift](https://developer.apple.com/documentation/foundation/json)
+- [Tutorial de introdução ao JSON em Swift da Ray Wenderlich](https://www.raywenderlich.com/6585047-ios-json-tutorial-getting-started)

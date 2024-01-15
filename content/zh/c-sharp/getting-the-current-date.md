@@ -1,5 +1,6 @@
 ---
-title:                "C#: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "C#: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "C#"
 category:             "C#"
@@ -9,37 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要获取当前日期
+## 为什么
 
-在编写任何计算机程序时，经常需要获取当前日期。这可以帮助我们跟踪时间信息，例如记录一个事件发生的日期或计算某个任务的截止日期。获取当前日期也可以用于编写可自动更新的日志文件或报表。无论是什么原因，获取当前日期都是一项非常重要的任务。
+为了开发程序，我们经常需要获取当前日期。不仅可以使程序更加动态和有用，也可以用来跟踪时间敏感的任务或事件。
 
 ## 如何获取当前日期
 
-在C#编程语言中，获取当前日期非常简单。我们可以使用DateTime类中的Now属性来获取当前日期和时间。以下是一个简单的示例代码，展示如何使用Now属性来获取当前日期和时间，并将其打印出来：
-
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine(now);
+//使用DateTime.Now属性来获取当前日期和时间的实例
+DateTime currentDateTime = DateTime.Now;
+
+//获取当前日期
+DateTime currentDate = currentDateTime.Date;
+
+//获取当前时间
+DateTime currentTime = currentDateTime.TimeOfDay;
+
+//输出当前日期和时间
+Console.WriteLine("当前日期：{0}", currentDate);
+Console.WriteLine("当前时间：{0}", currentTime);
 ```
 
-该代码的输出将会是当前日期和时间，类似于"7/20/2021 10:05:12 AM"。我们也可以使用ToString方法来自定义输出日期格式，比如只输出日期或只输出时间。以下是一个示例代码，展示如何使用ToString方法来自定义输出日期格式：
+**输出：**
+
+当前日期：10/25/2021
+
+当前时间：10:25:00 AM
+
+
+## 深入了解
+
+除了使用DateTime.Now属性获取当前日期和时间之外，还有其他方法可以获取当前日期。比如，使用DateTime.Today属性来获取当天的日期，不包含当前时间。
 
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine(now.ToString("yyyy/MM/dd"));
-Console.WriteLine(now.ToString("hh:mm:ss tt"));
+//使用DateTime.Today属性来获取当天的日期
+DateTime today = DateTime.Today;
+Console.WriteLine("今天的日期：{0}", today);
+
+//输出：今天的日期：10/25/2021
 ```
 
-该代码的输出将会是当前日期，类似于"2021/07/20"，以及当前时间，类似于"10:05:12 AM"。
+此外，还可以使用DateTime.UtcNow属性获取当前的UTC日期和时间。UTC是协调世界时，是一种标准的世界统一时间，与时区无关。
 
-## 深入了解获取当前日期
+```C#
+//使用DateTime.UtcNow属性来获取当前的UTC日期和时间
+DateTime utcDateTime = DateTime.UtcNow;
+Console.WriteLine("当前的UTC日期和时间：{0}", utcDateTime);
 
-在C#编程语言中，DateTime类中的Now属性实际上是调用了系统的GetSystemTime方法来获取当前日期和时间。这个方法返回的是一个DateTime数据类型，其中包含了当前日期和时间的详细信息，例如年份、月份、日期、小时、分钟和秒数。因此，我们可以选择从返回的DateTime数据类型中提取我们需要的特定信息。
-
-此外，DateTime类中还有许多有用的方法可以帮助我们处理日期和时间，例如Add方法来计算某个日期后的日期，Subtract方法来计算两个日期之间的时间间隔。熟悉这些方法可以让我们更加灵活地处理日期和时间。
+//输出：当前的UTC日期和时间：10/25/2021 2:30:00 AM
+```
 
 ## 参考链接
 
-- Microsoft文档：[DateTime.Now 属性](https://docs.microsoft.com/zh-cn/dotnet/api/system.datetime.now?view=net-5.0)
-- C#教程：[DateTime类和其方法](https://www.w3schools.com/cs/cs_datetime.asp)
-- 代码示例：[如何用C#获取当前日期和时间？](https://www.codegrepper.com/code-examples/csharp/c%23+current+date+and+time)
+- [Microsoft Docs - Date and Time](https://docs.microsoft.com/en-us/dotnet/standard/base-types/date-and-time)
+- [C# DateTime Class](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
+- [C# Tutorials - Working with Dates and Time](https://www.c-sharpcorner.com/UploadFile/shivprasadk/csharpdatetimemast06092005021848AM/csharpdatetimemast.aspx)
+
+## 参见
+
+- [C# 字符串格式化：让你的程序多样化](https://example.com/article/using-csharp-string-formatting)
+- [掌握C#的条件语句：if、switch和ternary操作符](https://example.com/article/csharp-conditional-statements)

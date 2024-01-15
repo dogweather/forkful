@@ -1,5 +1,6 @@
 ---
-title:                "Python: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Python: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Python"
 category:             "Python"
@@ -11,34 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pobieranie stron internetowych ma szerokie zastosowania w programowaniu, takie jak przetwarzanie danych do analizy, automatyzacja zadań lub web scraping do pozyskiwania informacji z internetu. Może być również przydatne w testowaniu stron internetowych lub aplikacji. Pobieranie stron internetowych może być także sposobem na praktykowanie swoich umiejętności programistycznych i uczenia się nowych technologii.
+Pobieranie stron internetowych jest jedną z często wykonywanych operacji w programowaniu. Może być użyteczne do tworzenia narzędzi do analizowania danych lub do pobierania potrzebnych informacji z sieci. 
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Pobieranie strony internetowej w Pythonie jest bardzo proste dzięki bibliotece requests. Najpierw musimy zainstalować tę bibliotekę za pomocą polecenia `pip install requests`. Następnie importujemy ją do naszego programu.
+Pobieranie stron internetowych jest możliwe dzięki użyciu pakietu `requests`, który pozwala na wysyłanie żądań HTTP w prosty sposób.
 
-```
+Przykładowy kod pobrania strony internetowej wygląda następująco:
+
+```Python
 import requests
+
+url = 'https://www.example.com'
+response = requests.get(url)
+print(response.content)
 ```
 
-Następnie możemy użyć metody `get()` aby pobrać żądaną stronę internetową. Poniżej przedstawiony jest przykładowy kod pobierający stronę internetową Google i zapisujący ją do pliku "google.html".
+W powyższym kodzie, najpierw importujemy pakiet `requests`, a następnie definiujemy zmienną `url` z adresem strony internetowej, którą chcemy pobrać. Następnie używamy metody `get()` z pakietu `requests` i przypisujemy ją do zmiennej `response`. Ostatecznie, korzystając z atrybutu `content`, wyświetlamy pobrany kod HTML strony.
+
+Zamiast korzystać ze zmiennej `url`, możemy również bezpośrednio podać adres strony internetowej w metodzie `get()`, np.: `response = requests.get('https://www.example.com')`.
+
+Wynik działania powyższego kodu będzie wyglądał podobnie do poniższego:
 
 ```
-r = requests.get('https://www.google.com/')
-with open('google.html', 'wb') as f:
-    f.write(r.content)
+b'<!doctype html> // tu znajduje się kod HTML pobranej strony'
 ```
 
-Po wykonaniu tego kodu, w folderze zawierającym nasz plik Python, powinien pojawić się plik "google.html". Możemy otworzyć go w przeglądarce internetowej i zobaczyć zawartość pobranej strony.
+## Wnikliwe Badanie
 
-## Pogłębione zagadnienia
+Pakiet `requests` oferuje wiele dodatkowych opcji, pozwalając na bardziej zaawansowane pobranie stron internetowych. Na przykład, można ustawić nagłówki HTTP, send cookies, czy nawet przeprowadzić żądanie przez pośrednika.
 
-Pobieranie stron internetowych może wymagać dodatkowych działań w zależności od potrzeb programistycznych. Możemy na przykład wykonać parsowanie pobranej strony przy użyciu biblioteki Beautiful Soup, aby wyodrębnić potrzebne nam informacje z kodu HTML. Możemy także dodać nagłówki, zalogować się do strony lub użyć mechanizmu sesji, aby pobierać wielokrotnie dane z tej samej witryny.
+Aby dowiedzieć się więcej o możliwościach pakietu `requests`, polecam przeczytać jego oficjalną dokumentację: [docs.python-requests.org](https://docs.python-requests.org).
 
-Pamiętajmy jednak, że pobieranie stron internetowych zawsze powinno odbywać się zgodnie z prawem i z szacunkiem dla praw autorskich. Przed uruchomieniem kodu, upewnijmy się, że mamy zgodę na pobieranie danej strony lub wykorzystanie jej treści.
+## Zobacz także
 
-## Zobacz również
-
-1. Dokumentacja biblioteki requests: https://docs.python-requests.org/
-2. Oficjalna strona Pythona: https://www.python.org/
-3. Tutorial na temat pobierania stron internetowych w Pythonie: https://realpython.com/python-web-scraping-practical-introduction/
+* [Dokumentacja pakietu requests](https://docs.python-requests.org)
+* [Tutorial "Pobieranie stron internetowych w Pythonie"](https://realpython.com/python-requests/) (w języku angielskim)

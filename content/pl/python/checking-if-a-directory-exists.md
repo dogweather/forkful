@@ -1,6 +1,7 @@
 ---
-title:                "Python: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie, czy istnieje katalog"
+html_title:           "Python: Sprawdzanie, czy istnieje katalog"
+simple_title:         "Sprawdzanie, czy istnieje katalog"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-W dzisiejszych czasach, w których pracujemy z różnymi systemami operacyjnymi, często musimy mieć do czynienia z plikami i folderami. Sprawdzanie, czy dany katalog istnieje, może być kluczowym elementem w naszym kodzie, aby upewnić się, że operacja, którą chcemy przeprowadzić, może być wykonana.
+W niektórych przypadkach podczas programowania w Pythonie może być konieczne sprawdzenie, czy dany katalog istnieje. To ważne, ponieważ jeśli katalog nie istnieje, program może zwrócić błąd i przerwać działanie, co może utrudnić przetwarzanie dalszych danych.
 
-## Jak to zrobić?
-
-Aby sprawdzić, czy dany katalog istnieje w naszym systemie plików, możemy użyć biblioteki os w języku Python. Służy ona do interakcji z systemem plików i dostarcza różne funkcje do zarządzania plikami i folderami. Aby sprawdzić, czy dany katalog istnieje, możemy wykorzystać funkcję `path.isdir()` w następujący sposób:
+## Jak to zrobić
 
 ```Python
 import os
 
-if os.path.isdir("moj_katalog"):
-    print("Katalog istnieje")
+path = "/sciezka/do/katalogu"
+
+if os.path.exists(path):
+  print("Katalog istnieje!")
 else:
-    print("Katalog nie istnieje")
+  print("Katalog nie istnieje.")
 ```
 
-Jeśli katalog o nazwie "moj_katalog" istnieje w naszym bieżącym katalogu, to na ekranie zostanie wyświetlony komunikat "Katalog istnieje". W przeciwnym razie, zostanie wyświetlony komunikat "Katalog nie istnieje".
+To jest najprostszy sposób sprawdzenia, czy dany katalog istnieje w Pythonie. Wykorzystujemy tutaj moduł `os` i jego funkcję `path.exists()`, która zwraca wartość `True`, jeśli podana ścieżka istnieje, lub `False`, jeśli nie istnieje.
 
-## Głębsze zanurzenie
+Możemy również wykorzystać funkcję `path.isdir()`, aby dodatkowo sprawdzić, czy podana ścieżka jest katalogiem, a nie plikiem.
 
-Podczas korzystania z biblioteki os do sprawdzania istnienia katalogu, warto zauważyć, że funkcja `path.isdir()` przyjmuje jako argument ścieżkę do katalogu, a nie samą nazwę katalogu. Możemy więc określić ścieżkę względną do naszego katalogu lub użyć funkcji `path.abspath()` do uzyskania pełnej ścieżki.
+```Python
+import os
 
-Ponadto, możemy również wykorzystać funkcję `path.exists()` do sprawdzenia istnienia pliku lub katalogu, bez względu na jego typ. Możemy także wykorzystać funkcję `path.isfile()` do sprawdzenia, czy dany plik istnieje.
+path = "/sciezka/do/katalogu"
 
-## Zobacz także
+if os.path.isdir(path):
+  print("To jest katalog!")
+else:
+  print("To nie jest katalog.")
+```
 
-- Dokumentacja biblioteki os w języku Python: https://docs.python.org/3/library/os.html
-- Inne sposoby sprawdzania istnienia katalogów w Pythonie: https://www.geeksforgeeks.org/python-os-path-isdir-method/
+## Zanurzenie w temat
+
+Moduł `os` oferuje wiele innych funkcji związanych z operacjami na plikach i katalogach. Na przykład, możemy wykorzystać funkcję `os.listdir()`, aby uzyskać listę plików i katalogów w danym katalogu, lub `os.path.abspath()`, aby uzyskać bezwzględną ścieżkę do danego pliku lub katalogu.
+
+Możliwości są niemal nieograniczone, więc warto zapoznać się z dokumentacją modułu `os` i eksperymentować z różnymi funkcjami.
+
+## Zobacz również
+
+- [Dokumentacja modułu `os` w Pythonie](https://docs.python.org/3/library/os.html)
+- [Przykładowe wykorzystanie modułu `os` w programie](https://realpython.com/python-os-module/)
+- [Inne przydatne funkcje do operacji na plikach i katalogach - artykuł w języku polskim](https://techlikepro.com/python/operacje-na-plikach-i-katalogach-w-python-zestaw-funkcji-os/)

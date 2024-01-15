@@ -1,5 +1,6 @@
 ---
-title:                "Go: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Go: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Go"
 category:             "Go"
@@ -11,45 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy internetowy użytkownik od czasu do czasu natknął się na potrzebę pobrania strony internetowej. Może to być konieczne, gdy chcemy zachować kopię strony lub przeczytać ją później offline. W tym artykule zobaczymy, jak za pomocą języka Go możemy łatwo pobrać dowolną stronę internetową.
+Jeśli jesteś programistą lub tylko zaczynasz przygodę z programowaniem, możliwe że zainteresuję Cię fakt, że Go jest językiem bardzo popularnym i cały czas zyskuje na popularności. Dzięki swojej prostocie i wydajności, jest idealnym językiem do tworzenia aplikacji webowych. Pobieranie stron internetowych jest jedną z często wykorzystywanych funkcji w tworzeniu aplikacji internetowych, dlatego w tym artykule pokażę Ci jak można to zrobić w Go.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Najpierw musimy zaimportować moduł "net/http", który umożliwi nam pobranie strony. Wystarczy wywołać funkcję "Get" z odpowiednim adresem URL i przypisać wynik do zmiennej. Następnie wykorzystując funkcję "ReadAll" z modułu "io/ioutil", możemy odczytać całą treść strony.
+### Pobieranie strony internetowej
+
+W celu pobrania strony internetowej w Go, musimy użyć pakietu `net/http`, który zapewnia funkcje HTTP wraz z obsługą protokołu TLS. Następnie wykorzystujemy funkcję `Get()` z tego pakietu, aby pobrać stronę internetową w formie obiektu typu `Response`.
 
 ```Go
-package main
+resp, err := http.Get("https://example.com")
+```
 
-import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-)
+### Odczytywanie odpowiedzi
 
-func main() {
-    url := "https://example.com"
-    resp, err := http.Get(url)
-    if err != nil {
-        fmt.Println("Wystąpił błąd:", err)
-    }
-    defer resp.Body.Close()
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        fmt.Println("Wystąpił błąd:", err)
-    }
-    fmt.Println(string(body))
+Przy użyciu obiektu `Response` możemy teraz odczytać odpowiedź i przypisać ją do zmiennej. W tym przykładzie wyświetlimy status odpowiedzi oraz treść strony internetowej w konsoli.
+
+```Go
+fmt.Println("Status:", resp.Status)
+defer resp.Body.Close()
+body, err := ioutil.ReadAll(resp.Body)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println(string(body))
+```
+
+### Zapisywanie odpowiedzi do pliku
+
+Jeśli chcesz zapisać pobraną stronę internetową do pliku, możesz to zrobić przy użyciu funkcji `WriteFile()` z pakietu `ioutil`.
+
+```Go
+err := ioutil.WriteFile("example.html", body, 0644)
+if err != nil {
+    log.Fatal(err)
 }
 ```
 
-Po uruchomieniu powyższego kodu, w konsoli zobaczymy cały kod HTML strony "https://example.com". Możemy również zapisywać ten kod do pliku lub wykorzystać go w dowolny inny sposób.
+## Dogłębne Omówienie
 
-## Głębsze zagłębienie
-
-Pobranie strony internetowej za pomocą języka Go jest możliwe dzięki wykorzystaniu biblioteki "net/http". Ta biblioteka zapewnia wiele funkcji, które umożliwiają interakcję z internetem, w tym również pobieranie stron. Warto również pamiętać, że w przypadku bardziej skomplikowanych stron, może być konieczne przetworzenie pobranego kodu HTML w celu odfiltrowania interesujących nas informacji.
+W powyższych przykładach użyliśmy prostych funkcji, aby pobrać i przetworzyć stronę internetową w Go. Jednak pakiet `net/http` oferuje również wiele innych funkcji, takich jak obsługa ciasteczek czy przekazywanie nagłówków w żądaniach. Jeśli potrzebujesz bardziej zaawansowanych funkcji, zawsze możesz zapoznać się z dokumentacją tego pakietu.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja Go: https://golang.org/doc/
-- Przewodnik po języku Go: https://github.com/robpike/Go-Language-Project
-
-Dzięki wykorzystaniu języka Go, pobieranie stron internetowych staje się łatwe i szybkie. Wystarczy wykorzystać odpowiednie funkcje i biblioteki, aby uzyskać dostęp do interesujących nas informacji z internetu. Zachęcam do eksperymentowania i wykorzystywania tego języka w codziennej pracy.
+- [Dokumentacja pakietu `net/http`](https://golang.org/pkg/net/http/)
+- [Aplikacje webowe w Go - szybki start](https://www.golangprograms.com/go-program-to-fetch-a-webpage-from-the-given-url.html)
+- [Simple GET request tutorial (YouTube)](https://www.youtube.com/watch?v=YK-n9McB1Pk)

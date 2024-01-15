@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Swift: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为何要找出字符串的长度
 
-对于那些想要学习Swift编程语言的人来说，字符串是一个必须掌握的重要概念。了解如何计算字符串的长度，可以帮助你更好地操作和处理字符串，从而编写更加强大的代码。无论是初学者还是有经验的开发者，掌握计算字符串长度的方法都是非常有用的。
+在进行字符串操作时，我们经常会需要知道字符串的长度。比如说，当我们需要限制用户输入的密码长度，或者统计文章的字数时，就需要找出字符串的长度。通过这篇文章，你将学习如何使用Swift来找出字符串的长度。
 
-## 如何操作
+## 如何找出字符串的长度
 
-在Swift中，计算字符串长度的方法非常简单，只需在字符串实例后面加上“ .count”就可以了。让我们来看一个例子：
-
-```Swift
-let myString = "我爱Swift！"
-print(myString.count)
-```
-
-运行上面的代码，你会发现控制台输出的结果是 7，这意味着这个字符串包含了7个字符。
-
-如果你想更加灵活地操作字符串长度，也可以使用 string.count 属性来获取字符串的长度。比如，你可以在 if 语句中使用它来检查字符串的长度是否符合要求。让我们来看一个示例代码：
+首先，我们需要定义一个字符串变量，并且使用 `.count` 方法来找出它的长度。例如：
 
 ```Swift
-let myString = "Hello, World!"
-if myString.count > 10 {
-    print("这个字符串长度过长！")
-} else {
-    print("这个字符串长度合适。")
-}
+var str = "Hello, world!"
+print(str.count)
 ```
 
-运行上述代码，控制台将输出 “这个字符串长度合适。”，因为 “Hello, World!” 的长度是 13，大于 10。
+以上代码将输出 `13`，因为这个字符串由 13 个字符组成。如果我们将字符串变量赋值为空，那么 `.count` 方法也会返回 `0`，因为空字符串的长度为 0。例如：
 
-## 深入探讨
+```Swift
+var emptyStr = ""
+print(emptyStr.count)
+```
 
-在Swift中，字符串长度计算的原理其实是很简单的。字符串实际上是由一系列的 Unicode 标量（Unicode scalar）组成的，每个标量代表一个字符。所以，计算字符串的长度其实就是计算这个字符串包含了多少个标量。
+同时，我们也可以使用 `.characters.count` 方法来找出字符串的长度。这两个方法的作用是相同的，但是在以后的版本中 `.characters.count` 方法可能会被移除。因此，建议使用 `.count` 方法来找出字符串的长度，以保证代码的兼容性。例如：
 
-另外，当处理含有多个表情符号的字符串时，需要注意每个表情符号都会被表示为一个 Unicode 码点（Unicode code point），所以它们会被计算为多个标量。这也是为什么在计算字符串长度时，会考虑到 Unicode 标量的原因。
+```Swift
+var str = "Hello, world!"
+print(str.characters.count)
+```
 
-## 参考资料
+## 深入了解字符串的长度
 
-- [Swift官方文档：String 和 Character](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [统一字符编码标准 (Unicode)](https://unicode.org)
+在 Swift 中，字符串的长度并不仅仅指字符的个数，而是 Unicode 中的 Extended Grapheme Cluster 数量。Extended Grapheme Cluster 是多个 Unicode 标量的组合，可以代表一个字符。这导致有些字符的长度看起来是一个，实际上却不是。例如：
+
+```Swift
+var str = "👩‍💻"
+print(str.count) // 1
+```
+
+以上代码返回的长度是 1，但是实际上这个字符串由两个 Extended Grapheme Cluster 组成，每个代表一个字符。如果我们使用 `.unicodeScalars.count` 方法来找出字符串的长度，返回的就是 6，因为每个字符都由多个 Unicode 标量组成。例如：
+
+```Swift
+var str = "👩‍💻"
+print(str.unicodeScalars.count) // 6
+```
+
+最后，需要注意的是，如果我们在字符串中包含了 Emoji 或者其他表情符号，使用 `.count` 方法来找出长度时会返回错误的结果，因为这些表情符号都由多个 Extended Grapheme Cluster 组成。因此，在处理包含表情符号的字符串时，建议使用 `.unicodeScalars.count` 方法来确保得到正确的结果。
+
+## 参考链接
+
+- [Swift 官方文档 - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift 官方文档 - Unicode](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID303)
+- [Swift-China 官方论坛](https://www.swiftchina.cn/)

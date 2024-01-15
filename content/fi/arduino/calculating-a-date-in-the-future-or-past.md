@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Laskeminen tulevaisuuden tai menneen päivämäärän kanssa"
-simple_title:         "Laskeminen tulevaisuuden tai menneen päivämäärän kanssa"
+title:                "Tulevaisuuden tai menneen päivämäärän laskeminen"
+html_title:           "Arduino: Tulevaisuuden tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -9,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi:
-Miksi joku haluaisi laskea tulevan tai menneen päivän Arduino-ohjelmassa? Tässä blogipostauksessa selitämme, kuinka tämä voi olla hyödyllistä ja miten se voidaan tehdä.
+# Miksi
+## Miksi laskemme tulevaisuuden tai menneen päivämäärän
 
-# Kuinka:
+Päivämäärien laskeminen voi olla hyödyllistä esimerkiksi tapahtumien aikatauluttamisessa, kuten esimerkiksi syntymäpäivien tai lomien suunnittelussa.
 
-Laskeminen tulevan tai menneen päivän Arduino-ohjelmassa onnistuu käyttämällä mktime()-funktiota. Tämä funktio ottaa parametreina vuoden, kuukauden ja päivän ja palauttaa aikaleiman sekunneissa. Tämän aikaleiman avulla voimme laskea tietyn päivän esimerkiksi viikon tai kuukauden päästä tai menneisyydessä. Katsotaanpa esimerkkiä:
+# Miten tehdä se
 
-````Arduino
-#include <Time.h> // lisätään aikakirjasto
+Päivämäärän laskemiseen Arduino-ohjelmointiympäristössä tarvitsemme ensin muuttujia päivämäärän, kuukauden ja vuoden arvoille. Datan esimerkiksi käyttäjän antamat tiedot voidaan tallentaa näihin muuttujiin. Tämän jälkeen voimme käyttää valmiita funktioita, kuten esimerkiksi ```dayOfWeek``` tai ```dayOfYear```, laskemaan halutun päivämäärän tulevaisuudessa tai menneisyydessä. Alla on esimerkki koodista, joka laskee päivämäärän 10 päivää eteenpäin:
 
-void setup() {
-  Serial.begin(9600); // Alustetaan sarjaportti
-}
+```
+Arduino.init();
 
-void loop() {
-  // Lasketaan päiväksi 23.7.2021
-  time_t t = mktime(year=2021, month=7, day=23, hour=0, min=0, sec=0);
+int paivamaara = 10;
+int kuukausi = 4;
+int vuosi = 2020;
 
-  // Lasketaan päiväksi 4 viikkoa myöhemmin
-  t += 4 * 7 * 24 * 3600;
+int tulevaPaivamaara = dayOfMonth(paivamaara, kuukausi, vuosi) + 10;
 
-  // Muunnetaan aikaleima takaisin päivämääräksi
-  tmElements_t futureDate = breakTime(t);
+Serial.println(tulevaPaivamaara);
+```
 
-  // Tulostetaan tulos sarjaporttiin
-  Serial.println("Tuleva päivä: ");
-  Serial.print(futureDate.Day); Serial.print(" / ");
-  Serial.print(futureDate.Month); Serial.print(" / ");
-  Serial.println(futureDate.Year);
-}
-````
+Tämä koodi tulostaa sarjaporttiin päivämäärän 10 päivää laskettuna nykyisestä päivämäärästä. Voit muuttaa päivämäärää, kuukautta ja vuotta haluamiksesi ja kokeilla erilaisia laskutoimituksia.
 
-Tässä esimerkissä käytämme mktime()-funktiota laskemaan päivää 4 viikkoa eteenpäin ja tulostamme tulevan päivämäärän sarjaporttiin. Tämä on vain yksinkertainen esimerkki, ja voit käyttää samoja periaatteita laskiessasi tulevaa tai menneen päivän Arduino-ohjelmassa.
+# Syvemmälle
 
-# Syvempää sukeltamista:
+Voidaksemme laskea tulevaisuuden tai menneen päivämäärän tarkemmin, voimme käyttää lisää funktioita ja laskutoimituksia. Esimerkiksi voimme käyttää ```year```-funktiota saadaksemme käyttäjän antamasta vuodesta esimerkiksi kuluvan vuoden tai laskemalla montako vuotta on jäljellä annettuun päivämäärään. Lisäksi voimme käyttää ```month```-funktiota saadaksemme käyttäjän antamasta kuukaudesta esimerkiksi kuluvan kuukauden tai laskemalla kuukausien määrän jäljellä olevaan päivämäärään.
 
-Kun käytät mktime()-funktiota, on tärkeää huomata, että funktio käyttää alkuperäisenä aikana Arduino-järjestelmän kellon aikaa. Jos haluat käyttää tiettyä aikaa laskemiseen, voit asettaa sen setTime()-funktiolla ennen mktime()-funktion käyttöä. Lisäksi voit lukea lisätietoja mktime()-funktion käytöstä Arduino-käsikirjasta.
+Ole kuitenkin tarkkana, sillä päivämäärät voivat vaihdella eri mantereilla ja niiden laskeminen voi olla monimutkaista. On tärkeää ottaa huomioon myös karkausvuodet ja muut kalenterissa tapahtuvat muutokset.
 
-# Katso myös:
+# Katso myös
 
-1. [mktime()-funktion dokumentointi Arduino-käsikirjassa](https://www.arduino.cc/en/Reference/MkTime)
-2. [Tietoa ajasta ja päivämääristä Arduino-projekteissa](https://forum.arduino.cc/index.php?topic=578106.0)
-3. [TimeLib-kirjasto Arduino-projekteihin](https://salvador.mata.dev/arduino-timelib-documentation/)
+- [Official Arduino Website](https://www.arduino.cc/)
+- [Aloittelijan opas Arduino-ohjelmointiin](https://create.arduino.cc/projecthub/Aritro/getting-started-with-arduino-36f729)
+- [Päivämäärän laskeminen C-kielellä](https://www.programiz.com/c-programming/library-function/stdio.h/tm-gmtime)

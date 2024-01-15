@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Rust recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,64 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Calculating dates in the future or past may seem like a simple task, but it is an important skill to have in programming. Many real-world applications, such as financial planning or scheduling, require handling dates and times. Being able to accurately calculate dates can ensure the smooth functioning of these applications.
+Calculating dates in the future or past is a common task in many applications, whether it's for scheduling events, tracking deadlines, or simply for keeping track of time. In Rust, there are efficient and reliable methods for handling dates and times, making it a great language to use for these types of calculations.
 
 ## How To
-
-To calculate a date in the future or past, we can use the `chrono` crate in Rust. First, we need to add the `chrono` crate to our dependencies in the `Cargo.toml` file. Then, we can use the `Local` struct to get the current date and perform calculations on it.
-
-Here is an example of calculating a date 7 days from today:
+To start off, we need to import the "chrono" crate which provides types and functions for working with dates and times in Rust. We can do this by adding the following line to our "Cargo.toml" file under the "[dependencies]" section:
 
 ```Rust
-use chrono::{Local, Duration};
-
-let today = Local::today();
-let future_date = today + Duration::days(7);
-
-println!("Today's date is: {}", today);
-println!("7 days from now will be: {}", future_date);
+chrono = "0.4.19"
 ```
 
-The output of this code will be:
-
-```
-Today's date is: 2021-04-18
-7 days from now will be: 2021-04-25
-```
-
-We can also calculate dates in the past by using negative values in our calculations. For example, if we want to find the date 2 weeks before today, we can use the following code:
+Next, we can use the "Utc" type from the "chrono" crate to get the current UTC date and time. This is useful when we want to calculate a date and time in the future or past based on the current UTC time.
 
 ```Rust
-use chrono::{Local, Duration};
+use chrono::{Utc, Duration};
 
-let today = Local::today();
-let past_date = today - Duration::weeks(2);
-
-println!("Today's date is: {}", today);
-println!("2 weeks ago was: {}", past_date);
+// Get current UTC time and date
+let current_date = Utc::now();
 ```
 
-The output of this code will be:
+### Calculating a future date
+Say we want to calculate a future date that is 10 days from now. We can do this by using the "checked_add_signed()" function from the "Duration" type in the "chrono" crate. This function takes in a duration and returns a new date and time based on the current one.
 
+```Rust
+// Calculate future date (+ 10 days)
+let future_date = current_date.checked_add_signed(Duration::days(10));
 ```
-Today's date is: 2021-04-18
-2 weeks ago was: 2021-04-04
+
+### Calculating a past date
+Similarly, we can calculate a date in the past by using the "checked_sub_signed()" function from the "Duration" type. This function subtracts the specified duration from the current date and time.
+
+```Rust
+// Calculate past date (- 30 days)
+let past_date = current_date.checked_sub_signed(Duration::days(30));
+```
+
+### Formatting the date
+The "chrono" crate also comes with a built-in date formatter called "format". This allows us to easily format our dates and times according to a specific format. For example, if we want to display the date in the format "DD/MM/YYYY", we can do the following:
+
+```Rust
+// Format the future date
+let formatted_date = future_date.format("%d/%m/%Y").to_string();
+println!("Future date is: {}", formatted_date);
+
+// Output: Future date is: 01/10/2021
 ```
 
 ## Deep Dive
+Behind the scenes, "chrono" uses the "SystemTime" type to get the current date and time. This type is platform-dependent and allows for accurate calculations even if the system clock is changed.
 
-The `chrono` crate offers a range of methods for performing date and time calculations. We can use the `Duration` struct to add or subtract days, weeks, months, or years from a given date. Additionally, we can also use the `DateTime` struct to create custom dates and times.
-
-It is important to note that the `chrono` crate uses the Gregorian calendar by default. This means that the calculations may not be accurate for dates before October 15, 1582, which is when the Gregorian calendar was adopted.
+Additionally, the "Duration" type uses the "time::Duration" type from the standard library, making it efficient and reliable for date calculations.
 
 ## See Also
-
-- `chrono` crate documentation:
-https://docs.rs/chrono/0.4.19/chrono/
-
-- Date and Time handling in Rust:
-https://www.rust-lang.org/learn/dates-and-time
-
-- `DateTime` struct in Rust:
-https://doc.rust-lang.org/std/time/struct.DateTime.html
+- Official "chrono" crate documentation: https://docs.rs/chrono/0.4.19/chrono/
+- Rust Standard Library "time::Duration" documentation: https://doc.rust-lang.org/std/time/struct.Duration.html
+- Official Rust Language Website: https://www.rust-lang.org/

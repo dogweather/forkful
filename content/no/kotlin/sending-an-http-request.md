@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Å sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Kotlin: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,58 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende HTTP-forespørsler er en viktig del av moderne programmering. Dette gjøre det mulig for applikasjoner å kommunisere med servere og utveksle data. Uansett om du utvikler en nettside, en mobilapplikasjon eller et backend-system, vil du mest sannsynlig måtte sende HTTP-forespørsler på et tidspunkt.
+HTTP-forespørsler er en grunnleggende del av å kommunisere med eksterne servere, og det er nødvendig å kunne sende dem for å få tilgang til data og ressurser på internett. Ved å lære å sende HTTP-forespørsler kan du utvide mulighetene dine som utvikler og gjøre applikasjonene dine mer dynamiske.
 
-## Hvordan
-
-For å sende en HTTP-forespørsel i Kotlin, kan du bruke biblioteket "OkHttp". Først må du legge til avhengigheten i "build.gradle"-filen din:
+## Hvordan gjøre det
 
 ```Kotlin
-dependencies { 
-    implementation("com.squareup.okhttp3:okhttp:4.9.0") 
-}
+// Importer nødvendige biblioteker
+import java.net.HttpURLConnection
+import java.net.URL
+import java.io.InputStreamReader
+
+// Opprett en HTTP-tilkobling
+val url = URL("https://example.com/")
+val connection = url.openConnection() as HttpURLConnection
+
+// Angi metoden og håndtering av utgang og inngang
+connection.requestMethod = "GET"
+connection.doOutput = true
+connection.doInput = true
+
+// Les data fra tilkoblingen
+val input = InputStreamReader(connection.inputStream)
+// Gjør om dataen til en String
+val data = input.readText()
+
+// Skriv ut dataen
+println(data)
 ```
 
-Deretter kan du opprette en "OkHttpClient" og en "Request" for å sende forespørselen:
+Kodeeksempelet ovenfor viser hvordan du kan bruke Kotlin til å opprette en HTTP-forespørsel og lese data fra den. Først må du importere de nødvendige bibliotekene for å håndtere nettverkstilkoblinger. Deretter kan du opprette en HTTP-tilkobling ved å spesifisere URL-en du vil kommunisere med.
 
-```Kotlin
-val client = OkHttpClient()
-val request = Request.Builder().url("https://example.com").build()
-```
-
-Du kan også legge til eventuelle parametere eller innhold i forespørselen ved hjelp av "Builder"-klassen. Når du er ferdig, kan du kalle "newCall" på "OkHttpClient" og få responsen som en "Response"-objekt:
-
-```Kotlin
-val response = client.newCall(request).execute()
-println(response.body?.string()) // Skriver ut innholdet i responsen
-```
-
-Output:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title> 
-  ...
-</head>
-<body>
-  <h1>Example Domain</h1> 
-  <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-  ...
-  ...
-</body> 
-</html>
-```
+I dette eksempelet bruker vi "GET" som forespørselsmetode, men du kan også bruke "POST", "PUT" eller "DELETE" avhengig av hva som er nødvendig for å få tilgang til dataene du ønsker. Deretter kan du lese dataen fra tilkoblingen ved å konvertere inputstrømmen til en lesevennlig tekststreng.
 
 ## Dypdykk
 
-For å sende en HTTP-forespørsel må du også ta hensyn til ulike HTTP-metoder, som "GET", "POST", "PUT", "DELETE", osv. Du bør også være oppmerksom på eventuelle sikkerhets- eller autentiseringsprosedyrer som kreves for å få tilgang til serveren.
+HTTP-forespørsler fungerer ved å sende en forespørsel til en spesifikk URL og motta et svar tilbake. Dette kan være nyttig for å hente data fra API-er eller få tilgang til ressurser på eksterne servere. I tillegg kan du også sende data med forespørselen ved å bruke POST-metoden og legge til en "body" med ønsket informasjon.
 
-OkHttp tilbyr også mange avanserte funksjoner, som asynkrone forespørsler, caching, og responshåndtering. Du kan utforske disse videre i dokumentasjonen til biblioteket.
+Det er viktig å huske å håndtere eventuelle feil eller unntak som kan oppstå når du sender en HTTP-forespørsel. For eksempel kan det hende at tilkoblingen ikke blir opprettet eller at det tar for lang tid å motta et svar. Det er også viktig å følge god praksis og inkludere autentiseringsinformasjon eller sikre tilkoblingen ved å bruke HTTPS.
 
 ## Se også
 
-- [Dokumentasjon for OkHttp](https://square.github.io/okhttp/)
-- [Kotlin offisielle nettside](https://kotlinlang.org/)
-- [Tutorials om Kotlin programmering](https://www.programiz.com/kotlin)
+- [Offisiell Kotlin-dokumentasjon for HTTP-forespørsler](https://kotlinlang.org/docs/reference/java-interop.html)
+- [En guide til å håndtere HTTP-forespørsler i Kotlin](https://www.baeldung.com/kotlin-http-requests)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Extrahering av understrängar"
-simple_title:         "Extrahering av understrängar"
+title:                "Extrahering av delsträngar"
+html_title:           "Bash: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-En av de grundläggande funktionerna i Bash-programmering är att extrahera substrängar (delsträngar) från en större textsträng. Detta kan vara användbart för att manipulera data eller för att bearbeta text på ett specifikt sätt. 
+Vi använder ofta Bash för att hantera och manipulera textsträngar, men ibland vill vi bara extrahera en del av en textsträng istället för hela strängen. Genom att lära dig hur man extraherar substringar i Bash kan du effektivt hantera och manipulera text på ett mer precist sätt.
 
 ## Så här gör du
 
-För att extrahera en substräng i Bash använder du kommandot `cut`. Det här kommandot tar ett antal flaggor som styr utmatningen och visar bara den del av texten som du vill ha. Här är ett enkelt exempel:
+Det finns två vanliga metoder för att extrahera substringar i Bash: använda substringsyntaxen eller använda inbyggda verktyg som cut eller sed.
+
+För att använda substringsyntaxen kan du använda det inbyggda kommandot "expr". Till exempel, om vi vill extrahera de första tre tecknen i en sträng "Hello", kan vi skriva:
 
 ```Bash
-text="Hej! Det här är en textsträng."
-echo ${text:9:4}
+expr substr "Hello" 1 3
 ```
 
-**Utanför kodblocket** betyder detta att vi har en variabel `text` som innehåller en textsträng. I den sista raden använder vi sedan `echo` för att skriva ut en del av texten, från position 9 till längden 4. Detta ger oss ett resultat på "här ".
+Vilket ger oss utmatningen "Hel". Notera att det första numret (1) motsvarar startpositionen, medan det andra numret (3) motsvarar längden på den önskade substringen.
 
-En annan användbar funktion är att kunna extrahera en del av en textsträng baserat på ett visst villkor. I det här fallet kan du använda `grep`-kommandot för att söka igenom en textsträng och bara returnera de delar som matchar ditt villkor. Här är ett exempel:
+En annan vanlig metod är att använda verktyget "cut". Om vi till exempel vill extrahera de tre sista tecknen i samma sträng, kan vi skriva:
 
 ```Bash
-text="Hej! Det här är en textsträng."
-echo $text | grep "här"
+echo "Hello" | cut -c 3-
 ```
 
-I detta fall blir resultatet "här är en textsträng."
+Denna kommando tar input från "echo" och använder flaggan "-c" för att extrahera tecken från den tredje positionen och framåt, vilket ger oss utmatningen "llo".
 
-## Djupdykning
+Det finns också andra användbara verktyg som sed, awk och grep som kan användas för att extrahera substringar baserat på olika mönster.
 
-När det gäller att extrahera substrängar i Bash, finns det många olika alternativ och flaggor som du kan använda för att anpassa din utmatning. Till exempel kan du använda `-f` flaggan med `cut`-kommandot för att specificera vilka tecken som ska användas som avgränsare i din textsträng. Detta kan vara användbart om du exempelvis arbetar med en CSV-fil.
+## Fördjupa dig
 
-För att gå ännu djupare i ämnet kan du också använda regelbundna uttryck för att extrahera delsträngar. Under övningens gång kan du upptäcka att det finns vissa mönster i textsträngen som du vill extrahera. I dessa fall kan du använda verktyg som `sed` eller `awk` för att skapa mer avancerade uttryck som hjälper dig att få den exakta delsträngen du vill ha.
+När du behärskar dessa grundläggande metoder för att extrahera substringar i Bash kan du också utforska mer avancerade funktioner, som till exempel att extrahera från slutet av en sträng eller använda reguljära uttryck för att hitta mönster för extraherade substringar.
 
-## Se också
+En annan viktig aspekt att tänka på är att Bash använder nollindexering för positioner i en sträng, vilket betyder att det första tecknet är på position 0, det andra är på position 1 och så vidare. Detta är viktigt att komma ihåg när du använder substringsyntaxen eller något av de inbyggda verktygen som cut.
 
-- [Dokumentation för `cut`](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [Dokumentation för `grep`](https://www.gnu.org/software/grep/manual/grep.html)
-- [Dokumentation för `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Dokumentation för `awk`](https://www.gnu.org/software/gawk/manual/gawk.html)
+## Se även
+
+- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_05.html)
+- [Linuxize: Bash Substring Extraction](https://linuxize.com/post/bash-substring-extraction/)
+- [The Linux Documentation Project: Command line processing](https://www.tldp.org/LDP/abs/html/cmdsub.html)

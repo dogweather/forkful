@@ -1,5 +1,6 @@
 ---
-title:                "C#: Lettura degli argomenti della riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "C#: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C#"
 category:             "C#"
@@ -10,88 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Molti programmatori possono essere tentati di saltare la lettura degli argomenti della riga di comando quando scrivono un programma, ma in realtà è un'importante abilità da avere sotto mano. La lettura degli argomenti della riga di comando consente di rendere il programma più flessibile, in quanto gli utenti possono passare facilmente informazioni al programma senza dover modificare il codice sorgente.
 
-## Come
-Per leggere gli argomenti della riga di comando in C#, è necessario utilizzare il metodo `Main()` della classe `Program` che si trova nel file di avvio del programma. Utilizzando il parametro `string[] args`, è possibile accedere agli argomenti passati durante l'esecuzione del programma. Esempio di codice:
+Se sei nuovo a C# o alla programmazione in generale, potresti chiederti perché dovresti leggere gli argomenti della riga di comando. La risposta è semplice: la lettura degli argomenti della riga di comando ti permette di interagire con il tuo programma in modo diverso, fornendo input personalizzato e rendendo il tuo programma più versatile.
+
+## Come fare
+
+Nel linguaggio C#, ci sono diversi modi per leggere gli argomenti della riga di comando. Il metodo più comune è utilizzare il metodo `Main()` nella tua classe principale. Vediamo un esempio:
 
 ```C#
 static void Main(string[] args)
 {
-    // Controlla se ci sono almeno 2 argomenti passati
-    if (args.Length >= 2)
+    // args è un array di stringhe che contiene gli argomenti della riga di comando
+    Console.WriteLine("Hai inserito " + args.Length + " argomenti.");
+
+    // cicliamo attraverso l'array per stampare ogni argomento
+    for (int i = 0; i < args.Length; i++)
     {
-        // Stampa il primo e il secondo argomento passato
-        Console.WriteLine($"Primo argomento: {args[0]}");
-        Console.WriteLine($"Secondo argomento: {args[1]}");
+        Console.WriteLine("Argomento " + i + ": " + args[i]);
     }
 }
 ```
 
-Esempio di output dalla riga di comando:
+Se eseguiamo questo programma da linea di comando, fornendo alcuni argomenti, ad esempio `programma.exe arg1 arg2 arg3`, l'output sarebbe il seguente:
 
 ```
-> dotnet myProgram.cs arg1 arg2
-Primo argomento: arg1
-Secondo argomento: arg2
+Hai inserito 3 argomenti.
+Argomento 0: arg1
+Argomento 1: arg2
+Argomento 2: arg3
 ```
 
-## Deep Dive
-La classe `Program` può anche essere configurata per accettare opzioni da riga di comando utilizzando la libreria `Microsoft.Extensions.CommandLineUtils`. Questo consente di definire opzioni e argomenti con valori predefiniti, gestire errori di input e altro ancora. Esempio di codice:
+Un altro modo per leggere gli argomenti della riga di comando è utilizzare la classe `Environment`. Vediamo un esempio:
 
 ```C#
-static int Main(string[] args)
+string[] args = Environment.GetCommandLineArgs();
+
+// il primo elemento dell'array è il nome del programma, quindi lo saltiamo
+for (int i = 1; i < args.Length; i++)
 {
-    // Configurare la classe CommandLineApplication
-    CommandLineApplication commandLineApp = new CommandLineApplication();
-
-    // Definire uno o più opzioni e argomenti
-    var option = commandLineApp.Option("-u|--username <USERNAME>", "Nome utente", CommandOptionType.SingleValue);
-    var argument = commandLineApp.Argument("password", "Password", multipleValues: true);
-
-    // Opzione predefinita se l'opzione non viene specificata
-    option.ShowInHelpText = true;
-
-    // Gestisco gli errori di input
-    commandLineApp.OnValidationError((exception) => {
-        Console.WriteLine($"Errore: {exception.Message}");
-        commandLineApp.ShowHelp();
-        Environment.Exit(1);
-    });
-
-    // Eseguire l'applicazione dei comandi
-    commandLineApp.Execute(args);
-
-    // Utilizzare l'opzione e l'argomento nella logica del programma
-    if (!string.IsNullOrEmpty(option.Value()))
-    {
-        Console.WriteLine($"Username: {option.Value()}");
-    }
-    if (!argument.Values.Any())
-    {
-        Console.WriteLine("Password non specificata");
-        return 1; // Codice di errore
-    }
-    foreach (var password in argument.Values)
-    {
-        Console.WriteLine($"Password: {password}");
-    }
-
-    return 0; // Successo
+    Console.WriteLine("Argomento " + i + ": " + args[i]);
 }
 ```
 
-Esempio di output dalla riga di comando:
+In questo caso, il risultato sarebbe lo stesso.
 
-```
-> dotnet myProgram.cs --username user123 pass1 pass2 pass3
-Username: user123
-Password: pass1
-Password: pass2
-Password: pass3
-```
+## Approfondimento
 
-## Guarda anche
-- [Microsoft Documentation on Command Line Arguments](https://docs.microsoft.com/en-us/dotnet/core/extensions/command-line-args)
-- [Example of Command Line Arguments in C#](https://www.c-sharpcorner.com/article/command-line-args-in-c-sharp/)
-- [Handling Command Line Arguments in C#](https://www.meziantou.net/command-line-parsing.htm)
+Oltre ai due modi mostrati sopra, esistono diverse librerie e framework che offrono funzionalità più avanzate per la lettura degli argomenti della riga di comando. Ad esempio, la libreria CommandLineParser consente di specificare argomenti opzionali e obbligatori, assegnare valori a determinati argomenti e generare automaticamente un messaggio di utilizzo per l'utente finale.
+
+Tieni presente che, se vuoi passare argomenti con spazi all'interno, dovrai utilizzare virgolette o backslash per evitare problemi di parsing. Ad esempio:
+
+`programma.exe "primo argomento" "secondo argomento"` oppure `programma.exe primo\ argomento secondo\ argomento`
+
+## Vedi anche
+
+-  [Documentazione ufficiale su Environment](https://docs.microsoft.com/it-it/dotnet/api/system.environment?view=net-5.0)
+- [Documentazione ufficiale su CommandLineParser](https://github.com/commandlineparser/commandline)
+- [Tutorial di programmazione in C# per principianti](https://docs.microsoft.com/it-it/dotnet/csharp/tutorials/intro-to-csharp/)

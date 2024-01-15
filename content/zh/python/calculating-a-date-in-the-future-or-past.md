@@ -1,5 +1,6 @@
 ---
-title:                "Python: 计算未来或过去的日期"
+title:                "计算未来或过去的日期"
+html_title:           "Python: 计算未来或过去的日期"
 simple_title:         "计算未来或过去的日期"
 programming_language: "Python"
 category:             "Python"
@@ -9,51 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Python 编程的**为什么**
+## 为什么
 
-计算未来或过去的日期是程序员们经常会遇到的任务之一。这可能是为了计划未来的活动，或者是处理历史数据。无论何种原因，掌握计算日期的能力都是非常有用的。
+计算未来或过去的日期可能是帮助人们规划日程表或安排活动的一种方式。Python提供了方便的功能来执行此任务，让我们来深入了解一下吧！
 
 ## 如何操作
-为了计算未来或过去的日期，我们需要使用 Python 的 `datetime` 模块。首先，我们需要导入这个模块，如下所示：
+
+### 1. 导入datetime模块
+
+首先，我们需要导入Python的datetime模块，它包含了许多有用的函数来处理日期和时间。
+
 ```Python
 import datetime
 ```
-然后，我们可以使用 `today()` 方法来获取当前的日期，并将其存储在一个变量中：
-```Python
-current_date = datetime.date.today()
-```
-接下来，我们可以使用 `timedelta()` 方法来指定要添加或减去的时间间隔，比如下一个月或一个星期。然后，我们可以将其与当前日期相加或相减来获得未来或过去的日期。示例如下所示：
-```Python
-future_date = current_date + datetime.timedelta(days=30)
-past_date = current_date - datetime.timedelta(days=14)
-```
-最后，我们可以使用 `strftime()` 方法将日期格式化为我们需要的形式。下面是一个完整的示例代码：
-```Python
-import datetime
 
-current_date = datetime.date.today()
-future_date = current_date + datetime.timedelta(days=30)
-past_date = current_date - datetime.timedelta(days=14)
+### 2. 获取当前日期
 
-# 将日期格式化为“月-日-年”的形式
-print("未来的日期：" + future_date.strftime("%m-%d-%Y"))
-print("过去的日期：" + past_date.strftime("%m-%d-%Y"))
+要获取当前日期，我们可以使用datetime模块中的datetime类的today()函数。
+
+```Python
+today = datetime.today()
+print(today)
 ```
-输出结果如下：
+
+输出：
+
 ```
-未来的日期：04-22-2021
-过去的日期：03-09-2021
+2021-08-05 21:43:08.638832
+```
+
+### 3. 计算未来或过去的日期
+
+要计算未来的日期，我们可以使用datetime模块中的timedelta类的函数。 timdelta类可以用来表示日期之间的差距。
+
+下面的示例中，我们使用timedelta来计算当前日期后的3天的日期。
+
+```Python
+three_days_later = today + datetime.timedelta(days=3)
+print(three_days_later)
+```
+
+输出：
+
+```
+2021-08-08 21:43:08.638832
+```
+
+同样的，我们也可以计算过去的日期，只需将timedelta的参数改为负数。
+
+```Python
+three_days_ago = today - datetime.timedelta(days=3)
+print(three_days_ago)
+```
+
+输出：
+
+```
+2021-08-02 21:43:08.638832
 ```
 
 ## 深入了解
-除了添加和减去固定的时间间隔外，`timedelta()` 方法还可以指定其他参数，比如周数、小时数、分钟数等。此外，`strftime()` 方法也有很多不同的格式化选项可供选择。可以阅读官方文档来了解更多信息。
+
+datetime模块中还有许多其他有用的函数，例如strftime()函数可以将日期转换为不同的格式，strptime()函数可以将字符串转换为datetime对象。对于需要处理日期和时间的任务，这些函数都是非常实用的。
+
+此外，Python还有第三方模块dateutil，它提供了更多更灵活的日期和时间操作功能，具体可以查看它的官方文档。
 
 ## 参考链接
-- [Python 官方文档 - datetime 模块](https://docs.python.org/3/library/datetime.html)
-- [Python 官方文档 - timedelta 对象](https://docs.python.org/3/library/datetime.html#timedelta-objects)
-- [Python 官方文档 - strftime() 方法](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
- 
+
+- [Python datetime模块文档](https://docs.python.org/3/library/datetime.html)
+- [dateutil官方文档](https://dateutil.readthedocs.io/en/stable/index.html)
 
 ## 参考
 
-[Why People Calculate Dates in Python](https://realpython.com/python-datetime/)
+- [Python 100天 - 第26天：datetime模块](https://www.bilibili.com/video/BV1m7411J7Es?p=26)

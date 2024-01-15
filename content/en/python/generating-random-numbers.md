@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Python recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Python"
 category:             "Python"
@@ -10,47 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-In Python, generating random numbers is a useful tool for a variety of tasks such as simulating events, generating test data, or creating games. It allows for unpredictability and randomness in the code, adding an element of surprise and realism.
+Random numbers play an important role in various aspects of computer programming, from simulations to cryptography. Generating random numbers can help add an element of unpredictability and randomness to your code, making it more versatile and dynamic.
 
 ## How To
-To generate random numbers in Python, we will be using the built-in `random` module. First, we need to import the module at the top of our code:
+
+To generate random numbers in Python, we can use the built-in `random` module. First, we need to import the module into our code:
 
 ```Python
 import random
 ```
 
-Next, we can use the `randint()` function to generate a random integer within a given range. For example, if we want to generate a random number between 1 to 10, we can use:
+### Generating a Single Random Number
+To generate a single random number within a specified range, we can use the `random.randint()` function, which takes in two arguments - the lower and upper bounds. For example, to generate a random number between 1 and 10:
 
 ```Python
-random.randint(1, 10)
+num = random.randint(1, 10)
+print(num)
+# Output: A random number between 1 and 10
 ```
 
-This code will generate a random integer between 1 and 10 (inclusive). You can also use the `randrange()` function for more flexibility in defining the range of numbers. For example, to generate a random number between 1 and 100 in increments of 5, we can use:
+### Generating a List of Random Numbers
+We can also use the `random` module to generate a list of random numbers. For this, we can use the `random.sample()` function, which takes in three arguments - a range, the number of elements to be selected, and whether the elements can be repeated or not.
 
 ```Python
-random.randrange(1, 100, 5)
+# List of 5 unique random numbers between 1 and 50
+rand_list = random.sample(range(1, 50), 5)
+print(rand_list)
+# Output: [32, 12, 49, 5, 26]
 ```
 
-We can also generate random floats using the `uniform()` function. This function takes in two parameters, the lower and upper bound for the range of numbers. For example:
+### Setting a Seed
+Sometimes we may want to generate the same set of random numbers every time our code is run. We can achieve this by setting a seed using the `random.seed()` function. This ensures that the sequence of random numbers generated is the same every time the program is executed.
 
 ```Python
-random.uniform(1, 10)
+random.seed(42)
+print(random.randint(1, 10))
+# Output: 9
+
+random.seed(42)
+print(random.randint(1, 10))
+# Output: 9
 ```
-
-This code will generate a random float between 1 and 10. Finally, we can also generate random numbers from a given list using the `choice()` function. For example:
-
-```Python
-random.choice([1, 2, 3, 4, 5])
-```
-
-This code will generate a random number from the list provided.
 
 ## Deep Dive
-Behind the scenes, the `random` module uses a pseudo-random number generator (PRNG) algorithm to generate random numbers. This algorithm takes in a starting point or "seed" and uses mathematical calculations to produce a sequence of numbers that appear to be random. However, it is important to note that these numbers are not truly random, as they are generated using a set algorithm and seed.
+Random numbers are generated using a mathematical algorithm that produces seemingly unpredictable results. However, these results are not truly random, as they are based on a starting value called a seed. This seed helps determine the sequence of numbers that will be generated. By using different seeds, we can generate different sequences of random numbers. 
 
-PRNG algorithms are designed to produce numbers that pass certain statistical tests for randomness, but they are not truly random. If the same seed is used, the same sequence of numbers will be generated each time. To avoid this, it is recommended to use a different seed each time the code is run or to use a more complex PRNG algorithm.
+It is important to note that the results of a random number generation algorithm must pass certain statistical tests to ensure that they are truly unpredictable. The `random` module in Python uses the `Mersenne Twister` algorithm, which has been deemed to be a high-quality generator of random numbers. 
 
 ## See Also
-- [Python random module documentation](https://docs.python.org/3/library/random.html)
-- [Overview of Random Number Generators in Python](https://realpython.com/python-random/)
-- [Understanding the Python random module](https://www.codementor.io/@irfanu/understanding-the-python-random-module-toptal-pajun1zq3)
+- Official `random` module documentation: https://docs.python.org/3/library/random.html
+- Using Random Number in Python: https://realpython.com/python-random/

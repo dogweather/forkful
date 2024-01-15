@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Análise de HTML"
-simple_title:         "Análise de HTML"
+title:                "Análise de HTML."
+html_title:           "Clojure: Análise de HTML."
+simple_title:         "Análise de HTML."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por Que
 
-Algumas tarefas de programação exigem a extração de informações específicas de páginas da web. Nesses casos, é necessário analisar o código HTML dessas páginas e extrair os dados desejados. A linguagem Clojure oferece ferramentas poderosas para esse fim, tornando o processo de parsing de HTML mais rápido e eficiente.
+Você provavelmente está se perguntando por que deveria se importar em analisar HTML com Clojure. Bem, a resposta é simples: o uso de Clojure pode simplificar bastante o processo de análise de HTML e torná-lo mais eficiente. Além disso, como Clojure é uma linguagem funcional e orientada a dados, é mais fácil manipular e extrair informações do HTML sem precisar escrever muito código.
 
 ## Como Fazer
 
-Para analisar HTML em Clojure, é necessário instalar a biblioteca Clojure HTML-XML Parsers. Para isso, podemos adicionar a dependência ao nosso projeto no arquivo "project.clj":
+Agora que você entende por que deveria considerar usar Clojure para analisar HTML, vamos dar uma olhada em como fazer isso. Para começar, vamos usar a biblioteca clj-html para fazer o parsing do HTML. Você pode instalá-la facilmente pelo Leiningen, adicionando `[clj-html "0.2.2"]` ao seu arquivo `project.clj`.
+
+Uma vez que a biblioteca esteja instalada, podemos começar a analisar nosso HTML. Vamos supor que queremos extrair todos os links de uma página da web. Aqui está um exemplo simples de como fazer isso:
 
 ```
-Clojure [org.clojure/html-xml-parsers "0.10.0"]
+(ns meu-app.core
+  (:require [clj-html.core :as html]))
+
+(def codigo-html "<html><body><a href='www.exemplo.com'>Link</a><a href='www.outroexemplo.com'>Outro Link</a></body></html>")
+
+(def codigo-parse (html/parse codigo-html))
+
+(map :attrs (html/select codigo-parse [:a]))
+;; => ({:href "www.exemplo.com"} {:href "www.outroexemplo.com"})
 ```
 
-Agora, vamos importar o namespace da biblioteca para nosso código e iniciar o parsing de HTML:
-
-```
-Clojure (ns meu-projeto
-  (:require [net.cgrand.xml-html :as xml]))
-  
-(defn analisar-html [url]
-  (with-open [reader (java.io.StringReader. (slurp url))]
-    (xml/xml-seq reader)))
-```
-
-Neste exemplo, estamos criando uma função que receberá a URL da página que queremos analisar. A função irá ler o conteúdo da página, convertê-lo em uma string e, em seguida, utilizar a função "xml-seq" para obter um sequenciador dos elementos HTML da página.
-
-Podemos, então, usar funções de Clojure, como "map" ou "filter", para acessar as informações que desejamos do sequenciador retornado. Por exemplo, se quisermos obter o texto dentro de todas as tags "p", podemos fazer o seguinte:
-
-```
-Clojure (map :content (filter #(= (:tag %) :p) (analisar-html "https://www.example.com")))
-```
-
-Isso irá retornar uma lista com o texto de todos os parágrafos da página.
+Como você pode ver, a função `html/parse` nos permite transformar nosso código HTML em uma estrutura de dados que podemos manipular facilmente. Em seguida, usamos a função `:attrs` para extrair os atributos dos elementos `a` e `html/select` para selecionar todos os elementos `a` no documento.
 
 ## Deep Dive
 
-Além da função "xml-seq", a biblioteca Clojure HTML-XML Parsers oferece outras funções úteis para ajudar no parsing de HTML. Algumas delas são:
+Se você é novo em Clojure, é possível que esteja se perguntando o que está acontecendo no código acima. Deixe-me explicar com um pouco mais de detalhes.
 
-- "xml/parse" - Para analisar uma string de código HTML e retornar um mapa com os elementos do documento.
-- "xml/attr" - Para acessar atributos de um elemento específico.
-- "xml/children" - Para obter os filhos de um elemento.
-- "xml/select" - Para encontrar elementos específicos com base em seletores CSS.
+Em Clojure, os dados são sempre representados como listas, vetores, sets ou maps. Isso é muito útil quando estamos trabalhando com HTML, já que podemos utilizar funções de alto nível para navegar e manipular essas estruturas de dados.
 
-Com essas ferramentas, é possível realizar uma análise mais precisa e detalhada do HTML de uma página.
+A função `html/parse` retorna uma estrutura de dados chamada AST (Árvore Sintática Abstrata), que é basicamente uma representação hierárquica do nosso código HTML. Em seguida, usamos a função `html/select` para selecionar elementos específicos dessa árvore, usando uma sintaxe semelhante a um seletor CSS.
+
+A partir daí, é apenas uma questão de extrair os atributos que estamos interessados ​​usando a função `:attrs`.
 
 ## Veja Também
 
-- [Clojure HTML-XML Parsers - Documentação](https://github.com/cgrand/html-xml-utils)
-- [10 Common HTML Tag Parsing Mistakes in Clojure](https://kylecordes.com/2017/clojure-html-tag-parsing-mistakes)
-- [Tutorial de Clojure - Parsing HTML](https://clojure.org/guides/learn/syntax#_parsing_html)
+- [Documentação da biblioteca clj-html](https://github.com/r0man/clj-html)
+- [Tutorial de Clojure para Iniciantes](https://github.com/abulimov/clojure-for-newbies)
+- [Como usar Clojure para ciência de dados](https://blog.avenuecode.com/clojure-for-data-science)

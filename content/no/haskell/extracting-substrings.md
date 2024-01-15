@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Uttrekking av understrenger"
-simple_title:         "Uttrekking av understrenger"
+title:                "Utvinne delstrenger"
+html_title:           "Haskell: Utvinne delstrenger"
+simple_title:         "Utvinne delstrenger"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,53 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å utvinne substrings, eller delmønstre, fra en streng er en viktig oppgave i dataprogrammering. Det lar oss manipulere og behandle tekst på en mer effektiv og presis måte.
+Hvorfor skulle noen ønske å hente ut substrings? 
+
+
+Det kan være flere årsaker til å gjøre dette i Haskell-programmering. Kanskje du trenger å analysere en streng for å finne et bestemt mønster, eller kanskje du må manipulere tekst for å oppnå ønsket resultat. Uansett årsak, er det viktig å forstå hvordan man ekstraherer substrings i Haskell for å kunne skrive effektiv og funksjonell kode.
 
 ## Hvordan
 
-Det finnes flere forskjellige måter å extrahere substrings i Haskell. En av de mest brukte er funksjonen `take` som lar oss hente ut et bestemt antall tegn fra en streng. For eksempel, hvis vi har en streng `tekst = "Hei, dette er en streng"`, kan vi bruke følgende kode for å hente de første 5 tegnene:
+For å ekstrahere substrings i Haskell, kan du bruke funksjonen `take` og `drop` fra `Data.List` biblioteket. Disse funksjonene tar inn en liste og et heltall som angir hvor mange elementer som skal bli tatt eller droppet. La oss se på et eksempel:
 
-```
-tekst = "Hei, dette er en streng"
-take 5 tekst
-```
+```Haskell
+import Data.List
 
-Dette vil gi oss følgende output:
+greeting = "Hei, verden!"
 
-```
-Hei, 
+substring = take 3 greeting
+-- Resultat: "Hei"
 ```
 
-En annen måte å extrahere substrings på er ved å bruke funksjonen `drop`, som lar oss fjerne et bestemt antall tegn fra starten av en streng. For eksempel, hvis vi ønsker å fjerne de første 4 tegnene fra `tekst`-strengen, kan vi bruke følgende kode:
+Her bruker vi `take` funksjonen til å hente de første tre bokstavene i strengen "Hei, verden!". Du kan også bruke `drop` funksjonen til å fjerne elementer fra en liste. For eksempel:
 
-```
-drop 4 tekst
-```
+```Haskell
+import Data.List
 
-Dette vil gi oss følgende output:
+numbers = [1,2,3,4,5]
 
-```
- dette er en streng
-```
-
-Vi kan også bruke funksjonen `substring` for å hente ut en del av en streng basert på start- og sluttposisjon. For eksempel, hvis vi ønsker å hente ut ordet "dette" fra `tekst`-strengen, kan vi bruke følgende kode:
-
-```
-substring 5 9 tekst
+droppedNumbers = drop 2 numbers
+-- Resultat: [3,4,5]
 ```
 
-Dette vil gi oss følgende output:
+I tillegg til disse funksjonene, kan du også bruke `!!` operatoren for å få tilgang til en spesifikk indeks i en liste. For eksempel:
 
+```Haskell
+import Data.List
+
+letter = "a"
+
+alphabet = ['a'..'z']
+
+index = alphabet !! 0
+-- Resultat: 'a'
 ```
-dette
+
+## Dypdykk
+
+I tillegg til å bruke `take` og `drop` funksjonene, finnes det også flere andre måter å ekstrahere substrings på i Haskell. For eksempel kan du bruke `substring` funksjonen fra `Data.Text` biblioteket. Denne funksjonen tar inn en startindeks og en sluttindeks for å hente ut delen av en tekststreng. Her er et eksempel:
+
+```Haskell
+import Data.Text
+
+greeting = pack "Hello, world!"
+
+substring = substring 0 5 greeting
+-- Resultat: "Hello"
 ```
 
-## Dype dypdykk
+Du kan også bruke listekomprehensjon for å ekstrahere substrings basert på et gitt kriterie. For eksempel:
 
-I tillegg til funksjonene nevnt ovenfor, finnes det flere andre måter å extrahere substrings i Haskell på. For eksempel, kan vi bruke mønstermatching og listekomprehensjon for å hente ut deler av en streng basert på mønstre eller betingelser. Det finnes også spesielle biblioteker som for eksempel `Text.Regex` som lar oss bruke regulære uttrykk for å finne og manipulere deler av en streng.
+```Haskell
+
+sentence = "Jeg elsker å programmere i Haskell"
+
+substring = [x | x <- words sentence, length x < 5]
+-- Resultat: ["å", "i"]
+```
+
+Det finnes også flere andre måter å manipulere og ekstrahere substrings på i Haskell. Det viktige er å forstå de forskjellige verktøyene som er tilgjengelig og hvordan de kan hjelpe deg å oppnå ønsket resultat.
 
 ## Se også
 
-- [Haskell hovedside](https://www.haskell.org/)
-- [Haskell wiki](https://wiki.haskell.org/)
-- [Haskell dokumentasjon](https://hackage.haskell.org/)
+- [Haskell dokumentasjon](https://www.haskell.org/documentation/)
+- [Haskell programmeringsspråk](https://www.haskell.org/)

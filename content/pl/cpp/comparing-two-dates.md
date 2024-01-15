@@ -1,5 +1,6 @@
 ---
-title:                "C++: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C++"
 category:             "C++"
@@ -11,47 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dwóch dat jest nieodłącznym elementem wielu programów. Dzięki temu można sprawdzić porządek zdarzeń, weryfikować ważność dokumentów czy szybko obliczyć różnicę między datami. Zrozumienie sposobu porównywania dat jest niezbędne dla każdego programisty.
+Porównywanie dwóch dat jest niezbędnym etapem w wielu programach, szczególnie w przypadku aplikacji biznesowych lub systemów przetwarzania danych. Przydatne jest zatem znać efektywny sposób porównywania dat w języku C++.
 
 ## Jak to zrobić
 
-W celu porównania dwóch dat w języku C++ można wykorzystać klasę `std::chrono::time_point`. Klasa ta reprezentuje określoną chwilę w czasie i umożliwia porównywanie jej z innymi chwilami. Przykładowy kod wyglądałby następująco:
+Porównywanie dwóch dat w C++ jest możliwe dzięki użyciu klasy `std::chrono::system_clock`. Jest to klasa biblioteki standardowej C++, która służy do różnych operacji związanych z odczytywaniem i manipulowaniem czasem.
+
+Aby porównać dwie daty, należy najpierw utworzyć obiekty `std::chrono::system_clock::time_point` dla każdej z dat, a następnie wykorzystać operator porównania (`<` lub `>`) do porównania tych obiektów. Na przykład:
 
 ```C++
-#include <iostream>
 #include <chrono>
+#include <iostream>
 
-int main() {
-  // Tworzenie pierwszej daty
-  std::chrono::time_point<std::chrono::system_clock> first_date = std::chrono::system_clock::now();
+int main()
+{
+  auto d1 = std::chrono::system_clock::now(); // bieżąca data i godzina
+  auto d2 = d1 + std::chrono::hours(24); // data i godzina dnia jutrzejszego
 
-  // Tworzenie drugiej daty
-  std::chrono::time_point<std::chrono::system_clock> second_date = std::chrono::system_clock::now();
-
-  // Porównywanie dat i wyświetlenie wyniku
-  if (first_date < second_date) {
-    std::cout << "Pierwsza data jest wcześniejsza od drugiej.";
-  } else if (first_date > second_date) {
-    std::cout << "Druga data jest wcześniejsza od pierwszej.";
-  } else {
-    std::cout << "Daty są takie same.";
+  if(d1 < d2)
+  {
+    std::cout << "Dzisiaj jest wcześniej niż jutro!" << std::endl;
+  }
+  else
+  {
+    std::cout << "Dzisiaj jest później lub taka sama data co jutro." << std::endl;
   }
 
   return 0;
 }
 ```
 
-Przykładowy wynik dla dwóch przypadkowych dat:
+W powyższym przykładzie najpierw tworzymy obiekt `d1` zawierający bieżącą datę i godzinę. Następnie tworzymy obiekt `d2`, który jest datą i godziną dnia jutrzejszego, dodając do `d1` obiekt `std::chrono::hours(24)` (co odpowiada 24 godzinom). Kolejnym krokiem jest porównanie obu obiektów za pomocą operatora `<` i wyświetlenie odpowiedniego komunikatu w zależności od wyniku porównania.
 
-```
-Pierwsza data jest wcześniejsza od drugiej.
-```
+Warto zauważyć, że obiekty `time_point` można także przekonwertować na liczbę sekund lub milisekund od początku epoki (1 stycznia 1970 roku), dzięki czemu jest możliwe ich dokładniejsze porównywanie. Można to zrobić za pomocą funkcji `std::chrono::system_clock::to_time_t()` lub `std::chrono::system_clock::to_time_t()`.
 
-## Głębszy wgląd
+## Deep Dive
 
-Klasa `std::chrono::time_point` wykorzystuje reprezentację `std::chrono::duration`, która jest duracją między początkiem epoki czasu (1 stycznia 1970 roku) a daną chwilą. Innymi słowy, czas jest mierzony w odniesieniu do ustalonego punktu czasu. Klasa ta oferuje również funkcje konwersji między różnymi jednostkami czasu, co może być przydatne w niektórych przypadkach.
+Klasa `std::chrono::system_clock` używa systemowej implementacji czasu, co oznacza, że wyniki operacji zależą od ustawień systemowych, takich jak strefa czasowa. W niektórych przypadkach może to prowadzić do nieoczekiwanego zachowania porównywania dat.
+
+Ponadto, klasy `std::chrono` oferują również inne sposoby na operacje na czasie, takie jak porównywanie z dokładnością do milisekund (`std::chrono::steady_clock`), pomiar czasu wykonywania kodu (`std::chrono::high_resolution_clock`) oraz wyznaczanie precyzyjnych momentów w czasie (`std::chrono::system_clock`).
 
 ## Zobacz także
 
-- Dokumentacja klasy `std::chrono::time_point`: https://en.cppreference.com/w/cpp/chrono/time_point
-- Tutorial o porównywaniu dat w C++: https://www.learncpp.com/cpp-tutorial/comparing-and-ordering-time-points/
+- Dokumentacja C++ dla klasy `std::chrono::system_clock`: https://en.cppreference.com/w/cpp/chrono/system_clock
+- Porównywanie dat w innych językach programowania: https://www.oreilly.com/library/view/data-wrangling-with/9781491948811/ch04.html

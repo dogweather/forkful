@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Å skrive en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Bash: Å skrive en tekstfil"
 simple_title:         "Å skrive en tekstfil"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,48 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil kan være en nyttig ferdighet for de som ønsker å lære Bash-programmering. Det lar deg lage og lagre tekst på en enkel og effektiv måte. Tekstfiler kan brukes til å lage skript som kan automatisere oppgaver, eller bare som et sted å lagre notater og informasjon.
+Å skrive en tekstfil er en grunnleggende ferdighet som er nyttig for alle som ønsker å lære å programmere. Det lar deg lage og organisere informasjon på en enkel og strukturert måte.
 
-## Hvordan
+## Hvordan du gjør det
 
-Det er enkelt å lage en tekstfil i Bash. Alt du trenger å gjøre er å åpne en terminal og skrive følgende kommando:
+Det første du må gjøre er å åpne terminalen din og starte Bash-skallet ved å skrive "bash" og trykke på enter. Deretter kan du følge disse enkle trinnene for å lage en tekstfil:
 
-```Bash
-touch min_tekstfil.txt
-```
-
-Dette vil lage en ny tekstfil med navnet "min_tekstfil.txt" i nåværende arbeidsmappe. Du kan deretter åpne filen med en tekstredigerer og begynne å skrive innholdet ditt.
-
-For å legge til tekst i en eksisterende fil, kan du bruke "> >" operatøren som følger:
+1. Naviger til mappen der du ønsker å lagre tekstfilen ved å bruke kommandoen "cd".
 
 ```Bash
-echo "Dette er eksempeltekst" > > min_tekstfil.txt
+cd Documents/
 ```
 
-Dette vil legge til teksten "Dette er eksempeltekst" i slutten av filen.
-
-For å lese innholdet i en tekstfil, kan du bruke "cat" kommandoen:
+2. Skriv kommandoen "touch" etterfulgt av navnet du vil gi til tekstfilen din.
 
 ```Bash
-cat min_tekstfil.txt
+touch min-fil.txt
 ```
 
-Dette vil skrive ut innholdet i filen på skjermen.
-
-## Dypdykk
-
-Det finnes flere måter å lage og manipulere tekstfiler på i Bash. En annen nyttig kommando er "echo", som lar deg skrive ut tekst på skjermen og i en fil på en gang. For eksempel:
+3. Åpne tekstfilen ved å bruke kommandoen "nano" etterfulgt av filnavnet.
 
 ```Bash
-echo "Dette er tekst som skrives ut på skjermen og i filen" > min_tekstfil.txt
+nano min-fil.txt
 ```
 
-Det finnes også kommandoer for å søke og erstatte tekst i en fil, som "grep" og "sed".
+4. Skriv inn teksten du vil ha i filen og lagre ved å trykke på "Ctrl + X", skriv "Y" for å bekrefte endringer, og trykk på enter for å lagre filen.
 
-Husk å alltid bruke riktige filendelser når du lagrer tekstfiler i Bash. Ved å legge til ".txt" på slutten av filnavnet, vil filen bli registrert som en tekstfil.
+5. For å se innholdet i tekstfilen, bruk kommandoen "cat".
+
+```Bash
+cat min-fil.txt
+```
+
+Her er et eksempel på hva du kan få som output:
+
+```Bash
+Dette er en tekstfil.
+Jeg har lagt til litt tekst.
+``` 
+
+## Dykke dypere
+
+Nå som du har lært det grunnleggende om å lage en tekstfil, kan du også utforske forskjellige kommandoer for å manipulere tekst, som "grep" og "awk". Du kan også bruke tekstfiler til å lagre variabler og utføre beregninger i Bash-skallet.
 
 ## Se også
 
-- [Introduction to Bash programming](https://www.gnu.org/software/bash/manual/html_node/Introduction.html)
-- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Tips and Tricks](https://catonmat.net/download/bash-history-cheat-sheet.pdf)
+- [https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/)
+- [https://www.howtogeek.com/435903/learn-the-basics-of-bash-scripting-and-how-to-build-a-shell-script/](https://www.howtogeek.com/435903/learn-the-basics-of-bash-scripting-and-how-to-build-a-shell-script/)
+- [https://www.linuxjournal.com/content/bash-tips-using-bash-awk-and-grep-efficient-text-file-processing](https://www.linuxjournal.com/content/bash-tips-using-bash-awk-and-grep-efficient-text-file-processing)

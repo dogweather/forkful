@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "Arduino: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,56 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Programmare con Arduino può essere divertente e gratificante, ma quando si tratta di gestire grandi quantità di dati, può diventare complicato. Questo è dove YAML entra in gioco, offrendo un modo semplice e leggibile per organizzare e archiviare i dati, rendendo il processo di programmazione con Arduino ancora più semplice.
+YAML (YAML Ain't Markup Language) è un formato di dati in grado di rappresentare informazioni in un modo leggibile e facile da comprendere per gli esseri umani, ma anche facile da interpretare da parte dei computer. Utilizzare YAML come formato di configurazione nei progetti Arduino può semplificare il processo di configurazione dei dispositivi e rendere il codice più leggibile.
 
 ## Come fare
 
-Per utilizzare YAML con Arduino, è necessario prima di tutto scaricare il parser YAML dal sito ufficiale di Arduino e installarlo nella propria directory di lavoro. Una volta fatto ciò, è possibile iniziare a scrivere il codice. Vediamo un esempio di codice che mostra come leggere e scrivere i dati da un file YAML tramite Arduino:
+Per utilizzare YAML nei tuoi progetti Arduino, segui questi semplici passaggi: 
 
-```
+1. Assicurati di avere l'ultima versione di Arduino sul tuo computer. 
+2. Scarica e installa la libreria "Arduino YAML Library". 
+3. Apri l'IDE di Arduino e crea un nuovo sketch. 
+4. Includi la libreria YAML nel tuo sketch: ```Arduino #include <YAML.h> ```
+5. Usa la funzione ```Arduino YAML.load()``` per caricare il file YAML di configurazione nel tuo codice.
+
+Ecco un esempio di codice che utilizza YAML per leggere un file di configurazione contenente informazioni su una rete Wi-Fi:
+
+```Arduino
 #include <YAML.h>
 
 void setup() {
+  // Inizializza la seriale per la comunicazione con il monitor seriale
   Serial.begin(9600);
-  YAML.begin(); //inizializza il parser YAML
+  
+  // Carica il file di configurazione YAML
+  YAML.load("/config.yaml");
+  
+  // Leggi il nome della rete Wi-Fi dal file di configurazione
+  const char* ssid = YAML["network"]["ssid"].as<const char*>();
 
-  //scrivi i dati nel file YAML
-  YAML.createNode("nome_file");
-  YAML.addNode("nome_file", "nome", "John");
-  YAML.addNode("nome_file", "cognome", "Doe");
-  YAML.save("nome_file.yml"); //salva il file
-  delay(100);
+  // Leggi la password della rete Wi-Fi dal file di configurazione
+  const char* password = YAML["network"]["password"].as<const char*>();
 
-  //leggi i dati dal file YAML
-  String nome = YAML.getValue("nome_file", "nome");
-  String cognome = YAML.getValue("nome_file", "cognome");
+  // Connetti al Wi-Fi
+  WiFi.begin(ssid, password);
 
-  //stampa i dati sulla console seriale
-  Serial.println("Nome: " + nome);
-  Serial.println("Cognome: " + cognome);
+  // Attendi la connessione
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Tentativo di connessione al Wi-Fi...");
+  }
+
+  // Mostra l'indirizzo IP assegnato dal router al dispositivo
+  Serial.println("Connesso al Wi-Fi! Il tuo indirizzo IP è: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  //il programma rimane in loop
+  // Codice del loop principale
 }
-```
-
-Una volta caricato il codice su Arduino e aperta la console seriale, si dovrebbe vedere l'output seguente:
 
 ```
-Nome: John
-Cognome: Doe
-```
-
-Come si può vedere, utilizzare YAML con Arduino è piuttosto semplice e permette di organizzare facilmente i dati in modo leggibile.
 
 ## Approfondimento
 
-Oltre all'utilizzo di base mostrato sopra, esistono altre funzioni che possono essere utili quando si lavora con YAML e Arduino. Una di queste è la possibilità di eliminare un nodo o un'intera struttura dati dal file YAML: ```YAML.deleteNode("nome_file", "nome")``` o ```YAML.deleteFile("nome_file.yml")```. È inoltre possibile creare una struttura dati annidata all'interno di un file YAML, permettendo una maggiore organizzazione dei dati.
-
-Per ulteriori informazioni e opzioni avanzate, si consiglia di consultare la documentazione ufficiale di YAML per Arduino.
+Oltre all'utilizzo di YAML per leggere file di configurazione, è possibile utilizzarlo anche per salvare dati strutturati sulle schede SD o per comunicare con dispositivi esterni. La libreria Arduino YAML supporta anche la scrittura di file YAML, consentendo di salvare facilmente i dati del tuo progetto in un formato leggibile e modificabile. Inoltre, è possibile utilizzare variabili e strutture di dati per creare file YAML dinamici nel tuo codice.
 
 ## Vedi anche
 
-- [Sito ufficiale di Arduino](https://www.arduino.cc/)
-- [Parser YAML per Arduino](https://arduino-yaml-3oyc91m93.vercel.app/)
+- [Sito ufficiale di YAML](https://yaml.org/)
+- [Documentazione di Arduino YAML Library](https://github.com/arduino-libraries/YAML/blob/master/README.md)
+- [Esempi di utilizzo della libreria Arduino YAML](https://github.com/arduino-libraries/YAML/tree/master/examples)

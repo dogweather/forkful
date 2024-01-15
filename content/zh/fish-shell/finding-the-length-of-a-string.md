@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 找到字符串的长度"
-simple_title:         "找到字符串的长度"
+title:                "计算字符串的长度"
+html_title:           "Fish Shell: 计算字符串的长度"
+simple_title:         "计算字符串的长度"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么？
-字符串的长度是我们经常会遇到的一个问题。它可以用来确定字符串中有多少个字符，或者在编程中需要用到限定字符串长度的情况下，可以让我们更方便地控制代码。
+## 为什么
+有时候，在编写程序时，我们需要知道一个字符串的长度，这可以帮助我们处理数据和代码。
 
-## 如何
-在Fish Shell中，要找到字符串长度很简单。只需要使用`string length`命令即可。下面是一个例子：
+## 如何进行
+使用Fish Shell，你可以很容易地找到一个字符串的长度。只需按照以下步骤操作：
 
-```Fish Shell
-set str "Hello, world!"
-echo (string length $str)
+1. 打开终端并运行Fish Shell。
+2. 输入以下命令来定义一个字符串变量：
+```
+set my_string "Hello"
+```
+3. 使用`string-length`命令来找到字符串的长度：
+```
+echo (string-length $my_string)
 ```
 
-输出会是`13`，因为字符串中有13个字符（包括空格和标点符号）。你也可以使用字符串变量来代替直接写入字符串，让代码更加灵活。另外，如果想要程序只返回字符串的长度，而不是打印出来，可以使用`string length --print 0`命令。
+如此，你就可以得到字符串 “Hello”的长度，即5。你可以在终端中尝试一下，看看输出结果吧！
 
 ## 深入探讨
-在Fish Shell中，`string length`命令使用的实际上是`count`函数。它使用的是Unicode编码来计算字符串的长度，而不是字节数。这意味着在使用含有特殊字符的字符串时，也可以得到正确的长度。同时，`string length`命令也支持多行字符串，它会将所有行都算在内，包括行尾的换行符。
+Fish Shell中有一个内置的`string-length`命令，它可以帮助我们找到字符串的长度。实际上，它是通过计算字符串中的字符数来确定长度的，包括空格和标点符号。同时，它也可以接收多个参数，这样我们就可以一次找到多个字符串的长度。比如，我们可以这样做：
+```
+set my_strings "Hello" "World"
+echo (string-length $my_strings)
+```
+输出结果将会是两个字符串的总长度，即10。
 
-# 查看更多
-## 参考链接
-- [Fish Shell官方文档：string length命令](https://fishshell.com/docs/current/cmds/string.html#length)
-- [教程：掌握Fish Shell中的字符串处理](https://blog.fishshell.com/mastering-string-handling-in-fish-shell/)
-- [知乎：如何在Fish Shell中处理字符串？](https://www.zhihu.com/question/62202860)
+## 看看这些链接
+如果你想了解更多关于Fish Shell的信息，可以查看以下链接：
+
+1. [官方文档](https://fishshell.com/docs/current/index.html)
+2. [GitHub仓库](https://github.com/fish-shell/fish-shell)
+3. [WeTheRed](https://github.com/WeTheRed) （Fish Shell的维护者）

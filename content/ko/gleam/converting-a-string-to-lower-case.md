@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 대소문자 변환하기"
-simple_title:         "대소문자 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Gleam: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,26 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열을 소문자로 변환하는 것이 왜 필요한지에 대해 이야기해보겠습니다. 문자열은 프로그래밍에서 매우 중요한 데이터 유형 중 하나입니다. 때로는 이를 다른 메소드와 함께 사용해야 할 때가 있습니다. 이러한 경우 문자열을 소문자로 변환해야 할 수도 있습니다. 그러면 왜 이렇게 해야하는지 알아봅시다.
+문자열을 소문자로 변환하는 것에 관심이 있을 수 있습니다. 예를 들어, HTML 양식에서 사용자가 입력한 값을 처리할 때 대문자나 소문자에 구애받지 않도록 하기 위해서입니다.
 
-## 하우 투
-
-본격적으로 문자열을 소문자로 변환하는 방법에 대해 알아보겠습니다. 이 작업은 Gleam에서 아주 간단합니다. 우선, 소문자로 변환하려는 문자열을 지정한 다음 `String.to_lower_case()` 메소드를 사용하면 됩니다. 아래의 코드 예제를 참조하세요.
+## 어떻게 하나요?
 
 ```Gleam
-let str = "Hello World"
-let lower = string.to_lower_case(str)
+let string = "Hello World"
+let lower_case = String.to_lower_case(string)
 ```
 
-위의 코드는 "Hello World"라는 문자열을 소문자로 변환한 후 `lower` 변수에 저장하는 예제입니다. `lower` 값을 출력하면 `hello world`라는 결과를 얻게 됩니다.
+`String.to_lower_case` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 위의 코드에서는 "Hello World"라는 문자열을 소문자로 변환한 뒤 `lower_case` 변수에 저장되어 있습니다. 코드를 실행하면 `lower_case` 변수에는 "hello world"라는 값이 저장되게 됩니다.
 
-## 딥 다이브
+```Gleam
+let string = "저를 소문자로 바꿔 주세요"
+let lower_case = String.to_lower_case(string)
+```
 
-이제 우리는 문자열을 소문자로 변환하는 방법을 배웠지만, 그것이 어떻게 작동하는지 더 깊이 이해하고 싶을 수도 있습니다. Gleam에서는 모든 문자열을 소문자로 바꾸는 메소드가 내장되어 있기 때문에 별도의 로직이 필요하지 않습니다. 이렇게 하기 위해서는 다른 프로그래밍 언어에서와 같이 반복문이나 조건문을 사용할 필요가 없습니다. Gleam은 이 작업을 더 효율적으로 처리할 수 있도록 설계되었습니다.
+위의 코드에서는 한글 문자열도 소문자로 변환할 수 있습니다. 또한, `String.to_upper_case` 함수를 사용하면 문자열을 대문자로 변환할 수도 있습니다.
 
-## 같이 보기
+## 깊게 살펴보기
 
-이제 문자열을 소문자로 변환하는 방법을 배웠으니 다른 관련 자료를 살펴보세요.
+`String.to_lower_case` 함수를 사용하면 입력된 문자열에 포함된 모든 글자를 소문자로 바꿀 수 있습니다. 이 함수는 영문 대문자, 소문자, 한글 모두를 변환할 수 있습니다. 또한, 특수문자나 숫자는 변환하지 않기 때문에 HTML 태그와 같은 문자열을 처리할 때 유용하게 사용될 수 있습니다.
 
-- [`String.to_upper_case()` 메소드](https://gleam.run/documentation/current/std/string.html#to_upper_case)
-- [Gleam 문자열 관련 내장 함수](https://gleam.run/documentation/current/std/string.html)
+## 다른 글들도 보세요
+
+- [Gleam 공식 문서](https://gleam.run/documentation/#string) - Gleam의 모든 내장 함수에 대한 자세한 설명을 볼 수 있습니다.
+- [Elixir vs Gleam: 뭐가 다를까?](https://gleam.run/posts/elixir_vs_gleam/) - Elixir와 Gleam의 차이점을 알아보는 재미있는 글입니다.

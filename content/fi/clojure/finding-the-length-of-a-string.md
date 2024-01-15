@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Clojure: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,51 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monilla kielillä, mukaan lukien Clojure, on sisäänrakennettu funktio, jolla voi laskea merkkijonon pituuden. Tämä voi olla hyödyllistä monissa ohjelmoinnin sovelluksissa, kuten puhelinnumeroita tai sähköpostiosoitteita käsiteltäessä.
+On monia syitä, miksi haluat löytää merkkijonon pituuden, kuten tarkistaa syötteiden validiuden, manipuloida tekstejä tai vain yksinkertaisesti saada tietoa syötteestäsi.
 
 ## Miten
 
-Käytämme tätä Artikkelia mukana Clojure versio 1.9.0. Seuraavassa esimerkissä käytämme `count` -funktiota selvittämään merkkijonon pituuden ja tulostamme sen konsoliin:
+Onneksi Clojurella on sisäänrakennettu funktio nimeltään "count" joka laskee merkkijonon pituuden. Esimerkiksi:
 
 ```Clojure
-(def s "Tämä on testimerkkijono")
-(count s)
-
-;; Output: 23
+(count "Moi maailma!")
 ```
-
-Yllä olevassa esimerkissä määritellään `s` -muuttuja, johon tallennetaan testimerkkijono. Sen jälkeen `count` -funktiota käytetään `s` -muuttujalle, ja se palauttaa merkkijonon pituuden, joka on 23.
-
-Voimme myös käyttää `count` -funktiota suoraan merkkijonojen kanssa ilman muuttujaa:
+Tulos olisi 13, koska merkkijonossa on 13 merkkiä. Voit myös käyttää "count" funktiota muissa tietorakenteissa, kuten listoissa ja vektoreissa. Esimerkiksi:
 
 ```Clojure
-(count "Tämä on toinen testimerkkijono")
-
-;; Output: 27
+(count [1 2 3 4 5])
 ```
 
-Huomaa, että välilyönnit lasketaan myös merkkien joukkoon, joten merkkijonon pituus voi poiketa merkkien määrästä.
+Tulos olisi 5, koska listassa on viisi alkiota.
 
-## Syvällisempi tarkastelu
+## Syvempi sukellus
 
-`count` -funktio käyttää todellisuudessa `seq` -funktiota selvittääkseen merkkijonon pituuden. Tämä tarkoittaa sitä, että kaikki kokoelman tyyppiset arvot ovat kelvollisia parametreja `count` -funktiolle, mukaan lukien listat, vektorit ja mapit.
+"count" funktiota voidaan käyttää myös luomaan oman merkkijonon pituusfunktio. Esimerkiksi:
 
 ```Clojure
-(def test-list [1 2 3 4])
-(count test-list)
-
-;; Output: 4
+(defn merkkijonon-pituus [merkkijono]
+  (count merkkijono))
 ```
-
-On myös tärkeää huomata, että `count` -funktio ei tarkista vain ensimmäistä tasoa kokoelmassa, vaan se laskee myös sisäkkäisesti olevien kokoelmien arvojen määrät.
-
-```Clojure
-(count [[1 2 3] [4 5 6] [7 8 9]])
-
-;; Output: 3
-```
+Tämä luo uuden funktion nimeltä "merkkijonon-pituus", joka ottaa yhden argumentin, merkkijonon, ja käyttää "count" funktiota laskemaan sen pituuden. Nyt voimme kutsua tätä funktiota haluamallamme merkkijonolla ja saada saman tuloksen kuin "count" funktion käytössä.
 
 ## Katso myös
 
-- [Clojure - Dokumentaatio](https://clojure.org/documentation)
-- [Clojuredocs - count](https://clojuredocs.org/clojure.core/count)
+- [Clojure dokumentaatio](https://clojure.org/guides/getting_started)
+- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)

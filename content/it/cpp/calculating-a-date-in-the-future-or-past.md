@@ -1,5 +1,6 @@
 ---
-title:                "C++: Calcolare una data nel futuro o nel passato."
+title:                "Calcolare una data nel futuro o nel passato."
+html_title:           "C++: Calcolare una data nel futuro o nel passato."
 simple_title:         "Calcolare una data nel futuro o nel passato."
 programming_language: "C++"
 category:             "C++"
@@ -9,52 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
-Il calcolo di una data nel futuro o nel passato può essere utile in molti casi, ad esempio quando si vuole pianificare un viaggio o un evento, o semplicemente per avere una maggiore comprensione del tempo che scorre.
+## Perchè
 
-## Come fare
-Per calcolare una data nel futuro o nel passato, è necessario utilizzare delle funzioni specifiche del linguaggio di programmazione. Nel caso di C++, possiamo utilizzare le funzioni della libreria <ctime> come "mktime" e "gmtime" per manipolare le date e ottenere il risultato desiderato.
+Ci sono molte situazioni in cui potresti avere la necessità di calcolare una data nel futuro o nel passato usando il linguaggio di programmazione C++. Ad esempio, può essere utile per gestire le scadenze di progetti, per creare funzionalità dinamiche in un'applicazione o semplicemente per soddisfare la tua curiosità.
 
-Un esempio di codice potrebbe essere il seguente:
+## Come Fare
+
+Ecco un semplice esempio di come calcolare una data nel futuro o nel passato utilizzando C++:
 
 ```C++
-
 #include <iostream>
 #include <ctime>
 using namespace std;
 
 int main() {
-    struct tm date; // Creiamo una struttura che rappresenti una data
-    date.tm_year = 2021 - 1900; // Impostiamo l'anno corrente (attenzione: la funzione mktime richiede l'anno - 1900)
-    date.tm_mon = 9; // Impostiamo il mese (in questo caso, ottobre)
-    date.tm_mday = 16; // Impostiamo il giorno del mese
-    date.tm_hour = 12; // Impostiamo l'ora (in questo caso, mezzogiorno)
-    date.tm_min = 0; // Impostiamo i minuti
-    date.tm_sec = 0; // Impostiamo i secondi
+    // Impostiamo la data attuale
+    time_t now = time(0);
+    // Convertiamo la data in una struttura di tipo tm
+    tm* today = localtime(&now);
 
-    // Calcoliamo la data nel futuro aggiungendo 10 giorni alla data impostata
-    mktime(&date);
-    date.tm_mday += 10;
+    // Calcoliamo una data nel futuro aggiungendo 10 giorni alla data attuale
+    today->tm_mday += 10;
+    // Convertiamo di nuovo la data in formato time_t
+    time_t future = mktime(today);
 
-    // Stampiamo il risultato
-    cout << "La data nel futuro è: " << asctime(&date) << endl;
+    // Stampiamo la data futura
+    cout << "Data nel futuro: " << ctime(&future) << endl;
 
+    // Calcoliamo una data nel passato sottraendo 5 anni alla data attuale
+    today->tm_year -= 5;
+    // Convertiamo nuovamente la data in formato time_t
+    time_t past = mktime(today);
+
+    // Stampiamo la data passata
+    cout << "Data nel passato: " << ctime(&past) << endl;
     return 0;
 }
+```
+L'output di questo esempio sarà simile a questo:
+```
+Data nel futuro: Gio Nov 5 23:58:50 2020
 
+Data nel passato: Sab Nov 5 23:58:50 2015
 ```
 
-Questo codice stamperà la seguente output:
+## Deep Dive
 
-```
-La data nel futuro è: Mon Oct 26 12:00:00 2021
-```
+Ora che abbiamo visto un semplice esempio di come calcolare una data nel futuro o nel passato, è importante capire come funziona esattamente il processo. In C++, le date vengono rappresentate utilizzando la struttura `time_t`, che memorizza il numero di secondi che sono passati dal 1 gennaio 1970.
 
-## Approfondimento
-Per calcolare una data nel futuro o nel passato è importante comprendere il funzionamento delle funzioni utilizzate. Ad esempio, la funzione "mktime" accetta come parametro una struttura "tm" contenente la data che vogliamo manipolare. Questa funzione restituisce un valore di tipo "time_t" che rappresenta il numero di secondi trascorsi dal 1 gennaio 1970. Una volta ottenuto questo valore, possiamo utilizzare la funzione "gmtime" per convertirlo in una struttura "tm" che rappresenti la data desiderata.
+Per calcolare una data nel futuro o nel passato, ci avvaliamo delle funzioni `mktime` e `localtime`. La prima prende in input una struttura `tm` e la converte in un formato di tipo `time_t`, mentre la seconda ci permette di manipolare la data utilizzando i suoi campi, come ad esempio `tm_mday` per il giorno del mese o `tm_year` per l'anno.
 
-È importante notare che quando si utilizzano le funzioni della libreria <ctime>, il conteggio dei mesi parte da 0 (quindi gennaio è rappresentato dal numero 0, febbraio dal numero 1 e così via). Inoltre, poiché le date sono rappresentate in modo diverso in ogni paese, potrebbero essere necessarie modifiche nel codice per ottenere il risultato desiderato.
-
-# Vedi anche
-- https://www.cplusplus.com/reference/ctime/mktime/
-- https://www.cplusplus.com/reference/ctime/gmtime/
+## See Also
+- [Documentazione di C++ su date e tempo](https://en.cppreference.com/w/cpp/chrono)
+- [Tutorial su come lavorare con date in C++](https://www.cprogramming.com/tutorial/time.html)
+- [Esempi di codice per calcolare date in C++](https://thispointer.com/find-out-current-datetime-in-c-windows-linux/)

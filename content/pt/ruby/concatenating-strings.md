@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Unindo strings"
+html_title:           "Ruby: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,53 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Porque concatenação de strings é importante em Ruby
+## Porque
 
-Na programação, muitas vezes nos deparamos com a necessidade de juntar duas ou mais strings em uma única string. Isso é conhecido como concatenação de strings e é uma tarefa muito comum em Ruby. Neste post, vamos explorar o porquê de usar concatenação de strings, como fazê-lo e algumas informações mais profundas sobre o assunto.
+Se você está trabalhando com Ruby, é provável que em algum momento precise unir strings. A concatenação de strings é uma tarefa comum na programação e é útil para juntar várias partes de um texto em uma única string.
 
-## Por que
+## Como Fazer
 
-A concatenação de strings é importante porque nos permite criar strings mais complexas, combinando informações de diferentes variáveis. Por exemplo, imagine que você está criando um programa de cadastro de usuários e precisa exibir uma mensagem de boas-vindas personalizada para cada usuário. Usando concatenação de strings, você pode combinar o nome e sobrenome do usuário para exibir a mensagem correta. Sem isso, seria necessário criar uma mensagem para cada usuário individualmente, o que seria muito trabalhoso e ineficiente.
+Para unir strings em Ruby, você pode utilizar o operador `+` ou o método `concat`.
 
-## Como fazer
+```ruby
+string_1 = "Olá"
+string_2 = "mundo!"
 
-Em Ruby, existem algumas maneiras de concatenar strings. A forma mais comum é usando o operador de adição (+). Vamos ver um exemplo:
+puts string_1 + " " + string_2
+# saída: Olá mundo!
 
-```Ruby
-nome = "Ana"
-sobrenome = "Silva"
+string_1 = "Ruby"
 
-mensagem = "Olá, " + nome + " " + sobrenome + ". Seja bem-vinda!"
-puts mensagem # Saída: Olá, Ana Silva. Seja bem-vinda!
+puts string_1.concat(" é", " uma", " linguagem", " de", " programação")
+# saída: Ruby é uma linguagem de programação
 ```
 
-Outra forma de concatenar strings é usando o método `concat`. Este método pode ser chamado diretamente em uma string e aceita um ou mais argumentos que serão adicionados ao final da string original. Veja o exemplo:
+Você também pode utilizar o método `<<` para concatenar strings.
 
-```Ruby
-mensagem = "Olá, "
-mensagem.concat("Maria", " Pereira") # Adicionando duas palavras de uma vez
+```ruby
+string_1 = "Eu amo "
+string_2 = "Ruby!"
 
-puts mensagem # Saída: Olá, Maria Pereira
+string_1 << string_2
+
+puts string_1
+# saída: Eu amo Ruby!
 ```
 
-## Deep Dive
+Além disso, é possível utilizar o método `join` em um array de strings para unir todos os elementos em uma única string.
 
-Quando usamos o operador de adição (+) para concatenar strings, o Ruby cria um novo objeto string para armazenar o resultado. Isso significa que, se estivermos concatenando muitas strings em um programa, isso pode resultar em um uso desnecessário de memória. Para evitar isso, podemos usar o método `<<`, que adiciona os argumentos diretamente ao objeto original sem criar um novo. Também podemos usar esse método para fazer concatenação em loop, otimizando ainda mais o uso de memória. Veja o exemplo:
+```ruby
+array = ["Hoje", "é", "um", "novo", "dia"]
 
-```Ruby
-mensagem = "Entraram "
-nomes = ["Ana", "Pedro", "Bruna"]
-
-nomes.each do |nome|
-  mensagem << nome << ", "
-end
-
-mensagem << "na sala."
-
-puts mensagem # Saída: Entraram Ana, Pedro, Bruna, na sala.
+puts array.join(" ")
+# saída: Hoje é um novo dia
 ```
+
+## Mergulho Profundo
+
+Ao utilizar o operador `+` para concatenar strings, o Ruby cria uma nova string no processo, o que pode afetar o desempenho do seu código. Já os métodos `concat` e `<<` modificam a string original, o que pode ser mais eficiente em termos de tempo de execução.
+
+Além disso, é importante notar que os métodos `concat` e `<<` podem receber mais de um argumento, enquanto o operador `+` só pode ser utilizado entre duas strings. Isso significa que ao concatenar mais de duas strings, você pode economizar tempo e linhas de código usando um desses métodos.
 
 ## Veja também
 
-- [Documentação oficial do Ruby sobre strings](https://ruby-doc.org/core-3.0.0/String.html)
-- [Tutorial sobre strings em Ruby](https://www.rubyguides.com/2019/02/ruby-string-methods/)
+- [Documentação oficial do Ruby sobre concatenação de strings](https://ruby-doc.org/core-2.7.2/String.html#method-i-2B)
+- [Artigo da Computer Science for Fun sobre concatenação de strings em Ruby](https://www.comp.nus.edu.sg/~stevenha/visualization/parenthesis.html)

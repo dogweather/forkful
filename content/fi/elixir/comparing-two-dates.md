@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "Elixir: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,30 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein ohjelmoinnissa joudutaan vertaamaan kahta päivämäärää keskenään. Tämä voi olla tarpeellista esimerkiksi tietokantojen kyselyissä tai ajankohtaisten tapahtumien tarkastelussa. Elixirilla tämä on helppoa ja tehokasta toteuttaa, joten on hyvä oppia miten se tehdään.
+Miksi edes vaivautua vertailemaan kahta päivämäärää? Syitä voi olla monia, mutta yleisimpiä ovat esimerkiksi tilanteet, joissa tarvitaan tarkkaa tietoa ajankohdista tai ajallinen järjestys on tärkeää.
 
-## Kuinka tehdä
+## Miten
 
-Vertaamalla kahden päivämäärän välillä voimme saada selville kumpi niistä on aiempi, myöhempi tai ovatko ne samat. Elixirilla tämä onnistuu yksinkertaisesti käyttämällä Erlangin sisäänrakennettua `:calendar` moduulia ja sen funktiota `:calendar.compare/2`, joka vertailee kahta päivämäärää ja palauttaa tuloksen atomina.
+Vertaileminen kahden päivämäärän välillä ei ole vaikeaa Elixirilla. Käytännössä se tapahtuu käyttämällä `Date.compare/2`-funktiota ja antamalla sille kaksi päivämäärämuodossa olevaa arvoa, esimerkiksi:
 
 ```Elixir
-date_1 = {:calendar, {2020, 9, 1}}
-date_2 = {:calendar, {2020, 9, 15}}
-
-:calendar.compare(date_1, date_2)
-# => :lt
+Date.compare({2021, 4, 20}, {2021, 4, 21})
 ```
 
-Esimerkissä luomme kaksi tuplia, jotka edustavat päivämääriä ja annamme ne funktiolle `:calendar.compare/2`. Funktion palauttama atomi kertoo meille, että ensimmäinen päivämäärä on edellä kuin toinen.
+Tämän komennon tulos on `-1`, mikä tarkoittaa, että ensimmäinen päivämäärä on pienempi kuin toinen.
 
-## Syvempi sukellus
+Voit myös vertailla päivämäärän osia erikseen käyttämällä `Date.after?/2`- tai `Date.before?/2`-funktioita, esimerkiksi:
 
-`:calendar` moduulilla on muitakin hyödyllisiä funktioita, joita voimme käyttää päivämäärien käsittelyssä. Esimerkiksi `:calendar.date_to_gregorian_days/1` muuntaa päivämäärän päiviksi vuoden alusta, jolloin voimme vertailla päiviä keskenään. `:calendar.is_leap_year/1` kertoo meille onko annettu vuosi karkausvuosi.
+```Elixir
+Date.before?({2021, 4, 20}, {2021, 4, 21})
+```
 
-Päivämäärien lisäksi Elixirilla on myös moduuli `DateTime`, joka tarjoaa laajempia ominaisuuksia päivämäärien ja aikaleimojen vertailuun. Lisäksi Elixir 1.9:n jälkeen on tullut mukaan uusi `Date` moduuli, joka tarjoaa lisää toimintoja päivämäärien kanssa työskentelyyn.
+Tämä palauttaa `true` tässä tapauksessa, sillä ensimmäinen päivämäärä on pienempi kuin toinen.
+
+## Syvällisempi tarkastelu
+
+Elixirilla päivämäärien vertailemiseen on monia eri vaihtoehtoja, kuten tarkistaa ovatko ne samat (`Date.same?/2`), laskea niiden ero päivinä (`Date.diff/2`) tai jopa muuttaa ne eri aikavyöhykkeille (`Date.shift_zone/2`).
+
+On myös mahdollista tehdä vertailuja käyttämällä `DateTime`-tyyppiä, joka sisältää myös kellonajan tiedot.
 
 ## Katso myös
 
-- Elixirin virallinen dokumentaatio: [https://hexdocs.pm/elixir/Calendar.html](https://hexdocs.pm/elixir/Calendar.html)
-- Miksi ja miten käyttäisin Elixiria? [https://www.juusoalasuutari.fi/2017/07/10/elixir-miksi-ja-miten](https://www.juusoalasuutari.fi/2017/07/10/elixir-miksi-ja-miten)
-- Päivämäärien käsittelyn perusteet Elixirissä: [https://itnext.io/working-with-dates-in-elixir-7b1f1c222e3d](https://itnext.io/working-with-dates-in-elixir-7b1f1c222e3d)
+- [Elixir Date -dokumentaatio](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime -dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir Date Calculator -sovellus](https://github.com/filmil/elixir-date-calculator)

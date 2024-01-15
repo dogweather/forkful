@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "TypeScript: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que 
 
-O TypeScript é uma linguagem de programação cada vez mais popular entre desenvolvedores, devido ao seu forte sistema de tipagem e suporte para orientação a objetos. Porém, como em qualquer linguagem, pode ser necessário lidar com a manipulação de strings. Se você já se perguntou como deletar caracteres em uma string de acordo com um padrão específico, este artigo é para você.
+Às vezes, em nossos códigos, nos deparamos com a necessidade de remover caracteres que correspondem a um padrão específico. Isso pode ser útil para limpar strings, validar entradas ou em outras situações em que precisamos manipular dados de certa forma. Felizmente, com o TypeScript, podemos fazer isso de maneira simples e eficiente.
 
-## Como Fazer
+## Como fazer
 
-Para deletar caracteres em uma string de acordo com um padrão, podemos usar o método `replace()` do TypeScript. Ele substitui uma parte da string por outra, de acordo com as regras definidas. Vamos dar uma olhada em um exemplo:
+Para deletar caracteres que correspondem a um padrão em TypeScript, podemos usar o método `replace()` da classe `String`. Este método aceita uma expressão regular como primeiro parâmetro e uma string vazia como segundo parâmetro, para indicar que queremos substituir o padrão por nada. 
+Aqui está um exemplo prático de como usá-lo:
 
 ```TypeScript
-let string = "Olá mundo!";
-string = string.replace(/[\d\s]/g, "");
-console.log(string);
+const frase = "Apenas um exemplo 123!";
+const novaFrase = frase.replace(/[0-9]/g, "");
+console.log(novaFrase); // Saída: "Apenas um exemplo !"
 ```
 
-Nesse exemplo, usamos o método `replace()` para substituir todos os dígitos e espaços da string por uma string vazia. Como resultado, a saída será "Olámundo!", sem os espaços e números.
+Neste exemplo, estamos usando uma expressão regular que corresponde a qualquer dígito de 0 a 9 e, em seguida, utilizando o método `replace()` para substituir todos esses dígitos por uma string vazia, ou seja, os excluindo da frase original. 
+Também podemos usar expressões regulares mais complexas, dependendo do padrão que queremos deletar. Podemos combinar diversas regras e até mesmo adicionar modificadores, como o `i` para tornar a expressão insensível a maiúsculas e minúsculas. 
+Vale lembrar que, ao usar o método `replace()`, a frase original não é modificada. O método retorna uma nova string com as alterações.
 
-Agora, vamos entender como essa expressão regular funciona. A expressão `/[\d\s]/g` significa que queremos substituir todos os caracteres que são números (`\d`) e espaços (`\s`), de forma global (`g`) na string. Então, ao executar o método `replace()`, todos os caracteres correspondentes serão substituídos por uma string vazia.
+## Mergulho Profundo
 
-Existem inúmeras possibilidades de manipulação com o método `replace()` e as expressões regulares, como substituir padrões específicos, caso sensível ou não, entre outros. É importante ter um bom conhecimento dessa ferramenta para efetuar as manipulações desejadas.
+Para entender melhor como o método `replace()` funciona, podemos dar uma olhada mais aprofundada na estrutura de uma expressão regular. 
+Em resumo, uma expressão regular é uma sequência de caracteres que define um padrão específico no qual queremos encontrar correspondências. Isso pode incluir caracteres literais, classes de caracteres, quantificadores, entre outros elementos. 
+Ao usar o `replace()` com uma expressão regular, podemos dizer que queremos substituir todas as correspondências do padrão encontrado na frase original. 
+Por exemplo, se quisermos substituir todas as letras maiúsculas por asteriscos, podemos fazer o seguinte:
 
-## Deep Dive
+```TypeScript
+const frase = "Apenas um Exemplo 123!";
+const novaFrase = frase.replace(/[A-Z]/g, "*");
+console.log(novaFrase); // Saída: "*penas um xemplo 123!"
+```
 
-Manipulação de strings é uma das tarefas mais comuns em programas de computador, e entender como fazer isso corretamente pode economizar muito tempo na hora de escrever código. No TypeScript, o método `replace()` pode ser usado de várias formas, dependendo do que queremos substituir em uma string.
+Neste exemplo, estamos usando uma classe de caracteres que corresponde a todas as letras maiúsculas do alfabeto e substituindo-as por um asterisco. O modificador `g` indica que queremos substituir todas as correspondências, e não apenas a primeira.
+Com isso, podemos perceber como o uso da expressão regular pode ser poderoso e versátil em nossos códigos em TypeScript.
 
-Uma das formas mais eficientes e flexíveis de usar o `replace()` é com expressões regulares. Elas permitem que você especifique um padrão de caracteres a serem substituídos, de forma global ou apenas na primeira ocorrência. Além disso, é possível usar a flag `i` para fazer a substituição sem distinguir maiúsculas de minúsculas, ou a flag `m` para considerar múltiplas linhas.
+## Veja também
 
-Outra dica importante é utilizar a capacidade de combinar várias expressões regulares para substituir e transformar uma string. Por exemplo, você pode usar um padrão para substituir um determinado caractere, e depois outro padrão para formatar a string de acordo com o seu desejo.
-
-## Veja Também
-
-Aqui estão alguns links úteis para continuar aprendendo sobre a manipulação de strings e expressões regulares no TypeScript:
-
-- [Documentação oficial sobre expressões regulares no TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Tutorial sobre expressões regulares no TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
-- [Guia completo sobre manipulação de strings no TypeScript](https://medium.com/webeleon/typescript-strings-8136b3d9e465)
+- Documentação oficial do método `replace()`: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- Tutorial sobre expressões regulares em TypeScript: https://www.typescriptlang.org/docs/handbook/regexp.html

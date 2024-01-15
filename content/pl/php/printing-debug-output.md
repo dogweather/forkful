@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Generowanie wyjścia debugowania"
-simple_title:         "Generowanie wyjścia debugowania"
+title:                "Wydrukowanie danych do debugowania"
+html_title:           "PHP: Wydrukowanie danych do debugowania"
+simple_title:         "Wydrukowanie danych do debugowania"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -11,46 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami, podczas pisania kodu w PHP, może się zdarzyć, że napotkasz błąd lub problem, który nie jest łatwy do zlokalizowania. Wtedy przydatne może być używanie debugowania, czyli drukowanie informacji o działaniu programu, aby móc zdiagnozować problem.
+Debugowanie jest nieodłączną częścią tworzenia aplikacji, a wiedza na temat drukowania informacji debugujących jest niezbędna dla każdego programisty. Dzięki temu narzędziu można szybciej znaleźć i naprawić błędy w kodzie, co przyczynia się do poprawy jakości tworzonego oprogramowania.
 
 ## Jak to zrobić
 
-Istnieją różne sposoby na drukowanie debug outputu w PHP, w tym:
-- Słowo kluczowe `echo` - pozwala wyświetlić wartość zmiennej lub tekstu na stronie internetowej.
-- Funkcja `print_r()` - przydatna w przypadku drukowania wielowymiarowych tablic lub obiektów.
-- Funkcja `var_dump()` - wyświetla szczegółowe informacje o zmiennych, w tym typ, rozmiar i wartość.
+Aby drukować informacje debugujące w języku PHP, należy skorzystać z funkcji `echo` lub `print_r`. Oba te polecenia służą do wypisywania danych na ekranie, jednak `print_r` jest przydatniejsze w przypadku drukowania złożonych struktur danych, takich jak tablice czy obiekty.
 
-Przykładowy kod wykorzystujący te funkcje wyglądałby następująco:
+Przykładowy kod wykorzystujący funkcję `echo`:
 
 ```PHP
-$variable = "Hello world!";
-echo $variable;
-// Wyświetli: Hello world!
-
-$array = array("apple", "banana", "orange");
-print_r($array);
-/*
-Wyświetli:
-Array (
-    [0] => apple
-    [1] => banana
-    [2] => orange
-)
-*/
-
-$number = 123;
-var_dump($number);
-// Wyświetli: int(123)
+$zmienna = "Hello World!";
+echo $zmienna; // wyświetli "Hello World!" na ekranie
 ```
 
-## Deep Dive
+A teraz przykład wykorzystujący funkcję `print_r`:
 
-Wykorzystanie debugowania jest szczególnie przydatne w przypadku większych projektów, gdzie napotkane błędy mogą być trudne do zlokalizowania. Dzięki drukowaniu debug outputu możesz dokładnie prześledzić poziom wykonania kodu i znaleźć miejsce, w którym problem się pojawia.
+```PHP
+$tablica = array("jabłko", "banan", "pomarańcza");
+print_r($tablica); // wyświetli zawartość tablicy w formie czytelnej dla człowieka
+```
 
-Pamiętaj jednak, żeby nie pozostawiać wydruków debug outputu w kodzie produkcyjnym, ponieważ mogą one ujawniać poufne informacje i spowolnić działanie strony.
+Można także skorzystać z funkcji `var_dump`, która oprócz wyświetlenia wartości danej zmiennej, pokazuje również jej typ oraz długość (w przypadku tablic).
+
+```PHP
+$zmienna = "Hello World!";
+var_dump($zmienna); // wyświetli "string(12) "Hello World!""
+```
+
+Kolejną przydatną funkcją jest `error_log`, która pozwala na zapisanie informacji debugujących do pliku zamiast wyświetlania ich na ekranie. Użyteczne, gdy nie chcemy pokazywać użytkownikom błędów lub gdy nie mamy dostępu do konsoli.
+
+## Pogłębione informacje
+
+Drukowanie informacji debugujących może być także przydatne przy tworzeniu aplikacji w trybie produkcyjnym. W takiej sytuacji warto skorzystać z funkcji `ini_set`, która pozwala na wyświetlenie błędów na ekranie lub zapisanie ich do pliku, bez potrzeby modyfikowania ustawień serwera.
+
+```PHP
+ini_set('display_errors', 1); // wyświetli błędy na ekranie
+ini_set('log_errors', 1); // zapisze błędy do pliku
+```
+
+Pamiętaj jednak, aby wyłączyć tę funkcjonalność wersji produkcyjnej aplikacji, aby uniknąć wyświetlania wrażliwych informacji użytkownikom.
 
 ## Zobacz także
 
-- [PHP Debugging Techniques](https://www.php.net/manual/en/debugger.php)
-- [Debugging PHP with Xdebug](https://medium.com/the-andela-way/debugging-php-applications-the-smarter-way-using-xdebug-2a84f139c447)
-- [Using Debugging Tools in PHPStorm](https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm.html)
+- [Dokumentacja PHP: Debugging Functions](https://www.php.net/manual/en/ref.errorfunc.php)
+- [Blog SitePoint: PHP Debugging with echo and print_r](https://www.sitepoint.com/php-debugging-echo-print-r/)
+- [Dokumentacja PHP: ini_set](https://www.php.net/manual/en/function.ini-set.php)

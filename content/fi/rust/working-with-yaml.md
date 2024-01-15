@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Työskentely yamlin kanssa"
-simple_title:         "Työskentely yamlin kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Rust: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa YAML-kehitys Rustilla?
+## Miksi
 
-YAML (yet another markup language) on tietojen esitysmuoto, joka on suunniteltu helppokäyttöiseksi ja ymmärrettäväksi ihmisille. Rust on moderneja ja tehokas ohjelmointikieli, joka on suosittu erityisesti sen turvallisuuden ja suorituskyvyn vuoksi. Yhdistäessäsi nämä kaksi, saat erittäin tehokkaan ja luotettavan tavan käsitellä YAML-tiedostoja.
+YAML-tiedostot ovat yleinen tapa tallentaa ja jakaa tietoja ohjelmistokehityksessä. Käyttämällä Rustia, voit käsitellä ja muokata YAML-tiedostoja tehokkaasti ja luotettavasti.
 
-## Kuinka käyttää YAML:ia Rustissa?
+## Kuinka
 
-YAML:in käsittely Rustissa on helppoa käyttämällä cratea nimeltä "serde_yaml". Se tarjoaa työkalut tiedon lukemiseen ja kirjoittamiseen YAML-tiedostoon.
-
-Ensiksi, lisää seuraava rivi Cargo.toml-tiedoston [dependencies] -osaan:
+YAML-tukea ei sisällytä Rustin standardikirjastoon, mutta se voidaan helposti lisätä kolmannen osapuolen kirjaston avulla. Tässä on esimerkki käytöstä serde_yaml -kirjaston avulla, jotta voit muuntaa YAML-tiedostot Rust-tietorakenteiksi:
 
 ```Rust
-serde_yaml = "0.8.11"
+// Lisää riippuvuus Cargo.toml-tiedostoon
+[riippuvuudet]
+serde_yaml = "0.8"
+
+// Tuo kirjasto
+Käyttö serde_yaml::aukeama;
+
+// Lue YAML-tiedosto ja muunna se rakenteeksi
+puu = serde_yaml::from_str(r"---
+nimet:
+  - Mikko
+  - Anna
+  - Juuso")?;
 ```
 
-Sitten voit alkaa käyttää koodissasi serde_yaml -cratea. Alla on esimerkki koodista, jossa avataan YAML-tiedosto ja tulostetaan sen sisältö:
+Yllä olevassa esimerkissä luodaan puu-tyyppinen tietorakenne, jossa on "nimet" -kenttä, joka sisältää kolme nimeä. Voit käyttää samaa lähestymistapaa myös kirjoittaessasi Rust-tietorakenteita YAML-tiedostoiksi.
 
-```Rust
-use serde_yaml::Value;
-use std::fs::File;
-use std::io::prelude::*;
+## Syvempi sukellus
 
-fn main() {
-    let mut file = File::open("data.yaml").expect("Tiedostoa ei löytynyt!");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)
-        .expect("Tiedoston lukeminen epäonnistui!");
-
-    let value: Value = serde_yaml::from_str(&contents)
-        .expect("Tiedoston lukeminen/YAML-kääntäminen epäonnistui!");
-
-    println!("{:#?}", value); //tulostaa YAML-tiedoston sisällön kauniimmin muotoiltuna
-}
-```
-
-Kun suoritat tämän koodin, saat tulosteena YAML-tiedoston sisällön.
-
-## Syvyyssukellus YAML:in käsittelyyn
-
-Saatavilla on myös muita crateja, joissa voi olla lisäominaisuuksia, kuten YAML-validointi ja virheiden käsittely. Lisäksi serde_yaml -cratessa on myös mahdollisuus serialisoida Rust-struct -muotoiseksi, jolloin tiedoston sisällön muokkaaminen ja tallentaminen on helpompaa.
-
-On myös tärkeää huomata, että YAML:in sijasta voit käyttää myös TOML- tai JSON-formaatteja serde_something-crateilla. Lisäksi saatat haluta käyttää serde -cratea yhdessä serde_yaml -craten kanssa, jotta voit käsitellä muita dataformaatteja samassa ohjelmassa.
+serde_yaml -kirjasto käyttää serde -kirjastoa muuntamaan YAML-muodon tietorakenteiksi ja takaisin. Voit lisätä benett-yaml -kirjaston konfiguroimaan muunnetun YAMLin muodon ja tiedostorakenne kirjoitettavaksi. Tämä antaa sinulle enemmän hallintaa siitä, miten tiedostoja käsitellään ja varmistaa, että ne ovat yhteensopivia muiden ohjelmien kanssa, jotka käyttävät YAML-tiedostomuotoa.
 
 ## Katso myös
 
-- [serde_yaml crate](https://crates.io/crates/serde_yaml)
-- [serde crate](https://crates.io/crates/serde)
-- [yaml-rust crate](https://crates.io/crates/yaml-rust)
+- [serde_yaml-dokumentaatio](https://docs.rs/serde_yaml/0.8.16/serde_yaml/)
+- [benett-yaml-dokumentaatio](https://docs.rs/bennett-yaml/0.7.0/bennett_yaml/)
+- [YAML-spesifikaatio](https://yaml.org/spec/1.2/spec.html)

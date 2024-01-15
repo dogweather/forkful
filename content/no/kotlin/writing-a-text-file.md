@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Skriver en tekstfil"
+html_title:           "Kotlin: Skriver en tekstfil"
+simple_title:         "Skriver en tekstfil"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,43 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil er en viktig del av å lære å programmere. Det er en grunnleggende ferdighet som vil tillate deg å lagre og organisere data på datamaskinen din. Uten det kan det være vanskelig å arbeide med større programmeringsprosjekter.
+Å skrive en tekstfil er en vanlig oppgave i mange programmeringsspråk, og Kotlin er intet unntak. Å kunne skrive tekstfiler kan være nyttig for å lagre og behandle data i et program.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å skrive en tekstfil i Kotlin, må du først importere filsystemet biblioteket. Dette gjøres ved å legge til følgende kode i starten av filen:
-
-```Kotlin
-import java.io.File
-```
-
-Deretter kan du bruke kodeblokken nedenfor for å opprette en tekstfil og skrive innhold i den:
+Skriving av en tekstfil i Kotlin er en enkel prosess som kan gjøres på få linjer med kode. Først må vi opprette en variabel som inneholder teksten vi vil skrive til filen:
 
 ```Kotlin
-// Opprett en fil
-val fil = File("minTekstfil.txt")
-
-// Åpne filen for å skrive innhold
-fil.printWriter().use { skriver ->
-    skriver.println("Dette er en tekstfil skrevet i Kotlin!")
-}
-
-// Lukk filen
-fil.close()
+val tekst = "Dette er en tekstfil skrevet med Kotlin"
 ```
 
-Kjører denne koden vil opprette en ny tekstfil med navnet "minTekstfil.txt" og skrive teksten "Dette er en tekstfil skrevet i Kotlin!" i den. Du kan også endre teksten og navnet på filen etter behov.
+Deretter må vi bruke en FileWriter-klasse for å åpne en ny fil for skriving, og en BufferedWriter for å skrive teksten til filen:
 
-Det er viktig å huske på å lukke filen etter at du er ferdig med å bruke den ved hjelp av "close" funksjonen. Dette vil sørge for at eventuelle endringer blir lagret og at ressursene som brukes av filen blir frigjort.
+```Kotlin
+val skriver = BufferedWriter(FileWriter("tekstfil.txt"))
+skriver.write(tekst)
+```
 
-## Dykk dypere
+Til slutt må vi lukke både skriveren og filen:
 
-Når du arbeider med tekstfiler, er det nyttig å vite om forskjellige funksjoner som kan hjelpe deg med å jobbe med tekstinnhold. For eksempel kan du bruke "readText" funksjonen for å lese innholdet av en eksisterende tekstfil og lagre den som en mer String variabel. Du kan også bruke "delete" funksjonen for å slette en tekstfil hvis du ikke trenger den lenger.
+```Kotlin
+skriver.close()
+```
 
-Hvis du ønsker å lese mer om arbeidet med tekstfiler i Kotlin, kan du sjekke ut offisiell dokumentasjon fra Kotlin eller søke etter veiledninger og ressurser på nettet.
+Etter å ha kjørt disse tre linjene med kode, vil teksten bli skrevet til filen "tekstfil.txt".
+
+## Gå dypere
+
+Hvis vi ønsker å legge til mer tekst i filen vår, kan vi bruke metoden "append()" i FileWriter-klassen:
+
+```Kotlin
+val skriver = BufferedWriter(FileWriter("tekstfil.txt", true))
+skriver.append("Dette er en tilleggslinje")
+```
+
+Vi kan også bruke BufferedWriter til å skrive flere linjer med tekst ved å bruke metoden "newLine()". Dette vil legge til en ny linje i filen vår og gjøre det lettere å lese:
+
+```Kotlin
+skriver.newLine()
+skriver.write("Dette er en ny linje")
+```
 
 ## Se også
 
-- [Offisiell Kotlin dokumentasjon for å jobbe med filer](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [YouTube video tutorial om å skrive til tekstfiler i Kotlin](https://www.youtube.com/watch?v=seEkH3Z4VGI)
-- [Nettbasert tekstredigeringsverktøy for å øve på å skrive tekstfiler i Kotlin](https://play.kotlinlang.org/koans/overview)
+- [Kotlin Official Documentation](https://kotlinlang.org/docs/home.html)
+- [Writing Text Files in Java](https://www.baeldung.com/java-write-to-file)
+- [Kotlin Tutorials on YouTube](https://www.youtube.com/watch?v=t5N_RtPSsta)

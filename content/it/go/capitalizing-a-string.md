@@ -1,6 +1,7 @@
 ---
-title:                "Go: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Go: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,42 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Capitalizzare una stringa è un'operazione comune nella programmazione, soprattutto quando si lavora con dati in input forniti dall'utente. La funzione di capitalizzazione trasforma la prima lettera di ogni parola in maiuscolo, rendendo il testo più leggibile e formattato in modo uniforme.
+Se stai cercando un modo semplice ed efficiente per capitalizzare una stringa nel tuo codice Go, sei nel posto giusto! In questo articolo scoprirai come farlo in pochi passaggi.
 
 ## Come fare
 
-```Go
-package main
+Per capitalizzare una stringa in Go, è possibile utilizzare la funzione `ToUpper` del pacchetto `strings`. Vediamo un esempio pratico:
 
-import (
-	"fmt"
-	"strings"
-)
+```Go
+import "strings"
 
 func main() {
-	// Definiamo una stringa in input
-	input := "questa è una stringa da capitalizzare"
-
-	// Utilizziamo la funzione strings.Title() per capitalizzare la stringa
-	capitalized := strings.Title(input)
-
-	// Stampiamo il risultato
-	fmt.Println(capitalized)
-
-	// Output: Questa È Una Stringa Da Capitalizzare
+    stringa := "ciao a tutti!"
+    stringaCapitalizzata := strings.ToUpper(stringa)
+    fmt.Println(stringaCapitalizzata)
 }
 ```
 
-In questo esempio, abbiamo utilizzato la funzione `strings.Title()` che accetta una stringa in input e restituisce la stessa stringa con la prima lettera di ogni parola in maiuscolo. È importante ricordare che questa funzione non cambia la stringa originale, ma ne crea una nuova.
+**Output:**
 
-## Approfondimenti
+```
+CIAO A TUTTI!
+```
 
-La funzione `strings.Title()` sfrutta l'algoritmo di Alcatel-Lucent per capitalizzare una stringa. Questo algoritmo tiene conto delle eccezioni linguistiche, come le preposizioni, e capitalizza correttamente anche quelle parole che non iniziano con una lettera dell'alfabeto latino.
+Come puoi vedere, abbiamo semplicemente utilizzato la funzione `ToUpper` passando come argomento la stringa da capitalizzare. Questa funzione restituisce una nuova stringa con tutti i caratteri convertiti in lettere maiuscole. 
 
-Una delle alternative alla funzione `strings.Title()` è l'utilizzo della libreria `unicode`. Questa libreria fornisce una funzione `ToTitle()` che accetta in input un rune, cioè un singolo carattere del testo, e restituisce la versione in maiuscolo di quel carattere. Tuttavia, questa soluzione richiede una gestione più complessa e può essere meno performante rispetto all'utilizzo della funzione `strings.Title()`.
+Se vuoi capitalizzare solo la prima lettera di una stringa, puoi utilizzare la funzione `Title`:
+
+```Go
+func main() {
+    stringa := "ciao a tutti!"
+    stringaCapitalizzata := strings.Title(stringa)
+    fmt.Println(stringaCapitalizzata)
+}
+```
+
+**Output:**
+
+```
+Ciao A Tutti!
+```
+
+## Approfondimento
+
+Adesso che sai come capitalizzare una stringa in Go, vediamo quali sono le tecniche utilizzate dalla funzione `ToUpper` per portare a termine questo compito.
+
+In realtà, la funzione `ToUpper` fa uso della funzione `Map` del pacchetto `strconv` per cambiare il valore del byte rappresentante il carattere in lettera maiuscola. Questo processo viene ripetuto per ogni carattere della stringa.
+
+È anche possibile creare una propria funzione per capitalizzare una stringa, utilizzando ad esempio l'operatore `+=` per concatenare i caratteri e la funzione `Upper` del pacchetto `unicode` per convertire i caratteri in lettere maiuscole. 
 
 ## Vedi anche
 
-- [Package strings](https://golang.org/pkg/strings/)
-- [Package unicode](https://golang.org/pkg/unicode/)
-- [How to Capitalize a String in Go](https://www.freecodecamp.org/news/how-to-capitalize-a-string-in-go/)
+- [Go Strings Package Documentation](https://pkg.go.dev/strings)
+- [Go Strconv Package Documentation](https://pkg.go.dev/strconv)
+- [Go Unicode Package Documentation](https://pkg.go.dev/unicode)

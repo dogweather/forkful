@@ -1,6 +1,7 @@
 ---
-title:                "C++: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "C++: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,59 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Om du vill utveckla en C++-applikation som kan hämta data från en server, är det viktigt att förstå hur man skickar HTTP-förfrågningar med grundläggande autentisering. Detta är en viktig del av många webbapplikationer och API:er som kräver autentisering för att få åtkomst till deras data. I denna bloggpost kommer vi att utforska hur man skickar en HTTP-förfrågan med grundläggande autentisering i C++.
+Om du vill skicka en HTTP förfrågan med grundläggande autentisering är det för att autentisera dig själv till en server. Detta är särskilt viktigt när du behöver komma åt skyddad information eller utföra åtgärder på en server.
 
-## Så här gör du
-För att skicka en HTTP-förfrågan med grundläggande autentisering i C++, behöver vi först inkludera nödvändiga bibliotek och deklarera variabler för vår förfrågan. Sedan använder vi en byggare för att bygga vår HTTP-förfrågan och lägger till autentiseringsuppgifterna. Här är ett exempel på hur det kan se ut i kod:
+## Hur man gör det
+För att skicka en HTTP förfrågan med grundläggande autentisering behöver du följa några enkla steg:
+
+1. Importera nödvändiga bibliotek. In C++ kan du använda `#include <curl/curl.h>` för att använda cURL biblioteket som hjälper dig att skicka HTTP förfrågningar.
+2. Skapa en variabel för cURL handler med `CURL *curl;` och en variabel för att lagra autentiseringsinstruktionerna med `struct curl_slist *headers = NULL;`.
+3. Ange URL-adressen för servern i en variabel, till exempel `const char *url = "http://www.example.com/"`.
+4. Skapa en variabel för att lagra användarnamnet och lösenordet för autentisering, till exempel `const char *userpwd = "användarnamn:lösenord"`.
+5. Initialisera cURL biblioteket med `curl_global_init(CURL_GLOBAL_ALL);` och cURL handler med `curl = curl_easy_init();`.
+6. Ange autentiseringsinstruktionen i headern med `headers = curl_slist_append(headers, "Authorization: Basic " + userpwd);`.
+7. Ange URL-adressen till cURL handle med `curl_easy_setopt(curl, CURLOPT_URL, url);`.
+8. Ange headern till cURL handle med `curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);`.
+9. Skicka den faktiska HTTP förfrågan med `curl_easy_perform(curl);`.
+10. Städa upp genom att ta bort headern med `curl_slist_free_all(headers);` och avsluta cURL handler med `curl_easy_cleanup(curl);`.
+11. Avsluta cURL biblioteket med `curl_global_cleanup();`.
+
+Här är ett exempel på hur koden skulle kunna se ut:
 
 ```C++
-// Inkludera nödvändiga bibliotek
-#include <iostream>
 #include <curl/curl.h>
 
-using namespace std;
+int main(void)
+{
+  CURL *curl;
+  struct curl_slist *headers = NULL;
+  const char *url = "http://www.example.com/";
+  const char *userpwd = "användarnamn:lösenord";
 
-int main() {
+  curl_global_init(CURL_GLOBAL_ALL);
+  curl = curl_easy_init();
 
-// Definiera variabler för vår HTTP-förfrågan
-CURL *curl;
-CURLcode res;
-struct curl_slist *headers = nullptr;
-string endpoint = "https://exempel.com/api/";
-string username = "användarnamn";
-string password = "lösenord";
+  headers = curl_slist_append(headers, "Authorization: Basic " + userpwd);
 
-// Skapa vår byggare och lägg till autentiseringsuppgifter
-curl = curl_easy_init();
-if (curl) {
-  headers = curl_slist_append(headers, "Content-Type: application/json"); // Ange en valfri HTTP-header
+  curl_easy_setopt(curl, CURLOPT_URL, url);
   curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-  curl_easy_setopt(curl, CURLOPT_USERPWD, (username + ":" + password).c_str()); // Lägg till autentiseringsuppgifter
-  curl_easy_setopt(curl, CURLOPT_URL, endpoint.c_str()); // Ange slutpunkten för HTTP-förfrågan
-  res = curl_easy_perform(curl); // Utför vår HTTP-förfrågan
-  if (res != CURLE_OK) { // Kontrollera om HTTP-förfrågan lyckades
-    cout << "Något gick fel. Felkod: " << res << endl;
-  }
-  curl_easy_cleanup(curl); // Stäng vår byggare
-  curl_global_cleanup(); // Stäng all curl-funktionalitet
-}
-return 0;
+
+  curl_easy_perform(curl);
+
+  curl_slist_free_all(headers);
+  curl_easy_cleanup(curl);
+  curl_global_cleanup();
+
+  return 0;
 }
 ```
 
-Om vår förfrågan lyckas, kommer vi att få en 200 OK-status och den efterfrågade datan i retur. Om det finns några problem med autentiseringen, kommer vi att få en 401 Felaktig autentisering-status.
-
 ## Djupdykning
-När vi skickar en HTTP-förfrågan med grundläggande autentisering, krypteras våra autentiseringsuppgifter och skickas som en bas64-kodad sträng i en HTTP-header som heter "Authorization". Detta ger en grundläggande säkerhetsnivå när vi skickar känsliga uppgifter över internet.
-
-Vi kan också lägga till fler headers, till exempel "Accept" för att ange vilken typ av data vi förväntar oss att få tillbaka och "Content-Type" för att ange vilken typ av data vi skickar.
-
-## Se också
-- [Curl - officiell dokumentation](https://curl.se/libcurl/c/http-authentication.html)
-- [C++ - officiell dokumentation](https://isocpp.org/wiki/faq/basic-serialization#serialize-xml-portable)
-- [Bas64-kodning - Wikipedia](https://sv.wikipedia.org/wiki/Base64)
+Vissa servrar kräver att du först måste autentisera dig själv för att få åtkomst till den faktiska resursen eller för att få tillgång till vissa funktioner. Det finns olika typer av autentisering, som baseras på användarnamn och lösenord, OAuth, JWT och mer. Med grundläggande autentisering skickas användarnamn och lösenord i klartext i headern för en HTTP förfrågan, vilket gör det mindre säkert jämfört med andra autentiseringsmetoder.
 
 ## Se även
-- [Curl - officiell dokumentation](https://curl.se/libcurl/c/http-authentication.html)
-- [C++ - officiell dokumentation](https://isocpp.org/wiki/faq/basic-serialization#serialize-xml-portable)
-- [Bas64-kodning - Wikipedia](https://sv.wikipedia.org/wiki/Base64)
+- [cURL bibliotekets hemsida](https://curl.haxx.se/libcurl/)
+- [Guide för HTTP autentisering i cURL](https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html)
+- [HTTP autentisering på Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)

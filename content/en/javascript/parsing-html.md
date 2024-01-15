@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Javascript recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,39 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a web developer, you might come across the need to extract specific information from HTML pages. This is where HTML parsing comes in handy. By parsing HTML, you can extract data and manipulate it in your JavaScript code to create dynamic and interactive web applications.
+Parsing HTML, or extracting structured data from HTML documents, is an essential task for web developers. It allows for easier data manipulation and organization, making it a crucial process for creating efficient and user-friendly websites.
 
 ## How To
 
-To start parsing HTML in JavaScript, you will first need to import a module called "node-html-parser". This will allow us to access the HTML parsing functionality.
+First, we need to understand the basic structure of HTML documents. HTML documents consist of elements, which are enclosed in tags like `<p>` or `<div>`. These elements can have attributes, such as `id` or `class`, and contain content such as text or other nested elements.
+
+To parse HTML in Javascript, we can use the DOM (Document Object Model) methods provided by the browser. For example, the `document.getElementByTagName()` method allows us to select and retrieve specific elements from the document.
 
 ```Javascript
-// Import the module
-const parse = require('node-html-parser').parse;
-// Sample HTML code
-const html = '<div class="container"><h1>Hello, world!</h1><p>This is a paragraph.</p></div>';
-// Parse the HTML
-const parsedHTML = parse(html);
-// Get the text inside the <h1> tag
-const title = parsedHTML.querySelector('h1').text;
-// Get the text inside the <p> tag
-const paragraph = parsedHTML.querySelector('p').text;
-// Print the results
-console.log(title); // Output: Hello, world!
-console.log(paragraph); // Output: This is a paragraph.
+var element = document.getElementsByTagName("p")[0];
+console.log(element.innerText); // Output: This is a paragraph.
 ```
 
-In this example, we have imported the "node-html-parser" module and used its `parse` function to parse the HTML code. Then, we used `querySelector` to select specific elements from the parsed HTML and extract their text content.
+In the code above, we first select the first `<p>` element in the document and assign it to a variable named `element`. Then, by using the `innerText` property, we can access the text content inside the selected element.
+
+Another useful method for parsing HTML is `document.querySelectorAll()`, which allows us to select elements using CSS selectors. This can be useful for targeting specific elements with certain attributes or classes.
+
+```Javascript
+var elements = document.querySelectorAll(".class");
+console.log(elements.length); // Output: 3
+```
+
+In this example, we are selecting all elements with the class name "class" and using the `length` property to get the number of elements retrieved.
 
 ## Deep Dive
 
-HTML parsing involves breaking down an HTML document into smaller parts, such as elements, attributes, and text content. This allows us to access and manipulate specific parts of the HTML as needed.
+Parsing HTML can become more complex when dealing with nested elements and more intricate HTML structures. In these cases, it may be beneficial to use a library or framework specifically designed for HTML parsing, such as Cheerio or JSDOM.
 
-The "node-html-parser" module uses a technique called DOM manipulation, which stands for Document Object Model. This means that the HTML document is represented as an object with various properties and methods, making it easier to access and manipulate.
+These tools offer more advanced features, such as traversing through the DOM tree, selecting elements using CSS selectors, and manipulating HTML content. They also handle cases where HTML documents may not be well-formed, making the parsing process more robust.
 
-To learn more about HTML parsing and DOM manipulation, you can refer to the official documentation for "node-html-parser" and the DOM APIs for JavaScript.
+It's essential to keep in mind that parsing HTML can also be resource-intensive, so it's best to do it only when necessary and optimize the process accordingly.
 
 ## See Also
 
-- [node-html-parser documentation](https://www.npmjs.com/package/node-html-parser)
-- [DOM APIs for JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [DOM Methods](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [Cheerio](https://cheerio.js.org/)
+- [JSDOM](https://github.com/jsdom/jsdom)

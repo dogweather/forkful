@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Kotlin: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,40 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Testaamisen kirjoittaminen voi tuntua turhalta ja aikaa vievältä työltä, mutta se on todella tärkeä osa ohjelmistokehitystä. Testien avulla voimme varmistaa, että koodimme toimii halutulla tavalla ja vähentää virheiden riskiä tuotantoympäristössä.
+On monia syitä, miksi kirjoittaa testit osana ohjelmointia. Testien avulla pystyt varmistamaan koodisi toimivuuden ja välttämään mahdollisia virheitä jo ohjelmoinnin aikana. Lisäksi testien avulla pystyt helposti havaitsemaan muutokset koodissasi ja varmistamaan, että muutokset eivät ole aiheuttaneet ennalta-arvaamattomia ongelmia.
 
-## Miten
+## Kuinka
 
-Testien kirjoittaminen Kotlinilla on helppoa ja suoraviivaista. Voit käyttää sisäänrakennettua `assert()` -funktiota testien kirjoittamiseen. Katso alla oleva esimerkki `SimpleCalculator` -luokan testaamisesta:
+Kirjoittaessasi testejä Kotlinilla, sinun tulee ensin tuoda JUnit-kirjasto osaksi projektitasi. Voit tehdä tämän lisäämällä `testImplementation("junit:junit:4.12")` riippuvuuden `build.gradle` tiedostoon. Seuraavaksi luot uuden Kotlin-tiedoston ja määrität testiluokan käyttäen `@Test` -annotaatiota. Alla on yksinkertainen esimerkki:
 
 ```Kotlin
-class SimpleCalculator {
-    fun add(x: Int, y: Int) = x + y
+import org.junit.Test
+
+class CalculatorTest {
+    @Test
+    fun `returns the sum of two numbers`() {
+        val result = add(2, 3)
+        
+        assertEquals(5, result)
+    }
+    
+    fun add(num1: Int, num2: Int): Int {
+        return num1 + num2
+    }
 }
-
-fun main() {
-    val calc = SimpleCalculator()
-    assert(calc.add(3, 4) == 7)
-    assert(calc.add(-5, 10) == 5)
-    println("All tests passed!")
-}
 ```
 
-```
-All tests passed!
-```
+Testiluokassa voit käyttää `assertEquals` metodia varmistaaksesi, että koodisi palauttaa halutun tuloksen. Voit myös käyttää muita JUnitin metodeita, kuten `assertTrue` tai `assertNotNull`, riippuen siitä mitä haluat testata.
 
-Kuten näet, voimme käyttää assert-funktiota testaamaan, onko laskinluokan `add()` -metodi palauttaa odotetun tuloksen erilaisilla lähtöarvoilla.
+## Syvemmällä
 
-Voit myös käyttää ulkoista kirjastoa, kuten JUnit, helpottamaan testien kirjoittamista ja suorittamista.
-
-## Syvällinen sukellus
-
-Testien kirjoittaminen on tärkeää myös sovelluksen jatkokehityksen kannalta. Kun uusia toiminnallisuuksia lisätään tai vanhoja muokataan, testien avulla voimme varmistaa, ettei muutoksista aiheudu odottamattomia virheitä vanhoissa toiminnallisuuksissa.
-
-Lisäksi testien kirjoittaminen auttaa myös koodin toiminnallisuuden ymmärtämisessä ja parantaa siten ohjelman laatua ja ylläpidettävyyttä.
+JUnitin lisäksi voit myös käyttää MockK-kirjastoa luodaksesi ja hallinnoimaan tekstimuotoisten testejen avulla. Voit myös käyttää Skipec-kirjastoa suorittaaksesi testejä vain tietyille Kodia ajamatta koko testiluokkaa. Lisäksi voit ottaa käyttöön Jacoco-pluginin seurataksesi testikattavuutta ja varmistaaksesi, että olet kattanut kaikki osat koodistasi testeillä.
 
 ## Katso myös
 
-- [Kotlinin testaamisen perusteet](https://www.fi.kotlinlang.org/docs/tutorials/testing.html)
-- [JUnit-kirjaston käyttö Kotlinilla](https://www.baeldung.com/junit-5-kotlin)
+- [Kotlin Testing: A Practical Guide](https://www.raywenderlich.com/19147742-kotlin-testing-a-practical-guide) 
+- [Unit Testing with JUnit and Kotlin](https://www.baeldung.com/kotlin/testing-with-junit-and-kotlin) 
+- [Mocking in Kotlin with MockK](https://www.jetbrains.com/help/mockk/mocking-in-kotlin.html)

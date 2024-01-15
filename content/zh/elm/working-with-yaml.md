@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "使用YAML进行编程"
+html_title:           "Elm: 使用YAML进行编程"
+simple_title:         "使用YAML进行编程"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,67 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#为什么
+为什么：为了解 *为什么* 我们应该使用 YAML 进行编程。
 
-在这个数字时代，编程语言的选择变得越来越重要。有些语言适合处理数据，有些适合构建用户界面。而如果你正在寻找能同时处理数据和构建用户界面的语言，Elm就是一个值得考虑的选择。其强大的码力和用户友好的语法使得它成为了一个受欢迎的选择。
+在今天的软件开发过程中，与大量的数据和配置文件打交道是常态。作为一种轻量级且易于阅读的语言，YAML 是处理这些数据和配置文件的理想工具。 
 
-对于那些希望在他们的项目中使用YAML格式的开发者来说，Elm也是一个不错的选择。接下来，我们将会介绍如何在Elm中使用YAML格式。
 
-##如何
+## 如何使用
 
-首先，安装Elm的YAML包。在命令行中输入以下命令：
+```Elm
+type alias Person = 
+    { name : String
+    , age : Int
+    , occupation : String
+    }
 
-```
-elm package install jogoodma/elm-yaml
-```
+data : Person
+data = 
+    { name = "Alice"
+    , age = 25
+    , occupation = "Software Engineer"
+    }
 
-接下来，创建一个Elm文件并导入YAML包。
-
-```
-import Yaml
-
-```
-
-现在，让我们尝试解析一个简单的YAML文件并打印出其中的数据。假设我们有一个名为“data.yaml”的文件，其中包含以下数据：
-
-```
-name: "John"
+yaml : String
+yaml = """
+name: Bob
 age: 28
-city: "New York"
+occupation: Business Analyst
+"""
+
+decoder : Decoder Person
+decoder = 
+    Decode.map3 Person
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
+        (Decode.field "occupation" Decode.string)
+
+output : Result String Person
+output = 
+    Decode.decodeString decoder yaml
 ```
 
-现在，我们可以使用`Decode`模块中的`yaml`函数来解析这个文件。
+输出：
 
 ```
-decoder = Yaml.yaml
+Ok
+    { name = "Bob"
+    , age = 28
+    , occupation = "Business Analyst"
+    }
 ```
 
-然后，我们使用`Yaml.decodeFile`函数来读取并解析文件，最后将结果打印出来。
+## 深入探讨
 
-```
-print (Yaml.decodeFile decoder "data.yaml")
-```
+YAML 是一种基于键值对的语言，它使用缩进来表示层级关系，是一种易于阅读和理解的数据结构。使用 Elm 的 YAML 模块，您可以方便地将 YAML 数据转换成 Elm 的类型，从而更加灵活地处理数据和配置文件。
 
-运行以上代码，我们将会得到以下输出：
+查看 [官方文档](https://package.elm-lang.org/packages/Gizra/elm-yaml/latest/) 了解更多关于 YAML 模块的使用方法和注意事项。
 
-```
-Ok (Dict.fromList [("name","John"), ("age", 28), ("city","New York")])
-```
+## 查看更多
 
-现在，我们已经成功地在Elm中解析了YAML格式的数据！
+[官方文档](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html) 
 
-##深入了解
+[YAML 教程](https://www.yudesignthinking.com/YAML.html) 
 
-理解YAML的结构和规则对于在Elm中使用它至关重要。YAML是一种类似于JSON的数据格式，它和JSON有着类似的结构，但是语法更加人性化。它使用缩进来表示层级关系，使用冒号来表示键值对。
-
-在Elm中，我们可以使用`Yaml.Value`模块来处理YAML数据。它包含了各种函数来处理不同类型的数据，例如`Value.String`用于处理字符串，`Value.Dict`用于处理字典等。
-
-此外，我们也可以使用`Decode`模块中的其他函数来解析YAML数据，例如`Decode.value`用于解析简单的值，`Decode.dict`用于解析字典等。
-
-总的来说，使用Elm处理YAML格式的数据是一件很简单的事情。它提供了强大的功能和友好的语法，使得我们可以轻松地处理和操作数据。
-
-##参考链接
-
-- [Elm官方网站](https://elm-lang.org/)
-- [YAML官方网站](https://yaml.org/)
-- [Yaml包在Elm Package网站的页面](https://package.elm-lang.org/packages/jogoodma/elm-yaml/latest/)
+[YAML 简介](https://www.runoob.com/w3cnote/yaml-intro.html)

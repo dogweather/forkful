@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Rust: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,46 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Regular expressions är ett kraftfullt verktyg för strängmanipulering och mönstermatchning. Med hjälp av dessa uttryck kan du snabbt och effektivt hitta specifika strängar eller mönster i en textsträng. Detta kan vara särskilt användbart för datafiltrering, dataanalys och webbutveckling.
+Reguljära uttryck är ett kraftfullt verktyg inom programmering som hjälper dig att söka, matcha och manipulera textsträngar på ett mer effektivt sätt. Det är särskilt användbart när du behöver hantera stora mängder data eller när du arbetar med textbaserade filer.
 
-## Så här gör du
+## Så här använder du reguljära uttryck i Rust
 
-För att använda regular expressions i Rust, måste du först importera biblioteket `regex`. Sedan kan du skapa ett nytt uttryck med hjälp av funktionen `Regex:: new`. Till exempel:
+För att använda reguljära uttryck i Rust behöver du importera "regex" biblioteket och skapa en instans av regex-objektet. Här är ett enkelt exempel på hur du kan matcha ett mönster i en textsträng:
+
 ```Rust
 use regex::Regex;
 
-let re = Regex::new(r"hej");
-```
-Här skapar vi ett uttryck som matchar strängen "hej". Notera att vi använder prefixet `r` före strängen för att markera den som en raw string, vilket gör det enklare att hantera specialtecken.
+fn main() {
+    let re = Regex::new(r"hej"); // Skapar en regex-instans som matchar "hej"
+    let text = "hej alla!";
 
-För att söka efter mönster i en textsträng, använder vi funktionen `find`:
-```Rust
-let text = "Hej, detta är en textsträng.";
-let result = re.find(text);
+    if re.is_match(text) { // Kontrollerar om mönstret matchar texten
+        println!("Hittade ett matchande mönster.");
+    } else {
+        println!("Inget matchande mönster hittades.");
+    }
+}
+```
 
-println!("Resultat: {:?}", result);
-```
-Detta kommer att returnera en `Option` som antingen är `Some(match)` om uttrycket matchades eller `None` om det inte gjorde det. Om det matchade kan vi få åtkomst till matchen genom att använda `.unwrap()` metoden:
+I detta exempel kommer programmet att skriva ut "Hittade ett matchande mönster." eftersom textsträngen innehåller ordet "hej".
+
+Du kan också använda reguljära uttryck för att söka efter specifika mönster och ersätta dem med annan text. Här är ett exempel som byter ut alla siffror i en textsträng med "X":
+
 ```Rust
-let matchen = result.unwrap();
-println!("Match: {}", matchen.as_str());
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\d"); // Skapar en regex-instans som matchar siffror
+    let text = "Det finns 123 äpplen i skålen.";
+
+    let result = re.replace_all(text, "X"); // Ersätter alla siffror med "X"
+    
+    println!("{}", result); // Skriver ut resultatet: "Det finns XXX äpplen i skålen."
+}
 ```
-Detta kommer att skriva ut den matchande delen av textsträngen, vilket i detta fall skulle vara "hej".
 
 ## Djupdykning
 
-Utöver att söka efter mönster kan du också använda regular expressions för att ersätta textsträngar med hjälp av `replace_all` funktionen:
-```Rust
-let ny_text = re.replace_all(text, "hallå");
-println!("Ny text: {}", ny_text);
-```
-Detta skulle byta ut alla förekomster av "hej" i texten med "hallå".
+Regex-objektet i Rust har många olika metoder som hjälper dig att manipulera textsträngar på olika sätt. Här är några av de vanligaste metoderna:
 
-Du kan också använda "capturing groups" för att fånga specifika delar av texten. Till exempel, om vi vill ha åtkomst till den första bokstaven i varje ord i en textsträng, kan vi använda `Regex::new(r"\b(\w)").unwrap()` och sedan iterera över varje match för att få åtkomst till gruppens innehåll.
+- *is_match()*: Kontrollerar om ett mönster matchar en textsträng.
+- *find()*: Hittar den första matchningen av ett mönster i en textsträng.
+- *captures()*: Returnerar alla fångade grupper i en matchning.
+- *replace()*: Ersätter en matchning med ny text.
+- *split()*: Delar upp en textsträng baserat på ett angivet mönster.
 
-För mer information och avancerade användningsområden, se dokumentationen för `regex` biblioteket och andra relaterade bibliotek.
+Det finns också många olika metakaraktärer och modifierare som du kan använda för att skapa mer avancerade mönster. För att lära dig mer om dessa, rekommenderar vi dig att läsa dokumentationen för "regex" biblioteket samt experimentera med olika mönster och metoder.
 
 ## Se även
 
-- Officiell dokumentation för `regex` biblioteket: https://docs.rs/regex/1.4.2/regex/
-- En grundläggande handledning för att arbeta med regular expressions i Rust: https://brandonkal.blogspot.com/2019/02/text-parsing-in-rust-using-regular.html
+- ["regex" bibliotekets dokumentation](https://docs.rs/regex/latest/regex/)
+- [En tutorial om reguljära uttryck i Rust](https://www.stoica.dev/regular-expressions-in-rust/)
+- [Officiell hemsida för Rust](https://www.rust-lang.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie, czy istnieje katalog"
+html_title:           "Fish Shell: Sprawdzanie, czy istnieje katalog"
+simple_title:         "Sprawdzanie, czy istnieje katalog"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto sprawdzać czy istnieje katalog?
+## Dlaczego
 
-Sprawdzanie istnienia katalogu jest ważną umiejętnością w programowaniu w języku Fish Shell. Dzięki temu można uniknąć błędów i zapewnić, że twój skrypt będzie działał poprawnie. W tym artykule dowiesz się dlaczego warto sprawdzać czy katalog istnieje oraz jak to zrobić.
+Czy kiedykolwiek musiałeś sprawdzić, czy dany katalog istnieje, zanim wykonałeś w nim jakieś operacje? Może jesteś nowym użytkownikiem powłoki Fish i potrzebujesz pomocy ze sprawdzaniem istnienia katalogów? W tym artykule dowiesz się, jak to zrobić i dlaczego jest to ważne.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pierwszym krokiem jest użycie polecenia `test` w połączeniu z flagą `-e`, która umożliwia sprawdzenie czy dany plik istnieje. W przypadku katalogów wykorzystujemy kropkę, aby oznaczyć aktualny katalog. Poniższy przykład używa polecenia `if` aby wyświetlić odpowiedni komunikat, jeśli katalog istnieje lub nie istnieje.
+Sprawdzenie istnienia katalogu w Fish Shell jest proste i wymaga użycia operatora `test` oraz flagi `-d`. Poniżej przedstawiony jest przykładowy kod, który sprawdza, czy katalog o nazwie "docs" istnieje w bieżącym katalogu:
 
 ```Fish Shell
-if test -e .pomoc
-    echo "Katalog .pomoc istnieje"
+if test -d docs
+    echo "Katalog 'docs' istnieje!"
 else
-    echo "Katalog .pomoc nie istnieje"
+    echo "Katalog 'docs' nie istnieje."
 end
 ```
-**Przykładowy wynik:**
-```
-Katalog .pomoc istnieje
-```
 
-## Głębsze zagadnienia
+Jeśli katalog "docs" istnieje, w konsoli zostanie wyświetlony komunikat "Katalog 'docs' istnieje!". W przeciwnym razie, zostanie wyświetlony komunikat "Katalog 'docs' nie istnieje."
 
-W języku Fish Shell możemy także wykorzystać operator logiczny `&&` aby wykonywać inne polecenia w zależności od rezultatu sprawdzenia istnienia katalogu. W poniższym przykładzie wyświetlimy zawartość katalogu `.dane` tylko wtedy, gdy istnieje.
+Możesz również przetestować istnienie dowolnego katalogu, podając jego ścieżkę jako argument w flagi `-d`. Na przykład, aby sprawdzić, czy katalog "projekty" istnieje w bieżącym katalogu, użyjemy następującego kodu:
 
 ```Fish Shell
-test -e .dane && ls .dane
+if test -d projects
+    echo "Katalog 'projekty' istnieje!"
+else
+    echo "Katalog 'projekty' nie istnieje."
+end
 ```
-**Przykładowy wynik:**
-```
-plik1.txt
-plik2.txt
-```
 
-## Zobacz również
+## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej o programowaniu w języku Fish Shell, polecamy zapoznać się z poniższymi zasobami:
+Głównym powodem, dlaczego warto sprawdzać istnienie katalogów przed wykonywaniem w nich operacji, jest uniknięcie niepotrzebnych błędów i wyjątków. Jeśli na przykład próbujemy dodać plik do nieistniejącego katalogu, otrzymamy błąd, który może zakłócić działanie naszego programu.
 
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Wprowadzenie do Fish Shell na LinuxPl](https://linux.pl/artykuly-wprowadzenie-do-fish-shell)
-- [Fish Shell dla początkujących na DevStyleR](https://devstyler.io/pl/fish-shell-dla-poczatkujacych/)
+Sprawdzając istnienie katalogu przed wykonaniem operacji, możemy ochronić nasz kod przed nieprzewidzianymi błędami. Ponadto, przy sprawdzaniu istnienia katalogu, możemy również wykonać dodatkowe operacje, takie jak informowanie użytkownika o istnieniu lub braku katalogu lub przełączenie do innego katalogu, jeśli aktualny katalog nie istnieje.
 
-Sprawdzenie istnienia katalogu jest bardzo przydatną umiejętnością, która pomoże Ci w programowaniu w języku Fish Shell. Wykorzystaj te wskazówki w swoich projektach i nie musisz martwić się o błędy związane z nieistniejącymi katalogami.
+## Zobacz też
+
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+- Poradnik dla początkujących w Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Kolekcja przydatnych poleceń Fish Shell: https://github.com/fish-shell/fish-shell/blob/master/README.md

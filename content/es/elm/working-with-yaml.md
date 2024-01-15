@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Elm: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,41 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por Qué
 
-Todos los proyectos de programación requieren algún tipo de gestión de datos. En lugar de usar un formato de datos complicado y potencialmente propenso a errores como JSON, muchos desarrolladores optan por utilizar YAML. Además de ser fácil de leer y escribir, YAML también es compatible con múltiples lenguajes de programación, incluyendo Elm.
+Si eres un desarrollador o estudiante de programación, es probable que hayas escuchado sobre YAML. Pero, ¿qué es exactamente y por qué deberías aprender a trabajar con él? Bueno, YAML es un lenguaje de formato de texto que se utiliza para crear archivos de configuración en tus proyectos de software. Te permite organizar tus datos de forma clara y fácil de entender, lo que lo hace muy útil para crear configuraciones complejas. Además, es fácil de aprender y de usar, lo que lo convierte en una herramienta imprescindible en el mundo de la programación.
 
-## Cómo
+## Cómo Hacerlo
 
-Empezar a trabajar con YAML en Elm es muy sencillo. Primero, asegúrate de tener instalado el módulo `elm-yaml`, que te permitirá analizar y crear documentos YAML. A continuación, importa el módulo en tu código Elm:
+Para trabajar con YAML en Elm, necesitarás una biblioteca llamada `zwilias/elm-yaml`. Primero, deberás agregarla a tus dependencias en tu archivo `elm.json`. Luego, podrás importarla en tus archivos de Elm.
 
-```Elm
-import Yaml
+```elm
+import Yaml.Decode as Yaml
 ```
 
-Para analizar un documento YAML existente, usa la función `Yaml.decode` y pasa como argumento una cadena de texto con el contenido del documento:
+Ahora, puedes empezar a codificar tu archivo YAML. Comencemos con un simple ejemplo de una lista de nombres:
 
-```Elm
-inputText = ...
-yamlData = Yaml.decode inputText
+```elm
+yaml =
+  """
+  - John
+  - Sarah
+  - Michael
+  """
 ```
 
-Si quieres crear un documento YAML nuevo, simplemente usa la función `Yaml.encode` y pasa como argumento un valor de tipo `Yaml.Value`. Por ejemplo:
+Para decodificar este archivo YAML, puedes usar la función `decodeString`, que tomará tu archivo YAML como una cadena y lo convertirá en un valor de Elm. En este caso, el valor resultante será una lista de cadenas.
 
-```Elm
-yamlValue = Yaml.encode <| Yaml.dict 
-    [ ( "id", Yaml.string "1")
-    , ( "name", Yaml.string "John")
-    ]
+```elm
+decodedNames =
+  Yaml.decodeString yaml
 ```
+
+Ahora, si queremos imprimir estos nombres en la consola, podemos usar la función `Debug.log`:
+
+```elm
+Debug.log "Nombres:" decodedNames
+```
+
+El resultado en la consola sería algo como esto:
+
+```
+Nombres: ["John", "Sarah", "Michael"]
+```
+
+¡Genial! ¡Ahora tienes un buen comienzo para trabajar con YAML en Elm! Puedes seguir explorando la sintaxis y las funciones de decodificación de YAML para crear configuraciones más complejas.
 
 ## Profundizando
 
-Además de la manipulación básica de datos, también puedes realizar operaciones más avanzadas con YAML en Elm. Por ejemplo, puedes fusionar dos documentos YAML usando la función `Yaml.merge`. También puedes navegar por la estructura de un documento YAML utilizando funciones como `Yaml.lookup` y `Yaml.toList`.
+Además de la función `decodeString`, la biblioteca `zwilias/elm-yaml` ofrece otras funciones para decodificar diferentes tipos de datos, como cadenas, enteros, booleanos y más. También puedes decodificar tus propios tipos de datos personalizados utilizando la función `map`.
 
-Si quieres aprender más sobre cómo trabajar con YAML en Elm, asegúrate de revisar la documentación del módulo `elm-yaml` y experimentar con diferentes ejemplos para familiarizarte con su sintaxis y funcionalidades.
+Otra característica interesante de esta biblioteca es que es compatible con el sistema de tipos de Elm, lo que significa que puedes asegurarte de que tu archivo YAML esté bien estructurado y evitar errores de decodificación.
 
-## Ver también
+Mientras sigas aprendiendo y experimentando con YAML en Elm, verás lo útil y poderoso que puede ser para crear configuraciones flexibles y fáciles de mantener en tus proyectos.
 
-- [Documentación del módulo elm-yaml](https://package.elm-lang.org/packages/jamesmacaulay/elm-yaml/latest)
-- [Ejemplos de código YAML en Elm](https://github.com/dwyl/learn-elm/tree/master/yaml-data)
+## Ver También
+
+- Documentación de la biblioteca `zwilias/elm-yaml`: https://package.elm-lang.org/packages/zwilias/elm-yaml/latest/
+- Ejemplos de código YAML en Elm: https://github.com/zwilias/elm-yaml/blob/master/examples/Basic.elm

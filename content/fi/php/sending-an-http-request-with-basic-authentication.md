@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Lähettämällä http-pyyntö perusautentikoinnilla"
+title:                "Lähettämällä http-pyyntö perusautentikoinnilla"
+html_title:           "PHP: Lähettämällä http-pyyntö perusautentikoinnilla"
 simple_title:         "Lähettämällä http-pyyntö perusautentikoinnilla"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,42 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeää verkkosovellusten turvallisuuden kannalta. Tällä tavalla varmistetaan, että vain oikeutetut käyttäjät voivat käyttää ja hallita tiettyä resurssia.
+HTTP-pyynnön lähettäminen perusautentikoinnilla mahdollistaa käyttäjätunnuksen ja salasanan välittämisen palvelimelle suojatun yhteyden yli. Tämä on hyödyllistä, kun halutaan varmistaa, että vain oikeutetut käyttäjät pääsevät pääsyyn tietoihin tai toimintoihin.
 
-## Miten
+## Kuinka
 
 ```PHP
-// Määritetään URL-osoite
-$url = 'https://esimerkkisivu.com';
+<?php
 
-// Luodaan autentikaatiotiedot
-$username = 'käyttäjänimi';
-$password = 'salasana';
+// Asetetaan käyttäjätunnus ja salasana
+$username = "käyttäjä";
+$password = "salasana";
 
-// Luodaan HTTP-pyyntö perusautentikaatiolla
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-$output = curl_exec($ch);
-curl_close($ch);
+// Luodaan uusi HTTP-pyyntö GET-metodilla ja määritetään kohdesivu
+$request = curl_init("https://www.example.com");
 
-// Tulostetaan vastaus
-echo $output;
+// Määritetään autentikointitiedot
+curl_setopt($request, CURLOPT_USERPWD, $username . ":" . $password);
+
+// Suoritetaan pyyntö ja tallennetaan vastauksen tiedot muuttujaan
+$response = curl_exec($request);
+
+// Suljetaan HTTP-pyyntö
+curl_close($request);
+
+// Tulostetaan vastauksen tiedot
+echo $response;
 ```
 
-**Tulos:**
-
-```
-Hello World!
-```
+Tässä esimerkissä käytetään PHP:n curl-kirjastoa lähettämään HTTP-pyyntö perusautentikoinnilla. Ensin määritetään käyttäjätunnus ja salasana muuttujiin. Tämän jälkeen luodaan uusi HTTP-pyyntö curl_init-funktiolla ja asetetaan pyynnön kohteeksi haluttu sivu. Lopuksi määritetään autentikointitiedot curl_setopt-funktiolla ja suoritetaan pyyntö curl_exec-funktiolla. Vastauksen tiedot tallennetaan muuttujaan ja sieltä ne voi tulostaa haluamallaan tavalla.
 
 ## Syvemmälle
 
-Perusautentikointi toimii lähettämällä HTTP-pyyntöjä otsikolla "Authorization", joka sisältää käyttäjänimen ja salasanan Base64-koodattuna. Tämä koodaus ei kuitenkaan ole täysin turvallinen, joten suositellaan käyttämään TLS-salausta yhteyden luomiseen ennen autentikaation lähettämistä.
+Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista autentikointimenetelmistä, joka käyttää base64-koodausta käyttäjätunnuksen ja salasanan välittämiseen. Koska tiedot ovat kuitenkin vain koodattuja eikä salattuja, sitä ei tulisi käyttää luottamuksellisten tietojen lähettämiseen. Lisäksi on tärkeää muistaa, että HTTP-pyyntöjen lähettäminen perusautentikoinnilla ei tarjoa suojaa palvelimen ja asiakkaan väliselle viestinnälle, joten suojattu yhteys (HTTPS) tulisi aina käyttää yhteyden varmistamiseen.
 
 ## Katso myös
 
-- [PHP cURL-dokumentaatio](https://www.php.net/manual/en/function.curl-setopt.php)
-- [Base64-koodaus](https://en.wikipedia.org/wiki/Base64)
-- [TLS-salaus](https://www.instantssl.com/ssl-certificate-products/https.html)
+- [PHP:n curl-kirjaston dokumentaatio](https://www.php.net/manual/en/book.curl.php)
+- [Selitys HTTP-perusautentikoinnista](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

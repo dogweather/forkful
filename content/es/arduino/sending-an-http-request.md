@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Arduino: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,51 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué?
 
-Enviar solicitudes HTTP es una habilidad útil para los programadores de Arduino, ya que les permite comunicarse con servidores externos y acceder a recursos en línea. Esto es especialmente útil para proyectos que requieren conectividad a internet, como aplicaciones de domótica o monitoreo remoto.
+¿Alguna vez has querido controlar tu proyecto de Arduino desde una ubicación remota? En lugar de limitarte a las interacciones locales, un HTTP request te permite comunicarte con tu Arduino a través de internet. ¡Conecta tu placa al mundo entero y toma el control desde cualquier lugar!
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para enviar una solicitud HTTP en Arduino, primero debemos importar la librería necesaria mediante la línea de código:
+Para enviar un HTTP request desde tu Arduino, necesitas una conexión a internet y una librería llamada "WiFiClientSecure". Aquí hay un ejemplo de cómo puedes enviar un request GET utilizando la URL y la clave de API de una página web:
 
-```Arduino
-#include <ArduinoHttpClient.h>
+```
+Arduino<!-- language: cpp -->
+
+WiFiClientSecure client; //Inicializa el cliente
+const char* host = "www.example.com"; //URL del sitio web
+const int httpsPort = 443; //Puerto seguro HTTPS
+String apiKey = "abcd1234"; //Clave de API proporcionada por el sitio web
+
+if (!client.connect(host, httpsPort)) { //Intenta conectar al servidor
+    Serial.println("Connection failed");
+    return;
+}
+
+//Forma el request GET con la URL y la clave de API
+String getRequest = "GET /getData?key=" + apiKey + " HTTP/1.1\r\n" +
+                    "Host: www.example.com\r\n" +
+                    "User-Agent: ArduinoWiFi/1.1\r\n" +
+                    "Connection: close\r\n\r\n";
+                    
+client.print(getRequest); //Envía el request al servidor
+
+while (client.connected()) { //Lee y muestra la respuesta del servidor
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+        Serial.println("Headers received");
+        break;
+    }
+}
+while (client.available()) {
+    String line = client.readStringUntil('\n');
+    Serial.print(line);
+}
+client.stop(); //Cierra la conexión
 ```
 
-A continuación, creamos un objeto cliente HTTP y especificamos el servidor y el puerto al que queremos enviar la solicitud:
+La salida en el monitor serial debería ser como esta:
 
-```Arduino
-HttpClient client = HttpClient(wifi, "www.ejemplo.com", 80);
+```
+HTTP/1.1 200 OK
+Date: Tue, 15 Jun 2021 00:00:00 GMT
+Content-Type: text/html; charset=utf-8
+
+¡Tu solicitud fue exitosa! Aquí está tu dato: 123
 ```
 
-Luego, definimos el tipo de solicitud que queremos enviar (GET, POST, PUT, DELETE) y la ruta del recurso en el servidor:
+## Exploración en profundidad
 
-```Arduino
-client.get("/recurso");
-```
+Este es solo un ejemplo básico, pero hay muchas más cosas que puedes hacer con HTTP requests en Arduino. Por ejemplo, podrías enviar datos de sensores a una página web para monitorearlos en tiempo real o incluso controlar cosas como luces o motores. También puedes utilizar diferentes tipos de requests, como POST o PUT. ¡Las posibilidades son infinitas!
 
-Finalmente, ejecutamos la solicitud y almacenamos la respuesta en una variable:
+## Ver también
 
-```Arduino
-int status = client.responseStatusCode();
-```
-
-Si la solicitud es exitosa, la variable `status` contendrá el código de estado de la respuesta (200 para una solicitud exitosa), de lo contrario, el código reflejará el tipo de error.
-
-##Profundizando
-
-Hay muchos más detalles que podemos explorar al enviar una solicitud HTTP en Arduino. Podemos añadir encabezados a nuestra solicitud para enviar información adicional, como autorización o datos de contenido. También podemos enviar parámetros en la solicitud para personalizarla aún más.
-
-Además, podemos utilizar la función de respuesta del cliente para obtener más información sobre la respuesta recibida del servidor, como el contenido del cuerpo o los encabezados de la respuesta.
-
-Otra consideración importante es la seguridad al enviar solicitudes HTTP desde Arduino. Es recomendable utilizar HTTPS en lugar de HTTP para cifrar los datos enviados y protegerlos de posibles interceptaciones.
-
-##Ver también
-
-Aquí hay algunos recursos adicionales que pueden ser útiles para aprender más sobre el envío de solicitudes HTTP en Arduino:
-
-- [Documentación oficial de ArduinoHttpClient](https://www.arduino.cc/en/Reference/ArduinoHttpClient)
-- [Tutorial de Envío de Solicitudes HTTP con Arduino](https://maker.pro/arduino/tutorial/how-to-send-an-http-request-from-arduino)
-- [Ejemplo de Envío de Parámetros en una Solicitud HTTP](https://randomnerdtutorials.com/esp32-http-post-arduino/)
-- [Comparación entre HTTP y HTTPS](https://www.cloudflare.com/en-au/learning/ssl/why-is-http-not-secure/)
+- [Tutorial de HTTP con Arduino y WiFiClienteSecure](https://randomnerdtutorials.com/esp32-http-get-post-arduino/)
+- [Documentación de la librería WiFiClientSecure](https://www.arduino.cc/en/Reference/WiFiClientSecure)
+- [Ejemplos de proyectos de Arduino con HTTP requests](https://create.arduino.cc/projecthub/projects/tags/http%20request)

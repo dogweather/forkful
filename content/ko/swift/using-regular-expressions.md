@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 정규 표현식을 사용하는 방법"
-simple_title:         "정규 표현식을 사용하는 방법"
+title:                "정규 표현식 사용하기"
+html_title:           "Swift: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 정규 표현식을 사용해야 할까요?
+## 왜
+자주 사용하는 정규식을 사용하는 이유는 간단합니다 - 텍스트에서 특정 문자열을 찾거나 대체할 수 있다는 유연성 때문입니다.
 
-정규 표현식은 문자열에서 패턴을 찾아내고 대체 또는 추출하는 데 유용한 도구입니다. 예를 들어, 이메일 주소나 전화번호, 우편번호 등의 형식을 검증하거나 특정 단어나 문구를 찾는 등의 작업에 쉽게 사용할 수 있습니다.
+## 사용 방법
+정규식을 사용하려면 ```Swift NSRegularExpression ``` 클래스를 사용하여 패턴을 만들고 ```Swift range(of:options:range:locale:)``` 메소드를 사용하여 텍스트에서 해당 패턴을 찾을 수 있습니다.
 
-# 사용 방법
-
-정규 표현식을 사용하는 첫 번째 단계는 패턴을 정의하는 것입니다. 우선 `$`로 시작하고 `$`로 끝나는 정규 표현식 패턴 문자열을 생성합니다. 이 때, 패턴에 맞는 문자열이 있는지 찾아보고 싶은 원본 문자열을 입력합니다.
+예를 들어, 만약 "apple"이라는 단어를 찾기 위해 정규식을 사용하려면 다음과 같이 코드를 작성할 수 있습니다:
 
 ```Swift
-let pattern = "^A\\d{2,3}$"
-let original = "A123"
-
-let result = original.range(of: pattern, options: .regularExpression)
-if let range = result {
-    print("\(original)는 정규 표현식 패턴 \(pattern)에 맞습니다.")
-} else {
-    print("\(original)는 정규 표현식 패턴 \(pattern)에 맞지 않습니다.")
+guard let regex = try? NSRegularExpression(pattern: "apple", options: [.caseInsensitive]) else {
+  return
 }
 
-//result: A123는 정규 표현식 패턴 ^A\\d{2,3}$에 맞습니다.
+let text = "I'm craving for an Apple"
+
+if let range = regex.range(of: text, options: [], range: NSRange(location: 0, length: text.characters.count), locale: nil) {
+  // 찾은 문자열을 출력
+  print(text.substring(with: range))
+}
+else {
+  print("해당 단어를 찾을 수 없습니다.")
+}
 ```
 
-위 예시에서는 `^`로 시작하고 `\`를 이용해서 `\d`는 숫자를, `{}`는 개수를 정의합니다. 따라서 `A`로 시작하고 숫자 2~3개가 있는 문자열에 매칭됩니다.
+출력은 다음과 같을 것입니다:
 
-# 자세히 알아보기
+`Apple`
 
-만약 정규 표현식을 자세히 공부하고 싶다면, 다음 사이트를 참고해보세요.
-- [Swift에서 정규 표현식 사용하기](https://zeddios.tistory.com/325)
-- [정규 표현식을 사용한 문자열 작업하는 방법](https://learnappmaking.com/regex-swift-how-to)
+## 딥 다이브
+정규식은 강력한 도구이지만, 사용하기에는 다소 복잡할 수 있습니다. 예를 들어, 패턴이 너무 길 경우 ```Swift NSRegularExpression ``` 클래스에서 일부 제한 사항이 존재합니다. 또한, 오른쪽에서 왼쪽으로 읽는 지원을 제공하지 않기 때문에 특정 패턴을 찾는 경우에는 첫 번째 일치 항목을 찾지 못할 수 있습니다.
 
-# 관련 자료
+정규식을 사용하는 더 많은 방법에 대해서는 [Apple의 공식 문서](https://developer.apple.com/documentation/foundation/nsregularexpression)를 참조하시기 바랍니다.
 
-- [Regular Expressions in Swift - WWDC 2016](https://developer.apple.com/videos/play/wwdc2016/408/)
-- [Swift by Sundell - Regular expressions in Swift](https://www.swiftbysundell.com/articles/regular-expressions-in-swift/)
-- [Regex in Swift with NSRegularExpression](https://www.appcoda.com/swift-regular-expression/)
+## 관련 자료
+[Swift 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290)에서 문자열과 문자에 대한 더 많은 정보를 확인할 수 있습니다.
+
+[Regular-Expressions.info](https://www.regular-expressions.info/)는 간단한 정규식 구문부터 복잡한 패턴에 대한 자세한 정보를 제공합니다.
+
+[Regexr](https://regexr.com/)은 텍스트에서 정규식 패턴을 테스트하고 디버그할 수 있는 좋은 도구입니다.

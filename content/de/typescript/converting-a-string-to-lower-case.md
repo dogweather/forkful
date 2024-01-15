@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Umwandeln einer Zeichenkette in Kleinbuchstaben"
-simple_title:         "Umwandeln einer Zeichenkette in Kleinbuchstaben"
+title:                "String in Kleinbuchstaben umwandeln"
+html_title:           "TypeScript: String in Kleinbuchstaben umwandeln"
+simple_title:         "String in Kleinbuchstaben umwandeln"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,24 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Umwandeln eines Strings in Kleinbuchstaben kann in verschiedenen Situationen nützlich sein, z.B. um die Eingabe eines Benutzers zu standardisieren oder bestimmte Textvergleiche durchzuführen.
+Es gibt viele Gründe, warum es nützlich sein kann, in der Programmierung eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Eine häufige Verwendung ist die Normalisierung von Benutzereingaben, um sicherzustellen, dass alle Zeichen in derselben Schreibweise vorliegen. Dadurch können Vergleiche und andere Operationen einfacher durchgeführt werden, ohne sich Gedanken über Groß- und Kleinschreibung zu machen.
 
-## Wie geht man vor
+## Wie geht das
 
-Ganz einfach: Verwende die built-in Funktion `toLowerCase()`!
+Um eine Zeichenfolge in TypeScript in Kleinbuchstaben umzuwandeln, können wir die `toLowerCase()` Methode verwenden. Diese wird auf einer Zeichenfolge aufgerufen und gibt die Zeichenfolge in Kleinbuchstaben zurück.
 
 ```TypeScript
-let string = "Hallo WELT";
-console.log(string.toLowerCase());
+const name = "Max Mustermann";
+const nameLowerCase = name.toLowerCase(); // "max mustermann"
 ```
 
-Dies wird die Ausgabe `'hallo welt'` zurückgeben.
+Die `toLowerCase()` Methode ist nicht nur auf Zeichenfolgen anwendbar, sondern auch auf Array-Elemente, die Zeichenfolgen enthalten können. Dadurch können wir z. B. alle Elemente eines Arrays in Kleinbuchstaben umwandeln.
 
-## Tiefere Einblicke
+```TypeScript
+const fruits = ["Apfel", "Banane", "Orange"];
+const fruitsLowerCase = fruits.map(fruit => fruit.toLowerCase()); // ["apfel", "banane", "orange"]
+```
 
-Bei der Verwendung von `toLowerCase()` gibt es ein paar Dinge zu beachten. Zum einen wird der ursprüngliche String nicht verändert, sondern eine neue Kopie zurückgegeben. Dies bedeutet, dass wenn man den ursprünglichen String beibehalten möchte, man ihn in einer neuen Variable speichern muss. Zum anderen ist es wichtig zu wissen, dass diese Funktion nur mit String-Objekten funktioniert. Wenn also z.B. eine Zahl eingegeben wird, wird ein Fehler ausgegeben.
+## Tiefergehende Informationen
+
+Bei der Umwandlung in Kleinbuchstaben gibt es einige wichtige Aspekte zu beachten. Zum einen kann es Unterschiede zwischen verschiedenen Sprachen geben, wie z. B. die Verwendung von Sonderzeichen oder Akzenten. Die `toLowerCase()` Methode berücksichtigt diese Unterschiede und konvertiert die Zeichenfolge entsprechend. 
+
+Ein weiterer wichtiger Punkt ist, dass die `toLowerCase()` Methode nicht veränderlich ist. Das heißt, sie ändert nicht die ursprüngliche Zeichenfolge, sondern gibt eine neue, konvertierte Zeichenfolge zurück. Es ist daher wichtig, die Rückgabe der Methode in einer Variablen zu speichern, wenn die ursprüngliche Zeichenfolge später weiter verwendet werden soll.
 
 ## Siehe auch
 
-- [`toUpperCase()` in TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#uppercase-literal-types)
-- [String manipulation in TypeScript](https://mariusschulz.com/blog/string-manipulation-in-typescript)
+- [JavaScript string `toLowerCase()` Methode](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [TypeScript array `map()` Methode](https://www.typescriptlang.org/docs/handbook/2/iterable-types.html#mapping-types)

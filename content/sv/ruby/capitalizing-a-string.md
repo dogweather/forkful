@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Kapitalisering av en sträng"
-simple_title:         "Kapitalisering av en sträng"
+title:                "Stor bokstavering av en sträng"
+html_title:           "Ruby: Stor bokstavering av en sträng"
+simple_title:         "Stor bokstavering av en sträng"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,40 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna omvandla strängar till versaler är en viktig del av Ruby-programmering. Det kan hjälpa till att förbättra användbarheten och presentationen av ditt program och göra det mer lättläst. Du kan också använda det för att lösa specifika problem med strängmanipulering. 
+Att kapitalisera en sträng är en vanlig manipulation i programmering, och det kan vara användbart för att exempelvis skapa korrekt formaterad output eller för att underlätta jämförelser mellan textsträngar.
 
-## Såhär går det till
+## Så här gör du
 
-För att omvandla en sträng till versaler, använder vi metoden `upcase`. Det är en inbyggd metod i Ruby som enkelt konverterar alla bokstäver i en sträng till versaler. Låt oss ta en titt på ett enkelt exempel:
-
-```Ruby
-strang = "hej allihopa!"
-
-puts strang.upcase
-```
-
-Output: HEJ ALLIHOPA!
-
-Som du kan se så omvandlades alla bokstäver i strängen till versaler. Nu kanske du undrar vad som händer med å, ä och ö. Detta beror på att den `upcase` metoden bara gäller för bokstäver inom det engelska alfabetet. Om du vill att även å, ä och ö ska omvandlas till versaler, kan du använda metoden `mb_upcase`, vilket hanterar unicode-tecken.
+För att kapitalisera en sträng i Ruby, använd metoden `capitalize` på strängen. Den här metoden kommer att göra första bokstaven i strängen stor och resten av bokstäverna små. Här är ett exempel på hur man kapitaliserar en sträng i Ruby:
 
 ```Ruby
-strang = "hej på dej!"
-
-puts strang.mb_upcase
+sträng = "hej, jag är en sträng"
+puts sträng.capitalize
 ```
-Output: HEJ PÅ DEJ!
 
-Som du ser så behåller `mb_upcase` även å, ä och ö i sin omvandling.
+Detta kommer att ge följande output:
+
+```Ruby
+"Hej, jag är en sträng"
+```
+
+Som du kan se har den första bokstaven blivit stor medan resten av bokstäverna är små.
+
+Du kan också använda metoden `capitalize!` på en sträng för att ändra den ursprungliga strängen istället för att skapa en ny. Här är ett exempel på hur man använder `capitalize!`:
+
+```Ruby
+sträng = "jag är en annan sträng"
+sträng.capitalize!
+puts sträng
+```
+
+Detta kommer att ge samma output som tidigare exempel, men den här gången kommer den ursprungliga strängen att ändras efter att `capitalize!` metoden har tillämpats på den.
 
 ## Djupdykning
 
-För att förstå varför `upcase` inte fungerar för å, ä, och ö inom det engelska alfabetet, behöver vi förstå skillnaden mellan en byte och ett unicode-tecken. Ett byte är en åtta-bitars enhet som används för att representera en enda symbol i ett teckenkodningssystem. Å andra sidan är unicode-tecken en universal standard som möjliggör representation av alla möjliga skrifttecken. För att hantera å, ä, och ö, som är unicode-tecken, behöver vi använda den speciella metoden `mb_upcase` för att säkerställa att de också konverteras till versaler.
+En intressant detalj med `capitalize` metoden är att den bara gör första bokstaven i en sträng stor, oavsett hur många ord eller tecken som finns i strängen. Om du till exempel har en sträng som består av flera ord, kommer bara första bokstaven i första ordet att bli stor.
 
-För att förstå mer om teckenkodning och dess betydelse inom Ruby-programmering, kan du läsa mer här [1][teckenkodning-wikipedia] och här [2][ruby-teckenkodning].
+Detta kan bli ett problem om du vill att varje ord i en sträng ska börja med stor bokstav. I så fall behöver du använda metoden `titleize` istället, som kapitaliserar varje ord i en sträng. Här är ett exempel på hur man använder `titleize`:
+
+```Ruby
+sträng = "hej, det här är en sträng"
+puts sträng.titleize
+```
+
+Output kommer att bli:
+
+```Ruby
+"Hej, Det Här Är En Sträng"
+```
+
+Som du kan se har nu varje ord i strängen blivit kapitaliserade, vilket kanske är ett mer önskat resultat i vissa fall.
 
 ## Se även
 
-Här hittar du mer information om teckenkodning och andra användbara Ruby-metoder.
-
-[teckenkodning-wikipedia]: https://sv.wikipedia.org/wiki/Teckenkodning
-[ruby-teckenkodning]: https://www.ruby-lang.org/sv/documentation/faq/8/#encoding
+- [Ruby String Documentation](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby capitalize method documentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
+- [Ruby titleize method documentation](https://apidock.com/rails/String/titleize)

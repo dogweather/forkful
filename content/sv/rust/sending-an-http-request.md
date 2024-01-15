@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Sända en http-begäran"
+html_title:           "Rust: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Många moderna applikationer är beroende av att kunna skicka HTTP-förfrågningar för att kommunicera med externa API:er eller webbservrar. I denna artikel kommer du lära dig hur du kan göra det med hjälp av Rust-programmeringsspråket.
 
-## Hur du gör
-Att skicka en HTTP-förfrågan i Rust kan verka överväldigande till en början, men med rätt verktyg och kunskap blir det enkelt. Såhär kan du gå från en grundläggande förfrågan till en mer komplex interaktion:
+Du kanske undrar varför man skulle vilja skicka en HTTP-förfrågan från ett program skrivet i Rust. Det finns många möjliga anledningar, till exempel för att hämta data från en webbserver, kommunicera med ett API, eller ladda ner filer från internet.
+
+## Hur man gör
+
+För att skicka en HTTP-förfrågan i Rust behöver du använda ett bibliotek som hanterar HTTP-kommunikation. Ett populärt exempel är reqwest, som du kan installera genom att lägga till följande rad i din projektets Cargo.toml fil:
 
 ```Rust
-// Importera biblioteket "reqwest" som hjälper till med HTTP-förfrågningar
-use reqwest::blocking::get; // I detta fall kommer vi använda "blocking" funktionen för att få en enklare kodstruktur
-
-// Definiera URL att skicka förfrågan till
-let url = "https://www.example.com"; // Byt ut mot den URL du vill använda
-
-// Skapa en variabel som sparar förfrågningens resultat
-let response = get(url)?.text().unwrap();
-
-// Validera resultatet
-assert!(response.contains("Welcome to Example")); // Om den mottagna texten innehåller "Welcome to Example" kommer testet att passera, annars kommer det att misslyckas
+[dependencies]
+reqwest = { version = "0.11.3", features = ["blocking", "json"] }
 ```
 
-Detta är en mycket grundläggande kodstruktur för att skicka en HTTP-förfrågan och få ett svar. Du kan också lägga till logik för autentisering, hantering av olika förfrågningsmetoder som GET och POST, och hantering av olika HTTP-statuskoder.
+Nästa steg är att importera biblioteket i ditt program:
 
-## Deep Dive
-En HTTP-förfrågan består av en "request line", "headers", och en "message body". Request line innehåller information om vilken metod som används (exempelvis GET eller POST), URL:n som förfrågan skickas till, och versionen av HTTP-protokollet. Headers är ytterligare information som kan inkluderas, såsom autentisering eller specifika instruktioner för servern. Message body är den faktiska datan som skickas i förfrågan, till exempel en JSON-sträng eller en textfil.
+```Rust
+use reqwest::blocking::Client;
+```
 
-Det finns olika bibliotek som kan hjälpa dig att bygga upp din HTTP-förfrågan beroende på dina behov. I exemplet ovan använde vi "reqwest", men andra populära bibliotek inkluderar "hyper" och "reqwest async".
+Nu kan du använda Client-objektet för att skicka en HTTP-förfrågan. Här är ett exempel på hur man gör en GET-förfrågan till Google.com och skriver ut svaret:
+
+```Rust
+let client = reqwest::blocking::Client::new();
+let response = client.get("http://google.com").send().unwrap();
+println!("Statuskod: {}", response.status());
+println!("Huvudinnehåll:\n{}", response.text().unwrap());
+```
+
+Det här är bara en enkel förfrågan, men du kan också skicka mer komplexa förfrågningar med till exempel anpassade HTTP-headrar eller POST-data.
+
+## Djupdykning
+
+När du skickar en HTTP-förfrågan finns det många delar som sker bakom kulisserna. Först och främst måste du etablera en TCP-anslutning till servern som du vill kommunicera med. Sedan måste du skicka förfrågan i en korrekt formaterad HTTP-överföring. När servern svarar måste du läsa och tolka svaret och hantera eventuella fel.
+
+Det här är en förenklad beskrivning, men det är viktigt att förstå att HTTP-kommunikation inte är en trivial process. Det är därför vi använder oss av bibliotek som reqwest, som hanterar alla dessa steg åt oss.
 
 ## Se även
-- [Rust programmeringsspråk](https://www.rust-lang.org/sv)
-- [Introduction to HTTP in Rust with Hyper](https://medium.com/@shnupta/introduction-to-http-in-rust-with-hyper-6db27f970dc7)
-- [Rust By Example - HTTP Clients](https://doc.
+
+- [officiell dokumentation för reqwest](https://docs.rs/reqwest/0.11.3/reqwest/)
+- [introduktion till HTTP i Rust](https://rust-lang-nursery.github.io/rust-cookbook/web/clients.html)
+- [tutorial om hur man skapar ett enkelt HTTP-API i Rust](https://blog.logrocket.com/creating-an-http-api-in-rust/)

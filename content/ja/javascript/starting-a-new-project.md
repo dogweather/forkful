@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 新しいプロジェクトを開始する"
-simple_title:         "新しいプロジェクトを開始する"
+title:                "開始している新しい計画"
+html_title:           "Javascript: 開始している新しい計画"
+simple_title:         "開始している新しい計画"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -9,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ始めるのか
+## Why
+プロジェクトを始めるのに、なぜあなたが関わらなければならないのか、2文以内で説明します。
 
-新しいプロジェクトを始める理由は人それぞれです。たとえば、新しいアイデアを実現するためや、スキルを磨くため、あるいはプロフェッショナルとしての市場価値を高めるためなどがあります。どのような理由であれ、新しいプロジェクトを始めることは、成長や挑戦、そして楽しみをもたらしてくれるでしょう。
+新しく始めるプロジェクトに参加することが、あなたにとってどのようなメリットがあるのか考えたことはありますか？多くの人々は、新しい挑戦を通して自分自身を成長させたり、新しいスキルを学んだりするためにプロジェクトに参加します。また、新しいアイデアを実現したいという情熱や、共同作業やチームワークを通じて新しい友達やつながりを作りたいという動機もあります。どのような理由であっても、新しいプロジェクトに参加することは、あなたにとって多くの可能性をもたらすことになるでしょう。
 
-## どのように行うか
-
-新しいプロジェクトを始めるにあたり、まずはどのように始めるかを検討することが重要です。ここでは、Javascriptを使ったプロジェクトの始め方をご紹介します。
-
-まずは、必要なツールを揃える必要があります。主要なテキストエディター（例：Atom、Visual Studio Code）や、ブラウザ開発者ツール（例：Chrome DevTools、Firefox Developer Edition）は必須です。また、Javascriptの基本的な知識を有することも重要です。
-
-次に、プロジェクトの目的や機能を明確にし、それに基づいてコードを設計します。コードを書く前に、紙やデジタルツールを使ってアイデアを整理し、概要を明確にすることは、後々の作業をスムーズに進めるために非常に重要です。
-
-最後に、実際にコードを書いていきます。ここでは、簡単なJavascriptのコード例をご紹介します。
-
+## How To
+新しいプロジェクトを始めることは、手順を理解することから始まります。最初に、新しいディレクトリを作成しましょう。そして、そのディレクトリ内にpackage.jsonファイルを作成し、必要なモジュールをインストールします。
 ```Javascript
-// 変数を定義
-let name = "John";
-let age = 25;
-
-// 関数を定義
-function introduce(name, age) {
-  console.log("私の名前は" + name + "です。年齢は" + age + "歳です。");
-}
-
-// 関数を実行
-introduce(name, age);
+mkdir new-project // 新しいディレクトリを作成
+cd new-project // ディレクトリに移動
+npm init // package.jsonファイルを作成
+npm install --save express // 必要なモジュールをインストール
 ```
+次に、アプリケーションのエントリーポイントとなるindex.jsファイルを作成し、必要なモジュールをインポートします。その後、アプリケーションをポート3000で起動するサーバーを設定し、GETリクエストを受け取った際のレスポンスを設定します。
+```Javascript
+const express = require('express'); // expressモジュールをインポート
+const app = express(); // アプリケーションのインスタンスを作成
+app.get('/', (req, res) => res.send('Hello World!')); // GETリクエストを受け取った際のレスポンスを設定
+app.listen(3000, () => console.log('Server is running on port 3000')); // ポート3000でサーバーを起動
+```
+最後に、ターミナルで`node index.js`コマンドを実行し、ブラウザで`http://localhost:3000`を開くと、"Hello World!"というメッセージが表示されることを確認しましょう。
 
-上記のコードでは、変数を用いて名前と年齢の情報を定義し、関数を用いてそれらの情報を表示するように設計しています。このように、プロジェクトの機能や目的に合わせて適切なコードを書いていきましょう。
+## Deep Dive
+新しいプロジェクトを始めるには、さまざまなことを考慮する必要があります。まず、プロジェクトの目的やゴールを明確に定義し、それに基づいて必要なツールや技術を選択しましょう。また、チームメンバーやタイムラインなど、プロジェクトの管理についても考える必要があります。最後に、常にコードの書き方や命名規則などのベストプラクティスに沿った開発を心がけることが重要です。
 
-## 詳しく見ていく
-
-新しいプロジェクトを始めるには、上記のように準備を整え、適切なコードを書くことが重要です。また、プロジェクトの作業を進める上で、デバッグやコードの最適化など、さまざまなチャレンジも待ち受けているでしょう。しかし、それらも含めて楽しみながらプロジェクトを進め、成長していくことが大切です。
-
-## さらに参考になる情報
-
-- [CodecademyでJavascriptを学ぶ](https://www.codecademy.com/learn/learn-javascript)
-- [MDN web docs - Javascriptのドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)
-- [Javascript新機能一覧（ECMAScript 2015〜）](https://qiita.com/rana_kualu/items/0ca272407b48db1064c1)
-- [現場で使えるVue.js入門](https://cr-vue.mio3io.com/)
-- [Javascriptにおけるデバッグの基礎](https://ky-yk-d.js.org/javascript122/)
-- [プログラミング
+## See Also
+- npmの使い方：https://www.npmjs.com/get-npm
+- Expressのドキュメント：https://expressjs.com/
+- プロジェクト管理について学ぶ：https://www.atlassian.com/agile/project-management

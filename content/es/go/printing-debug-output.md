@@ -1,6 +1,7 @@
 ---
-title:                "Go: Imprimiendo la salida de depuración"
-simple_title:         "Imprimiendo la salida de depuración"
+title:                "Imprimir salida de depuración"
+html_title:           "Go: Imprimir salida de depuración"
+simple_title:         "Imprimir salida de depuración"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -9,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has encontrado con un error en tu código y no puedes entender por qué está sucediendo? ¡La impresión de la salida de depuración puede ser una herramienta muy útil en estas situaciones! Al imprimir información específica en puntos clave de tu código, puedes rastrear y solucionar errores más fácilmente.
+## ¿Por qué?
 
-## Cómo hacerlo
-Para imprimir la salida de depuración en Go, puedes usar la función "fmt.Println()". Por ejemplo:
+Imprimir mensajes de depuración, también conocidos como "debug output", es una tarea común en la programación. Esta práctica ayuda a los desarrolladores a entender el comportamiento del código y a encontrar posibles errores y problemas en su sistema. Además, puede ser útil para compartir información importante con otros miembros del equipo.
 
-```Go
-package main
+## ¿Cómo hacerlo?
 
-import "fmt"
+Para imprimir mensajes de depuración en Go, se puede utilizar la función `fmt.Println()`. Esta función toma cualquier número de argumentos y los imprime en la consola, separados por un espacio. Por ejemplo:
 
-func main() {
-  // Crea una variable
-  nombre := "Juan"
-
-  // Imprime la variable
-  fmt.Println("El nombre es:", nombre)
-}
+```
+fmt.Println("El valor de x es:", x)
+fmt.Println("La suma de a y b es:", a+b)
 ```
 
-La salida de este código sería: "El nombre es: Juan". También puedes utilizar la función "fmt.Printf()" para formatear la salida de manera más específica. Por ejemplo:
+Esto imprimirá en la consola:
 
-```Go
-package main
-
-import "fmt"
-
-func main() {
-  // Crea una variable
-  edad := 22
-
-  // Imprime la variable formateada
-  fmt.Printf("La edad es: %d años", edad)
-}
+```
+El valor de x es: 10
+La suma de a y b es: 25
 ```
 
-La salida de este código sería: "La edad es: 22 años". Puedes ver cómo el formato "%d" se reemplaza con el valor de la variable "edad".
+También se pueden utilizar formatos para imprimir valores específicos, como por ejemplo:
+
+```
+fmt.Printf("El valor de x es: %d", x)
+```
+Esto imprimirá solo el valor de `x` en formato decimal.
 
 ## Profundizando
-Además de la función "fmt", Go también cuenta con el paquete "log" que proporciona funcionalidades para imprimir la salida de depuración. Este paquete tiene diferentes funciones como "log.Print()", "log.Println()" y "log.Printf()". También puedes especificar el nivel de logeo (debug, info, warning, error) y la hora en que se imprime la salida.
 
-Otra forma de imprimir la salida de depuración en Go es utilizando el debugger integrado en las principales IDE como Visual Studio Code o Goland. Este te permite visualizar variables, pausar la ejecución y rastrear errores de manera más eficiente.
+Además de la función `fmt.Println()`, se pueden utilizar otras funciones como `fmt.Printf()` y `fmt.Sprintf()` para imprimir mensajes de depuración. También se pueden utilizar estrategias como el logging, que permite guardar los mensajes de depuración en un archivo para su posterior análisis.
+
+Otra práctica común es utilizar constantes para controlar el nivel de mensajes de depuración que se imprimen. Por ejemplo, se pueden definir constantes `DEBUG`, `INFO`, `WARNING` y `ERROR` y luego utilizar una estructura de control para decidir qué mensajes imprimir en base al nivel de depuración establecido.
 
 ## Ver también
-- [Documentación oficial de debugging en Go](https://golang.org/doc/gdb) 
-- [Tutorial de debugging en Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) 
-- [Tutorial de debugging en Goland](https://www.jetbrains.com/help/go/debugging-with-goland.html)
+
+- [Documentación de la librería fmt en Go](https://golang.org/pkg/fmt/)
+- [Ejemplos de depuración en Go](https://yourbasic.org/golang/debugging/)
+- [Guía para mejores prácticas en logging en Go](https://medium.com/swlh/better-logging-in-go-9d9e10d2d823)

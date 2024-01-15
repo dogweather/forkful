@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Swift: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor bry seg med å generere tilfeldige tall? Vel, tilfeldige tall kan være nyttige i mange ulike situasjoner innen programmering. De kan for eksempel brukes til å generere unike ID-numre, til å velge tilfeldige elementer fra en liste, eller til å lage realistiske simuleringer og spill.
+Å generere tilfeldige tall er en vanlig oppgave i programmering, og det kan brukes til ulike formål som å lage spill, testing eller tilfeldige valg. 
 
 ## Slik gjør du det
-For å generere et tilfeldig tall i Swift, kan du bruke funksjonen `arc4random()`, som vil returnere et tilfeldig tall av typen `UInt32`. Dette er et stort heltall, så det kan være lurt å konvertere det til et mindre tall ved å bruke modulus-operatøren (`%`).
+Det er enkelt å generere tilfeldige tall i Swift ved å bruke rand() eller arc4random() funksjonene. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 og skrive det ut i konsollen:
 
-```
-let randomNumber = arc4random() % 100 // Dette vil generere et tall mellom 0 og 99
-```
-
-Du kan også bruke `arc4random_uniform()`-funksjonen hvis du ønsker å generere tilfeldige tall innenfor et spesifikt område uten å måtte bruke modulus-operatøren.
-
-```
-let randomNumber = arc4random_uniform(10) // Dette vil generere et tall mellom 0 og 9
+```Swift
+let randomNumber = Int.random(in: 1...10)
+print(randomNumber)
 ```
 
-For å generere tilfeldige elementer fra en liste, kan du bruke `.randomElement()`-metoden som er tilgjengelig på arrayer og set-typer.
+Dette vil gi forskjellige tall hver gang koden kjøres. Du kan også begrense tallene til et bestemt intervall ved å endre området i Int.random() funksjonen.
 
-```
-let fruits = ["eple", "banan", "appelsin", "melon", "jordbær"]
-let randomFruit = fruits.randomElement() // Dette vil velge et tilfeldig element fra listen
-```
+## Dypdykk
+I Swift, er funksjonen rand() en del av C standard library, mens arc4random() er en nyere og sikrere versjon som bruker en kryptografisk tilfeldig tallgenerator. Det er også mulig å generere tilfeldige flyttall ved å bruke random() funksjonen. 
 
-## Dykk dypere
-`arc4random()`-funksjonen bruker en algoritme for å generere tall basert på systemtiden. Dette betyr at tallene som genereres ikke er helt tilfeldige, men kan være forutsigbare hvis du vet når funksjonen ble kalt. Hvis du har behov for sikrere tilfeldige tall, kan du bruke `arc4random_uniform()` eller andre tilfeldighetsgenererende algoritmer som er tilgjengelige i Swift.
+En annen nyttig metode er å bruke shuffle() for å blande en liste med tall i tilfeldig rekkefølge.
+
+For å gjøre genereringen av tall enda mer tilfeldig, kan du også bruke seed() funksjonen for å endre startpunktet for de tilfeldige tallene.
 
 ## Se også
-- [Offisiell dokumentasjon for tilfeldige tall i Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID331)
-- [Stack Overflow-innlegg om tilfeldige tall i Swift](https://stackoverflow.com/questions/24007129/how-does-arc4random-work-can-it-be-made-more-random)
-- [Generere tilfeldige tall i andre programmeringsspråk](https://blog.hubspot.com/website/random-number-generator)
+- [Swift Programmeringsspråk](https://developer.apple.com/swift/)
+- [Offisiell Swift Dokumentasjon](https://docs.swift.org/swift-book/)
+- [Tilfeldige tall i Swift dokumentasjonen](https://developer.apple.com/documentation/swift/numeric/2896015-random)

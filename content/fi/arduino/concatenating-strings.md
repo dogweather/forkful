@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Arduino: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Oletko koskaan törmännyt tarpeeseen yhdistää merkkijonoja Arduino-koodissa? Se voi tuntua yksinkertaiselta tehtävältä, mutta joskus se voi olla erittäin hyödyllistä, esimerkiksi kun halutaan luoda selkeämpiä ja monimutkaisempia tulosteita tai lukea useita erilaisia käyttäjän syötteitä.
+Monissa ohjelmointitilanteissa on tarve yhdistää useita merkkijonoja yhdeksi kokonaisuudeksi. Tämä voi olla hyödyllistä esimerkiksi tekstin muodostamisessa tai tiedon tallentamisessa.
 
-# Miten tehdä
+## Miten
 
-Jotta voit yhdistää merkkijonoja Arduino-koodissa, tarvitset kaksi asiaa: merkkijonoja ja yhdistämisoperaattorin (+). Merkkijonot voi määritellä tekstiksi tai numeroiksi. Alla on esimerkkejä merkkijonojen yhdistämisestä sekä lähtötekstistä, jonka pitäisi näkyä sarjamonitorissa.
+Merkkijonojen yhdistäminen voidaan tehdä käyttämällä ```Arduino``` -ohjelmoinnissa olevaa ```concat()``` -funktiota. Tämä funktio yhdistää annetut merkkijonot järjestyksessä ja palauttaa kokonaisen merkkijonon.
 
-```arduino
-String nimi = "Liisa";
-int ika = 25;
+Esimerkki koodista:
 
-Serial.println("Minun nimeni on " + nimi + " ja olen " + ika + " vuotta vanha.");
+```
+String etunimi = "Matti";
+String sukunimi = "Meikäläinen";
+String kokoNimi = etunimi.concat(sukunimi);
+
+Serial.print(kokoNimi); //tulostaa "MattiMeikäläinen"
 ```
 
-*Tulostus: Minun nimeni on Liisa ja olen 25 vuotta vanha.*
+## Syvempää tietoa
 
-Yhdistäminen toimii myös silloin, kun yhdistetään merkkijono ja muuttuja:
+```concat()``` -funktiota voidaan käyttää myös yhdistämään enemmän kuin kaksi merkkijonoa. Esimerkiksi seuraavassa koodissa yhdistetään kolme erillistä merkkijonoa ja tulostetaan se yhdistettynä:
 
-```arduino
-int a = 5;
-int b = 7;
+```
+String alku = "Hei";
+String keskiosa = "kaikki";
+String loppu = "yhdessä!";
 
-Serial.println("Laskun tulos on " + a + b + ".");
+String yhdistetty = alku.concat(keskiosa, loppu);
+
+Serial.print(yhdistetty); //tulostaa "Heikaikkiyhdessä!"
 ```
 
-*Tulostus: Laskun tulos on 12.*
+On myös huomionarvoista, että ```concat()``` -funktio ei muuta alkuperäisiä merkkijonoja, vaan luo uuden merkkijonon. Tämä tarkoittaa sitä, että alkuperäisten merkkijonojen arvot eivät muutu.
 
-# Syvällinen sukellus
+Mahdollisuus yhdistää merkkijonoja on hyödyllinen myös silloin, kun halutaan muodostaa esimerkiksi sensoritietoja tallentava CSV-tiedosto. Tällöin voidaan yhdistää eri arvot yhteen merkkijonoon ja tallentaa se tiedostoon. 
 
-Kun yhdistät merkkijonoja Arduino-koodissa, on tärkeää kiinnittää huomiota datan tyyppeihin. Yhdistämisen yhteydessä muuttujat muunnetaan automaattisesti merkkijonoiksi. Jos yhdistät esimerkiksi kaksi numeroarvoa, ne yhdistyvät matemaattisesti eikä tekstinä.
+## Katso myös
 
-Lisäksi on tärkeää huomata, että yhdistetäänkö merkkijonoja muistissa oleviin muuttujiin vai luodaanko uusi merkkijono. Jos yhdistetään muuttujia, ne päivitetään myös muistissa olevien muuttujien arvoihin, kun taas uuden merkkijonon luominen ei vaikuta alkuperäisiin muuttujiin.
-
-Kun yhdistät merkkijonoja, voi myös olla ongelmallista se, että tulokseen lisätään vahingossa ylimääräisiä välilyöntejä tai muita erikoismerkkejä. Tästä syystä on tärkeää olla tarkkana, minkä tyyppinen data yhdistetään ja miten.
-
-# Katso myös
-
-- String-luokan dokumentaatio [Arduino-verkkosivuilla](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- Stack Overflown [keskustelu](https://stackoverflow.com/questions/23765894/concatenating-numbers-and-strings-in-arduino) yhdistämisen hyödyntämisestä Arduinossa
+- https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/
+- https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- https://www.arduino.cc/en/Tutorial/StringsConcatenation

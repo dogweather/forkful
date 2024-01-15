@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: פירוק HTML"
-simple_title:         "פירוק HTML"
+title:                "פילוח html"
+html_title:           "Haskell: פילוח html"
+simple_title:         "פילוח html"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,32 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-זיהוי ופתרון בעיות בתכנות הוא אחד המשימות המרתקות והאתגריות ביותר בעולם התכנות. אחת מהסיבות העיקריות לביצוע זיהוי משחקי HTML היא היכולת לקרוא ולהבין כל מיני חלקי HTML ואתרים חיצוניים שקיימים בתוך אתר האינטרנט שלנו.
+הפארסינג של קוד HTML הינו כלי שימושי ביותר בתחום התכנות ובפיתוח אתרים. הפונקציות המתאימות לפארסינג מאפשרות לנו לקרוא ולעבד נתונים מקוד HTML בצורה יעילה ומהירה, מה שנותן לנו שליטה משולבת על איך הנתונים מוצגים ומשמשים באתר שלנו.
 
-## איך לעשות זאת
+## איך להשתמש
+
+הנה דוגמאות של קוד HTML בשפת הסקל שימושיות לפארסינג:
 
 ```Haskell
-import Text.HTML.TagSoup
+-- טעינת ספריות הפארסינג של HTML
 
--- כדי להאיצג דף HTML בתכנית ההזיהוי שלנו, נאכיל את הדף לפונקציית parseTags ונשתמש בפונקציות filter ונהג "ימין"
-main :: IO ()
-main = do
-    html <- readFile "index.html"
-    let tags = parseTags html
-        links = filter (isTagOpenName "a") tags
-        names = map (fromAttrib "title") links
-    print names
+import Text.HTML.DOM (parseDOM)
+import Text.XML.Cursor (Cursor, attributeIs, content, element, fromDocument, child, descendant, ($//), (&|), (&//), (>=>))
+import qualified Data.Text as T
+
+-- יצירת משתנה עם קוד HTML
+
+html :: T.Text
+html = "<html><body><h1>Hello World</h1></body></html>"
+
+-- משתנה של cursor עם אתחול ריק
+
+cursor :: Cursor
+cursor = fromDocument (parseDOM html)
+
+-- חיפוש לפי אלמנטים מסוימים בקוד
+
+cursor $// element "h1" &// content
+
+-- Output: ["Hello World"]
+
+-- חיפוש לפי תכונת מסוימת בקוד כמו "class" או "id"
+
+cursor $// element "div" >=> attributeIs "class" "container" &// content
+
+-- Output: ["Content of the div with class 'container'"]
 ```
 
-כמו שאתה יכול לראות בקוד הזה, אנו משתמשים בספריית Text.HTML.TagSoup על מנת לזהות את התגיות השונות בדף הHTML. במשך תהליך הנתונים, אנו משתמשים בפונקציות שונות כגון filter וmap בכדי לנתח ולקרוא את הנתונים הרלוונטיים.
+## רקע עמוק
 
-## חקירה מעמיקה
-
-לאחר שלמדנו איך להזיהוי ולקרוא נתונים בHTML במשך תהליך התכנות, ניתן לחקור עוד על ידי התמקדות בפתרונות וכלים נוספים שניתן להשתמש בהם. כמו כן, ניתן ללמוד עוד על בעיות שונות שניתן לפתור באמצעות זיהוי HTML ועל הדרכים האפשריות להיווצרות תקלות ואיך לתקן אותם.
+כאשר אנו פורסים קוד HTML, אנו ממירים את הקוד למבנה נתונים שנוכל לעבוד איתו בקלות וכולל כמה פונקציות מועילות כגון חיפוש לפי אלמנטי HTML מסוימים או עדכון נתונים בעת יצירת אתר דינמי. הספריות המובנות בשפת הסקל כוללות כמה קונסטרוקטורים ופונקציות שנועדו ללכוד את הקוד HTML ולייצר ממנו מבנה נתונים שניתן לעבוד איתו.
 
 ## ראה גם
 
-- [ספריית Text.HTML.TagSoup](https://hackage.haskell.org/package/tagsoup)
-- [מדריך להיכרות עם זיהוי HTML ב־Haskell](https://www.schoolofhaskell.com/user/commercial/content/scraping-and-parsing-html)
+- [מדריך לספריות הפארסינג של HTML בשפת הסקל](https://hackage.haskell.org/package/tagsoup)
+- [חיפוש מתקדם בקוד HTML בשפת הסקל](https://hackage.haskell.org/package/html-conduit)

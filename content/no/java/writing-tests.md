@@ -1,6 +1,7 @@
 ---
-title:                "Java: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Skrive tester"
+html_title:           "Java: Skrive tester"
+simple_title:         "Skrive tester"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -11,45 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester er en avgjørende del av Java-programmering som kan bidra til å forbedre koden din og sikre at den fungerer som den skal. Tester er også nyttige for å finne og fikse feil i koden din, noe som kan spare deg for mye hodepine i det lange løp.
+Å skrive tester er en viktig del av en utviklers verktøykasse. Det lar deg teste koden din og sikre at den fungerer som den skal før du sender den ut i produksjon. Dette sparer tid og unngår feil i koden.
 
 ## Hvordan
 
-For å skrive tester i Java, må du følge disse trinnene:
-
-1. Definer et nytt testklasse ved å bruke `@Test`-annotasjonen.
-2. Sett opp data eller objekter som skal testes.
-3. Lag en testmetode ved å bruke `@Test`-annotasjonen.
-4. Bruk `assert`-metoder til å bekrefte at den forventede utgangen er den samme som den faktiske utgangen.
-
-Et eksempel på en testklasse og testmetode kan se ut som dette:
+For å skrive tester i Java, må du bruke et testrammeverk som JUnit eller TestNG. Disse rammeverkene lar deg strukturere testene dine og kjøre dem enkelt. Her er et eksempel på en JUnit-test som sjekker om to tall er like:
 
 ```Java
 @Test
-public class CalculatorTest {
-  Calculator calculator = new Calculator();
-  
-  @Test
-  public void testAddition() {
-    int result = calculator.add(2, 2);
-    assert result == 4;
-  }
+public void testEquality(){
+  int num1 = 5;
+  int num2 = 5;
+  assertEquals(num1, num2);
 }
 ```
-I dette eksempelet opprettes det en testklasse kalt `CalculatorTest` som tester om `add`-metoden i `Calculator`-klassen fungerer som den skal. I testmetoden brukes `assert`-metoden for å bekrefte at resultatet av addisjonen er 4, som er det forventede resultatet.
 
-Det finnes også flere rammeverk som kan hjelpe deg med å skrive og kjøre tester, som for eksempel JUnit og TestNG.
+I dette eksempelet bruker vi metoden `assertEquals()` som sammenligner to verdier og gir en feil hvis de ikke er like. Testene dine bør dekke alle mulige scenarier og ha en god dekning av koden din. Dette sikrer at koden din fungerer som den skal.
 
-## Deep Dive
+## Dypdykk
 
-Når du skriver tester, er det viktig å huske på at de skal være enkle å forstå og vedlikeholde. Det betyr at du bør unngå å skrive for mange tester for én funksjon, og heller fokusere på å skrive effektive tester som dekker forskjellige scenarioer.
+En viktig del av å skrive tester er å forstå hva som skal testes. Det kan hjelpe å følge en testdrevet utviklingsmetodikk, hvor du skriver testene først og deretter utvikler koden som oppfyller testene. Du bør også vurdere å bygge automatiserte tester som kan kjøres hver gang du gjør endringer i koden din.
 
-I tillegg er det lurt å inkludere både suksesscenarioer og feilscenarioer i testene dine. Dette vil bidra til å avdekke eventuelle feil og sørge for at koden din er robust og pålitelig.
+I tillegg er det viktig å følge gode prinsipper for å skrive tester, som å sikre at de er uavhengige av hverandre og at de er enkle å vedlikeholde. En god praksis er også å skrive flere små tester i stedet for få store tester, da dette gjør feilsøking og vedlikehold lettere.
 
-En annen viktig ting å huske på er at tester skal være uavhengige av hverandre. Det betyr at en test ikke skal være avhengig av resultatet av en annen test. Dette sikrer at testene dine gir nøyaktige resultater og at eventuelle feil ikke påvirker andre tester.
+## Se Også
 
-## Se også
-
-- [JUnit Tutorial](https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-writing-our-first-test-class/)
-- [TestNG Documentation](https://testng.org/doc/)
-- [TDD vs BDD: What's the difference?](https://www.altexsoft.com/blog/testing-tdd-vs-bdd/)
+- [JUnit Tutorial](https://www.baeldung.com/junit-tutorial)
+- [TestNG Documentation](https://testng.org/doc/documentation-main.html)
+- [Test Driven Development](https://www.agilealliance.org/glossary/tdd/)

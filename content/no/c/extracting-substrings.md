@@ -1,6 +1,7 @@
 ---
-title:                "C: Utvinning av understrenger"
-simple_title:         "Utvinning av understrenger"
+title:                "Utvinne delstrenger"
+html_title:           "C: Utvinne delstrenger"
+simple_title:         "Utvinne delstrenger"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,46 +12,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger når vi jobber med tekstbehandling i C-programmering, kan vi finne oss selv i behovet for å trekke ut en del av en tekststreng, også kjent som en substring. Dette kan være nødvendig for å utføre forskjellige manipulasjoner på teksten, som å bytte ut en del av den med noe annet, eller å søke gjennom den for et bestemt tegn eller ord. Uansett årsaken, er det viktig å vite hvordan man kan ekstrahere substrings i C for å få jobben gjort.
+Hvorfor bry seg med å ekstrahere substringer i C? Vel, det er flere fordeler med å kunne gjøre dette. For det første kan det hjelpe deg med å håndtere store mengder data mer effektivt og på en enklere måte. For det andre kan det også bidra til å gjøre koden din mer lesbar og modulær.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å ekstrahere en del av en tekststreng i C, må vi bruke funksjonen `strnlen()` for å finne hvor mange tegn vi vil ha i substrings. Dette kan gjøres ved hjelp av `strlen()` funksjonen, som returnerer lengden på en tekststreng, og deretter trekke fra antall tegn på den første delen av tekststrengen vi ikke ønsker i substrings. For eksempel, hvis vi har en tekststreng "Hei alle sammen!", og ønsker å trekke ut "alle" delen, kan vi bruke `strnlen()` til å finne lengden på "Hei " og trekke fra dette fra total lengden.
+Det er flere måter å ekstrahere substringer i C på, men vi skal se på de tre vanligste metodene: `strncpy()`, `memcpy()` og `sprintf()`. Her er et eksempel på hvordan du kan bruke `strncpy()` og `memcpy()`:
 
-Etterpå må vi bruke funksjonen `memcpy()` for å kopiere ønsket del av tekststrengen til en annen variabel. Denne funksjonen tar inn fire argumenter: målvariabel, kildevariabel, antall tegn som skal kopieres og startposisjon for å begynne å kopiere. For eksempel, hvis vi vil kopiere "alle" delen fra tekststrengen "Hei alle sammen!", vil vi bruke `memcpy()` funksjonen og angi målvariabel som en tom variabel, kildevariabel som tekststrengen, antall tegn som 4 (lengden på substring) og startposisjon som 4 (etter "Hei " delen).
-
-Under er et eksempel på hvordan man kan implementere denne logikken i C med utgangen "alle":
-
-```c
+```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-  char text[] = "Hei alle sammen!";
-  char substring[5];
-  int start_pos = 4;
-  int len = strlen(text) - start_pos;
+int main() {
+  char str[] = "Denne setningen inneholder flere ord.";
+  char dest[15];
 
-  memcpy(substring, &text[start_pos], len);
-  substring[len] = '\0';
-  printf("Output: %s", substring);
+  // Ekstraher et ord fra starten av setningen
+  strncpy(dest, str, 5);
+  dest[5] = '\0'; // Legg til termineringsnull
+  printf("Første ord: %s\n", dest);
+
+  // Ekstraher et ord fra midten av setningen
+  memcpy(dest, str + 27, 6);
+  dest[6] = '\0';
+  printf("Midterste ord: %s\n", dest);
+
   return 0;
 }
 ```
 
 Output:
+
 ```
-alle
+Første ord: Denne
+Midterste ord: ord. 
 ```
+
+Som du kan se, ekstraherer vi substringer ved å bruke funksjoner som kopierer en del av en streng til en annen variabel. Husk å inkludere `<string.h>`-biblioteket for å kunne bruke disse funksjonene.
+
+For å ta en dypere dykk i dette emnet, kan vi også nevne funksjonen `sprintf()`, som lar deg formatere og kopiere en del av en streng til en annen. Her er et eksempel:
+
+```C
+#include <stdio.h>
+
+int main() {
+  char str[] = "Programmering er gøy!";
+  char dest[30];
+
+  // Ekstraher et ord fra starten av setningen
+  sprintf(dest, "%s", str + 0);
+  dest[15] = '\0'; // Begrens lengden på substrings til maks 15 tegn
+  printf("Første ord: %s\n", dest);
+
+  return 0;
+}
+```
+
+Output:
+
+```
+Første ord: Programmering er 
+```
+
+Som du kan se, kan vi her også begrense lengden på substrings og dermed hente ut akkurat den delen av setningen vi ønsker.
 
 ## Dypdykk
 
-Mens `strnlen()` og `memcpy()` funksjonene er de mest brukte for å trekke ut substrings i C, finnes det også andre metoder for å oppnå det samme resultatet. En annen løsning er å bruke `sscanf()` funksjonen som tillater oss å utføre en "scan" på en tekststreng og hente ut ønsket del basert på et gitt format. Dette kan være nyttig hvis vi ønsker å ekstrahere en del av en tekststreng basert på et bestemt tegn eller mønster.
+Det er viktig å merke seg at disse metodene for å ekstrahere substringer ikke alltid er like effektive. For eksempel, hvis du ekstraherer en del av en streng som inneholder mange spesialtegn eller store mengder data, kan dette føre til problemer og feil i koden din. Derfor er det viktig å være klar over begrensningene og eventuelle konsekvenser ved å bruke disse metodene.
 
-Det kan også være lurt å lage en egen funksjon for å ekstrahere substrings, spesielt hvis dette er noe som vil bli brukt ofte i programmet ditt. Dette vil gjøre koden din mer lesbar og enklere å vedlikeholde.
+En annen ting å huske på er at når vi ekstraherer substringer, endrer vi også lengden på strengen. Dette kan forårsake problemer når vi senere skal jobbe med den originale strengen. Det er derfor viktig å være forsiktig og ta hensyn til slike situasjoner når du bruker disse metodene.
 
-## Se Også
-- ["C String Functions"](https://www.programiz.com/c-programming/c-strings)
-- ["How To Extract Substrings using C Programming Language"](https://www.techiedelight.com/extract-substring-from-string-c/)
-- ["Using C Programming to Extract Substrings"](https://www.educba.com/substring-in-c/)
+## Se også
+
+- [How to Use Substrings in C](https://www.geeksforgeeks.org/how-to-use-substrings-in-c-programming/)
+- [String handling functions in C](https://www.tutorialspoint.com/string-handling-functions-in-c-cplusplus)

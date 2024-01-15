@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Erzeugen von Zufallszahlen"
-simple_title:         "Erzeugen von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Elm: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,56 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Gründe, warum man gelegentlich zufällige Zahlen in seinem Code benötigt. Zum Beispiel kann es sein, dass du ein Spiel entwickelst, bei dem du ein zufälliges Ereignis auslösen möchtest, oder du möchtest deinem Programm eine gewisse Dynamik verleihen, indem du zufällig generierte Werte verwendest. In jedem Fall ist es wichtig zu wissen, wie man in Elm Zufallszahlen generieren kann.
 
-## Wie geht das?
-In Elm gibt es das `Random`-Modul, das uns das Generieren von Zufallszahlen ermöglicht. Zunächst müssen wir dieses Modul importieren, indem wir folgende Zeile am Anfang unseres Codes einfügen:
+Es gibt viele Situationen, in denen Programmierer zufällige Zahlen benötigen. Zum Beispiel beim Erstellen von Spielen oder bei der Durchführung von wissenschaftlichen Experimenten. In solchen Fällen können Sie nicht einfach vordefinierte Zahlen verwenden, sondern müssen eine Möglichkeit haben, zufällige Zahlen zu generieren. In diesem Artikel werden wir uns die Verwendung von Elm ansehen, um genau das zu tun - zufällige Zahlen generieren.
+
+## Wie geht man vor?
+
+Um zufällige Zahlen in Elm zu generieren, verwenden wir die Funktion `Random.generate`. Diese Funktion nimmt ein paar Argumente entgegen: einen Generator, der die Vorgehensweise zum Generieren der Zufallszahlen definiert, und einen Nachrichtentyp. Die Funktion gibt dann ein `Cmd msg` aus, das zur Verwendung in einem `update` in einer Elm Architecture verwendet werden kann. Schauen wir uns ein Beispiel an:
 
 ```Elm
 import Random
+
+-- Ein `Int`-Wert generieren
+randomInt : Cmd msg
+randomInt =
+    Random.generate ReceivedRandomValue (Random.int 1 10)
+
+-- Nachrichtentyp für den Rückgabewert
+type Msg
+    = ReceivedRandomValue Int
+
+-- `update` Funktion mit Pattern Matching für die Nachricht
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        ReceivedRandomValue value ->
+            ( { model | randomValue = value}, Cmd.none )
+
+-- `randomInt` in `init` verwenden
+init : ( Model, Cmd Msg )
+init = ( { randomValue = 0 }, randomInt )
 ```
 
-Dann können wir entweder eine zufällige ganze Zahl oder eine zufällige Gleitkommazahl generieren. Hier ist ein Beispiel für eine zufällige ganze Zahl zwischen 1 und 10:
+In diesem Beispiel definieren wir die Funktion `randomInt`, die einen zufälligen `Int`-Wert zwischen 1 und 10 generiert und eine Nachricht vom Typ `ReceivedRandomValue` zurückgibt. In unserer `update` Funktion können wir dann über Pattern Matching auf diese Nachricht reagieren und den Wert in unserem Modell speichern. In `init` verwenden wir die Funktion `randomInt`, um den zufälligen Wert beim Starten unserer Anwendung zu generieren.
 
-```Elm
-Random.generate Random.int 1 10
---> 7
-```
+## Tiefergehende Informationen
 
-Und hier ist ein Beispiel für eine zufällige Gleitkommazahl zwischen 0 und 1:
+Es gibt verschiedene Arten von Generatoren, die wir in der `Random`-Bibliothek von Elm verwenden können. Hier sind einige Beispiele:
 
-```Elm
-Random.generate Random.float 0 1
---> 0.7438
-```
+- `Random.int` generiert einen zufälligen ganzzahligen Wert innerhalb eines angegebenen Intervalls.
+- `Random.bool` generiert einen zufälligen Wahrheitswert (true oder false).
+- `Random.float` generiert einen zufälligen Gleitkommawert zwischen 0 und 1.
+- `Random.list` generiert eine Liste von zufälligen Werten basierend auf einem gegebenen Generator.
+- `Random.generateList` ist ähnlich wie `Random.list`, ermöglicht jedoch das Angeben einer Größe für die Liste.
 
-Du kannst auch ein benutzerdefiniertes Zufallszahlengenerator-Funktion erstellen, indem du die `batch`-Funktion verwendest. Hier ist ein Beispiel, in dem wir eine zufällige Zahlengruppe bestimmen, die eine Farbe repräsentiert:
+Es gibt auch Funktionen wie `Random.constant`, mit der wir einen bestimmten Wert als Ergebnis zurückgeben können, ohne einen Generator zu verwenden.
 
-```Elm
-type alias Color =
-    { red : Int
-    , green : Int
-    , blue : Int
-    }
-
-randomColor : Random.Generator Color
-randomColor =
-    Random.batch
-        [ Random.int 0 255
-        , Random.int 0 255
-        , Random.int 0 255
-        ]
-        |> Random.map3 Color
-
-Random.generate randomColor
---> { red = 152, green = 218, blue = 99 }
-```
-
-## Tief eintauchen
-Die `Random`-Modul bietet auch Methoden, mit denen du Zufallszahlen in deinen Programmen in verschiedenen Situationen verwenden können. Zum Beispiel gibt es die `andThen`-Funktion, die es dir ermöglicht, eine zufällige Zahl mit einem bestimmten Wert zu kombinieren und die `generateSeed`-Funktion, mit der du einen benutzerdefinierten Zufallszahlengenerator erstellen kannst.
-
-Wenn du mehr über die verschiedenen Funktionen des `Random`-Moduls erfahren möchtest, empfehle ich dir, die offizielle Dokumentation zu lesen.
+Weitere Informationen über die Verwendung von `Random` in Elm finden Sie in der offiziellen Dokumentation unter [https://package.elm-lang.org/packages/elm/random/latest/](https://package.elm-lang.org/packages/elm/random/latest/).
 
 ## Siehe auch
-- [Offizielle Elm Dokumentation zum Random-Modul](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Blogpost über Zufallszahlen in Elm von Breaking the Jarg](https://blog.breaking-the-jarg.heroku.com/random-numbers-in-elm/)
+
+- [Offizielle Elm Dokumentation zur Verwendung von Random](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Beispielprojekt zum Generieren zufälliger Zahlen in Elm von Fun Fun Function](https://github.com/hochkind/elm-random-simple-example)

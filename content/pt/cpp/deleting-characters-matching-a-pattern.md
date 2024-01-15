@@ -1,6 +1,7 @@
 ---
-title:                "C++: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Deletando caracteres que correspondem a um padrão"
+html_title:           "C++: Deletando caracteres que correspondem a um padrão"
+simple_title:         "Deletando caracteres que correspondem a um padrão"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Deletar Caracteres Correspondentes a um Padrão?
+## Por que
 
-Há várias razões pelas quais alguém pode precisar deletar caracteres correspondentes a um padrão em C++. Alguns dos motivos mais comuns incluem formatação de dados, remoção de caracteres inválidos ou substituição de caracteres específicos. Em alguns casos, isso também pode ser necessário para garantir a segurança do programa ou otimizar o desempenho.
+Você pode querer deletar certos caracteres de uma string por uma variedade de razões, como limpar dados de entrada ou restringir o formato de uma senha. Saber como fazer isso em C++ pode ser útil em muitos projetos de programação.
 
 ## Como Fazer
 
-Para deletar caracteres correspondentes a um padrão em C++, podemos usar a função `erase()` da biblioteca de strings `std::string`. Veja um exemplo abaixo:
+Para deletar caracteres em C++, você pode usar a função erase() da biblioteca <string> junto com um laço for para percorrer a string e excluir os caracteres desejados. Veja um exemplo abaixo:
 
 ```C++
 #include <iostream>
 #include <string>
+using namespace std;
 
 int main() {
-    // Definindo uma string com um padrão a ser removido
-    std::string str = "Hello, World!#@";
+    string str = "Exemplo de string!";
+    char pattern = 'e';
 
-    // Deletando todos os caracteres não-alfanuméricos
-    str.erase(std::remove_if(str.begin(), str.end(), [](char c){
-        return !std::isalnum(c);
-    }), str.end());
-
-    // Imprimindo o resultado
-    std::cout << str; // Output: HelloWorld
-
+    for(int i = 0; i < str.length(); i++){
+        if(str[i] == pattern){
+            str.erase(i,1);
+        }
+    }
+    
+    cout << str; //saída: "xmplo d string!"
+    
     return 0;
 }
 ```
 
-Neste exemplo, usamos a função `std::remove_if` para selecionar todos os caracteres que não são alfanuméricos e a função `erase()` para removê-los da string. O resultado é a string "HelloWorld" sem os caracteres especiais.
+Para deletar mais de um caractere, basta adicionar condições ao laço for. Você também pode usar a função remove_if() da biblioteca <algorithm> para excluir caracteres que correspondem a um predicado.
 
-## Aprofundando
+## Deep Dive
 
-A função `erase()` não é a única maneira de deletar caracteres correspondentes a um padrão em C++. Também podemos usar expressões regulares ou outras funções da biblioteca de strings, como `replace` ou `substr`. Além disso, é importante estar atento a possíveis problemas de desempenho ao usar certas técnicas de remoção de caracteres, especialmente para grandes strings.
+Ao usar a função erase(), tenha cuidado com o índice dos caracteres. Lembrando que o primeiro caractere de uma string tem o índice 0, então você precisa garantir que os índices estejam ajustados ao atualizar a string. Além disso, você pode armazenar o resultado em uma nova string ou atualizar a string original.
 
 ## Veja Também
 
-- Documentação da função `erase()`: https://www.cplusplus.com/reference/string/string/erase/
-- Exemplos de expressões regulares em C++: https://www.geeksforgeeks.org/regular-expressions-in-c-c/
-- Mais informações sobre manipulação de strings em C++: https://www.geeksforgeeks.org/string-manipulation-in-cc/
+- [Função erase() na documentação do C++](https://www.cplusplus.com/reference/string/string/erase/)
+- [Função remove_if() na documentação do C++](https://www.cplusplus.com/reference/algorithm/remove_if/)

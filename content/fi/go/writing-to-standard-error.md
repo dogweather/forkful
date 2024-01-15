@@ -1,6 +1,7 @@
 ---
-title:                "Go: Standardi virhekirjoitusten tekeminen"
-simple_title:         "Standardi virhekirjoitusten tekeminen"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "Go: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,11 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kirjoittaa standard error -virtaan? Go-kielessä on monia tapoja käsitellä virheitä ja tulostaa tietoa ohjelman suorituksen aikana. Kuitenkin, jos haluat tulostaa viestin, joka näkyy vain silloin kun virhe tapahtuu, standard error on oikea valinta.
+Oletko koskaan kohdannut virheitä ohjelmoitaessa, mutta et tiennyt miten käsitellä niitä tai mitä tietoja tulostaa? Tässä artikkelissa opimme kirjoittamaan virheet standardi virhe-tulostuskanavaan, jotta voit saada lisätietoja virheistä ohjelmasi suorittamisen aikana.
 
-## Kuinka tehdä
+## Miten
 
-Koodi näyttää, kuinka kirjoittaa viesti standard error -virtaan käyttäen Go-kielestä löytyvää "fmt" -pakettia:
+Kirjoittaminen standardi virhe-tulostuskanavaan Go-kielellä on helppoa ja nopeaa. Kaikki mitä tarvitset on käyttää `os.Stderr` -pakettia ja `fmt.Fprintf()` -funktiota. Katsotaanpa käytännön esimerkin avulla, miten tämä tapahtuu:
 
 ```Go
 package main
@@ -26,23 +27,59 @@ import (
 )
 
 func main() {
-    // Tulostetaan yksinkertainen viesti standard error -virtaan
-    fmt.Fprintln(os.Stderr, "Tämä on viesti standard error -virtaan")
+    // Simuloidaan virheellistä tilannetta laskemalla nollalla
+    result, err := divide(10, 0)
+    
+    // Tarkistetaan, onko virhe olemassa ja kirjoitetaan se standardi virhe-tulostuskanavaan
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Virhe: %v\n", err)
+    }
+    
+    fmt.Println(result)
+}
+
+// Funktio jakaa x:n y:llä ja palauttaa mahdollisen virheen
+func divide(x, y float64) (float64, error) {
+    if y == 0 {
+        return 0, fmt.Errorf("ei voi jakaa nollalla")
+    }
+    
+    return x / y, nil
 }
 ```
 
-Tulostus:
+Tulostusohjeiden lisäksi voit myös käyttää `log` -pakettia, joka tarjoaa useita käteviä funktioita virheiden kirjaamiseen standardi virhe-tulostuskanavaan.
 
+```Go
+package main
+
+import (
+    "log"
+)
+
+func main() {
+    // Simuloidaan virheellistä tilannetta
+    err := doSomething()
+    
+    // Kirjoitetaan virhe standardi virhe-tulostuskanavaan
+    log.Println(err)
+}
+
+// Tämä funktio palauttaa virheen ilman tietoja
+func doSomething() error {
+    return errors.New("jotain meni pieleen")
+}
 ```
-Tämä on viesti standard error -virtaan
-```
 
-## Syvemmälle
+Nämä esimerkit näyttävät kuinka helppoa ja hyödyllistä on kirjoittaa virheitä standardi virhe-tulostuskanavaan. Voit myös ottaa huomioon kontekstin ja lisätä muuta tietoa virheiden kirjoittamiseen, kuten aikaleiman tai ohjelman nimen.
 
-Standard error -virta on tarkoitettu virheilmoitusten ja varoitusten tulostamiseen ohjelman suorituksen aikana. Tämä erillinen virta mahdollistaa erottelun tavallisesta tulostuksesta ja helpottaa virheiden jäljittämistä ja korjaamista.
+## Syvällinen sukellus
+
+Kirjoittaminen standardi virhe-tulostuskanavaan ei ole aina ensisijainen vaihtoehto virheiden käsittelyssä, mutta se on hyödyllinen työkalu tietyissä tilanteissa. Tämä tulostuskanava on hyödyllinen, jos haluat saada lisätietoa ohjelmasi virheistä suorituksen aikana. Kuitenkin, jos haluat käsitellä virheitä tietyllä tavalla, esimerkiksi tallentamalla ne tiedostoon, on parempi käyttää `log` -pakettia.
+
+Jos haluat lisätietoa virheiden käsittelystä Go-kielellä, voit lukea virallisen dokkumentaation tästä aiheesta: https://golang.org/pkg/os/#Fprintf ja https://golang.org/pkg/log/.
 
 ## Katso myös
 
-- [Go:n virallinen opas virheiden käsittelyyn](https://blog.golang.org/error-handling-and-go)
-- [fmt-paketin dokumentaatio](https://golang.org/pkg/fmt/)
-- [os-paketin dokumentaatio](https://golang.org/pkg/os/)
+- https://golang.org/pkg/os/#Stderr
+- https://golang.org/pkg/log/

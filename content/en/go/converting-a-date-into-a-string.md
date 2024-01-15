@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Converting a date into a string"
+title:                "Converting a date into a string"
+html_title:           "Go recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Go"
 category:             "Go"
@@ -10,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-When working with dates in programming, it is often necessary to convert them into strings for various purposes such as display or manipulation. In this blog post, we will explore how to convert a date into a string in Go, a popular programming language known for its efficiency and concurrency.
+Converting a date into a string may seem like a simple task, but it is an essential skill for any Go developer. This conversion allows for easier manipulation and storage of dates in a format that is easily readable and understandable for both humans and machines.
 
 ## How To
-Converting a date into a string in Go is a relatively simple process. First, we need to import the `time` package which contains the necessary functions for working with dates and times. Once we have imported the package, we can use the `Format` function to convert the date into a string. Let's take a look at an example:
+To convert a date into a string in Go, we can use the `Format()` function from the `time` package. Here is an example code snippet:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // Creating a date using the Date function
-    date := time.Date(2020, time.May, 14, 0, 0, 0, 0, time.UTC)
-
-    // Converting the date into the desired string format
-    dateString := date.Format("01-02-2006")
-
-    fmt.Println(dateString) // Output: 05-14-2020
+	now := time.Now() // get current time
+	dateString := now.Format("January 02, 2006") // convert to string in desired format
+	fmt.Println(dateString) // output: March 23, 2021
 }
 ```
 
-In this example, we create a new date using the `Date` function from the `time` package. Then, we use the `Format` function to convert the date into a string in the format of "month-day-year". The output shows the date in the desired string format.
+In the above example, we first use the `time.Now()` function to get the current time and store it in the `now` variable. Then, we use the `Format()` function to convert the time to a string in the format specified by the layout string "January 02, 2006". This layout string is a reference to the input date "January 02, 2006 15:04:05" which is also known as the time layout in Go.
 
-We can also use other characters in the format to customize the string output. For example, if we change the format to "Monday, Jan 2, 2006", the output will be "Thursday, May 14, 2020". The characters used in the format have special meanings, and you can find a complete list of them in the official Go documentation for the `time` package.
+Running this code will output the current date in the specified format. You can also format the date to any other desired format by changing the layout string. Here are a few more examples:
+
+```Go
+dateString := now.Format("Jan 02, 2006") // output: Mar 23, 2021
+dateString := now.Format("01/02/2006") // output: 03/23/2021
+dateString := now.Format("Mon, 01-02-2006 15:04:05") // output: Tue, 03-23-2021 20:10:15
+```
 
 ## Deep Dive
-Behind the scenes, the `Format` function uses the `type Struct` and `func (t Time) Format(layout string) string` to convert the date into a string. The `Struct` type contains the year, month, day, hour, minute, second, and time zone information of a date, allowing for easy manipulation and conversion. The `Format` function then uses a predefined layout to format the date according to the developer's specifications.
+Under the hood, the `Format()` function uses the `Parse()` function to convert the time to a string. This function takes in a layout string and creates a new time object in the specified layout. Then, the `Format()` function simply returns the date and time components of this object in string format.
 
-It is worth noting that the `Format` function is not limited to converting dates into strings. It can also be used to format times, time zones, and various other date and time-related values.
+It is important to note that the layout string must be in the specific format "Monday, January 02, 2006" to correctly convert the time to a string. Any other format will result in an error.
 
 ## See Also
-- [Go `time` package documentation](https://golang.org/pkg/time/)
-- [Go Playground with example code](https://play.golang.org/p/mrWLTyM0FWo)
-- [Overview of Go's string formatting options](https://yourbasic.org/golang/string-formatting-guide/)
-- [Working with dates and times in Go](https://blog.golang.org/go-time)
+- The Go time package documentation: https://golang.org/pkg/time/
+- A tutorial on working with dates and times in Go: https://golangbyexample.com/golang-datetime-example/

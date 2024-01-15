@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Comparaison de deux dates"
+title:                "Comparaison de deux dates"
+html_title:           "Haskell: Comparaison de deux dates"
 simple_title:         "Comparaison de deux dates"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,37 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La comparaison de deux dates est une tâche courante dans la programmation en Haskell. Elle permet de déterminer si une date est antérieure, égale ou postérieure à une autre date, ce qui peut être utile pour trier des données ou réaliser des calculs basés sur des dates.
+Si vous travaillez avec des données temporelles dans vos programmes, il est probable que vous ayez besoin de les comparer à un moment donné. La comparaison de deux dates peut être utile pour vérifier si elles sont égales, les trier ou les utiliser dans des conditions logiques.
 
 ## Comment faire
 
-Pour comparer deux dates en Haskell, nous utiliserons le type de données `UTCTime` du module `Data.Time` ainsi que la fonction `compare` du module `Data.Ord`. Voici un exemple de code qui compare deux dates et affiche le résultat :
+Pour comparer deux dates en Haskell, nous pouvons utiliser la fonction `compare` de la bibliothèque `Data.Time`. Cette fonction prend en paramètre deux valeurs de type `Day` (date) et renvoie un ordre de tri, représenté par le type de données `Ordering` (Ordre). Voici un exemple de code montrant comment utiliser `compare` pour trier une liste de dates:
 
 ```Haskell
 import Data.Time
-import Data.Ord
 
--- Définition de deux dates
-date1 = UTCTime (fromGregorian 2020 1 1) (secondsToDiffTime 0)
-date2 = UTCTime (fromGregorian 2021 1 1) (secondsToDiffTime 0)
-
--- Comparaison de date1 et date2
-comparison = compare date1 date2
-
--- Affichage du résultat
-print comparison
+main = do
+    let dates = [fromGregorian 2021 10 12, fromGregorian 2021 10 10, fromGregorian 2021 10 11]
+    print (sortBy compare dates)
 ```
-Output: `LT`
 
-Dans cet exemple, nous avons comparé la date du 1er janvier 2020 à celle du 1er janvier 2021. Comme le résultat est `LT` (pour "Lower Than"), cela signifie que date1 est antérieure à date2.
+La sortie de ce code sera `[2021-10-10,2021-10-11,2021-10-12]`, car la fonction `compare` a trié les dates dans l'ordre croissant.
 
-## Plongée plus profonde
+## Plongée en profondeur
 
-Pour mieux comprendre comment la fonction `compare` fonctionne pour comparer des dates, il est important de comprendre comment les dates sont représentées en Haskell. Dans l'exemple ci-dessus, nous avons utilisé le type de données `UTCTime` qui représente une date et une heure en temps universel coordonné. Cette représentation est basée sur un nombre de secondes écoulées depuis l'époque Unix (1er janvier 1970 à minuit UTC).
+Vous avez peut-être remarqué que la fonction `compare` renvoie le type `Ordering` plutôt que le résultat direct de la comparaison (par exemple, `True` ou `False`). Cela est dû au fait que la comparaison peut donner trois résultats: `LT` (Less Than- inférieur à), `GT` (Greater Than - supérieur à) ou `EQ` (Equal - égal). Cela peut sembler inutile, mais cela peut être utile si vous comparez des dates avec des horodatages.
 
-Lorsque la fonction `compare` est appliquée à deux `UTCTime`, elle convertit d'abord ces valeurs en nombres de secondes, puis les compare. Ainsi, une date antérieure à une autre sera représentée par un nombre de secondes plus petit et sera considérée comme "inférieure". De même, une date postérieure sera représentée par un nombre de secondes plus grand et sera considérée comme "supérieure".
+En plus de `compare`, il existe d'autres fonctions utiles dans la bibliothèque `Data.Time` pour la comparaison de dates. Par exemple, `diffDays` renvoie le nombre de jours entre deux dates. Cela peut être utile pour trouver la différence entre deux événements ou pour calculer l'âge d'une personne à partir de sa date de naissance.
 
 ## Voir aussi
 
-- [Documentation du module Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Documentation du module Data.Ord](https://hackage.haskell.org/package/base/docs/Data-Ord.html)
+- Documentation officielle sur la bibliothèque `Data.Time` : https://hackage.haskell.org/package/time/docs/Data-Time.html
+- Un tutoriel sur les dates en Haskell : https://mmhaskell.com/blog/2017/5/22/dates-and-times-in-haskell

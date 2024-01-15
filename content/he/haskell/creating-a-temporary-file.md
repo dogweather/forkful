@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "Haskell: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-יצירת קובץ זמני היא פעולה חשובה ומועילה למתכנתים בהאסקל. היצירה של קובץ זמני מאפשרת לנו לשמור נתונים אותם אנחנו צריכים לשימוש זמני או לתוכניות טסטים.
+היצירה של קובץ זמני בהגדרה היא דרך נוחה ובטוחה לשמירה של נתונים זמניים בתוך הקוד שלכם. הקובץ יימחק באופן אוטומטי כאשר התוכנית מסתיימת, מה שמונע שקיפות של נתונים בעת ריצת הקוד שלכם.
 
-## כיצד לבצע
+## איך לעשות
 
-`` `haskell
-import System.IO.Temp
+בואו נתחיל עם דוגמא פשוטה ונראה כיצד ליצור קובץ זמני ב-Haskell.
 
-main :: IO ()
+```Haskell
+import System.IO.Temp (withSystemTempFile)
+import System.Directory (doesFileExist)
+
 main = do
-  tempFile <- openTempFile "" "myTempFile.txt"
-  hPutStrLn tempFile "Hello World!"
-  hClose tempFile
-`` `
+    withSystemTempFile "temp.txt" $ \tempFilePath tempHandle -> do
+        putStrLn $ "Temporary file path: " ++ tempFilePath
+        hPutStrLn tempHandle "This is a temporary file."
+    exists <- doesFileExist tempFilePath
+    putStrLn $ "Does temporary file exist? " ++ show exists
+```
 
-הקוד הזה משתמש בפונקציה `openTempFile` מספרית `System.IO.Temp` כדי ליצור קובץ זמני עם שם המקובל בתוך המשתנה `tempFile`. פונקציית `hPutStrLn` משמשת לכתיבת מחרוזת "Hello World!" לקובץ הזמני. סוף סוף, `hClose` משתמש בכדי לסגור את הקובץ ולשמור אותו.
+בדוגמא זו, אנחנו משתמשים בפונקציה `withSystemTempFile` מהמודול System.IO.Temp כדי ליצור קובץ זמני. למרבה המזל, הפונקציה גם מחזירה נתיב לקובץ הזמני וכן ממשק לכתיבה לקובץ הזמני. בהמשך, אנחנו משתמשים בפונקציה hPutStrLn כדי לכתוב טקסט לקובץ הזמני ובפונקציה doesFileExist מהמודול System.Directory כדי לבדוק האם הקובץ הזמני קיים או לא. כך, בסיום התוכנית, אנחנו מדפיסים את הנתונים שלנו למסך כדי לוודא שכל הקוד עובד כצפוי.
 
-מה שתראו פה הוא קובץ בשם "myTempFile.txt" עם התוכן "Hello World!" תחת התיקייה הארכיבית "tmp" בתיקיית הנוכחית.
+אתם יכולים להשתמש בפונקציה `withSystemTempFile` כדי ליצור קבצים זמניים עם שמות וסיומות שונות באמצעות הפרמטרים הנוספים שלה. רוב המקרים, לקובץ זמני יהיה סיומת .tmp אבל אתם יכולים לשנות זאת.
 
-## טעינה עמוקה
+## חפירה עמוקה
 
-יצירת קובץ זמני היא פעולה יעילה כשאתם עובדים עם נתונים גדולים וברצונכם לתבוע ניתוב או לבטל אותם מהמחשב. כמו כן, במתרחש עקב שגיאות בתכנות או בקוד עצמו, יצירת קובץ זמני יכולה להיות תוספת הבטחתית כדי למנוע מחיקה בעייתית של נתונים חשובים.
-
-## ראה גם
-
-- [תיעוד האסקל System.IO.Temp מספרית] (https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO-Temp.html)
-- [מדריך לכתיבת קוד מהיר ויעיל בהאסקל] (https://haskell.org/haskellwiki/Performance)
-- [למד האסקל בתמונות - סדרת מדריכים] (https://learnyouahaskell.com/)
+כפי שראינו בדוגמא, פונקציית `withSystemTempFile` מקלה על התהליך של יצירת קובץ זמני. אתם יכולים לראות את פרטי המימוש של הפ

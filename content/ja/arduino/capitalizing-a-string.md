@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 文字列の大文字化"
+title:                "文字列の大文字化"
+html_title:           "Arduino: 文字列の大文字化"
 simple_title:         "文字列の大文字化"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-プログラムで文字列を大文字にすることのメリットについて、ご存知でしょうか？例えば、データやメッセージを処理する際に、文字列を統一的な形式にすることで処理しやすくなります。
+文字列を大文字に変換することの重要性や有用性を2文以内で説明します。
 
 ## 使い方
-
-文字列を大文字にする方法はいくつかありますが、今回は「Arduino」での方法をご紹介します。下のコードをご覧ください。
-
 ```Arduino
+// 文字列を大文字にする例
 String str = "hello world";
 str.toUpperCase();
-Serial.println(str); // "HELLO WORLD"
+Serial.println(str); // HELLO WORLD
 ```
-ここでは、文字列を`String`オブジェクトとして宣言し、`toUpperCase()`メソッドを使って大文字に変換しています。そして、`Serial`を使って`str`をシリアルモニターに出力しています。
 
-もし変換したい文字列が`str`以外にある場合は、代わりに`.toUpperCase()`メソッドの中に変換したい文字列を入力することもできます。
+```Arduino
+// シリアルモニターに大文字の入力を求める例
+Serial.println("Enter a string:");
+while (Serial.available() == 0); // ユーザーの入力があるまで待機
+String input = Serial.readString(); // ユーザーの入力を読み取る
+input.toUpperCase(); // 入力を大文字に変換
+Serial.println(input); // 変換した文字列を出力
+```
 
-## 詳細説明
+## 深堀り
+文字列を大文字に変換するには、文字列オブジェクトのtoUpperCase()メソッドを使用します。このメソッドは、元の文字列を変更せずに大文字に変換した新しい文字列を返します。また、文字列の一部だけを大文字に変換するためには、文字列を一度リストや配列に分割し、必要な部分を大文字に変換して結合する方法があります。
 
-文字列を大文字に変換するには、コンピューターが文字のコードを変換する必要があります。それぞれの文字には、コンピューターが認識できるコード（ASCIIコードやUnicode）が割り当てられています。大文字と小文字は、このコードの値が異なるだけで同じ文字として扱われています。
-
-`String`オブジェクトを使用することで、文字列を簡単に扱うことができます。また、大文字に変換するような基本的な操作も提供されています。
-
-## 関連リンク
-
-- [Arduino公式ウェブサイト](https://www.arduino.cc/)
-- [C言語で文字列を大文字にする方法](https://programming-place.net/2020/04/13/how-to-uppercase-string-in-c/)
+## また見る
+- [String クラスリファレンス](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [ASCIIコード表](https://www.asciitable.com/)

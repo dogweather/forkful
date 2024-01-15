@@ -1,6 +1,7 @@
 ---
-title:                "C#: एक वेब पृष्ठ डाउनलोड करना"
-simple_title:         "एक वेब पृष्ठ डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+html_title:           "C#: वेब पेज डाउनलोड करना"
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-वेब पेज को डाउनलोड करने का कारण क्या है? आमतौर पर, एक उपयोगकर्ता इंटरनेट पर जाकर किसी वेब पेज का उपयोग करता है, लेकिन कभी-कभी किसी वेब पेज को अपने स्थानीय कंप्यूटर पर डाउनलोड करने की आवश्यकता होती है। जब आप एक वेब पेज को डाउनलोड करते हैं, तो आप उसे ऑफलाइन देख सकते हैं और उसमें संग्रहित जानकारी को बदल भी सकते हैं।
+## Kyon
 
-## कैसे करें
-एक वेब पेज को C# में डाउनलोड करने के लिए, आपको आगे दिए गए कोड का उपयोग करना होगा:
+Download karna, yani web page ko apne computer ya device mein save karna, kaafi upyogi ho sakta hai. Aap jab bhi internet se offline ho jaate hain, tab aap downloaded web pages ko access kar sakte hain aur online content ke bina bhi information ko padh sakte hain.
+
+## Kaise
 
 ```C#
-using System;
-using System.Net;
-using System.IO;
+// C# mein ek web page download karne ka simple code
+using System; // namespace for C# libraries
 
-class Program
+using System.Net; // namespace for web requests
+
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        // URL of the web page to be downloaded
-        string url = "https://www.example.com";
-        
-        // Create an instance of WebClient to download the page
-        WebClient client = new WebClient();
-        
-        // Download the page and save it as a string
-        string webPage = client.DownloadString(url);
-        
-        // Save the downloaded string to a local file
-        File.WriteAllText("example.html", webPage);
-        
-        // Output a success message
-        Console.WriteLine("Web page downloaded successfully.");
+        string url = "https://www.google.com/"; // specify the URL of the web page you want to download
+        WebClient client = new WebClient(); // create a new web client object
+        string html = client.DownloadString(url); // use the DownloadString method to download the web page as a string
+        Console.WriteLine(html); // print the downloaded web page
     }
 }
+
 ```
 
-इस कोड का उपयोग करके, आप एक वेब पेज को बहुत ही आसानी से अपने स्थानीय कंप्यूटर पर डाउनलोड कर सकते हैं। कोड चालू करने के बाद, एक फ़ाइल नाम "example.html" के साथ वेब पेज आपके कंप्यूटर पर संग्रहीत होगा।
+**Output:**
 
-## गहराई में खोजें
-वेब पेज को डाउनलोड करने के बारे में अधिक जानने के लिए, आप वेब पेज के HTML कोड से भी खेल सकते हैं। आप उस डाउनलोड फ़ाइल को खोलकर, उसमें संग्रहीत हुए डेटा को देख सकते हैं और उसे अपनी इच्छा अनुसार संशोधित भी कर सकते हैं। आप पाठांकन उपकरण जैसे कि Notepad++ या Sublime Text का उपयोग करके वेब
+```
+<!doctype html>
+<html>
+<head>
+<title>Google</title>
+...
+...
+...</html>
+```
+
+Is code mein humne pehle ek variable mein web page ka URL store kiya, phir ek web client object create kiya aur uska DownloadString method use kiya. Iss tarah se humne web page ko string format mein download kiya aur console par print kiya.
+
+## Deep Dive
+
+Web pages ko download karna ke liye bahut saari C# libraries aur methods available hain. Hum WebClient class ka use kiya hai, par hum HttpWebRequest aur HttpClient classes ka bhi use kar sakte hain. In classes mein bahut saari methods available hain jo web pages ko download karne aur manipulate karne mein help karte hain.
+
+Ek aur important point yeh hai ki web pages do tarah ke hote hain - static aur dynamic. Static web pages hamesha same hote hain jab aap unhe access karte hain. Par dynamic web pages hamesha change hote rehte hain. Humari code mein humne ek static web page download kiya hai, par dynamic web pages ko download karne mein hume kuch aur methods ka use karna pad sakta hai.
+
+## Dekho Bhi
+
+- [C# Programming Language](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
+- [WebClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1)
+- [HttpWebRequest Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netcore-3.1)
+- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)

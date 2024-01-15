@@ -1,5 +1,6 @@
 ---
-title:                "C: Eine Textdatei schreiben"
+title:                "Eine Textdatei schreiben"
+html_title:           "C: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 programming_language: "C"
 category:             "C"
@@ -11,49 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Schreiben eines Textdatei ist ein wichtiger Teil der Programmierung und kann in vielen verschiedenen Szenarien verwendet werden. Zum Beispiel kann es verwendet werden, um Benutzereingaben zu speichern, um Daten für spätere Analysen zu erfassen, oder um Berichte zu generieren. Es ist auch nützlich, wenn Daten zwischen verschiedenen Programmen ausgetauscht werden müssen.
+Wenn du mit C programmierst, kennst du wahrscheinlich bereits die Verwendung von Konsolenausgaben mit `printf` oder `cout`. Aber hast du schon einmal daran gedacht, eine Datei mit deinem C-Code zu erstellen? Das Schreiben von Textdateien kann sehr nützlich sein, um Daten auf lange Sicht zu speichern oder um mit anderen Programmen zu interagieren.
 
-## Wie geht man vor
+## Wie es geht
 
-Um eine Textdatei in C zu schreiben, müssen mehrere Schritte befolgt werden:
-
-1. Ein File-Pointer muss erstellt werden, um auf die Datei zuzugreifen.
-2. Die Datei muss geöffnet werden, um darauf schreiben zu können.
-3. Der gewünschte Inhalt muss in die Datei geschrieben werden.
-4. Die Datei muss wieder geschlossen werden, um sicherzustellen, dass alle Änderungen gespeichert werden.
-
-Der folgende Code zeigt ein Beispiel für das Schreiben einer Textdatei:
+Das Schreiben einer Textdatei in C kann auf verschiedene Arten erfolgen, aber hier sind einige Beispiele, um dir den Einstieg zu erleichtern:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    // Schritte 1 und 2: File-Pointer erstellen und Datei öffnen
-    FILE *filePointer = fopen("Beispieltext.txt", "w");
 
-    // Schritt 3: Inhalt in die Datei schreiben
-    fprintf(filePointer, "Ein Beispiel für eine Textdatei!");
+    // Öffne eine Datei im “write” Modus
+    FILE *file = fopen("textdatei.txt", "w");
 
-    // Schritt 4: Datei schließen
-    fclose(filePointer);
+    // Überprüfe, ob die Datei erfolgreich geöffnet wurde
+    if (file == NULL) {
+        printf("Fehler beim Öffnen der Datei!");
+        return 1;
+    }
+
+    // Schreibe Text in die Datei
+    fputs("Dies ist eine Textdatei, geschrieben mit C!", file);
+
+    // Schließe die Datei
+    fclose(file);
 
     return 0;
 }
 ```
 
-Der obige Code wird eine Textdatei namens "Beispieltext.txt" erstellen und den Satz "Ein Beispiel für eine Textdatei!" in die Datei schreiben.
+Dieses Beispiel öffnet eine Datei namens "textdatei.txt" im Schreibmodus und fügt den Text "Dies ist eine Textdatei, geschrieben mit C!" hinzu. Beachte, dass du die Datei immer schließen musst, nachdem du damit fertig bist.
 
-## Tiefergehende Einblicke
+Du kannst auch mit dem `fprintf` Befehl formatierten Text in eine Datei schreiben:
 
-Beim Schreiben einer Textdatei gibt es einige wichtige Dinge zu beachten:
+```C
+fprintf(file, "Dies ist eine Zahl: %d", 10);
+```
 
-- Beim Öffnen einer Datei zum Schreiben muss der Modus "w" angegeben werden. Dies bedeutet, dass die Datei überschrieben wird, falls sie bereits existiert. Wenn Sie sicherstellen möchten, dass der Inhalt am Ende der Datei hinzugefügt wird, anstatt die bestehenden Inhalte zu löschen, verwenden Sie den Modus "a".
-- Wenn die Datei nicht erfolgreich geöffnet werden kann, wird der File-Pointer NULL zurückgeben. Daher sollte immer überprüft werden, ob die Datei erfolgreich geöffnet wurde, bevor versucht wird, in sie zu schreiben.
-- Um mehrere Zeilen in eine Textdatei zu schreiben, können Sie die Funktion `fprintf` in einer Schleife verwenden.
-- Stellen Sie sicher, dass die Datei am Ende geschlossen wird, um sicherzustellen, dass alle Änderungen gespeichert werden.
+Dies schreibt den formatierten Text in die Datei, in diesem Fall "Dies ist eine Zahl: 10". Du kannst alle gängigen printf-Spezifikationen verwenden, um den Text zu formatieren.
+
+## Tiefergehende Details
+
+Das Schreiben von Textdateien in C erfordert die Verwendung der `FILE` Struktur und die Funktionen `fopen`, `fclose` und `fprintf` oder `fputs`. Diese Funktionen sind in der Header-Datei "stdio.h" deklariert. Du kannst auch den dritten Parameter von `fopen` verwenden, um den Zeichenkodierungstyp der Datei anzugeben, z.B. "w, UTF-8" oder "w, ISO-8859-1". Es ist auch wichtig, zu überprüfen, ob das Öffnen oder Schreiben der Datei erfolgreich war, da dies zu Laufzeitfehlern führen kann.
 
 ## Siehe auch
 
-- [Lesen und Schreiben von Textdateien in C](https://www.programiz.com/c-programming/c-file-input-output)
-- [C-Dateien - Einführung](https://www.tutorialspoint.com/cprogramming/c_files.htm)
-- [Das File API in C](https://www.tutorialspoint.com/c_standard_library/c_function_fwrite.htm)
+- Die Dokumentation zu [FILE in der C-Referenz](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- Eine [ausführliche Anleitung zum Schreiben von Textdateien in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- Eine [Einführung in C](https://www.programiz.com/c-programming) auf Programiz.

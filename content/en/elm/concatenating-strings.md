@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Elm recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,38 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Concatenating strings is a basic but crucial aspect of programming in any language, including Elm. It allows us to combine multiple strings together to create a new string, which is extremely useful for building dynamic and flexible applications.
+Concatenating strings may seem like a simple task, but it can greatly improve the functionality and readability of your code. By combining multiple strings into one, you can create dynamic content, generate personalized messages, and handle user input with ease. Plus, it's a fundamental skill that every Elm programmer should master.
 
 ## How To
 
-To concatenate strings in Elm, we can use the **++** operator. Let's take a look at an example:
+To concatenate strings in Elm, you can use the `++` operator or the `String.concat` function. Let's take a look at some examples using both methods.
 
-```Elm
+```
+Elm code block:
+import String
+
+message1 = "Hello" ++ "World"
+-- Output: "HelloWorld"
+
+message2 = String.concat ["I", "love", "Elm"]
+-- Output: "IloveElm"
+```
+
+In the first example, we used the `++` operator to combine two strings, "Hello" and "World", into one. In the second example, we used the `String.concat` function to join a list of strings into a single string. Both methods achieve the same result, so choose whichever one feels more intuitive to use.
+
+You can also use concatenation to dynamically generate messages based on user input. Let's see an example of this using the `String.concat` function.
+
+```
+Elm code block:
+import String
+
 name = "John"
-greeting = "Hello, " ++ name ++ "!" 
+greeting = String.concat ["Hello", name, "!"]
+-- Output: "Hello John!"
 ```
 
-In this code, we have declared a variable `name` with the value "John" and a variable `greeting` which is created by combining the string "Hello, " with the value of `name` and the exclamation mark. The final value of `greeting` would be "Hello, John!".
-
-We can also use the **++** operator to add strings to the end of a list of strings. Here's an example:
-
-```Elm
-numbers = ["one", "two"]
-moreNumbers = numbers ++ ["three", "four"]
-```
-
-In this case, the final value of `moreNumbers` would be ["one", "two", "three", "four"], as the **++** operator adds the new strings to the end of the list.
+In this example, we stored the user's name in a variable called `name` and then used concatenation to create a personalized greeting. This is just one of many ways you can use concatenation to enhance the functionality of your code.
 
 ## Deep Dive
 
-It's important to note that the **++** operator can only be used to concatenate strings or lists of strings. It cannot be used to combine other types of data such as numbers or booleans. If you try to use it with mixed types, you will receive an error.
+Concatenating strings may seem like a basic concept, but there are a few things to keep in mind when using it in your code. One important thing to note is that the order of the strings in the concatenation matters. Let's consider an example:
 
-Another important detail is that the **++** operator always creates a new string or list, rather than modifying the existing one. This is because strings in Elm are immutable, meaning they cannot be changed once they are created. This allows for safer and more predictable code.
+```
+Elm code block:
+reminder = "Don't forget" ++ "to" ++ "buy" ++ "milk"
+-- Output: "Don't forgettobuymilk"
+```
 
-We can also use the **concat** function to concatenate strings in Elm. It takes in a list of strings and returns a single string which is the result of concatenating all the strings in the list.
+In this example, we tried to create a reminder using individual strings, but we forgot to add spaces in between. To fix this, we can add spaces within the strings or use the `String.intercalate` function to join the strings with a separator.
+
+Another thing to keep in mind is that the data types of the strings being concatenated must match. If you try to combine a string with a number, Elm will throw an error. To avoid this, you can use the `toString` function to convert the number to a string before concatenating.
+
+```
+Elm code block:
+message = "My favorite number is" ++ String.toString 7
+-- Output: "My favorite number is 7"
+```
+
+Lastly, it's important to understand that strings are immutable in Elm, meaning they cannot be changed once created. This means that every time you use concatenation, a new string is created. So if you need to concatenate multiple strings, it's more efficient to use the `String.concat` function instead of using the `++` operator multiple times.
 
 ## See Also
 
-- [Official Elm Documentation on Strings](https://elm-lang.org/docs/strings)
-- [A Beginner's Guide to Elm Strings](https://guide.elm-lang.org/types/strings.html)
-- [Mastering Elm: Concatenating Strings](https://thoughtbot.com/blog/mastering-elm-concatenating-strings)
+- [Elm Guide: Strings](https://guide.elm-lang.org/types/strings.html)
+- [Official Elm Documentation: String module](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Tutorial: Working With Strings](https://www.elm-tutorial.org/en/03-subs-cmds/03-working-with-strings.html)

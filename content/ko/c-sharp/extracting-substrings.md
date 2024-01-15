@@ -1,6 +1,7 @@
 ---
-title:                "C#: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "남겨진 부분 추출"
+html_title:           "C#: 남겨진 부분 추출"
+simple_title:         "남겨진 부분 추출"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,31 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열과 관련하여 작업하는 프로그래머라면 입력된 문자열에서 일부분을 추출해야 할 때가 있습니다. 이를 "substring 추출"이라고 합니다. 이 기술을 알아두면 문자열을 더욱 효율적으로 다룰 수 있습니다.
+서브스트링 추출을 어떤 이유로 할까요? 서브스트링 추출은 C# 프로그래밍에서 중요한 기술 중 하나입니다. 변수나 문자열을 다룰 때, 특정 부분만 추출하여 사용하고 싶을 때가 있습니다. 이 때 서브스트링 추출이 유용하게 사용될 수 있습니다.
 
 ## 어떻게
 
-```C#
-string word = "안녕하세요!";
-string substring = word.Substring(0, 2); // "안녕"
-Console.WriteLine(substring);
-```
-
-위의 예시 코드에서 우리는 변수 `word`에 문자열 "안녕하세요!"를 저장합니다. 그리고 `Substring()` 메소드를 사용하여 `word` 변수에서 인덱스 0에서부터 길이가 2인 substring을 추출합니다. 즉, 위의 예시 코드에서는 "안녕"이라는 substring을 추출하고 이를 콘솔에 출력합니다.
+서브스트링 추출은 C#에서 간단하게 할 수 있습니다. 아래 코드를 참고해봅시다.
 
 ```C#
-string sentence = "저는 C# 프로그래머입니다.";
-string name = sentence.Substring(2, 2); // "C#"
-Console.WriteLine(name);
+string originalString = "안녕하세요, 반가워요!";
+string subString = originalString.Substring(3, 5);
+
+// output: "하세요"
 ```
 
-위의 예시 코드에서는 더욱 다양한 패턴의 문자열에서 substring을 추출하는 방법을 보여줍니다. `sentence` 변수에 저장된 문자열에서 인덱스 2부터 길이가 2인 substring을 추출하였고 이를 `name` 변수에 저장하였습니다. 콘솔에 출력된 결과는 "C#"입니다.
+위 예시에서 `originalString` 변수는 추출하고 싶은 전체 문자열을 가지고 있습니다. `Substring()` 메소드를 사용하여 `subString` 변수에 `originalString`에서 3번째 인덱스부터 5개의 문자를 추출하였습니다. 즉, 원하는 범위의 문자열을 추출할 수 있습니다.
+
+더 발전된 예시를 보기 위해 아래 코드를 참고해봅시다.
+
+```C#
+string sentence = "I love C# programming!";
+int index = sentence.IndexOf("C#");
+string subString = sentence.Substring(index, 2);
+
+// output: "C#"
+```
+
+여기서 `IndexOf()` 메소드를 사용하여 `sentence`에서 "C#"이라는 문자열이 처음 나타나는 인덱스를 찾았습니다. 그 다음 `Substring()` 메소드를 이용하여 해당 인덱스부터 2개의 문자를 추출하였습니다. 이처럼 `Substring()` 메소드는 인덱스를 기준으로 원하는 범위의 문자열을 추출할 수 있습니다.
 
 ## 딥 다이브
 
-결과적으로, `Substring()` 메소드를 사용하여 문자열에서 일부분을 추출하는 방법은 매우 간단합니다. 그러나 이 기술을 더욱 자세히 살펴본다면 더 다양한 방법을 발견할 수 있습니다. 예를 들어, `Substring()` 메소드를 중첩하여 더 복잡한 패턴의 substring을 추출할 수도 있고 다양한 파라미터를 설정하여 더욱 다양한 결과를 얻을 수도 있습니다.
+서브스트링 추출에는 여러 가지 다른 방법이 있습니다. `Substring()` 메소드뿐만 아니라 `Substr()` 메소드를 사용하는 방법, 또는 정규식을 이용하는 방법 등이 있습니다. 또한 `Substring()` 메소드에는 매개변수를 하나만 넣는 `Substring(int startIndex)`과 매개변수를 두 개 넣어서 `Substring(int startIndex, int length)`을 사용하는 방법이 있습니다.
 
-## 참고
+서브스트링 추출은 문자열을 다루는 데 있어서 유용한 기능입니다. 여러 가지 방법을 활용하여 자신에게 가장 적합한 방법을 찾아보세요.
 
-- [참조 문서 - C#의 Substring() 메소드](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=net-5.0)
-- [정규표현식을 이용한 문자열 추출 기법](https://www.joinc.co.kr/w/Site/Java/StringExtractRegularExpression)
+## 관련 링크
+
+- [C# String.Substring Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+- [Working with Strings in C# (C# Station)](https://csharp-station.com/Text.aspx)

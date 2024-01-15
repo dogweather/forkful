@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "「httpリクエストを送信する」"
+html_title:           "PHP: 「httpリクエストを送信する」"
+simple_title:         "「httpリクエストを送信する」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、プログラマーの皆さん！今日は、HTTPリクエストを送信する方法についてお話しします。このテーマを選んだ理由は、HTTPリクエストはウェブ開発やアプリ開発において非常に重要な役割を果たしているためです。では、早速見ていきましょう！
+## なぜ
 
-## なぜHTTPリクエストを送信するのか
+HTTPリクエストを送信するメリットとは何でしょうか？これは、インターネット上にあるウェブサイトやアプリケーションとコミュニケーションを取るために必要です。例えば、Webページを表示する際に画像やデータを取得する場合などにHTTPリクエストが使用されます。
 
-HTTPリクエストは、ウェブサイトやアプリとのやり取りをする上で欠かせないものです。例えば、ブラウザでウェブサイトを閲覧する際には、ブラウザからサーバーにHTTPリクエストを送信して、ウェブページのデータを取得します。また、スマートフォンアプリでも同じように、サーバーからデータを取得するためにHTTPリクエストが利用されています。つまり、ウェブ開発やアプリ開発においては、HTTPリクエストを理解することが非常に重要なのです。
+## 使い方
 
-## どのようにHTTPリクエストを送信するのか
-
-PHPを使用してHTTPリクエストを送信する方法を見ていきましょう。以下のコードは、[GuzzleHTTP](https://github.com/guzzle/guzzle)というPHPのHTTPクライアントライブラリを使用して、GoogleのホームページにGETリクエストを送信し、レスポンスを取得するコード例です。
+まずは、PHPでHTTPリクエストを送信する方法をご紹介します。以下のコードを使用することで、URLを指定し、コンテンツを取得することができます。
 
 ```PHP
-<?php
-require 'vendor/autoload.php';
-
-use GuzzleHttp\Client;
-
-$client = new Client();
-$response = $client->request('GET', 'https://www.google.com');
-
-echo $response->getBody();
+$url = 'https://example.com';
+$response = file_get_contents($url);
+echo $response;
 ```
 
-上記のコードでは、まず`GuzzleHttp`のクライアントクラスを使用して、`$client`という名前のインスタンスを作成します。次に、`request()`メソッドを使用して、`GET`リクエストを送信し、レスポンスを`$response`という変数に代入します。最後に、`getBody()`メソッドを使用して、レスポンスのデータを取得し、表示しています。
+上記の例では、`file_get_contents()`関数を使用しています。これは、指定したURLからコンテンツを取得するための便利な関数です。また、レスポンスを表示するために`echo`を使用しています。
 
-このように、HTTPリクエストを送信するには、まずクライアントを作成し、そのクライアントを使用して`request()`メソッドを呼び出し、レスポンスを取得するという流れになります。詳しくは、[GuzzleHTTPのドキュメント](http://docs.guzzlephp.org/en/stable/)を参考にしてください。
+さらに高度な使い方として、HTTPリクエストのヘッダーをカスタマイズしたい場合には、`stream_context_create()`関数を使用することができます。
 
-## HTTPリクエストの詳細について
+```PHP
+$url = 'https://example.com';
+$options = [
+    'http' => [
+        'method' => 'GET',
+        'header' => 'Accept: application/json'
+    ]
+];
+$context = stream_context_create($options);
+$response = file_get_contents($url, false, $context);
+echo $response;
+```
 
-HTTPリクエストには、`GET`以外にも`POST`や`PUT`などのメソッドがあり、それぞれのメソッドには異なる目的があります。また、リクエストのヘッダーやボディーには、リクエストを詳しく説明する情報が含まれています。HTTPリクエストの詳細については、[MDN web docs](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)などのサイトで学ぶことができます。
+上記のコードでは、レスポンスの形式をJSONとして指定するために、ヘッダーをカスタマイズしています。
 
-## おわりに
+## ディープダイブ
 
-HTTPリクエストは、ウェブ開発やアプリ開発において非常に重要な役割を果たしています。今回は、PHPを使用したHTTPリクエストの送信方法について紹介しましたが、実際にはさまざまな方法でHTTPリクエストを送信することができます。ぜひ、今回紹介したライブラリやドキュメントを参
+HTTPリクエストは、Web開発やAPIを使用したアプリケーションの開発において非常に重要な役割を担っています。そのため、深く理解することが重要です。
+
+PHPでは、`curl`という拡張モジュールを使用することで、より柔軟なHTTPリクエストを行うことができます。しかし、`curl`ではセキュリティ上のリスクがあるため、信頼できるソースからのみ使用することが推奨されています。
+
+## See Also
+
+- [PHP: HTTPコンテキストオプション](https://www.php.net/manual/ja/context.http.php)
+- [PHP: ネットワーク関数](https://www.php.net/manual/ja/ref.network.php)
+- [PHP: cURL](https://www.php.net/manual/ja/book.curl.php)

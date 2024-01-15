@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Maiúsculas em uma sequência de caracteres"
-simple_title:         "Maiúsculas em uma sequência de caracteres"
+title:                "Capitalizando uma string"
+html_title:           "TypeScript: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string?
+## Por Que
 
-Capitalizar uma string é um processo comum na programação que envolve alterar a primeira letra de cada palavra em uma string para maiúscula. Isso pode ser útil para padronizar a formatação de uma string ou para melhorar a legibilidade do código.
+Muitas vezes, precisamos formatar uma string de maneira específica, como deixá-la toda em maiúsculas ou apenas com a primeira letra de cada palavra maiúscula. Nesses casos, capitalizar a string é uma tarefa útil e necessária.
 
-## Como fazer?
+## Como Fazer
+
+Para capitalizar uma string em TypeScript, podemos utilizar o método `toUpperCase()` para transformar todas as letras em maiúsculas. Por exemplo:
 
 ```TypeScript
-const capitalizarString = (str: string) => {
-  const palavras = str.split(" ");
-  const novaString = [];
+const frase = "o tempo é agora";
 
-  for (let i = 0; i < palavras.length; i++) {
-    const primeiraLetra = palavras[i].charAt(0).toUpperCase();
-    const restoDaPalavra = palavras[i].slice(1);
-    const palavraCapitalizada = primeiraLetra + restoDaPalavra;
-    novaString.push(palavraCapitalizada);
-  }
-
-  return novaString.join(" ");
-}
-
-capitalizarString("isso é um exemplo"); // Output: "Isso É Um Exemplo"
+console.log(frase.toUpperCase()); // O TEMPO É AGORA
 ```
 
-Neste exemplo, criamos uma função que recebe uma string como parâmetro e a divide em uma array de palavras. Em seguida, percorremos essa array e alteramos a primeira letra de cada palavra para maiúscula, concatenando com o restante da palavra. Por fim, juntamos novamente todas as palavras em uma única string utilizando o método `join()`.
+Se quisermos apenas a primeira letra de cada palavra em maiúscula, podemos utilizar o método `replace()` combinado com uma expressão regular. Por exemplo:
 
-## Profundidade do assunto
+```TypeScript
+const frase = "o tempo é agora";
 
-Existem outras maneiras de capitalizar uma string em TypeScript, como utilizando as funções `charAt()` e `toUpperCase()` diretamente na string, ou até mesmo expressões regulares. Além disso, também é possível utilizar bibliotecas externas que oferecem recursos mais avançados para manipulação de strings.
+console.log(frase.replace(/\b\w/g, (letra) => letra.toUpperCase())); // O Tempo É Agora
+```
 
-## Veja também
+## Mergulho Profundo
 
-- [Guia completo sobre strings em TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [Documentação do método `toUpperCase()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Documentação do método `charAt()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+Além dos métodos mencionados, também podemos utilizar a função `charAt()` para obter uma letra específica da string e depois usar o método `toUpperCase()` para transformá-la em maiúscula. Isso é útil quando precisamos capitalizar apenas uma parte da string.
+
+```TypeScript
+const nome = "joão";
+
+const primeiraLetra = nome.charAt(0).toUpperCase(); // J
+
+console.log(primeiraLetra + nome.slice(1)); // João
+```
+
+Outra opção é utilizar a biblioteca externa Lodash, que possui um método `capitalize()` para capitalizar automaticamente a primeira letra de uma string.
+
+```TypeScript
+import { capitalize } from "lodash";
+
+console.log(capitalize("tempo é dinheiro")); // Tempo é dinheiro
+```
+
+## Veja Também
+
+Aqui estão alguns links úteis com mais informações sobre a manipulação de strings em TypeScript:
+
+- [Documentação oficial do TypeScript sobre strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [Manipulando strings com JavaScript](https://www.w3schools.com/js/js_string_methods.asp)
+- [Guia completo sobre a biblioteca Lodash](https://lodash.com/docs/4.17.15)

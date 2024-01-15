@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lesing av en tekstfil"
-simple_title:         "Lesing av en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "Gleam: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,74 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lese en tekstfil kan være en viktig del av programmering, spesielt når du jobber med store datamengder eller trenger å hente innhold fra en ekstern kilde. Det kan spare deg for mye tid og krefter ved å automatisere lesingen av filer i kode.
+Å lese innholdet i en tekstfil er en vanlig oppgave for å hente informasjon fra en ekstern kilde eller for å behandle data som allerede finnes på datamaskinen din. Det kan være nyttig for å automatisere repetitivt arbeid, hente relevant informasjon eller bare for å ha en oversikt over dataene dine.
 
-## Hvordan Gjøre Det
+## Hvordan
 
-Med Gleam programmeringsspråk, kan du enkelt lese en tekstfil ved hjelp av "File" biblioteket. Først må du importere dette biblioteket ved å skrive:
-
-```Gleam
-import gleam/file
-```
-
-Deretter kan du åpne en tekstfil ved å bruke "file.open" funksjonen og oppgi banen til filen som et argument. For eksempel:
+For å lese innholdet i en tekstfil i Gleam, bruker vi funksjonen `File.read` og angir filbanen som en streng. Her er et eksempel på hvordan dette kan se ut:
 
 ```Gleam
-file.open("minfil.txt")
+let filbane = "min_filsti.txt"
+let filinnhold = File.read(filbane)
 ```
 
-Dette vil returnere en filobjekt som du kan bruke til å lese og manipulere innholdet i filen. Du kan bruke funksjonen "file.read" for å lese hele innholdet i filen, eller "file.read_lines" for å lese linje for linje.
-
-For å demonstrere dette i praksis, la oss si at vi har en tekstfil med navnet "greeting.txt" som inneholder følgende tekst:
-
-```
-Hei! Velkommen til min blogg.
-```
-
-Vi kan da lese innholdet i denne filen og skrive det ut ved hjelp av følgende kode:
+Vi kan deretter behandle informasjonen i filen som ønsket, for eksempel ved å skrive den ut med `Debug.inspect`:
 
 ```Gleam
-let file = file.open("greeting.txt")
-let content = file.read_lines()
+Debug.inspect(filinnhold)
 ```
 
-Dette vil returnere en liste med en eneste verdi, nemlig linjen som vi leste fra filen. For å skrive ut denne linjen, kan du bruke "io.format" funksjonen som følger:
+Dette vil gi oss en utskrift av alt innholdet i filen, inkludert linjeskift og annen formatering.
+
+## Deep Dive
+
+Når vi bruker `File.read` funksjonen, blir innholdet i filen automatisk konvertert til Gleam sin `List` datatype. Dette betyr at vi kan bruke alle de vanlige funksjonene for å håndtere lister for å behandle informasjonen i filen.
+
+For å legge til litt interaktivitet i koden vår, kan vi også be brukeren om å angi filbanen manuelt ved hjelp av `IO.prompt` funksjonen:
 
 ```Gleam
-let file = file.open("greeting.txt")
-let content = file.read_lines()
-io.format("Here is the content of greeting.txt: {}", [content])
+let filbane = IO.prompt("Skriv inn filbanen:")
+let filinnhold = File.read(filbane)
 ```
 
-Dette vil skrive ut følgende output:
-
-```
-Here is the content of greeting.txt: Hei! Velkommen til min blogg.
-```
-
-## Dypdykk
-
-Det er også mulig å lese en tekstfil rad for rad og utføre forskjellige operasjoner på hvert avsnitt. Dette kan være nyttig når du for eksempel ønsker å gjøre noe spesifikt med hver linje i en CSV-fil eller et loggfil.
-
-For å lese filen rad for rad, kan du bruke "file.each_line" funksjonen og en lambda-funksjon. For eksempel:
-
-```Gleam
-let file = file.open("navn.txt")
-
-file.each_line(fn line -> {
-  io.format("Hei, {}! Velkommen til min blogg.", [line])
-})
-```
-
-Dette vil skrive ut følgende for hver linje i filen:
-
-```
-Hei, Ane! Velkommen til min blogg.
-Hei, Markus! Velkommen til min blogg.
-Hei, Emilie! Velkommen til min blogg.
-```
+På denne måten kan vi gjøre koden vår mer fleksibel og tilpasse den til forskjellige brukeres behov.
 
 ## Se Også
 
-- [Gleam File Bibliotek](https://gleam.run/documentation/standard-library/file)
-- [Offisiell Gleam Dokumentasjon](https://gleam.run/documentation/)
+- [Dokumentasjon for `File` modulen i Gleam](https://gleam.run/documentation/std_lib/file/)
+- [Andre nyttige ressurser for å lære Gleam](https://gleam.run/resources/)

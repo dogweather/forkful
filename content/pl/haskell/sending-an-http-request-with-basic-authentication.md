@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Przesłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Haskell: Przesłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Przesłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,52 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wysyłanie żądań HTTP z podstawową autoryzacją może być bardzo przydatne w wielu przypadkach. Może to być potrzebne, gdy chcemy uzyskać dostęp do chronionych zasobów lub gdy korzystamy z API, które wymaga uwierzytelnienia.
+Jeśli pracujesz z aplikacjami internetowymi lub tworzysz własną, prawdopodobnie nie unikniesz wysyłania żądań HTTP z uwierzytelnieniem podstawowym. Pozwala to na bezpieczeństwo dostępu do chronionych zasobów, takich jak np. dane użytkowników.
+
+Sending an HTTP request with basic authentication is necessary for accessing protected resources and ensuring security when working with web applications.
 
 ## Jak to zrobić
 
-Możemy użyć biblioteki "http-conduit" w Haskellu, aby wysłać żądanie HTTP z podstawową autoryzacją. Najpierw musimy zaimportować bibliotekę:
+Aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym w języku Haskell, potrzebujesz kilku prostych kroków. Najpierw musisz zaimportować odpowiednie biblioteki:
 
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP
+import Network.HTTP.Headers
+import Network.HTTP.Base
+import Network.URI
 ```
 
-Następnie musimy utworzyć zapytanie HTTP i dodać do niego nagłówek autoryzacji:
+Następnie należy utworzyć obiekt `Request` z odpowiednimi parametrami, takimi jak metoda żądania, adres URL i nagłówki:
 
 ```Haskell
-import qualified Data.ByteString.Char8 as BS
-request <- parseRequest "http://example.com/api"
-let username = "user123"
-let password = "secret"
-let authHeaderValue = BS.pack (username ++ ":" ++ password)
-let basicAuthHeader = ("Authorization", BS.pack ("Basic " ++ (BS.unpack (Data.ByteString.Base64.encode authHeaderValue))))
-let requestWithAuthHeader = setRequestHeader basicAuthHeader request
+let url = "https://example.com/api/users/123"
+let method = POST
+let body = "name=John&age=30"
+let headers = [Header HdrAuthorization "Basic <base64encodedCredentials>"]
+let request = Request {rqURI = fromJust $ parseURI url, rqMethod = method, rqBody = body, rqHeaders = headers}
 ```
 
-Teraz możemy wysłać żądanie i otrzymać odpowiedź:
+Warto zauważyć, że nagłówek `HdrAuthorization` musi zawierać poprawnie zakodowane dane uwierzytelniające. Następnie można wysłać żądanie i odbierać odpowiedź:
 
 ```Haskell
-response <- httpJSON requestWithAuthHeader
+response <- simpleHTTP request
+responseBody <- getResponseBody response
+print responseBody
 ```
 
-Możemy także obsłużyć błędy, które mogą wystąpić przy wysyłaniu żądania:
+W powyższym przykładzie wykorzystujemy funkcje z biblioteki `Network.HTTP`, takie jak `simpleHTTP` i `getResponseBody`, aby wysłać żądanie i odbierać odpowiedź. Można również użyć bardziej zaawansowanych funkcji, takich jak `sendHTTP`, które pozwalają na bardziej szczegółową kontrolę nad żądaniem i odpowiedzią.
 
-```Haskell
-case getResponseStatusCode response of
-    200 -> print "Success"
-    _ -> print "Error"
-```
+## Głębszy przegląd
 
-Przykładowy output: "Success".
+Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym polega na dołączeniu nagłówka `Authorization` z odpowiednio zakodowanym ciągiem z uwierzytelniającym użytkownika i hasłem. Warto pamiętać, że w celu bezpieczeństwa hasło powinno być zawsze kodowane przed wysłaniem żądania.
 
-## Deep Dive
+Funkcja `encodeCredentials` z biblioteki `Network.HTTP.Headers` służy do kodowania danych uwierzytelniających w standardzie Basic. Należy pamiętać, że należy przekazać ciąg `"Basic "` jako pierwszy argument do tej funkcji, a następnie własny ciąg z uwierzytelniającymi danymi.
 
-Podczas wysyłania żądania HTTP z podstawową autoryzacją, najważniejsze jest wygenerowanie poprawnego nagłówka autoryzacyjnego. Nagłówek ten musi być w formacie "Basic username:password" i powinien być zakodowany w formacie Base64.
-
-W przykładzie powyżej, używamy funkcji "Data.ByteString.Base64.encode" z biblioteki "base64-bytestring" do zakodowania nagłówka autoryzacyjnego.
+Możliwe jest również wysyłanie żądań z innymi metodami uwierzytelniania, takimi jak np. Digest, używając odpowiednich dodatkowych nagłówków i funkcji kodujących.
 
 ## Zobacz również
 
-- [Dokumentacja biblioteki "http-conduit"](https://hackage.haskell.org/package/http-conduit)
-- [Przykładowy kod wykorzystujący podstawową autoryzację w bibliotece "http-conduit"](https://github.com/snoyberg/conduit/blob/master/http-conduit/examples/tls.hs)
-- [Inny sposób na autoryzację w bibliotece "http-conduit"](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20HTTP%20Client%20Request)
+- [Dokumentacja Haskell HTTP](https://hackage.haskell.org/package/HTTP)
+- [Wysyłanie żądań HTTP z uwierzytelnianiem w Haskell](https://wiki.haskell.org/HTTP_authenticate)
+- [Przykład wysyłania żądania HTTP z uwierzytelnieniem w języku Haskell](https://github.com/mcandre/haskell-httplib/blob/master/http-client.hs)

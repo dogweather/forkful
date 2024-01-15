@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Rust recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,115 +12,109 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever struggled with organizing and managing configuration files in your projects? Look no further because YAML is here to help! YAML is a human-readable data serialization language that is commonly used for storing and organizing configuration data. It is simple to use and understand, making it a popular choice for developers.
+YAML, or "YAML Ain't Markup Language", is a popular data serialization format commonly used for configuration files and data storage. Working with YAML allows for more human-readable and user-friendly data representation compared to other formats such as JSON and XML. Additionally, Rust's strong type system and error handling make it a great language for working with YAML.
 
 ## How To
 
-To get started with YAML in Rust, we first need to add the `yaml` crate to our `Cargo.toml` file:
+To start working with YAML in Rust, we first need to add the `serde_yaml` crate to our project's dependencies in the `Cargo.toml` file:
 
-```Rust
+```
 [dependencies]
-yaml = "0.4.5"
+serde_yaml = "0.8.14"
 ```
 
-Next, we can use the `serde_yaml` crate to easily serialize and deserialize YAML data. Let's take a look at an example of how to read a YAML file and print its contents:
-
-```Rust
-use std::fs::File;
-use serde_yaml::Value;
-
-fn main() {
-    // Open YAML file
-    let file = File::open("config.yaml").expect("Unable to open file.");
-
-    // Deserialize YAML data into a value
-    let value: Value = serde_yaml::from_reader(file).expect("Unable to parse YAML.");
-
-    // Print the value
-    println!("{:#?}", value);
-}
-```
-
-This code reads a `config.yaml` file and deserializes it into a `Value` that we can then print out. The output will look something like this:
+Next, we need to import the `serde` and `serde_yaml` crates into our code:
 
 ```
-Mapping(
-    {
-        String(
-            "name",
-        ): String(
-            "John",
-        ),
-        String(
-            "age",
-        ): Integer(
-            25,
-        ),
-        String(
-            "hobbies",
-        ): Sequence(
-            [
-                String(
-                    "coding",
-                ),
-                String(
-                    "reading",
-                ),
-                String(
-                    "gaming",
-                ),
-            ],
-        ),
-    },
-)
+use serde::{Deserialize, Serialize};
+use serde_yaml;
 ```
 
-As you can see, YAML data is represented in Rust as a `Value` enum, which can contain different types of data such as strings, integers, and sequences. We can use pattern matching to access specific data within the `Value`.
+Now, we can use the `serde_yaml` crate to parse a YAML file into a Rust struct, and vice versa. Let's take a look at an example where we have a `Config` struct representing some application configuration:
 
-Similarly, if we want to create a YAML file from scratch, we can use serde to serialize a Rust data structure into YAML format:
-
-```Rust
-use std::fs::File;
-use serde_yaml::to_writer;
-
-// Create a struct to serialize
-struct Person {
+```
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
     name: String,
-    age: u8,
-    hobbies: Vec<String>,
+    port: i32,
+    database_url: String,
 }
-
-let person = Person {
-    name: "Jane".to_owned(),
-    age: 30,
-    hobbies: vec!["painting".to_owned(), "hiking".to_owned()],
-};
-
-// Serialize struct into YAML
-let file = File::create("person.yaml").expect("Unable to create file.");
-to_writer(file, &person).expect("Unable to serialize person.");
 ```
 
-This will create a `person.yaml` file in the current directory with the following contents:
+Given a YAML file named `config.yaml` with the following content:
 
-```yaml
-name: Jane
-age: 30
-hobbies:
-    - painting
-    - hiking
 ```
+name: MyApp
+port: 8080
+database_url: postgres://user:pass@localhost/myapp_database
+```
+
+We can use the `serde_yaml` crate to deserialize the YAML into our `Config` struct:
+
+```
+fn main() {
+    let file = File::open("config.yaml").expect("Error opening file");
+    let config: Config = serde_yaml::from_reader(file).expect("Error parsing YAML");
+    println!("{:?}", config);
+}
+```
+
+We can also go the other way around and serialize our `Config` struct into a YAML file:
+
+```
+fn main() {
+    let config = Config {
+        name: "MyApp".to_string(),
+        port: 8080,
+        database_url: "postgres://user:pass@localhost/myapp_database".to_string(),
+    };
+    let mut file = File::create("config.yaml").expect("Error creating file");
+    serde_yaml::to_writer(&mut file, &config).expect("Error serializing YAML");
+}
+```
+
+This will produce a `config.yaml` file with the same content as the example above.
 
 ## Deep Dive
 
-While YAML may seem similar to other data serialization formats like JSON, it offers some unique features that make it a great choice for configuration files. YAML has support for comments, making it easier to document and explain complex configurations. It also supports anchors and aliases, which let you reference data from one part of the file to another, reducing repetition and making it easier to maintain.
+The `serde_yaml` crate provides a lot of useful options for customizing how YAML is parsed and serialized. For example, if we wanted to rename a field in our `Config` struct to match a different key in the YAML file, we can use the `#[serde(rename = "field_name")]` attribute:
 
-Additionally, YAML allows for multi-line strings, making it easier to write and read long blocks of text. It also supports more complex data types such as dates and timestamps, making it versatile for different types of data.
+```
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    #[serde(rename = "project_name")]
+    name: String,
+    port: i32,
+    database_url: String,
+}
+```
 
-For a complete understanding of how to use YAML in Rust, check out the official documentation for [`serde_yaml`](https://docs.rs/serde_yaml/).
+Additionally, the `deserialize_with` attribute allows us to provide a function that will handle the deserialization of a particular field. This is useful for cases where we need to convert a string value into a different type:
+
+```
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    name: String,
+    port: i32,
+    #[serde(deserialize_with = "deserialize_database_url")]
+    database_url: url::Url,
+}
+
+fn deserialize_database_url<'de, D>(deserializer: D) -> Result<url::Url, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let s: String = Deserialize::deserialize(deserializer)?;
+    Url::parse(&s).map_err(de::Error::custom)
+}
+```
+
+For more information on customizing the serialization and deserialization process, check out [the official serde documentation](https://serde.rs/).
 
 ## See Also
 
-- [serde-yaml - GitHub](https://github.com/dtolnay/serde-yaml)
-- [Introduction to YAML - YAML.org](https://yaml.org/intro.html)
-- [Intro to Rust Serde - Medium](https://medium.com/@joshuajrh/intro-to-rust-serde-22b305e64d9b)
+Here are some resources for further learning about working with YAML in Rust:
+
+- [serde_yaml crate documentation](https://docs.rs/serde_yaml/)
+- [Official rust-serde GitHub repository](https://github.com/serde-rs/serde)
+- [Rust Cookbook: Parsing YAML files with serde_yaml](https://rust-lang-nursery.github.io/rust-cookbook/serialization/yaml.html)

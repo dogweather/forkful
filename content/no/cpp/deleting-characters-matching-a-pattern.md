@@ -1,6 +1,7 @@
 ---
-title:                "C++: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Sletting av tegn som matcher et mønster."
+html_title:           "C++: Sletting av tegn som matcher et mønster."
+simple_title:         "Sletting av tegn som matcher et mønster."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det kan være flere grunner til å ønske å slette karakterer som matcher et gitt mønster i et C++ program. Dette kan være for å utføre en spesifikk oppgave, forbedre koden eller for å lære mer om C++ og hvordan det håndterer strenger.
 
-## Hvordan gjøre det
-For å slette karakterer som matcher et gitt mønster, kan du bruke funksjonen `erase()` i C++ sammen med `find()` og `substr()`. La oss se på et eksempel:
+Sletting av tegn som matcher et mønster er nyttig når du vil fjerne uønskede tegn fra en streng. Dette kan være nyttig når du jobber med tekstbehandling og ønsker å rense opp i dataene dine.
+
+## Slik gjør du det
 
 ```C++
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-int main() {
-    // Opprett en streng og et mønster
-    string tekst = "Dette er en tekst";
-    string mønster = "te";
+int main()
+{
+    // Opprett en streng med uønskede tegn
+    string streng = "H-e-$l-l-o";
+    
+    // Opprett et mønster ved hjelp av et regex-uttrykk
+    regex mønster("[^a-zA-Z]"); 
 
-    // Finn posisjonen til mønsteret i strengen
-    size_t pos = tekst.find(mønster);
-
-    // Slett karakterer som matcher mønsteret
-    tekst.erase(pos, mønster.length());
-
-    // Skriv ut resultatet
-    cout << tekst << endl;
-
+    // Erstatt alle tegn som matcher mønsteret med et blankt tegn
+    string rensetStreng = regex_replace(streng, mønster, "");
+    
+    // Skriv ut den rensete strengen
+    cout << rensetStreng << endl;
+    
     return 0;
 }
 ```
 
-Denne koden vil finne og slette alle forekomster av mønsteret "te" i strengen "Dette er en tekst". Her er det viktig å merke seg at funksjonen `find()` returnerer posisjonen til den første forekomsten av mønsteret, og vi bruker denne posisjonen sammen med `erase()` for å slette mønsteret.
+**Output:**
 
-Output av dette programmet vil være "Dette er en sk".
+`Hello`
 
-## Dypdykk
-Det er viktig å merke seg at funksjonen `find()` også tar inn en valgfri parameter for å angi startposisjonen for søket. Dette kan være nyttig hvis du ønsker å slette mønsteret fra en spesifikk posisjon i strengen. I tillegg kan du også bruke `replace()` funksjonen til å erstatte mønsteret med en annen streng.
+## Dykk dypere
 
-Det finnes også andre metoder for å slette karakterer som matcher et gitt mønster, som for eksempel å iterere gjennom strengen og slette tegnene manuelt. Det er opp til deg å velge den beste metoden basert på dine behov og preferanser.
+Regex, eller regelmessige uttrykk, er en måte å søke etter og manipulere tekst på. I eksempelet over har vi brukt `[a-zA-Z]` for å matche alle bokstaver i det engelske alfabetet. Dette kan endres etter behov, for eksempel ved å legge til tall eller spesialtegn.
+
+Det finnes også flere metoder for å slette tegn fra en streng, som for eksempel `erase()` og `remove()`. Men å bruke regex er ofte en mer fleksibel og effektiv måte å fjerne uønskede tegn på.
 
 ## Se også
-- [C++ dokumentasjon - `erase()`](https://www.cplusplus.com/reference/string/string/erase/)
-- [C++ dokumentasjon - `find()`](https://www.cplusplus.com/reference/string/string/find/)
-- [C++ dokumentasjon - `substr()`](https://www.cplusplus.com/reference/string/string/substr/)
+
+- [C++ regex](https://www.cplusplus.com/reference/regex/)
+- [C++ string manipulasjon](https://www.cplusplus.com/reference/string/)

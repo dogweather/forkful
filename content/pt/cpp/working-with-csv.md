@@ -1,5 +1,6 @@
 ---
-title:                "C++: Trabalhando com csv"
+title:                "Trabalhando com csv"
+html_title:           "C++: Trabalhando com csv"
 simple_title:         "Trabalhando com csv"
 programming_language: "C++"
 category:             "C++"
@@ -9,61 +10,96 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV (Comma Separated Values)?
+## Por que
 
-CSV é um formato de arquivo de dados amplamente utilizado, conhecido por sua simplicidade e fácil manipulação. Ele é amplamente utilizado para armazenar e transferir dados entre diferentes sistemas, tornando-se uma ferramenta valiosa para programadores em muitas linguagens de programação. Neste artigo, vamos explorar como trabalhar com CSV em C++.
+Trabalhar com arquivos CSV (Comma-Separated Values) é uma tarefa comum para muitos desenvolvedores de software, especialmente aqueles que trabalham com dados. CSV é um formato simples e eficiente para armazenar e transmitir dados tabulares, como planilhas, que podem ser facilmente lidos e manipulados em muitas linguagens de programação, incluindo C++.
 
-## Como fazer
+## Como Fazer
 
-Para começar a trabalhar com CSV em C++, é necessário incluir a biblioteca de arquivos de fluxo de entrada e saída (iostream) no seu código. Em seguida, você precisará abrir o arquivo CSV usando a função ifstream, que irá permitir que você leia os dados do arquivo.
-
-Em seguida, é necessário percorrer os dados linha por linha usando um loop. Isso pode ser feito usando a função getline, que irá ler uma linha inteira do arquivo e armazená-la em uma string.
-
-Uma vez que as linhas são lidas, é possível dividir cada linha em suas respectivas colunas. Isso pode ser feito usando a função strtok, que divide a string com base em um caractere delimitador, neste caso, a vírgula (',').
-
-Depois de ter acesso às colunas, é possível manipular os dados de acordo com as suas necessidades e fazer cálculos, comparações ou qualquer outra tarefa desejada.
-
-Abaixo está um exemplo de código que ilustra os passos mencionados acima:
+Para trabalhar com CSV em C++, é necessário primeiro incluir a biblioteca fstream, que permite a leitura e gravação de arquivos. Em seguida, podemos usar a função getline() para ler cada linha do arquivo CSV e a estrutura de dados vector para armazenar os dados lidos. Veja um exemplo abaixo:
 
 ```C++
 #include <iostream>
 #include <fstream>
-#include <cstring>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
 int main() {
-  ifstream csvFile("dados.csv");
-  string linha;
-
-  // loop que percorre cada linha do arquivo
-  while (getline(csvFile, linha)) {
-    char *coluna = strtok((char *)linha.c_str(), ",");
-
-    // loop que percorre cada coluna da linha
-    while (coluna != NULL) {
-      // manipulação de dados da coluna aqui
-      cout << coluna << " ";
-      coluna = strtok(NULL, ",");
+    // Abrindo o arquivo CSV em modo de leitura
+    ifstream file("dados.csv");
+    
+    // Verificando se o arquivo foi aberto corretamente
+    if (!file.is_open()) {
+        cout << "Não foi possível abrir o arquivo!" << endl;
+        return 0;
     }
-    cout << endl;
-  }
-  return 0;
+    
+    // Vetor para armazenar os dados lidos
+    vector<vector<string>> dados;
+    
+    // Variável para armazenar cada linha do arquivo
+    string linha;
+    
+    // Lendo cada linha do arquivo
+    while (getline(file, linha)) {
+        // Usando stringstream para separar cada elemento da linha
+        stringstream ss(linha);
+        // Vetor para armazenar cada elemento da linha
+        vector<string> elementos;
+        // Variável para armazenar cada elemento
+        string elemento;
+        
+        // Lendo cada elemento separado por vírgula
+        while (getline(ss, elemento, ',')) {
+            // Adicionando o elemento ao vetor
+            elementos.push_back(elemento);
+        }
+        
+        // Adicionando o vetor de elementos ao vetor de dados
+        dados.push_back(elementos);
+    }
+    
+    // Exibindo os dados lidos
+    for (auto linha : dados) {
+        for (auto elemento : linha) {
+            cout << elemento << " ";
+        }
+        cout << endl;
+    }
+    
+    // Fechando o arquivo
+    file.close();
+    
+    return 0;
 }
 ```
 
-O código irá imprimir todas as linhas do arquivo CSV, separando cada coluna com um espaço.
+Suponha que o arquivo CSV "dados.csv" contenha o seguinte conteúdo:
 
-## Mergulho profundo
+```
+Nome,Sobrenome,Idade,Profissão
+João,Silva,30,Programador
+Maria,Santos,28,Analista de Dados
+```
 
-Uma questão importante ao trabalhar com CSV é o tratamento de dados ausentes. Como os dados estão sendo lidos em formato textual, pode ser necessário tratar campos vazios ou nulos. Isso pode ser feito usando funções, como `getline` e `atof`, para verificar se o valor é válido e, caso contrário, atribuir um valor padrão ou ignorar a linha.
+A saída do programa seria:
 
-Além disso, é possível utilizar a biblioteca de expressões regulares (regex) para validar e extrair dados específicos de uma linha ou coluna, em vez de percorrer todas as colunas. Isso pode economizar tempo e tornar o código mais eficiente.
+```
+Nome Sobrenome Idade Profissão
+João Silva 30 Programador
+Maria Santos 28 Analista de Dados
+```
 
-Outro ponto a ser considerado é a manipulação de grandes arquivos CSV. Se o arquivo for muito grande para ser armazenado na memória, pode ser necessário ler e processar as linhas em partes ou utilizar técnicas de páginação.
+E é isso! Agora você já pode ler e armazenar dados de um arquivo CSV em C++.
 
-## Veja também
+## Mergulho Profundo
 
-- Documentação C++ para leitura e escrita de arquivos: https://en.cppreference.com/w/cpp/io/basic_filebuf
-- Tutoriais sobre expressões regulares em C++: https://www.cplusplus.com/reference/regex/
-- Dicas para trabalhar com grandes arquivos em C++: https://stackoverflow.com/questions/3663373/reading-large-text-files-with-c
+Além da função getline() e da estrutura vector, a linguagem C++ oferece outras funções que podem ser úteis na manipulação de arquivos CSV, como a função ignore(), que pode ser usada para ignorar certa quantidade de caracteres em uma linha, e a função good(), que verifica se a leitura do arquivo foi bem-sucedida. Além disso, é importante se atentar às particularidades do formato CSV, como o tratamento de valores nulos e valores com espaços. É recomendado também verificar a documentação da biblioteca fstream para mais informações e funcionalidades.
+
+## Veja Também
+
+- [Documentação oficial da biblioteca fstream](https://en.cppreference.com/w/cpp/header/fstream)
+- [Como ler e escrever arquivos em C++](https://www.geeksforgeeks.org/input-output-in-cpp/)
+- [Tutorial sobre manipulação de CSV em C++](https://www.tutorialspoint.com/cplusplus-program-to-read-a-csv-file-and-store-the-data)

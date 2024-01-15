@@ -1,6 +1,7 @@
 ---
-title:                "Python: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Sänder en http-begäran"
+html_title:           "Python: Sänder en http-begäran"
+simple_title:         "Sänder en http-begäran"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,29 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna skicka HTTP-förfrågningar i din Python-kod är en viktig färdighet för alla programmerare. Det tillåter dig att kommunicera med externa API:er och webbservrar, vilket möjliggör interaktion mellan din kod och andra webbapplikationer. 
+Att skicka HTTP-förfrågningar är en grundläggande färdighet för programmerare som vill skapa webbapplikationer eller arbeta med API:er. Genom att förstå hur HTTP-protokollet fungerar kan du kommunicera med servrar och hämta eller skicka data på webben.
 
 ## Hur man gör
 
-För att skicka en HTTP-förfrågan i Python behöver du importera "requests" biblioteket. Det är en populär och användarvänlig bibliotek som gör det enkelt att göra förfrågningar. 
+För att skicka en HTTP-förfrågan i Python, behöver du importera inbyggda urllib-biblioteket:
 
 ```Python
-import requests
-
-response = requests.get("https://api.github.com")
-print(response.status_code)
+import urllib.request
 ```
 
-Den enklaste formen av en HTTP-förfrågan är en GET-förfrågan som vi använder i exemplet ovan. Vi lagrar svaret från förfrågan i en variabel "response" och skriver ut statuskoden med hjälp av "status_code" metoden.
+För att skicka en GET-förfrågan, använd `urlopen()`-funktionen:
+
+```Python
+url = "http://exempelwebbplats.com"
+response = urllib.request.urlopen(url)
+```
+
+Du kan sedan läsa svaret som en sträng med `read()`-metoden:
+
+```Python
+data = response.read()
+```
+För att skicka en POST-förfrågan, behöver du först koda dina data med `urllib.parse`-modulen:
+
+```Python
+import urllib.parse
+data = urllib.parse.urlencode({'key': 'value'})
+data = data.encode('utf-8') # om du behöver konvertera till byte-format
+```
+
+Sedan kan du skicka förfrågan med `urlopen()`-funktionen och ange dina data som argument:
+
+```Python
+url = "http://exempelwebbplats.com"
+response = urllib.request.urlopen(url, data)
+```
 
 ## Djupdykning
 
-HTTP-förfrågningar fungerar genom ett klient-servrar-system, där Python-koden fungerar som klienten som skickar en förfrågan till en webbserver. För att skicka en förfrågan behöver vi en URL som motsvarar den webbadress vi vill ansluta till. Det finns olika typer av HTTP-förfrågningar som tillåter oss att göra mer än bara att hämta data från en annan webbplats. Till exempel kan vi använda en POST-förfrågan för att skicka data till en server, eller en PUT-förfrågan för att uppdatera befintlig data. 
+HTTP står för "Hypertext Transfer Protocol" och är ett protokoll som möjliggör kommunikation mellan klienter och servrar på webben. Det använder en "request-response"-modell där en klient skickar en förfrågan till en server, som sedan svarar med en respons. En HTTP-förfrågan består av en metod (t.ex. GET eller POST), en URL och en valfri "body" som kan innehålla data.
 
-En annan viktig del av en HTTP-förfrågan är dess statuskod. Detta är ett numeriskt svar från servern som anger om förfrågan var framgångsrik eller inte. I vårt exempel ovan ser vi att statuskoden är 200, vilket betyder att vår förfrågan lyckades. Om statuskoden är något annat än 200 kan det indikera att det uppstod ett problem med vår förfrågan.
+Det finns också olika typer av statuskoder som en server kan skicka tillbaka i en HTTP-respons. Exempelvis, om allt gick bra kommer du få ett 200-kod, men om det finns ett fel kommer du få en annan kod för att ange vad som gick fel.
+
+Att lära sig mer om HTTP och dess specifikationer kan hjälpa dig att förstå hur du skickar och tar emot förfrågningar på ett effektivt sätt.
 
 ## Se även
 
-- [Dokumentation för requests biblioteket](https://requests.readthedocs.io/en/master/)
-- [En guide till HTTP-förfrågningar i Python](https://realpython.com/python-requests/) 
-- [En introduktion till HTTP-protokollet](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [Python's urllib-dokumentation](https://docs.python.org/3/library/urllib.html)
+- [Hypertext Transfer Protocol - Wikipedia](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [HTTP statuskoder - MDN webbdokumentation](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Status)

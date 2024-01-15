@@ -1,6 +1,7 @@
 ---
-title:                "Go: 문자열의 대문자화"
-simple_title:         "문자열의 대문자화"
+title:                "스트링 대문자로 변경하기"
+html_title:           "Go: 스트링 대문자로 변경하기"
+simple_title:         "스트링 대문자로 변경하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,9 +12,9 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-Go 언어를 사용해 문자열을 대문자로 바꾸려는 이유는 다양합니다. 예를 들면 사용자의 입력이나 파일 이름을 대문자로 통일하기 위해서, 또는 출력이나 비교를 위해 대문자로 바꾸는 등의 다양한 이유가 있을 수 있습니다. 
+문자열을 대문자로 변환하는 것이 왜 중요한지 궁금하지 않으신가요? 예를 들어, 사용자가 입력한 문자열을 대문자로 변환해서 저장하면, 동일한 입력이라도 대문자와 소문자를 구분하지 않는 검색 기능을 구현할 수 있습니다.
 
-## 하는 법
+## 방법
 
 ```Go
 package main
@@ -23,30 +24,24 @@ import (
 	"strings"
 )
 
-func uppercase(str string) string {
-	return strings.ToUpper(str)
-}
-
 func main() {
-	input := "hello go"
-	
-	output := uppercase(input)
-	fmt.Println(output)
+	str := "hello world"
+	result := strings.ToUpper(str)
+	fmt.Println(result)
 }
 ```
 
-출력 결과: HELLO GO 
+위의 예제 코드는 문자열 "hello world"를 대문자로 변환한 뒤 출력하는 간단한 코드입니다. Go 언어에서는 `strings` 패키지의 `ToUpper` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 이 외에도 `bytes` 패키지의 `ToUpper` 함수를 사용하거나, 해당 문자의 아스키 코드를 32만큼 빼는 방법으로 대소문자를 구분하지 않는 비교가 가능합니다.
 
-위의 예제에서는 `strings` 패키지의 `ToUpper` 함수를 사용하여 문자열을 대문자로 바꾸는 방법을 보여줍니다. 이 외에도 `strings` 패키지에는 문자열을 소문자로 바꾸는 함수인 `ToLower`도 있습니다. 또는 `bytes` 패키지의 `ToUpper`와 `ToLower` 함수는 문자열 대신 바이트 슬라이스를 대상으로 동작하므로 더 빠를 수 있습니다. 
+## 깊게 들어가보기
 
-## 딥 다이브
+대문자로 변환하는 과정에서 실제로 어떤 일이 일어나는지 알아보겠습니다. Go 언어에서 문자열은 바이트(BYTE) 형태로 저장됩니다. 즉, 문자 하나마다 고정된 바이트 수를 가지고 있으며, 이를 통해 문자의 아스키 코드를 확인할 수 있습니다. 대문자와 소문자의 아스키 코드 차이는 32입니다. 따라서 대문자로 변환하기 위해서는 문자마다 아스키 코드에 32를 빼주면 됩니다.
 
-문자열을 대문자로 바꾸기 위해서는 문자 조작에 대한 이해가 필요합니다. Go 언어는 문자 하나를 유니코드 코드 포인트로 다룹니다. 즉, 문자 하나에 해당하는 코드 값이 할당되며 이를 통해 대소문자를 구분할 수 있습니다. 대문자는 유니코드 코드 포인트 값이 작은 숫자로 할당되어 있기 때문에 `ToLower` 함수를 사용하면 소문자로 바꿀 수 있습니다. 
-
-하지만 한글의 경우에는 조금 다릅니다. 한글은 합성 문자로 이루어져 있으며 하나의 음절을 표현하기 위해 여러 개의 코드 포인트가 필요합니다. 따라서 `ToLower` 함수를 사용하면 의도하지 않은 결과가 나올 수 있습니다. 이러한 경우에는 유니코드 표준에서 제공하는 관련 함수를 사용하거나 다른 라이브러리를 사용하는 것이 좋습니다. 
+예를 들어, 문자 "h"의 아스키 코드는 104입니다. 이에 32를 빼주면 대문자 "H"의 아스키 코드인 72가 됩니다. 이것이 바로 Go 언어에서 대문자로 변환하는 과정입니다.
 
 ## 참고
 
-- [Go 언어 공식 문서](https://golang.org/pkg/strings/#ToUpper)
-- [유니코드 표준](https://unicode.org/)
-- [Go 언어 문자열 조작 라이브러리 - GoKo](https://github.com/verizip/goko)
+- "strings" 패키지 공식 문서: https://golang.org/pkg/strings/
+- "bytes" 패키지 공식 문서: https://golang.org/pkg/bytes/
+- ASCII 코드표: https://ko.wikipedia.org/wiki/ASCII
+- Go 언어 공식 문서: https://golang.org/doc/

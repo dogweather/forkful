@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Kotlin: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'extraction de sous-chaînes, également connue sous le nom de slicing en anglais, est une méthode utile pour manipuler des chaînes de caractères en Kotlin. Elle permet de découper une chaîne en parties plus petites, ce qui peut être très utile dans différentes situations de programmation.
+Si vous travaillez avec des chaînes de caractères dans vos projets Kotlin, il est fort probable que vous ayez besoin d'extraire des sous-chaînes à un moment donné. Cela peut être utile lorsque vous souhaitez récupérer une partie spécifique d'une chaîne pour effectuer des opérations ultérieures, telles que la manipulation de données ou la vérification de certaines conditions. Dans cet article, nous allons vous montrer comment extraire des sous-chaînes en utilisant Kotlin de manière efficace et pratique.
 
-# Comment faire
+## Comment faire
 
-Pour extraire une sous-chaîne à partir d'une chaîne existante en Kotlin, vous pouvez utiliser la fonction `subSequence()` ou l'opérateur `..`.
-
-Voici un exemple utilisant la fonction `subSequence()` :
+Pour extraire une sous-chaîne d'une chaîne principale en Kotlin, nous allons utiliser la méthode ```substring()``` qui est déjà intégrée dans le langage. Cette méthode prend deux paramètres : la position de départ et la position de fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple simple qui illustre son utilisation :
 
 ```Kotlin
-val chaine = "Bonjour tout le monde"
-val sousChaine = chaine.subSequence(0, 7)
-println(sousChaine) // affiche "Bonjour"
+val str = "Bonjour le monde"
+val sousChaine = str.substring(8, 11)
+
+println(sousChaine) // Cela affichera "mon"
 ```
 
-Et voici un exemple utilisant l'opérateur `..` :
+Comme vous pouvez le voir, nous avons spécifié les positions 8 et 11, qui sont respectivement la première et la dernière lettre de la sous-chaîne "mon". La méthode ```substring()``` renvoie alors une nouvelle chaîne contenant cette sous-chaîne spécifique. Vous pouvez également utiliser seulement la position de départ et omettre la position de fin, auquel cas la méthode extraira la sous-chaîne à partir de la position donnée jusqu'à la fin de la chaîne principale.
+
+En plus de la méthode ```substring()```, Kotlin offre également la possibilité d'utiliser l'opérateur de tranche ```..``` pour extraire des sous-chaînes. Voici un exemple utilisant la même chaîne principale :
 
 ```Kotlin
-val chaine = "Bonjour tout le monde"
-val sousChaine = chaine[8..12]
-println(sousChaine) //affiche "tout"
+val sousChaine = str[8..11]
+
+println(sousChaine) // Cela affichera "mon"
 ```
 
-# Plongée en profondeur
+Ici, nous avons utilisé l'opérateur ```..``` pour spécifier les positions de la sous-chaîne que nous voulons extraire. Cela fonctionne de la même manière que la méthode ```substring()```, mais peut être plus pratique à utiliser dans certaines situations.
 
-Il est important de noter que la fonction `subSequence()` retourne une instance de `CharSequence`, qui est une interface immuable. Si vous souhaitez manipuler la sous-chaîne en tant que chaîne de caractères mutable, vous devez la convertir en utilisant la fonction `toString()`.
+## Deep Dive
 
-Il est également possible d'utiliser des nombres négatifs pour extraire une sous-chaîne en partant de la fin de la chaîne. Par exemple, `chaine[-5..-1]` retournera une sous-chaîne des 5 derniers caractères de la chaîne.
+Il est important de noter que les indices dans Kotlin commencent à partir de 0, donc la première lettre d'une chaîne aura l'indice 0. Cela signifie que vous devez déclarer la position de départ en conséquence lorsque vous utilisez la méthode ```substring()``` ou l'opérateur ```..```. Par exemple, si vous voulez extraire la première lettre d'une chaîne, vous devrez utiliser la position 0 comme ceci : ```str[0]``` ou ```str.substring(0,1)```.
 
-Enfin, vous pouvez également utiliser la fonction `substring()` pour extraire une sous-chaîne à partir d'un index donné jusqu'à la fin de la chaîne, sans avoir à spécifier la longueur de la sous-chaîne.
+De plus, si vous avez besoin d'extraire la dernière lettre d'une chaîne, vous pouvez utiliser l'indice -1 au lieu d'une position de fin explicite. Par exemple, ```str[str.length - 1]``` renverra la dernière lettre de la chaîne.
 
-# Voir aussi
+Selon vos besoins, vous pouvez également utiliser la méthode ```slice()``` pour extraire plusieurs sous-chaînes à la fois en spécifiant les indices souhaités dans une boucle ou une liste. La méthode ```indexOf()``` peut également être utile pour trouver la position d'un caractère spécifique dans une chaîne, que vous pouvez ensuite utiliser comme paramètre dans la méthode ```substring()```.
 
-Voici quelques liens utiles pour en apprendre davantage sur l'extraction de sous-chaînes en Kotlin :
+## Voir aussi
 
-- Documentation officielle de Kotlin sur les chaînes de caractères : https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Tutoriel vidéo sur l'extraction de sous-chaînes en Kotlin : https://www.youtube.com/watch?v=hqpzzZJKqW4
-- Exemples de code pour pratiquer l'extraction de sous-chaînes en Kotlin : https://www.programiz.com/kotlin-programming/strings#substring
+- [Documentation officielle sur les chaînes de caractères en Kotlin] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- [Guide pratique pour manipuler les chaînes en Kotlin] (https://www.baeldung.com/kotlin/string-manipulation)

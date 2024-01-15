@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Att analysera html"
-simple_title:         "Att analysera html"
+title:                "Analysera html"
+html_title:           "Rust: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,48 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Om du någonsin har jobbat med webbutveckling har du förmodligen stött på HTML-kod. Att hantera och tolka denna typ av kod kan vara en utmaning, men med hjälp av Rust kan du underlätta processen och göra det på ett effektivt sätt.
 
-## Så här gör du
-För att parsning av HTML med Rust behöver du först importera biblioteket scraper. Detta bibliotek gör det möjligt att ladda ned och granska webbsidor från internet, inklusive dess HTML-kod.
+Att analysera HTML-filer är en viktig del av många webbutvecklingsprojekt. Det kan hjälpa till att extrahera information från hemsidor, utveckla webbautomatiseringstester och mycket mer.
+
+## Hur man gör det
+
+För att analysera HTML-filer i Rust finns det flera tredjepartsbibliotek tillgängliga, men vi kommer att fokusera på biblioteket "scraper". För att använda detta bibliotek behöver du ha Rust installerat på din dator.
+
+### Installation
+
+Först och främst måste du installera "scraper" biblioteket. Detta görs genom att lägga till det under `[dependencies]` sektionen i din `Cargo.toml` fil.
 
 ```Rust
-extern crate scraper;
+[dependencies]
+scraper = "0.13.0"
+```
 
-use scraper::{Html, Selector}; // Importera scraper biblioteket
+Du kan sedan installera biblioteket genom att köra följande kommando i din terminal:
+
+```bash
+cargo build
+```
+
+### Exempelkod
+
+När biblioteket har installerats kan du börja använda det för att analysera HTML-filer. Se nedan för ett exempel på hur du kan extrahera titeln på en hemsida med hjälp av "scraper":
+
+```Rust
+use scraper::{Html, Selector};
 
 fn main() {
-    // Skapa en variabel med HTML-koden du vill parsa
-    let html_doc = r#"
+    let html = r#"
         <html>
           <head>
-            <title>Hello, world!</title>
+            <title>Min hemsida</title>
           </head>
           <body>
-            <h1>Hej världen!</h1>
+            <h1>Här är min hemsida</h1>
+            <p>Välkommen!</p>
           </body>
         </html>
     "#;
 
-    // Konvertera HTML-kod till Rusts selektortyp
-    let document = Html::parse_document(html_doc);
+    let document = Html::parse_document(html);
+    let title_selector = Selector::parse("title").unwrap();
 
-    // Använd selector-funktion för att välja den del av koden du vill extrahera
-    let h1_selector = Selector::parse("h1").unwrap();
-
-    // Iterera över alla valda element och skriv ut dess text
-    for h1 in document.select(&h1_selector) {
-        println!("Text: {}", h1.text());
+    for title in document.select(&title_selector) {
+        println!("{}", title.text().collect::<Vec<_>>().join(""));
     }
 }
 ```
 
-Detta kodexempel ska resultera i utskriften "Text: Hej världen!", vilket visar hur man enkelt kan extrahera innehåll från HTML-kod.
+Detta kommer att skriva ut "Min hemsida" i konsolen. Du kan anpassa exemplet för att extrahera andra element på en hemsida, som länkar eller bilder.
 
 ## Djupdykning
-När du är bekväm med grundläggande kodexempel som detta kan du börja utforska fler möjligheter för att hantera och parsning av HTML genom att använda scraper-bibliotekets andra funktioner. Det finns också andra bibliotek tillgängliga som kan hjälpa till med HTML-parsning, såsom kuchiki och select. Dessa bibliotek kan ha olika funktioner och fördelar, så det är en god idé att undersöka och jämföra dem för att hitta den som passar bäst för dina behov.
+
+För mer avancerade användningsområden, kan du också utforska andra bibliotek för att analysera HTML i Rust. Några populära alternativ är "html5ever" och "kuchiki". Dessa bibliotek har fler funktioner och kan vara mer lämpliga för professionella projekt. Du kanske också vill titta på hur man använder CSS-väljare för att lättare hitta specifika element på en sida.
 
 ## Se även
-- [Scraper dokumentation] (https://docs.rs/scraper/0.9.0/scraper/)
-- [Kuchiki dokumentation] (https://docs.rs/kuchiki/0.7.0/kuchiki/)
-- [Select dokumentation] (https://docs.rs/select/0.3.0/select/)
+
+- [scraper dokumentation](https://docs.rs/scraper/0.13.0/scraper/)
+- [html5ever dokumentation](https://docs.rs/html5ever/0.24.0/html5ever/)
+- [kuchiki dokumentation](https://docs.rs/kuchiki/0.9.0/kuchiki/)

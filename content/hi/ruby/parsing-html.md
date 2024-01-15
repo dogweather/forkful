@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Html को विश्लेषित करना"
-simple_title:         "Html को विश्लेषित करना"
+title:                "एचटीएमएल का अनुवाद करना"
+html_title:           "Ruby: एचटीएमएल का अनुवाद करना"
+simple_title:         "एचटीएमएल का अनुवाद करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## हमें क्यों पार्सिंग HTML करना चाहिए?
 
-एचटीएमएल को पार्स करने का काम बहुत उपयोगी हो सकता है, जैसे कि डेटा साइंटिस्ट्स और डेवलपर्स वेब स्क्रैपिंग के लिए इस्तेमाल करते हैं।
+HTML प्रोग्रामिंग में बहुत महत्वपूर्ण है क्योंकि यह वेब पेज का स्ट्रक्चर और दिखाने का तरीका बताता है। पार्सिंग HTML समझने के लिए, आपको अपनी वेब साइट पर जाने की आवश्यकता होती है और उस पर सामग्री को समझने के लिए आपको इसे पहचानना चाहिए।
 
 ## कैसे करें
 
-```Ruby
-# एचटीएमएल पार्सिंग कोड का उदाहरण
+``` Ruby
 require 'nokogiri'
 require 'open-uri'
 
-page = Nokogiri::HTML(open("https://example.com"))
+url = "https://www.example.com"
+data = Nokogiri::HTML(open(url))
 
-# CSS सेलेक्टर के माध्यम से एलिमैंट्स को लोकेट करें
-page.css('h1').each do |element|
-  puts element.text
-end
+puts data.title
+puts data.css("h1").text
 ```
 
-इस उदाहरण में, हमने Nokogiri और open-uri जैसे गेमस इन रेल जूल्स का उपयोग करके एचटीएमएल से पाठ को आसानी से परस करके हमनेai
+इस कोड से, आप वेब साइट के दृश्यमान संचार को पढ़ सकते हैं, जैसे कि शीर्षक और शीर्षक 1 का पाठ। इस तरह से, आप इस के साथ और अधिक एक वेब साइट के विभिन्न भाग डाल सकते हैं और उससे संग्रहकों की खोज और विवरण प्राप्त कर सकते हैं।
 
-## गहराई में लिखते हैं
+## गहराई में जाओ
 
-एचटीएमएल का पार्सिंग करने के लिए और भी बहुत सारे उपाय हैं, जैसे कि डोक्यूमेंट डोमेन कहा से हम CSS या XPath सेलेक्टर इस्तेमाल करके एलिमैंट्स को लोकेट कर सकते हैं। हमेशा ध्यान रखें कि एचटीएमएल को पार्स करने के लिए समय-समय पर विभिन्न टूलज और लांग्वेजेस समझना जरूरी है।
+HTML पार्सिंग के लिए, हम Nokogiri और open-uri जैसी पुस्तकालयों का उपयोग करते हैं। Nokogiri आसानी से HTML टैग को खोजने और पढ़ने की अनुमति देता है, जबकि open-uri वेब पृष्ठों को खोलकर डेटा को देर तक लाता है। आप अपनी स्क्रिप्ट को थरोलीक्स और stoleक जैसे अवतरणों के साथ अनुकूलित कर सकते हैं।
 
-## और
+## देखें भी
 
-[हमारा लिंक्स का संकलन](https://www.rubyguides.com/2018/11/parsing-html-ruby/)
-
-[Open-uri रीडमी दस्तावेज़](https://github.com/ruby/ruby/blob/ruby_2_5/lib/open-uri.rb)
-
-[Nokogiri सिक्कों पत्तियाँ](https://www.nokogiri.org/tutorials/searching_a_xml_html_document.html)
+- [Nokogiri दस्तावेज़ीकरण] (https://nokogiri.org/)
+- [एचटीएमएल बाइट एक्सपर्ट नोटेशन] (https://www.w3schools.com/html/html_entities.asp)
+- [ओपन-यूआरआई दस्तावेज़ीकरण] (https://github.com/NoamB/sorbet-open-uri#-open-uri)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Creando pruebas"
-simple_title:         "Creando pruebas"
+title:                "Redacción de pruebas"
+html_title:           "Swift: Redacción de pruebas"
+simple_title:         "Redacción de pruebas"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -9,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué escribir pruebas en Swift
+## ¿Por qué escribir pruebas en Swift?
 
-Escribir pruebas es una parte esencial del desarrollo de cualquier aplicación, y esto también aplica a Swift. Las pruebas nos permiten asegurarnos de que nuestro código funciona correctamente y que cualquier cambio que hagamos no afectará negativamente a la funcionalidad existente. Además, escribir pruebas nos ayuda a encontrar y corregir errores de manera más eficiente, lo que ahorra tiempo y evita problemas en el futuro.
+Escribir pruebas es una parte esencial del proceso de desarrollo en Swift. No solo nos ayuda a detectar errores en nuestro código, sino que también nos permite tener una mayor confianza en la calidad de nuestro trabajo. Además, escribir pruebas nos permite ahorrar tiempo a largo plazo, ya que nos ayuda a encontrar y solucionar problemas de manera más rápida y eficiente.
 
 ## Cómo escribir pruebas en Swift
 
-Para escribir pruebas en Swift, podemos utilizar el framework de pruebas integrado en Xcode. Aquí hay un ejemplo sencillo de cómo escribir una prueba para una función que suma dos números:
+Para escribir pruebas en Swift, podemos utilizar el framework XCTest incorporado en Xcode. Este framework nos permite crear y ejecutar pruebas de manera sencilla y eficiente. A continuación, se muestra un ejemplo de cómo escribir una prueba unitaria en Swift:
 
-```Swift 
-func sumar(_ a: Int, _ b: Int) -> Int {
-  return a + b
+```Swift
+// Importar XCTest framework
+import XCTest
+
+// Crear una clase para nuestras pruebas
+class MyTest: XCTestCase {
+    // Crear una función para nuestra prueba
+    func testAddNumbers() {
+        // Se espera que la suma de dos números sea igual al resultado esperado
+        XCTAssertEqual(2+2, 4, "La suma no coincide con el resultado esperado")
+    }
 }
 
-// Prueba
-func testSumar() {
-  let resultado = sumar(2, 3)
-  assert(resultado == 5)
-}
+// Ejecutar la prueba
+MyTest.defaultTestSuite.run()
 ```
 
-En este ejemplo, utilizamos la función `assert` para verificar que el resultado de nuestra función `sumar` sea igual a 5, que es el resultado esperado de sumar 2 y 3. Si la prueba falla, obtendremos un mensaje de error que nos indicará qué parte de nuestro código necesita ser revisada.
-
-Al escribir pruebas, es importante asegurarse de cubrir todos los casos posibles y tener una buena cobertura de código. Podemos utilizar diferentes técnicas como pruebas unitarias, pruebas de integración y pruebas de interfaz de usuario para lograr una buena cobertura.
+Al ejecutar esta prueba, se mostrará una salida indicando si la prueba fue exitosa o si se encontraron errores. Además, XCTFail() se puede utilizar para indicar que una prueba debe fallar en un escenario determinado.
 
 ## Profundizando en la escritura de pruebas
 
-Escribir pruebas no solo se trata de verificar el resultado de una función o un método, sino también de anticipar y prevenir posibles problemas. A veces, escribir pruebas nos obliga a analizar y entender mejor nuestro propio código y esto a su vez nos ayuda a mejorarlo. Además, el uso de pruebas en nuestro flujo de trabajo nos permite detectar fácilmente cualquier efecto secundario no deseado que pueda surgir al modificar nuestro código.
+Es importante tener en cuenta que las pruebas deben ser específicas y asegurar que cada función y método de nuestro código esté funcionando correctamente. Para lograr esto, podemos utilizar herramientas como mocks y stubs para simular ciertos escenarios y asegurarnos de que nuestro código maneje estos casos de manera adecuada.
 
-Otra ventaja de escribir pruebas es que nos permite documentar nuestro código. Al escribir pruebas, estamos describiendo cómo se supone que debe funcionar nuestro código, lo cual es muy útil para otros programadores que quieran entender y trabajar con nuestro código en el futuro.
+Además, es importante escribir pruebas para cubrir una amplia gama de escenarios, incluyendo casos límite y casos de error. Esto nos permitirá tener una mayor cobertura en nuestras pruebas y asegurarnos de que nuestro código sea robusto y estable.
 
-# Ver también
+## Ver también
 
-- [Documentación de Xcode en español](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/es-lproj/00-Introduction/Introduction.html)
-- [Tutorial de escritura de pruebas en Swift](https://www.raywenderlich.com/960290-getting-started-with-ios-unit-testing-in-swift)
-- [Guía de mejores prácticas para escribir pruebas en Swift](https://medium.com/cr8resume/take-a-step-towards-swift-ios-test-driven-development-139a7c994873)
+- [XCTest - Documentación oficial](https://developer.apple.com/documentation/xctest)
+- [Mocking en Swift](https://www.simpleswiftguide.com/mocking-in-swift/)
+- [Pruebas unitarias en Swift - Tutorial de Ray Wenderlich](https://www.raywenderlich.com/4892-unit-testing-tutorial-mocking-objects)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Arduino: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+## Por que converter uma string para minúsculas?
 
-Ao escrever códigos em Arduino, muitas vezes é necessário manipular strings, que são sequências de caracteres. Em alguns casos, é necessário converter essa string para letras minúsculas. Isso pode ser útil para fins de comparação de strings, formatação de entrada de dados ou qualquer outro caso em que é necessário que os caracteres estejam em letras minúsculas. Portanto, aprender a converter uma string para letras minúsculas é um conhecimento importante para um programador de Arduino.
+Quando trabalhamos com strings (cadeias de caracteres) em nossos programas Arduino, pode ser útil ter um método para converter todas as letras para minúsculas. Isso facilita a comparação de strings, já que letras maiúsculas e minúsculas são consideradas diferentes. Além disso, pode ser necessário converter uma string em minúsculas para garantir que ela esteja em um formato específico antes de ser enviada para outro dispositivo ou serviço.
 
-## Como fazer isso:
+## Como fazer:
 
-Para converter uma string para letras minúsculas no Arduino, precisamos usar a função `toLowerCase()`. Esta função aceita uma string como parâmetro e retorna uma nova string com todas as letras em letras minúsculas. Aqui está um exemplo de código e sua saída:
+Para converter uma string para minúsculas em um programa Arduino, podemos usar a função `toLowerCase()` da classe `String`. Veja abaixo um exemplo de como isso pode ser feito:
 
 ```Arduino
-String stringExemplo = "ARDUINO";
-String stringConvertida = stringExemplo.toLowerCase();
-Serial.println(stringConvertida); // Saída: arduino
+// Definimos uma string de exemplo
+String palavra = "ARDUINO Rocks!";
+
+// Convertemos a string para minúsculas usando toLowerCase()
+palavra.toLowerCase();
+
+// Imprimimos a string convertida
+Serial.println(palavra);
+
+// Saída: arduino rocks!
 ```
 
-Como você pode ver, a string foi convertida com sucesso para letras minúsculas.
+Note que a função `toLowerCase()` não altera a string original, mas retorna uma cópia convertida. Portanto, é importante atribuir o resultado da função a uma variável ou usar diretamente em uma operação.
 
-## Profundidade:
+## Mergulho Profundo:
 
-Agora, vamos dar uma olhada mais aprofundada em como a função `toLowerCase()` funciona por trás dos bastidores. Quando invocamos a função, um novo objeto de string é criado na memória. Em seguida, percorremos cada caractere da string original e convertemos cada caractere para sua versão em minúsculas usando a tabela ASCII. Em seguida, concatenamos esses caracteres e retornamos a nova string convertida. Isso é feito internamente pela função `toLowerCase()`, então não precisamos nos preocupar com isso.
+A função `toLowerCase()` funciona convertendo cada caractere da string individualmente utilizando a tabela ASCII. Portanto, letras maiúsculas, que têm valores numéricos diferentes das minúsculas, são facilmente convertidas para suas versões minúsculas correspondentes. No entanto, outras variações de letras, como acentos ou caracteres especiais, podem não ser convertidas corretamente pela função. Nesse caso, pode ser necessário usar uma estratégia diferente, como criar um array de mapeamento com as conversões necessárias.
 
-Além disso, é importante lembrar que a função `toLowerCase()` só converte caracteres ASCII. Caracteres que não têm um equivalente em minúsculas, como caracteres acentuados, não serão convertidos e continuarão em sua forma original.
+## Veja também:
 
-## Veja Também:
-
-Aqui estão alguns links úteis para aprender mais sobre a função `toLowerCase()` e outras funções de manipulação de strings no Arduino:
-
-- [Referência oficial da função toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-- [Tutorial sobre o uso de strings no Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
-- [Tutorial sobre a tabela ASCII](https://www.ascii-code.com/)
-
-Esperamos que este artigo tenha ajudado você a entender melhor como converter uma string para letras minúsculas no Arduino. Agora você pode usá-lo em seus projetos e scripts para manipular strings de forma eficiente. Divirta-se codificando!
+- [Documentação da função toLowerCase()](https://www.arduino.cc/reference/pt/language/variables/data-types/stringobject/tolowercase/)
+- [Página da tabela ASCII](https://pt.wikipedia.org/wiki/ASCII)

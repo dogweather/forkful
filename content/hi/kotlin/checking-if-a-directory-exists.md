@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: अगर एक निर्देशिका मौजूद है, तो कैसे जांचें?"
-simple_title:         "अगर एक निर्देशिका मौजूद है, तो कैसे जांचें?"
+title:                "डायरेक्टरी अस्तित्व की जांच करें"
+html_title:           "Kotlin: डायरेक्टरी अस्तित्व की जांच करें"
+simple_title:         "डायरेक्टरी अस्तित्व की जांच करें"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों 
+किसी ने चेक करने का काम क्यों किया जाएगा कि क्या डायरेक्टरी मौजूद है। यदि आप अपने कोड में फ़ॉल्स उदाहरण से बचना चाहते हैं या नए फ़ोल्डर बनाने से पहले मौजूदा फ़ोल्डरों की जाँच करना चाहते हैं।
 
-Kisi bhi vyakti ko directory ke maudrikshan ke baare mein jaanana bahut mahatvapurna hai, khas kar jab ve koi naya karyakram likh rahe hote hain. Directory ka maujood hona bahut hi mahatvapurna hota hai kyonki iske na hone par, karyakram jari rakhane se pahale vaah, error ka samaana kar sakta hai. Isliye directory ke maujood hona ka jaanana bahut hi mahatvapurna hai.
-
-## Kaise Kare
+## कैसे करें 
+कोटलिन में फ़ोल्डर की उपस्थिति की जांच करना बहुत आसान है। नीचे उदाहरण में, हम प्रथम अपने फ़ोल्डर को निर्दिष्ट करते हैं और फिर `exists()` विधि का उपयोग करके उसे जांचते हैं। यदि फ़ोल्डर मौजूद है, तो अपने कोड में आगे बढ़ सकते हैं।
 
 ```Kotlin
-import java.io.File
-
-fun main(args: Array<String>) {
-    val directory = File("Example/Directory")
-    if(directory.isDirectory){
-        println("Directory is present.")
-    }else{
-        println("Directory does not exist.")
-    }
+val folder = File("/path/to/folder")
+if (folder.exists()) {
+    // perform operations on existing folder
+} else {
+    // create new folder
 }
 ```
 
-`isDirectory` prakriya, directory mein chal rahi spardha ke karyakram mein bahut hi mahatvapurna hai. Yah upayokta ko goshana karne ki anumati deta hai ki directory maujood hai ya nahin. Ismein, `File` jaruri hota hai jiske madad se karyakram directory ke path ko shaamil kar deta hai. Iske baad, `isDirectory` ka upayog karyakram mein kiya jaata hai jisse pata chalta hai ki directory maujood hai ya nahin. Agar directory maujood hai, toh "Directory is present." ka output prastaavit karta hai. Lekin agar directory maujood nahin hai, toh "Directory does not exist." ka output prastaavit karta hai.
+अगर आप सिर्फ फ़ोल्डर के नाम की जाँच करना चाहते हैं, तो आप `isDirectory()` का उपयोग कर सकते हैं। यदि वह फ़ोल्डर है, तो सक्रिय कार्यों को जारी रखने के लिए `directory` रूप में उसे उपयोग किया जा सकता है।
 
-## Gahraai Mein Jaayein
+```Kotlin
+val folder = File("/path/to/folder")
+if (folder.isDirectory()) {
+    val directory = folder
+    // perform operations on existing directory
+} else {
+    // create new folder
+}
+```
 
-Directory ke maujood hona ka jaanana jindagi bhar kaam mein upyogi hota hai, khaaskar jab aap kisi naye karyakram ko likh rahe hote hain. Is prakriya mein, `File` ka upayog karyakram ke liye directory ke path ko bhejne ke liye kiya jaata hai. Phir, `isDirectory` ka upayog directory ke maujood hona ka pata lagane ke liye kiya jaata hai. Is tarike se, directory ke maujood na hona se judee saaree samasyaen is prakriya se door ho jaati hain.
-
-## Dekhein Bhi
-
-- [Java Tutorial: Checking if a Directory Exists](https://www.tutorialspoint.com/java/io/file_exists.htm)
-- [Kotlin Tutorial: File Handling](https://www.javatpoint.com/kotlin-file-handling)
-- [GeeksforGeeks: Checking if a Directory Exists in Kotlin](https://www.geeksforgeeks.org/checking-existence-of-a-directory-in-kotlin/)
+## गहराई से जाँच
+रफ़्तार से फ़ोल्डर की उपस्थिति की जाँच करना अपने योग्यों में काफ़ी सदन्द नहीं है। असली अंतर `exists()` और `isDirectory()` विधियों में यह है कि `exists()` में आप सिर्फ एक वेरीफ़ाय कर रहे हैं कि क्या फ़ोल्डर मौजूद है, जबकि `isDirectory()` में आप वास्तव में कंक्रीट फ़ोल्डर की उपस्थिति की जाँच कर रहे हैं। इसलिए, समझना क

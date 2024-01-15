@@ -1,6 +1,7 @@
 ---
-title:                "Python: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "하위 문자열 추출하기"
+html_title:           "Python: 하위 문자열 추출하기"
+simple_title:         "하위 문자열 추출하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,33 +11,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-문자열에서 부분 문자열을 추출하는 일은 프로그래밍에서 매우 일반적인 작업 중 하나입니다. 이를 통해 우리는 특정 문자열에서 원하는 정보를 추출하고 다양한 작업에 활용할 수 있습니다.
 
-## 추출 방법
-문자열에서 부분 문자열을 추출하는 방법은 간단합니다. 먼저 `[]`를 사용하여 추출하려는 부분 문자열의 시작과 끝 인덱스를 지정해야 합니다. 아래는 파이썬으로 문자열에서 부분 문자열을 추출하는 예시입니다.
+문자열의 길이가 긴 경우 전체 문자열을 다루는 것은 매우 어렵기 때문에, 문자열에서 원하는 부분만 추출하는 것이 유용합니다.
+
+## 하면서 배우는 방법
+
+### 기본적인 Substring 추출 방법
 
 ```Python
-example_string = "안녕하세요! 저는 파이썬을 배우고 있어요."
-# "파이썬"이라는 부분 문자열 추출
-substring = example_string[9:12]
-# 출력: 파이썬
+string = "오늘은 파이썬을 배우는 날입니다."
+substring = string[3:9]
+
 print(substring)
 ```
 
-위 코드에서 `example_string` 변수에 문자열을 저장하고, `substring` 변수에는 `[9:12]`를 사용하여 "파이썬"이라는 부분 문자열을 추출했습니다. 문자열의 인덱스는 0부터 시작하기 때문에 `"파이썬"`이 시작하는 위치의 인덱스는 9이고, 끝나는 위치의 인덱스는 12 전인 11이 됩니다. 따라서 `[9:12]`를 사용하여 문자열의 9번째에서 11번째까지의 문자를 추출하였습니다.
+결과:
 
-이외에도 파이썬의 내장 함수인 `find()`, `split()` 등을 활용하여 부분 문자열을 추출할 수 있으니, 상황에 맞게 필요한 방법을 찾아 사용하시면 됩니다.
+```
+파이썬을
+```
 
-## 깊게 파고들기
-부분 문자열을 추출하는 과정에서 우리에게 가장 중요한 것은 인덱스를 제대로 사용하는 것입니다. 인덱스의 시작은 항상 0이며, 끝 인덱스는 실제 추출하고자 하는 문자열의 마지막 인덱스보다 1 작아야 합니다. 또한 해당 문자열의 길이를 초과하는 인덱스를 지정할 경우 오류가 발생하니 주의해야 합니다.
+위의 예시에서 `string` 변수는 추출하고자 하는 부분이 포함된 전체 문자열을 나타냅니다. `substring` 변수에는 전체 문자열에서 추출하고 싶은 부분의 시작 인덱스와 끝 인덱스를 지정해줍니다. 그리고 `print` 함수를 통해 `substring` 변수를 출력하면, 원하는 부분만 추출할 수 있습니다.
 
-참고로 파이썬에서는 인덱스를 음수로 지정할 수도 있습니다. `-1`은 마지막 문자를 의미하고, `-2`는 마지막에서 두번째 문자를 의미합니다. 따라서 문자열 끝부터 추출하고 싶을 때 `-n` 형태의 인덱스를 사용하시면 됩니다.
+### 부분 문자열 추출 및 합치기
 
-## 더 알아보기
-문자열에서 부분 문자열을 추출하는 방법에 대해 더 알아보고 싶으시다면 아래 링크들을 확인해보세요.
+```Python
+string = "Hi, my name is Python."
+greeting = string[:3]
+name = string[3:19]
+language = string[19:]
 
-- [파이썬 공식 문서 - Sequence Types](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)  
-- [Tutorialspoint - Python String Slicing](https://www.tutorialspoint.com/python/string_slice.htm)  
+print("안녕하세요!" + greeting + "저의 이름은 " + name + "입니다. " + language + "를 배우는 것을 즐기고 있습니다.")
+```
 
-# 또 다른 정보
-- ["제목 없음" 블로그 - 파이썬에서 문자열 슬라이싱 이해하기](https://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=221218851517)
+결과:
+
+```
+안녕하세요!Hi, 저의 이름은 my name is 입니다. Python.를 배우는 것을 즐기고 있습니다.
+```
+
+위의 예시에서 각각의 부분 문자열을 추출하고 나서 다시 합쳐서 출력하는 방법을 알 수 있습니다. 이렇게 하면 원하는 부분만 쉽게 추출하고 더 많은 처리를 할 수 있습니다.
+
+## 더 깊게 알아보기
+
+### 문자열 인덱싱과 슬라이싱
+
+파이썬에서 문자열은 배열과 비슷하게 저장되기 때문에, 문자열의 각 문자는 인덱스를 통해 접근할 수 있습니다. 이때 인덱스는 0부터 시작하며, 대괄호 안에 인덱스를 입력하면 해당 문자에 접근할 수 있습니다.
+
+문자열 인덱싱 예시:
+
+```Python
+string = "Python"
+print(string[0])
+```
+
+결과:
+
+```
+P
+```
+
+슬라이싱은 인덱싱과 비슷하지만, `:`를 이용하여 시작 인덱스와 끝 인덱스를 지정합니다. 끝 인덱스는 실제로 추출하고 싶은 부분 전까지의 인덱스를 의미합니다.
+
+문자열 슬라이싱 예시:
+
+```Python
+string = "Python"
+print(string[0:4])
+```
+
+결과:
+
+```
+Pyth
+```
+
+### 다른 Substring 처리 방법
+
+위에서는 문자열을 인덱싱하고 슬라이싱함으로써 부분 문자열을 추출하는 방법을 알아보았습니다. 하지만 파이썬에서는 `split()` 메소드와 정규표현식을 활용하여 더 다양한 방법으로 문자열을 처리할 수 있습니다.
+
+`split()` 메소드는 문자열을 특정 구분자를 기준으로 나누어서 리스트로 반환해줍니다. 정규표현식은 복잡한 규칙에 따라 문자열을 추출하고 처리하는 방법입니다.
+
+더 자세한 내용은 아래의 "참고 자료"를 확인해보세요!
+
+## 참고 자료
+
+- [GeeksforGeeks: String manipulation in Python](https://www.geeksforgeeks.org/string-manipulation-python-set-1/)
+- [Real Python: Working with Strings in Python](https://realpython.com/python-strings/)
+- [W3Schools: Python Strings](https://

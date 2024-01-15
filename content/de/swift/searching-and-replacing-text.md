@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Suchen und Ersetzen von Text"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Swift: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man sich mit der Suche und dem Austausch von Texten beschäftigen? Ein häufiger Anwendungsfall ist die Aktualisierung oder Korrektur von großen Textmengen, beispielsweise bei der Erstellung von Webseiten oder beim Bearbeiten von Computerdateien.
 
-Wer sich mit der Programmiersprache Swift beschäftigt, wird schnell merken, dass das Suchen und Ersetzen von Text ein wichtiger Bestandteil der Entwicklung ist. Durch das einfache Ersetzen von bestimmten Textstellen können Fehler behoben und Code optimiert werden.
-
-## How To
-
-Um Text in Swift zu suchen und zu ersetzen, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der `replacingOccurrences(of:with:)` Methode. Hier ein Beispiel:
+## Wie
+Um einen Text in Swift zu suchen und zu ersetzen, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der `replacingOccurrences(of:with:)` Funktion. Hierbei wird der zu ersetzende Text als erster Parameter angegeben und der neue Text als zweiter Parameter. Beispiel:
 
 ```Swift
-let text = "Mein Name ist Maria."
-let newText = text.replacingOccurrences(of: "Maria", with: "Anna")
-print(newText)
+let text = "Hallo, mein Name ist John."
+let newText = text.replacingOccurrences(of: "John", with: "Max")
+print(newText) // Ausgabe: Hallo, mein Name ist Max.
 ```
 
-Dies gibt als Output "Mein Name ist Anna." aus. Die Methode ersetzt hier den Text "Maria" mit "Anna". 
+Eine andere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der `NSRegularExpression` Klasse. Diese erfordert etwas mehr Kenntnisse, kann jedoch auch komplexere Suchmuster abdecken. Beispiel:
 
-## Deep Dive
+```Swift
+let text = "Ich habe heute 123€ ausgegeben."
+let regex = try! NSRegularExpression(pattern: "[0-9]+€")
+let newText = regex.stringByReplacingMatches(in: text, options: [], range: NSRange(text.startIndex..., in: text), withTemplate: "50€")
+print(newText) // Ausgabe: Ich habe heute 50€ ausgegeben.
+```
 
-Die `replacingOccurrences(of:with:)` Methode ermöglicht es, nicht nur einzelne Textstellen zu ersetzen, sondern auch mehrere. Beispielsweise können auch alle Vorkommen eines bestimmten Wortes in einem String gleichzeitig ersetzt werden. Zudem ist die Methode in der Lage, Groß- und Kleinschreibung zu ignorieren und auch mit regulären Ausdrücken zu arbeiten.
+## Tiefergehender Einblick
+Bei der Suche und dem Austausch von Texten ist es wichtig, auf Details wie Groß- und Kleinschreibung, Akzente und Sonderzeichen zu achten. Die `replacingOccurrences(of:with:)` Funktion bietet hierfür die Option `options`, welche mit `caseInsensitive` und `diacriticInsensitive` den Suchvorgang vereinfachen können.
+
+Für fortgeschrittenere Fälle kann auch die `mutableString` Methode der `NSMutableString` Klasse verwendet werden, um den Text direkt zu manipulieren. Dies bietet mehr Flexibilität, erfordert jedoch auch mehr Aufwand.
 
 ## Siehe auch
-
-- [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID289)
-- [NSHipster: String](https://nshipster.com/string/)
-- [AppCoda: Swift String Manipulation](https://www.appcoda.com/swift-string-manipulation/)
+- [Apple Dokumentation zu `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1417174-replacingoccurrences)
+- [Apple Dokumentation zu regulären Ausdrücken](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Tutorial zu regulären Ausdrücken in Swift](https://www.tutorialspoint.com/swift/swift_regular_expressions.htm)
+- [NSRegularExpression Playground von Swift.org](https://swift.org/blog/regular-expressions/)

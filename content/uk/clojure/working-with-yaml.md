@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Робота з yaml"
+title:                "Робота з yaml"
+html_title:           "Clojure: Робота з yaml"
 simple_title:         "Робота з yaml"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Мова програмування Clojure стає все більш популярною серед розробників усього світу. Один з головних принципів Clojure - простота та лаконічність. Як результат, ця мова добре підходить для роботи з файлами у форматі YAML.
+ YAML - це формат файлу, який досить часто використовується для зберігання і обміну данними у багатьох програмах та розробці програмного забезпечення. Ця стаття допоможе вам дізнатись про базові концепції YAML та як використовувати його в своїх проектах на Clojure.
 
-## Як працювати з YAML в Clojure
+## Як
 
-Clojure має вбудовану бібліотеку для роботи з YAML - clojure.yaml. Це дозволяє легко завантажувати та зберігати дані в цьому форматі.
+Основними структурами даних у YAML є масиви, асоціативні масиви та скалярні значення. Давайте розглянемо деякі приклади використання YAML у Clojure.
 
-```Clojure
-(require '[clojure.yaml :as yaml])
-
-(def data {:language "Clojure"
-           :awesome true
-           :reasons ["simple" "concise" "functional"]})
-
-(def content (yaml/generate-string data))
-```
-
-В цьому прикладі ми створюємо змінну data з даними у форматі hash map, а потім використовуємо бібліотеку clojure.yaml для їх конвертації у рядок. Надалі цей рядок можна зберегти у файл або передати у вигляді вихідних даних.
+### Створення асоціативного масиву:
 
 ```Clojure
-(def parsed-data (yaml/parse-string content))
-=> {:language "Clojure", :awesome true, :reasons ["simple" "concise" "functional"]}
+;; Використовуємо конструктор "hash-map" для створення асоціативного масиву
+(def my-map (hash-map :key1 "значення1" :key2 "значення2"))
 ```
 
-За допомогою функції parse-string ми можемо отримати структуру даних з рядка YAML. Також можна використовувати функції load для завантаження даних з файлу або parse для роботи з рядком у форматі YAML.
+### Додавання нового елементу до асоціативного масиву:
 
-## Поглиблене вивчення
+```Clojure
+;; Використовуємо функцію "assoc" для додавання нового елементу до масиву
+(assoc my-map :key3 "значення3")
+```
 
-YAML - це формат даних, який використовує звертання та дуже схожий на JSON. Він дуже зручний для зберігання та передачі структурованих даних. Для більш поглибленого вивчення рекомендуємо ознайомитися з офіційною документацією по бібліотеці clojure.yaml та документацією по YAML.
+### Отримання значення за ключем:
 
-## Дивись також
+```Clojure
+;; Використовуємо функцію "get" для отримання значення за ключем
+(get my-map :key2)
+```
 
-- [Офіційна документація clojure.yaml](https://clojure.github.io/clojure/clojure.yaml-api.html)
-- [Офіційна документація YAML](https://yaml.org/)
-- [Примери роботи з YAML в Clojure](https://github.com/yaml/yaml-clojure/tree/master/examples)
+### Перетворення YAML у структури даних Clojure:
+
+```Clojure
+;; Використовуємо бібліотеку "cheshire" для перетворення YAML у структури даних Clojure
+(require '[cheshire.core :as json])
+
+(-> "my_yaml_file.yaml"
+    slurp
+    (json/parse-string :key-fn keyword))
+```
+
+## Глибше
+
+YAML - це розширений формат для структурування та зберігання даних у зручному для читання та редагування вигляді. Детальніше про його синтаксис можна дізнатись у [офіційній документації](https://yaml.org/spec/1.2/spec.html). Також, у Clojure є багато інших бібліотек для роботи з YAML, наприклад [data.yaml](https://github.com/yogthos/data.yaml) та [yaml-clojure](https://github.com/lrhn/yaml-clojure).
+
+## Дивіться також
+
+[Офіційна документація Clojure](https://clojure.org/documentation)
+
+[Clojure Cookbook: Serializing Data to and from YAML](https://clojure.org/cookbook/serialization/yaml)

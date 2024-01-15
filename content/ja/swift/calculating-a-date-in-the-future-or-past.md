@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 将来または過去の日付の計算"
-simple_title:         "将来または過去の日付の計算"
+title:                "未来や過去の日付計算"
+html_title:           "Swift: 未来や過去の日付計算"
+simple_title:         "未来や過去の日付計算"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,44 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+## Why (なぜ)
 
-日付を計算するのになぜ時間を費やすのでしょうか？簡単に言うと、人々は過去や未来の特定の日付を知りたいと思うことがあります。例えば、誕生日や記念日の計画を立てるため、特定の日付に何週間後が何月か知りたいと思うかもしれません。Swiftでは、日付の計算を非常に簡単にする方法があります。
+計算された日付を未来や過去に移すことに関心を持つ理由は様々です。例えば、特定のイベント日付を把握したい、タスクの期限を設定したい、あるいは取引の有効期限を計算したいなどが挙げられます。
 
-##How To
+## How To (方法)
 
-まず、日付を計算するには、FoundationフレームワークからDateクラスをインポートする必要があります。その後、Dateオブジェクトを作成し、DateクラスのメソッドであるaddingTimeIntervalを使用して、過去や未来の特定の日数を追加することができます。例えば、今日の日付から3日後の日付を計算するには、以下のようなコードを記述します。
+まず、```Date```オブジェクトを作成します。それから、```Calendar```クラスを使用して、未来や過去の日付を計算することができます。以下に例を示します。
 
 ```
-Swift
-import Foundation
+// カレンダーを作成
+let calendar = Calendar.current
 
+// 今日の日付を取得
 let today = Date()
-let futureDate = today.addingTimeInterval(3 * 24 * 60 * 60) // 3日後を計算
-print(futureDate) // 結果例：2019-04-04 01:23:45 +0000
+
+// 1年後の日付を計算
+let oneYearFromNow = calendar.date(byAdding: .year, value: 1, to: today)!
 ```
 
-24 * 60 * 60は1日の秒数を表しているため、3を掛けることで3日後を表すことができます。
+このコードでは、```date(byAdding:to:)```メソッドを使用して、現在の日付から1年後の日付を計算しています。計算した日付はオプショナル型なので、```!```を使用してアンラップしています。
 
-同様に、過去の日付を計算することもできます。例えば、1か月前の日付を計算するには、マイナスの値を使用します。
+同様に、過去の日付を計算することもできます。例えば、5年前の日付を計算するコードは以下のようになります。
 
 ```
-Swift
-let pastDate = today.addingTimeInterval(-30 * 24 * 60 * 60) // 1か月前を計算
-print(pastDate) // 結果例：2019-02-31 01:23:45 +0000
+// 5年前の日付を計算
+let fiveYearsAgo = calendar.date(byAdding: .year, value: -5, to: today)!
 ```
 
-上記のコードでは、addigTimeIntervalメソッドの引数に-30を指定しています。これにより、現在の日付から1か月前を計算することができます。
+さらに、```Calendar```クラスの```dateComponents(_:from:to:)```メソッドを使用すると、指定した日付間の間隔を計算することができます。例えば、2つの日付の間の年数を計算するコードは以下のようになります。
 
-##Deep Dive
+```
+// 日付を指定
+let startDate = calendar.date(from: DateComponents(year: 2010, month: 1, day: 1))!
+let endDate = calendar.date(from: DateComponents(year: 2020, month: 1, day: 1))!
 
-Dateクラスには、日付を計算するためのさまざまなメソッドがあります。先ほど使用したaddingTimeIntervalのほかにも、addingDays、addingMonths、addingYearsなどのメソッドがあります。これらのメソッドを使用すると、日付の加算だけでなく、減算も簡単に行うことができます。
+// 年数を計算
+let years = calendar.dateComponents([.year], from: startDate, to: endDate).year!
+```
 
-さらに、DateIntervalクラスを使用すると、2つの日付の間の差を計算することも可能です。これを利用することで、日付の比較を行い、過去や未来の日付を特定することができます。
+この例では、```startDate```と```endDate```の間の年数を計算しています。```dateComponents(_:from:to:)```メソッドは```DateComponent```型を返すので、必要な間隔だけを選択して使用します。この場合、```year```を指定しているので、結果も```year```の数値となります。
 
-詳細な情報やサンプルコードは、公式のドキュメントを参照することができます。
+## Deep Dive (詳細)
 
-##See Also
+日付の計算は、開発者にとって非常に重要な機能です。特に、取引やタスクの有効期限など、日付が重要な役割を果たす場合は、正確に計算する必要があります。
 
-- [Date Class | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
-- [Date Interval Class | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateinterval)
+Swiftでは、```Calendar```クラスを使用して日付の計算を行うことができます。このクラスには、多くの便利なメソッドが用意されており、様々な日付計算を行うことができます。
+
+また、日時の処理をする際には、時間帯やロケールにも注意する必要があります。```DateFormatter```クラスを使用することで、指定されたロケールや時間帯に合わせて日時を表示することができます。
+
+## See Also (関連リンク)
+
+- [Swift 公式ドキュメント](https://developer.apple.com/documentation/swift)
+- [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i)

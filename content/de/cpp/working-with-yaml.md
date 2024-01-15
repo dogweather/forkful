@@ -1,6 +1,7 @@
 ---
-title:                "C++: Arbeiten mit yaml"
-simple_title:         "Arbeiten mit yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "C++: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -9,63 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
+Willst du deine Daten in einem menschenlesbaren Format speichern? YAML ist eine großartige Option für die Speicherung von strukturierten Daten. Es ist einfach zu lesen und zu schreiben, was es ideal für die Verwendung in kleinen Projekten macht.
 
-Warum sollte man sich mit YAML beschäftigen? YAML ist eine einfache und intuitive Möglichkeit, Daten in einem strukturierten Format zu speichern. Es kann in verschiedenen Programmiersprachen verwendet werden und ist besonders nützlich für die Speicherung von Konfigurationsdateien.
-
-## Wie man es macht
-Das Arbeiten mit YAML in C++ ist einfach und unkompliziert. Zunächst müssen wir die Bibliothek "yaml-cpp" installieren, die uns ermöglicht, YAML-Dateien zu lesen und zu schreiben. Schauen wir uns ein Beispiel an:
-
-```C++
-#include <yaml-cpp/yaml.h>
-#include <iostream>
-
-int main() {
-  // Eine YAML-Datei wird gelesen
-  YAML::Node config = YAML::LoadFile("meineconfig.yaml");
-
-  // Zugriff auf den Wert eines Schlüssels
-  std::cout << config["benutzername"].as<std::string>() << "\n";
-
-  // Erstellen einer neuen YAML-Datei
-  YAML::Emitter out;
-  out << YAML::BeginMap;
-  out << YAML::Key << "server";
-  out << YAML::Value << "localhost";
-  out << YAML::EndMap;
-
-  // Die Datei wird geschrieben
-  std::ofstream("neueconfig.yaml") << out.c_str();
-
-  return 0;
-}
-```
-
-Die Ausgabe für die Beispiel-YAML-Datei "meineconfig.yaml" könnte so aussehen:
-
-```yaml
-benutzername: Max
-passwort: geheim
-server:
-  host: example.com
-  port: 8080
-```
-
-Und dies wäre die Ausgabe für die neu erstellte YAML-Datei "neueconfig.yaml":
-
-```yaml
-server: localhost
-```
-
-## Tiefer ins Detail gehen
-YAML bietet verschiedene Datentypen wie Strings, Zahlen, Arrays und Maps. Auch verschachtelte Strukturen sind möglich. Um beispielsweise auf den Port des Servers in der YAML-Datei "meineconfig.yaml" zuzugreifen, könnten wir folgenden Code verwenden:
+## Wie Geht's
+Um mit YAML in C++ zu arbeiten, müssen Sie zunächst die Bibliothek "yaml-cpp" installieren. Dann können Sie mit dem Speichern und Lesen von YAML-Daten in Ihrem Code beginnen.
 
 ```C++
-int port = config["server"]["port"].as<int>();
+// Beispiel für das Schreiben von YAML-Daten in eine Datei
+YAML::Emitter emitter;
+emitter << YAML::BeginMap;
+emitter << YAML::Key << "Name" << YAML::Value << "Max Mustermann";
+emitter << YAML::Key << "Alter" << YAML::Value << 25;
+emitter << YAML::EndMap;
+
+// Beispiel für das Lesen von YAML-Daten aus einer Datei
+YAML::Node data = YAML::LoadFile("daten.yaml");
+std::string name = data["Name"].as<std::string>();
+int alter = data["Alter"].as<int>();
+
+std::cout << "Name: " << name << std::endl;
+std::cout << "Alter: " << alter << std::endl;
 ```
 
-Es ist außerdem möglich, benutzerdefinierte Datentypen in YAML zu definieren, indem man sie serialisiert und deserialisiert. YAML-Dateien sind auch gut lesbar für Menschen, was sie zu einer guten Wahl für Konfigurationsdateien macht.
+## Tiefergehende Informationen
+YAML (eine Abkürzung für "YAML Ain't Markup Language") ist eine einfache und menschenlesbare Sprache zum Speichern von Daten. Es ähnelt stark dem beliebten JSON-Format, aber YAML ist noch einfacher zu lesen und zu schreiben. Es verwendet Einrückungen und Leerzeichen, um die Struktur von Daten darzustellen, was es besonders lesbar macht.
 
-## Siehe auch
-- Weitere Informationen über YAML: https://yaml.org/
-- Die offizielle Dokumentation von yaml-cpp: https://github.com/jbeder/yaml-cpp/blob/master/doc/README.md
+Eine weitere interessante Funktion von YAML ist die Möglichkeit, Anker und Alias zu verwenden, um Duplikate von Daten zu vermeiden. Dies ist besonders nützlich, wenn Sie komplexe Datenstrukturen mit wiederkehrenden Elementen haben.
+
+Kommentare sind ebenfalls möglich, indem Sie die Raute (#) verwenden. Dadurch können Sie Ihre YAML-Dateien annotieren und erklären.
+
+## Siehe Auch
+- [yaml-cpp GitHub Repository](https://github.com/jbeder/yaml-cpp)
+- [YAML 1.2 Spezifikation](https://yaml.org/spec/1.2/spec.html) 
+- [YAML Tutorial von TutorialsPoint](https://www.tutorialspoint.com/yaml/)

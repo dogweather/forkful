@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Extraction de sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Elixir: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,37 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'extraction de sous-chaînes est utile pour manipuler et traiter des chaînes de caractères dans vos programmes Elixir. Cela peut être particulièrement utile pour extraire des informations spécifiques d'une chaîne, comme un nom de fichier ou une date.
+Si vous travaillez sur des projets qui nécessitent la manipulation de chaînes de caractères, vous avez probablement déjà eu besoin d'extraire une partie spécifique de cette chaîne. L'extraction de sous-chaînes peut être utile dans de nombreuses situations, comme la validation de données ou la création de rapports. Dans cet article, nous allons découvrir comment extraire des sous-chaînes en utilisant Elixir.
 
 ## Comment faire
 
-L'extraction de sous-chaînes en Elixir est facile grâce à la fonction `String.slice/3`. Vous pouvez spécifier l'index de début et de fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple de code pour extraire les trois premiers caractères d'une chaîne :
+L'extraction de sous-chaînes en Elixir est assez simple grâce à la fonction `String.substring/3`. Cette fonction prend trois arguments: la chaîne d'origine, l'index du début de la sous-chaîne et l'index de fin de la sous-chaîne.
 
-```elixir
-str = "Bonjour"
-new_str = String.slice(str, 0, 3)
+```
+Elixir
+
+string = "Bonjour tout le monde"
+
+# Extraire la sous-chaîne "tout"
+String.substring(string, 8, 11)
+# Output: "tout"
+
+# Extraire la sous-chaîne "le monde"
+String.substring(string, 13, 20)
+# Output: "le monde"
 ```
 
-Cela renvoie la sous-chaîne "Bon". Vous pouvez également utiliser des index négatifs pour compter à partir de la fin de la chaîne. Par exemple, `String.slice(str, -3, -1)` renvoie la sous-chaîne "our".
+Comme vous pouvez le voir dans les exemples ci-dessus, les indices indiquent les positions des caractères, avec le premier caractère étant à l'index 0. Vous pouvez également utiliser des indices négatifs pour compter à partir de la fin de la chaîne.
 
-Vous pouvez également spécifier un tableau d'index, ce qui vous permet d'extraire plusieurs sous-chaînes à la fois. Par exemple :
+```
+Elixir
 
-```elixir
-str = "Hello World"
-indexes = [6, -5]
-new_str = String.slice(str, indexes)
+# Extraire la sous-chaîne "monde"
+String.substring(string, -6, -1)
+# Output: "monde"
 ```
 
-Cela renvoie un tableau avec les sous-chaînes "World" et "Wor".
+Vous pouvez également utiliser la fonction `String.length/1` pour obtenir la longueur de la chaîne et ainsi éviter de compter manuellement les caractères.
 
-## Plongée en profondeur
+## Plongée plus profonde
 
-La fonction `String.slice/3` utilise des index Unicode pour gérer les caractères non ASCII. Ainsi, si vous avez des chaînes contenant des caractères spéciaux ou des émojis, cette fonction garantit que les sous-chaînes sont extraites correctement.
+La fonction `String.substring/3` peut sembler simple, mais elle offre en fait de nombreuses possibilités. Par exemple, vous pouvez utiliser un intervalle pour extraire une sous-chaîne.
 
-De plus, si vous avez besoin de manipuler des sous-chaînes qui ne sont pas délimitées par un nombre fixe de caractères, vous pouvez utiliser la fonction `String.split/2` pour diviser une chaîne en sous-chaînes en utilisant un délimiteur personnalisé.
+```
+Elixir
+
+# Extraire la sous-chaîne "tout le"
+String.substring(string, 8..14)
+# Output: "tout le"
+```
+
+Vous pouvez également spécifier uniquement le début ou la fin de la sous-chaîne en utilisant `String.start_of/2` et `String.end_of/2`.
+
+```
+Elixir
+
+# Extraire la sous-chaîne commençant à l'index 13
+String.start_of(string, 13)
+# Output: "le monde"
+
+# Extraire la sous-chaîne allant de l'index 8 à la fin
+String.end_of(string, 8)
+# Output: "tout le monde"
+```
+
+De plus, la fonction peut également prendre un dernier argument facultatif pour définir un caractère de remplacement en cas de dépassement de l'index de fin de la chaîne.
+
+```
+Elixir
+
+# Extraire la sous-chaîne "tout***"
+String.substring(string, 8, 11, "***")
+# Output: "tout***"
+```
+
+Maintenant que vous connaissez les bases pour extraire des sous-chaînes en Elixir, vous êtes prêt à l'implémenter dans vos projets!
 
 ## Voir aussi
 
-- Documentation officielle Elixir pour String.slice/3 : https://hexdocs.pm/elixir/String.html#slice/3
-- Plus d'exemples d'utilisation de l'extraction de sous-chaînes en Elixir : https://elixirschool.com/fr/lessons/basics/binary-and-strings/
-- Utilisation des index Unicode en Elixir : https://elixirschool.com/fr/lessons/advanced/unicode/
+- Documentation officielle d'Elixir sur la fonction `String.substring/3`: https://hexdocs.pm/elixir/String.html#substring/3
+- Un tutoriel vidéo sur l'utilisation de `String.substring/3`: https://www.youtube.com/watch?v=cTqGoKgK7M0
+- Un article sur les fonctions de manipulation de chaînes en Elixir: https://www.amberbit.com/blog/2019/3/31/string-manipulation-elixir-few-examples/

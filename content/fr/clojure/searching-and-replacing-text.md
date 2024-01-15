@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Rechercher et remplacer du texte"
+title:                "Rechercher et remplacer du texte"
+html_title:           "Clojure: Rechercher et remplacer du texte"
 simple_title:         "Rechercher et remplacer du texte"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,35 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est souvent nécessaire de remplacer rapidement et efficacement du texte dans un programme pour différentes raisons telles que la correction d'erreurs ou la mise à jour de code. Heureusement, Clojure offre des outils puissants pour effectuer cette tâche de manière efficace et rapide.
+Si vous êtes un développeur ou un programmeur, vous savez que le traitement de texte est un élément clé de la programmation quotidienne. Que vous travailliez sur un projet personnel ou professionnel, il est souvent nécessaire de rechercher et de remplacer du texte pour effectuer des modifications ou optimiser votre code. Heureusement, Clojure offre des outils puissants pour gérer ces tâches de manière efficace et simple.
 
 ## Comment faire
 
-La fonction clé pour rechercher et remplacer du texte en Clojure est `clojure.string/replace`. Elle prend en paramètres une chaîne de caractères, le motif à rechercher et le motif de remplacement. Voici un exemple de code pour remplacer toutes les occurrences du mot "hello" par "bonjour" dans une chaîne de caractères :
+Pour rechercher et remplacer du texte en Clojure, vous pouvez utiliser la fonction `replace` de la bibliothèque de base `clojure.string`. Elle prend trois arguments : la chaîne de caractères d'origine, le motif à rechercher et la chaîne de remplacement.
 
-```clojure
-(clojure.string/replace "hello world!" "hello" "bonjour")
+```
+(require '[clojure.string :as str])
+
+(str/replace "Bonjour le monde!" "le monde" "toi")
+;; Résultat: "Bonjour toi!"
 ```
 
-La sortie de ce code sera "bonjour world!". Vous pouvez également utiliser des expressions régulières comme motif de recherche pour une plus grande flexibilité. Par exemple, si vous voulez remplacer toutes les occurrences de nombres dans une chaîne de caractères par "*" vous pouvez utiliser le code suivant :
+Vous pouvez également utiliser des expressions régulières pour rechercher et remplacer du texte dans une chaîne de caractères en utilisant la fonction `re-find` de la bibliothèque `clojure.core`. Elle prend deux arguments : l'expression régulière et la chaîne de caractères dans laquelle rechercher.
 
-```clojure
-(clojure.string/replace "il y a 5 personnes ici" #"\d+" "*")
+```
+(require '[clojure.core :refer [re-find]])
+
+(re-find #"a[b-z]+" "Bonjour tout le monde!")
+;; Résultat: "onjour"
 ```
 
-La sortie de ce code sera "il y a * personnes ici". Vous pouvez également utiliser cette fonction pour remplacer des éléments dans une liste ou une séquence. Par exemple, si vous voulez remplacer tous les nombres impairs dans une liste par 0, vous pouvez utiliser le code suivant :
+Il est également possible de remplacer des correspondances en utilisant la fonction `repl` de la bibliothèque `clojure.core`.
 
-```clojure
-(map #(if (odd? %) 0 %) [1 2 3 4 5])
 ```
+(require '[clojure.core :refer [repl]])
 
-La sortie de ce code sera (0 2 0 4 0).
+(repl #"bonjour" "salut" "Bonjour tout le monde!")
+;; Résultat: "salut tout le monde!"
+```
 
 ## Plongée en profondeur
 
-En plus de la fonction `replace`, Clojure offre également d'autres fonctions utiles pour rechercher et remplacer du texte telles que `clojure.string/replace-first` qui ne remplace que la première occurrence, `clojure.string/replace-last` qui ne remplace que la dernière occurrence et `clojure.string/replace-nth` qui ne remplace que la n-ième occurrence. De plus, les expressions régulières en Clojure sont basées sur l'API Java, ce qui offre de nombreuses possibilités avancées pour la recherche et le remplacement de texte.
+En plus des méthodes mentionnées ci-dessus, il existe des bibliothèques tierces telles que `clojure.data.xml` et `clojure.data.json` qui offrent des fonctions spécifiques pour rechercher et remplacer du texte dans des données structurées, comme du XML et du JSON. Vous pouvez également utiliser des fonctions plus avancées comme `replace-first` et `replace-every` disponibles dans la bibliothèque `clojure.walk` pour des opérations plus complexes de recherche et de remplacement.
 
 ## Voir aussi
 
-- [Documentation officielle Clojure sur la fonction replace](https://clojuredocs.org/clojure.string/replace)
-- [Documentation Java sur les expressions régulières](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
+- [Documentation officielle de Clojure](https://clojure.org/)
+- [Guide de style de programmation en Clojure](https://github.com/bbatsov/clojure-style-guide)
+- [Clojure pour les débutants](https://clojure.org/guides/learn/syntax)

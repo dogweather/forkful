@@ -1,6 +1,7 @@
 ---
-title:                "Go: Leyendo un archivo de texto"
-simple_title:         "Leyendo un archivo de texto"
+title:                "Leyendo un archivo de texto."
+html_title:           "Go: Leyendo un archivo de texto."
+simple_title:         "Leyendo un archivo de texto."
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,51 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Muchas veces, en nuestros programas, necesitamos leer información de archivos de texto. Ya sea para procesar datos, modificar configuraciones o simplemente para mostrar información al usuario, leer un archivo de texto puede ser una tarea útil y necesaria en el mundo de la programación.
+¿Alguna vez has necesitado leer un archivo de texto en tus programas Go? Si es así, ¡has venido al lugar correcto! En este artículo, aprenderás cómo leer un archivo de texto de manera fácil y eficiente utilizando el lenguaje de programación Go.
 
-## Cómo hacerlo
+## Cómo
 
-Para leer un archivo de texto en Go, primero necesitamos abrirlo con el siguiente código:
+Para leer un archivo de texto en Go, primero necesitas abrir el archivo utilizando la función `os.Open()` y luego leer su contenido utilizando la función `bufio.NewScanner()`.
 
-```Go
-archivo, err := os.Open("archivo.txt")
+```
+file, err := os.Open("archivo.txt") // abre el archivo
 if err != nil {
-    // manejo de error
+    log.Fatal(err)
 }
-```
-Luego, podemos leer el contenido del archivo utilizando la función "Read" de la librería "bufio" y un bucle "for" para recorrer el archivo línea por línea:
 
-```Go
-scanner := bufio.NewScanner(archivo)
-for scanner.Scan() {
-    fmt.Println(scanner.Text())
+scanner := bufio.NewScanner(file) // crea un escáner para leer el archivo
+
+for scanner.Scan() { // itera sobre cada línea del archivo
+    fmt.Println(scanner.Text()) // imprime la línea actual del archivo
 }
+
 if err := scanner.Err(); err != nil {
-    // manejo de error
+    log.Fatal(err)
 }
 ```
-Este código imprimirá cada línea del archivo en la consola. Si queremos almacenar el contenido en una variable, podemos utilizar un "slice" de strings para almacenar cada línea en una posición:
 
-```Go
-var lineas []string
-scanner := bufio.NewScanner(archivo)
-for scanner.Scan() {
-    lineas = append(lineas, scanner.Text())
-}
-```
+El código anterior abre el archivo "archivo.txt" y lo lee línea por línea hasta que llega al final del archivo. Cada línea se imprime en la consola utilizando la función `fmt.Println()`.
 
 ## Profundizando
 
-Si queremos tener un control más preciso sobre la forma en que leemos el archivo de texto, podemos utilizar la función "ReadString" de la librería "bufio". Esta función nos permitirá especificar un delimitador para separar cada línea del archivo. Por ejemplo, si queremos separar las palabras de una línea utilizando espacios, podemos utilizar el delimitador " ":
+Ahora que sabes cómo leer un archivo de texto en Go, es importante entender cómo funciona este proceso en detalle. Cuando utilizamos la función `os.Open()` para abrir un archivo, el sistema operativo crea un *puntero* al archivo, lo que nos permite acceder a su contenido.
 
-```Go
-linea, err := reader.ReadString(" ")
-```
+Luego, al utilizar la función `bufio.NewScanner()`, creamos un *escáner* que nos permite leer el contenido del archivo línea por línea. El escáner también se encarga de manejar cualquier tipo de error que pueda surgir durante la lectura del archivo.
 
-Además, también podemos utilizar la función "ReadBytes" para leer el archivo en bloques de bytes en lugar de líneas completas. Esto puede ser útil para archivos con una gran cantidad de datos.
+Una vez que hayamos terminado de leer el archivo, es importante cerrarlo utilizando la función `file.Close()`. Esto liberará cualquier recurso utilizado durante la lectura del archivo y evitará posibles errores en nuestro programa.
 
 ## Ver también
 
-- Documentación oficial de funciones de lectura de archivos en Go: https://golang.org/pkg/bufio/
-- Ejemplos prácticos de cómo leer archivos de texto en Go: https://www.calhoun.io/reading-files-in-go/
-- Preguntas frecuentes sobre lectura de archivos en Go: https://www.golangprograms.com/go-program-to-read-text-file-into-string-how-to-read-open-file-handle.html
+Si quieres saber más sobre cómo trabajar con archivos en Go, aquí tienes algunos recursos adicionales:
+
+- [Documentación oficial de Go sobre archivos](https://golang.org/pkg/os/#File)
+- [Tutorial sobre cómo leer y escribir archivos en Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go-es)
+- [Ejemplos prácticos de cómo trabajar con archivos en Go](https://www.calhoun.io/working-with-files-in-go/)

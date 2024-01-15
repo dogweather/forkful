@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: वर्तमान तिथि प्राप्त करना"
-simple_title:         "वर्तमान तिथि प्राप्त करना"
+title:                "वर्तमान तारीख प्राप्त करना"
+html_title:           "Fish Shell: वर्तमान तारीख प्राप्त करना"
+simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu 
-Kya aapko pata hai ki apne computer ko pata hai ki aaj konsa din hai? Agar nahi toh aapke liye kya mauka hai apne Fish Shell programming skills ko sudharne ka by pata karne ke liye current date. Is blog post mein hum aapko current date pata karne ke bare mein batayenge.
+## Kyun
 
-## Kaise Karein
-Fish Shell mein, ham `date` command ka istemal karke current date pata kar sakte hain. Is command ko use karne ke liye aapko bas command prompt pe `date` likhna hai aur Enter dabana hai. Yeh command aapko current date aur time dikhayegi. Agar aap sirf date ya sirf time pata karna chahte hain, toh aap `date +%D` ya `date +%T` command ka istemal kar sakte hain.
+ Soch rahe ho ki aap abhi kyun taareekh jaan na chahte hain? Shayad aapko apne code me current date ka use karna hai ya fir aapko pata karna hai ki aaj ka din konsa hai. Fish shell me date ko kaise retrieve karna hai, uske baare me hum aaj baat karenge.
+
+## Kaise Kare
+
+Fish Shell me current date ko jaan ne ke liye kuch simple steps follow karen:
+
+1. Sabse pehle apne terminal me "fish" command type kar ke Fish shell ko launch kare. Agar aapke paas ye shell already installed hai to ye kaafi simple hoga, agar installed nahi hai to apne operating system ke hisab se installation kare.
+2. Ab terminal me "date" command type kar ke enter kare. Ye command aapko current date and time ko display karegi. 
+3. Yaha par aapko current date and time ka format (MM/DD/YY) dekhne milega. Agar aapko koi specific format chahiye to aap "date" command ke sath "-s" flag ka use kar sakte hai, jaise ki "date -s '+%d-%b-%Y'" is command ka output aapko current date ko "DD-Mon-YYYY" format me dikhayega.
+
+
+**Fish Shell me date ko display karne ka code example:**
 
 ```Fish Shell
 date
-```
-Output:
-```Fish Shell
-Thu Aug 20 20:08:59 IST 2020
-```
-
-Agar aap apne hisaab se date aur time format karna chahte hain, toh aap `date` command ke sath [strftime](https://fishshell.com/docs/current/cmds/date.html#strftime) ka istemal kar sakte hain. Isse aap apni pasand ka date aur time format bana sakte hain.
-
-```Fish Shell
-date "+%A, %B %d, %Y"
-```
-Output:
-```Fish Shell
-Thursday, August 20, 2020
+07/03/2021
+date -s '+%d-%b-%Y'
+03-Jul-2021
 ```
 
-## Deep Dive
-Jab ham `date` command ko istemal karte hain, toh yeh system ki date aur time settings ko use karta hai. Yeh command apne default format mein date aur time dikhata hai jo aapke computer ki language aur region settings pe depend karta hai. Isse aapki local time zone ke hisab se current date aur time milta hai.
+## Gehri Jankari
 
-Agar aapko international date aur time format jaise ISO-8601 format mein date show karna chahte hain, toh aap `date -u +%Y-%m-%dT%H:%M:%SZ` command ka istemal kar sakte hain.
+Agar aap date ko puri tarah se samajhna chahte hain to Fish Shell ke date command ke sath kuch important flags ke baare me jaan lena jaruri hai. In flags se aap date ko kisi bhi specific format me display kar sakte hain.
 
-## Dekhenge
-Yadi aapko Fish Shell or programming ke bare mein adhik jaankari chahiye, toh neeche diye gaye link dekhe:
+- **-u:** Is flag ka use Greenwich Mean Time (GMT) me date and time display karne ke liye kiya jata hai.
+- **-d:** Is flag ka use naya date and time ko display karne ke liye kiya jata hai.
+- **-s:** Is flag ka use current date and time me specific changes karne ke liye kiya jata hai, jaise ki humne pehle bhi bataya ki is flag ke sath hum kisi specific format ka use kar sakte hain.
+- **-h:** Is flag ka use display karne wale date ko usi waqt ki local time zone ke hisab se convert karne ke liye kiya jata hai.
 
-- [Official Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Fish Shell Tutorials on YouTube](https://www.youtube.com/playlist?list=PLIxLil0ChYJ6bozMKd8RzAH1Up23LUa8-)
-- [Fish Shell Tutorials on FreeCodeCamp](https://www.freecodecamp.org/news/search/?query=fish%20shell)
+## See Also
+Aap date ko retrieve karne ke liye kisi specific language me bhi coding kar sakte hain, jaise ki Python, Java, C++ etc.
+
+- [Python Date and Time](https://www.programiz.com/python-programming/datetime)
+- [Java Date and Time](https://www.geeksforgeeks.org/java-util-date-class-java/)
+- [C++ Date and Time](https://www.tutorialspoint.com/cpp_standard_library/cpp_date_time.htm)

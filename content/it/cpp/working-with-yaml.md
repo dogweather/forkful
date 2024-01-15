@@ -1,5 +1,6 @@
 ---
-title:                "C++: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "C++: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "C++"
 category:             "C++"
@@ -9,57 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché lavorare con YAML
+## Perché
 
-YAML, acronimo di "YAML Ain't Markup Language", è un formato di file leggibile dall'uomo e facile da interpretare per le macchine. Questo lo rende una scelta popolare per la gestione di dati strutturati in molte applicazioni. Inoltre, è un formato flessibile, che consente di memorizzare dati in un formato facilmente modificabile.
+Ci sono molte ragioni per cui lavorare con YAML nella programmazione, ma la più importante è che questo formato di dati è leggibile per gli umani e facile da interpretare per le macchine. Questo lo rende un'ottima scelta per l'archiviazione e lo scambio di dati strutturati tra diversi sistemi.
 
-## Come utilizzare YAML in C++
+## Come fare
 
-Per utilizzare YAML in C++, la prima cosa da fare è includere la sua libreria nel file di programma. Si può utilizzare un software come "libyaml" per fare ciò. Successivamente, è necessario inizializzare una coppia "yaml_parser_t" e "yaml_composer_t" e impostare la loro struttura. Infine, si può utilizzare la funzione "yaml_parser_parse()" per interpretare il file YAML e ottenere i dati.
+Per utilizzare YAML nel tuo codice C++, basta includere la libreria "yaml-cpp", disponibile su GitHub. Ci sono molte risorse online per la documentazione e gli esempi di utilizzo di questa libreria.
 
-Un esempio di codice potrebbe essere il seguente:
+Ecco un semplice esempio di codice C++ che carica e stampa un file YAML:
 
-```C++
-#include <yaml.h>
-void read_data_from_yaml()
-{
-    // Inizializzazione del parser e del compositore
-    yaml_parser_t parser;
-    yaml_composer_t composer;
-    yaml_parser_initialize(&parser);
-    yaml_composer_initialize(&composer, 
-            &parser, NULL, NULL, NULL);
-            
-    // Funzione per parsare il file YAML
-    int success;
-    do {
-        // Funzione per ottenere i dati
-        success = yaml_parser_parse(&parser, &composer);
-    } while(success);
+```
+#include <iostream>
+#include <yaml-cpp/yaml.h>
+ 
+int main() {
+  YAML::Node config = YAML::LoadFile("config.yml");
 
-    // Ottenimento dei dati da "composer"
-    // e chiusura di entrambi i parser
-    yaml_parser_delete(&parser);
-    yaml_composer_delete(&composer);
+  std::cout << "Nome utente: " << config["username"].as<std::string>() << "\n";
+  std::cout << "Età: " << config["age"].as<int>() << " anni\n";
+  std::cout << "Linguaggi di programmazione preferiti: \n";
+  for (auto lang : config["languages"]) {
+    std::cout << "- " << lang << "\n";
+  }
 }
 ```
 
-L'output ottenuto dal file YAML potrebbe essere il seguente:
+Ecco il contenuto del file YAML "config.yml" usato nel codice sopra:
 
-```C++
-ListToBuy:
-    - Item1
-    - Item2
-    - Item3
+```
+username: Alice
+age: 25
+languages:
+  - C++
+  - Python
+  - Java
 ```
 
-## Approfondimenti su YAML
+E questo è l'output che verrà stampato sul terminale:
 
-Se si vuole saperne di più su YAML, è possibile leggere la sua documentazione ufficiale su [yaml.org](https://yaml.org/). Inoltre, è possibile trovare molte risorse online che spiegano come utilizzare questo formato in diverse situazioni. Ad esempio, è possibile approfondire l'utilizzo di YAML con librerie specifiche per altri linguaggi di programmazione, come Python o Java.
+```
+Nome utente: Alice
+Età: 25 anni
+Linguaggi di programmazione preferiti:
+- C++
+- Python
+- Java
+```
+
+## Approfondimento
+
+Se vuoi saperne di più su YAML, è possibile consultare la loro documentazione ufficiale o documentazioni gratuite su siti come YAML.org. Inoltre, ci sono molti tutorial e guide online su come utilizzare YAML in diversi linguaggi di programmazione, compreso C++.
 
 ## Vedi anche
 
-- [YAML - Documentazione ufficiale](https://yaml.org/)
-- [Libreria YAML per C++](https://github.com/jbeder/yaml-cpp)
-- [Utilizzo di YAML in Python con PyYAML](https://pyyaml.org/)
-- [Utilizzo di YAML in Java con SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
+- [Documentazione ufficiale di YAML](https://yaml.org)
+- [Documentazione di yaml-cpp su GitHub](https://github.com/jbeder/yaml-cpp/wiki)

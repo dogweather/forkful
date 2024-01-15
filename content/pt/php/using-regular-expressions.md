@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Utilizando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "PHP: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por Que Usar Expressões Regulares no PHP?
+## Por que usar expressões regulares em programação?
 
-Expressões regulares são uma ferramenta poderosa para manipular texto em qualquer linguagem de programação. No PHP, elas permitem buscar, substituir, validar e extrair informações de strings de maneira eficiente e flexível. Se você trabalha com processamento de dados, busca de informações ou validação de entradas de usuário, as expressões regulares são uma habilidade útil a se ter no seu kit de ferramentas de desenvolvimento.
+Expressões regulares são uma ferramenta poderosa e versátil que pode ser usada em várias linguagens de programação, incluindo PHP. Elas permitem que você encontre e manipule padrões de texto de forma eficiente, economizando tempo e tornando seu código mais conciso. Se você lida com manipulação de strings em seu trabalho de programação, aprender a utilizar expressões regulares pode ser extremamente benéfico.
 
-## Como Usar Expressões Regulares no PHP
+## Como usar expressões regulares em PHP
 
-Para usar expressões regulares no PHP, primeiro é necessário delimitar o padrão de busca utilizando caracteres especiais. Depois, é preciso escolher uma função de expressão regular adequada à sua necessidade. Por exemplo, a função preg_match() irá retornar verdadeiro se o padrão for encontrado na string, enquanto a função preg_replace() irá substituir o padrão encontrado por outro valor. Veja alguns exemplos:
+Para usar expressões regulares em PHP, você precisa utilizar as funções `preg_match()` ou `preg_replace()`. Ambas recebem dois argumentos: o padrão de expressão regular que você deseja procurar e a string de texto em que deseja aplicá-lo. Por exemplo:
 
-```PHP 
-// Verifica se o e-mail inserido é válido
-$email = "exemplo@exemplo.com";
-if (preg_match("/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/", $email)) {
-  echo "E-mail válido!";
+```PHP
+$texto = "Olá, meu nome é João!";
+if(preg_match("/João/", $texto)){
+  echo "Olá João!";
+} else {
+  echo "Desculpe, não encontrei seu nome no texto.";
 }
-// Saída: E-mail válido!
-
-// Remove todas as letras minúsculas de uma string
-$frase = "Esta é uma frase com as palavras em minúsculas.";
-$frase_upper = preg_replace("/[a-z]/", "", $frase);
-echo $frase_upper;
-// Saída: ESTA FRASE 
-
 ```
 
-## Profundidade nas Expressões Regulares do PHP
+Este código utiliza a função `preg_match()` para procurar a string "João" no texto e, se encontrada, exibe uma mensagem de saudação. Se você estiver procurando por um padrão mais complexo, pode usar metacaracteres como `*` para indicar que uma determinada parte do padrão pode ser repetida várias vezes.
 
-As expressões regulares podem parecer complicadas à primeira vista, mas quanto mais você se aprofunda, mais facilidade terá em utilizá-las. Existem diversos recursos e regras que podem ser aplicados para tornar suas expressões ainda mais poderosas, como adicionar opções de busca, utilizar padrões recursivos ou mesmo criar grupos de captura para extrair informações específicas da string.
+## Aprofundando-se em expressões regulares
 
-É importante também lembrar que as expressões regulares podem variar de acordo com a versão do PHP. Por isso, sempre consulte a documentação oficial para garantir que está utilizando a sintaxe correta.
+Expressões regulares podem ser um pouco intimidadoras no início, mas com um pouco de prática e entendimento, elas podem ser incrivelmente úteis. É importante lembrar que elas seguem uma sintaxe específica e que pequenos detalhes podem alterar completamente o resultado.
 
-## Veja Também
+Uma das melhores maneiras de aprender a utilizar expressões regulares é praticando. Você pode encontrar vários recursos online que oferecem testes e tutoriais interativos. Além disso, é sempre útil ter um guia de referência à mão para consultar os metacaracteres e suas funções.
 
-- [Documentação oficial do PHP sobre expressões regulares](https://www.php.net/manual/en/pcre.pattern.php)
-- [Tutorial sobre expressões regulares no PHP](https://www.tutorialrepublic.com/php-tutorial/php-regular-expressions.php)
-- [Ferramenta online para testar suas expressões regulares](https://regex101.com/)
+## Veja também
+- [Site do PHP - Expressões Regulares](https://www.php.net/manual/pt_BR/intro.pcre.php)
+- [Tutorial Expressões Regulares da MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex101 - Verificador de Expressões Regulares](https://regex101.com/)

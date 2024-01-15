@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Att hämta aktuellt datum"
-simple_title:         "Att hämta aktuellt datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Bash: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,52 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att hämta den aktuella datumen är en viktig del av programmering i Bash. Det låter dig visa den aktuella tiden och datumet i ett läsbart format och används ofta för att skapa dynamiska filnamn eller som en del av en automatisk backupprocess.
+För många är det praktiskt att veta den nuvarande datum och tid. Det kan användas för att organisera scheman, planera evenemang eller helt enkelt hålla reda på tiden.
 
-## Hur man gör det
+## Hur man gör
 
-För att hämta den aktuella datumen i Bash använder vi kommandot `date`. Detta kommando visar standardtiden och datumet om inga argument anges, men kan också formateras för att visa endast önskad information.
+För att få den aktuella datumet i Bash använder man kommandot "date". Det finns olika format som kan användas för att anpassa output, men det vanligaste är ISO-formatet.
+
+```Bash
+date +%F
+```
+
+Detta kommer att returnera datumet i formatet ÅÅÅÅ-MM-DD, till exempel "2020-05-02". Om man vill ha en mer detaljerad output med både datum och tid, kan man använda kommandot "date" utan några extra flaggor.
 
 ```Bash
 date
 ```
 
-Detta ger utskrift som följande:
+Det kommer att returnera tiden tillsammans med datumet, till exempel "Sat May  2 12:58:25 CEST 2020". Om man bara vill ha tiden, utan datumet, kan man använda flaggan "%T".
 
 ```Bash
-Sun Jul 26 11:30:55 CET 2020
+date +%T
 ```
 
-Om vi vill ha ett specifikt datumformat kan vi använda flaggan `+` följt av önskat format.
-
-```Bash
-date +"%Y-%m-%d"
-```
-
-Detta skulle ge oss utskrift i formatet "åååå-mm-dd", exempelvis `2020-07-26`.
-
-Vi kan också kombinera olika flaggor för att få ett mer specifikt format. Till exempel, för att få utskrift i formatet "hh:mm:ss" (timmar:minuter:sekunder) kan vi använda följande kommando:
-
-```Bash
-date +"%H:%M:%S"
-```
+Det kommer att returnera tiden i formatet TT:MM:SS, till exempel "12:58:25". Mer information om olika flaggor och format finns i man-sidan för "date".
 
 ## Djupdykning
 
-När du använder `date`-kommandot finns det många olika flaggor och formatalternativ att utforska. En av de vanligaste flaggorna är `-d`, som låter dig ange ett specifikt datum och tid, istället för den aktuella. Till exempel kan du använda detta för att få utskrift av en viss tidpunkt i framtiden:
+För att förstå hur "date"-kommandot fungerar är det bra att känna till Unix-tid. Det är antal sekunder som gått sedan 1 januari 1970, och används som en referenspunkt för att hålla reda på tiden i Unix-system. När "date"-kommandot används, hämtar det Unix-tiden och omvandlar den till den lokala tiden baserat på en fördefinierad tidszon. Det är en enkel men kraftfull funktion i Bash som är tillgänglig på alla Unix-baserade operativsystem.
 
-```Bash
-date -d "1 hour"
-```
+## Se även
 
-Detta skulle ge dig utskrift av tiden 1 timme framåt från den aktuella tiden.
-
-En annan användbar flagga är `-u`, som ger utskrift i UTC-tid istället för lokaltid. Detta kan vara användbart när du behöver synkronisera filer eller data mellan olika tidszoner.
-
-## Se närings
-
-Se även:
-
-* [Bash Documentation - Date Command](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-* [Linuxize - Bash Date Command](https://linuxize.com/post/bash-date-command/)
-* [GeeksforGeeks - Bash Date Command](https://www.geeksforgeeks.org/date-command-in-linux-with-examples/)
+- [Bash-hemsidan](https://www.gnu.org/software/bash/)
+- [Man-sidan för "date"](https://linux.die.net/man/1/date)
+- [Unix-tid](https://sv.wikipedia.org/wiki/Unixtid)

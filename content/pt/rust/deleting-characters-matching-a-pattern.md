@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Rust: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,45 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que deletar caracteres que correspondem a um padrão em Rust?
 
-O Rust é uma linguagem de programação moderna e eficiente que vem ganhando cada vez mais popularidade entre os desenvolvedores. Uma das suas principais vantagens é o seu sistema de tipos fortemente estático, que evita diversos erros de programação e garante uma maior segurança no desenvolvimento de software. Além disso, o Rust também permite a utilização de linguagens de script, o que facilita muito a criação de programas com tarefas repetitivas, como a exclusão de caracteres que correspondem a um determinado padrão.
+Existem várias razões pelas quais alguém pode querer realizar essa tarefa em Rust. Pode ser necessário remover caracteres irrelevantes de uma string antes de realizar alguma operação, ou limpar dados para uma melhor organização e uso posterior.
 
-## Como fazer
+## Como fazer:
 
-Se você deseja excluir caracteres que seguem um padrão específico em alguma string em Rust, existem algumas opções que você pode utilizar. Uma delas é a função `replace` da biblioteca padrão do Rust, que pode ser usada da seguinte forma:
-
-```Rust
-let string = String::from("Olá, mundo!");
-let novo_string = string.replace("l", "");
-
-println!("{}", novo_string);
-```
-
-Neste exemplo, estamos substituindo todos os caracteres "l" da string por uma string vazia, ou seja, excluindo-os. O resultado será "Oá, mundo!", pois os caracteres "l" foram removidos.
-
-Outra opção é utilizar a biblioteca de expressões regulares do Rust, `regex`, que oferece um conjunto de ferramentas poderosas para lidar com padrões em strings. Veja um exemplo de como excluir todos os números de uma string utilizando expressões regulares:
+Para deletar caracteres que correspondem a um padrão em Rust, podemos utilizar a função `replace_all()` do módulo `regex`, que nos permite substituir todos os caracteres que correspondem a um padrão por uma string vazia. Veja um exemplo de código abaixo:
 
 ```Rust
 use regex::Regex;
 
-let string = String::from("123Olá456, mundo!");
-let re = Regex::new(r"[0-9]").unwrap();
-let novo_string = re.replace_all(&string, "");
+let string = "Hello, Rust!";
+let re = Regex::new("[o,]").unwrap();
 
-println!("{}", novo_string);
+let nova_string = re.replace_all(string, "");
+
+println!("{}", nova_string);
 ```
 
-O resultado será "Olá, mundo!", pois todos os números foram excluídos da string original. Vale ressaltar que a utilização de expressões regulares pode ser mais complexa do que a função `replace`, mas oferece uma grande flexibilidade para lidar com diferentes padrões.
+A saída desse código seria `Hell Rust!`, pois todos os caracteres "o" e "," foram removidos da string original.
 
-## Viagem profunda
+Também é possível utilizar a função `replacen()` do módulo `str`, que nos permite substituir um número específico de ocorrências de um padrão por uma string desejada. Veja o exemplo abaixo:
 
-Para entender melhor como é feita a exclusão de caracteres em Rust, é importante saber como a linguagem lida com strings. Diferentemente de outras linguagens, onde as strings são mutáveis e podem ser modificadas diretamente, em Rust elas são imutáveis e podem se tornar bem mais complexas de se trabalhar. Por isso, quando desejamos excluir caracteres de uma string em Rust, na verdade estamos criando uma nova string a partir da original, sem os caracteres que desejamos eliminar.
+```Rust
+let string = "Aprendendo programação em Rust!";
+let nova_string = string.replacen("em Rust", "com Rust", 1);
 
-Além disso, é importante entender como as strings são representadas em memória em Rust. Elas são armazenadas como um vetor de bytes, e cada caractere da string ocupa uma certa quantidade de bytes, dependendo do seu tipo e da codificação utilizada. Isso significa que, ao excluir um caractere, é preciso recalcular a posição de todos os caracteres seguintes na string. Por isso, a exclusão de caracteres pode ser uma operação custosa em termos de desempenho em strings muito extensas.
+println!("{}", nova_string);
+```
 
-## Veja também
+A saída desse código seria `Aprendendo programação com Rust!`, pois apenas a primeira ocorrência da string "em Rust" foi substituída.
 
-- Documentação da função `replace`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Documentação da biblioteca `regex`: https://docs.rs/regex/1.4.2/regex/
-- Tutorial sobre expressões regulares em Rust: https://docs.rs/regex/1.4.1/regex/#syntax
+## Mergulho Profundo:
+
+Ao manipular strings em Rust, é importante ter em mente que elas são imutáveis por padrão. Isso significa que, ao realizar uma operação como a substituição de caracteres, uma nova string será criada, deixando a original intacta. Isso pode ser um pouco ineficiente em termos de desempenho, principalmente para strings grandes.
+
+No entanto, a linguagem possui o conceito de *ownership*, onde a referência de um dado pode ser transferida de uma variável para outra. Portanto, podemos usar esse conceito para evitar a criação de uma nova string ao realizar a substituição de caracteres. Veja um exemplo abaixo:
+
+```Rust
+let mut string = String::from("Hello, Rust!");
+
+let nova_string = string.replace("o", "");
+
+println!("{}", nova_string);
+```
+
+Neste exemplo, ao invés de criar uma nova string, estamos modificando diretamente a string original. Isso pode trazer um melhor desempenho em casos específicos, mas é importante tomar cuidado pois a referência da string original será perdida.
+
+# Veja também:
+
+- [Documentação do módulo `regex` em Rust](https://docs.rs/regex/1.5.4/regex/)
+- [Documentação do módulo `str` em Rust](https://doc.rust-lang.org/std/primitive.str.html)
+- [Tutorial sobre string manipulation em Rust](https://www.learn-rust.org/2020/07/13/string-manipulation-in-rust.html)

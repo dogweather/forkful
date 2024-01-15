@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Merkkijonon kirjoittaminen isolla alkukirjaimella"
+title:                "Merkkijonon kirjoittaminen isolla alkukirjaimella"
+html_title:           "Haskell: Merkkijonon kirjoittaminen isolla alkukirjaimella"
 simple_title:         "Merkkijonon kirjoittaminen isolla alkukirjaimella"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,35 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointitehtävissä saattaa olla tarve muuttaa merkkijono isolla alkukirjaimella alkavaksi. Tällainen toiminto voi olla tarpeen esimerkiksi kun halutaan tulostaa käyttäjän syöttämä nimi tai kun muutetaan tietyn formaatin vaatimuksia vastaavaksi. Tässä blogipostissa käymme läpi, miten merkkijonon ensimmäinen kirjain voidaan muuttaa isoksi.
+Miksi joku kirjoittaisi Haskellilla ja käyttäisi aikaa merkkijonon alkukirjainten muuttamiseen isoiksi? Vaikka tämä saattaa vaikuttaa pieneltä ja yksinkertaiselta tehtävältä, se on hyödyllinen taito monissa ohjelmointiprojekteissa, kuten tekstin käsittelyssä ja valmiiden algoritmien käytössä.
 
-## Kuinka tehdä
-
-Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi onnistuu helposti Haskellissa käyttämällä `toUpper` funktiota. Tämä funktio kuuluu `Data.Char` moduuliin, joten se täytyy tuoda käyttöön ensin `import`-lauseella. Seuraavassa esimerkissä käydään läpi yksinkertainen tapa muuttaa merkkijonon ensimmäinen kirjain isoksi ja tulostaa tulos konsoliin.
+## Kuinka
 
 ```Haskell
-import Data.Char (toUpper)
-
 capitalize :: String -> String
-capitalize [] = []
+capitalize "" = ""
 capitalize (x:xs) = toUpper x : xs
-
-main = do
-  putStrLn "Syötä nimi:"
-  name <- getLine
-  putStrLn ("Tervehdys " ++ capitalize name)
 ```
 
-Tämän esimerkin avulla pystytään muuttamaan käyttäjän syöttämä nimi isolla alkukirjaimella alkavaksi ja tulostamaan se tervehdyksen muodossa.
+Tämän yksinkertaisen funktion avulla voimme muuttaa merkkijonon ensimmäisen kirjaimen isoksi käyttämällä `toUpper` funktiota ja yhdistää sen lopun merkkijonon kanssa käyttäen rekursiota.
+
+Esimerkiksi, suorittamalla `capitalize "haskell"` saamme tulokseksi `"Haskell"`.
 
 ## Syvemmälle
 
-Haskellissa merkkijonojen muokkaaminen tapahtuu yleensä listana merkeistä. Tästä syystä merkkijonon ensimmäisen kirjaimen muuttaminen vaatii listan käsittelyä. Esimerkissämme funktio `capitalize` ottaa parametrinaan merkkijonon ja tarkistaa ensin, ettei se ole tyhjä. Jos merkkijono on tyhjä, funktio palauttaa tyhjän listan. Jos merkkijono ei ole tyhjä, funktio käyttää `toUpper` funktiota ensimmäisen kirjaimen muuttamiseksi isoksi ja lisää sen merkkijonon alkuun. Lopuksi funktio yhdistää ensimmäisen kirjaimen ja loput merkit `:`-merkillä. 
+Nyt kun olemme luoneet perustoiminnon merkkijonon ensimmäisen kirjaimen muuttamiseen isoksi, voimme ajatella muita tapoja muokata merkkijonoa. Voimme esimerkiksi luoda funktion `titleCase`, joka muuttaa jokaisen merkkijonon sanan ensimmäisen kirjaimen isoksi:
 
-Tämän lisäksi Haskellissa on myös valmiina funktioita, jotka tekevät saman asian merkkijonon muokkaamiseksi, kuten `capitalize` johon voit tutustua [täältä](http://hackage.haskell.org/package/text/docs/Data-Text.html#v:capitalize). On myös mahdollista kirjoittaa sama funktio käyttämällä esimerkiksi `map` funktiota, joka käy läpi listan ja soveltaa sille annettua funktiota jokaiseen alkioon. Tämä tapahtuu seuraavalla tavalla: `map toUpper "hello"`, joka palauttaa listan `['H', 'E', 'L', 'L', 'O']`.
+```Haskell
+import Data.Char -- `toTitle` funktio on saatavilla Data.Char moduulissa
+
+titleCase :: String -> String
+titleCase "" = ""
+titleCase (x:xs) = toTitle x : titleCaseHelper xs
+
+-- `titleCaseHelper` funktio auttaa muuttamaan jokaisen sanan ensimmäisen kirjaimen isoksi
+titleCaseHelper :: String -> String
+titleCaseHelper "" = ""
+titleCaseHelper (x:xs)
+    | x == ' ' = x : titleCase xs -- lisätään välilyönti ja jatketaan rekursiota
+    | otherwise = toLower x : xs -- muutetaan merkki pieneksi ja jatketaan rekursiota
+```
+
+Nyt esimerkiksi `titleCase "hello world"` antaa tulokseksi `"Hello World"`.
 
 ## Katso myös
 
-- [Haskell Documentation - Data.Char](https://www.haskell.org/onlinereport/standard-prelude.html#char)
-- [Haskell Documentation - Text](http://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Haskell Wiki - String](https://wiki.haskell.org/String)
+- [Data.Char - Haskellin virallinen dokumentaatio](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Haskellin virallinen verkkosivusto](https://www.haskell.org/)

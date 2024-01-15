@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Sammenslåing av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Haskell: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,69 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å koble sammen strenger, også kjent som "concatenation", er en vanlig oppgave i programmering. Dette er spesielt nyttig når vi ønsker å slå sammen tekststrenger for å lage en lengre uttrykk. I Haskell, er dette enkelt å gjøre og kan hjelpe til å gjøre koden mer lesbar.
+Hvorfor skulle noen ønske å kombinere strenger? Vel, det er en grunnleggende operasjon i nesten alle programmeringsspråk og kan være veldig nyttig når du arbeider med tekstdata. Ved å kombinere to eller flere strenger kan du bygge opp større setninger og formattere tekst på en mer effektiv måte.
 
-## Hvordan
+# Hvordan
 
-I Haskell, bruker vi operatoren "++" for å koble sammen to strenger. La oss si at vi ønsker å kombinere to navn, "Per" og "Olsen", for å danne navnet "Per Olsen". Dette kan gjøres ved å skrive følgende kode:
-
-```Haskell
-navn1 = "Per"
-navn2 = "Olsen"
-navn = navn1 ++ " " ++ navn2
-
-print navn
-```
-
-Output:
-
-```
-Per Olsen
-```
-
-Vi kan også kombinere flere strenger på en gang. La oss si at vi ønsker å danne navnet "Mary Anne Johnson". Dette kan gjøres ved å skrive:
+For å kombinere to strenger i Haskell, bruker vi operatoren `++`. La oss ta en titt på et enkelt eksempel:
 
 ```Haskell
-navn1 = "Mary"
-navn2 = "Anne"
-etternavn = "Johnson"
-navn = navn1 ++ " " ++ navn2 ++ " " ++ etternavn
-
-print navn
+"Hei " ++ "verden!"
 ```
 
-Output:
-
-```
-Mary Anne Johnson
-```
-
-Det er viktig å merke seg at operatoren "++" også kan brukes på andre typer data, ikke bare strenger. Vi kan for eksempel kombinere to lister:
+Dette vil resultere i følgende utgang:
 
 ```Haskell
-liste1 = [1,2,3]
-liste2 = [4,5,6]
-liste = liste1 ++ liste2
-
-print liste
+"Hei verden!"
 ```
 
-Output:
+Hvis du ønsker å kombinere flere strenger, kan du enkelt gjøre det ved å legge til flere `++` operasjoner:
 
+```Haskell
+"Hei " ++ "alle " ++ "sammen!"
 ```
-[1,2,3,4,5,6]
+
+Dette vil resultere i:
+
+```Haskell
+"Hei alle sammen!"
 ```
 
-## Dypdykk
+Vi kan også kombinere faktiske verdier med strenger. La oss si at vi har en variabel `navn` med verdien "Marie", så kan vi kombinere denne med en streng som dette:
 
-I Haskell, er funksjonen "++" faktisk en del av "Monoid" klassen. Dette betyr at det finnes visse egenskaper og regler som gjelder for denne funksjonen. For eksempel, er "++" assosiativ, det betyr at rekkefølgen av koble sammen strenger ikke spiller noen rolle. Dette betyr at "a ++ (b ++ c)" er det samme som "(a ++ b) ++ c".
+```Haskell
+"Hei " ++ navn
+```
 
-En annen egenskap er at det finnes en "nøytral" verdi, som ikke endrer resultatet når den brukes med "++". I tilfelle av strenger, er den nøytrale verdien en tom streng, "". Dette betyr at "" ++ "Hei" er det samme som "Hei". Dette kan være nyttig å vite når man jobber med mer komplekse kodesnutter.
+Dette vil gi oss følgende resultat:
 
-## Se også
+```Haskell
+"Hei Marie"
+```
 
-* [Haskell Documentation](https://www.haskell.org/documentation/)
-* [Learn You a Haskell](http://learnyouahaskell.com/chapters)
-* [Real World Haskell](http://book.realworldhaskell.org/read)
+Du kan også kombinere flere variabler og strenger på en lignende måte. Det er imidlertid viktig å merke seg at hvis du vil kombinere en variabel og en streng, må variabelen være av samme datatype som strengen. Ellers vil du få en feilmelding.
+
+# Dypdykk
+
+Nå som vi har sett på hvordan du enkelt kan kombinere to eller flere strenger, la oss se på hvordan dette fungerer under overflaten. I Haskell er strengene bare lister av tegn. Derfor kan vi bruke en listefunksjon for å kombinere strenger, som for eksempel `++`.
+
+Det er også viktig å merke seg at selv om `++` fungerer på samme måte som "concat" funksjonen i andre språk, så har den en betydelig forskjell. I Haskell blir en ny streng opprettet hver gang du bruker `++`, i stedet for å bare legge til den eksisterende strengen. Dette kan føre til ytelsesproblemer hvis du bruker denne operatoren i løkker eller store datasett.
+
+# Se Også
+
+- [Haskell Tutorial](https://www.haskell.org/tutorial/) - En grundig tutorial for Haskell.
+- [Learn You a Haskell](http://learnyouahaskell.com/) - En interaktiv læringsressurs for Haskell.
+- [The Power of String Concatenation in Functional Languages](https://medium.com/functional-landscapes/the-power-of-string-concatenate-in-functional-languages-a262597d922) - En artikkel som dykker dypere inn i bruk av strengkonkaternering i funksjonelle programmeringsspråk.

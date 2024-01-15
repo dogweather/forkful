@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Fish Shell: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,55 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Al programar en Fish Shell, a menudo nos encontramos con la necesidad de extraer subcadenas de una cadena de texto más grande. Esto puede ser útil para realizar ciertas operaciones o manipulaciones en la información de manera más específica. A continuación, te mostraremos cómo puedes hacerlo de manera sencilla.
+¿Alguna vez te has encontrado con un texto largo y desordenado y solo necesitas extraer una parte específica de él? Bueno, con Fish Shell puedes hacer precisamente eso. En este artículo, te explicaré cómo extraer subcadenas de una manera rápida y sencilla.
 
-## Cómo hacerlo
+## Cómo
 
-Para extraer una subcadena en Fish Shell, utilizaremos el comando `string` seguido del argumento `-s` y las posiciones de inicio y fin de la subcadena que deseamos extraer. Por ejemplo, si tenemos la cadena "Hola World", y queremos extraer solamente "World", podemos utilizar el siguiente código:
+¡Es hora de poner tus habilidades de programación en acción! Sigue estos pasos para extraer subcadenas en Fish Shell:
 
-```Fish Shell
-set cadena "Hola World"
-echo $cadena
-output: Hola World
-set subcadena (string -s 5 9 $cadena)
-echo $subcadena
-output: World
-```
-
-En este caso, especificamos que queremos extraer la subcadena empezando en la posición 5 y terminando en la posición 9. Es importante mencionar que las posiciones comienzan desde 1 y no desde 0.
-
-También podemos utilizar el comando `substring`, que es una abreviación del comando `string`, pero la sintaxis es un poco diferente. Podemos utilizarlo de la siguiente manera:
+1. Primero, necesitas tener una cadena de texto de la cual quieras extraer una parte. Puedes asignar una cadena a una variable utilizando el operador `set`, por ejemplo: 
 
 ```Fish Shell
-set cadena "Hola World"
-echo $cadena
-output: Hola World
-set subcadena $cadena[6..10]
-echo $subcadena
-output: World
+set text "Hola mundo"
 ```
 
-En este caso, utilizamos los corchetes y los dos puntos para especificar el inicio y fin de la subcadena. Esta sintaxis puede ser más sencilla para algunos usuarios.
-
-## Profundizando
-
-Si queremos extraer una subcadena a partir de una palabra o letra en específico, podemos utilizar el comando `string match`. Este comando buscará la coincidencia más cercana a la palabra o letra que le indiquemos y extraerá la subcadena a partir de ahí. Por ejemplo:
+2. Después de tener tu cadena, debes indicar qué parte quieres extraer utilizando los índices. Los índices en Fish Shell comienzan en `1` y se colocan entre corchetes después de la variable que contiene la cadena de texto. Por ejemplo, si queremos extraer la palabra "mundo" en nuestro ejemplo anterior, utilizaremos `[6-10]` para indicar los índices.
 
 ```Fish Shell
-set cadena "¡Hola a todos!"
-echo $cadena
-output: ¡Hola a todos!
-set subcadena (string match a $cadena)
-echo $subcadena
-output: a todos!
+echo $text[6-10]
 ```
 
-Aquí, utilizamos el comando `string match` para encontrar la letra "a" en la cadena y extraer la subcadena a partir de ahí. Esto nos puede ser útil si no sabemos exactamente en qué posición se encuentra la subcadena que queremos extraer.
+3. También puedes extraer subcadenas utilizando el comando `string sub` y proporcionando la cadena, el índice inicial y la longitud de la subcadena que deseas extraer.
+
+```Fish Shell
+echo (string sub $text 6 5)
+```
+
+¡Felicidades! Has aprendido a extraer subcadenas en Fish Shell. Ahora puedes utilizar esta técnica para manipular y organizar tus cadenas de texto de manera eficiente.
+
+## Deep Dive
+
+Ahora, profundicemos un poco más en la extracción de subcadenas. En Fish Shell, los índices pueden ser expresiones matemáticas que se evalúan dinámicamente. Esto significa que puedes utilizar variables y operaciones matemáticas para definir tus índices.
+
+Además, también puedes utilizar un signo `^` para indicar el comienzo de la cadena en lugar de indicar un índice específico. Por ejemplo, si queremos extraer la palabra "mundo" en nuestro ejemplo anterior, también podríamos utilizar `[^6-]` para indicar que queremos comenzar a extraer a partir del sexto carácter hasta el final de la cadena.
 
 ## Ver también
 
-Si quieres aprender más sobre cómo manipular cadenas en Fish Shell, puedes revisar la documentación oficial y otros tutoriales en línea:
+- [Tutorial de Fish Shell](https://fishshell.com/docs/2.7/)
 
-- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
-- Tutorial de Manipulación de Cadenas en Fish Shell (en inglés): https://scriptingosx.com/2017/05/manipulating-strings-in-fish/
-- Otros tips y trucos para Fish Shell (en inglés): https://dev.to/bowmanjd/great-fish-shell-tips-i-wish-i-had-known-from-the-beginning-23o5
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/2.7/index.html)

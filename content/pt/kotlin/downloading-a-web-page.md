@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Kotlin: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Baixar uma Página da Web?
+## Por que
 
-Baixar uma página da web é uma tarefa comum para muitos programadores. Isso pode ser necessário para extrair informações de um site ou para testar o funcionamento de um aplicativo em diferentes cenários. Neste artigo, vamos abordar como baixar uma página da web usando a linguagem de programação Kotlin.
+Existem várias razões pelas quais alguém pode querer fazer o download de uma página da web. Pode ser para ter acesso offline a um conteúdo importante, para arquivar informações ou para fins de análise de dados.
 
-## Como Fazer
+## Como fazer
 
-Para baixar uma página da web usando Kotlin, precisamos seguir alguns passos simples. Primeiro, importamos a classe URL da biblioteca java.net, que nos permite trabalhar com URLs. Em seguida, criamos uma instância da classe URL com a URL da página que queremos baixar. Por fim, usamos o método openStream() da classe URL para abrir uma conexão com a página e ler seu conteúdo.
+Fazer o download de uma página da web em Kotlin é muito simples. Basta seguir os passos abaixo:
 
-Veja um exemplo de código em Kotlin abaixo:
+1. Primeiro, importe a biblioteca "kotlin.io" no seu projeto:
+    ```Kotlin
+    import kotlin.io.*
+    ```
 
-```Kotlin
-import java.net.URL
+2. Em seguida, defina uma URL para a página que deseja fazer o download:
+    ```Kotlin
+    val url = "https://www.example.com"
+    ```
 
-fun main() {
-    val paginaWeb = URL("https://www.meusitefavorito.com")
-    val conexao = paginaWeb.openConnection()
-    val inputStream = conexao.getInputStream()
-    println(inputStream.readBytes())
-}
-```
+3. Use o método "readText" da classe "URL" para fazer o download do conteúdo da página:
+    ```Kotlin
+    val pageContent = URL(url).readText()
+    ```
 
-Neste exemplo, usamos o método readBytes() do objeto inputStream para imprimir os bytes da página baixada. Esse é apenas um exemplo básico, mas você pode adaptá-lo para atender às suas necessidades específicas.
+4. E, por fim, salve o conteúdo em um arquivo utilizando o método "writeText" da classe "File":
+    ```Kotlin
+    File("filename.html").writeText(pageContent)
+    ```
 
-## Mergulhando Fundo
+Ao executar esses passos, você terá feito o download da página da web em um arquivo HTML.
 
-Agora que você sabe como baixar uma página da web usando Kotlin, vamos aprofundar um pouco mais. A classe URL também possui outros métodos que podem ser úteis, como o método getContent(), que retorna o conteúdo da página em um objeto de tipo Any. Usando esse método, podemos manipular o conteúdo da página da maneira que desejamos.
+## Mergulho profundo
 
-Além disso, é importante mencionar que, ao baixar uma página da web, podemos nos deparar com diferentes códigos de status HTTP, como 200 para sucesso ou 404 para página não encontrada. É importante tratar esses códigos adequadamente em nosso código para garantir que a página foi baixada corretamente.
+Existem várias classes e métodos dentro da biblioteca "kotlin.io" que podem ser úteis ao fazer o download de uma página da web. Alguns deles incluem:
 
-## Veja Também
+- "readBytes()" - este método lê os bytes da página da web e os retorna como um array.
+- "readLines()" - este método lê as linhas da página da web e as retorna como uma lista de strings.
+- "URLStreamHandler" - esta classe permite a implementação de um manipulador personalizado para lidar com conexões de URL.
 
-Aqui estão algumas referências adicionais que podem ser úteis para você aprender mais sobre como baixar páginas da web em Kotlin:
+Além disso, existem outras bibliotecas disponíveis em Kotlin que podem ser úteis para aprofundar seus conhecimentos sobre o download de páginas da web, como a biblioteca "kotlinx.html" para lidar com documentos HTML de forma fácil e a biblioteca "kotlin-stdlib-js" para manipulação de dados em JavaScript.
 
-- [Documentação oficial do Kotlin sobre classes URL](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/)
-- [Tutorial sobre como baixar uma página da web em Kotlin](https://www.baeldung.com/java-download-webpage)
-- [Livro "Kotlin em Ação", de Dmitry Jemerov e Svetlana Isakova](https://www.casadocodigo.com.br/products/livro-kotlin-em-acao)
+## Veja também
+
+- [Documentação oficial do Kotlin sobre download de URLs](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l/index.html)
+- [Exemplo de download de página da web em Kotlin](https://github.com/kotlin-examples/internet/blob/master/src/download.kt)

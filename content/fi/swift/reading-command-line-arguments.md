@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Swift: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,44 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Swift-ohjelmointi tarjoaa monia hyödyllisiä työkaluja, joilla voi helpottaa ohjelmien suorittamista eri ympäristöissä. Yksi näistä työkaluista on komentoriviparametrien lukeminen, joka mahdollistaa käyttäjän antamien arvojen hyödyntämisen ohjelman suorituksessa. Tässä blogikirjoituksessa käymme läpi, miten voit helposti lukea komentoriviparametreja Swift-ohjelmassa.
+Jos haluat hallita ja hallita ohjelman käyttäytymistä ulkoisten tekijöiden avulla, kuten komentoriviparametrit, on tärkeää tietää, kuinka lukea nämä parametrit Swiftillä. Tässä artikkelissa opit kuinka voit helposti lukea komentoriviparametreja ja käyttää niitä ohjelman suorituksessa.
 
-## Näin
+## Miten
 
- ```Swift
-import Foundation
+Command line argumenttien lukeminen Swiftissä on yksinkertaista ja vaatii vain muutaman rivin koodia. Ensimmäiseksi luodaan `CommandLine` objekti, joka sisältää kaikki komentoriviparametrit. Sitten voit käyttää `CommandLine` objektin metodeja saadaksesi haluamasi parametrit.
 
-let arguments = CommandLine.arguments
-// arguments sisältää kaikki komentoriviparametrit taulukkona
+```Swift
+// Luodaan `CommandLine` objekti
+let commandLine = CommandLine()
 
-// Tulostetaan parametrit yksi kerrallaan
-for argument in arguments {
-    print(argument)
-}
-
-// Jos haluat tietyn parametrin arvon, voit käyttää seuraavaa koodilohkoa:
-if arguments.count > 1 {
-    let value = arguments[1]
-    print("Arvo: \(value)")
-}
-
- ```
-
-Kun suoritat tämän koodin ja annat komentoriville esimerkiksi seuraavanlaisia parametreja: ```Swift ./ohjelma Argumentti1 Argumentti 2```, tulostetaan konsoliin seuraavaa:
-
-```
-./ohjelma
-Argumentti1
-Argumentti2
+// Saadaan haluttu parametri
+let parameter = commandLine.arguments[0]
 ```
 
-## Syväsukellus
+Tämän jälkeen voit käyttää parametreja haluamallasi tavalla koodissasi. Esimerkiksi voit tarkistaa, onko tietty parametri annettu vai ei ja suorittaa tarvittavat toiminnot sen perusteella.
 
-Komentoriviparametrien lukeminen on toteutettu Swiftissä CommandLine-objektilla, joka tarjoaa tilapäistaulukon CommandLine.arguments kaikilla parametreilla. Voit myös käyttää CommandLine.argc ja CommandLine.unsafeArgv -muuttujia, jotka tarjoavat vastaavat tiedot kuin argc ja argv C-kielellä. Voit lukea tarkemmin CommandLine-objektista Swiftin dokumentaatiosta.
+```Swift
+// Tarkistetaan, onko parametri annettu
+if commandLine.arguments.contains("-h") {
+    // Suoritetaan tarvittavat toiminnot
+    print("Tervetuloa ohjelman käyttöoppaaseen!")
+}
+```
+
+## Syvempi sukellus
+
+`CommandLine` objektissa on monia hyödyllisiä metodeja, joita voit käyttää komentoriviparametrien lukemiseen. Esimerkiksi voit käyttää `first` ja `last` metodeja saadaksesi ensimmäisen ja viimeisen komentoriviparametrin. Voit myös käyttää `namedArguments` metodia saadaksesi nimettyjä parametreja, joissa on `--` etuliite.
+
+```Swift
+// Saadaan ensimmäinen ja viimeinen parametri
+let firstArgument = commandLine.arguments.first
+let lastArgument = commandLine.arguments.last
+
+// Saadaan nimetty parametri
+let namedParameter = commandLine.namedArguments["--nimi"]
+```
+
+On myös huomionarvoista, että `CommandLine` objekti sisältää myös itse ohjelman nimen, jota voi käyttää tarvittaessa.
+
+```Swift
+// Saadaan ohjelman nimi
+let programName = commandLine.programName
+```
 
 ## Katso myös
 
-- [Apple Developer Documentation: CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Myös vinkkejä Swift-ohjelmoinnista löydät täältä](https://smartik.es/swift/)
+Tässä artikkelissa opit lukemaan komentoriviparametreja Swiftissä, mutta tämän lisäksi on myös muita hyödyllisiä toimintoja, joita voit käyttää Swiftissä ohjelmointisi helpottamiseksi. Tässä muutamia linkkejä, joiden avulla voit tutustua lisää Swiftin ominaisuuksiin ja käyttötapoihin:
 
-Kiitos lukemisesta ja onnea komentoriviparametrien lukemiseen Swift-ohjelmillasi! 🚀
+- [Viralliset Swift-dokumentaatiot](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [Swiftin opetusohjelmat Ray Wenderlichillä](https://www.raywenderlich.com/5256505-swift-tutorial-for-beginners-part-1-getting-started)
+- [Swiftin opetusohjelmat Hacking with Swiftissä](https://www.hackingwithswift.com/quick-start/swiftui)

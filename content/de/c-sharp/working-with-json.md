@@ -1,5 +1,6 @@
 ---
-title:                "C#: Arbeiten mit JSON"
+title:                "Arbeiten mit JSON"
+html_title:           "C#: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "C#"
 category:             "C#"
@@ -11,44 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Welt der Programmierung gibt es immer neue Technologien und Werkzeuge, die man beherrschen muss, um erfolgreich zu sein. Eine davon ist JSON, eine Textformatierung für den Austausch von Daten, die in vielen Anwendungen und APIs verwendet wird. Warum sollte jemand also Zeit und Mühe in das Erlernen und Verwenden von JSON investieren?
+Möglicherweise fragst du dich, warum du dich mit JSON beschäftigen solltest. Nun, JSON ist eine zugängliche und äußerst nützliche Möglichkeit, Daten zu speichern und auszutauschen. Es bietet eine einfache Syntax und wird von vielen Programmiersprachen, einschließlich C#, unterstützt.
 
-JSON ist ein sehr einfaches und leicht verständliches Format, das sowohl von Menschen als auch von Maschinen gelesen und geschrieben werden kann. Es ist auch plattformübergreifend und kompatibel mit vielen Programmiersprachen. Durch den Einsatz von JSON in Ihren Projekten können Sie die Interoperabilität verbessern und die Kommunikation mit anderen Anwendungen erleichtern. Außerdem ist es eine wertvolle Fähigkeit, die immer mehr von Arbeitgebern gesucht wird.
+## How To
 
-## Wie
+Um mit JSON in C# zu arbeiten, musst du zuerst sicherstellen, dass du die richtigen Tools hast. Die meisten aktuellen Versionen von Visual Studio enthalten bereits eine Bibliothek namens "Newtonsoft.Json", die die Arbeit mit JSON erleichtert.
 
-Um mit JSON in C# zu arbeiten, müssen Sie zunächst eine JSON-Bibliothek oder ein Framework importieren, das Ihnen das Lesen, Schreiben und Parsen von JSON-Daten ermöglicht. Ein beliebtes Beispiel dafür ist die NuGet-Bibliothek "Newtonsoft.Json".
-
-Nachdem Sie die Bibliothek installiert haben, können Sie mit dem Erstellen von JSON-Objekten beginnen. Hier ist ein Beispiel, wie man ein Objekt mit der Klasse "JObject" erstellen kann:
+Hier ist ein Beispiel, wie du Daten in JSON-Format konvertieren kannst:
 
 ```C#
-JObject obj = new JObject();
-obj.Add("Name", "Max Mustermann");
-obj.Add("Alter", 30);
+using Newtonsoft.Json; //Importiere die notwendige Bibliothek
+
+var myObject = new { Name = "Max", Age = 25 }; //Erstelle ein Objekt mit einigen Eigenschaften
+string json = JsonConvert.SerializeObject(myObject); //Konvertiere das Objekt in JSON-Format
+Console.WriteLine(json); //Gebe das JSON aus, um die Ausgabe zu sehen
 ```
 
-Dieses Beispiel erstellt ein JSON-Objekt mit den Schlüssel-Wert-Paaren "Name" und "Alter". Nun können Sie dieses Objekt in ein JSON-Format konvertieren und in einer Textdatei speichern oder es an eine API senden.
+Als Ergebnis siehst du folgendes JSON:
 
-Um ein JSON-Objekt aus einer Datei zu lesen und zu parsen, können Sie die Methode "JObject.Parse()" verwenden. Ein Beispiel dafür könnte so aussehen:
+```
+{"Name":"Max","Age":25}
+```
+
+Und hier ist ein Beispiel, wie du JSON-Daten in ein C# Objekt konvertieren kannst:
 
 ```C#
-string json = File.ReadAllText("Beispiel.json");
-JObject obj = JObject.Parse(json);
-Console.WriteLine(obj["Name"]);
+string json = @"{ 'Name': 'Anna', 'Age': 30 }"; //Strings in C# müssen in einfachen Anführungszeichen sein
+var myObject = JsonConvert.DeserializeObject<Person>(json); //Person ist hier eine Klasse, die die Eigenschaften Name und Age hat
+Console.WriteLine(myObject.Name); //Gebe den Namen aus (Ausgabe: Anna)
+Console.WriteLine(myObject.Age); //Gebe das Alter aus (Ausgabe: 30)
 ```
-
-Dieses Beispiel liest ein JSON-Objekt aus der Datei "Beispiel.json" ein und gibt den Wert des Schlüssels "Name" aus.
 
 ## Deep Dive
 
-Wenn Sie tiefer in die Arbeit mit JSON einsteigen möchten, gibt es noch viele weitere Konzepte zu entdecken, wie z.B. das Erstellen von Arrays oder das Arbeiten mit verschachtelten JSON-Objekten. Es gibt auch viele Möglichkeiten, wie Sie JSON in Ihren Anwendungen verwenden können, wie z.B. das Abrufen von Daten von einer API oder das Speichern von Benutzereingaben.
+JSON (JavaScript Object Notation) ist ein Datenformat, das auf JavaScript basiert, aber von vielen anderen Programmiersprachen verwendet werden kann. Es ist einfach zu lesen und zu schreiben, was es zu einer bevorzugten Wahl für die Datenübertragung und Speicherung macht.
 
-Ein wichtiger Punkt beim Umgang mit JSON ist auch die Validierung. Es ist wichtig sicherzustellen, dass die JSON-Daten, die Sie erhalten oder senden, gültig sind. Dafür gibt es viele Online-Tools oder es können Validierungsregeln in Ihren Code eingebaut werden.
+In C# werden JSON-Daten in der Regel als Strings interpretiert und können mithilfe der Klasse "JsonConvert" verarbeitet werden. Diese Klasse enthält Methoden zum Konvertieren von C# Objekten in JSON und umgekehrt. Sie bietet auch Möglichkeiten, das JSON-Format anzupassen, wie zum Beispiel das Ignorieren bestimmter Eigenschaften oder das Hinzufügen von zusätzlichen Eigenschaften.
 
-Es empfiehlt sich auch, immer die Dokumentation der verwendeten Bibliotheken zu lesen, um alle Funktionen und Möglichkeiten voll auszuschöpfen.
+Eine andere nützliche Funktion von JSON ist die Möglichkeit, mehrere Objekte in einer Datei oder einem String zu speichern. Dies erleichtert die Speicherung und den Austausch von komplexen Datenstrukturen.
 
 ## Siehe auch
 
-- [JSON Tutorial auf Deutsch von freecodecamp](https://www.freecodecamp.org/news/json-deutsch/)
-- [Newtonsoft.Json Dokumentation](https://www.newtonsoft.com/json/help/html/R_WhatIsJsonSerialization.htm)
-- [Online JSON-Validierer](https://jsonformatter.curiousconcept.com/)
+- [JSON in C# - Entwicklerhandbuch von Microsoft](https://docs.microsoft.com/de-de/dotnet/standard/serialization/system-text-json-how-to)
+- [JSON Serializer in C# und .NET](https://www.newtonsoft.com/json)
+- [Einführung in JSON - Codecademy Kurs](https://www.codecademy.com/de/courses/javascript-learn-json/lessons/introduction-to-json/exercises/why-json)

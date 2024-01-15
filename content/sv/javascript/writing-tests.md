@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Skriva tester"
+title:                "Skriva tester"
+html_title:           "Javascript: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför Skriva Tester?
+## Varför
+Om du är en utvecklare som använder Javascript regelbundet, eller om du är ny inom programmering, så har du säkert hört talas om testning. Men varför är det så viktigt? Att skriva tester kan låta som en tråkig och onödig uppgift, men det är faktiskt en avgörande del av utvecklingsprocessen. Genom att skriva tester kan vi säkerställa att vår kod fungerar korrekt och undvika buggar som kan leda till större problem i framtiden.
 
-Att skriva tester är en viktig del av programvaruutveckling. Det hjälper till att säkerställa att koden är korrekt och fungerar som den ska. Genom att skriva tester kan du minimera buggar och fel i ditt program och förbättra dess övergripande kvalitet. Det är också ett bra sätt att spara tid och resurser i det långa loppet.
-
-# Så här skriver du tester
-
-För att skriva tester i Javascript, är det viktigt att förstå begreppet enhetstestning. Enhetstester är små tester som fokuserar på att testa en enskild funktion eller metod i din kod. För att skriva enhetstester behöver du en testdrivrutin, som kan vara ett separat program eller en del av din programkod.
-
-Här är ett exempel på hur du kan skriva ett enhetstest för funktionen "add" som adderar två tal:
+## Så här
+För att skriva tester i Javascript, behöver du använda ett testningsramverk som Mocha eller Jest. Här är ett enkelt exempel på en testfunktion som kontrollerar om en given sträng är ett palindrom:
 
 ```Javascript
-
-function add(a, b) {
-
-return a + b;
-
+function isPalindrome(str) {
+  // Konvertera strängen till små bokstäver och ta bort mellanslag
+  str = str.toLowerCase().replace(/\s/g, '');
+  // Jämför strängen med en omvänd version av sig själv
+  return str === str.split('').reverse().join('');
 }
 
-console.log(add(5, 7));
-
-// Output: 12
-
+describe('isPalindrome', () => {
+  it('should return true for "radar"', () => {
+    expect(isPalindrome('radar')).toBe(true);
+  });
+  it('should return false for "javascript"', () => {
+    expect(isPalindrome('javascript')).toBe(false);
+  });
+});
 ```
 
-I exemplet ovan definieras funktionen "add" som lägger till två värden och returnerar resultatet. Sedan skrivs utdatan från funktionen ut i konsolen för att verifiera att funktionen fungerar som den ska.
+Som du kan se, använder vi en `describe` funktion för att gruppera våra tester och en `it` funktion för att specificera vad som förväntas hända med vår kod. Inom `it` funktionen använder vi sedan `expect` och `toBe` för att jämföra resultatet av vår funktion med det förväntade värdet. Om alla våra tester passerar, så vet vi att vår funktion fungerar som den ska!
 
-# Djupdykning
+## Deep Dive
+Att skriva tester hjälper oss att förutse och förhindra buggar genom att tvinga oss att tänka på möjliga fel och gränsvärden. Detta resulterar i en mer robust och pålitlig kod. Dessutom hjälper tester oss även att förstå vår kod bättre och ge oss en möjlighet att refaktorera och förbättra den.
 
-Förutom enhetstester finns det också integrationstester och funktionella tester som kan användas för att testa mer komplex kod. Integrationstester används för att testa hur flera komponenter i koden samverkar med varandra, medan funktionella tester testar det färdiga programmet för att se till att det uppfyller de önskade kraven.
+En annan fördel med att skriva tester är att det möjliggör för flera utvecklare att arbeta på samma projekt utan att orsaka konflikter. Genom att ha en uppsättning tester som kan köras, kan alla utvecklare säkerställa att deras kod inte orsakar problem för andra delar av projektet.
 
-När du skriver tester är det också viktigt att ha en bra täckningsgrad för att se till att alla delar av koden testas. Ett annat viktigt steg i testning är att kontinuerligt utföra regressionstester för att säkerställa att koden fortfarande fungerar som den ska även efter ändringar eller uppdateringar.
+Det finns många olika typer av tester som kan användas i Javascript, inklusive enhetstester, integrationstester och end-to-end tester. Alla dessa tjänar olika syften och kan användas tillsammans för att ge en fullständig testningsmiljö för ditt projekt.
 
-# Se även
+## Se även
+Här är några användbara resurser för att lära dig mer om testning i Javascript:
 
-- [Enhetstester i Javascript](https://developer.mozilla.org/sv/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Testing_JavaScript)
-- [Integrationstester vs. enhetstester](https://www.softwaretestinghelp.com/integration-testing-vs-unit-testing/)
-- [Så här skriver du effektiva tester med Mocha och Chai](https://mochajs.org/)
+- [Mocha](https://mochajs.org/) - ett populärt testningsramverk för Javascript
+- [Jest](https://jestjs.io/) - ett annat populärt testningsramverk för Javascript med inbyggd asynkron stöd
+- [The Art of Unit Testing](https://www.amazon.com/Art-Unit-Testing-examples/dp/1933988274) - en bok om enhetstestning av Roy Osherove

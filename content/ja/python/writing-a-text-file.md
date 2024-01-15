@@ -1,6 +1,7 @@
 ---
-title:                "Python: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルを書く"
+html_title:           "Python: テキストファイルを書く"
+simple_title:         "テキストファイルを書く"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテキストファイルを書くのか
+##なぜ
+テキストファイルを書くことのメリットを説明します。
+テキストファイルを書くことにより、プログラムの出力やデータの保存が簡単になります。また、他のプログラムで読み込みやすく、様々な用途に活用することができます。
 
-テキストファイルはプログラミングにおいて、データや情報を保存するために重要な役割を果たします。また、読み取りや編集が容易であり、ソースコードや設定ファイルとしても使用されます。
-
-## テキストファイルの書き方
-
-次のPythonコードブロックには、テキストファイルを書き込むための簡単な例が含まれています。
+##やり方
+テキストファイルを書くにはPythonの `open()` 関数を使用します。以下のようにコードブロックで示します。
 
 ```Python
-# ファイルを書き込みモードで開く
-text_file = open("example.txt", "w")
+# テキストファイルを書き込みモードでオープン
+file = open("sample.txt", "w")
 
-# テキストをファイルに書き込む
-text_file.write("こんにちは！これはテストのテキストです。")
+# テキストファイルに"Hello, World!"を書き込み
+file.write("Hello, World!")
 
-# ファイルを閉じる
-text_file.close()
+# ファイルをクローズ
+file.close()
 
-# ファイルを読み取りモードで開く
-text_file = open("example.txt", "r")
+# 作成されたファイルを読み込んで出力
+new_file = open("sample.txt", "r")
+print(new_file.read())
 
-# テキストを読み込む
-text = text_file.read()
-
-# ファイルを閉じる
-text_file.close()
-
-# テキストを出力する
-print(text)
+#=> "Hello, World!"
 ```
 
-出力結果:
+##深堀り
+テキストファイルを書く際、オープンするモードにより挙動が異なります。`"w"`モードでオープンすると、既存のファイルがあった場合は上書きされ、ファイルが存在しない場合は新しく作成されます。また、ファイルをクローズすることでメモリの解放やデータの保存が行われます。
 
-```
-こんにちは！これはテストのテキストです。
-```
+また、ファイルをオープンした後は、ファイルオブジェクトのメソッドを使用してファイルへの書き込みや読み込みを行います。例えば、`write()` メソッドを使用することでテキストを書き込むことができます。
 
-## テキストファイルの詳細
-
-テキストファイルを書き込むためには、ファイルを開き、テキストを書き込み、ファイルを閉じるという基本的な手順に従います。また、ファイルを読み取る際にはファイルを開いてから読み取り、最後にファイルを閉じるというプロセスを行います。
-
-また、テキストファイルをより複雑な形式で書き込むことも可能です。例えば、CSVファイルやJSONファイルなどのように、データをより構造化して保存することができます。
-
-## 参考リンク
-
-- Pythonの公式ドキュメント: https://docs.python.org/ja/3/tutorial/inputoutput.html#reading-and-writing-files
-- テキストファイルのバイナリモードについて: https://python.keicode.com/lang/file-binary.php
-- CSVファイルを書き込む方法: https://note.nkmk.me/python-csv-writer/
+##参考リンク
+- [Python入門 (基本文法編)](https://www.python.jp/train/basic/intro.html)
+- [Pythonのopen関数について](https://qiita.com/kgsi/items/fb6a281f957e96d65e0d)

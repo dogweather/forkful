@@ -1,6 +1,7 @@
 ---
-title:                "Java: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generering av slumpmässiga siffror"
+html_title:           "Java: Generering av slumpmässiga siffror"
+simple_title:         "Generering av slumpmässiga siffror"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,37 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Random number generation, or slumptalsgenerering in Swedish, is an integral part of many programming tasks. Whether it's for creating unique identifiers, simulating games, or encryption algorithms, the ability to generate random numbers is essential for any programmer.
 
-Att generera slumpmässiga siffror kan vara en användbar funktion inom många olika områden inom programmering. Det kan hjälpa till att skapa variation och slumpmässighet i en applikation, vilket kan vara användbart vid testning och simuleringar.
-
-## Hur man gör det
-
-Det finns flera olika sätt att generera slumpmässiga siffror i Java, men en vanlig metod är att använda klassen Random. Nedanför finns ett exempel på hur man kan använda denna klass för att generera en slumpmässig siffra mellan 1 och 100.
+## Hur man gör
+För att generera random numbers i Java, används metoden `random()` från klassen `Math`. Det tar inga argument och returnerar ett kommatal mellan 0.0 och 1.0. För att få ett heltal, multiplicera resultatet med det önskade antalet möjliga utfall och konvertera till ett heltal med `Math.round()`.
 
 ```Java
-Random rand = new Random();
-int randomNumber = rand.nextInt(100) + 1;
-System.out.println("Slumpmässig siffra: " + randomNumber);
+double random = Math.random(); //slumpmässigt kommatal mellan 0.0 och 1.0
+int diceRoll = Math.round(random * 6); //slumptal mellan 1 och 6
 ```
 
-**Output:**
+Om du vill begränsa utfallen till ett specifikt intervall, lägg till en offset och använd `Math.floor()` för att avrunda neråt.
 
-`Slumpmässig siffra: 64`
+```Java
+int randomRange = Math.floor(random * (max - min + 1) + min); //slumptal mellan min och max
+```
 
-Detta kodblock skapar en instans av klassen Random och använder sedan metoden nextInt() för att generera en slumpmässig siffra. Talet som specificeras i parentesen anger den högsta siffran som kan genereras, och i detta fall är det 100. Genom att lägga till 1 kommer talet att vara mellan 1 och 100 istället för mellan 0 och 99.
+## Deep Dive
+Om du vill ha mer kontroll över slumptalsgenereringen, kan du använda klassen `Random` från paketet `java.util`. Den erbjuder fler metoder för att generera random numbers baserat på olika algoritmer, såsom `nextDouble()` för kommatal och `nextInt()` för heltal.
 
-Det finns också andra metoder inuti Random-klassen som kan användas för att generera slumpmässiga siffror av olika datatyper, såsom long och double. Det finns också andra klasser som kan användas för att generera slumpmässiga tal på olika sätt, såsom ThreadLocalRandom och SecureRandom.
+Det är också möjligt att specificera en "seed" för att få konsistenta resultat varje gång programmet körs. Detta kan vara användbart för testning och felsökning av kod som använder slumptal.
 
-## Djupdykning
-
-En vanlig fråga när det gäller generering av slumpmässiga siffror är om dessa siffror verkligen är slumpmässiga. Svaret på det är att de inte är 100% slumpmässiga, men de är tillräckligt slumpmässiga för att vara användbara inom programutveckling.
-
-Många av de klasser och metoder som används för att generera slumpmässiga siffror använder sig av en algoritm som baserar sig på en så kallad "seed". Denna seed är en startpunkt för algoritmen och om samma seed används kommer algoritmen alltid att generera samma siffror i samma ordning. Med andra ord, siffrorna är inte verkligt slumpmässiga utan är baserade på en förutbestämd ordning.
-
-En annan aspekt att tänka på när det gäller slumpmässiga siffror är vikten av en hög upplösning på systemklockan. Om klockan har låg upplösning kan det påverka slumpmässigheten av de genererade siffrorna.
-
-## Se också
-
-- [Java Random-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java ThreadLocalRandom-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)
-- [Java SecureRandom-klassen](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+## Se även
+- [Javadoc för klassen `Math` (Java 8)](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)
+- [Javadoc för klassen `Random` (Java 8)](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Analysera html"
-simple_title:         "Analysera html"
+title:                "Analys av html"
+html_title:           "Bash: Analys av html"
+simple_title:         "Analys av html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,34 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I dagens värld av digitala innovationer är HTML en viktig del av vår vardag. Detta språk används för att skapa webbsidor och är avgörande för att visa information på internet. Därför är det inte konstigt att det finns en ständigt växande efterfrågan på verktyg och tekniker som kan analysera, manipulera och utnyttja HTML-kod. Det är här Bash-programmering kommer in i bilden med förmågan att parsa HTML.
+Har du någonsin suttit och manuellt plockat ut information från en webbsida? Det är inte bara tidskrävande och tråkigt, men också ineffektivt. Att lära sig att programmera i Bash och att kunna parsas HTML kan spara dig en hel del tid och möda.
 
-## Hur man gör
+## Hur man gör det
 
-Parsering av HTML-kod i Bash kan verka utmanande, men med rätt verktyg och kunskap kan det bli en smidig uppgift. Ett bra första steg är att använda verktyg som "sed" eller "awk" för att extrahera specifika delar av HTML-koden. Till exempel, om du vill hitta alla länkar på en webbsida kan du använda följande kod i bash:
+Att parsas HTML med Bash är inte svårt, men kan vara lite knepigt i början. Här är tre enkla steg för att komma igång:
+
+1. Installera ett program som heter `curl` som gör det möjligt att hämta HTML-innehåll från en webbsida.
+2. Använd `grep` för att filtrera ut den information du vill plocka ut från webbsidan.
+3. Använd någon av Bash's inbyggda kommandon som `sed` eller `awk` för att formatera och presentera informationen på ett önskat sätt.
+
+
+Ett enkelt exempel på hur man kan parsas HTML med Bash är:
 
 ```Bash
-lynx -dump -listonly <URL> | sed -n '/^ *[0-9]/s, *.xt*(.*,*$,.&shift;,*p'
+curl https://www.example.com | grep "title" | awk '{print $2}' | sed 's/<.*>//'
 ```
-
-Detta kommer att ge en lista över alla länkar på webbsidan och extrahera endast länkarna från HTML-koden med hjälp av "sed".
-
-En annan vanlig teknik för att parsa HTML-kod i Bash är att använda verktyg som "grep" för att söka efter en specifik sträng eller "grep -o" för att endast returnera matchande delar av HTML-koden.
+Detta kommando hämtar innehållet från example.com, filtrerar ut raden som innehåller "title" och använder sedan `awk` för att plocka ut det andra ordet i raden (som i det här fallet är själva titeln på webbsidan). Sedan använder vi `sed` för att ta bort allt mellan < och >, vilket ger oss en ren titel.
 
 ## Djupdykning
 
-Att parsa HTML-kod i Bash kan också innebära att använda mer avancerade tekniker som regelbundna uttryck (regular expressions). Med regelbundna uttryck kan du skapa mönster som kan matcha och extrahera specifika delar av HTML-koden.
+Att parsas HTML med Bash handlar inte bara om att läsa och extrahera information, utan också om att följa principerna för en god programmeringspraxis. Här är några tips som kan hjälpa dig när du börjar:
 
-En vanlig utmaning när det gäller att parsa HTML-kod är att hantera olika formatering och variationer i koden. En strategi för att övervinna detta är att använda verktyg som "tidy" eller "HTML-XML-utils" för att konvertera HTML-koden till ett mer enhetligt format innan du börjar parsa den.
-
-Det finns också andra verktyg och bibliotek som kan vara till hjälp när du vill parsa HTML-kod i Bash, som till exempel "pup" eller "html-xml-utils" som kan hjälpa dig att hitta och extrahera specifika element från HTML-koden.
+- Var noggrann när du väljer grep-kommandon eftersom det finns olika sätt att skriva HTML-kod på och du måste vara säker på att ditt grep-kommando väljer rätt del av webbsidan.
+- Använd Bash's inbyggda variabler, såsom `$IFS` (Internal Field Separator) och `"$@"` (alla kommandoradsargument), för att göra din kod mer flexibel och skalbar.
+- Om du planerar att parsas en stor mängd data, överväg att använda Bashes inbyggda `fork` och `wait` funktioner för att göra parsingsprocessen snabbare och mer effektiv.
 
 ## Se även
 
-För mer information om Bash-programmering och hur man parsar HTML-kod, kolla in dessa användbara länkar:
-
-- [Guide till Bash-programmering](https://linuxcommand.org/)
-- [Bash och HTML-parser](https://www.gnu.org/software/bash/)
-- [Introduction till regelbundna uttryck](https://www.regular-expressions.info/)
-
-Lycka till med att utforska möjligheterna med att parsa HTML-kod i Bash!
+- En djupare förståelse för Bash och dess kommandon kan vara användbart för att parsas HTML. [Bash's officiella dokumentation](https://www.gnu.org/software/bash/manual/bash.html) är ett bra ställe att börja.
+- Om du vill utöka dina automatiseringsförmågor kan det vara till nytta att lära känna verktyg som `sed` och `awk`. Här är två användbara resurser för att komma igång: [Sed tutorial](https://www.grymoire.com/Unix/Sed.html) och [Awk tutorial](https://www.grymoire.com/Unix/Awk.html) (båda länkar på engelska).

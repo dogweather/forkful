@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Sending en http forespørsel med grunnleggende autentisering"
-simple_title:         "Sending en http forespørsel med grunnleggende autentisering"
+title:                "Sending av en http-forespørsel med grunnleggende autentisering"
+html_title:           "Fish Shell: Sending av en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending av en http-forespørsel med grunnleggende autentisering"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,30 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-HTTP-forespørsler med grunnleggende godkjenning er viktig for å sikre sikkerheten til nettjenester. Dette kan være nyttig for å begrense tilgangen til sensitive data eller funksjoner, og å sikre at bare autoriserte brukere får tilgang til tjenesten.
 
-## Hvordan gjøre det
-For å sende en HTTP-forespørsel med grunnleggende godkjenning i Fish Shell, kan du bruke følgende kodeblokk:
+Er du klar til å interagere med internettet på neste nivå? Da bør du lære å sende HTTP-forespørsler med grunnleggende autentisering ved hjelp av Fish Shell. Dette vil hjelpe deg å kommunisere med eksterne servere og hente data fra dem.
 
-```Fish Shell
-curl -u <brukernavn>:<passord> <URL>
+## Hvordan
+
+Det første du må gjøre er å installere curl kommandoen hvis du ikke allerede har den på datamaskinen din. Dette kan gjøres ved å åpne terminalen og skrive:
+
+```
+Fish Shell installasjon curl
 ```
 
-Dette vil resultere i en forespørsel til den angitte URL-en med brukernavn og passord inkludert i HTTP-overskriften.
+Når curl er installert, kan du begynne å sende HTTP-forespørsler med grunnleggende autentisering. Her er et eksempel på hvordan du kan gjøre det:
 
-For å utføre en GET-forespørsel, kan du bruke følgende kode:
-
-```Fish Shell
-curl -u <brukernavn>:<passord> -X GET <URL>
+```
+Fish Shell curl -u brukernavn:passord <url>
 ```
 
-Dette vil sende en GET-forespørsel med brukernavn og passord i overskriften. Du kan også bruke andre metoder som POST, PUT, DELETE og mer ved å endre verdien for -X-flagget.
+Dette vil sende en GET-forespørsel til den angitte URL-en med brukernavnet og passordet ditt som er kodet i base64-format. Resultatet vil bli vist i terminalen som standard, men du kan også spesifisere en fil å lagre resultatet i med `-o` flagget.
 
 ## Dypdykk
-For å forstå det grundigere, la oss ta en titt på hvordan det fungerer. HTTP-forespørsler med grunnleggende godkjenning bruker en Base64-kodet brukernavn og passord som en del av autorisasjonsheaderen i HTTP-forespørselen. Når serveren mottar forespørselen, dekodes denne informasjonen for å bekrefte identiteten til brukeren.
 
-Det er viktig å merke seg at Base64-koding ikke er en sikker form for kryptering, men bare en måte å konvertere tekst til binærkode. Det er derfor ikke anbefalt å bruke dette for sensitiv informasjon som passord.
+Nå som du har lært å sende en grunnleggende autentisert HTTP-forespørsel, kan du utforske flere muligheter. For eksempel kan du bruke forskjellige HTTP-metoder som POST, PUT og DELETE ved å spesifisere dem med `-X` flagget. Du kan også legge til ytterligere parametere og headerinformasjon med `-d` og `-H` flaggene.
 
-## Se også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/curl.html)
-- [Hvordan bruke Curl for å sende HTTP-forespørsler](https://www.digitalocean.com/community/tutorials/how-to-use-curl-to-send-and-receive-http-requests)
+Det kan også være nyttig å automatisk hente brukernavn og passord fra omgivelsene ved å bruke `$USER` og `$PASS` variablene. Dette vil bidra til å holde sensitiv informasjon privat og ikke inkludere den i kommandolinjen.
+
+## Se Også
+
+- [Fish Shell officielle dokumentasjon] (https://fishshell.com/docs/current/) 
+- [Curl kommandoen dokumentasjon] (https://curl.se/docs/manual.html)

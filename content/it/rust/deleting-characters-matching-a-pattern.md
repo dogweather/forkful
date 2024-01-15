@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Eliminazione di caratteri corrispondenti a un modello"
-simple_title:         "Eliminazione di caratteri corrispondenti a un modello"
+title:                "Cancellazione di caratteri corrispondenti ad un modello"
+html_title:           "Rust: Cancellazione di caratteri corrispondenti ad un modello"
+simple_title:         "Cancellazione di caratteri corrispondenti ad un modello"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Why
 
-Ci sono molte ragioni per cui potresti voler eliminare caratteri corrispondenti a un determinato pattern in un programma Rust. Ad esempio, potresti voler pulire input utente che contiene caratteri indesiderati o rimuovere del testo superfluo da una stringa. In questo post, esploreremo come farlo utilizzando il linguaggio di programmazione Rust.
+Capita spesso che ci troviamo di fronte alla necessità di cancellare caratteri in una stringa che corrispondono a un certo pattern. Ciò può essere utile quando si vuole pulire una stringa da eventuali caratteri superflui o ridurre la sua lunghezza.
 
-## Come Fare
+## How To
 
-Per eliminare caratteri corrispondenti a un pattern in Rust, possiamo utilizzare il metodo `replace` nella libreria standard `String`. Questo metodo richiede due argomenti: il pattern da cercare e il testo con cui sostituire il pattern. Ad esempio, se volessimo eliminare tutti gli spazi bianchi da una stringa, possiamo fare così:
+Per eseguire questa operazione in Rust, possiamo utilizzare il metodo `retain()` associato alle stringhe.
 
-```Rust
-let mut stringa = String::from("Questo è un esempio.");
-stringa.replace(" ", ""); // Elimina gli spazi bianchi
-println!("{}", stringa); // Output: "Questoèunesempio."
 ```
-In questo esempio, stiamo eliminando tutti gli spazi bianchi dalla stringa utilizzando il metodo `replace`. Possiamo anche utilizzare espressioni regolari per trovare pattern più specifici e sostituirli con del testo diverso. Ad esempio, se vogliamo eliminare tutte le vocali da una stringa, possiamo farlo in questo modo:
-
-```Rust
-let mut stringa = String::from("Questa è un'altra prova.");
-stringa.replace("[aeiou]", ""); // Sostituisce tutte le vocali con una stringa vuota
-println!("{}", stringa); // Output: "Qst 'n ltr prvv."
+Rust let mut stringa = String::from("Ciao, 12345!");
+stringa.retain(|c| c.is_alphabetic()); //il carattere "1" e "2" saranno cancellati
+println!("{}", stringa); // output: "Ciao!"
 ```
 
-## Approfondimento
+In questo esempio, abbiamo utilizzato la funzione `is_alphabetic()` per determinare quali caratteri mantenere nella stringa. Possiamo anche utilizzare altri metodi come `is_numeric()` o `is_whitespace()` per specificare ulteriormente quali caratteri eliminare.
 
-La libreria standard `String` offre diversi metodi che possono essere utili per eliminare caratteri corrispondenti a un pattern. Oltre a `replace`, possiamo utilizzare anche `remove` per eliminare un carattere specifico, `retain` per mantenere solo dei caratteri che corrispondono a un pattern e `trim` per eliminare caratteri di spazio bianco all'inizio e alla fine di una stringa. Inoltre, possiamo combinare diversi metodi per ottenere il risultato desiderato.
+## Deep Dive
 
-## Vedi Anche
+Il metodo `retain()` è definito all'interno della struttura `String` in Rust. Esso accetta una funzione come argomento e controlla ogni carattere della stringa corrente. Se la funzione restituisce `true`, il carattere verrà mantenuto, altrimenti verrà eliminato.
 
-- Documentazione ufficiale di Rust per la libreria `String`: https://doc.rust-lang.org/std/string/struct.String.html
-- Tutorial introduttivo su Rust: https://www.rust-lang.org/learn/get-started
-- Mastering Rust: A Comprehensive Guide to the Rust Programming Language: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346574
+È importante notare che, a differenza di altri metodi come `replace()`, `retain()` agisce direttamente sulla stringa e modifica il suo contenuto anziché restituire una nuova stringa.
+
+## See Also
+
+- [La documentazione ufficiale di Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.retain)
+- [Un esempio di utilizzo di `retain()`](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=aadadca8fc23ff32dc1e501d9fed151b)

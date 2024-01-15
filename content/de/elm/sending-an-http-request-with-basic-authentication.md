@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer HTTP-Anfrage mit Grundauthentifizierung"
+html_title:           "Elm: Senden einer HTTP-Anfrage mit Grundauthentifizierung"
+simple_title:         "Senden einer HTTP-Anfrage mit Grundauthentifizierung"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,46 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Es gibt mehrere Gründe, warum man sich für das Versenden von HTTP-Anfragen mit Basic-Authentifizierung entscheiden könnte. Einer davon ist, dass dies eine einfache und effektive Methode ist, um eine zusätzliche Sicherheitsebene für eine Anwendung zu schaffen, indem man den Zugriff auf bestimmte Ressourcen beschränkt. Außerdem ermöglicht es die Verwendung von individuellen Anmeldeinformationen für jeden Benutzer.
+Das Senden von HTTP-Anfragen mit grundlegender Authentifizierung ist ein häufiges Szenario bei der Entwicklung von Webanwendungen. Mit Hilfe von Elm können wir diese Aufgabe auf einfache und effiziente Weise erledigen, ohne uns um komplexe Authentifizierungslogik kümmern zu müssen.
 
-# Wie geht's
+## Wie geht's?
 
-Um eine HTTP-Anfrage mit Basic-Authentifizierung in Elm zu senden, müssen wir zuerst das Paket `elm/http` installieren. Dann können wir die Funktion `Http.send` verwenden, um eine Anfrage zu erstellen und zu senden. Der Authentifizierungsheader kann mithilfe der Funktion `Http.withHeader` hinzugefügt werden und die Anmeldeinformationen müssen als base64-kodierte Zeichenkette im Format `" Benutzername:Passwort "` angegeben werden.
+Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Elm zu senden, müssen wir zunächst die Bibliothek "elm/http" importieren. Anschließend können wir die Funktion "sendWithAuth" verwenden, um die Anfrage zu konfigurieren und auszuführen.
 
-```Elm
+**Hinweis:** Stellen Sie sicher, dass Sie die erforderlichen Berechtigungen haben, um auf die entsprechende Ressource zuzugreifen.
+
+```elm
 import Http
-import Json.Decode exposing (..)
-import Json.Encode
+import String
 
-type Msg
-    = RequestCompleted (Result Http.Error String)
+-- Beispiel-URL für eine geschützte Ressource
+url = "https://www.example.com/api/user"
 
-sendRequest : Cmd Msg
-sendRequest =
-    Http.send RequestCompleted
-        <| Http.get
-            { url = "http://example.com/api/resource"
-            , expect = Http.expectString decodeResponse
-            , headers = [ Http.withHeader "Authorization" "Basic YWxhZGRpbjpvcGVuc2VzYW1l" ]
-            }
+-- Benutzername und Passwort für die Authentifizierung
+username = "username"
+password = "password"
 
-decodeResponse : Decoder String
-decodeResponse =
-    decodeString
+-- Codieren Sie den Benutzernamen und das Passwort in Base64
+encodedCredentials =
+    String.join ":" [username, password]
+        |> String.toBase64
+
+-- Definieren Sie die Anfrage mit grundlegender Authentifizierung
+request : Http.Request String
+request =
+    let
+        config =
+            Http.withBasicAuth encodedCredentials
+                |> Http.expectString
+    in
+        Http.request { method = "GET", headers = [], url = url, body = Http.emptyBody, expect = config}
+
+-- Senden der Anfrage und Verarbeiten der Antwort
+Http.sendWithAuth (\result -> case result of
+                                Ok response ->
+                                    case response of 
+                                        Http.BadUrl _ ->
+                                            -- Fehlerbehandlung
+                                        _ ->
+                                            -- Verarbeiten Sie die Antwort hier
+                                Err _ ->
+                                    -- Fehlerbehandlung
+                                ) request
 ```
 
-Die `sendRequest`-Funktion gibt einen Befehl zurück, der gesendet werden kann, um die Anfrage auszuführen. Wenn die Anfrage erfolgreich ist, gibt es ein `Ok`-Ergebnis mit der Antwort vom Server zurück, andernfalls ein `Err`-Ergebnis mit einer Fehlermeldung.
+Die obigen Code-Beispiele zeigen die Verwendung von "elm/http" und "elm/string" Bibliotheken, um eine Anfrage mit grundlegender Authentifizierung zu senden. Wir codieren den Benutzernamen und das Passwort in Base64, um sie als Teil des Authorization-Headers in der Anfrage zu senden.
 
-## Tief tauchen
+## Tiefer Einblick
 
-Beim Senden einer HTTP-Anfrage mit Basic-Authentifizierung ist es wichtig zu beachten, dass diese Methode nicht als sicher gilt. Die Anmeldeinformationen werden als base64-kodierte Zeichenkette übermittelt, die relativ leicht entschlüsselt werden kann. Daher ist es ratsam, zusätzliche Sicherheitsmaßnahmen zu ergreifen, wie z.B. eine SSL-Verbindung herzustellen, um die Übermittlung der Anmeldeinformationen zu schützen.
+Die Funktion "withBasicAuth" aus der Bibliothek "elm/http" bietet uns eine einfache Möglichkeit, grundlegende Authentifizierung für unsere HTTP-Anfragen zu implementieren. Es nimmt die codierten Anmeldeinformationen als Argument und gibt eine Konfiguration für die Anfrage zurück, die den Authorization-Header enthält.
 
-Eine weitere wichtige Überlegung ist, dass die Anmeldeinformationen im Klartext im Code enthalten sind und somit potenziell von Unbefugten eingesehen werden können. Daher ist es empfehlenswert, die Anmeldeinformationen in einer separaten Konfigurationsdatei zu speichern und diese zur Laufzeit einzubinden.
+Bei der Verwendung von grundlegender Authentifizierung ist es wichtig, dass die Anmeldeinformationen sicher übertragen werden, da sie sonst leicht entschlüsselt werden können. Auch aus diesem Grund ist es wichtig, eine sichere Verbindung (HTTPS) zu verwenden, um sensible Daten zu übertragen.
 
-# Siehe auch
+## Siehe auch
 
-- [Elm HTTP-Paket Dokumentation](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Base64 Kodierung](https://de.wikipedia.org/wiki/Base64)
-- [HTTPS in Elm](https://supermario.github.io/elm-basics-the-missing-guide/09-https/)
+- "Einführung in Elm" von Jan König (https://jan-konig.de/elm)
+- Offizielle Elm-Dokumentation (https://guide.elm-lang.org/)
+- Beispielprojekt mit grundlegender Authentifizierung in Elm (https://github.com/example-project)

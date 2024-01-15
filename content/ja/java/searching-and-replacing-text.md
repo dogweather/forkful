@@ -1,6 +1,7 @@
 ---
-title:                "Java: 「テキストの検索と置換」"
-simple_title:         "「テキストの検索と置換」"
+title:                "テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,59 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、Javaプログラマーの皆さん。今日は、テキストの検索と置換についてお話ししたいと思います。Javaでテキストを編集する場合、よく必要になる作業ですよね。では、なぜこの作業をするのかご存知でしょうか？
+## なぜ?
 
-## なぜ
-テキストの検索と置換は、文字列を簡単に変更するための便利な方法です。大量のテキストを手作業で変更するよりも、プログラムを使って自動的に変換する方が効率的です。また、同じ文字列を複数の場所で使っている場合に、一括で変更することができるので便利です。
+テキストを検索して置換する必要があるかもしれません。例えば、大きな文書がある場合や複数のファイルに同じ修正が必要な場合など、手作業での修正は非常に時間がかかります。コンピューターを使って自動的に検索して置換することで、より効率的に作業を行うことができます。
 
-## 方法
-さて、実際にコードを書いていきましょう。Javaでは、次のような方法でテキストの検索と置換ができます。
+## 使い方
 
-```Java
-String text = "今日はいい天気です。";
-String result = text.replaceAll("いい", "素晴らしい");
-System.out.println(result);
-```
-
-このコードを実行すると、出力は次のようになります。
-
-```
-今日は素晴らしい天気です。
-```
-
-また、正規表現を使ってパターンマッチングを行うこともできます。例えば、次のようなコードを書くことで、メールアドレスの形式で記述されたテキストを全て"***@***"に置き換えることができます。
+まず、Javaの `String` クラスの `replace()` メソッドを使用して、テキスト内の特定の文字を置換する方法を見ていきましょう。次のコードを使用して、テキスト内の "Hello" を "こんにちは" に置換する例を示します。
 
 ```Java
-String text = "メールアドレスはxxx@xxx.comです。";
-String result = text.replaceAll("[\\w.%+-]+@[\\w.-]+\\.[\\w]{2,4}", "***@***");
-System.out.println(result);
+String text = "Hello World!";
+String replacedText = text.replace("Hello", "こんにちは");
+
+System.out.println(replacedText); // Output: こんにちは World!
 ```
 
-この場合の出力は、次の通りです。
+さらに、`replace()` メソッドは正規表現を使用して複数の文字を一度に置換することもできます。次のコードでは、"Hello" と "Hi" を一度に "こんにちは" に置換しています。
 
+```Java
+String text = "Hello World! Hi there!";
+String replacedText = text.replaceAll("Hello|Hi", "こんにちは");
+
+System.out.println(replacedText); // Output: こんにちは World! こんにちは there!
 ```
-メールアドレスは***@***です。
+
+また、`replace()` メソッドでは大文字と小文字を区別しないオプションも指定することができます。次のコードでは、"hello" と "HELLO" を同じく "こんにちは" に置換しています。
+
+```Java
+String text = "Hello World. HELLO there!";
+String replacedText = text.replaceAll("(?i)Hello", "こんにちは");
+
+System.out.println(replacedText); // Output: こんにちは World. こんにちは there!
 ```
 
 ## 深堀り
-検索と置換のより詳しい情報を知るには、Javaの正規表現パターンを学ぶことが重要です。正規表現を使うことで、検索パターンをより柔軟に指定することができます。また、Stringクラスの`replaceAll()`メソッドを使う代わりに、`Pattern`と`Matcher`のクラスを使うことで、より細かい制御が可能になります。
 
-```
-電話番号は (0123) 456-7890 です。
-電話番号は(321)987-6543 です。
-電話番号は(098)765-4321です。
-```
+上記のコードでは、`replaceAll()` メソッドを使用して複数の文字を一度に置換していますが、`replace()` メソッドを使用すると、1回の置換ごとにオリジナルの文字列がコピーされるため、パフォーマンスが低下します。そのため、複数の文字を置換する場合は `replaceAll()` メソッドを使用することが推奨されています。
 
-このようなテキストがあるとき、括弧を消してハイフンを入れて電話番号を整形するには、次のような正規表現を使うことができます。
+また、正規表現を使用することで、より柔軟な検索と置換が可能になります。正規表現を学ぶことで、様々な文字列処理の場面で強力なツールとして活用することができます。
 
-```Java
-String text = "電話番号は (0123) 456-7890 です。電話番号は(321)987-6543 です。電話番号は(098)765-4321です。";
-String result = text.replaceAll("\\((\\d{4})\\)\\s*(\\d{3})-(\\d{4})", "$1-$2-$3");
-System.out.println(result);
-```
+## さらに見る
 
-このコードでは、`()`で括られた4桁の数字をグループ化して、ハイフンで区切ることで整形しています。出力は次のようになります。
-
-```
-電話番号は0123-456-7890 です。電話番号は321-987-6543 です。電話番号は098-765-4321です。
-``
+- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [正規表現チュートリアル](https://www.tohoho-web.com/ex/regex.html)
+- [Javaでの正規表現の使用方法について詳しく学ぶ](https://www.baeldung.com/java-regex)

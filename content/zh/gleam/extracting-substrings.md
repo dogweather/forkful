@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "Gleam: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：提取子字符串可以帮助简化字符串操作，提高代码的可读性和可维护性。
+## 为什么
 
-如何：
-提取子字符串是通过使用字符串的索引来截取需要的部分，在Gleam中可以通过使用`String.slice`函数来实现。例如，如果我们有一个字符串`"Hello World!"`，想要提取前五个字符，即`"Hello"`，可以通过以下代码实现：
+Gleam 是一种简单易懂的编程语言，它提供了许多方便的工具来处理字符串，其中就包括提取子串。这个功能可以让你轻松地从一个较长的字符串中获取你所需要的部分，节省了手动处理字符串的时间和精力。不仅如此，它还能帮助你更加高效地处理数据，并且可以轻松地集成到其他项目中。
 
-```Gleam
-let greeting = "Hello World!"
-let first_five = String.slice(greeting, 0, 5)
-```
+## 怎么做
 
-输出结果为`"Hello"`。我们也可以通过指定负数索引来从后往前截取，例如`String.slice(greeting, -6, -1)`将会得到`"World"`。
-
-深入了解：
-提取子字符串并不仅限于固定的索引值，我们可以通过使用变量来动态地提取。例如，如果我们有一个需要处理的字符串列表`["user1", "user2", "user3"]`，我们可以使用循环来一次提取每个字符串中的后缀数字，从而得到一个新的列表`[1, 2, 3]`。代码示例如下：
+要提取子串，首先需要使用" `substrings`"函数。这个函数接受两个参数，第一个参数是要提取子串的字符串，第二个参数是子串的起始位置和长度。以下是一个例子，演示如何从字符串"`Hello, World!`"中提取子串"`World`"：
 
 ```Gleam
-let users = ["user1", "user2", "user3"]
-let suffix = "user"
-let ids = for user in users {
-    let id_string = String.slice(user, String.length(suffix), String.length(user))
-    String.to_int(id_string)
-}
+import gleam/strings
+
+let result = strings.substrings("Hello, World!", {start: 7, length: 5})
+
+assert result == Ok("World")
 ```
 
-输出结果为`[1, 2, 3]`。通过这种方法，我们可以更灵活地提取子字符串，处理复杂的字符串操作。
+可以看到，我们使用"`start`"参数来指定子串的起始位置，这里是第7个字符（索引从0开始），再使用"`length`"参数指定子串的长度，这里是5个字符。如果不想指定长度，也可以通过使用"`start`"和"`end`"参数来指定子串的终止位置，如下所示：
 
-另外，Gleam还提供了更多有用的函数，如`String.trim`来去除字符串两侧的空格，`String.replace`来替换字符串中的特定部分等等。
+```Gleam
+import gleam/strings
 
-查看也可以参考的链接：
+let result = strings.substrings("Hello, World!", {start: 7, end: 11})
 
-- [Gleam官方文档](https://gleam.run/documentation/)
-- [Gleam字符串操作函数](https://gleam.run/documentation/stdlib/string.html)
-- [Gleam列表操作](https://gleam.run/documentation/stdlib/list.html)
+assert result == Ok("World")
+```
+
+不仅如此，"`substrings`"函数还支持负数作为索引，可以从字符串的末尾往前提取子串。下面的例子演示如何从字符串"`Hello, World!`"中提取子串"`World!`"：
+
+```Gleam
+import gleam/strings
+
+let result = strings.substrings("Hello, World!", {start: -6, length: 6})
+
+assert result == Ok("World!")
+```
+
+当然，如果无法从给定的字符串中提取到子串，"`substrings`"函数会返回一个错误类型的结果。所以在使用之前，我们最好先进行错误处理。
+
+## 深入探究
+
+除了提取子串，Gleam还提供了其他许多处理字符串的函数，如"`trim`"、"`contains`"和"`replace`"等。同时，Gleam也提供了详细的文档和示例，方便开发者了解和使用这些函数。
+
+## 进一步阅读
+
+如果想了解更多关于字符串处理的内容，可以参考以下官方文档和示例：
+
+- Gleam字符串处理文档：https://gleam.run/documentation/?redirected-from=stable.2.0%2Fdocs%2Ftypes%2Fstring
+- Gleam字符串处理示例：https://github.com/gleam-lang/gleam/blob/stable.2.0/lib/strings/strings_test.gleam

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Javascript recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,45 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever found yourself trying to plan for an event or project that will take place in the future? Perhaps you need to know the date for a birthday or an important deadline. In these situations, having the ability to calculate a date in the future or past can be incredibly useful.
+Calculating dates in the future or past may seem like a daunting task, but it can actually be quite useful in many programming scenarios. Being able to determine a future date, for example, can help with scheduling events and tasks, while calculating a past date can assist with data analysis.
 
 ## How To
 
-The good news is that Javascript offers a simple way to achieve this. The Date object, along with a few built-in methods, allows us to easily manipulate dates. Let's take a look at some code examples:
+To calculate a date in the future or past, we can use the `Date()` object in Javascript. Let's look at some examples below:
 
-```
-// Create a new Date object with the current date
-let currentDate = new Date();
-
-// Calculate a date 5 days from now
-let futureDate = new Date();
-futureDate.setDate(currentDate.getDate() + 5);
-
-// Calculate a date 3 months in the past
-let pastDate = new Date();
-pastDate.setMonth(currentDate.getMonth() - 3);
+First, we create a new `Date` object and assign it to a variable called `today`:
+```Javascript
+let today = new Date();
 ```
 
-In the first example, we use the `getDate()` method to get the current day, and then add 5 to it to get the future date. Similarly, in the second example, we use the `getMonth()` method to get the current month, and then subtract 3 to get the past date.
+We can then use the `setDate()` method to set the date to a specific day by passing in a numerical value:
+```Javascript
+today.setDate(10); //this will set the date to the 10th of the current month
+```
 
-We can also use the `getFullYear()` and `getMinutes()` methods to get the current year and minutes, respectively. With these methods, we can easily calculate any date in the future or past.
+To calculate a future date, we can use the `setDate()` method and pass in the desired number of days to add:
+```Javascript
+today.setDate(today.getDate() + 7); //this will add 7 days to the current date
+```
+
+Similarly, to calculate a past date, we can use the `setDate()` method and pass in a negative number of days:
+```Javascript
+today.setDate(today.getDate() - 14); //this will subtract 14 days from the current date
+```
+
+We can also use the `setFullYear()` method to change the year of the date object:
+```Javascript
+today.setFullYear(2022); //this will set the year to 2022
+```
+
+And finally, we can retrieve the updated date information using the `getDate()`, `getMonth()`, and `getFullYear()` methods:
+```Javascript
+let day = today.getDate();
+let month = today.getMonth();
+let year = today.getFullYear();
+console.log(`${month+1}/${day}/${year}`); //outputs "8/24/2022" (assuming today's date is 8/24/2021)
+```
 
 ## Deep Dive
 
-Behind the scenes, dates in Javascript are represented in milliseconds since January 1, 1970. This means that we can also do calculations using milliseconds.
+Behind the scenes, the `Date()` object in Javascript stores the date and time as the number of milliseconds that have elapsed since January 1, 1970. This is known as the Unix Epoch and is the basis for date and time calculations in many programming languages.
 
-```
-// Create a new Date object with the current date
-let currentDate = new Date();
+When using the `getDate()` and `setDate()` methods, it is important to note that the day values are zero-based. This means that January is represented as 0, February as 1, and so on. Therefore, when setting a future date, we need to add 1 to the desired month value.
 
-// Calculate a date 10 hours from now
-let futureDate = new Date(currentDate.getTime() + (10 * 60 * 60 * 1000));
-```
-
-In the above example, we use the `getTime()` method to get the current date in milliseconds, then add 10 hours (converted to milliseconds) to it. This gives us a date 10 hours in the future.
+Additionally, the `setFullYear()` method accepts a four-digit year, while the `getFullYear()` method returns a four-digit value. Keep this in mind when working with dates from different date systems.
 
 ## See Also
 
-- [MDN Web Docs - Date objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Date methods](https://www.w3schools.com/js/js_date_methods.asp)
-- [Stack Overflow - How to calculate date in Javascript](https://stackoverflow.com/questions/563406/add-days-to-javascript-date)
+- [Javascript Date object documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Unix time explanation](https://www.epochconverter.com/)

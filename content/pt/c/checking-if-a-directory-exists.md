@@ -1,6 +1,7 @@
 ---
-title:                "C: Verificando se um diretório existe"
-simple_title:         "Verificando se um diretório existe"
+title:                "Verificar se um diretório existe."
+html_title:           "C: Verificar se um diretório existe."
+simple_title:         "Verificar se um diretório existe."
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,110 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Porque verificar se um diretório existe
+## Por que
 
-Se você é um programador experiente em C, provavelmente já se deparou com a necessidade de verificar se um diretório existe antes de realizar alguma operação. Isso é especialmente importante se o seu programa depende de arquivos que devem estar presentes em um determinado diretório. Neste artigo, vamos explorar como verificar a existência de um diretório em um programa escrito em linguagem C.
+Às vezes, em nosso programa em C, precisamos verificar se um diretório existe antes de executar certas ações. Isso pode ser útil para garantir que o programa funcione corretamente e evite erros inesperados. Neste artigo, mostraremos como fazer isso de forma simples e eficiente.
 
-## Como verificar se um diretório existe em C
+## Como fazer
 
-Em C, existem duas maneiras de verificar se um diretório existe: utilizando a função `opendir()` ou `access()`. Ambas as funções são definidas na biblioteca padrão `dirent.h`.
+Para verificar se um diretório existe em C, podemos usar a função `opendir()`. Esta função pertence à biblioteca `dirent.h` e nos permite abrir um diretório para leitura. Se o diretório não existir, a função retornará um ponteiro nulo. Isso significa que podemos usá-lo em uma condição para verificar a existência do diretório.
 
-### Utilizando `opendir()`
+Veja um exemplo de código abaixo:
 
-A função `opendir()` é utilizada para abrir um diretório e, caso seja bem-sucedida, retorna um ponteiro para a sua estrutura `DIR`. Se o diretório não existir, a função retornará `NULL`.
-
-```C
-#include <stdio.h>
+```
 #include <dirent.h>
+#include <stdio.h>
 
 int main() {
-    DIR *dir = opendir("/home/usuario/Documents"); // diretório existente
-    if(dir) {
-        // o diretório existe
-        printf("O diretório existe\n");
+    char* directory = "meu_diretorio";
+    if (opendir(directory) != NULL) {
+        printf("O diretório existe!");
+    } else {
+        printf("O diretório não existe!");
     }
-    else {
-        // o diretório não existe
-        printf("O diretório não existe\n");
-    }
-    
     return 0;
 }
 ```
 
-O código acima tenta abrir o diretório `/home/usuario/Documents`, que é um diretório existente no sistema. Se compilarmos e executarmos o programa, o output será:
+Neste exemplo, declaramos uma variável `directory` contendo o nome do diretório que queremos verificar. Então, usamos a função `opendir()` para tentar abrir o diretório. Se o retorno da função for diferente de nulo, significa que o diretório existe e imprimimos essa informação na tela.
+
+## Mergulho profundo
+
+Em alguns casos, é necessário verificar se o diretório existe e também se tem permissões de leitura ou escrita. Para isso, podemos usar as funções `access()` e `mkdir()`, respectivamente.
+
+A função `access()` verifica se podemos acessar um determinado caminho de arquivo ou diretório com as permissões fornecidas. Já a função `mkdir()` é usada para criar um novo diretório com as permissões especificadas.
+
+Veja um exemplo abaixo:
 
 ```
-O diretório existe
-```
-
-Mas o que acontece se o diretório não existir? Vamos modificar o código para tentar abrir o diretório `/home/usuario/Fotos`, que não existe em nosso sistema:
-
-```C
-#include <stdio.h>
-#include <dirent.h>
-
-int main() {
-    DIR *dir = opendir("/home/usuario/Fotos"); // diretório não existente
-    if(dir) {
-        // o diretório existe
-        printf("O diretório existe\n");
-    }
-    else {
-        // o diretório não existe
-        printf("O diretório não existe\n");
-    }
-    
-    return 0;
-}
-```
-
-Ao executar o programa, o output será:
-
-```
-O diretório não existe
-```
-
-### Utilizando `access()`
-
-A função `access()` é utilizada para verificar se o programa tem permissão de acesso a um determinado arquivo ou diretório. Se o arquivo ou diretório existir, a função retornará `0`; caso contrário, retornará `-1`.
-
-```C
-#include <stdio.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 int main() {
-    int dir = access("/home/usuario/Documents", F_OK); // diretório existente
-    if(!dir) {
-        // o diretório existe
-        printf("O diretório existe\n");
+    char* directory = "meu_diretorio";
+    // verificar se tem permissão de leitura
+    if (access(directory, R_OK) != 0) {
+        printf("Você não tem permissão para ler este diretório.");
+    } else {
+        printf("Você pode ler este diretório!");
     }
-    else {
-        // o diretório não existe
-        printf("O diretório não existe\n");
+    // criar um novo diretório com permissão de escrita
+    if (mkdir("novo_diretorio", S_IRWXU) == -1) {
+        printf("Não foi possível criar o diretório.");
+    } else {
+        printf("O diretório foi criado com sucesso!");
     }
-    
     return 0;
 }
 ```
 
-O argumento `F_OK` especifica que queremos verificar apenas a existência do diretório. Se compilarmos e executarmos o programa, o output será o mesmo que o do exemplo anterior:
-
-```
-O diretório existe
-```
-
-Caso o diretório não exista, o output será:
-
-```
-O diretório não existe
-```
-
-## Aprofundando
-
-Ambas as funções apresentadas são úteis para verificar a existência de um diretório. No entanto, a função `access()` é mais abrangente, pois também pode ser utilizada para verificar a existência de arquivos e verificar permissões de acesso. Além disso, ela é compatível com as versões mais recentes do C, enquanto a função `opendir()` é uma função legada e pode não estar disponível em todos os sistemas operacionais.
+Neste exemplo, usamos a função `access()` para verificar se temos permissão de leitura no diretório especificado. Em seguida, usamos `mkdir()` para criar um novo diretório chamado "novo_diretorio" com permissões de leitura, escrita e execução para o usuário atual.
 
 ## Veja também
 
-- [Documentação da função `opendir()` (em inglês)](https://www.gnu.org/software/libc/manual/html_node/List-of-Directory-Stream-Functions.html)
-- [Documentação da função `access()` (em inglês)](https://www.gnu.org/software/libc/manual/html_node/File-Access-Permission.html)
+- [Documentação oficial sobre a função opendir()](https://linux.die.net/man/3/opendir)
+- [Tutorial sobre o uso de opendir()](https://www.geeksforgeeks.org/c-program-list-files-sub-directories-directory/)
+- [Explicação sobre as funções access() e mkdir()](https://www.gnu.org/software/libc/manual/html_node/File-Permission-Bits.html)

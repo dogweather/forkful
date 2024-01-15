@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Radera tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "Gleam: Radera tecken som matchar ett mönster"
 simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,44 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Det finns många användbara fall där man kan behöva ta bort tecken som matchar ett visst mönster från en sträng. Till exempel när man rensar ut onödiga specialtecken från en text eller när man måste ta bort alla siffror från en sträng.
 
-I detta blogginlägg kommer vi att titta på hur man kan använda Gleam för att ta bort tecken som matchar ett visst mönster från en sträng. Detta kan vara användbart för att rensa upp data och förbereda det för vidare bearbetning.
-
-## Hur man gör
-
-För att ta bort tecken som matchar ett visst mönster från en sträng kan du använda funktionen `String.replace` i Gleam. Funktionen tar tre argument: strängen där matchningen ska ske, det mönster som man vill ta bort och vad den matchade strängen ska ersättas med. Här är ett exempel på hur man kan använda funktionen:
+## Så här gör du
+För att ta bort karaktärer baserat på ett givet mönster i Gleam, kan du använda funktionen `string.replace`, som tar emot ett mönster och en ersättningstext. Till exempel:
 
 ```Gleam
-
 import gleam/string
 
-let input = "Detta är en teststräng som innehåller en viss typ av text som vi vill ta bort"
-let output = String.replace(input, "viss typ av text", "")
-
+let text = "123-456-789"
+let pattern = "[0-9]"
+let result = string.replace(text, pattern, "")
 ```
 
-I detta exempel kommer `output` att vara "Detta är en teststräng som innehåller en som vi vill ta bort". Det vill säga, den delen av strängen som matchar mönstret har blivit borttagen.
-
-## Djupdykning
-
-För mer avancerade behov kan man använda sig av reguljära uttryck för att matcha och ta bort tecken från en sträng. Det finns flera funktioner i Gleam som gör det möjligt att använda reguljära uttryck, bland annat `Regexp.replace` och `Regexp.replace_all`. Dessa funktioner tar också tre argument: strängen där matchningen ska ske, det reguljära uttrycket som man vill matcha och vad den matchade strängen ska ersättas med.
-
-Låt oss ta ett exempel där vi vill ta bort alla siffror från en sträng:
+I detta exempel ersätts alla siffror i strängen med en tom sträng, vilket resulterar i att den nya strängen blir "----". Här är ett annat exempel där vi bara vill ta bort alla versaler från en sträng:
 
 ```Gleam
+import gleam/string
 
-import gleam/regexp
-
-let input = "123 Detta är en teststräng som innehåller siffror"
-let output = Regexp.replace_all(input, "[0-9]", "")
-
+let text = "Hello World"
+let pattern = "[A-Z]"
+let result = string.replace(text, pattern, "")
 ```
 
-I detta fall kommer `output` att vara "Detta är en teststräng som innehåller siffror".
+Resultatet av detta kodblock blir "ello orld". 
 
-Det är viktigt att notera att reguljära uttryck kan vara rätt så förvirrande för nybörjare, så det kan kräva lite övning innan du känner dig bekväm med att använda dem. Men de kan vara väldigt användbara när man vill göra mer avancerade matchningar och ersättningar.
+## Djupdykning
+När man använder `string.replace` för att ta bort tecken baserat på ett mönster, kan man också utnyttja reguljära uttryck för att göra mönstret mer avancerat. Till exempel, om vi vill ta bort alla vokaler från en sträng kan vi använda följande mönster: `"[aeiouy]"`. Detta kommer att matcha alla vokaler i engelska alfabetet och ta bort dem från strängen.
+
+Det är också viktigt att tänka på att `string.replace` endast tar bort de karaktärer som matchar mönstret. Om du till exempel anger mönstret `"[0-9]"` men inte specificerar en ersättningstext, kommer funktionen bara att ta bort siffrorna och behålla alla andra tecken i strängen.
 
 ## Se även
-
-- Gleam dokumentation om `String.replace`: https://gleam.run/book/libraries/std.string.html#replace
-- Gleam dokumentation om reguljära uttryck: https://gleam.run/book/libraries/std.regexp.html
+- Gleams officiella dokumentation för `string.replace`: [https://gleam.run/core/string.html#replace](https://gleam.run/core/string.html#replace)
+- En utförlig guide för reguljära uttryck i Gleam: [https://medium.com/@matthewgallienne/regular-expressions-in-gleam-f3a657767535](https://medium.com/@matthewgallienne/regular-expressions-in-gleam-f3a657767535)

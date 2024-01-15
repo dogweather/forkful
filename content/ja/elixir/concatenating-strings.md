@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 文字列の連結"
-simple_title:         "文字列の連結"
+title:                "文字列の結合"
+html_title:           "Elixir: 文字列の結合"
+simple_title:         "文字列の結合"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ： 文字列の連結をするのはなぜか？
+## なぜ
 
-文字列の連結は、プログラミングで繰り返し使用される一般的なタスクです。文字列を連結することで、プログラムがより効率的に動作し、より見やすくなります。
+文字列の連結をすることの利点について知りたいと思っている方もいるかもしれません。私たちは、Elixir における文字列の連結の重要性を説明するためにこの記事を書きました。
 
-## 方法：どのように文字列を連結するか？
+## 連結する方法
 
-文字列を連結するためには、Elixirの`<>`演算子を使います。例えば、"Hello"と"World"の文字列を連結するには、`"Hello" <> "World"`という形式でコードを書きます。
+Elixir では、文字列を簡単に連結することができます。以下のコード例を見てください。
 
 ```Elixir
-"Hello" <> "World"
+string1 = "Hello"
+string2 = "world"
+
+final_string = string1 <> " " <> string2
+
+IO.puts(final_string)
 ```
 
-上記のコードを実行すると、"HelloWorld"という文字列が出力されます。
+このコードを実行すると、"Hello world"という文字列が出力されます。ここでは、`<>` 演算子を使用して、`string1` と `string2` を連結し、間にスペースを追加しています。
 
-## 深堀り：文字列の連結についてさらに詳しく
+また、複数の文字列を連結する際には、`Enum.join/2` 関数を使用することもできます。以下のコードを見てください。
 
-Elixirでは、`<>`演算子を使って複数の文字列を一度に連結することができます。例えば、`"Hello" <> " " <> "World"`という形式で、空白を挟んで複数の文字列を連結することもできます。また、変数と文字列を連結する際には、`<>`演算子を使用することで文字列内に変数の値を挿入することができます。
+```Elixir
+strings = ["Hello", " ", "world"]
+final_string = Enum.join(strings)
 
-## 参考： 関連リンク
+IO.puts(final_string)
+```
 
-- [Elixirの公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#string-interpolation)
-- [文字列の連結についてのElixir Forumの記事](https://elixirforum.com/t/concatenation-of-strings/1268)
-- [Elixirで文字列を操作する方法についてのブログ記事](https://www.littlelines.com/blog/2014/07/08/elixir-tutorial-how-to-string-manipulation-operators/)
-- [ElixirコミュニティのSlackチャンネル](https://elixir-slackin.herokuapp.com/)
+このコードも同じ結果が得られますが、`Enum.join/2` 関数を使用することでより柔軟に文字列を連結することができます。
+
+## 深く掘り下げる
+
+Elixir では、文字列を連結する際にメモリのアロケーションが起こらないように最適化されています。そのため、大量の文字列を連結してもパフォーマンスに影響が出にくいのです。
+
+また、`<>` 演算子は、リストを連結する際にも使用することができます。しかし、ここでは文字列の連結に焦点を当てて説明しています。
+
+## See Also
+
+- [Elixir ドキュメント：文字列連結](https://hexdocs.pm/elixir/String.html#concatenation-and-interpolation)
+- [Elixir School：文字列操作](https://elixirschool.com/jp/lessons/basics/string-concatenation/)

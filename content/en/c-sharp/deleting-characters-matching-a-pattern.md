@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "C# recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-When working with text data in programming, it is common to encounter unwanted characters that do not fit the desired pattern. This can disrupt the functionality of the code and make it difficult to manipulate the data. In these cases, it is helpful to know how to delete characters that match a specific pattern, saving time and improving the overall quality of the code.
+Deleting characters matching a pattern can be useful in various scenarios such as data cleaning and processing, removing unwanted characters from a string, or extracting specific information. By understanding how to delete characters matching a pattern in C#, you can efficiently manipulate data and improve the overall functionality of your code.
 
 ## How To
-
-In C#, there are various methods for deleting characters based on a specific pattern. One way to do this is by using the `Regex.Replace()` method. This method takes in the string to search, the regular expression pattern, and the replacement string. For example, let's say we have a string variable named `text` that contains the text "Hello, World!". If we want to delete all commas from this string, we can use the following code:
-
 ```C#
-text = Regex.Replace(text, ",", "");
+string text = "Hello123$World!";
+string cleanText = Regex.Replace(text, @"[0-9$]", ""); // using Regex class
+
+Console.WriteLine(cleanText); // output: HelloWorld
 ```
 
-This will replace all instances of the comma character with an empty string, effectively deleting them from the original string. The resulting value of `text` will be "Hello World!". 
+To delete characters matching a pattern in C#, we can use the Regex.Replace() method from the Regex class. This method accepts two parameters: the input string and the pattern to match. In the above example, we use a regular expression pattern to match all numbers and the dollar symbol ($) in the input string. Then, we replace them with an empty string, effectively deleting them from the string. 
 
-Another way to delete characters based on a pattern is by using the `StringBuilder` class. This class allows us to create a mutable string, which means we can modify it as needed. We can use its `Remove()` method to delete characters at a specific position based on the pattern. For example, let's say we have the same string "Hello, World!" and we want to delete the first comma. We can use the following code:
+Another way to achieve the same result is by using the StringBuilder class:
 
 ```C#
-StringBuilder sb = new StringBuilder(text);
-sb.Remove(sb.indexOf(","), 1);
-text = sb.ToString();
+StringBuilder sb = new StringBuilder("Hello123$World!");
+
+for (int i = sb.Length - 1; i >= 0; i--)
+{
+    if (Char.IsNumber(sb[i]) || sb[i] == '$')
+    {
+        sb.Remove(i, 1);
+    }
+}
+
+Console.WriteLine(sb.ToString()); // output: HelloWorld
 ```
 
-The `indexOf()` method finds the first occurrence of the specified character, and then we use the `Remove()` method to delete that character from the `StringBuilder` object. Finally, we assign the modified string back to the original variable. The resulting value of `text` will be "Hello World!".
+In this example, we use a for loop to iterate through the characters in the string and check if they are numbers or the dollar symbol. If they are, we use the Remove() method from the StringBuilder class to delete the character at that specific index. This method takes in two parameters: the index to start removing characters and the number of characters to remove. 
 
 ## Deep Dive
+In both of the above examples, we used a regular expression pattern to match the characters we wanted to delete. Regular expressions, also known as regex, are powerful tools for pattern matching in strings. They allow us to specify a set of rules to search for specific patterns in a string and manipulate them accordingly. 
 
-While the above methods are useful for deleting characters based on a specific pattern, there are certain cases where more complex patterns may require a custom solution. In these cases, we can use the `Regex.Replace()` method with a callback function. This function allows us to specify custom logic for what should replace the matched pattern. For example, let's say we want to delete all vowels from a string. We can use the following code:
+Regular expressions consist of characters that represent certain behavior, such as searching for specific characters, numbers, or symbols. In our examples, we used the `[0-9$]` pattern to match all numbers and the dollar symbol. This is just one of the many patterns you can use in regex. 
 
-```C#
-text = Regex.Replace(text, "[aeiou]", match => "");
-```
+To learn more about regular expressions and how to use them in C#, check out the following resources:
 
-The `[aeiou]` is a regular expression pattern that matches any lowercase vowel. In the callback function, we simply return an empty string, effectively deleting the matched character. The resulting value of `text` will be "Hll, Wrld!".
+- [C# Regular Expressions Basics](https://www.c-sharpcorner.com/UploadFile/8a67c0/regular-expression-in-C-Sharp/)
+- [Regular Expressions in C# Tutorial](https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm)
 
 ## See Also
-
-- [C# Regex.Replace method](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-- [C# StringBuilder class](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)
-- [Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [StringBuilder Class in C#](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)
+- [Regex Class in C#](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)

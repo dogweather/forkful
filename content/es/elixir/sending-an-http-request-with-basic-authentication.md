@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Enviando una solicitud http con autenticación básica"
-simple_title:         "Enviando una solicitud http con autenticación básica"
+title:                "Envío de una solicitud http con autenticación básica"
+html_title:           "Elixir: Envío de una solicitud http con autenticación básica"
+simple_title:         "Envío de una solicitud http con autenticación básica"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,38 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En la programación de Elixir, a menudo es necesario interactuar con aplicaciones web mediante el envío de solicitudes HTTP. Para garantizar la seguridad y autorización adecuadas, es fundamental comprender cómo enviar una solicitud HTTP con autenticación básica.
+En el mundo del desarrollo web, es común que nos encontremos con la necesidad de autenticar a los usuarios para acceder a ciertos recursos. Una forma de hacerlo es a través de la autenticación básica en las solicitudes HTTP. Esta es una forma sencilla pero efectiva de validar las credenciales de un usuario para permitirle acceder a ciertas partes de una aplicación.
 
 ## Cómo hacerlo
 
-Enviar una solicitud HTTP con autenticación básica en Elixir es sencillo gracias a la librería HTTPoison. Primero, debemos agregar la dependencia a nuestro archivo mix.exs:
+Para enviar una solicitud HTTP con autenticación básica en Elixir, debemos seguir los siguientes pasos:
+
+1. Primero, debemos agregar el módulo `:hackney` a nuestro archivo `mix.exs` como dependencia: `{:hackney, "~> 1.18"}`.
+
+2. Luego, debemos importar el módulo `:hackney` en nuestro archivo `.ex`: `:hackney` en la sección `:applications` y `:hackney` en la sección `:extra_applications`.
+
+3. Ahora, podemos usar la función `:httpc.request/4` para enviar nuestra solicitud HTTP. Esta función toma cuatro argumentos: el método HTTP, la URL, los encabezados y el cuerpo de la solicitud. Para agregar autenticación básica, debemos incluir un encabezado `Authorization` con las credenciales del usuario codificadas en base64. A continuación, se muestra un ejemplo de cómo hacerlo en Elixir:
 
 ```Elixir
-def deps do
-  [{:httpoison, "~> 1.6"}]
-end
+:hackney.request(:get, "https://www.example.com", [{"Authorization", "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}], "")
 ```
 
-Luego, podemos realizar la solicitud utilizando la función `HTTPoison.get/2` y pasando una URL y parámetros opcionales, incluyendo el encabezado de autenticación básica:
+4. Finalmente, podemos utilizar el resultado de esta función para obtener la respuesta del servidor. Por ejemplo, podemos imprimir el cuerpo de la respuesta de esta manera:
 
 ```Elixir
-{:ok, respuesta} = HTTPoison.get("https://ejemplo.com", [], [basic_auth: {"usuario", "contraseña"}])
+resp = :hackney.request(:get, "https://www.example.com", [{"Authorization", "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}], "")
+IO.puts resp.body
 ```
 
-La respuesta será un tupla con el estado de la solicitud y la respuesta en formato JSON. Podemos acceder a la respuesta utilizando la función `Jason.decode/1`:
-
-```Elixir
-cuerpo = respuesta.body |> Jason.decode()
-```
+Este es solo un ejemplo básico de cómo enviar una solicitud HTTP con autenticación básica en Elixir. Se recomienda explorar la documentación de `:hackney` para obtener más información y opciones avanzadas.
 
 ## Profundizando
 
-Al realizar una solicitud HTTP con autenticación básica, debemos asegurarnos de incluir el encabezado "Authorization" en nuestra solicitud. Este encabezado debe estar en formato "usuario:contraseña" codificado en base64. Podemos utilizar la función `Base.encode64/1` para codificar el encabezado correctamente.
+La autenticación básica en las solicitudes HTTP es una forma simple de verificar las credenciales de un usuario antes de permitir el acceso a ciertos recursos. Sin embargo, es importante tener en cuenta que esta forma de autenticación no es segura por sí sola. Las credenciales del usuario se enviarán en texto plano, lo que significa que pueden ser interceptadas y utilizadas por terceros.
 
-Además, también es importante tener en cuenta que el servidor puede requerir una autenticación adicional, como una clave de acceso API. En este caso, debemos incluir esta información adicional en la solicitud.
+Por lo tanto, se recomienda utilizar HTTPS junto con la autenticación básica para asegurar la seguridad de las credenciales del usuario. También puede ser una buena idea utilizar un formato de autenticación más seguro, como OAuth, en lugar de la autenticación básica.
+
+Es importante considerar la seguridad al utilizar la autenticación básica en las solicitudes HTTP. Siempre es recomendable buscar formas más seguras de proteger los datos de los usuarios.
 
 ## Ver también
 
-- [Documentación HTTPoison] (https://hexdocs.pm/httpoison/readme.html)
-- [Ejemplo de código] (https://blog.lelonek.me/httpoison-goodbye-to-net-http-and-typhoeus-3fb772116fe1)
-- [Encabezados HTTP] (https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization)
+- Documentación oficial de `:hackney`: https://hexdocs.pm/hackney/readme.html
+- Tutorial de autenticación básica en Elixir: https://supergloo.com/fieldnotes/elixir-basic-http-authentication/

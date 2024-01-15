@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Escrevendo no erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Gleam: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,25 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que escrever para o standard error?
+## Por que escrever para o erro padrão?
 
-O standard error é uma forma importante de comunicação dentro da programação, permitindo que os desenvolvedores acompanhem e resolvam erros em seus códigos. Ao escrever para o standard error, você pode entender melhor o funcionamento do seu código e detectar problemas de forma mais eficiente.
+Escrever para o erro padrão é uma prática importante em programação que permite que os desenvolvedores capturem e relatem erros em seus códigos. Isso ajuda a identificar e corrigir problemas em tempo hábil, garantindo que o software seja executado sem falhas.
 
-##Como fazer:
+## Como fazer?
 
-Para escrever para o standard error em Gleam, utilize o comando "stderr.write" seguido da mensagem desejada entre aspas. Veja o exemplo abaixo:
+Para escrever para o erro padrão em Gleam, utilizamos a função `println!` seguida do que desejamos imprimir. Por exemplo:
 
-```Gleam
-stderr.write("Ocorreu um erro na linha 10!")
+```
+Gleam println!("Este é um exemplo de texto que será escrito para o erro padrão.")
 ```
 
-Isso irá imprimir a mensagem "Ocorreu um erro na linha 10!" no terminal.
+Esse código irá imprimir a mensagem "Este é um exemplo de texto que será escrito para o erro padrão." na tela do console. É importante ressaltar que a mensagem será escrita na saída padrão de erro, que é diferente da saída padrão de impressão `print!`.
 
-##Mais detalhes:
+## Mergulho profundo
 
-Escrever para o standard error é especialmente útil quando trabalhando com códigos complexos ou em testes. Além de permitir a detecção mais precisa de erros, também ajuda a manter o código organizado e facilita a depuração. No entanto, é importante ter cuidado com a quantidade de mensagens escritas no standard error, já que isso pode sobrecarregar o terminal e dificultar a leitura.
+Ao escrever para o erro padrão, é importante levar em consideração o que você está imprimindo. Lembre-se de que essa mensagem será vista pelos usuários e é uma forma de comunicação importante entre o desenvolvedor e o usuário final.
 
-##Veja também:
+Além disso, é importante que a mensagem de erro seja específica e informativa, para que o usuário entenda o que aconteceu e como pode solucionar o problema. Evite mensagens genéricas e pouco úteis, como "Erro inesperado".
 
-- Documentação oficial do Gleam sobre o standard error: [link](https://gleam.run/book/stderr.html)
-- Artigo sobre melhores práticas na escrita para o standard error: [link](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/5-Best-Practices-with-Standard-Error-Streams-in-Bash)
+## Veja também
+
+- Documentação oficial do Gleam sobre a função `println!`: https://gleam.run/documentation/standard_library.html#println
+- Guia sobre como escrever boas mensagens de erro: https://blog.codinghorror.com/curlys-law-do-one-thing/
+- Exemplos de mensagens de erro bem projetadas: https://github.com/open-source-ideas/open-source-ideas/issues/381

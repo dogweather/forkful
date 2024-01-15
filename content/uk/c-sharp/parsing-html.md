@@ -1,6 +1,7 @@
 ---
-title:                "C#: Аналізування HTML"
-simple_title:         "Аналізування HTML"
+title:                "Розбір html"
+html_title:           "C#: Розбір html"
+simple_title:         "Розбір html"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-У програмуванні часто доводиться працювати з різними форматами даних, включаючи веб-сторінки. Парсинг HTML є одним зі способів отримати структуровані дані з веб-сторінки для подальшого використання у своїх проєктах.
 
-## Як
-Для початку, необхідно імпортувати простір імен ```System.Net.Http``` та ```HtmlAgilityPack```, які забезпечать необхідні класи для роботи з HTML. Далі можна використовувати метод ```GetAsync()``` для отримання HTML-коду веб-сторінки, а потім створити об'єкт типу ```HtmlDocument``` і використовувати метод ```LoadHtml()``` для завантаження коду. Після цього, можна здійснювати пошук елементів за допомогою методу ```SelectNodes()``` і обробляти отримані дані.
+Розбір HTML є важливою задачею в програмуванні, оскільки дозволяє отримувати та обробляти дані з веб-сторінок. Це дозволяє створювати потужні додатки, які працюють з інформацією з Інтернету.
+
+## Як це зробити
 
 ```C#
-using System.Net.Http;
+using System;
+using System.Net;
+using System.IO;
 using HtmlAgilityPack;
 
-// Виклик асинхронного методу для отримання HTML-коду
-var client = new HttpClient();
-var response = await client.GetAsync("https://example.com");
-var responseString = await response.Content.ReadAsStringAsync();
+// Завантаження HTML з веб-сторінки
+string url = "https://www.example.com";
+HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-// Створення об'єкта HtmlDocument та завантаження коду
-var doc = new HtmlDocument();
-doc.LoadHtml(responseString);
+// Читання відповіді із потоку
+StreamReader reader = new StreamReader(response.GetResponseStream());
+string html = reader.ReadToEnd();
 
-// Пошук елементів за тегом "a"
-var links = doc.DocumentNode.SelectNodes("//a");
+// Створення HTML-синтаксичного дерева
+HtmlDocument doc = new HtmlDocument();
+doc.LoadHtml(html);
 
-// Записування посилань у список
-var linksList = new List<string>();
-foreach (var link in links)
-{
-    linksList.Add(link.Attributes["href"].Value);
-}
+// Знаходження тега <h1> та виведення його вмісту
+var heading = doc.DocumentNode.SelectSingleNode("//h1");
+Console.WriteLine(heading.InnerText); // Виведе "Українська версія"
+```
+Приклад виводу:
 
-// Виведення результатів
-Console.WriteLine("Посилання на сторінку:");
-foreach (var link in linksList)
-{
-    Console.WriteLine(link);
-}
+```
+Українська версія
 ```
 
-В даному прикладі ми отримали всі посилання з веб-сторінки під тегом ```<a>``` і вивели їх у консоль. Таким чином, можна отримати інші дані з веб-сторінки, використовуючи різні методи та фільтри.
+## Розглиблення
 
-## Глибинний аналіз
-Для більш детальної роботи з HTML-документами, можна використовувати більш складні методи з класу ```HtmlDocument``` для пошуку і обробки елементів за допомогою CSS-селекторів, збирання метаданих і багато іншого. Також, можна використовувати фреймворки, які спрощують парсинг HTML, наприклад, ```AngleSharp```, ```CsQuery``` або ```HtmlParser```.
+Розбір HTML - це процес аналізування вихідного коду веб-сторінки за допомогою програмного забезпечення. Після завантаження сторінки, весь HTML-код розбивається на окремі частини, які можна легко зчитувати та обробляти. Це дозволяє отримувати потрібні дані з Інтернету та використовувати їх у своїх програмах. Найпоширенішою бібліотекою для роботи з розбором HTML в C# є `HtmlAgilityPack`, яка дозволяє маніпулювати HTML-синтаксичним деревом зручним способом.
 
 ## Дивись також
-- [Ресурси для розвитку веб-скрейпінгу на C#](https://medium.com/@a_l_e_x_u_a/%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%80%D0%BE%D0%B7%D0%B2%D0%B8%D1%82%D0%BA%D1%83-%D0%B2%D0%B5%D0%B1-%D1%81%D0%BA%D1%80%D0%B5%D0%B9%D0%BF%D1%96%D0%BD%D0
+
+- [HtmlAgilityPack документація](https://html-agility-pack.net/documentation)
+- [Розділ бібліотеки HTMLAgilityPack на GitHub](https://github.com/zzzprojects/html-agility-pack)

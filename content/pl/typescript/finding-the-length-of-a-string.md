@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Wyszukiwanie długości ciągu znaków"
+html_title:           "TypeScript: Wyszukiwanie długości ciągu znaków"
+simple_title:         "Wyszukiwanie długości ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,38 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele razy podczas programowania musimy operować na ciągach znaków, zwanych też stringami. Często potrzebujemy znać długość takiego ciągu, aby wykonać pewne operacje lub weryfikować poprawność danych. W tym artykule dowiesz się, jak w prosty sposób znaleźć długość stringa w języku TypeScript.
+Dlaczego ktoś może chcieć sprawdzić długość ciągu znaków? Niektóre zadania wymagają, aby programista mógł określić długość tekstu, np. dla celów walidacji lub obróbki danych. W takiej sytuacji znajomość sposobu na znalezienie długości ciągu jest niezbędna.
 
 ## Jak to zrobić
 
-Pierwszą metodą jest użycie właściwości `length`, która jest dostępna dla każdego stringa w TypeScript. Przykładowy kod i wynik działania wyglądają następująco:
+Sprawdzenie długości ciągu znaków może być wykonane w prosty sposób przy użyciu wbudowanej metody `.length`. Możemy to zobaczyć na przykładzie poniżej:
 
 ```TypeScript
-let str: string = "To jest przykładowy string";
-console.log(str.length); // Output: 25
+let text: string = "Przykładowy tekst";
+console.log(text.length);
 ```
 
-Inną możliwością jest użycie funkcji `String.length()`, która również zwraca długość stringa. Przykład:
+Wynik powyższych działań będzie wynosił 18, ponieważ długość tekstu "Przykładowy tekst" wynosi właśnie 18 znaków.
 
-```TypeScript
-let name: string = "Anna";
-console.log(name.length()); // Output: 4
-```
+## Głębsza analiza
 
-W przypadku, gdy chcemy znaleźć długość stringa złożonego z kilku wyrazów, należy użyć metody `split()` razem z funkcją `length()`. Funkcja `split()` rozdzieli string na elementy, a następnie możemy policzyć, ile elementów zawiera nowo powstała tablica. Przykład:
+Długość ciągu znaków jest obliczana na podstawie liczby znaków w tekście. W przypadku wykorzystania metody `.length` dla zmiennych typu string, jest ona automatycznie pobierana zapisana długość tekstu. Jednocześnie, jeśli zmienna jest typu number, zostanie zwrócona ilość cyfr w liczbie.
 
-```TypeScript
-let sentence: string = "To jest zdanie w języku TypeScript";
-console.log(sentence.split(" ").length); // Output: 6
-```
-
-## Deep Dive
-
-W języku TypeScript, podobnie jak w innych językach programowania, długość stringa jest liczona w oparciu o liczbę znaków w danym stringu. Warto jednak pamiętać, że w niektórych językach, np. chińskim czy japońskim, długość stringa może być obliczana w oparciu o znaki kanji, które składają się z kilku znaków.
-
-W przypadku gdy chcemy policzyć długość stringa zawierającego specjalne znaki, należy pamiętać, że część znaków może być traktowana jako dwa znaki. Na przykład litera `ł` z polskiego alfabetu może być traktowana jako dwa znaki, więc przy liczeniu długości stringa zawierającego tę literę, wynik może być większy niż oczekiwany.
+Metoda `.length` jest również użyteczna w przypadku wielu innych typów danych, takich jak tablice czy obiekty. W tym przypadku, zwracana jest ilość elementów lub właściwości w danym obiekcie. Ważne jest jednak, aby wiedzieć, że metoda `.length` nie jest dostępna dla typów danych takich jak number czy boolean.
 
 ## Zobacz także
-- [Dokumentacja języka TypeScript](https://www.typescriptlang.org/docs/)
-- [Tutorial na temat manipulacji stringami w TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
-- [Dyskusja na temat różnic w liczeniu długości stringa w różnych językach](https://stackoverflow.com/questions/10431964/strange-behaviour-on-the-length-of-an-accentuated-string-in-various-languages)
+
+- [Dokumentacja TypeScript: String i array methods](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-and-array-methods)
+- [MDN: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)

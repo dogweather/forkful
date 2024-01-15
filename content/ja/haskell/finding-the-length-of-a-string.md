@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 文字列の長さを見つける"
+title:                "文字列の長さを見つける"
+html_title:           "Haskell: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列の長さを求めることに関心がある理由を1-2文で説明する。
+## なぜ文字列の長さを求めるか
 
-あるプログラマーにとって、文字列の長さを知ることは非常に重要なことです。例えば、ユーザーからの入力を処理する際に、文字列の長さを確認し、不正な入力がないかどうかを確認する必要があります。また、プログラムの実行中に文字列の長さを求めることもあり、その結果を利用して処理を行うことができます。
+文字列の長さを求めると、プログラムの機能を拡張することができます。例えば、ユーザーからの入力の長さを制限したり、文字列を分割する際の基準として利用したりすることができます。
 
-## 方法
-文字列の長さを求めるには、幾つかの方法があります。例えば、 `length` 関数を使用することで、文字列の長さを簡単に求めることができます。
+## 使い方
 
-```
-Haskell
-length "こんにちは、世界！"
-```
+文字列の長さを求めるためには、`length`関数を使用します。以下の例では、`str`という文字列の長さを求め、結果をコンソールに出力しています。
 
-上記のコードを実行すると、`12`という結果が返されます。文字列の日本語文字列を含める場合でも正しく長さを計算してくれることがわかります。
-
-また、文字列の長さを求める別の方法として、文字列を `foldl` 関数を使用してカウントする方法があります。
-
-```
-Haskell
-foldl (\acc x -> acc + 1) 0 "こんにちは、世界！"
+```Haskell
+str = "Hello World!"
+putStrLn ("Length of str: " ++ show (length str))
 ```
 
-このコードも同じ結果である`12`を返します。しかし、`length` 関数よりも少しパフォーマンスが劣る可能性があるので、短い文字列を処理する際にはあまり効率的ではありません。
+出力結果:
 
-## ディープダイブ
-文字列の長さを求める方法について、さらに深く掘り下げてみましょう。Haskellではバイナリ表現を使用して文字列を表現するので、文字列の長さを求める際にはこのバイナリ表現をどのように扱うかが重要です。
+```
+Length of str: 12
+```
 
-内部的には、文字列は `Data.Text` モジュールで定義される `Text` 型として表現されます。この型はインデックス付きのバイナリ表現として実装されています。そのため、`length`関数や `foldl` 関数を使用する際には、ほとんどの場合`Text`型を直接扱うことができます。
+## 詳細を掘り下げる
 
-しかし、バイナリ表現として扱うことができる必要がある場合には、 `Data.Text.Encoding` モジュールで提供される関数を使用する必要があります。例えば、UTF-8でエンコードされたバイナリ表現を `Text`型に変換するには、`decodeUtf8`関数を使用します。また、逆に `Text`型をUTF-8でエンコードするには、`encodeUtf8`関数を使用します。
+`length`関数は、`String`型の引数を受け取り、その文字列の長さを返します。`String`型は、本質的に`[Char]`型のエイリアスです。つまり、文字列は文字のリストとして表現されます。
+
+`length`関数は、再帰的アルゴリズムを使用して実装されています。つまり、与えられた文字列を1文字ずつチェックして、その数を数え上げるという方法を取っています。そのため、文字列の長さが長くなるほど計算量も増えていきます。
 
 ## 参考リンク
-- [Haskell Wiki: Strings](https://wiki.haskell.org/Strings)
-- [Hackage: Data.Text](https://hackage.haskell.org/package/text)
-- [Hackage: Data.Text.Encoding](https://hackage.haskell.org/package/text-encoding-int)
+
+- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
+- [Haskell入門](https://qiita.com/tanakh/items/0ba42c7ca36cd29d0ac8)
+- [文字列を操作するHaskell関数の一覧](https://wiki.haskell.org/Strings)

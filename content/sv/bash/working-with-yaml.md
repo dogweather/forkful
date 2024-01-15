@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "Bash: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -11,63 +12,96 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Bash-programmering är ett kraftfullt sätt att automatisera uppgifter och processer på ditt datorsystem. Genom att arbeta med YAML-filer kan du enkelt konfigurera och strukturera data för dessa automatiska processer.
+YAML står för "YAML Ain't Markup Language" och är ett enkelt och lättläst format för att strukturera data. Det är vanligtvis används för att konfigurera program och konfigurationsfiler.
 
-## Hur man gör det
+## Hur man gör
 
-För att arbeta med YAML i Bash, behöver du ett verktyg som heter yaml-bash, vilket kan installeras genom kommandot `pip install yaml-bash`. Sedan kan du använda följande syntax för att läsa och skriva till YAML-filer:
-
-```
-Bash
-
-# Läs från en YAML-fil
-read_yaml < <(cat example.yaml)
-
-# Spara till en YAML-fil
-write_yaml variable <(echo "$value") example.yaml
-```
-
-Låt oss se ett exempel på hur man använder yaml-bash för att skapa en YAML-fil och sedan läsa den för att hämta värden:
+Vi kommer att använda detta enkla YAML-exempel för att visa hur man arbetar med YAML-filer:
 
 ```
-Bash
-
-# Skapa en YAML-fil
-cat > example.yaml << EOF
-foo: bar
-hello:
-  - world
-EOF
-
-# Hämta värdet för "foo"
-read_yaml < <(cat example.yaml)
-echo $foo
-
-# Hämta värdet för "hello"
-read_yaml < <(cat example.yaml)
-echo ${hello[0]}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-app
+      image: my-app-image
 ```
 
-Outputen från detta exempel ska vara:
+För att bearbeta denna YAML-fil i Bash, behöver vi först installera ett verktyg som heter "yq". Detta verktyg tillåter oss att enkelt manipulera YAML-data i Bash.
+
+Installera yq med hjälp av apt-get:
+
+```Bash
+sudo apt-get install yq
+```
+
+Låt oss nu gå igenom några exempel på hur du kan hantera YAML-data med Bash och yq:
+
+### Läsa data från en YAML-fil
+
+Använd detta enkla kommando för att läsa data från vår YAML-fil:
+
+```Bash
+yq read my-pod.yaml
+```
+
+Output:
 
 ```
-bar
-world
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-pod
+spec: 
+  containers: 
+    - name: my-app
+      image: my-app-image
 ```
+
+### Lägga till data till en YAML-fil
+
+Du kan enkelt lägga till data till en YAML-fil med hjälp av det här kommandot:
+
+```Bash
+yq write my-pod.yaml spec.containers[0].ports[+] app=8080
+```
+
+Detta kommer att lägga till en ny port med värdet "8080" under "containers" i vår YAML-fil:
+
+```
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-pod
+spec: 
+  containers: 
+    - name: my-app
+      image: my-app-image
+      ports: 
+        - port: 80
+          app: 8080
+```
+
+### Uppdatera data i en YAML-fil
+
+Du kan uppdatera befintliga data i en YAML-fil genom att ange sökvägen till den specifika datan du vill uppdatera och det nya värdet:
+
+```Bash
+yq write my-pod.yaml spec.containers[0].image=my-new-image
+```
+
+Detta kommer att uppdatera "image" till "my-new-image" i vår YAML-fil.
 
 ## Djupdykning
 
-YAML är ett format för att strukturera data som är läsbart både för människor och datorer. Här är några saker att tänka på när du arbetar med YAML i Bash:
-
-- Varje rad i en YAML-fil är en "nyckel: värde"-par, där nyckeln är åtskild från värdet med ett kolon.
-- YAML-filer kan innehålla olika datatyper, inklusive strängar, nummer, listor och dictionarys.
-- Om du vill ha fler än ett värde för en nyckel, använd en lista och separera värdena med ett bindestreck.
-- Om du vill ha flera nyckel-värde-par i en dictionary, använd ett kolon för att separera nyckeln och värdet och separera dem med ett kommatecken.
-
-Se till att läsa dokumentationen för yaml-bash för mer information och funktioner.
+YAML är ett mycket kraftfullt och användarvänligt format för att strukturera data. Det finns många fler funktioner och användningsområden för YAML, vilket ger en flexibilitet i konfiguration av program och databehandling. Det är också populärt inom DevOps, som det används för att konfigurera infrastruktur och molnresurser. För att lära dig mer om YAML och dess användningsområden, rekommenderar vi att du tittar på länkarna nedan.
 
 ## Se även
 
-- [yaml-bash dokumentation](https://github.com/Jack12816/yaml-bash)
-- [Officiell YAML-specifikation](https://yaml.org/spec/)
-- [Bash-programmering för nybörjare](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [yq installation instructions](https://mikefarah.github.io/yq/#installation)
+- [YAML format specification](https://yaml.org/spec/)
+- [Practical examples of using YAML in DevOps](https://www.redhat.com/sysadmin/yaml-devops-examples)

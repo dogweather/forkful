@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Gleam: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,62 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
-
-Enviar uma solicitação HTTP com autenticação básica é essencial para acessar recursos protegidos em um servidor. Sem a autenticação adequada, esses recursos não serão acessíveis, tornando a comunicação com o servidor impossível.
+Aprender a enviar uma solicitação HTTP com autenticação básica é importante em uma variedade de casos, como acessar APIs de terceiros, autenticar usuários em um aplicativo ou receber dados de uma fonte segura.
 
 ## Como fazer
+Para enviar uma solicitação HTTP com autenticação básica em Gleam, você precisará de duas coisas: uma biblioteca HTTP e as credenciais de autenticação. Vamos usar a biblioteca [Httpc](https://github.com/gleam-lang/httpc) neste exemplo.
 
-Para enviar uma solicitação HTTP com autenticação básica em Gleam, você precisará ter em mãos o URL do servidor e as credenciais de autenticação (nome de usuário e senha). Em seguida, você pode usar a função `httpc.request` e passar os parâmetros necessários, como headers e corpo da requisição. Veja um exemplo de código abaixo:
+Primeiro, importe a biblioteca em seu módulo:
 
 ```Gleam
-
-// Importe o módulo httpc
 import httpc
-
-// Defina as credenciais
-let username = "seu_usuario"
-let password = "sua_senha"
-
-// Defina o URL do servidor
-let url = "https://exemplo.com"
-
-// Configure os headers e o corpo da requisição
-let headers = [("Content-Type", "application/json")]
-let body = "{}"
-
-// Envie a solicitação com autenticação básica
-let response = httpc.request(
-  "POST",
-  url,
-  headers,
-  body,
-  username,
-  password
-)
-
-// Imprima a resposta com código de status e corpo
-case response {
-  Ok(response) ->
-    let status_code = response.status_code
-    let body = response.body
-    IO.println("Código de status: #{status_code}")
-    IO.println("Corpo: #{body}")
-  Err(err) -> IO.println("Erro: #{err}")
-}
 ```
 
-A saída do código acima seria algo como:
+Em seguida, defina as credenciais de autenticação em uma variável:
 
+```Gleam
+let credentials = httpc.BasicAuthCredentials("username", "password")
 ```
-Código de status: 200
-Corpo: {"mensagem": "Requisição bem sucedida"}
+
+Agora, podemos enviar uma solicitação HTTP usando as funções fornecidas pela biblioteca Httpc. Por exemplo, para fazer uma solicitação GET para um URL com autenticação básica, podemos usar a função `get_with_auth`:
+
+```Gleam
+let url = "https://exemplo.com/recurso"
+let response = httpc.get_with_auth(url, credentials)
 ```
 
-## Deep Dive
+O objeto de resposta fornecido pela função contém o corpo da resposta e outras informações, como o código de status e os cabeçalhos. Você pode acessar esses dados para manipulá-los em seu aplicativo.
 
-Ao enviar uma solicitação HTTP com autenticação básica, o cabeçalho da requisição deve conter o parâmetro `Authorization`. Ele terá o valor `Basic`, seguido pelo nome de usuário e senha codificados em Base64. Além disso, é importante lembrar que esse tipo de autenticação não é considerado seguro, pois as credenciais são enviadas como texto simples. É recomendável utilizar SSL/TLS em conjunto com a autenticação básica para garantir a segurança dos dados.
+## Mergulho profundo
+A autenticação básica é um método simples de autenticação que envolve enviar as credenciais (nome de usuário e senha) no cabeçalho da solicitação HTTP. Essas credenciais são codificadas em Base64 para proteger contra acessos não autorizados.
+
+É importante notar que a autenticação básica não é considerada um método de segurança robusto e pode ser facilmente interceptada e lida por hackers. Portanto, é recomendável usar outros métodos de autenticação, como OAuth, para garantir a segurança dos dados.
 
 ## Veja também
-
-- Documentação oficial do módulo httpc em Gleam: https://github.com/gleam-lang/httpc
-- Tutorial sobre autenticação básica em HTTP: https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-with-http-in-gleam
+- Biblioteca Httpc: https://github.com/gleam-lang/httpc
+- Documentação oficial de autenticação básica: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#basic_authentication_scheme

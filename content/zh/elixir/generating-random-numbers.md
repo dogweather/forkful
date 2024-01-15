@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Elixir: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -9,67 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：
+为什么: 即使我们是程序员，但有时候我们也需要一些随机性。生成随机数字可以用于测试，模拟和随机选择，这让我们的程序更加有趣。
 
-产生随机数在编程中是非常有用的。它可以帮助我们创建各种各样的游戏和应用程序，也可以用于测试和模拟数据。
+## 为什么
 
-## 如何操作：
+每个程序员都知道，编写可靠的代码是至关重要的。而测试是确保我们的代码按预期工作的一种方法。但是，测试很容易陷入固定模式，可能无法覆盖所有情况。这时候，我们可以使用随机生成的数字来测试我们的程序，以产生更多不同的情况，从而提高代码的质量。
 
-首先，我们需要在代码中导入Elixir的“Random”模块。然后，我们使用`random.uniform/2`函数来生成随机数。以下是一个简单的示例，生成1到10之间的随机数：
+## 如何
 
-```
-Elixir
+使用 Elixir 中的 `:rand` 模块，我们可以轻松地生成随机数字。例如，让我们生成一个随机的 10 位数:
 
-import Random
-
-Random.uniform(1,10)
-
+```elixir
+:rand.uniform(1000000000)
 ```
 
-输出可能会是6，3，9等等。
+该代码将产生类似于 `524645302` 的输出。如果我们想生成一个介于 1 到 100 之间的随机数，可以使用 `:rand.uniform(1..100)`。Elixir 还提供了其他一些函数来生成不同类型的随机数，例如 `:rand.uniform/2` 可以生成浮点数，`rand.uniform/3` 可以生成多个随机数。具体可参考[官方文档](https://hexdocs.pm/elixir/Random.html)。
 
-我们也可以使用`random.seed/0`函数来设置随机数的种子值，以确保每次运行程序时都会得到相同的随机数。例如：
+## 深入探讨
 
-```
-Elixir
+在 Elixir 中，随机数生成是基于一个种子(seed)。一个种子决定了随机数的序列，所以如果我们使用相同的种子，每次生成的随机数都是一样的。我们可以使用 `:rand.seed/1` 来设置种子，也可以在需要的地方使用 `:rand.seed/0` 来获取当前的种子。
 
-import Random
+另外，有时候我们可能想要生成不完全随机的数字，例如通过加密算法，Elixir 也提供了 `:rand.uniform/1` 和 `:rand.uniform!/1` 来实现这一点。
 
-Random.seed(:elixir)
+## 参考阅读
 
-Random.uniform(1,5)
-
-```
-
-每次运行的输出都会是相同的数字，例如3，4，2。
-
-## 深入了解：
-
-在Elixir中，随机数是根据“伪随机数生成器”算法生成的。它们使用一个种子值来确定生成的随机数序列，因此，如果我们使用相同的种子值，我们将始终得到相同的随机数序列。
-
-同时，我们还可以使用`random.int/2 `函数来生成随机的整数，`random.float/2`函数来生成随机的小数。
-
-另外，我们可以使用`random.uniform/3`函数来生成指定个数的随机数列表，例如：
-
-```
-Elixir
-
-import Random
-
-Random.uniform(1,10,5)
-
-```
-
-输出可能会是[3,6,8,4,2]，其中5表示生成5个随机数。
-
-## 请参考：
-
-- Elixir官方文档中关于随机数的介绍: https://elixir-lang.org/getting-started/random-numbers.html
-- Elixir的“Random”模块文档: https://hexdocs.pm/elixir/Random.html
-- 关于伪随机数生成器的更多信息: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
-
-请参考：
-
-- Elixir官方文档中关于随机数的介绍: https://elixir-lang.org/getting-started/random-numbers.html
-- Elixir的“Random”模块文档: https://hexdocs.pm/elixir/Random.html
-- 关于伪随机数生成器的更多信息: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- [Elixir 随机数生成文档](https://hexdocs.pm/elixir/Random.html)
+- [关于随机数生成的一篇博客文章](https://elixir-lang.org/getting-started/randomness.html#generating-random-numbers)

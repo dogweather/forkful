@@ -1,5 +1,6 @@
 ---
-title:                "C#: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "C#: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "C#"
 category:             "C#"
@@ -9,30 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför man ska ladda ner en webbsida
-När man surfar på internet stöter man ofta på intressanta webbsidor som man vill spara för senare läsning. Genom att ladda ner webbsidan kan man spara den lokalt på sin dator och enkelt öppna den utan internetanslutning eller risk för att sidan försvinner.
+## Varför
 
-## Hur man laddar ner en webbsida med C#
-Att ladda ner en webbsida med C# är en enkel process som kan göras med hjälp av .NET framework och en kraftfull klass som heter WebClient. Här är ett exempel på hur man laddar ner en webbsida och skriver ut dess innehåll i konsolen:
+Att ladda ner en webbplats är användbart om du vill skriva en webbprogrammeringsskript, offline-användning, eller om du vill spara en kopia av webbplatsen för framtida referens.
+
+## Så här gör du
 
 ```C#
-using System;
-using System.Net;
+// Skapa en ny instans av webbclient
+WebClient client = new WebClient();
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Skapa en instans av WebClient
-        WebClient client = new WebClient();
+// Ange webbadressen som ska laddas ner
+string url = "https://www.example.com";
 
-        // Ladda ner innehållet från en webbsida
-        string webpage = client.DownloadString("https://www.mittexempelwebbsida.se");
+// Ladda ner webbsidan och spara som en textfil
+client.DownloadFile(url, "sida.txt");
 
-        // Skriv ut innehållet i konsolen
-        Console.WriteLine(webpage);
-    }
-}
+// Öppna textfilen och skriv ut innehållet
+string innehall = File.ReadAllText("sida.txt");
+Console.WriteLine(innehall);
 ```
 
 Output:
@@ -40,21 +36,20 @@ Output:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Min Exempelwebbsida</title>
+  <title>Exempelwebbplats</title>
 </head>
 <body>
-    <h1>Välkommen till min exempelsida</h1>
-    <p>Här kan du hitta massor av intressanta artiklar och information.</p>
+  <h1>Välkommen till vår webbplats!</h1>
+  <p>Här kan du hitta massor av intressant information.</p>
 </body>
 </html>
 ```
 
-## Fördjupning i att ladda ner en webbsida
-Genom att använda WebClient-klassen har man också möjlighet att ladda ner och spara filer från webbsidan, till exempel bilder eller dokument. Det går också att skicka anpassade HTTP-begäranden för att hämta specifika delar av en webbsida eller få den i ett annat format.
+## Djupdykning
 
-Det finns också andra sätt att ladda ner en webbsida med C#, som att använda HTTP-klient och asynkrona operationer för att öka prestandan. Det är också viktigt att ta hänsyn till eventuella tillstånd från webbsidan, såsom godkännande av användaravtalet innan man laddar ner innehållet.
+Att ladda ner en webbplats innebär att du hämtar allt innehåll som finns på webbsidan, inklusive text, bilder, länkar och annan media. Du kan också använda olika metoder för att ange var du vill spara den nedladdade filen, till exempel som en textfil eller en HTML-fil. Dessutom kan du använda olika inställningar för att hantera eventuella fel eller för att ange hur länge en nedladdning ska pågå.
 
 ## Se även
-- [WebClient-klassen på Microsoft Docs](https://docs.microsoft.com/sv-se/dotnet/api/system.net.webclient?view=net-5.0)
-- [HTTP-klient på Microsoft Docs](https://docs.microsoft.com/sv-se/dotnet/api/system.net.http.httpclient?view=net-5.0)
-- [Asynkron programmering i C# på Clean Code](https://cleancoders.com/episode/clean-code-episode-10/show)
+
+- [WebClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0) - MSDN-dokumentation för C# WebClient-klassen.
+- [How to Download a Web Page in C#](https://www.codeproject.com/Articles/662027/How-to-Download-a-Web-Page-in-Csharp) - En djupare guide för att ladda ner en webbplats i C#.

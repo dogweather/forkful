@@ -1,6 +1,7 @@
 ---
-title:                "Go: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "「標準エラーへの書き込み」"
+html_title:           "Go: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-標準エラー出力に書き込む理由は、エラーのデバッグやログ出力など、アプリケーションの開発やテストに欠かせないものです。
+標準エラーに書き込むことに参加する理由は、デバッグやエラーの追跡に役立ち、プログラムをより安定化させることができるからです。
 
-## 方法
+## 手順
 
-Go言語では、標準ライブラリの`log`パッケージを使用することで標準エラー出力に書き込むことができます。例えば、以下のコードを使用すると、"error occurred"というメッセージが標準エラー出力に書き込まれます。
+例を通して、Go言語で標準エラーに書き込む方法を紹介します。
 
 ```Go
 package main
 
 import (
-	"log"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	log.SetOutput(os.Stderr)
-	log.Println("error occurred")
+    fmt.Fprintln(os.Stderr, "エラーが発生しました。")
 }
 ```
 
-実行結果は次のようになります。
-
-```
-error occurred
-```
+上記のようなコードを実行すると、標準エラーに指定したメッセージが出力されます。このように、`fmt.Fprintln()`関数を使用することで、標準エラーにメッセージを書き込むことができます。
 
 ## ディープダイブ
 
-標準エラー出力に書き込む際には、`log`パッケージの他にも`fmt`パッケージを使用する方法もあります。しかし、`fmt`パッケージではフォーマットされた文字列を標準エラー出力に書き込むため、性能上の問題が発生する可能性があります。そのため、できる限り`log`パッケージを使用することが推奨されています。
+標準エラーは、プロセスが処理中に発生したエラーを追跡するためのものです。 標準エラーは、通常の標準出力とは異なり、画面に出力されず、ファイルに書き込まれます。つまり、標準エラーに書き込まれたメッセージは、後から確認することができるようになります。
 
-## 参考リンク
+また、標準エラーは、プログラムの実行中に発生したエラーを追跡するだけでなく、デバッグにも役立ちます。プログラムを実行する際に、標準出力に表示されるメッセージが多すぎると、本来のエラーを見逃してしまうことがあります。そのため、標準出力とは別に、標準エラーにエラーメッセージを書き込むことで、エラーをより明確に把握することができます。
 
-- https://golang.org/pkg/log/
-- https://golang.org/pkg/fmt/
-- https://blog.golang.org/stderr-redirect
-- https://www.digitalocean.com/community/tutorials/using-logs-to-monitor-your-application-in-go
-- https://www.calhoun.io/5-tips-for-logging-in-go/
+## 関連記事
+
+- [Go言語で標準入力を読み込む方法](https://example.com/how-to-read-from-standard-input-in-go)
+- [Go言語でファイルを読み書きする方法](https://example.com/how-to-read-write-files-in-go)
+
+以上が、Go言語で標準エラーに書き込む方法についての解説でした。新しいGoプロジェクトを始める際に、この知識を活用してエラーを追跡することができるようになると思います。

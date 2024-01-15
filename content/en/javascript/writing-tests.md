@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Javascript recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,77 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Writing Tests is Important in Javascript Programming
+## Why
 
-When it comes to writing code, whether it's for a personal project or a professional one, it's important to ensure that it works correctly and efficiently. This is where testing comes in. Writing tests allows us to identify and fix any bugs or errors in our code before it's deployed, saving us time and effort in the long run.
+Writing tests for code may seem like an extra and tedious step, but it can actually save you time and effort in the long run. By writing tests, you can catch errors and bugs early on, making it easier to fix them before they cause bigger issues. Additionally, tests can help ensure that new changes or updates to your code do not break existing features.
 
-## How To Write Tests in Javascript
+## How To
 
-Writing tests in Javascript can be done using various testing libraries such as Mocha, Jasmine, or Jest. For this example, we will be using Mocha.
+To write tests in Javascript, you can use a testing library like Jest or Mocha. These libraries provide a simple and efficient way to create and run tests for your code. Let's take a look at an example of how to write a basic test using Jest.
 
-First, we need to install Mocha using npm:
 ```Javascript
-npm install --save-dev mocha
+// Example function to be tested
+function addition(a, b) {
+  return a + b;
+}
+
+// Jest test
+test('adds 1 + 2 to equal 3', () => {
+  expect(addition(1, 2)).toBe(3);
+});
 ```
+In this example, we have a simple function that adds two numbers together. We then use the `test()` function from Jest to create a test case. Inside the function, we provide a description of what the test is checking for and then use the `expect()` function to define the expected output of our function. In this case, we expect the result of adding 1 and 2 to be 3. If the output matches our expectation, the test will pass.
 
-Next, we need to create a test file where we will write our tests. In this example, we will create a file called "calculator.test.js":
+You can also use `describe()` to group related tests together and make your test suite more organized. Here's a modified example of the previous test using `describe()`:
+
 ```Javascript
-const assert = require('assert');
-const calculator = require('../calculator');
+// Example function to be tested
+function addition(a, b) {
+  return a + b;
+}
 
-describe('Calculator', () => {
-  it('should add two numbers correctly', () => {
-    assert.equal(calculator.add(2, 5), 7);
-  });
-
-  it('should subtract two numbers correctly', () => {
-    assert.equal(calculator.subtract(10, 3), 7);
-  });
-
-  it('should multiply two numbers correctly', () => {
-    assert.equal(calculator.multiply(4, 5), 20);
-  });
-
-  it('should divide two numbers correctly', () => {
-    assert.equal(calculator.divide(20, 5), 4);
+// Jest test
+describe('Addition', () => {
+  test('adds 1 + 2 to equal 3', () => {
+    expect(addition(1, 2)).toBe(3);
   });
 });
 ```
+This time, we have added a `describe()` function to group our tests related to addition together. This makes it easier to identify which tests belong to which function.
 
-In this test file, we import the assert library which allows us to make assertions about our code. We then import our calculator module which contains our functions for adding, subtracting, multiplying, and dividing.
+## Deep Dive
 
-We then use the "describe" function to group our tests and provide a description for the test suite. Inside the "it" functions, we write our individual tests and use the "assert.equal" function to check if the expected output matches the actual output of our calculator functions.
+When writing tests, it's important to consider edge cases and different inputs to ensure your code is robust. This means testing for unexpected input, extreme values, and any potential errors that may occur. You can also use mocking libraries like Sinon.js to simulate certain scenarios and test different code paths.
 
-To run these tests, we can use the following command:
-```Javascript
-npm test
-```
-
-If all the tests pass, we should get an output similar to this:
-```Javascript
-> calculator@1.0.0 test
-> mocha "calculator.test.js"
-Calculator
-  ✓ should add two numbers correctly
-  ✓ should subtract two numbers correctly
-  ✓ should multiply two numbers correctly
-  ✓ should divide two numbers correctly
-
-4 passing (6ms)
-```
-
-## Deep Dive into Writing Tests
-
-In order to write effective tests, it's important to understand the concept of test-driven development (TDD). This approach encourages writing tests before writing any code, ensuring that the code is developed to meet the expected outcomes.
-
-When writing tests, it's important to consider different scenarios and edge cases. This helps in identifying potential bugs and ensuring that the code is robust and reliable.
-
-It's also important to have a good test coverage, which means testing as much of the code as possible. This helps in catching any errors that may arise from any changes made to the code.
+It's also important to regularly review and update your tests as your code evolves. As new features are added or existing ones are modified, be sure to update your tests accordingly to ensure they accurately reflect the expected behavior of your code.
 
 ## See Also
 
-- [Mocha](https://mochajs.org/)
-- [Jasmine](https://jasmine.github.io/)
-- [Jest](https://jestjs.io/)
-
-In conclusion, writing tests is an important aspect of Javascript programming. It not only helps in identifying and fixing bugs but also ensures that our code is reliable and efficient. By following test-driven development and considering different scenarios, we can create robust and high-quality code.
+- [Jest Documentation](https://jestjs.io/)
+- [Mocha Documentation](https://mochajs.org/)
+- [Sinon.js Documentation](https://sinonjs.org/)

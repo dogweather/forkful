@@ -1,6 +1,7 @@
 ---
-title:                "Java: Eine http-Anfrage mit grundlegender Authentifizierung senden"
-simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden"
+title:                "Eine http Anfrage mit grundlegender Authentifizierung senden"
+html_title:           "Java: Eine http Anfrage mit grundlegender Authentifizierung senden"
+simple_title:         "Eine http Anfrage mit grundlegender Authentifizierung senden"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,22 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Senden von HTTP-Anfragen mit grundlegender Authentifizierung ist eine Schlüsselfunktion für das Interagieren mit Webanwendungen. Durch die Verwendung von Benutzername und Kennwort können die Benutzer überprüfen, ob sie berechtigt sind, die Ressourcen auf der Website zu nutzen, und sicherstellen, dass ihre Daten geschützt sind.
+Es gibt viele Anwendungsfälle, in denen es notwendig ist, eine HTTP-Anfrage mit Basisauthentifizierung zu senden. Zum Beispiel kann dies erforderlich sein, um auf eine geschützte Ressource zuzugreifen oder um Daten von einer API abzurufen, die eine Authentifizierung erfordert. Durch die Verwendung von Basisauthentifizierung wird sichergestellt, dass nur autorisierte Benutzer Zugriff auf die Ressource haben.
 
-## How To
+## Wie man es macht
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Java zu senden, folgen Sie den folgenden Schritten:
-
-1. Importieren Sie die `java.net` Bibliothek für die Verwendung von `HttpURLConnection`.
-2. Erstellen Sie ein `URL`-Objekt mit der Ziel-URL.
-3. Erstellen Sie ein `HttpURLConnection`-Objekt mit `url.openConnection()`.
-4. Legen Sie die Anfragemethode auf `GET`, `POST` oder `PUT` fest, je nach Bedarf.
-5. Fügen Sie den Autorisierungsheader mit `conn.setRequestProperty("Authorization","Basic <Base64-kodierter Benutzername:Kennwort>")`.
-6. Senden Sie die Anfrage mit `conn.connect()`.
-7. Lesen Sie die Antwort mit `conn.getInputStream()` und `BufferedReader`.
-8. Verarbeiten Sie die Antwortdaten entsprechend.
-
-Ein Beispielcode zur Demonstration:
+Um eine HTTP-Anfrage mit Basisauthentifizierung in Java zu senden, können Sie die `java.net.HttpURLConnection` Klasse verwenden. Zunächst müssen Sie eine Verbindung zu der URL herstellen, an die Sie die Anfrage senden möchten. Dies kann beispielsweise mit der Methode `openConnection()` erfolgen. Anschließend müssen Sie die Art der Anfrage, z.B. GET oder POST, mit der Methode `setRequestMethod()` festlegen und die erforderlichen Header mit `setRequestProperty()` hinzufügen. Schließlich können Sie die Verbindung mit `connect()` herstellen und Ihre Anfrage mit `getOutputStream()` oder `getInputStream()` ausführen, je nachdem ob Sie Daten an den Server senden oder empfangen möchten.
 
 ```Java
 import java.io.BufferedReader;
@@ -35,50 +25,66 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-public class BasicAuthHTTPRequest {
-    public static void main(String[] args) throws IOException {
-        // Ziel-URL definieren
-        URL url = new URL("https://www.beispielwebsite.com/api/resourcen");
+public class BasicAuthExample {
 
-        // Verbindung aufbauen
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    public static void main(String[] args) {
+        // URL to send the request to
+        String url = "https://example.com/api/resource";
 
-        // Anfragemethode setzen
-        conn.setRequestMethod("GET");
+        // Encode the username and password in base64
+        String username = "myUsername";
+        String password = "myPassword";
+        String authString = username + ":" + password;
+        String authStringEnc = Base64.getEncoder().encodeToString(authString.getBytes(StandardCharsets.UTF_8));
 
-        // Autorisierungsheader hinzufügen
-        String userCredentials = "Benutzername:Kennwort";
-        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
-        conn.setRequestProperty ("Authorization", basicAuth);
+        try {
+            // Open connection to the URL
+            URL requestUrl = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) requestUrl.openConnection();
 
-        // Anfrage senden
-        conn.connect();
+            // Set request method to GET
+            connection.setRequestMethod("GET");
 
-        // Antwortdaten lesen und verarbeiten
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+            // Add Authorization header with base64 encoded credentials
+            connection.setRequestProperty("Authorization", "Basic " + authStringEnc);
+
+            // Establish connection
+            connection.connect();
+
+            // Read response from server
+            InputStream is = connection.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String response = "";
             String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+            while ((line = br.readLine()) != null) {
+                response += line;
             }
+
+            // Print response from server
+            System.out.println(response);
+
+            // Close connection
+            connection.disconnect();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        conn.disconnect();
     }
 }
 ```
 
-Beispieloutput:
+### Ausgabe
 
-```
-{"id": 1, "name": "Max Mustermann"}
-```
+Die Ausgabe der obigen Beispielanfrage kann je nach API und Implementierung variieren. In der Regel sollte die Antwort jedoch in Form von Text oder JSON-Daten zurückgegeben werden.
 
-## Deep Dive
+## Tief eintauchen
 
-Beim Senden einer HTTP-Anfrage mit grundlegender Authentifizierung müssen Benutzer den Benutzernamen und das Kennwort mithilfe von Base64-Verschlüsselung kodieren und im Autorisierungsheader angeben. Dies bietet eine grundlegende Absicherung der Daten, ist jedoch möglicherweise nicht ausreichend für hochsensible Informationen. Daher ist es wichtig, zusätzliche Sicherheitsmaßnahmen wie HTTPS zu implementieren, um eine sichere Datenübertragung zu gewährleisten.
+Bei der Verwendung von Basisauthentifizierung ist es wichtig zu beachten, dass die Benutzerinformationen durch Base64-Kodierung zwar verschlüsselt, aber nicht sicher sind. Eine sicherere Alternative wäre die Verwendung von Digest-Authentifizierung oder HTTPS-Verschlüsselung. Außerdem sollten die Zugangsdaten nicht im Quellcode gespeichert werden, sondern beispielsweise in einer Konfigurationsdatei oder als Umgebungsvariable.
 
 ## Siehe auch
 
-- [Offizielle Oracle Java Dokumentation - HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Baeldung Tutorial: Basic and Digest Access Authentication](https://www.baeldung.com/java-http-request-basic-digest-authentication)
+- [Oracle Java documentation about HTTP requests](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
+- [Wikipedia: Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Java Code Examples for java.net.HttpURLConnection](https://www.programcreek.com/java-api-examples/?api=java.net.HttpURLConnection)

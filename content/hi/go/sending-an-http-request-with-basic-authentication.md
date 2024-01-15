@@ -1,6 +1,7 @@
 ---
-title:                "Go: बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
+title:                "बुनियादी प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+html_title:           "Go: बुनियादी प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+simple_title:         "बुनियादी प्रमाणीकरण के साथ एक http अनुरोध भेजना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-एचटीटीपी अनुरोध भेजने में बेसिक प्रमाणीकरण के साथ क्यों जुड़ना हो सकता है, इसके बारे में कुछ जानने के लिए कफी महत्वपूर्ण है।
+आज के समय में डेटा सुरक्षा बहुत महत्वपूर्ण है और इसलिए अधिकांश ऑनलाइन सेवाओं को उपयोगकर्ताओं का ऑथेंटिकेशन करने के लिए HTTP अनुरोधों में बेसिक ऑथेंटिकेशन का उपयोग किया जाता है। इस सेक्शन में हम जानेंगे कि बेसिक ऑथेंटिकेशन के साथ HTTP अनुरोध कैसे भेजा जाता है।
 
-# कैसे
-
-अगर आप गो प्रोग्रामिंग सीख रहे हैं और एचटीटीपी अनुरोध भेजने में बेसिक प्रमाणीकरण का उपयोग करने के बारे में जानना चाहते हैं, तो आप सही जगह पर हैं। इस लेख में, हम गो कोड का उदाहरण देकर और उसके आउटपुट को दिखाकर आपको इस प्रक्रिया को अधिक समझने में मदद करेंगे।
+## कैसे करें
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "net/http"
-    "time"
-)
-
-func main() {
-    client := &http.Client{
-        Timeout: time.Second * 10,
-    }
-
-    req, err := http.NewRequest("GET", "https://example.com", nil)
-    if err != nil {
-        log.Fatal("Error creating request:", err)
-    }
-
-    req.SetBasicAuth("username", "password")
-    resp, err := client.Do(req)
-    if err != nil {
-        log.Fatal("Error sending request:", err)
-    }
-
-    fmt.Println(resp.StatusCode)
+req, err := http.NewRequest("GET", "https://www.example.com", nil)
+if err != nil {
+    log.Fatal(err)
 }
+
+req.SetBasicAuth("username", "password")
+
+resp, err := http.DefaultClient.Do(req)
+if err != nil {
+    log.Fatal(err)
+}
+
+defer resp.Body.Close()
+
+fmt.Println(resp.StatusCode)
 ```
 
-इस कोड में, हमने `http.NewRequest` फंक्शन का उपयोग करके नया एचटीटीपी अनुरोध बनाया है और `req.SetBasicAuth` के माध्यम से उपयोगकर्ता नाम और पासवर्ड को सेट किया है। फिर हमने `client.Do` के माध्यम से यह अनुरोध भेजकर उत्तर को लेकर उसके स्थिति को प्रिंट किया है। ऐसा करके, हम एचटीटीपी अनुरोध को बेसिक प्रमाणीकरण के साथ सफलतापूर्वक भेज सकते हैं।
+ऊपर दिए गए कोड की मदद से हम दिए गए यूआरएल तक GET अनुरोध भेजते हैं। इसमें हमने `http.NewRequest()` फ़ंक्शन का उपयोग करके नया अनुरोध बनाया है। फिर हमने `req.SetBasicAuth()` के साथ उपयोगकर्ता का नाम और पासवर्ड दिया है। अंत में `http.DefaultClient.Do()` फ़ंक्शन के द्वारा हम अनुरोध को भेजते हैं और उसका प्रतिक्रिया कोड द्वारा प्रिंट किया जाता है।
 
-# गहराई में
+## गहराई में जानें
 
-बेसिक प्रमाणीकरण HTTP अनुरोध भेजने के बारे में अधिक जानने के लिए, आपको इसका निरंतर उपयोग करना पड़ेगा। आप अपने गो कोड में `net/http` पैकेज और उसके `Client` और `Request` संरचनाओं के साथ खेल करके खु
+HTTP अनुरोधों में बेसिक ऑथेंटिकेशन के साथ उपयोगकर्ता के नाम और पासवर्ड एक आम मूल्य होते हैं जो कि एक base64 encoded string के रूप में अनुरोध में शामिल होते हैं। एक अलग header में यह जानकारी भेजी जाती है `"Authorization: Basic <base64 encoded string>"`। हमने `http.NewRequest()` के साथ उपयोगकर्ता के नाम और पासवर्ड को सेट करने के लिए `req.SetBasicAuth()` फ़ंक्शन का उपयोग किया है। इससे हमारे द्वारा बनाए गए नए अनुरोध में यह header भी शामिल हो जाता है औ

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Ruby: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,44 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-CSV-filer är ett vanligt format för att hantera data i olika programmeringsprojekt. Genom att lära dig att arbeta med CSV-filer kan du enkelt importera och exportera data från dina program. Detta är praktiskt om du behöver dela data med andra eller om du behöver manipulera stora mängder data.
+Om du är nybörjare i programmering eller bara vill lära dig ett nytt programmeringsspråk, kan det vara bra att lära sig hur man arbetar med CSV-filer. CSV, eller Comma Separated Values, är ett vanligt format för att lagra och överföra data i tabellform. Det kan användas för allt från enkel datahantering till avancerade databaser.
 
-## Hur du gör det
+## Så här gör du
 
-Att arbeta med CSV-filer i Ruby är enkelt. Först måste du ladda ner och installera csv-paketet genom att köra följande kommando i terminalen:
-
-```Ruby
-gem install csv
-```
-
-När paketet är installerat kan du öppna en CSV-fil och läsa eller skriva data till den. Här är ett exempel på hur man läser en CSV-fil och skriver ut varje raderar till konsolen:
+För att kunna arbeta med CSV-filer i Ruby behöver du först importera "csv" biblioteket i din kod:
 
 ```Ruby
 require 'csv'
-CSV.foreach("min_fil.csv") do |rad|
-  puts rad
-end
 ```
 
-För att skriva till en CSV-fil, kan du använda metoden `CSV.open` och ange lämpliga filnamn och lägg till de data du vill skriva till filen. Här är ett exempel på hur man lägger till nya rader till en CSV-fil:
+För att öppna och läsa en CSV-fil, kan du använda följande kod:
 
 ```Ruby
-require 'csv'
-CSV.open("ny_file.csv", "w") do |csv|
-  csv << ["namn", "ålder", "land"]
-  csv << ["Anna", 25, "Sverige"]
-  csv << ["Peter", 30, "Danmark"]
+CSV.foreach("filnamn.csv") do |rad|
+  p rad
 end
 ```
 
-## Djupdykning
+Detta kommer att skriva ut varje rad i CSV-filen som en array. Om du vill läsa in header-raden separat, kan du använda "headers: true" som ett argument:
 
-Förutom att läsa och skriva från CSV-filer, finns det många andra funktioner som hjälper dig att manipulera data i CSV-format. Du kan till exempel välja specifika kolumner eller rader, filtrera eller sortera data och ändra formatet på celler. Du kan också använda CSV-modulen för att skapa egna CSV-tillämpningar eller integrera den med andra bibliotek och ramverk.
+```Ruby
+CSV.foreach("filnamn.csv", headers: true) do |rad|
+  p rad
+end
+```
 
-Det finns många resurser online som kan hjälpa dig att lära dig mer om hur man arbetar med CSV-filer i Ruby, inklusive dokumentationen för CSV-paketet och olika guider och tutorials.
+För att skriva data till en CSV-fil, kan du använda "CSV.open" och skicka med filnamn och ett läge, till exempel "w" för att skriva och "a" för att lägga till i en befintlig fil:
+
+```Ruby
+CSV.open("ny_fil.csv", "w") do |csv|
+  csv << ["Förnamn", "Efternamn"]
+  csv << ["Anna", "Svensson"]
+  csv << ["Erik", "Andersson"]
+end
+```
+
+Detta kommer att skapa en ny CSV-fil med för- och efternamn som header och därefter lägga till två nya rader med data. Observera att varje rad måste skrivas som en array.
+
+Om du behöver manipulera data i en befintlig CSV-fil, kan du använda det "CSV.table" för att läsa in hela filen som en tabell och sedan använda vanliga Array-metoder för att manipulera den. Sedan kan du skriva tillbaka datan till filen med "CSV.open" och det läge som passar dina behov.
+
+## Fördjupning
+
+Att arbeta med CSV-filer i Ruby kan innebära en del utmaningar, särskilt om du har stora filer eller behöver utföra avancerade operationer. Därför är det viktigt att också lära sig om andra bibliotek och verktyg som kan hjälpa till med dessa problem. Ett exempel är "FasterCSV" som använder sig av en snabbare parser för stora filer. Det finns också möjlighet att använda "CSV.foreach" på ett mer effektivt sätt genom att använda "each_slice" för att läsa in data i batch.
 
 ## Se också
 
-- [Dokumentation för CSV-paketet](https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html)
-- [En guide till att arbeta med CSV-filer i Ruby](https://www.rubyguides.com/2018/10/working-with-csv-files-in-ruby/) 
-- [Introduktion till Ruby-programmering](https://www.codecademy.com/learn/learn-ruby)
+- [Ruby CSV-dokumentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
+- [FasterCSV på RubyGems.org](https://rubygems.org/gems/fastercsv)
+- [Exempel på CSV data](https://github.com/jakebate313/Ruby-CSV-Example-Data)

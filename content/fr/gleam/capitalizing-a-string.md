@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Capitalize une chaîne de caractères"
-simple_title:         "Capitalize une chaîne de caractères"
+title:                "Capitaliser une chaîne de caractères"
+html_title:           "Gleam: Capitaliser une chaîne de caractères"
+simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,33 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Gleam, il y a de fortes chances que vous ayez déjà rencontré la nécessité de capitaliser une chaîne de caractères dans votre code. Cela peut sembler être une tâche simple, mais il y a quelques subtilités à prendre en compte pour capitaliser correctement une chaîne. Dans cet article, nous allons explorer pourquoi et comment capitaliser une chaîne en utilisant Gleam.
+Vous êtes-vous déjà demandé pourquoi certaines fonctions de traitement de chaînes de caractères en programmation sont en majuscules et d'autres en minuscules ? Ou peut-être avez-vous simplement besoin de capitaliser une chaîne de caractères pour des raisons esthétiques ou dans le cadre d'un projet spécifique. Dans cet article, nous allons vous montrer comment capitaliser une chaîne de caractères en utilisant le langage de programmation Gleam, afin que vous puissiez ajouter cette compétence utile à votre boîte à outils de développement.
 
 ## Comment faire
 
-Pour capitaliser une chaîne de caractères en Gleam, nous allons utiliser la fonction `String.capitalize`. Cette fonction prend une chaîne en entrée et renvoie cette même chaîne avec la première lettre en majuscule. Voyons un exemple de code pour mieux comprendre :
+Pour capitaliser une chaîne de caractères en utilisant Gleam, nous allons utiliser une fonction intégrée appelée `String.capitalize`. Voici un exemple de code pour capitaliser une chaîne de caractères simple :
 
 ```Gleam
-import gleam/string
-
-let nom = "jean"
-let nom_capitalisé = String.capitalize(nom)
+let string = "bonjour"
+let capitalized_string = String.capitalize(string)
 ```
 
-Nous avons d'abord importé le module `gleam/string`, qui contient la fonction `capitalize` dont nous avons besoin. Ensuite, nous avons défini une chaîne de caractères `nom` avec la valeur "jean", puis nous avons appelé la fonction `capitalize` en utilisant cette chaîne et stocké le résultat dans la variable `nom_capitalisé`.
+Et voici le résultat lorsque nous imprimons la nouvelle chaîne de caractères :
 
-Lorsque nous exécutons ce code, nous obtenons la valeur `Jean` dans `nom_capitalisé`, ce qui montre que la fonction a bien capitalisé la chaîne `"jean"`. Facile, n'est-ce pas ?
+```Gleam
+"Bonjour"
+```
+
+Comme vous pouvez le voir, la fonction `String.capitalize` prend simplement une chaîne de caractères en paramètre et renvoie une nouvelle chaîne de caractères avec la première lettre en majuscule.
+
+Vous pouvez également utiliser cette fonction sur des chaînes de caractères plus longues, comme dans cet exemple :
+
+```Gleam
+let phrase = "voilà une phrase avec des mots en majuscule"
+let capitalized_phrase = String.capitalize(phrase)
+```
+
+Et voici le résultat :
+
+```Gleam
+"Voilà une phrase avec des mots en majuscule"
+```
 
 ## Plongée en profondeur
 
-Mais ne vous arrêtez pas là ! La fonction `capitalize` de Gleam ne se contente pas de capitaliser la première lettre d'une chaîne. Elle est également capable de gérer les caractères spéciaux et les accents. Par exemple, si nous voulons capitaliser le prénom "élise" en utilisant notre fonction, le résultat sera bien `Élise` avec une majuscule accentuée.
+Si vous souhaitez capitaliser des chaînes de caractères avec des règles plus spécifiques, Gleam offre également la fonction `String.capitalize_words`. Cette fonction capitalisera chaque mot individuellement, ce qui peut être utile pour des titres ou des noms propres.
 
-En creusant un peu plus, nous découvrons également que la fonction `String.capitalize` prend en compte les caractères Unicode. Cela signifie que vous pouvez capitaliser des chaînes dans n'importe quelle langue, sans avoir à vous soucier des spécificités des différentes alphabets.
+Voici un exemple de code utilisant `String.capitalize_words` :
+
+```Gleam
+let phrase = "le développement avec gleam est amusant"
+let capitalized_phrase = String.capitalize_words(phrase)
+```
+
+Et le résultat :
+
+```Gleam
+"Le Développement Avec Gleam Est Amusant"
+```
+
+Comme vous pouvez le voir, chaque mot a été capitalisé individuellement. Vous pouvez également utiliser cette fonction pour spécifier des exceptions, par exemple si vous voulez que certains mots restent en minuscules.
 
 ## Voir aussi
 
-Maintenant que vous savez comment capitaliser une chaîne en Gleam, voici quelques liens utiles pour en apprendre davantage sur le langage :
+- [Documentation officielle de Gleam] (https://gleam.run/docs/)
+- [Autres fonctions de traitement de chaînes en Gleam] (https://help.disqus.com/)
 
-- [Documentation officielle de Gleam](https://gleam.run/)
-- [Guide de démarrage pour les débutants en Gleam](https://evuez.tech/blog/gleam-language-intro-beginner/)
-- [Tutoriels vidéo pour apprendre Gleam](https://www.youtube.com/playlist?list=PLPtGE1CdUgIdQzo-dWff3JjNuXrWc9WbF)
+N'oubliez pas de consulter la documentation officielle de Gleam pour en savoir plus sur les fonctions de traitement de chaînes et comment les utiliser dans vos projets. Et si vous avez des questions ou des commentaires, n'hésitez pas à les partager sur la communauté Gleam !

@@ -1,6 +1,7 @@
 ---
-title:                "C#: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "C#: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -9,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi tehdä päivämäärästä merkkijono?
+## Miksi
+Mikä on syy, miksi haluaisit muuttaa päivämäärän merkkijonoksi? Ei ole epäilystäkään siitä, että pääset säännöllisesti tilanteeseen, jossa sinun täytyy muuntaa päivämäärä jollakin tavalla esiteltävässä muodossa. Saatat haluta tulostaa sen raporttiin, kirjoittaa sen tietokantaan tai näyttää käyttäjälle. Onneksi C#:ssa on helppo tapa tehdä tämä muunnos yhdestä päivämäärätyypistä toiseen.
 
-Monesti ohjelmoinnissa tulee tarvetta muuttaa päivämäärä merkkijonoksi, esimerkiksi käyttäjän nähtäväksi tai tietokantaan tallennettavaksi. Tämä tapahtuu yleensä siksi, että päivämäärän käsittelyyn merkkijono-muodossa on helppoa ja monipuolista.
-
-## Kuinka tehdä se?
-
-```C#
-// Luodaan DateTime-olio, joka sisältää halutun päivämäärän
-DateTime date = new DateTime(2020, 1, 14);
-
-// Muunnetaan päivämäärä merkkijonoksi
-string dateString = date.ToString();
-
-// Tulos: "14.1.2020 0.00.00"
-```
+## Miten tehdä
+Jos haluat muuntaa päivämäärän merkkijonoksi, voit käyttää C#:n DateTime-luokan ToString-menetelmää ja antaa sille haluamasi päivämäärämääritelmän ilmaisun. Alla on esimerkkejä erilaisista päivämäärämalleista ja niiden tulostetuista merkkijonoista:
 
 ```C#
-// Voimme myös määrittää halutun muotoilun käyttämällä ToString-metodia
-string formattedDate = date.ToString("dd/MM/yyyy");
+// Päivämäärän tulostaminen "dd/MM/yyyy" -muodossa
+DateTime today = DateTime.Today;
+Console.WriteLine(today.ToString("dd/MM/yyyy")); // Esim. 07/05/2021
 
-// Tulos: "14/01/2020"
+// Päivämäärän tulostaminen "dddd, MMMM dd, yyyy" -muodossa
+DateTime birthday = new DateTime(1995, 10, 15);
+Console.WriteLine(birthday.ToString("dddd, MMMM dd, yyyy")); // Esim. lauantai, lokakuu 15, 1995 
 ```
 
-Merkkijonoksi muutettu päivämäärä voidaan myös tallentaa muuttujaan tai tulostaa suoraan konsolille käyttäjän nähtäväksi.
+Voit myös käyttää DateTime-luokan Parse-menetelmää päinvastaiseen muunnokseen, eli muuttaa merkkijonon päivämääräksi. Alla olevassa esimerkissä haluamme muuntaa merkkijonon "12/31/2021" DateTime-tyypiksi ja tulostaa sen muutetussa muodossa:
 
 ```C#
-// Tallennetaan merkkijono-muotoinen päivämäärä muuttujaan
-string dateAsString = date.ToString("dddd, MMMM d, yyyy");
-
-// Tulos: "tiistai, tammikuu 14, 2020"
-
-// Tulostetaan päivämäärä suoraan konsolille
-Console.WriteLine(date.ToString("yyyy-MM-dd"));
-
-// Tulos: "2020-01-14"
+string dateStr = "12/31/2021";
+DateTime date = DateTime.Parse(dateStr);
+Console.WriteLine(date.ToString("MMMM dd, yyyy")); // Esim. joulukuu 31, 2021
 ```
+ 
+## Syventävä syventyminen
+Päivämäärän muuntaminen merkkijonoksi voi joskus aiheuttaa ongelmia eri kulttuurien ja kielten välillä. Esimerkiksi suomenkielisissä käyttöympäristöissä päivämäärät kirjoitetaan usein muodossa "dd.MM.yyyy", kun taas englanninkielisissä ne ovat tyypillisesti "MM/dd/yyyy". Tästä syystä on tärkeää käyttää CultureInfo-luokkaa määrittämään haluttu kieliasetus ja estää näin mahdolliset virheet päivämäärän muuntamisessa.
 
-## Syvällisempi sukellus
-
-C#-kielellä päivämäärä-muuttujasta voidaan muodostaa merkkijono käyttämällä sen ToString-metodia. Metodi ottaa valinnaisena parametrina merkkijonon, joka määrittelee halutun muotoilun. Muotoilun avulla voidaan esimerkiksi määrittää päivämäärän näyttämisen tarkempi formaatti tai ottaa mukaan myös aika. C# tarjoaa monipuolisen valikoiman erilaisia muotoilutapoja, jotka löytyvät virallisen dokumentaation valmiista listaamista.
+Lisäksi DateTime-luokassa on muitakin hyödyllisiä ominaisuuksia, kuten DateDiff-metodi, joka voi laskea aikaeron kahden päivämäärän välillä. Voit myös tarkistaa, onko annettu vuosi karkausvuosi käyttämällä IsLeapYear-metodia.
 
 ## Katso myös
-
-- [DateTime-rakenne](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
-- [ToString-metodi](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1)
-- [DateTimeFormatter-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netcore-3.1)
+- [DateTime-luokka (C#-ohjelmointioppaat)](https://docs.microsoft.com/fi-fi/dotnet/csharp/datetime)
+- [CultureInfo-luokka (C#-ohjelmointioppaat)](https://docs.microsoft.com/fi-fi/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+- [Parse-metodi (C#-ohjelmointioppaat)](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.parse?view=net-5.0)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "C++: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "C++"
 category:             "C++"
@@ -9,72 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué enviar una solicitud HTTP?
+## ¿Por qué enviar una solicitud HTTP?
 
-En la programación moderna, enviar solicitudes HTTP es una parte esencial para integrar aplicaciones y servicios en línea. Permite la transferencia de datos entre diferentes sistemas y es especialmente útil para conectarse con APIs externas o para realizar peticiones a servidores remotos.
+Enviar una solicitud HTTP es una parte fundamental en el desarrollo de aplicaciones web. Permite a los usuarios enviar y recibir información desde un servidor remoto. Esto puede ser útil para realizar acciones como cargar una página web, enviar datos de un formulario o acceder a una API.
 
-## Cómo hacerlo
+## Cómo enviar una solicitud HTTP en C++
 
-Para enviar una solicitud HTTP en C++, podemos utilizar la librería `libcurl`, que es una herramienta de transferencia de datos en redes. Primero, debemos incluir la librería en nuestro código:
+Para enviar una solicitud HTTP en C++, primero necesitamos incluir la librería estándar `<iostream>` y la librería `<curl/curl.h>` que nos permitirá utilizar la función `curl_easy_perform()`.
 
-```C++
+```
+#include <iostream>
 #include <curl/curl.h>
+
+using namespace std;
+
+int main() {
+  // Inicializamos la librería cURL
+  CURL* curl = curl_easy_init();
+
+  // Creamos un gestor de URL y establecemos la URL de destino
+  curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com/");
+
+  // Ejecutamos la solicitud y almacenamos el resultado en una variable
+  CURLcode result = curl_easy_perform(curl);
+
+  // Verificamos si la solicitud fue exitosa
+  if (result == CURLE_OK) {
+    cout << "Solicitud enviada exitosamente." << endl;
+  } else {
+    cout << "Error al enviar la solicitud." << endl;
+  }
+
+  // Liberamos la memoria
+  curl_easy_cleanup(curl);
+
+  return 0;
+}
 ```
 
-Luego, creamos una variable `CURL` y una `CURLcode` para almacenar información sobre la solicitud y su respuesta.
+El resultado de este código sería "Solicitud enviada exitosamente." Esto nos indica que la solicitud ha sido recibida por el servidor correctamente. 
 
-```C++
-CURL *curl;
-CURLcode res;
-```
+## Un vistazo más profundo
 
-A continuación, inicializamos `libcurl` con la función `curl_global_init()` y creamos una variable para almacenar la URL del servidor al que deseamos enviar nuestra solicitud.
+Al enviar una solicitud HTTP, es importante tener en cuenta los diferentes métodos que se pueden utilizar, como GET, POST, PUT y DELETE. Además, se pueden añadir headers a la solicitud para proporcionar información adicional. También es posible enviar datos junto con la solicitud, por ejemplo en el caso de un formulario.
 
-```C++
-curl_global_init(CURL_GLOBAL_ALL);
-curl = curl_easy_init();
-std::string url = "https://ejemplo.com/api";
-```
+Para más información acerca de cómo utilizar cURL para enviar solicitudes HTTP en C++, se pueden consultar las siguientes referencias:
 
-Definimos también una variable para almacenar los datos de la solicitud en formato JSON, si es necesario.
-
-```C++
-std::string data = "{ \"nombre\": \"Juan\", \"apellido\": \"García\" }";
-```
-
-Ahora, configuramos nuestra solicitud con la función `curl_easy_setopt()`, especificando la URL, el tipo de solicitud y los datos que queremos enviar.
-
-```C++
-curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // URL del servidor
-curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST"); // Tipo de solicitud
-curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data.c_str()); // Datos de la solicitud
-```
-
-Finalmente, ejecutamos la solicitud con `curl_easy_perform()` y obtenemos la respuesta del servidor con `curl_easy_getinfo()`.
-
-```C++
-res = curl_easy_perform(curl);
-long response_code;
-curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
-```
-
-Si la solicitud se ha enviado correctamente, `res` tendrá un valor igual a `CURLE_OK` y `response_code` contenerá el código de respuesta del servidor.
-
-## Profundizando
-
-Existen muchas otras opciones y configuraciones que se pueden aplicar a una solicitud HTTP utilizando `libcurl`, como por ejemplo:
-
-- Especificar headers personalizados
-- Enviar y recibir archivos
-- Autenticación
-- Funciones de callback para gestionar eventos
-- Solicitud en paralelo
-- Entre otros.
-
-Además, también se pueden utilizar otras librerías para enviar solicitudes HTTP en C++, como `libmicrohttpd` o `Boost.Asio`. Todas estas opciones ofrecen flexibilidad y control en el envío y recepción de datos a través de HTTP.
+- Documentación oficial de cURL: https://curl.se
+- Tutorial de cURL en C++: https://curl.se/libcurl/c/tutorial.html
+- Ejemplos de código de cURL en C++: https://curl.se/libcurl/c/example.html
 
 ## Ver también
 
-- [Documentación oficial de libcurl en español](https://curl.haxx.se/libcurl/c/libcurl-tutorial.html)
-- [Ejemplos prácticos de solicitudes HTTP en C++](https://www.progville.com/cplusplus/http-client-cpp-libcurl/)
-- [Librería Boost.Asio para enviar solicitudes HTTP en C++](https://www.boost.org/doc/libs/1_75_0/doc/html/boost_asio/example/cpp03/http/client/sync_client.cpp)
+- [Cómo mejorar tu habilidad de programación en C++](https://platzi.com/blog/mejorar-habilidades-programacion-cpp/)
+- [La importancia de cURL en el desarrollo web](https://symfony.com/doc/current/components/http_client.html)

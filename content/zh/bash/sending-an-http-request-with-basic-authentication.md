@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 通过基本认证发送http请求"
-simple_title:         "通过基本认证发送http请求"
+title:                "发送基本认证的http请求"
+html_title:           "Bash: 发送基本认证的http请求"
+simple_title:         "发送基本认证的http请求"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,65 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-为什么要使用基本身份验证来发送HTTP请求？基本身份验证是一种常用的网络身份验证方法，它可以帮助确保我们在发送数据时的安全性和隐私保护。通过在HTTP请求中添加基本身份验证信息，服务器可以识别用户身份并验证其合法性，确保只有经过授权的用户才能访问受保护的资源。
+有时，我们需要向一个需要验证的网站发送 HTTP 请求。此时，我们可以使用基本身份验证来提供用户名和密码，并获得访问权限。
 
-## 如何使用Bash发送带基本身份认证的HTTP请求
+## 如何
 
-对于那些想要使用Bash来发送HTTP请求并使用基本身份认证的用户，我们提供以下示例代码及其对应的输出：
+我们可以使用 curl 命令来发送带有基本身份验证的 HTTP 请求。首先，使用 ```-u``` 参数来提供用户名和密码，然后指定请求的方法、URL 和其他选项。
+
+例如，要获取 https://example.com 网站的内容，我们可以使用以下命令：
 
 ```Bash
-# 发送GET请求到指定URL，并使用基本身份认证
-curl -u username:password https://www.example.com
-
-# 发送POST请求并同时添加数据，然后使用基本身份认证
-curl -u username:password -d "name=john&age=25" https://www.example.com
-
-# 显示HTTP请求头信息
-curl -u username:password -I https://www.example.com
-
-# 下载文件并保存到本地目录，同时使用基本身份认证
-curl -u username:password -O https://www.example.com/example.pdf
+curl -u username:password https://example.com
 ```
 
-输出示例：
+这将返回网站的 HTML 内容，并使用提供的用户名和密码进行身份验证。
 
-```
-# GET 请求的输出
-<html>
-<head>
-<title>Welcome to Example.com</title>
-</head>
-<body>
-<h1>Hello, World!</h1>
-</body>
-</html>
+## 深入探讨
 
-# POST 请求的输出
-{"status": "success"}
+基本身份验证使用的是 HTTP Header 字段。当我们发送带有基本身份验证的 HTTP 请求时，会添加一个名为 ```Authorization: Basic``` 的字段。这个字段的值是通过将用户名和密码进行 base64 编码来生成的。
 
-# 头信息的输出
-HTTP/1.1 200 OK
-Date: Sat, 20 Mar 2021 08:00:00 GMT
-Content-Type: text/html; charset=utf-8
-Content-Length: 1024
-# 等等...
+此外，如果将用户名或密码留空，那么只需要在 curl 命令中提供用户名或密码即可。例如，如果用户名为空，则可以使用以下命令：
+
+```Bash
+curl -u :password https://example.com
 ```
 
-## 深入学习
+## 参考资料
 
-发送带基本身份认证的HTTP请求的过程实际上是将一个含有身份信息的`Authorization`头部添加到HTTP请求中。这个`Authorization`头部通常包括用户名和密码的Base64编码后的字符串。例如，如果用户名为"username"，密码为"12345"，那么将其转换为Base64编码后得到的字符串就是"username:12345"，然后将这个字符串添加到`Authorization`头部即可。但是，为了进一步提高安全性，我们还可以在用户名和密码之间添加一个“:”符号，然后再进行Base64编码，这样在传输过程中就难以被窃取。
+- [cURL官方文档 - 发送HTTP认证请求](https://curl.haxx.se/docs/manpage.html#-u)
+- [HTTP基本身份验证介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication#%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95)
 
-另外，如果需要在Bash中使用加密的用户名和密码来发送基本身份认证的HTTP请求，我们也可以使用`-u`选项后面跟随加密字符串的方式来实现。例如，我们可以使用`-u dXNlcm5hbWU6cGFzc3dvcmQ=`来替代`-u username:password`。
+## 请参阅
 
-## 参考链接
+- [使用Bash进行思考的文档撰写者](https://rickyhsuanyuanli.gitbook.io/machine-learning-notes/1.-lang)
 
-- [curl官方文档](https://curl.se/docs/)
-- [基本身份认证（Basic Authentication）简介](https://www.runoob.com/http/http-basic-authentication.html)
-- [Base64编码简介](https://zh.wikipedia.org/wiki/Base64)
-- [curl命令使用详解](https://www.runoob.com/linux/linux-comm-curl.html)
+## 注
 
-# 请参考
-
-- [curl命令基础教程（中文）](https://www.cnblogs.com/djwxzy/p/12429760.html)
-- [基本身份验证（Basic Authentication）的使用及其安全性分析](https://blog.csdn.net/xiaoersoftware/article/details/80484322)
-- [如何在Bash中使用加密的用户名和密码进行HTTP请求](https://stackoverflow.com/questions/48613444/http-basic-authentication-with-bash-curl)
+如果您在尝试发送带有基本身份验证的 HTTP 请求时遇到问题，请确保您提供的用户名和密码是正确的，并且使用正确的编码方式。

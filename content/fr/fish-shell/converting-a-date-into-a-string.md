@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Transformer une date en chaîne de caractères"
-simple_title:         "Transformer une date en chaîne de caractères"
+title:                "Conversion d'une date en chaîne de caractères"
+html_title:           "Fish Shell: Conversion d'une date en chaîne de caractères"
+simple_title:         "Conversion d'une date en chaîne de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,32 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un utilisateur de Fish Shell, vous savez probablement que toutes les informations de temps sont stockées en tant que nombres de secondes depuis le 1er janvier 1970. Cela peut sembler un peu compliqué, mais cela a en fait de nombreux avantages. Cependant, dans certaines situations, vous pourriez avoir besoin de convertir ce nombre en une représentation plus facile à comprendre, comme une chaîne de caractères. Dans cet article, nous allons vous montrer comment le faire en utilisant Fish Shell.
+Si vous utilisez Fish Shell, vous savez déjà que c'est un puissant environnement de ligne de commande avec un certain nombre de fonctionnalités intéressantes. Mais pourquoi pourriez-vous vouloir convertir une date en chaîne de caractères ? Eh bien, il existe plusieurs raisons possibles, notamment pour afficher une date formatée dans un script ou pour faciliter la lecture des dates dans votre terminal.
 
 ## Comment faire
 
-Converter un nombre de secondes en une chaîne de caractères en Fish Shell est en fait assez simple. Tout ce que vous devez faire est d'utiliser la commande `date` et spécifier le format souhaité en utilisant le drapeau `-f`. Par exemple, pour convertir le temps actuel en une chaîne de caractères avec le format "année-mois-jour heure:minutes:secondes", vous pouvez utiliser la commande suivante :
+Heureusement, Fish Shell a une commande intégrée pratique pour convertir une date en chaîne de caractères : `date`. Voyons comment l'utiliser pour obtenir différentes formats de dates :
 
 ```
-Fish Shell
-date -f "%Y-%m-%d %H:%M:%S"
+Fish Shell >> date +%Y-%m-%d
+2021-01-01
 ```
 
-Cela renverra une sortie similaire à ceci :
+Dans cet exemple, nous utilisons l'option `%Y` pour obtenir l'année, `%m` pour le mois et `%d` pour le jour dans le format souhaité. Mais il existe une multitude d'autres options que vous pouvez utiliser pour obtenir différentes informations sur la date, telles que le jour de la semaine, l'heure, etc.
 
 ```
-2021-08-14 12:30:45
+Fish Shell >> date +%A
+Tuesday
+Fish Shell >> date +%H:%M:%S
+12:30:00
 ```
 
-Vous pouvez également spécifier un temps spécifique à convertir en utilisant la commande `date -d`, qui prend une chaîne de caractères en tant que paramètre pour spécifier la date et l'heure souhaitées.
+Vous pouvez également spécifier une date spécifique en utilisant l'option `-d` avec le format `YYYY-MM-DD` :
 
-## Deep Dive
+```
+Fish Shell >> date -d "2021-12-25" +%A
+Saturday
+```
 
-Il peut être utile de comprendre un peu plus en détail comment fonctionne cette conversion de nombre en une chaîne de caractères. En utilisant le drapeau `-f`, vous spécifiez un modèle de formatage qui sera utilisé pour la conversion. Ce modèle consiste en des caractères spéciaux qui représentent différentes parties du temps, comme l'année, le mois, le jour, l'heure, etc. Par exemple, `%Y` représente l'année complète à 4 chiffres, `%m` représente le mois en nombres, etc.
+## Plongée plus profonde
 
-Il est également possible d'inclure des caractères différents des spécificateurs de formatage dans le modèle, qui seront simplement copiés dans la sortie finale. Par exemple, vous pouvez ajouter des tirets ou des points pour séparer les différentes parties de la date.
+Si vous voulez vraiment comprendre comment fonctionne la conversion d'une date en chaîne de caractères dans Fish Shell, voici quelques informations supplémentaires. La commande `date` utilise le langage `strftime` pour convertir la date en une chaîne de caractères, et Fish Shell l'a intégré pour faciliter son utilisation.
+
+Le format `strftime` est un peu différent de ce que nous avons vu jusqu'à présent. Au lieu d'utiliser `%A` pour obtenir le jour de la semaine, nous utilisons `%u` pour obtenir le numéro du jour dans la semaine (1 pour lundi, 7 pour dimanche). Vous pouvez trouver plus de détails sur les différentes options sur la page de manuel de `strftime`.
 
 ## Voir aussi
 
-- [Commande date Fish Shell](https://fishshell.com/docs/current/cmds/date.html)
-- [Liste des spécificateurs de formatage pour la commande date](https://fishshell.com/docs/current/cmds/date.html#format-specifiers)
+- La documentation officielle de `fish date`: https://fishshell.com/docs/current/cmds/date.html
+- Page de manuel de `strftime` : https://man7.org/linux/man-pages/man3/strftime.3.html
+- Plus d'informations sur Fish Shell : https://fishshell.com/docs/current/

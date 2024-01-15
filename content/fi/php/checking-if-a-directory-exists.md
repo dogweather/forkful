@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Tarkista onko hakemistoa olemassa"
-simple_title:         "Tarkista onko hakemistoa olemassa"
+title:                "Tarkistetaan onko hakemistoa olemassa"
+html_title:           "PHP: Tarkistetaan onko hakemistoa olemassa"
+simple_title:         "Tarkistetaan onko hakemistoa olemassa"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa, onko hakemistoa olemassa?
+## Miksi
 
-Hakemistojen olemassaolon tarkistaminen on tärkeä osa PHP-ohjelmointia. Tämä toiminto mahdollistaa ohjelmoijille tarkistaa ja hallita hakemistoja, jotka sisältävät tärkeitä tiedostoja ja tietoja. Se on myös olennainen osa turvallisuutta ja virheenkäsittelyä.
+On monia tilanteita, joissa PHP-ohjelmoijan täytyy tarkistaa, onko tietty hakemisto olemassa. Tämä voi johtua esimerkiksi tarpeesta tallentaa tiedostoja, lukea tiedostoja tai tarkistaa, onko tietty hakemisto käytettävissä jollekin tärkeälle toiminnolle.
 
-## Miten tarkistaa, onko hakemistoa olemassa
+## Miten tehdä se
 
-Hakemistojen olemassaolon tarkistamiseen on useita tapoja, mutta yksi yleisimmistä on käyttää PHP:n `is_dir()` -funktiota. Tämä funktio tarkistaa, onko annettu polku hakemistoksi. Alla on esimerkki koodista, jossa tarkistetaan, onko "kuvat" nimistä hakemistoa olemassa:
+Tässä on yksinkertainen koodiesimerkki, joka näyttää, kuinka tarkistaa, onko hakemisto olemassa:
 
 ```PHP
-if (is_dir("kuvat")) {
-  echo "Hakemisto löytyy!";
+if(file_exists("/polku/hakemisto")) {
+    echo "Hakemisto on olemassa!";
 } else {
-  echo "Hakemistoa ei löydy.";
+    echo "Hakemistoa ei löytynyt.";
 }
 ```
 
-Jos "kuvat" nimistä hakemistoa ei olisi olemassa, tulostettaisiin "Hakemistoa ei löydy." Voit myös käyttää `is_dir()` -funktiota yhdessä `echo`-komennon kanssa tulostamaan hakemiston nimen:
+Koodi käyttää PHP:n sisäänrakennettua `file_exists()`-funktiota, joka tarkistaa, onko annettu tiedosto tai hakemisto olemassa. Jos hakemisto on olemassa, tulostetaan ilmoitus "Hakemisto on olemassa!", muuten tulostetaan "Hakemistoa ei löytynyt.".
+
+Voit myös tarkistaa, onko hakemisto olemassa `is_dir()`-funktion avulla:
 
 ```PHP
-if (is_dir("kuvat")) {
-  echo "Hakemisto on 'kuvat'.";
+if(is_dir("/polku/hakemisto")) {
+    echo "Hakemisto on olemassa!";
 } else {
-  echo "Hakemistoa ei löydy.";
+    echo "Hakemistoa ei löytynyt.";
 }
 ```
 
-Tämä tulostaisi "Hakemisto on 'kuvat'." Jos haluat tarkistaa, onko hakemisto olemassa jossain muussa sijainnissa, voit antaa `is_dir()` -funktiolle absoluuttisen polun:
+Tämä funktio tarkistaa, onko annettu polku hakemisto ja palauttaa boolean-arvon (`true` tai `false`) sen mukaan, mitä se löytää.
 
-```PHP
-if (is_dir("/var/www/html/kuvat")) {
-  echo "Hakemisto löytyy sijainnista /var/www/html/kuvat";
-} else {
-  echo "Hakemistoa ei löydy.";
-}
-```
-Tässä esimerkissä tarkistetaan, löytyykö hakemisto "kuvat" sijainnista "/var/www/html".
+## Syvemmälle tutustuminen
 
-## Syvempi sukellus
+`file_exists()`- ja `is_dir()`-funktiot käyttävät molemmat samanlaista logiikkaa tarkistamaan, onko hakemisto olemassa. Ne tekevät käytännössä saman asian, mutta `is_dir()` on hieman tarkempi ja soveltuu erityisesti hakemistojen tarkistamiseen.
 
-Kun PHP tarkistaa hakemistojen olemassaoloa `is_dir()` -funktiolla, se etsii fyysisesti tiedostojärjestelmästä hakemistoa, jonka polku on annettu funktion parametrina. Siksi on tärkeää antaa oikea polku, jotta tarkistaminen toimii oikein.
-
-Voit myös käyttää `!` (NOT) -operaattoria tarkistamaan, ettei hakemistoa ole olemassa:
-
-```PHP
-if (!is_dir("kuvat")) {
-  echo "Hakemistoa ei löydy.";
-}
-```
+On myös hyvä muistaa, että nämä funktiot tarkistavat vain, onko hakemisto olemassa, eikä niiden avulla voi esimerkiksi tarkistaa, onko hakemisto kirjoitussuojattu tai pääsy estetty. Näihin asioihin tulee kiinnittää huomiota sovellusta suunnitellessa.
 
 ## Katso myös
 
-- PHP:n `file_exists()` -funktio https://www.php.net/manual/en/function.file-exists.php
-- PHP:n `mkdir()` -funktio https://www.php.net/manual/en/function.mkdir.php
+- [PHP.net: file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [PHP.net: is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [Tarkista, onko tiedosto olemassa - PHP-opas](https://www.php-opas.com/tarkista-onko-tiedosto-olemassa/)

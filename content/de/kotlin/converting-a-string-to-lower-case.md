@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Eine Zeichenfolge in Kleinbuchstaben umwandeln."
-simple_title:         "Eine Zeichenfolge in Kleinbuchstaben umwandeln."
+title:                "Umwandeln eines Strings in Kleinschreibung"
+html_title:           "Kotlin: Umwandeln eines Strings in Kleinschreibung"
+simple_title:         "Umwandeln eines Strings in Kleinschreibung"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie bereits mit der Programmiersprache Kotlin vertraut sind, haben Sie möglicherweise schon einmal die Funktion gesehen, mit der Sie einen String in Kleinbuchstaben umwandeln können. Aber warum sollte man das überhaupt tun? Die Antwort ist einfach: Es erleichtert die Verarbeitung und Vergleichung von Strings. Indem alle Buchstaben in Kleinbuchstaben umgewandelt werden, wird die Vergleichung vereinfacht und mögliche Unterschiede aufgrund von Groß- und Kleinschreibung eliminiert.
+Manchmal möchten wir bestimmte Operationen auf String-Objekten ausführen, wie zum Beispiel den Vergleich oder die Suche nach bestimmten Zeichenketten. Wenn wir sicherstellen möchten, dass diese Operationen nicht an Groß-/Kleinschreibung scheitern, müssen wir den String in Kleinbuchstaben umwandeln.
 
-## Wie man Strings in Kleinbuchstaben umwandelt
-Es gibt mehrere Möglichkeiten, einen String in Kotlin in Kleinbuchstaben umzuwandeln. Hier sind zwei Beispiele mit ihren jeweiligen Ausgaben:
-
-```Kotlin
-val string = "Hallo Welt"
-val lowercaseString = string.toLowerCase()
-println(lowercaseString)
-// Ausgabe: hallo welt
-```
+## Anleitung
+Die Kotlin Standardbibliothek bietet eine einfache Möglichkeit, einen String in Kleinbuchstaben umzuwandeln. Hier ist ein Beispiel:
 
 ```Kotlin
-val string = "Ich liebe Kotlin"
-val uppercaseString = string.toUpperCase()
-println(uppercaseString)
-// Ausgabe: ICH LIEBE KOTLIN
+val myString = "Hallo WELT!"
+val convertedString = myString.toLowerCase()
+println(convertedString) // ausgabe: hallo welt!
 ```
 
-Wie Sie sehen können, gibt es für die Umwandlung eines Strings in Kleinbuchstaben die Funktion `toLowerCase()`, während für die Umwandlung in Großbuchstaben die Funktion `toUpperCase()` verwendet werden kann.
-
-## Tiefgehende Informationen
-Es gibt jedoch mehr, als nur Strings in der gesamten Zeichenkette in Klein- oder Großbuchstaben umzuwandeln. Sie können auch bestimmte Bereiche der Zeichenkette auswählen und in Klein- oder Großbuchstaben ändern. Dazu können Sie die Funktion `substring()` in Kombination mit `toLowerCase()` oder `toUpperCase()` verwenden.
+Wir können auch die Erweiterungsfunktion `toLowerCase()` direkt auf einem String-Objekt aufrufen:
 
 ```Kotlin
-val string = "Hallo Welt"
-val substring = string.substring(0, 5).toUpperCase()
-println(substring)
-// Ausgabe: HALLO
+val myString = "Hallo WELT!"
+val convertedString = myString.toLowerCase()
+println(convertedString) // ausgabe: hallo welt!
 ```
 
-In diesem Beispiel wird der Teil der Zeichenkette von 0 bis 5 (nicht inklusive) ausgewählt und in Großbuchstaben umgewandelt. Sie können auch andere Bereiche der Zeichenkette auswählen, je nachdem, was Sie benötigen.
+Die Funktion `toLowerCase()` gibt einen neuen String zurück, der den ursprünglichen String in Kleinbuchstaben enthält. Der ursprüngliche String bleibt unverändert.
 
-## Siehe auch
-- [Kotlin Strings und Zeichen](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-characters) 
-- [Offizielle Dokumentation von Kotlin zur Funktion "toLowerCase()"](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Wiki-Seite für die Funktion "toUpperCase()" in Kotlin](https://en.wikipedia.org/wiki/Case_conversion)
+## Tieferer Einblick
+In Kotlin gibt es verschiedene Methoden, um einen String in Kleinbuchstaben umzuwandeln. `toLowerCase()` ist die grundlegende Methode, die für die meisten Fälle ausreichend ist. Es gibt jedoch noch eine weitere Funktion namens `toLowerCase(Locale)`, die verwendet werden kann, um die Kleinbuchstaben entsprechend der übergebenen Locale-Einstellung zu konvertieren.
+
+```Kotlin
+val myString = "Hallo WELT!"
+val locale = Locale("de", "DE") // deutsche Locale-Einstellung
+val convertedString = myString.toLowerCase(locale)
+println(convertedString) // ausgabe: hallo welt!
+```
+
+Wenn keine Locale-Einstellung angegeben wird, wird die Standard-Locale des Systems verwendet. Dies kann jedoch zu unerwarteten Ergebnissen führen, wenn der Code auf verschiedenen Systemen ausgeführt wird.
+
+Eine andere Möglichkeit, die Groß-/Kleinschreibung zu ignorieren, ist die Verwendung von `contentEquals()` oder `equalsIgnoreCase()`.
+
+## Weitere Artikel
+- [Offizielle Kotlin Dokumentation zu Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Erweiterungsfunktionen](https://kotlinlang.org/docs/reference/extensions.html)
+- [Häufige Fehler beim Umgang mit Strings in Kotlin](https://medium.com/@navdeepsingh_2336/common-mistakes-in-kotlin-with-strings-ce832425defa)

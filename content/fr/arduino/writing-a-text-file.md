@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Ecrire un fichier texte"
+html_title:           "Arduino: Ecrire un fichier texte"
+simple_title:         "Ecrire un fichier texte"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,61 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'écriture d'un fichier texte peut sembler être une tâche banale, mais cela joue un rôle important dans la programmation Arduino. En écrivant un fichier texte, vous pouvez stocker des informations importantes pour votre projet, telles que des données de capteur ou des paramètres de configuration.
+Si vous utilisez un Arduino, il y a de fortes chances que vous vouliez enregistrer de l'information pour une utilisation future. L'un des moyens les plus simples de le faire est d'écrire un fichier texte. Mais comment y arriver?
 
 ## Comment faire
 
-Pour écrire un fichier texte en utilisant Arduino, il existe plusieurs étapes à suivre:
-
-- Tout d'abord, vous devez inclure la bibliothèque "SD" dans votre code.
-- Ensuite, vous devez initialiser une carte SD en utilisant la fonction "SD.begin()".
-- Créez un objet "File" en utilisant la fonction "open()", qui spécifie le nom du fichier et le mode d'accès (lecture, écriture, etc.).
-- Utilisez la fonction "println()" pour écrire des données dans le fichier.
-- Enfin, n'oubliez pas de fermer le fichier en utilisant la fonction "close()".
-
-Voici un exemple de code pour écrire un fichier texte appelé "donnees.txt" et y stocker une valeur de température:
-
 ```Arduino
-#include <SD.h>
-
-void setup() {
-  // initialiser la carte SD
-  SD.begin(10);
-
-  // ouvrir le fichier en mode écriture
-  File myFile = SD.open("donnees.txt", FILE_WRITE);
-
-  // vérifier si le fichier s'est correctement ouvert
-  if (myFile) {
-    // écrire la valeur de température dans le fichier
-    myFile.println("Température: 25°C");
-    // fermer le fichier
-    myFile.close();
-  } else {
-    // si le fichier ne s'est pas ouvert, imprimer un message d'erreur
-    Serial.println("Erreur lors de l'ouverture du fichier.");
-  }
-}
-
-void loop() {
-  // ne rien faire dans la boucle principale
+File myFile;
+myFile = SD.open("fichier.txt", FILE_WRITE);
+if(myFile){
+  myFile.println("Ceci est un exemple de texte.");
+  myFile.close();
 }
 ```
 
-Ensuite, si vous ouvrez le fichier "donnees.txt", vous devriez voir la valeur de température stockée à l'intérieur.
+Ce code ouvre un fichier texte appelé "fichier.txt" et écrit une ligne de texte à l'intérieur. Assurez-vous d'avoir une carte SD insérée dans votre Arduino pour que cela fonctionne. Vous pouvez ensuite utiliser un lecteur de carte SD pour accéder au fichier et voir le texte enregistré.
 
 ## Plongée en profondeur
 
-Il est important de noter que vous pouvez également écrire plusieurs lignes de données dans un fichier en utilisant une boucle et la fonction "println()". De plus, vous pouvez également spécifier un chemin d'accès pour votre fichier si vous souhaitez enregistrer dans un dossier spécifique sur votre carte SD.
+Il est important de noter que la méthode "FILE_WRITE" utilisée dans l'exemple précédent écrira par-dessus un fichier existant s'il en trouve un avec le même nom. Pour éviter cela, vous pouvez utiliser la méthode "FILE_WRITE" avec un nom de fichier différent à chaque fois.
 
-Vous pouvez également utiliser la fonction "print()" pour écrire des données sans ajouter automatiquement une nouvelle ligne à chaque fois. Cela peut être utile si vous souhaitez écrire des données dans un format spécifique, comme une liste.
+Il est également possible d'écrire plusieurs lignes de texte dans un fichier en utilisant une boucle for, par exemple:
+
+```Arduino
+File myFile;
+myFile = SD.open("fichier.txt", FILE_WRITE);
+if(myFile){
+  for(int i = 0; i < 5; i++){
+    myFile.println("Ceci est une ligne de texte.");
+  }
+  myFile.close();
+}
+```
+
+Cela écrira cinq lignes de texte identiques dans le fichier "fichier.txt". Vous pouvez également utiliser des variables pour rendre le texte plus dynamique, par exemple:
+
+```Arduino
+File myFile;
+myFile = SD.open("fichier.txt", FILE_WRITE);
+if(myFile){
+  int temperature = 25;
+  myFile.println("La température actuelle est de " + String(temperature) + " degrés.");
+  myFile.close();
+}
+```
+
+Cela écrira une ligne de texte avec la température actuelle, telle que "La température actuelle est de 25 degrés."
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur l'écriture de fichiers texte avec Arduino:
+Pour en savoir plus sur la manipulation de fichiers texte avec un Arduino, vous pouvez consulter les liens suivants:
 
-- Tutoriel officiel de la bibliothèque SD: https://www.arduino.cc/en/Reference/SD
-- Tutoriel sur l'écriture de fichiers sur une carte SD avec Arduino: https://randomnerdtutorials.com/guide-for-microsd-card-module-with-arduino/
-- Exemples de code pour écrire et lire des fichiers texte avec Arduino: https://create.arduino.cc/projecthub/projects/tags/text+file
+- [Utilisation de la carte SD avec Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Guide de référence pour les méthodes d'écriture de fichiers SD](https://www.arduino.cc/en/Reference/FileWrite)
+- [Tutoriel de Sparkfun sur l'enregistrement de données avec un Arduino et une carte SD](https://learn.sparkfun.com/tutorials/logging-data-with-arduino)

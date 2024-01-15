@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Clojure: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,56 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La récupération de la date actuelle est une tâche courante dans la programmation Clojure. Elle peut être utile pour afficher la date dans une interface utilisateur ou pour effectuer des calculs basés sur le temps.
+Se préoccuper de la date actuelle peut sembler banal, mais cela peut être très utile dans de nombreuses situations en programmation. Cela peut être pour afficher la date sur une interface utilisateur, pour effectuer des opérations liées à la date, ou simplement pour suivre l'heure à laquelle une fonction ou un processus a été exécuté.
 
-# Comment faire
+## Comment faire
 
-Pour obtenir la date actuelle en Clojure, nous pouvons utiliser la fonction `now` du package `java.time.LocalDateTime`.
-
-```Clojure
-(import [java.time.LocalDateTime])
-
-(def date (LocalDateTime/now))
-```
-
-La variable `date` contiendra maintenant un objet de type `java.time.LocalDateTime` représentant la date et l'heure actuelles.
-
-Pour afficher la date dans un format spécifique, nous pouvons utiliser la fonction `format` du package `java.time.format.DateTimeFormatter`.
+Pour obtenir la date actuelle en Clojure, vous pouvez utiliser la fonction `java.util.Date` qui renvoie un objet représentant la date et l'heure actuelles.
 
 ```Clojure
-(import [java.time.format.DateTimeFormatter])
+(import java.util.Date)
 
-(def formatter (DateTimeFormatter/ofPattern "dd/MM/yyyy"))
-
-(def date-formatted (LocalDateTime/format date formatter))
-
-(println date-formatted)
-;; Output: 14/10/2021
+(def current-date (Date.))
 ```
 
-Nous pouvons également obtenir la date dans un fuseau horaire spécifique en utilisant la méthode `atZone` du package `java.time.LocalDateTime` et en spécifiant le fuseau horaire souhaité.
+Vous pouvez ensuite utiliser la fonction `format` pour formater la date selon vos besoins.
 
 ```Clojure
-(def zone-id (java.time.ZoneId/of "Europe/Paris"))
+(require '[clojure.java-time :as t])
 
-(def date-paris (LocalDateTime/atZone date zone-id))
-
-(println date-paris)
-;; Output: 2021-10-14T10:00+02:00[Europe/Paris]
+(t/format current-date "dd-MM-yyyy") ;; 19-04-2021
 ```
 
-# Plongée en profondeur
+Vous pouvez également utiliser la bibliothèque `java-time` pour une manipulation plus avancée de la date et de l'heure.
 
-Pour comprendre comment la fonction `now` fonctionne, nous pouvons examiner le code source de la classe `LocalDateTime` dans le package `java.time`.
+```Clojure
+(require '[java-time :as jt])
 
-Nous pouvons voir que `now` utilise la méthode statique `now()` de la classe `System` pour obtenir l'heure système en millisecondes, puis utilise la classe `java.time.Instant` pour créer un objet `Instant` représentant cette heure.
+(jt/year current-date) ;; 2021
+(jt/month current-date) ;; :APRIL
+(jt/day-of-month current-date) ;; 19
+```
 
-Ensuite, la méthode `ofInstant` est utilisée pour créer un objet `LocalDateTime` à partir de l'objet `Instant`.
+## Plongée en profondeur
 
-# Voir aussi
+La fonction `java.util.Date` renvoie un objet mutable, c'est-à-dire que sa valeur peut changer au fil du temps. Il est donc recommandé de l'assigner à une variable plutôt que de l'utiliser directement. De plus, cette fonction utilise le fuseau horaire de l'utilisateur, ce qui peut causer des incohérences dans certains cas.
 
-- [Documentation de `java.time.LocalDateTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Documentation de `java.time.format.DateTimeFormatter`](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Documentation de `java.time.ZoneId`](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html)
+Pour éviter ces problèmes, il est préférable d'utiliser la bibliothèque `java-time` qui renvoie un objet immuable et prend en compte le fuseau horaire par défaut.
+
+## Voir aussi
+
+- [Documentation Java - Classe Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Clojure.java-time](https://github.com/dm3/clojure.java-time)
+- [Manipulation de dates et d'heures en Clojure](https://clojure.org/guides/java_time)

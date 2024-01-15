@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Swift recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,46 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Downloading web pages is a crucial part of web development and app development. It allows developers to gather information from external sources and display it in their own applications.
+If you're a web developer or even just a curious internet user, you may want to download a web page for various reasons. Perhaps you want to analyze the HTML structure, check for broken links, or simply save a local copy for offline viewing.
 
 ## How To
 
-To download a web page in Swift, we can use the `URLSession` class. First, we need to create a `URLSession` object and specify its configuration. Then, we can create a `URL` object with the URL of the webpage we want to download. Finally, we can use the `dataTask(with:)` method on our `URLSession` object to create a data task and download the webpage.
+Downloading a web page in Swift is a relatively simple process that can be done using the URLSession framework. First, we need to create a URL for the web page we want to download. Then, we initialize a URLSession object and use it to create a data task, passing in the URL we just created. Finally, we use the resume() method to start the data task. Here's an example:
 
 ```Swift
-// create a URLSession object with default configuration
+let url = URL(string: "https://www.example.com")
 let session = URLSession(configuration: .default)
-// create a URL object with the webpage's URL
-let url = URL(string: "https://www.example.com")!
-// create a data task to download the webpage
 let task = session.dataTask(with: url) { (data, response, error) in
-    // handle the downloaded data
     if let error = error {
-        // handle any errors
-        print("Error: \(error.localizedDescription)")
+        print("Error: \(error)")
     } else if let data = data {
-        // handle the downloaded data
-        print("Data: \(data)")
+        // Do something with the data here
     }
 }
-// start the data task
 task.resume()
 ```
 
-The above code will download the webpage and print out the downloaded data. We can also use the `response` object to get information about the server's response, such as its status code and headers.
+In the above example, we create a data task that will download the web page specified by the URL. Once the download is complete, the closure is executed and we can access the downloaded data.
+
+To save the downloaded data to a file, we can use the FileManager class. Here's an example of how we can save the downloaded web page as an HTML file:
+
+```Swift
+let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+let filePath = documentsDirectory.appendingPathComponent("example.html")
+try data?.write(to: filePath)
+```
+
+This will create a file called "example.html" in the app's document directory with the downloaded data. From here, we can do whatever we want with the file.
 
 ## Deep Dive
 
-A `URLSession` object manages the network transfer tasks and provides support for the various protocols used by web services. It also allows for customization of the session's behavior, such as specifying a timeout value or allowing for background downloads.
+Behind the scenes, the URL session created in the above example uses the HTTP protocol to make a request to the server and download the web page. The data that is returned is in the form of a Data object, which can then be converted to a String or other data type if needed.
 
-The `URL` class represents a URL and provides methods for creating and managing URLs. The `dataTask(with:)` method creates a data task for the specified URL and returns a `URLSessionDataTask` object.
-
-When the `dataTask(with:)` method is called, the download task will begin immediately and the data will be retrieved in the background. Once the download is complete, the completion handler will be called and we can handle the downloaded data and any errors that may have occurred.
+There are also various options available for configuring the URL session, such as setting a timeout for the request or handling redirections. For more advanced usage, you can also implement delegate methods to be notified of the progress of the download.
 
 ## See Also
 
-For more information and examples on downloading web pages in Swift, check out these resources:
-
-- [Official Apple Documentation for URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Tutorial on Downloading Web Pages in Swift](https://www.raywenderlich.com/1387264-downloading-content-from-the-web-in-swift)
-- [Sample Code for Downloading and Displaying Web Pages in Swift](https://github.com/awr/swiftwebview/tree/master/WebViewDemo)
+- [Official URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Medium Article on Downloading Web Pages in Swift](https://medium.com/@sdrzn/swift-downloading-the-contents-of-webpage-411c76f1bdf8)
+- [Stack Overflow Post on Saving a File from URL in Swift](https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift)

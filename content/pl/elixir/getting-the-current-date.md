@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Pobieranie bieżącej daty"
+title:                "Pobieranie bieżącej daty"
+html_title:           "Elixir: Pobieranie bieżącej daty"
 simple_title:         "Pobieranie bieżącej daty"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,46 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Zapewne wielu programistów zastanawia się po co w ogóle potrzebujemy pobierać aktualną datę w naszej aplikacji. Cóż, istnieje wiele powodów, dla których może to być potrzebne. Być może chcemy umożliwić użytkownikom wyświetlanie aktualnej daty lub czasu w naszej aplikacji, a może potrzebujemy uaktualniać ją w celu generowania raportów lub analiz. Bez względu na powód, pobieranie aktualnej daty jest ważną i nieodłączną częścią wielu aplikacji.
+Dlaczego ktokolwiek chciałby poznać aktualną datę? Cóż, w zależności od potrzeb, może to być przydatne przy tworzeniu aplikacji do zarządzania zadaniem, monitoringu czasu pracy lub po prostu do wyświetlania bieżącej daty w aplikacji. W tym artykule dowiesz się, jak łatwo uzyskać aktualną datę w Elixir.
 
 ## Jak to zrobić
 
-Aby pobrać aktualną datę w języku Elixir, możemy skorzystać z wbudowanej funkcji `Date.utc_today/0`. Powróćmy do naszych podstaw języka i przetestujmy tę funkcję w interpreterze i zobaczmy jak działa:
+W Elixir, aby uzyskać aktualną datę, możesz wykorzystać funkcję `Date.utc_today`, która zwraca bieżącą datę w formacie `{{rok, miesiąc, dzień}, {godzina, minuta, sekunda}}`. Oto przykład kodu:
 
-```Elixir
-Date.utc_today()
+```
+Elixir iex> Date.utc_today
+{{2021, 8, 12}, {0, 0, 0}}
 ```
 
-Po uruchomieniu tej komendy, powinniśmy otrzymać aktualną datę w formacie `{year, month, day}`. Na przykład ` {2020, 10, 15}` oznacza 15 października 2020 roku. Możemy także przekazać argument do tej funkcji, aby otrzymać datę w wybranej strefie czasowej. Na przykład jeśli chcemy otrzymać aktualną datę w Warszawie, możemy użyć:
+Jeśli chcesz uzyskać tylko datę bez uwzględnienia czasu, możesz użyć funkcji `Date.today`:
 
-```Elixir
-Date.utc_today("Europe/Warsaw")
+```
+Elixir iex> Date.today
+{2021, 8, 12}
 ```
 
-W ten sposób możemy uaktualnić naszą aplikację o bieżącą datę i wykorzystać ją w dowolny sposób.
+Aby uzyskać datę w danym strefie czasowej, możesz użyć funkcji `DateTime.utc_now` lub `DateTime.now`. Na przykład:
 
-## Głębsza analiza
-
-Jeśli chcemy pobrać więcej informacji na temat daty, możemy wykorzystać moduł `Calendar` w Elixirze. Udostępnia on wiele funkcji, które umożliwiają nam manipulowanie i przetwarzanie dat. Na przykład, funkcja `Calendar.day_of_week/1` przyjmuje datę jako argument i zwraca jej dzień tygodnia jako liczbę z zakresu 1-7, gdzie 1 oznacza poniedziałek, a 7 niedzielę.
-
-```Elixir
-Calendar.day_of_week({2020, 10, 15}) #=> 4
+```
+Elixir iex> DateTime.utc_now("Europe/Warsaw")
+~U[2021-08-12 13:15:25.726889Z]
 ```
 
-Możemy także użyć funkcji `Calendar.ISO.week_number/1`, aby wyznaczyć numer tygodnia w roku dla danej daty.
+Warto również wspomnieć, że istnieje wiele innych wbudowanych funkcji w Elixir, które umożliwiają manipulowanie, porównywanie i formatowanie danych daty i czasu. Więcej informacji na ten temat znajdziesz w sekcji "Deep Dive".
 
-```Elixir
-Calendar.ISO.week_number({2020, 10, 15}) #=> {2020, 42}
-```
+## Deep Dive
 
-Dzięki tym funkcjom oraz wielu innym dostępnym w module `Calendar`, możemy w pełni wykorzystać możliwości Elixira w manipulowaniu datami.
+Elixir zawiera wiele modułów związanych z zarządzaniem datami i czasem, takich jak `Date`, `DateTime`, `Time` i `NaiveDateTime`. Te moduły oferują szeroki zakres funkcji do manipulacji i formatowania dat i czasów, w tym obliczenia różnic między datami, porównywanie dat, wyświetlanie dat w różnych strefach czasowych i wiele więcej.
+
+Warto również wspomnieć o niesamowitej bibliotece `Calendar`, która oferuje jeszcze więcej funkcjonalności związanych z datami i czasem, takich jak wyświetlanie kalendarza, obliczanie czasu do ważnej daty i obsługa różnych kalendarzy (np. kalendarz bizantyjski czy hinduski). Dokumentacja do tej biblioteki jest bardzo obszerna i warto ją przejrzeć, aby poznać wszystkie jej możliwości.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak wykorzystać daty w języku Elixir, warto zapoznać się z następującymi artykułami:
-
-- [Dokumentacja Elixir: Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Pobieranie daty w różnych strefach czasowych w Elixir](https://cultivatehq.com/posts/working-with-timezones-and-dates-in-elixir/)
-- [Moduł `Date` w Elixirze](https://elixir-lang.org/getting-started/basic-types.html#dates-and-times)
-
-Mam nadzieję, że ten wpis był pomocny w zrozumieniu jak pobierać aktualną datę w języku Elixir. Dziękuję za przeczytanie!
+- Dokumentacja Elixir: https://hexdocs.pm/elixir/master/Date.html
+- Dokumentacja modułu Date: https://hexdocs.pm/elixir/Date.html
+- Dokumentacja biblioteki Calendar: https://hexdocs.pm/calendar/readme.html

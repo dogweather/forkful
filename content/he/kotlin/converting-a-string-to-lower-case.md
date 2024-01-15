@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: המרת מחרוזת לאותיות קטנות"
+title:                "המרת מחרוזת לאותיות קטנות"
+html_title:           "Kotlin: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-המרת מחרוזת לאותיות קטנות היא פעולה נפוצה בתכנות בכל שפת תכנות. היא מאפשרת לנו לשנות את המחרוזת המקורית לגרסה בתובנות נמוכות יותר, מה שיכול להיות שימושי במגוון מקרים, כגון השוואת טקסט או ניהול נתונים.
+אתה יכול להיות מתהדר עם הקוד שלך כמה שברצונך, אבל האמת היא שלעיתים קרובות אתה תצטרך להתמודד עם נתונים מסוג שונה שמגיעים בפורמטים שונים. כשאתה מעבד מחרוזת בקוד שלך, לעיתים קרובות תרצה להביא אותה לפורמט מסוים, כמו כתיבה או קריאה בינלאומית. אחת השיטות לעשות זאת היא להמיר את המחרוזת לאותיות קטנות (Lower Case). זה יקל עליך לבצע רטרייבל ועיבוד נתונים עתידיים.
 
-# איך לעשות זאת
-
-אם אתם מתכנתים בשפת תכנות Kotlin, ישנן שתי דרכים להמיר מחרוזת לאותיות קטנות. הראשונה היא באמצעות הפונקציה "toLowerCase()" והשנייה היא על ידי שימוש באופרטור "!!.toLowerCase()". בשתי המקרים, המחרוזת המקורית תוחזר בגרסת אותיות קטנות.
+## איך
 
 ```Kotlin
-val name = "JOHN"
-println(name.toLowerCase()) // תוצאה: john
-println(name!!.toLowerCase()) // תוצאה: john
+str.toLowerCase()
 ```
 
-כמו כן, ניתן להשתמש בלולאה כדי להמיר מחרוזת צרורה לאותיות קטנות. בדוגמה זו, אנו יוצרים משתנה חדש ומשתמשים במתודת "toLowerCase()" על ידי הפקדה שלה לכל תו במחרוזת המקורית.
+כיוון שבקוטלין המחרוזות הן immutable (לא ניתן לשנותן), הפעולה לא משנה את המחרוזת המקורית אלא מחזירה מחרוזת חדשה בפורמט שאתה רוצה. הנה דוגמא לפקודה זו:
 
 ```Kotlin
-val name = "JOHN"
-var newName = ""
-for (char in name){
-    newName += char.toLowerCase()
-}
-println(newName) // תוצאה: john
+val str = "Hello World"
+val lowercaseStr = str.toLowerCase()
 ```
 
-# עיון מעמיק
-
-ברצוני להציג לכם עוד אפשרות עבור מרת מחרוזות לאותיות קטנות. במקום להשתמש במתודות ואופרטורים מובנים, ניתן להשתמש בפונקציה עזר נלווה שנקראת "toLowercase()". הפונקציה תעבוד באותו האופן כמו שימוש בפונקציה "toLowerCase()", אך היא מאפשרת לנו להכליל את הפעולה לכל סוגי הנתונים.
+ישנן גם פקודות נוספות לסירוגין לתרגום של מחרוזת לאותיות קטנות. הנה דוגמאות לכמה מהנקודות האלה:
 
 ```Kotlin
-fun String.toLowercase(): String {
-    var result = ""
-    for (char in this){
-        if(char.isUpperCase()){
-            result += (char.toInt() + 32).toChar()
-        } else {
-            result += char
-        }
-    }
-    return result
-}
+// כתיבת אותיות נתמךות בכל תווי התווית
+"Hello World".toLowerCase() // hello world
+"Привет мир".toLowerCase() // привет мир
+"こんにちは世界".toLowerCase() // こんにちは世界
 
-val name = "JOHN"
-println(name.toLowercase()) // תוצאה: john
+// תוויות עם טאבים
+"Hello\tWorld".toLowerCase() // hello\tworld
+
+// תוויות עם טאבים לחפוש
+"Hello World".toLowerCase(Locale.ROOT) // hello world
+"Привет мир".toLowerCase(Locale.ROOT) // привет мир
+"こんにちは世界".toLowerCase(Locale.ROOT) // こんにちは世界
 ```
 
-# ראו גם
+## Deep Dive
 
-- [מ
+בקוטלין, כשאתה משתמש בפעולת `toLowerCase()`, אתה משתמש בפונקציה של מחלקת String. מחלקת String כוללת מספר פונקציות נוספות לסירוגין, כמו `toUpperCase()` ו- `replace()`. הפעולה `toLowerCase()` משתמשת בפונקציה חיצונית בשם `toLowerCase_internal()` המתמודדת עם הדגש והניקוד השונים בנתונים.

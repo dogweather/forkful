@@ -1,6 +1,7 @@
 ---
-title:                "Java: 文字列を連結する"
-simple_title:         "文字列を連結する"
+title:                "文字列の連結"
+html_title:           "Java: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,42 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-1行または2行で、なぜ文字列を連結する必要があるのかを説明します。
 
-Javaでプログラミングする際、文字列を連結する必要があることがあります。例えば、データベースから取得した複数のカラムの値を一つの文字列として表示したい場合や、ユーザーから入力した情報を一つの文章として保存する場合などです。文字列を連結することで、複数の情報を統一的な形で処理できるようになります。
+文字列を連結させる理由はたくさんあります。例えば、複数の文字列を一つの文に組み合わせる必要がある場合や、出力結果を整形する際に文字列を連結する必要がある場合などが挙げられます。Javaでは、文字列の連結が簡単に行えるので、効率的なプログラミングをする際に重要なスキルとなります。
 
-## 方法
-以下のコードブロック内に示されるように、Javaで文字列を連結する方法をご紹介します。
+## 使い方
 
-``` Java
-// 文字列を "+" で連結する方法
+文字列を連結する方法はいくつかありますが、今回は `+` 演算子を使用する方法を紹介します。まずは、連結させたい文字列を `+` 演算子で結合します。例えば、次のようなコードを見てみましょう。
+
+```Java
 String name = "太郎";
-String greeting = "こんにちは、";
-String message = greeting + name;
-System.out.println(message); // 出力: こんにちは、太郎
+String message = "こんにちは、" + name + "さん！";
+System.out.println(message);
 ```
 
-``` Java
-// Stringクラスのconcat()メソッドを使用する方法
-String firstName = "太郎";
-String lastName = "山田";
-String fullName = firstName.concat(lastName);
-System.out.println(fullName); // 出力: 太郎山田 
-```
+この場合、`+`演算子を使って`"太郎"`という文字列を`"こんにちは、"`と`"さん！"`の間に結合しています。実行すると、`こんにちは、太郎さん！`という結果が出力されます。
 
-上記のように、文字列を連結する方法はいくつかありますが、最も一般的なのは「+」演算子を使用する方法です。また、Stringクラスには、concat()メソッドが用意されており、こちらを使用することでも文字列を連結することができます。どちらの方法を使用するかは、状況や好みによって異なりますので、都度判断する必要があります。
+また、`"+"` 演算子を使用する際は、型の自動変換が行われるため、文字列以外のデータ型も自動的に文字列に変換されます。例えば、`"年齢"`という文字列と`32`という整数を結合する場合、`32`は自動的に文字列に変換されて`"32"`となり、`"年齢"`と一緒に表示されるようになります。これにより、簡単に複数のデータを連結できるようになります。
 
-## 深堀り
-文字列を連結する際には、文字の数が多いほど処理に時間がかかるということを知っておく必要があります。なぜなら、Javaでは文字列は不変(immutable)なオブジェクトとして扱われるため、文字列を連結する際には元々の文字列のデータを保持したまま新しい文字列を作成するためです。そのため、文字列を連結する回数が多い場合は、パフォーマンスの低下が生じる可能性があります。
+## ディープダイブ
 
-そのような場合には、StringBuilderクラスを使用することで文字列の連結を効率的に行うことができます。StringBuilderクラスは可変(mutable)なオブジェクトであり、文字列の連結処理を行う際には元々の文字列を保持せずに文字列の追加を行うことができるため、パフォーマンスの向上が期待できます。
+文字列を連結させる方法は他にもいくつかあります。`String`クラスの`concat()`メソッドや、`StringBuffer`クラスの`append()`メソッドを使う方法などもあります。また、文字列を連結する際には、文字列の変更が頻繁にある場合は`StringBuffer`クラスを使用し、変更がない場合は`String`クラスを使用するとパフォーマンスが向上します。また、文字列の連結を行う際には、不要なオブジェクトを作成しないよう気をつけることが重要です。これらの詳細な情報を知りたい方は、[Oracleの公式ドキュメント](https://docs.oracle.com/javase/tutorial/java/data/strings.html)を参考にしてください。
 
-以上のように、文字列を連結する際には処理速度やメモリーの使用量を考慮する必要がありますので、適切な方法を選択するようにしましょう。
+## 参考リンク
 
-## はおりよこ
-
-また、文字列を連結する方法以外にも、Javaで文字列を処理する際に役立つ情報をご紹介します。
-
-- [Stringクラスのドキュメント (Oracle公式サイト)](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
-- [StringBuilderクラスのドキュメント (Oracle公式サイト)](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/StringBuilder.html)
-- [Javaでの文字列操作について (Qiita)](https://qiita.com/kmwork/items/a3d5c6a7f516556a58ca)
+- [Javaにおける文字列の連結方法について（日本語）](https://java-reference.com/java_string_concat.htm)
+- [Stringクラス（Java API Documentation）](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+- [StringBufferクラス（Java API Documentation）](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/StringBuffer.html)
+- [Oracleの公式ドキュメント（英語）](https://docs.oracle.com/javase/tutorial/java/data/strings.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Muunna merkkijono pienaakkosiksi"
-simple_title:         "Muunna merkkijono pienaakkosiksi"
+title:                "Merkkijonon muuntaminen pienaakkosiksi"
+html_title:           "Gleam: Merkkijonon muuntaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,28 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-On hyödyllistä joskus muuttaa merkkijono pieniksi kirjaimiksi, esimerkiksi jos haluat vertailla kahta merkkijonoa ja haluat että kirjainkoko ei vaikuta vertailuun. Tämä on erityisen tärkeää suomenkielellä, jossa on paljon erikoismerkkejä ja aakkosia.
+Miksi haluaisit konvertoida merkkijonon pienaakkosiksi? Hyvä kysymys! Se voi olla hyödyllistä tiettyjen sovellusten tai algoritmien käsittelyssä, joissa tarvitaan yhtenäistä merkkijonoformaattia.
 
-## Kuinka?
+## Kuinka
+
+Gleam-koodi tarjoaa helpon tavan konvertoida merkkijono pienaakkosiksi. Esimerkissä muutamme merkkijonon "HELLO WORLD" pienaakkosiksi ja tulostamme lopputuloksen.
 
 ```Gleam
-fn main() {
-  let s = "Tämä On Merkkijono"
-  let lower_case = String.to_lower_case(s)
-  io.println(lower_case)
-}
+let teksti = "HELLO WORLD"
+let pienaakkoset = teksti |> String.to_lower_case
+pinoa.Siphelele (pienaakkoset) // Tuottaa "hello world" tuloksen
 ```
 
-Tulostus: ```tämä on merkkijono```
+## Syvempi sukellus
 
-## Syvällinen sukellus
-
-Gleamilla on valmiina funktio `String.to_lower_case`, joka ottaa parametrina merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu pieniksi kirjaimiksi. Tämä on kätevä tapa välttää kirjainkoosta johtuvia ongelmia, kun käsitellään merkkijonoja.
-
-Gleamin merkkijonot ovat myös Unicode-yhteensopivia, mikä tarkoittaa sitä että funktio `String.to_lower_case` osaa käsitellä myös erikoismerkkejä ja eri kielten aakkosia oikein.
+Gleam tarjoaa muutamia muita hyödyllisiä funktioita merkkijonojen muokkaamiseen. Voit esimerkiksi poistaa välilyöntejä merkkijonosta käyttämällä `String.trim` tai jakaa merkkijonon osiin käyttämällä `String.split`. Voit myös muuttaa merkkijonon ensimmäisen kirjaimen isolla alkukirjaimella käyttämällä `String.capitalize`.
 
 ## Katso myös
 
-- [Gleam Document
+- [Gleamin merkkijonojen dokumentaatio](https://gleam.run/articles/strings/)
+- ["Gleam - moderni funktionaalinen ohjelmointikieli" -artikkeli](https://gleam.run/articles/introduction/)
+- [Gleam-yhteisöfoorumi](https://forum.gleam.run/)

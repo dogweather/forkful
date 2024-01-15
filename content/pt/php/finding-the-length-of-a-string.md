@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Encontrando o tamanho de uma string"
-simple_title:         "Encontrando o tamanho de uma string"
+title:                "Encontrando o comprimento de uma string."
+html_title:           "PHP: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Porque
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, pois muitas vezes precisamos saber quantos caracteres uma palavra ou frase possui. Além disso, entender como funciona o cálculo do comprimento de uma string pode nos ajudar a ter uma melhor compreensão sobre manipulação de dados em PHP.
+Saber o comprimento de uma string é uma tarefa básica em programação e pode ser útil em várias situações, como validar entradas de usuários, formatar saídas de texto e realizar operações com strings.
 
 ## Como Fazer
 
-Para encontrar o comprimento de uma string em PHP, podemos usar a função "strlen()". Veja abaixo um exemplo de como utilizá-la em código PHP e o resultado esperado:
+Para encontrar o comprimento de uma string em PHP, podemos usar a função `strlen()` ou acessar a propriedade `length` de um objeto `string`. Veja abaixo exemplos de como utilizar esses métodos:
 
-```PHP
-<?php
+```
+// Exemplo com a função strlen()
+$string = "Olá Mundo!";
+echo strlen($string); // Saída: 11
 
-$string = "Olá, leitores!";
-
-echo strlen($string);  // saída: 14 (contando espaços e pontuações)
+// Exemplo com a propriedade length
+$string = "Olá PHP!";
+echo $string->length; // Saída: 8
 ```
 
-Neste exemplo, declaramos uma variável "string" com a palavra "Olá, leitores!" e usamos a função "strlen()" para encontrar seu comprimento. Ao executar o código, a saída será 14, já que a função também conta os espaços e pontuações.
-
-Também é possível utilizar outras funções como "mb_strlen()" para lidar com strings multibyte ou "mb_strlen_count()" para evitar problemas com caracteres UTF-8. É importante entender bem o funcionamento dessas funções para evitar erros em seus projetos.
+Note que a função `strlen()` retorna o comprimento da string passada como parâmetro, enquanto a propriedade `length` retorna o comprimento daquela string específica em que ela é utilizada.
 
 ## Deep Dive
 
-Por trás do cálculo do comprimento de uma string, há um conceito importante: índices. Em PHP, cada caractere de uma string tem um índice, começando de 0 para o primeiro caractere. Portanto, se quisermos acessar um caractere específico de uma string, podemos usar seu índice correspondente. Por exemplo, para acessar a letra "l" da palavra "Olá", usamos o índice 1 (lembrando que o primeiro caractere é indexado como 0).
+Quando uma string é passada como parâmetro para a função `strlen()`, o PHP conta a partir do primeiro caractere da string até o último, incluindo espaços em branco e caracteres especiais. Isso significa que a função não diferencia entre letras minúsculas e maiúsculas ou caracteres especiais.
 
-Além disso, é importante saber que o comprimento de uma string é o número total de índices. Por exemplo, a string "Olá" possui 3 caracteres, mas seu comprimento é 4, já que o índice começa em 0 e vai até 3.
+Outra forma de encontrar o comprimento de uma string é utilizando a função `mb_strlen()`, que leva em consideração a codificação dos caracteres. Isso é importante para lidar com strings em outras línguas, que podem ter caracteres especiais ou acentuados.
+
+```
+// Exemplo com a função mb_strlen()
+$string = "Água é vida!";
+echo mb_strlen($string, "UTF-8"); // Saída: 12
+```
 
 ## Veja Também
 
-- [Função strlen() no Manual do PHP](https://www.php.net/manual/pt_BR/function.strlen.php)
-- [Função mb_strlen() no Manual do PHP](https://www.php.net/manual/pt_BR/function.mb-strlen.php)
-- [Função mb_strlen_count() no Manual do PHP](https://www.php.net/manual/pt_BR/function.mb-strlen-count.php)
+- [Documentação oficial do PHP sobre a função strlen()](https://www.php.net/manual/pt_BR/function.strlen.php)
+- [Documentação oficial do PHP sobre a função mb_strlen()](https://www.php.net/manual/pt_BR/function.mb-strlen.php)

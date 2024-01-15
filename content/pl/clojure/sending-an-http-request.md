@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie zapytania http"
+html_title:           "Clojure: Wysyłanie zapytania http"
+simple_title:         "Wysyłanie zapytania http"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,39 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wielu programistów często napotyka potrzebę wysłania zapytania do serwera HTTP. Może to być konieczne w celu pobrania danych, wykonania akcji na stronie internetowej lub komunikacji z innym oprogramowaniem. W tym poście dowiesz się, dlaczego warto poznać sposoby wysyłania zapytań HTTP w języku Clojure.
+Odczytywanie i przesyłanie danych za pomocą protokołu HTTP jest niezbędnym elementem tworzenia aplikacji internetowych. Dzięki temu możemy korzystać z wielu usług dostępnych w sieci, np. wysyłania formularzy, pobierania informacji z serwerów lub interakcji z innymi stronami internetowymi.
 
-## Jak to zrobić?
-
-W Clojure istnieje kilka sposobów na wysłanie zapytania HTTP. Jednym z nich jest użycie biblioteki `clj-http`:
+## Jak to zrobić
 
 ```Clojure
-(require '[clj-http.client :as client])
+;; Wysłanie żądania GET
+(:require [clj-http.client :as client])
 
-(def response (client/get "http://example.com"))
+(client/get "https://www.example.com")
 ```
 
-W tym przykładzie wysłane zostanie proste zapytanie GET do strony internetowej `example.com`. Otrzymana odpowiedź będzie przechowywana w zmiennej `response` i może zostać wykorzystana do dalszych operacji.
-
-Można również wysyłać zapytania z nagłówkami i innymi parametrami, np.:
+W ten sposób możemy wysłać proste żądanie GET do strony "www.example.com" i otrzymać odpowiedź w formacie JSON. Jako wynik otrzymamy zestaw danych opisujących nagłówki, treść i kod odpowiedzi.
 
 ```Clojure
-(def response (client/get "http://example.com" {:headers {"Content-Type" "application/json"} :query-params {:id 123}}))
+;; Wysłanie żądania POST
+(:require [clj-http.client :as client])
+
+(client/post "https://www.example.com/login" {:form-params {:username "Jan" :password "haslo123"}})
 ```
 
-W przypadku, gdy potrzebujemy wysłać inne typy zapytań (np. POST lub PUT), możemy wykorzystać funkcje `post` i `put` zamiast `get`.
+W przypadku żądania POST możemy przekazać dodatkowe parametry w formacie {:form-params }. W powyższym przykładzie wysyłamy żądanie logowania z danymi użytkownika i otrzymujemy odpowiedź w postaci sesji użytkownika lub błędu.
 
-## Wnikliwa analiza
+## Głębszy zanurzanie się
 
-Wysyłanie zapytań HTTP jest nieodłącznym elementem wielu aplikacji, a w Clojure istnieje wiele narzędzi, które ułatwiają ten proces. Biblioteka `clj-http` jest jedną z najpopularniejszych i umożliwia wysyłanie zapytań w prosty i intuicyjny sposób. Warto również poznać inne biblioteki, takie jak `http-kit` lub `clj-http-lite`.
+W celu lepszego zrozumienia procesu wysyłania i odbierania żądań HTTP, warto poznać podstawy protokołu oraz dostępne opcje w bibliotece Clojure dla tego typu operacji.
 
-Poznanie sposobów wysyłania zapytań HTTP w Clojure pozwoli na łatwiejsze i efektywniejsze wykorzystywanie tej funkcjonalności w naszych projektach.
+Protokół HTTP dzielimy na dwa rodzaje żądań - GET i POST. W żądaniu GET przesyłamy jedynie nagłówki, a w POST możemy przesyłać również ciało żądania, np. w formie formularza. Odpowiedzią na każde żądanie jest zestaw danych, który jest interpretowany w zależności od tego, w jakim formacie został przesłany.
 
-## Zobacz również
+### Dodatkowe opcje w bibliotece Clojure
 
-- Dokumentacja biblioteki `clj-http`
-https://github.com/dakrone/clj-http
-- Więcej informacji o komunikacji z serwerami HTTP w języku Clojure
-https://clojure.org/reference/java_interop#_calling_java_from_clojure
-- Przykładowy projekt wykorzystujący wysyłanie zapytań HTTP w Clojure
-https://github.com/clojure-cookbook/clojure-cookbook/blob/master/06_web/6-21_web_client/get.clj
+W bibliotece [clj-http](https://github.com/dakrone/clj-http) dostępne są dodatkowe opcje, które pozwalają na konfigurację żądania, np. ustawianie nagłówków, timeoutów czy trybu debugowania. Dzięki temu możemy dostosować nasze żądanie do indywidualnych potrzeb.
+
+## Zobacz też
+
+- [Dokumentacja Clojure HTTP Client](https://github.com/dakrone/clj-http)
+- [Wysyłanie danych za pomocą HTTP](https://clojuredocs.org/clojure.core/slurp)
+- [Podstawy protokołu HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)

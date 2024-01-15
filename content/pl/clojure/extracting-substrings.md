@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Wyodrębnianie podciągów"
-simple_title:         "Wyodrębnianie podciągów"
+title:                "Wycinanie podsłów"
+html_title:           "Clojure: Wycinanie podsłów"
+simple_title:         "Wycinanie podsłów"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,51 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W tym artykule dowiesz się, dlaczego warto używać funkcji do wyodrębniania podciągów w języku Clojure. Poznasz także sposoby, aby to zrobić oraz głębsze informacje na ten temat.
+Wyciąganie podciągów jest często używane w programowaniu do manipulowania tekstami. Jest to przydatna umiejętność, która pozwala na wydobycie konkretnych informacji z dłuższego tekstu lub na zmianę jego formatowania.
 
-## Jak to zrobić
+## Sposób
 
-Do wyodrębniania podciągów w języku Clojure można użyć funkcji `subseq` lub `substring`. Oba te funkcje przyjmują jako argumenty oryginalny ciąg znaków oraz indeksy, które określają, które części ciągu chcemy wyodrębnić.
-
-```Clojure
-(def s "Hello world")
-
-(subseq s 0 5)
-; Output: Hello
-
-(substring s 6)
-; Output: world
-```
-
-Pamiętaj, że indeksy zaczynają się od zera. Możesz również wykorzystać ujemne indeksy, aby wyodrębnić podciągi od końca ciągu.
+Wyciągnięcie podciągu w Clojure jest bardzo proste. Możemy to zrobić za pomocą funkcji `subs` lub `substring`. Przykładowy kod wyglądałby następująco:
 
 ```Clojure
-(subseq s 0 -1)
-; Output: Hello worl
+(def tekst "To jest przykładowy tekst.")
+(subs tekst 3) ; wydobycie podciągu od indeksu 3 do końca tekstu
+; output: "jest przykładowy tekst."
 
-(substring s 0 -1)
-; Output: Hello world
+(subs tekst 4 10) ; wydobycie podciągu od indeksu 4 do 9 (indeks ostatniego znaku nie jest włączony)
+; output: "jest p"
+
+(substring tekst 3 6) ; wydobycie podciągu od indeksu 3 do 5
+; output: "jest"
 ```
 
-Funkcja `subseq` zwraca Ciąg znaków, podczas gdy funkcja `substring` zwraca Ciąg znaków. Oznacza to, że wynik z `subseq` można przekazać do innych funkcji, które przyjmują Ciągi znaków jako argumenty.
+Możemy również użyć funkcji `split` do podziału tekstu na wiele podciągów, lub `replace` do zamiany części tekstu na inny podciąg.
 
-Jeśli chcesz wyodrębnić podciąg z jednego znaku, możesz użyć funkcji `nth`.
+## Głębsza analiza
 
-```Clojure
-(nth "abcde" 2)
-; Output: c
-```
+W Clojure, podciągi są przechowywane jako sekwencje danych, co oznacza, że mogą być łatwo przekształcane i manipulowane. Funkcje `subs` i `substring` przyjmują argumenty w postaci indeksów oraz opcjonalnie również kierunku przetwarzania (domyślnie od lewej do prawej). Możemy także użyć negatywnych indeksów, aby odwołać się do końca tekstu.
 
-Możesz również użyć funkcji `join` w połączeniu z `subseq` lub `substring`, aby połączyć wyodrębnione podciągi w jeden Ciąg znaków.
+Podczas manipulowania tekstami, ważne jest również pamiętać o używaniu odpowiednich funkcji do zarządzania kodowaniem znaków. Funkcje `subs` i `substring` działają poprawnie tylko dla niskopoziomowych kodowań, takich jak ASCII czy UTF-8.
 
-## Głębsze informacje
+## Zobacz również
 
-Podczas wyodrębniania podciągów, warto pamiętać, że indeksy są włączane do wyniku. Oznacza to, że podany ostatni indeks jest włączony w wyodrębniony podciąg.
-
-Możesz również wykorzystać dostępne funkcje `reverse` i `join` do odwrócenia i ponownego połączenia Ciągów znaków.
-
-## Zobacz także
-
-- Oficjalna dokumentacja Clojure dla funkcji `subseq`: https://clojuredocs.org/clojure.core/subseq
-- Oficjalna dokumentacja Clojure dla funkcji `substring`: https://clojuredocs.org/clojure.core/substring
-- Poradnik na temat wyodrębniania podciągów w języku Clojure: https://www.braveclojure.com/strings/
+- Dokumentacja Clojure na temat funkcji `subs`: https://clojuredocs.org/clojure.core/subs
+- Dokumentacja Clojure na temat funkcji `substring`: https://clojuredocs.org/clojure.string/substring
+- Przykłady użycia funkcji `subs` i `substring`: https://www.techcrashcourse.com/2021/03/clojure-substring.html

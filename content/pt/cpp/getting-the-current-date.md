@@ -1,5 +1,6 @@
 ---
-title:                "C++: Obtendo a data atual"
+title:                "Obtendo a data atual"
+html_title:           "C++: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "C++"
 category:             "C++"
@@ -9,50 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual em programação?
+## Por que
 
-Obter a data atual em um programa pode ser útil em várias situações, como em sistemas de gestão de tarefas, aplicativos de calendário ou até mesmo em jogos que precisam registrar a data de criação do usuário. Além disso, ter a data atual também pode ajudar na organização de dados e em cálculos relacionados a prazos.
+Há muitos casos em que você precisará saber a data atual em um programa C++. Pode ser para registrar quando um evento ocorreu, para fins de rastreamento ou para gerar relatórios com informações atualizadas.
 
-## Como obter a data atual em C++
+## Como fazer
 
-Para obter a data atual em C++, podemos utilizar a biblioteca padrão do C++ chamada "ctime", que contém funções para manipular data e hora.
+Para obter a data atual em um programa C++, você pode usar a função `std::time` da biblioteca `chrono`. Aqui está um exemplo de código que imprime a data atual:
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
-int main() {
-    // Obtém a data e hora atual
-    time_t currentTime = time(0);
-    
-    // Converte o tempo para uma representação legível
-    char* date = ctime(&currentTime);
-
-    // Imprime a data atual
-    std::cout << "A data atual é: " << date << std::endl;
-
-    return 0;
+int main()
+{
+	// Obtendo o tempo atual
+	auto tempo_atual = std::chrono::system_clock::now();
+	// Convertendo para o formato de data
+	auto data_atual = std::chrono::system_clock::to_time_t(tempo_atual);
+	// Imprimindo data atual
+	std::cout << "Data atual: " << std::ctime(&data_atual) << std::endl;
 }
 ```
 
-A saída do código acima será algo semelhante a:
+A saída deste código será algo como:
 
 ```
-A data atual é: Wed Dec 16 15:57:11 2020
+Data atual: Sat Sep 26 13:57:06 2020
 ```
 
-Podemos ver que a função `ctime()` retorna uma string com a data e hora em um formato específico. É importante lembrar que o valor de `currentTime` é em segundos, então para obtermos a data e hora no formato que quisermos, precisamos usar outras funções de formatação de data e hora disponíveis na biblioteca `ctime`.
+Você também pode formatar a data de acordo com suas necessidades usando a função `std::put_time`. Este exemplo mostra como imprimir a data no formato "DD/MM/AAAA":
 
-## Profundidade técnica
+```C++
+#include <iostream>
+#include <iomanip>
+#include <chrono>
 
-A função `time()` retorna o tempo atual medido em segundos a partir do dia 1º de janeiro de 1970. Esse valor é conhecido como Unix timestamp e é amplamente utilizado em programação para representar datas e horas.
+int main()
+{
+    // Obtendo o tempo atual
+	auto tempo_atual = std::chrono::system_clock::now();
+	// Convertendo para o formato de data
+	auto data_atual = std::chrono::system_clock::to_time_t(tempo_atual);
+	// Formatando data
+	std::cout << "Data atual: " << std::put_time(std::localtime(&data_atual), "%d/%m/%Y") << std::endl;
+}
+```
 
-Uma vez que temos esse valor, podemos usá-lo como parâmetro para outras funções, como `ctime()`, `localtime()` e `gmtime()`, para obter a data e hora em diferentes formatos.
+A saída será:
 
-Podemos também usar a estrutura `tm` (definida na biblioteca `ctime`) para armazenar informações específicas de data e hora, como dia, mês, ano, hora, etc.
+```
+Data atual: 26/09/2020
+```
+
+## Mergulho Profundo
+
+A função `std::time` retorna o tempo atual como um objeto do tipo `std::chrono::time_point`. Este é um objeto que representa uma duração de tempo em relação a um determinado ponto no tempo. Você também pode usar outras funções como `std::gmtime` e `std::localtime` para converter o tempo em outras representações, como datas no formato UTC ou hora local.
 
 ## Veja também
 
-- [Documentação da biblioteca ctime em C++](https://www.cplusplus.com/reference/ctime/)
-- [Como utilizar timestamps em programação](https://www.unixtimestamp.com/)
-- [Tutorial sobre formatação de datas e horas em C++](https://www.geeksforgeeks.org/date-time-programming-in-c-with-examples/)
+- [Documentação da biblioteca Chrono do C++](https://en.cppreference.com/w/cpp/header/chrono)
+- [Tutorial de data e hora em C++](https://www.cplusplus.com/reference/ctime/)
+- [Manipulação de hora e data em C++](https://www.geeksforgeeks.org/time-manipulation-in-c-with-chrono-header/)

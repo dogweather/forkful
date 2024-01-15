@@ -1,5 +1,6 @@
 ---
-title:                "PHP: 编写测试"
+title:                "编写测试"
+html_title:           "PHP: 编写测试"
 simple_title:         "编写测试"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,47 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么写测试？
+画A PHP(最新版本)编程文章，为普通话读者使用非正式的语气和简洁的风格。文章分别有三个在标题下明确的部分：「##为什么」，「##如何」，「##深入探讨」。
 
-写测试是一种非常有效的方式来确保你的代码质量和稳定性。通过编写测试，您可以及早发现并解决潜在的bug和错误，从而节省时间和精力。此外，测试还可以帮助您更好地理解您的代码，从而改善您的编程技能。
+为什么：写测试的目的，不超过2句话。
 
-##如何写测试？
+如何：在「```PHP ... ```」的代码块中，举出编码范例和输出样本。
 
-首先，您需要了解如何使用PHP的内置单元测试框架PHPUnit。您可以通过使用[Composer](https://getcomposer.org/)来轻松安装PHPUnit。然后，您可以创建一个名为`MyClassTest`的测试类，并使用`PHPUnit\Framework\TestCase`类作为父类。
+深入探讨：关于编写测试的更深层信息。
 
-```php
-class MyClassTest extends PHPUnit\Framework\TestCase
+这篇文章没有「结论」部分。文章以Markdown标题「参见」结尾，以链接列表形式列出。
+
+#为什么
+
+编写测试是一种重要的开发实践，它可以帮助我们确保代码质量、修复错误和避免未来的问题。通过编写测试，我们可以更快速、更准确地开发代码，并且在添加新功能或进行重构时更有信心。
+
+#如何
+
+##安装PHPUnit
+首先，我们需要安装PHPUnit来运行PHP测试。使用Composer是最简单的方法，只需在命令行中运行以下命令：
+
+```PHP 
+composer require --dev phpunit/phpunit
+```
+
+##编写测试
+创建一个测试类，并添加 `@test` 标签来标识测试方法。在测试方法中，我们将编写一些断言来验证代码的预期行为是否与实际结果一致。例如：
+
+```PHP 
+class GreetingTest extends PHPUnit\Framework\TestCase
 {
-    // 此处编写您的测试方法
+  /** @test */
+  public function it_returns_hello_world()
+  {
+    $greeting = new Greeting();
+    $message = $greeting->sayHello();
+    
+    $this->assertEquals('Hello World!', $message);
+  }
 }
 ```
 
-接下来，您可以使用`assert`函数来编写具体的断言。断言是测试结果是否符合期望的判断条件。例如，如果您的测试目的是测试一个函数是否返回正确的结果，您可以使用`assertEquals`断言来判断函数的返回值与预期值是否相等。
+##运行测试
+要运行测试，只需在命令行中运行 `phpunit` 命令，并指定测试类的路径：
 
-```php
-public function testCalculateSum()
-{
-    $result = calculateSum(2, 3);
-    $this->assertEquals(5, $result);
-}
+```PHP 
+./vendor/bin/phpunit tests/
 ```
 
-最后，您可以使用`PHPUnit`命令来运行您的测试，并查看测试结果。
+##深入探讨
 
-```sh
-phpunit MyTest.php
-```
+编写测试的目的是为了让我们能够快速、准确和可靠地验证代码是否按照预期工作。通过编写测试，我们可以更好地组织我们的代码，并且可以在添加新功能或者修改现有功能时安全地进行重构。
 
-如果所有测试通过，则表示您的代码稳定，如果有测试失败，则表示您的代码中存在一些问题需要修复。
+另外，编写测试还可以帮助我们发现隐藏的Bug，并且它们也可以作为一种文档形式，帮助其他开发人员理解代码的预期行为。
 
-##深入探讨写测试
+总的来说，编写测试可以提高代码质量和可靠性，从而减少错误和维护成本。
 
-写测试的最大好处之一是能够发现潜在的bug和错误。通过编写更多的测试用例，您可以更全面地测试您的代码，从而提高代码的质量和鲁棒性。此外，编写测试还可以帮助您尽早发现和解决代码中的问题，从而节省后期调试问题的时间和精力。
+#参见
 
-但是，编写测试并不仅仅是为了检查代码是否能正常运行，它还可以帮助您更好地理解您的代码。通过编写测试用例，您可以更深入地了解您的代码逻辑，从而提升您的编程技能和理解能力。此外，测试还可以作为您的代码文档，让其他人更容易理解和使用您的代码。
-
-##另请参阅
-
-- [PHPUnit官方文档](https://phpunit.readthedocs.io/)
-- [PHPUnit Composer包](https://packagist.org/packages/phpunit/phpunit)
-- [PHPUnit入门教程](https://www.phpunit.de/getting-started/phpunit-8.html)
+- [PHPUnit官方文档](https://phpunit.de/documentation.html)
+- [为什么写测试？](https://medium.com/@person/reasons-to-write-tests-f330a0972091)
+- [如何编写更好的测试？](https://medium.com/@person/tips-for-writing-better-tests-5ec9fda351aa)

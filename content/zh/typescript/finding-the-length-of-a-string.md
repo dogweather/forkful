@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "找到字符串的长度"
+html_title:           "TypeScript: 找到字符串的长度"
+simple_title:         "找到字符串的长度"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要找出字符串的长度？
+## 为什么
 
-计算字符串的长度是编程中必不可少的一部分。它可以帮助我们了解字符串的结构，以及在其他操作中使用字符串有多少字符。通过找出字符串的长度，我们可以更有效地处理字符串，提高我们的代码性能。
+字符串是编程中经常使用的数据类型，而知道字符串的长度对于操作字符串或者数据处理来说非常重要。在TypeScript中，我们可以很方便地获得字符串的长度，并且这个操作也是相当实用的。
 
-## 如何做
+## 如何
+
+要计算字符串的长度，我们可以使用内置的length属性。让我们来看一个例子：
 
 ```TypeScript
-// 定义一个字符串
-let name: string = "张三";
-
-// 使用.length属性找出字符串的长度
-let length: number = name.length;
-
-// 输出计算结果
-console.log(length); // 2
+let str: string = "Hello World";
+console.log(str.length);
 ```
 
-在上面的示例中，我们首先定义了一个字符串变量`name`，它的值为`张三`。然后，我们使用`.length`属性来找出该字符串的长度，并将结果赋值给变量`length`。最后，使用`console.log()`函数将`length`打印出来，结果为`2`。这表明字符串`张三`由两个字符组成，即`张`和`三`。
+输出结果为 `11`，这就是 `Hello World` 字符串的长度。同时，length属性也支持多字节字符，这意味着它对于处理Unicode字符也是有效的。
+
+```TypeScript
+let str: string = "你好世界";
+console.log(str.length);
+```
+
+输出结果为 `4`，尽管这个字符串有6个字符，但是由于是双字节字符，所以长度仍然是4。
 
 ## 深入探讨
 
-要计算字符串的长度，我们需要了解计算机是如何处理字符串的。在计算机中，字符串是由一系列字符组成的。每个字符都有自己的编码，用来表示它在计算机中的存储方式。当我们使用`.length`属性时，计算机会逐个计算字符串中的字符数量，并将最终结果返回给我们。
+在JavaScript中，length属性实际上是一个方法而不是属性，它会通过遍历字符串来计算长度。而在TypeScript中，length是一个getter属性，它会在编译时被转换成了方法。这样做的好处是可以提高性能，因为我们可以在编译时就知道字符串的长度，而不需要在运行时去计算。
 
-但需要注意的是，`.length`属性返回的是字符串中字符的数量，而不是实际的字节数。因为不同的编码方式会影响到字符所占用的字节数。比如，英文字符在UTF-8编码中会占用1个字节，而中文字符则会占用3个字节。因此，一个包含英文和中文字符的字符串在计算长度时，返回的结果可能会不同。
+此外，length属性也适用于其他数据类型，比如数组和元组。它可以帮助我们快速获得数据的长度，而不需要额外的计算。
+
+## 看看这个
+
+- [TypeScript官方文档-字符串](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [ES6中的字符串长度计算方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Unicode与UTF-8编码](https://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
 
 ## 参考链接
 
-- [TypeScript官方文档](https://www.typescriptlang.org/)
-- [字符串.length属性](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Unicode编码](https://zh.wikipedia.org/wiki/Unicode)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)

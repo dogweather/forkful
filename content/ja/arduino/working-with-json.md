@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 「jsonを使ったプログラミング」"
-simple_title:         "「jsonを使ったプログラミング」"
+title:                "「Jsonとの作業」"
+html_title:           "Arduino: 「Jsonとの作業」"
+simple_title:         "「Jsonとの作業」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,51 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜJSONを学ぶのか
+## なぜJSONを使用するのか
+JSONは、複数のセンサーやデバイスからのデータを処理する際に非常に便利です。Arduinoでは、JSONを使用してデバイスからのデータを取得して処理することができます。
 
-JSON(JavaScript Object Notation)は、様々なプログラムやアプリケーションでデータをやり取りするためのフォーマットです。Arduinoでのプログラミングを行う際に、JSONを扱うことでより高度なデータ処理を行うことができます。
-
-## JSONの使い方
-
-以下のような形式でArduinoでJSONを使用することができます。
-
-```
-ArduinoJSON ライブラリをインストールする必要があります。
-
+## 使い方
+```Arduino
+// JSONライブラリのインポート
 #include <ArduinoJson.h>
 
-DynamicJsonDocument doc(1024);//メモリサイズは適宜変えてください
+// 受信したJSONデータを保存する変数
+StaticJsonDocument<200> json_data;
 
-String jsonStr = "{\"name\":\"Taro\", \"age\":20}";
-DeserializationError err = deserializeJson(doc,jsonStr);
-
-if(err){
-  //エラー処理
+// 受信したデータを変数に保存する関数
+void saveData(String data){
+  // 受信したデータをJSONオブジェクトに変換
+  DeserializationError error = deserializeJson(json_data, data);
+  if (error) {
+    Serial.print("Error: ");
+    Serial.println(error.c_str());
+    return;
+  }
+  // 変数にデータを保存
+  int value = json_data["value"];
 }
 
-String name = doc["name"]; //"Taro"
-int age = doc["age"]; //20
+void setup(){
+  // シリアル通信の設定
+  Serial.begin(9600);
+}
 
+void loop(){
+  // シリアル通信から受信したデータを保存
+  String data = Serial.readStringUntil('\n');
+  // データを処理する関数を呼び出し
+  saveData(data);
+}
 ```
 
-JSONデータをパースするために、ArduinoJSONライブラリをインストールする必要があります。最初に使用する際には、メモリサイズを適宜変更する必要があります。上記の例では、JSONデータが文字列として定義されているため、それをパースしてdocオブジェクトに格納し、データを取り出しています。
+このコードでは、Serialから受信したJSONデータを変数に保存しています。JSONオブジェクトにデータを変換するために、ArduinoJsonライブラリを使用しています。データを保存した後は、変数を使用してデータを処理することができます。
 
-## JSONの詳細
+## 詳細について
+JSONは、複数のデータ形式をサポートし、インデックスを使用してデータを管理することができます。そのため、複雑なデータの処理や解析を行う際に非常に便利です。また、ArduinoJsonライブラリは、JSONデータをパースするための高速で効率的な方法を提供しています。
 
-JSONは名前と値のペアの集合で構成されており、そのデータは階層構造を持つことができます。つまり、名前と値のペアが更に名前と値のペアを持つことができるということです。これにより、複雑なデータも簡単に扱うことができます。また、ArduinoJSONライブラリは、JSONデータをパースする際にメモリを効率的に使用するように設計されているため、メモリ管理の負担も低く済みます。
-
-## もっと詳しく学ぶには
-
-以下のリンクを参考に、より詳しい内容を学ぶことができます。
-
-- [ArduinoJSONライブラリのドキュメント](https://arduinojson.org/v6/api/jsonobject/)
-- [JSONの基礎知識](https://www.json.org/json-ja.html)
-- [プログラミング言語JavaScriptのJSON関数について](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON) 
-
----
-
-## 関連リンク
-
-- [ArduinoJSONライブラリのドキュメント](https://arduinojson.org/v6/api/jsonobject/)
-- [JSONの基礎知識](https://www.json.org/json-ja.html)
-- [プログラミング言語JavaScriptのJSON関数について](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+## 参考リンク
+- [ArduinoJsonライブラリ](https://arduinojson.org/)
+- [ArduinoでJSONを扱う方法](https://www.autonomation.ir/voice/control-your-arduino-with-an-ir-remote-sensor)
+- [ArduinoJsonのドキュメント](https://arduinojson.org/v6/api/jsondocument/)

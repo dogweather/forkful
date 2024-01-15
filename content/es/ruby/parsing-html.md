@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML"
+html_title:           "Ruby: Analizando HTML"
+simple_title:         "Analizando HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué perseguir el análisis de HTML?
 
-¿Alguna vez te has preguntado cómo los navegadores web pueden mostrar de forma organizada y visualmente atractiva el contenido de una página web? La respuesta está en el lenguaje de marcado HTML. Pero, ¿cómo podemos acceder y utilizar esa información en nuestros programas? ¡La respuesta está en el análisis sintáctico (parsing) de HTML con Ruby!
+El análisis de HTML es una habilidad esencial para aquellos que buscan desarrollar aplicaciones web o extraer datos de páginas web. Con Ruby, puedes realizar el análisis de HTML de manera sencilla y eficiente, lo que te permite automatizar tareas y obtener información valiosa de la web.
 
 ## Cómo hacerlo
 
-Para analizar sintácticamente (parsear) HTML en Ruby, primero necesitamos instalar una gema (gem) llamada 'Nokogiri'. Luego, podemos utilizar su método `Nokogiri::HTML` para abrir un archivo HTML y convertirlo en un objeto 'Nokogiri::HTML::Document', que contiene todos los elementos del documento HTML. A continuación, podemos utilizar el método `search` en el objeto document para buscar elementos específicos en el documento utilizando selectores CSS o XPath. Por ejemplo:
+El análisis de HTML con Ruby se puede lograr con la ayuda de la gema Nokogiri. Primero, debes instalar la gema utilizando el comando `gem install nokogiri` en tu terminal. Luego, importa la gema en tu archivo de Ruby con `require 'nokogiri'`.
+
+Una vez que tienes la gema instalada y lista para usar, puedes comenzar a analizar HTML en tu código. Aquí tienes un ejemplo de cómo puedes extraer el título de una página web:
 
 ```Ruby
 require 'nokogiri'
 
-# Abrir el archivo HTML y guardar su contenido en una variable
-html = File.open("pagina_web.html")
+# Obtén el HTML de la página web y crea un objeto Nokogiri
+web_page = Nokogiri::HTML(open("https://ejemplo.com"))
 
-# Convertir el contenido en un objeto 'Nokogiri::HTML::Document'
-documento = Nokogiri::HTML(html)
+# Utiliza selectores CSS para obtener el elemento que contiene el título
+titulo = web_page.css("h1.title")
 
-# Utilizar el método 'search' para buscar todos los elementos <h1> en el documento
-titulos = documento.search('h1')
-
-# Imprimir el contenido de cada elemento <h1>
-titulos.each do |titulo|
-  puts titulo.text
-end
+# Imprime el título en la consola
+puts titulo.text
 ```
 
-Este es solo un ejemplo básico de cómo podemos utilizar el análisis sintáctico de HTML en Ruby. Conocer selectores CSS y XPath puede ayudarnos a encontrar elementos específicos en un documento HTML de manera más eficiente y precisa.
+Este es solo un ejemplo básico de cómo puedes utilizar Nokogiri para analizar HTML. También puedes utilizar selectores XPath o métodos de búsqueda adicionales para obtener información más específica de una página web.
 
-## Profundizando
+## Inmersión en detalle
 
-Una parte importante del análisis sintáctico de HTML es la comprensión de cómo está estructurado el documento HTML y cómo podemos navegar a través de él. Por ejemplo, podemos acceder a los elementos hijos de un elemento utilizando el método `children`, y podemos obtener los atributos de un elemento utilizando el método `attributes`. También es importante tener en cuenta que hay variaciones en cómo se escribe HTML, por lo que es posible que necesitemos manejar ciertos casos especiales en nuestro código.
+Nokogiri ofrece muchas más funcionalidades y opciones de personalización para el análisis de HTML en Ruby. Por ejemplo, puedes utilizar `at_css` en lugar de `css` para obtener el primer elemento que coincida con tu selector CSS, o utilizar `xpath` en lugar de `css` para utilizar selectores XPath.
 
-Para obtener más información sobre parsing de HTML con Ruby, te recomendamos consultar la documentación de la gema Nokogiri y practicar con diferentes archivos HTML.
+Además, Nokogiri también te permite seleccionar y agregar atributos, realizar operaciones en los datos extraídos y mucho más. Puedes consultar la documentación oficial de Nokogiri para obtener más información sobre todas las opciones disponibles.
 
 ## Ver también
 
-- Documentación de la gema Nokogiri: https://www.nokogiri.org/
-- Tutorial de análisis sintáctico de HTML con Ruby: https://www.rubyguides.com/2018/10/parsing-html-nokogiri/
-- Ejemplos de XPath y selectores CSS: https://code.tutsplus.com/es/tutorials/geeking-out-with-ruby-parsing-html-with-the-nokogiri-gem--cms-20445
+- [Documentación oficial de Nokogiri](https://nokogiri.org)
+- [Tutorial de análisis de HTML con Ruby](https://www.rubyguides.com/2018/10/parsing-html-ruby/)
+- [Ejemplos de aplicaciones web que utilizan análisis de HTML con Nokogiri](https://www.ruby-toolbox.com/categories/html_parsing)

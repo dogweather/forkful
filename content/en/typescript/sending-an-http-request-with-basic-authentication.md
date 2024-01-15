@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "TypeScript recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,44 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sending HTTP requests with basic authentication is a common practice in web development. It is used to securely transmit sensitive data, such as login credentials, between a client and a server. Without basic authentication, anyone can intercept and read these sensitive details.
+Sending HTTP requests with basic authentication is a common practice in web development to allow secure access to resources or APIs. It ensures that only authorized users can access the requested data.
 
 ## How To
 
-To send an HTTP request with basic authentication in TypeScript, we first need to import the necessary module. We can use the `axios` library, which is a popular choice for making HTTP requests.
+To send an HTTP request with basic authentication, we first need to create a HTTP client using the `axios` library. We can specify the authorization header in the `axios` configuration as shown below:
 
-```
-TypeScript
+```TypeScript
 import axios from 'axios';
+
+const username = 'yourusername';
+const password = 'yourpassword';
+
+// Create the HTTP client
+const httpClient = axios.create({
+  // Specify the base URL for the request
+  baseURL: 'https://example.com',
+  // Configure the authorization header with the base64 encoded credentials
+  auth: {
+    username: username,
+    password: password
+  }
+});
+
+// Send the GET request and log the response
+httpClient.get('/api/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
 ```
 
-Next, we need to specify the authentication info in the request header using the `auth` property. This should include the username and password for the user accessing the server.
+The `auth` option in the `axios` configuration accepts an object with the `username` and `password` fields. The credentials are then base64 encoded and sent as part of the request headers.
 
-```
-TypeScript
-axios.get('https://example.com/api/posts', {
-    auth: {
-        username: 'username',
-        password: 'password'
-    }
-})
-    .then(response => console.log(response.data))
-    .catch(error => console.log(error));
-```
-
-The above code will make a `GET` request to the specified URL with the provided authentication info. In the `.then` block, we can access the response data, and in the `.catch` block, we can handle any errors that may occur.
-
-The output of this code will depend on the API you are accessing. It could be a JSON object, an HTML page, or any other format depending on the API's response.
+Running the above code example will result in a successful HTTP request with basic authentication. The `response.data` will contain the requested data from the specified URL.
 
 ## Deep Dive
 
-When making an HTTP request with basic authentication, the provided credentials are encoded using Base64 encoding. This means the credentials are not encrypted and can be easily decoded. Therefore, it is important to use HTTPS when using basic authentication to ensure the data is transmitted securely.
+Basic authentication is a simple authentication scheme that sends credentials in clear text, making it vulnerable to security threats such as man-in-the-middle attacks. As a result, it is recommended to use it only over HTTPS connections to ensure the credentials are encrypted.
 
-It is also worth noting that basic authentication is not the most secure method of authentication. The encoded credentials can still be intercepted and decoded, making it vulnerable to attacks. It is recommended to use other methods such as OAuth or token-based authentication for better security.
+Additionally, basic authentication requires the credentials to be sent with every request, which can be inefficient for applications performing multiple requests. In such cases, it is recommended to use other forms of authentication such as OAuth or token-based authentication.
 
 ## See Also
 
-- [Axios documentation](https://github.com/axios/axios)
-- [HTTP authentication methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-
-Sending HTTP requests with basic authentication is a useful skill to have in web development. It allows for secure transmission of sensitive data between a client and server. However, it is important to keep in mind the potential vulnerabilities and to use other authentication methods for better security.
+- [axios GitHub Repository](https://github.com/axios/axios)
+- [Basic Access Authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://www.ietf.org/rfc/rfc2617.txt)

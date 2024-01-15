@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Clojure: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,37 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi muuttaisit päivämäärän merkkijonoksi ohjelmointikielessä Clojure?
+Joskus ohjelmoinnissa tarvitsee muuttaa päivämäärä merkkijonoksi, esimerkiksi tulostettaessa päivämäärää käyttäjälle näkyvässä muodossa. Clojurella tämä on helppoa ja nopeaa tehdä.
 
-## Miten
+## Miten tehdä se
 
-```Clojure
-(let [today (java.util.Date.)
-      string-date (str today)]
-  (println string-date))
-```
-
-Tässä yksinkertaisessa esimerkissä käytämme Clojuren `str`-funktiota muuttaaksemme Java-luokan `java.util.Date` instanssin merkkijonoksi. Lopputuloksena tulostamme nykyisen päivämäärän ja ajan.
+Merkkijonoksi muuttaminen vaatii ensin päivämäärän konvertoinnin Date-tyypiksi. Tämän jälkeen voi käyttää `format`-funktiota muuttaakseen päivämäärän halutussa muodossa olevaksi merkkijonoksi.
 
 ```
-Tue Mar 30 16:54:53 EEST 2021
+;; Konvertoi päivämäärän merkkijonosta Date-tyyppiin
+(def date (java.util.Date. "2021-02-01"))
+
+;; Muuttaa päivämäärän formaatissa "dd/MM/yyyy" merkkijonoksi (tulostaa "01/02/2021")
+(def formatted-date (format date "dd/MM/yyyy"))
 ```
 
-## Syvällinen sukellus
+`format`-funktion ensimmäinen argumentti on muunnettava päivämäärä Date-tyypissä ja toinen argumentti on haluttu muoto merkkijonona. Muotoilussa voi käyttää erilaisia merkkejä, kuten esimerkiksi `dd` päivän numerona tai `MMM` lyhenteenä kuukaudelle.
 
-Päivämäärän muuttaminen merkkijonoksi voi olla hyödyllistä esimerkiksi tietokannassa tallennettujen päivämäärien esittämiseen käyttäjälle. Voit myös muuttaa päivämäärän haluamaasi muotoon Clojuren `format`-funktion avulla.
+## Syvempi sukellus
 
-```Clojure
-(require '[clojure.java-time :as time])
-
-(let [today (time/today)
-      formatted-date (time/format today "dd.MM.yyyy")]
-  (println formatted-date))
-```
-
-Tässä käytämme Clojuren `clojure.java-time` kirjastoa helpottamaan päivämäärän formatointia. Lopputuloksena saamme päivämäärän merkkijonossa muodossa "30.03.2021".
+Clojuren `format`-funktio hyödyntää Java Platform, Standard Edition (java.time) -kirjastoa, joten sen avulla voi myös käyttää Java-kirjaston muita toimintoja. Lisäksi `format` tukee myös paikallisia päivämäärämuotoiluja, eli päivämäärän voi esittää eri kielillä ja kulttuureissa hyödyntäen Clojuren `Locale`-tyyppiä.
 
 ## Katso myös
 
-- [Clojuren virallinen dokumentaatio Java-integraatiosta](https://clojure.org/reference/java_interop)
-- [Clojuren `clojure.java-time` kirjaston dokumentaatio](https://github.com/clj-time/clj-time)
+- [ClojureDocs: format-funktion dokumentaatio](https://clojuredocs.org/clojure.string/format)
+- [Java 8 SDK - java.time - Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Locale-tyypin dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: כתיבה לפלט שגיאות סטנדרטי"
-simple_title:         "כתיבה לפלט שגיאות סטנדרטי"
+title:                "כתיבה לתקליט התקנה"
+html_title:           "TypeScript: כתיבה לתקליט התקנה"
+simple_title:         "כתיבה לתקליט התקנה"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,46 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-למה לכתוב לפלט שגיאות סטנדרטי? משתמשים בכתיבה לפלט שגיאות סטנדרטי כדי לעזור להבין ולאתר בעיות בתכנית שלהם. כאשר ניתן נתונים מפורטים על טעויות כלשהן, המפתחים יכולים לתקן אותן ולהמשיך לפתח את התכנית בצורה יעילה יותר.
+בעולם התכנות, לא ניתן להימנע מכתיבת הודעות שגיאה. הן מסייעות למפתחים לזהות בעיות בקוד ולתקן אותן במהירות. דרך קלה ויעילה לכתוב הודעות שגיאה היא באמצעות שימוש בכתיבה לפלט ברירת המחדל - standard error.
 
-## איך לכתוב לפלט שגיאות סטנדרטי
+## איך לעשות זאת
 
-תחילה ניצור תיקיית פרויקט חדש עם קוד TypeScript מתחת ```TypeScript``` נרשום את הפונקציה ```console.error()``` המאפשרת לנו לכתוב לפלט שגיאות סטנדרטי. לדוגמה:
-
-```typescript
-let num: number = 12;
-
-if (num > 10) {
-  console.error("Number is greater than 10.");
-} else {
-  console.log("Number is less than 10.");
+```TypeScript
+let num: number = 10;
+if (num > 100) {
+   console.error("מספר יותר גדול ממאה!");
 }
 ```
-פלט של הקוד הזה יהיה:
 
-```
-Number is greater than 10.
-```
+הקוד הזה ממחיש כיצד לכתוב הודעת שגיאה בכתיבה לפלט ברירת מחדל בשפת TypeScript. תוצאת הקוד יהיה:
 
-כמו כן, ניתן להשתמש בתנאים נוספים כדי להכתיב לפלט שגיאות ספציפיות, לדוגמה:
-
-```typescript
-function divide(x: number, y: number) {
-  if (y === 0) {
-    console.error("Cannot divide by zero.");
-  } else {
-    return x / y;
-  }
-}
-
-console.log(divide(10, 2)); // Output: 5
-console.log(divide(10, 0)); // Output: Cannot divide by zero.
+```TypeScript
+מספר יותר גדול ממאה!
 ```
 
-## מעמקים נמוכים
+הפקודה console.error מדפיסה את ההודעה הרלוונטית לפקודת השגיאה, ולא לפלט הרגיל.
 
-בכתיבת לפלט שגיאות סטנדרטי ישנם אפשרויות רבות לניתוח הפלט הנוצר ולקבלת נתונים נוספים. בדרך כלל, מפתחים משתמשים בפונקציות כמו: ```console.clear()``` כדי לנקות את המסך, ו-```console.trace()``` כדי להיכנס לתחום הפונקציה או המתודה שגרמה לכתיבת השגיאה ספציפית. ניתן גם להשתמש בפונקציה ```console.assert()``` עם תנאי, המאפשרת לנו לבדוק תנאים במהלך התכנות ולכתוב לפלט שגיאות אם הם לא מתקיימים.
+## Deep Dive
+
+כתיבה לפלט ברירת המחדל מאפשרת למפתחים לטפל בשגיאות בצורה מודולרית ויעילה. אם משתמשים בכתיבה לפלט ברירת המחדל, אפשר להסתכל על standard error כמו ערוץ נפרד המיועד לכתוב את השגיאות הקשות והחשובות לתיקון. ניתן להשתמש בכלי פיתוח שיאפשר למתכנתים לראות את standard error בנוחות, וכך לזהות ולטפל בשגיאות מהר יותר.
 
 ## ראה גם
 
-למידע נוס
+- [אתר רשמי של TypeScript](https://www.typescriptlang.org/)
+- [מדריך קצר לכתיבת קוד ב-TypeScript](https://www.freecodecamp.org/news/the-definitive-typescript-guide-for-react-developers-a1abe2ced9a2/)

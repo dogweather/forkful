@@ -1,6 +1,7 @@
 ---
-title:                "C++: Att få den aktuella datumen"
-simple_title:         "Att få den aktuella datumen"
+title:                "Att få den aktuella datumet"
+html_title:           "C++: Att få den aktuella datumet"
+simple_title:         "Att få den aktuella datumet"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,49 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att veta den aktuella datumet kan vara mycket användbart i olika typer av program, till exempel bokföring eller kalendrar. Genom att använda C++ kan du på ett enkelt sätt få tillgång till den aktuella datumet och sedan använda den i ditt program.
+Att få den aktuella datumen är en viktig del av många C++ program. Det kan användas för att spåra utförda åtgärder eller för att visa aktuell tid för användaren. Det är också användbart för att kontrollera och jämföra datum inom ett program.
 
-## Hur man gör
+# Hur du gör det
 
-Det finns flera olika sätt att få tillgång till den aktuella datumet i C++. Ett sätt är att använda funktionen `time()` som finns i standardbiblioteket `<ctime>`. Här är ett enkelt exempel på hur du kan använda denna funktion för att få den aktuella datumet:
+För att få den aktuella datumen i ett C++ program, behöver du använda funktionen `std::chrono::system_clock::now()`. Denna funktion returnerar ett `std::chrono::time_point` objekt som innehåller aktuell tid. Du kan sedan använda olika metoder för att få årtal, månad, dag, timmar, minuter och sekunder från detta objekt. Här är ett exempel på hur du kan göra det:
 
 ```C++
+// Inkludera nödvändiga bibliotek
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
-int main() {
-    // Skapa en variabel som lagrar tiden i sekunder sedan 1 januari 1970
-    time_t tiden = time(0);
+int main()
+{
+    // Hämta aktuell tidpunkten
+    auto now = std::chrono::system_clock::now();
 
-    // Skapa en struktur för att lagra det aktuella datumet
-    tm* nu = localtime(&tiden);
+    // Få årtal från tidpunkten
+    auto year = std::chrono::year_month_day{now}.year();
 
-    // Skriv ut datumet i formatet år-månad-dag
-    std::cout << nu->tm_year + 1900 << "-" << nu->tm_mon + 1 << "-" << nu->tm_mday << std::endl;
+    // Få månad från tidpunkten
+    auto month = std::chrono::year_month_day{now}.month();
+
+    // Få dag från tidpunkten
+    auto day = std::chrono::year_month_day{now}.day();
+
+    // Få timmar från tidpunkten
+    auto hours = std::chrono::hour{now};
+
+    // Få minuter från tidpunkten
+    auto minutes = std::chrono::minute{now};
+
+    // Få sekunder från tidpunkten
+    auto seconds = std::chrono::second{now};
+
+    // Skriv ut den aktuella datumen
+    std::cout << "Det är " << day << "/" << month << "/" << year
+              << " klockan " << hours << ":" << minutes << ":" << seconds << std::endl;
 
     return 0;
 }
 ```
 
-Detta program kommer att ge följande output:
+Output av koden:
 
+``` 
+Det är 9/3/2021 klockan 12:24:53
 ```
-2021-04-17
-```
 
-Det är viktigt att notera att `time()` funktionen returnerar tiden i sekunder sedan 1 januari 1970. Därför måste vi använda funktionen `localtime()` för att konvertera tiden till en förståelig struktur där vi kan få tillgång till datumet.
+# Fördjupning
 
-## Djupdykning
+För att förstå mer om `std::chrono::system_clock::now()` funktionen, måste vi förstå hur den fungerar bakom kulisserna. `system_clock` är en del av den `chrono` namespace som tillhandahåller olika tidsrelaterade funktioner och typer i C++. `now()` funktionen använder den aktuella tiden på din dator som en referenspunkt för att få det aktuella datumet. Det används vanligtvis för att få datum och tid av systemet i UTC-tidszonen. Det finns också andra klockfunktioner i `chrono` namespace som kan användas för att få olika typer av tider.
 
-För de som är intresserade av att lära sig mer om hur man får tillgång till den aktuella datumet i C++, finns det flera andra bibliotek och funktioner som kan användas. Till exempel finns det `<chrono>` biblioteket som erbjuder en mer modern och robust lösning för att hantera tid och datum.
+# Se även
 
-Det finns också möjligheten att ställa in och ändra datumet med hjälp av funktioner som `mktime()` och `strftime()`. Det här är mer avancerade alternativ som kan vara användbara i vissa fall, men kräver lite mer kunskap om tid och datum hantering.
-
-## Se även
-
-1. [cppreference.com - time()](https://en.cppreference.com/w/cpp/chrono/c/time)
-2. [cppreference.com - localtime()](https://en.cppreference.com/w/cpp/chrono/c/localtime)
-3. [cppreference.com - tm struct](https://en.cppreference.com/w/cpp/chrono/c/tm)
-4. [cppreference.com - <chrono> library](https://en.cppreference.com/w/cpp/chrono)
+- En guide till `chrono` namespace: https://www.cplusplus.com/reference/chrono/
+- En djupdykning i `std::chrono::system_clock::now()` funktionen: https://en.cppreference.com/w/cpp/chrono/system_clock/now

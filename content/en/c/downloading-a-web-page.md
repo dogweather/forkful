@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "C recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "C"
 category:             "C"
@@ -9,73 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why: 
+Downloading a webpage is a common task in web development, as it allows you to gather and manipulate data from the web for various purposes. Whether you are creating a web scraper or building an application that needs to access web content, knowing how to download a webpage in C can come in handy.
 
-If you have ever wondered how web browsers are able to display colorful and interactive web pages, then you have come to the right place. In this article, we will discuss the process of downloading a web page using the C programming language.
-
-## How To
-
-In order to download a web page using C, we need to use a combination of networking and file handling functions. First, we need to establish a connection with the server in which the web page is hosted. This can be done using the `socket()` function, which creates a socket that enables communication between the client (our code) and the server.
-
-Next, we need to send an HTTP request to the server using the `send()` function. This request will contain the URL of the web page we want to download. The server will then send back a response, which we can receive using the `recv()` function.
-
-Once we have received the response, we need to save it into a file. We can do this by opening a file using the `fopen()` function and writing the received data into it using the `fwrite()` function. Finally, we can close the socket and the file using the `close()` and `fclose()` functions respectively.
-
-To better understand this process, let's take a look at a code snippet:
-
+## How To:
+To download a webpage in C, we will be using the libcurl library, a popular and powerful open-source library for transferring data over various network protocols. First, we need to include the header file for libcurl in our program:
 ```C
-#include <stdio.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-
-int main()
-{
-    //create socket
-    int client_socket = socket(AF_INET, SOCK_STREAM, 0);
-    
-    //define server address
-    struct sockaddr_in serv_addr;
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    serv_addr.sin_port = htons(80); //http port
-    
-    //connect to server
-    connect(client_socket, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    
-    //send HTTP request
-    char request[] = "GET /index.html HTTP/1.1\r\n\r\n";
-    send(client_socket, request, sizeof(request), 0);
-    
-    //receive response
-    char buffer[1024] = {0};
-    recv(client_socket, buffer, sizeof(buffer), 0);
-    
-    //save response to file
-    FILE *file = fopen("index.html", "wb");
-    fwrite(buffer, sizeof(char), sizeof(buffer), file);
-    fclose(file);
-
-    //close socket
-    close(client_socket);
-
-    return 0;
-}
+#include <curl/curl.h>
 ```
+Next, we will create a CURL object and set the URL of the webpage we want to download:
+```C
+CURL *curl;
+curl = curl_easy_init();
+curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+```
+Then, we can use the CURLOPT_WRITEFUNCTION option to set a callback function that will be called as soon as the webpage data is received. This function will receive the data in chunks, which we can then manipulate or store in a variable. For example, we can simply print out the received data to the console:
+```C
+static size_t print_data(void *ptr, size_t size, size_t nmemb, void *userp) {
+    printf("%s", (char*)ptr);
+    return size * nmemb;
+}
+// set the callback function
+curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, print_data);
+```
+Finally, we can perform the download using the curl_easy_perform function and then clean up our CURL object:
+```C
+curl_easy_perform(curl);
+curl_easy_cleanup(curl);
+```
+If we run our program, we should see the webpage data printed to the console in chunks as it is received.
 
-## Deep Dive
+## Deep Dive:
+The libcurl library provides many options and functions for customizing and managing downloads, such as setting headers, handling errors, and following redirects. It also supports synchronous and asynchronous downloads. For a more in-depth look at all the available features, check out the official documentation for libcurl.
 
-Downloading a web page using C may seem like a simple process, but there are many underlying concepts and protocols involved. One of the main protocols used is the HTTP (Hypertext Transfer Protocol), which is responsible for the communication between the client and server.
-
-The server responds with a status code along with the requested data. This code tells the client if the request was successful or if there was an error. This is why we need to check the status code before saving the data into a file or displaying it.
-
-Furthermore, web pages often contain various types of data such as images, videos, and scripts. In order to download and display the web page properly, we need to handle these different types of data accordingly.
-
-In addition, downloading web pages using C also has its limitations. For example, it may not support some modern web technologies such as AJAX, which relies heavily on JavaScript. This is because C is a low-level programming language and is not designed specifically for web development.
-
-## See Also
-
-To learn more about downloading web pages using C, check out these helpful resources:
-
-- https://www.w3.org/Protocols/
-- https://www.geeksforgeeks.org/socket-programming-in-c-c/
-- https://www.tutorialspoint.com/http/http_status_codes.htm
+## See Also:
+- [libcurl documentation](https://curl.haxx.se/libcurl/)
+- [libcurl GitHub repository](https://github.com/curl/curl)
+- [How to use libcurl](https://daniel.haxx.se/libcurl/)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 문자열 연결하기"
+title:                "문자열 연결하기"
+html_title:           "Fish Shell: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,32 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜: 문자열을 연결하는 일을 하려면
+## 왜
 
-사람들이 문자열을 연결하는 일을 하는 이유는 무엇일까요? 바로 두 가지 이유 때문입니다. 첫째, 여러 개의 문자열을 한 번에 출력하고 싶을 때 유용합니다. 둘째, 연결된 문자열은 보다 의미 있는 데이터를 가지고 있기 때문에 데이터 처리에 유용합니다.
+글자 연결을 하는 것에 대해 생각해 본 적이 있나요? Fish Shell은 여러 가지 쉬운 방법으로 문자열을 연결하는 것을 제공합니다. 이를 통해 코드를 더 간결하고 가독성 높게 유지할 수 있습니다.
 
-## 방법: Fish 셸에서 문자열 연결하는 방법
+## Fish Shell을 사용하여 문자열 연결하는 방법
 
-Fish 셸에서 문자열을 연결하는 방법에는 두 가지 방법이 있습니다. 첫번째는 `string join` 명령어를 사용하는 것입니다. 두 번째는 `set` 명령어를 사용하여 변수를 설정하는 것입니다.
+먼저, Fish Shell에서는 "+" 기호를 사용하여 문자열을 연결할 수 있습니다. 예를 들어:
 
-```
-Fish Shell에서 문자열 연결하는 방법 예제:
-
-string join "안녕하세요," "제 이름은" "길동이에요" 
-# => 안녕하세요, 제 이름은 길동이에요
-
-set name "길동이"
-echo "제 이름은" $name "입니다."
-# => 제 이름은 길동이입니다.
+```Fish Shell
+echo "Hello " + "World"
 ```
 
-## 깊이 들어가기: 문자열 연결에 대해 알아보기
+이 코드를 실행하면 "Hello World"라는 결과를 볼 수 있습니다. 또한, Fish Shell은 변수를 사용하여 더 복잡한 문자열을 만드는 것도 가능합니다. 예를 들어:
 
-문자열을 연결하는데 사용되는 `string join` 명령어는 여러 개의 문자열을 받아 하나의 문자열로 결합합니다. 이 때, 첫 번째 매개변수는 분리자(delimiter)로 사용됩니다. 분리자는 각 문자열 사이에 추가되어 서로 구분할 수 있도록 돕습니다.
+```Fish Shell
+set greeting "Hello"
+set name "John"
+echo $greeting" "$name
+```
 
-`set` 명령어를 사용하여 변수를 설정하려면 변수 이름 뒤에 `=`를 붙이고 값을 설정하면 됩니다. 값 앞에 `$`를 붙이면 변수의 값이 사용되는 것을 나타낼 수 있습니다.
+이렇게 실행하면 "Hello John"이라는 결과를 볼 수 있습니다. 또 다른 방법으로는, "string replace" 함수를 사용하여 원하는 부분의 문자열을 변경하는 것도 가능합니다. 예를 들어:
 
-## 참고: 
+```Fish Shell
+set sentence "I love pie"
+string replace love hate $sentence
+```
 
-- [Fish 셸 가이드 - 문자열 연결](https://fishshell.com/docs/current/index.html#string-subcommands)
-- [Fish 셸 유용한 명령어 5가지](https://behinder.tistory.com/188)
+이를 실행하면 "I hate pie"라는 결과를 볼 수 있습니다.
+
+## 문자열 연결에 대해 깊이 파헤쳐보기
+
+Fish Shell에서는 문자열 연결에 유용한 몇 가지 함수를 제공합니다. "string join" 함수는 배열의 요소들을 지정한 문자열로 연결할 수 있습니다. 예를 들어:
+
+```Fish Shell
+set names "John Bob Sarah"
+string join ", " $names
+```
+
+이를 실행하면 "John, Bob, Sarah"라는 결과를 볼 수 있습니다. 또한, "string split" 함수를 사용하여 문자열을 배열로 분리할 수도 있습니다. 예를 들어:
+
+```Fish Shell
+set sentence "I love fish"
+string split " " $sentence
+```
+
+이를 실행하면 ["I", "love", "fish"]라는 배열이 생성됩니다.
+
+## See Also
+
+- [Fish Shell 공식 사이트](https://fishshell.com/)
+- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 문자열 함수 문서](https://fishshell.com/docs/current/cmds/string.html)

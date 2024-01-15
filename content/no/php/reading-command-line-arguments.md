@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Lesing av kommandolinje-argumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "PHP: Lesing av kommandolinje-argumenter"
 simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,43 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Velkommen til vår blogg om PHP-programmering! I dag skal vi snakke om hvordan man kan lese kommandolinje-argumenter i PHP. Dette er en nyttig ferdighet å ha for å kunne lage programmer som kan kjøres fra terminalen. Les videre for å lære mer!
 
-## Hvordan gjøre det
-For å lese kommandolinje-argumenter i PHP, kan man bruke funksjonen "argv" i kombinasjon med en løkke. La oss se på et eksempel:
+Vi bruker ofte kommandolinjeargumenter når vi ønsker å gi et spesifikt sett med instruksjoner til et program uten å måtte endre koden. Ved å lese og tolke disse argumentene, kan vi gjøre programmene våre mer dynamiske og tilpasse dem til ulike behov.
+
+## Hvordan
+
+Kommandolinjeargumenter kan leses ved hjelp av en innebygd PHP-funksjon, `getopt()`, som returnerer en assosiativ array med argumentene og verdiene som ble gitt. Her er et eksempel på hvordan du kan lese og bruke argumenter i et PHP-skript:
 
 ```PHP
 <?php
-// Hente ut kommandolinje-argumenter
-$arguments = $_SERVER['argv'];
-
-// Gå gjennom alle argumentene
-foreach ($arguments as $argument) {
-    echo $argument . "\n"; // Skriver ut hvert argument på en ny linje
+// På kommandolinjen: $ php script.php -t tips
+$options = getopt("t:"); // Enkelt argument 't'
+if (isset($options['t'])) { // Sjekker om argumentet finnes
+    $tip = $options['t']; // Lagrer verdien i en variabel
+    echo "Takk for tipset: $tip";
+    // Output: Takk for tipset: tips
 }
 ?>
 ```
 
-Hvis vi kjører dette skriptet fra terminalen med følgende kommando:
+Her bruker vi enkeltbokstaven `t` som et argument og gir det en verdi på kommandolinjen. Med `isset()`-funksjonen sjekker vi om argumentet eksisterer, og hvis det gjør det, lagrer vi verdien i en variabel og bruker den videre i koden. Output vil være: "Takk for tipset: tips".
 
-```
-php command_line_args.php arg1 arg2 arg3
-```
+## Deep Dive
 
-Skal vi få følgende output:
+Det er mange flerfunksjonelle måter å bruke `getopt()`-funksjonen på, som for eksempel å kunne godta flere argumenter samtidig og spesifisere om et argument krever en verdi eller ikke. Det er også mulig å legge til egne feilhåndteringsfunksjoner for å sikre at programmene våre håndterer ugyldige argumenter på en god måte.
 
-```
-arg1
-arg2
-arg3
-```
-
-Som du kan se, vil alle argumentene vi skriver etter skriptnavnet bli lagret i en array og kan deretter behandles.
-
-## Dypdykk
-Nå som vi har lært hvordan man kan lese kommandolinje-argumenter i PHP, la oss ta en dypere titt på de forskjellige mulighetene vi har til å arbeide med dem. For eksempel kan vi bruke funksjonen "count" for å sjekke antall argumenter som ble sendt inn. Vi kan også bruke if-setninger eller switch-case for å behandle forskjellige typer argumenter. Det finnes mange forskjellige måter å håndtere kommandolinje-argumenter på, så det er viktig å finne ut hva som passer best for ditt prosjekt.
+Se dokumentasjonen for `getopt()`-funksjonen for mer informasjon om hvordan du kan lese og bruke kommandolinjeargumenter i PHP.
 
 ## Se også
-- PHP: $_SERVER - [https://www.php.net/manual/en/reserved.variables.server.php](https://www.php.net/manual/en/reserved.variables.server.php)
-- PHP: argc - [https://www.php.net/manual/en/reserved.variables.server.php#88659](https://www.php.net/manual/en/reserved.variables.server.php#88659)
-- PHP: getopt - [https://www.php.net/manual/en/function.getopt.php](https://www.php.net/manual/en/function.getopt.php)
+
+- [Dokumentasjon for getopt()](https://www.php.net/manual/en/function.getopt.php)
+- [Eksempler på PHP med kommandolinjeargumenter](https://www.php.net/manual/en/features.commandline.php)

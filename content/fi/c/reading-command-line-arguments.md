@@ -1,6 +1,7 @@
 ---
-title:                "C: Lukemassa komentoriviparametreja"
-simple_title:         "Lukemassa komentoriviparametreja"
+title:                "Mainostoimiston tehtävä"
+html_title:           "C: Mainostoimiston tehtävä"
+simple_title:         "Mainostoimiston tehtävä"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,39 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ohjelmointi on monipuolista ja mielenkiintoista, ja osa siitä on käsitellä käyttäjän antamia syötteitä. Komentoriviparametrit ovat tärkeitä tällä alueella, ja tämä blogipostaus auttaa sinua ymmärtämään, miten niitä käsitellään C-kielellä.
+Miksi haluaisit lukea komentorivin argumentteja? Yksinkertaisesti sanottuna, se on tärkeä taito, jota tarvitaan monissa C-ohjelmoinnin sovelluksissa. Komennen on mahdollista hyödyntää käyttäjän syötteitä ja parametreja, jotta ohjelma voi toimia eri tavoin kunkin tilanteen mukaan. Tämä tekee ohjelmasta joustavamman ja helpommin hallittavan.
 
-## Miten tehdä
-
-Komentoriviparametrien lukeminen C-kielellä on helppoa, kun tiedät mitä teet. Alla olevassa koodiesimerkissä näet yksinkertaisen tavan lukea komentoriviltä annettua argumenttia ja tulostaa se konsoliin:
+## Kuinka tehdä se?
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1)
+    // Tämä koodinpätkä tulostaa komentorivin argumentit
+    // yksi kerrallaan, alkaen ensimmäisestä argumentista (argv[1])
+    // argv[0] sisältää tiedoston nimen, joten se jätetään huomioimatta
+
+    printf("Sain %d argumenttia \n", argc - 1);
+
+    for (int i = 1; i < argc; i++)
     {
-        printf("Ensimmäinen komentoriviparametri on: %s\n", argv[1]);
+        printf("Argumentti %d: %s \n", i, argv[i]);
     }
-    else
-    {
-        printf("Et antanut komentoriviparametreja.\n");
-    }
+
     return 0;
 }
 ```
 
-Kun ajat tämän koodin komentoriviltä ja annat sille esimerkiksi seuraavanlaisen syötteen: `./ohjelma "Tervetuloa"`, näet tuloksen `Ensimmäinen komentoriviparametri on: Tervetuloa`. Huomaat, että voit käyttää `argv`-muuttujaa saadaksesi pääsyn komentoriviparametreihin. Voit myös käyttää `argc`-muuttujaa tarkistaaksesi, onko käyttäjä antanut syötettä vai ei.
+**Syöte:**
 
-## Syvemmälle
+```
+OhjelmanNimi argumentti1 argumentti2 argumentti3
+```
 
-C-kielellä on muitakin tapoja käsitellä komentoriviparametreja. Voit esimerkiksi käyttää `getopt`-funktiota, joka auttaa sinua lukemaan ja käsittelemään komentoriviparametreja. Voit myös käyttää `scanf`-funktiota lukemaan merkkijonoja suoraan komentoriviltä.
+**Tulos:**
 
-Jokainen käyttötilanne on erilainen, joten on tärkeää tutustua eri tapoihin lukea komentoriviparametreja ja valita se, joka sopii parhaiten tarpeisiisi.
+```
+Sain 3 argumenttia
+Argumentti 1: argumentti1
+Argumentti 2: argumentti2
+Argumentti 3: argumentti3
+```
+
+Kuten koodista näkyy, ensimmäisessä argumentissa on tiedoston nimi, joten itse argumentit alkavat indeksistä 1. Nämä argumentit voidaan tallentaa muuttujiin ja käyttää halutulla tavalla ohjelmassa.
+
+## Syvemmälle aiheeseen
+
+Komennorivin argumentteja käsittelevä osa C-ohjelmoinnissa on osa standardikirjastoa stdlib.h. Tämä mahdollistaa argumenttien käsittelyn kaikissa C-ohjelmissa samantyyppisellä koodilla. 
+
+Lisäksi, komentorivin argumenttien lukumäärä ja tiedot voi tarkistaa esimerkiksi käyttämällä funktiota `argc` ja `argv`. `argc` sisältää argumenttien lukumäärän, ja `argv` on osoitin ensimmäiseen argumenttiin.
+
+Lisätietoja löytyy [C-kielen dokumentaatiosta](https://devdocs.io/c/).
 
 ## Katso myös
 
-- [C Cheat Sheet](https://www.codecademy.com/learn/learn-c/modules/learn-c-cpp-cheatsheet)
-- [C-kurssi Codecademyssa](https://www.codecademy.com/learn/learn-c)
-- [getopt-dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
+[C-kielen dokumentaatio](https://devdocs.io/c/)
+
+[Komentorivin argumenttien käsittely Bash-skripteillä](https://www.linode.com/docs/tools-reference/tools/how-to-use-arguments-in-a-bash-script/)

@@ -1,5 +1,6 @@
 ---
-title:                "Go: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Go: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Go"
 category:             "Go"
@@ -9,57 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w języku Go?
+## Dlaczego
 
-Testowanie kodu jest nieodzownym elementem tworzenia wysokiej jakości oprogramowania. Pisanie testów w języku Go jest nie tylko ważne, ale również bardzo proste i daje wiele korzyści. Dzięki odpowiedniej praktyce testowej, możemy mieć pewność, że nasz kod działa poprawnie i w przypadku wprowadzenia zmian, nie wpłynie to negatywnie na funkcjonowanie aplikacji.
+Zastanawiasz się, dlaczego warto pisać testy w Go? To prostsze niż myślisz! Testy są niezwykle ważne w procesie tworzenia oprogramowania, ponieważ pozwalają upewnić się, że kod działa poprawnie i jest odporny na błędy.
 
-## Jak napisać testy w języku Go?
+## Jak To Zrobić
 
-```Go
-// Przykładowy kod zawierający funkcję wyznaczającą sumę dwóch liczb
-func suma(a int, b int) int {
-    return a + b
-}
-```
-
-Aby napisać test dla powyższej funkcji, musimy zaimportować pakiet *testing* i stworzyć funkcję testującą z prefiksem *Test* i parametrem *t *testing.T*.
+Aby napisać testy w Go, musisz użyć wbudowanego narzędzia "testing", które oferuje wiele przydatnych funkcji. Możesz zdefiniować testy za pomocą specjalnych funkcji, takich jak `func TestXxx(t *testing.T)`, gdzie Xxx to nazwa testowanej funkcji. Wewnątrz tej funkcji możesz użyć asercji, aby sprawdzić, czy otrzymane wyniki są zgodne z oczekiwaniami. Oto przykładowy kod:
 
 ```Go
-import "testing"
-
-func TestSuma(t *testing.T) {
-    // Przygotowanie danych do testu
-    a := 5
-    b := 10
-    expected := 15
-
-    // Wywołanie funkcji, którą chcemy przetestować
-    result := suma(a, b)
-
-    // Porównanie otrzymanego wyniku z oczekiwanym
-    if result != expected {
-        // W przypadku błędu, zgłaszamy błąd testu
-        t.Errorf("Suma(%d, %d) = %d; oczekiwano %d", a, b, result, expected)
+func TestSum(t *testing.T) {
+    total := sum(2, 3)
+    expected := 5
+    if total != expected {
+        t.Errorf("Sum of %d and %d expected to be %d, but got %d", 2, 3, expected, total)
     }
 }
 ```
 
-Wynik wywołania funkcji *go test* powinien być następujący:
+Powyższy test sprawdza, czy funkcja `sum()` zwraca poprawny wynik dla podanych argumentów. Jeśli wynik nie jest zgodny z oczekiwaniami, test jest oznaczony jako nieudany i zostaje wyświetlony błąd. Możesz również użyć funkcji `t.Log()` aby wyświetlić dodatkowe informacje dla błędów.
 
-```
---- FAIL: TestSuma (0.00s)
-    main_test.go:15: Suma(5, 10) = 11; oczekiwano 15
-FAIL
-```
+## Deep Dive
 
-## Głębsze zagadnienia związane z pisaniem testów w języku Go
+Pisanie testów w Go nie musi być trudne. Musisz tylko pamiętać o kilku ważnych rzeczach:
 
-Pisanie dobrych testów wymaga od nas odpowiedniego podejścia i zapoznania się z mechanizmami dostępnymi w języku Go. Jednym z kluczowych elementów jest wykorzystanie asercji, czyli wyrażeń lub funkcji, które pozwalają nam porównać oczekiwany wynik z rzeczywistym.
+- Nazwy testów muszą zaczynać się od słowa "Test", aby były wykryte przez narzędzie `testing`.
+- Asercje powinny być umieszczone wewnątrz funkcji `func TestXxx(t *testing.T)` i powinny używać metody `t.Errorf()` do raportowania błędów.
+- Możesz użyć funkcji `t.Run()` do grupowania testów i wyświetlania bardziej szczegółowych informacji o nieudanych testach.
 
-Ponadto, ważne jest również testowanie różnych przypadków oraz sprawdzanie wyjątków. W języku Go możemy to osiągnąć wykorzystując funkcje *t.Run()* oraz *t.Skip()*.
+Należy również pamiętać, że pisanie testów to tylko część procesu. Ważne jest również uruchamianie tych testów i sprawdzanie ich wyników regularnie. W tym celu możesz wykorzystać narzędzia takie jak Continous Integration (CI), które automatycznie uruchamiają testy i informują o wynikach.
 
-## Zobacz również!
+## Zobacz również
 
-* Dokumentacja języka Go na temat testowania: https://golang.org/pkg/testing/
-* Przykłady testów w języku Go: https://github.com/golang/go/wiki/LearnTesting
-* Artykuł na blogu Go: https://blog.golang.org/cover
+- [Dokumentacja oficjalna Go o testowaniu](https://golang.org/pkg/testing/)
+- [Artykuł na Medium o pisaniu testów w Go](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
+- [Wideo na Youtube o testowaniu w Go](https://www.youtube.com/watch?v=ndmB0bj7eyw)

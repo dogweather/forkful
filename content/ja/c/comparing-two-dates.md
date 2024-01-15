@@ -1,6 +1,7 @@
 ---
-title:                "C: 「二つの日付を比較する」"
-simple_title:         "「二つの日付を比較する」"
+title:                "二つの日付を比較する"
+html_title:           "C: 二つの日付を比較する"
+simple_title:         "二つの日付を比較する"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,94 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を比較するのに、なぜ 人々が関わるのかを説明するための 1 〜 2 文があります。
-
-日付を比較する必要があるいくつかの理由があります。例えば、二つのイベントが同じ日付や同じ期間に行われるかどうかを確認したり、期限を設定するために日付を比較することができます。また、日付を比較することで、データベース内の特定の日付に関連する情報を検索することもできます。
+二つの日付を比較することに関わる理由は、プログラミングで日付を処理する必要がある場合によくあるシナリオです。日付を比較することは、例えばアプリケーションでユーザーが特定の日付を選択した場合に特定のアクションを実行するために必要になるかもしれません。
 
 ## 方法
 
-日付を比較するには、いくつかの方法がありますが、ここではC言語を使用した例を紹介します。C言語は、日付や時間を扱う機能を提供しているため、日付を比較するには最適な言語です。
-
-**例 1:** 二つの日付を比較するプログラム
+まず、日付を比較する前に、2つの日付を同じ形式に変換する必要があります。以下のような例を見てみましょう。
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // 比較する日付を設定
-    struct tm date1 = { .tm_year = 2020, .tm_mon = 0, .tm_mday = 1 };
-    struct tm date2 = { .tm_year = 2020, .tm_mon = 0, .tm_mday = 15 };
+    // 2つの日付を定義する
+    char date1[] = "01/01/2021";
+    char date2[] = "01/05/2021";
 
-    // 時間を0時0分0秒に設定
-    date1.tm_hour = 0;
-    date1.tm_min = 0;
-    date1.tm_sec = 0;
+    // 2つの日付をtime構造体に変換する
+    struct tm tm1 = {0};
+    struct tm tm2 = {0};
+    strptime(date1, "%d/%m/%Y", &tm1);
+    strptime(date2, "%d/%m/%Y", &tm2);
 
-    date2.tm_hour = 0;
-    date2.tm_min = 0;
-    date2.tm_sec = 0;
-
-    // 日付を秒数に変換して比較
-    time_t time1 = mktime(&date1);
-    time_t time2 = mktime(&date2);
-
-    // 日付を比較
-    if (time1 < time2) {
-        printf("date1はdate2より前の日付です。");
-    } else if (time1 == time2) {
-        printf("date1とdate2は同じ日付です。");
+    // 比較する
+    if (mktime(&tm1) > mktime(&tm2)) {
+        printf("%s is later than %s\n", date1, date2);
+    } else if (mktime(&tm1) < mktime(&tm2)) {
+        printf("%s is earlier than %s\n", date1, date2);
     } else {
-        printf("date1はdate2より後ろの日付です。");
+        printf("%s is equal to %s\n", date1, date2);
     }
-
     return 0;
 }
 ```
 
-**出力:**
+上記のコードは、`strptime()`関数を使用して文字列を日付として認識し、`mktime()`関数を使用して日付を比較します。出力は次のようになります。
 
 ```
-date1とdate2は同じ日付です。
+01/01/2021 is earlier than 01/05/2021
 ```
 
-**例 2:** 特定の日付を検索するプログラム
+## 深堀り
 
-```C
-#include <stdio.h>
-#include <time.h>
+日付を比較する際に、timezone（タイムゾーン）やleap seconds（閏秒）など、考慮すべきことがあります。C言語の標準ライブラリには、`mktime()`と`difftime()`関数があり、これらはtimezoneやleap secondsを考慮しないため、比較結果にエラーが生じる可能性があります。
 
-int main() {
-    // 検索する日付を設定
-    struct tm search_date = { .tm_year = 2020, .tm_mon = 0, .tm_mday = 31 };
+より正確な日付の比較を行うには、外部ライブラリを使用することが推奨されます。例えば、timegmライブラリはtimezoneを考慮せずに日付を比較することができます。
 
-    // 時間を0時0分0秒に設定
-    search_date.tm_hour = 0;
-    search_date.tm_min = 0;
-    search_date.tm_sec = 0;
+## 参考文献
 
-    // 日付を秒数に変換
-    time_t search_time = mktime(&search_date);
-
-    // 検索結果を表示する日付を設定
-    struct tm result_date = { .tm_year = 0, .tm_mon = 0, .tm_mday = 0 };
-
-    // データベースなどから日付を取得
-    // ここでは空の例を用いる
-    int data1 = 2020;
-    int data2 = 1;
-    int data3 = 31;
-
-    // 日付を結果に反映
-    result_date.tm_year = data1 - 1900;
-    result_date.tm_mon = data2 - 1;
-    result_date.tm_mday = data3;
-
-    // 日付を秒数に変換
-    time_t result_time = mktime(&result_date);
-
-    // 検索結果を比較
-    if (search_time == result_time) {
-        printf("日付が一致しました。");
-    } else {
-        printf("日付が一致しませんでした。
+- [C言語で日付を比較する方法](https://www.tutorialspoint.com/how-to-compare-dates-in-c-programming)
+- [timezoneやleap secondを考慮するための外部ライブラリ](https://stackoverflow.com/questions/2219505/comparing-dates-in-c-without-considering-the-tz-and-daylight-saving-time-bugs)

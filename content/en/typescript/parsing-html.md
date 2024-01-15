@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "TypeScript recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,58 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever wanted to extract specific information from a website without manually sifting through its HTML code? Perhaps you're a web developer trying to scrape data for your project, or a curious internet user wanting to automate a tedious task. Whatever your reason may be, parsing HTML can save you time and effort. In this blog post, we'll discuss how you can use TypeScript to parse HTML and make your life easier.
+If you're a frontend developer, you've probably encountered the need to parse HTML at some point. Whether it's extracting data from a web page or manipulating the DOM, HTML parsing is an essential skill to have. With TypeScript, you can easily and safely parse HTML using its built-in features.
 
 ## How To
 
-To begin, let's first install the necessary dependencies. We'll be using the npm package "cheerio" for our HTML parsing needs. Open your command line and type in the following:
+To parse HTML in TypeScript, you can make use of the `DOMParser` class. This allows us to create an HTML document from a string of HTML code. Let's take a look at an example:
 
 ```TypeScript
-npm install cheerio --save
+const htmlString = '<h1>Hello, world!</h1>';
+const parser = new DOMParser();
+const htmlDoc = parser.parseFromString(htmlString, 'text/html');
+console.log(htmlDoc.body.innerHTML);
+```
+Output:
+
+```html
+<h1>Hello, world!</h1>
 ```
 
-Next, we'll create an HTML file named "index.html" with the following code:
+In the code above, we first create a string containing our HTML code. Then, we instantiate a `DOMParser` and use the `parseFromString()` method to convert the string into an HTML document. We specify the `text/html` parameter to indicate that we're parsing HTML. Finally, we can access the HTML document's body and log the inner HTML to the console.
 
-```TypeScript
-<html>
-  <body>
-    <h1>Welcome to my blog!</h1>
-    <p>Here you'll find all kinds of interesting articles.</p>
-  </body>
-</html>
-```
-
-Now, in our TypeScript file, let's import cheerio and read our HTML file using the "fs" module:
-
-```TypeScript
-import * as cheerio from 'cheerio';
-import * as fs from 'fs';
-
-const html = fs.readFileSync('index.html', 'utf-8');
-```
-
-Next, we'll load our HTML code into cheerio and use its jQuery-like syntax to select specific elements:
-
-```TypeScript
-const $ = cheerio.load(html); //loads the HTML code
-
-const title = $('h1').text(); //selects the text within the <h1> tag
-const paragraph = $('p').text(); //selects the text within the <p> tag
-
-console.log(`Title: ${title}`); //outputs "Welcome to my blog!"
-console.log(`Paragraph: ${paragraph}`); //outputs "Here you'll find all kinds of interesting articles."
-```
-
-And just like that, we have successfully extracted specific information from our HTML code! Of course, this is a very simple example, but you can use the same approach for more complex HTML structures.
+Note that the `DOMParser` class is available in most modern browsers, so there's no need for any external libraries or dependencies.
 
 ## Deep Dive
 
-While cheerio makes parsing HTML a lot easier, it's important to understand how it actually works. Cheerio uses a lightweight, fast, and flexible HTML parser called "parse5" under the hood. Parse5 takes in HTML code and converts it into a tree-like structure. Cheerio then uses this structure to navigate and select specific elements.
+Besides extracting data and manipulating the DOM, HTML parsing can also be useful for sanitizing user input. By parsing the HTML and removing any malicious tags or attributes, we can prevent cross-site scripting (XSS) attacks.
 
-One thing to keep in mind when using cheerio is that it doesn't execute JavaScript code. So if you need to extract data that is dynamically loaded through JavaScript, you'll need to use a headless browser like Puppeteer.
+The `DOMParser` class also allows for more advanced parsing options, such as parsing a specific section of an HTML document or parsing XML documents. Check out the documentation for more information on these options.
+
+It's worth mentioning that there are also other libraries and tools available for parsing HTML in TypeScript. For example, `htmlparser2` and `cheerio` are popular choices for server-side HTML parsing.
 
 ## See Also
 
-- [Cheerio Documentation](https://cheerio.js.org/)
-- [npm package "cheerio"](https://www.npmjs.com/package/cheerio)
-- [Puppeteer Documentation](https://pptr.dev/)
+- [DOMParser - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [htmlparser2 - npm](https://www.npmjs.com/package/htmlparser2)
+- [cheerio - npm](https://www.npmjs.com/package/cheerio)

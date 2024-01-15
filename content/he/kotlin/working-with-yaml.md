@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם קובצי yaml"
+html_title:           "Kotlin: עבודה עם קובצי yaml"
+simple_title:         "עבודה עם קובצי yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,67 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-בתוך תחום התכנות, נתקלים לעיתים קרובות בצורך לקרוא ולהעביר מידע מכל סוגים שונים. פעמים רבות, נתקלים בסוג של מידע מסוגים מתוארים בפורמט פשטותי יותר משאר הפורמטים הקיימים, כגון לדוגמה קבצי YAML. בטקסט הבא, נתייחס לסיבות מדוע כדאי לעבוד עם פורמט זה.
+בזמן האחרון, YAML נהפך להיות תבנית פופולרית לכתיבת קבצי תצורה ונתונים בפרויקטים תוכנה. אם אתה מעוניין לעבוד עם YAML, אתה צריך להכיר את הקוד שכתוב בשפת תכנות Kotlin, ולשמור על החיבור שלך עם הפרויקטים תוכנה שונים.
 
-## איך לעבוד עם YAML בקוטלין?
+## איך לעשות זאת
 
-ראשית נצור קובץ פשוט בשם `example.yaml` ונכתוב בתוכו את המידע הבא:
-
-```Kotlin
-name: "John Smith"
-age: 30
-hobbies:
-  - reading
-  - cooking
-  - hiking
-```
-
-כעת, נשתמש בקוד הבא כדי לקרוא את המידע מהקובץ ולהדפיס אותו בצורה מסודרת:
+תתחיל מהפכת העבודה עם YAML ב-Kotlin, אתה תצטרך להתקין את הספרייה "snakeyaml" באמצעות כלי הניהול של הפרויקט שלך. לאחר מכן, תהליך זה ניתן לכתיבת פעולות שונות כגון קריאת, כתיבת, ועדכון של קובץ YAML באמצעות Kotlin.
 
 ```Kotlin
-import org.yaml.snakeyaml.Yaml
+// קריאת קובץ YAML
+val yamlString = File("test.yaml").readText()
 
-fun main() {
-    val stream = this::class.java.getResourceAsStream("example.yaml")
-    val yaml = Yaml().load<Map<String, Any>>(stream)
-
-    val name = yaml["name"] as String
-    val age = yaml["age"] as Int
-    val hobbies = yaml["hobbies"] as List<*>
-
-    println("Name: $name")
-    println("Age: $age")
-    println("Hobbies:")
-    hobbies.forEach { println(" - $it") }
-}
+// כתיבת נתונים לקובץ חדש
+val data = hashMapOf<String, Any>("name" to "Kotlin", "version" to "1.4")
+val newYaml = Yaml().dump(data)
+File("new.yaml").writeText(newYaml)
 ```
 
-פלט התוכנית הוא:
+```Kotlin
+// עדכון נתונים בקובץ קיים
+val yamlString = File("test.yaml").readText()
+val yaml = Yaml()
+val data = yaml.load(yamlString)
 
-```
-Name: John Smith
-Age: 30
-Hobbies:
- - reading
- - cooking
- - hiking
-```
+// עדכון שדה קיים
+data["version"] = "1.5"
 
-עם קוד קצר כמו בדוגמה שלנו, כבר אפשר לראות את היתרונות של YAML: קריאות גבוהה, פשטות ליצירת ולעדכן קבצים וגם חסינות מפני שגיאות שמות וסימני פיסוק לפרטים נוספים נעבור לסעיף הבא.
-
-## כניסה מעמיקה
-
-הכניסה מעמיקה לפרמטרים הנתמכים בפורמט YAML עומדת בפני פלטת יחסים מאוד רחבה כמו גם פלט יחסים ערוכה. לכן, הוא נעשה כיווץ תוך כדי ניסוח בפקודת שורה אחת כגון זו:
-
-```
-options: !!com.example.ConfigOptions
-  initialize:
-    enabled: true
-    max-retries: 3
-  retries:
-    connect: 1
-    read: 2
-    timeout: 10000
+// כתיבת העדכון לקובץ
+File("test.yaml").writeText(yaml.dump(data))
 ```
 
-מכאן נתקל
+כעת, נראה את כמה נתונים שנמצאות בקובץ YAML:
+
+```yaml
+name: Kotlin
+version: 1.5
+```
+
+ניתן לעבוד עם מבני נתונים מורכבים יותר בקובץ YAML, כמו מערכי מילים ורשימות.
+
+```yaml
+languages:
+  - Java
+  - Kotlin
+  - Python
+
+frameworks:
+  - Spring Boot
+  - Ktor
+```
+
+כעת, עם כל הידע שנרכש, תוכל לכתוב ולערוך קבצי YAML בשפת Kotlin בקלות.
+
+## חפירה עמוקה
+
+אם אתה מעוניין ללמוד עוד על הפורמט של YAML ועל הסיבות לשימוש בו, תוכל לקרוא עוד במקורות הלימוד הבאים:
+
+- [מסמכי ייסוד של YAML](https://yaml.org/spec/1.2/spec.html)
+- [מדריך קצ

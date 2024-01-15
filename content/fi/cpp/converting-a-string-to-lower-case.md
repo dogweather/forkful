@@ -1,6 +1,7 @@
 ---
-title:                "C++: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pienaakkosiksi"
+html_title:           "C++: Merkkijonon muuntaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,33 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia tilanteita, joissa haluat muuttaa merkkijonon pieniksi kirjaimiksi ohjelmasi suorituskyvyn tai käytön helpottamiseksi. Tämä voi sisältää esimerkiksi vertailuja tai tiettyjen merkkijonojen etsimistä isommasta merkkijonosta. Tässä blogikirjoituksessa opimme, kuinka tehdä tämä C++:ssa muutamalla yksinkertaisella askeleella.
+Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? Siinä tapauksessa kun haluat vertailla merkkijonoja tai etsiä tiettyä merkkijonoa, on hyödyllistä että kaikki kirjaimet ovat samassa muodossa. Myös käyttäjäystävällisyyden kannalta on parempi, että kirjaimet näkyvät kaikki samoilla isoilla ja pienillä kirjaimilla.
 
-## Kuinka tehdä
-
-Merkkijonon muuttaminen pieniksi kirjaimiksi C++:ssa on helppoa käyttäen standardikirjaston toimintoa `transform`. Ensimmäiseksi meidän täytyy sisällyttää `algorithm`-kirjasto, jotta voimme käyttää tätä toimintoa. Sitten voimme käyttää `transform`-funktiota ja antaa sille parametreiksi merkkijonon ja funktion, joka muuttaa merkkijonon jokaisen kirjaimen pieneksi.
+## Miten
 
 ```C++
-#include <algorithm>
 #include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
 
 int main() {
-    std::string s = "TÄMÄ ON MERKKIJONO";
-    std::transform(s.begin(), s.end(), s.begin(), tolower);
-    std::cout << s << std::endl;
+    string s = "TÄMÄ ON MERKKIJONO";
+    // muutetaan merkkijono pieniksi kirjaimiksi
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    cout << s << endl;
+    // tuotuun: tämä on merkkijono
     return 0;
 }
-
-// tulostaa "tämä on merkkijono"
 ```
 
-## Syvällinen selitys
+Kuten edellä olevassa esimerkissä nähdään, merkkijnon muuttaminen pieniksi kirjaimiksi onnistuu ```transform()``` funktiolla, joka käy läpi koko merkkijonon ja muuttaa kirjaimet pieniksi. Tämän jälkeen koko uusi merkkijono tulostetaan näytölle. Tärkeää on myös huomata, että ```transform()``` funktio tarvitsee kolme argumenttia: ensimmäinen argumentti on alue johon merkkijono tallennetaan, toinen argumentti on alue josta merkkijono tulee luetaan ja kolmas argumentti on funktio, joka määrittää miten kirjaimet muutetaan.
 
-`transform`-funktio käy läpi annetun merkkijonon ja kutsuu annettua funktiota jokaiselle merkkijonon kirjaimelle. Funktion tulisi palauttaa muutettu kirjain, joka tallennetaan takaisin merkkijonoon. Käytämme tässä `tolower`-funktiota, joka muuttaa annetun kirjaimen pieneksi.
+## Syvempi sukellus
 
-On tärkeää huomata, että `transform`-funktio muuttaa annetun merkkijonon suoraan eikä luo uutta merkkijonoa. Tämä tarkoittaa, että voimme tallentaa muutetun merkkijonon takaisin alkuperäiseen muuttujaan.
+Merkit voivat olla suhteellisen monimutkaisia, ja suuressa osassa kulttuureja on erilaisia merkkejä. Siksi kansainvälinen standardi Unicode kehitettiin käsittelemään kaikenlaisia merkkejä. Tämän vuoksi C++:sää käsittelee luetun tekstin tavallisesti UTF-8 merkkikoodauksen avulla.
 
-## Katso myös
+UTF-8-koodaus määrittää, miten merkit tallennetaan bittijonoon. Jokaisella merkillä on oma merkkikoodi, joka tallennetaan bittijonoon yhdistelemällä eri määriä bittieitä. Useimmat ASCII-merkit, jotka ovat kirjaimia ja numeroita, edustavat yhtä tavallista bittiä. Sen sijaan latinalaiset kirjaimet ja muut kansainväliset merkit edustavat useampia bittieitä.
 
-- [`transform`-funktion dokumentaatio (cplusplus.com)](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Enemmän esimerkkejä merkkijonojen käsittelystä C++:ssa (programiz.com)](https://www.programiz.com/cpp-programming/string)
+C++ sisältää vakion nimeltä ```std::locale::global(std::locale(""))``` tämän muunnoksen tekemiseksi ja  ```std::toupper()```, ```std::tolower()``` ja ```std::isupper()``` funktiot. Vaikuttaa siltä että niillä on mahdollisuus muuntaa merkki kerrallaan, sovelluskehittäjien kohteena on järjestysmäärä muuntaa merkkijonon kerralla.
+
+## Katso lisää
+
+- [C++ string transform](http://www.cplusplus.com/reference/string/string/transform/)
+- [Unicode ja UTF-8](http://www.utf8-ansi.com/)
+- [C++ std::toupper and std::tolower function](https://www.geeksforgeeks.org/cpp-toupper-tolower-functions/)
+- [std::isupper function](http://www.cplusplus.com/reference/cctype/isupper/)

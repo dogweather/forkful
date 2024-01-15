@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena de caracteres"
+html_title:           "PHP: Convirtiendo una fecha en una cadena de caracteres"
+simple_title:         "Convirtiendo una fecha en una cadena de caracteres"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,44 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Muchas veces en programación, necesitamos convertir una fecha en una cadena de texto para mostrarla en una interfaz de usuario o almacenarla en una base de datos. Aprender cómo hacer esto puede ser muy beneficioso para cualquier programador PHP.
+En programación, a menudo es necesario trabajar con fechas y hora. Para presentar esta información al usuario, es importante poder convertir una fecha en un formato de texto legible. En este artículo, aprenderemos cómo convertir una fecha en una cadena utilizando PHP.
 
-## Cómo hacerlo
+## Cómo
 
-Para convertir una fecha en una cadena de texto en PHP, podemos utilizar la función `date()`. Esta función acepta dos parámetros: el formato deseado de salida y la fecha que queremos convertir. Por ejemplo, si queremos obtener la fecha actual en formato de día/mes/año, podemos usar la siguiente línea de código:
-
-```PHP
-echo date('d/m/Y', time());
-```
-
-La función `time()` nos da la marca de tiempo actual, que es necesaria como segundo parámetro para `date()`. La salida de este ejemplo sería algo como "12/09/2021".
-
-También podemos usar la función `strtotime()` para convertir una cadena de texto en una fecha. Este método es especialmente útil si recibimos la fecha en formato de cadena y necesitamos convertirla en un formato específico. Por ejemplo, si tenemos la fecha "12 de Septiembre de 2021" en una variable y queremos convertirla en formato de mes/día/año, podemos hacerlo de la siguiente manera:
+Para convertir una fecha a una cadena en PHP, podemos utilizar la función `date()`. Esta función acepta dos argumentos: el formato en el que queremos mostrar la fecha y la fecha en sí. Veamos un ejemplo:
 
 ```PHP
-$fecha = "12 de Septiembre de 2021";
-echo date('m/d/Y', strtotime($fecha));
+$date = date('d-m-Y', strtotime('2021-01-15'));
+echo $date; // Salida: 15-01-2021
 ```
 
-La salida sería "09/12/2021".
+En este ejemplo, utilizamos el formato 'd-m-Y' para mostrar la fecha como día-mes-año. También podríamos haber utilizado otros formatos como 'Y/m/d' o 'j M Y'. La función `strtotime()` convierte la fecha en un formato reconocible por PHP.
+
+A veces, también puede ser necesario obtener la hora junto con la fecha. En ese caso, podemos utilizar el formato 'd-m-Y H:i:s' que agregará la hora, minutos y segundos a la cadena.
+
+```PHP
+$datetime = date('d-m-Y H:i:s', strtotime('2021-01-15 10:30:00'));
+echo $datetime; // Salida: 15-01-2021 10:30:00
+```
 
 ## Deep Dive
 
-La función `date()` acepta varios caracteres como parámetros para definir el formato de salida. Aquí algunos de los más comunes:
+La función `date()` también puede ser útil para mostrar la fecha y hora actual en nuestro sitio web. Podemos utilizar la palabra clave 'now' en lugar de una fecha para obtener la fecha y hora actuales.
 
-- d: día del mes con dos dígitos
-- m: mes con dos dígitos
-- Y: año con cuatro dígitos
-- l: día de la semana completo (en inglés)
-- F: mes completo (en inglés)
-- M: mes abreviado (en inglés)
-- a: am o pm en minúsculas
-- A: AM o PM en mayúsculas
+```PHP
+$current_datetime = date('d-m-Y H:i:s', strtotime('now'));
+echo $current_datetime; // Salida: fecha y hora actuales
+```
 
-Hay muchos más caracteres disponibles y puedes consultar la documentación oficial de PHP para ver la lista completa.
+También podemos usar la función `time()` en lugar de una fecha específica. Esto devolverá un sello de tiempo Unix que representa la fecha y hora actuales.
 
-## Ver también
+```PHP
+$current_timestamp = date('d-m-Y H:i:s', time());
+echo $current_timestamp; // Salida: fecha y hora actuales en formato de sello de tiempo Unix
+```
 
-- [Documentación oficial de PHP para la función `date()`](https://www.php.net/manual/es/function.date.php)
-- [Documentación oficial de PHP para la función `strtotime()`](https://www.php.net/manual/es/function.strtotime.php)
-- [Listado de caracteres para `date()` en la documentación oficial de PHP](https://www.php.net/manual/es/datetime.format.php)
+Otra cosa importante a tener en cuenta es que la función `date()` utiliza la zona horaria establecida en la configuración de PHP. Si necesitamos utilizar una zona horaria diferente, podemos usar la función `date_default_timezone_set()` para establecerla.
+
+```PHP
+// Establecer la zona horaria a Nueva York
+date_default_timezone_set('America/New_York');
+
+// Mostrar la fecha y hora en la zona horaria de Nueva York
+$current_datetime = date('d-m-Y H:i:s', strtotime('now'));
+echo $current_datetime; // Salida: fecha y hora actuales en zona horaria de Nueva York
+```
+
+Por último, es importante tener en cuenta que la función `date()` devuelve una cadena en lugar de un objeto de fecha. Por lo tanto, si necesitamos realizar operaciones matemáticas o comparaciones con fechas, primero debemos convertir la cadena a un objeto de fecha utilizando la función `strtotime()`.
+
+## See Also
+
+- [Documentación de PHP sobre la función date()](https://www.php.net/manual/es/function.date.php)
+- [Listado de formatos de fecha admitidos en PHP](https://www.php.net/manual/es/function.date.php#date.format)
+- [Documentación de PHP sobre la función strtotime()](https://www.php.net/manual/es/function.strtotime.php)

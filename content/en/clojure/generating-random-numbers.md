@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Clojure recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,41 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Generating random numbers is a useful task in many programming applications. Whether you need to create randomized test data, simulate probabilistic events, or simply add an element of unpredictability to your program, understanding how to generate random numbers in Clojure can greatly enhance your coding capabilities.
+Generating random numbers may seem like a trivial task, but it has many practical use cases. It can be used for games, simulations, cryptography, and even to test code and algorithms.
 
 ## How To
 
-To generate random numbers in Clojure, we can use the `rand` function from the `clojure.core` library. This function takes in a range of numbers and returns a random number within that range. Let's see an example of how this works:
+To generate a random integer between 0 and 10, we can use the `rand-int` function from the `clojure.core` library. It takes in one argument, the upper bound, and returns a random integer between 0 (inclusive) and the upper bound (exclusive).
 
 ```Clojure
-(rand 10) ; returns a random number between 0 and 10
-(rand 1 100) ; returns a random number between 1 and 100
-(rand 5 20) ; returns a random number between 5 and 20
+(clojure.core/rand-int 10) ; output: 7
 ```
 
-We can also use the `rand-nth` function to randomly select an element from a given sequence. For example:
+To generate a random decimal number between 0 and 10, we can use the `rand` function. It takes no arguments and returns a decimal number between 0 (inclusive) and 1 (exclusive).
 
 ```Clojure
-(def fruits ["apple" "orange" "banana" "strawberry"])
-
-(rand-nth fruits) ; returns a random fruit from the list
+(clojure.core/rand) ; output: 0.6732492319784195
 ```
 
-We can even generate a random string by first creating a list of characters and then using the `apply` function to concatenate them into a string:
+We can also use the `rand-nth` function to generate a random element from a collection. It takes in a collection as an argument and returns a random element from that collection.
 
 ```Clojure
-(def letters ["a" "b" "c" "d" "e"])
-
-(apply str (take 5 (repeat (rand-nth letters)))) ; returns a random string of 5 characters
+(def fruits ["apple" "banana" "orange"])
+(clojure.core/rand-nth fruits) ; output: "orange"
 ```
 
 ## Deep Dive
 
-The `rand` function uses the `java.util.Random` class, which is a pseudo-random number generator. This means that the numbers generated are not truly random, but are instead determined by a mathematical algorithm. To ensure a more diverse range of numbers, we can use the `clojure.math.random` library, which uses a different algorithm and provides a more evenly distributed range of random numbers.
+Clojure uses a pseudo-random number generator (PRNG) to generate random numbers. This means that the numbers are not truly random, but they are generated using an algorithm that produces a sequence of numbers that appear to be random.
 
-Additionally, we can use the `seed` function to set a starting point for the random number generator. This can be useful for creating reproducible results or for creating a series of seemingly random but actually predetermined numbers.
+The PRNG in Clojure is based on the Mersenne Twister algorithm, which is a widely used PRNG in many programming languages. It is highly efficient and has a very large state space, which means it can produce a massive amount of unique random numbers before repeating itself.
+
+To ensure that the generated numbers are truly random, it is recommended to seed the PRNG with a unique value. This can be done using the `set!` function followed by the `*random-seed*` variable.
+
+```Clojure
+(set! *random-seed* 12345)
+```
 
 ## See Also
 
-- [Official Clojure Documentation on Random Numbers](https://clojure.org/guides/math#random_numbers)
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+- Official Clojure Documentation on Randomness: https://clojure.org/reference/randomness
+
+- Mersenne Twister Wikipedia page: https://en.wikipedia.org/wiki/Mersenne_Twister
+
+- Java API for random numbers: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html

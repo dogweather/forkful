@@ -1,5 +1,6 @@
 ---
-title:                "Java: Робота з csv"
+title:                "Робота з csv"
+html_title:           "Java: Робота з csv"
 simple_title:         "Робота з csv"
 programming_language: "Java"
 category:             "Java"
@@ -9,64 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Навіщо
 
-CSV (Comma Separated Values) - це один з найбільш поширених форматів для зберігання і обміну даними. Робота з CSV є необхідною для багатьох програмістів, тому що це простий і зручний спосіб зберігати дані у табличному вигляді.
+Цікавитесь програмуванням і хочете дізнатися більше про роботу з CSV-файлами? Java пропонує потужні інструменти для цього. Дізнайтеся, як працювати з CSV у цій статті!
 
-## Як працювати з CSV в Java
+## Як працювати з CSV у Java
 
-Найпростішим способом прочитати CSV файл в Java є використання бібліотеки OpenCSV. Для цього необхідно додати залежність у файл `pom.xml` вашого проекту:
-
+Започнемо з імпорту необхідних класів:
 ```Java
-<dependency>
-  <groupId>com.opencsv</groupId>
-  <artifactId>opencsv</artifactId>
-  <version>5.3</version>
-</dependency>
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 ```
 
-Після цього можна створити об'єкт `CSVReader` і використовувати його для читання файлу:
-
+Створимо об'єкт для читання файлу та зчитаємо його вміст:
 ```Java
-CSVReader reader = new CSVReader(new FileReader("file.csv"));
-String[] nextRecord;
-
-while ((nextRecord = reader.readNext()) != null) {
-  // обробляємо рядок з даними
+BufferedReader reader = new BufferedReader(new FileReader("file.csv"));
+String line;
+while ((line = reader.readLine()) != null) {
+    // код для обробки рядків
 }
-
-reader.close();
 ```
 
-Використовуючи метод `readAll()`, можна прочитати усі рядки з файлу одразу і отримати їх у вигляді `List<String[]>`:
-
+Розділимо рядок на окремі значення, використовуючи роздільник коми:
 ```Java
-CSVReader reader = new CSVReader(new FileReader("file.csv"));
-List<String[]> rows = reader.readAll();
-
-for (String[] row : rows) {
-  // обробляємо рядок з даними
-}
-
-reader.close();
+String[] values = line.split(",");
 ```
 
-Також OpenCSV дозволяє записувати дані в CSV файл за допомогою класу `CSVWriter`:
-
+Строкові значення можна перетворити на числові:
 ```Java
-CSVWriter writer = new CSVWriter(new FileWriter("file.csv"));
-// записуємо рядок з даними
-String[] data = {"John Doe", "john.doe@example.com", "25"};
-writer.writeNext(data);
-
-writer.close();
+int num = Integer.parseInt(values[0]); // перший стовпець
+float dec = Float.parseFloat(values[1]); // другий стовпець
 ```
 
-## Глибше вивчення
+## Глибоке дослідження
 
-Бібліотека OpenCSV надає також інші функціональні можливості, такі як вказання символу-роздільника, комплексне читання/запис даних з об'єктів та інше. Детальну інформацію про всі можливості бібліотеки можна знайти на її [офіційному сайті](http://opencsv.sourceforge.net/).
+Для роботи з потоками вводу-виводу у Java використовується пакет java.io. В ньому є класи, що допомагають читати і записувати дані у CSV-форматі. Для зручності також існують пакети, які дозволяють працювати з CSV у вигляді об'єктів, що знаходяться в пам'яті комп'ютера.
 
-## Дивись також
+## Дивіться також
 
-- [Офіційна документація Java по роботі з CSV](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Стаття про роботу з CSV в Python](https://www.datacamp.com/community/tutorials/pandas-read-csv)
+- [Офіційна документація Java](https://docs.oracle.com/en/java/javase/14/docs/api/index.html)
+- [Покроковий підручник з роботи з CSV в Java](https://www.baeldung.com/java-csv-file-array)

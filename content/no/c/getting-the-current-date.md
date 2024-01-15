@@ -1,6 +1,7 @@
 ---
-title:                "C: Få dagens dato"
-simple_title:         "Få dagens dato"
+title:                "Hente nåværende dato"
+html_title:           "C: Hente nåværende dato"
+simple_title:         "Hente nåværende dato"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,64 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å få dagens dato er en vanlig oppgave i programmering som kan være nyttig av flere grunner. Dette kan inkludere å registrere når en bestemt hendelse skjedde, å vise dato på et brukergrensesnitt eller å beregne tidsintervaller fra nåtid.
+Å få den nåværende datoen er ofte en viktig del av mange programmeringsoppgaver. Det kan være for å registrere tidsstempling på handlinger, generere rapporter eller for å holde styr på tidsbaserte hendelser.
 
 ## Hvordan
 
-Å få dagens dato i C-programmering er en enkel oppgave som kan gjøres på flere måter. En av de mest vanlige måtene er å bruke funksjonen `time()` fra standardbiblioteket `<time.h>`. Denne funksjonen returnerer antall sekunder som har gått siden 1. januar 1970 kalt "Epoken". Ved å dele dette tallet med antall sekunder i en dag (86400), kan vi få antall hele dager siden Epoken. Dette kan deretter konverteres til en mer leslig dato ved hjelp av andre funksjoner fra `<time.h>` som `localtime()` og `strftime()`.
+For å få den nåværende datoen i C, kan du bruke funksjonen "time()" som returnerer antall sekunder siden epoken, også kjent som Unix-tiden. Du kan deretter bruke "localtime()" for å konvertere dette til en mer lesbar datoformat.
+
+For eksempel:
 
 ```C
+// Inkluderer nødvendige biblioteker
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Få antall sekunder siden Epoken
+int main(void) {
+    // Henter tiden på nåværende øyeblikk
     time_t now = time(NULL);
-
-    // Beregn antall dager siden Epoken
-    int days_since_epoch = now / 86400;
-
-    // Konverter til datostruktur
-    struct tm *date = localtime(&days_since_epoch);
-
-    // Bruk strftime for å formatere datoen
-    char formatted_date[11];
-    strftime(formatted_date, 11, "%d %b %Y", date);
-
-    // Skriv ut datoen på standard output
-    printf("Dagens dato er: %s\n", formatted_date);
+    
+    // Konverterer til et mer leselig format
+    struct tm *date = localtime(&now);
+    
+    // Skriver ut datoen i ønsket format
+    printf("Dagens dato er %02d/%02d/%d", date->tm_mday, date->tm_mon + 1, date->tm_year + 1900);
 
     return 0;
 }
 ```
-**Output:** Dagens dato er: 03 Aug 2021
 
-## Dypdykk
+Dette vil gi output som: "Dagens dato er 01/02/2021".
 
-En annen måte å få dagens dato på er å bruke funksjonen `ctime()` fra `<time.h>`. Denne funksjonen returnerer en lesbar streng av dagens dato og klokkeslett. En ting å merke seg med denne metoden er at den bruker systemets lokale tidssone, så det kan være forskjeller mellom datoen på forskjellige systemer.
+## Deep Dive
 
-```C
-#include <stdio.h>
-#include <time.h>
+Funksjonene som brukes for å få den nåværende datoen, "time()" og "localtime()", stammer fra standardbiblioteket "time.h". "time()" returnerer antall sekunder siden "epoken", som er en spesifikk tid som brukes som referansepunkt for å beregne tiden på datamaskiner. Denne tiden varierer avhengig av operativsystemet, men på Unix-systemer er den vanligvis satt til 1. januar 1970 klokken 00:00.
 
-int main()
-{
-    // Få dagens dato som en streng
-    char *today = ctime(NULL);
+"localtime()" bruker dette antallet sekunder til å konvertere til en "struct tm" som inneholder informasjon om dato og tid i en leselig form. Denne informasjonen kan fås ved å bruke ulike "struct tm" medlemmer, for eksempel "tm_mday" for dagen i måneden og "tm_mon" for månedens nummer, der januar er 0 og desember er 11.
 
-    // Skriv ut datoen på standard output
-    printf("Dagens dato er: %s", today);
-
-    return 0;
-}
-```
-**Output:** Dagens dato er: Sun Aug  3 00:00:00 2021
-
-Det finnes også flere tredjeparts biblioteker som kan brukes for å få dagens dato i en ønsket format eller med støtte for forskjellige tidssoner.
+I tillegg til disse funksjonene, finnes det også andre måter å få tak i den nåværende datoen på, for eksempel ved hjelp av biblioteket "ctime" som inneholder funksjoner som "ctime()" som returnerer en strengrepresentasjon av den lokale tiden.
 
 ## Se også
 
-- [Mer om `<time.h>` biblioteket (offisiell dokumentasjon)](https://www.cplusplus.com/reference/ctime)
-- [Informasjon om Epoken i C (på engelsk)](https://www.epochconverter.com/programming/c)
-- [Eksempler på flere metoder for å få dagens dato i C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+- [C time manpage](https://linux.die.net/man/3/time)
+- [C localtime manpage](https://linux.die.net/man/3/localtime)
+- [Ctime function in C](https://www.tutorialspoint.com/c_standard_library/c_function_ctime.htm)

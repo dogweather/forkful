@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Affichage du débogage"
-simple_title:         "Affichage du débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Haskell: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -11,48 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'impression de messages de débogage est une pratique courante dans la programmation informatique. Cela permet aux programmeurs de vérifier le fonctionnement de leur code et de détecter d'éventuels problèmes ou erreurs. C'est un outil essentiel pour le dépannage et la compréhension du comportement de leur programme.
+Il y a souvent des moments où vous souhaitez vérifier et comprendre ce qui se passe dans votre code Haskell pendant son exécution. Imprimer des messages de débogage peut vous aider à suivre le flux de votre programme et à détecter les erreurs ou les bogues plus facilement.
 
 ## Comment faire
 
-Pour imprimer des messages de débogage dans Haskell, nous pouvons utiliser la fonction `putStrLn` qui prend une chaîne de caractères en paramètre et l'imprime dans la console. Voici un exemple:
+Pour imprimer des messages de débogage en Haskell, vous pouvez utiliser la fonction `print`. Elle accepte n'importe quelle expression en entrée et la convertit en chaîne de caractères avant de l'imprimer dans la console. Par exemple :
 
 ```Haskell
-main = do
-  putStrLn "Bonjour!"
+a <- 10
+b <- 5
+print (a + b)
 ```
 
-Nous pouvons également utiliser l'opérateur `<<` qui permet d'ajouter du texte à la fin de nos messages de débogage. Par exemple:
+Cela affichera `15` dans la console. Vous pouvez également utiliser la fonction `putStrLn` pour imprimer des chaînes de caractères, comme dans l'exemple suivant :
 
 ```Haskell
-main = do
-  putStrLn "Le résultat est: " << resultat
+putStrLn "Le résultat est:"
+print (a + b)
 ```
 
-Dans cet exemple, `resultat` est une variable qui contient une valeur que nous souhaitons imprimer en plus de notre message.
+Cela affichera :
+
+```
+Le résultat est:
+15
+```
 
 ## Plongée en profondeur
 
-L'impression de messages de débogage peut être plus efficace si nous utilisons des outils spécifiques tels que la bibliothèque `Debug.Trace`. Cette bibliothèque contient des fonctions qui nous permettent d'imprimer des messages de débogage avec des informations supplémentaires telles que le nom de la fonction et la ligne de code dans laquelle le message est imprimé.
-
-Voici un exemple d'utilisation de la fonction `trace` de cette bibliothèque:
+Si vous avez besoin d'imprimer des messages de débogage complexes ou d'accéder à des variables dans plusieurs parties de votre code, vous pouvez utiliser la bibliothèque `Debug.Trace`. Elle fournit plusieurs fonctions utiles pour l'impression de débogage, notamment `trace`, `traceM` et `traceIO`.
 
 ```Haskell
 import Debug.Trace
 
-fonction x = trace ("La valeur de x est: " ++ show x) x
+myFunction :: Int -> Int
+myFunction x = trace ("Valeur de x : " ++ show x) (x * 2)
 
 main = do
-  let resultat = fonction 5
-  putStrLn "Le résultat est: " << resultat
+  let a = myFunction 5
+  print a
 ```
 
-Dans cet exemple, la fonction `trace` prend deux paramètres: le message à imprimer et la valeur à retourner. Dans ce cas, le message inclut la valeur de `x` et la fonction renvoie simplement cette même valeur.
+Cela affichera :
+
+```
+Valeur de x : 5
+10
+```
+
+Attention cependant, ces fonctions de débogage ne doivent être utilisées que pendant le développement et ne doivent pas être présentes dans votre code final, car elles peuvent avoir des effets indésirables sur les performances.
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en apprendre plus sur l'impression de messages de débogage en Haskell:
-
-- [Documentation officielle sur `Debug.Trace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
-- [Article de blog sur l'utilisation de `Debug.Trace`](https://www.clear.rice.edu/comp121/03-spring/lectures/lect18.html)
-- [Vidéo sur l'impression de messages de débogage en Haskell](https://www.youtube.com/watch?v=lhTKdEMx0jM)
+- [Documentation de la fonction `print`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:print)
+- [Documentation de la bibliothèque `Debug.Trace`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Debug-Trace.html)
+- [Guide de débogage en Haskell](https://wiki.haskell.org/Debugging)

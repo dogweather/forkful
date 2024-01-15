@@ -1,5 +1,6 @@
 ---
-title:                "Python: 比较两个日期"
+title:                "比较两个日期"
+html_title:           "Python: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Python"
 category:             "Python"
@@ -9,40 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么比较两个日期
-比较两个日期在Python编程中是一个常见的使用场景。它可以帮助我们判断两个日期谁比较早或比较晚，从而进行后续的逻辑处理。比如在生日提醒程序中，我们可以通过比较今天的日期和用户的生日来确定是否需要发送生日祝福。
+## 为什么
 
-## 如何进行比较
-我们可以使用Python中的datetime模块来进行日期比较。在下面的代码示例中，我们首先定义了两个日期变量，然后使用`date1 > date2`语法来比较它们。如果第一个日期变量较晚，那么表达式的结果为True，反之则为False。最后，我们通过print语句将结果输出到控制台。
+比较两个日期在编程中非常常见，因为我们经常需要根据日期来做出决策或者对数据进行筛选和分析。比较两个日期可以帮助我们更容易地处理日期相关的任务，提高我们的编程效率。
+
+## 怎么做
 
 ```Python
+# 导入datetime库
 import datetime
 
 # 定义两个日期变量
-date1 = datetime.date(2020, 8, 3)
-date2 = datetime.date(2020, 8, 5)
+date1 = datetime.date(2021, 1, 1)
+date2 = datetime.date(2021, 5, 1)
 
-# 比较两个日期
-print(date1 > date2) # 输出结果为False
+# 比较两个日期是否相等
+if date1 == date2:
+    print("日期相等")
+else:
+    print("日期不相等")
+
+# 比较两个日期的大小
+if date1 < date2:
+    print("date1 在 date2 之前")
+elif date1 > date2:
+    print("date1 在 date2 之后")
+else:
+    print("日期相等")
+```
+
+输出：
+```
+日期不相等
+date1 在 date2 之前
 ```
 
 ## 深入了解
-在实际中，我们可能需要比较的不仅仅是日期，还有时间。此时，我们可以使用datetime模块中的`datetime`类来进行比较。与只比较日期不同的是，我们需要将时间部分也考虑在内。下面的代码示例演示了如何比较两个日期时间对象。
 
-```Python
-import datetime
+Python中有两个内置的日期数据类型，一个是`date`类型，表示日期，一个是`datetime`类型，表示日期和时间。当我们比较两个日期时，通常使用的是`date`类型。
 
-# 定义两个日期时间对象
-datetime1 = datetime.datetime(2020, 8, 3, 12, 30)
-datetime2 = datetime.datetime(2020, 8, 3, 14, 30)
+比较日期的本质是比较日期的大小，而日期的大小是根据日期所在的位置来决定的。比如，2021年1月1日比2021年5月1日要早，所以前者小于后者。
 
-# 比较两个日期时间对象
-print(datetime1 > datetime2) # 输出结果为False
-```
+除了直接比较日期的大小，我们还可以使用`timedelta`来计算两个日期之间的时间差。
 
-# 参考链接
-- [Python官方文档-`datetime`模块](https://docs.python.org/3/library/datetime.html)
-- [Python官方文档-`date`对象](https://docs.python.org/3/library/datetime.html#date-objects)
-- [Python官方文档-`datetime`对象](https://docs.python.org/3/library/datetime.html#datetime-objects)
+参考文档：
+- [Python官方文档 - Datetime](https://docs.python.org/3/library/datetime.html)
+- [菜鸟教程 - Python日期和时间](https://www.runoob.com/python/python-date-time.html)
 
-# 参见
+## 参考资料
+
+[为什么你应该了解并且掌握Python中的日期比较](https://blog.csdn.net/mingzznet/article/details/90808781)
+
+## 参见
+
+[Python中日期的格式化输出](https://github.com/HelenAndJunior/python-examples/blob/master/dates/formatting_dates.md)
+
+[如何在Python中获取当前日期和时间](https://github.com/HelenAndJunior/python-examples/blob/master/dates/current_datetime.md)

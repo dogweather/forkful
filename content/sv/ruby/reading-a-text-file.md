@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Att läsa en textfil"
-simple_title:         "Att läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "Ruby: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,55 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna läsa en textfil är en grundläggande färdighet inom programmering och är särskilt användbar inom Ruby. Genom att läsa en textfil kan du enkelt bearbeta data och använda den i ditt program.
+Det finns många olika användningsområden för att läsa en textfil i Ruby. Det kan vara för att hämta och manipulera data från en annan källa, som att skapa en användarlista från en CSV-fil eller generera en rapport baserad på informationen i filen. Det är också ett vanligt steg i många programmeringsprojekt, oavsett om det är för att läsa konfigurationsfiler eller behandla användarinmatning.
 
-## Hur man gör det
+## Hur man gör
 
-För att läsa en textfil i Ruby använder du metoden `File.open`. Här är ett exempel på hur det kan se ut:
-
-```Ruby
-file = File.open("textfil.txt", "r")
-puts file.read
-```
-
-I det här exemplet öppnar vi filen "textfil.txt" och läser sedan in hela filen med `read`-metoden. Sedan skriver vi ut innehållet på skärmen med `puts`.
-
-Om du vill läsa en fil rad för rad kan du använda en `each`-loop:
+För att läsa en textfil i Ruby, behöver du först öppna filen och sedan loopa igenom varje rad. Det finns olika sätt att öppna en fil beroende på vilken typ av åtkomst du behöver, men den vanligaste är att använda File-klassen.
 
 ```Ruby
-file = File.open("textfil.txt", "r")
-file.each do |line|
-  puts line
+File.open("textfil.txt", "r") do |file|
+    file.each_line do |line|
+        puts line
+    end
 end
+
+# Output: 
+# This is the first line.
+# This is the second line.
+# This is the third line.
 ```
 
-Det här kommer att skriva ut varje rad i textfilen på en egen rad.
+I exemplet ovan öppnar vi filen "textfil.txt" i läs-mode och sedan loopar igenom varje rad med hjälp av `each_line`-metoden. Vi använder också `puts` för att skriva ut varje rad på skärmen.
+
+Om du vill läsa en fil rad för rad utan att använda en `do`-loop, kan du också använda `readlines`-metoden.
+
+```Ruby
+file = File.open("textfil.txt", "r")
+lines = file.readlines
+file.close
+
+puts lines
+
+# Output:
+# ["This is the first line.", "This is the second line.", "This is the third line."]
+```
+
+Här öppnar vi filen, läser varje rad med `readlines` och sparar dem i en array. Vi stänger också filen efter att vi är färdiga med att läsa den.
+
+För att få tillgång till en specifik rad eller ett specifikt stycke av en fil, kan vi använda metoden `read` tillsammans med en radnummer.
+
+```Ruby
+file = File.open("textfil.txt", "r")
+line = file.read(2)
+puts line
+
+# Output:
+# Th
+```
+
+Här öppnar vi filen och använder `read` för att bara läsa de första två tecknen från första raden i filen. Det här är användbart när du har stora filer och bara behöver hämta viss information.
 
 ## Djupdykning
 
-När du läser en textfil, är det viktigt att vara medveten om filens format och encoding. Om filen är i ett annat format eller encoding än ditt program förväntar sig, kan du hamna i problem.
+Vid läsning av en textfil i Ruby finns det fler metoder som kan vara användbara beroende på dina behov. Till exempel kan du använda `readchar` för att läsa en karaktär i taget, `readbyte` för att läsa en byte i taget eller `rewind` för att återgå till början av filen efter att du har loopat igenom den.
 
-För att undvika detta kan du specificera encodingen när du öppnar filen genom att lägga till ett tillval till `File.open`-metoden:
+Du kan också använda olika åtkomstlägen när du öppnar en fil, som läs- /skriv-, append- eller skriv-läge. Det kan också vara viktigt att komma ihåg att stänga filen när du är klar med den, annars kan det leda till problem senare i ditt program.
 
-```Ruby
-file = File.open("textfil.txt", "r:UTF-8")
-```
+## Se också
 
-I det här exemplet specificerar vi att filen används i UTF-8 encoding. Om din fil är i ett annat format, t.ex. ISO-8859-1, kan du använda:
-
-```Ruby
-file = File.open("textfil.txt", "r:ISO-8859-1")
-```
-
-Om du vill läsa in filen på olika ställen i ditt program kan du också använda metoden `File.readlines`. Det här kommer att läsa in hela filen och spara varje rad som ett element i en array:
-
-```Ruby
-lines = File.readlines("textfil.txt")
-puts lines[3]  # Skriver ut den fjärde raden i filen
-```
-
-## Se även
-
-- [Ruby dokumentation om File klassen](https://ruby-doc.org/core-2.7.1/File.html)
-- [Skillshare kurs om using Ruby for programming](https://www.skillshare.com/search?query=ruby%20programming) (på engelska)
-- [Ruby för nybörjare: Läsa och skriva till filer](https://www.rubyguides.com/2015/05/working-with-files-ruby/) (på engelska)
+- [File-klassen](https://ruby-doc.org/core-2.7.0/File.html)
+- [Öppna en fil i Ruby](https://medium.com/@juandebravo94/opening-files-in-ruby-fbd3c805cba1)
+- [Flera sätt att läsa textfiler i Ruby](https://stackify.com/how-to-read-a-file-in-ruby/)

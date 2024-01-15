@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Bash: Berechnung eines Datums in der Zukunft oder Vergangenheit"
 simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,26 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Es gibt viele Gründe, warum man in der Bash Programmierung ein Datum in der Zukunft oder Vergangenheit berechnen würde. Vielleicht möchte man automatisierte Aufgaben ausführen, die an bestimmten Daten gebunden sind oder einfach nur das Datum für einen bestimmten Zweck in einem Skript berechnen.
 
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann in vielen Szenarien nützlich sein, z.B. bei der Planung von Terminen oder Veranstaltungen oder bei der Erstellung von automatisierten Skripten. Es ist daher wichtig zu wissen, wie man dies in der Bash-Programmierung durchführen kann.
+# Wie geht das
+Es gibt verschiedene Möglichkeiten, ein Datum in Bash zu berechnen. Eine Möglichkeit ist die Verwendung des Befehls `date`, der in den meisten Unix-basierten Systemen verfügbar ist. Hier ist ein Beispiel, wie man mithilfe von `date` ein Datum in der Zukunft berechnen kann:
 
-## Wie geht's
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, verwenden wir das `date` Kommando in Kombination mit der Option `-d` und dem gewünschten Datumsformat. Ein Beispielcode könnte so aussehen:
-
-```Bash
-date -d "27 September 2021" +"Der Tag in einer Woche ist %A, der 4. Oktober 2021"
+```bash
+date -d "+1 day"
 ```
 
-Dies würde uns das Ergebnis "Der Tag in einer Woche ist Montag, der 4. Oktober 2021" anzeigen. Beachten Sie, dass wir das gewünschte Datum im Zitatzeichen angeben und das gewünschte Datumsformat mit `+` angeben.
+Dieser Befehl gibt das Datum von morgen basierend auf dem aktuellen Datum aus. Man kann auch andere Zeitspannen angeben, zum Beispiel `+1 month` für das Datum in einem Monat.
 
-## Deep Dive
+Um ein Datum in der Vergangenheit zu berechnen, kann man einfach ein `-` vor der Zeitspanne verwenden, zum Beispiel `-1 day` für gestern.
 
-Die Verwendung von Optionen wie `-d` ermöglicht es uns, komplexe Berechnungen durchzuführen, um z.B. das Datum von einem bestimmten Tag aus zu bestimmen oder um die Zeitzone zu berücksichtigen. Wenn Sie tiefer in die Materie eintauchen möchten, können Sie die Dokumentation des `date` Kommandos lesen und verschiedene Datumsformate ausprobieren.
+# Tiefer eintauchen
+Wenn man genauer in die Berechnung von Daten in der Bash eintauchen möchte, gibt es mehrere Faktoren zu beachten. Zum einen sollte man sich mit der Syntax des `date` Befehls vertraut machen und die verschiedenen Optionen ausprobieren. Zum anderen sollte man sich mit dem Konzept von Zeitstempeln, Zeitformaten und Zeitzonen vertraut machen, da diese eine wichtige Rolle bei der Berechnung von Daten spielen.
 
-## Siehe auch
+Es ist auch wichtig zu beachten, dass die Ergebnisse je nach System variieren können, da das verwendete Datumssystem und die Einstellungen der Zeitzonen variieren können. Deshalb ist es wichtig, die Ergebnisse zu überprüfen und sich mit den gewünschten Ergebnissen vertraut zu machen.
 
-- [Bash-Programmierung lernen: Ein umfassender Leitfaden](https://www.linode.com/docs/guides/beginning-bash-scripting-guide/)
-- [Die `date`-Dokumentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Ein nützliches Tool zum Berechnen von Datumsangaben in der Bash-Programmierung](https://ostechnix.com/dealynum-bash-script-display-date-and-time-differences/)
+# Siehe auch
+- [Bash Referenzhandbuch - date Befehl](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html)
+- [Unix Date Command Tutorial mit Beispielen](https://www.baeldung.com/linux/date-command)
+- [Online-Datumsrechner für die Bash-Programmierung](https://alvinalexander.com/blog/post/linux-unix/how-calculate-dates-unix-linux-systems-shell-scripts/)

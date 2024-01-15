@@ -1,6 +1,7 @@
 ---
-title:                "C: Päivämäärän saaminen"
-simple_title:         "Päivämäärän saaminen"
+title:                "Hankkimassa nykyinen päivämäärä"
+html_title:           "C: Hankkimassa nykyinen päivämäärä"
+simple_title:         "Hankkimassa nykyinen päivämäärä"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,45 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi Päivämäärän Haku Kannattaa?
+## Miksi
+Kuinka saada nykyinen päivämäärä C-kielellä? Tässä artikkelissa käymme läpi syyn taustalla ja kuinka se on mahdollista toteuttaa.
 
-Päivämäärän haku on olennainen osa useimpien ohjelmien ja sovellusten toimintaa. Se mahdollistaa ajankohtaisen tiedon esittämisen ja käyttäjäkokemuksen parantamisen. Ilman päivämäärän hakua, ohjelmat olisivat vanhentuneita ja mahdollisesti jopa virheellisiä.
+## Kuinka tehdä
+Nykypäivän C-koodarit usein tarvitsevat käyttää nykyisen päivämäärän tietoa ohjelmissaan. Tämä voidaan suorittaa käyttämällä `time.h` kirjastoa ja sen sisältämää `time` rakennetta. Seuraavassa koodiesimerkissä luodaan muuttuja `current_time`, joka sisältää nykyisen päivämäärän tiedot.
 
-## Kuinka Päivämäärä Haetaan?
+```C 
+#include <stdio.h>
+#include <time.h>
 
-Päivämäärän hakeminen C-ohjelmassa on helppoa. Se vaatii vain muutaman rivin koodia ja C-kirjaston käyttöä. Alla on esimerkki koodista, joka hakee ja tulostaa nykyisen päivämäärän konsoliin.
+int main() {
+    // Luo tm-struct (rakenne) nykyiselle ajalle
+    time_t current_time;
+    time(&current_time);
+
+    // Tulostaa nykyisen ajan
+    printf("Nykyinen aika: %s", ctime(&current_time));
+
+    return 0;
+}
+```
+
+Output käskyn ajamisen jälkeen:
+
+```
+Nykyinen aika: Mon Mar 29 19:12:24 2021
+```
+
+## Syvällisempi sukellus
+`time.h` kirjasto sisältää useita hyödyllisiä funktioita ja rakenteita, jotka muokkaavat ja hallitsevat aikaa ja päivämääriä. Yksi näistä on `gmtime()` funktio, joka muuntaa ajan UTC-ajaksi (koordinoitu yleisaika) ja palauttaa pointerin `tm` rakenteeseen.
 
 ```C
-#include <stdio.h> 
-#include <time.h> 
+#include <stdio.h>
+#include <time.h>
 
-int main() 
-{ 
-    // Hakee nykyisen ajan ja tallentaa sen tietorakenteeseen 
-    time_t nykyinen_aika = time(NULL); 
+int main() {
+    // Luo tm-struct nykyiselle ajalle
+    time_t current_time;
+    time(&current_time);
 
-    // Muuttaa ajan paikalliseen aikamuotoon 
-    struct tm *paikallinen_aika = localtime(&nykyinen_aika); 
+    // Muuntaa ajan UTC-ajaksi ja tallentaa pointerin tm-structiin
+    struct tm *gmtm = gmtime(&current_time);
 
-    // Tulostaa päivämäärän konsoliin 
-    printf("Nykyinen päivämäärä on %s", asctime(paikallinen_aika)); 
+    // Tulostaa UTC-ajan
+    printf("UTC-aika: %s", asctime(gmtm));
 
-    return 0; 
-} 
+    return 0;
+}
 ```
 
-Ohjelman tuloste:
+Output käskyn ajamisen jälkeen:
 
 ```
-Nykyinen päivämäärä on Mon Aug 30 13:24:13 2021
+UTC-aika: Tue Mar 30 02:12:24 2021
 ```
 
-## Syvempi Päivämäärän Haku
+`time.h` kirjaston avulla voit myös manipuloida aikaa ja päivämääriä haluamallasi tavalla, kuten lisätä tai vähentää päiviä nykyisestä päivämäärästä. Tutustu tarkemmin kirjaston dokumentaatiosta löytyviin `time.h` funktioihin ja rakenteisiin saadaksesi lisätietoa.
 
-Päivämäärän hakeminen käyttäen C-kieltä voi olla joustavaa ja monipuolista. C-kirjastossa on useita funktioita, jotka mahdollistavat päivämäärän tarkemman määrittelyn ja muokkaamisen. Esimerkiksi `strftime()`-funktio mahdollistaa päivämäärän muotoilun halutunmukaisesti. Lisäksi voidaan käyttää erilaisia aikatietorakenteita, kuten `struct tm`, joka sisältää tietoa vuodesta, kuukaudesta, päivästä jne.
-
-## Katso Myös
-
-- [C-kirjaston ajan käsittely](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C-kielen ohjelmointiopas](https://www.tutorialspoint.com/cprogramming/index.htm)
-- [Tutorial: Getting Current Date and Time in C](https://www.programiz.com/c-programming/examples/current-date-time)
+## Katso myös
+- [`time.h` kirjaston dokumentaatio (englanniksi)](https://www.gnu.org/software/libc/manual/html_node/Calendar-Time.html#Calendar-Time)
+- [C-kieletutoriaalit (suomeksi)](https://www.cs.helsinki.fi/group/java/antti/c-opas-opettajille_index.html)

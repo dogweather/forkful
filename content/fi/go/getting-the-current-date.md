@@ -1,6 +1,7 @@
 ---
-title:                "Go: Nykyisen päivämäärän hankkiminen"
-simple_title:         "Nykyisen päivämäärän hankkiminen"
+title:                "Päivämäärän hakeminen tietokoneella"
+html_title:           "Go: Päivämäärän hakeminen tietokoneella"
+simple_title:         "Päivämäärän hakeminen tietokoneella"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -9,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi harrastaa nykyisen päivämäärän hakemista?
+## Miksi
 
-Go-ohjelmointi on noussut suureen suosioon viime vuosina sen yksinkertaisuuden ja tehokkuuden vuoksi. Yksi yleinen tehtävä, johon usein tarvitaan ohjelmointitaidot, on nykyisen päivämäärän hakeminen. Tämä voidaan tehdä helposti Go-kielellä ja tässä blogikirjoituksessa tarkastelemme tätä prosessia.
+Miksi haluaisit saada nykyisen päivämäärän? Käytettyjen ohjelmointikielten joukossaGo on yksi suosituimmista vaihtoehdoista tämän tehtävän suorittamiseen nykypäivänä. Voit käyttää tätä tietoa esimerkiksi sovelluksissa, jotka näyttävät nykyisen päivämäärän tai laskevat ajanjaksojen välistä aikaa.
 
-## Kuinka tehdä se?
+## Kuinka
 
-Nykyisen päivämäärän hakeminen voidaan suorittaa muutamalla rivillä Go-koodia. Käytämme "time" pakettia, joka sisältää kaikki tarvittavat toiminnot päivämäärän ja ajan hallintaan. Seuraavassa esimerkissä näet, kuinka voit helposti saada nykyisen päivämäärän ja tulostaa sen terminaaliin:
+Go: n avulla nykyisen päivämäärän saaminen on helppoa. Voit käyttää olemassa olevaa aikapakkausta ja sen tarjoamia toimintoja. Seuraava koodinpätkä näyttää, kuinka voit saada nykyisen päivämäärän ja tulostaa sen konsoliin:
 
 ```Go
 package main
@@ -26,25 +27,18 @@ import (
 )
 
 func main() {
-    // Haetaan nykyinen päivämäärä
-    nykyinenPaivamaara := time.Now()
-
-    // Muotoillaan halutun muotoon
-    muotoiltuPaivamaara := nykyinenPaivamaara.Format("02.01.2006")
-
-    // Tulostetaan terminaaliin
-    fmt.Println(muotoiltuPaivamaara)
+    t := time.Now()  // Haetaan nykyinen päivämäärä
+    fmt.Println(t)   // Tulostetaan nykyinen päivämäärä
 }
 ```
 
-Tämä koodi tulostaisi terminaaliin nykyisen päivämäärän muodossa "10.08.2021". Huomaa, että päivämäärän muotoilu tapahtuu muutamalla numerolla (02.01.2006), mikä voi olla hieman hämmentävää aluksi. Voit kuitenkin muokata muotoa halutulla tavalla kopioimalla ja liittämällä eri numerot. Esimerkiksi jos haluat tulostaa päivämäärän muodossa "08/10/2021", muotoilu olisi "01/02/2006".
+Koodin suorittamisen jälkeen saat tulosteen muodossa "2021-09-07 22:57:02.854745 +0300 EEST m=+0.000164655".
 
-## Syvällisempää tietoa
+## Syventyvä sukellus
 
-Nykyisen päivämäärän hankkiminen voi tuntua yksinkertaiselta tehtävältä, mutta Go-kielellä on paljon mahdollisuuksia ainutlaatuiseen muotoiluun ja mukauttamiseen. Käyttämällä "time" pakettia, voit myös hankkia tietoa, kuten kuukauden nimen tai viikonpäivän nimen. Voit jopa määrittää oman aikavyöhykkeesi, jos haluat saada päivämäärän eri aikavyöhykkeellä.
+Lisäksi aikapaketista löytyy useita muita toimintoja, kuten nykyisen päivän, kuukauden tai vuoden hakeminen erikseen sekä päiväyksen muotoilun muuttaminen. Voit tutustua tarkemmin aikapaketin tarjoamiin toimintoihin ja löytää ne, jotka parhaiten sopivat tarpeisiisi.
 
 ## Katso myös
 
-- [Ajan ja päivämäärän hallinta Go-kielellä](https://gobyexample.com/time)
-- [Virallinen "time" paketin dokumentaatio](https://golang.org/pkg/time/)
-- [Tutustu Go-kielen perusteisiin](https://go.dev/learn/)
+- [Go:n aikapaketin dokumentaatio](https://golang.org/pkg/time/)
+- [Lyhyt oppimäärä Go:sta](https://tour.golang.org/welcome/1)

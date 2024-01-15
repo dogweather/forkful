@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Análise de HTML"
+title:                "Análise de HTML"
+html_title:           "Rust: Análise de HTML"
 simple_title:         "Análise de HTML"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,55 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que você deveria se envolver com a análise de HTML?
+## Por que
 
-A análise de HTML é uma habilidade valiosa para qualquer programador, especialmente para aqueles que trabalham com aplicativos web. Saber como analisar e extrair dados de documentos HTML pode ajudar a criar aplicativos mais robustos e dinâmicos. Com o aumento da popularidade da linguagem de programação Rust, é importante que os programadores também dominem essa habilidade em Rust.
+Existem muitas razões pelas quais alguém pode querer aprender a fazer o parse (analisar) de HTML em Rust. Pode ser para criar um web crawler (rastreador de páginas na web), criar um web scraper (extrator de informações em páginas web) para coletar dados ou até mesmo para criar um site ou aplicativo web personalizado.
 
-## Como fazer a análise de HTML em Rust
+## Como fazer
 
-Para iniciar a análise de HTML em Rust, você precisará importar a biblioteca "html-parser" no seu projeto. Em seguida, use a função "parse" para analisar o conteúdo HTML, como mostrado no exemplo abaixo:
+Fazer o parse de HTML em Rust pode ser mais simples do que imagina. Primeiro, precisamos importar a biblioteca "html" em nosso código:
 
 ```Rust
-use html_parser::HtmlParser;
-let html = r#"
-<html>
-    <head>
-        <title>Exemplo de página web</title>
-    </head>
-    <body>
-        <div>
-            <h1>Título da página</h1>
-            <p>Este é um parágrafo na página</p>
-        </div>
-    </body>
-</html>
+use html::{parse_document, parse_fragment, HTMLElement};
+```
+
+Em seguida, podemos usar a função parse_document para analisar um documento HTML completo:
+
+```Rust
+let document = r#"
+    <html>
+        <head>
+            <title>Rust HTML Parser</title>
+        </head>
+        <body>
+            <h1>Welcome to my website!</h1>
+            <div>
+                <p>This is an example of parsing HTML in Rust.</p>
+            </div>
+        </body>
+    </html>
 "#;
-
-// Analisando o conteúdo HTML
-let parsed = HtmlParser::new(html).parse();
-
-// Imprimindo o título da página
-println!("Título da página: {}", parsed.header.title.text);
-
-// Imprimindo o texto do parágrafo
-println!("Texto do parágrafo: {}", parsed.body.children[0].children[1].text);
+let parsed_document = parse_document(document).unwrap();
 ```
 
-A saída do código acima seria:
+Também podemos usar a função parse_fragment para analisar apenas uma parte específica de um documento HTML:
 
+```Rust
+let fragment = r#"
+    <div>
+        <p>This is an example of parsing HTML in Rust.</p>
+    </div>
+"#;
+let parsed_fragment = parse_fragment(fragment).unwrap();
 ```
-Título da página: Exemplo de página web
-Texto do parágrafo: Este é um parágrafo na página
-```
 
-## Mergulho profundo na análise de HTML
+A partir daqui, podemos usar as funções e métodos da biblioteca para acessar e manipular os elementos HTML, como obter o conteúdo de um elemento específico ou adicionar uma classe a ele.
 
-A análise de HTML em Rust é feita de forma muito semelhante a outras linguagens de programação, por meio do parsing do conteúdo HTML e da extração dos dados desejados. No entanto, uma vantagem do Rust é a sua performance e segurança, que garantem um processo de análise mais rápido e estável.
+## Mergulho profundo
 
-Além disso, a biblioteca "html-parser" possui uma documentação detalhada e recursos avançados, como suporte a parsing de HTML incompleto e manipulação de elementos HTML.
+A biblioteca "html" em Rust é baseada na especificação HTML DOM (Document Object Model), o que significa que a estrutura e os métodos da biblioteca são bastante similares aos do JavaScript. Isso torna a aprendizagem e uso da biblioteca mais intuitivo para aqueles que já têm experiência em fazer o parse de HTML usando outras linguagens.
+
+Além disso, a biblioteca também suporta parsing de HTML5, o que significa que é possível analisar documentos HTML mais complexos e modernos com facilidade.
 
 ## Veja também
 
-- [Documentação da biblioteca html-parser](https://crates.io/crates/html-parser)
-- [Tutorial de análise de HTML em Rust](https://dev.to/joelrfcosta/parsing-html-in-rust-4o7j)
-- [Exemplos de código em Rust para análise de HTML](https://github.com/search?q=Rust+html+parser)
+- [Documentação da biblioteca html](https://docs.rs/html/)
+- [Exemplos de uso da biblioteca html](https://github.com/servo/html5ever/tree/master/html5ever/examples)
+- [Tutorial de Rust para iniciantes](https://www.rust-lang.org/pt-BR/learn/get-started)

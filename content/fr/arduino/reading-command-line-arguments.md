@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Arduino: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Si vous êtes nouveau dans le monde de la programmation Arduino, vous vous demandez peut-être pourquoi vous devriez apprendre à lire les arguments de ligne de commande. Cela peut sembler intimidant, mais c'est en fait une compétence utile qui vous permettra de personnaliser et de contrôler votre programme en lui donnant des instructions spécifiques à chaque exécution. Dans cet article, nous allons vous expliquer comment lire les arguments de ligne de commande et comment cela peut être utile pour vos projets Arduino.
+Si vous êtes un passionné de programmation et que vous souhaitez utiliser votre Arduino pour de nouveaux projets, savoir comment lire les arguments de la ligne de commande peut être très utile. Cela vous permettra de créer des programmes plus flexibles et dynamiques en utilisant des valeurs que vous pouvez passer en tant qu'arguments.
 
 ## Comment faire
 
-La première étape pour lire les arguments de ligne de commande est de les inclure dans votre code Arduino. Pour ce faire, vous devez utiliser la fonction ```Arduino.start```. Par exemple, si vous avez besoin de lire un argument numérique, vous pouvez utiliser la fonction ```parseInt()``` pour le convertir en un nombre. Voici un exemple de code pour lire un argument de ligne de commande et l'afficher sur le moniteur série :
+Pour lire les arguments de la ligne de commande sur votre Arduino, vous devrez utiliser la fonction `Serial.readString()` pour capturer les entrées provenant du moniteur série. Ensuite, vous pourrez manipuler ces entrées en utilisant des instructions conditionnelles et d'autres fonctions, selon ce que vous souhaitez en faire. Voici un exemple de code pour lire deux arguments (nom et âge) et les afficher sur le moniteur série :
 
 ```
-Arduino.start(argc, argv);
-int num = parseInt(argv[1]);
-Serial.println("L'argument est : ");
-Serial.println(num);
+Arduino String nom;
+int age;
+
+void setup()
+{
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // Attendre la connexion avec le moniteur série.
+  }
+}
+ 
+void loop() 
+{
+  if (Serial.available()) {
+    nom = Serial.readString(); // Lire le premier argument (nom).
+    age = Serial.parseInt(); // Lire le deuxième argument (âge) et le convertir en entier.
+    Serial.print("Bonjour "); // Afficher le nom.
+    Serial.print(nom);
+    Serial.print(", tu as ");
+    Serial.print(age);
+    Serial.print(" ans.");
+  }
+}
 ```
 
-Ensuite, vous pouvez envoyer cet argument depuis votre ordinateur vers votre carte Arduino en utilisant l'invite de commande ou le terminal. Par exemple, si vous utilisez l'invite de commande de Windows, vous pouvez taper la commande suivante :
+Si vous entrez "Jean 25" dans le moniteur série, le résultat affichera "Bonjour Jean, tu as 25 ans."
 
-```
-monprogramme.exe 123
-```
+## Plongée plus profonde
 
-Cela enverra la valeur numérique 123 en tant qu'argument à votre programme Arduino, qui sera alors lu et affiché sur le moniteur série.
-
-## Deep Dive
-
-Maintenant que vous savez comment lire les arguments de ligne de commande, voici quelques informations supplémentaires sur leur fonctionnement. Les arguments de ligne de commande peuvent être utiles si vous ne voulez pas modifier en permanence votre code Arduino pour chaque exécution ou si vous souhaitez que votre programme fonctionne de manière dynamique en fonction des valeurs d'entrée. De plus, vous pouvez également utiliser des arguments de ligne de commande pour déboguer votre programme en affichant des valeurs spécifiques au lieu de les définir dans votre code.
-
-Il est important de noter que la lecture des arguments de ligne de commande ne fonctionne pas sur toutes les cartes Arduino. En général, cela fonctionne mieux avec les cartes basées sur un processeur AVR, telles que les cartes Uno et Mega. De plus, vous pouvez également utiliser des bibliothèques tierces pour simplifier la lecture des arguments de ligne de commande et ajouter des fonctionnalités supplémentaires.
+La fonction `Serial.readString()` lit toute la chaîne jusqu'au premier caractère de fin de ligne (\n). Si vous souhaitez lire seulement une partie de la chaîne ou utiliser un caractère de fin de ligne différent, vous pouvez utiliser la fonction `Serial.readStringUntil()` en spécifiant le caractère souhaité comme paramètre. De plus, si vous souhaitez récupérer des valeurs numériques précises en utilisant `Serial.parseInt()`, vous devez vous assurer que votre chaîne ne contient que des chiffres. Sinon, vous obtiendrez une valeur de 0.
 
 ## Voir aussi
 
-Maintenant que vous savez comment lire les arguments de ligne de commande, voici quelques liens utiles pour en apprendre davantage sur la programmation Arduino :
-
-- Apprenez à utiliser la fonction parseInt() dans la [documentation Arduino](https://www.arduino.cc/reference/en/language/functions/conversion/parseint/).
-- Découvrez comment utiliser des bibliothèques tierces pour gérer les arguments de ligne de commande avec [le guide de SparkFun](https://learn.sparkfun.com/tutorials/command-line-arguments-explained).
-- Améliorez vos compétences en programmation Arduino avec [les tutoriels de OpenClassrooms](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c-sur-arduino).
+- [Documentation officielle d'Arduino sur Serial.readString()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/) 
+- [Documentation officielle d'Arduino sur Serial.parseInt()](https://www.arduino.cc/reference/en/language/functions/conversion/parseint/)
+- [Tutoriel vidéo sur la lecture des arguments de la ligne de commande avec Arduino](https://www.youtube.com/watch?v=JAt43TSgzNM)

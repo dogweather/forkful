@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Skapa en tillfällig fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Haskell: Skapa en tillfällig fil"
 simple_title:         "Skapa en tillfällig fil"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,32 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skapa en tillfällig fil i Haskell kan vara användbart när du behöver bearbeta data temporärt och vill undvika att permanent lagra det på din dator. Detta kan vara särskilt användbart vid hantering av stora datamängder som kan ta upp mycket utrymme.
+Skapande av temporära filer är ett användbart verktyg i Haskell-programmering eftersom det tillåter program att temporärt spara data eller utföra operationer utan att permanent förändra filsystemet. Detta kan vara användbart för att testa kod eller för att hantera tillfällig data i en applikation.
 
 ## Så här gör du
 
-För att skapa en temporär fil i Haskell, kan du använda funktionen "with System.IO.Temp", som är en del av Haskell biblioteket för att hantera temporära filer. Detta bibliotek ger också funktioner för att skapa filer av olika typer, såsom textfiler, binärfiler eller kanske CSV-filer.
-
 ```Haskell
-import System.IO.Temp
 import System.IO
+import System.Directory
+import System.IO.Temp
+import Control.Exception (finally)
 
 main = do
-  withSystemTempFile "sample.txt" $ \tempFile handle -> do
-    hPutStrLn handle "Det här är en tillfällig fil som skapas i Haskell."
-    putStrLn $ "Tillfällig fil skapad på plats: " ++ tempFile
+  withTempFile "tempfile.txt" $ \tempFile handle -> do
+    -- Gör något med temporär filen, t.ex. skriv data till den
+    hPutStrLn handle "Det här är en temporär fil"
+    hClose handle
+  -- När withTempFile är klar så raderas den temporära filen automatiskt
 ```
 
-När du kör detta program kommer det att skapa en textfil med namnet "sample.txt" på din dator. Innehållet i filen kommer att vara "Det här är en tillfällig fil som skapas i Haskell.". Efter programmet är klart kommer filen automatiskt att raderas.
+Output:
+```
+Innehåll i "tempfile.txt":
+Det här är en temporär fil
 
-## Lite djupare
+"tempfile.txt" raderad
+```
 
-Det finns flera anledningar till varför man skulle vilja skapa en tillfällig fil i Haskell. En av de vanligaste är att hantera stora datamängder som behöver processas temporärt. Genom att använda en temporär fil istället för att bearbeta data direkt på din dator, kan du undvika att belasta ditt system och riskera att det kraschar.
+## Djupdykning
 
-Man kan också använda tillfälliga filer för att testa kod och funktioner innan de implementeras i huvudprogrammet. På så sätt kan man undvika att göra permanenta förändringar i koden tills dess att den är helt färdig och testad.
+I Haskell kan det finnas flera sätt att skapa en temporär fil. En av de vanligaste är att använda funktionen `withTempFile` från modulen `System.IO.Temp`. Denna funktion tar ett filnamn som argument och returnerar en hanterare för filen samt skapar filen i det temporära mappen. När hanteraren används så kommer all data skrivet till filen att sparas i den temporära filen och när hanteraren stängs så raderas filen automatiskt.
+
+Det finns också andra funktioner såsom `withTempDirectory` och `openTempFile` för att skapa temporära mappar och filer. Det är viktigt att notera att dessa temporära filer och mappar endast finns så länge som programmet körs och kommer automatiskt att raderas när programmet avslutas.
 
 ## Se även
 
-- [Haskell biblioteket för hantering av temporära filer](https://hackage.haskell.org/package/temporary)
-- [En guide till Haskell för nybörjare](https://arewehaskellyet.com/)
-- [Här finns fler praktiska användningsområden för temporära filer i Haskell](https://wiki.haskell.org/Temporary_files)
+- [Officiell documentation för `System.IO.Temp` modulen](https://hackage.haskell.org/package/temporary-1.3.0.1/docs/System-IO-Temp.html)
+- [Haskell för nybörjare](https://wiki.haskell.org/Beginners)

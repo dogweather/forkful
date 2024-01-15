@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Fish Shell recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,33 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you've ever had to work with data, chances are you've encountered a CSV file. CSV (Comma Separated Values) is a popular file format for storing tabular data, and it's commonly used in business, finance, and research. While it may seem intimidating at first, working with CSV files can actually be quite simple and efficient with the help of Fish Shell programming.
+CSV (Comma Separated Values) files have become a popular format for storing and exchanging data due to their simplicity and compatibility with various software applications. With the rise of data analysis and management, knowing how to work with CSV files using Fish Shell can be a valuable skill to have.
 
 ## How To
 
-To get started, make sure you have Fish Shell installed on your system. You can install it using the command `curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher`. Once you have Fish Shell installed, follow the steps below to start working with CSV files.
-
-1. Navigate to the directory where your CSV file is located using the `cd` command.
-2. To view the content of your CSV file, use the command `cat <file_name>.csv`.
-3. To filter specific columns in the CSV file, use the `cut` command along with the `-c` option. For example, `cut -c 1,3 <file_name>.csv` will display the first and third column of the CSV file.
-4. You can also use the `grep` command to search for specific data in the CSV file. For example, `grep "John" <file_name>.csv` will display all rows containing the name "John".
-5. To extract data from the CSV file and save it in a new file, use the `awk` command. For example, `awk -F "," '{print $1}' <file_name>.csv > new_file.csv` will extract the first column of the CSV file and save it in a new file.
-
-Here's a sample output for the command `awk -F "," '{print $1}' <file_name>.csv`:
+Working with CSV files in Fish Shell is straightforward and can be done using built-in commands and functions. Here are some coding examples with corresponding sample output to help you get started:
 
 ```Fish Shell
-1
-2
+# Listing the contents of a CSV file
+csvlist file.csv
+
+# Sorting a CSV file by a specific column
+csvsort -c 2 file.csv
+
+# Counting the number of rows in a CSV file
+csvcount file.csv
+```
+
+Output:
+```
+First Name,Last Name,Age
+John,Doe,30
+Jane,Smith,25
+Adam,Jones,35
+
+Last Name,First Name,Age
+Jones,Adam,35
+Doe,John,30
+Smith,Jane,25
+
 3
-4
 ```
 
 ## Deep Dive
 
-While the above commands cover the basic operations of working with CSV files in Fish Shell, there are many more advanced features and options available. These include sorting data using the `sort` command, joining multiple CSV files using the `join` command, and manipulating data using the `sed` command. Additionally, Fish Shell has a built-in CSV parser that makes it easier to work with CSV files without having to use external commands.
+Fish Shell has a unique feature that allows for easy manipulation and filtering of CSV data using its web-like navigation syntax. This allows you to access and modify specific elements within a CSV file without the need for complicated code. You can learn more about this feature and its various uses by referring to Fish Shell's official documentation.
 
-## See Also
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [awk: A Language for Pattern Processing](https://www.gnu.org/software/gawk/manual/html_node/index.html)
-- [grep: How to Search for Text in Files](https://www.lifewire.com/how-to-use-grep-to-search-for-text-in-files-3572073)
+See Also
+- [Fish Shell CSV Documentation](https://fishshell.com/docs/current/cmds/csv.html)
+- [CSV Format Explained](https://www.computerhope.com/issues/ch001356.htm)
+- [Advanced CSV Manipulation Techniques](https://www.dataquest.io/blog/csv-tutorial-advanced/)

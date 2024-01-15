@@ -1,6 +1,7 @@
 ---
-title:                "Go: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज को डाउनलोड करना"
+html_title:           "Go: एक वेब पेज को डाउनलोड करना"
+simple_title:         "एक वेब पेज को डाउनलोड करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun?
 
-वेब पेज को डाउनलोड करने का मुख्य कारण है कि आप आप आपकी पसंद की जानकारी को विभिन्न प्रकार के साधनों के माध्यम से एक स्थान से एक स्थान पर आसानी से पहुंच सकते हैं।
+Jab aap internet par surf karte hain, aapne shayad notice kiya hoga ki kuch websites ke content ko offline mode mein bhi access kiya ja sakta hai. Iska sabse common example hai web pages ko download karna. Aap kuch important information ko offline mode mein access kar sakte hain jab aap koi web page download karte hain. Iss tarah se aap bina internet connection ke bhi web page par content ko padh sakte hain.
 
-## कैसे करें
+## Kaise Karein?
 
-इसके लिए आपको गो कोड का उपयोग करना होगा। नीचे दिए गए कोड ब्लॉक में आप विभिन्न तरीकों से वेब पेज को डाउनलोड कर सकते हैं।
+Web page ko download karne ke liye, aapko Go programming language ka use karna hoga. Yahaan mein aapko kuch simple steps batane jaa raha hu jisse aap web page download kar sakte hain.
+
+Sabse pehle, aapko "net/http" library ko import karna hoga. Iss library mein "Get" function ko use karke aap kisi bhi website ka content download kar sakte hain. Jaise ki, ```Go
+res, err := http.Get("website ka URL")
+```
+Iske baad, aap "io/ioutil" library ko import karna hoga, jisse aap downloaded content ko read karna sakte hain. Jaise ki, ```Go
+data, err := ioutil.ReadAll(res.Body)
+```
+Iss tarah aap downloaded content ko access kar sakte hain. Code ka sample output neeche diya gaya hai.
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "io/ioutil"
-  "net/http"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
 func main() {
-  // वेब पेज को डाउनलोड करने के लिए इस्तेमाल किया जा सकता है
-  response, err := http.Get("https://www.example.com")
-  if err != nil {
-    fmt.Println("डाउनलोड करने में त्रुटि हुई।")
-  }
-  defer response.Body.Close()
-  
-  // जानकारी को स्ट्रिंग रूप में अद्यतन करने के लिए इस्तेमाल किया जा सकता है
-  body, err := ioutil.ReadAll(response.Body)
-  if err != nil {
-    fmt.Println("पाठ विश्लेषण में त्रुटि हुई।")
-  }
-  fmt.Println(string(body))
+	res, err := http.Get("https://www.google.com")
+	if err != nil {
+		fmt.Println("Error while downloading!")
+	}
+	data, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		fmt.Println("Error while reading!")
+	}
+	fmt.Println(string(data))
 }
 ```
 
-## गहराई में
+## Deep Dive
 
-वेब पेज को डाउनलोड करने के और भी कई तरीके हैं, जैसे कि प्रोटोकॉल, कुकीज़, पथ प्राप्त करने आदि। आप इन तरीकों को समझने और अपने कोड में आधार बनाने के लिए गहराई में जानकारी प्राप्त कर सकते हैं।
+HTTP library mein "Get" function ka use karne se pehle, humein website ka URL specify karna hota hai. Isse hum request ko server tak pahunchate hain aur usse website ka content download karte hain. Iss process mein, humein ek response object aur ek error object milta hai. Agar response me koi bhi error hota hai, toh hum us error ko handle kar sakte hain. Agar sab kuch sahi hota hai, toh "ioutil" library se hum downloaded content ko read kar sakte hain.
 
-## देखें भी
+## Zaroor Dekhein
 
-- [गो कोड का डॉक्यूमेंटेशन](https://golang.org/doc/)
-- [वेब पेज को डाउनलोड करने के लिए गो पैकेज](https://godoc.org/golang.org/x/net/html)
-- [गो प्रोग्रामिंग सीखने के लिए लिखित ट्यूटोरियल](https://gobyexample.com/)
+* Go Official Website: https://golang.org/
+* Net/Http Library Documentation: https://golang.org/pkg/net/http/
+* Ioutil Library Documentation: https://golang.org/pkg/io/ioutil/
+
+## Ona

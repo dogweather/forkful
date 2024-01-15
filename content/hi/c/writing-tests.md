@@ -1,5 +1,6 @@
 ---
-title:                "C: परीक्षाएं लिखना"
+title:                "परीक्षाएं लिखना"
+html_title:           "C: परीक्षाएं लिखना"
 simple_title:         "परीक्षाएं लिखना"
 programming_language: "C"
 category:             "C"
@@ -9,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Why
 
-आज के समय में, हर एक C प्रोग्रामर को अपने कोड को गिरावटों से बचाने के लिए टेस्ट लिखना बहुत जरूरी है। आपको दृढ़ यकीन है कि आपका कोड ठीक से काम कर रहा है या नहीं, साथ ही आपकी दूसरे लोगों को भी आसानी से आपका कोड समझने में मदद मिल सकता है। टेस्ट लिखने से आप अपना कोड सुधार सकते हैं और उसमें बग की संभावनाओं को कम कर सकते हैं। इसलिए, टेस्ट लिखना एक बहुत ही महत्वपूर्ण काम है जिससे आप अपने कोड को और भी बेहतर बना सकते हैं। 
+Tests are an essential part of any programming project, including C. They help ensure that our code works as intended, identify bugs early on, and make it easier to maintain and troubleshoot our code in the long run. In other words, writing tests can save us a lot of time and headaches in the future.
 
-## कैसे करें
+## How To
 
-टेस्ट लिखना एक आसान प्रक्रिया है। सबसे पहले, आपको अपने कोड को किसी विशेष फंक्शन के रूप में डिवाइड करना होगा। इसके बाद, आपको वह टेस्ट करना होगा कि वह फंक्शन सही तरीके से काम करता है या नहीं। आप उस फंक्शन को कई अलग-अलग दांव देकर टेस्ट कर सकते हैं। आप फंक्शन के मान के साथ अलग-अलग स्थितियों को देख सकते हैं और उनमें से आप भते कोड की गिरावटों को निकाल सकते हैं। आप यहां दिए गए कोड ब्लॉक में इसकी एक उदाहरण देख सकते हैं। 
+```C
+#include<stdio.h>
 
-```C 
-#include <stdio.h>
-
-int add(int x, int y) {
-    return x + y;
+// A function that adds two numbers
+int add(int num1, int num2) {
+    return num1 + num2;
 }
 
 int main() {
-    // पहला टेस्ट
-    printf("जोड़ देने पर: %d\n", add(2, 3));
-    // दूसरा टेस्ट
-    printf("जोड़ देने पर: %d\n", add(10, -5));
+    // Testing the add function
+    int result = add(3, 7);
+    if (result == 10) {
+        printf("Test Passed!");
+    } else {
+        printf("Test Failed.");
+    }
 }
 ```
 
-उपरोक्त कोड में, हमने add() फंक्शन को विभिन्न प्रकार के दांवों के
+When writing tests, we want to cover different scenarios and edge cases to ensure our code is robust. This is done by setting up input values and comparing the output with our expected result. If they match, our test passes, and if not, our test fails. With this approach, we can catch bugs early on and have confidence in our code.
+
+## Deep Dive
+
+While writing tests may seem like extra work, it can actually save us time in the long run. They serve as living documentation, providing us with examples of how our code should be used. This is useful for future maintenance or when collaborating with others on the project. Additionally, some tools like Valgrind can help us catch memory leaks and other errors that may not be immediately noticeable.
+
+## See Also
+
+- [TDD in C: Getting Started](https://prakhar.me/articles/tdd-in-c/#)
+- [Unit Testing in C](https://www.thecrazyprogrammer.com/2018/03/unit-testing-c-programming-language.html)
+- [Using Valgrind for C Debugging](https://medium.com/@christinasc/using-valgrind-for-c-debugging-b01e9832da4a)

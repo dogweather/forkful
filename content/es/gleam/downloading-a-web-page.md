@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Descargando una página web"
+title:                "Descargando una página web"
+html_title:           "Gleam: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué deberías descargar una página web? 
+## Por qué
 
-Descargar una página web puede ser útil para una variedad de propósitos, desde realizar análisis de datos hasta realizar pruebas en el desarrollo de una aplicación web. También puede ser una excelente manera de acceder a contenido sin conexión.
+Si eres desarrollador web, es posible que necesites descargar una página web para hacer pruebas o realizar cambios en ella. Con Gleam, puedes automatizar este proceso y ahorrar tiempo y esfuerzo.
 
-## Cómo hacerlo: 
+## Cómo hacerlo
 
-Para descargar una página web en Gleam, puedes utilizar la función `httpc.get` y especificar la URL de la página que deseas descargar. Por ejemplo: 
+Para descargar una página web con Gleam, sigue estos sencillos pasos:
 
-```Gleam 
-program = httpc.get("https://www.mi-pagina.com") 
-``` 
+1. Importa el módulo `http` de Gleam.
+2. Crea una función `download_webpage` que tome la URL de la página como argumento.
+3. Hace una solicitud GET a la URL usando la función `http.get`.
 
-Una vez que tengas la página descargada, puedes utilizar el módulo `html_parser` para analizar su contenido y extraer la información que necesites. Por ejemplo:
+`` `Gleam
+import http
 
-```Gleam
-parsed_html = html_parser.parse(program.body)
-title = parsed_html."div > h1".inner_text
-```
+fn download_webpage(url) {
+    http.get(url)
+} `` `
 
-En este ejemplo, estamos utilizando el selector de etiqueta CSS para extraer el texto dentro de la etiqueta `h1` dentro de un `div` en la página.
+4. Ahora puedes llamar a la función con la URL de la página que quieres descargar.
 
-## Profundizando: 
+`` `Gleam
+download_webpage("https://www.gleam.dev")`` `
 
-La función `httpc.get` también permite especificar cabeceras HTTP adicionales y realizar acciones como seguir redireccionamientos o establecer límites de tiempo de espera.
+5. Para guardar el contenido de la página en un archivo, puedes utilizar el módulo `file` de Gleam y la función `file.write`.
 
-Además, el módulo `html_parser` ofrece una variedad de métodos para manipular y extraer información de manera más precisa y específica de una página web.
+`` `Gleam
+import http
+import file
 
-## Ver también: 
+fn download_webpage(url) {
+    http.get(url)
+}
 
-- Documentación de `httpc.get`: https://gleam.run/modules/httpc.html#get-2 
-- Documentación de `html_parser`: https://gleam.run/modules/html_parser.html
+let response = download_webpage("https://www.gleam.dev")
+file.write("webpage.html", response.body)`` `
+
+¡Listo! Ahora tienes el contenido de la página web descargado y guardado en un archivo.
+
+## Profundizando
+
+Si quieres personalizar tu proceso de descarga de páginas web, puedes utilizar las funciones y métodos adicionales del módulo `http` de Gleam. Por ejemplo, puedes especificar encabezados personalizados en tu solicitud GET o descargar imágenes y otros recursos incrustados en la página web.
+
+## Ver también
+
+- Documentación oficial de Gleam sobre el módulo `http`: https://gleam.run/modules/http.html
+- Tutorial sobre cómo descargar una página web con Gleam: https://www.gleam.dev/tutorials/web_download/

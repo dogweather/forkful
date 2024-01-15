@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 未来や過去の日付を計算する"
-simple_title:         "未来や過去の日付を計算する"
+title:                "未来または過去の日付を計算する"
+html_title:           "Arduino: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -9,118 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-誰もが時折、特定の日付を計算する必要があります。たとえば、将来のある日までの経過日数を知る必要があったり、過去のある日からの日数を計算したい場合があります。Arduinoプログラミングを通して、日付の計算ができるようになれば、自動化されたタスクやプロジェクトの開発に役立ちます。
+## Y udo: なぜArduinoプログラムを使って日付を計算するか
 
-## How To
-日付の計算はプログラムを使用する必要があります。今回はArduinoを使用しますが、同じ原則は他のプログラミング言語でも使えるものです。
+Arduinoプログラムを使って日付を計算することで、未来または過去の特定の日付を簡単に特定することができます。これは、特定の日付に基づいて特定のアクションを実行する必要がある場合や、カレンダーイベントを自動的に更新する必要がある場合に役立ちます。
 
-まずは、指定した日付から過去または未来の日付を計算する方法をご紹介します。以下のコードをArduinoに入力し、実行してみましょう。
+## H w T: Arduinoプログラムで日付を計算する方法
 
-```
-Arduino ...
+```Arduino
+#include <Time.h> // Timeライブラリをインポート
 
-# 過去の日付の計算
-#include <Time.h>
+//現在の日付と未来の日付の計算をする関数
+void future_date_calculation() {
+  int current_day = day(); // 現在の日付を取得
+  int current_month = month(); // 現在の月を取得
+  int current_year = year(); // 現在の年を取得
 
-// 今日の日付を設定
-int today = 2019/12/01;
-
-// 過去の日付を計算する関数
-void calculateDate(int day, int month, int year) {
-  int pastDate = day + 1;
-  int pastMonth = month;
-  int pastYear = year;
-
-  // 月の計算
-  if (day == 31 && month == 1) {
-    pastDate = 1;
-    pastMonth = 12;
-    pastYear--;
-  } else if (day == 31 && month == 3) {
-    // 閏年の判定
-    if (year % 4 == 0) {
-      pastMonth--;
-      pastDate = 29;
-    } else {
-      pastMonth--;
-      pastDate = 28;
-    }
-  } else if (day == 1) {
-    pastMonth--;
-    pastDate = 31;
-  } else {
-    pastDate--;
+  // 1ヶ月後の日付を計算
+  int future_month = current_month + 1;
+  int future_year = current_year;
+  if (future_month > 12) { // 12ヶ月を超えてしまった場合、翌年になるので年を1つ増やす
+    future_month = 1;
+    future_year++;
   }
 
-  // 出力
-  Serial.print("過去の日付は：");
-  Serial.print(pastDate);
+  // 日付を出力
+  Serial.print("今日の日付は: ");
+  Serial.print(current_day);
   Serial.print("/");
-  Serial.print(pastMonth);
+  Serial.print(current_month);
   Serial.print("/");
-  Serial.println(pastYear);
+  Serial.print(current_year);
+  Serial.print("です。");
+  Serial.print("一ヶ月後の日付は: ");
+  Serial.print(current_day);
+  Serial.print("/");
+  Serial.print(future_month);
+  Serial.print("/");
+  Serial.print(future_year);
+  Serial.print("です。");
 }
 
 void setup() {
-  Serial.begin(9600);
-  calculateDate(today, 12, today);
-  // 今日の日付から1日前の日付を計算
+  Serial.begin(9600); // シリアルモニターを開始
+  setTime(12, 00, 00, 01, 01, 2020); // 現在の時刻を設定（必要に応じて変更してください）
 }
 
 void loop() {
-  // 無限ループ
+  future_date_calculation(); // 関数を呼び出して日付を計算
+  delay(1000); // 1秒待つ
 }
 ```
 
-このコードを実行すると、シリアルモニタに過去の日付が表示されるはずです。
+上記のコードを実行すると、シリアルモニターに以下のように出力されます。
 
-同じように、今日の日付から未来の日付を計算するには、以下のコードを入力し、実行します。
+> 今日の日付は: 1/1/2020です。一ヶ月後の日付は: 1/2/2020です。
 
-```
-Arduino ...
-// 未来の日付の計算
-#include <Time.h>
+## D p D: Arduinoプログラムでの日付の計算の詳細
 
-// 今日の日付を設定
-int today = 2019/12/01;
+この記事では、Timeライブラリを使用してArduinoプログラムで日付を計算する方法を紹介しました。Timeライブラリには、日付や時刻を取得、計算、表示するための便利な機能が含まれています。コード内で ```setTime()``` 関数を使用することで、現在の時刻を設定できます。また、```day()```、```month()```、```year()```などの関数を使うことで、現在の日付や月、年を取得することができます。
 
-// 未来の日付を計算する関数
-void calculateDate(int day, int month, int year) {
-  int futureDate = day + 1;
-  int futureMonth = month;
-  int futureYear = year;
+日付を計算する際は、現在の日付を取得し、必要に応じて月や年を調整してから出力するようにしましょう。また、過去の日付の計算も同様の方法で行うことができます。
 
-  // 月の計算
-  if (day == 28 && month == 2) {
-    // 閏年の判定
-    if (year % 4 == 0) {
-      futureMonth++;
-      futureDate = 29;
-    }
-  } else if (day == 30 && month == 4 || day == 30 && month == 6 || day == 30 && month == 9 || day == 30 && month == 11) {
-    futureMonth++;
-    futureDate = 1;
-  } else if (day == 31 && month == 12) {
-    futureYear++;
-    futureMonth = 1;
-    pastDate = 1;
-  } else if (day == 31) {
-    futureMonth++;
-    futureDate = 1;
-  } else {
-    futureDate++;
-  }
+## See Also: 同じような記事やリソースを参考にしてみてください
 
-  // 出力
-  Serial.print("未来の日付は：");
-  Serial.print(futureDate);
-  Serial.print("/");
-  Serial.print(futureMonth);
-  Serial.print("/");
-  Serial.println(futureYear);
-}
-
-void setup() {
-  Serial.begin(9600);
-  calculateDate(today,
+- [Arduino Time Libraryのドキュメンテーション](https://www.arduino.cc/reference/en/libraries/time/)
+- [未来の特定の日付を計算する方法 (英語)](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Scheduler)
+- [過

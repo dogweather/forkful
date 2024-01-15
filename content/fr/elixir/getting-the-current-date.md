@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Elixir: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,70 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Obtenir la date actuelle peut sembler une tâche simple, mais il est toujours important de savoir comment le faire en tant que développeur Elixir. Dans cet article, nous allons explorer les différentes façons de récupérer la date actuelle en utilisant Elixir.
+De nos jours, l'utilisation de la date et de l'heure actuelles est essentielle dans de nombreuses applications et systèmes informatiques. En utilisant la programmation en Elixir, obtenir la date actuelle peut être fait en un rien de temps grâce à la simplicité et la puissance du langage.
 
-## Comment faire
+## Comment Faire
 
-Pour récupérer la date actuelle en Elixir, nous pouvons utiliser la fonction `Date.utc_today/0` qui renvoie un objet `Date` représentant le jour actuel en temps universel coordonné (UTC). Il est important de noter que cette fonction renvoie la date au format `YYYY-MM-DD` en tant que chaîne de caractères.
-
-```Elixir
-iex> Date.utc_today()
-~D[2020-12-14]
+```elixir
+Date.utc_today()
+#=> ~D[2020-11-17]
 ```
 
-Nous pouvons également utiliser la fonction `DateTime.utc_now/0` pour obtenir la date et l'heure actuelles en UTC.
+Pour obtenir la date et l'heure exactes, nous pouvons utiliser la fonction `utc_today()` de la bibliothèque standard Elixir. Cela renvoie un objet Date avec la date en format ISO 8601. Si nous voulons afficher la date et l'heure en utilisant un fuseau horaire spécifique, nous pouvons utiliser la fonction `now()` et lui donner le fuseau horaire comme argument, comme ceci :
 
-```Elixir
-iex> DateTime.utc_now()
-~U[2020-12-14 11:22:24.175270Z]
+```elixir
+DateTime.now("Europe/Paris")
+#=> ~U[2020-11-17 15:42:30Z]
 ```
 
-Nous pouvons également formater la date et l'heure renvoyées en utilisant les fonctions `strftime/2` et `strptime/3`.
+L'utilisation de la fonction `now()` renvoie un objet DateTime avec la date et l'heure actuelles dans le fuseau horaire spécifié. Nous pouvons également obtenir la date et l'heure actuelles en utilisant le fuseau horaire du système en utilisant la fonction `local_now()`, comme ceci :
 
-```Elixir
-iex> Date.utc_today() |> strftime("%A, %B %d, %Y")
-"Monday, December 14, 2020"
-
-iex> DateTime.utc_now() |> strptime("%B %d, %Y %I:%M %p")
-{:ok,
- ~U[2020-12-14 08:22:24.180860],
- "~B %d, %Y %H:%M %Z", 14}
+```elixir
+DateTime.local_now()
+#=> ~U[2020-11-17 10:42:30Z]
 ```
 
-## Plongée en profondeur
+## Plongée en Profondeur
 
-Maintenant que nous savons comment obtenir la date actuelle en utilisant Elixir, nous pouvons également explorer d'autres fonctionnalités telles que la comparaison de dates, la manipulation de dates et la gestion des fuseaux horaires.
+Maintenant que nous savons comment obtenir la date et l'heure actuelles en utilisant Elixir, explorons brièvement comment cela fonctionne en coulisses. Les fonctions que nous avons utilisées (`utc_today()`, `now()` et `local_now()`) font partie d'un module appelé `DateTime` qui fait partie de la bibliothèque standard Elixir.
 
-Par exemple, nous pouvons utiliser l'opérateur `<` pour comparer deux dates et déterminer si l'une est antérieure à l'autre.
+Ce module utilise une bibliothèque externe appelée `tzdata` pour gérer les fuseaux horaires et garantir que les dates et heures renvoyées sont précises et cohérentes. Il utilise également une fonctionnalité intégrée d'Elixir appelée `Erlang Calendar` pour manipuler les dates et les heures.
 
-```Elixir
-iex> ~D[2020-12-14] < ~D[2020-12-15]
-true
-```
+## Voir Aussi
 
-De plus, nous pouvons utiliser les fonctions `Date.add/2` et `Date.diff/2` pour ajouter ou soustraire des jours à une date et pour calculer la différence en jours entre deux dates.
-
-```Elixir
-iex> Date.add(~D[2020-12-14], 5)
-~D[2020-12-19]
-
-iex> Date.diff(~D[2020-12-14], ~D[2020-12-10])
-4
-```
-
-En ce qui concerne les fuseaux horaires, Elixir dispose d'une bibliothèque appelée `tzdata` qui gère les informations sur les fuseaux horaires. Nous pouvons utiliser la fonction `timex` pour convertir une date dans un fuseau horaire spécifique.
-
-```Elixir
-iex> DateTime.utc_now() |> Timex.to_datetime("America/New_York")
-~U[2020-12-14 06:22:24.175270Z]
-```
-
-## Voir aussi
-
-Pour en savoir plus sur la manipulation des dates en Elixir, consultez les ressources suivantes :
-
-- [Documentation officielle Elixir sur les dates](https://hexdocs.pm/elixir/DateTime.html)
-- [Documentation officielle Timex sur les dates et les heures](https://hexdocs.pm/timex/api-reference.html)
-- [Documentation officielle tzdata sur les fuseaux horaires](https://hexdocs.pm/tzdata/readme.html)
-
-Maintenant, vous êtes prêt à manipuler les dates en Elixir de manière efficace et précise !
+- Documentation officielle d'Elixir pour le module `DateTime` : https://hexdocs.pm/elixir/Date.html
+- Liste des fuseaux horaires pris en charge par la bibliothèque `tzdata` : https://hexdocs.pm/tzdata/readme.html
+- Documentation officielle d'Erlang pour les opérations de calendrier : http://erlang.org/doc/man/calendar.html

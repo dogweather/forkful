@@ -1,6 +1,7 @@
 ---
-title:                "C++: Säännöllisten lausekkeiden käyttäminen"
-simple_title:         "Säännöllisten lausekkeiden käyttäminen"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "C++: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttäisit säännöllisiä lausekkeita ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä ohjelmoijille, jotka haluavat hakea ja manipuloida tekstidataa. Ne voivat auttaa sinua suorittamaan monimutkaisia hakuja ja korvauksia lyhyessä ajassa.
+Regular expressiont ovat tehokas työkalu tekstin jäsentämiseen ja muokkaamiseen. Niiden avulla voidaan helposti etsiä, korvata ja poistaa tiettyjä merkkijonoja, mikä säästää aikaa ja vaivaa manuaaliselta käsittelyltä.
 
-## Miten aloittaa käyttämään säännöllisiä lausekkeita?
+## Miten
 
-Säännöllisten lausekkeiden käyttöönotto C++-ohjelmoinnissa on helppoa. Sinun tarvitsee vain sisällyttää "regex" -kirjasto ja käyttää "std::regex" -objektia. Voit sitten määrittää haluamasi säännöllisen lausekkeen ja soveltaa sitä tekstiin käyttämällä "std::regex_search" ja "std::regex_replace" -funktioita. Alla on esimerkki, joka etsii kaikki sanat, jotka alkavat kirjaimella "a" ja korvaa ne merkkijonolla "b".
+Regular expressionit koostuvat erilaisista säännöistä, joiden avulla määritetään, mitä tiettyä merkkijonoa halutaan etsiä tai muokata. Tässä esimerkissä käytetään `std::regex` -kirjastoa, joka tarjoaa valmiita funktioita regular expressionien käyttämiseen.
 
 ```C++
-#include <iostream>
-#include <regex>
+// Alustetaan merkkijono, johon regular expressionia käytetään
+std::string teksti = "Tämä on esimerkki kodin osoitteesta: Käytäväkatu 5";
 
-int main() {
-  std::string teksti = "abba apple orange";
-  std::regex sääntö ("a\\w+");
-  std::cout << std::regex_replace(teksti, sääntö, "b");
+// Luodaan sääntö, jolla haetaan kaikki numerot merkkijonosta
+std::regex sääntö("\\d+");
+
+// Alustetaan muuttuja löydetyille merkkijonoille
+std::smatch osumat;
+
+// Etsitään merkkijonosta kaikki numerot säännön avulla
+while (std::regex_search(teksti, osumat, sääntö)) {
+    // Tulostetaan löydetty merkkijono
+    std::cout << osumat.str() << std::endl;
+
+    // Siirrytään seuraavaan löydettyyn kohtaan merkkijonossa
+    teksti = osumat.suffix().str();
 }
 ```
 
-Tulostus:
+Tulostaa:
+
 ```
-bbba bbble bbrbge
+5
 ```
 
-## Syvällisempi tarkastelu säännöllisten lausekkeiden käytöstä
+## Syventävä tieto
 
-Säännöllisten lausekkeiden käyttäminen voi olla monimutkaista, mutta erittäin hyödyllistä, kun tulee tarve löytää tieto tietyistä merkkijonoista tai suorittaa monimutkaisempia korvauksia. Voit käyttää säännöllisiä lausekkeita hienosäätääksesi hakutuloksia, kuten määrittämällä haetut merkit ja numerot tai käyttämällä säännöllisiä lausekkeita sisällyttämään tai poistamaan sanoja tekstistä.
+Regular expressionit käyttävät erilaisia merkkejä ja sääntöjä, joilla voidaan tarkentaa haettavaa tai muokattavaa merkkijonoa. Tässä muutamia esimerkkejä yleisesti käytetyistä merkeistä ja säännöistä:
 
-On myös hyvä tutkia erilaisia ​​säännöllisiä lausekkeita ja niiden merkityksiä, jotta ymmärrät paremmin miten ne toimivat ja miten voit käyttää niitä tehokkaasti.
+- `.` - Tarkoittaa minkä tahansa merkin paitsi rivin vaihtumisen.
+- `?` - Tarkoittaa, että edellinen merkki tai sääntö voi esiintyä nolla tai yhden kerran.
+- `*` - Tarkoittaa, että edellinen merkki tai sääntö voi esiintyä nolla tai useamman kerran.
+- `+` - Tarkoittaa, että edellinen merkki tai sääntö esiintyy vähintään yhden kerran.
+- `()` - Luo ryhmän, jolla voi olla omia erityisiä sääntöjä.
 
-# Katso myös
+Regular expressionien käyttö vaatii hieman totuttelua, mutta niiden avulla on mahdollista tehdä erittäin monimutkaisiakin hakuja ja muokkauksia teksteihin.
 
-- [C++ regex-esimerkit](https://www.regular-expressions.info/examples.html)
-- [C++ std::regex-dokumentaatio](https://en.cppreference.com/w/cpp/regex)
-- [Säännöllisten lausekkeiden käyttö C++:ssa](https://www.geeksforgeeks.org/regular-expressions-in-c-regex-part-1/)
+## Katso myös
+
+- [C++ std::regex -dokumentaatio](https://en.cppreference.com/w/cpp/regex)
+- [Regular expression cheat sheet](https://www.debuggex.com/cheatsheet/regex/cpp)

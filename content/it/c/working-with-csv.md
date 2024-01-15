@@ -1,5 +1,6 @@
 ---
-title:                "C: Lavorare con i file csv"
+title:                "Lavorare con i file csv"
+html_title:           "C: Lavorare con i file csv"
 simple_title:         "Lavorare con i file csv"
 programming_language: "C"
 category:             "C"
@@ -10,77 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Se sei un programmatore che lavora con dati, probabilmente ti sei imbattuto in file CSV almeno una volta nella tua carriera. Questo formato, che sta per Comma Separated Values, è ampiamente utilizzato per rappresentare dati in modo strutturato e facilmente leggibile. Scopriamo insieme perché dovresti imparare a lavorare con CSV utilizzando il linguaggio di programmazione C.
 
-Se sei un programmatore che lavora con dati tabulari, è molto probabile che tu abbia avuto a che fare con il formato CSV. I file CSV (Comma-Separated Values) sono un modo molto comune per archiviare e condividere dati strutturati in una forma leggibile sia per esseri umani che per computer. Imparare a lavorare con CSV può essere molto utile per gestire grandi quantità di dati in modo efficiente.
-
-## Come Fare
-
-Per lavorare con file CSV in C, è necessario utilizzare una libreria esterna come "csvparser" o "libcsv". In questo esempio, useremo la libreria "csvparser" per leggere e scrivere dati da e su file CSV.
+## Come
+In C, per lavorare con CSV, abbiamo bisogno di una libreria esterna chiamata "csv.h". Dopo averla inclusa nel tuo codice, puoi utilizzare le sue funzioni per aprire un file CSV, leggere i dati e manipolarli. Ecco un'esempio di come possiamo leggere le righe di un file CSV utilizzando questa libreria:
 
 ```C
 #include <stdio.h>
-#include "csvparser.h"
+#include <csv.h>
 
-int main() {
-    FILE *csv_file;
-    char *csv_line;
-    CsvParser *csv_parser;
-    CsvRow *csv_row;
-
-    // Apriamo il file CSV in modalità di lettura
-    csv_file = fopen("dati.csv", "r");
-
-    // Creiamo un nuovo parser per il file CSV
-    csv_parser = CsvParser_new("dati.csv", ",", 1);
-
-    // Finché ci sono righe nel file, leggiamole una alla volta
-    while ((csv_row = CsvParser_getRow(csv_parser))) {
-        // Stampiamo il numero di campi nella riga
-        printf("Numero di campi nella riga: %d\n", CsvParser_getNumFields(csv_row));
-
-        // Leggiamo ed elaboriamo i dati di ogni campo
-        const char **csv_fields = CsvParser_getFields(csv_row);
-
-        for (int i = 0 ; i < CsvParser_getNumFields(csv_row) ; i++) {
-            // Stampiamo il valore del campo
-            printf("Campo %d: %s\n", i, csv_fields[i]);
-        }
-
-        // Distruggiamo la riga corrente
-        CsvParser_destroy_row(csv_row);
+int main(){
+    FILE *fp = fopen("data.csv", "r"); // apre il file in modalità lettura
+    struct CSV *csv = CSV_new(fp); // crea un oggetto CSV utilizzando il file aperto
+    
+    while(CSV_has_next(csv)){ // loop finché ci sono ancora righe nel file
+        struct CSV_row *row = CSV_next(csv); // otteniamo la riga successiva
+        // stampiamo ogni valore della riga utilizzando la funzione CSV_get
+        printf("Nome: %s, Cognome: %s, Età: %s\n", CSV_get(row, 0), CSV_get(row, 1), CSV_get(row, 2));
     }
-
-    // Chiudiamo il file e distruggiamo il parser
-    fclose(csv_file);
-    CsvParser_destroy(csv_parser);
-
+    
     return 0;
 }
 ```
-Output:
+
+Utilizzando questo codice su un file CSV con queste righe:
+
 ```
-Numero di campi nella riga: 3
-Campo 0: John
-Campo 1: Smith
-Campo 2: 25
-Numero di campi nella riga: 3
-Campo 0: Jane
-Campo 1: Doe
-Campo 2: 30
-Numero di campi nella riga: 3
-Campo 0: Bob
-Campo 1: Johnson
-Campo 2: 35
+Nome,Cognome,Età
+Marco,Rossi,25
+Anna,Bianchi,30
+```
+
+Otterremo l'output:
+
+```
+Nome: Marco, Cognome: Rossi, Età: 25
+Nome: Anna, Cognome: Bianchi, Età: 30
 ```
 
 ## Approfondimento
+Oltre alla lettura e scrittura di un file CSV, la libreria "csv.h" offre molte altre funzioni per manipolarne i dati. Inoltre, se necessario, è anche possibile modificare il codice sorgente della libreria per adattarla alle tue esigenze. Ci sono anche altre librerie disponibili che offrono funzionalità simili, quindi è importante capire la complessità dei tuoi dati e scegliere la libreria più adatta per il tuo scopo.
 
-La libreria "csvparser" offre diverse funzionalità utili per lavorare con file CSV. Ad esempio, è possibile specificare il delimitatore dei campi e se il file ha un'intestazione. Inoltre, la libreria gestisce automaticamente il rilevamento delle righe vuote e dei valori citati tra virgolette. Per ulteriori informazioni, consulta la documentazione della libreria.
-
-La gestione dei file CSV può diventare piuttosto complessa se si considerano i diversi formati di delimitazione dei campi, le possibili righe vuote e le citazioni dei valori. Tuttavia, una volta padroneggiata la libreria "csvparser", lavorare con CSV diventerà più semplice e sicuro.
-
-## Vedi Anche
-
-- [Documentazione della libreria csvparser](https://github.com/robertpostill/csvparser)
-- [Esempi di utilizzo della libreria csvparser](https://github.com/robertpostill/csvparser/tree/master/tests)
-- [Tutorial sulla gestione dei file CSV in C](https://www.programmingworld.tech/2018/11/working-with-csv-in-c.html)
+## Vedi anche
+- [Documentazione della libreria csv.h](https://csv.hackage.haskell.org/package/csv.3.0.1/docs/Data-Csv.html)
+- [Esempi di codice per lavorare con CSV in C](https://github.com/alvinhochun/c-frameplate/blob/master/example/csv.c)

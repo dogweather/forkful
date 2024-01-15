@@ -1,6 +1,7 @@
 ---
-title:                "C: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "C: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué escribir un archivo de texto en C
+## ¿Por qué escribir un archivo de texto en C?
 
-Escribir un archivo de texto en C puede ser una herramienta útil para guardar información importante o resultados de un programa. Además, puede ayudar a hacer que tus programas sean más versátiles y fáciles de compartir con otras personas.
+Escribir un archivo de texto en C puede ser útil para almacenar datos o configuraciones que se pueden acceder y modificar fácilmente desde un programa. También puede ser una forma eficiente de guardar información en un formato legible para los usuarios.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para escribir un archivo de texto en C, primero debes abrir el archivo utilizando la función `fopen()`. Luego, puedes escribir en el archivo utilizando la función `fprintf()` y para finalizar, debes cerrar el archivo con la función `fclose()`. Aquí hay un ejemplo de cómo escribir "¡Hola mundo!" en un archivo de texto llamado "ejemplo.txt":
+Para escribir un archivo de texto en C, primero se debe abrir el archivo utilizando la función "fopen" y especificando el nombre del archivo y el modo de apertura. Luego, se pueden utilizar las funciones "fprintf" o "fputs" para escribir datos en el archivo, seguidas de la función "fclose" para cerrar correctamente el archivo.
 
-```
-#include<stdio.h>
+```C
+#include <stdio.h>
 
-int main()
-{
-    FILE *archivo = fopen("ejemplo.txt", "w");
-    fprintf(archivo, "¡Hola mundo!");
-    fclose(archivo);
-    return 0;
+int main() {
+  FILE *archivo;
+  char texto[] = "¡Hola mundo!";
+  // Abrir archivo en modo de escritura
+  archivo = fopen("archivo.txt", "w");
+  // Escribir en el archivo
+  fprintf(archivo, "%s", texto);
+  // Cerrar el archivo
+  fclose(archivo);
+  return 0;
 }
 ```
 
-Si ejecutamos este programa, se creará un archivo de texto llamado "ejemplo.txt" con el texto "¡Hola mundo!" dentro de él.
+**Salida:**
 
-##Profundizando
+```
+[archivo.txt]
+¡Hola mundo!
+```
 
-Cuando usas la función `fopen()`, puedes especificar el modo en el cual quieres abrir el archivo. En el ejemplo anterior, usamos "w" como modo, que significa que el archivo se abrirá para escritura y se creará si no existe. Pero también hay otros modos disponibles, como "r" para lectura o "a" para añadir contenido al final del archivo. Puedes consultar la documentación de la función `fopen()` para conocer más sobre los diferentes modos disponibles y sus usos.
+## Profundizando
 
-Además, también es importante tener en cuenta que si el archivo ya existe y lo abres en modo de escritura, todo su contenido anterior se sobrescribirá. Si deseas preservar el contenido anterior del archivo, debes abrirlo en modo de añadir ("a") en lugar de modo de escritura ("w").
+Los archivos de texto se pueden abrir en diferentes modos, como lectura, escritura o anexar. También es importante tener en cuenta la ruta del archivo, que puede ser una ruta absoluta o una ruta relativa al directorio actual. Además, al escribir en un archivo, es importante asegurarse de que los datos estén formateados correctamente, ya que un solo error puede corromper todo el archivo.
 
-##Ver también
+## Ver también
 
-- Documentación de `fopen()`: https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm
-- Documentación de `fprintf()`: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- Documentación de `fclose()`: https://www.tutorialspoint.com/c_standard_library/c_function_fclose.htm
+- [Funciones de archivo en C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Tutorial completo de C](https://www.learn-c.org/) 
+- [Documentación oficial de C](https://devdocs.io/c/)

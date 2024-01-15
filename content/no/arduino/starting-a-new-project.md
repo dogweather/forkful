@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Arduino: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å starte et nytt prosjekt med Arduino kan være en morsom og spennende måte å lære om elektronikk og programmering på. Med Arduino kan du lage alt fra enkle LED-lyskilder til komplekse roboter eller interaktive kunstverk. Det er også en rimelig måte å utforske og eksperimentere med nye ideer på. 
 
-## Hvordan
-Å starte et nytt prosjekt med Arduino krever noen grunnleggende trinn. Først må du ha en Arduino-kontroller og en datamaskin med Arduino-programvare installert. Deretter kan du følge disse trinnene for å programmere og teste ut enkle kretser på Arduino:
+Å starte et nytt prosjekt kan være både spennende og utfordrende. Ved å bruke Arduino, en åpen kildekode elektronikk plattform, kan du utforske og skape dine egne interaktive innretninger og roboter. Det er en flott måte å lære om elektronikk og programmering, samtidig som du har det gøy.
+
+## Slik gjør du det
+
+Du kan programmere en Arduino ved å følge disse enkle trinnene:
 
 ```Arduino
-// Opprett en variabel for å styre en LED-pinne
-int ledPin = 9;
+// Sett "LED" til å bli styrt av pin 13
+int LED = 13;
 
 void setup() {
-  // Sett LED-pinne som utgang
-  pinMode(ledPin, OUTPUT);
+// Sett pin 13 som utgang
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
-  // Slå på LED
-  digitalWrite(ledPin, HIGH);
-  delay(1000); // Vent i 1 sekund
-  // Slå av LED
-  digitalWrite(ledPin, LOW); 
-  delay(1000); // Vent i 1 sekund
+// Skru på LED'en i 1 sekund
+  digitalWrite(LED, HIGH);
+  delay(1000);
+// Skru av LED'en i 1 sekund
+  digitalWrite(LED, LOW);
+  delay(1000);
 }
 ```
-Dette enkle programmet vil slå av og på en LED-pinne hvert sekund. Du kan også legge til flere funksjoner og sensorkomponenter for å lage mer avanserte prosjekter. Arduino har et stort utvalg av sensorer, motorer, skjermer og andre komponenter som du kan bruke i prosjektene dine.
 
-## Dykk dypere
-Når du blir mer fortrolig med Arduino-programmering, kan du ta et dypere dykk og utforske mer avanserte funksjoner og konsepter. Dette kan inkludere å lære om analog og digital signalbehandling, kommunikasjon med eksterne enheter via seriell eller WiFi, og å lage avanserte brukergrensesnitt. Det er også viktig å forstå grunnleggende elektronikk og hvordan komponentene fungerer sammen med Arduino.
+Dette eksempelet vil få en LED-lys til å blinke på og av hvert sekund. Ved å endre tiden i `delay` funksjonen, kan du endre hvor lenge LED'en skal være på eller av.
+
+## Gå dypere
+
+Når du starter et nytt prosjekt med Arduino, er det viktig å ha en god idé og en tydelig plan for hvordan du ønsker å implementere den. Tenk på komponenter du trenger, som sensorer eller motorer, og hvordan du skal koble dem til Arduino. Det er også nyttige ressurser som Arduino dokumentasjon og online samfunn som kan hjelpe deg når du står fast.
 
 ## Se også
+
 - [Offisiell Arduino nettside](https://www.arduino.cc/)
-- [Liste over Arduino-prosjekter for nybegynnere](https://maker.pro/arduino/projects-for-beginners) 
-- [Arduino-programvare og dokumentasjon](https://www.arduino.cc/en/software)
+- [Arduino dokumentasjon](https://www.arduino.cc/reference/en/)
+- [Arduino forum](https://forum.arduino.cc/)

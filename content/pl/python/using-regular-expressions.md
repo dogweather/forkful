@@ -1,5 +1,6 @@
 ---
-title:                "Python: Używanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Python: Używanie wyrażeń regularnych"
 simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Python"
 category:             "Python"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Używanie wyrażeń regularnych jest niezbędnym narzędziem w pracy programisty Python. Pozwala ono na wykonywanie złożonych operacji na tekście, takich jak wycinanie lub zamiana określonych wzorców. Dzięki wyrażeniom regularnym można również znacznie przyspieszyć przetwarzanie tekstów, co przekłada się na efektywność i wydajność kodu.
+Jeśli często pracujesz z tekstem w swoim kodzie, używanie wyrażeń regularnych jest niezwykle przydatne. Dzięki nim możesz z łatwością wyszukiwać i manipulować wzorcami w tekście, co pozwala zaoszczędzić dużo czasu i wysiłku.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Wyrażenia regularne są realizowane w Python za pomocą modułu `re`. Najpierw należy go zaimportować, a następnie można korzystać z jego funkcji, takich jak `search()`, `findall()` czy `sub()`.
+Instalacja biblioteki re w Pythonie jest prosta, wystarczy użyć polecenia `pip install re`. Aby rozpocząć używanie wyrażeń regularnych, należy zaimportować bibliotekę `re` do swojego kodu:
 
 ```Python
 import re
+```
 
-# Przykładowy tekst
-text = "Python jest niesamowitym językiem programowania!"
+Następnie można zacząć używać funkcji dostępnych w bibliotece re do operacji na wyrażeniach regularnych. Na przykład, aby znaleźć wszystkie wystąpienia danego wzorca w tekście, możemy użyć funkcji `findall()`:
 
-# Wyszukanie wszystkich słów rozpoczynających się od litery "p":
-results = re.findall("p\w+", text)
-
-# Zastąpienie znaku "!" na "!!!":
-new_text = re.sub("!", "!!!", text)
-
-# Wyszukanie pierwszej wystąpienia słowa "niesamowitym":
-match = re.search("niesamowitym", text)
-
-# Wyświetlenie wyników
-print(results)
-print(new_text)
-print(match.group())
+```Python
+text = "JavaScript jest niezwykle popularnym językiem programowania"
+matches = re.findall("JavaScript", text)
+print(matches)
 ```
 
 Output:
-```Python
-['Python', 'programowania']
-Python jest niesamowitym językiem programowania!!!
-niesamowitym
+
+```
+['JavaScript']
 ```
 
-## Głębsza analiza
+Możemy również wykorzystać wyrażenia regularne do wykonywania złożonych operacji na tekście, takich jak podmiana wzorców, dzielenie tekstu na fragmenty czy sprawdzanie poprawności formatowania. Wszystko to zależy od naszych potrzeb i możliwości używania wyrażeń regularnych.
 
-Wyrażenia regularne posiadają bardzo rozbudowany zestaw składni, które pozwalają na przeprowadzanie bardziej zaawansowanych operacji na tekstach. Na przykład można używać wyrażeń regularnych do znajdowania i zastępowania wyrażeń numerycznych lub dat.
+## Dogłębna analiza
 
-Dzięki temu narzędziu można również tworzyć bardziej elastyczne i odporne na błędy algorytmy przetwarzania tekstu. Jest to całkiem użyteczne w sytuacji, gdy pracujemy z dużymi i złożonymi zbiorami danych.
+Wyrażenia regularne są bardzo potężnym narzędziem, ale wymagają pewnej nauki i praktyki, aby nauczyć się je wykorzystywać w optymalny sposób. Jest wiele różnych elementów i funkcji, które można wykorzystać do dopasowania wzorców w tekście, dlatego warto poświęcić trochę czasu na zgłębienie ich wiedzy na ten temat.
+
+Zawsze pamiętaj, że wyrażenia regularne są case-sensitive, co oznacza, że różnica między dużymi i małymi literami będzie wpływać na dopasowanie wzorców. Dlatego dobrą praktyką jest zawsze zmienianie wszystkich liter na małe lub świadome uwzględnienie różnych wariantów w swoich wyrażeniach regularnych.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja modułu `re` w Pythonie: https://docs.python.org/3/library/re.html
-- Wprowadzenie do wyrażeń regularnych w Pythonie: https://realpython.com/regex-python/
-- Poradnik na temat wyrażeń regularnych w Pythonie: https://www.tutorialspoint.com/python/python_regular_expressions.htm
+* [Dokumentacja biblioteki re w Pythonie](https://docs.python.org/3/library/re.html)
+* [Interaktywny kurs wyrażeń regularnych](https://regexone.com/) (język angielski)
+* [Książka "Wyrażenia regularne w Pythonie" (PDF)](https://www.cl.cam.ac.uk/~mgk25/download/teaching/12-13/regexps.pdf)

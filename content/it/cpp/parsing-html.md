@@ -1,6 +1,7 @@
 ---
-title:                "C++: Analisi sintattica dell'html"
-simple_title:         "Analisi sintattica dell'html"
+title:                "Analisi del codice html"
+html_title:           "C++: Analisi del codice html"
+simple_title:         "Analisi del codice html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,55 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La parsificazione dell'HTML è un'attività importante per molte ragioni: può aiutare a estrarre dati importanti da pagine web o a garantire che il codice HTML scritto sia ben strutturato e valido.
+Parseggiare l'HTML è un'attività importante per chiunque voglia lavorare con il web. Questo processo consente di estrarre informazioni utili dai siti web e di analizzarle in modo programmatico per creare strumenti, applicazioni o raccolte di dati.
 
 ## Come Fare
 
-Per iniziare a parsificare l'HTML in C++, è necessario utilizzare una libreria esterna come "libhtmlparse". Di seguito è riportato un esempio di codice che mostra come utilizzare questa libreria per estrarre il contenuto di una pagina web e stamparlo a schermo:
+Per iniziare a parseggiare l'HTML in C++, è necessario utilizzare una libreria esterna come "libxml". Una volta installata la libreria, è possibile utilizzare le sue funzionalità per analizzare il codice HTML e estrarre le informazioni desiderate. Ecco un esempio di codice per parsare un sito web e stampare il titolo della pagina:
 
 ```C++
-#include <iostream>
-#include <libhtmlparse/htmlparse.h>
+#include <libxml/HTMLparser.h>
+#include <libxml/tree.h>
 
-int main(){
-    // Inizializza il parser e specifica l'URL della pagina web
-    HTMLParser parser;
-    parser.set_url("https://www.example.com");
-    
-    // Esegui il parsing della pagina
-    parser.parse();
-    
-    // Estrarre il contenuto della pagina
-    std::string content = parser.get_content();
-    
-    // Stampa il contenuto a schermo
-    std::cout << content << std::endl;
-    
-    return 0;
+int main() {
+    const char *url = "https://www.esempio.com";
+    htmlDocPtr doc = htmlParseFile(url, NULL);
+    xmlChar *title = xmlGetProp(doc->xmlRootNode, (xmlChar *)"title");
+    printf("Il titolo della pagina è: %s\n", title);
+
+    xmlFreeDoc(doc);
 }
 ```
 
-Ecco un esempio di output che si potrebbe ottenere:
+Esempio di output:
 
 ```
-<html>
-  <head>
-    <title>Esempio</title>
-  </head>
-  <body>
-    <p>Questo è un esempio di contenuto di una pagina web</p>
-  </body>
-</html>
+Il titolo della pagina è: Esempio Sito Web
 ```
 
-## Approfondimento
+## Deep Dive
 
-La parsificazione dell'HTML è un processo molto complesso che coinvolge l'esecuzione di diversi passaggi, come la rimozione di commenti e l'elaborazione dei tag. Inoltre, è importante tenere conto delle differenze tra i diversi standard di HTML.
+Parsing l'HTML può diventare molto complesso e ricco di sfide, soprattutto quando si tratta di siti web complessi con una struttura di codice più articolata. Per questo motivo, è importante essere ben preparati prima di iniziare l'attività. Alcune cose da tenere in considerazione sono:
 
-Per saperne di più sui dettagli della parsificazione dell'HTML e su come affrontare le sfide che possono sorgere durante questo processo, è possibile consultare la documentazione di "libhtmlparse" o altri tutorial online.
+- Imparare a utilizzare le funzionalità della libreria scelta in modo efficace per estrarre le informazioni desiderate senza errori.
+- Gestire adeguatamente la struttura ad albero dell'HTML per accedere ai diversi elementi e attributi.
+- Tenere conto delle possibili differenze di formattazione tra le varie pagine web e adottare una strategia flessibile.
+
+È importante anche tenere presente che, come per ogni attività di data-scraping, è consigliato rispettare le norme di cortesia sul web e non utilizzare questa tecnica per scopi illeciti. Inoltre, è opportuno essere consapevoli delle modifiche indicate nei termini di servizio del sito web da cui si sta estraendo il codice HTML, in modo da evitare problemi legali.
 
 ## Vedi Anche
 
-- Documentazione di libhtmlparse: https://github.com/user/libhtmlparse/docs
-- Tutorial sulla parsificazione dell'HTML in C++: https://www.example.com/tutorial
-- Esempi di codice per la parsificazione dell'HTML: https://www.example.com/code
+- [Libreria libxml](http://www.xmlsoft.org/)
+- [Parsing HTML con C++](https://www.learncpp.com/cpp-tutorial/182-html-parsing/)

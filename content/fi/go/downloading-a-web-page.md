@@ -1,5 +1,6 @@
 ---
-title:                "Go: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Go: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Go"
 category:             "Go"
@@ -11,55 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa sovelluksissa on tarve ladata ja käsitellä web-sivuja, esimerkiksi webskraping tai tiedon keräämiseksi. Tässä blogipostauksessa käymme läpi kuinka voit ladata web-sivuja Go-kielellä.
+Web-sivujen lataaminen on tärkeä osa verkkokehitystä ja se on usein tarpeen, kun haluamme hakea tietoja sivuilta tai luoda omia sovelluksia, jotka käyttävät verkkosisältöä.
 
 ## Miten
 
-Go-kielellä web-sivun lataaminen on yksinkertaista käyttäen `net/http` pakettia. Käytännössä käytämme `Get` funktiota joka ottaa vastaan URL:n parametrina ja palauttaa vastauksen ja mahdollisten virheiden lisäksi. Alla on esimerkkejä lataamisesta ja vastauksen käsittelystä.
+Lataaessa verkkosivua Go-kielellä, voit käyttää `http.Get()` -funktiota, joka palauttaa vastauksen ja virheen. Esimerkiksi:
 
 ```Go
-// Importoi paketti
-import "net/http"
+res, err := http.Get("https://www.esimerkkisivusto.com")
+```
+Tämän jälkeen voit käyttää `res` -muuttujaa saadaksesi tiedon latauksen tilasta ja sisällöstä. Esimerkiksi voit tulostaa vastauksena saadun tekstin konsolille:
 
-// Luodaan uusi HTTP pyyntö ja tarkistetaan mahdolliset virheet
-resp, err := http.Get("https://www.example.com")
-if err != nil {
-    // Käsittelyä virheille
-    fmt.Println("Virhe latauksessa:", err)
-}
-defer resp.Body.Close()
-
-// Luetaan vastaus ja tulostetaan se konsoliin
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    fmt.Println("Virhe luettaessa vastausta:", err)
-}
+```Go
+body, err := ioutil.ReadAll(res.Body)
 fmt.Println(string(body))
 ```
+Tässä olemme käyttäneet myös `ioutil` -pakettia tiedon lukemiseksi `res.Body` -muuttujasta.
 
-Käytännössä voimme myös haluta ladata vain tietyn tyyppisiä tiedostoja tai käsitellä vastausta eri tavalla. Esimerkiksi alla olevassa koodissa käytetään `File` nimeä URL:n perässä jotta vain tiedostot ladataan.
+## Syväsukellus
 
-```Go
-// Luodaan uusi pyyntö ja määritetään tiedoston nimi
-resp, err := http.Get("https://www.example.com/File")
-if err != nil {
-    fmt.Println("Virhe latauksessa:", err)
-}
-defer resp.Body.Close()
-
-// Luetaan ja tallennetaan tiedostoon
-out, err := os.Create("example.html")
-defer out.Close()
-body, err := ioutil.ReadAll(resp.Body)
-out.Write(body)
-```
-
-## Syvällinen sukellus
-
-Kuten huomaamme yllä, Go-kielessä web-sivun lataaminen on hyvin yksinkertaista. Voimme myös käsitellä muita HTTP-pyyntöön liittyviä asioita, kuten asettaa otsikot tai ladata tiedostoja. Go tarjoaa myös mahdollisuuden käyttää `goroutines` ja `channels` tehokkaampaan ja rinnakkaiseen web-sivun lataukseen.
+Web-sivujen lataamisen taustalla on protokolla nimeltä HTTP (Hypertext Transfer Protocol). HTTP-metodit, kuten `GET` käytetään pyytämään tietoa palvelimelta. Kun käytämme `http.Get()` -funktiota, luomme pyynnön annetulle URL-osoitteelle ja odotamme vastausta palvelimelta. Vastausta käsitellään sitten vastaavasti, kuten esiteltiin edellisessä osiossa.
 
 ## Katso myös
 
-- [Go-net/http paketin dokumentaatio (englanniksi)](https://golang.org/pkg/net/http/)
-- [Go-net/http tutorial (englanniksi)](https://golang.org/doc/tutorial/web-service-gin)
-- [Go-std/io paketin dokumentaatio (englanniksi)](https://golang.org/pkg/std/io/)
+- [Go-nettipalvelujen opas](https://golang.org/pkg/net/http/)
+- [HTTP-protokollan selitys](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

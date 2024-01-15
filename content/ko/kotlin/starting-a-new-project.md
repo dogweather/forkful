@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 새 프로젝트 시작하기"
+title:                "새 프로젝트 시작하기"
+html_title:           "Kotlin: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+새로운 프로젝트를 시작하는 이유는 다양할 수 있습니다. 새로운 기술을 배우거나, 새로운 아이디어를 시도해보기 위해서일 수도 있고, 단순히 새로운 도전을 위해서일 수도 있습니다. 어떤 이유든지간에, 새로운 프로젝트는 항상 개발자들에게 새로운 기회와 도전을 제공해줍니다.
 
-왜 누군가 새로운 프로젝트를 시작하게 되는지 궁금하신가요? 개발자들은 새로운 기술을 배우고 싶거나, 새로운 아이디어를 구현하고 싶거나, 혹은 자신만의 프로젝트를 만들어보고 싶어서 새로운 프로젝트를 시작합니다. 또한, 새로운 프로젝트를 시작해보는 것으로 인해 더 많은 경험과 도전을 할 수 있고, 자신의 능력을 향상시킬 수 있습니다.
-
-## 하나
-
-새로운 프로젝트를 시작하는 방법은 어떤 것이 있을까요? 이제 Kotlin으로 프로그래밍을 시작해보겠습니다! 먼저 Kotlin의 기본 문법을 배우기 위해 간단한 예제 프로그램을 작성해보겠습니다. 아래의 코드를 따라서 입력하고 실행해보세요.
+## 시작하는 방법
+우선, Kotlin을 공부하고 설치하는 것이 중요합니다. Kotlin은 Java Virtual Machine에서 작동하기 때문에 Java를 이미 알고 있다면 배우기 쉽습니다. 코드를 볼까요?
 
 ```Kotlin
 fun main() {
-    println("Hello World!")
+    println("안녕하세요, 새로운 프로젝트를 시작합니다!")
 }
 ```
 
-위의 코드는 화면에 "Hello World!"를 출력하는 간단한 프로그램입니다. 이제 위의 코드를 분석해보겠습니다. 첫째 줄에 있는 `fun main()`은 Kotlin에서의 함수를 선언하는 방식입니다. `main`은 이 함수의 이름으로, 프로그램이 시작되는 곳입니다. 소괄호 안에는 이 함수가 받을 인자가 없으므로 비어있습니다. 둘째 줄에 있는 `println()`은 화면에 내용을 출력하는 함수입니다. 소괄호 안에 있는 "Hello World!"는 출력할 내용입니다. 따라서 위의 코드는 함수를 호출하는 방식으로 실행되기 때문에 아무런 출력이 없이 프로그램이 종료됩니다.
-
-이제 더 복잡한 예제를 살펴보겠습니다. 아래의 코드를 따라서 입력하고 실행해보세요.
+위의 코드는 Kotlin에서 가장 기본적인 형태의 함수에서 "안녕하세요, 새로운 프로젝트를 시작합니다!"라는 메시지를 출력하는 예시입니다. 간단하죠? 더 많은 예시를 살펴보겠습니다.
 
 ```Kotlin
 fun main() {
-    val name = "John"
-    val age = 25
-    println("My name is $name and I am $age years old.")
+    val num1: Int = 5
+    val num2: Int = 10
+    val sum = num1 + num2
+    println("두 수의 합은 ${sum}입니다.")
 }
 ```
 
-위의 코드는 "My name is John and I am 25 years old."를 출력하는 간단한 프로그램입니다. 이제 위의 코드를 분석해보겠습니다. 첫째 줄과 둘째 줄에서 `val` 키워드를 사용하여 변수를 선언하고 있습니다. `val`은 값을 바꿀 수 없는 변수를 선언할 때 사용합니다. 세번째 줄에서는 `println()` 함수가 호출될 때 문자열 내부에 `$` 기호를 이용하여 변수 값을 출력하도록 설정하고 있습니다. 따라서 위의 코드는 `name` 변수에 저장된 값인 "John"과 `age` 변수에 저장된 값인 25가 문자열 내부에 각각 대입되어 출력되기 때문에 "My name is John and I am 25 years old."가 출력됩니다.
+위의 코드는 두 개의 숫자를 더하고 그 결과를 출력하는 예시입니다. ```val``` 키워드를 사용하여 변수를 선언하고, ```${}```를 사용하여 변수를 문자열로 이용할 수 있습니다. 이제 코드를 실행해보면 "두 수의 합은 15입니다."라는 메시지를 볼 수 있을 것입니다.
 
-다른 예제를 살펴보겠습니다. 아래의 코드를 따라서 입력하고 실행해보세요.
+## 깊이 파헤치기
+새로운 프로젝트를 시작하는 것은 여러 가지 측면에서 중요합니다. 프로젝트를 시작하기 전에 구체적인 목표를 정하고, 사용할 기술을 공부하고, 코드를 구조적으로 설계해야합니다. 또한, 새로운 프로젝트를 시작하기 위해 Git과 같은 버전 관리 시스템을 사용할 수 있습니다. 이렇게 함으로써 프로젝트의 변화를 추적하고 이전 상태로 되돌릴 수 있습니다. 마지막으로, 새로운 프로젝트를 시작할 때 고려해야 할 가장 중요한 측면은 항상 새로운 것을 배우고 발전하는 것입니다.
 
-```Kotlin
-fun main() {
-    var number = 5
-    println("Number is $number.")
-    number = 2
-    println("Now, number is $number.")
-}
-```
-
-위의 코드는 "Number is 5."와 "Now, number is 2."를 차례대로 출력하는 간단한 프로그램입니다. 이제 위의 코드를 분석해보겠습니다. 첫째 줄에서 `var` 키워드를 사용하여 변수를 선언하고 있습니다. `var`은 값을 바꿀 수 있는 변수를 선언할 때 사용합니다. 둘째 줄에서는 `println()` 함수가 호출
+## 더 알아보기
+- [Kotlin 공식 홈페이지](https://kotlinlang.org/)
+- [Kotlin을 배워보는 사이트](https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#0)
+- [Git과 버전 관리에 대해 알아보기](https://www.atlassian.com/git/tutorials/what-is-version-control)
+- [새로운 프로젝트를 시작하기 전에 고려해야 할 것들](https://www.thoughtworks.com/insights/blog/things-consider-before-starting-new-project)

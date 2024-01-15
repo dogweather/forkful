@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Fish Shell: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar o Fish Shell para baixar páginas da web?
+## Por que baixar uma página da web?
 
-O Fish Shell é uma poderosa ferramenta de linha de comando que permite a execução de tarefas complexas de forma eficiente e rápida. Ao usar o Fish Shell para baixar páginas da web, você pode automatizar o processo de coleta de informações e economizar muito tempo e esforço. Além disso, o Fish Shell é muito intuitivo e fácil de aprender, tornando-o uma ótima opção para programadores iniciantes.
+Você pode querer baixar uma página da web por diversos motivos, como ter acesso offline ao conteúdo ou para realizar tarefas de desenvolvimento de sites. Independentemente do motivo, o Fish Shell oferece uma maneira simples e eficiente de realizar essa tarefa.
 
 ## Como fazer:
 
-Para começar, é necessário ter o Fish Shell instalado no seu computador. Em seguida, siga estes passos para baixar uma página da web:
+Para baixar uma página da web usando o Fish Shell, basta seguir os seguintes passos:
 
-1. Abra o Fish Shell: ```fish```
-2. Navegue até o diretório onde deseja salvar a página da web: ```cd /caminho/do/diretório```
-3. Use o comando ```curl``` seguido do URL da página que deseja baixar: ```curl URL```
-4. Altere o nome do arquivo de saída adicionando ```-o nome_do_arquivo``` ao comando. Isso garante que a página seja salva com o nome que você escolher: ```curl URL -o nome_do_arquivo```
-5. Pronto! A página da web foi baixada com sucesso e está salva no diretório escolhido.
+1. Abra o terminal e navegue até o diretório onde deseja salvar a página baixada.
+2. Digite o seguinte comando:
+```
+fish -c "curl -o nome_do_arquivo.html url_da_página"
+```
+3. Substitua "nome_do_arquivo" pelo nome que deseja dar ao arquivo baixado e "url_da_página" pelo endereço da página que deseja baixar.
 
-## Mergulho profundo:
+Pronto! A página será baixada e salva no diretório especificado.
 
-Existem algumas opções adicionais que podem ser usadas com o comando ```curl``` para personalizar ainda mais o processo de download. Alguns exemplos são:
+## Aprofundando:
 
-- Adicionar opção ```-L``` para seguir redirecionamentos de URL.
-- Usar a opção ```-H``` para adicionar cabeçalhos HTTP personalizados ao pedido.
-- Utilizar a opção ```-s``` para silenciar a saída e tornar o processo mais discreto.
+Ao utilizar o comando "curl" no Fish Shell, você pode adicionar diversas opções para personalizar a forma como a página é baixada. Por exemplo, você pode especificar um user-agent diferente para simular diferentes navegadores ou adicionar opções de autenticação, caso a página exija um login.
 
-Para mais informações sobre essas opções e outras funcionalidades do comando ```curl```, consulte a página de manual do Fish Shell digitando ```man curl``` no terminal.
+Além disso, é possível automatizar o processo de baixar várias páginas em sequência, por exemplo, utilizando um loop e um arquivo com os endereços das páginas desejadas.
 
 ## Veja também:
 
-- [Página de manual do Fish Shell](https://escolhaumlink.com/6o)
-- [Documentação do comando curl](https://escolhaumlink.com/6p)
-- [Tutorial interativo do Fish Shell](https://escolhaumlink.com/6q)
-- [Comunidade Fish Shell no GitHub](https://escolhaumlink.com/6r)
+- [Documentação do comando "curl" no Fish Shell (em inglês)](https://fishshell.com/docs/current/cmds/curl.html)
+- [Tutorial sobre a utilização do Fish Shell (em português)](https://dev.to/fernandodoming/the-fish-shell-b9e)
+- [Exemplos de como utilizar o Fish Shell para automatizar tarefas (em inglês)](https://medium.com/@jordankanter/batch-downloading-github-projects-with-fish-ab966145fa4d)

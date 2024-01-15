@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Texten"
+html_title:           "Elixir: Suchen und Ersetzen von Texten"
+simple_title:         "Suchen und Ersetzen von Texten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,40 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Wenn du mit Texten arbeitest, sei es in einer Datei oder in einer Datenbank, kommst du hin und wieder an den Punkt, an dem du bestimmte Wörter oder Zeichen ersetzen möchtest. Um diesen Prozess effizienter und schneller zu gestalten, ist die Nutzung von Suchen-und-Ersetzen-Funktionen unerlässlich.
 
-Haben Sie schon einmal lange Texte bearbeitet und dabei bestimmte Wörter oder Phrasen durch andere ersetzt? Oder mussten Sie schon mal Fehler in Ihrem Code finden und beheben? Mit Elixir können Sie diese Aufgaben schnell und einfach erledigen, dank der Suchen-und-Ersetzen-Funktion.
+## Wie es funktioniert
+Suchen und Ersetzen kann in Elixir mithilfe des `String.replace/3`-Befehls durchgeführt werden. Wie der Name schon sagt, ersetzt dieser Befehl einen Teil eines Strings durch einen anderen. Hier ist ein Beispiel:
 
-## Wie funktioniert das?
-
-Die Suchen-und-Ersetzen-Funktion in Elixir basiert auf dem `String.replace/4`-Befehl. Dabei gibt es vier Argumente, die Sie angeben müssen:
-
-- Der ursprüngliche String, in dem gesucht werden soll.
-- Das Muster, das gesucht und durch ein anderes Muster ersetzt werden soll.
-- Das Muster, durch das das erste Muster ersetzt werden soll.
-- Optionen für die Suche und den Ersatz.
-
-Im Folgenden finden Sie ein Beispielcode mit einem Text, in dem wir nach bestimmten Wörtern suchen und diese durch andere ersetzen:
-
-```Elixir
-text = "Ich liebe Elixir. Elixir ist so leistungsstark und funktionsreich."
-neuer_text = String.replace(text, "Elixir", "Programmiersprache")
+```elixir
+str = "Guten Abend, wie geht es Ihnen?"
+String.replace(str, "Abend", "Morgen")
 ```
+Output: "Guten Morgen, wie geht es Ihnen?"
 
-Die Ausgabe des Codes wäre dann: "Ich liebe Programmiersprache. Programmiersprache ist so leistungsstark und funktionsreich." Wie Sie sehen können, wurden alle Vorkommnisse des Wortes "Elixir" durch "Programmiersprache" ersetzt.
+In diesem Beispiel wurde das Wort "Abend" durch "Morgen" ersetzt. Beachte, dass der Befehl `String.replace/3` immer einen neuen String zurückgibt und den ursprünglichen String nicht verändert.
 
-## Tiefer in die Materie eintauchen
+Zusätzlich zu einfachen Zeichenketten können auch reguläre Ausdrücke verwendet werden, um Text zu suchen und zu ersetzen. Dazu wird die Funktion `Regex.replace/3` genutzt. Hier ist ein Beispiel:
 
-Im obigen Beispiel haben wir nur Wörter im String ersetzt, aber es gibt noch viele weitere Optionen, die Sie bei der Suche und dem Ersatz von Text in Elixir verwenden können. Einige dieser Optionen sind:
+```elixir
+str = "Heute ist der 10. Juli."
+Regex.replace(~r/\d+/, str, "11.")
+```
+Output: "Heute ist der 11. Juli."
 
-- Die Option `count`, um anzugeben, wie viele Vorkommnisse ersetzt werden sollen.
-- Die Option `regex`, um ein reguläres Ausdrucksmuster zu verwenden.
-- Die Option `case_insensitive`, um die Suche nicht auf Groß- und Kleinschreibung zu beschränken.
+In diesem Beispiel wurde die Zahl 10 durch 11 ersetzt. Beachte, dass der reguläre Ausdruck `~r/\d+/` für eine beliebige Zahl steht.
 
-Sie können auch die Musternutzung bei der Suche einschränken, indem Sie das Muster in Anführungszeichen setzen oder angeben, wo das Muster genau im String vorkommen muss.
+## Tiefergehende Informationen
+Es gibt noch viele weitere Funktionen und Optionen, die beim Suchen und Ersetzen von Text in Elixir zur Verfügung stehen. Dazu gehören unter anderem die Möglichkeit, nur in einem bestimmten Teil eines Strings zu suchen und zu ersetzen oder den Befehl mehrmals auf den gleichen String anzuwenden. Du kannst dich mit diesen Funktionen näher vertraut machen, indem du die Dokumentation von Elixir zu `String.replace/3` und `Regex.replace/3` konsultierst.
 
 ## Siehe auch
-
-- Offizielle Elixir-Dokumentation zu `String.replace/4`: https://hexdocs.pm/elixir/String.html#replace/4
-- Ein interaktives Tutorial zu Elixir mit Beispielen für die Suche und den Ersatz von Text: https://elixir-lang.org/getting-started/case-cond-and-functions.html#string-replacement
-
-Vielen Dank fürs Lesen und viel Spaß beim Ausprobieren der Suchen-und-Ersetzen-Funktion in Elixir!
+- [Elixir Dokumentation - String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Elixir Dokumentation - Regex.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)

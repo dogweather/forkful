@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Generazione di numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Fish Shell: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,38 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Generare numeri casuali è un'attività comune in molti linguaggi di programmazione, inclusa la shell di Fish. L'uso di numeri casuali può essere utile in diversi scenari, come creare dati casuali per scopi di testing o simulare situazioni casuali in un programma.
+Quando si scrive un codice, può essere utile generare numeri casuali per simulare situazioni o per testare determinate funzioni. Il modo più semplice e veloce per farlo in Fish Shell è utilizzando il comando `fish_random`.
 
-## Come fare
+## Come Fare
 
-Per generare numeri casuali nella shell di Fish, è possibile utilizzare il comando `random` seguito da un intervallo di numeri tra parentesi tonde. Ad esempio, per generare un numero casuale compreso tra 1 e 10, è possibile utilizzare il seguente comando:
-
-```Fish Shell
-random(1 10)
-```
-
-Il comando restituirà un numero casuale all'interno di quell'intervallo. Possiamo anche specificare un numero specifico di numeri casuali da generare aggiungendo un argomento al comando. Ad esempio, il seguente comando genererà 5 numeri casuali compresi tra 1 e 10:
+Per generare un numero casuale tra 0 e 10, basta usare il seguente codice:
 
 ```Fish Shell
-random 5 (1 10)
+set random_number (fish_random 0 10)
+echo $random_number
 ```
 
-È anche possibile specificare un intervallo di numeri decimali invece che interi, aggiungendo semplicemente la parola `float` dopo il comando `random`. Ad esempio:
+Il risultato sarà un numero casuale tra 0 e 10, ad esempio `7`.
+
+Se si vuole generare più di un numero casuale, ad esempio una lista di 10 numeri tra 1 e 100, si può utilizzare un ciclo for e il comando `math` per generare numeri casuali:
 
 ```Fish Shell
-random float (1 10)
+for i in (seq 1 10)
+    set random_number (math "(fish_random)" * 100 + 1)
+    echo $random_number
+end
 ```
 
-Il comando restituirà un numero casuale con la virgola all'interno dell'intervallo specificato.
+Il comando `math` consente di fare calcoli matematici sul numero generato da `fish_random`, moltiplicando per 100 e aggiungendo 1 per ottenere numeri tra 1 e 100. L'output del codice sopra sarà una lista di 10 numeri casuali, ad esempio `42, 3, 78, 91, 17, 10, 64, 54, 30, 97`.
 
 ## Approfondimento
 
-La generazione di numeri casuali nella shell di Fish utilizza l'algoritmo di generazione di numeri casuali di Mersenne Twister. Questo algoritmo è ampiamente utilizzato per la sua alta qualità e periodicità estremamente lunga.
+Il comando `fish_random` è basato sull'algoritmo di generazione di numeri casuali di Park-Miller, che è stato dimostrato essere abbastanza efficiente e di buona qualità. Tuttavia, è importante ricordare che i numeri generati non saranno veramente casuali, ma seguono uno schema prevedibile definito dall'algoritmo. Quindi, se si hanno esigenze di sicurezza o si richiede una vera casualità, è meglio utilizzare altri metodi di generazione di numeri come l'uso di hardware specializzato o API di servizi di terze parti.
 
-Inoltre, è possibile generare numeri casuali utilizzando svariati intervalli e distribuzioni, come la distribuzione gaussiana o la distribuzione di Poisson. Per fare ciò, è possibile utilizzare la libreria `random` della shell di Fish che fornisce una gamma di funzioni per la generazione di numeri casuali in diversi formati.
+## Vedi Anche
 
-## Vedi anche
-
-- Documentazione ufficiale dei comandi di `random` in Fish Shell: https://fishshell.com/docs/current/cmds/random.html
-- Esempi di codice per la generazione di numeri casuali in Fish Shell: https://github.com/fish-shell/fish-shell/issues/3211
-- Una guida completa alla generazione di numeri casuali in Fish Shell: https://www.systutorials.com/241027/generate-random-numbers-fish-shell/
+- Documentazione ufficiale di Fish Shell su `fish_random`: https://fishshell.com/docs/current/cmds/random.html
+- Articolo su Park-Miller Random Number Generator: https://en.wikipedia.org/wiki/Lehmer_random_number_generator#Park%E2%80%93Miller_generator

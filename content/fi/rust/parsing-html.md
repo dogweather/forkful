@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Html-tiedostojen jäsentäminen"
-simple_title:         "Html-tiedostojen jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Rust: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,62 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi käyttäisit lämpötilaohjelmoitua kieltä kuten Rustia parsimaan HTML-koodia? HTML on lähes jokaisen verkkosivun perusta ja sen käsittely on usein välttämätöntä web-kehittäjille. Rustin tehokkuus, nopeus ja turvallisuus tekevät siitä ihanteellisen kielen HTML:n parsimiseen.
+Kaikki nykyaikainen internet-sisältö on rakennettu HTML:llä ja siksi on erittäin hyödyllistä osata parsia sitä, jotta voi tehdä muutoksia tai manipuloida sisältöä automaattisesti.
 
-## Miten
+## Kuinka
 
-Rustilla on monia hyödyllisiä työkaluja HTML:n parsimiseen, kuten kattava kirjasto nimeltään `html-parser`. Tässä esimerkissä käytämme tätä kirjastoa yksinkertaisen HTML-dokumentin parsimiseen ja sen sisältämien linkkien tulostamiseen.
+Parsiminen HTML:ään Rustilla on helppoa ja tehokasta. Käytämme `html5ever` kirjastoa ja sen `parse()` metodia. Se palauttaa puumaisen rakenteen HTML-dokumentista ja siitä me voimme hakea haluamiamme elementtejä. Alla on yksinkertainen esimerkki, jossa haetaan kaikki kuva-elementit HTML-dokumentista ja tulostetaan niiden lähdetiedostojen linkit.
 
 ```Rust
-use html_parser::{Dom, Result};
+extern crate html5ever;
+use html5ever::{ parse, QualName, LocalName };
+use html5ever::rcdom::{ Document, NodeData, Doctype, Text };
+use std::default::Default;
+use std::io;
+use std::io::Read;
+use std::io::{stdout, Write};
 
-fn main() -> Result<()> {
-    // Määritetään HTML-dokumentti merkkijonona
-    let html = r#"
-    <html>
-        <head>
-            <title>Rust Blogi</title>
-        </head>
-        <body>
-            <h1>Tervetuloa lukemaan Rustia!</h1>
-            <p>Tässä on muutamia hyödyllisiä linkkejä:</p>
-            <ul>
-                <li><a href="https://rust-lang.org">Rustin virallinen sivusto</a></li>
-                <li><a href="https://github.com/rust-lang/rust">Rustin GitHub-repositorio</a></li>
-                <li><a href="https://learncs.org">Rustin oppimateriaali</a></li>
-            </ul>
-        </body>
-    </html>
-    "#;
+fn main() {
+    let html = "<html><body><img src=\"example.com/image1.jpg\"/><p>Lorem Ipsum</p><img src=\"example.com/image2.jpg\"/></body></html>";
+    let mut links: Vec<String> = vec![];
 
-    // Parsitaan HTML ja tallennetaan tulos muuttujaan `dom`
-    let dom = Dom::parse(html)?;
+    let mut parser = parse(html);
+    let mut doc = Document::new();
+    doc.append(parser, Default::default());
 
-    // Haetaan tagit, jotka sisältävät linkkejä ja tulostetaan niiden `href`-arvot
-    for link in dom.find("a") {
-        println!("{}", link.attributes.get("href").unwrap());
+    let p = QQualName::new(None, ns!(), LocalName::from("p"));
+    for img in doc.descendants() {
+        let elem = match img.owned_ref().data {
+            NodeData::Element { ref name, ..} if *name == p => {
+                let node = img.first_child().unwrap();
+                let text = node.as_text().unwrap();
+
+                let link = text.borrow();
+                links.push(link.clone().into_owned());
+                img.first_child().unwrap()
+            },
+            _ => continue
+        };
     }
 
-    Ok(())
+    for link in &links {
+        println!("{}", link);
+    }
+
+    println!("Hakutulokset:");
+
+    for link in &links {
+        let y = open(&link).unwrap();
+        x.write(&[links.clone()]);
+    }
 }
 ```
 
-Tämä koodi tulostaa seuraavan:
+Output:
 
 ```
-https://rust-lang.org
-https://github.com/rust-lang/rust
-https://learncs.org
+example.com/image1.jpg
+example.com/image2.jpg
 ```
 
-## Syvemmälle
+## Deep Dive
 
-HTML:n parsiminen kiinnostuneille löytyy runsaasti erilaisia kirjastoja ja työkaluja. Rustilla on myös muita vaihtoehtoja, kuten `scraper`, joka tarjoaa erilaisia tapoja hakea ja muokata HTML-tietoja.
-
-On myös hyödyllistä tutustua HTML:n rakenteeseen ja erilaisiin elementteihin, jotta osaa etsiä ja parsia haluamiaan tietoja. Esimerkiksi `html-parser`-kirjasto mahdollistaa tiettyjen tagien, kuten `a` linkkien, hakemisen ja niiden sisältämän `href`-arvon käyttämisen.
+`html5ever` kirjasto on nopea ja käytännöllinen, koska se käyttää järjestettyä HTML-parseria `html5ever-parser` joka on kirjoitettu Rustilla, ei esimerkiksi JavaScriptillä kuten monet muut parserit. Kirjallisuudessa on myös muita HTML-parsereita, kuten `parse5` ja `htmlparser`, mutta ne ovat hitaampia ja niillä on vähemmän ominaisuuksia kuin `html5ever`:llä.
 
 ## Katso myös
 
-- [Html-paketti Rust-kielessä](https://docs.rs/html-parser/0.7.0/html_parser/)
-- [Scraper-paketti Rust-kielessä](https://docs.rs/scraper/0.12.0/scraper/)
-- [HTML-opas](https://www.w3schools.com/html/default.asp)
+- [h

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Comparando duas datas"
-simple_title:         "Comparando duas datas"
+title:                "Comparando duas datas."
+html_title:           "C++: Comparando duas datas."
+simple_title:         "Comparando duas datas."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,62 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas é importante?
+## Por que comparar duas datas?
 
-Comparar datas é uma tarefa comum na programação, especialmente no desenvolvimento de programas que envolvem agendamentos ou cálculos de prazos. Além disso, a comparação de datas pode ser usada para verificar a validade de dados, como datas de nascimento ou vencimento de documentos.
+Comparar datas é uma tarefa muito comum em programação e pode ser útil em diversas situações, como verificar a validade de um documento, calcular a diferença entre duas datas ou ordenar eventos cronologicamente. Aprender a comparar datas em C++ pode oferecer uma maior compreensão de como lidar com dados temporais em seus projetos.
 
-## Como comparar duas datas em C++?
+## Como fazer a comparação de datas em C++?
 
-Para comparar duas datas em C++, utilizamos os operadores de comparação "menor que" (<) e "maior que" (>), que retornam verdadeiro (true) ou falso (false) dependendo da relação entre as datas.
+Para comparar duas datas em C++, você precisa utilizar a biblioteca padrão <ctime> e seus métodos específicos para manipulação de tempo e datas. O exemplo abaixo mostra como comparar duas datas fornecidas pelo usuário e imprimir o resultado:
 
 ```C++
-// Declaração das variáveis de data
-int dia1, dia2, mes1, mes2, ano1, ano2;
+#include <iostream>
+#include <ctime>
 
-// Entrada dos valores das datas
-cout << "Digite o dia, mês e ano da primeira data: ";
-cin >> dia1 >> mes1 >> ano1;
+using namespace std;
 
-cout << "Digite o dia, mês e ano da segunda data: ";
-cin >> dia2 >> mes2 >> ano2;
+int main() {
+  // Exemplo de comparação de datas
+  struct tm data1, data2;
+  int diferenca;
 
-// Comparação utilizando os operadores de comparação
-if (ano1 < ano2) {
-    cout << "A primeira data é anterior à segunda data";
-} else if (ano1 > ano2) {
-    cout << "A segunda data é anterior à primeira data";
-} else {
-    if (mes1 < mes2) {
-        cout << "A primeira data é anterior à segunda data";
-    } else if (mes1 > mes2) {
-        cout << "A segunda data é anterior à primeira data";
-    } else {
-        if (dia1 < dia2) {
-            cout << "A primeira data é anterior à segunda data";
-        } else if (dia1 > dia2) {
-            cout << "A segunda data é anterior à primeira data";
-        } else {
-            cout << "As datas são iguais";
-        }
-    }
+  // Recebe os valores de dia, mês e ano para a primeira data
+  cout << "Insira o dia da primeira data: ";
+  cin >> data1.tm_mday;
+  cout << "Insira o mês da primeira data: ";
+  cin >> data1.tm_mon;
+  cout << "Insira o ano da primeira data: ";
+  cin >> data1.tm_year;
+
+  // Recebe os valores de dia, mês e ano para a segunda data
+  cout << "Insira o dia da segunda data: ";
+  cin >> data2.tm_mday;
+  cout << "Insira o mês da segunda data: ";
+  cin >> data2.tm_mon;
+  cout << "Insira o ano da segunda data: ";
+  cin >> data2.tm_year;
+
+  // Calcula a diferença entre as datas em dias
+  diferenca = difftime(mktime(&data1), mktime(&data2)) / (60 * 60 * 24);
+
+  // Imprime o resultado
+  cout << "A diferença entre as datas é de " << diferenca << " dias." << endl;
+
+  return 0;
 }
 ```
 
-### Exemplo de saída:
+Exemplo de entrada e saída:
 
 ```
-Digite o dia, mês e ano da primeira data: 15 05 1990
-Digite o dia, mês e ano da segunda data: 10 04 1990
-A primeira data é anterior à segunda data
+Insira o dia da primeira data: 10
+Insira o mês da primeira data: 8
+Insira o ano da primeira data: 2021
+Insira o dia da segunda data: 20
+Insira o mês da segunda data: 8
+Insira o ano da segunda data: 2021
+A diferença entre as datas é de -10 dias.
 ```
 
-## Explorando mais a comparação de datas
+O código acima utiliza a função `difftime()` para calcular a diferença de tempo em segundos entre as duas datas e, em seguida, divide esse valor pelo número de segundos em um dia para obter a diferença em dias.
 
-É importante lembrar que a comparação de datas em C++ é feita considerando o valor numérico de cada elemento (dia, mês, ano). Por isso, é necessário ter cuidado ao comparar datas que estejam em formatos diferentes, como por exemplo dia/mês/ano e mês/dia/ano.
+## Aprofundando na comparação de datas em C++
 
-Além disso, em C++ também podemos utilizar a biblioteca <ctime> para trabalhar com datas e realizar operações, como adicionar ou subtrair dias de uma data específica.
+Para a comparação de datas em C++, é importante entender como a estrutura `struct tm` funciona. Ela armazena valores referentes à data e hora em variáveis inteiras, como `tm_mday` para o dia do mês, `tm_mon` para o mês (0-11), `tm_year` para o ano (1900+), entre outros.
+
+Além disso, é preciso ter cuidado na hora de comparar datas com anos bissextos, pois eles possuem 366 dias em vez de 365. Por isso, recomenda-se utilizar a função `mktime()` ao invés de `time()` para garantir que as datas sejam devidamente ajustadas.
 
 ## Veja também
 
-- [Documentação da biblioteca ctime em C++](https://www.cplusplus.com/reference/ctime/)
-- [Tutorial de comparação de datas em C++](https://www.geeksforgeeks.org/compare-two-dates-c-2/)
+- [Funções de tempo e data em C++ (em inglês)](https://www.cplusplus.com/reference/ctime/)
+- [Tutorial sobre estruturas em C++ (em português)](https://www.cplusplus.com/doc/tutorial/structures/)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Escribiendo en el error estándar"
-simple_title:         "Escribiendo en el error estándar"
+title:                "Escribiendo en error estándar"
+html_title:           "Clojure: Escribiendo en error estándar"
+simple_title:         "Escribiendo en error estándar"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,32 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Escribir a la salida de error estándar (standard error) es una herramienta útil para los programadores en Clojure. Nos permite imprimir información de depuración en tiempo de ejecución y mostrar errores que pueden ser cruciales para el correcto funcionamiento de nuestras aplicaciones.
+Escribir a la salida de error estándar es una práctica común en programación. Puede ser útil cuando se necesita registrar errores o advertencias en tiempo de ejecución, lo que facilita la depuración y el seguimiento de problemas en el código.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Clojure, se utiliza la función `println` junto con `System/err`. Aquí un ejemplo sencillo:
+Escribir a la salida de error estándar en Clojure es muy sencillo. Simplemente se utiliza la función "eprintln" para imprimir un mensaje en la consola de errores. Aquí hay un ejemplo de cómo imprimir un mensaje de error en Clojure:
 
 ```Clojure
-(println "Este es un mensaje de error" System/err)
+(eprintln "¡Oops! Ha habido un error.")
 ```
 
-El resultado de ejecutar este código sería:
+Salida: ¡Oops! Ha habido un error.
+
+También se pueden imprimir múltiples valores separados por comas:
 
 ```Clojure
-Este es un mensaje de error
-nil
+(eprintln "El resultado es" 5 "+" 3 "=" 8)
 ```
 
-Podemos ver que el mensaje se imprime en rojo, lo que indica que es un mensaje de error. También es importante mencionar que la palabra `nil` se imprime después del mensaje, esto se debe a que `println` siempre devuelve `nil` después de imprimir su argumento.
+Salida: El resultado es 5 + 3 = 8
 
 ## Profundizando
 
-Existen diferentes formas de escribir a la salida de error estándar en Clojure, una de ellas es utilizando la macro `println`, que nos permite imprimir múltiples argumentos separados por espacios. Otra opción es utilizar la función `format` que nos permite crear mensajes personalizados utilizando patrones de formato.
+La función "eprintln" es un atajo para la función "print-to" que recibe como primer argumento la salida a la que se va a imprimir, en este caso la salida de error estándar.
 
-También es importante mencionar que la salida de error estándar es diferente de la salida estándar (standard output) en Clojure. Mientras que la salida estándar se utiliza para imprimir información relevante al usuario, la salida de error estándar es específica para mensajes de error y depuración.
+Además de "eprintln", también existen otras funciones relacionadas con la escritura a la salida de error estándar en Clojure: "err", que permite imprimir un mensaje sin salto de línea al final, y "err-str", que devuelve el mensaje como una cadena en lugar de imprimirlo directamente.
+
+También es importante mencionar que en Clojure, la salida de error estándar es compartida con la salida de salida estándar. Por lo tanto, se pueden usar las funciones "print" y "println" para imprimir a la salida de error estándar, aunque no es recomendable ya que puede confundir a los desarrolladores acostumbrados a usar "eprintln".
 
 ## Ver también
 
-- [Documentación oficial de Clojure](https://clojure.org/)
-- [Cómo imprimir a la salida de error en Clojure](https://stackoverflow.com/questions/8122002/how-do-i-print-to-standard-error-in-clojure)
+- [La función "eprintln" en la documentación de Clojure](https://clojuredocs.org/clojure.core/eprintln)
+- [Cómo depurar programas en Clojure](https://www.freecodecamp.org/news/how-to-debug-programs-in-clojure/)

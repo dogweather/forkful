@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "एक नया परियोजना शुरू करना"
+html_title:           "Arduino: एक नया परियोजना शुरू करना"
+simple_title:         "एक नया परियोजना शुरू करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -9,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
+Kisi bhi naye project ko shuru karne ke liye ek bahut bada karan hai - uske through hum nayi cheezon ki khoj karte hain aur apne dimag ko chunauti dete hain. Arduino programming se shuru karna aapko apne computer se door khade devices tak pahunchne mein madad karega.
 
-नए परियोजना शुरू करने की एक बहुत बड़ी वजह है कि यह आपको नए कौशलों और ज्ञान की दुनिया में उठाता है। यदि आप एक नया आर्डुइनो परियोजना शुरू करने के लिए सोच रहे हैं, तो इसके माध्यम से आप अपनी प्रोग्रामिंग कौशल का स्तर बढ़ा सकते हैं और नए कौशलों को सीख सकते हैं। इससे आपको भविष्य में इंजीनियरिंग या अन्य फील्ड में काम करने में मदद मिलेगी।
-
-## कैसे करें
-
-अगर आप एक नए आर्डुइनो परियोजना शुरू करने की तैयारी कर रहे हैं, तो सबसे पहले आपको आर्डुइनो बोर्ड लेना होगा। इसके बाद आपको देखना होगा कि आपका परियोजना किस तरह से काम करेगा। यदि आप एक चालक मोटर चलना चाहते हैं, तो आपको कार्यक्रम को चालक मोटर को चलाने के लिए प्रोग्राम करना होगा। आप यहां एक उदाहरण देख सकते हैं:
+## Kaise Karein
+Aapne socha hoga ki Arduino programming bahut mushkil ho sakti hai, par sach toh yeh hai ki yeh bahut hi asaan hai. Sabse pehle aapko apne computer mein Arduino software download karna padega. Phir, yeh steps follow karein:
 
 ```Arduino
-int motorPin = 9;
-int speedPin = 10;
-
 void setup() {
-  // सेटअप कोड ह्यांग]
-  pinMode(motorPin, OUTPUT);
-  pinMode(speedPin, OUTPUT);
+  // Initialize the pins
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
-  // मोटर चलाने के लिए कोड यहां ह्यांग
-  digitalWrite(motorPin, HIGH);
-  analogWrite(speedPin, 255); // मूत्र भराव चांगला ठेवा
-  delay(5000); // 5 सेकंदांचा थांबा
-  digitalWrite(motorPin, LOW);
-  analogWrite(speedPin, 0); // मूत्र भराव ठेवा
-  delay(5000); // 5 सेकंदांचा थांबा
+  // Blinking LED
+  digitalWrite(LED_BUILTIN, HIGH); // LED ON
+  delay(1000); // Wait for a second
+  digitalWrite(LED_BUILTIN, LOW); // LED OFF
+  delay(1000); // Wait for a second
 }
 ```
 
-यह प्रोग्राम चाल सकते हैं कि आपके आर्डुइनो बोर्ड पर कैसे चलेंगे। आप इस खंड में अपने परियोजना शुरू करने के लिए अपन
+Is code mein humne LED ko ON-OFF karne ke liye ek blinking effect create kiya hai. Ab bas apne Arduino board ko apne computer se connect karein aur upar diye gaye code ko upload karein. Aap dekhenge ki LED blink ho rahi hai!
+
+## Gehri Jhaank
+Naye project shuru karte time, aapko ek clear idea hona chahiye ki aap kya banana chahte hain aur uska kya use hoga. Arduino programming aapko apne project ko step by step develop karna sikhata hai. Ismein aap sensors, motors, LEDs jaisi components ko connect kar sakte hain aur unhe control kar sakte hain.
+
+## Dekhiye Bhi
+- [Getting Started with Arduino](https://www.arduino.cc/en/Guide/Introduction)
+- [Arduino Tutorials for Beginners](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
+- [Beginner's Guide to Arduino](https://www.makerspaces.com/arduino-guide/)
+
+Dhanyavaad, aur sukriya ki aapne hamare article ko padha! Happy coding!

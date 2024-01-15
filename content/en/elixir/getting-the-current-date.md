@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Elixir recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,39 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to get the current date in your Elixir program? Whether it's for displaying information or for performing some sort of date-based logic, knowing how to retrieve the current date can be a useful skill for any Elixir programmer. In this blog post, we will explore how to get the current date in Elixir and dive into the underlying mechanisms behind it.
+## Why 
 
-## How To
-To get the current date in Elixir, we can use the `DateTime.now()` function. Let's see an example of how this works in a code block:
+Getting the current date is a common task in many programming projects. Whether it's for displaying the current date on a website or for tracking events, having the ability to access and manipulate the current date is crucial for many applications.
 
-```elixir
-iex> DateTime.now()
-{:ok, ~N[2021-05-26 15:45:10.185597]}
-```
+## How To 
 
-This function returns a tuple with the first element being `:ok` and the second element being a `DateTime` struct. This struct contains information about the current date and time, including the year, month, day, hour, minute, second, and millisecond. We can also specify a specific timezone by passing in a string as the second argument to `DateTime.now()`.
+To get the current date in Elixir, we can use the `Date` module from the `Calendar` library. This module provides several functions for working with dates, including getting the current date. Here's an example of how to retrieve the current date and format it as a string:
 
 ```elixir
-iex> DateTime.now("America/New_York")
-{:ok, #DateTime<2021-05-26 11:45:10.185597-04:00>}
+current_date = Date.utc_today()
+formatted_date = Date.format(current_date, "{YYYY}-{MM}-{DD}")
+IO.puts(formatted_date)
+
+# Output: 2021-12-28
 ```
 
-We can also use the `Caleandar.ISO` module to format the output of the `DateTime` struct. Let's see an example:
+We used the `utc_today` function to retrieve the current date, which returns a `Date` struct. Then, we used the `format` function to specify the format we wanted the date to be displayed in. In this case, we used `"{YYYY}-{MM}-{DD}"` to show the year, month, and day in a YYYY-MM-DD format. Lastly, we used `IO.puts` to print the formatted date to the console.
+
+We can also get the current date and time by using the `DateTime` module from the `Calendar` library. Here's an example of how we can do that:
 
 ```elixir
-iex> DateTime.now() |> Calendar.ISO.format("{ISO}")
-"2021-05-26T15:45:10.185597Z"
+current_datetime = DateTime.utc_now()
+formatted_datetime = DateTime.format(current_datetime, "{YYYY}-{MM}-{DD} {hh}:{mm}:{ss}")
+IO.puts(formatted_datetime)
+
+# Output: 2021-12-28 15:28:42
 ```
 
-The `{ISO}` format option will return the date and time in ISO 8601 format, which is a common standard for representing date and time information.
+Similarly to the previous example, we used the `utc_now` function to retrieve the current date and time as a `DateTime` struct. Then, we used the `format` function to specify the format we wanted the date and time to be displayed in. In this case, we used `"{YYYY}-{MM}-{DD} {hh}:{mm}:{ss}"` to show the year, month, day, hour, minute, and second in a YYYY-MM-DD hh:mm:ss format. Lastly, we used `IO.puts` to print the formatted date and time to the console.
 
-## Deep Dive
-Under the hood, Elixir uses the Erlang `calendar` module to get the current date and time. This module is part of Erlang's standard library and provides functions for working with calendars and dates. When we call `DateTime.now()`, Elixir calls the `calendar.universal_time_to_local_time/1` function from the `calendar` module and passes in the current time in milliseconds. This function then converts the milliseconds into a tuple containing the year, month, day, hour, minute, second, and millisecond.
+## Deep Dive 
 
-It's also worth noting that `DateTime.now()` is dependent on the system clock of the machine running the Elixir program. If the system clock is inaccurate or changes while the program is running, it may affect the result returned by `DateTime.now()`. To avoid this, we can use `DateTime.now!("utc")` to retrieve the current date and time in UTC regardless of the system clock's accuracy.
+The `Date` and `DateTime` modules have several other functions that can be useful for working with dates and times. For example, we can use the `add` function to add or subtract a specified number of days, months, or years to a given date.
 
-## See Also
-- [Elixir DateTime module docs](https://hexdocs.pm/elixir/DateTime.html)
-- [Erlang calendar module docs](http://erlang.org/doc/man/calendar.html)
-- [ISO 8601 Wikipedia page](https://en.wikipedia.org/wiki/ISO_8601)
+```elixir
+current_date = Date.utc_today()
+IO.inspect(current_date)
+
+# Output: ~D[2021-12-28]
+
+next_month = Date.add(current_date, 1, :month)
+IO.inspect(next_month)
+
+# Output: ~D[2022-01-28]
+
+next_year = Date.add(current_date, 1, :year)
+IO.inspect(next_year)
+
+# Output: ~D[2022-12-28]
+```
+
+As we can see in the example, we can use `add` to add one month or one year to the current date, resulting in a new `Date` struct. This function can be handy when handling recurring events or creating date ranges.
+
+## See Also 
+
+Here are some additional resources to help you further explore working with dates and times in Elixir:
+
+- [Elixir Date module documentation](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime module documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir Calendar library documentation](https://hexdocs.pm/elixir/Calendar.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Encontrando la longitud de una cadena"
-simple_title:         "Encontrando la longitud de una cadena"
+title:                "Encontrar la longitud de una cadena"
+html_title:           "Elm: Encontrar la longitud de una cadena"
+simple_title:         "Encontrar la longitud de una cadena"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
+## ¿Por qué alguien se involucraría en encontrar la longitud de una cadena?
 
-A veces necesitamos saber cuántos caracteres tiene una palabra o una oración. Ya sea para validar una entrada de usuario o para mostrar un resumen de un texto largo, encontrar la longitud de una cadena es una tarea común en la programación. En esta publicación de blog, aprenderás cómo hacerlo en Elm de manera sencilla y eficiente.
+Hay muchas razones por las que alguien puede querer encontrar la longitud de una cadena. Puede ser necesario para validar la entrada del usuario, manipular datos en una aplicación o simplemente obtener información sobre una cadena en particular. ¡Vamos a explorar cómo hacerlo en Elm!
 
 ## Cómo hacerlo
 
-En Elm, podemos encontrar la longitud de una cadena utilizando la función `String.length`. Esta función toma una cadena como argumento y devuelve un número entero que representa la cantidad de caracteres en esa cadena.
-
 ```Elm
--- Definir una cadena
-miCadena = "¡Hola Mundo!"
+-- Ejemplo 1: Usando la función `String.length`
 
--- Encontrar la longitud de la cadena
-resultado = String.length miCadena
+cadena = "Hola Mundo"
+longitudCadena = String.length cadena
 
--- Salida: 12
+-- La salida será 10
 ```
 
-Es importante tener en cuenta que los espacios en blanco y los caracteres especiales también cuentan como caracteres en una cadena. Por ejemplo, la cadena `"¡Hola Mundo!"` tiene 12 caracteres, incluyendo el espacio y el signo de exclamación.
-
-También podemos utilizar la función `length` directamente en una cadena sin necesidad de definirla previamente.
-
 ```Elm
--- Encontrar la longitud de una cadena directamente
-resultado = String.length "¡Hola Mundo!"
+-- Ejemplo 2: Usando la función `List.length` después de convertir la cadena en una lista de caracteres
 
--- Salida: 12
+cadena = "Hello World"
+listaCaracteres = String.toList cadena
+longitudCadena = List.length listaCaracteres
+
+-- La salida será 11
 ```
 
-Otra forma útil de encontrar la longitud de una cadena es utilizando la función `toString`. Esta función convierte cualquier valor en una cadena y luego podemos encontrar su longitud utilizando `String.length`.
-
-```Elm
--- Definir un número
-miNumero = 123456
-
--- Convertir el número a una cadena y encontrar su longitud
-resultado = String.length (toString miNumero)
-
--- Salida: 6
-```
+También es importante tener en cuenta que los espacios en blanco y los signos de puntuación también contabilizarán como caracteres en la longitud de la cadena. 
 
 ## Profundizando
 
-En realidad, detrás de la función `String.length` hay una operación más compleja que involucra gráficos de código. Esto se debe a que en Elm, las cadenas se almacenan internamente como listas de caracteres, y la función de longitud simplemente cuenta la cantidad de elementos en esa lista.
+En Elm, una cadena es simplemente una lista de caracteres. Al usar la función `toList`, podemos convertir una cadena en una lista de caracteres y luego usar la función `List.length` para obtener la cantidad de caracteres en esa cadena. También podemos usar la función `String.length` directamente en una cadena sin necesidad de convertirla en una lista primero. 
 
-Además, es importante tener en cuenta que la función `String.length` es sensible a la codificación de caracteres. Esto significa que en algunas situaciones puede devolver valores diferentes para la misma cadena, dependiendo de la codificación utilizada.
+Otro dato curioso es que, en Elm, los emojis también se consideran caracteres y contarán en la longitud de la cadena.
 
 ## Ver también
 
-- [Documentación de Elm: String](https://elm-lang.org/docs/strings)
-- [Blog de Elm: Manipulando Cadenas de Texto](https://elmprogramming.com/strings.html)
-- [Tutorial de Elm: Gestión de Entradas de Usuario](https://guide.elm-lang.org/effects/text_fields.html)
+- Documentación oficial de Elm sobre la función `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
+- Documentación oficial de Elm sobre la función `List.length`: https://package.elm-lang.org/packages/elm/core/latest/List#length

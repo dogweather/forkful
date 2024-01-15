@@ -1,5 +1,6 @@
 ---
-title:                "C: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "C: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "C"
 category:             "C"
@@ -10,81 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+날짜 두 개를 비교하는 것에 참여하는 이유는 간단합니다. 날짜는 소프트웨어에서 매우 중요한 역할을 합니다. 우리는 날짜를 비교하여 특정 이벤트가 언제 발생했는지 또는 더 이상 유효하지 않은 날짜인지 판단할 수 있습니다.
 
-우리는 프로그래밍을 할 때 종종 두 개의 날짜를 비교해야 합니다. 예를 들어 사용자의 생일과 현재 날짜를 비교하거나, 두 개의 이벤트가 언제 일어났는지 비교하려고 할 때가 있습니다. 이러한 날짜 비교는 우리가 코딩을 할 때 자주 사용되는 기술 중 하나입니다. 그렇기 때문에 우리는 두 날짜를 비교하는 방법을 알아야 합니다.
+## 하는 방법
+날짜를 비교하는 방법은 매우 간단합니다. 첫 번째 날짜와 두 번째 날짜를 변수에 할당한 다음, ```>``` 또는 ```<``` 식의 논리 연산자를 사용하여 비교하면 됩니다. 아래는 더 자세한 예제와 함께 코딩하는 방법입니다.
 
-## 어떻게
+```c
+#include <stdio.h>
 
-우선 두 개의 날짜를 나타내는 변수를 설정합니다. 그리고 우리는 `if` 문을 통해 두 날짜가 같은지, 또는 어떤 날짜가 더 큰지를 확인할 수 있습니다. 예를 들어, 먼저 두 변수의 년도를 비교하고, 만약 년도가 같다면 월을 비교하고 다시 만약 월이 같다면 일을 비교하는 식으로 진행할 수 있습니다.
+int main(void) {
+  // 첫 번째 날짜를 변수로 할당합니다.
+  int month1 = 7;
+  int day1 = 15;
+  int year1 = 2021;
 
-```C
-int date1_year = 1995;
-int date1_month = 12;
-int date1_day = 22;
+  // 두 번째 날짜를 변수로 할당합니다.
+  int month2 = 7;
+  int day2 = 16;
+  int year2 = 2021;
 
-int date2_year = 2021;
-int date2_month = 9;
-int date2_day = 27;
+  // 첫 번째 날짜가 두 번째 날짜보다 빠른지 비교합니다.
+  if (year1 < year2 || (year1 == year2 && month1 < month2) || (year1 == year2 && month1 == month2 && day1 < day2)) {
+    printf("%d/%d/%d is earlier than %d/%d/%d", month1, day1, year1, month2, day2, year2);
+  } else {
+    printf("%d/%d/%d is earlier than %d/%d/%d", month2, day2, year2, month1, day1, year1);
+  }
 
-if (date1_year > date2_year) {
-    printf("Date 1 is later than Date 2");
-} else if (date1_year < date2_year) {
-    printf("Date 2 is later than Date 1");
-} else {
-    if (date1_month > date2_month) {
-        printf("Date 1 is later than Date 2");
-    } else if (date1_month < date2_month) {
-        printf("Date 2 is later than Date 1");
-    } else {
-        if (date1_day > date2_day) {
-            printf("Date 1 is later than Date 2");
-        } else if (date1_day < date2_day) {
-            printf("Date 2 is later than Date 1");
-        } else {
-            printf("The two dates are the same");
-        }
-    }
+  return 0;
 }
 ```
 
-위의 코드를 실행하면 다음과 같은 결과가 나옵니다.
+위 코드는 두 날짜를 비교하여 더 이른 날짜를 출력하는 예제입니다. 만약 두 날짜가 같은 경우 두 번째 날짜를 출력합니다. 아래는 이 코드의 출력 예시입니다.
 
-```C
-Date 2 is later than Date 1
+```
+7/15/2021 is earlier than 7/16/2021
 ```
 
-## 깊게 살펴보기
+## 깊이 파고들기
+두 날짜를 비교하는 것은 초보 프로그래머들이 자주 겪는 문제입니다. 이때 조심해야 할 것은 우리가 사용하는 날짜 시스템입니다. 우리가 사용하는 그레고리력은 모든 해가 같은 길이를 갖지 않기 때문에, 이를 고려하여 날짜를 비교해야 합니다. 또한 윤년을 계산하여 정확한 비교를 할 수 있도록 해야 합니다. 즉, 날짜를 비교할 때는 간단한 비교가 아닌 사용하는 날짜 시스템의 세부 사항을 고려해야 합니다.
 
-두 개의 날짜를 비교할 때, 우리는 변수에 직접 날짜를 입력할 수도 있지만, `struct`를 사용하여 좀 더 구조적으로 표현할 수도 있습니다. 예를 들어, 다음과 같이 `struct`를 정의할 수 있습니다.
-
-```C
-struct date {
-    int year;
-    int month;
-    int day;
-};
-```
-
-또는 특정 날짜를 나타내는 변수를 선언할 때 `struct`를 사용할 수도 있습니다.
-
-```C
-struct date my_birthday = {1995, 12, 22};
-```
-
-또한 복수 개의 날짜를 비교해야 할 때는 배열을 사용할 수도 있습니다.
-
-```C
-struct date events[3] = {{2021, 9, 27}, {2021, 11, 3}, {2022, 1, 1}};
-```
-
-이렇게 `struct`를 사용하면 우리는 날짜 비교를 더 직관적이고 구조적으로 할 수 있습니다. 따라서 더 깊이 있는 프로그래밍을 할 때 유용하게 사용할 수 있습니다.
-
-## 또 다른 정보
-
-- [C 비교 연산자](https://dojang.io/mod/page/view.php?id=392)
-- [C struct 구조체](https://dojang.io/mod/page/view.php?id=391)
-- [C 배열](https://dojang.io/mod/page/view.php?id=405)
-
-## 참고
-
-위의 코드와 결과는 예시일 뿐이
+## 또 다른 참고 자료
+- [C 언어 공식 문서](https://en.cppreference.com/w/c)
+- [컴퓨터 프로그래밍 연습 사이트](https://www.hackerrank.com/domains/c)

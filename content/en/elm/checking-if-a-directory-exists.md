@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Elm recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,42 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to check if a directory exists in your Elm program? Maybe you want to handle different scenarios depending on whether a directory is present or not. Or perhaps you want to make sure a specific directory is created before performing certain actions. Whatever the reason may be, knowing how to check if a directory exists in Elm can come in handy in various situations.
+Checking if a directory exists is a crucial step in any file handling operation. Whether you want to create a new directory, move files, or delete them, it is important to first confirm if the directory exists or not. This not only ensures the smooth functioning of your code but also prevents any potential errors or data loss.
 
 ## How To
 
-To check if a directory exists in Elm, we can use the FileSystem module from the elm/file package. First, we need to import the module at the top of our Elm file.
+To check if a directory exists in Elm, we can use the `exists` function from the `Elm.IO.Directory` module. This function takes in a relative or absolute path to the directory as an argument and returns a `Result Error Bool` type.
 
-```Elm
-import FileSystem exposing (exists)
+```
+Elm.IO.Directory.exists "/path/to/directory"
+--> Ok True
 ```
 
-Next, we can call the `exists` function, passing in the path of the directory we want to check. This function will return a `Task Bool`, which represents an asynchronous operation that will eventually produce a Boolean value.
+In the above example, the `exists` function returns `Ok True` indicating that the directory does exist. Let's look at another example where the directory does not exist.
 
-```Elm
-checkDirectoryExists : Task Bool
-checkDirectoryExists =
-  exists "path/to/directory"
+```
+Elm.IO.Directory.exists "/path/to/nonexisting/directory"
+--> Ok False
 ```
 
-We can then use `Task.perform` to handle the outcome of the `exists` task. In case of success, the `perform` function will execute the `Result.withDefault` function, which will return a default value of `False` if the task fails or the Boolean value if it succeeds.
-
-```Elm
-directoryExists : Bool
-directoryExists =
-  Task.perform (Result.withDefault False) checkDirectoryExists
-```
-
-If the directory exists, the `directoryExists` value will be `True`. Otherwise, it will be `False`.
+Here, the function still returns `Ok False` but this time it indicates that the directory does not exist. It is important to handle this `Result` type in your code to handle potential errors or successful results.
 
 ## Deep Dive
 
-Internally, the `exists` function uses the `Stat` module from the elm/file package to get information about the given path and check if it is a directory or not. If the path does not exist, the task will fail, and we will receive a `False` value. Otherwise, the task will succeed, and we will receive a `True` value.
+Behind the scenes, the `exists` function uses the `withDirectoryEntry` function which takes care of opening and closing the directory entry. This ensures efficient and safe handling of the directory. If the directory path is a relative one, it will be resolved based on the directory where the program is executed.
 
-## See Also
+A different approach to checking if a directory exists would be using the `getDir` function which returns a `Result Error Directory` type. This function also takes in the path to the directory as an argument but instead of returning a `Bool`, it returns a `Directory` type representing the directory. If the directory does not exist, the `Result` will contain an error message.
 
-Here are some useful resources for further reading on checking if a directory exists in Elm:
+```
+Elm.IO.Directory.getDir "/path/to/directory"
+--> Ok <Directory>
+```
 
-- [Elm file package documentation](https://package.elm-lang.org/packages/elm/file/latest/)
-- [FileSystem module source code](https://github.com/elm/file/blob/latest/src/FileSystem.elm)
-- [Stat module source code](https://github.com/elm/file/blob/latest/src/Stat.elm)
+See Also
+
+- [Elm.IO.Directory module](https://package.elm-lang.org/packages/elm/file/latest/Elm-IO-Directory)
+- [Elm Docs on File and Directory handling](https://guide.elm-lang.org/interop/file_system.html)

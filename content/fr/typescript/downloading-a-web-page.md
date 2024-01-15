@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Téléchargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "TypeScript: Téléchargement d'une page web"
 simple_title:         "Téléchargement d'une page web"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,69 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Pourquoi télécharger une page web ? Eh bien, que vous soyez un développeur web expérimenté ou un débutant curieux, comprendre comment télécharger une page web est une compétence essentielle pour créer des applications web dynamiques et interactives. Dans cet article, nous allons plonger dans les bases de la programmation TypeScript pour télécharger une page web en utilisant un exemple concret.
+Télécharger une page web peut sembler une tâche simple, mais c'est en fait un processus complexe qui implique de nombreuses étapes. En comprenant comment cela fonctionne, vous pourriez être en mesure de résoudre des problèmes de téléchargement et d'améliorer votre expérience en ligne.
 
 ## Comment faire
 
-Pour commencer, vous aurez besoin d'un éditeur de code et d'un navigateur web. Si vous êtes nouveau dans le monde de la programmation, vous pouvez utiliser un éditeur de code gratuit et open-source tel que Visual Studio Code et un navigateur populaire comme Google Chrome.
-
-Maintenant, pour télécharger une page web en utilisant TypeScript, nous allons utiliser la bibliothèque native de Node.js appelée "https". Tout d'abord, créons un nouveau projet TypeScript en utilisant la commande suivante :
-
 ```TypeScript
-$ npm init -y
-$ npm install typescript --save-dev
-```
+import * as request from 'request';
 
-Ensuite, créons un fichier "index.ts" et ajoutons le code suivant :
+// URL de la page à télécharger
+const url = "https://www.example.com";
 
-```TypeScript
-import * as https from 'https';
-
-const url = 'https://example.com';
-
-https.get(url, (response) => {
-  let data = '';
-
-  response.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  response.on('end', () => {
-    console.log(data);
-  });
-
-}).on("error", (err) => {
-  console.log("Erreur : " + err.message);
+// Utilisation de la bibliothèque request pour effectuer une requête GET
+request(url, function(error, response, body) {
+  // Vérification d'erreurs
+  if (error) {
+    console.log(error);
+  }
+  // Vérification du code de réponse HTTP
+  if (response.statusCode === 200) {
+    // Enregistrement du contenu de la page dans un fichier
+    fs.writeFile("page.html", body, function(err) {
+      if (err) {
+        console.log(err);
+      }
+      console.log("Page téléchargée avec succès !");
+    });
+  } else {
+    console.log("La page n'a pas été téléchargée. Code de réponse : " + response.statusCode);
+  }
 });
 ```
 
-Ce code importe la bibliothèque "https" et utilise sa méthode "get" pour télécharger la page web à partir de l'URL spécifiée. Ensuite, il stocke les données téléchargées dans une variable et les affiche dans la console une fois le téléchargement terminé.
-
-Pour exécuter le code, nous devons le compiler en utilisant la commande suivante :
-
-```TypeScript
-$ tsc index.ts
-```
-
-Cela va créer un fichier JavaScript que nous pouvons exécuter en utilisant Node.js en saisissant la commande suivante :
-
-```TypeScript
-$ node index.js
-```
-
-Si tout se passe bien, vous devriez voir le contenu de la page web téléchargée dans la console !
+Le code ci-dessus utilise la bibliothèque externe "request" pour effectuer une requête GET vers l'URL spécifiée et enregistrer le contenu de la page dans un fichier HTML.
 
 ## Plongée en profondeur
 
-Maintenant que vous avez compris comment télécharger une page web en utilisant TypeScript, vous voudrez peut-être explorer davantage cette fonctionnalité en modifiant le code et en ajoutant des fonctionnalités telles que la gestion des erreurs ou la création d'un fichier local contenant les données téléchargées.
-
-Vous pouvez également explorer la bibliothèque "https" pour découvrir toutes les fonctionnalités qu'elle offre, telles que l'envoi de demandes POST et la validation des certificats.
+Bien qu'il existe plusieurs bibliothèques et outils pour télécharger une page web en TypeScript, la plupart d'entre eux suivent un processus similaire : effectuer une requête HTTP vers l'URL, extraire le contenu de la réponse et le traiter selon les besoins. Il est important de comprendre que la structure d'une page web peut varier considérablement et nécessiter des manipulations de données spécifiques pour être correctement téléchargée.
 
 ## Voir aussi
 
-Pour en savoir plus sur TypeScript et les différentes fonctionnalités qu'il offre, consultez ces ressources utiles :
-
-- [Site officiel de TypeScript](https://www.typescriptlang.org/) - Documentation officielle et guides de démarrage rapide.
-- [Node.js Documentation](https://nodejs.org/en/docs/) - Documentation complète sur Node.js et ses bibliothèques natives.
-- [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de code gratuit et open-source avec prise en charge intégrée de TypeScript.
-- [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - Outils de développement de Chrome pour déboguer vos applications web.
+- [Utilisation de la bibliothèque Request](https://www.npmjs.com/package/request)
+- [Guide de débogage des problèmes de téléchargement](https://www.webpagefx.com/web-design/debugging-download-problems.html)
+- [Référence de TypeScript pour les requêtes HTTP](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html#making-requests)

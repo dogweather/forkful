@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Travailler avec les fichiers CSV"
+html_title:           "Clojure: Travailler avec les fichiers CSV"
+simple_title:         "Travailler avec les fichiers CSV"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,50 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Travailler avec des fichiers CSV peut être une tâche essentielle pour de nombreux projets de programmation. Les fichiers CSV (Comma Separated Values) sont couramment utilisés pour stocker et échanger des données tabulaires, grâce à leur format simple et facilement lisible. Dans cet article, nous allons explorer comment travailler avec des fichiers CSV en utilisant Clojure.
+Vous avez probablement déjà travaillé avec des données tabulaires au format CSV (Comma-Separated Values). Peut-être avez-vous créé un fichier CSV à partir d'un tableur ou avez-vous utilisé des données CSV dans un projet de datavisualisation. Mais saviez-vous que Clojure offre des fonctionnalités puissantes pour travailler avec des fichiers CSV ? Dans cet article, nous allons voir pourquoi et comment intégrer les fichiers CSV dans vos projets Clojure.
 
 ## Comment faire
 
-Pour commencer à travailler avec des fichiers CSV, nous allons utiliser la bibliothèque de traitement des données clojure.data.csv. Tout d'abord, importez cette bibliothèque dans votre fichier Clojure :
-
 ```Clojure
-(ns mon-projet.core
-  (:require [clojure.data.csv :as csv]))
+;;Importer la bibliothèque clojure.data.csv
+(require '[clojure.data.csv :as csv])
+
+;;Lire un fichier CSV et stocker les données dans une structure de données
+(with-open [file (reader "chemin/vers/votre/fichier.csv")]
+  (doall (csv/read-csv file)))
 ```
 
-Ensuite, nous pouvons lire un fichier CSV en utilisant la fonction `csv/read-csv`. Par exemple, si nous avons un fichier CSV nommé "donnees.csv" avec les colonnes "nom" et "age", nous pouvons le lire de la manière suivante :
+Le code ci-dessus utilise la bibliothèque "clojure.data.csv" pour lire un fichier CSV et stocker les données dans une liste de listes. Vous pouvez ensuite manipuler les données à l'aide des outils Clojure tels que "map" et "filter".
 
 ```Clojure
-(def donnees (with-open [file (clojure.java.io/reader "donnees.csv")]
-                    (csv/read-csv file)))
+;;Manipuler les données d'un fichier CSV
+(def données (with-open [file (reader "chemin/vers/votre/fichier.csv")]
+                (doall (csv/read-csv file))))
 
-;; Affiche le contenu du fichier
-(println donnees) 
+;;Sélectionner uniquement certaines colonnes
+(map #(select-keys % [:colonne1 :colonne2]) données)
+
+;;Filtrer les lignes selon certaines conditions
+(filter #(> (-> % first Integer/parseInt) 10) données)
+
+;;Afficher les données au format table
+(clojure.pprint/print-table données)
 ```
 
-Cela retournera une liste contenant des vecteurs qui représentent chaque ligne du fichier, avec les valeurs des colonnes correspondantes. Pour accéder à une valeur spécifique, nous pouvons utiliser la fonction `get-in` comme ceci :
+La bibliothèque "clojure.data.csv" offre également la possibilité d'écrire des données dans un fichier CSV avec "write-csv" et de spécifier le séparateur et l'encodage du fichier.
 
-```Clojure
-;; Accède au premier élément dans la première ligne du fichier
-(get-in donnees [0 0])
-```
+## Approfondissement
 
-Pour écrire des données dans un fichier CSV, nous pouvons utiliser la fonction `csv/write-csv` en spécifiant le nom du fichier et les données à écrire. Voici un exemple :
+La bibliothèque "clojure.data.csv" offre des fonctionnalités avancées pour travailler avec des fichiers CSV. Il est possible de spécifier les options de lecture et d'écriture telles que le séparateur, l'encodage, les options de formatage et les gestionnaires d'erreurs. Vous pouvez également utiliser des transducteurs pour traiter les données plus efficacement.
 
-```Clojure
-(def donnees-a-ecrire [["nom" "age"]
-                       ["Jean" 25]
-                       ["Marie" 30]])
-
-;; Ecrit les données dans un fichier nommé "resultat.csv"
-(csv/write-csv "resultat.csv" donnees-a-ecrire)
-```
-
-## Plongée en profondeur
-
-Travailler avec des fichiers CSV peut devenir plus complexe lorsqu'il s'agit de gérer des données avec différents types et formats. Cependant, la bibliothèque clojure.data.csv propose des fonctions utiles pour aider à gérer ces situations. Par exemple, nous pouvons utiliser la fonction `parse-csv` pour lire un fichier CSV en spécifiant le type de données attendu pour chaque colonne. De plus, nous pouvons utiliser la fonction `write-csv` pour écrire des données en spécifiant les types de données pour chaque colonne.
+Pour en savoir plus sur les différentes options et fonctionnalités de la bibliothèque, consultez la documentation officielle et les exemples de code sur le site https://github.com/clojure/data.csv.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque clojure.data.csv](https://clojure.github.io/clojure/clojure.data.csv-api.html)
-- [Exemple complet de lecture et d'écriture de fichiers CSV en Clojure](https://github.com/VenmurasuS/Handling-CSV-in-Clojure)
+- Documentation officielle de la bibliothèque "clojure.data.csv": https://clojure.github.io/data.csv/
+- Exemples de code: https://github.com/clojure/data.csv/tree/master/examples

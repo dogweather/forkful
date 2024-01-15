@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Tiedostoon standardivirheen kirjoittaminen"
-simple_title:         "Tiedostoon standardivirheen kirjoittaminen"
+title:                "Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
+html_title:           "Haskell: Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
+simple_title:         "Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,69 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardivirtaan
+## Miksi
 
-Kirjoittaminen standardivirtaan on tärkeä osa Haskell-ohjelmointia, jota jokaisen kehittäjän tulisi osata. Se mahdollistaa virheiden ja toimintatietojen näyttämisen suoraan terminaaliin, mikä helpottaa ohjelman käytettävyyttä ja korjaamista.
+Kirjoittaminen vakiokäyttövirheestä (standard error) on tärkeä osa tehokasta Haskell-ohjelmointia. Se auttaa kehittäjiä tunnistamaan ja ratkaisemaan virheitä nopeasti ja parantamaan ohjelmien suorituskykyä.
 
-## Miten kirjoittaa standardivirtaan
+## Kuinka
 
-Kirjoittaminen standardivirtaan on helppoa Haskellissa. Käytä `System.IO` -moduulia ja `stderr` -funktiota tulostamaan haluamasi viesti. Esimerkiksi:
+Voit kirjoittaa vakiokäyttövirheeseen käyttämällä `hPutStrLn` -funktiota ja `stderr` -moduulia. Alla on esimerkki koodista, joka kirjoittaa merkkijonon vakiokäyttövirheeseen ja tulostaa sen samalla konsoliin:
+
+ ```Haskell
+import System.IO
+
+main = do
+ hPutStrLn stderr "Tämä on vakiokäyttövirhe"
+ putStrLn "Tämä tulostetaan konsoliin"
+ ```
+
+Tämän koodin ulostulo on seuraava:
+
+```haskell
+Tämä on vakiokäyttövirhe
+Tämä tulostetaan konsoliin
+```
+
+## Syväsukellus
+
+Haskellin `hPutStrLn` -funktio ei ole ainoa tapa kirjoittaa vakiokäyttövirheeseen. Voit myös käyttää `hPutStr` -funktiota, joka tulostaa merkkijonon ilman rivinvaihtoa. Lisäksi voit käyttää `stderr` -moduulin sijasta `stderr` -arvoa. Alla on esimerkki koodista, joka käyttää näitä vaihtoehtoja:
 
 ```Haskell
 import System.IO
 
 main = do
-    hPutStrLn stderr "Tervetuloa Haskell-maailmaan!"
+ hPutStr stderr "Tämä on "
+ hPutStrLn stderr "vakiokäyttövirhe"
+ putStrLn "Tämä tulostetaan konsoliin"
 ```
 
-Voit myös ottaa käyttöön `Control.Monad` -moduulin avulla virhekäsittelyn ja tulostaa virheviestisi `stderr`-virtaan käyttäen `when`-funktiota. Esimerkiksi:
+Tämän koodin ulostulo on seuraava:
 
-```Haskell
-import System.IO
-import Control.Monad
-
-main = do
-    let x = 10
-    when (x <= 0) $ hPutStrLn stderr "Virhe: x ei voi olla negatiivinen!"
+```haskell
+Tämä on vakiokäyttövirhe
+Tämä tulostetaan konsoliin
 ```
-
-Näiden esimerkkien tulostus näyttäisi tältä:
-
-```shell
-Tervetuloa Haskell-maailmaan!
-```
-tai
-
-```shell
-Virhe: x ei voi olla negatiivinen!
-```
-
-Ei ole käytännöllistä kirjoittaa kaikkia virheviestejä `stdout`-virtaan, sillä silloin ne sekoittuisivat ohjelman normaalin tulostuksen kanssa. Siksi on tärkeää käyttää `stderr`-virtaa virheiden ja toimintatietojen näyttämiseen.
-
-## Syventävä tieto kirjoittamisesta standardivirtaan
-
-On hyvä käytäntö kirjoittaa siististi jäsenneltyjä ja informatiivisia virheviestejä, jotka auttavat käyttäjää ymmärtämään ongelman ja korjaamaan sen. Voit myös halutessasi käyttää `hPrintf`-funktiota muotoilun helpottamiseksi. Esimerkiksi:
-
-```Haskell
-import System.IO
-import Text.Printf
-
-main = do
-    let x = 5
-    let y = 0
-    when (y == 0) $ hPrintf stderr "Virhe: %d ei voi olla jakajan arvo!" y
-```
-
-Tämä tulostaisi seuraavan virheilmoituksen:
-
-```shell
-Virhe: 0 ei voi olla jakajan arvo!
-```
-
-Nyt kun tiedät, kuinka kirjoittaa standardivirtaan, voit parantaa ohjelmasi käytettävyyttä ja helpottaa sen virheiden korjaamista.
 
 ## Katso myös
 
-- [Haskell-dokumentaatio - System.IO-moduuli](https://www.haskell.org/onlinereport/io.html#etag-haskell-document-filtering-data)
-- [Haskell-dokumentaatio - Text.Printf-moduuli](https://www.haskell.org/onlinereport/standard-prelude.html#t%3APrintfType)
-- [Haskell Wikibooks - Virhekäsittelystä](https://en.wikibooks.org/wiki/Haskell/Error_handling)
+- [Haskellin virallinen dokumentaatio vakiokäyttövirheen kirjoittamisesta](https://www.haskell.org/hoogle/?hoogle=stderr)
+- [Haskellin perusteet](https://github.com/bitemyapp/learnhaskell)
+- [50 tärkeää Haskell-funktiota, jotka sinun tulisi tietää](https://wiki.haskell.org/Category:Standard_functions)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: עובדים עם JSON"
-simple_title:         "עובדים עם JSON"
+title:                "עבודה עם json"
+html_title:           "TypeScript: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+כדי לנהל נתונים בפורמט תקין וקל לקריאה עבור מכשירים ושירותים מגוונים באינטרנט, עבודה עם JSON הוא חיונית למתכנתי TypeScript. כמו כן, מסגרת TypeScript מאפשרת לנו להיעזר במדעי הנתונים וליצור יישומים מורכבים יותר שמתמודדים עם קבצי JSON.
 
-התכונן לעבוד עם JSON יכול להיות טוב לך כמתכנת. נתחיל!
-
-## איך לעשות
-
-אנו נפתח עם דוגמא פשוטה של קובץ JSON:
+## איך לעשות זאת
+תחילה, יש להתקין את גירסת TypeScript האחרונה על ידי הרצת פקודת ההתקנה `npm install -g typescript`. לאחר מכן, ניתן ליצור קובץ חדש בשם "example.ts" ולבצע ייבוא של מודול JSON באמצעות הפקודה `import * as json from 'json'`. לאחר מכן, ניתן להשתמש בפקודה `json.parse()` כדי להמיר טקסט קלט בפורמט JSON לפריט מסוג "object" בפינקציה `console.log()` כדי להדפיס את הפריט הממומש בעזרת גישת מפתח: ערך.`
 
 ```TypeScript
-const person = {
-  name: "John Smith",
-  age: 30,
-  hobby: "reading"
-};
+import * as json from 'json';
 
-console.log(person.name); // Output: John Smith
+let exampleJson = '{"name": "John", "age": 30}'; // טקסט קלט בפורמט JSON
+
+let parsedJson = json.parse(exampleJson); // קבלת פריט מסוג "object"
+
+console.log(parsedJson["name"]); // 'John', הדפסת הערך המסומן "name" בפריט הממומש
 ```
 
-כאן, אנו משתמשים בקובץ JSON על מנת לאחסן מידע על אדם כגון שם, גיל ותחביב. נגיע למשתנים בתוך הקובץ באמצעות הסימן "." ומדפיסים אותם בעזרת הפונקציה "console.log". כמו כן, ניתן לעשות שימוש במערך של עצמים בקובץ JSON:
-
-```TypeScript
-const students = [
-  {
-    firstName: "Michael",
-    lastName: "Brown",
-    age: 24
-  },
-  {
-    firstName: "Samantha",
-    lastName: "Green",
-    age: 22
-  },
-  {
-    firstName: "David",
-    lastName: "Taylor",
-    age: 26
-  }
-];
-
-console.log(students[1].lastName); // Output: Green
-```
-
-כאן, אנו משתמשים במערך של עצמים על מנת לאחסן מידע של מספר סטודנטים. אנו נגיע לאחד מהם באמצעות הערך המספרי במערך ונדפיס את מחרוזת השם המשפחה.
-
-## מעמקים
-
-כאשר אנו עובדים עם JSON, חשוב לזכור כי זהו פורמט נתונים שמשמש בדרך כלל להעביר מידע בין שרתים ולהוציא מידע ממסדי נתונים. פורמט זה מתאים לשימוש בכל מספר שפות תכנות כולל TypeScript.
-
-עוד דבר שחשוב לזכור הוא שקבצי JSON צריכים להיות חוקיים מבחינת התחביר, כלומר לעקוב אחר כללי התחביר של הפורמט ולשמור על נכונות ועדכניות של המידע.
+## טיול עמוק
+עבודה עם מבנה נתונים פשוט כמו JSON יכולה להיות קלה ונגישה, אך ישנם סיטואציות מורכבות יותר כאשר יצירת יישומים מתבצעת על ידי עיבוד קבצי JSON גדולים יותר. מבחינה זו, מרכיב JSON פתוח ונוח לשימוש, כגון JSON Schema ו-JSON Pointer, יכול להיות מועיל לתחום עבודה זה.
 
 ## ראה גם
-
-* מדריך לפורמט JSON - https://www.json.org/json-he.html
-* היכרות עם קובץ JSON ב-TypeScript - https://www.typescriptlang.org/docs/handbook/interfaces.html#introduction
+- [מדריך לעבודה עם JSON ב TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript)
+- [מתי להשתמש ב-JSON Schema vs. TypeScript](https://medium.com/@mbaker_8086/when-to-use-json-schema-vs-typescript-33e1711df1e8)
+- [כתיבת

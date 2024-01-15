@@ -1,5 +1,6 @@
 ---
-title:                "C#: כתיבת קובץ טקסט"
+title:                "כתיבת קובץ טקסט"
+html_title:           "C#: כתיבת קובץ טקסט"
 simple_title:         "כתיבת קובץ טקסט"
 programming_language: "C#"
 category:             "C#"
@@ -9,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה:
+## למה
 
-הכתיבה של קובץ טקסט היא חלק חשוב ביישום תוכניות בשפת סי שארפ. קבצי טקסט מאפשרים לנו לשמור ולקרוא מידע, וזהו מקום מבחר נהדר לאחסון נתונים, קוד פייתון, ועוד.
+כאשר מתכנתים ב-C# יכולים להשתמש בקבצי טקסט כדי לאחסן ולשנות נתונים בצורה מהירה ויעילה. ניתן להשתמש בקבצי טקסט כדי לשמור מידע מתחילת התהליך התכנותי ועד לשלבים מתקדמים יותר בפיתוח התוכנה.
 
-# איך ל:
+## איך לעשות זאת?
 
-הנה דוגמא פשוטה של כתיבת קובץ טקסט בשפת סי שארפ:
+בשפת C# ישנם מספר דרכים לכתוב קבצי טקסט. הנה כמה דוגמאות של איך ניתן ליצור קובץ טקסט ולשנות אותו בעזרת שפת C#:
 
 ```C#
-using System;
-using System.IO;
-
-class Program
+// יצירת קובץ טקסט חדש
+string filePath = @"C:\myFile.txt";
+using (StreamWriter writer = new StreamWriter(filePath))
 {
-    static void Main()
-    {
-        string text = "זהו טקסט שיכנס לקובץ!";
-        File.WriteAllText("myfile.txt", text);
-    }
+    writer.WriteLine("זוהי כתבה ראשונה שנכתבת בשפת C#.");
+}
+
+// קריאת קובץ טקסט קיים
+string filePath = @"C:\myFile.txt";
+string fileContent = File.ReadAllText(filePath);
+Console.WriteLine(fileContent);
+
+// הוספת תוכן לקובץ טקסט קיים
+string filePath = @"C:\myFile.txt";
+using (StreamWriter writer = new StreamWriter(filePath, true))
+{
+    writer.WriteLine("התוספת היא שורה נוספת בסוף הקובץ.");
 }
 ```
-כשנריץ את הקוד הזה, הוא יכתוב את הטקסט לקובץ בשם "myfile.txt". תוכלו גם לקרוא את הטקסט מקובץ באמצעות פקודה זו:
 
-```C#
-string content = File.ReadAllText("myfile.txt");
-Console.WriteLine(content);
-```
-תוכלו להשתמש גם בפקודות נוספות כמו "File.AppendAllText" ו"File.ReadAllLines" כדי להוסיף תוכן לקובץ או לקרוא את התוכן שלו בצורה שונה.
+בתוך קובץ הקוד, אנו משתמשים במחלקות כמו "StreamWriter" ו-"File" כדי לגשת לקבצי הטקסט ולשנות אותם בדרכים שונות. אחד הדברים החשובים לזכור הוא לסגור את הגישה לקובץ באמצעות הפקודה "using" כדי למנוע קוד כפול.
 
-# חפירה עמוקה:
+## נכנסים עמוק יותר
 
-כאשר אנו כותבים קבצי טקסט, יש לנו יכולת להתאים את התוכן והתבניות לצרכים שלנו. ניתן להשתמש בתוספות נוספות כמו "System.Text.Encoding" כדי להגדיר את הקידוד של הקובץ, ובכך לאפשר כתיבה וקריאה של טקסט בשפות ותווים שונים. תוכלו גם להשתמש בפקודות לעיצוב הטקסט, כגון "Console.WriteLine" ו"Console.ReadLine", כדי לשפר את הפלט של הקוד שלכם.
+כאשר משתמשים בפקודות כמו "StreamWriter" ו-"File", יש להתעלם מפרטים כמו התנאים המסובכים שמאפשרים קריאה וכתיבה לקבצים באופן פרטני יותר. כמו כן, ניתן לשנות את הכתובת של קובץ הטקסט או להרחיב את הגישה לתיקייה שלמה על ידי שימוש בפקודות נוספות כמו "Directory" ו-"Path".
 
-# ראו גם:
-
-- עידכוני טקסט בשפת סי-שארפ: https://docs.microsoft.com/he-il/dotnet/csharp/language-reference/tokens/verbatim
-- מדריך לכתיבת קבצי טקסט ב-C#: https://www.tutorialspoint.com/csharp/csharp_files.htm
-- שמירה וקריאה של קובץ טקסט עם Stream: https://docs.microsoft.com/he-il/dotnet/standard/io/how-to-write-text-to-a-file
+## ראה

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Eine Textdatei lesen"
-simple_title:         "Eine Textdatei lesen"
+title:                "Einen Text-Datei lesen"
+html_title:           "Javascript: Einen Text-Datei lesen"
+simple_title:         "Einen Text-Datei lesen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn man mit Javascript programmieren möchte, kann es oft nützlich sein, Textdateien zu lesen. Das ermöglicht es, Daten aus externen Dateien in das Programm einzubinden und weiterzuverarbeiten. In diesem Artikel werden wir uns anschauen, wie man genau das macht und welche Methoden dabei zur Verfügung stehen.
 
-## Wie man eine Textdatei liest
-Um eine Textdatei in Javascript zu lesen, müssen wir zunächst eine Verbindung zu der Datei herstellen. Dafür nutzen wir die `fs` Bibliothek, die bereits in Node.js integriert ist. Um diese zu nutzen, müssen wir sie zuerst importieren:
+Wenn Du Dich für das Programmieren mit Javascript interessierst, wirst Du wahrscheinlich irgendwann auf Textdateien stoßen. Diese können eine nützliche und wichtige Ressource für Dein Projekt sein. In diesem Artikel werde ich Dir zeigen, wie Du eine Textdatei in Javascript einlesen kannst und was Du damit machen kannst.
 
-```Javascript
-const fs = require('fs');
-```
+##Wie funktioniert es?
 
-Als nächstes müssen wir den Pfad zur Textdatei angeben, die wir lesen möchten. Angenommen, die Datei befindet sich im selben Ordner wie unser Skript, können wir einfach den Dateinamen angeben. Andernfalls müssen wir den Pfad zur Datei angeben, zum Beispiel `./Ordner/datei.txt`.
+Es gibt verschiedene Möglichkeiten, eine Textdatei in Javascript einzulesen. Eine der einfachsten ist die Verwendung der XMLHttpRequest-Methode. Hier siehst Du ein Beispiel:
 
 ```Javascript
-const path = 'datei.txt';
+const xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    console.log(this.responseText);
+  }
+};
+xhttp.open("GET", "beispiel.txt", true);
+xhttp.send();
 ```
 
-Jetzt können wir die Methode `readFileSync()` aufrufen, die uns die Datei im Form einer Bytefolge zurückgibt. Um diesen Datenstream in einen lesbaren String umzuwandeln, können wir die Methode `toString()` verwenden:
+In diesem Beispiel wird eine XMLHTTPRequest erstellt, die eine GET-Anfrage an die Datei "beispiel.txt" sendet. Sobald die Anfrage abgeschlossen ist, wird die Funktion onreadystatechange aufgerufen. Wenn der Status der Anfrage erfolgreich ist, wird der Inhalt der Datei mittels console.log ausgegeben.
 
-```Javascript
-const data = fs.readFileSync(path).toString();
-console.log(data);
-```
+Es gibt auch andere Methoden, eine Textdatei einzulesen, wie z.B. die Verwendung von fetch oder das Parsen mit dem Node.js FileSystem-Modul. Du kannst die Methode wählen, die am besten zu Deinem Projekt passt.
 
-Dies gibt den gesamten Inhalt der Datei in der Konsole aus. Um die Daten weiter zu verarbeiten, können wir sie in ein Array aufteilen, indem wir die `split()` Methode nutzen und das Trennzeichen angeben. Angenommen, die Datei besteht aus mehreren Zeilen, können wir diese so in ein Array aufteilen:
+## Deep Dive
 
-```Javascript
-const lines = data.split('\n');
-console.log(lines);
-```
+Wenn Du Dich tiefer mit dem Einlesen von Textdateien in Javascript befassen möchtest, gibt es einige wichtige Dinge zu beachten. Zum Beispiel musst Du möglicherweise die Größe der Datei überprüfen oder mit Fehlermeldungen umgehen, falls die Anfrage fehlschlägt.
 
-Dies gibt ein Array zurück, wobei jedes Element eine Zeile aus der Textdatei darstellt. Nun können wir mit den Daten weiterarbeiten und zum Beispiel bestimmte Werte auslesen oder weiterverarbeiten.
+Außerdem kannst Du mit verschiedenen Methoden die Daten aus der Textdatei extrahieren, z.B. durch Aufteilen in einzelne Zeilen oder Suchen nach bestimmten Mustern.
 
-## Tieferer Einstieg
-Das waren nur die Grundlagen für das Lesen einer Textdatei in Javascript. Es gibt auch noch die Möglichkeit, asynchron auf die Datei zuzugreifen, indem man die Methode `readFile()` nutzt und eine Callback-Funktion verwendet. Außerdem gibt es verschiedene Optionen, um die Datei in verschiedenen Codierungen zu lesen oder direkt als JSON-Objekt einzulesen. Hier lohnt es sich, weiter in die Dokumentation der `fs` Bibliothek einzusteigen.
+Es ist auch wichtig zu beachten, dass Javascript standardmäßig keine Zugriffsberechtigung auf Dateien hat, die sich auf dem lokalen System des Nutzers befinden. In diesen Fällen musst Du eventuell eine Backend-Serverumgebung einrichten, um die Datei zugänglich zu machen.
 
-## Siehe auch
-- [Node.js fs Module Dokumentation](https://nodejs.org/api/fs.html)
-- [Codebeispiel für das Lesen einer Textdatei in Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Eine tiefergehende Erklärung zu Callback-Funktionen](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+## Siehe Auch
+
+- [XMLHttpRequest](https://developer.mozilla.org/de/docs/Web/API/XMLHttpRequest)
+- [fetch](https://developer.mozilla.org/de/docs/Web/API/Fetch_API/Using_Fetch)
+- [Node.js FileSystem-Modul](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Uniendo cadenas"
-simple_title:         "Uniendo cadenas"
+title:                "Concatenando cadenas"
+html_title:           "Arduino: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-El concatenar cadenas de texto en un programa de Arduino puede ser muy útil para crear mensajes personalizados o para mostrar datos dinámicos en una pantalla. También puede ayudar a simplificar la escritura de código al permitir la reutilización de variables.
+En programación, a menudo es necesario unir diferentes cadenas de texto en una sola, ya sea para imprimir mensajes más complejos o para crear estructuras de datos. La concatenación de cadenas es una habilidad clave para cualquier programador y es especialmente útil al trabajar con Arduino, ya que nos permite crear mensajes personalizados para nuestros proyectos.
 
 ## Cómo hacerlo
 
-Para concatenar cadenas de texto en Arduino, se puede utilizar la función "print". Esta función permite agregar variables, números o texto, todo en una sola línea. Por ejemplo:
+Para concatenar cadenas de texto en Arduino, utilizamos el operador `+`, similar a como se hace en otros lenguajes de programación. Veamos un ejemplo de cómo podemos imprimir un mensaje personalizado utilizando la función `Serial.println()`:
 
 ```Arduino
-int temperatura = 25;
-float humedad = 50.5;
-char* unidad = "%";
-
-print("La temperatura actual es: ");
-print(temperatura);
-print("°C y la humedad es: ");
-print(humedad);
-print(unidad);
+String nombre = "Juan";
+String saludo = "¡Hola " + nombre + "!";
+Serial.println(saludo);
 ```
 
-La salida de este código sería:
+En este ejemplo, hemos creado dos cadenas de texto, `nombre` y `saludo`, y las hemos concatenado utilizando el operador `+`. Al imprimir la variable `saludo` utilizando la función `Serial.println()`, obtendremos el siguiente resultado:
 
 ```
-La temperatura actual es: 25°C y la humedad es: 50.50%
+¡Hola Juan!
 ```
 
-Si se desea guardar la cadena concatenada en una variable, se puede utilizar la función "String". Por ejemplo:
+Podemos usar este mismo método para crear mensajes más complejos, como por ejemplo, mostrar la temperatura actual en un proyecto de Arduino:
 
 ```Arduino
-int temperatura = 25;
-float humedad = 50.5;
-char* unidad = "%";
-
-String mensaje = "La temperatura actual es: ";
-mensaje = mensaje + temperatura + "°C y la humedad es: " + humedad + unidad;
+float temperatura = 25.5;
+String mensaje = "La temperatura actual es: " + String(temperatura) + " grados Celsius";
+Serial.println(mensaje);
 ```
 
-La variable "mensaje" ahora contendrá la cadena completa.
+En este caso, hemos convertido la variable `temperatura` a una cadena de texto utilizando la función `String()`, y luego la hemos concatenado con el resto del mensaje.
 
 ## Profundizando
 
-En Arduino, cada vez que se concatena una cadena de texto, se está creando un nuevo objeto de tipo String. Estos objetos consumen memoria, por lo que se debe tener cuidado al usar la función "String" en programas con limitaciones de memoria.
+Al concatenar cadenas en Arduino, es importante tener en cuenta el uso de memoria. Cada vez que concatenamos dos cadenas, se crea una nueva cadena en la memoria, por lo que es importante hacer uso eficiente de esta. Si se necesitan concatenar varias cadenas, es mejor utilizar la función `concat()` en lugar del operador `+`, ya que esta última puede tener un impacto negativo en el rendimiento del proyecto.
 
-Otra forma de concatenar cadenas es utilizando la función "strcat". Esta función toma dos cadenas existentes y las une juntas. Sin embargo, esta función es más limitada y solo puede concatenar una cadena al final de otra.
+Otro aspecto importante es el tipo de dato de las variables que estamos concatenando. En el ejemplo anterior, utilizamos la función `String()` para convertir la variable `temperatura` a una cadena de texto, pero esto solo es necesario si la variable no es de tipo `String`. Si ya trabajamos con variables de tipo `String`, el proceso de concatenación se simplifica.
 
-## Ver también
+## Vea también
 
-- [Documentación de Arduino sobre la función "print"](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Ejemplo de uso de la función "strcat"](https://electrosome.com/concatenate-two-strings-arduino/)
-- [Tutorial sobre concatenación de cadenas en Arduino](https://www.electronicshub.org/string-concatenation-in-arduino/)
+- [Tutorial de concatenación de cadenas en Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
+- [Manipulación de cadenas en Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Operadores de concatenación en otros lenguajes de programación](https://www.w3schools.com/jsref/jsref_concat_string.asp)

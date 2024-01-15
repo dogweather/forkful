@@ -1,5 +1,6 @@
 ---
-title:                "C#: Generando números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "C#: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "C#"
 category:             "C#"
@@ -9,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios es importante
+## ¿Por qué generar números aleatorios en C#?
 
-Generar números aleatorios es una habilidad importante para cualquier programador de C#. Conviene saber cómo hacerlo, ya que permite crear programas más dinámicos y con resultados diferentes en cada ejecución. Además, puede ser útil en juegos de azar, sorteos y otras aplicaciones.
+Generar números aleatorios puede ser una tarea útil en la programación, ya sea para desarrollar juegos, aplicaciones de simulación o para probar diversas funcionalidades de un sistema. A través de este artículo, aprenderás cómo generar números aleatorios en C# y entenderás un poco más sobre cómo funcionan.
 
-## Cómo generar números aleatorios en C#
+## Cómo hacerlo en C#
 
-La biblioteca .NET incluye la clase `Random` que facilita la generación de números aleatorios en C#. Aquí hay un ejemplo de código que muestra cómo generar cinco números aleatorios entre 1 y 10 y mostrarlos en la consola:
+Para generar números aleatorios en C#, utilizaremos la clase `Random` incluida en el espacio de nombres `System`. Esta clase nos permite generar números enteros, números de punto flotante y cadenas de caracteres de forma aleatoria. Veamos algunos ejemplos:
 
 ```C#
-// Importar la clase Random
-using System;
+// Generar un número entero aleatorio entre 1 y 10
+Random random = new Random();
+int numeroEntero = random.Next(1, 11); 
+```
+El método `Next()` toma dos parámetros, el primero es el número mínimo que queremos generar y el segundo es el número máximo, pero este último no está incluido en la lista de posibles resultados.
 
-// Crear una instancia de la clase Random
-Random rnd = new Random();
-
-// Generar 5 números aleatorios entre 1 y 10
-for (int i = 0; i < 5; i++)
-{
-    int num = rnd.Next(1, 11);
-    Console.WriteLine(num);
-}
+```C#
+// Generar un número de punto flotante aleatorio entre 0 y 1
+double numeroDecimal = random.NextDouble(); 
 ```
 
-El resultado de este código podría ser:
-
-```
-8
-2
-6
-4
-10
+```C#
+// Generar una cadena de 10 caracteres aleatorios
+string cadenaAleatoria = new string(Enumerable.Repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10)
+  .Select(s => s[random.Next(s.Length)]).ToArray()); 
 ```
 
-Puedes notar que cada vez que se ejecuta el programa, los números generados son diferentes.
+## Inmersión profunda en la generación de números aleatorios
 
-## Profundizando en la generación de números aleatorios
+La clase `Random` utiliza un valor semilla para generar números aleatorios. Si no le proporcionamos un valor, utilizará como semilla un número basado en la hora en la que se ejecuta el programa. Esto significa que si ejecutas el código varias veces en el mismo segundo, obtendrá el mismo resultado. Para evitar esto, podemos proporcionar nuestro propio valor semilla.
 
-La clase `Random` utiliza un algoritmo para generar números pseudoaleatorios a partir de una semilla inicial. Esto significa que los números aparentemente aleatorios no son realmente aleatorios, sino que siguen un patrón predecible. Siempre comienzan desde la misma semilla, los resultados serán los mismos. Sin embargo, en la práctica, estos números son suficientemente aleatorios para la mayoría de las aplicaciones.
-
-También es importante tener en cuenta que la clase `Random` no es segura para usar en entornos de múltiples hilos, ya que puede causar conflictos de acceso a la misma instancia desde diferentes hilos. Para evitar este problema, puedes utilizar la clase `ThreadLocal<Random>` para crear una instancia individual para cada hilo.
+Otra cosa a tener en cuenta es que la clase `Random` no es realmente aleatoria, sino que utiliza un algoritmo para generar los números. Si necesitamos una verdadera aleatoriedad, podemos utilizar la clase `RNGCryptoServiceProvider` incluida en el espacio de nombres `System.Security.Cryptography`, que utiliza fuentes de entropía externas para generar los números.
 
 ## Ver también
 
-- [Documentación de la clase Random en Microsoft Docs](https://docs.microsoft.com/es-es/dotnet/api/system.random)
-- [Artículo sobre la seguridad de la clase Random en StackOverflow (en inglés)](https://stackoverflow.com/questions/767999/random-number-generator-only-generates-one-random-number)
+- [Documentación oficial de la clase Random - Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
+- [Documentación oficial de la clase RNGCryptoServiceProvider - Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=netframework-4.8)

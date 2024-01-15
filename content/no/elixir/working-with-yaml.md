@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeide med yaml"
+html_title:           "Elixir: Arbeide med yaml"
+simple_title:         "Arbeide med yaml"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -9,32 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Hvorfor
+## Hvorfor
 
-Å jobbe med YAML kan være en nyttig ferdighet for enhver utvikler, uansett om du utvikler webapplikasjoner, infrastruktur eller automatiseringsskript. YAML er et enkelt og leselig format for å beskrive datastrukturer, som kan brukes til å konfigurere og organisere komplekse systemer.
+Å jobbe med YAML kan være nyttig for å lagre og behandle datastrukturer på en enkel og lesbbar måte. Det er også en populær format for konfigurasjonsfiler i mange programmeringsspråk.
 
-### Slik gjør du det
+## Hvordan
 
-For å kunne jobbe med YAML i Elixir, trenger du_yaml_ biblioteket. Dette kan enkelt installeres ved hjelp av hex-pakker eller ved å legge det inn i ditt prosjekts "mix.exs" file. Etter installasjonen kan du begynne å bruke funksjoner fra biblioteket til å lese og skrive YAML-filer.
+For å arbeide med YAML i Elixir, må du først legge til `:yaml_erl` biblioteket i prosjektet ditt. Deretter kan du bruke funksjonen `YAML.decode/1` for å dekode en YAML-streng til en Elixir-struct.
 
 ```Elixir
-# Eksempel på hvordan du kan lese en YAML-fil og hente ut data
-{:ok, data} = Yaml.decode_file("config.yaml")
-IO.puts data["navn"]
-
-# Eksempel på hvordan du kan skrive til en YAML-fil
-data = %{"navn" => "Elixir", "versjon" => "1.11.2"}
-Yaml.encode_file("config.yaml", data)
+require YAML
+yaml = "---\nname: John\nage: 30"
+YAML.decode(yaml) # %{name: "John", age: 30}
 ```
 
-### Dykk dypere
+Å konvertere en Elixir-struct til YAML er like enkelt med `YAML.encode/1`:
 
-YAML har et enkelt og intuitivt syntax som gjør det mulig å beskrive komplekse datastrukturer på en lesbar måte. Du kan bruke ulike datatyper som lister, kart og strenger, samt inkludere kommentarer og referanser mellom forskjellige deler av YAML-filen.
+```Elixir
+user = %{name: "John", age: 30}
+YAML.encode(user) # "---\nname: John\nage: 30"
+```
 
-I tillegg til å lese og skrive til YAML-filer, kan du også bruke YAML til å konfigurere ditt Elixir-prosjekt. Ved å legge til en "config.yaml" fil i rotmappen av prosjektet ditt, kan du definere ulike innstillinger og variabler som kan brukes i koden din.
+Hvis du trenger å manipulere YAML-data, kan du bruke funksjonene i `YAML.Types`-modulen, for eksempel for å hente en verdi fra en nøkkel:
 
-### Se også
+```Elixir
+yaml = "---\nname: John\nage: 30"
+YAML.get(yaml, "name") # "John"
+```
 
-* [Hex-pakken for Yaml](https://hex.pm/packages/yaml)
-* [Offisiell YAML-spesifikasjon](https://yaml.org/spec/1.2/spec.html)
-* [Elixir dokumentasjon for YAML-biblioteket](https://hexdocs.pm/yaml/api-reference.html)
+## Dypdykk
+
+Et interessant aspekt ved å jobbe med YAML i Elixir er at det gir deg muligheten til å bruke såkalte "custom types". Dette betyr at du kan mappe nestede YAML-strukturer til dine egne Elixir-structs, som kan gjøre det lettere å håndtere komplekse data.
+
+For å opprette et slikt custom type, må du implementere protokollen `YAML.CustomType`. La oss ta et enkelt eksempel med et user-objekt som kan ha flere roller:
+
+```Elixir
+defmodule User do
+  defstruct [:name, :age, roles: []]
+
+  defimpl YAML.CustomType do
+    def decode(%{"name" => name, "age" => age, "roles" => roles}) do
+      %User{name: name, age: age, roles: roles}
+    end
+
+    def encode(%User{name: name, age: age, roles: roles}) do
+      %{"name" => name, "age" => age, "roles" => roles}
+    end
+  end
+end
+```
+
+Nå kan vi bruke `YAML.decode/1` til å konvertere en YAML-streng til en `User`-struct:
+
+```Elixir
+yaml = "---\nname: John\nage: 30\nroles:\n  - admin\n  - editor"
+YAML.decode(yaml) # %User{name: "John", age: 30, roles: ["admin", "editor"]}
+```
+
+## Se også
+
+- [YAML-dokumentasjon](https://yaml.org/)
+- [Elixir-YAML dokumentasjon](https://hexdocs.pm/yaml/readme.html) 
+- [Elixir dokumentasjon](https://hexdocs.pm/elixir/api-reference.html)

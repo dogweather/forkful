@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Sortie de débogage à l'impression"
-simple_title:         "Sortie de débogage à l'impression"
+title:                "Affichage du débogage"
+html_title:           "Ruby: Affichage du débogage"
+simple_title:         "Affichage du débogage"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -11,27 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'impression de sortie de débogage, également connue sous le nom de "printing debug output" en anglais, est une pratique courante pour les développeurs de Ruby. Elle consiste à afficher des informations sur l'exécution d'un programme à des fins de débogage. Cela peut sembler être une étape évidente pour certains, mais cela peut en réalité être très utile pour résoudre des erreurs dans le code.
+Imaginons que vous soyez en train de résoudre un problème dans votre programme Ruby. Vous avez peut-être remarqué un comportement étrange ou des erreurs qui se produisent. Dans de telles situations, il peut être utile d'imprimer des messages de débogage pour comprendre ce qui se passe dans votre code. Grâce à ces messages, vous pouvez suivre l'exécution de votre programme et localiser plus facilement l'origine du problème.
 
-## Comment procéder
+## Comment faire
 
-Pour imprimer une sortie de débogage dans votre code Ruby, il suffit d'utiliser la méthode ```puts```. Par exemple, si nous voulons vérifier la valeur d'une variable appelée "nom", nous pouvons utiliser le code suivant :
+Pour imprimer des messages de débogage dans votre code Ruby, vous pouvez utiliser la méthode `puts` ou `p` suivie du contenu que vous souhaitez afficher entre parenthèses. Par exemple:
 
+```ruby
+puts "Début du programme"
+
+# du code
+
+p "Variable x = #{x}"
+
+# encore du code
+
+puts "Fin du programme"
 ```
-nom = "Jean"
-puts "La valeur de la variable nom est : #{nom}"
+Ici, nous utilisons `puts` pour afficher le texte "Début du programme" et "Fin du programme". Nous utilisons également `p` pour afficher la valeur de la variable `x` en utilisant une interpolation de chaîne de caractères avec `#{}`. Les messages de débogage doivent être placés à des endroits stratégiques dans votre code pour vous aider à comprendre les différentes étapes de l'exécution.
+
+## Plongée en profondeur
+
+En plus des méthodes `puts` et `p`, il existe également la méthode `print`. La différence entre `print` et `puts` est que `print` n'ajoute pas de saut de ligne à la fin de la sortie, tandis que `puts` le fait. Vous pouvez également utiliser `inspect` pour afficher plus d'informations sur un objet, comme ceci:
+
+```ruby
+array = [1, 2, 3]
+puts array
+print array
+puts array.inspect
 ```
-
-Cela affichera dans la console la phrase "La valeur de la variable nom est : Jean". Vous pouvez également utiliser la méthode ```p```, qui a un comportement légèrement différent, en imprimant la valeur avec des guillemets.
-
-## Approfondissement
-
-Il est important de noter que l'impression de sortie de débogage peut également être utilisée pour afficher des informations sur des objets complexes, tels que des tableaux ou des hashs. Vous pouvez également utiliser des options supplémentaires telles que la méthode ```inspect``` pour afficher des informations détaillées sur un objet.
-
-Il est recommandé d'utiliser la création de "points de contrôle" dans votre code, en imprimant des informations à des endroits clés pour mieux comprendre le flux de votre programme et détecter les erreurs. Cependant, il est important de noter que le nettoyage de ces commandes d'impression lors de la mise en production de votre code est essentiel, afin de maintenir la performance et la sécurité de votre application.
+Dans cet exemple, `puts array` affichera chaque élément du tableau sur une nouvelle ligne, `print array` imprimera le tableau entier sur une seule ligne et `puts array.inspect` affichera également le tableau entier mais avec plus d'informations sur le type d'objet et les éléments qui le composent.
 
 ## Voir aussi
 
-- https://www.sitepoint.com/printing-debug-output-in-ruby/
-- https://www.rubyguides.com/2019/06/ruby-print-vs-puts-vs-p/
-- https://www.ruby-lang.org/en/documentation/quickstart/1/
+- [Documentation officielle de Ruby sur les méthodes d'impression](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
+- [Guide de débogage Ruby pour débutants](https://www.rubyguides.com/2015/03/ruby-debugging/)
+- [Tutoriel vidéo sur l'impression de messages de débogage en Ruby](https://www.youtube.com/watch?v=WwQk6hsWaKY)

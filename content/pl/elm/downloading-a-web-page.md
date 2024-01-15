@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Elm: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego Elm? 
+# Dlaczego Pobieranie Strony Internetowej w Elm Jest Tym, co Potrzebujesz
 
-Jeśli jesteś programistą i chcesz nauczyć się tworzyć piękne, funkcjonalne i niezawodne strony internetowe, to powinieneś poznać język programowania Elm. Jest to nowoczesny, wydajny i przyjazny dla użytkownika język, który pozwala na łatwą i płynną pracę z interfejsem użytkownika. Dzięki Elm nie tylko możesz tworzyć proste strony internetowe, ale również rozbudowane aplikacje internetowe. 
+Pobieranie strony internetowej jest niezbędne dla wielu aplikacji internetowych, takich jak aplikacje do przeglądania internetu czy platformy e-commerce. W Elm, możemy to zrobić w prosty i wydajny sposób, co pozwala nam na przenoszenie kodu na wiele platform, bez konieczności stosowania dodatkowych bibliotek. 
 
-## Jak działa Elm? 
+## Jak to Zrobić
 
-Oto kilka prostych przykładów kodu w Elm, które pokazują, jak łatwo i przyjemnie jest tworzyć interfejsy użytkownika za pomocą tego języka programowania. 
-
-```
-Elm.text "Witaj na mojej stronie internetowej!"
-Elm.button "Kliknij mnie" 
-```
-
-Output: 
-
-> Witaj na mojej stronie internetowej! 
-> Kliknij mnie 
-
-W Elm wykorzystujemy funkcję `text`, aby wyświetlić tekst na stronie i funkcję `button`, aby stworzyć przycisk, który może zostać kliknięty przez użytkownika. To tylko kilka przykładów, jak możemy manipulować elementami interfejsu użytkownika za pomocą kodu w Elm. 
-
-## Przewodnik po procesie pobierania strony internetowej 
-
-Pobieranie strony internetowej jest ważnym procesem w tworzeniu aplikacji internetowych i Elm również dostarcza nam narzędzia do tego celu. Użycie modułu `Http` pozwala na łatwe tworzenie żądań HTTP, które mogą pobierać dane z innych witryn. Poniżej znajduje się przykład kodu, który przedstawia ten proces. 
+Aby pobrać stronę internetową w Elm, musimy najpierw użyć wbudowanej funkcji `Http.get`, która pozwala na wysłanie żądania HTTP do określonego adresu URL. Następnie, musimy określić rodzaj oczekiwanej odpowiedzi, na przykład dane tekstowe czy dane w formacie JSON.
 
 ```
-Elm.Http.get 
-    { url = "https://example.com"
-      expect = Elm.Http.expectString GotPageContent
-    }
+Elm.Http.get "https://www.example.com/" stringDecoder
 ```
 
-W tym przykładzie korzystamy z funkcji `get`, aby utworzyć żądanie do witryny o adresie "https://example.com". Następnie używamy funkcji `expect`, aby określić jakie dane chcemy otrzymać z tej strony i gdzie chcemy je przetworzyć. 
+W powyższym przykładzie, funkcja `Http.get` pobiera stronę internetową pod adresem `https://www.example.com/` i używa funkcji `stringDecoder` do przetworzenia odpowiedzi na tekst.
 
-## Zobacz również 
+## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej o programowaniu w Elm, polecamy zapoznanie się z poniższymi artykułami: 
+W Elm, pobieranie strony internetowej odbywa się asynchronicznie, co oznacza, że nie blokuje działania programu. Aby obsłużyć otrzymaną odpowiedź, musimy użyć funkcji `Http.send` wraz z odpowiednimi handlerami.
 
-- [Instalacja i konfiguracja Elm](https://dev.to/djmips/jak-zainstalowai-i-skonfigurowai-elm-172p) 
-- [Podstawy programowania w Elm](https://dev.to/djmips/podstawy-programowania-w-elm-13in) 
-- [Tworzenie interfejsów użytkownika w Elm](https://dev.to/djmips/tworzenie-interfejsw-uzytkownika-w-elm-4g5e) 
+```
+Http.send responseHandler (Elm.Http.get "https://www.example.com/" stringDecoder)
+```
 
-Dziękujemy za przeczytanie! Mamy nadzieję, że ten wpis był dla Ciebie pomocny i zainspirował do dalszego poznawania języka Elm. A jeśli masz jakieś pytania lub uwagi, śmiało podziel się nimi w komentarzu. 
+W powyższym przykładzie, funkcja `Http.send` oczekuje dwóch argumentów: handlera odpowiedzi i żądania `Http.get`. Handler odpowiedzi jest funkcją, która zostanie wywołana, gdy otrzymamy odpowiedź od serwera.
 
-Aby dowiedzieć się więcej o języku Elm, odwiedź oficjalną stronę [elm-lang.org](https://elm-lang.org/).
+## Zobacz także
+
+- [Dokumentacja Elm - Pobieranie zasobów](https://package.elm-lang.org/packages/elm/http/latest/Http)
+- [Poradnik wideo - Łączenie z internetem w Elm](https://www.youtube.com/watch?v=icE78nl3RD0)
+- [Kurs wideo - Elm - Pobieranie zasobów](https://egghead.io/lessons/elm-getting-resourceful-in-elm-with-http-get-and-decode)

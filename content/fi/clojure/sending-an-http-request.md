@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Lähettäminen http-pyynnön"
-simple_title:         "Lähettäminen http-pyynnön"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Clojure: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen on tärkeää monissa nykyaikaisissa sovelluskehityksessä, kuten verkkosivujen toteuttamisessa tai API-palveluiden käyttämisessä. Se mahdollistaa tiedon välittämisen palvelimelta asiakkaalle ja takaisin päin.
+Todennäköisesti olet kuullut käsitteen HTTP request, mutta miksi sinun kannattaisi oikeastaan välittää siitä? No, jos haluat lähettää tai vastaanottaa tietoa internetissä, niin silloin sinun täytyy käyttää HTTP requesteja. Ne ovat tärkeä osa verkkosovellusten toimintaa ja tarjoavat mahdollisuuden kommunikoida eri palvelimien kanssa.
 
-## Kuinka
+## Näin teet sen
 
-HTTP-pyyntöjen lähettäminen Clojurella on helppoa käyttämällä kirjastoa nimeltä clj-http. Ensiksi, kirjasto on lisättävä projektiin käyttämällä Leiningenia tai Clojure CLI:tä. Seuraavaksi, me voimme määrittää pyynnön URL-osoitteen, sekä mahdolliset parametrit tai otsikot, kuten alla näkyvässä esimerkissä.
+Voit lähettää HTTP requestin käyttämällä Clojuren `clj-http` kirjastoa. Asenna se ensin projektisi riippuvuuksiin ja sitten voit tehdä seuraavanlaisia HTTP pyyntöjä:
 
 ```Clojure
-(ns http-esimerkki
-  (:require [clj-http.client :as httpClient]))
+(require [clj-http.client :as client])
 
-(defn tee-http-pyynto []
-  (let [pyynto (httpClient/get "https://example.com" {:query-params {:name "John"}})]
-    (println (:status pyynto))
-    (println (:body pyynto))))
+; GET pyyntö
+(client/get "https://www.example.com")
 
-(tee-http-pyynto)
+; POST pyyntö parametreilla ja otsikoilla
+(client/post "https://www.example.com"
+  :params {:key "value"}
+  :headers {"Content-Type" "application/json"})
 ```
 
-Tämän esimerkin tulos olisi: 200 ja "<!DOCTYPE html><html>...</html>".
+Tämä lähettää GET pyynnön `www.example.com` osoitteeseen ja POST pyynnön `www.example.com` osoitteeseen käyttäen JSON muotoa ja antaa sille `{key: value}` parametrin.
 
-## Syvällinen sukellus
+## Syvemmälle
 
-HTTP-pyynnöt toimivat perinteisesti seuraavassa järjestyksessä: asiakas lähettää pyynnön palvelimelle, palvelin vastaa pyyntöön ja asiakas saa vastauksen. Pyynnön lähettämiseen liittyvät asiat, kuten parametrien määrittäminen ja otsikoiden lisääminen, ovat tärkeitä yksityiskohtia joita täytyy huomioida. Tärkeää on myös ymmärtää eri HTTP-metodeja, kuten GET, POST, PUT ja DELETE, ja milloin niitä tulisi käyttää.
+Voit myös määrittää lisäparametreja lähettämillesi pyynnöille, kuten aikakatkaisun ja virheiden käsittelyn. Voit myös lähettää datan bodyssa, esimerkiksi tiedoston tai Clojure kartan.
+
+Voit myös käyttää `clj-http`a testaamaan API:n endpointtien toimintaa. Esimerkiksi voit lähettää POST pyynnön käyttäen vääriä parametreja ja katsoa miten API vastaa.
 
 ## Katso myös
 
-- [HTTP-pyyntöjen lähettäminen Clojurella](https://github.com/dakrone/clj-http)
-- [Clojure Web Development](https://clojure.org/guides/web_development)
-- [RESTful API -palveluiden käyttö Clojurella](https://www.graalvm.org/reference-manual/graal-isolate/info.html)
+- [Virallinen clj-http dokumentaatio](https://github.com/dakrone/clj-http)
+- [Clojuren virallinen kotisivu](https://clojure.org/)
+- [HTTP requestit ja vastaukset yksinkertaisesti](https://medium.com/@kennethjhan/http-requests-and-responses-in-plain-english-c7901625ac32)

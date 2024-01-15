@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: YAMLを扱う"
-simple_title:         "YAMLを扱う"
+title:                "yamlとの作業"
+html_title:           "Fish Shell: yamlとの作業"
+simple_title:         "yamlとの作業"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜYAMLを使用するのか？
+## なぜ
 
-YAMLは簡易で人間に読める形式でデータを管理することができるため、プログラミングでよく使用されます。また、データの変更や追加が容易で、複数のプログラムや言語間でも互換性があります。
+プログラミングでYAMLを使用する理由はいくつかあります。一つは、複雑なデータを構造化しやすいためです。また、YAMLは他の言語やプログラミング環境でも広く使用されているため、他の開発者とのコラボレーションが容易です。
 
-## ヤムルをフィッシュシェルで使用する方法
+## やり方
+
+YAMLをFish Shellで使用するための基本的な手順を説明します。
+
+まず、Fish Shellで`set -Ux YAML_PATH /path/to/file.yaml`というコマンドを入力し、YAMLファイルへのパスを設定します。次に、`yq`コマンドを使用してYAMLファイルを編集します。
 
 ```Fish Shell
-# YAMLファイルの読み込み
-set yaml_data (yq read config.yml)
-
-# 変数から値を取得
-set key value
-set value $yaml_data[key]
-
-# テキストとしてYAMLを出力
-yq read config.yml
+yq e '.key | .subkey' $YAML_PATH
 ```
 
-## ヤムルのディープダイブ
+このコマンドは、YAMLファイル内の特定のキーとサブキーを抽出します。詳細な使用方法や他のコマンドについては、`yq`のドキュメントを参照してください。
 
-YAMLはインデントによってデータの階層構造を表現するため、より複雑なデータを管理することができます。また、データの型も自由に設定することができるため、柔軟性があります。
+また、Fish Shellの補完機能を使用することで、YAMLファイル内のキーとサブキーを簡単に入力することができます。例えば、`yq e '.ke <tab>`と入力すると、`.key`の部分が自動的に補完されます。
+
+## 深堀り
+
+YAMLファイルを編集する際に便利な`yq`コマンドですが、実はさまざまなオプションがあります。例えば、`-c`オプションを使用することで、ファイルを直接変更することができます。また、`-r`オプションを使用することで、YAMLファイルをレンダリングし、人間が読みやすい形式で表示することができます。
+
+さらに、`yq`コマンドはYAML以外のファイル形式にも対応しています。例えばJSONファイルやXMLファイルを編集することも可能です。
 
 ## 参考リンク
 
-- YAML公式サイト：https://yaml.org/
-- Fish Shell公式サイト：https://fishshell.com/
-- yqドキュメンテーション：https://github.com/kislyuk/yq#examples
+- [yqのドキュメント](https://github.com/kislyuk/yq/blob/master/README.md)
+- [YAML公式サイト](https://yaml.org/)

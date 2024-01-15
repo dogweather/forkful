@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: כתיבה מונחצת של מחרוזת"
-simple_title:         "כתיבה מונחצת של מחרוזת"
+title:                "ניצון מחרוזת בתוכנות מחשב"
+html_title:           "Haskell: ניצון מחרוזת בתוכנות מחשב"
+simple_title:         "ניצון מחרוזת בתוכנות מחשב"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,32 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-יכול להיות ברצון להוסיף תלתל גדול לתווים במחרוזת כדי להדגיש אותם או לתקן את הטור המסויט שלהם.
 
-## כיצד לעשות זאת
-ב-Haskell קיימות כמה אפשרויות לכתיבת תלתל גדול לתווים במחרוזת. הנה כמה דוגמאות:
+מה הנוכחות של הפונקציה capitalize בשפת Haskell ולמה כדאי לנו להשתמש בה? פשוט - אין דבר כזה נסיבות "קריאות" יותר משאר השמות בקוד, כך שכולם יכולים לפגוש תווים ריקים, טעויות כתיב ועוד. עם capitalize, כל מה שעליך לעשות הוא להזין מחרוזת והפונקציה תחזיר לך את התווים במחרוזת הראשונים כתווים גדולים.
+
+## איך להשתמש
+
+תחילה, נטען את הפונקציה capitalize על ידי לחיצה על Ctrl + L במצב הפיתוח שלנו.
 
 ```Haskell
 import Data.Char (toUpper)
-
-capitalize :: String -> String
-capitalize str = map toUpper str
-
-capitalize "hello world" 
--- Output: "HELLO WORLD"
-
--- או, כדי לכתוב תלתל גדול רק למילה הראשונה במחרוזת:
-
-capitalize :: String -> String
-capitalize (x:xs) = toUpper x : xs
-
-capitalize "hello world" 
--- Output: "Hello world"
 ```
 
-## חפירה עמוקה
-כדי להבין איך הפונקציה `capitalize` עובדת, נחשוב על הפונקציה `map`. `map` מקבלת פונקציה ורשימה, ויוצרת רשימה חדשה שבה הפונקציה המקורית הוחלה על כל איבר. במקרה שלנו, הפונקציה המקורית היא `toUpper` והרשימה היא כל תווי המחרוזת. כך, הפונקציה `capitalize` מחזירה מחרוזת חדשה שבה כל אות הוחלה תלתל גדול.
+את המחרוזת שברצונך להקפיטליזציה ניתן לכתוב לפני הפונקציה בתוך סוגריים, כך:
+
+```Haskell
+capitalize "hello world"
+```
+
+והפלט יהיה:
+
+```Haskell
+"Hello world"
+```
+
+כעת ננסה להקפיטליזציה של מחרוזת המכילה טעויות כתיב:
+
+```Haskell
+capitalize "tHiS sTrInG hAs SoMe ErRoRs"
+```
+
+והתוצאה היא:
+
+```Haskell
+"This string has some errors"
+```
+
+## Deep Dive
+
+הפונקציה capitalize היא חלק מספר פונקציות מובנות של המודול Data.Char, המכיל מספר פונקציות המתייחסות לתווים ולתחביר שלהם במחרוזות. במקרה של capitalize, הפונקציה משנה את תחילת המחרוזת לתווים גדולים, ויתכן גם ליישם בעזרת loop או פעולות נוספות על המחרוזת המקורית.
 
 ## ראה גם
-- [החוקים של פונקציות נקיות ב-Haskell](https://medium.com/%E0%A4%AF%E0%A4%82%E0%A4%97-%E0%A4%8F%E0%A4%95-%E0%A4%AC%E0%A4%BE%E0%A4%A4-haskell-%E0%A4%AE%E0%A5%87%E0%A4%82-%E0%A4%AA%E0%A4%B9%E0%A5%87%E0%A4%B2%E0%A5%87-%E0%A4%95%E0%A5%87-%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A4%AC-%E0%A4%9B%E0%A4%AA%E0%A4%BE%E0%A4%8F%E0%A4%82-%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%AF%E0%A4%BE%E0%A4%AC%E0%A5%87%E0%A4%A8-f609aea6b478)
-- [נסוי קטן עם כתיבת קוד ב-Haskell](https://medium.com/%E0%A4%AF%E0%A4%82%E0%A4%97-%E0%A4%8F%E0%A4%95-%E0%A4%AC%E0%A4%BE%E0%A4%A4-haskell-%E0%A4%AE%E0%A5%87%E0%A4%82-%E0%A4%AA%E0%A4%B9%E0%A5%87%E0%A4%B2%E0%A5%87-%E
+
+- [מודול Data.Char ב-Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [פונקציות נוספות לטיפול במחרוזות ב-Haskell](https://www.haskell.org/tutorial/strings.html)

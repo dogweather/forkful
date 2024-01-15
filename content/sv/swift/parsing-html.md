@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Att analysera html"
-simple_title:         "Att analysera html"
+title:                "Utvinna html"
+html_title:           "Swift: Utvinna html"
+simple_title:         "Utvinna html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,32 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Parsing av HTML är en viktig del av många webbutvecklingsprojekt och kan hjälpa till att effektivisera bearbetningen av webbinnehåll. Genom att lära sig att hantera HTML-kod kan du lättare skapa dynamiska och interaktiva webbapplikationer.
+Att parsam HTML kan vara en användbar färdighet för att kunna hämta och extrahera data från webbsidor. Det kan vara användbart för webbskrapning, dataskydd eller att bara behandla webbdata på ett effektivt sätt.
 
-## Hur man gör
+## Så här gör du
 
-Att parsra HTML i Swift kan göras genom att använda biblioteket `libxml2`. Det finns också flera tredjepartsbibliotek som kan hjälpa till med denna uppgift. Här är ett exempel på hur man kan använda `libxml2` för att hämta titeln på en webbsida:
+För att börja pars HTML i Swift, behöver du en HTML-parser-bibliotek. Ett populärt val är SwiftSoup, som är en Swift-implementering av Jsoup, en välkänd Java-baserad HTML-parser.
 
-```Swift
-let url = URL(string: "https://www.example.com")!
-let data = try! Data(contentsOf: url)
-let parser = htmlReadMemory(data, Int32(data.count), url.absoluteString, nil, 
-                                        Int32(HTML_PARSE_RECOVER.rawValue | 
-                                        HTML_PARSE_NOERROR.rawValue 
-                                        | HTML_PARSE_NOWARNING.rawValue))
-let title = parser?.pointee.doc?.pointee.html.pointee.head.pointee.title.pointee
+Du kan installera SwiftSoup via Swift Package Manager genom att lägga till följande rad i din Package.swift fil:
+
+```Swift 
+.package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.0.0")
 ```
 
-Detta kommer att returnera titeln på webbsidan i form av en `xmlChar`-sträng. Denna kod gör det möjligt att hämta annan information från webbsidan genom att anpassa `htmlReadMemory`-funktionen efter behov.
+När du har installerat SwiftSoup kan du börja pars HTML genom att skapa en `Document`-instans och ladda in innehållet från din webbsida. Du kan sedan använda `getElementsByTag()` för att hämta alla element med en viss tagg, t.ex. `p` för att hämta alla `<p>`-taggar.
+
+```Swift
+do {
+  let html = "<html><head><title>Min hemsida</title></head><body><p>Välkommen till min hemsida</p></body></html>"
+  let doc = try SwiftSoup.parse(html)
+  
+  let paragraphs = try doc.getElementsByTag("p")
+  for p in paragraphs {
+    print(try p.text())
+  }
+} catch {
+  print("Kunde inte göra HTML-parsing: \(error)")
+}
+```
+
+Output: 
+```
+Välkommen till min hemsida
+```
 
 ## Djupdykning
 
-Att lära sig att parsra HTML är en viktig färdighet för webbutveckling och det finns många olika sätt att göra det på. Förutom `libxml2` kan man också använda sig av andra bibliotek som `Kanna` eller `SwiftSoup` för att parsra HTML i Swift. Det är viktigt att välja rätt bibliotek beroende på ditt projekt och dina behov.
+När du gjort lite grundläggande parsing av HTML, kan du börja utforska mer avancerade funktioner. SwiftSoup stödjer CSS-querys, så du kan hämta element med specifika klasser, id:n eller attribut.
 
-Det finns också många aspekter av HTML som är viktiga att förstå när man parsar det, som till exempel hierarki, element och attribut. Att ha en god förståelse för HTML-kodens struktur kan hjälpa dig att effektivt extrahera den information du behöver.
+Du kan också använda `select()` för att söka efter element med en viss CSS-selector. Till exempel kan du söka efter alla länkar (`<a>`-taggar) som har en `href`-attribut som börjar med "https://www.".
+
+```Swift
+let links = try doc.select("a[href^=https://www.]")
+```
+
+SwiftSoup har också stöd för att ändra HTML-innehållet genom att lägga till, ta bort eller redigera element och attribut. Du kan också konvertera en `Document` till en `String` eller `Data` för att spara eller skicka den vidare.
 
 ## Se även
 
-- [libxml2](http://www.xmlsoft.org/html/index.html)
-- [Kanna](https://github.com/tid-kijyun/Kanna)
-- [SwiftSoup](https://github.com/scinfu/SwiftSoup)
+- [SwiftSoup dokumentation](https://github.com/scinfu/SwiftSoup)
+- [HTML-parsing med Swift: en snabb introduktion](https://medium.com/@sergalbop/html-parsing-with-swift-a-quick-introduction-807baf8f6a3a)
+- [Moderna Cocoa-tipstackar: HTML-parsing med Swift](https://www.raywenderlich.com/141285/modern-cocoa-tutorials-html-parsing-swift)

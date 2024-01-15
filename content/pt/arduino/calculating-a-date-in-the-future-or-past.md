@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "Arduino: Calculando uma data no futuro ou no passado"
 simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,45 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Muitos projetos de programação com Arduino exigem que se calcule uma data no futuro ou no passado. Isso pode ser útil para agendar tarefas, ativar dispositivos em determinados dias ou até mesmo como parte de um jogo.
+Você já se perguntou como seria calcular uma data no futuro ou no passado usando a sua placa Arduino? Talvez você precise automatizar uma tarefa que dependa da data ou simplesmente queira aprender mais sobre programação. Independentemente do motivo, calcular datas pode ser uma habilidade útil ao utilizar a sua placa Arduino.
 
-## Como Fazer
+## Como fazer
 
-Para calcular uma data em Arduino, primeiro precisamos incluir a biblioteca "TimeLib.h". Em seguida, podemos usar a função "makeTime" que recebe seis parâmetros: ano, mês, dia, hora, minuto e segundo. Aqui está um exemplo para calcular uma data no futuro, 1 hora a partir do momento atual:
+Aqui está um exemplo de como calcular uma data no futuro usando o Arduino:
 
-```Arduino
+```
+Arduino /* Código para calcular uma data no futuro */
 #include <TimeLib.h>
 
-int year = year();
-int month = month();
-int day = day();
-int hour = hour();
-int minute = minute();
-int second = second() + 3600; // adiciona 1 hora (3600 segundos)
+int day = 19;
+int month = 2;
+int year = 2022;
+int daysToAdd = 30; // dias para adicionar à data atual
 
-time_t futureTime = makeTime(year, month, day, hour, minute, second);
+// Obtém a data atual
+int currentDay = day();
+int currentMonth = month();
+int currentYear = year();
+
+// Calcula a nova data
+int futureDay = day + daysToAdd;
+int futureMonth = month;
+int futureYear = year;
+
+// Verifica se a data é válida e faz os ajustes necessários
+if (futureDay > 31) {
+  futureDay -= 31;
+  futureMonth++;
+}
+
+if (futureMonth > 12) {
+  futureMonth -= 12;
+  futureYear++;
+}
+
+// Imprime a nova data
+Serial.print("Data no futuro: ");
+Serial.print(futureDay);
+Serial.print("/");
+Serial.print(futureMonth);
+Serial.print("/");
+Serial.println(futureYear);
 ```
 
-Agora podemos usar a função "dayOfWeek" para obter o dia da semana correspondente à data calculada e usá-lo em nosso projeto.
+No exemplo acima, utilizamos a biblioteca TimeLib para obter a data atual e, em seguida, adicionamos a quantidade desejada de dias à data. Também verificamos se a data resultante é válida e fazemos os ajustes necessários caso seja necessário. Por fim, imprimimos a nova data na porta serial para visualização.
 
-```Arduino
-int dow = dayOfWeek(futureTime); // 1 = Domingo, 2 = Segunda-feira, etc.
-```
+Para calcular uma data no passado, basta substituir a variável `daysToAdd` por um valor negativo.
 
-Podemos também usar a função "monthShortStr" para obter o mês abreviado em formato de texto.
+## Aprofundando
 
-```Arduino
-String monthAbreviado = monthShortStr(month); // "Jan", "Fev", etc.
-```
+Ao calcular datas no Arduino, é importante considerar que a biblioteca TimeLib utiliza o formato de data e hora do Unix. Isso significa que o seu código deve estar ciente do número de segundos desde 1 de janeiro de 1970, conhecido como "epoch". Além disso, é preciso levar em conta fatores como anos bissextos e diferentes números de dias em cada mês.
 
-## Mergulho Profundo
+Uma forma de evitar esses problemas é utilizar uma biblioteca de datas específica para o Arduino, que irá simplificar o processo de cálculo e lidar com essas questões automaticamente.
 
-Mas como a função "makeTime" realmente funciona? Essa função utiliza o formato "Unix time" que conta o número de segundos passados desde 1 de janeiro de 1970. Isso significa que podemos calcular datas futuras ou passadas a partir de um ponto de referência fixo. É importante lembrar que essa função só pode calcular datas até o ano 2038, devido a limitações do tipo de dado usado.
+## Veja também
 
-Podemos também usar outras funções da biblioteca TimeLib para obter informações como a hora atual, o dia da semana, o número de dias em um mês, entre outros. Essa biblioteca é muito útil para lidar com datas e tempos em projetos com Arduino.
-
-## Veja Também
-
-- Documentação Oficial da biblioteca TimeLib: https://www.arduino.cc/en/Reference/Time
-- Tutorial sobre como utilizar datas em projetos com Arduino: https://www.arduino.cc/en/Tutorial/DS1302RealTimeClock
-- Vídeo explicando a função "makeTime": https://www.youtube.com/watch?v=KmSRJcwXnp4
+- Documentação da biblioteca TimeLib: https://github.com/PaulStoffregen/Time
+- Biblioteca DS3231RTC para trabalhar com datas e horários no formato do Arduino: https://github.com/JChristensen/DS3232RTC

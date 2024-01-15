@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 「ディレクトリが存在するかどうかを確認する」"
-simple_title:         "「ディレクトリが存在するかどうかを確認する」"
+title:                "ディレクトリが存在するかを確認する"
+html_title:           "Gleam: ディレクトリが存在するかを確認する"
+simple_title:         "ディレクトリが存在するかを確認する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今回は、Gleamでディレクトリが存在するかどうかをチェックする方法について紹介します。
+## なぜ
 
-## なぜチェックする必要があるのか？
-
-ディレクトリが存在するかどうかをチェックすることは、プログラムの処理をより効率的に行うために重要です。例えば、処理を行う前にディレクトリが存在するかどうかを確認することで、エラーを防ぐことができます。
+あなたはディレクトリが存在するかどうかを確認するのに興味があるかもしれません。これは、ファイルやデータベースの作成、読み書き、編集などのプログラミングタスクを行う際に、重要なステップです。
 
 ## 方法
 
-ディレクトリが存在するかどうかをチェックするには、```is_dir```関数を使用します。以下の例を参考にしてください。
+ディレクトリの存在をチェックする方法は、Gleamの"File"モジュールを使用することです。下記のコード例を参考にしてください。
 
 ```Gleam
-import gleam/io
+import File
 
-let dir_exists = io.is_dir("path/to/directory")
-io.println(dir_exists)
+// ディレクトリが存在するかどうかをチェック
+let result = File.exists("path/to/directory")
+
+// 結果を表示
+IO.print("Directory exists: " ++ String.to_bool_string(result))
 ```
 
-出力は、```true```または```false```となります。
+上記のコードを実行すると、指定したディレクトリが存在する場合には"Directory exists: true"、存在しない場合には"Directory exists: false"と表示されます。
 
-## 詳細を調べる
+詳細な情報やオプションパラメータを使用する方法については、Gleamの公式ドキュメントをご参照ください。
 
-```is_dir```関数は、内部的にファイルを開いてチェックを行います。そのため、ファイルが存在しない場合にはエラーが発生します。また、パーミッションの問題がある場合にもエラーが発生します。
+## ディープダイブ
 
-より詳細な情報を知りたい場合は、Gleamのドキュメントを参照してください。
+ディレクトリのチェックには、単純に存在を確認するだけでなく、指定したディレクトリが実際にディレクトリであるかどうかを確認することもできます。また、オプションパラメータを使用することで、パーミッションのチェックや非同期の処理も行えます。
 
-## 関連リンク
+## 詳しくは以下を参照
 
-[ファイルを読み込む方法（Gleam公式ドキュメント）](https://gleam.run/documentation/writing-files)
-
-[パーミッションを設定する方法（Gleam公式ドキュメント）](https://gleam.run/documentation/file-permissions)
+- [Gleam 公式ドキュメント - Fileモジュール](https://gleam.run/modules/file/)
+- [Gleam 公式ドキュメント - File.exists関数](https://gleam.run/guide/functions/)
+- [Gleam 公式ドキュメント - ファイルまたはディレクトリの作成方法](https://gleam.run/guide/file-io/)

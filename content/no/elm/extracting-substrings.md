@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Uttrekking av understrenger"
-simple_title:         "Uttrekking av understrenger"
+title:                "Ekstrahering av delstrenger"
+html_title:           "Elm: Ekstrahering av delstrenger"
+simple_title:         "Ekstrahering av delstrenger"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,47 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle noen ønske å eksktrahere substringer i Elm-programmering? Vel, det er flere grunner til dette. En av de viktigste grunnene er at det kan gjøre koden din mer effektiv og lesbar. Ved å eksktrahere substringer kan du få tilgang til spesifikke deler av tekst uten å måtte håndtere hele strengen. Dette gjør det enklere å manipulere og bruke data på en mer presis måte.
+Å trekke ut substrings kan være en nyttig teknikk når du jobber med tekstbehandling i Elm. Det lar deg manipulere tekstdeler og få ut spesifikke deler av en streng.
 
-## Slik gjør du det
+## Hvordan
 
-For å eksktrahere substringer i Elm, kan du bruke funksjonen `String.slice start end text`. Dette vil returnere en del av `text` fra `start`-indeksen til `end`-indeksen. La oss se på et enkelt eksempel:
+For å trekke ut en substring, bruker du funksjonen `String.slice` og gir den to argumenter: start og sluttindeks for den delen av teksten du ønsker å få ut. La oss ta en titt på et eksempel:
 
-```Elm
-import String
-
-text = "Hei alle sammen"
-substring = String.slice 4 7 text
+```elm
+tekst = "Dette er en eksempeltekst"
+substring = String.slice 5 12 tekst
 ```
 
-I dette eksempelet vil `substring` ha verdien "alle". `start`-indeksen er alltid inkludert, mens `end`-indeksen er ekskludert. Dette betyr at i dette tilfellet, vil den returnerte delen starte på indeksen 4 og gå til, men ikke inkludere, indeksen 7.
+I dette tilfellet vil `substring` være lik "er en e".
 
-Hvis du vil eksktrahere den første delen av en streng, kan du også bruke `String.left`-funksjonen. For å få den siste delen av en streng, kan du bruke `String.right`-funksjonen. La oss se på et eksempel på begge disse funksjonene:
+Du kan også bruke `String.left` og `String.right` for å trekke ut tekstdeler fra henholdsvis venstre og høyre side av en streng. Her er et annet eksempel:
 
-```Elm
-import String
-
-text = "Markus"
-firstName = String.left 3 text
-lastName = String.right 3 text
+```elm
+tekst = "Elm er et fantastisk programmeringsspråk"
+venstreDel = String.left 3 tekst
+høyreDel = String.right 17 tekst
 ```
 
-Her vil `firstName` ha verdien "Mar" og `lastName` vil ha verdien "kus". Begge funksjonene tar inn et heltall som representerer antall tegn som skal hentes fra begynnelsen eller slutten av strengen.
+I dette eksempelet vil `venstreDel` bli "Elm" og `høyreDel` bli "programmeringsspråk".
 
-## Dykk dypere
+## Dypdykk
 
-Det er også mulig å eksktrahere substringer basert på et bestemt tegn eller et sett med tegn. For å gjøre dette, kan du bruke `String.split`-funksjonen som returnerer en liste med substringer delt opp ved hjelp av det spesifikke tegnet. La oss se på et eksempel:
+Hvis du vil dykke dypere inn i temaet substrings, kan du også bruke funksjonen `String.substr` for å trekke ut et bestemt antall tegn fra en gitt startindeks. Her er et eksempel på hvordan du kan bruke dette:
 
-```Elm
-import String
-
-text = "apple,banana,orange"
-fruits = String.split "," text
+```elm
+tekst = "Denne setningen er ganske lang"
+substring = String.substr 6 8 tekst
 ```
 
-Her vil `fruits`-listen ha tre verdier: "apple", "banana" og "orange". `String.split`-funksjonen kan også ta inn et sett av tegn som separasjonspunkt. For eksempel kan du splitte en streng basert på mellomrom ved å bruke `String.split [" "] tekst` som vil returnere en liste med ordene i teksten.
+Her vil `substring` være lik "setningen". Legg merke til at det første argumentet er startindeksen, og det andre argumentet er antall tegn som skal tas ut.
 
 ## Se Også
 
-- [Offisiell Elm Dokumentasjon om Strenger](https://guide.elm-lang.org/strings/)
-- [Elm String Bibliotek](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Dokumentasjon for String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [W3Schools: Substring i Elm](https://www.w3schools.com/jsref/jsref_substring.asp)

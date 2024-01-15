@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: パターンに一致する文字を削除する"
-simple_title:         "パターンに一致する文字を削除する"
+title:                "パターンに一致する文字の削除"
+html_title:           "Ruby: パターンに一致する文字の削除"
+simple_title:         "パターンに一致する文字の削除"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
 
-あなたが文字列を操作しているとき、特定のパターンにマッチする文字を削除する必要があるかもしれません。そのような場合、Rubyプログラミング言語を使うと簡単に文字を削除することができます。今回の記事では、どのようにして文字を削除するかを詳しく説明します。
+なぜ誰かがパターンにマッチする文字を削除する必要があるのか、その理由を最大2文で説明します。
 
-## どのようにして削除するか
+パターンにマッチする文字を削除することは、データの前処理や整形に役立ちます。例えば、電話番号やメールアドレスなどの特定の書式に従っていないデータを正しいフォーマットに変換する際に使用されます。
 
-Rubyでは、 `gsub`というメソッドを使って文字を削除することができます。以下の例を見てください。
+##やり方
 
-```Ruby
-text = "これはサンプルテキストです。"
-new_text = text.gsub(/サンプル/, "")
-puts new_text
-```
-
-上記のコードでは、 `gsub`メソッドを使用して、 `サンプル`という文字列を空文字列で置き換えています。すると、出力は `これはテキストです。` となります。
-
-ただし、`gsub` メソッドの第1引数には、削除したいパターンを正規表現で指定する必要があります。さらに、削除したい文字列が複数ある場合は、正規表現の中で `+` を使用して一括で指定することができます。
+以下は、Rubyで文字を削除する方法の例です。まずは、文字列変数を定義します。
 
 ```Ruby
-text = "カレーコロッケとオムライスが大好きです。"
-new_text = text.gsub(/カレー|メンチカツ/, "")
-puts new_text
+str = "Ruby is a fun language!"
 ```
 
-上記のコードでは、 `カレー` と `メンチカツ` を削除しています。出力は `コロッケとオムライスが大好きです。` となります。
-
-## ディープダイブ
-
-では、 `gsub` メソッドについてもう少し詳しく見てみましょう。 `gsub` メソッドは、文字列の代わりにブロックを渡すことができます。その場合、ブロックの戻り値が文字列の置き換えに使用されます。
+次に、正規表現を使用して文字列から特定の文字を削除します。
 
 ```Ruby
-text = "今日は寒いです。"
-new_text = text.gsub(/(.+)/) { |match| match.reverse }
-puts new_text
+str.sub(/[aeiou]/, "") # => "Rby s a fn lngg!"
 ```
 
-ブロック内では、マッチした文字列が `|match|` 変数に渡されます。上記のコードでは、 `今日は寒いです。` が取得され、 `.reverse` メソッドを使って文字列を逆順にすると `。すていは日今` となり、それが出力になります。
+この場合、`sub`メソッドを使用して、文字列中の最初にマッチした文字を削除します。正規表現の`/[aeiou]/`は、母音を表しています。`"Ruby"`の`"u"`が削除されて`"Rby"`になりました。
 
-## See Also
+さらに、`gsub`メソッドを使用することで、文字列中の全てのマッチした文字を削除することもできます。
 
-- [Ruby 公式ドキュメント - String#gsub](https://docs.ruby-lang.org/ja/latest/method/String/i/gsub.html)
-- [Ruby API リファレンス - String#gsub](https://docs.ruby-lang.org/ja/2.7.0/method/String/i/gsub.html)
-- [Rubyガイド - gsub メソッド](https://ruby-guide.readthedocs.io/ja/latest/ruby/methods/gsub.html)
+```Ruby
+str.gsub(/[aeiou]/, "") # => "Rby s  fn lngg!"
+```
+
+このように、パターンにマッチする文字を削除することで、データの整形が可能になります。
+
+##掘り下げる
+
+パターンマッチングには、正規表現や`sub`、`gsub`メソッド以外にも様々な方法があります。例えば、`delete`メソッドを使用することで、特定の文字を削除することもできます。
+
+```Ruby
+str.delete("a-z") # => "by!"
+```
+
+このように、文字を削除する方法は様々ありますが、正規表現を使用することでより柔軟にパターンにマッチする文字を削除することができます。
+
+##関連リンク
+
+- [Rubyの正規表現について](https://docs.ruby-lang.org/en/master/doc/ruby_manual.html#label-Regular+Expressions)
+- [gsubメソッドの使い方](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)
+- [deleteメソッドの使い方](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete)

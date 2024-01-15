@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Fish Shell recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,33 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing to standard error, also known as stderr, can be useful for debugging and troubleshooting in Fish Shell programs. By directing error messages to stderr instead of stdout, the user will be able to easily identify and fix any issues that may occur during execution.
+Writing to standard error, also known as stderr, is a common practice in programming. It allows for errors, warnings, and other important messages to be displayed to the user, separate from the regular output of a program. This ensures that the user can easily identify and address any issues that may arise.
 
 ## How To
 
-To write to stderr in Fish Shell, you can use the `echo` command with the `-e` flag and specify the output to be directed to stderr using the `&2` symbol. For example:
+To write to standard error in Fish Shell, we use the `echo` command with the `-e` flag and redirect the output to `stderr` using `>&2`. Here's an example:
 
-```
-echo -e "An error occurred" &2
-```
-
-This will print the message "An error occurred" to the stderr stream. You can also use the `>&2` redirect operator to send any output from a command directly to stderr. For example:
-
-```
-ls -l bad_file.txt >&2
+```Fish Shell
+echo -e "Error: Something went wrong" >&2
 ```
 
-This will print the output of `ls -l` to the stderr stream if the file "bad_file.txt" does not exist.
+This command will print the error message "Something went wrong" to the standard error channel, designated as `2` in Fish Shell.
+
+To further customize the message, we can use the `set_color` function to add colors and formatting. For example:
+
+```Fish Shell
+set_color red
+echo -e "Error: Something went wrong" >&2
+```
+
+This will print the error message in red text.
 
 ## Deep Dive
 
-When writing to standard error, it is important to understand the difference between stderr and stdout. While stdout is used for regular standard output, stderr is specifically designated for error messages. This separation allows for a clear distinction between regular program output and error messages, making debugging easier.
+In Fish Shell, stderr is just another output stream, along with stdout (standard output) and stdin (standard input). It can be redirected to a file, just like stdout, using the `>` and `>>` operators.
 
-By default, if a program does not explicitly write to stderr, any error messages will be displayed on the stdout stream. This can sometimes make error messages difficult to spot, as they may be mixed in with regular program output. However, by explicitly writing to stderr, you can ensure that error messages are clearly separated from regular output.
+Additionally, Fish Shell allows for merging stderr and stdout into a single output stream using `&>`. This can be useful for storing both regular and error messages in the same logfile.
 
-Another useful tip is to use the `set -x` command to enable debugging output. This will automatically print each command as it is executed, including any output to stderr. This can be helpful in identifying the exact cause of any errors in your code.
+It's also worth noting that in Fish Shell, error messages are automatically displayed to the user, unlike other shells where they may need to be explicitly printed to the screen using `echo`.
 
 ## See Also
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - Official documentation for Fish Shell, including detailed information on writing to standard error.
-- [Bash vs Fish: Which Shell is Better?](https://www.devdungeon.com/content/bash-vs-fish) - A comparison of Bash and Fish Shell, including their differences in handling standard error.
+For more information about output streams in Fish Shell, check out the official documentation: 
+- https://fishshell.com/docs/current/tutorial.html#redirecting-streams
+- https://fishshell.com/docs/current/commands.html#echo

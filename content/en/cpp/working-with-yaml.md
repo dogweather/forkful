@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "C++ recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "C++"
 category:             "C++"
@@ -11,92 +12,123 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-YAML (YAML Ain't Markup Language) has become a popular data serialization format due to its ease of use and readability for both humans and machines. It is commonly used in web development, configuration files, and data storage. Working with YAML can make your code more efficient and organized, leading to a smoother development process.
+If you're a programmer, chances are you've heard of YAML. But why should you care? Simply put, YAML is a popular data serialization format used for storing and representing data in a structured and readable way. This makes it useful for a variety of tasks such as configuration files, data transfer, and integration with other programming languages.
 
 ## How To
 
-To start working with YAML in your C++ code, you will need a YAML library. One popular option is "yaml-cpp", which can be easily installed using the package manager in your operating system. Once installed, include the library in your code by using ```#include "yaml-cpp/yaml.h"```.
-
-To parse a YAML file, use the ```YAML::LoadFile()``` function, passing in the path to your YAML file as the argument. This will return a ```Node``` object, which represents the entire YAML document.
+To start working with YAML in your C++ projects, you'll need a library that supports it. One popular option is the LibYAML library, which allows for easy parsing and generation of YAML files. Here's a simple example of reading a YAML file and printing its contents:
 
 ```C++
-#include "yaml-cpp/yaml.h"
+#include <yaml.h>
 
-int main() {
+// create a parser object
+yaml_parser_t parser;
 
-    // Load YAML file
-    YAML::Node doc = YAML::LoadFile("example.yaml");
+// initialize the parser
+yaml_parser_initialize(&parser);
 
-    // Access data from the YAML document
-    std::string name = doc["name"].as<std::string>();
-    int age = doc["age"].as<int>();
-    std::vector<std::string> hobbies = doc["hobbies"].as<std::vector<std::string>>();
+// open the input file
+FILE *input_file = fopen("data.yaml", "rb");
 
-    // Print the data
-    std::cout << "Name: " << name << std::endl;
-    std::cout << "Age: " << age << std::endl;
-    std::cout << "Hobbies: ";
-    for (const auto& hobby : hobbies) {
-        std::cout << hobby << ", ";
+// set the input file for the parser
+yaml_parser_set_input_file(&parser, input_file);
+
+// create and initialize the event object
+yaml_event_t event;
+yaml_event_initialize(&event);
+
+// parse the input file
+while (yaml_parser_parse(&parser, &event)) {
+    // check if the event is a mapping start
+    if (event.type == YAML_MAPPING_START_EVENT) {
+        // get the next event
+        yaml_parser_parse(&parser, &event);
+        
+        // check if the event is a scalar
+        if (event.type == YAML_SCALAR_EVENT) {
+            // print the key
+            printf("Key: %s\n", event.data.scalar.value);
+            
+            // get the next event
+            yaml_parser_parse(&parser, &event);
+            
+            // check if the event is a scalar
+            if (event.type == YAML_SCALAR_EVENT) {
+                // print the value
+                printf("Value: %s\n", event.data.scalar.value);
+            }
+        }
     }
-    std::cout << std::endl;
-
-    return 0;
 }
-```
 
-**Output:**
+// clean up
+yaml_parser_delete(&parser);
+fclose(input_file);
 ```
-Name: John
-Age: 25
-Hobbies: reading, hiking, cooking,
+Output:
 ```
-
-To create a new YAML document, use the ```Node``` class to construct a hierarchy of nodes and then output the document using the ```YAML::Emitter``` class.
+Key: name
+Value: John
+Key: age
+Value: 25
+```
+Similarly, creating a YAML file is just as easy. Here's an example of creating a YAML file and writing some data to it:
 
 ```C++
-#include "yaml-cpp/yaml.h"
+#include <yaml.h>
 
-int main() {
+// create an emitter object
+yaml_emitter_t emitter;
 
-    // Create YAML document hierarchy
-    YAML::Node root;
-    root["name"] = "Jane";
-    root["age"] = 30;
-    root["language"] = "C++";
-    root["skills"]["project_management"] = true;
-    root["skills"]["programming"] = true;
-    root["skills"]["team_management"] = false;
+// initialize the emitter
+yaml_emitter_initialize(&emitter);
 
-    // Output the YAML document
-    YAML::Emitter out;
-    out << root;
-    std::cout << out.c_str() << std::endl;
+// set the output file
+FILE *output_file = fopen("data.yaml", "wb");
+yaml_emitter_set_output_file(&emitter, output_file);
 
-    return 0;
-}
+// start a YAML document
+yaml_emitter_dump(&emitter, YAML_DOCUMENT_START_EVENT);
+
+// start a mapping
+yaml_emitter_dump(&emitter, YAML_MAPPING_START_EVENT);
+
+// add a key-value pair
+yaml_emitter_dump(&emitter, YAML_SCALAR_EVENT);
+yaml_emitter_dump_scalar(&emitter, (yaml_char_t *)"name", strlen("name"));
+
+yaml_emitter_dump(&emitter, YAML_SCALAR_EVENT);
+yaml_emitter_dump_scalar(&emitter, (yaml_char_t *)"John", strlen("John"));
+
+// end the mapping
+yaml_emitter_dump(&emitter, YAML_MAPPING_END_EVENT);
+
+// end the document
+yaml_emitter_dump(&emitter, YAML_DOCUMENT_END_EVENT);
+
+// flush and close the output file
+yaml_emitter_flush(&emitter);
+fclose(output_file);
+
+// clean up
+yaml_emitter_delete(&emitter);
 ```
-
-**Output:**
+Output (data.yaml):
 ```
-name: Jane
-age: 30
-language: C++
-skills:
-  team_management: false
-  project_management: true
-  programming: true
+---
+name: John
 ```
 
 ## Deep Dive
 
-YAML provides a clean and concise syntax for representing data, making it easy to read and understand for both developers and non-technical users. It can also handle complex data structures, such as arrays and nested objects, making it a versatile choice for data storage and transfer.
+YAML has several built-in data types, including strings, numbers, booleans, and arrays. It also supports comments, making it easy to add notes and explanations to your data. Additionally, YAML is human-readable and can be easily edited without the need for specialized software.
 
-One interesting aspect of working with YAML is the ability to define custom tags, which allow you to extend the functionality of the language. These tags can be used to define custom data types or modify how the data is processed. For example, you can use a custom tag to automatically convert strings to lowercase or uppercase, or to parse certain data as a date or time object.
+When working with more complex data, YAML also supports references, allowing you to reuse and link to specific data within the file. It also has support for anchors and aliases, which can save space and make your YAML files more efficient.
 
-Additionally, YAML supports comments, making it a great choice for storing configuration settings. Comments can be used to provide context and explanations for the data stored in the document, making it easier to maintain and modify in the future.
+Overall, YAML provides a flexible and easy-to-use format for storing and representing data, making it a valuable tool for any programmer.
 
 ## See Also
-- [YAML website](https://yaml.org/)
-- [yaml-cpp library](https://github.com/jbeder/yaml-cpp)
-- [YAML Tutorial](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+
+- [LibYAML Documentation](https://pyyaml.org/wiki/LibYAML).
+- [YAML Basics for Beginners](https://medium.com/@nikhiln47/yaml-basics-for-beginners-9b34a0e1a762).
+- [The Official YAML Website](https://yaml.org/).

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Elixir: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,57 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie do standardowego błędu jest ważnym aspektem programowania w Elixirze. Wydaje się to być tylko jednym z wielu sposobów na przekazywanie informacji o błędach w naszym kodzie, ale jest to również metoda, która może pomóc nam w diagnozowaniu problemów i poprawianiu naszej pracy. W tej krótkiej instrukcji dowiesz się, dlaczego pisanie do standardowego błędu jest ważne i jak zacząć to robić.
+Pisanie do standardowego błędu jest nieodzownym elementem w wielu językach programowania, w tym również w Elixir. Jest to ważny aspekt w procesie debugowania i znajomość jego zastosowań może pomóc w rozwiązywaniu problemów w aplikacjach.
 
 ## Jak to zrobić
 
-Aby napisać do standardowego błędu w Elixirze, należy użyć funkcji `IO.puts/2` lub `IO.puts/1` w celu wyświetlenia błędu na ekranie. Przykłady kodu:
+Aby napisać do standardowego błędu w Elixir, użyjemy funkcji `IO.write(:stderr, "Tekst")`, gdzie `"Tekst"` jest wiadomością, którą chcemy wyświetlić. Możemy również użyć funkcji `IO.puts(:stderr, "Tekst")`, która dodaje znak nowej linii na końcu wiadomości.
 
-```Elixir
-IO.puts("To jest przykładowy błąd!")
+```
+Elixir
+
+IO.write(:stderr, "Błąd!") IO.puts(:stderr, "To jest tekst do wyświetlenia w błędzie.")
 ```
 
-```Elixir
-IO.puts("Błąd numer", 404)
+Będzie to wyglądać następująco w konsoli:
+
+```
+Błąd!
+To jest tekst do wyświetlenia w błędzie.
 ```
 
-Potrzebujemy również wywołać funkcję `IO.inspect/1` na żądanym typie danych, aby wyświetlić szczegółowe informacje o błędzie. Przykład:
+## Deep Dive
 
-```Elixir
-IO.inspect(4/0, label: "dzielenie przez 0:")
+W Elixir istnieje również możliwość wyświetlania błędów wraz z informacjami o stosie wywołań. Aby to zrobić, używamy funkcji `IO.inspect(:stderr, message, opts)` z opcją `:show_stacktrace` ustawioną na true. Może to być przydatne w przypadku, gdy potrzebujemy bardziej szczegółowych informacji o błędzie.
+
+```
+Elixir
+
+opts = [show_stacktrace: true] IO.inspect(:stderr, "Błąd!", opts)
+```
+Będzie to wyglądać podobnie jak wcześniej, ale z dodatkowymi informacjami o stosie wywołań:
+
+```
+Błąd!
+stacktrace:
+[
+{Moduł, funkcja, argumenty, plik: wiersz},
+{Moduł2, funkcja2, argumenty2, plik2: wiersz2}
+...
+]
 ```
 
-Output:
+Możemy również użyć funkcji `IO.inspect(:stderr, message, opts)` z opcją `:label` ustawioną na `"Błąd"` lub inną wiadomość, aby uzyskać bardziej czytelną informację o błędzie.
 
-```Elixir
-dzielenie przez 0: %{__exception__: %Error,
-                         __struct__: %ZeroDivisionError{},
-                         left: 4,
-                         right: 0}
-```
+## Zobacz także
 
-Możemy również użyć renderowania wyjątków za pomocą makr `try/rescue/1` w celu przechwytywania błędów i wyświetlania ich na ekranie. Przykład:
-
-```Elixir
-try do
-  4/0
-rescue
-  e in Error ->
-    IO.puts(e.message)
-end
-```
-
-Output:
-
-```Elixir
-"division by zero"
-```
-
-## Głębsza analiza
-
-Pisanie do standardowego błędu jest ważnym narzędziem w Elixirze nie tylko ze względu na wyświetlanie błędów, ale także dla łatwiejszego debugowania i analizowania naszego kodu. Wykorzystywanie funkcji `IO.puts/2`, `IO.puts/1` i `IO.inspect/1` pozwala nam na wyświetlanie naszych własnych wiadomości błędów, dodawanie etykiet i renderowanie wyjątków w miejscach, gdzie uważamy to za potrzebne.
-
-## Zobacz również
-
-- [Dokumentacja Elixir IO](https://hexdocs.pm/elixir/IO.html)
-- [Przewodnik po debugowaniu w Elixirze](https://elixirschool.com/pl/lessons/advanced/debugging/)
+- [Dokumentacja Elixir o obsłudze błędów](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%2F1)
+- [Poradnik: Debugowanie w Elixir](https://blog.plataformatec.com.br/2016/04/debugging-elixir-processes/)

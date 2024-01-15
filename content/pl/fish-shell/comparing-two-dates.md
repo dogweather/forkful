@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Fish Shell: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,58 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dwóch dat jest nieodłączną częścią wielu projektów programistycznych. Często jest to niezbędne do filtrowania danych lub wykonywania operacji na określonych przedziałach czasowych. W tym blogu dowiesz się, jak w łatwy sposób porównywać dwie daty za pomocą powłoki Fish Shell.
+Często w programowaniu, szczególnie w pracy z większą ilością danych lub wydarzeń, konieczne jest porównanie dwóch dat. Jest to bardzo przydatne w celu wykrywania różnic w danych, analizy trendów lub określania czy dany wydarzenie wystąpiło wcześniej czy później. W tym artykule dowiesz się, jak porównywać dwie daty za pomocą Fish Shell, aktualnej wersji powłoki powłoki dla systemu macOS i Linux.
 
-## Jak
+## Jak to zrobić
 
-Porównanie dwóch dat za pomocą powłoki Fish Shell jest bardzo proste. Wystarczy użyć wbudowanej komendy `date`, która pozwoli nam na łatwe porównywanie dat na podstawie różnych kryteriów.
-
-```
-Fish Shell (porównanie wersji Fish 3.0.2)
-=================
-$ date -u +%s -d "01/01/2020"
-1577836800
-
-$ date -u +%s -d "01/01/2021"
-1609459200
-```
-
-W powyższym przykładzie użyliśmy flagi `-u` dla komendy `date`, która pozwala na wyświetlanie daty w uniwersalnym czasie koordynowanym (UTC). Następnie użyliśmy flagi `+%s`, która pozwala na wyświetlenie daty jako liczby sekund od 1 stycznia 1970 roku. W ten sposób porównujemy daty poprzez porównywanie liczb, co jest bardzo proste i efektywne.
-
-Możemy również porównywać daty na podstawie innych kryteriów, na przykład wyświetlając tylko dzień, miesiąc lub rok.
+Aby porównać dwie daty za pomocą Fish Shell, musimy najpierw przypisać je do zmiennych. Możemy to zrobić za pomocą polecenia `set` wraz ze składnią `DATE = ..`. Na przykład:
 
 ```
-Fish Shell (porównanie wersji Fish 3.0.2)
-=================
-$ date -u +%d -d "01/01/2020"
-01
-
-$ date -u +%m -d "01/01/2020"
-01
-
-$ date -u +%Y -d "01/01/2020"
-2020
+Fish Shell  set DATE1 = 2021-01-01
+Fish Shell  set DATE2 = 2021-01-31
 ```
 
-Możemy także wykorzystać porównanie dat do filtrowania danych. Na przykład, jeśli chcemy wyświetlić tylko te wpisy w pliku dziennika, które zostały utworzone po 1 stycznia 2020 roku, możemy skorzystać z polecenia `grep`.
+Teraz, gdy mamy nasze daty przypisane do zmiennych, możemy je porównać. Istnieje kilka różnych sposobów porównywania dat w Fish Shell, które są dostępne dzięki wbudowanym funkcjom języka. Przedstawiamy dwa najczęściej używane:
+
+- `abbrdate`: funkcja ta porównuje daty w formacie najpierw rok, potem miesiąc, a na końcu dzień. W przypadku naszych przykładowych dat, porównanie wyglądałoby następująco:
 
 ```
-Fish Shell (porównanie wersji Fish 3.0.2)
-=================
-$ grep "01/01/2020" dziennik.log
-Wpis 1 - 01/01/2020
-Wpis 2 - 02/05/2020
-Wpis 3 - 03/12/2020
+Fish Shell  abbrdate $DATE1 < abbrdate $DATE2
+true
 ```
 
-W ten sposób możemy prosto i szybko filtrować dane oparte na porównywaniu dat.
+- `math`: funkcja ta umożliwia wykonywanie operacji matematycznych na datach. Oznacza to, że możemy np. odjąć jedną datę od drugiej, co pozwala nam na sprawdzenie, jak długi jest okres między nimi. Przykładowe porównanie:
 
-## Deep Dive
+```
+Fish Shell  math $DATE2 - $DATE1
+30
+```
 
-Jeśli chcesz się dowiedzieć więcej o porównywaniu dat, warto zapoznać się z dokumentacją powłoki Fish Shell oraz z opcjami komendy `date`, która oferuje wiele możliwości manipulacji i formatowania daty. Ponadto, w Internecie dostępnych jest wiele przydatnych poradników i przykładów wykorzystania porównywania dat w Fish Shell.
+Po wykonaniu powyższych poleceń, otrzymujemy odpowiednie wartości `true` lub `30` (odpowiadające liczbie dni między datami). W przypadku, gdybyśmy chcieli sprawdzić czy jedna data jest równa drugiej, możemy również wykorzystać wbudowaną funkcję `eq` (equal).
 
-## Zobacz również
+## Głębsza analiza
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-- Komenda `date`: https://fishshell.com/docs/current/commands.html#date
-- Przykłady wykorzystania porównywania dat w Fish Shell: <link do przykładowych stron>
+Fish Shell oferuje także inne funkcje i operatory, które mogą być przydatne podczas porównywania dat. Na przykład funkcja `strptime` pozwala na konwersję daty w danym formacie na odpowiadającą jej wartość w unixowym timestamp. Dzięki temu możliwe jest porównywanie dat w różnych formatach (np. daty w formacie dd/mm/yyyy z datami w formacie yyyy/dd/mm).
+
+Ponadto, Fish Shell umożliwia również korzystanie z wbudowanych zmiennych, takich jak `MY_DATE` lub `NOW`, które zawierają aktualną datę i godzinę. Można je wykorzystać w połączeniu z funkcjami opisanymi powyżej, aby wykonać bardziej zaawansowane operacje na datach.
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o operacjach na datach w Fish Shell, możesz zapoznać się z oficjalną dokumentacją języka, dostępną na stronie https://fishshell.com/docs/current/index.html.
+
+Jeśli interesuje Cię również programowanie w innych powłokach dla systemów macOS i Linux, polecamy artykuł https://www.leaseweb.com/labs/2019/04/powloki-w-systemach-unixowych-porownanie/.

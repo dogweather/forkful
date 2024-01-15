@@ -1,6 +1,7 @@
 ---
-title:                "Java: Trabalhando com o json"
-simple_title:         "Trabalhando com o json"
+title:                "Trabalhando com json"
+html_title:           "Java: Trabalhando com json"
+simple_title:         "Trabalhando com json"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,51 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON no Java?
+## Por que trabalhar com JSON? 
 
-JSON (JavaScript Object Notation) é um formato popular para troca de dados estruturados pela internet. É leve e fácil para humanos e máquinas compreenderem, e por isso é amplamente utilizado em aplicações web e móveis. Trabalhar com JSON no Java permite que você facilmente leia, escreva e manipule dados em formato JSON em suas aplicações.
+JSON (JavaScript Object Notation) é um formato popular para armazenar e trocar dados na web. Ele é leve, flexível e fácil de entender, tornando-o uma ótima escolha para comunicação entre diferentes sistemas. Ao trabalhar com JSON, é possível estruturar e manipular dados de forma eficiente, permitindo a criação de aplicações dinâmicas e modernas.
 
 ## Como fazer:
 
-Para trabalhar com JSON no Java, é necessário primeiro adicionar a biblioteca do JSON à sua aplicação. Você pode usar uma ferramenta de gerenciamento de dependência como o Maven para isso, ou simplesmente baixar o arquivo JAR e adicioná-lo ao caminho de classpath da sua aplicação.
-
-Uma vez que a biblioteca esteja adicionada, você pode começar a ler e escrever dados em formato JSON. Aqui está um exemplo simples de como criar um objeto JSON e escrevê-lo para um arquivo:
+Para começar a trabalhar com JSON em Java, é necessário importar a biblioteca `org.json`. Em seguida, pode-se utilizar a classe `JSONObject` para criar um objeto JSON a partir de uma string ou um mapa. Veja um exemplo abaixo:
 
 ```Java
-// Importe a biblioteca JSON
-import org.json.simple.JSONObject;
+import org.json.*;
 
-public class ExemploJSON {
-  public static void main(String[] args) {
-    // Cria um objeto JSON
-    JSONObject pessoa = new JSONObject();
-    pessoa.put("nome", "Maria");
-    pessoa.put("idade", 30);
-
-    // Escreve o objeto JSON para um arquivo
-    try (FileWriter escritor = new FileWriter("pessoa.json")) {
-      escritor.write(pessoa.toJSONString());
-    } catch (IOException e) {
-      System.out.println("Erro ao escrever arquivo JSON: " + e.getMessage());
-    }
-  }
-}
+String jsonStr = "{\"nome\":\"João\",\"idade\":25}";
+JSONObject jsonObj = new JSONObject(jsonStr);
+System.out.println(jsonObj.getString("nome")); //Saída: João
+System.out.println(jsonObj.getInt("idade")); //Saída: 25
 ```
 
-O código acima criará um arquivo chamado "pessoa.json" com o conteúdo `{"nome":"Maria","idade":30}`.
+Também é possível criar um objeto JSON a partir de um objeto Java utilizando a classe `JSONObject` ou `JSONArray`. Veja o exemplo abaixo:
 
-Para ler dados de um arquivo JSON, você pode usar uma classe como o `FileReader` para ler o conteúdo do arquivo e então usar o método `JSONObject.parse()` para transformar os dados em um objeto JSON que pode ser manipulado em seu código.
+```Java
+import org.json.*;
 
-## Profundamente:
+class Pessoa {
+  private String nome;
+  private int idade;
 
-Trabalhar com JSON em Java pode ser estendido além de simplesmente ler e escrever dados. Existem muitas bibliotecas e ferramentas que podem ser utilizadas para validar, transformar e mapear dados JSON em objetos Java.
+  public Pessoa(String nome, int idade) {
+    this.nome = nome;
+    this.idade = idade;
+  }
 
-Uma dessas ferramentas é o Jackson, que permite mapear dados JSON diretamente para objetos Java e vice-versa. Isso é útil quando você tem uma API que retorna dados em JSON e precisa convertê-los em objetos Java para utilizá-los em sua aplicação.
+  public String getNome() {
+    return nome;
+  }
 
-Outra ferramenta útil é o Gson, que permite validar e transformar dados JSON em objetos Java usando anotações. Isso pode facilitar muito o processo de conversão e validação de dados.
+  public int getIdade() {
+    return idade;
+  }
+}
+
+JSONObject jsonObj = new JSONObject(new Pessoa("Maria", 30));
+System.out.println(jsonObj.toString()); //Saída: {"nome":"Maria","idade":30}
+```
+
+Para acessar os valores de um objeto JSON, é possível utilizar os métodos `get()` ou `opt()`. Enquanto o primeiro retorna uma exceção caso a chave não exista, o segundo retorna `null` ou um valor padrão. Veja o exemplo abaixo:
+
+```Java
+JSONObject jsonObj = new JSONObject("{\"nome\":\"José\"}");
+System.out.println(jsonObj.get("idade")); //Exceção: Chave não encontrada
+System.out.println(jsonObj.optString("idade")); //Saída: null
+System.out.println(jsonObj.optString("idade", "Valor padrão")); 
+//Saída: Valor padrão
+```
+
+Para criar um array JSON, basta utilizar a classe `JSONArray` e adicionar os elementos desejados. Veja o exemplo abaixo:
+
+```Java
+JSONArray jsonArr = new JSONArray();
+jsonArr.put("Maçã");
+jsonArr.put("Banana");
+jsonArr.put("Morango");
+System.out.println(jsonArr.toString()); //Saída: ["Maçã","Banana","Morango"]
+```
+
+## Aprofundando-se:
+
+Ao trabalhar com JSON em Java, é importante lembrar que ele deve ser tratado como um objeto e não como uma string. Isso significa que é necessário validar e manipular os dados corretamente, para evitar possíveis erros.
+
+Também é possível converter um objeto JSON em uma string e vice-versa, utilizando os métodos `toString()` e `toJSONString()`. E caso seja necessário trabalhar com documentos JSON maiores, pode-se utilizar a biblioteca `Jackson`, que oferece uma melhor performance e recursos adicionais.
+
+Além disso, é importante conhecer a estrutura de um documento JSON, que é composto por uma coleção de pares de chave-valor, separados por vírgula e delimitados por chaves `{}`. Existem também os arrays JSON, que são coleções de valores separados por vírgula e delimitados por colchetes `[]`.
 
 ## Veja também:
 
-- [JSON no Java: Um guia para iniciantes](https://www.baeldung.com/java-json)
-- [Documentação da biblioteca JSON Simple](https://code.google.com/archive/p/json-simple/)
-- [Jackson - Guia de usuário](https://github.com/FasterXML/jackson-docs/wiki/Jackson-JSON-Serialization%3A-Starting-Off)
+- [Documentação oficial do org.json](https://stleary.github.io/JSON-java/)
+- [Documentação oficial do Jackson](https://github.com/FasterXML/jackson)
+- [Tutorial de JSON em Java da Baeldung (em inglês)](https://www.baeldung.com/java-json)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 디버그 출력 프린트"
-simple_title:         "디버그 출력 프린트"
+title:                "디버그 출력 출력하기"
+html_title:           "Fish Shell: 디버그 출력 출력하기"
+simple_title:         "디버그 출력 출력하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,26 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+디버그 출력을 출력하는 것이 왜이나 과정에서 사용하는 소프트웨어 또는 스크립트를 이해하기 위해 중요한 이유입니다. 디버그 출력은 사용자에게 문제가 발생하는 부분을 파악하고 해결하는 데 도움이 됩니다.
 
-디버그 출력을 프린트하는 이유는 매우 중요합니다. 디버그 출력은 어떤 코드가 어떻게 실행되는지를 알려주는 가장 쉽고 빠른 방법입니다. 코드를 디버그할 때 디버그 출력은 오류를 찾는 데 매우 유용합니다.
+## 사용 방법
+디버그 출력을 출력하는 것은 간단하지만 매우 유용합니다. 우선, 다음과 같이 `echo` 명령어를 사용하여 출력합니다:
 
-## 시작하기
+```
+Fish Shell을(를) 사용하여 디버그 출력하기:
 
-Fish 쉘에서 디버그 출력을 프린트하는 방법은 매우 간단합니다. 아래 코드 블록을 보고 따라해보세요.
-
-```Fish Shell
-set debug_output true
-echo "디버그 출력 시작"
+echo "debug output"
 ```
 
-위 코드를 실행하면 "디버그 출력 시작"이라는 문구가 터미널에 출력됩니다. 이렇게 간단하게 디버그 출력을 실행할 수 있습니다.
+일반적으로 디버그 출력은 스크립트의 일부로 추가되며, 디버깅 단계에서 해당 부분을 찾아 수정하는 데 도움이 됩니다.
 
 ## 깊이 파고들기
+더 많은 디버그 출력의 유용한 기능을 이해하기 위해 더 깊이 파고들어봅시다. Fish Shell에는 `$fish_debug` 변수가 있어 디버그 출력을 사용자 지정할 수 있습니다. 또한, `set -x` 명령을 사용하여 스크립트 전체에 디버그 출력을 활성화할 수 있습니다.
 
-디버그 출력은 오류를 찾는 데 매우 유용하지만, 너무 많은 디버그 출력을 활성화하면 코드가 너무 느려지게 될 수 있습니다. 따라서 디버그 출력을 사용하실 때에는 주의하세요. 또한, 다른 쉘에서도 디버그 출력을 사용하실 때에는 문법이 조금 다를 수 있으니 유의하셔야 합니다.
-
-## 놀러가기
-
-- https://fishshell.com/ - Fish 쉘 공식 홈페이지
-- https://fishshell.com/docs/current/ - Fish 쉘 공식 문서
-- https://github.com/fish-shell/fish-shell - Fish 쉘의 깃허브 저장소
+## 참고
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
+- [디버깅을 위한 기본적인 shell 명령어](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
+- [Fish Shell 디버그 출력 관련 토론](https://github.com/fish-shell/fish-shell/issues/6108)

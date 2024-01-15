@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "PHP: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -9,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Jokainen PHP-ohjelmoija tietää, että päivämäärien laskeminen voi olla hankalaa ja aikaa vievää työtä. Kuitenkin pystyäksesi luomaan dynaamisia verkkosovelluksia, tarvitset kyvyn laskea päivämääriä tulevaisuudessa tai menneisyydessä. Tässä blogikirjoituksessa opit, kuinka voit toteuttaa tämän PHP:llä helposti ja tehokkaasti.
+Tulevaisuuden tai menneisyyden päivämäärän laskemisella voi olla monia käyttötarkoituksia, kuten aikataulujen tai tapahtumien suunnittelu, laskujen eräpäivien määrääminen tai tietyn hetken laskeminen tietyn tapahtuman jälkeen. PHP tarjoaa monia käteviä toimintoja, jotka helpottavat päivämäärien laskemista ja manipulointia.
 
-## Kuinka
+## Miten tehdä?
 
-PHP:ssä on valmiina joitakin hyödyllisiä toimintoja päivämäärien laskemiseen tulevaisuudessa tai menneisyydessä. Yksi näistä on "strtotime" -funktio, joka muuntaa annetun päivämäärän aikaleimaksi. Voit käyttää tätä aikaleimaa sitten esimerkiksi date-funktion kanssa määrittääksesi tietyn päivämäärän tulevaisuudessa tai menneisyydessä.
+```PHP
+// Tulevaisuuden päivän laskeminen
+$päivä = date('d'); //Hae nykyinen päivä
+$kuukausi = date('m'); //Hae nykyinen kuukausi
+$vuosi = date('Y'); //Hae nykyinen vuosi
 
-```
-<?php
+$näytä_viikon_päivä = date('l', strtotime('+7 days')); // Lasketaan päivän olemassaolosta 7 päivää
+$uusi_päivä = date('d-m-Y', strtotime('+1 day', strtotime('05-04-2022'))); // Lisätään yksi päivä tiettyyn päivämäärään
 
-// Lasketaan päivämäärä yhden kuukauden päästä
-$tulevaisuuden_paivamaara = strtotime("+1 month");
-
-echo date("d.m.Y", $tulevaisuuden_paivamaara); // Tulostaa esim. "20.05.2021"
-
-// Lasketaan päivämäärä kuusi kuukautta taaksepäin
-$mennytyysipaivamaara = strtotime("-6 months");
-
-echo date("d.m.Y", $mennytyysipaivamaara); // Tulostaa esim. "20.11.2020"
-
-?>
+// Menneisyyden päivän laskeminen
+$vanha_päivä = date('Y-m-d', strtotime('-1 day', strtotime('05-04-2022'))); // Vähennetään yksi päivä tietystä päivämäärästä
+$ero_päivät =abs(strtotime('2022-05-05') - strtotime('2022-04-05')); // Lasketaan päivien määrä kahden päivämäärän välillä
 ```
 
-Voit myös asettaa halutun päivämäärän sopivassa muodossa "strtotime" -funktion ensimmäisenä parametrina. Esimerkiksi "25 December 2021" tai "next Monday".
+Tässä esimerkissä käytetään PHP:n `date()` ja `strtotime()` -funktioita, jotka ovat hyödyllisiä päivämäärien manipuloinnissa. `date()`-funktio palauttaa halutun päivämäärän muodossa, joka on määritelty parametrien avulla. `strtotime()`-funktio sallii päivämäärälausekkeiden muokkaamisen ja tietyn ajan lisäämisen tai vähentämisen päivämäärästä. Näiden toimintojen yhdistelmänä voit helposti laskea tulevaisuuden tai menneisyyden päivämääriä halutuilla muutoksilla.
 
 ## Syvällisempi sukellus
 
-"strtotime" -funktio tukee monia erilaisia päivämääränmuotoja ja lisäksi voit käyttää siihen myös useita avainsanoja, kuten "+1 year" tai "next week". "Date" -funktio taas mahdollistaa päivämäärän muotoilun halutun mallin perusteella.
+PHP tarjoaa myös muita hyödyllisiä toimintoja päivämäärien laskemiseen ja manipulointiin, kuten `date_modify()` ja `date_interval_create_from_date_string()`.
 
-Voit myös käyttää muita PHP:n sisäänrakennettuja funktioita päivämäärien laskemiseen, kuten "mktime" ja "cal_days_in_month".
+`date_modify()`-toiminnon avulla voit tehdä monimutkaisempia muutoksia päivämäärään, kuten lisätä tai vähentää useita päiviä tai kuukausia. Voit myös käyttää `date_interval_create_from_date_string()`-toimintoa luomaan päivämäärälausekkeita ja lisäämään ne haluttuun päivämäärään.
+
+PHP:n `DateTime`-luokka tarjoaa myös paljon hyödyllisiä menetelmiä päivämäärien käsittelyyn, kuten `add()` ja `sub()`-menetelmät, jotka toimivat samalla tavalla kuin `strtotime()`-funktio. Lisäksi voit käyttää `format()`-menetelmää määrittääksesi päivämäärän muodon ja näyttääksesi sen halutussa muodossa.
 
 ## Katso myös
 
-- PHP:n virallinen dokumentaatio päivämäärien laskemisesta: https://www.php.net/manual/en/function.strtotime.php
-- Kätevät esimerkit ja lisätietoa päivämäärien laskemisesta PHP:ssä: https://www.w3schools.com/php/func_date_strtotime.asp
-- PHP-päivämääräfunktioiden vertailu: https://www.toptal.com/software/definitive-php-datetime-cheatsheet
+- PHP viralliset dokumentaatiot: https://www.php.net/manual/en/datetime.format.php
+- FreeCodeCampin opas päivämäärien laskemiseen PHP:llä: https://www.freecodecamp.org/news/how-to-work-with-dates-and-times-in-php/

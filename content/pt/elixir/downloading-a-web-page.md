@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Baixando uma página da web"
-simple_title:         "Baixando uma página da web"
+title:                "Baixando uma página da web."
+html_title:           "Elixir: Baixando uma página da web."
+simple_title:         "Baixando uma página da web."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar Elixir para baixar páginas da web?
+##Por que Baixar uma Página da Web com Elixir é uma Boa Idéia?
 
-Se você está procurando uma linguagem de programação que seja poderosa, escalável e com uma sintaxe elegante, então Elixir é a escolha certa. Usando Elixir, você pode facilmente baixar páginas da web e manipular os dados obtidos de maneira eficiente. Neste artigo, vamos explorar como fazer isso passo a passo.
+Se você está trabalhando em um projeto que requer a coleta de dados de uma página da web, usar Elixir pode ser uma ótima opção. Com sua poderosa biblioteca HTTP e sua capacidade de processar dados em paralelo, é uma linguagem perfeita para tarefas de scraping.
 
-## Como Fazer
-
-Para começar, você precisa ter o Elixir instalado em seu computador. Em seguida, crie um novo arquivo com a extensão .exs (para scripts Elixir) e vamos iniciar nosso código! Vamos precisar de uma biblioteca chamada `HTTPoison` para fazer as solicitações HTTP necessárias e obter os dados da página da web. Você pode instalá-la com o comando `mix deps.get`.
-
-Dentro do seu arquivo .exs, importe o módulo `HTTPoison` e a função `Application.ensure_all_started` para garantir que todas as dependências necessárias estejam carregadas. Em seguida, use a função `HTTPoison.get` para fazer uma solicitação HTTP para a página da web desejada e armazenar a resposta em uma variável. Por exemplo:
+##Como Fazer:
 
 ```Elixir
-HTTPoison.get("https://www.exemplo.com.br")
-|> case do
-    {:ok, %HTTPoison.Response{body: body}} ->
-        # Aqui temos acesso aos dados da página armazenados na variável "body"
-    {:error, %HTTPoison.Error{reason: reason}} ->
-        # Tratamento de erro
-end
+# primeiro, é necessário importar a biblioteca HTTP
+iex> http = HTTPoison
+
+# então, usar o método get para fazer a requisição para a página desejada
+iex> response = http.get("https://www.example.com")
+
+# usar o comando status_code para verificar se a requisição foi bem sucedida (200 indica sucesso)
+iex> response.status_code 
+200
+
+# usar o comando body para acessar o conteúdo da página em formato HTML
+iex> response.body 
+"<html><head>...</head><body><h1>Bem-vindo ao Elixir!</h1>...</body></html>"
 ```
 
-Agora, você pode manipular esses dados da maneira que desejar, como extrair informações específicas ou analisar o HTML da página. Para isso, você pode usar uma biblioteca chamada `Floki`, que oferece recursos úteis para trabalhar com HTML. Não é necessário instalá-la, pois ela já vem com o Elixir.
+Com esses comandos básicos, já é possível baixar o conteúdo de uma página da web em HTML. A partir daqui, é possível processar e extrair os dados desejados usando ferramentas de parsing ou regex.
 
-## Deep Dive
+##Aprofundando-se:
 
-Para entendermos melhor como o processo de baixar páginas da web funciona em Elixir, aqui está uma visão geral do que acontece por trás das cenas:
+Além dos comandos básicos de requisição e obtenção de conteúdo, a biblioteca HTTPoison também oferece diversas funcionalidades avançadas, como suporte a proxy, cabeçalhos personalizáveis e autenticação. Além disso, é possível encontrar outras bibliotecas especializadas em scraping, como o mochiweb e o hackney.
 
-- A biblioteca `HTTPoison` usa a biblioteca `gun` para fazer as solicitações HTTP.
-- Quando uma solicitação é feita, `gun` envia uma conexão TCP para o servidor da página.
-- O servidor responde com os dados da página e `gun` os envia de volta para `HTTPoison`.
-- `HTTPoison` verifica o status da resposta e a retorna em forma de tupla, onde a primeira parte é o status e a segunda é um mapa contendo os dados da resposta, como o corpo da página e os cabeçalhos.
+Caso o conteúdo da página esteja em formato JSON, é possível usar a biblioteca Poison para converter o conteúdo para um formato manipulável por Elixir. Outra opção é usar a biblioteca Floki para fazer o parsing do conteúdo em formato HTML e extrair os dados desejados.
 
-## Veja Também
+##Veja Também:
 
-- [Documentação da biblioteca HTTPoison](https://hexdocs.pm/httpoison)
-- [Documentação da biblioteca Floki](https://hexdocs.pm/floki)
-- [Tutorial para iniciantes em Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Documentação do HTTPoison](https://github.com/edgurgel/httpoison)
+- [Documentação do Poison](https://github.com/devinus/poison)
+- [Documentação do Floki](https://github.com/philss/floki)
+- [Exemplos de projetos em Elixir com foco em scraping](https://github.com/ayrat555/scrapy)

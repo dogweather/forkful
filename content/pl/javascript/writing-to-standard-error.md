@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Javascript: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Dlaczego warto używać standardowego wyjścia błędu w programowaniu Javascript?
+## Dlaczego
 
-Często podczas pisania kodu, natrafiamy na błędy, które uniemożliwiają poprawne działanie naszej aplikacji. W takich sytuacjach bardzo pomocne jest używanie standardowego wyjścia błędu w Javascript. Dzięki temu możemy szybko zlokalizować problem i naprawić go, co przyczyni się do poprawnego działania naszego programu.
+Pisanie do standardowego błędu może wydawać się nudnym i niepotrzebnym zadaniem w programowaniu, ale faktem jest, że jest to bardzo ważne. Pisanie do standardowego błędu pozwala nam na przechwytywanie i wyświetlanie informacji o błędach, co ułatwia debugowanie naszego kodu i poprawianie ewentualnych problemów.
 
-### Jak używać standardowego wyjścia błędu w Javascript?
+## Jak to zrobić
 
-Aby móc korzystać ze standardowego wyjścia błędu w Javascript, musimy znać kilka prostych komend. Pierwszą z nich jest ```console.error()```, która pozwala nam na wypisanie błędu w konsoli przeglądarki. Przykładowo:
+Aby pisać do standardowego błędu w Javascript, należy skorzystać z obiektu console, który dostarcza nam metody do wyświetlania różnego rodzaju informacji w konsoli. Jedną z tych metod jest `console.error()`, która służy do wyświetlania błędów.
+
+Przykładowy kod wykorzystujący `console.error()` wyglądałby następująco:
 
 ```Javascript
-let num = "abc";
+var x = 10;
+var y = "abc";
 
-if(isNaN(num)){
-    console.error("Wprowadzony argument nie jest liczbą");
+if(typeof x !== "string") {
+  console.error("x nie jest ciągiem znaków!");
+}
+
+if(typeof y !== "number") {
+  console.error("y nie jest liczbą!");
 }
 ```
 
-W tym przykładzie, wprowadzenie tekstu zamiast liczby do zmiennej "num", spowoduje wypisanie błędu w konsoli: "Wprowadzony argument nie jest liczbą".
+Po uruchomieniu tego kodu w konsoli otrzymamy następujący output:
 
-Możemy także użyć ```process.stderr.write()```, aby wypisać błąd w terminalu. Przykład:
-
-```Javascript
-process.stderr.write("Błąd: Nie można odnaleźć pliku");
+```
+x nie jest ciągiem znaków!
+y nie jest liczbą!
 ```
 
-Ten kod spowoduje wypisanie tekstu "Błąd: Nie można odnaleźć pliku" w terminalu.
+W ten sposób możemy wykorzystać pisanie do standardowego błędu do wychwytywania i wyświetlania informacji o błędach w naszym kodzie.
 
-### Głębszy wgląd w wykorzystanie standardowego wyjścia błędu w Javascript
+## Deep Dive
 
-Używanie standardowego wyjścia błędu jest nie tylko przydatne w sytuacjach, gdy występują błędy w naszym kodzie. Możemy też wykorzystać to narzędzie do debugowania naszej aplikacji. W przypadku, gdy chcemy śledzić pewne wartości w naszym programie, możemy użyć ```console.error()``` lub ```process.stderr.write()``` do wypisywania tych wartości w konsoli lub terminalu. Dzięki temu możemy szybko sprawdzić, czy nasze zmienne mają poprawne wartości i czy nasz kod działa zgodnie z oczekiwaniami.
+W Javascript, standardowy błąd jest reprezentowany przez obiekt `Error`, który zawiera informacje takie jak wiadomość błędu, nazwa błędu, ścieżka i linia, w której wystąpił błąd. Istnieje również wiele typów błędów, takich jak `SyntaxError`, `TypeError` czy `ReferenceError`, które specyfikują rodzaj błędu.
 
-### Zobacz także
+Aby wyświetlić pełną informację o błędzie, możemy użyć funkcji `console.trace()`, która wyświetli nam cały stos wywołań funkcji prowadzących do wystąpienia błędu.
 
-- [Jak używać standardowego wyjścia błędu w Javascript](https://developer.mozilla.org/pl/docs/Web/API/console/error)
-- [Tutorial: Debugowanie aplikacji Javascript z wykorzystaniem standardowego wyjścia błędu](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-errors)
-- [Informacje o module "process" w Node.js](https://nodejs.org/docs/latest/api/process.html)
+Możemy także przechwytować i obsługiwać błędy za pomocą instrukcji `try...catch`, co pozwala nam na kontrolowane przejście przez błędy i wykonanie odpowiednich akcji w zależności od rodzaju błędu.
+
+## Zobacz również
+
+- [Dokumentacja console w Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Artykuł o pisanie do standardowego błędu w Javascript](https://www.sitepoint.com/proper-error-handling-javascript/)

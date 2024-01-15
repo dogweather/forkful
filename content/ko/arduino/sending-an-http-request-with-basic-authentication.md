@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "간단 인증과 함께 http 요청 보내기"
+html_title:           "Arduino: 간단 인증과 함께 http 요청 보내기"
+simple_title:         "간단 인증과 함께 http 요청 보내기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,73 +11,102 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-HTTP 요청을 하기 위해서 기본 인증을 사용하는 이유는 인증된 사용자의 정보를 안전하게 전송하기 위해서입니다.
 
-## 하기
-HTTP 요청을 보낼 때 기본 인증을 사용하는 방법은 아래 코드와 같습니다. 이를 이용하여 Arduino와 연결된 장치로부터의 데이터를 안전하게 전송할 수 있습니다.
+HTTP 요청을 기본 인증과 함께 보내는 것에 참여하는 이유는 서버와 통신하고 데이터를 전송하기 위해서입니다.
+
+## 하는 방법
+
+기본 인증과 함께 HTTP 요청을 보내는 방법은 다음과 같습니다.
 
 ```Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClientSecure.h>
 
-// 인터넷에 연결
-const char* ssid = "와이파이 이름";
-const char* password = "와이파이 비밀번호";
+// Wi-Fi 연결 설정
+const char* ssid = "YourNetworkName";
+const char* password = "YourNetworkPassword";
 
-// 요청을 보낼 주소
-const char* host = "서버 주소";
-const int port = 80;
+// 요청할 서버의 URL과 포트 번호
+const char* host = "www.example.com";
+const uint16_t port = 443;
 
-// 기본 인증을 위한 사용자 정보
-const char* user = "사용자 이름";
-const char* password = "사용자 비밀번호";
+// Basic Authentication에 사용할 사용자 이름과 비밀번호
+const char* username = "YourUsername";
+const char* password = "YourPassword";
 
-// WiFi 연결 함수
-void connectWiFi() {
-  Serial.print("WiFi 연결 시도 중...");
-  
-  WiFi.begin(ssid, password); // WiFi 연결
-  
-  while (WiFi.status() != WL_CONNECTED) { // 연결 상태 확인
+// HTTPS 클라이언트 생성
+WiFiClientSecure client;
+
+void setup() {
+  // Wi-Fi 연결
+  Serial.begin(9600);
+  delay(10);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
-  
-  Serial.println(" 연결 완료!");
-}
+  Serial.println("");
+  Serial.println("WiFi connected.");
 
-void setup() {
-  Serial.begin(9600); // 시리얼 포트 설정
-  connectWiFi(); // WiFi 연결
+  // HTTPS 연결
+  Serial.print("Connecting to ");
+  Serial.println(host);
+  if (!client.connect(host, port)) {
+    Serial.println("Connection failed.");
+    return;
+  }
+
+  // HTTP 헤더 생성
+  String auth = username;
+  auth.concat(":");
+  auth.concat(password);
+  char base64str[((auth.length() + 2) / 3) * 4] + 1;
+  base64_encode(base64str, auth.c_str(), auth.length());
+  String header = "Authorization: Basic ";
+  header += base64str;
+  header += "\r\n";
+
+  // HTTPS 요청 전송
+  client.println("GET / HTTP/1.1");
+  client.print(header);
+  client.println("Host: www.example.com");
+  client.println("Connection: close");
+  client.println();
+
+  // 응답 내용 출력
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      break;
+    }
+  }
+  String line = client.readStringUntil('\n');
+  Serial.println("Response:");
+  Serial.println(line);
 }
 
 void loop() {
-  HTTPClient http; // HTTPClient 객체 생성
-  
-  // 인증 정보 설정
-  http.setAuthorization(user, password);
 
-  // 서버에 GET 요청 보내기
-  http.begin("http://server-address.com");
-  int httpCode = http.GET(); // GET 요청 보내기
-  
-  if (httpCode > 0) {
-    Serial.println(httpCode);
-    String payload = http.getString(); // 서버로부터 받은 데이터 읽기
-    Serial.println(payload); // 데이터 출력
-  }
-  
-  http.end(); // HTTP 연결 해제
-  delay(5000); // 5초 대기
 }
 ```
 
-위 코드는 서버와 연결하고, 인증 정보를 설정한 다음, GET 요청을 보내서 서버로부터 응답을 받아서 출력해주는 예제입니다. 여러분은 이를 기반으로 서버로부터 받은 데이터를 자유롭게 처리할 수 있습니다.
+## 깊이 들어가기
 
-## 딥 다이브
-HTTP 요청을 보낼 때 기본 인증을 사용하는 것은 서버로부터 데이터를 안전하게 전송할 수 있는 중요한 요소입니다. 기본 인증은 사용자의 이름과 비밀번호를 미리 설정해두고, 이를 클라이언트 측에서 서버로 전송해서 인증하는 방식입니다. 이를 통해 외부에서의 악의적인 접근을 방지할 수 있습니다.
+기본 인증은 HTTP 헤더에 사용자 이름과 비밀번호를 인코딩하여 전송하는 인증 방식입니다. 이를 통해 서버는 사용자의 인증 정보를 확인하고, 유효한 요청인지 판단할 수 있습니다. 기본 인증은 안전하지 않으므로 HTTPS와 같은 보안 프로토콜을 사용하는 것이 좋습니다.
 
-## 관련 링크
-- [WiFi 라이브러리](http://www.arduino.cc/en/Reference/WiFi)
-- [HTTPClient 라이브러리](http://www.arduino.cc/en/Reference/HTTPClient)
-- [HTTP 요청과 기본 인증](https://www.tutorialspoint.com/http/http_authentication.htm)
+## 참고 자료
+
+- [Arduino ESP8266WiFi 라이브러리 문서](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-class.html)
+- [기본 인증에 대한 HTTP 스펙](https://tools.ietf.org/html/rfc7617)
+- [Base64 인코딩에 대한 위키피디아 글](https://ko.wikipedia.org/wiki/Base64)
+
+---
+### 참고 자료
+
+- [Arduino ESP8266WiFi library documentation](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-class.html)
+- [HTTP specification for Basic Authentication](https://tools.ietf.org/html/rfc7617)
+- [Wikipedia article on Base64 encoding](https://en.wikipedia.org/wiki/Base64)

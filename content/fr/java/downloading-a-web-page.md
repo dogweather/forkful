@@ -1,6 +1,7 @@
 ---
-title:                "Java: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Java: Téléchargement d'une page web"
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,40 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Java, vous avez probablement déjà entendu parler de l'importance de télécharger des pages web dans vos programmes. Mais pourquoi est-ce si important ? Eh bien, il y a plusieurs raisons. Tout d'abord, cela permet d'accéder à des données en temps réel à partir de sites web. Deuxièmement, cela peut être utile pour créer des robots d'indexation ou de scraping de données. Quelle que soit la raison, il est essentiel de savoir comment télécharger une page web en Java.
+Si vous êtes curieux de voir comment un site web est construit, ou si vous avez besoin d'extraire des données spécifiques d'une page web, alors vous pourriez être intéressé par l'idée de télécharger une page web en utilisant Java.
 
 ## Comment faire
 
-La première étape pour télécharger une page web en Java est d'utiliser la classe `URL` pour créer une instance de l'URL de la page que vous souhaitez télécharger. Ensuite, vous pouvez utiliser cette instance pour ouvrir une connexion à l'URL en utilisant la méthode `openConnection()`. Ce qui suit est un exemple de code pour télécharger une page web en Java :
+Télécharger une page web en utilisant Java est un processus relativement simple. Tout d'abord, vous aurez besoin d'utiliser la classe URL pour définir l'URL de la page que vous souhaitez télécharger. Ensuite, vous pouvez utiliser la classe HttpURLConnection pour ouvrir une connexion vers l'URL et obtenir le contenu de la page. Enfin, vous pouvez enregistrer le contenu dans un fichier ou le traiter directement dans votre code.
 
-```
-URL url = new URL("https://www.example.com");
-URLConnection connection = url.openConnection();
-InputStream stream = connection.getInputStream();
+Voici un exemple de code Java pour télécharger une page web et l'enregistrer dans un fichier:
 
-// Read the page content
-BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-String line;
-while((line = reader.readLine()) != null) {
-    System.out.println(line);
+```Java
+import java.io.*;
+import java.net.*;
+
+public class PageDownloader {
+
+    public static void main(String[] args) {
+
+        // Définition de l'URL de la page à télécharger
+        String urlString = "https://www.example.com/page";
+
+        try {
+
+            // Ouverture d'une connexion vers l'URL
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Obtention du contenu de la page en utilisant un InputStreamReader
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = reader.readLine()) != null) {
+                content.append(inputLine);
+            }
+            reader.close();
+
+            // Enregistrement du contenu dans un fichier
+            File file = new File("page.html");
+            FileWriter writer = new FileWriter(file);
+            writer.write(content.toString());
+            writer.flush();
+            writer.close();
+
+            System.out.println("La page a été téléchargée avec succès.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-Ce code ouvrira une connexion à l'URL spécifiée et imprimera son contenu ligne par ligne. Bien sûr, vous pouvez modifier ce code pour enregistrer le contenu dans un fichier ou le traiter de toute autre manière que vous souhaitez.
-
 ## Plongée en profondeur
 
-Il existe de nombreux paramètres et options que vous pouvez utiliser pour personnaliser votre connexion et votre téléchargement de page web en Java. Par exemple, vous pouvez spécifier un agent utilisateur pour votre requête en utilisant la méthode `addRequestProperty()` sur votre instance de `URLConnection`. Vous pouvez également définir une limite de temps de connexion en utilisant la méthode `setConnectTimeout()`.
+Si vous souhaitez en savoir plus sur le processus de téléchargement d'une page web en utilisant Java, voici quelques points importants à retenir :
 
-De plus, si vous souhaitez télécharger le contenu d'un site sécurisé, vous devrez peut-être utiliser des routines supplémentaires pour gérer les cookies et les autorisations. Vous pouvez trouver de nombreux tutoriels en ligne sur la façon de le faire en utilisant Java.
+- La classe URL représente une URL et offre plusieurs méthodes utiles pour accéder à des informations telles que le protocole, l'hôte et le chemin.
+- La classe HttpURLConnection est une sous-classe de la classe URLConnection qui gère les connexions HTTP spécifiques. Elle offre des méthodes pour ouvrir une connexion, envoyer des requêtes et recevoir des réponses.
+- Lors de l'ouverture d'une connexion vers une URL, si la page est protégée par un mot de passe, vous devrez utiliser les classes URLConnection et Authenticator pour fournir les informations d'authentification nécessaires.
+- Le contenu d'une page web est renvoyé sous forme de flux de données, vous devez donc utiliser un InputStreamReader pour lire le contenu de la page.
+- Pour traiter le contenu de la page directement dans votre code, vous pouvez utiliser un parseur HTML comme Jsoup.
 
 ## Voir aussi
-
-Voici quelques liens utiles pour en savoir plus sur le téléchargement de pages web en Java :
-
-- [Tutoriel Java : Comment télécharger une page web](https://www.baeldung.com/java-download-web-page)
-- [Documentation officielle Java pour la classe URL](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html)
-- [Exemples de code pour le téléchargement de pages web en Java](https://www.geeksforgeeks.org/downloading-a-webpage-using-java/)
-- [Marche à suivre pour télécharger des pages sécurisées en Java](https://dzone.com/articles/download-page-web-or-file-java)
-
-Maintenant que vous savez comment télécharger une page web en Java, vous pouvez l'intégrer dans vos projets pour accéder à des données en temps réel ou tout simplement pour le plaisir de la programmation !
+- [La documentation officielle de Java pour la classe URL](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
+- [La documentation officielle de Java pour la classe HttpURLConnection](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/HttpURLConnection.html)
+- [Un tutoriel sur l'utilisation de Jsoup pour traiter le contenu HTML](https://www.baeldung.com/java-with-jsoup)
+- [Un article sur l'authentification avec URLConnection](https://www.codejava.net/java-se/networking/java-httpurlconnection-follow-redirect-example)

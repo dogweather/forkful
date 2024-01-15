@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Trabalhando com arquivos csv"
-simple_title:         "Trabalhando com arquivos csv"
+title:                "Trabalhando com csv"
+html_title:           "Elm: Trabalhando com csv"
+simple_title:         "Trabalhando com csv"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,48 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com arquivos CSV no Elm?
+## Por que
 
-O Elm é uma linguagem de programação funcional que tem se tornado cada vez mais popular para o desenvolvimento de aplicações web. Uma das tarefas mais comuns em projetos web é a manipulação de arquivos CSV (Comma Separated Values), que são utilizados para armazenar dados em formato de tabela. Neste artigo, vamos explorar como o Elm pode ser uma ferramenta poderosa para trabalhar com CSV.
+Você provavelmente já se deparou com arquivos CSV em algum momento, seja trabalhando com dados, importando informações em uma planilha ou até mesmo gerando relatórios. Mas você já considerou trabalhar com esses arquivos usando a linguagem Elm? Neste artigo, vamos explorar como essa linguagem funcional pode facilitar o trabalho com CSV.
 
-## Como trabalhar com CSV no Elm
+## Como Fazer
 
-Para começar, é importante entender que o Elm tem uma biblioteca nativa para lidar com arquivos CSV. Isso significa que não é necessário instalar nenhum pacote adicional ou dependência para começar a trabalhar com esses arquivos.
+Primeiramente, vamos precisar instalar a biblioteca `elm-csv` em nosso projeto. Podemos fazer isso usando o gerenciador de pacotes `elm`, com o comando:
 
-O primeiro passo é importar a biblioteca com o comando `import` e nomear um módulo para o trabalho com CSV: 
+```Elm
+elm install joakin/elm-csv
+```
 
-```elm
+Em seguida, vamos importar a biblioteca em nosso código com a seguinte declaração:
+
+```Elm
 import Csv
-funcionario : Csv.Csv.Parser funcionario
 ```
 
-Agora, vamos criar um arquivo CSV simples com alguns dados de funcionários:
+Para ler um arquivo CSV, precisamos primeiro carregá-lo para a memória usando a função `Csv.Decode.file` e especificando o nome do arquivo e qual delimitador está sendo usado (geralmente é a vírgula). Em seguida, podemos chamar a função `Csv.Decode.decode` para decodificar os dados e transformá-los em uma lista de registros.
 
-```elm
-NOME; CARGO; SALÁRIO
-João; Desenvolvedor; 8000
-Maria; Designer; 6000
-Pedro; Analista; 7000
+```Elm
+-- Lê um arquivo CSV e o decodifica em uma lista de registros
+mapeamentoCsv : Decoders (List Registro)
+mapeamentoCsv =
+    file "mapeamento.csv" (decode Csv.decoder)
+
+type alias Registro =
+    { coluna1 : String
+    , coluna2 : String
+    }
+
+-- Registro obtido após decodificar o arquivo "mapeamento.csv"
+registro : Registro
+registro =
+    { coluna1 = "valor1"
+    , coluna2 = "valor2"
+    }
 ```
 
-Para ler esse arquivo em código Elm, podemos utilizar a função `parse` da biblioteca Csv:
+Também podemos trabalhar com CSV em tempo real, em vez de apenas ler arquivos. Podemos criar um canal de entrada de texto e usar a função `Csv.Decode.stream` para decodificar esses dados dinamicamente.
 
-```elm
-funcionarios : List funcionario
-tabelaFuncionarios = Csv.parse empleado "funcionarios.csv"
+```Elm
+-- Canal de entrada
+canal : Signal Channel.Channel String
+canal =
+    Channel.incoming <|
+        Signal.constant
+            "valor1, valor2\nvalor3, valor4"
+
+-- Decodificação dinâmica do canal de entrada
+mapeamentoCsv : Decoders (List Registro)
+mapeamentoCsv =
+    Signal.foldp (\texto -> decode Csv.decoder) %Vazio
 ```
 
-Isso nos permitirá armazenar os dados do arquivo CSV na variável "tabelaFuncionarios", que será do tipo `List funcionario`. A partir daí, podemos manipular esses dados como quisermos, por exemplo, filtrando funcionários por salário ou cargo.
+## Mergulho Profundo
 
-## Aprofundando no trabalho com CSV no Elm
+A biblioteca `elm-csv` também oferece várias funções úteis para trabalhar com arquivos CSV, como converter listas de registros em CSV com a função `Csv.Encode.encode` e escrever esses dados em um arquivo usando a função `Csv.Encode.file`.
 
-Existem algumas outras funcionalidades úteis para trabalhar com CSV no Elm, como a possibilidade de definir o separador de valores (padrão é ","), lidar com linhas de cabeçalho e formatação de valores de acordo com tipos de dados.
+Além disso, podemos manipular e filtrar os dados decodificados de acordo com nossas necessidades, usando funções como `List.map` e `List.filter`.
 
-Além disso, a biblioteca Csv suporta a leitura de arquivos remotamente, o que significa que podemos fornecer uma URL em vez de um arquivo local para leitura de dados CSV.
+```Elm
+mapeamentoFiltrado : List Registro
+mapeamentoFiltrado =
+    mapeamentoCsv
+        |> Result.toMaybe
+        |> Maybe.map (List.filter (\registro -> Registro.coluna1 == "valor1"))
+        |> Maybe.withDefault []
+```
 
-É importante lembrar que, ao trabalhar com CSV no Elm, é necessário ficar atento ao formato dos dados e garantir que eles estejam consistentes para que a leitura seja bem-sucedida.
+Com o poder da linguagem Elm e a facilidade da biblioteca `elm-csv`, trabalhar com arquivos CSV pode se tornar uma tarefa muito mais agradável e eficiente.
 
-## Veja também
+## Veja Também
 
-- [Documentação da biblioteca Csv no Elm](https://package.elm-lang.org/packages/elm-explorations/csv/latest/)
-- [Exemplo completo de trabalho com CSV no Elm](https://github.com/elm-in-elm/complete-example/blob/master/src/Main.elm)
+- Documentação oficial da biblioteca `elm-csv`: https://package.elm-lang.org/packages/joakin/elm-csv/latest/
+- Tutorial sobre como trabalhar com CSV em Elm: https://www.enriched.io/elm-and-csv-part-1/
+- Exemplos de projetos que utilizam a biblioteca `elm-csv`: https://github.com/topics/elm-csv

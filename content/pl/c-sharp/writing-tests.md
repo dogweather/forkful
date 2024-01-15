@@ -1,6 +1,7 @@
 ---
-title:                "C#: Pisanie testów."
-simple_title:         "Pisanie testów."
+title:                "Pisanie testów"
+html_title:           "C#: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -9,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne
+## Dlaczego
 
-Pisanie testów w C# jest kluczowym elementem procesu programowania, ponieważ pozwala nam na weryfikację poprawności naszego kodu. Poprzez testowanie możemy upewnić się, że nasz program działa zgodnie z oczekiwaniami, a także łatwiej odnaleźć i naprawić ewentualne błędy.
+Pomyśl o pisaniu testów jako o inwestycji na przyszłość. Testy zapewniają, że Twój kod jest niezawodny i działa zgodnie z oczekiwaniami, co pomaga uniknąć błędów i oszczędza czas w dłuższej perspektywie.
 
-## Jak pisać testy w C#
+## Jak To Zrobić
 
-Aby napisać testy w C#, musimy użyć narzędzia o nazwie NUnit, które jest popularnym frameworkiem do testowania w języku C#. Najpierw należy zainstalować ten framework przy użyciu menedżera pakietów NuGet w naszym projekcie. Następnie, w celu napisania testów, tworzymy nowy plik z kodem, a następnie dodajemy do niego odpowiednie referencje. Poniższy kod to przykładowy test, który sprawdza, czy funkcja dodawania zwraca poprawny wynik:
+Pisanie testów w języku C# jest proste i wymaga tylko kilku kroków. Najpierw musisz znać pewne podstawy dotyczące struktury i składni języka C#, a następnie możesz zacząć pisać testy.
 
 ```C#
-[Test]
-public void TestSum()
+// Tworzenie nowego projektu testowego
+dotnet new nunit
+
+// Dodawanie testowanej metody
+[TestMethod]
+public void TestMethod()
 {
-   // Given
-   int num1 = 2;
-   int num2 = 3;
-   int expected = 5;
+    // Tworzenie instancji klasy, która ma być przetestowana
+    MyClass myClass = new MyClass();
 
-   // When
-   int actual = Calculator.Add(num1, num2);
+    // Wywołanie metody, która ma być przetestowana
+    string result = myClass.Method();
 
-   // Then
-   Assert.AreEqual(expected, actual);
+    // Sprawdzenie, czy wynik jest poprawny
+    Assert.AreEqual("expected result", result);
 }
 ```
 
-Kod ten korzysta z metody `Assert.AreEqual()` do porównania oczekiwanego wyniku z rzeczywistym wynikiem funkcji dodawania. Jeśli test nie przejdzie pomyślnie, zostanie wyświetlony komunikat o błędzie, co ułatwi nam znalezienie ewentualnych problemów w naszym kodzie.
+Deep Dive: 
 
-## Głębszy wgląd w pisanie testów
+Ważne jest, aby pamiętać o kilku podstawowych zasadach, pisząc testy w języku C#:
 
-Pisanie testów jest nie tylko sposobem na sprawdzenie poprawności kodu, ale także na poprawę naszych umiejętności programistycznych. Dzięki testom możemy lepiej zrozumieć działanie naszych funkcji i metod oraz znaleźć potencjalne problemy zanim pojawią się one w produkcji. Dodatkowo, pisanie testów pozwala na łatwiejsze wprowadzanie zmian i dodawanie nowych funkcjonalności do naszego kodu.
+1. Testy powinny być niezależne od siebie. Każdy test powinien testować tylko jedną funkcjonalność, aby uniknąć wpływu na wyniki innych testów.
 
-Warto również zwrócić uwagę na to, że pisanie testów jest częścią dobrych praktyk programistycznych i jest wymagane w niektórych projektach, a także podczas rekrutacji na stanowisko programisty.
+2. Testy powinny być czytelne i zrozumiałe. Należy używać nazewnictwa, które dobrze opisuje testowaną funkcjonalność.
 
-## Zobacz także
+3. Używaj różnych danych testowych, aby sprawdzić różne scenariusze. Dzięki temu można wykryć więcej potencjalnych błędów.
 
-- [Dokumentacja NUnit](https://github.com/nunit/docs/wiki)
-- [Tutorial o pisaniu testów w C#](https://www.tutorialspoint.com/csharp/csharp_unit_testing.htm)
-- [Artykuł o zaletach pisanie testów jednostkowych](https://dailydotnettips.com/why-you-should-start-writing-unit-tests-today/)
+4. Unikaj pisania zbyt wielu testów jednostkowych dla jednej funkcjonalności. Wiele testów może być trudnych do utrzymania i prowadzić do powtarzalności kodu.
+
+Ważne jest również, aby pamiętać, że testy powinny być regularnie wykonywane i aktualizowane wraz ze zmianami w kodzie, aby zapewnić, że są one nadal skuteczne.
+
+## Zobacz również
+
+- [Dokumentacja NUnit](https://nunit.org/docs/2.4.2/getStarted.html)
+- [Rozpoczęcie pracy z testami jednostkowymi w C#](https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019)
+- [5 najlepszych praktyk pisania testów jednostkowych w C#](https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Muuntamassa päivämäärää merkkijonoksi"
-simple_title:         "Muuntamassa päivämäärää merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "C: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi muuttaa päivämäärä merkkijonoksi?
+## Miksi
 
-Päivämäärän muuttaminen merkkijonoksi on tärkeää ohjelmointitehtävissä, joissa tarvitaan päivämäärän esittämistä käyttäjälle tai tallentamista tietokantaan. Tämä toiminto mahdollistaa päivämäärän muokkaamisen ja esittämisen halutulla tavalla, joka voi vaihdella eri kielialueilla tai käyttäjien mieltymysten mukaan.
+Miksi haluaisit muuntaa päivämäärän merkkijonoksi? Tämä on hyödyllinen taito, jos haluat tallentaa tai tulostaa päivämäärän eri muodossa tai verrata päivämääriä toisiinsa.
 
-## Kuinka tehdä: Koodiesimerkkejä ja tulosteita "```C ... ```" koodilohkoissa.
-
-Päivämäärän muuttaminen merkkijonoksi tapahtuu usein C-kielellä käyttäen hyödyksi olemassa olevia funktioita, kuten "sprintf" tai "strptime". Koodiesimerkeissä näytetään erilaisia tapoja muuttaa päivämäärä halutussa muodossa ja tulosteet osoittavat, miten merkkijono näkyy ohjelmassa.
+## Näin teet sen
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-	// Luo tietorakenne, joka sisältää päivämäärän tiedot
-	struct tm date = {
-		.tm_mday = 5, // Päivämäärä
-		.tm_mon = 11, // Kuukausi, joulukuu on 11
-		.tm_year = 120, // Vuosi 2020 on 120 vuotta ajanlaskun alusta
-	};
-	
-	// Muunna päivämäärä merkkijonoksi halutussa muodossa
-	char str_date[50];
-	sprintf(str_date, "%d.%d.%d", date.tm_mday, date.tm_mon+1, 1900+date.tm_year);
-	
-	printf("Päivämäärä muutettuna merkkijonoksi: %s", str_date);
-	
-	return 0;
+int main()
+{
+  time_t t = time(NULL);
+  struct tm *today = localtime(&t);
+  char str_date[20];
+  
+  // Muunnetaan päivämäärä merkkijonoksi muodossa DD.MM.YYYY
+  sprintf(str_date, "%02d.%02d.%04d", today->tm_mday, today->tm_mon + 1, today->tm_year + 1900);
+  
+  // Tulostetaan muunnettu päivämäärä
+  printf("Tänään on %s\n", str_date);
+  
+  return 0;
 }
-
-// Tuloste: Päivämäärä muutettuna merkkijonoksi: 5.12.2020
 ```
+Tämä koodiesimerkki käyttää C:n time.h-kirjastoa ja sen sisältämiä toimintoja muuntaakseen nykyisen päivämäärän merkkijonoksi. Ensiksi time(NULL) hakee ajan kuluneena sekunteina ja tallentaa sen muuttujaan t. Sitten käytetään localtime-toimintoa muuntamaan t-ajan rakenteeksi, josta voimme hakea päivämäärä- ja kuukausiarvon sekä vuosiluvun. Lopuksi sprintf-toiminnolla muodostetaan merkkijono (DD.MM.YYYY) ja tallennetaan se str_date-muuttujaan. Tulostamalla tämän muuttujan, saamme nykyisen päivämäärän merkkijonona.
 
-## Syventävä tieto: Lisää tietoa päivämäärän muuttamisesta merkkijonoksi.
+## Syvempää tietoa
 
-Tässä artikkelissa esitetyt koodiesimerkit ovat vain lyhyt esimerkki siitä, kuinka päivämäärä voidaan muuttaa merkkijonoksi. Syvempää ymmärrystä varten kannattaa tutustua C-kielellä saatavilla oleviin funktioihin ja niiden eri muotoihin. Muistettavia asioita ovat myös päivämäärän muuntaminen eri aikavyöhykkeille ja huomioitavaa on myös vuosiluvun esitystapa ja sen vaikutus tulokseen.
+Päivämäärän muuntaminen merkkijonoksi on hyödyllinen taito monessa tilanteessa. C-kielessä tämä tapahtuu usein sprintf-toiminnolla, joka muuntaa erilaisia arvoja merkkijonoiksi. Aikaisemmissa versioissa C:stä, tämä toiminto oli altis ylivuototilanteille ja aiheutti turvallisuusriskejä, mutta nykyisessä C-versiossa oletusarvona on turvallisempi varianssikontrolli, joka sulkee pois nämä riskit.
 
-## Katso myös: Linkkejä lisätietoon päivämäärän muuttamisesta merkkijonoksi.
+## Katso myös
 
-- [C strftime -funktio](https://www.cplusplus.com/reference/ctime/strftime/)
-- [Päivämäärän muuntaminen eri aikavyöhykkeille](https://www.ibm.com/support/knowledgecenter/fr/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb500/strptime_t.htm)
-- [Vuoden esitystavan vaikutus](https://en.cppreference.com/w/c/chrono/time_print)
+- [Aikojen käsittely C:ssä](https://www.sololearn.com/Course/C/)
+- [C-sprintf-toiminto](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
+- [C-kielen muotoilumerkinnät](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)

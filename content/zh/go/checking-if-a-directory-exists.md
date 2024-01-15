@@ -1,5 +1,6 @@
 ---
-title:                "Go: 检查目录是否存在"
+title:                "检查目录是否存在"
+html_title:           "Go: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Go"
 category:             "Go"
@@ -9,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么：为什么要检查目录是否存在？
+## 为什么会有目录检查？
 
-在编程中，我们经常需要获取或操作特定的目录，并且在处理文件或文件夹时，我们必须首先确定它们是否存在。检查目录是否存在可以有效地帮助我们避免不必要的错误或代码中断。
+在编写代码时，有时会遇到需要检查特定目录是否存在的情况，这可以帮助我们避免出现错误并增加我们代码的健壮性。
 
-## 如何做：如何在Go中检查目录是否存在？
+## 如何进行目录检查？
 
-在Go语言中，我们可以使用`os.Stat()`函数来检查目录是否存在。例如，我们可以使用下面的代码来检查当前目录的子目录"folder"是否存在：
+通过使用内置的 `os.Stat` 函数和 `os.IsNotExist` 方法，我们可以轻松地检查目录是否存在。下面是一个例子：
 
 ```Go
-if _, err := os.Stat("folder"); os.IsNotExist(err) {
-	fmt.Println("Folder does not exist.")
+// 导入必要的包
+import (
+    "fmt"
+    "os"
+)
+
+// 定义需要检查的目录
+dir := "sample_directory"
+
+// 使用 os.Stat 函数检查目录
+if _, err := os.Stat(dir); os.IsNotExist(err) {
+    // 如果目录不存在，则输出提示信息
+    fmt.Printf("目录 %s 不存在。\n", dir)
 } else {
-	fmt.Println("Folder exists.")
+    // 如果目录存在，则输出成功信息
+    fmt.Printf("目录 %s 存在。\n", dir)
 }
+
+// 输出如下结果：
+// 目录 sample_directory 不存在。
 ```
 
-在这段代码中，我们首先使用`os.Stat()`函数来获取指定目录的文件信息，如果返回的错误是`os.IsNotExist(err)`，则说明目录不存在。否则，说明目录存在。
+## 深入了解目录检查
 
-## 深入探讨：关于检查目录是否存在的更多信息
-
-在Go语言中，除了使用`os.Stat()`函数外，还可以使用`os.IsNotExist()`函数来判断文件或目录是否存在。如果文件或目录不存在，则返回`true`，否则返回`false`。
-
-此外，我们也可以通过使用`os.IsPermission()`函数来判断访问权限是否被拒绝，如果是，则返回`true`，否则返回`false`。
+`os.Stat` 函数返回了一个 `os.FileInfo` 对象，这个对象包含了文件或目录的很多信息，比如文件大小、修改时间等。通过这个对象，我们可以进一步了解目录的更多细节。
 
 ## 参考链接
 
-- https://golang.org/pkg/os/#Stat
-- https://golang.org/pkg/os/#IsNotExist
-- https://golang.org/pkg/os/#IsPermission
+- [Go官方文档 - os.Stat 函数](https://golang.org/pkg/os/#Stat)
+- [Go官方文档 - os.FileInfo 对象](https://golang.org/pkg/os/#FileInfo)
+- [Go语言中文网 - 目录不存在时使用os.IsNotExist函数判断](https://studygolang.com/articles/7801)

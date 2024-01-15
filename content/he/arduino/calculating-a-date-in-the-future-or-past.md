@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: חישוב תאריך בעתיד או בעבר"
+title:                "חישוב תאריך בעתיד או בעבר"
+html_title:           "Arduino: חישוב תאריך בעתיד או בעבר"
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,62 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-אנחנו חיים בעולם מאוד מופעל טכנולוגית כי הטכנולוגיה מאפשרת לנו המחשוב והחלקה המהירים של נתונים. אחת התוכניות המעניינות שאתם יכולים לעשות עם טכנולוגיית Arduino היא חישבון תאריך בעתיד או בעבר. כאשר אתם לומדים להשתמש בטכנולוגיית Arduino יעזור לכם לחשב תאריכים ולהכיר את האלגוריתם שמאחורי החישובים האלה. אנחנו נראה כיצד לעשות זאת בצורת קלה ופשוטה עם Arduino.
+למה לחשב תאריכים בעתיד או בעבר? למשל, ניתן ליצור מכשיר אלקטרוני שיפעל על פי תאריך מסוים או לתכנת את הארדוינו כך שיבצע פעולות מסוימות בתאריך מסוים.
 
-## כיצד להשתמש בטכנולוגיית Arduino בכדי לחשב תאריכים בעתיד או בעבר
-
-הקוד הבא מראה דוגמא לחישוב תאריכים בעזרת טכנולוגיית Arduino:
+## כיצד לעשות זאת
 
 ```Arduino
-#include <RTClib.h>
+#include <TimeLib.h>                    // כולל את ספריית התאריך
+#include <TimeAlarms.h>                 // כולל את ספריית התזמון
 
-RTC_DS1307 rtc;
-
-void setup () {
-  Serial.begin(57600);
-  if (! rtc.begin()) {
-    Serial.println("Couldn't find RTC");
-    while (1);
-  }
-
-  if (! rtc.isrunning()) {
-    Serial.println("RTC is NOT running!");
-  }
+void setup() {
+  // עדכון הזמן הנוכחי
+  setTime(18, 30, 00, 10, 12, 2019);    // שנה/חודש/יום/שעה/דקות/שניות
+  // הגדרת אירוע הפעלה בתאריך ספציפי
+  Alarm.timerRepeat(10, foo);           // כל 10 שניות יופעל הפונקציה foo
 }
 
-void loop () {
-  DateTime now = rtc.now();
-  DateTime futureDate = now + TimeSpan(7, 12, 30, 6);
+void foo() {
+  // פעולות שירצו בכל 10 שניות
+}
 
-  Serial.print("Future date: ");
-  Serial.print(futureDate.day(), DEC);
-  Serial.print('/');
-  Serial.print(futureDate.month(), DEC);
-  Serial.print('/');
-  Serial.print(futureDate.year(), DEC);
-
-  Serial.print(" at ");
-  Serial.print(futureDate.hour(), DEC);
-  Serial.print(':');
-  Serial.print(futureDate.minute(), DEC);
-  Serial.print(':');
-  Serial.print(futureDate.second(), DEC);
-
-  Serial.println();
-  delay(1000);
+void loop() {
+  // קוד ריק, כי אין צורך בפעולות נוספות בלולאת האינספור
 }
 ```
 
-פלט הקוד נראה כך:
+כדי לחשב תאריך מסוים, יש להשתמש בספריית TimeLib וליצור משתנים כמו שנה, חודש, יום, שעה, דקה ושנייה. לאחר מכן, תוכלו להשתמש בפונקציות כגון setTime כדי לעדכן את הזמן הנוכחי ובAlarm.timerRepeat כדי לקבוע פעולות שירוצו בתאריך מסוים.
 
-```
-Future date: 14/12/2020 at 16:33:45
-```
+## העומק
 
-כפי שאתם רואים, הוספנו 7 ימים, 12 שעות, 30 דקות ו-6 שניות לתאריך הנוכחי וכעת יש לנו תאריך חדש בעתיד. זהו דוגמא פשוטה לכיצד ניתן לחשב תאריכים בעזרת טכנולוגיית Arduino.
+כאשר מתארכים תאריך בעבל הזמן, יש לקחת בחשבון גם ימי שנה מיוחדים כמו שנה מעוברת או שנה מעוברת. כמו כן, מומלץ להשתמש בפונקציות כגון isLeapYear לקבוע האם השנה היא מעוברת או לא. ניתן למצוא עוד מידע על חישוב תאריכים בעתיד ובעבר בספריית התאריך של Arduino.
 
-## כיצד זה עובד - חישוב תאריכים בעזרת טכנולוגיית Arduino
+## ראו גם
 
-חישוב תאריכים בעזרת טכנולוגיית Arduino משתמש באלגוריתם שנקרא "תאריך יוליאני". תאריך יוליאני הוא שיטת חישוב תאריכים המתבסס
+* [תיעוד על ספריית התאריך של ארדוינו](https://www.arduino.cc/en/reference/datetime)
+* [דוגמאות לחישוב תאריכים בעתיד ובעבר עם אר

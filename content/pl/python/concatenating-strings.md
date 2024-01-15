@@ -1,5 +1,6 @@
 ---
-title:                "Python: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Python: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Python"
 category:             "Python"
@@ -11,30 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czemu warto uczyć się łączenia ciągów w Pythonie? Odpowiedź jest prosta - łączenie ciągów jest niezbędną umiejętnością w każdym języku programowania, a w Pythonie jest jeszcze bardziej rozbudowane dzięki zastosowaniu dwóch różnych metod: operatora "+" i metody .join(). Pozwala to na elastyczność w pracy z ciągami i ułatwia pisanie czytelnego i funkcjonalnego kodu.
+Jeśli masz wiele napisów w swoim programie i chcesz je połączyć w jeden dłuższy napis, to zapewne zastanawiasz się, jak to najlepiej zrobić. W Pythonie możesz to zrobić za pomocą konkatenacji stringów, czyli po prostu łączenia ich w jeden. Jest to przydatna umiejętność, którą warto poznać.
 
 ## Jak to zrobić
 
-Łączenie ciągów w Pythonie jest proste i intuicyjne. Przy użyciu operatora "+" możemy połączyć dwa lub więcej ciągów, np. "Hello" + " " + "World" = "Hello World". Natomiast przy użyciu metody .join() możemy połączyć elementy z listy w jedną linię tekstu, np. " ".join(["Hello", "World"]) = "Hello World". Poniżej znajdują się przykładowe kody wraz z efektem wyjściowym: 
-	
-```Python
-# przy użyciu operatora "+"
-print("Cześć " + " " + "świecie!")
-# output: Cześć świecie!
+Aby połączyć stringi w Pythonie, użyj operatora "+" lub metody ".join()". Oto przykładowy kod:
 
-# przy użyciu metody .join()
-print(" ".join(["Witaj", "świecie!"]))
-# output: Witaj świecie!
+```Python
+# Użycie operatora "+" dla dwóch napisów
+string1 = "Dzień"
+string2 = "dobry"
+new_string = string1 + " " + string2
+print(new_string)
+# Output: "Dzień dobry"
+
+# Użycie metody ".join()" dla listy stringów
+words = ["To", "jest", "przykładowy", "string"]
+new_string = " ".join(words)
+print(new_string)
+# Output: "To jest przykładowy string"
 ```
 
-## Głębsze zagadnienia
+## Dogłębna analiza
 
-W Pythonie ciągi są niezmienialne (immutable), co oznacza, że nie mogą być modyfikowane. Dlatego każde łączenie ciągów tworzy nowy obiekt. W przypadku operatora "+" tworzony jest nowy obiekt, natomiast przy użyciu metody .join() wykorzystywany jest tylko jeden obiekt, co czyni ją bardziej wydajną. Innym ważnym aspektem jest użycie odpowiednich separatorów przy łączeniu ciągów, np. "," lub "\n". W przypadku metody .join() separator wpisywany jest w nawiasie, np. "\n".join(["Witaj", "świecie!"]) = "Witaj\nświecie!". 
+W Pythonie stringi są niemodyfikowalnymi obiektami, co oznacza, że nie można zmieniać ich już istniejącej wartości. Dlatego też konkatenacja stringów nie modyfikuje już istniejących napisów, a jedynie tworzy nowy. Operacja ta jest wykonywana szybko i jest wydajna, ponieważ w Pythonie stringi są traktowane jako tablice znaków, a więc konkatenacja sprowadza się do po prostu wstawienia jednej tablicy na koniec drugiej.
 
-## Patrz także
+Więcej informacji na temat konkatenacji stringów w Pythonie można znaleźć w [oficjalnej dokumentacji języka](https://docs.python.org/3/tutorial/introduction.html#strings) oraz na [stronie tutorialu w języku polskim](https://www.python.org.pl/forum/t/2455-Krotki-i-stringi).
 
-Chcesz dowiedzieć się więcej o łączeniu ciągów w Pythonie? Sprawdź poniższe materiały:
+## Zobacz także
 
-- [Dokumentacja Pythona na temat ciągów](https://docs.python.org/3.8/tutorial/introduction.html#strings)
-- [Samouczek na Thema Education o łączeniu ciągów w Pythonie](https://thema-education.com/learn-programming/merge-strings-python/)
-- [Wideo tutorial na Youtube o łączeniu ciągów w Pythonie](https://www.youtube.com/watch?v=8c74Oxn6fMA)
+- [Dokumentacja języka Python](https://docs.python.org/3/)
+- [Tutorial języka Python w języku polskim](https://www.python.org.pl/tutorial/)

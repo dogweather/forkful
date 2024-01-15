@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Elm recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,60 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever needed to extract information from a website but found yourself struggling with messy and inconsistent HTML code? Parsing HTML can be a daunting task, but with Elm, it can become a simple and straightforward process.
+Parsing HTML, or the process of extracting information from HTML code, is a crucial task in web development. Whether you want to scrape data from a website, build a web scraper, or create a web page, understanding how to parse HTML is essential.
 
 ## How To
-
-To begin parsing HTML in Elm, we will need to use the [elm/parser](https://package.elm-lang.org/packages/elm/parser/latest/) package. This package provides a set of functions and types specifically designed for parsing HTML.
-
-First, we will import the necessary modules from the package:
-
+To parse HTML in Elm, we can use the `elm/parser` library. First, let's import the library:
 ```Elm
-import Html.Parser exposing (..)
-import Html.Parser.Attribute as Attr
-import Html.Parser.Html as H
+import Html exposing (Html)
+import Parser exposing (Parser, (|.), succeed, oneOf, map, Parser)
+import Parser.RegularExpressions exposing (regex)
 ```
-
-Next, we need to define a parser for our desired HTML element. In this example, we will be parsing a <ul> element with two <li> elements inside.
-
+Next, we define a type for our parse tree. This will help us organize the information we parse later on.
 ```Elm
-listParser : Parser String (List String)
-listParser = 
-    H.tagName "ul" 
-        |> andMap (H.list (H.tagName "li" (Attr.property "textContent")))
+type HtmlNode
+    = Tag String HtmlNodeList
+    | Text String
+    | Comment String
+    | Doctype String
+
+type HtmlNodeList
+    = SingleNode HtmlNode
+    | NodeList List HtmlNode
 ```
-
-The `tagName` function specifies the HTML element we want to parse, while `andMap` and `list` allow us to get the elements inside the <ul> element.
-
-To run our parser on some HTML code, we can use the [`decode` function](https://package.elm-lang.org/packages/elm/parser/latest/Html-Parser#decode) from the `elm/json` package:
-
+We can now start writing our parser. Let's start with a function that parses a tag. We use the `regex` function to match the opening and closing tags, and the `oneOf` function to match any character inside the tag.
 ```Elm
-decode listParser listHtml
+parseTag : Parser HtmlNode
+parseTag =
+    regex "^<([a-z]+)>" |> map (\tag -> Tag tag (SingleNode (Text tag)))
 ```
-
-Where `listHtml` is a string containing our desired HTML code. If the parsing is successful, we will get a `Result` containing a list of strings representing the content of the <li> elements. For example, if our `listHtml` variable contained:
-
-```html
-<ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-</ul>
+Next, we can write a parser for text between tags.
+```Elm
+parseText : Parser HtmlNode
+parseText =
+    regex "^(.*?)<" |> map Text
 ```
-Our output would be: `Ok ["Item 1","Item 2"]`.
+We can also parse comments and doctypes using similar functions.
+```Elm
+parseComment : Parser HtmlNode
+parseComment =
+    regex "^(<!--.*?-->)" |> map Comment
+    
+parseDoctype : Parser HtmlNode
+parseDoctype =
+    regex "^(<!doctype.*?)>" |> map (\doctype -> Doctype doctype)
+```
+Finally, we can combine all our parsers into one using the `oneOf` function.
+```Elm
+parseHtml : Parser HtmlNode
+parseHtml =
+    oneOf [ parseTag, parseText, parseComment, parseDoctype ]
+```
+We can now test our parser by passing in a string of HTML code and seeing the output.
+```Elm
+Parser.run parseHtml "<h1>Hello, world!</h1>"
+--> Tag "h1" (SingleNode (Text "Hello, world!"))
+```
 
 ## Deep Dive
+The `elm/parser` library also provides many useful functions for parsing more complex HTML structures, such as attributes, nested tags, and self-closing tags. We can also use the `Parser.map` function to transform our parsed data into a more organized format.
 
-Although our example may seem simple, it can be expanded to handle more complex HTML structures. For instance, we could have nested elements or elements with multiple attributes. With the Elm parser package, we can define custom parsers for any HTML structure we may encounter.
-
-We can also use the [`map` function](https://package.elm-lang.org/packages/elm/parser/latest/Parser#map) to transform the parsed result into a desired type. For instance, if we wanted to convert the list of strings into a list of integers, we could use the following code:
-
-```Elm
-map (String.toInt >> Result.toMaybe) (decode listParser listHtml)
-```
+For a more in-depth understanding of parsing HTML in Elm, I highly recommend reading the official documentation for the `elm/parser` library.
 
 ## See Also
-
-- [elm/parser package](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [elm/json package](https://package.elm-lang.org/packages/elm/json/latest/)
-- [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- [Elm Parser Library Documentation](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [Parsing HTML with elm/parser](https://dev.to/werner/practical-applying-parser-theory-in-elm-parsing-html-with-elmparser-54f1) by Werner Echezuría

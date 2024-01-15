@@ -1,6 +1,7 @@
 ---
-title:                "Go: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Go: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,80 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-In questo post, parleremo di come inviare una richiesta HTTP con autenticazione di base utilizzando il linguaggio di programmazione Go. Questo è un argomento fondamentale per tutti coloro che sviluppano applicazioni web con Go e vogliono garantire un buon livello di sicurezza.
+Se stai lavorando con API o servizi web che richiedono la verifica delle credenziali, potresti dover inviare una richiesta HTTP con l'autenticazione di base. Questo articolo ti guiderà nel processo di coding in Go per inviare una richiesta HTTP con l'autenticazione di base.
 
 ## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base in Go, dobbiamo utilizzare il pacchetto "net/http" e impostare l'header dell'autorizzazione. Ecco un esempio di codice:
+Per inviare una richiesta HTTP con l'autenticazione di base in Go, puoi seguire questi semplici passaggi:
+
+1. Importa il pacchetto `net/http` per gestire le richieste HTTP.
+2. Costruisci un client HTTP utilizzando la funzione `http.Client()`.
+3. Crea una richiesta HTTP usando la funzione `http.NewRequest()`, specificando il metodo di richiesta, l'URL e, se necessario, i dati del corpo e gli header di autenticazione.
+4. Utilizza la funzione `SetBasicAuth()` per impostare le credenziali per l'autenticazione di base.
+5. Invia la richiesta utilizzando il client creato e gestisci la risposta.
+
+Ecco un esempio di come sarebbe il codice per inviare una richiesta GET con l'autenticazione di base:
 
 ```Go
 import (
-    "fmt"
-    "net/http"
+	"fmt"
+	"net/http"
+	"encoding/base64"
 )
 
 func main() {
-    client := &http.Client{}
 
-    req, err := http.NewRequest("GET", "https://www.example.com", nil)
-    if err != nil {
-        fmt.Println(err)
-    }
+	// Creazione del client HTTP
+	client := http.Client{}
 
-    req.SetBasicAuth("username", "password")
+	// Creazione della richiesta HTTP con l'autenticazione di base
+	req, err := http.NewRequest("GET", "https://example.com/api", nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	req.SetBasicAuth("username", "password")
 
-    resp, err := client.Do(req)
-    if err != nil {
-        fmt.Println(err)
-    }
+	// Invio della richiesta HTTP
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer resp.Body.Close()
 
-    fmt.Println(resp.Status)
+	// Lettura della risposta
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+	
+	// Stampa della risposta
+	fmt.Println(string(body))
 }
 ```
 
-In questo esempio, stiamo inviando una richiesta HTTP di tipo GET all'URL "https://www.example.com" con l'autenticazione di base impostata con il nome utente e la password appropriati. Possiamo anche usare questo stesso approccio per altri tipi di richieste HTTP, come POST o PUT.
+Ecco un esempio di output se la richiesta viene eseguita con successo:
 
-L'esempio di codice sopra ci dà solo l'output dello stato della risposta. Possiamo anche utilizzare il pacchetto "io/ioutil" per leggere il contenuto della risposta e utilizzarlo nel nostro codice come segue:
-
-```Go
-import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-)
-
-func main() {
-    client := &http.Client{}
-
-    req, err := http.NewRequest("GET", "https://www.example.com", nil)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    req.SetBasicAuth("username", "password")
-
-    resp, err := client.Do(req)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    defer resp.Body.Close()
-
-    content, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    fmt.Println(string(content))
-}
+```html
+<html>
+	<head>
+		<title>Pagina di esempio</title>
+	</head>
+	<body>
+		<h1>Benvenuto!</h1>
+	</body>
+</html>
 ```
 
-## Approfondimento
+## Approfondimenti
 
-Per inviare una richiesta HTTP con autenticazione di base in modo sicuro, è necessario utilizzare il protocollo HTTPS anziché HTTP. Ciò garantisce che tutte le informazioni trasmesse siano criptate e quindi meno vulnerabili agli attacchi di hacker.
-
-Inoltre, è importante ricordare che le credenziali di autenticazione di base devono essere sempre crittografate prima di essere inviate. Ciò può essere fatto utilizzando l'algoritmo Base64.
+Oltre alla funzione `SetBasicAuth()`, esistono anche alcune altre opzioni per gestire l'autenticazione di base nelle richieste HTTP in Go. Puoi utilizzare la funzione `SetAuthHeader()`, che ti permette di specificare manualmente l'header di autenticazione, oppure puoi utilizzare la libreria di terze parti "httpauth" che semplifica l'aggiunta di autenticazione alle tue richieste HTTP.
 
 ## Vedi anche
 
-Per ulteriori informazioni su come utilizzare il pacchetto "net/http" in Go, puoi consultare la documentazione ufficiale su [golang.org](https://golang.org/pkg/net/http/). Se vuoi approfondire l'argomento dell'autenticazione di base, puoi leggere questo articolo su [MDN](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication).
+- Documentazione ufficiale del pacchetto `net/http`: https://golang.org/pkg/net/http/
+- Libreria di terze parti "httpauth": https://github.com/goji/httpauth

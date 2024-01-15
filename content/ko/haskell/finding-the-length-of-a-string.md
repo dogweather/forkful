@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Haskell: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
-문자열의 길이를 찾는 것에 대해 알아보는 이유는 무엇일까요? 일반적으로 프로그래밍에서 문자열은 매우 중요한 데이터 타입으로 사용됩니다. 따라서 문자열의 길이를 알아내는 것은 많은 작업을 하는 데 도움이 됩니다.
+## 왜
 
-## 어떻게 
-우리는 Haskell을 사용하여 간단한 함수를 작성해보겠습니다. 이 함수는 문자열의 길이를 알아내는 기능을 합니다. 이를 위해 내장 함수인 "length"를 사용할 것입니다. 아래의 예제를 따라 해보세요.
+문자열의 길이를 찾는 것은 현재 많이 사용되는 프로그래밍 기술이며, 여러분의 코드에 필수적인 요소입니다.
 
-```Haskell
-length "안녕하세요" 
-```
-```Haskell
-6
-```
+## 방법
 
-위의 예제에서 볼 수 있듯이 "안녕하세요"라는 문자열의 길이는 6이 됩니다. 만약 다른 문자열의 길이를 알고 싶다면, 자유롭게 다른 문자열을 대입해보세요.
+문자열의 길이를 찾는 방법은 매우 간단합니다. 아래의 코드를 따라 해보세요.
 
 ```Haskell
-length "반가워요" 
+length :: [a] -> Int
+length [] = 0
+length (x:xs) = 1 + length xs
+
+main = do
+  let str = "Hello World"
+  putStrLn $ show (length str)
 ```
-```Haskell
-5
-```
 
-위의 예제에서도 볼 수 있듯이 "반가워요"라는 문자열의 길이는 5가 됩니다.
+위의 예제 코드는 문자열 "Hello World"의 길이를 찾는 방법을 보여줍니다. 코드를 실행하면 콘솔에 11이 출력됩니다.
 
-## 딥 다이브 
-위의 예제에서 우리는 "length"라는 함수를 간단히 사용하여 문자열의 길이를 알아냈습니다. 하지만 조금 더 깊게 들어가보면, 이 함수는 실제로 어떻게 작동하는 걸까요?
+## 딥 다이브
 
-Haskell에서 문자열은 리스트로 표현됩니다. 따라서 "length" 함수는 리스트의 길이를 알아내는 함수입니다. 그리고 문자열은 각각의 문자로 구성되어 있기 때문에, 문자열의 길이를 알아내는 것은 결국 문자의 개수를 세는 것과 같습니다.
+문자열의 길이를 찾는 방법은 위의 예제 코드와 같이 재귀적으로 구현되어 있습니다. 예를 들어, "Hello World"의 길이를 찾을 때는 문자열을 하나씩 나누어서 길이를 찾게 됩니다. 이런 방식으로 길이를 찾는 데는 n만큼의 시간이 걸리기 때문에 선형 시간 알고리즘이라고 할 수 있습니다.
 
-## 봐보세요 
-Haskell에서 문자열의 길이를 알아내는 것은 프로그래밍에서 매우 중요한 작업 중 하나입니다. 이를 더 자세히 다루고 싶다면 아래의 링크를 참조해보세요.
+여러분이 작성하는 코드에서 문자열의 길이를 자주 사용하게 될 것이므로, 이를 빠르게 구현하는 습관을 기르는 것이 좋습니다.
 
-- [Haskell Language Tutorials](https://www.tutorialspoint.com/haskell/)
-- [String Functions in Haskell](https://www.geeksforgeeks.org/string-functions-in-haskell/)
-- [Haskell String Length](https://www.educba.com/haskell-string-length/)
+## 참고
+
+- [Haskell 공식 사이트](https://www.haskell.org/)
+- [Haskell 예제 코드](https://www.programiz.com/haskell-programming/examples)
+- [Haskell 책 추천](https://medium.com/@_geraud/haskell-book-reviews-3c608474e3ea)

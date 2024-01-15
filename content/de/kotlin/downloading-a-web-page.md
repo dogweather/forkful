@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Kotlin: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Das Herunterladen von Webseiten ist ein wichtiger Teil der Webentwicklung. Oftmals muss man Webseiten von einer externen Quelle laden, um sie in seine eigene Anwendung zu integrieren oder um damit weiterzuarbeiten. Mit Kotlin ist es möglich, dies effizient und elegant zu realisieren.
+
+Du fragst dich vielleicht, warum du eine Webseite herunterladen würdest. Nun, es gibt viele Gründe dafür. Vielleicht möchtest du offline auf die Inhalte zugreifen, ohne ständig mit dem Internet verbunden zu sein. Oder du möchtest eine Sicherungskopie machen, falls die Webseite in Zukunft offline geht oder sich ändert. Es ist auch hilfreich, um die Performance zu verbessern, da lokal gespeicherte Seiten schneller geladen werden können.
 
 ## Wie geht das?
-Um eine Webseite in Kotlin herunterzuladen, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung der integrierten `URL` Klasse. Hier ein einfaches Beispiel:
+
+Das Herunterladen einer Webseite in Kotlin ist ziemlich einfach. Zuerst müssen wir die URL der Webseite definieren, die wir herunterladen möchten. Dann erstellen wir eine Verbindung zu dieser URL und lesen den Inhalt der Seite. Zuletzt speichern wir den Inhalt in eine Datei.
 
 ```Kotlin
 val url = URL("https://www.example.com")
-val connection: HttpURLConnection = url.openConnection() as? HttpURLConnection
-connection?.requestMethod = "GET"
-
-val responseCode = connection?.responseCode
-println("Response code is: " + responseCode)
-
-val inputStream = connection?.inputStream
-inputStream?.bufferedReader()?.use {
-    it.lines().forEach { line ->
-        println(line)
-    }
-}
+val connection = url.openConnection()
+val content = connection.getInputStream().bufferedReader().use { it.readText() }
+File("example.html").writeText(content)
 ```
 
-In diesem Beispiel wird eine URL erstellt und eine Verbindung geöffnet. Anschließend wird die Anfrage als GET-Methode ausgeführt und die Antwort wird ausgegeben. Das Ergebnis ist der HTML Inhalt der Webseite, welcher hier einfach in der Konsole ausgegeben wird.
-
 ## Tiefergehende Informationen
-Das Herunterladen von Webseiten kann jedoch auch komplexer sein, je nachdem welche Anforderungen man hat. Manchmal müssen zusätzliche Header in der Anfrage übermittelt werden oder man möchte die Antwort im JSON Format erhalten. Hier bietet Kotlin viele Möglichkeiten, wie zum Beispiel die Verwendung von Bibliotheken wie OkHttp oder AsyncHttpClient.
 
-Wenn es darum geht, Webseiten automatisiert herunterzuladen, können auch Frameworks wie Selenium eingesetzt werden. Diese ermöglichen das simulierte Laden einer Webseite und bieten somit noch mehr Flexibilität und Kontrolle über den gesamten Prozess.
+Beim Herunterladen einer Webseite gibt es einige Dinge zu beachten. Zum Beispiel könnte die Webseite eine Authentifizierung erfordern, um darauf zuzugreifen. In diesem Fall müssen wir zusätzliche Schritte hinzufügen, um uns einzuloggen und die Authentifizierungsdetails zu übergeben.
+
+Außerdem müssen wir auch auf Fehler achten, die während des Herunterladens auftreten könnten. Es ist wichtig, diese Fehler zu behandeln, um sicherzustellen, dass der Vorgang erfolgreich abgeschlossen wird.
+
+Eine weitere wichtige Überlegung ist die Verwendung von Bibliotheken oder Frameworks, die uns bei diesem Prozess unterstützen können. Zum Beispiel könnten wir das Retrofit-Framework verwenden, um die Verbindung zu verwalten und das Herunterladen von Webseiten noch einfacher zu gestalten.
 
 ## Siehe auch
-- [Kotlin-Website](https://kotlinlang.org/)
-- [URL in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/index.html)
-- [OkHttp Bibliothek](https://square.github.io/okhttp/)
-- [AsyncHttpClient Bibliothek](https://github.com/AsyncHttpClient/async-http-client)
-- [Selenium Framework](https://www.selenium.dev/)
+
+- [Kotlin offizielle Website](https://kotlinlang.org/)
+- [Retrofit Framework](https://square.github.io/retrofit/)
+- [Handling errors in Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)

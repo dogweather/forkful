@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Fish Shell: Herunterladen einer Webseite"
 simple_title:         "Herunterladen einer Webseite"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man eine Webseite herunterladen? Diese Frage mag sich der ein oder andere stellen, aber es gibt tatsächlich viele Gründe, warum man dies tun würde. Möglicherweise möchten Sie eine Sicherungskopie einer Webseite erstellen, bevor Sie Änderungen daran vornehmen, oder Sie möchten eine bestimmte Seite offline lesen. Oder vielleicht möchten Sie einfach nur lernen, wie man mit dem Fish Shell eine Webseite herunterlädt. Egal aus welchem Grund, in diesem Blogbeitrag werden wir uns damit beschäftigen, wie man mit dem Fish Shell eine Webseite herunterladen kann.
+Stell dir vor, du möchtest eine Webseite herunterladen, um sie offline zu lesen oder als Teil eines größeren Skripts zu verwenden. Mit der Fish Shell kannst du dies schnell und einfach erledigen.
 
-## Wie geht's
+## Wie geht das?
 
-Um eine Webseite herunterzuladen, verwenden wir den Befehl `curl`, der standardmäßig auf den meisten Betriebssystemen installiert ist. Um den Download zu starten, müssen Sie zunächst die URL der Webseite kennen, die Sie herunterladen möchten. Ein Beispiel dafür wäre die Webseite "https://example.com".
+```Fish Shell
+wget <URL>
+```
 
-`fish> curl https://example.com`
+Der Befehl `wget` steht für "Web Get" und kann verwendet werden, um eine beliebige Datei von einer URL herunterzuladen. Wenn du jedoch nur die Webseite herunterladen möchtest, ohne Bilder oder andere Dateien, kannst du die Option `-p` hinzufügen.
 
-Mit diesem einfachen Befehl wird der Inhalt der Webseite heruntergeladen und im Terminal angezeigt. Wenn Sie die Webseite stattdessen in eine Datei speichern möchten, können Sie die Option `-o` verwenden, gefolgt von einem Dateinamen. Zum Beispiel:
+```Fish Shell
+wget -p <URL>
+```
 
-`fish> curl -o example.html https://example.com`
+Mit `wget` kannst du auch Dateien von FTP- oder HTTPS-Servern herunterladen und sogar Bandbreiteneinschränkungen festlegen.
 
-Dies wird die Webseite in eine Datei mit dem Namen "example.html" speichern. Sie können auch mehrere Webseiten gleichzeitig herunterladen, indem Sie mehrere URLs als Argumente an den Befehl `curl` übergeben.
+## Tief eintauchen
 
-Auf diese Weise können Sie nicht nur einfache Webseiten, sondern auch komplexere Seiten mit CSS, JavaScript und anderen Elementen herunterladen. Der Fish Shell ist in der Lage, die Webseite genauso darzustellen, wie sie auch im Browser aussehen würde.
+Wenn du mehr Kontrolle über den Downloadprozess haben möchtest, kannst du auch das Programm `curl` verwenden. Im Gegensatz zu `wget` erfordert `curl` jedoch etwas mehr Codierung.
 
-## Deep Dive
+```Fish Shell
+curl <URL> -o <Dateiname>
+```
 
-Trotz seiner Einfachheit ist der `curl` Befehl sehr vielseitig und bietet viele Optionen, die Sie beim Herunterladen von Webseiten nutzen können. Zum Beispiel können Sie mit der Option `-L` Weiterleitungen von URLs folgen, was nützlich sein kann, wenn Sie auf eine Webseite zugreifen möchten, die auf eine andere Seite umleitet.
+Mit `curl` kannst du auch den Download in den Hintergrund verschieben, um andere Aufgaben auszuführen, und du kannst die Serverauthentifizierung konfigurieren, falls erforderlich.
 
-Außerdem können Sie mit dem `curl` Befehl auch verschiedene Protokolle verwenden, wie zum Beispiel `ftp` oder `sftp`, um Dateien von einem Server herunterzuladen. Sie können auch verschiedene Authentifizierungsmethoden verwenden, falls die Webseite geschützt ist.
+## Siehe auch 
 
-Für fortgeschrittene Nutzer gibt es auch die Möglichkeit, Skripte zu schreiben, die den `curl` Befehl nutzen, um Webseiten automatisch herunterzuladen und zu verarbeiten.
-
-## Siehe auch
-
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/curl.html)
-- [Offizielle Webseite von curl](https://curl.haxx.se/docs/manual.html)
-- [Weitere Informationen zu Webseiten-Downloads mit dem Fish Shell](https://github.com/fish-shell/fish-shell/issues/563)
-
-Jetzt wissen Sie, wie Sie mit dem Fish Shell Webseiten herunterladen können. Viel Spaß beim Ausprobieren und Entdecken der vielfältigen Möglichkeiten, die das Fish Shell bietet. Befassen Sie sich gerne weiter mit dem Thema und probieren Sie verschiedene Optionen aus.
+- Offizielle Fish Shell Dokumentation über `wget`: https://fishshell.com/docs/current/cmds/wget.html
+- Offizielle Fish Shell Dokumentation über `curl`: https://fishshell.com/docs/current/cmds/curl.html
+- Einführung in die Fish Shell: https://fishshell.com/docs/current/tutorial.html

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 「日付を文字列に変換する」"
-simple_title:         "「日付を文字列に変換する」"
+title:                "日付を文字列に変換する"
+html_title:           "Fish Shell: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,24 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を文字列に変換することについて、なぜそれが重要なのかを簡単に説明します。
+日付を文字列に変換することに取り組む理由は、日付の形式を自分のニーズに合わせやすくするためです。例えば、ファイル名に日付を含めたい場合や、データベースに日付を保存する際に文字列として扱いたい場合などがあります。
 
-## How To
+## 方法
 
-ファイルを開き、日付を文字列に変換するためのFish Shellのコード例とサンプルの出力をご紹介します。
+日付を文字列に変換するには、Fish Shellの幾つかの便利なコマンドを使用します。例として、今日の日付を文字列で出力する方法を以下のように示します。
 
+```Fish Shell
+
+# `date -u`コマンドで現在の日付をUTCで取得し、`string join`コマンドで"/"で区切った文字列に変換
+echo (date -u | string join "/")
+
+# 出力例：2020/10/01
 ```
-Fish Shell $ set date (date +%Y-%m-%d)
-Fish Shell $ echo $date
+
+他にも、`strftime`コマンドを使用することで、より細かい日付のフォーマットを指定できます。例えば、"年-月-日"の形式で出力する場合は、以下のようにコードを書き換えます。
+
+```Fish Shell
+
+# `strftime`コマンドで日付を指定した形式で出力
+echo (date -u | strftime "%Y-%m-%d")
+
+# 出力例：2020-10-01
 ```
 
-このコードを実行すると、現在の日付が「2021-07-21」という文字列に変換されます。
+## ディープダイブ
 
-## Deep Dive
+日付を文字列に変換する際には、文字列のフォーマットを指定することが重要です。Fish Shellでは、`strftime`コマンドを使用することで、自由にフォーマットを指定することができます。詳しい使い方やサポートしているフォーマットの一覧は、[公式ドキュメント](https://fishshell.com/docs/current/cmds/strftime.html)を参照してください。
 
-どのようにして日付が文字列に変換されるのかを詳しく説明します。日付は、プログラムでは数字として扱われますが、ユーザーにとっては文字列として読みやすい表示が必要です。Fish Shellの `set` コマンドを使用することで、文字列への変換が可能になります。 `date` コマンドを使用することで、現在の日付を取得し、その後に `%Y-%m-%d` を続けることで、指定した形式の文字列に変換することができます。
+## 参考リンク
 
-## See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Date Command in Fish Shell](https://fishshell.com/docs/current/commands.html#date)
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHubリポジトリ](https://github.com/fish-shell/fish-shell)
+- [Fish Shellを使いこなそう！初心者向けのチートシート](https://dev.classmethod.jp/articles/fish-shell-cheat-sheet/)

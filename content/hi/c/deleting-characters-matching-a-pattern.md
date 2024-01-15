@@ -1,6 +1,7 @@
 ---
-title:                "C: पैटर्न से मेल खाते अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
+title:                "पैटर्न के समान अक्षरों को हटाना"
+html_title:           "C: पैटर्न के समान अक्षरों को हटाना"
+simple_title:         "पैटर्न के समान अक्षरों को हटाना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,43 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kisi bhi programming language mein, data manipulation bohot zaroori hai. Aur kabhi kabhi humein specific pattern matches ko delete karne ki zaroorat hoti hai. C programming language mein, hum yeh kar sakte hain by using functions like `strchr()` aur `strcspn()`.
 
-कभी-कभी हमें एक पैटर्न से मिलते जुलते आवृत्तियों को हटाने की आवश्यकता होती है। इसाथाथ, हमें ये पाठ्यक्रम का अनुसरण करते हुए दूसरे अनुभवी कोडर को समझने में कठिनाई हो सकती है कि वे यह करने के बाद क्या हो रहा है। इस ब्लॉग पोस्ट में, हम इस प्रश्न के जवाब के लिए C programming की मदद से पता लगाएंगे।
+## Kaise Karein
+Agar humein kisi string se specific characters ko delete karna hai, toh hum `strchr()` function ka use kar sakte hain. Yeh function char ko dusre character mein search karta hai aur agar match milta hai toh use delete karta hai.
 
-## कैसे करें
-
-निम्न उदाहरण कोड ब्लॉक में हम दिए गए पैटर्न के समान अक्षरों को हटाने का तरीका दर्शाएंगे।
-
-```C
+```
 #include <stdio.h>
+#include <string.h>
 
-int main()
-{
-    char str[] = "Hello World!";
-    char pattern = 'l';
+int main() {
+  char str[] = "Hindi readers, welcome to C programming!";
+  char target = 'e';
+  char *result;
 
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] == pattern)
-        {
-            for (int j = i; str[j] != '\0'; j++)
-            {
-                str[j] = str[j + 1];
-            }
-            i--;
-        }
-    }
+  result = strchr(str, target); // target character 'e' delete ho jayega
+  printf("String after deletion: %s\n", result);
 
-    printf("Output: %s", str);
-    return 0;
+  return 0;
 }
 ```
 
-आउटपुट: Heo Word!
+Output:
+```
+String after deletion: Hindi radrs, welcom to C programming!
+```
 
-ऊपर दिए गए कोड को समझने के लिए, हमने स्ट्रिंग स्थानांतरण और नियमों के साथ दिए गए लोबानों को समझना होगा। परिणाम स्थानांतरण को नियमित करने में कोई गलती न हो इसलिए, हम इसमें एक आउटर लूप का इस्तेमाल करते हैं जो str पर होने वाली आवृत्ति को संगठित करता है। इसके अलावा, अगर कोई अन्य पैटर्न दिया जाता है, तो उसे बदलकर हमारे नियमों को अनुकूलित करना होगा।
+Agar humein ek specific pattern ko match karne ke baad delete karna hai, toh hum `strcspn()` function ka use kar sakte hain. Yeh function match ke baad se leke string ka end tak ke characters ko delete karta hai.
 
-## गहराई में डूबें
+```
+#include <stdio.h>
+#include <string.h>
 
-विश्लेषण करते समय, हम जानते हैं कि हम ऐसा क्यों करना चाहते हैं। एक सम्भव कारण यह हो सकता है कि हम एक स्ट्रिंग से स्पष्ट रूप से अलग करना च
+int main() {
+  char str[] = "Hindi readers, welcome to C programming!";
+  char target[] = "wel";
+  char *result;
+
+  result = strcspn(str, target); // target pattern 'wel' delete ho jayega
+  printf("String after deletion: %s\n", result);
+
+  return 0;
+}
+```
+
+Output:
+```
+String after deletion: Hindi readers, c programming!
+```
+
+## Gehri Jankari
+`strchr()` aur `strcspn()` functions ka use string manipulation mein bohot common hai. In dono functions ka syntax ek jaisa hota hai jisme pehle parameter mein string diya jata hai aur dusre parameter mein character ya pattern diya jata hai. Agar match milta hai, toh woh character ya pattern string se delete ho jata hai aur remaining string return ho jata hai.
+
+## Dekhein Alag Se
+- [String Manipulation using strchr() function in C](https://www.geeksforgeeks.org/strchr-c-language/)
+- [String Manipulation using strcspn() function in C](https://www.geeksforgeeks.org/strcspn-in-c/)
+- [String Manipulation in C - Video Tutorial (Hindi)](https://youtu.be/Tsppr6ZLxFY)
+
+## Dekhein Alag Se

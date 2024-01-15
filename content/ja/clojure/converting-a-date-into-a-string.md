@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 日付を文字列に変換する"
+title:                "日付を文字列に変換する"
+html_title:           "Clojure: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
 
-日付を文字列に変換することの重要性は、特定の日付形式を必要とする場合や、日付を読み取りやすく表示したい場合にあります。
+日付を文字列に変換することへの関心は、日付データを扱うプログラムにおいて必須の機能です。日付を文字列に変換することにより、人間が読みやすい形式にデータを表示することができます。
 
-## 方法
+##やり方
+
+日付を文字列に変換するには、Clojureの「format」関数を使用します。この関数を使用するためには、日付のフォーマットを指定する必要があります。例えば、MM/dd/yyyyの形式で日付を表示する場合は、「"MM/dd/yyyy"」というフォーマット文字列を指定します。
 
 ```Clojure
-(def today (java.time.LocalDate/now)) 
-(str today) ;=> "2021-09-14" 
-(format today "dd/MM/yyyy") ;=> "14/09/2021"
+(format "MM/dd/yyyy" (java.util.Date.))
+;;=> "12/14/2021"
 ```
 
-上記のコードでは、まず`java.time.LocalDate/now`を使用して今日の日付を取得し、その日付を`str`を使って文字列に変換しています。それに加えて、`format`を使って特定の日付形式に変換することもできます。
+また、Clojureには「clj-time」というライブラリがあり、日付と時間の操作を行うための便利な関数を提供しています。このライブラリを使うことで、より柔軟な日付の変換が可能になります。
 
-## ディープダイブ
+```Clojure
+(require '[clj-time.format :as fmt])
+(fmt/unparse (fmt/formatters :date) (java.util.Date.))
+;;=> "Tuesday, December 14, 2021"
+```
 
-日付を文字列に変換する際には、使用する日付ライブラリや目的によって異なる方法があります。また、ロケールやタイムゾーンなどの考慮も重要です。必要に応じて、より詳細な説明や実際のコード例を参考にしてください。
+##深層探究
 
-## もっと見る
+日付を文字列に変換するには、日付を表すデータ型をどのように処理するかという点が重要になります。Clojureでは、内部的にはJavaの「java.util.Date」クラスを使用して日付を表します。そのため、日付を文字列に変換する際にはJavaのフォーマット関数を使用することになります。
 
-- [Clojureで日付を扱う方法](https://clojure.or.jp/articles/date-handling-in-clojure/)
-- [日付と時刻の操作に関するClojureのガイド](https://clojuredocs.org/clojure.java-time)
+Clojureでは「clj-time.format」ライブラリを使用することで、より柔軟なフォーマット指定が可能になります。また、日付の操作にも便利な関数が提供されていますので、日付を扱うプログラムをより簡単に実装することができます。
+
+##参考リンク
+
+- [Clojure format](https://clojuredocs.org/clojure.core/format) (公式ドキュメント)
+- [clj-time library](https://github.com/clj-time/clj-time) (公式GitHubページ)
+- [Clojure で日付と時間を扱おう (clj-time の使い方) | Mochi Mochi Blog](https://mochi-mochi.github.io/2015/07/04/training-date-time-of-clojure-2.html) (チュートリアル記事)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Hitta längden på en sträng"
-simple_title:         "Hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Kotlin: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,38 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hitta längden på en sträng är en vanlig åtgärd som utförs inom programmering. Det är en grundläggande färdighet som alla programmerare bör kunna, eftersom den är användbar i många olika situationer. I denna bloggpost kommer vi att titta närmare på varför det är viktigt att kunna hitta längden på en sträng, och hur man gör det med hjälp av Kotlin.
+Det finns många anledningar till varför man skulle vilja hitta längden på en sträng i en Kotlin-programmering. Det kan till exempel vara för att validera inmatade data eller för att manipulera texten på något sätt.
 
-## Hur man gör det
+## Hur gör man
 
-För att hitta längden på en sträng i Kotlin kan man använda sig av funktionen "length". Den här funktionen används för att räkna antalet tecken i en sträng. Här nedan ser du ett exempel på hur man kan använda sig av funktionen "length" för att hitta längden på en sträng:
-
-```Kotlin
-val sträng = "Hejsan!"
-
-println(sträng.length)    // Output: 7
-```
-
-Som du kan se i exemplet ovan så använder vi variabeln "sträng" för att lagra vår sträng. Sedan använder vi funktionen "length" för att hitta längden på strängen och skriver ut den med hjälp av "println" funktionen. Genom att köra koden kommer vi få ut värdet "7", vilket är antalet tecken i strängen "Hejsan!".
-
-Man kan även använda sig av funktionen "length" för att hitta längden på en variabel som innehåller en sträng. Här nedan ser du ett annat exempel där vi skapar en variabel "namn" med värdet "Johan":
+För att hitta längden på en sträng i Kotlin, kan du använda funktionen `length()`. Den används genom att ange strängen du vill undersöka inom parentesen:
 
 ```Kotlin
-val namn = "Johan"
+val sträng = "Hej, jag är en sträng"
+val längd = sträng.length()
 
-println(namn.length)    // Output: 5
+print(längd) // Utskrift: 21
 ```
 
-Som du kan se i exemplet ovan så kommer funktionen "length" att räkna antalet tecken i variabeln "namn", vilket i det här fallet är 5.
+Du kan också använda `length`-metoden direkt på en sträng utan att behöva spara den i en variabel:
 
-## Djupdykning
+```Kotlin
+val längd = "Jag är en sträng".length()
 
-Nu när vi vet hur man använder funktionen "length" för att hitta längden på en sträng, låt oss titta på vad som faktiskt händer bakom kulisserna. När man anropar funktionen "length" på en sträng, så kommer den att returnera ett heltal som motsvarar antalet tecken i strängen. Detta innebär att om man skriver ut uttrycket "sträng.length" så kommer man att få ut ett heltal.
+print(längd) // Utskrift: 17
+```
 
-Det är viktigt att komma ihåg att funktionen "length" inte räknar med mellanslag eller andra tomma tecken. Den räknar enbart de faktiska tecknen i strängen.
+Funktionen `length()` returnerar antalet tecken i en sträng, och alla typer av tecken räknas, inklusive mellanslag och specialtecken.
+
+## Deep Dive
+
+Det kan vara användbart att veta att `length()`-metoden faktiskt är en extension-funktion på strängar, vilket betyder att den är en del av Kotlin's standard library. En extension-funktion kan användas på en typ av objekt för att utöka dess funktionalitet. I fallet med `length()` så utökar den funktionaliteten hos strängar genom att räkna ut antalet tecken.
+
+En intressant sak att notera är att när du använder `length()` på en tom sträng, kommer den att returnera värdet 0, eftersom det inte finns några tecken att räkna.
+
+```Kotlin
+val tomSträng = ""
+val längd = tomSträng.length()
+
+print(längd) // Utskrift: 0
+```
+
+Du kan också använda `length()` i kombination med andra metoder för att manipulera strängar. Till exempel kan du använda den tillsammans med `substring()` för att få ut en del av en sträng baserat på dess längd.
+
+```Kotlin
+val sträng = "Det här är en sträng"
+val längd = sträng.length()
+val delSträng = sträng.substring(4, längd)
+
+print(delSträng) // Utskrift: är en sträng
+```
 
 ## Se även
 
-- [Kotlins dokumentation om strängar](https://kotlinlang.org/docs/basic-types.html#strings)
-- [En interaktiv guide till Kotlin](https://play.kotlinlang.org/byExample/overview)
-- [Kotlin kurs för nybörjare](https://www.udemy.com/course/kotlin-for-android-beginners/?referralCode=34881341C719119E43C2)
+- Kotlin Standard Library: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/#length
+- Kotlin Basic Types: https://kotlinlang.org/docs/reference/basic-types.html#strings

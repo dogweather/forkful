@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Go recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Go"
 category:             "Go"
@@ -11,82 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever come across a website and thought, "I wish I could extract specific information from this HTML code"? One of the many reasons for parsing HTML is data extraction. For example, you might want to scrape a webpage for specific data or extract links for web crawling.
+If you've ever worked with web scraping or data extraction, chances are you've encountered HTML. This markup language is used to create the structure and content of web pages. So why would someone want to parse HTML? Well, parsing HTML allows you to extract specific data from a web page, making it easier to analyze and use for various purposes.
 
 ## How To
 
-Parsing HTML in Go is made easy with the help of third-party packages such as "golang.org/x/net/html". Here's a simple program to parse HTML and extract all the links on a webpage:
+To parse HTML in Go, you will need to use a package called "html". Here's a simple example of how to use it:
 
 ```Go
-package main
+// Import the html package
+import "golang.org/x/net/html"
 
-import (
-    "fmt"
-    "log"
-    "net/http"
+// Create a string variable containing the HTML
+var htmlString = "<h1>Hello World</h1>"
 
-    "golang.org/x/net/html"
-)
+// Parse the HTML
+document, _ := html.Parse(strings.NewReader(htmlString))
 
-func main() {
-    url := "http://example.com"
-    resp, err := http.Get(url)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    doc, err := html.Parse(resp.Body)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    links := getLinks(doc)
-
-    for _, link := range links {
-        fmt.Println(link)
-    }
-}
-
-func getLinks(n *html.Node) []string {
-    var links []string
-
-    if n.Type == html.ElementNode && n.Data == "a" {
-        for _, attr := range n.Attr {
-            if attr.Key == "href" {
-                links = append(links, attr.Val)
-            }
-        }
-    }
-
-    for c := n.FirstChild; c != nil; c = c.NextSibling {
-        links = append(links, getLinks(c)...)
-    }
-
-    return links
-}
+// Print the first H1 element
+fmt.Println(document.FirstChild.FirstChild.Data)
 ```
 
-Sample output for the "example.com" webpage:
+In the above code, we first import the "html" package, which contains functions for parsing HTML. Then, we create a string variable containing the HTML we want to parse. Next, we use the `html.Parse` function to create a document from our HTML string. Finally, we use the `FirstChild` property to access the first child element of the document, in this case, the first H1 element. 
+
+The output of the above code would be:
 
 ```
-http://anotherexample.com
-http://yetanotherexample.com
+Hello World
 ```
 
-This is just a simple example, but the possibilities are endless with HTML parsing in Go.
+You can also use the `html.ParseFragment` function to parse a specific element from the HTML, instead of the whole document. Here's an example:
+
+```Go
+// Parse only the first H1 element
+fragment, _ := html.ParseFragment(strings.NewReader(htmlString), nil)
+
+// Print the first H1 element
+fmt.Println(fragment[0].FirstChild.Data)
+```
+
+The output would be the same as before.
 
 ## Deep Dive
 
-Parsing HTML involves traversing through the DOM (Document Object Model) tree and extracting the desired elements. The "golang.org/x/net/html" package provides functions such as "Parse" and "NewTokenizer" to help with this process.
+When parsing HTML, it's important to understand the structure of the document. HTML is made up of elements which can have attributes and child elements. A document is typically structured like a tree, with the `html` element at the root, and all other elements branching out from there. 
 
-Another useful package for parsing HTML in Go is "github.com/PuerkitoBio/goquery". It allows you to use CSS selectors to easily extract specific elements from a webpage.
-
-It's important to keep in mind that parsing HTML can be a complex task. The HTML structure of different websites can vary greatly, so it's important to have a good understanding of HTML before attempting to parse it. Additionally, websites can change their structure at any time, so it's important to regularly test and update your parsing code as needed.
+To access specific elements, you can use the `FirstChild` and `NextSibling` properties. These properties allow you to traverse through the document, accessing each element as you go. For more detailed information on working with HTML in Go, check out the official documentation for the "html" package.
 
 ## See Also
 
-To learn more about parsing HTML in Go, check out these helpful resources:
-
-- [Official Go documentation for the "golang.org/x/net/html" package](https://godoc.org/golang.org/x/net/html)
-- [Tutorial: Parsing HTML in Go using "golang.org/x/net/html"](https://www.calhoun.io/parsing-html-with-go/)
-- [Article: Web Scraping with Go](https://scrapethissite.com/scraping-101-with-go/)
+- [Official "html" package documentation](https://pkg.go.dev/golang.org/x/net/html)
+- [Guide to web scraping in Go](https://towardsdatascience.com/web-scraping-in-go-e8dfd5f298bc)
+- [Tutorial on using the "html" package to parse HTML](https://opensourceschools.org/2019/07/08/go-html-parsing/)

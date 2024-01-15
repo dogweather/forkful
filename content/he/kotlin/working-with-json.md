@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: עובדים עם json"
+title:                "עובדים עם json"
+html_title:           "Kotlin: עובדים עם json"
 simple_title:         "עובדים עם json"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,30 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-JSON הוא אחד מהדרכים הפופולריות ביותר לשמירת והחלפת מידע בין אפליקציות שונות. זה מתאים בעיקר לתקשורת בין רשתות או אפליקציות עם שרתים מרוחקים. בהינתן כמות גדולה של נתונים ופעולות מולהם, JSON יכול להיות כלי חזק עבור סידור והעברת המידע.
+ישנם הרבה סיבות לכתוב קוד ב-Kotlin, ושימוש ב-JSON נחשב לאחת המפתחות. JSON הוא פורמט נתונים נפוץ ופשוט לשימוש, ויכול לשמש כחלק משמעותי בכל יישום שמתמקד בהעברת מידע בין שרת ולקוח.
 
-## איך לעבוד עם JSON בקוד הכזה לשמור את הנתונים כך שיהיו נגישים בצורה חזותית וקריאה. באמצעות הפונקציה `JSONObject()` ניתן ליצור אובייקט מתאים לנתונים שנתקבלים. ניתן להגדיר את הנתונים באמצעות פעולת השמה ולתת למשתמש להכניס את הנתונים הרצויים באופן ידני על ידי הזנת פרמטרים שונים. כל הנתונים ייכנסו לתוך מערך אחד גדול וניתן יהיה לגשת אליהם בצורה פשוטה.
+## איך לעשות זאת
 
-```
-Kotlin
-val obj = JSONObject()
-obj.put("name", "John")
-obj.put("age", 30)
-obj.put("country", "Israel")
-```
+כדי לכתוב קוד ב-Kotlin שמשתמש ב-JSON, נצטרך להתחבר לספריית gson הכותרית. נתחיל עם בניית מחלקה שתייצג את הנתונים שנרצה לקבל מקובץ JSON.
 
-המחרוזת מחזירה את התוצאות הבאות:
-
-```
-{"name":"John", "age": 30, "country": "Israel"}
+```Kotlin
+class Person(
+    val name: String,
+    val age: Int,
+    val profession: String
+)
 ```
 
-## ירידה לעומק
+לאחר מכן, נגדיר משתנה שמכיל את הנתונים הרלוונטים בפורמט JSON.
 
-בנוסף ליצירת נתונים, ישנם כמה פונקציות נוספות בקוד כמו `putIfAbsent()` ו`remove()` שמאפשרות עריכה ומחיקת פריטים במערך. כמו כן, ניתן להשתמש בפעולת `toMap()` כדי להמיר את הנתונים למבנה מפת המפתחות של התוכן. פונקציות אלו מאפשרות נגישות נוחה לנתונים למטרות עריכה ושליפה.
+```Kotlin
+val json = """
+    {
+        "name": "John",
+        "age": 30,
+        "profession": "Developer"
+    }
+""".trimIndent()
+```
 
-## ראו גם
+בסוף, נשתמש בפונקציית Gson של הספרייה להמיר את המחרוזת שלנו לאובייקט של מחלקת Person.
 
-- [התיעוד המלא של Kotlin עבור JSON](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-map.html)
-- [מדריך מלא לעבודה עם JSON בקוד Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_json_processing.htm)
-- [מדריך על
+```Kotlin
+val person = Gson().fromJson(json, Person::class.java)
+println("Name: ${person.name}, Age: ${person.age}, Profession: ${person.profession}")
+
+output: 
+Name: John, Age: 30, Profession: Developer
+```
+
+## כיצד לעמום עומק
+
+הרי כבר מהכירים את כלי ה-Gson של הספרייה, אך ייתכן שיהיו לכם צרכים מתקדמים מאוד ותרצו להעמיק. נתייחס עכשיו לשתי נסיבות אפשריות שנדון בהן: טיפוסים מותאמים אישית והתייחסות לנתונים נתונים בפנייה.
+
+### טיפוסים מותאמים אישית
+
+ספריית gson נותנת לנו אפשרות להשתמש בכיתות מותאמות אישית במקום הכיתות המוכרות, כדי להתאים את הנתונים לטווחי ערכים או לנתונים שאנחנו צריכים.
+
+```Kotlin
+class CustomSerializer : JsonSerializer<LocalDateTime> {
+    override fun serialize(src: LocalDateTime, typeOfSrc: Type, context: JsonSerializationContext): JsonElement {
+        return JsonPrimitive(src.toInstant(ZoneOffset.UTC).toEpochMilli())
+    }
+}
+
+val gson = GsonBuilder()
+    .registerTypeAdapter(LocalDateTime::class.java, CustomSerializer())
+    .create()
+
+val date = LocalDateTime.now()
+
+println(gson.toJson(date))
+
+ouput

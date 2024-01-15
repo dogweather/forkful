@@ -1,6 +1,7 @@
 ---
-title:                "Java: Työskentely yamlin kanssa"
-simple_title:         "Työskentely yamlin kanssa"
+title:                "Yaml-työskentely"
+html_title:           "Java: Yaml-työskentely"
+simple_title:         "Yaml-työskentely"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,67 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+YAML ja sen käyttäminen Java-ohjelmoinnissa
+
 ## Miksi
 
-YAML on loistava tapa tallentaa ja jakaa tietoa eri ohjelmistojen välillä. Joten, miksi ei hyödyntäisi tätä kätevää tiedostomuotoa myös Java-ohjelmoinnissa? 
+YAML (Yet Another Markup Language) on kevyt ja helppolukuinen tiedostomuoto, jota käytetään usein tiedostojen tallentamiseen ja siirtämiseen erilaisten ohjelmistojen välillä. Se on erityisen hyödyllinen Java-ohjelmoinnissa, koska sillä voidaan tallentaa tietoja rakenteellisessa muodossa, mikä tekee siitä kätevän käytettävänä olevan ohjelmakoodin tallentamiseen ja lataamiseen. 
 
 ## Miten
 
-YAML-tiedostojen käsittely Java-ohjelmoinnissa on hyvin yksinkertaista. Seuraavien esimerkkien avulla saatat ymmärtää, miten YAML-tiedostoja voidaan lukea ja kirjoittaa Java-koodilla.
+YAML-muotoa käytetään Java-ohjelmoinnissa yleensä YAML-kirjastojen avulla. Alla on esimerkki siitä, miten voit käyttää SnakeYAML-kirjastoa tallentaaksesi ja ladataksesi tietoja YAML-muotoisesta tiedostosta.
 
 ```Java
-// Kirjoitetaan YAML-tiedosto
-try {
-    // Luodaan uusi YAML-tiedosto ja avataan kirjoitusmoodiin
-    Yaml yaml = new Yaml();
-    FileWriter writer = new FileWriter("tiedosto.yaml");
-    BufferedWriter bufWriter = new BufferedWriter(writer);
+import java.io.FileWriter;
+import java.io.IOException;
+import org.yaml.snakeyaml.Yaml;
 
-    // Luodaan lista avaimia ja arvoja
-    Map<String, String> data = new HashMap<>();
-    data.put("nimi", "Matti");
-    data.put("ika", "32");
-    data.put("kaupunki", "Helsinki");
+public class YamlExample {
 
-    // Kirjoitetaan lista YAML-muodossa tiedostoon
-    yaml.dump(data, bufWriter);
-    bufWriter.close();
-} catch (IOException e) {
-    e.printStackTrace();
+    public static void main(String[] args) {
+        
+        // Luodaan YAML-kirjoittaja
+        Yaml yaml = new Yaml();
+        
+        // Luodaan tietorakenne
+        Map<String,String> tulot = new HashMap<>();
+        tulot.put("2019", "50000€");
+        tulot.put("2020", "60000€");
+        
+        // Tallennetaan tiedot YAML-muotoiseen tiedostoon
+        try {
+            FileWriter writer = new FileWriter("tulot.yml");
+            yaml.dump(tulot, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        // Luetaan tiedot YAML-muotoisesta tiedostosta
+        try {
+            Map<String,String> uudetTulot = yaml.load(new FileReader("tulot.yml"));
+            System.out.println("Luettiin tulot:");
+            for (String vuosi : uudetTulot.keySet()) {
+                System.out.println("- " + vuosi + ": " + uudetTulot.get(vuosi));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+    }
 }
-
-// Luetaan YAML-tiedosto
-FileReader reader = new FileReader("tiedosto.yaml");
-
-// Käytetään YAMLParseria lukemaan tiedostoa
-YAMLParser parser = new YAMLParser();
-Object obj = parser.parse(reader);
-
-// Muunnetaan objekti HashMapiksi
-HashMap<String, String> data = (HashMap<String, String>) obj;
-
-// Tulostetaan tiedoston sisältö
-System.out.println("Nimi: " + data.get("nimi"));
-System.out.println("Ikä: " + data.get("ika"));
-System.out.println("Kaupunki: " + data.get("kaupunki"));
 ```
 
-Tulostus:
+Tämä koodiesimerkki luo yksinkertaisen YAML-tiedoston, tallentaa siihen tietoja ja lukee sitten tiedot takaisin. Output on seuraava:
 
 ```
-Nimi: Matti
-Ikä: 32
-Kaupunki: Helsinki
+Luettiin tulot:
+- 2019: 50000€
+- 2020: 60000€
 ```
 
-## Syväsukellus
+## Syventävä tarkastelu
 
-YAML-tiedostot koostuvat avaimista ja niitä vastaavista arvoista. Avaimet ovat aina merkkijonoja ja arvot voivat olla mitä tahansa dataa, esimerkiksi merkkijonoja, numeroita tai listoja. Ohjelmointikielenä Java tarjoaa monia eri tapoja käsitellä YAML-tiedostoja, kuten Map- ja HashMap-luokat sekä Yaml- ja YAMLParser-oliot.
+YAML ei ole vain kevyt ja helppolukuinen, vaan se on myös erittäin joustava tiedostomuoto. Se tukee useita erilaisia arvotyyppejä, kuten merkkijonoja, numeroita, listoja ja karttoja. Lisäksi YAML-muoto mahdollistaa myös sisäkkäisten tietorakenteiden käytön, mikä tekee siitä kätevän tietojen tallentamiseen monimutkaisempia tietorakenteita varten.
 
-YAML:ssa on myös mahdollista määritellä monimutkaisempia rakenteita, kuten taulukoita ja sisäkkäisiä avain-arvo pareja, joten sen avulla voi käsitellä monenlaisia tietomalleja. Se on myös helppo lukea ja muokata manuaalisesti, toisin kuin esimerkiksi JSON.
+YAML on myös helposti luettavissa ja muokattavissa ihmisten toimesta, mikä tekee siitä muutosten tekemisen ja virheiden korjaamisen helpoksi ohjelmoidessa.
 
 ## Katso myös
 
-- [YamlBeans](https://github.com/EsotericSoftware/yamlbeans) - Java-kirjasto YAML-tiedostojen käsittelyyn
-- [Jackson-dataformat-YAML](https://github.com/FasterXML/jackson-dataformat-yaml) - JSON-tietojen muuntaminen YAML-muotoon Java-kirjastolla
-- [YAML-tiedoston lukeminen ja muuttaminen Java-ohjelmassa](https://www.javacodegeeks.com/2018/09/parse-yaml-java.html) - Hyödyllisiä vinkkejä ja koodiesimerkkejä YAML-tiedoston käsittelyyn Java-ohjelmassa
+- SnakeYAML-kirjasto: https://bitbucket.org/asomov/snakeyaml
+- YAML-spesifikaatio: https://yaml.org/spec/
+- Esimerkki YAML-tiedostosta: http://yaml.org/start.html

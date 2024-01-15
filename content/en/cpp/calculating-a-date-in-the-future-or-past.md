@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "C++ recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "C++"
 category:             "C++"
@@ -9,101 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## Why
+Calculating dates in the future or past may seem like a mundane task, but it can be extremely useful in many real-world scenarios. It allows us to plan ahead and keep track of important events in our lives.
 
-Have you ever needed to calculate a date in the future or past in your C++ program? Maybe you want to schedule an event or keep track of deadlines. Whatever the reason may be, knowing how to calculate dates in C++ can come in handy for a variety of applications.
-
-# How To
-
-Calculating dates in C++ involves some simple arithmetic and utilizing the date and time functions provided by the language. Let's take a look at some examples:
-
+## How To
 ```C++
-// Example 1: Calculating a date in the future
-#include <iostream>
-#include <ctime>
+/* First, we need to include the <ctime> header file which contains necessary functions for date and time calculations */
+#include <ctime> 
 
-int main() {
-    // Get current date
-    time_t now = time(0);
-    tm *currentDate = localtime(&now);
+/* Next, we declare a variable of type "time_t" which will hold the current system time */
+time_t now = time(0);
 
-    int futureDays = 7; // Number of days to add to current date
+/* We can then create a tm structure to store the current date and time values */
+struct tm * date = localtime(&now);
 
-    // Calculate future date
-    tm *futureDate = localtime(&now);
-    futureDate->tm_mday += futureDays;
+/* To calculate a date in the future, we simply add the desired number of days to our current date variable */
+date->tm_mday += 7; // Adds 7 days to the current date
 
-    // Convert future date to string
-    char str[20];
-    strftime(str, 20, "%m/%d/%Y", futureDate);
+/* To calculate a date in the past, we subtract the desired number of days from our current date variable */
+date->tm_mday -= 10; // Subtracts 10 days from the current date
 
-    std::cout << "Today's date: " << strftime("%m/%d/%Y", currentDate) << std::endl;
-    std::cout << "Future date: " << str << std::endl;
+/* We can then use the mktime function to convert our updated tm structure back to a time_t variable */
+time_t newTime = mktime(date);
 
-    return 0;
-}
+/* Finally, we can use strftime to format our new date in a desired manner and store it in a character array */
+char* formattedDate = strftime("%m/%d/%Y", localtime(&newTime));
 
-/*
-Output:
-Today's date: 04/14/2021
-Future date: 04/21/2021
-*/
+/* We can also print the result to the console for verification */
+std::cout << formattedDate << std::endl; // Outputs "MMM/DD/YYYY" format of the calculated date
 ```
 
-In this example, we utilized the `time()` function to get the current date and time, and then used the `localtime()` function to convert it into a `tm` struct which holds the date and time components. We then simply added the desired number of days to the current date and converted the result back to a string using `strftime()`.
+## Deep Dive
+Behind the scenes, the <ctime> header file uses the Coordinated Universal Time (UTC) standard to keep track of time. This allows for consistent calculations regardless of the user's local time zone. The tm structure stores all date and time values in integer form, making it easier to manipulate and calculate dates.
 
-```C++
-// Example 2: Calculating a date in the past
-#include <iostream>
-#include <ctime>
+Also, the mktime function takes into account any potential changes in daylight saving time, ensuring accurate and reliable date calculations.
 
-int main() {
-    // Get current date
-    time_t now = time(0);
-    tm *currentDate = localtime(&now);
-
-    int pastDays = 14; // Number of days to subtract from current date
-
-    // Calculate past date
-    tm *pastDate = localtime(&now);
-    pastDate->tm_mday -= pastDays;
-
-    // Convert past date to string
-    char str[20];
-    strftime(str, 20, "%m/%d/%Y", pastDate);
-
-    std::cout << "Today's date: " << strftime("%m/%d/%Y", currentDate) << std::endl;
-    std::cout << "Past date: " << str << std::endl;
-
-    return 0;
-}
-
-/*
-Output:
-Today's date: 04/14/2021
-Past date: 03/31/2021
-*/
-```
-
-This example follows a similar approach as the previous one, except we subtracted the desired number of days from the current date to get a date in the past.
-
-# Deep Dive
-
-The `tm` struct used in the examples above contains the following members which are relevant to calculating dates:
-
-- `tm_sec` - seconds after the minute (0-60)
-- `tm_min` - minutes after the hour (0-59)
-- `tm_hour` - hours since midnight (0-23)
-- `tm_mday` - day of the month (1-31)
-- `tm_mon` - months since January (0-11)
-- `tm_year` - years since 1900
-- `tm_wday` - days since Sunday (0-6)
-- `tm_yday` - days since January 1st (0-365)
-- `tm_isdst` - indicates whether daylight saving time is in effect
-
-By manipulating these members, we can calculate dates in the past or future by adding or subtracting the desired number of days, months, or even years.
-
-# See Also
-- [C++ Reference - Date and Time Functions](http://www.cplusplus.com/reference/ctime/)
-- [GeeksforGeeks - Calendar Functions in C++](https://www.geeksforgeeks.org/calendar-functions-in-c/)
-- [TutorialsPoint - Date and Time in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+## See Also
+- [C++ Date and Time Libraries](https://www.geeksforgeeks.org/date-time-class-in-c/)
+- [Making Sense of Dates and Times in C++](https://eastmanreference.com/dates-in-c)
+- [Using the <ctime> Header File in C++](https://www.programiz.com/cpp-programming/library-function/ctime)

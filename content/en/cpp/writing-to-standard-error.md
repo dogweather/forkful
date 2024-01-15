@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "C++ recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "C++"
 category:             "C++"
@@ -11,48 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing to standard error is an important aspect of debugging and error handling in C++ programming. It allows developers to easily identify and handle errors in their code, making it an essential skill for any C++ programmer.
+As a programmer, you've probably encountered errors in your code that disrupt the smooth execution of your program. These errors are usually displayed on the standard output, but sometimes it can be useful to redirect them to the standard error instead. In this article, we'll explore why you might want to do this and how to write to the standard error in C++.
 
 ## How To
 
-To write to standard error in C++, you can use the `std::cerr` stream. This stream is specifically designed for printing error messages to the standard error output.
+To write to the standard error in C++, you will need to include the `iostream` header and use the `cerr` object. Let's look at a simple example:
 
 ```C++
 #include <iostream>
 
 int main() {
-  std::string message = "A sample error message.";
-  std::cerr << message << std::endl;
-
-  return 0;
+    std::cerr << "Oops, something went wrong!" << std::endl;
+    return 0;
 }
 ```
 
-The above code will output "A sample error message." to the standard error output. Note that using `std::endl` is important as it adds a new line character to the end of the output.
+In this code, we are using the `cerr` object to output a string to the standard error using the `<<` operator. Don't forget to include the `endl` manipulator to add a newline after the message.
 
-You can also use the `fprintf()` function from the C standard library to write to standard error. However, this method is more verbose and not as robust as using the `std::cerr` stream.
+Running this program will display the following output on the standard error:
+
+```
+Oops, something went wrong!
+```
+
+You can also use the `<<` operator to output variables or objects to the standard error. For example:
 
 ```C++
-#include <cstdio>
+#include <iostream>
 
 int main() {
-  std::string message = "Another sample error message.";
-  fprintf(stderr, "%s\n", message.c_str()); // note the use of .c_str() to convert the string to a C-style string.
-
-  return 0;
+    int age = 30;
+    std::cerr << "My age is: " << age << std::endl;
+    return 0;
 }
+```
+
+This will output the following on the standard error:
+
+```
+My age is: 30
 ```
 
 ## Deep Dive
 
-Writing to standard error is often used in conjunction with exception handling. When an exception is thrown, the `std::cerr` stream is typically used to print out the details of the error, allowing developers to easily identify the source of the problem.
+The standard error, commonly referred to as `stderr`, is a standard output stream that is used to display error messages. Unlike the standard output (`stdout`), the standard error is not buffered, which means it is immediately displayed on the screen without any delay.
 
-It is also important to note that standard error output is different from standard output, which is represented by the `std::cout` stream. Standard output is used for regular program output, while standard error is reserved for error messages and debugging information.
+You might be wondering why we would want to write to the standard error instead of the standard output. The answer is simple: by writing to the standard error, we can differentiate between regular output and error messages. This can be useful when trying to troubleshoot a program or for logging purposes.
+
+It's important to note that writing to the standard error will only display messages on the screen. If you want to save the messages to a file, you will need to use a different approach.
 
 ## See Also
 
-- [C++ Standard Library Reference](https://en.cppreference.com/w/cpp/header)
-- [Exception Handling in C++](https://www.geeksforgeeks.org/exception-handling-c/)
-- [Difference between Standard Output and Standard Error](https://unix.stackexchange.com/questions/217100/differentiate-between-stdout-and-stderr)
-
-In conclusion, writing to standard error is an essential skill for any C++ programmer. It allows for efficient debugging and error handling, making the development process smoother and more manageable. With a clear understanding of how to write to standard error and its importance in exception handling, you can improve the quality of your code and enhance your overall programming skills.
+- [Writing to Standard Error in C++](https://www.geeksforgeeks.org/g-fact-33-writes-standard-error-c/)
+- [C++ Standard Streams](https://www.tutorialspoint.com/cplusplus/cpp_standard_streams.htm)
+- [Difference between Standard Output and Standard Error in C/C++](https://www.geeksforgeeks.org/difference-stdout-stderr/)

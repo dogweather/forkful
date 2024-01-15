@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Prüfen, ob ein Verzeichnis existiert"
+html_title:           "Elm: Prüfen, ob ein Verzeichnis existiert"
+simple_title:         "Prüfen, ob ein Verzeichnis existiert"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,29 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte jemand überprüfen wollen, ob ein Verzeichnis existiert? Ganz einfach: Es ist ein wichtiger Schritt beim Umgang mit Dateien in der Programmierung. Wenn man sicherstellen möchte, dass ein bestimmtes Verzeichnis vorhanden ist, bevor man Dateien darin erstellt oder liest, kann man mit dieser Methode unnötige Fehler vermeiden.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt in der Programmierung in Elm. Es ermöglicht die Kontrolle, ob eine bestimmte Datei oder ein Ordner vorhanden ist, bevor weitere Operationen durchgeführt werden.
+## Wie
+Um in Elm zu überprüfen, ob ein Verzeichnis existiert, kann man die Funktion `directoryExists` aus dem Modul `File` verwenden. Diese Funktion nimmt als Argument ein `String` mit dem Pfad zum Verzeichnis und gibt ein `Task Bool` zurück. Innerhalb des `Task Bool` kann man dann überprüfen, ob das Verzeichnis existiert oder nicht. Hier ein Beispiel:
 
-## Wie geht man vor
-
-Um ein Verzeichnis in Elm zu überprüfen, können Sie die `directoryExists` Funktion aus dem `Elm.File` Modul verwenden. Diese Funktion akzeptiert einen Pfad als Eingabe und gibt `True` zurück, wenn das angegebene Verzeichnis existiert, andernfalls gibt es `False` zurück.
-
-````Elm
+```Elm
 import File exposing (directoryExists)
 
--- Überprüfung, ob das Verzeichnis "beispiel/ordner" vorhanden ist
-directoryExists "beispiel/ordner"
---> True
-````
+directoryExists "Pfad/zum/Verzeichnis"
+    |> Task.perform handleResult
 
-## Tiefer Einblick
+handleResult : Result x Bool -> _
+handleResult result =
+    case result of
+        Ok exists ->
+            if exists then
+                -- tue etwas, da das Verzeichnis existiert
+            else
+                -- tue etwas anderes, falls es nicht existiert
+        
+        Err error ->
+            -- handle Fehlerfall
+```
 
-Bevor Sie eine Datei aus einem Verzeichnis öffnen oder schreiben, ist es wichtig, sicherzustellen, dass das Verzeichnis auch tatsächlich vorhanden ist. Wenn Sie versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen, wird es zu einem Fehler kommen. Durch die Verwendung der `directoryExists` Funktion können Sie diesen Fehler vermeiden und sicherstellen, dass Ihr Programm reibungslos funktioniert.
+In diesem Beispiel nutzen wir die `Task.perform` Funktion, um das Ergebnis der `directoryExists` Funktion zu verarbeiten. Wenn das Verzeichnis existiert, wird `exists` den Wert `True` haben, ansonsten `False`. In unserem `handleResult`-Funktion können wir dann je nach Bedarf entsprechend handeln.
 
-## Weitere Informationen
+## Deep Dive
+Es ist wichtig zu beachten, dass die `directoryExists` Funktion nur überprüft, ob das Verzeichnis zum Zeitpunkt des Aufrufs existiert. Wenn man sicherstellen möchte, dass das Verzeichnis während der Ausführung des Programms existiert, sollte man stattdessen die Funktion `directoryExistsSync` aus dem Modul `File` verwenden. Diese Funktion gibt einfach einen `Bool` Wert zurück, je nachdem ob das Verzeichnis existiert oder nicht. Allerdings sollte man bedenken, dass dies eine synchrone Funktion ist und somit die Ausführung des Programms blockiert, während sie ausgeführt wird.
 
-Weitere nützliche Funktionen rund um die Dateiverwaltung in Elm finden Sie in der offiziellen Dokumentation:
-
-[File Module auf der Elm Dokumentationsseite](https://package.elm-lang.org/packages/elm/file/latest/File)
-
-[FileSystem Module auf der Elm Dokumentationsseite](https://package.elm-lang.org/packages/elm/file/latest/FileSystem)
+## Siehe auch
+- Offizielle Dokumentation zu `File.directoryExists`: https://package.elm-lang.org/packages/elm/file/latest/File#directoryExists
+- Weitere Informationen zu Dateioperationen in Elm: https://guide.elm-lang.org/effects/file.html

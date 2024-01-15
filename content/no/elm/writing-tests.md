@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skriving av tester"
+html_title:           "Elm: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -11,53 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester kan være en viktig del av utviklingsprosessen for å sikre at koden vår fungerer som den skal og for å unngå feil og bugs. Det kan også gjøre det enklere å vedlikeholde og videreutvikle koden senere.
+Hvorfor skulle man bry seg med å skrive tester, når man allerede har tilbrakt timer med å skrive og feilsøke koden? Vel, her er noen gode grunner til hvorfor det kan være verdt innsatsen:
+
+- Å skrive tester hjelper deg med å fange feil tidlig i koden, noe som betyr mindre arbeid senere når koden skal integreres og testes som en helhet.
+- Det er også en god måte å dokumentere koden din på, og gjøre det enklere for andre å forstå hva du har skrevet.
 
 ## Hvordan
 
-Vi kan skrive tester i Elm på en veldig enkel måte ved å bruke `elm-test` biblioteket. La oss se på et eksempel:
+Å skrive tester i Elm er enkelt og intuitivt. Her er et eksempel på å skrive en enkel test for en funksjon som legger sammen to tall og sjekker om resultatet er riktig:
 
-```Elm
-module CalculatorTest exposing (..)
+```Elm 
+import Test exposing (..)
 
-import Test
-import Expect
-import Calculator exposing (add)
+addNumbers : Int -> Int -> Int
+addNumbers x y =
+    x + y
 
-addTest =
-    Test.test "Adding positive numbers" <|
-        \() ->
-            Expect.equal (add 5 2) 7
+testAddNumbers : Test
+testAddNumbers =
+    describe "Adding numbers"
+        [ test "1 + 1 should be 2" <|
+            \_ -> 
+                Expect.equal (addNumbers 1 1) 2
+        ]
 ```
 
-Dette eksemplet tester funksjonen `add` i `Calculator`-modulen ved å legge sammen to positive tall og sammenligne resultatet med forventet output. Testen består hvis de to verdiene er like.
+Som du kan se, bruker vi funksjonen `expect` for å sjekke om resultatet er lik det vi forventer. Når du kjører testen, vil det enten produsere en grønn eller rød melding, avhengig av om testen består. Du kan også kjøre flere tester ved å bruke funksjonen `testList` og gruppere dem sammen.
 
-Nå kan vi kjøre testen ved å skrive følgende kommando i terminalen:
+## Dykk dypere
 
-`elm-test CalculatorTest.elm`
-
-Hvis testen består, får vi følgende output:
-
-```
-...
-6 of 6 PASS
-
-Success! Passed all 6 tests.
-```
-
-## Dypdykk
-
-Når vi skriver tester i Elm, er det viktig å følge god praksis for å få mest mulig ut av dem. Noen tips for å skrive gode tester i Elm inkluderer:
-
-- Skriv små og spesifikke tester som fokuserer på én funksjon eller ett aspekt av koden
-- Skriv tester før du skriver koden for å sikre at du dekker alle mulige tilfeller og unngår feil og bugs
-- Benytt deg av `Expect`-funksjonene for å sjekke forskjellige forventede resultater
-- Dekk både positive og negative situasjoner i testene dine for å sikre robusthet
-
-Med disse tipsene kan du skrive effektive og pålitelige tester som vil gjøre utviklingsprosessen enklere og mer trygg.
+Hvis du ønsker å lære mer om hvordan du kan skrive tester i Elm, kan du sjekke ut Elm sin offisielle dokumentasjon om Testing. Der vil du finne mer detaljert informasjon om ulike typer tester, debugging og vanlige feil du kan støte på.
 
 ## Se også
 
-- [Elm-test dokumentasjon](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm-test GitHub repository](https://github.com/elm-explorations/test)
-- [Elm-test tutorial](https://thoughtbot.com/blog/testing-in-elm-what-to-test-and-where-to-test-it)
+- [Offisiell Elm Testing dokumentasjon](https://guide.elm-lang.org/testing/)
+- [En oversikt over Elm Testing verktøy](https://medium.com/@felixblaschke/testing-elm-apps-an-overview-of-tools-52b0a93709c1)
+- [Elm Test Tutorial fra Scrimba](https://scrimba.com/g/gelmtesting)

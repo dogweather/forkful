@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoi d'une demande http"
+html_title:           "Gleam: Envoi d'une demande http"
+simple_title:         "Envoi d'une demande http"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,52 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Pourquoi voudriez-vous envoyer une requête HTTP dans votre code Gleam ? Tout simplement pour communiquer avec des serveurs web externes ou récupérer des données à partir d'une API. Les requêtes HTTP sont un moyen efficace de faire interagir votre code avec le monde extérieur et peuvent être utiles pour de nombreuses applications, telles que les applications web ou les chatbots.
+Si vous travaillez dans le développement web, il est à peu près certain que vous allez devoir interagir avec des API et donc, envoyer des requêtes HTTP. Découvrez comment le faire avec Gleam !
 
-## Comment Faire
+## Comment faire
 
-Voici quelques exemples de code pour vous montrer comment envoyer une requête HTTP en utilisant Gleam :
+Envoyer une requête HTTP en utilisant Gleam est simple. Tout d'abord, vous devez avoir le module HTTP dans votre projet :
 
 ```Gleam
-// Importer le module "http"
-import gleam/http
-
-// Définir une fonction pour envoyer une requête GET à l'API de GitHub
-pub fn get_github_api() {
-  // Définir l'URL de l'API
-  let url = "https://api.github.com/users/gleam-lang"
-
-  // Envoyer la requête GET
-  let response = http.request({ method: "GET", url: url })
-
-  // Vérifier si la requête a réussi
-  case response {
-    Ok(body) -> {
-      // Le corps de la réponse est stocké dans "body"
-      // Vous pouvez maintenant effectuer des opérations sur les données récupérées
-      // Par exemple, imprimez le corps de la réponse
-      Debug.to_string(body) |> Debug.print
-    }
-    Err(error) -> {
-      // La requête a échoué, traiter l'erreur ici
-      Debug.to_string(error) |> Debug.print
-    }
-  }
-}
+let http = import http
 ```
 
-Le code ci-dessus utilise le module "http" de Gleam pour envoyer une requête GET à l'API de GitHub et imprimer le corps de la réponse en cas de succès. Vous pouvez également utiliser des méthodes autres que GET, comme POST ou PUT, en modifiant simplement la valeur de la clé "method" dans la requête.
+Ensuite, vous pouvez utiliser la fonction `request` pour spécifier la méthode, l'URL, les en-têtes et le corps de la requête :
 
-## Plongée Dans Les Détails
+```Gleam
+let { Ok, Err } =
+  http.request(
+    "GET",
+    "https://example.com/users",
+    [("Content-Type", "application/json")],
+    "{
+      \"name\": \"John Doe\",
+      \"email\": \"john.doe@example.com\"
+    }"
+  )
+```
 
-Envoyer une requête HTTP dans Gleam est un processus simple, mais il y a quelques points à garder à l'esprit :
+Notez que cette fonction renvoie un résultat `Ok` ou `Err` en fonction de la réponse de serveur.
 
-- La fonction "http.request" renvoie un "Record" avec la clé "Ok" ou "Err". Il s'agit d'un type de données de gestion d'erreurs de Gleam qui permet de gérer facilement les exceptions lors de l'envoi de requêtes.
-- L'URL peut être stockée dans une variable ou être directement entrée comme valeur de la clé "url" dans la fonction "http.request".
-- Vous pouvez également ajouter des en-têtes personnalisés à votre requête en ajoutant une clé "headers" dans le Record de requête et en y stockant un "Map" de clés/valeurs pour chaque en-tête.
-- Pour faciliter la lecture et l'utilisation de vos fonctions d'envoi de requête HTTP, vous pouvez créer un module distinct et les importer dans vos autres fichiers Gleam.
+Vous pouvez également spécifier des paramètres de requête avec la fonction `params` :
 
-## Voir Aussi
+```Gleam
+http.request(
+  "GET",
+  "https://example.com/users",
+  [("Content-Type", "application/json")],
+  "{
+    \"name\": \"John Doe\",
+    \"email\": \"john.doe@example.com\"
+  }",
+  http.params([("filter", "online"), ("sort", "name")])
+)
+```
 
-- Documentation officielle pour le module "http" de Gleam - https://gleam.run/modules/http.html
-- Tutoriel sur la création d'une application API avec Gleam - https://dev.to/gleam_lang/building-a-rest-api-with-gleam-3lhg
+Cela ajoutera les paramètres "filter=online" et "sort=name" à l'URL de la requête.
+
+## Plongée en profondeur
+
+Il existe de nombreux autres paramètres et options disponibles pour personnaliser vos requêtes HTTP en utilisant le module HTTP de Gleam. Vous pouvez également utiliser les fonctions `get`, `post`, `put`, `delete` pour raccourcir votre code si vous n'avez pas besoin de spécifier tous les détails de la requête.
+
+## Voir aussi
+
+- La documentation du module HTTP de Gleam : https://gleam.run/modules/http.html
+- Une présentation détaillée sur l'envoi de requêtes HTTP en utilisant Gleam : https://www.jameswest.dev/http-requests-gleam/

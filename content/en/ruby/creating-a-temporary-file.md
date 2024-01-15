@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Ruby recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,44 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common task in programming, especially in languages such as Ruby. Temporary files serve as a way to store information for a short period of time, making them useful for a variety of tasks such as data processing, file management, and more. In this blog post, we will explore how to create temporary files in Ruby and delve into the deeper details of this useful tool.
+Creating temporary files is a common practice in programming, especially in languages like Ruby where memory management is handled by the operating system. These temporary files serve as a temporary storage space for data and can be useful in various situations such as data processing, file handling, and testing.
 
 ## How To
 
-To create a temporary file in Ruby, we can use the Tempfile class from the standard library. Let's take a look at an example:
+To create a temporary file in Ruby, you can use the `Tempfile` class from the `tempfile` library. Here's an example:
 
 ```Ruby
 require 'tempfile'
 
-# Create a new temporary file
-temp_file = Tempfile.new('my_temp_file')
-
-# Write some data to the file
-temp_file.write('This is some sample data')
-
-# Close the file
-temp_file.close
-
-# Print the name of the file
-puts temp_file.path
+temp_file = Tempfile.new('my_temp_file') # specify a prefix for the file name
+temp_file.write('This is a temporary file.') # write some data to the file
+puts temp_file.path # print the path of the file
+temp_file.close # close the file
 ```
 
-The output of this code will be the path to our newly created temporary file, which will be something like "/var/folders/..." depending on your system. We can also specify a specific directory for our temporary file by passing in a second argument when creating the Tempfile object.
+Output:
 
-By default, the temporary file is deleted when the Tempfile object goes out of scope. However, if we want to delete the file manually, we can call the `temp_file.unlink` method. This can be useful in cases where we want to keep the file for a longer period of time.
+```
+/var/folders/5k/0426t1xj071d4plg5gwlz9m00000gn/T/my_temp_file20190917-35979-c2ri1s # the file path will be different for each execution
+```
+
+As you can see, the `Tempfile.new` method creates a file with a unique name in the system's temporary directory. You can also pass in an optional `mode` parameter to specify the file's permissions.
 
 ## Deep Dive
 
-Behind the scenes, the Tempfile class creates a real file on our system, just like the `File` class. However, the difference is that the Tempfile class also handles deleting the file for us once it is no longer needed. This prevents us from cluttering our system with unnecessary temporary files.
+Behind the scenes, the `Tempfile` class uses the `File.open` method to create the temporary file. This means that all the methods available in the `File` class, such as `#write` and `#close` can be used on a `Tempfile` object as well.
 
-When creating a Tempfile, Ruby automatically generates a random name for the file to avoid conflicts with existing files. We can also specify a prefix for the file name by passing in an argument when creating the Tempfile object. This can be useful for naming convention and organization purposes.
-
-Additionally, we can also specify the file mode when creating a Tempfile, just like with regular files. This enables us to have more control over the file permissions and access.
+One important thing to note is that the file will be automatically deleted when the `Tempfile` object is garbage collected or when the program terminates. If you want to explicitly delete the file, you can use the `#unlink` method.
 
 ## See Also
 
-- [Ruby Tempfile Class documentation](https://ruby-doc.org/stdlib-2.5.0/libdoc/tempfile/rdoc/Tempfile.html)
-- [Creating Temporary Files in Ruby](https://thoughtbot.com/blog/creating-temporary-files-in-ruby)
-- [Understanding the Tempfile Ruby Class](https://www.rubyguides.com/2017/02/tempfile-ruby-class/)
-
-Creating temporary files is a useful skill for any Ruby programmer to have in their repertoire. It allows us to efficiently handle data and clean up temporary files without cluttering our system. So next time you find yourself in need of storing data temporarily, remember the Tempfile class in Ruby.
+- [Official Ruby Documentation for Tempfile Class](https://ruby-doc.org/stdlib-2.6.5/libdoc/tempfile/rdoc/Tempfile.html)
+- [Ruby Guides: Working with Temporary Files](https://www.rubyguides.com/2015/04/working-with-temporary-files/)

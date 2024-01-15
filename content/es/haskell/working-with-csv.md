@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos csv"
+html_title:           "Haskell: Trabajando con archivos csv"
+simple_title:         "Trabajando con archivos csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,78 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con CSV en Haskell
+## ¿Por qué utilizar CSV en Haskell?
 
-CSV (Comma Separated Values) son archivos de texto que contienen datos separados por comas. Son una forma muy común de almacenar y trabajar con datos en la programación. En Haskell, trabajar con CSV puede ser muy beneficioso ya que nos permite manipular datos de manera sencilla y eficiente.
+Si estás buscando una forma rápida y sencilla de trabajar con grandes cantidades de datos tabulares, entonces el formato CSV es tu mejor amigo. Con Haskell, podrás procesar y manipular fácilmente estos datos, lo que lo convierte en una herramienta útil para proyectos de análisis de datos o administración de bases de datos.
 
 ## Cómo hacerlo
 
-Para trabajar con CSV en Haskell, podemos usar la biblioteca "cassava". Esta biblioteca nos permite leer y escribir archivos CSV utilizando funciones específicas.
-
-Primero, debemos importar la biblioteca en nuestro código:
+Para trabajar con CSV en Haskell, primero debes importar el módulo `Data.Csv` y la función `decodeDefault` que nos ayudará a convertir nuestro archivo CSV en una estructura de datos legible para Haskell. A continuación, debemos especificar la estructura de nuestro archivo CSV, utilizando tipos de datos personalizados si es necesario. Por ejemplo:
 
 ```Haskell
+import qualified Data.Map as Map
+import qualified Data.ByteString.Lazy as BL
 import Data.Csv
+
+data Employee = Employee
+  { name :: String
+  , age :: Int
+  , department :: String
+  } deriving Show
+
+instance FromNamedRecord Employee where
+  parseNamedRecord r = Employee <$> r .: "Nombre" <*> r .: "Edad" <*> r .: "Departamento"
+
+main = do
+  csvData <- BL.readFile "empleados.csv"
+  case decodeDefault NoHeader csvData of
+    Left err -> putStrLn err
+    Right v -> mapM_ print (v :: [Employee])
 ```
 
-En caso de que estemos trabajando con un archivo CSV, podemos leerlo utilizando la función "decodeFile":
+En este ejemplo, definimos un tipo de datos `Employee` con campos `nombre`, `edad` y `departamento`. Luego, definimos una instancia de `FromNamedRecord` que especifica cómo se leerán los datos del archivo CSV. Finalmente, utilizamos la función `decodeDefault` para convertir el archivo a una lista de `Employee` y imprimir los resultados.
 
-```Haskell
-records <- decodeFile "datos.csv" :: IO (Either String (Vector Vector String))
-```
+## Inmersión profunda
 
-La función "decodeFile" devuelve una estructura de datos llamada "Vector", que contiene los datos del archivo CSV. Podemos acceder a los datos de esta manera:
+Si quieres trabajar con archivos CSV que no tengan encabezados, puedes usar `decode NoHeader` en lugar de `decodeDefault NoHeader`. Además, el módulo `Data.Csv` también ofrece funciones útiles para escribir datos en formato CSV, como `encodeDefaultOrderedByName` para ordenar los datos antes de escribirlos en el archivo.
 
-```Haskell
-case records of
-    (Left err) -> do putStrLn err
-    (Right row) -> do
-        let firstRow = row ! 0
-        let firstValue = firstRow ! 0
-        print $ "El primer valor es: " ++ firstValue
-```
+## Véase también
 
-Para escribir datos en un archivo CSV, podemos utilizar la función "encodeFile":
-
-```Haskell
-encodeFile "nuevos_datos.csv" [
-    ["Nombre", "Edad", "Género"],
-    ["Ana", "22", "Femenino"],
-    ["Juan", "28", "Masculino"]
-    ]
-```
-
-Esta función tomará una lista de listas, donde cada lista interna representa una fila en el archivo CSV.
-
-## Profundizando
-
-La biblioteca "cassava" también nos permite trabajar con tipos de datos personalizados. Podemos definir un tipo de datos para representar una fila en nuestro archivo CSV:
-
-```Haskell
-data Persona = Persona {
-    nombre :: String,
-    edad :: Int,
-    genero :: String
-} deriving (Generic, Show)
-
-instance ToNamedRecord Persona
-instance FromNamedRecord Persona
-```
-
-Luego, podemos leer y escribir nuestro archivo CSV utilizando este tipo de datos:
-
-```Haskell
-records <- decodeFile "personas.csv" :: IO (Either String (Vector Persona))
-
-encodeFile "nuevas_personas.csv" (fromVector (Vector.fromList [
-    Persona "Ana" 22 "Femenino",
-    Persona "Juan" 28 "Masculino"
-    ]))
-```
-
-Podemos ver que trabajar con CSV en Haskell es bastante sencillo y nos permite manipular datos de manera flexible y eficiente.
-
-## Ver también
-
-- Documentación de la biblioteca "cassava": https://hackage.haskell.org/package/cassava
-- Tutoriales de Haskell: https://www.haskell.org/documentation/
+- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
+- [Tutorial de Haskell](https://www.haskell.org/tutorial/)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: Zmiana ciągu znaków na duże litery"
-simple_title:         "Zmiana ciągu znaków na duże litery"
+title:                "Zamiana pierwszej litery na wielką w ciągu znaków."
+html_title:           "C#: Zamiana pierwszej litery na wielką w ciągu znaków."
+simple_title:         "Zamiana pierwszej litery na wielką w ciągu znaków."
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,43 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Kapitalizacja to podstawowa czynność w programowaniu, która jest niezbędna do wielu zadań. Gdy chcemy, aby nasz program był czytelny dla użytkownika lub wyświetlany w odpowiedni sposób, często musimy skorzystać z kapitalizacji. W tym blogu dowiesz się, jak w prosty sposób zastosować tę funkcję w języku C#.
+Zamiana liter na wielkie to często wykonywana operacja w programowaniu, która pozwala na jednolite wyglądanie tekstu. Jest szczególnie przydatna przy pracy z tekstem wprowadzonym przez użytkownika, gdzie nie zawsze poprawnie uformowane dane mogą wpłynąć na poprawne działanie aplikacji. Dzięki tej prostej funkcji możemy również dodać do tekstu niezbędne akcenty.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Kapitalizacja w C# odbywa się za pomocą metody `ToUpper`, która zmienia wszystkie litery w ciągu znaków na wielkie. Przykładowy kod wyglądałby następująco:
-
-```C#
-string name = "jan kowalski";
-
-Console.WriteLine(name.ToUpper());
-```
-
-W powyższym przykładzie, wartość zmiennej `name` zostanie zmieniona na "JAN KOWALSKI". Możemy również zastosować funkcję `ToLower`, która zmieni wszystkie litery na małe.
-
-Dodatkowo, możemy również wykorzystać metodę `ToTitleCase` do kapitalizacji tylko pierwszej litery w każdym wyrazie. Przykładowy kod wyglądałby w ten sposób:
+W języku C# możemy skorzystać z metody `ToUpper` aby zmienić wszystkie litery w tekście na jego wersję z wielkimi literami. Przyjrzyjmy się poniższemu przykładowi:
 
 ```C#
-string sentence = "cześć, jak się masz?";
+string tekst = "witaj świecie";
+string tekstWielkimi = tekst.ToUpper();
 
-// Dodajemy referencję do przestrzeni nazw System.Globalization
-string capitalizedSentence = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence);
+Console.WriteLine(tekstWielkimi);
 
-Console.WriteLine(capitalizedSentence);
+// Output: WITAJ ŚWIECIE
 ```
 
-W tym przypadku, wartość zmiennej `capitalizedSentence` zostanie zmieniona na "Cześć, Jak Się Masz?".
+W powyższym przykładzie najpierw definiujemy zmienną `tekst` przechowującą nasz tekst, następnie wykorzystujemy metodę `ToUpper` aby utworzyć zmienną `tekstWielkimi` z naszym tekstem w wersji z dużymi literami. Na koniec wyświetlamy zmieniony tekst w konsoli.
 
-## Deep Dive
+Możemy również wykorzystać indeksowanie na stringach, aby zmienić konkretną literę na wielką. Przykład poniżej:
 
-Metody `ToUpper` i `ToLower` działają poprawnie tylko w przypadku standardowych znaków ASCII. Jeśli jednak potrzebujemy kapitalizować znaki spoza tego zakresu, musimy użyć funkcji `ToUpperInvariant` lub `ToLowerInvariant`. Te metody są bardziej elastyczne i działają dla wszystkich znaków, niezależnie od ich kodowania.
+```C#
+string tekst = "witaj świecie";
 
-Dodatkowo, warto również zwrócić uwagę na wydajność kodu. W przypadku dużych ilości danych do kapitalizacji, zaleca się używanie StringBuilder, aby uniknąć tworzenia zbędnych obiektów typu string.
+var pierwszaLitera = tekst[0].ToString().ToUpper();
+var calyTekstWielkimi = pierwszaLitera + tekst.Substring(1);
 
-## Zobacz również
+Console.WriteLine(calyTekstWielkimi);
 
-- [Metoda ToUpper w dokumentacji języka C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.toupper)
-- [Przestrzeń nazw System.Globalization w dokumentacji języka C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization?view=netframework-4.8)
-- [Optymalizacja kodu w języku C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/concepts/code-quality/optimize-your-code)
+// Output: Witaj świecie
+```
 
-Dziękujemy za lekturę tego bloga. Mamy nadzieję, że dzięki niemu dowiedziałeś się, jak w prosty sposób zastosować kapitalizację do ciągu znaków w języku C#.
+W pierwszym wierszu definiujemy zmienną `pierwszaLitera` jako pierwszą literę naszego tekstu, która jest zamieniana na wersję z wielkiej litery. Następnie konkatenujemy ją z pozostałym tekstem, który jest pobierany za pomocą metody `Substring`. W ten sposób wyświetlamy tekst z poprawnie uformowanym akcentem.
+
+## Głęboki zanurzenie
+
+Zamiana liter na wielkie jest również możliwa do wykonania dla każdego języka, nie tylko polskiego. Możemy również skorzystać z innych metod w języku C# takich jak `ToTitleCase` aby zmienić pierwszą literę każdego wyrazu na wielką. Warto również pamiętać, że zmiana wielkości liter może również wpłynąć na wydajność aplikacji, dlatego zaleca się dokładną analizę potrzebne dla danej sytuacji.
+
+## Zobacz też
+
+- [Dokumentacja metody ToUpper w języku C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+- [Dokumentacja metody ToTitleCase w języku C#](https://docs.microsoft.com/en-us/dotnet/api/system.stringtotitlecase?view=net-5.0)

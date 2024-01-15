@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Wyodrębnianie podciągów"
-simple_title:         "Wyodrębnianie podciągów"
+title:                "Ekstrakcja podciągów"
+html_title:           "Haskell: Ekstrakcja podciągów"
+simple_title:         "Ekstrakcja podciągów"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Dlaczego
 
-Extrakcja podciągów jest ważną umiejętnością w programowaniu, która pozwala nam na wydobycie tylko tych części tekstu, które nas interesują. Jest to niezbędne w różnych sytuacjach, na przykład przy przetwarzaniu i analizie danych tekstowych.
+Jedną z podstawowych operacji na stringach jest wydobywanie podciągów. Jest to przydatne w wielu sytuacjach, na przykład gdy chcemy wyodrębnić tylko część tekstowej informacji lub porównywać podciągi ze sobą. W tym artykule dowiesz się jak w prosty sposób wydobywać podciągi w języku Haskell.
 
-## Jak to zrobić
+##Jak To Zrobić
+
+W pierwszej kolejności musimy zaimportować moduł `Data.List`, który zawiera funkcje do operacji na listach. Następnie możemy użyć funkcji `take` oraz `drop` do wydobycia podciągu. Weźmy za przykład następujący string:
 
 ```Haskell
--- Definiowanie przykładowego tekstu
-tekst = "Cześć! Nazywam się Kasia i jestem programistką."
+let tekst = "Witaj w świecie Haskell!"
+```
 
--- Wydobycie pierwszych 5 liter
+Aby wydobyć pierwszych pięć znaków tego tekstu, możemy użyć funkcji `take` w następujący sposób:
+
+```Haskell
 take 5 tekst
--- Output: "Cześć"
-
--- Wydobycie ostatnich 10 liter
-drop (length tekst - 10) tekst
--- Output: "jestem programistką."
 ```
 
-Okazuje się, że istnieje wiele przydatnych funkcji w Haskellu, które pozwalają nam na ekstrakcję podciągów w różnych sposób. Na przykład funkcja `take` pozwala nam na wydobycie określonej liczby elementów na początku tekstu, podczas gdy `drop` pozwala na wydobycie na końcu tekstu. Aby uzyskać dłuższy podciąg, możemy także połączyć te dwie funkcje w jednym wywołaniu.
-
-## Głębsza analiza
-
-Za pomocą funkcji `take` i `drop` możemy wydobyć tylko określony fragment tekstu, ale co jeśli chcemy wyodrębnić część tekstu na podstawie warunków? W tym przypadku możemy skorzystać z funkcji `takeWhile` i `dropWhile`, które pozwalają nam na wydobycie podciągu aż do momentu, gdy warunek zostanie spełniony.
+Co zwróci nam podciąg "Witaj". Natomiast, jeśli chcemy wydobyć podciąg zaczynający się od szóstego znaku, możemy skorzystać z funkcji `drop`:
 
 ```Haskell
--- Definiowanie przykładowego tekstu
-tekst = "Dzisiaj jest ładna, słoneczna pogoda."
-
--- Wydobycie wszystkich słów po słowie "jest"
-dropWhile (/= "jest") (words tekst)
--- Output: ["jest", "ładna", "słoneczna", "pogoda."]
+drop 6 tekst
 ```
 
-W ten sposób możemy bardzo precyzyjnie wyodrębnić tylko potrzebne nam fragmenty tekstu.
+Co zwróci nam podciąg "w świecie Haskell!".
 
-## Zobacz także
+Jeśli potrzebujemy wydobyc podciąg o dowolnej długości, możemy użyć funkcji `take` i `drop` w połączeniu z funkcją `length` do obliczenia długości tekstu. Na przykład, jeśli chcemy wydobyć podciąg zawierający ostatnie 10 znaków tekstu, możemy użyć następującego kodu:
 
-- [Dokumentacja Haskell](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#g:20)
-- [Tutorial: Podstawy Haskell](https://learnhaskell.com/)
+```Haskell
+take 10 (drop ((length tekst)-10) tekst)
+```
+
+Co zwróci nam podciąg "Haskell!".
+
+##Deep Dive
+
+Funkcje `take` i `drop` są bardzo proste w użyciu, ale warto wiedzieć, że będą działać tylko wtedy gdy przekażemy im poprawną liczbę elementów. Jeśli przekazana liczba będzie większa niż długość tekstu, funkcja `take` zwróci cały tekst, a funkcja `drop` pusty string. Natomiast, jeśli przekażemy liczbę ujemną, funkcja `take` zwróci pusty string, a funkcja `drop` cały tekst. Dlatego ważne jest aby zadbać o przekazanie poprawnych danych do funkcji.
+
+##Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o operacjach na stringach w Haskellu, możesz zapoznać się z poniższymi artykułami:
+
+- [Operacje na stringach w Haskellu](https://wiki.haskell.org/Strings)
+- [Funkcyjna manipulacja stringami w Haskellu](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/functional-manipulation-of-strings)
+- [Wydobywanie tekstu przy użyciu wyrażeń regularnych w Haskellu](https://stackoverflow.com/questions/13374066/extract-string-with-regular-expression-in-haskell)

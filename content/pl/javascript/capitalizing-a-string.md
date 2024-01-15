@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Zapisywanie tekstu wielkimi literami"
-simple_title:         "Zapisywanie tekstu wielkimi literami"
+title:                "Zmiana wielkości liter w ciągu znaków"
+html_title:           "Javascript: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,27 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszym wpisie na blogu porozmawiamy o jednej z podstawowych operacji w języku programowania Javascript - zamianie małych liter na duże. Dlaczego warto poznać ten prosty trik? Cóż, jest to bardzo przydatna umiejętność w wielu aplikacjach internetowych, jak również w analizie i manipulacji tekstem. Czytaj dalej, aby dowiedzieć się, jak to zrobić.
+Czy kiedykolwiek zdarzyło Ci się, że musiałeś pozmieniać wielkość liter w ciągu znaków? Może pracujesz nad projektem, który wymaga jednolitej pisowni, albo po prostu chcesz wyświetlić użytkownikom imię zaczynające się z dużej litery? W takich sytuacjach capitalizacja stringu może być bardzo pomocna.
 
 ## Jak to zrobić
 
 ```Javascript
-var example = "witaj świecie";
-console.log(example.toUpperCase());
+// Przykładowy ciąg znaków
+let imie = "jan";
+
+// Wykorzystanie metody toUpperCase()
+let imieZDuzej = imie.toUpperCase();
+
+//Wypisanie wyniku w konsoli
+console.log(imieZDuzej); // "JAN"
 ```
 
-Kiedy uruchomisz ten kod, powinieneś zobaczyć na konsoli tekst "WITAJ ŚWIECIE" - zamienione litery na duże. Zauważ, że użyliśmy tutaj metody `toUpperCase()`, która jest wbudowaną funkcją w języku Javascript. Możesz ją wykorzystać do zmiany literek na duże w dowolnym ciągu znaków. Przetestuj tę metodę na różnych przykładach, a także spróbuj zamienić duże litery na małe za pomocą `toLowerCase()`.
-
-Podczas zamiany liter na duże, warto również wiedzieć, że polskie znaki diakrytyczne również zostaną zmienione, nie tylko litery. Na przykład, litera `ś` zostanie zamieniona na `Ś`, a nie na `S`.
+W powyższym przykładzie wykorzystaliśmy wbudowaną metodę **toUpperCase()**, która zmienia małe litery na wielkie. W ten sposób nie musimy ręcznie zmieniać wielkości liter w ciągu znaków, co jest czasochłonne i skłonne do błędów.
 
 ## Deep Dive
 
-Ta prosta operacja może wydawać się trywialna, ale jest kilka ciekawych rzeczy, które warto o niej wiedzieć. Po pierwsze, warto zauważyć, że przypadki literek są bardzo ważne w języku Javascript. Oznacza to, że `Hello` jest zupełnie innym ciągiem znaków niż `hello`. Dzięki temu, przy wykonywaniu różnych operacji (takich jak porównywanie), jesteśmy w stanie rozróżnić między różnymi przypadkami słów.
+Metoda **toUpperCase()** jest częścią obiektu String w języku Javascript. Możemy ją wykorzystać do zmiany wielkości liter w dowolnym ciągu znaków, nie tylko w pojedynczym wyrazie. Warto również zauważyć, że istnieje również metoda **toLowerCase()**, która działa w przeciwny sposób - zamienia wielkie litery na małe.
 
-Inną przydatną funkcją związaną z zamianą liter jest metoda `charAt()`, która pozwala nam uzyskać dostęp do konkretnego znaku w ciągu. Na przykład, jeśli chcemy uzyskać dostęp do pierwszej litery w wyrazie, musimy użyć `example.charAt(0)`, ponieważ liczymy znaki od zera.
+## Zobacz także
 
-## Zobacz również
-
-- [Metoda toUpperCase() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Metoda toLowerCase() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Metoda charAt() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [Metoda toUpperCase() w dokumentacji Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Metoda toLowerCase() w dokumentacji Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

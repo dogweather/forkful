@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "PHP recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Sending HTTP requests is a crucial aspect of web development. It allows us to communicate with external APIs and retrieve data, making our applications more dynamic and powerful. Without sending HTTP requests, our applications would be limited to just the data we have on our own servers.
+When building a website or web application, PHP developers often need to interact with external APIs or retrieve data from other web servers. Sending an HTTP request is an essential skill for achieving this, as it allows communication between a client and a server.
 
 ## How To
+Sending an HTTP request in PHP is a straightforward process that involves building a request, sending it to a server, and receiving a response. Let's take a look at a simple example:
 
-To send an HTTP request in PHP, we can use the `file_get_contents()` function. This function takes in a URL as a parameter and returns the response as a string. Let’s take a look at an example:
+```
+<?php
 
-```PHP
-$response = file_get_contents('https://api.example.com/users');
+// Create a new HTTP request
+$request = curl_init('https://example.com/api/users/1');
+
+// Set request options
+curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+
+// Send the request and store the response in a variable
+$response = curl_exec($request);
+
+// Close the request
+curl_close($request);
+
+// Output the response
 echo $response;
 ```
 
-In this code snippet, we are sending an HTTP GET request to the URL `https://api.example.com/users` and storing the response in a variable called `$response`. We then echo out the response, which can be in any format such as JSON, XML, or plain text.
+In this example, we use the `curl` library to build an HTTP request to retrieve data from an API. First, we use the `curl_init()` function to create a new request and pass in the URL of the endpoint we want to access. Then, we set any necessary options for the request using `curl_setopt()`. In this case, we use `CURLOPT_RETURNTRANSFER` to make sure the response is returned as a string rather than being output directly to the browser.
 
-We can also specify other parameters in the `file_get_contents()` function, such as the request method and headers. Let’s see an example of sending a POST request with a JSON body:
+Next, we use `curl_exec()` to send the request to the server and store the response in a variable. Finally, we close the request using `curl_close()` and output the response to the browser.
 
-```PHP
-$url = 'https://api.example.com/users';
-$data = [
-    'name' => 'John',
-    'age' => 25
-];
-
-$options = [
-    'http' => [
-        'method' => 'POST',
-        'header' => 'Content-Type: application/json',
-        'content' => json_encode($data)
-    ]
-];
-
-$context = stream_context_create($options);
-$response = file_get_contents($url, false, $context);
-echo $response;
-```
-
-In this example, we first define the URL we want to send the request to and the data we want to include in the request body. Then, we set the options for the request, including the request method (POST) and the content-type header. Finally, we create a stream context using the `stream_context_create()` function and pass in the options. We can then use this context as a parameter in the `file_get_contents()` function to send the POST request. We also specify `false` as the second parameter to prevent automatic redirects.
+The above example is a basic demonstration of sending an HTTP request, but there are many more options and configurations that can be used. It's essential to read the documentation and understand the different options available to customize your request based on your specific needs.
 
 ## Deep Dive
+Behind the scenes, sending an HTTP request involves using a request method (such as GET, POST, PUT, or DELETE) and sending any necessary data (parameters, headers, etc.) along with the request. The server then processes the request and sends back a response, typically containing a status code and any relevant data.
 
-There are other methods and libraries available for sending HTTP requests in PHP, such as cURL and GuzzleHTTP. These offer more advanced functionality and options, such as handling authentication and setting custom headers.
+In our previous example, we used the `curl` library, but PHP also has built-in functions for sending HTTP requests, such as `file_get_contents()` and `fopen()`. These functions also allow you to specify additional options and configurations for your requests.
 
-It is also important to handle errors and exceptions when sending HTTP requests. We can use the `http_response_code()` function to check the status code of the response and handle any errors accordingly.
+It's important to note that sending an HTTP request can also involve authentication, which is necessary for accessing certain APIs or sensitive data. This is typically done by including an authorization header in the request that contains a token or credentials.
 
-## See Also
-
-- [PHP Documentation: file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP HTTP request libraries](https://www.php.net/manual/en/refs.webservice.php)
+See Also
+- [PHP cURL Documentation](https://www.php.net/manual/en/book.curl.php)
+- [PHP: Hypertext Preprocessor](https://www.php.net/)
+- [HTTP Requests in PHP: A Beginner’s Guide](https://www.pluralsight.com/guides/php-http-requests-beginners-guide)

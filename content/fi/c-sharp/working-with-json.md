@@ -1,5 +1,6 @@
 ---
-title:                "C#: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "C#: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "C#"
 category:             "C#"
@@ -9,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: JSON-tiedostojen käsittelyn tärkeys
+## Miksi
 
-JSON (JavaScript Object Notation) on yleisesti käytetty tiedostomuoto, joka on helppolukuinen sekä ihmisten että tietokoneiden kannalta. Se on myös helppo käsitellä ja tallentaa tiedostoja tietokannassa tai lähettää niitä internetin kautta. Tästä syystä on tärkeää osata työskennellä JSON-tiedostojen kanssa, ja tässä blogikirjoituksessa käymme läpi, miten se tehdään C# -ohjelmointikielellä.
+JSON (JavaScript Object Notation) on yksi yleisimmin käytetyistä tiedon muotoilutavoista ohjelmoinnissa, sillä se on helppolukuinen ja yhteensopiva useiden ohjelmointikielten kanssa. JSONia käytetään erityisesti siirtämään ja tallentamaan tietoja web-sovelluksissa ja rajapinnoissa.
 
-## Miten: JSON-tiedostojen käsittely C# -koodilla
-
-C# tarjoaa useita tapoja käsitellä JSON-tiedostoja. Yksi tapa on käyttää Newtonsoft.Json-pakettia, joka on suosittu kirjasto JSON-tiedostojen käsittelyyn. Esimerkiksi seuraava koodi lukee JSON-tiedoston ja tulostaa sen sisällön konsoliin:
+## Miten
 
 ```C#
-using Newtonsoft.Json;
-using System.IO;
+// Luodaan JSON-objekti C#-koodilla
+string json = @"{
+    'opiskelija': {
+        'nimi': 'Matti Meikäläinen',
+        'opiskelijanumero': 12345,
+        'kurssit': ['Ohjelmoinnin perusteet', 'Tietokannat']
+    }
+}";
 
-// lue tiedosto ja tallenna se muuttujaan
-string json = File.ReadAllText("tietokoneet.json");
+// Muunnetaan JSON-objekti C#-muotoon
+var opiskelija = JObject.Parse(json);
 
-// deserialisoi JSON-muotoiseksi listaksi 
-var tietokoneet = JsonConvert.DeserializeObject<List<Tietokone>>(json);
+// Tulostetaan opiskelijan nimi ja opiskelijanumero
+Console.WriteLine("Nimi: " + opiskelija["nimi"]);
+Console.WriteLine("Opiskelijanumero: " + opiskelija["opiskelijanumero"]);
 
-// tulosta tietokoneiden tiedot konsoliin
-foreach (Tietokone tietokone in tietokoneet)
+// Tulostetaan kaikki opiskelijan kurssit
+foreach (var kurssi in opiskelija["kurssit"])
 {
-    Console.WriteLine("Malli: " + tietokone.Malli);
-    Console.WriteLine("Valmistaja: " + tietokone.Valmistaja);
-    Console.WriteLine("Hinta: " + tietokone.Hinta);
+    Console.WriteLine(kurssi);
 }
+
+// Tulostaa:
+// Nimi: Matti Meikäläinen
+// Opiskelijanumero: 12345
+// Ohjelmoinnin perusteet
+// Tietokannat
 ```
 
-Tässä esimerkkikoodissa käytämme Newtonsoft.Json-pakettia muuntamaan JSON-tiedoston listaksi C#-olioita. Tästä seuraa, että pystymme käsittelemään tiedoston sisältöä helposti C#-koodilla ja esimerkiksi tulostamaan sen tai tallentamaan tietokantaan.
+## Syvällinen perehtyminen
 
-## Deep Dive: JSON-tiedostojen tyypit ja niiden käsittely
+JSON-objektit koostuvat avain-arvo pareista, joissa avain on merkkijono ja arvo voi olla mikä tahansa JSONin sallima tietotyyppi, kuten merkkijono, numero tai lista. JSONia voi lukea ja muuntaa C#-kielen avulla käyttämällä esimerkiksi Newtonsoft.JSON-kirjastoa. JSON-tietoja voi myös muokata ja luoda C#-koodeilla.
 
-JSON-tiedostoissa on useita erilaisia tietotyyppejä, kuten merkkijonoja, numeroita, totuusarvoja ja taulukoita. Kun haluat käsitellä näitä tietotyyppejä C#-koodilla, tarvitset metodeita ja luokkia, jotka osaavat muuttaa ne oikeiksi C#-tyypeiksi. Tämä onnistuu esimerkiksi Newtonsoft.Json paketin avulla, joka tarjoaa erilaisia JSON-muunnosmetodeja.
+See Also:
 
-Voit myös itse luoda JSON-muotoisia tiedostoja C#-ohjelmassa ja tallentaa ne esimerkiksi tietokantaan tai lähettää ne internetin kautta. Tämä on hyödyllistä esimerkiksi silloin, kun haluat lähettää käyttäjän syöttämiä tietoja palvelimelle tai tallentaa sovelluksen asetuksia.
-
-## Katso myös
-
-- [Newtonsoft.Json-dokumentaatio] (https://www.newtonsoft.com/json/help/html/Introduction.htm)
-- [Microsoftin JSON-tuki C#-kielilä] (https://msdn.microsoft.com/en-us/library/windows/desktop/dn313102(v=vs.85).aspx)
-- [JSONW.NET-dokumentaatio] (https://jsonw.codeplex.com/documentation)
+- [JSON.NET dokumentaatio](https://www.newtonsoft.com/json/help/html/Introduction.htm)
+- [Microsoftin C#-opetusohjelma](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/concepts/json/#creating-json-structures)

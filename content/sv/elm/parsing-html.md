@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Parsning av html"
-simple_title:         "Parsning av html"
+title:                "Analysera html"
+html_title:           "Elm: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Du kanske undrar varför någon skulle vilja lära sig att parsa HTML. Svaret är enkelt: för att kunna bygga mer dynamiska och interaktiva webbsidor! HTML-parsing möjliggör för utvecklare att extrahera data och manipulera DOM-trädet på ett enkelt sätt, vilket ger möjlighet till mer avancerade webbapplikationer med Elm.
+Har du någonsin undrat hur din internetbrowser vet vad den ska visa på skärmen när du besöker en websida? En av nyckelkomponenterna är parsing av HTML, som översätter webbsidans kod till något som din dator förstår. I denna artikel kommer vi att undersöka hur man gör detta med hjälp av Elm-programmering.
 
-# Så här gör du
+## Hur man gör det
 
-För att börja parsa HTML i Elm, behöver du först importera paketet "elm/parser" och "elm/html". Sedan definierar du en parser-funktion som tar in en sträng med HTML-innehåll och parsar den till en typ som du specificerar.
+För att parsar HTML i Elm, behöver vi först importera paketet 'elm/html' och inkludera dess funktioner i vår kod. Sedan kan vi definiera vår HTML struktur med hjälp av 'div', 'p', 'span' och andra taggar. När vi är nöjda med vår layout, använder vi funktionen 'Html.map' för att konvertera vår HTML till en sträng för att kunna använda det på vår webbsida.
 
 ```Elm
-import Parser exposing (..)
 import Html exposing (..)
+import Html.Attributes exposing (..)
 
-stringParser : Parser String
-stringParser = string "Hello, world!"
+-- definiera en HTML struktur
+myHtml =
+    div []
+        [ p [ class "title" ] [ text "Välkommen!" ]
+        , span [] [ text "Detta är en Elm artikel." ]
+        ]
 
-main : Html msg
+-- konvertera till sträng och använda på vår sida
 main =
-  div [] [
-    text "Parsed output: ",
-    text (run stringParser "Hello, world!")
-  ]
+    myHtml
+        |> Html.map toString
 ```
 
-Om du kör koden ovan kommer du att se "Parsed output: Hello, world!" på din webbsida.
+Om vi kör denna kod kommer vi att se följande utmatning på vår webbsida:
 
-# Djupdykning
+```html
+<div><p class="title">Välkommen!</p><span>Detta är en Elm artikel.</span></div>
+```
 
-För att förstå hur HTML-parsing fungerar i Elm, är det viktigt att förstå hur parser-biblioteket är uppbyggt. Det består av en samling funktioner och operatörer som möjliggör att skapa parser-funktioner för olika typer av innehåll. Detta gör det möjligt att stegvis bygga upp en mer komplex parser för att hantera olika typer av HTML-dokument.
+## Deep Dive
 
-Det är också viktigt att förstå konceptet med lägesberoende parsing i Elm. Det betyder att parser-funktionen läser in data från vänster till höger, och om en parsing-funktion lyckas, så stänger den av sig och låter nästa parsing-funktion ta vid. Om ingen parsing-funktion lyckas kommer hela parsern att misslyckas och returnera ett felmeddelande.
+När vi parsar HTML med Elm, finns det några användbara funktioner som vi kan använda för att manipulera vår HTML struktur. Till exempel, 'Html.map' som vi använde tidigare, låter oss konvertera vår struktur till en sträng. 'Html.map' kan också användas för att mappla över vår struktur och applicera olika transformationer på våra element. Dessutom kan vi också använda funktionen 'Html.Keyed.map' för att identifiera och uppdatera specifika element i vår HTML.
 
-# Se även
+En annan viktig aspekt av HTML parsing är att hantera attribut. I Elm, använder vi 'Html.Attributes' för att lägga till klass, id och andra attribut till våra element. Vi kan även använda CSS för att styla våra HTML-element genom att använda 'Html.Attributes.style'.
 
-- [Elms officiella dokumentation för parser](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [En guide till HTML-parsing i Elm](https://programmableweb.com/news/how-to-parse-html-in-elm/guide/2018/01/25)
-- [En djupdykning i Elm's lägesberoende parsing](https://dev.to/lukeledet/elm-deep-dive-december-2019-lie)
+## Se även
+
+- Elm Dokumentation: https://guide.elm-lang.org/
+- Elm Architecture: https://guide.elm-lang.org/architecture/

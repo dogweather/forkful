@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Utilizando expressões regulares."
-simple_title:         "Utilizando expressões regulares."
+title:                "Usando Expressões Regulares"
+html_title:           "Elixir: Usando Expressões Regulares"
+simple_title:         "Usando Expressões Regulares"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar Expressões Regulares em Elixir?
+## Por que usar expressões regulares em Elixir?
 
-Um programador de Elixir provavelmente se depara com muitas manipulações de strings no seu dia a dia. Embora existam muitas funções nativas para trabalhar com strings, elas podem se tornar muito complexas e difíceis de manter. Nesse caso, as expressões regulares podem ser uma ferramenta útil para realizar buscas e manipulações de maneira mais eficiente e organizada.
+Expressões regulares são uma ferramenta poderosa para manipulação de texto em qualquer linguagem de programação, incluindo o Elixir. Com elas, é possível encontrar, extrair, substituir e manipular padrões de texto de forma eficiente e concisa.
 
-## Como utilizar Expressões Regulares em Elixir
+## Como usar expressões regulares em Elixir
 
-Em Elixir, as expressões regulares são criadas com o operador `=~`, que verifica se determinado padrão está presente em uma string e retorna um valor booleano. Vamos ver um exemplo usando o módulo `Regex`:
+Para utilizar expressões regulares em Elixir, é necessário utilizar o módulo `Regex`, que contém funções para criar, manipular e fazer correspondência com expressões regulares.
 
-```
-Elixir.regex(~r/pinguim|gato|cachorro/, "Eu amo pinguins!") # true
-Elixir.regex(~r/pinguim|gato|cachorro/, "Eu amo pandas!") # false
-```
-
-Podemos também utilizar expressões regulares em conjunto com funções de string, como `String.match?` e `String.replace`, para buscar e substituir padrões em uma string:
+Um exemplo simples é encontrar todas as ocorrências de números em uma string:
 
 ```
-Elixir.String.match?("ab", ~r/[a-z]b/) # true
-Elixir.String.replace("gato preto", ~r/gato/, "gato branco") # "gato branco preto"
+Elixir
+str = "Tenho 10 maçãs e 5 laranjas."
+Regex.scan(~r/\d+/, str)
+# Saída: ["10", "5"]
 ```
 
-Além disso, Elixir também oferece opções de modificadores de expressões regulares, como `/i` para ignorar a diferença entre letras maiúsculas e minúsculas e `/u` para ignorar caracteres unicode.
+Também é possível utilizar a função `Regex.run/2` para encontrar apenas a primeira correspondência:
 
-## Aprofundando nas Expressões Regulares
+```
+Elixir
+str = "Tenho 10 maçãs e 5 laranjas."
+Regex.run(~r/\d+/, str)
+# Saída: "10"
+```
 
-As expressões regulares em Elixir seguem a mesma sintaxe utilizada em outras linguagens, mas com algumas particularidades. Por exemplo, para utilizar caracteres especiais, como ponto, asterisco e asterisco acentuado, é necessário utilizar uma barra invertida antes, como em `\.`, `\*` e `\*` respectivamente.
+Para substituir um padrão por outro valor, é possível utilizar a função `Regex.replace/3`:
 
-Outra coisa importante a ser levada em consideração é que as expressões regulares em Elixir são sempre case sensitive, ou seja, diferenciam entre letras maiúsculas e minúsculas, a menos que o modificador `/i` seja utilizado.
+```
+Elixir
+str = "Olá, meu nome é João."
+Regex.replace(~r/João/, str, "Maria")
+# Saída: "Olá, meu nome é Maria."
+```
 
-## Ver também
-- [Documentação de Expressões Regulares em Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Exemplos práticos de Expressões Regulares em Elixir](https://blog.appsignal.com/2018/08/28/elixir-alright-intro-to-regex.html)
-- [Forum de discussão sobre Expressões Regulares no Elixir Forum](https://elixirforum.com/t/regular-expressions-regex-in-elixir/359)
+Para mais exemplos e informações sobre as funções do módulo `Regex`, consulte a documentação oficial.
+
+## Aprofundando-se em expressões regulares
+
+Apesar de serem altamente úteis, expressões regulares podem ser complexas e confusas para iniciantes. É fundamental entender a sintaxe e as convenções utilizadas para criar padrões de texto, além de conhecer as diversas opções de modificadores e metacaracteres disponíveis.
+
+Além disso, é importante entender quando usar expressões regulares, pois nem sempre elas são a melhor solução para manipulação de texto. Outras opções, como funções de string e listas, podem ser mais adequadas em alguns casos.
+
+## Veja também
+
+- [Documentação oficial do módulo Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Cheatsheet de expressões regulares em Elixir](https://gist.github.com/AdrianaUrrea/8553766)
+- [Artigo sobre quando não usar expressões regulares em Elixir](https://lucianopessoa.medium.com/when-not-to-use-regular-expressions-in-elixir-1fe48624fefb)

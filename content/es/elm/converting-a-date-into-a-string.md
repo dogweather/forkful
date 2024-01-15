@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena"
+html_title:           "Elm: Convirtiendo una fecha en una cadena"
 simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,87 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué convertir una fecha en una cadena en Elm?
+## ¿Por qué convertir una fecha en una cadena de texto?
 
-Convertir una fecha en una cadena puede ser útil en varias situaciones, como mostrar la fecha en un formato específico o comparar fechas en una aplicación. En este artículo, exploraremos cómo hacerlo en Elm de manera sencilla y eficiente.
+Si estás trabajando en un proyecto en Elm que involucra fechas, es probable que en algún momento necesites convertir una fecha en una cadena de texto. Por ejemplo, al mostrar una fecha en un formato específico o al guardar una fecha en una base de datos. En este artículo, te enseñaré cómo hacerlo de forma sencilla y eficiente en Elm.
 
 ## Cómo hacerlo
 
-En Elm, podemos convertir una fecha en una cadena utilizando la función `toString` del módulo `Date`. Veamos un ejemplo:
+Para convertir una fecha en una cadena de texto en Elm, necesitamos usar la función `Date.toString` del paquete `elm/time`. Esta función acepta una cadena de formato y una fecha y devuelve la fecha en el formato especificado.
 
-```Elm
-import Date exposing (toString)
-import Time exposing (utc)
+Veamos un ejemplo de cómo podemos usar esta función. Supongamos que tenemos una fecha en formato Unix en una variable llamada `unixDate` y queremos mostrarla en formato DD/MM/AAAA. Podríamos hacerlo de la siguiente manera:
 
-date = utc 2021 10 15
+```elm
+import Time exposing (Date)
 
-toString date -- "2021-10-15"
+unixDate = 1618920000
+
+dateToString : String
+dateToString =
+    unixDate
+        |> Date.fromTime
+        |> Result.map (\date -> Date.toString "dd/MM/yyyy" date)
+        |> Result.withDefault ""
 ```
 
-En este ejemplo, importamos los módulos `Date` y `Time` y creamos una fecha utilizando la función `utc` que toma como argumentos el año, mes y día. Luego, utilizamos la función `toString` para convertir la fecha en una cadena con el formato "año-mes-día".
+En este ejemplo, usamos la función `Date.fromTime` para convertir nuestro valor de Unix en un tipo de dato `Date` y luego pasamos ese valor a la función `Date.toString` junto con nuestro formato deseado. Por último, utilizamos la función `Result.withDefault` para manejar el caso en el que la conversión falla y asignamos una cadena vacía como valor por defecto.
 
-Podemos manipular la fecha antes de convertirla en una cadena. Por ejemplo, si queremos mostrar la fecha en formato "día/mes/año", podemos hacerlo utilizando la función `toDayMonthYear` del módulo `Date`:
+Al imprimir el valor de `dateToString`, obtendremos la fecha en formato DD/MM/AAAA, en este caso: 19/04/2021.
 
-```Elm
-import Date exposing (toString, toDayMonthYear)
-import Time exposing (utc)
+## Deep Dive
 
-date = utc 2021 10 15
+La función `Date.toString` en realidad acepta una variedad de formatos diferentes. Puedes encontrar una lista completa de los formatos disponibles en la documentación del paquete `elm/time`. Aquí te dejo algunos ejemplos para que puedas probar:
 
-toString (toDayMonthYear date) -- "15/10/2021"
-```
+- `"yyyy-MM-dd"`: Muestra la fecha en formato AAAA-MM-DD, por ejemplo: 2021-04-19.
+- `"MMMM dd, yyyy"`: Muestra la fecha en formato mes dia, año, por ejemplo: April 19, 2021.
+- `"ddd, d MMM yyyy HH:mm:ss z"`: Muestra la fecha en formato día de la semana, día mes año hora:minuto:segundo zona horaria, por ejemplo: Mon, 19 Apr 2021 00:00:00 UTC.
 
-Otra opción es utilizar la función `fromTime` del módulo `Date` para crear una fecha a partir de un valor de tiempo y luego convertirla en una cadena:
-
-```Elm
-import Date exposing (toString, fromTime)
-import Time exposing (posixToMillis, utc)
-
-timestamp = posixToMillis 1634300400
-
-date = fromTime timestamp
-
-toString date -- "2021-10-15"
-```
-
-## Profundizando en la conversión de fechas a cadenas
-
-Al convertir una fecha en una cadena, es importante tener en cuenta el formato en el que queremos mostrarla. Por ejemplo, si queremos mostrar el nombre del mes en lugar de su número, podemos usar la función `toMonthName` del módulo `Date`:
-
-```Elm
-import Date exposing (toString, toDayMonthYear, toMonthName)
-import Time exposing (utc)
-
-date = utc 2021 10 15
-
-toString (toDayMonthYear date) -- "15/10/2021"
-toString (toMonthName date) -- "October 15, 2021"
-```
-
-Además, podemos utilizar la función `toIso8601` del módulo `Date` para obtener la fecha en formato ISO 8601, que es un estándar internacional para mostrar fechas y horas:
-
-```Elm
-import Date exposing (toString, toIso8601)
-import Time exposing (utc)
-
-date = utc 2021 10 15
-
-toString date -- "2021-10-15"
-toString (toIso8601 date) -- "2021-10-15T00:00:00+00:00"
-```
-
-En muchos casos, también puede ser útil convertir una fecha en una cadena para realizar comparaciones entre fechas. En Elm, podemos utilizar la función `toTime` del módulo `Date` para obtener la fecha como un valor de tiempo, que luego podemos comparar utilizando operadores como `>`, `<` o `==`:
-
-```Elm
-import Date exposing (toTime)
-
-date1 = toTime (utc 2021 10 15)
-date2 = toTime (utc 2021 10 20)
-
-date2 > date1 -- True
-```
+Además de la función `Date.toString`, también puedes utilizar la función `Date.toIsoString` para obtener la fecha en un formato ISO 8601, que es ampliamente utilizado para representar fechas en intercambios de datos.
 
 ## Ver también
 
-- Documentación oficial de Elm sobre el módulo Date: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Artículo sobre cómo manejar fechas y horas en Elm: https://thoughtbot.com/blog/handling-dates-and-times-in-elm
+- [Documentación oficial de Elm para el módulo Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Formato ISO 8601 en Wikipedia](https://es.wikipedia.org/wiki/ISO_8601)

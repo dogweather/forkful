@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt."
+html_title:           "Fish Shell: Å starte et nytt prosjekt."
+simple_title:         "Å starte et nytt prosjekt."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -9,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Det kan være mange grunner til å starte et nytt prosjekt, enten det er for personlig utvikling eller for å løse en konkret utfordring. Uansett grunn, så kan du bruke Fish Shell til å effektivt håndtere kommandoer og automatisere prosesser i ditt nye prosjekt.
+Å starte et nytt prosjekt kan være en spennende og givende opplevelse. Det kan være noe som hjelper deg med å lære nye ferdigheter, løse et problem du har støtt på, eller bare gi deg muligheten til å utforske noe nytt.
 
-##Hvordan
+## Slik gjør du det
 
-```Fish Shell
-# Opprette ny mappe for prosjektet
-mkdir mitt_prosjekt
-
-# Gå til mappen
-cd mitt_prosjekt
-
-# Opprette en ny fil
-touch main.py
-
-# Skriv inn koden i filen
-echo "print('Hei verden!')" > main.py
-
-# Kjøre filen
-python main.py
-```
-
-Nå vil du se følgende utskrift i terminalen:
+For å starte et nytt prosjekt i Fish Shell, kan du følge disse trinnene:
 
 ```Fish Shell
-Hei verden!
+mkdir mitt-prosjekt
+cd mitt-prosjekt
+touch main.fish
 ```
 
-Fish Shell gjør det enkelt å opprette og navigere rundt i mapper, samt å skrive og kjøre kode. Dette gjør det til et perfekt verktøy for å starte et nytt prosjekt.
+Dette vil opprette en ny mappe for prosjektet ditt, gå inn i mappen og opprette en tom fil kalt "main.fish" som kan brukes til å skrive din første kode.
 
-##Dypdykk
+Nå kan du åpne filen i en tekstredigerer og begynne å skrive koden din. Her er et eksempel på en enkel "Hello World" kode:
 
-Noe av det beste med Fish Shell er dens omfattende dokumentasjon og fellesskap. Hvis du trenger hjelp til å starte et nytt prosjekt, finnes det utallige ressurser tilgjengelig. Her er noen av dem:
+```Fish Shell
+echo "Hei verden!"
+```
 
-- [Fish Shell sin offisielle dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [GitHub-siden til Fish Shell med kildekoden](https://github.com/fish-shell/fish-shell)
-- [Fish Shell subreddit hvor du kan få hjelp og diskutere med andre brukere](https://www.reddit.com/r/fishshell)
+Dette vil skrive ut teksten "Hei verden!" når du kjører filen med kommandoen `fish main.fish`.
 
-Med disse ressursene tilgjengelig, er du godt rustet til å starte ditt neste prosjekt med Fish Shell.
+## Dypdykk
 
-##Se også
+Når du starter et nytt prosjekt, er det viktig å ha en klar idé om hva du vil oppnå og hvordan du skal komme dit. Du må også ta hensyn til eventuelle avhengigheter og begrensninger, og sørge for at du har en god struktur og organisering av koden din.
 
-- [En grunnleggende guide til å komme i gang med Fish Shell](https://www.cyberciti.biz/open-source/command-line-hacks/fish-shell-tutorial/)
-- [10 nyttige tips for å maksimere produktiviteten din med Fish Shell](https://spin.atomicobject.com/2017/08/01/fish-shell-features/)
-- [Hvordan bruke Fish Shell til å jobbe med Git](https://www.monolets.com/2020/02/26/git-fish-shell/)
+En god måte å samle inspirasjon og ideer for et nytt prosjekt er ved å undersøke eksisterende prosjekter og kodeeksempler i Fish Shell-samfunnet. Du kan også lese dokumentasjonen for forskjellige funksjoner og kommandoer i Fish Shell for å hjelpe deg med å forstå hvordan du kan bruke dem i prosjektet ditt.
+
+Når du har fått en god forståelse av hva du skal gjøre, kan du begynne å utvikle og teste koden din. Husk å jevnlig lagre endringene dine og bruke debugging-verktøy for å identifisere eventuelle feil og problemer underveis.
+
+## Se også
+
+- [Fish Shell offisiell nettside](https://fishshell.com/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub-repositorium](https://github.com/fish-shell/fish-shell)

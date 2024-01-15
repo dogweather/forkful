@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Sökning och ersättning av text"
+title:                "Sökning och ersättning av text"
+html_title:           "Ruby: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,50 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att söka och ersätta text är en vanlig uppgift inom programmering. Oavsett om du behöver täcka upp känsliga uppgifter i en textsträng eller byta ut föråldrade variabler, är det ett användbart verktyg för att effektivisera och förbättra din kod.
+Ibland behöver man göra stora ändringar i en text eller kod för att uppnå ett specifikt resultat. Istället för att manuellt gå igenom och ändra varje instans av en viss term kan man använda sig av sök- och ersättningsfunktionen i Ruby för att göra detta snabbt och effektivt.
 
 ## Hur man gör
 
-För att söka och ersätta text med hjälp av Ruby, kan du använda `gsub`-metoden. Den tar två argument: det första är det du vill söka efter och det andra är vad du vill ersätta det med. Här är ett exempel på kod:
+För att söka och ersätta text i en sträng kan man använda sig av metoden `gsub` (global substitution) tillsammans med ett reguljärt uttryck. Detta är ett sätt att matcha och ersätta text baserat på ett mönster.
+
+Ett enkelt exempel är att byta ut alla förekomster av ordet "hej" med ordet "tjena" i en sträng:
 
 ```Ruby
-text = "Jag älskar att koda med Ruby!"
-
-text.gsub("Ruby", "Python") 
-
-=> "Jag älskar att koda med Python!"
+str = "Hej världen!"
+ny_str = str.gsub(/hej/, "tjena")
+puts ny_str 
+# Output: "Tjena världen!"
 ```
 
-Som vi ser i exemplet ovan, ersätts "Ruby" med "Python". Om du vill söka och ersätta flera förekomster av en sträng, kan du ange ett tredje argument som anger hur många gånger `gsub`-metoden ska utföras. Här är ett exempel:
+Om man vill vara mer specifik kan man ange en modifierare efter uttrycket för att definiera sökningen. Till exempel, om vi bara vill byta ut ordet "hej" om det förekommer i början av en mening, kan vi använda modifieraren `^` som betyder "börja på":
 
 ```Ruby
-text = "Katt, katt, hund, katt, kanin"
-
-text.gsub("katt", "gris", 2) 
-
-=> "Gris, gris, hund, katt, kanin"
+str = "Hej världen! Hej igen!"
+ny_str = str.gsub(/^hej/, "tjena")
+puts ny_str 
+# Output: "Tjena världen! Hej igen!"
 ```
 
-Det tredje argumentet (2 i det här fallet) gör att metoden bara kommer att ersätta de två första förekomsterna av "katt" med "gris".
-
-## Djupdykning
-
-Om du vill vara mer specifik i din sökning och ersättning, kan du använda en så kallad "regular expression" (reguljärt uttryck) i stället för en enkel sträng. Detta ger dig mer kontroll över vad du letar efter och vad du vill ersätta det med. Här är ett exempel på hur du kan använda en reguljär expressoin i `gsub`-metoden:
+Man kan också ersätta mer än en term samtidigt genom att använda en normal array med sök- och ersättningsord som argument:
 
 ```Ruby
-text = "Min lösenord är 1234"
-
-text.gsub(/\d/, "X") 
-
-=> "Min lösenord är XXXX"
+str = "Hej världen! Hej igen!"
+ny_str = str.gsub(["hej", "igen"], ["tjena", "en sista gång"])
+puts ny_str 
+# Output: "Tjena världen! En sista gång igen!"
 ```
 
-I exemplet ovan letar `gsub`-metoden efter alla siffror och ersätter dem med ett "X". Det finns många olika mönster och uttryck som du kan använda i reguljära uttryck, så det kan vara värt att utforska mer om du vill bli mer avancerad i din kodning.
+## På djupet
 
-## Se också
+Det finns många olika sätt att använda sök- och ersättning i Ruby, inklusive att matcha och ersätta baserat på mönster och regler. Man kan också använda sig av block-funktionen för att ändra text baserat på specifika villkor eller logik. Det finns många resurser där man kan lära sig mer om detta ämne, inklusive Ruby-dokumentationen och olika forum och communitys på nätet.
 
-Här är några användbara resurser för vidare läsning och övning:
+## Se även
 
-- [Ruby Dokumentation för `gsub`-metoden](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
-- [Regular Expressions i Ruby](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
-- [Regex101 - ett verktyg för att testa reguljära uttryck på nätet](https://regex101.com/).
+- [Ruby-dokumentation: Strängar](https://ruby-doc.org/core-3.0.1/String.html)
+- [Ruby for Beginners: Finding and Replacing Text](https://ruby-for-beginners.rubymonstas.org/fundamentals/strings/finding-and-replacing-text.html)
+- [Stack Overflow: How to replace text in a Ruby string](https://stackoverflow.com/questions/6568053/how-to-replace-text-in-a-ruby-string)

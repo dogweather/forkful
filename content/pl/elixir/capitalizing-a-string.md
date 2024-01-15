@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Wielkimi literami ciąg znaków"
-simple_title:         "Wielkimi literami ciąg znaków"
+title:                "Pisownia z wielkiej litery ciągu znaków"
+html_title:           "Elixir: Pisownia z wielkiej litery ciągu znaków"
+simple_title:         "Pisownia z wielkiej litery ciągu znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,49 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarza się, że w trakcie pisania kodu, musimy zmienić sposób wyświetlania tekstu. Może być to zwykłe podkreślenie pewnych wyrazów lub cały ciąg znaków wypisany wielkimi literami. W tym wpisie dowiesz się, dlaczego warto umieć zamieniać pierwszą literę słowa na dużą w języku Elixir.
+Czy kiedykolwiek zastanawiałeś się, dlaczego otrzymując tekst od użytkownika, nazywającego się na przykład "anna", chcesz go zamienić na "Anna"? Czy nie byłoby łatwiej zaoszczędzić sobie czasu i pracy, pozwalając tej osobie na użycie ulubionej wielkości liter w swoim imieniu? Jednak z punktu widzenia estetyki i przyjętych konwencji, ważne jest, aby tekst był poprawnie napisany z punktu widzenia wielkości liter. W Elixirze istnieje narzędzie, które może ci w tym pomóc - funkcja `String.capitalize/1`.
 
 ## Jak to zrobić
 
-Aby zamienić pierwszą literę wyrazu na dużą w Elixirze, musimy użyć funkcji `String.capitalize/1`. Przyjmuje ona jeden argument - tekst, na którym chcemy przeprowadzić operację. W poniższym przykładzie stworzymy zmienną `tekst` zawierającą wyraz "programowanie", a następnie wywołamy funkcję `String.capitalize/1` na tej zmiennej. Wynik operacji zostanie przypisany do nowej zmiennej `tekst_zmieniony`.
+W celu użycia funkcji `String.capitalize/1` należy najpierw wprowadzić do swojego kodu moduł `String`, używając polecenia `require String`. Następnie wywołujemy funkcję, podając jako argument nasz tekst, który chcemy zamienić na poprawną wielkość liter. Na przykład:
 
 ```Elixir
-tekst = "programowanie"
-tekst_zmieniony = String.capitalize(tekst)
-IO.puts(tekst_zmieniony)
+require String
+
+String.capitalize("anna")
+# Wynik: "Anna"
 ```
 
-Przykładowy output:
+Funkcja `String.capitalize/1` jest również w stanie zamienić wielkość liter dla całego tekstu, a nie tylko pierwszej litery. W takim przypadku, dla tekstu "jeśli zdroweś to złóż żądanie", wynikiem będzie "Jeśli Zdroweś To Złóż Żądanie". Można to zrobić, dodając opcję `:all` do funkcji:
 
 ```Elixir
-Programowanie
+String.capitalize("if you're happy and you know it", :all)
+# Wynik: "If You're Happy And You Know It"
 ```
 
-Możemy również wywołać funkcję `String.capitalize/1` bezpośrednio na wyrazie, bez tworzenia dodatkowej zmiennej.
+Możliwe jest także użycie funkcji `String.capitalize/1` dla wielu wyrazów jednocześnie, wykorzystując pętlę `Enum.map`:
 
 ```Elixir
-IO.puts(String.capitalize("kodowanie"))
-```
-Przykładowy output:
+texts = ["anna", "emma", "tomasz"]
 
-```Elixir
-Kodowanie
+Enum.map(texts, &String.capitalize/1)
+# Wynik: ["Anna", "Emma", "Tomasz"]
 ```
 
-## Deep Dive
+## Głębsze wewnętrzne działanie
 
-Funkcja `String.capitalize/1` wykorzystuje mechanizm Unicode w celu określenia, która litera powinna być zamieniona na dużą. Dzięki temu jest ona w stanie obsłużyć nie tylko tekst w języku angielskim, ale także w innych językach, które wykorzystują specjalne znaki. Warto również zauważyć, że funkcja ta nie tylko zamienia pierwszą literę na dużą, ale też konwertuje pozostałe litery na małe.
+Podczas gdy funkcja `String.capitalize/1` jest prosta w użyciu, warto wiedzieć, jak działa wewnętrznie. Otóż, funkcja ta wykorzystuje moduł `String.Special`, który zawiera listę wyjątków oraz reguły do zamiany liter w różnych językach. Dzięki temu, funkcja potrafi obsłużyć specjalne przypadki, takie jak zamiana litery "i" na "I" w jednym słowie, ale nie w drugim.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja funkcji `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/2
-- Wprowadzenie do języka Elixir: https://medium.com/frontendista/poznajemy-elixir-na-podstawie-dziwnej-przygody-kuby-s-b6681a8bdee5
-- Przykłady zastosowania funkcji `String.capitalize/1`: https://blog.appsignal.com/2020/08/12/elixir-alphabet-beautiful-toolbox.html#string-capitalize
-
-Dzięki umiejętności zmiany pierwszej litery słowa na dużą, możesz w łatwy sposób dostosować swoje wyświetlane teksty do potrzeb lub wymagań swojego projektu. Nie zapomnij jednak, że funkcja ta działa tylko na pojedynczych słowach - jeśli chcesz zamienić pierwszą literę na dużą w całym zdaniu, musisz podzielić je na pojedyncze wyrazy i na każdym z nich wywołać funkcję `String.capitalize/1`.
-
-## Zobacz również
-
-- Dokumentacja funkcji `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/2
-- Wprowadzenie do języka Elixir: https://medium.com/frontendista/poznajemy-elixir-na-podstawie-dziwnej-przygody-kuby-s-b6681a8bdee5
-- Przykłady zastosowania funkcji `String.capitalize/1`: https://blog.appsignal.com/2020/08/12/elixir-alphabet-beautiful-toolbox.html#string-capitalize
+- [Dokumentacja funkcji String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/2)
+- [Dokumentacja modułu String.Special](https://hexdocs.pm/elixir/String.Special.html)
+- [Przewodnik po Elixirze](https://elixir-lang.org/getting-started/introduction.html)

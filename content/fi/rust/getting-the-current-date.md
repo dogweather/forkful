@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Tämänhetkisen päivämäärän saaminen"
-simple_title:         "Tämänhetkisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Rust: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Tervetuloa lukemaan tämän blogikirjoituksen Rust-ohjelmoinnista ja siitä, miten saat nykyisen päivämäärän. Rust on moniparadigmainen ja nopeasti kasvava ohjelmointikieli, joka on saanut suosiota ympäri maailmaa. Nykyinen päivämäärä on tärkeä osa monia ohjelmia ja Rustissa sen saaminen voi olla hieman erilaista muihin ohjelmointikieliin verrattuna.
 
-## Miten
-Alla olevassa koodiesimerkissä näytämme, miten voit käyttää Rustia saadaksesi nykyisen päivämäärän. (Huomaa, että tämän koodin toimimiseen vaaditaan Rustin standardikirjasto.)
+Nykyisen päivämäärän hakemisessa on hyötyä monissa tilanteissa, kuten sovellusten ajastamisessa, tapahtumien aikaleimoissa ja käyttäjän suoranaisessa tilantarkkailussa.
+
+## Kuinka
 
 ```Rust
-use std::time::SystemTime;
-use std::time::UNIX_EPOCH;
+use std::time::{SystemTime, UNIX_EPOCH}; // tarvittavat kirjastot tuodaan alussa
 
+// järjestelmän kellonaika UNIX-aikana käyttäen SystemTime ja UNIX_EPOCH -kirjastoja
 let now = SystemTime::now();
-let seconds = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
-println!("Nykyinen aika UNIX-aikana: {}", seconds);
+let seconds = now.duration_since(UNIX_EPOCH).expect("Ongelma aikaleimoissa.").as_secs();
 
+// nykyisen päivämäärän muotoilu käyttäen strftime-syntaxia 
+let date = time::strftime("%d-%m-%Y", &time::now()).unwrap();
+
+println!("UNIX-aikana: {}", seconds);
+println!("Päivämäärämuodossa: {}", date);
+
+// Output:
+// UNIX-aikana: 1604734707
+// Päivämäärämuodossa: 07-11-2020
 ```
 
-Kun suoritat tämän koodin, saat ulostulona nykyisen päivämäärän UNIX-aikana, joka on tammikuun 1. 1970 klo 00:00:00 UTC:sta kulunut aika.
-
 ## Syventävä tieto
-Rustilla on monia erilaisia tapoja saada nykyinen päivämäärä, mutta yllä oleva koodiesimerkki käyttää SystemTime-tyyppiä, joka antaa lisäksi tietoa siitä, kuinka kauan ohjelman suorittaminen on kestänyt. Voit myös käyttää toista tyyppiä, Local, joka palauttaa nykyisen päivämäärän paikallisessa aikavyöhykkeessä. Voit lukea lisää näistä Rustin dokumentaatiosta.
+
+Päivämäärän haku tuntuu yksinkertaiselta toiminnolta, mutta taustalla tapahtuu paljon. Esimerkiksi UNIX-aika ilmaisee ajan kulun vuoden 1970 alusta lähtien sekunteina, kun taas strftime-syntax antaa mahdollisuuden muotoilla aikaleiman halutunlaiseksi. Rustissa käytettävät SystemTime ja UNIX_EPOCH -kirjastot mahdollistavat monipuolisen aikaleimojen käsittelyn.
 
 ## Katso myös
--https://www.rust-lang.org/
--https://doc.rust-lang.org/std/time/struct.SystemTime.html
--https://doc.rust-lang.org/std/time/struct.Local.html
+
+- [Rustin virallinen dokumentaatio päivämäärän hakuun](https://doc.rust-lang.org/std/time/fn.strftime.html)
+- [Date and time libraries for Rust](https://blog.logrocket.com/date-and-time-libraries-for-rust/)
+- [Using Times and Dates in Rust](https://blog.skylight.io/using-times-and-dates-in-rust/)

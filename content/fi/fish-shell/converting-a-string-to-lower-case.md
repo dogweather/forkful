@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Muuntaa merkkijono pieniksi kirjaimiksi"
-simple_title:         "Muuntaa merkkijono pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Fish Shell: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi 
 
-Monissa ohjelmointiprojekteissa voi olla tarpeen muuttaa merkkijono pienaakkosiksi. Tämä voi olla hyödyllistä esimerkiksi vertailujen tekemisessä tai tietokannan käsittelyssä. Fish Shellilla tämä on helppoa tehdä ja se säästää aikaa ja vaivaa.
+On monia syitä, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi. Yksi yleinen syy on, että haluat varmistaa, että merkkijono on yhtenäisessä muodossa ja omalla kielelläsi. Tämä on hyödyllistä esimerkiksi vertaillessa merkkijonoja keskenään.
 
-## Kuinka
+# Miten tehdä
 
-Alla on esimerkki koodista, joka muuttaa merkkijonon pienaakkosiksi Fish Shellilla:
+Fish Shellilla merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa. Käytä vain `string tolower` komentoa, ja anna haluamasi merkkijono parametrina.
 
-```Fish Shell
-set string "Hei, tämä On EksaMPle"
-set lower_case (string | tr '[:upper:]' '[:lower:]')
-echo $lower_case
+```
+Fish Shell
+string tolower "TÄMÄ ON MERKKIJONO"
 ```
 
-Tämän koodin toiminta selitetään tarkemmin alla olevassa "Deep Dive" osiossa.
+Tämä koodi tuottaa seuraavan tulosteen:
 
-Koodin ensimmäisessä rivissä luodaan muuttuja, johon tallennetaan muunnettava merkkijono. Tässä esimerkissä se on "Hei, tämä On EksaMPle".
+```
+tämä on merkkijono
+```
 
-Toisessa rivissä käytetään ```tr``` komentoa muuttamaan merkkijono pienaakkosiksi. Ensimmäinen argumentti, '[:upper:]', tarkoittaa, että muutetaan kaikki merkkijonon isot kirjaimet pieniksi kirjaimiksi. Toinen argumentti, '[:lower:]', on vastaavasti kaikkien kirjainten muuttamiseksi pieniksi. Tässä vaiheessa muunnettu merkkijono tallennetaan uuteen muuttujaan ```lower_case```.
+# Syvemmälle
 
-Viimeisessä rivissä tulostetaan uusi pienaakkoinen merkkijono komennolla ```echo```.
+Fish Shellin `string tolower` komento toimii muuntamalla merkkijonon jokaisen kirjaimen pieneksi kirjaimeksi. Tämä tarkoittaa, että se myös muuttaa kirjaimet, jotka ovat jo pieniä kirjaimia, kuten aakkoset ja välimerkit.
 
-## Deep Dive
+Voit myös käyttää `string match -r` komentoa yhdistettynä `string tolower` komentoon, jotta muuntaisit vain tiettyjä kirjaimia haluamassasi merkkijonossa. Esimerkiksi, jos haluat muuttaa vain sanat "fish" ja "shell" merkkijonossa pieniksi kirjaimiksi, voit käyttää seuraavaa koodia:
 
-Fish Shellin ```tr``` komento on erittäin hyödyllinen työkalu merkkijonojen käsittelyssä. Se ottaa kaksi argumenttia, ensimmäinen on etsittävä merkkijono ja toinen korvaava merkkijono. Käyttämällä '[:upper:]' ja '[:lower:]' argumentteja meidän tapauksessamme, muunnetaan merkkijonon isot kirjaimet pieniksi ja tallennetaan uuteen muuttujaan.
+```
+fish shell
+string match -r "(fish|shell)" | string tolower
+```
 
-Fish Shellin muuttujien asettelu on myös hyödyllinen taito, jota kannattaa oppia. Muuttuja luodaan komennolla ```set``` ja sitä käytetään myöhemmin komennolla ```echo```.
+Tämä tuottaa tuloksen:
 
-## Katso myös
+```
+fish shell
+```
 
-- ​[Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- ​[Tr-komento käyttöohjeet](https://www.man7.org/linux/man-pages/man1/tr.1.html)
+# Katso myös
+
+- Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/index.html
+- "String Processing in Fish Shell" opetusohjelma: https://www.tecmint.com/useful-string-processing-features-in-fish-shell/
+- "Learn Fish Shell: A Beginner's Guide" opetusohjelma: https://medium.com/swlh/learn-fish-shell-a-beginner-s-guide-6b62d64c4383

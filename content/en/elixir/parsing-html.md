@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Elixir recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,76 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Parsing HTML can be a tedious task, but it is a necessary one for anyone working with web development or data extraction. By understanding how to parse HTML, you can easily extract specific data from web pages, create web scrapers, or build web automation tools. This can save you time and effort in your development process.
+Parsing HTML, or converting raw HTML code into a structured document, is a crucial task in web development. It is necessary for building websites, web scrapers, and other web-related applications. With the rise of web technologies, knowing how to parse HTML can be a valuable skill for any programmer.
 
 ## How To
 
-To parse HTML in Elixir, we can use the `Floki` library. First, we need to add it to our `mix.exs` file:
+To parse HTML in Elixir, we can use the popular library, `Floki`. First, we need to install it in our project by adding `{:floki, "~> 0.28.0"}` to our `mix.exs` file's dependencies. Once installed, we can use the `Floki.parse/1` function to parse HTML code. Let's see an example:
 
-```
-defp deps do
-  [
-    {:floki, "~> 0.26.0"},
-  ]
-end
-```
+```Elixir
+html = "<div><p>Hello!</p></div>"
 
-Next, we need to import the `Floki` module in our code:
-
-```
-import Floki
+parsed_html = Floki.parse(html)
+IO.inspect parsed_html
 ```
 
-Now, let's say we want to extract the text from a `<p>` tag on a website:
+The output of this code would be a representation of the HTML code as a nested data structure, making it easier to manipulate and extract information from. In this case, the output would be:
 
-```
-html = """
-<!DOCTYPE html>
-<html>
-  <body>
-    <p>Hello world!</p>
-  </body>
-</html>
-"""
-
-text = html
-      |> Floki.parse_document()
-      |> Floki.find("p")
-      |> Floki.text()
+```Elixir
+[
+  {:div, [], [
+    {:p, [], ["Hello!"]}]}
+]
 ```
 
-In this example, we used `Floki.parse_document()` to convert the HTML string into a Floki Document, then we used `Floki.find()` to find the `<p>` tag, and finally, we used `Floki.text()` to extract the text from the tag. The value of `text` would be "Hello world!".
+We can also use `Floki.find/2` to search for specific elements within the HTML code. For example, if we want to find all `h1` tags within our HTML, we can use the following code:
 
-We can also use `Floki.find_all()` to extract all `<a>` tags and their attributes:
+```Elixir
+html = "<h1>Welcome to my website</h1><div><h1>Some other heading</h1></div>"
 
-```
-html = """
-<!DOCTYPE html>
-<html>
-  <body>
-    <a href="https://elixir-lang.org">Elixir</a>
-    <a href="https://phoenixframework.org">Phoenix</a>
-    <a href="https://erlang.org">Erlang</a>
-  </body>
-</html>
-"""
-
-links = html
-        |> Floki.parse_document()
-        |> Floki.find_all("a")
-        |> Enum.map(fn a -> Floki.attribute(a, "href") end)
+h1_tags = Floki.find(html, "h1")
+IO.inspect h1_tags
 ```
 
-The value of `links` would be ["https://elixir-lang.org", "https://phoenixframework.org", "https://erlang.org"].
+The output would be a list of all `h1` tags found in the HTML code, in this case, `["Welcome to my website", "Some other heading"]`.
 
 ## Deep Dive
 
-Floki also provides functions like `Floki.raw_html()` and `Floki.raw_text()` to extract the raw HTML or text, without removing any tags or special characters. It also supports CSS selectors, allowing for easier and more specific extraction of data from the HTML.
+Parsing HTML with Elixir is made even more powerful with features like patterns and queries. With patterns, we can search for specific attributes within HTML tags, while queries allow us to navigate the HTML structure more efficiently. Additionally, `Floki` supports CSS selectors, making it easier to locate specific elements within the HTML code.
 
-Additionally, Floki is built on top of the `html5ever` library, which provides a robust HTML parser with better error handling. This can be useful when dealing with complex or malformed HTML.
+To learn more about parsing HTML with `Floki`, check out the official documentation [here](https://hexdocs.pm/floki/api-reference.html).
 
 ## See Also
 
-- Floki documentation: https://hexdocs.pm/floki/getting-started.html
-- HTML5ever documentation: https://github.com/whatwg/html/tree/master/html5
-- Elixir forum discussion on parsing HTML: https://elixirforum.com/t/how-to-parse-html-using-elixir/14377
+- [Elixir `Floki` Documentation](https://hexdocs.pm/floki/api-reference.html)
+- [Elixir Official Website](https://elixir-lang.org/)
+- [Elixir `mix` Documentation](https://hexdocs.pm/mix/Mix.html)

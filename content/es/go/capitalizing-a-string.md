@@ -1,6 +1,7 @@
 ---
-title:                "Go: Cambiando a mayúsculas una cadena"
-simple_title:         "Cambiando a mayúsculas una cadena"
+title:                "Convertir una cadena a mayúsculas"
+html_title:           "Go: Convertir una cadena a mayúsculas"
+simple_title:         "Convertir una cadena a mayúsculas"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,11 +10,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-El capitalizar una cadena de texto es una funcionalidad muy útil en cualquier lenguaje de programación. En Go, nos permite cambiar la capitalización de una cadena de caracteres según nuestras necesidades.
+## ¿Por qué capitalizar una cadena en Go?
+
+La capitalización de una cadena en Go puede ser útil en varias situaciones, como en la creación de títulos o nombres con las primeras letras en mayúscula. También puede ser útil para normalizar la entrada del usuario y garantizar que todas las palabras comiencen con mayúsculas.
 
 ## Cómo hacerlo
-Para capitalizar una cadena en Go, podemos utilizar la función `strings.ToUpper()`. Veamos un ejemplo práctico:
+La función `Title` de la biblioteca `strings` en Go permite capitalizar una cadena. A continuación, se muestra un ejemplo de cómo utilizarla en un programa:
 
 ```Go
 package main
@@ -24,47 +26,21 @@ import (
 )
 
 func main() {
-    frase := "hoy es un buen día para programar"
-    
-    fmt.Println(strings.ToUpper(frase))
+    cadena := "esta es una prueba"
+    cadenaCapitalizada := strings.Title(cadena)
+    fmt.Println(cadenaCapitalizada)
 }
 ```
 
-**Salida:**
-```
-HOY ES UN BUEN DÍA PARA PROGRAMAR
-```
+La salida de este programa sería "Esta Es Una Prueba". Como se puede ver, la primera letra de cada palabra ha sido cambiada a mayúscula.
 
-En este ejemplo, utilizamos la función `ToUpper()` del paquete `strings` para convertir nuestra cadena `frase` en mayúsculas. También podemos utilizar la función `strings.ToLower()` para convertirla en minúsculas.
+## Más detalles
 
-Otra opción es utilizar la función `strings.Title()`, que capitaliza la primera letra de cada palabra en una cadena. Veamos un ejemplo:
+La función `Title` de la biblioteca `strings` en Go utiliza reglas específicas para capitalizar una cadena. Por ejemplo, las palabras en minúsculas como "a", "de" o "del" no se capitalizarán a menos que sean la primera palabra en la cadena. También tiene en cuenta las letras acentuadas y caracteres especiales al capitalizar una cadena.
 
-```Go
-package main
+Si se necesita una forma más personalizada de capitalizar una cadena, se puede usar la función `Map` de la biblioteca `strings` para crear una función que capitalice de acuerdo a ciertos criterios personalizados.
 
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    titulo := "aprendiendo a programar en go"
-    
-    fmt.Println(strings.Title(titulo))
-}
-```
-
-**Salida:**
-```
-Aprendiendo A Programar En Go
-```
-
-## Profundizando
-Si queremos trabajar con cadenas de caracteres más complejas, como por ejemplo acentos o caracteres especiales, es importante tener en cuenta que la función `ToUpper()`, `ToLower()` y `Title()` no siempre funcionarán correctamente. Es por eso que existen otras funcionalidades más avanzadas en Go para manejar capitalizaciones específicas.
-
-Una de ellas es el paquete `golang.org/x/text/` que nos brinda una gran variedad de funcionalidades para trabajar con cadenas de caracteres en diferentes idiomas. Este paquete utiliza el estándar Unicode para manejar caracteres especiales y acentuados.
-
-## Véase también
-- [Documentación oficial de la función `ToUpper()` en la página de Go](https://golang.org/pkg/strings/#ToUpper)
-- [Documentación oficial del paquete `golang.org/x/text/`](https://pkg.go.dev/golang.org/x/text)
-- [Ejemplos de uso de la función `Title()` en la documentación de Go](https://golang.org/pkg/strings/#Title)
+## Ver también
+- Documentación oficial de la función `Title` de `strings`: https://golang.org/pkg/strings/#Title
+- Ejemplos adicionales de capitalización en Go: https://golangbyexample.com/strings-golang/
+- Otras funciones útiles de la biblioteca `strings` en Go: https://www.callicoder.com/golang-strings-cheat-sheet/

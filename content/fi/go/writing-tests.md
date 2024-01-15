@@ -1,5 +1,6 @@
 ---
-title:                "Go: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Go: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Go"
 category:             "Go"
@@ -9,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi testaaminen on tärkeää Go-ohjelmoinnissa?
+## Miksi
 
-Testaamisen kirjoittaminen on tärkeä osa Go-ohjelmointia, koska se auttaa löytämään ja korjaamaan virheitä ennen kuin ohjelma julkaistaan tuotantoon. Tämä auttaa välttämään käyttäjien kohtaamia ongelmia ja parantaa ohjelman laatua yleisesti.
+Go on moderni ohjelmointikieli, joka korostaa yksinkertaisuutta ja tehokkuutta. Kirjoittaessa testeja Go:lla, voit varmistaa koodisi toimivuuden ja luotettavuuden, mikä auttaa sinua luomaan laadukkaampia sovelluksia.
 
-## Kuinka kirjoittaa testejä Go-ohjelmissa
+## Miten
 
-Testien kirjoittaminen Go-ohjelmissa on suhteellisen helppoa. Voit käyttää sisäänrakennettua "testing" -pakettia ja sen mukana tulevia toimintoja helpottaaksesi testien luomista. Alla on yksinkertainen esimerkki:
+Kirjoittaa testeja Go:lla on helppoa ja tehokasta. Tässä on esimerkki, miten voit luoda yksinkertaisen testin Go:n testilokerolle:
 
-```
-package main
+```Go
+package test
 
-import (
-    "testing"
-)
+import "testing"
 
-// Testataan kahden numeron yhteenlaskua
 func TestAddition(t *testing.T) {
-    result := 2 + 3
-    if result != 5 {
-        t.Errorf("Yhteenlasku väärin, odotettiin 5 mutta saatiinkin %d", result)
-    }
+	result := 2 + 2
+	if result != 4 {
+		t.Error("Expected 4, got", result)
+	}
 }
 ```
 
-Kuten näet, testifunktio aloitetaan "Test" -sanalla ja sen jälkeen tulee testattavan toiminnon nimi. Tämän jälkeen voit määrittää haluamasi testit ja niiden odotetut tulokset. Jos testi ei tuota odotettua lopputulosta, voit käyttää "t.Errorf()" -funktiota ilmoittamaan virheestä.
+Tässä esimerkissä luodaan yksinkertainen funktio, joka testaa kahden numeron yhteenlaskua. Testilokeron avulla voit määrittää odotetun tuloksen ja varmistaa, että funktiosi palauttaa oikean arvon.
 
-Suorittaaksesi testit, voit käyttää "go test" -komentoa terminaalissa. Tämä näyttää tulokset, ja jos kaikki testit suoritettiin onnistuneesti, saat viestin "ok" konsolista.
+Testilokeron käyttöönotto vaatii vain yhden tuontilausekkeen "testing", ja sen avulla voit käyttää monia erilaisia testaukseen liittyviä toimintoja, kuten "t.Error()", joka kertoo meille, jos testi epäonnistuu. Testilokeroa käytetään myös "go test" -komennolla, joka ajaa kaikki testisi ja ilmoittaa, jos jokin niistä epäonnistuu.
 
-## Syvällisempi sukellus testien kirjoittamiseen
+## Syvä sukellus
 
-Testien kirjoittaminen Go-ohjelmissa tarjoaa paljon mahdollisuuksia. Voit käyttää erilaisia testaustyökaluja, kuten "goconvey" tai "testify", jotka helpottavat testien kirjoittamista ja näyttävät selkeämmin testien tuloksia.
+Testaaminen on tärkeä osa ohjelmointia ja voi auttaa sinua löytämään virheitä ja bugeja koodistasi varhaisessa vaiheessa, mikä säästää aikaa ja vaivaa myöhemmin. Go käyttää "go test" -toimintoa, joka sisältää sisäänrakennetut testaukseen liittyvät toiminnot, joten sinun ei tarvitse etsiä ja tuoda kirjastoja tai ohjelmia, jotka auttavat sinua testauksessa.
 
-Lisäksi voit käyttää "benchmarks" -toimintoa testaamaan ohjelmasi suorituskykyä ja optimoimaan sitä. Voit myös hyödyntää "mocking" -tekniikkaa simuloimaan ulkoisia riippuvuuksia testien aikana.
-
-Testit myös auttavat dokumentoimaan koodiasi ja helpottavat muiden kehittäjien ymmärtämistä ja ylläpitämistä. Ne myös mahdollistavat ohjelmasi skaalautumisen ja kehittymisen luotettavasti.
+Lisäksi Go:lla on käytettävissä myös muita testaukseen liittyviä työkaluja, kuten "go cover", joka auttaa seuraamaan testien kattavuutta ja löytämään osat koodista, jotka eivät ole tarpeeksi testattuja.
 
 ## Katso myös
 
-- [Go-kieltojen sisäänrakennettu "testing" -paketti](https://golang.org/pkg/testing/)
-- [GoConvey - testaustyökalu Go-kielen projekteihin](https://github.com/smartystreets/goconvey)
-- [Testify - helppokäyttöinen kirjasto testien kirjoittamiseen Go-kielen projekteissa](https://github.com/stretchr/testify)
-- [Go-lang.orgin testauksen opas](https://golang.org/doc/code.html#Testing)
+- [Virallinen Go:n dokumentaatio testauksesta](https://golang.org/pkg/testing/)
+- [Go Bootcamp -sarja, joka sisältää paljon tietoa Go:n testauksesta](http://www.golangbootcamp.com/book/testing)
+- [Go:n viralliset esimerkit testaamisesta GitHubissa](https://github.com/golang/go/wiki/LearnTests)

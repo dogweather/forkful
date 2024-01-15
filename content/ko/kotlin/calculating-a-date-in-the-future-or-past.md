@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 미래나 과거의 날짜 계산하기"
+title:                "미래나 과거의 날짜 계산하기"
+html_title:           "Kotlin: 미래나 과거의 날짜 계산하기"
 simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜?
-
-날짜를 과거나 미래로 계산하는 것이 왜 중요할까요?
-
 ## 왜
 
-여러분이 내일은 무슨 요일인지, 아니면 다음달에 어떤 날짜이고, 혹은 10년 후에는 무슨 해나 달인지 알고 싶다면 날짜를 계산해야합니다. 예를 들어, 특정 이벤트를 계획할 때 날짜를 정확하게 계산하는 것이 중요할 수 있습니다.
+날짜를 미래나 과거로 계산하는 일에 참여하는 이유는 매우 많습니다. 예를 들어, 휴가 계획을 세울 때나 중요한 일정을 조율할 때 등 날짜를 미리 계산해두는 것이 유용합니다.
 
-## 방법
-
-날짜를 계산하려면 Kotlin의 내장 함수인 `Calendar`와 `SimpleDateFormat`을 사용할 수 있습니다. 아래는 예시 코드입니다.
+## 하는 법
 
 ```Kotlin
-val calendar = Calendar.getInstance()
-calendar.add(Calendar.DAY_OF_YEAR, 1) // 내일의 날짜를 계산합니다.
-val dateFormat = SimpleDateFormat("yyyy/MM/dd")
-val tomorrow = dateFormat.format(calendar.time)
-println("내일의 날짜는 $tomorrow 입니다.")
+// 현재 날짜를 가져 옵니다.
+val currentDate = LocalDate.now()
+
+// 1년 후의 날짜를 계산합니다.
+val futureDate = currentDate.plus(Period.ofYears(1))
+
+// 계산한 날짜를 출력합니다.
+println("1년 후의 날짜는: $futureDate")
 ```
-**출력: 내일의 날짜는 2019/05/07 입니다.**
 
-위의 코드는 `Calendar` 객체를 사용하여 현재 날짜를 기준으로 내일의 날짜를 계산하는 방법을 보여줍니다.
+출력 결과:
 
-## 깊게 들어가보기
+```
+1년 후의 날짜는: 2022-11-03
+```
 
-`Calendar` 클래스를 사용하면 날짜를 쉽게 계산할 수 있습니다. 이 클래스를 사용하려면 `getInstance()`를 호출하여 객체를 초기화해야 합니다. 또한, `Calendar`는 날짜와 시간을 모두 다룰 수 있으며, 원하는 포맷으로 출력할 수 있도록 `SimpleDateFormat` 클래스를 함께 사용하는 것이 좋습니다.
+```Kotlin
+// 현재 날짜를 가져 옵니다.
+val currentDate = LocalDate.now()
 
-시간대와 관련된 문제를 해결하기 위해 `java.util.TimeZone`을 사용하면 좋고, 또한 날짜 계산의 정확성을 위해 `java.time` 패키지의 클래스를 사용할 수 있습니다.
+// 3일 후의 날짜를 계산합니다.
+val futureDate = currentDate.plus(Period.ofDays(3))
 
-# 더 알아보기
+// 계산한 날짜를 출력합니다.
+println("3일 후의 날짜는: $futureDate")
+```
 
-- [Java Calendaring Basics](https://docs.oracle.com/javase/tutorial/datetime/overview/calendar.html)
-- [Working with dates and times in Java 8](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
-- [Kotlin DateTime API](http://www.kotlinlang.org/docs/reference/datetime.html)
+출력 결과:
+
+```
+3일 후의 날짜는: 2021-11-08
+```
+
+## 깊이 파헤치기
+
+날짜를 미래나 과거로 계산할 때, 개발자가 알아야 하는 것은 `LocalDate`와 `Period` 객체입니다. `LocalDate`는 시스템의 현재 날짜를 반환하는 역할을 합니다. `Period`는 시간 간격을 나타내는 클래스로, `Period.ofYears()`나 `Period.ofDays()`와 같은 메서드를 통해 원하는 시간 단위를 지정할 수 있습니다. 또한, `plus()` 메서드를 통해 날짜 간의 연산을 수행할 수 있습니다.
+
+## 참고 자료
+
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
+- [Java로 날짜 계산하기 - Java Time API](https://codechacha.com/ko/java-date-time/)
+- [Kotlin으로 날짜 계산하기](https://perfectacle.github.io/2020/11/01/kotlin-date-time/)
+- [Kotlin 기본 문법 공부용 미션 - 날짜 계산하기](https://blog.lerina.kr/ko/posts/kotlin-mission-date/)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Convertir une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Clojure: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles vous pouvez avoir besoin de convertir une date en chaîne de caractères dans votre code Clojure. Cela peut être utile pour l'affichage à l'utilisateur, la manipulation et l'enregistrement de données, ou pour générer des rapports en utilisant des formats spécifiques de date.
+Vous pouvez avoir besoin de convertir une date en chaîne de caractères pour l'afficher dans un format spécifique ou pour l'utiliser dans une opération de comparaison. Cela peut être utile pour les applications de traitement de données, les tests ou la génération de rapports.
 
-## Comment procéder
-
-Il existe plusieurs méthodes pour convertir une date en chaîne de caractères en Clojure, en voici quelques exemples :
+## Comment faire
 
 ```Clojure
-; Utilisation de la fonction format-date du package clojure.java-time
-(require '[java-time :as t])
-(t/format-date (t/local-date "2021-03-10") "dd/MM/yyyy") 
-; Résultat : "10/03/2021"
+(require '[java.time :as time])
+;; importe la librairie Java.time pour manipuler les dates
 
-; Utilisation de la fonction str du package clojure.string
-(require '[clojure.string :as str])
-(str/join "-" ["10" "03" "2021"]) 
-; Résultat : "10-03-2021"
+(time/format (java.time.LocalDate/Now) "dd-MM-yyyy")
+;; convertit la date actuelle en format "jour-mois-année"
+;; sortie: "26-08-2021"
 
-; Utilisation de la fonction format du package clj-time
-(require '[clj-time.format :as f])
-(f/unparse (f/formatter "dd/MM/yyyy") (f/local-date "2021-03-10")) 
-; Résultat : "10/03/2021"
+(time/format (java.time.LocalDateTime/Now) "dd/MM/yy HH:mm")
+;; convertit la date et l'heure actuelles en format "jour/mois/année heure:minute"
+;; sortie: "26/08/21 13:50"
 ```
 
-## Approfondissement
+## Plongée en profondeur
 
-La méthode la plus simple pour convertir une date en chaîne de caractères en Clojure est d'utiliser la fonction str du package clojure.string. Cependant, cette méthode peut être limitée si vous avez besoin de formats de date spécifiques ou d'une manipulation plus complexe des données. Dans ce cas, il est recommandé d'utiliser les packages clojure.java-time ou clj-time qui offrent une plus grande flexibilité et des fonctions spécifiques pour les opérations sur les dates.
-
-N'oubliez pas que la conversion peut être différente selon le format de date que vous utilisez. Par exemple, si vous avez besoin de la date au format "dd/MMM/yyyy" (ex. "10/Mar/2021"), vous devriez d'abord convertir votre date en une représentation locale et utiliser ensuite la fonction format pour obtenir le résultat souhaité.
+Clojure a une intégration étroite avec la librairie Java.time, ce qui permet une manipulation facile et précise des dates et des heures. Vous pouvez également utiliser des modèles de formatage spécifiques pour personnaliser la sortie de votre chaîne de caractères. De plus, vous pouvez utiliser des fonctions de comparaison telles que `before?` et `after?` pour comparer des dates converties en chaînes.
 
 ## Voir aussi
 
-- [Documentation officielle de clojure.java-time](https://github.com/dm3/clojure.java-time)
-- [Documentation officielle de clj-time](https://github.com/clj-time/clj-time)
-- [Documentation officielle de clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
+- [La documentation officielle de Java.time](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- [Un tutoriel sur la manipulation des dates en Clojure](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/09_datesandtimes/9-12_manipulating-dates.asciidoc)

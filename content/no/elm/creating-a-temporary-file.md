@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Opprettelse av en midlertidig fil"
-simple_title:         "Opprettelse av en midlertidig fil"
+title:                "Oppretting av en midlertidig fil"
+html_title:           "Elm: Oppretting av en midlertidig fil"
+simple_title:         "Oppretting av en midlertidig fil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,57 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Hvorfor ville noen ønske å lage en midlertidig fil? Vel, det kan være flere årsaker til dette. Det kan være for å lagre midlertidig informasjon som trengs for å utføre en operasjon, for å unngå å overskrive eksisterende filer, eller for å lagre data som skal slettes senere.
 
-Å lage midlertidige filer er en vanlig oppgave i programmering, og kan være nyttig for å lagre data midlertidig eller for å dele data mellom forskjellige programmer. I denne bloggen vil vi vise deg hvordan du kan opprette midlertidige filer ved hjelp av det funksjonelle og enkle programmeringsspråket, Elm.
+# Slik gjør du det
+Det er flere måter å lage en midlertidig fil i Elm, avhengig av hva du trenger den til. Her er et eksempel på å lage en fil med et tilfeldig navn og lagre tekst i den:
 
-## Hvordan
+```Elm
+import File
+import Random
 
-For å opprette midlertidige filer i Elm, må vi først importere `File` biblioteket. Deretter bruker vi `File.system` funksjonen for å opprette en fil og gi den et navn.
+-- Funksjon for å generere et tilfeldig navn
+randomName : Int -> String
+randomName seed =
+    Random.generate (Random.int 0 10000000) seed
+        |> Result.map toString
+        |> Result.withDefault "temp"
 
-```
-Elm importera: File
+-- Funksjon for å lage og skrive til fil
+createFile : String -> String -> Cmd msg
+createFile fileName content =
+    File.write fileName content
+        |> Task.attempt FileWriteResult
 
-file = File.system "tmp.txt"
-```
-
-Vi kan også spesifisere hvilken mappe filen skal opprettes i ved å legge til en sti som et ekstra argument i `File.system` funksjonen.
-
-```
-file = File.system "tmp.txt" "tmpFolder"
-```
-
-Vi kan også legge til innhold i filen ved å bruke `File.write` funksjonen.
-
-```
-file = File.system "tmp.txt"
-File.write file "Dette er innholdet i filen."
-```
-
-For å lagre endringene og faktisk opprette filen, bruker vi `File.save` funksjonen.
-
-```
-file = File.system "tmp.txt"
-File.write file "Dette er innholdet i filen."
-File.save file
+-- Kall på funksjoner
+createFile (randomName 123) "Dette er en midlertidig fil"
 ```
 
-Etter at filen er opprettet, kan vi bruke `File.read` funksjonen for å lese innholdet i filen.
+Dette vil generere en fil med et tilfeldig navn og lagre teksten "Dette er en midlertidig fil" i den. Du kan også bruke biblioteker som "elm-temporary" eller "elm-file-tmp" for å opprette og administrere midlertidige filer på en enklere måte.
 
-```
-file = File.system "tmp.txt"
-innhold = File.read file
-```
+# Dykk ned i det
+Nå som du har en grunnleggende forståelse for hvordan man kan lage en midlertidig fil i Elm, kan det være nyttig å lære litt mer om de forskjellige bruksområdene. Midlertidige filer kan være nyttige for å håndtere midlertidig data som skal brukes i en applikasjon, for å sikre at ingen filer blir overskrevet ved filbehandling, eller for å lagre data som senere skal slettes. Det kan også være situasjoner der det er nødvendig å lagre midlertidige filer for å utføre spesielle operasjoner som krever at dataen blir lagret på disk.
 
-I dette tilfellet vil `innhold` variabelen inneholde strengen "Dette er innholdet i filen."
-
-## Dypdykk
-
-Når vi oppretter en midlertidig fil, er det viktig å huske at denne filen vil bli slettet når programmet termineres. Dette skjer fordi filen er opprettet i systemets midlertidige mappe. Hvis vi vil beholde filen for lengre tid, må vi flytte den til et annet sted før programmet termineres.
-
-Det kan også være nyttig å vite at filnavnet som blir generert av `File.system` funksjonen er tilfeldig, slik at det ikke vil sammenfalle med eksisterende filer i systemet.
-
-## Se også
-
-- [Elm Dokumentasjon om `File` biblioteket](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm Programmeringsspråkets Offisielle Nettsted](https://elm-lang.org/)
+# Se også
+* [elm-temporary](https://package.elm-lang.org/packages/elm-temporary/3.0.0/) - et bibliotek for midlertidige filer i Elm.
+* [elm-file-tmp](https://package.elm-lang.org/packages/elm-file-tmp/1.0.0/) - et annet bibliotek for å håndtere midlertidige filer i Elm.
+* [Offisiell dokumentasjon for File-modulen i Elm](https://package.elm-lang.org/packages/elm/file/latest/File) - for mer informasjon om filbehandling i Elm.

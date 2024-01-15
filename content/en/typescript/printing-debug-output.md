@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "TypeScript recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,72 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Debugging is an essential part of any programming process. As developers, we often encounter bugs and errors in our code that can be difficult to identify and fix. This is where printing debug output comes in handy. By printing out specific values at certain points in our code, we can better understand what is happening and troubleshoot any issues that may arise.
+Printing debug output is a common practice in software development for troubleshooting and testing purposes. It allows developers to see the values of variables and the flow of their code, helping them to identify and fix any errors or bugs in their program.
 
 ## How To
 
-To print out debug output in TypeScript, we can use the `console.log()` method. This method takes in a value or variable and prints it to the console. Let's say we have a variable called `name` that stores a string value. We can print out the value of this variable by using `console.log()` like this:
+To print debug output in TypeScript, you can simply use the `console.log()` method. This method takes in any number of arguments, which can be strings, variables, or even objects.
 
 ```TypeScript
-let name = "John";
-console.log(name); // Output: John
+// Printing a string
+console.log("Hello world!");
+
+// Printing a variable
+let num = 5;
+console.log(num);
+
+// Printing an object
+let person = {
+    name: "John",
+    age: 35
+}
+console.log(person);
 ```
 
-We can also print out multiple values by separating them with commas inside the `console.log()` method. For example:
+The above code will print the following output in the console:
 
-```TypeScript
-let num1 = 10;
-let num2 = 20;
-console.log(num1, num2);// Output: 10 20
+```
+Hello world!
+5
+{ name: "John", age: 35 }
 ```
 
-We can even use string concatenation or template literals to print out more complex debug output:
+You can also format your debug output using string literals and template literals, which allows you to insert variables and expressions into a string.
 
 ```TypeScript
-let firstName = "John";
-let lastName = "Doe";
-console.log("Full Name: " + firstName + " " + lastName); // Output: Full Name: John Doe
-
-// Using template literals:
-console.log(`First Name: ${firstName}, Last Name: ${lastName}`); // Output: First Name: John, Last Name: Doe
+let name = "Lisa";
+let age = 25;
+console.log(`My name is ${name} and I am ${age} years old.`);
 ```
 
-Another useful method for printing debug output is `console.dir()`. This method allows us to view the properties and methods of an object in more detail. For example:
+This will print the following output:
 
-```TypeScript
-let person = { name: "John", age: 30, occupation: "Developer" };
-console.dir(person); // Output: { name: "John", age: 30, occupation: "Developer" }
+```
+My name is Lisa and I am 25 years old.
 ```
 
 ## Deep Dive
 
-Printing debug output is not just limited to strings and numbers. We can also use it with conditional statements and loops to check the flow of our code. For example, if we have a function that checks if a given number is even or odd, we can print out a message to indicate which condition is met:
+In addition to `console.log()`, TypeScript also has other methods for printing debug output, such as `console.debug()` and `console.info()`. These methods are useful for differentiating between different types of debug messages.
 
-```TypeScript
-function checkEvenOrOdd(num: number) {
-  if (num % 2 === 0) {
-    console.log(`${num} is even.`);
-  } 
-  else {
-    console.log(`${num} is odd.`);
-  }
-}
-checkEvenOrOdd(4); // Output: 4 is even.
-checkEvenOrOdd(5); // Output: 5 is odd.
-```
+You can also use the `console.trace()` method to print a stack trace, which displays the current call stack of your code. This is helpful for identifying which functions or methods are being called and in what order.
 
-We can also use `console.log()` within a loop to track the values of variables at each iteration:
-
-```TypeScript
-for (let i = 1; i <= 5; i++) {
-  console.log("Counter: " + i); // Output: Counter: 1, Counter: 2, Counter: 3, Counter: 4, Counter: 5
-}
-```
+Lastly, you can use conditional statements with your debug output to only print certain messages if a certain condition is met. This can be done using the `console.assert()` method, which will only print the message if the condition evaluates to false.
 
 ## See Also
 
-To learn more about debugging in TypeScript, check out the following resources:
-
-- [Official TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
-- [TypeScript Debugging in Chrome DevTools](https://devblogs.microsoft.com/typescript/typescript-debugging-in-chrome-devtools/)
+- [Console API in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#console)
+- [Debugging Techniques in TypeScript](https://www.youtube.com/watch?v=_fRQd98MtSA)

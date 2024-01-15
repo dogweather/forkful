@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Bash recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,76 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-As developers, we often encounter errors and bugs in our code that can be difficult to track down. One way to solve these issues is by using debug output. This type of output allows us to see the values of variables and the flow of our program, making it easier to identify and fix any problems.
+Debugging is an essential part of the coding process, helping developers identify and fix errors in their code. Printing debug output is a useful way to get a closer look at what is happening during program execution, making it easier to troubleshoot and resolve any issues.
 
 ## How To
-To print debug output in Bash, we can use the `echo` and `printf` commands. Let's take a look at an example using `echo`:
+To print debug output in Bash, you can use the `echo` command. This command displays a message on the terminal, which can be useful for debugging purposes. Let's look at an example:
 
-```
+```Bash
 #!/bin/bash
+# Simple Bash script to demonstrate debug output
 
-x=5
-y=10
+# Set debug mode to 1
+DEBUG_MODE=1 
 
-echo "The value of x is $x"
-echo "The value of y is $y"
+# Print debug output if DEBUG_MODE is set to 1
+if [ $DEBUG_MODE -eq "1" ]; then
+  echo "Debug mode is ON"
+fi
+
+# Run the rest of the script
+echo "Welcome to my program!"
 ```
 
-In this code, we have two variables `x` and `y`. By using `echo` and passing in the variable names with a `$` symbol, we can print out their values. The output will be:
-
-```
-The value of x is 5
-The value of y is 10
-```
-
-We can also use `printf` for more precision in our output. Let's see an example using `printf`:
-
-```
-#!/bin/bash
-
-x=5.123
-y=10.456
-
-printf "The value of x is %.2f\n" $x
-printf "The value of y is %.2f\n" $y
-```
-
-In this code, we are printing the values of `x` and `y` with a precision of 2 decimal places using the `%f` format specifier. The output will be:
-
-```
-The value of x is 5.12
-The value of y is 10.46
-```
+In the above code, we have set a variable `DEBUG_MODE` to 1, indicating that debug mode is on. If the condition is true, the `echo` command will print the message `Debug mode is ON` on the terminal. This can be particularly useful when you have large and complex scripts, as it allows you to track the execution and pinpoint any issues.
 
 ## Deep Dive
-One important aspect of printing debug output is knowing when and where to use it. It's best to strategically place your `echo` or `printf` statements at different points in your code to get a better understanding of what's happening. You can also use conditional statements to only print the output when certain conditions are met.
+In Bash, you can also use the `set -x` command to enable tracing mode, which will print out each command before it is executed. This can be even more useful for debugging as it gives you a closer look at the sequence of commands being executed. To turn off tracing mode, you can use the `set +x` command.
 
-Another useful tip is to use colors in your output. This can help differentiate between different types of output and make it easier to read. For example, you can use the `tput` command to change the text color:
+Another helpful tool for printing debug output is the `printf` command, which allows you to format the output in a specific way. This can be helpful when you need to display specific variable values or need to format the output in a particular way for debugging purposes.
 
-```
-#!/bin/bash
-
-# This will change the text color to red
-tput setaf 1
-
-echo "This is red text."
-
-# This will change the text color back to the default
-tput sgr0
-
-echo "This is default text."
-```
-
-Output:
-
-```
-This is red text.
-This is default text.
-```
-
-There are many more techniques and tools that can be used for printing debug output in Bash. It's important to experiment and find what works best for you and your code.
+Overall, printing debug output in Bash can significantly aid in troubleshooting and identifying any issues in your code. It allows you to track the execution and get a closer look at what is happening, making the debugging process more efficient.
 
 ## See Also
-- [Bash Debugging Techniques](https://medium.com/@pimterry/10-simple-debugging-tips-for-bash-bcb4e66facc1)
-- [Debugging in Bash with set -x](https://www.shell-tips.com/bash/debug-script-bash/)
-- [Using Debugging Tools in Bash](https://www.linuxjournal.com/content/using-debugging-tools-bash)
+- [Bash Debugging Techniques](https://linuxize.com/post/bash-debugging-techniques/)
+- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Debugging Shell Scripts](https://www.tecmint.com/debugging-shell-scripts/)

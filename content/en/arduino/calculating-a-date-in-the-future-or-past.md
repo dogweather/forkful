@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Arduino recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,39 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to calculate a date in the future or past for a project, but didn't know where to start? Look no further, because in this blog post, we will show you how to use Arduino to easily calculate dates in the future or past. Whether you're working on a personal project or a school assignment, this skill will come in handy.
+Calculating dates in the future or past may be useful in applications such as scheduling and countdown timers. With the Arduino, you can easily incorporate date calculations into your projects.
 
 ## How To
 
-First, let's go over the basics of calculating dates in the future or past. We will be using the built-in functions in Arduino, so there's no need to import any external libraries. First, we need to set the current date using the `DateTime` function. For example:
-```Arduino
-DateTime now (2021, 11, 25);
-```
-This will set the current date to November 25, 2021. Next, define the duration in the future or past that you want to calculate. For this example, we will use 10 days.
-```Arduino
-unsigned long duration = 10;
-```
-Finally, we can use the `addTime` function to calculate the date in the future or past. The syntax for this function is `addTime(currentDate, duration)`. So, for our example, the code would look like:
-```Arduino
-DateTime newDate = addTime(now, duration);
-```
-This will give us the date 10 days after November 25, 2021, which is December 5, 2021.
+First, we need to initialize the Time.h library, which provides functions for working with time and date on the Arduino. Then, we need to set the current date and time using the `setTime()` function. Here's an example of setting the date to May 5, 2020 at 3:00 PM:
 
-But what if you want to calculate the date based on a specific calendar system, such as the Julian or Gregorian calendar? You can use the `addTimeDifferentCalendar` function, which has the syntax `addTimeDifferentCalendar(currentDate, duration, calendar)`. For example, if we want to calculate the date 10 days after May 17, 2021 in the Julian calendar, the code would be:
 ```Arduino
-DateTime newDate = addTimeDifferentCalendar(DateTime (2021, 5, 17), 10, Julian);
+#include <Time.h>
+
+void setup() {
+  // initialize the Time library
+  setTime(15, 0, 0, 5, 5, 2020);
+}
+```
+
+To calculate a future date, we can use the `now()` function to get the current date and time, and then use simple arithmetic to add the desired time interval. For example, to add 2 days to the current date, we can use the `now()` function and add 2 days in seconds:
+
+```Arduino
+#include <Time.h>
+
+void setup() {
+  // initialize the Time library
+  setTime(15, 0, 0, 5, 5, 2020);
+  
+  time_t now = now(); // get current date and time
+  time_t futureDate = now + (2 * 24 * 60 * 60); // add 2 days in seconds
+}
+```
+
+Similarly, to calculate a past date, we can subtract the desired time interval from the current date. For example, to subtract 3 months from the current date, we can use the `now()` function and subtract 3 months in seconds:
+
+By utilizing the `weekday()` function, we can also determine the day of the week for a given date. This can be helpful in scheduling events on specific days. Here's an example of using the `weekday()` function to determine if a date falls on a Sunday:
+
+```Arduino
+#include <Time.h>
+
+void setup() {
+  // initialize the Time library
+  setTime(15, 0, 0, 5, 5, 2020);
+  
+  int day = weekday(2020, 5, 5); // get day of the week for May 5, 2020 (Tuesday)
+  
+  if (day == 1) { // 1 represents Sunday in the weekday function
+    // do something on a Sunday
+  }
+}
 ```
 
 ## Deep Dive
 
-The `addTime` and `addTimeDifferentCalendar` functions are part of the `DateTime` library in Arduino, which allows you to work with date and time variables. These functions use the built-in `atof` function to convert the duration into a floating-point number, making it easier to calculate dates with decimals (for example, 0.5 days).
+The Arduino uses a Unix-based time system, where time is represented in the number of seconds that have elapsed since January 1, 1970. This allows for easy calculations using simple arithmetic.
 
-Additionally, the `addTimeDifferentCalendar` function takes into account leap years and leap seconds, making it more accurate for different calendar systems.
+It's important to note that the Arduino has a limited range for time and date calculations, and can only handle values up to January 19, 2038. After that, the time and date will reset to January 1, 1970. If you require calculations beyond this range, you may need to use a different time library.
 
 ## See Also
 
-For more information on the `DateTime` library and its functions, check out these resources:
-
-- [Arduino Reference - addTime function](https://www.arduino.cc/reference/en/libraries/datetime/addtime/)
-- [DateTime library documentation](https://playground.arduino.cc/Code/DateTime/)
-- [Calculating Julian dates in Arduino](https://forum.arduino.cc/t/julian-date-time/497669)
+- [Time library reference](https://www.arduino.cc/en/Reference/Time)
+- [Generating Random Numbers in Arduino](https://github.com/pi-top/pi-topOS-Web-Portal/wiki/Generating-Random-Numbers-in-Arduino)
+- [Using Switch Case in Arduino](https://create.arduino.cc/projecthub/techmirtz/using-switch-case-in-arduino-8c8342)

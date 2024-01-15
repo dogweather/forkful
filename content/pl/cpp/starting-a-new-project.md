@@ -1,5 +1,6 @@
 ---
-title:                "C++: Rozpoczynanie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "C++: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C++"
 category:             "C++"
@@ -11,70 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-C++ jest jednym z najpopularniejszych języków programowania na świecie. Znajduje zastosowanie w różnorodnych dziedzinach, takich jak tworzenie gier, aplikacji desktopowych, systemów operacyjnych czy aplikacji internetowych. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz swoją przygodę z programowaniem, warto rozważyć rozpoczęcie nowego projektu w C++. Ten język oferuje wiele możliwości i jest wyjątkowo wydajny, co sprawia, że warto nauczyć się go od podstaw.
+Tworzenie nowych projektów jest nie tylko świetnym sposobem na rozwijanie umiejętności programistycznych, ale także może przynieść wiele korzyści, takich jak satysfakcja z ukończonej pracy, możliwość eksploracji nowych technologii i rozwiązywania interesujących problemów.
 
-## Jak to zrobić
+## Jak
 
-Rozpoczęcie nowego projektu w C++ może wydawać się przytłaczające, szczególnie jeśli nigdy wcześniej nie programowałeś w tym języku. Jednak nie ma się czego bać, ponieważ C++ jest językiem o prostym i przejrzystym składniu. Poniżej przedstawimy kilka przykładów kodu wraz z wyjściem, aby pomóc Ci rozpocząć swoją przygodę z C++.
+Rozpoczęcie nowego projektu w języku C++ jest prostsze, niż Ci się wydaje. Wystarczy postępować według tych kroków:
 
-```C++
+1. Wybierz odpowiednie środowisko programistyczne, takie jak Visual Studio, Code::Blocks lub Eclipse. Możesz również skorzystać z darmowych narzędzi, takich jak CodeLite czy Code::Blocks.
+
+2. Utwórz nowy projekt i wybierz opcję języka C++. W niektórych środowiskach programistycznych może być również potrzebne określenie lokalizacji folderu, w którym będziesz przechowywał kod źródłowy.
+
+3. Na początek, stwórz funkcję główną (```int main() { ... }```) i umieść w niej kod programu. Przykładowy kod wyświetlający napis "Witaj świecie!" wyglądałby następująco:
+
+```
 #include <iostream>
-
-using namespace std;
 
 int main()
 {
-    // przykładowy program wyświetlający komunikat "Witaj świecie!" na ekranie
-    cout << "Witaj świecie!" << endl;
-    
+    std::cout << "Witaj świecie!";
     return 0;
 }
 ```
 
-Wyjście:
+4. Aby wykonać program, kliknij przycisk "Run" lub korzystając z klawiatury naciśnij kombinację klawiszy "Ctrl + F5". Wprowadzony przez Ciebie kod zostanie skompilowany i uruchomiony.
 
-```
-Witaj świecie!
-```
+## Deep Dive
 
-```C++
-#include <iostream>
+Przed rozpoczęciem projektu warto przemyśleć kilka kwestii, aby zapewnić płynne i efektywne procesy programowania.
 
-using namespace std;
+1. Opracuj wyraźny plan projektu - określ cele, określ funkcjonalności programu i rozdziel pracę na mniejsze etapy, aby móc monitorować postępy.
 
-int main()
-{
-    // przykładowy program obliczający sumę dwóch liczb podanych przez użytkownika
-    int a, b;
-    
-    cout << "Podaj pierwszą liczbę: ";
-    cin >> a;
-    
-    cout << "Podaj drugą liczbę: ";
-    cin >> b;
-    
-    int suma = a + b;
-    
-    cout << "Suma podanych liczb to: " << suma << endl;
-    
-    return 0;
-}
-```
+2. Naucz się efektywnego korzystania z dokumentacji języka C++. Jest ona bogata w informacje dotyczące składni i funkcji, a jej znajomość może przyspieszyć Twój proces tworzenia kodu.
 
-Wyjście (dla podanych liczb 5 i 7):
-
-```
-Podaj pierwszą liczbę: 5
-Podaj drugą liczbę: 7
-Suma podanych liczb to: 12
-```
-
-## Dogłębna analiza
-
-Rozpoczęcie nowego projektu w C++ może być wyzwaniem, ale z pewnością jest to wartościowe doświadczenie. Wymaga ono od nas sporej ilości nauki, cierpliwości i wytrwałości. Jednak po opanowaniu podstawowych koncepcji oraz przetestowaniu różnych możliwości, będziemy mogli tworzyć wydajne i zaawansowane aplikacje w C++. Pamiętaj, że najważniejsze jest, aby zacząć od prostych projektów i stopniowo zwiększać swoje umiejętności.
+3. Nie bój się szukać pomocy. Istnieje wiele społeczności i forów skupiających twórców w języku C++, gdzie można uzyskać wsparcie i porady.
 
 ## Zobacz również
 
-- [Podstawy C++](https://pl.wikipedia.org/wiki/C%2B%2B)
-- [Dokumentacja języka C++](https://www.cppreference.com/)
-- [Kurs programowania w C++](https://www.youtube.com/playlist?list=PLFoundations/3B3p_rArun2o7GdDOcEln8YomW5iSKxg)
+- [Dokumentacja języka C++](https://devdocs.io/cpp/)
+- [Wybór najlepszego środowiska programistycznego C++](https://www.slant.co/topics/28/~c-ides)
+- [Forum Stack Overflow dla języka C++](https://stackoverflow.com/questions/tagged/c%2B%2B?sort=votes&pageSize=15)

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Haskell: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,43 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att hämta en webbsida är en vanlig uppgift för många programmerare. Det kan vara för att hämta data från en webbplats eller för att skapa en offlineversion av en webbplats. Genom att använda Haskell kan vi på ett enkelt sätt hämta en webbsida och arbeta med den data som vi får tillbaka.
+Alla har någon gång suttit och väntat på att en webbsida ska ladda, bara för att få ett meddelande om att sidan inte kan nås. Genom att lära sig hur man laddar ner en webbsida med Haskell kan du snabbt och enkelt komma åt innehållet på en webbsida utan att behöva lita på internetanslutningen.
 
-## Hur man gör det
+##Hur man gör
 
-För att hämta en webbsida i Haskell behöver vi först importera paketet `Network.HTTP.Simple` i vår kod. Sedan kan vi använda funktionen `httpSink` för att hämta innehållet på en webbsida och spara det till en fil på vår dator. 
-
-```Haskell
-import Network.HTTP.Simple
-
-main = do
-  response <- httpSink "https://www.example.com" "example.html" -- hämtar innehållet på example.com och sparar det som example.html
-  print "Webbsidans innehåll har hämtats och sparat!"
-```
-
-För att hämta innehållet på en specifik webbsida kan vi använda funktionen `httpBS` istället och sedan använda oss av funktioner från paketet `Data.ByteString` för att läsa innehållet och arbeta med det. 
+Ladda ner en webbsida i Haskell är enkelt med hjälp av paketet "http-conduit". Först måste du importera paketet och skapa en förfrågan med hjälp av funktionen "parseRequest".
 
 ```Haskell
-import Network.HTTP.Simple
-import qualified Data.ByteString as BS
+import Network.HTTP.Conduit
 
-main = do
-  response <- httpBS "https://www.example.com" 
-  let body = getResponseBody response -- hämtar innehållet och sparar det som en bytestring i variabeln body
-  print body
+req <- parseRequest "https://example.com"
 ```
 
-## Djupdykning
+Därefter kan du använda funktionen "withManager" för att skapa en anslutning och ladda ner sidan med hjälp av funktionen "httpLbs".
 
-För att förstå hur vi hämtar en webbsida i Haskell och vad funktionerna vi använder gör, måste vi först ha en grundläggande förståelse för HTTP-protokollet. HTTP eller Hypertext Transfer Protocol används för att överföra data över internet och är vad som gör det möjligt för oss att hämta webbsidor.
+```Haskell
+withManager $ \m -> do
+  res <- httpLbs req m
+  print res
+```
 
-När vi hämtar en webbsida i Haskell använder vi oss av HTTP-metoderna `GET` eller `POST`, som talar om för servern på vilket sätt vi vill hämta eller skicka data. För att faktiskt skicka eller hämta data så använder vi oss av TCP/IP-protokollet, som gör det möjligt för oss att kommunicera över internet. 
+Den här koden skriver ut en "Response" som innehåller all information om webbsidan, inklusive HTML-koden. För att endast få ut HTML-koden kan du använda funktionen "responseBody" på "Response"-värdet.
 
-Genom att använda paketet `Network.HTTP.Simple` i Haskell så abstraheras många av de detaljer som är relaterade till HTTP-protokollet och TCP/IP-protokollet bort åt oss, vilket gör det enklare att fokusera på att hämta och arbeta med webbsidans innehåll istället.
+```Haskell
+let responseBody = fmap responseBody res
+print responseBody
+```
 
-## Se även
+För att bearbeta HTML-koden kan du använda olika paket som till exempel "tagsoup" eller "hxt". På så sätt kan du enkelt plocka ut specifika element eller data från webbsidan.
 
-- [Haskells dokumentation för Network.HTTP.Simple](https://hackage.haskell.org/package/http-client)
-- [En guide för att arbeta med HTTP i Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20HTTP%20Examples)
+##Djupdykning
+
+För att kunna ladda ner en webbsida behöver du först och främst en url som du ska ladda ner från. Du kan också ange olika inställningar för förfrågan, till exempel att använda en proxy eller att sätta en timeout-funktion.
+
+När du har förstått hur du kan ladda ner en webbsida i Haskell kan du vidareutveckla din kod. Du kan till exempel bygga en enkel webbskrapa som automatiskt hämtar data från flera olika sidor eller skapa ett program som övervakar förändringar på en viss webbsida.
+
+##Se även
+
+- HTTP-Conduit paketet: [https://hackage.haskell.org/package/http-conduit](https://hackage.haskell.org/package/http-conduit)
+- Tagsoup paketet: [https://hackage.haskell.org/package/tagsoup](https://hackage.haskell.org/package/tagsoup)
+- HXT paketet: [http://hackage.haskell.org/package/hxt](http://hackage.haskell.org/package/hxt)

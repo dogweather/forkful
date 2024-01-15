@@ -1,6 +1,7 @@
 ---
-title:                "C#: HTTPリクエストを送信する"
-simple_title:         "HTTPリクエストを送信する"
+title:                "「httpリクエストを送信する」"
+html_title:           "C#: 「httpリクエストを送信する」"
+simple_title:         "「httpリクエストを送信する」"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜHTTPリクエストを送信するのか
+## なぜ？
 
-HTTPリクエストは、Webアプリケーションやウェブサイトでデータの送受信を可能にする重要な機能です。例えば、ユーザーがフォームに入力したデータをサーバーに送信したり、サーバーから情報を取得したりする際に使用します。このようなデータのやりとりは、ユーザーとサーバーとの間のコミュニケーションを円滑にするために必要不可欠です。
+HTTPリクエストを送信する理由はいくつかあります。例えば、ウェブサイトからデータを取得する、外部のAPIに接続する、ウェブアプリケーションを作成するなどです。C#を使用することで、簡単かつ効率的にHTTPリクエストを送信することができます。
 
-# どのようにしてHTTPリクエストを送信するか
-
-C#でHTTPリクエストを送信するには、以下のようなコードを使用します。
+## ハウツー
 
 ```C#
-// 必要な名前空間をインポート
+using System;
 using System.Net.Http;
 
-// HttpClientオブジェクトを作成
-var client = new HttpClient();
+class Program
+{
+    static async Task Main()
+    {
+        // HTTPクライアントを作成
+        HttpClient client = new HttpClient();
 
-// リクエストを送信
-var response = await client.GetAsync("https://example.com");
+        // リクエストを作成
+        HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://example.com");
 
-// レスポンスからデータを取得
-var content = await response.Content.ReadAsStringAsync();
+        // リクエストを送信し、レスポンスを受け取る
+        HttpResponseMessage response = await client.SendAsync(request);
 
-// 取得したデータを表示
-Console.Write(content);
+        // レスポンスのステータスコードを表示
+        Console.WriteLine("Response status code: " + response.StatusCode);
+
+        // レスポンスのボディを取得
+        string responseBody = await response.Content.ReadAsStringAsync();
+
+        // ボディを表示
+        Console.WriteLine("Response body: " + responseBody);
+    }
+}
 ```
 
-上のコードでは、HttpClientクラスを使用してリクエストを送信し、サーバーからのレスポンスを取得しています。その後、取得したデータを表示しています。このように、C#を使うことで簡単にHTTPリクエストを送信することができます。
+**出力:**
 
-# ディープダイブ
+```
+Response status code: 200
+Response body: <html><head><title>Example Domain</title>...</html>
+```
 
-HTTPリクエストには、GETメソッド以外にもPOSTやPUTなどのメソッドが存在します。また、ヘッダーやパラメーターを付け加えることで、より詳細なリクエストを送ることができます。さらに、HTTPリクエストの応答コードやボディの内容を解析することで、エラーや意図しないデータの取得を防ぐことができます。HTTPリクエストに関する詳しい情報を学ぶことで、より高度なプログラミングが可能になります。
+## ディープダイブ
 
-# 関連リンクを参照
+HTTPリクエストを送信する場合、リクエストライブラリを使用することでより簡単にリクエストを作成することができます。また、リクエストのヘッダー、ボディ、クッキーなどのプロパティも設定することができます。さらに、異なるHTTPメソッドを使用することで、GET、POST、PUT、DELETEなどの異なるタイプのリクエストを送信することができます。
 
-* [Microsoft Docs: HttpClientクラス](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-* [HTTPリクエストとは？ ～基本と仕組みを理解しよう～](https://blog.codecamp.jp/what-is-http-request)
-* [C#におけるHTTPリクエストの送信方法](https://codezine.jp/article/detail/9276)
+## 関連リンク
+
+- [HttpClientクラス (System.Net.Http)](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.http.httpclient)
+- [GETリクエストの送信 (C#プログラムガイド)](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/concepts/http-client/get-request)
+- [HTTPメソッド (MDN Web Docs)](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)

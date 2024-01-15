@@ -1,5 +1,6 @@
 ---
-title:                "Python: Sända en http-begäran med grundläggande autentisering"
+title:                "Sända en http-begäran med grundläggande autentisering"
+html_title:           "Python: Sända en http-begäran med grundläggande autentisering"
 simple_title:         "Sända en http-begäran med grundläggande autentisering"
 programming_language: "Python"
 category:             "Python"
@@ -10,25 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skicka en HTTP-förfrågan med grundläggande autentisering är ett enkelt sätt att skydda din webbapplikation från oönskat åtkomst. Genom att använda en kombination av användarnamn och lösenord i din förfrågan kan du säkerställa att endast auktoriserade användare får tillgång till din resurs.
 
-HTTP-anslutningar är en viktig del av programmering och används för att få information från en webbserver. Genom att använda grundläggande autentisering kan användare skicka HTTP-begäran för att få åtkomst till skyddade webbsidor eller resurser.
+## Hur man gör
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Python, följ dessa steg:
 
-## Så här gör du
+1. Importera "requests" biblioteket: ```Python
+import requests```
+2. Definiera ditt användarnamn och lösenord: ```Python
+username = "användarnamn"
+password = "lösenord"```
+3. Skapa en förfrågan med grundläggande autentisering: ```Python
+response = requests.get("https://example.com/resurs", auth=(username, password))```
+4. Kolla svaret från servern: ```Python
+print(response.status_code) #200 betyder att förfrågan lyckades
+print(response.text) #visar innehållet i responsen```
 
-Det första steget är att importera "urllib.request" som ger oss möjlighet att skicka HTTP-begäran. Sedan måste vi använda "urllib.request.HTTPPasswordMgrWithDefaultRealm()" för att skapa en instans av HTTPPasswordMgrWithDefaultRealm-klassen och ange URL:en som en parameter för att skapa en autentiseringsdatabas.  
+Om du behöver skicka förfrågningar med mer avancerade autentiseringsmetoder, kan du använda "requests.auth" modulen för att implementera det.
 
-Efter detta måste vi skapa en "urllib.request.HTTPBasicAuthHandler" -instans för att hantera den grundläggande autentiseringsmetoden. Nästa steg är att definiera autentiseringsinfo, inklusive användarnamn och lösenord, och sedan lägga till denna info till vår autentiseringsdatabas med hjälp av "HTTPPasswordMgr.add_password ()".
+## Djupdykning
+Vid autentisering med HTTP-användarnamn och lösenord, skickas dina autentiseringsuppgifter i klartext. Detta innebär att det inte är den säkraste metoden för autentisering, och det rekommenderas att använda HTTPS istället för HTTP för att kryptera din förfrågan. Därför är det viktigt att endast använda grundläggande autentisering på resurser som inte innehåller känslig information.
 
-Nu är det dags att skapa vår HTTP-begäran genom att använda "urllib.request.Request()" och ange vår URL och autentiseringshandler som parametrar. Till sist utför vi vår HTTP-begäran genom att använda "urllib.request.urlopen()" och skickar begäran till servern.
-
-## Deep Dive
-
-HTTP-begäran med grundläggande autentisering använder ett bas64-kodat användarnamn och lösenordspar som skickas i begäran till servern. Servern kommer sedan att verifiera dessa uppgifter innan den tillåter åtkomst till den skyddade resursen.
-
-Det är möjligt att ange olika autentiseringsmetoder och till och med skapa en anpassad autentiseringshandler för att hantera mer avancerad autentisering. Det är också viktigt att hålla autentiseringsuppgifter säkra för att undvika obehörig tillgång till skyddade resurser.
-
-## Se också
-
-- [Grunderna i HTTP-autentisering med Python](https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-with-http-in-python-3)
-- [Dokumentation för urllib.request i Python](https://docs.python.org/3/library/urllib.request.html)
-- [Översikt över hur HTTP fungerar](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## Se även
+- Requests bibliotekets officiella dokumentation: https://requests.readthedocs.io/en/master/
+- En introduktion till HTTP-baserad autentisering: https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html

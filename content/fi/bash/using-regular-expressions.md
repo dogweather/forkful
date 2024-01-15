@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Regulaarilausekkeiden käyttö"
-simple_title:         "Regulaarilausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi
 
-Säännölliset lausekkeet ovat hyödyllisiä työkaluja ohjelmoinnissa, sillä ne mahdollistavat tiettyjen merkkijonojen tarkastelun ja muokkaamisen helposti ja tehokkaasti. Esimerkiksi tiedon etsiminen ja käsittely tekstipohjaisesta tiedostosta voi olla paljon helpompaa säännöllisten lausekkeiden avulla.
+Tulet toimeen päivistä päiviin ilman, että edes huomaat käyttäväsi säännöllisiä lausekkeita. Ne ovat kuitenkin erittäin hyödyllisiä työkaluja koodaajille ja systeemihallinnoijille. Säännölliset lausekkeet, tai regexit, ovat tapa ilmaista monimutkaisia hakuehtoja tekstissä. Niiden avulla voit esimerkiksi hakea tiettyjä merkkijonoja, korvata osia teksteistä tai validoida syötteitä.
 
-## Kuinka käyttää säännöllisiä lausekkeita Bash-ohjelmoinnissa?
+## Näin käytät säännöllisiä lausekkeita Bashissa
 
-Säännöllisiä lausekkeita voi käyttää Bash-skripteissä grep-komennon avulla. Seuraavassa esimerkissä näet, kuinka voit etsiä ja tulostaa kaikki sanat, jotka päättyvät kirjaimeen "a":
-
-```Bash
-echo "Tämä on esimerkkiteksti, jossa on sanoja, kuten kissa ja koira." | grep -o "\w*a\b"
-```
-
-Tämä tulostaisi:
-
-```
-kissa
-```
-
-Voit myös käyttää säännöllisiä lausekkeita muuttamaan merkkijonoja. Seuraavassa esimerkissä näet, kuinka voit korvata kaikki numerot tekstiksi "numero":
+Bashilla on valmiina sisäänrakennettu tuki säännöllisille lausekkeille. Voit käyttää niitä esimerkiksi grep- ja sed-komentojen kanssa. Alla on muutamia esimerkkejä siitä, miten säännöllisiä lausekkeita voi käyttää Bashissa.
 
 ```Bash
-echo "Tässä 123 on numeroita 456." | sed 's/[0-9]+/numero/g'
+# Haku tietystä merkkijonosta
+echo "Tämä on Bashin ohjeartikkeli" | grep 'ohje'
+
+# Regex-kirjaimet aakkoset yhdellä kertaa
+echo "Bash käyttää regex-sääntöjä." | grep -E 'regex.*sääntö'
+
+# Korvaa tekstiä
+echo "Hei maailma!" | sed 's/maailma/kaikki/'
+
 ```
 
-Tämä tulostaisi:
-
+Tulostus:
 ```
-Tässä numero on numeroita numero.
+Tämä on Bashin ohjeartikkeli
+Bash käyttää regex-sääntöjä.
+Hei kaikki!
 ```
 
-## Syvällinen sukeltaminen säännöllisiin lausekkeisiin
+Voit myös käyttää regexeja muuttujien ja funktioiden määrittelyssä sekä if-lausekkeiden ehdoissa.
 
-Säännölliset lausekkeet noudattavat tiettyä syntaksia, joka mahdollistaa tarkemman ja monimutkaisemman merkkijonojen käsittelyn. Esimerkiksi voit käyttää sulkeita ryhmittelemään osia merkkijonosta tai käyttää erityisiä merkkejä, kuten "+" tai "?" ilmaisemaan toistoa.
+## Syväsukellus
 
-On tärkeää tutustua erilaisiin säännöllisten lausekkeiden käyttötapoihin ja syntaksiin, jotta niitä voi käyttää tehokkaasti ja monipuolisesti ohjelmoinnissa.
+Säännölliset lausekkeet ovat tehokkaita työkaluja, mutta niiden käyttö voi olla aluksi hankalaa. Regexeilla on oma kielioppi, jota täytyy opetella. Yksittäisten merkkien ja merkkiryhmien lisäksi on olemassa myös metakaraktereita, kuten * tai +, jotka ilmaisevat esimerkiksi toiston tai joustavuuden merkkijonossa.
+
+Syvemmälle pääset tutustumalla tarkemmin regexeihin ja niiden ominaisuuksiin. On myös olemassa erilaisia online-työkaluja, joilla voit testata säännöllisiä lausekkeita ja nähdä niiden tulokset reaaliajassa.
 
 ## Katso myös
 
-- [Bashin dokumentaatio säännöllisistä lausekkeista](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
-- [Linux Academy: Säännölliset lausekkeet Bashissa](https://linuxacademy.com/blog/linux/sed-regular-expressions-basics/)
-- [Regex101: Interaktiivinen työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)
+- [Bashin viralliset dokumentaatiot](https://www.gnu.org/software/bash/manual/bash.html)
+- [RegExr - regex-testaus- ja -opetusympäristö](https://regexr.com/)
+- [Bash20l - interaktiivinen Bash-opetusohjelma](https://www.bash20l.com/)

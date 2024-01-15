@@ -1,6 +1,7 @@
 ---
-title:                "Rust: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの記述"
+html_title:           "Rust: テストの記述"
+simple_title:         "テストの記述"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -9,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜテストを書くのか
 
-Rustでテストを書くことの利点は、プログラミングの新しい言語を学ぶことが好きな方にとっては、Rustの文法や機能を実際に使って学ぶことができるという点にあります。また、テストを書くことで、自分のコードが予想通りの動きをするかどうかを確認できるため、より安心してコードを書くことができます。
+テストはソフトウェア開発における非常に重要な要素です。テストを書くことによって、コードの品質を向上させ、バグを早期に発見し、プログラム全体の信頼性を高めることができます。また、テストを書くことで後々のメンテナンスやリファクタリングがスムーズに行えるようになります。
 
-## テストの書き方
+## 方法
 
-以下のように、```Rust ... ```のコードブロックを使用して、テストを書く方法を説明します。テスト関数は、通常は"test"という接頭辞を持ちます。また、assertマクロを使用して、テスト結果をチェックすることができます。
+テストを書くには、Rustの標準ライブラリにある組み込みマクロ`assert`を使用します。このマクロを使用することで、特定の条件が満たされているかどうかをチェックし、満たされていない場合はテストが失敗します。例えば、以下のようなコードを書くことで、`foo`関数が期待通りの値を返すかどうかをテストすることができます。
 
 ```Rust
-// テスト関数の例
-#[test]
-fn test_addition() {
-  let result = add(2, 3);
-  assert!(result == 5);
+fn foo(x: i32) -> i32 {
+    x + 1
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_foo() {
+        assert_eq!(foo(2), 3);
+    }
 }
 ```
 
-上記の例では、add関数に引数2と3を渡し、その結果が5であることをチェックしています。テストがパスすると、コンソールに`test test_addition ... ok`と表示されます。
+このコードを実行すると、`test_foo`関数が正しく実行されたかどうかをチェックし、`assert_eq`によって指定された条件が満たされているかどうかを判定します。もし期待通りの値であれば、テストはパスしますが、もし間違った値であればテストは失敗します。
 
-## テストの詳細
+## 深堀り
 
-テストを書く際には、以下の点に注意することが重要です。
+テストを書く際には、様々なテストケースを考慮することが重要です。Rustでは、標準ライブラリにある`assert!`マクロを使用することで、条件が真であるかどうかをチェックすることができます。また、テストを実行する際には`cargo test`コマンドを使用します。このコマンドを実行すると、プロジェクト内のすべてのテストが自動的に実行されます。
 
-- テストは、トップレベルの関数として定義する必要があります。
-- テストファイルの先頭には、``` #[cfg(test)] ```という属性を追加する必要があります。
-- テスト関数は、通常は#[test]という属性を持ちます。
-- assertマクロの他にも、assert_eqやassert_neなど、様々なアサーションマクロがあります。自分のテストに合わせて適切なものを使用しましょう。
+## おわりに
 
-さらに詳しくテストについて学びたい方は、以下のリンクを参考にしてください。
+テストを書くことで、ソフトウェアの信頼性を高め、メンテナンスやリファクタリングをスムーズにすることができます。ぜひ、Rustでのテストの書き方を覚えて、より品質の高いソフトウェアを開発しましょう。
 
-## 参考リンク
+## 関連リンク
 
-- [Rust公式ドキュメント - テスト](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [Rustlings - テストを書く](https://github.com/rust-lang/rustlings/blob/main/docs/exercises/tests.md)
-
-## その他
-
-この記事を読んでみて、Rustでテストを書くことがどれだけ簡単で有益かわかっていただけたでしょうか。ぜひ実際にコードを書いて、自分のスキルを向上させてみてください。
-
-見て見ぬふりをしていると、エラーを発見するのに時間がかかってしまうかもしれません。しかし、テストを書くことで、エラーを早期に発見し、修正することができます。これにより、より良いコードを書くことができるようになります。
-
-それでは、Rustでテストを楽しんでください！
-
-## 参考リンク
-
-- [Rust公式ドキュメント - テスト](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [Rustlings - テストを書く](https://github.com/rust-lang/rustlings/blob/main/docs/exercises/tests.md)
+- [Rust公式ドキュメント - テストの書き方](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Rustのユニットテストについて解説](https://zenn.dev/noumi015/articles/896ae0cff24870)
+- [Rustでテストを書く際のベストプラクティス](https://erik-kalkoken.netlify.app/2020/05/03/rust-testing-practices/)

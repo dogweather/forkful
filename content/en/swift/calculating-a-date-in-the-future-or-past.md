@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Swift recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,38 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Calculating dates in the future or past is a common task in programming, especially in mobile app development. It allows for dynamic and interactive user experiences by providing relevant information based on specific dates. Whether it's showing upcoming events, setting reminders, or building a countdown timer, understanding how to calculate dates in Swift is a valuable skill for any developer.
+Calculating dates in the future or past can be incredibly useful in applications that involve scheduling or time-sensitive tasks. For example, a calendar app may need to calculate the date of a future event or a reminder app may need to calculate the date of a past event.
 
 ## How To
+To calculate a date in the future or past in Swift, we first need to use the `Date` and `Calendar` classes. The `Date` class represents a specific point in time, while the `Calendar` class allows us to manipulate dates and time components.
 
-To calculate a date in Swift, we will be using the `Date` and `Calendar` classes. The `Date` class represents a specific point in time, while the `Calendar` class helps us manipulate dates and provides various methods for working with dates and times.
-
-To get the current date, we can use the `Date()` initializer. We can also specify a specific date by providing its components, such as year, month, and day, using the `DateComponents` class.
-
-Here is an example of how we can calculate a date 10 days from now:
+To calculate a future date, we can use the `date(byAdding:)` method on the `Calendar` class. This method takes in a `DateComponents` object, which specifies how many years, months, days, etc. we want to add to the current date. For example, if we want to calculate the date 5 weeks from today, we can use the following code:
 
 ```Swift
-let currentDate = Date()
-let tenDaysFromNow = Calendar.current.date(byAdding: .day, value: 10, to: currentDate)
+let calendar = Calendar.current
+let futureDate = calendar.date(byAdding: .weekOfMonth, value: 5, to: Date())
 ```
 
-In the example above, we first get the current date using the `Date()` initializer. Then, using the `Calendar` class, we calculate the date by adding 10 days to the current date.
+To calculate a past date, we can use the `date(byAdding:)` method again, but with a negative value. For example, if we want to calculate the date 3 months ago, we can use the following code:
 
-We can also calculate a date in the past by using a negative value for the `value` parameter. For example, if we want to get the date 2 weeks ago, we can use `-14` as the value.
+```Swift
+let calendar = Calendar.current
+let pastDate = calendar.date(byAdding: .month, value: -3, to: Date())
+```
 
-We can also specify different components for the `byAdding` parameter, such as `.month`, `.year`, or even a combination of components. This gives us a lot of flexibility in calculating different dates.
+The output for both of these calculations will be a `Date` object representing the calculated date.
 
 ## Deep Dive
+The `Calendar` class also has other methods that allow for more specific date calculations, such as `date(bySetting: value:of:)` and `date(bySettingHour: minute: second: of:)`. These methods take in a specific date component (such as month, day, hour, etc.) and allow you to set a specific value for that component. You can also use the `dateComponents(_:from:to:)` method to calculate the difference between two dates.
 
-Behind the scenes, the `Calendar` class uses a lot of complex algorithms to accurately calculate dates. These algorithms take into account various factors, such as leap years and daylight saving time, to ensure that the calculated dates are accurate and consistent.
-
-Additionally, the `Date` class is based on a reference date, which is January 1, 2001, at 00:00:00 UTC. This means that all calculations are based on this reference date, allowing for consistency across different devices and time zones.
-
-Understanding the inner workings of how dates are calculated can help us avoid common pitfalls and errors in our code. It also allows us to customize and fine-tune our date calculations according to our specific needs.
+It's important to note that date calculations can be affected by time zone and daylight saving time. To ensure accurate date calculations, make sure to set the `timeZone` property on your `Calendar` instance.
 
 ## See Also
-
-- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
-- [Apple Developer Documentation - Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift by Sundell - Working with dates in Swift](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)
+- [Apple's documentation on the Date and Calendar classes](https://developer.apple.com/documentation/foundation/date)
+- [A guide on date and time calculations in Swift](https://medium.com/@tanmaytuteja/calculating-future-or-past-dates-in-swift-5cc329c9d48f)

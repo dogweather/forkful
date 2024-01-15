@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: השוואת שתי תאריכים"
+title:                "השוואת שתי תאריכים"
+html_title:           "Kotlin: השוואת שתי תאריכים"
 simple_title:         "השוואת שתי תאריכים"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,65 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-בהתקופה המודרנית שלנו, תוכניות חישוב משתמשות בזמנים ותאריכים באופן קבוע. זה בדיוק מה שהופך את היכולת להשוות בין שני תאריכים לכלי חשוב למתכנתי קוד.
 
-## איך לעשות זאת
-מתשעה דרכים שונות להשוות בין שני תאריכים:
+כמעט בכל יישום אנחנו מתקשים לטפל בתאריכים. לדוגמה, נרצה להציג למשתמש מידע על תעריפים על פי תאריך הסעה שנבחר ותאריך הסעה הבאה. כיצד נבדוק אם הטווח נבחר לאחר התאריך הנוכחי או שכבר עבר?
 
-```kotlin
-// יצירת תאריך בפורמט dd/MM/yyyy
-val date1 = SimpleDateFormat("dd/MM/yyyy").parse("14/03/1992")
-val date2 = SimpleDateFormat("dd/MM/yyyy").parse("20/05/1995")
+## כיצד
 
-//בדיקה האם תאריך 1 הוא לפני תאריך 2
-if (date1.before(date2)) {
-    println("תאריך 1 הוא לפני תאריך 2")
-}
+כדי להשוות שני תאריכים ב-Kotlin, נשתמש בפונקציות כמו השוואות, חיסכון בלוקים, פיענוח תאריך וניסיון.
 
-//בדיקה האם תאריך 1 הוא אחרי תאריך 2
-if (date1.after(date2)) {
-    println("תאריך 1 הוא אחרי תאריך 2")
-}
+```Kotlin
+// פיענוח תאריך מתאריך נתון
+val firstDate = LocalDate.parse("2021-09-01")
+val secondDate = LocalDate.now()
 
-//בדיקה האם שני התאריכים שווים
-if (date1.equals(date2)) {
-    println("שני התאריכים שווים")
-}
-
-//קבלת הפרש בין שני התאריכים במילי שניות
-val diff = date1.getTime() - date2.getTime()
-println("הפרש בין שני התאריכים הוא $diff מילי שניות")
-
-// יצירת Calender והשמת התאריך לתוך הקלנדר
-val cal1 = Calendar.getInstance()
-cal1.setTime(date1)
-val cal2 = Calendar.getInstance()
-cal1.setTime(date2)
-
-//בדיקה האם יום הוא אותו יום
-if (cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH){
-    println("יום זהה")
-}
-
-// בדיקה האם חודש ושנה זהים
-if (cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR)){
-    println("חודש זהה ושנה זהה")
-}
-
-// יצירת תאריך נוכחי ובדיקה אם הוא לפני תאריך הנתון
-val currentDate = Date()
-if (currentDate.before(date1)){
-    println("תאריך נוכחי הוא לפני תאריך הנתון")
+// השוואה בין שני תאריכים לפי טווח
+if(firstDate.isAfter(secondDate)) {
+    // פעולות לתאריך אחר הנוכחי
+} else if(firstDate.isBefore(secondDate)) {
+    // פעולות לתאריך קודם לנוכחי
+} else {
+    // פעולות לתאריך הנוכחי
 }
 ```
 
-פלט:
+## חקירה מעמיקה
 
-תאריך 1 הוא לפני תאריך 2
-הפרש בין שני התאריכים הוא 951782400000 מילי שניות
-יום זהה
-חודש זהה ושנה זהה
-תאריך נוכחי הוא לפני תאריך הנתון
+מקרים רבים עלולים להיות מורכבים יותר, לדוגמה כאשר חשוב להשוות גם את השעה בתאריך ולטפל באזורי זמן שונים.
 
-## יצירה עמוקה
-כאשר משתמשים בתאריכים ב
+בנוסף, כדי להגיע לתוצאות מדויקות, חשוב לקחת בחשבון גם תנאים כגון כמות הימים בחודש, שנה מעוברת ואפילו שינויים ביומני החורף והקיץ.
+
+בסופו של דבר, ככל שנלמד יותר על החשיבה סביב תאריכים, ניתן להכין קוד יעיל יותר שיספק תוצאות מדויקות ומהירות יותר.
+
+## ראה גם
+
+למידע נוסף על כיצד להשוות תאריכים ב-Kotlin, היכנס לכתבה הבאה:
+
+- [טיפים לעבודה עם תאריכים ב-Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date.html)
+- [ניסיון לשווא שני תאריכים ב-Kotlin](https://kotlinlang.org/docs/comparisons.html#working-with-dates)

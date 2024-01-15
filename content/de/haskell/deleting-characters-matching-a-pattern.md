@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Löschen von Zeichen mit einem bestimmten Muster"
-simple_title:         "Löschen von Zeichen mit einem bestimmten Muster"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Haskell: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,45 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein hilfreiches Werkzeug, um Daten zu bereinigen oder zu formatieren. Durch das Entfernen unerwünschter Zeichen können Fehler in den Daten vermieden werden, die zu Fehlern in der weiteren Verarbeitung führen könnten.
+Warum sollte man sich mit dem Löschen von Zeichen, die einer bestimmten Musterung entsprechen, beschäftigen? Einfach ausgedrückt: Es ist eine nützliche Fähigkeit für die Manipulation von Texten in Haskell.
 
 ## Wie geht man vor?
 
-Um Zeichen in Haskell zu löschen, gibt es zwei Hauptansätze: die Verwendung der `filter` Funktion oder die Verwendung von regulären Ausdrücken mit der `subRegex` Funktion aus dem `Text.Regex` Modul.
-
-1. Verwendung der `filter` Funktion:
-
-Die `filter` Funktion ermöglicht es uns, eine Liste von Elementen aufgrund eines bestimmten Prädikats zu filtern. In diesem Fall erstellen wir eine Funktion, die überprüft, ob ein bestimmtes Zeichen dem Muster entspricht und geben die Liste ohne diese Zeichen zurück.
+Um Zeichen basierend auf einem Muster zu löschen, können wir die `delete` Funktion aus dem `Data.List` Modul verwenden. Als Beispiel nehmen wir einen String und wollen alle Leerzeichen aus diesem String entfernen. Hier ist der Code:
 
 ```Haskell
-deleteMatchingChar :: String -> String -> String
-deleteMatchingChar pattern str = filter (\x -> not (x `elem` pattern)) str
+import Data.List
 
--- Beispiel
-ghci> deleteMatchingChar "aeiou" "Informatik"
-"nfrmkt"
+stringWithoutSpaces = delete ' ' "Dies ist ein Beispieltext."
+-- "DiesisteinBeispieltext."
 ```
 
-2. Verwendung von regulären Ausdrücken mit `Text.Regex`:
+Wie du sehen kannst, haben wir einfach das Leerzeichen als erstes Argument in die `delete` Funktion eingegeben und den String als zweites Argument. Das Ergebnis ist ein String ohne Leerzeichen.
 
-Das `Text.Regex` Modul ermöglicht uns die Verwendung von regulären Ausdrücken in Haskell. Mit der `subRegex` Funktion können wir alle Vorkommen eines bestimmten Musters durch einen leeren String ersetzen.
+Natürlich funktioniert dieses Prinzip nicht nur für Leerzeichen, sondern für alle Zeichen, die du aus einem String entfernen möchtest. Du kannst sogar ganze Wörter oder Zahlen löschen, wenn du sie als Charakter konvertierst.
 
 ```Haskell
-import Text.Regex
+import Data.List
 
-deleteMatchingChar :: String -> String -> String
-deleteMatchingChar pattern str = subRegex (mkRegex pattern) str ""
+deleteNumbers = delete '1' "12345"
+-- "2345"
 
--- Beispiel
-ghci> deleteMatchingChar "[aeiou]" "Informatik"
-"nfrmkt"
+deleteWord = delete 'e' "Haskell"
+-- "Haskll"
 ```
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Das Löschen von Zeichen anhand eines Musters kann auch komplexer gestaltet werden, indem man nicht nur einzelne Zeichen, sondern ganze Wörter oder Sätze löscht. Hierfür können reguläre Ausdrücke mit Platzhaltern wie `*` oder `+` verwendet werden. Auch das Zusammenspiel mit anderen Funktionen, wie z.B. `map`, kann uns helfen, die Daten auf andere Weise zu formatieren oder zu bereinigen.
+Die `delete` Funktion verwendet das `Eq` Typenklasse, um zu überprüfen, ob ein Zeichen im String vorkommt. Das bedeutet, dass wir die `delete` Funktion auf jedem Datentyp anwenden können, der eine Instanz von `Eq` hat. Das schließt auch eigene Datentypen ein, solange wir `Eq` für diese Typen definieren.
+
+```Haskell
+data Person = Person { name :: String, age :: Int } deriving Eq
+
+people = [Person "Max" 25, Person "Lisa" 30, Person "John" 40]
+
+deletePerson = delete (Person "Lisa" 30) people
+-- [Person "Max" 25, Person "John" 40]
+```
+
+Eine weitere nützliche Funktion für das Löschen von Zeichen basierend auf einem Muster ist `filter`. Diese Funktion nimmt ein Prädikat (eine Funktion, die ein Bool zurückgibt) und eine Liste als Argumente und gibt eine neue Liste zurück, die nur die Elemente enthält, die das Prädikat erfüllen.
+
+```Haskell
+filterNumbers = filter (\x -> x `mod` 2 == 0) [1,2,3,4,5] -- x `mod` 2 == 0 ist das Prädikat für gerade Zahlen
+-- [2,4]
+```
+
+Möchtest du alle Vorkommen eines Zeichens in einem String löschen, kannst du `deleteAll` aus dem `Data.List.Extra` Modul verwenden.
+
+```Haskell
+import Data.List.Extra
+deleteAllLetters = deleteAll 'a' "abcdabca"
+-- "bdc"
+```
 
 ## Siehe auch
 
-- [Die `filter` Funktion in Haskell](https://wiki.haskell.org/Filter)
-- [Das `Text.Regex` Modul in Haskell](https://hackage.haskell.org/package/regex-base/docs/Text-Regex.html)
+- [Haskell Wiki - Strings](https://wiki.haskell.org/Handling_strings)
+- [Haskell Programming from First Principles - String Operations](http://haskellbook.com/chapters/strings.html)
+- [Haskell.org - Data.List Module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)

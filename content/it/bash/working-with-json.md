@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lavorare con json"
+title:                "Lavorare con json"
+html_title:           "Bash: Lavorare con json"
 simple_title:         "Lavorare con json"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché lavorare con JSON
-Se sei un programmatore, probabilmente hai sentito parlare di JSON. Ma perché dovresti impegnarti a lavorare con questa struttura dati? In poche parole, JSON è una formatta semplice e leggibile per scambiare dati tra applicazioni e server web. È ampiamente utilizzato e di facile comprensione, quindi è un must per ogni programmatore.
+## Perché
+
+Sei un appassionato di Bash e vuoi espandere le tue conoscenze incorporando dati JSON nei tuoi script? Oppure ti trovi spesso a dover manipolare file JSON e vuoi imparare a farlo direttamente da riga di comando? In entrambi i casi, questo articolo è quello che fa per te!
 
 ## Come fare
-Per lavorare con JSON in Bash, è necessario utilizzare il comando `jq`, un potente strumento per estrarre, manipolare e analizzare i dati JSON. Controlliamo un semplice esempio di come utilizzare `jq` per estrarre i dati da un file JSON:
 
+Per lavorare con dati JSON in Bash, ci sono due strumenti principali che puoi utilizzare: `jq` e `python`. Vediamo un un esempio per ognuno.
+
+##### Utilizzando `jq`
+
+```Bash
+# Esempio di input JSON
+input='{"nome": "Marco", "età": 25, "professione": "programmatore"}'
+
+# Estrai il valore della chiave "nome"
+nome=$(echo $input | jq '.nome')
+echo $nome # Output: "Marco"
+
+# Modifica il valore della chiave "età"
+input=$(echo $input | jq '.età = 26')
+echo $input # Output: {"nome": "Marco", "età": 26, "professione": "programmatore"}
 ```
-Bash jq '.nome' file.json
+
+##### Utilizzando `python`
+
+```Bash
+# Esempio di input JSON
+input='{"nome": "Maria", "età": 30, "professione": "designer"}'
+
+# Estrai il valore della chiave "età"
+# Utilizzando l'opzione -c ficchiamo il codice Python nel comando python
+età=$(python -c "import json; print(json.loads('$input')['età'])")
+echo $età # Output: 30
+
+# Modifica il valore della chiave "nome"
+novo_nome="Giulia"
+input=$(python -c "import json; x=json.loads('$input'); x['nome']='$novo_nome'; print(json.dumps(x))")
+echo $input # Output: {"nome": "Giulia", "età": 30, "professione": "designer"}
 ```
 
-Nell'esempio sopra, `jq` estrae il valore della chiave "nome" dal file JSON specificato e lo stampa nel terminale. Puoi anche utilizzare `jq` per filtrare, combinare e manipolare i dati JSON in modi più complessi. Ci sono molte risorse online che possono aiutarti a imparare a utilizzare `jq` al massimo delle sue capacità.
+## Approfondimento
 
-## Approfondimenti
-Se vuoi perfezionare le tue conoscenze su JSON e come utilizzarlo in Bash, ecco alcuni suggerimenti aggiuntivi:
-
-- Leggi il manuale di `jq` per scoprire tutte le sue funzioni e opzioni disponibili.
-- Esplora come utilizzare `jq` insieme ad altre potenti funzionalità di Bash, come i loop, le funzioni e le variabili.
-- Pratica con esempi sempre più complessi per migliorare la tua comprensione e abilità nell'utilizzo di `jq` con JSON.
+Come puoi vedere dagli esempi, utilizzare `jq` è più semplice e diretto rispetto all'utilizzo di `python` dove è necessario convertire il JSON in un oggetto Python e poi riportarlo in JSON dopo le modifiche. Tuttavia, lavorare con `python` ti offre una maggiore flessibilità e possibilità di manipolazione dei dati. Inoltre, puoi utilizzare librerie come `pyjq` per combinare la sintassi di `jq` con la potenza di `python`.
 
 ## Vedi anche
-- [Guida veloce a JSON](https://json.org/json-it.html)
-- [Documentazione jq](https://stedolan.github.io/jq/)
-- [Corso interattivo sui dati JSON con Bash e jq](https://www.linkedin.com/learning/working-with-json-data-using-bash-and-jq)
+
+- [Documentazione di jq](https://stedolan.github.io/jq/)
+- [Documentazione di python](https://docs.python.org/3/library/json.html)
+- [Libreria pyjq](https://pypi.org/project/pyjq/)

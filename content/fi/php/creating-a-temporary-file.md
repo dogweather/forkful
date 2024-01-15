@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Väliaikaisen tiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "PHP: Väliaikaisen tiedoston luominen"
 simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-Väliaikaiset tiedostot ovat välttämättömiä monissa PHP-ohjelmoinnin sovelluksissa, kuten latausten käsittelyssä ja tietojen tallentamisessa. Luodessaan väliaikaisen tiedoston, voit varmistaa, että tiedot ovat turvallisesti tallennettuina ja että ne eivät häviä, vaikka ohjelma kaatuu tai istunto päättyy. 
+Temporary filejen luominen on tärkeää PHP-ohjelmoinnissa, koska se mahdollistaa väliaikaisen datan tallentamisen ja käsittelyn. Tämä voi olla hyödyllistä esimerkiksi lataamisen tai tallentamisen yhteydessä.
 
-## Miten luoda väliaikainen tiedosto?
+## Miten tehdä
 
-Luodaksesi väliaikaisen tiedoston PHP:ssa, käytä funktiota `tmpfile()`. Tämä funktio luo väliaikaisen tiedoston, jonka avulla voit tallentaa väliaikaisia tietoja ja käyttää niitä myöhemmin. Seuraava esimerkki näyttää, kuinka luodaan väliaikainen tiedosto ja tallennetaan siihen merkkijono "Hello world!".
+Temporary filejen luominen PHP:ssa on helppoa ja vaivatonta. Se voidaan tehdä käyttäen `tmpfile()`-funktiota, joka luo uuden temporary filen palauttaen sen handle-tiedon. Tämä handle-tieto voidaan tallentaa muuttujaan ja käyttää myöhemmin tiedoston käsittelyssä. Katso alla oleva esimerkki:
 
 ```PHP
-$file = tmpfile();
-fwrite($file, "Hello world!");
-echo fgets($file);
+$file_handle = tmpfile();
+fwrite($file_handle, "Tämä teksti tallentuu temporary fileen.");
+rewind($file_handle);
+echo fread($file_handle, filesize($file_handle));
+fclose($file_handle);
 ```
 
-Tulostus:
+Esimerkissä käytetään `tmpfile()`-funktiota luomaan uusi temporary file. Seuraavaksi käytetään `fwrite()`-funktiota kirjoittamaan teksti tiedostoon ja `rewind()`-funktiota asettamaan tiedoston lukupää alkuun. Tämän jälkeen `fread()`-funktiolla luetaan tiedoston sisältö ja lopuksi tiedosto suljetaan `fclose()`-funktiolla.
 
-```
-Hello world!
-```
+Temporary filejen käyttäminen on hyödyllistä esimerkiksi silloin, kun halutaan tallentaa käyttäjän syöttämää dataa väliaikaisesti. Näin ei tarvitse heti tallentaa dataa tietokantaan tai pysyvään tiedostoon. Lisäksi temporary filejen käyttäminen vähentää tarpeetonta tiedon käsittelyä ja puhdistaa tarpeettoman tiedon järjestelmästä.
 
-## Syvällisemmin väliaikaisista tiedostoista
+## Syvempää tietoa
 
-Väliaikaiset tiedostot luodaan yleensä käyttämällä palvelimen oletusvälimuistia, mutta voit myös asettaa väliaikaisten tiedostojen tallennuspaikan manuaalisesti `sys_get_temp_dir()` -funktion avulla. Lisäksi voit poistaa väliaikaiset tiedostot käytöstä funktiolla `unlink()`, joka poistaa tiedoston heti sen käytön jälkeen.
+Temporary filejen luominen PHP:ssa tapahtuu käyttäen järjestelmän temp-hakemistoa. Tämä hakemisto on oletuksena asetettu ja sen sijainti vaihtelee käyttöjärjestelmän mukaan. Temp-hakemistoon tallennetaan väliaikaisia tiedostoja, jotka poistetaan kun niitä ei enää tarvita.
 
-# Katso myös
+On myös mahdollista luoda temporary fileja omiin hakemistoihin käyttäen esimerkiksi `sys_get_temp_dir()`-funktiota. Tämä voi olla hyödyllistä, jos halutaan luoda temporary file johonkin tiettyyn paikkaan järjestelmässä.
 
-- [PHP.net - tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP.net - sys_get_temp_dir()](https://www.php.net/manual/en/function.sys-get-temp-dir.php)
-- [PHP.net - unlink()](https://www.php.net/manual/en/function.unlink.php)
+Temporary filejen käyttäminen tuo myös tietoturvaetuja. Kun temporary file poistetaan, sen sisältö häviää ja estää mahdollisten tiedonkalasteluyritysten onnistumisen.
+
+## Katso myös
+
+- [PHP'n tmpfile()-funktio](https://www.php.net/manual/en/function.tmpfile.php)
+- [PHP'n fwrite()-funktio](https://www.php.net/manual/en/function.fwrite.php)
+- [Temp-hakemisto käyttöjärjestelmästä riippuen](https://en.wikipedia.org/wiki/Temporary_folder)
+- [PHP manualin osio väliaikaisista tiedostoista](https://www.php.net/manual/en/book.tempfile.php)

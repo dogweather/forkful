@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: YAMLを使ったプログラミング"
-simple_title:         "YAMLを使ったプログラミング"
+title:                "「yamlとの作業」"
+html_title:           "TypeScript: 「yamlとの作業」"
+simple_title:         "「yamlとの作業」"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -9,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「YAML」とはなぜ作業をするのか
+## Why
+YAMLは人気があります。なぜなら、YAMLは人間にとって読みやすく論理的なデータ構造を持っており、コンピューターにとっても理解しやすいためです。
 
-YAML(ヤムル)は、コンピューターで設定ファイルやデータを保存するために使用される言語です。YAMLを使うことで、コードを簡単に読み書きすることができ、人間が理解しやすいフォーマットでデータを保存することができます。特に、TypeScriptとの組み合わせでは、コードをより効率的に記述することができます。
-
-## 使い方
-
-YAMLをTypeScriptで使用するには、まずYAMLパーサーパッケージをインストールする必要があります。例えば、npmを使って以下のコマンドを実行します。
-
-```
+## How To
+YAMLを使うためには、まずはTypeScriptでYAMLライブラリーをインストールします。
+```TypeScript
 npm install yaml
 ```
-
-次に、YAMLパーサーをインポートし、読み取りたいYAMLファイルのパスを指定します。
-
+そして、YAMLファイルを読み込んで解析するには次のようなコードを使います。
+```TypeScript
+const yaml = require('yaml');
+const yamlString = `
+name: John
+age: 27 
+`;
+const parsedYaml = yaml.parse(yamlString);
+console.log(parsedYaml.name); 
 ```
-import * as YAML from 'yaml';
+上記のコードでは、YAMLのparseメソッドを使ってオブジェクトに変換することで、YAMLのデータを取得することができます。
 
-const config = YAML.parseFile('./config.yml');
-```
+## Deep Dive
+YAMLを扱う際によく使われる機能として、マルチラインデータやエイリアスがあります。マルチラインデータを使うと、複数行にまたがるデータを簡単に表現することができます。また、エイリアスを使うことで同じデータを複数の場所で参照することができます。さらにYAMLはコンパクトでスペースを使ったインデント形式でデータを表現するため、読みやすくネストされたデータ構造を作ることができます。
 
-YAMLファイルから読み込んだデータは、オブジェクトの形で取得できます。例えば、以下のようにYAMLファイルに設定されたデータを取得することができます。
-
-```
-console.log(config.server.port); // 3000
-console.log(config.database.host); // localhost
-```
-
-## 詳細な説明
-
-YAMLは、階層構造を持ったデータを記述することができるため、複雑な設定ファイルやデータを管理するのに最適です。また、複数の環境で共通の設定ファイルを使用する場合にも便利です。
-
-さらに、YAMLには値のタイプを指定することが可能です。これにより、TypeScriptでの開発においても、予期しない値の入力を防ぐことができます。
-
-また、YAMLにはコメントを書くことができます。これにより、コードの可読性を高めることができます。
-
-## 関連リンク
-
-- [YAMLパーサーのドキュメント](https://www.npmjs.com/package/yaml)
-- [TypeScriptでのYAMLの使用方法](https://dev.to/kensplanet/using-yaml-in-typescript-16c)
-- [YAMLファイルの記述例](https://github.com/nodeca/js-yaml/wiki/YAML-sample-files)
+## See Also
+- [TypeScriptでYAMLをパースする方法](https://qiita.com/watcher0226/items/f368063a606fd9c2b074)
+- [YAMLの基本文法](https://www.lifewithpython.com/2014/05/yaml-basic-syntax.html)
+- [YAML公式ドキュメント](https://yaml.org/spec/)

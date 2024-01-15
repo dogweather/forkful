@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Python recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Python"
 category:             "Python"
@@ -9,43 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Regular Expressions Are a Valuable Tool in Programming
+## Why
 
-Regular expressions, also known as regex, are a powerful tool in the world of programming. They allow you to search, manipulate, and validate text, making tasks such as data parsing and form validation much easier. With regular expressions, you can save time and effort by automating these tasks and making your code more efficient.
+Regular expressions, or "regex" for short, are a powerful tool for pattern matching and text manipulation in Python. They allow you to search for specific patterns of characters within a larger string, making it easier to extract, validate, and manipulate data. 
 
-## How To Use Regular Expressions in Python
+## How To
 
-Using regular expressions in Python is simple and straightforward. First, you need to import the `re` module, which provides the necessary functions for working with regex. Then, you can use the `re.search()` function to search for a pattern in a string. Let's take a look at a simple example:
+To use regular expressions in Python, you first need to import the re module:
 
 ```Python
 import re
-
-text = "Hello, my name is John."
-pattern = "name is (\w+)"
-result = re.search(pattern, text)
-
-print(result.group(1))
 ```
 
-Output:
+Next, you can create a regular expression pattern using the `re.compile()` function and store it in a variable:
+
+```Python
+pattern = re.compile("hello")
 ```
-John
+
+Then, you can use this pattern with various methods like `match()`, `search()`, and `findall()` to search for specific patterns within a string. For example:
+
+```Python
+text = "Hello, world!"
+
+# search for the pattern "hello"
+result = pattern.search(text)
+
+# print the matched pattern
+print(result.group()) # output: "Hello"
 ```
 
-In this example, we used the `\w+` pattern to match any word characters after "name is" in the string. The `group()` method allows us to extract the matched text from the result object. You can also use other methods such as `match()`, `findall()`, and `sub()` to perform various regex operations.
+You can also use special characters in your regular expressions to specify more complex patterns. For instance, the `.` character will match any single character, and the `+` character will match one or more instances of the preceding pattern. For example:
 
-## Deep Dive into Regular Expressions
+```Python
+# search for the pattern "h.llo"
+pattern = re.compile("h.llo")
+text = "Hello, world!"
 
-Regular expressions can be complex and intimidating at first, but once you understand the basics, you can accomplish more complex tasks. Here are some tips to help you dive deeper into the world of regex:
+# find all matches
+matches = pattern.findall(text)
 
-- Familiarize yourself with regex syntax: Regular expressions use special characters and modifiers to define patterns. It's essential to understand the syntax to create accurate and efficient regex patterns.
-- Use online tools: There are many online tools available that allow you to test your regex patterns and see the results in real-time. Some popular ones include RegExr, Regex101, and Pythex.
-- Practice makes perfect: Regular expressions require practice to master. The more you work with them, the more you'll understand how to use them effectively.
+# print the list of matches
+print(matches) # output: ['Hello']
+```
 
-See Also
+## Deep Dive
 
-- [Python Regular Expressions Tutorial](https://regexone.com/)
-- [Regular Expression Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Python re module documentation](https://docs.python.org/3/library/re.html)
+Regular expressions have a rich set of rules and symbols that allow you to create complex matching patterns. Here are a few commonly used ones:
 
-Regular expressions are a crucial component of programming and can greatly improve the efficiency and functionality of your code. So go ahead and give them a try in your next project, and see how much time and effort they can save you!
+- `.` - Matches any single character except for a new line
+- `[]` - Matches any characters inside the brackets (e.g. `[abc]` will match a, b, or c)
+- `[^]` - Matches any characters NOT inside the brackets (e.g. `[^abc]` will match any character except a, b, or c)
+- `+` - Matches one or more instances of the preceding pattern
+- `*` - Matches zero or more instances of the preceding pattern
+- `?` - Matches zero or one instance of the preceding pattern
+- `^` - Matches the start of a string
+- `$` - Matches the end of a string
+- `|` - Matches either the pattern on the left or the pattern on the right
+- `()` - Groups multiple patterns together
+- `\` - Escapes special characters
+
+Regular expressions also have various flags that can modify their behavior, such as case-insensitivity and global matching. If you want to learn more about the different rules, symbols, and flags in regular expressions, there are numerous resources available online.
+
+## See Also
+
+- [Regular Expressions in Python](https://docs.python.org/3/library/re.html)
+- [Python Regular Expression Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/python)
+- [Regular Expressions 101](https://regex101.com/)

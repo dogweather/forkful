@@ -1,5 +1,6 @@
 ---
-title:                "Go: Робота з csv"
+title:                "Робота з csv"
+html_title:           "Go: Робота з csv"
 simple_title:         "Робота з csv"
 programming_language: "Go"
 category:             "Go"
@@ -11,74 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-CSV є одним з найбільш популярних форматів даних для зберігання і обміну інформацією. Використання Go для роботи з CSV дозволяє не тільки ефективно обробляти великі об'єми даних, але й швидко і просто генерувати та зчитувати цей формат. Це робить його необхідним інструментом для багатьох розробників, які працюють з даними.
+Робота з CSV (Comma-Separated Values) є важливою частиною програмування, оскільки цей формат зберігання даних є широко поширеним і простим у використанні.
 
 ## Як
 
-Для початку роботи з CSV в Go, спочатку потрібно імпортувати пакет encoding/csv. Далі можна використовувати функції цього пакету для зчитування та запису даних в CSV форматі.
+Для роботи з CSV у Go існує стандартна бібліотека "encoding/csv", яка дозволяє зчитувати і записувати дані у вигляді CSV файлів. Нижче наведений приклад отримання даних з CSV файлу і виведення їх у консоль:
 
 ```Go
-import "encoding/csv"
+package main
 
-// Приклад коду для зчитування даних з CSV файлу
-file, err := os.Open("data.csv")
-if err != nil {
-    log.Fatal(err)
+import (
+	"encoding/csv"
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	// Відкриття CSV файлу для читання
+	f, err := os.Open("data.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Створення попередньо вибраних об'єктів
+	r := csv.NewReader(f)
+
+	// Читання усіх записів у файлі
+	records, err := r.ReadAll()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Виведення усіх записів у консоль
+	for _, record := range records {
+		fmt.Println(record)
+	}
 }
-defer file.Close()
-
-reader := csv.NewReader(file)
-records, err := reader.ReadAll()
-if err != nil {
-    log.Fatal(err)
-}
-
-// Вивід результатів зчитування даних
-fmt.Println(records)
 ```
 
-```Go
-import "encoding/csv"
+Припустимо, що наш CSV файл має такі дані:
 
-// Приклад коду для запису даних в CSV файл
-data := [][]string{
-    {"Name", "Age", "City"},
-    {"John", "25", "New York"},
-    {"Kate", "30", "London"},
-}
-
-file, err := os.Create("output.csv")
-if err != nil {
-    log.Fatal(err)
-}
-defer file.Close()
-
-writer := csv.NewWriter(file)
-writer.WriteAll(data)
-writer.Flush()
-
-// Вивід створеного CSV файлу
-file, err := os.Open("output.csv")
-if err != nil {
-    log.Fatal(err)
-}
-defer file.Close()
-
-reader := csv.NewReader(file)
-records, err := reader.ReadAll()
-if err != nil {
-    log.Fatal(err)
-}
-
-fmt.Println(records)
+```csv
+Name, Age, Country
+John, 25, USA
+Maria, 31, Brazil
+Anna, 42, Russia
 ```
 
-## Глибинний аналіз
+В результаті виконання програми ми отримаємо наступний вивід у консоль:
 
-Пакет encoding/csv дозволяє налаштовувати різні параметри для роботи з CSV файлами, такі як розпізнавання роздільників, ігнорування рядків, налаштування форматування даних тощо. Також, для зберігання додаткової інформації, яка не вміщується в заголовках стовпців, можна використовувати структури типу map.
+```
+[Name Age Country]
+[John 25 USA]
+[Maria 31 Brazil]
+[Anna 42 Russia]
+```
+
+## Deep Dive
+
+Крім стандартної бібліотеки для роботи з CSV, у Go є багато сторонніх пакетів, які дозволяють працювати з цим форматом ще більш ефективно. Наприклад, пакет "github.com/gocarina/gocsv" дозволяє автоматично конвертувати дані з CSV файлу у структури Go, що полегшує роботу зі зчитаними даними.
+
+Також варто зазначити, що обробка помилок при роботі з CSV файлами є важливим елементом програмування. У Go це можна зробити за допомогою перевірки помилок при кожному кроці роботи з файлом, або з використанням пакету "github.com/pkg/errors", який дозволяє отримати більш детальну інформацію про виниклу помилку.
 
 ## Дивіться також
 
-- [Пакет encoding/csv в документації Go](https://golang.org/pkg/encoding/csv/)
-- [Стаття "Робота з CSV даними в Go"](https://medium.com/golang-ukraine/%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B0-%D0%B7-csv-%D0%B4%D0%B0%D0%BD%D0%B8%D0%BC%D0%B8-%D0%B2-go-14dbcee12a8f)
-- [Відео "Робота з CSV в Go"](https://www.youtube.com/watch?v=gy83pz5kGQ0)
+- [Стандартна бібліотека для роботи з CSV у Go](https://golang.org/pkg/encoding/csv/)
+- [Пакет "gocarina/gocsv" для роботи зі структурами Go та CSV](https://github.com/gocarina/gocsv)
+- [Пакет "pkg/errors" для більш детальної обробки помилок в Go](https://github.com/pkg/errors)

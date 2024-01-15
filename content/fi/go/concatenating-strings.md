@@ -1,6 +1,7 @@
 ---
-title:                "Go: Joukkojen yhdistäminen"
-simple_title:         "Joukkojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Go: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,34 +12,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia tilanteita, joissa sisäkkäisten tekstien (strings) yhdistäminen on hyödyllistä. Esimerkiksi, kun haluat luoda dynaamisen viestin käyttäjälle, joka sisältää käyttäjän antaman tiedon.
+Jos haluat luoda ohjelmassa uusia merkkijonoja, esimerkiksi yhdistää useita merkkijonoja yhdeksi, sinun täytyy käyttää merkkijonon yhdistämistä. Tämä auttaa tekemään koodistasi joustavampaa ja helpottaa merkkijonojen käsittelyä.
 
 ## Miten
 
+Yhdistämistä varten voit käyttää sisäänrakennettua "strings" pakettia ja sen "Join" funktiota. Tämä funktio ottaa vastaan kaksi parametria: ensimmäinen on erotinmerkki, jota käytetään yhdistettävien merkkijonojen välissä, ja toinen on merkkijonojen lista, jotka haluat yhdistää.
+
 ```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
 func main() {
-    greeting := "Hei "
-    name := "Sara"
-    message := greeting + name
-    fmt.Println(message)
+	// Yhdistetään kaksi merkkijonoa erotinmerkin avulla
+	s := strings.Join([]string{"Tämä on", "yhdistetty", "merkkijono"}, " ")
+	fmt.Println(s)
 }
 ```
 
-Tulostus:
+**Tulos:**
+
+*Tämä on yhdistetty merkkijono*
+
+Voit myös yhdistää merkkijonoja käyttämällä "+=" operaattoria. Tässä tapauksessa merkkijonot ovat peräkkäin ja niitä ei eroteta millään.
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	// Yhdistetään kaksi merkkijonoa käyttäen "+=" operaattoria
+	s := "Tämä on" += "yhdistetty" += "merkkijono"
+	fmt.Println(s)
+}
+```
+
+**Tulos:**
+
+*Tämä onyhdistettymerkkijono*
+
+## Syväsukellus
+
+On tärkeää huomata, että merkkijonojen yhdistäminen voi johtaa suorituskykyongelmiin, jos sitä tehdään suuressa mittakaavassa. Tämä johtuu siitä, että jokainen yhdistetty merkkijono luo uuden kopion muistissa.
+
+Tässä tapauksessa on suositeltavaa käyttää "strings.Builder" rakennetta, joka on optimoitu merkkijonojen yhdistämistä varten. Tämä rakenne vähentää muistinkäyttöä ja parantaa suorituskykyä.
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	// Käytetään strings.Builder rakennetta merkkijonojen yhdistämiseen
+	var b strings.Builder
+	b.WriteString("Tämä")
+	b.WriteString("on")
+	b.WriteString("yhdistetty")
+	b.WriteString("merkkijono")
+	fmt.Println(b.String())
+}
 
 ```
-Hei Sara
-```
 
-Käyttämällä `+` operaattoria voidaan yhdistää kaksi tai useampia tekstisuureita luoden uuden tekstin. Gootässä ei ole erillistä operaattoria tekstin yhdistämiseen, kuten joissakin muissa kielissä, vaan `+` operaattori toimii myös tässä tarkoituksessa.
+**Tulos:**
 
-## Syvällisempää tietoa
-
-Go:ssa tekstien yhdistäminen on tehokasta ja nopeaa. Takana oleva syy on se, että teksti (string) on kiinteä sekvenssi tavuja, joten se voidaan liittää suoraan ilman ylimääräistä allokointia.
-
-On hyvä huomata, että Go:ssa tekstit ovat muuttumattomia, mikä tarkoittaa, ettei alkuperäistä tekstiä voida muokata tekstien yhdistämisen jälkeen. Sen sijaan yhdistämisen tuloksena luodaan aina kokonaan uusi teksti. Tämä voi aiheuttaa ongelmia esimerkiksi suurilla tekstimäärillä.
+*Tämä on yhdistetty merkkijono*
 
 ## Katso myös
 
-- [Go tekstikäsittely (string manipulation) dokumentaatio](https://golang.org/pkg/strings/)
-- [Tekstin manipulointi Go:ssa](https://blog.bethge.org/2019/03/08/text-manipulation-go/)
+- Go:n virallinen dokumentaatio merkkijonojen yhdistämisestä: https://golang.org/pkg/strings/#Join
+- Hyödyllisiä vinkkejä Go:n opiskeluun: https://github.com/golang/go/wiki/Learn

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Rust: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,40 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du någonsin har behövt jämföra två datum i ditt program eller applikation, är detta blogginlägg för dig! Att kunna jämföra datum effektivt är en viktig del av programmering och i denna artikel kommer vi att titta på hur man gör det på ett enkelt och effektivt sätt med hjälp av Rust.
+Jag tror att alla kan relatera till den frustrerande uppgiften att jämföra två datum. Det är inte alltid så enkelt som att skriva ut dem och se vilket som är större eller mindre än det andra.
 
-## Hur man gör
+Men oroa dig inte, med Rusts inbyggda funktioner kan du enkelt jämföra två datum och få exakt det resultatet du behöver.
 
-Att jämföra två datum i Rust är ganska enkelt med hjälp av biblioteket "chrono". Först måste vi importera biblioteket i vår kod:
+## Så här
 
-```Rust
-extern crate chrono;
-use chrono::{Datelike, NaiveDate};
-```
+För att jämföra två datum i Rust behöver du bara använda dig av `Date`-modulen. Du kan skapa två instanser av `Date` med hjälp av `from_y/m/d`-funktionen och sedan jämföra dem med antingen `<` eller `>`-operatorerna.
 
-Sedan kan vi skapa två datum som vi vill jämföra:
+Se till att importera `Date`-modulen först genom att skriva:
 
 ```Rust
-let date1 = NaiveDate::from_ymd(2021, 1, 1);
-let date2 = NaiveDate::from_ymd(2020, 12, 31);
+use std::time::Date;
 ```
 
-Nu kan vi använda funktionen "cmp" för att jämföra de två datumen och få tillbaka resultatet som en "std::cmp::Ordering" enum:
+Sedan kan du skapa dina två datum och jämföra dem i en `if`-sats:
 
 ```Rust
-let result = date1.cmp(&date2);
-println!("Resultat: {:?}", result);
+let start_date = Date::from_y_m_d(2021, 1, 1);
+let end_date = Date::from_y_m_d(2021, 1, 9);
+
+if start_date < end_date {
+    println!("Startdatumet är mindre än slutdatumet");
+} else {
+    println!("Startdatumet är större än slutdatumet");
+}
 ```
 
-Om de två datumen är lika kommer resultatet att vara "Equal". Om det första datumet är tidigare än det andra kommer resultatet att vara "Less" och om det första datumet är senare kommer resultatet att vara "Greater".
+Beroende på vilka datum du skrivit in kommer antingen `"Startdatumet är mindre än slutdatumet"` eller `"Startdatumet är större än slutdatumet"` att skrivas ut.
 
 ## Djupdykning
 
-Vad händer egentligen bakom kulisserna när vi jämför två datum i Rust? Chrono-biblioteket konverterar datumen till en "NaiveDateTime" som består av antal sekunder sedan 1970-01-01 00:00:00 UTC. Sedan utförs jämförelsen baserad på detta antal sekunder.
+Det finns flera saker att tänka på när man jämför två datum i Rust. Först och främst, om datumet har ett annat tidsformat som timmar eller minuter så kommer det att ignoreras vid jämförelsen. Bara datumet i sig är relevant.
 
-Det är också viktigt att notera att "cmp" för närvarande inte stödjer att jämföra två datum med olika tidszoner. Detta kan dock lösas genom att först konvertera datumen till samma tidszon.
+För det andra, om du vill jämföra två datum baserade på veckonummer eller dag i veckan, då kan du använda `to_weekday()` och `to_weekday_num()`-funktionerna för att få ut den specifika informationen från datumet.
+
+För mer djupgående information om hur man jämför datum i Rust, ta en titt på [Rusts dokumentation](https://doc.rust-lang.org/std/time/struct.Date.html).
 
 ## Se även
 
-- Chrono Documentation: https://docs.rs/chrono/0.4.19/chrono/
-- Rust Standard Library Documentation: https://doc.rust-lang.org/std/
+* [Rusts dokumentation för datum](https://doc.rust-lang.org/std/time/struct.Date.html)
+* [En översikt över Rusts grundläggande datatyper](https://www.aidanwoods.com/blog/a-tour-of-rust-basic-types/)
+* [Jämförelse av datum i andra programmeringsspråk](https://www.sitepoint.com/compare-dates-time-stamps/)

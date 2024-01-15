@@ -1,6 +1,7 @@
 ---
-title:                "Python: **Att skriva en textfil**"
-simple_title:         "**Att skriva en textfil**"
+title:                "Att skriva en textfil"
+html_title:           "Python: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -11,64 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna skriva textfiler är en grundläggande färdighet inom programmering och kan vara användbart i många olika situationer. Genom att kunna skapa och manipulera textfiler kan man spara data, skapa dokument och till och med bygga egna användargränssnitt.
+Det finns många användbara anledningar till att skriva en textfil med hjälp av Python. Det kan vara för att spara data, automatiskt generera rapporter eller för att bearbeta stora mängder text. Oavsett anledning kan detta vara en användbar funktion att ha i din programmeringsverktygslåda.
 
 ## Hur man gör det
 
-För att skriva en textfil i Python behöver vi först öppna en fil för skrivning. Detta kan göras genom att använda den inbyggda funktionen "open()" och ange namn och läge för filen. Sedan kan vi skriva till filen med hjälp av "write()" funktionen och stänga filen när vi är klara med "close()" funktionen. Se kodexempel nedan:
+Att skriva en textfil med Python är ganska enkelt. Först måste vi öppna en ny fil som vi kommer att använda för att spara vår text. Detta görs med hjälp av "open()" funktionen och vi måste specificera filnamnet och vilket läge vi vill öppna den i.
 
 ```Python
-# Öppna en fil för skrivning i läge "w", vilket skapar en ny fil om den inte redan finns
-fil = open("min_textfil.txt", "w")
-
-# Skriv en sträng till filen
-fil.write("Detta är en textfil som skapas med hjälp av Python!")
-
-# Stäng filen
-fil.close()
+file = open("textfil.txt", "w") # "w" står för "skrivläge"
 ```
 
-Om vi nu skulle öppna filen "min_textfil.txt" i en texteditor, skulle vi se innehållet som vi precis skrev. För att lägga till mer text till en befintlig fil, kan man använda läget "a" istället för "w". Se kodexempel nedan:
+Nu kan vi börja skriva vår text i filen. Vi använder "write()" funktionen för att lägga till innehåll i filen. Se till att lägga till en radbrytning efter varje rad, annars kommer all text att läggas i samma rad i filen.
 
 ```Python
-# Öppna en befintlig fil för skrivning i läge "a"
-fil = open("min_textfil.txt", "a")
-
-# Lägg till lite mer text till filen
-fil.write(" Detta är en till sträng som läggs till!")
-
-# Stäng filen
-fil.close()
+file.write("Hej! Detta är min första textfil.\n")
+file.write("Jag är ett stort fan av Python och använde det för att skriva denna fil.")
 ```
 
-Med hjälp av "write()" funktionen kan vi också skriva listor, variabler och andra datastrukturer till en textfil. Det är också viktigt att notera att när man skriver till en fil, skrivs allt över det som redan finns i filen. Om man vill lägga till text på ett specifikt ställe i en fil, kan man använda "seek()" funktionen för att flytta läsmarkören till en viss position i filen.
+När vi är klara med att skriva vår text måste vi stänga filen för att säkerställa att allt innehåll sparas. Detta görs med "close()" funktionen.
+
+```Python
+file.close()
+```
+
+Om vi nu öppnar vår fil kommer vi att se vår text i den.
+
+```
+Hej! Detta är min första textfil.
+Jag är ett stort fan av Python och använde det för att skriva denna fil.
+```
 
 ## Djupdykning
 
-När vi skriver till en textfil i Python måste vi se till att vi skriver rätt sorts data. Det betyder att om vi försöker skriva en variabel som innehåller en siffra eller en lista av strängar, måste vi konvertera den till en sträng innan den skrivs till filen. Detta kan göras med "str()" funktionen. Se kodexempel nedan:
+Nu när vi har en grundläggande förståelse för hur man skriver en textfil i Python kan vi titta på några mer avancerade funktioner. En sak att komma ihåg är att om filen vi försöker öppna inte redan finns kommer den att skapas automatiskt. Om filen redan finns kommer allt innehåll i den att skrivas över när vi använder "w" läget.
+
+Vi kan också använda "a" för att öppna filen i "append" läget, vilket innebär att allt nytt innehåll kommer att läggas till slutet av filen istället för att skriva över det som redan finns.
 
 ```Python
-# Spara en siffra i en variabel
-siffra = 7
-
-# Skriv till filen
-fil.write(str(siffra))
+file = open("textfil.txt", "a") # "a" står för "appendläge"
 ```
 
-Det är också viktigt att stänga filen när man är klar med den, annars kan det leda till problem som att andra program inte kan öppna filen. Om man glömmer att stänga filen, finns det en möjlighet att stänga den automatiskt med "with" konstruktionen. Se kodexempel nedan:
+Vi kan också använda "with" statement för att säkerställa att filen stängs automatiskt när vi är klara med den, även om det uppstår fel.
 
 ```Python
-# Öppna filen med "with" konstruktionen
-with open("min_textfil.txt", "w") as fil:
+with open("textfil.txt", "w") as file:
+    file.write("En textfil som skapades med hjälp av Python.")
+```
 
-    # Skriv till filen
-    fil.write("Med with konstruktionen behöver vi inte stänga filen manuellt!")
+En annan användbar funktion är "sys" biblioteket, som ger oss möjlighet att skriva till en fil utan att behöva öppna eller stänga den. Detta är speciellt användbart när vi arbetar med stora mängder data.
+
+```Python
+import sys
+
+sys.stdout = open("mangd.txt", "w")
+print("Denna text kommer att skrivas till filen istället för att visas i terminalen.")
 ```
 
 ## Se även
 
-För mer information om hur man skriver och hanterar textfiler i Python, kan du gärna titta på följande resurser:
+Här är några användbara resurser för att lära dig mer om att skriva textfiler i Python:
 
-- [Python Docs: Text File Handling](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Real Python: Working with Text Files in Python](https://realpython.com/read-write-files-python/)
-- [GeeksforGeeks: Reading and Writing to Files in Python](https://www.geeksforgeeks.org/reading-writing-text-files-python/)
+- [Python dokumentation om filhantering](https://docs.python.org/sv/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [En detaljerad guide om att arbeta med textfiler i Python](https://realpython.com/read-write-files-python/)
+- [Användbara exempel på hur man kan automatisera textbaserade uppgifter med Python](https://towardsdatascience.com/making-python-programs-stick-with-file-input-and-output-90a54a8b909a)

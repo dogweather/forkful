@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Fish Shell: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,32 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Oletko aikeissa aloittaa uuden ohjelmointiprojektin? Fish Shell voi olla loistava vaihtoehto, joka tekee projektin hallinnasta helppoa ja tehokasta. Tässä blogikirjoituksessa kerromme, miksi kannattaa harkita Fish Shellin käyttämistä uudessa projektissa.
+Ajattelemme, että olisi hauskaa aloittaa uusi projekti Fish Shellillä. Ja miksi ei? Se on helppo käyttää ja voi olla hyödyllinen tapa tutustua uusiin ohjelmointikielet tai työkaluihin.
 
-## Kuinka aloittaa Fish Shellin avulla
+## Kuinka aloittaa uusi projekti Fish Shellillä
 
-Fish Shell on moderni komentotulkki, joka tarjoaa lukuisia käteviä ominaisuuksia kehittäjille. Näiden ominaisuuksien hyödyntäminen uuden projektin aloittamisessa voi säästää aikaa ja vaivaa tulevaisuudessa.
+Aloittaaksesi uuden projektin Fish Shellillä, tarvitset vain muutaman askeleen.
 
-Fish Shellin avulla voit esimerkiksi luoda uuden projektikansion ja lisätä siihen tarvittavat tiedostot yhdellä kätevällä komennolla:
+1. Asenna ensin Fish Shell, jos et ole jo tehnyt niin. Voit tehdä sen käyttämällä paketinhallintajärjestelmääsi tai lataamalla sen suoraan sivuilta https://fishshell.com/.
 
-```Fish Shell
-mkdir uusi_projekti
-cd uusi_projekti
-touch index.html styles.css script.js
+2. Valitse projektisi nimi ja luo kansio projektillesi.
+
+3. Avaa uusi tiedosto Fish Shellillä käyttämällä komentoa:
+
+```fish
+fish new_project.fish
 ```
 
-Voit myös käyttää Fish Shellin sisäänrakennettuja toimintoja, kuten nimien täydentämistä ja hakua, projektisi työskentelyn tehostamiseksi.
+4. Kirjoita koodisi uuteen tiedostoon. Voit käyttää mitä tahansa Fish Shellin syntaksia ja komentoja.
 
-## Syvällinen sukellus uuden projektin aloittamiseen Fish Shellillä
+5. Tallenna tiedosto ja suorita se käyttämällä komentoa:
 
-Fish Shell tarjoaa monia edistyneitä toimintoja, jotka voivat helpottaa uuden projektin aloittamista ja hallintaa. Voit esimerkiksi käyttää funktioita ja muuttujia helpottamaan koodin uudelleenkäyttöä ja organisointia.
+```fish
+./new_project.fish
+```
 
-Fish Shellin käyttäminen uuden projektin aloittamiseen voi myös auttaa sinua ymmärtämään paremmin projektin rakennetta ja tiedostojen välisiä suhteita.
+6. Näet nyt tulosteen projektillesi Fish Shellistä!
+
+## Syventävää tietoa aloittamisesta
+
+Fish Shellissä on monia käteviä ominaisuuksia, joita voit hyödyntää uudessa projektissasi. Tässä muutama esimerkki:
+
+- Automaattinen täydennys: Voit käyttää Fish Shellin sisäänrakennettua automaattista täydennystä helpottamaan koodaamista.
+
+- Alias-komennot: Voit luoda lyhenteitä pidemmille komentoriveille käyttämällä Fish Shellin alias-komentoja.
+
+- Funktiot: Voit luoda omia toimintoja ja käyttää niitä projekteissasi.
+
+Nämä ovat vain muutamia esimerkkejä siitä, mitä voit tehdä Fish Shellillä uudessa projektissasi. Tutustu Fish Shellin dokumentaatioon lisätietoa ja ideoita varten.
 
 ## Katso myös
 
-- Fish Shellin virallinen dokumentaatio (https://fishshell.com/docs/current/index.html)
-- Fish Shellin GitHub-sivu (https://github.com/fish-shell/fish-shell)
-- Fish Shellin yhteisöfoorumi (https://fishshell.com/docs/current/index.html?action=forum)
-
-Olet nyt valmis aloittamaan uuden projektin Fish Shellin avulla! Toivottavasti tämä blogikirjoitus antoi sinulle hyödyllisiä vinkkejä ja houkutteli tutustumaan tarkemmin tähän kätevään komentotulkkiohjelmaan. Hyvää työskentelyä ja tuloksellista projektia!
+- Fish Shellin kotisivut: https://fishshell.com/
+- Fish Shellin dokumentaatio: https://fishshell.com/docs/current/index.html 
+- Fish Shellin Github-sivu: https://github.com/fish-shell/fish-shell/

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: htmlの解析"
-simple_title:         "htmlの解析"
+title:                "HTMLの解析"
+html_title:           "Gleam: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,45 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-HTMLを解析することに関わるメリットは何か？
-HTMLは情報を表現する簡単で柔軟な言語ですが、そのままでは機械が理解することができません。HTMLを解析することによって、機械が文書を読み込んでデータを取得することができるようになります。
+
+HTMLをパースすることが重要かつ便利な理由をご紹介します。
+
+パースとは、データを解析することを指します。HTMLはウェブサイトを構築する上で欠かせない言語であり、そのデータを解析することで、より効率的にウェブページを作成することができます。また、ウェブスクレイピングやデータ収集などの用途にも利用することができます。
 
 ## 方法
-HTMLを解析するためには、GleamのHTMLパーサーライブラリを使用します。以下のようにコードを書くことで、HTMLを解析してデータを取得することができます。
+
+以下のようなGleamのコード例を使いながら、HTMLのパースを実践的に学びましょう。
 
 ```Gleam
-import gleam/html/parser
+// 必要なライブラリをインポート
+import gleam/html
+import gleam/json
+import gleam/http
 
-html = """
-<html>
-    <head>
-        <title>Gleam ブログ</title>
-    </head>
-    <body>
-        <h1>こんにちは！</h1>
-    </body>
-</html>
-"""
+// ウェブサイトのURLを指定
+let url = "https://example.com"
 
-parsed_html = html |> parser.parse
+// ページのデータを取得
+let html = http.get(url).body
 
-title = parsed_html
-    |> parser.find("head")
-    |> parser.find("title")
-    |> parser.text
+// パースしたい要素の指定
+let selector = "h1"
 
-header = parsed_html
-    |> parser.find("h1")
-    |> parser.text
+// HTMLのパースを実行
+let result = html |> html.parse |> html.select(selector)
 
-IO.println(title) // => "Gleam ブログ"
-IO.println(header) // => "こんにちは！"
+// 結果をJSON形式で文字列に変換
+let json = result |> json.from(html_to_show)
+
+// パースした要素を表示
+pub fn show() {
+  json_to_show |> json.encode |> std_io.format |> std_io.print
+}
 ```
 
-## 詳細を深める
-HTMLを解析するには、HTMLの構造を理解する必要があります。例えば、``<h1>``タグは見出しを表し、``<p>``タグは段落を表します。``find()``メソッドを使用することで、指定したタグを探し出し、その中のテキストを取得することができます。さらに、CSSセレクターを使用することで、特定の要素を取得することもできます。
+上記のコードでは、Gleamのライブラリを使用してウェブサイトからHTMLデータを取得し、指定した要素を抽出し、最終的にJSON形式で表示することができます。
 
-## See Also
-- GleamのHTMLパーサーライブラリについて：https://gleam.run/packages/gleam-lang/html-parser
-- HTMLの基本：https://www.w3schools.com/html/default.asp
-- CSSセレクターの使い方：https://www.w3schools.com/cssref/css_selectors.asp
+## ディープダイブ
+
+HTMLのパースには、いくつかの方法があります。上記のコードでは、`html.select`メソッドを使用しましたが、他にも`html.parse`や`html.decode`などのメソッドを使用することで、より詳細なパースが可能です。また、正規表現を使うことで、さらに柔軟なパースが可能です。
+
+さらに、Gleamではパターンマッチングを用いた強力なデータ構造が利用できるため、取得したHTMLデータを自由自在に操作することができます。これにより、より高度なウェブスクレイピングやデータ収集を実現することができます。
+
+## 参考リンク
+
+- [Gleam公式ドキュメント](https://gleam.run/getting-started/)
+- [GleamのHTMLライブラリのドキュメント](https://gleam.run/packages/html/)
+- [Regular Expressions in Gleam](https://shinseitan.net/gleam-regular-expressions/)

@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Python recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Python"
 category:             "Python"
@@ -10,45 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Many websites today contain a lot of data that is embedded in HTML code. This can make it difficult for developers to extract the specific information they need. This is where HTML parsing comes in handy – it allows us to extract data from HTML code in a structured and organized manner.
+HTML is the backbone of every website, but it's not always easy to extract information from it. That's where HTML parsing comes in! By parsing HTML, we can easily retrieve data and manipulate it for our own purposes, making web scraping and data extraction a breeze.
 
 ## How To
-To begin, we will need to import the "BeautifulSoup" library, which is a popular HTML parsing library for Python. We can install it using pip: 
-
-```Python 
-pip install beautifulsoup4
-```
-
-Once we have the library installed, we can create a BeautifulSoup object by passing in the HTML content and specifying the parser we want to use. Let's take a look at an example: 
-
-```Python 
+```Python
+# Import the necessary libraries
+import requests
 from bs4 import BeautifulSoup
 
-# HTML content to be parsed
-html = "<h1>Python Programming</h1><p>This is a blog post about Python programming.</p>"
+# Create a variable with the URL of the website you want to scrape
+url = "https://www.example.com"
 
-# Creating a BeautifulSoup object
-soup = BeautifulSoup(html, 'html.parser')
+# Use the requests library to get the HTML content of the website
+response = requests.get(url)
 
-# Accessing specific elements
-print(soup.h1) # Output: <h1>Python Programming</h1>
-print(soup.p) # Output: <p>This is a blog post about Python programming.</p>
+# Use BeautifulSoup to parse the HTML content
+soup = BeautifulSoup(response.content, 'html.parser')
 
-# Extracting text from specific elements
-print(soup.h1.text) # Output: Python Programming
-print(soup.p.text) # Output: This is a blog post about Python programming.
+# Use BeautifulSoup's find_all method to find specific elements on the webpage
+headlines = soup.find_all('h1') # This will find all <h1> tags on the webpage
+
+# Loop through the found elements and print their text
+for headline in headlines:
+    print(headline.text)
+
+# Output:
+# Example Website Title
+
 ```
 
-As you can see, we were able to easily access and extract specific elements from the HTML code using the BeautifulSoup library.
-
 ## Deep Dive
-HTML parsing involves understanding the structure of HTML code and using specific tags and attributes to navigate and extract the desired data. The BeautifulSoup library provides multiple ways to search for specific elements, such as using the "find" and "find_all" methods. We can also use unique identifiers like class names or IDs to target specific elements.
+HTML parsing works by breaking down HTML documents into smaller and more manageable parts. These parts are known as elements and they are structured in a tree-like hierarchy. By using a library like BeautifulSoup, we can easily navigate through this hierarchy and access specific elements and their attributes.
 
-Furthermore, HTML parsing becomes even more powerful when combined with other libraries, such as Requests for retrieving web pages and Pandas for data manipulation and analysis.
+One important thing to note is that every element in HTML has an opening and closing tag, with the content in between. In the example above, the <h1> tag is the opening tag and the </h1> tag is the closing tag. Other elements, such as <img>, <a>, and <p>, also have their own specific set of attributes that can be accessed through HTML parsing.
 
-It's also important to note that HTML parsing can be used for more than just web scraping. It can also be helpful in extracting data from HTML emails or documents.
+Besides finding specific elements on a webpage, HTML parsing also allows us to extract data from these elements. For example, we can retrieve the text between the opening and closing tags of an element or access its attributes like the "src" attribute of an <img> tag.
+
+Overall, HTML parsing provides a powerful way to extract and manipulate data from HTML documents, making web scraping and data extraction a much simpler task.
 
 ## See Also
-- BeautifulSoup documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Requests library: https://requests.readthedocs.io/en/master/
-- Pandas library: https://pandas.pydata.org/
+- [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Python Requests Documentation](https://docs.python-requests.org/en/latest/)
+- [HTML Tutorial for Beginners](https://www.w3schools.com/html/)

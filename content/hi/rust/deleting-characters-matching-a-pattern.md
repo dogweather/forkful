@@ -1,6 +1,7 @@
 ---
-title:                "Rust: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+title:                "एक पैटर्न से मेल खाते अक्षरों को हटाना"
+html_title:           "Rust: एक पैटर्न से मेल खाते अक्षरों को हटाना"
+simple_title:         "एक पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
 
-Kabhi kabhi humare code mein unwanted characters ho jate hain aur hum unko delete karna chahte hain taaki humara code efficient aur clean rahe. Is situation mein hum characters ko delete karne ka ek pattern use kar sakte hain. Is blog post mein hum dekhenge ki hum characters ko delete kaise kar sakte hain Rust programming language mein.
+जब हमारे पास एक स्ट्रिंग में अनचाहे वर्ण या पैटर्न होता है, जो हमें नहीं चाहिए, तो हम उसे हटाना चाहते हैं। इससे हमारी कोड को साफ़ और अधिक पढ़ने योग्य बनाता है।
 
-## Kaise Kare
+## कैसे करें
 
-Hum characters ko delete karne ke liye `str::replace` function ka use kar sakte hain. Is function mein hum `pattern` aur `replace_with` arguments pass karte hain. Jaise ki is coding example mein dikhaya gaya hai:
+आप पहले से ही जानते होंगे कि Rust एक उद्गारण आधारित भाषा है जो कॉन्करेंट और सुरक्षित कोडिंग प्रोसेस को प्रोत्साहित करती है। इस लेख में, हम जानेंगे कि रस्ट में उपलब्ध `chars()` और `String` फंक्शन का उपयोग करके हम कैसे एक स्ट्रिंग से वर्णों को हटा सकते हैं।
 
-```Rust
-let string = String::from("Hindi me programming sikhna accha lagta hai.");
-let new_string = string.replace("a",""); 
+```rust
+fn main() {
+    // एक सामान्य स्ट्रिंग बनाएं
+    let my_string = String::from("Hello world!");
+
+    // हटाने के लिए एक खाली रेंज बनाएं
+    let mut removed_chars = String::new();
+
+    // `chars()` फंक्शन का उपयोग करके हमें एक वर्ण सूची मिलती है
+    // इसे फ़िल्टर करें और हटाने के लिए `retain()` फंक्शन को उपयोग करें
+    my_string.chars().into_iter().filter(|c| {
+        match c {
+            'H' | 'l' => removed_chars.push(*c), // हटाने और `removed_chars` स्ट्रिंग में जोड़ने के लिए तुलना करें
+            _ => false, // हटाने अनुप्रयोग
+        }
+    }).collect();
+
+    println!("{}", removed_chars); // उत्पादित स्ट्रिंग दिखाएं: Hl
+}
 ```
 
-Is coding example mein humne `a` character ko replace nahi kiya lekin usko delete kar diya. Is code ki output `Hindi me progrming sihkn acch lgt h.i` hogi.
+अभिनंदन! आपने एक स्ट्रिंग से अनचाहे वर्ण हटाने में सफलता हासिल की है। आप वर्तमान में और अधिक परिभाषित पैटर्न या अन्य चरों को हटाने के लिए ऊंचाईयों तक जा सकते हैं। यह आपके कोड को आकर्षक और पढ़ने योग्य बनाए रखेगा।
 
-## Gehri Jankari
-
-`str::replace` function characters ko delete karne ke liye kafi useful hai. Hum is function ka use karke specific patterns ke according characters ko delete bhi kar sakte hain. Iske alawa, hum regex pattern ka bhi use kar sakte hain character deletion ke liye. Rust mein regex pattern ke liye hum `regex` crate ka use kar sakte hain.
-
-## Dekhe Bhi
-
-- [Rust Language Documentation](https://www.rust-lang.org/hi)
-- [regex Crate Documentation](https://crates.io/crates/regex)
-- [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
-
-Asha karte hain ki ab aapko characters ko delete karne ke liye pattern use karne ka tarika samajh aa gaya hai. Agar aapko koi aur programming topic par article padhna hai to humare "See Also" section mein diye gaye links ko follow karein. Happy coding!
+## मोटा तकनीकी जानकारी

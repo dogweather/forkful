@@ -1,6 +1,7 @@
 ---
-title:                "C: Lavorare con JSON"
-simple_title:         "Lavorare con JSON"
+title:                "Lavorare con json"
+html_title:           "C: Lavorare con json"
+simple_title:         "Lavorare con json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,49 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché lavorare con JSON
+## Perché
 
-Se sei un programmatore C alla ricerca di uno strumento versatile per la manipolazione dei dati, allora lavorare con JSON potrebbe essere la soluzione perfetta per te. JSON, acronimo di JavaScript Object Notation, è un formato leggero e ampiamente utilizzato per lo scambio di dati tra applicazioni. È facile da leggere e scrivere, ed è supportato da una vasta gamma di linguaggi di programmazione, rendendolo un'ottima scelta per lavorare con dati strutturati.
+Se stai lavorando con dati strutturati in C, è probabile che prima o poi ti imbatterai nel formato JSON. Questo formato è diventato sempre più popolare negli ultimi anni ed è essenziale per la scambio di dati tra diverse applicazioni.
 
-## Come lavorare con JSON in C
+## Come fare
 
-Per lavorare con JSON in C, è necessario includere la libreria <stdio.h> e <jansson.h> nel tuo codice. Successivamente, puoi creare un oggetto JSON e riempirlo con i tuoi dati mediante l'utilizzo delle funzioni offerte dalla libreria jansson. Ecco un esempio di codice C per creare e stampare un oggetto JSON:
+Per lavorare con JSON in C, hai bisogno di utilizzare una libreria esterna. Una delle più famose è jansson, che offre una vasta gamma di funzioni per manipolare, creare e analizzare dati JSON. Ecco un esempio di codice per creare un oggetto JSON:
 
 ```
-#include <stdio.h>
 #include <jansson.h>
+#include <stdio.h>
 
 int main() {
-
-    // Creazione di un oggetto JSON vuoto
+    //Crea un oggetto JSON vuoto
     json_t *obj = json_object();
-    // Aggiunta di un valore intero all'oggetto
-    json_object_set_new(obj, "numero", json_integer(42));
-    // Aggiunta di una stringa all'oggetto
-    json_object_set_new(obj, "nome", json_string("Mario Rossi"));
-    // Stampa dell'oggetto JSON
-    char *output = json_dumps(obj, JSON_INDENT(4));
-    printf("%s\n", output);
-    
+
+    //Aggiunge valori all'oggetto
+    json_object_set_new(obj, "nome", json_string("Mario"));
+    json_object_set_new(obj, "eta", json_integer(25));
+    json_object_set_new(obj, "hobby", json_array());
+    json_array_append_new(json_object_get(obj, "hobby"), json_string("tennis"));
+    json_array_append_new(json_object_get(obj, "hobby"), json_string("musica"));
+
+    //Stampa l'oggetto JSON
+    printf("%s\n", json_dumps(obj, JSON_INDENT(2)));
+
+    //Rilascia la memoria
+    json_decref(obj);
+
     return 0;
 }
-
 ```
 
-Questo codice produrrà l'output seguente:
+L'output di questo codice sarà il seguente:
 
 ```
 {
-    "numero": 42,
-    "nome": "Mario Rossi"
+  "nome": "Mario",
+  "eta": 25,
+  "hobby": [
+    "tennis",
+    "musica"
+  ]
 }
 ```
 
-## Approfondimento su JSON
+Puoi anche utilizzare jansson per analizzare dati JSON da una stringa o da un file, scrivere dati JSON in un file o per gestire errori durante la manipolazione di dati JSON. E' importante consultare la documentazione ufficiale per tutte le funzioni disponibili e per saperne di più sulle possibilità offerte dalla libreria.
 
-Per chi vuole saperne di più su JSON, ci sono diverse risorse online disponibili per imparare a lavorare con esso in modo più approfondito. Uno dei migliori modi per imparare è quello di seguire dei tutorial pratici come quello offerto da W3Schools (https://www.w3schools.com/js/js_json_intro.asp). Inoltre, è possibile consultare la documentazione ufficiale della libreria jansson (http://jansson.readthedocs.io/en/latest/) per una guida dettagliata su tutte le funzioni disponibili.
+## Approfondimento
+
+Il formato JSON è basato su due strutture di base: oggetti e array. Gli oggetti sono collezioni non ordinate di coppie chiave-valore, mentre gli array sono collezioni ordinate di valori. Uno dei vantaggi di JSON è che può essere facilmente convertito in una struttura dati C, rendendo la manipolazione dei dati più semplice.
+
+E' importante tenere a mente che alcune caratteristiche di C, come i float o le stringhe, non sono direttamente supportate da JSON. In questi casi, è necessario convertire manualmente il dato al tipo supportato da JSON prima di analizzarlo o di crearne uno nuovo.
+
+Utilizzare una libreria esterna per manipolare i dati JSON può essere un po' scomodo, ma ti offre una serie di funzionalità utili che lo rendono uno strumento essenziale per gestire dati strutturati in C.
 
 ## Vedi anche
 
-- Tutorial di W3Schools su JSON: https://www.w3schools.com/js/js_json_intro.asp
-- Documentazione ufficiale di jansson: http://jansson.readthedocs.io/en/latest/
+- Documentazione ufficiale di jansson: http://www.digip.org/jansson/
+- Tutorial di JSON in C: https://www.geeksforgeeks.org/json-simple-api-in-c/

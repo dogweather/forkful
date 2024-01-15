@@ -1,6 +1,7 @@
 ---
-title:                "Python: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "Python: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -9,42 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Berätta kort om varför man skulle använda sig av JSON i sin programmering.
+##Varför
 
-JSON (JavaScript Object Notation) är ett vanligt format för att överföra och lagra data. Det är ett lättviktigt och lättläst sätt att strukturera och dela data, vilket gör det till ett användbart verktyg för att hantera data i dina Python-program.
+JSON (JavaScript Object Notation) är en vanligt förekommande format för att utbyta data mellan olika applikationer och system. Genom att lära dig att arbeta med JSON kan du enkelt konvertera data mellan olika format och integrera olika tekniker i ditt programmeringsarbete.
 
-## Så här gör du
-Visa hur man kan arbeta med JSON i Python genom att ge kodexempel och förväntad utmatning.
+##Hur man gör
 
-```Python
-# Importera JSON-biblioteket
+För att arbeta med JSON i Python, måste du först importera det inbyggda `json` biblioteket. Detta bibliotek ger funktioner för att läsa och skriva JSON-data.
+
+För att läsa en JSON-fil i Python, kan du använda `load()` funktionen. Detta tar in en fil och returnerar datan i ett Python-objekt. Till exempel:
+
+```python
 import json
 
-# Skapa en JSON-sträng
-data = '{"namn": "Maria", "ålder": 27, "hobbyer": ["läsa", "måla", "resa"]}'
-
-# Konvertera JSON-strängen till ett Python-dictionary
-person = json.loads(data)
-
-# Skriv ut personens namn
-print(person["namn"]) # Output: Maria
-
-# Skriv ut personens ålder
-print(person["ålder"]) # Output: 27
-
-# Skriv ut personens hobbyer
-for hobby in person["hobbyer"]:
-  print(hobby) # Output: läsa, måla, resa
+with open('test.json', 'r') as f:
+    data = json.load(f) # 'data' är nu ett Python-objekt
 ```
 
-## Djupdykning
-Ge mer detaljerad information om hur man kan arbeta med JSON i Python.
+Du kan också använda `loads()` funktionen för att läsa JSON-data från en sträng istället för en fil. Till exempel:
 
-JSON kommer i form av en textsträng och måste därför tolkas av programmet för att kunna användas som data. När vi importerar JSON-biblioteket kan vi använda funktioner som `loads()` för att översätta JSON till ett Python-objekt och `dumps()` för att översätta ett Python-objekt till en JSON-sträng.
+```python
+import json
 
-När man arbetar med JSON är det viktigt att känna till att det följer en sträng struktur som består av uppsättningar av nycklar och värden. Nycklar är alltid strängar och värden kan vara av olika typer, som strängar, numeriska värden, listor eller dictionary.
+data_str = '{"name": "Lisa", "age": 25}'
+data = json.loads(data_str) # 'data' är nu ett Python-objekt
+```
 
-## Se även
-- [Python JSON-dokumentation](https://docs.python.org/3/library/json.html)
-- [JSON officiella hemsida](https://www.json.org/json-sv.html)
+För att skriva JSON-data från ett Python-objekt till en fil, använder du `dump()` funktionen. Detta tar in ett Python-objekt och en fil och skriver den utsträckta datan till filen. Till exempel:
+
+```python
+import json
+
+data = {'name': 'Lisa', 'age': 25}
+
+with open('output.json', 'w') as f:
+    json.dump(data, f)
+```
+
+Du kan också använda `dumps()` funktionen för att skriva JSON-data till en sträng istället för en fil. Till exempel:
+
+```python
+import json
+
+data = {'name': 'Lisa', 'age': 25}
+
+data_str = json.dumps(data) # 'data_str' är nu en JSON-sträng
+```
+
+##Mer djupdykning
+
+JSON-data består av olika datatyper, som strängar, nummer, listor och dictionaries. När du läser in data med `json.load()` eller `json.loads()`, omvandlar Python automatiskt dessa datatyper till lämpliga Python-objekt. Till exempel, om du har en sträng av ett nummer i din JSON-data, kommer den att omvandlas till en `int` i ditt Python-objekt.
+
+När du skriver ut JSON-data med `json.dump()` eller `json.dumps()`, måste du se till att datan är kompatibel med JSON-formatet. Till exempel måste alla citat tecken vara dubbla citat istället för enkla citat, och alla nycklar i en dictionary måste vara strängar.
+
+Du kan också använda `json.dumps()` med en parameter `indent` för att skapa en mer läsbar JSON-sträng genom att lägga till ett visst antal indrag. Till exempel:
+
+```python
+import json
+
+data = {'name': 'Lisa', 'age': 25}
+
+data_str = json.dumps(data, indent=4) # 'data_str' är nu en läsbar JSON-sträng med 4 indrag
+```
+
+##Se även
+
+- [Officiell dokumentation för json-modulen i Python (på engelska)](https://docs.python.org/3/library/json.html)
+- [En grundläggande introduktion till JSON (på svenska)](https://www.webbriktlinjer.se/grundlaeggande-json/)
+- [JSON formatter för att göra JSON-data mer läsbar (på engelska)](https://jsonformatter.org/)

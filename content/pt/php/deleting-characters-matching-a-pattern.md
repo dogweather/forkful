@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Excluir caracteres que correspondem a um padrão"
-simple_title:         "Excluir caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "PHP: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
+## Por que
 
-Existe uma variedade de situações em que pode ser necessário excluir caracteres que correspondem a um padrão em um código PHP. Isso pode ser útil para simplificar a entrada de dados do usuário, limpar strings de texto ou até mesmo garantir a segurança da aplicação.
+Às vezes, em nossos códigos PHP, nos deparamos com caracteres que não queremos manter. Eles podem ser espaços em branco, símbolos ou até mesmo palavras inteiras. Para evitar problemas ou erros, é importante saber como deletar esses caracteres de uma maneira eficiente.
 
-## Como fazer:
+## Como fazer
 
-Para excluir caracteres que correspondem a um padrão em um código PHP, podemos usar a função `preg_replace()` do PHP. Esta função aceita três parâmetros: o padrão a ser buscado, o texto de substituição e a string original. Aqui está um exemplo de código mostrando como usá-la:
+Felizmente, o PHP possui uma função integrada que nos permite facilmente deletar caracteres indesejados. A função `preg_replace()` permite que substituamos caracteres que correspondam a um padrão específico por um novo conteúdo. Por exemplo:
 
-```PHP
+```
 <?php
-	$string = "Olá#mundo!";
-	$nova_string = preg_replace('/[#]/', '', $string);
-	echo $nova_string; // Saída: Olá mundo!
+$string = "Esta é uma frase com caracteres indesejados   ";
+echo preg_replace("/\s+/", "", $string);
 ?>
 ```
 
-Neste exemplo, usamos o padrão `/[#]/`, que indica que queremos excluir qualquer caractere que corresponda ao símbolo `#`. Para excluir caracteres especiais como o `é` ou `á`, podemos usar o padrão `/[^\pL\pN\s]/`, que exclui todos os caracteres que não são letras, números ou espaços em branco.
+Este código irá deletar todos os espaços em branco da string, resultando em "Estaéumafrasecomcaracteresindesejados". Observe que o primeiro parâmetro da função é uma expressão regular, que nos permite definir o padrão a ser encontrado.
 
-## Deep Dive:
+## Deep Dive
 
-Quando se trata de excluir caracteres que correspondem a um padrão mais complexo, podemos usar expressões regulares (regex) para realizar a tarefa. Expressões regulares são padrões de texto que nos permitem encontrar e manipular informações específicas em uma string. Por exemplo, se quisermos excluir todos os números em uma string, podemos usar a expressão regular `/\d+/`, onde `\d+` corresponde a um ou mais dígitos.
+Expressões regulares são uma ferramenta poderosa para manipulação de strings em PHP. Existem diversos padrões que podem ser utilizados para encontrar e deletar caracteres específicos. Além disso, a função `preg_replace()` também aceita arrays como parâmetros, o que nos permite deletar vários caracteres em uma única chamada de função.
 
-## Veja também:
+Outra opção é utilizar a função `str_replace()`, que permite a substituição de um conjunto de caracteres por outro conjunto. Essa função é mais simples de usar, mas pode não oferecer a flexibilidade da `preg_replace()`.
 
-- [Documentação oficial sobre expressões regulares no PHP](https://www.php.net/manual/pt_BR/reference.pcre.pattern.syntax.php)
-- [Tutorial sobre expressões regulares no PHP](http://blog.thiagobelem.net/aprendendo-expressoes-regulares/)
-- [Ferramentas online para testar expressões regulares](https://regex101.com/)
+Por fim, é importante lembrar que ambas as funções mencionadas acima não alteram a string original, apenas retornam o resultado da operação. Portanto, é necessário atribuir o resultado a uma variável ou imprimir diretamente.
+
+## Veja também
+
+- [Documentação oficial do PHP sobre a função preg_replace()](https://www.php.net/manual/pt_BR/function.preg-replace.php)
+- [Tutorial sobre expressões regulares em PHP](https://www.php.net/manual/pt_BR/book.pcre.php)

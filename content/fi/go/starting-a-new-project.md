@@ -1,5 +1,6 @@
 ---
-title:                "Go: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Go: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Go"
 category:             "Go"
@@ -11,61 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi aloittaa uusi projekti Go-ohjelmointikielen avulla? Go on nopea, tehokas ja helposti opittava kieli, joka on suunniteltu skaalautuvuutta silmällä pitäen. Se tarjoaa myös laajan kirjaston erilaisia toimintoja ja työkaluja, jotka tekevät ohjelmoinnista helpompaa ja nopeampaa.
+## Kuinka aloittaa uusi projekti Go:n avulla
 
-## Kuinka
-
-Go-kieltä oppii parhaiten tekemällä. Tässä on muutama esimerkki siitä, kuinka voit aloittaa uuden projektin ja käyttää Go-kieltä:
+Go on modernein ja tehokkain ohjelmointikieli, joten miksi ei aloittaisi uutta projekti sen avulla? Se on myös erittäin helppo oppia ja käyttää, joten aloittaminen onnistuu vaivatta.
 
 ```Go
 package main
-
 import "fmt"
-
 func main() {
-    // Tulostetaan tervehdys konsoliin
-    fmt.Println("Hei maailma!")
+    fmt.Println("Tervetuloa uuteen projektiin Go:n avulla!")
 }
 ```
 
-Lopputulos:
-
-```
-Hei maailma!
-```
+Tämä yksinkertainen koodinpätkä esittelee Go:n perusmallin, jossa tuodaan "fmt" paketti, joka mahdollistaa tekstin tulostamisen konsoliin ja käytetään sitten "fmt.Println()" funktiota tekstin tulostamiseen. Voit muokata koodia ja nähdä, miten se vaikuttaa outputiin. 
 
 ```Go
 package main
-
 import "fmt"
-
 func main() {
-    // Luodaan muuttuja
-    nimi := "Matti"
-    
-    // Tulostetaan muuttujan arvo konsoliin
-    fmt.Println("Hei", nimi)
+    fmt.Println("Uusi projekti on matkalla!")
 }
 ```
 
-Lopputulos:
-
+Output:
 ```
-Hei Matti
+Uusi projekti on matkalla!
 ```
 
 ## Syvemmälle
 
-Aloittaessasi uuden projektin Go-kielellä, muutamia asioita kannattaa pitää mielessä:
+Aloittaessasi uuden projektin Go:lla, on tärkeää pitää mielessä muutamia avainasioita. Ensinnäkin, Go:n virallinen kotisivu tarjoaa erittäin hyödyllisen oppaan aloittelijoille, jossa käydään läpi kielen perusominaisuudet ja esimerkkikoodia. Toiseksi, Go:n yhteisö on valtavan suuri ja tarjoaa paljon tukea ja apua, joten älä epäröi etsiä vastauksia kysymyksiisi foorumeilta tai Slack-yhteisöistä.
 
-- Go on kokonaan käännetty kieli, mikä tarkoittaa, että ohjelmakoodi käännetään suoraan konekielelle. Tämä tekee siitä nopean ja tehokkaan.
-- Go-kielen syntaksi on helppo ja selkeä. Se on myös modulaarinen, joten voit helposti jakaa koodiasi eri tiedostoihin ja muokata sitä tarpeidesi mukaan.
-- Go:ssa on erittäin laaja vakio-bibliotekki, joka sisältää paljon erilaisia toimintoja ja työkaluja, kuten verkko-ohjelmointiin, tietokantojen hallintaan ja virheiden käsittelyyn liittyviä työkaluja.
-- Yhteisö on aktiivinen ja avulias, joten apua on aina saatavilla, jos jokin koodissa mietityttää.
+Lisäksi, Go:n voimakkaan standardikirjaston ansiosta on suositeltavaa tutustua siihen, jotta pystyt hyödyntämään kaikkia sen tarjoamia mahdollisuuksia projektissasi. Lopuksi, käytä aikaa ja tutustu Go:n parhaisiin käytäntöihin ja suosituksiin, jotta pystyt kirjoittamaan tehokasta ja hyvin dokumentoitua koodia.
 
 ## Katso myös
 
-- [Go:n virallinen sivusto](https://golang.org/)
-- [Go:n dokumentaatio](https://golang.org/doc/)
-- [Go:n oppimateriaalit](https://golang.org/doc/#learning)
-- [Go-yhteisö](https://golang.org/community/)
+- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
+- [Go:n yhteisöfoorumi](https://github.com/golang/go/wiki/Forums)
+- [Go:n parhaat käytännöt](https://github.com/golang/go/wiki/CodeReviewComments)

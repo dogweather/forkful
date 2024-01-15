@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Écriture des tests"
-simple_title:         "Écriture des tests"
+title:                "Écriture de tests"
+html_title:           "Elm: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -9,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en Elm ?
+## Pourquoi
 
-Écrire des tests pour son code peut sembler fastidieux et prendre du temps supplémentaire, mais cela peut apporter de nombreux avantages à long terme. Tout d'abord, les tests permettent de s'assurer que le code fonctionne correctement et qu'il n'y a pas de bugs potentiels. Ils peuvent également aider à détecter les erreurs de manière plus rapide et efficace lors de la phase de développement. Enfin, les tests fournissent une documentation précise sur le fonctionnement du code, permettant aux développeurs de mieux comprendre leur propre code et de pouvoir le modifier plus facilement à l'avenir.
+Si vous êtes un développeur Elm, vous avez probablement entendu parler des tests automatisés. Mais pourquoi devriez-vous en écrire ? Eh bien, le principal objectif des tests est de s'assurer que votre code fonctionne correctement et avec cohérence, même après de multiples modifications. Des tests bien écrits peuvent vous faire gagner un temps précieux en détectant rapidement les erreurs et en vous évitant des heures de débogage.
 
-# Comment écrire des tests en Elm ?
+## Comment faire
 
-Ecrire des tests en Elm est assez simple et peut se faire en utilisant le framework de tests intégré de Elm, appelé "elm-test". Voici un exemple de comment un test peut être écrit en Elm :
+Pour écrire des tests en Elm, vous devez utiliser le module `elm-test`. Tout d'abord, vous devez installer `elm-test` en utilisant la commande `elm install elm-explorations/test`. Ensuite, vous pouvez écrire vos tests dans un fichier séparé avec l'extension `.elm`. Voici un exemple de test pour une fonction de multiplication :
 
-```Elm
-import Html
-import Test exposing (..)
+```
+module Test exposing (..)
 
-sum : Int -> Int -> Int
-sum x y =
-    x + y
+import Expect exposing (expect)
+import MyModule exposing (multiply)
 
-tests : Test
-tests =
-    describe "Test de la fonction sum" [
-        test "sum 2 + 2 égal à 4" <|
-            \_ ->
-                Expect.equal (sum 2 2) 4
-    ]
-
-main : Html.Html a
-main =
-    Html.text (if (run tests).passed then "Tous les tests ont réussi !" else "Un ou plusieurs tests ont échoué...")
+testMultiply : Test
+testMultiply =
+    describe "Multiply function"
+        [ test "Multiplying 5 * 5 should return 25" <|
+            \() ->
+                expect (multiply 5 5) toEqual 25
+        ]
 ```
 
-Dans cet exemple, nous importons le framework de tests et la librairie Html pour créer un petit résultat visuel. Ensuite, nous définissons une fonction "sum" qui ajoute deux entiers et nous écrivons un test pour vérifier si le résultat est bien égal à 4. Enfin, nous exécutons le test et affichons un message en fonction du résultat. En utilisant "elm-test" et la fonction "Expect", il est facile d'écrire des tests pour son code en Elm.
+Dans cet exemple, nous importons le module `Expect`, qui contient des fonctions pour vérifier nos résultats de test. Nous importons également notre module `MyModule`, qui contient la fonction `multiply` que nous voulons tester. Ensuite, nous définissons notre test en utilisant la fonction `test` et en lui donnant un nom et une fonction qui évalue le résultat attendu. Nous pouvons ensuite exécuter nos tests en utilisant la commande `elm-test` dans notre terminal.
 
-# Plongée en profondeur
+## Approfondissement
 
-L'écriture de tests en Elm suit le principe de programmation "Test Driven Development" (ou TDD) qui consiste à écrire les tests avant même d'écrire le code. Cela peut sembler contre-intuitif, mais cela permet d'avoir un code plus robuste et cohérent, ainsi qu'une meilleure compréhension du problème à résoudre avant même de commencer à coder. De plus, les tests doivent être régulièrement mis à jour et maintenus, afin de garantir que le code reste fonctionnel à mesure qu'il évolue.
+Maintenant que vous savez comment écrire des tests en Elm, vous pouvez explorer différentes façons de les utiliser. Par exemple, vous pouvez utiliser des tests pour guider votre processus de développement en écrivant d'abord les tests, puis en écrivant le code pour les faire réussir. Vous pouvez également utiliser des tests pour mesurer la couverture de code de vos applications. Enfin, vous pouvez utiliser des tests pour détecter les erreurs dans votre code lorsque vous apportez des modifications à votre application.
 
-# Voir aussi
+## Voir aussi
 
-- [Guide officiel de Elm sur l'écriture de tests](https://guide.elm-lang.org/testing/)
-- [Documentation du framework de tests "elm-test"](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Vidéo explicative sur le TDD en Elm](https://www.youtube.com/watch?v=XYEqWnp4h2A)
+- [Documentation du module Elm-Test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Article "Introduction to Testing in Elm" de NoRedInk Engineering](https://tech.noredink.com/post/152489705573/introduction-to-testing-in-elm)

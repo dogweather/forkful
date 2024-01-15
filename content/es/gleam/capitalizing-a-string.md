@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Mayusculas en una cadena"
-simple_title:         "Mayusculas en una cadena"
+title:                "Capitalizando una cadena"
+html_title:           "Gleam: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué capitalizar una cadena?
 
-En programación, es común encontrarnos con la necesidad de capitalizar una cadena de texto, es decir, convertir la primera letra de cada palabra en mayúscula. Esto puede ser útil en varios escenarios, como en la creación de nombres de usuarios, títulos de publicaciones o simplemente por motivos de estilo. Afortunadamente, en Gleam tenemos una función incorporada para realizar esta tarea de forma sencilla y eficiente.
+Capitalizar una cadena es una operación común en la programación para asegurarse de que la primera letra de cada palabra esté en mayúsculas. Esto puede ser útil para mejorar la legibilidad de una cadena o para formatear correctamente los títulos en una aplicación.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena en Gleam, utilizamos la función `String.capitalize()`. Veamos un ejemplo:
+Para capitalizar una cadena en Gleam, se puede utilizar la función `String.capitalize` que viene incluida en su biblioteca estándar. A continuación se muestra un ejemplo de código y su resultado utilizando esta función:
 
 ```Gleam
-import gleam/string
-
-let name = "maría"
-
-let capitalizedName = string.capitalize(name)
-
-// Output: María
+let cadena = "hola mundo"
+let cadena_capitalizada = String.capitalize(cadena)
 ```
 
-Como se puede ver, simplemente tenemos que llamar a la función `capitalize()` y pasarle la cadena que deseamos capitalizar como argumento. La función devolverá una nueva cadena con la primera letra de cada palabra en mayúscula.
+El resultado será `"Hola mundo"`.
 
-También es importante mencionar que si una palabra ya tiene la primera letra en mayúscula, la función la mantendrá de esa manera. Por ejemplo, si pasamos la cadena `Gleam Programming` como argumento, la función devolverá `Gleam Programming` sin modificarla.
+## Profundizando en la capitalización de cadenas
 
-## Profundizando
+Además de la función `String.capitalize`, también existen otras formas de capitalizar cadenas en Gleam. Por ejemplo, se puede utilizar la función `String.titleize` para capitalizar todas las palabras de una cadena. Además, es posible utilizar la función `String.sentence_case` para capitalizar solo la primera letra de una cadena.
 
-Detrás de la función `String.capitalize()` hay un algoritmo que realiza varias comprobaciones para determinar qué letras deben ser convertidas en mayúscula. Esto incluye tener en cuenta caracteres especiales y la posición de las palabras en la cadena. Es por eso que podemos confiar en que la función siempre hará su trabajo correctamente.
-
-Además, como mencionamos anteriormente, la función devuelve una nueva cadena en lugar de modificar la original. Esto es importante si estamos trabajando con datos sensibles y no queremos alterarlos de forma permanente.
+En Gleam también se pueden utilizar patrones de coincidencia de patrones en lugar de usar directamente funciones para realizar la capitalización. Esto permite una mayor flexibilidad en términos de qué partes de la cadena se capitalizan.
 
 ## Ver también
 
-- [Documentación de Gleam sobre la función `String.capitalize()`](https://gleam.run/core/STRING.html#function.capitalize)
-- [Ejemplo de uso de la función `String.capitalize()` en un proyecto real](https://github.com/username/proyecto-ejemplo)
-- [Más recursos para aprender Gleam](https://gleam.run/learn/)
+- Documentación oficial de la función `String.capitalize`: https://gleam.run/modules/gleam_std.String.html#capitalize
+- Tutorial de Gleam en español: https://gleam.run/tour/es/ 
+- Examples directory: https://github.com/gleam-lang/gleam/tree/master/examples

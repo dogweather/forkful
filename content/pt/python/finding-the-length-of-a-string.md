@@ -1,6 +1,7 @@
 ---
-title:                "Python: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Encontrando o comprimento de uma cadeia de caracteres"
+html_title:           "Python: Encontrando o comprimento de uma cadeia de caracteres"
+simple_title:         "Encontrando o comprimento de uma cadeia de caracteres"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que: Entendendo a Importância de Encontrar o Comprimento de uma String
+## Por Que
 
-Ao trabalhar com programação em Python, é muito comum lidar com strings - que são conjuntos de caracteres. Para poder manipular essas strings de forma eficiente, é importante saber o seu comprimento. Encontrar o comprimento de uma string pode ser útil em diversas situações, como por exemplo, para validar o input do usuário ou para fazer operações matemáticas com esses valores. Neste artigo, exploraremos como encontrar o comprimento de uma string em Python.
+Você já se perguntou como os programas conseguem saber quantos caracteres têm em uma palavra ou frase? Saber o tamanho de uma string é uma habilidade essencial para qualquer programador, e neste artigo vamos te mostrar como fazer isso usando Python.
 
-## Como Fazer: Encontrando o Comprimento de uma String em Python
+## Como Fazer
 
-Em Python, podemos usar a função `len()` para encontrar o comprimento de uma string. Esta função aceita um argumento, que deve ser uma string, e retorna o número de caracteres presentes nessa string. Veja um exemplo de código abaixo:
+Para encontrar o tamanho de uma string em Python, usamos a função `len()`. Por exemplo, se tivermos a string "Olá, mundo", podemos usar a função da seguinte maneira:
 
-```python
-frase = "Olá, mundo!"
-comprimento = len(frase)
-print(comprimento)
-```
-**Saída:**
-```
-13
+```Python
+print(len("Olá, mundo"))
 ```
 
-Neste exemplo, definimos uma variável chamada `frase` que contém a string "Olá, mundo!" e em seguida, usamos a função `len()` para encontrar o seu comprimento e armazenamos o resultado na variável `comprimento`. Por fim, imprimimos esse valor na tela.
+O resultado dessa função será 11, já que há 11 caracteres, incluindo espaços, na frase "Olá, mundo".
 
-Além disso, é importante ressaltar que a função `len()` também pode ser usada para encontrar o comprimento de outros tipos de dados, como listas e dicionários. Veja um exemplo abaixo:
+Você também pode utilizar a função `len()` para encontrar o tamanho de uma variável que contenha uma string. Por exemplo:
 
-```python
-lista = [1, 2, 3, 4, 5]
-comprimento_lista = len(lista)
-print(comprimento_lista)
-```
-**Saída:**
-```
-5
+```Python
+mensagem = "Python é incrível!"
+print(len(mensagem))
 ```
 
-## Mergulho Profundo: Entendendo como a Função `len()` Funciona
+O resultado será novamente 11, pois a variável `mensagem` contém uma string com 11 caracteres.
 
-Agora que já sabemos como usar a função `len()` para encontrar o comprimento de uma string em Python, vamos entender um pouco mais sobre como ela funciona. Em Python, cada tipo de dado é representado por uma classe, e essas classes possuem diferentes métodos e propriedades. No caso das strings, a classe `str` possui o método `__len__()`, que é responsável por retornar o comprimento dessa string. Isso significa que quando usamos a função `len()`, na verdade estamos acessando esse método por trás dos panos.
+## Deep Dive
 
-Vale ressaltar que a função `len()` só funciona com objetos que possuem o método `__len__()`, o que inclui strings, listas, tuplas, dicionários, entre outros.
+Ao usar a função `len()`, é importante ter em mente que ela conta todos os caracteres da string, incluindo espaços em branco e caracteres especiais como pontuação. Além disso, a função também pode ser usada para encontrar o tamanho de outros tipos de dados, como listas e dicionários.
+
+Outra coisa importante a se notar é que, em Python, as strings são imutáveis, o que significa que não podemos alterar diretamente a string original. Isso significa que, se tentarmos atribuir um novo valor a um determinado índice em uma string, receberemos um erro.
+
+Por exemplo, se tentarmos executar o seguinte código:
+
+```Python
+mensagem = "Python é incrível!"
+mensagem[0] = "J"
+```
+
+Receberemos um erro informando que a string não pode ser modificada. Para contornar isso, podemos usar a concatenação de strings para criar uma nova string com o valor atualizado.
 
 ## Veja Também
 
-- [Documentação oficial do Python sobre a função len()](https://docs.python.org/3/library/functions.html#len)
-- [Tutorial sobre strings em Python](https://realpython.com/python-strings/)
-- [Artigo sobre as diferentes formas de encontrar o comprimento de uma string](https://www.techbeamers.com/python-string-length/#Finding_Length_of_String_in_Python_Language)
+- [Tutorial de Introdução à Programação em Python](https://www.learnpython.org/pt/)
+- [Documentação oficial do Python](https://docs.python.org/pt-br/3/index.html)
+- [Artigo do Real Python sobre strings em Python](https://realpython.com/python-strings/)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 基本認証付きでhttpリクエストを送信する"
-simple_title:         "基本認証付きでhttpリクエストを送信する"
+title:                "基本身分認証でのhttpリクエストの送信"
+html_title:           "Javascript: 基本身分認証でのhttpリクエストの送信"
+simple_title:         "基本身分認証でのhttpリクエストの送信"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,40 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストを基本認証で送るのか
+## なぜ
+今回の記事では、JavaScriptでHTTPリクエストを送信する際に、基本認証を使用する理由について説明します。また、基本認証を実装する方法と、その仕組みをより詳しく知るための情報をご紹介します。
 
-プログラムを書く際、時々ウェブサイトから情報を取得する必要があります。そのために、HTTPリクエストを送ることがあります。しかし、時には情報にアクセスするために認証が必要な場合があります。そのような場合、基本認証を使用してHTTPリクエストを送ることが必要になります。
-
-## 方法
-
-基本認証を使用するためには、次のコードを使用します。
+## 実際にやってみる
+基本認証を使用してHTTPリクエストを送信するには、まずは`XMLHttpRequest`オブジェクトを使用します。以下のコードを参考にしてみてください。
 
 ```Javascript
-var xhr = new XMLHttpRequest(); // XMLHTTPリクエストオブジェクトを作成する
-xhr.open('GET', 'https://example.com/api', true); // リクエストを開く
-xhr.setRequestHeader('Authorization', 'Basic ' + btoa('username:password')); // 認証情報をセットする
-xhr.send(); // リクエストを送信する
+// XMLHttpRequestオブジェクトを作成
+var xhttp = new XMLHttpRequest();
+
+// リクエストの種類とURLを指定
+xhttp.open("GET", "https://example.com/api/data", true);
+
+// ユーザ名とパスワードを指定して基本認証を設定
+xhttp.setRequestHeader("Authorization", "Basic " + btoa("username:password"));
+
+// リクエストを送信
+xhttp.send();
+
+// レスポンスを受け取る
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    console.log(xhttp.responseText);
+  }
+};
 ```
 
-上記のコードでは、XMLHttpRequestオブジェクトを作成し、リクエストURLを指定します。その後、setRequestHeaderメソッドを使用して、基本認証のヘッダー情報をセットします。最後に、sendメソッドを使用してリクエストを送信します。このようにすることで、認証情報を提供することができます。
+上記のコードでは、`XMLHttpRequest`オブジェクトを作成し、`open()`メソッドでリクエストの種類とURLを指定しています。さらに、`setRequestHeader()`メソッドでユーザ名とパスワードをBase64エンコードしたものを`Authorization`ヘッダーに設定することで、基本認証を実装しています。最後に`send()`メソッドでリクエストを送信し、`onreadystatechange`イベントハンドラーを使用してレスポンスを受け取ることができます。
 
-基本認証を使用してリクエストを送ると、サーバー側では以下のようなヘッダーを返します。
+`XMLHttpRequest`以外にも`fetch()`APIやサードパーティー製のHTTPクライアントライブラリを使用しても、同様の方法で基本認証を実装することができます。
 
-```Javascript
-{
-  'Authorization': 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=' // 送信した認証情報に基づき生成されたBase64エンコードされた文字列
-}
-```
+## より詳しく見てみる
+基本認証は、HTTPプロトコルの一種であるHTTPベーシック認証を使用するものです。これは、リクエストヘッダーにBase64エンコードされたユーザ名とパスワードを含めることで、サーバー側で認証を行う仕組みです。ただし、Base64エンコードは暗号化ではないため、セキュリティ上の問題があることには注意が必要です。
 
-これにより、サーバー側で認証情報を検証し、リクエストに応答することができます。
+実際のアプリケーションでは、HTTPSを使用することや、セキュリティトークンを使用することで、より安全な認証を実現することが推奨されています。
 
-## ディープダイブ
+## 関連リンク
+- [MDN web docs - HTTPベーシック認証](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [XMLHttpRequestオブジェクトのリファレンス](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
+- [Base64エンコードについて](https://developer.mozilla.org/ja/docs/Web/API/DOMString/Btoa)
 
-基本認証を使用する主な理由は、セキュリティです。この方法を使用することで、ユーザー名とパスワードを含む認証情報を暗号化し、安全にリクエストを送信することができます。また、基本認証にはユーザー名とパスワードの組み合わせが必要で、よりセキュアな認証方法よりも簡単に実装することができます。
+### おわりに
+今回は、JavaScriptでHTTPリクエストを送信する際に、基本認証を使用する方法について紹介しました。基本認証は便利な認証方式ですが、セキュリティ上の問題があるため、適切に使用するように注意しましょう。
 
-基本認証は、様々なウェブアプリケーションで使用されており、よく使われる認証の一つです。しかし、パスワードを平文で送信するため、HTTPSを使用してリクエストを送信することが推奨されます。
-
-## See Also
-
-- [XMLHttpRequestのドキュメント](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [HTTPリクエストの基本認証についての詳細なドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## 関連記事を見る

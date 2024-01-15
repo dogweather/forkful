@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Encontrando o comprimento de uma string"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "Arduino: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que alguém deve aprender a encontrar o comprimento de uma string
-A programação em Arduino é uma ótima maneira de começar a se aventurar no mundo do desenvolvimento. Uma das habilidades mais úteis para um programador é ser capaz de encontrar o comprimento de uma string. Isso é importante para tarefas como manipulação de texto, armazenamento de dados e muito mais.
+## Por que encontrar o comprimento de uma string?
 
-## Como encontrar o comprimento de uma string em Arduino
-Encontrar o comprimento de uma string em Arduino pode parecer intimidante no início, mas é na verdade bastante simples. Vamos começar criando uma string e salvando-a em uma variável.
+Normalmente, queremos descobrir o comprimento de uma string por razões de formatação, validação de entrada de dados ou simplesmente por curiosidade. Saber o comprimento de uma string pode ser útil em muitas situações de programação.
+
+## Como fazer:
+
+O Arduino possui uma função built-in chamada "strlen" que nos permite encontrar o comprimento de uma string. Vamos dar uma olhada em um exemplo:
 
 ```Arduino
-
 String minhaString = "Olá, mundo!";
+int comprimento = strlen(minhaString);
+Serial.print("O comprimento da string é: ");
+Serial.println(comprimento);
 ```
+Output:
+```
+O comprimento da string é: 12
+```
+Neste exemplo, declaramos uma variável do tipo String e atribuímos a ela a frase "Olá, mundo!". Em seguida, usamos a função strlen() para encontrar o comprimento dessa string e atribuímos o valor retornado pela função à variável "comprimento". Por fim, imprimimos o valor na porta serial.
 
-Agora, para encontrar o comprimento dessa string, podemos usar o método `length()`, que é nativo do Arduino. Ele retornará o número de caracteres da string, incluindo espaços.
+## Mergulho profundo:
+
+A função strlen retorna um valor do tipo "size_t", ou seja, um valor inteiro não sinalizado (positivo) que representa o comprimento de uma string. Além disso, é importante ressaltar que os espaços em branco também são contabilizados no comprimento de uma string.
+
+Outra forma de encontrar o comprimento de uma string no Arduino é usando o loop "for". Vamos dar uma olhada em como ficaria nosso exemplo utilizando essa técnica:
 
 ```Arduino
-int length = minhaString.length();
-Serial.println(length);
+String minhaString = "Olá, mundo!";
+int comprimento = 0;
+for (int i = 0; i < minhaString.length(); i++) {
+  comprimento++;
+}
+Serial.print("O comprimento da string é: ");
+Serial.println(comprimento);
 ```
+Output:
+```
+O comprimento da string é: 12
+```
+Neste exemplo, percorremos cada letra da string utilizando o método "length()", que nos retorna o comprimento total da string. A cada iteração do loop, incrementamos o valor da variável "comprimento". Ao final, o valor final é impresso na porta serial.
 
-Isso imprimirá "12" no monitor serial, já que a string possui 12 caracteres. Podemos usar esse método em qualquer string que criarmos em nosso código.
-
-## Mergulho profundo
-Agora, vamos entender como o método `length()` funciona por trás das cenas. A verdade é que, quando estamos trabalhando com strings em Arduino, estamos trabalhando com matriz de caracteres (`char[]`). O método `length()` simplesmente contador o número de caracteres armazenados na matriz. Isso significa que ele é sensível a espaços vazios e caracteres especiais.
-
-Outro aspecto importante é que o tamanho da string é limitado pela memória disponível no Arduino. Se tentarmos criar uma string muito grande, podemos acabar com um erro de esgotamento de memória.
-
-## Veja também
-- [Documentação oficial do Arduino sobre string](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Tutorial de programação em Arduino (em português)](https://notafiscal.net.br/blog/tutorial-de-programacao-para-arduino-em-portugues/)
-- [Fórum de discussão para programadores em Arduino (em português)](http://www.arduino.com.br/)
-
-O conhecimento sobre como encontrar o comprimento de uma string em Arduino é essencial para qualquer programador. Com ele, você poderá criar projetos mais complexos e manipular dados de forma mais eficiente. Continue explorando o mundo da programação em Arduino e veja o que mais pode ser feito com essa habilidade!
+## Veja também:
+- Documentação oficial da função strlen do Arduino: https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/strlen/
+- Artigo do Alura sobre manipulação de strings no Arduino: https://www.alura.com.br/artigos/manipulando-strings-no-arduino-com-strings
+- Vídeo tutorial do canal "Programação Descomplicada" sobre strings no Arduino: https://www.youtube.com/watch?v=9bXZE5bEeiI

@@ -1,6 +1,7 @@
 ---
-title:                "C#: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Ergebnissen"
+html_title:           "C#: Ausgabe von Debugging-Ergebnissen"
+simple_title:         "Ausgabe von Debugging-Ergebnissen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -11,52 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Debug-Ausgaben sind ein wichtiges Instrument für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. Durch das Drucken von debug-Ausgaben können Entwickler den Zustand ihres Codes zu einem bestimmten Zeitpunkt nachvollziehen und so potenzielle Fehlerquellen identifizieren.
+Es gibt verschiedene Gründe, warum man sich für die Ausgabe von Debug-Informationen im Code interessieren könnte. Einer der Hauptgründe ist, dass es hilft, Probleme im Programm besser zu verstehen und zu debuggen. Auch kann es nützlich sein, um den Ablauf des Codes zu verfolgen und die Korrektheit der Ausführung zu überprüfen.
 
-## Wie
+## Wie es geht
 
-Das Drucken von debug-Ausgaben in C# ist einfach und kann auf verschiedene Arten erfolgen. Hier sind zwei Beispiele:
+Um Debug-Ausgaben in C# einzubauen, gibt es verschiedene Methoden. Eine simple Möglichkeit ist die Verwendung der `Console.WriteLine()` Methode, um eine Nachricht auf der Konsole auszugeben. Hier ein Beispiel:
 
 ```C#
-// Beispiel 1: Verwendung von Console.WriteLine()
-int num = 10;
-Console.WriteLine($"num hat den Wert von {num}");
-
-// Output: num hat den Wert von 10
+int num = 5;
+Console.WriteLine("Die Variable num hat den Wert: " + num);
 ```
 
-```C#
-// Beispiel 2: Verwendung von Debug.WriteLine()
-Debug.WriteLine("Dies ist eine Debug-Ausgabe");
+Dies würde folgende Ausgabe erzeugen:
 
-// Output in der Debug-Konsole: Dies ist eine Debug-Ausgabe
+```
+Die Variable num hat den Wert: 5
 ```
 
-Diese Beispiele zeigen, dass wir entweder die `Console.WriteLine()`-Methode oder die `Debug.WriteLine()`-Methode verwenden können, um debug-Ausgaben zu drucken.
-
-## Deep Dive
-
-In C# gibt es verschiedene Arten, wie wir debug-Ausgaben formatieren können. Wir können z.B. die Platzhalter-Syntax (`${}`) oder die String-Interpolation (`$""`) verwenden, um Variablenwerte in unsere Ausgabe einzubinden.
+Eine weitere Möglichkeit ist die Verwendung des `Debug` Klassen aus dem `System.Diagnostics` Namespace. Diese bietet verschiedene Methoden, um Debug-Ausgaben zu formatieren und zu verwalten. Hier ein Beispiel:
 
 ```C#
-// Platzhalter-Syntax
-string name = "Max Mustermann";
-Console.WriteLine("Mein Name ist {0}", name);
-
-// Output: Mein Name ist Max Mustermann
-
-// String-Interpolation
 int num1 = 5;
-int num2 = 10;
-Console.WriteLine($"Das Ergebnis von {num1} + {num2} ist {num1 + num2}");
-
-// Output: Das Ergebnis von 5 + 10 ist 15
+int num2 = 8;
+Debug.WriteLine($"Die Summe von {num1} und {num2} ist {num1 + num2}");
 ```
 
-Zusätzlich können wir durch das Setzen von Breakpoints in Visual Studio und das Hinzufügen von Debug-Messages unsere Ausgabe noch genauer kontrollieren und beobachten.
+Dies würde folgende Ausgabe erzeugen:
+
+```
+Die Summe von 5 und 8 ist 13
+```
+
+## Tiefer Einblick
+
+Es gibt noch viele weitere Möglichkeiten, Debug-Ausgaben in C# zu nutzen. Dazu zählen unter anderem die Verwendung von Logger-Bibliotheken wie NLog oder Log4net, die es ermöglichen, die Ausgaben zu filtern und in verschiedene Protokolldateien oder -kanäle zu schreiben. Auch ist es möglich, eigene Debug-Ausgabefunktionen zu entwickeln, die spezifische Anforderungen erfüllen.
+
+Generell empfiehlt es sich, Debug-Ausgaben nur in Entwicklungsumgebungen einzubauen und diese für Produktivumgebungen zu deaktivieren, um die Performance des Programms nicht zu beeinträchtigen.
 
 ## Siehe auch
 
-- [Debug-Ausgaben in C#](https://docs.microsoft.com/de-de/visualstudio/debugger/using-the-debugger-window?view=vs-2019)
-- [Tipps und Tricks für das Debuggen in C#](https://stackify.com/csharp-debugging-tips/)
-- [Fehlerbehebung in C#](https://www.codeproject.com/Articles/6948/Debugging-in-C-A-tutorial)
+- [Microsoft Dokumentation zu Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
+- [Tutorial: Einführung in Debugging in C#](https://www.tutorialspoint.com/csharp/csharp_debugging.htm)
+- [NLog - eine beliebte Logger-Bibliothek für C#](https://nlog-project.org/)

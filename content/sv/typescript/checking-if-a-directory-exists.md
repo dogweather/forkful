@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "TypeScript: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,52 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna kontrollera om en mapp finns är en viktig del av programmering, särskilt när du arbetar med filhantering eller hanterar användarinput. Det är också en användbar funktion för att undvika fel och optimera ditt program. I denna bloggpost kommer vi att titta närmare på hur man kan kontrollera om en mapp finns i TypeScript.
+Att kolla om en mapp finns kan vara till nytta för att kontrollera om en specifik plats existerar eller för att hantera filer och mappar på ett effektivt sätt i ditt TypeScript-projekt. Detta kan hjälpa till att undvika felaktig kodning och optimera din applikations prestanda.
 
 ## Hur man gör det
 
-För att kontrollera om en mapp finns, använder vi ``fs.existsSync()`` funktionen från Node.js File System modulen. Den här funktionen tar en sökväg till mappen som argument och returnerar en boolean som visar om mappen finns eller inte. Om den hittar mappen returnerar den true, annars false.
-
-Först behöver vi importera ``fs`` modulen i vårt TypeScript-program:
-
 ```TypeScript
 import fs from 'fs';
+
+// Metod 1: Använda "fs.existsSync" för att kontrollera en mapp
+console.log(fs.existsSync('./minMapp')); // Output: true (om mappen finns)
+
+// Metod 2: Använda "fs.statSync" för att kontrollera en mapp
+console.log(fs.statSync('./minMapp').isDirectory()); // Output: true (om mappen finns)
 ```
 
-Sedan kan vi använda ``fs.existsSync()`` funktionen för att kontrollera om en mapp med namnet "documents" finns i vår nuvarande sökväg:
+Metod 1: Vi importerar fs-modulen och använder sedan funktionen "existsSync" för att kontrollera om den specificerade mappen finns. Om mappen finns returneras värdet "true", annars returneras "false". 
 
-```TypeScript
-if (fs.existsSync('documents')) {
-  console.log('Mappen finns.');
-} else {
-  console.log('Mappen finns inte.');
-}
-```
-
-Om mappen existerar kommer utskriften att vara "Mappen finns.", annars kommer den visa "Mappen finns inte.".
+Metod 2: Vi använder funktionen "statSync" för att få information om en fil eller en mapp. Här använder vi metoden "isDirectory" för att kontrollera om det är en mapp som vi får information om. Om mappen finns returneras värdet "true", annars returneras "false".
 
 ## Djupdykning
 
-En sak att notera är att ``fs.existsSync()`` funktionen endast returnerar true om mappen finns på exakt den sökväg som vi har angivit. Det betyder att om vi till exempel anger "documents/test" som sökväg istället för bara "documents", kommer funktionen att returnera false eftersom "documents/test" inte är en existerande mapp. För att kunna söka efter en mapp i en undermapp, måste vi använda ``fs.existsSync()`` funktionen med ``path.join()`` från Node.js Path modulen.
+Det finns flera sätt att kontrollera om en mapp existerar, men de två mest använda metoderna är "existsSync" och "statSync" som nämns ovan. Det finns också andra metoder, som att använda "path" modulen tillsammans med "existsSync" och "statSync".
 
-```TypeScript
-import fs from 'fs';
-import path from 'path';
+Det är också viktigt att komma ihåg att både "existsSync" och "statSync" returnerar "true" även om mappen är tom. Om du behöver kolla om mappen är tom eller inte, kan du använda "readdirSync" funktionen i "fs"-modulen för att få en lista över filer i mappen och sedan kontrollera om denna lista är tom eller inte.
 
-const mappNamn = 'test';
-const undermapp = 'documents';
+## Se också
 
-const sökväg = path.join(undermapp, mappNamn);
-if (fs.existsSync(sökväg)) {
-  console.log('Mappen finns.');
-} else {
-  console.log('Mappen finns inte.');
-}
-```
+Här är några användbara länkar för att lära dig mer om att kontrollera om en mapp existerar i ett TypeScript-projekt:
 
-Nu kommer utskriften att vara "Mappen finns." om "test" finns i undermappen "documents".
-
-## Se även
-
-- [Node.js File System modulen](https://nodejs.org/api/fs.html)
-- [Node.js Path modulen](https://nodejs.org/api/path.html)
+- [Dokumentation för "fs" modulen i TypeScript](https://nodejs.org/api/fs.html)
+- [Översikt över "path" modulen och dess metoder](https://nodejs.org/api/path.html) 
+- [Guide för att kontrollera om en mapp är tom med "readdirSync" funktionen](https://www.geeksforgeeks.org/node-js-fs-readdirectorysync-method/)

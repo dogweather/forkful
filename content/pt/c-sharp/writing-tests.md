@@ -1,5 +1,6 @@
 ---
-title:                "C#: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "C#: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "C#"
 category:             "C#"
@@ -9,42 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante
+## Por que
 
-Escrever testes é uma prática essencial para garantir a qualidade do código em qualquer linguagem de programação, incluindo o C#. Eles servem como uma forma de validar se o nosso código está funcionando corretamente e também nos permitem identificar possíveis problemas antes que eles se tornem grandes problemas.
+Escrever testes em um projeto de programação pode parecer um trabalho chato e desnecessário, mas na verdade é uma parte crucial do processo de desenvolvimento de software. Os testes ajudam a garantir que o código esteja funcionando corretamente e previnem futuros erros, economizando tempo e esforço no longo prazo.
 
-## Como escrever testes em C#
+## Como fazer
 
-Para escrever testes em C#, é necessário utilizar uma estrutura de teste, como o NUnit ou o xUnit. Essas ferramentas permitem criar classes e métodos de teste que podem ser executados para verificar se o código está funcionando conforme o esperado.
-
-Veja um exemplo de como escrever um teste simples usando o NUnit:
+Escrever testes em C# é bastante simples, e pode ser feito usando a estrutura de testes integrada do Visual Studio ou uma biblioteca externa, como o NUnit. Veja abaixo um exemplo de teste de unidade simples usando NUnit:
 
 ```C#
-[Test]
-public void TestSoma()
+using NUnit.Framework;
+
+[TestFixture]
+public class CalculatorTests
 {
-    // Arrange
-    int a = 1;
-    int b = 2;
+    [Test]
+    public void When_AddMethod_IsCalled_ReturnsCorrectSum()
+    {
+        // Arrange
+        int a = 10;
+        int b = 5;
+        Calculator calculator = new Calculator();
 
-    // Act
-    int resultado = a + b;
+        // Act
+        int result = calculator.Add(a, b);
 
-    // Assert
-    Assert.AreEqual(3, resultado);
+        // Assert
+        Assert.AreEqual(15, result);
+    }
 }
 ```
 
-Neste exemplo, temos um método de teste que realiza uma soma simples e verifica se o resultado é igual a 3. Caso contrário, o teste falhará e será necessário revisar o código.
+Neste exemplo, criamos um teste para a classe Calculator, que possui um método Add que recebe dois números e retorna a soma deles. Usando a sintaxe do NUnit, podemos testar se o resultado retornado pelo método é o esperado. 
 
-## Aprofundando nos testes em C#
+## Deep Dive
 
-Além dos testes unitários, também é possível escrever testes de integração e testes funcionais em C#. Os testes de integração garantem que as diferentes partes do código estão se comunicando corretamente e os testes funcionais validam se a aplicação está funcionando conforme o esperado pelo usuário.
+Escrever bons testes em C# envolve entender os principais conceitos e tecnologias da linguagem. Alguns pontos a serem considerados são: 
 
-Também é importante lembrar de seguir boas práticas de testes, como nomear adequadamente os métodos de teste, manter os testes independentes uns dos outros e utilizar mocks para isolar o código que está sendo testado.
+- Testes de unidade vs testes de integração: enquanto os testes de unidade verificam a funcionalidade de uma unidade isolada de código, os testes de integração testam a interação entre diferentes unidades de código.
+- Cobertura de código: para garantir que todos os caminhos do código estejam sendo testados, é importante medir a cobertura de código de seus testes.
+- Testes automatizados: ter um conjunto de testes automatizados que podem ser executados sempre que houver uma alteração no código é essencial para garantir a qualidade do software.
+
+Além disso, é importante seguir boas práticas ao escrever testes, como manter os testes independentes entre si e garantir que sejam facilmente entendidos pelos membros da equipe.
 
 ## Veja também
 
-- [Documentação oficial do NUnit](https://nunit.org/)
-- [Documentação oficial do xUnit](https://xunit.net/)
-- [Artigo sobre testes em C# do Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/core/testing/)
+- [Documentação oficial do NUnit](https://docs.nunit.org/)
+- [Melhores práticas para escrever testes em C#](https://dev.to/j_pohl/melhores-praticas-para-escrever-testes-em-c-36m2)
+- [Artigo sobre testes automatizados em C#](https://www.c-sharpcorner.com/UploadFile/5b1f04/introduction-to-automated-testing-in-C-Sharp/)

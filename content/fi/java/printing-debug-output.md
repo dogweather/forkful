@@ -1,6 +1,7 @@
 ---
-title:                "Java: Tulostaminen Debug-ulosvedolla"
-simple_title:         "Tulostaminen Debug-ulosvedolla"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Java: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -11,50 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos olet Java-ohjelmoija, niin olet todennäköisesti joutunut käsittelemään bugiraportteja, jotka ovat todella epämääräisiä ja sisältävät vain "ohjelma kaatuu" -ilmoituksen. Tämänkaltainen ilmoitus ei tarjoa mitään hyödyllistä tietoa, jonka avulla voit korjata ongelman nopeasti. Tässä tilanteessa debug-tekstin tulostaminen voi olla erittäin hyödyllistä diagnosoida ongelma ja löytää ratkaisu siihen.
+Debug-tulosteiden tulostaminen on tärkeä osa ohjelmoinnin prosessia. Se auttaa ohjelmoijaa löytämään ja korjaamaan virheitä koodissa ja varmistamaan, että ohjelma toimii oikein.
 
 ## Miten
 
-Debug-tekstin tulostaminen Java-ohjelmassa on helppoa. Voit käyttää "System.out.println()" -metodia, joka tulostaa halutun tekstin konsoliin. Voit myös käyttää "System.err.println()", joka tulostaa tekstin punaisella ja näin ollen erottaa sen muusta tekstistä. Tässä on yksinkertainen Java-esimerkki debug-tekstin tulostamisesta koodissa:
+Useimmissa tapauksissa debug-tulosteita tarvitsee tulostaa vain testaustyökaluja käytettäessä, jotta voidaan seurata koodin toimintaa ja muuttujien arvoja. Tämä voidaan tehdä Java-koodissa käyttämällä System.out.println() -metodia. Esimerkiksi:
 
 ```Java
-public class DebugExample {
-
-    public static void main(String[] args) {
-    
-        // Tehdään laskutoimitus ja tulostetaan sen tulos
-        int a = 5;
-        int b = 2;
-        int sum = a + b;
-        System.out.println("Summa: " + sum);
-        
-        // Simuloidaan virhetilanne
-        int c = 10;
-        int d = 0;
-        int div = c / d;
-        System.err.println("Jakaminen nollalla: " + div);
-    }
-}
+int x = 5;
+System.out.println("x on nyt " + x); //tulostaa "x on nyt 5"
 ```
 
-Tämän koodin tulos tulostettaisiin näin:
+Jos haluat tulostaa tarkempia tietoja, voit myös käyttää System.out.printf() -metodia, joka antaa sinun määrittää tarkemman tulostusmuodon. Esimerkiksi:
 
+```Java
+double a = 3.1415;
+System.out.printf("Arvo on %.2f", a); //tulostaa "Arvo on 3.14"
 ```
-Summa: 7
-Exception in thread "main" java.lang.ArithmeticException: / by zero
-    at DebugExample.main(DebugExample.java:14)
-```
 
-Näet, että "Summa: 7" tulostuu konsoliin, mutta virheilmoitus punaisella näkyy error-tulostevirrassa.
+Voit myös käyttää Log4j-kirjastoa tulostamaan debug-tulosteita, mikä tarjoaa enemmän vaihtoehtoja ja joustavuutta debuggaamiseen.
 
-## Syvempi sukellus
+## Syväsukellus
 
-Debug-tekstin tulostaminen voi olla hyödyllistä myös silloin, kun haluat tarkastella tiettyjen arvojen tilaa suorituskyvyn tai tehokkuuden parantamiseksi. Voit esimerkiksi tulostaa tietyn muuttujan arvon ja suorittaa ohjelmaasi eri syötteillä, jotta näet, miten muuttujan arvo muuttuu jokaisen suorituksen välillä.
+Debug-tulosteita tulisi käyttää vain testauksen yhteydessä ja ne tulisi poistaa ennen ohjelman julkaisemista. Liiallinen debug-tulosteiden käyttö voi hidastaa ohjelman suoritusta ja aiheuttaa turhaa tietoliikennettä.
 
-On myös tärkeää muistaa, että kaikkea debug-tekstiä ei tarvitse poistaa valmiista koodista. Kun olet ratkaissut ongelman ja ohjelmasi toimii odotetulla tavalla, voit poistaa debug-tulostukset tai kommentoida ne pois koodistasi, jotta se pysyy siistinä ja helpommin luettavissa.
+Lisäksi on tärkeää varmistaa, että debug-tulosteet eivät sisällä arkaluonteista tai turhaa informaatiota, kuten salasanoja tai käyttäjän yksityisiä tietoja.
 
 ## Katso myös
 
-- [Java Debugging Tutorial](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
-- [Debugging Tips and Tricks](https://blog.jetbrains.com/idea/2018/07/debugging-tips-tricks/)
-- [Java Debugging with Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2015/june/article3.php)
+- [Oracle:n opas debuggaamiseen Java-kielen kanssa](https://docs.oracle.com/javase/7/docs/technotes/guides/language/compiler-api.html)
+- [Log4j -kirjaston viralliset sivut](https://logging.apache.org/log4j/2.x/)

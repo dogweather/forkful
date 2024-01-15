@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Yamlin käyttäminen"
-simple_title:         "Yamlin käyttäminen"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Ruby: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,44 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ruby on monipuolinen ohjelmointikieli, joka tarjoaa laajan valikoiman erilaisia työkaluja ja kirjastoja. Yksi näistä työkaluista on YAML-muotoinen tiedostomuoto, joka on erittäin hyödyllinen ohjelmoijille. Tässä blogikirjoituksessa käsittelemme, mitä YAML on, miksi se on hyödyllinen ja miten sitä käytetään Rubyssa.
+YAML on käytännöllinen tiedostomuoto, joka mahdollistaa datan tallentamisen ja välittämisen yksinkertaisella ja luettavalla tavalla. Se on erityisen kätevä ohjelmointiympäristöissä, joissa tiedon järjestäminen ja luku on tärkeää.
 
-## Miten
+## Kuinka
 
-YAML (YAML Ain't Markup Language) on yksinkertainen ja helppokäyttöinen tiedostomuoto, joka perustuu nimeen tarkoitukselliseen kieleen (YAML). Se tarjoaa helpon tavan tallentaa ja jakaa tietoa erilaisten ohjelmistojen välillä. Se koostuu avaimista ja arvoista, jotka on järjestetty loogiseen rakenteeseen luettavuuden ja selkeyden varmistamiseksi.
-
-YAML-tiedostot tallennetaan tyypillisesti .yml-tiedostotyyppiin. Niitä voi luoda ja muokata tekstieditorilla, kuten Notepadilla tai Notepad ++:lla. Tässä on esimerkki YAML-tiedostosta, jossa on käytetty avaimia ja arvoja:
+YAML:n käyttöönotto Rubyssa on helppoa. Ensiksi, asenna paketti `YAML` komennolla:
 
 ```Ruby
-luokka:
-  nimi: Ruby-opas
-  aihe: YAML-muotoiset tiedostot
-  julkaisuvuosi: 2020
-  kirjoittaja: Minä
+gem install yaml
 ```
 
-YAML-tiedosto ladattaisiin ja käsiteltäisiin Rubyssä seuraavalla tavalla:
+Seuraavaksi, tuo paketti sisään Ruby-skriptissäsi:
 
 ```Ruby
-tiedosto = YAML.load(File.read("tiedosto.yml"))
-luokka = tiedosto["luokka"]
-nimi = luokka["nimi"]
-aihe = luokka["aihe"]
-puts nimi #=> Ruby-opas
-puts aihe #=> YAML-muotoiset tiedostot
+require 'yaml'
 ```
 
-Kuten voit nähdä, YAML-tiedostot ovat yksinkertaisia ja helppolukuisia. Ne tarjoavat myös joustavan tavan tallentaa tietoa ja ne ovat hyödyllisiä monissa ohjelmoinnin ja tietojenkäsittelyn sovelluksissa.
+Nyt voit tallentaa ja lukea YAML-muotoista dataa käyttämällä `YAML::Store` -luokkaa:
 
-## Deep Dive
+```Ruby
+# Tallenna YAML-tiedostoon
+yaml_store = YAML::Store.new("tiedoston_nimi.yaml")
+yaml_store.transaction do
+  yaml_store['avain'] = 'arvo'
+end
 
-YAML-tiedostot ovat erittäin joustavia ja niitä voi käyttää moniin eri tarkoituksiin. Ne voivat sisältää erilaisia tietotyyppejä, kuten merkkijonoja, numeroita, taulukoita ja muita monimutkaisempia rakenteita. Ne voivat myös sisältää toisistaan riippuvia avaimia ja arvoja, mikä tekee niistä erittäin hyödyllisiä monimutkaisten tietojen tallentamiseen ja jakamiseen.
+# Lue YAML-tiedostosta
+yaml_store = YAML::Store.new("tiedoston_nimi.yaml")
+yaml_store.transaction do
+  puts yaml_store['avain'] # tulostaa "arvo"
+end
+```
 
-YAML-tiedostoissa voi myös käyttää kommentteja, jotka auttavat selkeyttämään ja dokumentoimaan tiedostojen sisältöä. Kommentit alkavat "#" -merkillä ja ulottuvat rivin loppuun asti. Ne eivät vaikuta tiedostojen käsittelyyn, mutta ovat hyödyllisiä muistilappuina itselle ja muille ohjelmoijille.
+## Syväsukellus
 
-Kokeile rohkeasti luoda omia YAML-tiedostoja ja käsitellä niitä Rubyssä. Ne ovat erittäin hyödyllinen työkalu tietojen tallentamiseen ja jakamiseen monenlaisissa ohjelmoinnin projekteissa.
+YAML tarjoaa useita hyödyllisiä ominaisuuksia, kuten mahdollisuuden tallentaa monimutkaisia tietorakenteita ja sisällyttää kommentteja tiedostoon. Voit myös käyttää jäsennysmetodeja, kuten `YAML::load` ja `YAML::dump`, jotta saat enemmän hallintaa tallennettuun dataan.
+
+YAML:n tarkempi tutkiminen auttaa sinua ymmärtämään sen mahdollisuuksia ja hyödyntämään niitä ohjelmointiprojekteissasi.
 
 ## Katso myös
 
-- [Ruby - YAML](https://ruby-doc.org/stdlib-2.7.2/libdoc/yaml/rdoc/YAML.html)
-- [YAML.org](https://yaml.org/)
+- YAML:n dokumentaatio: https://ruby-doc.org/stdlib-3.0.0/libdoc/yaml/rdoc/YAML.html
+- Ruby:n virallinen verkkosivusto: https://www.ruby-lang.org/fi/
+- Ruby:n asennusohjeet: https://www.ruby-lang.org/fi/documentation/installation/

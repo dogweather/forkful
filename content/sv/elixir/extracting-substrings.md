@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Extrahera substrängar"
-simple_title:         "Extrahera substrängar"
+title:                "Utvinna delsträngar"
+html_title:           "Elixir: Utvinna delsträngar"
+simple_title:         "Utvinna delsträngar"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att extrahera substrängar i Elixir kan vara användbart för att manipulera textsträngar eller jämföra dem med andra strängar. Det kan också hjälpa till att söka efter specifika mönster eller ord inuti en längre sträng.
+Att extrahera substrängar är en vanlig operation som används för att manipulera text på ett effektivt sätt i Elixir. Det kan hjälpa dig att göra särskilda ändringar i befintliga texter eller att skapa nya textsträngar baserade på viss information.
 
-## Så här gör du
-
-För att extrahera en substräng från en textsträng i Elixir kan du använda funktionen `String.slice/3` eller `String.substr/2`. Här är ett exempel på hur du kan använda dessa funktioner:
+## Hur man gör
 
 ```Elixir
-textsträng = "Elixir är ett roligt programspråk!"
+# Extrahera en del av texten från en given plats
+sträng = "Det här är en textsträng"
+delar = String.slice(string, 4..8) # resultatet blir "här"
 
-String.slice(textsträng, 0, 6)
-#Output: "Elixir"
-
-String.substr(textsträng, 11, 6)
-#Output: "roligt"
+# Extrahera en del av texten baserat på ett villkor
+delar = to_string(42)
+String.slice(delar, 0, &1 == "4") # resultatet blir "4"
 ```
 
-Funktionen `String.slice/3` tar tre argument: textsträngen, startpositionen och längden på den önskade substrängen. Funktionen `String.substr/2` tar två argument: textsträngen och positionen där substrängen ska börja.
+Elixir har en rad inbyggda funktioner som kan hjälpa dig med att extrahera substrängar, inklusive `String.slice` och `String.split`. Dessa funktioner kan användas tillsammans med reguljära uttryck för mer komplexa extractioner.
 
-## Fördjupning
+## Djupdykning
 
-För att förstå hur dessa funktioner fungerar djupare är det viktigt att förstå skillnaden mellan `String`-modulen och `Binary`-modulen i Elixir. `String` representerar textsträngar medan `Binary` representerar binära data. En textsträng kan omvandlas till en binär datastruktur med hjälp av funktionen `to_string/1`.
+Att extrahera substrängar kan vara användbart när du arbetar med datahantering eller när du vill manipulera text på ett effektivt sätt. Det är också en viktig kunskap att ha när du arbetar med webbutveckling, där du ofta behöver extrahera specifika delar av en textsträng från ett HTTP-svar.
 
-När substrängar extraheras från en binär datastruktur konverteras de automatiskt till textsträngar av Elixir. Detta kan leda till förvirring om man inte förstår skillnaden mellan `String` och `Binary`-modulerna. Därför är det viktigt att vara medveten om denna skillnad när du arbetar med substrängar i Elixir.
+En annan aspekt att tänka på är att Elixir är byggt på Erlang-plattformen, som har stöd för mönstermatchning. Det betyder att du kan utnyttja denna funktion för att effektivt extrahera substrängar från en given text. Det finns också externa bibliotek som kan hjälpa dig med mer avancerade extraktioner, såsom `regexp` eller `re2`.
 
-## Se också
+## Se även
 
-- (Elixir - String)[https://hexdocs.pm/elixir/String.html]
-- (Elixir - Binary)[https://hexdocs.pm/elixir/Binary.html]
-- (Elixir School - Strings)[https://elixirschool.com/en/lessons/basics/basics/#strings]
-- (Elixir School - Binaries)[https://elixirschool.com/en/lessons/basics/basics/#binaries]
+- Officiell Elixir Documentation: https://hexdocs.pm/elixir/String.html 
+- Mönstermatchning i Elixir: https://elixir-lang.org/getting-started/pattern-matching.html 
+- Externa bibliotek för reguljära uttryck: https://hex.pm/packages/regexp, https://hex.pm/packages/re2

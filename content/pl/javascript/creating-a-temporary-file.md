@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "Javascript: Tworzenie pliku tymczasowego"
 simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,64 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Tworzenie tymczasowych plików jest nieodłącznym elementem programowania w języku Javascript. W wielu przypadkach, tworzenie tymczasowego pliku może być konieczne do poprawnego działania aplikacji. Jest to szczególnie przydatne przy pracy z plikami, bazami danych czy też podczas testowania aplikacji.
+Tworzenie plików tymczasowych może być niezbędne w niektórych sytuacjach podczas programowania w JavaScript. Pliki te są używane do przechowywania danych tymczasowych lub do przeprowadzenia testów w kodzie.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Aby utworzyć tymczasowy plik w języku Javascript, należy wykorzystać wbudowane funkcje z modułu `fs`. Poniżej przedstawiamy dwa przykłady, jeden dla systemów operacyjnych Windows, a drugi dla systemów Linux.
-
+Aby utworzyć tymczasowy plik w JavaScript, możesz skorzystać z wbudowanej funkcji o nazwie `fs.mkdtemp()`. Przykładowy kod poniżej demonstruje użycie tej funkcji:
+ 
 ```Javascript
-// Przykład dla systemu Windows
-
 const fs = require('fs');
-const path = require('path');
 
-// Pobieramy ścieżkę do katalogu tymczasowego
-const tempDir = os.tmpdir();
-
-// Tworzymy nazwę tymczasowego pliku
-const tempFileName = 'temp_file.txt';
-
-// Tworzymy i zapisujemy plik w katalogu tymczasowym
-fs.writeFile(path.join(tempDir, tempFileName), 'To jest treść tymczasowego pliku!', (err) => {
-  if (err) throw err;
-  console.log('Utworzono tymczasowy plik!');
+fs.mkdtemp('temp-', (err, folder) => {
+  if (err) {
+    throw err;
+  }
+  console.log(`Utworzono folder tymczasowy: ${folder}.`);
 });
 ```
 
-```Javascript
-// Przykład dla systemu Linux
+Po uruchomieniu powyższego kodu, powinieneś otrzymać wyjście w konsoli podobne do tego:
 
-const fs = require('fs');
-const os = require('os');
-const crypto = require('crypto');
-
-// Pobieramy ścieżkę do katalogu tymczasowego
-const tempDir = os.tmpdir();
-
-// Tworzymy nazwę losowego tymczasowego pliku
-const tempFileName = crypto.randomBytes(20).toString('hex') + '.txt';
-
-// Tworzymy i zapisujemy plik w katalogu tymczasowym
-fs.writeFile(path.join(tempDir, tempFileName), 'To jest treść tymczasowego pliku!', (err) => {
-  if (err) throw err;
-  console.log('Utworzono tymczasowy plik!');
-});
+```
+Utworzono folder tymczasowy: temp-467d4745c6f5f59a.
 ```
 
-Powyższe przykłady pokazują jak w prosty sposób można utworzyć oraz zapisać tymczasowy plik w języku Javascript. W obu przypadkach, po wykonaniu kodu, w katalogu tymczasowym pojawi się utworzony plik.
+W powyższym przykładzie, nazwa pliku tymczasowego będzie zaczynać się od `temp-`, a następnie zostanie dodana unikalna kombinacja znaków wygenerowanych przez `fs.mkdtemp()`. Możesz również ustawić własny prefiks lub koniec nazwy pliku poprzez zmianę pierwszego argumentu funkcji `mkdtemp()`.
 
-# Deep Dive
+## Deep Dive
 
-Tworzenie tymczasowych plików jest szczególnie przydatne podczas testowania aplikacji. Dzięki nim, można symulować działanie zapisu do plików, bez konieczności modyfikowania rzeczywistych plików. Ponadto, tymczasowe pliki pomagają w optymalizacji kodu, ponieważ ich tworzenie jest szybsze i mniej zasobożerne niż tworzenie i zapisywanie rzeczywistych plików na dysku.
+Funkcja `fs.mkdtemp()` pochodzi z wbudowanego modułu `fs` w Node.js, dzięki czemu możesz ją używać w dowolnym środowisku uruchomieniowym Node.js. Funkcja ta jest wykorzystywana do tworzenia folderów tymczasowych, a nie plików w ścisłym tego słowa znaczeniu. W przypadku potrzeby tworzenia plików tymczasowych, musisz wykorzystać inną funkcję o nazwie `fs.mkstemp()`, która również jest dostępna w module `fs`.
 
-W przypadku systemu operacyjnego Windows, do tworzenia tymczasowych plików można wykorzystać funkcję `mkstemp()` z modułu `fs`. Pozwala ona na utworzenie pliku oraz zwraca uchwyt do tego pliku, co pozwala na pracę z nim w dalszej części kodu.
+Należy pamiętać, że plik tymczasowy zostanie usunięty automatycznie po zakończeniu działania programu lub po wywołaniu `fs.rmdir()` lub `fs.unlink()`.
 
-Dla systemów Linux, można skorzystać z funkcji `randomBytes()` z modułu `crypto`. Generuje ona losowy ciąg znaków, który można wykorzystać jako nazwę tymczasowego pliku.
+## Zobacz także
 
-# Zobacz też
-
-- Dokumentacja funkcji `fs` z oficjalnej strony Node.js: https://nodejs.org/api/fs.html
-- Informacje o korzystaniu z katalogu tymczasowego w Node.js: https://nodejs.org/api/os.html#os_os_tmpdir
+- [Oficjalna dokumentacja Node.js na temat tworzenia plików tymczasowych](https://nodejs.org/dist/latest/docs/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
+- [Wprowadzenie do programowania w Node.js dla początkujących (po polsku)](https://codeburst.io/node-js-dla-pocz%C4%85tkuj%C4%85cych-wprowadzenie-650064d8b5c#.0s2cl4gmi)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wyodrębnianie podciągów"
+html_title:           "Javascript: Wyodrębnianie podciągów"
+simple_title:         "Wyodrębnianie podciągów"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Wyciąganie podciągów jest jedną z podstawowych umiejętności w programowaniu Javascript. Pozwala nam na manipulowanie tekstami i wyodrębnianie z nich potrzebnych nam informacji. To też często jedna z pierwszych zagadnień, które pojawiają się na drodze każdego młodego programisty. Dlatego warto się z tym tematem zapoznać i nauczyć się go stosować.
+Czy zdarzyło Ci się kiedykolwiek potrzebować wyodrębnić fragment tekstu ze stringa w Javascript? Jeśli tak, to masz szczęście, ponieważ w tym artykule dowiesz się, jak łatwo i wygodnie wyodrębnić substringi w aktualnej wersji języka Javascript.
 
-## Jak to zrobić? 
+Wyodrębnianie substringów jest bardzo przydatne podczas manipulacji tekstem, na przykład podczas walidacji formularzy lub przetwarzania danych. Może to również pomóc w użyciu funkcji, które wymagają poszczególnych części tekstu, takich jak wyszukiwanie lub podział.
 
-```Javascript
-const tekst = "To jest przykładowy tekst.";
-const podciag = tekst.substring(3,9);
-console.log(podciag);
-```
+## Jak to zrobić
 
-W powyższym przykładzie wykorzystujemy funkcję `substring()`, która ma dwa parametry - indeks początkowy i indeks końcowy. W wyniku otrzymujemy podciąg, który zaczyna się od 3 znaku i kończy na 9. W naszym przypadku będzie to "jest".
+Aby wyodrębnić substring w Javascript, musimy użyć metody `substring()` lub `slice()`. Oba metody przyjmują dwa parametry: początkowy indeks i końcowy indeks.
 
-Dodatkowo, funkcja `substring()` jest wyjątkowo użyteczna w połączeniu z metodą `indexOf()`, która pozwala nam na znalezienie indeksu danego znaku lub słowa w tekście. Dzięki temu możemy precyzyjniej wybrać interesujący nas podciąg.
+Przykładowo, jeśli chcemy wyodrębnić substring "programowanie" z napisu "Artykuł o programowaniu", możemy użyć metody `substring()` w ten sposób:
 
 ```Javascript
-const tekst = "To jest przykładowy tekst.";
-const index = tekst.indexOf("przykładowy"); //zwraca wartość 7
-const podciag = tekst.substring(index, tekst.length);
-console.log(podciag);
+let napis = "Artykuł o programowaniu";
+let substring = napis.substring(10, 21);
+console.log(substring); // "programowanie"
 ```
 
-W efekcie otrzymamy podciąg, który zaczyna się od słowa "przykładowy" i kończy się na końcu tekstu - w naszym przypadku będzie to całe zdanie "przykładowy tekst".
+Jeśli chcemy wyodrębnić tylko niektóre znaki z napisu, możemy użyć metody `slice()` w ten sposób:
 
-## Głębszy wgląd
+```Javascript
+let napis = "Lorem ipsum dolor sit amet";
+let substring = napis.slice(6, 11);
+console.log(substring); // "ipsum"
+```
 
-Podczas pracy z funkcją `substring()`, warto pamiętać o różnicach między indeksami liczb a indeksami znaków. W przypadku indeksów liczb, pierwszy znak ma indeks 0, a ostatni n-1 (gdzie n to długość tekstu). Natomiast w przypadku indeksów znaków, pierwszy znak jest oznaczany jako 1, a ostatni jako n.
+W obu powyższych przykładach drugi indeks jest liczbą większą niż pierwszy, co oznacza, że zostanie wyodrębniony fragment od pierwszego indeksu włącznie do drugiego indeksu bez włączenia.
 
-Kolejną przydatną funkcją jest `substr()` - działa podobnie jak `substring()`, ale przyjmuje tylko dwa parametry - indeks początkowy i długość podciągu.
+W przypadku użycia metody `substring()` lub `slice()` z tylko jednym parametrem, zostaną wyodrębnione znaki od tego indeksu włącznie do końca napisu.
 
-W przypadku pracy z dłuższymi tekstami, warto również zwrócić uwagę na różnice między metodą `substring()` a `slice()`. Ta druga działa w podobny sposób, ale pozwala na podanie indeksów ujemnych, co ułatwia wybieranie podciągów od końca tekstu.
+Możemy również użyć liczb ujemnych jako indeksów, co spowoduje zliczenie znaków od końca napisu wstecz. Przykładowo, `-3` oznacza trzeci znak od końca napisu.
+
+## Głęboki zanurzenie
+
+Metoda `substring()` jest zawsze odporne na błędy, oznacza to, że jeśli drugi indeks jest mniejszy niż pierwszy, to metoda będzie działać tak, jakby podano je w odwrotnej kolejności.
+
+Z drugiej strony, metoda `slice()` jest trochę bardziej zaawansowana i może obsługiwać ujemne liczby, co pozwala na wygodniejsze wyodrębnianie fragmentów tekstu z końca napisu.
+
+Warto również wspomnieć, że w przypadku użycia ujemnych indeksów, metoda `slice()` zwróci fragment od końca napisu, w przeciwieństwie do metody `substring()`, która zwróci fragment od początku.
 
 ## Zobacz również
 
-Jeśli chcesz pogłębić swoją wiedzę na temat manipulowania tekstami w Javascript, warto zapoznać się z tymi artykułami:
-
-- [Manipulowanie tekstami w Javascript](https://javascript.info/string)
-- [Metody pracy z tekstem w Javascript](https://www.w3schools.com/js/js_string_methods.asp)
-
-Pamiętaj, że jedyną skuteczną metodą nauki jest praktyka, więc nie wahaj się tworzyć własnych przykładów i eksperymentować z funkcjami `substring()`, `substr()` i `slice()`. Powodzenia!
+- Dokumentacja Javascript na temat metod `substring()` i `slice()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String
+- Przydatne wskazówki i przykłady wyodrębniania substringów: https://www.w3schools.com/jsref/jsref_substring.asp

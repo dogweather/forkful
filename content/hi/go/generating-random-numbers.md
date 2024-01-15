@@ -1,6 +1,7 @@
 ---
-title:                "Go: सहजीत की संख्याएं उत्पन्न करना"
-simple_title:         "सहजीत की संख्याएं उत्पन्न करना"
+title:                "अनियमित अंक उत्पन्न करना"
+html_title:           "Go: अनियमित अंक उत्पन्न करना"
+simple_title:         "अनियमित अंक उत्पन्न करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -9,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## KyonKya aapne kabhi socha hai ki hamesha hamare paas apne computer ya mobile par different numbers ki zaroorat hoti hai? Iska matlab har bar manually numbers ko type karna padta hai. Lekin Go programming language ke saath, aap apne program mein random numbers generate kar sakte hain jisse aapka kaam aasan aur efficient ho jayega.
 
-गो प्रोग्रामिंग में यादृच्छिक संख्याओं का उत्पादन के क्या लाभ हैं? यह ब्लॉग पोस्ट हिंदी पाठकों को इस सवाल का उत्तर देगा।
-
-## कैसे करें
+## Kaise Kare
+Go language mein, random numbers generate karne ke liye `math/rand` package ka use kiya jata hai. Is package ko import karne ke baad, aap `rand.Intn()` function ka use karke numbers generate kar sakte hain. Ye function `n` tak random integers generate karta hai. Neeche diye gaye code block mein iska ek simple example hai:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"math/rand"
-	"time"
+  "fmt"
+  "math/rand"
 )
 
 func main() {
-	// एक संख्या को स्वयं चयनित सीमा में उत्पन्न करें
-	rand.Seed(time.Now().UnixNano())
-	fmt.Println("रैंडम संख्या: ", rand.Intn(100))
+  randomNum := rand.Intn(10)
+  fmt.Println(randomNum)
+}
+```
+Is code mein `math/rand` package import kiya gaya hai aur `rand.Intn()` function ka use karke `randomNum` variable mein ek random number store kiya gaya hai. Ye number 0 se 10 tak ka ho sakta hai. Sample output ke liye aap neeche diye gaye terminal output ko dekh sakte hain:
 
-	// स्लाइस या एरे में कई संख्याओं को उत्पन्न करें
-	numbers := []int{1, 2, 3, 4, 5}
-	rand.Shuffle(len(numbers), func(i, j int) {
-		numbers[i], numbers[j] = numbers[j], numbers[i]
-	})
-	fmt.Println("अनुक्रमित सेल्स: ", numbers)
+```
+7
+```
+
+Agar aap chahte hain ki highest value bhi randomly generate ho, toh aap `rand.Int()` function ka use kar sakte hain. Is function mein aapko `min` aur `max` values specify karni hoti hain. Neeche diye gaye code mein iska ek example hai:
+
+```Go
+package main
+
+import (
+  "fmt"
+  "math/rand"
+)
+
+func main() {
+  randomNum := rand.Intn(10, 20)
+  fmt.Println(randomNum)
 }
 ```
 
-आप इस उदाहरण से सीख सकते हैं कि यादृच्छिक संख्याओं को उत्पन्न कैसे किया जाता है और इससे आप अपने प्रोग्रामों में उपयोग कर सकते हैं।
+Is code mein `randomNum` variable mein 10 se 20 tak ka random number store kiya gaya hai. Output ke liye aap neeche diye gaye terminal output ko dekh sakte hain:
 
-## गहराई तक कुछ जानिए
+```
+18
+```
 
-यादृच्छिक संख्याओं का उत्पादन मैस्मतिकीय मॉडल के आधार पर किया जाता है। गो प्रोग्रामिंग में `rand` पैकेज का उपयोग किया जाता है जो मैस्मतिकीय फंक्शन्स प्रदान करता है जो पेशवराना संख्याओं को उत्पन्न करने के लिए इस्तेमाल किए जा सकते हैं। यह फंक्शन्स समय, सीड और अन्य उपकरणों को हाल के भाव पर आधारित होते हैं जिससे वे गोरूत्वक्रम से मैस्मतिकीय निखारने के लिए प्रयोग किया जा सकते हैं।
+## Deep Dive
+Go language mein random numbers generate karne ke liye, internal pseudo-random number generator ka use kiya jata hai. Ye generator seed value ke basis par numbers generate karta hai. Seed value ko aap apne aap bhi set kar sakte hain, lekin agar aap ye nahi karte hain toh default seed value system clock ka use karti hai. Isse har baar program run hone par different numbers generate hote hain.
 
-# देखें भी
+Go language mein `rand` package ke alawa bhi `crypto/rand` package available hai jismo cryptographic random numbers generate karne ke liye functions available hote hain. Ye numbers pseudorandom numbers se jyada secure hote hain aur ek random source se generate hote hain jo seed value use nahi karta.
 
-- [Go ऑफिशियल दस्तावेज़ान्वेंद्रद कॉम / यादृच्छिक संख्याओं](https://pkg.go.dev/math/rand)
-- [सत्यापित से यादृच्छिक संख्याओं के उत्पाद
+## Dekhein Bhi
+- [Official Documentation for `math/rand` package](https://golang.org/pkg/math/rand/)
+- [Official Documentation for `crypto/rand` package](https://golang.org/pkg/crypto/rand/)
+- [A Beginner's Guide to Random Numbers in Go (in English)](https://www.callicoder.com/golang-random-number-generation/)

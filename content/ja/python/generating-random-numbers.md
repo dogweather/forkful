@@ -1,6 +1,7 @@
 ---
-title:                "Python: ランダムな数値を生成する"
-simple_title:         "ランダムな数値を生成する"
+title:                "ランダムな数字を生成する"
+html_title:           "Python: ランダムな数字を生成する"
+simple_title:         "ランダムな数字を生成する"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -9,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜPythonでランダムな数字を生成するのか？
+## なぜ？
 
-プログラミングにおいて、ランダムな数字を生成することは非常に重要です。例えば、ゲームやシミュレーション、セキュリティ、ランダムなデータの生成など、様々な用途で活用することができます。Pythonでは、簡単にランダムな数字を生成することができるため、多くのプログラマーが利用しています。
+ランダムな数字を生成することで、データをより多様化し、偶然性をシミュレートすることができます。これにより、プログラムのテストやゲーム開発など、さまざまな用途で活用することができます。
 
-## 生成方法：Pythonコードを使った例と出力結果
-
-Pythonでは、標準ライブラリの"random"モジュールを使用してランダムな数字を生成することができます。以下のようなコードを使用して、0から10までの範囲のランダムな整数を生成することができます。
+## 使い方
 
 ```Python
+# ランダムモジュールをインポート
 import random
 
-# 0から10までの整数を生成する
-random_number = random.randint(0, 10)
+# 0から10の範囲のランダムな整数を生成
+print(random.randint(0,10))
 
-# 結果を出力する
-print(random_number)
+# リストからランダムに要素を選択
+list = ["りんご", "バナナ", "オレンジ", "イチゴ"]
+print(random.choice(list))
+
+# 0から1までの範囲のランダムな小数を生成
+print(random.random())
 ```
 
-出力結果は以下のようになります。
+プログラムを実行すると、毎回異なる結果が得られることがわかります。また、シード値を指定することで、同じ結果を再現することも可能です。
 
-```
-5
-```
+## ディープダイブ
 
-また、浮動小数点数を生成するには、"random"モジュールの"uniform"関数を使用することができます。以下のようなコードを使用して、0から1までの範囲のランダムな浮動小数点数を生成することができます。
+ランダムな数字を生成する方法はさまざまありますが、大きく分けて疑似乱数と真の乱数の2種類があります。
 
-```Python
-# 0から1までの範囲の浮動小数点数を生成する
-random_float = random.uniform(0, 1)
+疑似乱数はアルゴリズムに基づいて生成されるため、完全なランダム性を持ちません。一方、真の乱数は外部要因によって生成されるため、より偶然性を持ちます。Pythonのrandomモジュールは疑似乱数を生成するため、通常の用途では問題ありませんが、暗号技術などでの使用は避けるべきです。
 
-# 結果を出力する
-print(random_float)
-```
+## 参考リンク
 
-出力結果は以下のようになります。
-
-```
-0.4589064821
-```
-
-## ランダムな数字生成の深層：さらに詳しく
-
-Pythonでは、単純に乱数を生成するだけではなく、より高度なランダムなパターンを生成することもできます。例えば、"random"モジュールの"seed"関数を使用することで、特定の数値をシード値として乱数を生成することができます。また、"random"モジュールの"shuffle"関数を使用することで、リストや文字列の中の要素をランダムな順番に並び替えることもできます。
-
-また、Pythonでは疑似乱数を生成するのに、様々なアルゴリズムが使用されています。例えば、"Mersenne Twister"アルゴリズムや"SystemRandom"アルゴリズムなどがあります。これらのアルゴリズムは、乱数生成の性能やセキュリティの観点から選択することができるようになっています。
-
-## もっと詳しく知りたい方は・・・
-
-Pythonでランダムな数字を生成する方法については、公式ドキュメントやオンラインのチュートリアルなどを参考にすることができます。また、プログラミング言語によって異なる乱数生成の仕組みやアルゴリズムについても、さらに深く学ぶことができます。
-
-## その他の参考リンク
-
-- [Python公式ドキュメント](https://docs.python.org/ja/3/library/random.html)
-- [Pythonでランダムな数字を生成する方法のチュートリアル](https://realpython.com/python-random/)
-- [乱数生成のアルゴリズムについて詳しく知る](https://cs231n.github.io/python-numpy-tutorial/#numpy-random)
+- [Python公式ドキュメント - ランダムモジュール](https://docs.python.org/ja/3/library/random.html)
+- [GeeksforGeeks - Random number generation in Python](https://www.geeksforgeeks.org/random-number-generation-in-python/)
+- [Qiita - Pythonでランダムな数値を生成する方法](https://qiita.com/tomotaka_ito/items/ae7be28a4308c4766c9f)
+- [Python Tips - Random Number Generators in Python](https://pythontips.com/2017/12/04/random-number-generators-in-python/)

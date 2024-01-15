@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Umwandlung eines Strings in Kleinbuchstaben."
+html_title:           "PHP: Umwandlung eines Strings in Kleinbuchstaben."
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,22 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-In der Welt der Programmierung gibt es oft Situationen, in denen man einen Text oder eine Zeichenfolge in Kleinbuchstaben umwandeln muss. Dies kann aus verschiedenen Gründen geschehen, zum Beispiel um die Vergleichbarkeit von Strings zu erhöhen oder um sicherzustellen, dass ein Text in einer bestimmten Formatierung angezeigt wird. In diesem Blogbeitrag werden wir uns anschauen, wie man in PHP eine Zeichenfolge in Kleinbuchstaben umwandeln kann und warum es nützlich sein kann, dies zu tun.
+# Warum
 
-## Wie geht das?
-Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, können wir die PHP-Funktion "strtolower()" verwenden. Diese Funktion nimmt einen Parameter entgegen, nämlich die zu konvertierende Zeichenfolge, und gibt diese in komplett kleinbuchstabierter Form zurück. Hier ein kleines Beispiel:
+Wenn Sie jemals mit PHP gearbeitet haben oder eine Website programmiert haben, haben Sie wahrscheinlich schon einmal eine Situation erlebt, in der Sie einen Kollisions-Detection-Algorithmus erstellen müssen. In manchen Fällen müssen Sie dabei möglicherweise einen Text in Kleinbuchstaben (z.B. "Hallo Welt") umwandeln, um ihn einfacher vergleichen zu können. In diesem Artikel werde ich Ihnen zeigen, wie Sie ganz einfach einen String in Kleinbuchstaben umwandeln können.
 
-```php
-$text = "Hallo Welt!";
-echo strtolower($text);
+# Wie geht das?
+
+Die Funktion, die wir verwenden werden, ist `strtolower()`. Hier ist ein Beispiel, welches unsere Eingabe (ein Name) in Kleinbuchstaben umwandelt:
+
+```PHP
+$name = "Max Mustermann";
+strtolower($name);
 ```
 
-Das oben genannte Beispiel würde als Ausgabe "hallo welt!" erzeugen. Wie man sieht, werden alle Buchstaben in Kleinbuchstaben umgewandelt, inklusive des Ausrufezeichens. Man sollte jedoch beachten, dass dies keine permanente Änderung ist, sondern nur für die Dauer der Ausführung des Skripts gültig ist.
+Das ist alles, was Sie tun müssen! Die Funktion gibt das Ergebnis, also den umgewandelten Text, als Rückgabewert aus. Hier ist das Ergebnis unseres Beispiels: "max mustermann".
 
-## Tiefere Einblicke
-Das Konvertieren einer Zeichenfolge in Kleinbuchstaben mag auf den ersten Blick trivial erscheinen, doch es gibt einige interessante Aspekte, die man vielleicht nicht unbedingt auf Anhieb bedenken würde. Zum Beispiel kann die Funktion "strtolower()" auch nicht-englische Zeichen richtig umwandeln, was bei manchen anderen Programmiersprachen nicht immer der Fall ist. Außerdem wird bei der Umwandlung automatisch auf die lokalisierten Einstellungen der PHP-Installation geachtet, was bei der richtigen Ausgabe von Sonderzeichen helfen kann.
+Die `strtolower()` Funktion ist auch hilfreich, wenn Sie Benutzereingaben validieren müssen und sicherstellen möchten, dass ein Text in einer einheitlichen Schreibweise vorliegt, bevor er in einer Datenbank gespeichert wird.
 
-## Siehe auch
-- [PHP: strtolower() – Eine Dokumentation der PHP-Funktion](https://www.php.net/manual/de/function.strtolower.php)
-- [PHP-Stammtisch Berlin: Eine Community rund um PHP in der deutschen Hauptstadt](https://php.berlin/)
+# Tiefergehende Informationen
+
+Die `strtolower()` Funktion wandelt nicht nur die Buchstaben A-Z in a-z um, sondern auch alle Sonderzeichen, die im ASCII-Zeichensatz enthalten sind (unabhängig von der Zeichencodierung Ihrer Website). Das bedeutet, dass Sie beim Vergleichen von Zeichenfolgen auch die `strtolower()` Funktion verwenden müssen, um sicherzustellen, dass die Sonderzeichen richtig verglichen werden.
+
+Eine weitere wichtige Sache, die Sie berücksichtigen sollten, ist die Lokalisierung. Die `strtolower()` Funktion kann je nach Sprachumgebung unterschiedliche Ergebnisse liefern. Um dies zu vermeiden, können Sie die `setlocale()` Funktion verwenden, um die richtige Sprachumgebung für Ihren Code zu definieren.
+
+# Siehe auch
+
+Hier sind einige weitere nützliche Links rund um PHP und die `strtolower()` Funktion:
+
+- [Offizielle PHP-Dokumentation zu strtolower()](https://www.php.net/manual/de/function.strtolower.php)
+- [Tutorials zu PHP von Codecademy](https://www.codecademy.com/learn/learn-php)
+- [String manipulation in PHP: A guide for beginners (Englisch)](https://www.keycdn.com/blog/php-string-manipulation)

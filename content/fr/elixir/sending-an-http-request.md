@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Envoyer une demande http"
-simple_title:         "Envoyer une demande http"
+title:                "Envoi d'une requête http"
+html_title:           "Elixir: Envoi d'une requête http"
+simple_title:         "Envoi d'une requête http"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,31 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Envoyer une requête HTTP est une tâche courante en programmation web. Cela permet à une application d'interagir avec un serveur distant et d'obtenir des données précises. Dans cet article, nous allons explorer comment cela fonctionne en utilisant le langage de programmation Elixir.
+Si vous souhaitez connecter votre application à un serveur web ou à un API, vous aurez probablement besoin d'envoyer une requête HTTP. Cela permet de communiquer avec le serveur et d'échanger des données. L'utilisation de requêtes HTTP est un élément clé dans le développement d'applications web modernes.
 
 ## Comment Faire
 
-Pour effectuer une requête HTTP en utilisant Elixir, nous allons utiliser la librairie HTTPoison. Tout d'abord, nous devons l'ajouter à notre projet en ajoutant `{:httpoison, "~> 1.0"}` à notre fichier Mix.exs. Ensuite, nous pouvons l'installer en exécutant `mix deps.get` dans notre terminal.
-
-Une fois que nous avons installé HTTPoison, nous pouvons l'utiliser pour envoyer une requête GET à un serveur en utilisant la fonction `HTTPoison.get/2`. Par exemple, si nous voulons accéder à la page d'accueil de Google, nous pouvons utiliser le code suivant :
+Pour envoyer une requête HTTP en utilisant Elixir, vous pouvez utiliser le module `HTTPoison`. Tout d'abord, vous devez installer le paquet en l'ajoutant à votre `mix.exs` et en exécutant `mix deps.get`. Ensuite, vous pouvez importer le module `HTTPoison` dans votre fichier `ex` :
 
 ```Elixir
-response = HTTPoison.get("https://www.google.com")
+import HTTPoison
 ```
 
-Cela enverra une requête GET à l'URL spécifiée et stockera la réponse dans la variable `response`. Nous pouvons ensuite accéder aux données de réponse en utilisant la syntaxe `response.body` pour obtenir le corps de la réponse et `response.status_code` pour obtenir le code de statut de la réponse.
+Ensuite, vous pouvez utiliser la fonction `get` pour envoyer une requête `GET` à une URL spécifique :
 
-## Plongée Profonde
+```Elixir
+response = get("https://www.example.com")
+```
 
-Maintenant que nous avons vu comment envoyer une requête HTTP basique, il est important de comprendre certains concepts et options clés lors de l'envoi de requêtes.
+Vous pouvez également ajouter des paramètres à votre requête en utilisant un tuple de clé/valeur :
 
-#### Méthodes HTTP
-Il existe différentes méthodes pour envoyer une requête HTTP, telles que GET, POST, PUT, DELETE, etc. Pour spécifier une méthode autre que GET, nous pouvons utiliser le paramètre `method` lors de l'appel à `HTTPoison.get/2`. Par exemple, pour envoyer une requête POST, nous pouvons utiliser `HTTPoison.get("https://www.example.com", [method: :post])`.
+```Elixir
+response = get("https://www.example.com/search", {q: "elixir"})
+```
 
-#### Envoi de données
-Dans certains cas, nous devons également envoyer des données en plus de notre requête. Pour cela, nous pouvons utiliser le paramètre `body` en passant une carte ou une chaîne de caractères en tant que données. Par exemple, pour envoyer une requête POST avec des données JSON, nous pouvons utiliser `HTTPoison.get("https://www.example.com", [method: :post, body: %{key: "value"}])`.
+Si vous souhaitez envoyer une requête `POST` avec un corps de requête, vous pouvez utiliser la fonction `post` et passer un hash avec le contenu du corps :
 
-## Voir Aussi
+```Elixir
+body = %{username: "John", password: "secret"}
+response = post("https://www.example.com/login", body)
+```
 
-- [ Documentation HTTPoison ](https://hexdocs.pm/httpoison/1.0.0/HTTPoison.html)
-- [ Guide de Référence HTTP ] (https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+Une fois la requête envoyée, vous pouvez accéder au corps de la réponse en utilisant `response.body`. Vous pouvez également vérifier le code de statut de la réponse en utilisant `response.status`.
+
+## Plongée en profondeur
+
+HTTPoison offre des fonctionnalités avancées telles que la possibilité d'envoyer des requêtes avec des en-têtes personnalisées, de gérer les redirections et les cookies. Vous pouvez également utiliser le module `HTTPoison.Request` pour créer des requêtes personnalisées avec des options supplémentaires.
+
+Il est important de comprendre les différents types de requêtes HTTP telles que `GET`, `POST`, `PUT`, `DELETE` et `PATCH` et comment ils sont utilisés pour interagir avec les serveurs. Vous devez également être conscient des codes de statut de réponse courants tels que 200, 404 et 500 et comment les gérer dans votre code.
+
+## Voir aussi
+
+- [Documentation HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Guide Elixir pour les requêtes HTTP](https://elixirschool.com/fr/lessons/advanced/http/)
+- [Les codes de statut HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)

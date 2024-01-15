@@ -1,6 +1,7 @@
 ---
-title:                "C: Muutetaan merkkijono pieniksi kirjaimiksi"
-simple_title:         "Muutetaan merkkijono pieniksi kirjaimiksi"
+title:                "- Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "C: - Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "- Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,7 +12,7 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisimme muuttaa merkkijonon pieniksi kirjaimiksi (string to lower case)? Yksi syy voi olla, että haluamme vertailla kahta merkkijonoa keskenään, ja isojen ja pienten kirjainten ero voi aiheuttaa ongelmia vertailussa. Tämän takia meidän täytyy muuntaa molemmat merkkijonot samassa muodossa, jotta vertailu olisi luotettavaa.
+Stringin muuntaminen pieniksi kirjaimiksi on tärkeä osa ohjelmointia monissa tilanteissa. Se auttaa yhtenäistämään käyttäjien syötteitä, vertaillessa merkkijonoja tai vain yksinkertaisesti tulostuksessa.
 
 ## Kuinka
 
@@ -19,32 +20,47 @@ Miksi haluaisimme muuttaa merkkijonon pieniksi kirjaimiksi (string to lower case
 #include <stdio.h>
 #include <ctype.h>
 
-int main()
-{
-    // Luodaan merkkijono ja tallennetaan siihen arvo
-    char string[] = "TÄMÄ ON MERKKIJONO";
+void convertToLower(char* str);
+
+int main(void) {
+    char str[] = "TämÄ TeKsTi On KoRuPpTioToN";
     
-    // "for" silmukassa käytetään "tolower" funktiota jokaiselle merkkijonon kirjaimelle
-    for(int i = 0; string[i] != '\0'; i++)
-    {
-        string[i] = tolower(string[i]);
-    }
+    printf("Alkuperäinen merkkijono: %s\n", str);
     
-    // Tulostetaan muokattu merkkijono
-    printf("%s", string);
+    convertToLower(str);
+    
+    printf("Muunnettu merkkijono: %s\n", str);
     
     return 0;
 }
+
+void convertToLower(char* str) {
+    int i = 0;
+    
+    // Loopataan merkkijono läpi
+    while (str[i]) {
+
+        // Muunnetaan jokainen merkki pieneksi
+        str[i] = tolower(str[i]); 
+
+        i++; 
+    }
+}
 ```
-**Tulostus:**
 
-tämä on merkkijono
+Tulostus:
+```
+Alkuperäinen merkkijono: TämÄ TeKsTi On KoRuPpTioToN
+Muunnettu merkkijono: tämä teksti on korruptioton
+```
 
-## Syväsukellus
+## Deep Dive
 
-Kun haluamme muuttaa merkkijonon pieniksi kirjaimiksi, meidän täytyy käyttää "tolower" funktiota, joka tulee ctype.h kirjastosta. Tämä funktio muuttaa annetun merkin pieneksi kirjaimeksi, jos se on iso kirjain. Muulloin funktio palauttaa saman merkin. Tämän takia me suoritamme funktiota jokaiselle merkkijonon merkille "for" silmukassa, kunnes saavutamme merkkijonon lopun (joka merkitään '\0'). Näin saamme muutettua kaikki kirjaimet pieniksi kirjaimiksi.
+Merkkijonon muuntaminen pieniksi kirjaimiksi tapahtuu käyttämällä C:n `tolower()` -funktiota. Tämä funktio löytyy `ctype.h` -kirjastosta ja se hyväksyy parametrina merkin ja palauttaa saman merkin pienellä kirjaimella. Tarvittaessa merkin ASCII-arvo muunnetaan ensin suuresta pieneksi.
+
+Yllä olevassa esimerkissä `convertToLower()` -funktio käy läpi merkkijonon merkki kerrallaan ja käyttää `tolower()` -funktiota muuttaakseen jokaisen merkin pieneksi. Tämän jälkeen tulostamme muutetun merkkijonon ja huomaamme, että kaikki kirjaimet ovat nyt pieniä.
 
 ## Katso myös
 
-- [C-kielen "tolower" dokumentaatio](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Ctype.h kirjasto](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+- [C:toupper() - Merkkijonon muuntaminen isoiksi kirjaimiksi](https://www.geeksforgeeks.org/c-toupper-function/)
+- [Merkkijonojen käsittely C-kielessä](https://www.tutorialspoint.com/cprogramming/c_strings.htm)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "Swift: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-날짜 비교를 하고 싶은 이유는 무엇일까요? 어떤 경우에 이 기법이 유용할까요? 다음 내용에서 예제와 함께 알아보도록 하겠습니다.
+## 왜
+날짜를 비교하는 것이 왜 유용한지 알고 싶으신가요? 예를 들어, 사용자의 생일을 기준으로 나이를 계산하거나, 이전과 이후의 날짜를 비교해 이벤트의 빈도를 분석할 수 있습니다.
 
-## 어떻게
-Swift에서 두 날짜를 비교하는 방법은 다양합니다. 가장 간단한 방법은 "date1 > date2"와 같은 비교 연산자를 사용하는 것입니다. 또는 "compare(_:_:)" 메서드를 사용하여 두 날짜를 비교할 수 있습니다. 예제 코드를 통해 살펴보도록 하겠습니다.
-
+## 방법
+두 날짜를 비교하려면, 먼저 `Date` 형식의 변수를 생성해야 합니다. 그리고 다음과 같은 메서드를 사용하면 됩니다:
 ```Swift
-let date1 = Date().addingTimeInterval(3600) // 현재 시간보다 1시간 뒤 날짜
-let date2 = Date() // 현재 시간
-
-if date1 > date2 {
-    print("\(date1)은 \(date2)보다 미래입니다.")
+let date1 = Date()
+let date2 = Date.init(timeIntervalSinceNow: -86400) //24시간 전의 날짜
+if date1 < date2 {
+    print("Date 1 is before date 2")
+} else if date2 < date1 {
+    print("Date 2 is before date 1")
 } else {
-    print("\(date1)은 \(date2)과 같거나 과거입니다.")
+    print("The dates are equal")
 }
-
-/* Output:
- 2019-10-13 12:00:00 +0000은 2019-10-13 11:00:00 +0000보다 미래입니다.
-*/
 ```
-위의 예제 코드에서는 현재 시간보다 1시간 뒤인 날짜와 현재 시간을 비교하고 있습니다. 만약 해당 조건에 맞지 않는다면, 반대로 모든 날짜는 같거나 과거라는 의미입니다.
+> "Date 2 is before date 1"이 출력될 것입니다.
 
-```Swift
-let date1 = Date() // 현재 시간
-let date2 = Date().addingTimeInterval(-3600) // 현재 시간보다 1시간 빠른 날짜
+## 깊게 들어가보기
+날짜를 비교할 때 고려해야 할 몇 가지 중요한 점들이 있습니다. 첫째로, 날짜는 `TimeInterval` 형태로 저장되며, 이는 초 단위로 표현됩니다. 따라서 두 날짜를 비교하기 전에, 같은 형식으로 날짜를 변환해주어야 합니다. 또한, `Date`는 시스템의 현재 날짜와 시간을 기준으로 하기 때문에, 시간이나 시간대를 고려할 필요가 있습니다. 이러한 고려를 통해 정확한 날짜 비교를 할 수 있습니다.
 
-switch date1.compare(date2) {
-case .orderedAscending:
-    print("\(date1)은 \(date2)보다 미래입니다.")
-case .orderedSame:
-    print("\(date1)과 \(date2)은 같은 날짜입니다.")
-case .orderedDescending:
-    print("\(date1)은 \(date2)보다 과거입니다.")
-}
+## 더 알아보기
+날짜를 다루는 더 많은 기능들을 알아보려면 [Apple의 공식 문서](https://developer.apple.com/documentation/foundation/date)를 참고하세요.
 
-/* Output:
- 2019-10-13 12:00:00 +0000과 2019-10-13 11:00:00 +0000은 같은 날짜입니다.
-*/
-```
-위의 예제 코드는 "compare(_:_:)" 메서드를 사용하여 두 날짜를 비교하고 있습니다. 이 메서드는 두 날짜를 비교한 결과를 "ComparisonResult" 타입으로 반환합니다. 그리고 해당 값에 따라 다른 동작을 수행할 수 있습니다.
-
-## 깊이 파고들기
-Swift에서 날짜를 비교하는 방법은 매우 다양합니다. 위에서 소개한 방법 외에도 "Calendar"나 "DateComponents"를 사용하여 비교하는 방법도 있습니다. 또한 날짜 비교를 위한 추가적인 옵션도 존재합니다. 정확한 비교를 위해서는 해당 날짜가 어느 시간대에 속하는지, 혹은 어떤 달력을 사용하는지 등에 대해 고려해야 합니다.
-
-# 참고
-- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
-- [Swift Docs - Basic Operators](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
-- [Swift Docs - Date and Time Calculations](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## 관련 링크
+- [Swift 날짜 비교 방법](https://medium.com/swift-programming/swift-how-to-compare-dates-39a46090fb8c)
+- [Date Formatter 사용하기](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID299)
+- [Swift의 날짜와 시간 다루기](https://www.avanderlee.com/swift/datecomponents-dateformatters/)

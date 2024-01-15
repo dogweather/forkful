@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Verificando se um diretório existe"
-simple_title:         "Verificando se um diretório existe"
+title:                "Verificação da existência de um diretório"
+html_title:           "Javascript: Verificação da existência de um diretório"
+simple_title:         "Verificação da existência de um diretório"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+# Por que verificar se um diretório existe em Javascript?
 
-Ao programar em JavaScript, uma das tarefas comuns é verificar se um diretório existe antes de acessá-lo ou realizar qualquer operação nele. Isso é importante porque, ao tentar acessar um diretório inexistente, seu código pode falhar ou gerar erros desnecessários. Por isso, aprender a verificar se um diretório existe é uma habilidade valiosa para qualquer programador.
+Verificar se um diretório existe em um projeto pode ser uma tarefa muito útil para garantir que o código funcione corretamente. Além disso, esta verificação é importante para evitar erros e falhas no sistema.
 
 ## Como fazer isso
 
-Existem algumas maneiras de verificar se um diretório existe em JavaScript, mas a mais comum é usando a biblioteca "fs" (file system) do Node.js. Vamos mostrar como fazer isso usando essa biblioteca:
+Para verificar se um diretório existe, é necessário usar a função nativa do Javascript `fs.existsSync()`. Esta função retorna um valor booleano que indica se o diretório existe ou não.
 
-```JavaScript
-// importando a biblioteca fs
-const fs = require('fs');
+Vejamos um exemplo prático:
 
-// definindo o caminho do diretório a ser verificado
-const directory = './meu_diretorio';
+```Javascript
+const fs = require('fs'); // Importar o módulo fs
+const directory = './meu_diretorio'; // Definir o diretório que desejamos verificar
 
-// verificando se o arquivo existe
-fs.existsSync(directory, (exists) => {
-    if (exists) {
-        console.log('O diretório existe!');
-    } else {
-        console.log('O diretório não existe!');
-    }
-});
+if (fs.existsSync(directory)) { 
+  // Verificar se o diretório existe
+  console.log('O diretório existe!'); // Imprimir mensagem caso exista
+} else {
+  console.log('O diretório não existe!'); // Imprimir mensagem caso não exista
+}
 ```
 
-Nesse exemplo, importamos a biblioteca "fs" e usamos o método "existsSync" para verificar se o diretório definido na variável "directory" existe. Se existir, a mensagem "O diretório existe!" será impressa no console. Caso contrário, a mensagem "O diretório não existe!" será exibida.
+No exemplo acima, importamos o módulo `fs` para ter acesso às funções do sistema de arquivos. Em seguida, definimos o diretório que queremos verificar e utilizamos a função `existsSync()` para verificar se ele existe. Dependendo do resultado, é exibida uma mensagem de que o diretório existe ou não.
 
 ## Aprofundando
 
-Além do método "existsSync", a biblioteca "fs" também possui outras funções para verificar a existência de um diretório, como o "stat" e o "access". Essas funções permitem verificar se um arquivo ou diretório existe e se você possui permissões de leitura, escrita ou execução nele. Além disso, é possível trabalhar com tratamento de erros para lidar com situações onde o diretório pode não existir ou você não possui permissão para acessá-lo.
+Além da função `fs.existsSync()`, existem outras maneiras de verificar se um diretório existe em Javascript. Uma delas é utilizando a biblioteca `fs-extra`, que possui a função `fs.pathExists()` que também retorna um valor booleano indicando a existência do diretório.
+
+Também é possível utilizar a função `fs.lstatSync()`, que permite verificar o tipo do arquivo e, consequentemente, inferir se é um diretório ou não.
+
+Caso seja necessário criar um diretório caso ele não exista, é possível utilizar a função `fs.mkdirSync()`, passando como parâmetro o caminho do diretório que desejamos criar.
 
 ## Veja também
 
-- [Documentação do Node.js sobre a biblioteca fs](https://nodejs.org/api/fs.html)
-- [Artigo da Medium sobre verificação de arquivos e diretórios em Node.js](https://medium.com/@eugenioclrc/verificando-a-exist%C3%AAncia-de-arquivos-e-diret%C3%B3rios-com-nodejs-3a5d34fe05e3)
-- [Stack Overflow: Como verificar se um arquivo ou diretório existe em Node.js](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
+- Documentação oficial do Javascript: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
+- Documentação do módulo fs do Node.js: https://nodejs.org/api/fs.html
+- Documentação da biblioteca fs-extra: https://www.npmjs.com/package/fs-extra

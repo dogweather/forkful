@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tulosta vianmääritystieto"
-simple_title:         "Tulosta vianmääritystieto"
+title:                "Virheenjäljitystulostuksen tulostaminen"
+html_title:           "C++: Virheenjäljitystulostuksen tulostaminen"
+simple_title:         "Virheenjäljitystulostuksen tulostaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,55 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Ohjelmointi voi olla monimutkaista ja virheiden löytäminen voi olla haastavaa. Tulosteiden tulostaminen koodin suorituksen aikana voi auttaa havaitsemaan mahdollisia ongelmia ja helpottaa virheiden jäljittämistä.
+Joskus koodin virheiden selvittäminen voi olla haastavaa ja tylsää. Onneksi on olemassa yksinkertainen tapa tehdä tästä prosessista hieman helpompaa - tulostamalla debug-tietoja.
 
-# Miten
+## Miten
 
-Aloita lisäämällä tulosteiden tulostaminen haluamiisi kohtiin koodissa. Voit käyttää `cout`-komennolla tai `printf()`-funktiolla tulostamaan haluamasi tiedot konsoliin. Esimerkiksi:
-
-```C++
-cout << "Tämä on debug tuloste." << endl;
-```
-
-Näiden tulosteiden näkyminen konsolissa auttaa seuraamaan koodin suoritusta ja havaitsemaan mahdolliset virheet. Voit myös tulostaa muuttujien arvoja nähdäksesi niiden muutokset koodin suorituksen aikana.
+Voit tulostaa debug-tietoja koodissasi käyttämällä `cout`-funktiota. Alla on yksinkertainen esimerkki:
 
 ```C++
-int num = 5;
-cout << "Muuttujan 'num' arvo on: " << num << endl;
+#include <iostream> 
+
+int main() { 
+    int x = 5; 
+    std::cout << "Muuttujan x arvo on: " << x << std::endl; 
+    return 0; 
+}
 ```
 
-Mikäli käytät `printf()`-funktiota, voit käyttää muotoilumerkkejä määrittämään tulostettavan muuttujan tyypin. Esimerkiksi:
+Tämän koodin tulostus näyttäisi seuraavalta:
+
+```
+Muuttujan x arvo on: 5
+```
+
+Tässä esimerkissä käytettiin `cout`-funktion lisäksi myös muutamia `iostream`-kirjaston toimintoja. `std::cout <<` - osa tulostaa tekstiä konsoliin, `x` viittaa muuttujaan, ja `std::endl` lopettaa rivin ja siirtyy uudelle riville.
+
+Voit myös tulostaa debug-tietoja muuttujien lisäksi myös funktioiden palauttamien arvojen kanssa. Alla on esimerkki:
 
 ```C++
-int num = 5;
-printf("Muuttujan 'num' arvo on: %d\n", num);
+#include <iostream> 
+
+int addNumbers(int a, int b) { 
+    return a + b; 
+} 
+
+int main() { 
+    std::cout << "Lisäystuloksen arvo on: " << addNumbers(2, 3) << std::endl; 
+    return 0; 
+}
 ```
 
-# Syvempi sukellus
+Tämän koodin tulostus näyttäisi seuraavalta:
 
-Debug tulosteiden tulostaminen voi olla myös hyödyllistä selvittämään ohjelman toimintaa ja suoritusaikaa. Voit esimerkiksi käyttää `chrono`-kirjastoa mittaamaan ohjelman suoritusaikaa ja nähdäksesi, missä kohdassa ohjelma mahdollisesti hidastuu.
-
-```C++
-#include <chrono>
-using namespace std::chrono;
-
-// alustetaan kello
-high_resolution_clock::time_point start = high_resolution_clock::now();
-
-// koodia...
-
-// lopetetaan kello ja tulostetaan kulunut aika
-high_resolution_clock::time_point end = high_resolution_clock::now();
-duration<double> time = duration_cast<duration<double>>(end - start);
-cout << "Ohjelman suoritusaika: " << time.count() << " sekuntia." << endl;
+```
+Lisäystuloksen arvo on: 5
 ```
 
-Voit myös käyttää erilaisia debuggausohjelmia, kuten Visual Studio:n `Debug`-tilaa, joka mahdollistaa tulosteiden katselun ja ohjelman suorituksen pysäyttämisen halutuissa kohdissa.
+Käytännössä voit siis käyttää `cout`-funktiota tulostamaan melkein mitä tahansa haluat, ja nyt voit helposti tarkistaa, mitä tietoja koodisi käsittelee.
 
-# Katso myös
+## Deep Dive
 
-- [C++ Debugging Tutorial (Englanniksi)](https://www.guru99.com/c-plus-plus-debugging-tutorial.html)
-- [Debugging Techniques in Visual Studio (Englanniksi)](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-techniques-in-visual-studio)
-- [C++ Debugging Tips (Englanniksi)](https://www.educba.com/c-plus-plus-debugging-tips/)
+`cout`-funktion käyttäminen debug-tietojen tulostamiseen on hyödyllistä, mutta se ei ole ainoa tapa. C++:ssa on myös muita vaihtoehtoja, kuten `cerr`- ja `clog`-funktiot. Nämä ovat hieman erilaisia, mutta niiden perusidea on sama - tulostaa tekstiä konsoliin.
+
+Usein on myös hyödyllistä lisätä tulostettavan tekstin lisäksi myös tietoa, mistä tietyn tulosteen kohdalla on kyse. Tämä on mahdollista käyttämällä `#define` -komentoa. Voit määrittää erilaisia `#define`-komentoja, jotka tekevät koodin lukemisesta ja ymmärtämisestä helpompaa.
+
+## Näytä myös
+
+- [cplusplus.com](http://www.cplusplus.com/reference/iostream/) - I/O kirjaston dokumentaatio.
+- [W3Schools - C++ I/O](https://www.w3schools.com/cpp/cpp_io.asp) - Tietoja C++ I/O:sta.
+- [cprogramming.com - Debugging: Kirjoittaminen konsoliin](https://www.cprogramming.com/debugging/writing-debugging-output.html) - Tietoa konsoliin kirjoittamisesta debug-tarkoituksiin.

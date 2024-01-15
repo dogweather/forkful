@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Eine Zeichenkette großschreiben."
-simple_title:         "Eine Zeichenkette großschreiben."
+title:                "Großschreibung eines Strings"
+html_title:           "Fish Shell: Großschreibung eines Strings"
+simple_title:         "Großschreibung eines Strings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Die Verwendung von Großbuchstaben in einem String kann in der Programmierung hilfreich sein, um bestimmte Teile des Textes hervorzuheben oder die Lesbarkeit zu verbessern. In diesem Blogbeitrag werden wir uns ansehen, wie man in der Fish Shell einen String in Großbuchstaben umwandeln kann.
+Es gibt viele Gründe, warum man eine Zeichenkette in Großbuchstaben umwandeln möchte. Vielleicht möchtest du sicherstellen, dass Nutzereingaben korrekt formatiert werden, oder du möchtest eine einheitliche Darstellung von Texten in deiner Anwendung erreichen. In jedem Fall ist ein grundlegendes Verständnis der Groß- und Kleinschreibung in der Programmierung wichtig und das Umgang mit Strings ist eine grundlegende Fähigkeit, die du beherrschen solltest.
 
 ## Wie geht das?
 
-Um einen String in Großbuchstaben zu konvertieren, können wir die `string`-Funktion `toupper` verwenden.
+Die gute Nachricht ist, dass es mit der Fish-Shell ganz einfach ist, eine Zeichenkette in Großbuchstaben zu konvertieren. Hier ist ein Beispiel:
 
 ```
-Fish Shell code block:
-set my_string "Hallo Welt"
-echo (string toupper $my_string)
+set my_string "hallo welt"
+echo $my_string | tr "[:lower:]" "[:upper:]"
 ```
 
-Die Ausgabe dieses Codes wäre `HALLO WELT`, da die `toupper`-Funktion jeden Buchstaben in Großbuchstaben umwandelt.
+Der Befehl `set` definiert eine Variable mit dem Wert "hallo welt". Dann wird der Befehl `echo` verwendet, um den grünen Teil der Pipeline auszuführen und den Wert der Variable auszugeben. Die Pipeline wird an den nächsten Befehl `tr` übergeben, der alle Kleinbuchstaben in dem übergebenen Text in Großbuchstaben umwandelt. In diesem Fall wird also "HALLO WELT" ausgegeben.
 
-Wenn wir nur den ersten Buchstaben eines Strings in Großbuchstaben umwandeln möchten, können wir die `string`-Funktion `capitalize` verwenden.
+Du kannst auch eine ganze Datei in Großbuchstaben umwandeln, indem du den `tr`-Befehl mit dem Input von `cat` kombinierst. Hier ist ein Beispiel, das den Text in einer Datei namens "meintext.txt" in Großbuchstaben ausgibt:
 
 ```
-Fish Shell code block:
-set my_string "hello world"
-echo (string capitalize $my_string)
+cat meintext.txt | tr "[:lower:]" "[:upper:]"
 ```
 
-Die Ausgabe dieses Codes wäre `Hello world`, da nur der erste Buchstabe in Großbuchstaben umgewandelt wird.
+## Tief eintauchen
 
-## Tiefergehende Informationen
+Um ein tieferes Verständnis dafür zu entwickeln, wie die Groß- und Kleinschreibung in der Programmierung funktioniert, ist es hilfreich, sich mit der Unicode-Charakterkodierung zu beschäftigen. Kurz gesagt, Unicode ermöglicht es, alle Zeichen und Symbole in einer einzigen Kodierung zu verwenden, anstatt verschiedene Kodierungen für verschiedene Sprachen zu haben.
 
-Die `toupper`- und `capitalize`-Funktionen sind Teil des Fish Shell `string`-Moduls, das eine Vielzahl von nützlichen Funktionen enthält, um Strings zu manipulieren. Diese Funktionen können auch in anderen Situationen nützlich sein, zum Beispiel um Eingaben von Benutzern zu normalisieren oder um Strings für die Ausgabe zu formatieren.
+In der Unicode-Kodierung gibt es zwei Arten von Zeichen: Großbuchstaben und Kleinbuchstaben. Die Umschaltung von Groß- zu Kleinbuchstaben erfolgt durch Hinzufügen oder Entfernen eines bestimmten Werts zu dem numerischen Wert des Zeichens. Zum Beispiel hat das kleine "a" einen numerischen Wert von 97, während das große "A" einen Wert von 65 hat. Indem du den Wert 32 zu dem Buchstaben $a$ addierst, erhältst du den Wert 97 + 32 = 129, der dem großen "A" entspricht.
 
-Um mehr über das `string`-Modul und seine Funktionen zu erfahren, kann die Fish Shell Dokumentation konsultiert werden.
+Im Beispiel mit der `tr`-Pipeline fügen wir dieselbe Menge (32) dem numerischen Wert jedes Kleinbuchstabens hinzu, um ihn in einen Großbuchstaben zu konvertieren.
+
+In diesem Sinne kannst du mit der Fish-Shell noch mehr manipulieren, indem du andere Werte als 32 verwendest. Zum Beispiel, wenn du deinen Text in kleine Buchstaben umwandeln möchtest, musst du 32 von dem numerischen Wert jedes Großbuchstabens abziehen.
 
 ## Siehe auch
 
-- Fish Shell string module documentation: https://fishshell.com/docs/current/cmds/string.html
-- Offizielle Fish Shell Website: https://fishshell.com/
-- Blogbeitrag über Schleifen in der Fish Shell: https://linktoblogpost.com
+- [Unicode-Kodierungen](https://de.wikipedia.org/wiki/Unicode): Erfahre mehr über die zugrundeliegende Technologie für die Darstellung von Zeichen.
+- [Fish-Shell-Dokumentation](https://fishshell.com/docs/current/): Finde weitere hilfreiche Informationen über die Verwendung der Fish-Shell.
+- [Tr-Manual](https://www.gnu.org/software/coreutils/tr): Lies die offizielle Dokumentation für den `tr`-Befehl.

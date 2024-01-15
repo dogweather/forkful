@@ -1,6 +1,7 @@
 ---
-title:                "C#: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Unindo strings"
+html_title:           "C#: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar concatenação de strings?
+## Por que
 
-A concatenação de strings é uma técnica muito comum em programação, especialmente em linguagens orientadas a objetos como C#. Ela permite a combinação de diferentes strings, ou cadeias de caracteres, em uma única string, facilitando a manipulação e exibição de dados em um programa.
+Muitas vezes precisamos combinar várias strings em uma só, seja para construir uma frase, mensagem ou até mesmo para formatar dados. A concatenação de strings é uma funcionalidade importante na programação e pode facilitar muito o desenvolvimento de certas tarefas.
 
-## Como fazer
+## Como Fazer
 
-Em C#, a concatenação de strings é realizada utilizando o operador de adição (+) ou o método `Concat` da classe `String`. Vejamos alguns exemplos:
+Usar a concatenação de strings em C# é bastante simples. Basta utilizar o operador "+" para unir as strings desejadas. Veja um exemplo abaixo:
 
 ```C#
-// Utilizando o operador de adição
-string nome = "Pedro";
+string nome = "João";
 string sobrenome = "Silva";
 string nomeCompleto = nome + " " + sobrenome;
-Console.WriteLine(nomeCompleto); // Saída: "Pedro Silva"
-
-// Utilizando o método Concat
-string frase = "O " + "rato " + "roeu " + "a " + "roupa " + "do " + "rei";
-Console.WriteLine(frase); // Saída: "O rato roeu a roupa do rei"
+Console.WriteLine(nomeCompleto);
 ```
 
-No primeiro exemplo, criamos três strings separadamente e depois as concatenamos utilizando o operador de adição. No segundo exemplo, realizamos a concatenação diretamente no momento de criar a string.
+O resultado do código acima será "João Silva", pois as strings "nome" e "sobrenome" foram combinadas com um espaço em branco entre elas.
 
-Também é possível utilizar o método `Concat` para concatenar mais de duas strings ao mesmo tempo:
+Também é possível usar a função Concat() da classe String para realizar a concatenação:
 
 ```C#
-string frase = String.Concat("O ", "rato ", "roeu ", "a ", "roupa ", "do ", "rei");
-Console.WriteLine(frase); // Saída: "O rato roeu a roupa do rei"
+string cidade = "Rio";
+string estado = "de Janeiro";
+string local = String.Concat(cidade, " ", estado);
+Console.WriteLine(local);
 ```
 
-Note que a concatenação não altera as strings originais, ela simplesmente cria uma nova string combinando as existentes.
+Neste caso, o resultado será "Rio de Janeiro". Além disso, é possível adicionar mais de duas strings na concatenação, basta separá-las com uma vírgula dentro dos parênteses da função Concat().
+
+Outro ponto importante a ser lembrado é que os argumentos da função Concat() não precisam ser necessariamente strings. É possível combinar diferentes tipos de dados, como números e booleanos, por exemplo.
 
 ## Mergulho Profundo
 
-A concatenação de strings pode ser realizada não apenas com strings fixas, mas também com variáveis e valores de diferentes tipos. No entanto, é importante lembrar que, ao concatenar valores numéricos, eles serão tratados como strings e não como números. Por exemplo:
+Internamente, a concatenação de strings em C# é realizada através da criação de uma nova string, já que as strings são imutáveis na linguagem. Isso significa que cada vez que realizamos uma concatenação, o compilador cria uma nova string que contém a combinação das outras.
 
-```C#
-int numero = 5;
-string texto = "O valor do número é: " + numero; // texto = "O valor do número é: 5"
-```
-
-Outra possibilidade é utilizar o método `Join` da classe `String`, que permite concatenar uma lista de strings utilizando um separador. Por exemplo:
-
-```C#
-string[] nomes = { "Maria", "João", "Pedro" };
-string listaNomes = String.Join(", ", nomes);
-Console.WriteLine("Os nomes são: " + listaNomes); // Saída: "Os nomes são: Maria, João, Pedro"
-```
+Isso pode causar um impacto na performance do código em casos em que existem muitas concatenações em sequência, pois a cada nova concatenação será necessária a alocação de memória para criar uma nova string. Para evitar esse problema, é recomendado o uso do tipo StringBuilder, que permite a realização de várias operações em uma única string sem necessidade de criar novas instâncias.
 
 ## Veja Também
 
-- [Documentação oficial sobre Concatenação de Strings em C#](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/xmldoc/combining-strings)
-- [C# Concatenate Strings - concat and join methods](https://www.tutorialsteacher.com/csharp/csharp-string-concat)
+- Documentação oficial sobre Concatenação de Strings em C#: https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/#concatenating-strings
+- Tutorial sobre o uso do StringBuilder: https://www.eduardopires.net.br/2013/01/o-tipo-stringbuilder-no-csharp/
+- Comparação entre concatenação de strings e StringBuilder: http://codigonoarduino.blogspot.com/2013/10/desempenho-stringbuilder-vs-string.html

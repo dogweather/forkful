@@ -1,6 +1,7 @@
 ---
-title:                "Python: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Python: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,42 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit selvittää merkkijonon pituuden? Tämä on tärkeä taito ohjelmoinnissa, sillä se auttaa sinua hallitsemaan ja käsittelemään merkkijonoja tehokkaasti. Merkkijonot ovat tärkeä osa ohjelmointia ja niitä käytetään esimerkiksi tekstin käsittelyssä ja tietokantojen hakemisessa.
+Muutamalla sanalla selitä, miksi joku haluaisi laskea merkkijonon pituuden käyttämällä Python-ohjelmointia.
 
-## Kuinka
+## Miten
 
-Voit helposti selvittää merkkijonon pituuden Pythonilla. Ensimmäinen askel on luoda muuttuja, joka sisältää haluamasi merkkijonon. Voit tehdä tämän kirjoittamalla seuraavan koodin:
+```python
+string = "Hei maailma!" # määritellään merkkijono
+length = len(string) # käytetään len() funktiota laskeaksemme merkkijonon pituuden
+print("Merkkijonon pituus on:", length) # tulostetaan pituus
 
-```Python
-merkkijono = "Tämä on esimerkki merkkijonosta"
 ```
 
-Kun olet määrittänyt muuttujan, voit käyttää `len()` funktiota selvittääksesi merkkijonon pituuden. Tämä funktio laskee kaikki merkit merkkijonossa, mukaan lukien välilyönnit ja erikoismerkit. Käytännössä tämä tarkoittaa, että se laskee myös tyhjät välilyönnit, jotka ovat tärkeitä monimutkaisissa tiedonkäsittelytehtävissä.
-
-```Python
-pituus = len(merkkijono)
-print(pituus)
+**Tulostaa:**
+``` 
+Merkkijonon pituus on: 12
 ```
 
-Tämä koodi tulostaa arvon 31, koska merkkijonossa on 31 merkkiä.
+## Syventyminen
 
-## Syvempi sukellus
-
-Merkkijonon pituuden selvittäminen ei rajoitu vain yksittäisiin merkkijonoihin, vaan voit myös laskea pituuden useasta merkkijonosta yhdistämällä ne. Tätä varten voit käyttää yksinkertaista yhteenlaskutoimitusta:
-
-```Python
-pituus = len("Tämä on") + len("merkkijonon") + len("yhdistelmä")
-print(pituus)
-```
-
-Tämä koodi tulostaa edelleen arvon 31, koska yhdessä nämä kolme merkkijonoa muodostavat saman pituisen merkkijonon kuin alkuperäinen esimerkkimme.
-
-[Lisätietoa merkkijonoista Pythonissa](https://www.w3schools.com/python/python_strings.asp)
-
-[Lisätietoa len() funktiosta](https://docs.python.org/3/library/functions.html#len)
+Merkkijonon pituuden laskeminen on yksinkertainen, mutta tärkeä tehtävä useimmissa ohjelmoinnin tehtävissä. Pythonissa käytämme `len()` funktiota, joka palauttaa merkkijonon pituuden numerona. On tärkeää muistaa, että välilyönnit lasketaan myös merkkeinä ja vaikuttavat merkkijonon kokonaispituuteen.
 
 ## Katso myös
 
-[Tietoa merkkijonojen käsittelystä Pythonissa](https://www.turtlepoint.fi/python-merkkijonot/)
-
-[Pythonin viralliset dokumentaatiot](https://docs.python.org/3/)
+- [Python kielto-opas](https://www.python.org)
+- [Len() dokumentaatio](https://docs.python.org/3/library/functions.html)
+- [Merkkijonojen käsittely Pythonissa](https://realpython.com/python-strings/)

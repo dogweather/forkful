@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Å jobbe med json"
+title:                "Å jobbe med json"
+html_title:           "Gleam: Å jobbe med json"
 simple_title:         "Å jobbe med json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,56 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvis du jobber med webapplikasjoner eller backend-systemer, kommer du mest sannsynlig til å jobbe med dataformatet JSON. Det er en enkel og populær måte å lagre og utveksle data på, og å ha kunnskap om hvordan man håndterer JSON kan åpne opp for flere muligheter og utviklingsmuligheter.
 
-JSON er en utrolig viktig del av moderne webutvikling, og å kunne arbeide med JSON er en nøkkelkompetanse for enhver programmerer. Å forstå hvordan data er strukturert i JSON-format og kunne behandle det riktig er avgjørende for å bygge effektive og funksjonelle nettsider og applikasjoner.
-
-## Hvordan
-
-For å håndtere JSON-data i Gleam, kan du bruke det innebygde `Json.Decode` biblioteket. Det gir funksjoner for å mappe JSON-data til dine egne typer og gjøre de om til Gleam-records. La oss se på et eksempel:
-
+## Hvordan gjøre det
 ```Gleam
-let data =
-  """
-  {
-    "name": "Maria",
-    "age": 28,
-    "hobbies": ["skiing", "hiking"]
-  }
-  """
-let result = Json.Decode.object(data)
+let data = """
+    {"navn": "Maria", "alder": 25, "jobb": "Programmerer"}
+    ```
+
+// Skriv ut navnet
+io.println(data.navn) // Output: Maria
+
+// Endre alder
+let nyData = data |> Json.set("alder", 26)
+
+// Konverter til JSON og skriv ut
+let nyJson = nyData |> Json.encode_pretty(2)
+io.println(nyJson)
 ```
-
-I dette tilfellet blir `result` en `Ok` med en Gleam-record som ser slik ut:
-
-```Gleam
+Output: 
+```
 {
-  name: "Maria",
-  age: 28,
-  hobbies: ["skiing", "hiking"]
+  "navn": "Maria",
+  "alder": 26,
+  "jobb": "Programmerer"
 }
 ```
 
-Vi kan også bruke funksjonen `Json.Decode.map` for å konvertere dataen til vår egen record-type. Anta at vi har følgende record-type definert:
-
-```Gleam
-pub struct Person(name: String, age: Int, hobbies: List(String))
-```
-
-Vi kan bruke `Json.Decode.map` for å kartlegge JSON-data til vår `Person`-type:
-
-```Gleam
-let result = Json.Decode.map(Person, data)
-```
-
-Nå vil `result` være en `Ok` med en `Person`-record som inneholder navnet, alderen og en liste over interesser.
-
-## Deep Dive
-
-En annen nyttig funksjon i `Json.Decode` biblioteket er `Json.Decode.field`, som lar deg ekstrahere en spesifikk verdi fra JSON-objekter eller matriser. Du kan også bruke `Json.Decode.at` for å få tak i dataen på dypere nivåer i JSON-strukturen.
-
-Videre gir `Json.Decode.one_of` funksjonen deg muligheten til å håndtere forskjellige typer data som kan komme fra forskjellige kilder. For eksempel kan du bruke `Json.Decode.one_of` for å håndtere både JSON-objekter og lister av JSON-objekter.
+## Dykk dypere
+Å arbeide med JSON i Gleam er enkelt takket være Json-modulen. Den lar deg enkelt konvertere datastrukturer til JSON og vice versa ved hjelp av funksjoner som `encode` og `decode`. Du kan også bruke `encode_pretty` for å få en finere formatering på JSON-utdataen. Hvis du trenger å jobbe med større datastrukturer, kan du også bruke `save_to_file` og `load_from_file` for å lagre og hente JSON-filer.
 
 ## Se også
-
-- [Gleam Docs - JSON-dekoding](https://gleam.run/documentation/stdlib/json_decode/)
-- [JSON.org - The JSON Data Interchange Format](https://www.json.org/json-en.html)
+- [Gleam dokumentasjon om Json-modulen](https://gleam.run/documentation/json/)
+- [Offisiell JSON-nettside](https://www.json.org/json-en.html)
+- [En oversikt over Gleam funksjoner for å manipulere data](https://5t3ph.github.io/over-json-with-gleam.html)

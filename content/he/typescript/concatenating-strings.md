@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: לחבר מחרוזות"
-simple_title:         "לחבר מחרוזות"
+title:                "שרשור מחרוזות"
+html_title:           "TypeScript: שרשור מחרוזות"
+simple_title:         "שרשור מחרוזות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,29 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-תהליך הזכרון של סדרתי תווים נקרא תהליך הזכרון הטנפני. הוא משמש להוספת תווים למחרוזת קיימת או ליצירת מחרוזות חדשות מסוימות. זה מאפשר לסנכרן מחרוזות שונות יחד וליצור מחרוזות דינמיות בהתאם לצורך.
+למה לאדם לעסוק באיחוד מחרוזות? פשוט, כל תוכנית בתכנות משתמשת במחרוזות באופן רחב, לכן חשוב שנדע איך לחבר אותן בצורה נכונה כדי ליצור תוצאה תקינה.
 
-## איך לעשות
+## איך ל
+
+על מנת לחבר מחרוזות ב TypeScript, ניתן להשתמש באופרטור הכפל ( + ). לדוגמה:
 
 ```TypeScript
-let name: string = "דנה";
-let greeting: string = "שלום";
-let message: string = greeting + " " + name + ", אני מאוד שמחה להכיר אותך!";
-console.log(message);
+let firstName: string = "טלי";
+let lastName: string = "כהן";
+
+console.log(firstName + " " + lastName);
+
+// תוצאה: טלי כהן
 ```
 
-פלט:
-```
-שלום דנה, אני מאוד שמחה להכיר אותך!
-```
+## חקירת עומק
 
-בדוגמה זו, אנו משתמשים בתהליך זכרון טנפני כדי לחבר מחרוזות. תחילה, אנו מכריחים את ערך המשתנה להיות מחרוזת. לאחר מכן, באמצעות סימן הפלוס (+) אנו מצרפים את המחרוזות השונות יחד כדי ליצור את המחרוזת החדשה המרוכזת.
-
-## צליינה עמוקה
-
-תהליך הזכרון הטנפני יכול להיות מאוד שימושי בתכנות טיפוסי. כאשר אנחנו משתמשים בסימן פלוס (+) כדי לחבר מחרוזות, אנו משתמשים בתהליך הזכרון הטנפני בפנים, מאחורי הקלעים. זה מאפשר לנו להיות יצירתיים ויעילים בכתיבת קוד וליצור מחרוזות דינמיות באופן יעיל.
+האם אתם יודעים שניתן לחבר מחרוזות ב TypeScript עם האופרטור +=? בנוסף, ניתן גם להשתמש בפונקציה concat() כדי לחבר מספר מחרוזות במקביל. יתרה מכך, אם מצביעים על מחרוזת בתוך שורת קוד, ניתן להשתמש בפונקציה toString() כדי להמיר את המצביע למחרוזת לפני שמחברים אותה עם מחרוזת אחרת.
 
 ## ראו גם
 
-- [MDN: תהליך הזכרון הטנפני](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
-- [קודיפנדיה: תהליך הזכרון הטנפני](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-introduction/cheatsheet)
+- [JavaScript מדריך תחבירי: מחרוזות](https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Grammar_and_types#strings_in_javascript)
+- [מחרוזות ב TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string)
+- [השתמש במחרוזות ב TypeScript כמו מקצוען](https://www.digitalocean.com/community/tutorials/how-to-use-strings-in-typescript-like-a-professional)

@@ -1,5 +1,6 @@
 ---
-title:                "Python: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Python: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Python"
 category:             "Python"
@@ -11,62 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Komentoriviparametrit ovat tärkeä osa Python-ohjelmointia ja niiden ymmärtäminen voi auttaa sinua tekemään ohjelmistostasi joustavampaa ja monipuolisempaa.
+Komentoriviparametrien lukeminen on tärkeä osa Python-ohjelmointia, sillä se mahdollistaa käyttäjän antaman syötteen käsittelyn ja interaktiivisuuden ohjelman suorituksen aikana.
 
 ## Miten
 
-Komentoriviparametrit annetaan Python-ohjelmalle, kun sitä suoritetaan terminaalissa. Ne ovat erittäin hyödyllisiä, kun haluat muuttaa ohjelman käyttäytymistä ilman, että joudut muokkaamaan itse ohjelmakoodia.
-
-Esimerkiksi voit luoda ohjelman, joka laskee kahden luvun summan, ja antaa käyttäjän valita kummankin luvun komentoriviparametreilla. Alla on esimerkki koodista ja sen tulostuksesta:
-
-```Python 
-import sys
-
-number1 = int(sys.argv[1])
-number2 = int(sys.argv[2])
-
-sum = number1 + number2
-print("Summa: ", sum)
-
-```
-
-Kun suoritat tämän ohjelman terminaalissa antamalla kaksi lukua, näet napakan summatulosteen.
-
-```
-$ python summa.py 5 3
-Summa: 8
-```
-
-Voit myös antaa ohjelmalle vaihtoehtoja, jotka muuttavat sen toimintaa. Esimerkiksi voit lisätä "-t" vaihtoehdon, joka tulostaa kertotaulun sijasta kertotaulun kertomalla tulon.
+Komentoriviparametrien lukeminen Pythonilla on helppoa. Se tapahtuu `sys` -kirjaston `argv` -listan avulla, joka sisältää syötetyt komentoriviparametrit. Alla on yksinkertainen esimerkki:
 
 ```Python
 import sys
 
-number1 = int(sys.argv[2])
-number2 = int(sys.argv[3])
-
-if sys.argv[1] == "-t":
-    product = number1 * number2
-else:
-    product = number1 * number2
-    print("Kertotaulu: ", sys.argv[1], "x", sys.argv[2], "=", product)
+print(sys.argv)
 ```
 
-Tässä esimerkissä käytämme "sys.argv" muuttujaa tarkistamaan, mitä vaihtoehtoa käyttäjä on antanut. Suorittamalla tämän ohjelman seuraavalla tavalla, näet erilaisen tulosteen:
+Tämä koodi tulostaa kaikki annetut komentoriviparametrit listana. Esimerkiksi komennolla `python argumentit.py hello world` tulostus olisi seuraava:
 
+```Python
+['argumentit.py', 'hello', 'world']
 ```
-$ python kertotaulu.py -t 5 3
-Kertolasku: 5 x 3 = 15
-```
 
-## Syvempi sukellus
+Kuten nähdään, ensimmäinen alkio on aina itse tiedoston nimi ja sen jälkeen tulevat kaikki annetut parametrit.
 
-Komentoriviparametrit tarjoavat paljon mahdollisuuksia ja niitä voi käyttää monella eri tavalla ohjelman kehityksessä. Voit esimerkiksi antaa käyttäjälle mahdollisuuden valita tiedosto, johon ohjelman tuloksia tallennetaan, tai lisätä väliaikaisia parametreja, jotka muuttavat ohjelman suoritusta.
+Käyttäjän antamaa syötettä voi myös käsitellä eri tavoin, esimerkiksi tarkastamalla parametreja ja niiden määrää ennen niiden käyttämistä ohjelmassa.
 
-Komentoriviparametrit toimivat komentorivin ja ohjelman välillä, joten niitä voidaan käyttää myös Skripteissä, joita suoritetaan käyttöjärjestelmän sisällä.
+## Syvällisempi sukellus
+
+Komentoriviparametrien lukeminen Pythonilla mahdollistaa ohjelman käyttämisen interaktiivisemmin, sillä käyttäjä voi antaa tietoa ohjelmalle sen suorituksen aikana. Komennot voi myös antaa eri järjestyksessä ja niitä voidaan tarkastella ja käsitellä ohjelman sisällä.
+
+On myös hyvä huomata, että `sys.argv` -lista sisältää aina merkkijonoja, joten mikäli ohjelmassa tarvitaan tietyn tyyppisitä arvoja, kuten kokonaislukuja tai liukulukuja, ne tulee muuttaa oikeaan muotoon ennen käyttämistä.
 
 ## Katso myös
 
-- [Pythonin virallinen dokumentaatio komentoriviparametreista] (https://docs.python.org/3/library/sys.html#sys.argv)
-- [RealPythonin opas komentoriviparametrien käyttöön] (https://realpython.com/python-command-line-arguments/)
-- [Keskustelu Stack Overflowissa komentoriviparametrien käyttöönotosta Pythonissa] (https://stackoverflow.com/questions/11210104/how-can-i-read-command-line-arguments-in-python)
+- [Pythonin virallinen dokumentaatio komentoriviparametreista](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Stack Overflow -kysymys komentoriviparametrien lukemisesta Pythonilla](https://stackoverflow.com/questions/41683465/command-line-parameters-in-python)
+- [Tutoriaali komentoriviparametrien lukemisesta Pythonilla](https://www.guru99.com/python-command-line-arguments.html)

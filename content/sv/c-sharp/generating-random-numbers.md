@@ -1,6 +1,7 @@
 ---
-title:                "C#: Skapa slumpmässiga tal"
-simple_title:         "Skapa slumpmässiga tal"
+title:                "Generera slumpmässiga tal"
+html_title:           "C#: Generera slumpmässiga tal"
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -9,54 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför generera slumpmässiga nummer?
+## Varför
 
-I programmering finns det många gånger ett behov av att skapa slumpmässiga nummer, antingen för att testa en algoritm eller för att skapa variation i ett spel. Genom att använda inbyggda funktioner kan vi enkelt generera slumpmässiga nummer i vårt program. I denna bloggpost kommer jag att visa hur du kan göra detta i C#.
+Att generera slumpmässiga nummer är en användbar funktion inom programmering eftersom det tillåter utvecklare att skapa dynamiska och varierande program. Det är också en viktig funktion inom spel och simuleringar.
 
-## Så här gör du:
+## Så här gör du
 
-För att generera slumpmässiga nummer i C# använder vi oss av den inbyggda klassen Random. Det första steget är att skapa en instans av denna klass genom att skriva ```C# Random randomGenerator = new Random();``` Därefter kan vi använda olika metoder för att generera olika typer av slumpmässiga nummer.
+För att generera slumpmässiga nummer i C# kan du använda dig av "Random" klassen. Här är ett enkelt exempel på hur du kan skapa en instans av Random klassen och sedan generera ett slumpmässigt heltal mellan 1 och 10:
 
-### Heltal:
 ```C#
-// Genererar ett slumpmässigt heltal mellan 1 och 100
-int randomNumber = randomGenerator.Next(1, 101);
-
-// Genererar ett slumpmässigt heltal mellan 0 och 100
-int randomNumber = randomGenerator.Next(101);
-
-// Genererar ett slumpmässigt heltal utan övre gräns
-int randomNumber = randomGenerator.Next();
+Random random = new Random();
+int randomNumber = random.Next(1, 11);
+Console.WriteLine(randomNumber); 
 ```
 
-### Decimaltal:
+Output: 8
+
+För att generera ett slumpmässigt decimaltal mellan 0 och 1 kan du använda "NextDouble()" metoden:
+
 ```C#
-// Genererar ett slumpmässigt decimaltal mellan 0 och 1
-double randomDecimal = randomGenerator.NextDouble();
-
-// Genererar ett slumpmässigt decimaltal mellan 0 och 10
-double randomDecimal = randomGenerator.NextDouble() * 10;
-
-// Genererar ett slumpmässigt decimaltal utan övre gräns
-double randomDecimal = randomGenerator.NextDouble();
+Random random = new Random();
+double randomDecimal = random.NextDouble();
+Console.WriteLine(randomDecimal);
 ```
 
-### Tecken:
-```C#
-// Genererar ett slumpmässigt tecken från en lista av tecken
-char randomChar = (char)randomGenerator.Next('a', 'z');
+Output: 0.731447659681
 
-// Genererar ett slumpmässigt tecken från hela ASCII-tabellen
-char randomChar = (char)randomGenerator.Next(0, 255);
+Du kan också ange ett seed-värde för att få samma slumpmässiga sekvens varje gång du kör koden. Detta kan vara användbart vid felsökning eller för att testa olika scenarier:
+
+```C#
+Random random = new Random(1234);
+int randomNumber = random.Next(1, 11);
+Console.WriteLine(randomNumber);
 ```
 
-## Djupdykning:
+Output: 3
 
-Intern använder klassen Random en algoritm som kallas för **Pseudo Random Number Generator (PRNG)**. Det betyder att de genererade numren egentligen inte är helt slumpmässiga utan följer en förutbestämd ordning baserat på ett så kallat seed-värde. Om vi inte anger ett seed-värde när vi skapar vår instans av Random kommer det att använda systemklockan som seed-värde, vilket ger en godtycklig startpunkt för den interna algoritmen.
+## Djupdykning
 
-Ett problem med PRNG är att det kan uppstå en periodisk sekvens av nummer, vilket betyder att de genererade numren kommer att upprepa sig själva efter en viss tid. För att undvika detta kan vi ange ett eget seed-värde när vi skapar vår instans av Random. Detta kan till exempel göras genom att använda programtiden som seed-värde, vilket ger en högre grad av slumpmässighet.
+Random klassen använder sig av en algoritm som kallas "Linear Congruential Generator" för att generera slumpmässiga tal. Algoritmen använder en seed-värde som utgångspunkt för att skapa en följd av tal som kan upplevas som slumpmässiga.
 
-## Se också:
+Det är viktigt att vara medveten om att algoritmen inte genererar helt slumpmässiga tal utan följer en specifik matematisk formel. Detta betyder att om du känner till seed-värdet och algoritmen, kan du förutsäga nästa tal som kommer att genereras.
 
-- [Microsoft Docs - Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [Wikipedia - Pseudo Random Number Generator](https://sv.wikipedia.org/wiki/Pseudoslumpgenerator)
+För att få en bättre slumpmässighet kan du använda andra metoder, som till exempel att blanda element i en lista eller använda externa faktorer såsom systemets tid eller användarinput som seed-värde.
+
+## Se även
+
+- [Random Klass (C# Programmeringsguide)](https://docs.microsoft.com/sv-se/dotnet/api/system.random?view=net-5.0)
+- [Pseudo-Random Number Generators (Wikipedia)](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [How to Create Random Numbers in C# (Tutorial)](https://www.tutorialspoint.com/how-to-create-random-numbers-in-c-sharp)

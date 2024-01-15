@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Obliczanie daty w przyszłości lub przeszłości"
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości."
+html_title:           "Ruby: Obliczanie daty w przyszłości lub przeszłości."
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,40 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego ktoś zechciałby obliczyć datę w przyszłości lub przeszłości? Może być wiele powodów, na przykład chcesz zaplanować wydarzenie lub sprawdzić, kiedy skończy się ważność dokumentu.
+Obliczanie daty w przyszłości lub przeszłości jest przydatne, gdy chcemy prognozować terminy, ustalać plany lub wyświetlać dynamiczne informacje na stronie internetowej.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości w języku Ruby, należy użyć klasy `Date`. Najpierw musisz załadować bibliotekę:
+```ruby
+# aby obliczyć datę w przyszłości, dodajemy odpowiednią ilość dni do bieżącej daty:
+future_date = Date.today + 30 
+# wyświetli 30 dni od dzisiaj
+puts "Za miesiąc będzie #{future_date}"
 
-```Ruby
-require 'date'
+# aby obliczyć datę w przeszłości, odejmujemy odpowiednią ilość dni od bieżącej daty:
+past_date = Date.today - 7 
+# wyświetli tydzień temu
+puts "Tydzień temu było #{past_date}"
+
+# możemy także użyć metod like `next_day`, `prev_day`, `next_month`, `prev_month`, itp.:
+next_week = Date.today.next_day(7)
+puts "W przyszłym tygodniu będzie #{next_week}"
+
+# jeśli chcemy dodać lub odjąć inne jednostki czasu, np. tygodnie, miesiące, lata, możemy użyć metody `advance` wraz z odpowiednim haszem jako argumentem:
+future_date = Date.today.advance(years: 1, months: 2, weeks: 3)
+puts "Za rok, 2 miesiące i 3 tygodnie będzie #{future_date}"
 ```
 
-Następnie możesz użyć metody `today` dla obiektu `Date`, aby uzyskać aktualną datę:
+## Głębsze zanurzenie
 
-```Ruby
-Date.today # Output: #<Date: 2021-09-01 ((2459462j, 0s, 0n), +0s, 2299161j)>
-```
+Ruby posiada wiele przydatnych metod do manipulowania datami i czasem. Podczas obliczania daty w przyszłości lub przeszłości, możemy wykorzystać te metody, aby uzyskać dokładniejsze wyniki i uniknąć błędów związanych z różnicami w długości miesięcy czy lat.
 
-Aby obliczyć datę w przyszłości, użyj metody `+` i podaj ilość dni, jakie chcesz dodać:
-
-```Ruby
-Date.today + 7 # Output: #<Date: 2021-09-08 ((2459469j, 0s, 0n), +0s, 2299161j)>
-```
-
-Aby obliczyć datę w przeszłości, użyj metody `-` i podaj ilość dni, jakie chcesz odjąć:
-
-```Ruby
-Date.today - 14 # Output: #<Date: 2021-08-18 ((2459455j, 0s, 0n), +0s, 2299161j)>
-```
-
-## Dogłębna analiza
-
-Klasa `Date` w języku Ruby opiera się na kalendarzu gregoriańskim i obsługuje daty od 1 stycznia 4713 BC do 31 grudnia 9999 AD. Aby uzyskać więcej informacji na temat tej klasy i jej metod, możesz sprawdzić oficjalną dokumentację języka Ruby (https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html).
+Możemy także zmienić strefę czasową używaną przez naszą aplikację za pomocą `Time.zone=` lub `Time.zone_local=`. Więcej informacji na ten temat znajdziesz w dokuentacji Ruby.
 
 ## Zobacz także
 
-- https://www.cyberciti.biz/faq/how-to-get-current-date-time-in-ruby/
-- https://www.rubyguides.com/2015/05/working-with-dates-in-ruby/
-- https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html
+- [Dokumentacja Ruby o dacie i czasie](https://ruby-doc.org/core-3.0.0/Date.html)
+- [Atak jak obliczyć datę w Ruby](https://youtu.be/QWdsXYBI6ro)
+- [Przydatne metody do manipulowania datami w Ruby](https://medium.com/@acorred1/date-manipulation-using-ruby-a-case-study-7f8d9c13d0eb)

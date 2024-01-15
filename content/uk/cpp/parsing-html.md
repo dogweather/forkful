@@ -1,6 +1,7 @@
 ---
-title:                "C++: Розбір html"
-simple_title:         "Розбір html"
+title:                "Аналізування html"
+html_title:           "C++: Аналізування html"
+simple_title:         "Аналізування html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,68 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Висновок: Чому парсінг HTML є важливим для програмістів?
-
-Цей пост присвячений розгляданню парсінгу HTML і тому, чому він є таким важливим для програмістів. Ми розглянемо, як це працює і як ви можете використовувати його у своїх проектах.
-
 ## Чому
 
-Парсінг HTML - це процес отримання структурованих даних з HTML-документу. Це важливий етап при роботі з веб-даними, так як багато інтернет-ресурсів надають інформацію саме у форматі HTML. Завдяки парсінгу ми можемо легко отримати необхідні дані з цих ресурсів і використовувати їх у своїх проектах.
+В даній статті, ми дізнаємося, як парсити HTML у програмі на мові C++. Це дуже важливий процес при роботі з веб-додатками або при отриманні даних з Інтернету. Парсинг HTML дозволяє нам зчитувати та обробляти дані зі сторінок веб-сайтів.
 
-## Як використовувати
+## Як це зробити
 
-Для початку, ми повинні завантажити HTML-документ за допомогою бібліотеки, наприклад, ```libcurl```. Після цього ми можемо використовувати функції парсера, такі як ```libxml``` або ```pugixml```, щоб отримати дані з нашого HTML-документу.
+Для того, щоб парсити HTML у програмі на мові C++, нам знадобиться використати зовнішні бібліотеки. Найбільш популярні з них - це "libcurl", "pugixml" та "Boost" бібліотеки. Давайте розглянемо приклад парсингу HTML за допомогою бібліотеки "pugixml" у стилі "SAX" (Simple API for XML):
 
-```C++
-#include <curl/curl.h>
-#include <libxml/HTMLparser.h>
+ ```C++
+#include <iostream>
 #include <pugixml.hpp>
 
-int main() {
-    // завантаження HTML-документу
-    CURL *curl;
-    CURLcode res;
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL,
-          "https://www.example.com/");
-        res = curl_easy_perform(curl);
-    }
-
-    // використання libxml для парсінгу документу
-    htmlDocPtr doc;
-    doc = htmlReadMemory(res, strlen(res), "", NULL, HTML_PARSE_NOPASSWORD);
-    xmlNode* rootElement = xmlDocGetRootElement(doc);
-    const xmlChar* xpath = (xmlChar*) "//a";
-    xmlXPathObject* result = xmlXPathEvalExpression(xpath, doc);
-    if (result != NULL) {
-        xmlNodeSet* nodes = result->nodesetval;
-        for (int i = 0; i < nodes->nodeNr; i++) {
-            // обробка результатів
-            printf("%s\n", nodes->nodeTab[i]->children->content);
-        }
-    }
-
-    // використання pugixml для парсінгу документу
+void parse_html(const char* buffer) {
     pugi::xml_document doc;
-    doc.load_buffer(res, strlen(res));
-    pugi::xml_node rootElement = doc.child("html");
+    pugi::xml_parse_result result = doc.load(buffer);
 
-    // обробка результатів
-    for (pugi::xml_node a = rootElement.child("a"); a; a = a.next_sibling("a")) {
-        printf("%s\n", a.child_value());
+    // Перевірка результату парсингу
+    if (!result) {
+        std::cout << "Помилка парсингу: " << result.description() << "\n";
     }
+
+    // Отримання кореневого вузла документу
+    pugi::xml_node root = doc.document_element();
+   
+    // Пошук і обробка тегу "title"
+    pugi::xml_node title = root.child("head").child("title");
+ 
+    if (title) {
+        std::cout << "Назва веб-сторінки: " << title.child_value() << "\n";
+    }
+    
+    // Пошук і обробка всіх тегів "a" на сторінці
+    for (pugi::xml_node link = root.child("body").child("a"); link; link = link.next_sibling("a")) {
+        std::cout << "Посилання: " << link.attribute("href").value() << "\n";
+    }
+}
+
+int main() {
+    const char* buffer = "<html><head><title>Мій перший веб-сайт</title></head></html>";
+    parse_html(buffer);
+    return 0;
 }
 ```
 
-Вихідні дані можуть виглядати так:
+Вихідний код демонструє створення "html" документу за допомогою рядка тексту і подальшого його парсингу за допомогою бібліотеки "pugixml". У результаті парсингу ми отримаємо назву веб-сторінки та всі посилання з тегами "a" на сторінці.
 
-```
-Home
-About
-Contact
-```
+## Глибше погляд
 
-## Deep Dive
+Парсинг HTML за допомогою бібліотеки "pugixml" є більш швидким, ніж за допомогою інших бібліотек, таких як "Boost" або "libxml2". Бібліотека "pugixml" підтримує технологію "SAX", що дозволяє обробку документа у вигляді потоку, що забезпечує низький рівень використання пам'яті та збереження часу.
 
-Існує багато бібліотек та інструментів для парсінгу HTML у C++, кожен з яких має свої переваги та недоліки. Наприклад, бібліотека ```libxml``` є більш стабільною та має широкий функціонал, але у використанні є дещо складнішою. У свою чергу, ```pugixml``` є більш простою у використанні, але може працювати не так е
+## Дивись також
+
+- [Офіційна документація "pugixml" бібліотеки](https://pugixml.org/docs/manual.html)
+- [Реалізаці

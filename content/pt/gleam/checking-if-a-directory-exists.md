@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Verificando se um diretório existe"
+title:                "Verificando se um diretório existe"
+html_title:           "Gleam: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que fazer uma verificação de existência de diretório?
 
-Se você está trabalhando com o Gleam, é provável que esteja criando uma aplicação que precisa lidar com arquivos e diretórios. Saber como verificar se um diretório existe é uma habilidade importante para garantir que sua aplicação funcione corretamente. Felizmente, o Gleam possui uma função simples que permite fazer essa verificação de forma fácil e eficiente. Continue lendo para descobrir como fazer isso!
+Se você está trabalhando com arquivos em seu programa, é importante ter certeza de que o diretório no qual deseja salvar ou acessar seus arquivos existe. Isso pode evitar erros e garantir que seu código funcione corretamente.
 
-## Como Fazer
+## Como fazer uma verificação de existência de diretório em Gleam
 
-Para verificar se um diretório existe no Gleam, você precisará usar a função `Std.Path.dir_exists/1`. Essa função aceita um caminho de string como argumento e retorna um booleano `true` se o diretório existir ou `false` se não existir. Vamos dar uma olhada em um exemplo:
-
-```Gleam
-import Std.Path
-
-dir_name = "exemplo/diretorio"
-result = Std.Path.dir_exists(dir_name)
-
-io.format("O diretório ~s existe? ~b", [dir_name, result])
-```
-
-No exemplo acima, estamos importando o módulo `Std.Path` para ter acesso à função `dir_exists`. Em seguida, declaramos o caminho do diretório que queremos verificar e passamos ele como argumento para a função `dir_exists`. Finalmente, usamos a função `io.format` para imprimir uma mensagem informando se o diretório existe ou não.
-
-A saída deste programa seria:
+Para verificar se um diretório existe em Gleam, podemos utilizar a função `os.dir_exists`, que retorna um booleano indicando se o diretório existe ou não. Veja um exemplo de código abaixo:
 
 ```
-O diretório exemplo/diretorio existe? true
+import gleam/os
+
+let dir_exists = os.dir_exists("./meu_diretorio")
 ```
 
-## Aprofundando
+Isso verifica se o diretório "meu_diretorio" existe no local atual do programa. Se o diretório existir, a variável `dir_exists` será atribuída como `true`, caso contrário, será `false`.
 
-Por trás das cenas, a função `Std.Path.dir_exists/1` está usando a função do sistema operacional `Sys.is_dir/1` para verificar a existência do diretório. Isso significa que a função `dir_exists` retornará `true` mesmo se o caminho passado apontar para um arquivo com o mesmo nome. Além disso, lembre-se de que essa função só verificará se o diretório existe no caminho absoluto. Se você quiser verificar se um diretório existe em um caminho relativo, primeiro terá que convertê-lo para um caminho absoluto usando a função `Std.Path.relative_to_absolute/1`.
+Podemos então adicionar uma lógica em nosso código para lidar com a existência ou não do diretório da seguinte forma:
 
-## Veja Também
+```
+if dir_exists {
+  io.println("O diretório existe!")
+} else {
+  io.println("O diretório não existe!")
+}
+```
 
-- [Documentação oficial do Gleam sobre a função `Std.Path.dir_exists/1`](https://gleam.run/core/`Std.Path.html#dir_exists:1`)
-- [Guia de consulta rápida do Gleam com a função `Std.Path.dir_exists/1`](https://gleam.run/book/stdlib/files.html#checking-for-the-existence-of-a-directory)
+Dessa forma, podemos lidar com o diretório de acordo com a nossa necessidade.
+
+## Mergulho Profundo
+
+Além da função `os.dir_exists`, Gleam também possui outras funções relacionadas à manipulação de diretórios, como `os.dir_create` para criar um novo diretório e `os.dir_delete` para excluir um diretório existente. Além disso, é possível utilizar a função `os.cwd` para obter o diretório atual do programa.
+
+Outro ponto importante a ser mencionado é que a função `os.dir_exists` pode lançar uma exceção em caso de problemas de permissão ou outros erros. Portanto, é sempre uma boa prática envolver sua chamada em um bloco de tratamento de erros.
+
+## Veja também
+
+- Documentação oficial da biblioteca Gleam (em Inglês): <https://gleam.run/documentation>
+- Recurso de manipulação de arquivos e diretórios no Gleam (em Inglês): <https://gleam.run/modules/os>
+- Exemplo de código de verificação de existência de diretório em Gleam: <https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/test/os/test_dir_exists.gleam>

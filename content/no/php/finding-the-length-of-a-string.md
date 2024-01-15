@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Å finne lengden til en streng"
-simple_title:         "Å finne lengden til en streng"
+title:                "Å finne lengden til en tekststreng"
+html_title:           "PHP: Å finne lengden til en tekststreng"
+simple_title:         "Å finne lengden til en tekststreng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,56 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"Når vi jobber med å lage nettsider og applikasjoner, vil vi ofte måtte håndtere tekst og informasjon som brukerene skriver inn. En viktig del av dette er å kunne finne lengden på en tekststreng. Dette er nyttig i mange situasjoner, som for eksempel når vi skal validere inndata eller når vi trenger å telle antall tegn i en tekst.
-
 ## Hvorfor
 
-Å finne lengden på en tekststreng er en grunnleggende og vanlig oppgave i PHP-programmering. Dette er viktig for å kunne formatere og behandle tekst på riktig måte. Det kan også være nyttig når vi skal utføre operasjoner som å telle antall ord eller dele opp en tekststreng i mindre deler.
+Å finne lengden på en streng er en vanlig oppgave når man jobber med PHP-programmering. Det er nyttig å kunne for å kunne håndtere og manipulere tekstdata på en effektiv måte i koden din.
 
 ## Slik gjør du det
 
-Å finne lengden på en tekststreng i PHP er enkelt og kan gjøres ved hjelp av en innebygd funksjon kalt `strlen()`. Denne funksjonen tar inn en tekststreng som parameter og returnerer antall tegn i strengen. La oss se på et eksempel:
+Det finnes flere måter å finne lengden på en streng i PHP, avhengig av hva som passer best for oppgaven din. Her er noen eksempler:
 
 ```PHP
-$name = "Ola Nordmann";
-$length = strlen($name);
+// Bruker funksjonen strlen() for å finne lengden på en streng
+$string = "Dette er en test";
+echo strlen($string); // Output blir 16, siden det er 16 tegn i strengen
 
-echo "Navnet ditt er $length tegn langt.";
-```
+// Bruker count() funksjonen på en streng som et array av tegn
+echo count(str_split($string)); // Output blir også 16
 
-I dette eksemplet lagrer vi en tekststreng i variabelen `$name` og bruker deretter `strlen()`-funksjonen til å finne lengden på denne strengen. Deretter bruker vi `echo` for å skrive ut en melding med lengden av tekststrengen.
+// Bruker mb_strlen() funksjonen for å håndtere flerspråklige strenger
+// Denne funksjonen tar hensyn til spesielle tegn og bokstaver som kan oppta mer enn én byte
+$string = "Dette er en test på norsk: Værsågod";
+echo mb_strlen($string, 'UTF-8'); // Output blir 30
 
-Output:
-```
-Navnet ditt er 12 tegn langt.
-```
-
-Vi kan også bruke `strlen()`-funksjonen til å finne lengden på en tekststreng på en mer dynamisk måte, for eksempel ved å kombinere den med en `for`-løkke:
-
-```PHP
-$word = "banana";
-$length = strlen($word);
-
-for ($i = 0; $i < $length; $i++) {
-    echo "Dette ordet har $length bokstaver." . PHP_EOL;
+// Du kan også bruke en løkke til å telle hvert tegn i strengen manuelt
+$count = 0;
+foreach(str_split($string) as $char){
+    $count++;
 }
+echo $count; // Output blir også 30
 ```
 
-Output:
-```
-Dette ordet har 6 bokstaver.
-Dette ordet har 6 bokstaver.
-Dette ordet har 6 bokstaver.
-Dette ordet har 6 bokstaver.
-Dette ordet har 6 bokstaver.
-Dette ordet har 6 bokstaver.
-```
+## Dykk dypere
 
-## Dypdykk
+Det er viktig å være klar over at lengden på en streng i PHP er basert på antall tegn, ikke antall ord. Dette betyr at mellomrom også blir telt som et tegn.
 
-`strlen()`-funksjonen i PHP er basert på Unicode-tegnsettet, noe som betyr at den kan håndtere alle typer tegn, inkludert multibyte-tegn. Dette gjør den mer pålitelig og presis enn å bruke `mb_strlen()`-funksjonen. Imidlertid er det verdt å merke seg at `strlen()` ikke teller antall ord i en tekststreng, men antall tegn. Dette er viktig å være klar over når du bruker denne funksjonen.
+Du bør også være oppmerksom på hvilken type tegnkoding som brukes i strengen din. Hvis det er forskjellig fra standarden UTF-8, må du sørge for å sette riktig tegnkoding i parameteren for mb_strlen() funksjonen.
+
+En annen nyttig funksjon for å håndtere strenger er substr() funksjonen, som lar deg hente en del av en streng basert på startposisjon og lengde.
 
 ## Se også
 
-- [PHP strlen() Function](https://www.php.net/manual/en/function.strlen.php)
-- [PHP mb_strlen() Function](https://www.php.net/manual/en/function.mb-strlen.php)
+- Offisiell PHP Manual for strlen(): https://www.php.net/manual/en/function.strlen.php
+- Eksempler på bruk av mb_strlen(): https://www.php.net/manual/en/function.mb-strlen.php
+- Dokumentasjon for substr() funksjonen: https://www.php.net/manual/en/function.substr.php

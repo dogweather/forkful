@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Fish Shell: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,27 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-왜: 문자열의 길이를 찾는 것에 참여하는 이유는 무엇인가요?
-빠른 정보 검색 및 처리를 위해 코드에서 문자열의 길이를 찾아야 할 때가 있을 수 있습니다.
+## 왜
+세상은 매우 복잡하다! 우리는 간단한 것도 이해하기 쉽지 않다. 문자열의 길이를 정확히 알고 싶은 경우가 있을 수 있다. 이 길이를 알고 싶을 때, 문제를 더 쉽게 볼 수 있고, 효과적인 해결책을 찾을 수 있다.
 
-어떻게: 
-```Fish Shell
-set my_string "안녕하세요!"
-set length (count $my_string)
-echo $length
+## 사용 방법
+### "```Fish Shell```" 코드 블록 내에 ```string length``` 명령어를 사용해 문자열의 길이를 얻을 수 있다. 예를 들어:
+
 ```
-```
-9
+Fish Shell> string length "안녕하세요"
+6
 ```
 
-자, 이제 어떻게 작동하는지 확인해 보았습니다! 우리는 `문자열 명령어`를 사용하여 문자열의 길이를 찾고 변수를 설정합니다. 그런 다음 `count` 함수를 사용하여 변수의 길이를 계산합니다. 마지막으로, `echo` 명령어를 사용하여 변수의 값을 출력합니다.
+## 깊이 파고들기
+문자열의 길이를 찾는 것은 간단해 보이지만, 실제로는 알고리즘이라는 수학적인 개념을 포함하고 있다. 알고리즘을 이해하려면 컴퓨터의 메모리 관리, 데이터 타입 등에 대한 이해가 필요하다. 그러나 우리는 이 모든 것을 이해하지 않고도 유용한 프로그래밍을 할 수 있다는 것을 명심해야 한다.
 
-깊이 파고들기:
- 문자열의 길이를 찾는 더 복잡한 방법이 있을 수 있습니다. 예를 들어, `#section` 함수를 사용하여 특정 부분의 문자열 길이를 찾을 수 있습니다. 또는 `string length`를 사용하여 다른 언어로 된 문자열의 길이를 찾을 수도 있습니다.
-
-또한, 문자열의 길이를 반복문 및 조건문과 함께 사용하여 특정 조건을 만족하는 문자열을 선별하는 데에도 유용합니다. 이를 통해 원하는 정보를 추출하거나 문자열 처리를 더욱 효율적으로 할 수 있습니다.
-
-See Also:
-- [Fish Shell 공식 사이트](https://fishshell.com)
-- [Fish Shell GitHub 레포지토리](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 사용 설명서](https://fishshell.com/docs/current/index.html)
+## 더 찾아보기
+- [Fish Shell 공식 문서 (영문)](https://fishshell.com/docs/current/index.html)
+- [Fish Shell 온라인 커뮤니티 (영문)](https://github.com/fish-shell/fish-shell)

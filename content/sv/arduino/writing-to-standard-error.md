@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Att skriva till standardfel"
+title:                "Att skriva till standardfel"
+html_title:           "Arduino: Att skriva till standardfel"
 simple_title:         "Att skriva till standardfel"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,27 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standardfel kan vara en användbar funktion i ett Arduino-program. När man skriver till standardfel så visar man ett felmeddelande i konsolfönstret, vilket kan hjälpa till att identifiera eventuella problem i koden.
+Att skriva till standard error är ett användbart sätt att felsöka ditt Arduino-program. Det gör det möjligt att hitta och åtgärda eventuella fel och meddelanden som kan uppstå under körningen.
 
-## Hur man gör det
+## Hur man gör
 
-För att skriva till standardfel i Arduino så använder man funktionen `Serial.println()` och anger `Serial` som det första argumentet. Man kan också använda `Serial.print()` för att skriva ut texten utan radbrytning.
+För att skicka meddelanden till standard error måste du använda funktionen `Serial.print()` och skicka med parametern `ARDUINO_ERROR`. Här är ett exempel på hur du kan skriva ut ett felmeddelande när en variabel inte är större än ett visst värde:
 
 ```Arduino
-Serial.println("Detta är ett felmeddelande"); //skriver ut ett meddelande med radbrytning
-Serial.print("Detta är en debuggningstext"); //skriver ut en debuggningstext utan radbrytning
+if (var < 10) {
+  Serial.print("Error: Variabeln är inte större än 10. Värdet är: ");
+  Serial.print(var, ARDUINO_ERROR);
+  Serial.println();
+}
 ```
 
-När man sedan kör sitt program så kommer dessa meddelanden att visas i konsolfönstret.
+Detta kommer att skriva ut följande till din Arduino IDE: 
+
+```
+Error: Variabeln är inte större än 10. Värdet är: 5
+```
+
+Genom att använda `ARDUINO_ERROR` som andra parameter till `Serial.print()` kommer du att se en röd varningstext bredvid ditt meddelande, vilket hjälper dig att hitta det snabbt.
 
 ## Djupdykning
 
-Att skriva till standardfel kan vara speciellt användbart vid debugging av komplexa program. Genom att placera `Serial.println()` instruktioner vid olika delar av koden så kan man se vilka delar som utförs och i vilken ordning.
+När du skriver till standard error i Arduino, så skickas dina meddelanden till din dator via USB-porten. Detta gör att du kan se dem direkt i Arduino IDE. Du kan också använda verktyg som "Serial Monitor" för att visa dina meddelanden i realtid.
 
-Man kan också använda `Serial.begin()` funktionen för att specificera en baud-rate för kommunikationen till konsolfönstret. Detta kan vara särskilt användbart om man arbetar med en annan hårdvaruplattform än den som används för att visa meddelandena.
+Det finns också möjlighet att skicka meddelanden till standard error på en annan enhet. Du kan använda en extern enhet som är ansluten via Wi-Fi eller Bluetooth för att se dina meddelanden.
 
-## Se även
+## Se även 
 
-- [Arduino Serial.println() funktion](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Arduino Serial.print() funktion](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Arduino Serial.begin() funktion](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+- [Dokumentation om Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino-tutorial för Serial Monitor](https://www.arduino.cc/en/Tutorial/SerialMonitor)
+- [Guide för att använda externa enheter med Arduino](https://www.arduino.cc/en/Tutorial/TroubleshootingSerialCommunication)

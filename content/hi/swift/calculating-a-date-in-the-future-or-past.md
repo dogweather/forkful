@@ -1,6 +1,7 @@
 ---
-title:                "Swift: भविष्य या भूतकाल में तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
+title:                "भविष्य या भूत की तारीख की गणना"
+html_title:           "Swift: भविष्य या भूत की तारीख की गणना"
+simple_title:         "भविष्य या भूत की तारीख की गणना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## आखिर क्यों
 
-एक दिनांक उसकी तारीख को गणना करने को व्यक्ति के लिए सिर्फ दस्तावेज़ीकरण और समर्थन का उपयोग कर सकता है।
+अगर आप को लगता है कि आपको भविष्य में किसी तारीख को पता होना है या जानना है कि कितने दिन पहले या बाद कितने दिनों आगे तक तारीख है, तो आपको आज सीखना चाहिए कि स्विफ्ट प्रोग्रामिंग में इसे कैसे करते हैं।
 
 ## कैसे करें
 
+अगर आपको किसी विशेष दिन की तारीख को पता करना है, तो मेरे पास कुछ स्विफ्ट कोड उदाहरण है जो आपको इस प्रकार का काम करने में मदद कर सकते हैं:
+
 ```Swift
-let today = Date()
-let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
-print(tomorrow)
+// अगले साल की आज की तारीख को लेना
+let currentDate = Date()
+var dateComponent = DateComponents()
+dateComponent.year = 1
+let nextYear = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+
+// पिछले साल की आज की तारीख को लेना
+let previousYear = Calendar.current.date(byAdding: .year, value: -1, to: currentDate)
+
+// आज से 30 दिन आगे तारीख को लेना
+dateComponent = DateComponents()
+dateComponent.day = 30
+let thirtyDaysFromNow = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+
+// आज से 30 दिन पहले तारीख को लेना
+let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: currentDate)
 ```
 
-उपरोक्त कोड लाइन आपको मान से एक दिन बाद की तारीख निकालेगी। सम्पूर्ण कोड रन गोद भविष्य एवं भूतकाल के साथ साथ भावी दिनांकों को भी निकाल सकते हैं।
+इस तरह से आप स्विफ्ट के क्लास और तारीख तथा समय के साथ मिलकर आसानी से भविष्य में या अतीत में तारीख को पता कर सकते हैं।
 
-```
-let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)
-print(yesterday)
-let nextWeek = Calendar.current.date(byAdding: .week, value: 1, to: today)
-print(nextWeek)
-```
+## डीप डाइव
 
-उपरोक्त कोड लाइन आपको आलेख की तारीख से एक दिन पहले की तारीख प्रिंट करेगी, उसके बाद आने वाली सप्ताह की भावी दिनांक प्रिंट करेगी।
-
-## गहराई का निरीक्षण
-
-गहराई का निरीक्षण करने के लिए, हमें यहां NSDate स्ट्रक्चर का उपयोग करना चाहिए। इससे भूतकाल का के साथ साथ भविष्य की तारीख भी निकाल सकते हैं। हालांकि, हमें एक महीने से भी अधिक समय की तारीख गणना करते समय ध्यान देनी पड़ती है क्योंकि यह अक्सर द्वारा समस्या उत्पन्न होती है।
-
-## देखें भी
-
-तपासें कर सकते हैं यह पद यदि आप भविष्य की तारीखों की गणना से जुड़े और उड़्धरणों की खोज कर रहे हैं। 
-
-- [NSDate स्ट्रक्चर के साथ तारीखों की गणना (Swift)](https://stackoverflow.com/a/3307837)
-- [भावी दिनांकों की गणना उन्नततम समय-साध्य के साथ (हिंदी)](https://techforum4u.com/mathematics/finding-the-future-dates-easily/)
+जब हम स्विफ्ट में तारीख को कैल्कुलेट करते हैं, तो हम अक्सर `Date` और `DateComponents` किंतु क्लास का इस्तेमाल करते हैं। `Date` एक स्पष्ट तारीख औऱ समय को दर्शाते होता है, जबकि `DateComponents` एक निर्दिष्ट तारीख के तत्वों को नया तारीख बनाने के लिए इस्तेमाल होता है। आप `DateComponents` के माध्यम से विभिन्न तारीखीय यूनिट जैसे दिन, महीने,

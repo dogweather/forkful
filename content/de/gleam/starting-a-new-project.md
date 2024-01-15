@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Ein neues Projekt beginnen."
-simple_title:         "Ein neues Projekt beginnen."
+title:                "Ein neues Projekt beginnen"
+html_title:           "Gleam: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -9,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Das Erstellen eines neuen Projekts kann eine aufregende Herausforderung sein und bietet die Möglichkeit, kreative Ideen umzusetzen und neue Fähigkeiten zu erlernen. Gleam, eine von Erlang inspirierte funktionale Sprache, bietet eine schnelle und sichere Umgebung für die Entwicklung von Code. Diese Kombination macht es zu einer großartigen Wahl, um neue Projekte zu starten.
 
-Wenn du ein Programmierer oder eine Programmiererin bist, hast du sicherlich schon von Gleam gehört. Diese funktionale Programmiersprache ist auf dem Vormarsch und hat eine wachsende Community von Entwicklern und Entwicklerinnen. Aber warum sollte man sich überhaupt die Mühe machen, eine neue Programmiersprache zu lernen und ein Gleam-Projekt zu starten?
+## Wie es geht
+Um ein neues Projekt mit Gleam zu starten, folge einfach diesen Schritten:
 
-Gleam bietet einige einzigartige Vorteile, die es zu einer lohnenden Wahl für dein nächstes Projekt machen. Mit seiner statischen Typisierung und seiner starken Unterstützung für Nebenläufigkeit und Parallelität ist Gleam ideal für die Entwicklung robuster und skalierbarer Anwendungen. Auch die einfache Syntax und das benutzerfreundliche Tooling machen es für Entwickler und Entwicklerinnen jeder Erfahrungsstufe zugänglich.
+1. Installiere Gleam auf deinem Computer.
+2. Öffne ein Terminalfenster und navigiere zum gewünschten Speicherort für dein Projekt.
+3. Gib den Befehl `gleam new project_name` ein und drücke die Eingabetaste.
+4. Gleam erstellt automatisch einen Ordner mit dem Namen deines Projekts und initialisiert es mit einer grundlegenden Struktur.
+5. Navigiere in den neu erstellten Projektordner und öffne die Datei `src/main.gleam` in deinem bevorzugten Texteditor.
+6. Beginne mit der Definition deiner Module und Funktionen und schreibe deinen Code innerhalb der `main`-Funktion.
+7. Führe deinen Code aus, indem du in das Terminal-Fenster wechselst und den Befehl `gleam run` eingibst. Du solltest die Ausgabe deines Programms sehen.
 
-# Wie man anfängt
-
-Um ein Gleam-Projekt zu starten, musst du zunächst die Gleam-Tools auf deinem Computer installieren. Dies ist mit einem einzigen Befehl möglich, der für deine Betriebssystem spezifisch ist. Sobald dies erledigt ist, kannst du ein neues Projekt mit dem Befehl `gleam new` erstellen.
-
-Nun kannst du deine ersten Gleam-Zeilen schreiben! Hier ist ein Beispiel, wie du eine Funktion schreibst, die die Fakultät einer Zahl berechnet:
+Hier ist ein Beispiel für einfachen Code, der die Quintessenz von Gleam demonstriert - Typsicherheit und Pattern Matching:
 
 ```Gleam
-pub fn factorial(n) {
-    if n < 2 {
-        1
-    } else {
-        n * factorial(n - 1)
-    }
+foo() {
+  let x = 42
+  x // Funktion gibt 42 zurück
 }
 
-pub fn main() {
-    let result = factorial(5)
-    |> io.format("The factorial of 5 is {}", _)
-    io.println(result)
+case foo() {
+  x -> "Result is ${x}" // Pattern-Matching erkennt, dass x 42 ist
 }
 ```
 
-Das Ausführen dieses Codes würde 120 als Ergebnis ausgeben. Wie du sehen kannst, ist Gleam einfach zu erlernen und zu benutzen. Aber das war nur ein kleiner Vorgeschmack, lass uns nun tiefer in die Welt von Gleam eintauchen.
+Kurz gesagt, Gleam bietet dir eine schnelle und sichere Möglichkeit, Code zu schreiben. Also zögere nicht und starte dein neues Projekt noch heute!
 
-# Tiefergehende Informationen
+## Tief in die Materie eintauchen
+Bevor du mit der Entwicklung deines Projekts beginnst, kannst du dir etwas Zeit nehmen, um tiefer in Gleam einzutauchen und mehr über seine Möglichkeiten zu erfahren. Hier sind einige Ressourcen, die dir dabei helfen können: 
 
-Wenn du wirklich in die Feinheiten von Gleam eintauchen möchtest, gibt es einige Dinge, die du beachten solltest. Gleam ist eine statisch typisierte Sprache, was bedeutet, dass du Variablen einen bestimmten Datentyp zuweisen musst. Gleam unterstützt auch eine starke Typinferenz, was bedeutet, dass der Compiler in der Lage ist, viele Typen automatisch zu erkennen, ohne dass du sie explizit angeben musst.
+- Die offizielle Gleam-Website: [gleam.run](https://gleam.run/)
+- Die Dokumentation: [docs.gleam.run/](https://docs.gleam.run/)
+- Der offizielle Gleam-Chat: [gleam-lang/gleam on Gitter](https://gitter.im/gleam-lang/gleam)
 
-Eine weitere wichtige Funktion von Gleam ist seine Unterstützung für Nebenläufigkeit und Parallelität. Nebenläufigkeit bezieht sich auf die Fähigkeit, mehrere Aufgaben gleichzeitig auszuführen, während Parallelität bedeutet, dass diese Aufgaben tatsächlich auf verschiedenen Prozessorkernen gleichzeitig ausgeführt werden. Gleam macht es einfach, diese Konzepte in deinem Code zu implementieren, was zu schnelleren und effizienteren Anwendungen führen kann.
-
-# Siehe auch
-
-- Offizielle Gleam-Website: https://gleam.run/
-- Gleam-Dokumentation: https://gleam.run/documentation/
-- Gleam-Tutorial: https://dev.to/kofi/learn-gleam-programming-language-from-scratch-5h0d
+## Siehe auch
+- [Gleam-Repository auf GitHub](https://github.com/gleam-lang/gleam)
+- [Erlang-Website](https://www.erlang.org/)
+- [Funktionale Programmierung für Anfänger: Was ist Gleam?](https://www.freecodecamp.org/news/functional-programming-for-beginners-what-is-gleam-63eb1b33fe5/)

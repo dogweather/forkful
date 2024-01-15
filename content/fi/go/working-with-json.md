@@ -1,5 +1,6 @@
 ---
-title:                "Go: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Go: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Go"
 category:             "Go"
@@ -11,56 +12,94 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monille ohjelmoijille, työskentely JSON-tiedostojen parissa on olennainen osa heidän päivittäisiä tehtäviään. JSON (JavaScript Object Notation) on yleinen tiedostomuoto, jota käytetään erityisesti tietojen siirrossa ja tallennuksessa. Go-ohjelmointikieli tarjoaa tehokkaan ja käyttäjäystävällisen tavan käsitellä JSON-tietoja, mikä tekee siitä erinomaisen työkalun kehittäjille.
+Go (tällä hetkellä) on ohjelmointikieli, jossa on monta hyödyllistä ominaisuutta. Yksi näistä ominaisuuksista on Go:n sisäänrakennettu tuki JSON-dokumenttien käsittelyyn. JSON on yleisesti käytetty tiedostomuoto, joka on erityisen hyödyllinen verkkosovellusten ja REST-rajapintojen kanssa työskennellessä. Joten, jos haluat työskennellä verkkosovellusten kanssa tai jos rakastat Go-kielen yksinkertaisuutta, JSON on lisäosa, jota todellakin kannattaa oppia.
 
 ## Miten
 
-Go-kielellä on kätevästi sisäänrakennettu paketti JSON-tietojen käsittelyyn, joka sisältää erilaisia toimintoja, kuten tiedostojen purkamisen ja muuntamisen. Seuraavassa esimerkissä näytämme, kuinka JSON-tiedosto voidaan purkaa ja muuntaa Go-kielellä:
+Go:ssa JSON-tiedostojen käsittely on hyvin suoraviivaista ja helppoa. Voit käyttää `encoding/json` -pakettia, joka sisältää tarvittavat työkalut JSON-tietorakenteiden lukemiseen ja kirjoittamiseen.
+
+### Esimerkki 1 - JSON-tiedoston lukeminen:
 
 ```Go
 package main
- 
+
 import (
     "fmt"
     "encoding/json"
+    "os"
 )
- 
-type User struct {
+
+type Person struct {
     Name string `json:"name"`
-    Age int `json:"age"`
-    Address string `json:"address"`
+    Age  int    `json:"age"`
 }
- 
+
 func main() {
-    jsonData := `{"name": "Maija", "age": 25, "address": "Helsinki"}`
- 
-    var user User
-    json.Unmarshal([]byte(jsonData), &user)
- 
-    fmt.Println("Käyttäjän nimi:", user.Name)
-    fmt.Println("Ikä:", user.Age)
-    fmt.Println("Osoite:", user.Address)
+    file, _ := os.Open("example.json") // avaa JSON-tiedosto
+    defer file.Close() // sulje tiedosto kun funktio loppuu
+    decoder := json.NewDecoder(file)
+    var person Person
+    err := decoder.Decode(&person)
+
+    if err != nil {
+        fmt.Println("Virhe JSON-tiedoston lukemisessa:", err)
+    } else {
+        fmt.Println("Henkilön nimi:", person.Name)
+        fmt.Println("Henkilön ikä:", person.Age)
+    }
 }
 ```
 
-Tämä koodinpätkä tulostaisi seuraavan:
+### Esimerkki 1 - Tulostus:
 
 ```
-Käyttäjän nimi: Maija
-Ikä: 25
-Osoite: Helsinki
+Henkilön nimi: John
+Henkilön ikä: 24
 ```
 
-## Syvällinen sukellus
+### Esimerkki 2 - JSON-tiedoston kirjoittaminen:
 
-Go-kielellä on myös mahdollista käsitellä monimutkaisempia JSON-tietorakenteita, kuten taulukoita ja sisäkkäisiä objekteja. Tämä vaatii hieman enemmän työtä, mutta on silti mahdollista ja hyödyllistä. Go-kielessä on myös mahdollista käsitellä JSON-tietoja paketeilla, kuten "encoding/json" ja "encoding/xml", mikä helpottaa monimutkaisempien tiedostojen käsittelyä.
+```Go
+package main
+
+import (
+    "fmt"
+    "encoding/json"
+    "os"
+)
+
+type Person struct {
+    Name string `json:"name"`
+    Age  int    `json:"age"`
+}
+
+func main() {
+    person := Person{Name: "Jane", Age: 30} // luodaan uusi Person-tietorakenne
+    file, _ := os.Create("example.json") // luo uuden JSON-tiedoston
+    defer file.Close() // sulje tiedosto kun funktio loppuu
+    encoder := json.NewEncoder(file)
+    err := encoder.Encode(person)
+
+    if err != nil {
+        fmt.Println("Virhe JSON-tiedoston kirjoittamisessa:", err)
+    } else {
+        fmt.Println("JSON-tiedosto kirjoitettu onnistuneesti!")
+    }
+}
+```
+
+### Esimerkki 2 - Tulostus:
+
+```
+JSON-tiedosto kirjoitettu onnistuneesti!
+```
+
+## Deep Dive
+
+Go:n sisäänrakennetun `encoding/json` -paketin lisäksi on myös muita hyödyllisiä lisäosia, kuten `jsoniter` ja `easyjson`, jotka voivat tarjota parempia suorituskykyä ja nopeampaa JSON-tiedostojen käsittelyä. Lisäksi, jos työskentelet suurilla JSON-tiedostoilla tai haluat tehokkaampaa tapaa käsittellä tietoja, voit harkita Go:n `map` -tietorakenteen käyttöä JSON-dokumenttien sijaan.
 
 ## Katso myös
 
-Lisää tietoa Go-kielestä ja sen käytöstä JSON-tietojen käsittelyssä voit löytää seuraavista lähteistä:
-
-- [Go-käyttöliittymän virallinen sivusto](https://golang.org)
-- [Go-kieleen liittyvät dokumentaatiot ja esimerkit](https://golang.org/doc/)
-- [Go-kielellä JSON-tietojen käsittelyä esittelevä opetusohjelma](https://www.sohamkamani.com/blog/golang/2017-10-18-golang-json-parse-marshaling-unmarshaling/)
-
-Kiitos lukemisesta ja toivottavasti tämä auttoi sinua ymmärtämään paremmin Go-kielellä työskentelyä JSON-tietojen kanssa. Jatka kehittymistä ja löydä uusia jännittäviä tapoja käyttää tätä tehokasta ohjelmointikieltä!
+- [Go:n virallinen dokumentaatio JSON:lle](https://golang.org/pkg/encoding/json/)
+- [JSON-tiedoston parsiminen Go:lla](https://medium.com/@kalebhendrickson/reading-and-writing-json-files-with-golang-49e6213e7674)
+- [Go-paketit JSONin käsittelyyn](https://awesome-go.com/#json)

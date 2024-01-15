@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Praca z formatem JSON"
-simple_title:         "Praca z formatem JSON"
+title:                "Praca z json"
+html_title:           "Elixir: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,34 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z JSON w Elixirze pozwala na łatwą wymianę danych między różnymi aplikacjami i systemami. Jest to obecnie powszechny format danych, dlatego ważne jest, aby znać jego obsługę w tym języku programowania.
+Elixir jest bardzo przydatnym językiem programowania, a jego wszechstronność sprawia, że jest użyteczny w różnych dziedzinach. Jedną z jego najważniejszych cech jest bardzo wydajne przetwarzanie formatu JSON. Jeśli jesteś programistą lub dopiero zaczynasz swoją przygodę z programowaniem, poznanie sposobu działania JSON w Elixir może okazać się bardzo wartościowe.
 
 ## Jak to zrobić
 
-Kodowanie i dekodowanie danych JSON w Elixirze jest bardzo proste i wymaga użycia wbudowanych funkcji z biblioteki `Jason`. Oto przykładowy kod, który pokazuje, jak przetwarzać dane JSON:
+Aby pracować z formatem JSON w Elixir, musimy użyć modułu `Jason`, który jest dostępny w standardowej bibliotece Elixira. Najpierw należy go zainstalować za pomocą managera pakietów `mix`:
 
 ```
-stan = %{name: "John", age: 30, city: "Warsaw"}
-
-# Kodowanie danych do formatu JSON
-json_encoded = Jason.encode!(state)
-IO.puts(json_encoded)
-# Wynik: "{\"name\":\"John\",\"age\":30,\"city\":\"Warsaw\"}"
-
-# Dekodowanie danych z formatu JSON
-json_decoded = Jason.decode!(json_encoded)
-IO.inspect(json_decoded)
-# Wynik: %{name: "John", age: 30, city: "Warsaw"}
+mix deps.get
 ```
 
-Jak widać powyżej, funkcje `encode/1` i `decode/1` są odpowiedzialne za kodowanie odpowiednio encodowanie i dekodowanie danych JSON. Ponadto, biblioteka `Jason` oferuje wiele innych funkcji, takich jak `decode!/2` czy `decode_with/2`, które pozwalają na bardziej zaawansowaną obsługę danych JSON.
+Następnie musimy go zaimportować do naszego kodu:
 
-## Głębsze zanurzanie
+```
+import Jason
+```
 
-Elixir oferuje również bibliotekę `Poison`, która jest jednym z najbardziej popularnych sposobów na pracę z JSON. Często jest używana w celu obsługi błędów i nieprawidłowych danych wejściowych. Dodatkowo, w Elixirze istnieje również ważne pojęcie `protocoli`, które pozwalają na łatwe dodawanie własnej funkcjonalności do istniejących typów danych. Może to być bardzo użyteczne przy obsłudze formatu JSON w kodzie.
+Teraz możemy tworzyć obiekty JSON w naszym kodzie. Na przykład, aby utworzyć tablicę z liczbami całkowitymi, możemy użyć:
 
-## Zobacz również
+```
+Jason.encode!([1, 2, 3])
+```
 
-- [Dokumentacja Jason](https://hexdocs.pm/jason/readme.html)
-- [Dokumentacja Poison](https://hexdocs.pm/poison/README.html)
-- [Elixir Protocols](https://elixir-lang.org/getting-started/protocols.html)
+Kiedy uruchomimy ten kod, otrzymamy następujący wynik:
+
+```
+"[1, 2, 3]"
+```
+
+Możemy również kodować obiekty JSON zagnieżdżone, na przykład:
+
+```
+Jason.encode!(%{"imie": "Anna", "miasto": "Warszawa", "hobby": ["programowanie", "podróże"]})
+```
+
+To spowoduje utworzenie następującego obiektu JSON:
+
+```
+"{\"imie\": \"Anna\", \"miasto\": \"Warszawa\", \"hobby\": [\"programowanie\", \"podróże\"]}"
+```
+
+Aby odczytać dane z obiektu JSON, możemy użyć funkcji `Jason.decode!/1`. Na przykład, jeśli chcemy odczytać wartość pola `miasto` z powyższego obiektu, możemy użyć:
+
+```
+data = Jason.decode!("{\"imie\": \"Anna\", \"miasto\": \"Warszawa\", \"hobby\": [\"programowanie\", \"podróże\"]}")
+
+data["miasto"]
+```
+
+Output:
+
+```
+"Warszawa"
+```
+
+## Głębszy wykład
+
+Moduł `Jason` oferuje wiele innych przydatnych funkcji do pracy z JSON. Możemy na przykład formatować nasze obiekty JSON, aby były czytelniejsze, używając funkcji `Jason.format!/1`. Możemy również sprawdzić poprawność składniową naszego obiektu JSON za pomocą funkcji `Jason.validate!/1`.
+
+Warto również zauważyć, że Elixir obsługuje rekordy i atomowe klucze w obiektach JSON, co czyni go niezwykle przyjaznym do pracy z różnymi typami danych.
+
+## Zobacz też
+
+- [Dokumentacja Elixir-a](https://hexdocs.pm/elixir/)
+- [Dokumentacja Jason-a](https://hexdocs.pm/jason/api-reference.html)
+- [Blog Elixir Polskie Stowarzyszenie](https://elixir-polska.org/blog/)

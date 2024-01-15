@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Bruk av regulære uttrykk"
-simple_title:         "Bruk av regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "Ruby: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,30 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er i utviklingsverdenen, har du sikkert hørt om regular expressions. Men hvorfor skal du bruke dem? Regular expressions er et kraftig verktøy som lar deg søke og manipulere tekst basert på mønstre. Det kan være nyttig for å finne og erstatte tekst, validere inndata og mye mer. Det er også et utbredt verktøy som brukes i mange programmeringsspråk, inkludert Ruby.
+Hvorfor bry seg om regulære uttrykk (regular expressions)? Regulære uttrykk er et utrolig kraftig verktøy som gjør det enkelt å finne og manipulere tekst i kode. Dette kan være spesielt nyttig når du prøver å søke etter et bestemt mønster eller verv i en streng.
 
 ## Hvordan
 
-For å bruke regular expressions i Ruby, trenger du først å inkludere `regexp` biblioteket ved å skrive `require 'regexp'` øverst i filen din. Deretter kan du skrive et mønster ved å bruke `/` rundt det, for eksempel `/hello world/`, som vil matche teksten "hello world" i en streng. Du kan også bruke forskjellige spesielle tegn, som `.` for å matche ethvert tegn, `+` for å matche ett eller flere forekomster av det foregående tegnet, og `*` for å matche null eller flere forekomster. La oss se på et eksempel:
-
 ```Ruby
-text = "Hello world, this is a blog post written in Norwegian!"
-pattern = /H.*?n[wd]/
-puts text.gsub(pattern, "Hallo")
+# Eksempel på bruk av regulære uttrykk
+string = "Jeg elsker å kode i Ruby!"
+
+# Søk etter en streng som inneholder ordet "elsker"
+puts string.match(/elsker/)
+# Output => "elsker"
+
+# Søk etter et ord som starter med "kode"
+puts string.match(/\bkode\w*/i)
+# Output => "kode"
+
+# Erstatt en streng med et annet ord
+puts string.gsub(/elsker/, "hater")
+# Output => "Jeg hater å kode i Ruby!"
 ```
 
-I dette eksemplet vil vi erstatte alle ord som starter med `H` og slutter med `n` eller `w` med "Hallo", slik at vi får ut "Hallo, Hallo, Hallo Hallo Hallo Halo!".
+Som du kan se i eksemplene over, bruker vi `/` for å definere slutten og begynnelsen av vårt regulære uttrykk. Deretter bruker vi spesielle symboler og bokstaver til å definere vårt søkemønster. `match` vil returnere den første forekomsten, mens `gsub` vil erstatte alle forekomster.
 
 ## Dypdykk
 
-Regulære uttrykk kan være kompliserte og kraftige, og det er umulig å dekke alt i en enkelt blogginnlegg. Men det er noen få ting du bør vite når du bruker dem. Først, sørg for å bruke nøyaktig matche hvis du vil at uttrykket ditt skal matche hele strenger og ikke bare deler av det. For eksempel hvis vi endrer mønsteret vårt i eksemplet ovenfor til `/H.*n[wd]/`, vil vi få ut "Hallo world, this is a blog post written in Norwegian!". Merk at "Hallo hello Hallo Hallo Hallo Halo" er ikke en ønsket utgang.
+For de som ønsker å dykke dypere inn i regulære uttrykk, er det mange forskjellige symboler og koder som kan brukes for å utføre avanserte søk. Noen av de vanligste inkluderer:
 
-En annen ting å huske på er at regular expressions er case sensitive. Det betyr at `/hello/` ikke vil matche "Hello", så du må ta hensyn til store og små bokstaver når du lager dine mønstre.
+- `.` brukes til å matche hvilken som helst karakter
+- `*` brukes til å matche en forekomst av en karakter null eller flere ganger
+- `+` brukes til å matche en forekomst av en karakter en eller flere ganger
+- `?` brukes til å matche en forekomst av en karakter null eller én gang
+- `()` brukes til å gruppere og ekstrahere deler av et søkemønster
+- `|` brukes til å vise alternativer innen et søkemønster (for eksempel `abc|def` vil matche enten "abc" eller "def")
 
-Det er også lurt å være forsiktig når du bruker spesielle tegn som `.` og `+`. De kan være veldig nyttige, men også føre til uønskede resultater hvis du ikke bruker dem riktig.
+Det finnes også en rekke korte koder for vanlige typer av karakterer, for eksempel `\d` for tall, `\w` for bokstaver og tall, og `\s` for mellomrom og andre "tomme" karakterer.
 
-## Se også
+Det er viktig å merke seg at regulære uttrykk kan bli komplekse og vanskelige å lese, spesielt for nybegynnere. Men med litt øvelse og tålmodighet, kan de bli et uvurderlig verktøy for tekstbehandling i koden din.
 
-- [Rubys dokumentasjon om regular expressions](https://ruby-doc.org/core-2.3.1/Regexp.html)
-- [En interaktiv tutorial om regular expressions i Ruby](https://www.codecademy.com/en/courses/ruby-beginner-en-NFCZ7/0/1)
-- [En praktisk guide for regular expressions i Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+## Se Også
+
+- [Ruby dokumentrasjon for regulære uttrykk](https://ruby-doc.org/core-3.0.0/Regexp.html)
+- [Rubular](https://rubular.com/): et nyttig verktøy for å teste og øve på regulære uttrykk i Ruby

@@ -1,6 +1,7 @@
 ---
-title:                "C: Tarkista löytyykö kansio"
-simple_title:         "Tarkista löytyykö kansio"
+title:                "Kansion olemassaolon tarkistaminen"
+html_title:           "C: Kansion olemassaolon tarkistaminen"
+simple_title:         "Kansion olemassaolon tarkistaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,52 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Monissa C-ohjelmoinnin projekteissa on tarvetta tarkistaa, onko tietokoneen tiedostojärjestelmässä olemassa tiettyä hakemistoa. Tämä voi johtua esimerkiksi tarpeesta luoda uusia tiedostoja tai varmistaa, että tietyt tiedostot ovat olemassa ennen niiden käyttöä.
+On monia syitä miksi voit haluta tarkistaa, onko hakemisto olemassa C-ohjelmointikielessä. Yksi tärkeimmistä syistä on varmistaa, että ohjelma toimii oikein, jos se kohdistaa tiedostohakemenon johonkin tiettyyn polkuun.
 
-## Näin teet sen
+# Miten tehdä
 
-Tiedostojärjestelmän hakemistojen tarkistaminen voidaan toteuttaa helposti C-kielellä käyttämällä `opendir()` ja `closedir()` -funktioita. Ensimmäinen funktio avaa halutun hakemiston ja palauttaa siihen liittyvän osoittimen, kun taas jälkimmäinen sulkee hakemiston ja vapauttaa sen käytöstä.
+Tässä on yksinkertainen esimerkki, kuinka voit tarkistaa, onko hakemisto olemassa C: ssä:
 
-```C
+```
 #include <stdio.h>
-#include <dirent.h>
+#include <stdbool.h> // tarvitaan bool-tietotyyppi
 
-int main() {
-  // Avataan haluttu hakemisto
-  DIR *dir = opendir("/polku/hakemistoon/");
+int main()
+{
+  char* polku = "/home/käyttäjä/testi";
+  bool onko_hakemisto = false;
 
-  // Tarkistetaan, onko hakemisto olemassa
-  if (dir) {
-    // Hakemisto löytyi, tulostetaan viesti
-    printf("Hakemisto on olemassa!\n");
-    // Suljetaan hakemisto
-    closedir(dir);
+  // avataan hakemisto polun avulla
+  FILE* hakemisto = fopen(polku, "r"); 
+
+  if(hakemisto == NULL) // jos hakemisto ei löydy
+  {
+    onko_hakemisto = false;
   }
-  else {
-    // Hakemisto ei löytynyt, tulostetaan virheviesti
-    printf("Hakemistoa ei löytynyt!\n");
+  else 
+  {
+    onko_hakemisto = true;
+    fclose(hakemisto); // suljetaan hakemisto
+  }
+
+  if(onko_hakemisto) // tulostetaan vastaava viesti 
+  {
+    printf("Hakemisto %s on olemassa.\n", polku);
+  }
+  else
+  {
+    printf("Hakemistoa %s ei löydy.\n", polku);
   }
 
   return 0;
 }
 ```
 
-Esimerkin tulostus:
+Esimerkissä avataan hakemisto "testi" ja tarkistetaan, onko se olemassa. Tämän jälkeen tulostetaan vastaava viesti riippuen siitä, löytyikö hakemisto vai ei.
 
+Esimerkkitulostus:
 ```
-Hakemisto on olemassa!
+Hakemisto /home/käyttäjä/testi on olemassa.
 ```
 
-## Syvemmälle aiheeseen
+# Syvemmälle sukeltaminen
 
-Tiedostojärjestelmän hakemistojen tarkistaminen on tärkeä ja hyödyllinen osa C-ohjelmointia. On kuitenkin tärkeää huomioida, että `opendir()` ja `closedir()` -funktiot toimivat vain Unix/Linux-järjestelmissä, kun taas esimerkiksi Windowsissa käytetään `FindFirstFile()` ja `FindClose()` -funktioita vastaaviin tarkoituksiin.
+Tarkistaaksesi, onko hakemisto olemassa C: ssä, voit käyttää "fopen" -funktiota ja tarkistaa, onko se palauttanut oikean arvon. Jos funktion paluuarvo on NULL, tämä tarkoittaa, että hakemisto ei ole olemassa. Muussa tapauksessa se on olemassa.
 
-Lisäksi on hyvä huomioida, että `opendir()` voi palauttaa osoittimen myös epäonnistumisen sattuessa, esimerkiksi jos hakemistoon ei ole käyttöoikeuksia. Tästä syystä on tärkeää tarkistaa myös mahdollinen virheilmoitus.
+On myös huomattava, että on olemassa muita tapoja tarkistaa hakemiston olemassaolo, kuten käyttämällä "opendir" -funktiota ja "stat" -funktiota. Jokaisella näistä tavoista on omat etunsa ja haittansa ja siksi on hyvä tutustua useampaan tapaan ennen kuin valitset tietyn menetelmän.
 
-## Katso myös
+# Katso myös
 
-- [opendir() -dokumentaatio](https://pubs.opengroup.org/onlinepubs/009696699/functions/opendir.html)
-- [closedir() -dokumentaatio](https://pubs.opengroup.org/onlinepubs/009696699/functions/closedir.html)
-- [How to check if a directory exists in C](https://www.geeksforgeeks.org/how-to-check-if-a-directory-or-a-file-exists-in-system) (englanniksi)
+- [fopen C-kirjastossa](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [C-tiedostonhallinnan perusteet](https://www.geeksforgeeks.org/basics-file-handling-c/)
+- [Esimerkkejä hakemistojen tarkistamisesta C: ssä](https://www.includehelp.com/c/file-handling-programs-to-check-file-status-fopen-fclose.aspx)

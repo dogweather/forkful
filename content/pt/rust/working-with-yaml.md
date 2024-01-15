@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Rust: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,83 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML em Rust?
+## Por que
 
-Trabalhar com YAML em Rust pode oferecer muitas vantagens para desenvolvedores. O YAML é uma linguagem de marcação que permite a criação de arquivos de configuração legíveis para humanos, o que torna a manutenção desses arquivos muito mais fácil. Além disso, trabalhar com YAML em uma linguagem de programação poderosa como Rust permite a criação de ferramentas mais robustas e eficientes para lidar com arquivos de configuração.
+Se você está procurando uma linguagem de programação moderna e eficiente para trabalhar com YAML, então Rust pode ser a escolha perfeita para você. Com sua segurança de memória e forte sistema de tipos, Rust permite que você trabalhe com YAML de forma confiável e eficaz.
 
-## Como fazer?
+## Como fazer
 
-Para começar a trabalhar com YAML em Rust, primeiro precisamos adicionar a dependência do crate "yaml-rust" ao nosso projeto. Em seguida, podemos usar as funções e macros desse crate para ler, escrever e manipular arquivos YAML.
+Para começar a trabalhar com YAML em Rust, você pode primeiro baixar e instalar o compilador Rust em seu sistema. Em seguida, você pode usar o gerenciador de pacotes Cargo para instalar as dependências necessárias. Aqui está um exemplo básico de código que lê um arquivo YAML e extrai seu conteúdo:
 
-Um exemplo de código para ler um arquivo YAML e imprimir seu conteúdo seria o seguinte:
-
-```rust
+```Rust
 use std::fs::File;
-use yaml_rust::{YamlLoader, Yaml};
+use serde_yaml;
 
 fn main() {
-    let file = File::open("arquivo.yml").unwrap();
-    let dados = YamlLoader::load_from_reader(file).unwrap();
-    let dados = &dados[0];
-    println!("{:#?}", dados);
+    let file = File::open("exemplo.yaml").unwrap();
+    let dados: serde_yaml::Value = serde_yaml::from_reader(file).unwrap();
+    println!("{}", dados);
 }
 ```
+Saída:
 
-A saída desse código seria algo como:
-
-```rust
-YamlMapping(
-    [
-        (
-            YamlString(
-                "nome",
-            ),
-            YamlString(
-                "João",
-            ),
-        ),
-        (
-            YamlString(
-                "idade",
-            ),
-            YamlInteger(
-                25,
-            ),
-        ),
-        (
-            YamlString(
-                "hobbies",
-            ),
-            YamlArray(
-                [
-                    YamlString(
-                        "programação",
-                    ),
-                    YamlString(
-                        "jogos",
-                    ),
-                    YamlString(
-                        "fotografia",
-                    ),
-                ],
-            ),
-        ),
-    ],
-)
+```
+YAML do exemplo
 ```
 
-Este é apenas um exemplo básico, mas existem muitas outras funções e macros disponíveis para manipular arquivos YAML em Rust.
+Este é apenas um exemplo básico, mas você pode usar a biblioteca serde-yaml para realizar tarefas mais avançadas, como mapear YAML para tipos de dados personalizados. Certifique-se de ler a documentação oficial para obter mais informações e exemplos.
 
-## Mergulho profundo
+## Profundidade
 
-Para aqueles que desejam se aprofundar em trabalhar com YAML em Rust, existem vários recursos disponíveis. O livro "The Rust Programming Language" tem um capítulo dedicado a trabalhar com YAML, além disso, a documentação oficial do crate "yaml-rust" também oferece muitas informações e exemplos.
+Trabalhar com YAML em Rust é relativamente simples, graças à biblioteca serde-yaml. Esta biblioteca usa o formato de dados serde para tornar a manipulação de YAML mais intuitiva e eficiente. Ela também suporta YAML 1.2 completo, tornando-a uma ferramenta poderosa para análise e geração de arquivos YAML.
 
-Além disso, também é possível encontrar muitos projetos de código aberto em Rust que utilizam YAML para seus arquivos de configuração. Isso pode ser uma ótima maneira de ver como outros desenvolvedores estão lidando com o YAML em Rust e aprender com seus códigos.
+Veja também:
 
-## Veja também
-
-- The Rust Programming Language: https://doc.rust-lang.org/book/
-
-- Documentação do crate "yaml-rust": https://docs.rs/yaml-rust/
-
-- Exemplo de projeto de código aberto em Rust com arquivos YAML: https://github.com/nushell/nushell/
+- [Documentação oficial do serde-yaml] (https://docs.rs/serde-yaml/)
+- [Repositório GitHub do serde-yaml] (https://github.com/dtolnay/serde-yaml)
+- [Site oficial do Rust] (https://www.rust-lang.org/)

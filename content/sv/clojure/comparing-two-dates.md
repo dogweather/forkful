@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Clojure: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Har du någonsin behövt jämföra två datum i ditt Clojure-program? Det finns flera anledningar till varför man kanske skulle vilja göra detta, till exempel för att avgöra vilket datum som är senare eller för att kontrollera om ett datum ligger inom en viss tidsram.
+Att jämföra två datum kan vara användbart i många olika situationer, som att kontrollera om ett evenemang redan har skett, sortera data efter datum eller beräkna hur lång tid det har gått sedan en händelse.
 
-## Hur man gör det
-Att jämföra två datum i Clojure är enkelt med hjälp av inbyggda funktioner som `compare` och `before?/after?`. Här är ett exempel på hur man kan jämföra två datum:
+## Hur man gör
+Att jämföra två datum i Clojure är enkelt med hjälp av inbyggda funktioner som `time/now` och `time/instant`. Det är viktigt att notera att datumen behöver vara i rätt format för att jämförelsen ska fungera som förväntat.
 
-```
-(def date1 (java.util.Date. 2021 10 1))
-(def date2 (java.util.Date. 2021 12 1))
-
+Ett exempel på hur man jämför två datum och bestämmer vilket som är tidigare:
 ```Clojure
-;; Jämför date1 med date2
-(compare date1 date2)
+(def datum1 (time/instant)) ; Skapar ett datum med aktuellt datum och tid
+(def datum2 (time/instant "2019-02-01T12:00:00")) ; Skapar ett datum med ett specificerat datum och tid
 
-;; Output: -1 (date1 är tidigare än date2)
+(if (< datum1 datum2)
+  (println "datum1 är tidigare än datum2")
+  (println "datum2 är tidigare än datum1"))
+```
 
-;; Kontrollera om date1 kommer före date2
-(before? date1 date2)
-
-;; Output: true
+Output:
+```
+datum2 är tidigare än datum1
 ```
 
 ## Djupdykning
-När man jämför två datum är det viktigt att vara medveten om hur Clojure behandlar dem. Datum i Clojure representeras som antal millisekunder från Unix-epoken (1 januari 1970). Detta innebär att när du jämför två datum, så jämför du egentligen antalet millisekunder mellan dem.
+När man jämför två datum i Clojure är det viktigt att förstå hur datumen faktiskt representeras i programmet. I Clojure används den inbyggda datatypen `java.time.Instant` för att hantera datum och tid. Datumen representeras som en tidpunkt i millisekunder sedan 1970-01-01 00:00 UTC. Detta kallas också för "epoch" eller "Unix-time".
 
-En viktig sak att komma ihåg är att ju senare datumet är, desto större är antalet millisekunder och därför kommer den att vara "större" än ett tidigare datum när man använder `compare` eller `before?/after?`.
+En viktig sak att tänka på är att de inbyggda funktionerna `time/now` och `time/instant` returnerar datumen i UTC-tid och inte lokaltid. Detta kan leda till felaktiga jämförelser om man inte tar hänsyn till tidszoner.
 
 ## Se även
-Här är några länkar med mer information om att jämföra datum i Clojure:
-
-* [Officiell dokumentation om `compare`](https://clojuredocs.org/clojure.core/compare)
-* [Komparera datum med Joda-Time library](https://www.thoughtworks.com/insights/blog/clojure-dynamic-comparing-date-time)
-* [Mer information om datumrepresentation i Clojure](https://clojure.org/reference/chronology)
+- [Clojure Time Library](https://github.com/clj-time/clj-time)
+- [Instant documentation](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)

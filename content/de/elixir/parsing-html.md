@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Analyse von HTML"
-simple_title:         "Analyse von HTML"
+title:                "HTML-Parsing"
+html_title:           "Elixir: HTML-Parsing"
+simple_title:         "HTML-Parsing"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,38 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Parsen von HTML ist ein wichtiges Konzept in der Webentwicklung. Es ermöglicht uns, die in HTML geschriebenen Daten in eine strukturierte und lesbare Form umzuwandeln, die wir für unsere Programme nutzen können. In diesem Blog-Beitrag werfen wir einen Blick auf das Parsen von HTML mit Hilfe von Elixir.
+Warum sollte jemand Interesse an der Analyse von HTML haben? Nun, HTML ist die grundlegendste Sprache, die verwendet wird, um Webseiten zu erstellen. Das Verständnis von HTML ist daher für jeden, der sich mit Webentwicklung beschäftigt, unerlässlich.
 
-## Wie man es macht
+## Wie geht man vor
 
-Um HTML mit Elixir zu parsen, verwenden wir die beliebte Bibliothek "Floki". Zuerst müssen wir diese Bibliothek in unserem Code importieren:
+Um HTML in Elixir zu analysieren, gibt es verschiedene Bibliotheken zur Auswahl. Eine beliebte Wahl ist Floki, die es ermöglicht, mit DOM-ähnlichen Strukturen zu arbeiten. Schauen wir uns an, wie wir mit Hilfe von Floki eine HTML-Datei analysieren und bearbeiten können.
 
 ```Elixir
+# Zuerst installieren wir Floki über den Hex Package Manager
+mix deps.get floki
+
+# Dann importieren wir die Bibliothek in unser Modul
 import Floki
+
+# Anschließend können wir eine HTML-Datei laden und sie mit Floki analysieren
+html = File.read!("beispiel.html")
+parsed_html = Floki.parse(html)
+
+# Wir können jetzt mithilfe von Floki nach bestimmten Elementen suchen, zum Beispiel nach Überschriften
+headlines = Floki.find(parsed_html, "h1")
+
+# Und schließlich können wir das Ergebnis ausgeben
+IO.puts(headlines)
 ```
 
-Dann können wir eine Webanfrage senden und die HTML-Antwort parsen:
-
-```Elixir
-response = HTTPoison.get!("www.example.com")
-parsed_html = Floki.parse(response.body)
-```
-
-Wir können dann die geparsten Daten durchsuchen und die benötigten Informationen extrahieren:
-
-```Elixir
-Floki.find(parsed_html, "h1")
-# output: ["Welcome to my website"]
-```
+Die Ausgabe wird alle Überschriften in der HTML-Datei beinhalten, die mit `<h1>` gekennzeichnet sind.
 
 ## Tiefergehende Informationen
 
-Das Parsen von HTML mit Elixir ist effizient und schnell. Floki verwendet den Begriff "DOM", um die Struktur des geparsten HTML-Dokuments zu beschreiben. DOM steht für Dokumentobjektmodell und stellt das HTML-Dokument als eine Sammlung von Knoten dar, die miteinander verknüpft sind. Floki ermöglicht es uns, auf diese Knoten zuzugreifen und sie zu manipulieren.
+Floki basiert auf dem CSS-Selektor-Modell, was bedeutet, dass wir nach Elementen suchen können, indem wir den Selektor angeben, den wir auch in CSS verwenden würden. Beispiele dafür wären `.class` für Klassen, `#id` für IDs und `a` für Link-Elemente.
 
-Es ist wichtig zu beachten, dass die Struktur des DOM von verschiedenen Faktoren wie Schachtelung, Einrückungen und Leerzeichen beeinflusst werden kann. Es ist daher immer ratsam, verschiedene Möglichkeiten der Datenextraktion zu testen, um sicherzustellen, dass wir die korrekten Informationen erhalten.
+Es gibt auch andere Bibliotheken wie HParse oder Dexter, die sich mehr auf die Extraktion bestimmter Inhalte aus einer HTML-Datei konzentrieren. Sie können auch in Elixir verwendet werden, um HTML zu analysieren, aber Floki ist eine gute Wahl für allgemeinere Aufgaben.
 
 ## Siehe auch
 
-- [Offizielle Floki-Dokumentation](https://hexdocs.pm/floki/readme.html)
-- [Elixir School - Parsing HTML with Floki](https://elixirschool.com/en/lessons/advanced/pattern-matching/#parsing-html-with-floki)
-- [Elixir Forum - How to use Floki like a Pro](https://elixirforum.com/t/how-to-use-floki-like-a-pro-advanced-elixir-tips-tricks/27423)
+- [Floki Dokumentation](https://hexdocs.pm/floki/)
+- [HParse](https://github.com/myiesh/HParse)
+- [Dexter](https://github.com/elixir-casts/dexter)

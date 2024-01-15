@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Javascript: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué involucrarse en un nuevo proyecto en Javascript?
 
-Empezar un nuevo proyecto de programación puede ser intimidante, pero también puede ser increíblemente gratificante. Puede ser una oportunidad para aprender nuevas habilidades, mejorar las existentes y crear algo nuevo e innovador. También es una gran forma de expresar tu creatividad y explorar tus intereses.
+Programar en Javascript es una forma divertida y creativa de utilizar tus habilidades informáticas. Al iniciar un nuevo proyecto, puedes explorar nuevas ideas y desarrollar tus habilidades en este lenguaje de programación cada vez más popular.
 
-## Cómo hacerlo
+## Cómo hacerlo en Javascript
 
-Para empezar un nuevo proyecto de Javascript, primero debes tener una idea clara de lo que quieres lograr. Puedes empezar haciendo una lista de todas las características que quieres que tenga tu proyecto y luego priorizarlas en orden de importancia. Esto te ayudará a tener una visión clara de tu objetivo y a mantenerte enfocado.
+Para comenzar un nuevo proyecto en Javascript, sigue estos sencillos pasos:
 
-Una vez que tengas una idea clara de lo que quieres, puedes empezar a escribir tu código. Aquí hay un ejemplo de cómo imprimir "¡Hola mundo!" en la consola utilizando Javascript:
+1. Primero, elige una plataforma de desarrollo. Puedes optar por utilizar un editor de texto básico como Notepad o un entorno de desarrollo integrado (IDE) como Visual Studio Code.
+2. A continuación, asegúrate de tener una comprensión básica de la sintaxis y las estructuras de datos en Javascript. Puedes encontrar muchos recursos en línea, como tutoriales o cursos, para ayudarte a aprender rápido.
+3. Una vez que estés familiarizado con los conceptos básicos, define el alcance de tu proyecto y comienza a planificarlo. Piensa en qué quieres lograr y qué recursos necesitarás para alcanzar tu objetivo.
+4. Ahora es el momento de comenzar a escribir código. Utiliza los conceptos y estructuras de datos que aprendiste para crear un proyecto funcional.
+5. Recuerda probar tu código regularmente para detectar errores y realizar cambios según sea necesario.
+6. Finalmente, cuando tu proyecto esté completo, asegúrate de documentar tu código y comentar cualquier parte que pueda ser un poco confusa para otros programadores.
+
+A continuación se muestra un ejemplo de un código básico en Javascript que imprime "¡Hola mundo!" en la consola:
 
 ```Javascript
+// Este es un comentario en Javascript
 console.log("¡Hola mundo!");
 ```
 
-Este es un ejemplo muy básico, pero es un buen punto de partida para empezar a familiarizarte con la sintaxis de Javascript. Puedes seguir agregando más líneas de código para crear tu proyecto, o incluso buscar recursos en línea para ayudarte a llevarlo al siguiente nivel.
+## Profundizando en el inicio de un nuevo proyecto
 
-## Profundizando
+Al comenzar un nuevo proyecto en Javascript, es importante tener en cuenta lo siguiente:
 
-A medida que empieces a trabajar en tu proyecto, es importante recordar que es un proceso continuo de aprendizaje. No tengas miedo de experimentar y probar cosas nuevas. También es importante tener en cuenta buenas prácticas de codificación, como hacer comentarios en tu código para que sea más fácil de entender y seguir.
+- Utiliza buenas prácticas de codificación para garantizar que tu código sea fácil de entender y mantener en el futuro.
+- Aprovecha al máximo las bibliotecas y marcos de Javascript disponibles para facilitar tu trabajo y ahorrar tiempo.
+- Aprende de los errores y busca siempre mejorar tus habilidades en Javascript.
 
-También puedes buscar en línea tutoriales y guías sobre cómo abordar problemas específicos que puedan surgir durante el desarrollo de tu proyecto. Y no tengas miedo de pedir ayuda o retroalimentación de otras personas en la comunidad de programación.
+¡Ahora estás listo para empezar tu próximo proyecto en Javascript!
 
 ## Ver también
 
-- [Documentación de Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-- [Tutorial de Javascript para principiantes](https://www.freecodecamp.org/news/solo-pruebas-gratuitas-de-codificación-en-la-manzana-25-tutoriales-de-javascript-que-puedes-terminar-en-el/)
-
-¡Ahora tienes todas las herramientas para empezar tu proyecto de Javascript! Recuerda tener paciencia, seguir aprendiendo y disfrutar del proceso. ¡Buena suerte!
+- [Aprende Javascript en línea](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Guía de estilo de código de Javascript de Google](https://google.github.io/styleguide/jsguide.html)
+- [Documentación oficial de Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript)

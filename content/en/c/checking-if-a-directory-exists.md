@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "C recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "C"
 category:             "C"
@@ -10,49 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever encountered a situation where you needed to perform a certain operation in your code, but only if a specific directory exists? Checking for the existence of a directory is an essential task in programming, as it allows your code to anticipate and handle potential errors or unexpected scenarios.
+
+Have you ever needed to check if a directory exists in your C program? Maybe you want to make sure a certain path exists before creating a file or performing other operations. Whatever the reason may be, knowing how to check for the existence of a directory is a useful skill to have in your programming arsenal.
 
 ## How To
-To check if a directory exists in C, we can use the `opendir()` function from the `dirent.h` header. This function takes in the name of the directory as its parameter and returns a `DIR` pointer if the directory exists, or `NULL` if it does not. Here's an example code snippet:
+
+To check if a directory exists in C, we can use the `opendir()` function from the `<dirent.h>` header file. This function takes in a path as its argument and returns a pointer to a `DIR` object if the directory exists, or `NULL` if it doesn't. Here's an example of how we can use this function in our code:
 
 ```C
 #include <stdio.h>
 #include <dirent.h>
 
-int main()
-{
-    // Specify the directory name to check
-    char *dir_name = "/home/user/Desktop";
+int main() {
+    // Change this path to the one you want to check
+    char* path = "path/to/directory";
+    DIR* dir = opendir(path);
 
-    // Use opendir() to check for the directory's existence
-    DIR *dir = opendir(dir_name);
-
-    // Check if the directory exists
-    if(dir)
-    {
-        printf("Directory %s exists!\n", dir_name);
+    if (dir) {
+        // Directory exists!
+        printf("Directory at %s exists.\n", path);
         closedir(dir);
-    }
-    else
-    {
-        printf("Directory %s does not exist!\n", dir_name);
+    } else {
+        // Directory doesn't exist
+        printf("Directory at %s doesn't exist.\n", path);
     }
 
     return 0;
 }
 ```
 
-Sample output:
+If the directory at the given path exists, we will see the following output:
+
 ```
-Directory /home/user/Desktop exists!
+Directory at path/to/directory exists.
+```
+
+Otherwise, we will see:
+
+```
+Directory at path/to/directory doesn't exist.
 ```
 
 ## Deep Dive
-Behind the scenes, the `opendir()` function actually uses the `access()` system call to check for the existence of the directory. This system call takes in two parameters: the path to the directory and an integer representing the permissions we want to check for (in this case, we use the `F_OK` constant to simply check if the path exists). If the directory exists, the system call returns a value of 0, and if it does not exist, it returns `-1` and sets the `errno` variable to `ENOENT` (indicating an error of "no such file or directory").
 
-Also, it's worth noting that `opendir()` only checks for the existence of the directory, not whether or not the current user has permission to access it. This is where the `access()` system call can come in handy, as it also allows us to check for read, write, and execute permissions.
+Behind the scenes, the `opendir()` function uses the `stat()` system call to check for the existence of the specified path. This function returns information about a file, such as its size, permissions, and type. By using the `stat()` call, `opendir()` is able to determine if the path points to a valid directory or not.
+
+It's also worth noting that the `DIR` object returned by `opendir()` is a pointer to a data structure containing information about the directory, such as its file descriptor, current position, and the list of files in the directory. This object is used by other functions like `readdir()` to traverse the contents of the directory.
 
 ## See Also
-- [opendir documentation](https://www.man7.org/linux/man-pages/man3/opendir.3.html)
-- [access documentation](https://www.man7.org/linux/man-pages/man2/access.2.html)
-- [List of errno values](https://www.man7.org/linux/man-pages/man3/errno.3.html)
+
+- [opendir(3) - Linux manual page](https://linux.die.net/man/3/opendir)
+- [stat(2) - Linux manual page](https://linux.die.net/man/2/stat)
+- [C Programming - File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

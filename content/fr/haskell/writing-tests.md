@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Ecrire des tests"
-simple_title:         "Ecrire des tests"
+title:                "Écrire des tests"
+html_title:           "Haskell: Écrire des tests"
+simple_title:         "Écrire des tests"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -9,48 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'écriture de tests est un aspect important de la programmation en Haskell car cela garantit la cohérence et la fiabilité de votre code. Les tests vous aident à détecter et à corriger les erreurs avant qu'elles ne deviennent des problèmes majeurs dans votre application.
+Au cours de notre parcours en tant que développeurs, nous avons probablement tous entendu parler de l'importance d'écrire des tests pour notre code. Mais pourquoi est-ce si important ? 
 
-## Comment faire
+Ecrire des tests permet de s'assurer que notre code fonctionne correctement et continue de fonctionner correctement au fil des modifications ou ajouts ultérieurs. Cela nous permet également de détecter rapidement et résoudre les bugs, ce qui peut nous faire économiser beaucoup de temps et d'efforts à long terme.
 
-Pour écrire des tests en Haskell, nous utiliserons une librairie appelée HUnit. Voici un exemple de test simple pour une fonction qui renvoie le carré d'un nombre :
+# Comment Faire
 
-```Haskell
+Ecrire des tests en Haskell est assez simple grâce à l'utilisation du module de test standard du langage, `Test.HUnit`. Voici un exemple de test pour une fonction `multiply` qui multiplie deux nombres :
+
+```
+Haskell
+module Tests where
+
 import Test.HUnit
 
-square :: Int -> Int
-square x = x * x
+-- Définition de notre fonction multiply
+multiply :: Int -> Int -> Int
+multiply x y = x * y
 
-testSquare = TestCase (assertEqual "Should return 25" 25 (square 5))
+-- Les tests
+tests :: Test
+tests = TestList [
+    -- Test de la multiplication de deux nombres positifs
+    TestCase $ assertEqual "Multilication de 2 et 4" 8 (multiply 2 4),
+    -- Test de la multiplication de deux nombres négatifs
+    TestCase $ assertEqual "Multiplication de -3 et -5" 15 (multiply (-3) (-5)),
+    -- Test de la multiplication par zéro
+    TestCase $ assertEqual "Multiplication par zéro" 0 (multiply 0 10)
+    ]
+
+-- Exécution des tests
+main :: IO()
+main = do
+    runTestTT tests
 ```
 
-Dans cet exemple, nous avons importé la librairie HUnit et défini une fonction 'square' qui renvoie le carré d'un nombre. Ensuite, nous avons défini un test, 'testSquare', qui vérifie si la fonction renvoie la valeur correcte pour un input de 5. La fonction 'assertEqual' vérifie si les deux valeurs données sont égales.
+L'output résultant devrait être :
 
-Pour exécuter ce test, nous pouvons utiliser la fonction 'runTestTT' :
-
-```Haskell
-main = runTestTT testSquare
+```
+Start running 3 test cases...
+Cases run: 3
+Guesses: 0
+Asserts: Succeeded 3, Failed 0.
 ```
 
-Si tout fonctionne correctement, vous devriez voir une sortie comme celle-ci :
+Nous pouvons voir que tous nos tests ont réussi et cela nous donne ainsi la confiance que notre fonction `multiply` fonctionne correctement.
 
-```Haskell
-Cases: 1 Tried: 1 Errors: 0
-Cases: 1 Tried: 1 Failures: 0
-```
+# Plongée en Profondeur
 
-Cela signifie que notre test a réussi et que notre fonction 'square' fonctionne correctement !
+Il existe différents types de tests que nous pouvons écrire en Haskell tels que les tests unitaires, les tests d'intégration et les tests de propriétés. Nous pouvons également utiliser des outils comme QuickCheck pour générer des données aléatoires et tester nos fonctions avec celles-ci.
 
-## Plongée plus profonde
+En écrivant des tests, nous devons nous assurer de couvrir différents scénarios, tels que les cas limites (comme la multiplication par zéro dans notre exemple) et les cas d'erreur. Nous devons également nous assurer que nos tests sont indépendants les uns des autres et qu'ils ne dépendent pas de l'ordre d'exécution.
 
-Maintenant que vous comprenez comment écrire des tests en Haskell, il est important de noter que les tests doivent être écrits pour couvrir tous les scénarios possibles. Cela inclut les inputs attendus, mais aussi les cas limites et les erreurs potentielles. Il est également important de s'assurer que les tests sont maintenus et mis à jour au fil du temps, car votre code évolue et change.
+# Voir Aussi
 
-Une autre chose à garder à l'esprit est que les tests peuvent également être utilisés pour la documentation. Un bon test devrait décrire en détail ce que la fonction testée est censée faire et comment elle devrait être utilisée.
-
-## Voir aussi
-
-* [Documentation HUnit](https://hackage.haskell.org/package/HUnit)
-* [Tutoriel pour écrire des tests avec HUnit](https://wiki.haskell.org/HUnit_for_beginners)
-* [Bonne pratique pour écrire des tests en Haskell](https://www.stackbuilders.com/tutorials/haskell/testing-in-haskell/)
+- [Documentation du module de test standard de Haskell](https://hackage.haskell.org/package/HUnit)
+- [Introduction aux tests en Haskell](https://en.wikibooks.org/wiki/Haskell/Testing)
+- [QuickCheck pour générer des données aléatoires en Haskell](https://hackage.haskell.org/package/QuickCheck)

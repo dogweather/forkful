@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Tekstitiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Bash: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Jotenkin on aika tuttu tilanne: sinulla on valtava teksti-tiedosto, joka sisältää kaikki tärkeät tiedot, mutta sinun täytyy löytää tietty tieto sieltä. Näin saat tietää, miten voit lukea teksti-tiedostoja Bashilla ja helpottaa elämääsi.
 
-Miksi lukisi tekstikirjoja? Eikö ole parempi tapa viettää aikaa? Kyllä ja ei. Aika ajoin, joskus päivittäin, työ tarvitsee jokainen tyyppi antamaan se alkuperäisen yrittämiseksesi ajatella aina vähemmän ta ottaa kykyjä. Piirtämällä yksityiskohtaiset lähtökohdat nähteisiin asiakkaan pitäisi lisä loogisesti neuvoja muutoksista. Lukeminen tekstitiedostoja voi auttaa kehittämään kykyjä ja taitoja.
-
-## Miten
-
-Lukeminen tekstitiedostoja bash-ohjelmointikielessä on helppoa. Ensiksi, avaa Terminal-ikkuna ja siirry hakemisto, jossa haluat lukea tiedoston. Voit käyttää "cd" komentoa navigoidaksesi haluamaasi hakemistoon.
-
-Sitten, kirjoita seuraava komento:
+## Kuinka
+Bash on erittäin hyödyllinen ohjelmointikieli ja käy kätevästi kaikkeen komentoon-perustuvaan tiedon käsittelyyn, kuten teksti-tiedostojen lukemiseen. Tässä on yksinkertainen esimerkki:
 
 ```Bash
-cat tiedostonimi.txt 
+while read line; do        # silmukka lukee rivin kerrallaan
+  echo $line              # tulostaa luettavan rivin
+done < tiedosto.txt       # ohjaa tiedoston sisältö silmukkaan
 ```
 
-Tämä komento tulostaa tiedoston sisällön suoraan Terminaalissa.Haluat ehkä muuntaa tai käsitellä tiedoston sisältöä. Voit tehdä sen käyttämällä erilaisia komentoja, kuten "grep", "sed" tai "awk". Esimerkiksi voit etsiä tiettyjä rivejä tiedostosta käyttämällä "grep" komentoa:
+Tämä koodi lukee tiedoston rivi kerrallaan ja tulostaa sen sisällön. Voit myös tallentaa luettavat tiedot muuttujaksi ja käyttää niitä myöhemmin:
 
 ```Bash
-grep "hakusana" tiedostonimi.txt 
+while read line; do        # silmukka lukee rivin kerrallaan
+  data=$line              # tallentaa luettavan rivin muuttujaan
+  # tee jotakin data-muuttujalla
+done < tiedosto.txt       # ohjaa tiedoston sisältö silmukkaan
 ```
 
-Tämä tulostaa kaikki rivit, jotka sisältävät haetun sanan.
+## Syvä Sukellus
+Bashilla on monia tapoja lukea teksti-tiedostoja, kuten `cat`, `grep` ja `awk` komennot. Voit käyttää näitä komentoja yhdessä erilaisilla parametreilla saadaksesi haluamasi tuloksen. Esimerkiksi, voit käyttää `grep` komentoa löytääksesi tietyn sanan tai ilmauksen tiedostosta:
 
-## Syventävä tarkastelu
+```Bash
+grep "etsittävä_sana" tiedosto.txt       # tulostaa rivit, joissa esiintyy sana
+```
 
-Lukeminen tekstitiedostoja on tärkeä taito jokaiselle bash-ohjelmoijalle. Se auttaa sinua ymmärtämään tiedostorakennetta ja muokkaamaan tiedoston sisältöä. Myös käyttäessäsi muita ohjelmointikieliä, tiedoston lukemisen taito on hyödyllinen.
+Voit myös ohjata tulosteen uuteen tiedostoon `>`-merkin avulla:
 
-Voit myös käyttää bash-skriptejä automatisoimaan tiedoston lukemista ja muokkaamista. Tämä säästää aikaa ja vaivaa, kun joudut käsittelemään suuria määriä tiedostoja.
+```Bash
+grep "etsittävä_sana" tiedosto.txt > uusi_tiedosto.txt    # tallentaa tuloksen uuteen tiedostoon
+```
 
-## Katso myös
-
-- [Bash-pikakurssi](https://linux.fi/wiki/Bash-pikakurssi)
-- [Bash-ohjelmointikielen perusteet](https://devdocs.io/bash/)
-- [Bash-skriptaus opas](https://www.linux.com/learn/tutorials/306404-write-a-real-world-bash-script-basics)
+## Katso myös:
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
+- [Vinkkejä Bash-ohjelmointiin](https://linuxhint.com/bash_programming_tutorial/)
+- [Oppaita tekstimuotoisten tiedostojen käsittelyyn Bashilla](https://www.digitalocean.com/community/tutorials/how-to-use-bash-to-manipulate-text-in-files)

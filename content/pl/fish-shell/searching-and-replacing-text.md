@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Fish Shell: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli często pracujesz z tekstem w programowaniu, to z pewnością spotkałeś się z potrzebą znajdowania i zamiany określonych fragmentów. Możliwe, że miało to miejsce nawet wkrótce po tym, jak nauczyłeś się podstaw programowania. Bez względu na to, czy jesteś początkującym czy doświadczonym programistą, pewnie zgodzisz się z nami, że znajdowanie i zamiana tekstu jest nieodłączną częścią wielu projektów. W tym wpisie dowiesz się, w jaki sposób wykorzystać polecenie ```sed``` wraz z narzędziem Fish Shell, aby wygodnie przeprowadzać operacje wyszukiwania i zamiany tekstu.
+Czasem, gdy pracujemy z dużymi plikami tekstowymi, chcemy szybko i sprawnie dokonywać zmian w tekście. W Fish Shell możemy wykorzystać wbudowane funkcje do wyszukiwania i zamiany tekstu, co pozwoli nam zaoszczędzić czas i uniknąć monotonnej pracy ręcznej.
 
 ## Jak to zrobić
 
-Fish Shell posiada wbudowane wsparcie dla poleceń wywołanych z poziomu bazy danych. Jednym z tych poleceń jest ```sed``` - narzędzie do przeprowadzania operacji na tekście. Aby go wykorzystać, wystarczy wpisać polecenie w terminalu i przekazać mu odpowiednie parametry.
-
-Poniżej przedstawiamy przykładowe polecenie, które znajduje wszystkie wystąpienia słowa "kot" w pliku ```tekst.txt``` i zamienia je na "pies":
+Fish Shell posiada wbudowaną funkcję `string replace`, która umożliwia nam zmianę wybranego tekstu w całym pliku lub tylko w wybranych liniach. Aby jej użyć, wystarczy podać trzy argumenty w poniższej składni:
 
 ```
-sed -i 's/kot/pies/g' tekst.txt
+string replace <tekst_do_zamiany> <nowy_tekst> <plik_tekstowy>
 ```
 
-W powyższym przykładzie użycie opcji ```-i``` oznacza, że zmiany zostaną dokonane bezpośrednio w pliku, zamiast wypisania wyniku na ekranie.
+Na przykład, jeśli chcemy zmienić wszystkie wystąpienia słowa "kot" na "pies" w pliku `tekst.txt`, możemy wpisać:
 
-## Deep Dive
+```
+string replace kot pies tekst.txt
+```
 
-Polecenie ```sed``` oferuje wiele możliwości i opcji, dzięki którym możemy dokładnie określić, jakie wyrażenia chcemy wyszukać i zamienić. Możemy między innymi wykorzystać flagi, aby określić zakres linii, na którym ma zostać przeprowadzona zmiana, lub zastosować wyrażenia regularne, aby bardziej dokładnie dopasować szukane słowa.
+Możemy również dokonać zmiany tylko w wybranych liniach, dodając opcjonalny czwarty argument `linie:begin,end`. Przykładowo, jeśli chcemy zmienić tylko słowo "kot" na liniach od 5 do 10, możemy użyć poniższej składni:
 
-Żeby przetestować różne opcje polecenia ```sed```, polecamy skorzystać z dokumentacji Fish Shell oraz przeglądać przykłady na forach lub blogach programistycznych. W ten sposób możesz przystosować polecenie do swoich konkretnych potrzeb i dokładnie rozumieć, jak działa.
+```
+string replace kot pies tekst.txt linie:5,10
+```
 
-## Zobacz też
+## Głębsze wodospady
 
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/sed.html)
-- [Przykłady użycia polecenia sed w Fish Shell](https://www.baeldung.com/linux/sed-replace-string)
-- [Przewodnik po wyrażeniach regularnych w poleceniu sed](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+Funkcja `string replace` w Fish Shell oferuje także możliwość użycia wyrażeń regularnych, co pozwala na jeszcze większą precyzję w zmianie tekstu. Możemy na przykład użyć symbolu `.*` do zastąpienia wszystkich znaków pomiędzy dwoma wybranymi słowami.
 
-Dziękujemy, że przeczytałeś ten wpis. Mamy nadzieję, że teraz czujesz się pewniej w używaniu polecenia ```sed``` w swoich projektach. W razie potrzeby zawsze możesz wrócić do tego artykułu lub zapoznać się z innymi narzędziami tekstowymi oferowanymi przez Fish Shell.
+Dodatkowo, możemy wykorzystać także funkcję `string match` do wyszukiwania tekstu, a następnie przekazać wynik do funkcji `string replace`, co pozwoli nam dokonać zmiany tylko w wybranych miejscach.
+
+Ogółem, wykorzystanie funkcji `string replace` w Fish Shell pozwala na szybką i elastyczną zamianę tekstu w plikach tekstowych.
+
+## Zobacz także
+
+- Dokumentacja Fish Shell: <https://fishshell.com/docs/current/cmds/string.html#replace-string>
+- Przykłady użycia wyrażeń regularnych: <https://www.regular-expressions.info/examples.html>
+- Tutorial dotyczący wykorzystania funkcji `string match` i `string replace`: <https://dev.to/lbte/chaining-commands-in-fish-44m0>

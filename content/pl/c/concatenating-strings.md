@@ -1,6 +1,7 @@
 ---
-title:                "C: Łączenie ciągów tekstowych."
-simple_title:         "Łączenie ciągów tekstowych."
+title:                "Łączenie ciągów znaków"
+html_title:           "C: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,34 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Istnieje wiele sytuacji, w których konieczne jest połączenie dwóch lub więcej ciągów znaków w jedną dłuższą linię. Na przykład, gdy chcemy wyświetlić imię i nazwisko użytkownika oraz datę urodzenia, musimy połączyć trzy oddzielne ciągi znaków w jedną linię. W takich przypadkach, wykorzystanie funkcji do konkatencji znaków jest niezbędne, ponieważ ułatwia to manipulowanie tekstem i tworzenie bardziej czytelnych wyjść.
+Jeśli jesteś programistą w języku C, bardzo prawdopodobne, że w pewnym momencie będziesz musiał złączyć dwa lub więcej napisów (stringów). Może to być potrzebne do wyświetlenia użytkownikowi czytelniejszej wiadomości lub do przekazania danych do innej funkcji. W tym artykule dowiesz się, jak w prosty sposób połączyć stringi w C.
 
 ## Jak To Zrobić?
 
-W języku C, możemy skorzystać z funkcji ```sprintf()```, aby połączyć dwa lub więcej ciągów znaków i zapisać wynik w określonej zmiennej. Przykładowy kod wyglądałby następująco:
+Aby połączyć dwa stringi, należy użyć funkcji `strcat()`.  W poniższym przykładzie połączymy dwa napisy "Hello" i "World" i wyświetlimy je jako jedną wiadomość:
 
+```C
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char string1[20] = "Hello";
+    char string2[20] = "World";
+    
+    /* używamy funkcji strcat() do połączenia stringów */
+    strcat(string1, string2);
+    
+    /* wyświetlamy wynik */
+    printf("Połączone napisy: %s", string1);
+    
+    return 0;
+}
 ```
-char imie[20] = "Anna";
-char nazwisko[20] = "Kowalska";
-char data_urodzenia[10] = "01.01.1990";
 
-char wynik[50];
-sprintf(wynik, "%s %s urodzona/born/a %s", imie, nazwisko, data_urodzenia);
-printf("%s", wynik);
+#### Wynik:
+```
+Połączone napisy: HelloWorld
 ```
 
-Powinniśmy używać ```sprintf()``` z ostrożnością, ponieważ nie ma ograniczenia długości wynikowego ciągu znaków, co może powodować wyjście poza zaalokowaną pamięć. Możemy również skorzystać z funkcji ```snprintf()```, która pozwala określić maksymalną długość wynikowego ciągu.
+## Deep Dive
 
-## Głębszy Zanurzenie
+Funkcja strcat() jest zdefiniowana w bibliotece string.h i jest częścią standardu języka C. Jej prototyp wygląda następująco:
 
-W przypadku bardziej złożonych operacji związanych z konkatencją znaków, istnieją również inne funkcje w języku C, takie jak ```strcat()```, ```strncat()``` czy ```strtok()```, które pozwalają na dodatkowe funkcjonalności, takie jak łączenie na podstawie określonego delimitera czy łączenie tylko części znaków.
+```C
+char *strcat(char *string1, const char *string2)
+```
 
-Jednakże, należy uważać na wykorzystywanie tych funkcji, ponieważ mogą być podatne na błędy związane z przepełnieniem bufora.
+Pierwszy argument (`string1`) jest napisem, do którego zostanie dołączony drugi argument (`string2`). Funkcja zwraca wskaźnik do pierwszego argumentu `string1`.
 
-## Zobacz również
+Należy zwrócić uwagę, że pierwszy argument musi mieć wystarczającą ilość miejsca, aby pomieścić zawartość drugiego argumentu wraz z null-terminatorem, w przeciwnym razie może dojść do przepełnienia bufora.
 
-- [Funkcje do manipulacji łańcuchami w języku C](https://www.programiz.com/c-programming/string-handling-functions)
-- [Przykłady użycia funkcji konkatencji znaków w języku C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C string functions - C przewodnik dla programistów](https://www.programiz.com/c-programming/string-functions)
+Więcej informacji na temat funkcji strcat() i innych funkcji związanych z manipulacją napisami w języku C można znaleźć w [dokumentacji](https://en.cppreference.com/w/c/string/byte/strcat).
+
+## Zobacz Również
+
+- [Funkcja strcpy() w języku C](https://www.programiz.com/c-programming/library-function/string.h/strcpy)
+- [Porównywarka stringów w języku C](https://www.geeksforgeeks.org/compare-two-strings-in-c-3-different-ways/)
+- [Operacje na stringach w C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)

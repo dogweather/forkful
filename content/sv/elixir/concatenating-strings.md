@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Sammanslagning av strängar"
-simple_title:         "Sammanslagning av strängar"
+title:                "Sammanfogning av strängar"
+html_title:           "Elixir: Sammanfogning av strängar"
+simple_title:         "Sammanfogning av strängar"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,39 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det kan verka som en enkel uppgift, men att sammanslå strängar är en vanlig uppgift inom programmering och kan vara användbar i många olika sammanhang. Genom att förstå hur man konkatenerar strängar i Elixir kan du öka dina kodningskunskaper och skriva mer effektiv och läsbar kod.
+Innan vi hoppar in i hur man konkatenaterar strängar i Elixir, låt oss först förstå varför vi skulle vilja göra det. Att konkatenatera strängar är ett viktigt koncept inom programmering eftersom det ger oss möjlighet att sammanfoga flera delar av en text eller ett meddelande till en enda enhet. Det kan vara användbart för att skapa dynamiska meddelanden eller för att manipulera befintliga strängar på ett mer effektivt sätt.
 
-## Hur man gör det
+## Hur man konkatenaterar strängar
 
-För att sammanslå strängar i Elixir kan du använda operatorn `<>`. Det gör att två strängar förenas och skapar en ny sträng. Du kan också använda `String.concat/1` -funktionen som tar en lista av strängar och slår samman dem till en enda sträng. Här är några exempel på hur du kan göra det:
+För att konkatenatera strängar i Elixir kan vi använda oss av operatorn `<>`. Detta operatorn tar två strängar och sammanfogar dem till en enda med den första strängen först, följt av den andra strängen.
 
 ```Elixir
-IO.puts "Hello " <> "world!" 
-=> Hello world!
-
-String.concat(["Coding", "is", "fun"])
-=> Codingisfun
+"Hello " <> "world!" #=> "Hello world!"
 ```
 
-Som du kan se ovan måste du använda citationstecken runt de strängar som du vill sammanslå. Om du inte gör det kan du få olika felmeddelanden.
+Vi kan också använda funktionen `String.concat/2` som tar ett godtyckligt antal strängar som argument och sammanfogar dem tillsammans.
+
+```Elixir
+String.concat("Welcome", "to", "Elixir") #=> "Welcome to Elixir"
+```
+
+Om vi vill konkatenatera en lista av strängar kan vi använda funktionen `Enum.join/2` som tar en lista och ett valfritt separator-tecken som argument.
+
+```Elixir
+Enum.join(["Programming", "is", "fun"], " ") #=> "Programming is fun"
+```
+
+Vi kan också använda funktionen `IO.puts/2` för att skriva ut våra konkatenaterade strängar direkt till konsolen.
+
+```Elixir
+IO.puts("Hello " <> "Elixir!") #=> Hello Elixir!
+```
 
 ## Djupdykning
 
-En intressant sak att notera är att operatorn `<>` är kommutativ, vilket innebär att ordningen på strängarna inte spelar någon roll. Men funktionen `String.concat/1` är inte kommutativ och ordningen på strängarna spelar en viktig roll. Om vi till exempel tar följande kod:
+Det är viktigt att notera att när man konkatenaterar strängar i Elixir skapas en ny sträng istället för att ändra den befintliga strängen. Detta innebär att vi kan vara säkra på att vårt ursprungliga värde inte förändras.
+
+En annan funktion som kan vara användbar för att manipulera strängar är `String.replace/4` som låter oss ersätta en del av en sträng med en annan sträng. Detta kan visa sig användbart när man vill byta ut delar av en text med en dynamiskt genererad sträng.
 
 ```Elixir
-IO.puts "1" <> 2
-=> ** (ArgumentError) argument error
-
-String.concat([1, "2"])
-=> 12
+String.replace("Elixir är ett", "Elixir", "Språk") #=> "Språk är ett"
 ```
-
-I det första exemplet får vi ett felmeddelande eftersom vi försöker slå samman en sträng med ett heltal. Men i det andra exemplet konverteras heltalen till strängar och slås sedan samman.
-
-Det är också värt att nämna att det finns andra inbyggda funktioner i Elixir som kan användas för att konkatenera strängar, som `Kernel.to_string/1` eller `Integer.to_string/1`. Det är viktigt att förstå vilken typ av data du arbetar med och välja rätt funktion för att undvika fel.
 
 ## Se även
 
-- [Elixir dokumentation om strängar](https://elixir-lang.org/getting-started/strings.html)
-- [Elixir School - Strängar](https://elixirschool.com/sv/lessons/basics/strings/)
+- [Elixir Dokumentation om strängar](https://hexdocs.pm/elixir/String.html)
+- [Elixir Koans: Strings](https://elixirkoans.org/#strings)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: टेक्स्ट फाइल लिखना"
-simple_title:         "टेक्स्ट फाइल लिखना"
+title:                "एक पाठ फ़ाइल लिखना"
+html_title:           "Swift: एक पाठ फ़ाइल लिखना"
+simple_title:         "एक पाठ फ़ाइल लिखना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,30 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
+आपने सोचा है कि आप एक text file लिखना चाहते हैं और आपको ये समझ नहीं आ रहा है कि कैसे शुरू करें, तो आप बिल्कुल सही जगह पर हैं। एक text file लिखना Swift में बहुत आसान हो सकता है और हम यहां इसे कैसे करें इसके बारे में बात करेंगे।
 
-कभी-कभी हमारे पास कुछ जानकारी होती है जो हम अपने कम्प्यूटर में रखना चाहते हैं, लेकिन उसे आसानी से खोजने के लिए हमें एक फ़ाइल में संग्रहीत करना पड़ता है। ऐसी स्थिति में, टेक्नोलॉजी की दुनिया में स्विफ्ट प्रोग्रामिंग बहुत ही उपयोगी होती है।
-
-## कैसे
-
-अपने कंप्यूटर में एक टेक्स्ट फ़ाइल लिखने के लिए, हमें स्विफ्ट में लिखने के लिए कुछ समान लेखनी का प्रयोग करना होता है। फ़ाइल लिखने के लिए, हम `write(toFile:atomically:encoding:)` फ़ंक्शन का उपयोग कर सकते हैं, जो एक दिशा-निर्देशित पथ पर फ़ाइल बनाएगा। नीचे उदाहरण है:
+## कैसे करें
+चलिए समझते हैं कि text file लिखने के लिए हमें क्या करना होगा। सबसे पहले, हमें एक text file को create करना होगा और उसमें जो कुछ भी हमने लिखना है, उसे write करना होगा। लेकिन इससे पहले हमें `FileManager` इसका इस्तेमाल करके एक directory को create करना होगा। देखते हैं कैसे Swift में इसे implement किया जाता है:
 
 ```Swift
-let content = "यह टेक्स्ट फ़ाइल कोडिंग का उदाहरण है।"
-let path = "मेरी_टेक्स्ट_फ़ाइल.txt"
+let fileManager = FileManager.default
+let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+let fileName = "SampleFile"
+let fileURL = documents.appendingPathComponent(fileName).appendingPathExtension("txt")
+
 do {
-    try content.write(toFile: path,
-    atomically: false,
-    encoding: .utf8)
-} catch let error {
-    print("फ़ाइल लिखने में त्रुटि हुई: \(error.localizedDescription)")
+    try fileManager.createDirectory(at: documents, withIntermediateDirectories: true, attributes: nil)
+    try "This is a sample text file.".write(to: fileURL, atomically: true, encoding: .utf8)
+    print("File created and written successfully!")
+} catch {
+    print("Error creating/writing file: \(error)")
 }
 ```
 
-नीचे दिए गए लिंक पर स्विफ्ट में फ़ाइल लिखने के और अधिक विवरण दिए गए हैं:
+ऊपर का कोड हमें एक text file `SampleFile.txt` को create करेगा और उसमें `This is a sample text file.` लिखेगा। इसके बाद हम `print` के इस्तेमाल से सफलतापूर्वक लिखने का संदेश प्राप्त कर सकते हैं।
 
-- [वेबसाइट का लिंक] (वेबसाइट का लिंक)
-- [यूट्यूब की व्हीडियो] (यूट्यूब की व्हीडियो)
+## डीप डाइव
+जब हम Swift में text file लिखते हैं तो ये `String` टाइप का डेटा हो सकता है और उसे आप किसी भी फॉर्मेट में encode कर सकते हैं। जैसे की हमने ऊपर `utf8` इस्तेमाल किया है, लेकिन आप `utf16` या `ascii` भी इस्तेमाल कर सकते हैं। इसके अलावा, आप अपने text file में लिखने के लिए कोई भी फॉर्मेट का इस्तेमाल कर सकते हैं और ये आपके requirement पर निर्भर है।
 
-## गहराई में खोज
-
-फ़ाइल लिखने के पीछे का गहराई विस्तारित उदाहरणों और अधिक विश्लेषण के साथ डिप डाइव करते हैं। स्विफ्ट में टेक्स्ट फ़ाइल लिखने के लिए विभिन्न फ़ंक्शन और उपकरण उपलब्ध हैं जो हमें अधिक
+## देखें

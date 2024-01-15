@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Javascript: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-Väliaikaiset tiedostot ovat tärkeitä ohjelmoinnissa monista syistä, kuten väliaikaisten tietojen tallentamiseen, väliaikaisen varmuuskopion luomiseen ja väliaikaisen tallennustilan tarjoamiseen ohjelman suorituksen aikana. Ne ovat myös hyödyllisiä testaamisessa ja debuggaamisessa, sillä niitä voidaan käyttää tallentamaan väliaikaisesti erilaisia muuttujia ja tulosteita.
+Monissa tilanteissa, ohjelmoijan täytyy luoda tilapäisiä tiedostoja käsiteltäviksi tai tallennettaviksi väliaikaisesti. Tämä voi olla tarpeellista esimerkiksi ohjelman suorituskyvyn parantamiseksi tai työnkulun helpottamiseksi.
 
-## Kuinka luoda väliaikainen tiedosto?
+## Miten
 
-Jotta voit luoda väliaikaisen tiedoston Javascriptillä, sinun tarvitsee ensin importoida tarvittavat moduulit. Tämän jälkeen voit käyttää `fs.mkdtemp()` -funktiota luodaksesi väliaikaisen hakemiston ja `path.join()` -funktiota yhdistääksesi tiedoston nimi ja polun. Lopuksi voit luoda tiedoston `fs.writeFile()` -funktiolla. Katso alla oleva esimerkki:
+Tilapäisten tiedostojen luominen Javascriptillä on helppoa. Käytämme tätä esimerkkinä fs-moduulia, joka on osa Node.js:ää. Ensimmäiseksi meidän täytyy tuoda tämä moduuli käyttöömme:
 
 ```Javascript
 const fs = require('fs');
-const path = require('path');
-
-const tempDir = fs.mkdtempSync('tmp'); // luo väliaikaisen hakemiston nimeltä "tmp"
-const tempFilePath = path.join(tempDir, 'temp.txt'); // yhdistää polun ja tiedoston nimen
-fs.writeFile(tempFilePath, 'Tämä on väliaikainen tiedosto', (err) => {
-    if (err) throw err;
-    console.log('Väliaikainen tiedosto on luotu!');
-});
 ```
 
-Tämän koodin suorittamisen jälkeen sinun tulisi löytää uusi väliaikainen tiedosto nimeltä "temp.txt" väliaikaisesta hakemistosta.
+Sitten voimme luoda tilapäisen tiedoston käyttämällä `fs.mkdtemp()` -funktiota ja antamalla sille hakemistoja nimen. Tämä funktio palauttaa tiedoston nimen:
 
-## Syvempi sukellus väliaikaisten tiedostojen luomiseen
+```Javascript
+const tempDir = fs.mkdtempSync('temp-');
+console.log(tempDir);
+// Output: temp-QJGcNp
+```
 
-Väliaikaiset tiedostot ovat usein tarpeen ohjelmoinnissa, mutta ne voivat myös aiheuttaa turhia turvallisuusriskejä. Tällöin on tärkeää varmistaa, että väliaikaiset tiedostot poistetaan asianmukaisesti ja turvallisesti niiden käytön jälkeen. Voit käyttää `fs.unlink()` -funktiota poistamaan väliaikaisen tiedoston, kun se ei ole enää tarpeen. On myös hyvä käyttää `crypto.randomBytes()` -funktiota luomiseen satunnainen merkkijono, jota voidaan käyttää tiedoston nimessä lisäämään turvallisuutta.
+Ja siinä se! Nyt meillä on oikea hakemisto, ja voimme käsitellä sitä tarpeen mukaan. Muista kuitenkin poistaa tämä tiedosto, kun sitä ei enää tarvita, jotta voit pitää järjestelmän puhtaana. Voit tehdä sen käyttämällä `fs.rmdirSync()` -funktiota:
 
-## Katso myös
+```Javascript
+fs.rmdirSync(tempDir);
+```
 
-- [Node.js:n virallinen dokumentaatio - fs-moduuli](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [W3Schools - Javascript Kirjoittamisfunktiot](https://www.w3schools.com/nodejs/ref_fs_removefile.asp)
+## Syventyvä tarkastelu
+
+`fs.mkdtemp()` -funktiossa on myös optio lisätä hakemiston sijainti parametrina. Tämä voi olla hyödyllistä, jos haluat tallentaa tilapäiset tiedostot tiettyyn paikkaan. Voit tehdä sen antamalla toisen parametrin funktiolle. Esimerkiksi:
+
+```Javascript
+const tempDir = fs.mkdtempSync('temp-', { dir: __dirname });
+console.log(tempDir);
+// Output: /Users/inariyama/temp-3ys5da
+```
+
+Tulostuksessa voit nähdä, että hakemisto sijaitsee tiedoston suoritushakemistossa. Voit myös antaa kolmannen parametrin, joka määrittää, käytätäänkö tämän hakemiston luomista. Oletuksena tämä on UTF-8, mutta voit vaihtaa sen haluamasi koodauksen mukaan. Tämä voi olla hyödyllistä, jos haluat varmistaa, että tiedostot tallennetaan oikeilla kirjoituskoneilla.
+
+See Also
+
+- [Node.js Documentation: fs module](https://nodejs.org/api/fs.html)
+- [W3Schools: Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

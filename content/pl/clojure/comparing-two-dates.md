@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Clojure: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,30 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dwóch dat może być niezbędne w wielu programach. Może to ułatwić nam sprawdzanie kolejności wydarzeń, analizę danych lub określenie, czy dany termin jest przeszły czy przyszły.
+Dlaczego ktoś chciałby porównywać dwie daty? To proste. Porównywanie dat jest niezwykle przydatną umiejętnością w programowaniu, ponieważ pozwala nam na określenie kolejności zdarzeń, wykrywanie zależności czasowych oraz przetwarzanie i analizowanie danych historycznych.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Porównywanie dwóch dat w Clojure jest bardzo proste. Wykorzystujemy do tego funkcję `compare`, która zwraca wartość `-1`, `0` lub `1` w zależności od wyniku porównania. Dla przykładu, porównajmy datę dzisiejszą z datą urodzenia:
+Porównywanie dwóch dat w Clojure jest łatwe i intuicyjne. Najprostszym sposobem jest użycie funkcji `compare`, która zwraca wartość liczbą całkowitą w zależności od wyniku porównania. Przykładowe użycie tej funkcji wyglądałoby tak:
 
 ```Clojure
-(def dzis (java.util.Date.))
-(def urodz (java.util.Date. 1990 10 24))
-(compare dzis urodz)
+(compare #inst "2021-04-15" #inst "2021-05-01")
 ```
 
-Wyjście powyższego kodu to `-1`, co oznacza, że data urodzenia jest wcześniejsza od dzisiejszej daty.
+W powyższym przykładzie porównujemy datę 15 kwietnia 2021 z datą 1 maja 2021. Wynik porównania będzie liczbą ujemną, ponieważ pierwsza data jest wcześniejsza niż druga.
 
-Możemy również porównywać daty, które nie są typu `java.util.Date`, na przykład daty zapisane jako ciągi znaków. Wtedy ważne jest, aby przekonwertować je na ten typ przed porównaniem, np. używając funkcji `strptime` z biblioteki `clj-time`.
+Możemy również użyć funkcji `after?`, `before?` lub `between?` do bardziej zaawansowanych porównań. Przykład użycia `before?` wyglądałby tak:
 
-## Głębsza analiza
+```Clojure
+(before? #inst "2021-04-15" #inst "2021-05-01")
+```
 
-Funkcja `compare` jest jednym ze sposobów porównywania dat w Clojure, jednak istnieje też wiele innych opcji. Możemy na przykład wykorzystać funkcję `<` lub `>`, która zwraca wartość logiczną `true` lub `false`. Możliwe jest również wykorzystanie specjalnego obiektu `chrono / LocalDate`, który pozwala na bardziej precyzyjne porównywanie dat, uwzględniając różnice w różnych strefach czasowych i kalendarzach.
+W tym przypadku funkcja zwróci wartość `true`, ponieważ data 15 kwietnia 2021 jest wcześniejsza niż data 1 maja 2021.
 
-Ważne jest również pamiętanie o różnicach w dokładności porównywania. Domyślnie funkcja `compare` porównuje daty z dokładnością do milisekund, jednak w niektórych przypadkach może to być niepożądane. W takiej sytuacji warto skorzystać z innych funkcji lub sposób precyzowania dat przed porównaniem.
+## Głębsze zanurzenie
 
-## Zobacz również
+Porównywanie dat może być trochę bardziej skomplikowane, jeśli chcemy wziąć pod uwagę również inne elementy, takie jak godziny, minuty czy sekundy. W takim przypadku należy użyć funkcji `between?` w połączeniu z funkcją `chrono-range`, która pozwala na zdefiniowanie zakresu porównania w bardziej szczegółowy sposób.
 
-- [Dokumentacja Clojure o porównywaniu dat](https://clojuredocs.org/clojure.core/compare)
-- [Biblioteka clj-time](https://github.com/clj-time/clj-time)
-- [Dokumentacja Javy o typie Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+```Clojure
+(between? #inst "2021-04-15" #inst "2021-04-16" (chrono-range :hours))
+```
+
+W powyższym przykładzie określamy, że chcemy porównać dwie daty z dokładnością do godzin. Funkcja `between?` zwróci w tym przypadku wartość `true`, ponieważ obejmuje cały zakres od 15 kwietnia do 16 kwietnia.
+
+Dzięki funkcjom jak `compare`, `after?`, `before?` i `between?` porównywanie dat w Clojure jest szybkie i proste. Warto również zapoznać się z innymi funkcjami z biblioteki `clj-time`, która oferuje szereg narzędzi do pracy z datami i czasem.
+
+## Zobacz też
+
+- [Dokumentacja Clojure - porównywanie dat](https://clojuredocs.org/clojure.core/compare)
+- [Dokumentacja Clojure - biblioteka clj-time](https://clj-time.github.io/clj-time/)

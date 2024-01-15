@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: HTML解析"
-simple_title:         "HTML解析"
+title:                "「HTMLの解析」"
+html_title:           "Arduino: 「HTMLの解析」"
+simple_title:         "「HTMLの解析」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,56 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-ブログをご覧の皆さんこんにちは！今日はArduinoでHTMLパースを行う方法をご紹介します。今回はなぜHTMLパースを行うのか、具体的なコーディング例と出力結果、さらに深く理解するための情報をお届けします。それでは早速始めましょう！
+## なぜHTMLのパースを行うのか
 
-## なぜHTMLパースを行うのか？
+HTMLは、今日のインターネット世界で欠かせないものです。ウェブページの文章や画像、ビデオなどは、ほとんどがHTMLで作られています。よって、Arduinoプログラマーにとっても、HTMLをパース（解析）することは重要なスキルです。
 
-HTMLパースとは、HTMLファイルから必要な情報を抽出し、処理することを指します。例えば、ウェブページ上の特定のテキストや画像、リンクを自動的に取得することができます。これにより、手作業でHTMLを読み取り必要な情報を探す手間を省くことができ、よりスマートで効率的なプログラミングが可能になります。
+## パーシングの実装方法
 
-## 方法：コーディング例と出力結果
+```Arduino
+#include <ESP8266WiFi.h> // ESP8266のWi-Fiライブラリをインクルード
 
-まずは、HTMLパースに必要なライブラリをArduinoにインストールしましょう。以下のコマンドを使用して、インストールすることができます。
+char ssid[] = "YOUR_WIFI_SSID"; // Wi-FiのSSIDを指定
+char password[] = "YOUR_WIFI_PASSWORD"; // Wi-Fiのパスワードを指定
+
+void setup() {
+  Serial.begin(115200); //シリアル通信の速度を設定
+  WiFi.begin(ssid, password); //Wi-Fiに接続
+  while (WiFi.status() != WL_CONNECTED) { //Wi-Fi接続が完了するまでループ
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Connected to Wi-Fi!"); //Wi-Fi接続が完了したらシリアルモニターにメッセージを表示
+
+  WiFiClient client; //クライアントを作成
+  const char* host = "www.example.com"; //HTMLをパースするサイトのURLを指定
+  if (!client.connect(host, 80)) { //クライアントがホストに接続できなかった場合はエラーを表示
+    Serial.println("Connection failed.");
+    return;
+  }
+  
+  client.print("GET /page.html HTTP/1.1\r\n"); //GETリクエストを送信
+  client.print("Host: ");
+  client.print(host);
+  client.print("\r\n");
+  client.print("Connection: close\r\n\r\n"); //ヘッダーの終わりを示すために空行を送信
+
+  while(client.connected()) { //クライアント接続が確立している間ループ
+    String line = client.readStringUntil('\r'); //HTMLの行を読み込む
+    if (line == "\n") { //空行が来たらループを抜ける
+      break;
+    }
+    Serial.print(line); //HTMLの行をシリアルに表示
+  }
+}
+
+void loop() {
+
+}
 
 ```
-Arduinoライブラリをインストール
-```
 
-次に、コードの中で必要なライブラリをインポートします。例えば、HTMLパースには[HTML Parserライブラリ](https://example.com)が必要です。以下のようにコードを書き換えて、ライブラリをインポートしましょう。
+## パーシングの詳細
 
-```
-import HTMLParser;
-```
+HTMLのパースは、HTMLドキュメントの特定の部分を取得することを意味します。Arduinoでは、HTMLをテキストとして読み込んで、特定のパターンやキーワードを検出することで、必要な情報を取得することができます。しかし、HTMLの構造やタグの種類を理解することが重要です。よって、HTMLのパースを行う際は、HTMLの基本的な知識を身につけることが大切です。
 
-コードブロック内にある「https://example.com」は実際に使うライブラリのリンクに置き換えてください。
+## 関連リンク
 
-次に、HTMLファイルのURLを指定し、パーサーを作成します。以下のコードは、ArduinoがサンプルのHTMLファイルをパースして、特定のタグ内のテキストを抽出する例です。
-
-```
-// HTMLファイルのURLを指定
-String htmlUrl = "https://example.com/sample.html"; 
-
-// HTMLParserライブラリを使用してパーサーを作成
-HTMLParser parser(htmlUrl); 
-
-// 抽出するタグの指定
-String tag = "<h1>";
-
-// 特定のタグ内のテキストを抽出
-String content = parser.parse(tag); 
-
-// 結果の出力
-Serial.println(content); 
-```
-
-上記のコードを実行すると、サンプルのHTMLファイル内の「<h1>」タグ内のテキストが、「content」変数に格納され、シリアルモニターに出力されます。
-
-## ディープダイブ：HTMLパースについて
-
-HTMLパースを行う上で重要なポイントは、正しいタグや属性を指定することです。タグや属性を間違えると、抽出したい情報が取得できない場合があります。また、HTMLファイルが大きい場合、パースに時間がかかることもあるため、効率的なコーディングが必要です。さらに、HTMLパースを行う際にはエラー処理も重要です。エラーが発生した場合、プログラムがうまく動作しなくなるため、適切なエラー処理を行うことが重要です。
-
-## 併せて読みたい：その他のArduinoプログラミング情報
-
-HTMLパース以外にも、Arduinoでできることはたくさんあります。以下のリンクをチェックして、さまざまなArduinoプログラミングの情報をご覧ください。
-
-- [Arduino公式サイト](https://arduino.cc)
-- [入門者向けArduino
+- [Arduinoプログラミングチュートリアル - HTMLのパース](https://www.arduino.cc/en/Tutorial/LibraryExamples/UrlClient)
+- [HTMLの基礎](https://developer.mozilla.org/ja/docs/Web/HTML)
+- [ESP8266WiFiライブラリのドキュメント](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-examples.html)

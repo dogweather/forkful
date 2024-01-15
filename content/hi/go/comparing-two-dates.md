@@ -1,6 +1,7 @@
 ---
-title:                "Go: दो तारीखों की तुलना करना"
-simple_title:         "दो तारीखों की तुलना करना"
+title:                "दो तारीखों का तुलना करना"
+html_title:           "Go: दो तारीखों का तुलना करना"
+simple_title:         "दो तारीखों का तुलना करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -9,44 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-क्या आप अपने प्रोग्राम में दो तारीखों को तुलना करने की जरूरत है? आमतौर पर, तारीख की तुलना एप्लिकेशन में दो तारीखों के बीच किए गए बदलावों को प्रबंधित करने के लिए की जाती है। इस लेख में, हम दो तारीखों की तुलना के लिए गो प्रोग्रामिंग का उपयोग करने के बारे में आपको बताएँगे।
+Kisi bhi project ya application mein, tarikhon ke maamle ko samajhna aur compare karna bahut zaroori hota hai. Isse hume pata chalta hai ki kisi event ya task ki date sahi hai ya nahi, aur bade projects mein iska importance aur bhi badh jata hai. Isiliye, Go ke saath tarikhon ka comparison sikhna bahut zaruri hai.
 
-## कैसे करें
-
-अगर आप गो प्रोग्रामिंग में दो तारीखों की तुलना करना चाहते हैं, तो निम्नलिखित कोड उदाहरण आपको मदद करेंगे। चलिए इसे एकाग्रता से देखते हैं।
+## Kaise Karein
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	// पहली तारीख
-	firstDate := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+    // Creating two time variables with different dates
+    date1 := time.Date(2020, 12, 1, 0, 0, 0, 0, time.UTC)
+    date2 := time.Date(2020, 12, 5, 0, 0, 0, 0, time.UTC)
 
-	// दूसरी तारीख
-	secondDate := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
+    // Using Before function to compare dates
+    if date1.Before(date2) {
+        fmt.Println("Date 1 is before Date 2")
+    }
 
-	// बेजोड़ तारीखों को तुलना करें
-	if firstDate.Equal(secondDate) {
-		fmt.Println("दोनों तारीखों बराबर हैं!")
-	} else {
-		fmt.Println("दोनों तारीखों में अंतर है।")
-	}
+    // Using After function to compare dates
+    if date2.After(date1) {
+        fmt.Println("Date 2 is after Date 1")
+    }
 
-	// तारीख का अंतर प्राप्त करें
-	diff := secondDate.Sub(firstDate)
-	fmt.Println(diff.Hours(), "घंटे का फ़र्क़ है।")
+    // Using Equal function to check if dates are equal
+    if date1.Equal(date2) {
+        fmt.Println("Date 1 and Date 2 are equal")
+    }
 }
 ```
 
-आपको यहां स्पष्ट दिखाई देना चाहिए।
+Yahan par hamne `time` package se `Date` function ka use karke do dates banai hai. Fir, `Before`, `After`, aur `Equal` functions ka use karke humne in dates ko compare kiya hai. In functions ka use karke hum kisi bhi tarikh ki position aur equal status ko check kar sakte hain.
 
-## डीप डाइव
+## Deep Dive
 
-अब आप गो प्रोग्रामिंग के माध्यम से तारीखों की तुलना को और गहराई से समझ सकते हैं। गो में तारीखों को प्रबंधित करने के लिए बहुत सारे फ़ंक्शन हैं जैसे time.Now (), time.Parse (), time.Unix () आदि। आपको यह समझना महत्वपूर्ण है कि गो में तारीख हमेशा एक time.Time ऑब्जेक्ट के रूप में ही संरच
+Go mein tarikhon ka comparison karne ke liye bahut sare inbuilt functions aur methods available hain. Kuch important functions hain:
+
+1. `Before`: Is function ka use karke hum date ko compare kar sakte hain, jaha hume pata chalta hai ki ek date dusre date se pehle hai ya nahi.
+2. `After`: Is function ka use karke hum date ko compare kar sakte hain, jaha hume pata chalta hai ki ek date dusre date ke baad hai ya nahi.
+3. `Equal`: Is function ka use karke hum date ko compare kar sakte hain, jaha hume pata chalta hai ki dono dates ek dusre se equal hai ya nahi.
+4. `BeforeDate`: Is function ka use karke hume pata chalta hai ki ek date mein usse pehle kitne time hai.
+5. `AfterDate`: Is function ka use karke hume pata chalta hai ki ek date mein uske baad kitne time hai.
+
+In functions ko use karke hum tarikhon ka intezaar kar sakte hain aur uske mutabik koi task ya event ko perform kar sakte hain.
+
+## See Also
+
+- [Official Go Documentation for Time package](https://golang.org/pkg/time/)
+- [Date and Time in Go](https://www.calhoun.io/parsing-dates-and-times-in-go/)
+- [Calculating Date Difference in Go](https://stackoverflow.com/questions/36530251/calculating-the-difference-between-two-dates-in-golang)

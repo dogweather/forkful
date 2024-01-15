@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Convertire una stringa in minuscolo"
+title:                "Convertire una stringa in minuscolo"
+html_title:           "Ruby: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,24 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La conversione di una stringa in caratteri minuscoli è utile quando si vuole avere una stringa nel formato più comune, in modo da poterla facilmente confrontare o manipolare.
+Converting a string to lower case è un'operazione comune durante lo sviluppo di applicazioni in Ruby. Questo permette di uniformare i dati inseriti dall'utente e semplificare il confronto tra stringhe.
 
 ## Come fare
 
 ```Ruby
-stringa = "RUBY PROGRAMMAZIONE"
-puts(stringa.downcase)
-```
+# Esempio 1: Utilizzo di .downcase su una stringa 
+stringa = "Ciao, come stai?"
+puts stringa.downcase
+# output: ciao, come stai?
 
-Questo codice produrrà l'output "ruby programmazione". Come si può notare, la funzione `downcase` viene applicata alla variabile `stringa` e ritorna una nuova stringa in minuscolo.
+# Esempio 2: Utilizzo di .downcase! su una stringa 
+stringa = "HELLO WORLD"
+stringa.downcase!
+puts stringa
+# output: hello world
+```
 
 ## Approfondimento
 
-La funzione `downcase` è una caratteristica del tipo String in Ruby ed è uno dei molti metodi disponibili per manipolare le stringhe. Ci sono anche altri metodi come `upcase` per trasformare una stringa in maiuscolo e `capitalize` per far iniziare una stringa con la prima lettera maiuscola.
-
-Inoltre, la conversione in minuscolo di una stringa può essere utile quando si lavora con input dell'utente. Ad esempio, se l'utente inserisce la stringa "ProGraMMaZIone" e si vuole che il programma funzioni correttamente anche in questo caso, si può utilizzare la funzione `downcase` per trasformare la stringa in "programmazione" e poi confrontarla con altre stringhe.
+Per convertire una stringa in lower case, Ruby utilizza il metodo `.downcase` o `.downcase!` a seconda se si desidera una nuova stringa convertita o modificare la stringa originale. Entrambi i metodi funzionano nello stesso modo, ma `.downcase!` ha l'effetto collaterale di modificare la stringa originale.
+Durante la conversione, il metodo considera anche le lettere accentate e i caratteri speciali come la "ß" tedesca. Inoltre, in Ruby, è possibile utilizzare metodi alternativi come `.casecmp` per confrontare stringhe in modo case insensitive.
 
 ## Vedi anche
 
-- [Documentazione Ruby sulle stringhe](https://www.ruby-lang.org/it/documentation/quickstart/2/)
-- [Metodi disponibili per le stringhe in Ruby](https://www.rubyguides.com/2018/02/ruby-string-methods/)
+- [Metodi di stringa in Ruby](https://www.rubyguides.com/ruby-string-methods/)
+- [Confronto di stringhe case insensitive in Ruby](https://www.rubydoc.info/docs/ruby/LangFile:upcase=3F)
+- [Operazioni comuni con le stringhe](https://victoria.dev/blog/common-string-references-in-ruby/)

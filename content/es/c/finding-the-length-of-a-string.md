@@ -1,5 +1,6 @@
 ---
-title:                "C: Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "C: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "C"
 category:             "C"
@@ -9,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué encontrar la longitud de una cadena de caracteres?
 
-En programación, a menudo necesitamos saber la longitud de una cadena para realizar diversas tareas. Ya sea para validar la entrada del usuario, manipular datos o simplemente por curiosidad, encontrar la longitud de una cadena es una habilidad esencial para cualquier programador en C.
+En programación, muchas veces necesitamos saber cuántos caracteres tiene una determinada cadena. Esto puede ser útil para hacer validaciones, crear bucles o simplemente para mostrar información al usuario con precisión.
 
-## Cómo
+## Cómo hacerlo
 
-En C, la longitud de una cadena se refiere al número de caracteres que contiene, incluyendo espacios y símbolos. Para encontrar la longitud de una cadena, podemos usar la función `strlen()` que se encuentra en la biblioteca estándar `string.h`.
+Para esto, utilizaremos la función `strlen()` de la biblioteca estándar de C. Esta función toma como parámetro una cadena de caracteres y devuelve un entero representando la longitud de dicha cadena.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    // definir una cadena
-    char cadena[] = "¡Hola, mundo!";
-
-    // encontrar la longitud de la cadena
-    int longitud = strlen(cadena);
-
-    // imprimir la longitud
-    printf("La longitud de la cadena es: %d", longitud);
-
+int main()
+{
+    char str[] = "¡Hola mundo!";
+    int longitud = strlen(str);
+    printf("La cadena \"%s\" tiene una longitud de %d caracteres.", str, longitud);
     return 0;
 }
 ```
 
-**Salida:**
+**Output:**
 
 ```
-La longitud de la cadena es: 13
+La cadena "¡Hola mundo!" tiene una longitud de 11 caracteres.
 ```
 
-En este ejemplo, primero definimos una cadena llamada "¡Hola, mundo!" y luego usamos la función `strlen()` para encontrar su longitud. Finalmente, imprimimos la longitud en la pantalla.
+## Profundizando en la longitud de una cadena
 
-## Profundizando
+Es importante destacar que la función `strlen()` realmente cuenta los caracteres hasta el primer carácter nulo `'\0'` que encuentre en la cadena. Por lo tanto, si nuestra cadena no incluye explícitamente un carácter nulo, obtendremos resultados inesperados.
 
-La función `strlen()` cuenta el número de caracteres de una cadena hasta encontrar el caracter nulo (`\0`), que marca el final de la cadena. Esto significa que la longitud de una cadena vacía (sin ningún carácter) es 0, mientras que la longitud de una cadena con solo un caracter nulo es 1.
-
-Además, es importante recordar que la longitud devuelta por `strlen()` es de tipo `size_t`, que suele ser equivalente a `unsigned int`. Por lo tanto, si queremos almacenar la longitud de una cadena en una variable, debemos declararla como `size_t` o `unsigned int`.
+Además, esta función solo cuenta los caracteres y no tiene en cuenta la codificación de caracteres, por lo que puede haber diferencias en la longitud dependiendo del lenguaje utilizado. También hay que tener en cuenta que los caracteres especiales o acentos pueden ser contados como más de un byte, lo que podría afectar el resultado final.
 
 ## Ver también
 
-- [Función `strlen()` en la documentación de C](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [Ejemplos adicionales de encontrar la longitud de una cadena en C](https://www.geeksforgeeks.org/strlen-function-in-c/)
-- [Cómo contar el número de palabras en una cadena en C](https://www.freecodecamp.org/news/c-find-length-of-string/#:~:text=We%20can%20use%20the%20strlen,function%20to%20find%20the%20length.&text=We%20can%20calculate%20the%20number,positions%20in%20the%20character%20array.)
+- [Documentación oficial de la función `strlen()` en C](https://en.cppreference.com/w/c/string/byte/strlen)
+- [Guía de programación en C: Manejo de cadenas de caracteres](https://es.coursera.org/lecture/programacion-c/manejo-de-cadenas-de-caracteres-AiM8I) (Curso en línea)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Haskell: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Les fichiers textes sont un outil essentiel pour les programmeurs Haskell, permettant de stocker des données et de les manipuler facilement dans un format lisible pour les humains. Ils sont également utiles pour stocker des configurations et des paramètres pour les programmes.
+Ecrire un fichier texte en Haskell peut sembler intimidant pour les débutants, mais c'est en fait une compétence très utile à maîtriser. Non seulement cela vous aidera à mieux comprendre la syntaxe de ce langage de programmation fonctionnel, mais cela vous permettra également de créer des applications plus robustes et plus efficaces.
 
-## Comment Faire
+# Comment faire
 
-Pour créer un fichier texte en Haskell, il suffit d'utiliser la fonction intégrée `writeFile` en spécifiant le nom du fichier et le contenu que vous souhaitez y mettre. Par exemple:
-
-```Haskell
--- Création d'un nouveau fichier texte nommé "nombres.txt"
-writeFile "nombres.txt" "1\n2\n3\n4\n5\n"
-```
-
-Une fois le fichier créé, vous pouvez le lire en utilisant la fonction `readFile` et en spécifiant le nom du fichier. Par exemple:
+### Lecture de fichiers texte
 
 ```Haskell
--- Lecture du contenu du fichier "nombres.txt"
-nombres <- readFile "nombres.txt"
+main = do
+  let path = "mon_fichier.txt"
+  contenu <- readFile path
+  putStrLn contenu
 ```
 
-Pour écrire et lire des fichiers texte plus complexes, vous pouvez utiliser des fonctions de traitement de chaînes de caractères telles que `split` et `join` pour diviser et combiner les données dans le format souhaité.
+Dans cet exemple, nous définissons d'abord le chemin d'accès de notre fichier texte en utilisant "let". Ensuite, nous utilisons la fonction "readFile" pour lire le contenu du fichier et le stocker dans une variable appelée "contenu". Enfin, nous utilisons la fonction "putStrLn" pour afficher le contenu à l'écran.
 
-## Plongée Profonde
+### Ecrire dans un fichier texte
 
-Lors de l'écriture de fichiers texte en Haskell, il est important de prêter attention aux encodages de caractères utilisés. Haskell utilise par défaut l'encodage UTF-8, mais il est possible de spécifier un autre encodage en utilisant la fonction `writeFile` avec le paramètre optionnel `encoding`.
+```Haskell
+main = do
+  let path = "mon_fichier.txt"
+  let contenu = "Voici le contenu de mon fichier."
+  writeFile path contenu
+```
 
-De plus, il est important de noter que les fichiers texte en Haskell sont considérés comme immuables, ce qui signifie qu'ils ne peuvent pas être modifiés une fois créés. Cela garantit la stabilité et la sécurité des données stockées dans ces fichiers.
+Dans cet exemple, nous créons un fichier texte appelé "mon_fichier.txt" et y écrivons le contenu "Voici le contenu de mon fichier." en utilisant la fonction "writeFile".
 
-## Voir Aussi
+# Plongée en profondeur
 
-- [Documentation sur la fonction `writeFile`](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:writeFile)
-- [Documentation sur la fonction `readFile`](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:readFile)
-- [Documentation sur les fonctions de traitement de chaînes de caractères](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:split)
-- [Documentation sur les encodages de caractères en Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:openFile)
+Il est important de noter que ces exemples utilisent les fonctions "readFile" et "writeFile" de la bibliothèque "System.IO". Il existe cependant d'autres façons d'écrire et de lire des fichiers en Haskell, en utilisant par exemple la bibliothèque "Data.Text" ou en utilisant des opérateurs de haute performance comme "ByteString". Il est également important de manipuler correctement les erreurs lors de la lecture et de l'écriture de fichiers en utilisant des fonctions telles que "catch" et "hPutStrLn".
+
+# Voir aussi
+
+- https://wiki.haskell.org/Handling_IO#Reading_a_File
+- https://wiki.haskell.org/Handling_IO#Writing_CSV_Files

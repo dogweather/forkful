@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,50 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy zmienić stringi na małe litery, niezależnie od tego jak są wprowadzone. W tym wpisie dowiesz się, jak łatwo wykonać tę operację w języku Fish Shell.
+Każdy programista wie, że bardzo ważnym elementem przetwarzania danych jest prawidłowa obsługa ciągów znaków. Jednym z przydatnych zadań może być konwertowanie tekstu na małe litery, co pozwala nam na uniknięcie problemów z porównywaniem i wyszukiwaniem w ciągu. W tym artykule dowiesz się, jak w prosty sposób wykonać tę konwersję w języku Fish Shell.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby przekonwertować string na małe litery w Fish Shell, możemy skorzystać z funkcji `string tolower`, która zwraca przekonwertowany tekst. Oto przykładowy kod:
+Kodowanie konwersji ciągów znaków na małe litery w Fish Shell jest bardzo proste. Wystarczy użyć funkcji `string tolower`, która jako argument przyjmuje nasz ciąg znaków. Spójrzmy na przykładowy kod:
 
-```Fish Shell
-string tolower "JESTEM PRZESTRZEGANIEGŁUPICH zasad"
+```
+Fish Shell
+
+set string "CZEŚĆ"
+echo (string tolower $string)
 ```
 
-Wynik wyświetli się w postaci:
+Efektem wywołania tego kodu będzie `cześć`, czyli nasz wyjściowy ciąg już w postaci małych liter. Możemy również użyć tej funkcji w bardziej zaawansowany sposób, np. przekazując do niej wynik innej funkcji. Przykładowo:
 
-```Fish Shell
-jestem przestrzeganiem głupich zasad
+```
+Fish Shell
+
+set string (cat greetings.txt)
+echo (string tolower $string)
 ```
 
-Jeśli chcemy zmienić podaną wartość bezpośrednio, możemy skorzystać z wyrażenia regularnego `string match`, które będzie przypisywać zmienną z małymi literami, jak w poniższym przykładzie:
-
-```Fish Shell
-string value "JAk nAkAżCiwy ZawARTość"
-echo "$value" | string match -r ".*" --write-to value
-echo "$value"
-```
-
-Powyższy kod wyświetli nam:
-
-```Fish Shell
-jak nakażciwy zawartość
-```
+Powyższy kod pobiera zawartość pliku `greetings.txt`, a następnie konwertuje ją na małe litery i wyświetla w konsoli.
 
 ## Deep Dive
 
-Podczas wykorzystywania funkcji `string tolower` musimy być świadomi, że nie tylko zmienia się wielkość liter, ale również zmienia się struktura tekstu, a dokładniej modyfikuje się znaki niestandardowe i znaki diakrytyczne. Na przykład, litera `Ś` zostanie przekonwertowana na `ś`, a `ó` na `o`.
+Głębsze zrozumienie działania konwersji ciągów na małe litery może być pomocne przy rozwiązywaniu pewnych problemów lub optymalizacji kodu. W Fish Shell konwersja jest wykonywana za pomocą funkcji `tolower`, która z kolei wywołuje funkcję systemową `tolower()`. Zwróć uwagę, że konwersja jest wykonywana na podstawie ustawień regionalnych systemu, co może mieć wpływ na wynik.
 
-Jeśli chcemy uniknąć tych zmian, możemy skorzystać z funkcji `string lowercase`, która tylko zmieni wielkość liter, ale zostawi resztę tekstu bez zmian. Przykład użycia tej metody może wyglądać następująco:
+Podczas konwersji może również dojść do błędu w przypadku, gdy używamy znaków spoza alfabetu łacińskiego. W takim przypadku funkcja `tolower()` może zwrócić niepoprawny wynik, co może powodować problemy w dalszym przetwarzaniu danych. Dlatego ważne jest przetestowanie działania naszego kodu na różnych typach danych i sprawdzenie, czy konwersja jest wykonana poprawnie.
 
-```Fish Shell
-string value "JAk nAkAżCiwy ZawARTość"
-echo "$value" | string lowercase
-```
+## See Also
 
-Wynik będzie wyglądał identycznie jak w przykładzie dla funkcji `string match`.
+Teraz, gdy już wiesz, jak w prosty sposób konwertować ciągi znaków na małe litery w Fish Shell, możesz wykorzystać tę wiedzę w swoich projektach. Jeśli chcesz dowiedzieć się więcej o innych funkcjach języka Fish Shell, koniecznie zajrzyj do poniższych linków:
 
-## Zobacz też
-
-- Dokumentacja Fish Shell na temat funkcji `string tolower`: https://fishshell.com/docs/current/cmds/tolower.html
-- Źródło wyrażeń regularnych: https://www.regular-expressions.info/
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+- Oficjalny poradnik Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Przykładowe skrypty w Fish Shell: https://fishshell.com/docs/current/index.html#example-scripts

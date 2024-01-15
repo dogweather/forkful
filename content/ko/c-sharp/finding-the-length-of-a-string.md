@@ -1,5 +1,6 @@
 ---
-title:                "C#: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "C#: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "C#"
 category:             "C#"
@@ -9,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜라면: 문자열 길이를 찾는 일에 관심을 가지는 이유는 무엇인가요?
+## 왜
 
-문자열 길이를 찾는 것은 프로그래밍에서 가장 기본적이고 필수적인 작업 중 하나입니다. 우리는 종종 사용자로부터 입력 받은 문자열의 길이를 알아야 하거나, 특정 문자열의 길이를 비교해야 할 때가 있습니다. 이를 위해 문자열의 길이를 찾는 방법을 공부하면, 보다 정확하고 빠른 코딩이 가능해집니다.
+문자열의 길이를 찾는 것에 참여하는 이유는 매우 다양합니다. 예를 들어, 사용자가 입력한 정보의 길이를 제한하기 위해, 또는 특정 문자열 처리 작업을 수행하기 위해 등 다양한 상황에서 문자열의 길이를 찾아야 할 수 있습니다.
 
-## 어떻게 하나요?
+## 어떻게 작업 할까요?
 
-우선 C#에서 문자열의 길이를 찾는 방법을 알아보겠습니다. 아래의 코드는 문자열의 길이를 나타내는 빌트인 함수인 `Length`를 이용하는 예시입니다.
-
-```C#
-string myString = "안녕하세요";
-int myStringLength = myString.Length;
-Console.WriteLine("문자열의 길이는 {0}입니다.", myStringLength);
-```
-
-위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
-```
-문자열의 길이는 5입니다.
-```
-
-또한 다음과 같은 방법으로도 문자열의 길이를 찾을 수 있습니다.
+문자열의 길이를 찾기 위해서는 C#에서 자주 사용되는 메소드 중 하나인 `string.Length`를 사용해야 합니다. 아래의 코드 예제를 참고하여 실제로 문자열의 길이를 찾는 작업을 해보세요.
 
 ```C#
-string myString = "안녕하세요";
-int myStringLength = 0;
-foreach (char c in myString)
-{
-  myStringLength++;
-}
-Console.WriteLine("문자열의 길이는 {0}입니다.", myStringLength);
+// 문자열 변수 선언
+string myString = "안녕하세요!";
+
+// `Length` 메소드를 사용하여 문자열의 길이를 찾고 출력하기
+Console.WriteLine($"문자열의 길이는 {myString.Length}자 입니다.");
 ```
 
-이 코드도 위와 같은 결과가 출력됩니다.
+위 코드의 결과는 다음과 같을 것입니다:
 
-## 깊게 들어가기
+```
+문자열의 길이는 6자 입니다.
+```
 
-C#에서 `Length` 함수는 문자열의 길이를 바이트 단위로 반환합니다. 그렇기 때문에 한글과 같은 다중 바이트 문자열이 포함되어 있다면, 실제 문자 수와 다를 수 있습니다. 따라서 `Length` 함수를 사용할 때는 이 점을 유의하는 것이 좋습니다.
+## 깊이 파고들기
 
-## 관련 자료
+`string.Length` 메소드는 사실 C#에서 `string` 타입의 내장된 속성입니다. 따라서 별다른 설정 없이도 해당 메소드를 바로 사용할 수 있습니다. 이 속성은 문자열의 길이를 찾는 데에 매우 유용한 도구입니다. 그러나 조심해야 할 몇 가지 사항이 있습니다.
 
-- [C# 문자열 길이 찾기](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.length?view=netframework-4.8)
-- [C# 문자열 관련 함수들](https://www.c-sharpcorner.com/uploadfile/mahesh/string-related-functions-in-C-Sharp/)
+먼저, `string.Length`는 공백도 하나의 문자로 간주합니다. 따라서 공백이 있는 문자열의 경우, 실제 문자열의 길이보다 한 글자가 더 작게 나올 수 있습니다. 또한, `string.Length`는 영문자를 기준으로 하여 글자의 수를 세기 때문에, 한글과 같은 다른 언어의 문자열의 경우에는 원하는 결과를 얻지 못할 수 있습니다. 이에 따라서, 언어에 따라 적절한 메소드를 사용하여 문자열의 길이를 찾아야 합니다.
+
+## 더 읽어보기
+
+- [C# 문자열의 길이 찾기 - Microsoft Documentation](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.length?view=net-5.0)
+- [C# 자습서 - 문자열 - Microsoft Documentation](https://docs.microsoft.com/ko-kr/dotnet/csharp/tutorials/working-with-strings)

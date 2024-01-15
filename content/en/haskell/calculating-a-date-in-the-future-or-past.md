@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Haskell recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,50 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-As programmers, we often need to determine a specific date in the future or past. This could be for scheduling events, calculating deadlines, or even just for curiosity. Calculating dates in Haskell can be a useful skill to have, and it's surprisingly simple to do.
+You might be planning an event or trying to figure out when a project will be completed, and need to know the date in the future or past. Calculating dates can be tedious and error-prone, but with Haskell's built-in date library and powerful functional programming capabilities, it can be made easier and more accurate.
 
 ## How To
-
-First, we need to import the `Data.Time` module, which provides functions and types for dealing with dates and times.
+To calculate a date in the future or past, we first need to import the `Data.Time` library. We can do this by adding the following line to the top of our code:
 
 ```Haskell
 import Data.Time
 ```
 
-Next, we can create a function that takes in a specific date and the number of days we want to add to that date:
+Next, we need to create a `Day` object representing the starting date. We can do this by using the `fromGregorian` function, which takes in the year, month, and day as arguments. For example, if we want to calculate a date 10 years in the future from today, we can write:
 
 ```Haskell
-addDaysToDate :: Day -> Integer -> Day
-addDaysToDate date days = addDays days date
+let today = fromGregorian 2021 12 1
 ```
 
-This function uses the `addDays` function from the `Data.Time` module to add the specified number of days to the given date. We can then use this function to calculate a date in the future:
+Now, to find the date 10 years in the future, we can use the `addGregorianYearsClip` function, which will return a new `Day` object representing the calculated date. We can write:
 
 ```Haskell
-futureDate = addDaysToDate (fromGregorian 2021 05 10) 30
--- Output: 2021-06-09
+let futureDate = addGregorianYearsClip 10 today
 ```
 
-In this example, we are adding 30 days to the 10th of May in 2021, and the result is the 9th of June in 2021.
-
-We can also calculate a date in the past by passing in a negative number of days:
+Finally, we can use the `show` function to display the date in a readable format. Our code should look like this:
 
 ```Haskell
-pastDate = addDaysToDate (fromGregorian 2021 05 10) (-30)
--- Output: 2021-04-10
+import Data.Time
+
+main = do
+    let today = fromGregorian 2021 12 1
+    let futureDate = addGregorianYearsClip 10 today
+    putStrLn $ "The date 10 years from today is: " ++ show futureDate
 ```
 
-Here, we are subtracting 30 days from the 10th of May in 2021, resulting in the 10th of April in 2021.
+Running this code will output:
+
+```
+The date 10 years from today is: 2031-12-01
+```
+
+To calculate a date in the past, we can use the `addGregorianYearsClip` function with a negative value for the years. Other functions such as `addGregorianMonthsClip` and `addGregorianDays` can also be used to calculate dates based on months and days. This allows for flexibility in calculating dates based on specific requirements.
 
 ## Deep Dive
+The `Data.Time` library offers many functions for working with dates and times. These include functions for converting between different time zones, extracting specific information such as the day of the week or the current time, and formatting dates in different ways.
 
-In Haskell, dates are represented using the `Day` type, which is a type synonym for `DiffTime`. This type represents the number of days since the Modified Julian Day (MJD) epoch. The `Data.Time` module provides various functions for converting between different date representations, such as `fromGregorian` which takes in year, month, and day values and returns a `Day` type.
+One important concept when working with dates in Haskell is the `DiffTime` type. This type represents a duration of time in seconds and is used in many date and time calculations. It is recommended to become familiar with this type when working with dates in Haskell.
 
-It's worth noting that the `addDays` function can also handle negative numbers, making it easy to calculate dates in the past. However, it does have some limitations when it comes to handling leap years. For more precise calculations, the `addGregorianMonthsClip` function can be used instead.
+Additionally, the `UTCTime` type is used to represent a specific point in time in Universal Time Coordinated (UTC). This type can be converted to and from the `LocalTime` type, which represents a specific point in time in a specific time zone. These types are useful when working with timestamps and handling time differences between different locations.
 
 ## See Also
-
-- [Data.Time documentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskell.org](https://www.haskell.org/)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskell Data.Time Documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Learn You a Haskell for Great Good! - Dates and Time](http://learnyouahaskell.com/for-great-good-time#datetime)
+- [Real World Haskell - Date and Time](http://book.realworldhaskell.org/read/data-and-types.html#data-types.type-synonyms-and-type-literals)

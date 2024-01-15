@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lancement d'un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+html_title:           "Bash: Lancement d'un nouveau projet"
 simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,46 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes passionné par la programmation et que vous cherchez un nouveau projet à entreprendre, alors la langue de commande Bash pourrait être une bonne option. En plus d'être un langage facile à apprendre, il vous permettra de créer des scripts pratiques pour automatiser des tâches répétitives sur votre ordinateur.
+Si vous êtes prêt à vous lancer dans un nouveau projet, Bash peut être un excellent choix pour la programmation. Avec sa facilité d'utilisation et sa grande flexibilité, Bash est un langage de programmation populaire pour les tâches quotidiennes et les projets de toutes sortes.
 
-## Comment faire
+## Comment Faire 
 
-La première étape pour démarrer un nouveau projet en Bash est d'ouvrir votre terminal et de créer un nouveau fichier avec l'extension .sh. Vous pourrez ensuite commencer à écrire votre code en suivant la syntaxe suivante :
+Avant de commencer à coder en Bash, assurez-vous d'avoir une compréhension de base du langage et de ses concepts fondamentaux, tels que les commandes, les variables et les boucles. Ensuite, vous pouvez utiliser les exemples de code suivants pour vous aider à démarrer:
 
-```Bash
-# Commentaire - ces lignes seront ignorées par le programme
-
-# Définir une variable avec la commande " = "
-ma_variable = "Bonjour le monde !"
-
-# Afficher du texte avec la commande "echo"
-echo $ma_variable
+```Bash 
+# Créez une variable avec une valeur
+nom="Jane"
+# Utilisez la commande 'echo' pour afficher la variable
+echo "Bonjour $nom!"
 ```
 
-Une fois que vous avez terminé d'écrire votre code, vous pouvez l'exécuter en utilisant la commande `bash nom_du_fichier.sh`. Vous devriez voir apparaître "Bonjour le monde !" dans votre terminal.
+Cet exemple utilise la fonction 'echo' pour afficher le texte "Bonjour" suivi de la valeur stockée dans la variable 'nom', créant ainsi une phrase complète. Voici le résultat de l'exécution de ce code:
 
-Vous pouvez également ajouter des conditions et des boucles à votre code en utilisant les commandes `if`, `elif`, `else` et `for`. Voici un exemple de boucle qui affiche les nombres de 1 à 10 :
+```
+Bonjour Jane!
+```
+
+Vous pouvez également utiliser des boucles pour répéter des actions en Bash. Par exemple, voici comment écrire une boucle 'for' pour afficher les nombres de 1 à 5:
 
 ```Bash
-for i in {1..10}; do
-    echo $i
+# Boucle 'for' utilisant la commande 'seq'
+for i in $(seq 1 5); do 
+  echo "$i"
 done
 ```
 
-## Plongée en profondeur
+L'utilisation de la commande "seq" génère une séquence de nombres de 1 à 5, qui sont ensuite affichés à l'aide de la commande 'echo'. Voici le résultat:
 
-Il est important de noter que le langage Bash est dérivé du shell Unix, ce qui signifie qu'il peut également exécuter des commandes système. Cela le rend particulièrement utile pour automatiser des tâches liées à la gestion de fichiers et de dossiers.
+```
+1
+2
+3
+4
+5
+```
 
-En plus de sa simplicité et de sa polyvalence, Bash offre également une syntaxe intuitive et flexible qui en fait un langage populaire pour les programmeurs débutants et expérimentés.
+## Plongée Profonde 
 
-Cependant, il est important de noter que Bash n'est peut-être pas le meilleur choix pour des projets de grande envergure ou complexes. Il peut être plus efficace de se tourner vers d'autres langages de programmation pour ces cas-là.
+Maintenant que vous avez une idée de comment écrire du code en Bash, voici quelques conseils pour bien commencer un nouveau projet en utilisant ce langage:
 
-## Voir aussi
+- Planifiez et réfléchissez soigneusement à votre projet avant de commencer à écrire du code. Cela vous aidera à mieux structurer votre code et à éviter les erreurs.
+- Utilisez des commentaires pour expliquer votre code et faciliter la compréhension pour les autres développeurs qui peuvent être amenés à travailler sur votre projet.
+- N'hésitez pas à utiliser des outils de débogage pour vous aider à trouver et à résoudre les erreurs plus facilement.
 
-- [Apprendre le Bash en quelques minutes](https://www.linuxshell.com/learn-bash-commands/)
-- [Guide de démarrage Bash](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [Scripting Bash pour les débutants](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+Avec ces conseils en tête, vous êtes prêt à vous lancer dans votre nouveau projet en utilisant Bash !
 
-Maintenant que vous en savez plus sur la programmation en Bash, il est temps de mettre en pratique vos connaissances et de commencer à créer votre propre projet. Bonne chance !
+## Voir aussi 
+
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
+- [Tutoriels de programmation Bash](https://bash.cyberciti.biz/guide/Main_Page)
+- [Exemples de scripts Bash](https://github.com/awesome-lists/awesome-bash)

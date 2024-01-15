@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "C#"
 category:             "C#"
@@ -9,50 +10,103 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-As a programmer, you may have come across situations where you need to check if a certain directory exists before proceeding with your code. This could be for various reasons such as ensuring the path is correct, avoiding errors, or making sure the program runs smoothly. Checking if a directory exists is a basic but crucial step in programming that can save you time and prevent unexpected issues. 
+Checking if a directory exists is a crucial step in many programming tasks, such as managing files or organizing data. By verifying the existence of a directory, you can ensure the integrity of your code and avoid potential errors.
 
-## How To 
+## How To
 
-To check if a directory exists in C#, we will be using the `Directory.Exists()` method from the `System.IO` namespace. Here's an example of how to use it: 
+To check if a directory exists in C#, you can use the `Directory.Exists()` method from the `System.IO` namespace. This method takes in a path as a parameter and returns a boolean value, indicating whether the directory exists or not. Here's an example:
 
 ```C#
 using System;
-using System.IO; 
+using System.IO;
 
-string path = @"C:\Users\JohnDoe\Documents\MyFolder"; // replace with your desired directory path
+namespace DirectoryExistence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = @"C:\Users\John\Documents";
 
-if (Directory.Exists(path))
-{
-    Console.WriteLine("The directory exists.");
-}
-else
-{
-    Console.WriteLine("The directory does not exist.");
+            if (Directory.Exists(path))
+            {
+                Console.WriteLine("The directory exists!");
+            }
+            else
+            {
+                Console.WriteLine("The directory does not exist.");
+            }
+        }
+    }
 }
 ```
 
-In this code, we first declare a string variable `path` which contains the directory path we want to check. Then, using an `if/else` statement, we call the `Directory.Exists()` method and pass in the `path` variable as a parameter. If the directory exists, the program will print "The directory exists." Otherwise, it will print "The directory does not exist." 
+Output:
+```
+The directory exists!
+```
 
-You can also use this method in a ternary operator to get a boolean value instead of using `if/else`, like this: 
+## Deep Dive
+
+Although the `Directory.Exists()` method is a simple way to check for the existence of a directory, it has its limitations. For example, it only works for directories and not for other types of files. Additionally, it can only verify the existence of a specified path, and not its permissions.
+
+If you need more detailed information about a directory, you can use the `DirectoryInfo` class. This class provides methods and properties that allow you to not only check if a directory exists, but also get its attributes, contents, and manipulate it. Here's an example:
 
 ```C#
-bool exists = Directory.Exists(path) ? true : false;
+using System;
+using System.IO;
+
+namespace DirectoryInfoExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = @"C:\Users\John\Documents";
+
+            DirectoryInfo directory = new DirectoryInfo(path);
+
+            if (directory.Exists)
+            {
+                Console.WriteLine("The directory exists!");
+                Console.WriteLine($"Directory name: {directory.Name}");
+                Console.WriteLine($"Creation date: {directory.CreationTime}");
+                Console.WriteLine($"Last accessed: {directory.LastAccessTime}");
+                Console.WriteLine($"Attributes: {directory.Attributes}");
+                Console.WriteLine("Files within directory:");
+
+                FileInfo[] files = directory.GetFiles();
+                foreach (var file in files)
+                {
+                    Console.WriteLine($"- {file.Name}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The directory does not exist.");
+            }
+        }
+    }
+}
 ```
 
-The `exists` variable will have a value of `true` if the directory exists, and `false` if it doesn't. 
+Output:
+```
+The directory exists!
+Directory name: Documents
+Creation date: 09/01/2021 09:00:00 AM
+Last accessed: 09/15/2021 03:00:00 PM
+Attributes: Directory, NotContentIndexed
+Files within directory:
+- file1.txt
+- file2.pdf
+- file3.jpg
+```
 
-## Deep Dive 
+## See Also
 
-The `Directory.Exists()` method is a static method, which means it can be called without creating an instance of the `Directory` class. This method takes in one parameter, which is a string representing the directory path we want to check. 
-
-One thing to note is that this method simply checks if a directory exists at the given path, it does not check if the directory is empty or not. Also, this method only checks for directories, not individual files. For that, you can use the `File.Exists()` method. 
-
-Additionally, if you're working with a large number of directories, it might be more efficient to use the `DirectoryInfo` class and its `Exists` property to check for the existence of a directory. 
-
-## See Also 
-
-- [C# Directory Methods](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0)
-- [C# File Methods](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0)
-- [C# DirectoryInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-5.0)
+- [Directory.Exists() Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- [DirectoryInfo Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo)
+- [Working with Directories in C# (C# Corner)](https://www.c-sharpcorner.com/article/working-with-directories-in-c-sharp/)

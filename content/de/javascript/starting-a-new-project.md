@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Ein neues Projekt beginnen"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Javascript: Ein neues Projekt beginnen"
 simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Es gibt viele Gründe, warum man sich auf ein neues Javascript Programmierprojekt einlassen möchte. Vielleicht möchten Sie eine neue Fähigkeit erlernen, ein bestehendes Programm verbessern oder einfach nur aus Spaß an der Programmierung etwas Neues erschaffen. Egal aus welchem Grund, ein neues Projekt kann eine aufregende und lohnende Herausforderung sein.
+Du bist bereit, ein neues Projekt zu starten und willst wissen, warum du dich dafür engagieren solltest? Nun, es gibt viele mögliche Gründe! Vielleicht möchtest du deine Programmierkenntnisse verbessern, ein persönliches Problem lösen oder einfach nur Spaß haben. Egal, was dich motiviert, das Wichtigste ist, dass du motiviert bist, loszulegen und etwas Neues zu schaffen.
 
-## Wie man anfängt
+# So geht's
 
-Bevor Sie mit der Programmierung beginnen, müssen Sie sicherstellen, dass Sie die notwendigen Werkzeuge haben. Zunächst benötigen Sie einen Texteditor oder eine integrierte Entwicklungsumgebung (IDE), um Ihren Code zu schreiben. Beliebte Optionen sind Visual Studio Code oder Atom. Außerdem benötigen Sie eine aktuelle Version von Node.js, um Ihr Javascript-Programm ausführen zu können.
+Um ein neues Projekt mit Javascript zu starten, gibt es einige wichtige Schritte zu beachten.
 
-Sobald Sie Ihre Werkzeuge eingerichtet haben, können Sie mit dem eigentlichen Codieren beginnen. Hier ist ein einfaches Beispiel, um eine "Hallo Welt!"-Nachricht auszugeben:
+Zunächst musst du sicherstellen, dass du Zugang zu einem geeigneten Entwicklungswerkzeug hast. Dazu gehört in der Regel ein Texteditor oder eine integrierte Entwicklungsumgebung (IDE). Einige gängige Optionen sind Visual Studio Code, Atom oder Sublime Text.
+
+Als Nächstes musst du entscheiden, welche Art von Projekt du erstellen möchtest. Möchtest du eine Webseite erstellen? Eine mobile App? Etwas ganz anderes? Die Wahl der richtigen Art von Projekt ist entscheidend, da sie Auswirkungen auf die Werkzeuge und Frameworks hat, die du verwenden wirst.
+
+Sobald du das erledigt hast, kannst du mit dem eigentlichen Codieren beginnen! Das Schöne an Javascript ist, dass es eine sehr einfache und anpassungsfähige Sprache ist. Hier ist ein einfaches Beispiel, das eine "Hallo Welt!"-Nachricht in der Konsole ausgibt:
 
 ```Javascript
 console.log("Hallo Welt!");
 ```
 
-Wenn Sie diesen Code ausführen, sollte die Nachricht "Hallo Welt!" in der Konsole erscheinen.
+Wenn du das obenstehende Beispiel in deinem Texteditor eingibst und ausführst, solltest du die Nachricht "Hallo Welt!" in der Konsole sehen. Glückwunsch, du hast dein erstes Javascript-Programm geschaffen!
 
-## Tiefere Einblicke
+Jetzt kannst du damit spielen und weitere Anpassungen vornehmen. Vielleicht möchtest du eine Schleife hinzufügen, um die Nachricht mehrmals auszugeben, oder du möchtest eine Benutzereingabe mit der `prompt()`-Funktion einbeziehen. Die Möglichkeiten sind endlos!
 
-Wenn Sie tiefer in die Welt der Javascript-Programmierung eintauchen möchten, gibt es eine Vielzahl von Ressourcen, die Ihnen dabei helfen können. Online-Tutorials, Bücher oder Community-Websites wie Stack Overflow können Ihnen dabei helfen, Ihre Fähigkeiten zu verbessern und Probleme zu lösen.
+# Tiefere Einblicke
 
-Ein wichtiger Aspekt beim Programmieren ist auch die Verwendung von Versionskontrollsystemen wie Git. Diese ermöglichen es Ihnen, Ihre Fortschritte zu verfolgen, Änderungen zu verwalten und mit anderen Entwicklern zusammenzuarbeiten.
+Wenn du dich tiefer mit der Erstellung von Javascript-Projekten beschäftigen möchtest, gibt es viele Ressourcen, die du nutzen kannst.
 
-Es ist auch hilfreich, sich mit den gängigen Frameworks und Bibliotheken auseinanderzusetzen, die in der Javascript-Entwicklung verwendet werden, wie z.B. React, Angular oder jQuery.
+Zum Beispiel gibt es zahlreiche Online-Tutorials und Kurse, die dir helfen können, die Grundlagen von Javascript zu erlernen. Du kannst auch Blogs, Foren und soziale Medien nutzen, um mit anderen Entwicklern in Kontakt zu treten und von ihren Erfahrungen zu lernen.
 
-Insgesamt gibt es viele Möglichkeiten, um Ihr Javascript-Können zu verbessern und erfolgreich an neuen Projekten zu arbeiten. Seien Sie kreativ, experimentieren Sie und vergessen Sie nicht, Hilfe und Unterstützung von der Community zu suchen.
+Es ist auch wichtig, sich mit den neuesten Entwicklungen in der Javascript-Welt auf dem Laufenden zu halten. Neue Frameworks, Bibliotheken und Tools werden ständig entwickelt und können dir helfen, deine Projekte noch besser zu gestalten. Dazu gehören unter anderem React, Angular und Node.js.
 
-## Siehe auch
+Egal, auf welchem Erfahrungsniveau du dich befindest, es gibt immer Möglichkeiten, dich weiterzubilden und deine Fähigkeiten zu verbessern. Vergiss nicht, dass der Prozess des Lernens und Entwickelns genauso wichtig ist wie das Endergebnis deines Projekts.
 
-- [Node.js](https://nodejs.org/en/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Atom](https://atom.io/)
-- [Stack Overflow](https://stackoverflow.com/)
-- [Git](https://git-scm.com/)
-- [React](https://reactjs.org/)
-- [Angular](https://angular.io/)
-- [jQuery](https://jquery.com/)
+# Siehe auch
+
+- [Javascript Einführung](https://www.freecodecamp.org/news/javascript-introduction/)
+- [Visual Studio Code herunterladen](https://code.visualstudio.com/download)
+- [Javascript Frameworks](https://www.guru99.com/top-10-javascript-frameworks.html)

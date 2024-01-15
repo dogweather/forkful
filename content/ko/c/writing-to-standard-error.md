@@ -1,6 +1,7 @@
 ---
-title:                "C: 표준 오류에 쓰는 것"
-simple_title:         "표준 오류에 쓰는 것"
+title:                "표준 에러에 쓰는 방법"
+html_title:           "C: 표준 에러에 쓰는 방법"
+simple_title:         "표준 에러에 쓰는 방법"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,69 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-프로그래밍을 하다보면 때때로 오류가 발생할 수 있습니다. 이러한 오류를 찾고 해결하는 과정에서 디버깅은 매우 중요합니다. 이때, 표준 에러 스트림을 활용하면 디버깅에 도움이 될 수 있습니다. 이 블로그 포스트에서는 표준 에러 스트림을 사용하여 디버깅하는 방법에 대해 알아보겠습니다.
+표준 오류에 쓰기에 참여할 이유를 짧게 설명합니다. 
 
-## 사용 방법
+때로는 디버깅을 위해 프로그램에서 발생하는 오류 메시지를 표준 오류에 출력하는 것이 매우 유용할 수 있습니다. 이를 통해 사람들은 프로그램이 어디서 문제를 일으키고 있는지에 대한 정보를 얻을 수 있습니다. 또한 표준 오류에 메시지를 출력하면 로그 파일을 생성하는 것보다 간단하며 디버깅 과정이 더욱 편리해집니다.
 
-표준 에러 스트림은 "stderr"이라는 파일 포인터를 사용하여 접근할 수 있습니다. 아래 코드는 "Hello World!"를 표준 에러 스트림에 출력하는 간단한 예시입니다.
+## 어떻게
 
-```C
-#include <stdio.h>
-
-int main()
-{
-    fprintf(stderr, "Hello World!");
-    return 0;
-}
-```
-
-위 코드를 컴파일하고 실행하면 아래와 같은 결과를 얻을 수 있습니다.
-
-```
-Hello World!
-```
-
-이번에는 표준 에러 스트림을 사용하여 오류 메시지를 출력하는 예시를 살펴보겠습니다.
+아래의 예제 코드와 샘플 출력을 살펴보면서 표준 오류에 쓰는 법을 익혀보세요.
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    int num = 10;
+int main() {
+    int x = 2;
+    int y = 0;
+    float result;
 
-    if (num < 5)
-    {
-        printf("Number is less than 5.");
+    if (y == 0) {
+        fprintf(stderr, "Cannot divide by zero!");
     }
-    else
-    {
-        fprintf(stderr, "Error: Invalid number!");
+    else {
+        result = (float)x / y;
+        printf("%d divided by %d is %f", x, y, result);
     }
     return 0;
 }
 ```
 
-위 코드를 컴파일하고 실행하면 아래와 같은 결과를 얻을 수 있습니다.
+위의 예제 코드에서는 먼저 `stderr` 파일을 `fprintf()` 함수를 사용하여 열고 메시지를 출력합니다. `stderr`는 표준 오류 파일로서 주로 에러 메시지를 출력하는 데 사용됩니다. 그리고 `printf()` 함수를 사용하여 정상적인 출력을 `stdout` 파일에 하도록 합니다. 이렇게 함으로써 사용자는 오류 메시지와 함께 프로그램의 다른 부분의 출력도 동시에 볼 수 있습니다.
 
-```
-Error: Invalid number!
-```
+## 딥 다이브
 
-위 예시에서 볼 수 있듯이, 표준 에러 스트림을 사용하면 오류 메시지를 출력할 수 있으므로 디버깅에 매우 유용하게 사용할 수 있습니다.
+보통 프로그램에서 오류 메시지를 출력할 때 `fprintf(stderr, ...)`와 같은 방식을 사용합니다. 하지만 여러분은 `perror()`와 같은 더 편리한 함수도 사용할 수 있습니다. `perror()` 함수를 사용하면 오류 메시지와 함께 해당 에러 코드의 의미를 알려줍니다. 예를 들어, `perror("Cannot open file")`를 호출하면 에러 메시지 뒤에 해당 오류 코드의 뜻인 "No such file or directory"가 출력됩니다.
 
-## 더 깊게 알아보기
+또한 `errno`이라는 전역 변수를 사용하여 발생한 오류의 코드를 얻을 수 있습니다. `errno`이 0이 아닌 값을 가지고 있다면 어떤 오류가 발생했는지 확인할 수 있습니다.
 
-표준 에러 스트림의 이해를 위해 다음의 사이트들을 참고할 수 있습니다.
+위에서 소개한 방법들을 사용하면 더욱 편리하게 표준 오류에 쓸 수 있습니다. 하지만 주의할 점은 `stderr` 출력이 크게 성능에 영향을 주지는 않지만, 가능하면 남용하지 않는 것이 좋습니다.
 
-- [C Programming Tutorial: The Standard Error Stream](https://www.learn-c.org/en/The_Standard_Error_Stream)
-- [C - File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Understanding "stderr", "stdout" and "stdin" in C](https://stackoverflow.com/questions/7099995/stderr-stdout-stdin-in-c)
+## 참고
 
-## 더 참고하기
-
-- [C 프로그래밍 개발 환경 구축하기](https://www.itworld.co.kr/news/126096)
-- [C 프로그래밍 배우기](https://www.spoqa.com/blog/256/)
-- [C 개발자를 위한 유용한 자료 모음](https://business.pinterest.com/ko/blog/resources-for-c-developers)
+- [C 표준 라이브러리 문서](https://www.gnu.org/software/libc/manual/html_node/Error-Reporting.html)
+- [C 프로그래밍 입문서](https://ko.wikipedia.org/wiki/C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8)

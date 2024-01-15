@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Ruby: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,50 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-YAML (Yet Another Markup Language) jest popularnym formatem do przechowywania i przesyłania danych w aplikacjach internetowych oraz konfiguracji programistycznych. Jest to łatwy w użyciu format plików tekstowych, który jest przyjazny dla ludzi i maszyn. Praca z YAML może pomóc programistom w ułatwieniu przetwarzania, przenoszenia i przechowywania danych w aplikacjach.
+Dlaczego ktoś powinien zainteresować się pracą z YAML? Ponieważ jest to wygodny i intuicyjny format do przechowywania danych, szczególnie przydatny w programowaniu.
 
 ## Jak to zrobić
 
-Aby zacząć pracować z YAML w języku Ruby, musisz najpierw zainstalować bibliotekę YAML bibliotekę. Możesz to zrobić poprzez wykorzystanie menedżera pakietów Ruby, na przykład RubyGems, lub instalując pakiet yaml z Twojego menedżera pakietów systemu operacyjnego.
-
-Po zainstalowaniu biblioteki możesz rozpocząć tworzenie, przetwarzanie i odczyt danych w formacie YAML w swojej aplikacji Ruby.
-
+Najpierw musimy zainstalować bibliotekę yaml, używając jednego z menadżerów pakietów, takich jak Bundler lub Gem:
 ```Ruby
-require 'yaml'
-
-# Tworzenie prostego pliku YAML
-data = {
-  name: 'Janek',
-  age: 30,
-  occupation: 'Programista'
-}
-File.write('dane.yml', data.to_yaml)
-
-# Odczyt danych z pliku YAML
-daty = YAML.load(File.read('dane.yml'))
-puts daty[:name] # output: Janek
-
-# Przetwarzanie danych YAML do Ruby
-yaml_data = "
-  marki samochodowe:
-    - Toyota
-    - BMW
-    - Mercedes-Benz
-"
-car_brands = YAML.load(yaml_data)
-puts car_brands['marks of cars'] # output: ["Toyota", "BMW", "Mercedes-Benz"]
+gem install yaml
 ```
 
-## Wnikliwa analiza
+Teraz możemy zacząć używać YAML w naszym kodzie. Przykładowo, możemy stworzyć plik YAML zawierający informacje o naszej firmie:
+```Ruby
+company = {
+  name: "MojaFirma",
+  employees: [
+    {
+      name: "Jan Kowalski",
+      position: "Inżynier",
+      salary: 5000
+    },
+    {
+      name: "Anna Nowak",
+      position: "Specjalista ds. marketingu",
+      salary: 4000
+    },
+    {
+      name: "Piotr Nowakowski",
+      position: "Księgowy",
+      salary: 4500
+    }
+  ]
+}
+```
 
-YAML jest łatwym formatem do czytania i edycji przez ludzi, ponieważ jest podobny do języka angielskiego i posiada wyraźną strukturę. Jednak praca z YAML może być trudna dla maszyn, ponieważ niektóre typy danych, takie jak daty i tablice, muszą być przekonwertowane na odpowiednie typy danych Ruby.
+Możemy zapisać ten obiekt do pliku YAML przy użyciu metody `to_yaml`:
+```Ruby
+File.open('company.yaml', 'w') do |file|
+  file.write(company.to_yaml)
+end
+```
 
-Istnieje również wiele zaawansowanych funkcji YAML, które pozwalają na tworzenie bardziej złożonych struktur danych, takich jak mapy i pętle, które mogą ułatwić tworzenie i przetwarzanie danych w aplikacjach.
+Następnie możemy odczytać zawartość pliku YAML i wyświetlić wynik na ekranie:
+```Ruby
+yaml_data = File.read('company.yaml')
+puts yaml_data
+```
 
-Podczas pracy z YAML warto również pamiętać o bezpieczeństwie. Pliki YAML mogą zawierać kod, który może być wykonany przez aplikację, dlatego ważne jest, aby upewnić się, że nie zawierają one niepożądanych poleceń lub danych.
+Kod ten wyświetli następujący wynik:
+```
+---
+:name: MojaFirma
+:employees:
+- :name: Jan Kowalski
+  :position: Inżynier
+  :salary: 5000
+- :name: Anna Nowak
+  :position: Specjalista ds. marketingu
+  :salary: 4000
+- :name: Piotr Nowakowski
+  :position: Księgowy
+  :salary: 4500
+```
 
-## Zobacz również
+## Głębsza analiza
 
-- Dokumentacja YAML: https://yaml.org/
-- RubyGems: https://rubygems.org/
-- Przykłady z GitHub: https://github.com/alexdlaird/yaml-sample
+Format YAML jest oparty na języku przechowywania danych YAML (YAML Ain't Markup Language) i jest używany głównie do przechowywania konfiguracji lub danych. Jego struktura jest oparta na nadrzędnych kluczach i ich wartościach, które mogą być tablicami lub obiektami.
+
+Ważne jest również, aby zawsze przestrzegać składni YAML, ponieważ jest ona bardzo wrażliwa na wcięcia i używanie tabulatorów zamiast spacji może powodować błędy w działaniu kodu.
+
+Podczas pracy z YAML, warto również zapoznać się z różnymi bibliotekami dostępnymi dla języka Ruby, takimi jak `psych` lub `YAML.rb`, które oferują dodatkowe funkcje, takie jak walidacja danych lub konwersja pomiędzy formatami.
+
+## Zobacz także
+
+- [Dokumentacja YAML w języku Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html)
+- [Kurs YAML na stronie Learn Ruby the Hard Way](https://learnrubythehardway.org/book/ex51.html)
+- [Poradnik na temat pracy z YAML w Ruby on Rails](https://pragmaticstudio.com/tutorials/working-with-yaml)

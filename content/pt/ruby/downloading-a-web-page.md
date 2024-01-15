@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Ruby: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que baixar uma página da web?
+## Por que
 
-Baixar uma página da web pode ser útil por vários motivos, como por exemplo para realizar análises de dados, obter informações específicas ou simplesmente para fins de aprendizagem.
+Fazer o download de uma página da web pode ser útil para extrair dados ou até mesmo para acessar informações offline.
 
-## Como fazer:
+## Como Fazer
 
-Para baixar uma página da web em Ruby, podemos usar a gem "open-uri", que permite abrir URLs como se fossem arquivos locais. Primeiro, precisamos instalar a gem em nosso ambiente Ruby:
-
-```Ruby
-gem install open-uri
-```
-
-Em seguida, podemos usar o método "open" para abrir a URL desejada e salvar o conteúdo em uma variável:
+Fazer o download de uma página da web é bastante simples usando a linguagem de programação Ruby. Primeiramente, é preciso instalar a gem "net/http", que irá permitir que nosso código faça requisições HTTP. Em seguida, podemos utilizar o método "get" desta gem passando a URL da página que desejamos fazer o download. Veja o exemplo abaixo:
 
 ```Ruby
-require 'open-uri'
-url = "https://www.example.com"
-page = open(url).read
+require "net/http"
+
+url = "https://www.mywebsite.com"
+
+response = Net::HTTP.get(URI.parse(url))
+
+puts response
 ```
 
-Podemos então imprimir o conteúdo da página:
+Este código irá fazer o download da página "https://www.mywebsite.com" e imprimir o seu conteúdo no terminal. Podemos, então, utilizar o conteúdo da resposta para realizar outras tarefas, como armazenar em um arquivo ou fazer parsing para extrair informações específicas.
 
-```Ruby
-puts page
-```
+## Deep Dive
 
-E já que o conteúdo foi salvo em uma variável, podemos também manipulá-lo da forma que for necessária.
+Ao fazer o download de uma página da web usando Ruby, é importante ter em mente que a resposta será fornecida em formato de string, o que significa que podemos utilizar todos os métodos de manipulação de strings disponíveis na linguagem. Além disso, é possível passar opções adicionais para o método "get", como o uso de autenticação ou passar headers específicos na requisição.
 
-## Mergulho profundo:
+Outro ponto importante é entender que a resposta irá incluir não somente o conteúdo da página em si, mas também informações sobre o status da requisição, headers e outros metadados. Todas essas informações podem ser utilizadas para diferentes propósitos.
 
-A gem "open-uri" também nos permite realizar operações mais avançadas ao baixar páginas da web. Por exemplo, podemos usá-la para realizar requisições com diferentes métodos HTTP, como GET, POST ou PUT. Também podemos adicionar headers personalizados ou até mesmo autenticar no servidor antes de baixar o conteúdo.
+## Veja Também
 
-Além disso, podemos ler o conteúdo da página linha por linha ou até mesmo modificar as URLs dos links presentes na página antes de salvar o conteúdo. Tudo isso torna a gem "open-uri" uma ótima ferramenta para realizar tarefas relacionadas a páginas da web em nossos projetos em Ruby.
-
-## Veja também:
-
-- Documentação da gem "open-uri": https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html
-- Exemplos de uso da gem "open-uri": https://github.com/ruby/ruby/blob/master/lib/open-uri.rb
-- Tutorial sobre como baixar e manipular páginas da web em Ruby: https://www.pluralsight.com/guides/ruby-web-scraping-and-processing-tutorial
+- [Documentação da gem "net/http"](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Tutorial sobre Web Scraping com Ruby](https://www.geeksforgeeks.org/web-scraping-in-ruby-using-nokogiri-with-example/)

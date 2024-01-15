@@ -1,6 +1,7 @@
 ---
-title:                "Swift: एक तारीख को स्ट्रिंग में रूपांतरित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरित करना"
+title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "Swift: तारीख को स्ट्रिंग में रूपांतरण करना"
+simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,31 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+# Kyun
+Soch rahe ho ki apna date ko string mein convert kyun karna chahiye? Yeh ek common problem hai jo developers face karte hai jab unhe apne apps mein date ko display karna hota hai. Date ko direct display karna thoda ajeeb lagta hai aur logon ko confusion ho sakta hai. Isiliye hum date ko string mein convert karte hai jisse hum usse apne hisab se format kar sake.
 
-Aksar hume apne programming projects mein dates ko string mein convert karna padta hai. Iska sabse bada karan hai ki dates ko string mein convert karna humare code ko readable aur understandable banata hai. Saath hi, dates ki formatting ko bhi hum aise set kar sakte hai jaisa hum chahte hai.
-
-## Kaise
-
-Swift mein, hum Date() data type se dates ko represent karte hai. Lekin, ye data type humare liye dates ko string mein convert nahi karta hai. Iske liye hume DateFormatter class ka istemaal karna padta hai. Is class se hume ek formatter create karna padega, jisme hum dates ki formatting ko set kar sakte hai. Fir hum uss formatter ko use karke Date ko string mein convert kar sakte hai. Yeh kaam hum `string(from: Date)` method se kar sakte hai. Neeche diye gaye code blocks mein iska example diya gaya hai:
+# Kaise Karein
+Date ko string mein convert karne ke liye, hum DateFormatter class ka istemal karenge. Is class ke ek object ke through hum date ko string mein convert kar sakte hai. Chaliye ek example ke through dekhte hai:
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy" // Humne date ki formatting set ki hai
-let today = Date()
-let dateString = dateFormatter.string(from: today)
-print(dateString) // Output: 05/07/2020
+let date = Date() // current date
+let formatter = DateFormatter()
+formatter.dateFormat = "dd MMMM yyyy" // desired date format
+let dateString = formatter.string(from: date)
+print(dateString) // output: 14 January 2021
 ```
 
-Is code mein humne `dateFormatter` create kiya aur usme `dateFormat` set kiya. Iske baad hum `string(from: Date)` method ka use karke `today` ko string mein convert kiya aur fir ussi string ko print kiya.
+Is code mein humne ek current date li aur usse desired format mein string mein convert kiya. Date format ko apne hisab se change kar sakte hai jaise "yyyy/MM/dd" ya "MMMM dd, yyyy" aur bhi bahut sare formats hai jo aap apne project ke according choose kar sakte hai.
 
-## Badi Gehrayi
+# Gehrai Mein Jaayein
+DateFormatter class hume bahut sari functionality deta hai jaise hum time zone, locale, calendar, aur bhi bahut kuch specify kar sakte hai. Hum is class ke through ek specific date format nahi balki ek customized date format bhi use kar sakte hai. Agar aapke pass ek custom date format hai to aap use "dateFormat" property ke sath set kar sakte hai. Aur agar aapke pass ek date string hai to aap use "date(from:)" method ke sath Date object mein convert kar sakte hai.
 
-Dates ko string mein convert karna thoda sa complex ho sakta hai. Humne example mein ek simple formatting use kiya lekin humare paas aur bhi options hai formatting ki. Hum apne date format mein `yyyy` likh kar usme 4 ya 2 digits ko add kar sakte hai, jisse year ki length ko hum control kar sake. Saath hi, hum `MMM` ya `MMMM` ka use karke bhi month ko alag-alag tarikon se represent kar sakte hai.
-
-Saath hi, dates ki formatting ke alawa hum isme time zone aur localizations bhi set kar sakte hai. Isse hum apne output ko apne hisaab se customize kar sakte hai. Iske liye hume DateFormatter ke `timeZone` aur `locale` properties ka use karna padega.
-
-## Dekhein Bhi
-
-["Working with Dates in Swift"](https://www.hackingwithswift.com/read/11/2/working-with-dates-in-swift) <br>
-["Formatting Dates in Swift using DateFormatter"](https://medium.com/@javedmultani16/formatting-dates-in-swift-using-dateformatter-55db75c593e7)
+See Also:
+- https://developer.apple.com/documentation/foundation/dateformatter
+- https://www.hackingwithswift.com/example-code/language/how-to-convert-dates-and-times-to-a-string-using-dateformatter

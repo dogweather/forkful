@@ -1,5 +1,6 @@
 ---
-title:                "C++: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "C++: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "C++"
 category:             "C++"
@@ -11,72 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur C++ à la recherche d'un moyen simple et efficace pour stocker et transférer des données, alors travailler avec YAML peut être la solution parfaite pour vous. YAML est un format de sérialisation de données qui est facile à lire et à écrire pour les humains, ce qui en fait un choix populaire pour les fichiers de configuration et les échanges de données.
+Si vous êtes développeurs en C++, vous avez probablement entendu parler de YAML. Mais vous vous demandez peut-être pourquoi vous devriez vous en soucier. Eh bien, YAML est un format de sérialisation de données qui est beaucoup plus facile à utiliser et à lire que le JSON ou le XML. Si vous manipulez souvent des données structurées dans vos applications, YAML peut être un outil très utile à ajouter à votre boîte à outils.
 
-## Comment faire
+## Comment utiliser YAML en C++
 
-Pour travailler avec YAML en C++, vous devez utiliser une bibliothèque comme yaml-cpp. Voici un exemple de code pour lire et écrire dans un fichier YAML en utilisant cette bibliothèque :
+Pour commencer à travailler avec YAML en C++, vous devrez d'abord inclure la bibliothèque YAML dans votre projet. Ensuite, vous pourrez utiliser la fonction "LoadFile" pour charger un fichier YAML et le stocker dans un objet "Node". Une fois que vous avez chargé le fichier, vous pouvez accéder aux données en utilisant la notation "[]" pour parcourir les différentes clés et valeurs.
 
 ```C++
 #include <iostream>
-#include <fstream>
-#include "yaml-cpp/yaml.h"
+#include <yaml-cpp/yaml.h>
 
 int main() {
-// Écrire dans un fichier YAML
-YAML::Emitter out;
-out << YAML::BeginMap;
-out << YAML::KeyValue("name", "John");
-out << YAML::KeyValue("age", 25);
-out << YAML::KeyValue("hobbies", YAML::BeginSeq) << "Hiking" << "Reading" << "Cooking" << YAML::EndSeq;
-out << YAML::EndMap;
-
-std::ofstream fout("info.yaml");
-fout << out.c_str();
-fout.close();
-
-// Lire à partir du fichier YAML
-YAML::Node node = YAML::LoadFile("info.yaml");
-std::cout << node["name"].as<std::string>() << std::endl;
-std::cout << node["age"].as<int>() << std::endl;
-YAML::Node hobbies = node["hobbies"];
-for (auto hobby : hobbies) {
-std::cout << hobby.as<std::string>() << std::endl;
-}
-
-return 0;
+    YAML::Node config = YAML::LoadFile("config.yaml"); // Charger le fichier YAML dans un objet "Node"
+    std::cout << config["key"]["subkey"].as<std::string>(); // Accéder à la valeur de la sous-clé "subkey" du "key"
+    return 0; 
 }
 ```
 
-Voici le contenu du fichier YAML qui sera créé :
+### Exemple de fichier YAML
+
+Voici un exemple de fichier YAML qui pourrait être chargé dans l'exemple de code ci-dessus :
 
 ```YAML
-name: John
-age: 25
-hobbies:
-- Hiking
-- Reading
-- Cooking
+key:
+    subkey: "valeur"
 ```
+
+### Sortie de l'exemple de code
+
+La sortie de l'exemple de code ci-dessus sera "valeur", car c'est la valeur associée à la clé "subkey" dans notre fichier YAML.
 
 ## Plongée en profondeur
 
-En plus des fonctionnalités de base pour lire et écrire dans des fichiers YAML, yaml-cpp offre également une fonctionnalité intéressante appelée le "Node API". Cela vous permet de manipuler des données YAML en tant qu'objet et d'accéder aux valeurs de manière plus pratique. Voici un exemple d'utilisation de cette fonctionnalité :
+Maintenant que vous avez une compréhension de base de comment utiliser YAML en C++, voici quelques informations supplémentaires pour approfondir votre compréhension :
 
-```C++
-YAML::Node node = YAML::LoadFile("info.yaml");
-std::string name = node["name"].as<std::string>();
-int age = node["age"].as<int>();
-node["hobbies"].push_back("Gardening"); // Ajoute un nouveau hobby
-node["age"] = age + 1; // Met à jour l'âge de la personne
-```
-
-En utilisant le "Node API", vous pouvez également facilement vérifier la présence d'une clé dans un nœud YAML et gérer les erreurs lors de la conversion de valeurs.
+- YAML utilise une syntaxe simple et facile à lire, qui le rend très populaire pour définir des configurations et des données structurées.
+- Il existe plusieurs façons de charger des fichiers YAML, en fonction de vos besoins. Vous pouvez utiliser "LoadFile", "LoadAll", ou même charger manuellement chaque nœud et sa valeur.
+- Les objets de la bibliothèque YAML sont hérités de la classe "YAML::Node", ce qui signifie que vous pouvez accéder aux données de différentes manières, en utilisant des opérateurs comme "[]" ou ".".
 
 ## Voir aussi
 
-Pour en savoir plus sur YAML et sur la bibliothèque yaml-cpp, vous pouvez consulter les liens suivants :
+Maintenant que vous savez comment utiliser YAML en C++, voici quelques liens utiles pour continuer à apprendre et à approfondir vos connaissances :
 
-- Documentation officielle de YAML : https://yaml.org/
-- Documentation de yaml-cpp : https://github.com/jbeder/yaml-cpp/wiki/Tutorial
-- Exemple de projet utilisant yaml-cpp : https://github.com/jbeder/yaml-cpp/tree/master/examples
+- Documentation officielle de la bibliothèque YAML : https://github.com/jbeder/yaml-cpp/wiki/Tutorial
+- Guide de référence rapide pour travailler avec YAML en C++ : https://www.codeproject.com/Articles/1169865/Working-with-YAML-using-Cplusplus
+- Tutoriel vidéo pour apprendre à utiliser YAML en C++ : https://www.youtube.com/watch?v=Q2iyXQ5aVHk

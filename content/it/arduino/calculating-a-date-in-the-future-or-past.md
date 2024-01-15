@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Arduino: Calcolare una data nel futuro o nel passato"
 simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,74 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se stai costruendo un progetto con Arduino che ha a che fare con date, come un calendario elettronico o un timer, potresti voler calcolare una data nel futuro o nel passato. Questo può essere utile per impostare gli eventi del tuo progetto in base a determinate date o per avere una visualizzazione comoda dei giorni trascorsi. In questo post, ti mostreremo come utilizzare Arduino per calcolare una data in modo facile e preciso utilizzando il linguaggio di programmazione C++.
+Hai mai desiderato sapere in che giorno della settimana cadrà il tuo compleanno fra 5 anni? O forse hai bisogno di calcolare una data futura per un progetto? Con l'Arduino, puoi facilmente scrivere un programma per calcolare le date in avanti o all'indietro.
 
-## Come Fare
+## Come fare
 
-Per iniziare, devi impostare la tua scheda Arduino con il codice necessario per l'utilizzo della libreria "Time.h". Assicurati di aver scaricato e installato correttamente la libreria nel tuo ambiente di sviluppo. Una volta fatto, puoi utilizzare la funzione "dateToDays()" per convertire una data in giorni. Ad esempio, se volessi calcolare i giorni trascorsi dal 1 gennaio 1970, puoi utilizzare il seguente codice:
+Per calcolare una data futura o passata con Arduino, segui questi semplici passaggi:
 
-```
-Arduino
+1. Importa la libreria Time.h inserendo `#include <Time.h>` all'inizio del tuo codice.
+2. Definisci le variabili per la data e l'ora utilizzando il tipo `tmElements_t`. Ad esempio, `tmElements_t futureDate`.
+3. Usa la funzione `breakTime` per decomporre la data in variabili individuali. Ad esempio, `breakTime(currentTime, futureDate)`.
+4. Modifica le variabili desiderate, come ad esempio l'anno, il mese o il giorno, per ottenere la data desiderata. Ad esempio, `futureDate.Year = 2026`.
+5. Utilizza la funzione `makeTime` per ricomporre la data e ottenere il timestamp. Ad esempio, `unsigned long futureTime = makeTime(futureDate)`.
+
+Ecco un esempio di come potrebbe apparire il tuo codice:
+
+```Arduino
 #include <Time.h>
 
-int giorno = 1;
-int mese = 1;
-int anno = 1970;
+tmElements_t futureDate; // Definisci la variabile per la data
+unsigned long futureTime; // Definisci la variabile per il timestamp
 
-int giorni_trascorsi = dateToDays(anno, mese, giorno);
+void setup() {
+  setSyncProvider(RTC.get); // Imposta il provider per il sincronizzazione dell'orologio in tempo reale
+  setTime(12, 0, 0, 1, 1, 2021); // Imposta la data attuale
+  breakTime(now(), futureDate); // Decomponi la data attuale in variabili
+  futureDate.Year = 2026; // Modifica l'anno per ottenere la data futura desiderata
+  futureTime = makeTime(futureDate); // Ricomponi la data e ottieni il timestamp
+}
 
+void loop() {
+  // Fai qualcosa con il timestamp, come ad esempio visualizzarlo su un display
+  delay(1000); // Attendi un secondo
+}
 ```
 
-In questo esempio, la variabile "giorni_trascorsi" conterrà il numero totale di giorni trascorsi dal 1 gennaio 1970. Puoi poi utilizzare questa informazione per calcolare una data futura o passata. Ad esempio, per ottenere una data nel futuro, puoi aggiungere semplicemente un numero di giorni a questa variabile:
+## Approfondimento
 
-```
-Arduino
-int giorni_trascorsi = dateToDays(anno, mese, giorno);
+Se sei interessato a saperne di più su come funzionano i calcoli di date con l'Arduino, ecco alcune informazioni utili:
 
-// Aggiungi 10 giorni alla data
-giorni_trascorsi = giorni_trascorsi + 10;
+- In Arduino, le date e le ore sono rappresentate come timestamp, ovvero un numero intero che indica il numero di secondi trascorsi dal 1 gennaio 1970. Questo è conosciuto come "epoch time".
+- Utilizzando la libreria Time.h, puoi facilmente convertire un timestamp in variabili di date e ore, e viceversa.
+- Assicurati di impostare correttamente la data e l'ora sul tuo Arduino prima di utilizzare le funzioni `now()` e `makeTime()`.
+- Controlla sempre i limiti delle variabili, ad esempio l'anno deve essere compreso tra 1970 e 2106.
 
-```
+## Vedi anche
 
-Per ottenere una data nel passato, puoi invece sottrarre un numero di giorni:
-
-```
-Arduino
-int giorni_trascorsi = dateToDays(anno, mese, giorno);
-
-// Sottrai 10 giorni alla data
-giorni_trascorsi = giorni_trascorsi - 10;
-
-```
-
-Una volta ottenuto il numero di giorni desiderato, puoi utilizzare la funzione "daysToDate()" per convertirlo in una data. Ad esempio, per convertire i giorni trascorsi in una data, puoi utilizzare il seguente codice:
-
-```
-Arduino
-// Converti i giorni trascorsi in una data
-int converted_days = daysToDate(giorni_trascorsi);
-
-```
-
-Tieni presente che questa funzione restituisce i mesi, i giorni e gli anni in un formato di 3 cifre. Quindi, per ottenere una data più leggibile, puoi dividerla nei rispettivi componenti di giorno, mese e anno. Ad esempio:
-
-```
-Arduino
-// Divide i componenti della data
-int giorni = converted_days % 100;
-int mesi = (converted_days / 100) % 100;
-int anni = converted_days / 10000;
-
-```
-
-## Deep Dive
-
-Calcolare una data nel futuro o nel passato è un processo piuttosto semplice una volta che hai compreso come utilizzare la libreria "Time.h" e le sue funzioni. Tuttavia, tieni presente che questa libreria utilizza il timezone GMT, quindi potresti dover effettuare alcune conversioni se hai bisogno di utilizzare i fusi orari locali.
-
-Inoltre, puoi anche utilizzare la funzione "makeTime()" per creare una data con un orario specifico. Ad esempio, se vuoi calcolare una data e un orario nel futuro, puoi usare questa funzione per ottenere una data più precisa.
-
-## Vedi Anche
-
-- [Libreria Time.h di Arduino](https://www.arduino.cc/reference/en/libraries/time/)
-- [Documentazione Time.h](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [Tutorial su Arduino e la libreria Time.h](https://www.arduino.cc/en/Tutorial/Time)
+- [Tutorial su come utilizzare la libreria Time.h con Arduino](https://www.arduino.cc/en/Tutorial/TimeLibrary)
+- [Documentazione ufficiale della libreria Time.h](https://www.pjrc.com/teensy/td_libs_Time.html)

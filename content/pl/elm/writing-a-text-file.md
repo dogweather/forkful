@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Elm: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,42 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać plik tekstowy w języku Elm?
+## Dlaczego
 
-Pisanie plików tekstowych jest jedną z podstawowych czynności podczas pracy programisty. W języku programowania Elm jest to szczególnie ważne, ponieważ jest on zaprojektowany z myślą o prostocie i czytelności. Pisanie plików tekstowych w Elm może również pomóc w organizacji kodu i utrzymaniu jego czystości.
+Pisanie plików tekstowych może być konieczne w wielu przypadkach, na przykład jeśli chcemy zapisać wyniki działania naszego programu na dysku twardym lub udostępnić je innym użytkownikom w postaci czytelnego tekstu.
 
-## Jak pisać plik tekstowy w języku Elm?
+## Jak to zrobić
 
-Aby napisać plik tekstowy w języku Elm, potrzebujemy kilku prostych kroków. Najpierw musimy utworzyć nowy plik z rozszerzeniem ".elm". Następnie możemy przejść do pisania kodu, używając specjalnych funkcji do obsługi plików tekstowych, takich jak `Text.append` czy `Text.writeFile`.
+Aby zapisać plik tekstowy w Elm, możemy użyć funkcji `File.write` z biblioteki `File`:
 
-```elm
--- Tworzenie pliku "hello.txt"
-let hello = "Cześć, jestem Elm!"
-Text.writeFile "hello.txt" hello
-```
-Podczas pisania pliku tekstowego w Elm, należy pamiętać o ważnym aspekcie - zamykaniu pliku po zakończeniu pracy. W przeciwnym razie możemy spowodować np. utratę danych. Aby uniknąć takiej sytuacji, możemy użyć funkcji `File.withFile`, która automatycznie zamyka plik po zakończeniu wykonywania podanego kodu.
-
-```elm
--- Tworzenie pliku "hello.txt" i dodawanie do niego tekstu
-File.withFile "hello.txt" [File.Write, File.Append] (\file ->
-    File.write file "Witaj, jestem Elm!"
-)
+```Elm
+File.write "wyniki.txt" "To jest przykładowy tekst do zapisania w pliku"
 ```
 
-## Głębszy wgląd w pisanie pliku tekstowego w języku Elm
+W powyższym przykładzie, po podaniu nazwy pliku oraz tekstu, funkcja `File.write` automatycznie utworzy plik i zapisze w nim podany tekst.
 
-Pisząc plik tekstowy w Elm, powinniśmy również pamiętać o różnych sposobach formatowania i organizacji tekstu. Możemy używać różnych funkcji do manipulacji tekstem, takich jak `Text.toUpper` czy `Text.lines`, aby dostosować plik do naszych potrzeb. Warto również zwrócić uwagę na obsługę błędów przy zapisywaniu pliku, na przykład używając funkcji `Result.mapError`.
+## Deep Dive
 
-```
--- Przykład funkcji zwracającej błąd przy zapisywaniu pliku
-File.withFile "hello.txt" [File.Write, File.Append] (\file ->
-    File.write file "Witaj, jestem Elm!"
-        |> Result.mapError (\err -> Debug.toString err)
-)
-```
+W przypadku bardziej skomplikowanych operacji na plikach, warto zapoznać się z modułem `File.System` w bibliotece `elm/filesystem`, który oferuje więcej możliwości, takich jak zapisywanie plików w wybranym folderze czy odczytywanie zawartości istniejącego pliku.
 
-## Zobacz też
-
-- Dokumentacja języka Elm: https://elm-lang.org/docs
-- Oficjalna strona języka Elm: https://elm-lang.org/
-- Przykładowy projekt w Elm: https://github.com/rtfeldman/elm-spa-example
+See Also
+* https://package.elm-lang.org/packages/elm/filesystem/latest/
+* https://guide.elm-lang.org/interop/file_system.html
+* https://medium.com/@jkup/do-it-yourself-diy-elm-external-file-io-part-1-file-io-fd80c286a549

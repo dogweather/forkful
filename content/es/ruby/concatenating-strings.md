@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Uniendo cadenas de texto"
-simple_title:         "Uniendo cadenas de texto"
+title:                "Uniendo cadenas"
+html_title:           "Ruby: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,48 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-La concatenación de cadenas es una técnica clave en la programación Ruby para combinar múltiples cadenas en una sola. Esto es útil para crear mensajes personalizados, generar código dinámicamente o para cualquier tarea que requiera la combinación de cadenas.
+
+Si estás aprendiendo a programar en Ruby, una de las cosas que seguramente necesitarás hacer es concatenar strings. Esto significa unir dos o más strings para formar uno solo. Puede ser útil en diferentes situaciones, por ejemplo, imprimir un mensaje personalizado o combinar información de diferentes variables.
 
 ## Cómo hacerlo
-Para concatenar cadenas en Ruby, podemos usar el operador de suma (+) o el método ```.concat```. Veamos algunos ejemplos:
 
-```ruby
-# Usando el operador +
+Para concatenar strings en Ruby, puedes utilizar el operador de suma (+) o el método `.concat()`. Veamos algunos ejemplos:
+
+```Ruby
+# Utilizando el operador de suma
 nombre = "María"
 apellido = "García"
-nombre_completo = nombre + " " + apellido
-puts nombre_completo  # María García
+edad = 25
 
-# Usando el método .concat
-mensaje = "¡Hola "
-nombre = "Carlos"
-mensaje.concat(nombre)
-puts mensaje # ¡Hola Carlos
+mensaje = nombre + " " + apellido + " tiene " + edad.to_s + " años."
+puts mensaje # output: María García tiene 25 años.
+
+# Utilizando el método .concat()
+nombre = "Juan"
+apellido = "Martínez"
+edad = 30
+
+mensaje = nombre.concat(" ").concat(apellido).concat(" tiene ").concat(edad.to_s).concat(" años.")
+puts mensaje # output: Juan Martínez tiene 30 años.
 ```
+
+Podemos notar que en ambos casos tuvimos que convertir la variable `edad` a string utilizando el método `.to_s`, ya que no podemos sumar una string con un integer.
 
 ## Profundizando
-Además de estos métodos básicos, también podemos usar el método ```.prepend``` para agregar texto al principio de una cadena, y el método ```.insert``` para insertar texto en una posición específica. También podemos usar el interpolación de cadenas para combinar variables dentro de una cadena, encerrándolas entre llaves y un signo de dólar ($).
 
-```ruby
-# Usando .prepend
-nombre = "Ana"
-mensaje = "Feliz cumpleaños "
-mensaje.prepend(nombre + ", ")
-puts mensaje # Ana, Feliz cumpleaños
+Además de los métodos mencionados anteriormente, existen otras formas de concatenar strings en Ruby. Por ejemplo, el método `.prepend()` que agrega un string al inicio de otro, o el método `.<<()` que permite agregar un string al final de otro. También podemos utilizar el método `.concat()` con múltiples parámetros para unir más de dos strings.
 
-# Usando .insert
-nombre = "Pedro"
-saludo = "¡Bienvenido a Ruby!"
-mensaje.insert(11, nombre + ", ")
-puts mensaje # ¡Bienvenido a Ruby, Pedro!
+Otra forma de concatenar strings es mediante la interpolación, donde utilizamos el símbolo `#{}` dentro de una string para llamar a una variable o una expresión. Por ejemplo:
 
-# Interpolación de cadenas
-edad = 25
-mensaje = "Tengo #{edad} años de edad"
-puts mensaje # Tengo 25 años de edad
+```Ruby
+nombre = "Laura"
+edad = 35
+
+mensaje = "#{nombre} tiene #{edad} años."
+puts mensaje # output: Laura tiene 35 años.
 ```
 
+Finalmente, es importante tener en cuenta que podemos concatenar diferentes tipos de datos, no solo strings. Podemos unir strings con integers, floats, arrays e incluso otros objetos que se puedan convertir a string.
+
 ## Ver también
-- Documentación oficial de Ruby sobre la concatenación de cadenas: https://ruby-doc.org/core-2.7.1/String.html#method-i-2B
-- Ejemplos prácticos de concatenación de cadenas: https://www.geeksforgeeks.org/how-to-concatenate-two-strings-in-ruby/
-- Experiencias y recomendaciones de programadores sobre la concatenación de cadenas en Ruby: https://stackoverflow.com/questions/4582207/how-to-concatenate-strings-in-ruby
+
+- [Ruby Guide (en español)](https://ruby-doc.org/core-2.7.1/doc/guides/)
+- [Documentación oficial de Ruby (en inglés)](https://ruby-lang.org/en/documentation/)

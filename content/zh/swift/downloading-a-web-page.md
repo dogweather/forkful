@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 从网页下载"
-simple_title:         "从网页下载"
+title:                "下载网页"
+html_title:           "Swift: 下载网页"
+simple_title:         "下载网页"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,58 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要下载网页
+## 为什么
 
-下载网页是一种获取网络资源的常用方式，可以让我们随时随地浏览我们感兴趣的内容。无论是获取新闻、学习知识还是娱乐，下载网页都是一个方便有效的方法。在本文中，我们将学习如何用 Swift 编程语言下载网页，并深入了解这个过程的原理。
+网页是我们日常生活中不可或缺的一部分，有时我们可能想要下载一个网页，无论是为了保存信息还是离线浏览。Swift语言提供了一种简单的方法来实现这一目的，让我们一起来看看如何做到吧！
 
-# 如何下载网页
+## 如何做
 
-要在 Swift 中下载网页，我们可以使用 Foundation 框架提供的 `Data(contentsOf:)` 方法。此方法接受一个 URL 参数，并返回一个包含下载内容的 Data 对象。
+首先，我们需要引入Foundation框架，它包含了我们需要的NSURLSession类。
 
-```Swift
-if let url = URL(string: "https://www.example.com") {
-    do {
-        let data = try Data(contentsOf: url)
-        // 处理下载的数据
-    } catch {
-        // 处理错误
-    }
+```
+import Foundation
+```
+
+然后，我们需要初始化一个NSURLSession对象，并为其设置一个代理。代理是一个实现NSURLSessionDelegate协议的类，它可以监听下载过程中的不同阶段并传递相关的信息。在这个例子中，我们将简单地打印出下载进度。
+
+```
+let session = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
+```
+
+接下来，我们需要创建一个URL对象来指定我们要下载的网页。在这里，我们以Apple官网为例。
+
+```
+if let url = URL(string: "https://www.apple.com/") {
+    let task = session.downloadTask(with: url)
+    task.resume()
 }
 ```
 
-此外，我们还可以使用 URLSession 和 URLSessionDataTask 类来实现网页下载，并通过实现 URLSessionDataDelegate 协议来处理下载数据。
+注意，我们使用downloadTask方法来创建一个下载任务，并在完成之后调用resume方法来开始下载。现在，让我们来实现代理方法来输出下载进度。
 
-```Swift
-if let url = URL(string: "https://www.example.com") {
-    // 创建 URLSession 对象
-    let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-    // 创建 URLSessionDataTask 对象，并发起网络请求
-    let task = session.dataTask(with: url)
-    task.resume()
-}
+```
+extension ViewController: URLSessionDelegate {
 
-// 实现 URLSessionDataDelegate 协议中的方法
-extension ViewController: URLSessionDataDelegate {
-
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        // 处理接收到的数据
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("下载完成")
     }
 
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        // 处理请求完成的回调，包括错误处理
+        if let error = error {
+            print("下载出错：\(error.localizedDescription)")
+        }
     }
 }
 ```
 
-# 深入了解
+运行我们的代码，你将会看到在控制台输出下载完成的信息。当然，在实际的应用中，我们还可以利用下载任务返回的URL对象来获取和保存下载下来的数据，这超出了本文的范围。
 
-在这个简单的下载网页示例中，我们熟悉了两种常用的下载方法，并简单介绍了 URLSession 的使用。但实际上，下载网页是一个复杂的过程，涉及到网络协议、数据传输、错误处理等多个方面的知识。如果想要更深入地了解下载网页的原理，我们可以学习相关的网络编程知识，并阅读相关文档和资料。
+## 深入了解
 
-# 查看更多
+这里还有一些有用的知识点，可以帮助你更深入理解下载网页的过程。
 
-- [Apple 官方文档：URLSession Class Reference](https://developer.apple.com/documentation/foundation/urlsession)
-- [Apple 官方文档：URLSessionDataDelegate Protocol Reference](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate)
-- [一起学 Swift - 网络编程基础](https://xiaozhuanlan.com/ios_interview/4407869430)
-- [简书 - iOS 中网络编程指南](https://www.jianshu.com/p/43f3c3538041)
-- [GitHub - Swift 网络编程基础课件](https://github.com/ChenYilong/iOSBlog/issues/2)
-- [掘金 - Swift 4 网络编程入门教程](https://juejin.im/post/5b37b97f6fb9a00e49797a07)
+首先，我们使用的是NSURLSession类来进行下载，它提供了三种不同的下载任务：dataTask、downloadTask和uploadTask。文中我们使用的是downloadTask，它专门用于下载大型文件。如果我们需要下载普通的数据，比如JSON，那么可以使用dataTask任务。
+
+其次，下载任务会在后台线程中执行，因此需要我们根据需要在代理方法中切换到主线程来更新UI。
+
+最后，我们可以设置NSURLSessionConfiguration对象来配置我们的下载任务，例如设置缓存策略、超时时间、最大并发数等等。详情请参考苹果官方文档。
+
+## 参考链接
+
+- [Apple官方文档（英文）](https://developer.apple.com/documentation/foundation/urlsession)
+- [廖师兄的Swift教程（中文）](https://www.liaoxuefeng.com/wiki/1252599548343744/1305201183390114)

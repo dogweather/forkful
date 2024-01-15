@@ -1,5 +1,6 @@
 ---
-title:                "Java: 文字列の大文字化"
+title:                "文字列の大文字化"
+html_title:           "Java: 文字列の大文字化"
 simple_title:         "文字列の大文字化"
 programming_language: "Java"
 category:             "Java"
@@ -11,41 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の大文字化に取り組む理由を説明します。
+文字列を大文字にすることに興味がある人々にとって、この記事は役立つ情報を提供します。文字列を大文字にすることは、データ処理やUIデザインなど、多くのプログラミングタスクで必要になるためです。
 
 ## 方法
 
-文字列を大文字化するには、まず文字列を取得し、それを`toUpperCase()`メソッドを使用して大文字に変換します。その後、新しい文字列を返すために、`toUpperCase()`メソッドを使用します。
-
 ```Java
-// 文字列を取得
-String originalString = "hello world";
-
-// `toUpperCase()`メソッドを使って大文字に変換
-String capitalizedString = originalString.toUpperCase();
-
-// 変換後の文字列を出力
-System.out.println(capitalizedString);
+public class StringCapitalization {
+    public static void main(String[] args) {
+        // 入力の文字列
+        String input = "hello world";
+        // 文字列を大文字に変換
+        String capitalized = input.toUpperCase();
+        // 変換した文字列の出力
+        System.out.println(capitalized);
+    }
+}
 ```
-
-出力:
 ```
 HELLO WORLD
 ```
 
-## 深堀り
+この例では、Javaの`toUpperCase()`メソッドを使用して文字列を大文字に変換しています。このメソッドは、文字列の各文字を大文字に変換し、新しい文字列オブジェクトとして返します。単純な方法で文字列を大文字に変換することができます。
 
-文字列を大文字化することは、プログラマーにとって非常に重要です。多くの場合、ユーザーからの入力を扱う場合、大文字と小文字を区別しないようにしたい場合があります。また、文字列の比較やソートを行う際にも大文字と小文字を区別しない方が便利です。
+## ディープダイブ
 
-Javaでは、`toUpperCase()`メソッドの他にも、`toLowerCase()`メソッドを使用することで文字列を小文字化することもできます。また、`equalsIgnoreCase()`メソッドを使用することで、大文字と小文字を無視して文字列を比較することもできます。
+文字列を大文字に変換する際には、`toUpperCase()`メソッドの他にもさまざまな方法があります。例えば、Javaの`String`クラスには、`charAt()`メソッドを使用して文字列の各文字にアクセスし、`Character`クラスの`toUpperCase()`メソッドを使用して各文字を大文字に変換することができます。また、正規表現を使用して文字列内の特定の文字を大文字に変換することもできます。さらに、Javaの`StringBuilder`クラスを使用して文字列を操作する方法もあります。それぞれの方法については、関連リンクを参照してください。
 
-## その他の記事
+## 関連リンク
 
-[Java Stringクラスのチュートリアル](https://www.javatpoint.com/java-string)、[文字列の大文字と小文字を変換する方法](https://www.geeksforgeeks.org/convert-string-lowercase-uppercase-java/)、[Java `toUpperCase()`メソッドのドキュメンテーション](https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#toUpperCase()）
-
- _See Also:_
-
-_関連記事:_
-
-- [Javaの文字列とその操作](https://www.tutorialspoint.com/java/java_strings.htm)
-- [Javaで大文字化と小文字化を扱う方法](https://www.baeldung.com/java-capitalize-strings)
+- [Java StringクラスのtoUpperCase()メソッドの仕様 (英語)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Java CharacterクラスのtoUpperCase()メソッドの仕様 (英語)](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toUpperCase-char-)
+- [Java正規表現チュートリアル (日本語)](https://java.keicode.com/lang/regex-pattern.php)
+- [Java StringBuilderクラスの使い方 (日本語)](https://www.javadrive.jp/start/stringbuilder/index1.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Exibindo saída de depuração"
-simple_title:         "Exibindo saída de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Fish Shell: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -9,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Printar saída de debug é uma ferramenta essencial para aqueles que programam em Fish Shell. Isso permite que você acompanhe o fluxo do seu código e identifique possíveis erros ou problemas de forma mais eficiente.
+## Por que imprimir saída de depuração?
+
+Você está programando em Fish Shell e provavelmente se deparou com a necessidade de depurar seu código em algum momento. Imprimir saída de depuração é uma maneira rápida e eficaz de identificar e corrigir erros em seu código.
 
 ## Como fazer
-Para imprimir uma saída de debug em Fish Shell, você pode usar o comando `echo`. Por exemplo:
 
-```Fish Shell
-echo "Debug message"
+O Fish Shell possui uma função integrada chamada `echo` que pode ser utilizada para imprimir saída de depuração. Veja um exemplo abaixo:
+
 ```
-Isso imprimirá a mensagem "Debug message" na saída padrão. Você também pode usar variáveis ou comandos dentro do comando `echo` para imprimir informações específicas, como no exemplo abaixo:
+Fish Shell 3.1.2
+~> set variavel "Olá, mundo!"
 
-```Fish Shell
-echo "Variável X: $x"
-echo "Data atual: (date)"
-```
+# Imprime a variável "variavel"
+~> echo $variavel
 
-Além disso, você pode redirecionar a saída de debug para um arquivo para facilitar a organização e visualização dos resultados. Para isso, basta usar o operador `>` seguido do nome do arquivo desejado. Por exemplo:
-
-```Fish Shell
-echo "Debug output" > debug.log
+Olá, mundo!
 ```
 
-## Deep Dive
-Além do comando `echo`, o Fish Shell também possui outras opções para imprimir saída de debug. Um deles é o comando `printf`, que permite uma formatação mais complexa da saída. Por exemplo:
+Você também pode usar a opção `-n` junto com o `echo` para evitar a quebra de linha ao final da saída. Isso pode ser útil em certos casos, como quando você precisa imprimir várias linhas de saída em uma única linha. Veja um exemplo:
 
-```Fish Shell
-set x "variável"
-printf "O valor da %s é %d" $x $x
+```
+Fish Shell 3.1.2
+~> set linha1 "Isso é uma"
+~> set linha2 "única linha"
+
+# Imprime as duas variáveis em uma única linha
+~> echo -n $linha1 $linha2
+
+Isso é uma única linha
 ```
 
-Outra opção é usar o comando `fish_print`, que também permite uma formatação mais avançada e a impressão de cores e estilos na saída. Você pode encontrar mais informações sobre esses comandos e suas opções na documentação oficial do Fish Shell.
+## Mais detalhes sobre a impressão de saída de depuração
+
+Ao imprimir saída de depuração, é importante ter em mente que ela deve ser usada apenas para fins de depuração e não deve ser incluída no código final. Isso garantirá que seu código permaneça limpo e conciso.
+
+Além disso, é possível redirecionar saídas de depuração para um arquivo de log, utilizando o operador `>` ou `>>`. Isso pode ser útil quando se depura um código em uma aplicação que não possui suporte para a exibição de saída de depuração.
 
 ## Veja também
-- Documentação oficial do Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- Tutorial sobre `echo` e `printf` em Fish Shell: [https://hackertarget.com/linux-unix-printf-command-tutorial/](https://hackertarget.com/linux-unix-printf-command-tutorial/)
-- Tutorial avançado sobre saída de debug em Fish Shell: [https://ss64.com/fish/echo.html](https://ss64.com/fish/echo.html)
+
+- Documentação oficial da Fish Shell para a função `echo`: https://fishshell.com/docs/current/commands.html#echo
+- Artigo sobre técnicas de depuração: https://medium.com/@isaaclyman/debugging-in-the-fish-shell-c0f4e8dd3219

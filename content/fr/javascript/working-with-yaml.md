@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Travailler avec YAML"
-simple_title:         "Travailler avec YAML"
+title:                "Travailler avec yaml"
+html_title:           "Javascript: Travailler avec yaml"
+simple_title:         "Travailler avec yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,57 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous travaillez avec Javascript, il est probable que vous ayez déjà entendu parler de YAML. Mais pourquoi devriez-vous vous intéresser à ce format de données ? Et bien, YAML est un langage de sérialisation de données qui est très utile lorsque vous avez besoin de stocker et de transporter des données complexes dans vos projets Javascript. Il est également facile à lire pour les humains, ce qui facilite la compréhension et la gestion des données.
-
-Maintenant que vous savez pourquoi YAML est utile, passons à la façon de l'utiliser dans vos projets.
+Vous êtes peut-être familier avec le format de données JSON en JavaScript, mais saviez-vous qu'il existe également un format de données appelé YAML? Bien que moins courant, YAML offre de nombreux avantages pour le stockage et la lecture de configurations complexes. Dans cet article, nous allons vous montrer comment travailler avec YAML en JavaScript et pourquoi vous devriez envisager de l'utiliser dans vos projets.
 
 ## Comment faire
 
-Pour commencer à travailler avec YAML dans votre code Javascript, vous devrez d'abord télécharger le package nodejs-yaml à l'aide de la commande NPM suivante :
+Pour commencer à travailler avec YAML en JavaScript, vous devrez installer un module appelé YAML. Vous pouvez le faire en utilisant le gestionnaire de packages NPM en tapant la commande suivante dans votre terminal :
 
-```Javascript
-npm install js-yaml --save
+```
+npm install yaml
 ```
 
-Une fois le package installé, vous pourrez l'importer dans votre code Javascript en utilisant la commande suivante :
+Une fois le module installé, vous pouvez l'importer dans votre code JavaScript en utilisant la syntaxe suivante :
 
-```Javascript
-const yaml = require('js-yaml');
+```
+const yaml = require('yaml');
 ```
 
-Maintenant, vous pouvez utiliser différentes méthodes pour convertir des données dans des formats tels que JSON et YAML, ou vice versa. Par exemple, pour convertir une chaîne YAML en objet javascript, vous pouvez utiliser la méthode `safeLoad()` comme ceci :
+Maintenant, vous pouvez utiliser la méthode `parse` pour convertir une chaîne de caractères YAML en un objet JavaScript. Voici un exemple :
 
-```Javascript
-var yamlString = `
-  name: John
-  age: 30
-  hobbies:
-    - reading
-    - hiking
-    - cooking`;
+```
+const yamlStr = `name: John
+age: 25`;
 
-var jsObject = yaml.safeLoad(yamlString);
-
-console.log(jsObject); // { name: 'John', age: 30, hobbies: ['reading', 'hiking', 'cooking'] }
+const obj = yaml.parse(yamlStr);
+console.log(obj.name); // Output: John
 ```
 
-Il est également possible de convertir un objet javascript en chaîne YAML avec la méthode `safeDump()` :
+Vous pouvez également utiliser la méthode `stringify` pour convertir un objet JavaScript en une chaîne de caractères YAML. Voici un exemple :
 
-```Javascript
-var jsObject = { name: 'Jane', age: 25, hobbies: ['yoga', 'painting'] };
+```
+const obj = { name: 'John', age: 25 };
 
-var yamlString = yaml.safeDump(jsObject);
-
-console.log(yamlString); // name: Jane, age: 25, hobbies: [ yoga, painting ]
+const yamlStr = yaml.stringify(obj);
+console.log(yamlStr); // Output: "name: John\age: 25"
 ```
 
-Vous pouvez également utiliser ces méthodes pour convertir des fichiers JSON en fichiers YAML, ou vice versa.
+Ces méthodes sont très utiles pour lire et écrire des fichiers de configuration YAML dans vos projets JavaScript. Vous pouvez également utiliser la méthode `load` pour charger un fichier YAML directement en mémoire, ce qui peut être pratique pour les fichiers de grande taille.
 
 ## Plongée en profondeur
 
-Si vous souhaitez en savoir plus sur YAML et ses différents usages, vous pouvez consulter les documentations officielles du package [nodejs-yaml](https://www.npmjs.com/package/js-yaml) et de la spécification [YAML](https://yaml.org/spec/). Vous pouvez également expérimenter et pratiquer en utilisant différentes données et formats pour mieux comprendre son fonctionnement.
+En plus des fonctionnalités de base pour lire et écrire des fichiers YAML, le module YAML offre également des fonctionnalités avancées telles que la validation des données et la personnalisation de la syntaxe YAML. Vous pouvez utiliser la méthode `schema` pour créer un schéma de validation et valider vos données YAML en utilisant ce schéma. Vous pouvez également utiliser la méthode `setSchema` pour personnaliser la syntaxe YAML en définissant vos propres balises et en créant des documents YAML avec cette syntaxe personnalisée.
+
+Il est également important de noter que YAML prend en charge les commentaires, ce qui peut être très utile pour fournir des explications ou des notes pour votre configuration. Vous pouvez utiliser la notation `#` pour ajouter un commentaire à la fin d'une ligne ou utiliser la notation `|` pour ajouter un commentaire sur plusieurs lignes. Les commentaires seront ignorés lors de la lecture du fichier YAML, mais ils resteront visibles pour une meilleure compréhension du fichier.
 
 ## Voir aussi
 
-- [La documentation officielle du package nodejs-yaml](https://www.npmjs.com/package/js-yaml)
-- [La spécification officielle de YAML](https://yaml.org/spec/)
+- [Documentation du module YAML](https://github.com/eemeli/yaml)
+- [Tutoriel sur la manipulation des fichiers YAML en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-use-yaml-to-manipulate-a-configuration-file-in-javascript)
+- [Vidéo sur l'utilisation de YAML dans un projet JavaScript réel](https://www.youtube.com/watch?v=a4ZSwI8bPSU)
+
+Merci d'avoir lu cet article sur l'utilisation de YAML en JavaScript. Nous espérons que vous pourrez maintenant profiter de ses avantages dans vos projets futurs. Happy coding!

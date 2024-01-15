@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Å jobbe med csv"
+title:                "Å jobbe med csv"
+html_title:           "TypeScript: Å jobbe med csv"
 simple_title:         "Å jobbe med csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,48 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Har du noen gang kommet over et stort datasett i et eksportert CSV-format og blitt overveldet av tanken på å sortere og analysere det manuelt? Vel, hvis du er en utvikler som er kjent med TypeScript, er det ingen grunn til bekymring! CSV-filer kan være det perfekte utgangspunktet for å lage automatiserte data analyser og rapporter ved hjelp av TypeScript. Les videre for å lære hvordan du kan bruke dine programmeringsferdigheter til å arbeide med CSV-filer.
+Å jobbe med CSV-filer er en vanlig oppgave i programmering, spesielt når du håndterer store mengder data. Ved å lære å arbeide med CSV-filer i TypeScript, kan du enklere importere og eksportere data til og fra forskjellige systemer, og effektivisere arbeidet ditt.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å begynne å jobbe med CSV-filer i TypeScript, må du inkludere "fs" og "csv-parser" modulene i prosjektet ditt. Dette kan gjøres ved å installere dem via npm og deretter bruke require-funksjonen til å importere dem inn i koden din.
+For å begynne å jobbe med CSV-filer i TypeScript, trenger du en pakke som heter "csv-parser". Denne pakken lar deg enkelt lese og behandle data fra CSV-filer.
 
-```TypeScript
-const fs = require('fs');
-const csv = require('csv-parser');
+Først må du installere pakken ved å kjøre følgende kommando i terminalen din:
+
+```
+npm install csv-parser
 ```
 
-Nå kan du bruke fs modulen til å lese CSV-filen og csv-parser-modulen til å analysere den. La oss for eksempel si at vi har en CSV-fil som inneholder informasjon om ansatte i en bedrift, med kolonnene "navn", "stilling" og "lønn". Vi kan bruke følgende kode til å lese filen og logge ut informasjonen for hver ansatt til konsollen:
+Deretter kan du importere den i TypeScript-filen din ved å inkludere følgende linje på toppen av filen:
 
 ```TypeScript
-fs.createReadStream('ansatte.csv')
-  .pipe(csv())
-  .on('data', (data) => {
-    console.log(`${data.navn} har stillingen ${data.stilling} og tjener ${data.lønn} kroner i måneden.`)
+import * as csv from 'csv-parser';
+```
+
+For å lese en CSV-fil, kan du bruke følgende kode:
+
+```TypeScript
+fs.createReadStream('data.csv') // åpner filen for lesing
+  .pipe(csv()) // bruker csv-parser for å parse data
+  .on('data', (row) => { // tar i mot hver linje som et objekt
+    console.log(row); // skriver ut objektet i konsollen
   })
+  .on('end', () => { // kalt når hele filen er lest
+    console.log('Done');
+  });
 ```
 
-Output vil se slik ut:
+Dette vil skrive ut hver linje i CSV-filen som et JavaScript-objekt i konsollen din. Du kan deretter behandle dataene videre som du ønsker.
 
+For å eksportere data til en CSV-fil, kan du bruke følgende kode:
+
+```TypeScript
+import * as fs from 'fs';
+
+const data = ["Navn, Alder", // oppretter en array med dataene du vil eksportere
+              "Per, 30",
+              "Kari, 25",
+              "Ola, 28"];
+
+fs.writeFile('eksportert_data.csv', data.join('\n'), (err) => { // skriver dataene til en ny fil
+  if (err) throw err;
+  console.log('Data eksportert!');
+});
 ```
-John Doe har stillingen IT-konsulent og tjener 50000 kroner i måneden.
-Jane Smith har stillingen Markedsføringsleder og tjener 60000 kroner i måneden.
-Bob Johnson har stillingen Salgssjef og tjener 70000 kroner i måneden.
-```
 
-Som du kan se, kan vi enkelt få tilgang til dataene fra CSV-filen og bruke dem til å lage nyttig informasjon.
+Dette vil opprette en ny CSV-fil med navnet "eksportert_data.csv" og skrive dataene du har angitt til den.
 
-## Deep Dive
+## Dykk dypere
 
-Hvis du ønsker å gå dypere inn i arbeidet med CSV-filer i TypeScript, er det flere nyttige metoder og funksjoner du kan utforske. For eksempel kan du bruke "csv-writer" modulen til å skrive data fra et JSON-objekt til en CSV-fil, eller du kan bruke "fast-csv" modulen for å håndtere store CSV-filer mer effektivt.
+Når du arbeider med CSV-filer, er det viktig å være klar over at ikke alle verdier er like. Noen ganger kan verdier være tomme, eller de kan inneholde komma eller anførselstegn. I slike tilfeller må du ta hensyn til dette når du leser og behandler dataene.
 
-Det er også verdt å sette seg inn i forskjellige formaterings- og parsingalternativer for CSV-filer, for å håndtere eventuelle spesifikke behov for prosjektet ditt. Dette kan inkludere å endre salgsseparatorer eller bestemme header informasjon for filen.
-
-Uansett hvilket nivå du ønsker å jobbe med CSV-filer i TypeScript, er det viktig å huske på å håndtere eventuelle feil og unntak som kan oppstå når du arbeider med dataene. Dette vil sikre at du har pålitelige og nøyaktige resultater.
+En annen ting å være klar over er at batch-lesing og skriving av store CSV-filer kan føre til minnelekkasje. Det kan være lurt å vurdere å bruke streaming-tilnærmingen som er vist i eksemplene ovenfor, for å unngå dette problemet.
 
 ## Se også
 
-- [npm: fs](https://www.npmjs.com/package/fs)
-- [npm: csv-parser](https://www.npmjs.com/package/csv-parser)
-- [npm: csv-writer](https://www.npmjs.com/package/csv-writer)
-- [npm: fast-csv](https://www.npmjs.com/package/fast-csv)
+- [csv-parser npm-pakke](https://www.npmjs.com/package/csv-parser)
+- [Offisiell TypeScript-dokumentasjon](https://www.typescriptlang.org/docs/)

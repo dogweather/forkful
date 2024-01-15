@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 現在の日付を取得する"
+title:                "現在の日付を取得する"
+html_title:           "Swift: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,48 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ今日の日付を取得するのか
 
-現在の日付を取得する理由は何でしょうか？日付は、アプリケーション内で各種のタイムスタンプを作成し、アクションを行う際に必要となる重要な情報です。また、ユーザーにとっても重要な情報であり、アプリケーションの使いやすさを向上させることができます。
+日付を取得することは、多くのアプリケーションにとって重要な機能です。例えば、スケジュール管理や登録したデータを時間順に表示する際に必要になります。Swiftでは、現在の日付を簡単に取得することができます。
 
-## 方法
-
-Swiftを使用して、現在の日付を取得する方法を紹介します。まず、Dateオブジェクトを使用して現在の日付を取得します。
+## ‎‎取得方法
 
 ```Swift
-let date = Date()
+let date = Date() // 現在の日付を取得
+let dateFormatter = DateFormatter() // DateFormatterを使って日付をフォーマット
+dateFormatter.dateFormat = "yyyy-MM-dd" // 使用するフォーマットを指定
+let stringDate = dateFormatter.string(from: date) // 日付を文字列に変換
+print(stringDate) // 出力結果： 2021-04-20
 ```
 
-次に、日付を特定の書式で表示するために、DateFormatterオブジェクトを使用します。
-
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let formattedDate = dateFormatter.string(from: date)
-
-print(formattedDate) // 2021-01-01
-```
-
-また、現在の日付に加算や減算を行うこともできます。例えば、10日後の日付を取得する場合は、DateComponentsオブジェクトを使用して以下のように計算することができます。
-
-```Swift
-var dateComponents = DateComponents()
-dateComponents.day = 10
-let futureDate = Calendar.current.date(byAdding: dateComponents, to: date)
-
-print(futureDate) // 現在の日付から10日後の日付
-```
+上のコード例では、`Date()`を使って現在の日付を取得し、`DateFormatter`を使って指定したフォーマットに合わせて日付を表示しています。日付を文字列に変換することで、アプリケーション内で便利に使用することができます。
 
 ## 深堀り
 
-Dateオブジェクトは実際には単なるタイムスタンプであり、タイムゾーンやカレンダーの情報を持ちません。実際には、DateFormatterやCalendarを使用して、日付を表現するためのフォーマットやローカライズされた日付を取得する必要があります。
+日付を取得する方法には、他にも様々なオプションがあります。例えば、タイムゾーンを指定したり、24時間制ではなく12時間制で表示することも可能です。また、日付を比較したり、計算したりすることもできます。詳しくは[公式ドキュメント](https://developer.apple.com/documentation/foundation/date)を参照してください。
 
-また、Dateオブジェクトはミリ秒単位の精度を持っていますが、一部のアプリケーションでは、より高い精度が必要になる場合があります。そのような場合は、TimeIntervelやCFAbsoluteTimeなど、より細かい精度のタイムスタンプを使用することができます。
+## ‎‎See Also
 
-## 参考
-
-- [Date - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
-- [DateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Calendar - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/calendar)
-- [TimeIntervel - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/timeinterval)
-- [CFAbsoluteTime - Apple Developer Documentation](https://developer.apple.com/documentation/corefoundation/cfabsolutetime)
+- [How to Format Dates in Swift](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
+- [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Elm: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## Why
 
-あなたはプログラミングをするとき、しばしばバグやエラーに遭遇します。そのとき、コンソールにエラーメッセージが表示されることがあります。しかし、エラーメッセージをより詳しく知ることができれば、バグやエラーを修正するのに役立ちます。そのため、エラーメッセージを標準エラー出力に書き込むことは重要です。
+なぜコンソールに書き込むことが重要なのかを簡単に説明します。
 
-## 使い方
+コンソールに書き込むことはデバッグやエラートラッキングに役立ちます。エラーが発生したときに、むやみにコードを変更するのではなく、コンソールにメッセージを書き込んでデータフローを追跡することで、エラーの原因を特定することができます。
 
-標準エラー出力に書き込むには、ElmのDebugモジュールを使用します。以下のコードを参考にしてください。
+## How to
+
+Elmでは、```Debug.log```関数を使用してコンソールに書き込むことができます。
+
+例えば、Int型の変数をコンソールに書き出したい場合は、以下のように書きます。
 
 ```Elm
 import Debug
 
-main =
-    let
-        result = divide 10 0
-    in
-        case result of
-            Ok value ->
-                Debug.log "Success!" value
+numberOfApples = 5
 
-            Err error ->
-                Debug.crash "Failed." error
+Debug.log "There are" numberOfApples
 ```
 
-このコードでは、10を0で割っているためエラーが発生します。しかし、それぞれのケースでエラーメッセージを標準エラー出力に書き込んでいます。このようにすることで、どのケースでエラーが発生したのかを知ることができます。
+出力結果は以下のようになります。
 
-## 深堀り
+```
+There are 5
+```
 
-エラーメッセージを標準エラー出力に書き込むことで、プログラマーはデバッグに役立つ情報を得ることができます。また、標準エラー出力に書き込むことで、エラーコードやスタックトレースなどの詳細な情報を表示することができます。
+## Deep Dive
 
-ただし、エラーメッセージを標準エラー出力に書き込む際には注意が必要です。標準エラー出力はコンソール上に表示されるため、ユーザーが見ることができます。そのため、個人情報やセンシティブな情報を標準エラー出力に書き込まないように注意しましょう。
+```Debug.log```関数の書式は以下のようになります。
 
-## 併せて読みたい
+```
+Debug.log : String -> a -> a
+```
 
-- Elm Debugモジュールの公式ドキュメント：https://package.elm-lang.org/packages/elm/core/latest/Debug
-- バグ修正に役立つ技術：https://www.toptal.com/qa/how-to-debug-your-bugs-like-a-pro
-- エラーハンドリングのベストプラクティス：https://engineering.kablamo.com.au/posts/2019/understanding-error-handling-in-elm/
+第1引数はコンソールに表示するメッセージの文字列、第2引数は任意の型のデータです。また、この関数は第2引数をそのまま返すので、例えば```Debug.log```をデータのパイプライン内で使用することができます。
+
+さらに、```Debug.todo```関数を使用すると、特定の箇所が実行されたらコンソールに警告メッセージを表示することができます。
+
+## See Also
+
+こちらのリンクを参考にしてください。
+
+[ElmのDebugモジュールのドキュメント](https://package.elm-lang.org/packages/elm/core/latest/Debug)

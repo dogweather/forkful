@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Gleam recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,46 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common practice in programming, especially in situations where the program needs to temporarily store data or files before proceeding with further operations. Temporary files are also used when working with external libraries or APIs that require temporary file paths as inputs. In short, temporary files are essential for efficient and seamless execution of code.
+Why would anyone want to create a temporary file? Well, there are a few reasons. Temporary files are often used in programming to store intermediate data or to perform temporary operations. They can also be helpful in testing and debugging code.
 
 ## How To
 
-To create a temporary file in Gleam, we use the `file.temp` function from the `gleam/io` module. This function takes in a file extension as an argument and returns a tuple containing the temporary file path and a file handle.
+To create a temporary file in Gleam, you can use the `tempfile` module from the standard library. First, we need to import the module using the following code:
 
-```
-Gleam.def
-  create_temp_file() {
-    let {_, file} = Gleam.IO.File.temp(".txt")
-
-    // perform operations on the temporary file using the `file` handle
-
-    Gleam.IO.File.close(file) // close the file when done
-  }
+```Gleam
+import tempfile
 ```
 
-The temporary file path in the tuple can be used to read, write or manipulate the temporary file, while the file handle ensures that the temporary file is closed correctly after usage.
+Next, we can create a temporary file using the `create` function from the `tempfile` module. This function takes in a prefix and suffix as optional arguments, which can be used to customize the name of the temporary file.
 
-To get the path of the temporary file, we access it from the tuple using the `Tuple.first` function. Similarly, the file handle can be accessed using `Tuple.second` function. Here's an example of reading from a temporary file:
-
+```Gleam
+let file = tempfile.create()
 ```
-Gleam.def
-  read_temp_file() {
-    let {path, file} = Gleam.IO.File.temp(".csv")
-    let data = Gleam.IO.File.read(file)
 
-    // perform operations on the `data` variable which contains the contents of the temporary file
+Now, we can perform any operations we need on the temporary file. For example, we can write some content to the file:
 
-    Gleam.IO.File.close(file) // close the file when done
-  }
+```Gleam
+tempfile.write("Hello, world!", file)
+```
+
+To access the contents of the temporary file, we can use the `read` function:
+
+```Gleam
+let content = tempfile.read(file)
+```
+
+Finally, we can close and delete the temporary file using the `close` and `remove` functions respectively:
+
+```Gleam
+tempfile.close(file)
+tempfile.remove(file)
 ```
 
 ## Deep Dive
 
-Creating a temporary file in Gleam is a two-step process. First, the `file.temp` function creates a file with a unique name and returns a file handle. Then, the `file` handle is used to perform desired operations on the temporary file. The file is automatically deleted when the handle is closed, or the program exits.
-
-It's worth noting that the naming of temporary files is taken care of by the operating system. Therefore, temporary file names may vary and may not be consistent across operating systems. Additionally, temporary files should only be used for short-term storage and should not be assumed to persist between program executions.
+If you want to dive deeper into creating temporary files, the `tempfile` module also provides functions for setting the directory and mode of the temporary file. Additionally, it has functions for creating and writing to secure temporary folders and files, which can be helpful when dealing with sensitive information.
 
 ## See Also
 
-- Gleam documentation on temporary files: <insert link>
-- How to use temporary files in other programming languages: <insert links>
+- The Gleam Standard Library: https://gleam.run/documentation/std-lib
+- The `tempfile` module documentation: https://gleam.run/documentation/std-lib#tempfile
+- A tutorial on temporary files in Python (similar concepts can be applied in Gleam): https://realpython.com/python-tempfile/

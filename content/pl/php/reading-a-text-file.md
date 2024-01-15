@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "PHP: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,40 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą lub chcesz nim zostać, to na pewno zetknąłeś się z czytaniem plików tekstowych w swoich projektach. Bez względu na to czy pracujesz z danymi, tekstami czy kodem, prawdopodobnie często musisz odczytać informacje z pliku. Dlatego warto dowiedzieć się, jak to zrobić w PHP.
+Czy kiedykolwiek miałeś problem z odczytaniem danych z pliku tekstowego w języku PHP? Jeśli tak, to ten artykuł jest dla ciebie! Przeczytasz tutaj jak w prosty sposób można odczytać dane z pliku tekstowego za pomocą aktualnej wersji PHP. 
 
-## Jak to zrobić
+## Jak To zrobić?
 
-W PHP istnieje kilka sposobów na odczytanie pliku tekstowego. Jednym z nich jest użycie funkcji "file_get_contents()". Przykładowo, chcąc odczytać plik o nazwie "dane.txt", należy użyć następującego kodu:
+### Przygotowanie pliku tekstowego
 
+Najpierw utwórzmy prosty plik tekstowy do odczytu. Może to być plik z rozszerzeniem `.txt` lub `.csv` z dowolnymi danymi. Ważne jest, aby pamiętać, że plik musi być dostępny w katalogu, w którym znajduje się nasz kod PHP.
+
+### Kod
+
+Teraz przejdźmy do sedna artykułu - kodu PHP. W poniższym przykładzie użyjemy funkcji `fopen()` do otwarcia pliku do odczytu.
 ```PHP
-$plik = "dane.txt";
-$zawartosc = file_get_contents($plik);
-
-echo $zawartosc;
+$handle = fopen("nazwa_pliku.txt", "r");
 ```
-
-Wywołanie funkcji "file_get_contents()" zwróci całą zawartość pliku jako string. Możesz również odczytać plik linia po linii używając funkcji "fgets()". Przykładowo, chcąc wyświetlić kolejno wszystkie linie z pliku, należy użyć poniższego kodu:
-
+Następnie użyjemy funkcji `fread()` do odczytania zawartości pliku i przypisania jej do zmiennej.
 ```PHP
-$plik = fopen("dane.txt", "r");
-
-while(!feof($plik)) {
-  $linia = fgets($plik);
-  echo $linia;
-}
-
-fclose($plik);
+$contents = fread($handle, filesize("nazwa_pliku.txt"));
 ```
+Na koniec zamknijmy połączenie z plikiem za pomocą funkcji `fclose()`.
+```PHP
+fclose($handle);
+```
+### Przykładowy wynik
 
-## Głębsze zagadnienia
+Bardzo ważne jest, aby upewnić się, że plik ma odpowiedni format i zawiera poprawne dane do odczytania. W przeciwnym razie, nie będzie możliwe prawidłowe odczytanie danych z pliku. Poniżej jest przykładowy wynik odczytania pliku CSV z danymi.
 
-Podczas pracy z plikami tekstowymi w PHP ważne jest zapewnienie bezpieczeństwa. Aby mieć pewność, że obsługujesz poprawny plik, zawsze sprawdzaj czy plik istnieje i czy masz do niego dostęp. Możesz to zrobić przy użyciu funkcji "file_exists()" oraz "is_readable()".
+![przykładowy_wynik](https://user-images.githubusercontent.com/68320777/128888246-2107e730-61df-4cde-a196-01f3d8fcf3b7.png)
 
-W przypadku, gdy plik jest bardzo duży, dobrą praktyką jest użycie funkcji "fopen()" z parametrem "r+", który pozwala na jednoczesną możliwość odczytu i zapisu do pliku. Pozwala to na bardziej efektywne operacje, szczególnie w przypadku pracy na serwerze.
+## Deep Dive
 
-## Zobacz również
+Funkcja `fopen()` pozwala określić tryb otwarcia pliku, w naszym przykładzie użyliśmy trybu `r` do odczytu. Istnieją również inne tryby dostępne, takie jak `w` do zapisu, `a` do dopisywania lub `x` do tworzenia nowego pliku. Więcej informacji na temat trybów można znaleźć w dokumentacji PHP.
 
-- [Dokumentacja PHP o funkcji "file_get_contents()"](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Dokumentacja PHP o funkcji "fgets()"](https://www.php.net/manual/en/function.fgets.php)
-- [Notatnik programisty - czytanie plików tekstowych w PHP](https://notatnik-programisty.pl/php/czytanie-plikow-tekstowych-w-php/)
+Pamiętaj również o zamknięciu połączenia z plikiem za pomocą funkcji `fclose()`. Jest to ważne nie tylko dla bezpieczeństwa, ale także dla wydajności naszego kodu.
+
+## Zobacz także
+- [Dokumentacja PHP: fread()](https://www.php.net/manual/pl/function.fread.php)
+- [Dokumentacja PHP: fopen()](https://www.php.net/manual/pl/function.fopen.php)
+- [Dokumentacja PHP: fclose()](https://www.php.net/manual/pl/function.fclose.php)

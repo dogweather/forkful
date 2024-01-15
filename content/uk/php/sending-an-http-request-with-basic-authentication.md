@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Надсилання запиту http з базовою аутентифікацією."
-simple_title:         "Надсилання запиту http з базовою аутентифікацією."
+title:                "Надіслання запиту http з базовою автентифікацією"
+html_title:           "PHP: Надіслання запиту http з базовою автентифікацією"
+simple_title:         "Надіслання запиту http з базовою автентифікацією"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,40 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-У цій статті ми розглянемо процес відправлення запиту HTTP з базовою автентифікацією в PHP. Це допоможе вам зрозуміти, як цей механізм працює та чому він важливий для вашої програми.
+Надсилання HTTP-запиту зі звичайною аутентифікацією є зручним і безпечним шляхом з'єднання з веб-сайтами та іншими серверами, які вимагають підтвердження для доступу до своїх ресурсів.
 
-## Як це зробити
-
-Для відправлення HTTP запиту з базовою автентифікацією, спочатку потрібно створити об'єкт класу `CURL` та встановити параметри для цього запиту. Далі ми вказуємо URL, до якого буде відправлятися запит, та потрібний метод, наприклад, `GET` або `POST`. Також встановлюємо параметри для автентифікації, використовуючи функцію `curl_setopt`. Нижче наведений приклад коду:
+## Як
 
 ```PHP
-$url = "https://example.com/api";
-$curl = curl_init();
-
-// Встановлюємо опції для CURL
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($curl, CURLOPT_USERPWD, "username:password"); // Вказуємо дані для автентифікації
-curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET'); // Вказуємо метод запиту
-
-// Виконуємо запит та отримуємо результат
-$response = curl_exec($curl);
-curl_close($curl);
-
-echo $response; // Виводимо результат
+<?php
+$ch = curl_init("https://www.example.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_USERPWD, "{username}:{password}");
+$output = curl_exec($ch);
+curl_close($ch);
 ```
 
-В результаті ви отримаєте відповідь з веб-сервера, яку можна обробити далі в своїй програмі.
+При відправленні HTTP-запиту з використанням PHP, можна вказати тип аутентифікації через опцію `CURLOPT_HTTPAUTH` і вказати користувача та пароль через опцію `CURLOPT_USERPWD`. Результатом буде вивід вмісту сторінки "www.example.com".
 
-## Детальний огляд
+## Заглибившися
 
-Базова автентифікація використовується для захисту веб-ресурсів від несанкціонованого доступу. Вона вимагає від користувача надати додаткові дані для підтвердження своєї ідентичності. Це зроблено за допомогою відправлення хедера `Authorization` з потрібними даними, закодованими у форматі Base64.
-
-У PHP для реалізації базової автентифікації використовується функція `curl_setopt` з параметром `CURLOPT_USERPWD`. Вона приймає два аргументи - ім'я користувача та пароль. Ці дані будуть використовуватися для створення хедера `Authorization`.
+Виглядає просто, але є кілька нюансів, про які потрібно пам'ятати при використанні HTTP-запитів зі звичайною аутентифікацією. При використанні `CURLAUTH_BASIC`, дані автентифікації будуть передані у форматі base64, що може бути вразливим до атак на перехоплення. Тому рекомендується використовувати HTTPS замість звичного HTTP для забезпечення безпеки.
 
 ## Дивись також
 
-- [Документація з CURL для PHP](https://www.php.net/manual/ru/book.curl.php)
-- [Приклади HTTP запитів з CURL](https://www.php.net/manual/en/curl.examples-basic.php)
-- [Пояснення базової автентифікації](https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html#sec11.1)
+- [cURL Documentation](https://www.php.net/manual/en/curl.examples-basic.php)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Redagowanie pliku tekstowego"
-simple_title:         "Redagowanie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Javascript: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,31 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie pliku tekstowego może być przydatną umiejętnością dla każdego programisty Javascript. Pozwala ono na zapisanie danych w formie nie tylko kodu, ale również tekstów, list czy tabel. Jest to ważny krok w procesie tworzenia wielu aplikacji, więc warto nauczyć się tej umiejętności.
+Pisanie plików tekstowych to często wymagana umiejętność w programowaniu. Zapisywanie informacji w postaci tekstu jest nie tylko wygodne, ale także powszechnie używane w różnych dziedzinach.
 
 ## Jak to zrobić
 
-Do napisania pliku tekstowego w Javascript potrzebujemy wykorzystać wbudowany moduł "fs", który odpowiada za operacje na plikach. Najpierw musimy zaimportować ten moduł do naszego kodu, aby móc z niego korzystać. Następnie wykorzystujemy metodę "writeFileSync", która przyjmuje jako argumenty ścieżkę do nowego pliku oraz dane, które chcemy w nim zapisać. Pozwala nam to na utworzenie nowego pliku lub nadpisanie już istniejącego.
+Pisanie plików tekstowych w języku JavaScript jest proste i prostydłaczego mieć kilka przykładowych kodów oraz ich wyjścia. Kod będzie umieszczony w blokach "```javascript ... ```", wystarczy skopiować go do swojego edytora kodu i uruchomić, aby zobaczyć efekt.
 
-Poniżej przedstawiam przykładowy kod, który stworzy plik tekstowy o nazwie "moj_plik.txt" i zapisze w nim tekst "Witaj, to jest mój pierwszy plik tekstowy w Javascript!"
+```javascript
+// Tworzenie pliku tekstowego i zapisanie w nim tekstu
+const fs = require('fs'); // importowanie modułu fs
 
-```Javascript
-const fs = require('fs');
-fs.writeFileSync("moj_plik.txt", "Witaj, to jest mój pierwszy plik tekstowy w Javascript!");
+const tekst = 'To jest tekstowy plik, który zostanie zapisany.'; 
+// deklaracja zmiennej z tekstem do zapisania
+
+fs.writeFile('plik.txt', tekst, (err) => {
+  if (err) throw err; // obsługa błędu
+  console.log('Plik został zapisany.');
+});
+// wywołanie metody writeFile i przekazanie nazwy pliku, tekstu oraz funkcji zwrotnej
+
+// Odczytywanie tekstu z pliku
+fs.readFile('plik.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data); // wyświetlenie odczytanego tekstu
+});
 ```
 
-Po uruchomieniu powyższego kodu, w folderze, w którym znajduje się nasz projekt, powinien pojawić się nowy plik tekstowy o nazwie "moj_plik.txt" zawierający tekst, który podaliśmy jako drugi argument.
+Przykładowe wyjście:
+
+```
+Plik został zapisany.
+To jest tekstowy plik, który zostanie zapisany.
+```
 
 ## Głębsza analiza
 
-Jak już wspomniano, "fs" jest wbudowanym modułem w Javascript, więc nie musimy instalować żadnych dodatkowych paczek. Posiada on wiele innych metod, takich jak "readFileSync" czy "appendFileSync", które pozwalają na czytanie oraz dodawanie danych do istniejących plików tekstowych.
+Operacje na plikach tekstowych w języku JavaScript są możliwe dzięki modułowi fs (File System). Jest to wbudowany moduł, więc nie ma potrzeby instalacji zewnętrznych bibliotek.
 
-Warto również pamiętać o wyjątkach, które mogą wystąpić przy próbie utworzenia lub zapisu pliku. Dobrą praktyką jest umieszczenie kodu w bloku "try-catch", co pozwala na obsłużenie błędów w przypadku niepowodzenia.
+Metoda `writeFile` służy do zapisywania tekstu w pliku o określonej nazwie. Przyjmuje trzy argumenty: nazwę pliku, tekst do zapisania oraz funkcję zwrotną, która zostanie wywołana po zapisaniu pliku. W przypadku wystąpienia błędu, wywołana zostanie funkcja `throw` i wyświetlony zostanie komunikat o błędzie.
+
+Natomiast metoda `readFile` służy do odczytywania tekstu z pliku, również przyjmując trzy argumenty: nazwę pliku, kodowanie tekstu (w tym przypadku `utf8` oznacza, że tekst będzie odczytywany w formacie UTF-8) oraz funkcję zwrotną. W przypadku braku błędów, odczytany tekst zostanie przekazany do wywołania funkcji zwrotnej.
+
+Jeśli chcesz dowiedzieć się więcej o operacjach na plikach tekstowych w języku JavaScript, zapoznaj się z dokumentacją modułu fs lub poszukaj większej ilości przykładów kodów.
 
 ## Zobacz także
 
-Teraz, kiedy już wiesz jak w prosty sposób można napisać plik tekstowy w Javascript, zachęcam do zapoznania się z innymi modułami dostępnymi w Node.js, które pozwalają na jeszcze większą manipulację plikami. Poniżej znajdują się przydatne linki:
-
-- Oficjalna dokumentacja wbudowanego modułu "fs" w Node.js: https://nodejs.org/api/fs.html
-- Popularny moduł "fs-extra", który dodaje wiele przydatnych funkcji do już istniejącego "fs": https://www.npmjs.com/package/fs-extra
-- Poradnik na temat manipulacji plikami w Node.js: https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm
+- Dokumentacja modułu fs: https://nodejs.org/api/fs.html
+- Przykładowe operacje na plikach tekstowych w języku JavaScript: https://www.techiediaries.com/nodejs-tutorial-read-write-files/

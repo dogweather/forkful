@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Elm recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,44 +12,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're new to programming or just looking for a new language to try out, Elm could be the perfect choice for your next project. Elm is a functional programming language that focuses on creating reliable and maintainable front-end web applications. Its simple syntax and robust compiler make it a great language for both beginners and experienced developers alike.
+Starting a new project in Elm can be an exciting venture for developers. This functional programming language offers a unique and elegant approach to building web applications, making it a popular choice among web developers. With its ease of use, strong community, and excellent documentation, choosing to start a new project in Elm can lead to a smooth and successful development process.
 
 ## How To
 
-To get started with Elm, you'll need to first install the Elm platform on your computer. This can be done easily by following the instructions on the official Elm website. Once you have Elm installed, you can start creating your first project.
-
-To create a new project, you can use the `elm init` command in your terminal. This will create a basic project structure with a `Main.elm` file where you can start writing your code. Let's take a look at a simple `Hello World` example in Elm:
+Here is a simple example of how to create a "Hello World" program in Elm:
 
 ```Elm
-import Html exposing (text)
+module Main exposing (..)
 
+import Html exposing (Html, text)
+
+main : Html msg
 main =
-  text "Hello, World!"
+    text "Hello, World!"
 ```
 
-Here, we're importing the `text` function from the `Html` package and using it to display the text "Hello, World!" on the screen. To run this code, you can use the `elm reactor` command and navigate to `http://localhost:8000` in your browser to see the output.
+In this code block, we first declare the module name and the functions that will be accessible to it. Next, we import the `Html` library, which contains functions for creating HTML elements. Then, we define our `main` function, which returns an HTML element containing the text "Hello, World!". Finally, we compile and run our program in the Elm repl, and we should see the text "Hello, World!" displayed on the screen.
 
-One of the great things about Elm is its type system. It ensures that your code is free of runtime errors and makes refactoring much easier. Let's take a look at another example using types:
+Elm has a unique approach to handling HTML elements, using a virtual DOM to efficiently update the page when changes are made. Here is an example of how to create a simple HTML form in Elm:
 
 ```Elm
-add : Int -> Int -> Int
-add x y =
-  x + y
+module Main exposing (..)
 
+import Html exposing (Html, button, div, form, label, input, text)
+
+type alias Model =
+    { name : String
+    , age : Int
+    }
+
+type Msg
+    = UpdateName String
+    | UpdateAge String
+
+init : Model
+init =
+    { name = ""
+    , age = 0
+    }
+
+view : Model -> Html Msg
+view model =
+    form []
+        [ label [] [ text "Name:" ]
+        , input [ onInput UpdateName ] []
+        , label [] [ text "Age:" ]
+        , input [ onInput UpdateAge ] []
+        , div [] [ text ("Hello, " ++ model.name ++ "! You are " ++ String.fromInt model.age ++ " years old.") ]
+        , button [] [ text "Submit" ]
+        ]
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        UpdateName newName ->
+            { model | name = newName }
+
+        UpdateAge newAge ->
+            { model | age = Maybe.withDefault 0 (String.toInt newAge) }
+
+main : Html msg
 main =
-  add 5 4
+    view init
 ```
 
-In this code, we've defined a function `add` that takes in two `Int` values and returns their sum. The `main` function calls this `add` function with the values 5 and 4, and the result is displayed as 9 on the screen.
+In this example, we create a simple model with two fields - `name` and `age` - and two message types - `UpdateName` and `UpdateAge`. The `view` function takes in the model and returns an HTML form with two input fields and a button. The `update` function handles the events from the input fields and updates the model accordingly. Finally, the `main` function calls the `view` function with the initial model.
 
 ## Deep Dive
 
-When starting a new project in Elm, it's important to understand its architecture. Elm follows the Model-View-Update (MVU) pattern which separates code into three distinct parts: Model represents the current state of the application, View is responsible for rendering the UI, and Update handles all the logic for updating the model based on user actions.
+When starting a new project in Elm, it is important to familiarize yourself with the language's basic concepts, such as static typing and immutability. Elm also has a helpful community and a package manager called `elm-package`, which makes it easy to access third-party libraries.
 
-To learn more about the MVU pattern and other advanced concepts in Elm, it's recommended to explore the official documentation and community resources. It's also helpful to play around with existing projects and see how they've implemented different features.
+Another important aspect to consider when starting a new project is the Elm architecture. This architecture follows a `model-update-view` pattern, where the model serves as the single source of truth, the update function handles all the changes to the model, and the view function creates the HTML representation of the model.
+
+Additionally, Elm has a feature called "time-travel debugging", which allows developers to step through each state of their application and easily debug any issues.
 
 ## See Also
 
-- [Elm Official Website](https://elm-lang.org/)
-- [Elm Docs](https://guide.elm-lang.org/)
-- [Elm Community Packages](https://package.elm-lang.org/)
+- Official Elm documentation: https://elm-lang.org/docs
+- Elm packages: https://package.elm-lang.org/
+- Elm forum: https://discourse.elm-lang.org/

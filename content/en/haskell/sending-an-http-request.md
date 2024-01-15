@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Haskell recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,47 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever wondered how your favorite websites and apps communicate with servers to retrieve information? This is done through the use of HTTP requests, a key component of web development. In this blog post, we will explore how to send HTTP requests using Haskell, a popular functional programming language.
+
+Have you ever needed to retrieve data from a web server? Maybe you want to fetch information from an API or simply access a webpage. This is where sending an HTTP request comes in handy. By sending an HTTP request, you can communicate with a server and get the data you need.
 
 ## How To
-To send an HTTP request using Haskell, we will use the "http-conduit" library, which provides a high-level interface for working with HTTP requests. To install this library, we can use the following command in our terminal:
+
+To send an HTTP request in Haskell, we will be using the `Wreq` library which provides a simple API for making HTTP requests. First, we need to import the necessary modules:
 
 ```Haskell
-cabal install http-conduit
+import Network.Wreq
+import Control.Lens -- for using lens operators
+import Data.Text as T -- for working with text data
+import Network.HTTP.Client.TLS -- for using https
 ```
 
-Once the library is installed, we can import it into our code and begin making HTTP requests. Here is a simple example of how to make a GET request to the Google homepage:
+Next, we can make a GET request using the `get` function. This function takes in a URL and returns a response with the data from that URL.
 
 ```Haskell
-import Network.HTTP.Conduit( simpleHttp )
-
-main = do
-    response <- simpleHttp "https://www.google.com"
-    putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
-    putStrLn $ "Response body: " ++ show (getResponseHeaders response)
+response <- get "https://example.com"
 ```
 
-Running this code will print out the status code and response headers of the request to the console. We can see that the status code is "200", indicating that the request was successful, and the response headers contain information about the response, such as the content type and server information.
+To access the data from the response, we will use the `responseBody` lens operator.
+
+```Haskell
+response ^. responseBody
+```
+
+This will return a `ByteString` value, which we can convert to `Text` if needed.
+
+```Haskell
+body <- response ^? responseBody . to strict . unpackedChars
+```
+
+Finally, we can print the data to the console using `putStrLn`:
+
+```Haskell
+putStrLn body
+```
+
+If we want to make a POST request with some data, we can use the `post` function and pass in the URL and the data as a `FormParam`.
+
+```Haskell
+response <- post "https://example.com" ["username" := "John", "password" := "12345"]
+```
 
 ## Deep Dive
-HTTP requests are made up of two parts: the request and the response. The request contains information about the type of request (GET, POST, PUT, DELETE), the headers, and the body. The response contains the status code, headers, and body of the server's response.
 
-In the code example above, we only made a simple GET request, but we can also make other types of requests using the "http-conduit" library. For example, to make a POST request with a body, we can use the "urlEncodedBody" function like this:
+There are different methods for sending HTTP requests, such as GET, POST, PUT, DELETE, etc. The `Wreq` library provides functions for each of these methods, making it easy to choose the appropriate one for your needs.
 
-```Haskell
-import Network.HTTP.Conduit
-import Data.ByteString.Char8( pack )
+Additionally, you can also specify headers, cookies, and other parameters in your requests using functions provided by the library. This gives you more control and flexibility over your requests.
 
-main = do
-    let body = pack "name=John&age=25"
-    request <- parseUrl "https://www.example.com/users"
-    response <- withManager $ httpLbs (urlEncodedBody [("name","John"),("age","25")] request)
-    putStrLn "Request made successfully!"
-```
-
-This code will send a POST request to the URL with the specified body, which will contain name and age parameters. We can also specify headers, cookies, and other options in our HTTP request using functions provided by the "http-conduit" library.
+It's also important to handle errors when making HTTP requests. The `Wreq` library provides functions for checking the response status and handling errors accordingly. These functions can help you make more robust and reliable code.
 
 ## See Also
-- [http-conduit documentation](https://hackage.haskell.org/package/http-conduit)
-- [Introduction to making HTTP requests in Haskell](https://www.haskellforall.com/2012/07/http-doing-requests-to-web-servers.html)
-- [Official Haskell website](https://www.haskell.org/)
+
+- [Wreq documentation](https://hackage.haskell.org/package/wreq)
+- [HTTP clients in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20HTTP%20Client)
+- [Handling errors in Haskell](https://www.fpcomplete.com/blog/2017/07/parsing-errors-fall-through)

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Pisanie do standardowego błędu"
-simple_title:         "Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego wyjścia błędu"
+html_title:           "Rust: Pisanie do standardowego wyjścia błędu"
+simple_title:         "Pisanie do standardowego wyjścia błędu"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Pisanie do standardowego błędu może wydawać się niepotrzebnym lub nawet irytującym zadaniem podczas programowania w Rust. Jednak jest to ważna praktyka, która może pomóc w diagnozowaniu błędów i ułatwić debugowanie programów. W tym artykule dowiesz się, dlaczego warto pisać do standardowego błędu i jak to zrobić w języku Rust.
+Cześć, witajcie w naszym pierwszym poradniku o programowaniu w Rust. W dzisiejszym artykule poznamy czym jest standard error, dlaczego jest ważny i jak można z niego skorzystać w swoich programach.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Pisanie do standardowego błędu w języku Rust jest proste i wymaga użycia metody ``eprintln!``. Przykładowy kod wyglądałby następująco:
+Pisanie do standard error w Rust jest bardzo proste. Wystarczy użyć funkcji `eprintln!` i podać jako argumenty tekst, który chcemy wypisać oraz ewentualne zmienne, które chcemy wyświetlić. Przykładowy kod wyglądałby następująco:
 
 ```Rust
 fn main() {
-    let name = "Kasia";
-    let age = 25;
-    eprintln!("Witaj, nazywam się {} i mam {} lat.", name, age);
+    let name = "Tomasz";
+    let age = 32;
+    eprintln!("Witaj w programie, {}. Masz już {} lat.", name, age);
 }
 ```
 
-Output tego kodu wyglądałby następująco:
+Powyższy kod wypisze nam na standard error wiadomość "Witaj w programie, Tomasz. Masz już 32 lata." Dzięki temu możemy wyświetlać ważne informacje użytkownikom naszych programów, a jednocześnie nie mieszać ich z potencjalnymi wiadomościami błędów, które są wypisywane na standard output.
 
-```text
-Witaj, nazywam się Kasia i mam 25 lat.
-```
+## Głębsze Zagłębienie
 
-## Deep Dive
+Standard error jest jednym z trzech strumieni wyjścia w języku Rust, pozostałe dwa to standard output i standard input. W przeciwieństwie do standard output, który jest domyślnie przekierowywany na konsolę, standard error jest wykorzystywany głównie do wypisywania błędów i innych ważnych informacji, które użytkownik powinien zobaczyć.
 
-Standardowy błąd jest jednym z trzech strumieni wyjścia w języku Rust, obok standardowego wyjścia i standardowego wyjścia błędów. Różni się on od pozostałych dwóch tym, że jest pisany do konsoli błędów, zamiast do standardowego wyjścia. Dzięki temu, nawet w przypadku wystąpienia błędów, informacje są wyświetlane w odpowiednim miejscu, a program może kontynuować swoje działanie. Oczywiście, pisanie do standardowego błędu nie powinno być wykorzystywane jako główna metoda raportowania błędów w programie, jednak może być bardzo przydatne w procesie debugowania i analizy kodu.
+Ponadto, w Rust mamy również dostęp do strumienia stdout_err, który łączy oba strumienie wyjścia, dzięki czemu możemy w jednym miejscu wypisywać zarówno zwykłe komunikaty, jak i błędy.
 
-## Zobacz też
+## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o standardowym wyjściu, standardowym wyjściu błędów i innych aspektach pisania w Rust, polecamy zapoznanie się z poniższymi linkami:
-
-- https://doc.rust-lang.org/std/io/struct.Stderr.html
-- https://doc.rust-lang.org/book/ch01-03-hello-cargo.html#inputoutput
-- https://doc.rust-lang.org/book/ch08-01-vectors.html
+- [Dokumentacja Rust - standard error](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+- [Rust by Example - print to standard error](https://doc.rust-lang.org/rust-by-example/hello/print/print_stderr.html)
+- [Rust Programming Language Forum](https://users.rust-lang.org/)

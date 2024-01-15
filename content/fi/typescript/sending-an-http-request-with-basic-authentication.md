@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Lähetä http-pyyntö perusautentikoinnilla"
-simple_title:         "Lähetä http-pyyntö perusautentikoinnilla"
+title:                "Perusautentikoinnin lähettäminen http-pyyntönä"
+html_title:           "TypeScript: Perusautentikoinnin lähettäminen http-pyyntönä"
+simple_title:         "Perusautentikoinnin lähettäminen http-pyyntönä"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,53 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeää, kun tarvitsemme turvallisen tavan lähettää tietoja verkon yli. Se auttaa meitä suojaamaan arkaluonteisia tietoja ja varmistamaan, että vain oikeutetut käyttäjät pääsevät tietoihin.
+HTTP-pyynnön lähettäminen perusautentikoinnilla on tärkeää, kun halutaan suojata tietyn verkkopalvelun resursseja. Näin varmistetaan, että vain oikeutetut käyttäjät pääsevät käsiksi tiettyihin resursseihin ja estetään luvattomat käyttäjät aiheuttamasta vahinkoa.
 
-## Miten
+## Miten tehdä se
 
 ```TypeScript
-// Tuodaan tarvittavat moduulit
 import axios from 'axios';
 
-// Määritellään lähettäjän tiedot
-const username = "käyttäjätunnus";
-const password = "salasana";
-const auth = "Basic " + Buffer.from(username + ":" + password).toString("base64");
+const username = 'käyttäjänimi';
+const password = 'salasana';
+const url = 'https://esimerkki.com/api/resource';
 
-// Luodaan lähettävä funktio
-const sendRequest = async () => {
-    // Määritellään lähettävä pyyntö
-    const response = await axios.get('https://api.example.com/users', {
-        headers: {
-            // Lisätään autentikointiotsakkeeseen koodattu käyttäjänimi ja salasana
-            'Authorization': auth
-        }
-    });
-    // Tulostetaan vastauksen sisältö konsolille
-    console.log(response.data);
-}
-
-// Kutsutaan funktiota
-sendRequest();
-
+axios.get(url, {
+  auth: {
+    username: username,
+    password: password
+  }
+}).then((response) => {
+  console.log(response.data);
+}).catch((error) => {
+  console.log(error);
+});
 ```
 
-**Tulostus:**
+Kun lähetetään HTTP-pyyntö perusautentikoinnilla, käyttäjänimi ja salasana tulee lisätä pyynnön otsikkoon Base64-muodossa. Tämä voidaan tehdä myös manuaalisesti, mutta esimerkiksi Axios-kirjaston avulla tämä hoituu helposti asettamalla `auth`-parametri pyynnön asetuksissa.
 
-```TypeScript
-{
-    id: 1234,
-    name: "Esimerkki Käyttäjä"
-    role: "Admin"
-}
-```
+## Syvemmälle
 
-## Syvällinen tarkastelu
+Perusautentikoinnissa käytetään HTTP-pyyntöjen otsikkossa `Authorization`-kenttää, joka sisältää käyttäjänimen ja salasanan Base64-koodattuna. Näin käyttäjänimi ja salasana eivät näy selväkielisenä vaan ovat salattuna.
 
-Perusautentikoinnin käyttäminen HTTP-pyyntöjen lähettämisessä vaatii käyttäjän tietojen koodaamista, usein Base64-muotoon. Tämä auttaa lisäämään turvallisuutta ja estämään tietojen lähettämisen muilta kuin oikeutetuilta käyttäjiltä. On myös tärkeää huomata, että autentikointiotsake on salattu Base64:lla, mikä tarjoaa jonkin verran turvaa, mutta ei ole täysin turvallinen tapa lähettää tietoja. Siksi on suositeltavaa käyttää muita turvallisempia tapoja autentikointiin, kuten OAuthia.
+On tärkeää huomata, että perusautentikointi ei ole kaikkein turvallisin tapa suojata resursseja, sillä Base64-koodaus on helppo purkaa. Suositeltavampi vaihtoehto olisi käyttää esimerkiksi JWT-tokensseja.
 
 ## Katso myös
 
-- [Kirjoittaminen ja lukeminen tiedot Axiosin avulla TypeScriptissä](https://www.pluralsight.com/guides/writing-reading-data-axios-typescript)
-- [HTTP-autentikoinnin perusteet](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Axios-dokumentaatio](https://axios-http.com/docs/intro)
+- [Axios dokumentaatio](https://axios-http.com/)
+- [Base64-koodaus selitys (englanniksi)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [JWT-tokenten käyttö HTTP-pyynnöissä](https://jwt.io/introduction/)

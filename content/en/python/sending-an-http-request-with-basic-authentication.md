@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Python recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Python"
 category:             "Python"
@@ -11,46 +12,99 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's interconnected world, web applications have become a crucial part of our daily lives. These applications are built using the HTTP protocol for communication. In certain cases, these applications require users to provide authentication credentials before accessing certain resources. This is where sending HTTP requests with basic authentication becomes necessary.
+Sending an HTTP request with basic authentication is necessary when accessing resources that require user authentication, such as private APIs or web applications protected by a login page. It allows users to securely access these resources by verifying their identity using a username and password.
 
 ## How To
 
-Sending an HTTP request with basic authentication can be achieved using the `requests` library in Python. Let's take a look at a simple code snippet:
+To send an HTTP request with basic authentication in Python, you will need to use the `requests` library. First, import the library by typing `import requests` at the top of your Python file.
 
-```Python
+Next, you will need to specify the URL of the resource you want to access and create a `requests.get()` call with the URL as the argument. For example, if we wanted to access the GitHub API, we would use the following code:
+
+```
 import requests
 
-# Specify the URL of the endpoint that requires authentication
-url = "https://example.com/login"
-
-# Create a dictionary to store the username and password
-auth = {'username': 'john', 'password': 'secret123'}
-
-# Send a GET request with basic authentication
-response = requests.get(url, auth=auth)
-
-# Display the response code
-print(response.status_code)
+url = "https://api.github.com/user"
+response = requests.get(url)
 ```
 
-In the above code, we first import the `requests` library and specify the URL of the web application that requires basic authentication. Next, we create a dictionary to store the username and password of the user. Finally, we send a GET request to the specified URL with the authentication details included in the `auth` parameter. The response code is then printed, which will be `200` if the authentication is successful.
+Now, we need to add the basic authentication credentials to our request. To do this, we will use the `auth` parameter and pass in a tuple with the username and password. The code should look like this:
 
-Here is a sample output of the code snippet:
+```
+import requests
 
-```Python
-200
+url = "https://api.github.com/user"
+response = requests.get(url, auth=("username", "password"))
+```
+
+Finally, we can print out the response to see the result of our request:
+
+```
+import requests
+
+url = "https://api.github.com/user"
+response = requests.get(url, auth=("username", "password"))
+
+print(response.text)
+```
+
+The output will be a JSON string containing information about the authenticated user.
+
+```
+{
+   "login": "username",
+   "id": 1,
+   "node_id": "MDQ6VXNlcjE=",
+   "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/username",
+   "html_url": "https://github.com/username",
+   "followers_url": "https://api.github.com/users/username/followers",
+   "following_url": "https://api.github.com/users/username/following{/other_user}",
+   "gists_url": "https://api.github.com/users/username/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/username/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/username/subscriptions",
+   "organizations_url": "https://api.github.com/users/username/orgs",
+   "repos_url": "https://api.github.com/users/username/repos",
+   "events_url": "https://api.github.com/users/username/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/username/received_events",
+   "type": "User",
+   "site_admin": false,
+   "name": "Username",
+   "company": null,
+   "blog": "",
+   "location": null,
+   "email": null,
+   "hireable": null,
+   "bio": null,
+   "twitter_username": null,
+   "public_repos": 1,
+   "public_gists": 0,
+   "followers": 0,
+   "following": 0,
+   "created_at": "2008-01-14T04:33:35Z",
+   "updated_at": "2009-01-24T04:56:27Z"
+}
 ```
 
 ## Deep Dive
 
-When sending an HTTP request with basic authentication, the `requests` library automatically handles the process of encoding the username and password in Base64 and adding them to the request header. This ensures secure transmission of the credentials over the internet.
+In the previous example, we used the `auth` parameter to pass in a tuple with the username and password. However, we can also use the `HTTPBasicAuth` class from the `requests` library to achieve the same result.
 
-It's worth noting that basic authentication is not the most secure method of authentication, as the username and password are sent in plain text. It's recommended to use HTTPs to encrypt the communication and add an extra layer of security.
+Instead of passing a tuple to the `auth` parameter, we can create an instance of the `HTTPBasicAuth` class and pass in the username and password as arguments. The code would look like this:
+
+```
+import requests
+from requests.auth import HTTPBasicAuth
+
+url = "https://api.github.com/user"
+response = requests.get(url, auth=HTTPBasicAuth("username", "password"))
+
+print(response.text)
+```
+
+Both methods work the same way, so you can choose whichever one you feel more comfortable with.
 
 ## See Also
 
 - [Requests library documentation](https://docs.python-requests.org/en/master/)
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
-- [HTTP Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-
-Sending an HTTP request with basic authentication is a simple yet powerful way to access resources from a web application. It's important to consider the security implications and use appropriate measures to protect sensitive information. With the help of the `requests` library, handling basic authentication in Python is seamless and efficient.
+- [HTTP authentication explained](https://www.freecodecamp.org/news/http-authentication-explained/)

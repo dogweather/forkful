@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "Arduino: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,52 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON no Arduino
+Por que: Por que se envolver com JSON utilizando o Arduino pode ser muito útil para criar projetos que exigem a comunicação de dados com outros dispositivos ou plataformas, como a internet.
 
-Se você está interessado em controlar projetos e dispositivos com o Arduino, uma das habilidades importantes para aprender é trabalhar com JSON. JSON (Javascript Object Notation) é uma forma compacta de armazenar e transmitir dados em formato de texto, tornando-se uma escolha popular para muitas aplicações. Ao aprender a trabalhar com JSON no Arduino, você poderá enviar e receber dados de forma eficiente, permitindo a comunicação com outros dispositivos e a criação de projetos interessantes.
-
-## Como Trabalhar com JSON no Arduino
-
-### Passo 1: Baixe e Instale a Biblioteca ArduinoJSON
-
-Para começar a trabalhar com JSON no Arduino, é necessário ter a biblioteca ArduinoJSON instalada em seu IDE. Certifique-se de ter a versão mais recente da biblioteca e de seguir os passos para sua instalação corretamente.
-
-### Passo 2: Criando um Objeto JSON
-
-Para criar um objeto JSON, usamos o construtor `StaticJsonDocument` e passamos o tamanho do buffer como parâmetro. Por exemplo, para criar um objeto JSON com tamanho de buffer de 256 bytes, usamos o seguinte código:
-
+Como fazer: Para começar a trabalhar com JSON no Arduino, é necessário instalar uma biblioteca específica chamada "ArduinoJson". Ela pode ser facilmente encontrada e instalada através do Gerenciador de Bibliotecas no IDE do Arduino. Em seguida, basta importá-la para seu código utilizando o comando ```#include <ArduinoJson.h>```.
+Com a biblioteca instalada, podemos criar um objeto JSON utilizando a seguinte sintaxe: 
 ```Arduino
-StaticJsonDocument<256> doc;
+StaticJsonDocument<500> doc; 
 ```
-
-### Passo 3: Adicionando Dados ao Objeto JSON
-
-Após criar o objeto JSON, podemos adicionar dados a ele usando o método `set()` e passando o nome do campo e o valor desejado. Por exemplo, para adicionar o valor "25" ao campo "temperatura", usamos o seguinte código:
-
+Aqui, definimos o tamanho máximo que nosso objeto pode ter (no exemplo, 500 bytes). Em seguida, podemos inserir dados nesse objeto utilizando o formato "chave: valor". Por exemplo:
 ```Arduino
-doc.set("temperatura", 25);
+doc["nome"] = "John";
+doc["idade"] = 25;
 ```
+Para enviar esse objeto JSON, utilizamos a função ```serializeJson()```, passando como parâmetros o objeto e o objeto responsável pelo envio de dados (exemplo: ```Serial``` para enviar pelos pinos serial do Arduino). E para receber e interpretar um objeto JSON, utilizamos a função ```deserializeJson()```, que converte os dados recebidos em formato JSON para um objeto manipulável no Arduino.
+É importante lembrar que a sintaxe do JSON é sensível a espaços e caracteres especiais, então é preciso ter cuidado ao digitar os dados.
 
-### Passo 4: Serializando o Objeto JSON
-
-Finalmente, para enviar o objeto JSON criado, precisamos serializá-lo usando `serializeJson()` e passando o objeto como parâmetro. Nesse exemplo, estamos enviando o objeto JSON por meio da porta serial:
-
+Deep Dive: Um objeto JSON é basicamente uma estrutura de dados que permite armazenar informações de forma organizada. Ele consiste em pares de chave e valor, onde a chave é uma string que identifica o valor relacionado a ela. O valor pode ser um número, uma string, um objeto ou um array. 
+No Arduino, podemos trabalhar com objetos JSON de duas maneiras: estática e dinâmica. No exemplo acima, utilizamos a maneira estática, onde definimos o tamanho máximo do objeto de antemão. Porém, se não soubermos com exatidão o tamanho do objeto, podemos utilizar a maneira dinâmica, onde não precisamos definir o tamanho antes e o objeto vai se adaptando conforme os dados são inseridos. Isso pode ser feito utilizando a sintaxe:
 ```Arduino
-serializeJson(doc, Serial);
+DynamicJsonDocument doc(500); 
 ```
+Neste caso, o tamanho máximo é passado como parâmetro para a criação do objeto.
+Além disso, existem diversas funções na biblioteca ArduinoJson que nos permitem manipular e obter informações sobre o objeto JSON, como por exemplo, acessar e alterar valores específicos utilizando a sintaxe "objeto["chave"].valor" ou realizar loops para percorrer todos os valores.
 
-## Mergulho Profundo em JSON
-
-Há muitos elementos e funções interessantes que podem ser explorados quando se trabalha com JSON no Arduino. Alguns recursos avançados incluem:
-
-- Acesso a campos específicos em objetos JSON usando o operador `[]`.
-- Armazenamento de objetos JSON em memória Flash em vez de memória RAM.
-- Aninhamento de objetos e arrays JSON para criar estruturas de dados mais complexas.
-
-Ao explorar esses recursos, você poderá aprimorar suas habilidades em trabalhar com JSON e criar projetos ainda mais interessantes com o Arduino.
-
-## Veja Também
-
-- [Documentação da biblioteca ArduinoJSON](https://arduinojson.org/)
-- [Exemplo de projeto com JSON no Arduino](https://create.arduino.cc/projecthub/ian1991india/sending-complex-data-structures-via-serial-using-json-a2b088)
-- [Tutorial em vídeo sobre trabalhar com JSON no Arduino](https://www.youtube.com/watch?v=hIPOUVlw0I4)
+Veja também: Para mais informações sobre a biblioteca ArduinoJson, recomendo a leitura da documentação oficial em https://arduinojson.org/ e a utilização de tutoriais e exemplos disponíveis na internet. Happy coding!

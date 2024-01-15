@@ -1,6 +1,7 @@
 ---
-title:                "Elm: לעבוד עם json"
-simple_title:         "לעבוד עם json"
+title:                "עבודה עם json"
+html_title:           "Elm: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-JSON היא שפת תוכנות קלה וממוקדת שתפיק את משחק הדגל שלכם במתחמי פיתוח היום בזמן! כתוצאה משפע המידע העצום ברשתות, מקצוע הפיתוח מחייב תקשורת יעילה ותמיכה בפורמט שיאומות מעמידות בפניו כפונקציות! עם יישומוני מטרואילנד אינטרנט אינטרנט לב־זמַן שלהם נקבל הצגה למידע על־זה שכדאי!
+עבודה עם JSON נחשבת לידע חשוב כאשר מתעסקים בתכנות ומידע של שפות מפורסמות כמו Javascript. אם אתם מעוניינים להמשיך ולפתח את היכולת שלכם לעבוד עם מבני נתונים בפורמט JSON באופן יעיל וקריא, אז העבודה עם Elm תהיה מיוחדת עבורכם.
 
-## איך לעשות זאת
+## איך לעבוד עם JSON באמצעות Elm
+
+עבודה עם JSON באמצעות Elm היא פשוטה וידידותית. מחברים כניסה בשפת Elm תמצאו את Json.Decode משמש כקורא ומסדר את הנתונים על פני טיפוס משתנה.
 
 ```Elm
-type alias Person =
-    { name : String
-    , age : Int
-    , hobbies : List String
-    }
-
-let john =
-    { name = "John"
-    , age = 25
-    , hobbies = [ "reading", "painting", "hiking" ]
-    }
-
-personToJson : Person -> String
-personToJson person =
-    let
-        hobbiesJson =
-            person.hobbies
-            |> List.map (\h -> Json.Encode.string h)
-            |> Json.Encode.list
-    in
-        Json.Encode.object
-            [ ( "name", Json.Encode.string person.name )
-            , ( "age", Json.Encode.int person.age )
-            , ( "hobbies", hobbiesJson )
-            ]
+-- כל מבנה הנתונים נמצא בתוך מודול Json.Decode
+-- כאשר יש לנו את הנתונים שלנו בתוך משתנה לפי הנוסחה הבאה:
+myData : Decoder Int -- יצירת טיפוס
+myData = Decode.int -- כאן נמצא הפורמט ששמנו אותו למשתנה
+-- עכשיו נשתמש ב-myData כדי להקליד את הנתינים שלנו
+Decode.decodeString myData "123" -- כעת יוצאים עם Just 123
+Decode.decodeString myData "abc" -- כשימתקלים במספרים של אותיות יוצאים עם Nothing
 ```
 
-זהו דוגמא קצרה של כיצד ניתן להמיר מבני נתונים של Elm למבני נתונים של JSON באמצעות הספרייה פנימית של `Json.Encode`. הפונקציה `personToJson` מקבלת אוביקט מסוג `Person` ומחזירה סטרינג שמכיל את הנתונים שלו בתור מבנה JSON. כדי להמיר את התת־רשימה של תחבירי החברות, אנו מאתרים כל תחביר ברשימה וממירים אותו למחרוזת באמצעות הפונקציה `Json.Encode.string`, ואז ממירים את הרשימה למבנה JSON באמצעות `Json.Encode.list`.
+## ירידה לעומק
 
-כעת, כדי להמיר מבנה JSON למבני נתונים של Elm בשפה אנו משתמשים בספריית פנימית נוספת בשם `Json.Decode`. היא מכילה פונקציות חזרה שהמיר מבני JSON לתת־נתונים של Elm בצורה צינורה ופשוטה.
+בנוסף ליצירת טיפוסים למבני נתונים, ניתן גם להשתמש בתכניות Json.Encode כדי ליצור נתונים בפורמט JSON. זה מאפשר לנו לכתוב דומיין עם הנתונים ולשלוחם למתאם. כדי להתחיל, אנו נשתמש בברירת המחדל elm/parser, שאיננה אשרותה להתמודד בעבודה עם JSON.
 
-## צליל עמק
+```Elm
+import Json.Encode as Encode
+import Json.Decode as Decode
 
-כעת שאנו מבינים כיצד להעביר מבנים של Elm לפורמט של JSON ולהיפך וכיצד לעבוד עם הס
+person : Encode.Value
+person =
+    Encode.object
+        [ ( "name", Encode.string "John" )
+        , ( "age", Encode.int 25 )
+        , ( "married", Encode.bool True )
+        ]
+
+-- הפלט מציג נתונים של האיש "ג'ון"
+Encode.encode 0 person
+
+-- ניתן גם להשתמש ב-tags כדי ליצור טיפוס נתונים מסוג זה
+type alias PersonDetails =
+    { name : String
+    , age : Int
+    , married

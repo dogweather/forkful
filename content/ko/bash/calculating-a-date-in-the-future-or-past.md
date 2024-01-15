@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 미래나 과거의 날짜를 계산하기"
-simple_title:         "미래나 과거의 날짜를 계산하기"
+title:                "미래나 과거의 날짜 계산하기"
+html_title:           "Bash: 미래나 과거의 날짜 계산하기"
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -9,37 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#왜
-어떤 이유에서 어떤 사람이 과거나 미래 날짜를 계산하는데 참여할지에 대해서는 매우 궁금할 수 있습니다. 이러한 계산은 어떤 상황에서 유용할까요? 아무래도 날짜를 조정할 필요가 있을 때마다 참여할 수 있어서 저는 이 주제가 흥미로워서 이번에는 이에 대해 알려드리려고 합니다.
+## 왜
 
-#어떻게
-이러한 계산은 Bash script를 이용하여 진행될 수 있습니다. 먼저 그것이 무엇이고, 그것이 어떻게 사용되어지는지에 대해서 알아보도록 하겠습니다. 먼저 Bash script를 찾아서 그것을 우리가 원하는 방식으로 실행할 수 있도록 하는 것으로 시작해보겠습니다. 다음으로 그것이 어떻게 작동하는지에 대해서 알아보겠습니다.
+날짜를 미래 또는 과거로 계산하는 것의 이유는 우리가 일상 생활에서 자주 필요한 작업입니다. 예를 들어, 어떤 날짜에 대한 예약을 하거나, 과거 날짜의 기록을 찾고 싶을 때 등 다양한 상황에서 날짜 계산은 필수적인 기능입니다.
 
-```Bash
-#!/bin/bash
+## 하는 법
 
-# 오늘의 날짜를 가져오기
-today=$(date +%Y-%m-%d)
+우리는 Bash의 내장 명령어인 `date`를 사용하여 미래 또는 과거 날짜를 계산할 수 있습니다. 이를 위해 다음과 같은 형식을 사용합니다.
 
-# 5일 후의 날짜를 계산하여 출력
-future_date=$(date -d "+5 days" +%Y-%m-%d)
-echo "5일 후의 날짜: $future_date"
-
-# 10년 전의 날짜를 계산하여 출력
-past_date=$(date -d "10 years ago" +%Y-%m-%d)
-echo "10년 전의 날짜: $past_date"
+```
+date -d "MM/DD/YYYY + n days/weeks/months/years"
 ```
 
-위의 Bash script는 현재 날짜를 가져온 다음, "date" 명령어를 사용하여 5일 후와 10년 전의 날짜를 계산하고 출력하는 예제입니다. 우리가 원하는 범위의 날짜를 자유롭게 입력하여 계산할 수 있습니다.
+여기서 MM/DD/YYYY는 기준이 되는 날짜이며, n은 더하거나 빼고자 하는 날짜의 수입니다. 예를 들어, 내일의 날짜를 계산하려면 다음과 같이 입력하면 됩니다.
 
-#깊게 파고들기
-때때로 우리는 과거 또는 미래 날짜를 특정한 형식으로 계산해야 할 수 있습니다. 이는 예를 들어, 일주일 뒤의 월요일의 날짜를 알고 싶거나, 한 달 전의 마지막 날짜를 알고 싶을 때 등 다양한 상황에서 사용될 수 있습니다.
+```
+date -d "06/22/2021 + 1 day"
+```
 
-Bash script를 사용하여 미래 또는 과거 날짜를 계산하는 것은 매우 쉽습니다. 우리는 "date" 명령어의 다양한 옵션을 이용하여 원하는 방식대로 날짜를 계산할 수 있습니다. 실제로, 이 모든 옵션들을 알아보는 것은 제가 이 블로그 포스트에서 다루기에는 너무 많은 주제가 될 것입니다.
+출력은 "Tue Jun 22 00:00:00 KST 2021"과 같은 형식으로 나타납니다.
 
-관심있는 분들은 "man date" 명령어를 참조하거나 다른 자료들을 검색하여 더 많은 정보를 얻을 수 있습니다.
+계산된 날짜를 년도, 월, 일과 같이 보다 자세한 형식으로 출력하려면 `-I` 옵션을 사용할 수 있습니다. 예를 들어, 위의 예제를 아래와 같이 입력하면 됩니다.
 
-#See Also
-[Bash에서 날짜 및 시간 계산하기](https://www.howtogeek.com/463614/how-to-add-and-subtract-dates-in-bash/)
-[Bash 사용자를 위한 효과적인 날짜 형식 지정 방법](https://www.howtogeek.com/558702/how-to-format-date-and-time-in-the-linux-terminal-and-use-it-in-bash-scripts/)
-[Bash 공식 문서](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+```
+date -I -d "06/22/2021 + 1 day"
+```
+
+그러면 "2021-06-22"라는 형식으로 출력됩니다.
+
+## 깊게 파헤치기
+
+`date` 명령어는 다양한 옵션을 가지고 있어 매우 유용합니다. 예를 들어, 다음과 같은 옵션들이 있습니다.
+
+- `-I` : 출력 형식을 년, 월, 일 형식으로 지정합니다.
+- `-R` : 출력 형식을 RFC2822 형식으로 지정합니다.
+- `-u` : 출력 시간을 UTC로 지정합니다.
+- `-r` : 입력 파일의 수정 시간을 사용하여 날짜를 계산합니다.
+
+또한, `--date`나 `-d` 옵션으로 입력된 날짜 형식은 다양한 형태로 지정할 수 있습니다. 자세한 사항은 `man date`를 통해 확인할 수 있습니다.
+
+## 참고
+
+- [Bash 공식 문서 - date](https://www.gnu.org/software/bash/manual/bash.html#Date-Input-Formats)
+- [Linuxize - How to Use the date Command in Linux](https://linuxize.com/post/how-to-use-date-command-in-linux/)
+
+[//]: # (This is a comment and it won't be included in the output)
+[//]: # (I am using it to show the output in the preview section)

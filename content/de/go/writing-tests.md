@@ -1,5 +1,6 @@
 ---
-title:                "Go: Tests schreiben"
+title:                "Tests schreiben"
+html_title:           "Go: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Go"
 category:             "Go"
@@ -9,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie regelmäßig Go-Code schreiben, werden Sie sicherlich schon von Test-Driven Development (TDD) gehört haben. Aber warum sollten Sie sich die Zeit nehmen, Tests zu schreiben, anstatt einfach direkt mit dem Codieren zu beginnen? Die Antwort ist einfach: Tests helfen Ihnen, die Qualität Ihres Codes zu verbessern, Bugs frühzeitig zu erkennen und Ihre Entwicklungsprozesse zu verbessern.
+Tests schreiben kann den Prozess des Codierens erschweren und manchmal sogar etwas nervig sein, aber sie sind unerlässlich, um sicherzustellen, dass dein Code funktioniert und keine unerwünschten Nebeneffekte hat. Tests helfen auch dabei, Fehler frühzeitig zu erkennen und zu verhindern, dass sie in die Produktion gelangen.
 
-## Wie
+# Wie geht man vor
 
-Um Tests in Go zu schreiben, verwenden wir das Paket "testing". Hier ist ein einfaches Beispiel, um zu zeigen, wie es funktioniert:
+Um einen einfachen Test in Go zu schreiben, musst du zunächst das `testing` Paket importieren. Dann kannst du die Funktion `testing.T` nutzen, um einen Testfall zu definieren.
 
 ```Go
-func Add(a, b int) int {
-    return a + b
-}
+import "testing"
 
-func TestAdd(t *testing.T) {
-    result := Add(2, 3)
-    expected := 5
-
+func TestAddition(t *testing.T) {
+    result := 2 + 2
+    expected := 4
     if result != expected {
-        t.Errorf("Expected %d, got %d", expected, result)
+        t.Errorf("Erwartetes Ergebnis war %d, erhaltenes Ergebnis war %d", expected, result)
     }
 }
 ```
 
-Dieser Code definiert eine Funktion "Add", die zwei Zahlen addiert, und einen Test, der überprüft, ob das Ergebnis der Funktion dem erwarteten Wert entspricht. Wir können den Test ausführen, indem wir "go test" in der Terminal eingeben.
+Du kannst die Methode `t.Errorf()` nutzen, um eine Fehlermeldung zu erhalten, wenn das Ergebnis nicht den Erwartungen entspricht.
 
-Das Output sollte wie folgt aussehen:
+# Tiefen-Eintauchen
 
-```
---- FAIL: TestAdd (0.00s)
-    main_test.go:9: Expected 5, got 6
-FAIL
-```
+Beim Schreiben von Tests in Go gibt es ein paar wichtige Konzepte zu beachten. Eine davon ist die Verwendung von **table-driven tests**. Das bedeutet, dass du verschiedene Eingaben und erwartete Ergebnisse in einer Tabelle definieren kannst und dann durch alle Kombinationen testen kannst. Dies ist besonders nützlich, um sicherzustellen, dass dein Code für verschiedene Szenarien funktioniert.
 
-Hier können wir sehen, dass unser Test fehlgeschlagen ist, was bedeutet, dass wir einen Fehler in unserer Funktion haben und sie korrigieren müssen.
+Du kannst auch **Mocking** nutzen, um externe Abhängigkeiten zu ersetzen und somit unabhängige Tests zu schreiben. Das `testing` Paket bietet auch Methoden wie `t.Fatal()` und `t.Skip()` an, um deine Tests zu verbessern.
 
-## Deep Dive
+# Siehe auch
 
-Wenn es um das Schreiben von Tests geht, gibt es viele Techniken und Methoden, die Sie anwenden können. Eine wichtige Sache zu beachten ist, dass Ihre Tests so einfach und unabhängig wie möglich sein sollten. Das bedeutet, dass Sie sie nicht von anderen Tests abhängig machen und sie auch nicht zu komplex machen sollten.
-
-Ein weiterer wichtiger Punkt ist, dass die Anzahl Ihrer Tests nicht immer wichtiger ist als ihre Qualität. Fokussieren Sie sich auf die kritischen Teile des Codes und schreiben Sie Tests dafür, anstatt jede einzelne Funktion zu testen.
-
-Es gibt auch verschiedene Tools, die Ihnen helfen können, bessere Tests zu schreiben, wie zum Beispiel "go test -cover", das Ihnen zeigt, wie viel Prozent Ihres Codes von Ihren Tests abgedeckt wird. Je höher die Abdeckung, desto besser.
-
-## Siehe auch
-
-- [Official Go testing package documentation](https://golang.org/pkg/testing/)
-- [Effective Go (Testing section)](https://golang.org/doc/effective_go.html#testing)
-- [The Go Testing Toolbox](https://github.com/golang/go/wiki/Testing)
-  - [GoConvey](https://github.com/smartystreets/goconvey)
-  - [Testify](https://github.com/stretchr/testify)
-  - [Ginkgo](https://github.com/onsi/ginkgo)
-  - [Mockery](https://github.com/vektra/mockery)
+- Offizielle Dokumentation für das `testing` Paket in Go: https://golang.org/pkg/testing/
+- Ein Tutorial zu TDD (Test-driven Development) in Go: https://blog.alexellis.io/golang-writing-unit-tests/
+- Ein Artikel über table-driven tests in Go: https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go

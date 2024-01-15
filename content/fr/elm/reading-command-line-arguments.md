@@ -1,6 +1,7 @@
 ---
-title:                "Elm: La lecture des arguments en ligne de commande"
-simple_title:         "La lecture des arguments en ligne de commande"
+title:                "La lecture des arguments de ligne de commande"
+html_title:           "Elm: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,61 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Chaque développeur a probablement rencontré le besoin de lire des arguments de ligne de commande à un moment donné dans son parcours de programmation. Cela peut sembler intimidant au premier abord, mais heureusement, Elm fournit une solution simple et efficace pour relever ce défi.
+Si vous êtes un programmeur Elm, vous avez probablement déjà été confronté à la nécessité de lire des arguments de ligne de commande dans votre code. Cela peut sembler intimidant au premier abord, mais une fois que vous savez comment le faire, c'est un savoir-faire utile à avoir dans votre boîte à outils de programmation.
 
 ## Comment faire
 
-Pour lire des arguments de ligne de commande en Elm, nous allons utiliser la fonction `getArgs` du module `Platform.Cmd` ainsi que le module `Elm-Kernel` pour accéder à l'interface JavaScript. Voici un exemple de code utilisant ces deux éléments :
+Pour lire les arguments de ligne de commande en Elm, vous pouvez utiliser la bibliothèque [elm-tools/parser](https://package.elm-lang.org/packages/elm-tools/parser/latest/). Voici un exemple simple de code qui lit un argument appelé "nom" et affiche une chaîne de caractères avec le nom fourni:
 
 ```Elm
-import Platform.Cmd exposing (Cmd)
-import Html exposing (text)
-import Elm.Kernel.Platform exposing (load)
+import Parser exposing (..)
+import Tasks exposing (..)
 
-main : Program () String ()
+main : Program ()
 main =
-    Html.program
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
+   Parser.map display 
+      (succeed print <|
+         string "nom" `andThen` 
+         map concat getChompedString)
+   |> parse Process.arguments
+   |> andThen (\x -> performTask x [])
+
+display : String -> Task x ()
+display name =
+   putStrLn ("Bonjour" ++ name ++ "!")
 
 
-init : () -> ( String, Cmd () )
-init _ =
-    ( "", Platform.Cmd.getArgs )
-
-
-update : () -> String -> ( String, Cmd () )
-update _ arg =
-    ( "Les arguments de ligne de commande sont : " ++ arg, Cmd.none )
-
-
-subscriptions : () -> Sub () 
-subscriptions _ =
-    Sub.none
-
-
-view : String -> Html Msg 
-view arg =
-    text arg
 ```
 
-Dans cet exemple, nous utilisons la fonction `getArgs` dans notre fonction `init` pour récupérer les arguments de ligne de commande et les stocker dans notre modèle. Ensuite, dans notre fonction `update`, nous pouvons utiliser ces arguments pour mettre à jour notre modèle ou effectuer toute autre action souhaitée.
+Si vous exécutez ce code avec la commande `elm make lire-arguments.elm --nom=Benoit`, vous devriez voir "Bonjour Benoit!" imprimé dans votre terminal.
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu comment utiliser la fonction `getArgs`, plongeons un peu plus en profondeur pour mieux comprendre comment elle fonctionne. En réalité, cette fonction utilise une API JavaScript sous-jacente pour récupérer les arguments de ligne de commande de l'application et les renvoyer sous forme de chaîne de caractères. Cela signifie que pour lire des arguments de ligne de commande en Elm, nous devons également avoir un script JavaScript lié à notre application.
-
-Pour ce faire, nous allons utiliser le module `Elm-Kernel` pour accéder à l'interface JavaScript et appeler la fonction `load` pour charger un script externe. Ce script contiendra notre fonction JavaScript pour récupérer les arguments de ligne de commande et les renvoyer à notre application Elm.
+La bibliothèque elm-tools/parser vous offre une grande flexibilité dans la façon dont vous lisez les arguments de ligne de commande. Vous pouvez utiliser des combinateurs pour créer des parsers qui correspondent à des expressions régulières ou utiliser des parsers déjà existants pour lire des types de données tels que des nombres ou des booléens. N'hésitez pas à explorer la documentation pour découvrir toutes les possibilités offertes.
 
 ## Voir aussi
 
-Pour en savoir plus sur la lecture des arguments de ligne de commande en Elm, vous pouvez consulter la documentation officielle d'Elm ainsi que d'autres articles en ligne tels que :
-
-- [Documentation officielle d'Elm](https://guide.elm-lang.org)
-- [Article de blog sur la lecture des arguments de ligne de commande en Elm](https://www.dailydrip.com/blog/elm-argument-parsing)
-- [Exemple de projet GitHub utilisant la lecture des arguments de ligne de commande en Elm](https://github.com/elm/projects/tree/master/command-line-args)
-
-Maintenant que vous êtes familiarisé avec la lecture des commandes en ligne en Elm, vous pouvez l'incorporer dans vos projets et tirer parti de cette fonctionnalité pratique et essentielle.
+- [Documentation de elm-tools/parser](https://package.elm-lang.org/packages/elm-tools/parser/latest/)
+- [Exemple complet de lecture d'arguments de ligne de commande avec elm-tools/parser](https://github.com/elm/library/blob/master/src/Parser.elm)
+- [Guide sur la manipulation des entrées utilisateur en Elm](https://guide.elm-lang.org/interop/user_input.html)

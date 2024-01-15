@@ -1,5 +1,6 @@
 ---
-title:                "C#: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "C#: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+CSV är ett vanligt format för att lagra och dela data, och det är därför viktigt att kunna arbeta med det effektivt. Genom att lära dig hantera CSV-data i C# kan du enkelt importera och exportera data från olika program och verktyg.
 
-CSV-filer är en vanlig typ av fil som används för att lagra och dela data. De kan enkelt skapas och läsas av både människor och datorer, vilket gör dem till ett populärt val för att hantera data. Om du är en programmerare eller datavetare, är det viktigt att veta hur man arbetar med CSV-filer för att kunna hantera och analysera data på ett effektivt sätt.
-
-## How To
-
-Att arbeta med CSV-filer i C# är en relativt enkel process. Du kan använda färdiga bibliotek som CSVHelper eller skriva din egen kod för att läsa och skriva till CSV-filer. Här är ett exempel på hur du kan läsa in data från en CSV-fil:
+## Hur man gör
+För att arbeta med CSV i C# behöver du först inkludera namespace för CSV-hanteringsbiblioteket. Detta görs genom att skriva följande kod i början av ditt program:
 
 ```C#
-using (var reader = new StreamReader("minfil.csv"))
+using System.IO;
+using CsvHelper;
+```
+För att läsa in en CSV-fil i ditt program behöver du först skapa en instans av CsvReader-klassen och ange filvägen för din CSV-fil:
+
+```C#
+using (StreamReader sr = new StreamReader("path/to/csvfile.csv"))
 {
-    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+    using (var reader = new CsvReader(sr))
     {
-        var records = csv.GetRecords<MinKlass>().ToList();
+        //läs in alla rader i CSV-filen
+        var records = reader.GetRecords<RecordClass>();
     }
 }
 ```
+Som du kan se i koden ovan behöver du skapa en klass som representerar datastrukturen i din CSV-fil. I mitt exempel har jag använt RecordClass för detta ändamål. När du har läst in data från din CSV-fil kan du sedan använda den i ditt program som du önskar.
 
-I detta exempel används CSVHelper-biblioteket för att läsa in data från en CSV-fil och konvertera den till en lista av objekt av typen MinKlass. Här är en delvis skriven klass MinKlass som visar hur du kan definiera strukturen på data som läses in:
+Om du vill skapa en CSV-fil från ditt program kan du använda CsvWriter-klassen på ett liknande sätt:
 
 ```C#
-public class MinKlass
+using (var writer = new CsvWriter(Console.Out))
 {
-    public string Förnamn { get; set; }
-    public string Efternamn { get; set; }
+    //skriv ut kolumnnamn
+    writer.WriteHeader<RecordClass>();
+
+    //skriv ut data
+    writer.WriteRecords(records); 
 }
 ```
 
-När du har läst in data från en CSV-fil, kan du enkelt utföra olika åtgärder på den, som att filtrera eller uppdatera värden. När du är klar med dina manipulationer kan du sedan spara data till en CSV-fil igen med hjälp av samma bibliotek eller egen kod.
-
 ## Deep Dive
+Det finns flera olika sätt att anpassa hur CSV-filer läses in och skrivs ut i C#. Till exempel kan du ändra separator-tecken (standardmässigt är det komma) och du kan också ställa in olika kolumntyper för din data, till exempel som sträng eller som ett specifikt datatyp som du har definierat i din programkod.
 
-Att arbeta med CSV-filer kan också innebära att hantera olika typer av datastrukturer, hantering av specialtecken eller att använda olika avgränsare (separatorer) för dina datafält. Om du är intresserad av att djupdyka i dessa koncept kan du läsa mer om CSV-formatet och dess specifikationer här: [https://tools.ietf.org/html/rfc4180] (https://tools.ietf.org/html/rfc4180)
+För att läsa mer om alla de olika sätten att anpassa CSV-hantering i C#, besök dokumentationen för CsvHelper-biblioteket [här](https://joshclose.github.io/CsvHelper/).
 
 ## Se även
-
-- [https://joshclose.github.io/CsvHelper/] (https://joshclose.github.io/CsvHelper/)
-- [https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1] (https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1)
-- [https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1] (https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
+- [Microsofts officiella dokumentation för arbetande med CSV i C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1)
+- [En guide för hur man läser och skriver CSV-filer i C#](https://dev.to/mkalam/how-to-read-and-write-csv-files-vf2)
+- [En tutorial för hantering av CSV-data i C# med CsvHelper](https://dotnetthoughts.net/csvhelper-tutorial/)

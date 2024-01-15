@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão."
+html_title:           "Swift: Excluindo caracteres que correspondem a um padrão."
+simple_title:         "Excluindo caracteres que correspondem a um padrão."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,36 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Às vezes, ao trabalhar em um projeto de programação, pode ser necessário remover caracteres específicos de uma string que correspondam a um determinado padrão. Isso pode ser útil para limpar os dados ou formatar uma entrada de usuário, por exemplo.
+O Swift é uma linguagem de programação moderna e poderosa que é usada para criar aplicativos para iOS, macOS, watchOS e tvOS. Como programador, é importante ter conhecimento sobre diferentes funcionalidades do Swift, incluindo a capacidade de excluir caracteres que correspondem a um determinado padrão. Isso pode economizar tempo e tornar o código mais eficiente.
 
-## Como fazer
+## Como Fazer
 
-Existem várias maneiras de remover caracteres que correspondam a um padrão em Swift. Uma maneira simples de fazer isso é usando o método `replacingOccurrences(of:with:)` em uma string, onde o primeiro argumento é o padrão a ser encontrado e o segundo é a string de substituição. Por exemplo:
+Para excluir caracteres que correspondem a um padrão em Swift, você pode usar a função `replacingOccurrences(of:with:)`. Esta função substitui todas as ocorrências de uma string com uma nova string, e também tem um parâmetro opcional de `options` para especificar quaisquer opções adicionais.
 
-```Swift
-let sentence = "Eu amo programação em Swift!"
-let newSentence = sentence.replacingOccurrences(of: "am", with: "gosto")
-print(newSentence)
-// Output: "Eu gosto programação em Swift!"
+Aqui está um exemplo de código que usa `replacingOccurrences(of:with:)` para excluir todos os caracteres de pontuação de uma string:
+
+```
+let frase = "Olá! Como vai?"
+let semPontuacao = frase.replacingOccurrences(of: "[^A-Za-z0-9]", with: "", options: .regularExpression)
+print(semPontuacao) // output: OláComovai
 ```
 
-Outra opção é usar expressões regulares com a classe `NSRegularExpression`. Esta é uma maneira mais avançada de lidar com padrões e oferece uma maior flexibilidade. Por exemplo:
+O parâmetro `options` neste exemplo especifica que apenas caracteres alfanuméricos devem ser mantidos na string. Isso significa que todos os outros caracteres, como o ponto e a exclamação, serão excluídos.
 
-```Swift
-let sentence = "Eu amo programação em Swift!"
-let regex = try! NSRegularExpression(pattern: "\\w*amo\\w*", options: [])
-let newSentence = regex.stringByReplacingMatches(in: sentence, options: [], range: NSRange(location: 0, length: sentence.utf16.count), withTemplate: "gosto")
-print(newSentence)
-// Output: Eu gosto programação em Swift!
+Você também pode optar por usar o `for-in loop` para percorrer a string e excluir manualmente as ocorrências de caracteres indesejados:
+
+```
+let frase = "Olá! Como vai?"
+var semPontuacao = ""
+
+for letra in frase {
+  if !"[^A-Za-z0-9]".contains(String(letra)) { // verifica se a letra não é um caractere de pontuação
+    semPontuacao += String(letra) // adiciona a letra à string semPontuacao
+  }
+}
+
+print(semPontuacao) // output: OláComovai
 ```
 
-## Deep Dive
+Neste exemplo, usamos o método `contains()` para verificar se a `String` `"[^A-Za-z0-9]"` contém a letra atual na iteração. Se não contiver, isso significa que a letra não é um caractere de pontuação e é adicionada à string `semPontuacao`.
 
-Ao usar o método `replacingOccurrences(of:with:)`, é importante notar que ele faz distinção entre maiúsculas e minúsculas. Isso significa que ao usar este método para substituir caracteres, ele só substituirá aqueles que correspondem exatamente ao padrão fornecido.
+## Mergulho Profundo
 
-Já ao usar expressões regulares, é possível usar símbolos especiais para definir regras mais complexas e substituir partes específicas de uma string. Além disso, a classe `NSRegularExpression` oferece muitos métodos úteis para o trabalho com expressões regulares, como verificar se a string corresponde ao padrão ou obter informações sobre as correspondências encontradas.
+Ao excluir caracteres que correspondem a um padrão em Swift, é importante entender como funciona o `options`, que é um parâmetro opcional de `replacingOccurrences(of:with:)`. Ele permite que você especifique opções adicionais, como ignorar letras maiúsculas e minúsculas, ou substituir apenas a primeira ocorrência de uma string.
 
-## Veja também
+Aqui estão algumas opções comuns que podem ser usadas:
 
-- [Documentação oficial do Swift: NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Tutorial de expressões regulares em Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
+- `.caseInsensitive`: ignora letras maiúsculas e minúsculas, o que significa que a string `Hello` seria considerada igual à string `hELLo`.
+- `.diacriticInsensitive`: ignora marcas diacríticas, permitindo que letras acentuadas sejam consideradas iguais às letras não acentuadas.
+- `.regularExpression`: permite que você use expressões regulares para especificar o padrão que deseja substituir.
+
+Você também pode combinar várias opções, separando-as com o operador `|`. Por exemplo, se você quiser fazer uma substituição que ignore letras maiúsculas e minúsculas e marcas diacríticas, pode usar `.caseInsensitive | .diacriticInsensitive`.
+
+## Veja Também
+
+- [Documentação oficial do Swift](https://docs.swift.org/swift-book)
+- [Curso de Swift do Codecademy](https://www.codecademy.com/learn/learn-swift)
+- [Tutorial de Expressões Regulares em Swift](https://www.raywenderlich.com/162-regular-expressions-tutorial-getting-started)

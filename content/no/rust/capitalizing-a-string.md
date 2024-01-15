@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Stor bokstavering av en streng"
-simple_title:         "Stor bokstavering av en streng"
+title:                "Store bokstaver i en tekst"
+html_title:           "Rust: Store bokstaver i en tekst"
+simple_title:         "Store bokstaver i en tekst"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,43 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Rust er et nytt og spennende programmeringsspråk som blir stadig mer populært blant utviklere. En av de mange fordelene med Rust er dens evne til å håndtere strenger på en effektiv og sikker måte. I denne bloggposten skal vi se nærmere på hvordan man kan gjøre strenger mer leselige ved å kapitalisere dem.
+Hvis du noen gang har jobbet med tekstbehandling i Rust, har du kanskje lurt på hvordan du kan få en streng til å starte med stor bokstav. Enten det er for å skape et profesjonelt utseende på en nettside eller for å følge konvensjoner i koding, så er det viktig å kunne gjøre dette enkelt. I denne artikkelen vil vi se på hvordan du kan kapitalisere en streng i Rust.
 
-## Hvordan
+## Hvordan gjør du det
 
-For å kapitalisere en streng i Rust, trenger vi bare å bruke funksjonen `to_uppercase()` sammen med strengvariabelen vår. La oss se på et enkelt eksempel:
+Det finnes flere måter å kapitalisere en streng i Rust på, men den enkleste og mest effektive måten er å bruke metoden `to_uppercase()`. Dette er en innebygd metode som blir brukt på en `String`-type for å transformere alle små bokstaver til store bokstaver.
 
-```Rust
-let navn = "ole";
-println!("{}", navn.to_uppercase());
-```
-
-Dette vil gi følgende output:
-
-```
-OLE
-```
-
-Vi kan også kapitalisere en streng basert på språk og regionale konvensjoner ved å bruke funksjonen `to_uppercase_with_locale()`. For eksempel:
+For eksempel, hvis vi har følgende kode:
 
 ```Rust
-let setning = "jeg elsker rust";
-println!("{}", setning.to_uppercase_with_locale("nb_NO"));
+fn main() {
+    let tekst = "hei på deg";
+    let kapitalisert_tekst = tekst.to_uppercase();
+    println!("{}", kapitalisert_tekst);
+}
 ```
 
-Dette vil gi følgende output:
-
-```
-JEG ELSKER RUST
-```
+Så vil utskriften bli `HEI PÅ DEG`. Som du kan se, så blir alle små bokstaver omgjort til store bokstaver med denne metoden.
 
 ## Deep Dive
 
-Når vi kapitaliserer en streng i Rust, blir det egentlig laget en helt ny streng med de samme tegnene i store bokstaver. Dette skjer fordi Rust-strukturer er uforanderlige, noe som betyr at vi ikke kan endre på en allerede opprettet streng. Derfor kan det å kapitalisere en streng bli en kostbar operasjon, spesielt hvis strengen er veldig lang.
+Hvis du ønsker å gå dypere inn i hvordan denne metoden fungerer, så kan vi se på dens signatur:
 
-En annen viktig ting å merke seg er at kapitaliseringen kun fungerer for alfanumeriske tegn og ikke for spesialtegn eller tall.
+```Rust
+fn to_uppercase(&self) -> Cow<str>
+```
 
-## Se Også
+`Cow` står for "copy on write", og er en datastruktur som brukes for å effektivt håndtere strenger i Rust. Metoden tar i mot en referanse til en streng og returnerer en `Cow`-type. Siden `Cow` er en "smart" datastruktur, vil den effektivt håndtere kopiering av strengen hvis den er nødvendig. Dette gjør at metoden `to_uppercase()` er rask og effektiv.
 
-- [Rust dokumentasjon for strenger](https://doc.rust-lang.org/std/string/)
-- [Mer om Rust-programmering på norsk](https://github.com/AXelqvist/rust-programming-language-blog)
+I tillegg til å bruke `to_uppercase()`-metoden, kan du også bruke andre metoder som `to_ascii_uppercase()` og `to_lowercase()` for å endre bokstavstørrelsen på strenger i Rust.
+
+## Se også
+
+- [Rust sin dokumentasjon for `String`](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Offisiell Rust-nettside](https://www.rust-lang.org/)
+
+Nå vet du hvordan du kan enkelt kapitalisere en streng i Rust. Ved å bruke `to_uppercase()`-metoden, kan du spare tid og energi på å manuelt endre bokstavstørrelsen på strenger. Lykke til med din tekstbehandling i Rust!

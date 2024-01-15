@@ -1,5 +1,6 @@
 ---
-title:                "C: Escrevendo um arquivo de texto"
+title:                "Escrevendo um arquivo de texto"
+html_title:           "C: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "C"
 category:             "C"
@@ -9,38 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## Por que criar um arquivo de texto?
 
-Se você está lendo este blog, é provável que esteja interessado em aprender a programar em C. Uma das tarefas mais básicas e importantes que um programador precisa saber é como escrever um arquivo de texto através do código. Neste post, vamos explicar por que escrever um arquivo de texto é importante e como você pode fazer isso em um programa escrito em C.
+Criar um arquivo de texto é uma tarefa comum em programação, usada para armazenar dados de forma simples e acessível. Com o C, é possível criar e manipular arquivos de texto de forma eficiente e flexível.
 
-## Como escrever um arquivo de texto?
+## Como fazer
 
-Para escrever um arquivo de texto em um programa C, você precisará seguir algumas etapas simples. Primeiro, você precisa incluir a biblioteca "stdio.h", que é responsável por funções de entrada e saída de dados. Em seguida, declare a variável do tipo "FILE", que será usada para abrir e manipular o arquivo. Em seguida, crie o arquivo usando a função "fopen()" e forneça o nome do arquivo e o modo de abertura, que pode ser "w" para escrita. Agora você está pronto para escrever no arquivo usando a função "fprintf()". Por fim, feche o arquivo usando a função "fclose()" para garantir que todas as alterações sejam salvas.
+Para criar um arquivo de texto no C, é necessário seguir os seguintes passos:
 
-Aqui está um exemplo de código que cria um arquivo de texto chamado "arquivo.txt" e escreve uma frase nele:
+1. Abrir um arquivo usando a função `fopen()` e especificando o modo de leitura ou escrita.
+2. Escrever ou ler dados no arquivo usando as funções `fputc()` e `fgetc()`.
+3. Fechar o arquivo usando a função `fclose()` para evitar perda de dados.
+
+Um exemplo de código que cria um arquivo de texto e escreve uma string nele seria:
 
 ```C
-#include <stdio.h>
-
-int main(){
-    FILE *arquivo;
-    arquivo = fopen("arquivo.txt", "w");
-    fprintf(arquivo, "Este é um exemplo de frase escrita em um arquivo de texto.");
-    fclose(arquivo);
-    return 0;
+FILE *arq = fopen("arquivo.txt", "w");
+if(arq == NULL) //verifica se o arquivo foi aberto corretamente
+{
+    printf("Erro ao abrir o arquivo. Verifique o nome e permissões.\n");
+}
+else
+{
+    fputs("Olá mundo!", arq); //escreve a string no arquivo
+    fclose(arq); //fecha o arquivo
+    
+    printf("Arquivo criado e modificado com sucesso!\n");
 }
 ```
 
-Ao executar este código, você verá que um novo arquivo de texto foi criado e que a frase foi escrita nele.
+Para ler o conteúdo de um arquivo de texto, podemos usar o seguinte código:
 
-## Mergulho mais profundo
+```C
+FILE *arq = fopen("arquivo.txt", "r");
+if(arq == NULL)
+{
+    printf("Erro ao abrir o arquivo. Verifique o nome e permissões.\n");
+}
+else
+{
+    char caracter;
+    while((caracter = fgetc(arq)) != EOF) //enquanto não for alcançado o final do arquivo
+    {
+        printf("%c", caracter); //imprime o caractere
+    }
+    fclose(arq); //fecha o arquivo
+}
+```
 
-Agora que você já sabe como escrever um arquivo de texto em um programa em C, vamos dar um mergulho mais profundo neste assunto. Existem algumas coisas que você precisa ter em mente ao escrever um arquivo de texto. Em primeiro lugar, é importante garantir que o arquivo tenha sido aberto com sucesso antes de escrever nele. Você pode verificar isso verificando se a variável "arquivo" não é igual a "NULL". Além disso, se você estiver escrevendo várias linhas no arquivo, lembre-se de adicionar o caractere de nova linha "\n" no final de cada linha para evitar que todas as palavras fiquem em uma única linha.
+## Profundidade
 
-Outra coisa importante é lembrar de fechar o arquivo depois de terminar de escrever nele, pois manter o arquivo aberto pode causar problemas de memória.
+Ao criar um arquivo de texto no C, é importante ter em mente algumas características importantes:
+
+- Para abrir um arquivo, é necessário especificar o modo de leitura ou escrita desejado. Os modos mais comuns são: `"r"` para leitura, `"w"` para escrita (sobrescrevendo o conteúdo anterior, se existir) e `"a"` para escrita no final do arquivo.
+- Ao usar a função `fputc()`, é necessário lembrar de converter o caractere em um tipo `char` usando a função `char()`.
+- Para ler caracteres de um arquivo, é necessário armazená-los em uma variável do tipo `int`, pois a função `fgetc()` retorna um inteiro que representa o valor ASCII do caractere.
+- É importante sempre verificar se o arquivo foi aberto corretamente antes de realizar operações de escrita ou leitura. Caso contrário, pode haver perda de dados ou falhas na execução do programa.
 
 ## Veja também
 
-- [Tutorial de C para iniciantes](https://www.cprogressivo.net/)
-- [Documentação da função fopen()](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Artigo sobre escrita de arquivos em C](https://www.geeksforgeeks.org/writing-files-in-c/)
+Aqui estão alguns recursos adicionais para aprimorar seus conhecimentos sobre a criação e manipulação de arquivos de texto em C:
+
+- [Tutorialspoint - Manipulação de arquivos em C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [W3Schools - Leitura e escrita de arquivos em C](https://www.w3schools.in/c-tutorial/file-input-and-output/)
+- [Site do Núcleo de Computação da UFES - Manipulação de arquivos com C](http://www.nc.ufes.br/ensino-material/desenvolvimento-de-sistemas/linguagem-c/manipulando-arquivos-em-c)

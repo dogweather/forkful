@@ -1,6 +1,7 @@
 ---
-title:                "Python: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden av en sträng"
+html_title:           "Python: Hitta längden av en sträng"
+simple_title:         "Hitta längden av en sträng"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,64 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hitta längden på en sträng är en viktig färdighet inom Python-programmering. Genom att kunna göra det kan du manipulera och bearbeta data på ett effektivt sätt.
+Att hitta längden på en sträng är en vanlig uppgift inom programmering, och är användbar för att manipulera och hantera olika textsträngar. Genom att kunna hitta längden på en sträng kan man enkelt bestämma hur många tecken en sträng innehåller.
 
-## Hur man gör
+## Så här gör du
 
-Att hitta längden på en sträng i Python är enkelt och kan göras på flera olika sätt.
+För att hitta längden på en sträng i Python, kan du använda funktionen `len()`. Den tar in en sträng som argument och returnerar längden på den strängen.
 
-### Metod 1: Inbyggd funktion `len()`
+```python
+sträng = "Hej alla! Jag heter Emma."
+längd = len(sträng)
+print(längd)
 
-Det enklaste sättet att hitta längden på en sträng är genom att använda den inbyggda `len()` funktionen. Denna funktion tar in en sträng som argument och returnerar dess längd som ett heltal.
-
-```Python
-str = "Hej! Jag heter Python"
-
-print(len(str))
+# Output: 24
 ```
 
-Kodblocket ovan kommer att skriva ut längden på strängen till konsolen, vilket i detta fall är 21.
+I detta exempel har vi tilldelat en sträng till variabeln "sträng" och sedan använt funktionen `len()` för att räkna ut längden på denna sträng. Resultatet, 24, lagras i variabeln "längd" och sedan skrivs ut.
 
-### Metod 2: Loop
+```python
+längd = len("123456789")
+print(längd)
 
-En annan metod för att hitta längden på en sträng är genom att använda en loop. Vi kan loopa igenom varje tecken i strängen och hålla räkningen med en variabel.
-
-```Python
-str = "Hej! Jag heter Python"
-length = 0
-
-for char in str:
-    length += 1
-    
-print(length)
+# Output: 9
 ```
 
-Här ökar vi värdet på vår variabel `length` med 1 för varje tecken vi loopar igenom, vilket ger oss längden på strängen.
-
-### Metod 3: Använda index
-
-Vi kan också använda index för att hitta längden på en sträng. Vi kan enkelt få det sista tecknet i strängen genom att använda `str[-1]`. Genom att sedan loopa genom indexen och öka värdet på en variabel får vi längden på strängen.
-
-```Python
-str = "Hej! Jag heter Python"
-length = 0
-
-while str[length:]:
-    length += 1
-    
-print(length)
-```
+Du kan också använda `len()` för att räkna ut längden på ett helt nummer, förutsatt att det är ett godtyckligt objekt. I detta exempel har vi använt funktionen direkt på strängen "123456789" och resultatet blir då 9.
 
 ## Djupdykning
 
-I Python är en sträng en sekvens av tecken som är indexerade från 0 till längden på strängen minus 1. Detta gör det möjligt för oss att använda index för att hitta längden på en sträng.
+När vi använder funktionen `len()` på en sträng, räknar den antalet tecken i strängen, inklusive mellanslag, punktuering och specialtecken. Detta betyder att även tomma strängar har en längd på 0 karaktärer.
 
-Det finns också andra inbyggda funktioner som kan göra mer komplicerade operationer relaterade till stränglängder, såsom `count()`, `find()` och `split()`. Genom att förstå hur man hittar längden på en sträng kan du enkelt använda dessa funktioner för att manipulera och analysera data.
+```python
+tom_sträng = ""
+print(len(tom_sträng))
 
-Du kan också använda `len()` funktionen tillsammans med andra datatyper som listor och tupler för att hitta deras längder.
+# Output: 0
+```
+
+Det finns också andra metoder för att hitta längden på en sträng, såsom att använda en for-loop och iterera över varje tecken i strängen. Detta kan vara användbart om du vill utföra andra åtgärder på specifika tecken i strängen samtidigt som du räknar ut längden.
 
 ## Se även
 
-* [Python's oficialida dokumentation om strängar](https://docs.python.org/sv/latest/tutorial/introduction.html#strings)
-* [Python grundläggande strängoperationer](https://www.programiz.com/python-programming/string)
-* [Inbyggda funktioner i Python](https://www.w3schools.com/python/python_ref_functions.asp)
+- [Officiell dokumentation för Python - len()](https://docs.python.org/3/library/functions.html#len)
+- [Enkel guide till Python](https://realpython.com/python-basics/) (på engelska)

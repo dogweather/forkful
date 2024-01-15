@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Das Verfassen einer Textdatei"
-simple_title:         "Das Verfassen einer Textdatei"
+title:                "Eine Textdatei schreiben"
+html_title:           "Elm: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Schreiben von Textdateien ist ein grundlegender Teil der Programmierung in Elm. Durch das Erstellen von Textdateien können wir Informationen speichern, organisieren und jederzeit wieder abrufen. Dies ist besonders hilfreich, wenn wir mit großen Datenmengen arbeiten oder unser Programm mit externen Anwendungen integrieren möchten.
+Du fragst dich vielleicht, warum du einen Textfile schreiben solltest. Nun, es gibt viele Gründe, aber der hauptsächliche ist, um Informationen zu organisieren und zu speichern. Mit einem Textfile kannst du einfach und schnell Notizen, Ideen, oder sogar ganze Projekte erstellen und verwalten.
 
-## Wie geht es?
+# So geht's:
 
-Um eine Textdatei in Elm zu schreiben, müssen wir zunächst die "text" Funktion aus dem "elm/core"-Paket importieren. Dann können wir diese Funktion verwenden, um den Textinhalt zu erstellen und in eine Datei zu schreiben. Hier ist ein Beispielcode:
+Um ein Textfile in Elm zu schreiben, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist, die `Text` Bibliothek zu verwenden, die von Elm Standard Library bereitgestellt wird. Mit dieser Library kannst du Texte formatieren, kombinieren und ausgeben.
 
-```
-import Text exposing (text)
-
-main =
-    text "Dies ist ein Beispieltext."
-```
-
-Das Ergebnis wird in einer Datei namens "output.txt" gespeichert. Wir können auch angeben, in welchen Ordner die Datei gespeichert werden soll, indem wir den Dateipfad zusammen mit dem Dateinamen angeben:
+Ein Beispielcode könnte wie folgt aussehen:
 
 ```
-import Text exposing (text)
+import Text exposing (concat, fromString)
 
-main =
-    text "Dies ist ein Beispieltext."
-        
-outputFile = "/Users/MyName/Desktop/output.txt"
+textFile : Text
+textFile =
+    concat
+        [ fromString "Mein Textfile"
+        , fromString "enthält verschiedene Abschnitte,"
+        , fromString "die ich mit Hilfe von Elm schreiben kann."
+        ]
 ```
 
-Im obigen Beispiel wird die Datei im Ordner "Desktop" unter dem Dateinamen "output.txt" gespeichert. Natürlich können wir auch einen dynamischen Dateinamen erstellen, indem wir Variablen verwenden.
+Die Variable `textFile` enthält nun deinen Text in Form eines Textwerts. Diesen kannst du dann weiterverarbeiten oder ausgeben, wie du möchtest.
 
-## Tiefer Einblick
+# Tiefer eingetaucht:
 
-Die "text" Funktion allein ermöglicht es uns, Text in eine Datei zu schreiben. Aber in manchen Fällen möchten wir vielleicht auch zusätzliche Informationen wie Zahlen oder Datentypen in unsere Datei einfügen. Hier können wir die Funktion "toString" verwenden, um unsere Daten in einen String umzuwandeln, der dann von der "text" Funktion verwendet werden kann. Zum Beispiel:
+Um ein Textfile in Elm zu schreiben, musst du die Struktur einer Textdatei verstehen. Im Grunde bestehen Textfiles aus Zeilen, die wiederum aus einzelnen Zeichen bestehen. Deshalb stellt die `Text` Bibliothek in Elm verschiedene Funktionen zur Verfügung, um Texte zu manipulieren und zu formatieren.
 
-```
-import Text exposing (text)
+Zum Beispiel kannst du mit der Funktion `concat` mehrere Texte zu einem kombinieren. Oder mit `append` kannst du Texte aneinander anhängen. Es gibt auch Funktionen wie `toUpper` oder `toLower`, um den Text in Groß- oder Kleinschreibung zu ändern.
 
-main =
-    let
-        number = 42
-    in
-        text (toString number)
-```
+Es ist wichtig zu verstehen, dass Texte in Elm unveränderlich sind, das heißt, sie werden nicht direkt manipuliert, sondern es wird immer eine neue Textvariable erstellt. Deshalb solltest du beim Schreiben von Textfiles immer darauf achten, dass du die richtigen Funktionen verwendest, um den gewünschten Text zu erhalten.
 
-Dies wird die Zahl "42" in die Datei schreiben. Wir können auch komplexere Datentypen wie Listen oder benutzerdefinierte Typen in Strings umwandeln und dann in die Datei schreiben.
+# Siehe auch:
 
-## Siehe auch
-
-* [Elm Dokumentation zur text Funktion](https://package.elm-lang.org/packages/elm/core/latest/Text)
-* [Tutorial zur Dateiverwaltung in Elm](https://www.elm-tutorial.org/en/03-subs-cmds/05-command.html)
-* [Beispielprojekt zum Schreiben von Textdateien mit Elm](https://github.com/elm/projects/tree/master/write-text-file)
+- [Offizielle Text Bibliothek Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/Text)
+- [Elm Tutorial: Text Bibliothek](https://elmprogramming.com/text.html)
+- [Einführung in Elm Texte](https://elmprogramming.com/introduction-to-elm-texts.html)

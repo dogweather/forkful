@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 웹 페이지 다운로드"
+title:                "웹 페이지 다운로드"
+html_title:           "Clojure: 웹 페이지 다운로드"
 simple_title:         "웹 페이지 다운로드"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-웹 페이지를 다운로드하는 이유는 다양합니다. 인터넷에서 무엇을 찾고있기 때문에 웹 페이지를 다운로드하고 분석하려는 경우가 있을 수 있습니다. 또는 자신의 웹 서비스에서 웹 페이지의 내용을 스크랩하고 그 정보를 자체적으로 사용하고 싶을 때도 있을 수 있습니다.
+당신이 웹 페이지를 다운로드하는 데 관심이 있을지 모를까요? 웹 페이지를 다운로드하는 것은 정보 수집, 데이터 분석, 웹 스크래핑 등 다양한 목적으로 사용될 수 있기 때문입니다. Clojure로 웹 페이지를 다운로드하는 방법을 알아보세요!
 
-## 사용 방법
+## 어떻게
 
-웹 페이지를 다운로드하려면 먼저 인터넷 연결이 필요합니다. 그런 다음 `clojure.java.io` 라이브러리에서 제공하는 `copy` 함수를 사용하면 간단하게 웹 페이지를 다운로드 할 수 있습니다. 다음은 예제 코드와 함께 다운로드한 웹 페이지의 내용을 출력하는 코드입니다.
-
-```Clojure
-(use 'clojure.java.io)
-
-(def url "https://example.com")
-
-(def content (slurp (input-stream (clojure.java.io/copy url (java.net.URL. url) {:method :get}))))
-
-(println content)
-```
-
-위의 코드를 실행하면 `content` 변수에 해당 URL의 웹 페이지 내용이 문자열 형태로 저장됩니다. 만약 파일로 저장하고 싶다면 `spit` 함수를 사용하여 저장할 수도 있습니다.
+Clojure에서 웹 페이지를 다운로드하는 방법은 간단합니다. 먼저 `clj-http` 라이브러리를 다운로드해야 합니다. 다음 코드는 `clj-http`를 사용해 웹 페이지를 다운로드하는 예제입니다. 
 
 ```Clojure
-(spit "example.html" content)
+(require '[clj-http.client :as client])
+(def url "https://www.example.com")
+(client/get url)
 ```
 
-## 깊게 들어가기
+위 코드를 실행하면 로컬 컴퓨터에 `www.example.com` 웹 페이지가 저장됩니다. `def`로 정의한 `url` 변수에 적절한 웹 페이지 주소를 입력하면 해당 페이지를 다운로드할 수 있습니다. 
 
-웹 페이지를 다운로드하는 것 이상의 일을 하기 위해서는 웹 페이지를 분석하는 것도 중요합니다. 예를 들어, 웹 페이지의 특정 부분만을 스크랩하고 싶다면 `hiccup` 라이브러리를 사용하여 HTML 문서를 구문 분석할 수 있습니다. 또는 웹 페이지의 URL을 수집하고 웹 크롤러를 만들고 싶다면 `enlive` 라이브러리를 사용하여 원하는 정보를 추출하고 탐색할 수 있습니다.
+## 딥 다이브
 
-## 참고
+이번에는 조금 더 깊게 들어가서 웹 페이지를 다운로드하는 데 사용되는 프로토콜인 HTTP에 대해 알아보겠습니다. HTTP는 Hypertext Transfer Protocol의 약자로, 웹 서버와 클라이언트 사이의 데이터를 주고받기 위해 사용됩니다. 이를테면, 브라우저로 웹 페이지를 요청하면 HTTP를 통해 해당 페이지의 HTML 파일을 받아오게 됩니다. Clojure의 `client/get` 함수는 HTTP 요청을 보내고 응답을 받는 역할을 합니다. 그 외에도 다양한 함수를 사용해 웹 페이지의 헤더 정보, 쿠키 등을 확인할 수 있습니다. 
 
-- `clojure.java.io`: http://clojuredocs.org/clojure.java.io
-- `hiccup`: http://weavejester.github.io/hiccup/
-- `enlive`: https://github.com/cgrand/enlive
+## 씨 알소
+
+- [Clojure 공식 홈페이지](https://clojure.org/) : Clojure에 대한 자세한 정보와 라이브러리 목록을 확인할 수 있습니다.
+- [clj-http 라이브러리 문서](https://github.com/dakrone/clj-http) : `clj-http` 라이브러리의 문서를 참고해보세요.
+- [마크다운(Markdown) 가이드](https://guides.github.com/features/mastering-markdown/) : 이 글에서 사용한 마크다운 포맷에 대해 더 자세히 알아보세요.

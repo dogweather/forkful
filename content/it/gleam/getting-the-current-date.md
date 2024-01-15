@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Ottenere la data corrente"
+title:                "Ottenere la data corrente"
+html_title:           "Gleam: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,62 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molte volte, quando si sviluppa un'applicazione, è necessario utilizzare la data corrente come parte della logica del programma. In Gleam, è possibile facilmente ottenere la data corrente utilizzando alcune funzioni built-in.
+La possibilità di ottenere la data attuale è un'informazione utile in molte applicazioni, come ad esempio nei programmi di gestione della fatturazione, nei sistemi di prenotazione online o nei calendari. Inoltre, utilizzare la data attuale può semplificare il processo di calcolo di scadenze o di generazione di report.
 
 ## Come fare
 
-Per ottenere la data corrente, utilizzeremo la funzione `ctime.now()`. Questo restituirà una struttura di tipo `Time` che rappresenta la data e l'ora attuali. Di seguito è riportato un esempio di codice con un'implementazione base di questa funzione:
-
-```Gleam
-import gleam/ctime
-
-pub fn main() {
-  let now = ctime.now()
-  debug(now)
-}
-```
-
-L'output di questo codice sarà qualcosa del genere:
+Per ottenere la data attuale in Gleam, è possibile utilizzare la funzione `Calendar.now()`. Si consiglia di assegnare il valore della funzione a una variabile per poterlo utilizzare successivamente nel codice. Un esempio di codice potrebbe essere il seguente:
 
 ```
-{time.Second, {2021, March, 10}, {3, 18, 45}}
+// Importa il modulo Calendar per accedere alle funzioni per la gestione delle date
+import gleam/calendar
+
+// Assegna alla variabile `data_attuale` la data attuale
+data_attuale = calendar.now()
+
+// Stampa la data attuale nel formato `dd/mm/yyyy`
+// In questo esempio, la data verrebbe stampata come `16/09/2021` 
+io.println(calendar.format(data_attuale, "%d/%m/%Y"))
 ```
 
-Possiamo anche utilizzare la funzione `ctime.format()` per formattare la data nel formato desiderato. Ad esempio, se vogliamo ottenere la data nel formato "DD/MM/YYYY", possiamo utilizzare questo snippet di codice:
-
-```Gleam
-import gleam/ctime
-
-pub fn main() {
-  let now = ctime.now()
-  let formatted_date = ctime.format("DD/MM/YYYY", now)
-  debug(formatted_date)
-}
-```
-
-Il risultato di questo codice sarà qualcosa del genere:
-
-```
-10/03/2021
-```
+L'ouput di questo esempio sarebbe `16/09/2021`, ma è possibile utilizzare diversi formati di visualizzazione della data utilizzando la funzione `calendar.format`.
 
 ## Approfondimento
 
-La funzione `ctime.now()` utilizza il fuso orario locale del sistema in cui viene eseguito il codice. Se si desidera ottenere la data in un fuso orario specifico, è possibile utilizzare la funzione `ctime.from_utc()` passando come argomenti la data e l'ora desiderate, insieme al fuso orario corrispondente. Ad esempio:
+La funzione `Calendar.now()` utilizza il fuso orario locale del sistema in cui viene eseguito il codice. Se si vuole ottenere la data in un fuso orario diverso, è possibile specificarlo come argomento della funzione. Ad esempio, `Calendar.now("America/New_York")` restituirà la data attuale nel fuso orario di New York.
 
-```Gleam
-import gleam/ctime
+## Vedi anche
 
-pub fn main() {
-  let now = ctime.from_utc({2021, March, 10}, {12, 0, 0}, "America/New_York")
-  debug(now)
-}
-```
-
-Questo restituirà la data nel fuso orario di New York.
-
-## Vedere anche
-
-- Documentazione di Gleam sulle funzioni di data e ora: [https://gleam.run/docs/stdlib/ctime](https://gleam.run/docs/stdlib/ctime)
-- Formato delle stringhe di data e ora in Gleam: [https://gleam.run/docs/stdlib/ctime#timeformat](https://gleam.run/docs/stdlib/ctime#timeformat)
-- Lista dei fusi orari supportati da Gleam: [https://gist.github.com/noolarch/0779e72b3f5dc4157e17664860ab5459](https://gist.github.com/noolarch/0779e72b3f5dc4157e17664860ab5459)
+- API della libreria `gleam/calendar`: https://gleam.run/modules/gleam/calendar/latest
+- Documentazione ufficiale di Gleam: https://gleam.run/documentation

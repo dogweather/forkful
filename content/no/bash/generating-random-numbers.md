@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Bash: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,52 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å generere tilfeldige tall er en vanlig oppgave når du arbeider med Bash programmering. Det kan være nyttig for å skape unike identifikatorer, teste tilfeldige scenarier eller simulere tilfeldige hendelser. Uansett formål, gir Bash et enkelt og pålitelig måte å generere tilfeldige tall på.
+Det finnes mange situasjoner hvor du kan trenge å generere tilfeldige tall i Bash-programmering. Dette kan for eksempel være for å lage tilfeldig data til testing, lage et spill eller for å generere et passord.
 
-# Hvordan
+## Hvordan
 
-Det første trinnet er å bruke `$$` variabelen til å få tak i prosessidentifikatoren (PID) for den nåværende Bash-prosessen. Dette er en tallverdi som endres hver gang Bash kjører et nytt program. Vi kan bruke dette tallet som en "frø" for å få forskjellige tall hver gang vi kjører programmet.
+Det finnes to hovedmetoder for å generere tilfeldige tall i Bash - `$RANDOM`-variabelen og `shuf`-kommandoen. Her er noen eksempler på hvordan du kan bruke disse:
+
+```Bash
+# Genererer et tilfeldig tall mellom 0 og 100:
+echo $((RANDOM % 101))
+
+# Lager et tilfeldig passord med 8 tegn:
+passord=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 8)
+echo $passord
+
+# Lagrer en listen med 5 tilfeldige tall i en fil:
+shuf -i 1-100 -n 5 > tall.txt
+cat tall.txt
+```
+
+Eksempel på output:
 
 ```
-Bash
-echo $$
+74
+jKc3Gt4D
+20
+95
+75
 ```
-> Output: 29586
 
-For å generere et tilfeldig tall, kan vi bruke `RANDOM` variabelen som genererer et tilfeldig tall mellom 0 og 32767 hver gang den brukes.
+## Dypdykk
 
-```
-Bash
-echo $RANDOM
-```
-> Output: 29201
+Både `$RANDOM`-variabelen og `shuf`-kommandoen bruker en pseudorandomiseringsalgoritme for å generere tilfeldige tall. Dette betyr at tallene ikke er helt tilfeldige, men følger en bestemt algoritme.
 
-Vi kan kombinere disse to variablene for å generere større tilfeldige tall.
+`$RANDOM`-variabelen genererer tall mellom 0 og 32767, mens `shuf`-kommandoen lar deg spesifisere et intervall ved hjelp av `-i` flagget.
 
-```
-Bash
-echo $(($$+$RANDOM))
-```
-> Output: 60765
+Hvis du trenger å generere kryptografisk sikre tilfeldige tall, bør du heller bruke `openssl rand` kommandoen i stedet.
 
-Vi kan også bruke `shuf` kommandoen til å generere tilfeldige tall innenfor et bestemt område. I eksempelet nedenfor genererer vi ett tilfeldig tall mellom 1 og 100.
+## Se også
 
-```
-Bash
-shuf -i 1-100 -n 1
-```
-> Output: 73
-
-# Dykk dypere
-
-I Bash, er tilfeldige tall generert ved hjelp av en pseudorandom generator. Dette betyr at tallene er basert på en bestemt matematisk formel og er ikke helt tilfeldige.
-
-Hvis du vil bruke tilgangen `RANDOM` variabel til å generere en sekvens av tilfeldige tall, kan du bruke `srand()` og `rand()` funksjoner. Dette lar deg gi en "frø" verdi og kontrollere sekvensen av tall som blir generert.
-
-# Se også
-
-- [Bash dokumentasjon: RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-RANDOM)
-- [Artikkel: Generer tilfeldige tall i Bash](https://www.baeldung.com/linux/bash-generate-random-number)
-- [Artikkel: Bash tilfeldige tall-triks](https://linuxhandbook.com/bash-random-number/)
+- [The Bash Manual on RANDOM Variable](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Variables)
+- [The Bash Manual on shuf command](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)
+- [The Bash Manual on openssl command](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Redirections)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Об'єднання рядків"
-simple_title:         "Об'єднання рядків"
+title:                "З'єднуючи рядки"
+html_title:           "Fish Shell: З'єднуючи рядки"
+simple_title:         "З'єднуючи рядки"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,59 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Зачем
 
-Програмування використовує конкатенацію рядків, щоб об'єднати кілька рядків в один, щоб створити більш складні повідомлення або виводи. Це дозволяє програмістам створювати більш динамічні та зрозумілі програми, які можуть працювати з різними типами даних і повідомлень.
+Багато програмістів часто зустрічаються з необхідністю поєднувати різні рядки тексту в єдиний блок для подальшої обробки і виводу. Найефективніший спосіб зробити це в Fish Shell - це застосувати функцію з'єднання рядків.
 
-## Як
+# Як
 
-Конкатенація рядків - це процес об'єднання двох або більше рядків в один. У Fish Shell це можна зробити за допомогою оператора "+" або за допомогою команди "string join". Наприклад:
+```Fish Shell``` має вбудовану функцію ```string join``` для поєднання рядків. Ця функція працює наступним чином:
 
-```
-Fish Shell string join
-```
-```
-$ string join Hello, "World"
-Hello, World
+```fish
+# Код для поєднання рядків
+string join <розділювач> <рядок 1> <рядок 2>...
 ```
 
-За допомогою оператора "+" можна додавати рядки разом. Наприклад:
+Наприклад, якщо у вас є рядок ```"Hello"``` та рядок ```"world"```, і ви хочете поєднати їх разом, додавши між ними кому, ви можете використати наступний код:
 
-```
-Fish Shell concatenation operator
-```
-```
-$ "Fish Shell " + "is " + "awesome"
-Fish Shell is awesome
+```fish
+string join , "Hello" "world"
 ```
 
-## Глибшого занурення
+Результатом буде рядок ```"Hello, world"```.
 
-У Fish Shell конкатенація рядків може бути більш динамічною та потужною, оскільки дозволяє використовувати змінні та умовні оператори. Наприклад, за допомогою оператора "?" можна додавати різні рядки залежно від умови.
+# Глибокий погляд
 
-```
-Fish Shell conditional concatenation
-```
-```
-$ string join This "is" this? "some " + (if test $USER = "admin"; echo "important" else; echo "regular" end) + " message."
-This is some important message.
-```
+Функція ```string join``` не тільки дозволяє вам з'єднувати прості рядки, але також може бути корисною при з'єднанні значень змінних або результатів виклику інших функцій. Наприклад, ви можете поєднати кілька значень змінних в один рядок за допомогою цієї функції:
 
-Крім того, у Fish Shell є функція "for", яка дозволяє додавати рядки за допомогою циклу. Наприклад, можна створити рядок, який містить кілька копій слова "Hello" за допомогою наступного коду:
-
-```
-Fish Shell loop concatenation
-```
-```
-$ for i in (seq 3)
-    set msg $msg Hello
-end
-echo $msg
-HelloHelloHello
+```fish
+set user "John"
+set age 30
+string join " is " $user "and is" $age "years old"
 ```
 
-## Дивись Також
+Результатом буде рядок ```"John is 30 years old"```.
 
-- [Документація Fish Shell про конкатенацію рядків](http://fishshell.com/docs/current/cmds/string.html)
-- [Розширення мови у Fish Shell](http://fishshell.com/docs/current/tutorial.html#tut_lang)
-- [Бібліотека команд для Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/share/functions)
+# Дивись також
+
+- [Документація Fish Shell](https://fishshell.com/docs/current/)
+- [Покроковий підручник по основах Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Керівництво користувача Fish Shell](https://fishshell.com/docs/current/index.html)

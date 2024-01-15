@@ -1,5 +1,6 @@
 ---
-title:                "C: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "C: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C"
 category:             "C"
@@ -10,54 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi joku haluaa etsiä ja korvata tekstiä ohjelmoinnin yhteydessä? Yksi syy voi olla löytää ja vaihtaa tiettyjä tekstinpätkiä helposti ja nopeasti, mikä auttaa säästämään aikaa ja vähentämään virheiden mahdollisuutta.
 
-Ohjelmoinnin yksi tärkeimmistä tehtävistä on tekstin etsiminen ja korvaaminen. Se voi tuntua yksinkertaiselta tehtävältä, mutta se on erittäin tärkeää tekstipohjaisessa ohjelmoinnissa. Kun haluat muuttaa tiettyä sanaa tai lausetta kaikissa tiedostoissa tai korjata virheellisiä tietoja, tekstinhaku ja korvaaminen ovat välttämättömiä työkaluja tämän saavuttamiseen.
-
-## Kuinka
-
-Tekstin etsiminen ja korvaaminen on yleinen tehtävä C-ohjelmointikielellä ja se voidaan suorittaa muutamalla yksinkertaisella vaiheella. Ensinnäkin meidän täytyy avata tiedosto, jossa haluamme suorittaa etsimisen ja korvaamisen. Tämän jälkeen käytämme "fscanf" komentoa lukeaksemme tiedoston sisältöön.
-
-**Esimerkki:**
+## Miten
+Kun haluat etsiä ja korvata tekstiä C-ohjelmassasi, voit käyttää sisäänrakennettua "str_replace" -funktiota, joka korvaa kaikki annetun merkkijonon esiintymät toisella merkkijonolla. Alla on yksinkertainen esimerkki koodista:
 
 ```C
-FILE *tiedosto;
-char teksti[100];
+#include <stdio.h>
+#include <string.h>
 
-tiedosto = fopen("tekstitiedosto.txt", "r");  
-scanf(tiedosto, "%s", teksti);  
+int main() {
+    char str[50] = "Tämä on esimerkkiteksti";
+    
+    // Etsitään ja korvataan "on" merkkijonossa "in" avulla
+    str_replace(str, "on", "in");
+    
+    printf("%s", str);
+    
+    return 0;
+}
 ```
 
-Tässä esimerkissä olemme avanneet "tekstitiedosto.txt" tiedoston ja tallentaneet sen sisällön muuttujaan "teksti". Jotta voimme suorittaa haun ja korvauksen, meidän täytyy käyttää tekstinhakufunktiota, kuten "strstr". Tämä funktio etsii annetun merkkijonon ja palauttaa löydettyjen merkkijonojen määrän.
-
-**Esimerkki:**
-
-```C
-char uusi_teksti[100];
-
-while (fgets(uusi_teksti, 100, tiedosto) != NULL) {  
-    if (strstr(uusi_teksti, "vanha_sana")) {  
-        strcpy(uusi_teksti, "uusi_sana");
-    }  
-} 
-
-```
-
-Tässä esimerkissä olemme käyttäneet "strstr" -funktiota etsimään ja korvaamaan "vanha_sana" merkkijonon "uusi_sana" -merkkijonolla. Lopuksi, kun olemme suorittaneet haun ja korvauksen kaikissa tiedoston merkkijonoissa, meidän täytyy tallentaa muutokset ja sulkea tiedosto.
-
-**Esimerkki:**
-
-```C
-fclose(tiedosto);
-```
+Tässä tapauksessa koodi tulostaa "Tämä in esimerkkiteksti".
 
 ## Syvällinen sukellus
+C-kielen sisäänrakennettujen funktioiden lisäksi voit myös käyttää "regex" -kirjastoa (regex.h), joka tarjoaa tehokkaampia ominaisuuksia tekstinpätkien etsimiseen ja korvaamiseen. Regex-kirjaston avulla voit käyttää säännöllisiä lausekkeita etsiessäsi ja korvatessasi tekstiä, mikä tarjoaa suuremman joustavuuden ja monipuolisuuden.
 
-Vaikka tekstinhaku ja korvaaminen ovat tärkeitä ohjelmoinnin tehtäviä, niiden tehokas suorittaminen vaatii hieman ymmärrystä C-kielen toiminnoista ja muuttujista. Esimerkiksi "fgets" -toiminnon käyttö tekstinhakuun voi olla hyödyllistä, kun etsitään merkkijonoja tiedostosta. Lisäksi "strcmp" -funktio voidaan käyttää vertaamaan kahta merkkijonoa ja varmistamaan, että korvaaminen tapahtuu vain silloin, kun merkkijonot ovat identtisiä.
+Jos haluat lisätietoja säännöllisistä lausekkeista ja niiden käyttämisestä C-ohjelmissa, suosittelemme tutustumaan alla oleviin linkkeihin:
 
-On myös tärkeää varmistaa, että tiedosto suljetaan oikein suorituksen jälkeen. Jos tiedostoa ei suljeta, se voi aiheuttaa ongelmia myöhemmin.
+* [C Manual - Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+* [C Regex Library Documentation](https://www.regular-expressions.info/c.regex.html)
 
 ## Katso myös
-
-- [strcpy funktion dokumentointi](https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm)
-- [C:n muuttujat ja niiden tyypit](https://www.tutorialspoint.com/cprogramming/c_variables.htm)
-- [Tekstitiedoston käsittely C-ohjelmoinnissa](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+* [C Documentation](https://en.cppreference.com/w/c)
+* [C++ - Searching and Replacing Text](https://dev.to/shin8/c-searching-and-replacing-text-1bo9) (englanninkielinen artikkeli)

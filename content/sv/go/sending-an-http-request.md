@@ -1,6 +1,7 @@
 ---
-title:                "Go: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Go: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att skicka HTTP-förfrågningar är en viktig del av webbutveckling. Det tillåter kommunikation mellan olika servrar och används ofta för att hämta data från en webbplats eller API. I Go-programmering kan detta göras på ett enkelt och effektivt sätt genom att använda standardbiblioteket för HTTP. Låt oss ta en titt på hur man kan göra det.
+Du kanske har hört talas om "HTTP requests", men varför skulle du vilja använda dem i dina Go-program? En HTTP request är en enkel metod för att kommunicera med en annan server och få tillbaka data eller utföra en åtgärd.
 
-# Hur man gör
+## Hur man gör
 
-För att skicka en HTTP-förfrågan i Go, först måste vi importera paketet som hanterar HTTP-kommunikation. Detta görs genom att använda följande rad kod:
+För att skicka en HTTP request i Go behöver du först importera paketet "net/http". Sedan kan du använda funktionen "Get" för att göra en GET request till den önskade URL:en.
 
 ```Go
 import "net/http"
+
+res, err := http.Get("https://www.example.com")
 ```
 
-Nästa steg är att skapa en förfrågan med önskad metod, URL och eventuell data som ska skickas med förfrågan. Detta kan göras på följande sätt:
+Detta skickar en GET request till "https://www.example.com" och sparar resultatet i variabeln "res". Om allt går som planerat kommer "err" att vara "nil" och du kan sedan använda "res" för att läsa det data som returnerats från servern.
 
 ```Go
-req, err := http.NewRequest("GET", "https://example.com/api/users", nil)
-if err != nil {
-    // hantera fel
-}
-```
+body, err := ioutil.ReadAll(res.Body)
 
-I detta exempel skapas en GET-förfrågan till https://example.com/api/users och ingen data skickas med. Om du vill skicka data kan detta läggas till som ett tredje argument i NewRequest-funktionen.
-
-Nästa steg är att skicka förfrågan och hantera svaret. Detta görs genom att använda Client från http-paketet. Här är ett exempel:
-
-```Go
-resp, err := http.DefaultClient.Do(req)
-if err != nil {
-    // hantera fel
-}
-defer resp.Body.Close()
-```
-
-I detta exempel använder vi DefaultClient för att skapa och skicka en förfrågan. Vi använder också en defer-sats för att se till att kroppen av svarsanropet stängs efter att vi har använt den.
-
-Nu kan vi läsa svaret från vår förfrågan. I detta nästa exempel använder vi ioutil-paketet för att läsa och skriva svaret från en HTTP-förfrågan:
-
-```Go
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    // hantera fel
-}
+// Läs in den returnerade datan
 fmt.Println(string(body))
+
+// Stäng anslutningen
+res.Body.Close()
 ```
 
-Detta är en enkel kod som läser och skriver ut svaret från vår förfrågan. Det finns många olika funktioner och metoder som kan användas för att hantera HTTP-förfrågningar i Go, men dessa grundläggande exempel bör ge en bra grund.
+I det här exemplet använder vi funktionen "ReadAll" för att läsa all den data som returnerats från servern. Sedan konverterar vi denna data till en sträng och skriver ut den. Slutligen stänger vi anslutningen.
 
-# Djupdykning
+## Deep Dive
 
-Skicka en HTTP-förfrågan i Go kan verka enkelt, men det finns mycket under ytan som kan utforskas. Till exempel kan du hantera fel vid förfrågan eller använda olika metoder som POST eller PUT för att skicka data till en server. Det finns också möjligheten att anpassa förfrågan ytterligare genom att lägga till HTTP-huvuden eller ändra förfrågans timeout. Det finns många resurser tillgängliga online som kan hjälpa dig att utforska dessa koncept ytterligare.
+Det finns flera olika metoder för att skicka HTTP requests i Go, som "Get", "Post", "Put" och "Delete". Du kan också använda funktionen "NewRequest" för att skicka en mer anpassad request med kundanpassade HTTP headers och body. Det är också möjligt att lägga till timeout-funktioner för att hantera situationer där servern inte svarar.
 
-# Se även
+För att lära dig mer om HTTP requests i Go, kan du kolla in Go's dokumentation om paketet "net/http": https://golang.org/pkg/net/http/
 
-- [Official Go documentation for HTTP](https://golang.org/pkg/net/http/)
-- [A tutorial on handling HTTP requests in Go](https://tutorialedge.net/golang/creating-simple-web-server-with-golang/)
-- [A deep dive into HTTP in Go](https://medium.com/@dhanushgopinath/deep-dive-into-http-in-golang-5120b56bae44)
+## Se även
+
+- En guide för att lära sig Go på svenska: https://www.learn-golang.org/sv/
+- Officiell dokumentation för Go: https://golang.org/doc/
+- "Gopher" forum för Go-programmerare: https://forum.golangbridge.org/

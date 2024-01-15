@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Att sammanslå strängar"
-simple_title:         "Att sammanslå strängar"
+title:                "Sammanslåning av strängar"
+html_title:           "PHP: Sammanslåning av strängar"
+simple_title:         "Sammanslåning av strängar"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,27 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: Att lägga ihop strängar är en grundläggande del av programmering i PHP. Det låter dig sammanfoga flera textsträngar till en enda sträng, vilket är användbart när du till exempel bygger dynamiska webbsidor.
+## Varför
 
-Hur man gör det: Det finns flera sätt att konkatinera strängar i PHP. Det enklaste sättet är att använda operatören "." för att lägga ihop två strängar. Till exempel:
+Att sammanslå strängar är en vanlig uppgift inom PHP-programmering. Genom att kombinera flera strängar till en enda kan du skapa dynamiska och anpassade meddelanden eller skapa mer läsbara koder.
+
+## Så här gör du
+
+Att sammanslå strängar i PHP är enkelt. Du kan använda operatorn "." för att sammanfoga två eller flera strängar tillsammans.
 
 ```PHP
-$forsta_strang = "Jag gillar ";
-$andra_strang = "att koda.";
-$hela_strangen = $forsta_strang . $andra_strang;
-echo $hela_strangen;
+echo "Hej, " . "världen!";
 ```
 
-Detta kommer att ge utmatningen: "Jag gillar att koda."
+Resultatet av koden ovan blir "Hej, världen!". Du kan också använda variabler i sammanslagningen.
 
-Det finns också andra sätt att konkatinera strängar, som att använda funktionen "implode()" eller använda variabler inuti strängar genom att använda dubbla citattecken "". Det är viktigt att notera att när du använder variabler i strängar, måste du använda dubbla citattecken, annars kommer variabeln inte att ersättas med sitt faktiska värde.
+```PHP
+$name = "John";
+echo "Välkommen, " . $name . "!";
+```
 
-Djupdykning: När du konkatinerar strängar i PHP är det viktigt att vara medveten om vad som händer bakom kulisserna. När du använder operatören ".", sker det egentligen en kopiering av de båda strängarna till en ny sträng. Detta kan leda till prestandaproblem om du håller på att konkatinera stora strängar.
+Det resulterande meddelandet blir "Välkommen, John!".
 
-En annan viktig sak att notera är att när du använder variabler i strängar, händer ingen kopiering. Istället pekar variabeln bara på strängen i minnet. Detta kan vara användbart att notera om du arbetar med stora datamängder.
+Du kan även sammanslå strängar med hjälp av funktionen "sprintf ()". Detta gör att du kan formatera ditt meddelande på ett mer organiserat sätt och lägga till variabler på specifika platser i strängen.
 
-Se även: Här är några användbara resurser för att lära dig mer om hur man konkatinerar strängar i PHP:
+```PHP
+$name = "Lisa";
+$age = 25;
+$message = sprintf("Hej, mitt namn är %s och jag är %d år gammal.", $name, $age);
+echo $message;
+```
 
-- [PHP manual sidan om strängar] (https://www.php.net/manual/en/language.types.string.php)
-- [W3Schools tutorial om strängar] (https://www.w3schools.com/php/php_strings.asp)
-- [Stack Overflow inlägg om effektiva sätt att konkatinera strängar] (https://stackoverflow.com/questions/9365865/efficient-way-to-concatenate-strings-in-php)
+Resultatet blir "Hej, mitt namn är Lisa och jag är 25 år gammal.".
+
+## Deep Dive
+
+När du sammanslår strängar i PHP måste du vara medveten om skillnaden mellan enkel- och dubbelcitationstecken. Enkla citationstecken tolkas bokstavligt, medan variabler eller specialtecken inuti dubbelcitationstecken tolkas som kod.
+
+Tänk på följande exempel:
+
+```PHP
+$name = "Johanna";
+echo 'Hej, $name!';
+```
+
+I det här fallet kommer variabeln $name inte att tolkas eftersom den finns inuti enkla citationstecken. Det resulterande meddelandet kommer att vara "Hej, $name!".
+
+Men om vi använder dubbelcitationstecken istället:
+
+```PHP
+$name = "Johanna";
+echo "Hej, $name!";
+```
+
+Resultatet blir "Hej, Johanna!". Variabeln $name tolkas som kod och dess värde ersätter variabeln i strängen.
+
+## Se även
+
+- [PHP Strängar](https://www.php.net/manual/en/language.types.string.php)
+- [PHP sprintf () funktionen](https://www.php.net/manual/en/function.sprintf.php)
+- [PHP Operators](https://www.php.net/manual/en/language.operators.php)

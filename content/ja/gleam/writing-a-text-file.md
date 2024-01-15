@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き方"
+html_title:           "Gleam: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ、テキストファイルを書くのか？
+## なぜ
 
-コンピュータープログラミングにおいて、テキストファイルは非常に重要です。コードやデータを保存するための基本的な方法の一つです。Gleamを学ぶにあたって、テキストファイルの書き方をマスターすることは必要不可欠です。
+テキストファイルを書く理由はたくさんありますが、主な理由は以下の2つです。まず、コンピューターが理解できるように情報を整理することができます。そして、長いコードを書くよりも、テキストファイルはより簡単で迅速な方法で情報を共有することができます。
 
-## 作り方：
+## 使い方
+
+まず、 `Gleam.FileSystem` モジュールをインポートします。次に、 `write` 関数を使用してファイルを作成し、 `write_line` 関数を使用してテキストを書き込みます。最後に、ファイルを閉じて変更を保存します。
 
 ```Gleam
-let message = "こんにちは、世界！" // テキストを定義する
-File.write("hello.txt", message) // テキストファイルに書き込む
+import Gleam.FileSystem
+
+let file = FileSystem.write("filename.txt")
+FileSystem.write_line(file, "Hello, world!")
+FileSystem.close(file)
 ```
-上記の例では、`message`という変数に"こんにちは、世界！"というテキストを定義し、それを`File.write`関数を使って"hello.txt"というファイルに書き込んでいます。
 
-Gleamでは、`File.write`以外にもさまざまなファイル操作の関数が用意されています。たとえば、`File.read`を使えばテキストファイルからデータを読み込むこともできます。詳しくは公式ドキュメントを参照してください。
+出力される `filename.txt` ファイルには、"Hello, world!"というテキストが含まれています。
 
-## 詳細を掘り下げる
+## 詳細
 
-テキストファイルを書く際の注意点として、改行文字や文字コードに気をつける必要があります。また、ファイルが既に存在する場合の上書きの仕方や、エラー処理なども考慮する必要があります。Gleamのファイル操作に関するライブラリを使えば、これらの問題に対処することができます。
+テキストファイルを書くには、いくつかの注意すべき点があります。まず、ファイルを開いたら必ず閉じるようにしましょう。また、テキストファイルはプレーンテキスト形式なので、フォーマットが崩れないように注意して文章を書く必要があります。
 
-また、Gleamの型システムを活用することで、より安全で健全なコードを書くことができます。型に対する理解を深めることで、より効率的なファイル操作ができるようになるでしょう。
+## はてな
 
-## 他の記事とリンク
+テキストファイルの書き方については、ほかにもたくさんのリソースがあります。ぜひ以下のリンクも参考にしてみてください。
 
-- [Gleam公式ドキュメント](https://gleam.run/book/introduction.html)
-- [Gleamの型システムについての詳細](https://gleam.run/book/types.html)
-- [Gleamのファイル操作ライブラリの使い方](https://gleam.run/modules/file.html)
+- [Gleam公式ドキュメント - ファイルの作成と読み書き](https://gleam.run/articles/files)
+- [デジタルハリウッドの「はじめてのプログラミング」コース](https://www.dhw.co.jp/program/android.html)

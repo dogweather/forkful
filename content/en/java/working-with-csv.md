@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Java recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Java"
 category:             "Java"
@@ -10,89 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-CSV (Comma-Separated Values) is a commonly used file format for storing and exchanging data. Many popular programs like Excel, Google Sheets, and databases support CSV files. Learning how to work with CSV can greatly improve your data management skills and make your programming tasks more efficient.
+
+It's likely that at some point in your programming career, you will encounter CSV files. CSV (Comma-Separated Values) is a common file format used for storing and exchanging tabular data. As a Java programmer, understanding how to work with CSV files can be a valuable skill to have in your toolkit.
 
 ## How To
-Working with CSV files in Java is fairly straightforward and can be done using built-in libraries. Let's take a look at an example of reading data from a CSV file and printing it out.
 
+Working with CSV files in Java is made easy with the help of libraries like OpenCSV and Apache Commons CSV. Let's take a look at some coding examples to see how we can read and write CSV files using these libraries.
+
+### Reading CSV files with OpenCSV
 ```Java
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+CSVReader reader = new CSVReader(new FileReader("data.csv"));
+String[] nextLine;
 
-public class CSVReader {
-    public static void main(String[] args) {
-        try {
-            // Create a File object with the filepath of the CSV file
-            File csvFile = new File("data.csv");
-
-            // Create a Scanner object to read the CSV file
-            Scanner scanner = new Scanner(csvFile);
-
-            // Loop through each line of the CSV file
-            while (scanner.hasNextLine()) {
-
-                // Use the comma as the delimiter to separate each value in the line
-                String[] values = scanner.nextLine().split(",");
-
-                // Print out the values from each line
-                System.out.println("Name: " + values[0]);
-                System.out.println("Age: " + values[1]);
-                System.out.println("City: " + values[2]);
-            }
-
-            // Close the Scanner object
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            // Catch any errors, such as the CSV file not being found
-            System.out.println("File not found.");
-        }
-    }
+while ((nextLine = reader.readNext()) != null) {
+    // nextLine contains array of values from each row
+    System.out.println(Arrays.toString(nextLine));
 }
-```
-Output:
-```
-Name: John
-Age: 28
-City: New York
+
+reader.close();
 ```
 
-In this example, we first import the necessary libraries and then create a File object with the filepath of our CSV file. We then use the Scanner class to read the file, loop through each line, and split the values using a comma as the delimiter. Finally, we print out the values for each line.
+In this example, we use the CSVReader class from the OpenCSV library to read in a CSV file named "data.csv". Each row of the file is represented as an array of String values, which we can access and manipulate as needed. 
 
-To write data to a CSV file, we can use the FileWriter class. Let's take a look at another example:
-
+### Writing CSV files with Apache Commons CSV
 ```Java
-import java.io.FileWriter;
-import java.io.IOException;
+CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("Name", "Age", "City");
+CSVPrinter printer = new CSVPrinter(new FileWriter("output.csv"), csvFormat);
 
-public class CSVWriter {
-    public static void main(String[] args) {
-        try {
-            // Create a FileWriter object with the filepath of the CSV file
-            FileWriter writer = new FileWriter("data.csv", true);
+// Adding records to the CSV file
+printer.printRecord("John", 32, "New York");
+printer.printRecord("Sarah", 27, "London");
+printer.printRecord("Alex", 40, "Sydney");
 
-            // Write the data to the CSV file
-            writer.write("Sarah,33,Chicago\n");
-            writer.write("David,25,Los Angeles\n");
-
-            // Close the FileWriter object
-            writer.close();
-        } catch (IOException e) {
-            // Catch any errors, such as the file not being found or being unable to write to it
-            System.out.println("Error writing to file.");
-        }
-    }
-}
+printer.close();
 ```
 
-In this example, we use the FileWriter class to write data to our CSV file. The `true` parameter in the constructor allows us to append data to the existing file if it already exists.
+In this example, we use the CSVPrinter class from the Apache Commons CSV library to create a new CSV file named "output.csv". We specify the headers of the file using the CSVFormat class, and then add records to the file using the printRecord() method. The resulting file will have a header row followed by three data rows.
 
 ## Deep Dive
-CSV files have a variety of formats, and it's important to understand how to handle different types of data. For example, if your CSV file includes a header row with labels for each column, you can use the `scanner.nextLine()` to skip over it and start reading data from the next line.
 
-It's also important to keep in mind that CSV files may contain data that needs to be formatted or converted in some way. For example, if a value is in a different date format or contains unnecessary spaces, you may need to use methods like `trim()` or `DateFormat` to properly format the data.
+CSV files may seem simple, but there are some important things to keep in mind when working with them. Here are a few tips for dealing with CSV files in Java:
+
+- Remember to handle any exceptions that may occur when working with CSV files. This means using try-catch blocks or throwing the exceptions to be handled by the calling code.
+- Beware of characters that may cause issues with CSV file parsing, such as commas or line breaks. They may need to be escaped or replaced to avoid errors.
+- Take note of the encoding of your CSV files. Depending on the source of the file, it may be encoded in a different format (e.g. UTF-8, ISO-8859-1) which can affect how it is read or written in Java.
 
 ## See Also
-- [Java CSV Tutorial](https://www.baeldung.com/java-csv)
-- [Working with CSV files in Java](https://www.codejava.net/java-se/file-io/parse-csv-files-in-java)
-- [CSV file format](https://en.wikipedia.org/wiki/Comma-separated_values)
+
+- [OpenCSV tutorial](https://www.baeldung.com/opencsv)
+- [Apache Commons CSV tutorial](https://www.baeldung.com/apache-commons-csv)
+- [Oracle's Working with CSV Files in Java guide](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/csv/package-summary.html)

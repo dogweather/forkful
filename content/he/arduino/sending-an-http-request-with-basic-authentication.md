@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Arduino: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,50 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה: 
+טכנולוגיה המתקדמת והמשתנה בהירות של מכשירי האלקטרוניקה משפיעה על צורת חיים מודרנית. אחד הדרכים הפשוטות והמהירות להתקשרות עם רשת האינטרנט היא ע"י שליחת בקשת HTTP עם אימות בסיסי. במאמר זה נלמד כיצד לעשות זאת באמצעות מכשיר ארדוינו.
 
-יתרון בשליחת בקשת HTTP עם אימות בסיסי באמצעות ארדואינו.
+## מדוע
 
-## איך לעשות זאת:
+קיים מספר סיבות שבהן ניתן להשתמש בשליחת בקשת HTTP עם אימות בסיסי במכשיר ארדוינו. למשל, כאשר נרצה לקבל נתונים מכמה מקורות שונים באינטרנט או לשלוח נתונים למכשיר אחר דרך הרשת, ניתן להשתמש בפרוטוקול זה על מנת לבצע אימות ולוודא שרק מי שמורשה יוכל לגשת לנתונים.
 
-המתחילים בתכנות עם ארדואינו כנראה מכירים את הפעולות הבסיסיות כגון יצירת קשר עם תקליטן וקבלת ערכים מחיישנים. אבל ידע לשלוח בקשות HTTP תוך שימוש בתכנות אפשרי רק על ידי הוספת בבקשה את שכבת האימות. זה נדרש כאשר מעונינים לקבל עדכונים מאתרים חיצוניים, לדוגמה לקבלת מידע מתחנת מזג אוויר או חשבונית חשמלית.
+## כיצד לעשות זאת
 
-``` arduino
-#include <WiFiClient.h>
-```
+התחברו לרשת WiFi עם הארדוינו והתקינו את הספרייה המתאימה לשליחת בקשות HTTP. להלן דוגמאות קוד ופלט מוצגים בבלוקי קוד ```Arduino```.
 
-שימו לב כי עלינו את הספריה 'WiFiClient' כדי לאפשר גישה לאינטרנט דרך שרת ה-WiFi שלנו. בצעו את הקישור לרשת עם הנתונים הרלוונטיים והתחברו לשרת:
+### שליחת בקשת GET
 
-```arduino
-char ssid[] = "NameOfNetwork"; // שם הרשת
-char pass[] = "NetworkPassword"; // סיסמת רשת
-int status = WL_IDLE_STATUS;
+```Arduino
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-WiFi.begin(ssid, pass); // נסו להתחבר לרשת
-delay(1000); // המתינו כמה שניות עד להתחברות לרשת
+void setup() {
+  Serial.begin(9600);
+  // התחבר לרשת WiFi
+  WiFi.begin("SSID", "Password");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+  }
 
-if (WiFi.status() == WL_CONNECTED) {
-  Serial.println("Connected!");
+  // בנה את הכתובת לבקשת GET עם אימות בסיסי
+  String url = "https://www.example.com/api/data";
+  String auth = base64Encode("username:password");
+  String authorization = "Basic " + auth;
+
+  // שלח את הבקשה וקבל את התוצאה
+  HTTPClient http;
+  http.begin(url);
+  http.addHeader("Authorization", authorization);
+  int responseCode = http.GET();
+  String response = http.getString();
+
+  // עדכן את המידע בטרמינל
+  Serial.print("HTTP Response Code: ");
+  Serial.println(responseCode);
+  Serial.print("HTTP Response: ");
+  Serial.println(response);
+
+  http.end();
+}
+
+void loop() {
+  // רקורסיה
 }
 ```
 
-אחרי התחברות לרשת מגלים את כתובת ה-IP של שרת האתר שמעוניין לקבל עדכונים ממנו וגם הנתונים לאימות בבקשה:
-
-```arduino
-IPAddress server(192,168,1,1); // כתובת ה-IP של השרת
-int port = 80; // המספר של הפורט המשתמש ע"י השרת
-
-String auth = "username:password"; //פרטי האימות כפי שקיבלתם מהאתר
+#### פלט:
+```
+HTTP Response Code: 200
+HTTP Response: {"temperature": "25", "humidity": "50"}
 ```
 
-כעת אנו משתמשים בפונקציה "requestBasicAuthentication" עם הערך המתאים של אימות ונשלח את הבקשה לאתר:
+### שליחת בקשת POST
 
-```arduino
-if (client.connected()) {
-  client.print(requestBasicAuthentication("GET", "/", server));
-} else {
-  Serial.println("Connection failed!");
-}
-```
+```Arduino
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-סוג הבקשה שמחכה לקבלה מאתר הוא "GET", אבל אפשר להשתמש בסוגים אחרים כמו "POST" א
+String data = "{\"name\": \"John\", \"age\": 30}";
+
+void setup() {
+  Serial.begin(9600);
+  // התחבר לרשת WiFi
+  WiFi.begin("SSID", "Password");
+  while (WiFi.status() !=

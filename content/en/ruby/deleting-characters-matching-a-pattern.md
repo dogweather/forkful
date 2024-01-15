@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Ruby recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,62 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sometimes in programming, we encounter situations where we need to modify or clean up our data. One common task is to delete characters that match a certain pattern. This can be useful in tasks such as data cleaning, text manipulation, or string parsing. In Ruby, there are several ways to accomplish this task, and in this blog post, we will explore the different methods for deleting characters matching a pattern.
+There are many reasons why someone may need to delete characters that match a certain pattern in their code. It could be to remove special characters or unwanted symbols, to update and organize data, or to simply improve the readability or functionality of their code.
 
 ## How To
 
-First, let's clarify what we mean by "matching a pattern". In Ruby, we can use regular expressions (regex) to define a pattern of characters to match. So, when we say "characters matching a pattern", we are talking about a string of characters that follow a specific format.
+```Ruby
+# To delete characters matching a specific pattern, we can use the gsub method.
+# In this example, we will remove all vowels from a string and return the modified string.
 
-To delete characters matching a pattern, we can use the `gsub` method. This method stands for "global substitution", meaning it will replace all instances of the pattern in a string. The syntax for this method is as follows:
+original_string = "Hello World!"
 
-```ruby
-str.gsub(pattern, replacement)
-```
+modified_string = original_string.gsub(/[aeiou]/, "")
 
-Let's say we have a string that contains a mix of letters and numbers, and we want to remove all the numbers from it. We can do this using regex and the `gsub` method:
+puts modified_string
 
-```ruby
-str = "a1b2c3d4e5"
-str.gsub(/\d+/, '')
-```
+# Output: "Hll Wrld!"
 
-In this example, we used the regex pattern `\d+` to match one or more digits, and we replaced them with an empty string, effectively deleting them from the original string. The output of this code will be:
+# We can also use the gsub! method to modify the original string without creating a new one.
+# This is useful if we want to make permanent changes to our code.
 
-```ruby
-"abcde"
-```
+original_string.gsub!(/[aeiou]/, "")
 
-Another way to delete characters matching a pattern is by using the `tr` method. This method stands for "translate", and it replaces characters in a string based on a mapping of characters. The syntax for this method is as follows:
+puts original_string
 
-```ruby
-str.tr(old_chars, new_chars)
-```
-
-Similar to the `gsub` method, we can use regex to define a pattern for the `tr` method. For example, to remove all numbers from a string, we can do the following:
-
-```ruby
-str = "a1b2c3d4e5"
-str.tr("0-9", '')
-```
-
-In this code, we used the regex pattern `0-9` to match all digits, and we replaced them with an empty string. The output of this code will be the same as the previous example:
-
-```ruby
-"abcde"
+# Output: "Hll Wrld!"
 ```
 
 ## Deep Dive
 
-Now that we have covered the basics of how to delete characters matching a pattern, let's take a deeper look at regex and how we can use it to define more complex patterns. As mentioned earlier, regex is a powerful tool for matching patterns in strings and is widely used in many programming languages.
+The gsub method in Ruby uses regular expressions (regex) to search and replace characters in a string. The pattern we specify inside the square brackets ([]) indicates which characters to delete. In the above example, /[aeiou]/ means any vowels. We can also specify specific characters or ranges, such as /[a-z]/ which would delete all lowercase letters.
 
-Regex patterns are defined within a pair of forward slashes, and we can use different modifiers to modify our pattern. For example, the `+` modifier means "one or more", the `*` modifier means "zero or more", and the `?` modifier means "zero or one". We can also use square brackets to specify a range of characters. For example, `[a-z]` means all lowercase letters, and `[0-9]` means all digits.
-
-Furthermore, we can use the `|` operator to specify alternatives. For example, `(a|b)` means either "a" or "b", and `(abc|def)` means either "abc" or "def". The `^` and `$` symbols represent the start and end of strings, respectively. So, `^a` means the string starts with "a", and `b$` means the string ends with "b".
-
-There are many more regex modifiers and symbols that we can use to create complex patterns. If you want to learn more, there are plenty of resources available online.
+It's important to note that the gsub method is case sensitive, so /[aeiou]/ would only match lowercase vowels. To match both uppercase and lowercase vowels, we can use the i modifier like this: /[aeiou]/i.
 
 ## See Also
 
-- [Ruby Documentation on Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/ruby)
-- [Tutorial on Using Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [How to Use Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Ruby String#gsub Method Documentation](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

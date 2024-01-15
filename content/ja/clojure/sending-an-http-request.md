@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 「HTTPリクエストを送信する」"
-simple_title:         "「HTTPリクエストを送信する」"
+title:                "HTTPリクエストの送信"
+html_title:           "Clojure: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-HTTPリクエストを送信することの利点は、ウェブ上でデータのやりとりをする際に非常に重要です。WebアプリケーションやAPIを使用する際に、HTTPリクエストを送信することでサーバーから必要なデータを取得したり、データを送信したりすることができます。
+HTTPリクエストを送信する理由について、ユーザーが取り組むメリットを最大限2文で説明します。
 
-## 方法
+HTTPリクエストを送信することで、Webサーバーにデータをリクエストしたり、Webサーバーからデータを受け取ることができます。これにより、Webアプリケーションを作成したり、外部アプリケーションと連携させることができます。
 
-HTTPリクエストを送信するには、まずClojureで `clj-http` ライブラリをインポートします。次に、`clj-http.client` 名前空間から `get` 関数を使用して、リクエストのURLを指定します。
+# 使い方
 
-例えば、 `https://example.com` にGETリクエストを送信する場合、以下のようになります。
+下の「```Clojure ... ```」のコードブロックには、HTTPリクエストを送信するコーディング例と出力結果が含まれます。
 
 ```Clojure
-(ns my-app.core
-  (:require [clj-http.client :as http]))
 
-(let [response (http/get "https://example.com")]
-  (println (:status response)) ;; ステータスコードを取得
-  (println (:body response))   ;; レスポンスのボディを取得
-)
+; HTTPリクエストを送信するためのライブラリを取得
+(require '[clj-http.client :as client])
+
+; GETメソッドを使用して、Googleのトップページにリクエストを送信する
+(client/get "http://www.google.com")
+
+; 同じリクエストを送信し、レスポンスのbodyを受け取る
+(def response (client/get "http://www.google.com"))
+(:body response) ; => "<!doctype html><html>...</html>"
+
+; POSTメソッドを使用して、POSTパラメーターをサーバーに送信する
+(client/post "http://www.example.com" {:form-params {:username "johndoe" :password "123456"}})
+
 ```
 
-上記の例では、 `https://example.com` にGETリクエストを送信して、レスポンスのステータスコードとボディを取得し、コンソールに表示しています。
+# ディープダイブ
 
-他にも、POSTリクエストを送信する場合は `post` 関数を使用し、リクエストボディを指定することも可能です。
+HTTPリクエストを送信するという行為は、単純にURLにアクセスすることではありません。実際には、リクエストの種類やパラメーター、ヘッダーなど、さまざまなオプションをつけることが可能です。また、HTTPリクエストのレスポンスを受け取る際にも、レスポンスのbodyのみを取得するのか、ヘッダーも含めて取得するのかなど、様々な操作が可能です。
 
-## ディープダイブ
+さらに、Clojureでは高レベルのライブラリを使用するだけでなく、Javaの標準ライブラリを使用することもできます。そのため、より細かい設定やカスタマイズが必要な場合には、Javaの豊富なライブラリを利用することもできます。
 
-HTTPリクエストを送信する際に重要なことは、リクエストヘッダーやボディを適切に設定することです。また、リクエストを送信した後には、サーバーからのレスポンスを適切に受け取り、処理することも重要です。
+# See Also
 
-さらに、Clojureでは `clj-http` ライブラリ以外にも、 `aleph` や `http-kit` などのHTTPリクエストを送信するためのライブラリがあります。それぞれの特徴や使い方を比較することも大切です。
+ここでは、HTTPリクエストを送信する際に役立つ関連記事やドキュメントへのリンクを紹介します。
 
-## 参考リンク
-
-- [clj-http Githubページ](https://github.com/dakrone/clj-http)
-- [ClojureでHTTPリクエストを送信する方法](https://www.cnblogs.com/dlhscl2006/p/9352585.html)
-- [aleph Githubページ](https://github.com/ztellman/aleph)
-- [http-kit Githubページ](https://github.com/http-kit/http-kit)
-
-## 他にも
-
-- リクエストヘッダーやボディの設定方法について詳しく知りたい方は、 [こちらの記事](https://qiita.com/senou/items/0a1b0e83254e2d1019a6) をご参照ください。
-- HTTPリクエスト送信時のエラーハンドリングについても、 [こちらの記事](https://blog.hacker-cafe.net/2019/01/05/error-handling-in-clojure-with-http-your-work-and-casting-your-data/)をご参照ください。
+- [Clojure Cookbook - HTTP Clients](https://clojure-cookbook.com/http/clients.html)
+- [Clojure HTTP Client documentation](https://github.com/dakrone/clj-http)
+- [Java HTTPURLConnection documentation](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)

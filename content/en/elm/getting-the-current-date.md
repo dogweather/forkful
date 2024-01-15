@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,57 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-If you're an Elm programmer, you may have found yourself in a situation where you need to work with dates. Whether you're building a calendar application or need to display the current date on your website, it's important to know how to get the current date in Elm.
+Have you ever needed to display the current date in your web application? Look no further, because Elm has got you covered! In just a few simple steps, you can easily get the current date and use it to dynamically update your UI.
 
 ## How To
-
-To get the current date in Elm, we can use the `Time` module. This module provides functions for working with dates, times, and time zones.
-
-Let's start by importing the `Time` module:
+Getting the current date in Elm is actually quite simple. First, we need to import the `Date` module.
 
 ```Elm
-import Time
+import Date exposing (Date)
 ```
 
-Next, we can use the `now` function to get the current date:
+Next, we can use the `now` function from the `Date` module to get the current date and time. This function returns a `Result` type, which means it can either be successful or it can fail. To handle this, we can use the `case` expression.
 
 ```Elm
-now : Task x Time.Posix
+case Date.now of
+    Ok dateTime ->
+        -- do something with the current date and time
+    Err error ->
+        -- handle error
 ```
 
-As you can see, the `now` function returns a `Task` that will eventually resolve to a `Time.Posix` value, which represents the current date in the form of a Unix timestamp.
-
-To get the current date in a more user-friendly format, we can use the `DateTime` module:
+Once we have the `dateTime` value, we can use the `Date.toString` function to format it in whichever way we want. For example, if we want to display the date in the format of "Month Day, Year", we can use the following `case` expression.
 
 ```Elm
-import DateTime
-```
-
-Then, we can use the `fromPosix` function to convert the `Time.Posix` value to a `DateTime.DateTime` value:
-
-```Elm
-let
-  currentDate = DateTime.fromPosix (Task.attempt identity now)
-in
-  currentDate
-```
-
-Running this code will give us the following output:
-
-```Elm
-2019 Jan 25, Friday 16:42:25
+case Date.now of
+    Ok dateTime ->
+        Date.toString "%B %d, %Y" dateTime
+        -- this will give us something like "April 25, 2021"
+    Err error ->
+        -- handle error
 ```
 
 ## Deep Dive
+When using the `now` function, there are a few things to keep in mind. Firstly, the current date and time returned is based on the user's system clock. This means that if the user has their system clock set to a different date or time, it will affect the value returned by the `now` function.
 
-If you want to learn more about working with dates in Elm, you can explore the different functions and types in the `Time` and `DateTime` modules. You can also refer to the official documentation for more details and examples.
-
-It's worth noting that the `Time` and `DateTime` modules only provide basic date and time functionality. If you need more advanced features, like date calculations or time zone conversions, you may need to use a third-party library.
+Also, the `Date` module provides many other functions that can be useful when working with dates and times. For example, you can use the `fromCalendarDate` function to create a `Date` value from a specific date, or the `fromInt` function to create a `Date` value from a Unix timestamp. Be sure to check out the official Elm documentation for more information on these functions.
 
 ## See Also
-
-- [Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [DateTime module documentation](https://package.elm-lang.org/packages/elm/time/latest/DateTime)
-
-Now that you know how to get the current date in Elm, you can confidently incorporate dates into your Elm applications. Happy coding!
+- Official Elm Documentation on the Date module: https://package.elm-lang.org/packages/elm/time/latest/Date
+- How to Format Dates in Elm: https://www.youtube.com/watch?v=wK52UvkJbIY
+- Creating a Countdown Timer in Elm with Dates and Times: https://dev.to/johnrkeogh/creating-a-countdown-timer-in-elm-using-titles-1p99

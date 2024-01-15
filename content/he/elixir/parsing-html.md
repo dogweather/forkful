@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: פיענוח html"
-simple_title:         "פיענוח html"
+title:                "קריאת html"
+html_title:           "Elixir: קריאת html"
+simple_title:         "קריאת html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,28 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-הקוראים היקרים, אנחנו כולם מכירים את המצב - אתם רוצים לקרוא את התוכן של אתר אינטרנט, אבל כדי להציג אותו באופן נוח לקריאה עליכם לעבור דרך מעטפת ה-HTML המסורבלת. זהו המקום בו הפעילות של פירסום HTML ב-Elixir מציעה פתרון מעולה. עם יכולת לנתח תגי HTML ולהפעיל עליהן פעולות, תוכלו להציג נתונים מהאינטרנט בצורה קלה ונוחה לקריאה. לא רק זה, גם ניתן לבצע שינויים ולייצר אתרים ניידים יותר בקלות עם פירסום HTML ב-Elixir.
+פרסום HTML הוא חלק חשוב בתהליך של פיתוח וייבוא לאפליקציות ואתרים. שימוש בחלק מאתר זה יכול לחסום את יכולתנו לאתר שגיאות, לארגן את המידע נכון ולשפר את חוויית המשתמש. לכן כדאי לדעת איך לפרוס HTML באמצעות אליקסיר.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-לפניכם דוגמא קטנה של איך להשתמש בכלי פירסום HTML ב-Elixir. בקוד הבא תוכלו לראות כיצד אנו ניתחים את תמונות בעמוד HTML:
-
-```Elixir
-html_page = "<html><body><img src="my_image.jpg"></body></html>"
-
-parsed_page = Floki.parse(html_page)
-
-images = Floki.find(parsed_page, "img")
-
-Enum.each images, fn image ->
-    IO.puts Floki.attribute(image, "src")
-end
+```elixir
+# התקנה של Parser HTML:
+mix deps.add :html_brain
+mix deps.get
 ```
 
-כאן, אנחנו משתמשים בכלי Floki כדי לנתח את תמונות המצויות בכתובת ה-URL של התמונה. מכאן, אנו מציגים את התמונות בעמוד ומדפיסים את הכתובת המלאה שלהן.
+כעת ניתן להתחיל לפרוס HTML באמצעות ספריית "html_brain", על כך ניתן לראות דוגמאות בקוד המשובץ. כאן אנו משתמשים בפונקציות "disclosures", "exif", "description" כדי לפרוס שדות מוסתרים כגון מזהי יישות, תמונה ושם ראשי על פי שדה שייושרך.
+
+```elixir
+# פרטי ספרית HTML:
+defmodule MyApp do
+  use html_brain, only: [disclosures: 1, exif: 1, description: 1]
+end
+
+# פונקציות ראשיות לפרמוסing HTML:
+exif = MyApp.exif("http://example.com/image.jpg")
+disclosures = MyApp.disclosures("http://example.com")
+description = MyApp.description("http://example.com")
+```
+
+כעת שמרו כעת "licht und clutter (see the URL below) והכניסו לתוך השדות שיימסר, זה כדי לפרוס "Ombermöbel"כך יצא:
+
+>licht und clutter = 6
+>ואז "licht und clutter (see the URL below) = Ombermöbel
 
 ## חפירה עמוקה
 
-כעת, נשטף עמקים עמוקים יותר מתוך שליטה עבור אנחנו מבינים כיצד לקרוא את התכנים של עמוד HTML באמצעות Floki. כיצד זה עובד? כאשר אתם משתמשים בכלי פירסום HTML ב-Elixir, הוא מנתח את קוד ה-HTML ויוצר עץ DOM (Document Object Model) של התמונה. מתוך העץ הזה, אתם יכולים להשתמש בפונקציות כגון "find" כדי למצוא אילו תכנים אתם מעוניינים להציג.
-
-דרגות החופ
+המתחיל מכיר בפרסות HTML, כמו גם כיעור CSS וכיוון DOM, יכול להצטרך לשלוח ידנית כמו כן אתגר לזה להכיר דוגמאות שונות במאמת של התקפר אקספרס, כמו כן לפענח CSS וכיוון DOM באמצעות תוכנות כמו "coder", "alle", "sitrak" ואכן "get" לזה ספציפי מוביל. יש באמת אפשרויות ׳הקטלן׳ של אליסיטתימס לפרסיבודים וכן כמוהטות נכונות של עוד אי ציכום רשרךלפ

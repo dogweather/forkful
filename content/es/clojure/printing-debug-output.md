@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Imprimiendo la salida de depuración"
-simple_title:         "Imprimiendo la salida de depuración"
+title:                "Impresión de salida de depuración"
+html_title:           "Clojure: Impresión de salida de depuración"
+simple_title:         "Impresión de salida de depuración"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué imprimir salidas de depuración en Clojure
+## Por qué
 
-Imprimir salidas de depuración en el código es una técnica fundamental para identificar errores y solucionar problemas en nuestra aplicación. En este post, te mostraremos cómo utilizar esta herramienta en tus proyectos de Clojure y cómo te puede ayudar en tu proceso de desarrollo.
+Si eres un desarrollador, es probable que en algún momento hayas tenido que lidiar con errores en tu código. Aquí es donde imprimir la salida de depuración puede ser una herramienta valiosa para ayudarte a identificar y resolver estos errores más rápido. ¡Sigue leyendo para descubrir cómo aprovechar al máximo esta función en Clojure!
 
-## Cómo hacerlo
+## Cómo
 
-Imprimir salidas de depuración es bastante simple en Clojure. Solo necesitas utilizar la función `println` para imprimir el valor de una variable o una expresión en la consola. Por ejemplo:
-
-```Clojure
-(def usuario "Juan")
-(println usuario)
-```
-
-Este código imprimirá en la consola "Juan" como resultado. Además, puedes utilizar la función `prn` para imprimir de forma más legible ciertos tipos de datos, como listas o mapas. Por ejemplo:
+Imprimir la salida de depuración en Clojure es muy sencillo. Puedes utilizar la función `prn` para imprimir cualquier valor en la consola. Por ejemplo:
 
 ```Clojure
-(def mascotas ["gato" "perro" "conejo"])
-(prn mascotas)
+(prn "Hola Mundo")
 ```
 
-Este código imprimirá en la consola "(\"gato\" \"perro\" \"conejo\")" como resultado.
+Esto imprimirá `Hola Mundo` en la consola. También puedes imprimir variables y estructuras de datos más complejas, como listas o mapas:
 
-## Inmersión profunda
+```Clojure
+(def temperaturas [32 45 60 72 85])
 
-Existen diferentes técnicas y métodos para imprimir salidas de depuración en Clojure. Por ejemplo, también puedes utilizar la macro `spit` para escribir la salida en un archivo de texto o la librería `tools.logging` para imprimir mensajes de error con diferentes niveles de severidad.
+(prn temperaturas)
+```
 
-Además, es importante tener en cuenta que imprimir salidas de depuración puede tener un impacto en el rendimiento de tu aplicación, por lo que es recomendable utilizarlo solo en casos necesarios y eliminarlo en la versión final del código.
+Esto imprimirá la lista de temperaturas en la consola, lo que puede ser útil si estás depurando un algoritmo que trabaja con esta lista.
+
+## Deep Dive
+
+La función `prn` es útil, pero tiene algunas limitaciones. Por ejemplo, solo puede imprimir en la consola y no permite personalizar la forma en que se imprime el valor. Si quieres más control sobre la salida de depuración, puedes utilizar la función `println` en su lugar.
+
+`println` te permite imprimir en cualquier flujo de salida, como archivos o sockets. También te permite formatear la salida como desees. Por ejemplo, si quieres imprimir una variable junto con su nombre, puedes hacer lo siguiente:
+
+```Clojure
+(println "La temperatura actual es:" temperatura-actual)
+```
+
+Esto imprimirá en la consola `La temperatura actual es: 72`, suponiendo que `temperatura-actual` tiene un valor de 72.
 
 ## Ver también
 
-- [Documentación oficial de print y println en Clojure](https://clojure.github.io/clojure/clojure.core-api.html#print)
-- [Uso de spit en Clojure](https://clojuredocs.org/clojure.core/spit)
-- [Librería tools.logging en Clojure](https://github.com/clojure/tools.logging)
+- [Documentación oficial de Clojure sobre impresión de valores en la consola] (https://clojure.org/reference/other_functions#Printing%20values%20to%20the%20console)
+- [Artículo sobre cómo depurar en Clojure] (https://medium.com/@AdamsChar/clojure-debugging-fundamentals-c82afc17644f)
+- [Curso de depuración en Clojure] (https://purelyfunctional.tv/courses/debugging-in-clojure/)

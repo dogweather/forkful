@@ -1,6 +1,7 @@
 ---
-title:                "Go: Berechnung eines Datums in der Zukunft oder Vergangenheit."
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit."
+title:                "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Go: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,32 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann für verschiedene Anwendungen nützlich sein, wie zum Beispiel die Planung von Terminen oder das Verfolgen von Deadlines.
+Es gibt viele Gründe, warum jemand ein Datum in der Zukunft oder Vergangenheit berechnen möchte. Vielleicht müssen sie Termine planen, Fristen einhalten oder einfach nur neugierig darauf sein, an welchem Tag in der Zukunft ein bestimmtes Ereignis stattfinden wird.
 
-## Wie man es macht
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `time`-Package in Go verwenden. Um ein Beispiel zu sehen, schauen wir uns den folgenden Code an:
-
+## Wie geht's?
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Zeitpakete in Go verwenden:
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	today := time.Now()
-	tenDaysLater := today.AddDate(0, 0, 10)
-	fmt.Println("In 10 Tagen ist der", tenDaysLater.Format("02.01.2006"))
+    // Heute's Datum holen
+    heute := time.Now()
+
+    // Datum in der Vergangenheit berechnen
+    vergangenheit := heute.AddDate(-1, 0, 0)
+
+    // Datum in der Zukunft berechnen
+    zukunft := heute.AddDate(0, 1, 0)
+
+    // Formatieren und ausgeben
+    fmt.Println("Vergangenes Datum:", vergangenheit.Format("02.01.2006"))
+    fmt.Println("Zukünftiges Datum:", zukunft.Format("02.01.2006"))
 }
 ```
+Der Output wäre:
+```
+Vergangenes Datum: 19.02.2020
+Zukünftiges Datum: 19.04.2020
+```
 
-Die Ausgabe dieses Codes wäre: `In 10 Tagen ist der 20.10.2021`. Wir verwenden die Methode `AddDate()` um `tenDaysLater` zu berechnen, indem wir 0 Jahre und 0 Monate hinzufügen und 10 Tage hinzufügen. Wir können auch ein Datum in der Vergangenheit berechnen, indem wir negative Zahlen verwenden.
-
-## Tiefere Einblicke
-Die `time`-Package bietet viele weitere Funktionen und Methoden, die beim Arbeiten mit Datumsangaben hilfreich sein können. Zum Beispiel können wir mit der `Parse()` Methode Datumsangaben in unterschiedlichen Formaten parsen oder mit der `Since()` Methode die Zeitdauer zwischen zwei Datumsangaben berechnen. Es lohnt sich, die Dokumentation der `time`-Package genauer anzusehen, um alle Möglichkeiten zu entdecken.
+## Tiefer eintauchen
+Die `AddDate()` Funktion nimmt als Argumente das Jahr, den Monat und den Tag und gibt ein `time.Time` Objekt zurück. Wir können auch `Sub()` verwenden, um ein Datum in der Vergangenheit zu berechnen. Außerdem gibt es noch viele weitere Funktionen in den Zeitpaketen, um mit Datum und Uhrzeit in Go zu arbeiten.
 
 ## Siehe auch
-- [Go Zeitdokumentation] (https://golang.org/pkg/time/)
-- [Go Zeitberechnung Beispielcode] (https://gobyexample.com/time)
-- [Go Zeitparsing Beispielcode] (https://yourbasic.org/golang/parse-string-time-date-go/)
+- Dokumentation zu Zeitpaketen in Go: https://golang.org/pkg/time/
+- Ein Tutorial zur Arbeit mit Datum und Uhrzeit in Go: https://yourbasic.org/golang/time-date-examples/#add-date

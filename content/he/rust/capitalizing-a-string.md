@@ -1,6 +1,7 @@
 ---
-title:                "Rust: לשנות את כותרת המחרוזת לאותיות רישיות"
-simple_title:         "לשנות את כותרת המחרוזת לאותיות רישיות"
+title:                "המרה למחרוזת גדולות"
+html_title:           "Rust: המרה למחרוזת גדולות"
+simple_title:         "המרה למחרוזת גדולות"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,36 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-למה לאדם ישאגדו בלכת עם ראסט לדרך?
+אנשים משתמשים בפעולת כיתוביות של שפת Rust בכדי לשדרג את מחרוזות התווים שלהם. זה מאפשר להם לטפל במחרוזות בצורה מקצועית ופשוטה, מתוך כך מבטיחים קוד איכותי יותר וקל יותר לתחזוקה.
 
-ככל הידוע, ראסט הוא שפת תכנות אפיונית מתקדמת ומספקת כלים עצמאיים ואפקטיביים לכתיבת קוד קל לקריאה ולתחזוקה. אחת התכונות המעניינות של ראסט היא אפשרות לנתח ולעבד טקסט בקלות. תהליך מה של עיבוד טקסט, כמו למשל כתיבה או עיצוב את הנתונים, הוא נפוץ הן בתעשייה והן בקוד פתוח. אחרי כל, מי כבר לא רוצה להציג טקסט בצורה שקופה ונגישה?
+## כיצד עושים זאת
 
-## איך לעשות זאת
+הנה כמה דוגמאות של איך לכתוב טיפוס Rust כדי לכיתב מחרוזות תווים:
 
-כדי לנתח את הטקסט ולכתוב אותו באופן מסודר ונוח לקריאה, ניתן לעבוד עם הפונקציה capitalize של ראסט. בדוגמה הבאה, נכניס טקסט ונייצג אותו באופן מגוון על ידי עיבוד הטקסט בכמה דרכים שונות:
+```rust
+fn capitalize(string: &str) -> String {
+    return string.to_uppercase();
+}
 
-```Rust
-let text = "hello world!";
-let upper_case_text = text.to_uppercase();
-let lower_case_text = text.to_lowercase();
-let capitalized_text = text.capitalize();
-println!("Original text: {}", text);
-println!("Uppercase text: {}", upper_case_text);
-println!("Lowercase text: {}", lower_case_text);
-println!("Capitalized text: {}", capitalized_text);
+fn main() {
+    let input_string = "hello world!";
+    let capitalized_string = capitalize(input_string);
+    println!("Original string: {}", input_string);
+    println!("Capitalized string: {}", capitalized_string);
+}
 ```
 
-תוצאה:
+פלט:
 
-```
-Original text: hello world!
-Uppercase text: HELLO WORLD!
-Lowercase text: hello world!
-Capitalized text: Hello world!
+```shell
+Original string: hello world!
+Capitalized string: HELLO WORLD!
 ```
 
-ניתן לראות שקיבלנו תוצאות שונות בהתאם לפונקציה שהשתמשנו בה. האפשרויות המוכרות של הפונקציה capitalize הן לכתוב את המילה הראשונה ברשימה באות גדולה ואת שאר המילים באותיות קטנות. אבל אם אתה רוצה לנדבק במתכון שהוציאו מהפורום שלפני שנים, אז אתה יכול פשוט להפעיל to_capitalized_word במקום capitalized.
+הפעולה "to_uppercase()" משנה את כל התווים במחרוזת לאותיות גדולות. בכל פעם שתרצו לכנות לפעולה את הפונקציה "capitalize()", תוכלו להשתמש בפונקציה הזו כדי להכין מחרוזת עם כל האותיות הגדולות.
 
-בנוסף, ניתן להשתמש גם בפונקציה capitalize_utf8 אם אתה רוצה לעבוד עם טק
+## חפירה עמוקה
+
+כדי להבין טוב יותר את הפעולה "to_uppercase()" וכיצד היא משנה את מחרוזת הקלט, נצפה בפונקציה המעתיקה את הפעולה ונבדוק קצת את הלוגיקה שלה:
+
+```rust
+fn to_uppercase(string: &str) -> String { 
+    let mut result = String::new();
+
+    for c in string.chars() {
+        // Check if current character is a lowercase letter
+        if c.is_ascii_lowercase() {
+            // Convert lowercase to uppercase by subtracting 32 from its ASCII value
+            let uppercase_char = (c as u8 - 32) as char;
+            // Add the uppercase character to the result string
+            result.push(uppercase_char);
+        } else {
+            // If the character is already an uppercase letter, add it to the result as is
+            result.push(c);
+        }
+    }
+
+    return result; 
+}
+```
+
+בכדי להבין מתוך מה כיתוביות של Rust משמשת לטיפוס שלהם כמו "char", עלינו להבין שאפשר לנגוח ולכתוב על הנתונים הללו בצורה ממוחשבת. במילים אחרות, הלוגיקה של להכניס אותיות גדולות לנתונים זהה לאיך המכשור ממיר אותיות גדולות וקטנות במחשב.
+
+## ראו גם
+
+- [מסמ

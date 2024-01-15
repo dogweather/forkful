@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Title: Creando un archivo temporal"
-simple_title:         "Title: Creando un archivo temporal"
+title:                "Creando un archivo temporal"
+html_title:           "Bash: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,38 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué crear un archivo temporal en Bash?
 
-Crear un archivo temporal en Bash es una práctica común entre los programadores para realizar ciertas tareas en un entorno seguro y controlado. Al crear un archivo temporal, se asegura que no habrá conflictos con otros archivos o procesos y se pueden realizar cambios sin afectar directamente los archivos existentes en el sistema.
+Existen varias razones por las cuales uno puede necesitar crear un archivo temporal en un script de Bash. Por ejemplo, puede ser útil cuando se necesita almacenar temporalmente datos o resultados intermedios en un proceso de script. También puede ser útil para realizar pruebas en un entorno aislado sin afectar archivos existentes.
 
-## Cómo crear un archivo temporal en Bash
+## Cómo hacerlo
 
-Existen varias formas de crear un archivo temporal en Bash, pero en este blog post te mostraré dos de las más comunes.
+Crear un archivo temporal en Bash es muy sencillo y se puede hacer de varias maneras. A continuación se muestran dos ejemplos de código que pueden ser útiles en diferentes situaciones:
 
-Primero, puedes utilizar el comando `mktemp` seguido de la ruta y el nombre del archivo temporal que deseas crear. Por ejemplo:
-
+#### Ejemplo 1:
 ```Bash
-temp_file=$(mktemp /tmp/miarchivo.XXXX)
+# Crea un archivo temporal con el número de proceso del script como parte del nombre
+temp_file="/tmp/script_temp_$$.txt"
+
+# Escribe datos en el archivo temporal
+echo "Esto es un archivo temporal" > "$temp_file"
+
+# Lee datos del archivo temporal
+cat "$temp_file"
+
+# Elimina el archivo temporal
+rm "$temp_file"
 ```
 
-Esto creará un archivo temporal llamado "miarchivo" en la carpeta "/tmp" con una extensión aleatoria de 4 caracteres. Puedes utilizar el archivo `temp_file` para realizar cualquier operación que necesites dentro de tu script de Bash.
-
-Otra opción es utilizar el comando `touch` y redirigir su salida hacia un archivo temporal utilizando el operador ">" en lugar de un nombre de archivo. Por ejemplo:
-
+#### Ejemplo 2:
 ```Bash
-touch > /tmp/miarchivo
+# Crea un archivo temporal con una fecha y hora como parte del nombre
+temp_file="/tmp/$(date +%Y%m%d%H%M%S)_temp.txt"
+
+# Escribe datos en el archivo temporal
+echo "Esto es otro archivo temporal" > "$temp_file"
+
+# Lee datos del archivo temporal
+cat "$temp_file"
+
+# Elimina el archivo temporal
+rm "$temp_file"
 ```
 
-Esto creará un archivo temporal vacío en la carpeta "/tmp". Puedes utilizar este archivo para escribir o copiar datos antes de eliminarlo al final del script.
+En ambos ejemplos, se utiliza la variable `$temp_file` para almacenar la ruta del archivo temporal. Luego, se puede escribir o leer datos en ese archivo utilizando comandos de Bash como `echo` o `cat`. Por último, se elimina el archivo utilizando el comando `rm` una vez que ya no es necesario.
 
-## Profundizando en la creación de archivos temporales en Bash
+## Profundizando
 
-Crear un archivo temporal en Bash puede ser útil en muchas situaciones, como por ejemplo cuando necesitas almacenar datos temporales mientras realizas operaciones o cuando trabajas con archivos grandes y necesitas fragmentarlos en archivos más pequeños para su procesamiento.
+Ahora, veamos cómo funciona la primera línea de cada ejemplo para crear el nombre del archivo temporal. En ambos casos, se utiliza una sintaxis similar, la cual puede ser desglosada de la siguiente manera:
 
-Además, puedes especificar el nombre, la ruta y la extensión del archivo temporal utilizando varias opciones y modificadores con los comandos `mktemp` y `touch`, lo que te permite personalizar el archivo según tus necesidades.
+- `/tmp/` es el directorio donde se almacenará el archivo temporal. Este directorio es comúnmente utilizado para almacenar archivos temporales en sistemas Unix.
+- `$()` es una forma de ejecutar un comando dentro de un comando en Bash. En este caso, se utiliza para ejecutar el comando `date` y obtener la fecha y hora actual.
+- `$$` es una variable especial que contiene el número de proceso del script que se está ejecutando.
+- `_%Y%m%d%H%M%S` es una cadena de formato que se utiliza para obtener la fecha y hora actual en el formato deseado. En este caso, `%Y` representa el año, `%m` el mes, `%d` el día, `%H` la hora en formato de 24 horas, `%M` los minutos y `%S` los segundos.
 
-Un punto importante a tener en cuenta es que al finalizar tu script o proceso, debes eliminar los archivos temporales creados para evitar una acumulación innecesaria de archivos en el sistema.
+Al concatenar todas estas partes, se obtiene una ruta única para el archivo temporal, que evitará conflictos con otros archivos temporales que puedan existir en el mismo directorio. Es importante notar que no se utiliza la extensión del archivo en la creación del nombre, ya que esto puede variar dependiendo del tipo de archivo que se vaya a almacenar.
 
 ## Ver también
 
-- [Tutorial de Bash (en español)](https://www.hostinger.es/tutoriales/comandos-de-linux/)
-- [Documentación de mktemp](https://man7.org/linux/man-pages/man1/mktemp.1.html)
-- [Documentación de touch](https://man7.org/linux/man-pages/man1/touch.1.html)
+- [Explicación detallada de cómo crear archivos temporales en Bash](https://www.baeldung.com/linux/create-temporary-files-bash)
+- [Otras formas de generar nombres únicos para archivos temporales en Bash](https://www.johneday.com/422/time-in-unix-shell-script-execution-time-script-lesson-learning)

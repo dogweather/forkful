@@ -1,6 +1,7 @@
 ---
-title:                "Swift: עבודה עם קבצי CSV"
-simple_title:         "עבודה עם קבצי CSV"
+title:                "עבודה עם csv"
+html_title:           "Swift: עבודה עם csv"
+simple_title:         "עבודה עם csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -9,60 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-התכנות בשפת Swift יכול להיות מאתגר ומתעסק עם נתונים יכול להיות דבר מסובך. אבל, כניסה לנתוני CSV יכולה לסייע לך לנהל נתונים בפורמט שונה ולעזור לך לעבוד בקלות עם נתונים בתוך סביבות מגוונות. באמצעות שימוש בשפת Swift לעבודה עם נתוני CSV, אתה יכול להיות יעיל יותר בניהול הנתונים שלך ולהקל על התכנות בכלל.
+נסתכל סביבנו ונגלה שה-CSV הוא אחד הפורמטים הנפוצים ביותר לאחסון ועריכת נתונים בתוכניות כמו אקסל ו-NOTE ואינטרנט. כארגז כלים פשוט ויעיל לעבודה עם נתונים מורכבים, יש לו המון יתרונות המאפשרים להשתמש בו כדי למזער את זמן העבודה ולהעלות את היציבות.
 
-## איך לעבוד עם CSV בשפת Swift
+# איך לנתח קבצי CSV עם Swift?
 
-בשימוש בשפת Swift, ניתן לקרוא קובץ CSV בעזרת מחלקת `String`. יש להשתמש בפקודות `do` ו- `try` לקריאת הקובץ ואז להוציא את הנתונים שבו לעזרת הפונקציות של `String` כמו `components(separatedBy:)`. הנה דוגמא של קוד ופלט:
+אלו הן שלושת הצעדים הראשונים של הכיתוב המופשט:
 
-```Swift
-do {
-  let csvString = try String(contentsOfFile: "data.csv", encoding: .utf8)
-  let rows = csvString.components(separatedBy: "\n")
-  for row in rows {
-    let columns = row.components(separatedBy: ",")
-    print(columns)
-  }
-} catch {
-  print("Error reading CSV file: \(error)")
-}
-```
+1. כגון, נותח קובץ CSV וקרא אותו באמצעות הפעולות של `NSArray` ו- `NSData`כדי לקרוא אותו יחד. ניתן למצוא ידנית יותר מידע על אופן העבודה לעיתים קרובות.
 
-Output:
-```
-["Name", "Age", "Hobby"]
-["John", "25", "Hiking"]
-["Sarah", "30", "Reading"]
-```
+2. כמו כן, ניתן להשתמש בספריית Swift CSV כדי ליצור פתרון יעיל יותר. יש פעמים שיש למצוא אל מול זה כל הזמן את הפעולות הנדרשות עד כדי כתב CSV. אני ממליץ לנסות להשתמש בו במספר מקומות הטומן, כמו הנתונים שנתגלו עד כה.
 
-## צעדים נוספים לעומק יותר
-
-כדי להיות יעיל יותר בעבודה עם נתוני CSV בשפת Swift, כדאי להשתמש במחלקת `CSVDecoder` הכפולה מ-`Codable`. יש ליצור מודל שמתאים לנתונים שיש בקובץ CSV, ואז ניתן להשתמש במחלקת `CSVDecoder` על מנת לקרוא את הנתונים ולהמירם למודל המתאים. הנה דוגמא לקוד ופלט:
+כאזור המסומן `CSVData`. פתקים של תיקיות חלקות הימו יכולים לתת פתרון רגיל לקוראי הקובץ, נערכים להתאים ולנתח תוך כדי הבחירה באמצעות כלים אלו.
 
 ```Swift
-struct Person: Codable {
-  let name: String
-  let age: Int
-  let hobby: String
-}
-
-do {
-  let csvString = try String(contentsOfFile: "data.csv", encoding: .utf8)
-  let decoder = CSVDecoder()
-  let people = try decoder.decode([Person].self, from: csvString, withHeader: true)
-  print(people)
-} catch {
-  print("Error decoding CSV: \(error)")
-}
+// ניתוח קובץ CSV עם CSVData
+let csvDataURL = URL(fileURLWithPath: "my_csv_file.csv") //במקור משתמשים בקובץ
+let text = try String(contentsOf: csvDataURL) // קריאת הקובץת למחרוות עמודות
+let csv: CSVData = try CSVData(text: text, hasHeaders: true)
+// פתרון הכתב במפתחים
+// אנו יכולים כעת לנתח את הנתונים בספרית Swift CSV.
+// כאזור המסומן `CSVData`.
 ```
 
-Output:
-```
-[Person(name: "John", age: 25, hobby: "Hiking"), Person(name: "Sarah", age: 30, hobby: "Reading")]
-```
-
-## ראי גם
-
-למידע נוסף על עבודה ע
+# יצירת יכולות עמודות בתצוגה מ

@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Jämföra två datum"
+title:                "Jämföra två datum"
+html_title:           "PHP: Jämföra två datum"
 simple_title:         "Jämföra två datum"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,29 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att jämföra två datum i PHP kan vara användbart i flera olika situationer, till exempel när man vill kontrollera om ett visst datum redan har passerat eller för att sortera datum i rätt ordning. Det kan även vara användbart i utvecklingen av webbapplikationer där man behöver hantera datum och tider på ett korrekt sätt.
+Att jämföra datum är en vanlig uppgift i webbutveckling, särskilt när det gäller att sortera eller filtrera data baserat på datum. Det är också användbart för att beräkna olika tidsintervall eller för att kontrollera om en viss händelse inträffade före eller efter en annan.
 
-## Så här gör man
+## Så här gör du
 
-För att jämföra två datum i PHP behöver man först skapa två variabler som innehåller de datum man vill jämföra. Detta görs med hjälp av funktionen `date_create()` där man anger datumet som parameter. Sedan kan man använda funktionen `date_diff()` för att jämföra de två datumen och få ut skillnaden mellan dem. Nedan följer ett exempel på kod:
+Att jämföra två datum i PHP är enkelt med hjälp av funktionen `strtotime()` och `date()`. Här är ett exempel där vi jämför två datum och får ut en sträng som visar om det första datumet är före, efter eller samma som det andra datumet.
 
 ```PHP
-$datum1 = date_create("2020-05-15");
-$datum2 = date_create("2020-05-20");
+$date1 = strtotime('2020-05-15');
+$date2 = strtotime('2020-05-20');
 
-$skillnad = date_diff($datum1, $datum2);
-
-echo $skillnad->format("%R%a dagar"); //Skriver ut antalet dagar skillnaden mellan datumen är
+if ($date1 < $date2) {
+    echo date('Y-m-d', $date1) . ' är före ' . date('Y-m-d', $date2);
+} elseif ($date1 > $date2) {
+    echo date('Y-m-d', $date1) . ' är efter ' . date('Y-m-d', $date2);
+} else {
+    echo date('Y-m-d', $date1) . ' är samma som ' . date('Y-m-d', $date2);
+}
 ```
 
-I detta exempel jämförs datumen 2020-05-15 och 2020-05-20 och resultatet blir +5 dagar eftersom det andra datumet är senare än det första.
+**Output:**
+
+`2020-05-15 är före 2020-05-20`
+
+Det är viktigt att observera att `strtotime()` konverterar datumet till en tidstämpel, vilket gör det möjligt att utföra jämförelser. Om du vill jämföra två datum som är i olika format, måste du först konvertera dem till tidsstämplar med hjälp av `strtotime()`.
 
 ## Djupdykning
 
-När man jämför två datum i PHP är det viktigt att förstå hur funktionen `date_diff()` fungerar. Den returnerar en `DateInterval`-objekt som innehåller den faktiska skillnaden mellan datumen. Om man vill ha ett annat format på resultatet kan man använda funktionen `format()` tillsammans med `DateInterval`-objektet för att få ut skillnaden i önskat format. Det finns också flera olika parameteralternativ som man kan använda för att få ut olika delar av skillnaden, till exempel antal år, månader, dagar osv. För att läsa mer om samtliga alternativ och hur man använder `date_diff()` i olika situationer kan man besöka [PHP:s dokumentation](https://www.php.net/manual/en/function.date-diff.php).
+När du jämför två datum är det viktigt att tänka på formatering och tidszoner. Om datumet är i ett annat format än vanligtvis används i PHP, eller om du har olika tidszoner i dina två datum, kan det påverka resultatet av din jämförelse.
+
+Några användbara funktioner för att hantera tidszoner i PHP inkluderar `date_default_timezone_set()` som ställer in den aktuella tidszonen och `date_default_timezone_get()` som returnerar den aktuella tidszonen. För att formatera datum på olika sätt kan du använda funktionen `date()` som tar ett formatsträng och en tidsstämpel som argument.
 
 ## Se även
 
-[Hur man hanterar datum och tider i PHP](https://www.w3schools.com/php/php_date.asp) - Enkel och utförlig guide med kodexempel på hur man kan hantera datum och tider i PHP.
-
-[6 smart tips för hantering av datum och tider i PHP](https://www.cloudways.com/blog/php-date-time/) - En artikel som listar några av de bästa sätten att hantera datum och tider i PHP och ger tips på hur man kan undvika vanliga problem.
+* [PHP date()-funktionen](https://www.php.net/manual/en/function.date.php)
+* [PHP strtotime()-funktionen](https://www.php.net/manual/en/function.strtotime.php)
+* [PHP date_default_timezone_set()-funktionen](https://www.php.net/manual/en/function.date-default-timezone-set.php)

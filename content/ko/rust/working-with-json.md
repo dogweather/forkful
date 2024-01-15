@@ -1,6 +1,7 @@
 ---
-title:                "Rust: json 작업하기"
-simple_title:         "json 작업하기"
+title:                "JSON 작업하기"
+html_title:           "Rust: JSON 작업하기"
+simple_title:         "JSON 작업하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-JSON을 다루는 작업에 참여하는 이유는 무엇일까요? 이는 데이터를 효율적으로 저장하고 전송할 수 있는 가벼운 형식이기 때문입니다. 또한 다양한 프로그래밍 언어에서 모두 지원되기 때문에 유연하게 쓸 수 있습니다.
+## 왜 이것을 해야하나요?
 
-## 해야할 일
-먼저 JSON을 사용할 수 있도록 라이브러리를 추가해야 합니다. 그런 다음 다음과 같이 쉽게 JSON을 다룰 수 있습니다:
+JSON은 현대 웹 프로그래밍에서 널리 사용되는 데이터 형식 중 하나입니다. 이것을 사용하여 데이터를 교환하고 저장하는 데 매우 유용하며, 많은 언어에서 지원되고 있습니다. 따라서 JSON을 잘 다루는 것은 프로그래밍에서 필수적인 기술 중 하나입니다.
+
+## 이렇게 하세요!
+
+### JSON 데이터 생성하기
 
 ```Rust
-use serde_json::{Result, Value};
+extern crate serde_json;
 
-fn main() -> Result<()> {
-    // Sample JSON object
-    let data = r#"
-        {
-          "name": "John Doe",
-          "age": 30,
-          "city": "Seoul"
-        }"#;
+use serde_json::{Value};
+use serde_json::json;
 
-    // Parsing JSON string into Value type
-    let v: Value = serde_json::from_str(data)?;
-
-    // Accessing data from JSON object
-    println!("Name: {}", v["name"]); // Output: John Doe
-    println!("Age: {}", v["age"]); // Output: 30
-    println!("City: {}", v["city"]); // Output: Seoul
-
-    Ok(())
+fn main() {
+    // Key-value 쌍으로 이루어진 Rust HashMap 정의
+    let mut user = HashMap::new();
+    user.insert("name", "John");
+    user.insert("age", "30");
+    
+    // JSON 데이터로 변환
+    let json_data = json!(user);
+    println!("JSON 데이터:\n {}", json_data);
 }
 ```
-위의 예제에서는 `serde_json` 라이브러리를 사용하여 JSON 형식의 데이터를 다루는 방법을 보여줍니다. `from_str()` 함수를 사용하여 JSON 문자열을 Value 타입으로 변환하고, 배열과 마찬가지로 인덱스를 사용하여 데이터에 접근할 수 있습니다.
 
-## 깊은 탐구
-JSON은 매우 유연한 형식이지만 가끔 복잡한 데이터를 다룰 때 어려움을 겪을 수 있습니다. 이 경우 `serde_json` 라이브러리의 `to_string()` 메서드를 사용하여 데이터를 JSON 형식으로 다시 변환하고, `get()` 메서드를 사용하여 원하는 데이터에 접근할 수 있습니다. 또한 복잡한 데이터 구조를 위해 `serde`의 매우 강력한 기능인 직렬화와 역직렬화를 사용할 수 있습니다.
+```
+## 출력:
+{
+    "name": "John",
+    "age": "30"
+}
+```
 
-## See Also
-- [Official Serde documentation](https://docs.rs/serde_json/1.0.62/serde_json/)
-- [JSON tutorial by w3schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Learning Rust: Working with JSON](https://learning-rust.github.io/docs/a6.bonus.md.html#working-with-json)
+### JSON 데이터 읽기
+
+```Rust
+extern crate serde_json;
+
+use serde_json::Value;
+
+fn main() {
+    // JSON 데이터 읽기
+    let json_data = r#"{
+        "name": "John",
+        "age": "30"
+    }"#;
+
+    // JSON을 파싱하여 Value 타입 객체로 변환
+    let user: Value = serde_json::from_str(json_data).unwrap();
+
+    // Value 타입 객체에서 원하는 값 추출
+    let name = user["name"].as_str().unwrap();
+    let age = user["age"].as_str().unwrap();
+
+    println!("이름: {}", name);
+    println!("나이: {}", age);
+}
+```
+
+```
+## 출력:
+이름: John
+나이: 30
+```
+
+## 더 깊게 알아보기
+
+### Rust의 serde_json 라이브러리
+
+Rust는 serde_json 라이브러리를 통해 JSON 데이터를 쉽게 다룰 수 있도록 지원하고 있습니다. 이 라이브러리를 사용하면 JSON 데이터를 Rust 데이터 타입으로 쉽게 변환하고, 반대로 Rust 데이터를 JSON 형식으로 쉽게 만들 수 있습니다. 또한 이 라이브러리는 JSON을 보다 효율적으로 파싱할 수 있는 기능을 제공하여 성능을 향상시킵니다.
+
+## 참고 자료
+
+- [Rust 공식 문서 - serde_json](https://docs.serde.rs/serde_json/)
+- [Rust는 실패하지 않는다 - Serde와 JSON으로 작업하기](https://kimsunwoong.github.io/rust-programming/serde_json/)

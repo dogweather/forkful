@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Elixir: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-För att skapa dynamiska och interaktiva webbapplikationer behöver man kunna hämta information från internet. Det är här Elixir kommer in i bilden. Med Elixir kan man enkelt hämta webbsidor och använda den informationen i sin kod.
+##Varför
 
-## Hur man gör det
-För att hämta en webbsida i Elixir behöver man använda ett inbyggt bibliotek som heter `HTTPoison`. Med detta bibliotek kan man utföra HTTP-anrop till en specifik URL och få tillbaka en respons. Efter det kan man sedan använda Elixir's inbyggda parsing funktioner för att extrahera den information man behöver från webbsidan.
+För att hämta en webbsida kan vara nödvändigt för att samla in data, såsom information om produkter eller användarfeedback. Det kan också vara ett sätt att automatisera en uppgift som skulle vara tidskrävande att göra manuellt.
 
-Här är ett enkelt exempel på hur man kan hämta en webbsida i Elixir:
-
+##Så här gör du
 ```Elixir
-# Importera HTTPoison biblioteket
-import HTTPoison
-
-# Definiera URL:n som vi vill hämta
-url = "https://example.com"
-
-# Utför GET-anrop och få tillbaka en respons
+url = "https://www.example.com"
 {:ok, response} = HTTPoison.get(url)
 
-# Konvertera responsen till en sträng
-html = response.body |> IO.iodata_to_binary
-
-# Skriv ut HTML-koden
-IO.puts(html)
+response.status #returns 200
+response.body #returns the HTML of the webpage
 ```
 
-Detta kodblock kommer att skriva ut den HTML-kod som finns på hemsidan `https://example.com`. Man kan också använda Elixir's inbyggda funktioner för att utföra mer avancerade operationer på den hämtade webbsidan, som att extrahera specifik information eller filtrera ut viss data.
+Först måste vi definiera URL: en som vi vill hämta. Sedan använder vi HTTPoison-paketet för att göra en GET-förfrågan till den URL:en, vilket ger oss tillbaka svaret i form av en tupel. Vi kan sedan komma åt status och kropp av svaret för att få informationen vi behöver.
 
-## Djupdykning
-När vi hämtar en webbsida i Elixir använder vi oss av ett protokoll som heter HTTP (HyperText Transfer Protocol). Detta protokoll används för att hämta HTML-dokument från servrar och är grunden för hur internet fungerar idag.
+```Elixir
+url = "https://www.example.com"
+headers = [{"User-Agent", "Elixir"}, {"Accept", "text/html"}]
+{:ok, response} = HTTPoison.get(url, headers)
+```
 
-Förutom att kunna hämta webbsidor, kan man också använda Elixir för att skapa egna webbsidor och webbapplikationer med hjälp av ramverk som Phoenix eller Elixir's inbyggda vävserver. Genom att lära sig Elixir kan man få en bättre förståelse för hur webbplatser och webbtjänster fungerar och skapa egna dynamiska och skalbara applikationer.
+Om vi vill ställa in specifika headrar i vår förfrågan, som att ändra användaragenten eller acceptera en viss typ av innehåll, kan vi göra det genom att skicka med en lista över tuplar som innehåller namnet på headern och värdet som vi vill ställa in.
 
-## Se också
-- Officiell Elixir webbplats: https://elixir-lang.org
-- HTTPoison dokumentation: https://hexdocs.pm/httpoison/HTTPoison.html
-- Phoenix webbserver ramverk: https://www.phoenixframework.org
+##Djupdykning
+
+Att hämta en webbsida med Elixir är möjligt tack vare HTTPoison-paketet, som använder sig av Erlangs inbyggda httpc-modul för att göra förfrågningar. Det finns också andra paket som kan användas för denna uppgift, såsom Finch och Tesla. Dessa paket kan ge mer specifika funktioner och utökad funktionalitet, men för en grundläggande hämtning av en webbsida är HTTPoison en enkel och enkel lösning.
+
+##Se även
+- [HTTPoison dokumentation](https://hexdocs.pm/httpoison/api-reference.html)
+- [Finch paket](https://hexdocs.pm/finch/readme.html)
+- [Tesla paket](https://hexdocs.pm/tesla/readme.html)

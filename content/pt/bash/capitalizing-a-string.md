@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Maiúscula de uma sequência de caracteres"
-simple_title:         "Maiúscula de uma sequência de caracteres"
+title:                "Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,47 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em Bash?
+## Por que
 
-Capitalizar uma string significa deixar a primeira letra de cada palavra maiúscula, seguindo a gramática padrão da língua portuguesa. Isso pode ser útil em situações onde é necessário garantir a formatação correta do texto, como em nomes próprios ou títulos de documentos.
+Você já se deparou com uma situação em que precisa capitalizar uma determinada string para que ela se encaixe no formato desejado? Ou talvez queira tornar seu código mais legível, deixando todas as palavras começando com letra maiúscula? Nesse caso, saber como capitalizar uma string pode ser uma habilidade muito útil em suas tarefas de programação.
 
-## Como capitalizar uma string em Bash?
+## Como fazer
 
-Para capitalizar uma string em Bash, podemos usar o comando `tr`. Veja um exemplo de código abaixo:
-
-```
-# Criando uma variável com uma string
-texto="essa é uma string de teste"
-
-# Usando o comando tr para capitalizar a string
-nova_string=$(echo $texto | tr '[:lower:]' '[:upper:]')
-
-# Imprimindo a nova string capitalizada
-echo $nova_string
-```
-
-Neste exemplo, usamos o comando `tr` para transformar todas as letras minúsculas para maiúsculas na variável `texto` e armazenamos o resultado na variável `nova_string`. Em seguida, imprimimos o valor da nova string na tela. O resultado seria "ESSA É UMA STRING DE TESTE".
-
-Também é possível capitalizar apenas a primeira letra de cada palavra usando o comando `sed` da seguinte forma:
+Para capitalizar uma string em Bash, temos algumas opções que podem ser utilizadas de acordo com a situação em que estamos trabalhando. Vamos dar uma olhada em algumas delas:
 
 ```
-# Usando o comando sed para capitalizar a primeira letra de cada palavra
-nova_string=$(echo $texto | sed 's/\b\w/\u&/g')
+# Utilizando o comando "tr"
+string="texto em caixa baixa"
+capitalized_string=$(echo $string | tr '[:lower:]' '[:upper:]')
+echo $capitalized_string
+# Saída: TEXTO EM CAIXA BAIXA
 
-# Imprimindo a nova string capitalizada
-echo $nova_string
+# Utilizando o comando "sed"
+string="texto em caixa baixa"
+capitalized_string=$(echo $string | sed 's/\b\(.\)/\u\1/g')
+echo $capitalized_string
+# Saída: Texto Em Caixa Baixa
 ```
 
-Neste caso, o resultado seria "Essa É Uma String De Teste".
+## Explorando mais a fundo
 
-## Aprofundando-se na capitalização de strings
+As duas opções apresentadas acima utilizam comandos externos do sistema operacional para realizar a capitalização da string. Entretanto, se desejarmos realizar essa tarefa diretamente no código Bash, podemos utilizar o recurso de substituição de padrões. Veja o exemplo abaixo:
 
-Ambos os comandos `tr` e `sed` são ferramentas poderosas para manipulação de texto em Bash, e podem ser usados de diversas formas para capitalizar strings. Outras opções incluem o comando `awk` e usar expressões regulares com o comando `grep`.
+```
+string="texto em caixa baixa"
+capitalized_string="${string^}"
+echo $capitalized_string
+# Saída: Texto em caixa baixa
 
-Também é importante mencionar que a capitalização de strings pode variar de acordo com o idioma e a gramática utilizados, então é sempre importante entender as regras específicas para cada situação.
+capitalized_string="${string^^}"
+echo $capitalized_string
+# Saída: TEXTO EM CAIXA BAIXA
+```
+
+Com esse recurso, podemos escolher se queremos apenas a primeira letra de cada palavra em maiúsculo ou se queremos todas as letras em maiúsculo.
 
 ## Veja também
 
-- Documentação do comando `tr`: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
-- Documentação do comando `sed`: https://www.gnu.org/software/sed/manual/sed.html
-- Tutorial sobre expressões regulares em Bash: https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Guia de comandos do Linux](https://www.linuxcommand.org/index.php)
+- [Tutorial de Bash para iniciantes](https://linuxize.com/post/bash-scripting-tutorial/)

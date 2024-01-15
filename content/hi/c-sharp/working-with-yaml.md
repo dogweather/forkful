@@ -1,5 +1,6 @@
 ---
-title:                "C#: yaml के साथ काम करना"
+title:                "yaml के साथ काम करना"
+html_title:           "C#: yaml के साथ काम करना"
 simple_title:         "yaml के साथ काम करना"
 programming_language: "C#"
 category:             "C#"
@@ -9,40 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
+YAML ek plain text data format hai jo configuration files aur data serialization ke liye istemal kiya jata hai. Yah ek simple aur readable syntax provide karta hai jise humans bhi aasani se samajh sakte hai. C# mein YAML ka use karne se aap apne code ko clean aur organized rakh sakte hai.
 
-हालांकि सी# मूल रूप से एक ऑब्जेक्ट ओरिएंटेड भाषा है लेकिन कुछ ऐसी स्थितियाँ होती हैं जहां आपको ट्रेडिशनल प्रोग्रामिंग परदे को तोड़ना पड़ेगा। इसीलिए, YAML के साथ काम करना आपके लिए मददगार हो सकता है।
-
-## याम्ल कैसे करें
+## Kaise Kare
+YAML ko C# mein use karne ke liye, aapko 'YamlDotNet' library install karni hogi. Uske baad, aap 'YamlDotNet' namespace ko apne code mein import kar sakte hai. Fir aap 'YamlStream' object ka use karke YAML file ko read aur write kar sakte hai. Niche diye gaye code snippets mein ek basic example diya gaya hai.
 
 ```C#
-// YAML फाइल से डेटा पढ़ें
-string yamlString = File.ReadAllText("data.yaml");
+// Example YAML:
+// name: John Doe
+// age: 25
 
-// YAML स्ट्रिंग से जावा स्ट्रिंग मैप बनाएं
-var yamlObject = (YamlMappingNode)new YamlSerializer().Deserialize(new StringReader(yamlString));
+// Reading YAML:
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Core;
+using YamlDotNet.Serialization.NamingConventions;
 
-// विशिष्ट की की डेटा को प्रिंट करें
-Console.WriteLine(yamlObject.Children[new YamlScalarNode("key")].ToString());
+public class Program
+{
+    public static void Main()
+    {
+        string yaml = "name: John Doe\nage: 25";
+        var deserializer = new DeserializerBuilder().Build();
+        var person = deserializer.Deserialize<Person>(yaml);
+        Console.WriteLine(person.Name); // Output: John Doe
+        Console.WriteLine(person.Age); // Output: 25
+    }
+    
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+}
 
-// YAML मैप से ब्यूलियन वैल्यू निकालें
-bool value = yamlObject.Children[new YamlScalarNode("boolKey")];
+// Writing YAML:
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
-Console.WriteLine(value);
+public class Program
+{
+    public static void Main()
+    {
+        var person = new Person { Name = "John Doe", Age = 25 };
+        var serializer = new SerializerBuilder().Build();
+        var yaml = serializer.Serialize(person);
+        Console.WriteLine(yaml); // Output: name: John Doe\nage: 25
+    }
+    
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+}
 ```
 
-आउटपुट:
-```
-Value 1
-True
-```
+## Deep Dive
+YAML mein strings, numbers, lists, objects aur comments ka use kiya ja sakta hai. Iske alawa, YAML mein ek important concept hai 'anchors'. Anchors kisi specific value ko assign karne ke liye use kiye jate hai taki use later mein kisi aur value mein refer kiya ja sake. Iske alawa, 'tags' bhi use kiye jate hai jisse ek specific data type ko indicate kiya ja sake. In sab concepts ko samajhna aur use karna YAML ka deeper dive hai.
 
-## गहराई में जानें
-
-YAML (YAML Ain't Markup Language) एक फ़ाइल प्रारूप है जो डेटा को हमारी आसानी से पढ़ने और लिखने की देता है। यह एक सिंपल और इंट्यूटिव फॉर्मैट है जिस्से पाठ परिभाषित हो सकते हैं तो इसे किसी दोस्त की तरह समझा जा सकता है। आप YAML को सी# में स्ट्रिंग या ऍरे की शक्ल में रीड कर सकते हैं और उसे .NET ऑब्जेक्टों में बदल सकते हैं।
-
-## देखें भी
-
-- [C# में YAML कैसे कोड करें](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-read-text-from-a-file)
-- [YAML डोकुमेंटेशन](https://yaml.org/)
-- [YamlDotNet लाइब्रेरी](https://github.com/aaubry/YamlDotNet)
+## See Also
+Apne YAML knowledge ko aur improve karne ke liye, neeche diye gaye links ka istemal kar sakte hai:
+- [The Official YAML Website](https://yaml.org/)
+- [YAML Tutorial by Tutorialspoint](https://www.tutorialspoint.com/yaml/index.htm)
+- [YAML Syntax Cheatsheet by QuickRef.me](https://quickref.me/yaml)

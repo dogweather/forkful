@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Elixir recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,46 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sending an HTTP request with basic authentication is essential for interacting with any web service or API that requires user authentication. By providing the necessary credentials in the request header, you can securely access and retrieve data from the target server.
+If you're working with web APIs, chances are you'll encounter the need to send an HTTP request with basic authentication. This is a commonly used authentication method that allows you to send sensitive information, such as a username and password, to a server in a secure manner.
 
 ## How To
 
-To send an HTTP request with basic authentication in Elixir, we first need to import the necessary libraries using the `HTTPoison` and `Base64` modules.
+Sending an HTTP request with basic authentication in Elixir is fairly straightforward. First, we need to import the necessary modules: `HTTPoison` for making HTTP requests and `Base64` for encoding our credentials.
 
 ```Elixir
-  import HTTPoison
-  import Base64
+import HTTPoison
+import Base64
 ```
 
-Next, we will create a `basic_auth` function that takes in the username and password as parameters and encodes them in Base64 format, as required for basic authentication. We will also specify the necessary headers for the request.
+Next, we need to construct our request and add the basic authentication header. We can do this using the `request/5` function provided by HTTPoison. In this example, we'll be sending a `GET` request to the GitHub API.
 
 ```Elixir
-  def basic_auth(username, password) do
-    headers = [
-      {"Authorization", "Basic #{Base64.encode_to_string("#{username}:#{password}")}"}
-    ]
-  end
+response = HTTPoison.request(
+  :get,
+  "https://api.github.com/user",
+  headers: [
+    {"Authorization", "Basic " <> Base64.encode64("username:password")}
+  ]
+)
 ```
 
-Now, we can use the `get` or `post` functions from `HTTPoison` to send our request. We will pass in the URL and headers as parameters, along with any other necessary options.
+The authorization header requires our credentials to be Base64 encoded, which is why we used the `Base64.encode64/1` function.
+
+We can then handle the response accordingly, for example by parsing the JSON and retrieving the desired information.
 
 ```Elixir
-  get("https://example.com/api/resource", headers, [ssl: [verify: false]])
-```
-
-If the request is successful, we will receive a response in the form of a tuple containing the status code and body.
-
-```Elixir
-  {:ok, %HTTPoison.Response{status_code: 200, body: "Data returned from server"}}
+{:ok, %{body: body}} = response
+user = Jason.decode!(body)
+IO.inspect user["login"]
+# outputs "johndoe"
 ```
 
 ## Deep Dive
 
-One important thing to note about basic authentication is that it is not a secure method of authentication, as the credentials are sent in plain text. Therefore, it is highly recommended to use HTTPS instead of HTTP when using basic authentication.
+In basic authentication, the username and password are encoded with Base64 but are still easily decoded by anyone who intercepts the request. This means it should only be used over HTTPS connections to ensure the security of the credentials.
 
-Additionally, it is important to keep in mind that basic authentication should only be used for simple authentication purposes. For more complex authentication requirements, it is recommended to use other methods such as OAuth or API keys.
+Another important aspect to keep in mind is that basic authentication is considered a weak form of authentication. It is recommended to use more secure methods such as OAuth or token-based authentication for better protection against potential security threats.
 
 ## See Also
 
-- [HTTPoison documentation](https://hexdocs.pm/httpoison/)
-- [Base64 module documentation](https://hexdocs.pm/elixir/Base64.html)
+- [HTTPoison](https://github.com/edgurgel/httpoison) - Elixir HTTP client library
+- [Base64](https://hexdocs.pm/elixir/Base64.html) - Elixir module for encoding and decoding Base64 data

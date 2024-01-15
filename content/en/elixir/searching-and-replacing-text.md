@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Elixir recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,40 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Searching and replacing text is a common task in programming, especially when working with large amounts of data or text. In Elixir, there are various ways to perform efficient and effective text substitution, making it a useful skill to learn for any developer.
+## Why 
 
-## How To
-To perform a search and replace in Elixir, we can use the `String.replace/4` function. This function takes in four parameters: the initial string, the search pattern, the replacement string, and the number of replacements to make. Let's see an example of how we can use this function to replace a word in a string:
+Searching and replacing text is a common task in programming, especially when dealing with large amounts of data or working on text-based projects. With the help of Elixir, this process can be made easier and more efficient, saving developers time and effort.
 
-```Elixir
-str = "Hello World"
-String.replace(str, "World", "Elixir")
+## How To 
+
+To search and replace text in Elixir, we can use the `String.replace/4` function. This function takes in four arguments: the original string, the pattern to search for, the replacement text, and a number indicating the maximum number of matches to replace.
+
 ```
 
-The output of this code would be `"Hello Elixir"`, as the word "World" has been replaced with "Elixir".
+Elixir:
 
-Another useful function for text substitution is `Regex.replace/3` which uses regular expressions to perform the replacement. For example, we can use it to replace all vowels in a string with an asterisk symbol:
+original_string = "Hello, world!"
+pattern = "world"
+replacement = "universe"
 
-```Elixir
-str = "Hello World"
-Regex.replace(~r/[aeiou]/, str, "*")
+String.replace(original_string, pattern, replacement, 1)
+# Output: "Hello, universe!"
+
+If we want to replace all occurrences of the pattern, we can omit the fourth argument or pass in `:global` as the fourth argument.
+
 ```
 
-The output of this code would be `"H*ll* W*rld"`.
+original_string = "Hello, world! It's a beautiful world."
+pattern = "world"
+replacement = "universe"
 
-Elixir also provides `String.replace!/4` and `Regex.replace!/3` functions which will raise an error if the replacement cannot be made. These functions are useful for ensuring that the text substitution is successful.
+String.replace(original_string, pattern, replacement)
+# Output: "Hello, universe! It's a beautiful universe."
+
+String.replace(original_string, pattern, replacement, :global)
+# Output: "Hello, universe! It's a beautiful universe."
+
+```
+
+We can also use regular expressions as the pattern to make more complex replacements. For example, if we want to replace all numbers in a string with the word "number", we can do the following:
+
+```
+
+Elixir:
+
+original_string = "I have 5 oranges and 10 apples."
+pattern = ~r/\d+/
+replacement = "number"
+
+String.replace(original_string, pattern, replacement, :global)
+# Output: "I have number oranges and number apples."
 
 ## Deep Dive
-When using `Regex.replace/3` in Elixir, it's important to note that the first parameter can either be a string or a regular expression. If it's a string, it will be converted to a regular expression using the `~r` sigil. This allows for easier and more readable regular expression operations.
 
-It's also worth mentioning the use of the `count` parameter in `String.replace/4`. This allows us to limit the number of replacements made, which can be helpful when working with large strings.
+The `String.replace/4` function uses the `:binary` module under the hood, specifically the `:binary.replace/3` function. This allows for efficient and optimized searching and replacing of text in Elixir.
 
-Additionally, the `Regex.replace/4` function can also take in a function as the replacement parameter. This allows for more complex and dynamic replacements, as the function can have access to the matched parts of the string through a capture group.
+It's also worth noting that the `String.replace/4` function is not limited to just strings, it can also be used on binaries and lists of characters as well. This allows for more flexibility in handling different types of data.
 
-## See Also
-For more information on the various ways to replace text in Elixir, check out the official documentation and the following resources:
+## See Also 
 
-- [Official Elixir Documentation on String and Regex functions](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Elixir Forum Discussion on String and Regex Replace Functions](https://elixirforum.com/t/string-replace-and-regex-replace-functions/4294)
-- [Elixir School Lesson on Regular Expressions](https://elixirschool.com/lessons/advanced/regular-expressions/)
+- Official Elixir documentation for String.replace: https://hexdocs.pm/elixir/String.html#replace/4
+- Elixir tutorial on pattern matching and regular expressions: https://elixirschool.com/en/lessons/basics/pattern-matching/

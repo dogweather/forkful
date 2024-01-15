@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Skrivning till standardfel"
-simple_title:         "Skrivning till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Elm: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att skriva till standard error är en viktig del av Elm-programmering eftersom det ger en enkel och effektiv metod för att skriva felmeddelanden och felsökningsmeddelanden.
+Att skriva till standard error är ett vanligt verktyg för utvecklare som vill felsöka och ta reda på vad som går fel i deras kod. Det är ett enkelt sätt att få ut information om eventuella fel och var de uppstod, vilket underlättar förbättringar och reparationer av koden.
 
-## Hur du gör det
+## Så här gör du 
 
-För att skriva till standard error i Elm, används funktionen `Debug.crash` tillsammans med felmeddelandet som en sträng. Till exempel:
+För att använda standard error i Elm, behöver du först importera modulen `Platform` och `Debug`. Sedan kan du enkelt skriva till standard error med hjälp av funktionen `Debug.crash`, som tar en sträng som argument. Här är ett exempel:
 
-```Elm
-Debug.crash "Det här är ett felmeddelande"
+```elm
+import Platform
+import Debug
+
+main =
+    Debug.crash "This is an error message"
 ```
 
-Detta kommer att skriva ut `"Det här är ett felmeddelande"` till standard error.
+Detta kommer att skriva ut "This is an error message" till standard error. Du kan också skicka in andra typer av värden till `Debug.crash`, som t.ex. en lista eller en tupel.
 
-## Fördjupning
+## Djupdykning 
 
-Att använda `Debug.crash` för att skriva till standard error är särskilt användbart för att hitta fel i större program. Istället för att bara få det sista felet som genererades kan du skriva ut flera felmeddelanden för att hjälpa till med felsökningen.
+Standard error är en del av Elm:s "Debug" modul, som ger utvecklare möjlighet att felsöka och logga information om sin kod. Det är särskilt användbart för att fånga och hantera fel som uppstår under körning av ett program.
 
-En annan fördel med att skriva till standard error är att du kan ange en anpassad callback-funktion som körs istället för att skriva till standard error direkt. På så sätt kan du styra var och hur felmeddelandet ska skrivas ut.
+Förutom att skriva till standard error, kan du också använda `Debug.log` för att logga information till standard out. `Debug.log` tar två argument, en sträng för att beskriva vad som loggas och själva värdet som ska loggas. Den här funktionen är användbar för att spåra värden och kontrollera att de är korrekta under körning.
 
-## Se även
+Det finns också flera andra funktioner i Elm:s "Debug" modul som kan hjälpa till med felsökning. Till exempel `Debug.todo`, som används för att signalera att en viss del av koden ännu inte är implementerad och behöver färdigställas.
 
-- Elm Dokumentation: System.Debug
-- Elm Dokumentation: Basics via System.crash
+## Se även 
+
+- Elm:s officiella dokumentation om "Debug" modulen: [https://guide.elm-lang.org/debugging/](https://guide.elm-lang.org/debugging/)
+- En guide för felsökning i Elm: [https://www.twilio.com/blog/2018/07/debugging-elm-apps.html](https://www.twilio.com/blog/2018/07/debugging-elm-apps.html)

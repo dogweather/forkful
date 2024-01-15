@@ -1,6 +1,7 @@
 ---
-title:                "Elm: HTML का अनुश्लेषण"
-simple_title:         "HTML का अनुश्लेषण"
+title:                "HTMl को खोजना"
+html_title:           "Elm: HTMl को खोजना"
+simple_title:         "HTMl को खोजना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,46 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-HTML को पार्स करने के क्या फायदे हो सकते हैं? यह एक सामान्य सवाल है जो हर एक प्रोग्रामर के मन में हो सकता है। प्रोग्रामिंग के कई क्षेत्रों में HTML को पार्स करने के लिए बहुत उपयोगी उपकरण हो सकते हैं। वैसे तो HTML को सीधे पार्स करना मुमकिन है, लेकिन Elm में पार्सिंग का तरीका सरल और आसान हो सकता है।
+क्या आपने कभी सोचा है कि वेब पेज से डेटा निकालने के लिए कैसे प्रोग्रामिंग की जा सकती है? यदि हाँ, तो Elm आपको इस समस्या का समाधान प्रदान कर सकता है। यहाँ हम आपको बताएँगे कि क्यों Elm ही आपका सर्वोत्तम विकल्प हो सकता है।
 
 ## कैसे करें
 
-हम इस कोड ब्लॉक में शुरू करेंगे, जहां हम Elm का उपयोग करके HTML को पार्स करेंगे।
+### एलम में HTML पार्सिंग
 
-```Elm
-import Html.Parser exposing (..)
+एलम में HTML पार्सिंग साधन एक्सल वर्गों का उपयोग करके किया जा सकता है। नीचे दिए गए उदाहरण आपको एलम में HTML पार्सिंग करने की प्रक्रिया का अनुभव कराएंगे।
 
-sampleHtml = """
-<html>
-  <head>
-    <title>My Elm Blog</title>
-  </head>
-  <body>
-    <h1>Introduction to Parsing HTML in Elm</h1>
-    <p>HTML को पार्स करने के लिए Elm उपयोग करना बहुत ही आसान है।</p>
-  </body>
-</html>
-"""
+```elm
+import Html exposing (text, Attribute, Node)
+import Html.Parser exposing (parse, attribute, node)
 
-parsedHtml = parse sampleHtml
+-- एलम कोड से HTML अनुवाद करना
+htmlString =
+    "<div id='article'> <h1>Hello, World!</h1> <p>This is a sample paragraph.</p> </div>"
 
-main = 
-    case parsedHtml of
-        Ok parsed ->
-            text <| "Title: " ++ (toString <| title parsed)
-        Err error ->
-            text "Error parsing HTML"
+parsedHtml = parse htmlString
 
+-- HTML के Node को उत्पन्न करने के लिए उपयोग अतिरिक्त चरित्र
+Header1 =
+    attribute "tagName" "h1" .. attribute "children" "Hello, World!" |> node
+
+Paragraph =
+    attribute "tagName" "p" .. attribute "children" "This is a sample paragraph." |> node
+
+-- अंत में, HTML को Node तक रूपांतरण करके हम एक निष्पादन प्रक्रिया प्राप्त कर सकते हैं
+-- parsedHtml वापस Json List देता है, जिसे हम एक मूल Node के रूप में परिवर्तित करते हैं
+main =
+    let
+        extractedNodesInJsonListFormat =
+            case parsedHtml of
+                Ok successfulExtraction ->
+                    successfulExtraction
+
+                Err failedExtraction ->
+                    [Header1, Paragraph]
+    in
+    text <| String.fromList extractedNodesInJsonListFormat
 ```
 
-इस कोड से हमें इस प्रकार का आउटपुट मिलेगा:
+आउटपुट:
 
+```elm
+<div id='article'> <h1>Hello, World!</h1> <p>This is a sample paragraph.</p> </div>
 ```
-Title: My Elm Blog
-```
 
-यहां `import Html.Parser exposing (..)` हमें `Html.Parser` मॉड्यूल से सभी फंक्शन को एक्सपोस करने की अनुमति देता है। पहले हम एक सामान्य HTML स्ट्रिंग को `sampleHtml` में सेट करते हैं। फिर हम `parse` फंक्शन का उपयोग करते हुए इस स्ट्रिंग को पार्स करते हैं और अंत में `main` फंक्शन में इसे प्रिंट करते हैं।
+संपूर्ण HTML को फ़ॉर्मेट किया गया है, जिसमें ```<`, `>` और `"` जैसे अतिरिक्त चरित्र शामिल हैं।
 
-## गहराई में
+## भीड़ की गहराई में
 
-HTML को पार्स करने का एक अध्ययन अधिकांश तरह के डेटा टाइप को पार्स करने के लिए संरचित तरीके में बदल सकते हैं। इससे आप अपने कोड को स्पष्ट और उचित बना सकते हैं। आप एलम में पार्सिंग के लिए `Html.Parser` मॉड्यूल के साथ एक सु
+एलम में HTML पर्सिंग को गहराई से देखने के लिए, आप एक "फ़ंक्शन" का उपयोग कर सकते हैं जो संदर्भ प्रायः

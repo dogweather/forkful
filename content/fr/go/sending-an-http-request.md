@@ -1,5 +1,6 @@
 ---
-title:                "Go: Envoyer une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Go: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Go"
 category:             "Go"
@@ -11,50 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Envoyer des requêtes HTTP est un aspect essentiel de la programmation pour les applications web et API. Cela permet aux développeurs de communiquer avec des serveurs distants et de récupérer des données essentielles pour le bon fonctionnement de leurs applications.
+Tu t'es déjà demandé comment les applications comme Facebook ou Amazon obtiennent toutes les données qu'elles affichent sur ton écran ? Eh bien, c'est grâce aux requêtes HTTP, qui permettent aux applications de communiquer avec des serveurs distants et de récupérer des informations pour les afficher à l'écran. Dans cet article, nous allons voir comment envoyer une requête HTTP en utilisant Go et pourquoi cela peut être utile pour tes projets de développement.
 
 ## Comment faire
 
-Dans le langage de programmation Go, l'envoi d'une requête HTTP est simple et direct grâce à la bibliothèque standard net/http. Tout d'abord, il est important d'importer cette bibliothèque dans votre code :
-
 ```Go
-import "net/http"
-```
-
-Pour envoyer une requête GET à une URL spécifique, utilisez la fonction suivante :
-
-```Go
-res, err := http.Get("https://www.mon-site.com/")
-```
-
-Cette fonction renvoie une réponse (response) et une erreur (error). Si tout s'est bien passé, vous pouvez accéder au corps de la réponse et le lire :
-
-```Go
-body, err := ioutil.ReadAll(res.Body)
-
-// Vérifiez les erreurs de lecture
+req, err := http.NewRequest("GET", "https://example.com", nil)
 if err != nil {
     log.Fatal(err)
 }
 
-// Convertissez le corps en chaîne de caractères et affichez-le
-fmt.Println(string(body))
+resp, err := http.DefaultClient.Do(req)
+if err != nil {
+    log.Fatal(err)
+}
+
+fmt.Println(resp.Status)
 ```
 
-Le résultat de cette requête sera affiché dans la console sous forme de chaîne de caractères. Vous pouvez également spécifier des en-têtes de requête, des paramètres et d'autres options en utilisant des fonctions supplémentaires de la bibliothèque net/http.
+Dans cet exemple, nous créons une requête HTTP GET vers le site "https://example.com". Nous utilisons la méthode `NewRequest` de la bibliothèque `http` pour créer un nouvel objet de type `Request` qui représente la requête que nous souhaitons envoyer. Nous le passons ensuite à la méthode `Do` de `http.DefaultClient` pour l'exécuter. Enfin, nous récupérons la réponse sous forme d'objet `Response` et affichons son statut.
 
-## Plongée profonde
+## Plongée en profondeur
 
-Pour une compréhension approfondie de l'envoi de requêtes HTTP en utilisant Go, il est important de comprendre les différents types de méthodes de requêtes, tels que GET, POST, PUT, DELETE, etc. Il est également utile de se familiariser avec les différents types de données de réponse, tels que JSON, XML, CSV, etc.
-
-Il est également important de noter que l'envoi de requêtes HTTP peut être une opération asynchrone, c'est-à-dire que l'exécution de votre code peut se poursuivre pendant que la requête est en cours d'envoi et de réponse. Les canaux (channels) et les goroutines sont des outils utiles pour gérer l'asynchronicité en Go.
+Les requêtes HTTP sont un moyen simple et efficace de communiquer avec des serveurs. Elles se composent d'une ligne de requête contenant le type de méthode (GET, POST, etc.), l'URL et la version du protocole, suivie par des en-têtes de requête qui indiquent au serveur des informations supplémentaires sur la demande, et éventuellement un corps de requête contenant des données. Lorsque le serveur reçoit une requête, il renvoie une réponse contenant un statut, des en-têtes de réponse et éventuellement un corps de réponse avec les données demandées.
 
 ## Voir aussi
 
-En savoir plus sur l'envoi de requêtes HTTP en utilisant Go :
-
-- [Documentation officielle de la bibliothèque net/http](https://golang.org/pkg/net/http/)
-- [Tutoriel sur les requêtes HTTP en utilisant Go](https://www.digitalocean.com/community/tutorials/how-to-make-http-requests-in-go)
-- [Comparaison entre différentes bibliothèques de requêtes HTTP en Go](https://github.com/golang/go/wiki/ThirdPartyProjects#web-applications-and-frameworks)
-
-Merci d'avoir lu cet article sur l'envoi de requêtes HTTP en utilisant Go ! Nous espérons que cela vous a été utile dans vos projets de développement. N'hésitez pas à explorer davantage et à expérimenter différentes fonctionnalités de la bibliothèque net/http pour de meilleurs résultats. Bon codage !
+- [Documentation de la bibliothèque `http` en Go](https://golang.org/pkg/http/)
+- [Article "Introduction à HTTP" sur MDN](https://developer.mozilla.org/fr/docs/Web/HTTP/Overview)

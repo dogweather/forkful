@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Elixir recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,56 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Date comparisons are a common task in programming, especially when dealing with time-sensitive data or events. In the Elixir programming language, there are various methods for comparing two dates. Understanding how to properly compare dates can help ensure accurate and efficient code.
+Comparing two dates is a common task in programming, especially when working with time-sensitive data or implementing scheduling features. It allows developers to check if a date comes before, after, or is equal to another date, and make decisions based on that comparison.
 
 ## How To
-In Elixir, dates are represented as tuples in the format `{year, month, day}`. To compare two dates, we can use the `:calendar.compare/2` function.
+To compare two dates in Elixir, we can use the `:calendar.compare/2` function from the `Calendar` module. Let's take a look at some examples:
 
-```
-Elixir
-date1 = {2021, 10, 15}
-date2 = {2021, 10, 25}
+```Elixir
+date1 = ~D[2021-10-01]
+date2 = ~D[2021-10-15]
 
-:calendar.compare(date1, date2)
-```
+Calendar.compare(date1, date2)
+# => :lt (date1 is less than date2)
 
-The output of this comparison will be `-1`, `0`, or `1`, indicating if `date1` is before, equal to, or after `date2`, respectively.
+date3 = ~D[2021-10-15]
 
-We can also use the `:calendar.datetime_to_gregorian_seconds/1` function to convert a date tuple into seconds, making it easier to compare two dates.
+Calendar.compare(date2, date3)
+# => :eq (date2 is equal to date3)
 
-```
-Elixir
-date1 = {2021, 10, 15}
-date2 = {2021, 10, 25}
+date4 = ~D[2021-09-15]
 
-seconds1 = :calendar.datetime_to_gregorian_seconds(date1)
-seconds2 = :calendar.datetime_to_gregorian_seconds(date2)
-
-if seconds1 < seconds2 do
-  IO.puts "date1 is before date2"
-elsif seconds1 > seconds2 do
-  IO.puts "date1 is after date2"
-else
-  IO.puts "date1 is equal to date2"
-end
+Calendar.compare(date3, date4)
+# => :gt (date3 is greater than date4)
 ```
 
-The output of this code will be "date1 is before date2".
+We can also use the `:calendar.date_comp/2` function, which returns an integer indicating the difference in days between two dates:
+
+```Elixir
+date1 = ~D[2021-10-01]
+date2 = ~D[2021-10-15]
+
+Calendar.date_comp(date1, date2)
+# => -14
+```
+
+Note that the first argument must be the earlier date and the second argument must be the later date.
 
 ## Deep Dive
-When comparing dates, it is important to consider time zones and daylight saving time. Elixir's `:calendar` module provides functions for dealing with these complexities.
+Behind the scenes, the `:calendar.compare/2` function uses the Erlang library `:calendar` to perform the comparison. This library uses the proleptic Gregorian calendar, meaning it extends the Gregorian calendar to dates before its introduction in 1582.
 
-For example, the `:calendar.local_time_to_universal_time` function converts a datetime tuple into a standardized universal time. This ensures that date comparisons are accurate regardless of time zone differences.
-
-```
-Elixir
-local_time = {2021, 10, 31, 1, 30, 0}
-
-universal_time = :calendar.local_time_to_universal_time(local_time)
-```
-
-The output of this code will vary depending on the local time zone, but the resulting `universal_time` will be adjusted accordingly.
+If you need to compare dates in different time zones, you can use the `:calendar.datetime_to_gregorian_seconds/3` function to convert the dates to a standardized form before comparing them. This function takes three arguments: the date in question, a timezone offset in seconds, and a timezone string.
 
 ## See Also
-- Elixir documentation on date comparisons: https://hexdocs.pm/elixir/Calendar.html#compare/2
-- Elixir date and time functions: https://hexdocs.pm/elixir/Calendar.html#module-date-and-time-functions
+- `Calendar.compare/2` documentation: https://hexdocs.pm/elixir/Calendar.html#compare/2
+- `Calendar.date_comp/2` documentation: https://hexdocs.pm/elixir/Calendar.html#date_comp/2
+- `:calendar` library documentation: https://erlang.org/doc/man/calendar.html
+- Proleptic Gregorian calendar: https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Lukeminen komentoriviparametreista"
-simple_title:         "Lukeminen komentoriviparametreista"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Kotlin: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,60 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Yksi tärkeimmistä taidoista modernissa ohjelmoinnissa on kyky lukea komentorivin argumentteja. Se säästää aikaa ja vaivaa manuaalisen syöttämisen sijaan. Lisäksi, se antaa mahdollisuuden tehdä ohjelmistosta dynaamisemman ja monipuolisemman käyttäjille.
 
-## Kuinka
-Kotlin tarjoaa helpon tavan lukea komentorivin argumentteja käyttämällä `args` muuttujaa. Tämän muuttujan avulla voit päästä käsiksi kaikkiin argumentteihin, jotka on syötetty ohjelman suorituksen alussa. Alla on yksinkertainen esimerkki:
+Komentoriviparametrien lukeminen on tärkeä osa ohjelmistokehitystä ja auttaa välttämään vakavia bugeja ohjelman suorituksessa. Se myös mahdollistaa käyttäjille antaa ohjelmalle erilaisia parametreja, mikä tekee siitä monipuolisemman ja käyttäjäystävällisemmän.
 
-```Kotlin
-fun main(args: Array<String>){ 
-    println("Komentorivin argumentit:") 
-    for (arg in args) { 
-        println("$arg") 
-    } 
-}
-```
+## Miten
 
-Jos tämä koodi ajetaan komentorivillä käyttäen esimerkiksi `kotlin CommandLine.kt arg1 arg2 arg3`, nähdään seuraava tulos:
-
-```
-Komentorivin argumentit:
-arg1
-arg2
-arg3
-```
-
-Kuten näet, kaikki argumentit on tallennettu `args` muuttujaan ja niitä voidaan käsitellä haluamallasi tavalla. Voit myös luoda ehtolauseita, jotka tarkistavat, ovatko tietyt argumentit mukana ja suorittavat sen perusteella erilaisia toimintoja.
-
-## Syvällinen tarkastelu
-Käyttämällä `args` muuttujaa, et ole rajoitettu vain lukemaan tekstipohjaisia argumentteja. Voit myös lukea numeerisia argumentteja ja jopa tiedostoja ja kansioita. Alla on esimerkki, jossa luetaan neljä numeerista argumenttia, lasketaan niiden summa ja tulostetaan se:
+Kotlinilla on helppo lukea komentoriviparametreja käyttämällä "args" muuttujaa. Se on taulukko, joka sisältää kaikki komentorivillä annetut parametrit. Seuraava esimerkki näyttää, kuinka tulostaa kaikki annetut parametrit:
 
 ```Kotlin
 fun main(args: Array<String>) {
-  if(args.size < 4){ 
-        println("Tarvitset neljä argumenttia!") 
-        return 
-    } 
-
-    var sum = 0 
-
-    for(i in 1..4){ 
-        sum += args[i-1].toInt() 
-    } 
-
-    println("Summa on: $sum") 
+    println("Komentoriviparametrit:")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-Jos ajetaan esimerkiksi `kotlin ArgumenttienLaskeminen.kt 1 2 3 4`, nähdään seuraava tulos:
+Kun ajetaan ohjelmaa komentoriviltä antaen sille esimerkiksi parametrit "one" ja "two", tuloste näyttää seuraavalta:
 
 ```
-Summa on: 10
+Komentoriviparametrit:
+one
+two
 ```
 
-Kuten näet, voit käyttää `args` muuttujaa käsittelemään erilaisia argumentteja ja suorittamaan monimutkaisempia tehtäviä ohjelmassa. Se on hyödyllinen taito, jota kannattaa opetella.
+## Syvempi sukellus
+
+Vaikka yllä oleva esimerkki osoittaa, kuinka helppoa komentoriviparametrien lukeminen Kotlinilla on, on tärkeää muistaa, että taulukon indeksointi alkaa aina nollasta. Tämä tarkoittaa, että ensimmäinen parametri on "args[0]", toinen "args[1]" ja niin edelleen.
+
+Lisäksi, jos haluat käsitellä tietyntyyppisiä parametreja (esim. kokonaislukuja tai desimaalilukuja), sinun on muunnettava ne oikeaan muotoon käyttämällä Kotlinin sisäänrakennettuja metodeja (esim. toInt() tai toDouble()).
 
 ## Katso myös
-- [Kotlinin `args` muuttujan dokumentaatio](https://kotlinlang.org/docs/command-line.html#passing-command-line-arguments-to-the-main-function)
-- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
-- [Ohjelmointiopetusvideot suomeksi](https://fi.wikipedia.org/wiki/Luokka:Ohjelmointiopetusvideot)
+
+ - [Kotlinin virallinen dokumentaatio komentoriviparametrien lukemisesta](https://kotlinlang.org/docs/reference/command-line.html)
+ - [Kotlinin sisäänrakennetut metodiit numeroiden muuntamiseen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html#parsing-numbers)

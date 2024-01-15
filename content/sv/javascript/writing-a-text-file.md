@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Skriva en textfil"
-simple_title:         "Skriva en textfil"
+title:                "Att skriva en textfil"
+html_title:           "Javascript: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,47 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil är en viktig del av programmering. Genom att skriva en textfil kan du spara information och använda den i dina program. Detta gör det också lättare att organisera och ändra kod vid behov.
+Att skriva en textfil är ett vanligt sätt att spara och organisera data i ett läsbart format i en dator. Det kan vara användbart för att spara information, som till exempel användarnamn och lösenord, eller för att dela data mellan olika program.
 
-## Hur man gör det
+## Hur man gör
 
-För att skriva en textfil i Javascript behöver du använda en inbyggd funktion som heter "fs". Här är ett enkelt exempel på hur du skapar en textfil med hjälp av fs:
+För att skriva en textfil i Javascript använder man sig av inbyggda funktioner för filhantering. Här är ett enkelt exempel på hur man skapar och skriver till en textfil:
 
-```Javascript
-// Importera fs-modulen
+```javascript
+// Skapar en fil med namnet "minfil.txt"
 var fs = require('fs');
+fs.writeFileSync('minfil.txt', 'Hej världen!');
 
-// Skapa en textfil
-fs.writeFile('mittTextdokument.txt', 'Det här är min första textfil', function (err) {
-  if (err) throw err;
-  console.log('Textfilen har skapats!');
-});
-
+// Läser innehållet i filen och skriver ut det i konsolen
+var data = fs.readFileSync('minfil.txt', 'utf8');
+console.log(data); // Output: Hej världen!
 ```
 
-I detta exempel använder vi writeFile-funktionen för att skapa en textfil med namnet "mittTextdokument.txt" och lägger till texten "Det här är min första textfil". Om funktionen lyckas skrive skriver den ut meddelandet "Textfilen har skapats!".
+Det första steget är att inkludera modulen "fs" som ger tillgång till filsystemet i Node.js. Sedan använder vi funktionen `writeFileSync()` för att skapa och skriva till filen med hjälp av två argument - filnamnet och innehållet som vi vill skriva till filen. För att läsa innehållet från filen kan vi använda funktionen `readFileSync()` och ange filnamnet och teckenkodningen som vi vill använda. Slutligen använder vi `console.log()` för att skriva ut filens innehåll i konsolen.
 
-## Fördjupning
+## Djupdykning
 
-När du skapar en textfil i Javascript är det viktigt att förstå att filen kommer att sparas där din kod och filen körs. Om du till exempel kör din kod från en mapp som heter "projekt", kommer textfilen att sparas i den mappen med namnet "mittTextdokument.txt".
+Det finns flera parametrar som kan anges vid skrivning och läsning av en textfil i Javascript. En av dem är teckenkodningen, som kan vara användbar om du behöver spara filen med ett specifikt teckensnitt eller för att undvika problem med teckenuppsättningen. Standardteckenkodningen är "utf8", men du kan också använda andra teckenkodningar som "ascii" eller "unicode". Dessutom finns det även andra funktioner för filhantering som `appendFile()` för att lägga till innehåll till en befintlig fil och `unlink()` för att radera en fil.
 
-Du kan också använda writeFile-funktionen för att ändra en befintlig textfil eller lägga till mer text i slutet av filen. Istället för att ange 'Det här är min första textfil', kan du skriva ett variabelnamn eller hämta text från en annan fil.
+## Se även
 
-För att läsa innehållet i en textfil kan du använda readFile-funktionen. Här är ett exempel på hur du kan göra det:
+Här är några användbara länkar för att lära dig mer om filhantering i Javascript:
 
-```Javascript
-// Läs innehållet i textfilen
-fs.readFile('mittTextdokument.txt', 'utf8', function(err, data) {
-  if (err) throw err;
-  console.log(data);
-});
-```
-
-Detta kommer att skriva ut innehållet i textfilen i ditt terminalfönster.
-
-## Se också
-
-För mer information om hur du kan använda textfiler i Javascript, kolla in dessa resurser:
-
-- [En guide till att skriva och läsa textfiler i Node.js](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-node-js)
-- [Dokumentation för fs-modulen i Node.js](https://nodejs.org/api/fs.html)
+- [Node.js Dokumentation för Filsystem](https://nodejs.org/api/fs.html)
+- [W3Schools Guide till Filsystem i Node.js](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Udemy Kurs om Filhantering med Node.js](https://www.udemy.com/course/nodejs-filhantering/)

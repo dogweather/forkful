@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Ein neues Projekt beginnen."
-simple_title:         "Ein neues Projekt beginnen."
+title:                "Ein neues Projekt beginnen"
+html_title:           "Haskell: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -9,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Warum
 
-Vielleicht hast du schon von der funktionalen Programmierung gehört und bist neugierig geworden, wie sie funktioniert. Oder du möchtest deine Fähigkeiten auf dem Gebiet von Haskell verbessern. Wie auch immer, das Starten eines neuen Haskell-Projekts kann eine aufregende und lohnende Herausforderung sein.
+Warum sollte man sich überhaupt die Mühe machen, ein neues Projekt zu starten? Ganz einfach: Weil es Spaß macht! Außerdem ermöglicht es dir, neue Fähigkeiten zu erlernen und dein Wissen zu erweitern.
 
-## Wie
+## So geht's
 
-Zunächst benötigst du einen Texteditor und das Haskell-Toolstack. Öffne deinen Terminal und gib den Befehl `stack new my-project` ein, wobei `my-project` der Name deines Projekts ist. Wähle dann eine der vorgegebenen Projektschablonen aus, indem du eine Zahl eingibst.
+Um ein neues Haskell-Projekt zu starten, gibt es einige Schritte zu beachten. Zunächst musst du sicherstellen, dass du Haskell auf deinem Computer installiert hast. Anschließend kannst du mit dem Befehl `stack new mein_projekt` in der Kommandozeile dein neues Projekt erstellen. In der generierten Datei `mein_projekt.cabal` kannst du die Projekteinstellungen wie Name, Version und Autor anpassen. Dann kannst du mit dem Befehl `stack build` dein Projekt bauen und mit `stack exec mein_projekt` ausführen. 
 
-Nachdem das Projekt erstellt wurde, navigiere in den Ordner und öffne die Datei `app/Main.hs`. Hier kannst du deine Haskell-Programmierung starten. Schreibe beispielsweise folgenden Code in die Datei:
-
-````Haskell
+```Haskell
 main :: IO ()
-main = do
-  putStrLn "Hallo Welt!"
-````
+main = putStrLn "Hallo Welt!"
+```
 
-Speichere die Datei und führe den Befehl `stack run` aus, um dein Programm auszuführen. Du solltest den Text "Hallo Welt!" in der Konsole ausgegeben sehen.
+```
+Ausgabe: Hallo Welt!
+```
 
-## Vertiefung
+## Tiefergehende Einblicke
 
-Das Starten eines neuen Haskell-Projekts gibt dir die Möglichkeit, die Sprache zu erkunden und neue kreative Anwendungen zu entwickeln. Du kannst auch vorhandene Bibliotheken und Frameworks nutzen, um deine Projekte noch effektiver zu gestalten.
-
-Denke daran, dass du dir Zeit nehmen solltest, um die grundlegenden Konzepte von Haskell zu verstehen, bevor du dich in komplexere Projekte stürzt. Finde eine gute Ressource oder ein Programmierforum, um Unterstützung und Ratschläge von erfahrenen Entwicklern zu erhalten.
+Bevor du mit der Entwicklung deines Projekts loslegst, solltest du dir Gedanken über die Struktur machen und welche Funktionen du implementieren möchtest. Eine gute Möglichkeit ist es, sich an vorhandenen Haskell-Projekten zu orientieren und ihre Struktur zu studieren. Auch das Schreiben von Tests und das Verwenden von Bibliotheken können dir dabei helfen, effizienter zu programmieren. Vergiss außerdem nicht, regelmäßig zu reflektieren und deinen Code zu verbessern.
 
 ## Siehe auch
 
-- [Haskell-Dokumentation](https://www.haskell.org/documentation/)
-- [Haskell-Programmierforum](https://stackoverflow.com/questions/tagged/haskell)
-- [Haskellers-Community](https://www.haskell.org/community/)
+- [Offizielle Haskell-Website](https://www.haskell.org/)
+- [Stack-Dokumentation](https://docs.haskellstack.org/en/stable/README/)
+- [Haskell für Anfänger: Eine Einführung in die funktionale Programmierung](https://www.youtube.com/watch?v=CNrCvfaaL-o)

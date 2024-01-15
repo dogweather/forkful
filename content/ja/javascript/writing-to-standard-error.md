@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Javascript: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,34 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングでは、デバッグが非常に重要です。プログラムが正しく動作しないとき、エラーメッセージは開発者にとって非常に役立つ情報源となります。その中でも、標準エラー出力に書き込むことは、最も重要な手段の一つです。
+誰でもエラーを経験するものです。その時、コンソールにメッセージを表示するのではなく、裏でエラーを追跡するために、標準エラーに書き込むことが重要です。これはデバッグにも役立ち、チームメンバーとのコミュニケーションを円滑にするのに役立ちます。
 
-## 方法
+## 使い方
 
-以下のコード例を見てみましょう。例えば、ある関数が引数に数値を取るとき、その数値が負の場合にエラーメッセージを標準エラー出力に書き込むことを考えます。
-
-```Javascript
-const square = (num) => {
-  if (num < 0) {
-    console.error("数値は正でなければいけません");
-    return;
-  }
-  return num * num;
-}
-
-console.log(square(2)); // 4
-console.log(square(-2)); // undefined
+```javascript
+console.error("これは標準エラーに書き込まれます") 
 ```
 
-このように、`console.error`を使用することで、関数の動作が想定と異なる場合に開発者に対して警告を出すことができます。また、`console.error`は場所を特定しやすいため、デバッグの際にも非常に役立ちます。
+出力：
+
+```
+これは標準エラーに書き込まれます
+```
+
+```javascript
+console.error("エラーが発生しました", err) 
+```
+
+出力：
+
+```
+エラーが発生しました Error: サンプルエラー
+```
 
 ## 深堀り
 
-標準エラー出力に書き込まれるメッセージは、通常標準出力に書き込まれるメッセージとは別のファイルに保存されます。それぞれの出力は異なるストリームを使用しており、標準出力は`process.stdout`、標準エラー出力は`process.stderr`を使用します。
+標準エラーに書き込むには、`console.error()`を使用します。このメソッドは、コンソールにメッセージを出力するのではなく、エラーオブジェクトを受け取ってエラーログを生成します。また、改行できないオブジェクトの場合、`console.error()`は`Object.prototype.toString`メソッドを使用してオブジェクトを文字列に変換し、それをエラーログとして表示します。
 
-また、`console.error`は単にエラーメッセージを書き込むだけではなく、エラーオブジェクトを受け取って詳細な情報を出力することもできます。
+## See Also
 
-## 併せて見ておきたい
-
-- [Node.jsの標準エラー出力について](https://nodejs.org/api/console.html#console_console_error_data_args)
-- [Javascriptのエラーオブジェクトについて](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Error)
+- [標準エラーに書き込む方法](https://developer.mozilla.org/ja/docs/Web/API/Console/error)
+- [エラーオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Error)

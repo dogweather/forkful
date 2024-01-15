@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Skicka en HTTP-begäran."
-simple_title:         "Skicka en HTTP-begäran."
+title:                "Skriva en http-begäran"
+html_title:           "Javascript: Skriva en http-begäran"
+simple_title:         "Skriva en http-begäran"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,47 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+JavaScript – Varför
 
-Att skicka HTTP-request är en viktig del av webbutveckling. Det låter dig kommunicera med andra servrar och hämta information från internet. Det är det sätt på vilket webbsidor fungerar och gör det möjligt för oss att få tillgång till olika resurser på nätet.
+JavaScript är ett programmeringsspråk som huvudsakligen används för att skapa interaktiva webbsidor. En av dess viktigaste funktioner är möjligheten att skicka HTTP-förfrågningar, vilket gör det möjligt för användare att hämta och skicka data mellan webbsidan och en server. Detta är viktigt för att skapa dynamiska och responsiva webbsidor.
 
-## Så här gör du
-
-För att skicka en HTTP-request i Javascript kan du använda dig av det inbyggda `XMLHttpRequest` objektet. Här är ett exempel på hur du kan göra det:
-
-```Javascript
-// Skapa ett nytt XMLHttpRequest objekt
-var request = new XMLHttpRequest();
-
-// Ange vilken URL du vill skicka requesten till
-var url = "https://exempel.api.com/users";
-
-// Ange vilken typ av request du vill göra, i detta fall GET
-request.open('GET', url);
-
-// Skicka requesten
-request.send();
-
-// Lyssna på när requesten är klar och gör något med svaret
-request.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    // Här kan du göra något med svaret från servern
-    console.log(request.responseText);
-  }
-};
+JavaScript – Hur man skickar en HTTP-förfrågan
+```JavaScript 
+const request = new XMLHttpRequest(); 
+request.open('GET', 'http://example.com'); 
+request.send(); 
 ```
+I det här exemplet skapar vi en ny instans av XMLHttpRequest-objektet, vilket är en inbyggd JavaScript-funktion som tillåter oss att skicka HTTP-förfrågningar. Sedan öppnar vi en GET-förfrågan till en specifik URL-adress och skickar den. Detta resulterar i att webbsidan hämtar informationen på den angivna URL:en och sedan möjliggör åtkomst till den via variabeln "request". Detta kan användas för att sedan visa informationen på webbsidan eller skicka ytterligare förfrågningar till samma eller andra URL:er.
 
-I detta exempel skapar vi först ett nytt `XMLHttpRequest` objekt och anger sedan vilken url vi vill skicka requesten till. Därefter öppnar vi requesten med `open()` funktionen och skickar den med `send()` funktionen. Slutligen, när requesten är klar och servern har svarat, så behandlar vi svaret med hjälp av `onreadystatechange` funktionen.
+JavaScript – Djupdykning i HTTP-förfrågningar
+HTTP-förfrågningar är en viktig del av webbutveckling då de möjliggör kommunikation mellan användare och servrar. Förutom GET-förfrågningar finns det också andra typer som POST, PUT, DELETE och HEAD. Dessa kan användas för att skicka olika typer av data och utföra olika åtgärder mot en server. För att läsa mer om HTTP-förfrågningar och deras användning kan du kolla in dokumentationen på Mozilla Developers Network eller andra resurser på nätet.
 
-## Djupdykning
+Se även
+- [XHR-specifikationen på Mozilla Developers Network](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [W3Schools – HTTP Requests](https://www.w3schools.com/js/js_ajax_http.asp)
+- [HTTP Requests on Codecademy](https://www.codecademy.com/articles/what-is-http)
 
-När vi skickar en HTTP-request, så är det viktigt att förstå de olika delarna av requesten. Det finns flera olika HTTP-metoder som man kan använda för att göra requesten, men de vanligaste är **GET** och **POST**.
-
-**GET** används för att hämta data från en server, medan **POST** används för att skicka data till en server. Det finns också andra metoder som kan användas för olika ändamål, som **PUT** för att uppdatera data och **DELETE** för att ta bort data från en server.
-
-Det är också viktigt att känna till att en HTTP-request består av olika delar, såsom URL, metoden som används, eventuella headers och payload (data som skickas med requesten). Genom att förstå dessa delar kan man bygga mer avancerade och effektiva HTTP-request.
-
-## Se även
-
-- [Javscript - HTTP-request](https://www.w3schools.com/js/js_ajax_http.asp)
-- [HTTP-request - Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+Med hjälp av JavaScript och HTTP-förfrågningar kan du skapa dynamiska och interaktiva webbsidor som ger användaren en mer engagerande upplevelse. Fortsätt experimentera och utforska de olika möjligheter som detta kraftfulla verktyg har att erbjuda. Lycka till!

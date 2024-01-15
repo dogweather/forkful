@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Generación de números aleatorios"
-simple_title:         "Generación de números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Gleam: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -9,34 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos los lectores de Gleam! Si eres nuevo en el mundo de la programación, es probable que hayas escuchado sobre la generación de números aleatorios. ¿Pero alguna vez te has preguntado por qué es importante aprender a generar números aleatorios y cómo puedes hacerlo en Gleam? ¡Sigue leyendo para descubrirlo!
+## Why
 
-## Por qué
+¿Alguna vez has necesitado generar un número aleatorio en tu programa? Tal vez para simular una situación de juego, para aplicaciones de criptografía o simplemente para tomar decisiones al azar. Sea cual sea tu razón, Gleam tiene una forma sencilla y efectiva de generar números aleatorios para satisfacer tus necesidades de programación.
 
-La generación de números aleatorios es una habilidad muy útil en programación. Puedes usarla para simular eventos aleatorios en juegos, aplicaciones de lotería, pruebas unitarias y muchas otras áreas de programación. Además, también es útil para crear datos de prueba aleatorios para probar tu código, especialmente cuando se trata de algoritmos de ordenamiento o búsqueda.
+## How To
 
-## Cómo hacerlo
+No esperes más, ¡vamos a aprender cómo generar números aleatorios en Gleam!
+Primero, necesitamos iniciar la librería de números aleatorios incorporada en Gleam utilizando el siguiente código:
 
-En Gleam, generar números aleatorios es muy sencillo. Simplemente necesitas la función incorporada "random.int(min, max)" que acepta dos argumentos: el número mínimo y el número máximo que quieres generar. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, podemos hacerlo de la siguiente manera:
-
+```Gleam
+import random
 ```
-Gleam
+
+A continuación, podemos usar la función `random.int()` para generar un número entero aleatorio en un rango específico. Por ejemplo, si queremos un número aleatorio entre 1 y 10, podemos escribir el siguiente código:
+
+```Gleam
 import random
 
 let numero = random.int(1, 10)
 
-io.println(numero) // output: un número aleatorio entre 1 y 10
+io.format("El número aleatorio es {}.", [numero])
 ```
 
-También puedes utilizar la función "random.float(min, max)" si necesitas generar números aleatorios con decimales. Además, puedes especificar la semilla utilizando la función "random.seed(seed)" para obtener resultados consistentes cada vez que ejecutes tu código.
+Esto producirá un resultado como este:
 
-## Profundizando
+```
+El número aleatorio es 7.
+```
 
-Si quieres profundizar en el tema de la generación de números aleatorios en Gleam, es importante entender cómo funciona el algoritmo detrás de la función "random.int(min, max)". Gleam utiliza el generador de números aleatorios Mersenne Twister, que es uno de los generadores de números aleatorios más utilizados y confiables en la programación. Este algoritmo utiliza una semilla y una fórmula matemática para generar una secuencia de números aparentemente aleatorios.
+También podemos generar un número aleatorio dentro de un rango específico de números decimales utilizando la función `random.float()`. Por ejemplo, si queremos un número aleatorio entre 0 y 1, podemos escribir el siguiente código:
 
-Sin embargo, es importante tener en cuenta que la generación de números aleatorios en programación no es completamente aleatoria, sino pseudoaleatoria. Esto significa que los números son generados de manera determinística a partir de una semilla, por lo que si se utiliza la misma semilla, se obtendrá la misma secuencia de números. Por lo tanto, es importante elegir una semilla cuidadosamente para obtener una buena distribución de números aleatoreos.
+```Gleam
+import random
 
-## Ver también
-- [Documentación oficial de Gleam sobre generación de números aleatorios](https://gleam.run/modules/gleam/random.html)
-- [Información sobre el generador de números aleatorios Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Ejemplos de uso de generación de números aleatorios en Gleam](https://github.com/gleam-lang/gleam/blob/master/tests/random_test.test)
+let numero = random.float(0.0, 1.0)
+
+io.format("El número aleatorio es {}.", [numero])
+```
+
+Esto producirá un resultado como este:
+
+```
+El número aleatorio es 0.8725.
+```
+
+¡Pero eso no es todo! Gleam también tiene funciones para generar caracteres aleatorios (`random.char()`), booleanos aleatorios (`random.bool()`) e incluso listas aleatorias (`random.list()`). Puedes explorar más opciones de generación de números aleatorios en la documentación oficial de Gleam.
+
+## Deep Dive
+
+Si eres un curioso como yo, puede que te preguntes cómo es que Gleam genera estos números aleatorios. Resulta que utiliza un algoritmo de generación de números pseudoaleatorios llamado "algoritmo de Lehmer" que toma una semilla (un número inicial) para iniciar una secuencia de números que parecen ser aleatorios. Sin embargo, ten en cuenta que estos números no son realmente aleatorios, ya que se generan a partir de una fórmula matemática y pueden ser repetidos si se usa la misma semilla.
+
+## See Also
+
+- Documentación oficial de Gleam sobre generación de números aleatorios: https://gleam.run/lib/rand
+- Más detalles sobre el algoritmo de Lehmer: https://en.wikipedia.org/wiki/Lehmer_random_number_generator

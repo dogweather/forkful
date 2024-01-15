@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Travailler avec les fichiers CSV"
+html_title:           "Rust: Travailler avec les fichiers CSV"
+simple_title:         "Travailler avec les fichiers CSV"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -11,37 +12,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-CSV (Comma-separated values) est un format de fichier couramment utilisé pour stocker des données tabulaires. En tant que programmeur en Rust, apprendre à travailler avec des fichiers CSV peut être très utile pour manipuler et analyser des données.
+Si vous travaillez avec des données tabulaires, il est probable que vous ayez souvent affaire à des fichiers CSV (Comma-Separated Values). Ces fichiers sont largement utilisés pour stocker et échanger des données entre différentes applications. La bonne nouvelle est que Rust offre une excellente prise en charge des fichiers CSV, ce qui en fait un excellent choix pour travailler avec ce format de données.
 
 ## Comment faire
 
-Pour commencer à travailler avec des fichiers CSV en Rust, vous pouvez utiliser la crate intégrée `csv`. Il s'agit d'une bibliothèque de haut niveau qui facilite la lecture et l'écriture de fichiers CSV. Voici un exemple de code pour lire et afficher les données d'un fichier CSV :
+Pour commencer à travailler avec des fichiers CSV en Rust, vous aurez besoin de la bibliothèque `csv`. Vous pouvez l'ajouter à votre projet en ajoutant la dépendance suivante à votre fichier `Cargo.toml` :
 
 ```Rust
-extern crate csv;
+[dependencies]
+csv = "1.1.3"
+```
 
+Une fois que vous avez ajouté la dépendance, vous pouvez utiliser la bibliothèque en important le module `csv` dans votre code :
+
+```Rust
+use csv;
+```
+
+Maintenant, vous êtes prêt à lire et à écrire des fichiers CSV en utilisant les différentes fonctionnalités de la bibliothèque. Voici un exemple simple de lecture d'un fichier CSV et d'affichage de son contenu :
+
+```Rust
+use std::fs::File;
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let mut reader = csv::Reader::from_path("data.csv")?;
-    for result in reader.records() {
-        let record = result?;
-        println!("{:?}", record);
+    let file = File::open("exemples/fichier.csv")?; // ouvrir le fichier
+    let mut rdr = csv::Reader::from_reader(file); // créer un lecteur CSV
+
+    for result in rdr.records() {
+        // parcourir chaque ligne du fichier
+        let record = result?; // récupérer la ligne en cours
+        println!("{:?}", record); // afficher la ligne
     }
-    Ok(())
+
+    Ok(()) // retourner Ok si tout s'est bien passé
 }
 ```
 
-Le code utilise la fonction `from_path()` pour ouvrir le fichier CSV et la méthode `records()` pour itérer à travers chaque ligne du fichier. La variable `record` représente chaque ligne sous forme de vecteur, ce qui vous permet de travailler avec les données de votre choix. Vous pouvez également utiliser la méthode `write_record()` pour écrire des données dans un nouveau fichier CSV.
+Et voici le résultat de l'exécution de ce programme :
+
+```Rust
+"John","Doe",25
+"Jane","Smith",30
+"Bob","Johnson",40
+```
+
+Vous pouvez également écrire des fichiers CSV en utilisant la bibliothèque `csv`. Voici un exemple de création d'un nouveau fichier CSV à partir de zéro et d'écriture de quelques lignes :
+
+```Rust
+use std::fs::File;
+use std::error::Error;
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let mut wtr = csv::Writer::from_path("nouveau_fichier.csv")?; // créer un writer pour notre nouveau fichier
+
+    wtr.write_record(&["Prenom", "Nom"])?; // écrire la première ligne du fichier
+    wtr.write_record(&["John", "Doe"])?; // écrire la deuxième ligne
+    wtr.write_record(&["Jane", "Smith"])?; // écrire la troisième ligne
+
+    wtr.flush()?; // vider le buffer et écrire toutes les données sur le disque
+
+    Ok(()) // retourner Ok si tout s'est bien passé
+}
+```
+
+Et voici le contenu de notre nouveau fichier CSV :
+
+```Rust
+Prenom,Nom
+John,Doe
+Jane,Smith
+```
+
+Vous pouvez également spécifier des options supplémentaires lors de la lecture ou de l'écriture de fichiers CSV, comme la délimitation des colonnes, l'utilisation de guillemets, etc. Pour plus d'informations sur toutes les fonctionnalités offertes par la bibliothèque `csv`, vous pouvez consulter la documentation officielle à l'adresse suivante : [https://docs.rs/csv/1.1.3/csv/](https://docs.rs/csv/1.1.3/csv/).
 
 ## Plongée en profondeur
 
-Si vous souhaitez avoir un contrôle accru sur la manipulation de fichiers CSV, vous pouvez utiliser la crate `rust-csv`, qui propose une interface de bas niveau pour lire et écrire des fichiers CSV. Cette crate vous permet de définir des options de délimiteur, de gérer les en-têtes et les lignes vides, ainsi que de gérer les erreurs de parsing.
-
-Il est également important de prendre en compte la performance lors de la manipulation de fichiers CSV en Rust. Il est recommandé d'utiliser la méthode `as_slice()` pour convertir les données du fichier en tranches (`slice`) avant de les enregistrer ou de les travailler, afin d'optimiser les performances.
+Si vous souhaitez en savoir plus sur la façon dont la bibliothèque `csv` fonctionne en interne, vous pouvez consulter son code source, qui est disponible sur GitHub à [https://github.com/BurntSushi/rust-csv](https://github.com/BurntSushi/rust-csv). Vous pouvez également contribuer au développement de la bibliothèque en soumettant des problèmes ou en proposant des pull requests.
 
 ## Voir aussi
 
-- [Documentation de la crate `csv`](https://docs.rs/csv)
-- [Documentation de la crate `rust-csv`](https://docs.rs/rust-csv)
-- [Le guide officiel de Rust sur la manipulation de données CSV](https://doc.rust-lang.org/rust-by-example/std_misc/file/open.html)
+- Documentation officielle de la bibliothèque `csv` : [https://docs.rs/csv/1.1.3/csv/](https://docs.rs/csv/1.1.3/csv/)
+- Repository GitHub de la bibliothèque `csv` : [https://github.com/BurntSushi/rust-csv](https://github.com/BurntSushi/rust-csv)

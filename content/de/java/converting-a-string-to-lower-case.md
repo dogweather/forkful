@@ -1,6 +1,7 @@
 ---
-title:                "Java: Umwandlung eines Variablenwerts in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Variablenwerts in Kleinbuchstaben"
+title:                "Umwandlung eines Strings in Kleinbuchstaben"
+html_title:           "Java: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Das Konvertieren eines Strings in Kleinbuchstaben ist eine häufig verwendete Funktion in der Programmierung. Es kann hilfreich sein, um Strings zu vergleichen oder um sicherzustellen, dass Eingaben in einer bestimmten Form vorliegen.
 
-Das Konvertieren von Zeichenketten in Kleinbuchstaben ist ein grundlegendes Konzept in der Programmierung und wird in vielen Fällen benötigt. Es kann beispielsweise helfen, die Vergleichbarkeit von Texten zu verbessern oder die Eingabe von Benutzern zu vereinfachen.
-
-## Wie geht das?
+## Wie geht das
+Um einen String in Kleinbuchstaben zu konvertieren, gibt es in Java die Methode `toLowerCase()`, die auf einem String-Objekt aufgerufen werden kann. Hier ist ein Beispielcode und die entsprechende Ausgabe:
 
 ```Java
-// Initialisiere String mit Großbuchstaben
-String text = "DIE SONNE SCHEINT";
-System.out.println(text); // Ausgabe: DIE SONNE SCHEINT
+String name = "Max Mustermann";
+String nameLower = name.toLowerCase();
+System.out.println(nameLower);
 
-// Konvertiere String in Kleinbuchstaben
-String converted = text.toLowerCase();
-System.out.println(converted); // Ausgabe: die sonne scheint
+// Ausgabe: max mustermann
 ```
 
-Wir verwenden die Methode `toLowerCase()` auf einem String-Objekt, um alle Großbuchstaben in Kleinbuchstaben zu konvertieren. Dies betrifft auch Umlaute und Sonderzeichen.
+In diesem Beispiel wird die `toLowerCase()`-Methode auf dem String `name` aufgerufen und das Ergebnis in der Variable `nameLower` gespeichert. Das Ergebnis des Aufrufs ist der String in Kleinbuchstaben.
 
-## Tiefenschärfe
+## Tiefgehende Einblicke
+Bei der Konvertierung eines Strings in Kleinbuchstaben gibt es einige Dinge zu beachten. Zum einen ist es wichtig zu wissen, dass die `toLowerCase()`-Methode nur Buchstaben in Großbuchstaben in Kleinbuchstaben umwandelt. Alle anderen Zeichen bleiben unverändert. Zum Beispiel würde aus dem String `"Hallo Welt!"` nach der Konvertierung `"hallo welt!"` werden.
 
-Hinter den Kulissen wird jedes Zeichen durch einen numerischen Wert dargestellt, der als Unicode bezeichnet wird. Jeder Buchstabe, jedes Symbol und jede Ziffer hat einen eindeutigen Code, der verwendet wird, um es darzustellen. Bei Groß- und Kleinbuchstaben gibt es einen numerischen Unterschied von 32, was es uns ermöglicht, durch einfaches Hinzufügen von 32 in den ASCII-Wert jedes Großbuchstabens den entsprechenden Kleinbuchstaben zu erhalten.
+Ein weiterer wichtiger Punkt ist, dass die `toLowerCase()`-Methode nur die Standard-Kleinbuchstaben des entsprechenden Zeichensatzes verwendet. Das bedeutet, dass je nach Sprache und Zeichensatz die konvertierten Kleinbuchstaben variieren können. Deshalb sollte man bei der Verwendung dieser Methode darauf achten, dass sie für die jeweilige Anwendung geeignet ist.
 
-Man könnte auch erwarten, dass es eine Methode `toUpperCase()` gibt, die die Zeichen in Großbuchstaben konvertiert. Tatsächlich gibt es diese Methode auch in Java, aber sie hat ihre eigenen Besonderheiten, die es zu beachten gilt.
+Eine Alternative zur `toLowerCase()`-Methode ist die Verwendung der `String`-Klasse und ihrer `toLowerCase()`-Methode. Diese Methode verwendet den Standard-Locale des Systems, um die Kleinbuchstaben zu bestimmen, was zu genaueren Ergebnissen führt.
 
 ## Siehe auch
-
-- [Java String-Methoden](https://www.geeksforgeeks.org/string-class-in-java/)
-- [ASCII und Unicode](https://www.w3schools.com/charsets/ref_html_ascii.asp)
+- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [String.toLowerCase() Method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [Java Locale Class](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)

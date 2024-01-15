@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 웹 페이지 다운로드하기"
-simple_title:         "웹 페이지 다운로드하기"
+title:                "웹 페이지 다운로드"
+html_title:           "Haskell: 웹 페이지 다운로드"
+simple_title:         "웹 페이지 다운로드"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜 
 
-웹 페이지를 다운로드하는 것은 매우 중요한 전술입니다. 웹 페이지에는 수많은 데이터와 정보가 포함되어 있으며, 이를 다운로드하여 자신에게 유용한 정보를 추출할 수 있습니다. 따라서 해스켈 프로그래밍 언어를 사용하여 웹 페이지를 다운로드하는 방법에 대해 알아보겠습니다.
+다른 프로그래밍 언어에 비해 Haskell은 강력한 타입 시스템과 순수 함수형 프로그래밍 언어로서 웹 페이지 다운로드에 유용하게 사용될 수 있습니다. 따라서 이를 이용하여 웹 페이지를 다운로드해오는 방법을 배우는 것은 매우 유익하고 흥미로운 일입니다.
 
-## 어떻게?
+## 방법
 
-웹 페이지를 다운로드하기 위해서는 먼저 사용할 패키지를 설치해야 합니다. 패키지 관리자인 Cabal을 사용하여 다음과 같이 패키지를 설치할 수 있습니다.
-
-```Haskell
-cabal install http-conduit
-```
-
-설치가 완료되면 다음과 같이 코드를 작성하여 웹 페이지를 다운로드할 수 있습니다.
+이번에는 Haskell을 이용하여 웹 페이지를 다운로드하는 방법을 살펴보겠습니다. Haskell과 관련된 기본 지식이 있다는 가정하에 코드 예제를 포함하여 설명하겠습니다.
 
 ```Haskell
-import Network.HTTP.Conduit
+import Network.HTTP.Simple
 
 main = do
-  request <- parseRequest "https://example.com" -- 다운로드할 웹 페이지의 URL 입력
-  response <- httpLbs request -- 다운로드한 데이터를 바이트 단위로 저장
-  putStrLn $ responseBody response -- 다운로드한 데이터 출력
+   response <- httpLBS "http://example.com"   -- 다운로드하고자 하는 웹 페이지의 URL을 입력합니다. 
+   putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)  -- 다운로드 받은 웹 페이지의 상태 코드를 출력합니다.
+   putStrLn $ "The response body was: " ++ show (getResponseBody response)     -- 다운로드 받은 웹 페이지의 내용을 출력합니다.
 ```
 
-위 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
+위의 코드는 단 한 줄로 웹 페이지를 다운로드하고, 해당 페이지의 상태 코드와 내용을 출력하는 예제입니다.
 
-```
-<!doctype html>
-<html>
-<head>
-  <title>Example Domain</title>
+## 심층 탐구
 
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style type="text/css">
-...
-```
+더욱 자세한 내용을 원한다면, [HTTP 패키지](https://hackage.haskell.org/package/http)의 공식 문서를 참고하는 것을 추천합니다. 이 패키지에는 웹 페이지를 다운로드할 수 있는 다양한 함수와 기능이 포함되어 있으니, 여러 가지 방법으로 웹 페이지를 다운로드해볼 수 있습니다.
 
-## 심층 분석
+## 참고 자료
 
-위 코드에서 사용된 `http-conduit` 패키지는 HTTP 요청을 생성하고, 관리하며, 응답을 처리하는 데 사용됩니다. 또한 `parseRequest` 함수를 사용하여 URL을 파싱하고, `responseBody` 함수를 사용하여 다운로드한 데이터를 문자열로 변환하여 출력합니다.
-
-더 많은 정보를 얻고 싶다면 `http-conduit` 패키지의 공식 문서를 참조해보세요. 또한 `Network.HTTP.Simple` 모듈을 사용하여 더 간단하게 웹 페이지를 다운로드할 수도 있습니다.
-
-## 관련 자료
-
-- [Haskell 공식 문서 - HTTP 패키지](https://hackage.haskell.org/package/http)
-- [Haskell 공식 문서 - http-conduit 패키지](https://hackage.haskell.org/package/http-conduit)
-- [Haskell 공식 문서 - Network.HTTP.Simple 모듈](https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html)
+- [Hackage - HTTP 패키지](https://hackage.haskell.org/package/http)
+- [Stack Overflow - How to download a webpage using Haskell](https://stackoverflow.com/questions/5071902/how-to-download-a-webpage-using-haskell)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Travailler avec des fichiers CSV"
-simple_title:         "Travailler avec des fichiers CSV"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Gleam: Travailler avec les fichiers csv"
+simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,51 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi travailler avec des fichiers CSV en utilisant Gleam ?
+##Pourquoi
 
-Les fichiers CSV (Comma Separated Values) sont un type de format de fichier couramment utilisé pour stocker et organiser des données, en particulier des données tabulaires telles que des feuilles de calcul. La manipulation de ces fichiers est essentielle dans de nombreux projets de programmation et Gleam offre une solution simple et efficace pour travailler avec eux.
+Si vous travaillez avec des données, il est très probable que vous ayez été confronté au format CSV. Ce format simple et facile à comprendre est couramment utilisé pour stocker des données tabulaires telles que des feuilles de calcul et des bases de données.
 
-## Comment faire?
+##Comment faire
 
-Voici un exemple de code pour lire un fichier CSV en utilisant Gleam :
+La bibliothèque standard de Gleam offre des fonctionnalités robustes pour lire et écrire des fichiers CSV. Jetons un coup d'œil à un exemple simple de lecture d'un fichier CSV et d'affichage du résultat :
 
-```
-Gleam.import.csv |> File.read("data.csv") |> Csv.Rows.decode
-|> case Ok(rows) => rows
-   Err(err) => panic(err)
-```
+```Gleam
+let result = File.read_text("example.csv")
 
-Ce code utilise la bibliothèque standard de Gleam pour importer un module de CSV, puis il utilise la fonction `read` pour lire le contenu du fichier `data.csv`. Ensuite, il utilise une fonction de décodage pour convertir les données en un format utilisable par le programme. 
-
-Pour écrire des données dans un fichier CSV, vous pouvez utiliser le code suivant :
-
-```
-ple.csv
-import gleam/string
-
-let rows = [
-  \[Personne, Age, Profession],
-  \[Jean, 25, “Ingénieur”],
-  \[Marie, 32, “Professeur”],
-  \[Luc, 41, “Médecin”]
-]
-
-gleam/string.join
-|> Csv.Rows.encode(rows)
-|> File.write("people.csv")
+case result {
+  Ok(contents) -> List.for_each(contents, { row ->
+    let columns = Csv.parse_row(row, ";")
+    show(columns)
+  })
+  Err(error) -> println("Une erreur s'est produite : $(error)")
+}
 ```
 
-Ce code utilise la fonction `join` de la bibliothèque standard de Gleam pour convertir les données en un format CSV et les écrit dans le fichier "people.csv".
+Le code ci-dessus utilise la fonction `File.read_text` pour lire le contenu du fichier CSV dans une chaîne de caractères. Ensuite, la fonction `Csv.parse_row` est utilisée pour convertir chaque ligne en une liste de colonnes. Enfin, la fonction `List.for_each` est utilisée pour parcourir chaque ligne et afficher les colonnes à l'écran.
 
-## Plongeons plus en profondeur
+Le résultat de ce code sera une liste contenant toutes les lignes du fichier CSV, avec les colonnes séparées par des points-virgules. Par exemple, si notre fichier CSV contient les données suivantes :
 
-En travaillant avec des fichiers CSV, il est important de noter que les valeurs séparées par une virgule ne doivent pas contenir de virgules ou de guillemets, car cela peut provoquer des erreurs lors de la lecture ou de l'écriture des données. Les bibliothèques CSV de Gleam offrent également des fonctions pour gérer des caractères spéciaux si nécessaire.
+```
+nom;prenom;age
+Doe;John;35
+Smith;Jane;27
+```
 
-Il est également possible d'utiliser la fonction `Csv.Rows.decode_with_headers` pour traiter un fichier CSV avec une ligne d'en-tête, qui contient les noms des colonnes. Cela peut faciliter la manipulation des données, car vous pouvez accéder aux valeurs en utilisant le nom de colonne plutôt que leur position dans la ligne.
+Le résultat serait :
 
-# Voir aussi
+```
+liste(
+  liste("nom", "prenom", "age"),
+  liste("Doe", "John", "35"),
+  liste("Smith", "Jane", "27")
+)
+```
 
-Voici quelques liens utiles pour en savoir plus sur la manipulation de fichiers CSV avec Gleam :
+Notez que la fonction `Csv.parse_row` prend un deuxième argument optionnel, spécifiant le délimiteur à utiliser pour séparer les colonnes. Par défaut, elle utilise la virgule, mais vous pouvez le remplacer par le caractère de votre choix, comme dans cet exemple où nous utilisons le point-virgule comme délimiteur.
 
-- [Documentation de la bibliothèque CSV de Gleam](https://gleam.run/modules/g/csv/latest/)
-- [Exemples de code pour travailler avec des fichiers CSV en utilisant Gleam](https://github.com/search?q=gleam+csv)
+##Plongée en profondeur
+
+En plus de la lecture et de l'écriture de fichiers CSV, la bibliothèque standard de Gleam offre également des fonctionnalités pour travailler avec des données CSV en mémoire. Par exemple, vous pouvez utiliser les fonctions `Csv.parse_file` et `Csv.serialize` pour facilement convertir des données CSV en structures de données telles que des tableaux et des tuples, et vice-versa.
+
+Vous pouvez également utiliser les fonctions `Csv.read` et `Csv.write` pour lire et écrire des données CSV ligne par ligne, plutôt que de les traiter en une seule fois. Cela peut être utile pour les fichiers CSV volumineux qui peuvent entraîner une utilisation excessive de la mémoire si les données sont traitées en même temps.
+
+Pour une liste complète des fonctionnalités disponibles pour travailler avec des CSV en Gleam, consultez la documentation de [la bibliothèque standard CSV de Gleam](https://gleam.run/modules/csv/).
+
+##Voir aussi
+
+- [Documentation de Gleam](https://gleam.run/)
+- [Documentation de la bibliothèque standard de Gleam](https://gleam.run/modules/)
+- [Exemples de projets utilisant Gleam](https://github.com/search?q=language%3Agleam)

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Kontrollera om en mapp finns"
+title:                "Kontrollera om en mapp finns"
+html_title:           "Gleam: Kontrollera om en mapp finns"
 simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-I den här bloggposten kommer vi att titta på hur man kontrollerar om en mapp existerar i Gleam-programmeringsspråket. Detta är en viktig färdighet för att hantera filer och organisera ditt program.
 
-## Hur man gör
-För att kontrollera om en mapp existerar i Gleam, använder vi funktionen `Filesystem.directory_exists?` som tillhandahålls av den inbyggda `Filesystem`-modulen. Vi behöver först importera modulen i vårt program med `import Filesystem`, och sedan kan vi använda funktionen enligt följande exempel:
+Det är viktigt att kontrollera om en mapp existerar innan man försöker läsa från eller skriva till den. Detta säkerställer att ditt program inte kraschar på grund av en saknad mapp och det ger också möjlighet för dig att hantera eventuella felmeddelanden på ett bättre sätt.
 
-```Gleam
-let directory_name = "min_mapp"
+## Så här gör du
 
-if Filesystem.directory_exists?(directory_name) {
-    // Kod som ska utföra om mappen existerar
-} else {
-    // Kod som ska utföras om mappen inte existerar
+Att kontrollera om en mapp existerar är enkelt med hjälp av Gleam's standardbibliotek. Du behöver bara använda funktionen `File.exists` och ge den sökvägen till mappen du vill kontrollera. Här är ett exempel:
+
+```gleam
+import gleam/io
+
+let path = "./dokument/mapp"
+
+let mapp_finns = io.File.exists(path)
+```
+
+Funktionen `File.exists` returnerar antingen `True` eller `False` beroende på om mappen finns eller inte. Om du vill kolla om en mapp INTE finns, kan du använda funktionen `File.not_exists`.
+
+Du kan också använda `match` för att hantera olika fall beroende på resultatet av `File.exists`. Till exempel:
+
+```gleam
+import gleam/io
+
+let path = "./dokument/mapp"
+
+let mapp_finns = io.File.exists(path)
+
+match mapp_finns {
+    True -> io.print("Mappen finns!")
+    False -> io.print("Mappen finns inte.")
 }
 ```
 
-Om `directory_name`-mappen existerar kommer det första blocket av kod att utföras, och om den inte existerar kommer det andra blocket att utföras. Det är viktigt att notera att `Filesystem.directory_exists?` funktionen endast accepterar strängar som argument, så se till att konvertera eventuella andra datatyper till strängar innan du kör funktionen.
+## Deep Dive
 
-## Djupdykning
-När vi använder `Filesystem.directory_exists?` funktionen, så använder vi systemets filsystemgränssnitt för att kontrollera om den angivna mappen existerar. Om du kör detta på en Linux-baserad maskin kommer den att använda `stat`-systemanropet, medan den på en Windows-maskin kommer att använda `GetFileAttributesW`-systemanropet.
+Vad händer i bakgrunden när vi använder `File.exists`? Funktionen anropar faktiskt operativsystemets filsystem för att kontrollera om en fil eller mapp existerar. Om mappen inte existerar så returnerar operativsystemet ett felmeddelande som vårt program därefter behandlar.
 
-Det är också viktigt att notera att `Filesystem.directory_exists?` endast kontrollerar exakt mappen i den sökvägen som du anger. Om du till exempel anger `min_mapp/undermapp` som sökväg, kommer funktionen att returnera `false` om `min_mapp` inte existerar, även om `undermapp` existerar där. För att kontrollera om undermappen existerar, skulle du behöva köra funktionen med `min_mapp` som argument.
+Det finns också en annan funktion som du kan använda när du kontrollerar om en mapp existerar - `File.stat`. Denna funktion returnerar mer detaljerad information om en fil eller mapp, som till exempel storlek, skapandetid och ändringstid.
 
 ## Se även
-- Gleam Filesystem Modulen: https://gleam.run/modules/gleam_io
-- Linux `stat` systemanrop: https://man7.org/linux/man-pages/man2/stat.2.html
-- Windows `GetFileAttributesW` systemanrop: https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesw
+
+Se Gleam's officiella dokumentation för mer information om `File.exists` och `File.stat`:
+
+- [Officiell dokumentation för File.exists](https://gleam.run/documentation/#file.exists)
+- [Officiell dokumentation för File.stat](https://gleam.run/documentation/#file.stat)

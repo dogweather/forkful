@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Merkkijonon muuttaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuttaminen pienaakkosiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Javascript: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,24 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi muuttaa merkkijono pieniksi kirjaimiksi? On olemassa monia syitä, miksikö ohjelmointikielen käyttäjän kannattaa muuntaa merkkijono pieniksi kirjaimiksi. Kun merkkijono on muutettu pieniksi kirjaimiksi, se on helpompi vertailla muihin merkkijonoihin ja suorittaa hakuja. Esimerkiksi käyttäjätunnusten ja salasanojen tapauksessa, pienet kirjaimet auttavat välttämään kirjoitusvirheitä ja lisäävät tietoturvaa.
 
-## Ohjeet
-Koska Javascriptin sisäänrakennettuja metodeja on helppo käyttää, on merkkijonon muuttaminen pieniksi kirjaimiksi yksinkertaista. Tässä on yksi tapa tehdä se:
+Miksi joku haluaisi muuttaa merkkijonon pienaakkosiksi? On monia tilanteita, joissa tämä voi olla hyödyllistä, kuten tarkistettaessa käyttäjän syöttöä tai vertailtaessa merkkijonoja.
+
+## Miten tehdä se
 
 ```Javascript
-let merkkijono = "TÄMÄ ON TESTI";
-console.log(merkkijono.toLowerCase());
+let name = "JOHN DOE";
+console.log(name.toLowerCase());
 ```
 
-Tämän koodin tulosteksi saadaan `tämä on testi`. Näin yksinkertaisesti merkkijonon muuntaminen pieniksi kirjaimiksi Javascriptissa tapahtuu.
+Tuloste: john doe
 
-## Syvällinen tarkastelu
-Javascript tarjoaa sisäänrakennettuja metodeja, kuten `toLowerCase()` ja `toUpperCase()`, jotka mahdollistavat merkkijonon muuntamisen halutun kokoisiksi kirjaimiksi. Nämä metodit ovat erityisen käteviä, kun tarvitsemme tietoja tietokannan haussa tai vertailussa, sillä ne helpottavat kirjoitusvirheiden välttämistä.
+Merkkijonon muuttaminen pienaakkosiksi tehdään käyttäen `.toLowerCase()` -metodia. Tämä muuttaa kaikki merkkijonon kirjaimet pieniksi.
 
-On myös hyvä huomata, että merkkijonon muuntamisella pieniksi tai suuriksi kirjaimiksi on merkitystä kielitieteen kannalta. Esimerkiksi suomenkielelle on olemassa sekä suur- että pienikirjaimiset verbimuodot, jotka eroavat toisistaan aikamuodon ja persoonan mukaan. Tämä tarkoittaa sitä, että merkkijonon muuntaminen pieniksi kirjaimiksi saattaa vaikuttaa myös sen merkitykseen ja voi aiheuttaa ongelmia tietyssä kontekstissa.
+## Syvemmälle
+
+JavaScriptin `.toLowerCase()` -metodi perustuu Unicode-merkistöön, joten se toimii eri kielillä ja erikoismerkeillä. Tämän avulla voidaan varmistaa, että merkkijonot toimivat oikein myös kansainvälisissä sovelluksissa.
 
 ## Katso myös
-- [Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [Javascript Coding Basics: Manipulating Strings](https://blog.udemy.com/code-string-in-javascript/)
-- [Wikipedia: Merkkijono](https://fi.wikipedia.org/wiki/Merkkijono)
+
+- [JavaScript String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [Unicode Character Database](https://www.unicode.org/ucd/)

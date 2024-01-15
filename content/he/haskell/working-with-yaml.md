@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: עבודה עם YAML"
-simple_title:         "עבודה עם YAML"
+title:                "לעבוד עם Yaml"
+html_title:           "Haskell: לעבוד עם Yaml"
+simple_title:         "לעבוד עם Yaml"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע: למה לעבוד עם YAML?
+## למה
 
-בניגוד לכתיבת קוד בשפות אחרות, שימוש בפורמט YAML נותן לנו כתיבה נכונה יותר של קוד ולשימוש בו בצורה פשוטה ותקינה. הוא נחשב לעבודה טובה יותר ברגעים שאתה צריך לייצג מידע שונה בקבצי תצוגה ידידותיים לבני אדם.
+כתיבת קוד באמצעות YAML בשפת הפונקציונליות Haskell יכולה להיות דרך נוחה וקלה להגדיר תצורות שונות. הוא מציע תחביר קריא ומתקדם שיאפשר לך לעבוד עם מגוון רחב של נתונים בחסות שפת מתכנת ההתגוננות העוצמתית הזו.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-ניתן לכתוב קוד YAML בשפת הפונקציונלית הוסקל באמצעות ספריית YAML המובנית. ניתן להתחיל על ידי טעינת הספרייה על ידי שימוש במילולון `import Data.Yaml`. לאחר מכן, ניתן להשתמש בפונקציות כמו `encode` ו- `decode` כדי להמיר בין נתונים וקוד YAML.
-
-בהמשך תוכלו לראות דוגמאות של קוד YAML והתוצאות שלהם בתוך קוד Haskell:
+קוד ה-Haskell הבא מדגים כיצד ניתן ליצור מבני YAML באמצעות הספרייה הפונקציונלית "yaml". ניתן לראות בתוך הקוד דוגמאות של הגדרות רבות ומגוונות של מבני YAML ואת הפלט המתקבל.
 
 ```Haskell
 import Data.Yaml
 
--- ליצור מילון עם מפתחים וערכים בפורמט YAML
-myMap = [("key1", 1), ("key2", 2), ("key3", 3)]
+data Person = Person
+  { name :: String
+  , age :: Int
+  , location :: String
+  }
 
--- להמיר מילון לפורמט YAML ולהדפיס אותו
-main = putStrLn (encode myMap)
+person1 :: Person
+person1 = Person { name = "John", age = 30, location = "New York" }
 
--- פלט: "key1: 1\nkey2: 2\nkey3: 3\n"
+person2 :: Person
+person2 = Person { name = "Sarah", age = 25, location = "Los Angeles" }
 
--- המיר פורמט YAML למילון ולהדפיס את הערך של אחד המפתחות
-decodedMap = decodeEither "key2: 2" :: Either String [(String, Int)]
-main = case decodedMap of
-    Left err -> putStrLn err
-    Right myMap -> print $ lookup "key2" myMap
-
--- פלט: Just 2
+main :: IO ()
+main = do
+  let people = [person1, person2]
+  let yaml = encode people
+  print people
+  putStr "---\n"
+  putStr yaml
 ```
 
-## מעמקים
+פלט הקוד יהיה הבא:
 
-כשאנחנו מתחילים לעבוד עם YAML, יתכן ונתקל בכמה נושאים מעט יותר מורכבים. כמה דוגמאות לכך הן:
+```yaml
+- name: John
+  age: 30
+  location: New York
+- name: Sarah
+  age: 25
+  location: Los Angeles
+```
 
-- טיפוסי נתונים מורכבים - כיצד לטפל במילונים, רשימות וקבצים מקומיים בפורמט YAML.
-- עיבוד ייבוא - כיצד להעביר נתונים מקובץ YAML למבנה נתונים כדי להשתמש בהם בתוך הקוד שלנו.
--
+## התעמולה המעמיקה
+
+פקודה היספה נוספת שיש לכם זמינה כדי לעזור לכם בעבודה עם YAML היא היכן לאחסן את הקבצים שלכם. כדי לגשת לשם, ישנם מספר אפשרויות שאתם יכולים להשתמש בהם עבור תחבירי YAML והם כוללים תבניות הכתיבה העצמתיות והספקית.
+
+## ראו גם
+
+- [Haskell Wiki: YAML](https://wiki.haskell.org/YAML)
+- [Hackage: yaml](https://hackage.haskell.org/package/yaml)

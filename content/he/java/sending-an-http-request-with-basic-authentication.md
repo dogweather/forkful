@@ -1,5 +1,6 @@
 ---
-title:                "Java: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Java: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Java"
 category:             "Java"
@@ -10,43 +11,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+Sending an HTTP request with basic authentication allows the user to securely access protected web resources by providing a username and password. This is commonly used in applications that require user authentication.
 
-מאחר ומעטים מנושאים בעולם התוכנה תולים כל כך הרבה על התקשורת בין שרתים, לוגיקה אבסטרקטית יכולה לקרוס בקלות. ישנו מתאם שמכנה שמו "HTTP" המאפשר לנו לתקשר עם שרתים פרוטוקוליים, והוא עובד ע"י בקשות ותגובות. כאשר תרצו לבצע בקשה משרת, ייתכן שתרצו גם להכניס תעודת זיהוי כדי להיות מורשים לגשת אליו. בבלוג הזה נלמד כיצד לשלוח בקשה HTTP עם אימות בסיסי כדי לשרת את המטרה הזאת.
-
-## איך לעשות
-
-כעת, ננסה להפוך את כל מילות הכבוד למספרים. נתחיל עם יצירת סטרימר HTTP עבור האתר שאנחנו רוצים לתקשר איתו.
-
+## איך לבצע
+מתוך דאטה ריספונס יוצרים משתמש פסטאיול 
 ```Java
-// יצירת סטרימר HTTP
-URL url = new URL("https://example.com"); // כתובת האתר בו אנחנו רוצים לתקשר
-HttpURLConnection con = (HttpURLConnection) url.openConnection(); // פתיחת חיבור
-con.setRequestMethod("GET"); // נערוך בקשת GET
-
-// הוספת אימות בסיסי לבקשה
-String username = "myusername"; // שם משתמש לאימות
-String password = "mypassword"; // סיסמה לאימות
-String credentials = username + ":" + password; // יצירת מחרוזת אימות
-String base64Credentials = Base64.getEncoder().encodeToString(credentials.getBytes()); // המרת המחרוזת לקוד base64
-con.setRequestProperty("Authorization", "Basic " + base64Credentials); // הוספת כעת הקוד הבסיסי לכותרת האימות של הבקשה
-
-// קבלת תגובת החיבור
-int status = con.getResponseCode(); // מצב התגובה
-String message = con.getResponseMessage(); // הודעת התגובה
-System.out.println(status + " " + message); // הצגת התגובה
-
-// קריאת התוכן של התגובה
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer content = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    content.append(inputLine);
-}
-in.close();
-System.out.println(content.toString()); // הדפסת התוכן
-
-// סגירת החיבור
-con.disconnect();
+Authenticator.setPasswordAuthentication(new URL("https://www.example.com"), 
+                                        username, 
+                                        password.toCharArray());
 ```
-כפי שאתם רואים בקוד הדוגמה, אנו יוצ
+כדי לשלוח את הבקשה המאובטחת, ניתן להשתמש במתודת `setRequestProperty()` כדי להוסיף את פרמטר האימות לכותרת הבקשה:
+```Java
+connection.setRequestProperty("Authorization", "Basic " + basicAuth);
+```
+לאחר מכן, ניתן לשלוח את הבקשה בצורה רגילה עם `HttpURLConnection`:
+```Java
+HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+connection.setRequestMethod("GET");
+```
+להלן דוגמא מלאה של קוד לשליחת בקשה HTTP מתוך אפליקציית ג'אווה:
+```Java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.Authenticator;
+ 
+public class HttpBasicAuthenticationExample {
+ 
+    public static void main(String[] args) {
+ 
+        String username = "example_user";
+        String password = "example_password";
+        String url = "https://www.example.com";
+ 
+        Authenticator.setPasswordAuthentication(new URL(url), username, password.toCharArray());
+ 
+        HttpURLConnection connection = null;
+        BufferedReader reader = null;
+ 
+        try {
+            //הוספת הפרמטר של האימות
+            String basicAuth = "Basic " + javax.xml.bind.DatatypeConverter.printBase64Binary((username + ":" + password).getBytes());
+ 
+            connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Authorization", basicAuth);
+ 
+            //קריאת התוכן מהגוף של התגובה
+            reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            StringBuffer content = new StringBuffer();
+            while((line = reader.readLine()) != null) {
+                content.append(line);
+            }
+ 
+            System.out.println(content.toString());
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(connection != null) {
+                connection.disconnect();
+            }
+            if(reader != null) {
+                try {
+                    reader.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+ 
+}
+```
+
+## צילום עמוק
+כאשר אנו שולחים בקשת HTTP עם אימות בסיסי, הפרמטר של האימות מתווסף לכותרת הבקשה בצורת מחרוזת מקודדת בבייס 64. מימוש נוסף של מחלקת `Authenticator` יכול להשתמש באמצעות הפעלת `setDefault()` כדי לערוך את האימות הבסיסי לשימוש כיתוב בדיקה ואבחון בקשות HTTP. מדי פעם, עלול לכבות דפדפן של תוך HTML בלתי מוסכם מולא מנסה לכולל גוף של מידע מאחורי

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: קישור מחרוזות"
-simple_title:         "קישור מחרוזות"
+title:                "חיבור מחרוזות"
+html_title:           "Gleam: חיבור מחרוזות"
+simple_title:         "חיבור מחרוזות"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
+כתבה זו תעסוק בפעולת טקסט רב-שורתית בשם "Concatenation", שבו מתבצעת התחברות של שני טקסטים ליחד. נלמד למה זה חשוב ואיך ניתן לעשות זאת בשפת תכנות Gleam.
 
-פרידת ה מחרוזות בשפת למדת יכולה להיות מאוד שימושי בסיטואציות רבות, כולל בתכנות וגם בשימושים יומיומיים כמו בכתיבת הודעות או פוסטים במדיה חברתית. כשמשתמשים בפונקציות כמו ```string.concat()``` או באופרטור ```++```, ניתן לקבל מחרוזות מאוחדות בקלות ובמהירות, מה שיעניק נוחות ויכולת יצירתית של קוד.
+## איך לעשות זאת
+ניתן להשתמש בפונקציית "concat" על מנת לחבר שני טקסטים בתוך סדרת תווים (string) אחת. נבצע עדכון למשתנה `result` על ידי הוספת הטקסט `Hello` לטקסט המקורי `World` ונדפיס את התוצאה:
 
-## איך לעשות זאת:
-
-בדוגמאות הקוד הבאות נראה כיצד לחבר מחרוזות ב-Gleam בשימוש בפונקציות ובאופרטורים שונים:
-
-```
-Gleam module Example {
-
-  pub fn simple_concat() {
-    let str1 = "Hello ";
-    let str2 = "world";
-    let result = string.concat(str1, str2);
-    IO.print(result);
-  }
-  
-  pub fn complex_concat() {
-    let str1 = "Let's ";
-    let str2 = "do ";
-    let str3 = "something ";
-    let str4 = "amazing!";
-    let result = str1 ++ str2 ++ str3 ++ str4;
-    IO.puts(result);
-  }
-
-}
+```Gleam
+let result = concat("Hello", "World")
 ```
 
-פלט של הקוד הנ"ל ביציאת האופקת יהיה:
-
+תוצאה:
 ```
-Hello world
-Let's do something amazing!
+HelloWorld
+```
+אם נציין יותר משני טקסטים, נבצע חיבור של כולם יחד עם הטקסט המקורי:
+
+```Gleam
+let text1 = "How "
+let text2 = "are "
+let text3 = "you?"
+let result = concat(text1, text2, text3)
 ```
 
-## מה הנעשה במפתח:
+תוצאה:
+```
+How are you?
+```
 
-פרידת המחרוזות ב-Gleam מבצעת פעולת שמירה (concatenation), שפועלת על שני ארגומנטים ומחזירה מחרוזת אחת מאוחדת. פונקציות כמו ```string.concat()``` מקבלות שני ארגומנטים וביצוע את פעולת השמירה עליהם, בעוד שאופרטור כמו ```++```, מספק דרך יעילה יותר לחבר מחרוזות בלי להשתמש בפונקציות.
+## בינתחומי
+נתחקר כיצד פעולת חיבור טקסטים נעשית בפנים שפת התכנות Gleam. המנגנון מבוסס על המימוש המובנה של הוויזט "string.append" בשפת Erlang, המאפשרת חיבור תווים לאובייקט כדי ליצור טקסט חדש.
 
-## ראה גם:
-
-- [פקודת IO.print](https://hexdocs.pm/gleam_stdlib/Gleam.IO.html#print/1)
-- [מדריך לעבודה עם מחרוזות ב-Gleam](https://gleam.run/book/core-modules)
+## ראה גם
+- תיעוד רשמי על פעילות "Concatenation" בגיאת הלידים של Gleam: [קישור](https://gleam.run/) 
+- שפת התכנות Gleam באתר הרשמי: [קישור](https://gleam.run/)

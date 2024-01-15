@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Elixir: Utskrift av feilsøkingsutdata"
 simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor: Å utføre feilsøking i dine Elixir programmer
+## Hvorfor
+Hvorfor skulle noen involvere seg i å skrive ut feilsøkningsinformasjon? Debug output kan være en nøkkel til å identifisere og løse problemer i koden din, spesielt når du står fast og ikke helt forstår hva som skjer.
 
-Det kan være frustrerende å prøve å finne ut hvorfor et program ikke fungerer som forventet. En måte å løse dette på er å bruke debugging utskrift i Elixir. Dette hjelper deg med å spore verdier og flyten av programmet ditt for å identifisere feil. I denne bloggposten vil vi se på hvorfor og hvordan du kan bruke printing debug output i Elixir.
-
-## Hvordan du kan gjøre det:
-
-```Elixir
-defmodule Person do
-  def create(name, age) do
-    # printing debug output før kall til `Person.new/2` 
-    IO.inspect("Oppretter person med navn: #{name} og alder: #{age}")
-    
-    Person.new(name, age)
-  end
-end
+## Hvordan gjøre det
+```elixir
+IO.puts "Dette er en debug melding"
 ```
 
-I dette eksempelet ser vi på en `create` funksjon i en Person modul som tar inn to parametere: navn og alder. Før kallet til `Person.new/2`, skriver vi ut en melding ved hjelp av `IO.inspect/2` funksjonen. Dette vil skrive ut verdien av `name` og `age` variabelen til vår konsoll. Når vi kjører programmet, vil vi se utskriften vår og bekrefter at verdiene som sendes inn er riktige.
+Resultat:
+```elixir
+"Dette er en debug melding"
+```
 
-Output: `Oppretter person med navn: John og alder: 30`
+For å skrive ut en debug-melding i Elixir, kan du bruke funksjonen `IO.puts`, som tar en hvilken som helst datatype som argument og skriver den ut.
 
-Denne enkle utskriften kan hjelpe oss med å identifisere problemer eller uventede verdier i vårt program. Det er også verdt å merke seg at `IO.inspect/2` også fungerer med komplekse datastrukturer, noe som gjør det til et kraftig verktøy for debugging.
+En annen metode er å bruke `IO.inspect`, som lar deg se på verdien av en variabel midt i koden. Dette er spesielt nyttig for å sjekke verdier inne i en loop eller en funksjon.
 
-## Deep Dive
+```elixir
+x = 2
+IO.inspect x
+```
 
-Nå som vi har sett hvordan vi kan bruke printing debug output, la oss se på noen avanserte funksjoner som Elixir tilbyr oss for debugging. Først har vi `IO.inspect/2` funksjonen, som vi allerede har brukt. Denne funksjonen tar inn en verdi og returnerer samme verdi, noe som gjør det enkelt å sette den inn i løpende kode uten å forstyrre flyten. 
+Resultat:
+```elixir
+2
+```
 
-En annen nyttig funksjon er `IO.puts/2` som printer en melding uten noen ekstra formatering. Dette er nyttig når du bare vil få en enkel utskrift uten verdier. Og hvis du vil ha mer kontroll over utskriften din, kan du bruke `Kernel.inspect/2` funksjonen som tar inn en verdi og et sett med opsjoner for å formatere utskriften.
+## Dypdykk
+Det å skrive ut debug-informasjon er et viktig verktøy for å feilsøke koden din. Du kan også bruke `IO.puts` eller `IO.inspect` for å sjekke om en bestemt del av koden din blir utført, eller for å se på verdiene av variabler i forskjellige deler av koden.
+
+Det er også mulig å bruke `IO.inspect` inne i en funksjon for å sjekke at argumentene som blir sendt inn, er riktige. Dette kan være spesielt nyttig når du jobber med funksjoner som tar mange argumenter og komplekse datatype.
+
+En viktig ting å huske på er å ikke la debug output bli sittende igjen i koden din når den er ferdig og klar til å produseres. Sørg for å fjerne alle debug meldinger før du publiserer koden din.
 
 ## Se også
-
-- [Debugging i Elixir](https://hexdocs.pm/elixir/debugging.html)
-- [Elixir IO modulen](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Kernel modulen](https://hexdocs.pm/elixir/Kernel.html)
+- [Offisiell Elixir Dokumentasjon](https://hexdocs.pm/elixir/IO.html)
+- [Debugging in Elixir](https://medium.com/@azmy/elixir-debugging-helpers-cf4d7e4244d1)
+- [Elixir Debugging Best Practices](https://www.poeticoding.com/elixir-debugging-best-practices/)

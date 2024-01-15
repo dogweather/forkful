@@ -1,6 +1,7 @@
 ---
-title:                "Python: Send en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Send en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-request med grunnleggende autentisering"
+html_title:           "Python: Sende en http-request med grunnleggende autentisering"
+simple_title:         "Sende en http-request med grunnleggende autentisering"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,27 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å sende HTTP-forespørsler med grunnleggende autentisering kan være nyttig når du trenger å sikre dataoverføring mellom klient og server. Dette kan være spesielt viktig i situasjoner der sensitiv informasjon blir overført, som ved innlogging på en nettside.
+Sending av HTTP-forespørsler med basic authentication er en vanlig måte å verifisere identiteten din på når du kommuniserer med en server. Dette er spesielt viktig når du sender sensitive data, som passord eller personlig informasjon.
 
 ## Slik gjør du det
-
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Python, må du først importere "requests" biblioteket. Deretter kan du lage en forespørsel og legge til autentiseringsinformasjon ved hjelp av "auth" parameteren.
-
 ```python
 import requests
 
-response = requests.get("https://www.mittnettsted.com", auth=("brukernavn", "passord"))
+# Definer brukernavn og passord
+username = "brukernavn"
+password = "passord"
+
+# Sett opp basic authentication
+auth = requests.auth.HTTPBasicAuth(username, password)
+
+# Spesifiser URL og send request med authentication
+url = "https://www.example.com/api/users"
+response = requests.get(url, auth=auth)
+
+# Sjekk statuskode for å se om requesten var vellykket
+print(response.status_code)
+
+# Skriv ut innholdet i response
 print(response.text)
 ```
 
-Denne kodesnutten vil sende en GET-forespørsel til nettsiden "www.mittnettsted.com" med brukernavn og passord som autentiseringsinformasjon. Sørg for å erstatte disse verdiene med dine egne.
+**Output:**
+200<br>
+```json
+{
+    "user_id": 123,
+    "username": "brukernavn"
+}
+```
 
 ## Dypdykk
-
-Når man sender en HTTP-forespørsel med grunnleggende autentisering, blir brukernavn og passord-kombinasjonen sendt i klartekst. Dette er en svakhet med denne autentiseringsmetoden, da noen kunne fange denne informasjonen og få tilgang til brukerkontoen din. Det er derfor viktig å sørge for at nettstedet du sender forespørselen til har en sikker forbindelse (HTTPS). Du kan også bruke andre autentiseringsmetoder som OAuth for å øke sikkerheten.
+Når du sender en HTTP-request med basic authentication, må du inkludere brukernavn og passord i headeren til requesten. Dette sikrer at kun autoriserte brukere har tilgang til serveren. Det er viktig å merke seg at basic authentication sender brukernavnet og passordet som "åpen teksts", noe som kan være en sikkerhetsrisiko. Derfor bør du alltid bruke HTTPS-protokollen når du sender slike requests.
 
 ## Se også
-
-- [Dokumentasjon for "requests" biblioteket](https://requests.readthedocs.io/en/master/)
-- [Informasjon om HTTP-forespørsler og autentisering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Requests dokumentasjon](https://requests.readthedocs.io)
+- [Hvordan lage en HTTP-request med Python](https://realpython.com/python-requests/)

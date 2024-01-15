@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Att läsa en textfil"
+html_title:           "Swift: Att läsa en textfil"
+simple_title:         "Att läsa en textfil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att läsa en textfil är en grundläggande färdighet för alla som programmerar i Swift. Det är ett viktigt verktyg för att interagera med data och spara information till filer på datorn. Läs vidare för att lära dig hur du enkelt kan läsa en textfil i Swift.
+# Varför
+Att läsa en textfil är en vanlig uppgift inom programmering, särskilt när man arbetar med data från olika källor. Genom att lära sig hur man läser en textfil i Swift kan man effektivt hantera stora mängder data och göra det tillgängligt för användning i ens kod.
 
-## Så här gör du
-För att läsa en textfil i Swift använder vi en grundläggande funktion som heter "String(contentsOf: URL)". Denna funktion tar emot en URL (Uniform Resource Locator) som pekar på den textfil som vi vill läsa. Nedan finns ett exempel på hur du kan använda denna funktion för att läsa en textfil och sedan skriva ut dess innehåll:
+## Så här
+Det finns flera olika sätt att läsa en textfil i Swift, men det mest grundläggande sättet är att använda FileHandle-klassen. Först måste vi deklarera en instans av FileHandle och ange sökvägen till vår textfil. Sedan kan vi använda metoden `readDataToEndOfFile()` för att läsa hela filen och lagra datan i en byteström.
 
 ```Swift
-// Definiera en URL till textfilen
-let textFileURL = URL(fileURLWithPath: "textfil.txt")
-
-// Läs filen och lagra det i en variabel
-let fileContents = try! String(contentsOf: textFileURL)
-
-// Skriv ut filens innehåll
-print(fileContents)
-
-// Output: Den här texten kommer från en textfil.
+let fileHandle = FileHandle(forReadingAtPath: "textfil.txt") // Ange sökvägen till din textfil
+let fileData = fileHandle?.readDataToEndOfFile() // Läs in datan från filen
 ```
 
-Som du kan se är det enkelt att läsa en textfil i Swift med hjälp av denna funktion. Du kan sedan göra vad du vill med filinnehållet, till exempel bearbeta eller manipulera det på olika sätt.
+En annan metod är att använda String-klassen och dess metod `init(contentsOf: URL)`. Det betyder att vi måste omvandla sökvägen till vår textfil till en URL först. Sedan kan vi enkelt få tillgång till innehållet i filen som en sträng.
+
+```Swift
+let fileURL = URL(fileURLWithPath: "textfil.txt") // Omvandla sökvägen till en URL
+let fileContents = try String(contentsOf: fileURL) // Hämta innehållet från filen som en sträng
+```
 
 ## Djupdykning
-För de som är intresserade av mer avancerad läsning av textfiler i Swift, finns det flera bibliotek och funktioner tillgängliga. Ett exempel är Foundation's "FileHandle" som ger mer flexibilitet och kontroll över läsprocessen. Det finns också möjlighet att använda lägre nivåfunktioner som "fopen()" och "fgets()" för att läsa filer i C-liknande stil. 
+Det finns olika sätt att läsa en textfil i Swift beroende på dess innehåll och storlek. Om du behöver läsa en fil rad för rad, kan du använda String-klassens metoder `components(separatedBy: String)` och `components(separatedBy: CharacterSet)` för att dela upp filen vid varje radbrytning. Om du arbetar med en större textfil kan du också använda FileHandle-klassens metoder `readData(ofLength: Int)` eller `readData(upToCount: Int)` för att läsa datan i mindre bitar.
 
-Att förstå principerna och koncepten bakom dessa funktioner kan vara användbart för mer komplexa situationer som till exempel läsa specifika delar av en fil eller kontinuerligt läsa data från en strömmande textfil.
+# Se även
+Här är några användbara resurser för att lära dig mer om att läsa textfiler i Swift:
 
-## Se även
-- [Officiell Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295)
-- [Apple's dokumentation för String(contentsOf: URL)](https://developer.apple.com/documentation/foundation/string/3127737-contents)
-- [Apple's dokumentation för FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Flera exempel på att läsa textfiler i Swift](https://www.ioscreator.com/tutorials/read-text-file-swift)
+- [Dokumentation: FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [Dokumentation: String](https://developer.apple.com/documentation/swift/string)
+- [Tutorial: Reading and Writing Files in Swift](https://www.raywenderlich.com/100-swhift-tutorial-how-to-read-and-write-files-in-swift)

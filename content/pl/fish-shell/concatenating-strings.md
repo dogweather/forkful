@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Łączenie ciągów tekstowych"
-simple_title:         "Łączenie ciągów tekstowych"
+title:                "Łączenie ciągów znaków"
+html_title:           "Fish Shell: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Wielu programistów często potrzebuje łączyć dwa lub więcej ciągów tekstu w jeden, w celu utworzenia nowego ciągu lub wyświetlenia danych w czytelny sposób. W tym artykule dowiesz się, jak wykorzystać polecenie concatenation w Fish Shell, aby skutecznie manipulować ciągami tekstowymi.
 
-## Jak to zrobić
-Wykonanie konkatenacji w Fish Shell jest bardzo proste - wystarczy użyć operatora plus (+) między dwoma ciągami tekstowymi. Przykładowy kod pokazujący ten proces wygląda następująco:
+Jeśli często pracujesz z zasobami tekstowymi lub plikami, na pewno spotkałeś się z koniecznością łączenia (konkatenacji) ciągów znaków. Jest to często wykorzystywana operacja w programowaniu, pozwalająca na tworzenie nowych informacji na podstawie już istniejących. W tym artykule dowiesz się, jak używać narzędzia Fish Shell do konkatenacji stringów w prosty i skuteczny sposób.
 
-```Fish Shell
-echo "Cześć" + " " + "świecie"
-```
-Wynik wyświetli się jako "Cześć świat" po użyciu polecenia echo. Możemy również przypisać wynik konkatenacji do zmiennej i wykorzystać ją później w kodzie.
+## Jak to zrobić?
+
+Fish Shell posiada wbudowane funkcje, które umożliwiają łatwe łączenie stringów. Aby to zrobić, wystarczy użyć operatora "++", który dodaje dwa ciągi znaków razem, tworząc nowy ciąg. Na przykład:
 
 ```Fish Shell
-set przywitanie "Cześć" + " " + "świecie"
-echo $przywitanie
+set first_name "Jan"
+set last_name "Kowalski"
+set full_name $first_name" "$last_name
+echo $full_name
 ```
-W tym przypadku zmienna "przywitanie" zawiera ciąg tekstowy "Cześć świat", który następnie jest wyświetlany przez polecenie echo.
+
+W tym przykładzie, najpierw tworzymy zmienne "first_name" i "last_name" przechowujące imię i nazwisko. Następnie używamy operatora "++" do połączenia tych dwóch zmiennych i przypisujemy wynik do zmiennej "full_name". W końcu, korzystając z komendy "echo", wyświetlamy zawartość zmiennej "full_name", która jest połączeniem obu ciągów.
 
 ## Deep Dive
-Podczas konkatenacji ciągów tekstowych należy pamiętać o kilku ważnych kwestiach. Po pierwsze, polecenie concatenation można stosować tylko między dwoma ciągami tekstowymi - nie można łączyć ciągów z innymi typami danych, takimi jak liczby czy zmienne typu boolean.
 
-Kolejną ważną rzeczą jest kolejność wykonywania polecenia. Jeśli będziemy używać operatora plus (+) między dwoma ciągami tekstowymi, to będzie również działać jako operator arytmetyczny i wykonać dodawanie. Aby uniknąć takiej sytuacji, należy użyć nawiasów, aby wyraźnie określić, że chcemy skonkatenować dwa ciągi, a nie wykonać dodawanie.
+Fish Shell oferuje również funkcję "string join", która pozwala na łączenie listy stringów w jeden ciąg znaków. Na przykład:
 
 ```Fish Shell
-echo "5" + "2"  # Wynik: 7
-echo ("5" + "2")  # Wynik: 52
+set fruits "jabłko" "banan" "truskawka"
+string join " " $fruits
 ```
-W przypadku użycia innych operatorów niż plus (+), takich jak minus (-) lub gwiazdka (*), polecenie concatenation nie zadziała i otrzymamy błąd.
 
-## Zobacz także
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-- Przykłady zastosowania konkatenacji w Fish Shell: https://fishshell.com/docs/current/tutorial.html#combining
-- Wideo tutorial o konkatenacji w Fish Shell: https://www.youtube.com/watch?v=JhKztLpl5yk
+W tym przykładzie, tworzymy zmienną "fruits", która przechowuje listę trzech różnych owoców. Następnie używamy funkcji "string join", która pozwala na połączenie wszystkich elementów listy w jedno wyrażenie, z separatorem (spacją w tym przypadku) pomiędzy poszczególnymi elementami. 
+
+## Zobacz również
+
+* Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+* Samouczek Fish Shell: https://fishshell.com/docs/current/tutorial.html
+* Popularne komendy Fish Shell: https://fishshell.com/docs/current/cmds.html

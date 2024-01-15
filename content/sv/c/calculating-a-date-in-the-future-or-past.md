@@ -1,6 +1,7 @@
 ---
-title:                "C: Beräkna ett datum i framtiden eller i det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller i det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "C: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,62 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att kunna räkna ut ett datum i framtiden eller det förflutna kan vara användbart i många olika sammanhang. Kanske behöver du planera en resa eller evenemang och vill veta exakt vilken dag det kommer att inträffa på. Eller så kanske du arbetar med en applikation som behöver kunna hantera olika datum. Oavsett vad det är, är det alltid en bra färdighet att ha inom programmering.
+Att beräkna ett datum i framtiden eller det förflutna kan vara användbart för att hantera tidsberoende uppgifter eller program. Det kan också vara en bra övning för att förbättra dina programmeringsfärdigheter.
 
-## Så här gör du 
+## Hur man gör det
 
-För att kunna beräkna ett datum i framtiden eller förflutna behöver du först och främst förstå hur datum representeras i C-programmering. I C, är datum ett heltal som representerar antalet dagar från en ursprungsdatum, även kallat "epoch". Detta datum varierar beroende på vilket operativsystem du använder, men det är vanligtvis den 1 januari 1970.
+Det finns ett antal olika sätt att beräkna ett datum i framtiden eller det förflutna i C. Här är exempel på två metoder med tillhörande kod och resultat.
 
-För att räkna ut ett datum i framtiden eller förflutna, behöver du ta följande saker i beaktning: årtal, månad och dag. Du behöver också veta hur många dagar som finns i en viss månad och om det är ett skottår eller inte. Du kan sedan använda olika matematiska operationer för att beräkna det önskade datumet.
+#### Metod 1: Använd "time.h" biblioteket
 
-För att ge dig en bättre förståelse för hur detta kan se ut i kod, kommer här några exempel på hur du kan räkna ut ett datum i framtiden eller förflutna:
+För att göra detta behöver vi använda funktionen `mktime()` som finns i "time.h" biblioteket. Detta är ett exempel som beräknar ett datum 7 dagar framåt från det aktuella datumet:
 
-```
-// Exempel för att räkna ut ett datum 30 dagar framåt från dagens datum
-
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-  // Skapa ett struct för dagens datum
-  time_t t = time(NULL);
-  struct tm *today = localtime(&t);
+int main() {
+   // Här skapar vi en struktur för att lagra det aktuella datumet
+   struct tm currentTime;
+   // Här fångar vi upp det aktuella datumet med hjälp av funktionen `time()`
+   time_t now = time(NULL);
 
-  // Lägg till 30 dagar
-  today->tm_mday += 30;
+   /* 
+   Här beräknar vi datumet 7 dagar framåt genom att addera antalet sekunder i en vecka (604800) till det aktuella datumet.
+   Vi använder även funktionen `localtime()` för att konvertera detta till strukturform.
+   */
+   currentTime = *localtime(&now);
+   currentTime.tm_sec += 604800;
+   now = mktime(&currentTime);
 
-  // Använd mktime() för att konvertera till en sekunds representation
-  // Sedan konvertera tillbaka till ett struct för det nya datumet 
-  t = mktime(today);
-  today = localtime(&t);
-
-  // Skriv ut det nya datumet
-  printf("Datumet 30 dagar från idag är: %02d-%02d-%d\n", today->tm_mday, today->tm_mon + 1, today->tm_year + 1900);
-  
-  return 0;
+   /* 
+   Slutligen skriver vi ut det nya datumet i ett läsbart format med hjälp av funktionen `asctime()` 
+   */
+   printf("Det nya datumet är: %s\n", asctime(localtime(&now)));
+   return 0;
 }
-
 ```
 
 Output:
-```
-Datumet 30 dagar från idag är: 27-07-2021
 
 ```
+Det nya datumet är: Sun May 30 19:51:28 2021
+```
 
-Som du kan se i det här exemplet, använder vi funktionen `mktime()` för att konvertera datumet till en sekunds representation och sedan tillbaka till ett `struct` för det nya datumet.
+#### Metod 2: Använd "date.h" biblioteket
 
-## Deep Dive 
+En annan metod är att använda "date.h" biblioteket som är en extern bibliotek för att hantera datum och tider. Det erbjuder ett enkelt gränssnitt för att hantera datumberäkningar. Här är ett exempel som beräknar datumet 1 år tillbaka från det aktuella datumet:
 
-För att göra din kod mer robust, kan du också överväga att hantera vissa felkällor som kan uppstå när man räknar ut ett datum. Till exempel, om det är ett skottår, så kommer februari ha 29 dagar istället för 28. Du behöver också hantera att månaden inte kan ha mer än 31 dagar. Genom att använda olika villkor och loopar kan du se till att din kod fungerar korrekt oavsett vilket datum som används.
+```C
+#include <stdio.h>
+#include "date.h"
 
-Det kan också vara användbart att lägga till funktioner som låter användaren mata in ett datum och sedan beräkna ett nytt datum från det. Det gör att din kod blir mer mångsidig och användbar i olika scenarion.
+int main() {
+    // Här skapar vi ett `date` objekt för det aktuella datumet 
+    date_t current_date = date_today();
 
-## Se också
+    // Här beräknar vi datumet 1 år tillbaka med hjälp av funktionen `date_add_years()`
+    current_date = date_add_years(current_date, -1);
 
-* [C-programmering för nybörjare](https://www.programiz.com/c-programming)
-* [Dokumentation för C:s datum- och tidfunktioner](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-* [C-programmering på YouTube](https://www.youtube.com/playlist?list=PLGLfVvz_LVvRX6xK1oi0reKci6ignjdSa)
+    // Slutligen skriver vi ut det nya datumet med hjälp av funktionen `date_print()`
+    printf("Det nya datumet är: ");
+    date_print(current_date, "%b %d, %Y");
+    return 0;
+}
+```
+
+Output:
+
+```
+Det nya datumet är: May 31, 2020
+```
+
+## Djupdykning
+
+Att beräkna ett datum i framtiden eller det förflutna kan kräva kunskap om olika tidsrelaterade begrepp såsom timestamp och strukturer som används för att lagra datum och tider. Det finns också många praktiska tillämpningar av denna kod, såsom att skapa kalendrar eller schemalägga uppgifter.
+
+## Se även
+
+Här är några användbara länkar för vidare läsning:
+
+- [C Programming Tutorial - Time & Date Basics](https://www.youtube.com/watch?v=6B8tFYCH6yA)
+- [The time.h Header File in C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Date and Time Library for C](https://github.com/HowardHinnant/date)

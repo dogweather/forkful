@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Working with json"
+title:                "Working with json"
+html_title:           "C++ recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "C++"
 category:             "C++"
@@ -10,65 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-JSON, short for JavaScript Object Notation, has become a staple format for data interchange in modern programming. It's lightweight, easy to read, and widely supported by various programming languages, making it a popular choice for storing and transferring data. In this blog post, we'll delve into the world of C++ and see how we can work with JSON data.
+JSON (JavaScript Object Notation) is a widely used data interchange format that is easy for humans to read and write, as well as for machines to parse and generate. It has become a popular choice for data serialization in web applications, making it an essential skill for any modern programmer.
 
 ## How To
-
-To work with JSON in C++, we'll be using a popular library called "nlohmann/json". To start, we need to include the library in our code:
-
+To work with JSON in C++, we first need to include the json library:
 ```C++
-#include <iostream>
-#include "json.hpp"
-
-using json = nlohmann::json;
+#include <json/json.h>
 ```
-
-Next, we'll create a JSON object and populate it with some data, and then serialize it using the `dump()` function:
-
+Next, we can create a JSON object and add key-value pairs to it:
 ```C++
-json data = {
-  {"name", "John"},
-  {"age", 25},
-  {"hobbies", {"coding", "reading", "gaming"}}
-};
-
-std::cout << data.dump() << std::endl;
+Json::Value myObj;
+myObj["name"] = "John";
+myObj["age"] = 25;
 ```
-
-The output of the above code would be:
-
+We can also create nested objects and arrays:
 ```C++
-{
-  "name": "John",
-  "age": 25,
-  "hobbies": ["coding", "reading", "gaming"]
-}
+Json::Value myNestedObj;
+myNestedObj["hobbies"].append("reading");
+myNestedObj["hobbies"].append("playing guitar");
+myObj["personal_info"] = myNestedObj;
 ```
-
-We can also access and modify data in a JSON object using familiar syntax:
-
+To convert the JSON object to a string, we can use the `Json::FastWriter` class:
 ```C++
-data["age"] = 26;
+Json::FastWriter writer;
+std::string jsonString = writer.write(myObj);
 ```
-
-We can also parse a JSON string to create a JSON object:
-
+And to parse a JSON string into a JSON object, we can use the `Json::Reader` class:
 ```C++
-std::string str = "{\"name\": \"Jane\", \"age\": 30}";
+Json::Reader reader;
+Json::Value parsedObj;
+reader.parse(jsonString, parsedObj);
 
-json parsed = json::parse(str);
+std::string name = parsedObj["name"].asString();   // "John"
+int age = parsedObj["age"].asInt();                 // 25
+std::string hobby1 = parsedObj["personal_info"]["hobbies"][0].asString();     // "reading"
 ```
-
-The library also provides many other useful functions such as checking if a key exists, iterating through objects, and more. You can check out the full documentation for more details.
 
 ## Deep Dive
+The `Json::Value` class provides different methods for accessing and manipulating data based on its type. For example, `asString()` can only be used for string values, but `asInt()` can only be used for integer values. It is important to check the type of the value before using these methods to avoid unexpected errors.
 
-The "nlohmann/json" library is built on top of C++11 features, making it easy to use and efficient. It also provides a variety of ways to interact with JSON data, including using iterators, the `at()` function, and more. Additionally, the library has built-in support for conversions to and from different data types, making it convenient to work with existing data structures in your code.
+The `Json::Reader` class has an `isStrictMode()` method that allows us to choose whether to strictly validate the syntax of the JSON string. This can be useful when working with data from external sources.
 
-JSON also supports much more than just basic data types. It allows for nesting objects and arrays, as well as storing more complex data such as dates, binary data, and even custom objects. This makes it a versatile format for storing and transferring data in various applications.
+JSON also supports custom data types through the `Json::Value::null`, `Json::Value::boolean`, `Json::Value::array`, and `Json::Value::object` methods, allowing for more flexibility in data storage.
 
 ## See Also
-
-- [nlohmann/json Documentation](https://github.com/nlohmann/json/blob/develop/README.md)
-- [JSON Tutorial](https://www.json.org/json-en.html)
+- Official JSON website: https://www.json.org/
+- C++ JSON library: https://github.com/open-source-parsers/jsoncpp
+- Guide to using JSON in C++: https://www.json.org/example.html

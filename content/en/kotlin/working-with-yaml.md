@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Kotlin recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,61 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-YAML, or Yet Another Markup Language, has been gaining popularity in the developer community due to its simplicity and readability. It is a human-friendly data serialization format that is used for storing and transferring data between applications. In this blog post, we will explore why YAML is a great option for developers and how it can be implemented in Kotlin.
+If you're a developer working with configuration files, you've likely encountered YAML at some point. This human-readable data serialization language has gained popularity for its simple syntax and flexibility, making it a popular choice for configuration management in the tech industry.
 
 ## How To
 
-To start working with YAML in Kotlin, we need to import the corresponding library in our project's build file. For Gradle, we can add the dependency in the `build.gradle` file as follows:
+To get started with YAML in your Kotlin project, you first need to add the dependency to your project's build.gradle file:
 
-```
+```Kotlin
 dependencies {
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.1'
+    implementation("org.yaml:snakeyaml:1.28")
 }
 ```
 
-Once the dependency is added, we can use the `ObjectMapper` class from Jackson library to read and write YAML files. Here's an example of how we can read a YAML file and convert it into a Kotlin data class:
+Once the dependency is added, you can start working with YAML in your code. Here's how you can create a YAML document and write it to a file:
 
-```
-// YAML file content:
-// name: John
-// age: 25
+```Kotlin
+// create a YAML node
+val rootNode = Yaml.createYamlDocumentBuilder().build()
 
-data class Person(val name: String, val age: Int)
+// add key-value pairs
+rootNode.addNode("name", "John Doe")
+rootNode.addNode("age", 25)
 
-val mapper = ObjectMapper(YAMLFactory())
-val person: Person = mapper.readValue(File("person.yaml"), Person::class.java)
-println(person.name) // Outputs: John
-println(person.age) // Outputs: 25
-```
-
-We can also convert a Kotlin data class into a YAML file using the `writeValue()` method from the `ObjectMapper` class:
-
-```
-val person = Person("Jane", 30)
-mapper.writeValue(File("person.yaml"), person)
+// write the YAML document to a file
+val file = File("person.yaml")
+file.writeText(rootNode.toString())
 ```
 
-This will create a YAML file with the following content:
+The resulting YAML file will look like this:
 
+```yaml
+name: John Doe
+age: 25
 ```
-name: Jane
-age: 30
+
+To read a YAML file into your Kotlin code, you can use the same Yaml class and its `load()` method:
+
+```Kotlin
+// read YAML file into a string
+val yamlString = File("person.yaml").readText()
+
+// load the YAML into a YamlDocument object
+val document = Yaml.load(yamlString)
+
+// access data using keys
+println(document["name"]) // prints "John Doe"
+println(document["age"]) // prints "25"
 ```
 
 ## Deep Dive
 
-YAML supports various data types such as strings, integers, booleans, and arrays. It also allows for nested structures, making it a very versatile format. One of its unique features is the ability to use anchors and aliases, which can help in reducing redundancy in large data structures.
+YAML stands for "YAML Ain't Markup Language" and was designed to be a human-friendly way to serialize data. It supports complex data structures like lists, maps, and even custom objects. 
 
-YAML also has support for comments, making it easier to document and understand the data. It is also human-friendly, meaning it can be easily read and edited without the use of specialized tools.
+One of the key features of YAML is its ability to use anchors and aliases, allowing you to reference one piece of data from another. This can be useful when creating a large YAML document with repeating sections.
 
-While working with YAML in Kotlin, it is important to handle exceptions like `InvalidFormatException` and `JsonMappingException` that may occur due to incorrect formatting or mismatch of data types. Jackson library provides methods like `enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)` to handle such exceptions.
+Another advantage of YAML is its compatibility with various programming languages. You can easily parse YAML data in languages like Java, Python, and of course, Kotlin. This makes it a great choice for cross-platform projects.
 
 ## See Also
 
-To learn more about working with YAML in Kotlin, check out these resources:
-
-- [Official Jackson YAML documentation](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)
-- [Kotlin serialization with YAML](https://github.com/FasterXML/jackson-module-kotlin)
-- [YAML vs. JSON: Which is Better for Your Project](https://stackify.com/yaml-vs-json/)
-
-YAML can be a great option for developers looking for a human-friendly and versatile data format. With the help of Jackson library, it becomes even easier to integrate YAML in Kotlin projects. So, next time you need to store or transfer data, give YAML a try!
+- [Official YAML website](https://yaml.org/)
+- [Kotlin documentation on using YAML](https://kotlinlang.org/docs/tutorials/serialization.html#yaml)
+- [SnakeYAML library on GitHub](https://github.com/snakeyaml-engine/snakeyaml)

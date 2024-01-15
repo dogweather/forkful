@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Przesyłanie żądania http z uwierzytelnianiem podstawowym"
-simple_title:         "Przesyłanie żądania http z uwierzytelnianiem podstawowym"
+title:                "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+html_title:           "Arduino: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,52 +12,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele sytuacji, kiedy chcielibyśmy wysłać zapytanie HTTP wraz z podstawową autoryzacją z poziomu naszego projektu w Arduino. Może to być konieczne do komunikacji z zewnętrznymi serwisami, wykonywania zdalnych żądań lub różnego rodzaju integracji z internetowymi usługami. Dlatego ważne jest, aby umieć obsługiwać tego typu zapytania przy pomocy Arduino.
+Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym może być przydatne, gdy chcemy uzyskać dostęp do chronionego zasobu lub wykonania określonej czynności na zdalnym serwerze.
 
 ## Jak to zrobić
 
-Aby wysłać zapytanie HTTP z wykorzystaniem podstawowej autoryzacji w Arduino, musimy użyć przewiązanej biblioteki "WiFiClient.h". Następnie możemy użyć funkcji "Basic" do ustawienia loginu i hasła w formacie "username:password". W następnym kroku należy pobrać klienta WiFi i ustawić adres oraz port serwera, do którego chcemy wysłać zapytanie. Następnie można zdefiniować żądanie metodą "GET" lub "POST" oraz podać potrzebne nagłówki. W końcu, gdy jesteśmy gotowi, możemy wysłać nasze żądanie przy pomocy metody "show" i odczytać odpowiedź poprzez metodę "readString". Oto przykładowy kod, który przedstawia to wyżej:
+```Arduino
+#include <WiFiClientSecure.h> // dołącz bibliotekę WiFiClientSecure
 
-```
-Arduino #include <WiFiClient.h>
+char ssid[] = "nazwa_sieci"; // wprowadź nazwę sieci WiFi
+char pass[] = "hasło"; // wprowadź hasło sieci WiFi
+char host[] = "adres_url"; // wprowadź adres URL dla żądania HTTP
+int port = 443; // podstawowy port dla HTTPS
 
-char* server = "example.com";
-int port = 80;
+WiFiClientSecure client; // inicjalizuj obiekt klienta WiFiClientSecure
 
 void setup() {
-  Serial.begin(115200);
-
-  WiFiClient client;
-  if (!client.connect(server, port)) {
-    Serial.println("connection failed");
-    return;
+  Serial.begin(9600); // inicjalizuj port szeregowy
+  
+  WiFi.begin(ssid, pass); // połącz z siecią WiFi
+  Serial.println("Connecting to WiFi...");
+  
+  while (WiFi.status() != WL_CONNECTED) { // oczekuj na połączenie
+    delay(500);
+    Serial.print(".");
   }
 
-  client.print("GET / HTTP/1.0\r\n");
-  client.print("Host: example.com\r\n");
-  client.print("Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=\r\n");
-  client.print("Connection: close\r\n\r\n");
-  delay(100);
+  Serial.println("Connected!"); // jeśli połączenie nawiązane, wyświetl komunikat
 
-  while(client.available()) {
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
+  // Wykonaj żądanie HTTP do serwera
+  Serial.println("Making HTTPS request to server...");
+  if (client.connect(host, port)) { // połącz się z serwerem
+    client.print("GET / HTTP/1.1\r\n"); // ustaw metodę, ścieżkę i wersję protokołu
+    client.print("Host: ");
+    client.print(host);
+    client.print("\r\n");
+    client.print("Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l\r\n"); // dodaj nagłówek uwierzytelniania
+    client.print("\r\n");
   }
 }
 
 void loop() {
-  //
+  if (client.connected() && !client.available()) { // sprawdź czy połączenie jest aktywne i nie ma już dostępnych danych
+    Serial.println("No more data!"); // jeśli nie ma już danych, wyświetl komunikat
+    client.stop(); // zamknij połączenie
+    while(true); // zatrzymaj pętlę
+  }
+  
+  while(client.available()) { // dopóki są dostępne dane
+    char c = client.read(); // odczytaj znak
+    Serial.print(c); // wyświetl go na monitorze szeregowym
+  }
 }
+
 ```
 
-W powyższym przykładzie użytkownik to "username", a hasło to "password". Może to być kodowane w base64 lub inny wybrany przez nas sposób, pod warunkiem, że jest to zgodne ze standardem HTTP.
+### Przykładowy wynik
 
-## Wnikliwa analiza
+Po wykonaniu żądania HTTP z basic authentication, otrzymamy odpowiedź serwera zawierającą informacje lub wykonującą określoną akcję.
 
-Wysyłanie zapytań HTTP z podstawową autoryzacją może wydawać się prostym zadaniem, ale istnieje kilka szczegółów, które warto zauważyć. Po pierwsze, ważne jest, aby znać poprawne sposoby kodowania logina i hasła oraz umieć wykorzystać odpowiednie nagłówki w zależności od używanego protokołu HTTP. Ważne jest również, aby upewnić się, że nasze żądanie zostało poprawnie wysłane i odbierać odpowiedź w sposób, który zapobiega błędom. Jeśli chcemy bardziej zaawansowanych funkcji, warto rozważyć użycie gotowych bibliotek do obsługi HTTP, które mogą ułatwić nam pracę.
+```
+HTTP/1.1 200 OK
+Date: Sun, 22 Aug 2021 17:00:00 GMT
+Server: Apache
+Content-Type: text/html
+Content-Length: 15
 
-## Zobacz też
+Hello from server
+```
 
-- [ESP8266 Arduino - WiFiClient class](https://arduino-esp8266.readthedocs.io/en/2.5.0/esp8266wifi/client-examples.html)
-- [Base64 encoding and decoding](https://www.arduino.cc/reference/en/language/functions/advanced-io/base64decode/)
-- [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+## Deep Dive
+
+Podczas wysyłania żądania HTTP z uwierzytelnieniem podstawowym, należy wysłać nagłówek "Authorization" zawierający kodowania Base64 nazwy użytkownika i hasła, oddzielone dwukropkiem (np. "Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l").
+
+W przypadku uwierzytelniania podstawowego, informacje te są wysyłane w otwartym tekście i nie stanowią idealnego sposobu zabezpieczenia naszych danych. W przyszłości warto rozważyć korzystanie z innego rodzaju uwierzytelniania, takiego jak uwierzytelnianie z użyciem tokenu.
+
+## Zobacz także
+
+- [Podstawowe kody odpowiedzi serwera HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Status)
+- [Dokumentacja biblioteki WiFiClientSecure](https://www.arduino.cc/en/Reference/WiFiClientSecure)
+- [Dokumentacja protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP)

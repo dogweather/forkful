@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Nauhoitteiden suurentaminen"
-simple_title:         "Nauhoitteiden suurentaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Rust: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,69 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi Käyttää Rust-ohjelmointikieltä: Merkkijonon suurennuksen perusteet
+## Miksi
 
-Rust on nykyaikainen ja nopeasti kasvava ohjelmointikieli, joka tarjoaa tehokkaan vaihtoehdon C- ja C++-kielille. Se on tullut suosituksi erityisesti sen vahvan tyypityksen, turvallisuuden ja suorituskyvyn vuoksi. Yksi Rustin kätevistä ominaisuuksista on sen kyky käsitellä merkkijonoja helposti ja tehokkaasti. Tässä blogikirjoituksessa opit, miten pääset alkuun merkkijonojen suurennuksen kanssa Rustissa.
+Miksi ihmiset haluavat muuttaa stringin ensimmäisen kirjaimen isoksi? Tämä voi olla tarpeen esimerkiksi, jos halutaan noudattaa tiettyä nimeämiskäytäntöä tai korostaa tiettyä sanaa lauseessa.
 
-## Kuinka Suurentaa Merkkijono Rust-ohjelmoinnissa
+## Miten
 
-Rustissa on sisäänrakennettu toiminto merkkijonon suurentamiseen, nimeltään `to_uppercase()`. Tämä toiminto ottaa merkkijonon vastaan parametrina ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu isoiksi. Seuraa alla olevia esimerkkejä ja niiden tulostusta ymmärtääksesi paremmin, kuinka `to_uppercase()` toimii.
-
-```Rust
-let lowercase_string = "Hei, maailma!";
-
-// Käytetään to_uppercase() toimintoa suurentamaan merkkijono
-let uppercase_string = lowercase_string.to_uppercase();
-
-println!("Alkuperäinen merkkijono: {}", lowercase_string);
-println!("Suurennettu merkkijono: {}", uppercase_string);
-```
-
-Tämä koodi tulostaa seuraavan:
-
-```txt
-Alkuperäinen merkkijono: Hei, maailma!
-Suurennettu merkkijono: HEI, MAAILMA!
-```
-
-Voit myös käyttää `to_uppercase()` toimintoa merkkijonon osien suurentamiseen, jos haluat. Seuraavassa esimerkissä käytetään merkkijonolukua ja `to_uppercase()` toimintoa muuttamaan vain ensimmäinen kirjain isoksi.
+Capitalizing stringin Rustissa on helppoa! Ensimmäinen askel on tuoda käyttöön standardikirjaston `String` moduli, jotta voimme käyttää sen metodeja. Sitten käytämme `to_uppercase` -metodia muuttaaksemme stringin ensimmäisen kirjaimen isoksi. Tässä yksinkertainen esimerkki:
 
 ```Rust
-let lowercase_string = "tervetuloa";
+use std::string::String;
 
-// Käytetään to_uppercase() toimintoa suurentamaan vain ensimmäinen kirjain
-let uppercase_string = lowercase_string[..1].to_uppercase() + &lowercase_string[1..];
+let s = String::from("hello rust");
+let capitalized = s.to_uppercase();
 
-println!("Alkuperäinen merkkijono: {}", lowercase_string);
-println!("Suurennettu merkkijono: {}", uppercase_string);
+println!("{}", capitalized); // Tulostaa "HELLO RUST"
 ```
 
-Tulostus on seuraavanlainen:
+## Syvällinen sukellus
 
-```txt
-Alkuperäinen merkkijono: tervetuloa
-Suurennettu merkkijono: Tervetuloa
-```
+Vaikka `to_uppercase` on kätevä tapa muuttaa stringin ensimmäinen kirjain isoksi, on tärkeää huomata, että tämä metodi ei tule muuttamaan stringin alkuperäistä arvoa. Sen sijaan se palauttaa uuden `String` -olion, joka sisältää muutetun version.
 
-## Syvemmälle Merkkijonon Suurentamiseen
-
-Merkkijonon suurentamisesta on hyötyä monissa erilaisissa tilanteissa, kuten käyttäjältä syötettyjen tietojen validoinnissa, tekstipohjaisissa sovelluksissa ja jopa yksinkertaisesti tietojen muokkaamisessa. On kuitenkin tärkeää huomata, että `to_uppercase()` toiminto ei muuta alkuperäistä merkkijonoa, vaan luo uuden suurennetun version. Jos haluat muuttaa alkuperäistä merkkijonoa suuriksi kirjaimiksi pysyvästi, voit käyttää `.to_uppercase()` metodin sijasta `make_ascii_uppercase()` metodia.
+Lisäksi, jos haluat muuttaa vain yksittäisen stringin kirjaimen isoksi, voit käyttää `to_uppercase` metodia suoraan merkin `char` kanssa.
 
 ```Rust
-let mut lowercase_string = String::from("kissa");
+let c = 'a';
+let capitalized_char = c.to_uppercase();
 
-// Käytetään make_ascii_uppercase() metodia muuttamaan alkuperäinen merkkijono
-lowercase_string.make_ascii_uppercase();
-
-println!("Alkuperäinen merkkijono: {}", lowercase_string);
+println!("{}", capitalized_char); // Tulostaa "A"
 ```
 
-Tämä tulostaa:
+## Katso myös
 
-```txt
-Alkuperäinen merkkijono: KISSA
-```
-
-## Katso Myös
-
-- [Rustin virallinen opas](https://doc
+- [Rust Standard Library](https://doc.rust-lang.org/std/string/index.html)
+- [to_uppercase - Dokumentointi](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Json के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Kotlin: Json के साथ काम करना"
 simple_title:         "Json के साथ काम करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,48 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-जेसोन(JSON) के साथ काम करने में कोई संबंध क्यों बनाएं?
+
+क्या आपने कभी किसी एप्लिकेशन या वेबसाइट पर डेटा को उपलब्ध कराने के लिए JSON या "जेस्न" को सुना है? हां, ऐसा होता है क्योंकि यह एक पॉपुलर डेटा फॉर्मेट है जो विभिन्न एप्लिकेशन और सर्विसेज के बीच डेटा को सरल रूप से साझा करने का एक आसान तरीका है। JSON को समझना और उसके साथ काम करना कोई कठिन काम नहीं है और इसके लिए Kotlin भी एक मजबूत भाषा है। इस लेख में, हम देखेंगे कि Kotlin में JSON को कैसे उपयोग किया जा सकता है और इसे समझने के लिए कुछ गहराई में भी जाएंगे।
 
 ## कैसे करें
-`Kotlin` का सरावण करते समय जेसोन(JSON) का उपयोग कैसे करें:
 
-जेसोन(JSON) एक संग्रहीत डाटा प्रारूप है जो कि कुछ आसान `key-value` पैरों से मिलकर बनता है। यह डाटा को अन्य साधनों जैसे डेटाबेस, वेब सर्वर आदि से आसानी से भेजने और प्राप्त करने को सुनिश्चित करता है। जेसेन(JSON) को संग्रहीत करना और पार्स करना भी बहुत आसान होता है। नीचे दिए गए कोड ब्लॉक्स में उदाहरण है:
+एक साधारण JSON फ़ाइल को Kotlin में कैसे पढ़ा जाए, बस कुछ ही लाइनों में आप देख सकते हैं:
 
 ```Kotlin
-// JSON फ़ाइल बनाएं
-val jsonObject = JSONObject()
-jsonObject.put("name", "John")
-jsonObject.put("age", 30)
-jsonObject.put("hobby", "playing guitar")
+val jsonString = """ 
+{
+    "नाम": "क्या पता",
+    "उम्र": 28,
+    "शहर": "दिल्ली"
+} 
+"""
 
-// JSON स्ट्रिंग को प्रिंट करें
-println(jsonObject.toString())
-
-// Output: {"name":"John","age":30,"hobby":"playing guitar"}
-
-// JSON स्ट्रिंग को पार्स करें
-val jsonString = "{\"name\":\"Jane\",\"age\":25,\"hobby\":\"reading books\"}"
-val json = JSONObject(jsonString)
-
-// डेटा प्रिंट करें
-println(json.getString("name"))
-println(json.getInt("age"))
-println(json.getString("hobby"))
-
-// Output: Jane
-//         25
-//         reading books
+val jsonObject = JSONObject(jsonString)
+println("नाम: " + jsonObject.getString("नाम"))
+println("उम्र: " + jsonObject.getInt("उम्र"))
+println("शहर: " + jsonObject.getString("शहर"))
 ```
 
-## गहराई में जाएं
-जेसोन(JSON) के साथ काम करते समय और उसके अंदर हुए बदलावों को समझने के लिए अधिक जानकारी के लिए आप निम्नलिखित लिंक्स पर जा सकते हैं:
+पहले हमने Kotlin में एक स्ट्रिंग से बनी JSON फ़ाइल बनाई है और उसे `jsonString` नाम के वेरिएबल में स्टोर किया है। फिर हमने इस `jsonString` को `JSONObject` कॉन्स्ट्रक्टर के साथ डाला है, जो एक JSONObject के ऑब्जेक्ट को बनाता है। फाइनली, हमने `getString` और `getInt` के माध्यम से अलग-अलग फ़ील्ड्स की वैल्यू निकाली है और प्रिंट किया है।
 
-- [Kotlin JSON डॉक्यूमेंटेशन](https://kotlinlang.org/docs/reference/js-interop.html)
-- [जेसोन(JSON) का प्रारूप](https://www.json.org/json-en.html)
-- [जावा स्टैंडर्ड JSON लाइब्रेरी](https://github.com/stleary/JSON-java) 
+अगर आपको JSON फ़ाइल में अन्य तरह की डेटा है, जैसे कि एक एरे, तो उसे Kotlin के साथ कैसे पढ़ा जाए, देखें:
 
-## और भी देखें
-अन्य साधनों को सीखने के लिए आप इसे लिंक्स पर जान सकते हैं:
-
-- [Kotlin आधिकारिक वेबसाइट](https://kotlinlang.org/)
-- [Kotlin कोडिंग प्रोजेक्ट्स](https://github.com/KotlinBy/awesome-kotlin)
+```Kotlin
+val jsonArrayString = """ 
+[
+    {
+        "उपनाम": "आ

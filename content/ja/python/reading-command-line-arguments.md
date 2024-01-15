@@ -1,6 +1,7 @@
 ---
-title:                "Python: コンピュータプログラミングの記事名：コマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラミングの記事名：コマンドライン引数の読み取り"
+title:                "コンピュータープログラミングの記事のタイトル：「コマンドライン引数の読み込み」"
+html_title:           "Python: コンピュータープログラミングの記事のタイトル：「コマンドライン引数の読み込み」"
+simple_title:         "コンピュータープログラミングの記事のタイトル：「コマンドライン引数の読み込み」"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -11,34 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Pythonを使ったプログラミングをする際、コマンドライン引数を読み取ることは非常に重要です。コマンドライン引数を正しく読み取ることにより、より動的なプログラムを作成することができます。
+コマンドライン引数を読み取ることの重要性について、簡潔に説明します。
 
 ## 方法
 
-コマンドライン引数を読み取るために、sysモジュールを使用します。以下のようにコードを書くことで、コマンドライン引数を読み取ることができます。
+Pythonでコマンドライン引数を読み取るための簡単な手順を紹介します。
 
+```
 ```Python
 import sys
-
-# Pythonファイル名と引数を格納するリストを作成
-args = sys.argv
-
-# 引数を取得してプログラムに応じた処理を実行する
-if len(args) == 2:
-    # 引数が1つの場合の処理
-    print("こんにちは、{}さん！".format(args[1]))
-else:
-    print("こんにちは、名無しのエンジニアさん！")
+print(sys.argv)
 ```
 
-上記の例では、コマンドラインで引数を指定することで、プログラムが動的に振る舞うようになります。例えば、コマンドラインで"python hello.py John"と入力することで、"こんにちは、Johnさん！"という出力を得ることができます。
+このコードを実行すると、ターミナルで実行した際のコマンドライン引数が出力されます。例えば、`python myscript.py argument1 argument2`というコードを実行すると、`['myscript.py', 'argument1', 'argument2']`というリストが出力されます。
 
-## 詳細を掘り下げる
+## ディープダイブ
 
-コマンドライン引数を読み取る方法には様々なバリエーションがあります。例えば、argparseモジュールを使用することで、より複雑なコマンドライン引数を受け取ることができます。また、コマンドライン引数を使用する際にはエラー処理も重要です。例えば、ユーザーが引数を間違って入力しても、エラーメッセージを出してプログラムを正しく動かすようにすることができます。
+コマンドライン引数を読み取る際によく使われるarsvモジュールについて細かく解説します。このモジュールを使用することで、コマンドライン引数をより柔軟に取得することができます。
 
-## See Also
+```
+```Python
+import argparse
 
-- [Pythonの公式ドキュメント - sysモジュール](https://docs.python.org/ja/3/library/sys.html)
-- [Pythonの公式ドキュメント - argparseモジュール](https://docs.python.org/ja/3/howto/argparse.html)
-- [Pythonの公式ドキュメント - エラー処理](https://docs.python.org/ja/3/tutorial/errors.html)
+parser = argparse.ArgumentParser()
+parser.add_argument("--name", help="Enter your name")
+parser.add_argument("--age", help="Enter your age")
+args = parser.parse_args()
+print(args.name)
+print(args.age)
+```
+
+このコードでは、引数として`--name`や`--age`を受け取ることができ、それぞれの値を取得することができます。例えば、`python myscript.py --name John --age 25`というコマンドを実行すると、`John`と`25`という出力が得られます。
+
+## 参考リンク
+- [公式Pythonドキュメント - コマンドライン引数](https://docs.python.org/ja/3/library/sys.html#sys.arv)
+- [Pythonプログラミング入門 サンプル - コマンドライン引数(arsvモジュール)](https://ats-master.github.io/python-lecture01/020.html#t6LN)

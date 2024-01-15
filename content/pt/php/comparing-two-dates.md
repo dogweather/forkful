@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Comparando duas datas"
+title:                "Comparando duas datas"
+html_title:           "PHP: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,44 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em um programa PHP?
+## Por que
+Você já se perguntou como comparar duas datas em PHP? Às vezes, precisamos verificar se uma data é maior ou menor que outra, por exemplo, para validar inputs de formulários ou classificar dados em ordem cronológica. Saber como comparar datas é uma habilidade valiosa para qualquer programador PHP.
 
-Comparar datas é uma tarefa comum em programação, especialmente quando se lida com dados relacionados a eventos ou cronogramas. Ao comparar duas datas, é possível determinar se uma data é anterior, posterior ou igual à outra, o que pode ser útil em diversas situações, como calcular a idade de uma pessoa ou verificar a validade de um documento. Neste artigo, vamos mostrar como comparar duas datas em PHP e aprofundar mais no assunto.
+## Como Fazer
+Comparar datas em PHP é mais simples do que parece. Vamos dar uma olhada em alguns exemplos de como realizar essa tarefa.
 
-## Como comparar datas em PHP
-
-Para comparar duas datas em PHP, usamos a função `strtotime()` para transformar as datas em um formato numérico, que pode ser facilmente comparado. Por exemplo, digamos que queremos comparar as datas de nascimento de duas pessoas diferentes. Teríamos o seguinte código:
-
+#### Comparando duas datas
 ```PHP
-$primeira_data = strtotime("10 June 1990");
-$segunda_data = strtotime("15 September 1988");
+$date1 = '2020-12-31';
+$date2 = '2021-01-15';
 
-if ($primeira_data > $segunda_data) {
-  echo "A primeira pessoa é mais nova do que a segunda.";
-} elseif ($primeira_data < $segunda_data) {
-  echo "A primeira pessoa é mais velha do que a segunda.";
+if ($date1 < $date2) {
+    echo 'A primeira data é anterior à segunda data.';
+} elseif ($date1 > $date2) {
+    echo 'A primeira data é posterior à segunda data.';
 } else {
-  echo "Ambas as pessoas nasceram no mesmo dia.";
+    echo 'As duas datas são iguais.';
 }
 ```
+Saída: A primeira data é anterior à segunda data.
 
-Neste exemplo, usamos a função `strtotime()` para transformar as datas em formato de timestamp, e em seguida comparamos as duas variáveis usando as condições `if`, `elseif` e `else`. O código acima resultaria em "A primeira pessoa é mais nova do que a segunda". 
-
-## Aprofundando na comparação de datas
-
-Além de comparar datas baseadas em valores numéricos, também podemos usar a função `date_diff()` para obter o intervalo entre duas datas. Por exemplo, se quiséssemos saber quantos dias se passaram entre duas datas específicas, poderíamos usar o seguinte código:
-
+#### Convertendo strings em objetos DateTime
+Antes de comparar datas em PHP, é necessário converter as strings em objetos DateTime para que possamos usar métodos e propriedades específicas dessa classe.
 ```PHP
-$data1 = date_create("1985-02-19");
-$data2 = date_create("2021-02-19");
-$intervalo = date_diff($data1, $data2);
+$date1 = '2020-12-31';
+$date2 = '2021-01-15';
 
-echo $intervalo->format("%a dias");
+$date1_obj = new DateTime($date1);
+$date2_obj = new DateTime($date2);
+
+if ($date1_obj < $date2_obj) {
+    echo 'A primeira data é anterior à segunda data.';
+} elseif ($date1_obj > $date2_obj) {
+    echo 'A primeira data é posterior à segunda data.';
+} else {
+    echo 'As duas datas são iguais.';
+}
 ```
+Saída: A primeira data é anterior à segunda data.
 
-Neste exemplo, usamos a função `date_create()` para criar dois objetos de data e em seguida usamos a função `date_diff()` para obter o intervalo entre as duas datas. O resultado seria "13169 dias".
+#### Usando o método compare() do objeto DateTime
+Além de usar os operadores de comparação (<, >, =), podemos também usar o método compare() do objeto DateTime para comparar duas datas.
+```PHP
+$date1 = '2020-12-31';
+$date2 = '2021-01-15';
 
-## Veja também
+$date1_obj = new DateTime($date1);
+$date2_obj = new DateTime($date2);
 
-- [Documentação PHP para a função strtotime](https://www.php.net/manual/en/function.strtotime.php)
-- [Documentação PHP para a função date_diff](https://www.php.net/manual/en/function.date-diff.php)
+$result = $date1_obj->compare($date2_obj);
+
+if ($result == -1) {
+    echo 'A primeira data é anterior à segunda data.';
+} elseif ($result == 1) {
+    echo 'A primeira data é posterior à segunda data.';
+} else {
+    echo 'As duas datas são iguais.';
+}
+```
+Saída: A primeira data é anterior à segunda data.
+
+## Deep Dive
+Ao comparar datas em PHP, devemos ter em mente algumas coisas importantes. Primeiramente, é necessário garantir que as datas estejam no formato correto antes de compará-las. Muitas vezes, strings de datas podem ser fornecidas pelos usuários ou retiradas de bancos de dados, e pode haver diferenças no formato.
+
+Além disso, devemos ter cuidado ao comparar datas de diferentes fusos horários, já que isso afetará o resultado da comparação. Nesse caso, é recomendado realizar a comparação entre os objetos DateTime já convertidos para o mesmo fuso horário.
+
+## Veja Também
+- Manual do PHP - Comparação de datas: https://www.php.net/manual/en/datetime.diff.php
+- Tutorial de PHP Date: https://www.w3schools.com/php/php_date.asp
+- Datas e horários em PHP: https://www.php.net/manual/en/datetime.formats.php

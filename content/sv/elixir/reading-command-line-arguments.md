@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Läsa kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Elixir: Läsa kommandoradsargument"
 simple_title:         "Läsa kommandoradsargument"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Det finns flera olika sätt att läsa in kommandoradsargument i Elixir, men varför skulle man vilja göra det? Det finns faktiskt flera prakiska tillämpningar för att läsa in argument från terminalen, såsom att köra ett specifikt script med olika parametrar eller att skriva ett program som interagerar med andra program via kommandoraden.
+
 ## Varför
 
-Att läsa kommandoradsargument är en viktig del av programmering i Elixir eftersom det ger dig möjlighet att interagera med ditt program på ett dynamiskt sätt utan att behöva ändra din kod. Det kan också hjälpa till att skriva mer modulära och anpassningsbara program.
+Det är alltid bra att få feedback och input från användare i realtid, och genom att läsa in kommandoradsargument kan man göra just det. Med Elixir kan man enkelt använda ett inbyggt bibliotek för att läsa in argument från terminalen och sedan använda dem i sitt program.
 
-## Hur man gör det
+## Hur man gör
 
-För att läsa kommandoradsargument i Elixir kan du använda funktionen `OptionParser.parse/1` tillsammans med `System.argv/0` som ger dig en lista med alla argument som skickats med i terminalen.
+För att läsa in kommandoradsargument i Elixir behöver man använda funktionen `System.argv/0`, som returnerar en lista med alla argument som skickats till programmet via terminalen. Man kan sedan loopa igenom listan och använda argumenten som man vill. Detta kan se ut såhär:
 
-Här är en kodexempel som visar hur man kan använda denna metod för att läsa och skriva ut kommandoradsargument:
+```Elixir
+# Läs in kommandoradsargument
+arguments = System.argv()
 
-```elixir
-args = System.argv() # lagrar listan med kommandoradsargument
-opts = OptionParser.parse(args) # tar fram argumentet och lagrar dem
-
-IO.puts("Hej " <> opts["name"]) # skriver ut "Hej" tillsammans med namnet som skickats som argument
+# Loopa igenom alla argument och skriv ut dem
+for arg <- arguments do
+  IO.puts("Argument " <> arg)
+end
 ```
 
-När du kör detta program kommer du att bli ombedd att skicka med ett namn som argument. Till exempel:
+Om man exempelvis kör programmet med kommandot `elixir program.ex arg1 arg2 arg3`, kommer outputen att bli:
 
 ```
-elixir minapplikation.exs --name Anna
+Argument arg1
+Argument arg2
+Argument arg3
 ```
-
-Detta kommer att resultera i att programmet skriver ut "Hej Anna" som svar.
 
 ## Djupdykning
 
-En viktig aspekt att komma ihåg när man läser kommandoradsargument är att de är strängar och behöver eventuellt konverteras till andra datatyper beroende på vad du vill göra med dem i ditt program. Det är också bra att ha en fallback om ett argument inte skickas med, för att undvika fel i ditt program.
+För de som vill lära sig mer om hur man hanterar kommandoradsargument i Elixir, finns det flera olika sätt att optimera och strukturera koden på. Man kan till exempel använda sig av mönstermatchning för att hantera olika typer av argument på ett mer effektivt sätt, eller använda sig av Elixirs inbyggda `OptionParser` för att lägga till flaggor och flaggvärden till sina argument.
 
-En annan användbar funktion för att hantera kommandoradsargument är `OptionParser.help/1` som skriver ut en hjälp-text som visar hur ditt program kan användas och vilka argument som förväntas.
+Det kan också vara användbart att veta att man kan sätta default-värden för argument som inte skickas med från terminalen, genom att använda funktionen `System.get_env/2` för att hämta värden från miljövariabler.
 
 ## Se även
 
-- [Elixir CLI dokumenation](https://hexdocs.pm/elixir/CLI.html)
-- [Programmering i Elixir: En introduktion](https://medium.com/@christopherlai/programming-in-elixir-an-introduction-4e1c3c3e8639)
-- [Elixir Forum](https://elixirforum.com/)
+- [Elixirs officiella dokumentation för `System`-modulen](https://hexdocs.pm/elixir/System.html)
+- [En guide för hantering av kommandoradsargument i Elixir](https://www.learnelixir.tv/episodes/Episode-019-Passing-arguments-from-the-command-line)

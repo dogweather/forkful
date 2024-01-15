@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Utmatning av felavhjälpning"
-simple_title:         "Utmatning av felavhjälpning"
+title:                "Utskrift av felsöksutdata"
+html_title:           "Elixir: Utskrift av felsöksutdata"
+simple_title:         "Utskrift av felsöksutdata"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -11,59 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva ut debug-utdata är ett viktigt verktyg för utvecklare att förstå vad som händer i deras kod. Det kan hjälpa till att hitta och åtgärda fel och förstå hur kod utförs i realtid.
+Att skriva kod är som att lösa ett pussel, och ibland kan saker gå fel. Det kan vara svårt att förstå varför koden inte fungerar som den ska, och därför är det viktigt att kunna skriva ut debugginformation för att få en bättre förståelse för vad som händer i programmet.
 
-## Så här gör du
+## How To
 
-För att skriva ut debug-utdata i Elixir kan du använda funktionen `IO.inspect/2`. Detta låter dig skriva ut värden och variabler till din terminal som ska hjälpa dig att följa kodens utförande.
-
-```Elixir
-IO.inspect(variable)
-```
-
-För att skriva ut ett specifikt meddelande kan du använda `IO.puts/2`.
+För att skriva ut debugginformation i Elixir använder du funktionen `IO.inspect`. Den tar in vilken som helst typ av data och skriver ut den till konsolen. Här är ett enkelt exempel:
 
 ```Elixir
-IO.puts("Meddelande")
+name = "John"
+IO.inspect(name) 
 ```
 
-Du kan också använda `IO.inspect/2` för att skriva ut komplexa datastrukturer, som listor och kartor.
+Detta kommer att skriva ut värdet av variabeln `name`, i detta fall "John", till konsolen.
 
-```Elixir
-list = [1, 2, 3]
-IO.inspect(list)
+Du kan också skriva ut flera värden samtidigt genom att lägga till en kommatecken mellan dem:
+
+```Elixir 
+IO.inspect(name, age, hobby)
 ```
 
-Output:
+Detta kommer att skriva ut värdena av `name`, `age` och `hobby` till konsolen.
 
-```
-[1, 2, 3]
-```
+Om du behöver skriva ut debugginformation i en funktion kan du använda nyckelordet `IO.inspect` innan en variabel för att skriva ut dess värde:
 
-För att skriva ut en skapad variabel kan du använda dubbelt citattecken runt variabelnamnet. Detta gör att du kan se det faktiska värdet som skrivs ut istället för att variabelnamnet visas.
-
-```Elixir
-variable = "data"
-IO.inspect("#{variable}")
-```
-
-Output:
-
-```
-"data"
+```Elixir 
+def add_numbers(a, b) do 
+  result = a + b 
+  IO.inspect(result) 
+  result 
+end 
 ```
 
-## Djupdykning
+I detta exempel kommer värdet av `result` att skrivas ut innan det returneras från funktionen.
 
-När du använder `IO.inspect/2` för att skriva ut en variabel, returneras också värdet av variabeln. Detta gör att du kan skriva ut variabler mitt i en kodrad utan att bryta ut avkörningen.
+## Deep Dive
 
-För att undvika den här funktionen, kan du använda `IO.debug/2`. Detta skriver bara ut informationen utan att returnera värdet.
+Det finns några fler funktioner och alternativ som kan hjälpa dig att skriva ut debugginformation på ett effektivt sätt:
 
-En annan användbar funktion för debug-utdata är `IO.puts inspect/2`. Detta låter dig välja vilken detaljnivå du vill ha för dina debug-utdata.
+- Du kan använda `IO.inspect` i en pipeline (sekvens av funktioner som körs en efter en) genom att använda atomerna `:label` och `:inspect` istället för att skriva om hela `IO.inspect`-funktionen. Exempel: `|> :label |> :inspect`.
+- Du kan använda `IO.inspect` på en rad med `|>` för att visa värdet som skickas mellan funktionerna i pipelinen.
+- För att avaktivera `IO.inspect` i produktion kan du använda `Logger.debug` istället.
+- Om du vill få reda på vilken rad kod som printade ut en viss debugg-output kan du använda funktionen `__ENV__`.ex_line för att få den raden.
 
-## Se även
+Med dessa verktyg kan du enkelt skriva ut debugginformation när du behöver det och få en bättre förståelse för vad som händer i din kod.
 
-- [Elixir Dokumentation: IO-modulen](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Dokumentation: IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir Dokumentation: IO.debug/2](https://hexdocs.pm/elixir/IO.html#debug/2)
-- [Elixir Dokumentation: IO.puts/2](https://hexdocs.pm/elixir/IO.html#puts/2)
+## Se också
+
+- Officiell Elixir dokumentation för IO.inspect funktionen: https://hexdocs.pm/elixir/IO.html#inspect/2
+- En guide för debuggning i Elixir på Elixir School: https://elixirschool.com/sv/lessons/advanced/debugging/

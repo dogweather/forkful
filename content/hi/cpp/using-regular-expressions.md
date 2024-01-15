@@ -1,6 +1,7 @@
 ---
-title:                "C++: रेगुलर एक्सप्रेशन का उपयोग करना"
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग करना"
+title:                "सामान्य अभिव्यक्ति का उपयोग करें"
+html_title:           "C++: सामान्य अभिव्यक्ति का उपयोग करें"
+simple_title:         "सामान्य अभिव्यक्ति का उपयोग करें"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,40 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+##Regular Expressions ka upyog kyon karna chahiye?
 
-रेगुलर एक्सप्रेशन्स (`regex`) प्रोग्रामिंग में बहुत सारे उपयोग हो सकते हैं, जैसे कि स्ट्रिंग मैचिंग, पाठ प्रसंस्करण, और डेटा वैधता जांच आदि। इसलिए यह सिर्फ बहुत उपयोगी ही नहीं है, बल्कि प्रोग्रामिंग को सरल और दक्ष बनाने में भी मददगार सिद्ध हुआ है।
+Agar aap C++ programmer hai, to aapko regular expressions ka upyog karke apne code ko powerful aur efficient bana sakte hai. Ye bahut hi versatile aur flexible hai, jiske madhyam se aap patterns ko search, match aur replace kar sakte hai apne string mein, sath hi sath input validation aur data processing bhi kar sakte hai.
 
-## कैसे करें
-
-जब आप `regex` का उपयोग करते हैं, आप `#include <regex>` लाइब्रेरी को अपने कोड में जोड़ना होगा। सबसे पहले, आपको `regex` ऑब्जेक्ट बनाना होगा जिसमें आप अपने पैटर्न को कंपाइल कर सकेंगे। फिर, आप `smatch` (स्ट्रिंग मैचिंग) ऑब्जेक्ट बनाकर इसे पैस करेंगे। इसके बाद, आप `regex_search` फ़ंक्शन को यूज़ करके अपने स्ट्रिंग को अपने पैटर्न से जोड़ कर सकते हैं। नीचे एक उदाहरण दिया गया है:
+##Regular Expressions kaise upyog karein?
 
 ```C++
+// Simple Pattern Matching
 #include <iostream>
 #include <regex>
 
-using namespace std;
+int main()
+{
+    // Input string
+    std::string str = "Hello World!";
+
+    // Pattern to search
+    std::regex pattern("World");
+
+    // Matching string using regex_search function
+    if (std::regex_search(str, pattern))
+    {
+        // Output
+        std::cout << "Pattern found!" << std::endl;
+    }
+    else
+    {
+        // Output
+        std::cout << "Pattern not found!" << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+```C++
+// Using Regular Expressions for Input Validation
+#include <iostream>
+#include <regex>
 
 int main()
 {
-  string str = "यह एक simple स्ट्रिंग है।";
-  regex pattern ("स्ट्रिंग");
+    // Input validation for age
+    int age;
+    std::cout << "Enter your age: ";
+    std::cin >> age;
 
-  smatch matches;
-  regex_search(str, matches, pattern);
+    // Regex pattern for valid age
+    std::regex pattern("[0-9]{1,3}");
 
-  cout << "स्ट्रिंग मिल गया: " << matches[0] << endl;
-  
-  return 0;
+    // Matching input with pattern
+    if (std::regex_match(std::to_string(age), pattern))
+    {
+        // Output
+        std::cout << "Valid age entered!" << std::endl;
+    }
+    else
+    {
+        // Output
+        std::cout << "Invalid age entered!" << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-उपरोक्त कोड का आउटपुट निम्न होगा:
+##Regular Expressions ka adhyan karna
 
-```
-स्ट्रिंग मिल गया: स्ट्रिंग
-```
+Regular Expressions ko adhyan karne se pehle, aapko inke basic syntax aur functions ka pata hona chahiye. Inke alawa, aapko inka upyog karte hue apne code ko efficient banane ke techniques bhi sikhna hoga, jaise ki capturing groups, backreferences aur lookaheads/lookbehinds. Iske liye aap online tutorials aur documentation refer kar sakte hai.
 
-## गहराई में जाइये
+##Dekhiye Bhi
 
-`regex` प्रोग्रामिंग में कई मजेदार और उपयोगी फ़ंक्शन हैं, जैसे `regex_replace`, `regex_match`, और `regex_iterator`। आप अपने और अधिक प्रश्नों के लिए [यहां](https://www.cplusplus.com/reference/regex/) जांच सकते हैं। आपको यह भी ध्यान देना चाहिए कि `regex` पैटर्न C++11 से ही समर्थित हैं, इ
+- [C++ Regex Tutorial in Hindi](https://www.youtube.com/watch?v=oZgx7f_LIhk)
+- [C++ Regex Documentation](https://en.cppreference.com/w/cpp/regex)

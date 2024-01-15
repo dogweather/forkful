@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Utskrift av feilsøkingsmeldinger"
-simple_title:         "Utskrift av feilsøkingsmeldinger"
+title:                "Utskrift av feilanalyse"
+html_title:           "PHP: Utskrift av feilanalyse"
+simple_title:         "Utskrift av feilanalyse"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,50 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvis du er en PHP-utvikler, har du kanskje lagt merke til at mange av PHP-rammeverkene og bibliotekene bruker en funksjon som `echo` for å skrive ut feilsøkingsinformasjon. Men hvorfor er det egentlig viktig å skrive ut feilsøkingsinformasjon? Svaret er enkelt - det kan hjelpe deg med å finne og løse feil i koden din raskere.
+Hvorfor ville noen bruke tid og energi på å skrive ut debug-utdata? Svaret er enkelt: det er en nyttig måte å feilsøke og finne feil i koden din. Ved å skrive ut variabler, funksjoner og prosesser underveis, kan du enkelt identifisere og løse potensielle problemer.
 
-## Hvordan
-I PHP kan du enkelt skrive ut feilsøkingsinformasjon ved hjelp av funksjonen `echo` eller `print`. Her er et eksempel:
+## Slik gjør du det
+Det å skrive ut debug-utdata i PHP er enkelt og krever bare noen få kodeforskrifter. Du kan bruke funksjonen "echo" for å skrive ut enkel tekst, og funksjonen "print_r" for å skrive ut en mer kompleks array eller objekt. Se på eksemplene nedenfor for å få en bedre forståelse av hvordan det fungerer.
 
 ```PHP
-$navn = "Maria";
-echo "Navnet er: " . $navn;
+$navn = "Ole";
+$alder = 25;
+echo "Navnet mitt er " . $navn . " og jeg er " . $alder . " år gammel.";
+```
+
+Dette vil skrive ut følgende:
+
+`Navnet mitt er Ole og jeg er 25 år gammel.`
+
+Hvis du ønsker å skrive ut hele innholdet i en array eller et objekt, kan du bruke "print_r" funksjonen på følgende måte:
+
+```PHP
+$frukt = array("eple", "banan", "jordbær");
+print_r($frukt);
 ```
 
 Dette vil skrive ut følgende:
 
 ```
-Navnet er: Maria
+Array
+(
+    [0] => eple
+    [1] => banan
+    [2] => jordbær
+)
 ```
 
-Du kan også bruke `var_dump()` for å skrive ut informasjon om variabler og til og med arrays. Her er et eksempel:
+Dette kan være svært nyttig når du jobber med store og komplekse datastrukturer, og vil hjelpe deg med å se hvordan dataene er organisert og om det er noen feil.
 
-```PHP
-$array = array(1, 2, 3);
-var_dump($array);
-```
+## Dykk dypere
+Det finnes flere metoder for å skrive ut debug-utdata, som for eksempel å bruke "var_dump" eller "debug_backtrace" funksjonene. Disse kan gi mer detaljert informasjon om variabler og funksjoner, men kan også være mer forvirrende å lese. 
 
-Dette vil skrive ut følgende:
+Det kan også være lurt å bruke betingelser sammen med debug-utdata for å sjekke om visse deler av koden ble utført eller ikke. For eksempel kan du skrive ut en melding hvis en betingelse ikke ble oppfylt, noe som kan hjelpe deg med å finne ut hvor problemet ligger.
 
-```
-array(3) {
-  [0]=>
-  int(1)
-  [1]=>
-  int(2)
-  [2]=>
-  int(3)
-}
-```
-
-Som du kan se, kan feilsøkingsinformasjon som dette være veldig nyttig for å finne og fikse feil i koden din.
-
-## Deep Dive
-Det er også verdt å merke seg at i tillegg til å skrive ut feilsøkingsinformasjon, kan du også bruke `error_reporting` i PHP for å få mer detaljert informasjon om eventuelle feil som oppstår i koden din. Ved å sette `error_reporting` til `E_ALL`, vil du kunne se alle typer feil, inkludert advarsler og notices.
-
-Du kan også bruke `isset()` og `empty()` funksjonene for å sjekke om en variabel er initialisert eller har en verdi. Dette kan være nyttig for å unngå uventede feil i koden din.
+Når du skriver ut debug-utdata, er det viktig å huske å fjerne den når du har løst problemet. Du vil ikke at ekstra utdata skal bremse ned nettsiden din eller avsløre sensitiv informasjon til brukere.
 
 ## Se også
-- PHP manual: [https://www.php.net/manual/en/ref.var.php](https://www.php.net/manual/en/ref.var.php)
-- Stack Overflow: [https://stackoverflow.com/questions/tagged/php](https://stackoverflow.com/questions/tagged/php)
-- PHP Developer Blog: [https://www.phpdeveloper.org/](https://www.phpdeveloper.org/)
+- [PHP.net - Debugging techniques](https://www.php.net/manual/en/debugger.php)
+- [PHP Debugging techniques for beginners](https://www.tutorialrepublic.com/php-tutorial/php-debugging-techniques.php)
+- [Debugging PHP with Xdebug](https://blog.jetbrains.com/phpstorm/2012/03/debugging-php-with-xdebug/)

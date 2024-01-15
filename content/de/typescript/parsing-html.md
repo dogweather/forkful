@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: HTML analysieren."
-simple_title:         "HTML analysieren."
+title:                "Das Parsen von HTML."
+html_title:           "TypeScript: Das Parsen von HTML."
+simple_title:         "Das Parsen von HTML."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Parsing HTML ist ein wichtiger Aspekt in der Webentwicklung, da es ermöglicht, die Struktur und Inhalte einer Webseite zu analysieren und zu manipulieren. Mit TypeScript können wir diesen Prozess noch effizienter und zuverlässiger gestalten.
 
-Warum sollten Sie sich mit dem Parsen von HTML beschäftigen? Ganz einfach: HTML ist die Sprache, in der die meisten Webseiten geschrieben sind. Um diese Seiten effektiv zu analysieren und Daten aus ihnen zu extrahieren, ist das HTML-Parsing ein unverzichtbarer Schritt.
-
-## Wie geht man vor?
-
-Um HTML zu parsen, benötigen Sie eine Programmiersprache, die in der Lage ist, Strings und reguläre Ausdrücke zu verarbeiten. Glücklicherweise bietet TypeScript diese Funktionen und macht es somit zu einer idealen Wahl für das HTML-Parsing.
-
-Um einen kleinen Einblick in das Parsen von HTML mittels TypeScript zu bekommen, betrachten wir folgendes Beispiel:
-
+## Wie geht's
+Zur Durchführung eines HTML-Parsing in TypeScript verwenden wir die `htmlparser2`-Bibliothek. Beginnen wir mit der Installation:
 ```TypeScript
-const htmlString = "<h1>Hello, World!</h1>";
-const regex = /<(.*?)>.*<\/(?:.*?)>/;
-const matches = regex.exec(htmlString);
-
-console.log("Inhalt des h1-Tags: " + matches[1]); // Ausgabe: Hello, World!
+npm install htmlparser2
+```
+Als nächstes importieren wir die Bibliothek in unserem Code:
+```TypeScript
+import { Parser } from "htmlparser2";
+```
+Wir können nun einen einfachen HTML-Code in eine Zeichenfolge speichern und den Parser initialisieren:
+```TypeScript
+const html = "<div>Hello World</div>";
+const parser = new Parser();
+```
+Um den Code zu parsen, können wir eine Funktion als zweites Argument der `write()`-Methode des Parsers übergeben, die jedes Mal aufgerufen wird, wenn ein neues Element gefunden wird:
+```TypeScript
+parser.write(html, (error: any, dom: any) => {
+  // Hier können wir mit dem DOM-Baum arbeiten
+  if (!error) {
+    console.log(dom); // Gibt ein Array mit dem geparsten HTML-Baum zurück
+  }
+});
+```
+Das Ergebnis der Konsolenausgabe würde in diesem Fall so aussehen:
+```TypeScript
+[ { type: 'tag', name: 'div', attribs: {}, children: [ { data: 'Hello World', type: 'text', next: null, prev: null }, next: null, prev: null } ]
+```
+Wir können nun jede gewünschte Manipulation an diesem DOM-Baum durchführen und unser modifiziertes HTML dann mit der `end()`-Methode des Parsers wieder in eine Zeichenfolge umwandeln:
+```TypeScript
+const modifiedHTML = parser.end();
+console.log(modifiedHTML);  // Ausgabe: <div>Bye World</div>
 ```
 
-In diesem Beispiel wird zuerst ein String mit dem HTML-Code erstellt. Dann wird mittels eines regulären Ausdrucks der Inhalt eines h1-Tags extrahiert und mithilfe von `console.log()` ausgegeben. Wie Sie sehen, ist das Parsen von HTML mit TypeScript relativ einfach.
-
-## Tiefergehende Informationen
-
-Wenn wir tiefer in das Thema einsteigen, gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen Sie wissen, dass HTML-Dokumente nicht immer perfekt formatiert sind und somit der reguläre Ausdruck möglicherweise angepasst werden muss, um alle gewünschten Ergebnisse zu erhalten. Auch müssen Sie verschiedene HTML-Tags und deren Eigenschaften kennen, um genau die Daten zu extrahieren, die Sie benötigen.
-
-Ein weiterer wichtiger Aspekt ist die Skalierbarkeit. Wenn Sie HTML von mehreren Webseiten parsen möchten, empfiehlt es sich, eine Funktion zu erstellen, die den regulären Ausdruck anpasst und beim Aufruf bestimmte Tags und Eigenschaften erwartet. Dadurch lässt sich der Code flexibler und wartungsfreundlicher gestalten.
+## Deep Dive
+HTML-Parsing kann komplex werden, wenn der Code viele verschachtelte Elemente und Attribute enthält. In solchen Fällen kann es hilfreich sein, eine eingehende Analyse der Struktur des DOM-Baums durchzuführen und spezifische Elemente oder Attribute gezielt auszuwählen. Hierbei können die in der `Parser`-Klasse verfügbaren Methoden, wie z.B. `onopentag`, `onclosetag` und `onattribute`, nützlich sein. Diese können verwendet werden, um den DOM-Baum während des Parsing-Prozesses zu durchlaufen und bestimmte Operationen auf einzelne Elemente oder Attribute anzuwenden.
 
 ## Siehe auch
-
-- [Reguläre Ausdrücke in TypeScript](https://typescriptlang.org/docs/handbook/regular-expressions.html)
-- [HTML-Tags und Attribute](https://www.w3schools.com/tags/)
-- [Scraping Websites mit TypeScript](https://blog.bitsrc.io/web-scraping-in-node-js-without-a-framework-ec4e851fff3)
+- [htmlparser2 Dokumentation] (https://www.npmjs.com/package/htmlparser2)
+- [Artikel zu HTML-Parsing mit TypeScript] (https://blog.logrocket.com/parsing-html-using-typescript/)

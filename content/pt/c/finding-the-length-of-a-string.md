@@ -1,6 +1,7 @@
 ---
-title:                "C: Encontrando o comprimento de uma sequência de caracteres"
-simple_title:         "Encontrando o comprimento de uma sequência de caracteres"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,54 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que encontrar o comprimento de uma string é importante?
+## Por que
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação C. É importante porque ajuda a determinar o espaço necessário para armazenar uma string e a realizar operações como adicionar ou remover caracteres. Além disso, é uma habilidade essencial para lidar com strings de maneira eficiente e evitar erros de memória.
+Você provavelmente está se perguntando por que alguém se preocuparia em descobrir o comprimento de uma string em C. Bem, existem diversas situações em que essa informação pode ser útil. Por exemplo, você pode precisar delimitar o tamanho de uma string para alocar memória suficiente, ou pode estar criando uma função que verifica se uma entrada do usuário excede um certo limite de tamanho.
 
-# Como encontrar o comprimento de uma string em C?
+Sabemos que o C é uma linguagem de programação poderosa, mas também pode ser um pouco intimidante. Se você ainda está aprendendo, é normal se sentir sobrecarregado com alguns conceitos. Mas não se preocupe, neste artigo vamos explorar como descobrir o comprimento de uma string em C de uma forma simples e clara.
 
-Em C, uma string é uma sequência de caracteres terminada por um caractere nulo '\0'. O comprimento de uma string pode ser determinado contando o número de caracteres antes do caractere nulo. Para isso, podemos usar a função `strlen()` da biblioteca `<string.h>`, que retorna o comprimento de uma string em bytes.
+## Como fazer
 
-```
+Antes de começar, é importante lembrar que uma string em C é simplesmente um array de caracteres, finalizado pelo caractere nulo ( ' \0 ' ). O comprimento de uma string é, portanto, o número de caracteres antes do caractere nulo.
+
+Aqui está um exemplo de como encontrar o comprimento de uma string usando a função `strlen`:
+
+```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char string[50] = "Hello World"; // declarando e inicializando uma string
-  int comprimento = strlen(string); // calculando o comprimento da string
-  printf("O comprimento da string é: %d", comprimento); // mostrando o comprimento na tela
+  char str[] = "Olá Mundo!";
+  int len = strlen(str);
+  printf("Comprimento da string: %d\n", len);
+
   return 0;
 }
-```
-**Saída:** O comprimento da string é: 11
-
-No exemplo acima, declaramos uma string "Hello World" com 11 caracteres e usamos a função `strlen()` para calcular e exibir seu comprimento na tela.
-
-# Aprofundando no assunto
-
-Ao trabalhar com strings, é importante ter em mente que o caractere nulo '\0' é considerado parte da string. Portanto, o comprimento de uma string vazia é 1, pois ela contém apenas o caractere nulo.
-
-Além disso, é importante lembrar que o tamanho máximo de uma string em C é limitado pela quantidade de memória disponível, pois a string será armazenada na memória RAM.
-
-Uma maneira alternativa de encontrar o comprimento de uma string é usando um loop `while` para percorrer a string até encontrar o caractere nulo. Isso pode ser útil para entender como a função `strlen()` funciona nos bastidores.
 
 ```
+
+**Saída:**
+
+```
+Comprimento da string: 10
+```
+
+É importante ressaltar que a função `strlen` não considera o caractere nulo na contagem. Portanto, no exemplo acima, o comprimento real da string "Olá Mundo!" é de 11 caracteres, mas `strlen` retorna 10.
+
+Outra forma de obter o comprimento de uma string é usando um loop até encontrar o caractere nulo, como no exemplo abaixo:
+
+```C
 #include <stdio.h>
 
 int main() {
-  char string[50] = "Hello World";
-  int comprimento = 0; // inicializando a variável comprimento com 0
-  while (string[comprimento] != '\0') { // percorrendo a string até encontrar o caractere nulo
-    comprimento++; // incrementando o valor de comprimento a cada iteração
+  char str[] = "Hello World!";
+  int len = 0;
+
+  while (str[len] != '\0') {
+    len++;
   }
-  printf("O comprimento da string é: %d", comprimento);
+
+  printf("Comprimento da string: %d\n", len);
+
   return 0;
 }
+
 ```
-**Saída:** O comprimento da string é: 11
 
-# Ver também
+**Saída:**
 
-- [Tutorial de Strings em C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Documentação da função `strlen()`](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Exemplos de manipulação de strings em C](https://www.programiz.com/c-programming/c-strings)
+```
+Comprimento da string: 12
+```
+
+## Deep Dive
+
+Para aqueles que se perguntam como a função `strlen` funciona internamente, aqui está uma breve explicação. A função percorre cada caractere da string até encontrar o caractere nulo, contando o número de iterações necessárias para chegar a ele.
+
+A função `strlen` é definida na biblioteca `string.h`, mas podemos criar nossa própria versão. Aqui está uma implementação simples que é equivalente à função `strlen`:
+
+```C
+int strlen(char *str) {
+  int len = 0;
+
+  while (str[len] != '\0') {
+    len++;
+  }
+
+  return len;
+}
+```
+
+Além disso, é importante lembrar que a função `strlen` é apenas uma das muitas funções úteis da biblioteca `string.h`. Vale a pena explorar e conhecer as demais para facilitar seu trabalho com strings em C.
+
+## Veja também
+
+- [Documentação oficial da função `strlen`](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Outras funções úteis da biblioteca `string.h`](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Tutorial sobre arrays e strings em C](https://www.geeksforgeeks.org/arrays-and-strings-in-c-2/)
+- [Outras dicas sobre programação em C](https://www.codementor.io/blog/top-tips-for-writing-c-cpp-code-base-os2ojyt8r)

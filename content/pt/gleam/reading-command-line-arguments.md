@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Gleam: Lendo argumentos da linha de comando"
 simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Porquê
 
-Ler argumentos de linha de comando é uma habilidade fundamental para qualquer programador. Ao dominar essa técnica, você poderá criar programas mais interativos e flexíveis, capazes de receber entradas diretamente do usuário através da linha de comando.
+Ler argumentos de linha de comando pode ser uma tarefa crucial ao desenvolver aplicações ou scripts. Compreender como isso funciona permitirá que você crie programas mais versáteis e automatizados.
 
-## Como fazer
+## Como Fazer
 
-Para ler argumentos de linha de comando em Gleam, utilizamos a função `gleam/io.command_line.arguments`. Essa função retorna uma lista com os argumentos informados pelo usuário ao executar o programa. Veja o exemplo:
+Ler argumentos de linha de comando é uma habilidade importante ao trabalhar com a linguagem de programação Gleam. Aqui está um exemplo simples de como ler argumentos de linha de comando em um script:
 
-```
-Gleam import gleam/io
-
+```Gleam
 fn main() {
-    args := gleam/io.command_line.arguments()
-    io.println("Olá, " ++ List.nth(args, 0))
+  let args = os.args()
 }
 ```
 
-Neste exemplo, a função `main` está recebendo o primeiro argumento informado pelo usuário e incorporando-o à mensagem de saudação exibida no terminal. Se o usuário executar o programa com o comando `gleam run hello.gleam Mundo`, a saída será `Olá, Mundo`.
+Este código armazenará todos os argumentos de linha de comando em uma lista chamada `args`, que pode ser usada para executar ações específicas no seu script.
 
-## Profundando-se
+Você também pode ler argumentos individuais, especificando sua posição na lista. Por exemplo, se você quer acessar o primeiro argumento, pode usar `args[0]`.
 
-Além de receber argumentos de texto simples, como no exemplo anterior, também é possível ler argumentos numéricos, booleanos e até mesmo arquivos de entrada. A função `gleam/io.command_line.parse_arguments` permite definir o tipo esperado para cada argumento, tornando seu programa ainda mais interativo e robusto.
+## Deep Dive
 
-## Veja também
+Além de ler argumentos diretamente da linha de comando, a linguagem Gleam também oferece a funcionalidade de passar argumentos para sua aplicação através de variáveis de ambiente. Você pode especificar o valor de uma variável de ambiente diretamente na linha de comando, usando a sintaxe `VAR=valor`. Isso pode ser útil se você precisar passar informações sensíveis, como senhas, que não devem ser explicitamente visíveis no seu código.
 
-- [Documentação oficial do Gleam sobre leitura de argumentos de linha de comando](http://gleam.run/documentation/#command-line-arguments)
-- [Exemplo completo de programa em Gleam usando argumentos de linha de comando](https://github.com/gleam-lang/gleam/blob/master/examples/command_line_arguments.gleam)
+Outra vantagem de ler argumentos de linha de comando é que você pode criar programas interativos que permitem que o usuário insira informações em tempo de execução. Isso pode ser útil para jogos, estudos de caso ou aplicações de linha de comando que requerem entrada do usuário.
+
+## Veja Também
+
+- [Documentação oficial da linguagem Gleam](https://gleam.run/documentation)
+- [Exemplos de código da linguagem Gleam](https://github.com/gleam-lang/gleam/tree/main/examples)
+- [Tutorial da linguagem Gleam na Hackernoon](https://hackernoon.com/a-beautifully-typesafe-language-that-runs-erlang-code-and-compiles-to-javascript-w16g3xei)

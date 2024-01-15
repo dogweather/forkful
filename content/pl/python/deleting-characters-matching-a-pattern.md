@@ -1,6 +1,7 @@
 ---
-title:                "Python: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Python: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,44 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Operacja usuwania znaków, które pasują do wzorca, jest bardzo przydatna w wielu różnych sytuacjach. Może to pomóc w oczyszczaniu danych, w przetwarzaniu tekstu lub w innych zastosowaniach programistycznych. Kiedy tylko napotykasz potrzebę pozbycia się niepożądanych znaków, ta operacja jest dla Ciebie.
+Jeśli pracujesz z dużymi danymi lub tekstami, często możesz być zmuszony do usuwania części tekstu, które pasują do określonego wzoru. Może to być przydatne w celu wyczyszczenia danych lub aby ukryć poufne informacje. W tym artykule dowiesz się, jak usunąć znaki pasujące do wzoru w języku Python.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Kodowanie w Pythonie może wydawać się złożone, ale usuwanie znaków pasujących do wzorca jest bardzo proste i szybkie dzięki wbudowanej funkcji ```strip()```. Na przykład, aby usunąć wszystkie spacje z danego zdania, wystarczy użyć następującego kodu:
-
-```Python
-sentence = "   To jest przykładowe zdanie   "
-
-print(sentence.strip())
-```
-
-To spowoduje wydrukowanie zdania bez spacji na początku i końcu:
-```
-To jest przykładowe zdanie
-```
-
-Ponadto, jeśli chcesz usunąć całe słowo lub frazę, używając funkcji ```replace()``` jest również bardzo proste. Na przykład, jeśli chcemy usunąć słowo "przykładowe" ze zdania, możemy użyć następującego kodu:
+Możesz użyć funkcji `re.sub()` z modułu `re` w celu usunięcia znaków pasujących do wzoru. Poniżej znajduje się przykładowy kod:
 
 ```Python
-sentence = "To jest przykładowe zdanie"
+import re
 
-print(sentence.replace("przykładowe ", ""))
+text = "To jest przykładowy tekst, który wymaga usunięcia niektórych znaków!"
+clean_text = re.sub("[^a-zA-Z0-9 ]", "", text)
+
+print(clean_text)
 ```
 
-Powyższy kod wydrukuje zdanie bez słowa "przykładowe":
-```
-To jest zdanie
-```
+W powyższym przykładzie używamy wzorca `[a-zA-Z0-9 ]` aby usunąć wszystkie znaki, które nie są literami, cyframi lub spacją. Możesz dostosować ten wzorzec do swoich potrzeb. Następnie tworzymy nowy ciąg znaków przy użyciu funkcji `re.sub()`, przekazując pierwotny tekst oraz wzorzec. W ten sposób usuniemy wszystkie pasujące znaki i otrzymamy czysty tekst.
 
-## Głębszy zanurzenie
+## Głębszy Wgląd
 
-W Pythonie istnieje wiele różnych metod usuwania znaków dopasowujących do wzorca, w tym również wyrażeń regularnych. Jest to bardziej zaawansowana technika, ale bardzo potężna i użyteczna. Wyrażenia regularne pozwalają na wykonywanie bardziej skomplikowanych operacji usuwania i manipulacji tekstem.
+W języku Python możesz używać wielu różnych wzorców do wykrywania i usuwania znaków pasujących do określonego wzoru. Na przykład, jeśli chcesz usunąć tylko znaki specjalne, możesz użyć wzoru `[!@#$%^&*(),.?":{}|<>]`. Możesz także użyć wyrażeń regularnych w celu bardziej zaawansowanej manipulacji tekstem.
 
-Aby dowiedzieć się więcej o wyrażeniach regularnych w Pythonie, możesz zapoznać się z dokumentacją na temat modułu ```re```. Istnieje wiele tutoriali i narzędzi online, które pomogą Ci lepiej zrozumieć i wykorzystywać to narzędzie w swoim kodzie.
+Funkcja `re.sub()` może również przyjmować funkcję jako argument, co pozwala na bardziej zaawansowane przetwarzanie tekstu. Możesz także użyć modułu `re` do zastępowania znaków pasujących do wzoru przez inny ciąg znaków, a nie tylko usuwać je całkowicie.
 
-## Zobacz również
+## Zobacz Również
 
-- [Dokumentacja Pythona](https://docs.python.org/pl/3/)
-- [Tutorial wyrażeń regularnych w Pythonie](https://docs.python.org/pl/3/library/re.html)
-- [Wideo o usuwaniu znaków w Pythonie](https://www.youtube.com/watch?v=5cvM-crlDvg)
+- [Dokumentacja modułu `re` w języku Python](https://docs.python.org/3/library/re.html)
+- [Wyrażenia regularne w Pythonie - wideo tutorial](https://www.youtube.com/watch?v=K8L6KVGG-7o)
+- [Tutorial: Jak pracować z wyrażeniami regularnymi w języku Python](https://realpython.com/regex-python/)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skriving til standardfeil"
+html_title:           "Arduino: Skriving til standardfeil"
+simple_title:         "Skriving til standardfeil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,31 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standard error i Arduino-programmering er en viktig måte å feilsøke og rette opp i potensielle problemer i koden din. Ved å sende feilmeldinger til standard error, kan du få en bedre forståelse av hva som skjer i koden din og dermed forbedre ytelsen til prosjektet ditt.
+Det kan være flere grunner til å skrive til standard error i Arduino-programmering. Det kan være nyttig for å feilsøke og identifisere problemer, samt å gi en mer detaljert og strukturert utskrift av resultatene fra programmet.
 
-## Hvordan gjøre det
+## Hvordan
 
-Det er ganske enkelt å skrive til standard error i ditt Arduino-program. Du kan bruke funksjonen `Serial.print()` eller `Serial.println()` og sende meldingen du vil skrive som et argument i parentesene. For eksempel:
-
-```Arduino
-Serial.println("Dette er en feilmelding!");
-```
-
-Dette vil skrive meldingen "Dette er en feilmelding!" til standard error når koden kjøres. Du kan også sende variabler eller verdier, for å få mer spesifikk informasjon om problemene som oppstår. For eksempel:
+For å skrive til standard error i Arduino, bruker vi funksjonen `Serial.print()` og spesifiserer standard error som parameter. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Arduino
-int x = 10;
-Serial.println("Verdien av x er: " + x);
+Serial.print("Feil oppstod på rad 37", stderr);
 ```
 
-Dette vil skrive ut verdien av variabelen "x" til standard error. Det er også viktig å huske på å aktivere seriell kommunikasjon i koden din ved å bruke `Serial.begin()`-funksjonen.
+Dette vil skrive ut teksten "Feil oppstod på rad 37" til standard error. Vi kan også kombinere dette med andre data, for eksempel:
+
+```Arduino
+int sensorValue = analogRead(A0);
+Serial.print("Verdien fra analog sensor: ", stderr);
+Serial.print(sensorValue, stderr);
+```
+
+Dette vil skrive ut teksten "Verdien fra analog sensor: " sammen med verdien fra sensoren til standard error.
 
 ## Dypdykk
 
-Å skrive til standard error kan være spesielt nyttig når du utvikler større og mer komplekse Arduino-prosjekter. Ved å bruke denne teknikken kan du enkelt finne og rette feil, i stedet for å bruke mye tid på å prøve å finne dem manuelt. Det er også et nyttig verktøy når du vil overvåke variabler og verdier mens koden din kjører. Så hvis du finner deg selv å støte på problemer i koden din, ikke glem å skrive til standard error for å få en bedre forståelse av hva som skjer.
+Det er viktig å merke seg at når vi skriver til standard error, vil det ikke vises på den vanlige serielle monitoren i Arduino IDE. For å se resultatene må vi åpne "Seriel monitor" i menyen. Vi kan også endre størrelsen på Serial Buffer i Arduino-oppsettet for å øke eller redusere mengden data som kan skrives til standard error.
+
+En annen ting å huske på er at når vi skriver til standard error, blir det ikke sendt tilbake til datamaskinen. Derfor kan det være lurt å kombinere bruk av `Serial.print()` med `Serial.read()` for å få resultatet tilbake og vise det på datamaskinen.
 
 ## Se også
 
-- [Arduino dokumentasjon om Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Bruk av Serial Monitor i Arduino IDE](https://www.arduino.cc/en/Guide/ArduinoSerialMonitor)
-- [Feilsøking i Arduino-prosjekter](https://create.arduino.cc/projecthub/Arduino_Genuino/debugging-in-arduino-ide-805c11)
+- [Arduino Serial Monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/serialmonitor/)
+- [Serial.print() dokumentasjon](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)

@@ -1,5 +1,6 @@
 ---
-title:                "Python: 문자열 연결하기"
+title:                "문자열 연결하기"
+html_title:           "Python: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Python"
 category:             "Python"
@@ -9,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 연결하는 것의 장점과 활용 방법
+## 왜?
 
-## 어떻게
+문자열 연결은 Python에서 매우 자주 사용되는 작업이며, 문자열을 조합하여 더 큰 문장이나 데이터를 만들 수 있기 때문에 매우 유용합니다.
+
+## 어떻게?
+
 ```Python
-# 변수에 문자열 할당
-string_1 = "안녕"
-string_2 = "하세요"
-# 문자열 연결
-concatenated_string = string_1 + string_2
-# 출력
-print(concatenated_string)
-# => 안녕하세요
+# concatenate strings using the '+' operator
+first_name = "John"
+last_name = "Smith"
+full_name = first_name + " " + last_name
+print(full_name)
+# output: John Smith
+
+# concatenating with string formatting
+age = 32
+print("I am {} years old.".format(age))
+# output: I am 32 years old.
 ```
 
-## 심층 분석
-문자열을 연결하는 것은 문자열 데이터를 조작하는 데 유용합니다. 문자열을 분할하거나 자르는 작업 없이도 간단하게 문자열을 합치는 것이 가능해집니다. 또한, 문자열을 포맷팅해서 출력할 때도 사용할 수 있습니다.
+## 깊게 들어가보자!
 
-## 참고 자료
-[파이썬 공식 문서](https://docs.python.org/ko/3/tutorial/datastructures.html#more-on-python-strings)  
-[점프 투 파이썬](https://wikidocs.net/13)  
-[Python String Concatenation](https://www.geeksforgeeks.org/python-string-concatenation/)
+문자열 연결에는 여러 가지 방법이 있지만, 가장 일반적인 방법은 '+' 연산자를 사용하는 것입니다. 이를 이용하여 변수나 상수를 조합하여 새로운 문자열을 만들 수 있습니다. 또한, 문자열 포맷팅을 사용하면 더 유연하고 간결한 코드를 작성할 수 있습니다. 이를 통해 변수 값을 문자열에 삽입하거나 형식화할 수 있습니다. 또한 문자열의 특정 부분을 추출하거나 수정하기 위해서는 인덱싱과 슬라이싱을 사용할 수 있습니다. 다양한 방법을 사용하여 문자열을 연결하여 보다 복잡한 작업을 수행할 수 있습니다.
+
+## 또 다른 참고자료
+
+- [Python에서 문자열 연결하기](https://www.geeksforgeeks.org/python-concatenation-of-two-strings/)
+- [문자열 포맷팅과 관련된 공식 문서](https://docs.python.org/3/library/string.html#format-string-syntax)
+- [인덱싱과 슬라이싱에 대한 자세한 설명](https://www.w3schools.com/python/python_strings.asp)
+
+## 레퍼런스
+
+[마크다운(Markdown) 이해하기](https://guides.github.com/features/mastering-markdown/)

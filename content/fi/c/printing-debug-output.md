@@ -1,6 +1,7 @@
 ---
-title:                "C: Virheilmoitusten tulostaminen"
-simple_title:         "Virheilmoitusten tulostaminen"
+title:                "Tulostaminen debuggaustuloste"
+html_title:           "C: Tulostaminen debuggaustuloste"
+simple_title:         "Tulostaminen debuggaustuloste"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -11,34 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Debug-tulosteiden tulostaminen on erittäin tärkeä osa C-ohjelmointia, jota kaikki kehittäjät joutuvat tekemään. Tulosteiden tulostaminen voi auttaa tunnistamaan ja korjaamaan ohjelmassa olevia virheitä, mikä tekee siitä välttämättömän osan ohjelmien kehittämistä.
+Debug-syötteiden tulostaminen on C-ohjelmoinnissa tärkeä työkalu, joka auttaa kehittäjiä paikantamaan ja korjaamaan virheitä. Näiden tulosteiden avulla voit tarkastella ohjelman suoritusaikaa ja selvittää, missä kohdassa koodia tapahtuu virhe. Se on myös hyvä tapa tarkistaa muuttujien arvoja ja varmistaa, että ohjelma toimii odotetulla tavalla.
 
-## Kuinka
+## Miten
 
-Käytännössä debug-tulosteiden tulostaminen C-ohjelmassa tapahtuu käyttämällä printf-funktiota. Tämä funktio ottaa ensimmäisenä parametrina tulostusmuodon ja seuraavina parametreina tulostettavat arvot, näin:
+C-kielen debug-syötteiden tulostaminen on helppo tehdä käyttämällä `printf` -funktiota. Voit tulostaa muuttujien arvoja laittamalla ne lainausmerkkien sisään ja käyttämällä `%d` tai `%f` -merkkiä osoittamaan, että kyseessä on kokonaisluku tai liukuluku. Voit myös käyttää `\n` -merkkiä tulostuksen välissä luodaksesi uuden rivin tekstiin.
 
-```C
-printf("Arvo 1: %d, Arvo 2: %s", int_arvo, string_arvo);
+```
+int numero = 10;
+float desimaaliluku = 3.14;
+printf("Muuttujien arvot ovat %d ja %.2f.\n", numero, desimaaliluku);
 ```
 
-Tämä koodi vähentää ensin int_arvon, ja sitten string_arvon, ensimmäinen muunnetaan ja tulostetaan numeroksi prosenttimerkkiä seuraavan "d":n avulla, ja toinen merkkijonoksi "s":n avulla.
+Tämä tulostaa seuraavan tekstin:
 
-Tämä on hyvä tapa tulostaa debug-tulosteita, koska se antaa sinulle mahdollisuuden tulostaa kunkin arvon erikseen. Voit myös lisätä kontrollirakenteita, kuten if-lausekkeita ja while-silmukoita, jotta voit säätää tulosteiden tulostamista tarpeittesi mukaan.
-
-## Syväsukellus
-
-Printf-funktiota käyttävät monet muutkin C:n sisäänrakennetut funktiot, kuten strcpy ja scanf. Tämä johtuu siitä, että printf tarjoaa hyödyllisiä muotoilusymboleja, kuten "%d" ja "%s", jotta voit muuntaa muuttujat ja tulostaa ne oikeassa muodossa. Voit myös luoda omia muotoilusymboleja määrittelemällä makron, esimerkiksi:
-
-```C
-#define INT "["%d"]"
-
-printf(INT, int_arvo);
+```
+Muuttujien arvot ovat 10 ja 3.14.
 ```
 
-Näin voit määrittää ja käyttää omia muotoilusymbolejasi sopimaan tarpeisiisi.
+Voit myös tulostaa muuttujien arvoja otsikoiden kanssa käyttämällä `printf` koodia, kuten seuraavassa esimerkissä:
+
+```
+printf("Numero: %d\n" "Desimaaliluku: %.2f\n", numero, desimaaliluku);
+```
+
+Tämä tulostuu tekstinä:
+
+```
+Numero: 10
+Desimaaliluku: 3.14
+```
+
+## Syvemmälle
+
+Debug-syötteiden tulostaminen on erittäin hyödyllistä, kun haluat selvittää, miten koodisi suorittuu, mutta muista poistaa kaikki tulosteet lopullisesta koodistasi. Voit tehdä tämän kommentoimalla koodirivejä tai käyttämällä `#ifdef` ja `#endif` -lausekkeita.
+
+Voit myös käyttää `fprintf` -funktiota tulostamaan tietoa tiedostoon. Tämä voi olla hyödyllistä, kun haluat tallentaa debug-syötteitä pidemmäksi ajaksi.
+
+```
+FILE *tiedosto = fopen("debug.txt", "w");
+fprintf(tiedosto, "Numero: %d\n" "Desimaaliluku: %.2f\n", numero, desimaaliluku);
+fclose(tiedosto);
+```
 
 ## Katso myös
 
-- [C-kielen perusteet](https://www.w3schools.com/c/)
-- [C-kielen käsikirja](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html)
-- [C-kielen debuggaaminen](https://stackoverflow.com/questions/18480470/how-to-debug-a-c-program-using-gdb-instructions)
+- [C-kielen debuggaus](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+- [C-ohjelman suorituksen aikainen debuggaus](https://www.geeksforgeeks.org/inspecting-c-program-debug-in-c/)
+
+Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään debug-syötteiden tulostamisen tärkeyttä C-ohjelmoinnissa. Muista käyttää tätä tärkeää työkalua hienosäätämään koodiasi ja korjaamaan virheitä. Onnea ohjelmointiin!

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Html-Parsing"
-simple_title:         "Html-Parsing"
+title:                "HTML parsen"
+html_title:           "Gleam: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,54 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-HTML ist eine der grundlegenden Technologien, die das moderne Web antreiben. Es ist die Sprache, die verwendet wird, um Webseiten zu erstellen und zu gestalten. Als Entwickler möchtest du möglicherweise die Inhalte von HTML-Webseiten extrahieren, um sie in deinen eigenen Anwendungen zu verwenden. Das Parsen von HTML ist der Prozess, bei dem der strukturierte Inhalt einer Webseite ausgelesen wird. In diesem Blogbeitrag werde ich dir zeigen, wie du dies mit der Programmiersprache Gleam erreichen kannst.
+Parsing von HTML-Dokumenten kann für viele Programmiererinnen und Programmierer eine nützliche Fähigkeit sein, um Daten aus Webseiten zu extrahieren. Es ermöglicht auch das automatisierte Durchsuchen und Verarbeiten von großen Mengen an HTML-Code, was hilfreich sein kann, wenn man beispielsweise Daten für eine Datenbank oder eine Analyse benötigt.
 
-## Wie geht es das?
+## Wie geht man vor?
 
-Um mit dem Parsen von HTML in Gleam zu beginnen, müssen wir zunächst ein Modul importieren, das uns beim Lesen und Verarbeiten von HTML helfen wird. Dieses Modul heißt "gleam/html". Wir verwenden die Funktion "parse", um eine HTML-Seite als Eingabe zu übergeben und erhalten als Ergebnis ein XML-Dokument. Dieses Dokument können wir dann analysieren und die Daten, nach denen wir suchen, extrahieren.
+Um HTML mit Gleam zu parsen, verwenden wir das Paket "html-parser", das Code-Blöcke in einer HTML-Datei in Strukturen umwandelt, die in Gleam leichter zu verarbeiten sind. Hier ist ein einfaches Beispiel, wie man Gleam-Code schreibt, um eine HTML-Datei zu parsen:
 
 ```Gleam
-import gleam/html
+import html-parser
 
-html =
-    """
-    <html>
-        <head>
-            <title>Meine Website</title>
-        </head>
-        <body>
-            <h1>Willkommen auf meiner Website</h1>
-            <p>Hier findest du alle Informationen, die du brauchst.</p>
-        </body>
-    </html>
-    """
+// Den HTML-Code als String deklarieren
+let html = "<html><body><h1>Hello, Gleam!</h1></body></html>"
 
-doc = html/html.parse(html)
+// Den HTML-Code parsen und in eine Struktur umwandeln
+let parsed = html_parser.parse(html)
 
-title =
-    doc
-    |> xml/child("head") // Unterelement "head" wählen
-    |> xml/child("title") // Unterelement "title" wählen
-    |> xml/text() // Text auswählen
+// Die Struktur nach Elementen durchsuchen, in diesem Fall <h1>
+let title = parsed
+  .find_all
+  .last()
+  .filter(|e| e.tag == "h1")
+  .unwrap()
 
-welcome_message =
-    doc
-    |> xml/child("body")
-    |> xml/child("h1")
-    |> xml/text()
-
+// Den Inhalt des Elements ausgeben
+io.print(title.content) // Ausgabe: Hello, Gleam!
 ```
 
-In diesem Beispiel haben wir eine einfache HTML-Seite definiert und sie an die "parse"-Funktion übergeben. Dann haben wir die XML-Dokument-Variable "doc" erstellt und zwei weitere Variablen "title" und "welcome_message" definiert, um den Titel und die Willkommensnachricht von der HTML-Seite zu extrahieren.
+Der Aufruf von `parse()` gibt ein Ergebnis vom Typ `Result(HtmlParserError, List(HtmlElement))` zurück. Wenn die HTML-Datei erfolgreich geparst wird, enthält die Liste alle gefundenen Elemente in der Reihenfolge, in der sie im Dokument auftreten. Mit den Methoden `find_all` und `filter` kann man bestimmte Elemente auswählen, die in einer Liste zurückgegeben werden.
 
-## Deep Dive
+## Tiefer Einblick
 
-Beim Parsen von HTML in Gleam gibt es einige wichtige Konzepte zu beachten. Eine der wichtigsten ist die Verwendung von Pipes. Pipes ermöglichen es uns, eine Sequenz von Funktionen aneinander zu reihen, wobei die Ausgabe einer Funktion als Eingabe für die nächste verwendet wird. Dies kann sehr nützlich sein, um komplexe Datenstrukturen wie XML-Dokumente zu durchlaufen und die gewünschten Daten zu extrahieren.
+Das "html-parser" Paket bietet auch die Möglichkeit, bestimmte CSS-Selektoren zu verwenden, um gezielt Elemente auszuwählen. Diese Methode kann besonders nützlich sein, wenn man nur bestimmte Teile einer Webseite benötigt. Zum Beispiel kann man mit dem CSS-Selektor `h1#title` nur das erste `h1`-Element mit der ID "title" auswählen.
 
-Ein weiterer wichtiger Punkt ist die Verwendung von XPath-Ausdrücken. XPath ist eine Abfragesprache für XML-Dokumente, mit der wir bestimmte Elemente und deren Inhalte auswählen können. In unserem Beispiel haben wir die Funktion "child" verwendet, um ein bestimmtes Unterelement auszuwählen, und die Funktion "text", um den Text des Elements auszuwählen. Mit XPath können wir jedoch noch viel komplexere Abfragen durchführen, um die für uns relevanten Daten zu finden.
+Es ist außerdem möglich, die Attribute eines Elements auszulesen, z.B. `class`, `id` oder benutzerdefinierte Attribute. So kann man beispielsweise alle Links auf einer Webseite auslesen, indem man nach dem `a`-Tag filtert und das `href`-Attribut ausgibt.
+
+Zusätzlich bietet das Paket Funktionen zum Verschachteln von Elementen und zum Entfernen von Tags, die nützlich sein können, wenn man nur Text aus einer Webseite extrahieren möchte.
 
 ## Siehe auch
 
-- [Offizielle Gleam Dokumentation](https://gleam.run/documentation/)
-- [Dokumentation des "gleam/html"-Moduls](https://hexdocs.pm/gleam_html/readme.html)
-- [Tutorial zu Gleam und HTML-Parsing](https://www.brian-kent.com/blog/2020/06/02/testing-gleam-html/)
+- Offizielle Dokumentation zum "html-parser" Paket: https://github.com/gleam-lang/html-parser
+- Einführung in Gleam: https://gleam.run/getting-started/introduction
+- Gleam Community-Forum: https://forum.gleam.run/
+
+Wenn Sie mehr über das Parsen von HTML mit Gleam erfahren möchten, können Sie die offizielle Dokumentation des "html-parser" Pakets durchlesen oder sich in der Gleam Community umsehen. Nutzen Sie diese Fähigkeit, um Ihre Programmierprojekte noch effizienter zu gestalten!

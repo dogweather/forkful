@@ -1,5 +1,6 @@
 ---
-title:                "Java: Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Java: Herunterladen einer Webseite"
 simple_title:         "Herunterladen einer Webseite"
 programming_language: "Java"
 category:             "Java"
@@ -9,35 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum herunterladen Sie eine Webseite?
+## Warum
 
-Das Herunterladen von Webseiten ist eine häufige Aufgabe für Programmierer, insbesondere wenn sie im Bereich Webentwicklung tätig sind. Oftmals müssen bestimmte Teile der Webseite analysiert oder verändert werden, was ohne das Herunterladen der Seite nicht möglich wäre. Außerdem ist es eine nützliche Fähigkeit, die dazu beitragen kann, tiefer in die Welt des Webdesigns einzutauchen.
+Warum sollte man eine Webseite herunterladen? Ganz einfach: um lokale Kopien von Inhalten zu haben oder um Web Scraping durchzuführen.
 
-Wie man eine Webseite herunterlädt
+## Wie
 
-Um eine Webseite herunterzuladen, können Sie die Klasse "URLConnection" aus dem java.net Paket verwenden. Mit dieser Klasse können Sie eine Verbindung zu einer URL aufbauen und den Inhalt der Webseite abrufen.
+Um eine Webseite in Java herunterzuladen, benötigt man die `java.net` Bibliothek. Hier ist ein Beispiel, wie man eine Webseite mit dem URL-Objekt herunterladen kann und den Inhalt in der Konsole ausgibt:
 
-```
-java.net.URL url = new java.net.URL("http://www.example.com");
-java.net.URLConnection conn = url.openConnection();
-java.io.InputStream in = conn.getInputStream();
-java.io.FileOutputStream out = new java.io.FileOutputStream("webseite.html");
-byte[] buffer = new byte[1024];
-int bytesRead;
-while((bytesRead = in.read(buffer)) != -1){
-    out.write(buffer, 0, bytesRead);
+```Java
+import java.io.*;
+import java.net.*;
+
+public class WebPageDownloader {
+    public static void main(String[] args) throws IOException{
+        URL url = new URL("https://www.example.com");
+        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null)
+            System.out.println(inputLine);
+        in.close();
+    }
 }
-in.close();
-out.close();
 ```
-Diese einfache Implementierung erstellt eine Datei mit dem Namen "webseite.html", die den Inhalt der Webseite enthält.
 
-Tiefergehen
+Die Ausgabe sieht dann so aus:
 
-Es gibt verschiedene Möglichkeiten, wie Sie das Herunterladen einer Webseite mit Java anpassen können. Zum Beispiel können Sie die "URLConnection" Klasse verwenden, um einen benutzerdefinierten Benutzer-Agenten zu erstellen, um sich als Desktop-Browser auszugeben und somit die Ergebnisse Ihrer Anfrage zu optimieren. Sie können auch verschiedene Arten von Anforderungen senden, wie zum Beispiel POST oder PUT Anforderungen. Die Möglichkeiten sind endlos und können je nach Ihren spezifischen Anforderungen angepasst werden.
+```
+<html>
+<head><title>Example Domain</title></head>
+<body>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use
+    this domain in literature without prior coordination or asking for
+    permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</body>
+</html>
+```
 
-Siehe auch
+Man kann auch die `URLConnection` verwenden, um spezifische Header oder Anfragemethoden anzugeben. Hier ist ein Beispiel, wie man einen Benutzer-Agenten hinzufügt:
 
-1. https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
-2. https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html
-3. https://www.baeldung.com/java-http-url-connection
+```Java
+import java.io.*;
+import java.net.*;
+
+public class WebPageDownloader {
+    public static void main(String[] args) throws IOException{
+        URL url = new URL("https://www.example.com");
+        URLConnection con = url.openConnection();
+        con.addRequestProperty("User-Agent", "My User Agent");
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null)
+            System.out.println(inputLine);
+        in.close();
+    }
+}
+```
+
+Die Ausgabe bleibt die gleiche wie zuvor, aber diesmal wurde die URL-Anfrage mit dem angegebenen Benutzer-Agenten durchgeführt.
+
+## Deep Dive
+
+Das Herunterladen einer Webseite ist eigentlich der Retrieval von HTTP- oder HTTPS-Ressourcen. Man kann also nicht nur HTML-Dateien herunterladen, sondern auch Bilder, PDFs oder andere Dateiformate. Durch die Verwendung von `InputStream`- und `OutputStream`-Klassen kann man Dateien herunterladen und speichern, oder sogar direkt in ein Java-Objekt parsen.
+
+Um mehr über die Möglichkeiten des Herunterladens von Webseiten in Java zu erfahren, kann man sich mit den verschiedenen Klassen in der `java.net` Bibliothek wie `URL`, `URLConnection` oder `HttpURLConnection` beschäftigen. Es gibt auch verschiedene Java-Bibliotheken von Drittanbietern, die nützliche Funktionen für das Herunterladen von Webseiten anbieten.
+
+## Siehe Auch
+
+- [Oracle Java Tutorial: Working with URLs](https://docs.oracle.com/javase/tutorial/networking/urls/)
+- [Baeldung Java: How to Send HTTP Requests using java.net](https://www.baeldung.com/java-http-request)

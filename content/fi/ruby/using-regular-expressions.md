@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Säännöllisten lausekkeiden käyttö"
-simple_title:         "Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten ilmeiden käyttö"
+html_title:           "Ruby: Säännöllisten ilmeiden käyttö"
+simple_title:         "Säännöllisten ilmeiden käyttö"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää Regular Expressions?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Regular Expressions eli regex on voimakas työkalu, jolla voidaan hakea, korvata ja validoida merkkijonoja helposti ja tarkasti. Se on erityisen hyödyllinen tekstianalyysissä ja datan käsittelyssä. Joten, jos olet ohjelmoija tai joudut tekemään paljon merkkijonojen käsittelyä, regexin opetteleminen voi säästää paljon aikaa ja vaivaa.
+Säännöllisten lausekkeiden käyttö on hyödyllistä, kun haluat hakea ja muokata tietoa merkkijonoista tietyllä tavalla. Niitä voidaan käyttää esimerkiksi tietokantojen kyselyissä, tekstinkäsittelyssä ja tiedostonkäsittelyssä.
 
-## Ohjeet Regexin käyttöön
+## Näin käytät säännöllisiä lausekkeita
 
-Regular Expressionin perusmuodossa se koostuu merkistä, jota etsitään, ja erityisistä symboleista, jotka määrittävät miten merkkiä käsitellään. Esimerkiksi, jos haluat etsiä sanaa "sika" dokumentista, voit käyttää regex-mallia `/sika/`, joka vastaa kaikkia sanoja, jotka sisältävät "sika". Tämä ei kuitenkaan rajoitu vain yhteen sanaan, vaan voit käyttää myös symboleita, kuten `+` tai `*`, jotka määrittävät kuinka monta kertaa merkki esiintyy.
+Säännöllisen lausekkeen käyttö Rubyssa on helppoa. Seuraavassa esimerkissä etsitään merkkijonosta kaikki isot kirjaimet ja tulostetaan ne:
 
 ```Ruby
-/sea+/ =~ "seal" # tulostaa 0
-/sea+/ =~ "seeeal" # tulostaa 0
-/sea+/ =~ "saal" # tulostaa nil
-"sea" ==~ /sea+/ # tulostaa true
+string = "Tämä On Esimerkki"
+string.gsub(/[A-Z]+/, '') #=> "lmrmmi"
 ```
 
-Tässä on muutamia muita hyödyllisiä symboleita, joilla voit parantaa regexisi tarkkuutta ja monipuolisuutta:
+Tässä esimerkissä käytetään `gsub` metodia, joka korvaa kaikki merkkijonossa löytyvät isot kirjaimet tyhjällä merkkijonolla. Säännöllinen lauseke `[A-Z]+` tarkoittaa, että etsitään aakkosten isoja kirjaimia ja `+` merkki tarkoittaa, että etsitään yksi tai useampi esiintymä.
 
-- `^` sopii merkkijonon alkuun
-- `$` sopii merkkijonon loppuun
-- `.` sopii mihin tahansa merkkiin paitsi uuteen riviin
-- `[]` sopii joukkoon merkkejä, esim. `[abc]` sopisi a, b tai c
-- `[^]` sopii kaikkiin muihin paitsi joukkoon merkkejä
-- `()` ryhmittelee lausekkeita
-- `?` sopii 0 tai 1 merkkiin
-- `{n}` sopii tarkalleen n kertaa esiintyvään merkkiin
-- `{n,}` sopii vähintään n kertaa esiintyvään merkkiin
+## Syventävä tieto säännöllisistä lausekkeista
 
-## Syvällinen sukellus
+Ruby tarjoaa erittäin kehittyneen tavan käyttää säännöllisiä lausekkeita. Voit esimerkiksi käyttää ryhmiä ja kertoa, millä tavoin haluat muokata löytyneitä osia.
 
-Vaikka regex voi olla tehokas työkalu, se voi myös olla melko monimutkainen ja vaikeasti hahmotettavissa. Yksi tapa helpottaa regexin käyttöä on käyttää online työkaluja, kuten Rubular, joka auttaa testaamaan regexiä reaaliaikaisesti.
+Esimerkiksi, kun haluaa vaihtaa merkkijonon sanat paikoillaan, voit käyttää `sub` metodia seuraavasti:
 
-Regexiä käyttäessä on myös tärkeää huomata, että se on herkkä kirjoitusvirheille ja väärin ymmärretyille malleille voi johtaa ei-toivottuihin tuloksiin. Siksi on tärkeää testata ja varmistaa, että regex toimii odotetulla tavalla ennen sen käyttöä tuotanto-ohjelmassa.
+```Ruby
+string = "Tämä on esimerkki"
+string.gsub(/(\w+) (\w+)/, '\2 \1') #=> "on Tämä esimerkki"
+```
+
+Tässä tapauksessa `(\w+) (\w+)` tarkoittaa, että etsitään kaksi sanaryhmää ja ensimmäinen ryhmä näytetään `\1` ja toinen `\2`.
 
 ## Katso myös
 
-- Rubular - http://rubular.com/
-- Ruby Regular Expressions - https://www.rubyguides.com/2015/06/ruby-regex/
-- Ruby Docs - https://ruby-doc.org/core-2.5.1/Regexp.html
+- [Ruby säännölliset lausekkeet](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Ruby regexp metodi](https://ruby-doc.org/core-2.7.1/Regexp.html#method-i-gsub)
+- [Ruby regexp esimerkkejä](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)

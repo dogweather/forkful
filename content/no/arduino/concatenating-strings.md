@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Kombinering av strenger"
-simple_title:         "Kombinering av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,53 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Hvorfor
 
-Mange ganger i Arduino programmering, vil du trenge å kombinere flere tekststrenger sammen for å skape en komplett utgang. Dette kalles "concatenation" og er en nyttig teknikk for å lage dynamiske meldinger og datautgang. Så hvis du vil ta dine Arduino prosjekter til neste nivå, er det viktig å lære hvordan du kan gjøre dette.
+Hvorfor skal man egentlig bruke concatenating strings i Arduino-programmering? La oss se nærmere på hva dette betyr og hvordan det kan være nyttig.
 
-# How To
+Arduino-programmering innebærer å skrive kode som kan utføre ulike handlinger ved hjelp av mikrokontrolleren. I noen tilfeller, spesielt når vi jobber med tekstbasert informasjon, kan det være nødvendig å kombinere flere ord eller setninger for å oppnå det ønskede resultatet. Her kommer concatenating strings inn i bildet.
 
-Kodingen for å kombinere strenger i Arduino er veldig enkel. Først må du definere to tekststrenger som du vil kombinere, for eksempel:
+# Hvordan gjør man det
 
-```Arduino
-String navn = "Arne";
-String beskjed = "Velkommen til mitt prosjekt!";
+Hvis vi vil slå sammen to eller flere tekststrenger, kan vi bruke pluss-tegnet (+) til å kombinere dem. La oss se på et enkelt eksempel:
+
+```
+ArduinoSerial.begin(9600); 
+String navn = "Magnar"; 
+String melding = "Hei, " + navn + "!"; 
+Serial.println(melding);
 ```
 
-Deretter kan du kombinere dem ved hjelp av "+" -operatøren og lagre det kombinerte resultatet i en ny variabel som denne:
+I dette eksempelet bruker vi concatenate strings for å lage en hilsen til personen med navnet "Magnar". Når vi kjører koden, vil vi se følgende utskrift på serieporten: Hei, Magnar!
 
-```Arduino
-String fullBeskjed = navn + beskjed;
+Vi kan også bruke concatenate strings for å legge til tall eller andre variabler i en tekststreng. Her er et annet eksempel som viser hvordan vi kan bruke denne teknikken til å lage en kompleks melding:
+
+```
+ArduinoSerial.begin(9600); 
+int poeng = 80; 
+String melding = "Du fikk " + String(poeng) + " poeng!"; // String(poeng) konverterer tallet til en tekststreng 
+Serial.println(melding);
 ```
 
-Du kan også legge til flere strenger ved å fortsette å bruke "+" -operatøren, for eksempel:
+I dette tilfellet vil koden skrive ut følgende melding: Du fikk 80 poeng!
 
-```Arduino
-String tid = "Klokken er nå: ";
-int klokkeslett = 15;
-fullBeskjed = tid + klokkeslett + "åtte" + "på kvelden";
-```
+Husk at når vi jobber med concatenate strings, må vi sørge for å inkludere mellomrom og andre tegn der det er nødvendig for å få en lesbar utskrift.
 
-Til slutt, kan du skrive ut den kombinerte strengen ved hjelp av `Serial.println()` -funksjonen:
+# Dypdykk
 
-```Arduino
-Serial.println(fullBeskjed);
-```
+Når vi bruker concatenate strings i Arduino, opprettes en midlertidig tekststreng hver gang vi kombinerer to strenger. Dette kan legge til ekstra arbeidsminne og dermed påvirke ytelsen til koden vår. Derfor er det viktig å være selektiv med bruken av denne teknikken og unngå å slå sammen for mange strenger i en enkelt kodeblokk.
 
-Outputen vil da være:
-
-```Arduino
-Klokken er nå: 15:08 på kvelden
-```
-
-# Deep Dive
-
-Nå som du vet hvordan du kan kombinere strenger i Arduino, er det viktig å forstå noen av begrensningene. Først er det viktig å merke seg at det bare er mulig å kombinere datatyper av samme type. For eksempel kan du ikke kombinere en `String` og en `int`, men du kan konvertere tallet til en tekststreng før du kombinerer dem.
-
-I tillegg er det viktig å være oppmerksom på minnebruken når du kombinerer strenger. Hver gang du kombinerer to strenger, blir en ny strengobjekt opprettet i minnet. Dette kan forårsake problemer hvis du kombinerer veldig lange strenger eller hvis du kombinerer strenger i en løkke som kjører mange ganger.
-
-Et annet viktig poeng å huske på er at `String` -klassen i Arduino ikke støtter alle funksjoner som finnes i standard C ++ -biblioteker. Så hvis du prøver å bruke en funksjon som ikke er tilgjengelig i `String` -klassen, kan du få en feilmelding.
+Vi bør også være forsiktige med å bruke concatenate strings i en løkke, da dette kan føre til ytelsesproblemer. Det er også viktig å merke seg at concatenate strings bare fungerer for tekststrenger og ikke tall og andre variabler.
 
 # Se også
 
-- [Arduino String klasse referanse](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [W3Schools om string concatenation i Arduino](https://www.w3schools.com/java/java_strings_concatenation.asp)
-- [Arduino Forum om string concatenation og minnebruk](https://forum.arduino.cc/index.php?topic=93164.0)
+Her er noen nyttige lenker for å lære mer om concatenate strings i Arduino-programmering:
+
+- Offisiell Arduino-veiledning for bruk av concatenate strings: https://www.arduino.cc/reference/en/language/functions/communication/serial/print/
+- En god artikkel om å optimalisere concatenate strings for bedre ytelse: https://forum.arduino.cc/index.php?topic=524169.0
+- En rask referanseguide for bruk av concatenate strings i Arduino: https://learn.sparkfun.com/tutorials/arduino-104-string-append-operator/data-types-strings

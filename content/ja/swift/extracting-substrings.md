@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 「部分文字列の抽出」"
-simple_title:         "「部分文字列の抽出」"
+title:                "文字列の切り出し"
+html_title:           "Swift: 文字列の切り出し"
+simple_title:         "文字列の切り出し"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,36 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Swiftでサブストリングを抽出する必要があるのでしょうか？サブストリングを抽出することで、文字列をより細かく分割することができます。例えば、名前や住所など、文字列の一部を取り出す場合に便利です。
+文字列から部分文字列を抽出することの利点は多岐にわたります。例えば、文字列の特定の一部分を抽出して、より短く読みやすい文字列を作成したり、特定の条件に基づいて文字列を分割したりすることができます。
 
-## 方法
-
-まずは、どの文字列からサブストリングを抽出するかを決めます。次に、どの部分を抽出したいかを指定します。最後に、サブストリングを抽出するメソッドを使って実際に抽出します。例えば、以下のようなコードを使うことができます。
+## 抽出方法
 
 ```Swift
-let fullName = "Yuto Yamada"
-let firstName = fullName.prefix(4) // 「Yuto」が抽出される
+let myString = "Hello, world!"
+let substring = myString[..<5]
+
+print(substring) // Hello
 ```
 
-抽出する部分を指定する際には、文字列のインデックスを使います。例えば、上記の例では「Yuto」の最初の文字、つまりインデックス番号が0の文字から４文字分を抽出しています。抽出する部分がどのインデックス番号に該当するかを把握することが重要です。
+この例では、文字列の先頭から5文字までの部分文字列を抽出しています。 `..<`演算子を使用することで、抽出したい部分の範囲を指定することができます。また、インデックス番号を使用することで、特定の位置から始まる部分文字列を抽出することもできます。
 
-## 深堀り
+```Swift
+let myString = "Hello, world!"
+let substring = myString[6...]
 
-サブストリングを抽出するメソッドには、いくつかの種類があります。それぞれのメソッドは、抽出する部分の指定方法や戻り値の形式が異なります。例えば、下記のようなメソッドがあります。
+print(substring) // world!
+```
 
-- `prefix`: 文字列の先頭から指定した数の文字を抽出する
-- `suffix`: 文字列の末尾から指定した数の文字を抽出する
-- `dropFirst`: 指定した数の文字を先頭から削除した文字列を返す
-- `dropLast`: 指定した数の文字を末尾から削除した文字列を返す
+さらに、条件に応じて文字列を分割することもできます。例えば、コロンで区切られた特定のワードのみを抽出することができます。
 
-また、`string.index()`メソッドを使うことで、指定したインデックス番号の文字を取得することもできます。
+```Swift
+let myString = "I love:Swift:programming:language"
+let substrings = myString.split(separator: ":", omittingEmptySubsequences: false)
+
+print(substrings) // ["I love", "Swift", "programming", "language"]
+```
+
+## 詳しく見る
+
+文字列から部分文字列を抽出する方法は一見単純に見えますが、実は内部的には複雑な処理が行われています。文字列は`String`型であり、Swiftでは`Substring`型と呼ばれる部分文字列を抽出するための専用のデータ型が使用されています。これにより、多くのメモリを消費することなく、効率的に文字列を抽出することができます。
 
 ## 参考リンク
 
-- [Swiftでの文字列操作について](https://developer.apple.com/documentation/swift/string)
-- [サブストリングを抽出する方法](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string-coded-in-swift)
-- [文字の抽出と削除に関するチュートリアル](https://www.swiftmania.io/tutorials/learn-how-to-extract-remove-characters-from-strings-in-swift)
-- [文字列の処理に関する基本的なメソッド一覧](https://qiita.com/KangKiBeom/items/64721003b9390c991fd1)
-
-
-## 関連リンク
+- [Swift Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift Substrings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID576)
+- [Using Substrings in Swift](https://useyourloaf.com/blog/using-substrings-in-swift-4/)

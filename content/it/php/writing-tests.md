@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Scrivere test"
+title:                "Scrivere test"
+html_title:           "PHP: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,42 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test?
 
-Scrivere test è fondamentale per garantire la qualità del nostro codice e per evitare errori in produzione. Grazie ai test possiamo accertarci che il nostro codice funzioni come previsto e che eventuali modifiche non abbiano rotto nulla di già esistente. Inoltre, i test facilitano il processo di debugging e migliorano la stabilità della nostra applicazione.
+Scrivere test è fondamentale per garantire la qualità del codice e risparmiare tempo nel processo di sviluppo. I test permettono di individuare errori in modo tempestivo, facilitare la manutenzione del codice e garantire che le nuove funzionalità non rompano quelle già esistenti.
 
-## Come fare
+## Come scrivere test in PHP
 
-Per scrivere test in PHP, possiamo utilizzare il framework di testing PHPUnit, che offre un'ampia gamma di funzionalità e integrazione con IDE come PhpStorm. Vediamo un esempio di come scrivere un test per una funzione che verifica se una stringa è palindroma utilizzando il metodo `assertEquals` di PHPUnit:
+Per iniziare a scrivere test in PHP, è consigliato utilizzare un framework di testing come PHPUnit. Questo framework permette di creare e gestire i test in modo semplice e organizzato.
 
-```
-<?php
+Nella seguente sezione, vedremo come creare e eseguire un semplice test utilizzando PHPUnit.
+
+```PHP
+// Include il file dove è definita la classe da testare
+require_once 'src/EsempioClasse.php';
+
+// Importa la classe PHPUnitTestCase
 use PHPUnit\Framework\TestCase;
 
-class StringTest extends TestCase
+class EsempioClasseTest extends TestCase
 {
-    public function testIsPalindrome()
+    // Metodo per verificare che la classe sia istanziata correttamente
+    public function testClassCreation()
     {
-        $string = "radar";
-        $this->assertEquals(true, isPalindrome($string));
+        $esempio = new EsempioClasse();
+
+        // Verifica che l'istanza sia della classe EsempioClasse
+        $this->assertInstanceOf(EsempioClasse::class, $esempio);
+    }
+
+    // Metodo per verificare il corretto funzionamento di un metodo della classe
+    public function testExampleMethod()
+    {
+        $esempio = new EsempioClasse();
+
+        // Invoca il metodo da testare
+        $result = $esempio->esempioMetodo();
+
+        // Verifica che il risultato sia quello atteso
+        $this->assertEquals('Esempio', $result);
     }
 }
 ```
 
-Il test verifica se la funzione `isPalindrome` restituisce `true` quando viene passata la stringa "radar". Possiamo poi eseguire il test attraverso la nostra console utilizzando il comando `phpunit`.
+Una volta creati i test, per eseguirli è sufficiente utilizzare il comando `phpunit` seguito dal nome del file che contiene i test.
 
 ## Approfondimento
 
-Scrivere test può sembrare un processo tedioso, ma ne vale la pena. Adottare una mentalità di sviluppo basata sulla scrittura di test ci aiuta a scrivere codice più pulito e ben strutturato. Inoltre, è importante seguire alcune buone pratiche come:
-- Scrivere test prima di scrivere il codice, seguendo il principio del "test-driven development".
-- Testare ogni funzionalità in isolamento, utilizzando mock e stub quando necessario.
-- Assicurarsi che ogni test sia indipendente dagli altri e non abbia effetti collaterali.
-
-Adottare queste buone pratiche ci permette di avere una suite di test affidabile e di essere più sicuri del nostro codice.
+Oltre ai test di unità, è importante includere anche i test di integrazione, che verificano il corretto funzionamento di più componenti del sistema. E' inoltre consigliabile utilizzare il principio di test-driven development, dove si scrivono prima i test e poi il codice per soddisfare quei test.
 
 ## Vedi anche
 
-- [Documentazione di PHPUnit](https://phpunit.de/documentation.html)
-- [Come scrivere test per applicazioni PHP](https://www.toptal.com/php/writing-testable-code-in-php)
-- [Unit testing with PHPUnit](https://www.sitepoint.com/phpunit-testing-quiz-app/)
-- [Test-driven development with PHPUnit: Tutorial](https://www.cloudways.com/blog/unit-testing-tutorial-with-phpunit/)
+- [Guida a PHPUnit (in italiano)](https://phpunit.de/manual/8.0/it/index.html)
+- [Principi del test-driven development](https://www.agilealliance.org/glossary/tdd/)

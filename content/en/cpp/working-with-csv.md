@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "C++ recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "C++"
 category:             "C++"
@@ -10,46 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-When it comes to organizing and analyzing large datasets, CSV (Comma Separated Values) files are a popular and efficient choice. In this blog post, we will explore the basics of working with CSV files in C++ and how it can enhance our programming capabilities.
+CSV (Comma Separated Values) is a popular file format used for storing tabular data. It is widely used in data analysis, data exchange, and data storage due to its simple and universal structure. As a result, being able to work with CSV files is a valuable skill for any programmer.
 
 ## How To
-To start working with CSV files in C++, we first need to include the `fstream` library. This library allows us to read and write from files. We will also need the `string` library to manipulate and store data from the CSV file. Our code will look something like this:
-
+To start working with CSV files in C++, we need to include the `<fstream>` library and declare our input file stream and CSV parser objects as follows:
 ```C++
-#include <fstream>
-#include <string>
-
-int main() {
-  // code goes here
-  return 0;
+#include <fstream> 
+#include <iostream>
+#include <sstream> 
+using namespace std;
+  
+ifstream input_file("data.csv"); 
+string line; 
+string cell; 
+stringstream ss;
+```
+Next, we can use a `while` loop to read each line from the CSV file and then use a `while` loop nested within it to delimit each line into separate cells using the `getline()` function. The parsed data can then be stored in a 2D vector for easy access and manipulation. Here's an example code:
+```C++
+vector<vector<string>> data; 
+  
+while(getline(input_file, line)) 
+{ 
+    vector<string> row; 
+    ss.str(line); 
+  
+    while(getline(ss, cell, ',')) 
+    { 
+        row.push_back(cell); 
+    } 
+  
+    data.push_back(row); 
+    ss.clear(); 
 }
 ```
-Next, we need to declare a file stream object and open our CSV file for reading. We do this using the `ifstream` constructor and passing the name of the file as a parameter. We can also check if the file was successfully opened using the `is_open()` method. For example,
+To access a specific cell in the data, we can use the index of the row and column, like `data[2][3]` for the fourth cell in the third row. Now, let's say we want to display the data in a formatted table, we can use a `for` loop to iterate through the vector and print out the data using `cout` as shown below:
 ```C++
-std::ifstream csv_file("data.csv");
-if (!csv_file.is_open()) {
-    // error handling code
-}
+for(int i = 0; i < data.size(); i++) 
+{ 
+    for(int j = 0; j < data[i].size(); j++) 
+    { 
+        cout << data[i][j] << " | "; 
+    } 
+    cout << endl; 
+} 
 ```
-Now, we can start reading the data from the CSV file and storing it in variables. To do this, we will use a loop and the `getline()` method to read each line of the file and extract the data using a delimiter, in this case, a comma. For example,
-```C++
-std::string line, name;
-int age;
-while(getline(csv_file, line)) {
-    std::getline(line, name, ',');
-    csv_file >> age;
-    // store and manipulate data
-}
+Here's a sample output for reference:
 ```
-Finally, we can close the file once we are done using the data. This is done by calling the `close()` method on our file stream object.
+ID | Name | Age | Occupation | 
+01 | John | 25 | Student | 
+02 | Sarah | 28 | Teacher | 
+03 | Peter | 30 | Engineer |
+```
 
 ## Deep Dive
-Working with CSV files involves more than just reading and writing data. We also need to handle special cases such as empty fields, different delimiters, and headers. Additionally, we might need to convert the data from strings to their respective data types, such as converting an age from a string to an integer. These considerations are important to ensure our program can handle diverse datasets without any errors.
-
-It is also worth mentioning that there are external libraries like `libcsv` and `libcsv++` which provide more advanced features and options for working with CSV files in C++.
+While CSV files are simple to work with, it's essential to keep in mind a few things. Firstly, not all CSV files are the same. Some may use a different delimiter, such as a semicolon (;) or a tab, instead of a comma. So it's best to check the file beforehand and adjust the code accordingly. Secondly, CSV files may also contain empty cells, so it's crucial to handle those cases using conditionals or error handling. Lastly, for larger files, it's more efficient to use a memory-mapped file instead of storing all the data in a vector.
 
 ## See Also
-- [fstream library documentation](https://www.cplusplus.com/reference/fstream/)
-- [string library documentation](https://www.cplusplus.com/reference/string/)
-- [libcsv documentation](https://github.com/libcsv/libcsv)
-- [libcsv++ documentation](https://github.com/michaelvoss/libcsvpp)
+- [C++ Documentation](https://en.cppreference.com/w/)
+- [CSV File Formats](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [Working with CSV Files in C++](https://www.javatpoint.com/csv-parser-in-cpp)

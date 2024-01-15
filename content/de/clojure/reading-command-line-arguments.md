@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Das Lesen von Befehlszeilenargumenten"
+html_title:           "Clojure: Das Lesen von Befehlszeilenargumenten"
+simple_title:         "Das Lesen von Befehlszeilenargumenten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,69 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der Programmierung in Clojure. Es ermöglicht es uns, Interaktion mit unserem Programm auf einer höheren Ebene zu haben und es an verschiedene Umgebungen anzupassen. In diesem Blogbeitrag werden wir uns genauer ansehen, wie man in Clojure Befehlszeilenargumente liest und verwendet.
+Wenn du schon einmal eine Anwendung auf der Kommandozeile ausgeführt hast, hast du wahrscheinlich gesehen, dass sie manchmal zusätzliche Argumente erfordert. Diese Argumente ermöglichen es Benutzern, die Funktionalität der Anwendung anzupassen oder bestimmte Operationen auszuführen. In dieser Anleitung werden wir uns ansehen, wie man diese Argumente richtig liest und versteht.
 
-## Anleitung
+## Wie geht's
 
-Um Befehlszeilenargumente in Clojure zu lesen, verwenden wir die `command-line-args`-Funktion. Diese Funktion gibt uns eine Liste der Befehlszeilenargumente zurück, die beim Start des Programms angegeben wurden. Schauen wir uns ein Beispiel an:
+Das Lesen von Befehlszeilenargumenten ist in Clojure ziemlich einfach. Alles, was du dafür brauchst, ist das ```clojure clojure.args``` Paket. Bevor wir jedoch loslegen, lass uns einen einfachen Beispielcode betrachten:
 
-```Clojure
-(def args (command-line-args))
+```clojure
+(ns arg-example
+  (:require [clojure.args :refer [parse-opts]]))
 
-(println (str "Die Befehlszeilenargumente waren: " args))
-```
-
-Wenn wir dieses Programm mit `clojure -M -m meinprogramm arg1 arg2` aufrufen, wird die Ausgabe folgendermaßen aussehen:
-
-```
-Die Befehlszeilenargumente waren: [arg1 arg2]
-```
-
-Wir können auch die `get`-Funktion verwenden, um auf bestimmte Argumente zuzugreifen, indem wir ihre Position in der Liste angeben. Zum Beispiel:
-
-```Clojure
-(def first-arg (get args 0))
-
-(println (str "Das erste Argument war: " first-arg))
-```
-
-Die Ausgabe wäre:
+(defn main
+  [args]
+  (let [[opts _ _] (parse-opts args [["-n" "--name" "Name" "Name des Benutzers"]])]
+    (println "Hallo" (:name opts))))
 
 ```
-Das erste Argument war: arg1
-```
 
-## Tieferer Einblick
-
-Es ist wichtig zu beachten, dass Befehlszeilenargumente standardmäßig als Zeichenfolgen interpretiert werden. Wenn wir also eine Zahl als Argument übergeben, müssen wir sie zuerst in ein numerisches Format konvertieren, bevor wir sie verwenden können. Wir können dies mit der `read-string`-Funktion tun. Zum Beispiel:
-
-```Clojure
-(def num-arg (read-string (get args 0)))
-
-(println (str "Die summe von " num-arg " und 5 ist: " (+ num-arg 5)))
-```
-
-Wenn wir das Programm mit `clojure -M -m meinprogramm 10` aufrufen, wird die Ausgabe folgendermaßen aussehen:
+Dieses kurze Programm liest einen optionalen Befehlszeilenargument mit dem Namen "Name" und gibt "Hallo Name" aus, wobei "Name" der eingegebene Wert ist. Lass uns nun sehen, was passiert, wenn wir dieses Programm mit verschiedenen Argumenten ausführen:
 
 ```
-Die Summe von 10 und 5 ist: 15
+$ java -jar arg-example.jar
+Hallo
+
+$ java -jar arg-example.jar -n "Mike"
+Hallo Mike
+
+$ java -jar arg-example.jar --name "Sandra"
+Hallo Sandra
 ```
 
-Es ist auch möglich, optionale Argumente zu definieren, indem man vor dem Argument einen Schrägstrich setzt. Diese Argumente müssen nicht bei jedem Aufruf des Programms angegeben werden und werden standardmäßig auf `nil` gesetzt. Zum Beispiel:
+Wie du sehen kannst, kannst du das Argument entweder mit einer Kurzform (```-n```) oder einer Langform (```--name```) angeben, gefolgt von einem Wert. Wenn du das Argument nicht angibst, wird der Standardwert verwendet (in diesem Fall ist es ein leerer String).
 
-```Clojure
-(println (str "Optional 'foo' argument: " (get args 1)))
-```
+Der Grund, warum dies so funktioniert, ist, dass das ```parse-opts``` Funktion ein Hashmap zurückgibt, das alle angegebenen Argumente enthält. In unserem Beispiel verwenden wir das ```_``` Symbol, um ungenutzte Argumente zu verwerfen, da wir hier nur an dem einen Argument interessiert sind. Du kannst jedoch beliebig viele Argumente hinzufügen.
 
-Wenn wir das Programm mit `clojure -M -m meinprogramm arg1` aufrufen, wird die Ausgabe folgendermaßen aussehen:
+## Tiefe Tauchgänge
 
-```
-Optional 'foo' argument: nil
-```
+Nun, da du gesehen hast, wie man Befehlszeilenargumente in Clojure liest, lass uns einen Blick auf die ```parse-opts``` Funktion werfen. Diese Funktion nimmt drei Argumente: die Argumente, die an dein Programm übergeben werden (normalerweise ```*command-line-args*```), eine Sequenz von zu parsenden Argumenten und eine optionale Kopfzeile für die Hilfe.
+
+In unserem Beispiel haben wir nur ein Argument definiert, aber in der Sequenz kannst du beliebig viele Argumente angeben. Jede Argumentdefinition besteht aus einem oder mehreren Flaggen (wie in unserem "Name"-Argument), einem benutzerdefinierten Namen und einer Beschreibung für die Hilfe.
+
+Die ```parse-opts``` Funktion sorgt dafür, dass die eingegebenen Argumente den erwarteten Formen entsprechen und gibt dann das Ergebnis als Hashmap zurück, das die benutzerdefinierten Namen als Schlüssel enthält. Es gibt auch die Möglichkeit, Standardwerte für Argumente anzugeben, falls der Benutzer sie nicht angegeben hat.
 
 ## Siehe auch
 
-- [Clojure Dokumentation zu Befehlszeilenargumenten](https://clojure.org/reference/compilation)
-- [Tutorial zur Verwendung von Befehlszeilenargumenten in Clojure](https://www.braveclojure.com/sequences-in-clojure/)
-- [Clojure Cheatsheet für Befehlszeilenargumente](https://clojure.org/api/cheatsheet)
-- [StackOverflow-Frage zur Verwendung von Befehlszeilenargumenten in Clojure](https://stackoverflow.com/questions/38999891/how-to-pass-command-line-arguments-using-clojure-script)
+- [Offizielle Dokumentation für Clojure Args](https://clojure.github.io/tools.cli/)
+- [Eine praktische Einführung in das Lesen von Befehlszeilenargumenten in Clojure](https://www.brainfuel.io/blog/how-to-read-command-line-arguments-with-clojure)

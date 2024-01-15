@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Mallin mukaisten merkkien poistaminen"
-simple_title:         "Mallin mukaisten merkkien poistaminen"
+title:                "Mallin mukaisesti vastaavien merkkien poistaminen"
+html_title:           "Kotlin: Mallin mukaisesti vastaavien merkkien poistaminen"
+simple_title:         "Mallin mukaisesti vastaavien merkkien poistaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,58 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi #
+## Miksi
 
+## Miksi haluat poistaa merkkejä vastaavan mallin
+Kun työskentelemme ohjelmointitehtävissä, saatamme törmätä tilanteisiin, joissa haluamme poistaa tietynlaisia merkkejä tietystä merkkijonosta. Tämä voi olla osa tiedonkäsittelyn prosessia tai haluamme ehkä yksinkertaisesti siistiä dataamme. Joko niin, Kotlinilla on helppo tapa poistaa merkkejä, jotka vastaavat tiettyä kaavaa.
 
-Miksi Poistaa Merkkejä Tietyn Kaavan Mukaan
+## Kuinka tehdä
+Tässä on esimerkki siitä, kuinka poistaa kaikki numerot merkkijonosta käyttäen Kotlinin `replace()` -funktiota:
 
-Monissa ohjelmointiprojekteissa saattaa olla tarvetta poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi liittyä esimerkiksi käyttäjien syöttämien tietojen validointiin tai tietojen jäsentelemiseen. Tässä blogikirjoituksessa esittelemme, miten tämä onnistuu Kotlin-kielen avulla.
+```Kotlin
+val merkkijono = "6 hevosta kulkee yli kadun"
+val uusiMerkkijono = merkkijono.replace("\\d+".toRegex(), "")
+println(uusiMerkkijono)
 
-## Kuinka Tehdä
-
-Kotlinilla on useita eri tapoja poistaa merkkejä tietyn kaavan mukaan. Yksi tapa on käyttää `replace`-funktiota ja antaa sille kaava ja haluttu korvaava merkkijono parametreinä.
-
-````Kotlin
-val teksti = "Tämä on esimerkkiteksti!!"
-val korjattuTeksti = teksti.replace(Regex("""[!.]"""), "")
-
-println(korjattuTeksti)
-````
-
-Tämä koodi tuottaa seuraavan tulosteen:
-
-```
-Tämä on esimerkkiteksti
+// Output: "hevosta kulkee yli kadun"
 ```
 
-Kuten nähdään, kaikki `!` ja `.` merkit on poistettu korvaavasta merkkijonosta.
+## Syvempi sukellus
+Kotlin tarjoaa monia hyödyllisiä funktioita merkkijonojen käsittelyyn, kuten `replace()` ja `replaceFirst()`. Näitä funktioita voi käyttää myös poistamaan merkkejä, jotka vastaavat tiettyä kaavaa, kuten olemme esimerkissä tehneet. Voit myös käyttää `removeRange()` -funktiota poistamaan merkkejä tietystä alueesta merkkijonossa. Esimerkiksi `merkkijono.removeRange(2..5)` poistaisi merkit indekseissä 2-5 merkkijonostamme.
 
-Toinen tapa on käyttää `filter`-funktiota ja antaa sille kaava lambda-lausekkeena. Tämä toimii hyvin myös merkkijonon sisältävien listojen kanssa.
-
-````Kotlin
-val sanalista = listOf("Moi", "Hei!", "Terve", "Tervehdys!!")
-val siivottuLista = sanalista.filter { sana -> !sana.endsWith("!") }
-
-println(siivottuLista)
-````
-
-Tämän koodin tulos on seuraava:
-
-```
-[Moi, Terve]
-```
-
-Tässä lambda-lausekkeessa `endsWith()`-funktiolla tarkistetaan, päättyykö sana `!`-merkkiin. Jos ei, sana sisällytetään uuteen siivottuun listaan.
-
-## Syvällisempi Tarkastelu
-
-Kotlinin `Regex`-luokka tarjoaa mahdollisuuden käyttää säännöllisiä lausekkeita merkkijonojen käsittelyssä. Näiden säännöllisten lausekkeiden avulla voidaan hakea ja korvata haluttuja merkkejä tai merkkijonoja.
-
-Yllä esitellyssä esimerkissä käytetty säännöllinen lauseke `Regex("""[!.]""")` tarkoittaa, että etsitään kaikkia `!` ja `.` merkkejä merkkijonosta.
-
-Tämä luokka tarjoaa monia muita hyödyllisiä ominaisuuksia, kuten mahdollisuuden etsiä tietystä kohdasta alkaen tai rajoittaa haettuja merkkejä tiettyyn määrään.
-
-## Katso Myös
-
-- [Kotlinin viralliset sivut](https://kotlinlang.org/)
-- [Kotlinin dokumentaatio säännöllisistä lausekkeista](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+## Katso myös
+- [Kotlinin virallinen dokumentaatio merkkijonojen manipuloinnista](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
+- [Kotlinin regular expression -opas](https://kotlinlang.org/docs/regular-expressions.html)
+- [How to Remove Specific Characters from a String in Kotlin (Stack Overflow)](https://stackoverflow.com/questions/39983578/how-to-remove-specific-characters-from-a-string-in-kotlin)

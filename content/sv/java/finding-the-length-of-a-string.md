@@ -1,5 +1,6 @@
 ---
-title:                "Java: Att hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Java: Att hitta längden på en sträng"
 simple_title:         "Att hitta längden på en sträng"
 programming_language: "Java"
 category:             "Java"
@@ -9,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom Java-programmering. Det är en nödvändig kunskap för att kunna manipulera och bearbeta textdata på ett effektivt sätt.
+Att veta längden på en sträng är en vanlig uppgift i Java-programmering. Det kan hjälpa till att bestämma hur mycket minne som behövs för att lagra strängen och göra det möjligt att manipulera den på rätt sätt.
 
-# Hur man gör
+## Hur man gör det
 
-För att hitta längden på en sträng i Java kan man använda metoden `length()`. Detta gör det möjligt att räkna antalet tecken i en sträng, inklusive mellanslag och specialtecken.
+För att hitta längden på en sträng i Java, använd metoden `length ()` från `String` -klassen. Här är ett enkelt exempel:
 
 ```Java
-String text = "Hej! Detta är en teststräng.";
-
-int längd = text.length();
-
-System.out.println("Strängen " + text + " består av " + längd + " tecken.");
+String myString = "Hej, jag heter Johan";
+int length = myString.length();
+System.out.println(length);
 ```
 
-Detta kommer att ge följande output:
-
+Output:
 ```
-Strängen Hej! Detta är en teststräng. består av 27 tecken.
+19
 ```
 
-# Djupdykning
+## Djupdykning
 
-Vad många kanske inte vet är att längden på en sträng i Java egentligen mäts i antalet kodenheter (Unicode-tecken) istället för i antalet faktiska tecken. Detta beror på att Unicode-tecken kan ha en större mängd datalagring jämfört med vanliga tecken.
+Metoden `length ()` returnerar antalet tecken i en sträng. Detta innebär att alla tecken räknas, även mellanslag och specialtecken. Om du vill hitta längden på en sträng utan mellanslag, kan du använda metoden `replace ()` för att ta bort dem först.
 
-En annan viktig aspekt att tänka på är att längden på en sträng kan påverkas av vilken teckenkodning som används. Om strängen innehåller tecken från olika teckenkodningar kan det resultera i en annan längd än förväntat.
+Det finns också andra sätt att hitta längden på en sträng, som att använda en loop för att räkna antalet tecken eller använda `StringTokenizer` -klassen. Men att använda `length ()` -metoden är den enklaste och mest effektiva metoden.
 
-# Se även
+## Se även
 
-- [Java String API](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Unicode och teckenkodning](https://docs.oracle.com/javase/7/docs/technotes/guides/intl/encoding.doc.html)
+- [Java String Class](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [String length() method](https://www.geeksforgeeks.org/java-string-length-method-example/)
+- [Efficiency of String length() method](https://www.journaldev.com/18048/string-length-java)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: 将字符串转换为小写"
-simple_title:         "将字符串转换为小写"
+title:                "转换字符串为小写"
+html_title:           "C#: 转换字符串为小写"
+simple_title:         "转换字符串为小写"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么？（Why）
 
-在编程中，有时候我们需要将字符串转换为小写。这可能是因为我们需要统一字符串的格式，或者我们需要与其他字符串进行比较。无论是什么原因，掌握如何将字符串转换为小写是非常有用的。
+为了使字符串具有统一的格式，有时需要将其转换为小写。这样可以确保在字符串比较和搜索时不会因为大小写不同而出现错误。
 
-## 如何操作
+## 如何？（How To)
 
-```C#
-string input = "Hello World";
-string output = input.ToLower();
-Console.WriteLine(output);
-```
+使用 C# 中的内置方法 `ToLower()` 可以将字符串转换为小写形式。在下面的示例中，我们将使用两种不同的方法来演示这一过程：
 
 ```C#
-string input = "GREETINGS";
-string output = input.ToLower();
-Console.WriteLine(output);
+string str = "Hello World";
+Console.WriteLine(str.ToLower()); // 输出 "hello world"
+
+// 使用 for 循环手动将每个字符转换为小写形式
+for (int i = 0; i < str.Length; i++)
+{
+    Console.Write(Char.ToLower(str[i])); // 输出 "hello world"
+}
 ```
 
-输出：
+## 深入了解（Deep Dive)
 
-```
-hello world
-greetings
-```
+字符串是不可变类型，这意味着原始字符串本身不会改变，而是返回一个新的字符串。因此，将字符串转换为小写形式会创建一个新的字符串对象。
 
-## 深入了解
+此外，`ToLower()` 方法默认会使用当前系统的文化信息来确定如何进行大小写转换。但如果需要，可以通过使用重载的 `ToLower()` 方法来指定特定的文化信息。
 
-字符串转换为小写的过程其实很简单。首先，我们需要获取要转换的字符串，这可以通过用户输入、文件读取等方式来实现。然后，我们使用ToLower()方法来将字符串转换为小写。该方法会返回一个新的字符串，而原始字符串并不会被修改。最后，我们可以将转换后的字符串用于我们的需求。需要注意的是，ToLower()方法只会将大写字母转换为小写，而不会对数字和符号产生影响。
+## 更多参考（See Also)
 
-## 参考链接
-
-- [String.ToLower Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [C# String to Lower (C# Corner)](https://www.c-sharpcorner.com/article/C-Sharp-string-to-lower/)
-- [Convert String to Lowercase in C# (GeeksforGeeks)](https://www.geeksforgeeks.org/convert-string-lowercase-c-sharp/)
-
-## 参见
-
-- [String.ToUpper in C# (Mandarin)](https://github.com/jinudaniel/dotnet-converting-strings-lowercase-TO-HIGHERCASE/blob/master/StringToUpper.cs)
+- [Microsoft 文档：ToLower() 方法](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+- [C# 字符串操作指南](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

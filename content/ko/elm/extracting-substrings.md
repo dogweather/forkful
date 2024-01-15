@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "부분 문자열 추출하기"
+html_title:           "Elm: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,30 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+반가워! 오늘은 Elm으로 알아보는 substring 추출에 대해서 알아보자. substring 추출은 문자열에서 특정 부분을 추출하는데 유용하게 사용될 수 있어서 많은 프로그래머들이 자주 사용하고 있어. 지금부터 어떻게 하면 substring을 추출할 수 있는지 살펴보자.
 
-문자열에서 부분 문자열을 추출하는 이유는 필요한 정보를 추출하고 가공하는데 유용하기 때문입니다.
+## 어떻게 하나요
+이번에는 앞서 말한 것처럼 substring 추출을 위한 코드 예제와 그 결과를 ```Elm... ``` 코드 블록 안에 넣어서 살펴보겠어.
 
-## 추출하는 방법 (How To)
-
-문자열에서 부분 문자열을 추출하는 방법은 다양하지만, Elm의 `String` 모듈을 사용하면 간단하게 할 수 있습니다. 예를 들어, `String.slice` 함수를 사용하면 지정한 시작 위치부터 끝 위치까지의 부분 문자열을 추출할 수 있습니다.
-
+### 기본 문자열에서 substring 추출하기
 ```Elm
-import String
+let
+    string = "반가워, Elm 프로그래밍!"
 
-String.slice 2 5 "Hello World" -- "llo"
+in
+    String.left 2 string -- 결과: "반가워"
 ```
 
-이 외에도 `String.take`, `String.drop` 함수를 사용하여 특정 문자열을 추출하거나 제거할 수 있습니다. 또한 정규식을 이용하여 더 복잡한 추출 작업을 수행할 수도 있습니다.
+### 시작 index와 길이 지정하여 추출하기
+```Elm
+let
+    string = "반가워, Elm 프로그래밍!"
 
-## 깊게 파고들기 (Deep Dive)
+in
+    String.slice 7 13 string -- 결과: "Elm 프로그래밍"
+```
 
-문자열을 다룰 때 가장 중요한 것은 인덱스(index)의 개념입니다. Elm에서 문자열의 인덱스는 항상 유니코드 코드 포인트를 가리키게 됩니다. 이때문에 바이트 단위로 문자열을 다루는 다른 언어와는 달리, 잘못된 인덱스를 사용하면 원하는 결과를 얻지 못할 수 있습니다.
+### 인덱스 범위로 추출하기
+```Elm
+let
+    string = "안녕하세요? Elm은 정말 멋진 언어입니다."
 
-또한 `String.slice` 함수에서는 인덱스의 범위가 유효하지 않은 경우 예외를 발생시키는 것에 주의해야합니다. 이를 방지하기 위해 `String.slice` 대신 `String.sliced` 함수를 사용할 수 있습니다. 이 함수는 잘못된 인덱스를 입력하면 대신 `Nothing` 값을 반환하므로 예외가 발생하지 않습니다.
+in
+    String.substring 9 15 string -- 결과: "Elm은 정말"
+```
 
-## 더 알아보기 (See Also)
+## 딥 다이브
+그외에도 ```String.take```와 ```String.drop```을 통해 문자열 앞 뒤로 일부 문자를 추출할 수 있어. 또한 ```String.split```을 사용하면 특정 문자를 기준으로 문자열을 나눌 수도 있어.
 
-- [The official Elm documentation for String module](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [An Elm tutorial on extracting substrings](https://elmprogramming.com/extract-substrings-elm.html)
-- [A useful guide for understanding Unicode in Elm](https://www.lihaoyi.com/post/HowtoMakeyourUnicodeBugsIrrelevantwiththeScalaProgramingLanguage.html)
+## 더 알아보기
+이 외에도 Elm 문자열을 다루는 방법에 대해 더 알고 싶다면 아래 링크들을 참고해보자.
+
+- [Elm 문자열 관련 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm 문자열 관련 예제](https://guide.elm-lang.org/types/strings.html)
+- [Elm 문자열 관련 Q&A](https://discourse.elm-lang.org/t/extract-substring-from-string/208/3)
+
+## 참고
+이번 글이 너에게 도움이 되길 바라며, 더 많은 Elm 관련 정보를 찾고 싶다면 아래 링크들을 참고해보자!
+
+- [Elm 공식 홈페이지](https://elm-lang.org/)
+- [Elm 커뮤니티 블로그](https://blog.elm-community.org/)
+- [Elm 한국 사용자 그룹(Facebook)](https://www.facebook.com/groups/elmkr)

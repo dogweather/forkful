@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Stora bokstäver i en sträng"
-simple_title:         "Stora bokstäver i en sträng"
+title:                "Att sätta stor bokstav på en sträng"
+html_title:           "Clojure: Att sätta stor bokstav på en sträng"
+simple_title:         "Att sätta stor bokstav på en sträng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Varför skulle någon vilja ändra storlek på en sträng i Clojure? I många situationer är det viktigt att ha en korrekt formaterad och typsatt sträng, särskilt när man arbetar med data som ska skrivas ut eller jämföras.
 
-Att automatiskt härleda en sträng är en vanlig programmeringsuppgift. Det kan vara användbart för att skapa läsbara dokumenttitlar, formattera text i enlighet med stil, eller helt enkelt för att förbättra användarupplevelsen.
-
-## Hur man gör
+## Så här gör man
+För att ändra storlek på en sträng i Clojure, använd funktionen `clojure.string/capitalize`. Detta tar en sträng som argument och returnerar strängen med den första bokstaven i varje ord i versal (stor bokstav).
 
 ```Clojure
-; Här är ett exempel som illustrerar hur man kan avsluta en sträng
-(defn capital-case [str]
-  (->> str
-       ; omvandlar strängen till en sekvens av ord
-       (clojure.string/split #" ")
-       ; Capitalize första bokstaven på varje ord
-       (map #(str/capitalize %))
-       ; Gå ihop alla ord igen
-       (clojure.string/join " ")))
+(clojure.string/capitalize "hej där!") ; "Hej Där!"
+(clojure.string/capitalize "JAG ÄR EN RUBRIK") ; "Jag Är En Rubrik"
+```
 
-(def example-string "det här är en exempelsträng")
+Om du vill bara ändra storlek på första bokstaven i en sträng, använd `clojure.string/capitalize-first`.
 
-(capital-case example-string)
-; Output: "Det Här Är En Exempelsträng"
+```Clojure
+(clojure.string/capitalize-first "jag är en rubrik.") ; "Jag är en rubrik."
+(clojure.string/capitalize-first "hur MÅR du?") ; "Hur Mår Du?"
 ```
 
 ## Djupdykning
+Förutom att bara ändra storlek på en hel sträng eller första bokstaven, finns det flera andra funktioner i Clojure för att manipulera en strängs storlek. 
+`clojure.string/lower-case` och `clojure.string/upper-case` ändrar alla bokstäver i en sträng till små eller stora bokstäver, medan `clojure.string/capitalize-words` ändrar storleken på alla ord i en sträng till versaler.
 
-Förutom att bara kalla på `capitalize` funktionen, kan det också vara användbart att känna till de olika parametrarna som kan användas för att anpassa hur strängen härleds.
+```Clojure
+(clojure.string/lower-case "HÄLSA PÅ Johan") ; "hälsa på johan"
+(clojure.string/upper-case "önska mig LYCKA TILL") ; "ÖNSKA MIG LYCKA TILL"
+(clojure.string/capitalize-words "hej där!") ; "Hej Där!"
+```
 
-### `clojure.string/capitalize`
-
-Denna funktion hanterar specialtecken, vilket innebär att den inte kommer att ändra en sträng som redan är helt store bokstäver.
-
-### `clojure.string/upper-case`
-
-Denna funktion kommer att konvertera alla tecken till store bokstäver oavsett hur de var i början.
-
-### `clojure.string/lower-case`
-
-Som du kanske gissat kommer denna funktion att konvertera alla tecken till små bokstäver.
+Det finns också funktioner för att ändra storlek på strängen baserat på dess Unicode-kategori, som `clojure.string/capitalize-lower-case` som endast ändrar storlek på ord och siffror och lämnar specialtecken oförändrade.
 
 ## Se även
-
-- [Clojure string hantering](https://clojure.org/about/strings)
-- [Clojure string funktioner](https://clojuredocs.org/clojure.string)
-- [Capitalize en sträng i Clojure](https://stackabuse.com/capitalize-a-string-in-clojure/)
+- [Clojure dokumentation för strängmanipulering](https://clojure.org/guides/learn/strings)
+- [En handledning för att lära sig Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
+- [Hjälp med Clojure på svenska](https://javacoders.se/group/clojure)

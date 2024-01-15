@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "使用yaml编程"
+html_title:           "Clojure: 使用yaml编程"
+simple_title:         "使用yaml编程"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -9,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要学习使用YAML
-随着软件开发的发展，更多的开发人员开始使用YAML来管理配置文件。它有易读的语法和简洁的结构，使其成为一个流行的选择。通过学习如何使用YAML，您可以更有效地管理您的应用程序的配置，从而提高开发效率。
+# 为什么
 
-## 如何使用YAML
-要在Clojure中使用YAML，您需要安装一个库，比如clj-yaml。然后，您可以使用`read-yaml`函数来读取YAML文件，如下所示：
+YAML是一种简单易读的数据格式，它能够帮助我们在编程中轻松地处理配置和数据。使用Clojure编程语言，我们可以轻松地读取和操作YAML文件，让我们的程序更加灵活和易于维护。
+
+# 如何
+
+在Clojure中，我们可以使用一些库来读取和处理YAML文件。让我们先安装一个叫做"cemerick/yaml"的库，它是一个提供YAML解析功能的开源项目。
+
 ```Clojure
-(require '[clojure.data.yaml :as yaml])
+(require '[yaml.core :as yaml])
 
-(def code-block
-  (yaml/read-yaml "path/to/file.yaml"))
+(def yaml-file
+    (with-open [reader (io/reader "my-config.yml")]
+        (yaml/read reader)))  ; 读取YAML文件并将其转换为Clojure数据结构
 
-(println code-block)
+(println yaml-file)  ; 打印出读取的数据
 ```
-这将打印出YAML文件的内容，并将其转换为Clojure的数据结构。您也可以使用`write-yaml`函数来将Clojure数据结构写入YAML文件中。例如：
+
+以上代码中，我们首先使用了`require`函数来导入"yaml.core"库。然后，通过`with-open`函数来打开我们要读取的YAML文件，并使用`yaml/read`函数来将其转换为Clojure数据结构。最后，我们可以通过`println`函数来打印出读取的数据。
+
+# 进阶
+
+除了上面介绍的"yaml.core"库外，我们还可以使用另一个叫做"snakeyaml"的库来处理更复杂的YAML文件。让我们来看一个使用"snakeyaml"库的例子：
+
 ```Clojure
-(def data {:name "John" :age 25 :hobbies ["coding" "reading" "hiking"]})
+(require '[org.yaml.snakeyaml :as snakeyaml])
+(require '[clojure.java.io :as io])
 
-(yaml/write-yaml "output.yaml" data)
+(def yaml-file (.open (io/file "my-config.yml")))  ; 打开YAML文件
+
+(def yaml-parser (snakeyaml/Loader. yaml-file))  ; 创建YAML解析器
+(def yaml-map (.load yaml-parser))  ; 将文件内容解析为Clojure数据结构
+
+(println yaml-map)  ; 打印出解析的数据
 ```
-这将在当前目录下创建一个名为`output.yaml`的文件，其中包含着Clojure数据结构中的内容。
 
-## 深入学习YAML
-除了基本的读写操作，您还可以在Clojure中使用一些高级特性来处理YAML。比如，您可以使用缩写表示法来简化YAML文件的书写。示例如下：
-```Clojure
-# 等同于 {:name "John" :age 25 :hobbies ["coding" "reading" "hiking"]}
-{name: "John", age: 25, hobbies: ["coding", "reading", "hiking"]}
-```
-您还可以使用锚点和引用来重复使用相同的数据结构。示例如下：
-```Clojure
-# 定义一个锚点
-- &person {name: "John", age: 25, hobbies: ["coding", "reading", "hiking"]}
+以上代码中，我们首先导入了"org.yaml.snakeyaml"库，并使用`clojure.java.io`中的函数来打开YAML文件。然后，我们创建了一个YAML解析器，并将文件内容解析为Clojure数据结构。最后，我们可以通过`println`函数来打印出解析的数据。
 
-# 使用引用来重复使用相同的数据结构
-- *person
-- *person
-```
-这将在输出中创建两个相同的数据结构。您也可以使用`---`来以多个文档的形式写入同一个YAML文件中。这些都是深入学习YAML的一些方面，您可以根据自己的需求进一步探索和学习。
+# 参考资料
 
-## 参考链接
-- [clj-yaml库](https://github.com/lancelet/clj-yaml)
-- [YAML语言官方网站](https://yaml.org/)
-- [YAML语言教程](https://yaml.org/start.html)
+- "cemerick/yaml"项目地址：https://github.com/cemerick/yaml
+- "snakeyaml"项目地址：https://bitbucket.org/asomov/snakeyaml/wiki/Home

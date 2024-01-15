@@ -1,6 +1,7 @@
 ---
-title:                "C++: Hente gjeldende dato"
-simple_title:         "Hente gjeldende dato"
+title:                "Å få gjeldende dato"
+html_title:           "C++: Å få gjeldende dato"
+simple_title:         "Å få gjeldende dato"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,45 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å få den nåværende datoen kan være en viktig del av mange programmeringsoppgaver. Dette kan være nyttig for å lagre tidsstempler på data, beregne forsinkelser eller bare for å vise brukeren den nåværende datoen.
+Noen ganger trenger man å vite dagens dato og klokkeslett i et program, for eksempel for å logge hendelser eller for å lage et dynamisk interface. Dette kan enkelt gjøres ved å få tak i dagens dato og klokkeslett gjennom å bruke C++.
 
-## Slik gjør du
+## Hvordan
+
+Det er flere måter å få tak i dagens dato og klokkeslett i C++. Den enkleste måten er å bruke funksjonen `std::chrono::system_clock::now()`. Her er et eksempel på hvordan man kan bruke denne funksjonen:
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono> 
 
 int main() {
-    // Få nåværende tidspunkt
-    time_t now = time(0);
+    // Få tak i dagens dato og klokkeslett
+    auto currentTime = std::chrono::system_clock::now();
 
-    // Konverter tidspunktet til en streng
-    char* dt = ctime(&now);
+    // Konverter til tidsformat
+    std::time_t current_time = std::chrono::system_clock::to_time_t(currentTime);
 
-    // Skriv ut nåværende dato
-    std::cout << "Dagens dato er: " << dt << std::endl;
+    // Skriv ut resultatet
+    std::cout << "Dagens dato og klokkeslett: " << std::ctime(&current_time) << std::endl;
 
     return 0;
 }
 ```
-**Output:** Dagens dato er: Tue Dec 08 09:20:45 2020
 
-Det første trinnet er å inkludere hodet ```<ctime>```, som inneholder funksjoner for å håndtere tid og dato i C++. Vi starter deretter med å deklarere en variabel ```now``` av typen ```time_t```, som vil holde den nåværende tidspunktet.
+Kjører man dette programmet vil man få en utskrift av dagens dato og klokkeslett på formatet "dag måned dato klokkeslett år". For eksempel "Tir 25 Juni 22:30:50 2019".
 
-Den neste linjen kaller funksjonen ```time``` med parameteren ```0```, som returnerer antall sekunder siden 1. januar 1970. Dette tilsvarer den nåværende datoen og klokkeslettet.
+## Dypdykk
 
-Vi bruker deretter funksjonen ```ctime``` til å konvertere ```time_t```-verdien til en streng som kan leses av mennesker. Denne strengverdien lagres i en variabel ```dt```.
+Hvis man ønsker å få tak i dagens dato på et mer spesifikt format, for eksempel bare dato uten klokkeslett eller bare måned og år, kan man bruke funksjonene `std::chrono::day` og `std::chrono::month` sammen med funksjonen `std::strftime()` for å formatere dato og klokkeslett. Her er et eksempel på hvordan man kan bruke disse funksjonene:
 
-Til slutt skriver vi ut verdien av ```dt```, som inneholder den nåværende datoen og klokkeslettet.
+```C++
+#include <iostream>
+#include <chrono> 
 
-## Dykk dypere
+int main() {
+    // Få tak i dagens dato og klokkeslett
+    auto currentTime = std::chrono::system_clock::now();
 
-Det finnes flere andre metoder for å få den nåværende datoen i C++. En annen metode er å bruke funksjonen ```localtime```, som også gir mulighet for å formatere datoen og klokkeslettet.
+    // Hent ut dag, måned og år
+    std::chrono::day day = std::chrono::day(currentTime);
+    std::chrono::month month = std::chrono::month(currentTime);
 
-Det finnes også biblioteker som ```boost::date_time``` som gir mer avanserte funksjoner for håndtering av tid og dato i C++.
+    // Konverter til ønsket format
+    char buffer[80];
+    std::strftime(buffer, 80, "%d %B %Y", &tm);
+    std::cout << "Dagens dato er: " << buffer << std::endl;
+
+    return 0;
+}
+```
+
+Dette eksempelet vil gi en utskrift av dagens dato på formatet "dag måned år", for eksempel "25 Juni 2019". Man kan også endre på formatet ved å endre på argumentene til `std::strftime()`.
 
 ## Se også
 
-- [cplusplus.com - Date and Time Library](https://www.cplusplus.com/reference/ctime/)
-- [cppreference.com - <ctime> header](https://en.cppreference.com/w/cpp/header/ctime)
-- [Programiz - C++ Date and Time](https://www.programiz.com/cpp-programming/library-function/ctime)
+- [C++ Date and Time Library](https://en.cppreference.com/w/cpp/chrono)
+- [How to Get Current Date and Time in C++](https://www.programiz.com/cpp-programming/library-function/ctime/time)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "C#: Wysyłanie żądania http z podstawową autoryzacją"
 simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "C#"
 category:             "C#"
@@ -11,49 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach komunikacja przez internet jest nieodłączną częścią naszego codziennego życia. Wiele aplikacji musi wymieniać informacje z serwerami, aby działać poprawnie. Istnieją różne sposoby przesyłania danych, jednak jeden z najczęściej używanych to protokół HTTP. Aby utrzymać bezpieczeństwo i kontrolę nad przesyłanymi danymi, często konieczne jest uwierzytelnianie. W tym artykule wyjaśnimy, dlaczego i jak używać podstawowej uwierzytelni w żądaniach HTTP w języku C#.
+Przesyłanie żądania HTTP z podstawowym uwierzytelnianiem jest niezbędne, aby uzyskać dostęp do chronionych zasobów w sieci. W niektórych przypadkach, jest to również wymagane przez serwery, aby potwierdzić tożsamość użytkownika.
 
 ## Jak to zrobić
 
-Do wysłania żądania HTTP z podstawową uwierzytelnią w C#, potrzebujemy tylko kilku linii kodu. Najpierw musimy utworzyć obiekt klasy `HttpClient` i przypisać mu adres URL, do którego chcemy wysłać żądanie. Następnie, w nagłówkach żądania, musimy dodać autoryzację podając nazwę użytkownika i hasło w formacie `username:password`. W przypadku poprawnie wykonanego żądania, otrzymamy jako odpowiedź kod stanu HTTP 200 (OK) oraz treść w odpowiedzi. Poniżej znajduje się przykładowy kod:
-
 ```C#
-using System;
-using System.Net.Http;
+var client = new HttpClient();
 
-class Program
-{
-  static readonly HttpClient client = new HttpClient();
-  
-  static async Task Main()
-  {
-    try 
-    {
-      client.BaseAddress = new Uri("https://www.example.com/"); // Ustawienie adresu URL
-      client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes("username:password"))); // Dodanie autoryzacji
+// Ustawienie nagłówka uwierzytelnienia
+var byteArray = Encoding.ASCII.GetBytes("username:password");
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-      HttpResponseMessage response = await client.GetAsync("/api/someData"); // Wysłanie żądania GET na endpoint /api/someData
-      
-      response.EnsureSuccessStatusCode(); // Rzucenie wyjątku w przypadku niepowodzenia żądania
-      string responseBody = await response.Content.ReadAsStringAsync(); // Pobranie treści odpowiedzi
+// Wysłanie żądania GET do wybranej strony
+var response = await client.GetAsync("https://example.com");
 
-      Console.WriteLine(responseBody); // Wyświetlenie treści odpowiedzi
-    }
-    catch(HttpRequestException e)
-    {
-      Console.WriteLine("Wystąpił błąd: " + e.Message);
-    }
-  }
-}
+// Pobranie wartości zwracanej przez serwer
+var result = await response.Content.ReadAsStringAsync();
+Console.WriteLine(result);
 ```
 
-Powyższy kod jest tylko przykładem i należy pamiętać o odpowiednim zabezpieczeniu hasła, gdy korzystamy z uwierzytelniania.
+**Wynik:**
 
-## Głębszy zanurzenie
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Przykładowa strona</title>
+</head>
+<body>
+	<h1>Witaj, użytkowniku!</h1>
+</body>
+</html> 
+```
 
-Podstawowa uwierzytalność w żądaniach HTTP jest tylko jednym z wielu sposobów na zabezpieczanie naszych komunikacji. Istnieją również inne sposoby, takie jak uwierzytelnianie oparte o tokeny lub używanie protokołu HTTPS. Ważne jest, aby zawsze korzystać z odpowiednich zabezpieczeń do charakteru transmisji danych.
+## Głębszy wgląd
 
-## Zobacz także
+Podstawowe uwierzytelnienie jest najbardziej podstawową metodą uwierzytelniania dostępu HTTP. Polega na przesyłaniu informacji o uwierzytelnieniu w nagłówku żądania, poprzez zakodowanie loginu i hasła do postaci Base64. Serwer następnie sprawdza te dane i udziela dostępu do zasobów lub odmawia dostępu w przypadku nieprawidłowych danych uwierzytelniających.
 
-- [Dokumentacja Microsoft o klasie HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-- [Więcej o standardzie HTTP i uwierzytelnianiu](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Zobacz też
+
+- Dokumentacja Microsoft na temat przesyłania żądań HTTP w C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/
+- Tutorial na YT na temat HTTP w C#: https://www.youtube.com/watch?v=7YcW25PHnAA

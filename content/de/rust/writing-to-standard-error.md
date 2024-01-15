@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Schreiben auf Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Rust: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,45 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man etwas auf die Standardfehlerausgabe schreiben? Nun, es ist eine effektive Möglichkeit, Fehlermeldungen und Warnungen aus Ihrem Programm zu überwachen und diese Informationen an Entwickler oder Benutzer weiterzugeben.
 
-Das Schreiben nach `standard error` ist wichtig, um Fehler und Warnungen in unserem Programm zu verfolgen und zu debuggen. Es ermöglicht uns auch, wichtige Informationen während der Laufzeit unseres Programms anzuzeigen.
-
-## Wie man
-
-Zunächst müssen wir das `std`-Modul von Rust importieren, um auf die Funktionen für das Schreiben nach `standard error` zugreifen zu können. Dann können wir die `eprint!` oder `eprintln!` Makros verwenden, um Text an den `standard error` zu schreiben.
-
- ```Rust
-use std::io::{self, Write};
-
-fn main() {
-    // Schreiben nach standard error mit eprint!
-    eprint!("Dies ist eine Fehlermeldung.");
-
-    // Schreiben nach standard error mit eprintln!
-    eprintln!("Dies ist eine Warnung: {}", "Out of Memory");
-}
- ```
-Das obige Beispiel verwendet die `eprint!` und `eprintln!` Makros, um Text direkt nach `standard error` zu schreiben. Es ist jedoch auch möglich, einen `io::Error` zu erzeugen und ihn mit der `eprint!` oder `eprintln!` Makros auszugeben.
+## Wie geht das?
+Um auf die Standardfehlerausgabe zu schreiben, müssen Sie das Modul `std::io` importieren und die Funktion `io::stderr()` verwenden, um einen Handle auf die Standardfehlerausgabe zu erhalten. Dann können Sie die Funktion `write()` verwenden, um eine Nachricht auf die Standardfehlerausgabe zu schreiben. Hier ist ein Beispielcode:
 
 ```Rust
- use std::io::{self, Write};
+use std::io;
+use std::io::Write;
 
 fn main() {
-    // Erstelle einen io::Error
-    let error = io::Error::new(io::ErrorKind::Other, "Out of Memory");
-
-    // Gib den Fehler nach standard error aus
-    eprint!("Ein Fehler ist aufgetreten: {}", error);
+    let mut stderr = io::stderr();
+    stderr.write(b"Dies ist eine Fehlermeldung.").unwrap();
 }
+```
+Das `write()` Funktion nimmt eine Schnittstelle als Argument, daher nutzen wir hier `b` um unsere Nachricht in ein Byte-Slice zu konvertieren.
+
+Die Ausgabe würde so aussehen:
+
+```Rust
+Dies ist eine Fehlermeldung.
 ```
 
 ## Tieferer Einblick
+Wussten Sie, dass die Standardfehlerausgabe auch in den `println!` und `eprintln!` Makros verwendet werden kann? Diese Makros schreiben ihre Argumente zur Standardausgabe beziehungsweise zur Standardfehlerausgabe und fügen automatisch einen Zeilenumbruch hinzu. So können Sie Ihre Fehlermeldungen und Warnungen etwas eleganter gestalten. Hier ist ein Beispiel:
 
-Das Schreiben nach `standard error` unterscheidet sich vom Schreiben nach `standard output` in einigen wichtigen Punkten. Zum einen ist `standard error` ungepuffert, was bedeutet, dass die Ausgabe sofort auf dem Bildschirm erscheint, auch wenn das Programm noch läuft. `standard output` ist hingegen gepuffert, was bedeutet, dass die Ausgabe möglicherweise nicht sofort angezeigt wird.
+```Rust
+fn main() {
+    let num = 42;
+    eprintln!("Oh nein! Die Zahl {} ist zu groß.", num);
+    println!("Aber keine Sorge, ich ignoriere einfach alle Zahlen über 10.");
+}
+```
 
-Darüber hinaus ist `standard error` standardmäßig rot gefärbt, um es von `standard output` zu unterscheiden. Dies kann jedoch von der Umgebung, in der das Programm ausgeführt wird, geändert werden.
+Die Ausgabe würde so aussehen:
 
-## Siehe auch
-- [Rust-Dokumentation für das std-Modul](https://doc.rust-lang.org/std/index.html)
-- [Offizielle Rust-Website](https://www.rust-lang.org/de-DE/)
-- [Fehlerbehandlung in Rust](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+```Rust
+Oh nein! Die Zahl 42 ist zu groß.
+Aber keine Sorge, ich ignoriere einfach alle Zahlen über 10.
+```
+
+See Also
+- [std::io - Rust Standard Library](https://doc.rust-lang.org/std/io/)
+- [Rust By Example: I/O](https://doc.rust-lang.org/rust-by-example/std_misc/io.html)
+- [The Rust Book: Standard Input and Output](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

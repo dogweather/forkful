@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Usuwanie znaków pasujących do wzorca"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Haskell: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,48 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu spotykamy się z sytuacją, w której chcemy usunąć z tekstu pewne znaki. Może to być spowodowane różnymi czynnikami, takimi jak błędy w danych, niechciane wyrażenia czy potrzeba przetworzenia tekstu. W tym artykule przedstawimy sposób na usuwanie znaków pasujących do wzorca w języku Haskell.
+Czasami w naszych programach chcemy usunąć znaki, które pasują do określonego wzorca. Może to być przydatne, gdy pracujemy z plikami tekstowymi lub analizujemy dane.
 
 ## Jak to zrobić
 
-Do usunięcia znaków pasujących do wzorca możemy wykorzystać kilka funkcji dostępnych w bibliotece **Data.Text**, a w szczególności funkcję **filter**. Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
+Możemy użyć funkcji `filter` w języku Haskell, aby wybrać tylko te znaki, które nie pasują do naszego wzorca. Następnie możemy połączyć je ponownie za pomocą funkcji `concat`. Przykładowy kod wyglądałby następująco:
 
 ```Haskell
-import qualified Data.Text as T
-
-input :: T.Text
-input = "To jest tekst do przetworzenia."
-
-output :: T.Text
-output = T.filter (\c -> c /= 'j') input
-
-main :: IO ()
-main = do
-  putStrLn "Wejście:"
-  T.putStrLn input
-  putStrLn "Wyjście:"
-  T.putStrLn output
+deleteMatching :: String -> String -> String
+deleteMatching pattern = concat . filter (\c -> not (c `elem` pattern))
 ```
 
-Powyższy kod przyjmuje tekst jako wejście, usuwa wszystkie występujące w nim litery **j** i wypisuje przetworzony tekst do konsoli. Wynikiem jest:
+Aby użyć tej funkcji, wystarczy przekazać jej wzorzec oraz napis, z którego chcemy usunąć pasujące znaki. Na przykład, jeśli chcemy usunąć wszystkie spacje z napisu "Hello World", możemy użyć następującego wyrażenia: `deleteMatching " " "Hello World"`. Wynik wyglądałby następująco: "HelloWorld".
 
-```
-Wejście:
-To jest tekst do przetworzenia.
-Wyjście:
-To jest tekst do przetworzenia.
-```
+## Dogłębna analiza
 
-Widzimy, że funkcja **filter** zwraca nowy tekst zawierający jedynie te znaki, które przeszły test warunkowy. W naszym przypadku, test polegał na porównaniu znaku z literą **j** i odrzuceniu tych, które są jej równoważne.
+Funkcja `filter` działa w ten sposób, że przyjmuje listę i zwraca tylko te elementy, które spełniają określony warunek. W naszym przypadku, warunkiem jest to, że dany znak nie występuje w naszym wzorcu. Następnie, funkcja `concat` po prostu łączy wszystkie znaki w jeden napis.
 
-## Dogłębne zagłębienie
+Warto również wspomnieć o funkcji `elem`, która sprawdza, czy dany element znajduje się w liście. Dzięki temu możemy wykluczyć wszystkie znaki, które zawierają się w naszym wzorcu.
 
-W języku Haskell istnieje wiele metod i funkcji służących do manipulacji tekstem. W przypadku usuwania znaków pasujących do wzorca, oprócz funkcji **filter** możemy wykorzystać również funkcję **map**, która pozwala na zastosowanie dowolnej operacji na każdym znaku w ciągu tekstu. 
+## Zobacz także
 
-Ponadto, możemy też wykorzystać wyrażenia regularne za pomocą biblioteki **Text.Regex**, która pozwala na bardziej złożone wzorce dopasowujące. Przykładowo, jeśli chcielibyśmy usunąć nie tylko znaki **j**, ale również wszystkie cyfry występujące w tekście, moglibyśmy wykorzystać wyrażenie regularne "j|[0-9]".
-
-## Zobacz też
-
-- [Funkcja `filter` z dokumentacji języka Haskell](https://www.haskell.org/hoogle/?hoogle=filter)
-- [Biblioteka `Data.Text` z dokumentacji języka Haskell](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)
-- [Biblioteka `Text.Regex` z dokumentacji języka Haskell](https://hackage.haskell.org/package/regex-base-0.94.0.0/docs/Text-Regex.html)
+- [Dokumentacja funkcji `filter` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter)
+- [Dokumentacja funkcji `concat` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:concat)
+- [Inne przydatne funkcje w Haskellu](https://wiki.haskell.org/Cheatsheet)

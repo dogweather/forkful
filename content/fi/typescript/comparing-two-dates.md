@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "TypeScript: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,47 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kahden päivämäärän välillä?
-
-Kahden päivämäärän vertailu on tärkeää monissa ohjelmointitilanteissa, kuten sovelluksissa, joissa tulee käsitellä erilaisia aikaperusteisia tietoja. Tämä voi auttaa esimerkiksi päivämäärän valinnassa kalenterisovelluksessa tai tarkistaessa, onko tietty tapahtuma jo tapahtunut. Seuraavaksi näytämme, miten vertailla kahden päivämäärän välistä ajanjaksoa TypeScriptillä.
+## Miksi
+Vertailemalla kahta päivämäärää voit tarkistaa niiden suhteellisen sijainnin tai selvittää, onko jokin päivämäärä ennen vai jälkeen toisen.
 
 ## Miten
-
-Käytämme *Date* -rajapinnasta löytyviä metodeja ja ominaisuuksia tarkastaaksemme, missä järjestyksessä päivämäärät ovat toistensa suhteen. Ensiksi, luomme kaksi *Date* -muuttujaa, jotka sisältävät halutut päivämäärät:
-
-```TypeScript
-const ensimmäinenPäivämäärä = new Date('2020-05-01');
-const toinenPäivämäärä = new Date('2020-06-01');
-```
-
-Voimme käyttää *getTime* -metodia saadaksemme päivämäärät millisekunteina ja verrata niitä keskenään. Jos ensimmäinen päivämäärä tapahtuu ennen toista, palautetaan negatiivinen luku, jos ne ovat samat, palautetaan 0 ja jos ensimmäinen päivämäärä tapahtuu myöhemmin, palautetaan positiivinen luku.
+Voit käyttää TypeScriptiä vertailemaan kahta päivämäärää helposti `Date` -luokan `getTime()` -metodin avulla. Se palauttaa millisekuntien kokonaismäärän, joka edustaa päivämäärän ja ajan välistä aikaa. Voit sitten verrata näitä numeroita ja tarkistaa, onko päivämäärä ennen vai jälkeen toisen. Esimerkiksi:
 
 ```TypeScript
-ensimmäinenPäivämäärä.getTime(); // 1588300800000
-toinenPäivämäärä.getTime(); // 1590969600000
-```
+const date1 = new Date(2020, 5, 10);
+const date2 = new Date(2020, 5, 15);
 
-Voimme myös käyttää *getTime* -metodia ja vähentää ensimmäisestä päivämäärästä toinen päivämäärä, jolloin saamme millisekuntien tarkan ajanjakson niiden välillä.
+const time1 = date1.getTime();
+const time2 = date2.getTime();
 
-```TypeScript
-toinenPäivämäärä.getTime() - ensimmäinenPäivämäärä.getTime(); // 2678400000 (31 päivää)
-```
-
-## Syventymistä
-
-On huomioitava, että millisekunnit eivät välttämättä ole tarkin tapa vertailla päivämääriä, sillä ne eivät huomioi eri aikavyöhykkeitä tai karkausvuosia. Tarkemman vertailun tekemiseksi, voimme käyttää *getFullYear*, *getMonth* ja *getDate* -metodeita tarkistaaksemme jokainen päivämäärän osa erikseen.
-
-```TypeScript
-if (toinenPäivämäärä.getFullYear() < ensimmäinenPäivämäärä.getFullYear()) {
-    console.log('Toinen päivämäärä tapahtuu ennen ensimmäistä.');
-} else if (toinenPäivämäärä.getFullYear() > ensimmäinenPäivämäärä.getFullYear()) {
-    console.log('Toinen päivämäärä tapahtuu myöhemmin kuin ensimmäinen.');
+if (time1 < time2) {
+    console.log("Date 1 is before Date 2");
+} else if (time1 > time2) {
+    console.log("Date 1 is after Date 2");
 } else {
-    if (toinenPäivämäärä.getMonth() < ensimmäinenPäivämäärä.getMonth()) {
-        console.log('Toinen päivämäärä tapahtuu ennen ensimmäistä.');
-    } else if (toinenPäivämäärä.getMonth() > ensimmäinenPäivämäärä.getMonth()) {
-        console.log('Toinen päivämäärä tapahtuu myöhemmin kuin ensimmäinen.');
+    console.log("Dates are equal");
+}
+```
+
+Tämä tulostaisi `Date 1 is before Date 2`.
+
+## Syväsukellus
+Vaikka `Date` -luokka tarjoaa joitakin hyödyllisiä metodeja, kuten `getTime()` ja `getDate()`, voit myös käyttää `getFullYear()` ja `getMonth()` vertaillaksesi tarkemmin päivämäärän vuodenaikaa tai kuukautta. Näiden metodien avulla voit myös tarkistaa, onko kaksi päivämäärää samassa kuussa tai vuodessa. Esimerkiksi:
+
+```TypeScript
+const date1 = new Date(2020, 3, 10);
+const date2 = new Date(2020, 5, 10);
+
+if (date1.getFullYear() === date2.getFullYear()) {
+    console.log("Same year");
+    if (date1.getMonth() === date2.getMonth()) {
+        console.log("Same month");
     } else {
-        if (toinenPäivämäärä.getDate() < ensimmäinenPäivämäärä.getDate()) {
-            console.log('Toinen päivämäärä tapahtuu ennen ensimmäistä.');
-        } else if (toinenPäiv
+        console.log("Different month");
+    }
+} else {
+    console.log("Different year");
+}
+```
+
+Tämä tulostaisi `Same year` ja `Different month`.
+
+## Katso myös
+- [MDN - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Date API](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#handling-dates)

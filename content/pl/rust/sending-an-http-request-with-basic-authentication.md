@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Rust: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,44 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Niektóre API wymagają uwierzytelnienia za pomocą podstawowej autoryzacji HTTP przed udostępnieniem dostępu do swoich danych. W tym artykule dowiesz się, dlaczego i jak wysyłać żądanie HTTP z podstawowym uwierzytelnieniem w języku Rust.
+W dzisiejszych czasach coraz więcej aplikacji wymaga autoryzacji użytkownika. Przesyłanie żądań HTTP z uwierzytelnianiem podstawowym jest jednym z najprostszych sposobów na zapewnienie bezpieczeństwa podczas komunikacji z serwerem. W tym artykule dowiesz się, jak za pomocą Rusta wykonać takie żądanie i otrzymać pożądany wynik.
 
-## Jak To Zrobić
+## Jak wykonać
+
+Rust jest językiem programowania, który jest idealny dla tworzenia szybkich i bezpiecznych aplikacji sieciowych. Aby wykonać żądanie HTTP z uwierzytelnianiem podstawowym, wystarczy użyć biblioteki reqwest.
 
 ```Rust
-use reqwest::blocking::{Client, Response};
-use reqwest::header::{AUTHORIZATION, BASIC};
-use std::io::Read;
+use reqwest::blocking::Client;
 
-fn main() {
-    let url = "https://api.example.com/data";
-    let client = Client::new();
-    
-    let mut response = client.get(url)
-        .header(AUTHORIZATION, BASIC, "username:password")
-        .send().expect("Nie udało się wysłać żądania");
-    
-    let mut content = String::new();
-    response.read_to_string(&mut content)
-        .expect("Nie udało się odczytać odpowiedzi");
-    
-    println!("Odpowiedź: {}", content);
-}
+let username = "example_username";
+let password = "example_password";
+
+let client = Client::new();
+let response = client.get("https://example.com")
+    .basic_auth(username, Some(password))
+    .send()
+    .expect("Nie udało się wysłać żądania");
+
+println!("Kod odpowiedzi: {}", response.status());
+
+let body = response.text()
+    .expect("Nie udało się odczytać zawartości");
+
+println!("Zawartość odpowiedzi: {}", body);
 ```
 
-### Przykładowy wynik
+Powyższy kod tworzy nowego klienta żądań, ustawiając jednocześnie nazwę użytkownika i hasło do uwierzytelnienia. Następnie wysyła żądanie GET na wskazany adres URL i oczekuje odpowiedzi. W przypadku sukcesu, kod odpowiedzi oraz zawartość odpowiedzi są wyświetlane na ekranie.
 
-```
-Odpowiedź: Dostęp do danych
-```
+## Deep Dive
 
-## Głębsze Wnioskowanie
+Podstawowe uwierzytelnianie w protokole HTTP polega na przesyłaniu nazwy użytkownika i hasła w nagłówku "Authorization" żądania. W naszym przykładzie użyliśmy metody `basic_auth` z biblioteki reqwest, która automatycznie tworzy odpowiedni nagłówek. Jeżeli jednak chciałbyś zbudować go ręcznie, musisz dodać prefiks "Basic" przed zakodowanym ciągiem znaków `base64` zawierającym nazwę użytkownika i hasło oddzielone dwukropkiem.
 
-Podstawowa autoryzacja HTTP polega na przesyłaniu w nagłówku żądania danych uwierzytelniających w bazie kodowania. W przypadku języka Rust można skorzystać z biblioteki `reqwest`, która umożliwia wysyłanie żądań HTTP w sposób prosty i bezpieczny.
+Ponadto, należy pamiętać, że podstawowe uwierzytelnianie nie jest bezpieczne, ponieważ nazwa użytkownika i hasło są przesyłane w postaci niezaszyfrowanej. Dlatego też powinno być stosowane tylko w przypadku wyraźnej potrzeby i zawsze powinno być zastępowane bardziej bezpiecznymi metodami uwierzytelniania.
 
-Aby wysłać żądanie z podstawowym uwierzytelnieniem, należy utworzyć instancję klienta `Client` i użyć funkcji `get()` z ustawieniami URL oraz nagłówkiem `AUTHORIZATION` z wartością `BASIC` i odpowiednimi danymi logowania. Następnie można użyć funkcji `send()` do wysłania żądania i odczytać odpowiedź za pomocą funkcji `read_to_string()`. W ten sposób można uzyskać dostęp do potrzebnych danych.
+## Zobacz także
 
-## Zobacz również
-
-- Dokumentacja biblioteki `reqwest`: [https://docs.rs/reqwest/0.10.0/reqwest/](https://docs.rs/reqwest/0.10.0/reqwest/)
-- Informacje o podstawowej autoryzacji HTTP: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [Dokumentacja biblioteki reqwest](https://docs.rs/reqwest/)
+- [Wykorzystanie nagłówka "Authorization" w protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [Bezpieczeństwo uwierzytelniania w protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Elm: Arbeta med yaml"
+simple_title:         "Arbeta med yaml"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,51 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att arbeta med YAML kan vara en nyttig färdighet att lägga till i ens programmeringsrepertoar. YAML är en formateringsspråk som används för att konfigurera och hantera data. Det är vanligtvis lättare att läsa och förstå än andra data-format och är därför ett populärt val för många utvecklare.
+YAML är ett format för att strukturera data som är lätt att läsa och skriva. Det har blivit allt mer populärt och används ofta för konfigurationsfiler i mjukvaruprojekt. Genom att lära sig YAML kan du effektivt hantera och organisera din data i dina projekt.
 
-## Hur man gör
+## Så här gör du
 
-För att börja använda YAML i din Elm-kod, behöver du först installera ett paket som heter "elm-yaml". Sedan kan du använda funktioner som "encode" och "decode" för att konvertera YAML-data till och från Elm-objekt. Här är ett enkelt exempel:
+För att kunna arbeta med YAML i Elm behöver du först installera paketet "elm-yaml" genom terminalen eller pakethanteraren. När paketet är installerat kan du börja använda YAML i ditt projekt.
 
-```Elm 
-import Yaml.Decode exposing (decodeString, int, string)
+För att skapa ett nytt YAML-dokument i Elm använder du funktionen `Yaml.encode`, vilket tar ett Elm-värde (record, list etc.) som indata och returnerar ett YAML-dokument som en sträng. Här är ett exempel:
 
-ymlContent = """
-name: John Doe
-age: 25
-hobbies:
-    - coding
-    - hiking
-"""
+```Elm
+import Yaml exposing (..)
 
-type alias Person = 
-    { name : String
-    , age : Int
-    , hobbies : List String
+data =
+    { name = "John"
+    , age = 25
+    , hobbies = ["photography", "hiking"]
     }
 
-personDecoder : Yaml.Decoder Person
-personDecoder =
-    Yaml.key "name" string
-        |> Yaml.andMap ( Yaml.key "age" int
-            |> Yaml.andMap ( Yaml.key "hobbies" (Yaml.list string) 
-                |> Yaml.map3 Person
-            )
-        )
+yaml = Yaml.encode data
 
-person = decodeString personDecoder ymlContent -- Result Ok { name="John Doe", age=25, hobbies=["coding", "hiking"] }
+-- yaml innehåller nu:
+-- name: John
+-- age: 25
+-- hobbies:
+--   - photography
+--   - hiking
 ```
 
-Detta är bara ett enkelt exempel, men du kan använda YAML för att konfigurera mer komplexa datastrukturer och objekt i din Elm-kod.
+För att läsa in ett befintligt YAML-dokument i Elm använder du funktionen `Yaml.decode`, som tar en YAML-sträng som indata och returnerar ett Elm-värde. Här är ett exempel:
+
+```Elm
+import Yaml exposing (..)
+
+yaml =
+name: Jane
+age: 30
+hobbies:
+    - painting
+    - baking
+
+result = Yaml.decode yaml
+
+-- result innehåller nu:
+-- { name = "Jane"
+-- , age = 30
+-- , hobbies = ["painting", "baking"]
+-- }
+```
 
 ## Djupdykning
 
-En av de stora fördelarna med YAML är dess läsbarhet. Det är lätt att skriva och förstå även för personer som inte är vana vid programmering. Dessutom är det flexibelt och stöder många olika datatyper, inklusive listor, dictionaries och strängar.
+Genom att lägga till YAML-filer i ditt projekt kan du på ett effektivt sätt hantera konfigurationer och data som behövs för att ditt program ska fungera korrekt. Du kan också använda YAML för att generera statiska webbsidor eller som del av ditt byggscript. Ytterligare möjligheter med YAML inkluderar att samla och analysa data samt att skapa strukturerade dokument.
 
-Det finns också många tilläggspaket tillgängliga för YAML som kan hjälpa till att hantera mer komplex data. Till exempel kan du använda "elm-yaml-ast" för att generera AST (Abstract Syntax Tree) för din YAML-data, vilket kan vara användbart för mer avancerade manipuleringar eller transformer.
+För att lära dig mer om YAML kan du utforska dokumentationen för "elm-yaml" paketet och prova på olika funktioner och exempel. Det finns också många resurser online som ger en mer djupgående förståelse för YAML och dess användning i mjukvaruprojekt.
 
 ## Se även
 
-- [elm-yaml-patch](https://github.com/panosoft/elm-yaml-patch)
-- [elm-yaml-decode](https://github.com/andrewMacmurray/elm-yaml-decode)
-- [elm-yaml-pretty](https://github.com/terezka/elm-yaml-pretty)
+- [elm-yaml paketet](https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)
+- [YAML.org](https://yaml.org/)
+- [Awesome Elm](https://github.com/sporto/awesome-elm) för fler resurser och verktyg för Elm-språket.

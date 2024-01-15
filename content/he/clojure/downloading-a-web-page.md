@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: הורדת עמוד אינטרנט"
+title:                "הורדת עמוד אינטרנט"
+html_title:           "Clojure: הורדת עמוד אינטרנט"
 simple_title:         "הורדת עמוד אינטרנט"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Hebrew:
+
 ## למה
-אנשים מופנים להוריד את דף האינטרנט רק במקרים מסוימים, לדוגמה כאשר הם מעוניינים לשמור את התוכן עבור צפייה במקום בלתי מקוון או לשימוש במטרות מחקר.
+אנשים בכל רחבי העולם מתחברים לאינטרנט בכדי לגלות מידע חדש או ליצור תמונת מציאות חדשה על עולמם. צריכת דפי אינטרנט היא דרך מהירה ויעילה ביותר לעשות זאת, ולכן ניתן להבין למה מישהו ירצה להוריד דף אינטרנט.
 
 ## איך לעשות זאת
-תחתית: כדי להוריד דף אינטרנט ב-Clojure, ניתן להשתמש בפונקציית `slurp` ולספק את כתובת ה-URL של הדף שאנו רוצים להוריד. לדוגמה: 
+הנה מספר דוגמאות לקוד ולפלט של דפי אינטרנט שניתן להוריד באמצעות קלוז'ור:
 
 ```Clojure
-(slurp "https://www.example.com")
+;להוריד דף אינטרנט ולשמור אותו בקובץ
+(require '[clojure.java.io :as io])
+(io/copy (io/input-stream "http://www.example.com") (io/file "example.html"))
+
+;להוריד דף אינטרנט ולהדפיס את הקישורים בו
+(require '[clojure.contrib.duck-streams :as dts])
+(dts/each-line (io/reader (java.net.URL. "http://www.example.com"))
+  #(println (re-seq #"https?://[a-zA-Z0-9./?#-_=]+"
+                     (java.util.regex.Matcher. "%" %))))
+
+;להוריד דף אינטרנט עם ביצוע של HTTP בקשת GET ולהציג את התגית הראשית של הדף
+(require '[org.httpkit.client :as http])
+(http/get "https://www.example.com"
+          {:logger true
+           :debug-body "single response"
+           :throw-exceptions false}
+          (fn [resp]
+            (org.jsoup.Jsoup/parse resp)))
+
 ```
 
-כדי לשמור את התוכן בקובץ במחשב שלנו, ניתן להשתמש בפונקציית `spit` ולספק את התוכן שקיבלנו מהפונקציה `slurp` ואת הנתיב של הקובץ שרוצים ליצור. לדוגמה: 
-
-```Clojure
-(spit "page.html" (slurp "https://www.example.com"))
-```
-
-תוכן הדף יישמר כעת בקובץ בשם "page.html" במחשב שלנו.
-
-## כיול עמוק
-מופעלת הפונקציה `slurp` תחזיר כתובת URL בצורה של מחרוזת. זה אומר שלמעשה, אנו מקבלים את כל קוד ה-HTML של הדף. ניתן להשתמש בספריית של Clojure, בשם `clojure.xml`, כדי לנתח את התוכן של הדף ולקבל מידע רלוונטי יותר מהתוכן של הדף. ניתן להשתמש גם בספריית `enlive` בכדי לטפל בתחביר ה-HTML של הדף ולשפר את התוצאות שלנו.
+## מעמקים
+ישנם מספר סיבות למה צריך להוריד דפי אינטרנט כאשר משתמשים בקלוז'ור. למשל, ניתן להשתמש בזה כדי לגבות תוכן אינטרנטי או ליצור ממשק גרפי לאינטרנט על ידי איסוף נתונים מאתרים שונים. למעשה, פעולת צריכת דפי אינטרנט היא חלק חיוני מהעבודה של כל מפתח קלוז'ור והיא מאפשרת שימוש מרחבי בכל חלקי האינטרנט.
 
 ## ראו גם
-- [Clojure רשמי עמוד](https://clojure.org/)
-- [הגדרת לו"ז של פונקציות ב-Clojure](https://clojure.org/guides/learn/functions)
-- [הספרייה הרשמית של Clojure xml](https://clojure.github.io/clojure/clojure.xml-api.html)
-- [הספרייה enlive - טעינה מתוך HTML](https://github.com/cgrand/enlive)
+- טכניקות נוספות לצריכת דפי אינטרנט בקלוז'ור: https://www.douzi.co.il/feed/html/web-scraping-with-clojure/
+- הדרכה מפורטת י

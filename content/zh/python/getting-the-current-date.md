@@ -1,6 +1,7 @@
 ---
-title:                "Python: 获取当日日期"
-simple_title:         "获取当日日期"
+title:                "获取当前日期"
+html_title:           "Python: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -9,54 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要获取当前日期
+## 為什麼
 
-获取当前日期对于编程来说是很重要的一件事情。无论是在编写日志文件、计算时间间隔还是进行数据分析，都需要准确地获取当前日期。
+現在的日期是程式設計中非常常見的一個要素。它可以用於許多不同的應用，例如日期計算、日程安排和檔案命名等。繼續閱讀本文，您將學習如何在 Python 中獲取當前日期。
 
-# 如何获取当前日期
+## 如何
 
-在Python中，可以使用内置的datetime模块来获取当前日期。首先，需要导入datetime模块：
+首先，您需要匯入 Python 中的 datetime 模組。這個模組提供了一個 datetime 物件，可用於處理日期和時間。
 
-```python
+```Python
 import datetime
 ```
 
-然后，使用`datetime.now()`方法即可获取当前日期时间，例如：
+現在，讓我們使用 datetime 模組中的 today() 方法來獲取當前日期。
 
-```python
-current_date = datetime.now()
+```Python
+today = datetime.date.today()
 ```
 
-接下来，可以对获取到的日期进行格式化，例如将其转换为年月日的格式：
+透過呼叫 today() 方法，我們將現在的日期賦值給名為 today 的變數。您可以使用 print() 方法來印出今天的日期。
 
-```python
-formatted_date = current_date.strftime("%Y-%m-%d")
+```Python
+print(today)
 ```
 
-最后，我们可以将格式化后的日期打印出来，来验证是否得到了正确的输出：
+輸出將類似於以下結果。
 
-```python
-print(formatted_date)
+```
+2021-09-28
 ```
 
-输出结果将类似于`2021-01-01`，这就是我们准确地获取到了当前日期。
+您也可以使用 strftime() 方法來自訂日期的格式。例如，如果您想要以「年/月/日」的格式印出日期，您可以使用以下的程式碼。
 
-# 深入了解获取当前日期
+```Python
+formatted_today = today.strftime('%Y/%m/%d')
+print(formatted_today)
+```
 
-除了直接使用`datetime.now()`方法来获取当前日期外，还可以使用其他方法来实现同样的功能。例如，可以使用`date.today()`方法来只获取日期，而不包含时间。
+輸出將類似於以下結果。
 
-此外，还可以使用`calendar`模块来获取当前日期所在的星期几等信息。而如果要进行日期的加减运算，可以使用`timedelta`对象来实现，非常便捷。
+```
+2021/09/28
+```
 
-# 参考资料
+## 深入探討
 
-- [Python文档 - datetime模块](https://docs.python.org/3/library/datetime.html)
-- [RealPython - Working with Dates and Times Using datetime](https://realpython.com/python-datetime/)
-- [菜鸟教程 - Python日期和时间](https://www.runoob.com/python/python-datetime.html)
+除了今天的日期，您也可以使用 datetime 模組來獲取當前的時間。您可以使用 now() 方法來獲取當前的日期和時間。
 
----
+```Python
+now = datetime.datetime.now()
+```
 
-# 相关链接
+透過呼叫 now() 方法，我們將現在的日期和時間賦值給名為 now 的變數。您可以使用 print() 方法來印出現在的日期和時間。
 
-- [Markdown基本语法](https://www.runoob.com/markdown/md-tutorial.html)
-- [如何在VSCode中使用Markdown](https://code.visualstudio.com/docs/languages/markdown)
-- [Github Markdown指南](https://guides.github.com/features/mastering-markdown/)
+```Python
+print(now)
+```
+
+輸出將類似於以下結果。
+
+```
+2021-09-28 09:30:00.042315
+```
+
+除了 today() 和 now() 方法，datetime 模組還提供了許多其他方法來處理日期和時間。您可以閱讀官方文件以深入了解。
+
+## 參考連結
+
+- 官方文檔：https://docs.python.org/3/library/datetime.html
+- 維基百科：https://zh.wikipedia.org/zh-hant/Python
+- 廖雪峰的 Python3 教程：https://www.liaoxuefeng.com/wiki/1016959663602400
+- 動手學 Python：https://www.bilibili.com/video/BV1ux411Z7Tc

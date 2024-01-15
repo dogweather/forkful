@@ -1,6 +1,7 @@
 ---
-title:                "Go: Hitta längden på en sträng"
-simple_title:         "Hitta längden på en sträng"
+title:                "För att hitta längden på en sträng"
+html_title:           "Go: För att hitta längden på en sträng"
+simple_title:         "För att hitta längden på en sträng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,36 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande uppgift inom programmering och är användbar för att lösa olika problem, som att validera inmatningar eller jämföra strängar.
+Det är ofta användbart att kunna hitta längden på en sträng i sitt kodprojekt för att kunna hantera data på ett effektivt sätt.
 
-## Så här gör man
+## Hur man gör
 
-För att hitta längden på en sträng i Go kan man använda sig av den inbyggda funktionen `len()` tillsammans med strängvariabelns namn. Detta kommer att returnera antalet tecken i strängen.
-
-```Go
-str := "Hej världen!"
-fmt.Println(len(str))
-
-// Output: 13
-```
-
-För att hantera specialtecken eller Unicode-tecken i strängen, kan man använda funktionen `utf8.RuneCountInString()` som kommer att returnera antalet tecken enligt Unicode-standard istället för antalet bytes.
+För att hitta längden på en sträng i Go, kan du använda funktionen `len()` tillsammans med variabeln som innehåller strängen. Här är ett exempel på hur du kan göra det:
 
 ```Go
-str := "Hej världen!"
-fmt.Println(utf8.RuneCountInString(str))
-
-// Output: 12
+text := "Hej på dig!"
+length := len(text)
+fmt.Println(length) // Output: 11
 ```
 
-## Djupdykning
+Funktionen `len()` returnerar antalet tecken i strängen, i detta fall 11. Det är viktigt att notera att funktionen hanterar även specialtecken och diakritiska tecken korrekt.
 
-När man använder funktionen `len()` så räknas även det nollte tecknet, vilket är ett tomt tecken, med. Detta kan orsaka förvirring om man inte är medveten om det. Om man behöver ta bort detta tomma tecken kan man göra det genom att använda funktionen `TrimSpace()` från paketet `strings`.
+## Deep Dive
 
-Det är även möjligt att hitta längden på en array av bytes genom att använda funktionen `len()` på denna array, vilket returnerar antalet element istället för antalet bytes.
+För att förstå hur funktionen `len()` fungerar bakom kulisserna, kan vi titta på kodens interna struktur. I Go är en sträng egentligen en sekvens av tecken som lagras i en byte-array. När du använder `len()` på en sträng, räknar funktionen helt enkelt antalet bytes i den arrayen. Detta förklarar också varför funktionen hanterar specialtecken korrekt, eftersom varje tecken är lagrat som en eller flera bytes.
+
+Det finns också en annan metod för att hitta längden på en sträng i Go, nämligen `unicode/utf8` paketet. Detta paket innehåller funktionen `utf8.RuneCountInString()` som räknar antalet tecken i en sträng. Detta är användbart om du vill hantera flerspråkiga strängar som innehåller tecken från olika alfabet.
 
 ## Se även
 
-- [Go strings tutorial](https://www.programiz.com/go-programming/strings)
-- [Package strings](https://golang.org/pkg/strings/)
-- [Package utf8](https://golang.org/pkg/utf8/#RuneCountInString)
+- [Go Språkspecifikation](https://golang.org/ref/spec)
+- [Go Dokumentation](https://golang.org/doc/)

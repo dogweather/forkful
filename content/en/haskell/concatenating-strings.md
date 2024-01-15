@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Haskell recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,42 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Concatenating strings is a fundamental operation in programming. It allows us to combine multiple pieces of text into one string, making it easier to manipulate and display information. This is especially useful when working with user input or generating dynamic output.
+
+Concatenating strings is a common task in programming, and can be especially useful in tasks such as data manipulation and text processing. By combining multiple strings into a single string, you can create more complex and meaningful output that can be used in a variety of applications.
 
 ## How To
-To concatenate strings in Haskell, we can use the `++` operator or the `concat` function. Let's take a look at some examples using these methods:
 
-```Haskell
-str1 = "Hello "
-str2 = "world!"
-str3 = str1 ++ str2
--- Output: "Hello world!"
+To concatenate strings in Haskell, we can use the `++` operator or the `concat` function. Let's take a look at some code examples and the corresponding output.
 
-str4 = concat ["Welcome ", "to ", "Haskell"]
--- Output: "Welcome to Haskell"
+```
+-- using the ++ operator
+"I love" ++ " " ++ "Haskell"
+-- output: "I love Haskell"
+
+-- using the concat function
+concat ["Learn", " ", "Haskell"]
+-- output: "Learn Haskell"
 ```
 
-In the first example, we use the `++` operator to combine the strings `str1` and `str2`. This operator works by appending the second string to the end of the first string. In the second example, we use the `concat` function to combine a list of strings into one. This can be useful when we have more than two strings to concatenate.
+We can also use these methods to concatenate more than just two strings.
 
-We can also use the `++` operator and `concat` function on lists of characters. Let's see an example:
+```
+-- using the ++ operator
+"The" ++ " " ++ "quick" ++ " " ++ "brown" ++ " " ++ "fox"
+-- output: "The quick brown fox"
 
-```Haskell
-char1 = ['H', 'e', 'l', 'l', 'o']
-char2 = ['w', 'o', 'r', 'l', 'd']
-char3 = char1 ++ char2
--- Output: "Helloworld"
-
-char4 = concat [char1, char2]
--- Output: "Helloworld"
+-- using the concat function
+concat ["The", " ", "lazy", " ", "dog"]
+-- output: "The lazy dog"
 ```
 
-As we can see, both methods work the same way with lists of characters. This means we can easily manipulate strings as lists of characters and then concatenate them back into strings.
+We can also use variables or values inside our concatenation.
+
+```
+-- using the ++ operator
+let adjective = "happy"
+let noun = "puppies"
+"I am" ++ " " ++ adjective ++ " to see so many " ++ noun
+-- output: "I am happy to see so many puppies"
+
+-- using the concat function
+let numbers = [1, 2, 3]
+concat ["The numbers", " ", show numbers, " add up to 6"]
+-- output: "The numbers [1,2,3] add up to 6"
+```
 
 ## Deep Dive
-Under the hood, the `++` operator and `concat` function in Haskell use the `semigroup` typeclass to combine strings. This typeclass defines the `<>` operator, which is used for combining two values of the same type together. For strings, the `semigroup` instance uses the `++` operator to combine two strings.
 
-It's worth noting that in Haskell, strings are not treated as a special data type. They are simply a list of characters, which allows us to apply list operations to strings. This makes concatenation much more flexible and versatile compared to other programming languages.
+In Haskell, strings are represented as lists of characters. This means we can use all the list functions and operators on strings as well. For example, we can use the `map` function to transform each character in a string to another character.
+
+```
+-- using map for character transformation
+map toUpper "hello" -- output: "HELLO"
+map toLower "WORLD" -- output: "world"
+```
+
+We can also use the `fold` function to perform more complex operations on strings. For example, to calculate the length of a string, we can use the `foldl` function.
+
+```
+-- calculating the length of a string
+let str = "Haskell rules!"
+foldl (\acc _ -> acc + 1) 0 str -- output: 14
+```
 
 ## See Also
-- Haskell String Documentation: https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html
-- Learn You a Haskell: http://learnyouahaskell.com/starting-out#strings-lists-and-tuples
+
+- [Haskell documentation on concatenating strings](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html#g:22)
+- [Learn the basics of Haskell](https://learnxinyminutes.com/docs/haskell/)

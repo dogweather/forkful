@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Clojure: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,40 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma requisição HTTP?
+Por que usar Clojure para enviar requisições HTTP?
 
-Você pode precisar enviar uma requisição HTTP quando estiver trabalhando com APIs, acessando dados em um servidor ou realizando operações de rede. Isso permite que seu programa se comunique com outros sistemas e serviços.
+Existem diversas linguagens de programação que permitem enviar requisições HTTP, mas Clojure é uma opção popular entre os programadores devido às suas funcionalidades que facilitam o trabalho com requisições e respostas de APIs. Além disso, a linguagem é conhecida por ser concisa e ter uma sintaxe simples, o que torna o processo de enviar requisições ainda mais eficiente.
 
-## Como enviar uma requisição HTTP em Clojure
+Como fazer:
 
-Para enviar uma requisição HTTP em Clojure, primeiro importe a biblioteca `clj-http.client`:
+Para enviar uma requisição HTTP com Clojure, é necessário utilizar a biblioteca "clj-http". Primeiro, é preciso configurar o namespace para importar as funções necessárias:
 
-```
-(ns meu-projeto.http
-  (:require [clj-http.client :as http]))
-```
-
-Em seguida, use a função `http/get` para realizar uma requisição GET em uma URL específica:
-
-```
-(def response (http/get "https://meu-site.com/dados"))
+```Clojure
+(ns app.core
+  (:require [clj-http.client :as client]))
 ```
 
-Você também pode adicionar parâmetros à sua requisição, por exemplo:
+Em seguida, podemos usar a função "client/get" para enviar uma requisição GET para um determinado URL, e armazenar a resposta em uma variável:
 
+```Clojure
+(def response (client/get "https://api.github.com/users/clojure/repos"))
 ```
-(def params {:username "joao" :password "12345"})
-(def response (http/post "https://meu-site.com/login" {:form-params params}))
+
+Podemos então acessar o conteúdo da resposta utilizando a função "client/content":
+
+```Clojure
+(def content (client/content response))
 ```
 
-O objeto `response` conterá uma série de informações úteis, como o corpo da resposta, código de status e cabeçalhos.
+O conteúdo deve ser retornado como uma string, que pode ser facilmente transformada em dados utilizáveis usando a função "clojure.edn/read-string":
 
-## Aprofundando-se nas requisições HTTP
+```Clojure
+(def data (clojure.edn/read-string content))
+```
 
-O Clojure oferece suporte a uma variedade de métodos HTTP, incluindo GET, POST, PUT, DELETE e muito mais. Você também pode adicionar cabeçalhos à sua requisição e lidar com autenticação. Para obter mais informações e exemplos, consulte a documentação da biblioteca `clj-http` e a documentação oficial do Clojure.
+Agora podemos acessar as informações da resposta, como por exemplo, o nome de um dos repositórios retornados:
 
-## Veja também
+```Clojure
+(println (str "O nome do repositório é: " (-> data first :full_name)))
+```
 
-- Documentação oficial Clojure: https://clojuredocs.org/
-- Biblioteca clj-http: https://github.com/dakrone/clj-http
-- Documentação HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP
+Saída do código acima:
+```
+O nome do repositório é: clojure/tools.nrepl
+```
+
+Deep Dive:
+
+A biblioteca "clj-http" oferece diversas outras funções úteis para trabalhar com requisições HTTP, como por exemplo, "client/post" para enviar requisições POST e "client/put" para requisições PUT. Além disso, é possível adicionar headers, parâmetros e corpo de requisição utilizando as opções disponíveis nas funções.
+
+Veja também:
+
+- Documentação da biblioteca "clj-http": https://github.com/dakrone/clj-http
+- Exemplo de código para requisições HTTP em Clojure: https://gist.github.com/momo-lab/3bdf9754cd5bce3093850c8113d4d33a

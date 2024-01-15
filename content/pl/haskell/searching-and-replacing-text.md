@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Haskell: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Często jesteśmy zmuszeni do ręcznego zmieniania dużej ilości tekstu, na przykład gdy musimy wykonać powtarzalną operację na kilku plikach. W takiej sytuacji wykorzystanie funkcji wyszukiwania i zamiany tekstu w języku Haskell jest bardzo wygodnym i efektywnym sposobem na rozwiązanie tego problemu.
+Dlaczego ktokolwiek zajmowałby się wyszukiwaniem i zamianą tekstu? Dzieje się tak, ponieważ często musimy zmieniać określone części tekstu w naszych programach lub dokumentach. Zamiast ręcznie edytować każde wystąpienie tekstu, możemy użyć narzędzi programistycznych, takich jak Haskell, aby wykonać to zadanie automatycznie i szybko.
 
-## Jak To Zrobić
+# Jak to zrobić
 
-Używając funkcji `sub` z biblioteki `Text.Regex.PCRE`, możemy przeprowadzić proste wyszukiwanie i zamianę tekstu w języku Haskell. W poniższym przykładzie zamienimy wszystkie wystąpienia słowa "Witaj" na "Cześć" w tekście:
+Aby wyszukiwać i zamieniać tekst w Haskellu, musimy użyć wbudowanej funkcji `replace`, która przyjmuje trzy argumenty: łańcuch wejściowy, wyszukiwany wyraz i wyraz zastępczy. Przykładowy kod wyglądałby następująco:
 
 ```Haskell
-import Text.Regex.PCRE
-
-main = do
-  let text = "Witaj, to jest tekst powitalny."
-  let newText = sub regex "Cześć" text
-  putStrLn newText
-  where
-    regex = makeRegex "Witaj" :: Regex
+-- Zastąpienie każdego wystąpienia wyrazu "kot" wyrazem "pies"
+replace "Miałam kota, ale uciekł." "kot" "pies" 
+-- Output: "Miałam psa, ale uciekł."
 ```
 
-Wynikiem działania tego programu będzie:
+Możemy również użyć funkcji wyszukującej `isInfixOf`, aby sprawdzić, czy dany wyraz znajduje się w tekście, a następnie wykorzystać tę informację do zmiany tekstu.
 
+```Haskell
+-- Sprawdzenie czy wyraz "czekolada" znajduje się w tekście
+isInfixOf "Lubię jeść czekoladę." "czekolada" 
+-- Output: True
+
+-- Zamiana wszystkich wystąpień wyrazu "czekolada" wyrazem "owoce"
+replace "Lubię jeść czekoladę." "czekolada" "owoce" 
+-- Output: "Lubię jeść owoce."
 ```
-Cześć, to jest tekst powitalny.
-```
 
-Używając funkcji `gsub` zamiast `sub`, możemy zamienić wszystkie wystąpienia danego słowa, a nie tylko pierwsze. 
+# Głębsze wgląd
 
-## Głębszy Wgląd
+W Haskellu istnieje wiele funkcji i bibliotek, które umożliwiają bardziej zaawansowane wyszukiwanie i zamianę tekstu. Na przykład, jeśli chcemy zmienić tylko część tekstu, możemy użyć funkcji `splitOn`, aby podzielić tekst na części przed i po wyrazie, który chcemy zamienić. 
 
-Funkcja `sub` oraz `gsub` działają na podobnej zasadzie jak funkcja `replace` z biblioteki `Data.Text`, jednak korzystają z wyrażeń regularnych. Wykorzystując wyrażenia regularne, możemy dokładniej kontrolować, które fragmenty tekstu mają zostać zamienione, na przykład mogą być to tylko wystąpienia danego słowa, podane litery, liczby czy inne wzorce. Dodatkowo, korzystając z funkcji `makeRegex` możemy zbudować wyrażenie regularne z dowolnego tekstu zawierającego zmienne. 
+Możemy również użyć biblioteki "regex", która pozwala na wyrażenia regularne, aby wykonać bardziej skomplikowane wyszukiwanie i zamianę tekstu.
 
-## Zobacz Również
+# Zobacz również
 
-- Dokumentacja funkcji `sub` z biblioteki `Text.Regex.PCRE`: http://hackage.haskell.org/package/regex-pcre/docs/Text-Regex-PCRE.html#v:sub
-- Poradnik wyrażeń regularnych w Haskellu: https://en.wikibooks.org/wiki/Haskell/Understanding_the_regular_expression_package
-- Przykładowe zadania korzystające z funkcji wyszukiwania i zamiany tekstu: https://exercism.io/tracks/haskell/exercises/grade-school
+- [Dokumentacja Haskell](https://www.haskell.org/documentation/)
+- [Funkcja `replace` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html#v:replace)
+- [Biblioteka "regex" w Haskellu](https://hackage.haskell.org/package/regex)

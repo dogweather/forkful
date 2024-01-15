@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Bash recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,58 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're a programmer who works with Bash, there may come a time when you need to check if a directory exists. This could be useful, for example, in a script that needs to create a new directory only if the specified directory does not already exist.
+In Bash, it is common to check if a directory exists before performing any operations on it. This ensures that the script does not encounter any errors or unexpected behavior.
 
 ## How To
 
-To check if a directory exists in Bash, we can use the ```-d``` flag with the ```test``` command. The syntax would look like this:
+To check if a directory exists in Bash, we will use the `test` command with the `-d` option. This option checks if the given path is a directory or not. The syntax for this command is as follows:
 
-```Bash
-if [ -d <directory_path> ]; then
-  echo "Directory exists!"
+```
+if [ -d <directory_path> ]
+then
+    # execute your code here
 else
-  echo "Directory does not exist!"
+    # directory does not exist
 fi
 ```
 
-Let's break down what's happening here. The ```test``` command is used to evaluate conditions and return a status code. The ```-d``` flag specifically checks if the given path is a directory. So, if the directory exists, the status code will be 0 (True) and the first statement will be executed. If the directory does not exist, the status code will be 1 (False) and the second statement will be executed.
-
-Here's a sample output for a directory that exists:
+You can also use the `[[` command instead of `test` for a more concise syntax:
 
 ```
-Directory exists!
-```
-
-And here's a sample output for a directory that does not exist:
-
-```
-Directory does not exist!
-```
-
-You can also include this check in a conditional and use it to perform other actions, such as creating the directory if it doesn't exist. Here's an example:
-
-```Bash
-if [ ! -d <directory_path> ]; then
-  mkdir <directory_path>
-  echo "Directory created!"
+if [[ -d <directory_path> ]]
+then
+    # execute your code here
+else
+    # directory does not exist
 fi
 ```
 
-In this case, the ```!``` operator before the ```-d``` flag negates the condition, so the statement will only be executed if the directory does not exist.
+To make this process even simpler, we can use the `&&` operator to combine the `test` command with the actual code we want to execute:
+
+```
+[[ -d <directory_path> ]] && <command_to_execute>
+```
+
+### Example:
+
+```
+if [ -d /home/user/documents ] 
+then
+    echo "Documents directory exists!"
+else
+    echo "Documents directory does not exist."
+fi
+```
+
+In this example, we are checking if the "documents" directory exists in the home folder. If it does, the script will print "Documents directory exists!" Otherwise, it will print "Documents directory does not exist."
 
 ## Deep Dive
 
-Behind the scenes, the ```-d``` flag with the ```test``` command actually checks for the existence of a directory file descriptor. It does this by using a system call (```stat()``` in Linux) to retrieve information about the file. If the retrieved information indicates that the file is a directory, then the directory exists.
+The `test` command with the `-d` option checks if the given path points to a directory, and only a directory. It will return false for any other type of file or path, including symbolic links that point to directories. 
 
-It's worth noting that the ```-d``` flag will also return 0 for symbolic links that point to directories. So if you need to check for the actual existence of a directory, you may need to add an additional check using the ```-L``` flag to exclude symbolic links. The syntax would look like this:
+If you want to check if a directory exists and follow symbolic links, you can use the `-L` option. This will return true if the given path points to a directory, or if it is a symbolic link that points to a directory.
 
-```Bash
-if [ -d <directory_path> ] && [ ! -L <directory_path> ]; then
-  # Do something
+Another useful option is `-e`, which checks if the given path exists, regardless of its type. This means it will return true for directories, files, and symbolic links.
+
+### Example:
+
+```
+if [ -L /home/user/documents ] 
+then
+    echo "Symbolic link to documents found!"
+else
+    echo "Symbolic link to documents not found."
 fi
 ```
 
+In this example, we are checking if there is a symbolic link to the "documents" directory in the home folder. If it exists, the script will print "Symbolic link to documents found!" Otherwise, it will print "Symbolic link to documents not found."
+
 ## See Also
 
-- [Bash test command documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Linux stat system call documentation](https://man7.org/linux/man-pages/man2/stat.2.html)
+- [Bash scripting tutorial](https://www.shellscript.sh)
+- [Bash reference manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Test command documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)

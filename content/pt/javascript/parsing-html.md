@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Parsing HTML"
+html_title:           "Javascript: Parsing HTML"
+simple_title:         "Parsing HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,31 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que analisar HTML é importante na programação JavaScript?
+## Por que
 
-HTML é a linguagem padrão para escrever páginas web e, portanto, se você é um programador JavaScript, é essencial saber como analisar HTML. A capacidade de analisar e manipular elementos HTML é crucial para criar páginas web dinâmicas e interativas.
+Se você está interessado em desenvolvimento web, é provável que já tenha ouvido falar em HTML, a linguagem de marcação usada para criar a estrutura de páginas da web. Mas, às vezes, pode ser necessário acessar ou manipular o código HTML de uma página de forma dinâmica. É aí que entra o parsing de HTML em Javascript.
 
-## Como fazer isso em JavaScript
+## Como fazer
 
-Aqui está um exemplo simples de como analisar e manipular elementos HTML em JavaScript:
+Para fazer o parsing de HTML em Javascript, você pode utilizar uma biblioteca chamada [Cheerio](https://github.com/cheeriojs/cheerio) que simplifica e agiliza esse processo. Primeiro, instale o Cheerio usando o gerenciador de pacotes npm.
 
-```javascript
-let titulo = document.getElementById('titulo'); // seleciona o elemento com id 'titulo'
-titulo.textContent = 'Novo Título'; // muda o conteúdo do elemento para 'Novo Título'
+```
+npm install cheerio
 ```
 
-Aqui, usamos o método `getElementById()` para selecionar o elemento com o ID "titulo" e, em seguida, mudamos seu conteúdo usando a propriedade `textContent`. Isso é apenas um exemplo básico, mas com a ajuda de outros métodos e propriedades JavaScript, podemos fazer muito mais.
+Em seguida, crie um arquivo Javascript e importe o módulo do Cheerio:
 
-## Aprofundando no processo de análise HTML
+```Javascript
+const cheerio = require('cheerio');
+```
 
-Existem várias maneiras de analisar HTML em JavaScript, cada uma com suas próprias vantagens e desvantagens. Uma das maneiras mais comuns é usar o método `querySelector()` ou `querySelectorAll()`. Eles funcionam de maneira semelhante ao `getElementById()`, mas permitem que você selecione elementos com base em diferentes critérios, como classe, tag ou seletor CSS.
+Agora, você pode usar a função `load` do Cheerio para carregar o HTML de uma página da web em uma variável:
 
-Outra opção é usar uma biblioteca JavaScript como jQuery, que simplifica muito o processo de manipulação de elementos HTML. Através de seletores jQuery, podemos selecionar elementos de maneira fácil e eficiente e usar vários métodos para modificá-los.
+```Javascript
+const html = '<html><body><h1>Título</h1><p>Parágrafo</p></body></html>';
+const $ = cheerio.load(html);
+```
 
-É importante lembrar que, ao analisar HTML em JavaScript, devemos prestar atenção à estrutura do nosso código HTML e usá-lo com sabedoria. Alterações em elementos com muita frequência podem causar problemas de desempenho e afetar negativamente a experiência do usuário.
+A variável `$` atua como um objeto do Cheerio que representa o HTML carregado. Você pode acessar os elementos HTML e seus atributos usando seletores CSS, como no exemplo abaixo, que imprime o conteúdo da tag `<h1>`:
+
+```Javascript
+console.log($('h1').text()); // output: Título
+```
+
+## Imersão Profunda
+
+O Cheerio permite que você navegue por um documento HTML como se estivesse usando o jQuery. Isso significa que você pode usar seletores CSS, métodos de iteração e manipulação de DOM para acessar e modificar o HTML.
+
+Além disso, o Cheerio possui outras funcionalidades úteis, como a capacidade de fazer requisições HTTP e de encontrar elementos em páginas da web carregadas dinamicamente.
+
+Para mais informações e documentação completa do Cheerio, confira o [site oficial](https://cheerio.js.org/).
 
 ## Veja também
 
-- [Documentação do método `getElementById()` em MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/getElementById)
-- [Guia do jQuery para iniciantes](https://medium.com/@programadriano/introdu%C3%A7%C3%A3o-ao-jquery-para-iniciantes-985c1f07e0d6)
-- [Tutorial sobre parsing HTML em JavaScript](https://www.javascripture.com/Node)
+- [Documentação do Cheerio](https://cheerio.js.org/)
+- [Manipulando HTML com JavaScript](https://www.w3schools.com/js/js_htmldom.asp)

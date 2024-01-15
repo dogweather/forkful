@@ -1,6 +1,7 @@
 ---
-title:                "Swift: एक टेक्स्ट फाइल को पढ़ना"
-simple_title:         "एक टेक्स्ट फाइल को पढ़ना"
+title:                "एक टेक्स्ट फ़ाइल पढ़ना"
+html_title:           "Swift: एक टेक्स्ट फ़ाइल पढ़ना"
+simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,26 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## Kyun
 
-वैसे तो Swift में बहुत से फंक्शन हैं जो हमें फाइल से डेटा पढ़ने में मदद कर सकते हैं, लेकिन "text file" से डेटा पढ़ने की प्रक्रिया थोड़ी अलग है। इस लेख में हम जानेंगे कि क्यों और कैसे हम Swift में एक टेक्स्ट फ़ाइल से डेटा पढ़ सकते हैं।
+Kisi bhi programmer ke liye text file padhna ek bahut mahatvapurna kaam hai. Text file se data retrieve karna, manipulate karna aur use karna bahut aasan hota hai. Is article mein hum dekhenge ki Swift mein text file ko kaise padha ja sakta hai.
 
-## कैसे करें 
+## Kaise Kare
 
-तो शुरुआत में हमारे पास एक फ़ाइल होगी "text.txt" जो हमें पढ़नी है। उसके बाद हम एक "do-catch" ब्लॉक में "FileManager" के "default" प्रॉपर्टी को उस फ़ाइल का पथ देकर कोल करते हैं। फिर हम एक "if let" के साथ "String" का इंस्टेंस बनाते हैं जो हमें उस फ़ाइल से डेटा पढ़ने में मदद करेगा। और अंत में हम उस "String" को प्रिंट करते हैं। यह सब दिखाने के लिए, नीचे दिए गए उदाहरण को देखें:
+Text file ko Swift mein padhne ke liye, sabse pehle hum `String` datatype ka use karenge. Is datatype mein hum text file ka content store karenge.
 
-```Swift
+Sabse pehle, hum file URL object banayenge, jis URL pe humara text file stored hai. Iske liye hum `URL` class ka constructor function `init(fileURLWithPath:)` ka use karenge. Is function ko `fileURLWithPath:` ke saath ek file ka path argument dekar hum us file ka URL bana sakte hain. 
+
+```
+let fileURL = URL(fileURLWithPath: "/Users/Documents/file.txt")
+```
+
+Ab hum file URL se `String` object banayenge, jis mein hum text file ka content store karenge. Iske liye hum `String` class ka `init(contentsOfURL:)` method ka use karenge. Is method ko `contentsOfURL:` ke saath hum file URL object pass kar sakte hain.
+
+```
 do {
-    let fileManager = FileManager.default
-    let path = "/Users/User/Desktop/text.txt"
-    if let text = try String(contentsOf: URL(fileURLWithPath: path), encoding: .utf8) {
-        print(text)
-    }
+    let fileContents = try String(contentsOf: fileURL)
+    // File ka content `fileContents` mein store hoga
 } catch {
-    print("Couldn't read the file")
+    // File ko padhne mein error aaya
+    print(error)
 }
 ```
 
-जैसा कि आप देख सकते हैं, हमने "try" और "catch" का इस्तेमाल किया है ताकि हमें एरर मेसेज को प्रिंट करने का मौका मिले अगर कुछ गलत हुआ होता है। और अगर सब कुछ सही रहता है, तो हमें उस फ़ाइल का डेटा मिल जाता है जो हम अपने "text" वेरिएबल में स्टोर करते हैं और फिर उसे प्रिंट करते हैं। फ़ाइल पढ़ने की प्रक्रिया सरल है और हम देखेंगे कि अगर हमारे पास कोई अन्य प्रकार की फ़ाइल होती तो भी हम उसे पढ़ सकते हैं उसी तरह से।
+Yeh humara pura code hoga Swift mein text file padhne ka. Agar humne kisi aur file format ka use kiya hai toh hum `encoding:` parameter bhi specify kar sakte hain `String` class ke constructor aur method mein. 
 
-## गहराई
+## Deep Dive
+
+Humne dekha ki Swift mein text file ko padhna bahut aasan hai. Agar hume file ke content mein specific character set ka use karna hai, toh hum `encoding:` parameter specify kar sakte hain `String` class ke constructor aur method mein. Isse humare code mein koi encoding related error nahi aayega.
+
+Text file padhne ke alawa, hum `FileManager` class ka use karke bhi file ka content retrieve kar sakte hain. Iske liye hum `contents(atPath:)` method ka use kar sakte hain. Is method mein hume file ka path string pass karna hota hai. 
+
+```
+do {
+    let fileContentData = try FileManager.default.contents(atPath: "/Users/Documents/file.txt")
+    // File ka content binary data format mein hoga `fileContentData` mein store hoga
+} catch {
+    // File ko padhne mein error aaya
+    print(error)
+}
+```
+
+## See Also
+
+1. [Apple Developer Documentation on Reading and Writing Text Files](https://developer.apple.com/documentation/foundation/file_access_reading_and_writing)
+2. [Swift File Management Tutorial](https://www.raywenderlich.com/975/file-management-in-ios-tutorial-getting-started)

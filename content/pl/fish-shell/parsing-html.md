@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Analiza składni HTML"
+html_title:           "Fish Shell: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,32 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Parsowanie HTML to niezbędna umiejętność dla programistów i hobbystów, którzy chcą wykorzystać informacje zawarte na stronach internetowych do innych celów. Jest to również ważne dla testerów, którzy chcą sprawdzić poprawność kodu źródłowego stron. W tym wpisie opowiemy o tym, w jaki sposób można to zrobić przy użyciu języka programowania Fish Shell.
+Jeśli kiedykolwiek musiałeś (lub będziesz musiał) wydobywać pewne informacje z dużej ilości danych w formacie HTML, wtedy wiesz, jak dokuczliwe i czasochłonne może to być ręczne przeszukiwanie i kopiowanie. Tutaj z pomocą przychodzi programowanie w języku Fish Shell! Pozwala ono na automatyczne parsowanie i wyodrębnianie potrzebnych danych z plików HTML, co może znacznie przyspieszyć i ułatwić pracę.
 
-## Jak
+## Jak to zrobić
 
-Aby rozpocząć parsowanie HTML w Fish Shell, musimy najpierw zainstalować narzędzie do odpowiedniego parsowania, takie jak [**HTML-XML-utils**](https://www.w3.org/Tools/HTML-XML-utils/).
+Zanim przejdziemy do przykładów kodu, trzeba zauważyć, że Fish Shell nie jest domyślnie wyposażony w funkcje do parsowania HTML. Jednak dzięki możliwościom dostępnym w języku UNIX, możemy skorzystać z narzędzi takich jak `curl` i `sed` do pobrania i przetworzenia danych z pliku HTML.
 
-Następnie możemy użyć poleceń **hxselect** lub **hxprint** aby wybrać zawartość określonych elementów lub wydrukować cały kod źródłowy HTML na ekranie. Na przykład, jeśli chcemy wybrać wszystkie elementy <h1> ze strony internetowej, możemy użyć polecenia:
+W poniższych przykładach będziemy analizować stronę internetową z listą ulubionych przepisów kulinarnych i wyodrębniać nazwy potraw oraz składniki. Zwróć uwagę, że przykłady są uproszczone i opierają się na założeniu, że plik HTML jest odpowiednio sformatowany.
 
+```Fish Shell
+# Pobranie zawartości strony internetowej przy użyciu narzędzia curl i przekierowanie jej do pliku o nazwie "lista_przepisow.html"
+curl https://www.example.com/lista_przepisow > lista_przepisow.html
+
+# Wyodrębnienie nazw potraw 
+cat lista_przepisow.html | sed -n 's/<h3>\(.*\)<\/h3>/\1/p' > nazwy_potraw.txt
+
+# Wyodrębnienie składników 
+cat lista_przepisow.html | sed -n 's/<li>\(.*\)<\/li>/\1/p' > skladniki.txt
+
+# Wyświetlenie wyodrębnionych danych
+cat nazwy_potraw.txt
+cat skladniki.txt
 ```
-hxselect h1 test.html
+
+**Rezultat:**
+
+Nazwy potraw:
+```
+Pierogi z mięsem
+Kotlet schabowy
+Sałatka grecka
+Spaghetti bolognese
 ```
 
-Wykorzystując polecanie **hxprint**, możemy wyświetlić cały kod źródłowy HTML w formacie XML lub zapisac go do pliku. Poniżej znajduje się przykładowy kod, który zapisze kod źródłowy strony do pliku "source.xml":
-
+Składniki:
 ```
-hxprint -x test.html > source.xml
+Ciasto na pierogi, mięso mielone, cebula, jajko
+Mięso schabowe, bułka tarta, jajko, sól, pieprz
+Ogórki, pomidory, cebula, ser feta, oliwki
+Makaron spaghetti, mięso mielone, pomidory, cebula, czosnek, przyprawy
 ```
 
-## Deep Dive
+Jeśli chcemy wyodrębnić inne informacje z pliku HTML, wtedy wystarczy dostosować wyrażenia regularne używane w poleceniach `sed` do naszych potrzeb.
 
-Parsowanie HTML jest procesem, w którym narzędzia analizują kod źródłowy strony internetowej, aby wyodrębnić informacje z wybranych elementów. Może to być wykorzystywane w różnych celach, takich jak przetwarzanie i analiza danych, czy też testowanie poprawności kodu HTML.
+## Przykłady wykorzystania
 
-Narzędzia do parsowania HTML są również przydatne w tworzeniu skryptów automatyzujących niektóre zadania związane z przetwarzaniem stron internetowych, takich jak pobieranie określonych informacji lub sprawdzanie poprawności linków na stronie.
+### Skrypt do statystyk
 
-## Zobacz również
+Załóżmy, że mamy plik HTML ze spisem cen naszych ulubionych produktów. Chcemy wyodrębnić tylko ceny i obliczyć średnią oraz maksymalną wartość.
 
-- [Oficjalna dokumentacja HTML-XML-utils](https://www.w3.org/Tools/HTML-XML-utils/)
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial o parsowaniu HTML w języku Python](https://realpython.com/beautiful-soup-web-scraper-python/)
+```Fish Shell
+# Pobranie zawartości strony internetowej przy użyciu narzędzia curl i przekierowanie jej do pliku o nazwie "spis_cen.html"
+curl https://www.example.com/spis_cen > spis_cen.html
+
+# Wyodrębnienie cen i zapisanie ich do pliku tymczasowego
+cat spis_cen.html | sed -n 's/<span class="price">\(.*\)<\/span>/\1/p' > tmp_ceny.txt
+
+# Obliczenie średniej i maksymalnej ceny przy użyciu wbudowanych funkcji Fish Shell
+cat tmp_ceny.txt | awk '{sum+=$1} END{print "Średnia cena: "sum/NR"\nMaksymalna cena

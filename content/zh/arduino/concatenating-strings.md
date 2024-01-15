@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 字符串连接"
-simple_title:         "字符串连接"
+title:                "连接字符串"
+html_title:           "Arduino: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,68 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+#为什么#
 
-为什么要学习连接字符串？如果你想要在Arduino编程中创建更多的自定义输出，连接字符串是一个必不可少的技巧。通过连接字符串，你可以将多个变量或数据片段组合成一个更长的字符串，从而实现更灵活的输出。
+#为什么人们会想要连接字符串#
 
-## 如何
+连接字符串是将多个字符串合并为一个更长的字符串的过程。这在编程中非常有用，可以帮助我们组织并展示特定信息，例如在Arduino项目中显示传感器数据或创建个性化消息。如果您想要创建一个功能强大而有趣的项目，那么了解如何连接字符串是很重要的。
 
-连接字符串在Arduino编程中非常简单。首先，你需要声明一个字符串变量并赋值一个初始字符串，例如：
+#如何操作#
 
-```arduino
-String myString = "Hello, ";
+要在Arduino中连接字符串，您需要使用字符串对象（String objects）和concat()函数。以下是一个简单的例子，该例子需要两个字符串并将它们连接起来。
+
+```Arduino
+String message1 = "Hello";
+String message2 = "world!";
+String combined = message1.concat(message2);
+Serial.println(combined);
 ```
 
-接下来，你可以使用“+”符号来连接其他字符串或变量，例如：
+您会在串行监视器中看到打印输出“Hello world!”。concat()函数将第一个字符串和第二个字符串连接起来，并将结果存储在combined变量中。您还可以连接多个字符串，只需要连续使用多次concat()函数即可。
 
-```arduino
-myString = myString + "world!";
+```Arduino
+String message1 = "Welcome ";
+String message2 = "to ";
+String message3 = "my ";
+String message4 = "Arduino project!";
+String combined = message1.concat(message2).concat(message3).concat(message4);
+Serial.println(combined);
 ```
 
-最终，myString的值将会是 "Hello, world!"。你也可以连接多个字符串：
+这次，输出将是“Welcome to my Arduino project!”。正如您所见，您可以使用concat()函数将任意数量的字符串连接在一起，只要您在每个concat()函数后面添加一个点（.）。
 
-```arduino
-myString = "My favorite animal is a " + "panda.";
+#深入了解#
+
+连接字符串时需要注意的一个问题是性能。在Arduino项目中，内存空间有限，因此为了保持最佳性能，建议避免使用字符串对象和concat()函数。相反，您可以使用C语言中的指针来连接字符串。
+
+以下是一个示例代码，展示如何使用指针来连接字符串。
+
+```Arduino
+char message1[] = "Hello";
+char message2[] = "world!";
+char *combined;
+
+combined = strcat(message1, message2);
+Serial.println(combined);
 ```
 
-最终，myString的值将会是 "My favorite animal is a panda."。你也可以连接数字变量，例如：
+输出将是“Helloworld!”。在这个例子中，我们使用strcat()函数（在C语言中用于连接字符串）和指针来提高性能。这是因为指针直接操作内存地址，而不是创建新的字符串对象和变量。
 
-```arduino
-int num = 5;
-myString = "I have " + String(num) + " cats.";
-```
+#参考链接#
 
-最终，myString的值将会是 "I have 5 cats."。你也可以在连接字符串时使用变量或数字的方式来格式化输出，例如：
+[Arduino文档: String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
 
-```arduino
-int num = 10;
-myString = "I have " + String(num, DEC) + " dollars.";
-```
+[C语言资料: String Concatenation](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
 
-最终，myString的值将会是"I have 10 dollars."。在连接字符串时，你也可以使用其他常见的字符串操作函数，例如：
-
-```arduino
-/* 替换字符串中的部分内容 */
-String replacedString = myString.replace("panda", "unicorn");
-
-/* 删除字符串首尾的空格 */
-String trimmedString = myString.trim();
-
-/* 将字符串全部转换为小写 */
-String lowercaseString = myString.toLowerCase();
-
-/* 将字符串全部转换为大写 */
-String uppercaseString = myString.toUpperCase();
-```
-
-## 深入探讨
-
-在Arduino编程中，使用连接字符串可以帮助你实现更复杂的输出和控制。你可以使用连接字符串来构建复杂的消息、数据日志和用户界面。此外，连接字符串也可以与其他数据类型的变量和逻辑运算符一起使用，从而实现更多的功能。
-
-请注意，连接字符串是一种方便的技巧，但过多的使用可能会导致代码变得复杂。因此，务必谨慎使用连接字符串，始终保持代码的简洁性和可读性。
-
-## 查看更多示例
-
-- [Arduino - String 类型](https://www.arduino.cc/reference/zh/language/variables/data-types/string/)
-- [Arduino - 字符串操作函数](https://www.arduino.cc/reference/zh/language/variables/data-types/string/functions/)
-- [Arduino String 示例](https://www.arduino.cc/en/Tutorial/StringAppendOperatorExample)
+#相关阅读#

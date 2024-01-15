@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Utilizando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Clojure: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,42 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que usar expressões regulares em Clojure?
+## Por que usar Expressões Regulares
 
-As expressões regulares são uma ferramenta poderosa para a manipulação e validação de strings em qualquer linguagem de programação, incluindo Clojure. Se você trabalha com dados textuais complexos ou precisa extrair informações de grandes conjuntos de dados, o uso de expressões regulares pode economizar tempo e esforço.
+As expressões regulares são uma ferramenta poderosa para fazer busca e substituição de padrões de caracteres em textos. Elas são úteis para encontrar informações específicas em um grande conjunto de dados e também para validar entradas de usuário em seus programas. Além disso, muitas linguagens de programação, incluindo o Clojure, têm suporte integrado para expressões regulares, tornando-as uma escolha conveniente e eficaz para tarefas de processamento de texto.
 
-# Como usar expressões regulares em Clojure
+## Como usar Expressões Regulares em Clojure
 
-Para começar a usar expressões regulares em Clojure, basta importar o módulo "re" com o seguinte código:
+Para usar expressões regulares em Clojure, é necessário importar o módulo `clojure.string`. Em seguida, podemos usar a função `re-find` para encontrar a primeira ocorrência de um padrão em uma string:
 
-```Clojure
+```
 (require '[clojure.string :as str])
+
+(str/re-find #"foo" "Esta é uma string contendo foo") ; returns "foo"
 ```
 
-Em seguida, você pode definir uma expressão regular usando a função "re-seq" e aplicá-la a uma string usando a função "re-find". Por exemplo, se quisermos encontrar e extrair uma data no formato dd/mm/aaaa de uma string, podemos usar o seguinte código:
+Também é possível fazer substituições usando a função `re-sub`:
 
-```Clojure
-(def data-regex #"\d{2}/\d{2}/\d{4}")
-(def texto "Este é um texto com uma data: 25/12/2021.")
-(re-find data-regex texto) ; retorna "25/12/2021"
+```
+(str/re-sub #"foo" "bar" "Esta é outra string contendo foo") ; returns "Esta é outra string contendo bar"
 ```
 
-Para substituir padrões de string por novos valores, podemos usar a função "re-replace", como mostrado neste exemplo:
+Uma das maneiras mais versáteis de usar expressões regulares é através da função `re-seq`, que retorna todas as ocorrências de um padrão em uma string em uma sequência:
 
-```Clojure
-(def telefone-regex #"\(\d{2}\) \d{4}-\d{4}")
-(def texto "Meu número de telefone é (11) 9999-9999.")
-(re-replace telefone-regex texto "+55 $1") ; retorna "Meu número de telefone é +55 (11) 9999-9999."
+```
+(str/re-seq #"foo" "Esta é uma string com várias ocorrências de foo") ; returns ("foo" "foo")
 ```
 
-# Profundidade em expressões regulares em Clojure
+## Mergulho Profundo em Expressões Regulares
 
-Clojure oferece suporte para várias funcionalidades avançadas de expressões regulares, como correspondência de caracteres unicode, captura de grupos e substituições baseadas em funções. Você pode ler mais sobre estas funcionalidades no [guia oficial de expressões regulares de Clojure](https://clojure.org/guides/regex).
+Existem várias sintaxes para escrever expressões regulares em Clojure, mas a mais comum é o uso de literais com a notação `#".*"`, onde o padrão é colocado entre aspas duplas. Isso nos permite escrever padrões complexos sem precisar escapar caracteres especiais.
 
-Além disso, se você quiser aprender mais sobre expressões regulares em geral, outros recursos úteis incluem [regex101](https://regex101.com/), que permite testar e depurar expressões regulares em tempo real, e [regular expressions cookbook](https://subscription.packtpub.com/book/application_development/9781783285478), um guia prático para a criação de expressões regulares em diversas linguagens de programação.
+Além disso, podemos usar grupos de captura em expressões regulares para extrair informações específicas de uma string. Por exemplo, se quisermos encontrar todas as ocorrências de um endereço de e-mail em uma string, podemos usar o seguinte padrão:
 
-# Veja também
+```
+(def texto "Meu endereço de e-mail é exemplo@email.com")
 
-- [Guia oficial de expressões regulares de Clojure](https://clojure.org/guides/regex)
-- [regex101](https://regex101.com/)
-- [Regular Expressions cookbook](https://subscription.packtpub.com/book/application_development/9781783285478)
+(def matches (str/re-seq #"\b(\w+@\w+(\.\w+)+)\b" texto))
+
+(println matches) ; returns ("exemplo@email.com")
+```
+
+Os grupos de captura são delimitados por parênteses e podem ser acessados usando a função `re-matcher` e o método `group`:
+
+```
+(let [matcher (re-matcher #"(\d+)-(\d+)-(\d+)" "01-04-2021")]
+    [(.group matcher 1) ; retorna "01"
+     (.group matcher 2) ; retorna "04"
+     (.group matcher 3)]) ; retorna "2021"
+```
+
+## Veja Também
+
+- [Documentação oficial sobre Expressões Regulares em Clojure](https://clojuredocs.org/clojure.string/re_find)
+- [Tutorial interativo sobre Expressões Regulares em Clojure](https://regexone.com/references/clojure)

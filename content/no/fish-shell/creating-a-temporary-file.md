@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Opprettelse av en midlertidig fil"
-simple_title:         "Opprettelse av en midlertidig fil"
+title:                "Lage en midlertidig fil"
+html_title:           "Fish Shell: Lage en midlertidig fil"
+simple_title:         "Lage en midlertidig fil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Opprettelse av midlertidige filer er en viktig del av programmering når du trenger å lagre midlertidige data som skal brukes i korte perioder. Det er spesielt nyttig når du jobber med batchbehandling eller midlertidige filer mens du kjører andre programmer.
+
+Mange ganger når vi skriver script eller automatiserer prosesser, trenger vi å lagre midlertidige data. Dette kan være for å lagre output fra et program eller for å bruke som midlertidig lagring mens scriptet kjører. I Fish Shell er det en enkel kommando for å opprette en midlertidig fil som kan brukes til dette formålet.
 
 ## Slik gjør du det
-Først må du åpne Fish Shell og navigere til mappen du vil lagre den midlertidige filen i. Deretter kan du opprette en fil ved hjelp av følgende kommando:
+
+Du kan bruke følgende kommando for å opprette en midlertidig fil i Fish Shell:
 
 ```Fish Shell
-mktemp FILENAME
+mktemp
 ```
-Du kan erstatte “FILENAME” med navnet du vil gi den midlertidige filen din. Dette vil opprette en tom fil med det gitte navnet.
 
-For å legge til innhold i filen, kan du bruke en av flere metoder. En måte er å bruke “echo” kommandoen for å legge til tekst i filen:
+Dette vil opprette en midlertidig fil med et tilfeldig navn i det midlertidige mappen på systemet ditt. Du kan også spesifisere et prefiks for navnet på filen ved å legge til `-p` opsjonen, for eksempel:
 
 ```Fish Shell
-echo "Dette er innholdet i filen" > FILENAME
+mktemp -p prefix_
 ```
 
-En annen metode er å bruke “cat” kommandoen for å skrive innholdet fra en annen fil til den midlertidige filen:
+Du kan også velge å opprette en midlertidig mappe i stedet for en fil ved å legge til `-d` opsjonen, for eksempel:
 
 ```Fish Shell
-cat EXAMPLE_FILE > FILENAME
+mktemp -d
 ```
 
-Når du er ferdig med å bruke den midlertidige filen, kan du slette den ved hjelp av følgende kommando:
+I tillegg kan du bruke opsjonen `-t` for å spesifisere en annen katalog enn standard midlertidig mappe for å opprette filen i. Og hvis du vil at filen skal slettes automatisk når den ikke lenger er i bruk, kan du bruke `-u` opsjonen.
+
+## Dykk dypere
+
+Når du oppretter en midlertidig fil ved hjelp av `mktemp`, vil den automatisk brukes til å lagre output fra kommandoer. Dette gjør det enklere å behandle og manipulere denne informasjonen videre i et script. Du kan også bruke kommandoen `rm` for å slette filen når den ikke lenger er nødvendig, for eksempel:
 
 ```Fish Shell
-rm FILENAME
+mktemp | rm
 ```
 
-## Dypdykk
-En interessant funksjon ved midlertidige filer er at de automatisk får et unikt og tilfeldig navn hver gang de opprettes. Dette er nyttig for å unngå konflikter med andre filer som allerede finnes i mappen.
-
-Det er også mulig å opprette en midlertidig mappe i stedet for en fil ved å bruke “mktemp -d” kommandoen.
+Det er også verdt å merke seg at du kan opprette flere midlertidige filer ved å bruke `mktemp` flere ganger i samme script. Dette kan være nyttig hvis du trenger å lagre output fra flere kommandoer til separate filer.
 
 ## Se også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Linux User and Developer – Creating Temporary Files and Directories](https://www.linuxuser.co.uk/tutorials/creating-temporary-files-and-directories)
-- [Code Snipcademy – Temporary Files in Python](https://code.snipcademy.com/tutorials/python-programming/temporary-files)
+
+For mer informasjon om `mktemp` kommandoen og hvordan du kan bruke den, kan du sjekke ut følgende ressurser:
+
+- [The Fish Shell User Manual](https://fishshell.com/docs/current/index.html)
+- [mktemp command man page](https://linux.die.net/man/1/mktemp)
+- [How to Use Temporary Files in Bash Scripts](https://linuxize.com/post/bash-temporary-file/)

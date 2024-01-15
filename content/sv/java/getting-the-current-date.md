@@ -1,6 +1,7 @@
 ---
-title:                "Java: Att få den nuvarande datumen"
-simple_title:         "Att få den nuvarande datumen"
+title:                "Att hämta aktuellt datum"
+html_title:           "Java: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hämta den aktuella datumet är en användbar funktion i många olika program och applikationer. Det kan hjälpa till att organisera och strukturera data, och det kan även användas för att visa korrekt datum och tid för användarna.
+Att kunna hämta och använda den aktuella datumet i ett program är en viktig funktion som kan vara användbar i många olika sammanhang. Oavsett om du behöver visa den aktuella datumet för användaren eller använda det för att utföra beräkningar eller jämförelser, är det viktigt att veta hur man gör detta korrekt i Java.
 
-## Så här gör du
+## Hur man gör det
 
-För att hämta den aktuella datumet i Java, finns det flera olika metoder att använda beroende på vad du behöver. Nedan finns två olika kodexempel och den resulterande utgången för att hjälpa dig att förstå processen.
+För att hämta den aktuella datumet i Java, används klassen `java.util.Date` och dess metod `getDate()` tillsammans med `java.text.SimpleDateFormat` för att formatera datumet enligt önskat format. Här är ett exempel på hur man skulle kunna implementera detta i en Java-applikation:
 
-```Java
-// Hämta datumet som ett Date-objekt
-Date date = new Date(); // skapar ett nytt Date-objekt med aktuellt datum och tid
-System.out.println(date); // skriver ut aktuellt datum och tid
+```java
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
-// Konvertera datum till en sträng
-SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy"); // skapar ett SimpleDateFormat-objekt med önskat format
-String dateString = format.format(date); // konverterar datumet till en sträng enligt det valda formatet
-System.out.println(dateString); // skriver ut datumet som en sträng
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        // Skapa ett objekt av typen Date
+        Date currentDate = new Date();
+        
+        // Ange önskat datumformat
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        
+        // Hämta den aktuella datumet och formatera det enligt önskat format
+        String formattedDate = dateFormat.format(currentDate);
+        
+        // Skriv ut den formaterade datumet 
+        System.out.println("Den aktuella datumet är: " + formattedDate);
+    }
+}
 ```
-
-Output: 
-Thu Jul 22 22:33:24 CEST 2021
-22/07/2021
-
-Som du kan se är det enkelt att hämta och konvertera den aktuella datumet till olika format som passar dina behov.
+Sample output:
+```
+Den aktuella datumet är: 21/09/2021
+```
 
 ## Djupdykning
 
-Java har flera olika klasser och metoder som kan användas för att hantera datum och tid. En av de vanligaste är Date-klassen som representerar ett specifikt datum och klockslag. Men det finns även andra klasser som kan vara användbara beroende på vad du behöver göra, såsom Calendar och LocalDate.
-
-Det är viktigt att notera att datum och tid kan påverkas av olika faktorer som tidszoner och sommartid. Det är därför viktigt att ha detta i åtanke när du hämtar den aktuella datumet och hanterar datum och tid i dina program.
+Det är viktigt att notera att klassen `java.util.Date` inte bara innehåller information om datumet, utan även om tiden, såsom timmar, minuter och sekunder. Om du bara är intresserad av att hämta datumet bör du använda `java.sql.Date` istället, som endast innehåller information om datumet. Det är även möjligt att använda `java.util.Calendar` för att manipulera och utföra beräkningar med datum och tid.
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om hur man hanterar datum och tid i Java:
-
-- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java Calendar Class](https://www.geeksforgeeks.org/java-util-calendar-class-java/)
-- [Java 8 LocalDate Class](https://www.baeldung.com/java-8-date-time-intro)
+- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) 
+- [Java Calendar Class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)

@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "C++ recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "C++"
 category:             "C++"
@@ -11,65 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a programmer, you may encounter situations where you need to compare two dates in your code. This could be when working with dates in a database, calculating time differences, or simply validating user input. Whatever the reason may be, having the ability to compare two dates is an important skill to have in your programming toolkit.
+Comparing dates is a common operation when working with dates in programming, whether it's to determine if one date is before or after another or to calculate the difference between them. It allows developers to perform various tasks such as creating reminders, scheduling events, and sorting data based on date.
 
 ## How To
 
-To compare two dates in C++, we can use the `std::chrono` library, which provides convenient functions for working with dates and times. Let's see how we can use this library to compare two dates.
+To compare two dates in C++, we can use the `std::chrono` library. This library provides a high-precision clock that can measure time in different units, including seconds, milliseconds, microseconds, and nanoseconds. We can use this library to create `std::chrono::time_point` objects that represent a specific point in time.
 
-````C++
+```C++
+// include necessary libraries
 #include <iostream>
-#include <chrono>
+#include <chrono> 
 
-int main() {
-  // Create two datetime objects
-  std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
-  std::chrono::system_clock::time_point date2 = std::chrono::system_clock::now();
+int main()
+{
+  // create two time_point objects representing two different dates
+  std::chrono::time_point start = std::chrono::system_clock::now();
+  std::chrono::time_point end = std::chrono::system_clock::now();
 
-  // Compare the two dates
-  if (date1 == date2) {
-    std::cout << "The two dates are equal" << std::endl;
+  // compare the two dates using the comparison operators (>, <, >=, <=)
+  if (start > end) {
+    std::cout << "Start date is after end date";
+  } else if (start < end) {
+    std::cout << "Start date is before end date";
   } else {
-    std::cout << "The two dates are not equal" << std::endl;
+    std::cout << "Start date is the same as end date";
   }
 
-  return 0;
-}
-````
-
-The `std::chrono` library allows us to create datetime objects using the `system_clock::now()` function, which returns the current date and time. We then use the `==` operator to compare the two dates, which returns a boolean value indicating whether the two dates are equal or not. In our example, we display a message to the user based on the comparison result. 
-
-Let's take a look at another example where we compare two dates using the `std::chrono::duration` class, which allows us to work with time durations.
-
-````C++
-#include <iostream>
-#include <chrono>
-
-int main() {
-  // Create two datetime objects
-  std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
-  std::chrono::system_clock::time_point date2 = std::chrono::system_clock::now();
-
-  // Calculate the duration between the two dates
-  auto duration = date2 - date1;
-
-  // Display the duration in seconds
-  std::cout << "The duration in seconds is: " << std::chrono::duration_cast<std::chrono::seconds>(duration).count() << std::endl;
+  // calculate the duration between the two dates in days
+  std::chrono::duration<int> diff = end - start;
+  std::cout << "Duration between the two dates is " << diff.count() << " days";
 
   return 0;
 }
-````
+```
 
-In this example, we use the `std::chrono::duration_cast` function to convert the duration between the two dates into seconds. We also use the `count()` function to get the actual value of the duration in seconds. This allows us to perform calculations and comparisons based on time durations.
+The output of the above code would be:
+```
+Start date is before end date
+Duration between the two dates is 0 days
+```
 
 ## Deep Dive
 
-Under the hood, the `std::chrono` library uses a system-specific clock to measure time. This ensures that the measurements are accurate and consistent across different platforms. Additionally, the library provides other useful functions for working with dates and times, such as `std::chrono::duration`, `std::chrono::time_point`, and `std::chrono::steady_clock`. These can be used in various scenarios depending on your specific needs.
+To compare two dates, we first need to understand how dates are represented in the `std::chrono` library. The `std::chrono::time_point` class represents a point in time, and it takes two template parameters: `Clock` and `Duration`. The `Clock` parameter determines the time source used to measure the time and is typically one of the three clocks: `std::chrono::system_clock`, `std::chrono::steady_clock`, or `std::chrono::high_resolution_clock`. The `Duration` parameter represents the unit of time used to measure the time and is typically one of the `std::chrono::duration` classes (e.g. `std::chrono::seconds`, `std::chrono::microseconds`). 
 
-When comparing two dates, it's important to also consider the time zone and daylight saving time. The `std::chrono` library allows you to specify the time zone for your datetime objects using the `std::chrono::zoned_time` class. This helps to ensure that your comparisons are accurate and account for any time zone differences.
+When we create a `std::chrono::time_point` object, it is initialized with the current time by default. However, we can also specify a specific time to initialize the object, as shown in the code example above.
+
+To compare two `std::chrono::time_point` objects, we can use the comparison operators (`>`, `<`, `>=`, `<=`) provided by the `std::chrono` library. These operators compare the two time points based on the specified clock's resolution. In the above code, we used `std::chrono::system_clock` as the clock, which has a resolution of one second.
+
+Apart from comparing two dates, the `std::chrono` library also allows us to perform arithmetic operations on time points, such as adding or subtracting a specified duration. This can be useful when calculating the difference between two dates or adding a specific amount of time to a date.
 
 ## See Also
 
-- [C++ Reference: std::chrono](https://en.cppreference.com/w/cpp/chrono)
-- [Tutorial: Using std::chrono in C++](https://www.geeksforgeeks.org/stdchrono-in-c/)
-- [C++ Date and Time Library](https://howardhinnant.github.io/date/date.html)
+- [Comparing Dates and Times in C++](https://www.geeksforgeeks.org/comparing-dates-and-times-in-c/)
+- [std::chrono Library Reference](https://en.cppreference.com/w/cpp/chrono)
+- [Computing Dates in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)

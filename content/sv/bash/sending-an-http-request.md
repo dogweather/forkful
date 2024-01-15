@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Bash: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-HTTP-förfrågningar är ett vanligt sätt att interagera med webbservrar och används ofta inom programmering för att hämta data eller göra ändringar på en webbplats.
+
+För att interagera med webbsidor och tjänster är det ofta nödvändigt att skicka HTTP-förfrågningar. Detta kan vara för att hämta information, skicka data eller utföra olika handlingar.
 
 ## Hur man gör det
-För att skicka en HTTP-förfrågan i Bash, använder man vanligtvis kommandot `curl`. Här är ett exempel på hur man skickar en GET-förfrågan till en webbplats:
+
+För att skicka en HTTP-förfrågan i Bash finns det ett inbyggt kommando som heter "curl". Detta kommando kan ange URL-adressen som förfrågan ska skickas till och eventuella parametrar som behövs. Exempelvis:
 
 ```Bash
 curl https://www.example.com
 ```
 
-Detta kommer att hämta hela hemsidan och skriva ut den i terminalen. Om du vill spara utdata till en fil, kan du lägga till flaggan `-o` efter kommandot och ange en filnamn att spara till. Till exempel:
+Detta kommer att skicka en GET-förfrågan till webbplatsen www.example.com och returnera svaret, som i detta fall skulle vara HTML-koden för webbsidan. Om du vill skicka en POST-förfrågan med data, kan du använda flaggan "-d" och ange dina data i citattecken. Exempelvis:
 
 ```Bash
-curl -o example.html https://www.example.com
+curl -d 'username=johndoe&password=123456' https://www.example.com/login
 ```
 
-Detta kommer att spara hemsidan till en fil med namnet "example.html". För att skicka en POST-förfrågan, kan du använda flaggan `-d` för att ange data att skicka med förfrågan. Till exempel:
+I detta exempel kommer en POST-förfrågan att skickas till /login-sidan med användarnamn och lösenord som dataparametrar.
 
-```Bash
-curl -d "username=John&password=12345" https://www.example.com/login
-```
+## Fördjupning
 
-Detta skickar en förfrågan till webbadressen "https://www.example.com/login" med användarnamn och lösenord som data.
-
-## Djupdykning
-När du skickar en HTTP-förfrågan i Bash är det viktigt att förstå de olika komponenterna som ingår. En HTTP-förfrågan består av en verb (t.ex. GET, POST, PUT), en URL och en serie med valfria headers och data.
-
-Verbet indikerar vilken typ av åtgärd som ska utföras på webbservern. Den vanligaste metoden är GET, som används för att hämta data från servern. Andra metoder som kan användas är POST, PUT och DELETE.
-
-URL:en är webbadressen för servern som du vill interagera med. Det kan vara en hemsida eller en specifik sida eller resurs på webbplatsen.
-
-Headers är frivilliga komponenter som innehåller metadata om förfrågan, såsom vilken typ av data som skickas eller vilken språkinställning som ska användas. Headers används för att ge mer information till servern om hur din förfrågan ska hanteras.
-
-Data används för att skicka information till servern, antingen som en del av URL:en eller som en del av förfrågan. Det kan vara användarnamn och lösenord, sökparametrar eller annan data som används för att identifiera och hämta information från servern.
+Curl-kommandot har många fler alternativ och funktioner än de som nämns ovan. Du kan använda flaggor som "-H" för att ange HTTP-huvuden, "-X" för att ange en annan HTTP-metod än den som standard används, och "-o" för att ladda ner resultatet till en fil istället för att skriva ut det i terminalen. Du kan också använda curl för att skicka förfrågningar till lokala servrar eller för att autentisera med olika metoder. Det finns massor av bra resurser på nätet för att lära sig mer om curl och dess alla användningsområden.
 
 ## Se även
-- [Bash:s officiella dokumentation för `curl`](https://www.gnu.org/software/curl/)
-- [En lättfattlig guide till HTTP-förfrågningar](https://developer.mozilla.org/sv/docs/Web/HTTP/Overview)
-- [En introduktion till Bash programmering](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-basics-of-bash-scripting)
+
+- [Curl man-sidan](https://linux.die.net/man/1/curl)
+- [Curl-guide på DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-curl-to-download-files-from-the-command-line)
+- [Curl för idioter](http://www.geekality.net/tag/curl-for-dummies/)

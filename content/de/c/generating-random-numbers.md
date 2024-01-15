@@ -1,5 +1,6 @@
 ---
-title:                "C: Zufallszahlen generieren"
+title:                "Zufallszahlen generieren"
+html_title:           "C: Zufallszahlen generieren"
 simple_title:         "Zufallszahlen generieren"
 programming_language: "C"
 category:             "C"
@@ -11,43 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung, insbesondere im Bereich der Spieleentwicklung und der Verschlüsselung. Durch die Verwendung von Zufallszahlen können Programme Abwechslung erzeugen und vorhersehbare Ergebnisse vermeiden.
+Warum sollte man sich überhaupt mit der Erzeugung von Zufallszahlen beschäftigen? Nun, Zufallszahlen sind in der Programmierung äußerst nützlich, insbesondere für Spiele, Kryptografie und Simulationen. Mit zufälligen Werten können verschiedene Ergebnisse erzielt werden und somit die Vielfalt und Komplexität von Programmen erhöht werden.
 
-## Wie man es macht
+## Wie geht das?
 
-Das Generieren von Zufallszahlen in C ist relativ einfach. Im Folgenden werden wir uns ein paar Beispiele ansehen, wie man mit Hilfe der Standardbibliothek von C Zufallszahlen generieren kann.
-
-```C
-// Zunächst müssen wir die Header-Datei "stdlib.h" einbinden
-#include <stdlib.h>
-
-// Um eine Zufallszahl zwischen 0 und RAND_MAX zu generieren, verwenden wir die Funktion rand()
-int random_number = rand(); 
-
-// Wenn wir eine bestimmte Spanne von Zahlen haben wollen, können wir die Funktion modulo (%) verwenden
-int random_number_between_0_and_9 = rand() % 10; // gibt eine Zufallszahl zwischen 0 und 9 zurück
-
-// Wir können auch Zufallszahlen zwischen zwei bestimmten Zahlen generieren
-int random_number_between_20_and_30 = rand() % 11 + 20; // gibt eine Zufallszahl zwischen 20 und 30 zurück
-```
-
-Wenn wir die obigen Code-Beispiele ausführen, erhalten wir jedes Mal eine andere Zufallszahl.
-
-## Tiefentauchen
-
-Das Generieren von Zufallszahlen mag auf den ersten Blick einfach aussehen, jedoch gibt es einige wichtige Punkte zu beachten. Zum einen ist die Funktion rand() nicht wirklich zufällig, sondern basiert auf einem Algorithmus, der bei jedem Programmstart die gleichen Zufallszahlen produziert. Deshalb sollten wir die Funktion srand() verwenden, um eine sogenannte "Seed"-Nummer zu setzen, die den Startpunkt für die Zufallszahlengenerierung definiert.
+Zufallszahlen in C zu erzeugen ist relativ einfach. Zuerst müssen wir die ```stdlib.h```-Bibliothek einbinden, die einige Funktionen zur Zufallserzeugung enthält. Dann können wir die ```srand()```-Funktion verwenden, um einen sogenannten "Seed" zu setzen. Der Seed bestimmt den Startwert für den Zufallsgenerator und sollte bei jedem Programmstart unterschiedlich sein. Hier ist ein Beispielcode:
 
 ```C
+#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-srand(time(NULL)); // initialisiert den Seed mit der aktuellen Uhrzeit
+int main()
+{
+    // Wir setzen den Seed auf die aktuelle Uhrzeit
+    srand(time(0));
+
+    // Jetzt können wir mit der Funktion rand() Zufallszahlen erhalten
+    // Zum Beispiel geben wir 10 zufällige Zahlen zwischen 1 und 100 aus
+    for(int i = 0; i < 10; i++) {
+        // Mit dem Modulo-Operator (%) können wir den Wertebereich begrenzen
+        // In diesem Fall rechnen wir die Zufallszahl modulo 100, um sie zwischen 0 und 99 zu erhalten
+        int randomNumber = rand() % 100;
+        // Um die Zahl zwischen 1 und 100 zu erhalten, addieren wir 1
+        randomNumber += 1;
+
+        // Ausgabe der Zufallszahl
+        printf("%d\n", randomNumber);
+    }
+
+    return 0;
+}
 ```
 
-Zum anderen gibt es verschiedene Arten von Zufallszahlen, wie zum Beispiel Pseudozufallszahlen und kryptografisch sichere Zufallszahlen. Je nach Anwendungsbereich müssen wir die geeignete Methode zur Generierung von Zufallszahlen wählen.
+Die Ausgabe könnte zum Beispiel so aussehen:
+
+```
+34
+5
+91
+78
+11
+42
+83
+99
+68
+24
+```
+
+## Tiefer geht's
+
+Die ```rand()```-Funktion in C erzeugt Pseudozufallszahlen, die auf dem Seed basieren. Das heißt, die generierten Zahlenfolgen sind bei jedem Programmstart gleich. Um wirklich zufällige Zahlen zu erhalten, können wir die Funktion ```random()``` aus der ```unistd.h```-Bibliothek verwenden. Diese Funktion basiert auf einem sogenannten "Random Seed Generator" und erzeugt jede Sekunde einen neuen Seed. Dadurch sind die erzeugten Zahlenfolgen bei jedem Programmstart unterschiedlich.
+
+Außerdem ist es möglich, die Zufallsgeneratorfunktion mit bestimmten Algorithmen zu verbessern, um eine noch bessere Verteilung der Zufallszahlen zu erreichen. Eine bekannte Methode ist die "Mersenne Twister"-Methode, die in der ```<math.h>```-Bibliothek enthalten ist.
 
 ## Siehe auch
 
-- Weitere Informationen zur Generierung von Zufallszahlen in C: [https://www.linuxprogrammingblog.com/code-examples/how-to-use-random-and-rand-in-cc](https://www.linuxprogrammingblog.com/code-examples/how-to-use-random-and-rand-in-cc)
-- Eine detaillierte Erläuterung der verschiedenen Arten von Zufallszahlen und deren Einsatzgebiete: [https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- Eine Einführung in die Verwendung von Zufallszahlen in der Spieleentwicklung: [https://noobtuts.com/cpp/12-generate-random-geometry](https://noobtuts.com/cpp/12-generate-random-geometry)
+- [Offizielle C-Dokumentation zur Zufallserzeugung](https://en.cppreference.com/w/c/numeric/random)
+- [Tutorial für die Verwendung von Zufallszahlen in C](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Echte Zufallszahlen in C erzeugen](https://www.educative.io/edpresso/how-to-generate-random-numbers-in-c)

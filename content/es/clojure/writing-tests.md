@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Programando pruebas"
-simple_title:         "Programando pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Clojure: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Clojure
+# ¿Por qué escribir pruebas en Clojure?
 
-Escribir pruebas (o tests) es una práctica común en el desarrollo de software que permite verificar el correcto funcionamiento de nuestro código. En el caso de Clojure, el uso de pruebas nos ayuda a garantizar que nuestro programa se comporte de la manera esperada, evitando errores y bugs que puedan surgir durante su ejecución.
+La escritura de pruebas en Clojure es una práctica esencial para garantizar el buen funcionamiento y la calidad del código. Las pruebas permiten detectar errores y bugs de manera temprana, lo que ahorra tiempo y esfuerzo en el proceso de desarrollo. Además, escribir pruebas ayuda a mantener un código más limpio y organizado.
 
-## Cómo escribir pruebas en Clojure
+## Cómo hacerlo
 
-Para escribir pruebas en Clojure, podemos utilizar la librería de pruebas integrada en el lenguaje: `clojure.test`. Esta librería nos proporciona funciones y macros para definir pruebas y aserciones.
+Para escribir pruebas en Clojure, utilizaremos la biblioteca de pruebas integrada en el lenguaje, llamada clojure.test. Primero, debemos importarla en nuestro código con la siguiente línea:
 
-Veamos un ejemplo de cómo escribir una prueba básica utilizando `clojure.test`:
-
-```Clojure
-(ns mi-proyecto.pruebas
-  (:require [clojure.test :refer :all]))
-
-(deftest mi-test
-  (testing "Ejemplo de aserción"
-    (is (= (+ 2 2) 4))))
-
-(run-tests)
+```clojure
+(require '[clojure.test :refer [deftest is]])
 ```
 
-En este ejemplo, creamos un namespace para nuestras pruebas y utilizamos `deftest` para definir una prueba llamada `mi-test`. Luego, dentro de la prueba, utilizamos `testing` para indicar qué es lo que estamos probando y `is` para definir la aserción que debe cumplirse.
+Luego, podemos definir nuestras pruebas utilizando la función `deftest`. En el siguiente ejemplo, estamos probando una función simple que suma dos números enteros:
 
-Finalmente, llamamos a la función `run-tests` para ejecutar nuestra prueba. Si todo está correcto, recibiremos un mensaje de que la prueba fue exitosa.
+```clojure
+(deftest suma-prueba
+  (is (= 4 (+ 2 2))))
+```
 
-## Profundizando en el tema de las pruebas
+En este caso, utilizamos la función `is` para comparar el resultado de la suma con el valor esperado (4) utilizando la función de igualdad `=`. Si la prueba es exitosa, no se mostrará ningún mensaje en la consola. De lo contrario, se imprimirá un mensaje de error indicando cuál fue el valor esperado y cuál fue el valor obtenido.
 
-Existen diversos tipos de pruebas que podemos escribir en Clojure, como por ejemplo: pruebas unitarias, pruebas de integración y pruebas de aceptación. Cada tipo de prueba tiene su propósito y nos permite validar diferentes aspectos de nuestro código.
+Podemos ejecutar nuestras pruebas utilizando la función `run-tests`. Esta función acepta una lista de nombres de pruebas o una expresión regular como argumento. Por ejemplo:
 
-Además de `clojure.test`, también existen otras librerías en Clojure para escribir pruebas, como `midje` y `speclj`. Cada una tiene sus propias características y ventajas, por lo que es importante investigar y elegir la que mejor se adapte a nuestro proyecto.
+```clojure
+(run-tests 'suma-prueba) ; ejecuta solo la prueba "suma-prueba"
+(run-tests #"\w+-prueba") ; ejecuta todas las pruebas que terminen con "-prueba"
+```
 
-Las pruebas no solo sirven para validar nuestro código, sino también para facilitar su mantenimiento y extensión. Al escribir pruebas, documentamos y especificamos el comportamiento de nuestro código, lo que facilita su comprensión a futuro.
+## Profundizando
 
-## Ver También
+Además de la función `is`, clojure.test también nos provee de otras funciones útiles para escribir pruebas. Algunas de ellas son:
 
-- [Documentación de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Librería midje](https://github.com/marick/Midje)
-- [Librería speclj](https://github.com/slagyr/speclj)
+- `testing`: nos permite agrupar nuestras pruebas en una sección con un nombre descriptivo.
+- `isnt`: compara dos valores y verifica que sean diferentes.
+- `throws?`: verifica que una determinada excepción sea lanzada por una función.
+- `are`: nos permite verificar múltiples assertiones en una misma prueba.
+
+Además, podemos utilizar la macro `deftest+` para definir pruebas parametrizadas, lo que nos permite probar una función con diferentes valores de entrada.
+
+En resumen, escribir pruebas en Clojure es una práctica esencial para garantizar la calidad y el buen funcionamiento de nuestro código. Con la biblioteca de pruebas integrada en el lenguaje, podemos escribir pruebas de manera sencilla y efectiva, lo que nos permite detectar errores tempranamente y mantener nuestro código limpio y organizado.
+
+# Ver también
+
+- [Documentación oficial de clojure.test](https://clojuredocs.org/clojure.test)
+- [Ejemplo de pruebas en Clojure](https://github.com/clojure/tools.namespace/blob/master/test/src/clojure/tools/namespace/test/namespace_test.clj)

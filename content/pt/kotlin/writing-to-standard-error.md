@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Escrevendo para o erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Kotlin: Escrevendo para o erro padrão"
 simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever no standard error?
+## Por que
+Provavelmente você já se deparou com um código que precisa mostrar mensagens de erro ou de depuração ao usuário. Ao invés de exibir essas mensagens no console ou em uma interface gráfica, uma boa prática é escrevê-las diretamente no "standard error" (erro padrão). Isso permite que as mensagens sejam facilmente identificadas e tratadas em situações específicas.
 
-Existem várias razões pelas quais você pode querer escrever para o standard error em seus programas Kotlin.
+## Como Fazer
+Escrever no "standard error" em Kotlin é bastante simples. Basta utilizar a propriedade "err" do objeto System. Por exemplo:
 
-Uma delas é que, ao contrário do standard output, que é destinado a exibir informações ao usuário, o standard error é usado para exibir mensagens de erro ou exceções em seu código. Isso pode ser útil para depuração e identificação de problemas em seu programa.
-
-Além disso, algumas ferramentas e sistemas, como o JUnit, consideram a saída do standard error ao avaliar a execução de testes. Portanto, escrever para o standard error pode ajudar a identificar e resolver erros em seus testes.
-
-## Como fazer
-
-Para escrever no standard error em Kotlin, você pode usar a função `System.err.println()`, que imprimirá sua mensagem no standard error. Veja um exemplo abaixo:
-
-```kotlin
-fun main() {
-    val num1 = 10
-    val num2 = 0
-    try {
-        val result = num1 / num2
-    } catch (e: ArithmeticException) {
-        System.err.println("Não é possível dividir por zero!")
-    }
-}
+```Kotlin
+System.err.println("Erro ao carregar o arquivo!")
 ```
 
-A saída desse código será "Não é possível dividir por zero!" impresso no standard error.
+O código acima irá imprimir a mensagem de erro no "standard error", que pode ser acessado por meio do console ou em outros locais que suportem a exibição de mensagens de erro.
+
+Se você estiver utilizando o framework de teste JUnit, também pode ser útil escrever no "standard error" durante a execução dos testes, para fornecer informações adicionais para debug:
+
+```Kotlin
+err.println("Teste falhou na linha ${err.stackTrace[0].lineNumber}.")
+```
 
 ## Mergulho Profundo
+Quando utilizamos a função "println()" no Kotlin, ela escreve a mensagem no "standard output" (saída padrão). Porém, se estivermos lidando com erros, é mais adequado utilizar o "standard error" para escrever as mensagens. Isso pode ser feito utilizando a função "err.println()" como mostrado nos exemplos acima.
 
-Ao escrever para o standard error, é importante lembrar que ele é apenas um fluxo de saída e não um local de armazenamento. Isso significa que as mensagens escritas no standard error a cada momento serão imediatamente exibidas e descartadas.
+Outra diferença importante é que o "standard output" é um fluxo de saída padrão e pode ser redirecionado para outros lugares, como um arquivo de log ou mesmo um outro fluxo de entrada. Já o "standard error" é um fluxo dedicado às mensagens de erro e sempre será exibido no console.
 
-Além disso, é importante decidir com cuidado o que escrever para o standard error, pois muitas mensagens podem dificultar a leitura da saída do seu programa e dificultar a identificação de problemas reais.
-
-## Veja também
-
-- [Documentação oficial do Kotlin sobre a função System.err.println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/println.html)
-- [Guia de Exceções e Erros em Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)
-- [Documentação oficial do JUnit sobre o uso do standard error](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
+## Veja Também
+- [Documentação oficial do Kotlin sobre o objeto System](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-output-stream/)

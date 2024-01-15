@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Nykyisen päivämäärän hankkiminen"
-simple_title:         "Nykyisen päivämäärän hankkiminen"
+title:                "Päivämäärän saaminen"
+html_title:           "Ruby: Päivämäärän saaminen"
+simple_title:         "Päivämäärän saaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,43 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi sinun kannattaisi oppia hakemaan nykyinen päivämäärä Ruby-ohjelmoinnilla. Ehkä haluat lisätä päivämäärän johonkin peliin tai sovellukseen, tai ehkä haluat vain näyttää sen käyttäjille.
+Monissa ohjelmoinnin projekteissa on tarvetta käyttää ajantasaista päivämäärää, esimerkiksi tapahtumien ajoittamisessa tai tietokantojen päivityksissä. Onneksi Rubyn nykyinen versio tarjoaa yksinkertaisen tavan saada tiedot tämän hetken päivämäärästä.
 
 ## Miten
 
-Hanki nykyinen päivämäärä Rubyssa voi käyttämällä Date-luokkaa ja sen metodeja. Ensiksi, sinun täytyy vaatia Date-muotoiluaohjelman ulkopuolelle:
+Rubyn `Time`-luokan `now`-metodi palauttaa nykyisen ajan ja päivämäärän yhtenä `Time`-oliona. Voit käyttää sitä näyttämään tämän hetken kellonajan yksinkertaisella komennolla:
 
 ```Ruby
-require 'date'
+puts Time.now
 ```
 
-Sitten, voit käyttää `Date.today` -metodia saadaksesi nykyisen päivämäärän:
+Tämä tulostaa nykyisen ajan ja päivämäärän muodossa `vuosi-kuukausi-päivä tunti:minuutti:sekunti +0000`. Voit myös käyttää `strftime`-metodia määrittääksesi halutun tulostusmuodon. Se ottaa argumenttinaan merkkijonon, jossa on määritelty haluttu muoto. Esimerkiksi:
 
 ```Ruby
-Date.today
+puts Time.now.strftime("%d.%m.%Y")
 ```
 
-Tämän komennon suorittamisen jälkeen, saat takaisin nykyisen päivämäärän muodossa "YYYY-MM-DD". Esimerkiksi, jos tänään on 15. syyskuuta 2021, saat seuraavan tulosteen:
+Tämä tulostaa nykyisen päivämäärän muodossa `päivä.kuukausi.vuosi`.
 
-```
-2021-09-15
-```
+## Syvemmälle
 
-Halutessasi voit myös muuttaa päivämäärän muotoa käyttämällä `strftime` -metodia. Esimerkiksi, jos haluat tulostaa päivämäärän muodossa "DD.MM.YYYY", voit tehdä sen seuraavalla tavalla:
+Vaikka `Time.now` on kätevä tapa saada tieto tämän hetken päivämäärästä, on myös muita tapoja saada sama tieto. Voit esimerkiksi käyttää `Date`-luokan `today`-metodia, joka palauttaa nykyisen päivämäärän yksinkertaisena `Date`-oliona. Tai voit käyttää `DateTime`-luokan `now`-metodia saadaksesi tiedon päivämäärän ja kellonajan yhdistelmästä.
 
-```Ruby
-Date.today.strftime("%d.%m.%Y")
-```
-
-Tämä antaa sinulle tuloksen "15.09.2021". Voit käyttää muita muotoilumerkkejä saadaksesi haluamasi päivämäärän muodon. Voit lukea lisää Date-luokasta ja sen metodeista [Ruby-opas](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html).
-
-## Syvempi sukellus
-
-Rubyssa on myös muita tapoja saada nykyinen päivämäärä, kuten käyttämällä `Time` ja `DateTime` -luokkia. Näissä luokissa on myös omat metodejaan nykyisen päivämäärän hakemiseksi ja muotoilemiseksi. Voit lukea lisää näistä vaihtoehdoista [Ruby-oppaasta](https://ruby-doc.org/core-2.7.2/Time.html) ja [Ruby-oppaasta](https://ruby-doc.org/stdlib-2.7.2/libdoc/datetime/rdoc/DateTime.html).
+On myös huomattava, että `Time`-oliot ovat tavallisesti luotettavia vain vuodesta 1970 lähtien. Ennen sitä ajan laskenta voi olla epätarkkaa tai jopa virheellistä.
 
 ## Katso myös
 
- - [Ruby-opas](https://www.ruby-lang.org/en/)
- - [Ruby-ohjelmointikurssit](https://www.coursereport.com/tracks/ruby-on-rails-courses?_ga=2.2670917.506796776.1631727791-1361597607.1631727791)
- - [Ruby-keskustelufoorumi](https://www.ruby-forum.com/)
- - [Ruby-yhteisön blogit](https://www.ruby-lang.org/en/news/)
+- [Ruby Time Documentation](https://ruby-doc.org/core-3.0.1/Time.html)
+- [Ruby Date Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- [Ruby DateTime Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html)

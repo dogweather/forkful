@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Elm: Päivämäärän muuntaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,30 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointikielissä päivämäärän muuttaminen merkkijonoksi voi olla monimutkaista ja haastavaa. Elm-kielessä tämä prosessi on kuitenkin yksinkertaista ja helppoa, mikä tekee siitä hyvän vaihtoehdon päivämäärämuotojen käsittelyyn.
+Monissa ohjelmointitehtävissä saattaa olla tarpeen muuttaa päivämäärä merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi tietyn formaatin vaatimiseksi tai päivämäärän tallentamiseksi tietokantaan. Elm-kielellä tämän tehtävän suorittaminen on helppoa ja vaivatonta.
 
-## Miten
+## Kuinka
 
-Elm-kielessä päivämäärän muuttaminen merkkijonoksi tapahtuu `Date.toIsoString`-funktiolla. Tämä funktio ottaa parametrinaan päivämäärämuuttujan ja palauttaa sen merkkijonona ISO 8601 -standardin mukaisessa muodossa.
+Muuttaaksesi päivämäärän merkkijonoksi Elm-kielellä, sinun tarvitsee vain käyttää Date.toIsoString-funktiota. Se muuntaa annetun päivämäärän ISO 8601 -standardin mukaiseen merkkijonoon.
 
 ```Elm
-import Date exposing (..)
+import Date exposing (toIsoString)
 
-dateToString : Date -> String
-dateToString date =
-  Date.toIsoString date
+date = Date.fromParts 2020 10 31
 
-main =
-  dateToString (Date.fromYMD 2021 03 08)
-
--- Output: "2021-03-08"
+toIsoString date -- "2020-10-31"
 ```
 
-## Syvempi sukellus
+Jos haluat muuttaa päivämäärän toiseen formaattiin, voit käyttää Date.format-funktiota ja antaa haluamasi formaattimerkkijonon parametrina.
 
-Elm-kielessä päivämäärät ovat kokonaislukuja, joiden arvo on millisekunteina kulunut aika 1. tammikuuta 1970 klo 00:00:00 UTC:sta lähtien. `Date.fromYMD`-funktio muuntaa annetut vuosi, kuukausi ja päivä kokonaisluvuksi, jota `Date.toIsoString`-funktio käyttää muodostaakseen oikeanlaisen merkkijonon.
+```Elm
+import Date exposing (format)
+
+date = Date.fromParts 2020 10 31
+
+format "DD.MM.YYYY" date -- "31.10.2020"
+```
+
+## Syvemmälle
+
+Elm tarjoaa myös erilaisia Date-moduulin funktioita päivämäärän käsittelyyn. Voit tarkistaa dokumentaatiosta kaikki saatavilla olevat funktiot ja niiden käyttötarkoitukset.
+
+Merkittävänä huomiona, Elm-kielessä päivämäärän muuttaminen merkkijonoksi on turvallista, sillä se käsittelee päivämäärän olion sijasta luotettavaa ISO 8601 -standardin mukaista merkkijonoa. Tämä varmistaa, että päivämäärän muunnos ja tulkinta tapahtuvat oikein eri ympäristöissä.
 
 ## Katso myös
 
-- [Elm-kieen virallinen dokumentaatio](https://guide.elm-lang.org/dates_and_times.html)
-- [ISO 8601 -standardi](https://en.wikipedia.org/wiki/ISO_8601)
+- [Elm Date-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [ISO 8601 -standardin määrittely](https://www.iso.org/iso-8601-date-and-time-format.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Go: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Go: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Go"
 category:             "Go"
@@ -9,112 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con YAML en Go
+## Por qué
 
-YAML es un formato de datos legible por humanos y fácil de entender. Al utilizarlo en Go, podemos almacenar y transmitir datos de una manera clara y eficiente. Además, es ampliamente utilizado en aplicaciones web y en la configuración de infraestructura.
+Si estás buscando una manera sencilla de manejar y almacenar datos estructurados en tu programa, YAML es una excelente opción. Con su sintaxis simple y su compatibilidad con múltiples lenguajes de programación, se ha convertido en una herramienta popular para tareas como la configuración de aplicaciones y la gestión de datos.
 
-## Cómo trabajar con YAML en Go
+## Cómo Hacerlo
 
-Para empezar a trabajar con YAML en Go, primero debemos importar el paquete "gopkg.in/yaml.v2". Luego, podemos usar la función "Unmarshal" para convertir datos YAML en una estructura de Go. Por ejemplo:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"log"
-
-	"gopkg.in/yaml.v2"
-)
-
-// Estructura para guardar datos YAML
-type Datos struct {
-	Nombre  string
-	Email   string
-	Edad    int
-	SitioWeb string
-}
-
-func main() {
-	// Datos en formato YAML
-	datosYAML := `
-	nombre: Juan
-	email: juan@example.com
-	edad: 25
-	sitioweb: example.com
-	`
-
-	// Creamos una variable para guardar los datos
-	datos := Datos{}
-
-	// Convertimos los datos YAML en una estructura de Go
-	err := yaml.Unmarshal([]byte(datosYAML), &datos)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
-
-	// Imprimimos los datos
-	fmt.Printf("Nombre: %s\nEmail: %s\nEdad: %d\nSitio web: %s\n", datos.Nombre, datos.Email, datos.Edad, datos.SitioWeb)
-}
-```
-
-La salida de este código sería:
-
-```
-Nombre: Juan
-Email: juan@example.com
-Edad: 25
-Sitio web: example.com
-```
-
-También podemos usar la función "Marshal" para convertir una estructura de Go en datos YAML. Por ejemplo:
+Primero, necesitará instalar el paquete "gopkg.in/yaml.v2" en su sistema para poder trabajar con YAML en Go. Luego, importe el paquete en su código utilizando la siguiente sintaxis:
 
 ```Go
-package main
+import "gopkg.in/yaml.v2"
+```
 
-import (
-	"fmt"
-	"log"
+Ahora, puede crear una estructura de datos en Go para almacenar su información. Por ejemplo, si deseas almacenar la información de un libro, puede crear una estructura con los siguientes campos:
 
-	"gopkg.in/yaml.v2"
-)
-
-// Estructura para guardar datos YAML
-type Fruta struct {
-	Nombre string `yaml:"nombre"`
-	Color  string `yaml:"color"`
-}
-
-func main() {
-	// Creamos una estructura de Go
-	fruta := Fruta{
-		Nombre: "Manzana",
-		Color:  "Rojo",
-	}
-
-	// Convertimos la estructura en datos YAML
-	datos, err := yaml.Marshal(&fruta)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
-
-	// Imprimimos los datos YAML
-	fmt.Println(string(datos))
+```Go
+type Libro struct {
+    Titulo  string `yaml:"titulo"`
+    Autor   string `yaml:"autor"`
+    Genero  string `yaml:"genero"`
+    Páginas int    `yaml:"paginas"`
 }
 ```
 
-La salida de este código sería:
+Para convertir esta estructura en un archivo YAML, utiliza la función "Marshal" del paquete YAML:
 
+```Go
+libro := Libro{Titulo: "El Principito", Autor: "Antoine de Saint-Exupéry", Genero: "Ficción", Páginas: 96}
+
+datos, err := yaml.Marshal(libro)
+if err != nil {
+    log.Fatalf("error: %v", err)
+}
+fmt.Println(string(datos))
 ```
-nombre: Manzana
-color: Rojo
+
+La salida de este código será un archivo YAML como este:
+
+```yaml
+titulo: El Principito
+autor: Antoine de Saint-Exupéry
+genero: Ficción
+paginas: 96
 ```
 
-## Profundizando en YAML en Go
+También puedes convertir un archivo YAML en una estructura de datos en Go utilizando la función "Unmarshal". Por ejemplo, si tienes un archivo llamado "libros.yaml" con la información de varios libros, puedes guardarlos en una lista de estructuras de esta manera:
 
-Además de las funciones "Unmarshal" y "Marshal", el paquete "gopkg.in/yaml.v2" también incluye otras funciones útiles como "Decode" y "NewDecoder". Además, es importante tener en cuenta que las estructuras de Go deben tener etiquetas de campo (`yaml:"nombre_campo"`) para poder mapear correctamente los datos YAML en la estructura.
+```Go
+datos, err := ioutil.ReadFile("libros.yaml")
+if err != nil {
+    log.Fatalf("error: %v", err)
+}
+
+var lista []Libro
+err = yaml.Unmarshal(datos, &lista)
+if err != nil {
+	log.Fatalf("error: %v", err)
+}
+```
+
+## Profundizando
+
+Además de la creación y lectura de archivos YAML, el paquete "gopkg.in/yaml.v2" cuenta con varias funciones útiles como "Encoder" y "Decoder" para trabajar con flujos de datos, y métodos para actualizar y eliminar campos de una estructura existente. También es posible utilizar etiquetas personalizadas en las estructuras de datos para tener un mayor control sobre la conversión a YAML.
+
+Para obtener más información sobre cómo trabajar con YAML en Go, puedes consultar la documentación oficial del paquete y la guía de referencia en línea.
 
 ## Ver también
 
-- Documentación oficial del paquete YAML en Go: https://pkg.go.dev/gopkg.in/yaml.v2
-- Ejemplos de uso de YAML en Go: https://github.com/go-yaml/yaml/tree/v2/examples
+- [Documentación oficial del paquete YAML en Go](https://pkg.go.dev/gopkg.in/yaml.v2)
+- [Guía de referencia en línea de YAML](https://yaml.org/)

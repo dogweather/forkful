@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Zapisywanie napisu wielkimi literami"
-simple_title:         "Zapisywanie napisu wielkimi literami"
+title:                "Zmiana wielkości liter w ciągu znaków"
+html_title:           "TypeScript: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,26 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarza się, że podczas pisania kodu potrzebujemy zmienić duże i małe litery w tekście. W takich przypadkach przydatna jest metoda "toUpperCase" dostępna w wielu językach programowania. W TypeScript można użyć tej metody aby zmienić wszystkie litery na duże w danym łańcuchu znaków.
+Istnieje wiele sytuacji, w których konieczne jest zmiana wielkości liter w łańcuchu znaków. Może to być potrzebne, aby odpowiednio sformatować wyświetlane dane lub zapewnić spójność w bazie danych. Bez względu na przyczynę, TypeScript oferuje prosty sposób na kapitalizację łańcucha znaków, który może zaoszczędzić czas i zapobiec błędom w pisowni.
 
-## Jak To Zrobić
+## Jak to zrobić
+
+Aby skorzystać ze wbudowanej metody TypeScript do kapitalizacji łańcucha znaków, wykonaj następujące kroki:
 
 ```TypeScript
-let string = "to jest przykładowy tekst";
-let capitalizedString = string.toUpperCase();
+const myString = 'witaj świecie';
+const capitalizedString = myString.toUpperCase();
 
-console.log(string); // wynik: to jest przykładowy tekst
-console.log(capitalizedString); // wynik: TO JEST PRZYKŁADOWY TEKST
+console.log(capitalizedString);
+
+// Output: WITAJ ŚWIECIE
 ```
 
-W powyższym przykładzie utworzyliśmy zmienną "string" i przypisaliśmy jej wartość "to jest przykładowy tekst". Następnie użyliśmy metody "toUpperCase" na zmiennej "string" i przypisaliśmy ją do nowej zmiennej "capitalizedString". W wyniku otrzymaliśmy zmienną "capitalizedString" zawierającą ten sam tekst, ale z wszystkimi literami zmienionymi na duże. Aby wyświetlić zawartość zmiennych w konsoli, użyliśmy metody "console.log".
+W powyższym przykładzie, deklarujemy zmienną `myString` z wartością "witaj świecie". Następnie, wykorzystując metodę `toUpperCase()`, tworzymy nową zmienną `capitalizedString`, która przechowuje skapitalizowany łańcuch znaków. W końcu, wyświetlamy wartość nowej zmiennej w konsoli, aby sprawdzić, czy została poprawnie zmieniona.
 
-## Deep Dive
+Może się zdarzyć, że chcesz zmienić na wielką literę tylko pierwszą literę w łańcuchu znaków, zamiast całego łańcucha. W takiej sytuacji możesz skorzystać z metody `charAt()` do pobrania pierwszego znaku, a następnie użyć metody `toUpperCase()` na nim i dokleić resztę łańcucha znaków.
 
-Metoda "toUpperCase" jest dostępna dla wszystkich typów prostych zdefiniowanych w TypeScript, takich jak string, number czy boolean. Co więcej, można również użyć tej metody na całych wyrażeniach, a nie tylko pojedynczych zmiennych. Można również wykonywać konkatenację różnych ciągów znaków przy użyciu tej metody, co pozwala na jeszcze większą elastyczność w manipulowaniu tekstem.
+```TypeScript
+const myString = 'witaj świecie';
+const capitalizedString = myString.charAt(0).toUpperCase() + myString.slice(1);
 
-## Zobacz Również
+console.log(capitalizedString);
 
-- [Dokumentacja TypeScript: String Operations](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-operations)
-- [W3Schools: TypeScript Strings](https://www.w3schools.com/ts/ts_strings.asp)
-- [MDN: String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+// Output: Witaj świecie
+```
+
+W tym przykładzie, wykorzystujemy metodę `charAt()` do pobrania pierwszego znaku z łańcucha znaków i używamy metody `toUpperCase()` na nim, aby zmienić na wielką literę. Następnie, wykorzystujemy metodę `slice()` do pobrania reszty łańcucha od drugiej litery i doklejamy ją do wczesniej wygenerowanej wielkiej litery.
+
+## Wnikliwe spojrzenie
+
+Metoda `toUpperCase()` jest wbudowanym elementem typu `string` w TypeScript. Oznacza to, że jest dostępna dla wszystkich zmiennych typu `string`, które możesz zadeklarować w swoim kodzie. Jest to bardzo przydatna opcja, która może zaoszczędzić czas i wysiłek w wielu sytuacjach.
+
+See Also:
+
+- [Dokumentacja TypeScript - Metoda toUppercase()](https://www.typescriptlang.org/docs/handbook/2/objects.html#methods)
+- [Dokumentacja JavaScript - Metoda toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Tutorial z metodami ciągów](https://www.typescriptlang.org/docs/handbook/2/objects.html#creation-with)

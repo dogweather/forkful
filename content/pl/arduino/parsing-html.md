@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Odczytywanie html"
-simple_title:         "Odczytywanie html"
+title:                "Analizowanie html"
+html_title:           "Arduino: Analizowanie html"
+simple_title:         "Analizowanie html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,92 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie Arduino jest wspaniałym sposobem na tworzenie interaktywnych projektów używając prostego języka programowania. Jednym z najbardziej przydatnych aspektów programowania Arduino jest możliwość parsowania (czytania) kodu HTML. Nie tylko pozwala to na wyświetlanie danych z Internetu, ale także otwiera możliwość tworzenia własnych interaktywnych stron internetowych bez potrzeby posiadania rozbudowanych umiejętności programistycznych.
+Kody HTML są często używane do tworzenia stron internetowych, jednak czasami może być potrzebne ich parsowanie w celu odczytania i wykorzystania zawartości. W tym artykule dowiesz się, jak za pomocą Arduino możesz wykonywać to zadanie.
 
 ## Jak to zrobić
 
-Aby rozpocząć parsowanie HTML za pomocą Arduino, potrzebujemy jedynie kilku prostych narzędzi. Pierwszym z nich jest biblioteka HTMLParser, dostępna do pobrania ze strony github.com/sirleech/HTMLParser. Następnie, utwórz nowy projekt Arduino i zaimportuj bibliotekę HTMLParser do swojego projektu.
+Parsowanie HTML za pomocą Arduino jest prostsze, niż mogłoby się wydawać. Wystarczy użyć gotowej biblioteki o nazwie "HTML Parser", którą możesz pobrać z oficjalnego repozytorium Arduino lub zainstalować wtyczkę do swojego środowiska programistycznego.
 
-Teraz przyjrzyjmy się najważniejszej części kodu. W celu parsowania strony HTML, musimy najpierw wczytać dane ze strony internetowej. Można to zrobić za pomocą kodu:
+Przykładowy kod wraz z wyjściem wyglądałby następująco:
 
-```Arduino
-#include <SPI.h>
-#include <Ethernet.h>
-#include <HTMLParser.h>
+```
+#include <HTMLParser.h> // Importowanie biblioteki
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1,177);
-IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0);
-
-EthernetClient client;
+HTMLParser parser; // Inicjalizacja obiektu parsera HTML
 
 void setup() {
-  // Inicjalizacja wyświetlacza LCD
-  Serial.begin(9600);
-
-  // Połączenie z Internetem za pomocą dostarczonej przez nas MAC i ustawionego adresu IP
-  if (Ethernet.begin(mac) == 0) {
-    Serial.println("Błąd połączenia z DHCP");
-    while (true);
-  }
-
-  delay(2000);
-
-  // Połączenie i wysłanie zapytania do strony internetowej
-  if (client.connect("www.example.com", 80)) {
-    Serial.println("Połączono z serwerem");
-    client.println("GET /index.php?page=example HTTP/1.0");
-
-    client.println();
-  } 
-  else {
-    Serial.println("Błąd połączenia z serwerem");
-  }
-}
-```
-
-Następnie możemy użyć funkcji HTMLParser.parse () aby wyodrębnić interesujące nas elementy kodu HTML. Przykładowy kod:
-
-```Arduino
-HTMLParser::HTMLTagCallback start_cb(void *cb_data, const char *tag_name, size_t tag_len)
-{
-  if (tag_name && tag_len == 2) {
-    Serial.print("Znaleziono tag: ");
-    Serial.print(tag_name, tag_len);
-    Serial.print("\n");
-  }
-
-  if (tag_name == "a") {
-    // Wyświetlamy linki na stronie
-    ((bool *) cb_data)[0] = true;
-  }
-
-  return &start_cb;
+  Serial.begin(9600); // Inicjalizacja komunikacji z komputerem
+  parser.begin(Serial); // Uruchomienie parsera na porcie Serial
 }
 
 void loop() {
-  if (client.available()) {
-    int len_out = 0;
-    int count = 0;
-    bool tag_found = false;
-
-    do {
-      int len = client.read(html_buffer, HTML_BUFSIZZ);
-
-      len_out = HTMLParser::parse((char *) html_buffer, len,
-        (void *) &tag_found, start_cb, /* default beaches */ NULL);
-
-      Serial.println (html_buffer);
-    } while (len_out > 0);
+  if (Serial.available() > 0) { // Sprawdzenie, czy są dostępne dane
+    parser.parse(Serial); // Parsowanie danych z portu Serial
+    if (parser.isTag()) { // Sprawdzenie, czy to jest tag HTML
+      parser.printTag(); // Wyświetlenie tagu
+    } else if (parser.isText()) { // Sprawdzenie, czy to jest tekst HTML
+      parser.printTag(); // Wyświetlenie tekstu
+    }
   }
 }
 ```
 
-Na powyższym przykładzie, wyodrębniamy wszystkie linki z kodu HTML i wyświetlamy je na ekranie. Dzięki temu prostemu kodowi, jesteśmy w stanie wyświetlić na ekranie informacje z dowolnego serwisu internetowego.
+Przykładowe wyjście:
+
+```
+<html> // Tag
+<head> // Tag
+<title> // Tag
+Parsowanie HTML za pomocą Arduino // Tekst
+</title> // Tag
+</head> // Tag
+<body> // Tag
+<h1> // Tag
+Witaj na mojej stronie internetowej! // Tekst
+</h1> // Tag
+</body> // Tag
+</html> // Tag
+```
+
+W powyższym przykładzie, za pomocą metody `isTag()` sprawdzamy, czy otrzymany znak jest tagiem, a następnie wyświetlamy go za pomocą metody `printTag()`. Podobnie postępujemy z tekstem, wykorzystując odpowiednie metody.
 
 ## Głębszy zanurzenie
 
-Parsowanie HTML za pomocą Arduino może otworzyć wiele możliwości. Możemy wykorzystać to do monitorowania danych ze stron internetowych, wyświetlania informacji na wyświetlaczu LCD lub nawet tworzenia własnych interaktywnych stron internetowych z użyciem Arduino jako kontrolera.
+Biblioteka "HTML Parser" oferuje także wiele innych metod, dzięki którym możesz dokładnie kontrolować proces parsowania HTML. Możesz na przykład ustawić, żeby parser ignorował niektóre tagi lub pobierał tylko zawartość konkretnych tagów. Więcej informacji na ten temat znajdziesz w oficjalnej dokumentacji biblioteki.
 
-Niezbędne jest jednak zdobyc
+## Zobacz też
+
+- [Oficjalna dokumentacja biblioteki "HTML Parser"](https://arduinojson.org/doc/)
+- [Oficjalna strona Arduino](https://www.arduino.cc/)
+- [Artykuł o podstawach programowania Arduino](https://www.nettiny.net/pl/artykul/2-Jak-zaczac-programowac-Arduino)

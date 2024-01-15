@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Generando números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Ruby: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,60 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Generar números aleatorios es una habilidad muy útil para un programador de Ruby. Al generar números aleatorios, puedes simular situaciones del mundo real, crear juegos o incluso mejorar la seguridad de tus aplicaciones.
+Hay muchas situaciones en las que necesitamos generar números aleatorios en nuestro código. Algunos ejemplos comunes incluyen juegos de azar, simulaciones científicas y pruebas de software.
 
 ## Cómo hacerlo
 
-Para generar un número aleatorio en Ruby, puedes utilizar el método `rand`, que toma como argumento un rango y devuelve un número aleatorio dentro de ese rango. Por ejemplo:
+Podemos generar un número aleatorio en Ruby utilizando el método `rand` seguido de un paréntesis con el rango de números que queremos que se genere. Por ejemplo, si queremos un número aleatorio entre 1 y 10, podemos escribir:
 
-```ruby
-rand(1..10)
-# Output: 6
+```Ruby
+rand(1..10) # output: 7
 ```
 
-También puedes utilizar el método `rand` sin argumentos, lo que devolverá un número aleatorio entre 0 y 1. Por ejemplo:
+También podemos generar un número aleatorio sin un rango específico, simplemente utilizando `rand` seguido de un paréntesis vacío:
 
-```ruby
-rand
-# Output: 0.342559771084647
+```Ruby
+rand # output: 0.9983842192566451 (un número decimal aleatorio)
 ```
 
-Puedes generar un número aleatorio de un array utilizando el método `sample`, que elegirá un elemento aleatorio del array. Por ejemplo, si tenemos un array de colores:
+Si queremos generar un número aleatorio de punto flotante en lugar de un número entero, podemos utilizar el método `randf` de la siguiente manera:
 
-```ruby
-colores = ["rojo", "azul", "verde"]
-
-colores.sample
-# Output: "verde"
+```Ruby
+randf(1.0..10.0) # output: 6.8793456943567
 ```
 
-## Profundizando
+### Profundizando
 
-Si quieres generar números aleatorios con una semilla específica, puedes utilizar el método `srand` antes de llamar a `rand`. La semilla es un número que inicializa el generador de números aleatorios, y cuando se usa la misma semilla, se generará la misma secuencia de números aleatorios. Por ejemplo:
+Ahora que sabemos cómo generar números aleatorios en Ruby, es importante comprender cómo funciona realmente este proceso. En realidad, el método `rand` utiliza un algoritmo llamado "Generador de Números Pseudoaleatorios" (PRNG, por sus siglas en inglés). Este algoritmo toma una semilla (un número inicial) y genera una secuencia de números aparentemente aleatorios basados ​​en esa semilla.
 
-```ruby
-srand(1234)
-rand(1..10)
-# Output: 8
-
-srand(1234)
-rand(1..10)
-# Output: 8 (mismo número que antes)
-```
-
-También puedes generar una secuencia de números aleatorios utilizando un bloque y el método `Random.new`. Por ejemplo:
-
-```ruby
-Random.new.seed # inicializa el generador de números aleatorios con una semilla aleatoria
-
-Random.new.rand(1..10)
-# Output: 5 (un número aleatorio dentro del rango)
-
-Random.new.rand(1..10)
-# Output: 9 (otro número aleatorio dentro del rango)
-```
+Sin embargo, dado que la secuencia es predecible y repetitiva, no es realmente aleatoria. Por lo tanto, si queremos una verdadera aleatoriedad, necesitamos una fuente externa de ruido, como la hora actual o los movimientos del mouse, para establecer una semilla diferente cada vez que se llama al método `rand`.
 
 ## Ver también
 
-- [Documentación de Ruby sobre el método `rand`](https://ruby-doc.org/core-2.7.2/Random.html#method-c-rand)
-- [Tutorial de DigitalOcean sobre cómo generar números aleatorios en Ruby](https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-ruby-es)
+- Documentación oficial de Ruby sobre el método `rand`: https://ruby-doc.org/core-3.0.2/Random.html#method-c-rand
+- Otros métodos para generar números aleatorios en Ruby: https://medium.com/@denysdovhan/random-in-ruby-6e99bbb2b5f8

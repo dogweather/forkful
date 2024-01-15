@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: コンピュータプログラミングの記事タイトル：コマンドライン引数の読み込み"
-simple_title:         "コンピュータプログラミングの記事タイトル：コマンドライン引数の読み込み"
+title:                "コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
+html_title:           "TypeScript: コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
+simple_title:         "コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ?
+## なぜ？
 
-プログラミングにおいて、コマンドライン引数を読み取ることは非常に重要です。コマンドライン引数とは、プログラムを実行する際に追加の情報を与えることができるもので、プログラムの挙動をカスタマイズすることができます。この記事では、TypeScriptを使ってコマンドライン引数を読み取る方法を紹介します。
+コマンドライン引数を読み取ることは、一見難しく感じられるかもしれませんが、実際には非常に役に立つスキルです。たとえば、ユーザーから動的な入力を受け取る必要がある場合や、複数のバージョンのプログラムを実行する際に役立ちます。
 
-## どのようにする?
+## 使い方
 
-TypeScriptでは、コマンドライン引数を読み取るために `process.argv` を使用します。まず、このオブジェクトをインポートして、 `process.argv` 配列を使って引数を取得します。以下の例を見てみましょう。
+コマンドライン引数を読み取るには、`process.argv`メソッドを使用します。これはNode.jsで提供されるグローバルオブジェクトです。具体的なコーディング例は以下の通りです。
 
 ```TypeScript
-import process from 'process';
+// 実行コマンド：node myProgram.ts firstArg secondArg
 
-let args: string[] = process.argv;
-console.log(args);
+const args = process.argv.slice(2);
+console.log(args[0]); // firstArg
+console.log(args[1]); // secondArg
 ```
 
-上記のコードを実行すると、ターミナルにコマンドライン引数が出力されます。例えば、 `node index.ts arg1 arg2`というコマンドを実行した場合、以下のような出力が得られます。
+このように、`process.argv`メソッドを使用して引数を読み取ることができます。
 
-```
-["node", "index.ts", "arg1", "arg2"]
-```
+## もっと深く掘り下げる
 
-これでプログラム内でコマンドライン引数を利用することができます。
+コマンドライン引数にはさまざまなオプションがあり、それぞれの役割を理解することは重要です。たとえば、`process.argv[0]`は実行中のプログラムのパスを示し、`process.argv[1]`は実行中のスクリプトのパスを示します。また、スイッチと呼ばれる特殊な引数があり、値の有無に基づいてプログラムの動作を変更することができます。詳細な情報は公式ドキュメントを参照してください。
 
-## 深く掘り下げる
+## 同じ為参照
 
-プログラムを実行する際に、コマンドライン引数以外に追加のフラグを与えることができます。例えば以下のようなコマンドで実行することができます。
-
-```
-node index.ts --verbose arg1 arg2
-```
-
-この場合、 `--verbose` フラグが追加されていることに注意してください。これは、プログラムにとって重要な情報を与えることができるため、コマンドライン引数と同じように `process.argv` 配列で読み取ることができます。
-
-また、コマンドライン引数をオプションとして設定することも可能です。例えば、 `--output` フラグに続けて出力ファイル名を指定することで、プログラムがデータを指定したファイルに出力することができます。このように、コマンドライン引数をうまく活用することで、より柔軟なプログラムを作ることができます。
-
-## もっと詳しく知りたい方へ
-
-コマンドライン引数の読み取り方はプログラミングの基礎中の基礎ですが、TypeScriptを使っているときにはどのようにその機能を実現するかは重要です。ぜひ課題にチャレンジしてみて、自分のプログラムにコマンドライン引数を活用してみてください。
-
-## さらに参考になる記事
-
-- [TypeScript 公式ドキュメント - process.argv](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
-- [コマンドライン引数とは？メリットや使い方を網羅的に解説](https://www.freecodecamp.org/news/command-line-arguments/)
+- [Node.jsの公式ドキュメント](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

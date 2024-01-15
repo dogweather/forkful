@@ -1,5 +1,6 @@
 ---
-title:                "C: Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "C: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C"
 category:             "C"
@@ -11,72 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les arguments de ligne de commande sont un élément essentiel de la programmation en C et il est important de les comprendre pour réussir en tant que développeur. Lorsque vous comprenez comment lire les arguments de ligne de commande, vous pouvez créer des programmes plus flexibles et plus puissants.
+Si vous êtes un programmeur en herbe ou un expert en informatique, vous savez probablement déjà que les arguments de ligne de commande sont un aspect essentiel de la programmation en C. Cela permet aux utilisateurs de passer des données à votre programme au moment de l'exécution, vous offrant ainsi une plus grande flexibilité et une meilleure interaction avec les utilisateurs finaux. Dans cet article, nous allons expliquer pourquoi il est important de maîtriser la lecture des arguments de ligne de commande en C et comment le faire efficacement.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en C, vous devez utiliser la fonction `main()`. Voici un exemple de code qui illustre comment cela peut être fait:
+La syntaxe pour lire les arguments de ligne de commande en C est assez simple. Tout d'abord, vous devez inclure la bibliothèque `stdio.h` en haut de votre fichier source. Ensuite, vous devez déclarer les paramètres `argc` (count) et `argv` (vector) dans votre fonction `main`, comme ceci :
 
-```
+```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-    int i;
-
-    // Boucle à travers les arguments de ligne de commande
-    for(i = 0; i < argc; i++) {
-        // Afficher chaque argument
-        printf("Argument %d : %s\n", i, argv[i]);
-    }
-
-    return 0;
+int main(int argc, char* argv[]) {
+  // votre code ici
+  return 0;
 }
 ```
 
-Dans cet exemple, la variable `argc` contient le nombre total d'arguments passés à votre programme et la variable `argv[]` contient une liste de ces arguments sous forme de chaînes de caractères. Le premier argument est toujours le nom du programme lui-même.
+La variable `argc` contient le nombre total d'arguments passés à votre programme, tandis que `argv` est un pointeur vers un tableau de chaînes qui contient les arguments eux-mêmes. Maintenant, voyons un exemple concret pour mieux comprendre.
 
-Pour tester ce code, vous pouvez le compiler et exécuter avec différents arguments en ligne de commande. Par exemple, si vous nommez votre programme "programme", vous pouvez exécuter les commandes suivantes:
+Supposons que vous avez un programme appelé `mon_programme` qui accepte deux arguments de ligne de commande : un nom suivi d'un âge. Vous pouvez utiliser `argc` pour vérifier si un nombre suffisant d'arguments a été passé et `argv` pour accéder aux valeurs de ces arguments, comme ceci :
 
-```
-$ ./programme
-```
-Ce qui donne la sortie suivante:
+```C
+#include <stdio.h>
 
-```
-Argument 0 : programme
-```
-Et si vous exécutez la commande suivante:
+int main(int argc, char* argv[]) {
+  if (argc < 3) {
+    // gestion des erreurs si pas assez d'arguments sont passés
+    printf("Usage: mon_programme <nom> <age>\n");
+    return 1;
+  }
 
-```
-$ ./programme argument1 argument2 argument3
-```
+  printf("Bonjour %s, vous avez %s ans !\n", argv[1], argv[2]);
 
-La sortie sera:
-
-```
-Argument 0 : programme
-Argument 1 : argument1
-Argument 2 : argument2
-Argument 3 : argument3
-```
-
-## Plongée en profondeur
-
-Il est important de noter que toutes les chaînes de caractères reçues en tant qu'arguments de ligne de commande sont stockées en mémoire en continu. Cela signifie que si vous avez besoin de modifier une chaîne, vous devrez créer une copie en mémoire pour éviter toute modification de l'argument original.
-
-Il est également possible d'utiliser des arguments en option en utilisant le caractère de tiret "-". Par exemple, si vous exécutez votre programme avec les arguments "-a" et "-b", vous pouvez utiliser le code suivant pour vérifier quelles options ont été utilisées:
-
-```
-// Vérifie si l'argument "-a" a été utilisé
-if(strcmp(argv[i], "-a") == 0) {
-    // Effectuez une action ...
+  return 0;
 }
 ```
+
+Si vous invoquez ce programme en utilisant `./mon_programme John 25` dans le terminal, la sortie sera `Bonjour John, vous avez 25 ans !`. Mais si vous omettez un ou les deux arguments, le programme affichera le message d'erreur.
+
+## Deep Dive
+
+Maintenant que vous connaissez les bases de la lecture des arguments de ligne de commande en C, voici quelques informations plus avancées que vous pourriez trouver utiles :
+
+- En utilisant `getopt()` ou `getopt_long()` de la bibliothèque `unistd.h`, vous pouvez facilement gérer les options de ligne de commande telles que `-h` ou `--help` pour afficher de l'aide ou d'autres fonctions spéciales. 
+- Vous pouvez également utiliser la fonction `atoi()` de `stdlib.h` pour convertir une chaîne en entier lorsque vous lisez des arguments qui sont censés être des nombres.
+- Pour gérer les arguments qui contiennent des espaces ou des caractères spéciaux, vous pouvez utiliser `strcpy()` ou `strncpy()` pour copier la chaîne entière du tableau `argv`.
 
 ## Voir aussi
 
-Maintenant que vous comprenez comment lire les arguments de ligne de commande en C, vous pouvez explorer d'autres fonctionnalités de la ligne de commande en utilisant les liens suivants:
-
-- [La ligne de commande en C sur OpenClassrooms](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/17190-la-ligne-de-commande-en-c)
-- [Gestion des erreurs de la ligne de commande en C sur Stack Overflow](https://stackoverflow.com/questions/8111673/dealing-with-command-line-errors-in-c)
-- [Passage d'une structure en ligne de commande en C sur GeeksforGeeks](https://www.geeksforgeeks.org/passing-structure-command-line-arguments-c/)
+- [La documentation officielle de C](https://en.cppreference.com/w/c/language/main_function)
+- [Un guide complet sur les arguments de ligne de commande en C](https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html#Getopt-Long-Option-Example)
+- [Un tutoriel vidéo sur la lecture des arguments de ligne de commande en C](https://www.youtube.com/watch?v=S64c_nPWt3I)

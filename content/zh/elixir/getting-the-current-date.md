@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Elixir: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#为什么获取当前日期？
-对于Elixir程序员来说，获取当前日期是一个非常常见的任务。它可以用于记录日志、确定运行时间或在需要时对时间进行计算。
+## 为什么
 
-## 如何实现？
-在Elixir中，我们可以使用内置的Date和Time模块来获取当前日期和时间。下面是一个简单的示例代码：
+有时我们需要在程序中获取当前的日期，这可以帮助我们做一些特定的处理，比如记录日志或者处理不同的数据。
 
-```Elixir
-date = Date.utc_today()
-time = Time.utc_now()
+## 如何实现
 
-IO.puts "今天是：#{date.yyyymmdd}"
-IO.puts "现在是：#{time.hhmmss}"
+首先，在Elixir中，我们可以使用`Date.utc_today`函数来获取当前的UTC日期。这个函数会返回一个包含年、月和日的`Date`结构体。
+
+```elixir
+Date.utc_today()
+#=> ~D[2022-02-28]
 ```
 
-运行结果将打印出当前日期和时间，例如：
+如果需要获取当前日期和时间，我们可以使用`DateTime.utc_now`函数。它会返回一个包含年、月、日、时、分、秒和毫秒的`DateTime`结构体。
 
->今天是：2020-09-28
->现在是：13:25:42
-
-我们还可以使用Date和Time模块中的其他函数来进一步操作日期和时间。例如，我们可以使用Date.add函数来增加特定的时间段：
-
-```Elixir
-date = Date.utc_today()
-future = Date.add(date, 1, "day")
-
-IO.puts "明天是：#{future.yyyymmdd}"
+```elixir
+DateTime.utc_now()
+#=> ~U[2022-02-28 12:34:56.789]
 ```
 
-这将打印出明天的日期，例如：
+如果我们需要根据时区来获取当前日期和时间，可以使用`DateTime.from_naive/3`函数。
 
->明天是：2020-09-29
+```elixir
+DateTime.from_naive(DateTime.utc_now(), "Etc/UTC")
+#=> ~U[2022-02-28 12:34:56.789Z]
+```
 
 ## 深入了解
-Elixir的Date和Time模块是基于Erlang库而构建的。因此，它们遵循相同的API和数据类型。这些模块提供了广泛的函数来操作日期和时间，使得它们非常灵活和强大。
 
-另外，Elixir还有许多其他的日期和时间相关的库，例如Calendar和Timex。每个库都有其独特的功能和优点，可以根据具体需求进行选择。
+Elixir中内置的日期和时间模块非常强大，可以处理各种格式和时区的日期和时间。我们还可以使用`Calendar`模块来进行日期和时间的运算和转换，例如计算两个日期相差的天数、格式化日期和时间等。
 
-# 参考链接
-- [Elixir官方文档](https://hexdocs.pm/elixir/Date.html)
-- [Erlang官方文档](https://erlang.org/doc/man/calendar.html)
-- [Timex库](https://hexdocs.pm/timex/1.5.4/Timex.html)
-- [Calendar库](https://github.com/lau/calendar)
+## 参考链接
+
+- [Elixir Date Module documentation](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime Module documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir Calendar Module documentation](https://hexdocs.pm/elixir/Calendar.html)

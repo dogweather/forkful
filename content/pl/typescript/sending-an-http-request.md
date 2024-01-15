@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "TypeScript: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,35 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego można być zainteresowanym wysyłką żądania HTTP?
+## Dlaczego
 
-Wysyłanie żądań HTTP jest nieodłącznym elementem pracy z aplikacjami internetowymi. Pozwala ona na komunikację z serwerami i pobieranie danych. Bez tego nie da się wyobrazić przeglądania stron internetowych czy korzystania z różnych aplikacji. W tym artykule dowiecie się, dlaczego so przypuszczalnie dobrze znać ten temat.
+ Wysyłanie żądania HTTP jest niezwykle ważną częścią procesu tworzenia aplikacji internetowych. Pozwala ono na komunikację z serwerem i pobieranie danych, co jest niezbędne do działania wielu aplikacji.
 
-## How To: Wysyłanie żądania HTTP w TypeScript
-
-Aby wysłać żądanie HTTP w TypeScript należy skorzystać z metody `fetch`. Przykładowy kod może wyglądać następująco:
+## Jak to zrobić
 
 ```TypeScript
-fetch('https://api.example.com/products')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error))
+// Przykładowe żądanie GET przy użyciu biblioteki Axios
+import axios from 'axios';
+
+axios.get('https://api.example.com/users')
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
-Powyższy przykład pobiera dane z serwera pod adresem `https://api.example.com/products` i wyświetla je w konsoli. Metoda `fetch` zwraca obiekt `Promise`, dlatego też korzystamy z `then` i `catch` do obsługi odpowiedzi i błędów. Pamiętajmy, że adres URL musi być poprawnie sformatowany, a jeśli jest to konieczne, możemy przesłać parametry w celu sprecyzowania naszego żądania.
+```TypeScript
+// Przykładowe żądanie POST przy użyciu wbudowanych metod języka TypeScript
+const data = {
+  email: 'example@gmail.com',
+  password: 'secretpassword'
+};
 
-## Deep Dive: Wysyłanie żądania HTTP w praktyce
+fetch('https://api.example.com/login', {
+  method: 'POST',
+  body: JSON.stringify(data)
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
 
-Aby lepiej zrozumieć proces wysyłania żądań HTTP, warto przyjrzeć się temu w praktyce. Wysłanie żądania polega na przesłaniu odpowiedniego zestawu danych do serwera i otrzymaniu odpowiedzi w postaci tekstu lub binarnych danych. Może to być wykorzystane do pobierania plików, wysyłania formularzy czy pobierania danych z bazy.
+#### Szczegółowe informacje
 
-Jednym z kluczowych elementów wysyłania żądania jest nagłówek, który zawiera informacje o żądaniu i odpowiedzi. Przykładowe nagłówki mogą zawierać typ żądania (GET, POST, PUT), kod odpowiedzi (200 - OK, 404 - Not Found) oraz dane dodatkowe, takie jak klucze API czy tokeny uwierzytelniające.
+Wysyłanie żądania HTTP jest możliwe dzięki wykorzystaniu różnych bibliotek i metod w języku TypeScript. Najpopularniejszymi bibliotekami do tego celu są Axios, Request czy Fetch API, które umożliwiają tworzenie żądań HTTP w prosty i efektywny sposób.
 
-Innym ważnym elementem jest ciało (body) żądania, które zawiera właściwe dane, np. formularz z danymi użytkownika. Serwer odbiera te dane i przetwarza je, aby zwrócić odpowiedź.
+Przy wysyłaniu żądań należy zwrócić uwagę na kody odpowiedzi (status code), które dostarczają informacji o statusie wykonanego żądania. Dzięki nim można wykryć ewentualne błędy w komunikacji z serwerem i odpowiednio zareagować.
 
-Podczas wysyłania i odbierania danych, ważne jest również korzystanie z odpowiednich typów danych, np. `application/json` dla danych w formacie JSON lub `application/xml` dla danych w formacie XML.
+Wysyłając żądanie HTTP można także przesyłać dane w różnych formatach, np. jako dane JSON lub w formularzu. W takim przypadku należy odpowiednio sformatować ciało żądania przy użyciu metody JSON.stringify lub FormData.
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja TypeScript - Metoda Fetch](https://www.typescriptlang.org/docs/handbook/fetch-api.html)
-- [Kurs TypeScript - Wprowadzenie do HTTP](https://typescript-platzi-master.now.sh/lessons/5-wprowadzenie-do-http/)
-- [Blog Programowiczny - Wysyłka żądań HTTP w TypeScript](https://programowicz.org/wysylka-zadan-http-w-typescript/)
+- [Dokumentacja Axios](https://github.com/axios/axios)
+- [Dokumentacja Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Dokumentacja Request](https://github.com/request/request)

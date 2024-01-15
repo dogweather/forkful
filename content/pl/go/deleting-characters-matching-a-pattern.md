@@ -1,6 +1,7 @@
 ---
-title:                "Go: Usuwanie znaków odpowiadających wzorowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorowi"
+title:                "Usuwanie znaków pasujących do wzorca."
+html_title:           "Go: Usuwanie znaków pasujących do wzorca."
+simple_title:         "Usuwanie znaków pasujących do wzorca."
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,46 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Dlaczego
+## Dlaczego
 
-Często w programowaniu zdarza się sytuacja, w której musimy usunąć pewne znaki z naszych danych. Na przykład, gdy tworzymy skrypt do przetwarzania plików, możemy chcieć usunąć wszystkie znaki specjalne z tekstu. W takich sytuacjach bardzo przydatną funkcją jest usuwanie znaków pasujących do wzorca, co pozwala nam szybko oczyścić dane i przystosować je do dalszego przetwarzania.
+Pewnie zastanawiasz się dlaczego ktokolwiek miałby chcieć usuwać znaki zgodne z pewnym wzorem. Jednym z powodów może być potrzeba zmiany lub oczyszczenia danych, aby ułatwić analizę lub przetwarzanie. Może też po prostu chcesz uporządkować dane i pozbyć się zbędnych znaków.
 
-#Jak to zrobić?
+## Jak to zrobić
 
-W języku Go istnieje prosty sposób na usuwanie znaków pasujących do danego wzorca. Wystarczy użyć funkcji "ReplaceAllString" z pakietu "regexp". W poniższym przykładzie pokazane jest, jak usunąć wszystkie litery z tekstu:
+Go oferuje wiele możliwości do usuwania znaków zgodnych z wzorem. Najprostszym sposobem jest użycie funkcji `ReplaceAllString` z pakietu `regexp`. Zobaczmy jak to wygląda w kodzie:
 
 ```Go
-package main
-
+// Importowanie odpowiadających pakietów
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	text := "To jest tekst z wieloma literami i znakami specjalnymi!"
-	reg := regexp.MustCompile("[a-zA-Z]")
-	cleanText := reg.ReplaceAllString(text, "")
-	fmt.Println(cleanText)
+    // Definicja stringa z którego chcemy usunąć znaki
+    input := "K%o(d)e P@o(l)i'sh Str&in%g"
+    
+    // Utworzenie wyrażenia regularnego pasującego do znaków specjalnych
+    pattern := regexp.MustCompile("[%$&@()]")
+    
+    // Użycie funkcji ReplaceAllString do usunięcia pasujących znaków
+    output := pattern.ReplaceAllString(input, "")
+    
+    // Wyświetlenie efektu na ekranie
+    fmt.Println(output)
 }
 ```
 
-Po uruchomieniu kodu otrzymamy następujący wynik:
+Wyjście z tego programu będzie wyglądać następująco:
 
 ```
- !,. 
+Kode Polish String
 ```
 
-Łańcuch tekstowy został oczyściony z wszystkich liter, a w jego miejsce pozostały tylko znaki specjalne. Warto zauważyć, że w przykładzie wykorzystany został wzorzec "a-zA-Z", który oznacza wszystkie litery od A do Z (zarówno małe, jak i duże). Możemy jednak dostosować ten wzorzec do naszych potrzeb, zmieniając litery na np. cyfry lub znaki specjalne.
+Możesz także użyć funkcji `ReplaceAll` z pakietu `strings` jeśli nie potrzebujesz użycia wyrażenia regularnego. Oto przykład:
 
-#Głębszy wgląd
+```Go
+// Improtowanie odpowiadających pakietów
+import (
+    "fmt"
+    "strings"
+)
 
-Funkcja "ReplaceAllString" z pakietu "regexp" jest bardzo przydatna, ale warto uświadomić sobie, że jest to tylko jedna z wielu możliwości zastosowania wyrażeń regularnych w języku Go. Warto więc zapoznać się z innymi funkcjami z pakietu "regexp", takimi jak na przykład "FindStringSubmatch" czy "ReplaceAll". Dzięki temu będziemy mogli jeszcze bardziej rozbudować nasze skrypty i dostosować je do różnych przypadków.
+func main() {
+    // Definicja stringa z którego chcemy usunąć znaki
+    input := "Hello 123 World 456"
+    
+    // Użycie funkcji ReplaceAll do usunięcia cyfr
+    output := strings.ReplaceAll(input, "123", "")
+    output = strings.ReplaceAll(output, "456", "")
+    
+    // Wyświetlenie efektu na ekranie
+    fmt.Println(output)
+}
+```
 
-#Zobacz także
+Wyjście z tego programu będzie wyglądać następująco:
 
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w języku Go, polecamy zapoznać się z dokumentacją oraz innymi artykułami na ten temat:
+```
+Hello World
+```
 
-- Dokumentacja pakietu "regexp": https://golang.org/pkg/regexp/
-- "Wyrażenia regularne - jak działa pakiet 'regexp' w języku Go": https://blog.bugtrap.pl/post/wyrazenia-regularne-go/
-- "Jak i kiedy używać wyrażeń regularnych w języku Go": https://robertocantillo.com/blog/regex-golang/
+## Deep Dive
+
+Jeśli chcesz dowiedzieć się więcej o usuwaniu znaków zgodnych z wzorem w Go, warto zapoznać się z dokumentacją pakietu `regexp`. Możesz przeczytać o różnych funkcjach i sposobach wykorzystania wyrażeń regularnych w Go. Istnieje także wiele innych pakietów z funkcjami do operacji na stringach, z których możesz skorzystać w zależności od swoich potrzeb.
+
+## Zobacz też
+
+- https://golang.org/pkg/regexp/ - Dokumentacja pakietu `regexp`
+- https://golang.org/pkg/strings/ - Dokumentacja pakietu `strings`

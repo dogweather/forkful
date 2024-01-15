@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "Haskell: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,24 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-在编程中，有时候我们需要从一个字符串中提取出特定的部分来使用，这就是提取子字符串的作用。它可以帮助我们更方便地处理字符串，并且可以节省我们的代码量。
+## 为什么要提取子字符串？
 
-## 如何做
-我们可以使用Haskell中的`take`和`drop`函数来提取子字符串。例如，我们有一个字符串`"Hello World"`，我们想要提取出其中的"World"这个子字符串，我们可以这样写代码：
+提取子字符串在编程中经常会遇到，可用于处理文本数据、文档摘要和密码哈希等多种场景。通过掌握如何提取子字符串，你可以有效地处理文本数据，使得你的代码更加灵活和高效。
+
+## 如何操作
 
 ```Haskell
-take 5 (drop 6 "Hello World")
+-- 在Haskell中提取子字符串的方法很简单，我们可以通过以下几种方式来实现
+-- 首先，我们需要引入 Data.List 模块
+import Data.List
+
+-- 1. 使用 take 函数提取一定长度的子字符串
+take 4 "Hello World" -- 输出 "Hell"
+
+-- 2. 使用 drop 函数来删除指定数量的字符后提取子字符串
+drop 2 "Hello World" -- 输出 "llo World"
+
+-- 3. 使用 takeWhile 函数提取符合特定条件的子字符串
+takeWhile (/= ' ') "Hello World" -- 输出 "Hello"
+
+-- 4. 使用 dropWhile 函数删除符合特定条件的字符后提取子字符串
+dropWhile (/= ' ') "Hello World" -- 输出 " World"
+
+-- 5. 使用 splitAt 函数在指定位置分割字符串并提取子字符串
+splitAt 5 "Hello World" -- 输出 ("Hello", " World")
 ```
 
-这段代码的输出将会是`"World"`。首先我们使用`drop`函数来去除前面的6个字符，然后再使用`take`函数来提取后面的5个字符，这样就得到了我们想要的子字符串。
-
 ## 深入了解
-除了使用`take`和`drop`函数外，Haskell还提供了其他一些函数来帮助我们提取子字符串。比如`takeWhile`函数可以根据给定的条件提取出满足条件的字符，`takeEnd`函数可以从字符串的末尾开始提取子字符串等等。
 
-此外，在处理字符串时，我们还可以使用正则表达式来提取特定的子字符串。Haskell中有一些库可以帮助我们使用正则表达式，比如`text`和`regex-base`。
+除了上述提到的函数，Haskell还提供了许多其他用于提取子字符串的函数，如 `substring`、`lines`、`words`等。同时，通过组合多种函数的方式，你也可以实现更复杂的提取子字符串操作。在处理大量文本数据时，提取子字符串也是一个不可忽视的性能优化点。因此，有必要深入了解提取子字符串的相关知识，以提高你的编程能力。
 
 ## 参考链接
-- [Haskell的字符串操作函数文档](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
-- [使用正则表达式提取子字符串的示例](https://www.schoolofhaskell.com/user/adinapoli/extracting-substrings/validation-using-regular-expressions)
-- [Haskell中处理字符串的库和函数](https://hackage.haskell.org/packages/search?terms=string)
+
+- [Haskell中的字符串处理](http://www.yesodweb.com/book/shakespearean-templates)
+- [Haskell库文档](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html)
+- [Haskell编程入门](https://www.learnyouahaskell.com/chapters)

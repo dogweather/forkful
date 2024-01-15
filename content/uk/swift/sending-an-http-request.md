@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Відправлення http запиту"
-simple_title:         "Відправлення http запиту"
+title:                "Відправка http запиту"
+html_title:           "Swift: Відправка http запиту"
+simple_title:         "Відправка http запиту"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Навіщо
+## Чому
 
-Надсилання HTTP запиту є важливою частиною програмування в сучасних додатках. Це дозволяє взаємодіяти з веб-серверами та отримувати дані, що необхідні для правильної роботи програми. Це також може бути корисно для реалізації різних функцій, таких як відображення зображення або завантаження вмісту.
+Існує багато причин, чому люди використовують HTTP запити у своїх програмах. Наприклад, щоб взаємодіяти зі сторонніми веб-серверами та отримувати дані, які можна використовувати в своїй програмі.
 
 ## Як
 
-Для надсилання HTTP запиту використовується об'єкт `URLRequest`, який містить всю необхідну інформацію, таку як URL та метод запиту. Далі, за допомогою об'єкта `URLSession` виконується сам запит, і результат можна обробити за допомогою замикань.
+Щоб надіслати HTTP запит у Swift, спочатку потрібно ініціалізувати об'єкт `URLRequest` з необхідною URL адресою та методом запиту. Наприклад, якщо ми хочемо отримати дані з веб-сервера, то використовуємо метод `GET`:
 
-```Swift
-// Створення URLRequest з URL та методом GET
+```
+let url = URL(string: "https://example.com/users")!
 var request = URLRequest(url: url)
 request.httpMethod = "GET"
+```
 
-// Створення URLSession та виконання запиту
-let session = URLSession.shared.dataTask(with: request) { data, response, error in
-    // Оброблення результатів запиту
-    if let data = data {
-        // Розшифрування отриманих даних
-        let jsonData = try? JSONSerialization.jsonObject(with: data, options: [])
-        // Виконання будь-яких необхідних дій з отриманим результатом
-        print(jsonData)
+Далі потрібно створити об'єкт `URLSession`, який буде відправляти наш запит та обробляти відповідь. Для цього використовується метод `dataTask`, якому передається наш запит та замикання, яке виконається після отримання відповіді:
+
+```
+let session = URLSession.shared
+let task = session.dataTask(with: request) { data, response, error in
+    // Обробка відповіді
+}
+```
+
+Після того, як ми отримали дані, потрібно їх обробити. Наприклад, використовуючи метод `JSONSerialization` можна перетворити отриманий JSON у Swift об'єкт:
+
+```
+if let data = data {
+    do {
+        let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+        // Використовувати отримані дані
+    } catch {
+        // Обробка помилки
     }
 }
 ```
 
-Після виконання запиту, можна працювати з отриманими даними, наприклад, розшифрувати їх та виконати будь-які необхідні дії з отриманим результатом.
+## Deep Dive
 
-## Глибокий занурення
-
-Якщо ви більш детально зацікавлені в тому, як саме відбувається надсилання HTTP запитів та як можна налаштувати різні параметри, то ви можете ознайомитися з офіційною документацією Swift та вивчити додаткові функції, такі як використання функцій, протоколів та синтаксису.
+Під час відправки HTTP запиту, ми можемо вказати інші параметри, такі як заголовки, тіло запиту чи таймаут. Також, в рамках блоку замикання `dataTask` ми можемо виконати будь-які додаткові дії, наприклад, валідацію отриманих даних чи обробку помилок. Також важливо врахувати безпеку при роботі з HTTP запитами, наприклад, шифрування даних за допомогою HTTPS.
 
 ## Дивись також
 
-- Документація Swift по надсиланню HTTP запитів: https://developer.apple.com/documentation/foundation/url_loading_system
-- Реалізація асинхронних запитів в Swift: https://www.swiftbysundell.com/tips/using-async-await-in-production-code/
-- Рекомендації по ефективному використанню HTTP запитів в Swift: https://www.raywenderlich.com/1104584-http-in-swift-with-urlsession-getting-started
+- [iOS Networking in Swift: Understanding URLSession](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
+- [Apple Developer Documentation: URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [Manning: Using Swift to Send HTTP Requests](https://freecontent.manning.com/using-swift-to-send-http-requests/)

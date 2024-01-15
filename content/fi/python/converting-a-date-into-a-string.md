@@ -1,5 +1,6 @@
 ---
-title:                "Python: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Python: Päivämäärän muuttaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Python"
 category:             "Python"
@@ -11,30 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tällä blogikirjoituksella opit, miten voit muuttaa päivämäärän merkkijonoksi Python-ohjelmoinnissa. Tämä on hyödyllinen taito, kun haluat näyttää päivämäärän jossain muussa kuin alkuperäisessä muodossaan.
+Päivämäärän muuntaminen merkkijonoksi voi olla hyödyllistä, kun halutaan esittää päivämäärä tiettyyn muotoon tai tallentaa se tiedostoon.
 
 ## Kuinka tehdä
 
-Muuntaaksesi päivämäärän merkkijonoksi, käytä `strptime`-funktiota ja määritä haluttu muoto. Esimerkiksi:
+Mikä tahansa kelvollinen päivämäärä voidaan muuntaa merkkijonoksi käyttämällä `strftime()` -funktiota. Se ottaa kaksi argumenttia: formaatin, jossa haluat päivämäärän esittää, ja päivämäärän itsessään. Alla on esimerkkejä erilaisista päivämäärän muotoiluista ja niiden tulosteista:
 
 ```Python
 import datetime
 
-paivamaara = datetime.datetime(2020, 9, 25)
+# Päivämäärä merkkijonona
+date = datetime.date(2021, 11, 30)
+date_string = date.strftime("%d/%m/%y")
+print(date_string) # Tulostaa: 30/11/21
 
-muoto = "%d/%m/%Y"
+# Viikonpäivä suomeksi
+weekday = date.strftime("%A")
+print(weekday) # Tulostaa: maanantai
 
-muutettu_paivamaara = paivamaara.strftime(muoto)
-
-print(muutettu_paivamaara) # Tulostaa "25/09/2020"
+# Päivämäärä ja kellonaika
+current_time = datetime.datetime.now()
+print(current_time.strftime("%d/%m/%y %H:%M:%S")) # Tulostaa esim: 30/11/21 14:30:22
 ```
 
-Funktio `strptime` käyttää annettua muotoa päivämäärän tulkintaan ja `strftime` muuntaa päivämäärän takaisin merkkijonoksi halutussa muodossa. Voit käyttää erilaisia muotoja riippuen siitä, millaista muotoa haluat päivämäärälle.
+## Syvemmälle
 
-## Syvällinen sukellus
+Päivämäärän muotoilu riippuu käytetyn formaatin kirjainlyhenteistä. Alla on taulukko yleisimmistä käytetyistä lyhenteistä ja niiden merkitykset:
 
-Python tarjoaa monia vaihtoehtoja päivämäärän muuntamiseen merkkijonoksi erilaisissa muodoissa. Voit käyttää esimerkiksi `%d` merkkiä saadaksesi päivämäärän numerona, `%B` merkkiä saadaksesi kuukauden nimen kokonaisuudessaan tai `%Y` merkkiä saadaksesi vuoden nelinumeroisena. Voit myös käyttää muita merkkejä saadaksesi lisätietoja päivämäärästä, kuten viikonpäivän tai päivän etuliitteen. Lisätietoja saat Pythonin [dokumentaatiosta](https://docs.python.org/3/library/time.html#time.strftime).
+| Kirjain | Merkitys               |
+|---------|------------------------|
+| %a      | Lyhyt päivän nimi      |
+| %A      | Päivän nimi kokonaisena|
+| %d      | Päivä (esim. 01)       |
+| %m      | Kuukausi (esim. 11)    |
+| %y      | Vuosi (2 numeroa)      | 
+| %Y      | Vuosi (4 numeroa)      |
+| %H      | Tunti (24-tuntijärjestelmä) |
+| %M      | Minuutit               |
+| %S      | Sekunnit               |
+
+Päivämäärän muotoilussa voi myös käyttää erikoismerkkejä kuten välilyöntiä, pisteitä tai yhdysviivaa, jotka näkyvät merkkijonossa sellaisenaan.
 
 ## Katso myös
 
-Tarjoamme lisätietoja Pythonin merkkijonon käsittelystä ja muuntamisesta tässä [blogikirjoituksessa](https://www.exampleblogi.fi/merkkijonon-kasittely-pythonissa). Voit myös käydä [Pythonin virallisilla verkkosivuilla](https://www.python.org/) ja liittyä [Suomen Python-yhteisöön](https://github.com/python-finland). Toivottavasti tämä kirjoitus auttoi sinua oppimaan lisää Pythonista ja sen eri toiminnoista. Onnea matkaan ohjelmoinnin maailmaan!
+- [Pythonin virallinen dokumentaatio päivämäärän muotoilusta](https://docs.python.org/fi/3/library/datetime.html)

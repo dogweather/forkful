@@ -1,6 +1,7 @@
 ---
-title:                "Go: 使用json编程"
-simple_title:         "使用json编程"
+title:                "使用JSON进行编程"
+html_title:           "Go: 使用JSON进行编程"
+simple_title:         "使用JSON进行编程"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -9,67 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么使用JSON
+## 为什么要使用JSON？
 
-JSON是一种轻量级的数据交换格式，它易于阅读和编写，因此被广泛用于各种编程语言中。在Go语言中，我们可以使用内置的`encoding/json`包来处理JSON数据。通过使用JSON，我们可以轻松地在不同的系统和平台之间传递数据，这使得它成为一种非常方便和强大的数据格式。
+现在，几乎所有的应用程序都需要和前端和后端进行数据传递，而JSON正是被广泛使用的数据交换格式。作为一门简洁、易用的语言，Go语言具有处理JSON数据的强大能力，因此它成为了一种热门选择。
 
-## 如何使用JSON
+## 如何使用Go语言处理JSON？
 
-首先，我们需要导入`encoding/json`包。然后，我们可以使用`json.Marshal()`函数来将Go数据结构转换为JSON格式的字符串。例如：
+首先，我们需要导入Go语言内置的`encoding/json`包。然后，我们可以使用`Marshal()`函数将Go结构体数据转换为JSON格式的数据。示例如下：
 
 ```Go
-type Student struct {
-	Name string
-	Age int
-	Grade string
+type User struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
 }
-
-s := Student{"John", 18, "12th"}
-b, err := json.Marshal(s)
-fmt.Println(string(b))
+user := User{Name: "John", Age: 25}
+jsonData, err := json.Marshal(user)
+fmt.Println(string(jsonData), err)
 ```
 
-输出将是`{"Name":"John","Age":18,"Grade":"12th"}`。我们也可以使用`json.MarshalIndent()`函数来输出格式化的JSON字符串，这可以更方便地阅读。例如：
+上述代码将输出`{"name":"John","age":25} <nil>`，其中`<nil>`表示没有发生错误。接着，我们可以使用`Unmarshal()`函数将JSON数据转换为Go结构体。示例如下：
 
 ```Go
-b, err := json.MarshalIndent(s, "", "  ")
-fmt.Println(string(b))
+jsonString := `{"name":"Jane","age":30}`
+var user User
+err := json.Unmarshal([]byte(jsonString), &user)
+fmt.Println(user, err)
 ```
 
-输出将是：
+上述代码将输出`{Jane 30} <nil>`，表示成功将JSON数据转换为Go结构体。另外，我们也可以使用`json.NewEncoder()`和`json.NewDecoder()`来分别进行编码和解码操作。
 
-```
-{
-  "Name": "John",
-  "Age": 18,
-  "Grade": "12th"
-}
-```
+## 深入了解JSON处理
 
-反过来，我们也可以使用`json.Unmarshal()`函数将JSON字符串解析为Go数据结构。例如：
+在Go语言中处理JSON，我们需要注意一些细节。例如，JSON的key必须是string类型，而value可以是任意类型。此外，我们也可以使用`json:"name"`这样的标签来自定义JSON数据的key。更多关于Go语言处理JSON的细节，请参考[官方文档](https://golang.org/pkg/encoding/json/)。
 
-```Go
-jsonStr := `{"Name":"Jane","Age":17,"Grade":"11th"}`
-var s2 Student
-err := json.Unmarshal([]byte(jsonStr), &s2)
-fmt.Println(s2.Age)
-```
+## 参考链接
 
-输出将是`17`。所以，我们可以很容易地在Go语言中处理JSON数据。
+- [官方文档](https://golang.org/pkg/encoding/json/)
+- [JSON和Go语言，使用内置encoding/json包](https://www.jianshu.com/p/38d7242e8ed1)
+- [Go语言处理JSON的使用技巧](https://cloud.tencent.com/developer/article/1484381)
+ 
+## 参阅
 
-## 深入了解JSON
-
-在处理JSON数据时，我们需要注意以下几点：
-
-- JSON数据中的键名必须是唯一的，同时也必须是一个字符串。而值可以是字符串、布尔值、数字、对象、数组或空值。
-- 如果我们要将JSON数据解析为一个嵌套的结构体，那么结构体的字段必须是公共访问级别（首字母大写）。
-- 如果JSON数据中含有不在结构体中定义的额外字段，那么它们将会被忽略。
-- 当使用`json.Marshal()`函数时，如果出现了无法识别的数据类型，那么将会返回错误。
-
-更多关于Go语言中如何使用JSON的信息，可以查看官方文档或其他相关教程。
-
-# 查看也可用
-
-- [官方文档：encoding/json](https://golang.org/pkg/encoding/json/)
-- [Go语言中处理JSON的教程](https://blog.learngoprogramming.com/decode-json-with-the-go-language-96d0f7cc2874)
-- [使用JSON的好处及其在Go语言中的应用](https://medium.com/@kaperys/golang-and-json-9a71f9cf40d6)
+- [用Go语言编写的JSON编码指南](https://www.golangprograms.com/json-encoding-in-golang.html)
+- [深入理解Go语言中的JSON编码与解码](https://tonybai.com/2014/09/29/json-encoding-and-decoding-in-go)
+- [Go语言和JSON，简单入门指南](https://code.tutsplus.com/zh-hans/tutorials/quick-tip-how-to-work-with-json-in-go--cms-25095)

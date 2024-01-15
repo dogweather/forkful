@@ -1,5 +1,6 @@
 ---
-title:                "Java: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Java: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Java"
 category:             "Java"
@@ -9,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać do standardowego wyjścia błędów
+## Dlaczego?
 
-Pisanie do standardowego wyjścia błędów jest ważną umiejętnością dla każdego programisty Java. Kiedy nasz program napotka błąd lub nieoczekiwany wyjątek, informacja ta zostanie wypisana na standardowe wyjście błędów, co pozwala nam łatwo zlokalizować problem i zastosować odpowiednie działania naprawcze. W tym wpisie pokażę Wam, jak korzystać z tej funkcji w praktyce.
+Pisanie do standardowego błędu to nie tylko podstawowa umiejętność programistów, ale także ważny aspekt programowania. Jest to przydatne, gdy chcemy śledzić błędy i wyjątki w naszych aplikacjach, co ułatwia debugowanie i poprawianie naszego kodu.
 
 ## Jak to zrobić?
 
-Aby wypisać błąd lub wyjątek na standardowe wyjście błędów w języku Java, musimy skorzystać z metody `System.err.println()`. Spróbujmy tego na przykładzie kodu:
-
-```Java
-public class ErrorExample {
-    public static void main(String[] args) {
-        int x = 10;
-        int y = 0;
-        try {
-            int result = x / y;
-            System.out.println("Wynik: " + result);
-        } catch (ArithmeticException e) {
-            System.err.println("Nie można dzielić przez zero!");
-        }
-    }
-}
+Bardzo łatwo jest napisać do standardowego błędu w języku Java. Wystarczy użyć metody `System.err.println()` i przekazać do niej odpowiednią wiadomość jako parametr. Poniżej przedstawiamy przykładowy kod w języku Java:
+```
+System.err.println("To jest przykładowy komunikat błędu.");
 ```
 
-W powyższym przykładzie, korzystając z metody `System.err.println()`, wypisujemy na standardowe wyjście błędów informację o błędzie dzielenia przez zero. W przypadku wystąpienia innych błędów lub wyjątków, możemy w podobny sposób wypisać odpowiedni komunikat na standardowe wyjście błędów.
+Po uruchomieniu tego kodu, wiadomość zostanie wyświetlona w terminalu w kolorze czerwonym, w celu wyróżnienia od zwykłych komunikatów wyświetlanych przez metodę `System.out.println()`.
 
-Korzystając z tej metody, mamy również możliwość wypisania innych informacji, które mogą być pomocne w debugowaniu naszego programu, np. wartości zmiennych czy komunikatów o błędnych danych wejściowych.
+## Deep Dive
 
-## Głębszy wgląd
+Dlaczego korzystamy z metody `System.err.println()` zamiast zwykłej metody `System.out.println()`? Metoda `System.out.println()` jest używana do wyświetlania komunikatów wyjścia, natomiast metoda `System.err.println()` jest używana do wyświetlania komunikatów błędów i wyjątków. W ten sposób możemy łatwo rozróżnić między zwykłymi komunikatami a błędami w naszych aplikacjach.
 
-Pisanie do standardowego wyjścia błędów pozwala nam uzyskać szybki dostęp do informacji o błędach i wyjątkach w naszym programie. Jest to również przydatne w przypadku aplikacji webowych, gdzie logi błędów zapisywane są na serwerze i umożliwiają nam szybką diagnozę problemów.
-
-Jednak warto pamiętać, że nadmiernie korzystanie z tej funkcji może sprawić, że nasz program stanie się mniej czytelny i trudniejszy do debugowania. Dlatego też ważne jest umiejętne wykorzystanie tej metody i dokładne przemyślenie, czy wypisanie informacji na standardowe wyjście błędów jest niezbędne.
+Warto także zauważyć, że metoda `System.err.println()` działa tak samo jak metoda `System.out.println()` i możemy używać jej do wyświetlania wszystkich typów danych, nie tylko wiadomości tekstowych.
 
 ## Zobacz także
 
-* [Oficjalna dokumentacja Java - System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-* [Poradnik na temat obsługi błędów w języku Java](https://www.codecademy.com/articles/error-handling-java)
-* [Przydatne informacje o logowaniu błędów w aplikacjach webowych](https://www.baeldung.com/spring-boot-logging)
+- [Oficjalna dokumentacja języka Java](https://docs.oracle.com/en/java/javase/)
+- [Poradnik dla początkujących w języku Java](https://www.codecademy.com/learn/learn-java)
+- [Przewodnik po obsłudze błędów w języku Java](https://www.baeldung.com/java-exceptions)

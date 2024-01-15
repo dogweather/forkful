@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Commencer un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Haskell: Commencer un nouveau projet"
 simple_title:         "Commencer un nouveau projet"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Les projets de programmation peuvent être une façon amusante de développer vos compétences en programmation et de créer quelque chose d'utile ou de divertissant. Cela peut également être une façon de résoudre un problème spécifique ou de mettre en pratique une nouvelle technologie.
+Vous voulez vous lancer dans un nouveau projet de programmation, et cela peut sembler intimidant. Mais ne vous inquiétez pas, Haskell est un langage de programmation élégant et puissant qui peut rendre votre expérience de développement agréable et efficace!
 
-# Comment faire
+## Comment faire
 
-Pour commencer un nouveau projet en Haskell, vous aurez besoin d'un éditeur de code, tel que Visual Studio Code ou Sublime, et du compilateur GHC. Vous pouvez également utiliser un gestionnaire de packages tel que Cabal ou Stack.
+Pour commencer un nouveau projet en Haskell, vous aurez besoin d'un environnement de développement fonctionnel et un éditeur de code. Vous pouvez utiliser le compilateur de Haskell GHC et un éditeur de texte comme VSCode pour un ensemble de base. 
 
-Voici un exemple de code pour créer une fonction simple en Haskell : 
+Voici un exemple de code Haskell simple, qui imprime "Bonjour, monde!" dans votre terminal:
 
-```Haskell
--- Définition de la fonction "carre"
-carre :: Int -> Int
-carre x = x * x
+```
+module Main where
 
--- Appel de la fonction avec l'entrée de 4
-carre 4
-
--- Sortie : 16
+main :: IO ()
+main = putStrLn "Bonjour, monde!"
 ```
 
-Vous pouvez également créer des structures de données en Haskell, comme une liste :
+Lorsque vous exécutez ce programme, vous devriez voir la sortie suivante: 
 
-```Haskell
--- Définition de la liste "nombres"
-nombres = [1, 2, 3, 4, 5]
-
--- Affichage des éléments de la liste un par un
-print (nombres !! 0) -- Sortie : 1
-print (nombres !! 1) -- Sortie : 2
-print (nombres !! 2) -- Sortie : 3
-print (nombres !! 3) -- Sortie : 4
-print (nombres !! 4) -- Sortie : 5
+```
+$ ghc -o hello hello.hs
+$ ./hello
+Bonjour, monde!
 ```
 
-# Approfondissement
+Vous pouvez également utiliser des outils de gestion de paquets tels que Cabal ou Stack pour gérer les dépendances de votre projet et construire des projets plus complexes.
 
-Lorsque vous commencez un nouveau projet en Haskell, il peut être utile de suivre un guide ou de consulter des tutoriels en ligne. Vous pouvez également rejoindre des communautés de programmation et poser des questions ou partager vos progrès. N'hésitez pas à expérimenter et à être créatif avec vos projets.
+## Plongée en profondeur
 
-# Voir aussi
+Maintenant que vous avez votre environnement de développement prêt, vous pouvez commencer à travailler sur votre projet. Il est important de bien réfléchir à votre conception avant de commencer à écrire du code en Haskell. Vous devrez également vous familiariser avec les structures de données et les types de données fonctionnels fournis en standard par Haskell. L'utilisation de modules et de foncteurs peut également vous aider à organiser votre code en le rendant plus modulaire et réutilisable.
 
-- [Tutoriel Haskell pour débutants](https://www.tutorialspoint.com/haskell/index.htm)
-- [Communauté francophone de Haskell](http://www.haskell-france.com/)
+En outre, il est utile de lire la documentation officielle de Haskell et de consulter des ressources en ligne telles que des tutoriels, des blogs et des communautés de développeurs pour obtenir de l'aide et des conseils.
+
+## Voir aussi
+
+Voici quelques liens utiles pour vous aider à démarrer votre projet en Haskell:
+
+- [Le site officiel de Haskell] (https://www.haskell.org/)
+- [Tutoriel Haskell pour débutants] (https://wiki.haskell.org/Introduction)
+- [Documentation GHC] (https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/)
+- [Guide de mise en route de Stack] (https://docs.haskellstack.org/en/stable/GUIDE/)
+- [Communauté Haskell sur Reddit] (https://www.reddit.com/r/haskell/)

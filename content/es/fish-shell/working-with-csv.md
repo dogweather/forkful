@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Trabajando con archivos csv"
+title:                "Trabajando con archivos csv"
+html_title:           "Fish Shell: Trabajando con archivos csv"
 simple_title:         "Trabajando con archivos csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con CSV en Fish Shell?
+## ¿Por qué trabajar con CSV?
 
-Si estás buscando una manera sencilla y fácil de manejar datos tabulares en Fish Shell, entonces trabajar con archivos CSV puede ser una excelente opción. CSV (Comma-Separated Values) es un formato de archivo que permite almacenar datos en una estructura de tabla, lo que lo hace ideal para trabajar con grandes cantidades de información. Sin embargo, es posible que te preguntes cómo comenzar a trabajar con este tipo de archivos en Fish Shell. En esta publicación, te mostraremos cómo puedes manipular y utilizar datos CSV de manera efectiva en Fish Shell.
+Trabajar con archivos CSV (valores separados por comas) es una forma común de manejar datos en aplicaciones de programación. CSV es un formato sencillo y fácil de leer que se puede utilizar para almacenar grandes cantidades de información en una hoja de cálculo.
 
 ## Cómo hacerlo
 
-Para comenzar a trabajar con CSV en Fish Shell, necesitarás tener instalado el plugin "csv". Puedes hacerlo ejecutando el siguiente comando en tu terminal:
+Para trabajar con CSV en Fish Shell, es necesario utilizar el comando `csv` seguido de las opciones correspondientes. Por ejemplo, si queremos ver el contenido de un archivo CSV, podemos utilizar el siguiente comando:
 
 ```Fish Shell
-fisher install csv
+csv read archivo.csv
 ```
 
-Una vez que hayas instalado el plugin, puedes comenzar a manejar tus archivos CSV de diferentes maneras. Por ejemplo, si quieres imprimir el contenido de un archivo CSV en tu terminal, puedes usar el comando `csvread` seguido del nombre del archivo:
+Esto nos mostrará los datos del archivo CSV en la pantalla. También podemos utilizar el comando `csv write` para escribir datos a un archivo CSV.
+
+Otra opción útil es el comando `csv query`, que nos permite realizar consultas a un archivo CSV utilizando comandos de SQL. Por ejemplo:
 
 ```Fish Shell
-csvread ejemplo.csv
+csv query "SELECT * FROM archivo.csv WHERE nombre = 'Juan'"
 ```
 
-Este comando leerá el contenido del archivo y lo imprimirá en un formato de tabla en tu terminal. También puedes utilizar el comando `csvwrite` para crear nuevos archivos CSV con datos que hayas generado en tu sesión de Fish Shell.
+Este comando mostrará todas las filas del archivo CSV donde el nombre sea "Juan".
 
-Otra característica útil del plugin "csv" es poder seleccionar y filtrar datos específicos de tus archivos CSV. Por ejemplo, puedes utilizar el comando `csvquery` para seleccionar solo ciertas columnas o filas de tu archivo. También puedes utilizar comandos como `csvcut` o `csvgrep` para realizar acciones similares.
+## Profundizando en el manejo de CSV
 
-## Deep Dive
+Fish Shell tiene varias funciones útiles para trabajar con archivos CSV. Por ejemplo, el comando `csv headers` nos mostrará los nombres de las columnas en un archivo CSV determinado. También podemos utilizar la opción `-d` para especificar un delimitador diferente al predeterminado (coma) en caso de que nuestro archivo CSV utilice un formato diferente.
 
-Si quieres leer más sobre cómo trabajar con CSV en Fish Shell, puedes consultar la documentación del plugin "csv" o visitar el sitio web oficial de Fish Shell. También puedes explorar diferentes opciones de comandos y funciones disponibles para manipular y utilizar estos archivos.
+Otra característica interesante de Fish Shell es que nos permite combinar datos de diferentes archivos CSV utilizando el comando `csv join`. Por ejemplo, podemos unir dos archivos CSV utilizando una columna en común como clave de unión.
 
-Es importante tener en cuenta que, a pesar de ser un formato de archivo común, CSV también puede tener sus limitaciones y desafíos al trabajar con él. Por ejemplo, puede ser difícil tratar con datos que contengan caracteres especiales o espacios en blanco. Por lo tanto, es recomendable probar diferentes opciones y comandos para ver cuál es el más adecuado para tus necesidades.
+¡No tengas miedo de experimentar con diferentes comandos y opciones para encontrar la mejor forma de trabajar con archivos CSV en Fish Shell!
 
 ## Ver también
 
-- [Documentación del plugin "csv"](https://github.com/laughedelic/fish-csv)
-- [Sitio web oficial de Fish Shell](https://fishshell.com/)
-- [Tutorial básico de Fish Shell en español](https://jorgeanzola.com/guia-rapida-fish-shell-para-gente-banana/)
+- Documentación oficial de Fish Shell sobre CSV: https://fishshell.com/docs/current/cmds/csv.html
+- Tutorial de CSV en Fish Shell: https://dev.to/aleksbash/working-with-csv-files-in-fish-shell-378n

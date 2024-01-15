@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Eine Textdatei schreiben"
-simple_title:         "Eine Textdatei schreiben"
+title:                "Eine Textdatei schreiben."
+html_title:           "Javascript: Eine Textdatei schreiben."
+simple_title:         "Eine Textdatei schreiben."
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,71 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Beim Programmieren gibt es verschiedene Arten, Daten zu speichern. Eine beliebte Methode ist das Schreiben von Textdateien. In diesem Blog-Beitrag werden wir uns anschauen, warum es sinnvoll ist, Textdateien zu schreiben und wie man das in JavaScript macht.
+Als JavaScript-EntwicklerIn kann es manchmal erforderlich sein, Textdateien zu erstellen und zu bearbeiten. Vielleicht möchten Sie Daten aus einer Anwendung in einem lesbareren Format speichern oder eine benutzerdefinierte Konfigurationsdatei erstellen. In diesem Artikel werden wir uns ansehen, wie Sie das mit JavaScript machen können.
 
-## Wie geht das?
+## Wie geht's?
 
-Um eine Textdatei in JavaScript zu schreiben, benötigen wir die File System (fs) Bibliothek. Als Erstes müssen wir diese Bibliothek importieren:
+Um eine Textdatei mit JavaScript zu erstellen, müssen Sie zuerst eine Datei-System-Modul importieren. Dazu fügen Sie folgende Zeile hinzu:
 
 ```Javascript
 const fs = require('fs');
 ```
 
-Als Nächstes erstellen wir eine neue Datei oder öffnen eine bestehende Datei. Wir können dazu die Funktion `fs.openSync` verwenden, die als Parameter den Dateinamen und den Schreibmodus benötigt. Der Dateiname kann ein absoluter oder relativer Pfad sein.
+Dann können Sie eine neue Textdatei mit dem folgenden Code erstellen:
 
 ```Javascript
-const file = fs.openSync('beispiel.txt', 'w');
+fs.writeFile('meineDatei.txt', 'Dies ist ein Beispieltext.', (err) => {
+  if (err) throw err;
+  console.log('Die Datei wurde erfolgreich erstellt!');
+});
 ```
 
-Jetzt können wir die eigentlichen Daten in die Datei schreiben. Dazu nutzen wir die Funktion `fs.writeFileSync`. Diese benötigt ebenfalls den Dateinamen und als zweiten Parameter den Text, den wir schreiben möchten.
+Der Code oben erstellt eine neue Datei mit dem Namen "meineDatei.txt" und fügt den Text "Dies ist ein Beispieltext." hinzu. Wenn die Datei bereits existiert, wird sie überschrieben. Die Funktion `writeFile` akzeptiert drei Argumente: der Name der Datei, der Inhalt der Datei und eine Callback-Funktion. Die Callback-Funktion wird ausgeführt, wenn die Datei erfolgreich erstellt wurde.
+
+Um einer bestehenden Textdatei neuen Inhalt hinzuzufügen, können Sie die `appendFile` Funktion verwenden:
 
 ```Javascript
-fs.writeFileSync('beispiel.txt', 'Hallo Welt!');
+fs.appendFile('meineDatei.txt', '\nDies ist ein neuer Text.', (err) => {
+  if (err) throw err;
+  console.log('Der neue Text wurde erfolgreich hinzugefügt!');
+});
 ```
 
-Wenn wir nun die Datei öffnen, sehen wir den Text "Hallo Welt!".
+Der Code oben fügt den Text "\nDies ist ein neuer Text." am Ende der Datei hinzu. Das "\n" wird benötigt, um einen Zeilenumbruch einzufügen.
 
-## Tiefer Einblick
-
-Die `fs` Bibliothek bietet uns viele verschiedene Funktionen zum Lesen und Schreiben von Dateien. Wir können zum Beispiel auch Dateien einlesen und deren Inhalt in eine Variable speichern, anstatt sie direkt in eine Datei zu schreiben.
+Um den Inhalt einer Textdatei zu lesen, können Sie `readFile` verwenden:
 
 ```Javascript
-const text = fs.readFileSync('beispiel.txt', 'utf8');
-console.log(text); // Ausgabe: Hallo Welt!
+fs.readFile('meineDatei.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
 ```
 
-Wir können auch Dateien umbenennen oder verschieben und sogar Ordner erstellen oder löschen.
+Die `readFile` Funktion akzeptiert zwei Argumente: der Name der Datei und die Kodierung. In diesem Beispiel verwenden wir die Kodierung "utf8", um sicherzustellen, dass der Inhalt der Datei als Text und nicht als Binärdaten gelesen wird. Im Callback erhalten wir den Inhalt der Datei als `data` zurück, den wir dann in der Konsole ausgeben.
+
+## Tiefer eintauchen
+
+Wenn Sie mehr Kontrolle über die Erstellung von Textdateien mit JavaScript haben möchten, können Sie die `createWriteStream` Funktion verwenden. Hiermit können Sie den Inhalt und das Encoding der Datei angeben und auch mehrere Datenblöcke gleichzeitig schreiben. Ein Beispiel dafür wäre:
 
 ```Javascript
-// Umbenennen
-fs.renameSync('beispiel.txt', 'neuer_name.txt');
-
-// Verschieben
-fs.renameSync('neuer_name.txt', '/pfad/zum/zielordner/neuer_name.txt');
-
-// Ordner erstellen
-fs.mkdirSync('neuer_ordner');
-
-// Ordner löschen
-fs.rmdirSync('neuer_ordner');
+const writeStream = fs.createWriteStream('meineDatei.txt', 'utf8');
+writeStream.write('Dies ist der erste Textblock.');
+writeStream.write('Dies ist der zweite Textblock.');
+writeStream.end();
 ```
 
-Als Entwickler ist es wichtig, auch sicherzustellen, dass unsere Dateien und Ordner existieren, bevor wir mit ihnen arbeiten. Dafür können wir die Funktionen `fs.existsSync` und `fs.existsSync` verwenden.
-
-```Javascript
-// Überprüfen, ob Datei existiert
-if (fs.existsSync('beispiel.txt')) {
-  // Code zum Lesen/Schreiben der Datei
-}
-
-// Überprüfen, ob Ordner existiert
-if (fs.existsSync('neuer_ordner')) {
-  // Code zum Erstellen/Löschen von Dateien in diesem Ordner
-}
-```
+Der Code oben erstellt ein schreibbares Stream-Objekt für die Datei "meineDatei.txt" mit dem Encoding "utf8". Mit der `write` Funktion können wir nun beliebig viele Textblöcke schreiben und mit `end` den Stream schließen.
 
 ## Siehe auch
 
-- [Node.js fs Dokumentation](https://nodejs.org/api/fs.html)
-- [JavaScript Dateien schreiben mit der fs Bibliothek](https://www.digitalocean.com/community/tutorials/node-js-reading-and-writing-files)
-- [Tutorial: Dateien mit Node.js lesen und schreiben](https://www.twilio.com/blog/working-with-files-javascript-node-js)
+- [Node.js Dokumentation - File System](https://nodejs.org/api/fs.html)
+- [Tutorial: Node.js Dateien lesen, schreiben und erstellen](https://www.freecodecamp.org/news/node-js-tutorial-create-read-update-and-delete-files/)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 標準エラーに書き込む"
-simple_title:         "標準エラーに書き込む"
+title:                "標準エラーへの書き込み"
+html_title:           "Ruby: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,39 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-Rubyプログラミングをしている人は、時には標準エラーに書き込む必要があります。これはデバッグ中にエラーメッセージを表示するためや、プログラムの実行中に重要な情報を表示するためです。
+
+標準エラーに書き込むことの目的は、プログラム実行中に発生したエラーを管理することです。エラーメッセージを標準エラーに書き込むことで、開発者はプログラムの実行結果を綿密にチェックし、問題を素早く特定することができます。
 
 ## 方法
-以下のコードブロック内にある、Rubyの標準エラーに書き込む方法をご紹介します。
 
-```
-Rubyのコード例
-標準エラーに書き込むコード
+```ruby
+STDERR.puts "This is an error message."
+#=> This is an error message.
 ```
 
-実行すると、標準エラーに指定したメッセージが表示されます。この方法を使えば、プログラムのデバッグがより簡単になります。
+標準エラーへの書き込みには、`STDERR.puts`メソッドを使用します。エラーメッセージを引用符で囲んで引数として渡すことで、メッセージを標準エラーに書き込むことができます。また、` STDERR`はRubyでは標準エラー出力を表す特殊なオブジェクトです。同様に、標準出力を表す` STDOUT`オブジェクトもあります。
 
 ## 深堀り
-標準エラーに書き込む方法は、標準出力に書き込む方法と似ています。ただし、標準出力の場合には`puts`メソッドを使いますが、標準エラーの場合には`$stderr.puts`メソッドを使います。また、エラーメッセージを表示する際には、文字列に赤色のテキストを加えることでより目立たせることができます。
 
-例えば、以下のコードを実行すると、`backtrace`メソッドによるエラーメッセージが赤色で表示されます。
+標準エラーでエラーメッセージを出力することは、開発者にとって非常に重要です。エラーメッセージを出力することで、プログラム実行中に発生したエラーの種類や原因を特定し、修正することができます。また、エラーメッセージをログファイルに書き込むことで、将来的なデバッグに役立つ情報を残すことができます。
 
-```
-Rubyのコード例
-begin
-  # 何らかのエラーが発生した場合
-  raise StandardError, "エラーメッセージ"
-rescue StandardError => e
-  $stderr.puts "エラーが発生しました: #{e.backtrace}"
-end
-```
+## 参考リンク
 
-## 他に参考になるウェブサイト
-- [Rubyのドキュメント](https://docs.ruby-lang.org/ja/latest/class/StandardError.html)
-- [標準エラーの表示方法についての記事](https://techacademy.jp/magazine/45289)
-- [エラーメッセージに色をつける方法についてのブログ記事](https://naoreki.com/blog/2016-08-23-making-colored-ascii-art)
+- [Rubyドキュメンテーション - STDERR](https://docs.ruby-lang.org/en/master/IO.html#class-IO-label-Default+Streams)
+- [Rubyドキュメンテーション - Kernel.puts](https://docs.ruby-lang.org/en/master/Kernel.html#method-i-puts)
+- [The Standard Streams - Ruby for Admins](http://ruby-for-admins.ruby5studios.com/the-standard-streams.html)
 
-
-## 関連するリンク
-- [Rubyのエラー処理についての記事](https://www.rubylife.jp/exception/)
-- [標準出力についてのドキュメント](https://docs.ruby-lang.org/ja/latest/method/$stdout/s/puts.html)
+##

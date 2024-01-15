@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Wysyłanie zapytania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z uwierzytelnianiem podstawowym"
+html_title:           "Elixir: Wysyłanie żądania http z uwierzytelnianiem podstawowym"
+simple_title:         "Wysyłanie żądania http z uwierzytelnianiem podstawowym"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,40 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać uwierzytelniania podstawowego przy wysyłaniu zapytania HTTP
+### Dlaczego
 
-Uwierzytelnianie podstawowe jest jednym z najprostszych sposobów na zabezpieczenie danych przesyłanych pomiędzy klientem a serwerem. Dzięki niemu możliwe jest również kontrolowanie dostępu do określonych zasobów lub funkcji serwisu. W tym artykule dowiesz się, jak w praktyce używać uwierzytelniania podstawowego podczas wysyłania zapytań HTTP w języku Elixir.
+Jeśli pracujesz z siecią lub chcesz zapewnić bezpieczeństwo swoim aplikacjom, prawdopodobnie już znasz podstawy obsługi żądań HTTP. Ale co z autoryzacją? Czasami musisz wysłać żądanie z podanymi danymi uwierzytelniającymi, a tutaj wkracza autoryzacja podstawowa. W tym artykule dowiesz się, dlaczego i jak wysłać żądanie HTTP z autoryzacją podstawową w Elixir.
 
-## Jak to zrobić
+### Jak To Zrobić
 
-Zanim zaczniemy kodować, warto na chwilę zatrzymać się i przypomnieć sobie, czym dokładnie jest uwierzytelnianie podstawowe. Polega ono na przesyłaniu w nagłówku zapytania informacji o nazwie użytkownika i haśle w formie zakodowanej w Base64. Po odebraniu zapytania, serwer dekoduje te informacje i weryfikuje, czy użytkownik ma dostęp do żądanego zasobu lub funkcjonalności.
-
-Teraz przejdźmy do kodowania w Elixir. Przede wszystkim, musimy wykorzystać bibliotekę `HTTPoison` do wysłania zapytania HTTP. Następnie, w nagłówku `Authorization`, musimy przesyłać zakodowane dane uwierzytelniające. Przykładowy kod wyglądałby tak:
-
-```
-HTTPoison.get(
-  "https://www.example.com/api/users",
-  headers: [Authorization: "Basic " <> Base.encode64("username:password")]
-)
+W Elixir, aby wysłać żądanie HTTP z autoryzacją, musisz użyć modułu `HTTPoison` z biblioteki `HTTPoison`. Najpierw musisz dodać to do swojego projektu, korzystając z menedżera pakietów `mix`:
+```elixir
+defp deps do
+ [{:httpoison, "~> 1.8"}]
+end
 ```
 
-Gdzie `username` i `password` to odpowiednio nazwa użytkownika i hasło, które chcemy przesłać. W ten sposób, jeśli serwer jest skonfigurowany, aby wymagać uwierzytelnienia podstawowego, dostaniemy dostęp do zasobów.
-
-## Głębsze wody
-
-W przypadku uwierzytelniania podstawowego, podręczniki często zalecają stosowanie protokołu HTTPS w celu zabezpieczenia danych. Dlatego też, gdy wysyłamy zapytanie HTTPS, możemy użyć dodatkowego parametru `timeout` w celu ustalenia czasu oczekiwania na odpowiedź:
-
-```
-HTTPoison.get(
-  "https://www.example.com/api/users",
-  headers: [Authorization: "Basic " <> Base.encode64("username:password")],
-  timeout: 5000
-)
+Następnie musisz zaimportować moduł `HTTPoison` w swoim pliku kodu:
+```elixir
+import HTTPoison
 ```
 
-Pamiętaj jednak, że uwierzytelnianie podstawowe nie jest najbezpieczniejszą metodą uwierzytelniania i może być łatwo złamane przez osoby nieupoważnione. Dlatego też, jeśli zabezpieczenie danych jest dla ciebie ważne, warto zdecydować się na bardziej skuteczne metody uwierzytelniania.
+Teraz możesz wysłać żądanie HTTP z autoryzacją podstawową, dodając odpowiednie nagłówki, używając funkcji `request/4` z `HTTPoison`. Najpierw musisz utworzyć nagłówek `Authorization` zawierający kodowanie base64 twojego loginu i hasła, oddzielone dwukropkiem (`:`):
+```elixir
+auth_header = "Basic " <> Base.encode64("username:password")
+```
 
-## Zobacz także
+Następnie, możesz wysłać żądanie z autoryzacją, podając metodę (np. `:get`), URL, nagłówki, w tym nagłówek autoryzacyjny, i ciało żądania:
+```elixir
+response = HTTPoison.request(:get, "https://api.example.com/users", [authorization: auth_header], %{name: "John", age: 30})
+```
 
-- [Dokumentacja HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Przewodnik po uwierzytelnianiu podstawowym w Elixir](https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-with-httpoison-in-elixir)
+Pamiętaj, że login i hasło powinny być przekazane w formacie `username:password`, a następnie zakodowane przy użyciu base64.
+
+#### Przykładowe Wyjście
+
+Jeśli wszystko poszło dobrze, dostaniesz odpowiedź z serwera z kodem odpowiedzi oraz ciałem, które powinno zawierać użytkowników o imieniu "John" i wieku 30. Aby to zweryfikować, możesz wyświetlić w konsoli kod odpowiedzi i ciało odpowiedzi:
+```elixir
+IO.inspect response.status_code # powinno zwrócić 200
+IO.inspect response.body # powinno zwrócić [{name: "John", age: 30}, ...]
+```
+
+### Deep Dive
+
+Autoryzacja podstawowa jest jedną z wielu metod autoryzacji w protokole HTTP. Jest ona prosta do zaimplementowania i jest szeroko wykorzystywana w aplikacjach internetowych. Polega na wysłaniu kodowanego base64 loginu i hasła w nagłówku `Authorization`. Serwer następnie sprawdza autoryzację, porównując te dane z bazą użytkowników lub innymi źródłami autoryzacji.
+
+Jedną z głównych zalet autoryzacji podstawowej jest jej prostota, ale jest ona również jedną z jej głównych wad. Ponieważ dane autoryzacyjne są przesyłane jako tekst jawny, mogą być łatwo przechwycone przez niepożądane osoby. W takich przypadkach zaleca się stosowanie bardziej bezpiecznych metod autoryzacji, takich jak OAuth.
+
+### Zobacz Również
+
+Jeśli chcesz pogłębić swoją wiedzę o autoryzacji w Elixir, polecamy poznanie innych sposobów autoryzacji, takich jak OAuth czy autoryzacja tokenowa, a także zapoznanie się z innymi funkcjonalnościami modułu `HTTPoison`, takimi jak obsługa błędów i przekierowań

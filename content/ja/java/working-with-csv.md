@@ -1,6 +1,7 @@
 ---
-title:                "Java: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "「CSVを扱う」"
+html_title:           "Java: 「CSVを扱う」"
+simple_title:         "「CSVを扱う」"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,59 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを扱うのか？
+## なぜ
 
-CSVは、データベースやExcelなどでよく使用されるファイル形式です。規則性のあるテキストファイルであり、データを簡単に取り扱うことができるため、プログラミングにおいても重要な役割を果たしています。CSVとはどのようなファイル形式なのか、どのように扱えばよいのかを学びましょう。
+CSVファイルはデータを格納しやすく、共有しやすいため、Javaプログラマーにとって非常に便利なファイル形式です。この記事では、CSVファイルを効率的に扱う方法について説明します。
 
-## 手順
+## 方法
 
-CSVファイルの読み込みや書き込みには、Javaプログラミング言語における標準のクラスである`FileReader`と`FileWriter`を使用します。まずは、これらのオブジェクトを作成し、対象のCSVファイルを指定します。
-
-```Java
-FileReader csvFileReader = new FileReader("sample.csv");
-FileWriter csvFileWriter = new FileWriter("output.csv");
-```
-
-次に、CSVファイルからデータを読み込む際には、`BufferedReader`クラスを使用します。読み込んだデータは、配列やリストなどのデータ構造に格納することができます。以下は、CSVファイルから1行ずつデータを読み込み、配列に格納する例です。
+CSVファイルを操作するためには、Javaの標準ライブラリである`java.io`パッケージの`FileReader`と`BufferedReader`クラスを使用します。以下の例を参考にしてください。
 
 ```Java
-BufferedReader csvReader = new BufferedReader(csvFileReader);
-String line;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
-while ((line = csvReader.readLine()) != null) {
-    String[] data = line.split(",");
-    // dataを配列に格納する処理
+public class CSVReader {
+    public static void main(String[] args) {
+        try {
+            // CSVファイルのパスを指定してFileReaderを作成
+            FileReader fileReader = new FileReader("sample.csv");
+            // FileReaderをBufferedReaderでラップ
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            // CSVファイルを1行ずつ読み込んで処理
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                // 読み込んだ行をカンマで分割し、配列に格納
+                String[] data = line.split(",");
+                // 各データを処理する
+                // 例えば、data[0]は1列目のデータ
+                System.out.println(data[0]);
+            }
+            // リソースを解放
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("ファイルが見つかりません。");
+        } catch (IOException e) {
+            System.out.println("入出力エラーが発生しました。");
+        }
+    }
 }
 ```
 
-また、CSVファイルにデータを書き込む際には、`BufferedWriter`クラスを使用します。以下は、配列に格納されたデータをCSVファイルに書き込む例です。
+上記のコードは、`sample.csv`という名前のCSVファイルを読み込み、各行のデータを`String`配列として取得します。詳細な処理内容は省略しますが、データを加工したりデータベースに保存したりすることができます。
 
-```Java
-BufferedWriter csvWriter = new BufferedWriter(csvFileWriter);
-String[] data = {"John", "Doe", "30"};
-csvWriter.write(String.join(",", data));
-csvWriter.newLine();
-// 書き込み処理の後、必ずclose()でファイルを閉じること
-```
+## 深堀り
 
-以上のように、CSVファイルの読み込みや書き込みには、標準のJavaクラスを使用することができます。
+CSVファイルにはデータの区切り文字としてカンマが使われることが多いですが、別の文字で区切られている場合もあります。そういった場合は、`split()`メソッドの引数にカンマ以外の文字を指定することで対応できます。また、CSVファイルにはヘッダーが含まれることもありますが、ヘッダーをスキップしてデータを取得する方法もありますので、必要に応じて調べてみてください。
 
-## CSVの深層へ
+## 関連記事
 
-CSVファイルには、列や行のヘッダーを含めることができます。ヘッダーを含むCSVファイルからデータを読み込む際には、`CSVReader`クラスを使用します。以下は、ヘッダーを含むCSVファイルからデータを読み込み、ヘッダー名を基準にデータを取得する例です。
-
-```Java
-CSVReader reader = new CSVReader(csvReader);
-String[] headers = reader.readNext();
-
-while ((data = reader.readNext()) != null) {
-    // headers配列のインデックスと同じ順番でデータを取得し、使用する
-}
-```
-
-また、CSVファイルをExcelやGoogle Sheetsなどの表形式のファイルに変換することも可能です。これには、Apache POIなどのライブラリを使用することができます。CSVファイルを扱う際には、これらのライブラリも併せて学ぶことをお勧めします。
-
-## 参考リンク
-
-- [Oracle Java ドキュメント - CSVファイルの読み込み/書き込み](https://docs.oracle.com/javase/tutorial/essential/io/csv.html)
-- [Apache POI](https://poi.apache.org/)
+- [JavaでCSVファイルを扱う方法](https://www.javadrive.jp/start/file/index8.html)
+- [FileReaderクラスの使い方](https://java-code.jp/143)
+- [BufferedReaderクラスの使い方](https://java-code.jp/144)

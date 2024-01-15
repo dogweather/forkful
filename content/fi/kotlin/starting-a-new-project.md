@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Aloittamassa uutta projektia."
-simple_title:         "Aloittamassa uutta projektia."
+title:                "Aloittamassa uutta projektia"
+html_title:           "Kotlin: Aloittamassa uutta projektia"
+simple_title:         "Aloittamassa uutta projektia"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -11,46 +12,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi ihmiset haluavat aloittaa uuden ohjelmointiprojektin? Usein se johtuu siitä, että heillä on idea, jota haluavat toteuttaa tai he haluavat oppia uutta ohjelmointikieltä tai tekniikkaa. On myös mahdollista, että he haluavat luoda jotain hyödyllistä itselleen tai toisilleen.
+Miksi aloittaa uusi projekti? Lyhyesti sanottuna, uuden projektin aloittaminen antaa sinulle mahdollisuuden kehittää uusia taitoja, luoda jotain uutta ja haastaa itseäsi.
 
-## Kuinka
+## Kuinka aloittaa
 
-Kun aloitat uuden Kotlin-projektin, ensimmäinen askel on asentaa Kotlin-ympäristö ja luoda projekti kansioon, johon haluat tallentaa koodisi. Voit tehdä tämän käyttämällä seuraavia komentoja:
-
-```Kotlin
-sudo apt-get update
-sudo apt-get install kotlin
-mkdir project-folder
-cd project-folder
-```
-
-Seuraavaksi voit aloittaa koodin kirjoittamisen. Tämä on yksinkertainen ohjelma, joka tulostaa "Hei maailma!" komentoriville:
+Kotlin on moderni ja helppokäyttöinen ohjelmointikieli, joka sopii erinomaisesti uusien projektien aloittamiseen. Tässä on muutama esimerkki, kuinka voit aloittaa oman Kotlin-projektisi:
 
 ```Kotlin
 fun main() {
-    println("Hei maailma!")
+    // Tulostaa "Tervetuloa uuteen projektiin!"
+    println("Tervetuloa uuteen projektiin!")
 }
 ```
 
-Voit ajaa tämän koodin käyttämällä seuraavaa komentoa:
-
 ```Kotlin
-kotlinc program.kt -include-runtime -d program.jar
-java -jar program.jar
+// Määritellään funktio, joka palauttaa annetut parametrit yhteenlaskuna
+fun sum(x: Int, y: Int): Int {
+    return x + y
+}
+
+fun main() {
+    // Kutsutaan sum-funktiota ja tulostetaan tulos
+    val result = sum(2, 3)
+    println("2 + 3 = $result")
+}
 ```
 
-Tämän pitäisi tulostaa "Hei maailma!" komentoriville.
+```Kotlin
+// Luodaan luokka, jossa on ominaisuus ja metodi
+class Dog(val name: String) {
 
-## Syventävä sukellus
+    // Metodi, joka haukkuu annetun ääniä annetun kerran
+    fun bark(times: Int, sound: String) {
+        for (i in 1..times) {
+            println("$sound!")
+        }
+    }
+}
 
-Kun aloitat uuden Kotlin-projektin, on tärkeää harkita, mitä koodeja tarvitset ja kuinka järjestät projektisi. Ensinnäkin, sinun on luotava `build.gradle`-tiedosto, johon voit lisätä tarvittavat riippuvuudet ja asetukset. Sinun pitäisi myös harkita projektisi rakennetta, jotta koodisi olisi helpompi ylläpitää ja laajentaa.
+fun main() {
+    // Luodaan uusi koira-instanssi ja kutsutaan metodia
+    val myDog = Dog("Luna")
+    myDog.bark(3, "hau")
+}
+```
 
-Kotlinin hyvä puoli on, että se on yhteensopiva Java-koodin kanssa, mikä tarkoittaa, että voit käyttää Java-kirjastoja ja työkaluja projekteissasi. Voit myös käyttää Kotlinin sisäistä työkalua, `kotlinc`, joka antaa sinun kääntää koodisi ilman, että tarvitset muita työkaluja tai kirjastoja.
+### Syöte ja tulostus
+
+Kotlinilla voit myös kysyä käyttäjältä syötettä ja tulostaa vastauksen konsoliin:
+
+```Kotlin
+fun main() {
+    // Pyydetään käyttäjää antamaan nimi
+    println("Anna nimesi:")
+    val name = readLine()
+    // Tulostetaan tervehdys annetulla nimellä
+    println("Hei $name, tervetuloa uuteen projektiin!")
+}
+```
+
+```Kotlin
+fun main() {
+    // Pyydetään käyttäjää antamaan kaksi lukua
+    println("Anna kaksi lukua:")
+    val num1 = readLine()?.toInt()
+    val num2 = readLine()?.toInt()
+    // Lasketaan ja tulostetaan summa
+    val sum = num1?.plus(num2 ?: 0)
+    println("Summa on $sum")
+}
+```
+
+## Syvemmälle
+
+Uuden projektin aloittaminen Kotlinilla voi aluksi tuntua hieman pelottavalta, mutta älä huoli, olemme täällä auttamassa! Tässä on joitain resursseja, jotka auttavat sinua oppimaan enemmän Kotlinista ja sen käytöstä uusien projektien aloittamiseen:
+
+- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/home.html)
+- [Kotlin for Android Developers -kurssi Udacitylla](https://www.udacity.com/course/kotlin-for-android-developers--ud888)
+- [Kotlin for Java Developers -kurssi Courseralla](https://www.coursera.org/learn/kotlin-for-java-developers)
 
 ## Katso myös
 
-Suosittelemme seuraavia resursseja, jos haluat oppia lisää Kotlin-ohjelmoinnista:
-
-- [Kotlinin virallinen verkkosivusto](https://kotlinlang.org/)
-- [JetBrainsin Kotlin Bootcamp -kurssi](https://www.jetbrains.com/help/education/kotlin-bootcamp.html)
-- [Kotlinin Slack-yhteisö](https://kotlinlang.slack.com/)
+- [Kotlinin virallinen verkkosivu](https://kotlinlang.org/)
+- [Kotlin Tutorials -sarja YouTubessa](https://www.youtube.com/playlist?list=PLXjb35uitdWHpKQnTY3zanp6-eGXHBCcC)

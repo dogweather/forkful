@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 표준 에러로 쓰기"
-simple_title:         "표준 에러로 쓰기"
+title:                "표준 에러에 쓰는 방법"
+html_title:           "Arduino: 표준 에러에 쓰는 방법"
+simple_title:         "표준 에러에 쓰는 방법"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 Writing to Standard Error가 필요한가요?
+## 왜?
 
-문제를 디버그하는 동안 또는 프로그램의 오류를 확인할 때, 추가적인 정보가 필요할 수 있습니다. 이때 에러 메시지는 프로그램에서 발견된 문제에 대한 정보를 제공해줄 수 있습니다. 이러한 경우, 표준 출력보다는 표준 에러를 사용하는 것이 더 적합합니다. 결론적으로, 오류 메시지를 표준 에러로 출력하는 것은 프로그램 디버깅과 오류 해결을 더 쉽고 효율적으로 만들어줍니다.
+프로그래밍을 할 때 많은 사람들이 표준 오류를 사용하는 이유는 작성한 코드의 디버깅에 도움이 되기 때문입니다. 또한, 오류가 발생할 때 실시간으로 즉각적인 알림을 받아 수정할 수 있게 해줍니다. 
 
-## 어떻게 Writing to Standard Error를 할 수 있나요?
+## 어떻게?
 
-아래의 코드를 따라해보세요. 우선 ```Arduino``` 헤더 파일을 불러와줍니다. 그리고 ```Serial``` 객체를 생성하여 표준 에러를 출력할 준비를 합니다. 다음으로, ```Serial.print()``` 메소드를 사용하여 에러 메시지를 출력할 수 있습니다. 마지막으로 ```.println()``` 메소드를 사용하여 출력을 마칩니다.
+아래는 Arduino에서 표준 오류를 사용하는 예시 코드입니다.
 
-```Arduino
-#include <Arduino.h>
-
-void setup() {
-  Serial.begin(9600); // 시리얼 통신 초기화
-}
-
-void loop() {
-  // 프로그램 오류 발생
-  int x = 1 / 0;
-  
-  // 표준 에러로 출력
-  Serial.print("Error occurred: ");
-  Serial.println("Division by zero"); 
-}
+```
+Arduino.println("Error: Cannot connect to WiFi!");
 ```
 
-위의 코드를 실행하면, 시리얼 모니터에 "Error occurred: Division by zero"라는 에러 메시지가 출력됩니다.
+실행하면 다음과 같은 출력 결과를 볼 수 있습니다.
 
-## Deep Dive
+```
+Error: Cannot connect to WiFi!
+```
 
-표준 에러는 프로그램에서 발생하는 모든 에러를 저장하는 버퍼입니다. 따라서, 하나의 에러 메시지만 출력되는 것이 아니라 여러 개의 에러 메시지를 출력할 수 있습니다. 이는 디버깅 과정에서 유용하게 사용될 수 있습니다. 또한, 표준 에러는 표준 출력과는 별도의 공간을 사용하기 때문에, 프로그램의 정상적인 출력을 방해하지 않으면서 에러 메시지를 출력할 수 있습니다.
+위와 같이 코드에 예외처리를 넣고 싶은 부분에 `Arduino.println()`을 사용해서 출력할 수 있습니다.
 
-## See Also
+## 깊이 파고들어보기
 
-- [Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Debugging with Serial Monitor](https://www.arduino.cc/en/Guide/Introduction#toc11)
+보다 정확하게 오류를 파악하고 디버깅하기 위해서는 표준 오류 대신 `Serial.println()`을 사용하는 것이 좋습니다. 이 함수는 변수의 값을 출력해줄 수 있고, `Serial Monitor`라는 도구를 사용하면 시리얼 모니터를 통해 변수의 값을 확인할 수 있습니다. 또한, `Serial.print()`와 `Serial.write()`를 사용하면 고급 디버깅에 더 유용한 정보를 얻을 수 있습니다.
+
+## 더 알아보기
+
+- Arduino 공식 문서: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+- 팀 타이머: https://techtimer.io/tutorials/serial-beginner
+- 아두이노를 활용한 IoT 개발: https://www.hackster.io/ertd/microcontroller-web-server-with-a-rasberi-piapis-empl-resource-copy-ba7c21

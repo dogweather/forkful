@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: एक डायरेक्ट्री मौजूद है कि नहीं जांचना"
-simple_title:         "एक डायरेक्ट्री मौजूद है कि नहीं जांचना"
+title:                "डायरेक्टरी मौजूद है या नहीं जांचें"
+html_title:           "Gleam: डायरेक्टरी मौजूद है या नहीं जांचें"
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जांचें"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun
 
-कई बार अपने प्रोग्राम में एक निर्दिष्ट डाइरेक्टरी का उपयोग किया जाता है। अपने प्रोग्राम में इस डाइरेक्टरी की उपस्थिति की जांच करना अहम हो सकता है। इससे आप अनचाहे त्रुटियों को दूर कर सकते हैं और अपने प्रोग्राम को अधिक सुरक्षित बना सकते हैं। इस ब्लॉग पोस्ट में हम आपको सिखाएंगे कि किस तरह से आप ग्लीम में डाइरेक्टरी की उपस्थिति की जांच कर सकते हैं।
+Agar aap apane computer mein kisi project ko chalane se pahle, uske liye zaroori directories maujood hain ya nahi, ye pata lagana chahate hain, to aap ```Gleam``` programming language ka upyog karke aasani se check kar sakte hain. Isse aap apne project ko kisi bhi error se bacha sakte hain aur sahi directories ko use kar sakte hain. 
 
-# कैसे करें
+## Kaise Karein
+
+Aapko bas kuch simple steps follow karne hain: 
+
+1. Sabse pehle, ```Gleam``` programming language mein ```dir.exists``` function ka use karein.
+2. Is function mein, aapko directory ka naam aur path provide karna hoga.
+3. Agar directory maujood hai, to function true return karega, warna false.
+4. Is tarah, aap easily check kar sakte hain ki kya aapke computer mein desired directory maujood hai ya nahi.
 
 ```Gleam
-import os
-
-fn directory_exists(directory) {
-    match os.dir_exists(directory) {
-        true -> "डाइरेक्टरी मौजूद है"
-        false -> "डाइरेक्टरी मौजूद नहीं है"
-    }
-}
-
-directory_exists("examples") // डाइरेक्टरी मौजूद है
-directory_exists("xyz") // डाइरेक्टरी मौजूद नहीं है
+dir.exists("project/directory")
 ```
 
-ऊपर दिए गए कोड के माध्यम से आप आसानी से डाइरेक्टरी की उपस्थिति की जांच कर सकते हैं। आप सिस्टम के अन्य डाइरेक्टरी भी जांच सकते हैं और अपने प्रोग्राम को और अधिक सुरक्षित बना सकते हैं।
+Output:
+```
+true
+```
 
-# गहराई में जाएं
+## Gehri Jhaank
 
-डाइरेक्टरी की उपस्थिति की जांच करने के लिए ग्लीम में दो बिल्ट-इन फंक्शंस हैं - `os.dir_exists(directory)` और `os.file_exists(file_path)`। `os.dir_exists` फंक्शन डाइरेक्टरी की उपस्थिति की जांच करने के लिए होता है जबकि `os.file_exists` फंक्शन किसी भी फाइल की उपस्थिति की जांच करता है। आप `os.file_exists` फंक्शन का उपयोग कर सकते हैं यदि आप सिस्टम फ़ाइल की उपस्थिति बिना निर्दिष्ट दिरेक्टरी में जाँ
+Agar aap janna chahate hain ki ```dir.exists``` function kaise kaam karta hai aur uske peeche ki logic kya hai, to aap hamare saath deep dive kar sakte hain.
+
+```Gleam``` programming language mein, directories ko handle karne ke liye ```:gleam: io``` library ka use kiya jata hai. Ismein, ```dir``` data type define hai jo ki directories ko represent karta hai. Ismein, directories ke liye methods bhi hote hain jaise ki ```exists``` jismein directory ke existence ko check kiya jata hai.
+
+```Gleam
+pub fn exists(dir) -> Bool
+```
+
+Yahan ```dir``` parameter mein directory ka path provide karna hoga. Agar directory maujood hai, to wo true return karega, warna false. Iske peeche ki logic, ```POSIX``` standards par based hai jo ki directories ka management karta hai.
+
+## Dekhein Bhi
+
+- [Gleam official documentation](https://gleam.run)
+- [Gleam GitHub repository](https://github.com/gleam-lang/gleam)
+- [POSIX standards for directories](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)

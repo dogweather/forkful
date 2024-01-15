@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Json के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Haskell: Json के साथ काम करना"
 simple_title:         "Json के साथ काम करना"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,39 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-JSON हैस्केल में डेटा को प्रसंस्कृत करने का एक प्रचलित तरीका है और यह डेटा संग्रहित करने और उन्हें प्रसारित करने के लिए आसानी से इस्तेमाल किया जा सकता है। यह डेटा की वर्णनात्मक रूपरेखा है और इसे रीड और लिखा जा सकता है।
+JSON (Javascript Object Notation) एक प्रसिद्ध डेटा संरचना है जो एक संज्ञाश्रुत संघ्रहालय (schema-less) फॉर्मेट में होती है। यह एक Newtonsoft Json एक चुनिंदा उदाहरण है जिससे C# एवं Java के कारकों और Json संरचनाओं का उपयोग होता है। हास्केल में JSON का उपयोग सुगमता से किया जा सकता है जिससे आप अपने हास्केल एप्लीकेशन में डेटा को प्रसन्न उपयोग कर सकते हैं।
 
 ## कैसे करें
 
-इस सेक्शन में हम आपको JSON को हैस्केल में कैसे कोड करें और उसका आउटपुट कैसे लें, के बारे में दिखाएंगे। हम इसे ```Haskell ...``` कोड ब्लॉक सहित उदाहरणों के साथ देखेंगे।
+हास्केल में JSON पर काम करने के लिए आपको हास्केल की Json पुस्तकें (libraries) को इंस्टॉल करने की आवश्यकता होती है। नीचे दिए गए कोड उदाहरण में, हमने अदोनिस (Aeson) पुस्तकी उपयोग किया है जो हास्केल में सबसे अधिक प्रचलित है। यहां, हम सामान्य जेसन के साथ क्षुधाभोजी साइगर संरचनाओं का प्रबंधन करना सिखाएंगे।
 
 ```Haskell
-import Data.Aeson
+import Data.Aeson (FromJSON, ToJSON, eitherDecode, encode)
+import GHC.Generics (Generic)
 
--- Example JSON data
-json = "{\"name\":\"John\", \"age\":30, \"hobbies\":[\"reading\", \"coding\"]}"
+-- बिना डेटा के Json संरचना बनाएं
+data Tiger = Tiger { name :: String, age :: Int } deriving (Show, Generic)
 
--- Parsing JSON data into a Haskell value
-value = decode json :: Maybe Value
+-- FromJSON और ToJSON क्षुधाभोजी साइगर को जेसन में सीरीलाइज़ और डी-सीरीलाइज़ करते हैं
+instance FromJSON Tiger
+instance ToJSON Tiger
 
--- Accessing data from the value using key-value pair
-name = value >>= \obj -> obj .: "name" :: Maybe String
+-- कुछ उदाहरण साइगर बनाएं
+tony :: Tiger
+tony = Tiger "Tony" 9
+shereKhan :: Tiger
+shereKhan = Tiger "Shere Khan" 20
 
--- Output: Just "John"
-
--- Converting a Haskell value into JSON
-newJSON = encode (object [("name" .= "Jane"), ("age" .= 25), ("hobbies" .= ["painting", "singing"])])
-
--- Output: "{\"name\":\"Jane\",\"age\":25,\"hobbies\":[\"painting\",\"singing\"]}"
+-- साइगर। जेसन में सीरीलाइज़ करना
+main = do
+  let jsonTony = encode tony
+  let jsonShereKhan = encode shereKhan
+  putStrLn jsonTony -- {"name":"Tony","age":9}
+  putStrLn jsonShereKhan --{"name":"Shere Khan","age":20}
 ```
 
-## गहराई में
+## गहराई में जाएं
 
-JSON हैस्केल में बहुत सारे मान्यांकन रूपों और प्रविष्टियों के साथ काम करें, जो इसे डेटा को प्रस्तुत करने के और उससे इस्तेमाल करने की अनेक संभावनाओं को देते हैं। आप डेटा को सेरीजीअलाइज और डेसेरीलाइज करने, अनुक्रम देने, अनुचित मानों को हैंडल करने और अन्य विषयों को सुलझाने के बारे में और अधिक जान सकते हैं।
-
-## हमें से अधिक देखें
-
-- [JSON डिकोडिंग प्रक्रिया](https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html#g:1)
-- [JSON कोडिंग प्रक्रिया](https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html#g:2)
-- [Aeson पूर्वेक्षण](https://artyom.me/aeson)
-- [Scullery: एक हैस्केल लाइब्रेरी जो सरल और शक्तिशाली JSON
+जेसन आपके हास्केल एप्लीकेशन में सीमित से सीमित नहीं होता है, और आप उसे मिश्रित डेटा के साथ भी उपयोग कर

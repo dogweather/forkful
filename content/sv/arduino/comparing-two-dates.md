@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämföra två datum"
+html_title:           "Arduino: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att jämföra två datum är användbart för att kunna hålla koll på tidsbaserade händelser, som till exempel när något ska aktiveras eller när ett event ska äga rum.
 
-Att jämföra två datum kan vara användbart i många olika situationer, till exempel för att se hur lång tid som gått mellan två händelser eller för att beräkna ålder. Med Arduino-programmering har du möjlighet att enkelt utföra sådana jämförelser och få ut relevant information.
+## Så här gör du
+För att jämföra två datum i Arduino behöver du använda dig av funktionen "millis()", som returnerar antalet millisekunder sedan koden började köras. Här är ett exempel på hur du kan göra det:
 
-## Hur man gör
+```Arduino
+// Definiera två variabler för dina datum
+unsigned long tidpunkt1;
+unsigned long tidpunkt2;
 
-För att jämföra två datum i Arduino behöver du först definiera de två datum som ska jämföras. Detta görs genom att skapa två "Date" objekt som representerar de två olika tidpunkterna. Till exempel:
+void setup() {
+  // Sätt in början för datum 1
+  tidpunkt1 = millis();
+}
 
-```Arduino 
-Date tidpunkt1 = Date(2020, 1, 1);
-Date tidpunkt2 = Date(2021, 5, 20);
-```
+void loop() {
+  // Uppdatera tiden för datum 2
+  tidpunkt2 = millis();
 
-För att sedan jämföra dessa två datum finns det flera olika inbyggda funktioner att använda sig av. Här är ett exempel på hur man kan jämföra om det första datumet är efter det andra:
-
-```Arduino 
-if (tidpunkt1 > tidpunkt2) {
-    Serial.println("Tidpunkt 1 är senare än tidpunkt 2");
+  // Jämför de två tidpunkterna
+  if (tidpunkt1 < tidpunkt2) {
+    // Om tidpunkt1 är mindre än tidpunkt2, gör något
+  } else if (tidpunkt1 > tidpunkt2) {
+    // Om tidpunkt1 är större än tidpunkt2, gör något annat
+  } else {
+    // Om tidpunkterna är lika, gör något tredje
+  }
 }
 ```
 
-Du kan också jämföra om det första datumet är lika med det andra, eller om det är före det andra datumet. Det finns även möjlighet att jämföra exakt tidpunkter, till exempel om de båda inträffar på samma dag, månad och år.
+Det här är en enkel jämförelse som bara använder sig av millisekunder. Du kan också använda dig av andra tidsenheter, som sekunder, minuter eller timmar, beroende på din specifika användning.
 
 ## Djupdykning
+När du jämför två datum är det viktigt att tänka på att funktionen "millis()" kan återställas om enheten startas om eller om den når sitt maxvärde på ungefär 50 dagar. Detta kan påverka dina jämförelser och det är därför viktigt att ha det i åtanke när du använder denna metod.
 
-När man jämför två datum är det viktigt att komma ihåg att en dag egentligen är ett antal sekunder (eller millisekunder) som har passerat sedan en viss starttidpunkt, vanligtvis 1 januari 1970. Detta kallas för en "epoch" och är en standardiserad tidpunkt som används inom många olika programmeringsspråk.
-
-När du definierar dina "Date" objekt i Arduino så kan du välja om du vill ange tiden i millisekunder eller i sekunder. Detta kan vara viktigt att tänka på om du jämför datum från olika källor, eftersom en millisekund kan göra skillnad i en jämförelse.
+En annan mer avancerad metod för att jämföra datum är att använda en extern modul, som en Real Time Clock (RTC). Detta är en enhet som kan hålla koll på tiden även när enheten stängs av eller återställs. Du kan ansluta en sådan modul till din Arduino och sedan använda dess funktioner för att jämföra datum.
 
 ## Se även
-
-- [Date referens](https://www.arduino.cc/reference/en/language/functions/time/date/)
-- [Epoch-tid](https://en.wikipedia.org/wiki/Unix_time)
+Här är några användbara länkar för att lära dig mer om att jämföra datum i Arduino:
+- [Officiell Arduino guide för att arbeta med datum och tid](https://www.arduino.cc/en/Tutorial/BuiltInExamples/TimeSerial)
+- [En artikel om att använda en RTC-modul med Arduino](https://www.instructables.com/id/Arduino-Real-Time-Clock-using-DS1307-RTC-module/)

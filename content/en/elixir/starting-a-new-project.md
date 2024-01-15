@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Elixir recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,56 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When starting a new project, it's important to choose the right programming language. Elixir, a functional programming language built on top of the Erlang VM, offers a unique set of features that make it an ideal choice for web development, networking, and distributed systems. In this blog post, we'll explore why Elixir is a great choice for your next project.
+If you're a developer looking to start a new project, you may want to consider Elixir. This functional programming language is known for its scalability, fault tolerance, and performance, making it a popular choice for building robust and reliable applications.
 
 ## How To
 
-To get started with Elixir, you'll need to have Elixir and the Erlang VM installed on your machine. Once you have that set up, you can create a new project by running the following command in your terminal:
+To get started with Elixir, the first step is to install the latest version of the language. You can do this by following the official installation instructions on the Elixir website.
 
-```
-mix new my_project
-```
+Once Elixir is installed, you can create a new project by using the `mix` tool which comes bundled with Elixir. Simply navigate to the desired directory and run `mix new project_name` in your terminal. This will generate a new project with the necessary boilerplate code.
 
-This will create a new project folder with all the necessary files and configurations. Let's take a closer look at some of these files and how they are used in an Elixir project.
+Let's take a look at a simple example of how to use Elixir. We'll create a function that takes in a name as an argument and returns a personalized greeting:
 
-### The Mix file
-
-The Mix file is where you can define your project dependencies, tasks, and other configurations. Let's say we want to add the `httpoison` library to our project. We can do so by adding the following line to the `deps` function in the Mix file:
-
-```
-{:httpoison, "~> 1.6"}
-```
-
-After saving the file, we can run `mix deps.get` in our terminal to download and install the new dependency. This allows us to use functions from the `httpoison` library in our project.
-
-### The Lib folder
-
-The Lib folder is where you will write most of your Elixir code. Let's say we want to create a function to make a GET request using `httpoison`. We can do so by creating a new file in the Lib folder and adding the following code:
-
-```
-def make_get_request(url) do
-  HTTPoison.get(url)
+```elixir
+def greeting(name) do
+  "Hello #{name}, welcome to the world of Elixir!"
 end
+
+greeting("Sam")
+# Output: Hello Sam, welcome to the world of Elixir!
 ```
 
-We can then use this function in other files in our project. For example, let's say we want to make a GET request to `https://example.com` in our `my_project.ex` file. We can do so by calling our function with the desired URL:
-
-```
-result = make_get_request("https://example.com")
-```
-
-### Running the project
-
-To run our project, we can use `mix run` in our terminal. This will start our project and run any code in our `main` function. Alternatively, we can use `iex -S mix` to start an interactive Elixir shell and run our project from there.
+As you can see, Elixir uses a functional style of programming, where functions are its building blocks. It also supports pattern matching and pipe operators, making code easier to read and understand.
 
 ## Deep Dive
 
-One of the reasons Elixir is a great choice for projects is because of its focus on concurrency and fault-tolerance. Elixir uses lightweight processes, also known as "actors", to handle parallel computations. These processes communicate with each other through message passing, allowing for a highly scalable and fault-tolerant system.
+One of the key features of Elixir is its use of the Erlang Virtual Machine (VM). This allows Elixir to leverage the robustness and scalability of Erlang, while also providing a more modern and user-friendly syntax.
 
-Elixir also has a robust set of tools for building distributed systems. The `mix` tool, which we used earlier, provides tasks for creating and managing clusters of Elixir nodes. This allows you to distribute your workload across multiple nodes, making it easier to scale your application as needed.
+When starting a new project in Elixir, it's important to consider the OTP (Open Telecom Platform) framework. OTP provides a set of abstractions and libraries that enable developers to build fault-tolerant and distributed systems. It also includes features such as supervision trees and gen servers, which are crucial for creating resilient applications.
 
-## See Also
+Moreover, Elixir comes with a built-in tool called "Mix" that can aid in managing dependencies, running tests, and generating documentation for your project. It also has a vibrant community that continuously contributes new libraries and tools, making it easier for developers to build complex systems.
 
-- Official Elixir website: https://elixir-lang.org/
-- Elixir documentation: https://hexdocs.pm/elixir/
-- Elixir Forum: https://elixirforum.com/
+See Also
+- [Official Elixir Website](https://elixir-lang.org/)
+- [Elixir School](https://elixirschool.com/)
+- [Awesome Elixir](https://github.com/h4cc/awesome-elixir)

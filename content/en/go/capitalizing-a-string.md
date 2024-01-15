@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Go recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Go"
 category:             "Go"
@@ -11,11 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In programming, proper formatting and consistency is crucial for creating clean and efficient code. One common task in string manipulation is capitalizing strings, which converts the first letter of a word to uppercase. This simple action can improve the readability and presentation of your code.
+Have you ever needed to capitalize a string in your programming project? Whether it's for a user interface, printing output, or manipulating data, capitalizing a string can be a useful and necessary task. In this article, we will explore how to do it using the Go programming language.
 
 ## How To
 
-To capitalize a string in Go, we can use the `strings` package and its `Title()` function. Let's take a look at an example:
+Capitalizing a string in Go is a straightforward process. Let's take a look at a few examples:
 
 ```Go
 package main
@@ -26,56 +27,41 @@ import (
 )
 
 func main() {
-    // Define a string with lowercase words
-    str := "hello world!"
+    // Example 1: using the strings package
+    string1 := "hello world"
+    capitalizedString1 := strings.ToUpper(string1)
+    fmt.Println(capitalizedString1) // Output: HELLO WORLD
 
-    // Use Title() function to capitalize the first letter of each word
-    fmt.Println(strings.Title(str))
+    // Example 2: using a custom function
+    string2 := "goodbye world"
+    capitalizedString2 := capitalize(string2)
+    fmt.Println(capitalizedString2) // Output: GOODBYE WORLD
+}
+
+func capitalize(s string) string {
+    bytes := []byte(s)
+    bytes[0] = bytes[0] - 32
+    return string(bytes)
 }
 ```
 
-Output:
-```
-Hello World!
-```
-
-As you can see, the `Title()` function successfully capitalized the first letter of each word in our string. This is a simple and efficient way to apply capitalization, without having to manually change the characters.
-
-We can also use the `ToUpper()` function from the `strings` package to capitalize a specific letter in a string. Let's see an example:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    // Define a string with lowercase letters
-    str := "hello world!"
-
-    // Use ToUpper() function to capitalize the first letter
-    fmt.Println(strings.ToUpper(string(str[0])) + str[1:])
-}
-```
-
-Output:
-```
-Hello world!
-```
-
-In this example, we used the `ToUpper()` function to capitalize only the first letter of our string. This is useful if you want to leave the rest of the string uncapitalized.
+In the first example, we used the `ToUpper()` function from the standard `strings` package to convert our string to all uppercase letters. In the second example, we created a custom function `capitalize()` which converts the first letter of a string to uppercase by manipulating the underlying byte array.
 
 ## Deep Dive
 
-There are a few things to keep in mind when capitalizing strings in Go. Firstly, the `Title()` function considers the beginning of a new word to be any non-letter character, such as a space or punctuation mark. This means that any non-letter character will not be capitalized, even if it appears in the middle of a word.
+Now, let's take a deeper look at the `capitalize()` function. In the function, we first convert the string to a slice of bytes using the built-in `[]byte()` function. This allows us to manipulate each character in the string individually.
 
-Additionally, keep in mind that strings in Go are immutable, meaning they cannot be changed once created. So when we use functions like `Title()` or `ToUpper()`, we are actually creating a new string with the capitalized letters, not modifying the original string.
+Next, we subtract 32 from the first byte in the slice, which effectively converts it to uppercase according to ASCII values. We then convert the byte slice back to a string using the `string()` function and return the capitalized string.
+
+There are also other methods for capitalizing a string in Go, such as using the `unicode` package or regular expressions. However, the two methods shown above are the simplest and most efficient.
 
 ## See Also
 
-- [Official Go Documentation on the strings package](https://golang.org/pkg/strings/)
-- [Simple ways to capitalize a string in Go](https://www.calhoun.io/how-to-capitalize-a-string-in-go/)
+For more information on string handling in Go, check out these resources:
 
-By following these tips and tricks, you can efficiently capitalize strings in your Go code and create a more polished end product. Happy coding!
+- [The official Go documentation on strings](https://golang.org/pkg/strings/)
+- [Working with strings in Go](https://www.calhoun.io/working-with-strings-in-go/)
+- [Manipulating strings in Go](https://blog.gopheracademy.com/advent-2017/strings-manipulation/)
+- [Effective Go: Strings](https://golang.org/doc/effective_go.html#strings)
+
+Happy coding!

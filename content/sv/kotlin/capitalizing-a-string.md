@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Kapitalisering av en sträng"
-simple_title:         "Kapitalisering av en sträng"
+title:                "Konvertera en sträng till versaler"
+html_title:           "Kotlin: Konvertera en sträng till versaler"
+simple_title:         "Konvertera en sträng till versaler"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,42 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att kunna förstå grunderna i Kotlin-programmering är viktigt för alla som vill bli framgångsrika programmerare. En viktig del av detta är att kunna manipulera strängar, inklusive att första bokstaven i en sträng blir stor bokstav. Detta kan verka som en liten detalj men det är en viktig del av att skriva läsbar och korrekt kod.
+Har du någonsin behövt ändra en sträng så att varje ord börjar med en stor bokstav? Det kan vara en ansträngande uppgift, men med Kotlin kan du enkelt utföra denna uppgift med hjälp av en inbyggd funktion.
 
 ## Hur man gör
-
-För att första bokstaven i en sträng ska bli stor bokstav, kan du använda funktionen `capitalize()` i Kotlin. Du kan använda denna funktion på en enskild sträng eller på en lista av strängar. Här är ett exempel:
-
 ```Kotlin
-val namn = "sara"
-println(namn.capitalize()) // output: Sara
+// Skapa en sträng
+val sträng = "detta är en sträng som ska ändras"
+
+// Använd funktionen "capitalize" för att ändra strängen
+val nySträng = sträng.capitalize()
+
+// Skriv ut den nya strängen
+println(nySträng)
+
+// Output: Detta är en sträng som ska ändras
 ```
 
-Du kan också använda `capitalize()` på en lista av strängar, vilket gör att första bokstaven i varje sträng blir stor bokstav. Här är ett exempel som visar hur man kan använda `map()` funktionen för att tillämpa `capitalize()` på en lista av strängar:
+## Deep Dive
+Funktionen "capitalize" finns tillgänglig för alla strängar i Kotlin och används för att konvertera den första bokstaven i varje ord till en stor bokstav. Om strängen redan har en stor bokstav i början av ett ord, kommer den att förbli oförändrad. Om ett ord har en blandning av både små och stora bokstäver i början, kommer endast den första bokstaven att ändras till en stor bokstav.
 
-```Kotlin
-val namnLista = listOf("anna", "peter", "måns")
-val namnMedStoraBokstäver = namnLista.map { it.capitalize() }
-println(namnMedStoraBokstäver) // output: [Anna, Peter, Måns]
-```
+En annan användbar funktion för att ändra storlek på bokstäver är "decapitalize". Denna funktion gör motsatsen och omvandlar den första bokstaven i varje ord till en liten bokstav.
 
-Det finns också en annan liknande funktion kallad `decapitalize()` som omvandlar den första bokstaven till en liten bokstav. Detta kan vara användbart om du behöver standardisera strängar i ditt program.
+Du kan också ange en parametrar för att specificera vilka tecken som ska vara med i konverteringen. Till exempel kan du bara ändra storleken på bokstäverna i ett specifikt intervall i en sträng.
 
-## Djupdykning
-
-Förutom `capitalize()` och `decapitalize()` finns det också andra sätt att manipulera strängar i Kotlin. En viktig funktion är `substring()`, som låter dig välja en del av en sträng baserat på start- och slutindex. Här är ett exempel:
-
-```Kotlin
-val sträng = "hej javaprogrammerare"
-println(sträng.substring(4,12)) // output: javaprogr
-```
-
-En annan användbar funktion är `toLowerCase()` och `toUpperCase()` som låter dig ändra bokstäver till antingen små eller stora. Dessa funktioner kan vara användbara för att jämföra strängar utan att behöva bekymra dig om skillnader i stora och små bokstäver.
-
-## Se också
-
-- [Officiell Kotlin hemsida](https://kotlinlang.org)
-- [Kotlin GitHub repository](https://github.com/JetBrains/kotlin)
-- [Kotlin Playground](https://play.kotlinlang.org)
-- [Kotlin Standard Bibliotek](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
+## Se även
+- [Officiell Kotlin dokumentation för funktionen capitalize](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Officiell Kotlin dokumentation för funktionen decapitalize](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/decapitalize.html)
+- [Mer om grundläggande strängoperationer i Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)

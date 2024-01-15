@@ -1,5 +1,6 @@
 ---
-title:                "Python: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Python: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Python"
 category:             "Python"
@@ -11,51 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Długość (ang. length) jest jedną z podstawowych operacji w programowaniu. Jest to bardzo przydatne narzędzie, które pozwala na sprawdzenie ile znaków zawiera dany ciąg tekstu. Dzięki temu możemy lepiej manipulować tekstem w naszym kodzie.
+Czasem podczas programowania potrzebujemy ustalić długość ciągu znaków (string). Dowiedz się, jak to zrobić w Pythonie i dlaczego jest to przydatne.
 
 ## Jak to zrobić
 
-Aby obliczyć długość tekstu w języku Python, możemy skorzystać z funkcji `len()`. Spójrzmy na poniższy przykład:
-
 ```Python
-imie = "Katarzyna"
-print(len(imie))
+string = "Hello World!"
+print(len(string))
+
+# Output:
+# 12
 ```
 
-**Output:** `9`
-
-W tym przypadku, funkcja `len()` zwróciła wartość 9, ponieważ ciąg "Katarzyna" składa się z 9 znaków. Możemy również użyć tej funkcji do obliczenia długości listy lub innego obiektu:
-
-```Python
-liczby = [1, 2, 3, 4, 5]
-print(len(liczby))
-```
-
-**Output:** `5`
-
-Ważne jest również pamiętanie, że funkcja `len()` działa nie tylko na typach wbudowanych, ale również na naszych własnych zdefiniowanych klasach i obiektach.
+W tym przykładzie tworzymy zmienną "string" zawierającą ciąg znaków "Hello World!". Następnie używamy wbudowanej funkcji "len()", która zwraca długość tego ciągu.
 
 ## Deep Dive
 
-W języku Python, długość nie jest zapisywana jako atrybut obiektu, a funkcja `len()` jest wywoływana za każdym razem, kiedy chcemy poznać długość danego obiektu. W przypadku ciągów tekstowych, funkcja ta działa na zasadzie iteracji, sprawdzając ilość znaków od pierwszego do ostatniego.
+Funkcja "len()" w Pythonie zwraca liczbę elementów w obiekcie. W przypadku ciągu znaków, obiektem jest właśnie ten ciąg, więc funkcja zwraca liczbę znaków w ciągu.
 
-Ponadto, funkcja `len()` jest często wykorzystywana do pętli for w celu określenia ilości iteracji. Przykładowo, jeśli chcemy wykonać pewną czynność określoną ilość razy, możemy użyć pętli for wraz z funkcją `len()`:
-
-```Python
-for i in range(len(liczby)):
-    print(i)
-```
-
-**Output:**
-```1
-2
-3
-4
-5
-```
+Warto również wiedzieć, że funkcja "len()" może być używana nie tylko dla ciągów znaków, ale również dla innych typów danych, takich jak listy czy krotki.
 
 ## Zobacz również
 
-- Dokumentacja języka Python na temat funkcji len(): https://docs.python.org/3/library/functions.html#len
-- Poradnik na temat pracy z napisami w języku Python: https://realpython.com/python-strings/ 
-- Oficjalny kurs języka Python: https://www.python.org/about/gettingstarted/
+- [Oficjalna dokumentacja Pythona o funkcji "len()"](https://docs.python.org/3/library/functions.html#len)
+- [Kurs "Python dla początkujących" na Codecademy](https://www.codecademy.com/learn/learn-python)
+- [Poradnik "Jak liczyć długość ciągu znaków w Pythonie"](https://realpython.com/python-string-length/)

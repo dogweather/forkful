@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 字符串转换为小写"
-simple_title:         "字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Kotlin: 将字符串转换为小写"
+simple_title:         "将字符串转换为小写"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,33 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-字符串是编程中经常遇到的一种数据类型，而通常情况下，一个字符串不可能只有一个大小写形式。因此，将字符串转换为小写形式是非常有用的，可以让我们更轻松地处理和比较字符串。在Kotlin中，我们可以使用内置的函数来快速转换一个字符串为小写形式。
+有时候我们需要对字符串进行处理，比如检索、比较或者展示。而有些时候，我们希望字符串的大小写能够统一，便于处理。因此， Kotlin 提供了一个方便的方法来将字符串转换为小写字母，让我们来一起看看如何实现吧！
 
-## 怎么做
+## 如何操作
 
-首先，在你的Kotlin项目中创建一个字符串变量，比如我们这里用一个名为`str`的变量来做示例。然后，在变量后面加上句点`.lowercase()`，就可以将其转换为小写形式了。比如，如果我们有一个名为`str`的变量，它包含的是`"Hello WORLD!"`这样的字符串，那么我们使用`str.lowercase()`来转换后，得到的结果就是`"hello world!"`。下面是完整的代码示例：
+在 Kotlin 中，使用 `toLowerCase()` 方法可以将一个字符串转换为小写。下面是一个简单的例子，展示了如何使用这个方法：
 
 ```Kotlin
-val str = "Hello WORLD!"
-println(str.lowercase()) // Output: "hello world!"
+val str = "KOTLIN PROGRAMMING"
+val lowerCaseStr = str.toLowerCase()
+
+println(lowerCaseStr)
 ```
-值得注意的是，这个函数并不会改变原始的字符串变量，而是通过创建一个新的字符串返回转换后的结果。
+
+输出结果为：
+
+```
+kotlin programming
+```
 
 ## 深入了解
 
-以上我们介绍了如何使用内置的`.lowercase()`函数来快速转换字符串为小写形式，但是有时候我们可能需要更具自定义的转换规则。对于这种情况，我们可以使用`.map()`函数来自定义如何转换字符串中的每一个字符。下面是一个例子：
+除了将字符串转换为小写外， Kotlin 还提供了其他几种方法来处理字符串的大小写。下面是一些常用的方法：
+
+- `toUpperCase()`：将字符串转换为大写。
+- `capitalize()`：将字符串的首字母大写。
+- `decapitalize()`：将字符串的首字母小写。
+
+除了这些方法外，我们还可以使用正则表达式来匹配并修改字符串中的大小写。例如，我们可以使用 `replace()` 方法来将字符串中的所有大写字母转换为小写字母：
 
 ```Kotlin
-val str = "Hello WORLD!"
-val customLowerCase = str.map {
-    if (it.isUpperCase()) it.toLowerCase() else it
+val str = "Kotlin Programming"
+val replacedStr = str.replace(Regex("[A-Z]")) {
+    it.value.toLowerCase()
 }
-println(customLowerCase) // Output: "hello world!"
+
+println(replacedStr)
 ```
 
-在这个例子中，我们使用了`.map()`函数来遍历字符串中的每一个字符，并使用`it`来表示当前遍历的字符。如果`it`是大写字母，我们就将其转换为小写形式，否则保持原样。最终，我们得到了和使用内置`.lowercase()`函数相同的结果。
+输出结果为：
+
+```
+kotlin programming
+```
 
 ## 参考链接
 
-- [Kotlin官方文档：字符串转换](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-strings/index.html)
-- [Kotlin中的字符串函数完全指南](https://www.programiz.com/kotlin-programming/strings)
+- [Kotlin String - toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Kotlin String - toUpperCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+- [Kotlin String - capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Kotlin String - decapitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/decapitalize.html)

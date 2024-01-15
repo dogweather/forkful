@@ -1,5 +1,6 @@
 ---
-title:                "C++: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "C++: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "C++"
 category:             "C++"
@@ -11,52 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Znalezienie długości łańcucha tekstowego jest częstym zadaniem w programowaniu. Pozwala to na określenie ilości znaków w danym łańcuchu, co jest bardzo przydatne podczas przetwarzania danych lub wyświetlania informacji użytkownikowi. W tym artykule dowiesz się, jak to zrobić i dlaczego jest to ważne.
+Jeśli jesteś programistą, prawdopodobnie często napotykasz na sytuacje, w których musisz pracować z ciągami znaków. Aby skutecznie manipulować nimi, ważne jest, aby znać ich długość. W tym artykule pokażę Ci, jak z łatwością znaleźć długość ciągu w języku C++.
 
 ## Jak to zrobić
 
-Aby znaleźć długość łańcucha w języku C++, możesz skorzystać z funkcji `length()` lub `size()`. Obie zwracają liczbę znaków w podanym łańcuchu. Przykładowy kod wykorzystujący funkcję `length()` wyglądałby tak:
+Ogólnie istnieją dwa sposoby na znalezienie długości ciągu w języku C++. Pierwszym sposobem jest użycie funkcji `length()` z klasy `string` z biblioteki standardowej. Przykładowe użycie wyglądałoby następująco:
 
 ```C++
 #include <iostream>
 #include <string>
 
 int main() {
-  std::string name = "Adam";
-  int length = name.length();
-  std::cout << "Długość łańcucha imienia " << name << " wynosi " << length << " znaków.";
+  std::string my_str = "Hello World";
+  int length = my_str.length();
+
+  std::cout << "Długość ciągu: " << length << std::endl;
+
   return 0;
 }
 ```
 
-**Output:** Długość łańcucha imienia Adam wynosi 4 znaki.
+Wyjście:
 
-Możesz również wykorzystać pętlę `for` i metodę `size()` do przejrzenia każdego znaku w łańcuchu i zliczenia ich. Przykładowy kod wykorzystujący tę metodę wyglądałby tak:
+`Długość ciągu: 11`
+
+Drugi sposób to użycie funkcji `strlen()` z biblioteki `<cstring>`. Jednak ta funkcja działa tylko na tablicach znaków (`char*`), więc musimy najpierw przekonwertować nasz `string` na tablicę znaków. Przykład:
 
 ```C++
 #include <iostream>
 #include <string>
+#include <cstring>
 
 int main() {
-  std::string word = "Kot";
-  int length = 0;
-  for(int i = 0; i < word.size(); i++) {
-    length++;
-  }
-  std::cout << "Długość łańcucha " << word << " wynosi " << length << " znaków.";
+  std::string my_str = "Hello World";
+  char my_arr[my_str.length()];
+  strcpy(my_arr, my_str.c_str());
+  int length = strlen(my_arr);
+
+  std::cout << "Długość ciągu: " << length << std::endl;
+
   return 0;
 }
 ```
 
-**Output:** Długość łańcucha Kot wynosi 3 znaki.
+Wyjście:
+
+`Długość ciągu: 11`
 
 ## Deep Dive
 
-W języku C++, łańcuchy tekstowe są przechowywane jako tablice znaków, której ostatnim elementem jest zero oznaczające koniec łańcucha. Z tego powodu funkcje `length()` i `size()` zwracają liczbę znaków w łańcuchu bez uwzględnienia znaku końca. Dzięki temu zabiegowi, możesz wykorzystywać pętle i funkcje na łańcuchach, w podobny sposób, jak na zwykłych tablicach.
+W języku C++, ciągi znaków są reprezentowane przez tablicę znaków (`char*`) lub obiekt klasy `string`. Funkcja `length()` zwraca liczbę elementów w danym ciągu, a funkcja `strlen()` zwraca liczbę znaków w tablicy znaków, nie licząc znaku końca null (`\0`). W obu przypadkach, długość ciągu jest równa liczbie znaków, które zostały przypisane do niego.
 
-Gdy używasz metody `size()` w pętli, musisz pamiętać, że indeksowanie w języku C++ zaczyna się od 0, dlatego umieszczenie warunku zwraca liczbę, o jeden większą niż rzeczywista długość łańcucha. Dlatego wykorzystujemy pętlę z warunkiem `i < word.size()` zamiast `i <= word.size()`.
+## Zobacz także
 
-## Zobacz również
-
-- [Funkcja `length()` w C++ na cppreference.com](https://en.cppreference.com/w/cpp/string/basic_string/length)
-- [Metoda `size()` w C++ na cppreference.com](https://en.cppreference.com/w/cpp/string/basic_string/size)
+1. [Dokumentacja funkcji length()](https://www.cplusplus.com/reference/string/string/length/)
+2. [Dokumentacja funkcji strlen()](https://www.cplusplus.com/reference/cstring/strlen/)

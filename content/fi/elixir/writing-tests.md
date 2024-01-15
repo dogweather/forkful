@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Elixir: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Testien kirjoittaminen on tärkeä osa Elixir-ohjelmointia, koska se auttaa varmistamaan koodin toimivuuden ja luotettavuuden. Testit myös helpottavat mahdollisten virheiden etsimistä ja korjaamista kehitysprosessin aikana.
 
-## Miten
-Testien kirjoittaminen Elixirissä on helppoa ja nopeaa. Alla on muutamia esimerkkejä käyttäen `assert`-moduulia:
+Tervehdys suomalaiset lukijat! Tervetuloa tutustumaan Elixirin testien kirjoittamiseen. Tämä artikkeli käsittelee testien tärkeyttä ja antaa ohjeita niiden kirjoittamiseen.
 
-```
-# Testiluokan määrittäminen
-defmodule MyTest do
-  use ExUnit.Case, async: true
+Testien kirjoittaminen on tärkeää, koska se auttaa meitä varmistamaan koodimme toimivuuden ja estää mahdollisia virheitä tuotantoympäristössä. Hyvin kirjoitetut testit antavat meille luottamusta ja varmuutta siitä, että koodimme toimii halutulla tavalla.
+
+## Näin teet sen
+
+Puhuttaessa testien kirjoittamisesta, on hyvä aloittaa yksinkertaisista esimerkeistä ja lisätä vaikeustasoa asteittain. Alla olevassa esimerkissä olemme luoneet yksinkertaisen funktion, joka laskee kaksi annettua numeroa yhteen.
+
+```elixir
+defmodule Calculator do
+  def sum(a, b) do
+    a + b
+  end
 end
 
-# Yksittäisen testin määrittäminen
-test "lisäämisen testaaminen" do
-  assert 1 + 2 == 3
+# Suoritetaan testi
+test "sum function returns correct result" do
+  assert Calculator.sum(1, 2) == 3
 end
-
-# Testien suorittaminen komentoriviltä
-$ mix test
 ```
 
-Esimerkissä luodaan uusi testiluokka `MyTest`, joka sisältää yhden testin `lisäämisen testaaminen`. Käyttämällä `assert`-funktiota, voimme varmistaa, että laskutoimitus toimii oikein. Lopuksi testit suoritetaan käyttämällä `mix test` -komentoa.
+Koodilohko alkaa ```defmodule Calculator do```, joka määrittelee moduulin nimen "Calculator". Moduulilla on funktio ```sum```, joka laskee kaksi annettua numeroa yhteen. Sitten suoritamme testin, jossa tarkistetaan, että funktion palauttama tulos on halutunlainen.
 
-Testien kirjoittaminen auttaa myös varmistamaan, että koodi toimii erilaisilla syötteillä ja reunaehtoilla. Esimerkiksi voimme testata saman laskutoimituksen eri syötteillä ja varmistaa, että lopputulos on aina oikein.
+Seuraavassa esimerkissä käytämme Elixirin sisäänrakennettuja testikirjastoja ja testaamme moduulin ``String`` funktiota ``length``.
 
-## Syvällisempi tarkastelu
-Elixirin `ExUnit`-moduulin avulla voit tehdä muitakin asioita kuin vain yksinkertaisia `assert`-testejä. Esimerkiksi voit testata asynkronisia funktioita käyttämällä `async: true` -asetusta testiluokassa. Voit myös testata, että tietty virhe tulee esiin halutussa tilanteessa käyttämällä `assert_raise`-funktiota.
+```elixir
+# Ensin kirjastojen sisällyttäminen testataksesi niitä
+ExUnit.start()
 
-Testien kirjoittaminen on myös tärkeää osana jatkuvaa integrointia ja toimitamista. Automaattisten testien avulla voit varmistaa, että koodi toimii oikein myös jatkuvien muutosten ja päivitysten jälkeen.
+# Suoritetaan testi
+test "string length function returns correct value" do
+  assert String.length("hello") == 5
+end
+```
+
+Tässä esimerkissä käytimme testikirjaston ```ExUnit.start()``` -komennon aloittaaksemme testien suorittamisen. Sitten suoritamme testin, jossa tarkistamme, että funktion palauttama tulos vastaa odotettua tulosta.
+
+## Syvempi sukellus
+
+Testien kirjoittamisessa on paljon muitakin käytäntöjä ja työkaluja, joita voit hyödyntää. On tärkeää tutkia erilaisia lähestymistapoja ja löytää ne keinot, jotka toimivat parhaiten omalle tiimille ja projektille. 
+
+Yksi tärkeä asia, johon kannattaa kiinnittää huomiota, on testeihin käytetty aika. On hyvä löytää tasapaino koodin laadun ja testien kirjoittamiseen käytetyn ajan välillä. Liian vähemmän testeillä voi olla kielteisiä vaikutuksia koodin toimivuuteen, mutta liikaa testeihin käytetty aika voi hidastaa kehitysprosessia.
+
+Toinen tärkeä asia on testien säilyttäminen ajan tasalla muutosten yhteydessä. Testeistä ei ole hyötyä, jos ne eivät heijasta koodin nykyistä tilaa. On hyvä käydä läpi testejä säännöllisesti ja päivittää ne tarvittaessa.
 
 ## Katso myös
-- [Elixir School](https://elixirschool.com/fi/) - Ilmainen opas Elixir-kielen oppimiseen
-- [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) - Elixirin viralliset dokumentaatiot testaamiseen
-- [Elixir Testing](https://devexp.io/2020/01/28/test-driven-development-with-elixir-exunit/) - Blogipostaus testituloksesta Elixirissä
+
+- [ExUnit - Elixirin testikirjasto](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Kirjoittamalla testejä - Elixirin virallinen opas](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-coverage.html)
+- [18 asiaa jotka auttavat kehittämään Elixir-taitojasi](https://www.cowbearcode.com/18

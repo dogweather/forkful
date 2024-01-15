@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Ruby: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,26 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Eine der grundlegenden Fähigkeiten in der Ruby-Programmierung ist die Überprüfung, ob ein Verzeichnis existiert. Dies ist besonders wichtig, wenn man mit Dateien arbeitet und sicherstellen möchte, dass der Code auf die richtigen Dateien zugreift. In diesem Blogpost erfährst du, wie du mit Ruby prüfen kannst, ob ein Verzeichnis existiert.
 
-## Wie geht man vor
-Das Überprüfen eines Verzeichnisses auf Existenz ist ein einfacher Vorgang in der Ruby-Syntax. Hier ist ein Beispiel, wie man das prüfen kann:
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein nützliches Werkzeug in der Ruby-Programmierung, da es einem ermöglicht, auf Dateien und Ordner auf einem Computer zuzugreifen. Es ist besonders hilfreich, wenn man mit Dateien arbeitet, die von externen Quellen geliefert werden.
+
+## Wie geht man vor?
+
+Die Überprüfung, ob ein Verzeichnis existiert, ist in Ruby nicht kompliziert. Man kann die `Dir.exist?` Methode verwenden, um zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist. Hier ist ein Beispielcode, der zeigt, wie man diese Methode verwendet:
 
 ```Ruby
-exists = Dir.exist?('Pfad/zu/Verzeichnis')
-puts exists
+if Dir.exist?("Pfad/zum/verzeichnis")
+  puts "Das Verzeichnis existiert."
+else
+  puts "Das Verzeichnis existiert nicht."
+end 
 ```
 
-In diesem Beispiel verwenden wir die eingebaute Methode `Dir.exist?`, um zu prüfen, ob das Verzeichnis "Pfad/zu/Verzeichnis" existiert. Diese Methode gibt einen Boolean (wahr/falsch) Wert zurück, der in der Variable `exists` gespeichert ist. Und schließlich geben wir den Wert mit `puts` aus.
+Die Ausgabe dieses Codes hängt davon ab, ob das Verzeichnis existiert oder nicht. Wenn das Verzeichnis vorhanden ist, wird "Das Verzeichnis existiert." ausgegeben. Andernfalls wird "Das Verzeichnis existiert nicht." ausgegeben.
 
-Wenn das Verzeichnis existiert, wird `true` ausgegeben. Falls es nicht existiert, wird `false` ausgegeben.
+## Tiefer Einblick
 
-## Tieferer Einblick
-Die eingebaute Methode `Dir.exist?` verwendet das Betriebssystem, um zu überprüfen, ob das Verzeichnis tatsächlich existiert. Sie gibt immer den aktuellen Status zurück und berücksichtigt dabei mögliche Änderungen an dem Verzeichnis.
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt beim Zugriff auf Dateien und Ordner in der Ruby-Programmierung. Die `Dir.exist?` Methode kann auch in Kombination mit anderen Methoden verwendet werden, um bestimmte Aufgaben auszuführen, wie zum Beispiel das Erstellen eines neuen Verzeichnisses, wenn es nicht existiert, oder das Löschen eines Verzeichnisses, wenn es existiert.
 
-Außerdem kann man mit dieser Methode auch überprüfen, ob ein Verzeichnis schreibgeschützt ist. Wenn das Verzeichnis schreibgeschützt ist, wird `false` zurückgegeben.
+Ein weiterer wichtiger Faktor beim Überprüfen eines Verzeichnisses ist die Verwendung der richtigen Schreibweise für den Pfad. Ungenaue Pfade können dazu führen, dass das Programm nicht das erwartete Verzeichnis überprüft.
 
 ## Siehe auch
-- Offizielle Ruby-Dokumentation zu `Dir.exist?`: https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F
-- Beispiel für das Arbeiten mit Dateien und Verzeichnissen in Ruby: https://www.codecademy.com/articles/ruby-file-system
-- Weitere Informationen über die Ruby-Syntax: https://ruby-lang.org/de/documentation/
+
+- Die [Ruby-Dokumentation](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F) für mehr Informationen über die `Dir.exist?` Methode.
+- Der [Offizielle Ruby Styleguide](https://rubystyle.guide/) für empfohlene Schreibweisen und Praktiken in der Ruby-Programmierung.
+- Ein [Tutorial](https://www.rubyguides.com/2015/07/ruby-file-tutorial/) zu Dateioperationen in Ruby, das auch das Überprüfen von Verzeichnissen behandelt.

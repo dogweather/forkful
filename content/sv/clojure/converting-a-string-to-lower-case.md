@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Clojure: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,34 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till gemener (lower case) är en viktig och vanligt förekommande operation inom programmering. Genom att göra detta kan du på ett effektivt sätt hantera och bearbeta data, vilket gör det lättare att skriva skalbara och robusta program.
 
-## Hur man gör
-Det finns flera olika sätt att konvertera en sträng till gemener i Clojure. Här är ett exempel på hur du kan göra det med hjälp av inbyggda funktioner:
+Att konvertera en sträng till gemener är en vanlig uppgift i programmering, eftersom det hjälper till att standardisera data och göra det enklare att jämföra strängar.
 
-```Clojure
-(def text "HEJ, VÄRLDEN!")
-(clojure.string/lower-case text)
-
-;output: hej, världen!
-```
-
-Du kan också använda dig av Java's `toLowerCase`-metod genom att omvandla strängen till en Java String först:
+## Så här gör du
 
 ```Clojure
-(.toLowerCase (String. text))
-
-;output: hej, världen!
+(.toLowerCase "STRING") ; "string"
+(.toLowerCase "ÄPPLE") ; "äpple"
+(.toLowerCase "HeLlO WoRlD") ; "hello world"
 ```
 
-Det finns också många andra bibliotek och funktioner som kan hjälpa dig att konvertera strängar till gemener, såsom `clojure.string/replace` och `clojure.string/replace-first`. Prova dig fram och hitta den metod som passar dina behov bäst.
+Som du ser används metoden `.toLowerCase` för att konvertera en sträng till gemener. Metoden kan appliceras på alla typer av strängar, oavsett om de innehåller bokstäver, siffror, specialtecken eller en blandning av allt.
 
 ## Djupdykning
-När du konverterar en sträng till gemener är det viktigt att tänka på teckenkodning (character encoding), särskilt om dina strängar innehåller icke latinska tecken. I dessa fall kan det vara bättre att använda sig av en Unicode-invariant funktion som `clojure.string/lower-case*` istället för den vanliga `clojure.string/lower-case`.
 
-En annan detalj att tänka på är att `clojure.string/lower-case` endast konverterar bokstäver till gemener, så alla andra tecken kommer fortfarande att vara i samma case som innan. Om du vill konvertera hela strängen till gemener, inklusive tecken, kan du använda dig av en kombination av `clojure.string/lower-case` och `clojure.string/replace`.
+Konvertering till gemener är en viktig del av Unicode-standardens normalization, vilket innebär att alla tecken representeras på ett standardiserat sätt. Detta underlättar för jämförelse av text på olika språk och teckenkodningar.
 
 ## Se även
-- [Clojure.string API](https://clojure.github.io/clojure/clojure.string-api.html)
-- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Unicode-invariant functions in Clojure](https://clojure.org/reference/strings)
+
+- [Official Clojure Documentation: Characters and Strings](https://clojure.org/reference/characters)
+- [Clojure Cheat Sheet: Strings](https://clojure.org/api/cheatsheet#Strings)

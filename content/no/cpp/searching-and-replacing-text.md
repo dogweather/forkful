@@ -1,6 +1,7 @@
 ---
-title:                "C++: Søking og utskifting av tekst"
-simple_title:         "Søking og utskifting av tekst"
+title:                "Søking og erstattning av tekst"
+html_title:           "C++: Søking og erstattning av tekst"
+simple_title:         "Søking og erstattning av tekst"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,56 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Mange ganger når vi skriver kode, ønsker vi å gjøre endringer i teksten. For eksempel kan vi ønske å bytte ut et bestemt ord med et annet, eller kanskje fjerne et sett med spesifikke tegn. I disse tilfellene kan vi bruke en prosess kalt "søk og erstatt" for å gjøre disse endringene raskt og enkelt.
+
+Det å søke og erstatte tekst er en viktig del av programmering. Det lar deg automatisk endre tekst i en fil eller kode, noe som sparer deg for tid og unødvendig manuelt arbeid. 
 
 ## Slik gjør du det
-I C++ er det flere måter å utføre søk og erstatt-funksjoner på. En enkel metode er å bruke standardbiblioteket "algorithm" og funksjonen "replace". La oss se på et eksempel:
+
+For å kunne søke og erstatte tekst i C++, bruk følgende syntaks:
 
 ```C++
-#include <iostream>
-#include <algorithm>
-using namespace std;
-
-int main() {
-    string tekst = "Hei, verden!";
-    replace(tekst.begin(), tekst.end(), 'e', 'a');
-    cout << tekst << endl;
-    return 0;
-}
+string nyTekst = gammelTekst.replace(0, 3, "ny tekst");
 ```
 
-I dette eksempelet bruker vi funksjonen "replace" for å bytte ut alle forekomster av bokstaven 'e' med bokstaven 'a' i en tekststreng. Vi sørger for å inkludere nødvendige biblioteker og funksjoner, og deretter kjører vi programmet. Outputen vil være:
+Dette eksempelet erstatter den gamle teksten fra posisjon 0 til 3 med den nye teksten "ny tekst".
 
-```
-Hai, vardan!
-```
+For å endre tekst i hele filen, kan du bruke en løkke som itererer gjennom hele filen og bruker `replace()`-funksjonen på hver linje. Du kan også bruke `find()`-funksjonen til å finne spesifikke deler av teksten du vil erstatte.
 
-Vi kan også utføre andre typer søk og erstatt-operasjoner ved hjelp av regex (regular expressions). La oss se på et eksempel på dette:
+Et annet nyttig verktøy for å erstatte tekst er `regex`-biblioteket i C++. Dette lar deg bruke regulære uttrykk for å søke og erstatte tekst som matcher et bestemt mønster.
 
-```C++
-#include <iostream>
-#include <regex>
-using namespace std;
+## Deep Dive
 
-int main() {
-    string tekst = "Kode er artig, men også utfordrende.";
-    regex r("(artig|utfordrende)");
-    string resultat = regex_replace(tekst, r, "gøy");
-    cout << resultat << endl;
-    return 0;
-}
-```
-I dette eksempelet søker vi etter ordene "artig" eller "utfordrende" og erstatter dem alle med "gøy". Outputen blir:
+Når du søker og erstatter tekst, er det viktig å huske på at det kan være flere forekomster av den teksten du vil endre. Ved å bruke `replace()`-funksjonen, vil alle forekomstene bli erstattet. Hvis du bare vil erstatte den første forekomsten, kan du bruke `replace_first()`-funksjonen i stedet.
 
-```
-Kode er gøy, men også gøy.
-```
-## Dykk ned i detaljene
-Å søke og erstatte tekst kan også utføres ved hjelp av andre metoder og funksjoner, som for eksempel substr og find. Det er også mulig å utføre mer komplekse søk ved hjelp av regex. Ved å forstå de forskjellige alternativene og metodene, kan vi effektivt håndtere tekstendringer i vår kode. Det er også viktig å forstå begrensningene og konsekvensene ved å bruke søk og erstatt-funksjoner, spesielt når det gjelder store mengder data.
+En annen viktig ting å huske på er at `replace()`-funksjonen endrer den opprinnelige strengen, mens `replace_copy()`-funksjonen oppretter en kopi av den opprinnelige strengen med den nye teksten. Dette kan være nyttig hvis du vil bevare den opprinnelige teksten.
 
 ## Se også
-- [C++ String Operations](https://www.geeksforgeeks.org/cpp-string-class-and-its-applications/)
-- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [C++ Standard Library](https://en.cppreference.com/w/cpp/header)
 
-Takk for at du leste denne bloggposten om søk og erstatt i C++! Med mer kunnskap om disse funksjonene, kan du effektivt håndtere endringer i tekst og forbedre din programmeringsevner. Lykke til videre med kodingen!
+- [C++ string-referanse](https://www.cplusplus.com/reference/string/string/replace/)
+- [C++ regex-referanse](https://www.cplusplus.com/reference/regex/)
+- [How to use regular expressions in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)

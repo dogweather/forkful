@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 检查目录是否存在"
-simple_title:         "检查目录是否存在"
+title:                "检查文件夹是否存在"
+html_title:           "Arduino: 检查文件夹是否存在"
+simple_title:         "检查文件夹是否存在"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,29 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 为什么
-一个常见的问题是，当我们在进行Arduino编程时，我们可能需要检查一个特定的文件夹是否存在。这通常被认为是一种好的做法，因为它可以帮助我们避免因为文件夹不存在而导致的错误。在这篇博客文章中，我们将探讨如何在Arduino中检查文件夹是否存在，以及为什么这样做很重要。
 
-## 如何
-要在Arduino中检查文件夹是否存在，我们可以使用`File`库中提供的`exists()`函数。这个函数接受一个字符串参数，即文件夹的路径，并返回一个布尔值，表明文件夹是否存在。让我们来看一个简单的例子：
+通常，当我们编写代码时，需要在程序执行期间检查某个目录是否存在。这可以避免程序因为缺少必要的目录而崩溃，从而确保程序的稳定性。
+
+## 如何进行检查
+
+在Arduino中，我们可以使用`SD.exists()`函数来检查SD卡中的目录是否存在。下面是一个示例代码：
 
 ```Arduino
-#include <SD.h>
-File myDirectory = SD.open("/myFolder");
-if(myDirectory.exists()){
-  Serial.println("The directory exists!");
+if(SD.exists("/photos")){
+  Serial.println("The directory 'photos' exists.");
 } else {
-  Serial.println("The directory does not exist!");
+  Serial.println("The directory 'photos' does not exist.");
 }
 ```
 
-如果文件夹存在，串行监视器将打印出"The directory exists!"，否则将打印出"The directory does not exist!"。
+在这个例子中，我们首先使用`exists()`函数来检查名为“photos”的目录是否存在。如果存在，我们会向串口打印一条消息，如果不存在，我们会打印另一个消息。根据程序执行结果，我们可以确定目录的存在状态。
 
-## 深入探讨
-在Arduino中检查文件夹是否存在是一个非常重要的步骤，特别是当我们需要从一个特定的文件夹中读取或写入数据时。通过确保文件夹存在，我们可以避免程序出错，提高代码的可靠性。
+## 深入了解
 
-`exists()`函数还可以用来检查文件是否存在。如果我们要检查一个特定的文件是否存在，只需将文件的路径传递给`exists()`函数即可。
+除了检查目录是否存在，我们还可以通过将目录名作为参数传递给`SD.exists()`函数来检查子目录是否存在。例如，我们可以使用`SD.exists("/photos/travel")`来检查“photos”目录中是否有名为“travel”的子目录。
+
+此外，我们还可以使用`SD.cwd()`函数来获取当前工作目录的路径，并使用`SD.chdir()`函数来更改当前工作目录。这些函数对于在程序中管理目录结构非常有用。
 
 ## 参考链接
-- [Arduino File Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [How to use exists() function in Arduino](https://maker.pro/arduino/tutorial/arduino-exists-function-usage)
-- [Arduino: Checking if a File or Directory Exists](https://techtutorialsx.com/2016/05/01/arduino-how-to-check-if-a-file-or-directory-exists/)
+
+- [Arduino官方文档：SD.exists()函数](https://www.arduino.cc/en/Reference/SDexists)
+- [Arduino官方文档：SD.cwd()函数](https://www.arduino.cc/en/Reference/SDcwd)
+- [Arduino官方文档：SD.chdir()函数](https://www.arduino.cc/en/Reference/SDchdir)

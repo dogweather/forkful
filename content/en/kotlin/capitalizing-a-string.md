@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Kotlin recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,48 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Capitalizing a string is a common task in programming, especially when dealing with user input or data from external sources. It involves changing the first letter of a sentence or word from lowercase to uppercase, following proper capitalization rules.
+Capitalizing a string in a program is a common task, especially when dealing with user input or data manipulation. By capitalizing a string, you can ensure consistency in your output and make it more readable for users.
 
 ## How To
 
-To capitalize a string in Kotlin, we first need to create a function that takes in a string as a parameter. Within this function, we will use a built-in method called `capitalize()` to capitalize the first letter of the string.
+Capitalizing a string in Kotlin is a simple process. Here's an example of how you can do it:
 
 ```
-Kotlin
-fun capitalizeString(str: String): String {
-    return str.capitalize()
-}
-
-println(capitalizeString("kotlin is awesome"))
-
-Output: Kotlin is awesome
+val name = "jessica"
+println(name.capitalize()) // Output: Jessica
 ```
 
-We can also convert an entire sentence by splitting it into a list of words, capitalizing the first letter of each word, and then joining the list back into a string.
+In the above code, the `capitalize()` function is used to capitalize the first letter of the string. This is a built-in function in Kotlin that can be applied to any string variable.
+
+If you want to capitalize every word in a string, you can use the `capitalizeWords()` function, like this:
 
 ```
-Kotlin
-fun capitalizeString(str: String): String {
-    val words = str.split(" ")
-    val capitalizedWords = words.map { it.capitalize() }
-    return capitalizedWords.joinToString(" ")
-}
+val sentence = "my favorite color is blue"
+println(sentence.capitalizeWords()) // Output: My Favorite Color Is Blue
+```
 
-println(capitalizeString("kotlin is awesome"))
+The `capitalizeWords()` function is not a built-in function, so you'll need to create your own extension function for it. You can do this by adding the following code to your program:
 
-Output: Kotlin Is Awesome
+```
+fun String.capitalizeWords(): String = split(" ").map { it.capitalize() }.joinToString(" ")
+```
+
+You can also use the `toUpperCase()` function to capitalize the entire string, regardless of the original casing, like this:
+
+```
+val word = "hello"
+println(word.toUpperCase()) // Output: HELLO
 ```
 
 ## Deep Dive
 
-The `capitalize()` method in Kotlin uses the rules of the English language, where the first letter after a period, question mark, or exclamation mark is automatically capitalized. It also takes into consideration words that are already capitalized, such as proper nouns, and leaves them as is.
+Kotlin has several useful built-in string functions that can help with capitalization. Here are some of the most commonly used ones:
 
-However, it is important to note that this method may not work correctly for all languages or specific cases. For example, words with accent marks or non-English characters may not be capitalized correctly. In such cases, it may be necessary to create a custom function or use a library specifically designed for the language or use case.
+- `capitalize()` - Capitalizes the first letter of the string
+- `decapitalize()` - Converts the first letter of the string to lowercase
+- `toUpperCase()` - Converts all characters in the string to uppercase
+- `toLowerCase()` - Converts all characters in the string to lowercase
+- `capitalizeWords()` - Capitalizes the first letter of every word in the string
+
+Additionally, as shown in the `capitalizeWords()` example earlier, you can create your own extension functions to make your code more concise and reusable.
+
+When dealing with strings, it's important to keep in mind the difference between `capitalize()` and `toUpperCase()` functions. The `capitalize()` function only capitalizes the first letter while the `toUpperCase()` function capitalizes all letters, even if they were originally uppercase.
 
 ## See Also
 
-If you want to dive deeper into capitalizing strings in Kotlin, check out the official Kotlin documentation on String Manipulation and explore other methods and functions that can help with formatting and modifying strings.
-
-- [Official Kotlin Documentation for String Manipulation](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-- [Kotlin Standard Library - String Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
-- [Kotlin String Capitalization Example](https://www.baeldung.com/kotlin/string-capitalization)
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
+- [Kotlin Official Website](https://kotlinlang.org/)

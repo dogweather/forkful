@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Calcolo di una data nel futuro o nel passato."
-simple_title:         "Calcolo di una data nel futuro o nel passato."
+title:                "Calcolare una data nel futuro o nel passato."
+html_title:           "Rust: Calcolare una data nel futuro o nel passato."
+simple_title:         "Calcolare una data nel futuro o nel passato."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,28 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile in molte situazioni di programmazione. Ad esempio, si potrebbe voler calcolare la data di scadenza di un contratto o il giorno in cui si compiono un certo numero di anni. In questo post scopriremo come farlo utilizzando il linguaggio di programmazione Rust.
+Calcolare una data nel futuro o nel passato può essere utile in numerose situazioni, come ad esempio per la gestione di eventi o per la generazione di report.
 
-## Come Fare
+## Come fare
 
-Per calcolare una data nel futuro o nel passato con Rust, dobbiamo prima importare la libreria `chrono`, che ci permette di manipolare le date in modo semplice e completo. Vediamo un esempio pratico:
+Per calcolare una data nel futuro o nel passato in Rust, è possibile utilizzare il modulo `chrono`, che offre diverse funzioni e strutture dati per la gestione del tempo e delle date.
+
+Per prima cosa, è necessario importare il modulo `chrono` nel proprio codice:
 
 ```Rust
-use chrono::{Utc, Duration};
-
-let today = Utc::today(); // prende la data odierna
-let future = today + Duration::days(14); // calcola la data di 14 giorni nel futuro
-let past = today - Duration::weeks(3); // calcola la data di 3 settimane nel passato
+use chrono::{DateTime, Datelike, Duration, Local};
 ```
 
-In questo semplice codice, utilizziamo la struttura `Duration` per specificare quanti giorni o settimane vogliamo aggiungere o sottrarre dalla data odierna. Possiamo anche specificare altri unità di tempo come ore, minuti e secondi. Una volta calcolata la nuova data, possiamo utilizzarla come meglio preferiamo nel nostro programma.
+Per calcolare una data nel futuro, si può utilizzare la funzione `+` per aggiungere una determinata durata ad una data esistente. Ad esempio, per calcolare la data di domani:
 
-## Approfondimento
+```Rust
+let today = Local::today();
+let tomorrow = today + Duration::days(1);
+println!("Domani sarà il {}", tomorrow);
+```
 
-La libreria `chrono` di Rust offre molte altre funzionalità per manipolare le date. Ad esempio, possiamo creare una data specifica utilizzando la struttura `Date` oppure ottenere l'ora corrente con la struttura `Time`. Inoltre, possiamo formattare le date con diversi stili e zone orarie. Per ulteriori informazioni, ti consiglio di leggere la documentazione ufficiale della libreria.
+In questo esempio, abbiamo utilizzato la funzione `Local::today()` per ottenere la data di oggi, e la funzione `Duration::days()` per creare una durata di un giorno.
 
-## Vedi Anche
+Per calcolare una data nel passato, si può invece utilizzare la funzione `-` per sottrarre una durata ad una data esistente. Ad esempio, per calcolare la data di ieri:
 
-- [Documentazione ufficiale di Chrono](https://docs.rs/chrono/0.4.19/chrono/)
-- [Corso su Rust su Udemy (in italiano)](https://www.udemy.com/course/programmare-con-rust/)
-- [Tutorial per principianti su Rust (in italiano)](https://www.tutorialspoint.com/rtutorial/index.htm)
+```Rust
+let today = Local::today();
+let yesterday = today - Duration::days(1);
+println!("Ieri è stato il {}", yesterday);
+```
+
+Esistono anche altre funzioni utili per gestire le date, come ad esempio `DateTime::parse_from_str()` per convertire una stringa in una data, o `DateTime::format()` per formattare una data in una stringa secondo uno specifico formato.
+
+## Approfondimenti
+
+Calcolare una data nel futuro o nel passato può essere più complesso di quanto sembra, poiché bisogna considerare eventi come l'ora legale, fusi orari e i giorni bisestili. A tal proposito, il modulo `chrono` offre diverse strutture dati, come `TimeZone` e `NaiveDate`, per gestire in modo accurato le date e i tempi.
+
+Per ulteriori informazioni sul modulo `chrono` e sulle sue funzionalità, si consiglia di consultare la documentazione ufficiale su [https://docs.rs/chrono](https://docs.rs/chrono) o di visitare la pagina GitHub del progetto su [https://github.com/chronotope/chrono](https://github.com/chronotope/chrono).
+
+## Vedi anche
+
+- [Gestione delle date e del tempo in Rust](https://www.rust-lang.org/it/learn/dates-and-times)
+- [Tutorial su chrono](https://stevedonovan.github.io/rust-gentle-intro/6-dates-and-times.html)
+- [Timestamp e gestione della data in Rust](https://hackernoon.com/rust-exploring-timestamps-and-manipulating-dates-35c9b969c248)

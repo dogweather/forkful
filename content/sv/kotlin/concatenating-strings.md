@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Sammanslagning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Kotlin: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,54 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att sammanfoga strängar är en vanlig operation i många programmeringsspråk, inklusive Kotlin. Det används för att kombinera flera strängar till en enda lång sträng, vilket kan vara användbart för att skapa dynamisk text i en applikation, såsom meddelanden eller rapporter.
+# Varför
 
-## Hur man gör det
-Det finns flera sätt att sammanfoga strängar i Kotlin, och jag ska visa dig här några av dem med hjälp av kodexempel och utmatningar.
+Att kunna konkaternera strängar är en viktig del av att skriva effektiv kod. Det kan hjälpa till att göra din kod lättläslig och mer organiserad.
 
-Först kan vi använda operatorn `+` för att kombinera två eller flera strängar.
+# Så här
+
+Det finns flera sätt att konkaternera strängar i Kotlin, beroende på dina specifika behov.
+
+Först och främst kan du använda tecknet `+` för att enkelt lägga till en sträng till en annan. Till exempel:
 
 ```Kotlin
 val förnamn = "Anna"
-val efternamn = "Andersson"
-val fullständigtNamn = förnamn + efternamn
-println(fullständigtNamn)
+val efternamn = "Svensson"
+val fullständigtNamn = förnamn + " " + efternamn
+
+println(fullständigtNamn) // Skriver ut "Anna Svensson"
 ```
 
-Utmatning: `Anna Andersson`
-
-Vi kan också använda funktionsmetoden `plus()` för att sammanfoga strängar.
+Du kan också använda `+=` operatorn för att lägga till en sträng på slutet av en befintlig sträng. Till exempel:
 
 ```Kotlin
-val nummer1 = "10"
-val nummer2 = "20"
-val summa = nummer1.plus(nummer2)
-println(summa)
+var mening = "Jag gillar att"
+mening += " läsa böcker."
+
+println(mening) // Skriver ut "Jag gillar att läsa böcker."
 ```
 
-Utmatning: `1020`
-
-Det finns också en mer effektiv metod för att sammanfoga många strängar, och det är genom att använda `StringBuilder` -klassen.
+Om du behöver kombinera flera strängar i en lista kan du använda funktionen `joinToString`. Denna funktion tar en separatteckenparameter (som standard är det ett mellanslag) och slår ihop alla elementen i listan till en enda sträng. Till exempel:
 
 ```Kotlin
-val livsfilosofier = arrayOf("Carpe", "Diem", "Leva", "Livet")
-val byggherre = StringBuilder()
-for (livsfilosofi in livsfilosofier) {
-    byggherre.append(livsfilosofi)
-}
-val mening = byggherre.toString()
-println(mening)
+val frukter = listOf("äpple", "banan", "citron")
+val fruktsallad = frukter.joinToString(" och ")
+
+println(fruktsallad) // Skriver ut "äpple och banan och citron"
 ```
 
-Utmatning: `CarpeDiemLevaLivet`
+# Djupdykning
 
-## Djupdykning
-Det är viktigt att notera att i Kotlin är strängar oföränderliga, vilket betyder att när en sträng har skapats kan den inte ändras. Därför kommer varje manipulation av en sträng att skapa en ny sträng istället för att ändra den befintliga strängen. Detta är anledningen till varför `StringBuilder` används för att sammanfoga många strängar, eftersom den kan bygga upp en sträng genom att lägga till delar utan att skapa en ny sträng varje gång.
+Om du vill vara mer effektiv med att konkaternera strängar, kan du använda `StringBuilder` klassen. Detta är en specialiserad klass för att bygga och manipulera strängar. Exempel på användning av `StringBuilder` är:
 
-En annan intressant sak att notera är att vid sammanfogning av icke-String-objekt till en sträng, kommer objektets `toString()` -metod att anropas automatiskt.
+```Kotlin
+val minText = StringBuilder("Hej")
 
-## Se även
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-- [Kotlin StringBuilder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string-builder/index.html)
-- [Java StringBuilder vs String Concatenation Performance](https://webtechie.be/post/2019-02-03-java-stringbuilder-vs-string-concatenation-performance/)
+minText.append(" på dig!") // Lägger till " på dig!" på slutet av strängen
+minText.insert(3, " där") // Infogar "där" på index 3 (vilket blir "Här på dig!")
+
+println(minText) // Skriver ut "Här på dig!"
+```
+
+Det är också viktigt att använda sig av string templates när du konkaternerar värden i en sträng. Med string templates kan du enkelt infoga variabler eller uttryck inuti en sträng utan att behöva använda `+` eller `+=` operatorn. Till exempel:
+
+```Kotlin
+val vikt = 56
+val längd = 167
+
+println("Min vikt är $vikt kg och min längd är $längd cm.") // Skriver ut "Min vikt är 56 kg och min längd är 167 cm."
+```
+
+# Se även
+
+- [Kotlin String Reference](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
+- [Kotlin String Templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)

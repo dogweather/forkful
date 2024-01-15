@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Fish Shell: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,46 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Znajdowanie długości ciągu znaków jest ważnym aspektem programowania. Może to być przydatne do sprawdzania poprawności wprowadzanych danych, tworzenia pętli lub podczas manipulacji tekstem. W tym artykule opowiemy o tym, jak znaleźć długość ciągu znaków w języku Fish Shell.
+Czy zastanawiałeś się kiedykolwiek, jak możesz znaleźć długość ciągu znaków w Fish Shell? Może chcesz sprawdzić, czy wprowadzona przez użytkownika wartość nie jest za długa lub po prostu chcesz policzyć ilość znaków w swoim tekście. W tym artykule pokażę Ci, jak to zrobić w prosty sposób.
 
 ## Jak to zrobić
 
-Aby znaleźć długość ciągu znaków w języku Fish Shell, musimy skorzystać z wbudowanej funkcji `string length`, która zwraca liczbę znaków w podanym ciągu. Przykładowe użycie tej funkcji wygląda następująco:
-
+```Fish Shell
+set string "Przykładowy ciąg znaków"
+echo (string | wc -m)
 ```
-Fish Shell> string length "Hello World"
-11
-```
+Output:
+`24`
 
-Jak widać, funkcja zwróciła liczbę 11, co jest dokładną długością naszego ciągu znaków "Hello World". Możemy także wykorzystać zmienną reprezentującą ciąg znaków, a nie podawać go bezpośrednio w funkcji. Na przykład:
-
-```
-Fish Shell> set greeting "Cześć!"
-Fish Shell> string length $greeting
-6
-```
-
-W ten sposób możemy w łatwy sposób znaleźć długość dowolnego ciągu znaków w języku Fish Shell.
+Powyższy kod wykorzystuje wbudowane polecenie `wc`, które liczy ilość znaków w podanym ciągu lub pliku. Aby uzyskać długość ciągu, należy przekierować go do `wc` za pomocą operatora `|` i wykorzystać flagę `-m`, która oznacza wyświetlenie tylko liczby znaków. Następnie wykorzystujemy polecenie `echo` do wyświetlenia wyniku.
 
 ## Deep Dive
 
-W języku Fish Shell możemy także wykorzystać efektywne i krótkie odwołania do elementów znajdujących się w naszym ciągu znaków. Na przykład, aby otrzymać ostatni znak w ciągu, możemy wykorzystać składnię `[-1]`, jak w przypadku poniższego przykładu:
+Jeśli chcesz dowiedzieć się więcej o tym temacie, warto poznać inne flagi dostępne w poleceniu `wc`. Flagi te umożliwiają np. liczenie słów (`-w`) lub linii (`-l`). Możesz również zapoznać się z dodatkowymi opcjami wyświetlania wyników lub różnymi sposobami przekierowania danych do `wc`. Nauka o tych możliwościach może pomóc Ci w lepszym wykorzystaniu tego polecenia w przyszłości.
 
-```
-Fish Shell> set word "Dzień dobry!"
-Fish Shell> echo $word[-1]
-!
-```
+## Zobacz także
 
-Podobnie, aby otrzymać pierwszy znak, możemy skorzystać z `[1]`:
-
-```
-Fish Shell> echo $word[1]
-D
-```
-
-W ten sposób możemy łatwo przeglądać i manipulować znakami w naszym ciągu znaków.
-
-## Zobacz też
-- [Dokumentacja języka Fish Shell](https://fishshell.com/docs/current/)
-- [Przydatne komendy w języku Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Przewodnik po podstawowych poleceniach w Fish Shell](https://devhints.io/fish)

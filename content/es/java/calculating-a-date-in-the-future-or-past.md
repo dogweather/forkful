@@ -1,5 +1,6 @@
 ---
-title:                "Java: Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Java: Calculando una fecha en el futuro o pasado"
 simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Java"
 category:             "Java"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular fechas en el futuro o pasado?
+## Por qué
 
-Calcular fechas en el futuro o pasado puede ser útil en una variedad de situaciones de programación, como por ejemplo para planificar eventos, realizar proyecciones o simplemente para obtener información precisa.
+Calcular una fecha en el futuro o en el pasado puede ser útil para realizar tareas como planificar eventos, realizar seguimiento de plazos o calcular la edad de una persona en una fecha determinada.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o pasado en Java, podemos utilizar la clase `LocalDate` de la biblioteca estándar `java.time`. Primero, debemos importar la clase en nuestro código:
+Para calcular una fecha en Java, primero se debe utilizar la clase `LocalDate` del paquete `java.time`. A continuación, se pueden utilizar diferentes métodos para manipular la fecha, como `plusDays()` para sumar días, `plusMonths()` para sumar meses o `plusYears()` para sumar años.
 
 ```Java
+// Importar la clase LocalDate
 import java.time.LocalDate;
-```
 
-A continuación, podemos crear un objeto `LocalDate` con la fecha actual utilizando el método `now()` y luego utilizar el método `plusDays()` o `minusDays()` para agregar o restar días, respectivamente. Por ejemplo, si queremos calcular la fecha dentro de dos semanas en el futuro, podemos hacer lo siguiente:
+// Crear una fecha de ejemplo
+LocalDate fecha = LocalDate.of(2020, 10, 15);
 
-```Java
+// Sumar 5 días a la fecha
+LocalDate fechaFutura = fecha.plusDays(5); // Resultado: 2020-10-20
+
+// Restar 2 meses a la fecha
+LocalDate fechaPasada = fecha.minusMonths(2); // Resultado: 2020-08-15
+
+// Calcular la edad en una fecha determinada
+LocalDate fechaNacimiento = LocalDate.of(1990, 5, 25);
 LocalDate fechaActual = LocalDate.now();
-LocalDate fechaFutura = fechaActual.plusDays(14);
+int edad = fechaNacimiento.until(fechaActual).getYears(); // Resultado: 30
 ```
 
-También podemos utilizar métodos como `plusMonths()`, `plusYears()` o incluso `plus()` para calcular fechas en el futuro o pasado en meses o años. Para obtener la fecha como una cadena de texto en un formato específico, podemos utilizar el método `format()`. Por ejemplo:
+## Profundizando
 
-```Java
-String fechaFormateada = fechaFutura.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-System.out.println(fechaFormateada); // Output: 16/08/2021
-```
+Java ofrece varias clases y métodos para trabajar con fechas y realizar cálculos. Algunas de las clases más importantes son `LocalDate`, `LocalDateTime` y `ZonedDateTime`. Además, se pueden utilizar métodos como `until()` para obtener la diferencia entre dos fechas, `isBefore()` y `isAfter()` para comparar fechas, y `get()` para obtener valores específicos como el día o el mes.
 
-## Profundizando en el tema
-
-Además de los métodos mencionados anteriormente, la clase `LocalDate` nos ofrece muchas otras opciones para calcular fechas en el futuro o pasado. Por ejemplo, podemos utilizar métodos como `with()`, `minusMonths()` o `minusYears()` para modificar una fecha determinada, o utilizar `isBefore()` y `isAfter()` para comparar fechas.
-
-También podemos realizar cálculos más complejos, como calcular la cantidad de días entre dos fechas, utilizando el método `until()`. Todo esto y más se puede encontrar en la documentación oficial de la clase `LocalDate`.
+Es importante tener en cuenta que las fechas en Java son inmutables, lo que significa que no se pueden modificar directamente. En su lugar, se deben crear nuevas instancias con los valores deseados.
 
 ## Ver también
 
-- [Documentación oficial de LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial de JavaFX: cómo manejar fechas con LocalDate](https://code.makery.ch/library/javafx-tutorial/part7/)
+- Documentación oficial de Java sobre el paquete `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Tutorial de Baeldung sobre cómo trabajar con fechas en Java: https://www.baeldung.com/java-date-time
+- Ejemplos de código para calcular fechas en Java: https://www.baeldung.com/java-math-dates

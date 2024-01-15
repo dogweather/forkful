@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Ett utdrag av delsträngar"
-simple_title:         "Ett utdrag av delsträngar"
+title:                "Extrahering av delsträngar"
+html_title:           "TypeScript: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,47 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att extrahera substrängar är en vanlig uppgift inom programmering när man behöver manipulera och bearbeta textsträngar. Det kan vara användbart när man vill hitta specifika ord eller tecken i en längre text och utföra åtgärder baserat på det.
+Är du nyfiken på hur man kan extrahera substrängar i TypeScript? Det kan hjälpa dig att manipulera textsträngar och få ut specifika delar av en sträng, vilket kan vara användbart för att till exempel bearbeta användardata eller filtrera data.
 
-## Hur man gör
+## Så här gör du
 
-För att extrahera en substräng i TypeScript kan man använda sig av metoden `substring()` på en sträng. Denna metod tar två parametrar, startindex och slutindex för den önskade substrängen.
-
-```TypeScript
-// Skapa en sträng
-let namn = "Johanna";
-
-// Extrahera en delsträng från index 2 till 5 (0-baserat)
-let delstrang = namn.substring(2, 5);
-console.log(delstrang); // Output: han
-```
-
-Om man bara anger ett startindex för `substring()` så kommer den att extrahera från det indexet till slutet av strängen. Men om man lämnar ut båda parametrarna så kommer hela strängen att returneras.
+För att extrahera substrängar i TypeScript behöver du använda en inbyggd metod som heter `substring()`. Den tar in två parametrar, startindex och slutindex, och returnerar en ny sträng med de tecken som finns mellan dessa index.
 
 ```TypeScript
-// Extrahera från index 3 till slutet av strängen
-let delstrang2 = namn.substring(3);
-console.log(delstrang2); // Output: nna
+let str = "JavaScript är ett roligt programmeringsspråk";
+
+// Extrahera "JavaScript" från strängen
+let substring = str.substring(0, 10);
+
+console.log(substring); // Output: JavaScript
 ```
 
-Man kan också använda sig av `substr()`-metoden som tar ett startindex och en längd som parametrar. Denna metod är användbar om man vet exakt hur många tecken man vill extrahera.
+Om du bara anger startindexet kommer `substring()` att extrahera alla tecken från och med det indexet till slutet av strängen.
 
 ```TypeScript
-// Extrahera 3 tecken från index 1
-let delstrang3 = namn.substr(1, 3);
-console.log(delstrang3); // Output: oha
+let str = "JavaScript är ett roligt programmeringsspråk";
+
+// Extrahera "är ett roligt programmeringsspråk" från strängen
+let substring = str.substring(11);
+
+console.log(substring); // Output: är ett roligt programmeringsspråk
 ```
 
-## Djupdykning
+Om du, istället för att använda index, vill extrahera en del av en sträng baserat på antalet tecken så kan du använda `substr()` metoden istället.
 
-En sak att tänka på när man extraherar substrängar är att indexeringen börjar på 0. Det innebär att det första tecknet i en sträng har index 0, det andra tecknet har index 1 och så vidare. Det är viktigt att ha i åtanke för att få rätt del av strängen.
+```TypeScript
+let str = "Welcome to TypeScript";
 
-Man bör också vara medveten om att `substring()` och `substr()` är båda immutabla, vilket betyder att de inte ändrar den ursprungliga strängen utan bara returnerar den nya substrängen. Om man vill ändra en sträng på plats så kan man använda sig av `slice()`-metoden som tar samma parametrar som `substring()`, men den ändrar den ursprungliga strängen.
+// Extrahera "TypeScript" från strängen
+let substring = str.substr(11, 10); // startindex: 11, antal tecken: 10
+
+console.log(substring); // Output: TypeScript
+```
+
+Du kan även använda metoden `slice()` för att extrahera substrängar i TypeScript.
+
+```TypeScript
+let str = "Hello world";
+
+// Extrahera "world" från strängen
+let substring = str.slice(6);
+
+console.log(substring); // Output: world
+```
+
+## Deep Dive
+
+Att extrahera substrängar är en vanlig användning av textsträngar i programmering. Med hjälp av `substring()`, `substr()` eller `slice()` metoder kan du välja vilka delar av en sträng som ska användas, beroende på vad som passar bäst för ditt specifika projekt.
+
+Det är också värt att nämna att strängar i TypeScript är noll-indexerade, vilket betyder att det första tecknet i en sträng har index 0. Detta kan vara viktigt att känna till när du använder de olika metoderna för att extrahera substrängar.
 
 ## Se även
 
-- [TypeScript dokumentation om substrängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-substrings)
-- [MDN webbdokumentation om substrängar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN webbdokumentation om `slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+Här är några användbara resurser för att lära dig mer om att extrahera substrängar i TypeScript:
+
+- [MDN webbdokumentation om substring()](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [stackoverflow.com - Fråga om att extrahera substrängar i TypeScript](https://stackoverflow.com/questions/55169828/how-to-extract-substring-in-typescript)
+- [TypeScript dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)

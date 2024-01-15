@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Envoi d'une requête http"
+title:                "Envoi d'une requête http"
+html_title:           "Haskell: Envoi d'une requête http"
 simple_title:         "Envoi d'une requête http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,53 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi 
 
-Les requêtes HTTP jouent un rôle crucial dans le développement d'applications Web en Haskell. Comprendre comment les utiliser efficacement vous permettra de communiquer avec des serveurs externes, d'accéder à des API et d'obtenir des données en temps réel. Dans cet article, nous allons explorer en détail les différentes façons d'envoyer une requête HTTP en Haskell.
+Si vous faites partie du monde de la programmation, vous avez probablement entendu parler de HTTP. Ce protocole est utilisé pour communiquer entre les serveurs et les navigateurs web, ce qui signifie que chaque fois que vous naviguez sur internet, vous envoyez ou recevez des requêtes HTTP. Dans cet article, nous allons voir comment envoyer une demande HTTP en utilisant Haskell et pourquoi cela pourrait être utile pour votre projet.
 
-# Comment faire
+## Comment Faire 
 
-Il existe plusieurs façons d'effectuer une requête HTTP en Haskell, mais nous allons nous concentrer sur le module `Network.HTTP.Simple`. Tout d'abord, nous devons importer le module dans notre script :
+Pour envoyer une requête HTTP en Haskell, nous allons utiliser le package `http-client`. Pour commencer, importez le module `Network.HTTP.Client` dans votre projet.
 
-```
-import Network.HTTP.Simple
-```
-
-Ensuite, nous devons créer une requête en utilisant la fonction `parseRequest` et en spécifiant l'URL de notre requête :
+Dans cet exemple, nous allons envoyer une simple demande GET à travers l'URL `https://jsonplaceholder.typicode.com/posts`. Tout d'abord, vous devez construire l'objet `Request` en utilisant la fonction `parseUrlThrow`. Cette fonction prend une URL en paramètre et renvoie une erreur si l'URL n'est pas valide. Ensuite, vous pouvez utiliser la fonction `httpLbs` pour exécuter la demande et recevoir une réponse sous forme de `Response ByteString`. La fonction `getResponseBody` extrait le corps de la réponse en tant que `ByteString`.
 
 ```
-request <- parseRequest "https://exemple.com"
+import Network.HTTP.Client
+
+main :: IO ()
+main = do
+    request <- parseUrlThrow "https://jsonplaceholder.typicode.com/posts"
+    response <- httpLbs request
+    body <- getResponseBody response
+    print body
 ```
 
-Nous pouvons également spécifier une méthode différente de `GET`, par exemple `POST` :
+Si vous exécutez ce code, vous devriez voir le corps de la réponse imprimé dans la console.
 
 ```
-request <- setRequestMethod "POST" <$> parseRequest "https://exemple.com"
+"{\"userId\": 1,\"id\": 1,\"title\": \"sunt aut facere repellat..."
 ```
 
-Ensuite, nous pouvons ajouter des paramètres à notre requête en utilisant la fonction `setRequestQueryString`. Par exemple, si nous voulons ajouter un paramètre "api_key" avec la valeur "12345", nous pouvons le faire ainsi :
+Bien sûr, vous pouvez également envoyer des paramètres avec votre demande en utilisant la fonction `setQueryString` sur l'objet `Request`. Cela peut être utile si vous devez passer des données à travers l'URL.
 
 ```
-request <- setRequestQueryString [("api_key", Just "12345")] <$> parseRequest "https://exemple.com"
+main :: IO ()
+main = do
+    request <- parseUrlThrow "https://jsonplaceholder.typicode.com/posts"
+    let requestWithParams = setQueryString [("userId", Just "1")]
+    response <- httpLbs requestWithParams
+    body <- getResponseBody response
+    print body
 ```
 
-Enfin, pour envoyer notre requête, nous pouvons utiliser la fonction `httpLBS` qui renvoie une réponse de type `Response ByteString` :
+Dans l'exemple ci-dessus, nous avons ajouté un paramètre "userId" avec la valeur "1" à notre demande GET. Le corps de la réponse devrait maintenant être filtré pour inclure uniquement les publications de l'utilisateur avec l'ID 1.
 
 ```
-response <- httpLBS request
+[{"userId": 1,"id": 1,"title": "sunt aut facere repellat..."...]
 ```
 
-Nous pouvons alors accéder aux données de la réponse comme son code de statut ou son corps à l'aide des fonctions `getResponseStatus` et `getResponseBody`.
+Vous pouvez également envoyer des demandes POST, PUT ou DELETE en utilisant les fonctions `httpNoBody`, `httpNoBody_` et `httpJSON`. Vérifiez la documentation pour en savoir plus sur ces fonctions et sur la façon de manipuler les réponses.
 
-# Plongée en profondeur
+## Plongée en Profondeur 
 
-Le module `Network.HTTP.Simple` fournit également d'autres fonctions utiles pour gérer les requêtes HTTP. Par exemple, la fonction `httpJSON` permet d'envoyer une requête et de récupérer automatiquement les données sous forme de JSON, en utilisant le type de données `FromJSON` de la bibliothèque `aeson`.
+Pour comprendre comment nos demandes sont traitées, il est utile de comprendre la structure de base d'une demande HTTP. Une demande HTTP est composée d'une ligne de requête, des en-têtes (headers) et du corps (body) en option. La ligne de requête contient la méthode de la demande (GET, POST, etc.), l'URI et la version de HTTP. Les en-têtes contiennent des informations supplémentaires sur la demande, telles que les en-têtes Accept et Content-Type. Le corps contient les données à envoyer avec la demande, généralement utilisées pour les demandes POST et PUT.
 
-Il existe également d'autres modules tels que `Network.HTTP.Client` et `Network.HTTP.Conduit` qui peuvent être utilisés pour une gestion plus avancée des requêtes, notamment pour gérer les connexions persistantes ou les requêtes asynchrones.
+Lorsque vous utilisez `http-client` en Haskell, l'objet `Request` représente la ligne de requête. Vous pouvez ajouter des en-têtes et un corps à votre demande en utilisant les fonctions `setRequestHeaders` et `setRequestBody`. Ces fonctions prennent respectivement une liste d'en-têtes et un `RequestBody` comme arguments.
 
-Enfin, il est important de noter que ces fonctionnalités peuvent également être utilisées pour effectuer des requêtes HTTPS sécurisées en utilisant le module `Network.HTTP.Client.TLS`.
+Le `RequestBody` peut être un simple `ByteString` ou un `RequestBodyStream`, qui est essentiellement un flux continu de données. Par exemple, vous pouvez utiliser un `RequestBodyStream` pour envoyer progressivement des données à un serveur en streaming, plutôt que de tout envoyer en une seule fois.
 
-# Voir aussi
-
-- Documentation du module `Network.HTTP.Simple` : https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html
-- Tutoriel sur les requêtes HTTP en Haskell : https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20HTTP%20Client
+Pour recevoir une réponse, vous utilisez l'objet `Response`. Celui-ci contient la ligne de status, les en-têtes et le corps de la réponse. Vous pouvez extraire le corps en utilisant la fonction `getResponseBody`, mais il est important de noter que cette fonction va évaluer le contenu de la réponse entière en

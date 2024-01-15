@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "C# recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "C#"
 category:             "C#"
@@ -10,66 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-If you're new to programming, chances are you've come across the term "CSV" before. But what exactly is it, and why would you want to work with it? CSV stands for "Comma Separated Values" and is a file format used for organizing and storing tabular data. It's commonly used in various fields, such as finance, marketing, and data analysis. In this blog post, we will explore the world of CSV files and why you might want to work with them in your programming projects.
+If you've ever worked with large amounts of data, chances are you've encountered CSV (Comma-Separated Values) files. These files are a popular way of storing data in a tabular format and can be easily manipulated using C#.
 
 ## How To
-
-To start working with CSV files in C#, we first need to understand the basic structure of a CSV file. Essentially, a CSV file is a plain text file that contains rows and columns of data, separated by commas (hence the name). Each row represents a data entry and each column represents a specific attribute or data point. For example, a CSV file that contains a list of products and their prices might look like this:
+To begin working with CSV in C#, the first step is to include the `System.IO` namespace in your code. Next, you'll need to use the `StreamReader` class to read the CSV file and the `StreamWriter` class to write data to a CSV file. Here's an example of how to read data from a CSV file and output it to the console:
 
 ```
-Product Name, Price
-T-shirt, $20
-Jeans, $40
-Sneakers, $50
-```
+using System;
+using System.IO;
 
-Now let's see how we can read, write, and manipulate CSV files in C#.
+//Read CSV file
+var reader = new StreamReader("data.csv");
 
-### Reading a CSV File
+//Create and open StreamWriter
+var writer = new StreamWriter("output.csv");
 
-To read a CSV file in C#, we can use the built-in `StreamReader` class. Here's an example:
-
-```C#
-using (StreamReader reader = new StreamReader("products.csv"))
+//Read until end of file
+while (!reader.EndOfStream)
 {
-     while (!reader.EndOfStream)
-     {
-          var line = reader.ReadLine();
-          var values = line.Split(',');
-          Console.WriteLine("Product Name: " + values[0] + " Price: " + values[1]);
-     }
+    //Read line and split by comma
+    var line = reader.ReadLine().Split(',');
+    
+    //Write data to console
+    Console.WriteLine($"Value 1: {line[0]}, Value 2: {line[1]}");
+    
+    //Write data to output file
+    writer.WriteLine($"Value 1: {line[0]}, Value 2: {line[1]}");
 }
+
+//Close StreamReader and StreamWriter
+reader.Close();
+writer.Close();
 ```
 
-We first create a `StreamReader` object and pass in the name of our CSV file. Then, we use a `while` loop to loop through each line of the file until we reach the end. We then split each line by the comma and access the values using their corresponding indices. Finally, we can use this data however we want, in this case, we simply print it to the console.
-
-### Writing to a CSV File
-
-To write to a CSV file, we can use the `StreamWriter` class. Here's an example:
-
-```C#
-using (StreamWriter writer = new StreamWriter("new_products.csv"))
-{
-     writer.WriteLine("Product Name, Price");
-     writer.WriteLine("Hoodie, $35");
-     writer.WriteLine("Sunglasses, $25");
-     writer.WriteLine("Hat, $12");
-}
+### Sample Output
 ```
-
-We first create a `StreamWriter` object and pass in the name of our new CSV file. Then, we use the `WriteLine` method to write each line of data to the file. It's important to note that when writing to a CSV file, we need to include the column headings ourselves.
-
-### Manipulating CSV Data
-
-One of the great things about working with CSV files in C# is that we have access to various libraries and packages that make data manipulation much easier. For example, we could use the popular "CsvHelper" package to easily read and write CSV files, as well as perform more advanced tasks such as mapping CSV data to objects.
+Value 1: John, Value 2: Smith
+Value 1: Jane, Value 2: Doe
+```
 
 ## Deep Dive
+Working with CSV files in C# is relatively straightforward, but there are a few things to keep in mind. One important thing to note is that CSV files are typically exported from other programs and may contain different types of data, such as strings, integers, or dates. Therefore, it's important to properly parse the data before using it in your code. Additionally, consider using a library such as `CsvHelper` for easier manipulation and handling of CSV files.
 
-While CSV files may seem simple, there are some important considerations to keep in mind when working with them. One of the key factors is data formatting - when using CSV files, we need to be extra careful with data formatting to ensure accurate results. For example, we need to make sure all values are properly quoted and escaped to avoid any issues with comma or new line characters. Additionally, it's important to handle errors and exceptions when reading and writing to CSV files, as well as properly closing the file after use.
+Another tip for working with CSV files is to ensure that your delimiter is consistent. While most CSV files use a comma as the delimiter, some may use a tab or semicolon. This can cause issues when reading or writing data, so it's important to specify the delimiter when working with CSV files.
 
 ## See Also
-
-- [Reading and Writing CSV Files in C#](https://www.c-sharpcorner.com/article/reading-and-writing-csv-files-using-C-Sharp/)
-- [Manipulating CSV Files in C# with CsvHelper](https://www.codeproject.com/Tips/1039364/Manipulate-CSV-data-with-Csharp)
-- [Working with Tabular Data in C#](https://medium.com/free-code-camp/working-with-tabular-data-in-c-7ac7a2f27a8d)
+- [Microsoft Docs: CSV Files](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-read-and-write-to-a-newly-created-data-file)
+- [C# Corner: Working with CSV Files in C#](https://www.c-sharpcorner.com/article/working-with-csv-files-in-C-Sharp/)
+- [CsvHelper Library](https://joshclose.github.io/CsvHelper/)

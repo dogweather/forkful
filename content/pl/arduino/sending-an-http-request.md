@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,81 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach coraz więcej urządzeń komunikuje się za pomocą protokołu HTTP. Oznacza to, że urządzenia takie jak Arduino mogą wysyłać zapytania i pobierać dane z Internetu. W tym artykule dowiesz się, jak wysyłać zapytania HTTP za pomocą Arduino.
+Wysyłanie żądania HTTP jest niezbędnym elementem programowania Arduino. Jest to sposób na komunikację z Internetem, co umożliwia urządzeniu wykonywanie różnych zadań, takich jak pobieranie danych, aktualizacja oprogramowania i wiele więcej.
 
 ## Jak to zrobić
 
-Cały proces wysyłania zapytania HTTP za pomocą Arduino jest prosty i wymaga tylko kilku linii kodu. Pierwszym krokiem jest zdefiniowanie adresu URL, do którego chcemy wysłać zapytanie. Następnie musimy utworzyć obiekt klienta HTTP i użyć funkcji "GET" lub "PUT", w zależności od tego, czy chcemy pobierać dane czy też wysyłać je na serwer. Na koniec musimy wywołać funkcję "readString", która wyświetli odpowiedź od serwera.
+Aby wysłać żądanie HTTP za pomocą Arduino, potrzebujemy biblioteki "WiFiClient.h". W celu ułatwienia, pobierzmy ją z menedżera bibliotek w Arduino IDE. Następnie skorzystajmy z poniższego kodu:
 
-```Arduino
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
+```arduino
+#include <WiFi.h>
  
 const char* ssid = "nazwa_sieci";
 const char* password = "hasło_sieci";
  
-const char* host = "adres_URL";
- 
 void setup() {
   Serial.begin(115200);
-  Serial.println();
-  Serial.print("Łączenie z ");
-  Serial.println(ssid);
+  delay(1000);
+  Serial.println("Łączenie z siecią WiFi...");
  
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+    delay(1000);
+    Serial.println("Nie można połączyć się z siecią WiFi!");
   }
-  Serial.println("");
-  Serial.println("Połączono z siecią Wi-Fi");
+ 
+  Serial.println("Połączono z siecią WiFi!");
 }
  
 void loop() {
   WiFiClient client;
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("Nie można połączyć z serwerem HTTP");
-    return;
-  }
-  
-  client.print("GET / HTTP/1.1\r\n");
-  client.print("Host: ");
-  client.println(host);
-  client.println("Connection: close");
-  client.println();
  
-  while (client.connected()) {
-    String line = client.readStringUntil('\n');
-    if (line == "\r") {
-      Serial.println("Wysłano zapytanie");
-      break;
-    }
+  if (client.connect("www.example.com", 80)) {
+    Serial.println("Połączono z serwerem!");
+    client.println("GET / HTTP/1.0");
+    client.println();
   }
-  String line = client.readStringUntil('\n');
-  Serial.println("Odpowiedź serwera:");
-  Serial.println(line);
-  Serial.println("Rozłączono");
  
+  while (client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+ 
+  client.stop();
   delay(5000);
 }
 ```
 
-Po uruchomieniu tego kodu Arduino będzie wysyłał zapytanie do podanego adresu URL i wyświetlał odpowiedź od serwera w monitorze szeregowym.
+Kod ten pozwala Arduino na połączenie się z naszą siecią WiFi oraz z serwerem, na którym będzie wysyłane żądanie. Następnie za pomocą funkcji "print" wysyłamy żądanie GET na stronie "www.example.com". W odpowiedzi na to otrzymujemy kod źródłowy strony, który możemy przetworzyć lub wyświetlić na serial monitorze.
 
-## Pogłębiona analiza
+## Głębszy zanurzenie
 
-Wysyłanie zapytania HTTP nie jest trudnym zadaniem, ale warto poznać kilka ważnych aspektów, aby uniknąć problemów podczas programowania.
+Wysyłanie żądań HTTP za pomocą Arduino może wymagać dodatkowych informacji. Na przykład, jeśli chcemy wysłać żądanie do strony wymagającej uwierzytelnienia, będziemy musieli dodać nagłówek z naszymi danymi logowania.
 
-Po pierwsze, należy pamiętać o użyciu odpowiedniej biblioteki zależnie od wersji Arduino, którą się posiada. W naszym przykładzie używamy biblioteki "ESP8266WiFi" dla modułu ESP8266. W przypadku innych wersji Arduino, należy wybrać odpowiednią bibliotekę.
+```arduino
+client.println("Authorization: Basic dXNlcjpwYXNzd29yZA=="); // Dane logowania (login:password) w formacie Base64
+```
 
-Kolejnym ważnym aspektem jest umiejętne budowanie adresu URL. Musi on zawierać protokół (http lub https), a także pełną ścieżkę dostępu do zasobu, na przykład "/index.html".
+Możemy również modyfikować żądania, zmieniając metody, dodając nagłówki lub ciało żądania. Warto również zwrócić uwagę na odpowiedź serwera, ponieważ może zawierać ważne informacje lub błędy.
 
-Ostatnim, ale bardzo ważnym aspektem jest analiza odpowiedzi serwera. Zwykle serwery wysyłają odpowiedź w wielu liniach, a ostatnia linia zakończona jest pustym wierszem. Należy więc użyć funkcji "readStringUntil('\n')" do odczytania całej odpowiedzi serwera.
+## Zobacz także
 
-## Zobacz również
-
-- [Dokumentacja ESP8266WiFi](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
-- [Lista bibliotek ESP8266](https://github.com/esp8266/Arduino#installing-with-boards-manager)
-- [HTTP Requests w Arduino używając biblioteki ESP8266WiFi](https://circuits4you.com/2018/02/21/
+- [Dokumentacja WiFiClient](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Arduino - Wprowadzenie do Internetu](https://www.arduino.cc/en/Guide/ArduinoWiFi101)
+- [Biblioteka WiFiClient](https://www.arduino.cc/en/Reference/WiFiClientConstructor)

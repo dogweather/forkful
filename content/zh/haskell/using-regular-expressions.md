@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 请注意，请勿包含任何评论或罗马化的标题使用正则表达式"
-simple_title:         "请注意，请勿包含任何评论或罗马化的标题使用正则表达式"
+title:                "使用正则表达式"
+html_title:           "Haskell: 使用正则表达式"
+simple_title:         "使用正则表达式"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式
+## 为什么要使用正则表达式
 
-正则表达式是一种强大的文本处理工具，它可以帮助我们快速地在文本中进行匹配和替换操作。如果你经常需要处理大量的文本数据，或者需要从复杂的文本中提取出特定的信息，那么正则表达式将是你的得力助手。
+在编程世界中，需要处理大量文本数据是很常见的情况。而当我们需要对文本进行特定的匹配和替换时，正则表达式就派上了用场。它可以帮助我们快速、灵活地匹配和处理文本，提高编程效率。
 
-# 如何使用正则表达式
+## 如何使用
 
-在Haskell中，我们可以使用`Regex`模块来进行正则表达式的匹配。首先，我们需要创建一个正则表达式对象，然后使用`matchRegex`函数来进行匹配。下面是一个简单的例子，匹配一个字符串中的所有数字，并将其替换为`#`：
+在Haskell中，我们可以使用`Text.Regex.TDFA`模块来支持正则表达式。下面是一个简单的例子，我们可以使用正则表达式来检查一个字符串是否符合特定的模式。
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.TDFA
 
-str = "I have 3 apples and 5 bananas."
-regex = "[0-9]+"
-replacement = "#"
-
-replaceAll :: String -> String
-replaceAll str = subRegex (compile regex []) str replacement
+-- 检查字符串是否符合模式
+checkPattern :: String -> String -> Bool
+checkPattern pattern str = str =~ pattern
 
 main = do
-  print (replaceAll str) -- "I have # apples and # bananas."
+  let str = "Hello World!"
+      pattern = "Hello"
+  print $ checkPattern pattern str -- 输出 True
 ```
 
-在上面的例子中，我们使用`Text.Regex.Posix`模块提供的`subRegex`函数来替换匹配到的文本，其中`compile`函数用于编译正则表达式，`[]`表示不使用任何特殊选项。
+我们可以使用`=~`符号来表示字符串和模式进行匹配，如果匹配成功则返回`True`，否则返回`False`。当然，在实际中我们也可以使用更复杂的模式，来满足不同的匹配需求。
 
-# 深入了解正则表达式
+## 深入了解
 
-正则表达式除了基本的匹配和替换操作外，还有许多强大的功能，比如字符类、量词、分组等。它们可以让我们更精确地匹配文本，提取出需要的信息。同时，我们还可以使用`anchors`来限定匹配的位置，例如匹配开头和结尾的字符串。
+正则表达式是一种很强大的匹配工具，它可以通过不同的模式来实现各种不同的匹配需求。在Haskell中，我们可以通过使用各种不同的函数来进行正则表达式的操作，例如`=~`、`=~~`、`=~~~`等等。另外，我们也可以通过使用`Text.Regex.TDFA.Context`模块来提高正则表达式的性能。
 
-正则表达式的语法可能有些复杂，需要一些练习才能掌握。但是一旦掌握了它，就能大大提高文本处理的效率。
+## 参考链接
 
-# 参考链接
-
-- [Haskell中的正则表达式](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html)
-- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html) 
-- [正则表达式在线测试工具](https://regexr.com/)
+- [Haskell中文网](https://haskell.cn/)
+- [Haskell正则表达式教程](https://www.cnblogs.com/xk-blogs/p/11506321.html)
+- [Haskell正则表达式库文档](https://hackage.haskell.org/package/regex-tdfa-1.3.1/docs/Text-Regex-TDFA.html)

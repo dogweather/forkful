@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: パターンに一致する文字を削除する"
-simple_title:         "パターンに一致する文字を削除する"
+title:                "「パターンにマッチする文字を削除する」"
+html_title:           "Fish Shell: 「パターンにマッチする文字を削除する」"
+simple_title:         "「パターンにマッチする文字を削除する」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,28 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ削除するのか: パターンにマッチする文字を削除する理由
+## なぜ
 
-Fish Shellを使用している人々は、ファイルやテキスト内の特定の文字を削除したい場合があります。しかし、手動でそれらの文字を一つずつ削除するのは面倒です。そこで、パターンにマッチする文字を一括で削除する方法が注目されています。
+パターンにマッチする文字を削除することに興味がある人はどんな理由があるのでしょうか？その答えは、例えばテキストデータの整理や特定の文字を除外する必要があったり、文字列処理において特定のパターンを取り除く必要があるからかもしれません。
 
-## 方法: `Fish Shell`コードブロックでのコーディング例とサンプル出力
+## 方法
 
-```
-# パターンにマッチする文字を削除する例
+Fish Shellを使ってパターンにマッチする文字を削除するには、まず「grep」コマンドを使用してパターンにマッチする行を抽出し、その後「sed」コマンドを使用して不要な文字を削除します。
 
-$ set fruits apple banana pear watermelon
-$ echo $fruits
-apple banana pear watermelon
-
-# "a"という文字にマッチするものを削除する
-$ echo $fruits | tr -d a
-ppl bnn perr wtermelon
+```Fish Shell
+grep "パターン" ファイル名 | sed 's/削除する文字//g'
 ```
 
-## 深堀: パターンにマッチする文字を削除する方法の詳細
+このコードを実行すると、パターンにマッチする行から不要な文字が削除された状態の出力が得られます。
 
-`tr`コマンドを使用することで、パターンにマッチする文字を削除することができます。また、`sed`や`awk`といった他のコマンドでも同様の結果を得ることができます。しかし、Fish Shellでは独自の構文を使用することで、より簡単に文字を削除することができます。
+## 深堀り
 
-## もっと見る: 
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html) 
-- [Bash Shellとの違いを知る](https://qiita.com/wellflat/items/2341c40b8160f4dbb12e)
+「grep」コマンドは、指定したパターンにマッチする行を抽出し、それ以外の行を除外することができます。また「sed」コマンドは、文字列の置換や削除などの文字列処理をすることができます。上記のコードでは、「マッチした文字列を抽出した後、その行から不要な文字を削除する」という流れになります。
+
+## 参考リンク
+
+- [Fish Shell 公式ドキュメント](https://fishshell.com/docs/)
+- [grepコマンドについて知る](https://techplay.jp/column/645)
+- [sedコマンド基本運用法](https://qiita.com/take4s5i/items/a0ca9929336634277e62)

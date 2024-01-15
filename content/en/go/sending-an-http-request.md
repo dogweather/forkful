@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Go recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Go"
 category:             "Go"
@@ -11,43 +12,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sending HTTP requests is a crucial aspect of web development, as it allows programs to communicate with servers and retrieve data. It is also the foundation for building applications that integrate with APIs, which are essential for modern web development.
+Sending HTTP requests is a fundamental aspect of web development and allows developers to interact with various web services and APIs. Learning how to send HTTP requests in Go can greatly enhance your skills as a programmer and enable you to build more robust and versatile applications.
 
 ## How To
 
-To send an HTTP request in Go, we first need to import the "net/http" package. Then, we can use the "http.Get()" function to make a GET request to a specific URL. Here's an example:
+To send an HTTP request in Go, we can use the built-in `net/http` package. Here's a simple example of making a GET request to the Google homepage:
 
-```Go
+```
 package main
 
 import (
     "fmt"
     "net/http"
+    "io/ioutil"
 )
 
 func main() {
-    res, err := http.Get("https://example.com")
+    // Create a new request
+    req, err := http.NewRequest("GET", "https://www.google.com", nil)
     if err != nil {
-        fmt.Println("Error:", err)
+        // Handle error
     }
-    fmt.Println(res.Status)
+
+    // Send the request and get the response
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        // Handle error
+    }
+    defer resp.Body.Close()
+
+    // Read the response body
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        // Handle error
+    }
+
+    // Print the response body
+    fmt.Println(string(body))
 }
 ```
 
-In this code, we use the "http.Get()" function to make a GET request to "https://example.com". The function returns two values: the response and any error that may occur during the request. We then print the response status, which in this case would be "200 OK" if the request was successful.
+Output:
+```
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Google</title>
+    <!-- Rest of the HTML code -->
+</body>
+</html>
+```
 
-Aside from "http.Get()", there are other functions from the "net/http" package that can be used for different types of HTTP requests. For example, to send a POST request, we can use "http.Post()" instead. It is important to handle any errors that may occur during the request, as shown in the above example.
+Sending a POST request is similar, but we need to specify the request body and content type:
+
+```
+// Create a new request
+req, err := http.NewRequest("POST", "https://www.someapi.com/users", strings.NewReader(`{"name": "John", "age": 25}`))
+if err != nil {
+    // Handle error
+}
+
+// Set the content type
+req.Header.Set("Content-Type", "application/json")
+
+// Send the request and get the response
+// Rest of the code is the same as above
+```
 
 ## Deep Dive
 
-When we make an HTTP request, the request is sent to the server, and the server responds with a status code and a body. The status code is a 3-digit number that indicates whether the request was successful or if there was an error. The body of the response contains any data that the server may have sent back.
+The `net/http` package offers a lot of flexibility and options for sending HTTP requests. For example, we can set headers, cookies, and custom redirects using methods like `req.Header.Set()`, `req.AddCookie()`, and `client.CheckRedirect()`. We can also send different types of requests such as GET, POST, PUT, DELETE, HEAD, and PATCH by specifying the method in `http.NewRequest()`. Understanding these options can help us make more specialized and efficient requests.
 
-There are also different types of headers that can be included in an HTTP request, such as "Content-Type" and "Authorization". These headers provide additional information about the request to the server. It is essential to understand how to use headers correctly when making HTTP requests in Go.
+It's also worth noting that the `net/http` package automatically follows redirects by default. However, this can be changed by setting `client.CheckRedirect` to a custom function that handles redirects according to our needs.
 
 ## See Also
 
-Here are some additional resources for learning about sending HTTP requests in Go:
-
-- [The Net/HTTP Package in Go](https://golang.org/pkg/net/http/)
-- [HTTP Requests in Go](https://www.digitalocean.com/community/tutorials/how-to-make-http-requests-in-go)
-- [Making HTTP Requests in Go](https://blog.golang.org/error-handling-and-go)
+- [Go Net/HTTP Example for Get and Post](https://golangbyexample.com/http-get-post-request/)
+- [Sending HTTP requests using Golang](https://dev.to/usamaashraf/http-requests-in-golang-23kk)
+- [Making HTTP requests in Go](https://dzone.com/articles/how-to-make-http-requests-in-go)

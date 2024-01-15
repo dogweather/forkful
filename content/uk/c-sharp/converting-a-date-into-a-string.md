@@ -1,5 +1,6 @@
 ---
-title:                "C#: Перетворення дати у рядок"
+title:                "Перетворення дати у рядок"
+html_title:           "C#: Перетворення дати у рядок"
 simple_title:         "Перетворення дати у рядок"
 programming_language: "C#"
 category:             "C#"
@@ -9,70 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Why: День - це важлива частина життя та програмування. Конвертація дати в рядок є корисним навичкою, яка допоможе вам працювати з датами у ваших проектах та процесах. 
+## Чому
 
-How To: Для конвертації дати в рядок в C#, вам потрібно використати метод `ToString()`. Наприклад:
+Конвертування дати у рядок є важливою частиною програмування на C#, оскільки це дозволяє нам працювати з датами у зручному форматі, що відповідає потребам нашого проекту.
 
-```C#
-using System;
+## Як це зробити
 
-class Program
-{
-   static void Main()
-   {
-      DateTime date = new DateTime(2021, 8, 12);
-      string stringDate = date.ToString();
-      Console.WriteLine(stringDate);
-   }
-}
-```
-
-Вивід програми буде `08/12/2021 00:00:00`.
-
-Також ви можете вказати формат дати в методі `ToString()`, який дасть вам більш контроль над виведеною датою. Наприклад:
+Для початку, потрібно завантажити простір імен `System`, який надає нам доступ до багатьох корисних функцій, серед яких є і функція конвертації дати у рядок.
 
 ```C#
 using System;
 
-class Program
-{
-   static void Main()
-   {
-      DateTime date = new DateTime(2021, 8, 12);
-      string stringDate = date.ToString("yyyy/MM/dd");
-      Console.WriteLine(stringDate);
-   }
-}
+DateTime date = new DateTime(2021, 13, 07); // створюємо об'єкт типу DateTime з датою 7 липня 2021 року
+
+string dateToString = date.ToString("dd/MM/yyyy"); // використовуємо функцію ToString для конвертації дати у рядок у форматі "день/місяць/рік"
+
+Console.WriteLine(dateToString); // виведе "07/13/2021"
+
 ```
 
-Вивід програми буде `2021/08/12`.
+Як бачимо у прикладі, для конвертації дати у рядок нам потрібно використовувати функцію `ToString` та передавати в неї бажаний формат дати у вигляді рядка. Існує багато різних форматів, які можна використати для конвертації дати у рядок, тому зверніться до документації Microsoft для отримання більш детальної інформації.
 
-Для додаткової інформації про форматування дати в C#, ви можете переглянути документацію Microsoft для методу `ToString()`. 
+## Глибока занурення
 
-Deep Dive: Конвертація дати в рядок використовується не тільки для виведення дати на екран, але і для збереження дати у файл або передачі її через мережу. Будь-яка операція, яка вимагає використання дати, вимагатиме конвертації дати в рядок.
+У деяких випадках, нам може знадобитися більш точне представлення дати у рядку, наприклад, з врахуванням годин та хвилин. Для цього можна використовувати функцію `ToString` та передавати в неї бажаний формат дати разом з часом у вигляді рядка. Наприклад:
 
-Крім того, ви можете змінити локалізацію дати за допомогою методу `ToString()`. Наприклад, для виведення дати з українськими назвами місяців, ви можете використати наступний код:
+```C#
+using System;
+
+DateTime date = new DateTime(2021, 13, 07, 16, 30, 00); // створюємо об'єкт типу DateTime з датою 7 липня 2021 року і часом 16:30
+
+string dateToString = date.ToString("dd/MM/yyyy hh:mm"); // використовуємо функцію ToString для конвертації дати та часу у рядок у форматі "день/місяць/рік година:хвилина"
+
+Console.WriteLine(dateToString); // виведе "07/13/2021 04:30"
+
+```
+
+Крім того, у функцію `ToString` можна передати параметр культури, що визначить, який формат буде використовуватися для дати у рядку, оскільки різні мови та країни мають різні стандарти відображення дат. Наприклад:
 
 ```C#
 using System;
 using System.Globalization;
 
-class Program
-{
-   static void Main()
-   {
-      DateTime date = new DateTime(2021, 8, 12);
-      CultureInfo ukCulture = new CultureInfo("uk-UA");
-      string stringDate = date.ToString("D", ukCulture);
-      Console.WriteLine(stringDate);
-   }
-}
-```
+DateTime date = new DateTime(2021, 13, 07); // створюємо об'єкт типу DateTime з датою 7 липня 2021 року
 
-Вивід програми буде "12 серпня 2021 року".
-
-See Also: 
-
-- [Документація Microsoft для методу `ToString()`] (https://docs.microsoft.com/uk-u-UA/dotnet/standard/base-types/custom-numeric-format-strings)
-- [Стаття про форматування дати в C#] (https://www.c-sharpcorner.com/uploadfile/mahesh/format-datetime-in-c-sharp/)
-- [Детальна стаття про роботу з датами в C#] (https://www.c-sharpcorner.com/UploadFile/mahesh/dates-and-times-in-C-Sharp/)
+string dateToString = date.ToString("D", new CultureInfo("uk-UA

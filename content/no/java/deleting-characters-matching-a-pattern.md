@@ -1,6 +1,7 @@
 ---
-title:                "Java: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Java: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å slette tegn som matcher et mønster kan være nyttig for å rense og analysere tekstdata. Dette kan være spesielt nyttig for programmerere som jobber med tekstbehandlingsapplikasjoner, eller for å filtrere uønsket innhold fra en tekstfil.
+## Hvorfor
+Enten man skal lage et program eller modifisere eksisterende kode, kan det hende man trenger å slette bestemte tegn som matcher et spesifikt mønster. Det kan være for å fjerne uønskede tegn eller for å utføre en annen type manipulasjon av teksten. Uansett årsak, er det nyttig å kunne slette tegn som matcher et bestemt mønster i Java.
 
-# Hvordan
-For å fjerne tegn som matcher et visst mønster, kan vi bruke metoden "replaceAll()" i Java. Her er et eksempel på hvordan du kan bruke denne metoden:
+## Hvordan
+For å slette tegn som matcher et mønster i Java, kan man bruke metoden `replaceAll()` fra `String`-klassen. Denne metoden tar inn to parameter: det første parameteret er mønsteret man skal matche, og det andre parameteret er hva man vil bytte de matchende tegnene med. Her er et eksempel på bruk av `replaceAll()`:
 
 ```Java
-String tekst = "Hei! Hvordan har du det?";
-String filtrertTekst = tekst.replaceAll("[!]", "");
-System.out.println(filtrertTekst);
+String tekst = "Dette er en tekst.";
+String nyTekst = tekst.replaceAll("e", "a");
+System.out.println(nyTekst);
 ```
 
-I dette tilfellet vil output være "Hei Hvordan har du det?" ettersom metoden har fjernet utropstegnet fra teksten. Her er en kort forklaring på koden:
+Dette vil gi følgende utskrift: "Datta ar an tastk." Som du kan se, har alle forekomster av "e" i teksten blitt erstattet med "a".
 
-- `tekst.replaceAll()` er metoden som tar imot et mønster og erstatter alle forekomster av det med det tomme strengen.
-- `[!]` angir et regulært uttrykk som betyr at vi vil erstatte alle utropstegn i teksten.
-- `"Hei! Hvordan har du det?"` er selve teksten som vi ønsker å endre.
+Man kan også bruke regulære uttrykk i mønsteret for å slette flere tegn på én gang. For eksempel kan man bruke `[0-9]` for å matche alle tall, og `\\W` for å matche alle ikke-alfabetiske tegn. Her er et eksempel som sletter alle tall og ikke-alfabetiske tegn fra en tekst:
 
-Du kan også kombinere flere tegn i mønsteret, for eksempel `[aeiou]` for å fjerne alle vokaler.
+```Java
+String tekst = "Dette er en tekst123.";
+String nyTekst = tekst.replaceAll("[0-9\\W]", "");
+System.out.println(nyTekst);
+```
 
-# Deep Dive
-Hvis du ønsker å lære mer om regulære uttrykk og hvordan du kan bruke dem i Java, anbefaler vi å utforske Java Pattern og Matcher klassene. Disse gir mer avanserte og fleksible muligheter for å filtrere tekst basert på forskjellige uttrykk.
+Dette vil gi følgende utskrift: "Detteerentekst". Alle tall og ikke-alfabetiske tegn er blitt slettet fra teksten.
 
-En annen nyttig ressurs er JavaDocs som gir detaljerte beskrivelser og eksempler på hvordan du kan bruke de ulike metodene i Java.
+## Dypdykk
+Når man bruker `replaceAll()` for å slette tegn som matcher et mønster, må man være oppmerksom på at den tar inn et regulært uttrykk som mønster. Det betyr at man må bruke escape-sekvenser som `\\` for å matche spesialtegn som `+`, `*` og `.`.
 
-# Se Også
-- [Java Pattern Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Java Matcher Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)
-- [JavaDocs](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
+Det finnes flere metoder i Java som kan hjelpe med å slette tegn som matcher et mønster, som for eksempel `replace()`, `replaceFirst()` og `replaceLast()`. Disse kan også være nyttige å lære om for mer avansert tegnbehandling.
+
+## Se også
+- [Java String replaceAll() method](https://www.javatpoint.com/java-string-replaceall)
+- [Regular Expressions in Java](https://www.baeldung.com/java-regex)
+- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

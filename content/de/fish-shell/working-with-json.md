@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Arbeiten mit JSON"
+title:                "Arbeiten mit JSON"
+html_title:           "Fish Shell: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,46 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-JSON (JavaScript Object Notation) ist ein Dateiformat, das häufig verwendet wird, um Daten zwischen Anwendungen auszutauschen. Durch die Verwendung von Fish Shell können wir effizient und einfach mit JSON-Daten arbeiten, um unsere Programmieraufgaben zu erleichtern.
+Warum sollte man sich überhaupt mit JSON beschäftigen? Nun, JSON ist eines der populärsten Datenaustauschformate, das von vielen Programmiersprachen und APIs unterstützt wird. Das macht es zu einem unverzichtbaren Werkzeug für Entwickler, die Daten empfangen, verarbeiten und senden möchten. Außerdem ist es leicht zu lesen und zu verstehen, was es ideal für die Kommunikation zwischen Programmen macht.
 
-## Anleitung
+## Wie
 
-Um JSON in Fish Shell zu nutzen, müssen wir zuerst das Paket `fish-json` installieren. Dazu geben wir den folgenden Befehl in unsere Shell ein:
+Um mit JSON in der Fish Shell zu arbeiten, können wir die integrierten Funktionen `from_json` und `to_json` verwenden.
 
-```Fish Shell
-fisher install oh-my-fish/plugin-json
-```
-
-Nach der Installation können wir JSON-Daten problemlos in unsere Shell importieren und manipulieren.
-
-Um beispielsweise eine Datei namens "daten.json" zu lesen, können wir den folgenden Befehl verwenden:
+Um einen JSON-String in ein Array oder Objekt umzuwandeln, verwenden wir `from_json` mit dem Pipe-Operator:
 
 ```Fish Shell
-set daten (json_parse (fish_reader daten.json))
+set json_string '{"name": "Max Mustermann", "age": 25}'
+set user_info (echo $json_string | from_json)
+echo $user_info['name']   # Ausgabe: Max Mustermann
+echo $user_info['age']    # Ausgabe: 25
 ```
 
-Der Inhalt der JSON-Datei wird in der Variablen "daten" gespeichert und wir können damit arbeiten, wie wir es in jeder anderen Shell auch tun würden. Zum Beispiel können wir bestimmte Werte aus dem JSON-Datensatz extrahieren und ausgeben:
+Um ein Array oder Objekt in einen JSON-String zu konvertieren, verwenden wir `to_json`:
 
 ```Fish Shell
-echo $daten.name
+set colors (list blue red green)
+set json_colors (echo $colors | to_json)
+echo $json_colors   # Ausgabe: ["blue", "red", "green"]
 ```
 
-Dies würde den Wert desSchlüssels "name" in der JSON-Datei ausgeben. Wir können auch Array-Werte aus dem JSON-Datensatz abrufen, indem wir den Index des entsprechenden Elements angeben. Zum Beispiel:
+## Deep Dive
+
+Neben `from_json` und `to_json` bietet die Fish Shell auch die Funktion `json_escape`, die verwendet werden kann, um sicherzustellen, dass alle Sonderzeichen in einem JSON-String richtig escaped werden.
 
 ```Fish Shell
-echo $daten.array[2]
+set special_char "My name is John \"Doe\"."
+set json_string (echo $special_char | json_escape)
+echo $json_string   # Ausgabe: My name is John \"Doe\".
 ```
 
-Dies würde den Wert des dritten Elements im Array namens "array" ausgeben.
+Außerdem können mit der Funktion `json_parse` auch komplexe JSON-Objekte geparst werden, indem Felder durch Pfade angegeben werden.
 
-## Tiefenströmung
-
-Eine tiefergehende Erklärung von JSON und Fish Shell goes here. Zum Beispiel könnten wir diskutieren, wie wir komplexere JSON-Strukturen wie verschachtelte Objekte oder Arrays von Objekten verarbeiten können. Wir könnten auch auf fortgeschrittene Funktionen wie das Filtern von JSON-Daten oder das Erstellen von JSON-Daten aus Shell-Variablen eingehen.
-
-Diese tiefere Erklärung sollte dem Leser helfen, ein besseres Verständnis von JSON und seinem Potenzial in Verbindung mit Fish Shell zu bekommen.
+```Fish Shell
+set json_string '{"name": "Max Mustermann", "address": {"street": "Musterstraße", "city": "Musterstadt"}}'
+set street_path 'address.street'
+set user_street (echo $json_string | json_parse $street_path)
+echo $user_street   # Ausgabe: Musterstraße
+```
 
 ## Siehe auch
 
-- offizielle Fish Shell Dokumentation für JSON: https://fishshell.com/docs/current/cmds/fish-json.html
-- Einführung in Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- offizielle JSON-Website: https://www.json.org/
+- [Fish Shell Dokumentation zu JSON](https://fishshell.com/docs/current/cmds/from_json.html)
+- [JSON Tutorial auf Codecademy (auf Deutsch)](https://www.codecademy.com/de/tracks/javascript)
+- [JSON Validator zum Überprüfen von JSON-Strukturen](https://jsonlint.com/)

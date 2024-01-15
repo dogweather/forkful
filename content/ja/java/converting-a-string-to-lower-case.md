@@ -1,5 +1,6 @@
 ---
-title:                "Java: 文字列を小文字に変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "Java: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Java"
 category:             "Java"
@@ -11,33 +12,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングにおいて文字列を小文字に変換することのメリットは、文字列の一致を確認する際に大文字と小文字を区別しなくても良い点にあります。また、ソートや検索の処理を行う際にも、文字列を小文字に変換することでより簡単に処理することができます。
+文字列を小文字に変換することに興味を持つ理由はいくつかあります。例えば、データベースやファイル操作の際に大文字と小文字が区別されないため、文字列を比較する際に混乱を避けるためです。また、ユーザーからの入力を統一的に処理するためにも重要です。
 
-## 方法
-
-文字列を小文字に変換する方法は、Javaプログラムで```toLowerCase()```メソッドを使用することです。以下の例を参考にしてください。
+## 変換方法
 
 ```Java
 String str = "Hello World";
-String lowerCaseStr = str.toLowerCase();
-
-System.out.println(lowerCaseStr);
+System.out.println(str.toLowerCase());
 ```
-
-このコードを実行すると、出力は以下のようになります。
-
-```Java
-hello world
-```
+このコードの出力結果は "hello world" になります。また、JavaのStringクラスにはtoLowerCase()というメソッドがあり、これを使うことで文字列を小文字に変換することができます。
 
 ## 深堀り
 
-文字列を小文字に変換するために使用される```toLowerCase()```メソッドは、Stringクラスに定義されています。そのため、Stringクラスを継承したクラスであれば、どのようなクラスでもこのメソッドを使用することができます。
+文字列を小文字に変換するメソッドであるtoLowerCase()は、実際にはStringクラスのインスタンス変数であるvalueにアクセスして、文字列の中の各文字を小文字に変換しています。また、多言語対応のために、ロケールという情報を考慮して変換を行うことができます。
 
-また、英語以外の言語でも同じように動作します。つまり、日本語の文字列を小文字に変換する際にも同じメソッドを使用することができます。
+## 他に見る
 
-## See Also
-
-- [Java Stringクラス](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java toLowerCase()メソッドのドキュメンテーション](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Javaの基本教程(英語)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html)
+- [JavaのStringクラスの公式ドキュメント](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Javaで文字列を操作する方法](https://www.javatpoint.com/java-string)
+- [文字列の大小を無視して比較する方法](https://stackoverflow.com/questions/5901623/how-to-ignore-case-for-string-in-java)

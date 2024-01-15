@@ -1,6 +1,7 @@
 ---
-title:                "Java: Verwenden von regulären Ausdrücken"
-simple_title:         "Verwenden von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Java: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,44 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Regex oder reguläre Ausdrücke sind ein wichtiges Werkzeug für Java-Programmierer, um Textmuster zu suchen und zu manipulieren. Sie können verwendet werden, um komplexe Such- und Ersetzungsaufgaben zu erledigen, insbesondere wenn es um große Datenmengen geht. Mit regulären Ausdrücken können Sie Ihr Programm effizienter und flexibler gestalten.
+Warum sollte man sich mit regulären Ausdrücken beschäftigen? Ganz einfach: Sie sind ein leistungsstarkes Werkzeug, um Texte anhand bestimmter Muster zu durchsuchen und zu bearbeiten. Sie sind in vielen Programmiersprachen verfügbar, einschließlich Java, und können bei der Arbeit mit großen Textmengen enorm nützlich sein.
 
-## Wie man es benutzt
+## Anleitung
 
-Um reguläre Ausdrücke in Java zu verwenden, müssen Sie zunächst die "java.util.regex" Bibliothek importieren. Dann können Sie die Methode "matches()" oder "find()" verwenden, um ein Muster in einer Zeichenkette zu finden. Hier ist ein Beispiel, um nach einer bestimmten Anzahl von Ziffern in einem String zu suchen und sie auszugeben:
+Die Verwendung von regulären Ausdrücken in Java ist relativ einfach. Zunächst müssen Sie die Klasse `Pattern` aus dem Paket `java.util.regex` importieren. Dann können Sie mithilfe von `Pattern.compile()` einen regulären Ausdruck erstellen und diesen auf einen Text anwenden. Hier ist ein Beispiel, um alle Vorkommen von "Hallo" in einem String zu finden:
 
 ```Java
-String text = "1234abcdefg";
-Pattern pattern = Pattern.compile("\\d{4}"); // gibt ein Muster von 4 Ziffern an
+import java.util.regex.*;
+
+String text = "Hallo, ich bin David und ich sage gerne Hallo.";
+Pattern pattern = Pattern.compile("Hallo");
 Matcher matcher = pattern.matcher(text);
 while (matcher.find()) {
-    System.out.println(matcher.group()); // Ausgabe: 1234
+    System.out.println("Gefunden: " + matcher.group());
 }
+
+// Output: Gefunden: Hallo, Gefunden: Hallo
 ```
 
-Sie können auch reguläre Ausdrücke verwenden, um Muster zu ersetzen oder Teile einer Zeichenkette zu extrahieren. Hier ist ein Beispiel, um alle Vokale in einem String durch "x" zu ersetzen:
+Sie können auch Platzhalter verwenden, um bestimmte Muster zu suchen. Zum Beispiel `.` steht für ein beliebiges Zeichen, `*` für beliebig viele Vorkommen und `+` für mindestens ein Vorkommen eines Zeichens. Hier ist ein Beispiel, um alle Wörter mit drei Buchstaben in einem Text zu finden:
 
 ```Java
-String text = "Hello World";
-String result = text.replaceAll("[aeiou]", "x");
-System.out.println(result); // Ausgabe: Hxllx Wxrld
+import java.util.regex.*;
+
+String text = "Das Katze ist süß.";
+Pattern pattern = Pattern.compile("\\b[A-Za-z]{3}\\b");
+Matcher matcher = pattern.matcher(text);
+while (matcher.find()) {
+    System.out.println("Gefunden: " + matcher.group());
+}
+
+// Output: Gefunden: Das, Gefunden: ist
 ```
+
+Reguläre Ausdrücke bieten viele weitere Möglichkeiten, um Text zu durchsuchen und zu bearbeiten, wie z.B. das Einfügen oder Ersetzen von Zeichen. Es ist daher empfehlenswert, sich eingehender mit der Syntax und den verschiedenen Möglichkeiten von regulären Ausdrücken auseinanderzusetzen.
 
 ## Tiefergehende Informationen
 
-Reguläre Ausdrücke unterstützen verschiedene Metazeichen und spezielle Zeichenfolgen, die es Ihnen ermöglichen, spezifische Muster zu identifizieren. Einige nützliche Metazeichen sind:
+Die Syntax von regulären Ausdrücken in Java basiert auf der sogenannten Perl-kompatiblen Notation und ist relativ komplex. Es können nicht nur einzelne Zeichen oder Wörter gesucht werden, sondern auch Gruppen von Zeichen und spezielle Schreibweisen wie z.B. Suchen nach Groß- oder Kleinschreibung. Reguläre Ausdrücke können jedoch sehr mächtig sein, wenn sie richtig verwendet werden.
 
-- **.**: Steht für jedes einzelne Zeichen
-- **\d**: Steht für eine einzelne Ziffer
-- **\w**: Steht für ein alphanumerisches Zeichen
-- **\s**: Steht für ein Leerzeichen oder eine Tabstopps
-- **^**: Steht für den Anfang einer Zeichenkette
-- **$**: Steht für das Ende einer Zeichenkette
-
-Sie können auch Zusatzfunktionen wie Gruppierungen, Quantifizierer und Alternativen verwenden, um komplexe Muster zu erstellen. Es gibt viele Online-Ressourcen und Tutorials, die Ihnen bei der Erstellung und Überprüfung von regulären Ausdrücken helfen können.
+Eine hilfreiche Ressource für das Lernen von regulären Ausdrücken in Java ist die offizielle Java-Dokumentation. Dort finden Sie eine detaillierte Beschreibung der Syntax sowie viele Beispiele und Anweisungen zur Verwendung.
 
 ## Siehe auch
 
-- [Java-Dokumentation zur Regex-Bibliothek](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [Regex-Tutorial von Codecademy](https://www.codecademy.com/learn/learn-regex)
-- [Regex Tester](https://regexr.com/)
+- [Java Regex Tutorial](https://www.javatpoint.com/java-regex)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Java Pattern Class Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)

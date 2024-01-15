@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Extraindo substrings"
-simple_title:         "Extraindo substrings"
+title:                "Extraindo subcadeias"
+html_title:           "Swift: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,40 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Swift?
+## Por que
 
-Extrair substrings é uma habilidade importante na programação em Swift, pois permite que você manipule com eficiência as cadeias de caracteres (strings). Isso pode ser útil ao analisar dados ou ao formatar uma saída para exibição.
+Extração de substrings é uma técnica muito útil em programação Swift para obter partes específicas de uma string maior. Isso é especialmente útil para análise de texto e manipulação de dados.
 
 ## Como fazer
 
-Para extrair uma substring em Swift, você pode usar o método `substring` ou o operador de fatiamento `[]`. Aqui está um exemplo usando o método `substring`:
+Para extrair uma substring em Swift, usamos o método `prefix()` ou `suffix()` dependendo do que queremos obter. Por exemplo, se quisermos extrair os primeiros 5 caracteres de uma string, podemos usar o seguinte código:
 
 ```Swift
-let nome = "Maria Silva"
-let sobrenome = nome.substring(from: 6)
-print(sobrenome)
+let string = "Olá mundo!"
+let substring = string.prefix(5)
+print(substring) // saída: "Olá m"
 ```
 
-Isso resultará na saída "Silva", já que o método `substring` extrai as letras a partir do índice especificado (neste caso, 6) até o final da string.
-
-Também é possível usar o operador de fatiamento `[]` para extrair substrings. Aqui está um exemplo:
+Se quisermos extrair os últimos 5 caracteres, usamos o método `suffix()`:
 
 ```Swift
-let nomeCompleto = "João da Silva"
-let sobrenome = nomeCompleto[8...]
-print(sobrenome)
+let string = "Olá mundo!"
+let substring = string.suffix(5)
+print(substring) // saída: "undo!"
 ```
 
-Isso resultará na saída "Silva", pois o operador de fatiamento extrai as letras do índice 8 até o final da string.
+Também podemos utilizar o método `dropFirst()` ou `dropLast()` para remover os primeiros ou últimos caracteres de uma string e retornar o restante como uma substring.
 
-## Aprofundando-se
+```Swift
+let string = "Hello world!"
+let substring = string.dropFirst(6)
+print(substring) // saída: "world!"
+```
 
-Ao trabalhar com substrings, é importante ter em mente que elas são representações da string original, e qualquer modificação feita nelas não afetará a string original. Por exemplo, ao usar o método `substring`, uma nova string é criada a partir da string original, mas quando se trabalha com o operador de fatiamento, é criada uma visualização da substring na string original.
+Além disso, também podemos usar os métodos `lowercased()` e `uppercased()` para converter a substring para letras minúsculas ou maiúsculas, respectivamente.
 
-Além disso, é importante entender o uso de índices ao extrair substrings. Em Swift, o primeiro caractere de uma string tem o índice 0, e o último caractere tem o índice `string.count - 1`.
+## Deep Dive
+
+Extrair substrings em Swift é uma operação eficiente, pois a linguagem tem um desempenho rápido e otimizado para trabalhar com strings. Além disso, as várias opções de métodos para extrair as substrings tornam possível trabalhar com diferentes cenários de programação.
+
+Também é importante notar que ao utilizar os métodos `prefix()` ou `suffix()`, não estamos criando uma nova string, mas sim uma `Substring`. Isso significa que operações subsequentes nessa substring podem ser mais eficientes e não exigem a criação de uma nova string.
 
 ## Veja também
 
-- [Documentação oficial do Swift sobre substrings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID277)
-- [Tutorial sobre manipulação de strings em Swift](https://www.appcoda.com/swift-string/)
-- [Fórum da Swift em Português](https://swift.com.br/forum/)
+- [Documentação oficial da Apple sobre substrings em Swift](https://developer.apple.com/documentation/swift/substring)
+- [Tutorial sobre como extrair substrings em Swift](https://www.hackingwithswift.com/articles/201/6/how-to-extract-a-substring-from-a-string-in-swift)
+- [Guia completo de strings em Swift](https://www.swiftbysundell.com/basics/strings/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Elixir: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,42 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Ao programar em Elixir, muitas vezes encontramos situações em que precisamos manipular strings e caracteres. Às vezes, essas strings contêm caracteres que não são necessários para a nossa lógica de programação e precisam ser removidos. Aprender a deletar caracteres que correspondem a um determinado padrão pode tornar o nosso código mais eficiente e legível.
+Algumas vezes, ao trabalhar com strings em um programa Elixir, pode ser necessário remover caracteres que correspondam a um determinado padrão. Isso pode ser útil para limpar entradas de dados ou para transformar uma string em um formato específico.
 
 ## Como Fazer
 
-Para deletar caracteres que correspondem a um padrão em uma string, podemos usar a função `String.replace/3` em combinação com expressões regulares. Por exemplo, se quisermos remover todos os caracteres numéricos de uma string, podemos fazer o seguinte:
+Remover caracteres que correspondam a um padrão em Elixir é bastante simples. Você pode usar a função `String.replace/3`, que recebe três argumentos: a string original, o padrão a ser removido e a string de substituição. Veja um exemplo abaixo:
 
 ```Elixir
-string = "Elixir123"
-String.replace(string, ~r/[0-9]/, "")
+string = "123-45-6789"
+pattern = ~r/-/  # O padrão é um traço
+string_modificada = String.replace(string, pattern, "") # A string modificada não possui mais o traço
 ```
-A saída seria `"Elixir"` sem os números.
 
-Podemos até mesmo usar `String.replace/3` para substituir esses caracteres por algo diferente. Por exemplo, se quisermos substituir todos os caracteres maiúsculos por asteriscos, podemos fazer o seguinte:
+O resultado do código acima seria `"123456789"`.
+
+Outro método útil é a função `String.replace_leading/3`, que remove apenas os caracteres no início da string que correspondam ao padrão especificado. Veja um exemplo:
 
 ```Elixir
-string = "Elixir Rocks"
-String.replace(string, ~r/[A-Z]/, "*")
+string = "Hello World"
+pattern = ~r/H/   # O padrão é a letra H
+string_modificada = String.replace_leading(string, pattern, "")  # A string modificada tem o H removido do início
 ```
-A saída seria `"*lixir *ocks"`.
 
-Esses são apenas dois exemplos simples de como podemos usar a função `String.replace/3` para deletar caracteres correspondentes a um padrão em uma string. As possibilidades são infinitas e dependem da nossa criatividade e necessidade.
+O resultado seria `"ello World"`.
 
-## Profundidade
+## Profundando
 
-Ao usar a função `String.replace/3` com expressões regulares, podemos usar várias opções para tornar nossa lógica de remoção de caracteres mais precisa. Alguns exemplos incluem:
-
-- `^` para coincidir apenas no início da string
-- `$` para coincidir apenas no final da string
-- `+` para combinar um ou mais caracteres
-- `?` para combinar zero ou um caractere
-
-Podemos até mesmo criar nossas próprias funções para lidar com casos específicos em que `String.replace/3` pode não ser suficiente.
-
-Para mais informações sobre expressões regulares e todas as opções que podemos usar ao lidar com elas, consulte a documentação oficial do Elixir.
+Além das funções mencionadas acima, Elixir também oferece uma variedade de outras funções para manipulação de strings, como `String.strip`, `String.slice`, `String.split`, entre outras. Existem também diversas opções de padrões que podem ser utilizados, como expressões regulares e listas de caracteres. É importante verificar a documentação do Elixir para escolher a função e o padrão mais adequados para cada situação.
 
 ## Veja Também
 
-- Documentação oficial do Elixir sobre expressões regulares: https://hexdocs.pm/elixir/Regex.html
-- Um guia passo-a-passo sobre expressões regulares em Elixir: https://elixirschool.com/blog/regex-in-elixir/
+- Documentação oficial do Elixir sobre strings: https://hexdocs.pm/elixir/String.html
+- Tutorial sobre strings em Elixir: https://elixirschool.com/pt/lessons/basics/string/
+- Exemplos de expressões regulares em Elixir: https://elixir-examples.github.io/string/regular-expressions/

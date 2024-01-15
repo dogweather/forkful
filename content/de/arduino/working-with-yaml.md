@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Arduino: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,73 +10,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In dieser Blog-Post wollen wir uns mit der Arbeit von YAML in Verbindung mit Arduino beschäftigen. YAML steht für "YAML Ain't Markup Language" und ist eine einfache und leicht lesbare Formatierungssprache. Sie wird häufig verwendet, um Konfigurationsdateien zu speichern, aber sie kann auch in der Programmierung nützlich sein. Lesen Sie weiter, um zu erfahren, wie Sie YAML mit Arduino verwenden können.
+Wenn du mit Arduino arbeitest, kann es hilfreich sein, Daten in einer übersichtlichen und strukturierten Form zu speichern. YAML ist ein einfaches Format, das dir dabei helfen kann, verschiedene Datentypen wie Zahlen, Texte und Listen zu organisieren.
 
-## Wie geht das?
+# Wie geht's
+
+Die Integration von YAML in deine Arduino-Projekte ist sehr einfach. Hier ist ein Beispiel, wie du eine Liste von Sensorwerten in YAML speichern kannst:
 
 ```Arduino
+#include <ArduinoJson.h>
 #include <YAML.h>
 
 void setup() {
+  YAML::Object data;
+  data["sensor1"] = analogRead(A0);
+  data["sensor2"] = analogRead(A1);
+  data["sensor3"] = analogRead(A2);
+
+  String yamlString;
+  YAML::Emitter emitter(yamlString);
+  emitter << data;
+
   Serial.begin(9600);
-  YAML.begin();
-}
-
-void loop() {
-  YAML.print("Hallo, Welt!");
-  YAML.print(123);
-  YAML.println(true);
-  delay(1000);
+  Serial.println(yamlString);
 }
 ```
 
-Der obige Code zeigt, wie man die Arduino YAML Bibliothek einbindet und wie man sie verwendet, um "Hallo, Welt!" sowie eine Zahl und einen booleschen Wert an den seriellen Monitor auszugeben.
-
-Die Ausgabe des obigen Programms sollte wie folgt aussehen:
-
-```
-Hallo, Welt!123true
-```
-
-Sie können auch Variablen oder Ausdrücke anstelle von statischen Werten in die `print()` Funktion einfügen. Hier ist ein Beispiel:
+Und das ist das Ergebnis, das du im Seriellen Monitor sehen wirst:
 
 ```Arduino
+sensor1: 18
+sensor2: 240
+sensor3: 551
+```
+
+Wie du sehen kannst, sind die Werte in einer strukturierten und lesbaren Form gespeichert. Du kannst auch komplexere Datenstrukturen wie Arrays und Objekte in YAML speichern. Hier ist ein Beispiel, wie du ein Array von Temperaturwerten speichern kannst:
+
+```Arduino
+#include <ArduinoJson.h>
 #include <YAML.h>
 
-int num = 5;
+#define NUM_SENSORS 5
 
 void setup() {
+  float tempArray[NUM_SENSORS] = {22.5, 23.3, 21.7, 24.8, 20.9};
+  
+  YAML::Object data;
+  data["temperatures"] = tempArray;
+
+  String yamlString;
+  YAML::Emitter emitter(yamlString);
+  emitter << data;
+
   Serial.begin(9600);
-  YAML.begin();
-}
-
-void loop() {
-  num++;
-  YAML.print("Die Zahl ist jetzt: ");
-  YAML.println(num);
-  delay(1000);
+  Serial.println(yamlString);
 }
 ```
 
-Die Ausgabe dieses Programms wäre:
+Und hier ist das Ergebnis:
 
-```
-Die Zahl ist jetzt: 6
-Die Zahl ist jetzt: 7
-Die Zahl ist jetzt: 8
-usw.
+```Arduino
+temperatures: [22.5, 23.3, 21.7, 24.8, 20.9]
 ```
 
-## Tiefer eintauchen
+# Tiefer eintauchen
 
-Wie bereits erwähnt, ist YAML eine einfache und leicht lesbare Formatierungssprache. Es gibt jedoch eine Reihe von Regeln, die man beachten sollte, wenn man damit arbeitet. Zum Beispiel müssen alle Werte durch einen Doppelpunkt abgetrennt werden und es dürfen keine Tabs verwendet werden, sondern nur Leerzeichen zur Einrückung. Es gibt auch Möglichkeiten, Objekte und Arrays innerhalb von YAML zu erstellen, die in der offiziellen Dokumentation genauer beschrieben werden.
+Wenn du mehr über YAML erfahren möchtest, gibt es einige wichtige Konzepte, die du verstehen solltest. YAML verwendet Einrückungen, um Datenstrukturen zu definieren. Zum Beispiel:
 
-Eine Sache, die es bei der Arbeit mit YAML und Arduino zu beachten gilt, ist, dass einige Zeichen wie Anführungszeichen und Backslashes escape-fähig sind. Das bedeutet, dass sie eine spezielle Bedeutung haben und mit einem Backslash (\) gekennzeichnet werden müssen, wenn sie selbst als Wert verwendet werden sollen.
+```yaml
+- Sensor1:
+    pin: A0
+    type: analog
+- Sensor2:
+    pin: A1
+    type: analog
+```
 
-## Siehe auch
+Dies ist ein Array von Objekten, die jeweils aus zwei Schlüssel-Wert-Paaren bestehen. Die Einrückung zeigt, dass die Schlüssel "Pin" und "Typ" zum jeweiligen Sensorobjekt gehören.
 
-- [Offizielle YAML Dokumentation](https://yaml.org/)
-- [Arduino YAML Bibliothek auf GitHub](https://github.com/ErikPDev/arduino-yaml)
-- [YAML Tutorial für Anfänger](https://www.liquid-technologies.com/Tutorial/yaml-tutorial)
+Eine weitere wichtige Sache ist, dass YAML dynamisch typisiert ist. Das bedeutet, dass du nicht angeben musst, welche Datentypen du speichern möchtest. YAML erkennt automatisch, ob ein Wert eine Zahl, ein Text oder eine Liste ist und kann entsprechend darauf zugreifen.
+
+Für weitere Informationen und Beispiele kannst du die offizielle YAML-Dokumentation lesen.
+
+# Siehe auch
+
+- [Offizielle YAML-Dokumentation](https://yaml.org/)
+- [ArduinoJson Library](https://arduinojson.org/)
+- [YAML Library für Arduino](https://github.com/inaciose/yaml-arduino)

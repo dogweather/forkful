@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 作成テスト"
-simple_title:         "作成テスト"
+title:                "テストの書き方"
+html_title:           "Swift: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -9,57 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜテストを書くべきか
+## なぜ
+テストを書くことの意義とは？人々がテストを書くことに取り組む理由を最大2つの文章で説明します。
 
-テストは、プログラムのバグを早期に発見し、複雑なコードを管理する一助になります。テストを書くことで、安心してプログラムを変更しやすくなり、バグを防ぎ、高品質なコードを保証することができます。
+テストは、作業の効率性や品質を向上させる重要な方法です。コードを書く前にテストを書くことで、問題やバグを早期に発見し、修正することができます。また、コードを変更した際にもテストを実行することで、安心してコードを修正することができます。
 
-## どのようにテストを書くか
+## テストの書き方
+テストを書くためのコーディング例とサンプルの出力について、"```Swift ... ```"コードブロックを使って説明します。
 
-テストを書くには、まずテスト用のソースコードファイルを作成する必要があります。その後、`XCTest` フレームワークを使用してテストを書き、`XCTAssert` や `XCTAssertEqual` などのアサーションを使用してテストの成功を確認します。
-
-例えば、以下のように書くことができます。
-
-```Swift
-import XCTest
-
-// テスト用コードファイル
-class MyProgramTests: XCTestCase {
-
-    // テストケース1
-    func testAddition() {
-        let result = 10 + 5
-        XCTAssertEqual(result, 15, "加算の結果は正しいか")
-    }
-
-    // テストケース2
-    func testSubtraction() {
-        let result = 10 - 5
-        XCTAssertEqual(result, 5, "減算の結果は正しいか")
-    }
+例えば、以下のような関数をテストするとします。
+```
+func add(_ a: Int, _ b: Int) -> Int {
+    return a + b
 }
-
-// テストを実行
-MyProgramTests.defaultTestSuite.run()
+```
+テストを書くためには、まずはじめにテスト用の関数を作成します。
+```
+func testAdd() {
+    let result = add(2, 3)
+    assert(result == 5, "Add function should return 5 when passed 2 and 3.")
+}
+```
+そして、テスト用の関数を呼び出します。
+```
+testAdd()
+```
+もしテストが成功すると、以下のような結果が出力されます。
+```
+Test succeeded!
 ```
 
-上記の例では、テスト用のソースコードファイルを作成し、`XCTestCase` を継承したクラスを宣言しました。その中に `testAddition()` と `testSubtraction()` というテストケースを作成し、それぞれにアサーションを使用して結果の確認を行っています。最後に、`MyProgramTests.defaultTestSuite.run()` を実行してテストを実行します。
+## ディープダイブ
+テストを書く際に注意すべきポイントやより深い知識について説明します。
 
-## テストをより深く掘り下げる
+1つのテスト関数だけでなく、複数のテスト関数を作成し、コードの様々な場面でテストを行うことが重要です。また、テストケースを書く際には、問題をカバーするようなデータを用意することが重要です。
 
-テストにはさまざまな種類があり、カバレッジやユニットテスト、結合テストなどがあります。これらのテストのそれぞれには目的やメリットがあり、プログラムの品質向上に貢献します。さらに、コードのテストカバレッジを高めるためのテスト自動化や、モックを使用したテストなどのテストの詳細についても学ぶことができます。
+さらに、テストを自動化することで繰り返し行う手間を省き、効率的にテストを実行することができます。XcodeやSourceryなどのツールを使用することで、自動化されたテストコードを作成することができます。
 
-## おすすめのリンク
+## See Also
+- [テスト駆動開発(TDD)とは？｜基礎知識やメリット・デメリットを解説！] (https://qiita.com/ymasaoka/items/5d43d25ad69c94cad619)
+- [Swiftでテストを書くためのおすすめのツールまとめ] (https://qiita.com/aitaandzwa/items/d12c146325b9790c20bc)
 
-- [XCTest - Apple Developer Documentation](https://developer.apple.com/documentation/xctest)
-- [Clean Swift: Writing Testable View Controllers - Clean Swift Blog](https://clean-swift.com/writing-testable-view-controllers/)
-- [Testing in Swift: How to Write Your First Unit Test - raywenderlich.com](https://www.raywenderlich.com/5470-unit-testing-and-mocking-in-swift)
-- [iOS Testing Tutorial: XCTest and UI Testing - AppCoda](https://www.appcoda.com/testing-tutorial-xctest-ui-testing/)
-- [テスト駆動開発とは？ソフトウェア開発の品質向上に欠かせないテスト手法を紹介 - 株式会社システナ](https://www.systena.com/tdd___testdriven_development) 
-
-# おわりに
-
-テストを書くことは、プログラマーとしての基本的なスキルの一つです。バグを早期に発見し、高品質なコードを保証するためにも、テストを書くことはとても重要です。この記事を参考に、ぜひテストを書く習慣を身につけてみてください。
-
-# 関連リンク
-
--
+この記事を読んで、テストを書くことの重要性や基本的な書き方を理解していただけたと思います。ぜひ、実際にテストを書いて、コード品質の向上に役立ててみてください。

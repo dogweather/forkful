@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Elixir: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,41 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med tidskänsliga applikationer. Det är viktigt att kunna avgöra om ett datum är före, efter eller samtidigt som ett annat datum för att kunna implementera olika logik och funktioner.
 
-Att jämföra två datum är en viktig färdighet inom programmering och kan hjälpa till att avgöra rätt ordning för händelser eller beräkna åldern på något. I denna bloggpost kommer vi att gå igenom hur man kan jämföra två datum i Elixir och utforska djupare i konceptet.
-
-## Hur man gör det
-
-För att jämföra två datum används funktionen `Date.compare/2` i Elixir. Det första argumentet är det första datumet som ska jämföras och det andra argumentet är det andra datumet. I exemplet nedan jämför vi två datum och skriver ut resultatet:
+## Så här gör du
+För att jämföra två datum i Elixir kan du använda funktionen `Date.compare/2`. Den tar emot två datum som argument och returnerar antingen `:before`, `:after` eller `:same` beroende på deras ordning.
 
 ```Elixir
-date1 = Date.new(2021, 10, 15)
-date2 = Date.new(2021, 9, 15)
+iex> Date.compare({2021, 9, 10}, {2021, 9, 5})
+:after
 
-IO.puts "Resultatet av jämförelsen är #{Date.compare(date1, date2)}"
+iex> Date.compare({2021, 6, 20}, {2021, 6, 20})
+:same
+
+iex> Date.compare({2020, 12, 1}, {2021, 1, 1})
+:before
 ```
 
-Output:
+Som du kan se jämförs året, månaden och dagen i datumen för att avgöra ordningen. Detta innebär att enbart tiden inte övervägs vid jämförelsen.
 
+Om du behöver jämföra två datum inklusive tiden kan du använda funktionen `DateTime.compare/2` istället. Den fungerar på samma sätt som `Date.compare/2` men inkluderar även information om timmar, minuter och sekunder.
+
+```Elixir
+iex> DateTime.compare({2021, 9, 15, 12, 30, 0}, {2021, 9, 15, 14, 0, 0})
+:before
 ```
-Resultatet av jämförelsen är :gt
+
+En annan användbar funktion är `Date.diff/2` som beräknar antalet dagar mellan två datum.
+
+```Elixir
+iex> Date.diff({2021, 9, 15}, {2021, 9, 10})
+5
 ```
-
-Funktionen `Date.compare/2` returnerar en atom som representerar resultatet av jämförelsen. Här är en lista över de olika värden som kan returneras:
-
-- `:lt` - Det första datumet är mindre än det andra
-- `:eq` - Båda datumen är lika
-- `:gt` - Det första datumet är större än det andra
 
 ## Djupdykning
+Elixir har också möjligheten att jämföra två datum baserat på deras tidszoner med hjälp av funktionen `Calendar.compare/2`.
 
-För att förstå hur `Date.compare/2` fungerar, behöver vi först förstå hur datum representeras i Elixir. I Elixir finns det två typer av datum: `Date` och `DateTime`. `DateTime` innehåller både datum och tid medan `Date` bara innehåller datumet.
-
-När vi jämför två datum i Elixir jämförs de som tuples med tre värden: år, månad och dag. Det är därför `Date.compare/2` returnerar antingen `:lt`, `:eq` eller `:gt` beroende på vilket datum som är större i varje värde.
-
-Det är också värt att nämna att `Date`-modulen innehåller andra användbara funktioner för att jämföra datum, som `Date.before?/2` och `Date.after?/2` som returnerar en boolean baserat på jämförelsen.
+Det finns också olika funktioner för att jämföra specifika delar av ett datum, till exempel `NaiveDateTime.compare/2` för att jämföra enbart datum och tid utan tidszoninformation och `DateTime.equal/2` för att avgöra om två datum är exakt lika.
 
 ## Se även
-
-- [Date-modulen i Elixir dokumentationen](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Programming Language - Officiell hemsida](https://elixir-lang.org/)
+- [Date module in Elixir](https://hexdocs.pm/elixir/DateTime.html)
+- [An introduction to date and time in Elixir](https://www.garysieling.com/blog/introduction-date-time-elixir)
+- [Working with dates and times in Elixir](https://pragmaticstudio.com/tutorials/working-with-dates-and-times-in-elixir)

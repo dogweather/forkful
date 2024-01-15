@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Надсилання запиту http з базовою автентифікацією"
+title:                "Надсилання запиту http з базовою автентифікацією"
+html_title:           "Elm: Надсилання запиту http з базовою автентифікацією"
 simple_title:         "Надсилання запиту http з базовою автентифікацією"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,44 +12,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Elm - це потужна мова програмування для створення веб-додатків. Однією з ключових функцій Elm є підтримка HTTP запитів. Але чому б вам займатися відправкою HTTP запиту з базовою аутентифікацією? Наприклад, це може бути корисно, якщо ви хочете отримати доступ до захищених даних на сервері або авторизуватися в системі.
+Відправка HTTP-запиту з базовою аутентифікацією є важливим етапом для багатьох програм, які використовують зовнішні ресурси або міждоменні комунікації. Це забезпечує безпечний доступ до даних та інтерактивацію зі сторонніми сервісами.
 
-## Як це зробити
+## Як
 
-Для того, щоб відправити HTTP запит з базовою аутентифікацією в Elm, спочатку потрібно імпортувати модуль `Http`. Далі, використовуючи функцію `send`, ми можемо передати об'єкт `Http.request` з необхідними параметрами, такими як метод запиту, URL і заголовки. Для базової аутентифікації, ми додаємо заголовок `Authorization` зі значенням, яке прописується в специфікації HTTP. 
-```Elm
-Http.send request =
-    Http.send (\_ -> request)
-```
+```elm
+import Http exposing (..)
+import Json.Decode as Decode
 
-Заголовок авторизації повинен містити ім'я користувача та пароль, які кодуються у форматі base64. Elm вже має вбудовану функцію `Base64.encode`, яку ми можемо використовувати для цього.
-
-```Elm
-authHeader : String -> String -> Header
-authHeader username password =
+-- Створення запиту з базовою аутентифікацією
+basicAuthRequest : String -> String -> String -> String -> String -> String -> Http.RequestBody -> Http.Request
+basicAuthRequest method baseUrl username password url body =
     let
-        authString =
-            String.join ":" [ username, password ] |> Base64.encode
-
-        value =
-            "Basic " ++ authString
+        headers =
+            [ ("Authorization", "Basic " ++ Base64.encode (username ++ ":" ++ password))
+            ]
     in
-        Http.header "Authorization" value
+    Http.request
+        { method = method
+        , headers = headers
+        , url = baseUrl ++ url
+        , body = body
+        , expect = expectJsonResponse decoder
+        , timeout = Nothing
+        , withCredentials = False
+        }
+
+-- Декодування відповіді JSON
+type alias ResponseBody =
+    { name : String
+    , id : Int
+    }
+
+decoder : Decode.Decoder ResponseBody
+decoder =
+    Decode.succeed ResponseBody
+        |> Decode.field "name" Decode.string
+        |> Decode.field "id" Decode.int
+
+-- Відправка запиту
+sendRequest : Cmd Msg
+sendRequest =
+    Http.send handleResponse <| basicAuthRequest "POST" "https://example.com/" "username" "password" "api/endpoint" "{}"
+
+-- Обробка відповіді
+handleResponse : Result Http.Error ResponseBody -> Msg
+handleResponse result =
+    case result of
+        Ok response ->
+            Msg.Success response
+
+        Err error ->
+            Msg.Failure error
 ```
 
-Тепер ми можемо використовувати цей заголовок при відправці HTTP запиту з базовою аутентифікацією. Наприклад, якщо ми хочемо отримати список користувачів з нашого серверу, ми можемо скористатися таким кодом:
+Приклад вхідної та вихідної даних:
 
-```Elm
-Http.send getUsers =
-    Http.send 
-        { method = "GET"
-        , headers = [ authHeader "myusername" "mypassword" ]
-        , url = "https://example.com/users"
-        , expect = Http.expectJson (List User) }
+Вхідні дані:
+```json
+{
+    "name": "John",
+    "id": 123
+}
 ```
 
-Як бачимо, ми передали наш заголовок авторизації у властивості `headers` об'єкта запиту. Після виконання запиту, Elm автоматично декодує отримані дані у список користувачів за допомогою функції `expectJson`.
+Вихідні дані:
+```elm
+ResponseBody "John" 123
+```
 
-## Глибини
+## Deep Dive
 
-Тепер, коли ми розбираємось у простому використанні базової аутентифікації в Elm, давайте трохи поглибимося у деталі. Важливо знати, що ім'я користувача та пароль надсилатимуться відкрито в мережі, тому цей метод не є надійним з точки зору безпеки. Крім того, Elm не надає підтримку для сертифікатів безпеки, тому важливо б
+Відправка HTTP-запиту з базовою аутентифікацією використовує заголовок "Authorization", який містить Base64-кодовані дані з іменем користувача та паролем. Така аутентифікація забезпечує задану рівню безпеки для виклику зовнішніх ресурсів. Також важливим етапом є правильне декодування отриманої відповіді, щоб можна було коректно обробити дані.
+
+## Див. також
+
+- [Документація Elm по відправленню HTTP-запитів](https://package.elm-lang.org/packages/elm/http/latest/Http)
+- [Документація Elm по базовій аутентифікації](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Приклад Elm-додатка, що відправляє HTTP-запити з базовою аутентифікацією](https://github.com/example/elm-http-basic-auth-example)

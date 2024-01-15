@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "TypeScript: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en vanlig uppgift inom webbutveckling. Det kan till exempel användas för att autentisera användare vid inloggning eller för att hämta data från en API-tjänst. I denna artikel kommer vi att titta på hur vi kan implementera detta i TypeScript.
 
-## Så här gör du
-För att skicka en HTTP-förfrågan med grundläggande autentisering i TypeScript behöver vi först importera nödvändiga moduler. Vi kan använda ```axios```-modulen för att göra förfrågningar och ```Buffer```-modulen för att koda lösenordet i Base64-format. Vi kan sedan använda följande kod för att göra en GET-förfrågan med autentisering:
+Det finns många tillfällen när det är nödvändigt att skicka en HTTP-begäran med grundläggande autentisering. Det kan vara för att åtkomst till en resurs kräver autentisering eller för att säkra en begäran mot obehörig åtkomst.
+
+## Hur man gör
+
+För att skicka en HTTP-begäran med grundläggande autentisering i TypeScript, används vanligtvis paketet "axios". Detta paket gör det enkelt att göra HTTP-begäranden och kan installeras med kommandot "npm install axios".
+
+Först måste de nödvändiga biblioteken importeras:
 
 ```TypeScript
-import axios from 'axios';
-import { Buffer } from 'buffer';
-
-const username = 'användarnamn';
-const password = 'lösenord';
-
-const auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
-
-axios.get('https://www.example.com/api', { headers: { Authorization: auth } })
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+import axios, { AxiosResponse } from "axios";
 ```
 
-I detta exempel använder vi ```Buffer``` för att koda användarnamn och lösenord i Base64-format och lägger sedan till det i en ```Authorization```-header i vår förfrågan. Beroende på vilken HTTP-metod vi använder och vilken typ av förfrågan vi gör, kan vi behöva ändra koden enligt våra behov. Det är också viktigt att notera att vi bör undvika att hårdkoda lösenordet och istället använda en säkrare metod för att hantera autentiseringsuppgifter.
+Sedan kan begäran göras med hjälp av följande kod:
 
-## Djupare dykning
-Vid grundläggande autentisering skickar klienten användarnamn och lösenord i varje förfrågan. Detta gör det enklare att autentisera, men medför också en säkerhetsrisk eftersom autentiseringsuppgifterna kan avlyssnas om förfrågan inte är krypterad. Detta är anledningen till att grundläggande autentisering ofta används tillsammans med HTTPS-protokollet, som krypterar förfrågningar och svar mellan klienten och servern.
+```TypeScript
+axios.get("https://example.com/api/user", {
+  auth: {
+    username: "username",
+    password: "password"
+  }
+}).then((response: AxiosResponse) => {
+  console.log(response.data);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+I detta exempel görs en GET-begäran till "https://example.com/api/user" med grundläggande autentisering som består av en användarnamn och lösenord. Svaret från begäran loggas sedan till konsolen med hjälp av "console.log()". Om begäran misslyckas loggas istället ett felmeddelande.
+
+## Djupdykning
+
+När en HTTP-begäran görs med grundläggande autentisering, skickas användarnamn och lösenord i klartext över nätverket. Detta kan vara en säkerhetsrisk, särskilt om en osäker anslutning används. För att öka säkerheten kan man istället använda sig av JWT-autentisering (JSON Web Token).
+
+En annan sak att tänka på är att om en begäran ska göras med grundläggande autentisering från en webbläsare, måste den tidigare beskrivna kodändringen utföras på serversidan för att logga in på webbplatsen. Annars kommer det ofta att leda till CORS-fel.
 
 ## Se även
-- [Axios dokumentation](https://github.com/axios/axios)
-- [Buffer dokumentation](https://nodejs.org/api/buffer.html) 
-- [HTTP-autenticering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+
+- [Axios GitHub-sida](https://github.com/axios/axios)
+- [Axios dokumentation](https://github.com/axios/axios#axios) 
+- [JWT.io](https://jwt.io/)

@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Python recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Python"
 category:             "Python"
@@ -10,59 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever come across a situation where you needed to delete characters from a string that matched a specific pattern? Maybe you were working with a large dataset and needed to clean it up, or maybe you were trying to format user input in a specific way. Whatever the reason may be, understanding how to delete characters matching a pattern in Python can be a useful skill to have in your programming arsenal.
+Deleting characters matching a pattern is a common task in data processing and text editing. Whether you want to remove certain characters from a string or filter out unwanted data, knowing how to delete characters matching a pattern can save you time and effort in your coding endeavors.
 
 ## How To
+To delete characters matching a pattern in Python, we can use the `re` module, which provides support for regular expressions. Regular expressions (or regex for short) are powerful tools for pattern matching and manipulation.
 
-To delete characters from a string that match a pattern, we can use the `re` module in Python. First, we need to import the module into our code:
+To get started, we first import the `re` module:
 
 ```Python
 import re
 ```
 
-Next, we can use the `re.sub()` function to substitute the matching characters with an empty string. Let's say we have a string `sentence` that contains the word "Python" multiple times:
+Next, we define the string we want to manipulate:
 
 ```Python
-sentence = "I love Python programming. Python is a great language to learn."
+string = "Hello! This is a sample string."
 ```
 
-If we want to delete all instances of the word "Python" from our string, we can use the following code:
+Let's say we want to delete all the digits from the string. We can use `re.sub()` to substitute the matching pattern with an empty string:
 
 ```Python
-cleaned_sentence = re.sub("Python", "", sentence)
-print(cleaned_sentence)
+new_string = re.sub(r"\d+", "", string)
+
+print(new_string)
 ```
+
+Here, we're using the `\d+` pattern to match one or more digits in the string. The `r` before the pattern indicates that it should be treated as a raw string, avoiding any potential conflicting characters.
 
 The output would be:
 
-`I love programming. is a great language to learn.`
-
-As you can see, all instances of "Python" have been removed from our string. We can also use regular expressions to specify a more complex pattern to match. For example, if we only want to remove the word "Python" if it is followed by a colon, we can use the following code:
-
-```Python 
-cleaned_sentence = re.sub("Python:", "", sentence)
-print(cleaned_sentence)
+```
+Hello! This is a sample string.
 ```
 
-The output would be:
+We can also use regex to remove certain characters. For example, if we want to remove all the vowels from the string, we can use:
 
-`I love programming. Python is a great language to learn.`
+```Python
+new_string = re.sub(r"[aeiou]+", "", string, flags=re.IGNORECASE)
 
-Notice that the second instance of "Python" was not removed because it was not followed by a colon. This demonstrates the power of using regular expressions to match specific patterns.
+print(new_string)
+```
+
+The `[aeiou]+` pattern matches one or more vowels, and the `re.IGNORECASE` flag makes the matching case-insensitive. The result would be:
+
+```
+Hll! Ths s smpl strng.
+```
 
 ## Deep Dive
+The `re` module has various functions for pattern matching and manipulation, but `re.sub()` stands out for its usefulness in deleting characters matching a pattern. Its syntax is:
 
-Now, let's take a deeper look at how the `re.sub()` function works. The first argument of this function is the pattern we want to match, and the second argument is what we want to replace the matching characters with. In the examples above, we used an empty string as the replacement, which essentially deletes the matching characters. However, we can use any string as the replacement, including other characters or even another word.
+```
+re.sub(pattern, repl, string, count=0, flags=0)
+```
 
-We can also specify an optional third argument to limit the number of replacements that are made. For example, if we only want to replace the first instance of "Python" in our string, we can do so by using `re.sub("Python", "", sentence, 1)`.
+Where `pattern` is the regular expression pattern to match, `repl` is the replacement string, `string` is the input string, `count` is an optional parameter to specify the maximum number of replacements, and `flags` allows us to modify the behavior of the function.
 
-To learn more about the `re` module and regular expressions in Python, check out the official [documentation](https://docs.python.org/3/library/re.html).
+It's important to note that `re.sub()` doesn't modify the original string, but rather returns a new string with the substitutions made. This is why we assign the result to a new variable in our examples.
+
+To learn more about regular expressions and their patterns, check out the Python `re` module documentation and tutorials listed in the "See Also" section.
 
 ## See Also
-
-- [A Beginner's Guide to Regular Expressions in Python](https://realpython.com/regex-python/)
-- [Introduction to the `re` Module in Python](https://www.geeksforgeeks.org/python-regex-cheat-sheet/)
-- [Cleaning and Manipulating Text with Regular Expressions](https://towardsdatascience.com/cleaning-and-manipulating-text-with-regular-expressions-fd1394330c8e)
-
-Happy coding!
+- [Python `re` module documentation](https://docs.python.org/3/library/re.html)
+- [Real Python - How to Use Regular Expressions in Python](https://realpython.com/regex-python/)
+- [RegexOne - Interactive Regular Expressions Tutorial](https://regexone.com/)

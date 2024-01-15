@@ -1,5 +1,6 @@
 ---
-title:                "Python: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Python: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Python"
 category:             "Python"
@@ -11,44 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach wiele interakcji między użytkownikami a serwerami internetowymi odbywa się poprzez protokół HTTP (Hypertext Transfer Protocol). Wysyłanie żądań HTTP jest niezbędnym elementem programowania aplikacji sieciowych, ponieważ umożliwia ono pobieranie danych z serwera oraz wysyłanie informacji do niego. Dzięki temu, możemy np. przeglądać strony internetowe, logować się do naszych kont czy wysyłać wiadomości.
+Wysyłanie żądania HTTP jest nieodłączną częścią wielu projektów programistycznych. Za pomocą tego prostego zadania możemy pobierać dane, komunikować się z serwerami i tworzyć dynamiczne aplikacje internetowe.
 
 ## Jak to zrobić
 
-W Pythonie istnieje wiele bibliotek pozwalających na wysyłanie żądań HTTP. Jedną z najpopularniejszych jest `requests`, dlatego skupimy się na niej w tym artykule. Najpierw musimy zainstalować tę bibliotekę za pomocą narzędzia `pip`:
-
-```Python
-pip install requests
-```
-
-Następnie importujemy ją w naszym kodzie:
+Wysłanie żądania HTTP w Pythonie jest łatwe przy użyciu biblioteki `requests`. Najpierw musimy ją zainstalować za pomocą `pip install requests`, a następnie zaimportować w naszym kodzie:
 
 ```Python
 import requests
 ```
 
-Aby wysłać żądanie HTTP do serwera, musimy utworzyć obiekt typu `Request` i przekazać do niego adres URL, do którego chcemy się połączyć. Możemy również określić niektóre opcje, np. nagłówki lub parametry żądania. W poniższym przykładzie wyślemy żądanie GET do strony "www.example.com" i wyświetlimy otrzymaną odpowiedź:
+Aby wysłać żądanie, musimy określić adres URL, do którego chcemy się połączyć, oraz metodę żądania. Na przykład, jeśli chcemy pobrać stronę internetową, musimy użyć metody `GET`:
 
 ```Python
-r = requests.get("https://www.example.com")
-print(r.text)
+response = requests.get("https://www.google.com")
 ```
 
-Wynik powinien zawierać kod HTML strony www.example.com. Jeśli chcemy wysłać żądanie POST, w którym przesyłamy dane, możemy to zrobić w następujący sposób:
+Teraz `response` będzie zawierać obiekt odpowiedzi z serwera. Możemy sprawdzić status naszego żądania za pomocą atrybutu `status_code`:
 
 ```Python
-payload = {'key1': 'value1', 'key2': 'value2'}
-r = requests.post("https://www.example.com", data=payload)
-print(r.text)
+print(response.status_code)
+# output: 200
 ```
 
-Możemy również wykonywać inne typy żądań HTTP, takie jak PUT, DELETE czy PATCH, korzystając z odpowiednich metod. Pełna lista dostępnych metod i szczegółowe informacje znajdują się w dokumentacji biblioteki.
+Jeśli chcemy uzyskać zawartość strony, możemy użyć atrybutu `text`:
+
+```Python
+print(response.text)
+# output: zalany kod HTML strony Google
+```
 
 ## Deep Dive
 
-Większość bibliotek do obsługi żądań HTTP opiera się na wbudowanym module `urllib` lub `urllib2`. Jednak biblioteka `requests` oferuje większą prostotę i intuicyjność w korzystaniu z metod HTTP. Ponadto, umożliwia ona automatyczne obsługiwanie różnych typów kodów odpowiedzi, co znacznie ułatwia nasze zadanie. Warto również zwrócić uwagę na możliwość ustawiania i przechowywania ciasteczek, czyli danych sesji, w celu późniejszego wykorzystania ich w kolejnych żądaniach.
+Podczas wysyłania żądań HTTP istnieje wiele innych opcji, które możemy wykorzystać, takich jak przekazywanie parametrów, nagłówków czy danych formularza. Możemy również przeprowadzać bardziej zaawansowane operacje, jak np. wysyłanie żądania POST lub przesyłanie plików.
 
-## Zobacz też
+Aby dowiedzieć się więcej o możliwościach biblioteki `requests`, warto zapoznać się z jej dokumentacją: https://docs.python-requests.org/en/master/.
 
-- Oficjalna dokumentacja biblioteki `requests`: https://requests.readthedocs.io/en/latest/
-- Wprowadzenie do obsługi HTTP w Pythonie: https://realpython.com/python-requests/
+## Zobacz także
+
+- Tutorial dotyczący biblioteki `requests`: https://realpython.com/python-requests/
+- Poradnik dotyczący wysyłania żądań HTTP w Pythonie: https://code.tutsplus.com/pl/tutorials/http-in-python-from-begginers--net-30333

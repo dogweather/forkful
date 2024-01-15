@@ -1,5 +1,6 @@
 ---
-title:                "C++: הורדת עמוד אינטרנט"
+title:                "הורדת עמוד אינטרנט"
+html_title:           "C++: הורדת עמוד אינטרנט"
 simple_title:         "הורדת עמוד אינטרנט"
 programming_language: "C++"
 category:             "C++"
@@ -9,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why (למה):
+## למה
 
-למה צריך להוריד עמוד אינטרנט באמצעות תכנות C++? ישנם מספר סיבות אפשריות - יכול להיות לצורך איסוף מידע, לניתוח עמוד אינטרנט או פשוט כי זה מאתגר ומעניין למתכנתים.
+ישנם מספר סיבות שיש להוריד דף אינטרנט. לדוגמה, אתה יכול להיות מעוניין להוריד דף אינטרנט שכולל מידע חשוב שאתה רוצה לשמור, או שתוכל להשתמש בו לצורך התכנסותי כאשר אין לך גישה לאינטרנט.
 
-## How To (כיצד לעשות):
+## איך לעשות זאת
 
-בכדי להוריד עמוד אינטרנט באמצעות תכנות C++ נצטרך להשתמש בספריית הפעלת הרשת מסדונג (Networking) של C++. המטרה העיקרית שלנו היא לשלוט בפעולות של תקשורת ממוחשבת בעזרת פרוטוקולים כמו HTTP. נדגים כמה דוגמאות קוד כדי להמחיש כיצד ניתן להשתמש בספרייה זו:
+תהנה מכידונים פשוטים להורדת דף אינטרנט עם קוד שֶל ג׳י וּ בשורה אחת:
 
 ```C++
 #include <iostream>
-#include <curl/curl.h> //ספריית CURL המשמשת לפעולות הרשת
-
-//פונקציה שמדפיסה את תוכן העמוד בעזרת פרוטוקול HTTP
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    size_t written = fwrite(ptr, size, nmemb, stream);
-    return written;
-}
+#include <curl/curl.h>
 
 int main() {
-    CURL *curl;
-    FILE *fp;
-    CURLcode res;
-    char *url = "https://www.example.com/"; //כתובת האתר שברצוננו להוריד
-    char outfilename[FILENAME_MAX] = "example.html"; //שם הקובץ המקומי שנרצה שהאתר יורד לו
-
-    curl = curl_easy_init();
-    if (curl) {
-        fp = fopen(outfilename,"wb");
-        curl_easy_setopt(curl, CURLOPT_URL, url); 
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        res = curl_easy_perform(curl); //מבצע את הבקשה
-        curl_easy_cleanup(curl); //סגירת החיבור
-        fclose(fp); //סגירת הקובץ
-    }
-    return 0;
+  CURL *curl; // משתמש טפלן CURL עבור פעולות האירוע
+  CURLcode res; // קוד התשובה של הבקשה curl לאחר מילוי וגזברו בהתאם
+  std::string url = "https://example.com"; // כתובת האינטרנט ששמרת
+  curl = curl_easy_init(); // תחילת פעולת CURL במילוי המשתנים עבור curl בניתוח ההתאמה המתאית להתחברות מתאימה לחוץ
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // להכניס את שם האתר שרצית ב-CURL כתובת אתר מתאימה
+    res = curl_easy_perform(curl); // להפעיל את מדינת HTTP לכתובת נתונים של הכתובת itemתומלמכהתוסמהךחווס http
+    curl_easy_cleanup(curl); // לסיים את בקשת פעולת ניקיון HTTPS נכבה
+  }
+  return 0;
 }
 ```
 
-בתוצאה מן כיתובות הקוד הנמצאות לעיל, נוכל לראות שאנו מפעילים פעולות כמו fopen, fwrite לכתיבה לקובץ ו CURL לבצע את הבקשה לאתר. בנוסף, ניתן להשתמש בפונקציות כמו curl_easy_setopt בשביל לקבוע את פרטי הבקשה, כמו כתובת האתר ופרוטוקול התקשורת.
+תוצאת פלט של הקוד הנתון יחזיר תוצאת קוד במספר 200, שמציינת שהבקשה הוצאה בהצלחה ודף האינטרנט הורד במלואו.
 
-## Deep Dive (פירוט
+## בואו לעכבור עמוק
+
+להוריד דף אינטרנט הוא תהליך שמשתמש בפרוטוקול HTTP כדי לקבל את המידע מהשרת המארח. במקרה שלנו, אנו משתמשים בטכנולוגיית CURL הנתמכת בשפת התכנות C++. CURL מאפשר לנו ליצור חיבורים אינטרנטיים ולבצע בקשות HTTP בקלות ובצורה ממוחשבת. כמו כן, תיעדנו

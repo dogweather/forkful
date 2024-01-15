@@ -1,5 +1,6 @@
 ---
-title:                "C#: Schreiben auf den Standardfehler"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "C#: Schreiben auf den Standardfehler"
 simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "C#"
 category:             "C#"
@@ -9,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie professionell programmieren, wissen Sie wahrscheinlich bereits, dass es wichtig ist, alle möglichen Fehler in Ihrem Code zu beheben. Das kann eine Herausforderung sein, aber es gibt eine einfache Möglichkeit, um Fehler zu erkennen und zu beheben - das "Schreiben in den Standardfehler". In diesem Blogpost erfahren Sie, warum und wie Sie Fehler aus der Konsole in Ihre C#-Codebeispiele eingeben sollten.
+Schreiben an den Standardfehler (Standard Error) ist eine wichtige Fähigkeit für jeden C# Programmierer. Durch das Schreiben an den Standardfehler können Fehler und Warnungen im Programm angezeigt werden, was es einfacher macht, Fehler bei der Ausführung zu beheben.
 
-## Wie geht das?
-
-Um Fehler in Ihrem Code zu erkennen, müssen Sie Ihn in den Standardfehler stream schreiben, auch bekannt als "Standardfehlerausgabe" oder "stderr". Mit nur wenigen Zeilen Code können Sie diesen Stream in Ihre Konsole integrieren.
-
-Lassen Sie uns ein einfaches Beispiel in C# betrachten:
+# Wie geht man vor?
 
 ```C#
-using System;
+Console.Error.WriteLine("This is an error message.");
+```
 
-namespace WritingToStdErr
+Der obige Code gibt die Fehlermeldung "This is an error message." auf der Konsole aus, da wir die `Error` Eigenschaft des `Console` Objekts verwenden. Hierbei ist es wichtig, das `WriteLine` anstelle von `Write` zu verwenden, da dies sicherstellt, dass die Fehlermeldung in einer neuen Zeile ausgegeben wird.
+
+```C#
+try
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Ein Beispiel für eine Fehlerausgabe in die Konsole
-            Console.Error.WriteLine("Oops! Ein Fehler ist aufgetreten.");
-        }
-    }
+  // Code, der möglicherweise einen Fehler auslöst
+}
+catch (Exception ex)
+{
+  Console.Error.WriteLine("Error: " + ex.Message);
 }
 ```
 
-Die Ausgabe dieses Codes wird im Standardfehler stream "Oops! Ein Fehler ist aufgetreten." sein. Beachten Sie, dass wir hier `Console.Error.WriteLine` verwenden, um in den Standardfehler stream zu schreiben, anstatt `Console.WriteLine` zu ver
+In diesem Beispiel wird die Fehlermeldung sowohl im `catch` Block als auch im `try` Block ausgegeben. Dies ist hilfreich, um zu überprüfen, ob der Code im `try` Block erfolgreich ausgeführt wurde oder ob ein Fehler aufgetreten ist.
+
+# Tiefer geht's
+
+Das Schreiben an den Standardfehler ist besonders hilfreich bei der Entwicklung von komplexen Programmen oder beim Debugging. Durch die Verwendung von `Console.Error` können wir gezielt Fehler oder Warnungen ausgeben, ohne das normale Programmverhalten zu beeinträchtigen. Es ist auch möglich, den Standardfehler in eine Datei umzuleiten, um spätere Fehleranalysen zu ermöglichen.
+
+# Siehe auch
+
+- Dokumentation zur `Console.Error` Eigenschaft (https://docs.microsoft.com/dotnet/api/system.console.error)
+- Artikel zur Fehlerbehandlung in C# (https://www.c-sharpcorner.com/article/exception-handling-in-c-sharp/)

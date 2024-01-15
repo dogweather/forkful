@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Zapisywanie ciągu z wielkiej litery"
-simple_title:         "Zapisywanie ciągu z wielkiej litery"
+title:                "Zapisywane wielkich liter łańcucha"
+html_title:           "Rust: Zapisywane wielkich liter łańcucha"
+simple_title:         "Zapisywane wielkich liter łańcucha"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,33 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek musiałeś zmienić wielkość liter w łańcuchu znaków? Może potrzebowałeś zapisać imię i nazwisko w formacie "Imię Nazwisko" lub zmienić pierwszą literę każdego słowa na wielką? Właśnie o takiej operacji będziemy dzisiaj mówić! W tym wpisie dowiesz się, dlaczego jest tak ważne i w jaki sposób wykonać zwięzłe i wydajne przekształcenie łańcucha znaków.
+W dzisiejszych czasach, gdy coraz więcej aplikacji wymaga wprowadzania tekstu, często konieczne jest formatowanie tego tekstu, aby wyglądał estetycznie i czytelnie. Istnieją różne sposoby na formatowanie tekstu, jednym z nich jest właśnie kapitalizowanie ciągów znaków. W tym artykule dowiesz się, jak to zrobić w języku Rust.
 
 ## Jak to zrobić
 
-Aby przekształcić łańcuch znaków na taki, w którym pierwsza litera każdego słowa będzie wielka, będziemy musieli skorzystać z metody `to_uppercase()` i `replace()` z biblioteki standardowej języka Rust. Poniższy kod pokazuje przykład, w którym zostanie zastosowana ta operacja na łańcuchu "jan kowalski".
+Aby kapitalizować ciąg znaków w Rust, możesz skorzystać z metody `to_uppercase` z modułu `std::string`.
 
 ```Rust
-let name = "jan kowalski".to_uppercase().replace(" ", "");
-println!("Imię i nazwisko w formacie z wielkimi literami: {}", name);
+let my_string = "hello world";
+let capitalized_string = my_string.to_uppercase();
+
+println!("{}", capitalized_string);
 ```
 
-Po uruchomieniu programu powinniśmy zobaczyć następujący wynik:
+W powyższym przykładzie, tworzymy zmienną `my_string` zawierającą tekst "hello world", a następnie przypisujemy kapitalizowany ciąg znaków do zmiennej `capitalized_string` wykorzystując metodę `to_uppercase`. W końcu, wyświetlamy wynik za pomocą funkcji `println`.
 
-```
-Imię i nazwisko w formacie z wielkimi literami: JanKowalski
+Możemy także użyć metody `capitalize` z modułu `str` do kapitalizowania tylko pierwszej litery w ciągu znaków.
+
+```Rust
+let my_string = "hello world";
+let capitalized_first_letter = my_string.capitalize();
+
+println!("{}", capitalized_first_letter);
 ```
 
-Jak widzimy, dzięki skorzystaniu z odpowiednich metod, uzyskaliśmy pożądany rezultat. Teraz możemy zastosować tę samą operację w swoich programach, aby uzyskać bardziej czytelne i estetyczne wyjście.
+W wyniku powyższego przykładu, otrzymamy "Hello world" zamiast "HELLO WORLD". Jest to przydatne, gdy chcemy zachować oryginalny wygląd reszty tekstu, ale jednocześnie chcemy, aby pierwsza litera była duża.
 
 ## Deep Dive
 
-W czasie działania metody `to_uppercase()`, gdzie jest definiowana kolejność wielkich i małych liter? Okazuje się, że zależy to od aktualnie używanego systemu. Na przykład, w systemie ASCII, litery są uporządkowane według ich numerów w tabeli, a znaki o mniejszej liczbie będą poprzedzać znaki o większej liczbie. Dlatego w tym przypadku wielkimi literami są najpierw umieszczane znaki o wyższych numerach.
+Podczas kapitalizowania ciągu znaków, warto pamiętać o różnych językach i ich sposobie obsługi wielkich liter. W językach niektórych językach, jak na przykład w języku tureckim, istnieją specjalne znaki, które mogą zmienić całe słowo przy użyciu kapitalizacji, więc warto zwrócić na to uwagę.
 
-W systemie Unicode, wielkość liter może być różna w zależności od ustawień językowych i narodowych. Dlatego też, w niektórych przypadkach może się zdarzyć, że wynik metody `to_uppercase()` nie będzie jednoznaczny. W takiej sytuacji warto skorzystać z innych metod z biblioteki standardowej, takich jak `to_uppercase_lossy()`, która zwróci w miarę możliwości jednoznaczny wynik.
+Ponadto, warto zauważyć, że metody `to_uppercase` i `capitalize` zwracają nowe ciągi znaków, a nie modyfikują oryginalnego. Jeśli chcesz zachować zmodyfikowaną wersję, musisz ją przypisać do nowej zmiennej.
 
 ## Zobacz także
 
-- [Dokumentacja standardowej biblioteki języka Rust](https://doc.rust-lang.org/std/)
-- [ASCII vs Unicode](https://www.edureka.co/blog/ascii-vs-unicode/)
-- [Wpływ ustawień językowych i narodowych na wielkość liter w Unicode](https://unicode.org/faq/casemap_charprop.html)
+- [Dokumentacja Rust na temat kapitalizacji](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+- [Poradnik na temat pracy z tekstami w Rust](https://www.asquera.de/blog/2015-07-03/working-with-strings-in-rust/)

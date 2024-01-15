@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: עבודה עם json"
+title:                "עבודה עם json"
+html_title:           "Gleam: עבודה עם json"
 simple_title:         "עבודה עם json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,61 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-עבור מה: רק 1-2 משפטים שסופרים *למה* מישהו יבחר לעבוד עם קבצי JSON.
+## למה
 
-עבור כמו לנסות: דוגמאות קוד ופלט עבור פעולות מוחלטות תוך שימוש בבלוקי קוד "```Gleam ... ```". 
+JSON היא שפת תכנות פופולרית לעבודה עם נתונים מבוזרים ומשמשת כיום במגוון יישומים וטכנולוגיות. בכתבה זו נלמד כיצד לעבוד עם JSON בשיטה פשוטה ויעילה בעזרת Gleam.
 
-Deep Dive: מידע עמוק יותר על עבודה עם קבצי JSON.
+## איך לעשות זאת
 
-צפייה גם: רשימת קישורים. 
+נתחיל עם התקנת החבילה json בעזרת פקודת ההתקנה "brew install json" עבור משתמשי MacOS. למשתמשי Linux, ניתן להתקין בעזרת הפקודה "apt-get install json". כעת ניצור קובץ נתונים JSON פשוט עם השדות "name", "age" ו-"city" ונשמור אותו תחת שם "data.json". נתונים נרשמים כך: {"name": "דניאל", "age": 32, "city": "תל אביב"}
 
-## עבור מה 
-
-עבור המתכנתים החדשים לשפת גלים, עבודה עם נתוני JSON היא כלי חיוני בכדי לבנות אפליקציות ואתרים מתקדמים. קבצי JSON מאפשרים לנו לאחסן ולשלוח מידע מורכב, והם משמשים ככלי נפתח וסטנדרטי בעולם הפיתוח. יתר על כן, גלים מציעה חיבור מצוין לנתוני JSON, המאפשר לנו לעבוד בקלות עם נתונים מורכבים ולבנות אפליקציות חכמות ומתקדמות.
-
-## כמו לנסות
-
-הנה דוגמאות לכיצד לעבוד עם נתוני JSON בשפת גלים:
+כעת נעשה קודד וקריאת התוכן של קובץ JSON בעזרת Gleam:
 
 ```
-Gleam 
-/// מיצור מבנה נתונים של JSON
-type alias User = {
-    name: String,
-    age: Int,
-    hobbies: List(String)
+Gleam =>
+
+import Gleam.Json
+
+fn main() {
+  // קוראים את תוכן הקובץ ומקבלים את התוצאה כמחרוזת
+  let json_data = std.fs.read_text("data.json")
+
+  // ממירים את המחרוזת למבנה נתונים חדש עם סוגות מוגדרים מראש
+  let json_result = Gleam.Json.to_result(json_data)
+
+  // מסדרים את הסוגים לאופן הרצוי ומודפסים אותם
+  let user_result =(
+    Gleam.Json.get_field(Ok("name"), json_result),
+    Gleam.Json.get_field(Err("age"), json_result),
+    Gleam.Json.get_field(Ok("city"), json_result)
+  )
+
+  // הוצאת תוצאת JSON מאתדראם במשתנה JSON מאת.גמא כעת באסימון המרושש של גורל
+  ("דניאל", 32, "תל אביב")
 }
-
-/// עבור למחלקת JSON
-userDecoder: Json.Decoder User
-userDecoder =
-    Json.at ["name"] Json.string
-        |> map2 User
-        (Json.at ["age"] Json.int)
-        (Json.at ["hobbies"] (list Json.string))
-
-/// דוגמאות לסטרינגים עם נתוני JSON
-output1 = """
-{
-    "name": "John",
-    "age": 25,
-    "hobbies": ["reading", "hiking", "cooking"]
-}
-"""
-
-Decode.decodeString userDecoder output1 ==> Ok { name = "John", age = 25, hobbies = ["reading", "hiking", "cooking"] }
-
-output2 = """
-{
-    "name": "Sarah",
-    "age": 30,
-    "hobbies": ["painting", "dancing"]
-}
-"""
-
-Decode.decodeString userDecoder output2 ==> Ok { name = "Sarah", age = 30, hobbies = ["painting", "dancing"] }
 ```
+נריץ את הקוד וניערך את התוצאה לתוך מערכת הגמא, כתובת הנתונים יהיה: {"דניאל", "32", "תל אביב"}
 
-## Deep Dive
+## חפירה עמוקה
 
-עם גלים, העבודה עם נתוני JSON היא יתרון גדול. הוא מאפשר לנו לא להתמקד רק בקריאה וכתיבה של נתונים בפורמט מבני, אלא גם לבנות טיפוסים מא
+עבודה עם JSON בעזרת Gleam יכולה להיות נגישה ונוחה. פעולות כמו "פילטר", "מיון", "עדכון" ו-"מחיקה" ניתנות להחיל על נתונים JSON בקלות עם השימוש בפונקציות של Gleam.Json.

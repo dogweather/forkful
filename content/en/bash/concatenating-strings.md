@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Bash recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,51 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Concatenating strings is a common task in Bash programming, and is used to combine multiple strings into a single, longer string. This can be useful for tasks such as creating dynamic file names, constructing URLs, or displaying information to the user.
+Concatenating strings is a useful skill to have in Bash programming as it allows you to combine multiple strings together to create a new string. This can be helpful for creating dynamic output or manipulating data.
 
 ## How To
 
-To concatenate strings in Bash, we use the `printf` command, which allows us to format and print strings in a variety of ways. Let's look at some examples to see how it works.
+To concatenate strings in Bash, you can use the `+` operator or the `+=` compound assignment operator. Here's an example:
 
-```
-Bash code: printf "Hello %s, welcome to my blog!" "readers"
-Output: Hello readers, welcome to my blog!
+```Bash
+first_name="John"
+last_name="Doe"
+
+full_name=$first_name" "$last_name
+
+#or using compound assignment:
+full_name+=" Jr."
+
+echo $full_name
+#output: John Doe Jr.
 ```
 
-In this example, we are using `printf` to output the string "Hello readers, welcome to my blog!" by combining the string "Hello" with the string "readers" using the `%s` formatting specifier.
+In the above example, we have two variables `first_name` and `last_name` which contain the first and last name respectively. We used the `+` operator to add a space in between the two names and store it in a new variable `full_name`. We then used the `+=` operator to add the suffix "Jr." to the end of the `full_name` variable. Finally, we printed out the `full_name` variable to see the concatenated string.
 
-We can also concatenate multiple strings together by using multiple `%s` specifiers and providing a corresponding string for each one.
+You can also use the `cat` command to concatenate strings. Here's an example:
 
-```
-Bash code: printf "%s is learning %s programming." "I" "Bash"
-Output: I am learning Bash programming.
+```Bash
+str1="Hello"
+str2="world!"
+
+echo `cat <<< "$str1 $str2"`
+#output: Hello world!
 ```
 
-In addition to using `printf`, we can also use the `+=` operator to concatenate strings. This is often used within a loop or function to add strings together and store them in a variable.
-
-```
-Bash code: greeting="Welcome "
-    greeting+="to my blog!"
-    echo $greeting
-Output: Welcome to my blog!
-```
+Here, we used the `<<<` input redirection operator to pass the two strings into the `cat` command, which then concatenates them and prints out the result.
 
 ## Deep Dive
 
-When concatenating strings, it is important to pay attention to whitespace and other characters, as they can affect the output. For example, if we use `+=` without adding a space between the two strings, it will result in a single word without a space in between.
+There are a few things to keep in mind when concatenating strings in Bash:
 
-Additionally, we can use `printf` to add formatting elements such as new lines and tabs to our concatenated strings. This can be helpful when creating more complex and visually appealing outputs.
-
-```
-Bash code: printf "Hello %s,\n\tWelcome to my blog!" "readers"
-Output: Hello readers,
-        Welcome to my blog!
-```
-
-It is also worth mentioning that we can concatenate not only strings, but also variables, numbers, and other data types. This makes it a versatile tool for building dynamic outputs in our Bash scripts.
+- Double quotes should be used when assigning concatenated strings to a variable to prevent word splitting and globbing. For example, `full_name=$first_name" "$last_name` is better than `full_name=$first_name $last_name`.
+- Arrays can also be concatenated using the `+=` operator. For example, `nums+=(10 20 30)` will add the numbers 10, 20 and 30 to the end of the `nums` array.
+- You can also use command substitution to concatenate strings from the output of a command. For example, `pathname=$(pwd)" documents"` will add the string " documents" to the end of the current working directory.
 
 ## See Also
 
-- [Bash Reference Manual: printf](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-- [Unix & Linux Stack Exchange: How to concatenate strings in Bash?](https://unix.stackexchange.com/questions/71614/how-to-concatenate-two-strings-together-in-sh)
-- [Bash Beginners Guide: Concatenating](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_02.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) - helpful resource for learning more about Bash scripting.
+- [Introduction to Bash Scripting](https://www.pluralsight.com/guides/introduction-to-bash-scripting) - another article on Bash scripting for beginners.
+- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/html_node/index.html) - official documentation for Bash.

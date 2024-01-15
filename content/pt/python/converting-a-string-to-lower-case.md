@@ -1,6 +1,7 @@
 ---
-title:                "Python: Convertendo uma string para minúsculas"
-simple_title:         "Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para letras minúsculas"
+html_title:           "Python: Convertendo uma string para letras minúsculas"
+simple_title:         "Convertendo uma string para letras minúsculas"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que converter uma string em letras minúsculas?
+## Por que
 
-Muitas vezes, ao manipular strings em Python, é necessário padronizar o formato para facilitar a comparação e o processamento dos dados. Converter uma string para letras minúsculas pode ser útil para garantir que todas as letras sejam tratadas da mesma forma, independentemente de estarem em maiúsculas ou minúsculas.
+Convertendo strings em letras minúsculas pode ser útil em várias situações, como por exemplo quando se está trabalhando com dados que são sensíveis à capitalização.
 
-##Como fazer?
+## Como fazer
 
-Para converter uma string para letras minúsculas em Python, podemos usar o método `lower()`. Veja um exemplo de código abaixo:
-
-```Python
-texto = "PYTHON É DIVERTIDO!"
-print(texto.lower())
-```
-
-O resultado deste código seria `python é divertido!`. Note que todas as letras foram convertidas para minúsculas.
-
-Podemos também aplicar o método `lower()` em uma variável que já contém uma string, como no exemplo abaixo:
+Para converter uma string em letras minúsculas em Python, você pode usar o método `lower()` em uma string. Veja um exemplo abaixo:
 
 ```Python
-nome = "JOÃO"
-nome = nome.lower()
-print(nome)
+string = "CONVERTER PARA MINÚSCULAS"
+string_lower = string.lower()
+print(string_lower)
 ```
+O resultado será: `converter para minúsculas`
 
-Neste caso, a variável `nome` teria como valor `joão` após a conversão para letras minúsculas.
+Você também pode usar o método `casefold()` para realizar a mesma conversão, porém com a diferença de que ele também lida com caracteres Unicode em diferentes idiomas. Veja o exemplo abaixo:
 
-##Aprofundando-se
+```Python
+string = "ConVerTer parA MiNúsculaS ツ"
+string_lower = string.casefold()
+print(string_lower)
+```
+O resultado será: `converter para minúsculas ツ`
 
-Além do método `lower()`, também é possível utilizar a função `casefold()` para converter uma string para letras minúsculas em Python. A principal diferença entre os dois é que `casefold()` leva em consideração caracteres acentuados e de outras línguas, enquanto `lower()` não os altera.
+## Mergulho Profundo
 
-Também é importante mencionar que a conversão para letras minúsculas em Python respeita as regras de acentuação e capitalização da língua em que o código está sendo executado. Ou seja, se o seu sistema estiver configurado para português, a conversão para minúsculas também será feita de acordo com as regras do português.
+Ao converter uma string para letras minúsculas, é importante entender como a linguagem Python lida com a capitalização de letras. Em Python, strings são consideradas como objetos imutáveis, portanto o método `lower()` cria uma nova string contendo as letras minúsculas da original, ao invés de alterar a string original em si. Isso significa que, se você quiser armazenar a string em letras minúsculas, você precisa atribuí-la a uma nova variável.
 
-##Veja também
+Você também pode usar a função `str.lower()` para realizar a mesma tarefa, porém ela só funciona para strings. Já o método `lower()` pode ser usado em outros tipos de objetos, como listas ou dicionários, onde ele vai converter todas as strings contidas nesses objetos em letras minúsculas.
 
-A seguir, estão alguns links úteis para aprender mais sobre a conversão de strings em Python:
+## Veja também
 
-- Documentação oficial do Python sobre o método `lower()`: https://docs.python.org/3/library/stdtypes.html#str.lower
-- Documentação oficial do Python sobre a função `casefold()`: https://docs.python.org/3/library/stdtypes.html#str.casefold
-- Artigo do site Real Python sobre métodos de manipulação de strings em Python: https://realpython.com/python-strings/
+- Documentação oficial do Python sobre strings, que inclui mais informações sobre os métodos `lower()` e `casefold()`: https://docs.python.org/3/library/string.html
+- Um artigo detalhado sobre as diferenças entre o método `lower()` e `casefold()`: https://waymoot.org/home/python_string/

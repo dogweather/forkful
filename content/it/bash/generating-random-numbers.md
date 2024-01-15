@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Generazione di numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Bash: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,31 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Generare numeri casuali è un'attività comune in programmazione, soprattutto quando si lavora con giochi o applicazioni che richiedono una certa imprevedibilità. I numeri casuali sono anche utili per testare algoritmi o eseguire simulazioni.
+Generare numeri casuali può essere utile in molti contesti di programmazione, dal testare l'applicazione a creare giochi o algoritmi probabilistici. In questa guida esploreremo come utilizzare il linguaggio di scripting Bash per generare numeri casuali.
 
-## Come Fare
+## Come fare
 
-Per generare numeri casuali in Bash, possiamo utilizzare il comando `shuf`, che ci permette di mescolare in modo casuale una lista di numeri. Ad esempio, se vogliamo generare un numero casuale compreso tra 1 e 10, possiamo usare il seguente codice:
+Per generare un numero casuale in Bash, possiamo utilizzare il comando *$RANDOM*. Questo comando restituisce un numero intero casuale compreso tra 0 e 32767. Possiamo quindi utilizzare questo numero all'interno di una formula matematica per ottenere un numero in un range specifico.
 
-```Bash
-shuf -i 1-10 -n 1
-```
-
-Questo comando genera un numero casuale tra 1 e 10 e lo stampa sullo schermo. Possiamo anche generare una lista di numeri casuali utilizzando `shuf`, specificando l'intervallo e il numero di elementi desiderati:
+Ad esempio, per ottenere un numero casuale tra 1 e 100, possiamo utilizzare il seguente comando:
 
 ```Bash
-shuf -i 1-100 -n 5
+echo $((RANDOM % 100 + 1))
 ```
 
-Questo codice genererà 5 numeri casuali tra 1 e 100 e li stamperà in righe separate.
+In questo modo, il comando restituirà un numero casuale tra 1 e 100 ogni volta che viene eseguito.
 
-## Approfondimento
+Possiamo anche utilizzare il comando *shuf* per generare una lista di numeri casuali. Il seguente esempio creerà una lista di 10 numeri casuali compresi tra 1 e 50:
 
-La randomicità è un concetto importante nella generazione di numeri casuali. Molti algoritmi di generazione di numeri casuali si basano su processi fisici o matematici per garantire un risultato più casuale possibile. In Bash, il comando `shuf` utilizza il generatore di numeri casuali di GNU, che si basa sull'algoritmo di Fisher-Yates per garantire una randomicità efficiente.
+```Bash
+shuf -i 1-50 -n 10
+```
 
-Tuttavia, è importante notare che l'algoritmo di Fisher-Yates non è completamente casuale e potrebbe essere influenzato da vari fattori esterni. Se si necessita di una randomicità più avanzata, si potrebbe considerare l'utilizzo di un altro strumento o metodo per generare numeri casuali.
+Questo comando utilizza l'opzione *-i* per specificare il range di numeri, mentre l'opzione *-n* indica il numero di numeri da generare.
+
+## Deep Dive
+
+Il comando *$RANDOM* utilizza un generatore di numeri pseudo-casuali, il che significa che i numeri generati non sono veramente casuali ma sono invece determinati da un algoritmo. Ciò implica che, se il comando *$RANDOM* viene eseguito più volte, i numeri generati saranno sempre gli stessi. Per ottenere numeri realmente casuali, possiamo utilizzare un generatore di numeri esterno come /dev/random o /dev/urandom.
+
+Il file /dev/random restituisce numeri casuali basati sull'entropia del sistema, ma può essere influenzato da fattori esterni come il movimento del mouse o la lettura di dati da dispositivi hardware. D'altra parte, /dev/urandom utilizza un generatore di numeri pseudo-casuali, ma basato su un pool di entropia iniziale. Questo pool viene continuamente aggiornato dalle interazioni del sistema, garantendo numeri casuali di alta qualità senza dover aspettare che il pool si ricarichi come accade con /dev/random.
 
 ## Vedi anche
 
-- [Documentazione di `shuf` su GNU.org](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [Algoritmo di Fisher-Yates su Wikipedia](https://it.wikipedia.org/wiki/Algoritmo_di_Fisher-Yates)
+- [Manuale di Bash su $RANDOM](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+- [Tutorial su shuf](https://www.tecmint.com/shuf-command-examples/) 
+- [Articolo su /dev/random e /dev/urandom](https://security.stackexchange.com/questions/89/a

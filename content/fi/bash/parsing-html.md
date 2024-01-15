@@ -1,5 +1,6 @@
 ---
-title:                "Bash: HTML:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,57 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Miksi joku haluaisi käyttää Bash-ohjelmointia HTML-analysoinnissa? Vaikka Bash-maineen kuuluukin olevan tehokas työkalu komentorivillä suoritettaviin tehtäviin, se on myös erinomainen vaihtoehto HTML-sivujen analysointiin. Bashin avulla voit helposti käsitellä HTML-tiedostoja ja erottaa tärkeät tiedot haluamallasi tavalla.
+Joskus on tarpeen käsitellä verkkosivuilta saatavaa tietoa, esimerkiksi kaavioita, taulukoita tai tekstiä. Parsimalla HTML-koodia Bashilla voidaan helposti saada haluttu tieto ja käyttää sitä ohjelmointitehtävissä.
 
-## Miten 
+## Kuinka tehdä
 
-Bashilla on monia hyödyllisiä työkaluja, joilla voit purkaa HTML-tiedostoja ja käsitellä niiden sisältämää tietoa. Alla on esimerkkejä siitä, kuinka Bashin avulla voit selata sivun sisältöä ja tulostaa tietyt elementit.
-
-```
-Bash skripti, joka tulostaa kaikki sivun linkit:
+Parsiminen Bashilla on helppoa, käytetään vain ```curl```-komennon avulla saatu HTML-koodi ```grep```, ```sed``` ja ```awk``` komentojen avulla. Alla on esimerkki HTML-dokumentin parsimisesta ja halutun tiedon tulostamisesta. 
 
 ```Bash
-#!/bin/bash
-HEADERS=$(curl -s https://www.example.com/ | grep -o '<a href="[^"]*' | sed 's/<a href="//g')
-for PAGE in $HEADERS
-do
-  echo "$PAGE"
-done
+# Ensin ladataan HTML-dokumentti
+curl https://www.example.com/ > example.html
+# Sitten etsitään haluttu elementti html-tiedostosta ja tallennetaan se muuttujaan
+title=$(grep "<title>" example.html | sed "s/<title>//g" | awk -F "</title>" '{print $1}')
+# Lopuksi tulostetaan haluttu tieto
+echo "$title"
 ```
 
-Esimerkkitulos:
+Esimerkki tulostaa HTML-dokumentin otsikon ja tallentaa sen muuttujaan ```title```.
 
-```
-/index.html
-/about.html
-/contact.html
-```
+## Syvällinen tarkastelu
 
-```
-Bash skripti, joka tulostaa sivun otsikon:
+Parsiminen Bashilla perustuu eri komentojen yhdistämiseen HTML-dokumentin rivien läpi etsimällä haluttuja elementtejä ja muokkaamalla niitä tarvittaessa. Tämä mahdollistaa tarkan ja tietyn tiedon etsimisen ja käytön. Kannattaa tutustua myös muihin Bashin komentoihin, kuten ```cut``` ja ```grep -o```, joilla voi helpottaa tietyn tiedon etsimistä HTML-dokumentista.
 
-```Bash
-#!/bin/bash
-TITLE=$(curl -s https://www.example.com/ | grep '<title>' | sed 's/<[^>]*>//g')
-echo "$TITLE"
-```
+## Katso myös
 
-Esimerkkitulos:
-
-```
-Welcome to Example Website
-```
-
-## Syvempi sukellus
-
-Bashia käyttämällä voit myös muokata ja käsitellä HTML-tiedostoja käyttämällä "sed" komentoa. Se on hyödyllinen työkalu, kun haluat vaihtaa tiettyjä tekstiosuuksia HTML-tiedostosta. Voit myös käyttää "grep" komentoa erottamaan haluamasi tiedon, kuten linkit tai otsikot.
-
-Lisäksi voit käyttää Bash-skriptejä, joissa on muita ohjelmointikieliä, kuten Python tai Perl, jotta voit käyttää monimutkaisempia HTML-parsing työkaluja.
-
-## Katso myös 
-
-- [Bash-opas (suomeksi)](https://www.bash.fi/)
-- [Sed-opas (englanniksi)](https://www.gnu.org/software/sed/manual/sed.html)
-- [Grep-opas (englanniksi)](https://www.gnu.org/software/grep/manual/grep.html)
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
+- [Bashin opas - Tero Karvinen](http://terokarvinen.com/2019/aikataulu-palvelinten-hallinta-ict4tn022-5-autumn-2019/)

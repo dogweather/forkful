@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 테스트 작성하기"
+title:                "테스트 작성하기"
+html_title:           "Gleam: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,46 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 테스트를 작성해야 할까요?프로그램을 작성할 때 컴퓨터에서 시험 하지 않고 실행되지 않는다면, 버그가 발생할 수 있습니다. 테스트를 작성하면 이러한 문제를 미리 발견하여 프로그램의 안정성을 보장할 수 있습니다. 테스트를 작성함으로써 더 나은 소프트웨어를 만들기 위해 반복적인 개발과 수정을 할 수 있습니다.
 
-프로그래머는 코드를 테스트하는 것이 중요합니다. 이를 통해 코드의 예기치 않은 버그를 발견하고 수정할 수 있으며, 코드의 안정성과 신뢰성을 높일 수 있습니다. Gleam을 사용하여 테스트를 작성하면 이러한 이점을 쉽게 얻을 수 있습니다.
+## 어떻게 테스트를 작성할 수 있나요?
 
-## 어떻게
-
-Gleam은 함수형 프로그래밍 언어로, 테스트 작성에 있어서도 독특한 방법을 제공합니다. 먼저, `gleam/standard_library` 패키지에서 `test` 모듈을 임포트합니다. 그리고 아래와 같이 테스트 함수를 정의합니다.
+Gleam은 ```test``` 블록을 사용하여 간단하고 효율적인 테스트를 작성할 수 있게 해줍니다. 다음은 함수 ```sum```을 테스트하는 예제입니다.
 
 ```Gleam
-pub fn example_test() {
-    assert.equal(2, 1 + 1)
+test "sum 함수는 두 숫자의 합을 반환해야 합니다." {
+  let result = sum(5, 7)
+  assert result == 12
 }
 ```
 
-위 예제는 `equal` 함수를 사용하여 예상 값과 실제 값이 같은지 확인하는 테스트를 작성하는 방법을 보여줍니다. 이 함수는 위와 같이 `expected`와 `actual` 두 개의 매개변수를 받아서 비교합니다. 만약 두 값이 같지 않으면 테스트는 실패합니다.
+위 코드에서 테스트 블록은 개발자가 기대하는 기능을 설명하고, 테스트할 코드를 작성하고, ```assert```를 사용하여 기대하는 결과를 확인합니다. 이를 실행하면 ```sum``` 함수가 올바르게 작동하는지 확인할 수 있습니다.
 
-만약 예외 상황을 테스트하고 싶다면 `assert.error` 함수를 사용할 수 있습니다. 예를 들어, 아래와 같은 코드를 통해 어떻게 예외를 처리하는지 확인할 수 있습니다.
+## 깊게 파고들어보기
 
-```Gleam
-pub fn division_test() {
-    assert.error("Division by zero", fn() {
-        1 / 0
-    })
-}
-```
+테스트를 작성할 때 중요한 점은 모든 경우의 수를 고려하는 것입니다. 예를 들어, ```sum``` 함수에 음수가 입력될 경우를 테스트하는 것도 중요합니다. Gleam을 사용하면 테스트 블록을 작성하고 실행하는 것이 간단하고 쉽습니다. 이를 통해 모든 경우의 수를 고려하여 안정적인 소프트웨어를 개발할 수 있습니다.
 
-위 예제에서는 `1/0`의 결과가 예외를 발생시키는 것을 기대합니다. 따라서 `assert.error` 함수의 첫 번째 매개변수로 예상한 예외 메시지를 전달하고, 두 번째 매개변수로 예외가 발생할 코드를 작성합니다.
+## 자세히 알아보기
 
-더 많은 코드 예제와 테스트 출력 결과 등은 [Gleam 공식 문서](https://gleam.run/book/tour/testing.html)에서 확인할 수 있습니다.
+- [Gleam 공식 문서](https://gleam.run/documentation/)
 
-## 딥 다이브
-
-Gleam에서는 테스트를 작성할 때 `setup`과 `teardown` 함수를 사용할 수 있습니다. `setup` 함수는 각 테스트 함수 실행 전에 실행되며, `teardown` 함수는 각 테스트 함수 실행 후에 실행됩니다. 이 함수들을 사용하면 각 테스트 함수마다 반복적으로 필요한 작업을 할 필요 없이, 한 번만 작업을 정의하면 됩니다.
-
-또한 Gleam에서는 모든 테스트 함수를 한 번에 실행하는 `run_all` 함수도 제공합니다. 이를 사용하면 여러 테스트 함수를 한 번에 실행하여 일일이 실행되는 번거로움을 없앨 수 있습니다.
-
-이외에도 Gleam은 다양한 테스트 기능을 지원하고 있으며, 이를 사용하면 더욱 효율적이고 체계적으로 테스트를 작성할 수 있습니다. 자세한 내용은 [Gleam 공식 문서](https://gleam.run/book/tour/testing.html)에서 확인할 수 있습니다.
-
-## 참고
-
-- [Gleam 공식 문서](https://gleam.run/book/tour/testing.html)
-- [Gleam 테스트 예제 저장소](https://github.com/gleam-lang/testing_examples)
-- [Gleam Slack 커뮤니티](https://gleam-slackin.herokuapp.com/)
+[See Also]
+- [Gleam 테스트 패턴](https://medium.com/@lukewestby/gleam-testing-patterns-cabdd5f382d0)
+- [테스트 주도 개발과 Gleam](https://krsehh.tistory.com/45)
+- [테스트 기반 개발의 장단점](https://ncube.net/ncube/blog/view.do?postUid=1106)

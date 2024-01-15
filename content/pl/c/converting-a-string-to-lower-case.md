@@ -1,5 +1,6 @@
 ---
-title:                "C: Konwersja ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "C: Konwersja ciągu znaków na małe litery"
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "C"
 category:             "C"
@@ -11,47 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu spotykamy się z potrzebą konwersji wielkości liter w ciągach znaków. Może to wynikać z różnic w sposobie wprowadzania danych przez użytkowników lub z wymagań funkcji, na której operujemy. W tym artykule dowiesz się, jak w łatwy sposób przekształcić ciąg znaków do postaci zawierającej wyłącznie małe litery.
+Konwersja ciągu znaków na małe litery jest niezbędna w wielu sytuacjach w programowaniu. Może to pomóc w porównywaniu tekstów, filtrowaniu danych i wielu innych zastosowaniach.
 
 ## Jak to zrobić
 
-Najprostszym sposobem na zamianę wielkości liter w ciągu znaków jest użycie funkcji `tolower()` dostępnej w bibliotece `<ctype.h>`. Wystarczy przekazać do niej adres zmiennej zawierającej ciąg znaków, a funkcja zwróci kopię tego ciągu, w którym wszystkie litery będą już małe.
-
-Poniższy kod pokazuje przykład użycia funkcji `tolower()` oraz jej wyjście:
+Konwersja ciągu znaków na małe litery jest bardzo prosta w języku C. Do jej wykonania należy użyć funkcji `tolower()` z biblioteki `ctype.h`. Poniżej znajduje się przykładowy kod:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main(){
-    char string[] = "DuŻy cIąG zNakÓw";
-    char *ptr = string;
+int main(void)
+{
+    char string[] = "PRZYKŁADOWY TEKST";
+    int i = 0;
 
-    printf("Oryginalny ciąg: %s\n", string);
-
-    while(*ptr){
-        *ptr = tolower(*ptr);
-        ptr++;
+    while (string[i])
+    {
+        putchar(tolower(string[i]));
+        i++;
     }
 
-    printf("Ciąg z małymi literami: %s\n", string);
     return 0;
 }
 ```
 
-Wyjście:
-```
-Oryginalny ciąg: DuŻy cIąG zNakÓw
-Ciąg z małymi literami: duży ciąg znaków
-```
+Wynikiem działania programu będzie: `przykładowy tekst`.
 
-## Deep Dive
+## Głębszy wywiad
 
-Funkcja `tolower()` konwertuje pojedynczy znak do odpowiadającej mu małej litery zgodnie z obowiązującą tabelą kodów ASCII. W przypadku, gdy do funkcji zostanie przekazany znak, który jest już małą literą, nie zmieni się on i zostanie zwrócony w postaci niezmienionej.
+Funkcja `tolower()` konwertuje pojedynczy znak na małą literę. Jest ona zdefiniowana w standardowej bibliotece `ctype.h` i przyjmuje jeden parametr typu `int`, który jest kodem ASCII znaku. Jeśli podamy jej znak, który jest już małą literą, zostanie on zwrócony bez zmiany. Jeśli natomiast podamy znak, który jest wielką literą, zostanie on przekonwertowany na małą literę.
 
-Warto również zauważyć, że funkcja `tolower()` jest bezpieczna do użycia, ponieważ nie zmienia oryginalnego ciągu znaków. Zwraca tylko kopię, którą możemy przypisać do innej zmiennej, a oryginalny ciąg pozostawić bez zmian.
+Warto również pamiętać, że funkcja `tolower()` może działać tylko na pojedynczych znakach. Dlatego, jeśli chcemy skonwertować cały ciąg znaków, musimy użyć jej w pętli, jak w przykładzie powyżej.
 
-## Zobacz także
+## Zobacz również
 
-- Dokumentacja funkcji `tolower()`: https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm
-- Omówienie różnych dostępnych metod konwersji wielkości liter w C: https://stackoverflow.com/questions/17293772/converting-letters-to-uppercase-lowercase-in-c-programming
+- Dokumentacja funkcji `tolower()` w języku C: [https://en.cppreference.com/w/c/string/byte/tolower](https://en.cppreference.com/w/c/string/byte/tolower)
+
+- Przykładowe zadania z wykorzystaniem konwersji na małe litery: [https://www.w3resource.com/c-programming-exercises/](https://www.w3resource.com/c-programming-exercises/)
+
+- Rozbudowane informacje o bibliotece `ctype.h`: [https://www.tutorialspoint.com/c_standard_library/ctype_h.htm](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "कंप्यूटर प्रोग्रामिंग में अस्थायी फाइल बनाना"
+html_title:           "C#: कंप्यूटर प्रोग्रामिंग में अस्थायी फाइल बनाना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में अस्थायी फाइल बनाना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
-कभी-कभी हमें अपने काम के लिए अस्थायी फ़ाइलों की आवश्यकता होती है जो बाद में हमें नहीं चाहिए। इसलिए, हम अस्थायी फ़ाइलें बनाते हैं जो काम के बाद स्वचालित रूप से हटा दी जाती हैं। यह हमारे प्रोग्राम को सुधारने और बग्स को ठीक करने के लिए मदद करता है।
+## क्यों
 
-# कैसे करें
-इस उदाहरण में, हम "C: \ Users \ username \ AppData \ Local \ Temp" फ़ोल्डर में अस्थायी फ़ाइल बनाने के लिए C# का उपयोग करते हुए कोड का उदाहरण देखेंगे।
+कभी-कभी हमें अपने कोड में अस्थायी फाइलें बनाने की आवश्यकता होती है, जो कुछ समय के लिए ही हमारी जरूरत पूरी करती है। इस लेख में, हम जानेंगे कि C# में अस्थायी फाइलें कैसे बनाई जा सकती हैं और उनसे कैसे उपयोग किया जा सकता है। 
+
+## कैसे करें
+
+अस्थायी फाइलें बनाने के लिए, हमें एक नया `FileStream` ऑब्जेक्ट बनाना होगा। इसके लिए हम `using` की घोषणा के साथ `FileStream` को इनिशियलाइज़ कर सकते हैं: 
 
 ```C#
-using System;
-using System.IO;
-
-namespace TemporaryFiles
+using (FileStream fs = new FileStream("temp.txt", FileMode.Create))
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string tempFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp");
-            string tempFileName = "tempfile.txt";
-            string tempFilePath = Path.Combine(tempFolderPath, tempFileName);
+    // code to write to the file
+}
+```
 
-            try
-            {
-                using (FileStream fs = File.Create(tempFilePath))
-                {
-                    Console.WriteLine("फ़ाइल स्थानांतरित हो गई है।");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("एक समस्या हुई थी - " + ex.Message);
-            }
-        }
+यहां "temp.txt" हमारी अस्थायी फाइल का नाम है और `FileMode.Create` हमें फाइल को लिखने के लिए ओपन करता है। इसके बाद हम फाइल में लिखने के लिए `StreamWriter` का उपयोग कर सकते हैं:
+
+```C#
+using (FileStream fs = new FileStream("temp.txt", FileMode.Create))
+{
+    using (StreamWriter writer = new StreamWriter(fs))
+    {
+        writer.WriteLine("This is a temporary file created in C#");
     }
 }
 ```
 
-**आउटपुट:**
+अब यह फाइल `temp.txt` बन जाएगी और हम उसे फाइल सिस्टम में उपयोग कर सकते हैं। 
 
-```
-फ़ाइल स्थानांतरित हो गई है।
-```
+## गहराई में जाएं
 
-# गहराई में गंभीर
-अस्थायी फ़ाइलें हमें टेम्पोरेरी डेटा और भी अनेक कार्यों के लिए उपयोगी साबित हो सकती हैं। हालांकि, अस्थायी फ़ाइलें न केवल सुधार के लिए होती हैं बल्कि वे सेवा निर्देशिका में मैन्युअल रूप से बनाए गए अनुकूलन अनुरोधों को पूरा करने के लिए भी उपयोगी साबित हो सकती हैं। अस्थायी फ़ाइलें डाटा प्रवाह को बढ़ावा देती हैं और समय की बचत करती हैं।
-
-# देखें भी
-- https://docs.microsoft.com/en-us/dotnet/api/system.io.file.create?view=netframework-4.8
-- https://www.c-sharpcorner
+`FileStream` के साथ `using` ब्लॉक का उपयोग करने से हम आपरेशन के अंत में श्रोता को स्वतः ही बंद कर देते हैं। इससे हमें एक नया फाइल सिस्टम हैंडल लेने की आवश्यकता नहीं होती है। इसके अलावा, हम `StreamWriter` का भी उपयोग कर सकते हैं जो हमें लिखने के लिए अधिक अनुकूलता देता है। `StreamWriter` को हम `using` ब्लॉक में भी शामिल कर सकते हैं, लेकिन उससे फाइल हैंडल बंद नहीं होता। इसलिए, यदि हमें `StreamWriter` का उ

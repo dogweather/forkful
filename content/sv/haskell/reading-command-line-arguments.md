@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Haskell: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att läsa in kommandoradsargument kan vara en enormt användbar färdighet för Haskell-programmerare. Genom att läsa argument som har skickats till ett program vid körning kan man anpassa programmet baserad på användarens önskemål och behov. Detta kan öka användbarheten och användarupplevelsen av ett program avsevärt.
+Att lära sig läsa kommandoradsargument i Haskell kan vara användbart för att skapa program som kan interagera med användaren via terminalen. Det kan också göra det enklare att testa och felsöka program genom att kunna ge olika argument vid körning.
 
-## Hur man gör
+# Hur man läser kommandoradsargument i Haskell
 
-För att läsa in kommandoradsargument måste man först importera "System.Environment" biblioteket. Sedan kan man använda funktionen "getArgs" för att hämta en lista med argumenten som skickats vid körning.
+För att läsa kommandoradsargument i Haskell använder man funktionen `getArgs` från standardbiblioteket `System.Environment`. Denna funktion returnerar en lista av strängar som motsvarar de argument som skickats med vid körning av programmet.
+
+Ett enkelt exempel på användning av `getArgs` är att skapa ett program som tar emot två argument och gör en beräkning med dem:
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
+main :: IO ()
 main = do
-    args <- getArgs
-    putStrLn $ "Du angav följande argument: " ++ show args
+    [arg1, arg2] <- getArgs
+    let result = read arg1 + read arg2 :: Int
+    putStrLn ("Summan av " ++ arg1 ++ " och " ++ arg2 ++ " är " ++ show result)
 ```
 
-Om man kör programmet med kommandot "runhaskell program.hs arg1 arg2" kommer man att få utskriften "Du angav följande argument: [\"arg1\",\"arg2\"]".
+Om man sedan kör programmet i terminalen med kommandot `runhaskell program.hs 5 8`, kommer följande att skrivas ut:
 
-Man kan sedan använda listan av argument för att anpassa programmet på olika sätt, till exempel genom att köra specifika funktioner beroende på vilka argument som angetts.
+`Summan av 5 och 8 är 13`
 
-## Djupdykning
+Notera att `getArgs` returnerar en lista av strängar, så vi måste använda `read` för att konvertera till rätt datatyp (i detta fall `Int`) för att kunna utföra beräkningen.
 
-Förutom att bara läsa in argumenten som skickas vid körning finns det flera andra funktioner som kan användas för att hantera kommandoradsargument i Haskell.
+# Djupdykning
 
-En användbar funktion är "getProgName", som hämtar namnet på det körda programmet. Detta kan vara användbart för att skapa program som fungerar på flera olika platformar, där programnamnet kan variera.
+För att läsa kommandoradsargument mer avancerat och exakt kan man använda sig av till exempel paketet [optparse-applicative](https://hackage.haskell.org/package/optparse-applicative). Med detta kan man definiera egna flaggor och argument med detaljerad information om parametrar och typ av värde som förväntas.
 
-Man kan också använda funktionen "lookupEnv" för att hämta värden på miljövariabler som skickats till programmet vid körning.
+Man kan också använda sig av funktioner som `lookupEnv` från `System.Environment` för att läsa miljövariabler eller `getProgName` för att få namnet på det körande programmet.
 
-Det finns också bibliotek som "optparse-applicative" som förenklar hanteringen av kommandoradsargument och låter användaren definiera vilka argument som ska stödjas och vilken funktionalitet de ska ha.
+# Se även
 
-## Se även
-
-* [Haskell Dokumentation - System.Environment](https://downloads.haskell.org/~ghc/6.12.2/docs/html/libraries/base-4.2.0.1/System-Environment.html)
-* [Real World Haskell - Command-Line Option Parsing ](https://www.realworldhaskell.org/blog/2019/07/07/commandline-options-parsing) 
-* [Optparse-applicative på Hackage](https://hackage.haskell.org/package/optparse-applicative)
+- [Haskell Command Line Arguments](https://wiki.haskell.org/Command_line_arguments)
+- [System.Environment documentation](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)

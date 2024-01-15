@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Obtendo a data atual"
+title:                "Obtendo a data atual"
+html_title:           "Haskell: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,42 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar Haskell para Obter a Data Atual
+## Por que
 
-Se você é um programador experiente ou iniciante, provavelmente já passou pela tarefa de obter a data atual em algum momento. Em vez de recorrer aos métodos convencionais, por que não experimentar usar Haskell para realizar essa tarefa? Neste artigo, vamos explorar como obter a data atual em Haskell, e por que isso pode ser benéfico para os seus projetos.
+Você sabia que é possível obter a data atual com apenas algumas linhas de código em Haskell? Isso pode ser útil para aplicações que requerem informações sobre o tempo, como sistemas de agendamento ou gerenciamento de tarefas.
 
-## Como Obter a Data Atual em Haskell
+## Como fazer
 
-Para obter a data atual em Haskell, usamos a biblioteca `Data.Time`. Dentro desta biblioteca, temos a função `getCurrentTime` que nos permite capturar a data e hora atuais em um formato específico. Veja um exemplo abaixo:
+Usando a biblioteca "Data.Time", podemos facilmente obter a data e hora atuais em um formato específico. Aqui está um exemplo simples de como fazer isso:
 
 ```Haskell
 import Data.Time
 
 main = do
-  currentTime <- getCurrentTime
-  print $ utcToLocalTime utc currentTime
+    now <- getCurrentTime
+    putStrLn $ "A data atual é: " ++ show now
 ```
 
-Neste exemplo, usamos a função `utcToLocalTime` para converter o formato UTC (Universal Time Coordinated) em um formato de hora local mais fácil de ler. O resultado será algo como `2019-11-06 17:23:15.723726 UTC`.
+Este código primeiro importa o módulo "Data.Time", que contém funções relacionadas ao tempo. Em seguida, ele atribui a função "getCurrentTime" a variável "now", que representa a data e hora atuais. Por último, ele imprime essa informação na tela.
 
-## Aprofundando em Obtendo a Data Atual em Haskell
+Ao executar esse programa, obtemos a seguinte saída:
 
-Além do exemplo mostrado acima, podemos personalizar ainda mais a saída da data atual em Haskell. Por exemplo, podemos usar a função `formatTime` para definir o formato de saída da data e hora. Veja um exemplo abaixo:
+```
+A data atual é: 2021-10-26 14:23:48.356865 UTC
+```
+
+Podemos também formatar a data e hora de acordo com nossas preferências, usando a função "formatTime". Por exemplo:
 
 ```Haskell
-import Data.Time.Format
-import Data.Time.Clock
+import Data.Time
+import System.Locale (defaultTimeLocale)
 
 main = do
-  currentTime <- getCurrentTime
-  let output = formatTime defaultTimeLocale "%d-%m-%Y %H:%M:%S" currentTime
-  print output
+    now <- getCurrentTime
+    let formattedTime = formatTime defaultTimeLocale "%d/%m/%Y - %H:%M" now
+    putStrLn $ "Data e hora formatadas: " ++ formattedTime
 ```
 
-Aqui, usamos a função `formatTime` juntamente com a variável `defaultTimeLocale` para formatar a data e hora no formato "dia-mês-ano hora:minuto:segundo". O resultado será algo como `06-11-2019 17:23:15`.
+A função "formatTime" recebe dois argumentos: o primeiro é um objeto Locale, que define as convenções de formatação a serem usadas, e o segundo é a data e hora que queremos formatar. Neste exemplo, usamos "defaultTimeLocale" para usar as convenções padrão do sistema e especificamos o formato desejado como "%d/%m/%Y - %H:%M", que resultará em uma saída como esta:
 
-## Veja Também
+```
+Data e hora formatadas: 26/10/2021 - 14:23
+```
 
-- [Documentação oficial sobre Data.Time em Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial sobre formatação de datas e horas em Haskell](https://wiki.haskell.org/Local_time)
-- [Exemplos práticos de uso de Data.Time em projetos reais](https://www.stackbuilders.com/tutorials/haskell/date-and-time/)
+## Mergulho profundo
+
+Você pode estar se perguntando como exatamente a biblioteca "Data.Time" é capaz de obter a data e hora atual. Na verdade, ela usa uma função interna chamada "getCurrentTime#", que usa funções do sistema operacional para recuperar a data e hora em UTC. Em seguida, ela a converte para um objeto "UTCTime", que é o tipo de dados usado para representar a data e hora em Haskell.
+
+Além disso, a biblioteca "Data.Time" também possui funções para manipular e realizar cálculos com a data e hora, tornando-a uma ferramenta poderosa para lidar com questões relacionadas ao tempo em nossos programas.
+
+## Veja também
+
+- [Haskell.org - Data.Time](https://www.haskell.org/cabal/users-guide/developing-packages.html#additional-modules)
+- [Hoogle - Data.Time](https://hoogle.haskell.org/?hoogle=Data.Time)
+- [HaskellWiki - Dates and times](https://wiki.haskell.org/Dates_and_times)

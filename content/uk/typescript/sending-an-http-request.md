@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Надсилання http-запиту"
+title:                "Надсилання http-запиту"
+html_title:           "TypeScript: Надсилання http-запиту"
 simple_title:         "Надсилання http-запиту"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,87 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Для чого
+## Чому
 
-Надсилання HTTP запитів є необхідною частиною програмування на TypeScript. Це дозволяє отримати дані з різних джерел, таких як віддалений сервер або API, у вашій програмі.
+Правильне відправлення HTTP-запитів є важливою частиною розробки веб-додатків. Це дає змогу обмінюватися даними між клієнтом і сервером та забезпечує швидке виконання запитів.
 
-## Як це зробити
-
-Для надсилання HTTP запиту використовується вбудований клас `HttpClient`. Нижче подані приклади коду і вихідні дані для різних типів запитів.
+## Як
 
 ```TypeScript
-// GET запит
-import { HttpClient } from '@angular/common/http';
+// Приклад відправлення GET-запиту
+import axios from 'axios';
 
-const URL = 'https://example.com/users';
-const httpClient = new HttpClient();
-httpClient.get(URL).subscribe(data => {
-  console.log(data); // виводить отримані дані у форматі JSON
-});
-```
-
-```
-Output:
-{ "id": 1, "name": "John", "email": "john@example.com" }
+axios.get('https://api.example.com/users')
+  .then(response => {
+    // Обробка отриманих даних
+    console.log(response.data);
+  })
+  .catch(error => {
+    // Обробка помилки в разі неуспішного запиту
+    console.log(error.message);
+  });
 ```
 
 ```TypeScript
-// POST запит з тілом
-import { HttpClient } from '@angular/common/http';
+// Приклад відправлення POST-запиту з передачею даних
+import axios from 'axios';
 
-const URL = 'https://example.com/users';
-const httpClient = new HttpClient();
-const body = { name: 'Kate', email: 'kate@example.com' };
-httpClient.post(URL, body).subscribe(data => {
-  console.log(data); // виводить отриману відповідь сервера у форматі JSON
-});
+const requestBody = {
+  name: 'John',
+  age: 30
+}
+
+axios.post('https://api.example.com/users', requestBody)
+  .then(response => {
+    // Обробка отриманих даних
+    console.log(response.data);
+  })
+  .catch(error => {
+    // Обробка помилки в разі неуспішного запиту
+    console.log(error.message);
+  });
 ```
 
-```
-Output:
-{ "success": true, "message": "User added successfully" }
-```
+## Глибоке дослідження
 
-```TypeScript
-// PUT запит з параметрами
-import { HttpClient, HttpParams } from '@angular/common/http';
-
-const URL = 'https://example.com/users';
-const httpClient = new HttpClient();
-const params = new HttpParams().set('id', '2');
-httpClient.put(URL, {}, { params }).subscribe(data => {
-  console.log(data); // виводить отриману відповідь сервера у форматі JSON
-});
-```
-
-```
-Output:
-{ "success": true, "message": "User updated successfully" }
-```
-
-```TypeScript
-// DELETE запит з заголовком
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const URL = 'https://example.com/users';
-const httpClient = new HttpClient();
-const headers = new HttpHeaders().set('Authorization', 'Bearer xxxxxx');
-httpClient.delete(URL, { headers }).subscribe(data => {
-  console.log(data); // виводить отриману відповідь сервера у форматі JSON
-});
-```
-
-```
-Output:
-{ "success": true, "message": "User deleted successfully" }
-```
-
-## Детальний розбір
-
-Для початку необхідно імпортувати `HttpClient` та інші необхідні класи з `@angular/common/http`. Потім можна створити екземпляр `HttpClient`, вказавши URL, на який потрібно надіслати запит. Далі, використовуючи методи `get()`, `post()`, `put()` і `delete()`, можна відправити запит на сервер, передаючи необхідні параметри та заголовки. У підписці на `subscribe()` можна отримати дані з сервера та обробити їх.
+Відправляючи HTTP-запити, необхідно врахувати деякі особливості. Наприклад, важливо використовувати правильний метод запиту (GET, POST, PUT, DELETE тощо) та передавати необхідні дані у відповідному форматі. Також необхідно обробляти помилки, які можуть виникнути під час відправлення запиту.
 
 ## Дивіться також
 
-- [Angular документація про HttpClient](https://angular.io/guide/http)
-- [Стаття про надсилання HTTP запитів в TypeScript](https://www.digitalocean.com/community/tutorials/angular-angular-httpclient)
-- [Програмування на TypeScript: підручник](https://prog.kiev.ua/uchebnik-po-terminologii-js/ts/typescript/)
+- [Методи HTTP-запитів](https://developer.mozilla.org/uk/docs/Web/HTTP/Methods)
+- [Axios - бібліотека для роботи з HTTP-запитами](https://github.com/axios/axios)
+- [Розробка веб-додатків з TypeScript](https://www.typescriptlang.org/docs/handbook/react.html)

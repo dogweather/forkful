@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Å bruke regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "Javascript: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,31 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor bruker vi regulære uttrykk i JavaScript?
+## Hvorfor
 
-Regulære uttrykk, også kjent som regex, er et viktig verktøy i JavaScript-programmering for å søke, filtrere og manipulere tekst. Det lar oss finne og arbeide med bestemte mønstre i en tekststreng, og det sparer oss for mye tid og kode når det gjelder håndtering av tekst. Regex er spesielt nyttig for formatering av brukerinnputt, validering av data og mer avanserte søk i store tekstfiler.
+Regulære uttrykk, eller "regular expressions", er et kraftig verktøy for å søke etter og manipulere tekst i JavaScript. Det kan spare utviklere mye tid og forenkle arbeidsflyten deres når de jobber med tekstbaserte data.
 
-## Hvordan bruke regulære uttrykk i JavaScript?
+## Hvordan
 
-Bruk av regulære uttrykk i JavaScript innebærer å definere et mønster og bruke dette mønsteret til å søke gjennom en tekststreng. For å begynne å bruke regex i JavaScript, må du først definere et uttrykk ved å bruke en konstruktør eller en regex-literal. Deretter bruker du en av de mange metoder som er tilgjengelige i JavaScript for å bruke uttrykket på en tekststreng. La oss se på et enkelt eksempel på hvordan du kan finne og erstatte ord i en tekststreng ved hjelp av regex:
+For å bruke regulære uttrykk i JavaScript, må du først definere et mønster som du vil søke etter i en tekststreng. Dette mønsteret kan inkludere forskjellige symboler og spesielle karakterer som vil hjelpe deg å finne ønsket data. Et eksempel på et mønster kunne være `/apple/`, som vil søke etter alle instanser av ordet "apple" i en tekst. 
 
-```javascript
-let tekst = "Hei, navnet mitt er JavaScript. Hva er ditt navn?";
-let regex = /navn/gi; // Definerer regex-mønsteret og setter flagg for global og ikke store og små bokstaver
-let nyTekst = tekst.replace(regex, "språk"); // Bytter ut alle forekomster av "navn" i teksten med "språk"
-console.log(nyTekst); // Resultat: Hei, språket mitt er JavaScript. Hva er ditt språk?
+For å bruke dette mønsteret i koden din, bruker vi `test()`-metoden eller `exec()`-metoden på et regulært uttrykkobjekt. La oss ta en titt på et eksempel:
+
+```Javascript
+let tekst = "Jeg elsker å spise epler";
+let mønster = /epler/;
+let resultat = mønster.test(tekst);
+
+console.log(resultat); // Output: true
 ```
 
-Som du kan se, kan regex gjøre det enkelt å manipulere tekst på en elegant måte. Det finnes mange forskjellige metoder for å bruke regex i JavaScript, og det er viktig å forstå hvordan disse metodene fungerer for å utnytte regex til det fulle.
+Vi kan også bruke spesielle symboler for å gjøre søket vårt mer spesifikt. For eksempel kan vi bruke "globale" (`g`) og "sensitivitetsnivå" (`i`) flagg for å søke etter flere forekomster av et mønster og ignorere store og små bokstaver. Her er et eksempel på dette:
 
-## Dypdykk i bruk av regulære uttrykk i JavaScript
+```Javascript
+let tekst = "Jeg elsker å spise epler og appelsiner";
+let mønster = /Epler/; // Ignorerer store og små bokstaver 
+let resultat = mønster.test(tekst);
 
-Vi har nå sett et enkelt eksempel på hvordan du kan bruke regex i JavaScript, men det er mye mer å lære om dette kraftige verktøyet. Regex er basert på et uttrykksspråk med spesielle symbolske koder som representerer ulike mønstre i en tekst. Det finnes også en rekke forskjellige flagg som kan legges til uttrykket for å endre hvordan søket utføres. Det er viktig å være kjent med disse symbolene og flaggene, samt å forstå de forskjellige metodene for å bruke regex, for å kunne utnytte det maksimalt.
+console.log(resultat); // Output: true
+```
 
-En annen viktig ting å huske når man bruker regulære uttrykk i JavaScript er at det kan være sårbarheter. Uten riktig validering og sikkerhetstiltak, kan regex-uttrykkene dine bli utnyttet av ondsinnede angripere. Det er derfor viktig å være forsiktig og grundig når man bruker regex i et produkjsonsmiljø.
+Vi kan også bruke "meta-tegn" som `^` for å finne et mønster i starten av en tekst, `$` for å finne det i slutten av en tekst og `.` for å finne alle karakterer mellom to punkter. La oss se dette i aksjon:
+
+```Javascript
+let tekst = "I dag skal jeg på joggetur";
+let mønster = /^jogge/; // Finner mønsteret "jogge" i starten av teksten
+let resultat = mønster.test(tekst);
+
+console.log(resultat); // Output: false
+```
+
+Vi kan også bruke regulære uttrykk til å erstatte tekst. Dette gjøres ved å bruke `replace()`-metoden på en tekststreng og spesifisere to parametere: den gamle teksten som skal erstattes og den nye teksten den skal erstattes med. Her er et eksempel:
+
+```Javascript
+let tekst = "Jeg elsker å spise epler og appelsiner";
+let nyTekst = tekst.replace(/appelsiner/g, "sitroner"); // Erstatter "appelsiner" med "sitroner"
+console.log(nyTekst); // Output: "Jeg elsker å spise epler og sitroner"
+```
+
+## Dypdykk
+
+Regulære uttrykk kan også brukes til mer avanserte manipuleringer av tekst. For eksempel kan man bruke "gruppering" (`()`) og "alternativer" (`|`) for å søke etter flere mønstre samtidig. Man kan også bruke "kvantifisører" (`?`, `*`, `+`, `{}`) for å spesifisere hvor mange ganger et mønster skal forekomme i teksten. Det finnes også en rekke forskjellige "spesialtegn" som kan brukes til å finne og erstatte tekst i spesifikke mønstre.
+
+For å lære mer om regulære uttrykk og alle mulighetene de gir, anbefaler vi å sjekke ut lenkene nedenfor.
 
 ## Se også
 
-- [W3Schools - JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
-- [Mozilla Developer Network - JavaScript Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regexr - Online Regex Tester and Debugger](https://regexr.com/)
+- [MDN Web Docs om regulære uttrykk i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExr - et interaktivt verktøy for å teste og lære om regulære uttrykk](https://regexr.com/)

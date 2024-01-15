@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,46 +11,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+Substring 추출을 할 때 중요한 것은 문자열의 일부분을 뽑아내는 것입니다. 이를 통해 우리는 원하는 데이터를 더 쉽게 다룰 수 있고, 필요한 정보만 선별해서 사용할 수 있습니다.
 
-우리가 일상적으로 사용하는 문자열에서 일부분을 추출할 필요가 있을 수 있습니다. Arduino에서 substring을 추출하는 방법을 배우면, 더 다양한 프로젝트를 만들 수 있고 다양한 기능을 추가할 수 있습니다.
-
-## 어떻게 하나요
-
-Arduino에서 substring을 추출하는 방법은 매우 간단합니다. 먼저, 추출하고 싶은 문자열을 지정하고 그 문자열의 시작과 끝 인덱스를 정해줍니다. 그리고 Arduino의 내장 함수 중 하나인 substring() 함수를 사용하면 됩니다. 아래는 코드 예시와 함께 설명하겠습니다.
+## 방법
+Arduino에서 Substring 추출하는 방법은 간단합니다. 먼저 `substring()` 함수를 사용하여 추출할 부분의 인덱스 값을 지정한 다음, 해당 부분을 저장하고 원하는 작업을 수행하면 됩니다. 예제 코드와 출력 결과는 아래와 같습니다.
 
 ```Arduino
-String str = "Hello World!"; // 추출하고 싶은 문자열
-String sub1 = str.substring(0, 5); // 시작 인덱스 0부터 끝 인덱스 4까지 추출합니다.
-String sub2 = str.substring(6); // 6부터 끝까지 추출합니다.
-
-Serial.println(sub1); // 출력: "Hello"
-Serial.println(sub2); // 출력: "World!"
+String str = "Greetings from Arduino";
+String sub = str.substring(10, 16); // 10번째부터 16번째까지의 문자를 추출하여 `sub` 변수에 저장
+Serial.println(sub); // "Arduino" 출력
 ```
 
-위의 코드에서는 `substring()` 함수를 사용하여 간단히 문자열을 추출할 수 있습니다. 또한, 인덱스 값을 이용하여 원하는 부분만 추출할 수 있기 때문에 다양한 활용이 가능합니다. 
+## Deep Dive
+Substring 추출은 문자열 처리에서 매우 중요한 역할을 합니다. `substring()` 함수는 인덱스 값을 기준으로 문자열을 추출하기 때문에, 정확한 인덱스 값을 지정하는 것이 중요합니다. 또한, `substring()` 함수는 원본 문자열을 변경하지 않기 때문에 추출한 문자열을 저장할 변수를 별도로 선언해야 합니다. 따라서, 다양한 문자열 처리를 할 때 유용하게 사용할 수 있습니다.
 
-## 딥 다이브
-
-Arduino에서 substring을 추출하는 또 다른 방법으로는 `indexOf()` 함수를 사용하는 방법이 있습니다. 이 함수는 원하는 문자나 문자열이 어느 위치에 있는지 찾아주는 함수입니다. 예를 들어, 아래와 같은 코드를 작성하면 "World"의 시작 인덱스를 알 수 있습니다.
-
-```Arduino
-String str = "Hello World!";
-int index = str.indexOf("World"); // index = 6
-
-```
-
-이렇게 얻은 인덱스 값을 `substring()` 함수에 넣어주면 "World"만 추출할 수 있습니다.
-
-또 한 가지 중요한 점은 Arduino에서 `substring()` 함수를 사용하기 위해서는 `String` 라이브러리를 추가해야 한다는 점입니다. 아두이노 IDE에서 `Sketch` 메뉴, `Include Library` 메뉴로 들어가면 `String` 라이브러리를 추가할 수 있습니다.
-
-## 참고
-
-만약 Arduino를 처음 사용하거나 `substring()` 함수를 사용하는 것이 낯설다면, 아래의 링크들을 참고하시면 좋을 것 같습니다.
-
-- [Arduino String 라이브러리 공식 문서](https://www.arduino.cc/reference/ko/language/variables/data-types/string/)
-- [Arduino 튜토리얼: 문자열 다루기](https://www.arduino.cc/en/Tutorial/StringConstructors)
-
-## 더 알아보기
-
-- [Arduino String 라이브러리 추가 방법 정리](https://m.blog.naver.com/wooh_hyun/221216871334)
-- [String과 char의 차이점 이해하기](https://m.blog.naver.com/PostView.nhn?blogId=showstopper&logNo=220316169113&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+## 더보기
+- [Arduino String 클래스 공식 문서](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Java substring() 메서드 공식 문서](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))

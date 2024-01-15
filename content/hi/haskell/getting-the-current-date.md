@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: वर्तमान तारीख प्राप्त करना"
-simple_title:         "वर्तमान तारीख प्राप्त करना"
+title:                "वर्तमान तिथि प्राप्त करना"
+html_title:           "Haskell: वर्तमान तिथि प्राप्त करना"
+simple_title:         "वर्तमान तिथि प्राप्त करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -9,24 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## क्यों
 
-क्या आप कभी सोचा है कि कंप्यूटर में अभी कितना समय हो रहा है? कोई भी कार्य करने से पहले हम हमेशा अपने कम्प्यूटर की तारीख और समय को जानने का प्रयास करते हैं। इसलिए, हम दोनों टाइप ऑफ़ काम्प्यूटर उपयोगकर्ता और डेवलपर के लिए, ऊपर से उनसे संबंधित होने पर दोनों को दिलचस्पी है कि यह कैसे काम करता है। हम हास्केल में वर्तमान तारीख कैसे प्राप्त कर सकते हैं, ये आज के हमारे ब्लॉग पोस्ट में जानेंगे।
+अगर आप किसी भी समय जानना चाहते हैं कि वर्तमान दिनांक क्या है, तो आपको उसके लिए हास्केल प्रोग्रामिंग भाषा का उपयोग करके स्वयं इसका पता लगाने की ताकत है।
 
 ## कैसे करें
 
-इस काम के लिए, हमें `Data.Time` मॉड्यूल को इम्पोर्ट करना होगा। फिर हम `getCurrentTime` फ़ंक्शन का उपयोग करके हास्केल में क्यूरेंट डेट और टाइम का एक ऑब्जेक्ट बना सकते हैं। नीचे एक उदाहरण दिया गया है:
+आप निम्नलिखित तरीके से देख सकते हैं कि हास्केल में वर्तमान दिनांक कैसे प्राप्त किया जाता है:
 
 ```Haskell
-import Data.Time
+import Data.Time.Clock
+import Data.Time.LocalTime
 
-main = do
-    currentTime <- getCurrentTime
-    print $ show $ utctDay currentTime
+getCurrentDate :: IO ()
+getCurrentDate = do
+  time <- getCurrentTime
+  timezone <- getCurrentTimeZone
+  let localTime = utcToLocalTime timezone time
+  let currentDate = localDay localTime
+  putStrLn $ "Today's date is: " ++ show currentDate
 ```
 
-जैसा कि आप देख सकते हैं, हमने `utctDay` फ़ंक्शन का उपयोग करके सिर्फ़ तारीख को प्रिंट किया है। यदि आप चाहें तो आप उपरोक्त कोड को अपने टर्मिनल में चला कर देख सकते हैं। आपके कंप्यूटर पर, नतीजा दिखाएगा: "2021-05-28" जोकि मेरे कंप्यूटर पर दिनांक के रूप में है।
+आपको यहां `Data.Time.Clock` और `Data.Time.LocalTime` मॉड्यूल की आवश्यकता होगी। यहां हम `getCurrentTime` और `getCurrentTimeZone` फ़ंक्शन का उपयोग करके वर्तमान समय और स्थानिक समय क्षेत्र को प्राप्त करते हैं। फिर हम `utcToLocalTime` फ़ंक्शन का उपयोग करके स्थानिक समय में दिनांक और समय को प्राप्त करते हैं। अंत में हम `putStrLn` फ़ंक्शन का उपयोग करके अपने परिणाम को प्रिंट करते हैं।
 
-## गहरी तकनीक
+```Haskell
+Today's date is: 2021-10-13
+```
 
-अब हम थोड़ा और गहराई में जानेंगे कि हास्केल वर्तमान तारीख निकालने के लिए कैसे काम करता है। हमने ऊपर कोड में देखा है कि हमने फ़ंक्शन का उपयोग किया
+## गहराई में जाएं
+
+अगर आप चाहते हैं तो आप `utcToLocalTime` फ़ंक्शन का संदर्भ देकर प्राप्त की गई सभी तारीखों और समय को साथ मिलाएं सकते हैं। आप समय को अलग-अलग समय क्षेत्रों में भी प्राप्त कर सकते हैं। आप `localTimeOfDay` फ़ंक्शन का भी उपयोग कर सकते हैं जो आपको समय की गणना करने में सहायता करेगा।
+
+## देखें भी
+
+- [Haskell - Getting Current Time and Date](https://stackoverflow.com/questions/43225423/haskell-getting-current-time-and-date)
+- [Hackage - Data.Time.Clock](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+- [Hackage - Data.Time.LocalTime](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html)

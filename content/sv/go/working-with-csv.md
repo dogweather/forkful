@@ -1,6 +1,7 @@
 ---
-title:                "Go: Arbeta med csv-filer"
-simple_title:         "Arbeta med csv-filer"
+title:                "Att arbeta med csv"
+html_title:           "Go: Att arbeta med csv"
+simple_title:         "Att arbeta med csv"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att arbeta med CSV-filer är vanligt inom programmering eftersom det är ett enkelt och effektivt sätt att lagra och hantera tabellformaterad data. Med Go kan du enkelt skriva kod för att läsa, skriva och manipulera CSV-filer, vilket kan hjälpa till att automatisera många uppgifter som innefattar stora mängder data.
+En av anledningarna till att arbeta med CSV-filer är att det är en vanlig filtyp för att lagra och hantera stora mängder data. Genom att kunna läsa och skriva CSV-filer kan du enkelt importera och exportera data från olika system och program.
 
 ## Så här gör du
-
-För att börja arbeta med CSV i Go, behöver du först importera "encoding/csv" paketet. Sedan kan du använda funktionen "NewReader" för att öppna en CSV-fil och läsa dess innehåll rad för rad. Du kan också använda funktionen "ReadAll" för att läsa hela filen på en gång.
+Att hantera CSV-filer i Go är enkelt och smidigt. Du behöver bara importera "encoding/csv" paketet och använda dess inbyggda funktioner för att läsa och skriva CSV-filer. Nedan finns ett exempel på hur du kan skriva data till en CSV-fil:
 
 ```Go
-import (
-    "encoding/csv"
-    "fmt"
-    "os"
-)
+file, err := os.Create("exempel.csv") // skapa en ny CSV-fil
+if err != nil {
+    panic(err)
+}
 
-func main() {
-    // Öppna CSV-filen
-    file, err := os.Open("data.csv")
+defer file.Close() // stäng filen när du är klar
+
+writer := csv.NewWriter(file) // skapa en ny writer
+defer writer.Flush() // se till att all data skrivs till filen
+
+data := [][]string{ // skapa en tvådimensionell slice med data
+    {"Namn", "Ålder"},
+    {"Anna", "25"},
+    {"Peter", "33"},
+}
+
+for _, row := range data { // loopa över varje rad i slice:en
+    err := writer.Write(row) // skriv raden till filen
     if err != nil {
-        fmt.Println("Kan inte öppna filen:", err)
-        return
-    }
-    // Skapa en Reader för filen
-    reader := csv.NewReader(file)
-    // Läs rad för rad
-    for {
-        record, err := reader.Read()
-        if err == io.EOF {
-            break
-        }
-        if err != nil {
-            fmt.Println("Kan inte läsa raden:", err)
-            return
-        }
-        // Skriv ut varje rad
-        fmt.Println(record)
+        panic(err)
     }
 }
 ```
 
-Detta kodexempel öppnar en CSV-fil och skriver ut dess innehåll rad för rad.
+För att läsa en CSV-fil kan du använda följande exempel:
 
-## Djupdykning
+```Go
+file, err := os.Open("exempel.csv") // öppna befintlig CSV-fil
+if err != nil {
+    panic(err)
+}
 
-Förutom att läsa data från CSV-filer kan du också skriva data till en CSV-fil med hjälp av funktionen "NewWriter". Du kan även ändra inställningar för hur filen ska skrivas med hjälp av "Writer" strukturen, som låter dig ange separator, kolumnrubriker och annan formatering.
+defer file.Close() // stäng filen när du är klar
 
-En annan användbar funktion är "Writer.Flush", som sparar ändringar i filen. Det är också möjligt att använda metoder för att manipulera och filtrera data från en CSV-fil, som "Records" och "TrimLeft".
+reader := csv.NewReader(file) // skapa en new reader
+reader.Comma = ';' // ange vilket tecken som separerar värdena i filen
 
-Det finns många fler funktioner och metoder som du kan utforska för att arbeta med CSV-filer i Go. Det är också viktigt att komma ihåg att olika filer kan ha olika formateringar, så det kan vara nödvändigt att göra justeringar i koden för att hantera specifika situationer.
+records, err := reader.ReadAll() // läs in all data från filen
+if err != nil {
+    panic(err)
+}
+
+for _, row := range records { // loopa över varje rad i filen
+    for _, col := range row { // loopa över varje kolumn i raden
+        fmt.Print(col, " ") // skriv ut värdet
+    }
+    fmt.Println() // lägg till en ny rad efter varje rad
+}
+```
+
+För mer information om hur du kan hantera och manipulera data i CSV-filer, se "Deep Dive" avsnittet nedan.
+
+## Deep Dive
+Förutom de grundläggande funktionerna för att läsa och skriva CSV-filer, finns det många andra möjligheter när det kommer till att hantera data i denna filtyp. Här är några saker som kan vara bra att veta:
+
+- Använd "csv.NewWriter" tillsammans med buffertläsning för att skriva stora mängder data till en CSV-fil, detta är både snabbare och mer effektivt än att skriva rad för rad.
+- Använd funktionen "writer.Write" för att skriva en enstaka rad till filen, eller "writer.WriteAll" för att skriva flera rader samtidigt. Kom ihåg att stänga filen och se till att all data har skrivits till disk när du är klar.
+- Om du behöver manipulera en existerande CSV-fil, bör du använda "csv.NewReader" tillsammans med funktionerna "reader.Read" och "reader.ReadAll" för att läsa data från filen. Du kan sedan använda standard Go-metoder för att manipulera och ändra datan, innan du sparar det tillbaka till filen med hjälp av "writer.Write" eller "writer.WriteAll".
+- Genom att använda paketet "encoding/csv" kan du enkelt läsa och skriva CSV-filer utan att behöva oroa dig för olika filformat och strukturer. Paketet hanterar allt detta automatiskt, så att du kan fokusera på att hantera och manipulera datan.
 
 ## Se även
+Här är några användbara länkar för att fortsätta lära dig mer om att hantera CSV-filer i Go:
 
-- [Go-dokumentation om paketet "encoding/csv"](https://golang.org/pkg/encoding/csv/)
-- [En tutorial om hur man arbetar med CSV i Go](https://www.alexedwards.net/blog/reading-and-writing-csv-files-in-go)
-- [En YouTube-lektion som visar hur man hanterar CSV-data i Go](https://www.youtube.com/watch?v=33Ltxn5JUzo)
+- https://golang.org/pkg/encoding/csv/ - Go-paketet för att hantera CSV-filer
+- https://gobyexample.com/reading-files - ett exempel på

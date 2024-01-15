@@ -1,5 +1,6 @@
 ---
-title:                "PHP: 创建临时文件"
+title:                "创建临时文件"
+html_title:           "PHP: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为什么有人会选择创建临时文件？
+## Why
 
-创建临时文件在PHP编程中是一项非常有用的技术。它可以让程序员临时存储数据或执行操作，而无需永久改变或污染服务器上的其他文件。这对于测试和调试代码尤其有用。
+为什么会创建临时文件？有时候在编程中需要存储一些临时性的数据，而临时文件可以提供一个方便、安全且可靠的解决方案。
 
-## 如何创建临时文件
+## How To
 
-在PHP中，我们可以使用`tempnam()`函数来创建临时文件。这个函数接受两个参数，第一个参数是指定临时文件的目录，第二个参数是可选的前缀。例如，我们可以使用以下代码来创建一个名为“tempfile”的临时文件：
+创建临时文件很简单，在PHP中可以通过`tmpfile()`函数来实现。
 
-```PHP
-$temp_dir = "/tmp/";
-$file_name = tempnam($temp_dir, "tempfile");
+\`\`\`PHP
+<?php
+$tempfile = tmpfile();
+fwrite($tempfile, "Hello World!");
 ```
 
-当代码执行完后，我们可以在指定的目录中找到名为“tempfile”的临时文件。我们还可以使用`tempnam()`函数来指定一个空字符串作为前缀，从而让系统为我们生成一个随机的文件名。
+这段代码将会创建一个临时文件并将字符串"Hello World!"写入其中。我们可以通过`fgets()`函数来读取临时文件中的内容并打印出来。
 
-## 深入了解创建临时文件
+\`\`\`PHP
+<?php
+$tempfile = tmpfile();
+fwrite($tempfile, "Hello World!");
+rewind($tempfile);
+echo fgets($tempfile); // Output: Hello World!
+```
 
-创建临时文件涉及到很多细节，比如文件命名的算法、临时文件的创建位置和权限设置。在PHP中，我们可以通过设置`sys_temp_dir`选项来指定临时文件的默认创建目录。当然，我们也可以使用`tempnam()`函数来自己指定创建目录。
+如果需要临时文件的文件名，可以使用`tempnam()`函数来生成一个具有唯一文件名的临时文件。
 
-此外，我们还需要考虑文件的权限设置。临时文件应该具有足够的权限，能够让PHP程序在其上执行相关操作。一般来说，我们可以使用`chmod()`函数来设置文件的权限。
+\`\`\`PHP
+<?php
+$tempfile = tempnam(sys_get_temp_dir(), "tmp");
+echo $tempfile; // Output: /tmp/tmp_jd2187
+```
 
-临时文件也需要正确地处理，即当程序结束时，它们应该被自动删除。在PHP中，我们可以使用`register_shutdown_function()`函数来注册一个函数，用于在程序结束时清理临时文件。
+值得注意的是，临时文件在脚本执行结束后会自动被删除，所以不需要我们手动清理。
 
-## 参考链接
+## Deep Dive
 
-- [PHP官方文档-`tempnam()`函数](https://www.php.net/manual/zh/function.tempnam.php)
-- [How to Create Temporary Files in PHP](https://www.geeksforgeeks.org/how-to-create-temporary-file-in-php/)
-- [官方PHP源码中`tempnam()`函数的实现](https://github.com/php/php-src/blob/master/ext/standard/file.c#L711)
+创建临时文件时，`tmpfile()`函数实际上是在服务器的临时目录中创建了一个空文件，然后返回一个可读写的文件指针。而`tempnam()`则是在服务器的临时目录中创建了一个具有唯一文件名的空文件并返回文件路径。因此，临时文件并不会保存在我们指定的路径中，而是存储在服务器的临时目录中。
 
-## 请参阅
+临时文件通常用来存储临时性的数据，比如登录时的验证码等。在使用`tmpfile()`或`tempnam()`创建临时文件时，我们可以指定一个前缀来方便区分文件用途，比如上面使用的"tmp"前缀。另外，我们也可以指定一个可选的路径来创建临时文件，但是为了保证跨平台兼容性，建议使用`sys_get_temp_dir()`函数来获取系统的临时目录路径。
 
-- [为什么使用临时文件](https://geekflare.com/php-create-temporary-file/)
-- [PHP官方文档-`chmod()`函数](https://www.php.net/manual/zh/function.chmod.php)
-- [官方PHP源码中`register_shutdown_function()`函数的实现](https://github.com/php/php-src/blob/master/main/php_shutdown.c#L474)
+## See Also
+
+- PHP官方文档：https://www.php.net/manual/zh/function.tmpfile.php
+- PHP中文手册：http://php.net/manual/zh/function.tempnam.php

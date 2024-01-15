@@ -1,5 +1,6 @@
 ---
-title:                "Java: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Java: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Java"
 category:             "Java"
@@ -11,70 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué trabajar con JSON?
 
-En el mundo del desarrollo de software, JSON se ha vuelto una herramienta esencial para compartir y almacenar datos de manera sencilla. Al ser un formato de texto ligero y fácil de entender, JSON se ha convertido en uno de los principales recursos para intercambiar información entre diferentes sistemas. Si te encuentras trabajando con datos en formato JSON o simplemente quieres conocer más sobre esta tecnología, ¡sigue leyendo para aprender cómo utilizarla en tus proyectos de Java!
+Si estás interesado en el desarrollo de aplicaciones en Java, es probable que en algún momento te encuentres con la necesidad de trabajar con JSON. JSON (JavaScript Object Notation) es un formato ampliamente utilizado para el intercambio de datos en aplicaciones web. Al comprender cómo trabajar con JSON en Java, podrás manipular y almacenar datos de manera eficiente, lo que te permitirá mejorar tus habilidades de programación y desarrollar aplicaciones más robustas y versátiles.
 
-## Cómo trabajar con JSON en Java
+## Cómo hacerlo
 
-### Paso 1: Importar las librerías necesarias
-
-Antes de empezar a utilizar JSON en Java, debemos asegurarnos de importar las librerías adecuadas. Para esto, añadiremos las siguientes líneas de código al inicio de nuestro archivo:
+Java ofrece varias bibliotecas que facilitan la manipulación de datos JSON. A continuación, se muestra un ejemplo de cómo se puede convertir una cadena JSON en un objeto Java utilizando la biblioteca Gson:
 
 ```Java
-import org.json.JSONObject;
-import org.json.JSONArray;
+import com.google.gson.Gson;
+
+// La cadena JSON de ejemplo
+String json = "{'nombre': 'Juan', 'edad': 25, 'ciudad': 'Madrid'}";
+
+// Convertir JSON a un objeto Java
+Gson gson = new Gson();
+Persona persona = gson.fromJson(json, Persona.class);
+
+System.out.println(persona.getNombre()); // Salida: Juan
+System.out.println(persona.getEdad()); // Salida: 25
+System.out.println(persona.getCiudad()); // Salida: Madrid
 ```
 
-Estas librerías contienen las clases que necesitaremos para trabajar con objetos JSON.
+En este ejemplo, se utiliza la clase Gson de la biblioteca Gson para convertir la cadena JSON en un objeto Java de tipo Persona. Luego, se pueden acceder a los datos del objeto utilizando los métodos correspondientes.
 
-### Paso 2: Crear un objeto JSON
-
-Para crear un objeto JSON en Java, debemos utilizar la clase `JSONObject`. Veamos un ejemplo de cómo crear un objeto con información sobre un usuario:
+Otra forma de trabajar con JSON en Java es a través de la biblioteca Jackson. Esta también permite convertir fácilmente datos JSON a objetos Java y viceversa. Aquí tienes un ejemplo:
 
 ```Java
-JSONObject user = new JSONObject();
-user.put("nombre", "Ana");
-user.put("edad", 30);
-user.put("trabajo", "Desarrolladora");
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+// La cadena JSON de ejemplo
+String json = "{'marca': 'Nike', 'modelo': 'Air Max', 'precio': 100}";
+
+// Convertir JSON a un objeto Java
+ObjectMapper objectMapper = new ObjectMapper();
+Zapato zapato = objectMapper.readValue(json, Zapato.class);
+
+System.out.println(zapato.getMarca()); // Salida: Nike
+System.out.println(zapato.getModelo()); // Salida: Air Max
+System.out.println(zapato.getPrecio()); // Salida: 100
 ```
 
-Aquí hemos creado un objeto `user` con tres propiedades: `nombre`, `edad` y `trabajo`, a las cuales les hemos asignado valores utilizando el método `put`.
-
-### Paso 3: Convertir un objeto JSON a String
-
-Aunque en Java estamos trabajando con objetos, a la hora de almacenar o compartir información, necesitamos convertir el objeto JSON en formato de texto. Para esto, utilizaremos el método `toString()`:
-
-```Java
-String jsonText = user.toString();
-
-System.out.println(jsonText);
-// Resultado: {"nombre":"Ana","edad":30,"trabajo":"Desarrolladora"}
-```
-
-### Paso 4: Trabajar con arrays y objetos anidados
-
-JSON también nos permite trabajar con arrays y objetos anidados. Veamos un ejemplo:
-
-```Java
-JSONArray skills = new JSONArray();
-skills.put("Java");
-skills.put("HTML");
-
-user.put("habilidades", skills);
-
-System.out.println(user.toString());
-// Resultado: {"nombre":"Ana","edad":30,"trabajo":"Desarrolladora","habilidades":["Java","HTML"]}
-```
-
-En este caso, hemos creado un array `skills` y lo hemos añadido como valor de la propiedad `habilidades` del objeto `user`.
+En este caso, se utiliza la clase ObjectMapper de la biblioteca Jackson para realizar la conversión. Como puedes ver, ambas bibliotecas ofrecen formas sencillas de trabajar con JSON en Java.
 
 ## Profundizando en JSON
 
-Como hemos visto, trabajar con JSON en Java es sencillo y nos permite estructurar y compartir información de forma eficiente. Sin embargo, existen muchos más métodos y propiedades que podemos utilizar para trabajar con objetos JSON. Te recomendamos explorar la documentación de las librerías y experimentar con distintos ejemplos para seguir aprendiendo sobre esta tecnología.
+Una de las ventajas de trabajar con JSON es su estructura sencilla que lo hace muy legible para los humanos. Está compuesto por una colección de pares clave-valor y puede soportar diferentes tipos de datos como cadenas, números, objetos y matrices.
+
+En Java, los objetos JSON se pueden mapear a clases Java utilizando la anotación @JsonProperty para asignar los nombres de las propiedades JSON a los nombres de los atributos de la clase. Además, se pueden realizar seralización y deserialización de objetos JSON utilizando las clases JsonGenerator y JsonParser.
+
+Otra característica interesante de JSON es que es muy similar a la sintaxis de los objetos JavaScript, por lo que puede ser fácilmente manejado en aplicaciones web. Además, su tamaño compacto lo hace ideal para transferir datos a través de la red.
 
 ## Ver también
 
-Si quieres aprender más sobre cómo utilizar JSON en tus proyectos de Java, te recomendamos los siguientes enlaces:
-
-- [Documentación de la librería JSON en Java](https://docs.oracle.com/javaee/7/api/javax/json/JsonObject.html)
-- [Tutorial de W3Schools sobre JSON en Java](https://www.w3schools.com/java/java_json.asp)
-- [Ejemplos de código de Programando en Java sobre JSON](https://www.programandoenjava.com/aplicaciones-web-como-trabajar-con-json-en-java/)
+- Documentación oficial de JSON en Java: https://docs.oracle.com/javaee/7/tutorial/jsonp004.htm
+- Documentación oficial de la biblioteca Gson: https://github.com/google/gson
+- Documentación oficial de la biblioteca Jackson: https://github.com/FasterXML/jackson

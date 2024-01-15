@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Geração de números aleatórios"
-simple_title:         "Geração de números aleatórios"
+title:                "Gerando números aleatórios."
+html_title:           "Haskell: Gerando números aleatórios."
+simple_title:         "Gerando números aleatórios."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -9,56 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar números aleatórios em Haskell?
+# Por que gerar números aleatórios?
 
-Uma das características interessantes da programação funcional em Haskell é a capacidade de gerar números aleatórios. Isso pode ser útil em muitos casos, como em jogos, simulações e até mesmo em criptografia. Além disso, utilizar números aleatórios pode deixar o código mais dinâmico e divertido de se trabalhar.
+Gerar números aleatórios é uma das funcionalidades mais úteis e interessantes da programação. Seja para criar jogos, simulações ou testar algoritmos, os números aleatórios são amplamente utilizados na maioria das linguagens de programação. Em Haskell, isso não é diferente. Aqui você aprenderá como gerar números aleatórios de forma simples e eficiente.
 
-## Como usar números aleatórios em Haskell
+## Como fazer em Haskell
 
-A geração de números aleatórios em Haskell envolve duas partes: a seed (semente) e a função para gerar os números. A seed é um valor inicial que é usado para criar uma sequência de números aleatórios, garantindo que os números gerados sejam diferentes a cada execução do programa.
+Para gerar números aleatórios em Haskell, precisamos usar a biblioteca `System.Random`. Essa biblioteca contém funções para gerar valores pseudoaleatórios (não verdadeiramente aleatórios, mas suficientemente aleatórios para a maioria dos casos).
 
-Existem várias maneiras de gerar números aleatórios em Haskell, mas uma das mais comuns é utilizando a função `random` do módulo `System.Random`. Para isso, é necessário importar o módulo no início do código:
+Primeiro, importamos a biblioteca `System.Random`:
 
 ```Haskell
 import System.Random
 ```
 
-Agora, podemos definir uma seed para a geração de números aleatórios (no exemplo, utilizaremos o número 42, mas pode ser qualquer outro número):
+Em seguida, usamos a função `randomR` para gerar um número inteiro entre dois valores fornecidos:
 
 ```Haskell
-gen = mkStdGen 42
+randomNumber :: Int
+randomNumber = randomR (1,10)
 ```
 
-Em seguida, podemos utilizar a função `random` para gerar um número inteiro aleatório entre 0 e 100:
+No exemplo acima, geramos um número aleatório entre 1 e 10. Podemos modificar esses valores de acordo com as nossas necessidades.
+
+Se quisermos gerar um número aleatório dentro de uma lista de valores, podemos usar a função `randomElem` da biblioteca `System.Random`:
 
 ```Haskell
-num = randomR (0,100) gen
+myList = [1, 2, 3, 4, 5]
+randomElem :: [Int]
+randomElem = randomElem myList
 ```
 
-O resultado será do tipo `IO Int`, então para obter o valor do número aleatório, precisamos utilizar a função `getStdRandom`:
+No exemplo acima, geramos um número aleatório dentro da lista `myList` e o armazenamos na variável `randomElem`.
+
+Além disso, é possível gerar números aleatórios com diferentes tipos de dados, como `Double`, `Bool` e `Char`. Basta declarar o tipo de dado desejado antes da função `randomR` ou `randomElem`.
+
+## Mergulho mais profundo
+
+Os números aleatórios gerados por funções como `randomR` e `randomElem` são baseados em um número inicial chamado "seed" (semente). Isso significa que, ao reiniciar o programa, os mesmos números aleatórios serão gerados novamente. Para evitar isso, podemos usar a função `newStdGen` para gerar uma nova semente aleatória a cada vez que o programa é executado:
 
 ```Haskell
-randNum = getStdRandom num
+newSeed :: IO Int
+newSeed = getStdRandom $ random (1,10)
 ```
 
-Agora, podemos executar o código e obter um número aleatório diferente a cada vez que o programa for rodado:
+Podemos também utilizar a função `randomIO` para gerar números aleatórios em qualquer ponto do programa, sem precisar declarar uma semente:
 
 ```Haskell
-main :: IO ()
-main = do
-  randNum <- getStdRandom num
-  print randNum
+randomNumber :: IO Int
+randomNumber = randomIO
 ```
 
-## Aprofundando na geração de números aleatórios
+É importante lembrar que, ao utilizar essas funções, estamos gerando números pseudoaleatórios, ou seja, não verdadeiramente aleatórios. Se precisarmos de números verdadeiramente aleatórios, é necessário usar bibliotecas específicas.
 
-Além da função `random`, o módulo `System.Random` também possui outras funções úteis para trabalhar com números aleatórios em Haskell. Por exemplo, a função `randomRIO` gera um número aleatório entre dois valores especificados. Além disso, é possível gerar outros tipos de dados aleatórios, como caracteres e booleanos.
+# Veja também
 
-Outro aspecto importante da geração de números aleatórios em Haskell é o conceito de "monads". Sem entrar em muitos detalhes, monads são estruturas que nos permitem trabalhar com valores que podem ter efeitos colaterais, como a geração de números aleatórios. Isso é importante para garantir que cada valor gerado seja único e não dependa do contexto externo.
-
-Em resumo, a geração de números aleatórios em Haskell pode ser uma ferramenta útil e interessante para adicionar dinamismo e imprevisibilidade aos programas. Com as diversas funções disponíveis no módulo `System.Random` e o conceito de monads, é possível criar programas mais complexos e divertidos.
-
-## Veja também
-
-- Documentação oficial do módulo `System.Random`: https://hackage.haskell.org/package/random
-- Tutorial sobre monads em Haskell: https://en.wikibooks.org/wiki/Haskell/Understanding_monads
+- Documentação da biblioteca System.Random: https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html
+- Tutorial sobre geração de números aleatórios em Haskell: https://www.haskell.org/tutorial/randomness.html

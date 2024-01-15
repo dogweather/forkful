@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 找到字符串的长度"
+title:                "找到字符串的长度"
+html_title:           "Gleam: 找到字符串的长度"
 simple_title:         "找到字符串的长度"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么: 
-找出字符串的长度似乎是一个简单的任务，但在编程中，这项任务却具有关键性的作用。因为字符串是我们日常生活中最常用的数据类型之一，了解如何获取其长度将有助于我们更好地处理和操作字符串，从而提高编程效率。
+## 为什么寻找字符串的长度
 
-## 怎么做: 
-下面我们将介绍如何用Gleam编程语言来找出字符串的长度。首先，我们需要定义一个字符串变量，比如说"Hello, world!"，然后使用Gleam的`String.length`函数来获取其长度。在下面的代码示例中，我们使用`io.format`函数来输出结果，你也可以根据自己的需求来处理结果。
-```Gleam
-import gleam/io
+寻找字符串的长度是编程中一个非常常见的任务。您可能需要知道一个字符串有多长，以便进行其他操作，例如截取字符串的一部分或者进行比较。在Gleam中，我们可以很容易地通过几行代码来获取一个字符串的长度，让我们来看看如何做到这一点。
 
-fn main() { 
-  let str = "Hello, world!" 
-  let len = String.length(str) 
-  io.format("The length of '{}' is {}", [str, len]) 
-}
+## 如何进行
+
+首先，我们需要一个包含字符串的变量，例如`my_string`。然后，我们可以使用Gleam的`length`函数来获取这个字符串的长度，并将其存储在一个新的变量中，例如`my_string_len`。最后，我们可以使用`io`模块中的`println`函数来打印这个字符串的长度，如下所示：
+
 ```
-输出结果为：`The length of 'Hello, world!' is 13`。
+Gleam program
+  module Main
 
-## 深入探讨:
-在Gleam中，字符串长度的计算使用字节长度来衡量。这意味着，无论字符串中包含什么字符，每个字符都会被计算为一个字节。但要注意，对于非ASCII字符（例如中文），一个字符可能由多个字节组成，因此其长度也会随之增加。
+  pub fn main() {
+    let my_string = "Hello world"
+    let my_string_len = String.length(my_string)
+    io.println("The length of my_string is:")
+    io.println(my_string_len)
+  }
+```
 
-此外，在Gleam中，我们也可以使用`String.codepoint_count`函数来获取字符串中的字符数量，而不是字节长度。这对于处理多语言的文本会更加准确。
+这段代码将输出`13`，因为`"Hello world"`包含13个字符。您可以根据自己的需要修改`my_string`的值，并且程序将打印出正确的字符串长度。现在，让我们深入了解如何寻找字符串的长度。
 
-总的来说，无论是使用`String.length`还是`String.codepoint_count`函数，都能有效地找出字符串的长度，让我们能够更好地处理和操作字符串数据。
+## 深入了解
 
-## 看看这些:
-- [Gleam字符串文档](https://gleam.run/core/string.html)
+在Gleam中，字符串是一种特殊类型的数据，我们可以使用内置的`String`模块来操作它们。这个模块中有一个名为`length`的函数，它接受一个字符串作为参数并返回它的长度。Gleam也允许您使用`len`函数来获取列表、元组和二进制数据的长度，但是对于字符串来说，`length`函数是最佳选择。
+
+另外，Gleam还提供了`String.split`函数，它可以根据指定的分隔符将一个字符串分割成多个子字符串。这个函数也接受一个字符串作为参数，并返回一个字符串列表。您可以使用`length`函数来获取列表的长度，从而获得分割后的子字符串的数量。
+
+## 参考链接
+
 - [Gleam文档](https://gleam.run/)
-- [Gleam官方教程](https://gleam.run/getting-started/index.html)
+- [String模块文档](https://gleam.run/modules/stdlib/String.html)
+- [Gleam仓库](https://github.com/gleam-lang/gleam)
 
-## 参考:
-[Gleam编程语言](https://gleam.run/) - 一种新兴的函数式编程语言，旨在帮助开发人员构建可维护和可扩展的系统。
+## 查看也可以
+
+- [Gleam中的字符串操作](https://gleam.run/tour/strings.html)
+- [关于Gleam的更多信息](https://gleam.run/about.html)
+- [Gleam社区论坛](https://teamforge.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Ruby recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,59 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Regular expressions, or "regex" for short, are an essential tool in every programmer's arsenal. They allow you to search for patterns within text and perform powerful string manipulation operations. Whether you are a beginner or an experienced developer, understanding regular expressions can greatly enhance your programming skills.
+Regular expressions, or regex, are a powerful tool in the world of programming. They allow you to search, match, and manipulate text in a precise and efficient manner. Engaging in using regular expressions can make your coding tasks easier and more effective.
 
 ## How To
-
-To start using regular expressions in Ruby, we simply need to create a new regular expression object using the `//` notation. Let's say we want to search for all words that start with the letter "b" in a given string:
-
-```Ruby
-str = "Bob is a big boy"
-regex = /b\w+/
-matches = str.scan(regex)
-puts matches
-```
-
-The above code will print out `["Bob", "big", "boy"]`. Let's break it down:
-
-- The `b\w+` regex pattern means "match any word that starts with the letter b, followed by one or more word characters.
-- The `scan` method on the `str` variable returns an array of all the matches found in the string.
-- Finally, we use `puts` to print out the matches array to the console.
-
-Regular expressions also allow us to perform substitutions. Let's say we want to replace every instance of "big" with "small" in our string:
+To use regular expressions in Ruby, first you need to create a pattern using the `RegExp` class. For example, to match a string that starts with "Hello" and ends with "world", you would use `/^Hello.*world$/`. Let's see this in action with some code!
 
 ```Ruby
-str = "Bob is a big boy"
-regex = /big/
-new_string = str.sub(regex, "small")
-puts new_string
+str = "Hello there, welcome to the world of Ruby"
+if str =~ /^Hello.*world$/
+  puts "You have entered the world of Ruby"
+else
+  puts "Sorry, this is not the world of Ruby"
+end
 ```
 
-The output will be `"Bob is a small boy"`. Here, we used the `sub` method to find the first match and replace it with our desired text.
+The output of this code would be:
+
+```
+You have entered the world of Ruby
+```
+
+This is because the `=~` operator checks if the string matches the pattern and returns the index of the first match. If the string does not match the pattern, it returns `nil`.
 
 ## Deep Dive
+Regular expressions can also be used for text manipulation, such as finding and replacing specific strings. Let's say we want to replace all instances of "world" with "universe" in the string "Hello world, how are you?". We can do this using the `gsub` method, which globally substitutes all matches with a new string.
 
-Regular expressions have many more features and symbols that can be used to create complex patterns for matching and substitution. Some important ones to note are:
+```Ruby
+str = "Hello world, how are you?"
+new_str = str.gsub(/world/, "universe")
+puts new_str
+```
 
-- `.` - matches any character except a newline
-- `?` - makes the preceding token optional
-- `+` - matches one or more of the preceding token
-- `*` - matches zero or more of the preceding token
-- `^` - matches the beginning of a string
-- `$` - matches the end of a string
-- `\A` - matches the beginning of a string (including newlines)
-- `\z` - matches the end of a string (including newlines)
-- `\b` - matches a word boundary
-- `\d` - matches a digit (0-9)
-- `\s` - matches any whitespace character
-- `\w` - matches any word character (letter, number, underscore)
+The output of this code would be:
 
-Regular expressions can also be used to validate string inputs, extract specific information from a string, and much more. It may seem daunting at first, but with practice and a good reference guide, you'll soon become a regex pro.
+```
+Hello universe, how are you?
+```
+
+Regular expressions can be quite complex, but they offer a lot of flexibility for text processing tasks. You can use special characters like `?` to match zero or one instances of a character, `+` to match one or more, and `*` to match zero or more. It's important to note that Ruby's regular expressions are case sensitive, unless you specify otherwise.
 
 ## See Also
+- [Ruby Documentation on Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Regex Tutorial by Ruby Monstas](https://rubymonstas.org/blog/2014/10/18/ruby-for-beginners-regular-expressions.html)
+- [Rubular: A Ruby Regular Expression Editor](https://rubular.com/)
 
-- [IRB Tutorial: Using Regular Expressions in Ruby](https://ruby-doc.org/core/Regexp.html)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Official Ruby Regular Expressions Documentation](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- [Ruby on Rails Guide: Regular Expressions](https://guides.rubyonrails.org/v3.2.21/active_support_core_extensions.html#regular-expressions)
+Regular expressions can be a bit tricky at first, but with practice, they can become a valuable tool in your programming arsenal. Keep experimenting and learning, and see what incredible things you can do with regex!

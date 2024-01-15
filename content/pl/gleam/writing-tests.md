@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Gleam: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne?
+## Dlaczego pisać testy w Gleam?
 
-Pisanie testów jest nieodłączną częścią procesu programowania i pomaga nam zapewnić, że nasz kod działa poprawnie. Poprzez pisanie testów, jesteśmy w stanie wykryć błędy i problemy w naszym kodzie jeszcze przed jego przetestowaniem przez użytkowników. Jest to nie tylko efektywny sposób na poprawianie błędów, ale także pomaga nam utrzymać nasz kod w dobrej jakości.
+Pisanie testów to ważna część procesu tworzenia oprogramowania. W Gleam możemy pisać testy szybko i łatwo, co pozwala nam na sprawdzenie poprawności kodu oraz uniknięcie błędów w przyszłości.
 
 ## Jak pisać testy w Gleam?
 
-Dzięki językowi programowania Gleam i jego zestawowi wbudowanych funkcji testerskich, pisanie testów jest proste i przyjemne. Poniżej przedstawimy kilka przykładów testów napisanych w Gleam oraz oczekiwane wyjście dla każdego z nich.
+Pierwszym krokiem jest zainicjowanie testów za pomocą modułu `gleam/test`. Następnie tworzymy funkcję testową z pomocą makra `test/2`. Przykładowy kod wygląda następująco:
 
 ```Gleam
-test "Dodawanie dwóch liczb powinno zwrócić prawidłowy wynik" {
-    let wynik = 2 + 3
-    expect(wynik) |> to_equal(5)
-}
+import gleam/test
 
-test "Dzielenie przez zero powinno zwrócić błąd" {
-    let wynik = 4 / 0
-    expect(wynik) |> to_equal(Error)
+test "Dodawanie liczb" {
+  assert.equal 2 (1 + 1)
+  assert.equal 3 (1 + 2)
 }
 ```
 
-W powyższych przykładach mamy testuje dodawanie dwóch liczb oraz dzielenie przez zero. Dzięki użyciu funkcji `expect` i operatora `|>`, możemy wyrazić nasze oczekiwania co do wyników naszych obliczeń. Jeśli test jest zaliczony, otrzymamy informację o tym, że test przebiegł pomyślnie. Jeśli jednak test jest niezaliczony, otrzymamy informację o błędzie oraz szczegóły, które pomogą nam znaleźć i naprawić błąd.
+Po uruchomieniu testów za pomocą polecenia `gleam test` powinniśmy otrzymać następujący wynik:
 
-## Wnikliwsze spojrzenie na pisanie testów
+```Shell
+✓ Dodawanie liczb
+```
 
-Pisanie testów jest nie tylko kwestią pokrycia kodu testami, ale także wykorzystania odpowiednich technik i strategii. Dzięki temu możemy stworzyć bardziej skuteczne i kompleksowe testy, które zapewnią nam pewność co do działania naszego kodu. Poniżej przedstawiamy kilka przydatnych artykułów na temat pisanie testów w Gleam:
+W przypadku, gdy testy zawierają błędy, otrzymamy informację o nich wraz z informacją, na której linii kodu wystąpił problem.
 
-- [Dokumentacja Gleam o pisaniu testów](https://gleam.run/book/tour/tests.html)
-- [Blog Gleam: "Pięć sposobów na udane testowanie w Gleam"](https://gleam.run/blog/testing.html)
-- [Artykuł "Test Driven Development w Gleam"](https://mokscy.name/test-driven-development-with-gleam/)
+## Głębszy zanurzenie w testach w Gleam
+
+W Gleam możemy pisać testy dla modułów, funkcji oraz typów danych. Możemy także korzystać z metod takich jak `assert.equl`, `assert.true` lub `assert.false` w celu sprawdzenia zachowania naszego kodu.
+
+Dodatkowo, możemy tworzyć testy oparte na warunkach za pomocą makra `test/4`, które pozwala nam na testowanie różnych wariantów danych wejściowych i oczekiwanych wyników.
 
 ## Zobacz także
 
-- [Dokumentacja Gleam](https://gleam.run/)
-- [Blog Gleam](https://gleam.run/blog/)
-- [Repozytorium Gleam na GitHubie](https://github.com/gleam-lang/gleam)
-
-Dzięki tym wskazówkom i narzędziom, pisanie testów w Gleam będzie prostsze i skuteczniejsze, co pozwoli nam uniknąć błędów i utrzymać nasz kod w dobrej jakości. Zachęcamy do korzystania z testów w trakcie procesu pisania kodu i dzięki temu budować lepsze i bardziej niezawodne aplikacje.
+- Dokumentacja Gleam: https://gleam.run/documentation
+- Oficjalne repozytorium Gleam: https://github.com/gleam-lang/gleam

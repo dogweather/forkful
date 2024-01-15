@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Javascript: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości może okazać się bardzo przydatne podczas tworzenia różnego rodzaju aplikacji. Może to być przydatne w takich przypadkach, jak wyświetlanie terminów ważności, planowania wydarzeń lub kontrolowania danych historycznych.
+Obliczanie daty w przyszłości lub przeszłości może być przydatne podczas tworzenia różnych aplikacji, takich jak kalendarze, planery lub prognozy pogody. Poza tym, jest to również interesujące wyzwanie dla programistów, gdyż wymaga ono użycia różnych funkcji i metod w języku Javascript.
 
 ## Jak to zrobić
 
-```javascript
-// Obliczanie daty w przyszłości
-let dzisiaj = new Date();
-let dataWKolejnychDniach = new Date();
-dataWKolejnychDniach.setDate(dzisiaj.getDate() + 7);
-console.log(dataWKolejnychDniach);
+Aby obliczyć datę w przyszłości lub przeszłości w języku Javascript, możemy użyć wbudowanej metody `setDate()` obiektu `Date`. Poniżej przedstawiamy kod, który pokazuje, jak obliczyć datę 7 dni w przód od obecnej daty:
 
-// Output: 2021-08-24T16:53:48.335Z
+```Javascript
+let currentDate = new Date(); // Tworzy obiekt reprezentujący bieżącą datę
+currentDate.setDate(currentDate.getDate() + 7); // Dodaje 7 dni do bieżącej daty
+console.log(currentDate); // Wypisuje datę 7 dni w przód
 ```
 
-```javascript
-// Obliczanie daty w przeszłości
-let dzisiaj = new Date();
-let dataWPoprzednichDniach = new Date();
-dataWPoprzednichDniach.setDate(dzisiaj.getDate() - 7);
-console.log(dataWPoprzednichDniach);
+Powyższy kod wypisze następującą datę: Sat Aug 07 2021 00:00:00 GMT+0200 (Central European Summer Time). Podobnie, aby obliczyć datę w przeszłości, możemy użyć metody `setDate()` z ujemną wartością. Na przykład, jeśli chcemy obliczyć datę 3 dni wstecz, oto jak będzie wyglądał kod:
 
-// Output: 2021-08-10T16:53:48.335Z
+```Javascript
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() - 3);
+console.log(currentDate);
 ```
 
-Konstruktor `Date` w Javascripcie pozwala na tworzenie daty i czasu w oparciu o różne parametry, takie jak rok, miesiąc, dzień, godzina, minuta itp. W przypadku obliczania daty w przyszłości lub przeszłości, możemy skorzystać z metody `setDate()` i określić liczbę dni, o które chcemy zmienić naszą aktualną datę.
+Kod ten wypisze: Wed Jul 28 2021 00:00:00 GMT+0200 (Central European Summer Time). Jak widać, mamy wiele możliwości manipulowania datami w Javascript, dzięki czemu możemy dostosować je do naszych potrzeb.
 
-## Deep Dive
+## Głębsze zagłębienie
 
-Ważną rzeczą, o której należy pamiętać przy obliczaniu daty w przyszłości lub przeszłości, jest uwzględnienie różnic czasowych. W przypadku, gdy nasza aplikacja jest wykorzystywana w różnych strefach czasowych, może to wpłynąć na dokładność obliczonej daty. W takiej sytuacji, powinniśmy skorzystać z metod `getUTC*()` i `setUTC*()`, które uwzględniają czas uniwersalny UTC.
+Język Javascript posiada wiele wbudowanych funkcji i metod, które ułatwiają manipulowanie datami. Oto kilka przydatnych funkcji, które mogą się przydać podczas obliczania dat w przyszłości lub przeszłości:
 
-Kolejną możliwością jest użycie zewnętrznych bibliotek, takich jak moment.js, które oferują wygodne metody do manipulowania datami i czasem. Dzięki temu można uniknąć błędów i uwzględnić różnice czasowe.
+- `getFullYear()` - zwraca rok dla danej daty
+- `getMonth()` - zwraca numer miesiąca (licząc od 0) dla danej daty
+- `getDate()` - zwraca dzień miesiąca dla danej daty
+- `getDay()` - zwraca dzień tygodnia dla danej daty (licząc od 0)
+- `getHours()` - zwraca godzinę dla danej daty
+- `getMinutes()` - zwraca minuty dla danej daty
+- `getSeconds()` - zwraca sekundy dla danej daty
+
+Wszystkie te funkcje i wiele innych mogą być użyte w połączeniu z metodą `setDate()` do dokładniejszego obliczania dat.
 
 ## Zobacz również
 
-- [Dokumentacja Javascript Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+- [Dokumentacja języka Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
+- [Wprowadzenie do obiektu Date w Javascript](https://www.w3schools.com/js/js_dates.asp)
+- [Praktyczne zastosowania obiektu Date w Javascript](https://javascript.plainenglish.io/practical-uses-of-date-object-in-javascript-ff86d61bd611)

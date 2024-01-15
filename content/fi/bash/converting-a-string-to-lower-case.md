@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Muuttaminen merkkijonoksi pienaakkosiksi"
-simple_title:         "Muuttaminen merkkijonoksi pienaakkosiksi"
+title:                "Muuntaa merkkijono pienaakkosiksi"
+html_title:           "Bash: Muuntaa merkkijono pienaakkosiksi"
+simple_title:         "Muuntaa merkkijono pienaakkosiksi"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,40 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi saattaisit haluta muuttaa merkkijonon pieniksi kirjaimiksi. Yksi yleinen syy voi olla vertailun helpottaminen tai tietokannan kanssa työskentely, jossa kirjainten koko on merkityksellistä.
+Usein Bashissa tarvitaan merkkijonon muokkausta, ja toisinaan halutaan muuttaa kaikki kirjaimet pieniksi. Tässä artikkelissa näytämme, kuinka muuttaa merkkijono pieniksi kirjaimiksi yhdellä komennolla.
 
-## Kuinka tehdä
+## Kuinka
 
-Käytännön esimerkkejä merkkijonon muuttamisesta pieniksi kirjaimiksi Bash-skriptillä:
-
-```Bash
-str="TÄMÄ ON TESTI"
-lowercase=$(tr '[:upper]' '[:lower]' <<< $str)
-echo $lowercase
-
-# Tulostaa: tämä on testi
-```
+Merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa käyttämällä Bashin sisäänrakennettua `tr` komentoa. Komento ottaa vastaan kaksi parametria: "vanhat" ja "uudet" merkit, ja vaihtaa kaikki annetun merkkijonon kirjaimet vastaaviin uusiin merkkeihin.
 
 ```Bash
-array=("EKSKLUSIIVINEN" "PÄÄSY" "BLOGIIN")
-
-for i in "${array[@]}"
-do
-  lowercase=$(tr '[:upper:]' '[:lower:]' <<< $i)
-  echo $lowercase
-done
-
-# Tulostaa:
-# eksklusiivinen
-# pääsy
-# blogiin
+tr "A-Z" "a-z" <<< "THIS IS A TEST"
 ```
 
-## Syvällisempi tarkastelu
+Tämä komento tulostaa merkkijonon "this is a test". Komento "A-Z" määrittelee kaikki isot kirjaimet vanhoiksi merkeiksi, ja "a-z" määrittelee kaikki pienet kirjaimet uusiksi merkeiksi. Näin kaikki isot kirjaimet korvataan pienillä kirjaimilla.
 
-Bash-skripti käyttää tr-komentoa (tai translate), joka vaihtaa merkkijonon kaikki isot kirjaimet pieniksi kirjaimiksi. Se tekee tämän käyttämällä kirjainluokkia, jotka määritellään hakasulkeissa. Esimerkiksi [A-Z] tarkoittaa kaikkia isoja kirjaimia ja [a-z] kaikkia pieniä kirjaimia.
+Jos haluat suojata joitakin merkkejä muuttamiselta, voit käyttää lisäksi `-C` komentoa. Tämä komento antaa lisämerkkejä, jotka pysyvät muuttumattomina. Esimerkiksi, jos haluat säilyttää välilyöntejä muuttumattomina, käytä seuraavaa komentoa:
+
+```Bash
+tr "A-Z" "a-z" -C " " <<< "THIS IS A TEST"
+```
+
+Tämä tulostaa saman merkkijonon kuin edellinen komento, mutta välilyönnit pysyvät muuttumattomina.
+
+## Syväsyventymine
+
+`tr` komento on yksinkertainen ja tehokas vaihtoehto merkkijonon muokkaamiseen. Se on hyödyllinen esimerkiksi erilaisten tietojen käsittelyssä komentorivillä ja skripteissä. Voit myös käyttää muita säännöllisiä lausekkeita `tr` komennossa muokatakseen merkkijonoa haluamallasi tavalla.
 
 ## Katso myös
 
-- [Bashin tr-komento](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Kuinka käsitellä merkkijonoja Bashilla](https://linuxconfig.org/how-to-handle-string-data-in-bash)
+- [Bashin manuaalisivu](https://man7.org/linux/man-pages/man1/bash.1.html)
+- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)

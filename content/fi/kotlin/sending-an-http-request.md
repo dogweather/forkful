@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Lähettämällä http-pyyntö"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Kotlin: Lähettämällä http-pyyntö"
 simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Kehittäjillä on usein tarve lähettää HTTP-pyyntöjä ulkoisille palveluille tai sovelluksille. Tämä voi olla tarpeen esimerkiksi tietojen hakemiseen, tallentamiseen tai päivittämiseen.
+HTTP-pyyntöjen lähettäminen on olennainen osa modernia ohjelmointia, ja niitä käytetään esimerkiksi web-sovellusten ja palveluiden kommunikointiin. Kotlinin avulla voit helposti lähettää ja käsitellä HTTP-pyyntöjä yksinkertaisesti ja tehokkaasti.
 
-## Miten
-
-Kotlinilla on helppo lähettää HTTP-pyyntöjä käyttämällä sisäänrakennettua `URL`-luokkaa ja `HttpURLConnection`-oliota. Seuraavassa esimerkissä käytämme `GET`-pyyntöä ja tulostamme vastauksen sisällön:
+# Kuinka
 
 ```Kotlin
-val url = URL("https://api.example.com/users")
+// Luo uusi HTTP-yhteys
+val url = URL("https://www.example.com")
 val connection = url.openConnection() as HttpURLConnection
+
+// Määritä pyynnön tyyppi ja aseta tarvittavat ominaisuudet
 connection.requestMethod = "GET"
+connection.setRequestProperty("Content-Type", "application/json")
+connection.doOutput = true
+
+// Lähetä pyyntö ja lue vastaus
 val responseCode = connection.responseCode
-if (responseCode == HttpURLConnection.HTTP_OK) {
-    val content = connection.inputStream.bufferedReader().use { it.readText() }
-    println(content)
-}
+val responseData = connection.inputStream.bufferedReader().readText()
+
+// Tulosta vastauskoodi ja data
+println("Response code: $responseCode")
+println("Response data: $responseData")
 ```
 
-**Output:**
+Tämä on yksinkertainen esimerkki GET-pyynnön lähettämisestä ja vastauksen käsittelystä. Voit muuttaa pyynnön tyyppiä ja lisätä tai muokata pyynnön ominaisuuksia tarpeen mukaan.
 
-```
-[{"id": 123, "name": "John"}, {"id": 456, "name": "Jane"}]
-```
+# Syväsukellus
 
-Voit myös lähettää muita HTTP-metodeja, kuten `POST`, `PUT` ja `DELETE`, käyttämällä `setRequestMethod()` -metodia.
+HTTP-pyyntöjen lähettäminen Kotlinilla perustuu Java:n java.net-pakettiin. Tämän avulla voimme luoda yhteyden haluttuun URL-osoitteeseen ja asettaa pyynnön parametrit. Voit myös lisätä esimerkiksi autentikointitiedot tai muokata pyynnön dataa ennen sen lähettämistä.
 
-## Syväsukellus
+Pyynnön lähettämisen jälkeen voimme tarkistaa vastauksen koodin ja lukea vastauksen datan haluamallamme tavalla. Kotlinin laaja valikoima standardikirjastoja tekee HTTP-pyyntöjen käsittelystä helppoa ja tehokasta.
 
-HTTP-pyyntö koostuu yleensä seuraavista osista:
+# Katso myös
 
-- **Request Line:** sisältää HTTP-metodin, URL-osoitteen ja protokollaversion.
-- **Headerit:** sisältää lisätietoja pyynnöstä, kuten käyttäjäagentin ja sisällön tyyppi.
-- **Body:** sisältää tarvittaessa tietoja tai sisällön, esimerkiksi `POST`-pyynnössä.
-
-Käyttämällä `setRequestMethod()` ja `setRequestProperty()` -metodeja voit määrittää nämä osat haluamallasi tavalla.
-
-## Katso myös
-
-- [Kotlinin `URL`-luokan dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/)
-- [Java: Lähetä HTTP-pyyntö ja saa vastaus](https://www.baeldung.com/java-http-request)
-- [HTTP Request & Response Tutorial](https://www.tutorialspoint.com/http/http_requests.htm)
+- Java.net-paketti: https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html
+- Kotlinin standardikirjasto: https://kotlinlang.org/api/latest/jvm/stdlib/

@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "C recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "C"
 category:             "C"
@@ -10,76 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Calculating a date in the future or past is a common programming task for tasks such as scheduling events, managing deadlines, or displaying information to users based on a specific date. By understanding how to calculate dates in C, you can add functionality to your programs and improve the overall user experience.
+Calculating dates in the future or past may seem like a trivial task, but it can actually be quite useful in various applications. Imagine needing to schedule an event or program a task that should occur on a specific date - having the ability to calculate future or past dates programmatically can save time and effort.
 
 ## How To
-
-First, let's start by including the necessary libraries:
+To calculate a date in the future or past, we need to use the `time.h` library in C. This library includes functions for date and time manipulation. We'll be using the `mktime` function to convert a given date into a time in seconds, and the `localtime` function to convert back to a structured time (including date). Let's take a look at a simple example:
 
 ```C
 #include <stdio.h>
 #include <time.h>
+
+int main() {
+  // Create a structured time for 14th September 2021, 10:30 AM
+  struct tm date = {0};
+  date.tm_mday = 14;  // Day of the month (1-31)
+  date.tm_mon = 8;    // Month (0-11)
+  date.tm_year = 121; // Year (current year minus 1900)
+  date.tm_hour = 10;  // Hour (0-23)
+  date.tm_min = 30;   // Minute (0-59)
+
+  // Convert the structured time to seconds
+  time_t date_seconds = mktime(&date);
+
+  // Calculate a future date by adding 2 weeks (in seconds)
+  // Note: we could also add or subtract any other unit of time (e.g. days, hours)
+  time_t future_date = date_seconds + (2 * 7 * 24 * 60 * 60);
+
+  // Convert back to a structured time
+  // Note: we can also use gmtime instead of localtime to get universal time
+  struct tm *future_time = localtime(&future_date);
+
+  // Output the future date in a human-readable format
+  printf("The future date is: %02d/%02d/%d at %02d:%02d\n",
+          future_time->tm_mday, future_time->tm_mon + 1,
+          future_time->tm_year + 1900, future_time->tm_hour, future_time->tm_min);
+
+  return 0;
+}
 ```
+You can modify the values for `date` and the unit of time used in `future_date` to experiment with different results. For example, you can calculate a date in the past by subtracting instead of adding.
 
-Next, we need to define a variable of type `struct tm` and initialize it with the current date and time using the `time()` function:
-
-```C
-struct tm *current_date;
-time_t raw_time;
-time(&raw_time);
-current_date = localtime(&raw_time);
+The output of the example above would be:
 ```
-
-Now, we can use the `mktime()` function to convert our current date to a time_t value, which represents the number of seconds since January 1, 1970.
-
-```C
-time_t current_timestamp = mktime(current_date);
+The future date is: 28/09/2021 at 10:30
 ```
-
-To calculate a date in the future, we can use the `mktime()` function again, but this time adding or subtracting the desired number of seconds from our current timestamp. For example, if we want to calculate the date one week from now, we can add 604800 seconds (60 seconds * 60 minutes * 24 hours * 7 days) to our current timestamp:
-
-```C
-time_t future_timestamp = current_timestamp + 604800;
-```
-
-We can then use the `localtime()` function again to convert this new timestamp to a readable date:
-
-```C
-struct tm *future_date;
-future_date = localtime(&future_timestamp);
-```
-
-Finally, we can print out the future date in a user-friendly format using the `strftime()` function and the appropriate formatting directives:
-
-```C
-char future_date_string[50];
-strftime(future_date_string, 50, "%B %d, %Y", future_date);
-printf("The date one week from now is: %s\n", future_date_string);
-```
-
-This will output the following:
-
-```
-The date one week from now is: November 26, 2020
-```
-
-To calculate a date in the past, we simply subtract the desired number of seconds from our current timestamp:
-
-```C
-time_t past_timestamp = current_timestamp - 604800;
-```
-
-And then use the same steps as before to convert it to a readable date and print it out.
 
 ## Deep Dive
+The `time.h` library in C also provides other useful functions for date and time manipulation, such as `difftime` for calculating the difference between two times in seconds, `strftime` for formatting time strings, and `gmtime` for getting universal time. Additionally, there are other libraries and APIs available for date and time calculations, such as `datetime.h` from the C++ standard library and the date and time features of the POSIX standard.
 
-It's worth noting that the `mktime()` function takes into account leap years and daylight saving time, making it a reliable way to calculate dates. Additionally, the `localtime()` function converts the timestamp to the local time, which is useful for displaying dates to users in their own time zone.
-
-It's also important to keep in mind that the `time_t` type is limited to representing dates between January 1, 1970 and January 19, 2038, which may cause issues for calculating dates far into the future.
-
-## See Also
-
-- [C Standard Library - time.h](https://en.cppreference.com/w/c/chrono)
-- [C Date and Time Manipulation](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
-- [How Does the Unix Timestamp Work?](https://www.epochconverter.com/articles/what-is-a-unix-timestamp)
+See Also
+- [C Date and Time Functions](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
+- [C++ Date and Time Functions](https://www.geeksforgeeks.org/c-datetime-function-examples/)
+- [POSIX Time Functions](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time-Functions.html)

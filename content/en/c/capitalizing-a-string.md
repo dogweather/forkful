@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "C"
 category:             "C"
@@ -9,54 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Why
+Capitalizing a string in C may seem like a small task, but it can have a big impact on the readability and organization of your code. By capitalizing strings, you can easily differentiate between different types of data and make your code more user-friendly.
 
-Have you ever wanted to capitalize a string in your C program? Maybe you're working on a project that requires certain text to be in all caps, or you just prefer the aesthetic of capital letters. In any case, knowing how to capitalize a string can be a useful skill to have in your programming repertoire.
+# How To
+To capitalize a string in C, there are a few different methods you can use. Let's take a look at some examples and sample output to see how it all works.
 
-## How To
-
-In C, strings are simply arrays of characters, with the last character being a null terminator. So to capitalize a string, we need to access each character, convert it to uppercase if it is a lowercase letter, and then reassign it back to the string.
-
-Let's take a look at a simple example:
-
-```C
+```
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 
-int main() {
-  char str[] = "hello world";
-  
-  // loop through each character in the string
-  for (int i = 0; i < strlen(str); i++) {
-    // check if the current character is a lowercase letter
-    if (islower(str[i])) {
-      // convert it to uppercase using toupper() function
-      str[i] = toupper(str[i]);
+int main()
+{
+    char str[] = "hello world"; // create a string to capitalize
+    char capitalStr[12]; // create a new string to hold the capitalized version
+    int i;
+
+    // method 1: using the toupper() function
+    for(i = 0; str[i] != '\0'; i++) // loop through each character of the string
+    {
+        capitalStr[i] = toupper(str[i]); // capitalize each character using toupper()
     }
-  }
-  
-  // print the capitalized string
-  printf("%s\n", str);
-  
-  return 0;
+    capitalStr[i] = '\0'; // add null terminator to the end of the string
+    printf("Capitalized string: %s\n", capitalStr);
+
+    // method 2: using the strupr() function
+    strcpy(capitalStr, str); // copy original string into new string
+    strupr(capitalStr); // use strupr() to convert all characters to uppercase
+    printf("Capitalized string: %s\n", capitalStr);
+    
+    // method 3: manually changing the ASCII value of characters
+    for(i = 0; str[i] != '\0'; i++) // loop through each character of the string
+    {
+        if(str[i] >= 'a' && str[i] <= 'z') // check if character is lowercase
+        {
+            capitalStr[i] = str[i] - 32; // convert to uppercase by subtracting 32 from ASCII value
+        }
+        else
+        {
+            capitalStr[i] = str[i]; // keep uppercase characters the same
+        }
+    }
+    capitalStr[i] = '\0'; // add null terminator to the end of the string
+    printf("Capitalized string: %s\n", capitalStr);
+
+    return 0;
 }
 ```
+**Output:**
+```
+Capitalized string: HELLO WORLD
+Capitalized string: HELLO WORLD
+Capitalized string: HELLO WORLD
+```
 
-Output: `HELLO WORLD`
+# Deep Dive
+Now that we've seen a few different ways to capitalize strings in C, let's take a deeper look at how it all works. 
 
-We first include the necessary header files for string manipulation and character operations. Then, we define a string `str` with the value "hello world". Using a for loop, we iterate through each character in the string and check if it is a lowercase letter using the `islower()` function. If it is, we convert it to uppercase using `toupper()` and reassign it back to the string.
+Method 1 and 2 both use built-in functions to capitalize the string. The `toupper()` function, found in the `<ctype.h>` library, converts a lowercase character to uppercase. Similarly, the `strupr()` function, found in the `<string.h>` library, converts an entire string to uppercase. 
 
-## Deep Dive
+Method 3 is a manual approach, where we check each character and either convert it using ASCII values or leave it as is. In case you're not familiar with ASCII values, each character has a corresponding number that C uses to represent it. For example, the ASCII value for lowercase 'a' is 97 and uppercase 'A' is 65. So by subtracting 32 from the lowercase ASCII value, we can convert it to uppercase.
 
-Now, let's take a deeper look at how this code works. In C, each character is represented by a numerical value based on the ASCII table. Uppercase letters have lower numerical values compared to lowercase letters. For example, 'A' has a value of 65 while 'a' has a value of 97. So by subtracting 32 from the lowercase value, we get the corresponding uppercase value. This is essentially what the `toupper()` function does.
+By understanding these methods and how they work, you can choose the best approach for your specific situation. Keep in mind that different methods may have varying levels of efficiency and readability, so it's important to weigh your options.
 
-We use `strlen()` to determine the length of the string and use it as the condition for our loop. The `islower()` function checks if a character is a lowercase letter and returns a non-zero value if it is. This serves as the condition for our `if` statement, where we convert the lowercase character to uppercase and reassign it back to the string.
-
-## See Also
-
-To learn more about string manipulation in C, check out these helpful resources:
-
-- [String Manipulation in C Tutorial](https://www.programiz.com/c-programming/c-strings)
-- [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language))
-- [C Standard Library: <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+# See Also
+* [C Programming Tutorial](https://www.programiz.com/c-programming)
+* [ASCII Table](https://www.ascii-code.com/)

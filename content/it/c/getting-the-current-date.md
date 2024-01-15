@@ -1,6 +1,7 @@
 ---
-title:                "C: Ottener la data corrente"
-simple_title:         "Ottener la data corrente"
+title:                "Ottenere la data corrente"
+html_title:           "C: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè 
+## Perché
 
-La data corrente è un'informazione importante in molte applicazioni. Può essere utilizzata per mostrare la data di creazione di un file, registrare l'orario di un evento, o semplicemente per fornire un feedback all'utente sul momento in cui sta utilizzando l'applicazione.
+Spesso è necessario ottenere la data corrente all'interno di un programma per poter registrare eventi o gestire processi. Inoltre, la conoscenza della data corrente può essere utile per visualizzarla all'utente o per effettuare calcoli basati sulla data.
 
-## Come Fare 
+## Come fare
 
-Per ottenere la data corrente in linguaggio C, è necessario utilizzare le funzioni fornite dalla libreria di sistema `time.h`. La funzione `time` restituirà il numero di secondi trascorsi dal 1 gennaio 1970 a mezzanotte. Questo valore può essere convertito in una data leggibile utilizzando le funzioni `localtime` e `asctime`.
+Per ottenere la data corrente in un programma scritto in linguaggio C, esistono varie opzioni. Una delle più semplici è l'utilizzo della funzione ```time()``` che restituisce il numero totale di secondi trascorsi dal 1 gennaio 1970. Per convertire questo valore in una data leggibile, possiamo utilizzare la funzione ```localtime()``` che accetta come parametro il valore restituito dalla funzione ```time()```. Di seguito un esempio di codice che stampa la data corrente:
 
-Ecco un esempio di codice che stampa la data corrente nel formato "Giorno/Mese/Anno":
-
-```C
+```
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // ottieni il tempo corrente
-    time_t currentTime = time(NULL);
 
-    // converti in una struttura di tipo tm
-    struct tm *ptm = localtime(&currentTime);
+    // Ottieni il numero di secondi trascorsi da 01/01/1970
+    time_t current_time = time(NULL);
+    
+    // Converti in una struttura di tipo tm contenente la data corrente
+    struct tm *local_time = localtime(&current_time);
+    
+    // Stampa la data nel formato desiderato
+    printf("La data corrente è: %d/%d/%d", local_time->tm_mday, local_time->tm_mon + 1, local_time->tm_year + 1900);
 
-    // stampa la data nel formato "gg/mm/aaaa"
-    printf("%02d/%02d/%04d\n", ptm->tm_mday, ptm->tm_mon + 1, ptm->tm_year + 1900);
     return 0;
 }
 ```
 
-L'output di questo codice, se eseguito il 24 agosto 2021, sarà:
+Output:
 
 ```
-24/08/2021
+La data corrente è: 15/07/2021
 ```
 
-## Approfondimenti
+## Approfondimento
 
-Per ottenere un maggior controllo sulla formattazione della data, è possibile utilizzare la funzione `strftime`, che permette di definire il formato della data desiderato. Inoltre, se è necessario manipolare il tempo in modo più preciso, è possibile utilizzare altre funzioni della libreria `time.h` come `difftime` per ottenere la differenza di tempo tra due momenti specifici.
+La funzione ```time()``` utilizza un valore di precisione di 1 secondo, quindi se abbiamo bisogno di una maggiore precisione possiamo utilizzare la funzione ```gettimeofday()``` che restituisce il tempo di sistema con un precisione fino al microsecondo. Inoltre, esistono anche altre funzioni utili per effettuare calcoli o manipolazioni sulla data e l'ora, come ad esempio ```mktime()``` che converte una struttura di tipo tm in un valore di tipo time_t.
 
-Inoltre, in alcune situazioni è possibile che la data corrente non sia sufficiente e sia necessario utilizzare un servizio esterno per ottenere una data più precisa e affidabile. In questi casi, è possibile utilizzare librerie di terze parti o API online per ottenere la data corrente.
+## Vedi anche
 
-## Vedi Anche 
-
-- [Documentazione ufficiale della libreria di sistema `time.h`](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Esempi di utilizzo delle funzioni `time.h`](https://www.geeksforgeeks.org/c-program-print-current-day-date-time/)
+- [Documentazione ufficiale di C](https://devdocs.io/c/)
+- [Tutorial su date e ore in C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Esempi di codice per la gestione delle date in C](https://www.geeksforgeeks.org/date-time-functions-in-c-c/)

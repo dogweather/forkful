@@ -1,5 +1,6 @@
 ---
-title:                "C#: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "C#"
 category:             "C#"
@@ -11,43 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jedną z najważniejszych czynności w programowaniu aplikacji internetowych jest pobieranie stron internetowych. Możesz to robić, aby sparsować dane, zapisać je do bazy danych lub po prostu przeglądać je offline. W tym blog poście omówimy, jak w prosty sposób pobrać stronę internetową za pomocą języka programowania C#.
+Pobieranie stron internetowych jest powszechną czynnością w świecie programowania. Często potrzebujemy danych zawartych na stronie lub analizujemy jej zawartość. Dlatego nauka, jak pobrać stronę internetową za pomocą C#, może być bardzo przydatna dla programistów.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest zainstalowanie pakietu NuGet called `HtmlAgilityPack`, który pomoże nam w parsowaniu dokumentów HTML. Następnie w naszym kodzie potrzebujemy utworzyć obiekt typu `WebClient` i użyć metody `DownloadString` aby pobrać zawartość strony internetowej. Oto przykładowy kod:
+Pierwszym krokiem jest utworzenie projektu w C# i dodanie odpowiednich referencji do kodu. Następnie wykorzystujemy klasę WebClient, aby wykonać żądanie HTTP i pobrać zawartość strony.
 
 ```C#
-// Importowanie niezbędnych bibliotek
 using System.Net;
-using HtmlAgilityPack;
 
-// Tworzenie obiektu WebClient
-var client = new WebClient();
-// Pobieranie zawartości strony internetowej
-var html = client.DownloadString("https://www.example.com/");
-// Użycie HtmlAgilityPack do parsowania dokumentu HTML
-var document = new HtmlDocument();
-document.LoadHtml(html);
+//tworzymy obiekt WebClient
+WebClient client = new WebClient();
 
-// Pobranie elementów ze strony internetowej
-var title = document.DocumentNode.SelectSingleNode("//head//title").InnerText;
-var paragraphs = document.DocumentNode.SelectNodes("//p");
+//wykonujemy żądanie i pobieramy zawartość strony jako string
+string pageContent = client.DownloadString("https://www.example.com");
 
-// Wyświetlenie pobranych elementów
-Console.WriteLine("Tytuł strony: " + title);
-foreach (var paragraph in paragraphs)
-{
-    Console.WriteLine("Paragraf: " + paragraph.InnerText);
-}
+//wyświetlamy pobraną zawartość w konsoli
+Console.WriteLine(pageContent);
 ```
+Ten prosty kod pobierze zawartość strony i wyświetli ją w konsoli. Możemy również zapisać pobraną zawartość do pliku lub przetworzyć ją dalej, na przykład wyodrębnić konkretne dane.
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć tytuł i treść paragrafów pobranej strony internetowej.
+## Głębsza analiza
 
-## Deep Dive
+W powyższym przykładzie użyliśmy metody DownloadString, która pobiera zawartość strony jako string. Jednak w przypadku pobierania plików, możemy użyć metody DownloadFile, która zapisze zawartość do wskazanego pliku.
 
-Podczas pobierania strony internetowej musisz pamiętać, że niektóre elementy mogą być wczytywane asynchronicznie, na przykład za pomocą JavaScript. W takim przypadku metoda `DownloadString` nie będzie przechwytywać tych elementów. W takim przypadku możesz użyć Selenium WebDriver, aby przeładować stronę i pobrać jej aktualną zawartość.
+Dodatkowo, klasa WebClient umożliwia ustawianie nagłówków HTTP oraz obsługę błędów. Jest to szczególnie przydatne, gdy chcemy pobrać dane zabezpieczone uwierzytelnieniem.
 
 ## Zobacz także
-- Dokumentacja HtmlAgilityPack: https://html-agility-pack.net/
-- Dokumentacja WebClient: https://docs.microsoft.com/pl-pl/dotnet/api/system.net.webclient?view=net-5.0
+
+- Dokumentacja klasy WebClient: https://docs.microsoft.com/pl-pl/dotnet/api/system.net.webclient
+- Tutorial na temat pobierania stron internetowych w C#: https://www.c-sharpcorner.com/article/how-to-download-a-web-page-using-c-sharp
+
+Dzięki prostym i efektywnym mechanizmom dostępnym w C#, pobieranie stron internetowych nie jest już skomplikowanym zadaniem. Teraz możesz wykorzystać tę wiedzę w swoim projekcie lub analizie danych. Powodzenia!

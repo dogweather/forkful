@@ -1,6 +1,7 @@
 ---
-title:                "C: Merkkijonon suurentaminen"
-simple_title:         "Merkkijonon suurentaminen"
+title:                "Merkkijonon muuttaminen suuriksi kirjaimiksi"
+html_title:           "C: Merkkijonon muuttaminen suuriksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen suuriksi kirjaimiksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,81 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluat käsitellä merkkijonoja ja muuttaa niitä isoihin kirjaimiin?
+## Miksi
 
-Monissa ohjelmointiprojekteissa on tarvetta muuttaa merkkijonojen kirjainkokoja, esimerkiksi jos haluat tulostaa käyttäjän antaman tekstin isoin kirjaimin tai vertailla kahta merkkijonoa, joissa toinen on isot kirjaimet ja toinen pienet. On myös mahdollista, että käytössäsi on jonkinlainen rajapinta, joka edellyttää merkkijonojen kirjainten muuttamista tiettyyn muotoon.
+Stringien kapselointi on hyödyllinen tekniikka, kun käsitellään tekstipohjaista dataa, kuten käyttäjän syötteitä tai tiedostojen nimiä. Se mahdollistaa johdonmukaisen muotoilun ja helpottaa tietojen käsittelyä.
 
-## Miten: Esimerkkejä ja tulosteita koodilohkojen sisällä
+## Näin
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-	char string[] = "Hei kaikille!"; //luodaan merkkijono
-	int length = strlen(string); //lasketaan merkkijonon pituus
-	char new_string[length+1]; //luodaan uusi merkkijono pidentyneelle merkkijonolle
-	
-	for (int i = 0; i < length; i++) //käydään läpi merkkijono
-	{
-		if (string[i] >= 'a' && string[i] <= 'z') //tarkistetaan onko kirjain pieni kirjain
-		{
-			new_string[i] = string[i] - 32; //muunnetaan pieni kirjain isot
-		}
-		else
-		{
-			new_string[i] = string[i]; //jos ei ole pieni kirjain, muunnetaan kirjain sellaisenaan
-		}
-	}
-	new_string[length] = '\0'; //lisätään merkkijonon loppuun lopetusmerkki
-	printf("%s", new_string); //tulostetaan uusi merkkijono
-	
-	return 0;
+// Function to capitalize a string
+void capitalize(char *str) {
+    int i = 0;
+
+    // Loop through each character
+    while (str[i] != '\0') {
+        // Check if character is lowercase
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            // Convert to uppercase by subtracting 32 from ASCII value
+            str[i] = str[i] - 32;
+        }
+        i++;
+    }
+
+    printf("Capitalized string: %s", str);
 }
-```
- 
-Tulos:
 
-```
-HEI KAIKILLE!
-```
+int main() {
+    char str[50];
+    printf("Enter a string: ");
+    scanf("%s", str);
 
-Toinen esimerkki:
+    // Call capitalize function
+    capitalize(str);
 
-```C
-#include <stdio.h>
-#include <ctype.h>
-
-int main()
-{
-	char string[] = "Tämä on tekstinä"; //luodaan merkkijono
-	
-	for (int i = 0; string[i] != '\0'; ++i) //käydään läpi merkkijono, kunnes tullaan lopetusmerkkiin
-  	{
-		string[i] = toupper(string[i]); //käytetään toupper-funktiota muuttamaan isot kirjaimet
-  	}
-  	
-  	printf("%s",string); //tulostetaan muutettu merkkijono
-  	
-  	return 0;
+    return 0;
 }
 ```
 
-Tulos:
+**Syöte:** hello
+**Output:** Capitalized string: HELLO
 
-```
-TÄMÄ ON TEKSTINÄ
-```
+## Tarkempi selvitys
 
-## Syventävä tieto: Lisätietoja merkkijonojen kirjainkoon muuttamisesta
+Stringien kapselointi on yksinkertainen prosessi, joka muuttaa kaikki merkit pienaakkosista suuraakkosiin. Tämä voidaan tehdä käymällä läpi jokainen merkki ja muuttamalla sen ASCII-arvoa. ASCII-taulukossa pienaakkoset alkavat numerolla 97 ja suuraakkoset numerolla 65. Joten pienaakkoset voidaan muuttaa suuraakkosiksi vähentämällä 32 niiden ASCII-arvosta.
 
-On tärkeää muistaa, että eri ohjelmointikielillä voi olla erilaiset kirjainten käsittelyyn liittyvät funktiot ja kirjoitustavat. Esimerkiksi C-kielessä käytetään kirjainarvojen ASCII-koodauksia, kun taas esimerkiksi Javassa käytetään Unicode-arvoja.
+Kuitenkin tämä yksinkertainen prosessi toimii vain englannin kielellä, jossa on vain 26 kirjainta. Jos haluat kapseloida muita merkkejä, kuten ääkkösiä tai erikoismerkkejä, sinun on käytettävä monimutkaisempia toimenpiteitä, kuten merkistöjen muunnosta.
 
-Merkkijonojen kirjainkoon muuttamiseen on myös muita vaihtoehtoisia tapoja, kuten käyttämällä kirjastoja, jotka tarjoavat valmiita funktioita isojen ja pienten kirjainten muuttamiseen. On tärkeää tutkia ja vertailla eri vaihtoehtoja ja valita sopiva tapa projektisi vaatimusten mukaan.
+## Katso myös
 
-## Katso myös:
-
-- [Ascii-koodaus](https://fi.wikipedia.org/wiki/Ascii)
-- [Unicode](https://fi.wikipedia.org/wiki/Unicode)
-- [toupper-funktio C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [ASCII-taulukko](https://fi.wikipedia.org/wiki/ASCII)
+- [Merkistöjen muunnos C:ssä](https://www.tutorialspoint.com/c_standard_library/c_function_setlocale.htm)
+- [Stringien muokkaus C:ssä](https://www.geeksforgeeks.org/c-program-basics-string-operations/)

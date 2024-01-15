@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Пошук та заміна тексту"
-simple_title:         "Пошук та заміна тексту"
+title:                "Пошук та заміна тексту."
+html_title:           "Swift: Пошук та заміна тексту."
+simple_title:         "Пошук та заміна тексту."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,31 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Маніпуляція з текстом - це невідємна частина програмування і те, як надійно і швидко ви можете замінювати текст у своїх програмах, може суттєво впливати на їх продуктивність і ефективність.
+Варіація тексту є важливим аспектом програмування, і іноді вам може знадобитися замінити певні фрази або символи у вашому коді. Це може бути зручно під час великих проектів, коли необхідно виконати однакові зміни в багатьох місцях.
 
 ## Як
 
-Щоб замінити текст у Swift, використовуйте функцію `replacingOccurrences(of:with:)`. Наприклад:
+У Swift є потужний інструмент для пошуку та заміни тексту - `string.replacingOccurrences(of:with:)`. Для його використання потрібно передати два аргументи - фразу чи символ, який потрібно замінити, та нову фразу чи символ, яким буде замінено старий. Наприклад:
 
 ```Swift
-let str = "Привіт, світ!"
-let newStr = str.replacingOccurrences(of: "Привіт", with: "Hello")
-print(newStr)
-// Виведе: Hello, світ!
+let text = "Hello, World!"
+let newText = text.replacingOccurrences(of: "Hello", with: "Hi")
+print(newText) // Виведе "Hi, World!"
 ```
 
-## Deep Dive
-
-Ви можете також використовувати регулярні вирази для складніших випадків заміни тексту. Для цього використовуйте функцію `replacingOccurrences(of:with:options:range:)`, де параметр `options` приймає значення `.regularExpression`. Наприклад:
+Цей метод також можна використовувати для заміни певних символів, наприклад, заміна розділових знаків на пробіли:
 
 ```Swift
-let str = "Hello, world!"
-let newStr = str.replacingOccurrences(of: "[aeiou]", with: "*", options: .regularExpression, range: nil)
-print(newStr)
-// Виведе: H*ll*, w*rld!
+let numbers = "1, 2, 3, 4, 5"
+let newNumbers = numbers.replacingOccurrences(of: ",", with: " ")
+print(newNumbers) // Виведе "1 2 3 4 5"
 ```
 
-## See Also
+Є також можливість використовувати регулярні вирази для пошуку і заміни тексту за певних умов. Наприклад, аргумент `options` можна використовувати для визначення, чи регулярний вираз повинен враховувати регістр символів:
 
- - [Документація Apple з роботою зі строками в Swift](https://developer.apple.com/documentation/foundation/nsstring)
- - [Повний список опцій для регулярних виразів у Swift](https://developer.apple.com/documentation/foundation/nsregularexpression/options)
+```Swift
+let text = "Hello, World!"
+let newText = text.replacingOccurrences(of: "hello", with: "Hi", options: [.caseInsensitive])
+print(newText) // Виведе "Hi, World!"
+```
+
+Існує багато інших опцій та можливостей для пошуку та заміни тексту у Swift. Для більш детальної інформації звертайтеся до документації.
+
+## Глибокий погляд
+
+Метод `string.replacingOccurrences(of:with:)` є частиною класу `String`, який надає багато інших корисних функцій для роботи з текстом. Наприклад, можна використовувати метод `contains(_:)` для перевірки наявності певної фрази чи символу в тексті, або метод `split` для розділення рядка на масив за певним роздільником.
+
+Також важливо зазначити, що метод `string.replacingOccurrences(of:with:)` повертає новий рядок, а не змінює оригінальний. Це означає, що при зміні тексту потрібно присвоїти нове значення змінній, а не прямо до тексту, який хочете змінити.
+
+## Див. також
+
+- [Документація Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Туторіал по пошуку та заміні тексту в Swift](https://www.hackingwithswift

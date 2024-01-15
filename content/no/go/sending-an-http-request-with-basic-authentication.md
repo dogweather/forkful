@@ -1,6 +1,7 @@
 ---
-title:                "Go: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sending en http-forespørsel med grunnleggende autentisering"
+html_title:           "Go: Sending en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,32 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # Hvorfor
-Hvis du har jobbet med å utvikle applikasjoner eller nettsteder, har du sannsynligvis støtt på behovet for å sende HTTP-forespørsler med grunnleggende autentisering. Denne typen autentisering krever at brukernavn og passord sendes i hver forespørsel for å få tilgang til et bestemt område eller ressurs. Men hvorfor trenger du å gjøre dette i Go?
+
+Hvorfor skulle noen ønske å sende en HTTP-forespørsel med grunnleggende autentisering? Kanskje du ønsker å lage et enkelt autentiseringssystem for din applikasjon, eller du trenger å sikre at bare autoriserte brukere har tilgang til bestemte ressurser på en ekstern server. Uansett motivasjon, vil dette artikkelen vise deg hvordan du enkelt kan implementere grunnleggende autentisering i ditt Go-program.
 
 # Hvordan
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Go, kan du bruke Go sin "net/http" pakke. Først må du sette opp en ny forespørsel ved hjelp av "http.NewRequest" funksjonen. Deretter må du legge til autentiseringsinformasjonen i "Authorization" header ved hjelp av "SetBasicAuth" funksjonen. Til slutt kan du bruke "http.Client" sin "Do" funksjon for å utføre forespørselen. Se nedenfor for et eksempel.
+
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Go, må du først importere "net/http" pakken. Deretter kan du bruke "http.NewRequest ()" -funksjonen for å lage en ny forespørsel. Du må spesifisere forespørselsmetoden, URL-en og eventuelle data som skal sendes med forespørselen, som i eksempelet nedenfor:
 
 ```Go
-req, err := http.NewRequest("GET", "https://www.example.com/secret", nil)
-if err != nil{
-    panic(err)
-}
-req.SetBasicAuth("brukernavn", "passord")
+import (
+    "net/http"
+)
 
-resp, err := http.DefaultClient.Do(req)
-if err != nil{
-    panic(err)
+func sendRequest() {
+    // Opprett en ny forespørsel
+    req, err := http.NewRequest("GET", "https://eksempel.com/api/data", nil)
+    if err != nil {
+        // Behandle eventuelle feil
+    }
+
+    // Legg til autentiseringsinformasjonen i headeren
+    req.SetBasicAuth("brukernavn", "passord")
+
+    // Utfør forespørselen
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        // Behandle eventuelle feil
+    }
+
+    // Les og behandle responsen
+    body, err := ioutil.ReadAll(res.Body)
+    if err != nil {
+        // Behandle eventuelle feil
+    }
+
+    // Lukk responsen
+    defer res.Body.Close()
+
+    // Skriv ut responsen
+    fmt.Println(string(body))
 }
-defer resp.Body.Close()
-fmt.Println(resp.Status)
 ```
 
-Dette eksempelet viser hvordan du kan opprette en ny GET-forespørsel til en ressurs som krever grunnleggende autentisering og hvordan du kan få tilgang til ressursen ved å legge til autentiseringsinformasjonen i "Authorization" header.
+I eksempelet over bruker vi "http.DefaultClient.Do ()" -funksjonen for å utføre forespørselen. Vi bruker også "req.SetBasicAuth ()" for å legge til brukernavn og passord i headeren til enhver forespørsel som sendes fra vår klient.
 
-# Dypdykk
-Når du sender en HTTP-forespørsel med grunnleggende autentisering, må du sørge for at brukernavnet og passordet blir overført til serveren på en sikker måte. Dette kan oppnås ved hjelp av HTTPS-protokollen, som krypterer dataene før de sendes over Internett. Det er også viktig å merke seg at passordet bør være lagret i en sikker form på klientens side for å unngå uautorisert tilgang.
+# Deep Dive
 
-# Se også
-- [Eksperimentell kode: Send en HTTP-forespørsel med grunnleggende autentisering](https://play.golang.org/p/J4Kq46Cl6DV)
-- [Go net/http pakken dokumentasjon](https://golang.org/pkg/net/http/)
-- [RFC 7617: HTTP-akseptansetest og autentiseringsstandarder for webforestillinger](https://tools.ietf.org/html/rfc7617)
+Når du sender en HTTP-forespørsel med grunnleggende autentisering, må du legge til autentiseringsinformasjonen i headeren på følgende måte:
+
+```Go
+req.SetBasicAuth("brukernavn", "passord")
+```
+
+Dette legger til en "Authorization" -header i forespørselen som inneholder brukernavn og passord kodet i Base64. Det er viktig å merke seg at dette er en svært enkel autentiseringsmetode og ikke bør brukes for sensitive data.
+
+I tillegg til å legge til autentiseringsinformasjonen i headeren, kan du også sjekke responskoden for å se om forespørselen ble utført vellykket. En HTTP-forespørsel med grunnleggende autentisering vil vanligvis returnere en responskode "200 OK" hvis autentiseringen var vellykket, eller "401 Unauthorized" hvis det var et problem med autentiseringen.
+
+# Se Også
+
+- [net/http pakken](https://golang.org/pkg/net/http/)
+- [HTTP-forespørsler i Go](https://blog.golang.org/making-and-using-http-clients)
+- [Grunnleggende autentisering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

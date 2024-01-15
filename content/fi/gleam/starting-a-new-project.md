@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Gleam: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,27 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Monesti aloittaminen uuden projektin kanssa voi tuntua haastavalta ja pelottavalta, mutta Gleam-ohjelmointikielen avulla aloittaminen on helppoa ja palkitsevaa. Gleam tarjoaa tehokkaan ja helppokäyttöisen tavan rakentaa funktionaalisia ohjelmia ja monenlaisia sovelluksia, joten sen oppiminen on erittäin hyödyllistä ja tulevaisuuden kannalta tärkeää.
 
-## Kuinka
-Aloittaminen Gleam-ohjelmoinnilla on yksinkertaista ja se vaatii vain muutamia vaiheita. Voit aloittaa uuden projektisi luomalla uuden Gleam-tiedoston ja kirjoittamalla koodia kuten seuraava esimerkki:
+Ihan sama, mitä olet suunnittelemassa. Jos pääset eroon odotuksesta, niin freesaa itsesi Gleamilla. Se voi auttaa sinua, kun olet suunnittelemassa uuden projektin aloittamista. GLEAM: TÄMÄ ON MARTININ BONERSIDE ANALYYSI collective#397, Mutta artikkelin lopussa on muitakin hyödyllisiä linkkejä.
+
+## Miten voin aloittaa?
+
+Aloittaminen Gleamilla on helppoa!
+
+Pääset alkuun asentamalla Gleam-tulkin koneellesi. Sen jälkeen voit luoda uuden projektin "new" komennolla ja kirjoittaa koodia Gleam-muodossa.
+
 ```Gleam
-fn laske_juoma_hinta(hinta, alv) {
-  hinta + (hinta * alv)
+pub struct Kaveri(jono:String){
+
+  pub fn tervehdi(&self) {
+    IO.print("Terve, " ++ self.jono)
+  }
 }
 
-let juoman_hinta = 10.00
-let alv = 0.24
-let kokonaishinta = laske_juoma_hinta(juoman_hinta, alv)
-
-io.format("Juoman kokonaishinta on $.", [kokonaishinta])
+let kaveri = Kaveri("kisu")
+kaveri.tervehdi()
 ```
-Tässä esimerkissä luodaan funktio, joka laskee juoman kokonaishinnan alv:n kanssa. Tämän jälkeen muuttujat asetetaan ja funktiota kutsutaan. Tuloksena saadaan muotoiltu tulostus, joka näyttää juoman kokonaishinnan.
 
-## Syväsyvennyksellä
-Gleam-ohjelmoinnin aloittaminen ei vaadi suurta ponnistelua, mutta jos haluat perehtyä syvemmin sen ominaisuuksiin, se on myös mahdollista. Voit tutustua kattavaan Gleam-dokumentaatioon, josta löydät tietoa muun muassa kielestä, sen rakenteista ja käytönideoista. Voit myös liittyä Gleam-yhteisön Discord-kanavalle, jossa voit keskustella muiden ohjelmoijien kanssa, jakaa ideoita ja oppia uusia asioita. Aloita tutustuminen Gleam-ohjelmointiin jo tänään ja löydät pian itsesi luomasta upeita ja tehokkaita ohjelmia.
+Tämä koodi luo uuden rakenteen "Kaveri" ja määrittelee sille tervehdi-funktion, joka tulostaa "Terve, [nimi]" konsoliin. Lopuksi luodaan uusi "kaveri" ja kutsutaan sitä tervehdi-funktiolla. Voit kokeilla muuttaa nimen ja nähdä, miten tulostus vaihtuu!
+
+## Syvempi sukellus
+
+Jos haluat aloittaa projektin Gleamilla, kannattaa tutustua ensin sen tyyppijärjestelmään ja moduuleihin. Gleamissa on myös erinomainen dokumentaatio ja aktiivinen yhteisö, josta saat apua ja tukea tarvittaessa.
+
+Voit myös kokeilla Gleamia pilvessä Gleam Play -sovelluksen avulla. Siellä voit kokeilla koodisi toimintaa ilman, että sinun tarvitsee asentaa Gleamia omalle koneellesi.
 
 ## Katso myös
-- [Gleam-dokumentaatio](https://gleam.run/documentation/)
-- [Gleam-yhteisö Discord](https://discord.gg/gleam-lang)
-- [Blogi: "Mitä hyötyä Gleam-ohjelmoinnista voi olla"?](https://medium.com/@gleamlang/what-can-gleam-programming-do-for-you-b6a6c6834d6c)
+
+- [Gleam-tulkin asennusohjeet](https://gleam.run/documentation)
+- [Gleam-dokumentaatio](https://gleam.run/documentation)
+- [Gleam-yhteisöfoorumi](https://forum.gleam.run/)

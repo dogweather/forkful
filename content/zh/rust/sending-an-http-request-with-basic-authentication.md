@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 使用基本身份验证发送 http 请求"
-simple_title:         "使用基本身份验证发送 http 请求"
+title:                "使用基本身份验证发送http请求"
+html_title:           "Rust: 使用基本身份验证发送http请求"
+simple_title:         "使用基本身份验证发送http请求"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,70 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么要使用基本认证发送HTTP请求？
 
-HTTP请求是构建现代网络应用程序不可或缺的基本步骤。基本身份验证是一种常用的安全协议，它可以确保只有经过身份验证的用户才能访问特定资源。因此，学习如何发送带有基本身份验证的HTTP请求是非常重要的。
+当您需要从受保护的资源中获取数据时，比如从银行或邮件服务器，基本认证是一种常用的安全认证方式。通过发送包含用户名和密码的HTTP请求，您可以验证自己的身份，并获得对资源的访问权限。
 
-# 如何做
+## 如何使用Rust发送带有基本认证的HTTP请求？
 
-发送带有基本身份验证的HTTP请求在Rust中非常简单。首先，我们需要导入 Hyper crate 进行HTTP客户端请求。然后，我们将使用身份验证用户名和密码创建一个HttpBasicAuth身份验证结构体。接下来，我们使用build方法将身份验证结构体附加到请求中，然后将请求发送到指定的URL。
-
-```Rust
-// 导入Hyper crate
-extern crate hyper;
-use hyper::{Client, Uri};
-use hyper::http::Request;
-use hyper::client::HttpConnector;
-use hyper::header::{Basic, Authorization};
-use std::env;
-
-// 创建用于发送HTTP请求的客户端
-let mut client = Client::new();
-
-// 定义HTTP请求的URL
-let url = "https://example.com/api";
-
-// 定义需要发送的身份验证信息
-let username = "myusername";
-let password = "mypassword";
-
-// 创建HttpBasicAuth身份验证结构体
-let basic_auth = Basic {
-    username: username.to_owned(),
-    password: Some(password.to_owned()),
-};
-
-// 构建HTTP请求并附加身份验证结构体
-let request = Request::get(url)
-    .header(Authorization(basic_auth))
-    .body(Body::empty())
-    .unwrap();
-
-// 发送HTTP请求并获取响应
-let response = client.request(request).await.unwrap();
-
-// 打印响应的状态码
-println!("Response status code: {}", response.status());
-
-// 打印响应的正文
-let body = response.into_body();
-let full_body = hyper::body::to_bytes(body).await?;
-println!("Response body: {:?}", full_body);
-```
-
-输出：
+您可以使用Rust的reqwest库来发送HTTP请求，并使用基本认证来验证身份。首先，您需要在Cargo.toml文件中添加reqwest依赖项，并导入reqwest库。
 
 ```Rust
-Response status code: 200
-Response body: "Welcome to the API!"
+extern crate reqwest;
+
+use reqwest::header::AUTHORIZATION;
 ```
 
-# 深入探讨
+接着，您可以使用reqwest的get方法来发送一个基本认证的GET请求，并在headers中指定用户名和密码。
 
-除了上述的基本身份验证方式，还可以使用其他身份验证方式来发送HTTP请求。Hyper crate提供了各种不同的身份验证头文件，您可以根据需要选择最适合的方法。另外，您还可以通过设置自定义HTTP头来实现更高级的身份验证方式。
+```Rust
+let response = reqwest::get("http://example.com")?
+    .header(AUTHORIZATION, "Basic <base64 encoded username:password>")
+    .send()?;
+```
 
-# 参考链接
+如果认证成功，您将收到一个带有200状态码的响应，并可以通过response.text()方法来获取响应的内容。
 
-- [Rust - Hyper crate](https://github.com/hyperium/hyper)
-- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+```Rust
+println!("Response body: {}", response.text()?);
+```
+
+## 深入了解通过基本认证发送HTTP请求
+
+当您发送基本认证的HTTP请求时，您需要将用户名和密码以特定的方式编码，并将其放在headers中。基本认证使用基于Base64的编码方式，您可以使用Rust的base64库来实现编码。
+
+```Rust
+use base64::{encode};
+
+let username = "example";
+let password = "password";
+
+let encoded_auth = encode(format!("{}:{}", username, password));
+let auth_header = format!("Basic {}", encoded_auth);
+
+let response = reqwest::get("http://example.com")?
+    .header(AUTHORIZATION, auth_header)
+    .send()?;
+```
+
+另外，如果您需要发送POST请求而不是GET请求，您也可以使用reqwest的post方法，并在body中指定要发送的数据。
+
+```Rust
+let body = "param1=value1&param2=value2";
+let response = reqwest::post("http://example.com")?
+    .header(AUTHORIZATION, auth_header)
+    .body(body)
+    .send()?;
+```
+
+您还可以使用reqwest的其他方法来细化请求，例如设置超时时间、自定义headers等。通过深入了解reqwest库的文档，您可以更深入地学习如何发送基本认证的HTTP请求。
+
+## 查看更多
+
+- [reqwest文档](https://docs.rs/reqwest)
+- [Rust base64库文档](https://docs.rs/base64)
+- [HTTP基本认证介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)

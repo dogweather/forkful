@@ -1,6 +1,7 @@
 ---
-title:                "C++: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "C++: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,52 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##_Dlaczego_
+## Dlaczego?
 
-Istnieje wiele sytuacji, w których wyodrębnianie podciągów tekstu jest niezbędne w programowaniu w języku C++. Może to być potrzebne do przetwarzania danych, analizy tekstu czy też do tworzenia złożonych algorytmów. W tym artykule dowiecie się, jak wyodrębniać substryngi w prosty sposób i jak może to pomóc w waszych projektach.
+Jeśli często pracujesz z ciągami znaków w swoim kodzie C++, prawdopodobnie musiałeś już wyodrębniać podciągi wewnątrz nich. W tym artykule dowiesz się, dlaczego warto robić to w odpowiedni sposób i jak można to zrobić w praktyce.
 
-##_Jak_
+## Jak to zrobić?
 
-Przykładowy kod w języku C++ pozwoli nam lepiej zrozumieć, jak wyodrębniać substryngi. Wyobraźmy sobie, że mamy zmienną tekstową zawierającą imię i nazwisko osoby:
-
-```C++
-string fullName = "Jan Kowalski";
-```
-
-Aby wyodrębnić tylko imię, musimy zastosować metodę substr() na zmiennej fullName:
+Aby wyodrębnić podciąg ze stringa, możesz użyć metody `substr()` razem z indeksami początkowym i końcowym, określającymi zakres, z którego ma zostać wycięty podciąg. Na przykład:
 
 ```C++
-string firstName = fullName.substr(0, 3); // wynik: "Jan"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Deklaracja stringa wejściowego
+    string input = "Cześć świecie!";
+    
+    // Wyodrębnienie podciągu od indeksu 6 do końca
+    string output1 = input.substr(6);
+    // Wyodrębnienie podciągu od indeksu 6 do 4 dalej
+    string output2 = input.substr(6, 4);
+    
+    // Wyświetlenie wyników
+    cout << output1 << endl; // "świecie!"
+    cout << output2 << endl; // "świe"
+    
+    return 0;
+}
 ```
 
-Funkcja substr() przyjmuje dwa parametry - pierwszy to początkowy indeks, od którego chcemy wyodrębnić podciąg, a drugi to długość podciągu. W naszym przypadku chcemy wyodrębnić pierwsze 3 znaki, więc podaliśmy indeks 0 (zaczynamy od pierwszego znaku) i długość 3.
+W powyższym przykładzie wykorzystaliśmy metody `substr()` wraz z indeksami, aby wyodrębnić odpowiednie podciągi ze stringa. Warto pamiętać, że indeksy numerowane są od zera, a drugi parametr, określający długość wyodrębnionego podciągu, jest opcjonalny.
 
-Podobnie możemy postępować z wyodrębnianiem nazwiska:
+## Deep Dive
+
+Metoda `substr()` może nie tylko pomagać w wyodrębnianiu podciągów, ale również w łączeniu ich. Jeśli jako drugi parametr przekażesz długość wyodrębnionego podciągu, możesz ustalić także maksymalną długość wyjściowego stringa. Na przykład:
 
 ```C++
-string lastName = fullName.substr(4); // wynik: "Kowalski"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Deklaracja dwóch stringów
+    string input1 = "Witaj";
+    string input2 = "świecie";
+    
+    // Wykonanie konkatenacji z wykorzystaniem substr()
+    string output = input1 + input2.substr(1, 3);
+    
+    // Wyświetlenie wyniku
+    cout << output << endl; // "Witawie"
+    
+    return 0;
+}
 ```
 
-W tym przypadku nie podaliśmy długości podciągu, więc zostanie wyodrębniona cała reszta tekstu od podanego indeksu (4).
+Powyższy przykład pokazuje, że możemy wykorzystać metodę `substr()` w celu włączenia wyodrębnionego podciągu w innym miejscu wewnątrz stringa. Jest to dużo wygodniejsze niż ręcznie manipulowanie indeksami stringów.
 
-Po wykorzystaniu funkcji substr(), możemy dowolnie manipulować naszymi wydzielonymi podciągami, np. zamieniać je na duże litery lub sprawdzać ich długość.
+## Zobacz również
 
-##_Pogłębiona analiza_
-
-Funkcja substr() jest bardzo przydatna, ale warto również wiedzieć o innych sposobach wyodrębniania substryngów w języku C++. Inną popularną metodą jest używanie strumienia stringstream, który pozwala na dzielenie tekstu na podciągi za pomocą delimitera (znaku, po którym tekst jest dzielony). Przykładowy kod wyglądałby tak:
-
-```C++
-string fullName = "Jan Kowalski";
-stringstream ss(fullName);
-string firstName, lastName;
-getline(ss, firstName, ' '); // dzielimię po spacji, wynik: "Jan"
-getline(ss, lastName); // wynik: "Kowalski"
-```
-
-Warto również wspomnieć o funkcji find(), która pozwala na wyszukanie indeksu danego znaku lub podciągu w tekście. Możemy jej użyć w połączeniu z substr(), aby dokładnie wyodrębnić to, czego potrzebujemy.
-
-##_Zobacz również_
-
-- Dokumentacja funkcji substr() w języku C++: https://www.cplusplus.com/reference/string/string/substr/
-- Strumienie stringstream w języku C++: https://www.cplusplus.com/reference/sstream/stringstream/
-- Funkcja find() w języku C++: https://www.cplusplus.com/reference/string/string/find/
+- [Dokumentacja metody substr()](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Porównanie wydajności różnych metod wyodrębniania podciągów w C++](https://stackoverflow.com/questions/51712191/c-how-is-stdstring-substr-implemented)
+- [Przydatne porady i triki związane z stringami w C++](https://www.geeksforgeeks.org/tricks-c-string/)

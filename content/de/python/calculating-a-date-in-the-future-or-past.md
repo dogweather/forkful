@@ -1,6 +1,7 @@
 ---
-title:                "Python: Das Berechnen eines Datums in der Zukunft oder Vergangenheit."
-simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit."
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Python: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,46 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Manchmal müssen wir als Programmierer*innen bestimmte Daten in die Zukunft oder Vergangenheit berechnen. Dies kann notwendig sein, um bspw. geplante Termine oder Geburtstage zu erfassen.
+
+Das Berechnen von zukünftigen oder vergangenen Daten kann in vielen Situationen nützlich sein, z.B. um an einem bestimmten Datum eine Erinnerung zu setzen oder um Terminpläne zu erstellen. Mit Python können wir einfach und genau solche Datumsberechnungen durchführen.
 
 ## Wie geht's
-Die Berechnung von Datumsangaben in Python ist relativ einfach. Zunächst müssen wir das Modul "datetime" importieren.
 
-```
-import datetime
-```
+```Python
+from datetime import datetime, timedelta
+# importiere das datetime-Modul, um auf Datumsfunktionen zuzugreifen
 
-Um ein Datum in der Zukunft zu berechnen, können wir die Funktion "date.fromisoformat" verwenden und das gewünschte Datum im ISO-Format eingeben.
+# Berechnung eines zukünftigen Datums
+heute = datetime.now()  # heute als datetime-Objekt
+zukunft = heute + timedelta(days=5)  # 5 Tage hinzufügen
+print(zukunft)  # gibt das Ergebnis als Datum im Format "YYYY-MM-DD HH:MM:SS" aus
 
-```
-zukunfts_datum = datetime.date.fromisoformat('2021-12-31')
-```
-
-Anschließend können wir mit der Funktion "timedelta" die Differenz zwischen dem aktuellen Datum und dem zukünftigen Datum berechnen.
-
-```
-differenz = zukunfts_datum - datetime.date.today()
+# Berechnung eines vergangenen Datums
+nachher = datetime(2020, 1, 1)  # ein bestimmtes Datum als datetime-Objekt
+vorher = nachher - timedelta(weeks=2)  # 2 Wochen abziehen
+print(vorher)  # gibt das Ergebnis als Datum im Format "YYYY-MM-DD" aus
 ```
 
-Um das Ergebnis in Tagen, Wochen oder Monaten anzuzeigen, können wir die entsprechenden Methoden "days", "weeks" oder "months" verwenden.
+Der Code oben zeigt, wie wir mit Hilfe des datetime-Moduls und der timedelta-Funktion ein zukünftiges oder vergangenes Datum berechnen können. Es ist wichtig zu beachten, dass die timedelta-Funktion mit verschiedenen Einheiten wie Tagen, Wochen, Monaten, etc. arbeiten kann.
 
-```
-print(differenz.days) # Output: 336
-print(differenz.days / 7) # Output: 48
-print(differenz.months) # Output: 11
-```
+## Tiefere Einblicke
 
-Um ein Datum in der Vergangenheit zu berechnen, können wir den gleichen Prozess anwenden. Statt mit der aktuellen Zeit zu berechnen, verwenden wir jedoch ein beliebiges Datum in der Vergangenheit.
-
-```
-vergangenes_datum = datetime.date.fromisoformat('1990-01-01')
-differenz = datetime.date.today() - vergangenes_datum
-```
-
-## Tiefer eintauchen
-Um ein tieferes Verständnis für die Berechnung von Datumswerten in Python zu bekommen, empfiehlt es sich, die offizielle Dokumentation zu lesen. Dort werden auch weitere Methoden und Optionen erläutert, die bei der Arbeit mit Datumswerten hilfreich sein können.
+Das datetime-Modul bietet noch weitere nützliche Funktionen, wie z.B. das Formatieren von Datum und Uhrzeit oder die Umrechnung von Datum in andere Zeitzonen. Außerdem können wir mit der timedelta-Funktion nicht nur Datumsberechnungen durchführen, sondern auch Zeitdifferenzen zwischen zwei Daten bestimmen.
 
 ## Siehe auch
-- [Offizielle Dokumentation von Python zu Datetime](https://docs.python.org/3/library/datetime.html)
-- [Tutorial zu Daten und Zeiten in Python](https://realpython.com/python-datetime/)
-- [Tipps für die Arbeit mit Datumswerten in Python](https://www.blog.pythonlibrary.org/2018/01/24/python-101-working-with-dates-and-time/)
+
+- [Tutorial: Date and Time in Python](https://realpython.com/python-datetime/)
+- [Official Python documentation on datetime module](https://docs.python.org/3/library/datetime.html)
+- [Mastering Python datetime](https://stackabuse.com/mastering-datetime-in-python/)

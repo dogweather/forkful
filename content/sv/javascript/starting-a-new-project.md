@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Att starta ett nytt projekt."
-simple_title:         "Att starta ett nytt projekt."
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Javascript: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -9,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hej alla Javascript entusiaster! Har du någonsin funderat på att starta ett nytt programmeringsprojekt men inte vetat var du ska börja? Då har du kommit till rätt ställe! I denna bloggpost kommer vi att dyka in i varför det är viktigt att starta nya projekt och hur det kan göras på ett enkelt sätt, med hjälp av Javascript. Låt oss börja!
-
 ## Varför
+Att starta ett nytt projekt i Javascript kan vara ett spännande och roligt sätt att utveckla dina programmeringskunskaper och skapa något som du är stolt över. Dessutom kan det vara ett bra sätt att öva på kreativt tänkande och problemlösning.
 
-Att starta ett nytt projekt är alltid spännande och inspirerande. Det hjälper dig att utvecklas som programmerare och ger dig chansen att utforska nya koncept och tekniker. Dessutom kan det bli ett otroligt tillfredsställande projekt när det väl är färdigt. Så varför inte ge det en chans?
-
-## Hur man gör
-
-För att starta ett nytt projekt med hjälp av Javascript måste du först se till att du har en kodredigerare installerad, såsom Visual Studio Code eller Sublime Text. Sedan kan du följa stegen nedan för att sätta igång:
-
-1. Skapa en ny fil med namnet "project.js".
-2. Öppna filen i din kodredigerare och skriv följande kod:
-
+## Så här gör man
 ```Javascript
-// Välkommen till mitt nya projekt!
+// Skapa en ny funktion som tar emot två parametrar
+function addNumbers(num1, num2) {
+  // Addera parametrarna och spara resultatet i en variabel
+  let sum = num1 + num2;
+  // Skriv ut summan i konsolen
+  console.log(sum);
+}
 
-// Dessa rader kod kommer läggas till i konsolen för att visa projektet.
-console.log("Det här är mitt nya projekt!");
-console.log("Jag använder Javascript för att skapa det.");
+// Anropa funktionen och skicka in två tal som argument
+addNumbers(5, 10); // Output: 15
 ```
 
-3. Spara filen och öppna den sedan i en webbläsare för att se resultatet. Du borde se följande i konsolen:
+För att starta ett nytt projekt i Javascript behöver du först välja en lämplig kodredigerare och en webbläsare som du känner dig bekväm med. Därefter kan du börja koda! Här är några steg du kan följa för att komma igång:
 
-```
-Det här är mitt nya projekt!
-Jag använder Javascript för att skapa det.
-```
+1. Skapa en ny mapp för ditt projekt och öppna den i din kodredigerare.
+2. Skapa en HTML-fil och en Javascript-fil i mappen.
+3. Skriv koden i din Javascript-fil och spara den.
+4. Länka din Javascript-fil till HTML-filen genom att använda ```<script>```-taggen.
+5. Öppna din HTML-fil i din webbläsare för att se resultatet av din kod.
 
-Och det är allt! Du har nu startat ditt nya projekt med hjälp av Javascript.
+## Djupdykning
+Att starta ett nytt projekt kan vara en utmaning, men det är också ett utmärkt sätt att lära sig mer om Javascript och programmering i allmänhet. Här är några tips som kan hjälpa dig att komma igång:
 
-## Deep Dive
+- Använd dokumentationen för Javascript för att lära dig mer om språket och hitta hjälpsamma exempel.
+- Använd konsolen i din webbläsare för att testa och felsöka din kod.
+- Kolla in andra projekt på GitHub för inspiration och för att lära dig av andras kod.
+- Experimentera med olika funktioner och metoder för att se vad som händer.
 
-Nu när du har startat ditt projekt, kanske du undrar var du ska gå härifrån. Ett tips är att använda dig av olika Javascript-ramverk och bibliotek för att underlätta ditt arbete och göra det mer effektivt. Det finns också många resurser online för att lära dig mer om Javascript och utveckla dina färdigheter. Genom att alltid hålla dig uppdaterad och lära dig nya saker kan du skapa fantastiska projekt och utveckla som programmerare.
-
-## Se även
-
-- [https://www.w3schools.com/js/](https://www.w3schools.com/js/) - En stor resurs för att lära sig Javascript.
-- [https://github.com/](https://github.com/) - En plattform för att dela och samarbeta på kodbaser för dina projekt.
-- [https://www.npmjs.com/](https://www.npmjs.com/) - En populär repository för att ladda ned och använda Javascript-ramverk och bibliotek.
+## Se också
+- [Skapa ditt första Javascript-projekt](https://www.codecademy.com/learn/learn-javascript)
+- [Javascript: Grundläggande koncept](https://developer.mozilla.org/sv-SE/docs/Learn/JavaScript/First_steps)
+- [Vad är Javascript och vad används det till?](https://www.w3schools.com/whatis/whatis_js.asp)

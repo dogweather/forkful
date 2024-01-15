@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Elixir: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,40 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-이 블로그 포스트에서는 Elixir로 HTTP 요청을 보내는 방법을 소개합니다. Elixir로 HTTP 요청을 보내는 것은 웹 개발에서 매우 중요한 요소입니다. 이것은 서버와 클라이언트 사이에 정보를 교환하기 위해 사용되며, 웹 애플리케이션 개발에서 필수적이기 때문입니다.
+# 왜
+HTTP 요청을 보내는 이유는 다양합니다. 대표적으로는 API와의 상호 작용을 통해 데이터를 가져오는 것이나 웹 페이지를 업데이트하는 것, 서버로부터 파일을 다운로드 받는 것 등이 있습니다.
 
-## 방법
-우선, `HTTPotion`이라는 패키지를 설치해야 합니다. 그리고 나서 `HTTPotion.get` 함수를 사용하여 GET 요청을 보낼 수 있습니다. 아래는 예제 코드와 그에 따른 샘플 출력입니다.
+# 어떻게
+Elixir에서 HTTP 요청을 보내는 것은 간단한데, `HTTPoison` 라이브러리를 사용하면 됩니다. 예를 들어, `HTTPoison.get/2` 함수를 사용하여 GET 요청을 보낼 수 있습니다.
+
 ```Elixir
-# 패키지 설치
-mix deps.get
-
-# 라이브러리 임포트
-require HTTPotion
-
-# GET 요청 보내기
-HTTPotion.get("https://www.example.com")
+response = HTTPoison.get("https://example.com")
 ```
 
-```
-# 샘플 출력
-{200,
- [{"date", "Tue, 12 Oct 2021 07:00:00 GMT"},
-  {"expires", "-1"},
-  {"cache-control", "private, max-age=0"},
-  {"x-content-type-options", "nosniff"},
-  {"server", "gws"},
-  {"x-xss-protection", "0"},
-  {"alternate-protocol", "443:quic=xxxxx:quic=xxxxx:quic=xxxxx:quic=xxxxx"},
-  {"accept-ranges", "none"},
-  {"connection", "close"}], "Hello, World!"}
-```
+요청을 보낸 후에는 `response` 변수에 응답이 담겨있게 됩니다. 이를 통해 다양한 정보를 가져올 수 있습니다. 예를 들어, 상태 코드는 `response.status_code`를 통해 확인할 수 있고, 응답 바디는 `response.body`를 통해 가져올 수 있습니다.
 
-## 깊이 있는 내용
-HTTP 요청은 `GET`, `POST`, `PUT`, `DELETE`와 같은 다양한 메서드를 사용하여 보낼 수 있습니다. 또한, 쿼리 스트링이나 헤더를 추가할 수도 있습니다. `HTTPotion` 패키지는 이러한 기능을 모두 제공하며, 더 자세한 내용은 공식 문서를 참고하시기 바랍니다.
+# 깊이 들어가기
+HTTP 요청을 보내는 과정에서 발생할 수 있는 다양한 이슈들을 다루어보겠습니다. 예를 들어, `HTTPoison`은 세션과 리다이렉트를 자동으로 관리해주기 때문에 개발자는 이를 개별적으로 신경 쓰지 않아도 됩니다. 또한, 인증이 필요한 요청을 보낼 때에는 `HTTPoison`의 인증 옵션을 활용할 수 있습니다.
 
-## See Also
-- [HTTPotion 공식 문서](https://hexdocs.pm/httpotion/api-reference.html)
-- [HTTP 요청 메서드에 대한 자세한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
-- [HTTP 요청 헤더에 대한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers)
+# 더 알아보기
+HTTP 요청을 위해 사용할 수 있는 다른 라이브러리들도 있습니다. 예를 들어, `Mint`는 Elixir 네트워킹 클라이언트 라이브러리로서 매우 빠른 성능을 자랑합니다. 또한, `Tesla`는 쉽게 커스터마이징이 가능한 클라이언트 라이브러리입니다.
+
+# 참고하기
+- [HTTPoison 라이브러리](https://github.com/edgurgel/httpoison)
+- [Mint 라이브러리](https://github.com/elixir-mint/mint)
+- [Tesla 라이브러리](https://github.com/teamon/tesla)

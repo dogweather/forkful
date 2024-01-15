@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Passage d'une chaîne de caractères en minuscules"
-simple_title:         "Passage d'une chaîne de caractères en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,59 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles on peut avoir besoin de convertir une chaîne de caractères en minuscules dans un programme Arduino. Cela peut être utile pour la comparaison de chaînes de caractères ou pour faciliter l'affichage de texte sur un écran. Dans cet article, nous allons explorer comment convertir une chaîne de caractères en minuscules dans un programme Arduino.
+Vous vous demandez peut-être pourquoi il serait utile de convertir une chaîne de caractères en minuscules dans votre code Arduino. La réponse est simple : cela peut rendre votre code plus facile à lire et à comprendre. En utilisant une seule casse pour vos variables et vos chaînes de caractères, vous évitez les confusions et les erreurs de saisie.
 
 ## Comment faire
 
-Pour convertir une chaîne de caractères en minuscules, nous allons utiliser la méthode `toLowerCase()` de l'objet `String` dans Arduino. Voici un exemple de code qui prend une chaîne de caractères en entrée, la convertit en minuscules et l'affiche sur le moniteur série :
+Pour convertir une chaîne de caractères en minuscules dans votre code Arduino, vous pouvez utiliser la fonction "toLowerCase()". Cette fonction prend en paramètre une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les lettres en minuscules. Regardons un exemple :
 
 ```Arduino
-void setup() {
-	Serial.begin(9600);  // Initialise le moniteur série
-}
-
-void loop() {
-	String texte = "Bonjour Arduino"; // Chaîne de caractères à convertir
-
-	String texteEnMinuscules = texte.toLowerCase(); // Utilise toLowerCase() pour convertir en minuscules
-
-	Serial.println(texteEnMinuscules); // Affiche le texte converti sur le moniteur série
-
-	delay(1000); // Attends une seconde avant de recommencer
-}
+String str = "Bonjour";
+Serial.println(str.toLowerCase());
 ```
 
-Lorsque nous exécutons ce programme, nous obtenons l'output suivant sur le moniteur série :
+Résultat : "bonjour"
 
-```
-bonjour arduino
-```
-
-Vous pouvez également utiliser cette méthode pour convertir directement une chaîne de caractères stockée dans une variable :
+Vous pouvez également l'utiliser avec des données provenant de capteurs ou de modules, par exemple :
 
 ```Arduino
-void setup() {
-	Serial.begin(9600);  // Initialise le moniteur série
-}
-
-void loop() {
-	String texte = "Bonjour Arduino"; // Chaîne de caractères à convertir
-	Serial.println(texte); // Affiche la chaîne de caractères originale
-	texte.toLowerCase(); // Convertit en minuscules et remplace la valeur de la variable texte
-	Serial.println(texte); // Affiche la nouvelle version en minuscules
-	delay(1000); // Attends une seconde avant de recommencer
-}
+String input = Serial.readString();
+Serial.println(input.toLowerCase());
 ```
 
-L'output sera le même que dans le premier exemple.
+Résultat : si vous envoyez "HELLO" via la communication série, le résultat sera "hello".
 
-## Plongée en profondeur
+## Plongée plus profonde
 
-La méthode `toLowerCase()` de l'objet `String` utilise en réalité la fonction `tolower()` de la bibliothèque standard de C++. Cette fonction prend en entrée un caractère et le convertit en minuscule si c'est un caractère alphabétique. Dans le cas contraire, elle renvoie simplement le caractère d'entrée sans le modifier.
+Il peut également être utile de comprendre comment fonctionne la fonction "toLowerCase()" sous le capot. Dans Arduino, les chaînes de caractères sont en fait des objets de la classe "String", qui possède plusieurs méthodes, dont "toLowerCase()". Cette méthode utilise une boucle pour parcourir chaque caractère de la chaîne et le convertir en minuscule en utilisant la fonction "tolower()". La nouvelle chaîne est ensuite renvoyée.
 
-Il est important de noter que cette méthode ne modifie pas la chaîne de caractères originale, mais renvoie une nouvelle chaîne de caractères avec la conversion en minuscules. Il est donc nécessaire d'utiliser une variable pour stocker cette nouvelle chaîne de caractères si vous souhaitez la réutiliser.
+Il est important de noter que la fonction "toLowerCase()" prend en compte uniquement les lettres de l'alphabet. Les caractères spéciaux, les nombres et les symboles resteront inchangés.
 
 ## Voir aussi
 
-- [La méthode `toLowerCase()` de l'objet `String`](https://www.arduino.cc/en/Reference/StringToLowercase)
-- [La fonction `tolower()` de la bibliothèque standard de C++](http://www.cplusplus.com/reference/cctype/tolower/)
+Vous pouvez consulter notre article sur les classes et les objets en Arduino pour en savoir plus sur la classe "String" et ses méthodes.
+
+Voir aussi :
+
+- Article sur les classes et les objets en Arduino : lien vers l'article en anglais
+- Référence complète de la classe String : lien vers la documentation officielle en anglais

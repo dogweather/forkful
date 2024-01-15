@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Escrevendo um arquivo de texto"
+title:                "Escrevendo um arquivo de texto"
+html_title:           "Gleam: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,54 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que escrever um arquivo de texto em Gleam
+## Por que escrever um arquivo de texto?
 
- Se você está no mundo da programação, provavelmente já ouviu falar de Gleam, uma linguagem de programação funcional e estática projetada para construir aplicativos escaláveis e confiáveis. Apesar de ser voltada para desenvolvedores web, Gleam também é uma ótima opção para trabalhar com arquivos de texto. Mas você deve estar se perguntando: por que eu deveria escrever um arquivo de texto em Gleam? Aqui estão algumas razões:
+Escrever um arquivo de texto é uma tarefa comum para programadores, mas por que é tão importante? A resposta é simples: um arquivo de texto permite que você armazene e organize informações de maneira fácil e acessível. Seja para armazenar dados, gerar relatórios ou até mesmo criar documentos, a habilidade de escrever um arquivo de texto é essencial para qualquer programador.
 
-- Gleam é uma linguagem altamente eficiente e com uma sintaxe fácil de entender, o que pode simplificar o processo de escrita de arquivos de texto.
-- Como Gleam é uma linguagem estática, ela oferece uma forte verificação de tipo, garantindo que o arquivo de texto esteja estruturado corretamente desde o início.
-- Além disso, o uso de Gleam pode ajudar na criação de scripts mais robustos e resistentes a erros, tornando seu trabalho muito mais fácil e eficiente.
+## Como escrever um arquivo de texto no Gleam
 
-Agora que entendemos por que escrever um arquivo de texto em Gleam pode ser benéfico, vamos ver como podemos fazer isso!
+Para escrever um arquivo de texto no Gleam, você pode usar a biblioteca interna "File", que fornece funções para criar, ler e editar arquivos de texto.
 
-# Como fazer isso em Gleam
+Para começar, primeiro devemos criar um arquivo de texto usando a função "create" da biblioteca "File". Por exemplo:
 
-Para escrever um arquivo de texto em Gleam, primeiro precisamos importar o módulo `gleam/io` e em seguida, utilizar a função `File.write` para criar o arquivo e salvar nosso conteúdo nele. Veja um exemplo abaixo:
-
-```
-import gleam/io
-
-pub fn escrever_arquivo() {
-  content = "Esse é um arquivo de texto escrito em Gleam."
-  File.write("arquivo.txt", content)
-}
+```Gleam
+let file = File.create("meu_arquivo.txt")
 ```
 
-O código acima irá criar um arquivo chamado "arquivo.txt" com o conteúdo especificado na variável `content`. Se quisermos adicionar mais texto ao arquivo, podemos usar a função `File.append`.
+Em seguida, podemos escrever conteúdo no arquivo usando a função "write" e, finalmente, salvar as alterações usando a função "flush". Veja um exemplo completo abaixo:
 
-```
-File.append("arquivo.txt", "Mais um texto adicionado ao arquivo.")
-```
+```Gleam
+let file = File.create("meu_arquivo.txt")
 
-Também podemos trabalhar com variáveis e formatações dentro do conteúdo do arquivo. Veja um exemplo:
-
-```
-meu_nome = "Gabriel"
-File.write("arquivo.txt", "Olá, meu nome é #{meu_nome}.")
+File.write(file, "Olá, mundo!")
+File.flush(file)
 ```
 
-O arquivo "arquivo.txt" terá como conteúdo "Olá, meu nome é Gabriel.".
+Isso irá criar um arquivo chamado "meu_arquivo.txt" e escrever a frase "Olá, mundo!" nele.
 
-# Aprofundando-se
+## Mergulho Profundo
 
-Escrever um arquivo de texto em Gleam é bastante simples e pode ser feito de forma semelhante a outras linguagens de programação. No entanto, algo interessante é que Gleam também oferece a opção de trabalhar com arquivos UTF-8, permitindo que desenvolvedores criem conteúdos em diferentes línguas e caracteres especiais sem problemas.
+Além das funções mencionadas acima, a biblioteca "File" também oferece outras funcionalidades úteis, como a possibilidade de ler e editar arquivos existentes, bem como definir permissões de acesso a eles.
 
-Além disso, para facilitar ainda mais, o módulo `gleam/io` fornece outras funções úteis, como `File.read`, para ler o conteúdo de um arquivo, `File.rename`, para renomear um arquivo e `File.remove`, para excluir um arquivo. Você pode ver a documentação completa dessas funções [aqui](https://gleam.run/modules/gleam_io.html).
+Por exemplo, para ler o conteúdo de um arquivo, podemos usar a função "read" e especificar o número de bytes que desejamos ler:
 
-# Veja também
+```Gleam
+let file = File.open("meu_arquivo.txt")
+let conteudo = File.read(file, 10)
+```
 
-- Para saber mais sobre a linguagem Gleam, acesse [o site oficial](https://gleam.run/).
-- Se quiser se aprofundar na escrita de arquivos em Gleam, confira [este artigo](https://alexinsinga.com/posts/write-read-utf8-text-files-in-gleam/).
-- Para encontrar mais recursos sobre Gleam, confira [a lista de pacotes e bibliotecas disponíveis](https://github.com/gleam-extras).
+Este código irá ler os primeiros 10 bytes do arquivo e armazená-los na variável "conteudo".
 
-Agora que você sabe como escrever um arquivo de texto em Gleam, aproveite todo o potencial dessa linguagem incrível e crie seus próprios scripts e aplicativos!
+Para alterar as permissões de um arquivo, podemos usar a função "set_permissions" e especificar as permissões desejadas, como leitura, escrita e execução.
+
+## Veja também
+
+- [Documentação oficial do Gleam](https://gleam.run/documentation/)
+- [Exemplos de arquivos de texto no Gleam](https://github.com/gleam-lang/gleam/tree/main/examples/files)

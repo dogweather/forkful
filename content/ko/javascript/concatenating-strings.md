@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 문자열 연결하기"
-simple_title:         "문자열 연결하기"
+title:                "문자열 연결"
+html_title:           "Javascript: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,39 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-스트링을 결합하는 것을 왜 해야 할까요? 이것은 프로그래밍에서 매우 일반적인 작업입니다. 알아봅시다!
+문자열을 연결하는 것의 가장 큰 이유는 다양한 문자열을 단일 문자열로 조합하여 더 긴 문자열을 생성하는 것입니다. 이를 통해 데이터의 유연성을 향상시키고 보다 효율적인 코드 작성이 가능하며, 다양한 문제에 대한 해결책을 찾기 위한 방법으로 활용할 수 있습니다.
 
 ## 어떻게
 
-스트링을 결합하는 것은 매우 간단합니다. 우리는 `+` 기호를 사용하여 스트링을 하나씩 추가하기만 하면 됩니다. 예를 들어:
+먼저, 우리는 기본적인 문자열 연결 방법을 알아보겠습니다. 다음은 "Hello"와 "World"를 연결하여 "Hello World"를 출력하는 간단한 예제 코드입니다.
 
-```javascript
-let firstName = "박";
-let lastName = "지연";
-let fullName = firstName + lastName;
-console.log(fullName);
+```Javascript
+const greeting = "Hello";
+const name = "World";
+
+console.log(greeting + " " + name);
+// Output: Hello World
 ```
 
-결과는 "박지연"이 될 것입니다.
+또한 우리는 빽틱(backticks) 기호를 활용하여 더 간략하고 직관적인 방법으로 문자열을 연결할 수 있습니다.
 
-여러 개의 스트링을 결합할 수도 있습니다. 예를 들어:
+```Javascript
+const greeting = "Hello";
+const name = "World";
 
-```javascript
-let firstPart = "안녕";
-let secondPart = "하세요";
-let thirdPart = "!";
-let greeting = firstPart + secondPart + thirdPart;
-console.log(greeting);
+console.log(`${greeting} ${name}`);
+// Output: Hello World
 ```
 
-출력은 "안녕하세요!"가 될 것입니다.
+또 다른 방법으로, 문자열을 담고 있는 배열을 이용하여 다수의 문자열을 연결할 수 있습니다.
+
+```Javascript
+const languages = ["Javascript", "Python", "Java"];
+
+const output = "My favorite programming languages are " + languages.join(", ");
+
+console.log(output);
+// Output: My favorite programming languages are Javascript, Python, Java
+```
 
 ## 딥 다이브
 
-스트링을 결합하는 것은 문자열 연산의 일부입니다. 문자열 연산은 문자열을 조작하거나 변환할 때 사용됩니다. 예를 들어, `+` 기호를 사용하여 스트링 결합 외에도, 그 외에도 문자열 길이를 알 수 있는 `length` 속성이 있습니다. 그리고 문자열의 일부를 추출하는 `substring()` 메소드 등 여러 가지 작업을 할 수 있습니다.
+자바스크립트에서 문자열을 연결하는 방법은 다양한 내장 함수들을 통해 보다 유연하게 활용할 수 있습니다. 예를 들어, `concat()` 함수를 이용하여 여러 개의 문자열을 연결할 수 있으며, `slice()` 함수를 통해 특정 부분의 문자열만을 추출하여 연결하는 것도 가능합니다.
 
-## 또 보기
+또한, 빽틱 기호를 활용하는 것 외에도 ES6에서 추가된 템플릿 리터럴(template literal)을 이용해 문자열을 보다 쉽고 간결하게 연결할 수 있으며, 문자열 뿐만 아니라 변수나 함수 등을 함께 사용할 수도 있습니다.
 
-* [JavaScript 문자열 연산 가이드](https://www.w3schools.com/js/js_string_methods.asp)
-* [JavaScript에서 스트링 결합하기](https://www.javatpoint.com/javascript-string-concat)
-* [스트링 연산에 대한 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+## 또 다른 예제
+
+아래는 템플릿 리터럴을 이용한 예제 코드입니다.
+
+```Javascript
+const name = "Willy";
+const age = 25;
+
+console.log(`My name is ${name} and I am ${age} years old.`);
+// Output: My name is Willy and I am 25 years old.
+```
+
+## 참고 자료
+
+다음은 문자열 연결에 대해 더 자세한 내용을 알고 싶은 경우 참고할 수 있는 자료들입니다.
+
+- [MDN | String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [The Modern Javascript Tutorial | Strings](https://javascript.info/string)
+- [W3Schools | Javascript String concatenation](https://www.w3schools.com/js/js_string_concat.asp)

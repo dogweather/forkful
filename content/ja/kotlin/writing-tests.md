@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: テストの書き方"
+title:                "テストの書き方"
+html_title:           "Kotlin: テストの書き方"
 simple_title:         "テストの書き方"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
-プログラミングをする上で、テストを書くことの重要性は言うまでもありません。テストを書くことにより、コードをより信頼性の高いものにすることができます。また、バグを早期に検知し、修正することもできます。
+## なぜ
+
+テストを書くことの重要性を理解することは、プログラマーとしてのコーディング能力を向上させるために必要不可欠です。テストを書くことで、コードの品質を向上させ、バグを事前に見つけることができます。
 
 ## 書き方
-テストを書く方法はいくつかありますが、Kotlinを使ってどのようにテストを書くかを紹介します。まず、```kotlin ...```のコードブロック内に、テストしたい関数やメソッドを書きます。次に、期待する出力を定義し、それを実際の出力と比較します。最後に```assertEquals()```を使用して、出力が一致するかどうかを確認します。以下に例を示します。
 
-```kotlin
-// テストしたい関数
-fun addNumbers(a: Int, b: Int): Int {
-    return a + b
+```Kotlin
+// テスト対象の関数
+fun calculateAverage(num1: Int, num2: Int): Int {
+    return (num1 + num2) / 2
 }
 
-// 期待する出力
-val expected = 10
-
-// 実際の出力と比較
-val actual = addNumbers(5, 5)
-
-// 出力が一致するかを確認
-assertEquals(expected, actual)
+// テストコード
+fun main() {
+    // テストケースを作成
+    val test1 = calculateAverage(10, 20)
+    val test2 = calculateAverage(5, 10)
+    
+    // 期待される結果と比較
+    println("テスト1:")
+    if (test1 == 15) {
+        println("正しい結果が得られました")
+    } else {
+        println("エラー！正しい結果ではありませんでした")
+    }
+    
+    println("テスト2:")
+    if (test2 == 7) {
+        println("正しい結果が得られました")
+    } else {
+        println("エラー！正しい結果ではありませんでした")
+    }
+}
+```
+出力：
+```
+テスト1:
+正しい結果が得られました
+テスト2:
+正しい結果が得られました
 ```
 
-このように、テストを書くことでコードの挙動を確認し、バグを見つけることができます。
+## ディープダイブ
 
-## 深堀り
-テストを書く際の幾つかのポイントを紹介します。
+テストを書くことで、コードの可読性や保守性を向上させることができます。また、テストを書くことで、コードのロジックをより深く理解し、不具合を見つけるための手がかりとなります。さらに、テスト駆動開発（TDD）を実践することで、より効率的な開発が可能になります。
 
-- テストは網羅的に書くことが大切です。特定の条件下でのみ発生するバグを見つけるためには、その条件を再現するテストを書くことが必要です。
-- テストコードも普通のコードと同じようにリファクタリングすることができます。重複した部分をまとめたり、よりシンプルな書き方にすることで、保守性の高いテストコードにすることができます。
-- テストを書く際は、ユニットテストと統合テストを分けることが重要です。ユニットテストでは、個々の関数やメソッドの動作をテストし、統合テストでは複数の関数やメソッドが協調して動作しているかをテストします。
+## 関連記事
 
-テストを書くことで、コードの品質を保つことができます。ぜひ積極的に取り入れてみてください。
-
-## See Also
-- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/home.html)
-- [Kotlin Test フレームワーク](https://kotlinlang.org/docs/reference/testing.html)
-- [JUnit 5 公式ドキュメント (日本語)](https://junit.org/junit5/docs/current/user-guide/junit5/)
-- [テスト駆動開発入門 ―最初の一歩から、しっかり学ぶ！TDDの基礎知識](https://www.shoeisha.co.jp/book/detail/9784798119408)
+[テスト駆動開発入門](https://www.sejuku.net/blog/78088)  
+[Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)

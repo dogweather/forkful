@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Swift: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,29 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto korzystać z wyszukiwania i zamiany tekstu w programowaniu Swift?
+## Dlaczego
 
-Istnieje wiele sytuacji, w których konieczne jest przeprowadzenie zmian w tekście w kodzie programu. Wyszukiwanie i zamiana tekstu w języku Swift może być przydatnym narzędziem w takich przypadkach. Pozwala to na szybką i skuteczną edycję tekstu bez konieczności ręcznego wprowadzania zmian na każdej linii kodu.
+W dzisiejszych czasach, programowanie jest nieodłączną częścią naszego życia. Musimy być w stanie szybko i sprawnie edytować nasze kody, aby sprostać wymaganiom projektów. Jednym z najczęstszych zadań jest wyszukiwanie i zamienianie tekstu, co pozwala nam na szybką i efektywną edycję naszych kodów.
 
 ## Jak to zrobić?
 
-Wyszukiwanie i zamiana tekstu w języku Swift może być przeprowadzone za pomocą funkcji `replacingOccurrences(of:with:)`. Oto przykład użycia:
+Sposobów na wyszukiwanie i zamienianie tekstu jest wiele, ale skupimy się na dwóch najprostszych i najczęściej używanych przez programistów.
+
+### Metoda 1: Użycie funkcji `replacingOccurrences(of:with:)`
+
+Ta funkcja jest dostępna dla typu String i pozwala na proste i szybkie wyszukiwanie i zamienianie tekstu.
 
 ```Swift
-let text = "Programowanie w Swift jest super!"
-let newText = text.replacingOccurrences(of: "super", with: "fantastyczne")
+// Przykładowy tekst
+let text = "Witajcie w świecie Swift!"
+
+// Wyszukaj i zamień "Swift" na "Apple"
+let newText = text.replacingOccurrences(of: "Swift", with: "Apple")
+
+// Spodziewane wyjście: "Witajcie w świecie Apple!"
 print(newText)
 ```
 
-Wynikiem wyświetlonym na konsoli będzie "Programowanie w Swift jest fantastyczne!". Funkcja ta wymaga podania dwóch argumentów: tekstu, który chcemy zamienić oraz tekstu, na który chcemy go zamienić.
+### Metoda 2: Użycie operatora `+=`
 
-## Głębszy wywiad
+Ten operator pozwala na połączenie kilku tekstów w jedną zmienną i jednocześnie zamieniając określony tekst.
 
-Funkcja `replacingOccurrences(of:with:)` jest dostępna w wielu typach stringów w języku Swift, takich jak `String`, `NSString` oraz `NSStringLiteralType`. Dodatkowo, istnieją także inne funkcje pozwalające na wykonanie bardziej zaawansowanych operacji wyszukiwania i zamiany tekstu. Na przykład, funkcja `replacingOccurrences(of:with:options:range:)` pozwala na określenie zakresu, w którym ma zostać wykonana zamiana tekstu.
+```Swift
+// Przykładowe teksty
+var text1 = "Witajcie w świecie"
+let text2 = "Swift!"
 
-Warto również wspomnieć o klasie `NSRegularExpression`, która pozwala na wyrażenia regularne w celu dopasowania bardziej złożonego tekstu do wyszukiwania.
+// Połącz tekst i zamień "Swift" na "Apple"
+text1 += text2.replacingOccurrences(of: "Swift", with: "Apple")
 
-# Zobacz również
-- [Dokumentacja Apple - String](https://developer.apple.com/documentation/swift/string)
-- [Dokumentacja Apple - NSString](https://developer.apple.com/documentation/foundation/nsstring)
-- [Dokumentacja Apple - NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+// Spodziewane wyjście: "Witajcie w świecie Apple!"
+print(text1)
+```
+
+## Deep Dive
+
+Podczas wyszukiwania i zamieniania tekstu, warto znać kilka dodatkowych funkcji, które ułatwią nam pracę.
+
+### Opcje w funkcji `replacingOccurrences(of:with:options:range:)`
+
+Ta funkcja ma dodatkowy parametr `options`, który pozwala na wybór różnych opcji wyszukiwania i zamieniania tekstu. Na przykład, możemy wybrać opcję `caseInsensitive`, aby ignorować wielkość liter podczas wyszukiwania i zamiany tekstu.
+
+```Swift
+// Przykładowy tekst
+let text = "Witajcie w świecie Swift!"
+
+// Wyszukaj i zamień "swift" na "Apple" bez względu na wielkość liter
+let newText = text.replacingOccurrences(of: "swift", with: "Apple", options: .caseInsensitive)
+
+// Spodziewane wyjście: "Witajcie w świecie Apple!"
+print(newText)
+```
+
+### Użycie operatora `=` zamiast `+=`
+
+Zamiast używać operatora `+=` do połączenia tekstów, możemy również użyć operatora `=` do bezpośredniej zamiany wartości zmiennej.
+
+```Swift
+// Przykładowe teksty
+var text1 = "Witajcie w świecie"
+let text2 = "Swift!"
+
+// Połącz tekst i zamień "Swift" na "Apple" bez użycia operatora +=
+text1 = text1.replacingOccurrences(of: "Swift", with: "Apple") + text2
+
+// Spodziewane wyjście: "Witajcie w świecie Apple!"
+print(text1)
+```
+
+## Zobacz również
+
+- [Oficjalna dokumentacja Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Tutorial: Wyszukiwanie i zamienianie tekstu w Swift](https://www.hackingwithswift.com/example-code/strings/how-to-use-string-replacingoccurrences)
+- [Stack Overflow: Jak zamienić część tekstu w Stringu Swift](https://stackoverflow.com/questions/24051738/how-do-i-replace-part-of-a-string-in-swift-language-i-e-a-substring)

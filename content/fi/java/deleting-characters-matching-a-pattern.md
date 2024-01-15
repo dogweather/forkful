@@ -1,6 +1,7 @@
 ---
-title:                "Java: Pohjautuvien merkkien poistaminen"
-simple_title:         "Pohjautuvien merkkien poistaminen"
+title:                "Päällekkäisen kuvion poisto merkeistä"
+html_title:           "Java: Päällekkäisen kuvion poisto merkeistä"
+simple_title:         "Päällekkäisen kuvion poisto merkeistä"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,39 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus ohjelmointitehtävissä saatat törmätä tilanteeseen, jossa haluat poistaa tietyn kaavan mukaiset merkit merkkijonosta. Tämä voi olla hyödyllistä esimerkiksi datan käsittelyssä tai tietojen suodattamisessa. Jatka lukemista oppiaksesi, miten voit toteuttaa tämän Java-koodilla.
+Jokaisessa ohjelmoinnin kielestä löytyy tilanteita, joissa halutaan poistaa merkkejä, jotka vastaavat tiettyä kaavaa tai kuvioa. Tämä artikkeli käsittelee, miten tämä voidaan tehdä Javan avulla ja miksi se voi olla hyödyllistä.
 
 ## Miten
 
-Java tarjoaa mahdollisuuden käyttää regular expression -tekniikkaa, joka on erittäin hyödyllinen merkkijonojen käsittelyssä. Voit käyttää metodia `replaceAll()` poistamaan merkkijonon osia, jotka vastaavat haluamaasi kaavaa. Alla on esimerkki koodista, joka poistaa kaikki numerot sisältävät merkit:
+Oletetaan, että meillä on merkkijono "Hello, world!". Haluamme poistaa kaikki välilyönnit tästä merkkijonosta. Käytämme ```Java
+replace()``` metodia ja annamme sille kaksi parametria: välilyönti (" ") ja tyhjä merkkijono (""). Tämä korvaa kaikki välilyönnit tyhjillä merkkijonoilla.
 
-```Java
-String originalString = "Hello123";
-String modifiedString = originalString.replaceAll("[0-9]", "");
-System.out.println(modifiedString);
+```
+String teksti = "Hello, world!";
+String uusiTeksti = teksti.replace(" ", "");
+System.out.println(uusiTeksti);
+```
+Tulos olisi: "Hello,world!". Välilyönnit on nyt poistettu!
+
+Toinen esimerkki voisi olla poistaa kaikki numerot merkkijonosta. Käytämme tällöin säännöllisiä lausekkeita (regular expressions) ja ```Java
+replaceAll()``` metodia:
+
+```
+String teksti = "Hell0, w0rld!";
+String uusiTeksti = teksti.replaceAll("[0-9]", "");
+System.out.println(uusiTeksti);
 ```
 
-Tämän koodin tuloste olisi `Hello`.
+Tulos olisi: "Hell, wrld!". Kaikki numerot on nyt poistettu merkkijonosta.
 
-Voit myös käyttää `matches()` -metodia tarkistamaan, vastaako merkkijono haluamaasi kaavaan. Alla olevassa esimerkissä tarkistetaan, sisältääkö merkkijono ainoastaan kirjaimia:
+## Syvällisemmin
 
-```Java
-String stringToCheck = "HelloWorld";
-if (stringToCheck.matches("[a-zA-Z]+")) {
-  System.out.println("Merkkijono koostuu ainoastaan kirjaimista.");
-}
-```
+Javan String-luokka tarjoaa monia hyödyllisiä metodeja merkkijonojen käsittelyyn. Yksi näistä on ```Java
+replace()```, joka korvaa tietyn merkkijonon toisella merkkijonolla. Toinen hyödyllinen metodi on ```Java
+replaceAll()```, joka käyttää säännöllisiä lausekkeita merkkijonon korvaamiseen.
 
-Tämä koodi tulostaisi `Merkkijono koostuu ainoastaan kirjaimista.`.
-
-## Syväsyvennys
-
-Regular expression -tekniikka tarjoaa monia erilaisia merkintöjä, joita voit käyttää määrittelemään haluamasi kaavan. Esimerkiksi `[0-9]` vastaa kaikkia numeroita ja `[a-zA-Z]` vastaa kaikkia kirjaimia. Voit myös käyttää `+`-merkintää vastaamaan yhtä tai useampaa edeltävää merkkiä.
-
-On myös tärkeää muistaa, että `replaceAll()`-metodi palauttaa uuden merkkijonon, joten sinun täytyy tallentaa se uuteen muuttujaan jos haluat käyttää sitä myöhemmin. `replaceAll()` ja `matches()`-metodeilla voit myös käyttää säännöllistä lausetta ($regular expression$) muuttujana.
+Säännölliset lausekkeet ovat merkkijonoja, jotka kuvaavat tiettyä kaavaa tai kuvioa. Niitä voi käyttää laajasti merkkijonojen käsittelyssä, esimerkiksi poistamalla tiettyjä merkkejä tai löytämällä tiettyjä merkkijonoja. Java tarjoaa säännöllisiä lausekkeita varten luokan ```Java
+Pattern``` ja sen avulla voi luoda haluttuja kaavoja.
 
 ## Katso myös
 
-- [The Java Tutorials - Reglar Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Regular Expression Cheatsheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Matcher Class Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html)
+- [Virallinen Java-dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replace(java.lang.CharSequence,java.lang.CharSequence))
+- [W3Schools esimerkkejä merkkijonojen manipuloinnista Javalla](https://www.w3schools.com/java/java_string.asp)

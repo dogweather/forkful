@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Перетворення дати в рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Swift: Перетворення дати в рядок"
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,39 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## З чого?
+Для чого: Якщо ви хочете показати дату в зручному форматі для користувача, необхідно конвертувати її в рядок.
 
-Змінювати дату у рядок може бути корисно, коли ви хочете відображати дату у вигляді тексту, наприклад, для створення унікальних ідентифікаторів або для виведення дати у зручному форматі для користувача.
-
-## Як
+Як: У цій статті ми покажемо вам, як конвертувати дату в рядок за допомогою мови програмування Swift.
 
 ``` Swift
-let currentDate = Date() //отримуємо поточну дату
-let dateFormatter = DateFormatter() //створюємо об'єкт DateFormatter
-dateFormatter.dateFormat = "dd-MM-yyyy" //встановлюємо формат дати
-let dateString = dateFormatter.string(from: currentDate) //конвертуємо дату у рядок
-print(dateString) //виводимо результат: 25-09-2021
+let date = Date() //створюємо змінну для дати
+let formatter = DateFormatter() //створюємо форматтер для дати
+formatter.dateFormat = "dd/MM/yyyy" //задаємо потрібний формат дати
+let stringDate = formatter.string(from: date) //конвертуємо дату в рядок
+print(stringDate) //виводимо результат в консоль
 ```
+
+Ви введете цей код в Playgrounds і побачите, що поточна дата буде виведена у форматі "день/місяць/рік".
+
+Ось ще кілька корисних прикладів форматів для дати:
+
+- "dd-MM-yyyy" - 31-12-2021
+- "MMMM dd, yyyy" - December 31, 2021
+- "EEEE, MMM d, yyyy" - Saturday, Dec 31, 2021
+
+Глибоке занурення: Для тих, хто хоче дізнатися більше, ми поговоримо про методи та опції, які можна використовувати при конвертації дати в рядок.
 
 ``` Swift
-let sampleDate = "2021-10-31" //задаємо приклад дати у форматі "рік-місяць-день"
-let dateFormatter = DateFormatter() //створюємо об'єкт DateFormatter
-dateFormatter.dateFormat = "yyyy-MM-dd" //встановлюємо формат дати для розбору
-if let date = dateFormatter.date(from: sampleDate) { //перевіряємо чи встановлений формат співпадає зі змінною
-  dateFormatter.dateStyle = .medium //встановлюємо стиль для виводу дати
-  let dateString = dateFormatter.string(from: date) //конвертуємо дату у рядок
-  print(dateString) //виводимо результат: Oct 31, 2021
-} else {
-  print("Invalid date format") //виводимо повідомлення про недійсний формат дати
-}
+//створюємо змінну з поточною датою
+let date = Date()
+
+//створюємо форматтер для дати з шаблоном "dd/MM/yyyy"
+let formatter = DateFormatter()
+
+//задаємо налаштування для форматтера
+formatter.locale = Locale(identifier: "uk_UA") //використовуємо локаль "uk_UA" для української мови
+formatter.dateFormat = "dd/MM/yyyy"
+
+//конвертуємо дату в рядок за допомогою методу string(from:)
+let stringDate = formatter.string(from: date)
+
+//виводимо результат
+print(stringDate) //31/12/2021
+
+//Також, ви можете вказати додаткові деталі для форматування дати, наприклад:
+formatter.timeZone = TimeZone(secondsFromGMT: 0) //встановлюємо часовий пояс
+formatter.amSymbol = "AM" //замінюємо значення для першої половини дня
+formatter.pmSymbol = "PM" //замінюємо значення для другої половини дня
 ```
 
-## Глибинний аналіз
+Також, є можливість використовувати опції для конвертації дати в рядок з допомогою методу string(from:):
 
-Для конвертування дати в рядок використовуються класи `Date` і `DateFormatter`. Для встановлення формату дати використовуються вирази у форматі `yyyy` для року, `MM` для місяця, `dd` для дня тощо. `DateFormatter` також має різні стилі для виводу дати у зручному для користувача форматі.
+- ".short" - короткий формат дати (13/12/21)
+- ".medium" - середній формат дати (13 груд. 2021 р.)
+- ".long" - довгий формат дати (13 грудня 2021 р.)
+- ".full" - повний формат дати (субота, 13 грудня 2021 р.)
 
-## Дивіться також
+Тепер ви знаєте, як конвертувати дату в рядок в мові Swift! Сподіваємося, ця стаття стала корисною для вас.
 
-- [NSDateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsdateformatter)
-- [Working with Dates in Swift - Ray Wenderlich](https://www.raywenderlich.com/760-a-quick-look-at-dates-in-swift)
-- [Date and Time Programming Guide - Apple Developer Documentation](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)
+Дивіться також: 
+
+- [Прост

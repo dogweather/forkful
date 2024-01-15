@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "Webページをダウンロードする"
+html_title:           "Clojure: Webページをダウンロードする"
+simple_title:         "Webページをダウンロードする"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,39 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ウェブページのダウンロードをフレッシュで、クリーンな状態で保存することは便利です。例えば、ウェブスクレイピングやデータ収集などのプロジェクトにとって有効であり、より正確なデータを収集することができます。
+Webページをダウンロードする理由は、そのコンテンツをオフラインで閲覧することができるからです。また、Webスクレイピングやデータ収集などの目的にも使われます。
 
-## 手順
+## 方法
+
+Webページをダウンロードするには、Clojureの```clj-http```ライブラリを使用します。まずはClojureプロジェクトを作成し、```project.clj```ファイルに```[clj-http "3.11.0"]```を依存関係として追加します。次に、```core.clj```ファイルを作成し、以下のコードを追加します。
 
 ```Clojure
-(ns download-page.core
-  (:require [clj-http.client :as client]
-            [clojure.java.io :as io]))
+(ns my-project.core
+  (:require [clj-http.client :as client]))
 
-(defn download-page [url destination]
+(defn download-page [url]
   (let [response (client/get url)
-        output (str destination ".html")]
-    (spit output (:body response))))
+        status (:status response)
+        body (:body response)]
+    (if (= 200 status)
+      body
+      (throw (Exception. (str "Error downloading page: " status))))))
 
-;; 実行例
-(download-page "https://example.com" "/home/user/downloads/example")
-
-;; 実行後、/home/user/downloads に example.html が保存されます。
+;; ダウンロードしたいWebページのURLを引数として渡します
+(download-page "https://www.example.com")
 ```
 
-## 詳細解説
+このコードでは、```download-page```関数を定義し、指定したURLからページをダウンロードします。ダウンロードが成功した場合は、ページのHTMLコンテンツが返されます。もしダウンロードが失敗した場合は、エラーメッセージをスローします。
 
-ウェブページのダウンロードには、多くのクライアントライブラリが利用できますが、今回はclj-httpライブラリを使用しました。`client/get`を使用することで、指定したURLからHTMLのレスポンスを取得することができます。また、`spit`関数を使うことで、取得したHTMLを指定した場所に保存することができます。
+## ディープダイブ
 
-## お取り寄せ
+```clj-http```の詳細な使い方や設定方法については公式ドキュメントを参照してください。また、Webページのダウンロード以外にも、リクエストヘッダーの設定やクッキーの管理なども可能です。
 
-- [clj-httpライブラリ](https://github.com/dakrone/clj-http)
-- [Clojureのプロジェクト設定](https://clojure.org/guides/deps_and_cli)
-- [クロージャーの構文ガイド](https://clojure.org/guides/learn/syntax)
+## 関連リンク
 
-
-
-## 参考リンク
-
-- [Webスクレイピング入門](https://qiita.com/okoppe8/items/7bd9a0a4d6e6f1bd4cda)
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
+- ```clj-http```公式ドキュメント: https://github.com/dakrone/clj-http
+- WebスクレイピングのためのClojureライブラリ「Enlive」: https://github.com/cgrand/enlive
+- フロントエンド開発に便利なClojureScript: https://clojurescript.org/

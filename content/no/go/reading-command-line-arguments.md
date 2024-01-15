@@ -1,6 +1,7 @@
 ---
-title:                "Go: Lese argumenter fra kommandolinjen"
-simple_title:         "Lese argumenter fra kommandolinjen"
+title:                "Å lese kommandolinjeargumenter"
+html_title:           "Go: Å lese kommandolinjeargumenter"
+simple_title:         "Å lese kommandolinjeargumenter"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,59 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle noen ønske å lese kommandolinjeargumenter i et Go-program? Det kan være flere grunner til dette. Kanskje du vil lage et program som kan ta ulike typer input fra brukeren, eller kanskje du vil lage et program som kan håndtere ulike kommandoer fra en terminal. Uansett årsak, å lære å lese kommandolinjeargumenter vil være nyttig for enhver Go-utvikler.
+Du lurer kanskje på hvorfor noen ville være interessert i å lese kommandolinjeargumenter. Vel, å kunne lese og tolke disse argumentene er en viktig del av programmeringsspråket Go. Det gir deg muligheten til å lage mer dynamiske og tilpasningsdyktige programmer.
 
-## Slik gjør du det
+## Hvordan
 
-For å lese kommandolinjeargumenter i et Go-program, må du først importere `os`- og `flag`-pakken. Deretter kan du bruke `os.Args` for å få en liste over alle argumentene som er gitt til programmet. Du kan også bruke `flag`-pakken for å definere spesifikke flagg og behandle dem i koden din.
-
-La oss se på et eksempel:
+For å lese kommandolinjeargumenter i Go, bruker vi pakken "os". Her er et eksempel på hvordan du kan lese et enkelt argument fra terminalen:
 
 ```Go
 package main
 
 import (
-	"flag"
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	// Definerer flagg ved hjelp av flag-pakken
-	languages := flag.String("languages", "Go", "a comma-separated list of programming languages")
-
-	// Parsing av flagg
-	flag.Parse()
-
-	// Henter argumenter fra os.Args
-	args := os.Args[1:]
-
-	// Printer ut argumentene gitt til programmet
-	fmt.Println("Argumenter:", args)
-
-	// Printer ut verdiene til flaggene
-	fmt.Println("Språk:", *languages)
+  argument := os.Args[1]
+  fmt.Printf("Du skrev inn: %s", argument)
 }
 ```
 
-Hvis du kjører dette programmet fra terminalen med argumenter og flagg, vil du få følgende utskrift:
+Dette eksempelet tar det første argumentet som brukeren skriver inn i kommandolinjen og skriver det ut. Hvis brukeren skrev for eksempel "go run main.go hello", ville utskriften bli "Du skrev inn: hello".
 
-```bash
-$ go run main.go hello world -languages=Java,Python
-Argumenter: [hello world]
-Språk: Java,Python
+Du kan lese flere argumenter ved å bruke en løkke:
+
+```Go
+package main
+
+import (
+  "fmt"
+  "os"
+)
+
+func main() {
+  arguments := os.Args[1:]
+
+  for _, argument := range arguments {
+    fmt.Printf("%s ", argument) // Legger til et mellomrom mellom hvert argument
+  }
+}
 ```
 
-Som du kan se, vil argumentene vi gir til programmet være tilgjengelige i `os.Args`. I tillegg kan vi bruke flaggene vi har definert i programmet vårt ved å bruke `flag`-pakken.
+Nå vil utskriften bli alle argumentene som er skrevet inn, separert med mellomrom.
 
-## Dykk dypere
+## Dypdykk
 
-For å lære mer om å lese kommandolinjeargumenter i Go, kan du se nærmere på `os.Args` og `flag`-pakken. `os.Args` gir også tilgang til andre nyttige funksjoner for å håndtere kommandolinjeinput, som for eksempel `os.Args[0]` som gir navnet på det kjørbare filen.
+Det er også mulig å lese flagg (flags) fra kommandolinjen ved hjelp av pakken "flag". Dette gir deg muligheten til å lese spesifikk informasjon fra brukeren, for eksempel om de ønsker å bruke en bestemt funksjonalitet i programmet. Her er et eksempel på hvordan du kan lese et flagg:
 
-I tillegg kan du også utforske mer avanserte konsepter som å bruke subkommandoer med `flag`-pakken for å håndtere komplekse kommandoer og argumenter.
+```Go
+package main
 
-## Se også
+import (
+  "flag"
+  "fmt"
+)
 
-- [Go's Official Documentation on `os` Package](https://golang.org/pkg/os/)
-- [Go's Official Documentation on `flag` Package](https://golang.org/pkg/flag/)
-- [Command Line Input in Go Tutorial](https://gobyexample.com/command-line-arguments)
+func main() {
+  name := flag.String("navn", "", "Ditt navn")
+  age := flag.Int("alder", 0, "Din alder")
+
+  flag.Parse()
+  fmt.Printf("Hei, %s. Du er %d år gammel!", *name, *age)
+}
+```
+
+Hvis du kjører programmet med flaggene "-navn=John" og "-alder=25", vil utskriften bli "Hei, John. Du er 25 år gammel!"
+
+## Se Også
+
+- Offisiell dokumentasjon om å lese kommandolinjeargumenter i Go: https://golang.org/pkg/os/#Args
+- Ekstra informasjon om å lese flagg: https://golang.org/pkg/flag/
+- En tutorial om å lese kommandolinjeargumenter i Go: https://gobyexample.com/command-line-arguments

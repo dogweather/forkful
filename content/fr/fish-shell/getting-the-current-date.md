@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Fish Shell: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,53 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La date actuelle est une information importante à connaître dans de nombreux contextes de programmation. Que ce soit pour afficher la date dans votre interface utilisateur ou pour effectuer des tâches basées sur la date, il est essentiel de savoir comment l'obtenir dans votre code. Dans cet article, nous allons découvrir comment obtenir la date actuelle en utilisant le shell Fish.
+Tu te demandes peut-être pourquoi tu devrais t'intéresser à obtenir la date actuelle dans ton programme Fish Shell. Eh bien, c'est parce que la date est une donnée couramment utilisée dans les scripts et les automatisations, en particulier pour les sauvegardes ou les tâches planifiées. Il est donc utile de savoir comment obtenir la date actuelle dans Fish Shell.
 
 ## Comment faire
 
-La manière la plus simple d'obtenir la date actuelle dans Fish Shell est d'utiliser la commande `date`. Elle affichera la date et l'heure actuelles dans votre fuseau horaire local par défaut.
+Voici quelques exemples de code pour obtenir la date actuelle dans Fish Shell :
 
 ```Fish Shell
-date
+set current_date (date +%d-%m-%Y)
+echo "La date actuelle est $current_date"
 ```
 
-L'exécution de cette commande affichera un résultat similaire à celui-ci :
+Ce code utilise la commande `date` avec l'option `%d-%m-%Y` pour formater la date en jour-mois-année, puis l'affiche avec la commande `echo`.
 
-```
-Mercredi 9 septembre 2020 17:30:00 Heure avancée du Pacifique (GMT-7)
-```
-
-Si vous souhaitez afficher la date et l'heure dans un format spécifique, vous pouvez spécifier un format en utilisant l'option `-f`. Par exemple, pour afficher la date au format ISO 8601, vous pouvez utiliser la commande suivante :
+Tu peux également utiliser la commande `date` avec l'option `%A` pour obtenir le jour de la semaine :
 
 ```Fish Shell
-date -f "%Y-%m-%d"
+set current_day (date +%A)
+echo "Aujourd'hui, c'est $current_day"
 ```
 
-Le résultat sera alors :
-
-```
-2020-09-09
-```
-
-Vous pouvez également spécifier un fuseau horaire différent en utilisant l'option `-u` suivie du fuseau horaire souhaité. Par exemple, pour avoir la date et l'heure en heure universelle (UTC), vous pouvez utiliser la commande suivante :
+Si tu as besoin d'obtenir la date et l'heure, tu peux utiliser l'option `+%d-%m-%Y_%H:%M:%S` :
 
 ```Fish Shell
-date -u
-```
-
-Le résultat sera alors :
-
-```
-Jeudi 10 septembre 2020 00:30:00 Temps universel (UTC)
+set current_datetime (date +%d-%m-%Y_%H:%M:%S)
+echo "La date et l'heure actuelles sont $current_datetime"
 ```
 
 ## Plongée en profondeur
 
-La commande `date` utilise en fait les variables d'environnement `LC_TIME` et `TZ` pour afficher la date et l'heure. La variable `LC_TIME` définit le format de la date et de l'heure, tandis que `TZ` définit le fuseau horaire.
+La commande `date` a de nombreuses autres options disponibles. Tu peux taper `man date` dans ton terminal pour voir toutes les options et leur utilisation.
 
-La commande `date` utilise également l'utilitaire système `date` pour effectuer la tâche réelle d'obtenir la date. Cela signifie que si vous avez besoin de fonctionnalités plus avancées, vous pouvez utiliser directement l'utilitaire `date` en appelant `/bin/date`.
+Tu peux également utiliser des options supplémentaires dans ta commande `echo` pour formater la sortie de la date selon tes préférences. Par exemple, `echo (date +%x)` affichera la date sous la forme "JJ/MM/AAAA".
 
 ## Voir aussi
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/)
-- [La documentation officielle de la commande date](https://fishshell.com/docs/current/cmds/date.html)
-- [La documentation de l'utilitaire système date](https://man7.org/linux/man-pages/man1/date.1.html)
+
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Commandement date dans Fish Shell](https://fishshell.com/docs/current/commands.html#date)

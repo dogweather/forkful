@@ -1,6 +1,7 @@
 ---
-title:                "Java: Extraherande av delsträngar"
-simple_title:         "Extraherande av delsträngar"
+title:                "Extrahering av delsträngar"
+html_title:           "Java: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,60 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att extrahera substrängar är en vanligt använd kodningsteknik för många Java-programmerare. Det är ett sätt att ta en del av en sträng och använda den för att utföra specifika uppgifter eller manipulera data på ett enklare sätt.
+##
+Varför: Varför ska man engagera sig i att extrahera delsträngar? Några användbara exempel kan vara att manipulera och bearbeta data, hitta och ersätta specifika delar av en text eller för att utföra textanalys.
 
-## Hur man gör det
-Det finns flera olika sätt att extrahera substrängar i Java, men det vanligaste är att använda ```substring()```-metoden. Här är ett exempel på hur man kan använda det:
+## Hur man gör
 
-```Java
-String str = "Välkommen till Java-programmering";
-String substr = str.substring(11, 24);
-System.out.println(substr);
-```
-
-Output: "Java-programmering"
-
-I detta exempel används ```substring()```-metoden för att extrahera delen av strängen som börjar på index 11 och slutar på index 24. Det är viktigt att komma ihåg att indexet börjar på 0 i Java, så det första tecknet i strängen har index 0.
-
-En annan användbar metod för att extrahera substrängar är ```split()```. Det här är särskilt användbart om du vill dela upp en sträng i flera mindre delar baserat på ett visst tecken eller en sekvens av tecken.
+Det finns många tillvägagångssätt för att extrahera delsträngar i Java, men ett vanligt sätt är att använda metoden "substring ()", som finns tillgänglig för alla strängobjekt i Java. 
 
 ```Java
-String str = "Göteborg, Stockholm, Malmö, Uppsala, Lund";
-String[] substrings = str.split(", ");
+// Skapa en sträng som vi vill extrahera en del av
+String originalStrang = "Välkommen till Java-världen!";
 
-for (String s : substrings) {
-    System.out.println(s);
-}
+// Använd substring-metoden för att extrahera text från en viss position till en annan
+String extraheradStrang = originalStrang.substring(12, 17);
+
+// Skriv ut den extraherade delen av strängen
+System.out.println(extraheradStrang);
+
 ```
 
-Output: 
-"Göteborg"
-"Stockholm"
-"Malmö"
-"Uppsala"
-"Lund"
+Output: "Java"
+
+Som du kan se ovan, har vi använt "substring ()" -metoden för att extrahera delsträngen "Java" från vår ursprungliga sträng. Metoden tar två parametrar, startindex och slutindex för den del av strängen som ska extraheras. Det är viktigt att notera att slutindex inte inkluderas i den extraherade delen. 
+
+```Java
+// Skapa en sträng med flera ord
+String originalStrang = "Detta är en lång mening";
+
+// Splittra strängen vid mellanslag och lagra den i en array
+String[] ord = originalStrang.split(" ");
+
+// Använd substring-metoden för att extrahera ett specifikt ord
+String extraheratOrd = ord[3].substring(0, 3);
+
+// Skriv ut det extraherade ordet
+System.out.println(extraheratOrd);
+
+```
+
+Output: "lån"
+
+I det här exemplet har vi först använt "split ()" -metoden för att dela upp den ursprungliga strängen vid mellanslag och sedan använt "substring ()" för att extrahera det fjärde ordet ("lång") och bara behålla de första tre bokstäverna.
 
 ## Djupdykning
-När du arbetar med substrängar i Java finns det några saker att tänka på. Först och främst är det viktigt att komma ihåg att en sträng är en oföränderlig datatype i Java, vilket betyder att du inte kan ändra på den ursprungliga strängen när du extraherar en substräng. Istället kommer en ny sträng att skapas med den extraherade delen.
 
-En annan viktig sak att komma ihåg är att indexet i en sträng alltid börjar på 0 och går upp till strängens längd minus 1. Om du försöker använda ett index som är utanför den tillåtna gränsen kommer du att få ett ```IndexOutOfBoundsException```.
+Förutom att använda substring-metoden finns det andra sätt att extrahera delsträngar beroende på vilken typ av manipulation du vill göra. Till exempel kan du använda "replace ()" -metoden för att byta ut en delsträng med en annan, eller "indexOf ()" -metoden för att hitta den första positionen för en delsträng i en större sträng. 
 
-Ytterligare en användbar metod för att arbeta med substrängar är ```startsWith()```. Detta kan användas för att kontrollera om en sträng börjar med en viss sekvens av tecken eller inte.
+Det är också möjligt att kombinera flera strängmetoder för att uppnå mer komplexa extraktioner. Det viktigaste att komma ihåg är att vara försiktig med vilka index och gränser du använder för att extrahera delsträngar, eftersom det kan leda till felaktiga resultat eller fel i din kod.
 
-```Java
-String str = "Hello World!";
-if (str.startsWith("Hello")) {
-    System.out.println("Strängen börjar med 'Hello'.");
-}
-```
+## Se också
 
-Output: "Strängen börjar med 'Hello'."
-
-## Se även
-Här är några länkar till ytterligare resurser för dig som vill lära dig mer om att extrahera substrängar i Java:
-
-- [Java String Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java substring() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-)
-- [Java split() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-)
-- [Java startsWith() Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#startsWith-java.lang.String-)
+- [Java String Class Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [W3Schools Java String Methods](https://www.w3schools.com/java/java_ref_string.asp)
+- [GeeksforGeeks Java String Methods](https://www.geeksforgeeks.org/string-class-in-java/)

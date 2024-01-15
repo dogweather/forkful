@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Java recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Java"
 category:             "Java"
@@ -10,41 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Creating temporary files may seem like a tedious task, but it can actually be quite useful in certain programming scenarios. Temporary files are often used for storing intermediate data or as a placeholder for data that will be written to a more permanent location. They can also help improve the overall performance of a program by reducing file I/O operations.
+Creating temporary files in Java can be useful in situations where the program needs to store temporary data that is only needed for a short period of time. These files can be deleted once they have served their purpose, freeing up space and resources for other tasks.
 
 ## How To
-To create a temporary file in Java, we can use the `File.createTempFile()` method. This method takes in two parameters: a prefix for the file's name and a suffix for the file's extension. Let's take a look at an example:
+To create a temporary file in Java, you can use the `createTempFile()` method from the `File` class. This method takes in a prefix, suffix, and a `File` object representing the directory where the file should be created. Here is an example:
 
 ```Java
-public static void main(String[] args) {
-    try {
-        // Create a temporary file with prefix "myFile" and suffix ".txt"
-        File tempFile = File.createTempFile("myFile", ".txt");
-
-        // Print out the path of the temporary file
-        System.out.println("Temporary file path: " + tempFile.getAbsolutePath());
-    } catch (IOException e) {
-        // Handle exception
-    }
-}
+File tempFile = File.createTempFile("myFile", ".txt", new File("/temp"));
+System.out.println(tempFile.getAbsolutePath());
 ```
 
-Running this code will output something like `Temporary file path: /var/folders/06/5hmwf54d0gzfj34nxhn8f55m0000gn/T/myFile8738813599185034465.txt`, as the prefix and suffix are combined with a randomly generated number to create a unique file name. The temporary file will be created in the default temporary directory of the operating system.
+This will create a temporary file named "myFile" with a ".txt" extension in the specified "/temp" directory. The `getAbsolutePath()` method can be used to display the full path of the created file. 
 
-You can also specify the directory location where you want the temporary file to be created by passing in a `File` object as the third parameter. For example:
+You can also use the `deleteOnExit()` method to ensure that the temporary file will be deleted when the program exits. For example:
 
 ```Java
-// Create a temporary file in the specified directory
-File tempFile = File.createTempFile("myFile", ".txt", new File("/Users/username/Desktop/temp"));
+tempFile.deleteOnExit();
 ```
-
-Once you have finished using the temporary file, you should delete it using the `File.delete()` method. It is good practice to do this within a `finally` block to ensure that the file is always deleted, even if an exception is thrown.
 
 ## Deep Dive
-Behind the scenes, the `File.createTempFile()` method actually uses the `java.io.File` class as a wrapper for the temporary file. The wrapper file is responsible for creating and deleting the temporary file, and it is also used to access the temporary file's path and other information.
+Under the hood, the `createTempFile()` method uses the `createTempFile()` method from the `FileSystem` class to create the temporary file. The `FileSystem` class uses a secure naming scheme to generate unique file names, making it unlikely for multiple programs to accidentally create the same temporary file name.
 
-It is worth noting that the contents of a temporary file are not automatically deleted when the JVM exits. The temporary file will only be deleted if the `File.deleteOnExit()` method is called. However, this method should be used with caution as it can cause problems if the temporary file is not properly closed.
+It is important to note that the `createTempFile()` method creates an empty file with default read and write permissions. If you need to specify different permissions or write data to the file, you can use the `FileOutputStream` or `RandomAccessFile` classes.
 
 ## See Also
-- [Java File Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
-- [Official Java Tutorial on Working with File Systems](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+- [Oracle Java Documentation on temporary files](https://docs.oracle.com/javase/tutorial/essential/io/tempfile.html)
+- [JournalDev article on creating temporary files in Java](https://www.journaldev.com/550/java-create-temporary-file)

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Haskell: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,38 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy zastanawiałeś się kiedykolwiek, co to jest YAML i po co używać go w swoich programach Haskell? Ten post jest dla Ciebie! W tym artykule dowiesz się, dlaczego warto poznać YAML i jak go używać w swoich projektach.
+Jeśli jesteś programistą lub pracujesz w dziedzinie IT, prawdopodobnie już spotkałeś się z formatem danych YAML. Jest to popularny sposób reprezentacji danych, szczególnie w kontekście konfiguracyjnym. W tym artykule dowiesz się, dlaczego warto nauczyć się pracować z YAML w języku programowania Haskell.
 
-## Jak
+## Jak to zrobić
 
-YAML jest formatem do przechowywania i przetwarzania danych w plikach tekstowych. Dzięki niemu możemy łatwo przechowywać i odczytywać struktury danych, takie jak listy, słowniki czy liczby. W Haskellu możemy używać modułu `yaml` do pracy z tym formatem.
+Aby pracować z YAML w języku Haskell, musisz najpierw zainstalować bibliotekę do parsowania YAML. Możesz to zrobić za pomocą menedżera pakietów `cabal` wpisując w terminalu:
 
-```Haskell
-import qualified Data.Yaml as Y
-
--- Przykładowy YAML
-yaml = "fruits:
-  - apple
-  - banana
-  - orange"
-
--- Parsowanie YAML do wartości Haskellowej
-parsedYaml = Y.decode yaml
+```haskell
+cabal install yaml
 ```
 
-Powyższy kod pokazuje, jak w prosty sposób możemy sparsować YAML do wartości w Haskellu. Dzięki temu możemy łatwo używać danych z pliku YAML w naszych programach.
+Po zainstalowaniu biblioteki, możesz zacząć wykorzystywać jej funkcje w swoim kodzie. Przede wszystkim należy zaimportować odpowiedni moduł:
 
-## Deep Dive
+```haskell
+import Data.Yaml
+```
 
-Jeśli chcesz poznać więcej szczegółów na temat działania modułu `yaml`, warto przejrzeć jego dokumentację. Znajdziesz w niej między innymi informacje o dostępnych funkcjach i sposobach obsługi błędów.
+Następnie możesz użyć funkcji `decodeFile` do parsowania pliku YAML i zwrócenia go w postaci odpowiedniej struktury danych w Haskellu, na przykład:
 
-Ponadto, istnieje wiele innych bibliotek Haskellowych służących do pracy z YAML, takich jak `yarner`, `yaml-conduit` czy `hyaml`. Każda z tych bibliotek oferuje trochę inną funkcjonalność, więc warto przejrzeć je wszystkie i wybrać tę, która najlepiej odpowiada Twoim potrzebom.
+```haskell
+config <- decodeFile "config.yaml" :: IO (Maybe Value)
+```
+
+W powyższym przykładzie, plik `config.yaml` jest parsowany i zwracany jako wartość typu `Maybe Value`, co oznacza, że może ona zawierać wartość albo nic w przypadku wystąpienia błędu. Możesz również wykorzystać funkcję `encode` do tworzenia własnych struktur danych i zapisywania ich w formacie YAML.
+
+## W głębszej wodzie
+
+Parsowanie i generowanie plików YAML to tylko podstawy, które musisz opanować. W rzeczywistości, biblioteka `yaml` oferuje wiele innych funkcji i narzędzi, które mogą ułatwić pracę z tym formatem danych. Na przykład, możesz wykorzystać funkcję `encodePretty` do generowania plików YAML z łatwiejszym do czytania formatowaniem, lub funkcję `decodeEither` do parsowania i obsługi błędów w jednym miejscu.
+
+Pamiętaj również, że istnieje wiele różnych metod manipulowania i wykorzystywania danych w języku Haskell, które mogą być przydatne przy pracy z YAML. Dzięki temu, możesz tworzyć bardziej zaawansowane struktury danych i wygodnie z nich korzystać.
 
 ## Zobacz także
 
-Chcesz poznać więcej o YAML i jego zastosowaniach? Sprawdź te pomocne linki:
+- [Oficjalna dokumentacja biblioteki yaml](http://hackage.haskell.org/package/yaml)
+- [Przykłady zastosowań YAML w języku Haskell](https://www.stackbuilders.com/tutorials/haskell/yaml/)
 
-- [Dokumentacja modułu yaml](https://hackage.haskell.org/package/yaml)
-- [Biblioteka yarner](https://hackage.haskell.org/package/yarner)
-- [Biblioteka yaml-conduit](https://hackage.haskell.org/package/yaml-conduit)
-- [Biblioteka hyaml](https://hackage.haskell.org/package/hyaml)
+Dzięki tym odnośnikom możesz pogłębić swoją wiedzę na temat pracy z formatem YAML w języku Haskell oraz poznać różne techniki i triki, które mogą ułatwić Ci pracę z tą biblioteką. Powodzenia!

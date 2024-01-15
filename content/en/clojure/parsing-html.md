@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Clojure recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,55 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to extract specific information from a website, but didn't want to waste time manually searching through HTML? Parsing HTML is a useful skill to have when working with webpage data and can save you time and effort.
+Parsing HTML is a common task in web development. It involves extracting data from HTML documents and using it for various purposes such as web scraping, data analysis, and content extraction. Clojure provides powerful tools for parsing HTML, making it a great language choice for this task.
 
 ## How To
 
-To parse HTML in Clojure, we'll be using the Enlive library. You can import it into your project by adding the following dependency to your `project.clj` file:
+To get started with parsing HTML in Clojure, we will use the `cljs-beautifulsoup` library. It provides a convenient interface for parsing and navigating HTML documents.
 
-```clojure
-[net.cgrand/enlive "1.1.6"]
+First, we need to import the library into our project using the `ns` macro:
+
+```Clojure
+(ns my-project.core
+  (:require [cljs-beautifulsoup.core :as soup]))
 ```
 
-First, we'll need to load in the HTML content from a website. We can do this by using the `html-resource` function and passing in the URL of the webpage we want to parse. Here's an example of how we can do this:
+Next, we can use the `parse` function to load an HTML document from a URL or a file:
 
-```clojure
-(ns demo.core
-  (:require [net.cgrand.enlive-html :refer :all]
-            [net.cgrand.io.file :as io]))
-
-(let [html (html-resource "http://example.com")
-      content (io/input-stream->bytes html)]
-  (println content))
+```Clojure
+(def doc (soup/parse "http://www.example.com"))
 ```
 
-In the code above, we're using the `html-resource` function to load the HTML content from the webpage into a variable called `html`. Then, using the `io/input-stream->bytes` function, we're reading the HTML content and storing it in the `content` variable. Finally, we're printing out the HTML content using `println`.
+We can then use various functions such as `select` and `find` to navigate the document and extract data from it:
 
-Next, we'll need to target specific elements within the HTML document. Enlive provides a `select` function that allows us to use CSS selectors to target elements. Here's an example of how we can select all the links on a webpage:
-
-```clojure
-(ns demo.core
-  (:require [net.cgrand.enlive-html :refer :all]
-            [net.cgrand.io.file :as io]))
-
-(defn parse-links [html]
-  (select html [:a]))
-
-(let [html (html-resource "http://example.com")
-      links (parse-links html)]
-  (println links))
+```Clojure
+(soup/text (soup/select doc "h1")) ;; returns the text within the first h1 tag
+(soup/attr (soup/find doc :a {:class "button"}) :href) ;; returns the value of the "href" attribute of the first link with class "button"
 ```
 
-In the code above, we've defined a function called `parse-links` that takes in the HTML content and uses `select` with the `:a` selector to target all the `<a>` tags on the webpage. We then pass the `html` variable into the function and store the returned links in a variable called `links`. Finally, we print out the `links` variable to see the results.
+We can also use CSS selectors to easily target specific elements in the document:
+
+```Clojure
+(soup/html (soup/select doc "#content p")) ;; returns the HTML code within all <p> tags inside the element with id "content"
+```
+
+For more examples and details on the functions provided by `cljs-beautifulsoup`, check out its documentation.
 
 ## Deep Dive
 
-While the examples above only scratch the surface of parsing HTML in Clojure, there are many more useful functions and selectors available in Enlive. You can also use the `content` function to extract the text content of an element, the `attr` function to get a specific attribute from an element, and the `html-resource` function can also take in a local file path instead of a URL.
+Behind the scenes, `cljs-beautifulsoup` uses the popular `jsoup` library which is built on top of Java's `jsoup` library. This means that it has access to all the features and optimizations of the Java library, while providing a more idiomatic and functional interface in Clojure.
 
-Additionally, there are other libraries available that offer more advanced HTML parsing capabilities, such as Clj-tagsoup and Clj-htmlparser. These libraries may be better suited for more complex HTML documents.
+The library also supports advanced features such as manipulating HTML elements and attributes, handling invalid HTML, and handling character encoding, making it a robust choice for parsing HTML documents.
 
 ## See Also
 
-- [Enlive Documentation](https://github.com/cgrand/enlive) 
-- [Clj-tagsoup](https://github.com/r0man/Clj-tagsoup)
-- [Clj-htmlparser](https://github.com/glittershark/clj-htmlparser)
+- [cljs-beautifulsoup documentation](https://github.com/Jarzka/cljs-beautifulsoup)
+- [jsoup documentation](https://jsoup.org/cookbook/)
+- [Official Clojure website](https://clojure.org/)

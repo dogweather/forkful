@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 「jsonを使ったコンピュータプログラミング」"
-simple_title:         "「jsonを使ったコンピュータプログラミング」"
+title:                "jsonを使用する"
+html_title:           "PHP: jsonを使用する"
+simple_title:         "jsonを使用する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-JSONを扱うことに取り組む理由については、次のようなものが考えられます：
+## なぜ 
 
-- データの収集や処理において、より軽量で柔軟性が高く、Web開発においてよく使われるフォーマットであるため。 
-- 多くのプログラミング言語でサポートされているため、異なるシステム間でデータを共有する際に便利であるため。
+JSONを使ってプログラミングするのは、データの受け渡しや保存によく使われる形式で、PHPのような言語では簡単に扱うことができるからです。
 
-## 使い方
-JSONをPHPで扱う方法を具体的なコーディング例とともに紹介します。まずは、以下のようなJSONデータがあるとします。
+## 使い方 
 
-```PHP
-$data = '{ "name": "Yumi", "age": 28, "hobbies": ["hiking", "cooking", "reading"] }';
+JSONをPHPで扱うには、`json_encode()`と`json_decode()`という関数を使います。例えば、次のコードでは、PHPの配列をJSON形式で出力し、そのJSONを再度PHPの配列に変換しています。 
+
+```PHP 
+$input = ["apple", "orange", "banana"];
+$json = json_encode($input); 
+$output = json_decode($json);
+var_dump($output); 
 ```
 
-JSONデータをPHPで扱うには、まずは`json_decode()`関数を使ってデータを展開します。次のようにコードを書くことで、`$data`の内容を連想配列として取得できます。
+出力は次のようになります。 
 
-```PHP
-$json_array = json_decode($data, true);
+```PHP 
+array(3) {
+  [0]=> string(5) "apple"
+  [1]=> string(6) "orange"
+  [2]=> string(6) "banana"
+}
 ```
 
-`$json_array`の内容は以下のようになります。
+## 深堀り 
 
-```PHP
-Array(
-    [name] => Yumi
-    [age] => 28
-    [hobbies] => Array(
-        [0] => hiking
-        [1] => cooking
-        [2] => reading
-    )
-)
-```
+JSONを扱う際に注意する点として、データのエスケープやフォーマットについてです。特にユーザーの入力を含むデータをJSONに変換する場合は、`json_encode()`に`JSON_HEX_TAG`や`JSON_HEX_QUOT`などのオプションを指定して、HTMLタグやクォーテーションをエスケープするようにすると安全です。また、`json_decode()`では第二引数に`true`を指定することで、返り値を連想配列に変換することができます。
 
-さらに、連想配列から特定の値を取得するには、次のように書きます。
+## 参考リンク 
 
-```PHP
-echo $json_array['name']; // Yumi
-echo $json_array['age']; // 28
-```
+- [PHP: JSON 関数 - Manual](https://www.php.net/manual/ja/ref.json.php)
+- [JSON - Wikipedia](https://ja.wikipedia.org/wiki/JSON)
 
-また、配列の中に配列が入っている場合は、次のように書きます。
+## 参考になるリンク 
 
-```PHP
-echo $json_array['hobbies'][0]; // hiking
-```
-
-このように、`json_decode()`関数を使うことで簡単にJSONデータをPHPで扱うことができます。
-
-## ディープダイブ
-JSONはデータを階層的に表現することができるため、複雑なデータを効率的に扱うことができます。また、`json_encode()`関数を使うことで、PHPの配列をJSON形式に変換することもできます。
-
-さらに、JSONにはさまざまなメソッド（`json_last_error()`や`json_last_error_msg()`など）があり、エラーが発生した場合でも追跡や対処ができるようになっています。
-
-JSONについてさらに詳しく学びたい方は、公式ドキュメントを参考にしてみてください。
-
-## 併せて見る
-- [PHPの公式サイト：json_decode()関数](https://www.php.net/manual/ja/function.json-decode.php)
-- [JSON入門 - CodeZine](https://codezine.jp/article/corner/558)
+- [安全なJSONエンコーディング・デコーディング]https://developer.okta.com/blog/2019/02/04/create-and-understand-json-web-tokens)
+- [PHPとJSONの相互変換方法]https://www.tutorialspoint.com/php/php_json.htm)
+- [PHPにおけるソート済みJSON出力方法]https://stackoverflow.com/questions/43847233/php-output-multidimensional-array-as-sorted-json)

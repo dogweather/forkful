@@ -1,5 +1,6 @@
 ---
-title:                "Python: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Python: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Python"
 category:             "Python"
@@ -11,55 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Enviar una solicitud HTTP con autenticación básica puede ser necesario cuando se accede a una API o un sitio web que requiere una verificación de identidad para un uso seguro y protegido.
+Enviar una solicitud de HTTP con autenticación básica es una forma segura de acceder a recursos en línea protegidos por una contraseña. Esta autenticación se utiliza comúnmente en aplicaciones y servicios web para verificar la identidad del usuario y garantizar la privacidad y seguridad de la información.
 
 ## Cómo hacerlo
 
-```Python
+Para enviar una solicitud de HTTP con autenticación básica en Python, necesitarás importar el módulo "requests" y usar el método "get" o "post", dependiendo de la acción que desees realizar. A continuación, proporciona la URL del recurso que deseas acceder y utiliza el parámetro "auth" para especificar las credenciales de autenticación.
+
+```
 import requests
 
-url = "https://ejemplo.com/api/login"
+url = "https://ejemplo.com/recursos"
 
-# Establecer las credenciales de autenticación básica
-usuario = "usuario123"
-contraseña = "contraseña123"
+resp = requests.get(url, auth=('usuario', 'contraseña'))
 
-# Crear un objeto de autenticación básica
-autenticacion = requests.auth.HTTPBasicAuth(usuario, contraseña)
-
-# Hacer una solicitud GET a la URL con la autenticación básica incluida
-respuesta = requests.get(url, auth=autenticacion)
-
-# Imprimir el código de estado de la respuesta
-print(respuesta.status_code)
-
-# Imprimir el contenido de la respuesta en formato JSON
-print(respuesta.json())
+print(resp)
 ```
 
-**Salida:**
-
-```
-200
-{'mensaje': '¡Sesión iniciada correctamente!'}
-```
+La respuesta de la solicitud mostrará un código de estado 200 si fue exitosa, o un código de error si hubo algún problema con la autenticación.
 
 ## Profundizando
 
-La autenticación básica se basa en enviar una solicitud con un encabezado de autorización que contiene el nombre de usuario y la contraseña codificados en base64. Este método es simple y ampliamente utilizado, pero no es tan seguro como otros métodos de autenticación como OAuth.
+Básicamente, la autenticación básica funciona enviando un encabezado "Authorization" con cada solicitud que contiene el nombre de usuario y la contraseña en formato "usuario:contraseña" codificado en base64. Esto se puede hacer manualmente usando la función "b64encode" del módulo "base64", pero en Python, se puede hacer más fácilmente utilizando el parámetro "auth" como se mostró anteriormente.
 
-Una solicitud con autenticación básica sigue el siguiente formato:
-
-```
-GET /ruta/del/recurso HTTP/1.1
-Host: example.com
-Authorization: Basic dXNlcjE6Y29udHJhc2UxMjM=
-```
-
-La cadena de texto después de "Basic" es el nombre de usuario y la contraseña en formato base64. Esto significa que es importante proteger la URL de la solicitud para evitar que las credenciales de autenticación sean expuestas.
+Además, hay otras formas de autenticación en HTTP, como OAuth y JSON Web Token (JWT), que proporcionan un nivel extra de seguridad. Sin embargo, la autenticación básica sigue siendo una opción simple y efectiva para muchos casos de uso.
 
 ## Ver también
 
-- [Documentación de HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
-- [Tutorial de Requests en Python](https://requests.readthedocs.io/es/latest/user/authentication.html)
-- [Ejemplo de autenticación básica en GitHub](https://docs.github.com/es/free-pro-team@latest/rest/overview/other-authentication-methods#basic-authentication)
+- [Documentación de requests en Python](https://docs.python-requests.org/en/master/)
+- [Tutorial de autenticación básica en requests](https://requests.readthedocs.io/en/master/user/authentication/#basic-authentication)
+- [Ejemplo de autenticación básica en una API en línea](https://docs.ruby-lang.org/en/master/Net/HTTP.html#class-Net::HTTP-label-Basic+Authentication) (en Ruby)

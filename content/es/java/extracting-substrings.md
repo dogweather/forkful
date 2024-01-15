@@ -1,5 +1,6 @@
 ---
-title:                "Java: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Java: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Java"
 category:             "Java"
@@ -9,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué extraer Subcadenas en Java
+## Por qué
 
-Extraer subcadenas en Java es una técnica útil para manipular texto y obtener solo la parte deseada de una cadena de caracteres. Con esta habilidad, los programadores pueden crear aplicaciones capaces de procesar datos de manera más eficiente y precisa.
+Extraer subcadenas es una habilidad útil para cualquier programador Java. Puedes utilizarla para manipular cadenas de texto de manera eficiente, realizar búsquedas o comparaciones de cadenas, y realizar transformaciones en tus datos. En resumen, saber cómo extraer subcadenas te ayudará a ser un programador más eficiente y productivo.
 
 ## Cómo hacerlo
 
-Para extraer una subcadena en Java, se utiliza el método `substring()` de la clase `String`. Este método toma dos parámetros: el índice de inicio y el índice de fin de la subcadena deseada. Aquí hay un ejemplo de código que extrae una subcadena de una cadena:
+Para extraer una subcadena de una cadena en Java, puedes utilizar el método `substring()` que está presente en la clase `String`. Este método toma dos parámetros: el índice inicial y el índice final de la subcadena que deseas extraer. Aquí tienes un ejemplo de código:
 
 ```Java
-String cadena = "Hola Mundo";
+String cadena = "Hola a todos!";
 String subcadena = cadena.substring(5, 10);
-System.out.println(subcadena); // Salida: Mundo
+System.out.println(subcadena); // Output: a todo
 ```
 
-En este ejemplo, el primer parámetro del método `substring()` es el índice 5, lo que significa que la subcadena comienza en la letra "M". El segundo parámetro es el índice 10, lo que indica que la subcadena termina después de la letra "o". Al imprimir la subcadena, solo se mostrará la palabra "Mundo".
+En el ejemplo anterior, utilizamos el método `substring()` para extraer la subcadena "a todo" de la cadena original. El primer parámetro indica el índice a partir del cual se inicia la extracción, y el segundo parámetro indica el índice justo antes del cual se detiene la extracción. Ten en cuenta que los índices en Java empiezan desde 0, por lo tanto, el primer carácter tiene índice 0.
 
-También es posible omitir el segundo parámetro del método `substring()` para extraer una subcadena desde un punto específico hasta el final de la cadena:
+También puedes utilizar el método `substring()` con un solo parámetro, que indica el índice a partir del cual se extrae hasta el final de la cadena. Aquí tienes un ejemplo:
 
 ```Java
-String cadena = "Hola Mundo";
+String cadena = "Hola a todos!";
 String subcadena = cadena.substring(5);
-System.out.println(subcadena); // Salida: Mundo
+System.out.println(subcadena); // Output: a todos!
 ```
 
-En este caso, la subcadena comenzará en el índice 5 (letra "M") y continuará hasta el final de la cadena.
+Este ejemplo extrae la subcadena "a todos!" de la cadena original, empezando en el índice 5 y extrayendo hasta el final de la cadena.
 
-Otra forma de extraer subcadenas en Java es utilizando el método `split()`, que divide una cadena en una matriz de subcadenas basadas en un delimitador. Por ejemplo:
+Ten en cuenta que el método `substring()` no modifica la cadena original, sino que devuelve una nueva cadena como resultado. Por lo tanto, debes asignarla a una nueva variable si deseas utilizarla más tarde en tu código.
 
-```Java
-String cadena = "Hola-Mundo";
-String[] subcadenas = cadena.split("-");
-System.out.println(subcadenas[1]); // Salida: Mundo
-```
+## Información detallada
 
-En este ejemplo, la cadena se divide en dos subcadenas: "Hola" y "Mundo", y se almacenan en un arreglo. Al imprimir la subcadena en el índice 1, se mostrará la palabra "Mundo".
+El método `substring()` es muy versátil y puede ser utilizado de diferentes maneras, según las necesidades de tu código. Aquí tienes algunas cosas a tener en cuenta al utilizar este método:
 
-## Profundizando
+- El índice inicial puede ser mayor al índice final, lo que resultará en una cadena con los caracteres en orden inverso. Por ejemplo, si utilizas `cadena.substring(8, 3)`, obtendrás la subcadena "!sot a".
 
-Además de los métodos mencionados anteriormente, hay varias formas de extraer subcadenas en Java, como utilizando expresiones regulares o utilizando las clases `StringTokenizer` o `Matcher`. Sin embargo, es importante tener en cuenta que la extracción de subcadenas puede ser costosa en términos de rendimiento, especialmente cuando se realizan en grandes cadenas. Por lo tanto, es importante evaluar la necesidad real de extraer subcadenas y considerar otras opciones si es posible.
+- Si omites el segundo parámetro al utilizar `substring()`, el índice final predeterminado será el último carácter de la cadena original.
+
+- También puedes utilizar valores negativos para los índices, lo que indicará una posición relativa desde el final de la cadena. Por ejemplo, el índice -1 indica el último carácter de la cadena, -2 el penúltimo, y así sucesivamente.
+
+- Si utilizas un índice fuera del rango de la cadena (por ejemplo, 15 en una cadena de 10 caracteres), se producirá un error `IndexOutOfBoundsException`.
 
 ## Ver también
 
-- [Documentación de Java para el método substring](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Tutorial de W3Schools sobre la función `split()` en Java](https://www.w3schools.com/java/ref_string_split.asp)
-- [Artículo de StackOverflow sobre el rendimiento de la extracción de subcadenas en Java](https://stackoverflow.com/questions/297230/can-i-improve-java-regular-expression-performance-by-compiling-exceptions-do)
+- [Documentación oficial de Java sobre el método substring()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Aprender Java: Cadenas](https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=662:tutorial-java-cadenas-string-valor-longitud-charat-equals-concat-numericos-iv-cu00515b&catid=68&Itemid=188)
+- [Video tutorial: Cómo extraer una subcadena en Java](https://www.youtube.com/watch?v=gHioX6MoRXo)

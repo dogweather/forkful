@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Haskell: Odczytywanie argumentów wiersza poleceń"
 simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,37 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Dlaczego warto czytać argumenty wiersza poleceń? Czytanie argumentów wiersza poleceń jest niezbędnym elementem programowania w Haskellu. Wiele aplikacji wymaga wprowadzania argumentów z wiersza poleceń, więc ważne jest, abyśmy wiedzieli, jak to zrobić.
+Jeśli kiedykolwiek próbowałeś uruchomić program z wiersza poleceń, prawdopodobnie wpisywałeś różnego rodzaju opcje i argumenty. W tym artykule dowiesz się, jak w języku Haskell przetwarzać i wykorzystywać te argumenty.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Często zdarza nam się mieć aplikację, która wymaga wprowadzenia pewnych parametrów z wiersza poleceń. W Haskellu możemy to zrobić za pomocą funkcji `getArgs` z modułu `System.Environment`. Poniżej znajduje się przykładowy kod, który wyświetli wszystkie argumenty wiersza poleceń wraz z ich indeksem:
+### Tworzenie prostej aplikacji
 
+Aby zacząć, musimy zaimportować moduł `System.Environment` do naszego programu. Pomoże nam to w przetwarzaniu argumentów podanych przez użytkownika.
+
+```
 ```Haskell
 import System.Environment
 
 main = do
-    arguments <- getArgs
-    print arguments
+  args <- getArgs
+  putStrLn (show args)
 ```
 
-Przykładowy output dla wywołania programu z argumentami `haskellBlogPost test arg1 123`:
+W tym prostym przykładzie, tworzymy nową funkcję o nazwie `main` i wykorzystujemy funkcję `getArgs` z modułu `System.Environment`. Następnie, wyświetlamy argumenty podane przez użytkownika przy użyciu funkcji `putStrLn`. Aby uruchomić ten program, wpisz w wierszu poleceń `runhaskell nazwa_pliku.hs argument1 argument2`.
+
+### Przetwarzanie argumentów
+
+W powyższym przykładzie, argumenty są przekazywane jako lista stringów, więc możemy łatwo wykorzystać funkcje dla list, takie jak `head` czy `tail`, aby uzyskać pojedyncze argumenty lub resztę argumentów. Na przykład, jeśli chcielibyśmy wyświetlić tylko drugi argument podany przez użytkownika:
 
 ```
-["test", "arg1", "123"]
+```Haskell
+import System.Environment
+
+main = do
+  args <- getArgs
+  putStrLn (args !! 1)
 ```
 
-W ten sposób możemy łatwo odczytać argumenty i wykorzystać je w naszej aplikacji.
+### Przetwarzanie flag
 
-## Głębszy wgląd
+Czasami użytkownik może podać flagi wraz z argumentami, aby wskazać pewne ustawienia lub opcje. W takim przypadku, możemy skorzystać z funkcji `getOpt` z modułu `System.Console.GetOpt` aby przetworzyć te flagi. Przykładowy kod może wyglądać następująco:
 
-Funkcja `getArgs` zwraca listę argumentów wiersza poleceń jako listę stringów. Warto zauważyć, że pierwszy element listy jest nazwą pliku wykonywalnego, więc musimy wziąć pod uwagę ten fakt w naszym kodzie.
+```
+```Haskell
+import System.Environment
+import System.Console.GetOpt
 
-W przypadku, gdy potrzebujemy przekazać do aplikacji argumenty, które zawierają spacje lub znaki specjalne, musimy je podać w cudzysłowiu.
+data Options = Options
+  { optHelp :: Bool
+  , optVerbose :: Bool
+  } deriving Show
+
+defaultOptions = Options
+  { optHelp = False
+  , optVerbose = False
+  }
+
+options :: [OptDescr (Options -> Options)]
+options =
+  [ Option ['h'] ["help"] (NoArg (\opts -> opts { optHelp = True })) "Show help"
+  , Option ['v'] ["verbose"] (NoArg (\opts -> opts { optVerbose = True })) "Be verbose"
+  ]
+
+runWithOptions :: Options -> [String] -> IO ()
+runWithOptions options args = do
+  print options
+  print args
+
+main = do
+  args <- getArgs
+  let (options, leftoverArgs, errors) = getOpt Permute options args
+  if null errors then
+     runWithOptions (foldl (flip id) defaultOptions options) leftoverArgs
+  else
+     ioError (userError (concat errors))
+```
+
+W tym przykładzie, definiujemy własny typ danych `Options`, który zawiera flagi, które możliwe jest przekazanie przez użytkownika. Następnie, określamy domyślne wartości i flagi, które mogą być przetworzone przez naszą funkcję `runWithOptions`. Na koniec, przy użyciu funkcji `getOpt`, przetwarzamy flagi i przekazujemy ostateczne opcje oraz pozostałe argumenty do naszej funkcji `runWithOptions`.
+
+## Głębsza analiza
+
+Istnieje wiele innych metod przetwarzania i wykorzystania argumentów w języku Haskell, na przykład wykorzystując moduł `Data.Map` lub wykorzystując monady do wygodniejszej obsługi argumentów. Ważne jest, aby przetestować swoje rozwiązanie z różnymi przypadkami, aby upewnić się, że nasz program będzie działał poprawnie dla wszystkich user inputów.
 
 ## Zobacz także
 
-- [Dokumentacja modułu `System.Environment`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-- [Przykłady czytania argumentów wiersza poleceń w Haskellu](https://wiki.haskell.org/Command_line_argument_processing)
+* [Dokumentacja System.Environment](https://hackage.haskell.org/package/base-4.14.1.

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Csv:n kanssa työskentely"
-simple_title:         "Csv:n kanssa työskentely"
+title:                "Töitä CSV:n kanssa"
+html_title:           "Clojure: Töitä CSV:n kanssa"
+simple_title:         "Töitä CSV:n kanssa"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,73 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
+CSV-tiedostot ovat yleinen tapa tallentaa ja jakaa taulukkotietoja, kuten tietokantoja ja Excel-laskentataulukoita. Clojuren avulla voit helposti lukea ja muokata näitä tiedostoja, mikä tekee siitä hyödyllisen ohjelmointikielen ymmärtää.
 
-Miksi joku haluaisi käyttää CSV-tiedostoja Clojure-ohjelmoinnissa? CSV-tiedostot ovat yleinen tapa tallentaa dataa taulukkomuodossa, ja Clojure tarjoaa joukon käteviä työkaluja tällaisten tiedostojen käsittelyyn.
+## Miten tehdä se
 
-## Kuinka käsitellä CSV-tiedostoja Clojurella
-
-Kun haluat käsitellä CSV-tiedostoja Clojurella, sinun täytyy ensin tuoda `clojure.data.csv` kirjasto projektisi riippuvuuksiin. Sitten voit lukea CSV-tiedoston käyttämällä `clojure.data.csv` kirjaston `read-csv` funktiota. Esimerkiksi, jos haluat lukea tiedoston nimeltä "data.csv", voit tehdä seuraavaa:
-
-```Clojure
-(ns tiedostonimi
-  (:require [clojure.data.csv :as csv]))
-
-(def data (csv/read-csv "data.csv"))
-```
-
-Tämä luo data-rakenteen, joka sisältää kaiken tiedoston sisällön. Tässä vaiheessa voit käsitellä dataa haluamallasi tavalla, esimerkiksi tulostamalla sen komentoriville:
+CSV-tiedostot voidaan lukea ja muokata käyttämällä `clojure.data.csv` -kirjastoa. Ensimmäiseksi sinun on tuotava tämä kirjasto käyttämällä `require` -komentoa:
 
 ```Clojure
-(doseq [rivi data]
-  (println rivi))
+(require '[clojure.data.csv :as csv])
 ```
 
-#### Taulukkomuotoinen tieto
-
-Kun luet CSV-tiedostoa Clojurella, data-rakenne sisältää jokaisen rivin omana listanaan. Tämä tarkoittaa sitä, että jokainen sarakkeen arvo on yksittäisenä alkiona listassa. Esimerkiksi, jos tiedostosi sisältää seuraavat rivit:
-
-```csv
-nimi, ikä, sukupuoli
-Matti, 34, mies
-Sari, 28, nainen
-```
-
-data-rakenteesi näyttää tältä:
+Seuraavaksi lue CSV-tiedosto käyttämällä `with-open` -makroa ja `csv/reader` -funktiota:
 
 ```Clojure
-(["nimi" "ikä" "sukupuoli"]
- ["Matti" "34" "mies"]
- ["Sari" "28" "nainen"])
+(with-open [reader (csv/reader "tiedostonimi.csv")]
+  (doseq [row reader]
+    (println row)))
 ```
 
-#### CSV-tiedoston kirjoittaminen
-
-Voit myös käyttää `clojure.data.csv` kirjastoa CSV-tiedoston kirjoittamiseen. Tässä esimerkki, jossa luodaan uusi CSV-tiedosto ja kirjoitetaan siihen dataa:
+Tämä tulostaa jokaisen rivin tiedostosta konsoliin. Voit myös tallentaa rivit vektoriin ja käsitellä niitä myöhemmin:
 
 ```Clojure
-(ns tiedostonimi
-  (:require [clojure.data.csv :as csv]))
-
-(def data [["nimi" "ikä" "sukupuoli"]
-           ["Matias" "31" "mies"]
-           ["Anni" "26" "nainen"]])
-
-(csv/write-csv "uusi_tiedosto.csv" data)
+(with-open [reader (csv/reader "tiedostonimi.csv")]
+  (let [rows (doall reader)])
+    ; tehdä jotain vektoreille täällä
+  ))
 ```
 
-Tämä luo uuden tiedoston nimeltä "uusi_tiedosto.csv" samassa kansiossa, ja sen sisältö on seuraava:
+Voit myös muokata CSV-tiedostoa ja tallentaa uuden version käyttämällä `csv/writer` -funktiota:
 
-```csv
-nimi,ikä,sukupuoli
-Matias,31,mies
-Anni,26,nainen
+```Clojure
+(with-open [reader (csv/reader "tiedostonimi.csv")]
+  (with-open [writer (csv/writer "uusitiedostonimi.csv")]
+    (doseq [row reader]
+      (csv/write-row writer (map #(str (inc %)) row)))))
 ```
 
-## Syväsukellus
+Tässä esimerkissä kutsumme `inc` -funktiota jokaiselle riville ja tallennamme tulokset uuteen CSV-tiedostoon.
 
-Clojure tarjoaa monia muita hyödyllisiä toimintoja CSV-tiedostojen käsittelyyn, kuten `parse-csv`, `print-csv`ja `write-csv`. Voit tutustua näihin toimintoihin Clojuren virallisen dokumentaation avulla.
+## Syvä sukellus
+
+CSV tiedostot koostuvat yleensä otsikkorivista ja sen jälkeen datariveistä. Voit ottaa huomioon otsikon käyttämällä `csv/with-header` -funktiota:
+
+```Clojure
+(with-open [reader (csv/with-header "tiedostonimi.csv" :header true)]
+  (doseq [row reader]
+    (println (:sarakkeenimi row))))
+```
+
+Tämä antaa sinulle mahdollisuuden käsitellä tiedoston sarakkeita nimillä sen sijaan, että viitataan sarakkeiden indekseihin.
+
+Voit myös lukea CSV-tiedoston ilman otsikkoa ja määrittää sarakkeiden nimet myöhemmin käyttämällä `csv/named-readers` -funktiota:
+
+```Clojure
+(with-open [reader (csv/named-readers "tiedostonimi.csv"
+                                      ["sarakkeenimi1", "sarakkeenimi2"])]
+  (doseq [row reader]
+    (println (:sarakkeenimi1 row))))
+```
+
+Tämä lähestymistapa antaa sinulle suuremman hallinnan tiedoston sisältöön.
+
+Lisätietoja CSV-tiedostojen muotoilusta ja käyttäytymisestä löytyy [Clojuren virallisesta dokumentaatiosta](https://clojure.github.io/data.csv/).
 
 ## Katso myös
 
-- [Clojuren virallinen dokumentaatio](https://clojure.org/reference/laziness)
-- [clojure.data.csv -dokumentaatio](https://clojure.github.io/data.csv/)
+- [Clojuren virallinen dokumentaatio](https://clojure.org/)
+- [Clojure-toolkitti CSV-tiedostojen käsittelyyn](https://github.com/clojure-toolkit/csv)

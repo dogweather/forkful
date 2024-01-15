@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Omvandla ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Javascript: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna konvertera ett datum till en sträng är en viktig del av Javascript-programmering. Det är användbart för att visa datum på ett sätt som är läsbart för människor och för att lagra datum i olika format.
+
+Att konvertera ett datum till en sträng är en vanlig uppgift för många Javascript-utvecklare, då det ofta behövs för att visa ett datum på ett tydligt sätt i en applikation eller webbsida.
+
+Att använda Javascript för att konvertera ett datum till en sträng ger också flexibilitet för utvecklare och möjliggör anpassning av datumformatet baserat på användarens preferenser.
 
 ## Hur man gör det
+
 ```Javascript
-// Skapa ett datumobjekt
-const date = new Date();
+// Skapa ett nytt datumobjekt med dagens datum
+const datum = new Date();
 
-// Konvertera datumet till en sträng baserat på standarden "MM/DD/YYYY"
-const dateString = date.toLocaleString('en-US', {dateStyle: 'short'});
-console.log(dateString); // Output: 9/5/2021
+// Använd metoderna från Date-objektet för att hämta år, månad och dag
+const år = datum.getFullYear();
+const månad = datum.getMonth() + 1; // +1 eftersom getMonth() ger nummer på månaden från 0 till 11
+const dag = datum.getDate();
 
-// Konvertera datumet till en sträng baserat på standarden "YYYY-MM-DD"
-const dateString2 = date.toISOString().substring(0, 10);
-console.log(dateString); // Output: 2021-09-05
-
-// Konvertera datumet till en anpassad sträng
-const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-const dateString3 = date.toLocaleDateString('sv-SE', options);
-console.log(dateString3); // Output: söndag, 5 september 2021
+// Skapa en sträng med formatet YYYY-MM-DD
+const datumSträng = `${år}-${månad}-${dag}`;
+console.log(datumSträng); // Output: 2020-10-01
 ```
 
+I exemplet ovan används de inbyggda metoderna i Date-objektet för att hämta det aktuella datumet och skapa en sträng i önskad format. Det går också att använda andra metoder för att få en mer detaljerad eller specifik sträng. 
+
 ## Djupdykning
-När vi konverterar ett datum till en sträng säger vi egentligen att vi formatterar det. I Javascript finns det flera inbyggda metoder för att formatera datumobjekt, såsom `toLocaleString()` och `toISOString()`. Men det är också möjligt att skapa en anpassad formattering genom att ange olika parametrar i dessa metoder.
 
-En annan viktig del av att konvertera datum till strängar är att förstå skillnaden mellan olika standarder för datumformatering, såsom "MM/DD/YYYY" eller "YYYY-MM-DD". Det är viktigt att välja rätt standard beroende på hur strängen kommer att användas eller sparas.
+Javascript tillåter också utvecklare att använda olika bibliotek eller ramverk för att hantera datumkonverteringar. Ett populärt val är biblioteket moment.js, som har en mängd olika funktioner för att arbeta med datum. 
 
-## Se också
-- [MDN - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - JavaScript Date Formats](https://www.w3schools.com/js/js_date_formats.asp)
-- [Javatpoint - JavaScript Date Methods](https://www.javatpoint.com/javascript-date-methods)
+```Javascript
+// Använda moment.js för att få en lokaliserad sträng baserat på användarens språkinställning
+moment.locale('sv');
+// Konvertera ett datum till en sträng i det svenska formatet
+const datumSträng = moment().format('LL');
+console.log(datumSträng); // Output: 1 oktober 2020
+```
+
+Att använda ett bibliotek som moment.js kan underlätta arbete med datum och ger utvecklare fler möjligheter att anpassa och formatera datum på ett enkelt sätt.
+
+## Se även
+
+- [Moment.js dokumentation](https://momentjs.com/docs/)
+- [Date-objektet på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

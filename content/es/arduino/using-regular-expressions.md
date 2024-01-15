@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Utilizando expresiones regulares"
+title:                "Utilizando expresiones regulares"
+html_title:           "Arduino: Utilizando expresiones regulares"
 simple_title:         "Utilizando expresiones regulares"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares en Arduino?
+# ¿Por qué aprender a usar expresiones regulares en Arduino?
 
-Las expresiones regulares son una herramienta poderosa para procesar y manipular cadenas de texto en cualquier lenguaje de programación, incluyendo Arduino. Con la ayuda de expresiones regulares, podemos encontrar patrones específicos en una cadena de texto y realizar operaciones basadas en esos patrones, ahorrando tiempo y líneas de código.
+Si estás aprendiendo a programar con Arduino, es posible que hayas escuchado sobre las expresiones regulares pero no estés seguro de por qué son útiles en este contexto. En resumen, las expresiones regulares son patrones de búsqueda que te ayudan a encontrar y manipular texto en tus programas. Al utilizarlas, puedes ahorrar tiempo y mejorar la eficiencia de tu código, especialmente cuando trabajas con entradas de datos complejas.
 
-## Cómo utilizar expresiones regulares en Arduino
+# Cómo utilizar expresiones regulares en Arduino
 
-Para utilizar expresiones regulares en Arduino, primero debemos incluir la librería "Regex.h". Luego, podemos crear un objeto Regex y pasarle como parámetro el patrón que queremos buscar en una cadena de texto.
+Para utilizar expresiones regulares en Arduino, es necesario incluir la biblioteca "RegExp.h" en tu programa. Luego, puedes definir un objeto de expresión regular y utilizar sus métodos para encontrar coincidencias en una cadena de texto. Aquí hay un ejemplo sencillo que busca si una cadena de texto contiene solo números:
 
-```
-#include <Regex.h> // Incluir la librería Regex
+```arduino
+#include <Regexp.h>
 
-Regex miRegex("Hola"); // Crear un objeto Regex con el patrón "Hola"
+RegExp expresion("[0-9]+");
 
-if (miRegex.match("Hola Mundo")) { // Comprobar si la cadena de texto contiene el patrón
-  Serial.println("Se encontró la palabra 'Hola'"); // Output: Se encontró la palabra 'Hola'
+String texto = "1234";
+
+if (expresion.test(texto)) {
+  Serial.println("La cadena contiene solo números.");
+} else {
+  Serial.println("La cadena no contiene solo números.");
 }
 ```
 
-En el ejemplo anterior, utilizamos el método `match` para comprobar si la cadena de texto "Hola Mundo" contiene el patrón "Hola". Si es así, se imprime un mensaje en la consola serial.
+La salida del monitor serie será "La cadena contiene solo números." porque la cadena de texto "1234" es una coincidencia con el patrón de búsqueda definido en la expresión regular.
 
-## Profundizando en el uso de expresiones regulares
+# Profundizando en el uso de expresiones regulares en Arduino
 
-Además de buscar patrones simples como en el ejemplo anterior, las expresiones regulares también nos permiten realizar operaciones más complejas, como buscar varias palabras a la vez, sustituir palabras, o incluso utilizar caracteres especiales para hacer coincidir patrones específicos.
+Las expresiones regulares son herramientas muy potentes para manipular texto en Arduino. Además de buscar patrones específicos, también puedes utilizarlas para extraer información de una cadena de texto utilizando grupos de captura. Por ejemplo, si tienes una cadena de texto con un formato específico y deseas obtener solo una parte de ella, puedes utilizar grupos de captura en tu expresión regular para hacerlo de manera más eficiente.
 
-Por ejemplo, podemos buscar todas las palabras que comiencen con la letra "A" en una cadena de texto y contar cuántas veces aparecen utilizando el siguiente código:
+Además, la biblioteca "RegExp.h" ofrece una gran variedad de métodos que te permiten realizar operaciones avanzadas con expresiones regulares, como sustituciones, búsquedas globales y opciones de modificación del patrón de búsqueda.
 
-```
-Regex miRegex("[A]\\w+"); // El patrón "\w+" hace coincidir cualquier carácter alfanumérico después de la "A"
+# Ver también
 
-int contador = 0; // Inicializar un contador
-
-while (miRegex.find("Ana ama los aviones y el arte")) { // Buscar todas las palabras que coincidan con el patrón
-  contador++; // Incrementar el contador cada vez que se encuentre una coincidencia
-}
-
-Serial.println(contador); // Output: 3 (ya que hay 3 palabras que comienzan con "A")
-```
-
-También podemos utilizar caracteres especiales como `\d` para hacer coincidir dígitos numéricos, `\s` para hacer coincidir espacios en blanco, y `\b` para hacer coincidir límites de palabras.
-
-## Ver también
-
-- [Documentación de la librería Regex para Arduino](https://github.com/madsci1016/Arduino-EasyTransfer/blob/master/EasyTransfer/Regex.cpp)
-- [Tutorial de expresiones regulares en Arduino](https://www.c-sharpcorner.com/article/arduino-regular-expression-a-simple-tutorial-to-get-started/)
-- [Más ejemplos de expresiones regulares en Arduino](https://www.geeksforgeeks.org/regex-in-arduino-pattern-matching-in-arduino/)
+- [Documentación oficial de la biblioteca "RegExp.h"](https://www.arduino.cc/reference/en/libraries/regexp/)
+- [Ejemplos de aplicación de expresiones regulares en proyectos de Arduino](https://create.arduino.cc/projecthub/search?q=regex)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "Ruby: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,48 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+# Perché
+## Perché dovresti lavorare con YAML
 
-Se stai lavorando con dati strutturati, come ad esempio configurazioni o informazioni di configurazione, YAML può essere uno strumento utile e facile da usare per organizzare questi dati in modo leggibile e facile da comprendere.
+Se stai scrivendo un'applicazione Ruby che necessita di gestire dati strutturati in formato leggibile sia da computer che da esseri umani, YAML potrebbe essere lo strumento giusto per te. Con YAML puoi creare facilmente file di configurazione, documentazione e altri dati strutturati per la tua applicazione in modo semplice e intuitivo.
 
-## Come fare
-
-Per iniziare a lavorare con YAML in Ruby, segui questi semplici passaggi:
-
-1. Installa la gemma 'yaml' con il comando `gem install yaml` nel tuo terminale.
-2. Richiama la gemma nel tuo codice Ruby con `require 'yaml'`.
-3. Usa il comando `YAML.load` per caricare i dati YAML da un file o una stringa.
-4. È possibile accedere ai dati utilizzando la sintassi dot seguita dai nomi delle chiavi.
-5. Usa il comando `YAML.dump` per esportare i dati YAML in un file o una stringa.
-
-Ecco un esempio di codice Ruby che carica e stampa i dati YAML:
+# Come fare
+## Esempi di codice e output
+Con la gemma ruby YAML incorporata, è molto facile iniziare a lavorare con questo formato di dati. Basta richiamare il modulo YAML e utilizzare il metodo `load` o `safe_load` per leggere i dati da un file YAML.
 
 ```Ruby
 require 'yaml'
 
-# Carica i dati YAML da un file
-data = YAML.load(File.read('config.yaml'))
+# Carica i dati da un file YAML
+data = YAML.load(File.read("dati.yaml"))
 
-# Stampa i dati
-puts data
+# Oppure, utilizza safe_load per evitare stringhe malevole
+data = YAML.safe_load(File.read("dati.yaml"))
+
+puts data["nome"]
+puts data["cognome"]
 ```
 
-Output:
+In questo esempio, abbiamo un file YAML `dati.yaml` con il seguente contenuto:
 
+```yaml
+nome: Marco
+cognome: Rossi
 ```
-{"server"=>"localhost", "port"=>8080, "database"=>"myapp"}
+
+E nell'output del codice sopra, otteniamo:
+
+```shell
+Marco
+Rossi
 ```
 
-## Approfondimento
+Oltre a leggere i dati da un file, YAML ci permette anche di creare un data structure direttamente nel nostro codice.
 
-Oltre ai passaggi di base per lavorare con YAML, ci sono altri concetti importanti da conoscere. Ad esempio, YAML supporta diversi tipi di dati come stringhe, interi, float, booleani e array. Inoltre, puoi anche includere commenti nel tuo file YAML per aggiungere ulteriori informazioni o spiegazioni.
+```Ruby
+require 'yaml'
 
-Inoltre, è importante notare che YAML è un formato di dati sensitivo agli indent (spazi bianchi). Quindi, assicurati di mantenere una formattazione coerente nel tuo file YAML per evitare errori nella lettura dei dati.
+# Crea un data structure
+dati = {
+  nome: "Maria",
+  cognome: "Bianchi"
+}
 
-## Vedi anche
+# Utilizza il metodo dump per convertire il data structure in YAML
+puts YAML.dump(dati)
+```
 
-Se vuoi saperne di più su YAML in Ruby, ecco alcuni link utili che potrebbero essere di tuo interesse:
+Questo ci darà un output come questo:
 
-- [Documentazione ufficiale di YAML in Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
-- [Tutorial su YAML in Ruby su Codecademy](https://www.codecademy.com/learn/learn-yaml)
-- [Ripensare a YAML come formato di configurazione per le tue applicazioni Ruby](https://rossta.net/blog/rethinking-yaml-configuration.html)
+```yaml
+---
+:nome: Maria
+:cognome: Bianchi
+```
+
+# Approfondimento
+## Approfondisci l'utilizzo di YAML in Ruby
+
+Se vuoi saperne di più su come utilizzare YAML nel tuo codice Ruby, puoi consultare la documentazione ufficiale di YAML e della gemma ruby incorporata. Inoltre, puoi anche esplorare altre gemme che offrono funzionalità aggiuntive per il lavoro con YAML, come ad esempio la gemma `psych`.
+
+# Vedi anche
+- Documentazione ufficiale di YAML: https://yaml.org/spec/
+- Documentazione della gemma ruby YAML: https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html
+- Gemma ruby psych: https://rubygems.org/gems/psych/

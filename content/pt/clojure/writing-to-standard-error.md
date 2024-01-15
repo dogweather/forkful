@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Escrevendo no erro padrão"
-simple_title:         "Escrevendo no erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Clojure: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em Clojure?
+## Por que
 
-Ao escrevermos código em Clojure, muitas vezes nos deparamos com situações em que precisamos ser notificados sobre possíveis erros ou problemas no nosso programa. Uma forma de fazer isso é escrever para o chamado "standard error", que é um canal de comunicação de saída de dados destinado a informar sobre erros e exceções. Neste post, vamos explorar como podemos escrever para o erro padrão em Clojure e por que isso pode ser útil.
+Quando se está escrevendo código em Clojure, muitas vezes é necessário lidar com erros e bugs. Ao invés de simplesmente parar a execução do programa, escrever para o erro padrão (standard error) pode ser uma forma mais eficaz de encontrar e resolver problemas.
 
-## Como fazer?
+## Como Fazer
 
-Para escrever para o erro padrão em Clojure, podemos utilizar a função `println` seguida do caractere `>`:
-
-```Clojure
-(println> "Este é um exemplo de mensagem de erro")
-```
-
-Isso imprimirá a mensagem especificada seguida de `[stderr]` no console, indicando o canal de saída utilizado. Podemos também utilizar a função `eprintln`, que já inclui esse identificador na impressão:
+Ao escrever para o erro padrão em Clojure, é necessário usar a função *println* e passar uma string como argumento. Aqui está um exemplo simples:
 
 ```Clojure
-(eprintln "Este é outro exemplo de mensagem de erro")
+(println "Ocorreu um erro.")
 ```
-
-## Aprofundando no assunto
-
-Além das funções `println` e `eprintln`, Clojure também oferece a possibilidade de escrever diretamente para o erro padrão utilizando a função `prn`:
+Isso imprimirá a mensagem "Ocorreu um erro." no erro padrão. Além disso, também é possível usar a função *println* para imprimir informações sobre variáveis e objetos no erro padrão. Por exemplo:
 
 ```Clojure
-(prn> "Este é um erro mais detalhado: " {:detalhe "Erro de tipo"})
+(def nome "João")
+(println "O nome é:" nome)
 ```
 
-Isso nos permite escrever informações mais complexas e estruturadas, como mapas e vetores, para o erro padrão.
+Isso imprimirá "O nome é: João" no erro padrão. Usar *println* é uma forma fácil e útil de depurar e encontrar problemas em seu código Clojure.
 
-Também é importante destacar que o uso de `println>`, `eprintln` e `prn>` não interrompem a execução do programa, permitindo que possamos continuar a execução do código mesmo após a impressão de erros.
+## Deep Dive
 
-## Veja também
+Além da função *println*, também é possível usar a função *prn* para escrever para o erro padrão. A diferença entre as duas é que *prn* imprime os valores no erro padrão sem adicionar uma nova linha ao final. Isso pode ser útil quando se quer imprimir múltiplos valores em uma única linha de erro. Por exemplo:
 
-- [Documentação do standard error em Clojure](https://clojure.org/reference/errors)
-- [Tutorial de Clojure para iniciantes](https://github.com/fogus/clojure-from-the-ground-up)
-- [Como lidar com erros e exceções em Clojure](https://purelyfunctional.tv/courses/exception-handling-in-clojure/)
+```Clojure
+(def x 1)
+(def y 2)
+(prn "Valores de x e y:" x y)
+```
+
+Isso imprimirá "Valores de x e y: 1 2" no erro padrão, em uma única linha.
+
+## Veja Também
+
+- Documentação oficial sobre a função *println*: https://clojuredocs.org/clojure.core/println
+- Documentação oficial sobre a função *prn*: https://clojuredocs.org/clojure.core/prn

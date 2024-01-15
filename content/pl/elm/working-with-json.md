@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Praca z json"
+title:                "Praca z json"
+html_title:           "Elm: Praca z json"
 simple_title:         "Praca z json"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,42 +10,112 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pracować z JSON w Elm?
-Pisanie aplikacji internetowych może być bardzo wymagające, dlatego narzędzia, które ułatwiają ten proces są bardzo cenne. Jednym z takich narzędzi jest JSON w Elm. Jeśli chcesz wiedzieć, jak wykorzystać tę technologię w swoim projekcie, przeczytaj ten artykuł.
+## Dlaczego
 
-## Jak to zrobić?
-Aby zacząć pracę z JSON w Elm, musisz najpierw zainstalować odpowiedni pakiet, który pozwoli Ci na przetwarzanie danych w tym formacie. Możesz to zrobić poprzez wpisanie poniższej komendy w terminalu:
+JSON (JavaScript Object Notation) jest popularnym formatem do przechowywania i przesyłania danych w aplikacjach internetowych. W połączeniu z językiem Elm, który jest przeznaczony do budowania silnych i niezawodnych interfejsów użytkownika, można wykorzystać JSON do tworzenia dynamicznych i interaktywnych aplikacji internetowych.
 
-```elm install elm/json```
+## Jak To Zrobić
 
-Następnie w swoim pliku Elm możesz zaimportować moduł JSON i użyć funkcji `decode` w celu przekształcenia danych z JSON na struktury Elm:
+Aby rozpocząć pracę z JSON w Elm, musimy najpierw zaimportować moduł [Json.Decode](https://package.elm-lang.org/packages/elm/json/latest) przy użyciu słowa kluczowego `import`. Następnie możemy użyć funkcji `decodeString` lub `decodeValue` do parsowania danych JSON na odpowiadające im typy danych w Elm.
 
 ```elm
-import Json
-import Json.Decode as Decode
+import Json.Decode exposing (..)
 
--- Przykładowy JSON
-sampleJson = """
-    {
-        "name": "John",
-        "age": 30,
-        "hobbies": ["programming", "reading", "hiking"]
+type alias User =
+    { name : String
+    , age : Int
     }
+
+decodeUser : Decoder User
+decodeUser =
+    map2 User
+        (field "name" string)
+        (field "age" int)
+
+jsonString = """
+{
+    "name" : "John",
+    "age" : 27
+}
 """
 
--- Przetworzenie danych
-result = Json.decodeString Decode.value sampleJson
+result = decodeString decodeUser jsonString
 
--- Przykładowe wyjście
--- Ok { name = "John", age = 30, hobbies = ["programming", "reading", "hiking"] }
+-- output:
+-- Ok ({ name = "John", age = 27 } : User)
 ```
 
-Możesz także używać funkcji `encode` do przekształcania struktur Elm z powrotem na format JSON.
+W powyższym przykładzie użyliśmy funkcji `map2`, aby przekształcić wynik funkcji `field` na typ `User`. Możemy również użyć innych funkcji, takich jak `map`, `andThen` i `oneOf`, aby modyfikować wynik parsowania w zależności od naszych potrzeb.
 
-## Wnikliwe spojrzenie
-JSON w Elm nie tylko umożliwia przetwarzanie danych, ale posiada także wiele pomocnych funkcji, które ułatwiają pracę z tym formatem. Na przykład, możesz użyć funkcji `decodeValue` zamiast `decodeString` jeśli chcesz bezpośrednio przetworzyć strukturę JSON zamiast parsować ją ze stringa. Możesz także użyć funkcji `map` aby przetworzyć niektóre pola z danych w inny sposób.
+## Głębszy Wgląd
 
-## Zobacz także
-- Dokumentacja Elm na temat JSON: https://package.elm-lang.org/packages/elm/json/latest/
-- Przykłady kodu wykorzystującego JSON w Elm: https://ellie-app.com/new
-- Przydatny artykuł o pracy z JSON w Elm: https://medium.com/@PavelPolyakov/using-json-in-elm-7c35b711c6b6
+Istnieje wiele innych metod, które możemy wykorzystać do przetwarzania danych JSON w Elm. Jedną z takich funkcji jest `at`, która pozwala nam pobierać dane zagnieżdżone wewnątrz obiektów.
+
+```elm
+type alias Address =
+    { street : String
+    , city : String
+    , country : String
+    }
+
+type alias User =
+    { name : String
+    , age : Int
+    , address : Address
+    }
+
+decodeUser : Decoder User
+decodeUser =
+    map3 User
+        (field "name" string)
+        (field "age" int)
+        (at [ "address" ] address)
+
+-- output:
+-- Ok ({ name = "John", age = 27, address = { street = "Main St.", city = "New York", country = "USA" } } : User)
+```
+
+### Tablice w JSON
+
+W przypadku, gdy mamy do czynienia z tablicami w JSON, możemy skorzystać z funkcji `list` lub `index` do parsowania danych do listy lub pobrania konkretnego elementu z listy.
+
+```elm
+type alias Country =
+    { name : String
+    , population : Int
+    }
+
+decodeCountry : Decoder Country
+decodeCountry =
+    map2 Country
+        (field "name" string)
+        (field "population" int)
+
+decodeCountries : Decoder (List Country)
+decodeCountries =
+    list decodeCountry
+
+jsonString = """
+[
+    {
+        "name" : "Poland",
+        "population" : 37979332
+    },
+    {
+        "name" : "Germany",
+        "population" : 83019200
+    }
+]
+"""
+
+result = decodeString decodeCountries jsonString
+
+-- output:
+-- Ok ([ { name = "Poland", population = 37979332 } <~> { name = "Germany", population = 83019200 } ] : List Country)
+```
+
+## Zobacz też
+
+- [Elm Packages](https://package.elm-lang.org)
+- [JSON tutorial by Elm Guide](https://elm-lang.org/docs/from-javascript)
+- [JSON and Elm by Ellie](https://ellie-app.com/new)

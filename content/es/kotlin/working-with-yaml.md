@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con Yaml"
+html_title:           "Kotlin: Trabajando con Yaml"
+simple_title:         "Trabajando con Yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,67 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con YAML
+## Por qué
 
-YAML (acrónimo de "YAML Ain't Markup Language") es un lenguaje de marcado ligero utilizado para representar datos de manera legible para humanos. Es ampliamente utilizado en aplicaciones de programación para almacenar y transmitir información estructurada. A continuación, te explicamos cómo utilizar YAML en tus proyectos de Kotlin.
+¿Te has encontrado con archivos de configuración que utilizan la sintaxis YAML y te preguntas qué es y cómo puedes trabajar con ella? Bueno, ¡has venido al lugar correcto! En este artículo, aprenderemos qué es YAML y cómo puede ser útil para los programadores.
 
 ## Cómo utilizar YAML en Kotlin
 
-En primer lugar, es necesario importar la biblioteca SnakeYAML en tu proyecto de Kotlin. Esto se puede hacer agregando la siguiente dependencia en tu archivo build.gradle:
+Primero, debemos agregar una dependencia en nuestro archivo `build.gradle` para poder utilizar la biblioteca de YAML en nuestro proyecto:
 
-```
+```Kotlin
 dependencies {
-    compile "org.yaml:snakeyaml:1.27"
+    implementation("org.yaml:snakeyaml:1.27")
 }
 ```
 
-Una vez que hayas importado la biblioteca, puedes comenzar a trabajar con YAML. El primer paso es crear un objeto de tipo `Yaml`, que es el punto de entrada para trabajar con YAML en Kotlin:
+Luego, podemos utilizar la biblioteca en nuestro código de la siguiente manera:
 
-```
+```Kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.File
+
+val file = File("archivo.yaml")
 val yaml = Yaml()
-```
-
-A continuación, puedes utilizar la función `load` del objeto `Yaml` para cargar datos YAML desde un archivo o una cadena:
+val contenido = yaml.load(file.inputStream())
 
 ```
-val data = yaml.load("""
-    - name: John
-      age: 30
-    - name: Sarah
-      age: 25
-""")
+
+En este ejemplo, cargamos el contenido de un archivo YAML en un objeto de mapa de Kotlin. Ahora podemos acceder a los valores del mapa utilizando las claves correspondientes:
+
+```Kotlin
+val nombre = contenido["nombre"]
+val edad = contenido["edad"]
+
+println("¡Hola $nombre! Tengo $edad años.")
 ```
 
-Este código creará una lista de objetos `Map` que contienen la información de cada persona. Puedes acceder a los datos de la siguiente manera:
+La salida de este código sería:
 
 ```
-val name = data[0]["name"]  // John
-val age = data[1]["age"]  // 25
+¡Hola María! Tengo 25 años.
 ```
 
-También puedes utilizar la función `dump` para convertir un objeto Kotlin en una cadena YAML:
+## Inmersión profunda
+
+Además de cargar archivos YAML en mapas de Kotlin, también podemos convertir objetos de Kotlin en cadenas YAML utilizando la biblioteca SnakeYAML:
+
+```Kotlin
+class Persona(val nombre: String, val edad: Int)
+
+val persona = Persona("Juan", 30)
+val yaml = Yaml()
+val contenido = yaml.dump(persona)
+
+println(contenido)
+```
+
+La salida de este código sería:
 
 ```
-val person = mapOf("name" to "Mark", "age" to 40)
-val yamlString = yaml.dump(person)
+!!Persona
+nombre: Juan
+edad: 30
 ```
 
-Este código generará la siguiente cadena YAML:
+¡Ahora tienes una idea de lo útil que puede ser YAML en tu trabajo! Pero esto solo es el comienzo, hay muchas más funcionalidades y opciones disponibles. ¡Investiga y sigue aprendiendo para aprovechar al máximo YAML en tu trabajo diario!
 
-```
-name: Mark
-age: 40
-```
+## Véase también
 
-## Profundizando en YAML
-
-Además de cargar y guardar datos YAML, también es posible trabajar con estructuras de datos más complejas, como listas y objetos anidados. Para ello, puedes utilizar la biblioteca `snakeyaml` para mapear estos datos a objetos Kotlin y viceversa.
-
-También es posible personalizar la forma en que se cargan y se guardan los datos YAML mediante el uso de opciones de configuración y anotaciones. Puedes explorar más sobre estas opciones en la documentación de `snakeyaml`.
-
-¡Ahora estás listo para comenzar a trabajar con YAML en tus proyectos de Kotlin!
-
-## Ver también
-
-- Documentación de SnakeYAML: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
-- Ejemplos de YAML en Kotlin: https://github.com/damyanbogoev/yaml-kotlin-examples
+- [Documentación oficial de YAML](https://yaml.org/spec/1.2/spec.html)
+- [Repositorio de la biblioteca SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Home)

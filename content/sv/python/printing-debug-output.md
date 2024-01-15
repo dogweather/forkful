@@ -1,6 +1,7 @@
 ---
-title:                "Python: Utskrift av felsökningsspår"
-simple_title:         "Utskrift av felsökningsspår"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Python: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -9,53 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-Att skriva ut felsökningsutdata, eller "debug output", är en viktig del av programmering. Det kan hjälpa dig att förstå exakt vad som händer i ditt program och identifiera eventuella fel eller problem.
+## Varför
+Debuggning är en viktig del av programmering för att hitta och lösa fel i koden. Genom att skriva ut debuggutdata kan du få en bättre förståelse för din kod och snabbt hitta och åtgärda eventuella problem.
 
 ## Hur man gör
-Att skriva ut felsökningsutdata i Python är enkelt. Du kan använda funktionen "print()" för att skriva ut olika variabler eller meddelanden. Här är ett exempel på koden som skriver ut texten "Hej världen!" till konsolen:
+För att skriva ut debuggutdata i Python, använd print() funktionen. Här är ett enkelt exempel:
 
 ```Python
-print("Hej världen!")
+x = 5
+y = 10
+print("x = ", x)
+print("y = ", y)
+```
+Output:
+```Shell
+x = 5
+y = 10
 ```
 
-Detta kommer att ge följande utdata:
-```
-Hej världen!
-```
-
-Du kan också använda "format()" funktionen för att formatera utdatan på ett mer läsbart sätt. Här är ett exempel på hur man skriver ut en text med variabler i Python:
+För att lägga till mer information i din debuggutdata, kan du använda formatters som %s, %d, %f för att sätta in variabler i strängar. Till exempel:
 
 ```Python
-namn = "Anna"
-ålder = 25
-print("Hej, mitt namn är {} och jag är {} år gammal.".format(namn, ålder))
+name = "Anna"
+age = 25
+print("Hej, mitt namn är %s och jag är %d år gammal." %(name, age))
 ```
-
-Detta kommer att ge följande utdata:
-```
+Output:
+```Shell
 Hej, mitt namn är Anna och jag är 25 år gammal.
 ```
 
-## Djupdykning
-När man skriver ut felsökningsutdata är det viktigt att tänka på vad som är relevant att skriva ut. Om du har många variabler i ditt program så kan det vara en god idé att bara skriva ut de viktigaste för att hålla konsolen ren och lättläst.
-
-Du kan också använda villkorsuttryck för att endast skriva ut utdata när ett visst villkor är uppfyllt. Här är ett exempel på hur man bara skriver ut utdata om ett nummer är större än 10:
+Du kan också använda funktionen repr() för att skriva ut lite mer detaljerad information om variabler, som till exempel listor eller objekt. Till exempel:
 
 ```Python
-num = 15
-if num > 10:
-    print("{} är större än 10".format(num))
+list = [1,2,3]
+print("Lista: " + repr(list))
+```
+Output:
+```Shell
+Lista: [1, 2, 3]
 ```
 
-Detta kommer att ge följande utdata:
-```
-15 är större än 10
+## Djupdykning
+När du börjar använda print() funktionen för debugging, är det viktigt att vara medveten om att du inte vill lämna kvar debuggutdata i din slutliga kod. Detta kan leda till prestandaproblem eller orsaka oavsiktliga utskrifter till användaren.
+
+För att undvika detta kan du använda en debuggflagga som kontrollerar om debuggutdata ska skrivas ut eller inte. Till exempel:
+
+```Python
+debug = True # Sätt till False när koden är klar för produktion
+if debug:
+    print("Debugginfo:")
+    # Din debuggutdata här
 ```
 
-En annan användbar funktion är "logging" som kan hjälpa dig att ordna och filtrera felsökningsutdata. Du kan också använda "try-except" block för att fånga och skriva ut eventuella felmeddelanden.
+En annan viktig aspekt att komma ihåg är att för större projekt kan det vara värt att överväga att använda ett dedikerat debuggsystem som ger dig mer omfattande information och kontroll över din debuggutdata.
 
-# Se även
-- [Python felsökning](https://www.python.org/doc/glossary.html#term-debugging)
-- [Python print() funktionen](https://docs.python.org/3/library/functions.html#print)
-- [Python format() funktionen](https://docs.python.org/3/library/stdtypes.html#str.format)
+## Se även
+- [Python Documentations - print()](https://docs.python.org/3/library/functions.html#print)
+- [RealPython - Python Debugging: Getting Started](https://realpython.com/python-debugging/)
+- [Medium - Debugging in Python: 2020 Edition](https://medium.com/@jasonrigden/a-guide-to-python-debugging-2020-edition-e16e05dc0364)

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "TypeScript recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,47 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Do you ever find yourself needing to save your data in a structured and easily readable format? Look no further, as writing a text file is the solution for you! With just a few lines of code, you can create a text file to store your information in a clear and organized manner.
+Writing a text file in TypeScript can be a useful tool for organizing and storing data, creating documentation, or simply for personal note-taking. It allows for structured and easily readable text that can be accessed and manipulated in various ways.
 
 ## How To
 
-To start, let's create a new TypeScript file. We'll call it "text-file.ts". Next, we'll define a function that will handle writing to our text file. 
+To write a text file in TypeScript, follow these steps:
 
-```
-TypeScript
+1. Import the `fs` module from Node.js, which provides file system operations.
+2. Use the `fs.writeFile()` method to write data to a file, providing the file name, data, and a callback function to handle any errors.
+3. Within the callback function, use the `if(err)` statement to check for errors and log them if they occur.
+4. If there are no errors, log a success message.
+5. Use the `fs.appendFile()` method to add additional data to the file, if desired.
+6. To read the file, use the `fs.readFile()` method and pass in the file name and encoding type (usually `utf-8`).
+7. Within the callback function, use the data parameter to access the contents of the file.
 
-function writeToFile(fileName: string, data: string) {
-    // code to write data to the file
-}
-```
+Here is a code example of writing and reading a text file:
 
-We'll now use the `fs` module to create our text file and write our data to it. 
-
-```
-TypeScript
-
+```TypeScript
 import * as fs from 'fs';
 
-try {
-    // create a new file named "data.txt"
-    fs.writeFileSync("data.txt", "This is some sample data.");
-} catch (error) {
-    console.log("Error creating file: " + error);
-}
-```
+// Writing to a file
+fs.writeFile('myFile.txt', 'This is some example text.', (err) => {
+    // Error handling
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('File successfully written.');
+    }
+});
 
-If all goes well, we should now have a text file named "data.txt" in our project folder, with the given data written inside it. Simple, right?
+// Appending to a file
+fs.appendFile('myFile.txt', '\nHere is some more text.', (err) => {
+    // Error handling
+    if (err) {
+        console.log(err);
+    }
+});
+
+// Reading the file
+fs.readFile('myFile.txt', 'utf-8', (err, data) => {
+    // Error handling
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(data); // Outputs: "This is some example text. \nHere is some more text."
+    }
+});
+```
 
 ## Deep Dive
 
-But let's dive a little deeper into what just happened. The `fs` module, short for file system, is a built-in module in Node.js that allows us to work with files and directories. We used the `writeFileSync()` method from this module to write data to our text file synchronously, meaning our code will wait until the write operation completes before moving on to the next line. 
-
-You can also use `fs.writeFile()` to write data asynchronously, which means our code will continue executing without waiting for the write operation to finish. However, for simplicity's sake, we opted for the synchronous approach in this example.
-
-Additionally, the file we created will be saved in the same directory as our TypeScript file by default. But we can also specify a different file path or even use the `path` module to handle file paths dynamically.
+In addition to the basic functionality of writing and reading a text file, there are various options and methods available to further customize and manipulate the data. These include specifying the file encoding, using the `fs.rename()` method to rename a file, or using the `fs.unlink()` method to delete a file. The `fs.createReadStream()` and `fs.createWriteStream()` methods also provide more control over reading and writing large or binary files.
 
 ## See Also
 
-- Official Node.js documentation on `fs` module: https://nodejs.org/api/fs.html
-- More in-depth tutorial on working with files in TypeScript: https://www.digitalocean.com/community/tutorials/reading-and-writing-files-in-node-js
-- Another blog post on creating text files in TypeScript: https://timdeschryver.dev/blog/write-text-files-with-typescript
+- [Node.js `fs` Module Documentation](https://nodejs.org/api/fs.html)
+- [Node.js `fs` Module Tutorial](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

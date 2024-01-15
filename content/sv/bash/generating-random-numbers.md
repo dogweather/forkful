@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "Bash: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,36 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att generera slumpmässiga nummer är en användbar och rolig funktion i Bash-programmering. Det låter dig skapa en slumpmässig element för spel, skapa testdata, eller helt enkelt för att lägga till variation i dina program. Det är också en bra övning för att förbättra dina programmeringsfärdigheter.
+Du kanske undrar varför man skulle vilja använda slumpmässiga nummer i sitt Bash-program. En anledning kan vara för att skapa variation i ett spel eller för att generera slumpmässiga lösenord.
 
-## Hur man gör
-Först måste du använda kommandot ```shuf``` för att generera slumpmässiga nummer. Detta kommando blandar inmatningsraderna och skriver ut en slumpmässig ordning av dem. Om du använder flaggan ```-i``` kan du ange ett intervall av nummer som ska genereras. Till exempel:
-``` Bash
-shuf -i 1-10
+## Hur man gör det
+För att generera slumpmässiga nummer i Bash kan man använda kommandot "shuf". Det här kommandot är en del av GNU Core Utilities och finns förinstallerat på de flesta Linux-distributioner. Här är ett exempel på hur man kan använda det:
+
+```Bash
+# Genererar ett slumpmässigt heltal mellan 1 och 10
+shuf -i 1-10 -n 1
+
+# Genererar ett slumpmässigt lösenord med 8 tecken från bokstäver, siffror och specialtecken
+shuf -zer -n 8 -e {A..Z} {a..z} {0..9} !"#$%&'()*+,-./:;<=>?@[\]^_{|}~
 ```
-Detta kommer att generera 10 slumpmässiga nummer mellan 1 och 10.
 
-Om du vill generera slumpmässiga tal med decimaler, kan du använda kommandot ```bc``` tillsammans med ```shuf```. Till exempel:
-``` Bash
-shuf -i 5-15 | xargs -I {} echo 'scale=2; {}/10' | bc
-```
-Detta kommer att generera 10 slumpmässiga decimaltal mellan 0,5 och 1,5.
+Kommandot "shuf" tar in flera argument som styr hur de slumpmässiga numrerna ska genereras. I det första exemplet använder vi argumenten "-i 1-10" för att ange att vi vill generera ett tal mellan 1 och 10, och "-n 1" för att endast få en output. I det andra exemplet använder vi argumentet "-n 8" för att få en output med 8 tecken och "-e" för att specificera vilka tecken som ska ingå i lösenordet.
 
-Du kan också använda Bash-variabler för att generera slumpmässiga nummer inuti ett skript. Till exempel:
-``` Bash
-num=$((RANDOM%100))
-echo $num
-```
-Detta kommer att generera ett slumpmässigt heltal mellan 0 och 99.
-
-## Djupdykning
-Det finns olika metoder för att generera slumpmässiga nummer i Bash, men de flesta av dem använder sig av ett pseudoslumpmässigt nummergenerator. Det betyder att resultaten inte är helt slumpmässiga, utan följer en algoritm. För att få mer exakta slumpmässiga nummer, kan du använda tjänster som RANDOM.org som använder verkligt slumpmässiga nummergeneratorer.
-
-Det är också viktigt att komma ihåg att kommandot ```RANDOM``` använder sig av systemets klocka för att generera slumpmässiga tal. Om det inte finns någon klocka eller om klockan är justerad, kan det resultera i icke-slumpmässiga nummer.
-
-Dessutom kan du kombinera flera kommandon för att generera mer komplexa slumpnummer, som till exempel att generera slumpmässiga bokstäver eller ord genom att använda ```shuf``` med alfabetet som inmatning.
+## Djupgående
+Det finns flera sätt att generera slumpmässiga nummer i Bash. Förutom "shuf" kan man också använda kommandot "od" eller "jot". Det går även att använda "$RANDOM" variabeln för att få ett slumpmässigt heltal mellan 0 och 32767. Genom att kombinera dessa olika tekniker kan man skapa mer avancerade sätt att generera slumpmässiga nummer, till exempel genom att välja ut slumpmässiga delar av ett ord eller en fras.
 
 ## Se även
-- [En guide till grundläggande Bash-programmering](https://www.makeuseof.com/tag/bash-script-beginners-guide/)
-- [Bash-dokumentationen](https://www.gnu.org/software/bash/)
-- [Hämta slumpmässiga nummer från RANDOM.org](https://www.random.org/)
+- GNU Core Utilities man-sida för "shuf": https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html
+- "od" man-sida: https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html
+- "jot" man-sida: https://www.freebsd.org/cgi/man.cgi?query=jot&sektion=1

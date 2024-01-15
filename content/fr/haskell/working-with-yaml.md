@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Travailler avec le yaml"
-simple_title:         "Travailler avec le yaml"
+title:                "Travailler avec YAML"
+html_title:           "Haskell: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,84 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur Haskell cherchant à travailler avec des données structurées, il est possible que vous ayez entendu parler de YAML. YAML est un format de données simple et lisible pour les humains, tout en étant facilement interprétable par les machines. Mais pourquoi devriez-vous choisir YAML pour votre prochain projet? Jetons un coup d'œil.
+Si vous travaillez avec des fichiers de configuration ou de données structurées, vous avez probablement déjà entendu parler de YAML. C'est un format de données léger et facile à utiliser qui est devenu populaire dans le développement de logiciels et la gestion de configuration. En utilisant Haskell, vous pouvez facilement travailler avec YAML pour créer, lire et modifier des fichiers de données.
 
 ## Comment faire
 
-Avant de commencer à travailler avec YAML en Haskell, vous devez importer le module `Data.YAML`. Ensuite, vous pouvez utiliser la fonction `encode` pour convertir des données en YAML, et `decode` pour convertir du YAML en données Haskell.
-
-Dans l'exemple suivant, nous définissons une liste de numéros entiers et utilisons `encode` pour les convertir en YAML. Ensuite, nous utilisons `decode` pour convertir le YAML en une liste de valeurs Haskell.
+Tout d'abord, nous devons importer le package `Data.Yaml` dans notre code Haskell. Ensuite, nous pouvons utiliser la fonction `decodeFile` pour lire un fichier YAML et le convertir en un type de données Haskell.
 
 ```Haskell
-import Data.YAML
+import Data.Yaml (decodeFile)
 
-numbers :: [Int]
-numbers = [1, 2, 3, 4, 5]
-
+-- Lecture d'un fichier YAML
 main = do
-  let yml = encode numbers
-  print yml
-  print $ decode yml :: Maybe [Int]
+  config <- decodeFile "/chemin/vers/le/fichier.yaml"
+
+  -- Si la conversion a réussi, nous pouvons accéder aux données
+  case config of 
+    Just conf -> putStrLn $ "Configuration : " ++ show conf
+    Nothing -> putStrLn "Erreur lors de la lecture du fichier YAML"
 ```
 
-La sortie de ce code sera:
+Pour écrire des données dans un fichier YAML, nous pouvons utiliser la fonction `encodeFile` :
 
-```yaml
-- 1
-- 2
-- 3
-- 4
-- 5
+```Haskell
+-- Écriture dans un fichier YAML
+main = do
+  let config = [("nom", "John"), ("age", 30)] -- Données à écrire
+  encodeFile "/chemin/vers/le/fichier.yaml" config
 ```
 
+Il est également possible de travailler avec des données YAML en utilisant une représentation de type personnalisée en Haskell. Par exemple, si nous avons un fichier YAML contenant une liste d'utilisateurs avec des noms et des âges, nous pouvons créer un type de données `Utilisateur` correspondant :
+
+```Haskell
+import Data.Yaml (FromJSON, ToJSON, (.:), (.:?), withObject)
+
+data Utilisateur = Utilisateur 
+  { nom :: String
+  , age :: Int
+  } deriving (Show, Generic)
+
+-- Implémentation des instances FromJSON et ToJSON pour notre type Utilisateur
+instance FromJSON Utilisateur where
+  parseJSON = withObject "utilisateur" $ \u -> do
+    nom <- u .: "nom"
+    age <- u .: "age"
+    return Utilisateur { nom = nom, age = age }
+
+instance ToJSON Utilisateur where
+  toJSON (Utilisateur nom age) = object
+    [ "nom" .= nom
+    , "age" .= age
+    ]
 ```
-Just [1,2,3,4,5]
-```
+
+Maintenant, nous pouvons utiliser `decodeFile` pour lire notre fichier YAML dans une liste de valeurs `Utilisateur`. Nous pouvons également utiliser `encodeFile` pour écrire une liste de `Utilisateur` dans un fichier YAML. Cela peut être particulièrement utile si vous souhaitez manipuler des fichiers de configuration complexes avec des structures de données spécifiques en Haskell.
 
 ## Plongée en profondeur
 
-Il est également possible de traiter des données YAML plus complexes comme des objets et des tableaux imbriqués. Par exemple, supposons que vous ayez un fichier YAML contenant une liste d'utilisateurs avec leurs noms et leurs adresses e-mail. Vous pouvez utiliser `decode` pour le convertir en une liste d'objets Haskell avec les mêmes champs.
+La bibliothèque `Data.Yaml` contient d'autres fonctions utiles pour travailler avec YAML, comme `decode` et `encode` pour convertir des chaînes de caractères en données Haskell et inversement. Elle prend également en charge les types de données, tels que `ByteString` ou `Text`, pour travailler avec des fichiers YAML codés en différentes représentations de chaînes de caractères.
 
-```yaml
-- name: John
-  email: john@example.com
-- name: Kate
-  email: kate@example.com
-```
-
-Voici un exemple de code pour cette situation:
-
-```Haskell
-import Data.YAML
-import Data.Text (Text)
-
-data User = User { name :: Text, email :: Text } deriving (Show)
-
-instance FromYAML User where
-  parseYAML = withMap "User" $ \m -> User <$> m .: "name" <*> m .: "email"
-
-main = do
-  let yml = "- name: John\n  email: john@example.com\n- name: Kate\n  email: kate@example.com"
-  print yml
-  print $ decode yml :: Maybe [User]
-```
-
-La sortie sera:
-
-```yaml
-- name: John
-  email: john@example.com
-- name: Kate
-  email: kate@example.com
-```
-
-```
-Just [ User { name = "John", email = "john@example.com" }, 
-       User { name = "Kate", email = "kate@example.com" } ]
-```
+Il est également possible d'utiliser des options de configuration pour ajuster le comportement de la bibliothèque lors de la conversion de données. Par exemple, vous pouvez spécifier que les champs manquants doivent être ignorés ou que les valeurs `null` doivent être converties en valeurs par défaut dans votre type de données Haskell.
 
 ## Voir aussi
 
-- [Documentation officielle de Data.YAML](https://hackage.haskell.org/package/yaml/docs/Data-YAML.html)
-- [Exemple d'utilisation de YAML en Haskell](https://www.schoolofhaskell.com/user/geraldus/processing-yaml-files-41593)
-- [Fichier YAML pour débutants](https://yaml.org/start.html)
+- [Documentation de la bibliothèque Data.Yaml en Haskell](https://hackage.haskell.org/package/yaml)
+- [Exemple de manipulation de fichiers YAML en Haskell](https://www.stephendiehl.com/posts/yaml.html)
+- [Tutoriel sur l'utilisation de YAML avec Haskell](https://devcenter.heroku.com/articles/haskell-yaml)

@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Att använda reguljära uttryck"
+html_title:           "PHP: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför använda vanliga uttryck (regular expressions)?
+## Varför
+Reguljära uttryck, eller "regular expressions" på engelska, är ett kraftfullt verktyg inom programmering som används för att söka och manipulera textsträngar. Genom att använda reguljära uttryck kan du effektivt hantera stora mängder data och utföra komplicerade sökningar och ersättningar. Det sparar tid och gör din kod mer läsbar och underhållbar.
 
-Vanliga uttryck, även kända som regex, är ett mycket användbart verktyg för programmerare. Genom att använda regex kan man söka igenom text och matcha specifika mönster. Detta kan vara särskilt användbart när man behöver filtrera eller manipulera data från stora textmängder. Det är också ett bekvämt sätt att validera inmatade formulärdata eller uthämta information från webbsidor. 
+## Hur man använder reguljära uttryck i PHP
+För att använda reguljära uttryck i PHP behöver du först förstå syntaxen för dessa uttryck. De består av ett mönster av tecken som matchar en viss textsträng. Du kan sedan använda olika funktioner eller metoder i PHP för att söka, ersätta eller extrahera information från en textsträng baserat på det angivna mönstret.
 
-## Så här använder du vanliga uttryck i PHP
+Ett exempel på ett reguljärt uttryck i PHP är /h[ae]llo/, vilket matchar både "hello" och "hallo". Det här mönstret består av bokstaven "h" följt av antingen "a" eller "e" och sedan "llo". För att använda detta uttryck i PHP skulle du skriva följande kod:
 
-För att använda regex i PHP, behöver man använda inbyggda funktioner som `preg_match()` eller `preg_replace()`. Dessa funktioner tar emot två parametrar: uttrycket man vill matcha och den sträng som man vill söka igenom. Här är ett exempel:
-
-```PHP
-$str = "Hej Swepish readers!";
-if (preg_match("/Swedish/", $str)) {
-  echo "Härligt att ni läser på svenska!";
+```PHP 
+$string = "Hello world!";
+if (preg_match("/h[ae]llo/", $string)) {
+    echo "Match found!";
 } else {
-  echo "Det är aldrig för sent att lära sig!";
+    echo "No match found!";
 }
 ```
 
-Om vi kör detta kodblock kommer vi att få utskriften "Härligt att ni läser på svenska!". I detta exempel så letar vi efter ordet "Swedish" och om det finns i strängen, kommer `preg_match()` att returnera sant och skriva ut det positiva meddelandet.
+I detta fall kommer utmatningen att vara "Match found!", eftersom textsträngen "Hello" matchar mönstret i det reguljära uttrycket.
 
-Om man vill ändra eller ersätta delar av en sträng, kan man använda `preg_replace()` istället:
+## Fördjupning
+Reguljära uttryck kan vara mycket kraftfulla verktyg, men kan också vara komplicerade och förvirrande för nybörjare. Det är viktigt att förstå grunderna, såsom vilka specialtecken som ska användas för att skapa mönster och vilka funktioner som finns tillgängliga för att hantera dem.
 
-```PHP
-$name = "Sara";
-echo preg_replace("/Sara/", "Jenny", $name);
-```
-
-Detta kommer att skriva ut "Jenny" istället för "Sara". Men vad händer om man vill matcha flera mönster? Då kan man använda flera olika modifikatorer i slutet av regex-uttrycket. Till exempel kan man använda `i` för att ignorera skillnader mellan versaler och gemener, `g` för att matcha flera förekomster och `m` för att behandla en flerradig sträng som flera rader.
-
-## Djupdykning i vanliga uttryck
-
-Regex kan vara en djungel av specialtecken och modifikatorer, men det finns många resurser tillgängliga för att hjälpa dig lära dig mer om det. Här är några webbplatser som jag rekommenderar:
-
-- [PHP:s officiella dokumentation om regex](https://www.php.net/manual/en/regexp.reference.php)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
-- [Regex101](https://regex101.com/)
-
-Det är också viktigt att komma ihåg att regex har sina begränsningar och det kan ibland vara bättre att använda andra metoder för att hantera text. Men med rätt kunskap och övning kan regex vara en ovärderlig verktyg i din programmeringsrepertoar.
+Det finns också många användbara resurser för att hjälpa dig lära dig mer om reguljära uttryck i PHP, såsom:
+- [Officiell dokumentation för reguljära uttryck i PHP](https://www.php.net/manual/en/book.pcre.php)
+- [Reguljära uttryck Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [PHP Regular Expression Tester](https://www.regextester.com/php.html)
 
 ## Se även
-
-Här är några andra artiklar som kan vara intressanta för dig:
-
-- [Så här skapar du ett enkelt formulär i PHP](https://www.example.com/formulär-i-php)
-- [Användbara PHP-funktioner för strängmanipulation](https://www.example.com/funktioner-for-strangmanipulation-i-php)
-- [Fem vanliga misstag i PHP och hur man undviker dem](https://www.example.com/vanliga-misstag-i-php)
+Här är några andra relaterade artiklar som kan vara till hjälp:
+- [Grundläggande PHP – En Introduktion](https://www.digitalocean.com/community/tutorials/grundlaggande-om-php-en-introduktion)
+- [Så här arbetar du med strängar i PHP](https://www.digitalocean.com/community/tutorials/hur-man-jobbar-med-strings-i-php)
+- [Att arbeta med regelbundna uttryck i JavaScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-regular-expressions-in-javascript)

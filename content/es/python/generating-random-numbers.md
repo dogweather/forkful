@@ -1,5 +1,6 @@
 ---
-title:                "Python: Generando números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Python: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Python"
 category:             "Python"
@@ -9,44 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios en Python
+## ¿Por qué?
 
-Generar números aleatorios es una técnica fundamental en la programación de Python. Sirve para dar variedad y dinamismo a los programas, así como para realizar pruebas y simulaciones de manera más eficiente.
+Generar números aleatorios es una técnica muy común en programación y puede ser útil en varias situaciones. Puede ser utilizado para pruebas de código, creación de juegos o simulaciones, entre otras cosas. También puede ser una forma divertida de explorar y aprender sobre los conceptos de probabilidad y aleatoriedad en la programación.
 
 ## Cómo hacerlo
 
-Para generar números aleatorios en Python, utilizamos la librería "random". Primero, debemos importarla en nuestro código de la siguiente manera:
+Para generar números aleatorios en Python, podemos utilizar la librería `random`. Primero, necesitamos importarla en nuestro código:
 
 ```Python
 import random
 ```
 
-Una vez importada, podemos utilizar algunas de sus funciones. Por ejemplo, si queremos generar un número entero al azar entre 0 y 100, podemos utilizar la función "randint". El código sería el siguiente:
+Una vez que tenemos la librería, podemos utilizar la función `random()` para generar un número aleatorio decimal entre 0 y 1:
 
 ```Python
-num = random.randint(0, 100)
-print(num)
+numero_aleatorio = random.random()
+print(numero_aleatorio)
 ```
 
-Este código imprimiría un número entero aleatorio entre 0 y 100 en cada ejecución. También podemos generar números decimales utilizando la función "uniform", de la siguiente manera:
+También podemos especificar un rango utilizando las funciones `randint()` o `uniform()`:
 
 ```Python
-num = random.uniform(0, 1)
-print(num)
+# Generar un número aleatorio entre 1 y 10
+numero_entre_1_y_10 = random.randint(1, 10)
+print(numero_entre_1_y_10)
+
+# Generar un número aleatorio decimal entre 1 y 10
+numero_con_decimales = random.uniform(1, 10)
+print(numero_con_decimales)
 ```
 
-En este caso, se imprimirá un número decimal aleatorio entre 0 y 1 en cada ejecución del programa.
+Además, podemos utilizar la función `choice()` para seleccionar un elemento aleatorio de una lista o cadena de texto:
 
-## Profundizando en la generación de números aleatorios
+```Python
+# Seleccionar un nombre aleatorio de una lista
+nombres = ['María', 'Juan', 'Ana', 'Pablo']
+nombre_aleatorio = random.choice(nombres)
+print(nombre_aleatorio)
 
-La librería "random" tiene una amplia variedad de funciones para generar números aleatorios en Python. Podemos especificar un rango diferente de números, así como establecer una semilla para poder repetir la misma secuencia de números aleatorios en diferentes ejecuciones del programa.
+# Seleccionar una letra aleatoria de una cadena
+letra_aleatoria = random.choice('Hola')
+print(letra_aleatoria)
+```
 
-Además, es interesante tener en cuenta que los números aleatorios generados por computadora no son completamente impredecibles, ya que siguen un patrón matemático. Sin embargo, para la mayoría de los propósitos, estos números aleatorios son suficientemente aleatorios.
+## Profundizando
+
+La librería `random` utiliza un algoritmo llamado "Generador de Números Pseudoaleatorios" (PRNG por sus siglas en inglés) para crear secuencias de números aparentemente aleatorios. Estos números no son realmente aleatorios, ya que se generan por computadora, pero siguen un patrón matemático predecible. Esto significa que si volvemos a ejecutar el código, obtendremos los mismos números en el mismo orden.
+
+Para evitar esto, podemos utilizar la función `seed()` para establecer una "semilla" que cambiará la secuencia de números generados en cada ejecución:
+
+```Python
+# Establecer una semilla con el valor "123"
+random.seed(123)
+
+# Generar 5 números aleatorios
+for i in range(5):
+    print(random.random())
+```
+
+Además, podemos utilizar la función `shuffle()` para mezclar los elementos de una lista de manera aleatoria:
+
+```Python
+# Lista desordenada
+numeros = [1, 2, 3, 4, 5]
+print(numeros)
+
+# Mezclar los elementos de la lista
+random.shuffle(numeros)
+print(numeros)
+```
+
+Ahora que sabemos cómo generar números aleatorios en Python, podemos usar esta técnica en nuestros proyectos para hacerlos más interesantes y dinámicos. ¡Experimenta y diviértete con ello!
 
 ## Ver también
 
-- [Documentación oficial de la librería random en Python](https://docs.python.org/es/3/library/random.html)
-- [Tutorial de generación de números aleatorios en Python](https://realpython.com/python-random/)
-- [Ejemplos de uso de la función random en diferentes situaciones](https://www.geeksforgeeks.org/random-module-python/)
-
-¡Ahora que conoces cómo generar números aleatorios en Python, puedes darle más dinamismo a tus programas y realizar simulaciones de manera más eficiente!
+- Documentación oficial de la librería `random` de Python: https://docs.python.org/es/3/library/random.html
+- ¿Cómo generar números aleatorios en otros lenguajes de programación?: https://www.geeksforgeeks.org/random-numbers-in-cc-python-java/

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Working with json"
+title:                "Working with json"
+html_title:           "Gleam recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,43 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-JSON, or JavaScript Object Notation, has become the go-to data interchange format for web development due to its simplicity and versatility. Understanding how to work with JSON in Gleam can greatly enhance your development skills and make your work more efficient.
+## Why
+
+JSON (JavaScript Object Notation) is a popular data format used for storing and exchanging data between different applications. It is a lightweight and human-readable format, making it great for data transmission. Working with JSON in a programming language like Gleam allows you to easily manipulate and extract data, making it a valuable skill for any developer.
 
 ## How To
-Working with JSON in Gleam is straightforward and can be done using the `gleam/json` library. Let's take a look at some coding examples to see how it works.
 
-First, we will need to import the `json` module from the `gleam/json` library. This module provides functions for encoding and decoding JSON.
+To work with JSON in Gleam, you will first need to create a new Gleam project or open an existing one. Then follow these simple steps:
+
+1. Import the JSON library by adding `json = "0.18.0"` to the `deps` section of your `gleam.toml` file.
+2. In your code, use `import json` to import the JSON library.
+3. To decode a JSON string into a Gleam type, use the `json.parse` function.
+4. To encode a Gleam type into a JSON string, use the `json.encode` function.
+
+Here's an example of decoding a JSON string and accessing its fields:
 
 ```Gleam
-import gleam/json/json
+import json
+import gleam/expect
 
-// Define a type for our JSON data 
-type User {
-    name: String,
-    age: Int,
-    hobby: String
-}
+let data = """{
+  "name": "John",
+  "age": 30
+}"""
 
-// Encode our data into JSON format 
-let user = User{name: "John", age: 25, hobby: "Coding"}
-let encoded_user = json.encode(user)
-// Output: {"name":"John","age":25,"hobby":"Coding"}
-
-// Decode a JSON string into a specific type 
-let json_string = "{\"name\":\"Mary\",\"age\":30,\"hobby\":\"Gardening\"}"
-let decoded_user = json.decode(json_string, User)
-// Output: User{name: "Mary", age: 30, hobby: "Gardening"}
+let decoded = json.parse(data)
+let name = expect.Ok(decoded.name) // "John"
+let age = expect.Ok(decoded.age) // 30
 ```
 
-As we can see, using the `gleam/json` library, we can easily encode and decode data into JSON format. This makes it easy to send and receive data from external services and APIs.
+And here's an example of encoding a Gleam type into a JSON string:
+
+```Gleam
+import json
+
+type Person {
+  name: String,
+  age: Int
+}
+
+let john = Person("John", 30)
+let encoded = json.encode(john) // "{\"name\":\"John\",\"age\":30}"
+```
 
 ## Deep Dive
-In Gleam, working with JSON is made even easier with the use of record types. Record types allow us to define a structure for our data, making it clearer and more organized.
 
-Additionally, in the `json` module, there are also functions for handling more complex JSON structures, such as arrays and nested objects. These functions make it easier to access and manipulate specific data within a JSON string.
+There are a few things to keep in mind when working with JSON in Gleam:
+
+- Gleam's type system is strict, which means it will not automatically convert between different types. This means you will need to use helper functions such as `String.to_int` and `Int.to_string` when working with JSON data.
+- When decoding JSON strings, the `json.parse` function will return a result type, `Result(Error, T)`, where `T` is the decoded Gleam type. You can use the `expect` module to handle error cases and extract the decoded data.
+- When encoding Gleam types into JSON strings, the `json.encode` function will take any type that implements the `json.Encode` protocol. This includes built-in types like strings, integers, and lists, as well as custom types that you define.
+
+Now that you have a basic understanding of working with JSON in Gleam, you can explore more complex scenarios and see how you can leverage the `json` library to make your code more efficient and readable.
 
 ## See Also
-For more information on working with JSON in Gleam, check out the official documentation: 
-- [Gleam - JSON module](https://gleam.run/modules/gleam/json/latest/api/)
-- [Using JSON in Gleam - Guide](https://gleam.run/articles/using-json-in-gleam.html)
+
+- Official Gleam documentation on working with JSON: https://gleam.run/book/tour/json.html
+- The `json` library on GitHub: https://github.com/gleam-lang/gleam/blob/master/lib/json/README.md

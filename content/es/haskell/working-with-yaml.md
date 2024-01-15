@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Haskell: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,61 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué: Trabajando con YAML en Haskell
+## ¿Por qué trabajar con YAML?
 
-Antes de adentrarnos en cómo trabajar con YAML en Haskell, es importante entender por qué alguien querría hacerlo. YAML es un lenguaje de serialización de datos basado en texto que se utiliza para almacenar y transmitir información de manera legible para los humanos. Es una forma eficiente y fácil de manejar grandes cantidades de datos estructurados, y su integración con Haskell lo hace aún más poderoso y versátil.
+YAML (YAML Ain't Markup Language) es un formato de serialización de datos legible por humanos, que se utiliza comúnmente para la configuración y almacenamiento de información en aplicaciones y sistemas. Al ser fácil de leer y escribir, YAML se ha vuelto popular entre los desarrolladores para trabajar con datos estructurados de manera eficiente.
 
-## Cómo hacerlo: Ejemplos de código y salida de muestra
+## Cómo hacerlo
 
-Para comenzar a trabajar con YAML en Haskell, primero debemos importar el módulo de YAML correspondiente. A continuación, podemos utilizar la función `decodeFile` para leer un archivo YAML y convertirlo en una estructura de datos de Haskell. Por ejemplo, si tenemos un archivo llamado `datos.yaml` con el siguiente contenido:
-
-```Haskell
-nombre: John
-apellido: Doe
-edad: 30
-```
-
-Podemos leerlo y almacenarlo en una variable llamada `persona` de la siguiente manera:
+Para trabajar con YAML en Haskell, primero es necesario importar el módulo YAML utilizando la función `import`:
 
 ```Haskell
 import Data.Yaml
-
-persona <- decodeFile "datos.yaml" :: IO (Maybe (String, String, Int))
 ```
 
-El tipo de `persona` será `Maybe (String, String, Int)` ya que el archivo podría no existir o no estar formateado correctamente. Para acceder a los valores individuales, podemos utilizar el operador `>>=` y una función anónima, como se muestra a continuación:
+Luego, se puede cargar un archivo YAML utilizando la función `decodeFile`:
 
 ```Haskell
-persona >>= \(nombre, apellido, edad) -> print (nombre ++ " " ++ apellido ++ " tiene " ++ show edad ++ " años")
+decodeFile :: FromJSON a => FilePath -> IO (Maybe a)
 ```
 
-Esto imprimirá por pantalla "John Doe tiene 30 años" si el archivo se leyó correctamente. También podemos convertir estructuras de datos de Haskell en YAML utilizando la función `encode`:
+Esta función devuelve una estructura de datos de tipo `Maybe` que contiene una instancia de la clase `FromJSON` que puede ser utilizada para acceder y manipular los datos cargados del archivo YAML.
+
+Para guardar una estructura de datos en un archivo YAML, se puede utilizar la función `encodeFile`:
 
 ```Haskell
-ejemplo <- return ("Hola", [1,2,3], 5.5) :: IO (String, [Int], Float)
-encode ejemplo >>= putStrLn
+encodeFile :: ToJSON a => FilePath -> a -> IO ()
 ```
 
-Esto imprimirá por pantalla:
+Esta función toma una estructura de datos de tipo `ToJSON` y la convierte en un archivo YAML que se puede guardar en el sistema de archivos.
 
-```Haskell
-"Hola":
-- 1
-- 2
-- 3
-5.5
-```
+## Profundizando
 
-## Profundizando: Trabajando con YAML en mayor detalle
+Además de la carga y guardar de archivos YAML, el módulo YAML en Haskell también ofrece funciones para manipular y transformar datos estructurados. Por ejemplo, se puede utilizar la función `(.:?)` para acceder a los valores de un objeto YAML de manera segura o la función `(.!=)` para proporcionar un valor predeterminado en caso de que no se encuentre un valor en el objeto.
 
-Además de las funciones básicas para leer y escribir archivos YAML en Haskell, también hay muchas otras opciones y características disponibles para trabajar con este formato de datos. Por ejemplo, es posible representar tipos de datos personalizados utilizando la extensión `DeriveGeneric` y la instancia `ToJSON` y `FromJSON`.
-
-También existen diferentes opciones para personalizar el análisis y la generación de YAML, como especificar el estilo de la sintaxis o definir un esquema de validación. El módulo de YAML en Haskell proporciona una documentación detallada y ejemplos para ayudar a los desarrolladores a aprovechar al máximo esta herramienta.
-
-Para aquellos que deseen profundizar aún más, también pueden explorar la implementación del módulo de YAML en Haskell y contribuir a su desarrollo en GitHub.
+Para obtener más información y ejemplos de cómo trabajar con YAML en Haskell, se recomienda revisar la documentación oficial del módulo [Data.Yaml](https://hackage.haskell.org/package/yaml/docs/Data-Yaml.html).
 
 ## Ver también
 
-- [Documentación oficial de Data.Yaml](https://hackage.haskell.org/package/yaml)
-- [Ejemplos de uso de YAML en Haskell](https://github.com/bos/yaml/tree/master/examples)
-- [Código fuente del módulo YAML en Haskell](https://github.com/bos/yaml)
+- [Introducción a YAML](https://es.wikipedia.org/wiki/YAML)
+- [Documentación oficial de Hackage sobre el módulo Data.Yaml](https://hackage.haskell.org/package/yaml/docs/Data-Yaml.html)

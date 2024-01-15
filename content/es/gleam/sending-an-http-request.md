@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Gleam: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,52 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué enviar una solicitud HTTP en Gleam?
 
-Enviar una solicitud HTTP es una tarea común en la programación moderna. A menudo, se utiliza para comunicarse con servidores web y obtener información o realizar acciones en línea. En Gleam, esta tarea se puede realizar de forma eficiente utilizando el módulo `gleam/http`.
+Hay muchas razones por las que podría querer enviar una solicitud HTTP en Gleam. Algunos ejemplos podrían ser para obtener datos de una API, enviar información del usuario a un servidor o realizar acciones en una aplicación web.
 
 ## Cómo hacerlo
 
-Primero, debemos importar el módulo `gleam/http` en nuestro archivo Gleam:
+Aquí hay un ejemplo de cómo enviar una solicitud GET en Gleam y obtener los datos de una API:
 
 ```Gleam
-import gleam/http
+import http
+import gleam/json
+
+let res =
+  http.get("https://ejemplo/api/?id=1")
+  |> http.send()
+
+let body = res.body
 ```
 
-Luego, podemos enviar una solicitud GET utilizando la función `get` de este módulo. Por ejemplo, si queremos obtener el contenido HTML de un sitio web, podemos hacer lo siguiente:
+La variable `res` contiene toda la respuesta de la solicitud, incluyendo el cuerpo de la respuesta, las cabeceras y el código de estado. Luego podemos usar el módulo `gleam/json` para analizar el cuerpo de la respuesta y obtener los datos en un formato útil.
+
+También es posible enviar solicitudes POST y enviar datos junto con la solicitud. Aquí hay un ejemplo de cómo enviar una solicitud POST con datos en formato JSON:
 
 ```Gleam
-let resultado = http.get("https://www.ejemplo.com/")
+import http
+import gleam/json
+
+let data = json.encode([{"name": "Juan", "age": 25}])
+let res =
+  http.post("https://ejemplo/api/users")
+  |> http.add_header("Content-Type", "application/json")
+  |> http.set_body(data)
+  |> http.send()
+
+let body = res.body
 ```
+El código anterior crea una solicitud POST con un encabezado de tipo de contenido de `application/json` y el cuerpo de la solicitud es el objeto `data` convertido en formato JSON. Luego se envía la solicitud y se obtiene la respuesta.
 
-El resultado de esta función será un tipo de dato `Result`, que puede ser `Ok` si la solicitud fue exitosa o `Error` si ocurrió algún problema. Podemos usar un `case` statement para manejar ambos casos de manera adecuada:
+## Inmersión profunda
 
-```Gleam
-case resultado {
-  Ok(respuesta) -> respuesta.body
-  Error(error) -> panic(error)
-}
-```
+Sending HTTP requests in Gleam is made possible by using the `http` module. This module provides functions for creating and managing HTTP requests, including methods for adding headers, setting the body, and sending the request. It also has functions for managing the response, such as accessing the body and headers.
 
-En el caso de `Ok`, podemos acceder al cuerpo de la respuesta utilizando el campo `body`. Y en el caso de `Error`, simplemente imprimimos el error con la función `panic` para mostrarlo en la consola. 
+Behind the scenes, the `http` module uses the underlying `httpc` Erlang library to handle the actual communication with the server. This means that Gleam has a powerful and reliable foundation for handling HTTP requests.
 
-También podemos enviar una solicitud POST utilizando la función `post` del módulo `gleam/http`. Supongamos que queremos enviar un formulario a un servidor y obtener una respuesta. Podemos hacer lo siguiente:
+# Ver también
 
-```Gleam
-let cuerpo = http.request_body(
-  [("nombre", "Juan"), ("apellido", "Pérez")]
-)
-let resultado = http.post("https://www.ejemplo.com/submit_form/", cuerpo)
-```
-
-Aquí estamos utilizando la función `request_body` para crear un cuerpo de solicitud con una lista de claves y valores. Luego, enviamos esta solicitud utilizando `post` y procedemos a manejar los resultados de la misma de la misma manera que en el ejemplo anterior.
-
-## Profundizando
-
-El módulo `gleam/http` ofrece muchas más funciones y opciones para enviar solicitudes HTTP. Podemos especificar encabezados, manejar cookies, autenticación y más. Para obtener más información y ejemplos, podemos consultar la documentación oficial en [https://gleam.run/modules/http.html](https://gleam.run/modules/http.html).
-
-## Ver también
-
-- [Documentación oficial de Gleam](https://gleam.run/)
-- [Módulo HTTP de Gleam](https://gleam.run/modules/http.html)
-- [Tutorial de introducción a Gleam (en español)](https://codigofacilito.com/articulos/tutorial-introductorio-gleam-lenguaje-functional)
+- Documentación oficial para el módulo `http` en Gleam: https://gleam.run/modules/http.html
+- Tutorial sobre cómo trabajar con datos JSON en Gleam: https://gleam.run/tutorials/json.html
+- Ejemplos de código en Gleam: https://github.com/gleam-lang/gleam/tree/master/examples

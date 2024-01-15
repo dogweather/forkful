@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med csv"
+html_title:           "Javascript: Arbeid med csv"
+simple_title:         "Arbeid med csv"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Hvis du jobber med data, spesielt store mengder data, er det sannsynligvis at du har hørt om CSV-filer. CSV står for "Comma Separated Values" og er en vanlig måte å lagre og utveksle data på. Men hvorfor ville du som programmerer, ønske å involvere deg med CSV?
-
-En av hovedgrunnene er at CSV er en enkel og effektiv måte å strukturere og organisere data på. Det er en tekstbasert fil som lagrer data i form av rader og kolonner, og kan enkelt leses og manipuleres av dataprogrammer. Dette gjør det til et ideelt format for å importere og eksportere data til og fra forskjellige programmer og systemer.
+Hvorfor skulle noen ønske å jobbe med CSV-formatet? Vel, dette formatet er enkelt å forstå og brukes ofte til å lagre og dele data. Det er også utbredt innenfor webutvikling og kan være svært nyttig for å håndtere store datasett.
 
 ## Slik gjør du det
-
-Hvis du vil jobbe med CSV-filer i Javascript, er det flere måter å gjøre det på. En enkel måte er å bruke et bibliotek som heter "csv-parse", som tillater deg å lese og manipulere CSV-filer ved hjelp av Javascript-kode.
-
-La oss si at vi har en CSV-fil kalt "personer.csv" som inneholder informasjon om personer som:
-
-| Navn  | Alder | Kjønn |
-| ------| ----- | ------|
-| Mari  | 25    | Kvinne|
-| Per   | 30    | Mann  |
-| Kari  | 20    | Kvinne|
-
-Vi kan bruke csv-parse for å lese denne filen og utføre forskjellige operasjoner på dataene. For eksempel kan vi skrive ut alle kvinnelige personer fra filen ved å bruke følgende kode:
+Å arbeide med CSV i Javascript er enkelt og krever bare noen få linjer med kode. Først må vi laste inn et bibliotek, for eksempel "csv-parser", ved hjelp av npm. Deretter kan vi begynne å bruke funksjonene til dette biblioteket:
 
 ```Javascript
-const parser = require('csv-parse');
+const csv = require('csv-parser');
 const fs = require('fs');
 
-fs.createReadStream('personer.csv')
-  .pipe(parser({ delimiter: ',' }))
+fs.createReadStream('data.csv')
+  .pipe(csv())
   .on('data', (row) => {
-    // Sjekker om personen er en kvinne
-    if (row[2] === 'Kvinne') {
-      console.log(`${row[0]} er en kvinne på ${row[1]} år`);
-    }
+    // Gjør noe med hver rad i CSV-filen
+    console.log(row);
+  })
+  .on('end', () => {
+    // Ferdig!
+    console.log('Lesing av CSV-fil fullført.');
   });
 ```
 
-Denne koden vil skrive ut følgende:
-
-```
-Mari er en kvinne på 25 år
-Kari er en kvinne på 20 år
-```
-
-Vi kan også bruke csv-parse for å konvertere CSV-dataene til JSON-format, noe som kan være nyttig hvis vi trenger å arbeide med dataene i et annet programmeringsspråk eller format.
+Med denne koden leser vi innholdet i en CSV-fil og utfører en handling på hver rad. Vi kan også bruke andre funksjoner fra "csv-parser" for å filtrere, sortere eller endre dataene i filen.
 
 ## Dypdykk
+Nå som vi har fått en enkel forståelse for å arbeide med CSV-filer i Javascript, kan vi gå dypere inn i dette formatet. CSV står for "Comma Separated Values" og er en måte å organisere og lagre data på. Hver rad i en CSV-fil representerer en rekke data-verdier, og hver verdi er adskilt med et komma.
 
-Det er viktig å merke seg at CSV-filer kan ha forskjellige formater og spesifikasjoner, og det er viktig å forstå disse for å kunne jobbe effektivt med dem. For eksempel kan noen CSV-filer bruke forskjellige separatorer som semikolon eller tabulator istedenfor komma. Det er også viktig å være oppmerksom på eventuelle spesielle tegn eller escape-karakterer som kan være tilstede i filen.
-
-En annen ting å huske på er at CSV-filer kan inneholde store datamengder, og det kan være en utfordring å håndtere disse effektivt. Det kan være lurt å begrense antall rader som blir lest og behandlet på en gang, spesielt hvis du jobber med en svært stor fil.
+Selv om CSV kan virke ganske enkelt, er det noen fallgruver å se opp for. For eksempel kan det være vanskelig å håndtere data som inneholder komma eller linjeskift, og noen ganger må vi bruke spesifikke kodingssystemer for å sikre at dataene våre er riktig representert.
 
 ## Se også
-
-- [csv-parse dokumentasjon](https://csv.js.org/parse/)
-- [Viktigheten av å forstå forskjellige CSV-formater](https://www.educba.com/csv-file-formats/)
-- [Behandling av store datamengder effektivt](https://www.toptal.com/big-data/handling-large-datasets-efficiently)
+- [csv-parser pakken på npm](https://www.npmjs.com/package/csv-parser)
+- [Offisiell CSV-nettside](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [En enkel guide for å jobbe med CSV-filer i Javascript](https://www.syncfusion.com/blogs/post/working-with-csv-files-using-javascript.aspx)

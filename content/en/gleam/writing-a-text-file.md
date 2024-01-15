@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Writing a text file"
+title:                "Writing a text file"
+html_title:           "Gleam recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,44 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing text files is an essential skill for any developer, as it allows you to store and manipulate data in a simple and portable format. Whether you're building a web application or automating tasks, understanding how to write text files can greatly enhance your programming capabilities.
+Writing a text file is an essential task for any developer. It allows you to easily store and transfer data, making it a crucial part of many programming projects.
 
 ## How To
 
-To write a text file in Gleam, you will first need to create a file type definition. This will specify the layout of your text file and the types of data it will contain. For example, if you want to store a list of names, you would define a file type with a `String` field.
+To write a text file in Gleam, the first step is to import the `gleam/io` module. This will give us access to the necessary functions. Here's an example of how you can create and write to a file:
 
-```Gleam
-type MyTextFile {
-  name: String
+```
+import gleam/io
+
+fn main() {
+  let file = gleam/io.file("my_file.txt")
+  write_to_file(file, "Hello, world!")
 }
 ```
 
-Next, you will need to create a function that will write the data to your file. This can be done using the `File.open` function, which takes in the name of the file you want to create and a `File.Mode` which specifies if you want to create a new file or overwrite an existing one. You can then write your data using the `File.write` function.
+In the above code, we first create a file named "my_file.txt" and then write the string "Hello, world!" to it using the `write_to_file` function. This function takes in the file we created and the data we want to write as arguments.
 
-```Gleam
-let names = ["John", "Jane", "Bob"]
-let result = File.open("names.txt", File.Write).map(fn(file _) {
-  File.write(file, names[0])
-})
+You can also use Gleam's built-in string interpolation to easily write data to a file. Here's an example:
+
+```
+import gleam/io
+
+fn main() {
+  let name = "John"
+  let file = gleam/io.file("hello.txt")
+  write_to_file(file, "Hello, {name}!")
+}
 ```
 
-This will create a new file called `names.txt` and write the name "John" to it. If you want to write all the names in your list, you can use a loop or the `File.write_all` function.
-
-```Gleam
-let names = ["John", "Jane", "Bob"]
-let result = File.open("names.txt", File.Write).map(fn(file _) {
-  File.write_all(file, names)
-})
-```
+In the above code, we use the `write_to_file` function to write "Hello, John!" to the file "hello.txt". As you can see, using string interpolation makes it much easier to write dynamic data to a file.
 
 ## Deep Dive
 
-There are many other ways to customize and manipulate your text file in Gleam. For example, you can specify the encoding of your file using the `File.Encoding` type, or append data to an existing file using `File.Append`. You can also use the `File.close` function to close the file after writing to it, ensuring that it is saved properly.
+When writing a text file in Gleam, you have the option to specify the encoding of the file using the `Encoding` type. This is useful if you want to support different character sets, such as UTF-8 or ASCII. By default, Gleam will use UTF-8 encoding.
 
-It's important to note that writing to text files in Gleam is a side-effecting operation, meaning that it changes the state of your system. In order to maintain functional purity, it's best to handle errors and results using the `Result` type.
+You can also specify the file mode when creating a file using the `Mode` type. This allows you to control whether the file is opened for reading, writing, or both. By default, Gleam will open the file for reading and writing.
+
+Lastly, you can use the `write_line_to_file` function to write data to a file and automatically add a new line at the end. This is useful if you want to write data to a file in a structured format, such as CSV.
 
 ## See Also
 
-- [Gleam official documentation](https://gleam.run/documentation/)
-- [Writing Data to Files in Gleam](https://medium.com/gleam-blog/writing-data-to-files-in-gleam-5004b34fdd4a)
-- [Manipulating Text Files in Gleam](https://blog.cloudless.studio/posts/manipulating-text-files-in-gleam/)
+- [Gleam documentation on writing files](https://gleam.run/book/tour/files.html)
+- [Official Gleam website](https://gleam.run/)
+- [Gleam on GitHub](https://github.com/gleam-lang/gleam)

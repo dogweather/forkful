@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczynając nowy projekt"
+html_title:           "Ruby: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -9,33 +10,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Dlacz: Dlaczego zacząć nowy projekt w języku Ruby?
-
-Ruby jest jednym z najpopularniejszych języków programowania na świecie, a jego popularność stale rośnie. Jego prostota i wyraźna składnia sprawiają, że jest on idealny zarówno dla początkujących, jak i doświadczonych programistów. Tworząc nowy projekt w języku Ruby, możesz cieszyć się jego elastycznością, czytelnością i wydajnością.
-
-Jak to zrobić:
-
-```Ruby
-def hello(name)
-  puts "Witaj, #{name}!"
-end
-
-hello("Polonais") # Wynik: Witaj, Polonais!
-```
-
-Powyższy przykład kodu pokazuje, jak niewiele wysiłku wymaga napisanie prostego programu w języku Ruby. Wystarczy określić nazwę funkcji, jej parametry i zaprogramować pożądane działanie. Język ten jest również bogaty w gotowe biblioteki i frameworki, co umożliwia szybkie tworzenie nowych projektów.
-
-Głęboka analiza:
-
-Początki pracy nad nowym projektem mogą być przytłaczające. Aby ułatwić sobie życie i uniknąć problemów w przyszłości, warto przeprowadzić głębszą analizę przed przystąpieniem do kodowania. Oto kilka ważnych kroków, które warto wykonać:
-
-- Zdefiniuj cel projektu i jego zakres. Niezbędne jest określenie, czego dokładnie chcesz osiągnąć, aby mieć jasny kierunek podczas tworzenia kodu.
-- Wybierz odpowiednie narzędzia i biblioteki. Dobór odpowiednich narzędzi i bibliotek jest kluczowy dla osiągnięcia sukcesu w projekcie. Upewnij się, że wybierasz te, które najlepiej odpowiadają twoim potrzebom.
-- Stwórz plan działania. To ważne, aby mieć jasny plan, jakie kroki należy podjąć w celu osiągnięcia celu projektu. Skupienie na jednym zadaniu na raz może pomóc uniknąć chaosu i przyspieszyć pracę.
-- Testuj i udoskonalaj. Nie zapominaj o testowaniu swojego kodu i regularnym wprowadzaniu ulepszeń. To pozwoli uniknąć błędów i poprawić wydajność projektu.
-
-Zobacz także:
-
-- 10 najlepszych darmowych kursów nauki języka Ruby: polecamy najbardziej wartościowe materiały, które pomogą ci szybko rozpocząć pracę nad nowym projektem w języku Ruby.
-- Strona oficjalna języka Ruby: tutaj znajdziesz wszystkie niezbędne informacje na temat samego języka, jego dokumentacji, aktualnej wersji i wiele więcej.
-- Ruby on Rails: popularny framework do tworzenia aplikacji internetowych w języku Ruby. Jeśli tworzysz projekt związaną z siecią, warto zapoznać się z tą platformą.
+## Dlaczego Jeśli jesteś programistą lub entuzjastą technologii, rozpoczęcie nowego projektu w Ruby jest świetnym sposobem na rozwijanie swoich umiejętności i pogłębianie wiedzy o tym języku programowania. Podczas gdy Ruby jest doskonały dla tworzenia aplikacji internetowych i automatyzacji zadań, może być również używany do wielu innych celów. Jeśli więc szukasz nowego wyzwania lub chcesz przenieść swoją wiedzę na wyższy poziom, rozważ rozpoczęcie nowego projektu w Ruby.## Jak to zrobić```Rubyputs "Witaj, świecie!"```Przygotowanie środowiska: Aby rozpocząć projekt w Ruby, musisz najpierw zainstalować Ruby oraz narzędzie do zarządzania wersjami jak RVM lub rbenv. Następnie, aby utworzyć nowy projekt Ruby, możesz użyć polecenia "ruby new" w terminalu. Po utworzeniu projektu, możesz rozpocząć pisanie kodu w plikach Ruby z rozszerzeniem ".rb" i uruchamiać go za pomocą polecenia "ruby nazwa_pliku.rb". ## Głębsze zgłębienieTworzenie projektu: Podczas tworzenia nowego projektu w Ruby, można skorzystać z różnych bibliotek i frameworków, które ułatwią pracę i przyspieszą tworzenie aplikacji. Ruby on Rails jest najpopularniejszym i najczęściej używanym frameworkiem w świecie Ruby, dzięki któremu można szybko zbudować wszechstronną aplikację internetową. Możesz również użyć innych bibliotek, takich jak Sinatra dla szybszych projektów lub Grape do tworzenia REST API. Pamiętaj, że przy tworzeniu projektu w Ruby ważne jest zastosowanie dobrych praktyk programistycznych, takich jak MVC (Model-View-Controller) czy TDD (Test-Driven Development). ## Zobacz również- [Oficjalna strona Ruby](https://www.ruby-lang.org/pl/)- [Dokumentacja Ruby on Rails](https://guides.rubyonrails.org/)- [Kurs Ruby w Codecademy](https://www.codecademy.com/learn/learn-ruby)

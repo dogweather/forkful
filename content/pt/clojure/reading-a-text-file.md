@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Lendo um arquivo de texto"
+title:                "Lendo um arquivo de texto"
+html_title:           "Clojure: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto em Clojure?
+## Por que
+Ler arquivos de texto é uma tarefa comum em programação e pode ser útil em várias situações, como processamento de dados, criação de relatórios e leitura de configurações. Com o Clojure, essa tarefa pode ser realizada de forma simples e eficiente.
 
-Ler e manipular arquivos de texto é uma tarefa comum em muitos projetos de software. Em Clojure, essa tarefa é simples e eficiente, permitindo que desenvolvedores possam facilmente trabalhar com dados armazenados em arquivos. 
-
-## Como fazer?
+## Como Fazer
+A leitura de arquivos de texto no Clojure é feita usando a função `slurp`. Essa função recebe como parâmetro o caminho para o arquivo e retorna o conteúdo do arquivo em forma de uma string. Por exemplo, para ler o conteúdo de um arquivo chamado "arquivo.txt" e exibir no console, podemos usar o seguinte código:
 
 ```Clojure
-;; Primeiro, precisamos importar a biblioteca "java.io"
-(import java.io) 
-
-;; Em seguida, podemos utilizar a função "slurp" para ler o conteúdo de um arquivo.
-(def texto (slurp "arquivo.txt")) 
-
-;; Para imprimir esse texto na tela, podemos usar a função "println"
-(println texto) 
-
-;; Se quisermos armazenar as linhas do arquivo em uma lista, podemos usar a função "line-seq" e a função "map"
-(def linhas (map read-line (line-seq "arquivo.txt"))) 
-
-;; Podemos utilizar a função "count" para saber quantas linhas foram lidas
-(println (count linhas)) 
-
-;; Para escrever em um arquivo, podemos utilizar a função "spit"
-(def novo-texto "Novo texto para ser escrito no arquivo")
-(spit "arquivo.txt" novo-texto)
+(def texto (slurp "arquivo.txt"))
+(println texto)
 ```
 
-## Aprofundando-se
+Esse código irá imprimir todo o conteúdo do arquivo na tela. No entanto, se o arquivo for grande, pode ser mais útil ler o arquivo linha por linha. Para isso, podemos usar a função `line-seq`, que retorna uma sequência com as linhas do arquivo. Veja o exemplo abaixo:
 
-A biblioteca "java.io" oferece várias funções úteis para trabalhar com arquivos de texto em Clojure. Além disso, com a ajuda da função "map", é possível aplicar transformações nos dados lidos do arquivo de forma eficiente. Também é importante lembrar de fechar o arquivo após a leitura ou escrita, utilizando a função "close".
+```Clojure
+(def linhas (line-seq (clojure.java.io/reader "arquivo.txt")))
+(doseq [linha linhas]
+  (println linha))
+```
 
-## Veja também
+Note que nesse exemplo usamos a função `clojure.java.io/reader` para abrir o arquivo e obter um objeto leitor, que é passado como parâmetro para a função `line-seq`. Depois, usamos a função `doseq` para percorrer a sequência de linhas e imprimir uma a uma no console.
 
-- Documentação do Clojure: https://clojure.org/
-- Biblioteca "java.io": https://clojure.github.io/clojure/clojure.java.io-api.html
-- Funções para manipular coleções em Clojure: https://clojure.org/reference/sequences
+## Deep Dive
+É importante ter em mente algumas considerações ao ler arquivos de texto no Clojure. Em primeiro lugar, a função `slurp` carrega todo o conteúdo do arquivo na memória, o que pode ser um problema com arquivos grandes. Nesse caso, é mais recomendável usar a função `line-seq` para ler linha por linha, evitando assim o carregamento completo do arquivo na memória.
+
+Além disso, é importante prestar atenção ao formato do arquivo de texto. Se o arquivo estiver codificado em algum formato diferente do padrão UTF-8, podemos usar a função `with-open` para especificar o formato ao abrir o arquivo. Por exemplo:
+
+```Clojure
+(with-open [reader (clojure.java.io/reader "arquivo.txt" :encoding "ASCII")]
+  (doseq [linha (line-seq reader)]
+    (println linha)))
+```
+
+Nesse caso, estamos abrindo o arquivo especificando o formato `ASCII` e depois lendo linha por linha usando a função `line-seq`.
+
+## Veja Também
+- Documentação oficial sobre a função `slurp`: https://clojuredocs.org/clojure.core/slurp
+- Documentação oficial sobre a função `line-seq`: https://clojuredocs.org/clojure.core/line-seq
+- Artigo sobre leitura de arquivos no Clojure: https://www.baeldung.com/clojure-read-file

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Rust: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么获取当前日期
+## 为什么要获取当前日期
 
-Rust是一种功能强大且现代的编程语言，它已经在软件开发领域受到了广泛的关注。其中一个Rust的重要应用就是处理日期和时间的操作，获取当前日期也是其中之一。在本篇博客文章中，我们将会探讨为什么要获取当前日期，以及如何用Rust来实现这一操作。
+日期是我们日常生活中不可或缺的一部分，它帮助我们记录时间、安排日程和保持组织。在编程中，获取当前日期也是非常重要的，它可以用于日志记录、数据分析、定时任务等多种场景。Rust提供了简单易用的函数来获取当前日期，让我们一起来看看如何实现吧！
 
 ## 如何获取当前日期
 
-要在Rust中获取当前日期，我们需要使用标准库中的`chrono`模块。首先，我们需要在代码中引入该模块：
+首先，我们需要在代码中导入日期相关的模块，例如 `time` 模块和 `DateTime` 结构体。
 
 ```Rust
-use chrono::{Local, Date};
+use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::{DateTime, Utc};
 ```
 
-接着，我们可以用`Local::today()`来获取当天的日期，并将其存储在一个变量中：
+然后，我们可以使用 `now()` 方法来获取当前日期和时间，并将其存储在 `DateTime` 结构体中。
 
 ```Rust
-let today: Date<Local> = Local::today();
+let now = DateTime::from(SystemTime::now());
 ```
 
-我们也可以获取年、月、日等具体的日期信息：
+最后，我们可以使用 `to_string()` 方法将日期转换为字符串格式，并打印出来。
 
 ```Rust
-let year = today.year();
-let month = today.month();
-let day = today.day();
+println!("当前日期：{}", now.to_string());
 ```
 
-最后，我们可以将日期信息打印出来，看看结果是什么：
+输出结果可能类似于：`当前日期：2021-07-30 19:30:00 UTC`，这取决于你所在的时区和具体时间。
 
-```Rust
-println!("当前日期是：{}年{}月{}日", year, month, day);
-```
+## 深入了解获取当前日期
 
-输出结果如下：
+在Rust中， `DateTime` 结构体是基于 `ISO 8601` 标准来表示日期和时间的。它提供了许多有用的方法来处理日期，例如获取特定的时间信息、转换为其他日期格式等。此外，Rust还提供了 `time` 模块来处理更细致的日期操作，例如计算时间间隔、比较日期等。
 
-```
-当前日期是：2021年11月4日
-```
+## 参考链接
 
-## 深入了解
+- [Rust官方文档 - time模块](https://doc.rust-lang.org/std/time/index.html)
+- [Chrono文档](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [ISO 8601标准](https://www.iso.org/iso-8601-date-and-time-format.html)
 
-在Rust中，日期和时间都是通过`DateTime`结构来表示的，该结构由`Date`和`Time`组成。另外，Rust的`chrono`模块也提供了许多其他的日期和时间操作，如计算两个日期之间的差值、格式化日期和时间等等。
+## 查看更多
 
-此外，Rust的日期和时间操作也支持跨时区的处理，在处理跨时区的应用程序时，可以使用`TimeZone`结构来指定具体的时区。
-
-# 参考链接
-
-- [Rust Reference - 时间与日期](https://doc.rust-lang.org/reference/time-and-date.html)
-- [Rust标准库 - chrono模块](https://doc.rust-lang.org/std/chrono/index.html)
-- [Rust Cookbook - 处理日期和时间](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
-
-# 参见
-
-- [Rust中处理字符串的方法](https://github.com/Mandarin-Programming-Olympiad/Blogs/blob/main/blogs/Rust%20%E4%B8%AD%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
-- [Rust中的条件表达式](https://github.com/Mandarin-Programming-Olympiad/Blogs/blob/main/blogs/Rust%20%E4%B8%AD%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
+- [Rust入门教程](https://rustlang-cn.org/learn/get-started/) 
+- [Rust编程语言官网](https://www.rust-lang.org/zh-CN)

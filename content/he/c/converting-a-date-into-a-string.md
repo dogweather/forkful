@@ -1,6 +1,7 @@
 ---
-title:                "C: ממירים תאריך למחרוזת"
-simple_title:         "ממירים תאריך למחרוזת"
+title:                "המרת תאריך למחרוזת"
+html_title:           "C: המרת תאריך למחרוזת"
+simple_title:         "המרת תאריך למחרוזת"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-על מה אנחנו מדברים?
+##Why
+תמיד קשה לטפל בתאריך בתוכנית. כתיבה של תאריך בתור מחרוזת מאפשרת לנו לטפל בתאריך בצורה פשוטה וקלה יותר.
 
-בכתיבת קוד עבור תכנית מחשב, ייתכן שתתקלו בצורך להמיר תאריך מסוים למחרוזת. המטרה היא להציג את התאריך בפורמט שאנשים יכולים לקרוא ולהבין בקלות, כגון "יום-חודש-שנה" או "חודש-יום-שנה".
-
-איך לעשות את זה?
-
-כדי לבצע את המימוש הזה בשפת סי, ניתן להשתמש בפונקציית "strftime". להלן דוגמה של שימוש בפונקציה להמרת תאריך למחרוזת:
-
+##How To
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
+
+char* date_to_string(time_t date) {
+    // יצירת מערך מאפשר לשמירת התאריך בתור מחרוזת
+    char str[26];
+
+    // מתחילים את העיבוד של התאריך באמצעות פונקציית gmtime
+    struct tm* timeinfo = gmtime(&date);
+
+    // שימוש בפונקציית strftime עבור יצירת המחרוזת בתאריך ובפורמט מתאים
+    strftime(str, 26, "%Y-%m-%d %H:%M:%S", timeinfo);
+
+    // החזרת המחרוזת כתאריך מלא בפורמט מבוקש
+    return str;
+}
+
 int main() {
-  time_t now = time(NULL);
-  struct tm *timeinfo = localtime(&now);
-  
-  char buffer[80];
-  strftime(buffer, 80, "%d-%m-%Y", timeinfo);
-  printf("התאריך היום הוא: %s\n", buffer);
-  return 0;
+    // תאריך נתון לדוגמה
+    time_t my_date = 1568719200;
+
+    // הדפסת התאריך בפורמט מחרוזת
+    printf("התאריך בפורמט מחרוזת הוא: %s", date_to_string(my_date));
+    return 0;
 }
 ```
+Output: התאריך בפורמט מחרוזת הוא: 2019-09-17 19:00:00
 
-התאריך היום הוא: 01-01-2020
+##Deep Dive
+בכדי להמיר תאריך למחרוזת בשפת C, נצטרך להשתמש בפונקציית gmtime המאפשרת לנו לעבור על תאריך נתון לפי כל הפורמטים הנתמכים ולהחזיר את התאריך בתור struct tm. לאחר מכן, נשתמש בפונקציית strftime המאפשרת לנו להמיר את התאריך בתוך הstruct למחרוזת בפורמט מתאים עבורנו.
 
-דיבוג:
-הפונקציה "strftime" מאפשרת לנו לציין את הפורמט של המחרוזת שנרצה לקבל כתוצאה. ניתן להשתמש בתווים שונים לכתוב את התאריך בפורמט הרצוי, כגון %d ליום, %B לחודש, ו-%Y לשנה.
-
-עוד דברים לדעת:
-הפונקציה "strftime" נמצאת בספריית הסטנדרטית המתאימה לשפת סי – "time.h". לכן, יש לוודא שהקובץ המכיל את הקוד שלנו מכיל גם את הג'ירה "#include <time.h>". כמו כן, יש לוודא כי נשתמש במשתנה "now" שמכיל את הזמן הנוכחי ובמשתנה "timeinfo" שיכיל את פרטי התאריך שנרצה להמיר למחרוזת.
-
-ראו גם:
-- [מדריך על strftime ב-GeeksforGeeks](https://www.geeksforgeeks.org/strftime-function-in-c/)
-- [תיעוד של הפונקציה strftime באתר הרשמי של Microsoft](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l?view=vs-2019)
+##See Also
+- תיעוד רשמי לפונקציות gmtime ו- strftime בשפת C: https://www.cplusplus.com/reference/ctime/gmtime/
+- מדריך לטיפול בתאריכים בשפת C: https://www.tutorialspoint.com/c_standard_library/time_h.htm

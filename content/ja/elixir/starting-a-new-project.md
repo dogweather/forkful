@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 新しいプロジェクトの始め方"
-simple_title:         "新しいプロジェクトの始め方"
+title:                "「新しいプロジェクトを始める」"
+html_title:           "Elixir: 「新しいプロジェクトを始める」"
+simple_title:         "「新しいプロジェクトを始める」"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -9,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜElixirで新しいプロジェクトを始めるのか
+## なぜ
 
-Elixirは、堅牢で拡張性の高い関数型プログラミング言語であり、スケーラビリティに優れています。また、Elixirは並行性をサポートしており、複雑なタスクを効率的に処理できるため、新しいプロジェクトを始めるには最適な選択肢です。
+新しいプロジェクトを始める理由は様々です。Elixirはバグを予防し、パフォーマンスを最適化することができる優れたプログラミング言語の1つです。
 
 ## 作り方
 
-```elixir
-defmodule BlogPost do
-  def main(author, title, content) do
-    IO.puts "Author: #{author}"
-    IO.puts "Title: #{title}"
-    IO.puts "Content: #{content}"
-  end
-end
+新しいプロジェクトを始めるには、まずElixirをインストールする必要があります。Elixirの公式サイトからダウンロードできます。インストールが完了したら、以下のコマンドを実行して新しいプロジェクトを作成します。
+
+```Elixir
+mix new my_project
 ```
 
-上記のコードは、Elixirでブログ投稿を作成するための基本的な構造です。まず、`BlogPost`モジュールを定義し、`main`関数内で投稿の著者、タイトル、コンテンツを引数として受け取り、それぞれを出力します。このように、Elixirはシンプルな構文を用いてコードを書くことができるため、新しいプロジェクトを始めるのに適した言語です。
+このコマンドにより、"my_project"という名前の新しいディレクトリが作成され、その中に必要なファイルが作成されます。
 
-## 深く掘り下げる
+次に、以下のコマンドを実行してプロジェクトを実行し、サンプル出力を確認します。
 
-新しいプロジェクトを始める際には、以下のような手順に従うことが推奨されます。
+```Elixir
+cd my_project
+mix run -e "IO.puts 'Hello, world!'"
+```
 
-### 1. プロジェクトの概要を説明する
+"Hello, world!"というメッセージが出力されたら、プロジェクトが正しく動作していることが確認できます。
 
-まずはじめに、プロジェクトの目的と目標を明確にしましょう。この段階では詳細はまだ決まっていませんが、プロジェクトの方向性や必要な技術要件を決める上で重要なステップです。
+## 詳細を掘り下げる
 
-### 2. プロジェクトに必要なツールを選ぶ
+新しいプロジェクトを始めるときには、いくつかの重要なファイルに注意する必要があります。
 
-プロジェクトの要件に合わせて、使用するツールやライブラリを選びましょう。Elixirであれば、[Hexパッケージマネージャー](https://hex.pm/)を活用することができ、必要な機能を簡単に導入することができます。
+まず、「mix.exs」ファイルはプロジェクトの依存関係を管理するために使用されます。また、「config/config.exs」ファイルにはプロジェクト全体の設定を記述します。
 
-### 3. 開発環境をセットアップする
+さらに、プロジェクト内に「lib」ディレクトリがあり、ここにコードを書くことでアプリケーションを作成できます。また、「test」ディレクトリにはテストコードを書くことができます。
 
-Elixirを使用してプロジェクトを作成するには、[Erlang/OTP](https://www.erlang.org/)のインストールが必要になります。また、[Elixirの公式サイト](https://elixir-lang.org/)から最新のバージョンをダウンロードし、セットアップを行ってください。
+## 参考リンク
 
-### 4. テストを作成する
-
-Elixirでは、[ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)というユニットテストフレームワークを使用することができます。プロジェクトを始める前に、テストを作成しておくことで、後々のバグを防ぐことができます。
-
-### 5. ドキュメントを作成する
-
-プロジェクトのコードを読みやすくするために、Elixirにはドキュメント生成ツールである[ExDoc](https://hexdocs.pm/ex_doc/ExDoc.html)が用意されています。プロジェクトのドキュメントを充実させることで、他の開発者がコードを理解するのに役立ちます。
-
-## See Also
-
-- [Elixir 公式ドキュメント](https://elixir-lang.org/getting-started/introduction.html)
--
+- [Elixir 公式サイト](https://elixir-lang.org/)
+- [Elixir 公式ドキュメント](https://elixir-lang.org/docs.html)
+- [Elixir Forum](https://elixirforum.com/)

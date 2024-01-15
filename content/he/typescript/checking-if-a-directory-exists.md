@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: בדיקת קיום תיקייה"
-simple_title:         "בדיקת קיום תיקייה"
+title:                "בדיקה אם קיימת תיקייה"
+html_title:           "TypeScript: בדיקה אם קיימת תיקייה"
+simple_title:         "בדיקה אם קיימת תיקייה"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+ישנם רבים שמתחילים ללמוד TypeScript ונתקלים בשגיאה של "התיקייה אינה קיימת". לאחר מכן הם מתחילים לחפש דרך למצוא אם התיקייה קיימת בפונקציה המתאימה. במאמר זה תלמדו כיצד לבדוק אם תיקייה קיימת ב TypeScript לפתור את בעיות השגיאה הנ"ל.
 
-במאמר זה, נטען לכם ראיונות מאויב ישירות מתמונות דיקרטוריות קיימות בהשתמש בטווח `fs.exists`. זו יכולת ייחודית שיכולה להיות מועילה כאשר בונים אתרים או יישומי דפדפן.
+## איך לעשות זאת
+הנה כמה דוגמאות קוד עם פלט בתוך קטעי קוד "```TypeScript ... ```".
 
-## איך לבדוק אם קיים דירקטוריה
-
-ניתן לבדוק אם קיימת דירקטוריה על ידי שימוש בפונקציה `fs.exists` בתוך קוד TypeScript. להלן דוגמא של קוד לבדיקת קיומו של דירקטוריה:
+כדי לבדוק אם תיקייה קיימת בצורה פשוטה, ניתן להשתמש בפונקציה המובנית "fs.existsSync" שמקבלת את הנתיב של התיקייה כפרמטר. אם התיקייה קיימת, הפונקציה תחזיר אמת (true), אחרת תחזיר שקר (false).
 
 ```TypeScript
 import * as fs from 'fs';
 
-// שם הקובץ או הנתיב של הדירקטוריה שברצונכם לבדוק את קיומה
-const directory = 'images';
+const path = './myFolder';
+const directoryExists = fs.existsSync(path);
 
-fs.exists(directory, (exists: boolean) => {
-  if (exists) {
-    console.log(`הדירקטוריה ${directory} קיימת.`);
-  } else {
-    console.log(`הדירקטוריה ${directory} אינה קיימת.`);
-  }
-});
-
-// פלט: הדירקטוריה images קיימת.
+console.log(directoryExists); // יוצא: true אם התיקייה קיימת, אחרת יוצא: false
 ```
 
-כאמור, באמצעות הפונקציה `fs.exists` ניתן לבדוק באופן יעיל אם דירקטוריה מסוימת קיימת או לא.
+למרבה המזל, יש פונקציה נוספת נקראת "fs.statSync" שמקבלת את הנתיב של התיקייה כפרמטר ומחזירה אובייקט במידע על התיקייה, כולל האם היא קיימת או לא.
 
-## מעמקים
+```TypeScript
+import * as fs from 'fs';
 
-הפונקציה `fs.exists` מוגדרת כפונקציה סינכרונית, כך שתכלול תפקידים כמו פתיחת קובצים וסגירתם, ההקמה והנתיב היחיד יהיו שמורים. פונקציה זו מקבלת כקלט נתיב לקובץ או לדירקטוריה ופונקציית ההתאמה, ומחזירה את המשתנה `בוליאני` שמציין את הקיום או החסרון של הנתיב המבוקש.
+const path = './myFolder';
+const directoryStats = fs.statSync(path);
 
-## ראו גם
+if (directoryStats.isDirectory()) {
+  console.log('התיקייה קיימת'); // יוצא: התיקייה קיימת אם התיקייה קיימת
+} else {
+  console.log('התיקייה לא קיימת'); // יוצא: התיקייה לא קיימת אם התיקייה לא קיימת
+}
+```
 
-- https://nodejs.org/api/fs.html#fs_fs_exists_path_callback
-- https://www.typescriptlang.org/docs/handbook/2/typescript-in-5-minutes.html
+## Deep Dive
+הפונקציות "fs.existsSync" ו"fs.statSync" משתמשות במנגנוני קריאת קבצים המובנים במערכת ההפעלה כדי לבדוק אם התיקייה קיימת. אם תרצו לקרוא את התיקייה ולקבלת מידע מעבר לזה, ניתן להשתמש בפונקציה "fs.readdirSync" שתחזיר את התוכן של התיקייה.
+
+כדי לתמוך

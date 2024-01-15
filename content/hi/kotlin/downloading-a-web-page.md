@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "एक वेब पृष्ठ अधिलेखित करना"
+html_title:           "Kotlin: एक वेब पृष्ठ अधिलेखित करना"
+simple_title:         "एक वेब पृष्ठ अधिलेखित करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,32 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kotlin ek prasiddh programming bhasha hai jo aaj kal bahut se developers ke liye pasand ki jaati hai. Iska upyog kayi tarah ke application development me kiya ja sakta hai, jaise Android aur server-side development. Is bhasha ke aate hi hum english jaise statically typed, object-oriented features aur functional programming ka maza le sakte hai. Iss article me hum Kotlin ke istemal se web pages ko download karna sikhenge. Yeh ek prakriya hai jiske kaaran hum kisi bhi website ko apne local machine me aaram se access kar sakte hai.
+## क्यों
 
-## Kaise Kare
-Kotlin me ek HTTP client library "OkHttp" hai jo web requests ke liye kaafi famous hai. Hum is library ka upyog karke bahut aasaani se web pages ko download kar sakte hai. Yaha iss article me Kotlin 1.5.10 aur OkHttp version 4.9.1 ka upyog kiya gaya hai.
+वेब पेज को डाउनलोड करने से लोग अपने कंप्यूटर में पसंदीदा सामग्री को स्थानीय रूप से सेव कर सकते हैं और इसे बिना इंटरनेट के भी देख सकते हैं। यह उपयोगी हो सकता है जब आप अपने डेवाइस पर नेटवर्क एरिया में नहीं हैं या संगीत, वीडियो या अन्य और चीजों को ऑफ़लाइन देखना चाहते हैं।
 
-```Kotlin
-val client = OkHttpClient()
-val request = Request.Builder()
-  .url("https://www.example.com")
-  .get()
-  .build()
+## कैसे करें
 
-val response = client.newCall(request).execute()
-val responseBody = response.body()?.string()
-```
-Iss code me hum client object ko banate hai, url aur request type ko specify karte hai, aur phir uss request ko execute karke response body ko retrieve karte hai.
+वेब पेज को कोटलिन कोड के माध्यम से डाउनलोड करने के लिए, आपको निम्नलिखित प्रक्रिया का पालन करना होगा।
 
-Ab iss response body ko kisi file me store kar sakte hai aur phir usse local machine me open kar sakte hai.
+1. सबसे पहले, आपको इंटरनेट पर एक डाउनलोड के लिए URL की खोज करनी होगी। यह URL पता आपको `HTTPURLConnection` क्लास के साथ संबद्ध करने के लिए प्रयास करना पड़ेगा।
 
-## Gahraai 
-Web page download karna ek important process hai aur usse karne ke liye kayi baar hume authentication, redirects aur cookies ka bhi bahut dhyaan dena padta hai. Isliye, apne code me hume in features ka bhi dhyaan rakhna chahiye.
+2. जप URL को साफ किया जाएगा, आपको `BufferedReader` और `InputStreamReader` क्लास को इस्तेमाल करके कनेक्शन से पुल डेटा पर पहुंचने की आवश्यकता होगी।
 
-## Dekhe Bhi
-- [OkHttp Github page](https://github.com/square/okhttp)
-- [Kotlin official website](https://kotlinlang.org/)
-- [Kotlin Tutorials on Youtube](https://www.youtube.com/playlist?list=PLQkwcJG4YTCSbdIxcRSY0nRUoSjLpI1D1)
+3. डाउनलोड को पूरा करने के लिए, आपको डाउनलोड डेटा को स्ट्रिंग रूप में पढ़ने और स्थापित करने की आवश्यकता होगी। आप यहां से कोटलिन से स्ट्रिंग ऑब्जेक्ट बना सकते हैं और स्थापित कर सकते हैं।
 
-Dhanyavaad!
+4. अंत में, आप स्थानीय फ़ाइल्सिस्टेम पर सभी डेटा को सुरक्षित रूप से स्थानांतरित करने के लिए `FileOutputStream` क्लास का उपयोग कर सकते हैं।
+
+यहां एक सरल कोड स्निपेट है जो वेब पेज को डाउनलोड करने के टास्क का भाग के रूप में किया जा सकता ह

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Generieren von Zufallszahlen"
-simple_title:         "Generieren von Zufallszahlen"
+title:                "Zufällige Zahlen generieren"
+html_title:           "Gleam: Zufällige Zahlen generieren"
+simple_title:         "Zufällige Zahlen generieren"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -11,36 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie jemals ein Programm geschrieben haben, bei dem Sie zufällige Zahlen benötigten, wissen Sie, wie frustrierend es sein kann, immer wieder dieselben Zahlen zu erhalten. Die Lösung? Die Verwendung einer Funktion zur Generierung von Zufallszahlen in Ihrer Gleam-Programmierung.
+Zufallszahlen gehören zu den grundlegenden Elementen in der Welt der Programmierung. Sie können verwendet werden, um Spiele zu erstellen, komplexe Berechnungen durchzuführen oder einfach nur um Spaß zu haben. Das Generieren von Zufallszahlen kann ein nützliches Werkzeug sein, das jeder Programmierer in seinem Repertoire haben sollte.
 
-## Wie geht's
-
-Gleam bietet eine Funktion namens `Float.random()` zum Generieren zufälliger Gleitkommazahlen zwischen 0 und 1. Sie können auch eine Untergrenze und Obergrenze einstellen, um Zahlen in einem bestimmten Bereich zu erhalten. Schauen wir uns ein Beispiel an:
-
-```Gleam 
-let result = Float.random(10, 20)
-```
-
-Dieses Beispiel würde eine Zufallszahl zwischen 10 und 20 generieren und sie der Variablen `Result` zuweisen. Sie können auch eine ganze Zahl anstelle einer Gleitkommazahl erhalten, indem Sie `Float` durch `Int` ersetzen. Hier ist ein weiteres Beispiel:
+## So geht's
 
 ```Gleam
-let result = Int.random(1, 10)
+import gleam/random
+random.int(1, 10)  // Gibt eine Zufallszahl zwischen 1 und 10 zurück
+random.float(0.0, 1.0)  // Gibt eine Zufallszahl zwischen 0 und 1 zurück
 ```
 
-Dieses Beispiel würde eine zufällige ganze Zahl zwischen 1 und 10 generieren und sie der Variablen `Result` zuweisen. Sie können auch Ihre eigenen benutzerdefinierten Zahlen verwenden, indem Sie Beispiele aus der `Float.random()`-Funktion als Argumente verwenden. Zum Beispiel:
+Das Gleam-Standardmodul `random` bietet verschiedene Funktionen für das Generieren von Zufallszahlen. Mit `int(x, y)` können ganzzahlige Zufallszahlen zwischen `x` und `y` erzeugt werden, während `float(x, y)` für die Generierung von Fließkommazahlen verwendet werden kann.
 
-```Gleam
-let result = Float.random(5.5, 11.2)
-````
+Das Generieren von Zufallszahlen ist hilfreich, wenn Sie zufällige Daten für Tests oder Simulationen benötigen. Sie können auch Zufallszahlen verwenden, um eine zufällige Reihenfolge von Elementen in einer Liste zu generieren oder um Zufallsereignisse in einem Spiel zu simulieren.
 
-Dies würde eine zufällige Gleitkommazahl zwischen 5,5 und 11,2 generieren und sie der Variablen `Result` zuweisen.
+## Deep Dive
 
-## Tiefentauchgang
+Das Generieren von Zufallszahlen ist keine leichte Aufgabe. Es erfordert eine sorgfältige Balance zwischen Zufälligkeit und Wiederholbarkeit. Wenn die Zufallszahlen zu vorhersehbar sind, können sie die Integrität Ihrer Anwendungen beeinträchtigen. Glücklicherweise bietet Gleam integrierte Funktionen zur Generierung von qualitativ hochwertigen Zufallszahlen, die diesen Aspekt berücksichtigen.
 
-Wenn Sie sich fragen, wie Gleam Zufallszahlen generiert, verwendet es den `random()`-Algorithmus, der auf Mersenne-Twister basiert. Dies ist ein sehr effizienter Algorithmus, der eine große Anzahl an Zufallszahlen generieren kann, ohne dass sich Duplikate wiederholen. Es verwendet einen internen Zustand, um jederzeit eine neue zufällige Zahl zu generieren, was bedeutet, dass es nicht auf externe Faktoren wie die Systemzeit angewiesen ist. 
+Eine Möglichkeit, die Qualität der erzeugten Zufallszahlen zu verbessern, ist die Verwendung eines Seed-Werts. Dieser Wert dient als Ausgangspunkt für die Generierung der Zufallszahlen und kann angepasst werden, um unterschiedliche Ergebnisse zu erzielen. Gleam bietet eine `seed`-Funktion, die es Ihnen ermöglicht, einen beliebigen Wert als Seed zu verwenden und somit Zufallszahlen mit einer höheren Qualität zu erzeugen.
 
 ## Siehe auch
 
-- Offizielle Gleam-Dokumentation zur `random()`-Funktion (https://gleam.run/documentation/std_lib/float.html#random)
-- Gleam-Grundlagen für Einsteiger (https://dev.to/christopherbiscardi/getting-started-with-gleam-lang-13bc)
-- Einblick in den Mersenne-Twister-Algorithmus (https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Gleam Dokumentation: Random Modul](https://gleam.run/modules/random/)
+- [10 nützliche Anwendungen für Zufallszahlen in der Programmierung](https://code.tutsplus.com/de/tutorials/ten-usefulapplications-for-programming-with-random-numbers--net-2934)
+- [Das Gesetz der großen Zahlen erklärt](https://www.statisticshowto.com/law-of-large-numbers/)

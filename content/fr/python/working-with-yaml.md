@@ -1,5 +1,6 @@
 ---
-title:                "Python: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "Python: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "Python"
 category:             "Python"
@@ -11,47 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi travailler avec YAML?
 
-Qu'est-ce que YAML et pourquoi devriez-vous l'utiliser dans vos projets de programmation en Python? YAML (YAML Ain't Markup Language) est un format de sérialisation de données principalement utilisé pour stocker et transférer des données structurées. Il est facile à lire et à écrire pour les humains, tout en étant facilement traité par les ordinateurs. Cela en fait un choix idéal pour stocker des configurations, des données de test et d'autres informations dans vos projets.
+Si vous travaillez avec des données structurées ou des configurations, YAML est un langage de balisage qui peut vous aider à simplifier votre travail. Il est lisible pour les humains et facile à utiliser pour organiser des données complexes.
 
-## Comment faire?
+## Comment faire
 
-Pour commencer à travailler avec YAML en Python, vous devez d'abord installer le paquet PyYAML via la commande `pip install PyYAML`.
-
-Pour charger des données à partir d'un fichier YAML, vous pouvez utiliser la fonction `yaml.load()` en spécifiant le chemin du fichier en tant que paramètre. Par exemple:
+Pour utiliser YAML dans votre code Python, vous devez d'abord installer le module PyYAML en utilisant pip ou votre outil de gestion de packages préféré. Ensuite, vous pouvez importer le module dans votre script Python en utilisant la commande `import yaml`. Vous pouvez ensuite commencer à créer et à manipuler des données YAML en utilisant le formatage suivant :
 
 ```Python
 import yaml
 
-with open('config.yml', 'r') as file:
-    config = yaml.load(file, Loader=yaml.FullLoader)
+# Créer un dictionnaire avec des données
+donnees = {
+    'nom': 'Jean',
+    'âge': 30,
+    'métier': 'développeur'
+}
 
-print(config)
+# Convertir les données en YAML
+donnees_yaml = yaml.dump(donnees)
+
+# Imprimer les données YAML
+print(donnees_yaml)
+
+# Sortie :
+# nom: Jean
+# âge: 30
+# métier: développeur
 ```
 
-Ensuite, vous pouvez accéder aux différentes données dans votre fichier YAML comme un dictionnaire Python. Un dictionnaire peut également être converti en fichier YAML en utilisant la fonction `yaml.dump()`.
-
-Voici un exemple de configuration YAML pour un projet de blog:
+Vous pouvez également utiliser YAML pour charger des données YAML dans votre code Python et les manipuler en tant qu'objets Python :
 
 ```Python
-port: 5000
-database:
-  host: localhost
-  user: admin
-  password: pa$$w0rd
+import yaml
+
+# Charger les données YAML à partir d'un fichier
+with open('donnees.yaml') as f:
+    donnees = yaml.load(f, Loader=yaml.FullLoader)
+
+# Imprimer la valeur de la clé 'âge'
+print(donnees['âge'])
+
+# Sortie :
+# 30
 ```
 
 ## Plongée en profondeur
 
-Un aspect intéressant de YAML est que vous pouvez inclure des références et des expressions dans votre fichier, ce qui peut rendre vos données plus dynamiques. Par exemple, vous pouvez inclure des variables et les utiliser dans différents endroits dans votre fichier YAML.
+YAML est un langage de balisage très flexible et peut être utilisé pour créer des structures de données complexes telles que des listes, des tuples et des dictionnaires imbriqués. Il est également possible d'inclure des commentaires dans un fichier YAML en utilisant le symbole `#`.
 
-De plus, YAML offre également la possibilité d'inclure des commentaires pour rendre votre code plus facilement compréhensible pour les autres développeurs.
+Il est important de noter que YAML utilise une indentation pour marquer les niveaux de hiérarchie des données. Vous devez donc être attentif aux espaces ou aux tabulations utilisés dans votre formatage YAML.
 
-Il est important de noter que YAML n'est pas un langage de programmation, mais plutôt une façon de stocker et d'organiser des données. Par conséquent, il ne prend pas en charge les opérations complexes telles que les boucles ou les conditions.
+Enfin, il existe plusieurs options de configuration pour le module PyYAML, notamment pour gérer des cas spéciaux tels que les données binaires ou les dates. Vous pouvez en savoir plus sur ces options dans la documentation officielle de PyYAML.
 
 ## Voir aussi
 
-Pour en savoir plus sur YAML en Python, vous pouvez consulter les ressources suivantes:
-
-- [Documentation officielle de PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Guide de YAML pour les débutants](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/)
-- [Python YAML: comment l'utiliser comme un pro](https://code-maven.com/python-yaml-how-to-read-and-write-yaml-files)
+- Documentation officielle de PyYAML : https://pyyaml.org/
+- Tutoriel de YAML pour les débutants : https://www.youtube.com/watch?v=cdLNKUoMc6c
+- Utilisation de YAML avec Django : https://simpleisbetterthancomplex.com/tutorial/2016/10/13/how-to-use-yaml-serializer.html

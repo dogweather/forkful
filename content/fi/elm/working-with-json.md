@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Elm: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,75 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Elm on ohjelmointikieli, joka on suunniteltu luomaan modernia ja skaalautuvaa web-kehitystä. JSON (JavaScript Object Notation) on yksi yleisimmin käytetyistä formaateista siirtää tietoa web-sovellusten ja palvelinten välillä. Elm tarjoaa helpon tavan työskennellä JSONin kanssa, mikä tekee siitä houkuttelevan kielen kehittäjille, jotka haluavat työskennellä moderneissa web-sovelluksissa.
+On monia syitä, miksi JSON on oleellinen osa monia nykypäivän ohjelmointikieliä, myös Elm. JSON on helppo lukea ja kirjoittaa sekä samalla se on erittäin tehokas vaihtoehto tiedon tallentamiseen ja siirtämiseen. JSON:in käyttäminen auttaa myös selkeyttämään koodisi rakennetta ja antaa sinulle enemmän mahdollisuuksia muuttaa dataasi tarpeesi mukaan.
 
 ## Miten
 
-Elm tarjoaa sisäänrakennetun JSON.Decoder ja JSON.Encoder- moduulit, jotka mahdollistavat helpon koodin kirjoittamisen JSON-tietojen muuntamiseksi Elm-tietotyypiksi ja päinvastoin.
+JSON-tietorakenteen luominen Elm:ssä on erittäin yksinkertaista ja selkeää. Voit aloittaa luomalla uuden JSON-arvon käyttäen `Json.encode` funktiota, ja antamalla sille tarvittavat avaimet ja arvot. Alla on esimerkki:
 
-```Elm
-import Json.Decode exposing (decodeValue, int, string)
-import Json.Encode exposing (encode, int, list, object, string)
+```elm
+import Json.Encode exposing (Value)
 
--- Luodaan JSON-pituusmuuntelu
-jsonString : String
-jsonString =
-  """
-  {
-    "nimi": "Matti",
-    "ika": 32
-  }
-  """
-
--- Määritellään henkilö-tyyppi
-type alias Henkilo =
-  { nimi : String
-  , ika : Int
-  }
-
--- Luo JSON:in dekooderi
-henkiloDecoder : Decode.Decoder Henkilo
-henkiloDecoder =
-  Decode.map2 Henkilo
-    (Decode.field "nimi" string)
-    (Decode.field "ika" int)
-
--- Muunna JSON Elm tietotyypiksi
-muunnaJSON : Result String Henkilo
-muunnaJSON =
-  jsonString
-    |> decodeValue henkiloDecoder
-
--- Toista sama JSON Encoder-painikkeella
--- Luo Henkilo-tietorakenne
-person : Henkilo
-person =
-  Henkilo "Matti" 32
-
--- Muunna Elm-tietotyyppi JSON:iksi
-tallennaJSON : Encode.Value
-tallennaJSON =
-  person
-    |> encode
+myJSON : Value
+myJSON =
+    Json.Encode.object
+        [ ( "name", Json.encode "John" )
+        , ( "age", Json.encode 25 )
+        , ( "hobbies", Json.encodeArray [ Json.encode "skiing", Json.encode "reading", Json.encode "painting" ] )
+        ]
 ```
 
-Tässä esimerkissä luodaan yksinkertainen JSON-tiedosto, joka sisältää nimen ja iän, ja muunnetaan se Elm-tietotyypiksi käyttämällä JSON.Decoder ja JSON.Encoder- moduuleja. Tämän jälkeen yksinkertaisesti muunnetaan Elm-tietotyyppi takaisin JSON-muotoon TallennaJSON-funktiolla.
+Tässä esimerkissä luodaan JSON-arvo, joka sisältää nimen, iän ja harrastukset. Huomaa, kuinka jokainen arvo on ensin kääritty `Json.encode` funktion sisään. Tämä on tärkeää, jotta Elm ymmärtää, että kyseessä on JSON-arvo eikä mikään muu.
 
-Tuloste:
+JSON-tietorakenteen purkaminen Elm:ssä tapahtuu käyttämällä `Json.Decode` moduulia. Voit tulkita JSON-arvon haluamallasi tavalla käyttämällä `Json.Decode` funktioita, kuten `Json.Decode.string`, `Json.Decode.int` ja `Json.Decode.list`. Alla on esimerkki:
 
-```Elm
-Ok { nimi = "Matti", ika = 32 }
+```elm
+import Json.Decode exposing (Value, string, int, list)
+
+myName : Decode.Value -> String
+myName json =
+    case Json.Decode.decodeValue string json of
+        Ok name ->
+            name
+        Err _ ->
+            "Unknown"
+
+myAge : Decode.Value -> Int
+myAge json =
+    case Json.Decode.decodeValue string json of
+        Ok age ->
+            age
+        Err _ ->
+            -1
+
+myHobbies : Decode.Value -> List String
+myHobbies json =
+    case Json.Decode.decodeValue string json of
+        Ok hobbies ->
+            hobbies
+        Err _ ->
+            []
+
 ```
 
-Tästä nähdään, että JSON on onnistuneesti muunnettu Elm-tietotyypiksi, ja sitä voidaan käyttää edelleen ohjelmassa.
+Tässä esimerkissä luodaan kolme erillistä funktiota, jotka purkavat JSON-arvon ja palauttavat tarvittavan datan haluttuun muotoon. Kuten huomaat, `Json.Decode.decodeValue` funktio ottaa parametreina `Json.Decode` moduulin funktion ja JSON-arvon. Jos purkaminen onnistuu, funktio palauttaa `Ok` arvon, muuten `Err` arvon.
 
-## Syväkellunta
+## Syväsukellus
 
-JSON:n kanssa työskentely Elmissä on helppoa ja tehokasta. JSON.Decoder ja JSON.Encoder- moduulit tarjoavat paljon hyödyllisiä toimintoja, kuten map ja field, jotka auttavat muuntamaan JSON-dataa eri tietotyypeiksi. Lisäksi voit käyttää many-valintoja olemaan sanelematta tarkkoja vastaavuuksia esimerkiksi, jos ulkoisten palvelujen tiedot ovat epätäydellisiä.
+JSON:in kanssa työskentelyssä on tärkeää muistaa, että se on käytännössä vain merkkijonoina. Tämä tarkoittaa sitä, että kun lähetät tai vastaanotat JSON-tietorakenteita, ne on ensin muutettava merkkijonoiksi käyttämällä `Json.Encode.encode` tai `Json.Decode.decodeString` funktioita. Tämä Varmistaa, että tietosi säilyvät oikein ja että Elm ymmärtää ne oikein.
 
-Elm tarjoaa myös mahdollisuuden yhdistää JSON-tiedostoja yhdessä. Tämä on hyödyllistä, jos sinun on käsiteltävä useita eri JSON-tiedostoja ja yhdistettävä ne yhdeksi tietotyypiksi. Tätä varten voit käyttää Json.Decode.at- funktiota. Se ottaa merkkijonon parametrina ja palauttaa decoderin, joka luo esiintymisarvon halutulle alueelle.
+Elm tarjoaa myös monia hyödyllisiä työkaluja työskentelyyn JSON:in kanssa, kuten `Json.Decode` moduulin funktiot `map`, `andThen` ja `lazy`. Nämä auttavat työskentelemään JSON-tietorakenteen kanssa helpommin ja tehokkaammin.
 
 ## Katso myös
 
-- [Elm dokumentaatio JSON: lle] (https://guide.elm-lang.org/effects/json.html)
-- [JSON.Decoder Moduuli] (https://package.elm-lang.org/packages/elm/json/latest/
+- [Elm: JSON dokumentaatio](https://package.elm-lang.org/packages/elm/json/latest/)
+- [Codecademy: Learn JSON](https://www.codecademy.com/learn/

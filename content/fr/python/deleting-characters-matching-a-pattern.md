@@ -1,6 +1,7 @@
 ---
-title:                "Python: Supprimer les caractères correspondant à un patron"
-simple_title:         "Supprimer les caractères correspondant à un patron"
+title:                "Suppression de caractères correspondants à un motif"
+html_title:           "Python: Suppression de caractères correspondants à un motif"
+simple_title:         "Suppression de caractères correspondants à un motif"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,39 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Parfois, lors de la manipulation de chaînes de caractères en Python, vous pouvez avoir besoin de supprimer des caractères spécifiques qui correspondent à un certain schéma. Cela peut sembler un peu intimidant, mais ne vous inquiétez pas, avec quelques connaissances de base, cela peut être facilement réalisé en utilisant des expressions régulières.
+Vous vous demandez peut-être pourquoi quelqu'un voudrait supprimer des caractères correspondant à un modèle dans un programme Python. Eh bien, cela peut être utile dans de nombreuses situations, comme nettoyer les données, filtrer les entrées utilisateur ou traiter des chaînes de caractères spécifiques.
 
 ## Comment faire
 
-Pour supprimer les caractères correspondant à un pattern en Python, nous allons utiliser le module `re`, qui est dédié au traitement d'expressions régulières. Tout d'abord, nous devons importer le module dans notre code :
+Pour supprimer des caractères correspondant à un modèle dans une chaîne de caractères, vous pouvez utiliser la méthode `sub()` de l'objet `re` (pour "regular expression") de Python. Cette méthode prend deux arguments : le modèle que vous souhaitez supprimer et la chaîne de caractères sur laquelle vous souhaitez appliquer la suppression. Voici un exemple de code :
 
 ```Python
 import re
-```
-Ensuite, nous pouvons utiliser la fonction `sub()`, qui remplace toutes les occurences d'un schéma par une chaîne de caractères vide. Par exemple, si nous voulons supprimer tous les chiffres d'une chaîne, nous pouvons utiliser cette fonction de la manière suivante :
 
-```Python
-string = "Hello123World"
-new_string = re.sub("[0-9]", "", string) # remplace tous les chiffres par une chaîne vide
-print(new_string) # affiche "HelloWorld"
+input_string = "Cette phrase contient des nombres comme 123 et des caractères spéciaux !@#$"
+output_string = re.sub('[0-9!@#$]', '', input_string)
+print(output_string)
 ```
 
-Nous pouvons également utiliser des expressions régulières plus complexes pour correspondre à des schémas plus spécifiques. Par exemple, si nous voulons supprimer tous les caractères non alphabétiques d'une chaîne, nous pouvons utiliser cette fonction avec l'expression régulière `[^\w\s]`, qui correspond à tous les caractères non alphabétiques et non blancs.
+Résultat :
 
-```Python
-string = "Hello, my name is John! How are you?"
-new_string = re.sub("[^\w\s]", "", string) # remplace tous les caractères non alphabétiques et non blancs par une chaîne vide
-print(new_string) # affiche "Hello my name is John How are you" (tous les signes de ponctuation ont été supprimés)
 ```
+Cette phrase contient des nombres comme et des caractères spéciaux
+```
+
+Comme vous pouvez le voir, la méthode `sub()` a supprimé tous les caractères correspondant au modèle `[0-9!@#$]` (chiffres de 0 à 9 et les caractères !, @, # et $) dans la chaîne de caractères `input_string`. Il est également possible d'utiliser des modèles plus complexes, tels que `[a-z]` pour supprimer toutes les lettres minuscules ou `[^A-Za-z]` pour supprimer tous les caractères non alphabétiques.
 
 ## Plongée en profondeur
 
-L'expression régulière `[^\w\s]` peut sembler un peu complexe, donc voyons de plus près comment cela fonctionne. Tout d'abord, le `^` indique que nous cherchons à correspondre à tout sauf ce qui suit. Ensuite, `\w` correspond à tout caractère alphanumérique, et `\s` correspond à tout caractère blanc (comme les espaces ou les tabulations). Donc, en combinant ces deux éléments avec `^\w\s`, nous pouvons correspondre à tous les caractères non alphabétiques et non blancs.
+Comme mentionné précédemment, la méthode `sub()` utilise des expressions régulières pour rechercher et supprimer des caractères correspondant à un modèle. Les expressions régulières sont un langage de programmation à part entière, mais elles peuvent être très utiles lorsqu'il s'agit de manipuler des chaînes de caractères complexes. Voici quelques-uns des modèles les plus couramment utilisés :
 
-Si vous souhaitez en savoir plus sur les expressions régulières en Python et tous les modèles que vous pouvez utiliser, je vous recommande d'explorer la documentation de `re` ainsi que des ressources en ligne telles que [les tutoriels de la documentation officielle de Python](https://docs.python.org/fr/3.9/howto/regex.html) et [les exercices pratiques de RegexOne](https://regexone.com/).
+* `[0-9]` : supprime tous les chiffres de 0 à 9.
+* `[a-z]` : supprime toutes les lettres minuscules.
+* `[A-Z]` : supprime toutes les lettres majuscules.
+* `[^0-9]` : supprime tous les caractères non numériques.
+* `[^A-Za-z]` : supprime tous les caractères non alphabétiques.
+
+Il est également possible d'inclure plusieurs modèles dans un seul argument `sub()`, par exemple `'[0-9A-Z]'` pour supprimer les chiffres et les lettres majuscules.
 
 ## Voir aussi
 
-- [Documentation officielle de Python sur les expressions régulières](https://docs.python.org/fr/3.9/library/re.html)
-- [Tutoriel de développement Python sur les expressions régulières](https://docs.python.org/fr/3.9/howto/regex.html)
-- [Exercices pratiques de RegexOne](https://regexone.com/)
+* [Python Regular Expressions Tutorial](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial) : un tutoriel complet sur l'utilisation des expressions régulières en Python.
+* [Documentation officielle de Python sur les expressions régulières](https://docs.python.org/fr/3/library/re.html) : informations détaillées sur toutes les fonctionnalités liées aux expressions régulières en Python.

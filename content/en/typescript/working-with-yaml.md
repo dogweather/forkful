@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "TypeScript recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,70 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-YAML is a popular choice for structuring configuration files due to its human-readable syntax and flexibility. It is commonly used for application configuration, deployment, and data serialization. In this blog post, we will explore how to work with YAML in a TypeScript project.
+Developers often find themselves dealing with a multitude of configuration files when working on a project. These files can quickly become complex and hard to manage. YAML, a human-friendly data serialization language, offers a simpler and more efficient alternative to traditional configuration files.
 
 ## How To
-To start using YAML in TypeScript, we first need to install the YAML library. This can be done by running the following command in your terminal:
+To start using YAML in your TypeScript projects, you will need to first install a dependency. One option is the `js-yaml` library, which can be installed using npm:
 
-```TypeScript
-npm install yaml
+```
+npm install js-yaml
 ```
 
-Once the library is installed, we can begin importing it into our code. The code snippet below shows an example of reading a YAML file and accessing its properties:
+Once the library is installed, you can import it in your TypeScript file using the `require` syntax:
 
-```TypeScript
-import * as yaml from 'yaml';
-
-const configFile = fs.readFileSync('config.yaml', 'utf8');
-const config = yaml.parse(configFile);
-
-console.log(config.server.host); // Output: localhost
-console.log(config.server.port); // Output: 3000
+```
+const yaml = require('js-yaml');
 ```
 
-In the example above, we use the `yaml` library to parse a YAML file and store its contents in the `config` variable. We can then access the properties of `config` using dot notation, just like we would with a JavaScript object.
+Now that you have access to the YAML library, you can start parsing and generating YAML files in your code. Here is an example of parsing a YAML file and accessing its data:
 
-We can also use YAML to create and write to a YAML file. The code snippet below shows how to do this:
-
-```TypeScript
-import * as yaml from 'yaml';
-
-const config = {
-  user: {
-    name: 'John Doe',
-    age: 25,
-    hobbies: ['coding', 'reading', 'gaming']
-  }
-};
-
-const yamlString = yaml.stringify(config);
-fs.writeFileSync('user.yaml', yamlString);
+```
+const data = yaml.safeLoad(`
+    name: John Doe
+    age: 30
+`);
+console.log(data.name); // Output: John Doe 
+console.log(data.age); // Output: 30
 ```
 
-The above code creates a `config` variable with a user object that contains the user's information. We then use the `yaml` library to convert the `config` object into a YAML string and write it to a file named "user.yaml". The resulting file will look like this:
+You can also generate a YAML file using the `yaml.safeDump()` method:
 
-```yaml
-user:
-  name: John Doe
-  age: 25
-  hobbies:
-    - coding
-    - reading
-    - gaming
 ```
+const data = {
+    name: 'Jane Smith',
+    age: 25
+}
+const yamlData = yaml.safeDump(data);
+console.log(yamlData); // Output: name: Jane Smith, age: 25
+```
+
+The `yaml.safeDump()` method accepts an object as its parameter and converts it into a YAML string. It is important to note that this method also has options for formatting the output, such as adding indentation and line breaks.
 
 ## Deep Dive
-YAML, which stands for "YAML Ain't Markup Language", is a human-readable data serialization format. It is often used for application configuration, but can also be used for data exchange. YAML is designed to be easy to read and write for both humans and machines.
+YAML offers a variety of data structures, including arrays, objects, and key-value pairs, making it a versatile tool for storing data. It also supports comments, making it easier for developers to document their configuration files.
 
-Some key features of YAML include:
+One key feature of YAML is its ability to support references and anchors, which allows you to reuse data in multiple places within the same file. This can be especially useful for complex configurations that have repeated sections.
 
-- Structured data: YAML allows for data to be organized in a structured format, using indentation to denote relational elements.
-- Support for various datatypes: YAML supports common data types like strings, numbers, arrays, and objects, making it flexible for different use cases.
-- Comments: YAML allows for comments to be added, which can be helpful for providing context or explanations within configuration files.
-- Anchors: YAML supports the usage of anchors and aliases, allowing for the reuse of data within the same file.
+Another useful feature of YAML is its support for tags, which allow you to declare custom data types. This can be helpful when working with complex data structures that don't fit into the standard YAML types.
 
-For more information on working with YAML, check out the official YAML specification and the `yaml` library documentation.
+YAML also has a strict syntax, which ensures that your configuration files will be consistent and easily readable. This makes it easier for teams to collaborate and maintain their projects.
 
 ## See Also
-- [Official YAML Spec](https://yaml.org/)
-- [yaml library documentation](https://eemeli.org/yaml/)
+- [Official YAML website](https://yaml.org/)
+- [Introduction to YAML for beginners](https://www.baeldung.com/xstream-yaml)
+- [How to use YAML in Node.js](https://medium.com/@alibenmessaoud/working-with-yaml-in-node-js-projects-3718953c178b)

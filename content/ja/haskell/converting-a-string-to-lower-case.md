@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 「文字列を小文字に変換する」"
+title:                "「文字列を小文字に変換する」"
+html_title:           "Haskell: 「文字列を小文字に変換する」"
 simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を小文字に変換することに興味が湧いていますか？それは、プログラミングにおいて文字列を操作する必要がある一般的なタスクの一つであり、小文字に変換することで文字列の処理がより簡単になるからです。
+
+ある文字列を小文字に変換することが必要な時があります。例えば、ユーザーが入力した文字列を大文字でも小文字でも正しく処理するために、「小文字に変換する」機能が必要になるかもしれません。
+Haskellでは、文字列を変換するための多くの便利な関数が用意されていますが、今回は特に`toLower`関数を使用して文字列を小文字に変換する方法を紹介します。
 
 ## 方法
-Haskellでは、`map`と`toLower`という2つの関数を使用して、文字列を小文字に変換することができます。例を見てみましょう。
+
+まず、プログラムの最初に`Data.Char`モジュールをインポートします。
 
 ```Haskell
--- "Hello World!"を小文字に変換する例
-let str = "Hello World!"
-let lowerStr = map toLower str
-
--- 出力: "hello world!"
+import Data.Char
 ```
 
-`map`関数は、リストや文字列の各要素に対して指定した関数を適用し、新しいリストや文字列を返す関数です。`toLower`関数は、与えられた文字を小文字に変換する関数です。これら2つの関数を組み合わせることで、簡単に文字列を小文字に変換することができます。
+次に、`toLower`関数を使って文字列を小文字に変換します。
+
+```Haskell
+strToLower :: String -> String
+strToLower = map toLower
+```
+
+上記のように、`toLower`は`map`関数を使って文字列の各文字に適用され、新しい小文字の文字列が作成されます。ここでは、`strToLower`という関数を定義しただけで、実際に文字列を小文字に変換する方法です。
+
+例えば、次のような入力を与えたとき、
+
+```Haskell
+strToLower "HELLO"
+```
+
+次のような出力が得られます。
+
+```Haskell
+"hello"
+```
 
 ## 深堀り
-上記の方法では、文字列を全て小文字に変換することができましたが、実際にはASCII文字だけでなく、Unicode文字も含めて変換する必要があるかもしれません。その場合は標準ライブラリの`Data.Text`モジュールの`toLower`関数を使用することで、全ての文字を適切に小文字に変換することができます。また、文字列の大文字を小文字に変換するだけでなく、逆の変換を行う`toUpper`関数も存在します。
 
-## はじめに戻る
-文字列を小文字に変換する方法について紹介しましたが、他にも文字列を操作するための多くの関数が存在します。Haskellの標準ライブラリを調べてみることで、より多くの機能を見つけることができるでしょう。
+`toLower`関数は、Unicodeの小文字に対応しています。つまり、ラテン文字だけでなく、日本語のような文字でも正しく小文字に変換することができます。また、ASCII文字に対しても同様に動作します。
 
-## 言語参考
-- [Haskell Wiki: 関数型プログラミング](https://wiki.haskell.org/Functional_programming)
-- [Haskell Wiki: `map`関数](https://wiki.haskell.org/Map)
-- [Haskell Wiki: `toLower`関数](https://wiki.haskell.org/Lowercase)
-- [Haskell Wiki: Unicodeサポート](https://wiki.haskell.org/Unicode)
-- [Haskellの標準ライブラリのドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:6)
+また、`toLower`関数は、文字を変換するだけでなく、単一の文字だけでなく文字列全体に適用することもできます。
+
+例えば、次のような文字列を変換したい場合、
+
+```Haskell
+strToLower "Hello World!"
+```
+
+次のような結果が得られます。
+
+```Haskell
+"hello world!"
+```
+
+Haskellでは、関数を連結することで、複数の処理を一度に行うことができるので、`toLower`関数を組み合わせることで、さらに柔軟な文字列の変換が可能になります。
+
+## その他参考リンク
+
+- [HaskellのtoLower関数のドキュメント](https://hackage.haskell.org/package/base/docs/Data-Char.html#v:toLower)
+- [Haskellで文字列を処理する方法](https://learnyouahaskell.com/starting-out#what-is-haskell)
+- [Haskellの関数合成について](https://learnyouahaskell.com/higher-order-functions#function-composition)

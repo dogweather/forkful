@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,54 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing to standard error is an essential skill for Arduino programmers. It allows you to easily debug and troubleshoot your code, helping you identify and fix errors quickly. By understanding how to write to standard error, you can improve the efficiency and accuracy of your code.
+Writing to the standard error in Arduino can be useful for debugging and error handling in your program. It allows you to display error messages or other important information to the serial monitor, making it easier to identify and fix any issues in your code.
 
 ## How To
 
-To write to standard error in Arduino, you will need to use the `Serial.println()` function. This function takes in a string or variable as an argument and prints it to the serial monitor. Here is an example code:
+To write to the standard error in Arduino, you can use the `Serial.println()` function. This function takes in a string or variable and sends it to the standard error, which can be viewed in the serial monitor.
+
+For example, if you wanted to display an error message, you could write:
 
 ```Arduino
-int num = 5;
-
-Serial.println("The value of num is: ");
-Serial.println(num);
+Serial.println("Error: something went wrong");
 ```
 
-The output of this code will be:
+This will print the message "Error: something went wrong" in the serial monitor.
 
-```
-The value of num is:
- 5
-```
-
-As you can see, the variable `num` is printed to the serial monitor. This is the most basic way of writing to standard error. You can also use `Serial.print()` to print without a new line, or use concatenation to print multiple values in one line. Here is an example:
+You can also use this function to display variable values for debugging purposes. For instance, if you have a variable `temperature` that holds the temperature reading from a sensor, you could write:
 
 ```Arduino
-int a = 10;
-int b = 5;
-
-Serial.println("The sum of a and b is: " + a + b);
+Serial.println("Current temperature: " + String(temperature));
 ```
 
-The output of this code will be:
-
-```
-The sum of a and b is: 15
-```
-
-Another helpful technique is to use `Serial.write()` to print non-string data types, such as integers, as bytes instead of converting them to text.
+This will print "Current temperature: [temperature value]" in the serial monitor.
 
 ## Deep Dive
 
-To truly understand writing to standard error, it's important to know the difference between `Serial.print()` and `Serial.println()`. The former prints the specified data without a new line, while the latter prints with a new line character at the end.
+The standard error in Arduino is a stream that is separate from the standard output. This means that you can write to the standard error without affecting the standard output and vice versa. This is useful for differentiating between normal program output and error messages.
 
-Additionally, understanding serial communication is crucial in learning how to write to standard error. The serial monitor is essentially a virtual connection between your computer and the Arduino board, allowing you to send and receive data. Writing to standard error helps you track the data being sent from your Arduino board to the serial monitor.
+You can also use the `Serial.print()` function to write to the standard error. However, this function does not add a new line at the end like `Serial.println()` does. So if you want to go to a new line, you will need to add the `\n` character at the end of your string.
+
+For example:
+
+```Arduino
+Serial.print("Some important info");
+Serial.println("This will be on a new line");
+```
+
+This will output:
+
+```
+Some important infoThis will be on a new line
+```
+
+To fix this, you can write:
+
+```Arduino
+Serial.print("Some important info\n");
+Serial.println("This will be on a new line");
+```
+
+This will output:
+
+```
+Some important info
+This will be on a new line
+```
 
 ## See Also
 
-For more information on writing to standard error, check out these resources:
-
-- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Arduino Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Serial Communication in Arduino](https://maker.pro/arduino/tutorial/arduino-serial-communication-everything-you-need-to-know)
+- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Serial.println vs Serial.print](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Debugging Arduino Code using Serial Print](https://create.arduino.cc/projecthub/CircuitDigest/debugging-arduino-code-using-serial-print-debug-mode-8a1b92)

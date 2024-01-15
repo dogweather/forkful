@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Gleam recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,46 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Sending HTTP requests is a fundamental part of web programming. In order to access certain resources or perform actions on a web server, you need to send an HTTP request. Basic authentication is a common way of securing these requests and ensuring that only authorized users have access.
+Sending HTTP requests with basic authentication is essential for accessing and retrieving protected resources from a web server. This type of authentication provides an additional layer of security to prevent unauthorized access to sensitive information.
 
-## How To
+## How To 
 
-To send an HTTP request with basic authentication in Gleam, you will need to use the `http` and `auth` modules from the standard library. First, we will define our request URL and authentication credentials:
+To send an HTTP request with basic authentication in Gleam, you will need to use the `http` and `base64` standard libraries. First, import these libraries at the top of your file:
 
-```Gleam
-let url = "https://example.com/api"
-let auth = http.basic_auth("username", "password")
+```
+import http
+import base64
 ```
 
-Next, we can use the `http` module to create our request by specifying the HTTP method, URL, and authentication credentials:
+Next, create a `HttpClient` instance and specify the URL you want to send the request to:
 
-```Gleam
-let request = http.request("GET", url, [auth])
+```
+let client = http.client("https://example.com/my/resource")
 ```
 
-We can then use the `http.send` function to actually send the request and get a response back:
+Then, use the `auth_basic` method to add the basic authentication header to your request. This method takes in a username and password as arguments:
 
-```Gleam
-let response = http.send(request)
+```
+let client_with_auth = client |> http.headers([[ "Authorization", http.auth_basic("username", "password") ]])
 ```
 
-Finally, we can access the response body and status code to see if our request was successful:
+Now, you can make your HTTP request using the `get` or `post` methods:
 
-```Gleam
-let body = response.body
-let status = response.status
+```
+let response = client_with_auth |> http.get()
 ```
 
-## Deep Dive
+Finally, you can access the response body and status code to see if your request was successful:
 
-Under the hood, basic authentication works by adding a special header, called `Authorization`, to the HTTP request. This header contains the username and password encoded in a specific format. The server then checks this header and verifies the credentials before allowing the request to proceed.
+```
+let body = response |> http.body()
+let status_code = response |> http.status()
+```
 
-It is important to note that basic authentication is not a secure way of transmitting sensitive information, as the credentials are sent in plain text. It is recommended to use other forms of authentication, such as OAuth, for more secure communication.
+Below is a complete example of sending an HTTP request with basic authentication and accessing the response:
 
-## See Also
+```
+import http
+import base64
 
-- [Gleam `http` module documentation](https://gleam.run/documentation/stdlib/http/)
-- [Gleam `auth` module documentation](https://gleam.run/documentation/stdlib/auth/)
-- [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+let client = http.client("https://example.com/my/resource") 
+let client_with_auth = client |> http.headers([[ "Authorization", http.auth_basic("username", "password") ]])
+let response = client_with_auth |> http.get()
+let body = response |> http.body()
+let status_code = response |> http.status()
+
+## Deep Dive 
+
+When sending an HTTP request with basic authentication, the credentials are encoded in a base64 string and added to the `Authorization` header. This allows the server to verify the identity of the client making the request.
+
+The `http.auth_basic` method handles the encoding of the credentials for you, but it is important to note that this type of authentication is not secure on its own. It is recommended to use HTTPS in conjunction with basic authentication for a more secure transfer of sensitive information.
+
+## See Also 
+- Gleam documentation on HTTP requests: https://gleam.run/docs/http
+- Standard library for HTTP: https://github.com/lpil/gleam-http
+- Standard library for base64 encoding: https://github.com/gleam-lang/gleam_base64

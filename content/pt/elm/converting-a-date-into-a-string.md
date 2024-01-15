@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Convertendo uma data em uma string"
+title:                "Convertendo uma data em uma string"
+html_title:           "Elm: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+## Por que
 
-Converter datas em strings é uma tarefa comum no desenvolvimento de aplicativos, especialmente quando se lida com exibição de datas para os usuários. Em Elm, essa conversão é uma função simples, mas pode ser muito útil para melhorar a experiência do usuário.
+Se você está trabalhando com datas em sua aplicação Elm, pode ser necessário convertê-las em uma string para exibi-las de forma mais legível para o usuário. Felizmente, a linguagem Elm possui recursos integrados para facilitar essa conversão.
 
-## Como fazer
+## Como Fazer
 
-Para converter uma data em uma string, podemos usar a função `Date.toString` do pacote `elm/time`.
+Para converter uma data em uma string, podemos usar a função `Format.date` e especificar o formato desejado. Por exemplo, para obter a data atual em formato de texto, podemos usar o seguinte código:
 
-```
-elm install elm/time
-```
+```Elm
+currentDate : Date
+currentDate = Time.now |> Date.fromPosix
 
-Em seguida, podemos utilizar a função para converter uma data em uma string no formato desejado. Por exemplo, se tivermos uma data no formato "YYYY-MM-DD", podemos converter para o formato brasileiro "DD/MM/YYYY" da seguinte forma:
+formattedDate : String
+formattedDate = Format.date "%d/%m/%Y" currentDate
 
-```
-import Date exposing (Date)
-import Time exposing (Date, toYear, toMonth, toDay)
-
-dateToString : Date -> String
-dateToString date =
-  let
-    day = toDay date
-    month = String.padLeft 2 '0' (toMonth date |> String.fromInt)
-    year = toYear date
-  in
-    day ++ "/" ++ month ++ "/" ++ year
+-- Output: "26/09/2021"
 ```
 
-A função `padLeft` é usada para adicionar um zero à esquerda caso o mês tenha apenas um dígito. Caso o formato desejado seja diferente, basta alterar a formatação do retorno.
+Podemos personalizar o formato da string de acordo com nossas necessidades, usando as letras de formatação específicas. No exemplo acima, `%d` representa o dia, `%m` o mês e `%Y` o ano. Um recurso útil é que podemos adicionar caracteres entre as letras de formatação, como barras ou hifens, para formatar a string de maneira mais legível.
 
-## Profundidade
+Também podemos utilizar a função `Date.dayOfWeek` para obter o dia da semana correspondente a uma data específica e exibi-la em nossa string formatada. Por exemplo:
 
-Ao olhar para a fonte da função `Date.toString`, podemos ver que a conversão é feita de forma bastante simples, utilizando as funções `toYear`, `toMonth` e `toDay`.
+```Elm
+dayOfWeek : String
+dayOfWeek = Date.dayOfWeek currentDate
 
-Essas funções, por sua vez, utilizam uma série de cálculos matemáticos para obter o ano, mês e dia da data. Além disso, há também uma série de funções para lidar com fusos horários, que podem ser úteis em casos específicos.
+-- Output: "Sunday"
+```
 
-É importante notar que a formatação padrão da função `Date.toString` segue o padrão ISO 8601, que pode não ser o formato preferido para todos os casos. Por isso, é importante entender como funciona a conversão e adaptar de acordo com a necessidade.
+Observe que, para usar essas funções, é necessário importar os módulos `Date` e` Format` em nosso código Elm.
 
-## Veja também
+## Deep Dive
 
-- [Documentação oficial do pacote `elm/time`](https://package.elm-lang.org/packages/elm/time/latest/)
-- [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+Além dos exemplos mencionados acima, a função `Format.date` possui muitas outras letras de formatação que podem ser utilizadas de forma criativa. Por exemplo, `%b` pode ser usado para obter o mês abreviado (por exemplo, "Jan"), `%a` para obter o dia da semana abreviado (por exemplo, "Sun") e `%m` para exibir o mês em forma numérica (por exemplo, "01" para Janeiro).
+
+Também podemos usar a função `Format.dateWithOptions` para especificar configurações adicionais, como o formato de data local e a utilização de 24 horas em vez de 12 horas.
+
+Além disso, se quisermos exibir uma data no formato ISO padrão, podemos usar a função `Date.toIsoString`. Essa função também pode ser útil para comparar diferentes datas, já que ela retorna uma string formatada que pode ser facilmente comparada.
+
+## Veja Também
+
+* [Documentação Oficial do Elm - Date](https://package.elm-lang.org/packages/elm/time/latest/Time-Date)
+* [Guia de Formatação de Datas no Elm](https://pianocomposer321.medium.com/elm-formatting-dates-in-elm-2c65471d630f)
+* [Fórum da Comunidade Elm - Conversão de datas para strings](https://discourse.elm-lang.org/t/converting-dates-to-strings/1902)

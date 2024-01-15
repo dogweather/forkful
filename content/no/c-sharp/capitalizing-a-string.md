@@ -1,5 +1,6 @@
 ---
-title:                "C#: Store bokstaver i en streng"
+title:                "Store bokstaver i en streng"
+html_title:           "C#: Store bokstaver i en streng"
 simple_title:         "Store bokstaver i en streng"
 programming_language: "C#"
 category:             "C#"
@@ -9,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+"## Hvorfor"
 
-Det å konvertere en streng til store bokstaver kan være en svært nyttig funksjon i mange programmeringssammenhenger. Det kan hjelpe med å gjøre data mer leselige og organiserte, og det kan også være en del av en større databehandling eller formateringsprosess.
+Det å gjøre strenger til store bokstaver kan være nødvendig for å skape et visuelt skille mellom ulike deler av tekst, eller for å sikre at data samstemmer med forventningene. Dette kan være spesielt nyttig i situasjoner hvor man jobber med brukerinputs eller sammenligninger mellom strenger.
 
-## Hvordan
+## Hvordan gjøres det
 
-Å konvertere en streng til store bokstaver i C# er en enkel prosess som kan gjøres ved hjelp av en innebygd funksjon kalt "ToUpper()". Denne funksjonen tar inn en streng som argument og returnerer en kopi av strengen med alle bokstavene omgjort til store bokstaver. La oss se på et eksempel:
+For å konvertere en streng til store bokstaver i C#, kan man bruke den innebygde metoden `ToUpper()`. Denne metoden tar ingen parametere og vil returnere en kopi av den opprinnelige strengen, men med alle bokstavene i store bokstaver.
 
 ```C#
-string navn = "oskar";
+string navn = "ola nordmann";
 string storNavn = navn.ToUpper();
 Console.WriteLine(storNavn);
 ```
+Output: OLA NORDMANN
 
-Dette koden vil skrive ut "OSKAR" til konsollen. Som du kan se, er det bare å kalle på funksjonen "ToUpper()" på strengen du ønsker å konvertere.
+Man kan også benytte seg av metoden `ToUpperInvariant()`, som fungerer på samme måte som `ToUpper()` men gir en mer pålitelig og konsistent konvertering mellom forskjellige kulturer.
 
-## Deep Dive
+## Dypdykk
 
-For de som er interessert i å gå dypere inn i å konvertere strenger til store bokstaver, er det viktig å vite at denne funksjonen kun konverterer bokstaver som er en del av det engelske alfabetet. Dette betyr at bokstaver med aksenter eller andre spesielle symboler ikke vil bli omgjort, med mindre de er en del av det engelske alfabetet. Det er også verdt å merke seg at denne funksjonen ikke påvirker tall eller andre tegn i en streng.
+Når man bruker `ToUpper()` og `ToUpperInvariant()` blir det laget en kopi av den opprinnelige strengen, og den originale strengen forblir den samme. Dette betyr at dersom man ønsker å endre den originale strengen til å være i store bokstaver, må man tildele den konverterte strengen tilbake til variabelen.
 
-Det finnes også alternative måter å konvertere en streng til store bokstaver på i C#, som å bruke funksjonen "ToLower()" for å omgjøre alle bokstavene til små bokstaver. Det finnes også måter å gjøre dette på ved å bruke "CultureInfo" og "TextInfo" klassene for å håndtere spesifikke kulturavhengige konverteringer.
+Det finnes også andre måter å gjøre en streng til store bokstaver i C#, som for eksempel å bruke `string.ToUpper(CultureInfo)`. Dette gir mer kontroll over hvordan bokstavene blir konvertert og kan være nyttig i spesifikke situasjoner.
 
-## Se Også
+Det er viktig å merke seg at både `ToUpper()` og `ToUpperInvariant()` kun konverterer bokstaver som har en entydig stor bokstav. Dette betyr at noen spesialtegn, slik som Æ, Ø og Å, kan bli konvertert til feil bokstav i enkelte tilfeller. For å unngå dette kan man bruke metoden `String.Normalize()` for å sikre at spesialtegnene blir riktig konvertert.
 
-For mer informasjon om konvertering av strenger i C#, kan du sjekke ut disse nyttige lenkene:
+## Se også
 
-- [Microsofts offisielle dokumentasjon om "ToUpper()" funksjonen](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [En guide til kulturavhengig tekstbehandling i C#](https://www.c-sharpcorner.com/UploadFile/a74768/culture-dependent-text-info-functions/)
-- [En diskusjon om forskjellene mellom "ToUpper()" og "ToUpperInvariant()" funksjonene](https://stackoverflow.com/questions/4930859/difference-between-toupper-and-toupperinvariant-in-net)
+- [Microsoft Docs: String.ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [Microsoft Docs: String.ToUpperInvariant()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
+- [Microsoft Docs: CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)
+- [Microsoft Docs: String.Normalize()](https://docs.microsoft.com/en-us/dotnet/api/system.string.normalize)

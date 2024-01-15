@@ -1,6 +1,7 @@
 ---
-title:                "Go: 将来または過去の日付の計算."
-simple_title:         "将来または過去の日付の計算."
+title:                "将来または過去の日付を計算する"
+html_title:           "Go: 将来または過去の日付を計算する"
+simple_title:         "将来または過去の日付を計算する"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,58 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-時には、未来や過去の日付を計算する必要が生じることがあります。そのような場合、Go言語を使用すると非常に簡単に実装することができます。
+
+日付を未来や過去の日付に計算することの重要性は、日常生活において多くの場面で使用されるからです。例えば、マイレージの有効期限や課題の締め切り日などの計算に便利です。
 
 ## 方法
-Go言語を使用して未来や過去の日付を計算するには、`time` パッケージを使用します。以下のコードは、現在の日付から指定した日数を加算した未来の日付を計算する例です。
+
+計算を行うには、Go言語に組み込まれた "time" パッケージを使用します。以下がサンプルコードと出力例です。
 
 ```Go
-package main
+// 今日の日付を取得
+today := time.Now()
 
-import (
-	"fmt"
-	"time"
-)
+// 未来の日付を計算する例、30日後の日付を取得
+futureDate := today.AddDate(0, 0, 30)
 
-func main() {
-	// 現在の日付を取得
-	currentDate := time.Now()
+// 過去の日付を計算する例、1年前の日付を取得
+pastDate := today.AddDate(-1, 0, 0)
 
-	// 指定した日数後の日付を取得
-	futureDate := currentDate.AddDate(0, 0, 7)
-
-	// 結果を出力
-	fmt.Println("現在の日付:", currentDate)
-	fmt.Println("未来の日付:", futureDate)
-}
-```
-
-以下は、上記コードの実行結果です。
-
-```
-現在の日付: 2020-10-01 13:00:00 +0900 JST
-未来の日付: 2020-10-08 13:00:00 +0900 JST
-```
-
-同様に、過去の日付を計算する場合は、`AddDate` メソッドの引数に負の値を渡すことで実現できます。
-
-```Go
-// 指定した日数前の日付を取得
-pastDate := currentDate.AddDate(0, 0, -7)
+// 出力
+fmt.Println(futureDate.Format("2006年01月02日"))  // 30日後の日付（例：2021年05月24日）
+fmt.Println(pastDate.Format("2006年01月02日"))    // 1年前の日付（例：2020年04月24日）
 ```
 
 ## ディープダイブ
-Go言語の`time` パッケージには、未来や過去の日付を計算するためのさまざまなメソッドや機能が用意されています。詳細については、公式ドキュメントを参照してください。
 
-https://golang.org/pkg/time/
+日付の計算に使用される "AddDate()" 関数は、内部的には "Date()" 関数を使用しています。この関数は、与えられた年、月、日の数値を加算（未来の日付を計算する場合）または減算（過去の日付を計算する場合）し、新しい日付を作成します。
 
-## 参考リンク
-- Go言語公式ドキュメント：https://golang.org/pkg/time/
-- 日付の操作について学ぶ：https://gobyexample.com/date-time
-- 日付と時刻を扱うための10のベストプラクティス：https://blog.chathurawidanage.com/2019/08/20/best-practices-for-handling-dates-and-times-in-go-lang/
+現在、 "time" パッケージには他にも日付や時刻を取得や変更するための関数が多数存在します。詳細な情報は公式ドキュメントを参照してください。
 
-See Also
-## 関連リンク
-- Go言語公式ドキュメント：https://golang.org/
-- 日本Go言語ユーザーグループ：https://golang.jp/
-- Go言語メモ帳：https://memo.yuuk.io/
+## 他に見る
+
+- [Go言語公式ドキュメント - timeパッケージ](https://golang.org/pkg/time/)
+- [A Tour of Go - timeパッケージ](https://go-tour-jp.appspot.com/basics/15)

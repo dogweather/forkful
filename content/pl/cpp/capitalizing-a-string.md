@@ -1,6 +1,7 @@
 ---
-title:                "C++: Zastosowanie wielkich liter do ciągu znaków"
-simple_title:         "Zastosowanie wielkich liter do ciągu znaków"
+title:                "Zamiana tekstu na wielkie litery"
+html_title:           "C++: Zamiana tekstu na wielkie litery"
+simple_title:         "Zamiana tekstu na wielkie litery"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,90 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-C++ jest niezwykle popularnym językiem programowania, który jest wykorzystywany do tworzenia różnych aplikacji i programów. Jednym z często używanych zadań jest manipulacja łańcuchami tekstowymi. W tym poradniku dowiedz się, dlaczego warto umieć kapitalizować łańcuchy tekstowe w C++ i jak to zrobić.
+Napisanie programu może czasami wymagać zmiany wielkości liter w tekście. Może to być na przykład potrzebne do wyświetlenia nazwy użytkownika w kapitalikach lub do poprawnego sformatowania danych. W tej krótkiej instrukcji dowiesz się, jak w prosty sposób zaimplementować funkcję, która automatycznie zamieni litery w ciągu znaków na wielkie.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Kapitalizowanie łańcucha tekstowego to proces zamiany wszystkich liter na duże. W C++, istnieje kilka sposobów na to, w zależności od tego jak duża kontrola nad łańcuchem tekstowym chcemy mieć.
-
-### 1. Użycie biblioteki <string>
-
-Pierwszym sposobem jest użycie gotowej biblioteki <string>, która dostarcza nam funkcję `toupper()` do zamiany pojedynczej litery na dużą. Możemy wykorzystać pętlę for, aby przejść przez cały łańcuch i zamienić każdą literę.
+Zacznijmy od zadeklarowania funkcji, która będzie odpowiedzialna za zmianę wielkości liter w naszym tekście.
 
 ```C++
-#include <iostream>
-#include <string>
-
-int main() {
-
-  std::string text = "to jest przykładowy łańcuch tekstowy";
-  int size = text.size();
-
-  for (int i = 0; i < size; i++) {
-    text[i] = toupper(text[i]);
-  }
-
-  std::cout << text << std::endl;
-
-  return 0;
+void capitalize(string& str) {
+    // kod zmieniający wielkość liter w ciągu znaków
 }
 ```
-**Output:** TO JEST PRZYKŁADOWY ŁAŃCUCH TEKSTOWY
 
-### 2. Użycie funkcji <algorithm>
-
-Drugim sposobem jest użycie funkcji `transform()` z biblioteki <algorithm>. Ta funkcja przyjmuje dwa parametry: iterator początkowy i końcowy oraz funkcję, która będzie apliczowana na każdym elemencie. W naszym przypadku, wykorzystamy funkcję `toupper` jako trzeci parametr.
+Następnie, musimy przeiterować przez cały ciąg znaków i zmienić wielkość liter za pomocą wbudowanej funkcji `toupper()`. Pamiętaj również o sprawdzeniu, czy ciąg jest już w całości zapisany wielkimi literami, aby uniknąć niepotrzebnych zmian.
 
 ```C++
-#include <iostream>
-#include <string>
-#include <algorithm>
-
-int main() {
-
-  std::string text = "to jest przykładowy łańcuch tekstowy";
-
-  transform(text.begin(), text.end(), text.begin(), toupper);
-
-  std::cout << text << std::endl;
-
-  return 0;
+void capitalize(string& str) {
+    for(char& c : str) {
+        c = toupper(c);
+    }
 }
 ```
-**Output:** TO JEST PRZYKŁADOWY ŁAŃCUCH TEKSTOWY
 
-### 3. Użycie funkcji toupper
-
-Ostatni sposób nie wymaga importowania żadnych bibliotek. Możemy wykorzystać funkcję `toupper` bezpośrednio na naszym łańcuchu tekstowym.
+Aby przetestować naszą funkcję, możemy stworzyć prosty program, który przyjmie od użytkownika tekst i wyświetli go w kapitalikach.
 
 ```C++
-#include <iostream>
-#include <string>
-
 int main() {
+    string text;
+    cout << "Podaj tekst: ";
+    getline(cin, text);
 
-  std::string text = "to jest przykładowy łańcuch tekstowy";
-  int size = text.size();
+    capitalize(text);
+    cout << "Tekst z wielkimi literami: " << text << endl;
 
-  for (int i = 0; i < size; i++) {
-    text[i] = toupper(text[i]);
-  }
-
-  std::cout << text << std::endl;
-
-  return 0;
+    return 0;
 }
 ```
-**Output:** TO JEST PRZYKŁADOWY ŁAŃCUCH TEKSTOWY
+
+Po uruchomieniu programu i wpisaniu tekstu, zostanie on wyświetlony z wielkimi literami.
+
+```
+Podaj tekst: C++ to fajny język programowania
+Tekst z wielkimi literami: C++ TO FAJNY JĘZYK PROGRAMOWANIA
+```
 
 ## Deep Dive
 
-Warto zauważyć, że w C++ mamy także funkcje `tolower()` i `toupper()` do zmiany liter na małe lub duże, co może być przydatne w niektórych aplikacjach. Ponadto, warto zwrócić uwagę na to, że funkcje `toupper()` i `tolower()` przyjmują jako argumenty wartości typu int, co pozwala nam wykorzystać je do manipulacji kodami ASCII.
+W przypadku, gdy potrzebujemy zmienić wielkość liter jedynie wybranych słów, możemy skorzystać z funkcji `isalpha()` do sprawdzenia, czy dany znak jest literą, co pozwoli nam na precyzyjniejszą kontrolę nad zmianami.
 
-## Zobacz także
+```C++
+void capitalize(string& str) {
+    bool capitalizeNext = true;
+    for(char& c : str) {
+        if(isalpha(c)) {
+            if(capitalizeNext) {
+                c = toupper(c);
+                capitalizeNext = false;
+            } else {
+                c = tolower(c);
+            }
+        } else {
+            capitalizeNext = true;
+        }
+    }
+}
+```
 
-- [Dokumentacja <string>](https://en.cppreference.com/w/cpp/header/string)
-- [Dokumentacja <algorithm>](https://en.cppreference.com/w/cpp/header/algorithm)
-- [Funkcje toupper i tolower](https://en.cppreference.com/w/cpp/string/byte/toupper)
+W przypadku tekstu "C++ to fajny język programowania", funkcja wyprodukuje wynik "C++ To Fajny Język Programowania". Zauważ, że kwota "C++" pozostaje niezmieniona, a pozostałe słowa zostają wyświetlone z jedynie pierwszą literą jako wielką.
 
-Dziękujemy za przeczytanie tego poradnika. Mamy nadzieję, że teraz wiesz, dlaczego kapitalizowanie łańcuchów tekstowych jest ważne w
+## Zobacz również
+
+- [Funkcja toupper() w C++](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
+- [Poradnik o operacjach na ciągach znaków w C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Uzyskiwanie bieżącej daty"
+title:                "Uzyskiwanie bieżącej daty"
+html_title:           "Elm: Uzyskiwanie bieżącej daty"
 simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,60 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Posiadanie aktualnej daty jest ważne w wielu aplikacjach, ponieważ pozwala nam śledzić czas i datę wykonania różnych operacji. W Elm istnieje wiele sposobów na uzyskanie bieżącej daty, a w tym artykule wyjaśnimy kilka z nich.
+Pobieranie aktualnej daty jest niezbędne w wielu aplikacjach internetowych i programach. Dzięki temu możemy wyświetlić aktualną datę na stronie, kontrolować wygaśnięcie ważności dokumentów lub prowadzić statystyki na podstawie daty.
 
 ## Jak to zrobić
 
-Istnieją dwie główne metody pobierania bieżącej daty w Elm - za pomocą wbudowanego modułu `Time` lub za pomocą zewnętrznej biblioteki `elm-time`.
-
-### Metoda 1: Moduł Time
-
-Pierwszą metodą jest użycie wbudowanego modułu `Time`, który zapewnia funkcję `now`. Przykładowy kod wyglądałby następująco:
-
-```Elm
-import Time exposing (now)
-
-currDate = now
+```elm
+currentDate : Date
+currentDate =
+    Time.now
 ```
 
-Po uruchomieniu tej funkcji otrzymamy wynik w postaci `Result` zawierający aktualną datę i czas. Musimy pamiętać, że czas jest reprezentowany jako wartość całkowita w milisekundach, więc musimy przekonwertować to na bardziej czytelną formę.
+Powyższy kod używa wbudowanej funkcji `now` z modułu `Time`, która zwraca bieżącą datę i czas w formacie `Date`. Możemy wykorzystać tę datę do dalszych przetwarzania lub wyświetlenia jej na stronie.
 
-```Elm
-convertDate result = case result of
-    Ok time -> Date.fromTime time
-    Err _ -> Date.fromTime 0
+Aby wyświetlić bieżącą datę w formacie tekstowym, możemy użyć funkcji `toText` z modułu `Time.Format`:
 
-currDate = now
-convertedDate = convertDate currDate
+```elm
+import Time.Format exposing (toText)
+
+currentDate : String
+currentDate =
+    currentDate
+        |> toText "dd/MM/yyyy"
 ```
 
-W powyższym kodzie, najpierw definiujemy funkcję, która przekonwertuje wynik na datę czytelną przez Elm. Następnie wywołujemy funkcję `now` i przekazujemy jej wynik do funkcji `convertDate`.
+Powyższy kod zwróci datę w formacie `dd/MM/yyyy`, czyli np. `08/03/2021`.
 
-### Metoda 2: Biblioteka Elm-time
+## Deep Dive
 
-Drugą metodą jest użycie zewnętrznej biblioteki `elm-time`, która dostarcza bardziej zaawansowane funkcje do manipulowania czasem i datą. Możemy zainstalować tę bibliotekę za pomocą komendy `elm install justinmimbs/time`.
-
-```Elm
-import Time exposing (utc, Date)
-import Time.Date exposing (Day, month, year, toYear, toMonth, toDay)
-import Time.Extra exposing (localHour)
-
-myTime = utc
-myDate = Date.fromTime myTime
-
-currYear = toYear myDate
-currMonth = toMonth myDate
-currDay = toDay myDate
-currHour = localHour 2 myTime
-```
-
-W powyższym kodzie, używamy różnych funkcji dostępnych w bibliotece `elm-time` w celu pobrania poszczególnych składowych daty i czasu. Przykładowo, przy użyciu funkcji `localHour` możemy równolegle określić strefę czasową.
-
-## Głębszy zanurzenie
-
-Funkcje `now` i `utc` używają czasu komputera jako podstawy dla obliczeń daty i czasu. Możemy także użyć funkcji `since` i `sinceUtc` do ustalenia daty i czasu względem innej daty, na przykład daty początkowej naszego programu. Dzięki temu możemy śledzić odległość czasową od wybranego punktu.
+W Elm istnieje wiele różnych metod do pobierania, przetwarzania i wyświetlania bieżącej daty. Istnieje również możliwość tworzenia niestandardowych formatów daty przy użyciu modułu `Time.Format`. Wraz z rozwojem języka, może pojawić się coraz więcej sposobów na zarządzanie datami.
 
 ## Zobacz także
 
-- Dokumentacja modułu `Time` w [oficjalnej dokumentacji Elm](https://package.elm-lang.org/packages/elm/time/latest/)
-- Dokumentacja biblioteki `elm-time` w [oficjalnym repozytorium GitHub](https://github.com/justinmimbs/time)
+- Dokumentacja modułu `Time` w języku polskim: https://package.elm-lang.org/packages/elm/time/latest/Time
+- Oficjalna strona języka Elm w języku polskim: https://guide.elm-lang.org/
+- Przykładowe projekty w języku Elm: https://elm-projects.com/

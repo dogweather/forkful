@@ -1,6 +1,7 @@
 ---
-title:                "Java: Travailler avec les fichiers CSV"
-simple_title:         "Travailler avec les fichiers CSV"
+title:                "Travailler avec des fichiers CSV"
+html_title:           "Java: Travailler avec des fichiers CSV"
+simple_title:         "Travailler avec des fichiers CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,58 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
+CSV, ou Comma-Separated Values, est un format couramment utilisé pour stocker et échanger des données tabulaires. Il est simple et convivial, ce qui en fait un choix populaire lors de la manipulation de données dans le développement de logiciels.
 
-Si vous êtes nouveau dans le monde de la programmation, vous vous demandez peut-être ce qu'est un CSV. En bref, c'est un format de fichier couramment utilisé pour stocker des données structurées. En travaillant avec des fichiers CSV, vous serez en mesure d'organiser et de manipuler des données de manière efficace. 
+## Comment faire 
+La manipulation de données CSV en Java est assez simple et peut être réalisée en utilisant des packages tels que "java.io" et "java.util". Voici un exemple de code pour lire un fichier CSV et afficher son contenu:
 
-## Comment faire
+```Java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-Pour commencer à travailler avec des fichiers CSV en Java, vous devrez d'abord importer la bibliothèque Java CSV. Ensuite, vous pouvez utiliser la classe ```CSVReader``` pour lire les données à partir d'un fichier CSV et la classe ```CSVWriter``` pour écrire des données dans un fichier CSV. Voici un exemple de code pour lire un fichier CSV et imprimer son contenu :
+public class CSVReaderExample {
+    public static void main(String[] args) {
+        String csvfile = "exemples/etudiants.csv";
+        String line = "";
 
-```
-CSVReader reader = new CSVReader(new FileReader("mon_fichier.csv"));
-String[] ligne;
-while ((ligne = reader.readNext()) != null) {
-    for (String cellule : ligne) {
-        System.out.print(cellule + " | ");
+        try (BufferedReader br = new BufferedReader(new FileReader(csvfile))) {
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                System.out.println("Etudiant: " + data[0] + ", Age: " + data[1] + ", Classe: " + data[2]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    System.out.println();
 }
 ```
 
-En utilisant le code ci-dessus, nous pouvons lire chaque ligne du fichier CSV et imprimer le contenu de chaque cellule séparé par des barres verticales. L'exemple de code ci-dessus utilise la bibliothèque OpenCSV, mais vous pouvez également utiliser d'autres bibliothèques telles que Apache Commons CSV ou Super CSV pour travailler avec des fichiers CSV en Java.
-
-Maintenant, voyons un exemple de code pour écrire des données dans un fichier CSV :
+La sortie de ce code sera:
 
 ```
-CSVWriter writer = new CSVWriter(new FileWriter("nouveau_fichier.csv"));
-String[] entetes = {"Nom", "Prénom", "Âge"};
-writer.writeNext(entetes);
-String[] ligne1 = {"Dupont", "Marc", "25"};
-writer.writeNext(ligne1);
-String[] ligne2 = {"Martin", "Sophie", "30"};
-writer.writeNext(ligne2);
-writer.close();
+Etudiant: Jean, Age: 20, Classe: INFO1
+Etudiant: Marie, Age: 21, Classe: INFO1
+Etudiant: Pierre, Age: 19, Classe: INFO2
 ```
 
-Dans cet exemple, nous avons d'abord créé un en-tête pour notre fichier CSV, puis nous avons écrit deux lignes de données. Le fichier CSV résultant aura la structure suivante :
+## Plongée en profondeur 
+Il existe des bibliothèques tierces telles que Apache Commons CSV et OpenCSV qui offrent des fonctionnalités avancées pour travailler avec des fichiers CSV en Java. Ces bibliothèques permettent de gérer plus facilement les erreurs de format et les types de données, ainsi que de manipuler les données en utilisant des objets plutôt que des tableaux de chaînes.
 
-| Nom | Prénom | Âge |
-|-----|--------|------|
-| Dupont | Marc | 25 |
-| Martin | Sophie | 30 |
+Il est également important de noter que les fichiers CSV peuvent avoir des délimiteurs autres que les virgules, et que ces bibliothèques peuvent être configurées pour reconnaître différents délimiteurs.
 
-## Plongée en profondeur
-
-Bien que travailler avec des fichiers CSV puisse sembler simple au premier abord, il y a quelques points à prendre en compte pour éviter les erreurs. Tout d'abord, vous devez vous assurer que vos données sont correctement formatées pour éviter les problèmes lors de la lecture ou de l'écriture. Vous devez également prendre en compte les différents encodages de caractères qui peuvent être utilisés dans les fichiers CSV.
-
-Il est également important de comprendre comment gérer les erreurs lors de la lecture ou de l'écriture de fichiers CSV. Par exemple, si un fichier CSV a des lignes vides ou des colonnes manquantes, vous devez être en mesure de les détecter et de les traiter correctement.
-
-Enfin, il est crucial de savoir comment manipuler les données lues à partir d'un fichier CSV. Vous pouvez avoir besoin de convertir des données en différents types ou de les traiter avant de les utiliser pour votre application.
-
-## Voir aussi
-
-- [Documentation Java sur les fichiers CSV](https://docs.oracle.com/javase/8/docs/api/java/csv/package-summary.html)
-- [Bibliothèque OpenCSV](https://sourceforge.net/projects/opencsv/)
-- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/)
-- [Super CSV](https://super-csv.github.io/super-csv/index.html)
+## Voir aussi 
+- [Tutoriel sur la manipulation de fichiers CSV en Java](https://www.baeldung.com/java-csv-file-array)
+- [Documentation sur Apache Commons CSV](http://commons.apache.org/proper/commons-csv/)
+- [Documentation sur OpenCSV](http://opencsv.sourceforge.net/)

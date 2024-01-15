@@ -1,6 +1,7 @@
 ---
-title:                "C++: “写入标准错误”"
-simple_title:         "“写入标准错误”"
+title:                "编写标准错误"
+html_title:           "C++: 编写标准错误"
+simple_title:         "编写标准错误"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么: 
-在编写C++程序时，有时我们会遇到一些错误，这时通过把错误信息输出到标准错误流（standard error）中，可以帮助我们快速定位和修复错误。因此，了解如何写入标准错误流是一项非常重要的程序开发技能。
+# 为什么要写入标准错误？
+Writing to standard error is a common practice in C++ programming. It allows developers to display error messages or log information while their program is running, making it easier to debug and troubleshoot any issues that may arise. 
 
-怎么做: 
-可以通过在代码中加入```C++...```的代码块来演示如何写入标准错误流。首先，我们需要包含<fstream> 头文件，并使用std::cerr来表示标准错误流。然后，使用<<操作符来将需要输出的错误信息写入到标准错误流中，例如：
+# 如何写入标准错误
 ```C++
-#include <fstream>
+#include <iostream>
+#include <cstdlib>
 
 int main() {
-    std::cerr << "这是一个错误信息" << std::endl;
-    return 0;
+    std::cerr << "This is an error message." << std::endl;
+    return EXIT_FAILURE;
 }
 ```
-运行这段代码，就会在控制台输出相应的错误信息。
 
-深入了解： 
-标准错误流和标准输出流（standard output）是两个不同的输出流，它们分别用于输出错误信息和普通信息。和标准输出流一样，我们也可以使用`std::cerr`来表示标准错误流。但是，与标准输出流不同的是，标准错误流在输出时不会被缓冲，即时输出，这样可以确保错误信息能够及时显示在控制台上，方便我们调试程序。
+运行上面的程序，你会得到类似如下输出：
 
-此外，我们也可以使用`std::clog`来表示标准错误流，它和`std::cerr`的用法是一样的，只是它是有缓冲的输出流，在某些情况下也可以用来输出错误信息。
+```
+This is an error message.
+```
 
-总的来说，掌握如何写入标准错误流可以帮助我们更好地调试程序，提高工作效率。
+## 深入探讨
+标准错误流（standard error stream）是在C++标准输出流（standard output stream）之外的另一种输出通道。它可以用来显示错误信息或者记录程序运行过程中的一些重要信息。如果在C++程序中没有显式地指定输出到哪个流中，那么错误信息通常会被发送到标准错误流中。在调试和排查问题时，写入标准错误是一个非常有用的工具。
 
-## 参考链接：
-- [C++ 文件流教程](https://www.runoob.com/cplusplus/cpp-files-streams.html)
-- [C++ 标准库文档](https://zh.cppreference.com/w/cpp/io/iostream)
-- [我和C++标准错误流的故事](https://yq.aliyun.com/articles/64451)
-
-## 参见: 
-- [C++ 标准输入流：cin](https://www.cnblogs.com/905816937New/p/12252793.html)
-- [C++ 格式化输出：cout](https://zhuanlan.zhihu.com/p/133012818)
-- [Debugging for beginners](https://code.visualstudio.com/docs/cpp/cpp-debug)
+# 参考链接
+- 关于C++标准错误流的更多信息，请参考[Cplusplus.com](https://www.cplusplus.com/reference/ios/cerr/)
+- 在C++中输出错误信息的另一种方法是使用`cerr`和`clog`流，详见[Tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
+- 查看本文中使用的代码样例的完整版本，请访问[Github](https://github.com/example)

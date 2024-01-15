@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 명령줄 인수 읽기"
-simple_title:         "명령줄 인수 읽기"
+title:                "명령 줄 인수 읽기"
+html_title:           "Clojure: 명령 줄 인수 읽기"
+simple_title:         "명령 줄 인수 읽기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,26 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-커맨드 라인 인수를 읽는 것은 프로그래머에게 매우 유용합니다. 인수를 읽는 능력은 여러분이 쉘 스크립트를 작성하거나 Clojure 애플리케이션을 만들 때 매우 중요한 요소입니다.
+커맨드 라인 인자를 읽는 법에 대해 배우고 싶은 독자들을 위한 빠르고 간단한 가이드입니다. Clojure를 사용하여 명령 줄에서 인자를 읽는 데 필요한 기본적인 지식과 예제를 제공합니다.
 
 ## 어떻게
 
-커맨드 라인 인수를 읽기 위해서는 Clojure의 `command-line-args` 함수를 사용하면 됩니다. 이 함수는 현재 프로세스의 커맨드 라인 인수를 가져옵니다. 예를 들어, `lein run arg1 arg2` 명령으로 프로그램을 실행하면, `command-line-args` 함수는 `["arg1" "arg2"]`를 반환합니다.
+명령 줄에서 인자를 읽는 것은 프로그램을 작성하는 데 필수적인 기능입니다. 이를 통해 사용자는 프로그램을 실행할 때 입력값을 제공할 수 있으며, 이를 통해 다양한 작업을 수행할 수 있습니다. Clojure에서는 ```clojure clojure.main```을 사용하여 명령 줄 인자를 읽을 수 있습니다.
 
-```Clojure
-(defn -main [& args]
-  (let [command-line-args (command-line-args)]
-    (println command-line-args)))
-
-; Output: ["arg1" "arg2"]
+```clojure
+;; 프로그램 로직
+(defn -main
+  [& args]
+  ;; 인자 읽기
+  (println (str "인자: " args)))
 ```
 
-## 깊게 파고들기
+위의 예제에서 ```-main``` 함수의 매개변수로 ```& args```를 정의하면 프로그램을 실행할 때 전달되는 명령 줄 인자를 모두 읽을 수 있습니다. 인자는 문자열의 벡터 형태로 저장되며, 이를 활용하여 프로그램 로직을 구현할 수 있습니다. 예를 들어, 다음과 같이 실행할 수 있습니다.
 
-`command-line-args` 함수는 기본적으로 스트링 형태의 인수만을 반환합니다. 그러나 만약에 여러분이 숫자를 인수로 받고 싶다고 가정해 봅시다. 이 경우에는 `parse-int` Clojure 함수를 사용하여 숫자로 변환할 수 있습니다. 또한 여러분이 다양한 인수를 받아서 사용할 때 `getopts` 라이브러리를 사용하는 것도 좋은 옵션입니다.
+```sh
+clj -m my-program arg1 arg2 arg3
+```
 
-## See Also
+위의 예제에서 ```my-program```은 Clojure로 작성된 코드를 실행하기 위한 메인 네임스페이스를 가리킵니다. 그리고 ```arg1```, ```arg2```, ```arg3```는 사용자가 프로그램으로 전달하는 입력값을 나타냅니다. 위의 예제를 실행하면 다음과 같이 출력됩니다.
 
-- `command-line-args` 함수: https://clojuredocs.org/clojure.core/command-line-args
-- `parse-int` 함수: https://clojuredocs.org/clojure.core/parse-int
-- `getopts` 라이브러리: https://github.com/clojure/tools.cli
+```
+인자: ["arg1" "arg2" "arg3"]
+```
+
+## 심화 학습
+
+Clojure에서는 ```cli``` 라이브러리를 사용하여 조금 더 편리하게 명령 줄 인자를 읽을 수 있습니다. 이를 활용하면 입력값의 유효성 검사나 형 변환 같은 작업을 쉽게 처리할 수 있습니다. 또한, Clojure는 명령 줄 인자를 기본으로 제공하지 않지만, 외부 라이브러리를 통해 기능을 확장할 수도 있습니다.
+
+## 관련 정보
+
+- [Clojure 공식 홈페이지 (한국어)](https://clojure.org/guides/getting_started#_command_line_tools)
+- [clojure.spec를 활용한 인자 유효성 검사 예제](https://gist.github.com/bsima/3a1b34f6772802c35fc1e53bc4403e03)
+- [Clojure로 커맨드 라인 인터페이스 구현하기](https://medium.com/@meetendoshi/clojure-for-command-line-interface-c9e3db80aa5c)

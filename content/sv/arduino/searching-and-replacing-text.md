@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,63 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
+När du skriver kod för ditt Arduino-projekt är det lätt att göra misstag och behöva ändra text på flera ställen. Genom att använda sök- och ersättfunktionen kan du snabbt och enkelt ändra alla förekomster av en viss text i ditt kod.
 
-Ibland när du skriver kod på Arduino, kanske du märker att du behöver ändra eller byta ut en del av texten. Det kan vara ett tidsödande och tråkigt arbete att göra detta manuellt, men som tur är finns det en enklare lösning - söka och ersätta funktionen. Genom att använda denna funktion kan du spara tid och undvika felaktigheter i koden.
+## Så här gör du
 
-# Hur man gör
+För att söka och ersätta text i din Arduino-kod, används funktionen ```replace``` tillsammans med ```find```. Här är ett exempel på hur du kan använda dem:
 
-För att använda sök-och-ersätt-funktionen i Arduino, följ dessa steg:
-
-1. Öppna koden du vill ändra i Arduino IDE.
-2. Klicka på **Redigera** i menyn och välj **Sök och ersätt**.
-3. I rutan som visas kan du söka efter den text du vill ersätta och ange den nya texten du vill ersätta den med.
-4. Klicka på **Nästa** för att söka efter nästa förekomst av den ursprungliga texten.
-5. Om du vill ersätta denna förekomst, klicka på **Ersätt** eller **Alla** för att ersätta alla förekomster av texten.
-
-Här är ett exempel på hur en sök-och-ersätt-operation kan se ut i Arduino IDE:
-
-```Arduino
-void setup() {
-  //Här söker vi efter "lcd.init();" och ersätter det med "lcd.begin();"
-  lcd.init();
-  lcd.init();
-  lcd.begin();
-}
-
-void loop() {
- //Vi kan också ersätta texten i kommentarer
- //Vi söker efter "loop" och ersätter det med "loopForever"
-  loop();
-  loop();
-  loopForever();
-}
+```
+Arduino.replace("fel", "rätt");
+Arduino.find("fel");
 ```
 
-Resultatet av koden ovan skulle vara:
+Det här koden kommer att hitta alla förekomster av ordet "fel" och ersätta dem med ordet "rätt". Om du vill söka efter flera ord på en gång kan du använda en lista med ord istället för bara ett ord:
 
-```Arduino
-void setup() {
-  lcd.begin();
-  lcd.begin();
-  lcd.begin();
-}
-
-void loop() {
-  loopForever();
-  loopForever();
-  loopForever();
-}
+```
+Arduino.replace(["fel1", "fel2", "fel3"], "rätt");
+Arduino.find(["fel1", "fel2", "fel3"]);
 ```
 
-# Djupdykning
+Du kan också använda en variabel för att söka efter ett visst ord:
 
-Det finns många olika sätt att använda sök-och-ersätt-funktionen på i Arduino IDE. Du kan till exempel använda reguljära uttryck för att söka efter mönster istället för en specifik textsträng, eller använda sök-och-ersätt-funktionen i kombination med andra funktioner som **Upprepa** för att göra flera sök-och-ersätt-operationer i en kodfil.
+```
+String fel = "fel1";
+Arduino.replace(fel, "rätt");
+Arduino.find(fel);
+```
 
-Det är också viktigt att komma ihåg att sök-och-ersätt-funktionen är skiftlägeskänslig, vilket innebär att den kommer att söka efter exakta matchningar av texten du anger. Så om du till exempel vill ersätta "LED" med "led", måste du klicka på **Ersätt alla** för att ändra alla förekomster.
+När du använder funktionen ```replace``` och ```find```, så är det viktigt att du håller koll på stor- och småbokstäver. Om du vill ersätta både "fel" och "Fel" måste du anropa funktionerna två gånger och ersätta båda varianterna av ordet.
 
-# Se även
+För att se hur din kod kommer att se ut efter att du har använt funktionen ```replace```, kan du använda funktionen ```println```:
 
-- [Arduino IDE - Sök och ersätt](https://www.arduino.cc/reference/en/software/searchandreplace/)
-- [Regular Expression Tutorial](https://www.regular-expressions.info/index.html)
-- [Upprepa-funktionen i Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/repeat/)
+```
+Arduino.println();
+```
+
+Det här kommer att skriva ut din kod med alla förekomster av det sökta ordet ersatt med det nya ordet.
+
+## Deep Dive
+
+När du använder dig av funktionerna ```find``` och ```replace``` på din kod, så kommer det att bli en högre bearbetning för Arduino, vilket kan påverka din kod för långsam. Om du märker att din kod tar väldigt lång tid att bli exekverad eller inte fungerar som den ska, kan du överväga att använda en annan sökmetod, som till exempel manuellt ersätta varje förekomst av den sökta texten.
+
+## Se även
+
+* [Funktionsreferens för Arduino - replace()](https://www.arduino.cc/reference/en/language/structure/strings/stringobject/replace/)
+* [Funktionsreferens för Arduino - find()](https://www.arduino.cc/reference/en/language/functions/advanced-io/find/)

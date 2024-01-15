@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 패턴과 일치하는 문자 삭제"
+title:                "패턴과 일치하는 문자 삭제"
+html_title:           "Clojure: 패턴과 일치하는 문자 삭제"
 simple_title:         "패턴과 일치하는 문자 삭제"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,52 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-이 글에서는 특정 패턴과 일치하는 문자를 삭제하는 방법에 대해 알아보겠습니다. 이 기능을 사용하면 데이터를 정리하고 원하지 않는 문자를 제거할 수 있습니다.
+어찌하면 한정된 정보를 처리하고 싶을 때 이것이 유용할 수 있습니다. 예를 들어, 사용자가 입력한 문자열 중에서 특정한 패턴을 가진 문자를 삭제하고 싶을 때 사용할 수 있습니다.
 
-## 사용 방법
-
-우선, 우리는 `string` 변수에 문자열을 할당할 것입니다.
+## 어떻게
 
 ```Clojure
-(def string "Hello World! 안녕하세요!")
+(def text "안녕하세요, Clojure 프로그래밍은 재미있습니다!")
+(def pattern #"[ㄱ-ㅎ가-힣]")
+
+(re-seq (complement pattern) text)
 ```
 
-그리고 `remove` 함수를 사용해 특정 패턴과 일치하는 문자를 제거합니다.
+결과:
 
-```Clojure
-(def result (remove #{\!} string))
+```
+(\C \l \o \j \u \r \e \ \ㄱ \ㅎ \ㅁ \ㅌ \ㅂ \ㄹ \ㄷ \ㅇ \ㅂ \ㅅ \ㅅ \ㅂ \ㅂ \ㅅ \ㅂ \ㄹ \ㄹ \ㅈ \ㄹ \ㅁ \ㅇ \ㅂ \ㅇ \ㅅ \ㅎ \ㅂ \ㄹ \ㅌ \ㅂ \ㅊ \ㅁ \ㅈ \ㄷ \ㅇ \ㅅ \ㄹ \ㅌ \ㅊ \ㅈ)
 ```
 
-코드를 실행하면 다음과 같은 결과가 출력됩니다.
+## 깊게 들어가기
 
-```Clojure
-;=> "Hello World 안녕하세요"
-```
+`re-seq` 함수는 첫 번째 인자로 전달된 정규표현식과 일치하는 모든 부분을 추출합니다. 두 번째 인자로 전달된 문자열의 모든 문자를 반환합니다. `pattern` 변수에는 모든 한글과 자음 모음을 나타내는 정규표현식이 저장되어 있습니다. `complement` 함수는 전달된 정규표현식과 일치하는 모든 부분을 제외한 나머지 부분을 반환합니다. 따라서 `re-seq (complement pattern) text`를 통해 한글과 자음 모음을 제외한 모든 문자를 추출할 수 있습니다.
 
-여기서 `#{\!}`는 삭제하고 싶은 문자를 나타냅니다. 만약 더 많은 문자를 삭제하고 싶다면 다음과 같이 작성할 수 있습니다.
+## 더 알아보기
 
-```Clojure
-(remove #{\! \?} string)
-```
+- [Clojure Docs - re-seq](https://clojuredocs.org/clojure.core/re-seq)
+- [Clojure Docs - pattern matching](https://clojure.org/guides/learn/functions#_pattern_matching)
+- [정규표현식 한글 이외의 문자 제외하기](https://stackoverflow.com/questions/25590352/using-regular-expression-to-match-all-letters-including-korean-non-english) 
 
-그리고 `filter` 함수를 사용하면 특정 패턴과 일치하는 문자를 제거하는 것이 아닌, 해당 패턴과 일치하는 문자만 남길 수 있습니다.
+## 같이 보기 
 
-```Clojure
-(filter #{\! \?} string)
-```
-
-결과는 다음과 같습니다.
-
-```Clojure
-;=> "!?"
-```
-
-## 딥 다이브
-
-Clojure에서 `remove` 함수는 주어진 시퀀스에서 특정 항목을 제외하고 새로운 시퀀스를 반환합니다. 이 함수는 `filter` 함수와 유사하지만, 항목을 걸러내는 대신 선택적으로 포함시킵니다.
-
-## 참고 자료
-
-- [Official Clojure Documentation on `remove`](https://clojure.org/api/cheatsheet#_remove)
-- [Blog post on Clojure string manipulation](https://www.martinklepsch.org/posts/clojure-string-manipulation.html)
-- [StackOverflow thread on removing characters from string](https://stackoverflow.com/questions/4212662/how-to-remove-characters-from-a-string-in-clojure)
+- [`complement` 함수 사용하기](https://github.com/ksm1167/Clojure-Examples/blob/master/Functions/complement.clj)
+- [정규표현식 변수로 사용하기](https://github.com/ksm1167/Clojure-Examples/blob/master/String/regex-var-as-argument.clj)

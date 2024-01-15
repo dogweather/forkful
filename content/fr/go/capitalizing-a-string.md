@@ -1,6 +1,7 @@
 ---
-title:                "Go: Capitalisation d'une chaîne de caractères"
-simple_title:         "Capitalisation d'une chaîne de caractères"
+title:                "Majuscule d'une chaîne de caractères"
+html_title:           "Go: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,59 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Vous êtes-vous déjà demandé pourquoi il est important de capitaliser une chaîne de caractères en programmation ? Dans cet article, nous allons explorer cette question et vous montrer comment le faire en utilisant le langage de programmation Go.
+
+Si vous travaillez avec des chaînes de caractères en Go, vous pourriez être confronté à un problème fréquent : comment rendre la première lettre de chaque mot en majuscule ? Dans cet article, je vais vous montrer comment capitaliser une chaîne de caractères en utilisant la puissance de Go.
 
 ## Comment faire
-La méthode la plus courante pour capitaliser une chaîne de caractères en Go est d'utiliser la fonction `strings.ToUpper()`. Voici un exemple de code qui montre comment l'utiliser :
+
+
+Le moyen le plus simple de capitaliser une chaîne de caractères en Go est d'utiliser la fonction `strings.Title()`. Elle prend une chaîne de caractères en entrée et renvoie une nouvelle chaîne de caractères avec la première lettre de chaque mot en majuscule. Voici un exemple de code : 
 
 ```Go
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    str := "bonjour"
-    fmt.Println(strings.ToUpper(str))
+	str := "hello world"
+	capitalizedStr := strings.Title(str)
+	fmt.Println(capitalizedStr)
 }
 ```
+La sortie de ce code sera "Hello World". Comme vous pouvez le voir, la fonction `strings.Title()` a automatiquement converti la première lettre de chaque mot en majuscule.
 
-Lorsque vous exécuterez ce code, vous obtiendrez l'output suivant :
+## Plongée profonde
 
-```
-BONJOUR
-```
-
-Comme vous pouvez le voir, la fonction `strings.ToUpper()` a transformé la chaîne de caractères "bonjour" en "BONJOUR". Cela vous permet de capitaliser facilement une chaîne de caractères en utilisant Go.
-
-## Deep Dive
-Maintenant que vous savez comment capitaliser une chaîne de caractères en Go, plongeons un peu plus profondément dans ce sujet. Il existe en fait deux façons de capitaliser une chaîne de caractères en Go : avec la fonction `strings.ToUpper()` que nous avons utilisée précédemment, ou en utilisant la fonction `strings.Title()`. La fonction `strings.Title()` va capitialiser la première lettre de chaque mot dans une chaîne de caractères, tandis que la fonction `strings.ToUpper()` va capitaliser toutes les lettres. Par exemple :
-
-```Go
-package main
-
-import "fmt"
-import "strings"
-
-func main() {
-    str := "bonjour tout le monde"
-    fmt.Println(strings.Title(str))
-    fmt.Println(strings.ToUpper(str))
-}
-```
-
-L'output de ce code sera :
-
-```
-Bonjour Tout Le Monde
-BONJOUR TOUT LE MONDE
-```
-
-Maintenant, vous pouvez choisir la méthode de capitalisation qui convient le mieux à vos besoins en fonction de la situation.
+Maintenant que vous avez vu comment capitaliser une chaîne de caractères en utilisant `strings.Title()`, il peut être intéressant de comprendre comment cela fonctionne. En réalité, la fonction utilise plusieurs algorithmes pour capitaliser correctement une chaîne de caractères. Elle prend en compte des règles d'exceptions pour certains mots spéciaux comme "the", "and", "of" et bien d'autres. De plus, elle détecte également la casse déjà présente dans la chaîne de caractères et la conserve. Par exemple, si vous avez une chaîne de caractères comme "microsoft word", elle sera capitalisée en "Microsoft Word" et non en "Microsoft word". 
 
 ## Voir aussi
-Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Go, vous pouvez consulter la documentation officielle :  
-- https://golang.org/pkg/strings/  
-- https://tour.golang.org/basics/15  
 
-Merci d'avoir lu cet article et à bientôt pour de nouvelles astuces sur le langage Go !
+- [Documentation officielle de la fonction `strings.Title()`](https://golang.org/pkg/strings/#Title)
+- [Tutoriel vidéo sur la gestion des chaînes de caractères en Go](https://www.youtube.com/watch?v=32TeZiFXjXk) 
+- [Article sur les bonnes pratiques de programmation en Go](https://medium.com/@pcanino/bonnes-pratiques-de-programmation-en-go-d7357c5907a5)

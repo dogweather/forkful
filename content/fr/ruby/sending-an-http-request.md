@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Envoyer une demande http"
-simple_title:         "Envoyer une demande http"
+title:                "Envoyer une requête http"
+html_title:           "Ruby: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,47 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'utilisation des requêtes HTTP est essentielle pour communiquer avec les différents serveurs sur le web. Cela permet à votre application de récupérer et d'envoyer des données telles que des fichiers, des images ou du texte.
+Vous vous demandez peut-être pourquoi vous devriez vous préoccuper d'envoyer une requête HTTP en utilisant Ruby. Eh bien, si vous souhaitez communiquer avec une API, récupérer des données à partir d'un service web ou poster des formulaires en ligne, alors vous avez besoin de savoir comment envoyer une requête HTTP.
 
-# Comment faire
+## Comment faire
 
-Pour envoyer une requête GET en Ruby, utilisez le module Net::HTTP et la méthode get. Voici un exemple de code :
-
-```Ruby
-require 'uri'
-require 'net/http'
-
-url = URI("https://www.example.com/")
-response = Net::HTTP.get_response(url)
-
-puts response.body if response.is_a?(Net::HTTPSuccess)
-```
-
-Dans cet exemple, nous importons les modules Net::HTTP et URI pour pouvoir utiliser la méthode get. Nous passons l'URL de la requête en tant qu'argument et stockons la réponse dans la variable `response`. Ensuite, nous vérifions si la réponse est valide en utilisant la méthode `is_a?` et si c'est le cas, nous imprimons le corps de la réponse.
-
-# Plongée en profondeur
-
-Il existe différents types de requêtes HTTP tels que GET, POST, PUT et DELETE. Chaque type a une fonction spécifique et peut également être associé à des en-têtes HTTP pour fournir plus d'informations sur la requête.
-
-Par exemple, pour envoyer une requête POST avec un corps JSON, vous pouvez utiliser le code suivant :
+Envoyer une requête HTTP en utilisant Ruby est assez simple grâce à la bibliothèque standard `Net::HTTP`. Tout d'abord, vous devez créer une instance d'un objet `Net::HTTP` en spécifiant l'URL de la requête:
 
 ```Ruby
-require 'uri'
 require 'net/http'
-require 'json'
 
-url = URI("https://www.example.com/")
-payload = {"message": "Hello, world!"}
-
-Net::HTTP.post(url, payload.to_json, "Content-Type": "application/json")
+uri = URI('https://example.com/')
+http = Net::HTTP.new(uri.host, uri.port)
 ```
 
-Nous utilisons ici la méthode `post` et nous spécifions le type de contenu du corps de la requête en tant qu'argument. De plus, nous nous assurons que les données sont au format JSON en convertissant notre hash en une chaîne JSON à l'aide de la méthode `to_json`.
+Ensuite, choisissez la méthode de requête appropriée (GET, POST, PUT, DELETE, etc.) et spécifiez le chemin de l'URL:
 
-# Voir aussi
+```Ruby
+request = Net::HTTP::Get.new(uri.path)
+```
 
-- Documentation officielle de Net::HTTP : https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
-- Tutoriel sur les requêtes HTTP en Ruby : https://www.rubyguides.com/2018/07/ruby-http-request/
-- Utilisation des en-têtes HTTP en Ruby : https://flaviocopes.com/ruby-headers-api-call/
+Vous pouvez également ajouter des en-têtes à votre requête si nécessaire:
+
+```Ruby
+request['Content-Type'] = 'application/json'
+```
+
+Si vous envoyez des données avec votre requête, vous devrez les ajouter à la requête en utilisant la méthode `#body=`:
+
+```Ruby
+request.body = { name: 'John', age: 30 }.to_json
+```
+
+Enfin, vous pouvez envoyer la requête en utilisant la méthode `#request` de l'objet `Net::HTTP` et récupérer la réponse:
+
+```Ruby
+response = http.request(request)
+puts response.body
+```
+
+Et voilà, vous venez d'envoyer une requête HTTP en utilisant Ruby!
+
+## Plongée en profondeur
+
+Si vous souhaitez en savoir plus sur les requêtes HTTP, voici quelques informations supplémentaires:
+
+- La méthode `#request` renvoie une instance de la classe `Net::HTTPResponse`, qui contient toutes les informations renvoyées par le serveur, comme le code de statut, les en-têtes et le corps de la réponse.
+- Vous pouvez également spécifier des options supplémentaires lors de la création de votre objet `Net::HTTP`, telles que la limite de temps pour la réponse ou si vous voulez utiliser une connexion sécurisée.
+- Si vous devez gérer des requêtes asynchrones, vous pouvez également utiliser la bibliothèque `Net::HTTP::Async`, qui vous permet d'envoyer plusieurs requêtes en même temps.
+
+## Voir aussi
+
+- [Documentation de Net::HTTP](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Exemples de requêtes HTTP en Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-ruby-on-the-web-u/cheatsheet)

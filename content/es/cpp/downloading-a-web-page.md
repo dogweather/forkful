@@ -1,6 +1,7 @@
 ---
-title:                "C++: Descarga de una página web"
-simple_title:         "Descarga de una página web"
+title:                "Descargando una página web."
+html_title:           "C++: Descargando una página web."
+simple_title:         "Descargando una página web."
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,58 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué descargar una página web en C++
+## ¿Por qué?
 
-Descargar una página web en C++ puede ser una tarea útil para aquellos que deseen automatizar ciertas tareas en línea o para aquellos que estén interesados en analizar datos específicos de una página web.
+Descargar una página web es útil cuando se desea acceder a su contenido sin necesariamente estar conectado a internet, o cuando se desea guardar una copia para leer en el futuro.
 
 ## Cómo hacerlo
 
-Para descargar una página web en C++, se pueden seguir los siguientes pasos:
+Para descargar una página web en C++, primero necesitamos incluir la biblioteca `curl` en nuestro código. Esto nos permitirá realizar solicitudes HTTP y, por lo tanto, descargar el contenido de una página web. Aquí hay un ejemplo de código básico:
 
-1. Incluir la biblioteca de iostream y la biblioteca de wininet.
+```C++
+#include <iostream>
+#include <curl/curl.h>
 
-   ```C++
-   include <iostream>
-   include <wininet.h>
-   ```
+int main() {
+    // Crear un objeto CURL para realizar solicitudes
+    CURL *curl = curl_easy_init();
+    if (curl) {
+        // Establecer la URL de la página web que deseamos descargar
+        curl_easy_setopt(curl, CURLOPT_URL, "https://miwebfavorita.com");
+        // Crear un objeto FILE para guardar el contenido de la página web
+        FILE *file = fopen("pagina_web.html", "wb");
+        // Establecer la opción para escribir el contenido de la página en el archivo
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
 
-2. Crear una instancia de la sesión de Internet utilizando la función `InternetOpen()`.
+        // Realizar solicitud HTTP y guardar el contenido en el archivo
+        CURLcode res = curl_easy_perform(curl);
 
-   ```C++
-   HINTERNET hInternet = InternetOpen("Nombre de la aplicación", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
-   ```
+        // Manejar posibles errores
+        if (res != CURLE_OK) {
+            std::cerr << "Error al descargar la página web: " << curl_easy_strerror(res) << std::endl;
+        }
 
-3. Especificar el protocolo utilizado para la conexión y la dirección URL de la página web que se desea descargar.
+        // Cerrar objetos y liberar memoria
+        fclose(file);
+        curl_easy_cleanup(curl);
+    }
 
-   ```C++
-   HINTERNET hFile = InternetOpenUrl(hInternet, "https://www.example.com", NULL, 0, INTERNET_FLAG_RELOAD, 0);
-   ```
+    return 0;
+}
+```
 
-4. Crear un búfer para almacenar los datos de la página web y leerlos utilizando la función `InternetReadFile()`.
-
-   ```C++
-   char buf[1024];
-   DWORD bytes_read;
-
-   while (InternetReadFile(hFile, buf, (DWORD)sizeof(buf), &bytes_read) && bytes_read) {
-       // escribir los datos leídos en un archivo o mostrarlos en la consola
-   }
-   ```
-
-5. Cerrar la sesión de Internet y liberar la memoria utilizada.
-
-   ```C++
-   InternetCloseHandle(hFile);
-   InternetCloseHandle(hInternet);
-   ```
+Al ejecutar este código, se creará un archivo llamado `pagina_web.html`, que contendrá el código HTML de la página web especificada en la URL. Si deseamos guardar el contenido en un `std::string` en lugar de en un archivo, podemos usar `CURLOPT_WRITEFUNCTION` y `CURLOPT_WRITEHEADER` en lugar de `CURLOPT_WRITEDATA`.
 
 ## Profundizando
 
-Este método de descargar una página web en C++ utiliza la biblioteca de WinInet de Windows. Sin embargo, también se pueden utilizar otras bibliotecas como libcurl o incluso realizar la descarga utilizando sockets.
+La función `curl_easy_setopt()` nos permite establecer varias opciones para nuestra solicitud HTTP. Por ejemplo, podemos usar `CURLOPT_FOLLOWLOCATION` para seguir redirecciones y descargar el contenido de la página final. También podemos establecer opciones de autenticación con `CURLOPT_USERNAME` y `CURLOPT_PASSWORD` si la página web requiere credenciales.
 
-Además, es importante tener en cuenta que algunas páginas web pueden tener medidas de seguridad que dificulten la descarga. En esos casos, puede ser necesario utilizar técnicas adicionales para sortear estas medidas.
+Para realizar solicitudes más avanzadas, como enviar datos a través de un formulario en una página web, podemos usar `CURLOPT_POST` y `CURLOPT_POSTFIELDS` para enviar datos en el cuerpo de la solicitud.
 
 ## Ver también
-- [WinInet en la documentación de Microsoft](https://docs.microsoft.com/en-us/windows/win32/wininet/about-wininet)
-- [Libcurl](https://curl.se/libcurl/)
-- [Descargar una página web en C++ utilizando sockets](https://www.geeksforgeeks.org/socket-programming-cc/)
+
+- Documentación oficial de la biblioteca curl: https://curl.haxx.se/libcurl/c/libcurl.html
+- Ejemplos de código de descarga de páginas web en C++: https://curl.haxx.se/libcurl/c/example.html

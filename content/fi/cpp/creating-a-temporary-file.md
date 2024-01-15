@@ -1,5 +1,6 @@
 ---
-title:                "C++: Väliaikaisen tiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "C++: Väliaikaisen tiedoston luominen"
 simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "C++"
 category:             "C++"
@@ -9,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-On monia syitä, miksi ohjelmoijat luovat väliaikaisia tiedostoja. Yleisimpiä syitä ovat tiedon tallentaminen, väliaikaisen datan käyttö ja tarvittavan resurssin varaus. Näitä tiedostoja käytetään yleensä ohjelman suorituksen aikana ja poistetaan lopuksi suorituksen päätyttyä.
+Joskus C++ -ohjelmointikielessä halutaan luoda väliaikainen tiedosto, joka sisältää väliaikaista tietoa tai muuta kaltaista dataa. Tämä voi olla hyödyllistä esimerkiksi, kun on tarvetta tallentaa jotain hetkellisesti ja poistaa se myöhemmin.
 
-## Kuinka luoda väliaikainen tiedosto
+## Miten
 
-Väliaikaisen tiedoston luominen C++:lla on helppoa. Alla on esimerkki koodista, jolla luodaan väliaikainen tiedosto "temp.txt" ja kirjoitetaan siihen tietoa:
+C++ -kielen stdio.h -kirjaston avulla on mahdollista luoda väliaikainen tiedosto, joka tallentaa halutun datan. Alla olevassa koodiesimerkissä luodaan ensin väliaikainen tiedostonimi käyttämällä tmpnam()-funktiota ja sitten avataan tiedosto fopen()-funktion avulla. Tämä koodi tulee sijoittaa pääfunktioon, esimerkiksi main() -funktioon.
 
-```c++
-#include <fstream>
-using namespace std;
+```C++
+#include <iostream>
+#include <stdio.h>
 
 int main() {
-// luodaan ja avataan väliaikainen tiedosto
-ofstream temp_file("temp.txt");
-
-// tietojen kirjoittaminen tiedostoon
-temp_file << "Tämä on väliaikainen tiedosto" << endl;
-
-// tiedoston sulkeminen ja poistaminen
-temp_file.close();
-remove("temp.txt");
-
-return 0;
+  char filename[L_tmpnam];
+  char *tmpname = tmpnam(filename);
+  FILE *tmpfile = fopen(tmpname, "w+");
+  fputs("Tämä on väliaikainen tiedosto!", tmpfile);
+  fclose(tmpfile);
+  return 0;
 }
 ```
 
-Saatu tuloste on:
+Kun ohjelma suoritetaan, se luo uuden väliaikaisen tiedoston ja tallentaa siihen tekstin "Tämä on väliaikainen tiedosto!". Tiedosto suljetaan sitten ja voidaan poistaa myöhemmin.
 
-```
-Tämä on väliaikainen tiedosto
-```
+## Syventävä tieto
 
-Koodissa käytetään fstream-kirjastoa, joka mahdollistaa tiedoston luomisen ja tietojen kirjoittamisen siihen. Lopuksi käytetään remove-funktiota poistamaan väliaikainen tiedosto.
+Väliaikaiset tiedostot luodaan usein käyttämällä tmpnam()-funktiota, joka luo uniikin nimen jokaiselle luodulle tiedostolle. On kuitenkin huomioitava, että tämä nimi saattaa olla altis tietoturvariskeille, koska se saattaa paljastaa tiedon muille käyttäjille. Tämän vuoksi on suositeltavaa käyttää mkstemp() -funktiota, joka luo tiedoston ja palauttaa salatun nimen.
 
-## Syvällisempi tarkastelu väliaikaisen tiedoston luomisesta
-
-Väliaikaiset tiedostot luodaan yleensä käyttöjärjestelmän temp-hakemistoon, joka on varattu väliaikaisten tiedostojen tallentamiseen. Jokaisella käyttöjärjestelmällä on oma temp-hakemistonsa, joka löytyy tiedostojärjestelmän juuresta.
-
-Väliaikainen tiedosto voidaan luoda myös käyttämällä temporary_filestream-luokkaa fstream-kirjastossa. Tämä mahdollistaa automatisoidun tiedoston poistamisen sen sulkemisen yhteydessä, mikä on kätevä vaihtoehto erityisesti suurten tiedostojen käsittelyssä.
-
-## Katso myös
-
-- [fstream-kirjaston dokumentaatio](http://www.cplusplus.com/reference/fstream/)
-- [temporary_filestream-luokan dokumentaatio](http://www.cplusplus.com/reference/fstream/temporary_filestream/)
+See Also: [C++ stdio.h -kirjasto](https://www.cplusplus.com/reference/cstdio/) ja [luennoitsijan esimerkkikoodi](https://github.com/luennot-rautakarva/CPP2018/blob/master/Killajoe/TempfileExample.cpp)

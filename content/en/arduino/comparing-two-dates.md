@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,60 +12,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to compare two dates in an Arduino program? Whether you're tracking time or scheduling events, being able to compare dates is a fundamental skill in programming. In this blog post, we'll show you how to easily compare dates in Arduino using built-in functions and methods.
+Do you need to know whether one date is before, after, or the same as another? Look no further! With a few simple lines of code, you can easily compare two dates in your Arduino project.
 
 ## How To
 
-Comparing two dates is a common task in programming, but the process can seem daunting at first. However, with Arduino, it's simple and straightforward. Let's take a look at an example program using the ```millis()``` function to compare two dates:
+To compare two dates in Arduino, we will use the built-in `time` library.
 
-```
-Arduino
+1. First, declare two variables for your dates. These can be in any format, as long as they are the same for both dates.
 
-unsigned long date1 = millis(); //set first date
-delay(500); //wait 0.5 seconds
-unsigned long date2 = millis(); //set second date
-if(date2 - date1 > 1000) { //if second date is more than 1 second after first date
-  Serial.println("Second date is after first date."); //print message
-} else { //if second date is equal or less than 1 second after first date
-  Serial.println("Second date is not after first date."); //print message
-}
-```
+    ```Arduino
+    int date1 = 20210523;
+    int date2 = 20210602;
+    ```
 
-In this example, we use the ```millis()``` function to get the number of milliseconds since the program started running. This allows us to accurately compare two dates without worrying about time zones or leap years. We then use a simple ```if/else``` statement to check if the second date is more than 1 second after the first date. If it is, we print a message stating that the second date is after the first date.
+2. Next, create two `tmElements_t` structs and initialize them with your dates. This will allow us to use the `time` library's built-in functions for date comparison.
 
-You can also use the ```Year()```, ```Month()```, and ```Day()``` methods to compare specific components of a date. Let's see how that works with a different example program:
+    ```Arduino
+    tmElements_t tm1 = {0, 0, 0, 0, 0, 0, 0};
+    tm1.Year = date1 / 10000; // extract year from date1
+    tm1.Month = (date1 % 10000) / 100; // extract month from date1
+    tm1.Day = date1 % 100; // extract day from date1
+    
+    tmElements_t tm2 = {0, 0, 0, 0, 0, 0, 0};
+    tm2.Year = date2 / 10000; // extract year from date2
+    tm2.Month = (date2 % 10000) / 100; // extract month from date2
+    tm2.Day = date2 % 100; // extract day from date2
+    ```
 
-```
-Arduino
+3. Now, we can compare the two dates using the `makeTime()` and `timeDiff()` functions. `makeTime()` converts our `tmElements_t` structs into `time_t` values, which can then be used by `timeDiff()` to calculate the difference between the two dates.
 
-unsigned long date1 = millis(); //set first date
-delay(500); //wait 0.5 seconds
-unsigned long date2 = millis(); //set second date
-if(Year(date2) > Year(date1)){ //if second date's year is after first date's year
-  Serial.println("Second date's year is after first date's year."); //print message
-} else if(Year(date2) == Year(date1)) { //if second date's year is equal to first date's year
-  if(Month(date2) > Month(date1)) { //if second date's month is after first date's month
-    Serial.println("Second date's month is after first date's month."); //print message
-  } else if(Month(date2) == Month(date1)) { //if second date's month is equal to first date's month
-    if(Day(date2) > Day(date1)) { //if second date's day is after first date's day
-      Serial.println("Second date's day is after first date's day."); //print message
-    } else { //if second date's day is equal or less than first date's day
-      Serial.println("Second date's day is not after first date's day."); //print message
+    ```Arduino
+    time_t time1 = makeTime(tm1); // convert tm1 to a time_t value
+    time_t time2 = makeTime(tm2); // convert tm2 to a time_t value
+    time_t diff = timeDiff(time1, time2); // calculate the difference between time1 and time2
+    ```
+
+4. Finally, we can use the `diff` variable to determine if one date is before, after, or the same as the other.
+
+    ```Arduino
+    if (diff > 0) {
+        Serial.println("date1 is after date2");
     }
-  }
-}
-```
+    else if (diff < 0) {
+        Serial.println("date1 is before date2");
+    }
+    else {
+        Serial.println("date1 is the same as date2");
+    }
+    ```
 
-In this example, we use the ```if/else if``` statements to compare the year, month, and day components of two dates. This allows for more specific comparisons and can be useful in certain situations.
+5. Upload the code to your Arduino and open the Serial Monitor to see the output.
+
+    ```
+    date1 is before date2
+    ```
 
 ## Deep Dive
 
-When comparing two dates, it's important to keep in mind how the dates are stored and the limitations of the data types used. In Arduino, the ```millis()``` function returns an ```unsigned long``` data type, which can hold values up to 4,294,967,295. This means that the date comparison will only be accurate up to that number of milliseconds since the start of the program. If your program runs for a long time, you may need to use a different approach or data type to accurately compare two dates.
+The `makeTime()` function is used to convert a `tmElements_t` struct into a `time_t` value, which is the number of seconds since January 1, 1970. This is known as the Unix timestamp and is used to easily compare dates and times.
 
-It's also important to note that the ```millis()``` function returns the number of milliseconds since the program started, not the actual date and time. This means that if you need to compare dates and times in a real-world scenario, you may need to use a real-time clock (RTC) module and associated libraries to get accurate results.
+The `timeDiff()` function calculates the difference between two `time_t` values, which can then be used to determine which date is before, after, or the same as the other.
+
+You can also use the `dayOfTheWeek()` function to determine the day of the week for a given date. This function returns an integer from 0-6, with 0 representing Sunday.
+
+For more advanced date and time operations, you can check out the `TimeLib` library, which includes functions for adding and subtracting dates, handling leap years, and more.
 
 ## See Also
 
-- Official Arduino Website: https://www.arduino.cc/
-- Arduino Reference: https://www.arduino.cc/reference/en/
-- Arduino Forum: https://forum.arduino.cc/
+- [Arduino Time Library Reference](https://www.arduino.cc/reference/en/libraries/time/)
+- [TimeLib Library Reference](https://github.com/PaulStoffregen/Time/blob/master/README.md)
+- [Unix Time Wikipedia Page](https://en.wikipedia.org/wiki/Unix_time)

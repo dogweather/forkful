@@ -1,6 +1,7 @@
 ---
-title:                "Swift: ディレクトリが存在するかを確認する"
-simple_title:         "ディレクトリが存在するかを確認する"
+title:                "ディレクトリが存在するかどうかをチェックする"
+html_title:           "Swift: ディレクトリが存在するかどうかをチェックする"
+simple_title:         "ディレクトリが存在するかどうかをチェックする"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-ディレクトリが存在するかどうかを確認することの重要性は、ディレクトリ内に存在するファイルを操作する必要がある場合や、プログラムが正しく動作するかどうかを確認するためです。また、エラーを防ぐためにもディレクトリの存在を確認することが重要です。
+ディレクトリには、ファイルやデータを効率的に整理するための重要な役割があります。そのため、プログラマーはしばしばコード内でディレクトリをチェックする必要があります。
 
-## 方法
+## 手順
 
-ディレクトリが存在するかどうかを確認する方法は、`FileManager`クラスを使用することで可能です。次のコードは、指定したパス（例：ユーザーのデスクトップ）にディレクトリが存在するかどうかを確認する方法を示しています。
+ディレクトリが存在するかどうかを確認するには、`FileManager`クラスを使用します。以下の例では、`fileExists(atPath:)`メソッドを使用して、ディレクトリが存在するかどうかをチェックしています。
 
 ```Swift
 let fileManager = FileManager.default
-let desktopPath = FileManager.default.usersDirectory.appendingPathComponent("Desktop")
-if fileManager.fileExists(atPath: desktopPath) {
-    print("デスクトップにディレクトリが存在します。")
+let directoryPath = "/Users/username/Documents"
+if fileManager.fileExists(atPath: directoryPath) {
+    print("Directory exists!")
 } else {
-    print("デスクトップにディレクトリは存在しません。")
+    print("Directory does not exist.")
 }
 ```
-このコードを実行すると、指定したパスにディレクトリが存在するかどうかを確認し、結果を出力します。また、`fileManager.fileExists`メソッドを使用することで、ファイルが存在するかどうかを確認することもできます。
 
-## ディープダイブ
+上記のコードを実行すると、指定したディレクトリが存在する場合には「Directory exists!」というメッセージが、存在しない場合には「Directory does not exist.」というメッセージが出力されます。
 
-ディレクトリの存在を確認する方法には、さまざまなオプションがあります。たとえば、`FileManager`クラスの`fileExists(atPath path: String)`メソッドの代わりに、`fileExists(atPath path: String, isDirectory: UnsafeMutablePointer<ObjCBool>?)`メソッドを使用することで、ファイルだけでなくディレクトリであるかどうかも同時に確認することができます。
+## さらに深く
 
-また、エラーを防ぐためには、オプションバインディングを使用した安全な方法でディレクトリの存在を確認することが重要です。詳細な説明は、[Swift公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)をご覧ください。
-
-## はじめての方へ
-
-ディレクトリの存在を確認する方法を学ぶことは、Swiftプログラミングにおいて非常に重要なスキルのひとつです。ぜひ上記のコードを使用して、実際にディレクトリの存在を確認するプログラムを作成してみてください。
+ディレクトリが存在するかどうかをチェックする場合、`fileExists(atPath:)`メソッドは絶対パスを引数として受け取ります。しかし、相対パスを使用したい場合には、`fileExists(atPath:, isDirectory:)`メソッドを使用することもできます。このメソッドでは、第二引数に`isDirectory`を`true`に設定することで、ファイルではなくディレクトリをチェックすることができます。
 
 ## See Also
+
 - [Apple Developer Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift公式ドキュメント - エラーハンドリング](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [Swift by Sundell - Checking if a file or directory exists in Swift](https://www.swiftbysundell.com/articles/checking-if-a-file-or-directory-exists-in-swift)

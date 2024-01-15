@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Rust: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,36 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie liczb losowych jest kluczowym aspektem wielu projektów programistycznych, zwłaszcza jeśli chodzi o symulacje, gry czy kryptografię. W języku Rust istnieje wygodny i bezpieczny sposób na generowanie liczb losowych, który pozwala na łatwe wykorzystanie ich w naszych aplikacjach. W tym poście dowiesz się, jakimi mechanizmami dysponuje Rust i jak skorzystać z nich do generowania liczb losowych.
+Generowanie losowych liczb jest ważnym elementem w wielu dziedzinach programowania. Jest to przydatne do symulacji, tworzenia gier, generowania danych testowych i wiele innych. Jeśli chcesz poznać, jak w języku Rust wygenerować losowe liczby, ten artykuł jest dla ciebie.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby wygenerować liczbę losową w Rust, wystarczy użyć funkcji `thread_rng()` z modułu `rand` oraz metody `gen()` zwracanej przez tę funkcję. Poniżej przedstawione jest proste przykładowe użycie:
+W Rust istnieje kilka sposobów na generowanie losowych liczb. Możemy skorzystać z biblioteki standardowej lub zewnętrznych bibliotek. Poniżej przedstawimy przykłady dla obu podejść.
 
-```
-use rand::thread_rng;
+### Używając biblioteki standardowej
+
+Do wygenerowania losowej liczby można użyć metody `gen_range()` z modułu `rand`. Najpierw musimy zaimportować moduł, a następnie wywołać tę metodę, podając przedział, z którego chcemy wylosować liczbę.
+
+```rust
 use rand::Rng;
 
-fn main() {
-    // wygenerowanie jednej liczby losowej z przedziału [0; 10)
-    let random_number = thread_rng().gen_range(0, 10);
-    println!("Wylosowana liczba: {}", random_number);
-    // wygenerowanie wektora, zawierającego 5 losowych liczb z przedziału [0; 100)
-    let random_vector: Vec<i32> = thread_rng().sample_iter(&0..100).take(5).collect();
-    println!("Wylosowane liczby: {:?}", random_vector);
+let random_number = rand::thread_rng().gen_range(1, 10); // wylosuje liczbę z przedziału [1, 10)
+println!("Wylosowana liczba: {}", random_number); // Output: Wylosowana liczba: (losowa liczba z przedziału [1, 10)
+```
+
+Jeśli chcemy wylosować wiele liczb w pętli, musimy przechowywać generator w zmiennej, aby uniknąć wywoływania go za każdym razem.
+
+```rust
+use rand::Rng;
+
+let mut rng = rand::thread_rng();
+
+for _i in 0..10 {
+    let random_number = rng.gen_range(1, 10); // wylosuje liczbę z przedziału [1, 10)
+    println!("Wylosowana liczba: {}", random_number); // Output: Wylosowana liczba: (losowa liczba z przedziału [1, 10)
 }
 ```
 
-Ten kod używa modułu `rand` do wygenerowania liczby losowej z przedziału [0; 10) oraz wektora z pięcioma losowymi liczbami z przedziału [0; 100). Wyniki działania tego kodu będą różne za każdym razem, co potwierdza jego losowy charakter.
+### Używając zewnętrznej biblioteki
 
-## Dogłębna Analiza
+Możemy także użyć zewnętrznej biblioteki do generowania losowych liczb, na przykład `rand_distr`. Ta biblioteka oferuje więcej sposobów na generowanie różnych rodzajów liczb (np. liczby zmiennoprzecinkowe, liczby z rozkładu normalnego). Aby użyć tej biblioteki, po prostu dodaj ją do sekcji `[dependencies]` w pliku `Cargo.toml`.
 
-W języku Rust dostępnych jest kilka mechanizmów generowania liczb losowych. Jednym z najpopularniejszych jest moduł `rand`, który wykorzystuje generator liczb losowych zaimplementowany w języku C. Można również skorzystać z biblioteki `rand_core`, która zapewnia abstrakcję nad różnymi generatorami.
+Poniżej przykład kodu wykorzystującego `rand_distr` do wygenerowania 10 liczb z rozkładu normalnego.
 
-W przypadku, gdy potrzebujemy bardziej zaawansowanego generatora, np. do celów kryptograficznych, możemy skorzystać z modułu `rand_chacha` lub zaimplementować własny generator w języku Rust. Ważne jest jednak, aby pamiętać o bezpieczeństwie generowanych liczb losowych, szczególnie jeśli chodzi o komunikację z internetem czy bazami danych.
+```rust
+use rand_distr::{Normal, Distribution};
 
-## Zobacz Również
+let normal = Normal::new(10.0, 2.0).unwrap(); // tworzymy rozkład z średnią 10.0 i odchyleniem standardowym 2.0
+let mut rng = rand::thread_rng();
 
-- [Dokumentacja modułu `rand`](https://docs.rs/rand/0.8.5/rand/)
-- [Biblioteka `rand_core`](https://crates.io/crates/rand_core)
-- [Kryptograficzny generator liczb losowych `rand_chacha`](https://crates.io/crates/rand_chacha)
+for _i in 0..10 {
+    let random_number = normal.sample(&mut rng); // pobieramy losową próbkę z rozkładu
+    println!("Wylosowana liczba: {}", random_number); // Output: Wylosowana liczba: (losowa liczba z rozkładu normalnego)
+}
+```
+
+## Deep Dive
+
+Funkcja `gen_range()` używa generatora liczb pseudolosowych, a jego stan jest dzielony globalnie. Z ta metoda istnieje szansa, że wylosowane liczby będą powtarzały się przy wywołaniach w krótkich odstępach czasu. Aby uniknąć tego problemu, można użyć generatora `ThreadRng`, który jest bezpieczny dla wątków i ma swój własny stan.
+
+Jeśli potrzebujemy losowych liczb o większej precyzji niż `f64`, można użyć modułu `num_cpus` w celu wykorzystania wielu wątków do generowania jednej liczby. Jest to wydajniejsze, ale może zwiększyć prawdopodobieństwo powtórzenia liczb.
+
+## See Also
+
+- https://doc.rust-lang.org/rand/rand/index.html - Dokumentacja biblioteki rand
+- https://

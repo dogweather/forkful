@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 임시 파일 만들기"
-simple_title:         "임시 파일 만들기"
+title:                "임시 파일 생성하기"
+html_title:           "Bash: 임시 파일 생성하기"
+simple_title:         "임시 파일 생성하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -9,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-일시적인 파일을 만드는 것에 참여하는 이유는 무엇인가요? 일시적인 파일은 프로그램을 실행할 때 중요한 역할을 합니다. 이를 잘 이해하고 활용하는 것이 중요합니다.
+## 왜
+우리는 종종 일시적인 파일을 생성해야 할 때가 있습니다. 예를 들어, 프로그램 실행 중 생성되는 임시 파일이 필요하거나 특정 작업을 수행하기 위해 임시 파일을 만들어야 할 때가 있습니다. 따라서 Bash를 사용하여 임시 파일을 생성하는 방법을 배우면 효율적으로 프로그래밍할 수 있습니다.
 
 ## 어떻게
-아래의 코드 블록을 사용하여 Bash 프로그래밍에서 일시적인 파일을 만드는 방법을 알아보겠습니다. 일시적인 파일을 만드는 가장 기본적인 방법은 'mktemp'를 사용하는 것입니다.
+"mktemp" 명령어를 사용하여 임시 파일을 생성할 수 있습니다. "파일 이름 + 임의의 숫자 뒤에 붙는 6자리 임시 이름" 형식으로 파일이 생성됩니다.
 
 ```Bash
-# mktemp를 사용하여 일시적인 파일 만들기
-temp_file=$(mktemp)
-echo "일시적인 파일의 경로: $temp_file"
+# mktemp - 생성된 임시 파일의 경로를 출력
+$ mktemp
+/tmp/tmp.WbeLhb
+
+# 임의의 디렉토리에 임시 파일 생성
+$ mktemp -p ~/Desktop/
+~/Desktop/tmp.E9WvM7
 ```
-이를 실행하면 아래와 같은 결과를 얻을 수 있습니다.
+
+또한 "tempfile" 함수를 사용하여 임시 파일을 생성할 수도 있습니다. 이 함수는 "FILE" 변수에 임시 파일의 경로를 할당합니다.
+
 ```Bash
-일시적인 파일의 경로: /tmp/tmp.gp51LoVbHf
+#!/bin/bash
+TEMP=$(tempfile)
+echo "임시 파일 경로: $TEMP"
+# 임시 파일 경로: /tmp/tmp.0Qu3eo
 ```
 
-만약 일시적으로 파일의 이름을 지정하고 싶다면, 아래와 같이 코드를 수정할 수 있습니다.
+각 임시 파일은 고유한 이름을 가지고 있으며 프로그램이 종료될 때 자동으로 삭제됩니다.
 
-```Bash
-# 일시적인 파일의 이름 지정하기
-temp_file=$(mktemp temp_file_XXXXXX)
-echo "일시적인 파일의 경로: $temp_file"
-```
-결과는 아래와 같이 출력됩니다.
-```Bash
-일시적인 파일의 경로: /tmp/temp_file_G1ULnC
-```
+## 깊이 들어가기
+임시 파일을 생성하기 전에 우리는 "trap" 명령어를 사용하여 프로그램이 종료될 때 임시 파일을 자동으로 삭제할 수 있도록 설정할 수 있습니다. 또한 임시 파일을 생성할 때 속성을 지정하여 다양한 용도로 사용할 수 있습니다.
 
-이 외에도 'touch'나 'cp'와 같은 파일 관리 명령어를 사용하여 일시적인 파일을 만들 수 있습니다.
+## 참고 
+- [MKTEMP man 페이지]
+- [TEMPFILE man 페이지]
 
-## 딥 다이브
-일시적인 파일을 만드는 방법은 다양하지만 주로 사용하는 방법은 'mktemp'를 이용하는 것입니다. 'mktemp'는 사용자의 환경 변수를 이용하여 임시 파일을 생성하기 때문에 보안에 더 유리합니다. 또한 마지막 6자리는 랜덤한 숫자와 문자로 구성되어 있기 때문에 파일의 중복을 방지할 수 있습니다.
-
-또한 일시적인 파일을 만들 때 중요한 점은 삭제하는 것입니다. 일시적인 파일은 일시적인 용도로 사용되기 때문에 사용이 끝나면 반드시 삭제해주어야 합니다. 'mktemp'를 사용할 경우 자동으로 삭제되지만, 직접 만들거나 관리 명령어를 사용할 경우에는 삭제에 신경써야 합니다.
-
-# 참고자료
-- [Bash 공식 문서](https://www.gnu.org/software/bash/)
-- [mktemp man 페이지](https://www.man7.org/linux/man-pages/man1/mktemp.1.html)
-- [Linuxize 블로그 - Bash에서 일시적인 파일 생성하기](https://linuxize.com/post/bash-temporary-file/)
+[MKTEMP man 페이지]: https://www.systutorials.com/docs/linux/man/1-mktemp/
+[TEMPFILE man 페이지]: https://man7.org/linux/man-pages/man3/tempfile.3.html

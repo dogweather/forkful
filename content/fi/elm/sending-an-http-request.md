@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Http-pyyntöjen lähettäminen"
-simple_title:         "Http-pyyntöjen lähettäminen"
+title:                "Lähettäminen http-pyyntö"
+html_title:           "Elm: Lähettäminen http-pyyntö"
+simple_title:         "Lähettäminen http-pyyntö"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Miksi
+## Miksi
 
-Miksi ihmiset tekevät HTTP-pyyntöjä Elm-ohjelmointikielellä? Yksi syy on, että ne mahdollistavat kommunikoinnin tiettyjen verkkosoitteen kanssa ja saada vastauksen tietokoneelle, jolloin voidaan esimerkiksi luoda dynaamisia verkkosivuja.
+Miksi haluaisit lähettää HTTP-pyynnön? Ehkä tarvitset tietoa ulkoisesta lähteestä tai haluat lähettää tietoa palvelimelle. Tärkeintä on, että HTTP-pyynnön avulla voit kommunikoida eri järjestelmien ja palveluiden välillä.
 
-### Kuinka
+## Kuinka
+
+Aloitetaan yksinkertaisella esimerkillä, jossa lähetämme GET-pyynnön GitHubin avoimeen rajapintaan (API) ja tulostamme vastauksen konsoliin.
 
 ```Elm
 import Http
-import Json.Decode exposing (..)
 
-type alias User =
-  {
-    id: Int,
-    name: String,
-    username: String,
-    email: String
-  }
+type Msg = GotResponse ( Result Http.Error String )
 
-getUser: Int -> Cmd Msg
-getUser id =
-  let
-    url = "https://jsonplaceholder.typicode.com/users/" ++ String.fromInt id
-    decoder = Json.Decode.map User
-    request = Http.get url decoder
-  in
-    Http.toTask request |> Task.perform HttpErrorMsg GotUser
+getGithubResponse : Cmd Msg
+getGithubResponse =
+  Http.get "https://api.github.com/users/elm/repos" (Http.expectString GotResponse)
 
-GotUser: Http.Error User -> Msg
-GotUser result =
-  case result of
-    Http.Error msg ->
-      GotHttpError msg
-
-    Http.Ok user ->
-      GotUserSuccess user
 ```
 
-Koodinpätkässä näkyy, miten HTTP-pyyntö voidaan tehdä Elm-ohjelmointikielellä. Tässä tapauksessa halutaan hakea käyttäjätietoja JSON-muodossa verkkosivulta. Koodiin tuodaan `Http`-moduuli, joka mahdollistaa HTTP-pyyntöjen tekemisen ja `Json.Decode`-moduuli, jolla haetaan JSON-tiedostosta haluttua dataa. Funktio `getUser` ottaa parametrina käyttäjän tunnisteen ja muodostaa sitten URL-osoitteen JSON-tiedostoon. `decoder`-muuttuja määrittelee, miten JSON-tiedostosta haetut tiedot tulkitaan ja tallennetaan `User`-tietotyyppiin. Lopuksi `Http.toTask` muuttaa HTTP-pyynnön tehtäväksi, joka suoritetaan tietokoneelle. `Task.perform` määrittelee, mitä tehdään pyynnön onnistuessa tai epäonnistuessa. Esimerkiksi `GotUserSuccess`-viesti lähetetään, jos pyyntö onnistuu ja siinä välitetään palautettu käyttäjätieto. Koodissa käytetään myös `case`-rakennetta käsittelyä varten, joka tarkoittaa, että viestin vastaanottaminen tarkistetaan jäsen kerrallaan.
+Kun suoritat tämän funktion, se laukaisee HTTP-pyynnön Githubin API:sta ja saa vastauksena listan Elm-repositorioista. Tämän jälkeen voimme käsitellä vastauksen esimerkiksi tulostamalla sen konsoliin.
 
-### Syväsyvennys
+## Syväsukellus
 
-HTTP-pyyntöjen tekeminen on tärkeä osa monia verkkosovelluksia. Elm-ohjelmointikielellä on helppo ja turvallinen tapa tehdä näitä pyyntöjä. Tällä tavalla vältetään mahdolliset virheet tai tietoturvariskit, joita voi esiintyä esimerkiksi JavaScript-koodia käytettäessä.
+HTTP-pyynnön lähettämiseen liittyy useita osia, kuten osoitteiden muodostaminen, muuttujien välittäminen ja vastausten käsittely. On tärkeää, että ymmärrät kaikki nämä osat ennen kuin aloitat HTTP-pyynnön tekemisen.
 
-### Katso myös
+Aluksi meidän tulee tuoda käyttöön Http-nimisestä moduuli. Tämä moduuli tarjoaa meille funktiot lähettämään erilaisia HTTP-pyynnöistä, kuten `get` ja `post`.
 
-- [Elm-ohjelmointikielen virallinen dokumentaatio](https://guide.elm-lang.org)
-- [HTTP-pyyntöjen tekeminen Elm-ohjelmointikielessä](https://github.com/elm/http)
-- [Esimerkkejä erilaisista HTTP-pyynnöistä Elm-ohjelmointikielessä](https://dev.to/jeroenw/elm-http-cookbook-2a0a)
+Seuraavaksi meidän tulee määrittää `type Msg` -tyyppi, joka määrittelee miten käsittelemme vastauksia. Tässä tapauksessa laitamme `Http.Errorin` ja `Stringin` sisällä `GotResponse` jossa `Http.Error` viittaa mahdollisiin virheisiin, joita voi tapahtua HTTP-pyynnön lähettämisen aikana.
+
+Nyt voimme aloittaa lähettämään pyyntöjä. Ota huomioon, että käyttämämme `Http.get` -funktio hyväksyy kaksi parametria; ensimmäinen on haluttu osoite ja toinen käsittelee vastauksen. Käytämme funktiota `Http.expectString`, joka muodostaa vastauksen `Stringiksi` ja antaa sen parametriksi `GotResponse`-tyyppiseen funktion poikkeustilanteisiin.
+
+## Katso myös
+
+- [HTTP-pyynnön lähetys](https://guide.elm-lang.org/effects/http.html) Elm-käsikirjasta.
+- [Elm-rajapintojen käyttöönotto](http://package.elm-lang.org/packages/elm-lang/http/latest/Http) Elm-paketinhallinnasta.

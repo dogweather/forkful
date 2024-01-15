@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래나 과거 날짜 계산하기"
+html_title:           "Swift: 미래나 과거 날짜 계산하기"
+simple_title:         "미래나 과거 날짜 계산하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,29 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-여러분은 날짜를 미래나 과거로 계산하는 것에 참여할 이유가 있을까요? 예를 들어, 어떤 특정한 날짜로부터 100일 후가 언제인지 알아야 할 수도 있을 것입니다. 이 블로그 포스트에서는 스위프트로 쉽게 날짜를 계산하는 방법을 알려드리겠습니다.
+날짜를 미래나 과거로 계산하는 것은 일상 생활에서 매우 많이 사용되는 기능입니다. 예를 들어, 언제 다음 생일이나 휴가를 가는 날짜가 되는지 알고 싶을 때 유용하게 사용할 수 있습니다.
 
-## 방법
+## 사용 방법
 
-다음은 스위프트로 날짜를 계산하는 간단한 예제 코드입니다. 아래 코드를 보고 따라해보세요.
+날짜를 미래나 과거로 계산하는 방법은 매우 간단합니다. 우선 `Date()` 함수를 사용하여 현재 시간을 얻은 다음 `Calendar`와 `DateComponents`를 이용하여 미래나 과거로 계산할 날짜를 정의합니다. 그리고 `.date(byAdding: DateComponents, to: Date)` 메소드를 사용하여 계산된 날짜를 얻을 수 있습니다. 아래 예시 코드를 참고하세요.
 
 ```Swift
-let now = Date()
-let futureDate = Calendar.current.date(byAdding: .day, value: 100, to: now)
-print(futureDate)
+let today = Date() // 현재 날짜
+let calendar = Calendar.current // 현재의 달력을 사용
+var dateComponents = DateComponents() // 날짜 계산에 사용할 DateComponents 객체 생성
+dateComponents.year = 1 // 1년 이후 날짜 계산
+let nextYear = calendar.date(byAdding: dateComponents, to: today) // 계산된 날짜를 변수에 저장
+print(nextYear) // 1년 이후 날짜 출력
 ```
 
-위 코드는 현재 날짜에서 100일을 더한 날짜를 계산하고 출력합니다. 이렇게 계산한 날짜는 Date 형식으로 출력되며, 이를 필요에 따라 원하는 형식으로 변환할 수 있습니다.
+출력 결과는 아래와 같이 나타납니다.
 
-## 깊게 파고들기
+```
+Optional(2019-07-22 10:00:00 +0000)
+```
 
-날짜를 계산하는 과정은 Date, Calendar, DateFormatter 등의 프레임워크를 사용하여 이루어집니다. Date는 초 단위로 측정된 시간 정보를 담고 있으며, Calendar는 날짜와 시간을 계산하는 기능을 제공합니다. DateFormatter는 날짜 형식을 지정하여 원하는 형태로 출력하는 역할을 합니다.
+위와 같은 방식으로 원하는 날짜를 계산할 수 있습니다.
 
-더 자세한 내용은 스위프트 문서를 참고하시기 바랍니다.
+## Deep Dive
 
-## 관련 링크
+날짜를 계산할 때에는 `Calendar`와 `DateComponents` 객체가 필수적으로 사용됩니다. `Calendar` 객체는 시스템의 달력을 나타내며, `DateComponents` 객체는 날짜 계산에 필요한 단위들을 담고 있습니다. 일반적으로 `Calendar.current`를 사용하면 시스템의 달력을 바로 사용할 수 있습니다. 또한 `DateComponents`는 연도, 달, 일자, 시간, 분, 초 등 날짜의 다양한 단위들을 설정할 수 있습니다.
 
-- 스위프트 공식 문서: https://developer.apple.com/documentation/swift/
-- 날짜 계산 예제: https://www.hackingwithswift.com/example-code/system/how-to-calculate-the-number-of-days-between-two-dates
-- DateFormatter 사용 방법: https://www.nsdateformatter.com/
-- 스위프트로 날짜와 시간 다루기: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html
+## See Also
+
+- [Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID341)
+- [Swift 프로그래밍: 초기 단계](https://dubin-lee.github.io/2019/03/28/swift_01/)

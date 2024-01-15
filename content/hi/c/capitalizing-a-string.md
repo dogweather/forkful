@@ -1,6 +1,7 @@
 ---
-title:                "C: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "C: Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
-क्या आपने कभी सोचा है कि जब आप अपने कोड में स्ट्रिंग को लिखते हैं, तो इसे कैसे बड़े अक्षर में बदल सकते हैं? काॅपिटलाइज़ करना इस तरह से परिवर्तन को सुधारकर कोड को अधिक अनुकूलित बनाता है।
+## Kyun
+Aapne shayad suna hoga ki C programming language mein string ko upper case mein tabdil karne ke liye "toupper()" function ka upyog kiya jaata hai. Lekin kya aapko pata hai ki kya ye function sirf ek character ko upper case mein badal sakta hai? Agar aap pure string ko capital letters mein badalna chahte hai toh aapko kya karna hoga? Isiliye hum aapko aaj batayenge ki string ko capital letters mein convert karna kyun zaruri hai aur iske kya fayde hai.
 
-## कैसे करें
-```
-#include <stdio.h>
-#include <string.h>
+## Kaise Karein
+Agar aapko kisi bhi string mein se specific characters ko capital letters mein convert karna hai toh aap "toupper()" function ka istemal kar sakte hai. Is function mein aapko woh character dena hoga jisko aap upper case mein badalna chahte hai. Lekin agar aap pure string ko upper case mein badalna chahte hai toh aapko ek loop mein har character ko upper case mein convert karna hoga. Iske liye hum ek simple code example de rahe hai:
 
-int main()
-{
-    char str[100];
-    printf("Enter a string: ");
-    scanf("%s", str); // user input string
-    
-    // code to capitalize string
-    for(int i=0; str[i]!='\0'; i++)
-    {
-        if(str[i] >= 'a' && str[i] <= 'z') // check if character is lowercase
-            str[i] = str[i] - 32; // subtract 32 to get uppercase value
-    }
-    
-    printf("Capitalized string: %s", str);
-    return 0;
+```C
+#include<stdio.h>
+#include<ctype.h>
+
+int main() {
+   char str[20] = "hello world";
+   int i;
+
+   for (i = 0; str[i]!='\0'; i++) {
+      str[i] = toupper(str[i]);
+   }
+
+   printf("%s", str);
+   return 0;
 }
-
 ```
-इस कोड उदाहरण में, हमने ```scanf``` को उपयोग किया है ताकि उपयोगकर्ता से स्ट्रिंग को इनपुट कर सकें। फिर हमने ```for``` लूप की मदद से हर एक चरित्र को चेक किया है कि वह लोअरकेस है या नहीं। अगर हाँ, तो हमने ASCII मान क्या है और 32 घटाया है ताकि उसे अपरकेस में परिवर्तित कर सकें। अंत में, हमने अपरकेस स्ट्रिंग को प्रिंट किया है।
+Is code mein humne "toupper()" function ka istemal kiya hai jo hume pure string ko upper case mein convert karne mein madad karta hai. Isko compile aur run karne par aapko output "HELLO WORLD" milna chahiye. Is tarah aap kisi bhi string ko upper case mein badal sakte hai.
 
-## डीप डाइव
-कैपिटलाइज़ फ़ंक्शन स्ट्रिंग को अच्छी तरह से व्यवस्थित करती है और प्रोग्राम को और अनुकूलित बनाती है। अस्पष्ट, लेकिन वहीं इसके पीछे भी एक गहराई है। स्ट्रिंग फंक्शन का प्रयोग स्ट्रिंग को मॉडिफाई करने के लिए किया जाता है। यह स्ट्रिंग को पैरामीटर के रूप में प्रदान कर सकता है जो कि कॉल बाई रिफरेंस के रूप में बदल जाएगा। इसलिए, स्ट्रिंग को ट्रैवर्स करने के लिए यह आवश्यक है कि प
+## Gehri Pariweshik
+Ab hum dekhenge ki string ko capital letters mein convert karna kaise kaam karta hai. Sabse pehle humne ek character array banaya jisme hum "hello world" string store kiye hai. Iske baad humne "for" loop ka upyog kiya hai jisme humne string ke har character ko upper case mein convert kiya hai. Yeh loop ek ek character ko upper case mein badalta hai aur ise string mein store kar deta hai. Is tarah string ke sabhi characters upper case ho jate hai aur aap "printf()" function ka upyog karke output ko dekh sakte hai. Iss tarah aap kisi bhi string ko upper case mein badalkar use aur aasan aur readable bana sakte hai.
+
+## See Also
+- [toupper() function in C](https://www.geeksforgeeks.org/c-programming-language-toupper-function/)
+- [Understanding character arrays in C](https://www.programiz.com/c-programming/c-strings)
+
+Is article mein humne dekha ki kaise hum string ko capital letters mein convert kar sakte hai. Iska upyog karke aap apne code ko aur bhi behtar aur readable bana sakte hai. Humne aapko C programming language mein string ko capital letters mein convert karne ke liye ek simple aur effective method bataya hai. Hum aasha karte hai ki aapko yeh article pasand aaya hoga aur aap iska upyog apne code mein karke dekhenge. Happy coding!

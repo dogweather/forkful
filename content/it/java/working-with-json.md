@@ -1,5 +1,6 @@
 ---
-title:                "Java: Lavorare con json"
+title:                "Lavorare con json"
+html_title:           "Java: Lavorare con json"
 simple_title:         "Lavorare con json"
 programming_language: "Java"
 category:             "Java"
@@ -11,91 +12,95 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se stai sviluppando un'applicazione Java, è probabile che ti troverai a lavorare con dati in formato JSON. Questo formato è diventato sempre più popolare per la sua capacità di rappresentare dati in modo leggibile e compatto. 
+Se stai sviluppando un'applicazione in Java che richiede la comunicazione con API esterne o la memorizzazione di dati nel cloud, è probabile che dovrai gestire i dati in formato JSON. Questo linguaggio di markup leggero è diventato lo standard de facto per lo scambio di dati via HTTP ed è ampiamente supportato dalle librerie di Java.
 
-## Come Fare
+## Come fare
 
-Ci sono diverse librerie Java disponibili per lavorare con JSON, ma in questo articolo useremo la libreria Gson di Google per mostrare come analizzare e creare dati in formato JSON.
+Per iniziare a lavorare con JSON in Java, è necessario importare la libreria Gson (Google's JSON library) nel proprio progetto. Una volta importata, è possibile utilizzare la classe Gson per convertire oggetti Java in formato JSON e viceversa.
 
-Per prima cosa, dobbiamo importare la libreria Gson nel nostro progetto. Possiamo farlo aggiungendo la seguente dipendenza al nostro file pom.xml:
+**Codice di esempio:**
 
-```
-<dependency>
-    <groupId>com.google.code.gson</groupId>
-    <artifactId>gson</artifactId>
-    <version>2.8.6</version>
-</dependency>
-```
-
-Una volta importata la libreria, possiamo iniziare a lavorare con JSON. Di seguito è riportato un esempio di codice che mostra come analizzare una stringa JSON e accedere ai suoi valori:
-
-```java
-// importiamo le classi necessarie
+```Java
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
-// definiamo una stringa JSON di esempio
-String jsonString = "{\"nome\": \"Marco\", \"cognome\": \"Rossi\", \"eta\": 30}";
+public class Main {
+    public static void main(String[] args) {
+        // Creazione di un oggetto Java
+        Person person = new Person("Sarah", "Smith", 25);
 
-// creiamo un oggetto Gson
-Gson gson = new Gson();
+        // Conversione in JSON
+        Gson gson = new Gson();
+        String json = gson.toJson(person);
 
-// analizziamo la stringa JSON in un oggetto JsonObject
-JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
+        // Stampa del JSON
+        System.out.println(json);
 
-// accediamo ai valori all'interno dell'oggetto
-String nome = jsonObject.get("nome").getAsString();
-String cognome = jsonObject.get("cognome").getAsString();
-int eta = jsonObject.get("eta").getAsInt();
+        // Conversione da JSON a oggetto Java
+        Person newPerson = gson.fromJson(json, Person.class);
 
-// stampiamo i valori
-System.out.println("Nome: " + nome);
-System.out.println("Cognome: " + cognome);
-System.out.println("Età: " + eta);
-
-// output:
-// Nome: Marco
-// Cognome: Rossi
-// Età: 30
-```
-
-Possiamo anche creare un oggetto JSON a partire da una classe Java, come mostrato nell'esempio seguente:
-
-```java
-// definiamo una classe per rappresentare una persona
-public class Persona {
-    private String nome;
-    private String cognome;
-
-    public Persona(String nome, String cognome) {
-        this.nome = nome;
-        this.cognome = cognome;
+        // Stampa dei dati dell'oggetto Java
+        System.out.println(newPerson.getFirstName());
+        System.out.println(newPerson.getLastName());
+        System.out.println(newPerson.getAge());
     }
-
-    // getter e setter
 }
 
-// creiamo un oggetto Persona
-Persona persona = new Persona("Gianna", "Verdi");
+// Definizione della classe Person
+class Person {
+    private String firstName;
+    private String lastName;
+    private int age;
 
-// creiamo un oggetto Gson
-Gson gson = new Gson();
+    // Costruttore
+    public Person(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
 
-// convertiamo l'oggetto in una stringa JSON
-String jsonString = gson.toJson(persona);
+    // Metodi Getter e Setter
+    public String getFirstName() {
+        return firstName;
+    }
 
-// stampiamo la stringa JSON
-System.out.println(jsonString);
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-// output: {"nome": "Gianna", "cognome": "Verdi"}
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
 ```
+
+**Output:**
+
+{"firstName":"Sarah", "lastName":"Smith", "age":25}
+
+Sarah
+Smith
+25
 
 ## Approfondimento
 
-Oltre alle operazioni di base di analisi e creazione di JSON mostrate sopra, ci sono molte altre cose interessanti che puoi fare con la libreria Gson. Ad esempio, puoi gestire tipi di dati complessi come array e oggetti nidificati utilizzando le classi `JsonArray` e `JsonObject`. Oppure puoi definire le tue proprie funzioni di deserializzazione e serializzazione per personalizzare il modo in cui Gson gestisce i dati. Consulta la documentazione ufficiale di Gson per saperne di più.
+Oltre alla classe Gson, esistono altre librerie di terze parti disponibili per lavorare con JSON in Java, come ad esempio Jackson e JSON-java. Inoltre, è possibile anche utilizzare le annotazioni di Gson per personalizzare la conversione tra oggetti Java e JSON, evitando così la scrittura manuale del codice.
 
-## Vedi Anche
+Inoltre, è importante tenere conto della struttura del JSON con cui si sta lavorando e delle corrispondenti classi Java che si dovranno creare. Ad esempio, se il JSON contiene una lista di oggetti, sarà necessario creare una classe che rappresenta ciascun oggetto e una classe che rappresenta la lista.
 
-- [Documentazione di Gson](https://github.com/google/gson/blob/master/UserGuide.md)
-- [Tutorial su JSON in Java](https://www.baeldung.com/java-json)
-- [Java JSON Processing API](https://www.oracle.com/technical-resources/articles/java/json.html)
+## Vedi anche
+
+- [Documentazione ufficiale di Gson](https://github.com/google/gson/blob/master/UserGuide.md)
+- [Esempi di utilizzo di Gson](https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/)
+- [Introduzione al parsing JSON in Java](https://stackify.com/parse-json-java/)

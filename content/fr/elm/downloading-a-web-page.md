@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Elm: Téléchargement d'une page web"
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,94 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Avez-vous déjà voulu télécharger une page web? Peut-être que vous avez trouvé un article intéressant ou une vidéo amusante et vous souhaitez l'avoir sur votre ordinateur pour y accéder plus tard ou même sans connexion internet. Dans cet article, nous allons explorer comment télécharger une page web en utilisant le langage de programmation Elm.
+Si vous êtes un développeur en herbe ou un expert chevronné, il est toujours excitant de créer une application web fonctionnelle de A à Z. Mais avant de pouvoir lancer votre application, il est crucial de savoir comment télécharger une page web.
 
 ## Comment faire
 
-Tout d'abord, nous devons importer le module Http qui nous permettra de faire des requêtes HTTP. Ensuite, nous allons créer une fonction qui prendra une URL en paramètre et qui utilisera la fonction `Http.get` pour effectuer la requête. Pour cela, nous allons également utiliser la fonction `expectString` pour convertir la réponse en chaîne de caractères.
+Pour télécharger une page web en Elm, vous pouvez utiliser la fonction `Http.get` et spécifier l'URL de la page en tant que paramètre. Voici un exemple de code pour télécharger la page "https://mon-site-web.com":
 
 ```Elm
+import Html exposing (text)
 import Http
-import String
 
-fetchPage : String -> Cmd Msg
-fetchPage url =
-    Http.get url expectString
+main =
+  Html.text "Téléchargement en cours..."
+
+-- Exécution de la fonction Http.get avec l'URL en paramètre
+Http.get "https://mon-site-web.com" -- Remplacez par l'URL de votre choix
+  |> Task.map .body -- Récupération du contenu de la page téléchargée
+  |> Task.toMaybe -- Transformation en type Maybe pour gérer les possibles erreurs
+  |> Task.andThen -- Opération de chaînage pour gérer les éventuelles erreurs
+    (\response ->
+      case response of
+        -- Si la réponse est valide, afficher le contenu de la page
+        Ok body ->
+          Html.text body
+
+        -- Si la réponse est une erreur, afficher un message d'erreur
+        Err err ->
+          Html.text ("Erreur lors du téléchargement : " ++ err)
+    )
 ```
 
-Ensuite, nous pouvons appeler cette fonction avec l'URL de la page que nous souhaitons télécharger et la stocker dans un modèle.
+En exécutant ce code, vous devriez voir le contenu de la page téléchargée s'afficher dans votre navigateur.
 
-```Elm
-type alias Model =
-    { page : String
-    , url : String
-    }
+## Plongée en profondeur
 
-init : Model
-init =
-    { page = ""
-    , url = "https://example.com"
-    }
+Pour les plus curieux, il est également possible de personnaliser les requêtes HTTP en utilisant la fonction `Http.request`. Cela vous permet de spécifier des en-têtes, des paramètres ou même des méthodes différentes de GET pour votre requête.
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        DownloadPage ->
-            let
-                newModel = { model | page = "" } -- Clear previous page
-            in
-                ( newModel, fetchPage model.url )
-
-        NewPage page ->
-            let
-                newModel = { model | page = page }
-            in
-                ( newModel, Cmd.none )
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ button [ onClick DownloadPage ] [ text "Télécharger" ]
-        , div [] [ text model.page ]
-        ]
-```
-
-Enfin, nous devons gérer la réponse de la requête en créant un nouveau message qui contiendra la page téléchargée. Nous pouvons utiliser la fonction `String.split` pour séparer la réponse en différentes lignes et les afficher dans notre vue.
-
-```Elm
-type Msg
-    = DownloadPage
-    | NewPage String
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        DownloadPage ->
-            let
-                newModel = { model | page = "" } -- Clear previous page
-            in
-                ( newModel, fetchPage model.url )
-
-        NewPage page ->
-            let
-                lines = String.split "\n" page
-                newModel = { model | page = lines }
-            in
-                ( newModel, Cmd.none )
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ button [ onClick DownloadPage ] [ text "Télécharger" ]
-        , div [] (List.map (\line -> div [] [ text line ]) model.page)
-        ]
-```
-
-## Approfondissement
-
-Télécharger une page web peut sembler simple, mais il y a des choses à prendre en compte pour que cela fonctionne correctement. Par exemple, nous devons nous assurer que l'URL fournie est valide et que nous avons les autorisations nécessaires pour télécharger la page. Il est également important de gérer les erreurs et les réponses de statut HTTP.
+De plus, si vous avez besoin d'interagir avec des API externes, vous pouvez utiliser la bibliothèque de programmation asynchrone `elm/http` qui fournit des fonctions utiles pour effectuer des requêtes HTTP de manière plus simple.
 
 ## Voir aussi
 
-- [Documentation officielle sur le module Http](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Exemple complet de téléchargement de page web en Elm](https://github.com/elm-tutorial/examples/blob/master/Http/ParseElmHtml.elm)
+- Documentation officielle sur `Http.get` : https://package.elm-lang.org/packages/elm/http/latest/Http#get
+- Documentation officielle sur `Http.request` : https://package.elm-lang.org/packages/elm/http/latest/Http#request
+- Documentation officielle sur la bibliothèque `elm/http` : https://package.elm-lang.org/packages/elm/http/latest/

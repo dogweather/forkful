@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Löschen von Zeichen, die einem Muster entsprechen."
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen."
+title:                "Entfernen von Zeichen, die einem Muster entsprechen"
+html_title:           "Rust: Entfernen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,44 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine häufige Aufgabe in der Programmierung. Mit der Sprache Rust wird dies jedoch besonders effizient und einfach zu implementieren. In diesem Blogbeitrag zeigen wir, warum es sich lohnt, diese Methode zu nutzen.
+Warum sollte man sich überhaupt mit dem Löschen von Zeichen in einem Text beschäftigen? Ganz einfach: Es kann die Effizienz und Lesbarkeit des Codes verbessern und unerwünschte Zeichen entfernen, die die Funktionalität beeinträchtigen könnten.
 
-## Wie geht man vor
+## Wie Funktioniert Es
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die `trim_matches` Funktion aus der Standardbibliothek von Rust verwenden. Diese Funktion durchläuft einen gegebenen String und entfernt alle Zeichen, die dem angegebenen Muster entsprechen.
+Das Löschen von Zeichen anhand eines Musters kann in Rust auf verschiedene Arten erreicht werden. Eine Möglichkeit ist die Verwendung von regulären Ausdrücken, die in der Standardbibliothek von Rust verfügbar sind. Nehmen wir zum Beispiel an, dass wir alle Leerzeichen aus einem String entfernen wollen:
 
-Hier ist ein Beispiel, wie wir diese Funktion verwenden können:
-
-```Rust 
-let text = "Hello!!!";
-let result = text.trim_matches('!');
-println!("{}", result);
+```Rust
+let string = "Hallo, Welt!";
+let new_string = string.replace(" ", "");
+println!("{}", new_string); // Ausgabe: Hallo,Welt!
 ```
 
-In diesem Beispiel wird der Text "Hello!!!" eingelesen und dann mittels `trim_matches` alle Ausrufezeichen entfernt. Das Ergebnis ist dann "Hello".
+Wie du sehen kannst, haben wir die `replace`-Methode verwendet, um alle Leerzeichen aus dem String zu entfernen. Wir können auch ein reguläres Ausdrucksmuster als String übergeben, um alle Zeichen, die diesem Muster entsprechen, zu entfernen. Zum Beispiel:
 
-Eine weitere Möglichkeit ist die Verwendung der `replace` Funktion. Diese ersetzt alle Vorkommen eines bestimmten Musters durch ein anderes Zeichen oder einen anderen String. Hier ist ein Beispiel:
-
-```Rust 
-let text = "Hello!!!";
-let result = text.replace('!', '');
-println!("{}", result);
+```Rust
+let string = "Dies~ist~ein~Beispiel~String~mit~Tilden~als~Trennzeichen~";
+let new_string = string.replace("~", "");
+println!("{}", new_string); // Ausgabe: DiesisteinBeispielStringmitTildenalsTrennzeichen
 ```
 
-In diesem Fall wird wieder der Text "Hello!!!" eingelesen, aber alle Ausrufezeichen werden durch leere Strings ersetzt, was also zu "Hello" als Ergebnis führt.
+Einfach, oder? Aber was ist, wenn wir mehr Kontrolle über das Löschen von Zeichen haben wollen, zum Beispiel nur Zeichen an bestimmten Positionen oder in einem bestimmten Bereich des Strings löschen? Hier kommt die `chars()`-Methode ins Spiel, die uns eine Iterator über jeden einzelnen Buchstaben im String gibt. Wir können dann entscheiden, welche Zeichen wir behalten und welche wir löschen wollen. Schauen wir uns ein Beispiel an:
 
-In beiden Fällen können wir natürlich auch beliebige andere Muster angeben, die gelöscht werden sollen. Es ist auch möglich, mehrere Muster in einem Durchlauf zu löschen, indem man diese in einer Liste angibt, beispielsweise `trim_matches(&['!', '?'])`.
+```Rust
+let string = "123abc456def";
+let new_string: String = string.chars() // Erhalte einen Iterator über jeden Buchstaben im String
+    .enumerate() // Nummeriere jeden Buchstaben, um die Position zu erhalten
+    .filter(|&(index, _)| index % 3 != 0) // Entferne jeden dritten Buchstaben
+    .map(|(_, letter)| letter) // Entferne die Nummerierung und behalte nur die Buchstaben
+    .collect(); // Sammle die übrigen Buchstaben wieder zu einem String
 
-## Tieferer Einblick
+println!("{}", new_string); // Ausgabe: 12457ef
+```
 
-Im Hintergrund nutzt die `trim_matches` Funktion die `Pattern` Trait aus der Rust Standardbibliothek, um die Zeichen zu finden, die dem angegebenen Muster entsprechen. Dies ermöglicht es uns, auch komplexere Muster zu verwenden, wie zum Beispiel reguläre Ausdrücke.
+Interessant, oder? Indem wir die `enumerate()`- und `filter()`-Methode kombinieren, können wir die Position der einzelnen Buchstaben herausfinden und basierend auf dieser Position entscheiden, ob wir den Buchstaben behalten oder entfernen wollen. Dann verwenden wir `map()` und `collect()` um den Iterator wieder zu einem String zu sammeln.
 
-Die `Pattern` Trait definiert die `matches` Methode, die überprüft, ob ein gegebenes Zeichen dem Muster entspricht oder nicht. Dies wird dann von `trim_matches` genutzt, um das String zu durchlaufen und die entsprechenden Zeichen zu löschen.
+## Tiefer Einblick
 
-Es ist auch möglich, selbst ein eigenes Muster zu definieren, indem man dieses Trait implementiert. Dies bietet uns die Flexibilität, maßgeschneiderte Lösungen für unsere spezifischen Anforderungen zu erstellen.
+Es gibt noch viele weitere Möglichkeiten, um Zeichen in Rust zu löschen, zum Beispiel durch die Verwendung von Slices oder dem crate `unicode_segmentation`. Wenn du tiefer in die Materie einsteigen möchtest, empfehlen wir dir, die offizielle Rust-Dokumentation zu lesen und verschiedene Methoden auszuprobieren.
 
-## Siehe auch
+## Siehe Auch
 
-- [Die Rust Standardbibliothek](https://doc.rust-lang.org/std/index.html)
-- [Die Pattern Trait Dokumentation](https://doc.rust-lang.org/std/pattern/trait.Pattern.html)
-- [Rust By Example: String Manipulation](https://doc.rust-lang.org/stable/rust-by-example/std/str.html#string-manipulation)
+- [Offizielle Rust-Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Crate: Unicode_segmentation](https://crates.io/crates/unicode_segmentation)

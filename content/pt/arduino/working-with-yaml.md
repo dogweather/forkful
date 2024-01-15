@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Arduino: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,34 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que trabalhar com YAML no Arduino?
+## Por que
 
-O YAML é uma linguagem de marcação bem estruturada e de fácil leitura que pode ser muito útil para programadores do Arduino. Com YAML, você pode criar e enviar configurações e dados de forma simplificada e organizada. Além disso, ele é compatível com várias plataformas, o que o torna uma escolha popular para trabalhar com dispositivos eletrônicos como o Arduino.
+Se você está interessado em criar programas em Arduino, é importante conhecer diversas formas de armazenar e manipular dados. O YAML é uma linguagem de marcação simples e eficiente, muito utilizada para armazenar informações em arquivos de configuração, aplicativos web e até mesmo em projetos de hardware. Aprender a trabalhar com YAML pode expandir suas habilidades em programação e torná-lo mais versátil e eficiente em sua jornada com o Arduino. 
 
-##Como usar YAML no Arduino
+## Como fazer
 
-Para começar a trabalhar com YAML no Arduino, você precisará incluir a biblioteca da linguagem no seu projeto. Você pode fazer isso através do Gerenciador de Bibliotecas da IDE do Arduino ou baixando o arquivo YAML diretamente da fonte.
+Antes de começar a escrever seu código, é necessário instalar uma biblioteca no seu Arduino IDE para permitir a manipulação de arquivos YAML. No menu "Sketch", escolha "Include Library" e em seguida "Manage Libraries". Na barra de pesquisa, digite "YAML" e escolha a biblioteca "Arduino YAML". Clique em "Install" e aguarde a instalação ser concluída.
 
-Uma vez que a biblioteca esteja instalada, você pode começar a utilizar as funções e estruturas oferecidas por ela. Por exemplo, você pode definir uma configuração simples de WiFi usando YAML através do código abaixo:
+Agora, vamos para a parte prática. Primeiramente, inclua a biblioteca no seu código usando `#include <arduino-yaml.h>`. Para ler um arquivo YAML, utilize o seguinte código:
 
-```Arduino
-#include <YAML.h>
+```
+ArduinoYAML yaml;
 
-YAML::Node config = YAML::Load("WiFi:\n  SSID: seu_nome_de_rede\n  Password: sua_senha");
+void setup() {
+  Serial.begin(9600);
+  // abra o arquivo em modo leitura
+  File file = SD.open("dados.yaml", FILE_READ);
+  // faça o parsing dos dados do arquivo
+  YAML::Node doc = yaml.parse(file);
+  // imprima o valor de "mensagem"
+  Serial.println(doc["mensagem"].as<String>());
+}
+
+void loop() {
+  // nada a ser feito no loop
+}
 ```
 
-O código acima cria uma estrutura YAML com a configuração do WiFi, que pode ser facilmente modificada e enviada para o seu dispositivo. Com YAML, você pode enviar dados mais complexos, como configurações de sensores ou atualizações de firmware, de forma organizada e fácil de ler.
+Caso queira escrever em um arquivo YAML, utilize o seguinte código como base:
 
-##Aprofundando no YAML
+```
+ArduinoYAML yaml;
 
-Uma das grandes vantagens do YAML é a sua capacidade de serializar e desserializar dados. Isso significa que você pode facilmente converter os seus dados em uma estrutura YAML e vice-versa.
+void setup() {
+  // abra o arquivo em modo escrita
+  File file = SD.open("dados.yaml", FILE_WRITE);
+  // crie um novo objeto YAML::Emitter
+  YAML::Emitter out;
+  // escreva os dados desejados, seguindo a estrutura chave-valor
+  out << YAML::BeginMap;
+  out << YAML::Key << "nome";
+  out << YAML::Value << "João";
+  out << YAML::Key << "idade";
+  out << YAML::Value << 27;
+  out << YAML::EndMap;
+  // salve os dados no arquivo
+  yaml.save(file, out);
+}
 
-Outra característica interessante do YAML é a sua capacidade de referenciar valores em diferentes partes da estrutura. Isso pode ser útil quando se trabalha com dados que se repetem em diferentes seções do seu projeto.
+void loop() {
+  // nada a ser feito no loop
+}
+```
 
-Além disso, o YAML possui uma sintaxe clara e intuitiva, o que torna a criação e edição de estruturas muito mais fácil e rápida.
+O arquivo "dados.yaml" será criado e conterá os seguintes dados:
 
-##Veja também
+```
+nome: "João"
+idade: 27
+```
 
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Biblioteca YAML para Arduino](https://github.com/jbeder/yaml-cpp)
-- [Exemplo de uso de YAML no Arduino](https://www.arduino.cc/reference/en/libraries/yaml/)
+A partir desses exemplos, você pode adaptar o código à sua necessidade, criando ou lendo dados mais complexos em arquivos YAML. Lembre-se de sempre fechar o arquivo após o uso com `file.close()`.
+
+## Mergulho profundo
+
+O YAML (YAML Ain't Markup Language) é uma linguagem de marcação simples e legível por humanos, inspirada em outros formatos como XML e JSON. Sua estrutura é baseada em chaves e valores, organizadas em hierarquias através de identação. Por exemplo:
+
+```
+frutas:
+  - banana
+  - laranja
+  - maçã
+cores:
+  - vermelho
+  - verde
+  - amarelo
+```
+
+Notamos que "frutas" e "cores" são chaves que contêm listas de valores. Neste caso, "banana", "laranja" e "maçã" são frutas, enquanto "vermelho", "verde" e "amarelo" são cores. Além disso, é possível adicionar comentários em um arquivo YAML usando o caractere cerquilha (#) antes do texto.
+
+O manipulador de arquivos YAML utilizado na biblioteca para Arduino é baseado na biblioteca "ArduinoJson", o que garante compatibilidade e facilidade de uso. Outro diferencial do YAML é a possibilidade de referenciar dados em diferentes partes do arquivo usando âncoras e referências, o que pode ser útil em casos de repetição de dados.
+
+## Veja também
+
+- [Documentação oficial da biblioteca Arduino YAML](https://github.com/arduino-libraries/ArduinoYaml)
+- [Exemplos práticos de uso de YAML com Arduino](https://create.arduino.cc/projecthub/arduino-yaml/getting-started-with-yaml-and-arduino-4af603)
+- [Tutorial para iniciantes em YAML](https://www.learnpython.org/pt/YAML)

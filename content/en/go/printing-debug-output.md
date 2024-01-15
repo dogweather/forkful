@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Go recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Go"
 category:             "Go"
@@ -10,33 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Debug output is an essential tool for any programmer. It allows you to see the inner workings of your code and helps you identify any errors or bugs that may be causing issues. By printing debug output, you can better understand the flow of your program and make informed decisions on how to improve it.
+Debugging is an important process in any programming language. It helps identify and fix errors in code, ensuring that the program runs smoothly. One way to facilitate the debugging process is by printing debug output. This allows developers to track the flow of their code and pinpoint specific areas that may be causing problems.
 
 ## How To
-To print debug output in Go, you can use the `fmt` package's `Println()` function. This function takes in any number of arguments and prints them out in the specified format. For example:
+
+To print debug output in Go, we can use the `fmt` package. This package provides functions for formatted input and output, including printing to the console. Let's take a look at a simple example:
 
 ```Go
-age := 25
-name := "John"
-fmt.Println("Name:", name, "Age:" age)
+package main
+
+import "fmt"
+
+func main() {
+  name := "John"
+  age := 25
+  fmt.Printf("Hello, my name is %s and I am %d years old", name, age)
+}
 ```
 
-This will output: `Name: John Age: 25` to the console. You can also use the `Sprintf()` function to store the debug output in a string variable for later use. For more complex debug output, you can also use the `Printf()` function to format the output using verbs, such as `%v` for any value, `%d` for integers, or `%s` for strings.
+Running this code will output the following:
 
-```Go
-num := 3.14
-str := "Hello"
-fmt.Printf("Value: %v String: %s", num, str)
-```
+`Hello, my name is John and I am 25 years old`
 
-This will output: `Value: 3.14 String: Hello`. By using these functions, you can easily customize and print out debug output to track variables, function calls, and more.
+In this example, we used the `Printf` function from the `fmt` package to print a formatted string to the console. We can also use the `Println` function to print a simple string, or the `Print` function to print without a newline. You can find more information and examples on the `fmt` package in the [Go documentation](https://golang.org/pkg/fmt/).
 
 ## Deep Dive
-To take the printing of debug output to the next level, you can use the `log` package. This package provides more advanced functionality for debugging, such as setting different levels of output (such as `Print`, `Info`, `Warn`, and `Error`), adding timestamps to the output, and even writing the output to a log file. This is especially useful for larger projects where the console output can get cluttered, but you still need to keep track of important information.
 
-Additionally, you can use conditional statements to only print debug output when a specific condition is met. This can help reduce unnecessary clutter in your output and make it easier to pinpoint any errors.
+The `fmt` package also has a `Debug` function that can be used for more detailed debug output. This function takes in any data type and prints it in a human-readable format. This is useful for debugging complex data structures or variables with multiple values assigned.
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+  nums := []int{1, 2, 3}
+  fmt.Println(nums)
+  fmt.Printf("%#v", nums)
+}
+```
+
+The first `Println` function will output `[1 2 3]`, while the `Printf` function with `%#v` formatting will output `[]int{1, 2, 3}`. This is much more helpful in understanding the data structure and its values.
+
+Additionally, the `Debug` function can be used with the `go-spew` package to print more complex and nested data structures. This package is not part of the standard library, so it will need to be installed separately using the `go get` command. You can find more information about the `go-spew` package in its [GitHub repository](https://github.com/davecgh/go-spew).
 
 ## See Also
-- Official `fmt` package documentation: https://golang.org/pkg/fmt/
-- Official `log` package documentation: https://golang.org/pkg/log/
-- "Debugging in Go using the fmt package" article: https://blog.alexellis.io/golang-debugging-hello-world/
+- [Go Documentation: Formatting verbs in the `fmt` package](https://golang.org/pkg/fmt/#hdr-Printing)
+- [Go Documentation: The `go-spew` package](https://github.com/davecgh/go-spew)

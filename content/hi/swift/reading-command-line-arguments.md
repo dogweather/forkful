@@ -1,6 +1,7 @@
 ---
-title:                "Swift: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्युमेंट पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्युमेंट पढ़ना"
+title:                "कम्प्यूटर प्रोग्रामिंग पर 'कमांड लाइन आर्ग्यूमेंट्स' का पठन"
+html_title:           "Swift: कम्प्यूटर प्रोग्रामिंग पर 'कमांड लाइन आर्ग्यूमेंट्स' का पठन"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर 'कमांड लाइन आर्ग्यूमेंट्स' का पठन"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kyun
 
-क्या आप भी स्विफ्ट प्रोग्रामिंग में नए हैं और आपको पता नहीं कि आपने कमांड लाइन आर्ग्यूमेंट्स क्यों पढ़ने जाना है? यह ब्लॉग पोस्ट आपको उन पहले से एक संवेदनशील रूप में बताएगा कि कमांड लाइन आर्ग्यूमेंट्स प्रोग्राम को कैसे अधिक सुरक्षित और एफिकेंट बना सकते हैं।
+Agar aap Swift programming language mein command line arguments kaise padh sakte hain, toh ye article aapke liye hai. Ye aapko code ko command line se interact karne ki shakti deta hai aur aapke code ko command line se customize karne mein madad karta hai.
 
-## कैसे करें
-
-कमांड लाइन आर्ग्यूमेंट पढ़ने के लिए स्विफ्ट में आपको निम्न चरणों का पालन करना होगा:
-
-1. पहले, `CommandLine`ऑब्जेक्ट को अपडेट करें।
-
-2. अपने प्रोग्राम के लिए विभिन्न आर्ग्यूमेंट्स को विश्लेषण करने के लिए `arguments` प्रॉपर्टी का उपयोग करें।
-
-3. आर्ग्यूमेंट्स को स्ट्रिंग से अन्य डेटा टाइप में रूपांतरित करें या उन्हें ऑपरेशन्स या आपके प्रोग्राम के अन्य हिस्सों में पारित करें।
-
-यहां आप एक उदाहरण देख सकते हैं:
+# Kaise Karein
 
 ```Swift
-let arguments = CommandLine.arguments // 1
-let firstArgument = arguments[1] // 2
+// Command line arguments ko access karne ke liye, 'CommandLine' class ka use karein
+let arguments = CommandLine.arguments
 
-if let intValue = Int(firstArgument) { // 3
-    print("इन्टेजर आर्ग्यूमेंट: \(intValue)")
-} else if firstArgument == "धन्यवाद" {
-    print("तुम्हारा स्वागत है")
-} else {
-    print("पहला आर्ग्यूमेंट दर्ज करें।")
+// Argument count ko print karein
+print("Argument count: \(arguments.count)")
+
+// Saare arguments ko loop mein print karein
+for argument in arguments {
+    print(argument)
 }
+
 ```
 
-संस्करण के लिए आउटपुट:
+### Output:
+```
+Argument count: 3
+Argument 0: path/to/executable
+Argument 1: argument1
+Argument 2: argument2
+```
 
-```इन्टेजर आर्ग्यूमेंट: 10```
+# Deep Dive
 
-## गहराई में
+Command line arguments Swift mein 'CommandLine' class ke through access kiye jaate hain. Is class mein 'arguments' property available hoti hai jo command line arguments ko array format mein store karke rakhti hai. Iske through aap command line se arguments ko read aur manipulate kar sakte hain.
 
-कमांड लाइन आर्ग्यूमेंट्स स्विफ्ट में काफी महत्वपूर्ण हैं क्योंकि ये प्रोग्राम को अधिक सुरक्षित बनाते हैं। इन आर्ग्यूमेंट्स को प्राप्त करके, प्रोग्राम
+# See Also
+
+- [Swift Programming Language Official Website](https://swift.org/)
+- [Swift CommandLine Documentation](https://developer.apple.com/documentation/foundation/commandline)

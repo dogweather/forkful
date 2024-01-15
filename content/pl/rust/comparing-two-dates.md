@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Porównywanie dwóch dat"
-simple_title:         "Porównywanie dwóch dat"
+title:                "Porównanie dwóch dat"
+html_title:           "Rust: Porównanie dwóch dat"
+simple_title:         "Porównanie dwóch dat"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,41 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dat może być bardzo przydatne w wielu przypadkach programowania. Może pomóc w sortowaniu danych, wykrywaniu powtarzających się wydarzeń lub w tworzeniu planów lub kalendarzy. W tym artykule dowiesz się, jak porównywać dwie daty w języku Rust.
+Dlaczego porównanie dwóch dat może być przydatne w programowaniu? Czasem musimy zidentyfikować, która z dwóch dat jest wcześniejsza lub późniejsza, na przykład w celu wyświetlenia danych w określonej kolejności lub sprawdzenia, czy dany termin minął.
 
 ## Jak to zrobić
 
-Porównywanie dat w języku Rust jest bardzo proste i wygodne dzięki dostępności biblioteki standardowej dla typów daty i czasu. Wystarczy użyć funkcji `cmp()` i podać dwa obiekty typu `DateTime` jako argumenty. Następnie można użyć operatorów porównania (`<`, `>`, `==`, `!=`, `<=` lub `>=`) do porównania tych dwóch dat.
+Porównywanie dat w języku Rust jest bardzo proste. Możemy to zrobić za pomocą funkcji `cmp()` lub `partial_cmp()`. Przykładowy kod może wyglądać następująco:
 
-```Rust
-use std::time::SystemTime;
+```rust
+use std::cmp::Ordering;
 
-fn main() {
-    let date_1 = SystemTime::now();
-    let date_2 = SystemTime::now();
-    
-    match date_1.cmp(&date_2) {
-        std::cmp::Orderring::Less => println!("Pierwsza data jest wcześniejsza."),
-        std::cmp::Ordering::Greater => println!("Pierwsza data jest późniejsza."),
-        std::cmp::Ordering::Equal => println!("Obie daty są takie same."),
+let data1 = "2021-01-01";
+let data2 = "2022-01-01";
+
+match data1.cmp(&data2) {
+    Ordering::Less => println!("Data1 jest wcześniejsza."),
+    Ordering::Greater => println!("Data2 jest wcześniejsza."),
+    Ordering::Equal => println!("Obie daty są identyczne."),
+}
+```
+
+W powyższym przykładzie używamy funkcji `cmp()`, która zwraca wartość typu `Ordering`. Możemy również użyć `partial_cmp()`, która zwraca opcję `Option<Ordering>`, co daje więcej elastyczności w przypadku potencjalnych błędów.
+
+```rust
+use std::cmp::Ordering;
+
+let data3 = "2021-01-01";
+let data4 = "2022-01-01";
+
+if let Some(result) = data3.partial_cmp(&data4) {
+    match result {
+        Ordering::Less => println!("Data3 jest wcześniejsza."),
+        Ordering::Greater => println!("Data4 jest wcześniejsza."),
+        Ordering::Equal => println!("Obie daty są identyczne."),
     }
 }
 ```
 
-W powyższym przykładzie użyliśmy funkcji `now()` z biblioteki `SystemTime` w celu utworzenia dwóch obiektów daty. Następnie wykorzystaliśmy funkcję `cmp()` do porównania tych dat i wyświetlenia odpowiedniego wyniku w zależności od wyniku porównania.
+W powyższym przykładzie korzystamy z opcji `if let` we wzorcu dopasowania, ponieważ funkcja `partial_cmp()` może zwrócić wartość `None` w przypadku błędu.
 
-Output:
-```
-Obie daty są takie same.
-```
+## Głębsza analiza
 
-## Głębsze zagadnienia
+Podczas porównywania dat w języku Rust uwzględnia się nie tylko datę, ale również godzinę i strefę czasową. Dzięki temu możemy uniknąć błędów wynikających z różnic w strefach czasowych. Ponadto, Rust ma wbudowane typy dla dat i czasów, co pozwala na bardziej elastyczne i precyzyjne operacje na nich.
 
-Podczas porównywania dat w języku Rust warto zwrócić uwagę na różne strefy czasowe oraz formaty daty i czasu. Upewnij się, że oba obiekty są utworzone zgodnie z tymi samymi ustawieniami, aby uniknąć błędów w porównaniach.
+## Zobacz także
 
-Ponadto, w przypadku bardziej skomplikowanych operacji na datach, warto zapoznać się z bibliotekami zewnętrznymi takimi jak `chrono`.
-
-## Zobacz również
-
-1. [Dokumentacja biblioteki `std::time`](https://doc.rust-lang.org/1.43.0/std/time/index.html)
-2. [Porównywanie dat za pomocą biblioteki `chrono`](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html#method.cmp)
+- Dokumentacja języka Rust: https://www.rust-lang.org/
+- Poradnik na temat porównywania dat w języku Rust: https://dev.to/shotexa/rust-dates-how-to-7e7
+- Przewodnik po typach dat w języku Rust: https://www.educative.io/courses/learn-rust-from-scratch/demow-jypejJe

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "Ruby: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -9,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto de programação em Ruby?
+## Por que
 
-A linguagem de programação Ruby oferece uma sintaxe simples e elegante, tornando-a uma das mais populares entre desenvolvedores. Além disso, a comunidade Ruby é muito ativa e oferece suporte contínuo para novos projetos e ideias. Começar um novo projeto em Ruby é uma ótima maneira de aprender e aprimorar suas habilidades de programação, além de contribuir para a comunidade de código aberto.
+Se você está pensando em começar um novo projeto, provavelmente está em busca de uma linguagem de programação que seja simples, versátil e poderosa. Ruby é justamente isso e muito mais! Com uma sintaxe amigável e uma comunidade ativa, é uma ótima escolha para qualquer projeto.
 
-## Como iniciar um novo projeto em Ruby
+## Como fazer
 
-Para iniciar um novo projeto em Ruby, você precisa ter o ambiente de desenvolvimento configurado em sua máquina. Isso inclui instalar o interpretador Ruby, uma IDE ou editor de texto e a gem (pacote de código) bundler. Uma vez que o ambiente esteja configurado, você pode criar um novo diretório para o seu projeto e começar a escrever seu código.
+Para iniciar um novo projeto em Ruby, basta seguir os seguintes passos:
 
-Um exemplo simples de um programa Ruby pode ser visto abaixo:
+1. Faça o download e instale o Ruby em sua máquina.
+2. Abra seu editor de código favorito (como o Visual Studio Code ou o Sublime Text).
+3. Crie uma nova pasta para seu projeto e abra-a no seu editor.
+4. Crie um arquivo com extensão ".rb" para escrever seu código.
+5. Agora, basta começar a escrever em Ruby e se divertir!
+
+Aqui está um exemplo simples de código Ruby que exibe "Hello World" no console:
 
 ```Ruby
-#Este é um comentário em Ruby
-#Define uma variável com uma string
-hello = "Olá, mundo!"
-#Imprime o valor da variável
-puts hello
+# Hello World em Ruby
+puts "Hello World"
 ```
 
-O código acima começa com dois comentários, indicados pelas hashtags (#). Em seguida, uma variável chamada "hello" é definida com uma string (um conjunto de caracteres). E, por fim, o comando "puts" é usado para imprimir o valor da variável "hello" na tela. O resultado será "Olá, mundo!".
+E o output seria:
 
-## Mergulho Profundo
+```
+Hello World
+```
 
-Ao iniciar um novo projeto em Ruby, é importante seguir as melhores práticas de programação. Isso inclui escrever um código limpo, modular e de fácil leitura. Além disso, é recomendado o uso de testes automatizados para garantir a qualidade e a funcionalidade do seu código.
+## Deep Dive
 
-Uma das grandes vantagens do Ruby é a sua vasta biblioteca de gems disponível para uso. Gems são pacotes de código que podem ser facilmente integrados em seu projeto para adicionar funcionalidades específicas. Você pode explorar e instalar gems através do bundler, que é a ferramenta padrão de gerenciamento de dependências em projetos Ruby.
+Antes de começar seu projeto, é importante conhecer algumas características importantes de Ruby:
+
+1. Sintaxe simples e fácil de aprender: Uma das principais vantagens de Ruby é sua sintaxe amigável e expressiva, que facilita a leitura e escrita do código.
+
+2. Bibliotecas e frameworks robustos: Ruby possui uma vasta coleção de bibliotecas e frameworks prontos para serem utilizados em seus projetos, tornando o desenvolvimento mais rápido e eficiente.
+
+3. Orientação a objetos: Ruby é completamente orientado a objetos, o que significa que tudo é um objeto - até mesmo os números e strings.
+
+4. Comunidade ativa: A comunidade de Ruby é muito ativa e engajada, oferecendo suporte e recursos valiosos para programadores iniciantes e experientes.
 
 ## Veja também
 
+- [Site oficial do Ruby](https://www.ruby-lang.org/pt/)
 - [Documentação oficial do Ruby](https://www.ruby-lang.org/pt/documentation/)
-- [Guia de instalação do Ruby e do bundler](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
-- [Lista de gems populares em Ruby](https://rubygems.org/)
-- [Repositório de código aberto de projetos em Ruby](https://github.com/trending/ruby)
+- [Ruby - Aprenda a programar](https://www.ruby-lang.org/pt/documentation/quickstart/)

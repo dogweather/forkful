@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Suchen und Ersetzen von Text"
-simple_title:         "Suchen und Ersetzen von Text"
+title:                "Suchen und Ersetzen von Text."
+html_title:           "Haskell: Suchen und Ersetzen von Text."
+simple_title:         "Suchen und Ersetzen von Text."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Viele Programmiererinnen und Programmierer müssen Texte in ihrem Code ändern - sei es, um einen Tippfehler zu korrigieren oder um ein bestimmtes Wort oder eine Zeichenfolge durch eine andere zu ersetzen. In Haskell gibt es einige einfache und effektive Möglichkeiten, um ein solches Suchen und Ersetzen von Text durchzuführen.
+Wenn du viel mit Texten arbeitest, weißt du wahrscheinlich, wie mühsam es sein kann, Text manuell zu suchen und zu ersetzen. Zum Glück gibt es in der aktuellen Version von Haskell viele effiziente Funktionen, die das Suchen und Ersetzen von Text erleichtern.
 
-## Wie geht's
+# Wie es geht
 
-Um Text in Haskell zu suchen und zu ersetzen, gibt es drei Hauptfunktionen: `words`, `unwords` und `replace`. Diese können in Kombination verwendet werden, um gewünschte Ergebnisse zu erzielen.
+Um Text in Haskell zu suchen und zu ersetzen, gibt es einige nützliche Funktionen, die du verwenden kannst. Hier sind ein paar Beispiele:
 
-```Haskell
--- Beispiel-Liste von Wörtern
-list = ["Hallo", "Welt", "Hallo", "Haskell"]
+```
+import Data.Text
 
--- `words` wandelt einen String in eine Liste von Wörtern um
-words "Hallo Welt" == ["Hallo", "Welt"]
+-- Suchen und ersetzen von Text
+replace "Hallo" "Hi" "Hallo, wie geht es dir?" 
+-- Output: "Hi, wie geht es dir?"
 
--- `unwords` wiederum fügt eine Liste von Wörtern zu einem String zusammen
-unwords list == "Hallo Welt Hallo Haskell"
+-- Großbuchstaben in Kleinbuchstaben umwandeln
+toLower "Hallo WELT" 
+-- Output: "hallo welt"
 
--- `replace` ersetzt ein bestimmtes Wort oder eine Zeichenfolge in einem String durch eine andere
-replace "Haskell" "Programming" "Hallo Welt Hallo Haskell" == "Hallo Welt Hallo Programming"
+-- Extrahieren von Teilstrings
+take 5 "Hallo Welt" 
+-- Output: "Hallo"
 ```
 
-Ein Beispiel, um einen Tippfehler in einem String zu korrigieren, sieht folgendermaßen aus:
+# Tiefer Einblick
 
-```Haskell
-incorrect = "Guten Nur"
+Haskell bietet viele Funktionen zum Suchen und Ersetzen von Text, einschließlich der Verwendung von regulären Ausdrücken mit der Bibliothek `regex`. Du kannst auch eigene Funktionen schreiben, die auf individuelle Anforderungen zugeschnitten sind, indem du die vielen integrierten Datentypen und Operatoren von Haskell kombinierst.
 
-correct = replace "Nur" "Tag" incorrect
+# Siehe auch
 
--- Output:
-correct == "Guten Tag"
-```
-
-## Tief eintauchen
-
-Die `replace` Funktion ist der Kern des Suchens und Ersetzens von Text in Haskell. Sie akzeptiert drei Argumente: Die zu ersetzende Zeichenfolge, die neue Zeichenfolge und der String, in dem dies geschehen soll. Diese Funktion kann auch verschachtelt werden, um mehrere Ersetzungen auf einmal vorzunehmen.
-
-```Haskell
--- Beispiel einer verschachtelten `replace` Funktion
-replace "Hallo" "Hi" . replace "Haskell" "Programming" $ "Hallo Welt Hallo Haskell"
-
--- Output:
-"Hi Welt Hi Programming"
-```
-
-Es ist auch möglich, die `replace` Funktion mit regulären Ausdrücken aus dem `Text.Regex` Modul zu kombinieren, um komplexere Such- und Ersetzungsvorgänge durchzuführen.
-
-## Siehe auch
-
-- [Haskell-Dokumentation zu `replace`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:replace)
-- [Tutorial zu regulären Ausdrücken in Haskell](https://wiki.haskell.org/Regular_expressions)
-- [Beispiele für das Suchen und Ersetzen von Text in Haskell](https://www.codewars.com/kata/search-and-replace/train/haskell)
+- Offizielle Haskell-Dokumentation
+- Einführung in Haskell auf Deutsch
+- Reguläre Ausdrücke in Haskell

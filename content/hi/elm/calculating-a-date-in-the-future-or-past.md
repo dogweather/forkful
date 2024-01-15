@@ -1,6 +1,7 @@
 ---
-title:                "Elm: भविष्य या भूतकाल में दिनांक का गणना"
-simple_title:         "भविष्य या भूतकाल में दिनांक का गणना"
+title:                "भविष्य या भूत कि तारीख निर्धारण करना"
+html_title:           "Elm: भविष्य या भूत कि तारीख निर्धारण करना"
+simple_title:         "भविष्य या भूत कि तारीख निर्धारण करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -9,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्यों
 
-Din aur mahine ki tarikh ka kabha kabhi istemaal karna kyu jaruri hota hai, uske liye sirf 1-2 sentence ki samajh hoti hai.
+दिनांक को भविष्य में या भूतकाल में गणना करने में प्रतिक्रिया दिखाना आसान है और आजकल यह एक बहुत ही उचित काम है।
 
-## Kaise karein
+## कैसे करें
 
-Agar aapko hogi kabhi bhi future aur past mei tarikh nikalne ki jarurat, aapko kin mathametical calculation ki jarurat padegi. Elm programming language ke through hum aasani se tarikh ki calculation kar sakte hain. Dekhiye neeche diye gaye code blocks aur unki output ko.
+किसी भी दिनांक को भविष्य या भूतकाल में गणना करना बहुत आसान है। आप निम्नलिखित तरीके से इसे कर सकते हैं:
 
 ```Elm
--- Future date calculation
-calculateFutureDate : Int -> Int -> Int -> Date
-calculateFutureDate day month year =
-    Date.fromParts year month day
+import Time exposing (..)
 
--- Sample output:
-calculateFutureDate 25 12 2021 --> "2021-12-25"
+-- भविष्यवाणी की तारीख से 5 दिन पहले गणना करने का उदाहरण
+dateInPast = Time.sub 5 Time.days (Time.now)
 
--- Past date calculation
-calculatePastDate : Int -> Int -> Int -> Date
-calculatePastDate day month year =
-    Date.fromParts year month day
-
--- Sample output:
-calculatePastDate 15 6 1999 --> "1999-06-15"
+-- भूतकाल की तारीख से 10 दिन आगे गणना करने का उदाहरण
+dateInFuture = Time.sum 10 Time.days (Time.posixToMillis 0)
 ```
 
-## Gehraai mein
+आप दिनांक को भविष्य या भूतकाल में से किसी भी समय के साथ इस तरह से इस्तेमाल कर सकते हैं। सभी समय समय स्टैम्प मिलिसेकंड के रूप में लौटते हैं, जहां 0 भूतकाल को दर्शाता है।
 
-Tarikh ki calculation mei sabse important hai ki hum sabse pehle Date library ko import karein apne project mei. Date library hume future aur past ki calculation ke liye sahi tareeke se date ko manage karne mei help karega.
+## डीप डाइव
 
-Jab bhi hum future ya past date calculate karte hain, hume day, month aur year ki value pass karni hoti hai calculateFutureDate() aur calculatePastDate() functions mei. Aur yadi hume specific time bhi add karna ho toh hum Date timezone aur Time modules ka use kar sakte hain. Elm programming language ki is vidhi ko follow karke aap kabhi bhi future aur past date ko asani se manage kar sakte hain.
+दिनांक की गणना एक आम फंक्शन है जो किसी भी कार्यक्रम में उपयोगी हो सकती है। Elm में, हम समय स्टैम्प मिलिसेकंड में से दिनांक की गणना कर सकते हैं और उसे Date डेटा टाइप में परिवर्तित कर सकते हैं। इससे हमें दिनांक को पेशी के रूप में उपयोगी सूचना मिलती है जो यूजर को स्पष्टता देती है।
 
-## See Also
+## देखें भी
 
-- https://package.elm-lang.org/packages/elm/time/latest/Time
-- https://package.elm-lang.org/packages/elm-community/date-extra/latest/
-- https://elmprogramming.com/guides/dates.html
+- [Elm डेटा टाइम पैकेज की विस्तृत डॉक्यूमेंटेशन](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm भाषा की विस्तृत डॉक्यूमेंटेशन](https://guide.elm-lang.org/)

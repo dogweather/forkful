@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Redactando un archivo de texto."
+html_title:           "Kotlin: Redactando un archivo de texto."
+simple_title:         "Redactando un archivo de texto."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,33 +10,99 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#¿Por qué escribir un archivo de texto?
+## ¿Por qué escribir un archivo de texto?
 
-Escribir un archivo de texto es una tarea común en la programación, ya que permite almacenar información de forma estructurada. Puede ser útil para guardar datos importantes, mantener registros o incluso crear contenido para una página web.
+Escribir un archivo de texto es una tarea esencial para cualquier programador. Nos permite almacenar información de manera estructurada y persistente, lo que facilita el acceso y el manejo de datos en nuestras aplicaciones.
 
-##Cómo hacerlo
+## Cómo hacerlo en Kotlin
 
-Para escribir un archivo de texto en Kotlin, primero debemos importar la clase File del paquete java.io. Luego, podemos utilizar el método .writeText() para escribir una cadena de texto en el archivo especificado. Aquí hay un ejemplo:
+En Kotlin, podemos escribir un archivo de texto utilizando la función `printWriter()` y la clase `File`. Primero, debemos importar la clase `java.io.File` para poder usarla en nuestro código.
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val archivo = File("miarchivo.txt")
-    archivo.writeText("¡Hola desde Kotlin!")
+    // Creamos una instancia de la clase File y le pasamos el nombre del archivo que queremos crear
+    val file = File("miArchivo.txt")
+    
+    // Utilizamos la función printWriter() para crear un PrintWriter que escribirá en nuestro archivo
+    val printWriter = file.printWriter()
+    
+    // Utilizamos el método println() para escribir en el archivo línea por línea
+    printWriter.println("¡Hola, mundo! Este es mi primer archivo de texto en Kotlin.")
+    printWriter.println("¡Qué emocionante es escribir un archivo!")
+    
+    // Siempre debemos cerrar el printWriter después de terminar de escribir en el archivo
+    printWriter.close()
 }
 ```
 
-Si ejecutamos este código, se creará un archivo de texto llamado "miarchivo.txt" con el contenido "¡Hola desde Kotlin!".
+Si ejecutamos este código, se creará un archivo llamado "miArchivo.txt" en la misma ubicación que nuestro código. Al abrirlo, deberíamos ver el siguiente contenido:
 
-##Profundizando
+```
+¡Hola, mundo! Este es mi primer archivo de texto en Kotlin.
+¡Qué emocionante es escribir un archivo!
+```
 
-Hay más formas de escribir un archivo de texto en Kotlin, como utilizar un BufferedWriter o un FileWriter. También podemos especificar la ruta del archivo y confirmar si el proceso de escritura fue exitoso o no.
+Podemos usar la misma función printWriter para agregar más líneas a nuestro archivo existente sin sobrescribir lo que ya está escrito. También podemos utilizar el método `write()` para escribir texto sin saltos de línea.
 
-Además, es importante tener en cuenta que al escribir un archivo, podemos especificar si queremos sobrescribir su contenido o añadir nueva información al final. Por ejemplo, si cambiamos el método .writeText() por .appendText(), se añadirá "¡Hola de nuevo!" al final del archivo en lugar de sobrescribirlo.
+```Kotlin
+import java.io.File
 
-#Ver también
+fun main() {
+    // Creamos una instancia de la clase File y le pasamos el nombre del archivo que queremos crear
+    val file = File("miArchivo.txt")
+    
+    // Utilizamos la función printWriter() para crear un PrintWriter que escribirá en nuestro archivo
+    val printWriter = file.printWriter()
+    
+    // Utilizamos el método write() para escribir en una sola línea
+    printWriter.write("¡Hola, este texto aparecerá en una sola línea!")
+    
+    // Utilizamos el método println() para escribir en una línea nueva
+    printWriter.println()
+    printWriter.println("Y este texto aparecerá en la siguiente línea.")
+    
+    // Siempre debemos cerrar el printWriter después de terminar de escribir en el archivo
+    printWriter.close()
+}
+```
 
-- [Cómo leer un archivo de texto en Kotlin](https://www.geeksforgeeks.org/reading-a-text-file-in-kotlin/)
-- [Documentación oficial de la clase File en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/kotlin.io.-file/)
-- [Tutorial de escritura de archivos en Kotlin para principiantes](https://www.youtube.com/watch?v=6DYyhAVnP24)
+Si volvemos a abrir el archivo, veremos que ahora contiene lo siguiente:
+
+```
+¡Hola, este texto aparecerá en una sola línea!
+Y este texto aparecerá en la siguiente línea.
+```
+
+## Profundizando en la escritura de archivos de texto
+
+Además de la función `printWriter()`, también podemos utilizar la clase `BufferedWriter` para escribir en archivos de texto en Kotlin. Esta clase nos permite escribir en el archivo de manera más eficiente al almacenar temporalmente los datos antes de escribirlos en el disco.
+
+También podemos especificar la ubicación del archivo utilizando la clase `File` y escribir en una carpeta específica. Por ejemplo:
+
+```Kotlin
+// Escribir en la carpeta "Documentos"
+val file = File("$HOME/Documentos/miArchivo.txt")
+```
+
+También podemos utilizar la clase `Paths` para obtener el directorio actual en el que se encuentra nuestro programa y guardar nuestro archivo allí.
+
+```Kotlin
+// Obtener el directorio actual
+val path = Paths.get("")
+val absolutePath = path.toAbsolutePath()
+
+// Escribir en el directorio actual
+val file = File("$absolutePath/miArchivo.txt")
+```
+
+¡Así que ya sabes cómo escribir archivos de texto en Kotlin! Asegúrate de siempre cerrar el PrintWriter o BufferedWriter después de terminar de escribir en el archivo para evitar conflictos.
+
+## Ver también
+
+- [Documentación oficial de Kotlin sobre la escritura de archivos](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/print-writer.html)
+- [Artículo de Programiz sobre la escritura de archivos en Kotlin](https://www.programiz.com/kotlin-programming/file-handling)
+- [Tutorial de Baeldung sobre la escritura de archivos en Kotlin](https://www.baeldung.com/kotlin-write-file)
+
+ ¡A escribir y almacenar datos en archivos de texto en Kotlin!

@@ -1,6 +1,7 @@
 ---
-title:                "C++: ランダムな数字を生成する"
-simple_title:         "ランダムな数字を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "C++: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -9,91 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜランダムな数値を生成するのか
+## なぜ
+ランダムな数値を生成することのメリットについて説明します。人々はこの機能を使用して、シミュレーション、ランダムなデータの生成、そして暗号化など、さまざまな目的で利用することができます。
 
-ランダムな数値を生成することは、コンピューターサイエンスやプログラミングにおいて非常に重要です。例えば、ゲーム開発や暗号化、シミュレーションなど、数値をランダムに生成することが必要になるケースがあります。また、ランダムな数値を使用することで、プログラムをよりリアルなものにすることができます。
-
-# 生成法
-
-C++でランダムな数値を生成するには、標準ライブラリである `<random>` を使用します。まず、乱数エンジンを作成し、それをもとに分布を指定してランダムな数値を生成します。以下に、整数の場合と実数の場合の例を示します。
+## 使い方
+ランダムな数値を生成するためには、C++の標準ライブラリである`<random>`を使用します。以下のコード例を参考に、ランダムな整数を生成する方法をご紹介します。
 
 ```C++
-//整数の場合
 #include <iostream>
-#include <stdlib.h>
 #include <random>
 
 int main() {
-    //乱数エンジンの作成
-    std::mt19937 eng{std::random_device{}()};
-    //分布の指定
-    std::uniform_int_distribution<int> dist{1, 10}; //1から10までの整数を生成
+    // ランダムな整数を生成するためのエンジンを作成
+    std::random_device rd;
+    std::mt19937 gen(rd());
 
-    //10回ループを回し、ランダムな数値を出力
-    for(int i = 0; i < 10; i++){
-        std::cout << dist(eng) << std::endl;
+    // 生成される数値の範囲を指定
+    std::uniform_int_distribution<> dist(1, 10);
+
+    // 10回ループしてランダムな数値を表示
+    for (int i = 0; i < 10; i++) {
+        std::cout << dist(gen) << " ";
     }
-
-    return 0;
+    std::cout << std::endl;
 }
-
-/* 出力例
-5
-7
-10
-2
-1
-9
-3
-8
-4
-6
-*/
 ```
 
-```C++
-//実数の場合
-#include <iostream>
-#include <stdlib.h>
-#include <random>
+上記のコードを実行すると、1から10の範囲でランダムな数値が生成されます。実行するたびに異なる結果が得られることが確認できるでしょう。
 
-int main() {
-    //乱数エンジンの作成
-    std::mt19937 eng{std::random_device{}()};
-    //分布の指定
-    std::uniform_real_distribution<double> dist{0.0, 1.0}; //0から1までの実数を生成
+## ディープダイブ
+ランダムな数値を生成するアルゴリズムには、メルセンヌ・ツイスターやリニア・コングルエンシャル法などの様々な手法が存在します。また、seed(種)を指定することで、同じ結果を得ることも可能です。
 
-    //10回ループを回し、ランダムな数値を出力
-    for(int i = 0; i < 10; i++){
-        std::cout << dist(eng) << std::endl;
-    }
+特に注意すべき点として、標準ライブラリの`<random>`は疑似乱数を生成するため、完全にランダムな数値を生成することはできません。しかし、一般的な用途では十分な精度でランダムな数値を生成することができます。
 
-    return 0;
-}
-
-/* 出力例
-0.269957
-0.478128
-0.993718
-0.304541
-0.153624
-0.938067
-0.625743
-0.02629
-0.127482
-0.938778
-*/
-```
-
-# 深堀り
-
-乱数生成アルゴリズムにはいくつかの種類があり、それぞれに独自の特徴があります。C++では、Mersenne Twisterアルゴリズムを使用した乱数エンジンが標準となっており、良質なランダムな数値を生成することができます。
-
-また、分布にもいくつかの種類があり、 `uniform_int_distribution` や `uniform_real_distribution` 以外にも、正規分布や二項分布など様々な分布を指定することができます。これらの分布を使用することで、より現実的な乱数を生成することができます。
-
-# 参考リンク
-
-- [C++ Reference: <random>](https://en.cppreference.com/w/cpp/numeric/random)
-- [C++ 範囲ベースforループ、unifor_int_distribution で乱数生成](https://cpprefjp.github.io/lang/cpp11/range_based_for_loop.html)
-- [C++で乱数を生成する方法](https://dev.classmethod.jp/etc/cpp_random/)
-- [乱数生成アルゴリズムの紹介](https://www.suzu6.net/posts/215-random-algorithm/)
+## 参考リンク
+- [C++ Reference: Random Number Generating](https://en.cppreference.com/w/cpp/numeric/random)
+- [C++標準ライブラリの<random>の使い方(日本語ブログ)](https://marycore.jp/prog/cpp/random/)

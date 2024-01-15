@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Skriva tester"
+title:                "Skriva tester"
+html_title:           "Fish Shell: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,38 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är ett viktigt steg i utvecklingsprocessen för programvara. Det hjälper utvecklare att upptäcka och lösa fel i kod och garanterar att programmet fungerar som det ska.
+Att skriva tester är en viktig del av programutveckling eftersom det hjälper till att säkerställa att koden fungerar som den ska. Det gör det också lättare att upptäcka och åtgärda eventuella buggar eller problem i koden.
 
 ## Hur man gör det
 
-Det finns många sätt att skriva tester, men i den här bloggposten kommer vi att fokusera på hur man gör det med hjälp av Fish Shell. För att skriva tester i Fish Shell behöver du följa dessa steg:
-
-1. Skapa en fil som slutar med `.test.fish`. Detta är en konvention som hjälper till att skilja tester från annan kod.
-2. Skriv dina tester med hjälp av Fish Shell-biblioteket `test` inuti en `begin` och `end` block. Här är ett exempel på hur det kan se ut:
+För att skriva tester i Fish Shell behöver du först skapa en testfil med .fish förlängning. Sedan kan du använda "test" kommandot för att skriva dina testfall och förväntade resultat. Här är ett exempel på hur en testfil kan se ut:
 
 ```Fish Shell
-begin
-  echo "Testar om 2 är större än 1"
-	if test 2 -gt 1
-	  echo "Passerade!"
-	else
-	  echo "Misslyckades."
-	end
-end
+#!/usr/bin/env fish
+
+# Importera testmodulen
+source ~/.config/fish/functions/test
+
+# Enkelt test för att se om "ls" kommandot fungerar
+test "Kan utföra ls kommandot" ls = "ls"
 ```
+När du kör din testfil genom att köra kommandot "fish testfil.fish" i terminalen, kommer Fish Shell att köra dina tester och visa resultatet. Om testet lyckades, kommer du att se ett grönt meddelande. Om det var ett fel, kommer du att få ett rött meddelande och en detaljerad förklaring av felet.
 
-3. Kör testet genom att använda kommandot `fish testfile.test.fish`. Om det passerar ska du se en utskrift som säger “Passerade!”, annars kommer du att se “Misslyckades.”.
+## Djupdykning
 
-## Fördjupning
+Att skriva tester handlar inte bara om att säkerställa att koden fungerar, det handlar också om att skriva läsbar och underhållningsbar kod. När du skriver tester, tänk på att namnge dem på ett bra sätt och bryt ner dem i mindre tester för att göra dem mer hanterbara. Det är också viktigt att kontinuerligt uppdatera och underhålla dina tester när du ändrar eller lägger till ny funktionalitet i din kod.
 
-Att skriva tester är en viktig del av utvecklingsprocessen eftersom det hjälper till att upptäcka fel i kod och garanterar att programmet fungerar som det är tänkt. Det är också ett bra sätt att dokumentera din kod och göra den mer lättförståelig för andra utvecklare som kommer att arbeta med den i framtiden.
+## Se också
 
-En fördel med att använda Fish Shell för att skriva tester är att koden kan köras direkt från terminalen, vilket gör det snabbt och enkelt att se resultatet av testerna. Dessutom är syntaxen i Fish Shell enkel och lätt att lära sig även för nybörjare.
-
-Men det är viktigt att komma ihåg att tester inte kan garantera att din kod är 100% felfri. Det är bara ett verktyg för att upptäcka och förebygga fel i din kod. Det är också viktigt att kontinuerligt uppdatera och köra tester när du gör ändringar i din kod.
-
-## Se även
-
-- [Fish Shell officiell hemsida](https://fishshell.com/)
-- [Enkel guide till testning i Fish Shell](https://medium.com/@castanso/quick-guide-to-testing-in-fish-shell-6dd287596b39)
-- [Fish Shell-testbiblioteket på GitHub](https://github.com/fish-shell/fish-shell/blob/master/share/functions/test.fish)
+- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- Testmodul för Fish: https://github.com/jorgebucaran/fish-shell-reload
+- Lär dig att skriva testbara Fish Shell-skript: https://fishshell.com/docs/current/tutorial.html#learn-to-write-testable-fish-scripts

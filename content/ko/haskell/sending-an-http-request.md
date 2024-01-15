@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Haskell: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,43 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTTP 요청을 보내는 것에 대해 궁금한가요? 이 글은 Haskell로 HTTP 요청을 보내는 방법과 이를 활용하는 방법을 알려줄 것입니다.
+HTTP 요청을 보내는 것이 중요한 이유는 우리가 웹 애플리케이션을 만들 때 데이터를 서버에 전송하거나 서버로부터 데이터를 받아오는데 필수적이기 때문입니다. 즉, 우리가 사용하는 모든 온라인 서비스는 내부적으로 HTTP 요청을 사용하고 있습니다.
 
 ## 어떻게
 
-HTTP 요청을 보내는 것은 다양한 목적으로 사용될 수 있습니다. 예를 들어, API에서 데이터를 가져오거나 다른 웹 서비스에 데이터를 전송할 때 사용할 수 있습니다.
-
-Haskell에서는 `http-conduit` 라이브러리를 사용하여 쉽게 HTTP 요청을 보낼 수 있습니다. 아래는 간단한 GET 요청을 보내는 코드 예제입니다.
+우선, `http-client` 라이브러리를 이용하여 HTTP 요청을 보내는 방법을 알아보겠습니다. 이 라이브러리는 Haskell에서 HTTP 클라이언트를 만드는 데 필요한 모든 기능을 제공합니다. 예를 들어, 다음과 같이 `httpLbs` 함수를 사용하여 URL에 GET 요청을 보낼 수 있습니다:
 
 ```Haskell
-import Network.HTTP.Conduit
+import Network.HTTP.Client
+import Network.HTTP.Client.TLS
 
 main :: IO ()
 main = do
-    response <- simpleHttp "https://www.example.com"
-    putStrLn $ "Response status code: " ++ show (getResponseStatusCode response)
-    putStrLn $ "Response body: " ++ show (decodeUtf8 (getResponseBody response))
+    manager <- newManager tlsManagerSettings
+    request <- parseRequest "http://www.example.com"
+    response <- httpLbs request manager
+    print response
 ```
 
-위 코드에서 `simpleHttp` 함수를 사용하여 `https://www.example.com` 에 GET 요청을 보냅니다. 그리고 `getResponseStatusCode` 와 `getResponseBody` 함수를 사용하여 응답의 상태 코드와 본문을 출력합니다.
+위 코드를 실행해보면 `Response` 객체를 받게 됩니다. 이 객체에는 응답의 상태 코드, 헤더, 본문 등의 정보가 담겨있습니다.
 
-## 깊게 들어가기
+이번에는 POST 요청을 보내보도록 하겠습니다. 이를 위해서는 `RequestBodyLBS` 라는 타입의 값을 `httpLbs` 함수의 세 번째 인자로 전달해주어야 합니다. 이 타입은 `ByteString` 값을 가지며, 본문에 담길 데이터를 입력해주면 됩니다.
 
-HTTP 요청은 보통 다음과 같은 세 가지 부분으로 구성됩니다.
+```Haskell
+import Network.HTTP.Client
+import Network.HTTP.Client.TLS
+import qualified Data.ByteString.Lazy.Char8 as L
 
-1. 메서드 (Method): GET, POST 등과 같은 요청의 종류를 지정합니다.
-2. URL (Uniform Resource Locator): 요청을 보낼 서버와 리소스의 주소를 나타냅니다.
-3. 헤더 (Header): 요청에 대한 추가 정보를 제공합니다.
+main :: IO ()
+main = do
+    manager <- newManager tlsManagerSettings
+    request <- parseRequest "http://www.example.com"
+    let postData = L.pack "Hello World"
+        body = RequestBodyLBS postData
+    response <- httpLbs request { method = "POST", requestBody = body } manager
+    print response
+```
 
-대부분의 라이브러리에서는 이 세 가지를 간편하게 지정할 수 있는 함수를 제공합니다. 예를 들어, `parseUrl` 함수를 사용하여 URL을 파싱하고 `createUrl` 함수를 사용하여 특정 한정자나 쿼리 매개변수를 지원하는 URL을 생성할 수 있습니다.
+## 깊게 파 알아보기
 
-따라서 `http-conduit` 라이브러리를 사용하여 HTTP 요청을 보내는 것은 매우 간단하고 유연합니다. 그러나 보다 복잡한 요청이나 응답 처리를 위해서는 좀 더 깊이있는 이해가 필요할 수 있습니다. 이 경우에는 공식 문서나 관련 예제 코드를 참고하시기 바랍니다.
+우리가 보낸 HTTP 요청이 잘 처리되었는지 확인하기 위해, `Response` 객체를 분석해보겠습니다. 이 객체에는 `statusMessage` 함수를 통해 상태 메시지를 얻을 수 있습니다. 또한 `responseBody` 함수를 통해 응답 본문의 내용을 가져올 수 있습니다. 또한 필요한 경우 `responseHeaders` 함수를 통해 헤더 정보를 얻을 수 있습니다.
 
-## 관련 자료
+HTTP 요청을 보낼 때 주의해야 할 점은 불필요한 요청을 보내지 않도록 하는 것입니다. 이를 위해 `Request` 객체에는 다양한 옵션을 설정할 수 있습니다. 예를 들어, 쿠키를 사용하고 싶은 경우 `cookieJar` 에 쿠키 정보를 저장한 `CookieJar` 객체를 전달할 수 있습니다.
 
-* http-conduit 공식 문서: https://hackage.haskell.org/package/http-conduit
-* 실제 활용 예제: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json
-* HTTP 요청 메서드: https://developer.mozilla.org/ko/docs/Web/HTTP/Methods
-* HTTP 헤더: https://developer.mozilla.org/ko/docs/Web/HTTP/Headers
+## 관련 정보 보기
 
-## 더 보기
+- [공식 `http-client` 라이브러리 문서](https://hackage.haskell.org/package/http-client)
+- [Haskell에서 HTTP 요청 보내기(번역)](https://jojoldu.tistory.com/267)

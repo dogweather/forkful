@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden."
+html_title:           "Kotlin: Beregning av en dato i fremtiden eller fortiden."
+simple_title:         "Beregning av en dato i fremtiden eller fortiden."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,35 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å beregne en dato i fortiden eller fremtiden kan være nyttig for å planlegge hendelser eller håndtere tidsrelatert data. Dette kan være spesielt nyttig for programmerere som jobber med applikasjoner som håndterer kalender og tidsstyring.
+Enten du er en erfaren Kotlin-utvikler eller bare nysgjerrig på programmering, kan å beregne datoer i fremtiden eller fortiden være en nyttig ferdighet å ha. Enten det er for å planlegge fremtidige hendelser eller spore når en hendelse skjedde, kan å kunne beregne datoer være nyttig i mange situasjoner.
 
 ## Hvordan
 
-For å beregne en dato i Kotlin, kan vi bruke funksjonen `plus` eller `minus` på `LocalDate`-objekter. Følgende kode viser hvordan vi kan beregne en dato ti dager frem i tid:
+Beregningslogikk for datoer kan være komplisert, men ved hjelp av Kotlin kan du enkelt håndtere dette. Her er et eksempel på hvordan du kan bruke Kotlin for å beregne datoer i fremtiden og fortiden:
 
-```Kotlin
-val today = LocalDate.now()
-val futureDate = today.plusDays(10)
-println(futureDate) // Output: 2021-10-22
+``` Kotlin
+// Importer nødvendige biblioteker
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+// Definer en funksjon for å beregne datoer
+fun beregnDato(dager: Int, måneder: Int, år: Int): LocalDate {
+    // Hent dagens dato
+    val nå = LocalDate.now()
+    // Legg til ønskede dager og måneder
+    val fremtidigDato = nå.plusDays(dager.toLong()).plusMonths(måneder.toLong()).plusYears(år.toLong())
+    return fremtidigDato
+}
+
+// Formater datoen til ønsket format
+val formaterDato = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+// Kall funksjonen med ønskede parametere og formater datoen for utskrift
+println("Fremtidig dato: ${beregnDato(5, 2, 2021).format(formaterDato)}")
 ```
 
-På samme måte kan vi bruke `minus` for å beregne en dato i fortiden. For eksempel, la oss beregne en dato ti år tilbake i tid:
-
-```Kotlin
-val today = LocalDate.now()
-val pastDate = today.minusYears(10)
-println(pastDate) // Output: 2011-10-12
-```
-
-Det er også mulig å beregne en dato basert på en annen tidsenhet, for eksempel måneder eller år. Dette kan gjøres ved å bruke funksjonene `plusMonths` og `plusYears`, eller `minusMonths` og `minusYears` for beregning i fortiden.
+Dette eksempelet beregner datoen 5 dager, 2 måneder og 2021 år fra nå, og formaterer det som "dd.MM.yyyy" (for eksempel 29.03.2021). Du kan også bytte ut `plusDays`, `plusMonths` og `plusYears` med `minus` for å beregne en dato i fortiden.
 
 ## Dypdykk
 
-Når man beregner en dato ved hjelp av `plus` eller `minus` funksjonene, tar Kotlin automatisk hensyn til skuddår og riktige månedslengder. Dette gjør det enklere for oss å beregne riktig dato uten å måtte håndtere disse detaljene selv.
+Som du kan se i eksempelet over, bruker Kotlin `LocalDate` og `DateTimeFormatter` til å håndtere datoer. `LocalDate` er enklere å bruke enn de eldre `Date` og `Calendar` klassene, og `DateTimeFormatter` lar deg formatere datoen på ønsket måte.
 
-Det er også mulig å endre datoen for et `LocalDate`-objekt ved å bruke funksjonen `withDayOfMonth`, som lar oss endre dagen i måneden, og `withMonth`, som lar oss endre måneden. Dette kan være nyttig for å justere en dato til en spesifikk dag eller måned.
+I tillegg til å legge til og trekke fra dager, måneder og år, kan du også bruke `with` for å justere en bestemt del av datoen. For eksempel `fremtidigDato.withDayOfMonth(10)` vil justere datoen til den 10. i måneden.
+
+Det er også flere nyttige metoder for å manipulere og håndtere datoer, for eksempel `isBefore`, `isAfter` og `toEpochDay`. Utforsk de ulike metodene og finn ut hva som fungerer best for dine behov.
 
 ## Se også
 
-- [Dokumentasjon for LocalDate funksjoner i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/index.html)
-- [Tutorial: Manipulere datoer i Kotlin](https://www.baeldung.com/kotlin/date-time-manipulation)
+- [Official Kotlin documentation](https://kotlinlang.org/docs/home.html)
+- [Java Date and Time API in Kotlin](https://www.baeldung.com/kotlin-dates)
+- [Working with Kotlin LocalDate and LocalDateTime](https://betterprogramming.pub/working-with-kotlin-localdate-and-localdatetime-787590f5849a)

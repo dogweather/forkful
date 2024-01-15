@@ -1,6 +1,7 @@
 ---
-title:                "Swift: קבלת התאריך הנוכחי"
-simple_title:         "קבלת התאריך הנוכחי"
+title:                "לקבלת תאריך נוכחי - תאריך הנוכחי נמצא"
+html_title:           "Swift: לקבלת תאריך נוכחי - תאריך הנוכחי נמצא"
+simple_title:         "לקבלת תאריך נוכחי - תאריך הנוכחי נמצא"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,24 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+מה קורה כאשר אתה מחפש את התאריך הנוכחי באייפון שלך? ייתכן שאתה צריך לתכנת יישומים או פשוט רוצה לדעת מה היום הוא. במאמר זה, אנו נדבר על כיצד לקבל את התאריך הנוכחי באמצעות שפת Swift הנוכחית, עם דוגמאות קוד והסברים עמוקים.
 
-ישנם הרבה סיבות שבהם תרצו לקבל את התאריך הנוכחי בתכנות Swift. ייתכן שתרצו להשתמש בו כחלק מתוך תיעוד של אירוע או להציג אותו למשתמשים באפליקציה שלכם. בין אם בגלל זה או בגלל סיבות אחרות, לדעת כיצד לקבל את התאריך הנוכחי יכול להיות מאוד שימושי ומועיל בתכנות שלכם.
-
-## איך לעשות זאת
-
-כדי לקבל את התאריך הנוכחי בתכנות Swift, נוכל להשתמש בפונקציה מובנית שנקראת "Date()". היא תחזיר לנו את התאריך הנוכחי כפי שהוא מוגדר במכשיר שלנו. ניתן להשתמש גם במחלקה מתקדמת יותר שנקראת "DateFormatter()" כדי להתאים את התאריך לפורמט שמתאים לנו.
-
+## כיצד לעשות זאת
+תחילה, נצטרך לייבא את הספרייה "Foundation" באמצעות הפקודה הבאה:
 ```Swift
-// דוגמה למקרה שבו אתרצו להציג תאריך למשתמשים
-let now = Date() // נפעיל את הפונקציה וישיבת תוצאתה למשתנה "now"
-let formatter = DateFormatter() // יצירת מופע של מחלקת "DateFormatter"
-formatter.dateFormat = "dd.MM.yyyy" // קביעת פורמט התאריך במחרוזת מסוג "dd.MM.yyyy"
-let formattedDate = formatter.string(from: now) // המרת התאריך למחרוזת שמתאימה לפורמט שקבענו
-print(formattedDate) // פלט: 13.02.2021
+import Foundation
 ```
 
-## חפירה עמוקה
+אם אנו רוצים לקבל את התאריך הנוכחי בפורמט מסוים, כמו "dd/MM/yyyy", אנו יכולים להשתמש במחלקת "DateFormatter" כדי להמיר את התאריך למחרוזת מתאימה. הנה דוגמה של כיצד לקבל את התאריך הנוכחי בפורמט שדיברנו עליו:
 
-עכשיו שאנו יודעים איך לקבל את התאריך הנוכחי בתכנות Swift, ניתן ללכת עוד צעד קדימה ולחקור עוד על הנושא. מחלקת "Date()" מכילה גם מספר פונקציות נוספות כגון "addingTimeInterval()" שמאפשרת להוסיף זמן לתאריך הנוכחי ו-"compare()" שמשווה בין שני תאריכים ומחזירה ערך בהתאם להשוואה.
+```Swift
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy"
+let today = Date()
+let currentDate = dateFormatter.string(from: today)
 
-כדי להתאים תאריך לפורמט מסוים, ישנן כמה מח
+print(currentDate)
+
+// Output: 02/09/2019
+```
+
+אם ברצונך לקבל את התאריך עם שעה ותאריך מלאים, אפשר להשתמש בפורמט הבא: "dd/MM/yyyy HH:mm:ss". נהניתי להשתמש בפונקציה לשדרוג, שמוסיפה את האפשרות להדפיס את השנה כמו שעה או דקות. הנה דוגמה לשימוש בפורמט זה:
+
+```Swift
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+let today = Date()
+let currentDate = dateFormatter.string(from: today)
+
+print(currentDate)
+
+// Output: 02/09/2019 15:27:03
+```
+
+על מנת לקבל את התאריך הנוכחי עם אזור זמן מסוים, אנו ניקח עזרה ממחלקת "TimeZone". הנה דוגמה לאיך לקבל את התאריך הנוכחי באזור זמן של ישראל:
+
+```Swift
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+dateFormatter.timeZone = TimeZone(identifier: "Asia/Jerusalem")
+let today = Date()
+let currentDate = dateFormatter.string(from: today)
+
+print(currentDate)
+
+// Output: 02/09/2019 23:27:03
+```
+
+## חקור עמוק יותר
+כאשר אנו משתמשים במחלקת "DateFormatter", אנו ניצור מופע חדש של המחל

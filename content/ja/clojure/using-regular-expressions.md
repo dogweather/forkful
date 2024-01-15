@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 正規表現の使用法"
-simple_title:         "正規表現の使用法"
+title:                "正規表現の利用"
+html_title:           "Clojure: 正規表現の利用"
+simple_title:         "正規表現の利用"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,35 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ使うのか
 
-正規表現を使う理由は非常に多くあります。例えば、文字列の検索や置換を効率的に行うことができます。また、データのパターンマッチングにも使われます。正規表現は柔軟なツールであり、多くのプログラミング言語でサポートされています。
+正規表現を使うメリットはたくさんあります。例えば、文字列の検索や置換を行うときに役立ちます。文字列の操作により簡単にパターンを識別し、効率的に処理することができます。
 
 ## 使い方
 
-正規表現はClojureで簡単に実装することができます。まず、`re-matches`関数を使って正規表現を表す文字列と検索対象の文字列を渡します。「Hello」のような文字列を入力すると、"Hello, World!"のような文字列でマッチングするかどうかを確認することができます。
+正規表現を使うには、まず`re-pattern`関数を利用してパターンを定義します。例えば、`"a"`を含む文字列を検索する正規表現は`re-pattern #"a"`と書くことができます。次に、`re-find`関数を使ってパターンをマッチさせる文字列を指定し、マッチした箇所を取得します。例えば、`re-find (re-pattern #"a") "apple"`と書くと、`"a"`が返されます。さらに、`re-seq`関数を使うことで、文字列内の全てのマッチを取得することもできます。
 
 ```Clojure
-(re-matches #"Hello" "Hello, World!")
-;;=> "Hello"
-(re-matches #"Hello" "こんにちは、世界！")
-;;=> nil
+(def pattern (re-pattern #"a"))
+(re-find pattern "apple") ; "a"
+(re-seq pattern "banana") ; ("a" "a")
 ```
 
-更に、`re-seq`関数を使うことで、正規表現にマッチする部分文字列をすべて抽出することもできます。例えば、"Hello, 123!"という文字列から数字の部分だけを抽出するには、次のようにします。
+## 深堀り
 
-```Clojure
-(re-seq #"[0-9]+" "Hello, 123!")
-;;=> ("123")
-```
+正規表現を使う際に気をつけるべきことは、パターンの表現方法です。パターンをより正確に指定することで、意図しないマッチを防ぐことができます。また、Clojureではパターンマッチングにより、より複雑な処理を行うこともできます。例えば、特定の文字列の部分を抽出するなどの処理も可能です。
 
-## ディープダイブ
+## 関連リンク
 
-正規表現は文字列のパターンマッチングにおいて非常に強力なツールです。しかし、正規表現をうまく使いこなすには、パターンの作成において少しの工夫が必要です。例えば、`.*`のようなワイルドカードを使うことで、任意の文字列を表すことができます。
-
-## 参考リンク
-- [正規表現チュートリアル](https://regexone.com)
-- [Clojure正規表現ドキュメント](https://clojure.org/reference/regular_expressions)
-- [正規表現の実践的な使い方](https://www.regular-expressions.info/tutorial.html)
-
-# 参考文献
+* [Clojureの正規表現ドキュメント](https://clojure.org/reference/reader#_regular_expressions)
+* [正規表現の基礎](https://www.geeksforgeeks.org/regular-expressions-in-java/)

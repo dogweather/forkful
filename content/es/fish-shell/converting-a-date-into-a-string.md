@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena"
+html_title:           "Fish Shell: Convirtiendo una fecha en una cadena"
 simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena de texto?
+## ¿Por qué convertir una fecha en una cadena?
 
-A menudo, al trabajar con programación, necesitamos mostrar fechas en un formato específico para que sean más legibles para los usuarios. La conversión de una fecha en una cadena de texto es útil en estos casos ya que nos permite personalizar el formato de la fecha según nuestras necesidades.
+Con la ayuda de la función `strftime` en Fish Shell, puedes convertir una fecha en formato incremental a una cadena legible por humanos. Esto es útil para mostrar fechas en un formato más amigable para el usuario, como en una interfaz de línea de comandos o en un archivo de registro.
 
-## Cómo hacerlo en Fish Shell
+## Cómo hacerlo
 
-Para convertir una fecha en una cadena de texto en Fish Shell, podemos usar el comando `date` junto con el formato deseado. Por ejemplo, si queremos mostrar la fecha actual en formato DD-MM-YYYY, podemos usar el siguiente código:
-
-```Fish Shell
-date "+%d-%m-%Y"
-```
-
-Esto nos daría una salida similar a: `05-05-2021`.
-
-Si queremos incluir también la hora en el formato, podemos usar el comando `strftime` en lugar de `date`. Por ejemplo:
+Es sencillo convertir una fecha en una cadena en Fish Shell, solo necesitas utilizar el comando `strftime` seguido de un formato y la fecha que deseas convertir. Por ejemplo:
 
 ```Fish Shell
-strftime "%d-%m-%Y %H:%M:%S"
+strftime %B%d,%Y %H:%M:%S (date)
 ```
 
-Esto nos dará una salida similar a: `05-05-2021 12:30:45`.
+Este comando nos dará una salida como esta:
 
-Es importante tener en cuenta que Fish Shell utiliza diferentes secuencias de formato para la conversión de fechas que otras shells, por lo que es importante consultar la documentación para encontrar la secuencia de formato correcta para nuestro caso específico.
+```Fish Shell
+Noviembre 17, 2020 09:30:00
+```
 
-## Profundizando en la conversión de fechas en Fish Shell
+Puedes cambiar el formato de la fecha según tus preferencias utilizando diferentes códigos de formato. Por ejemplo, `%B` para el nombre del mes completo, `%d` para el día del mes en formato numérico y `%Y` para el año en formato de cuatro dígitos. Puedes encontrar una lista completa de los códigos de formato disponibles [aquí](https://fishshell.com/docs/current/cmds/strftime.html).
 
-La conversión de fechas en Fish Shell se basa en las funciones `strftime` y `strptime`. La función `strftime` se utiliza para convertir una fecha en una cadena de texto, mientras que `strptime` se utiliza para realizar la conversión inversa, de una cadena de texto a una fecha.
+## Profundizando
 
-Ambas funciones utilizan secuencias de formato para determinar cómo se mostrará la fecha o cómo se debe leer la cadena. Estas secuencias se comienzan con un símbolo de porcentaje (`%`) seguido de letras que representan diferentes partes de la fecha, como el día, mes, año, hora, etc.
+La función `strftime` utiliza el estilo de formato POSIX, que es un estándar de formato de fecha y hora utilizado por muchos sistemas operativos. Además de los códigos de formato mencionados anteriormente, también puedes utilizar otros códigos para mostrar la fecha en diferentes formatos, como días de la semana, horas en formato de 12 horas, entre otros.
 
-Por ejemplo, la secuencia `%d` se utiliza para representar el día del mes, `%m` para el mes y `%Y` para el año en formato de cuatro dígitos.
+Por ejemplo, si deseas mostrar la fecha y hora en formato de 12 horas con el día de la semana incluido, puedes utilizar este comando:
 
-Al usar estas secuencias de formato, podemos personalizar por completo cómo se muestra la fecha en nuestro programa.
+```Fish Shell
+strftime "%A %r" (date)
+```
+
+Que te dará una salida como esta:
+
+```Fish Shell
+Martes 09:30:00 AM
+```
+
+También puedes combinar diferentes códigos de formato para obtener la salida exacta que necesitas. Por ejemplo, si solo deseas mostrar el mes y el día en formato abreviado, puedes utilizar este comando:
+
+```Fish Shell
+strftime "%b %d" (date)
+```
+
+Que te dará una salida como esta:
+
+```Fish Shell
+Nov 17
+```
+
+Recuerda que siempre puedes consultar la documentación de Fish Shell para encontrar más información sobre la función `strftime` y sus opciones de formato.
 
 ## Ver también
-- [Documentación de Fish Shell sobre conversiones de fecha](https://fishshell.com/docs/current/cmds/date.html)
-- [Artículo sobre formatos de fechas en Fish Shell](https://www.digitalocean.com/community/tutorials/como-leer-y-formatear-fechas-en-fish-shell-es)
 
-¡Eso es todo por hoy! Espero que esta guía te haya sido útil al aprender cómo convertir fechas en cadenas de texto en Fish Shell. ¡Hasta la próxima!
+- [Documentación de Fish Shell sobre la función `strftime`](https://fishshell.com/docs/current/cmds/strftime.html)
+- [Guía de referencia para formatos de fecha y hora POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/functions/strftime.html)

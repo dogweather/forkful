@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Työskentely yamlin kanssa"
+html_title:           "Kotlin: Työskentely yamlin kanssa"
+simple_title:         "Työskentely yamlin kanssa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,73 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi YAML on hyödyllinen ohjelmoinnissa?
+## Miksi 
 
-YAML (Yet Another Markup Language) on rakenteellinen tiedon esittämiseen tarkoitettu formaatti, joka on yhä enenevässä määrin suosittu ohjelmointiyhteisössä. Sen helppolukuisuus ja yksinkertaisuus tekevät siitä erinomaisen vaihtoehdon ohjelmointikielten ja ohjelmien konfiguraatiolle. 
+YAML on nykyään yhä suositumpi tiedostomuoto ohjelmistokehityksessä. Se tarjoaa helpon ja yksinkertaisen tavan säilöä ja jakaa tietoa eri sovellusten välillä. Käyttämällä YAML:ia voit nopeasti ja vaivattomasti siirtää tietoa eri järjestelmien välillä ilman monimutkaisia muotoiluja.
 
-## Kuinka käyttää YAML-formaattia Kotlinissa?
+## Kuinka Tehdä
 
-Kotlin on moderni ohjelmointikieli, joka tarjoaa käyttäjilleen monipuolisen kirjaston erilaisia toimintoja varten. Tässä osassa näytämme, kuinka luoda YAML-tiedosto Kotlin-ohjelmassa ja käyttää sitä eri tavoin. 
-
-### Luominen ja muokkaaminen
-
-Kotlinissa YAML-tiedoston luominen on helppoa. Käytämme siihen YAML-kirjastoa, ja aloitamme kertomalla sille minkä tiedostonimen haluamme luoda ja mihin hakemistoon sen tallennamme. Tämän jälkeen voimme lisätä haluamamme tiedot ja rakenteet käyttämällä YAML-kirjaston metodeja. Alla on esimerkki YAML-tiedoston luomisesta ja muokkaamisesta Kotlinissa:
+YAML syntaksi muistuttaa suuresti tavallista sanakirjaa, joten sen käyttäminen on helppoa ja intuitiivista. Esimerkiksi, jos haluat tallentaa listan käyttäjän tietoja YAML tiedostoon, voit käyttää seuraavaa koodia:
 
 ```Kotlin
-// Importoi YAML-kirjasto
-import org.yaml.snakeyaml.Yaml
-
-// Määritä tiedostonimi ja tallennushakemisto
-val tiedostoNimi = "esimerkkitiedosto.yaml"
-val hakemisto = "resurssit"
-
-// Luodaan YAML-tiedosto ja tallennetaan siihen tietoja
-val yaml = Yaml()
-val tietoja = HashMap<String, Any>()
-tietoja["nimi"] = "John Doe"
-tietoja["ikä"] = 30
-tietoja["työpaikka"] = "Ohjelmoija"
-
-// Kirjoitetaan tietoja YAML-tiedostoon
-FileOutputStream(tiedostoNimi).use { tiedosto ->
-  // YAML-kirjaston metodi kirjoittaa tiedot tiedostoon
-  yaml.dump(tietoja, tiedosto)
-}
+val kayttajat = mapOf(
+    "nimi" to "Mikko", 
+    "ika" to 25, 
+    "kaupunki" to "Helsinki"
+)
 ```
 
-Koodin suorituksen jälkeen tiedostoon tallentuu seuraavat tiedot:
+Tämän koodin avulla saat YAML tiedoston, joka näyttää tältä:
 
-```Kotlin
-nimi: John Doe
-ikä: 30
-työpaikka: Ohjelmoija
+```yaml
+nimi: Mikko
+ika: 25
+kaupunki: Helsinki
 ```
 
-### Lukeminen ja käyttäminen
+Voit myös tallentaa monimutkaisempia tietorakenteita, kuten loki objekteja, käyttäjä luokkia jne. YAML helpottaa näiden tietorakenteiden luomista ja jakamista eri järjestelmien välillä.
 
-Luotu YAML-tiedosto voidaan lukea ja käyttää helposti eri ohjelmissa ja sovelluksissa. Käytämme tätä varten YAML-kirjastoa ja sen metodeja. Alla on esimerkki YAML-tiedoston lukemisesta ja sen sisällön käyttämisestä Kotlinissa:
+## Syvempi sukellus
 
-```Kotlin
-// Avataan YAML-tiedosto ja luetaan sen sisältö
-val sisältö = File(tiedostoNimi).readText()
-val lukija = Yaml().loadAs(sisältö, HashMap::class.java)
+YAML tarjoaa myös monia edistyneitä ominaisuuksia, kuten ankkurit, merkinnät ja sisällysluokat. Näiden avulla voit organisoida ja hallita tiedostosi entistä tehokkaammin. Lisäksi YAML on myös helposti luettavaa, joten sen avulla on helppo tarkistaa tiedostojen sisältö ja tehdä tarvittaessa muutoksia.
 
-// Käydään läpi sisältö ja tulostetaan se konsoliin
-for ((avain, arvo) in lukija) {
-  println("$avain: $arvo")
-}
-```
+Kuitenkin, jos törmäät vaikeuksiin YAML:n käytössä, ei hätää! YAML:n yhteisö on laaja ja tarjoaa paljon tukea ja apua. Voit esimerkiksi etsiä vastauksia Stack Overflow sivustolta tai osallistua keskusteluihin Redditissä.
 
-Tämän koodin suorituksen jälkeen tulostuu konsoliin seuraavat tiedot:
+## Katso myös
 
-```Kotlin
-nimi: John Doe
-ikä: 30
-työpaikka: Ohjelmoija
-```
-
-## Syvempi sukellus YAML:in
-
-YAML tarjoaa käyttäjilleen monia erilaisia mahdollisuuksia rakentaa jäsenneltyjä tiedostoja ja tietorakenteita. Sen avulla voidaan luoda esimerkiksi konfiguraatiotiedostoja ja luettelotietoja eri muodoissa. Tutustutaan seuraavaksi muutamaan YAML:n käyttöön liittyvään käsitteeseen. 
-
-### Luokat ja olio
+- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
+- [YAML:n dokumentaatio](https://yaml.org/spec/1.2/spec.html)
+- [Stack Overflow - YAML kysymykset](https://stackoverflow.com/questions/tagged/yaml)
+- [Reddit - YAML keskustelualue](https://www.reddit.com/r/yaml/)

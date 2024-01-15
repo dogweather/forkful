@@ -1,5 +1,6 @@
 ---
-title:                "Python: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Python: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Python"
 category:             "Python"
@@ -9,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que baixar uma página da web?
+## Porquê
 
-Baixar uma página da web pode ser útil em várias situações, como, por exemplo, para realizar análises de dados, extrair informações de um site ou criar um arquivo local para visualização offline.
+Se você é um aspirante a desenvolvedor ou está curioso sobre como as coisas funcionam nos bastidores da internet, então aprender a baixar páginas da web pode ser um ótimo lugar para começar. Além disso, pode ser útil para quem deseja criar um banco de dados local de informações disponíveis na internet.
 
-## Como fazer
+## Como Fazer
 
-Para baixar uma página da web em Python, podemos utilizar a biblioteca "requests". Primeiro, importamos a biblioteca:
-
-```Python
-import requests
-```
-
-Em seguida, utilizamos a função "get" da biblioteca para fazer a requisição da página que queremos baixar, passando o URL como parâmetro:
+Baixar uma página da web em Python é muito fácil e pode ser feito em apenas algumas linhas de código. Primeiro, você precisará importar o módulo "urllib.request", que contém funções para manipular URLs. Em seguida, utilize a função "urllib.request.urlretrieve()" para baixar a página e salvá-la em um arquivo local. Veja o exemplo abaixo:
 
 ```Python
-page = requests.get('https://www.exemplo.com')
+# Importando o módulo "urllib.request"
+import urllib.request
+
+# Definindo o URL da página que será baixada
+url = "https://www.example.com"
+
+# Utilizando a função "urlretrieve()" para baixar a página e salvá-la como "example.html"
+urllib.request.urlretrieve(url, "example.html")
+
+# Imprimindo uma mensagem de sucesso
+print("Página baixada com sucesso!")
 ```
 
-Para salvar o conteúdo da página em um arquivo local, podemos utilizar o método "write" do objeto "page", juntamente com a função "open" para criar e abrir um arquivo em modo de escrita:
+Com isso, a página será baixada e salva no mesmo diretório em que o script Python está sendo executado. Você também pode especificar um caminho e nome de arquivo diferentes, se desejar.
 
-```Python
-with open("arquivo.html", "w") as file:
-    file.write(page.text)
-```
+## Mergulho Profundo
 
-Pronto! Agora temos um arquivo "arquivo.html" com o conteúdo da página baixada. Podemos utilizar bibliotecas como "BeautifulSoup" para fazer o parsing do conteúdo e extrair informações específicas.
+Além da função "urlretrieve()", o módulo "urllib.request" também oferece outras funções úteis para trabalhar com URLs. Por exemplo, você pode usar a função "urlopen()" para abrir uma conexão com um URL e depois ler o conteúdo da página utilizando o método "read()". Você também pode especificar cabeçalhos HTTP personalizados, além de autenticação de usuário e senha, se necessário.
 
-## Mergulho profundo
+Além disso, você também pode baixar arquivos de imagem, PDFs e outros tipos de mídia utilizando a função "urlretrieve()". Basta fornecer o URL do arquivo desejado e um nome de arquivo válido.
 
-Quando fazemos uma requisição da página, recebemos uma resposta do servidor, que contém informações como o status da requisição e o conteúdo da página. Podemos acessar essas informações no objeto "page". Por exemplo, podemos verificar o status da requisição:
+### Veja Também
 
-```Python
-print(page.status_code) # imprime o código de status da requisição
-```
-
-Também podemos acessar os cabeçalhos da resposta:
-
-```Python
-print(page.headers) # imprime os cabeçalhos da resposta
-```
-
-Podemos ainda adicionar cabeçalhos personalizados em nossa requisição, utilizando o parâmetro "headers" da função "get". Isso pode ser útil quando queremos simular o acesso de um navegador:
-
-```Python
-page = requests.get('https://www.exemplo.com', headers={'User-Agent': 'Mozilla/5.0'}) # simula o acesso de um navegador
-```
-
-## Veja também
-
-- [Documentação da biblioteca "requests"](https://requests.readthedocs.io)
-- [Documentação da biblioteca "BeautifulSoup"](https://www.crummy.com/software/BeautifulSoup/bs4/doc)
+- Documentação do módulo "urllib.request": https://docs.python.org/3/library/urllib.request.html
+- Tutorial sobre web scraping com Python: https://realpython.com/python-web-scraping-practical-introduction/

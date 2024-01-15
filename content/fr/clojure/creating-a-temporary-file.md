@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Création d'un fichier temporaire"
-simple_title:         "Création d'un fichier temporaire"
+title:                "Créer un fichier temporaire"
+html_title:           "Clojure: Créer un fichier temporaire"
+simple_title:         "Créer un fichier temporaire"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Créer des fichiers temporaires est une tâche courante en programmation qui peut être utile pour stocker des données temporaires ou pour gérer des fichiers de manière dynamique. Cela peut également être utile lors du débogage de code, en permettant de manipuler des données sans affecter les données réelles.
+Créer des fichiers temporaires peut sembler être une tâche simple et sans importance, mais c'est en fait une étape essentielle pour de nombreux programmes. Les fichiers temporaires permettent aux applications de stocker temporairement des données, d'exécuter des opérations ou de partager des informations entre différents processus.
 
 ## Comment faire
 
-Il existe différentes façons de créer des fichiers temporaires en Clojure. L'une des méthodes les plus courantes consiste à utiliser la fonction `with-open` en combinaison avec la fonction `clojure.java.io/file`. Voici un exemple de code pour créer un fichier temporaire :
+Pour créer un fichier temporaire en Clojure, nous pouvons utiliser la fonction standard`with-open`. Cela nous permet d'ouvrir un flux de sortie vers un fichier et de l'utiliser dans une expression. Une fois l'expression terminée, le flux se ferme automatiquement et le fichier temporaire est effacé. Voici un exemple de code:
 
 ```Clojure
-(with-open [file (clojure.java.io/file "mytempfile.txt")]
-  (write-line! file "This is my temporary file!"))
+(with-open [f (java.io.File/createTempFile "prefix" "suffix")]
+  (println "Le chemin du fichier temporaire est:" (.getAbsolutePath f)))
 ```
 
-Cela va créer un fichier appelé "mytempfile.txt" dans le répertoire courant et y écrire la ligne spécifiée.
+Cela créera un fichier temporaire avec un préfixe "prefix" et un suffixe "suffix" et en affichera le chemin absolu. Une fois le code exécuté, le fichier sera automatiquement effacé.
 
 ## Plongée en profondeur
 
-Pour comprendre comment la fonction `with-open` et la fonction `clojure.java.io/file` fonctionnent, il est important de comprendre comment Clojure gère les fichiers. En utilisant les fonctions `with-open` et `file`, Clojure va créer un objet `java.io.File` qui représente le fichier temporaire. Lorsque le code à l'intérieur de `with-open` est exécuté, ce fichier est ouvert et le code peut écrire ou lire à partir de celui-ci. Une fois la fin de `with-open` atteinte, le fichier sera automatiquement fermé et le fichier temporaire sera supprimé.
+Dans l'exemple précédent, nous avons utilisé la fonction`createTempFile` de la classe Java`java.io.File` pour créer un fichier temporaire. Cette fonction prend en paramètres un préfixe et un suffisant pour générer un nom de fichier unique. Cependant, si vous avez besoin d'un contrôle plus précis sur la création du fichier temporaire, vous pouvez également utiliser la fonction`createTempFile` de la classe`java.nio.file.Files`.
+
+Cette fonction prend en paramètres un répertoire parent et des options pour la création du fichier, telles que le préfixe, le suffixe, le type de fichier ou les autorisations. Elle renvoie un objet`Path` qui peut ensuite être utilisé pour ouvrir un flux vers le fichier temporaire.
 
 ## Voir aussi
 
-- [La documentation de Clojure sur les fichiers et les répertoires](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Un article sur les fichiers temporaires en Clojure](https://purelyfunctional.tv/guide/temporary-files-clojure/)
+- [Documentation officielle de Clojure sur la fonction`with-open`](https://clojuredocs.org/clojure.core/with-open)
+- [Documentation officielle de Java sur`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Documentation officielle de Java sur`java.nio.file.Files`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)

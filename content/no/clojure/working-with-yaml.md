@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Å jobbe med YAML"
-simple_title:         "Å jobbe med YAML"
+title:                "Jobbe med YAML"
+html_title:           "Clojure: Jobbe med YAML"
+simple_title:         "Jobbe med YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,56 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-YAML er et populært dataformat for konfigurasjonsfiler i Clojure-programmering. Ved å lære å arbeide med YAML, kan du enkelt lese og manipulere dataene dine på en strukturert og intuitiv måte.
+Hvis du jobber med datastrukturer og ønsker å ha en enkel og lesbar måte å lagre og dele data på, så er YAML et flott valg. Med YAML kan du enkelt organisere, strukturere og manipulere data på en intuitiv måte.
 
-## Hvordan å arbeide med YAML i Clojure
-
-Det første trinnet for å jobbe med YAML i Clojure er å importere biblioteket `clj-yaml` ved å legge til følgende linje i `project.clj`-filen din:
+## Hvordan Du Gjør Det
 
 ```Clojure
-[clj-yaml "0.6.0"]
+(ns yaml-demo.core
+  (:require [clojure-yaml.core :as yaml]))
+
+;; Lesing av YAML-fil
+(def data (yaml/read-yaml "data.yml"))
+
+;; Skrive YAML-fil
+(yaml/spit-yaml "resultat.yml" 
+  {"navn" "Eirik", "alder" 25, "hobbyer" ["programmering" "musikk"]})
+
+;; Konvertere Clojure datastrukturer til YAML
+(yaml/generate-yaml
+  {"navn" "Lise", "bosted" "Oslo", "hobby" "fotografi"})
+
+;; Resultat:
+;; navn: Lise
+;; bosted: Oslo
+;; hobby: fotografi 
+
 ```
 
-Etter å ha konfigurert prosjektet ditt, kan du begynne å bruke `clj-yaml` for å lese og skrive YAML-filer. La oss si at du har en YAML-fil med følgende innhold:
+## Dypdykk
 
-```Clojure
-{:name "Jane"
- :age 25
- :hobbies ["reading" "cooking" "hiking"]}
-```
+YAML står for "YAML Ain't Markup Language" og ble utviklet på begynnelsen av 2000-tallet for å gi et enkelt og øyevennlig alternativ til XML og JSON. YAML har en tydelig og intuitiv syntaks som er inspirert av datamodelleringsspråket JSON.
 
-For å lese denne filen, kan du bruke `parse-string`-funksjonen:
+YAML støtter også forskjellige datastrukturer som lister, maps og sets, og det er mulig å inkludere referanser og innebygde datastrukturer. Med YAML kan du også kommentere koden din, noe som gjør det enkelt å dokumentere datastrukturen din.
 
-```Clojure
-(require '[clj-yaml.core :refer [parse-string]])
+## Se Også
 
-(def data (parse-string "Jane.yaml"))
-```
-
-Du kan nå få tilgang til dataene ved å bruke Clojure-funksjoner som `get` eller `get-in`:
-
-```Clojure
-(get data :name) ; "Jane"
-(get-in data [:hobbies 1]) ; "cooking"
-```
-
-På samme måte kan du bruke `generate-string`-funksjonen for å generere YAML-data fra et Clojure-datastruktur:
-
-```Clojure
-(def person {:name "John"
-             :age 30
-             :hobbies ["coding" "gaming" "traveling"]})
-
-(require '[clj-yaml.core :refer [generate-string]])
-
-(def yaml (generate-string person)) ; "- coding\ngaming\n- traveling"
-```
-
-## Dykk dypere inn i YAML
-
-For å gå enda dypere inn i YAML-programmering, kan du sjekke ut dokumentasjonen for `clj-yaml`-biblioteket og utforske flere funksjoner og muligheter. Du kan også lære mer om YAML-syntaksen og ulike måter å strukturere data på ved å lese ressurser på nettet.
-
-See Also (Se Også):
-- [Dokumentasjon for clj-yaml](https://github.com/yogthos/clj-yaml)
-- [YAML-spesifikasjonen](https://yaml.org/spec/)
-- [YAML-primer](https://learnxinyminutes.com/docs/yaml/)
+- [Offisiell YAML-hjemmeside](https://yaml.org/)
+- [YAML-dokumentasjon i Clojure](https://github.com/clj-commons/clojure-yaml)
+- [En sammenligning mellom YAML, JSON og XML](https://www.tutorialspoint.com/yaml/yaml_comparison.htm)

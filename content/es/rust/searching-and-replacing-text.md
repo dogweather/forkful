@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Búsqueda y reemplazo de texto"
-simple_title:         "Búsqueda y reemplazo de texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "Rust: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué buscar y reemplazar texto en Rust?
+## ¿Por qué usar la búsqueda y reemplazo de texto en Rust?
 
-La búsqueda y el reemplazo de texto son funciones esenciales en la programación, especialmente cuando trabajamos con grandes cantidades de código. En Rust, estas tareas pueden realizarse de forma eficiente y efectiva gracias a sus poderosas herramientas de manipulación de cadenas. En este artículo exploraremos por qué es importante aprender a buscar y reemplazar texto en Rust.
+La búsqueda y reemplazo de texto es una funcionalidad esencial en la programación, especialmente en lenguajes de bajo nivel como Rust. Con esta herramienta, puedes encontrar y cambiar rápidamente partes específicas de texto en tu código, ahorrándote tiempo y esfuerzo en tareas de edición manual.
 
-## Cómo hacerlo en Rust
+## Cómo llevar a cabo la búsqueda y reemplazo de texto en Rust
 
-Para buscar y reemplazar texto en Rust, podemos utilizar el método `replace()` de la estructura `String`. Este método toma como parámetros el texto que queremos reemplazar y el texto de reemplazo. Por ejemplo, si queremos reemplazar la palabra "rojo" por "azul" en una cadena, podemos hacerlo de la siguiente manera:
+Para realizar una búsqueda y reemplazo de texto en Rust, puedes utilizar el método `replace()` de la librería `std::string::String`.
+
+Por ejemplo, si queremos reemplazar todas las letras mayúsculas en una cadena con asteriscos, podemos usar el siguiente código:
 
 ```Rust
-let mut cadena = String::from("El cielo es rojo");
-cadena.replace("rojo", "azul");
+let mut texto = String::from("¡Hola RUST! Bienvenidos a mi artículo.");
+let replaced = texto.replace(|c: char| c.is_uppercase(), "*");
+println!("{}", replaced);
 ```
 
-El resultado será la cadena "El cielo es azul". También podemos utilizar la función `replace_range()` para reemplazar una parte específica de una cadena. Esta función toma como parámetros el rango de caracteres que queremos reemplazar y el texto de reemplazo.
+El resultado sería `¡*ola *U*T! *Ienvenidos a mi artículo.`. En este ejemplo, utilizamos una función anónima como argumento para el método `replace()`, donde especificamos que queremos reemplazar todas las letras mayúsculas con asteriscos.
 
-Otros métodos útiles para buscar y reemplazar texto en Rust son `replace_first()` y `replace_last()`. Estos métodos nos permiten reemplazar solo la primera o la última ocurrencia de un texto en una cadena, respectivamente.
+También puedes utilizar el método `replace()` para reemplazar cadenas completas, como en el siguiente ejemplo:
 
-## Profundizando en la búsqueda y el reemplazo de texto
+```Rust
+let mut texto = String::from("El lenguaje de programación RUST es increíble.");
+let replaced = texto.replace("RUST", "Rustacean");
+println!("{}", replaced);
+```
 
-Hay muchas más opciones para la búsqueda y el reemplazo de texto en Rust. Podemos especificar un número máximo de reemplazos con el método `replace()`, o utilizar expresiones regulares para realizar búsquedas más precisas. Además, podemos combinar varios métodos para lograr resultados aún más específicos.
+El resultado sería `El lenguaje de programación Rustacean es increíble.`.
 
-Es importante tener en cuenta que la manipulación de cadenas en Rust es segura, ya que el compilador nos advierte si tratamos de manipular una cadena de manera insegura, como reemplazar una parte inexistente de una cadena.
+## Descubre más acerca de la búsqueda y reemplazo de texto en Rust
+
+La búsqueda y reemplazo de texto en Rust puede ser aún más potente utilizando patrones y expresiones regulares. Puedes encontrar más información sobre estos temas en la documentación oficial de Rust sobre cadenas de texto.
+
+Además, puedes explorar otras formas de trabajar con cadenas de texto y mejorar tus habilidades de programación en Rust mediante la utilización de otras librerías como `regex` y `string_utils`.
 
 ## Ver también
-
-Si quieres aprender más sobre cómo utilizar las funciones `replace()` y `replace_range()` en Rust, puede consultar la documentación oficial en línea (https://doc.rust-lang.org/std/string/struct.String.html#method.replace y https://doc.rust-lang.org/std/string/struct.String.html#method.replace_range).
-
-También puedes explorar otras herramientas y métodos para la manipulación de cadenas en Rust, como `find()`, `split()`, `trim()` y `to_lowercase()`. Asegúrate de revisar la guía de expresiones regulares de Rust (https://doc.rust-lang.org/regex/regex/index.html) para aprender a utilizarlas en búsquedas y reemplazos.
-
-Ahora que conoces las bases de la búsqueda y el reemplazo de texto en Rust, ¡puedes aplicar estos conocimientos en tus futuros proyectos de programación!
+- [Documentación oficial de Rust sobre cadenas de texto](https://doc.rust-lang.org/std/string/)
+- [Librería `regex` en crates.io](https://crates.io/crates/regex)
+- [Librería `string_utils` en crates.io](https://crates.io/crates/string_utils)

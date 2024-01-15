@@ -1,5 +1,6 @@
 ---
-title:                "Java: Scaricare una pagina web"
+title:                "Scaricare una pagina web"
+html_title:           "Java: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Java"
 category:             "Java"
@@ -10,102 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Scaricare una pagina web è un'attività essenziale per molti programmatori Java. Ciò consente loro di accedere ai dati da una pagina web e utilizzarli all'interno delle loro applicazioni. In questo post, esploreremo come eseguire questa operazione utilizzando Java.
+Molti di noi sono spesso curiosi di conoscere il codice sorgente di una pagina web o di voler salvare una copia della pagina per la lettura offline. Fortunatamente, Java ci offre un modo semplice e veloce per scaricare una pagina web direttamente nel nostro codice.
 
 ## Come Fare
+Per scaricare una pagina web in Java, possiamo utilizzare la classe HttpURLConnection e il suo metodo connect(). Ecco un esempio di codice che ci mostra come scaricare il codice sorgente di una pagina web e stamparlo in output:
 
-Per scaricare una pagina web in Java, è necessario utilizzare la classe `URL` e il metodo `openStream()`. Ecco un esempio di codice che mostra come farlo:
-
-```
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+```Java
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-public class WebPageDownloader {
-    public static void main(String[] args) throws IOException {
-        URL url = new URL("https://www.example.com");  // sostituisci l'URL con quello desiderato
-        InputStream inputStream = url.openStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
+public class DownloadWebPage {
+    public static void main(String[] args) {
+        try {
+            // specificare l'URL della pagina web da scaricare
+            URL url = new URL("https://www.example.com");
+            // aprire la connessione
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            // impostare il metodo di richiesta come GET
+            connection.setRequestMethod("GET");
+            // leggere il codice sorgente della pagina
+            BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            // stampare il codice sorgente
+            String inputLine;
+            while ((inputLine = input.readLine()) != null) {
+                System.out.println(inputLine);
+            }
+            // chiudere la connessione
+            input.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        reader.close();
     }
 }
 ```
 
-Questo codice utilizzerà il metodo `openStream()` per aprire un'istanza della classe `InputStream` dalla pagina web desiderata. Successivamente, creiamo un'istanza della classe `BufferedReader` che ci consentirà di leggere i dati dalla pagina. Infine, stampiamo i dati utilizzando un ciclo while che legge ogni riga del buffer e la stampa a schermo.
+L'output di questo codice sarà il codice sorgente della pagina web scaricata. Invece di stamparlo, possiamo anche salvare questo codice in un file utilizzando le normali operazioni di I/O in Java.
 
-L'output di questo esempio sarà l'intera pagina web, stampata riga per riga.
+## Deep Dive
+Ora che abbiamo visto come scaricare una pagina web in Java, possiamo approfondire ulteriormente questo processo. Possiamo utilizzare il metodo connect() della classe HttpURLConnection per configurare la nostra richiesta in modo più specifico. Ad esempio, possiamo impostare un timeout o aggiungere parametri alla nostra richiesta.
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Example Domain</title>
-    
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-    body {
-        background-color: #f0f0f2;
-        margin: 0;
-        padding: 0;
-        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        
-    }
-    div {
-        width: 600px;
-        margin: 5em auto;
-        padding: 50px;
-        background-color: #fff;
-        border-radius: 1em;
-    }
-    a:link, a:visited {
-        color: #38488f;
-        text-decoration: none;
-    }
-    @media (max-width: 700px) {
-        body {
-            background-color: #fff;
-        }
-        div {
-            width: auto;
-            margin: 0 auto;
-            border-radius: 0;
-            padding: 1em;
-        }
-    }
-    </style>    
-</head>
-
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this
-    domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
-
-## Approfondimento
-
-Oltre al metodo `openStream()`, esistono anche altri modi per scaricare una pagina web in Java. Ad esempio, è possibile utilizzare la libreria Apache HttpComponents per creare una connessione e scaricare i dati. Inoltre, è importante gestire correttamente le eccezioni e i possibili errori che possono verificarsi durante il processo di download.
-
-Inoltre, è possibile utilizzare i metodi della classe `URL` come `openConnection()` e `getContent()` per ottenere informazioni aggiuntive sulla connessione e sull'output della pagina web.
-
-In ogni caso, è importante leggere la documentazione e comprendere il processo per evitare possibili errori o problemi.
+Inoltre, possiamo anche utilizzare altre classi Java come URLConnection o HttpClient per scaricare una pagina web.
 
 ## Vedi Anche
-
-- Documentazione ufficiale di Java sulla classe URL: https://docs.oracle.com/javase/7/docs/api/java/net/URL.html
-- Tutorial su Java per scaricare una pagina web: https://www.baeldung.com/java-download-webpage
+- [Classe HttpURLConnection di Oracle JavaDocs](https://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html)
+- [Esempi di download di pagine web in Java](https://www.baeldung.com/java-download-webpage)

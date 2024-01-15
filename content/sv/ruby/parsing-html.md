@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Analysera html"
-simple_title:         "Analysera html"
+title:                "Parsera html"
+html_title:           "Ruby: Parsera html"
+simple_title:         "Parsera html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,65 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att parsa HTML (hyper text markup language) är användbart för att kunna manipulera och extrahera data från webbsidor. Det är särskilt användbart för webbaserat skrapning eller webbautomatisering. Det finns flera bibliotek tillgängliga för detta ändamål, men i denna artikel kommer vi att fokusera på hur man utför HTML-parsing med hjälp av Ruby.
 
-Att parsa HTML är en väsentlig del av webbutveckling. Genom att extrahera specifika data från en HTML-sida kan man automatisera processer, bygga webbspindlar och mycket mer. Det är en viktig färdighet inom Ruby-programmering.
+## Hur man gör det
+Först och främst måste vi installera ett HTML-parsingsbibliotek för Ruby. Ett populärt val är Nokogiri, som vi kan installera med hjälp av följande kommando:
 
-## Så här gör du
+```Ruby
+gem install nokogiri
+```
 
-För att parsa HTML i Ruby behöver vi använda oss av ett tillägg som heter Nokogiri. Detta tillägg gör att vi kan identifiera och läsa HTML-element och dess innehåll enkelt. Här är ett enkelt exempel:
+När biblioteket är installerat kan vi börja använda det för att parsa HTML. Här är ett enkelt exempel där vi hämtar titeln på en webbsida:
 
-```ruby
+```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Ange URL:en för HTML-sidan du vill parsa
-url = "https://www.example.com"
-
-# Läs in HTML-koden från URL:en
-html = open(url)
-
-# Använd Nokogiri för att parsa HTML-koden
-doc = Nokogiri::HTML(html)
-
-# Visa hela HTML-koden
-puts doc
-
-# Visa titeln på sidan
-puts doc.css("title").text
-
-# Visa länkarna på sidan
-doc.css("a").each do |link|
-    puts link["href"]
-end
+url = 'https://www.example.com'
+page = Nokogiri::HTML(open(url))
+puts page.css('title').text
 ```
 
-Genom att använda Nokogiri och Ruby-kod ovan kan vi enkelt parsa HTML från en given URL och extrahera specifik data. Output från exemplet ovan kan se ut som följer:
+Detta kommer att skriva ut titeln på webbsidan som vi har specificerat, i detta fall "Example Domain". Låt oss ta en titt på vad som händer i koden.
 
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Exempel</title>
-  </head>
-  <body>
-    <h1>Detta är en rubrik</h1>
-    <p>Detta är en paragraf</p>
-    <a href="https://www.example.com/about">Om oss</a>
-    <a href="https://www.example.com/contact">Kontakta oss</a>
-  </body>
-</html>
+Först importerar vi Nokogiri-biblioteket och öppnar URI (universal resource identifier) till vår webbsida. Sedan använder vi Nokogiri för att skapa en sidstruktur som kan bearbetas. Med hjälp av `page.css` kan vi söka efter alla element som matchar vårt CSS-selectoralster, i detta fall "title", och med `text` kan vi få ut innehållet i den HTML-taggen.
 
-Exempel
-https://www.example.com/about
-https://www.example.com/contact
-```
+Vi kan också använda Nokogiri för att hämta andra element, extrahera data från tabeller eller formulär och mer.
 
-## Djupdykning
+## Deep Dive
+Nokogiri är byggt på libxml2, ett snabbt och effektivt C-bibliotek för XML och HTML-parsing. Detta innebär att Nokogiri är den perfekta lösningen för att bearbeta stora mängder data på ett snabbt och tillförlitligt sätt.
 
-Att parsa HTML kan vara en komplex process, men genom att använda Nokogiri och andra tillägg som CSS Selector kan vi enkelt identifiera specifika element och dess egenskaper. Det finns många guider och dokumentationer online som kan hjälpa dig att bli mer bekant med alla möjligheter som finns när man parsa HTML med Ruby.
+En användbar egenskap hos Nokogiri är dess förmåga att utföra XPath-sökningar på en HTML-sida. XPath är ett sätt att beskriva den exakta vägen till ett visst element på en webbsida. Detta är särskilt användbart när man arbetar med komplexa och djupa strukturer.
+
+Utöver Nokogiri finns det också andra bibliotek tillgängliga för HTML-parsing i Ruby, såsom mechanize och hpricot. Det är värt att undersöka olika alternativ för att hitta det som passar bäst för dina specifika behov.
 
 ## Se även
-
-- [Nokogiri dokumentation](https://nokogiri.org/)
-- [CSS Selector dokumentation](https://www.w3schools.com/cssref/css_selectors.asp)
-- [HTML parsing tutorial](https://scrapinghub.com/guides/parsing-html-with-ruby-and-nokogiri)
+- [Nokogiri Dokumentation](https://nokogiri.org/)
+- [Ruby-Doc.org](https://ruby-doc.org/stdlib-2.5.3/libdoc/open-uri/rdoc/OpenURI.html)
+- [XPath 2.0-specifikation](https://www.w3.org/TR/xpath20/)

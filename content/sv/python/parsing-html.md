@@ -1,6 +1,7 @@
 ---
-title:                "Python: Tolkning av html"
-simple_title:         "Tolkning av html"
+title:                "Analys av HTML"
+html_title:           "Python: Analys av HTML"
+simple_title:         "Analys av HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,41 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att parsa HTML är en viktig färdighet som gör det möjligt att extrahera data från webbsidor. Det är användbart när man behöver analysera stora mängder information, automatisera uppgifter eller bygga webbskrapare.
+Att parsa HTML, eller analysera HTML-kod, är en nyttig färdighet för alla som arbetar med webbutveckling eller datavetenskap. Det kan hjälpa dig att hämta och manipulera data från webbsidor, vilket kan vara värdefullt för webskrapning, automatisering eller dataanalys.
 
 ## Så här gör du
 
-För att parsa HTML i Python behöver du först importera ett bibliotek som heter Beautiful Soup. Detta bibliotek gör det enkelt att navigera och extrahera data från HTML-kod. Här är ett exempel på hur du kan använda det:
+För att parsa HTML i Python finns det flera bibliotek att välja mellan, men här kommer vi att använda BeautifulSoup. Först måste vi installera biblioteket med `pip`:
+
+```Python
+pip install beautifulsoup4
+```
+
+När biblioteket är installerat kan vi importera det och skapa ett `BeautifulSoup`-objekt från en HTML-fil eller en webblänk:
 
 ```Python
 from bs4 import BeautifulSoup
 
-html = "<h1>Hej världen!</h1><p>Detta är en paragraf</p>"
-soup = BeautifulSoup(html, 'html.parser')
+# from file
+html = open("example.html")
+soup = BeautifulSoup(html, "html.parser")
 
-# Extrahera texten från h1-taggen
-title = soup.find('h1').get_text()
-print(title)
-
-# Extrahera texten från p-taggen
-paragraph = soup.find('p').get_text()
-print(paragraph)
-
-# Output:
-# Hej världen!
-# Detta är en paragraf
+# from URL
+url = "https://www.example.com"
+html = urllib.request.urlopen(url)
+soup = BeautifulSoup(html, "html.parser")
 ```
 
-I det här exemplet använder vi BeautifulSoup för att ladda in en enkel HTML-sida och extrahera texten från både h1- och p-taggen. Detta är bara en bråkdel av vad som är möjligt med detta bibliotek, och det finns mycket mer att utforska.
+Nu kan vi hitta och manipulera element i vår HTML-kod med hjälp av BeautifulSoup-metoder. Till exempel, om vi vill hitta en specifik `<h1>`-tagg i vår kod och skriva ut dess text, kan vi göra så här:
+
+```Python
+h1_tag = soup.find("h1")
+print(h1_tag.text)
+```
+
+Du kan också använda CSS-selektorer för att hitta specifika element eller använda `find_all()` för att hitta alla förekomster av ett visst element. Ta en titt på BeautifulSoup-dokumentationen för att lära dig mer om alla tillgängliga metoder och funktioner.
 
 ## Djupdykning
 
-Att lära sig att parsa HTML kan gå mycket djupare än bara att extrahera text från en sida. Du kan också hitta och extrahera länkar, bilder, tabeller och andra typer av data. Dessutom kan du använda fler avancerade tekniker som att hitta specifika element baserat på dess attribut eller klassnamn.
+När vi parser HTML finns det några saker att tänka på för att undvika problem och säkerställa korrekt parsing:
 
-En annan viktig aspekt av att parsa HTML är att förstå hur webbsidor är uppbyggda och hur olika element är relaterade till varandra. Att ha denna förståelse gör det enklare att navigera och extrahera data från komplexa sidor.
+- Använd alltid ett pålitligt bibliotek eller verktyg, som BeautifulSoup, för att undvika felaktiga resultat eller säkerhetsrisker.
+- Se till att använda rätt parser för den typ av HTML som du arbetar med. Till exempel, om du hanterar HTML från en webbläsare, använd en parser som förstår JavaScript-kod.
+- Om du har problem med att hitta eller manipulera element i din HTML-kod, testa olika CSS-selektorer eller undersök HTML-koden för att försäkra dig om att du har rätt taggar och klasser.
 
 ## Se även
 
-- Läs mer om Beautiful Soup på dess officiella dokumentationssida: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Utforska andra Python-bibliotek som också kan användas för att parsa HTML, som till exempel lxml och Scrapy.
-- Testa att bygga din egen enkla webbskrapare med hjälp av BeautifulSoup. Det finns många övningar och exempel på internet att använda som inspiration.
+- [BeautifulSoup dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [HTML-parsing med Python guide](https://stackabuse.com/web-scraping-with-python-beautifulsoup/)
+- [Tuturial: Grundläggande HTML-parsing med BeautifulSoup](https://www.freecodecamp.org/news/scraping-html-tables-with-python/)

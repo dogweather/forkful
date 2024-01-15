@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: HTMLの解析"
-simple_title:         "HTMLの解析"
+title:                "HTMLパース"
+html_title:           "Fish Shell: HTMLパース"
+simple_title:         "HTMLパース"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,61 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜHTMLパースを行うのか？
+## なぜ
 
-Webアプリケーションやスクレイピングなど様々な場面でHTMLソースコードを扱う必要があります。しかし、直接HTMLを読み込むことは非常に煩雑で、情報を抽出するのも困難です。ここでFish Shellを使ったHTMLパースが役立ちます。HTMLパースを行うことで、HTMLソースコードから必要な情報を簡単に抽出することができるようになります。
+HTMLの解析に、なぜ取り組むのでしょうか？あなたがプログラマーであるなら、大きなウェブサイトの内容をスクレイピングしたり、特定の情報を抽出したりすることがあるかもしれません。また、ウェブアプリケーションを開発する際にも必要になるかもしれません。どのような理由であっても、HTMLの解析は非常に有用なスキルです。
 
-## HTMLパースのやり方
+## やり方
 
-Fish Shellには、HTMLパースを簡単に行うためのモジュールが用意されています。まずはそのモジュールをインストールしましょう。
-
-```Fish Shell
-sudo apt-get install html-xml-utils
-```
-
-次に、HTMLソースコードを取得します。例えば、以下のようなHTMLソースコードがあるとします。
-
-```html
-<html>
-<head>
-<title>Fish Shell</title>
-</head>
-<body>
-<h1>Welcome to Fish Shell</h1>
-<p>This is a Fish Shell tutorial for parsing HTML.</p>
-<ul>
-<li>Easy to use</li>
-<li>Efficient</li>
-<li>Powerful</li>
-</ul>
-</body>
-</html>
-```
-
-この場合、タイトルとリストの項目を抽出したいとします。それを行うために、以下のようにコマンドを実行します。
+では、Fish Shellを使ってHTMLを解析する方法を見ていきましょう。まずは、以下のようにFishのセッションを開始しましょう。
 
 ```Fish Shell
-hxselect -s "\n" -c "title" sample.html
+fish
 ```
 
-このコマンドによって、"Fish Shell"というタイトルが抽出されます。hxselectは、CSSのセレクタを使ってHTMLから要素を抽出することができるツールです。`-s "\n"`オプションをつけることで、抽出した要素を改行区切りで出力するようになります。`-c`オプションをつけることで、要素の内容のみを出力するようになります。
-
-次に、リストの項目を抽出するために、以下のようなコマンドを実行します。
+次に、HTMLを解析するために必要なパッケージをインストールします。
 
 ```Fish Shell
-hxselect -s "\n" -c "ul li" sample.html
+apt-get install html-xml-utils
 ```
 
-これによって、リストの項目が改行区切りで出力されます。同様に、要素の内容のみを出力したい場合は`-c`オプションをつけることで実現できます。
+今回は、Wikipediaの日本語版トップページから記事のタイトルを抽出する例を示します。
 
-## HTMLパースの深層
+```Fish Shell
+curl -s https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8 | hxnormalize -x | hxselect -c "div#mw-content-text > div.mw-parser-output > ul li > a"
+```
 
-上記の例では、タイトルとリストの項目を抽出するだけでしたが、実際にはさらに多くの要素を抽出することができます。例えば、指定した属性やさらに奥の階層にある要素も抽出できます。
+実行すると、以下のような出力が得られます。
 
-また、Fish Shellにはパイプラインという仕組みがあり、複数のコマンドを組み合わせることで、より柔軟なHTMLパースが可能になります。さまざまなオプションやコマンドを試してみることで、さらに高度なHTMLパースを行うことができるようになります。
+```
+メインページ
+2020東京オリンピック
+提供依頼
+宣言
+経済学者
+クリス・リズカ
+広韻
+勾践
+エレナ・パン
+...
+```
 
-# See Also
+これで、Wikipediaのトップページから抽出した記事のタイトルを取得できました。
 
-- [HTML-XML-utils ドキュメンテーション](https://www.w3.org/Tools/HTML-XML-utils/)
-- [Fish Shell マニュアル](https://fishshell.com/docs/current/index.html)
-- [CSSセレクタの使い方](https://coderkan.com/css-selector/)
+## ディープダイブ
+
+今回紹介した例では、curlコマンドでHTMLを取得し、それをhtml-xml-utilsパッケージを使ってパースしていました。また、hxselectコマンドではCSSセレクターを使って特定の要素を抽出していました。これらのコマンドはFish Shellだけでなく、他のシェルでも利用できるので、HTMLの解析には非常に便利です。
+
+ただし、HTMLは常に変化しているため、解析には注意が必要です。特定のサイトに依存するコードを書くと、サイトの構造が変更された際にうまく動作しなくなってしまいます。そのため、柔軟に対応できるように、コードを書く際はできるだけ一般的な手法を使うように心がけましょう。
+
+## 参考リンク
+
+- [Fish Shell公式サイト](https://fishshell.com/)
+- [HTML/XMLユーティリティパッケージのインストール方法](https://www.debian.org/distrib/packages.ja.html)
+- [Wikipediaの日本語版トップページ](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)

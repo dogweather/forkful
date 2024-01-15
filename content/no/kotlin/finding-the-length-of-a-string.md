@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Å finne lengden av en streng."
-simple_title:         "Å finne lengden av en streng."
+title:                "Å finne lengden på en streng"
+html_title:           "Kotlin: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å finne lengden til en streng er en grunnleggende funksjon i mange programmeringsspråk, inkludert Kotlin. Det er nyttig for å få informasjon om dataene du håndterer, og kan bidra til å lage mer effektive og feilfrie program.
+
+Å finne lengden til en streng er en svært vanlig oppgave som en programmerer støter på. Det kan være nyttig å vite hvor mange tegn en streng inneholder for å kunne behandle den på riktig måte.
 
 ## Hvordan
-For å finne lengden til en streng i Kotlin, kan du bruke Kotlin-bibliotekets innebygde funksjon `length()`. Denne funksjonen tar inn en streng som parameter og returnerer antall tegn i strengen. Se et eksempel nedenfor:
+
+Å finne lengden til en streng i Kotlin er enkelt og intuitivt. Du trenger bare å kalle på `length` metoden for å få tilbake antall tegn i en streng. Se eksempelet nedenfor:
 
 ```Kotlin
-val navn = "Maria"
-println(navn.length()) //output: 5
+val navn = "Ole"
+println(navn.length)
 ```
 
-Slik kan du enkelt få lengden til en streng og bruke den til å gjøre operasjoner i programmet ditt.
+Output:
+`3`
+
+Du kan også bruke `count()` metoden for å telle antall tegn i en streng. Det følgende eksempelet viser hvordan:
+
+```Kotlin
+val setning = "Dette er en setning."
+println(setning.count())
+```
+
+Output:
+`21`
 
 ## Dypdykk
-Å finne lengden til en streng kan virke som en enkel oppgave, men det er noe mer å utforske når du går dypere inn i konseptet. For eksempel kan du bruke `length()` funksjonen på forskjellige datatyper som `Char`, `IntArray` og `List` for å få tilsvarende informasjon. Videre kan du justere og manipulere strenger basert på lengden deres ved hjelp av løkker og andre funksjoner.
 
-## Se også
-- [Kotlin offisiell dokumentasjon](https://kotlinlang.org/docs/reference/)
-- [Kotlin Tutorials](https://kotlinlang.org/docs/tutorials/)
-- [Hvordan bruke strenger i Kotlin](https://www.baeldung.com/kotlin/strings)
+I Kotlin er det ingen forskjell mellom `length` og `count()` metodene. Begge gir samme resultat, og bruker de samme underliggende mekanismene for å finne lengden til en streng. Det er viktig å være klar over at både whitespace og spesialtegn telle som et tegn når du bruker disse metodene. Du kan også bruke `size()` metoden på en `String` variabel for å finne lengden.
+
+## Se Også
+
+- [Kotlin Offisiell Dokumentasjon](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Strings Tutorial](https://www.programiz.com/kotlin-programming/strings)

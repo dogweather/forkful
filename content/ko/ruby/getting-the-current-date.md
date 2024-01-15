@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 현재 날짜 받아오기"
-simple_title:         "현재 날짜 받아오기"
+title:                "현재 날짜 가져오기"
+html_title:           "Ruby: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,57 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜?
 
-현재 날짜를 얻는 것이 왜 유용한지 궁금하신가요? 매일 매일 우리는 일과 업무를 하며 정확한 날짜를 알아야 할 때가 많습니다. 또한 여러분의 프로젝트에서도 날짜와 시간을 다루는 코드가 필요할 수 있습니다.
+현재 날짜를 구하는 것은 프로그래밍에서 매우 일반적입니다. 예를 들어, 회원 가입일, 결제 일자, 또는 파일을 만든 날짜를 표시하는 등의 경우에 많이 사용됩니다.
 
-## 어떻게?
-
-Ruby는 현재 날짜를 얻기 위한 여러 가지 방법을 제공합니다. 그 중 가장 간단하고 일반적으로 사용되는 방법은 `Time.now` 메소드를 사용하는 것입니다.
+## 어떻게 하는가?
 
 ```Ruby
 puts Time.now
-```
 
-위의 코드를 실행하면 현재 시간과 날짜가 출력됩니다.
-
+# 출력 예시: 2021-03-04 12:30:00 +0900
 ```
-2019-09-24 09:00:00 +0900
-```
-
-출력된 형식을 변경하고 싶다면 `strftime` 메소드를 사용할 수 있습니다. 이 메소드는 날짜와 시간을 원하는 형식으로 포맷할 수 있도록 해줍니다.
 
 ```Ruby
-puts Time.now.strftime("%Y년 %m월 %d일")
+puts Date.today
+
+# 출력 예시:  2021-03-04
 ```
 
-출력 결과:
+위의 코드처럼 `Time.now` 또는 `Date.today`를 사용하여 간단하게 현재 날짜와 시간을 출력할 수 있습니다. 이 외에도 `Time`과 `Date` 클래스에는 다양한 메소드가 있으니 필요에 따라 찾아보세요.
 
-```
-2019년 09월 24일
-```
+## 깊이 파헤치기
 
-## 깊이 파고들기
+`Time.now`와 `Date.today`는 우리가 일상적으로 사용하는 날짜와 시간 형식으로 출력됩니다. 하지만 이를 더욱 세밀하게 다루려면 `strftime` 메소드를 사용할 수 있습니다. 이 메소드는 형식 문자열을 이용하여 날짜와 시간을 원하는대로 출력할 수 있도록 해줍니다.
 
-우리가 사용하는 컴퓨터 시스템은 현재 시간을 추적하기 위해 "에포크(epoch)"라는 개념을 사용합니다. 에포크는 UTC 시간 기준으로 1970년 1월 1일 자정부터 흐른 시간을 초 단위로 표현하는 것입니다. 이 시간이 0이라는 것은 우리가 어떤 시간도 지정하지 않았다는 것을 의미합니다. 따라서 `Time.now` 메소드를 호출하면 시스템의 에포크 시간을 기준으로 현재 시간이 계산됩니다.
+```Ruby
+puts Time.now.strftime("%Y년 %m월 %d일 %H시 %M분 %S초")
 
-```ruby
-puts Time.at(0)
+# 출력 예시: 2021년 03월 04일 12시 35분 00초
 ```
 
-출력 결과:
+또한 `Time`과 `Date` 클래스는 연산이 가능하며, `Time` 클래스는 시간의 차이를 나타내는 `TimeDifference`도 지원합니다. 이를 이용하여 날짜와 시간을 다양하게 조작할 수 있습니다.
 
-```
-1970-01-01 09:00:00 +0900
-```
+## 관련 자료
 
-`Time.now` 메소드 대신 `Time.at` 메소드를 사용하면 에포크 시간을 변경하여 다른 날짜와 시간을 출력할 수 있습니다. 또한 `Time.now` 메소드와 마찬가지로 `strftime` 메소드를 사용할 수 있습니다.
-
-## 이외의 참고 링크들
-
-- [Ruby 공식 문서 - Time 클래스](https://ruby-doc.org/core-2.6.3/Time.html)
-- [루비를 시작하며 - 시간 다루기](https://www.ruby-lang.org/ko/documentation/quickstart/2/)
-- [Ruby 베이직 강좌 - 날짜와 시간 다루기](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-
-### 관련 링크
-
-- [Ruby에 날짜/시간 관련 메소드 정리하기](https://github.com/saevonwang/TIL/blob/master/blog-codes/ruby-time-now.rb)
-- [더 많은 Ruby 관련 포스팅들](http://rubykorean.blogspot.com/)
+- [Ruby Time 클래스 문서](https://ruby-doc.org/core-2.7.0/Time.html)
+- [Ruby Date 클래스 문서](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- [strftime 형식 문자열 참고 문서](https://www.rubyguides.com/2015/05/working-with-dates-in-ruby/)

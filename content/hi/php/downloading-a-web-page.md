@@ -1,6 +1,7 @@
 ---
-title:                "PHP: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज को डाउनलोड करना"
+html_title:           "PHP: एक वेब पेज को डाउनलोड करना"
+simple_title:         "एक वेब पेज को डाउनलोड करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,40 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-वेब पेज को डाउनलोड करने का एक प्रमुख कारण है कि हम उस पेज पर उपलब्ध सामग्री का उपयोग ऑफलाइन मोड में कर सकते हैं, जिससे हमारे इंटरनेट संपर्क का दबाव कम होता है और हम उस पेज को पहुंचने में देरी भी नहीं होती।
+वेब पृष्ठ डाउनलोड करने का मुख्य कारण है कि उपयोगकर्ता दूसरों को उस पृष्ठ के साथ आसानी से अपना अनुभव साझा कर सकते हैं। यह भी उपयोगकर्ताओं को अनुकूल डेटा को सुरक्षित रखने में मदद करता है।
 
 ## कैसे करें
 
-वेब पेज को डाउनलोड करने के लिए हम `file_get_contents()` फ़ंक्शन का उपयोग कर सकते हैं, जिसे PHP में अत्यधिक सरलता से वेब पेज को डाउनलोड करने के लिए इस्तेमाल किया जाता है। यह फ़ंक्शन एक URL पर से सामग्री ग्रहण करता है और उसे एक स्ट्रिंग के रूप में वापस देता है।
-
-```PHP
+```
 <?php
-    $url = "https://www.example.com";
-    $webpage = file_get_contents($url); // वेब पेज सामग्री डाउनलोड करना
-    echo $webpage; // सामग्री मैं प्रिंट करें
+$url = "https://www.example.com";
+$file = file_get_contents($url);
+
+echo $file;
 ?>
 ```
 
-Output:
-
-```HTML
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Example Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <p>This is an example webpage.</p>
-    </body>
-</html>
-```
+इस उदाहरण में, हमने `file_get_contents` फ़ंक्शन का उपयोग करके दिए गए URL से पृष्ठ को डाउनलोड किया है और उसे `echo` के माध्यम से प्रिंट किया है। आप अपनी जरूरत के अनुसार इसे अपनाकर और भी विस्तृत डाउनलोड प्रक्रिया बना सकते हैं।
 
 ## गहराई में जाएं
 
-वेब पेज को डाउनलोड करने के अलावा, हम वेब पेज के साथ अन्य इनपुट पैरामीटर और हेडर जानकारियां भी डाउनलोड कर सकते हैं। हम भी `stream_context_create()` और `file_get_contents()` फ़ंक्शन का उपयोग करके सामग्री को डाउनलोड करने के दौरान अलग सेटिंग्स को कन्फ़िगर कर सकते हैं। यह हमें वेब पेज से मीडिया फ़ाइल्स भी डाउनलोड करने की अनुमति देता है।
+URL से पृष्ठ डाउनलोड करने के लिए, कभी-कभी कई प्रकार के डेटा भी आपको चाहिए होते हैं, जो उपयोगकर्ताओं को उस पृष्ठ के संबंध में अधिक जानकारी प्रदान करते हैं। आपको [cURL](https://www.php.net/manual/en/book.curl.php) जैसे और भी अलग-अलग विकल्प मिलेंगे, जिन्हें आप अपनी आवश्यकता के अनुसार उपयोग कर सकते हैं। साथ ही, आप सरल और सुरक्षित अनुरोध पद्धति के साथ विकेंध वेब विभिन्न वेब होस्टिंग प्लेटफ़ॉर्म्स पर डाउनलोड प्रोसेस को प्रकाशित कर सकते हैं।
 
-## देखें भी
+## इससे सम्बंधित
 
-- [PHP.net में `file_get_contents()` फ़ंक्शन डॉक्यूमेंटेशन](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP.net में `stream_context_create()` फ़ंक्शन डॉक्यूमेंटेशन](https://www.php.net/manual/en
+- [PHP file_get_contents() Function](https://www.php.net/manual/en/function.file-get-contents.php)
+- [An Introduction to cURL in PHP](https://www.php.net/manual/en/book.curl.php)
+- [cURL Tutorial: How to use cURL and PHP](https://www.phpied.com/curl/)
+- [PHP cURL Tutorial: How to Create GET, POST, DELETE Requests](https://www.codeofaninja.com/2013/05/php-curl-tutorial.html)

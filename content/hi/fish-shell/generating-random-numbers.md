@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: तस्वीरें उत्पन्न करना"
-simple_title:         "तस्वीरें उत्पन्न करना"
+title:                "कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
+html_title:           "Fish Shell: कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
+simple_title:         "कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -9,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इसका कारण
+# Kyon
 
-डेटा विज्ञान, मशीन लर्निंग और साइबर सुरक्षा जैसे क्षेत्रों में सत्यापित और उत्पन्न डेटा के लिए यादृच्छिक संख्याओं का उपयोग करना जरूरी है। यह डेटा को संरचित करने और उससे सार्वजनिक नमूनों को अधिक संवेदनशील बनाने में मदद करता है, जो अनुसंधान और विश्लेषण के लिए अनुकूल होते हैं।
+Iss article mein hum jaanenge ki kyon kisi ko random numbers generate karne mein interest hota hai. Random numbers generation ki zaroorat kisi bhi programming language mein hoti hai, jaha par hume unpredictable input ki zaroorat hoti hai. Random numbers ka use cryptography, simulation, game development, aur bahut saari aur jaagaon mein kiya jata hai.
 
-## कैसे करे
+# Kaise Karein
 
-फिश शेल में, हम `math/rand` लाइब्रेरी का उपयोग करके `rand` कमांड को चला सकते हैं। उसे उदाहरण के साथ बिंदु निर्देशित करें और क्रम में चालू करें।
+Fish Shell mein random numbers generate karne ke liye bahut simple aur easy to use ek command hai - `random`. Is command ka use karke hum anek tarah ke random numbers generate kar sakte hain. Chaliye kuch examples dekhate hain:
 
-```fish
-set min 1    # Minimum value
-set max 100  # Maximum value
-set count 10 # Number of random numbers to generate
-for i in (seq $count)
-    echo (rand -r $min $max)
-end
+```Fish Shell
+random  # ek random floating point number banega
+random 100  # ek random integer number banega 0 se 100 tak
+random -r 10 20  # ek random floating point number banega 10 aur 20 ke beech
 ```
 
-प्रत्येक दौर में, यह कमांड रैंडमाइज़ड अंक लायेगा जो `min` और `max` के बीच होते हैं। उपरोक्त कोड और संबंधित विषयों पर और अधिक अध्ययन कर सकते हैं।
+Agar hume specific range ke numbers generate karne hain, to hum `seq` command ka bhi use kar sakte hain:
 
-## गहराई में जाए
+```Fish Shell
+seq (random 1 5)  # yeh command randomly 1 aur 5 ke beech koi ek integer number banayegi, fir us number tak ka sequence create karegi
+```
 
-हम डेटा भण्डारण में कहाँ, डेटा विश्लेषण में कितना समय व्यतीत होता है, और क्या उसका प्रभाव हो सकता है और अन्य बातें पर भी प्रभावित होते हैं। अतिरिक्त विवरण के लिए माइकल कोड्डन का [यह लेख] (https://www.extraordinaryproblems.com/understanding-generating-random-numbers/) देखें।
+Fish Shell mein hum `random` command ke saath kuch options bhi specify kar sakte hain, jaise `-r` jo ki humare input ki range ko specify karta hai aur `-l` jo ki humare output numbers ko left aligned kar deta hai. Is tarah hum apne use case ke hisaab se random numbers generate kar sakte hain.
 
-## यहाँ देखें
+# Deep Dive
 
-[फिश शेल ऑफिशियल दस्तावेज़ीकरण] (https://fishshell.com/docs/current/) | [मजबूतियाँ और मुश्किलें] (https://fishshell.com/docs/current/index.html#strongfeatures) | [कमांड लाइन मानचित्र] (https://learnxinyminutes.com/docs/fish/) | [मशीन लर्निंग और
+Random numbers generate karne ke bahut sare algorithms hain, aur har algorithm ki apni strengths and weaknesses hoti hain. Fish Shell mein `random` command ka use karne se hum Mersenne Twister algorithm ka use karte hain. Ye algorithm ek powerful aur fast random number generator hai. Magar agar hum randomly generated numbers ko security sensitive jagah use karte hain, jaise cryptography, to hume ise secure algorithm ki jagah se badal kar use karna chahiye. Isliye, apne use case ke according hume sahi algorithm ka use karna zaroori hai.
+
+# See Also
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Mersenne Twister algorithm](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Cryptography](https://en.wikipedia.org/wiki/Cryptography)

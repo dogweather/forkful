@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 「csv を扱う」"
-simple_title:         "「csv を扱う」"
+title:                "「CSVの操作」"
+html_title:           "Fish Shell: 「CSVの操作」"
+simple_title:         "「CSVの操作」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -11,50 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-CSVファイルを扱うことに興味があるのであれば、Fish Shellプログラミングはとても便利で効率的な方法です。
+CSVファイルとは何かを知りたいのですか？あるいは、データを操作したいのですか？Fish Shellを使って、簡単にCSVファイルを処理できることをご存知ですか？この記事では、Fish Shellを使ったCSVファイルの操作方法を紹介します。
 
-## どのように
+## 使い方
 
-CSVファイルを扱う最も基本的な方法は、Fish Shellの内部コマンドである`csvformat`を使用することです。これは、CSVファイルをテーブル形式にフォーマットすることができます。
+Fish Shellを使ってCSVファイルを処理するには、まずファイルを開く必要があります。```open```コマンドを使って、ファイルを開きます。
 
-例えば、以下のようにコマンドを入力すると、CSVファイルの内容がテーブル形式で表示されます。
-
-```Fish Shell
-csvformat my_file.csv
+```
+open example.csv
 ```
 
-出力は以下のようになります。
+次に、```sed```を使ってCSVファイルのヘッダーを変更する方法を紹介します。
 
-```Fish Shell
-Column 1    Column 2    Column 3
-Value 1     Value 2     Value 3
-Value 4     Value 5     Value 6
+```
+sed -i '1s/.*/column1, column2, column3/g' example.csv
 ```
 
-また、CSVファイルをフィルタリングすることもできます。例えば、以下のようにコマンドを入力すると、2列目が"red"の行のみを表示します。
+これにより、最初の行が"column1, column2, column3"に変更されます。
 
-```Fish Shell
-csvformat my_file.csv | awk -F '\"*,\"*' '$2 == "red"'
+また、```awk```を使って特定の列のデータを抽出することもできます。
+
+```
+awk -F ',' '{print $1}' example.csv
 ```
 
-出力は以下のようになります。
+これにより、CSVファイルの1列目のデータが出力されます。
 
-```Fish Shell
-Column 1    Column 2    Column 3
-Value 1     red         Value 3
-```
+## ディープダイブ
 
-## 深堀り
+Fish Shellでは、CSVファイルの操作に便利なツールがたくさんあります。たとえば、```csvquote```や```in2csv```などのコマンドを使うことで、データの整形や変換を簡単に行うことができます。
 
-CSVファイルを扱う際に知っておくべき重要なことの一つは、文字符号化方式です。ファイルによって異なるため、`--lineterminator`オプションを使用して、正しい行終端記号を指定する必要があります。
+また、JSONファイルとの相互変換も可能です。```csvjson```コマンドを使うことで、CSVファイルをJSONファイルに変換できます。
 
-また、Fish Shellでは、`csvformat`の代わりに`csvcut`コマンドを使用することもできます。これは、特定の列を切り出したり、特定の文字列に基づいてフィルタリングしたりすることができます。
+さらに、Fish Shellのプラグインである```fzf-csv```を使うことで、CSVファイルの内容をフィルタリングして表示したり、特定のデータを見つけたりすることができます。
 
-さらに、Fish Shellでは、他のシェルよりも柔軟性が高いため、CSVファイルの扱い方は無限にあります。様々な拡張機能を活用することで、自分にとって最適な形でCSVファイルを扱うことができます。
+## 参考リンク
 
-## 関連リンク
-
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [Fish Shellドキュメンテーション](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Cookbook: CSV manipulation](https://isene.org/2017/11/Fish-Cookbook-CSV.html)
-- [CSVファイルをフィルタリングする方法](https://superuser.com/questions/903168/how-to-select-and-delete-columns-with-awk-in-csv-file)
+- [Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/)
+- [CSVファイルの操作方法](https://www.cyberciti.biz/faq/unix-linux-osx-bsd-appleosx-command-line-handling-a-large-csv-file/)
+- [fzf-csvプラグインのインストール方法](https://github.com/Aloxaf/fzf-tab-completion/wiki/csv)
+- [csvkitコマンドの詳細](https://csvkit.readthedocs.io/en/latest/index.html#)
+- [したいことができるFish Shellのプラグイン一覧](https://fishshell.com/docs/current/commands.html#complete-plugins)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML-analyysi"
+html_title:           "Elm: HTML-analyysi"
+simple_title:         "HTML-analyysi"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi osallistua HTML:n jäsentämiseen?
+## Miksi
 
-HTML:n jäsentäminen on tärkeä taito, joka mahdollistaa verkkosivujen rakenteen ja sisällön käsittelyn ohjelmallisesti. Se säästää aikaa ja vaivaa, kun haluamme muokata tai hakea tietoa verkkosivuilta.
+Vanhat HTML-virheet, kuten puuttuvat sulkumerkit, voivat olla katastrofaalisia verkkosivuston toiminnalle. Parsimisen avulla voit tarkistaa koodin ja varmistaa sen oikeellisuuden, mikä on tärkeää sivuston käyttökokemuksen kannalta.
 
-## Kuinka: Esimerkkejä koodikatkelmilla ja tulosteilla
+## Näin
 
-```
-Elm.format "<div><p>Hei maailma!</p></div>" 
-```
-```
-Tuloste: 
-Div [][P [] [Text "Hei maailma!"]]
-```
+```Elm
+import Html
+import Html.Parser exposing (..)
 
-Tässä yksinkertaisessa esimerkissä elm-format -funktio jäsentää HTML:n ja palauttaa sen elm-syntaxina. Tämä syntaxi voidaan sitten käsitellä ohjelmallisesti halutulla tavalla.
+htmlString : String
+htmlString =
+    "<p>Tervetuloa</p>"
 
-## Syvemmälle: Tietoa HTML:n jäsentämisestä
-
-HTML:n jäsentäminen voi olla monimutkaista, sillä se sisältää paljon erilaisia elementtejä ja atribuutteja. Elm tarjoaa kuitenkin hyödyllisiä työkaluja, kuten elm-html -kirjaston, joka helpottaa HTML:n käsittelyä.
-
-Tässä on esimerkki, joka käyttää HTML:n lukemista ja jäsentämistä elm-html kirjastolla:
-
-``` 
--- HTML:n lukeminen
-mukautettuTagi = HTML.attribute "custom-tag" "elmi" [HTML.text "Tämä on tekstiä"]
-
--- HTML:n jäsentäminen
-elmHtmlTagi = mukautettuTagi [] 
+parsedHtml : Result (List Html.Error) Html.Html
+parsedHtml =
+    parse htmlString
 
 ```
 
-Tutustu Elm:n opas-sivustoon löytääksesi lisätietoa HTML:n jäsentämisestä ja elm-html -kirjastosta.
+Tässä koodiesimerkissä käytämme Html.Parser kirjastoa, joka sisältää funktion parse, joka ottaa merkkijonon argumenttina ja palauttaa joko Html.Html:n tai virheen. Voit myös käyttää muita Html.Parser kirjaston funktioita, kuten parseFragment, joka palauttaa fragmentin.
+
+Tarkastellaan seuraavaksi tulostetta. Jos HTML on oikein, toimii seuraava tulostus:
+
+```Elm
+Ok
+    [ { name = "p", attributes = [], children = [ Text "Tervetuloa" ] } ]
+```
+
+Jos HTML sisältää virheitä, se palauttaa virheilmoituksen, joka auttaa sinua paikantamaan ja korjaamaan ongelmat.
+
+## Deep Dive
+
+Elm kieli käyttää HTML:n DOM puuta, joten HTML:n parsiminen ei ole kielen kotitehtävä. Sen sijaan Elm käyttää parser-kirjastoja, kuten Html.Parser, joka on kehitetty nimenomaan parsimista varten.
+
+HTML:n parsiminen mahdollistaa myös XML:n parsimisen. Elm Parser on rakennettu käyttäen jotain nimeltä “parser combinator”, mikä on modulaarinen tapa luoda parser-sääntöjä. Parser combinatorit ovat sarja funktionaalisia työkaluja, joita voit käyttää luomaan uusia parsereita monimutkaisten HTML tasojen käsittelyyn.
 
 ## Katso myös
+[Virallinen Elm Parser dokumentaatio](https://package.elm-lang.org/packages/elm/parser/latest/)
 
-- [Oficial Elm -sivusto](https://guide.elm-lang.org/)
-- [elm-html -kirjaston dokumentaatio](https://package.elm-lang.org/packages/elm/html/latest/)
-- [Elm -ohjelmointiyhteisö Suomessa](https://www.quora.com/Where-can-I-find-the-Scandinavian-programming-community)
+[Tutorial video HTML parsimisesta Elm:ssä](https://www.youtube.com/watch?v=-zJz4S96xN8)
+
+[Practical Elm -blogi HTML parsimisesta](https://dev.to/rtfeldman/parsing-html-in-elm)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Att påbörja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Elm: Att påbörja ett nytt projekt"
 simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,26 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du är intresserad av funktionell programmering och en renare upplevelse av webbutveckling, då är Elm det perfekta valet för dig. Med sin statiska typning och starka typsystem är Elm ett kraftfullt verktyg för att skriva robusta och underhållbara webbapplikationer. Genom att använda Elm kan du också lättare hantera buggar och skapa ett mer tillförlitligt program.
+Att starta ett nytt projekt i Elm ger dig möjlighet att utveckla webbapplikationer på ett effektivt, funktionellt och robust sätt. Språkets starka typsystem och möjligheten att hantera oförutsedda fel på ett elegant sätt gör det till ett populärt val inom frontend-utveckling.
 
-## Hur man gör
+## Hur man gör det
 
-För att starta ett nytt projekt i Elm behöver du först installera Elm plattformen på din dator. Detta kan du göra genom att följa instruktionerna på deras officiella hemsida. När du har installerat Elm, är det dags att skapa din första fil med kod. Du kan göra det genom att öppna en textredigerare och skriva in följande kod:
+Det första steget för att starta ett nytt Elm-projekt är att installera Elm-plattformen. Detta kan göras genom att följa instruktionerna på [Elm's officiella hemsida](https://elm-lang.org/). När Elm är installerat kan du börja skapa din första fil med följande kod:
 
-```elm
-import Html exposing (text)
+```Elm
+module Main exposing (..)
 
-main = text "Hej, världen!"
+import Html exposing (..)
+
+main =
+    text "Hej världen!"
 ```
 
-I detta exempel har vi importerat modulen "Html" som gör det möjligt för oss att använda HTML-element. Sedan har vi skapat en funktion "main", som använder "text" funktionen för att rendera en text på webbsidan. Om du nu sparar denna fil som "hello.elm" och öppnar den i webbläsaren, bör du se texten "Hej, världen!" på sidan.
+Genom att köra kommandot "elm reactor" från din projektmapp, kommer du åt din applikation genom att gå till adressen "http://localhost:8000" i din webbläsare. Du kommer då att se "Hej världen!" texten på din sida.
 
-## Djupdykning
+Nu när du har en grundläggande förståelse för hur Elm fungerar, kan du fortsätta att lära dig mer genom att läsa dokumentationen och experimentera med kod.
 
-Förutom att skapa enkla meddelanden, kan du också använda Elm för att skapa mer komplexa applikationer. Detta uppnås genom att använda Elm's arkitektur (The Elm Architecture), som är en modell för att hantera tillstånd och ändringar i en applikation. Den består av tre huvudsakliga delar: modell, uppdateringar och view. Genom att använda denna arkitektur kan du enkelt skapa skalbara och underhållsamma applikationer i Elm.
+## Deep Dive
+
+När du skapar ett nytt Elm-projekt är det viktigt att planera din kodstruktur innan du börjar koda. Detta kommer att hjälpa dig att hålla koden organiserad och enkel att underhålla. Det är också viktigt att välja rätt tredjepartsbibliotek för ditt projekt. Kolla in Elm's [officiella biblioteksförteckning](https://package.elm-lang.org/) för att hitta lämpliga verktyg och paket för ditt projekt.
+
+Ett annat viktigt steg vid starten av ett Elm-projekt är att sätta upp en arbetsprocess. Du kan använda verktyg som [Elm-format](https://github.com/avh4/elm-format) för att hålla din kod enhetlig och lättläst, och [elm-test](https://github.com/elm-community/elm-test) för att skriva enhetstester och upprätthålla kodkvalitet.
+
+När du är nöjd med ditt projekt kan du publicera det på [Elm's paketdelningssida](https://package.elm-lang.org/). Detta gör det möjligt för andra utvecklare att använda din kod och ge feedback, vilket kan hjälpa dig att förbättra ditt projekt och bidra till den växande Elm-communityn.
 
 ## Se även
 
-- [Officiell Elm hemsida](https://elm-lang.org/)
-- [Elm GitHub-sida](https://github.com/elm-lang)
-- [Elm Community](https://elm-community.github.io/elm-cheat-sheet/)
+* [Elm's officiella hemsida](https://elm-lang.org/)
+* [Elm's dokumentation](https://guide.elm-lang.org/)
+* [Elm's package delningssida]](https://package.elm-lang.org/)

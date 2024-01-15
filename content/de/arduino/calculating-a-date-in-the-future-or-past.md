@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "Arduino: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,54 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann für verschiedene Anwendungen nützlich sein, wie z.B. für die Steuerung von Zeitabläufen oder das Erstellen von Alarmen. Mit der Arduino-Programmierung können Sie solche Berechnungen bequem durchführen.
+Die Berechnung von zukünftigen und vergangenen Datum kann für verschiedene Anwendungen nützlich sein, wie z.B. für die Steuerung von Zeitabläufen, für zeitgesteuerte Aufgaben oder für die Darstellung von Datums- und Zeitanzeigen. Mit der aktuellen Version von Arduino können diese Berechnungen einfach und effektiv durchgeführt werden.
 
-## So geht's
+## Wie geht's
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen Sie zuerst das aktuelle Datum mit den Funktionen "day()", "month()" und "year()" erhalten und in Variablen speichern. Anschließend können Sie die gewünschte Anzahl von Tagen zu diesem Datum hinzufügen oder davon abziehen, um das zukünftige oder vergangene Datum zu berechnen.
-
-Hier ist ein Beispiel für die Berechnung des Datums in 30 Tagen:
+In der Arduino-Programmiersprache gibt es verschiedene Funktionen, die es ermöglichen, ein zukünftiges oder vergangenes Datum zu berechnen. Im Folgenden werden wir uns auf die Funktion "getDate" konzentrieren, die das aktuelle Datum als Rückgabewert liefert.
 
 ```Arduino
-int currentDay = day(); //speichert den aktuellen Tag in einer Variable
-int currentMonth = month(); //speichert den aktuellen Monat in einer Variable
-int currentYear = year(); //speichert das aktuelle Jahr in einer Variable
+#include <Time.h> // Einbinden der Time-Library
 
-int futureDay = currentDay + 30; //berechnet den zukünftigen Tag
-int futureMonth = currentMonth; //der Monat bleibt gleich
-int futureYear = currentYear; //das Jahr bleibt gleich
+void setup(){
+    TimeElements futureDate; // Erstellt ein Objekt für das zukünftige Datum
+    getDate(futureDate); // Holt sich das aktuelle Datum
 
-//falls der zukünftige Tag größer als die Anzahl der Tage im Monat ist, wird das Datum entsprechend angepasst
-if (futureDay > 30) {
-  futureDay -= 30; //subtrahiert die Anzahl der Tage im Monat
-  futureMonth++; //erhöht den Monat um eins
+    futureDate.Year += 1; // Addiert ein Jahr zu dem aktuellen Datum
+    convertElements(futureDate); // Konvertiert das Datum in ein neues Format
+    Serial.println(UTCDateTime(futureDate)); // Gibt das berechnete Datum aus
 }
-
-//falls der zukünftige Monat größer als 12 ist, wird auch das Jahr entsprechend angepasst
-if (futureMonth > 12) {
-  futureMonth = 1; //setzt den Monat auf 1 (Januar)
-  futureYear++; //erhöht das Jahr um eins
-}
-
-//gibt das zukünftige Datum im seriellen Monitor aus
-Serial.print("Das Datum in 30 Tagen ist: ");
-Serial.print(futureDay);
-Serial.print(".");
-Serial.print(futureMonth);
-Serial.print(".");
-Serial.println(futureYear);
 ```
 
-Der oben genannte Code kann natürlich an Ihre spezifischen Anforderungen und Bedürfnisse angepasst werden, je nachdem, welche Berechnung Sie durchführen möchten.
+Die Funktion "getDate" ist Teil der Time-Library und wird verwendet, um das aktuelle Datum zu erhalten. Das zurückgegebene Datum wird in Form einer Zeitstruktur gespeichert, die verschiedene Elemente wie Jahr, Monat, Tag, Stunde, Minute und Sekunde enthält. In unserem Beispiel haben wir dem aktuellen Datum ein Jahr hinzugefügt und es in das Format UTCDateTime konvertiert, um es auf dem seriellen Monitor anzuzeigen. Natürlich kann die Funktion "getDate" auch mit anderen Rechenoperationen kombiniert werden, um komplexere Datumsberechnungen durchzuführen.
 
-## Tiefergehende Informationen
+## Tiefer Einblick
 
-Es gibt auch andere Möglichkeiten, einen Zeitraum zu einem Datum hinzuzufügen oder abzuziehen, wie z.B. die Verwendung der "Time" Bibliothek oder der "millis()" Funktion. Ebenso können Sie verschiedene Bedingungen einbauen, um auch mit Schaltjahren umzugehen.
+Die Funktion "getDate" basiert auf dem internen Systemtimer von Arduino, der die aktuelle Zeit seit dem Einschalten des Boards zählt. Dadurch können auch Langzeitberechnungen durchgeführt werden, da das Systemdatum nicht verloren geht, selbst wenn das Board ausgeschaltet wird.
 
-Es ist wichtig zu beachten, dass die Arduino-Uhrzeit in Millisekunden seit dem Hochfahren des Boards gezählt wird und nicht auf das tatsächliche Datum und die Uhrzeit basiert. Daher kann es zu Ungenauigkeiten kommen, wenn das Board längere Zeit eingeschaltet bleibt. In diesem Fall müssen Sie die Uhrzeit möglicherweise über das Internet oder eine externe RTC (Real-Time-Clock) aktualisieren.
+Zusätzlich zu "getDate" gibt es noch weitere hilfreiche Funktionen in der Time-Library, wie z.B. "makeTime", mit der man eine vordefinierte Zeitstruktur erstellen kann, sowie verschiedene Konvertierungsfunktionen, um das Datum in verschiedene Formate zu bringen.
 
 ## Siehe auch
 
-- [Using Time and Date in Arduino](https://www.arduino.cc/reference/en/libraries/time/)
-- [Millisecond Time Library for Arduino](https://playground.arduino.cc/Code/Millis/)
-- [How to Add Time and Date to Your Arduino Projects](https://www.makerguides.com/arduino-time-date-tutorial/)
+- offizielle Arduino-Dokumentation zu Time-Library: https://www.arduino.cc/en/Reference/Time
+- Tutorial für Zeit- und Datumsberechnungen mit Arduino: https://www.circuitbasics.com/how-to-work-with-time-and-dates-in-arduino/
+- Beispielprojekt für eine Uhr mit Datumsanzeige: https://create.arduino.cc/projecthub/ansh6kevv/usdgraph-a-date-time-based-analog-clock-using-arduino-1f877c

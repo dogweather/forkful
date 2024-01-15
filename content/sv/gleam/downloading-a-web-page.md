@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Gleam: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,78 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att ladda ner en webbsida kan vara användbart för att hämta information eller för att spara en kopia av en sida som du vill komma åt senare.
+Varför: Varför Skulle Du Vilja Ladda Ner En Webbplats?
 
-## Hur man gör det
-Det första steget för att ladda ner en webbsida med Gleam är att importera "webpage" biblioteket. Därefter kan du använda funktionen "fetch" för att hämta en specifik URL.
+Ibland kan det vara användbart att kunna ladda ner en webbplats för offline användning eller för att analysera dess innehåll. Det kan också vara ett sätt att spara favoritwebbplatser som du vill besöka igen senare, även om de skulle tas bort från internet.
 
-```Gleam
-let webpage = import("webpage")
-let url = "https://www.example.com"
-let response = webpage.fetch(url)
-```
+## Så här gör du
 
-För att kunna använda resultatet från "fetch" funktionen behöver vi konvertera det till en "Result" typ. Detta kan göras med hjälp av "to_result" funktionen. Om allt går bra kommer du få en "Ok" med en "Webpage" typ som innehåller all information om den nedladdade webbsidan.
+För att ladda ner en webbplats med Gleam, används funktionen `httpc.get` tillsammans med funktionen `Gleam.IO.File.write` för att spara den nedladdade sidan som en fil. Här är ett enkelt exempel som laddar ner Glesams hemsida och sparar den som en fil med namnet "gleam.html":
 
 ```Gleam
-fun fetch(url) {
-  webpage
-    .fetch(url)
-    .to_result()
-}
-
-// Output:
-// Ok {
-//   response: Webpage {
-//     status: 200,
-//     ...
-//   }
-// }
+let request = httpc.get("https://gleam.io")
+request
+  .then(Response.body)
+  .and_then { body -> File.write("gleam.html", body) }
+  .panic
 ```
 
-Om det blir några problem under hämtningen, till exempel att URL:en inte är giltig, kommer "to_result" funktionen returnera en "BadResponse" med information om vad som gick fel.
+För att öppna den nedladdade filen i din webbläsare kan du använda funktionen `os.open_browser("gleam.html")`.
 
-```Gleam
-fun fetch(url) {
-  webpage
-    .fetch(url)
-    .to_result()
-}
+## En djupdykning
 
-// Output:
-// BadResponse {
-//   message: "Invalid URL",
-//   status: 400,
-//   ...
-// }
-```
+Med hjälp av Gleams funktioner kan du anpassa hur du vill ladda ner en webbplats. Till exempel kan du ange specifika headern för din webbläsare genom att använda `httpc.set_header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15")` innan du utför din förfrågan.
 
-## Djupdykning
-Genom att använda "Webpage" typen som returneras från "fetch" funktionen kan du utforska det hämtade innehållet och hämta specifika delar av sidan. Till exempel kan du hämta titeln på en sida och alla dess länkar.
+Du kan också använda `httpc.post` istället för `httpc.get` för att ladda ner sidor som kräver inloggning eller annan form av interaktion.
 
-```Gleam
-let title = webpage.title(response)
-let links = webpage.links(response)
+## Se också
 
-// Output:
-// title: "Example Website"
-// links: [
-//   "https://www.example.com/page-1",
-//   "https://www.example.com/page-2",
-//   ...
-// ]
-```
-
-Du kan också hämta hela HTML-koden för sidan genom att använda "body" funktionen.
-
-```Gleam
-let html = webpage.body(response)
-
-// Output:
-// "<html>...</html>"
-```
-
-## Se även
-- [Gleam webpage bibliotek](https://gleam.run/packages/webpage/)
-- [Webpage Dokumentation](https://gleam.run/packages/webpage/docs/)
+- Mer information om Gleams HTTP-funktionalitet: https://gleam.run/docs/http
+- Provrördet för `httpc.get`: https://gleam.run/provroersel/http/httpc.get
+- Provrördet för `Gleam.IO.File.write`: https://gleam.run/provroersel/file/file.write

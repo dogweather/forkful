@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: टेस्ट लिखना"
+title:                "टेस्ट लिखना"
+html_title:           "Gleam: टेस्ट लिखना"
 simple_title:         "टेस्ट लिखना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,23 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kisi bhi programming language mein, test likhna ek zaroori step hota hai jisse hamare code ki quality aur functionality ko sahi tarah se ensure kiya ja sake. Gleam mein bhi, test likhna ek important aspect hai jisse aap apne code ko safe aur reliable bana sakte hai.
 
-क्या आपने कभी सोचा है कि आपको अपने कोड को टेस्ट करना चाहिए? चिंता न करें, हम आपको इस लेख में बताएंगे कि टेस्ट क्यों आवश्यक है और कैसे आप इसे आसानी से कर सकते हैं। 
-
-## कैसे करें
-
-जेन भाषा ही नहीं, हमें अपने कोड में गलीम प्रोग्रामिंग द्वारा लिखी गई टेस्ट को भी कोड करने की आवश्यकता होती है। टेस्ट लिखने के लिए आपको `test name_of_test()` का उपयोग करना होगा और इसके अनुसार वेरिफाई करना होगा कि आपके कोड का उत्पाद एक्सपेक्टेड आउटपुट दे रहा है। नीचे एक उदाहरण दिया गया है:
+## Kaise Kare
+Agar aapne abhi tak test likhna nahi sikha hai, toh Gleam aapke liye ek great language hai jisme test likhna asaan aur effective hai. Neeche diye gaye examples ke saath dekhein:
 
 ```Gleam
-test add_numbers() {
-    let result = add(2, 3)
-    expect(result).to_equal(5)
+test "Add function should return the sum" {
+  assert.add(2,2) == 4
 }
 ```
 
-इस टेस्ट के साथ, हम आम तौर पर एक नया फ़ंक्शन `add` बना रहे हैं जो दो संख्याओं को जोड़ता है। हम यहां हमें उम्मीद है कि हमारे कोड के द्वारा एक्सपेक्टेड आउटपुट `5` आ रहा होगा। अगर हमारे टेस्ट फेल होते हैं, तो हमें पता चलेगा कि हमारे कोड में कुछ गड़बड़ी है और हम इसे ठीक कर सकते हैं।
+Is code block mein, humne ek test likha hai jisse hamne apne "add" function ke output ko check kiya hai. Agar add function mein koi galat code hota, toh test fail ho jata hai aur hume pata chalta hai ki kuch issue hai aur hume code ko fix karna hai.
 
-## गहराई में जाएं
+## Deep Dive
+Test likhne ke liye, sabse pehle aapko "test" keyword ka use karna hota hai. Iske baad aap test ka naam likhte hai aur brackets ke andar apne code ko likhte hai jisse aap test karna chahte hai. Iske baad hum "assert" keyword ka use karte hai jisse hum check karte hai ki kya humara code sahi output produce kar raha hai ya nahi. Agar assert ki value true hoti hai, toh test pass ho jata hai, aur agar false hoti hai toh test fail ho jata hai.
 
-टेस्ट लिखना एक बहुत ही महत्वपूर्ण कौशल है जो कि हर डेवलपर को सीखना चाहिए। यह प्रोग्रामिंग में गहराई में जाना और यूनिट टेस्टिंग के महत्व को समझने में मदद करता है। अतः अपने कोड को टेस्ट करने में समय लगाते हुए, यह हमें गहराई से उसमें दृढ
+## Dekhiye
+"See Also"  
+- [Gleam Documentation](https://gleam.run/documentation/)
+- [Effective Testing in Gleam blog post](https://medium.com/alwaysacloud/effective-testing-in-gleam-f9b8acd4c3c5)
+- [Gleam Tests YouTube tutorial](https://www.youtube.com/watch?v=87NA-wMwK4E)

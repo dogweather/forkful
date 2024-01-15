@@ -1,5 +1,6 @@
 ---
-title:                "Swift: חיפוש והחלפת טקסט"
+title:                "חיפוש והחלפת טקסט"
+html_title:           "Swift: חיפוש והחלפת טקסט"
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-ְְ
-## למה
+## מדוע
 
-אחד הדברים המעצבנים ביותר בתהליך הכתיבה של קוד הוא לחפש ולהחליף טקסט על מנת לשפר את הקוד שלנו. זה יכול להיות מסובך ולקחת זמן רב אם יש הרבה מחרוזות שנדרש לשנות. במאמר זה, אני אראה לכם כיצד ניתן להשתמש בשפת סוויפט כדי לחפש ולהחליף טקסט במהירות ובקלות.
+כתיבת תוכניות אינה דבר קל, ולפעמים אנו נתקלים בצורך לשנות טקסט בתוך הקוד. במקום להעתיק ולהדביק שוב ושוב, ניתן להשתמש בפעולת חיפוש והחלפה על מנת לכפול קטעי קוד ולשנות אותם בקלות.
 
-## איך לעשות זאת
+## כיצד לעשות זאת
 
-השתמשו במתודה `replacingOccurrences(of:with:)` כדי לחפש ולהחליף טקסט. לדוגמה, נדמה שאנחנו רוצים להחליף את המילה "פיתה" במחרוזת "פיצה":
+### חיפוש טקסט והחלפה
 
-```Swift
-let food = "אני אוהב פיתה"
-let newFood = food.replacingOccurrences(of: "פיתה", with: "פיצה")
-print(newFood) // אני אוהב פיצה
+על מנת לחפש ולהחליף טקסט בקוד שלנו, ניתן להשתמש בפונקציות `replacingOccurrences(of:with:)` או `replacingOccurrences(of:with:options:range:) ` שמציעות לנו פרמטרים נוספים לשלוט במקומות הספציפיים בהם אנחנו מחפשים ומחליפים טקסט.
+
+אלו הם הפרמטרים של הפונקציה `replacingOccurrences`:
+
+- `of`: טקסט המחליף אותו אנחנו מחפשים.
+- `with`: טקסט המחליף את הטקסט המצוי במקום החיפוש.
+- `options`: אפשרויות נוספות לחיפוש והחלפה, למשל שינוי רישות הכתיב והחיפוש מתחת לגדלות.
+- `range`: טווח של מיקומים מסוימים בטקסט שאנחנו מחפשים ומחליפים.
+
+בהמשך נלמד כיצד להשתמש בפרמטרים הנוספים כדי לשלוט בפעולת החיפוש והחלפה.
+
+נציג כמה דוגמאות של כיצד ניתן להשתמש בפונקציות חיפוש והחלפה:
+
 ```
+// דוגמה 1: החלפת טקסט בכל הטקסט
+let originalText = "Hello code lovers! This is a sample text."
+let replacedText = originalText.replacingOccurrences(of: "code", with: "Swift")
+print(replacedText)
+// Output: "Hello Swift lovers! This is a sample text."
 
-## חקירה מעמיקה
+// דוגמה 2: החלפת טקסט רק בטקסט מסוים
+let quote = "I love coding with Swift!"
+let replacedQuote = quote.replacingOccurrences(of: "coding", with: "programming", options: .caseInsensitive)
+print(replacedQuote)
+// Output: "I love programming with Swift!"
 
-בנוסף למתודה `replacingOccurrences(of:with:)`, ישנם עוד כמה אפשרויות לחפש ולהחליף טקסט. למשל, ניתן להשתמש במתודה `replacingOccurrences(of:with:options:range:)` על מנת להגדיר אפשרויות נוספות במהלך החיפוש וההחלפה. ניתן ללמוד עוד על המתודה ותכונותיה בלינקים המצורפים למטה.
-
-## ראו גם
-
-- [למדו עוד על המתודה `replacingOccurrences(of:with:)` כאן](https://developer.apple.com/documentation/foundation/nsstring/1414262-replacingoccurrences)
-- [הסבר נרחב יותר על שימוש במתודות עם טקסט בסוויפט](https://www.hackingwithswift.com/quick-start/swiftui/how-to-replace-a-substring)
-- [קוד לדוגמה של החיפוש וההחלפה של טקסט בסוויפט](https://stackoverflow.com/questions/45353330/swift-replace-string-within-a-textview/45353484#45353484)
+// דוגמה 3: החלפת טקסט בת

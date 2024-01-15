@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Bash: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,65 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Bash-ohjelmointi on tärkeä taito, joka voi auttaa helpottamaan monia arkipäivän tehtäviä. Yksi näistä tehtävistä on tekstitiedoston kirjoittaminen. Tässä blogikirjoituksessa käymme läpi, miksi tekstitiedoston kirjoittaminen kannattaa ja miten se onnistuu Bash-ohjelmoinnilla.
+Ehkä joskus sinun on tarvittava kirjoittaa teksti-tiedosto ja sinusta tuntuu siltä, että haluat tehdä sen terminalilla. Tai ehkä olet vain utelias ja haluat oppia uutta taitoa. Tässä artikkelissa opit, kuinka kirjoittaa teksti-tiedosto Bashilla.
 
-## Miten
+## Kuinka
 
-Bash-ohjelmoinnissa tekstitiedoston kirjoittaminen on helppoa ja nopeaa. Voit luoda uuden tiedoston tai päivittää olemassa olevaa tiedostoa käyttämällä `touch` tai `echo` komentoja. Esimerkiksi:
+Bash on ohjelmointikieli, jota käytetään yleisesti komentorivin kautta tapahtuvaan tiedostojen hallintaan ja tekstinkäsittelyyn. Kirjoittaaksesi teksti-tiedoston Bashilla, sinun täytyy ensin avata tiedostoeditori ja luoda uusi tiedosto. Tämän jälkeen voit kirjoittaa haluamasi tekstin ja tallentaa tiedoston käyttäen oikeaa komentoa.
 
-```
-# Luo uusi tiedosto nimeltä testi.txt
-touch testi.txt
+Esimerkiksi, jos haluat luoda uuden tiedoston nimeltä "tekstitiedosto.txt", kirjoita ensin komento "touch tekstitiedosto.txt" luodaksesi uuden tyhjän tiedoston. Sen jälkeen kirjoita "nano tekstitiedosto.txt" avataksesi tiedostoneditorin ja kirjoita haluamasi teksti. Kun olet valmis, paina "control + x" tallentaaksesi muutokset ja poistuaksesi editorista.
 
-# Lisää teksti tiedostoon käyttämällä echo-komentoa
-echo "Tämä on testiä" >> testi.txt
-```
-Tämän jälkeen voit tarkistaa tiedoston sisällön käyttämällä `cat` komentoa:
+Tässä on esimerkki kirjoitetusta teksti-tiedostosta:
 
-```
-# Tulosta tiedoston sisältö konsoliin
-cat testi.txt
-
-Tämä on testiä
+```Bash
+Tämä on teksti-tiedosto, joka on kirjoitettu Bashilla.
+Bash on helppo tapa hallita ja käsitellä tekstitiedostoja.
+Toivottavasti tämä artikkeli auttaa sinua oppimaan lisää!
 ```
 
-Käytä `>`-merkkiä, jos haluat ylikirjoittaa olemassa olevan tiedoston sisällön:
+Voit myös käyttää muita tekstieditoreita, kuten Vim tai Emacs, kirjoittaaksesi Bashilla teksti-tiedostoja. Kaikki toimivat periaatteessa samalla tavalla, mutta niissä voi olla hieman erilaisia komentoja ja toimintoja.
 
-```
-# Korvaa tiedoston sisältö uudella tekstillä
-echo "Uusi sisältö" > testi.txt
-```
+## Syvä sukellus
 
-## Syvemmälle
+Kun kirjoitat teksti-tiedostoa Bashilla, on tärkeää muistaa käyttää oikeita pääteitä ja merkintöjä. Esimerkiksi, jos haluat lisätä uuden rivin tekstiin, sinun täytyy käyttää "\n" merkintää sen sijaan, että painaisit enter-näppäintä. Samoin, jos haluat lisätä välilyönnin, käytä "\ " merkintää sen sijaan, että painaisit välilyöntinäppäintä.
 
-Bash-ohjelmoinnissa on mahdollista myös lisätä muuttujia ja käyttää for-silmukoita tekstitiedoston kirjoittamisessa. Esimerkiksi voit kirjoittaa tiedostoon oven numerot käyttämällä for-silmukkaa:
-
-```
-# Luo uusi tiedosto nimeltä ovet.txt
-touch ovet.txt
-
-# Luo muuttuja, jossa on ovi numerot 1-5
-ovet="1 2 3 4 5"
-
-# Käytä for-silmukkaa tulostamaan muuttujan arvot ja lisää ne tiedostoon
-for ovi in $ovet
-do
-  echo "Ovi $ovi" >> ovet.txt
-done
-```
-
-Tiedoston sisältö näyttää nyt tältä:
-
-```
-Ovi 1
-Ovi 2
-Ovi 3
-Ovi 4
-Ovi 5
-```
+Lisäksi, Bashilla on paljon erilaisia komentoja, jotka voit käyttää teksti-tiedostoihin liittyvissä tehtävissä, kuten hakemisto- ja tiedostojen hallinnassa. Kannattaa tutustua näihin komentoihin ja niiden toimintoihin paremmin, jos haluat tehdä enemmän Bashilla teksti-tiedostojen kanssa.
 
 ## Katso myös
 
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
-- [Muokkaa tekstiä Bash-ohjelmoinnilla](https://www.computerhope.com/unix/bash/echo.htm)
-- [Bash ohjelmointiopas](https://www.gnu.org/software/bash/manual/html_node/Bash-Programmable-Completion.html)
+Tässä muutamia hyödyllisiä linkkejä oppimateriaaleihin Bashista ja teksti-tiedoston kirjoittamisesta:
+
+- https://linuxize.com/post/bash-tutorial-for-beginners/
+- https://www.tutorialspoint.com/unix_commands/echo.htm
+- https://www.codecademy.com/learn/learn-the-command-line
+- https://www.gnu.org/software/bash/

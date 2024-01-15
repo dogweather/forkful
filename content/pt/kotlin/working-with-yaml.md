@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Kotlin: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,59 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que trabalhar com YAML?
+## Por que usar YAML em projetos Kotlin?
 
-YAML é uma linguagem de marcação de dados simples e fácil de entender. É frequentemente usada para configurar informações em sistemas de computador, tornando-a uma ferramenta útil para desenvolvedores de software.
+YAML é uma linguagem de serialização de dados simples e legível por humanos, o que a torna uma ótima opção para trabalhar com configurações em projetos Kotlin. Com um formato intuitivo e flexível, YAML pode ajudar a simplificar o gerenciamento de configurações em seus projetos.
 
-##Como fazer:
+## Como usar YAML em projetos Kotlin
 
-Para começar a trabalhar com YAML em Kotlin, primeiro precisamos importar a biblioteca de suporte YAML, adicionando a seguinte linha em nosso arquivo Gradle:
+Usar YAML em projetos Kotlin é bastante simples. Primeiro, você precisará adicionar a dependência do YAML Parser em seu arquivo `build.gradle` ou `build.gradle.kts`:
 
 ```
+// build.gradle
 dependencies {
-    implementation("io.github.mike10004:yamlq:$yamlq_version")
+    implementation("com.charleskorn.kaml:kaml:0.20.0")
 }
 ```
 
-Agora, podemos criar um objeto YAMLQ e usá-lo para ler e gravar arquivos YAML:
-
 ```
-val yamlq = YAMLQ()
-//lendo um arquivo YAML
-val input = File("arquivo.yaml")
-val dados = yamlq.read(input)
-
-//escrevendo um arquivo YAML
-yamlq.write(data, File("arquivo2.yaml"))
+// build.gradle.kts
+dependencies {
+    implementation("com.charleskorn.kaml:kaml:0.20.0")
+}
 ```
 
-##Mergulho Profundo:
-
-Além de ler e gravar arquivos YAML, podemos usar as classes do pacote YAMLQ para fazer consultas mais avançadas nos dados. Por exemplo, podemos usar a classe `YAMLQPath` para navegar nos dados selecionando caminhos específicos. Vamos ver um exemplo:
+Em seguida, você pode usar o código a seguir para ler um arquivo YAML e obter seus dados:
 
 ```
-val yamlq = YAMLQ()
-val input = """
-    nome: João
-    idade: 25
-    endereço:
-        cidade: São Paulo
-        país: Brasil
-    amigos:
-        - Maria
-        - Pedro
-        - Ana
-""".reader()
-val dados = yamlq.read(input)
-val caminho = YAMLQPath("$.amigos[0]") //selecionando o primeiro elemento da lista amigos
-val amigo = caminho.select(dados) //retornando o valor "Maria"
-println(amigo)
+import com.charleskorn.kaml.Yaml
+
+fun main() {
+    val yaml = Yaml.default.decodeFromString<T>(input)
+    // faça algo com os dados YAML aqui
+} 
+
 ```
 
-Este é apenas um exemplo simples, mas há muitas outras funcionalidades interessantes que podem ser exploradas ao trabalhar com YAML em Kotlin.
+E aqui está um exemplo de como você pode converter objetos Kotlin em YAML:
 
-##Veja também:
+```
+import com.charleskorn.kaml.Yaml
 
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Repositório GitHub de YAMLQ](https://github.com/mike10004/yamlq)
-- [Tutorial de introdução ao YAML em Kotlin](https://www.baeldung.com/kotlin-yaml)
+data class Pessoa(val nome: String, val idade: Int)
+
+fun main() {
+    val pessoa = Pessoa("João", 30)
+    val yaml = Yaml.default.encodeToString(pessoa)
+    println(yaml)
+} 
+
+```
+
+Output:
+
+```
+nome: João
+idade: 30
+```
+
+## Mergulho Profundo: Trabalhando com YAML em Projetos Kotlin
+
+Uma das principais vantagens de usar YAML em projetos Kotlin é sua flexibilidade. Por exemplo, você pode facilmente adicionar comentários em seu arquivo YAML usando o símbolo `#`. Além disso, YAML também permite usar referências para evitar repetição de dados e ter um conjunto de dados mais organizado.
+
+Outra funcionalidade útil é a possibilidade de usar chaves de sequência em YAML. Isso permite criar coleções de dados com chaves personalizadas e acessá-las facilmente em seu código Kotlin.
+
+## Veja também
+
+- [Site oficial do YAML](https://yaml.org/)
+- [Documentação do Kaml para Kotlin](https://github.com/charleskorn/kaml)

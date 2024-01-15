@@ -1,6 +1,7 @@
 ---
-title:                "Java: עבודה עם קובץ csv"
-simple_title:         "עבודה עם קובץ csv"
+title:                "עבודה עם CSV"
+html_title:           "Java: עבודה עם CSV"
+simple_title:         "עבודה עם CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why (למה):
+## מדוע
 
-CSV הוא פורמט נתונים נפוץ ביותר בעולם התכנות. הוא מאפשר יצירת טבלאות נתונים פשוטות בקלות והינו תואם למגוון רחב של יישומים. במאמר זה, אנו נכיר כיצד לעבוד עם קבצי CSV בשפת ג'אווה ונראה כמה דוגמאות פשוטות להשתמש בשנים.
+חלק גדול מהנתונים במחשב ניתנים לאחסון בתוך טקסט פשוט, ואחת הפורמטים הנפוצים הוא CSV (Comma Separated Values). בפורמט זה, כל הנתונים מופרדים על ידי פסיקים, וכך ניתן לקרוא ולכתוב את הנתונים בקלות. במאמר זה נלמד כיצד לעבוד עם נתונים בפורמט CSV בשפת ג'אווה, ונראה מדוע זה יכול להיות שימושי לכם.
 
-##How To (כיצד לעבוד עם CSV):
+## איך לעבוד עם CSV בשפת ג'אווה
 
-כדי לעבוד עם קבצי CSV בג'אווה, ניתן לעזור בספריית OpenCSV. נתחיל על ידי החברת את הספרייה לפרויקט שלנו וניצור אובייקט לכתיבת קובץ CSV עם תכונות מתאימות. לדוגמא:
+ראשית, ניתן לקרוא נתונים מקובץ CSV באמצעות הספרייה המובנית "CSVReader" מחברת "OpenCSV". הראשון נצטרך להוריד את הספרייה הזו ולהוסיף אותה לפרוייקט שלנו. לדוגמה, אם נרצה לקרוא נתונים מקובץ בשם "data.csv", נוכל לעשות כך באמצעות המקוד הבא:
 
 ```Java
-CSVWriter writer = new CSVWriter(new FileWriter("output.csv"), ';' , CSVWriter.NO_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+CSVReader reader = new CSVReader(new FileReader("data.csv"));
+String[] line;
+
+while ((line = reader.readNext()) != null) {
+    // הורדת הנתונים מהשורה והשמתם במשתנה מסוג מערך מחרוזות
+    // כאן תוכלו לבצע כל פעולות אחרות על הנתונים
+}
 ```
 
-לאחר מכן, נוסיף שורות לקובץ על ידי השימוש בפונקציה `writeNext()` ונסגור את האובייקט כדי להשלים את התהליך.
+ניתן גם לכתוב נתונים לקובץ CSV על ידי שימוש בספרייה זו. לדוגמה, נרצה ליצור קובץ חדש בשם "output.csv" ולרשום לתוכו את כל הנתונים ממערך המחרוזות "data":
 
 ```Java
-writer.writeNext(new String[]{"ID", "שם", "גיל"});
-writer.writeNext(new String[]{"1", "טלי", "25"});
+CSVWriter writer = new CSVWriter(new FileWriter("output.csv"));
+writer.writeNext(data);
 writer.close();
 ```
 
-להדפיס קובץ CSV קיים, ניתן להשתמש בעזרת הפונקציה `parse()` כדי לקרוא את הקובץ ולהדפיס את הנתונים. דוגמא:
+כעת נוכל לפתוח את הקובץ "output.csv" ולראות שהנתונים נכתבו בפורמט CSV כראוי.
 
-```Java
-CSVReader reader = new CSVReader(new FileReader("sample.csv"));
-String[] line;
-while ((line = reader.readNext()) != null) {
-   System.out.println("ID: " + line[0] + ", שם: " + line[1] + ", גיל: " + line[2]);
-}
-reader.close(); 
-```
+## העמקה
 
-##Deep Dive (לרדת לעומק):
-
-בנוסף לפונקציות הבסיסיות של OpenCSV, ישנן אפשרויות נוספות להתאים את הפעולה לצרכים המיוחדים שלנו. לדוגמא, אנו יכולים להגדיר תכונות נוספות כמו סימון נכון ושגיאות, כתיבת טבלאות בשפת JSON ועוד. ניתן למצוא מידע מפורט על כל האפשרויות בדוקומנטציית OpenCSV הרשמית.
-
-##See Also (ראו
+כאשר מתעסקים עם נתונים בפורמט CSV, חשוב לבדוק שהנתונים מכילים את ההידורים הנכונים וכי הם מופרדים בצורה תקינה. ניתן להשתמש בספרי

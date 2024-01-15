@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Radera karaktärer som matchar ett mönster"
+html_title:           "Swift: Radera karaktärer som matchar ett mönster"
+simple_title:         "Radera karaktärer som matchar ett mönster"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,41 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort eller ersätta tecken som matchar ett visst mönster är ofta en nödvändig del av Swift-programmering. Oavsett om det handlar om att rensa formatering från en textsträng eller filtrera ut ogiltiga tecken, finns det många scenarier där denna typ av manipulation är användbar.
+Att ta bort tecken som matchar ett mönster är en vanlig operation i många programmeringsprojekt. Det kan till exempel användas för att rensa bort oönskad data eller formatera en sträng på ett särskilt sätt.
 
-## Så här gör du
+## Hur man gör det
 
-För att ta bort karaktärer som matchar ett visst mönster i Swift finns det flera metoder och funktioner tillgängliga. Nedan är några exempel och sample output kodblock som visar hur man kan använda dem:
+För att ta bort tecken som matchar ett mönster i Swift, kan vi använda funktionen `replacingOccurrences(of:with:)` på en sträng. Vi kan också använda reguljära uttryck för att definiera ett mönster att matcha mot.
 
 ```Swift
-let sentence = "Hej världen!"
+// Example string
+let sentence = "Hej! Välkommen till Swift!"
 
-// Ta bort sista karakteren från stringen
-let updatedSentence = sentence.dropLast()
-// output: "Hej världen"
+// Removing vowels using replacingOccurrences
+let trimmedString = sentence.replacingOccurrences(of: "[aeiou]", with: "", options: .regularExpression)
 
-// Ta bort alla vokaler från stringen
-let updatedSentence = sentence.filter({ !["a", "e", "i", "o", "u", "y"].contains($0) })
-// output: "Hj vrldn!"
+print(trimmedString)
+// H! Vlkmmtn tll Swft!
 
-// Ersätta alla siffror med "*"
-let updatedSentence = sentence.replacingOccurrences(of: "[0-9]", with: "*", options: .regularExpression)
-// output: "Hej världen!"
+// Removing numbers using regular expressions
+let numberString = "1, 2, 3, A, B, C"
+let filteredString = numberString.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+
+print(filteredString)
+// , , , A, B, C
+
 ```
-
-Som du kan se är det möjligt att använda olika metoder beroende på vilken typ av manipulation som behövs. Genom att använda en kombination av "dropLast()", "filter()" och "replacingOccurrences" kommer du att kunna ta bort eller ersätta önskade karaktärer.
 
 ## Djupdykning
 
-En viktig del av att ta bort karaktärer som matchar ett visst mönster är att förstå hur reguljära uttryck fungerar. Reguljära uttryck (regular expressions) är en serie av symboler som används för att matcha karaktärsmönster i en sträng. De utgör en viktig del av Swifts "replacingOccurrences" metod som använder reguljära uttryck för att ersätta karaktärer i en sträng.
-
-En annan viktig funktion för att ta bort karaktärer i Swift är "trimmingCharacters(in:)". Denna funktion används för att ta bort specifika karaktärer från början och slutet av en sträng. Till exempel kan du använda denna funktion för att ta bort alla mellanslag i början och slutet av en sträng, vilket kan vara användbart när man hanterar användarinput.
+När vi tar bort tecken som matchar ett mönster, använder vi ofta reguljära uttryck (regular expressions). Dessa är en serie av tecken som definierar ett mönster att matcha mot. Det finns också en rad olika options som kan användas med `replacingOccurrences`, som gör det möjligt att göra sökningen och ersättningen mer exakt. Till exempel kan vi använda `.caseInsensitive` för att ignorera skillnaden mellan stora och små bokstäver.
 
 ## Se även
 
-För mer information om reguljära uttryck och hur man använder dem i Swift, kolla in dessa resurser:
+Det finns många andra användbara funktioner och möjligheter i Swift för att manipulera strängar. Här är några artiklar du kan läsa för att lära dig mer:
 
-- Apple's officiella "Using Regular Expressions in Swift" guide: <https://developer.apple.com/documentation/foundation/nsregularexpression>
-- En tutorial på howtobuildsoftware.com om hur man använder reguljära uttryck i Swift: <https://www.howtobuildsoftware.com/index.php/how-do/b46F/swift-regex-swift-working-with-regular-expressions-in-swift>
+- [How to Reverse a String in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-reverse-a-string-using-reversed)
+- [Working with Strings in Swift](https://www.raywenderlich.com/94474/string-cheat-sheet-swift-2)
 
-Lycka till med att ta bort karaktärer som matchar ett visst mönster i dina Swift-projekt!
+Lycka till med din Swift-kodning! 🚀

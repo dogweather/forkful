@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Używanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "PHP: Używanie wyrażeń regularnych"
 simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać wyrażeń regularnych w PHP?
+## Dlaczego
 
-Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu, które pozwala na szybkie i precyzyjne przetwarzanie tekstów. W PHP mogą być wykorzystywane w różnych celach, takich jak walidacja danych, wyodrębnianie informacji z tekstu czy zamiana formatów danych. Dzięki nim możliwe jest skuteczne manipulowanie i przetwarzanie danych tekstowych, przez co stanowią niezbędne narzędzie dla wielu programistów.
+Jeśli jesteś programistą PHP, być może słyszałeś o wyrażeniach regularnych. Są one bardzo przydatne w procesie analizowania i manipulowania ciągami znaków, co czyni je niezbędnym narzędziem w wielu projektach programistycznych. W tym artykule dowiesz się, dlaczego warto nauczyć się używać wyrażeń regularnych w PHP.
 
-## Jak używać wyrażeń regularnych w PHP?
-
-Aby skorzystać z wyrażeń regularnych w PHP, należy najpierw wykorzystać funkcję `preg_match` lub `preg_replace`. Przykładowy kod wykorzystujący wyrażenia regularne w celu walidacji adresu email może wyglądać następująco:
+## Jak To Zrobić
 
 ```PHP
-$email = 'abc@xyz.com';
-$pattern = '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/';
+// Przykład 1: Wyszukiwanie podanego wzoru w tekście
+$pattern = '/przykład/';
+$text = 'To jest przykład użycia wyrażeń regularnych w PHP.';
+$result = preg_match($pattern, $text);
 
-if (preg_match($pattern, $email)) {
-    echo "Poprawny adres email!";
-} else {
-    echo "Niepoprawny adres email!";
-}
+// Zwróci "1" - wzorzec znaleziony
+echo $result; 
+
+// Przykład 2: Zastępowanie wzorca w tekście
+$pattern = '/wyrażenia regularne/';
+$replacement = 'wyrażenia regularne w PHP';
+$text = 'Wyrażenia regularne są bardzo przydatne w analizowaniu i manipulowaniu ciągami znaków.';
+$result = preg_replace($pattern, $replacement, $text);
+
+// Zwróci "Wyrażenia regularne w PHP są bardzo przydatne w analizowaniu i manipulowaniu ciągami znaków."
+echo $result; 
 ```
 
-W powyższym przykładzie zastosowano wyrażenie regularne, które sprawdza, czy wprowadzony adres email spełnia określone kryteria (takie jak zawartość znaków i format domeny). Dzięki temu można szybko i skutecznie zweryfikować poprawność danych wprowadzonych przez użytkownika.
+Wyrażenia regularne w PHP polegają na tworzeniu wzorców, które są używane do wyszukiwania, porównywania lub zastępowania określonych ciągów znaków w tekście. Są one bardzo elastyczne i mogą być dostosowane do różnych potrzeb programistów. PHP zapewnia kilka funkcji, które są wykorzystywane do pracy z wyrażeniami regularnymi, takich jak `preg_match()` czy `preg_replace()`. W powyższych przykładach możesz zobaczyć, jak te funkcje są używane do wyszukiwania i zastępowania wzorców w tekście.
 
-## Głębszy zanurzenie w używaniu wyrażeń regularnych
+## Zagłębienie Się
 
-Wyrażenia regularne w PHP nie tylko umożliwiają podstawową walidację danych, ale także pozwalają na bardziej złożone przetwarzanie tekstów. W celu ułatwienia korzystania z wyrażeń regularnych, PHP oferuje wiele wbudowanych funkcji oraz specjalne symbole, takie jak znak zapytania `?` czy gwiazdka `*`, które umożliwiają tworzenie jeszcze bardziej precyzyjnych wyrażeń.
+Wyrażenia regularne w PHP są oparte na wyrażeniach regularnych w języku Perl, który jest znanym językiem programowania skryptów. Pozwala to na większą elastyczność i możliwość wykorzystania silnych funkcji i składni języka Perl w procesie manipulowania wyrażeniami regularnymi w PHP. Ponadto, wyrażenia regularne mogą być używane w różnych kontekstach programistycznych, takich jak w formularzach HTML czy w aplikacjach internetowych, co czyni je bardzo wszechstronnym narzędziem do przetwarzania danych.
 
-Dodatkowo, istnieją różne fora oraz dokumentacja online, które pomagają w nauce wyrażeń regularnych i ich zastosowań w PHP, dzięki czemu można stać się ekspertem w tym dziedzinie.
+Warto również zwrócić uwagę na wyrażenia regularne w kontekście wydajności. W porównaniu do tradycyjnych metod przetwarzania tekstu, wyrażenia regularne są znacznie szybsze i wydajniejsze, co jest szczególnie ważne przy pracy z dużymi zbiorami danych. Dlatego, jeśli pracujesz z tekstem w swoich projektach, warto zainteresować się wyrażeniami regularnymi.
 
-## Zobacz również
+## Zobacz Również
 
-- [Dokumentacja PHP – wyrażenia regularne](https://www.php.net/manual/en/regexp.reference.php)
-- [Tutorial Wyrażeń regularnych w PHP](https://www.geeksforgeeks.org/php-ereg-regular-expression-examples/)
-- [Fora PHP – wyrażenia regularne](https://www.php-forum.com/phpforum/viewforum.php?f=13)
+Jeśli szukasz więcej informacji o wyrażeniach regularnych w PHP, zobacz poniższe linki:
+
+- [Dokumentacja PHP o wyrażeniach regularnych](https://www.php.net/manual/en/ref.pcre.php)
+- [Przewodnik po wyrażeniach regularnych w PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Interaktywny edytor wyrażeń regularnych dla PHP](https://regex101.com/)

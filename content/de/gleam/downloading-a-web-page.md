@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Gleam: Herunterladen einer Webseite"
 simple_title:         "Herunterladen einer Webseite"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,36 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die grundlegende Aufgabe des Web Crawling ist das Herunterladen von Webseiten und das Extrahieren von Informationen. Web Crawling ist nützlich für verschiedene Zwecke wie Datenanalyse, Marktforschung und SEO-Optimierung. Das Herunterladen von Webseiten ist der erste Schritt in diesem Prozess und ermöglicht es Programmierern, wichtige Daten von verschiedenen Websites zu erhalten.
+Warum sollte man sich die Mühe machen, eine Webseite herunterzuladen? Nun, es gibt viele mögliche Gründe, einschließlich des Wunsches, die Seite offline zu lesen oder bestimmte Informationen aus der Seite zu extrahieren.
 
-## Wie es geht
+## Wie geht's
 
-Um eine Webseite mit Gleam herunterzuladen, können Sie den `httpc`-Client verwenden. Der Befehl `httpc.get` ermöglicht es Ihnen, eine URL anzugeben und die HTML-Inhalte der Webseite zu erhalten. Hier ist ein Beispielcode, der eine Webseiten-URL und die Ausgabe des HTML-Codes enthält:
+Um eine Webseite in Gleam herunterzuladen, verwenden wir die `HttpGet` Funktion. Zum Beispiel:
 
 ```Gleam
-let response = httpc.get("https://www.example.com")
-import gleam/html
-import gleam/http
-let html_code = case response {
-  Ok(http.Success(body)) -> body
-  Err(err) -> html.p([html.text(err)])
-}
+let result = Http.get("https://www.example.com")
 
-html_code
+result |> Log.info
 ```
 
-Die Ausgabe des obigen Codes zeigt den HTML-Code der Webseite in Ihrem Terminal an. Sie können diese Seite auch als Variable speichern und sie später analysieren oder speichern.
+Das Ergebnis der `HttpGet` Funktion ist ein `Http.Response`-Datentyp. Wir können darauf zugreifen, indem wir das `Body` Feld des `Http.Response`-Records verwenden:
 
-## Tiefer Einblick
+```Gleam
+// Beispiel: Zugriff auf den HTML-Inhalt der Webseite
+result.body 
+|> String.lines
+|> Enum.take(10)
+|> Log.info
+```
 
-Beim Herunterladen einer Webseite gibt es einige Faktoren, die beachtet werden müssen, um ein effektives Web Crawling zu erreichen. Ein wichtiger Faktor ist die Verarbeitung von Cookies. Gleam bietet eine integrierte Cookie-Verwaltung, um sicherzustellen, dass Sie die gleichen Informationen erhalten, die Sie normalerweise auf der Webseite sehen würden.
+Das Ergebnis der `HttpGet` kann auch fehlschlagen, daher ist es wichtig, entsprechende Fehlerbehandlung zu implementieren. Hier ist ein Beispiel, bei dem wir das `Http.expectOk` Helper-Funktion verwenden:
 
-Ein weiterer wichtiger Faktor ist die Behandlung von Redirects. Es ist üblich, dass Webseiten automatisch auf eine andere Seite weitergeleitet werden. Gleam ermöglicht es Ihnen, diese Weiterleitungen automatisch zu verfolgen und die eigentliche Seite zu erhalten, auf die Sie zugreifen möchten.
+```Gleam
+let result = Http.get("https://www.example.com") |> Http.expectOk
 
-Eine weitere Option ist die Verwendung von `httpc.request` anstelle von `httpc.get`. Mit dieser Methode können Sie die Request-Optionen genauer definieren, wie z.B. das Festlegen von benutzerdefinierten Headern oder die Verwendung von Authentifizierungsdaten.
+result.body |> Log.info
+```
+
+## Deep Dive
+
+Die `HttpGet` Funktion implementiert einen HTTP-Client, der die Webseite herunterlädt und die entsprechenden HTTP-Response-Informationen zurückgibt. Dies ermöglicht es uns, jederzeit auf beliebige Webseiten zuzugreifen und ihre Inhalte zu verarbeiten. Um mehr über die `HttpGet`-Funktion und die Möglichkeiten der Manipulation von Webseiten zu erfahren, können Sie die offizielle Gleam-Dokumentation besuchen.
 
 ## Siehe auch
 
-- [Gleam-Dokumentation für Web Crawling](https://gleam.run/books/httpc) 
-- [Web Crawling mit Gleam](https://gleam.run/articles/web-crawling) 
-- [Gleam-Codebeispiele für Web Crawling](https://github.com/gleam-lang/gleam/search?q=web+crawl&type=code)
+- [Gleam-Http-Verteilungsdokumentation](https://gleam.run/documentation/stdlib/http.html)
+- [Einführung in die Gleam-Programmierung](https://gleam.run/getting-started/introduction.html)
+- [Offizielle Gleam-Website](https://gleam.run/)

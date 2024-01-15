@@ -1,5 +1,6 @@
 ---
-title:                "Go: 현재 날짜 가져오기"
+title:                "현재 날짜 가져오기"
+html_title:           "Go: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Go"
 category:             "Go"
@@ -9,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why (왜):
-현재 날짜를 가져오는 것에 대해 궁금한 이유는 다양합니다. 일반적으로, 사용자에게 현재 날짜를 보여주거나 특정 작업을 수행할 때 날짜를 기록할 필요가 있을 때가 있습니다.
+## 왜
 
-## How To (어떻게):
-Go 언어에서 현재 날짜를 가져오는 방법은 간단합니다. ```time``` 패키지의 ```Now()``` 함수를 사용하면 됩니다. 아래는 해당 함수를 사용하여 현재 날짜를 출력하는 간단한 예제 코드입니다.
+현재 날짜를 가져오는 것이 왜 필요할까요? 현재 날짜를 사용하면 다양한 프로그래밍 작업에서 유용하며, 시간 기반의 작업을 할 때 매우 중요합니다.
+
+## 하우투
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
+import "time"
 
 func main() {
-	// 현재 날짜와 시간을 가져오기
-	currentTime := time.Now()
+  // 현재 시간에 대한 객체 생성
+  now := time.Now()
 
-	// 포맷 지정
-	dateFormat := "2006년 01월 02일"
+  // 현재 시간에서 년, 월, 일, 시분초를 가져옴
+  year := now.Year()
+  month := now.Month()
+  day := now.Day()
+  hour := now.Hour()
+  minute := now.Minute()
+  second := now.Second()
 
-	// 현재 날짜를 지정한 포맷으로 출력
-	fmt.Println("오늘의 날짜는:", currentTime.Format(dateFormat))
+  // 출력 예시: 2021-08-01 09:30:45
+  fmt.Printf("%d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second)
 }
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+### 결과
 
 ```
-오늘의 날짜는: 2021년 04월 19일
+2021-08-01 09:30:45
 ```
 
-## Deep Dive (더 깊게 알아보기):
-Go 언어에서는 ```time``` 패키지를 사용하여 다양한 시간과 날짜 관련 작업을 수행할 수 있습니다. 해당 패키지에는 다양한 함수와 메소드가 포함되어 있으며, 이를 통해 날짜와 시간을 다양한 형식으로 출력하거나 비교하는 등의 작업을 할 수 있습니다. 좀 더 자세한 내용은 공식 Go 언어 문서를 참고하시기 바랍니다.
+## 딥 다이브
 
-## See Also (관련 글):
-- [Go 언어 공식 문서](https://golang.org/pkg/time/)
-- [나만의 시계 앱 만들기 (Go + Vue.js)](https://medium.com/@sufuk/go-vuejs%EC%99%80-%EA%B8%B0%EB%B3%B8%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%9C%EA%B3%84-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-d350efc1d094)
-- [Go언어로 날짜 시간 지역화하기](https://sub0709.tistory.com/13)
+Go 언어는 표준 라이브러리인 time 패키지를 통해 현재 시간을 쉽게 가져올 수 있습니다. 이 패키지는 익숙한 time 관련 작업을 간편하게 처리할 수 있도록 여러 함수와 형식을 제공합니다.
+
+### 현재 시간 가져오기
+
+지금까지 보여드린 방법은 time.Now()를 사용하는 방법이었습니다. 이 함수는 시간대 정보를 무시하고 현재 시간정보를 가지고 있는 Time 구조체를 반환합니다.
+
+### 다른 시간대의 현재 시간 가져오기
+
+위의 예제에서 사용한 time.Now() 함수는 로컬 시간 기준으로 현재 시간을 반환합니다. 하지만 시간대 정보를 고려한 현재 시간을 얻고 싶다면 다른 함수를 사용해야 합니다. 예를 들어, time.Now().UTC()는 세계 표준시 기준의 현재 시간을 반환합니다.
+
+### 시간 형태 변경하기
+
+Go 언어에서는 time 패키지의 Format 함수를 사용하여 시간을 원하는 형태로 변환할 수 있습니다. 위의 예제에서 시간을 "연-월-일 시분초" 형태로 출력하기 위해 Format 함수를 사용했습니다. 다른 형식도 가능하니 필요에 맞게 사용하면 됩니다.
+
+## 관련 자료
+
+- [Go 언어 공식 사이트](https://golang.org/)
+- [time 패키지 문서](https://golang.org/pkg/time/)
+- [Go 언어를 활용한 실전 예제](https://gobyexample.com/)

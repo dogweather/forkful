@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 检查目录是否存在"
+title:                "检查目录是否存在"
+html_title:           "Clojure: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在？
+## 为什么要检查目录是否存在
 
-在编写Clojure程序时，需要经常检查某个目录是否存在。这样可以确保程序运行时不会出现错误，同时也可以避免不必要的麻烦。下面我们将介绍如何在Clojure中检查目录是否存在，以及更深入的信息。
+当我们在编写程序时，经常会涉及到读写文件的操作。有时候，我们需要检查一个目录是否存在，以便正确地处理文件路径。检查目录是否存在可以帮助我们避免程序运行中的错误，保证代码的稳定性和可靠性。
 
 ## 如何进行检查
 
-使用Clojure中的`clojure.java.io/file`函数可以方便地检查目录是否存在。以下是一个例子：
+在Clojure中，我们可以使用`(fs/exists? path)`函数来检查一个目录是否存在。这个函数接受一个路径作为参数，并返回一个布尔值来表示目录是否存在。下面是一个例子：
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(let [dir (io/file "path/to/directory")]
-  (if (.exists dir) ; 使用.exists方法检查目录是否存在
-    (println "目录存在")
-    (println "目录不存在")))
+(def my-directory "C:/Users/John/Documents/") ; 定义一个目录路径
+(if (fs/exists? my-directory)
+  (println "目录存在")
+  (println "目录不存在"))
 ```
-执行上述代码后，如果目录存在，则会输出"目录存在"，否则会输出"目录不存在"。
+
+如果`my-directory`目录存在，则会打印出"目录存在"；若不存在，则会打印出"目录不存在"。
 
 ## 深入了解
 
-除了使用`.exists`方法外，我们也可以使用`.isDirectory`方法来检查某个目录是否为一个有效的目录。如果文件路径指向一个目录，则返回`true`，否则返回`false`。示例如下：
+`fs/exists?`函数实际上是通过调用Java中的`exists()`方法来判断目录是否存在。这个方法使用Java的IO库来检查文件系统中的对象是否存在，因此可以用来检查文件、目录或者符号链接是否存在。
 
-```Clojure
-(require '[clojure.java.io :as io])
+在Clojure中，我们还可以使用其他函数来操作文件系统，例如`(file? path)`函数来检查一个路径是否是文件，`(link? path)`函数来判断一个路径是否是符号链接。通过熟练掌握这些函数，我们可以更加灵活地操作文件系统，实现更多的功能。
 
-(let [dir (io/file "path/to/directory")]
-  (if (.isDirectory dir)
-    (println "该目录有效")
-    (println "该路径并非目录")))
-```
-如果指定的路径确实是一个有效的目录，则会输出"该目录有效"，否则会输出"该路径并非目录"。
+## 查看更多
 
-## 参考链接
-
-- 官方Clojure文档：https://clojure.org/api/java.io
-- 有关常用函数和方法的详细信息：https://clojure-doc.org/cheatsheet/functions.html#file-and-directory-functions
-- 关于文件和目录操作的更多细节：https://github.com/clojure-cookbook/clojure-cookbook/tree/master/02_local-development/2-13_file-io
-
-# 查看也可
-
-- 官方Java文档：https://docs.oracle.com/javase/tutorial/essential/io/fileOps.html
-- 其他编程语言中检查目录是否存在的方法：https://stackoverflow.com/questions/4015477/how-to-test-if-a-directory-exists-in-a-shell-script/4015695#4015695
-- 关于文件和目录操作的更多细节：https://en.wikipedia.org/wiki/File_system#Directories
+- [Clojure官方文档](https://clojure.org/api/cheatsheet)
+- [Java IO库文档](https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html)
+- [如何在Clojure中操作文件系统](https://www.braveclojure.com/files/)
+- [了解Clojure中的条件语句](https://www.braveclojure.com/control-structures/)

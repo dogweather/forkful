@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Bash: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,51 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Regular expressions är ett kraftfullt verktyg för att söka och manipulera textmönster i en textfil eller ett command line interface. Genom att lära sig hur man använder regelbundna uttryck kan du spara tid och effektivisera din kodning.
 
-Reguljära uttryck är ett kraftfullt verktyg inom Bash-programmering som gör det möjligt att söka, matcha och manipulera text på ett enkelt och effektivt sätt. Genom att lära sig att använda reguljära uttryck, kan du spara tid och arbete när du arbetar med strängar och filer inom Bash.
+## Hur man gör
+För att använda regelbundna uttryck i Bash behöver du för det första lära dig syntaxen för dessa uttryck. Gå sedan igenom några praktiska exempel för att få en bättre förståelse för hur de fungerar.
 
-## Hur man använder reguljära uttryck i Bash
-
-För att använda reguljära uttryck i Bash behöver du först förstå den grundläggande syntaxen och reglerna för hur de fungerar. För att söka och matcha ett uttryck i en text måste du använda kommandot `grep` tillsammans med ett reguljärt uttryck. Här är ett exempel på hur man söker efter alla ord som börjar med bokstaven "s" i en textfil:
-
-```Bash
-cat textfil.txt | grep '^s'
-```
-Output:
-```
-sopa
-sol
-sjukhus
-```
-För att söka efter flera bokstäver eller ord kan du använda hakparenteser [] för att skapa en mönstergrupp. Till exempel, om du vill söka efter alla ord som börjar med antingen "hej" eller "håll" kan du använda följande reguljära uttryck:
+Först måste vi veta hur man väljer ett sökord eller ett mönster. För att göra det använder vi tecknet ```=` som betyder att vi vill extrahera en sträng. Här är ett exempel på ett regelbundet uttryck för att hitta en sträng som innehåller både bokstäver och siffror i en textfil:
 
 ```Bash
-cat textfil.txt | grep '^(hej|håll)'
-```
-Output:
-```
-hejda
-hej
-hållbart
-hållplats
+grep '[a-z0-9]' textfil.txt
 ```
 
-Det går också att använda reguljära uttryck för att ersätta text i en fil. Du kan göra det med hjälp av kommandot `sed` och det reguljära uttrycket inom en sista grupp. Här är ett exempel på hur man ersätter alla instanser av orden "god morgon" med "hej" i en textfil:
+Då kommer alla rader i textfilen som innehåller både bokstäver och siffror att visas. Om vi istället vill hitta en sträng som börjar med en siffra kan vi använda tecknet ```^``` före siffran:
 
 ```Bash
-sed -i 's/god morgon/hej/g' textfil.txt
+grep '^1' textfil.txt
 ```
 
-Det finns många fler möjligheter att använda reguljära uttryck inom Bash-programmering. Genom att lära dig mer om dess syntax och användningsområden kan du effektivisera ditt arbete och lösa problem på ett smidigare sätt.
+Detta kommer att visa alla rader i textfilen som börjar med siffran 1. Det finns också flera andra specialtecken som kan användas för att söka efter mer specifika mönster.
 
-## Djupdykning i reguljära uttryck
+## Djupdykning
+För att bli mer bekant med regelbundna uttryck är det en bra idé att titta på dokumentationen för Bash så att du lär dig alla tillgängliga alternativ och specialtecken. Här är en kort förklaring av några av de vanligaste specialtecknen:
 
-Reguljära uttryck är en del av POSIX-standard och används i många olika programmeringsspråk och verktyg. Inom Bash finns dock vissa begränsningar och skillnader i hur de tolkas jämfört med andra språk. Till exempel, så måste man använda en omvänd snedstreck innan specialtecken såsom +, (), {} för att tolkas korrekt.
+- ```*``` betyder att det föregående tecknet kan förekomma 0 eller flera gånger.
+- ```+``` betyder att det föregående tecknet måste förekomma minst en gång.
+- ```?``` betyder att det föregående tecknet är valfritt.
+- ```.``` betyder vilken som helst enskild karaktär.
+- ```[...]``` betyder en serie av annars okända tecken.
 
-Det finns också olika metakaraktärer som kan användas för olika syften i reguljära uttryck. Till exempel, används ^ för att matcha början av en rad, $ för att matcha slutet, * för att matcha noll eller flera gånger av ett uttryck och + för att matcha en eller flera gånger. Mer information om olika metakaraktärer och hur de kan användas finns tillgängligt i Rusells bok "The GNU Linux Command Line". 
+Det finns också mycket mer avancerade regelbundna uttryck som du kan utforska för att ta din kodning till nästa nivå. Genom att förstå regelbundna uttryck kan du effektivt hantera stora mängder data och uppnå önskat resultat på ett snabbt och enkelt sätt.
 
-## Se även
-
-- [The GNU Linux Command Line](http://www.linuxcommand.org/tlcl.php)
-- [Bash Regex tutorial](https://ryanstutorials.net/regular-expressions-tutorial/)
-- [Bash Quick Reference Guide](http://tldp.org/LDP/abs/html/x9644.html)
+## Se också
+- [Bash-dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [RegEx-tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Praktiska exempel på regelbundna uttryck i Bash](https://www.linuxjournal.com/content/bash-extended-globbing)

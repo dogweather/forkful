@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Å skrive tester"
+html_title:           "Swift: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -9,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Markdown
+# Hvorfor skrive tester i Swift?
 
-**Hvorfor**
+Mange utviklere tror at å skrive tester tar lengre tid og kan føles unødvendig. Men å skrive tester har mange fordeler, som å forbedre kodekvaliteten, forebygge feil og gjøre det enklere å vedlikeholde og utvide koden. Det kan også bidra til å identifisere og løse problemer tidligere i utviklingsprosessen.
 
-Testing er en viktig del av enhver programmeringsprosess, uansett språk. Å skrive tester kan bidra til å forbedre kvaliteten på koden din og redusere feil som kan oppstå. Det er derfor viktig for både nybegynnere og erfarne utviklere å forstå og beherske kunsten å skrive tester.
+# Slik skriver du tester i Swift
 
-**Hvordan**
-
-Det finnes flere ulike verktøy og teknikker for å skrive tester i Swift, men en enkel metode er å bruke Xcode's innebygde testrammeverk XCTest. Her er et eksempel på hvordan du kan skrive en enkel test for en funksjon som legger sammen to tall:
+Det første du trenger å gjøre er å importere XCTest frameworket, som er det offisielle testingrammeverket for Swift. Deretter kan du skrive dine tester ved å definere en klasse som arver fra `XCTestCase`. La oss se på et eksempel:
 
 ```Swift
-func addNumbers(a: Int, b: Int) -> Int {
-    return a + b
-}
+import XCTest
 
-// Test for å sjekke om funksjonen returnerer riktig verdi for to gitte tall
-class TestAddNumbers: XCTestCase {
-    func testAddNumbers() {
-        XCTAssertEqual(addNumbers(a: 5, b: 10), 15)
-    }
+class MyTests: XCTestCase {
+  func testAddition() {
+    let result = 2 + 2
+    XCTAssertEqual(result, 4)
+  }
 }
 ```
 
-I dette eksempelet bruker vi funksjonen `XCTAssertEqual` for å sammenligne den faktiske verdien fra `addNumbers` med den forventede verdien 15. Hvis testen feiler, vil Xcode vise en feilmelding og du kan enkelt identifisere hvor feilen ligger i koden din.
+I dette eksempelet definerer vi en testmetode `testAddition`, som utfører en enkel addisjonsoperasjon og sammenligner resultatet med forventet verdi ved hjelp av `XCTAssertEqual`-metoden. Du kan kjøre testene ved å trykke på knappen "Run" eller ved å bruke tastatursnarveien `Command + U`.
 
-Det er også viktig å inkludere både positive og negative test-scenarier for å sikre at koden din håndterer ulike tilfeller på en riktig måte.
+For å skrive effektive tester, bør du dekke ulike scenarioer og potensielle feil i koden din. Du kan også bruke `XCTAssert` og `XCTAssertThrowsError` for å teste om en gitt betingelse er oppfylt eller om en forventet feil blir kastet.
 
-**Dypdykk**
+# En dypere dykk i testing i Swift
 
-En dypere forståelse av testing i Swift innebærer å lære om begreper som enhetstesting, integrasjonstesting og ytelsestesting. Enhets- og integrasjonstesting er spesifikke typer av tester som fokuserer på ulike deler av koden din. Enhetstesting sjekker at hver enkelt funksjon eller modul fungerer som den skal, mens integrasjonstesting sjekker hvordan disse funksjonene og modulene samhandler med hverandre.
+Når du skriver tester i Swift, er det viktig å forstå hva som er den beste tilnærmingen for din kodebase. Du kan også utforske alternative testrammeverk, som Quick og Nimble, som tilbyr mer lesbar og beskrivende syntaks for utviklere.
 
-Ytelsestesting er viktig for å optimalisere koden din og sikre at den kjører så raskt som mulig. Her kan du bruke verktøy som Xcode's Profiler for å identifisere flaskhalser i koden din og forbedre ytelsen.
+Husk også at å skrive tester er en kontinuerlig prosess, og det er viktig å opprettholde og oppdatere testene dine etter hvert som koden din utvikler seg. Det kan også være lurt å implementere automatiserte tester som en del av CI/CD-prosessen for å sikre at koden din alltid er i en stabil og testet tilstand.
 
-Det er også viktig å forstå konseptet med "test-drevet utvikling", hvor du først skriver tester og deretter koden som skal bestå disse testene. Dette kan bidra til å skrive mer strukturert og feilfri kode.
+# Se også
 
-**Se også**
+Her er noen nyttige ressurser for å lære mer om testing i Swift:
 
-- [XCTest dokumentasjon](https://developer.apple.com/documentation/xctest)
-- [Test-drevet utvikling i Swift](https://www.raywenderlich.com/decoding-test-driven-development-in-swift)
-- [Swift-enheter og integrasjonstesting](https://www.swiftbysundell.com/articles/unit-testing-in-swift/)
-- [Optimalisering av Swift-kode ved hjelp av Xcode's Profiler](https://developer.apple.com/documentation/xcode/improving-your-app-s-performance)
+- [Offisiell dokumentasjon for XCTest](https://developer.apple.com/documentation/xctest)
+- [Quick and Nimble dokumentasjon](https://github.com/Quick/Quick)
+- [En guide til effektiv testing i Swift](https://www.swiftbysundell.com/articles/effective-unit-testing-in-swift/)
+- [Fra Swift til XCTest: En oversikt over iOS testingrammeverk](https://www.raywenderlich.com/7162-from-swift-to-xctest-an-introduction-to-ios-unit-testing)

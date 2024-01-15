@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skriving til standardfeil"
+html_title:           "Clojure: Skriving til standardfeil"
+simple_title:         "Skriving til standardfeil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,32 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standardfeil (standard error) i Clojure kode kan være en nyttig måte å feilsøke og kommunisere med utvikleren på. Det lar deg informere om feilmeldinger, advarsler og andre viktige meldinger som er viktige for å forstå og løse problemer i koden din.
+Skjermede programmeringsspråk har en tendens til å skjule feil og krasjer fra brukeren. Dette gjør debugging vanskeligere og kan føre til frustrasjon hos utviklere. Ved å skrive til standard error, kan feilmeldinger og krasjer vises tydelig, noe som gjør det enklere å identifisere og løse problemer under utviklingsprosessen.
 
-## Slik gjør du det
-
-For å skrive til standardfeil i Clojure, bruker du funksjonen `println` og angir `System/err` som første parameter. Dette forteller Clojure at du vil skrive til standardfeil i stedet for standard utgang (standard out). Her er et eksempel på hvordan du kan bruke denne funksjonen:
+## Hvordan du gjør det
 
 ```Clojure
-(println System/err "Dette er en feilmelding som vil bli skrevet til standardfeil")
+(System/setErr (java.io.PrintWriter. (System/err))) ;Setter standard error til å bruke PrintWriter
+
+(System/err :println "Feilmelding her") ;Skriver til standard error
+
 ```
-
-Output vil se slik ut:
-
-```Clojure
-Dette er en feilmelding som vil bli skrevet til standardfeil
+Output:
 ```
-
-I tillegg til `println` funksjonen kan du også bruke `eprintln` funksjonen for å skrive til standardfeil. Forskjellen er at `eprintln` automatisk legger til en linjeskift på slutten, så du trenger ikke å legge til det selv som i eksempelet over.
+Feilmelding her
+```
 
 ## Dypdykk
 
-Når du skriver til standardfeil i Clojure, er det viktig å merke seg at meldingene dine vil bli skrevet til terminalen der koden din blir kjørt. Dette betyr at du kan se feilmeldinger og andre meldinger i sanntid når du kjører koden din.
-
-En annen viktig ting å huske på er at du bør unngå å bruke standardfeil til å legge til logging i koden din. Dette kan føre til at feilmeldinger og andre viktige meldinger blir oversett og blandet sammen med loggingen din.
+Når du skriver til standard error, er det viktig å merke seg at feilmeldinger og krasjer som vises, også vil vises for brukeren av programmet. Derfor bør du begrense bruken av dette til utviklingsstadiet, og heller bruke standard output når programmet er klart for brukere. Du kan også styre hvordan feilmeldinger og krasjer vises ved å bruke forskjellige formateringsfunksjoner som `format` og `println` i kombinasjon med `System/err`.
 
 ## Se også
 
-- [Clojure dokumentasjonen om standardfeil](https://clojuredocs.org/clojure.core/println)
-- [En grundig guide til Clojure feilsøking](https://technomancy.us/149)
-- [En introduksjon til Clojure logging](https://clojure.org/guides/logging)
+- [Logging i Clojure](https://clojure.org/guides/logging)
+- [System Vars i Clojure](https://clojuredocs.org/clojure.core/binding)

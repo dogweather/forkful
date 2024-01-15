@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Swift recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,61 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common practice in programming when handling large amounts of data or when needing to save data temporarily. It allows for more efficient memory management and can help prevent data corruption.
+There are many reasons why you might need to create a temporary file while coding in Swift. Some common use cases include storing intermediate data, testing functions, and managing file operations.
 
 ## How To
 
-Creating a temporary file in Swift is a straightforward process. First, we need to import the Foundation framework, which contains the necessary APIs for creating and manipulating files.
+To create a temporary file in Swift, we will be using the `FileManager` and `URL` classes. Here's a simple example of how to do it:
 
-Next, we will use the `NSTemporaryDirectory()` function to get the temporary directory path. This path will be different for each user, so this ensures that our code will work for any user.
-
-```
-Swift
+```Swift
+// Import the necessary frameworks
 import Foundation
+import Cocoa // Only needed if you're using macOS APIs
 
-let temporaryDirectory = NSTemporaryDirectory()
-print("Temporary directory path: \(temporaryDirectory)")
-```
+// Create a temporary file in the system's temporary directory
+let tempURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp.txt")
 
-The output of this code will be the path to the temporary directory for your user. In my case, the output was: `/var/folders/7j/l0psfk9s02lbpdy_20h43crc0000gn/T/`.
-
-Next, we will use the `URL` class to create a temporary file in the temporary directory. The `URL` class allows us to create, move, and manipulate files.
-
-```
-Swift
-if let url = URL(fileURLWithPath: temporaryDirectory).appendingPathComponent("myTempFile.txt") {
-    let data = "This is a temporary file".data(using: .utf8)
-    do {
-        try data?.write(to: url)
-        print("Temporary file created successfully")
-    } catch {
-        print("Error creating temporary file: \(error)")
-    }
-}
-```
-
-In the above code, we are creating a `URL` object and using the `appendingPathComponent()` function to add the file name we want to use. Then, we are providing some sample data (in this case, a string) and using the `write(to:)` function to write the data to the temporary file. Finally, we handle any errors that may occur.
-
-To delete the temporary file, we can simply use the `FileManager` class and the `removeItem(at:)` function.
-
-```
-Swift
-let fileManager = FileManager.default
+// Write some content to the file
+let content = "This is a temporary file."
 do {
-    try fileManager.removeItem(at: url)
-    print("Temporary file deleted")
+    try content.write(to: tempURL, atomically: true, encoding: .utf8)
 } catch {
-    print("Error deleting temporary file: \(error)")
+    print("Error writing to file: \(error)")
+}
+
+// Read the content from the file
+do {
+    let tempContent = try String(contentsOf: tempURL, encoding: .utf8)
+    print(tempContent) // Should print "This is a temporary file."
+} catch {
+    print("Error reading from file: \(error)")
+}
+
+// Delete the temporary file
+do {
+    try FileManager.default.removeItem(at: tempURL)
+} catch {
+    print("Error deleting file: \(error)")
 }
 ```
+
+In the above code, we first import the `Foundation` and `Cocoa` frameworks. Then, we create a `URL` object for the temporary directory using the `NSTemporaryDirectory()` function and append a filename to it. Next, we write some content to the file using the `write` method and read it back using the `contentsOf` method. Finally, we use the `removeItem` method of `FileManager` to delete the temporary file.
 
 ## Deep Dive
 
-Behind the scenes, temporary files are created in the system's temporary directory and are automatically deleted when the system restarts. However, it's still good practice to delete temporary files once we are done with them to avoid cluttering the system's temporary directory.
-
-It's also worth noting that temporary files are not a secure way to store sensitive data. They can be accessed and read by other users on the same system. Therefore, it's best to avoid saving any confidential information in temporary files.
+Creating a temporary file is useful when you need to store some data temporarily and don't want to clutter the user's device with unnecessary files. In terms of security, temporary files are also safer as they are automatically deleted when the application terminates. It's important to note that the location of the temporary directory may differ depending on the platform (e.g. iOS, macOS, etc.), so it's always a good idea to use the `NSTemporaryDirectory` function to get the correct path.
 
 ## See Also
 
-- [Working with URLs in Swift](https://developer.apple.com/documentation/foundation/url)
-- [Foundation Framework](https://developer.apple.com/documentation/foundation)
+- [Apple's Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Apple's Documentation on URL](https://developer.apple.com/documentation/foundation/url)
+- [Swift Language Guide: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

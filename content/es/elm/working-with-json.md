@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Elm: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,85 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON en Elm
+## ¿Por qué trabajar con JSON en Elm?
 
-En la programación moderna, trabajar con datos es una parte fundamental de cualquier proyecto. Y en Elm, JSON es la forma más común de intercambiar y manipular datos. Aprender a trabajar con JSON en Elm puede mejorar significativamente tus habilidades de programación y ampliar tus posibilidades de creación de aplicaciones.
+JSON (JavaScript Object Notation) es un formato ligero y fácil de entender para el intercambio de datos. Al trabajar con Elm, un lenguaje de programación funcional y declarativo, el uso de JSON es beneficioso ya que nos permite manejar y manipular datos de manera eficiente y segura.
 
 ## Cómo hacerlo
 
-Para empezar, es importante entender cómo Elm maneja los datos en general. En Elm, los datos se representan en forma de árbol, lo que permite una forma eficiente y segura de manipularlos. Para trabajar con JSON, tenemos que convertirlo a un valor de Elm. Por ejemplo, si tenemos el siguiente JSON:
+Para trabajar con JSON en Elm, primero debemos importar el módulo `Json.Decode` en nuestro archivo. Este módulo nos proporciona funciones para convertir datos en formato JSON a tipos de datos nativos de Elm.
 
 ```Elm
-{
-    "nombre": "Sofía",
-    "edad": 28,
-    "hobbies": ["leer", "cocinar", "viajar"]
-}
+import Json.Decode exposing (..)
 ```
 
-Podemos convertirlo a un valor de Elm de la siguiente manera:
+Una vez que tenemos el módulo importado, podemos utilizar la función `decodeValue` para convertir nuestro JSON en un tipo de dato Elm específico.
 
 ```Elm
-usuario =
-    {
-        nombre = "Sofía",
-        edad = 28,
-        hobbies = ["leer", "cocinar", "viajar"]
-    }
+decodeValue : Decoder a -> Value -> Result String a
 ```
 
-Ahora podemos acceder a los valores del usuario de la siguiente manera:
+Aquí, `a` representa el tipo de dato que queremos obtener. Por ejemplo, si nuestro JSON es una lista de objetos que representan libros, podríamos utilizar un `Decoder` para convertirlos en un tipo de dato `List Book` (donde `Book` es un tipo de dato personalizado que representa un libro).
 
 ```Elm
-nombre = usuario.nombre
-edad = usuario.edad
-hobbie1 = List.head usuario.hobbies
+type alias Book =
+  { title : String
+  , author : String
+  , year : Int
+  }
+
+bookDecoder : Decoder Book
+bookDecoder =
+  map3 Book
+    (field "title" string)
+    (field "author" string)
+    (field "year" int)
+
+jsonString = """
+[
+  { "title": "1984", "author": "George Orwell", "year": 1949 },
+  { "title": "To Kill a Mockingbird", "author": "Harper Lee", "year": 1960 },
+  { "title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813 }
+]
+"""
+
+books = jsonString |> decodeString (list bookDecoder)
 ```
 
-También podemos actualizar los valores del usuario y convertirlos de nuevo a JSON utilizando la función `encode`:
-
-```Elm
-usuarioModificado = 
-    {
-        usuario | edad = 29
-    }
-nuevoJSON = Json.Encode.encode 4 usuarioModificado
-```
+El resultado de `books` sería una lista de libros, donde cada elemento es un valor del tipo `Book`.
 
 ## Profundizando
 
-Trabajar con JSON en Elm no se limita solo a convertir y manipular datos. Elm también tiene funciones útiles para validar y decodificar JSON. Por ejemplo, si tenemos un JSON que representa una lista de usuarios, podemos validar y decodificarlo de la siguiente manera:
+Además de las funciones `decodeValue` y `decodeString`, el módulo `Json.Decode` también proporciona otras funciones útiles para trabajar con JSON en Elm, como `map`, `andThen` y `oneOf` que nos permiten manejar errores y casos especiales de forma elegante y segura.
 
-```Elm
-usuariosJSON = 
-    """
-    [{
-        "nombre": "Sofía",
-        "edad": 28
-    },
-    {
-        "nombre": "Juan",
-        "edad": 32
-    }]
-    """
+Además, también podemos utilizar el módulo `Json.Encode` para convertir nuestros tipos de datos Elm en formato JSON, lo que nos permite enviar y recibir datos desde una API o servidor externo.
 
-type alias Usuario = 
-    {
-        nombre : String,
-        edad : Int
-    }
-    
-usuariosDecodificados = 
-    let 
-        decodificador = Json.Decode.list (Json.Decode.map2 Usuario 
-            (Json.Decode.field "nombre" Json.Decode.string) 
-            (Json.Decode.field "edad" Json.Decode.int))
-    in Json.Decode.decodeString decodificador usuariosJSON
-```
-
-En el ejemplo anterior, utilizamos el decodificador `list` para obtener una lista de valores decodificados, y la función `map2` para crear una nueva instancia del tipo `Usuario`. Luego, utilizamos `decodeString` para decodificar los datos del JSON.
+Para obtener más información y detalles sobre cómo trabajar con JSON en Elm, se recomienda consultar la documentación oficial y ejemplos de código.
 
 ## Ver también
 
-- Documentación oficial de JSON en Elm: https://guide.elm-lang.org/effects/json.html
-- Ejemplos de decodificación de JSON en Elm: https://github.com/brianthicks/elm-decode-examples
+- Documentación oficial de Elm sobre JSON: https://package.elm-lang.org/packages/elm/json/latest/
+- Ejemplos de código: https://github.com/elm/json/tree/1.1.3/examples

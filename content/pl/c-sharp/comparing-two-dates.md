@@ -1,5 +1,6 @@
 ---
-title:                "C#: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "C#: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C#"
 category:             "C#"
@@ -11,46 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak porównać dwie daty w programowaniu? Porównywanie dat jest bardzo ważnym elementem wielu aplikacji i może być codziennym wyzwaniem dla programistów. W tym wpisie dowiesz się, dlaczego porównywanie dat jest ważne i jak możesz to zrobić w języku C#.
+Porównywanie dwóch dat może być przydatne w wielu przypadkach. Może pomóc w ustalaniu, czy dana data jest przed, po czy też w tym samym dniu co inna data. Może również być wykorzystane w logice biznesowej lub w analizowaniu trendów czasowych.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Sprawdzanie, czy jedna data jest wcześniejsza, późniejsza lub równa drugiej, jest zazwyczaj jednym z podstawowych zadań programistów w aplikacjach. W języku C#, możemy wykorzystać kilka metod i funkcji, aby porównać dwie daty. Oto przykładowy kod, który pokazuje, jak możesz to zrobić:
+Porównywanie dat w języku C# jest bardzo proste i wymaga jedynie wykorzystania kilku wbudowanych funkcji. Poniżej znajdują się przykładowe kody i wyniki dla różnych scenariuszy porównywania dwóch dat.
 
 ```C#
-DateTime data1 = new DateTime(2021, 10, 25);
-DateTime data2 = new DateTime(2021, 11, 2);
+// Przykład 1: Porównywanie dat w tym samym dniu
 
-if (data1.CompareTo(data2) > 0)
-{
-    Console.WriteLine("Data1 jest późniejsza niż data2");
-}
-else if (data1.CompareTo(data2) < 0)
-{
-    Console.WriteLine("Data1 jest wcześniejsza niż data2");
-}
-else
-{
-    Console.WriteLine("Data1 jest równa data2");
-}
+DateTime data1 = new DateTime(2021, 5, 12);
+DateTime data2 = new DateTime(2021, 5, 12);
 
-// Wynik:
-// Data1 jest wcześniejsza niż data2
+if (data1.Equals(data2)) {
+    Console.WriteLine("Daty są identyczne.");
+}
+// Output: Daty są identyczne.
+
+// Przykład 2: Porównywanie pomiędzy datami przed i po
+
+DateTime data1 = new DateTime(2021, 5, 10);
+DateTime data2 = new DateTime(2021, 5, 12);
+
+if (data1 < data2) {
+    Console.WriteLine("Data 1 jest wcześniejsza niż data 2.");
+} else if (data1 > data2) {
+    Console.WriteLine("Data 1 jest późniejsza niż data 2.");
+} else {
+    Console.WriteLine("Daty są identyczne.");
+}
+// Output: Data 1 jest wcześniejsza niż data 2.
+
+// Przykład 3: Porównywanie dat z wykorzystaniem DataTime.Compare()
+
+DateTime data1 = new DateTime(2021, 5, 10);
+DateTime data2 = new DateTime(2021, 5, 12);
+
+int wynik = DateTime.Compare(data1, data2);
+
+if (wynik < 0) {
+    Console.WriteLine("Data 1 jest wcześniejsza niż data 2.");
+} else if (wynik > 0) {
+    Console.WriteLine("Data 1 jest późniejsza niż data 2.");
+} else {
+    Console.WriteLine("Daty są identyczne.");
+}
+// Output: Data 1 jest wcześniejsza niż data 2.
 ```
-
-Korzystamy tutaj z metody CompareTo() klasy DateTime, która zwraca wartość dodatnią, jeśli data1 jest późniejsza niż data2, wartość ujemną, jeśli jest wcześniejsza, a zero, jeśli są równe. Możemy również skorzystać z innych metod, takich jak Compare(), Equals() lub operatorów logicznych (>, <, ==) do porównywania dat.
 
 ## Deep Dive
 
-Podczas porównywania dat w języku C#, należy pamiętać o kilku istotnych kwestiach. Po pierwsze, różne kalendarze i strefy czasowe mogą wpłynąć na porównywanie dat. Dlatego ważne jest, aby używać odpowiednich metod do konwersji dat między różnymi strefami lub kalendarzami, jeśli jest to potrzebne.
+W języku C# porównywanie dat odbywa się na podstawie wartości obiektów DateTime. W przykładzie 1 wykorzystano metodę Equals(), która porównuje wartości daty wraz z informacją o czasie. W przypadku, gdy zależy nam jedynie na porównaniu dat, można wykorzystać metodę Date.Equals(). Ponadto, można również wykorzystać operatory porównania ">, < lub ==".
 
-Kolejnym ważnym aspektem jest uwzględnienie czasu w porównywaniu dat. Czas może wpłynąć na wynik porównania, szczególnie jeśli daty są bardzo blisko siebie. W takiej sytuacji, lepiej jest użyć metody Compare(), która porównuje również czas.
+W przykładzie 2 wykorzystano operatory porównania, jednak może to stwarzać pewne problemy w przypadku, gdy daty są identyczne, ale różnią się informacją o czasie. Dlatego też lepszym rozwiązaniem jest wykorzystanie metody Compare(), która zwraca wartość ujemną, jeśli pierwsza data jest wcześniejsza, wartość dodatnią, jeśli jest późniejsza lub 0, jeśli daty są identyczne.
 
-Ostatnią ważną kwestią jest użycie odpowiednich typów danych. W języku C#, istnieje kilka typów danych związanych z datami, takich jak DateTime i DateTimeOffset. Ważne jest, aby wybrać odpowiedni typ zależnie od naszych potrzeb i pamiętać o konwersji, jeśli są one wymagane.
-
-## Zobacz również
-
-- [Microsoft Dokumentacja o porównywaniu dat w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.compareto)
-- [Porównywanie dat w języku C# - artykuł na portalu C# Corner](https://www.c-sharpcorner.com/article/comparing-dates-in-c-sharp/)
-
-Dzięki temu artykułowi, powinieneś teraz lepiej zrozumieć, dlaczego porównywanie dat jest ważne i jak możesz to zrobić w języku C#. Bądź świadomy różnych aspektów, które mogą wpłynąć na wynik porównywania dat, i wybieraj odpowiednie metody i typy danych dla swoich potrzeb.
+## Zobacz także
+- [Porównywanie dat w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.compare?view=net-5.0)
+- [Wykorzystanie daty w języku C#](https://www.tutorialsteacher.com/csharp/csharp-datetime)
+- [Przeciążanie metod Equals() i Compare() w klasie DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.equals?view=net-5.0)

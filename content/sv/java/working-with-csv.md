@@ -1,5 +1,6 @@
 ---
-title:                "Java: Arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Java: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Java"
 category:             "Java"
@@ -11,55 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-CSV (Comma Separated Values) är ett populärt format för att lagra och dela tabellbaserad data. Genom att arbeta med CSV-filer kan vi enkelt organisera och manipulera stora mängder data. I denna bloggpost kommer vi att utforska hur man kan arbeta med CSV-filer i Java.
+CSV (Comma Separated Values) är en vanlig filformat som används för att lagra och överföra data i en tabellform. Det är ett mycket användbart verktyg för att hantera stora datamängder, och det är också enkelt att arbeta med i Java-programmering.
 
-## Så här
+## Hur man gör
 
-För att hantera CSV-filer i Java behöver vi använda oss av en tredjepartsbiblioteket som heter "OpenCSV". Vi kan ladda ned biblioteket från deras hemsida eller använda Maven för att inkludera det i vårt projekt. Efter att ha inkluderat biblioteket kan vi använda klassen "CSVReader" för att läsa in en CSV-fil och spara den i en Array eller en List.
+För att använda CSV-filer i Java behöver du först importera biblioteket "java.io.*". Sedan kan du läsa och skriva till CSV-filer genom att följa dessa enkla steg:
+
+1. Skapa en "Fil" objekt med sökvägen till din CSV-fil som argument.
+2. Skapa en "Scanner" objekt för att läsa in datan från filen.
+3. Använd en loop för att läsa in rad för rad från filen, och använda metoden "split()" för att dela upp datan baserat på skiljetecken (vanligtvis kommatecken i en CSV-fil).
+4. Använda "split()" igen för att dela upp varje rad i enskilda dataelement.
+5. Skapa en "FileWriter" objekt för att skriva till en CSV-fil.
+6. Använd en loop för att skriva ut varje rad till filen, med rätt skiljetecken mellan varje dataelement.
+7. Stäng filen när du är klar.
+
+Ett enkelt exempel på hur du läser in och skriver till en CSV-fil kan se ut så här:
 
 ```Java
-// Importera nödvändiga paket
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
-import com.opencsv.CSVReader;
-
-public class CSVExample {
-
+public class CsvExample {
     public static void main(String[] args) {
-        // Läs in CSV-filen med hjälp av CSVReader
-        try (CSVReader reader = new CSVReader(new FileReader("example.csv"))) {
-            // Använda readAll() för att läsa in hela filen i en lista
-            List<String[]> data = reader.readAll();
-            // Loopa igenom listan och skriv ut varje rad
-            for (String[] row : data) {
-                System.out.println(Arrays.toString(row));
+        // Skapa en Scanner för att läsa in från filen
+        File file = new File("minfil.csv");
+        Scanner scanner = new Scanner(file);
+
+        // Skapa en FileWriter för att skriva till filen
+        FileWriter writer = new FileWriter("nyfil.csv");
+
+        // Läs in raderna från filen
+        while (scanner.hasNextLine()) {
+            // Dela upp raden baserat på kommatecken
+            String[] data = scanner.nextLine().split(",");
+
+            // Skriv ut varje dataelement med ett semikolon som skiljetecken
+            for (String element : data) {
+                writer.write(element + ";");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            // Lägg till en ny rad i filen
+            writer.write("\n");
         }
+
+        // Stäng filerna
+        scanner.close();
+        writer.close();
     }
 }
 ```
-#### Exempeloutput:
-```
-["Namn", "Ålder", "Land"]
-["Lisa", "32", "Sverige"]
-["John", "45", "USA"]
-["Anna", "23", "Tyskland"]
-```
 
-
-Genom att använda oss av olika metoder i "CSVReader" kan vi också filtrera, sortera och manipulera data innan vi sparar den i en lista eller Array.
+Exemplet ovan läser in en CSV-fil och skriver ut datan från filen till en ny CSV-fil med ett semikolon som skiljetecken mellan varje dataelement.
 
 ## Djupdykning
 
-CSV-filer är vanligtvis enkelt strukturerade och innehåller endast text och numeriska värden. Detta gör det enkelt för oss att läsa in och bearbeta data utan att behöva hantera komplexa datastrukturer. Det är också ett mycket populärt format för att exportera och importera data mellan olika program och system.
+När man arbetar med CSV-filer i Java är det viktigt att vara medveten om några möjliga problem som kan uppstå. Ett vanligt problem är när datan innehåller skiljetecken, vilket kan leda till att datan tolkas felaktigt när den delas upp med "split()". Ett sätt att lösa detta är att använda en annan separator (t.ex. tabb eller kolontecken) eller att använda citationstecken runt datan som innehåller skiljetecken.
 
-När vi arbetar med CSV i Java är det viktigt att komma ihåg att hantera eventuella specialtecken eller teckenkodningar, särskilt om datafilen innehåller flera språk eller specialtecken. Det är också viktigt att alltid stänga "CSVReader" efter användning för att undvika läckor eller felaktig hantering av filressurser.
+En annan sak att vara medveten om är att "split()" metoden returnerar en "String[]" array av datatyper. Om datan du arbetar med innehåller olika datatyper (t.ex. både strängar och numeriska värden), kan det vara bättre att använda en CSV-parser för att kunna hantera datan på ett mer flexibelt sätt.
 
-## Se också
+Det finns flera tredjepartsbibliotek som gör det enklare att arbeta med CSV-filer i Java, exempelvis OpenCSV och Apache Commons CSV. Dessa bibliotek erbjuder mer avancerade funktioner som möjligheten att direkt mappa en CSV-fil till ett objekt i Java, eller att hantera felaktig formaterad data på ett mer effektivt sätt.
 
-- [OpenCSV hemsida](http://opencsv.sourceforge.net/)
-- [Apache Commons CSV dokumentation](https://commons.apache.org/proper/commons-csv/index.html)
+## Se även
+
+- [OpenCSV](http://opencsv.sourceforge.net/)
+- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/)

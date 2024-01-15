@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sending en Http-forespørsel med grunnleggende autentisering"
+html_title:           "Bash: Sending en Http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending en Http-forespørsel med grunnleggende autentisering"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,30 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende en HTTP forespørsel med grunnleggende autentisering kan være nyttig når du ønsker å få tilgang til et ressurs som krever autentisering via et brukernavn og passord. Dette kan for eksempel være å hente data fra en API eller å logge inn på en nettside.
+Hvis du noen gang har lurt på hvordan du kanskje kan få tilgang til et passordbeskyttet nettsted ved hjelp av et enkelt kommandolinjeverktøy, eller automatisere en prosess med å sende informasjon til et nettsted via HTTP, så er dette artikkelen for deg. Basic authentication er en enkel måte å sende HTTP-forespørsler med godkjenning, og ved å bruke Bash kan du enkelt implementere dette i dine egne prosjekter.
 
 ## Hvordan
 
-Det er enkelt å sende en HTTP forespørsel med grunnleggende autentisering ved hjelp av Bash programmering. Følg disse trinnene for å implementere det:
-
-1. Lag et curl-kommando som inkluderer brukernavn og passord i en form av "brukernavn:passord". Merk at dette er base64-kodet, så du må konvertere brukernavn og passord til base64-format først. Eksempel: ```curl --user "dittBrukernavn:dittPassord"```
-2. Legg til URL-en du vil sende forespørselen til. Eksempel: ```-X GET https://api.example.com```
-3. Kjør kommandoen og se på outputen for å være sikker på at autentiseringen er vellykket. Outputen bør vise data fra forespørselen hvis alt gikk greit.
-
-Et eksempel på hvordan en slik curl-kommando kan se ut i sin helhet:
+For å sende en HTTP-forespørsel med basic authentication i Bash, må du først sette opp variabler for din brukernavn og passord:
 
 ```Bash
-curl --user "dittBrukernavn:dittPassord" -X GET https://api.example.com
+username="brukernavn"
+password="passord"
 ```
 
-## Dypdykk
+Deretter kan du bruke curl-kommandoen til å sende en GET-forespørsel til et nettsted med basic authentication:
 
-For å forstå hvordan denne prosessen fungerer dypere, er det viktig å vite at grunnleggende autentisering er en enkel metode for autentisering som er basert på brukernavn og passord. Når du sender en HTTP forespørsel med en autentiseringsheader, blir dette informasjonen base64-kodet før det sendes til serveren. Serveren vil da dekode denne informasjonen og validere om brukernavn og passord er riktig.
+```Bash
+curl --user "$username:$password" www.eksempelnettsted.com
+```
 
-En annen viktig ting å merke seg er at grunnleggende autentisering ikke krypterer informasjonen som sendes, så det er ikke en veldig sikker metode for autentisering. Det anbefales å bruke andre metoder som OAuth eller API nøkler for å sikre autentiseringen.
+Dette vil returnere en respons fra nettstedet som du kan viderebehandle eller lagre i en variabel for senere bruk.
 
-## Se også
+## Deep Dive
 
-- [Bash curl dokumentasjon](https://curl.se/docs/manpage.html)
-- [OAuth autentisering](https://oauth.net/)
-- [Sikker autentisering](https://www.owasp.org/index.php/Authentication_Cheat_Sheet)
+Basic authentication er en metode for godkjenning i HTTP-protokollen ved å sende brukernavn og passord i klartekst via HTTP-headerene. Dette er en enkel og vanlig måte å beskytte nettstedsressurser på, men er ikke en like sikker løsning som HTTPS. Derfor bør du kun bruke basic authentication hvis du er trygg på at informasjonen som sendes via HTTP er ikke-kritisk.
+
+Det er også viktig å merke seg at basic authentication ikke gir noen form for kryptering eller beskyttelse mot man-in-the-middle-angrep. Det er derfor viktig å vurdere bruken av HTTPS i tillegg hvis du trenger ekstra sikkerhet for dine HTTP-forespørsler.
+
+## Se også 
+
+- [Curl Documentation](https://curl.haxx.se/docs/) 
+- [HTTP Basic Authentication Explained](https://medium.com/@nishant6167/http-basic-authentication-explained-c4c06206777e) 
+- [Bash scripting cheatsheet](https://devhints.io/bash)

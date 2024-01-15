@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Obtendo a data atual"
+title:                "Obtendo a data atual"
+html_title:           "PHP: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual é importante na programação PHP?
+## Por que
 
-Obter a data atual em um programa PHP é extremamente importante para uma variedade de tarefas, como gerenciamento de dados, rastreamento de eventos e agendamento de tarefas. Além disso, a data atual pode ser usada para criar pagamentos automáticos, notificações de prazos e muito mais. É uma função essencial na maioria dos aplicativos e sites modernos.
+Você já se perguntou como muitos sites e aplicativos mostram a data atual? A resposta simples é que eles usam recursos de programação para obter a data atual e exibi-la em um formato legível para os usuários. Neste artigo, vamos falar sobre como você pode fazer isso usando o PHP, a linguagem de script do lado do servidor mais popular e versátil.
 
-## Como obter a data atual em PHP?
+## Como fazer
 
-A maneira mais simples de obter a data atual em PHP é usando a função `date()`. Esta função permite que você especifique o formato da data que deseja obter e retornará a data atual no formato especificado. Veja o exemplo abaixo:
+Para obter a data atual em PHP, você pode usar a função nativa `date()`. Esta função aceita dois parâmetros: um formato de data e um carimbo de data e hora opcional. Aqui está um exemplo de como usar a função `date()` para mostrar a data atual em formato simples:
 
-```
+```PHP
 <?php
-$data = date('d/m/Y');
-echo $data; // output: 14/07/2021
+echo "Hoje é: " . date("d/m/Y");
+?>
+// Output: Hoje é: 30/06/2020
 ```
 
-Você também pode usar outros caracteres específicos para formatar a data de acordo com suas necessidades. Por exemplo, `D` retorna o dia abreviado da semana (ex: Wed), `M` retorna o mês abreviado (ex: Jul) e `Y` retorna o ano com 4 dígitos (ex: 2021). Você pode encontrar uma lista completa de caracteres de formatação em [PHP Manual](https://www.php.net/manual/en/function.date.php).
+Você também pode personalizar o formato de data de acordo com suas preferências. Por exemplo, se você quiser mostrar a data por extenso, pode usar o seguinte formato:
 
-## Mergulho profundo
+```PHP
+<?php
+echo "Hoje é: " . date("d \\d\\e F \\d\\e Y");
+?>
+// Output: Hoje é: 30 de junho de 2020
+```
 
-Além da função `date()`, o PHP também possui outras funções para manipular e trabalhar com datas, como `strtotime()` e `mktime()`. A função `strtotime()` converte uma string de data em um timestamp UNIX, que pode ser usado para comparar datas ou realizar cálculos. Já a função `mktime()` retorna um timestamp UNIX com base nos valores especificados para hora, minuto, segundo, mês, dia e ano.
+Você pode ver uma lista completa de formatos de data possíveis na documentação oficial do PHP.
 
-Também é importante lembrar que o PHP trabalha com fusos horários e configurações de data globais. Você pode especificar o fuso horário a ser usado em seu código usando a função `date_default_timezone_set()`. Além disso, o PHP permite que você altere o formato de data global usando a função `setlocale()`.
+## Deep Dive
+
+Você pode estar se perguntando como o PHP obtém a data atual. Na verdade, o PHP se baseia no relógio do servidor para obter a data e hora atual. Isso significa que, se a data e hora do servidor estiverem incorretas, sua função `date()` também estará incorreta.
+
+Além disso, você também pode usar outras funções de data e hora, como `time()`, para obter o carimbo de data e hora atual em segundos. Isso é útil quando você precisa fazer cálculos ou comparar datas.
+
+Além disso, é importante notar que a função `date()` sempre retorna a data e hora atual com base no fuso horário do servidor. Portanto, se você estiver em um fuso horário diferente, precisará configurá-lo manualmente usando a função `date_default_timezone_set()`.
 
 ## Veja também
-- [Documentação oficial do PHP sobre a função date](https://www.php.net/manual/en/function.date.php)
-- [Tutorial sobre como trabalhar com datas em PHP](https://www.php.net/manual/en/datetime.settimezone.php)
-- [Artigo sobre os fusos horários em PHP](https://www.php.net/manual/en/datetime.settimezone.php)
+
+- [Documentação oficial do PHP sobre a função `date()`](https://www.php.net/manual/pt_BR/function.date.php)
+- [Lista completa de formatos de data em PHP](https://www.php.net/manual/pt_BR/datetime.format.php)
+- [Função `time()` em PHP](https://www.php.net/manual/pt_BR/function.time.php)
+- [Como alterar o fuso horário em PHP](https://www.php.net/manual/pt_BR/function.date-default-timezone-set.php)
+
+Esperamos que este artigo tenha sido útil para você entender como obter a data atual em PHP e como personalizar seu formato. Se você quiser saber mais sobre programação em PHP, recomendamos consultar a documentação oficial e experimentar diferentes funções para melhorar suas habilidades de programação. Até a próxima!

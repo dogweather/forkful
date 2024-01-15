@@ -1,6 +1,7 @@
 ---
-title:                "Java: Надіслання http-запиту з базовою аутентифікацією."
-simple_title:         "Надіслання http-запиту з базовою аутентифікацією."
+title:                "Надсилання HTTP-запиту з основною аутентифікацією"
+html_title:           "Java: Надсилання HTTP-запиту з основною аутентифікацією"
+simple_title:         "Надсилання HTTP-запиту з основною аутентифікацією"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,72 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Почему
-
-Цей блог пост написаний для тих, хто хоче навчитися відправляти HTTP-запит з базовим аутентифікацією в своїй Java програмі. Деякі веб-сервіси захищені базовою аутентифікацією, тому вміння це робити допоможе вам отримувати доступ до цих сервісів і виконувати запити.
+## Чому
+Цей процес - необхідна частина багатьох веб-додатків і служб для доступу до захищених даних та інформації. Використання базової аутентифікації дозволяє вам передавати логін та пароль у зашифрованому вигляді, тим самим забезпечуючи безпеку ваших даних.
 
 ## Як
+```java
+// Для відправлення HTTP-запиту з базовою аутентифікацією, спочатку необхідно створити об'єкт типу HttpURLConnection
+URL url = new URL("http://example.com/api");
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-Найпростішим способом відправити HTTP-запит з базовим аутентифікацією в Java є використання стандартного пакету `java.net` та класу `HttpURLConnection`.
+// Встановіть HTTP-метод і заголовок "Authorization" з логіном та паролем у форматі "Basic"
+connection.setRequestMethod("GET");
+String basicAuth = "Basic " + Base64.getEncoder().encodeToString("логін:пароль".getBytes());
+connection.setRequestProperty("Authorization", basicAuth);
 
-Приклад коду:
+// Отримайте відповідь із запиту
+int responseCode = connection.getResponseCode();
 
-```Java
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.OutputStream;
-import java.util.Base64;
-
-String url = "http://example.com/api";
-String username = "myusername";
-String password = "mypassword";
-
-URL obj = new URL(url);
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-// Додаємо заголовки для базової аутентифікації
-String auth = username + ":" + password;
-String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
-String basicAuth = "Basic " + encodedAuth;
-con.setRequestProperty("Authorization", basicAuth);
-
-// Налаштовуємо метод і параметри запиту
-con.setRequestMethod("GET");
-con.setDoOutput(true);
-
-// Відправляємо запит
-OutputStream os = con.getOutputStream();
-os.flush();
-os.close();
-
-// Отримуємо відповідь в форматі тексту
-int responseCode = con.getResponseCode();
-System.out.println("Відповідь: " + responseCode + " " + con.getResponseMessage());
-String response = con.getResponseMessage();
-
-// Виводимо результат
-System.out.println(response);
+// Виведіть код відповіді та повідомлення у консолі
+System.out.println("Response Code: " + responseCode);
+System.out.println("Response Message: " + connection.getResponseMessage());
 ```
 
-Результат виконання цього коду буде виглядати приблизно так:
+Завдяки цьому коду, ви зможете прикладати HTTP-запити з базовою аутентифікацією і обробляти отримані дані.
 
+**Вихід:**
+
+```java
+Response Code: 200
+Response Message: OK
 ```
-Відповідь: 200 OK
-{
-  "message": "Success!"
-}
-```
 
-## Заглиблення
+## Глибоке занурення
+Система базової аутентифікації використовує заголовок "Authorization" для передавання у зашифрованому вигляді логіну та паролю. Цей заголовок має формат "Basic *логін:пароль*", де *логін* та *пароль* перетворюються в шифрований формат Base64 та додаються до слова "Basic". Це забезпечує безпеку від перехоплювання у відкритому вигляді вашого логіну та паролю.
 
-Щоб краще зрозуміти, як саме відбувається відправка HTTP-запиту з базовою аутентифікацією, варто розглянути детальніше кожен крок.
-
-1. Створення об'єкта `URL` з посиланням на веб-сервіс, до якого ми хочемо зробити запит.
-2. Відкриття з'єднання з веб-сервісом за допомогою класу `HttpURLConnection` та методу `openConnection()`.
-3. Генерування строки для базової аутентифікації шляхом об'єднання ім'я користувача та пароля через двокрапку та переведення цієї строки в формат base64 для безпечної передачі.
-4. Додавання заголовка з інформацією про базову аутентифікацію до запиту за допомогою методу `setRequestProperty()`.
-5. Встановлення методу та параметрів запиту за допомогою методів `setRequestMethod()` та `setDoOutput()`.
-6. Завершення запиту і отримання відповіді в форматі тексту за допомогою методів `getOutputStream()` та `getResponseMessage()`.
-7. Виведення результату запиту на екран.
-
-Загалом, ві
+## Дивіться також
+- [Документація Java для HttpURLConnection](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
+- [How to Use Base64 Encoding in Java](https://www.baeldung.com/java-base64-encode-and-decode)
+- [Understanding Basic and Digest Authentication in Java](https://www.baeldung.com/java-basic-digest-authentication)

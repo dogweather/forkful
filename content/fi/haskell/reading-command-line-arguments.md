@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Haskell: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi lukija haluaisi lukea komentoriviparametreja koskevan ohjelmoinnin blogitekstin?
+Haskell - mitä hyötyä komentoriviparametrien lukemisella on?
 
-Komentoriviparametrit ovat tärkeitä osia monia Haskell-ohjelmia. Niiden avulla voit antaa ohjelmalle ohjeita ja tietoja muuttamatta koodia. Tämän avulla voit esimerkiksi suorittaa ohjelman eri tavoin eri syötteiden perusteella, mikä tekee siitä joustavamman.
+Monet kokeneet ohjelmoijat voivat hyötyä komentoriviparametrien lukemisesta, sillä se voi säästää aikaa ja vaivaa ohjelmia kirjoitettaessa ja testattaessa.
 
-## Miten: Koodiesimerkkejä ja näytä komentoriviparametrien käsittely Haskellissa:
+## Miten tehdä se?
 
-```Haskell
-import System.Environment (getArgs)
-
-main = do
-	args <- getArgs
-	putStrLn ("Terve " ++ args !! 0 ++ " ja " ++ args !! 1 ++ "!")
-```
-
-Tässä esimerkissä saamme kaksi argumenttia komentoriviltä ja tulostamme ne yhdessä tervehdyksessä. Voimme kutsua tätä ohjelmaa seuraavasti: `stack runghc hello.hs Maailma Haskell`.
-
-```
-Terve Maailma ja Haskell!
-```
-
-Toinen tapa käsitellä komentoriviparametreja on käyttää `getArgs` -funktiota ja `head` -funktiota, joka palauttaa ensimmäisen parametrin listasta:
+Komentoriviparametrien lukeminen Haskellissa on helppoa. Tarvitset vain muutaman rivin koodia ja käsittelykoodin - ei muuta.
 
 ```Haskell
-import System.Environment (getArgs)
+import System.Environment
 
 main = do
-	args <- getArgs
-	putStrLn ("Ensimmäinen parametri on " ++ head args)
+    args <- getArgs
+    putStrLn $ "Komentoriviparametrit: " ++ show args
 ```
 
-Voimme kutsua tätä ohjelmaa seuraavasti: `stack runghc first.hs 1 2 3`.
+Kun ajat tätä esimerkkiä seuraavasti `runhaskell read_args.hs hello world`, saat tuloksen `Komentoriviparametrit: ["hello", "world"]`.
 
+## Syvempi sukellus
+
+Voit huomata, että `getArgs` palauttaa listan `String`-arvoja. Jos haluat lukea parametrin numeroarvoja, voit käyttää `read`-funktiota muuntamalla `String`-arvon haluttuun tyyppiin. Esimerkiksi, jos haluat lukea kokonaisluvun, voit käyttää seuraavaa koodia:
+
+```Haskell
+import System.Environment
+
+main = do
+    args <- getArgs
+    putStrLn ("Lukemasi luku on " ++ show (read (head args) :: Int))
 ```
-Ensimmäinen parametri on 1
-```
 
-## Syvällinen tarkastelu:
+Joten kun ajat tätä esimerkkiä `runhaskell read_args.hs 5`, saat tuloksen `Lukemasi luku on 5`.
 
-Komentoriviparametrien käsittely Haskellissa vaatii `System.Environment`-moduulin tuontia ja `getArgs`-funktion käyttöä. Tämä funktio palauttaa `IO [String]`-tyypin, joka tarkoittaa, että se palauttaa listan merkkijonoja `IO`-monadiin käärittynä. Tämä johtuu siitä, että komentoriviparametrien lukeminen on I/O-toiminto, jotta se voidaan suorittaa ohjelman suoritusjärjestyksen sisällä.
+## Katso myös
 
-Kun saamme listan argumentteja, voimme käsitellä niitä tutuilla listatoiminnoilla. Esimerkiksi `head`-funktio palauttaa ensimmäisen argumentin, `tail`-funktio kaikki argumentit paitsi ensimmäisen ja `length`-funktio palauttaa argumenttien määrän. Lisäksi komentoriviparametrit tulee aina antaa merkkijonoina, joten niitä voidaan käsitellä tavallisina merkkijonoina.
-
-## Katso myös:
-
-- [Haskellin virallinen dokumentaatio komentoriviparametreista](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
-- [Haskell opetusohjelma: Komentoriviparametrien lukeminen](https://www.haskell.org/tutorial/io.html#command-line-arguments)
-- [Learn You a Haskell for Great Good!: Komentoriviparametrit](http://learnyouahaskell.com/input-and-output#command-line-arguments)
+- [Haskellin dokumentaatio: System.Environment](https://www.haskell.org/onlinereport/haskell2010/haskellch26.html#x33-33000026)
+- [Hakukonemyynti: Korkeamman asteen summat](http://hackage.haskell.org/package/base/docs/src/GHC.Float.html#sum)

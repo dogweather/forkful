@@ -1,5 +1,6 @@
 ---
-title:                "Go: Skriva tester"
+title:                "Skriva tester"
+html_title:           "Go: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Go"
 category:             "Go"
@@ -11,31 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av programmering eftersom det hjälper oss att hitta och fixa buggar tidigt i utvecklingsprocessen. Det bidrar också till en ökad kvalitet i vår kod och skapar ett robust system som är lättare att underhålla.
+Att skriva tester är en viktig del av utvecklingsprocessen. Det hjälper till att säkerställa att koden fungerar som det är tänkt och minskar risken för buggar och fel i produktion. Det kan också öka kvaliteten på koden och underlätta för samarbete mellan utvecklare.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva tester i Go använder vi paketet "testing". Vi startar med att importera paketet och sedan skapar vi en ny fil som heter "example_test.go". Inuti denna fil kan vi använda funktionen "func TestXXX(t *testing.T)" för att skriva våra tester. Här är ett exempel på en enkel testfunktion:
+För att skriva tester i Go behöver du använda paketet "testing". Först måste du skapa en fil som slutar på "_test.go" för att testerna ska köras automatiskt av Go. Därefter kan du skapa en funktion för varje testfall som du vill köra. Här är ett exempel på en testfil som testar en funktion för att lägga till två tal:
 
 ```Go
+package main_test
+
+import "testing"
+
 func TestAddition(t *testing.T) {
-    result := addition(5, 3)
-    if result != 8 {
-        t.Errorf("Expected 8, got %v", result)
+    sum := add(2, 3)
+    expected := 5
+    if sum != expected {
+        t.Errorf("Summan av 2 och 3 är fel. Förväntat: %d, fick: %d", expected, sum)
     }
+}
+
+func add(a, b int) int {
+    return a + b
 }
 ```
 
-Förutom att använda "t.Errorf()" kan vi också använda "t.Fatalf()" för att avbryta testningen om ett fel uppstår. Det finns också andra hjälpfunktioner som kan användas för att göra tester mer läsbara och intuitiva.
+När du kör testet kommer du att se följande utskrift:
 
-## Djupdykning
+```
+ok      command-line-arguments  0.002s
+```
 
-När vi skriver tester är det viktigt att tänka på olika scenarier och gränsvärden för våra funktioner. Genom att använda olika testfall kan vi säkerställa att vår kod fungerar korrekt i olika situationer. Det är också viktigt att kontrollera alla returvärden och eventuella felmeddelanden för att säkerställa att vår kod beter sig som förväntat.
+Detta betyder att testet lyckades och alla dina funktioner fungerar som de ska. Om något test fallerar får du en detaljerad utskrift med information om felet, vilket hjälper dig att hitta och lösa problemet.
 
-Vi kan också använda "benchmarking" för att mäta prestanda på vår kod och se om den behöver optimeras. Detta kan vara särskilt viktigt för större projekt där prestanda är avgörande.
+## Deep Dive
 
-## Se även
+När du skriver tester är det viktigt att täcka alla möjliga scenarion av din kod. Detta inkluderar också felhantering och gränsvärden. Det kan också vara användbart att använda Go's inbyggda benchmarking-funktioner för att mäta prestanda av din kod.
 
-- [Officiell dokumentation för "testing" paketet på Go's hemsida](https://golang.org/pkg/testing/)
-- [En grundläggande guide om att skriva tester i Go](https://medium.com/@meeusdylan/unit-testing-in-go-a9361604b3ce)
-- [En fördjupningsartikel om testning och benchmarking i Go](https://medium.com/@ananddanaraddi/testing-vs-benchmarking-in-go-ac31e84de7a4)
+Det är också möjligt att använda externa testramverk som ginkgo för att organisera och köra dina tester på ett mer strukturerat sätt.
+
+## Se också
+
+- https://golang.org/pkg/testing/
+- https://onsi.github.io/ginkgo/

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Versenden einer http Anfrage"
-simple_title:         "Versenden einer http Anfrage"
+title:                "Eine http-Anfrage senden"
+html_title:           "Ruby: Eine http-Anfrage senden"
+simple_title:         "Eine http-Anfrage senden"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Warum sollte man sich mit dem Senden von HTTP-Requests beschäftigen? Nun, viele moderne Anwendungen basieren auf der Kommunikation über das Internet und das Senden von HTTP-Requests ist ein grundlegender Bestandteil davon. Es ermöglicht die Interaktion mit verschiedenen APIs, das Abrufen von Daten von externen Quellen und vieles mehr.
 
-Warum sollte man sich mit dem Versenden von HTTP-Anfragen beschäftigen? Nun, in der heutigen digitalen Welt sind Webanwendungen und APIs allgegenwärtig. Das Verständnis der grundlegenden Mechanismen von HTTP-Anfragen kann Ihnen helfen, diese Technologien besser zu verstehen und möglicherweise sogar Ihre eigene Anwendung zu entwickeln.
+## How To
+Das Senden von HTTP-Requests mag zunächst einschüchternd wirken, aber es ist eigentlich recht einfach. Hier ist ein Beispiel mit Ruby:
 
-# Wie geht's
-
-Um eine HTTP-Anfrage mit Ruby zu senden, müssen Sie das Net::HTTP-Modul verwenden, das Teil der Standardbibliothek von Ruby ist. In den folgenden Code-Beispielen stellen wir Ihnen zwei verschiedene Methoden vor, wie Sie eine einfache HTTP-GET-Anfrage senden können.
-
-````ruby
+```Ruby
 require 'net/http'
 
-# Methode 1: Net::HTTP#start
+url = URI("https://example.com/api/user")
+# Ersetze URL mit der gewünschten Endpunkt-URL
 
-# Das Ziel-URL als Zeichenkette speichern
-url_string = "https://www.example.com"
+request = Net::HTTP.get(url)
+# Ersetze `get` mit der gewünschten HTTP-Methode, wie z.B. `post`, `put`, `delete`
 
-# Eine neue HTTP-Verbindung erstellen und mit dem Server verbinden
-response = Net::HTTP.get_response(URI(url_string))
+response = JSON.parse(request.body)
+# Wenn du mit Daten im JSON-Format arbeitest, kannst du sie mit `JSON.parse` in eine verwertbare Form bringen
 
-# Den Antwort-Code ausgeben
-puts "Antwort-Code: #{response.code}"
-# => Antwort-Code: 200
+puts response
+# Gibt die Antwort des Servers aus, abhängig von der gewählten HTTP-Methode
+```
 
-# Die zurückgegebene Daten lesen und ausgeben
-puts "Antwort-Daten: #{response.body}"
-# => Antwort-Daten: <html>...</html>
+Das ist nur ein einfaches Beispiel, aber es zeigt dir, wie du mit Ruby einen HTTP-Request senden und die Antwort verarbeiten kannst.
 
-# Methode 2: Net::HTTP.get
-# Diese Methode hat weniger Schritte und ermöglicht es Ihnen, die URL direkt an die Methode zu übergeben.
+## Deep Dive
+Wenn du noch tiefer in das Thema einsteigen möchtest, solltest du dich mit den verschiedenen HTTP-Methoden auseinandersetzen, wie z.B. `get`, `post`, `put`, `patch` und `delete`. Jede dieser Methoden hat eine spezifische Funktion und kann dir bei der Arbeit mit verschiedenen APIs helfen. Außerdem gibt es noch viele weitere Konzepte, die du lernen kannst, wie z.B. die Verwendung von HTTP-Headern, das Arbeiten mit Authentifizierung und das Behandeln von Fehlern.
 
-url_string = "https://www.example.com"
-
-# Eine kurze und saubere Methode, um eine GET-Anfrage zu senden
-response = Net::HTTP.get(URI(url_string))
-
-# Den Antwort-Code ausgeben
-puts "Antwort-Code: #{response.code}"
-# => Antwort-Code: 200
-
-# Die zurückgegebene Daten lesen und ausgeben
-puts "Antwort-Daten: #{response.body}"
-# => Antwort-Daten: <html>...</html>
-````
-
-# Deep Dive
-
-Wenn Sie genauer in die Details des Sendens von HTTP-Anfragen eintauchen möchten, gibt es noch einige weitere Aspekte, die Sie beachten sollten. Zum Beispiel können Sie mit der Net::HTTP-Klasse auch andere HTTP-Methoden wie POST, PUT oder DELETE verwenden. Sie können auch Header-Informationen hinzufügen oder die Verbindung mit HTTP-Platzierungsoptionen steuern.
-
-Es ist auch wichtig zu verstehen, dass HTTP-Anfragen und -Antworten in Form von Text statt Binärdaten erfolgen. Dies ermöglicht es uns als Entwickler, die Daten in lesbarer Form zu analysieren und zu verarbeiten. Aber es bedeutet auch, dass wir spezielle Schritte unternehmen müssen, um Dateien oder Bilder über HTTP-Anfragen zu übertragen, z. B. durch die Verwendung von Base64-Codierung.
-
-# Siehe auch
-
+## Siehe auch
 - [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/index.html)
-- [Ruby HTTP-Bibliotheken (auf Deutsch)](https://stackify.com/ruby-http-client-libraries/)
-- [Einführung in REST und HTTP](https://www.atlassian.com/de/git/tutorials/what-is-http)
+- [Ruby on Rails Guides zu HTTP-Requests](https://guides.rubyonrails.org/action_controller_overview.html#http-methods)
+- [RFC 7231 - HTTP/1.1 Methoden](https://tools.ietf.org/html/rfc7231#section-4)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Travailler avec json"
+title:                "Travailler avec json"
+html_title:           "Kotlin: Travailler avec json"
 simple_title:         "Travailler avec json"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,64 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi travailler avec JSON?
+# Pourquoi
 
-JSON (JavaScript Object Notation) est un format de données largement utilisé pour l'échange de données entre des applications. Il est léger, facile à lire et à comprendre, et est également pris en charge par la plupart des langages de programmation, y compris Kotlin. Travailler avec JSON peut vous permettre d'envoyer et de recevoir des données efficacement, ce qui est essentiel pour la plupart des applications modernes.
+Si vous êtes un développeur, il est très probable que vous ayez rencontré le format JSON. Que ce soit pour échanger des données avec un serveur ou pour stocker des informations dans une base de données, JSON est un format de données très populaire dans l'univers du développement. Dans cet article, nous allons vous montrer pourquoi il est utile de travailler avec JSON en utilisant le langage de programmation Kotlin.
 
-## Comment faire
+# Comment faire
 
-Il existe deux façons principales de travailler avec JSON en Kotlin: en utilisant une bibliothèque externe ou en utilisant les classes intégrées de Kotlin pour faciliter le traitement de JSON.
-
-### Utiliser une bibliothèque externe
-
-Une façon populaire de travailler avec JSON en Kotlin est d'utiliser une bibliothèque externe telle que Gson ou Jackson. Ces bibliothèques offrent des fonctions pratiques pour convertir des objets Kotlin en JSON et vice versa. Voici un exemple de code utilisant la bibliothèque Gson:
+Pour travailler avec JSON en Kotlin, il existe plusieurs librairies disponibles qui facilitent la manipulation de ce format de données. L'une des plus populaires est kotlinx.serialization, développée par JetBrains. Voici un exemple d'utilisation pour transformer un objet Kotlin en JSON :
 
 ```Kotlin
-// Créer un objet Kotlin à convertir en JSON
-data class Person(val name: String, val age: Int)
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
-// Importer la bibliothèque Gson
-import com.google.gson.Gson
+@Serializable
+data class User(val name: String, val age: Int)
 
-// Convertir l'objet en JSON
-val person = Person("Jeanne", 25)
-val json = Gson().toJson(person)
-
-// Afficher le résultat
-println(json) // {"name":"Jeanne", "age":25}
+val user = User("John Doe", 25)
+val json = Json.encodeToString(user)
+println(json) // Output: {"name":"John Doe","age":25}
 ```
 
-### Utiliser les classes intégrées Kotlin
-
-Kotlin dispose également de classes intégrées pour travailler avec JSON, telles que JSONObject et JSONArray. Vous pouvez les utiliser pour créer et manipuler des objets JSON sans avoir besoin d'une bibliothèque externe. Jetons un coup d'oeil à un exemple:
+Et pour transformer un JSON en un objet Kotlin :
 
 ```Kotlin
-// Importer les classes JSONObject et JSONArray
-import org.json.JSONObject
-import org.json.JSONArray
-
-// Créer un objet JSON avec valeurs initiales
-val person = JSONObject("""{"name":"Pierre", "age":30}""")
-
-// Ajouter une propriété à l'objet
-person.put("city", "Paris")
-
-// Créer un tableau JSON avec plusieurs objets
-val people = JSONArray()
-people.put(person)
-people.put(JSONObject("""{"name":"Sophie", "age":28}"""))
-
-// Afficher le résultat
-println(people) // [{"name":"Pierre", "age":30, "city":"Paris"}, {"name":"Sophie", "age":28}]
+val jsonString = """{"name":"Jane Doe","age":30}"""
+val user = Json.decodeFromString<User>(jsonString)
+println(user) // Output: User(name=Jane Doe, age=30)
 ```
 
-## Plongée profonde
+Comme vous pouvez le constater, kotlinx.serialization utilise des annotations pour identifier les propriétés de l'objet à sérialiser ou désérialiser. Il est également possible de personnaliser le format de sortie en utilisant des annotations supplémentaires.
 
-Travailler avec JSON en Kotlin peut également inclure la gestion des erreurs et la manipulation de données plus complexes, telles que les tableaux et les objets imbriqués. Si vous cherchez à approfondir vos connaissances sur la manipulation de JSON en Kotlin, vous pouvez consulter la documentation officielle de Kotlin ainsi que des tutoriels en ligne.
+# Deep Dive
 
-## Voir aussi
+Si vous souhaitez en apprendre davantage sur la manipulation de JSON en Kotlin, il est important de comprendre sa structure. JSON est composé de paires clé-valeur, où la clé est une chaîne de caractères et la valeur peut être de différents types tels que des chaînes, des nombres ou même d'autres objets JSON. Il existe également des tableaux JSON, similaires à des listes, qui peuvent contenir plusieurs valeurs dans un ordre défini.
 
-- Documentation officielle de Kotlin pour la manipulation de JSON: https://kotlinlang.org/docs/reference/type-safe-builders.html#json
-- Tutoriel sur la manipulation de JSON en Kotlin: https://www.raywenderlich.com/730-moshi-tutorial-for-android-getting-started
-- Bibliothèque Gson: https://github.com/google/gson
-- Bibliothèque Jackson: https://github.com/FasterXML/jackson
+Pour accéder aux données d'un objet JSON en Kotlin, il est possible d'utiliser des opérateurs d'accès tels que ".get" pour les paires clé-valeur ou "[index]" pour les tableaux. Vous pouvez également utiliser des expressions régulières pour rechercher des données spécifiques dans un JSON plus complexe.
+
+Enfin, il est important de noter que kotlinx.serialization n'est pas la seule librairie disponible pour travailler avec JSON en Kotlin. Vous pouvez également utiliser des librairies telles que Gson ou Jackson, selon vos besoins et préférences.
+
+# Voir aussi
+
+- [kotlinx.serialization documentation](https://github.com/Kotlin/kotlinx.serialization)
+- [Comparaison des librairies de manipulation de JSON en Kotlin](https://proandroiddev.com/which-json-library-to-use-in-kotlin-9370e6f72e26)
+- [Guide complet sur la syntaxe JSON](https://www.json.org/json-en.html)

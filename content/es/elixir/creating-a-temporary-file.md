@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Creando un archivo temporal"
-simple_title:         "Creando un archivo temporal"
+title:                "Creación de un archivo temporal"
+html_title:           "Elixir: Creación de un archivo temporal"
+simple_title:         "Creación de un archivo temporal"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,37 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Crear archivos temporales es una práctica común en la programación, ya que permite almacenar datos de manera temporal en la memoria durante la ejecución de un programa. Esto puede ser útil para realizar operaciones que requieren almacenamiento temporal de datos, como ordenar o filtrar información.
+Crear un archivo temporal es una tarea común en el desarrollo de aplicaciones. Puede ser útil para almacenar datos temporales, manipular archivos y realizar pruebas. Además, es una práctica común para mantener limpia la estructura de un proyecto eliminando archivos temporales después de su uso.
 
 ## Cómo hacerlo
 
-Se puede crear un archivo temporal en Elixir utilizando la función `File.tmp` y especificando el nombre del archivo junto con su extensión. A continuación, se puede escribir y leer información en el archivo utilizando las funciones `IO.write` y `IO.read` respectivamente. Un ejemplo de código sería:
+Para crear un archivo temporal en Elixir, podemos usar la función `Tempfile.open/2` de la librería `:tempfile`. Esta función recibe dos argumentos: el nombre del archivo y una función anónima que será ejecutada con el nombre del archivo como parámetro.
 
-```Elixir
-# Crear un archivo temporal
-file = File.tmp("mi_archivo.txt")
-# Escribir información en el archivo
-IO.write(file, "Hola mundo!")
-# Leer la información del archivo
-content = IO.read(file)
-# Mostrar el contenido del archivo
-IO.puts(content)
+``` Elixir
+file_path = "/ruta/al/archivo/temporal.txt"
+Tempfile.open("ejemplo", fn(file) ->
+  IO.write(file, "Este es un archivo temporal")
+  IO.puts("La ruta del archivo es: #{file_path}")
+end)
 ```
 
-El resultado de ejecutar este código sería:
-
-```
-Hola mundo!
-```
+Este código creará un archivo temporal llamado "ejemplo" y escribirá "Este es un archivo temporal" en él. Luego, imprimirá la ruta completa del archivo, que en este caso sería "/ruta/al/archivo/temporal.txt".
 
 ## Profundizando
 
-Es importante tener en cuenta que los archivos temporales se eliminarán automáticamente al finalizar el programa o la función en la que fueron creados. Sin embargo, es posible especificar otro directorio para almacenar los archivos temporales utilizando la opción `path` en la función `File.tmp`.
+La función `Tempfile.open/2` es solo una forma de crear archivos temporales en Elixir. También podemos usar la función `File.temp_file/1` para generar un archivo temporal con un nombre aleatorio en la carpeta temporal del sistema.
 
-Además, es posible especificar opciones adicionales para el archivo, como su tamaño máximo, permisos, entre otros. Para esto se puede consultar la documentación oficial de Elixir.
+``` Elixir
+file_path = File.temp_file()
+IO.puts("El archivo temporal se encuentra en: #{file_path}")
+```
+
+Esta función crea un archivo temporal en la carpeta temporal del sistema, que puede variar según el sistema operativo. Podemos especificar una ruta opcional como argumento para la función `File.temp_file/1`, que creará el archivo en la ruta especificada en lugar de en la carpeta temporal del sistema.
+
+En caso de que necesitemos una ruta más específica, podemos usar la función `File.temp_dir/1` para crear una carpeta temporal en la ruta especificada y luego usar la función `File.temp_file/2` para crear el archivo dentro de esa carpeta.
+
+``` Elixir
+dir_path = "/ruta/carpeta/temporal"
+File.temp_dir(dir_path)
+
+file_path = File.temp_file(dir_path)
+IO.puts("El archivo temporal se encuentra en: #{file_path}")
+```
+
+Por último, para eliminar un archivo temporal, podemos usar la función `File.delete/1` especificando la ruta del archivo como argumento.
 
 ## Ver también
 
-- Documentación oficial de Elixir sobre archivos temporales: https://hexdocs.pm/elixir/File.html#tmp/1
-- Ejemplos de código de Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Tutoriales y recursos sobre programación en Elixir: https://medium.com/@ElixirTutorial
+- [Documentación de Elixir acerca de archivos temporales](https://hexdocs.pm/elixir/File.html#temp_file/1)
+- [Ejemplo de generación de archivos temporales en Elixir](https://gist.github.com/martinoamigo/d2ff139233a1b538a4ecab32615d3fc8)
+- [Más información sobre manipulación de archivos en Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

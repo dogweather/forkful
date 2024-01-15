@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "Java recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Java"
 category:             "Java"
@@ -11,36 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting a string to lower case may seem like a simple task, but it can actually serve an important purpose in programming. This operation can be helpful when comparing strings for equality, as it ensures that casing differences do not affect the comparison. It can also be useful when working with user input, as it allows for more flexibility in processing that input.
+Converting a string to lower case is a common task in Java programming. It allows us to compare strings without worrying about case sensitivity and makes the code more readable.
 
 ## How To
 
-Converting a string to lower case in Java is a relatively straightforward process. First, you will need to create a String variable and assign it the string you want to convert. Then, you can use the `toLowerCase()` method to convert the string to lower case. Let's see an example of this in action:
+To convert a string to lower case in Java, we can use the `toLowerCase()` method from the `String` class. Here's an example code block showing how to use this method:
 
-```java
-String str = "Hello World!";
-System.out.println("Original string: " + str);
-str.toLowerCase();
-System.out.println("Lowercase string: " + str);
+```Java
+String str = "Hello World";
+String lowerStr = str.toLowerCase();
+System.out.println(lowerStr);
 ```
 
-This code will output the following:
+The output of this code block will be `hello world`, with all characters in lower case. We can also use this method to directly compare two strings without worrying about case sensitivity. For example:
 
-```
-Original string: Hello World!
-Lowercase string: hello world!
+```Java
+String str1 = "Java";
+String str2 = "java";
+if(str1.equalsIgnoreCase(str2)){
+    System.out.println("The strings are equal");
+}
 ```
 
-As you can see, the `toLowerCase()` method has converted the original string to all lower case letters. This method can also be used on string variables that have already been assigned, making it a versatile tool in your coding arsenal.
+In this code block, the `equalsIgnoreCase()` method is used to compare the two strings without considering case. This will print out `The strings are equal` even though the strings are technically not equal. 
 
 ## Deep Dive
 
-While converting a string to lower case may seem like a simple task, there are a few things to keep in mind. Firstly, it's important to understand that this operation does not alter the original string. Instead, it creates a new string with the converted letters. This means that you will need to assign the new string to a variable if you want to work with the converted version.
+Under the hood, the `toLowerCase()` method uses the `Character.toLowerCase()` method to convert each character of the string to lower case. This method uses the Unicode standard to determine the case of each character. This means that it will work for all languages, not just English.
 
-Additionally, the `toLowerCase()` method uses the default locale to perform the conversion. This means that the result may vary depending on the language and regional settings of the machine running the code. If you want to ensure consistent behavior, you can specify a specific locale as a parameter in the method.
+It is important to note that the `toLowerCase()` method does not modify the original string. It returns a new string with all characters in lower case. So if we want to use the lower case version, we need to assign it to a new variable and use that variable further in the code.
+
+We should also be careful when using the `equalsIgnoreCase()` method to compare strings. While it ignores case, it does not ignore other differences such as punctuation or whitespace. So we need to make sure that the strings are in the same format before using this method for comparison.
 
 ## See Also
 
-- [Java String Class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Java String toLowerCase() Method](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
-- [Java Locales](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html)
+Here are some additional resources for working with strings in Java:
+
+- [Java String Tutorial](https://www.javatpoint.com/java-string)
+- [Working with Strings in Java](https://www.codecademy.com/learn/learn-java/modules/learn-java-strings)
+- [Official Java String API Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)

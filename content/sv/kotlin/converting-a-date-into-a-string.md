@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Omvandla ett datum till en sträng"
-simple_title:         "Omvandla ett datum till en sträng"
+title:                "Konvertera ett datum till en sträng"
+html_title:           "Kotlin: Konvertera ett datum till en sträng"
+simple_title:         "Konvertera ett datum till en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Ibland kan det vara användbart att konvertera ett datum till en sträng för att göra det läsbart för människor. Det kan också vara till hjälp när man arbetar med databaser eller API-anrop.
 
-Att kunna konvertera ett datum till en sträng är en viktig del av programmering eftersom det gör det möjligt för oss att hantera datum och tid på ett mer flexibelt sätt. Det kan också hjälpa oss att presentera datum på ett mer läsbart sätt för användare.
-
-## Så här gör du
-
-För att konvertera ett datum till en sträng i Kotlin, kan vi använda funktionen `DateFormat.format()`. Här är ett exempel på hur vi kan göra det:
-
+## Hur man gör
 ```Kotlin
-val currentDate = Date()
-val dateFormat = DateFormat.format("dd/MM/yyyy", currentDate).toString()
-println(dateFormat)
-```
-**Output:** 12/02/2021
+// Skapa en instans av LocalDate som representerar ett datum
+val date = LocalDate.of(2021, 9, 1)
 
-Vi kan också ange olika format för datumet genom att ändra på parametrarna i `DateFormat.format()`-funktionen. Till exempel om vi vill ha datumet i ett annat format kan vi ändra parametern till `"yyyy-MM-dd"` och outputen kommer att vara **2021-02-12**.
+// Konvertera datumet till en sträng med formatet "dd/MM/yyyy"
+val dateString = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+
+// Skriv ut den konverterade strängen
+System.out.println(dateString)
+// Output: 01/09/2021
+```
+
+Det finns flera olika format som du kan använda för att konvertera en datum till en sträng. Du kan också ange tidszon eller ändra separatorn för datumet.
 
 ## Djupdykning
+När du konverterar ett datum till en sträng använder du dig av klassen `LocalDate` och metoden `format()` från klassen `DateTimeFormatter`. Det finns flera olika formatterare som du kan använda beroende på dina behov, till exempel `ofLocalizedDate()`, `ofPattern()` eller `ofLocalizedDateTime()`. Du kan också använda metoden `parse()` för att konvertera en sträng till ett datum.
 
-När vi konverterar ett datum till en sträng, finns det några saker vi bör vara medvetna om. För det första är det viktigt att använda rätt format för datumet så att det blir korrekt tolkat. Om vi till exempel har formatet `"dd-MM-yyyy"` men skriver in datumet i formatet `"MM-dd-yyyy"` kommer det att konverteras felaktigt, vilket kan leda till fel i vår kod.
-
-För det andra är det viktigt att känna till vilka andra formatteringsalternativ som finns tillgängliga, som att lägga till tidskomponenter eller visa datum på olika språk. Det finns många olika formatteringsalternativ som kan hjälpa oss att hantera datum på ett mer effektivt sätt.
+Det kan finnas situationer där du behöver hantera datum på ett mer avancerat sätt, som när du arbetar med tidszoner eller behöver göra beräkningar baserat på datum. I sådana fall kan det vara användbart att använda sig av bibliotek som Joda-Time eller ThreeTen-Extra för att få mer omfattande funktioner för att hantera datum och tider.
 
 ## Se även
-
-För mer information om hantering av datum i Kotlin, se följande resurser:
-
-- [Officiell dokumentation för `DateFormat`](https://developer.android.com/reference/java/text/DateFormat)
-- [Kotlin Date and Time API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/-date-time/index.html)
-- [Hantering av datum och tid i Kotlin](https://www.javatpoint.com/kotlin-date-time)
-
-Vi hoppas att denna artikel har varit användbar för dig i hanteringen av datum i Kotlin. Lycka till med dina programmeringsprojekt!
+- [Kotlin LocalDate dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
+- [Java DateTimeFormatter dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Joda-Time bibliotek](http://www.joda.org/joda-time/)
+- [ThreeTen-Extra bibliotek](https://www.threeten.org/threeten-extra/)

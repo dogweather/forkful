@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Att påbörja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Gleam: Att påbörja ett nytt projekt"
 simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt projekt kan vara en spännande och utmanande uppgift för alla som är intresserade av programmering. Det ger dig möjligheten att skapa något unikt och utveckla dina kunskaper inom Gleam-programmering.
+Om du är ute efter ett nytt programmeringsspråk med moderna funktioner och enkel syntax, så är Gleam ett utmärkt val. Med bästa möjliga stöd för statisk typning och konkurrensprogrammering, är Gleam det perfekta valet för både små och stora projekt.
 
 ## Så här gör du
 
-Att starta ett nytt projekt i Gleam kan vara enkelt och roligt. Du behöver bara följa några enkla steg:
+För att komma igång med Gleam behöver du först installera det på din dator. Detta kan göras enkelt med hjälp av pakethanteraren för ditt operativsystem. När Gleam är installerat kan du skapa ett nytt projekt med följande kommando:
 
-```Gleam
-git init mittprojekt
-cd mittprojekt
-gleam new app hello_world
-```
+```Gleam new my_project```
 
-Det här kommer att skapa en ny app med namnet "hello_world" i ditt projekt. Du kan sedan öppna den i ditt favoritredigeringsprogram och börja koda!
+Detta kommer att skapa en grundläggande struktur för ditt projekt inklusive en src-mapp för alla källkodsfiler. För att bygga projektet, använd följande kommando:
 
-För att bygga och köra din app kan du använda följande kommandon:
+```Gleam build```
 
-```Gleam
-gleam build
-gleam run
-```
+Du kan även köra alla dina tester med kommandot:
 
-Outputen av din app kommer att visas i terminalen. Grattis, du har nu startat ditt första projekt i Gleam!
+```Gleam test```
+
+När ditt projekt är byggt och testat, kan du köra det med följande kommando:
+
+```Gleam run```
+
+Och om du vill distribuera ditt projekt, kan du använda kommandot:
+
+```Gleam release```
+
+Det finns även många andra kommandon och funktioner som du kan utforska när du arbetar med Gleam, såsom specifikationer, tolkning och användning av bibliotek.
 
 ## Djupdykning
 
-För att verkligen ta ditt nya projekt till nästa nivå, finns det några saker du kan göra:
+När du startar ett nytt projekt med Gleam finns det några olika sätt att göra det på. Det enklaste sättet är att skapa en ny fil i src-mappen och börja skriva din kod. Du kan också använda flera filer och importera dem i ditt huvudprogram.
 
-1. Lägg till beroenden: Med Gleams pakethanterare kan du enkelt lägga till beroenden till ditt projekt och använda dem i din kod.
-2. Skriv tester: Testning är viktigt för att säkerställa att din kod fungerar som den ska. Genom att skriva tester kan du upptäcka och fixa buggar innan de hamnar i produktion.
-3. Använd moduler: Gleam tillåter dig att organisera din kod i moduler för att hålla den mer strukturerad och lättare att underhålla.
+Det är också möjligt att jobba med flera moduler i ett projekt med hjälp av modulpaket. En modulpaket är en samling av moduler som kan importeras och användas i ditt projekt. Detta gör det enklare att organisera och återanvända kod.
 
-Se till att utforska Gleams dokumentation och community för mer information om hur du kan utveckla ditt projekt.
+När du skriver kod i Gleam, kommer du snabbt upptäcka att det är ett välstrukturerat och expressivt språk. Det finns en tydlig syntax som gör det enkelt för både programmerare och maskiner att förstå koden. Dessutom finns det ett brett utbud av bibliotek och en stark community som ständigt utvecklar och förbättrar Gleam.
 
 ## Se även
 
-- [Gleam's officiella dokumentation](https://gleam.run)
-- [Gleam's GitHub repository](https://github.com/gleam-lang/gleam)
+- [Gleam officiell hemsida](https://gleam.run/)
+- [Gleam dokumentation](https://gleam.run/book)
+- [Gleam på GitHub](https://github.com/gleam-lang/gleam)

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: ベーシック認証を使用してhttpリクエストを送信する"
-simple_title:         "ベーシック認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したhttpリクエストの送信"
+html_title:           "Rust: 基本認証を使用したhttpリクエストの送信"
+simple_title:         "基本認証を使用したhttpリクエストの送信"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,63 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-HTTPリクエストを基本認証を使って送信する理由は、セキュリティのためです。基本認証は、ユーザーがユーザー名とパスワードを入力することで、リクエストを送信する前に認証される仕組みです。
+HTTPリクエストを基本認証で送ることに関心があるのか？それは、APIやWebサービスにアクセスする際に必要となるセキュリティ認証の一つであり、プログラマーにとって重要なスキルであるからです。
 
-## 使い方
+## 方法
 
-まずは、"reqwest"ライブラリをインポートします。次に、リクエストを送信するためのURLを準備します。そして、リクエストに必要なヘッダーを作成し、基本認証を使って認証します。最後に、リクエストを送信し、レスポンスを処理します。下記のコードはその一例です。
+まず、`reqwest`ライブラリを使ってHTTPリクエストを送るための基本的なコードを見てみましょう。
 
 ```Rust
-use reqwest::header::HeaderValue;
 use reqwest::Client;
-use std::collections::HashMap;
 
-// URLを設定
-let url = "https://example.com/api/";
+fn main() {
+    // APIエンドポイントのURL
+    let url = "https://example.com/api";
 
-// リクエストに必要なヘッダーを作成
-let mut headers = HashMap::new();
-// ベーシック認証を使用するため、"Authorization"ヘッダーを作成
-let username = "your_username";
-let password = "your_password";
+    // HTTPクライアントを作成
+    let client = Client::new();
 
-// ユーザー名とパスワードを結合して、認証用の文字列を作成
-let auth_string = format!("{}:{}", username, password);
-// Base64エンコードを行い、値をString型に変換
-let auth_value = format!("Basic {}", base64::encode(auth_string));
-
-// "Authorization"ヘッダーにエンコードした値を設定
-headers.insert("Authorization", HeaderValue::from_str(auth_value.as_str()).unwrap());
-
-// クライアントを作成し、リクエストを送信する
-let client = Client::new();
-// クライアントにヘッダーを付けてリクエストを作成
-let resp = client.get(url).headers(headers).send().await;
-
-// レスポンスを処理する
-match resp {
-    Ok(resp) => {
-        // レスポンスが成功した場合は、リクエストが正しく認証されたことを示す
-        println!("Request successfully authorized!");
-    },
-    Err(e) => {
-        // レスポンスがエラーだった場合は、認証に失敗したことを示す
-        println!("Failed to authorize request: {}", e);
-    },
+    // 基本認証を含むリクエストを作成
+    let request = client.get(url)
+        .basic_auth("username", Some("password"))
+        .send()
+        .unwrap();
 }
 ```
 
+上記の例では、APIエンドポイントのURLを指定し、`Client::new()`でHTTPクライアントを作成します。そして、`.basic_auth()`を使ってユーザー名とパスワードを指定し、`send()`でリクエストを実行します。このコードを実行すると、指定したAPIに基本認証を含むHTTPリクエストが送られます。
+
 ## ディープダイブ
 
-基本認証は、HTTPリクエストにおける最も古い認証の仕組みの1つです。しかし、セキュリティ上の問題が指摘され、現在はよりセキュアな認証方法が推奨されています。基本認証は、パスワードが暗号化されていないため、第三者に傍受される可能性があります。また、基本認証を使う場合は、HTTPSを使うことが推奨されます。
+基本認証にはどのようなメカニズムがあるのか、少し掘り下げてみましょう。基本認証は、HTTPリクエストヘッダーに`Authorization`フィールドを含めることで認証情報をサーバーに送信する方法です。このフィールドには、`Basic`という認証スキームが使用され、ユーザー名とパスワードがBASE64でエンコードされて一緒に送信されます。この認証情報はサーバー側でデコードされ、ユーザー名とパスワードが一致する場合にのみ認証成功となります。
 
-基本認証を使用する場合は、ユーザー名とパスワードを保管する方法にも注意を払う必要があります。暗号化やセキュアな保存方法を使うことで、より安全な基本認証を実現できます。
+See Also
 
-# 参考リンク
-
-- [reqwest - Rust Documentation](https://docs.rs/reqwest/0.11.1/reqwest/)
-- [Basic access authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [基本認証とは？基本認証の仕組みや仕様について解説 | TECHSCORE(テックスコア)](https://www.techscore.com/tech/VBA/HTTP/3-6/)
-- [Basic Authentication vs
+- [reqwestドキュメント](https://docs.rs/reqwest)
+- [RustでAPIリクエストを送る方法](https://dev.classmethod.jp/server-side/rust-api-request/)

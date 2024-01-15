@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダムな数値の生成"
+html_title:           "Elixir: ランダムな数値の生成"
+simple_title:         "ランダムな数値の生成"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -9,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### 簡単に生成できる - ランダム数字の魅力
+## なぜ
 
-乱数を生成することは、エラプログラミングにおいて非常に重要です。不用意に作成してしまうことで、大きな問題を引き起こすことがあります。しかし、正しく扱うことができれば、乱数は非常に便利で有用なものです。その魅力について、今日は紹介します。
+ランダムな数値を生成することに興味があると思われる方々にとって、Elixirは非常に優れたツールです。Elixirの強力なランダム数生成機能を使うことで、より多くの可能性を持ったプログラムを作ることができます。
 
-## Why: なぜ乱数を生成するのか
+## 方法
 
-乱数を生成することで、様々な用途に役立てることができます。例えば、ゲームでの乱数生成は不可欠です。また、データのサンプリングやシャッフルなどにも乱数は活用されます。さらに、暗号学やセキュリティにおいても乱数は重要な役割を果たします。
+まず、ElixirのライブラリであるRandomをインポートします。次に、Randomを使用して任意の形式のランダム数を生成する方法を示します。
 
-## How To: 実際にコードを書いてみよう
+```elixir
+iex> import Random
+iex> rand() # デフォルトでは0から1までの浮動小数点数を返す
+0.7801630443077161
 
-```Elixir
-# 0以上9以下のランダムな整数を生成する
-rand(0..9) # => 5
+iex> rand(1..10) # 引数を渡すことで最小値と最大値を指定できる
+6
 
-# 0以上10未満のランダムな浮動小数点数を生成する
-rand(0..10) # => 8.2345
+iex> rand(1.0..5.5) # 浮動小数点数の範囲も指定できる
+4.891950072786604
 
-# リストの中からランダムな要素を選択する
-list = [1, 2, 3, 4, 5]
-list |> Enum.at(rand(0..4)) # => 3
-
-# Elixirのモジュールで定義された関数を使用する
-:random.seed(50)
-rand_uniform() # => 0.7542397
-
-# Elixir 1.8以上では、SecureRandomモジュールを使用することで暗号学的に安全な乱数を生成することができます
-SecureRandom.hex(16) # => "8bf37817e53c5e50bef1eed3675dc59b"
-
+iex> rand(1..10, 5) # 第二引数で生成する数の個数を指定できる
+[7, 2, 9, 4, 3]
 ```
 
-## Deep Dive: 乱数生成についてより詳しく
+また、ランダムな文字列を生成することもできます。
 
-乱数生成アルゴリズムは、いくつかの種類が存在します。例えば、線形合同法やメルセンヌ・ツイスター法などがあります。これらのアルゴリズムは計算機の種々の性能や特性、そして目的に合わせて洗練されています。
+```elixir
+iex> rand_string = Enum.shuffle("abcdefghijklmnopqrstuvwxyz") |> List.first(5) |> Enum.join("") # アルファベットのランダムな5文字の文字列を生成する
+"uqklm"
 
-また、乱数生成は成功しないこともあります。例えば、同じシード値を使用した場合や、乱数生成器が永続的でない場合には、同じ値が生成される可能性があります。そのため、このような問題を避けるためには、十分なシード値やセキュリティ強度を持つ乱数生成器を使用することが重要です。
+iex> rand_string = Enum.shuffle(["apple", "banana", "cherry"]) |> List.first() # リストからランダムに要素を取得することもできる
+"banana"
+```
 
-## See Also: 他にも参考になる情報を
+## 深堀り
 
-- [Elixir 公式ドキュメント | ランダムモジュール](https://hexdocs.pm/elixir/Random.html)
-- [CSDNブログ | Elixirで乱数を生成する](https://blog.csdn.net/qq_43159640/article/details/100189844)
-- [Learn Elixir | 乱数生成器についてさらに学ぶ](https://learn-elixir.dev/rand-generating#seeded-random-number-generation)
+内部的には、ElixirのRandomはRNG（乱数生成器）モジュールに基づいています。RNGは疑似乱数を生成しますが、それでも実用的な乱数を生成できるように設計されています。また、乱数のシード値を手動で指定することもできます。
+
+## 関連情報
+
+- [ElixirのRandomドキュメント](https://hexdocs.pm/elixir/Random.html)
+- [RubyKaigi 2014：ランダムでErlang を卒業する (John Hainsworth)](https://www.youtube.com/watch?v=4SH_-aI_1ho)
+- [Elixirで疑似乱数がランダムにならない場合の原因と対処法](https://qiita.com/khsk/items/e1b0ebf731fd4fd24a66)

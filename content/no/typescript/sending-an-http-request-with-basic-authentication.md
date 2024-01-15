@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en http forespørsel med grunnleggende autentisering"
+html_title:           "TypeScript: Å sende en http forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en http forespørsel med grunnleggende autentisering"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor 
+Noen ganger, når du jobber med et nettsted eller en applikasjon, må du autentisere en bruker. Dette betyr at du må validere brukerens identitet før du gir tilgang til bestemte deler av nettstedet eller applikasjonen. En måte å gjøre dette på er ved hjelp av HTTP-forespørsler med grunnleggende autentisering. Dette er en enkel og effektiv måte å sikre at bare autoriserte brukere får tilgang til beskyttet informasjon.
 
-Å sende HTTP-forespørsler med grunnleggende autentisering er en vanlig praksis innen webutvikling for å sikre at bare autoriserte brukere kan få tilgang til sensitive data eller handlinger. Dette er spesielt viktig for applikasjoner som håndterer brukerdata eller som krever brukerens innlogging for å utføre visse oppgaver.
-
-# Hvordan
-
-For å sende en HTTP-forespørsel med grunnleggende autentisering i TypeScript, kan du bruke biblioteket axios. Dette kan installeres ved å kjøre kommandoen ```npm install axios``` i terminalen. Deretter kan du importere axios-biblioteket i koden din ved å skrive ```import axios from 'axios'```.
-
-Når du har importert biblioteket, kan du bruke følgende kode for å sende en GET-forespørsel med grunnleggende autentisering til en bestemt URL:
+## Hvordan 
+La oss si at du har et nettsted der brukere kan logge inn og se sine personlige opplysninger. For å sikre at bare innloggede brukere kan få tilgang til disse opplysningene, kan du implementere HTTP-forespørsler med grunnleggende autentisering. Her er en enkel TypeScript-kode som viser hvordan du kan gjøre dette:
 
 ```TypeScript
-axios.get('https://eksempelurl.com/api/data', {
-    auth: {
-        username: 'brukernavn',
-        password: 'passord'
-    }
-})
-.then(response => {
-    console.log(response.data);
-})
-.catch(error => {
-    console.log(error);
-})
-```
+import Axios, { AxiosResponse } from 'axios';
 
-Her bruker vi auth-metoden fra axios for å sende brukernavn og passord som en del av forespørselen. Dette genererer en base64-kryptert streng som sendes sammen med forespørselen for å autentisere brukeren.
+// Setter opp brukernavn og passord for autentisering
+const username = 'brukernavn';
+const password = 'passord';
 
-I dette eksemplet blir responsen fra serveren logget til konsollen. Du kan også bruke andre HTTP-metoder som POST, PUT eller DELETE på samme måte.
+// Setter opp Axios-klienten med autentiseringsheader
+const axios = Axios.create({
+  auth: {
+    username,
+    password,
+  }
+});
 
-# Dykk dypere
+// Sender HTTP-forespørsel til en beskyttet URL
+axios.get('https://example.com/personlig-info')
+  .then((response: AxiosResponse) => {
+    console.log(response.data); // utskrift av personlige opplysninger
+  })
+  .catch((error: AxiosError) => {
+    console.log(error); // håndterer eventuelle feil
+  })
+  ```
 
-Når du sender en HTTP-forespørsel med grunnleggende autentisering, må du sørge for å kryptere både brukernavnet og passordet. Dette kan gjøres ved hjelp av base64-kryptering, som konverterer en streng til en ASCII-streng. Men selv om denne krypteringsmetoden gjør det vanskeligere for uautoriserte å lese innholdet, er det ikke en helt sikker metode for autentisering. Det er derfor viktig å også implementere andre sikkerhetstiltak, som for eksempel HTTPS-protokollen, for å sikre at dataene dine er trygge.
+Her vil Axios-klienten legge til autentiseringsheaderen i alle forespørsler, og serveren vil validere disse opplysningene for å gi tilgang til beskyttet informasjon.
 
-# Se også
+## Dypdykk
+Grunnleggende autentisering bruker en Base64-kodet streng som sendes i autentiseringsheaderen. Denne strengen består av brukernavn og passord separert med et kolon. Den blir deretter kodet og sendt som en del av HTTP-forespørselen. Serveren vil da dekode denne strengen og validere brukerinformasjonen.
 
-- [Axios-dokumentasjon](https://github.com/axios/axios)
-- [Base64-kryptering](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa)
-- [Sikkerhetstiltak for HTTP-forespørsler](https://developer.mozilla.org/en-US/docs/Web/HTTP/Security)
+En viktig ting å huske på er at grunnleggende autentisering ikke er en sikker måte å autentisere brukere på, da informasjonen kan enkelt dekodes av en hacker. Derfor bør det kun brukes i situasjoner der sikkerheten ikke er kritisk.
+
+## Se også
+- [Axios dokumentasjon](https://github.com/axios/axios)
+- [Grunnleggende autentisering på MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

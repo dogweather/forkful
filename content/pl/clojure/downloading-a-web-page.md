@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Clojure: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,34 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego pobieranie strony internetowej jest ważne?
+## Dlaczego
 
-Pobieranie stron internetowych może być bardzo użyteczne w wielu sytuacjach. Możesz używać go do pobierania danych do analizy, automatycznego zapisu informacji z różnych stron lub nawet do stworzenia własnego bot-a internetowego. Możliwości są nieograniczone!
+Pobieranie stron internetowych jest niezbędne dla wielu programistów, którzy chcą analizować lub przetwarzać dane z internetu. Choć istnieje kilka narzędzi służących do tego zadania, Clojure oferuje wiele wbudowanych funkcji, które ułatwiają pobieranie stron internetowych.
 
-# Jak to zrobić?
+## Jak to zrobić
 
-Pobieranie strony internetowej w języku Clojure jest bardzo proste. Wystarczy użyć jednej z wielu dostępnych bibliotek, takich jak `clj-http` lub `http-kit`, które ułatwią ten proces.
+Pobieranie strony internetowej w Clojure jest bardzo proste. Najpierw musimy zaimportować bibliotekę `clojure.java.io` do naszego projektu. Następnie używamy funkcji `slurp`, aby pobrać zawartość strony internetowej i przypisać ją do zmiennej. Na przykład:
 
 ```Clojure
-(require '[clj-http.client :as http])
+(require '[clojure.java.io :as io])
 
-(def page (http/get "https://www.example.com"))
+(def url "https://example.com")
 
-(println (:body page)) ;; wyświetla treść pobranej strony
-(println (:status page)) ;; wyświetla status odpowiedzi (np. 200 oznacza sukces)
+(def page (slurp url))
 ```
 
-Ten kod używa biblioteki `clj-http`, aby pobrać stronę z adresu URL i wyświetlić jej treść oraz status odpowiedzi. Możesz również dodać dodatkowe parametry, takie jak nagłówki czy dane formularza, aby dostosować zapytanie.
+Teraz możemy wydrukować zawartość strony internetowej, aby upewnić się, że została pobrana poprawnie:
 
-# Głębsza analiza
+```Clojure
+(println page)
+```
 
-Pobieranie strony internetowej może być również użyteczne do bardziej zaawansowanych zastosowań. Na przykład, możesz wykorzystać możliwości języka Clojure, aby przeanalizować zebrane dane lub użyć jej w połączeniu z innymi bibliotekami do tworzenia silniejszych narzędzi.
+Output:
 
-Na przykład, w połączeniu z biblioteką `hiccup`, możesz użyć pobranych danych do generowania kodu HTML lub zapisu struktury danych w formacie JSON przy użyciu biblioteki `cheshire`.
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Przykładowa strona</title>
+</head>
 
-# Zobacz również
+<body>
+  <h1>Witaj!</h1>
+</body>
+</html>
+```
 
-- [Dokumentacja clj-http](https://github.com/dakrone/clj-http)
-- [Dokumentacja http-kit](https://github.com/http-kit/http-kit)
-- [Dokumentacja hiccup](https://github.com/weavejester/hiccup)
-- [Dokumentacja cheshire](https://github.com/dakrone/cheshire)
+Jeśli chcemy przetworzyć pobraną stronę, możemy użyć wbudowanych funkcji do manipulacji danymi w formacie HTML lub wykorzystać inny język, jak na przykład ClojureScript, aby przetworzyć dane z pobranej strony.
+
+## Deep Dive
+
+Clojure oferuje wiele funkcji, które ułatwiają pobieranie i przetwarzanie stron internetowych. Warto zapoznać się z dokumentacją, aby poznać pełną listę dostępnych narzędzi. Między innymi, biblioteka `clojure.java.io` zawiera funkcję `reader`, która umożliwia odczytanie zawartości strony w postaci strumienia danych, co może być przydatne w przypadku przetwarzania dużych stron.
+
+## Zobacz też
+
+Jeśli chcesz dowiedzieć się więcej o pobieraniu stron w Clojure, polecamy zapoznanie się z tymi zasobami:
+
+- Dokumentacja biblioteki `clojure.java.io`: https://clojuredocs.org/clojure.java.io/slurp
+- Poradnik szczegółowo opisujący pobieranie stron internetowych w Clojure: https://purelyfunctional.tv/guide/how-to-download-a-web-page-in-clojure/
+- Oficjalna strona języka Clojure: https://clojure.org/

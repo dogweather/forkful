@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: JSONの扱い方"
-simple_title:         "JSONの扱い方"
+title:                "「Jsonを扱う」"
+html_title:           "Clojure: 「Jsonを扱う」"
+simple_title:         "「Jsonを扱う」"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -9,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜJSONを使うのか？
+## なぜ
 
-JSONはあなたがよく使うデータ形式の一つです。データは通常テキスト形式で保存されるため、JSONを使わないと複雑な形式に変換する必要があります。JSONを使うことで、データを簡単に扱うことができ、プログラムやアプリケーションの統合も容易になります。
+JSONは、データを簡潔かつ柔軟に表現できるため、多くのプログラミング言語でよく使われています。ClojureでもJSONを扱うことで、WebアプリケーションやAPIとの連携などに役立ちます。
 
-## 手順
+## 方法
+
+Clojureでは、JSONを扱うためのモジュールとして「Cheshire」があります。Cheshireを使用すると、複雑なデータ構造でも簡単に扱うことができます。例えば、以下のようにしてJSONを読み込み、オブジェクトとして扱うことができます。
 
 ```Clojure
-(ns clojure-json-example.core
-  (:require [clojure.data.json :as json]))
+(ns your-namespace
+  (:require [cheshire.core :as json]))
 
-;; JSONデータのパース
-(def json-data (json/read-str "{\"name\": \"John\", \"age\": 25, \"hobbies\": [\"reading\", \"cooking\"]}"))
+;; JSONを読み込む
+(def json-data (json/parse-string "{\"name\":\"Emily\", \"age\": 25}"))
 
-;; データの取得
-(def name (get json-data "name")) ;;=> "John"
-(def age (get json-data "age"))   ;;=> 25
-(def hobbies (get json-data "hobbies")) ;;=> ["reading", "cooking"]
+;; オブジェクトとしてアクセスする
+(println (:name json-data))
+(println (:age json-data))
 
-;; データの作成
-(def new-json-data (json/write-str {:name "Jane", :age 30, :hobbies ["writing", "singing"]}))
-;;=> "{\"name\": \"Jane\", \"age\": 30, \"hobbies\": [\"writing\", \"singing\"]}"
+;; 出力
+;; "Emily"
+;; 25
+```
+
+また、Clojureでは簡単にJSONを生成することもできます。例えば、以下のようにClojureのデータ構造をJSONに変換することができます。
+
+```Clojure
+(ns your-namespace
+  (:require [cheshire.core :as json]))
+
+;; ClojureのハッシュマップをJSONに変換する
+(json/generate-string {:name "Emily", :age 25})
+
+;; 出力
+;; "{\"name\":\"Emily\",\"age\":25}"
 ```
 
 ## 深堀り
 
-JSONを操作する際、キーワードを使うことでデータを取得したり作成したりすることができます。また、データをネストさせることもできます。Clojureには `clojure.data.json` ライブラリがあり、JSONデータのパースやシリアライズを簡単に行うことができます。
+Clojureのデータ構造とJSONの相互変換については、より詳細に知りたい場合、Cheshireのドキュメントを参照することをおすすめします。また、他のClojureのライブラリやツールと組み合わせることで、より効率的にJSONを扱うことができます。例えば、「Ring」というライブラリを使うことで、ClojureでWebアプリケーションを作成する際にJSONをどのように扱うかを学ぶことができます。
 
-# 参考リンク
+## 参考リンク
 
-- [JSON with Clojure](https://clojure.org/reference/data_structures#_json)
-- [clojure.data.json documentation](https://clojure.github.io/data.json/)
+- Cheshire: https://github.com/dakrone/cheshire
+- Ring: https://github.com/ring-clojure/ring

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Wyświetlanie wyników debugowania"
-simple_title:         "Wyświetlanie wyników debugowania"
+title:                "Wydrukowanie wyników błędów"
+html_title:           "Kotlin: Wydrukowanie wyników błędów"
+simple_title:         "Wydrukowanie wyników błędów"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,51 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Drukowanie informacji debugowania jest kluczowym elementem w procesie programowania Kotlin. Pozwala nam ono na dokładne śledzenie przebiegu działania programu i naprawianie ewentualnych błędów. Zapoznajmy się z tym narzędziem bliżej!
+Czy kiedykolwiek zdarzyło ci się mieć problem z odnalezieniem błędu w swoim kodzie? Czy traciłeś dużo czasu na debugowanie? Drukowanie debugowego wyjścia może być nieocenionym narzędziem w takich sytuacjach. Pozwala ono na wyświetlenie wartości zmiennych podczas działania programu, ułatwiając odnajdywanie błędów i poprawianie kodu.
 
 ## Jak to zrobić
 
-Aby wydrukować informacje debugowania w Kotlinie, wystarczy użyć funkcji `println()` i umieścić w niej odpowiednie zmienne lub wyrażenia. Na przykład:
+Aby wyświetlić debugowe wyjście, możemy użyć jednej z dwóch funkcji wbudowanych w Kotlin: `print()` lub `println()`. Pierwsza z nich wyświetli tekst bez dodania znaku nowej linii, natomiast druga – z dodaniem.
+
+Przykład użycia funkcji `print()`:
 
 ```Kotlin
-fun main() {
-   val x = 5
-   val y = 3
-   println("Wartość zmiennej x wynosi $x, a wartość zmiennej y wynosi $y.")
-}
+val name = "Jan"
+print("Witaj, $name!") // Wyświetli "Witaj, Jan!"
 ```
 
-Wynikiem tego kodu będzie wypisanie w konsoli: "Wartość zmiennej x wynosi 5, a wartość zmiennej y wynosi 3." Dzięki temu możemy na bieżąco monitorować wartości naszych zmiennych i łatwiej zidentyfikować ewentualne błędy.
-
-Do drukowania informacji debugowania można również wykorzystać funkcję `log()` z pakietu `android.util`. Ta metoda jest szczególnie przydatna w przypadku aplikacji mobilnych pisanych w Kotlinie. Przykład użycia:
+Przykład użycia funkcji `println()`:
 
 ```Kotlin
-fun main() {
-    val x = 5
-    val y = 3
-    Log.d("Debugowanie", "Wartość zmiennej x wynosi $x, a wartość zmiennej y wynosi $y.")
-}
+val age = 25
+println("Masz $age lat.") // Wyświetli "Masz 25 lat." i przejdzie do nowej linii.
 ```
 
-Wynikiem będzie wypisanie w logach aplikacji: "Debugowanie: Wartość zmiennej x wynosi 5, a wartość zmiennej y wynosi 3."
+Możemy również wyświetlić więcej niż jedną zmienną, stosując operator `+`, lub można użyć funkcji `print()` lub `println()` wielokrotnie.
+
+Przykład użycia operatora `+`:
+
+```Kotlin
+val number1 = 5
+val number2 = 10
+println("Suma $number1 + $number2 to ${number1 + number2}.") // Wyświetli "Suma 5 + 10 to 15."
+```
 
 ## Głębszy zanurzenie
 
-Jeśli chcemy jeszcze bardziej zaawansować swoje debugowanie, możemy skorzystać z opcji dodawania tagów do informacji drukowanych w logach. Dzięki temu możemy łatwiej zidentyfikować, z jakiej części naszego kodu pochodzi dana informacja. Przykład:
-
-```Kotlin
-fun main() {
-    val x = 5
-    val y = 3
-    Log.d("Moja aplikacja", "Wartość zmiennej x wynosi $x, a wartość zmiennej y wynosi $y.")
-}
-```
-
-W logach pojawi się wtedy: "Moja aplikacja: Wartość zmiennej x wynosi 5, a wartość zmiennej y wynosi 3."
-
-Inną przydatną opcją jest również wykorzystanie poziomów logowania. Możemy je ustawić dla poszczególnych informacji debugowania, co pozwala na lepszą organizację i filtrowanie wyświetlanych w logach danych.
+Warto pamiętać, że funkcje `print()` i `println()` mogą przyjmować różne typy danych, takie jak stringi, liczby czy zmienne. Możemy również używać znaków specjalnych, takich jak znak nowej linii `\n` lub znak tabulacji `\t`. Możemy również skorzystać z ferramentów deweloperskich takich jak debugger, który pozwala na precyzyjne śledzenie wartości zmiennych w trakcie działania programu.
 
 ## Zobacz także
 
-- Dokumentacja Kotlina o drukowaniu informacji debugowania: https://kotlinlang.org/docs/tutorials/kotlin-for-py/print-debugging-info.html
-- Poradnik o debugowaniu w Kotlinie: https://www.raywenderlich.com/5158-kotlin-debugging-tutorial-getting-started
+- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
+- [Dokumentacja funkcji `print()` i `println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/print.html)
+- [Poradnik programowania w języku Kotlin](https://kotlinlang.org/docs/getting-started.html)

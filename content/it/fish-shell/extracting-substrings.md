@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Fish Shell: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,26 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per cui potresti voler estrarre sottostringhe all'interno del tuo codice Fish Shell. Ad esempio, potresti dover manipolare stringhe per creare nuove variabili o per formattare i risultati in un modo specifico.
+Se sei un programmatore alla ricerca di un modo semplice e efficiente per estrarre sottocategorie da una stringa, allora dovresti considerare l'utilizzo della shell Fish. Grazie alle sue potenti funzionalità, puoi facilmente estrarre substringhe utilizzando il suo codice semplice e intuitivo.
 
 ## Come Fare
 
-Estrarre sottostringhe in Fish Shell è relativamente semplice. Per farlo, usa il comando `string sub` seguito da un indice di inizio e fine, seguito dalla stringa a cui si vuole applicare l'estrazione.
+Per estrarre una sottostringa da una stringa in Fish, utilizzare il comando `string sub`. Ad esempio, se hai una stringa "Ciao mondo!" e vuoi estrarre solo la parola "mondo", puoi farlo con il seguente codice:
 
 ```
 Fish Shell
-string sub 2 6 "Ciao a tutti!" 
+
+string sub "Ciao mondo!" - 5
 ```
 
-Questo codice restituirà la sottostringa "iao a" poiché l'indice di inizio è 2 e l'indice finale è 6, che corrisponde alle lettere "i" e "a" rispettivamente.
+La sintassi è semplice: inserisci la parola "string" seguita dall'argomento "sub" e la stringa da cui vuoi estrarre la sottostringa. Inoltre, puoi specificare la posizione iniziale della sottostringa utilizzando un segno meno prima del numero della posizione desiderata.
 
-Puoi anche combinare l'uso di `string sub` con altri comandi per creare espressioni più complesse. Ad esempio, puoi usare il comando `string match` per trovare una determinata parola all'interno di una stringa e poi estrarne la sottostringa usando `string sub`.
+Il risultato del codice sopra riportato dovrebbe essere il seguente output:
+
+```
+Fish Shell
+
+mondo!
+```
+
+Puoi anche utilizzare il comando `strindex` per trovare la posizione di un carattere o di una sottostringa all'interno di una stringa. Ad esempio:
+
+```
+Fish Shell
+
+string strindex "Ciao mondo!" "mondo!"
+```
+
+Il risultato sarà il seguente:
+
+```
+Fish Shell
+
+5
+```
 
 ## Approfondimento
 
-L'estrazione delle sottostringhe è solo una delle tante funzioni utili che puoi sfruttare in Fish Shell. Per saperne di più, puoi consultare la documentazione ufficiale di Fish Shell o partecipare alla comunità di utenti per scambiare informazioni e scoprire nuovi trucchi e tecniche.
+È possibile specificare ulteriori argomenti per ottenere risultati più precisi. Ad esempio, puoi utilizzare l'opzione `start` per indicare la posizione di partenza della sottostringa, e l'opzione `end` per indicare la posizione di fine. Inoltre, puoi utilizzare l'opzione `length` per specificare la lunghezza desiderata della sottostringa.
+
+```
+Fish Shell
+
+string sub "Ciao mondo!" --start 5 --length 5
+```
+
+Il risultato del codice sopra riportato sarà:
+
+```
+Fish Shell
+
+mondo
+```
+
+Sperimenta con questi comandi e le loro opzioni per ottenere i risultati desiderati.
 
 ## Vedi Anche
 
-- [Documentazione di Fish Shell](https://fishshell.com/docs/current/index.html#string-substring)
-- [Comunità di Fish Shell](https://fishshell.com/community.html)
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guida rapida per iniziare con Fish Shell](https://dev.to/mauroker0x/improve-your-terminal-game-with-fish-shell-2538)

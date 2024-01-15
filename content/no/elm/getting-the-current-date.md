@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Å få gjeldende dato"
-simple_title:         "Å få gjeldende dato"
+title:                "Hente nåværende dato"
+html_title:           "Elm: Hente nåværende dato"
+simple_title:         "Hente nåværende dato"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,24 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er viktig å kunne få tak i den aktuelle datoen når du programmerer i Elm, spesielt hvis du jobber med applikasjoner som trenger å vise eller håndtere datoer på en nøyaktig måte. Dette kan være alt fra kalendere og timeplanleggere til nettbutikker som må holde styr på leveringsdatoer. Uansett hva slags applikasjon du utvikler, er det nyttig å kunne få tak i den korrekte datoen raskt og enkelt.
+Å få den nåværende datoen er en enkel, men nyttig funksjon i mange programmer. Enten det er for å vise brukeren den aktuelle datoen, registrere når noe skjedde, eller for å planlegge fremtidige oppgaver, så er det å kunne få tak i dagens dato en viktig del av mange programmer.
 
-## Hvordan gjøre det
+## Hvordan
 
-Å få tak i den aktuelle datoen i Elm er ganske enkelt. Du kan bruke funksjonen `Date.now` for å få datoen og klokkeslettet i millisekunder. Dette kan deretter konverteres til en `Date`-verdi ved hjelp av funksjonen `Date.fromTime`. For eksempel:
+For å få den nåværende datoen i Elm, kan du bruke funksjonen ```Date.toIsoString```. Den returnerer dagens dato i ISO-format, slik som dette:
 
 ```Elm
-Date.fromTime (Date.now model)
-Date.fromTime 1621623304109
+Date.toIsoString Date.today
 ```
 
-Dette vil returnere en `Date`-verdi som du kan bruke videre i koden din.
+Output vil være noe som dette: 
 
-## Dykk dypere
+```Elm
+"2021-09-28"
+```
 
-Hvis du vil utforske mer avanserte måter å håndtere og manipulere datoer på i Elm, kan du bruke biblioteket [elm-time](https://package.elm-lang.org/packages/elm/time/latest/) som gir deg flere funksjoner og verktøy for å håndtere tid og datoer. Du kan også bruke [Date Picker](https://github.com/elm-community/date-picker) for å lage brukervennlige kalendere og velgere for datoer i applikasjonen din.
+Du kan også formatere datoen på en mer lesbar måte ved å bruke funksjonen ```Date.format``` og spesifisere et format du ønsker. For eksempel, for å få datoen i formatet "dd. MMM yyyy", kan du skrive:
+
+```Elm
+Date.format "%d. %b %Y" Date.today
+```
+
+Output vil da være noe som dette:
+
+```Elm
+"28. Sep 2021"
+```
+
+Du kan også få informasjon om tidspunktet for den nåværende datoen ved å bruke funksjonene ```Date.hour```, ```Date.minute```, og ```Date.second```. Disse vil returnere tall som representerer timen, minuttet og sekundet for dagens dato.
+
+## Dypdykk
+
+I tillegg til de nevnte funksjonene, kan du også få mer detaljert informasjon om den nåværende datoen ved å bruke funksjonen ```Date.toTime``` og deretter bruke funksjoner som ```Time.hour```, ```Time.minute``` og ```Time.second```. Dette vil gi deg tidspunktet for dagens dato i enklere å jobbe med format.
+
+Det kan også være nyttig å vite hvordan man kan få tak i datoen for et bestemt tidspunkt, eller å legge til eller trekke fra et visst antall dager fra dagens dato. Dette kan enkelt gjøres ved å bruke funksjonene ```Date.fromIsoString``` og ```Date.fuse``` sammen med ulike datorelaterte funksjoner.
 
 ## Se også
 
-- [elm-time bibliotek](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Date Picker bibliotek](https://github.com/elm-community/date-picker)
+- Offisiell Elm dokumentasjon om [Date](https://package.elm-lang.org/packages/elm-lang/core/latest/Date)
+- Elm [Time package](https://package.elm-lang.org/packages/elm/time/latest/Time) for mer avanserte tidsfunksjoner.

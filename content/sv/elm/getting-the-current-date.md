@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Att få dagens datum"
+title:                "Att få dagens datum"
+html_title:           "Elm: Att få dagens datum"
 simple_title:         "Att få dagens datum"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,50 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna få den aktuella datumen är en viktig del av Elm programmering eftersom det ger en uppdaterad information till användare och tillåter applikationer att fungera korrekt baserat på tidsberoende funktioner.
+Att få den nuvarande datumet kan vara användbart i många situationer, som att visa datumet på en hemsida eller att göra beräkningar baserat på dagens datum. Det är också ett bra sätt att öva på programmering i Elm och lära sig om tids- och datumfunktioner.
 
-## Hur man gör
+## Så här gör du
 
-För att få den aktuella datumen i Elm, måste man först importera `Time` modulen. Sedan kan man använda `Time.now` funktionen för att få den aktuella datumen som en `Posix` värdering.
-
-```Elm
-import Time
-
-currentDate : Time.Posix
-currentDate =
-  Time.now
-```
-
-För att sedan konvertera den värderingen till ett mer läsbart format, såsom dag, månad och år, kan man använda funktionen `Time.toDayDate` och ge den `currentDate` som ett argument.
+För att få den nuvarande datumet i Elm, behöver vi använda modulen `Time`. Först måste vi importera denna modul i början av vår kod. Sedan kan vi använda funktionen `now` för att få den nuvarande tidpunkten. Här är ett enkelt exempel:
 
 ```Elm
-currentDayDate : Maybe (Int, Int, Int)
-currentDayDate =
-  Time.toDayDate currentDate
+import Time exposing (..)
+
+view : Html msg
+view =
+    div []
+        [ h1 [] [ text "Dagens datum:" ]
+        , text (toString (now |> toLocal |> toUtc |> toDate)) -- konverterar till lokal tidzon och sedan till datum
+        ]
 ```
 
-Outputen av `currentDayDate` skulle vara `Just (30, 11, 2021)`.
+Output: 
+Dagens datum: 2021-09-18
+
+Vi kan också anpassa formatet på datumet genom att använda funktionen `format` och ge den ett önskat format som en strängparameter. Här är ett exempel där vi vill ha formatet "ÅÅÅÅ.MM.DD":
+
+```Elm
+text (now |> toTimezone +120 |> format "%Y.%m.%d") -- konverterar till en specifik tidzon och sedan formaterar datumet
+```
+
+Output:
+2021.09.19
 
 ## Djupdykning
 
-`Time` modulen i Elm tillåter också hantering av tidszoner och formatering av datum för mer specifika behov. Genom att använda funktionen `Time.fromPosix` kan man få en `Time.Zone` värdering som kan användas för att anpassa datumen till en specifik tidszon.
+För att förstå hur funktionerna `toLocal`, `toUtc`, `toTimezone` och `format` fungerar kan vi titta närmare på typdefinitionerna för tidsstämplarna som returneras av `now`-funktionen:
 
 ```Elm
-import Time exposing (Zone, ZonedDateTime, fromPosix)
+type Time.Posix = Milliseconds
 
-currentTime : Time.ZonedDateTime
-currentTime =
-  fromPosix (Time.now) (Time.utc)
+type alias Time.Zone = { hours : Int, minutes : Int }
 
-currentDate : String
-currentDate =
-  Time.format "%Y-%m-%d" currentTime (Time.fromZone (Zone.name currentTime))
+type alias Time.Date = { year : Int, month : Int, day : Int }
+
+type Time.Timestamp = Time.Zone -> Time.Date
 ```
 
-Outputen av `currentDate` skulle vara i formatet `2021-11-30` och anpassad till den globala tidszonen.
+`Time.Posix` representerar antalet millisekunder sedan 1 januari 1970. `Time.Date` innehåller information om år, månad och dag. `Time.Zone` representerar en tidzon i antal timmar och minuter från UTC. Och `Time.Timestamp` är en funktion som tar en tidzon som indata och returnerar ett `Time.Date`-värde.
 
-## Se också
+Genom att kombinera dessa funktioner kan vi manipulera och formatera datumet enligt våra behov.
 
-- [Elm Time modulen dokumentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Officiell Elm språk guide](https://guide.elm-lang.org/)
-- [Hur man hanterar tidszoner i Elm](https://medium.com/@ryuclarke/working-with-time-zones-in-elm-c7367f71bfb0)
+## Se även
+
+- Elm dokumentation för [Time-modulen](https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm för Nybörjare: [Tids- och Datumbehandling](https://guide.elm-lang.org/effects/time.html)
+- [Datum och Tid i Elm](http://simonh1000.github.io/2016/05/elm-date-and-time-in-elm.html) av Simon Hampton

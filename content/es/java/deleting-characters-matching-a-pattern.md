@@ -1,6 +1,7 @@
 ---
-title:                "Java: Eliminando caracteres que coinciden con un patrón"
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
+title:                "Borrando caracteres que coinciden con un patrón"
+html_title:           "Java: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué deberías eliminar caracteres que coincidan con un patrón en Java?
 
-A veces, al trabajar con cadenas de texto en Java, podemos encontrarnos con la necesidad de eliminar ciertos caracteres que coinciden con cierto patrón. Esto puede ser útil en situaciones en las que queremos limpiar o formatear datos antes de procesarlos. En esta publicación, aprenderemos cómo eliminar caracteres que coinciden con un patrón en Java.
+Eliminar caracteres que coincidan con un patrón es una tarea común en el desarrollo de software. Puede ser útil para limpiar y validar entradas de usuario o para formatear cadenas de texto de manera precisa. Al seguir los pasos adecuados, puedes lograr esto de manera sencilla en Java.
 
-## Cómo hacerlo
-
-Primero, necesitamos importar la clase `java.util.regex.Pattern` para poder trabajar con patrones de expresiones regulares. Luego, podemos crear una instancia de la clase `Pattern` utilizando el método `compile`. Dentro del método, especificamos el patrón que queremos buscar y el modificador `CASE_INSENSITIVE` para que la búsqueda sea insensible a mayúsculas y minúsculas.
+## Cómo hacerlo en Java
 
 ```java
-import java.util.regex.Pattern;
+// Importar la clase Scanner de Java
+import java.util.Scanner;
 
-String texto = "¡Hola! Mi nombre es Juan";
-Pattern patron = Pattern.compile("o");
+// Crear un objeto Scanner para leer la entrada del usuario
+Scanner input = new Scanner(System.in);
+
+// Pedir al usuario que ingrese una cadena de texto
+System.out.println("Ingresa una cadena de texto:");
+String texto = input.nextLine(); // Guardar la entrada del usuario en una variable
+
+// Pedir al usuario que ingrese un patrón para eliminar
+System.out.println("Ingresa un patrón a eliminar:");
+String patron = input.nextLine(); // Guardar la entrada del usuario en una variable
+
+// Reemplazar todas las coincidencias del patrón con una cadena vacía
+String resultado = texto.replaceAll(patron, "");
+
+// Imprimir el resultado final
+System.out.println("El texto resultante es: " + resultado);
 ```
 
-Luego, utilizamos el método `matcher` en la instancia de `Pattern` para crear un objeto `Matcher` que nos permitirá realizar la búsqueda en nuestro texto. Dentro del método, pasamos la cadena de texto en la que queremos buscar.
+**Entrada de usuario:**
 
-```java
-Matcher matcher = patron.matcher(texto);
+```
+Ingresa una cadena de texto:
+Hola mundo
+Ingresa un patrón a eliminar:
+l
 ```
 
-Finalmente, utilizamos el método `replaceAll` en el objeto `Matcher` para reemplazar todos los caracteres que coinciden con el patrón especificado. También podemos utilizar `replaceFirst` si solo queremos reemplazar la primera coincidencia.
+**Salida:**
 
-```java
-texto = matcher.replaceAll("");
-System.out.println(texto); // Resultado: ¡H! Mi nmbre es Juan
+```
+El texto resultante es: Ho mundo
 ```
 
-## Profundizando
+## Profundizando en la eliminación de caracteres que coinciden con un patrón
 
-Además de los métodos mencionados anteriormente, también podemos utilizar `matches` para determinar si una cadena de texto coincide con un patrón dado y `find` para buscar la próxima coincidencia. También podemos utilizar la clase `Pattern` en conjunto con la clase `String` para realizar operaciones de búsqueda y reemplazo en una sola línea de código.
+Java ofrece varios métodos para eliminar caracteres que coincidan con un patrón en una cadena de texto. Uno de ellos es el método `replaceAll()` que utilizamos en el ejemplo anterior. Este método reemplaza todas las coincidencias de un patrón con una cadena especificada.
 
-Es importante tener en cuenta que las expresiones regulares pueden ser muy poderosas, pero también pueden ser complicadas de entender y utilizar correctamente. Se recomienda revisar la documentación oficial de Java o buscar recursos adicionales para aprender a utilizarlas de manera efectiva.
+Otro método útil es `replace()`, que solo reemplaza la primera coincidencia del patrón en la cadena. También hay métodos específicos para eliminar espacios en blanco `trim()` y eliminar caracteres especiales `replaceChars()`. Puedes experimentar con diferentes métodos y ver cuál se ajusta mejor a tus necesidades.
 
 ## Ver también
 
-- Documentación oficial de Java sobre `java.util.regex` (en inglés): https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html
-- Tutorial de Programiz sobre expresiones regulares en Java (en español): https://www.programiz.com/java-programming/regex
-- Ejemplos de expresiones regulares para diferentes casos de uso (en español): https://cheatsheetseries.owasp.org/cheatsheets/Regular_Expressions_Cheat_Sheet-Spanish.html
+- [Documentación de Java para el método `replaceAll()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+- [Documentación de Java para el método `replace()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-java.lang.CharSequence-java.lang.CharSequence-)
+- [Tutorial de Java: Cadena de texto y sus métodos](https://www.youtube.com/watch?v=oHL4C9mwNjw)

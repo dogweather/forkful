@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Working with json"
+title:                "Working with json"
+html_title:           "Swift recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,73 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-JSON is a popular data format used in many web and mobile applications due to its flexibility and simplicity. Being able to work with JSON in Swift can greatly enhance your programming skills and allow you to create more dynamic and interactive apps.
+If you're a Swift developer, chances are you've come across JSON in your line of work. JSON, or JavaScript Object Notation, is a popular data interchange format that allows for easy transfer of data between platforms and applications. It's commonly used in web development, mobile app development, and data integration projects.
 
 ## How To
 
-To start working with JSON in Swift, we first need to import the Foundation framework. This will give us access to the `JSONSerialization` class which allows us to easily convert between JSON data and Swift objects.
+To work with JSON in Swift, you'll need to import the `Foundation` framework, which contains the `JSONSerialization` class. This class allows you to convert JSON to and from Swift data types such as `Dictionary` and `Array`.
+
+Let's take a look at an example of parsing JSON data in Swift:
 
 ```Swift
-import Foundation
-
+// Sample JSON string
 let jsonString = """
 {
-    "name": "John",
+    "firstName": "John",
+    "lastName": "Doe",
     "age": 30,
-    "hobbies": ["programming", "reading", "hiking"]
+    "hobbies": ["reading", "hiking", "cooking"]
 }
 """
 
-guard let jsonData = jsonString.data(using: .utf8) else {
-    print("Invalid JSON string")
-    return
-}
+// Convert JSON string to data
+let jsonData = jsonString.data(using: .utf8)!
 
 do {
-    let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+    // Parse JSON data
+    if let json = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] {
     
-    if let person = jsonObject as? [String: Any],
-        let name = person["name"] as? String,
-        let age = person["age"] as? Int,
-        let hobbies = person["hobbies"] as? [String] {
-        print("Name: \(name)")
-        print("Age: \(age)")
-        print("Hobbies: \(hobbies)")
-    } else {
-        print("Invalid JSON format")
+        // Extract data from JSON and assign to variables
+        let firstName = json["firstName"]
+        let lastName = json["lastName"]
+        let age = json["age"]
+        let hobbies = json["hobbies"] as? [String]
+        
+        // Print extracted data
+        print(firstName ?? "Unknown")
+        print(lastName ?? "Unknown")
+        print(age ?? "Unknown")
+        print(hobbies ?? "Unknown")
     }
 } catch {
     print("Error parsing JSON: \(error)")
 }
 ```
 
-The above example shows how we can use `JSONSerialization` to convert a JSON string into a Swift dictionary. We can then access the values from the dictionary using the appropriate types. This allows us to easily work with JSON data in our Swift code.
+Output:
+```
+John
+Doe
+30
+["reading", "hiking", "cooking"]
+```
+
+As you can see, we converted the JSON string into data and then used the `JSONSerialization` class to parse the data into a Swift `Dictionary`. From there, we were able to access and print out the data as desired.
 
 ## Deep Dive
 
-Working with JSON in Swift also gives us the ability to handle more complex data structures, such as nested objects and arrays. We can use the `JSONDecoder` class to decode JSON data directly into our own custom model objects.
+If you're interested in diving deeper into working with JSON in Swift, there are a few key things to keep in mind. First, it's important to properly format your JSON data. This means using double quotes for keys and string values, and using square brackets for arrays.
 
-```Swift
-struct User: Codable {
-    let name: String
-    let age: Int
-    let hobbies: [String]
-}
-
-do {
-    let user = try JSONDecoder().decode(User.self, from: jsonData)
-    print("Name: \(user.name)")
-    print("Age: \(user.age)")
-    print("Hobbies: \(user.hobbies)")
-} catch {
-    print("Error decoding JSON: \(error)")
-}
-```
-
-By conforming to the `Codable` protocol and specifying the key-value mapping in our model object, we can easily convert JSON data into Swift objects. This can greatly simplify the process of parsing and working with complex JSON data.
+Another useful feature in Swift for working with JSON is the `Codable` protocol. This protocol allows for easy encoding and decoding of Swift objects to and from JSON. Simply conform your objects to `Codable` and use the `JSONEncoder` and `JSONDecoder` classes to convert back and forth between JSON and your custom objects.
 
 ## See Also
 
-- [Apple Developer Documentation on JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Apple Developer Documentation on Codable](https://developer.apple.com/documentation/swift/codable)
-- [Hacking with Swift - Working with JSON in Swift](https://www.hackingwithswift.com/read/7/2/working-with-json-in-swift)
+- [Apple Developer Documentation: JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [Ray Wenderlich: Working with JSON in Swift](https://www.raywenderlich.com/1124570-working-with-json-in-swift)
+- [Swift.org: Decodable](https://swift.org/documentation/api-design-guidelines/#decoding)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: HTTP 요청 보내기"
-simple_title:         "HTTP 요청 보내기"
+title:                "http 요청 보내기"
+html_title:           "C#: http 요청 보내기"
+simple_title:         "http 요청 보내기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,69 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-HTTP 요청을 보내는 것이 왜 필요한지 궁금하신가요? HTTP 요청은 웹 서버에게 정보를 요청하고 응답을 받기위해 사용되는 효율적인 방법입니다. 예를 들어, 웹 브라우저에서 웹 페이지를 열거나, API를 호출하여 데이터를 가져오는 등 여러 가지 용도로 사용될 수 있습니다.
+# 왜
+
+HTTP 요청을 보내는 이유는 개발자들이 서버와 클라이언트 간의 효율적인 통신을 위해 정보를 교환하기 위해서입니다.
 
 ## 방법
-아래 코드 블록에서는 간단한 C# 예제를 통해 HTTP 요청을 보내는 방법을 보여드리겠습니다. 이 예제는 .NET core 버전을 기준으로 작성되었습니다.
+
+HTTP 요청을 보내는 방법은 매우 간단합니다. 먼저, .NET Framework에서 제공하는 WebClient 라이브러리를 사용하여 요청을 보낼 수 있습니다.
 
 ```C#
-// 필요한 네임스페이스를 추가합니다.
-using System;
-using System.Net;
-using System.IO;
-
-public class Program
-{
-    public static void Main()
-    {
-        // 요청할 URL을 설정합니다.
-        string url = "https://jsonplaceholder.typicode.com/posts/1";
-
-        // HttpWebRequest 객체를 생성합니다.
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-        // Get 요청 방식을 설정합니다.
-        request.Method = "GET";
-
-        // 응답을 받기 위해 HttpWebResponse 객체를 생성합니다.
-        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-        // 응답 데이터를 읽기 위해 Stream 객체를 생성합니다.
-        Stream dataStream = response.GetResponseStream();
-
-        // 응답 데이터를 읽을 StreamReader 객체를 생성합니다.
-        StreamReader reader = new StreamReader(dataStream);
-
-        // 응답을 문자열 형태로 받아옵니다.
-        string responseFromServer = reader.ReadToEnd();
-
-        // 받아온 데이터를 콘솔에 출력합니다.
-        Console.WriteLine(responseFromServer);
-
-        // 생성한 객체들을 모두 닫아줍니다.
-        reader.Close();
-        dataStream.Close();
-        response.Close();
-    }
-}
+//System.Net 라이브러리를 사용하여 WebClient 객체 생성
+WebClient client = new WebClient(); 
+//URL과 함께 요청을 보내고, 결과를 문자열로 받아옴
+string result = client.DownloadString("https://www.example.com"); 
+//출력
+Console.WriteLine(result); 
 ```
 
-위의 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+위의 예제에서는 WebClient 라이브러리의 DownloadString 메소드를 사용하여 GET 요청을 보냈습니다. 또한, WebClient 객체를 사용하여 POST나 PUT 요청 등 다른 유형의 요청도 보낼 수 있습니다.
 
-```
-{
-  userId: 1,
-  id: 1,
-  title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit ...",
-}
-```
+## 깊게 들어가기
 
-## 딥 다이브
-HTTP 요청은 여러 가지 다양한 설정을 통해 더욱 유연하게 사용할 수 있습니다. 예를 들어, POST 요청을 보내거나 특정 데이터를 요청하는 등의 기능을 추가할 수 있습니다. 또한 보안적인 측면에서도 HTTPS 프로토콜을 사용하여 더 안전하게 요청을 보낼 수 있습니다. 따라서 필요한 기능에 맞게 HTTP 요청을 보내는 방법을 익히는 것은 매우 중요합니다.
+HTTP 요청은 다양한 메소드를 사용하여 보낼 수 있습니다. 가장 일반적인 것은 GET, POST, PUT, DELETE 등이 있습니다. 이 메소드들은 각각 다른 역할을 수행하며, 따라서 요청을 보낼 때 적절한 메소드를 선택해야 합니다. 또한, HTTP 헤더를 사용하여 요청에서 전달할 추가 정보들을 설정할 수도 있습니다. 예를 들어, Content-Type 헤더를 사용하여 요청의 본문 형식을 지정할 수 있습니다.
 
-## 참고 자료
-- [HTTP 요청 보내기](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.httpwebrequest?view=netcore-3.1)
-- [ASP.NET Core에서 HTTP 요청 처리하기](https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/http-requests?view=aspnetcore-3.1)
-- [HTTP 신호와 메시지 형식](https://hahohi.tistory.com/13)
+또한, 요청을 보내는 동안 발생하는 예외 상황들도 적절하게 처리해주어야 합니다. 예를 들어, 네트워크 연결이 끊겼을 때나 서버가 응답하지 않을 때 등의 경우가 있을 수 있습니다. 이러한 상황에 대한 적절한 예외 처리는 안정적인 애플리케이션을 만드는 데 매우 중요합니다.
+
+# 관련 링크
+
+- [WebClient 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.webclient?view=net-5.0)
+- [HTTP 요청과 응답 개념 알아보기](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP)
+- [GET과 POST의 차이점](https://mommoo.tistory.com/64)

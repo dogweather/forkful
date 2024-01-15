@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Java recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Java"
 category:             "Java"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever encountered an error in your Java program and wondered how to properly deal with it? Or do you want to improve the organization and debugging process of your code? Writing to standard error is a useful technique that can help you achieve these goals.
+
+Writing to standard error, also known as "stderr", can be a useful tool for Java programmers when debugging their code. It allows for error messages to be displayed separately from regular output, making it easier to identify and troubleshoot any issues in the code.
 
 ## How To
-In Java, writing to standard error is accomplished by using the `System.err` output stream. Here's a simple code snippet that demonstrates this:
+
+To write to stderr in Java, we can use the `System.err` object and the `print()` or `println()` methods. Here is a simple example:
 
 ```Java
-System.err.println("This is an error message");
+System.err.println("This is an error message.");
 ```
 
-This will print the message "This is an error message" to the standard error output. This output stream is separate from the standard output stream (accessed by `System.out`) and is typically used for error messages and other non-standard output.
+The above code will print the message "This is an error message." in the console, but in red font instead of the standard black. This can be helpful in quickly identifying where an error has occurred in a long list of console output.
 
-To add more context to your error messages, you can use the `System.err.printf()` method, which allows you to format your error messages similar to how you would format strings with `String.format()`. Here's an example:
+Additionally, we can also specify where the error message should appear by using the `setErr()` method on the `PrintStream` class. For example, if we want the error message to be displayed in a separate log file, we can do the following:
 
 ```Java
-int num = 10;
-System.err.printf("Error: The value of num is %d", num);
+PrintStream errStream = new PrintStream(new File("error.log"));
+System.setErr(errStream);
+System.err.println("This will be printed to error.log");
 ```
-
-This will output "Error: The value of num is 10" to the standard error output.
 
 ## Deep Dive
-Perhaps you're wondering why we can't just use `System.out` for error messages as well. This is because `System.out` is buffered, meaning that the messages will not be immediately displayed. On the other hand, `System.err` is not buffered, making it the ideal output stream for displaying error messages that need to be seen immediately.
 
-Another advantage of writing to standard error is when dealing with multiple threads. Since `System.err` is not buffered, it can handle multiple threads trying to write to it at the same time without any issues.
+Writing to stderr can be especially useful when dealing with exceptions in Java. By default, the stack trace for an exception is printed to stderr, making it easier to pinpoint the cause of the error. This can be further enhanced by using a logging framework such as Log4j, which allows for more detailed error messages to be displayed in stderr.
 
-Just like regular streams, you can also redirect standard error output by using `System.setErr()`. This can be helpful when you want to save all your error messages to a file for later analysis.
+It's worth noting that writing to stderr should not be used for regular logging purposes. This should only be used for error messages and debugging purposes. For regular logging, it's best to use the `System.out` object and the `Logger` class.
 
 ## See Also
-- [Java System Class](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java PrintStream Class](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
-- [Java String.format() Method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
+
+- [Java System Class JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Log4j Documentation](https://logging.apache.org/log4j/2.x/manual/api.html)
+
+By following these simple steps, you can use writing to stderr as a helpful tool in your Java coding journey. Happy debugging!

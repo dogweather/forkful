@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 比较两个日期"
+title:                "比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么比较两个日期
+## 为什么
 
-比较两个日期在编程中是常见的需求，特别是在处理时间相关的任务时。通过比较两个日期，可以判断出哪个日期在前，哪个日期在后，从而帮助我们完成更有针对性的操作。
+比较两个日期可能是一个常见的需求，例如在编写日程管理应用程序时。Clojure可以帮助我们轻松地完成这项任务，并且它的函数式编程风格使得代码更加简洁和易于维护。
 
-## 如何比较两个日期
+## 如何做
 
-在Clojure中，我们可以使用`clj-time`库来轻松地比较两个日期。首先，我们需要导入这个库：
+比较两个日期可以通过Clojure的`clojure.instant/compare`函数来实现。这个函数接受两个日期作为参数，然后返回一个整数，表示两个日期的关系。以下是一个简单的例子：
 
-```
-(require '[clj-time.core :as time])
-```
-
-接着，我们可以使用`time/compare`函数来比较两个日期：
-
-```
-(time/compare (time/date "2021-01-01") (time/date "2021-02-01"))
+```Clojure
+(clojure.instant/compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/parse "2020-12-31"))
 ```
 
-这个函数会返回一个整数值，如果第一个日期在第二个日期之前，则返回-1；如果两个日期相等，则返回0；如果第一个日期在第二个日期之后，则返回1。
+这将返回一个负数，表示第一个日期在第二个日期之前。同样地，我们可以比较时间戳，使用`clojure.instant/compare`函数，并使用`java.time.Instant`类来表示时间戳。以下是一个示例：
 
-我们还可以使用`time/after?`和`time/before?`函数来判断一个日期是否在另一个日期之后或之前：
-
-```
-(time/after? (time/date "2021-01-01") (time/date "2021-02-01"))   ;; 返回true
-(time/before? (time/date "2021-01-01") (time/date "2021-02-01"))  ;; 返回false
+```Clojure
+(clojure.instant/compare (java.time.Instant/parse "2020-01-01T00:00:00Z") (java.time.Instant/parse "2020-01-01T12:00:00Z"))
 ```
 
-## 深入了解比较两个日期
+这将返回一个负数，表示前一个时间戳在后一个时间戳之前。我们也可以使用`clojure.instant/compare`来比较具有相同日期的不同时间。以下是一个例子：
 
-在比较两个日期时，有一些注意事项需要我们关注。首先，要注意日期的格式，通常使用ISO8601标准的日期格式，即YYYY-MM-DD，这样才能保证比较的准确性。
-
-其次，要注意在比较时是否考虑时区的影响。如果两个日期处于不同的时区，比较的结果可能会有出入。在这种情况下，可以使用`time/after-at?`和`time/before-at?`函数来指定比较时的时区：
-
-```
-(time/after-at? (time/date "2021-01-01" (time/time-zone-for-offset -5)) (time/date "2021-01-01" (time/time-zone-for-offset 0))) ;; 返回false
+```Clojure
+(clojure.instant/compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalTime/parse "12:00:00"))
 ```
 
-最后，要注意比较日期和时间时，要使用`time/instant`函数来创建日期时间对象。
+这将返回0，表示这两个时间是相等的。
 
-## 参考资料
+## 深入探讨
 
-- [clj-time官方文档](https://github.com/clj-time/clj-time)
-- [Clojure日期和时间处理](https://vladimir.riemers.net/blog/2014/12/29/clojure-date-and-time-处理/)
+在Clojure中，日期和时间是一个不可变的对象，它们的值在创建之后就不会改变。这保证了我们对日期和时间进行比较时的准确性。Clojure还提供了其他一些有用的函数来处理日期和时间，例如`clojure.instant/instant`, `clojure.instant/now`, `clojure.instant/with-zone`等。我们还可以使用`java.time`包中的其他类来创建和处理日期和时间，例如`java.time.ZoneId`, `java.time.Duration`等。
 
-## 参见
+## 参考链接
 
-- [Clojure编程指南](https://clojure.org/guides/getting_started)
-- [Clojure中国社区](https://clojurechina.org/)
+- [Clojure官方文档](https://clojuredocs.org/)
+- [Java 8日期和时间API文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Clojure比较函数文档](https://clojure.org/reference/data_structures#date_and_time_functions)

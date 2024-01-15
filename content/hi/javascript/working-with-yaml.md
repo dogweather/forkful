@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: yaml के साथ काम करना"
+title:                "yaml के साथ काम करना"
+html_title:           "Javascript: yaml के साथ काम करना"
 simple_title:         "yaml के साथ काम करना"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Kya aapne kabhi apne code ko organize karne ke liye YAML ka istemal kiya hai? YAML (YAML Ain't Markup Language) ek simple aur flexible format hai, jise aap programming languages ke saath bhi use kar sakte hain. Isse aap apne data ko asaan tareeke se store aur access kar sakte hain.
 
-जब आप आज की डेवलपर्स की गलियॉं में देखें, आपको आमतौर पर डाटा और कॉन्फ़िगरेशन को याद करने के लिए YAML के बारे में कुछ तो सुना ही होगा। हालांकि यह एक सेट अप फाइल है, लेकिन यह आपको आसानी से विभिन्न प्रोग्रामिंग भाषाओं में समझाई जा सकती है। तो आइए जानते हैं कि YAML क्यों महत्वपूर्ण है और हम इसे कैसे उपयोग कर सकते हैं।
+## Kaise Karein
+YAML ko Javascript mein use karne ke liye, aapko kuch simple steps follow karne honge:
 
-## कैसे करें
-
-याद रखें, YAML से समझौते और सेटिंग्स खासकर उन ऐप्स और प्रोग्राम में भी किया जाता है जहाँ कॉन्फ़िगरेशन और डाटा खासकर अतिरिक्त संपादन में अधिकारी उपयोगकर्ता को होता है।
-
-इस लेख में हम YAML के चरणों को कवर करेंगे जो निम्न हैं:
-
-**Phpstorm** में YAML सेटिंग्स कौन से होते हैं।
-
-`Linux/VIM/ST3` में YAML सेटिंग्स कैसे संशोधित करें।
-
-`NodeJS` में YAML पार्‌स-अप।
-
-`ReactJS` में किसी कॉन्फ़िगरेशन या डेटा सेटिंग के लिए YAML का प्रयोग करें।
-
-### Example 1 - YAML संपादित करें:
-
+1. Sabse pehle, aapko YAML library ko install karna hoga. Ye npm package manager ka istemal karke easily ho sakta hai. Terminal mein `npm install js-yaml` likhkar ye library install kar sakte hain.
+2. Ab aap `require()` function ka istemal karke YAML library ko apne code mein import kar sakte hain.
+3. Ab aap YAML ka object `yaml` banalein, jisme aap apni YAML file ko load kar sakte hain. Jaise: 
 ```Javascript
-// YAML संपादित करें
 const yaml = require('js-yaml');
-const fs   = require('fs');
-// YAML से डेटा को अनशिफ्ट करें
-const data = yaml.safeLoad(fs.readFileSync('<YAML file>', 'utf8'));
-console.log(data);
-// और इसे डेटा के साथ प्रभावित करें
+const fs = require('fs');
+
+let yamlFile = yaml.safeLoad(fs.readFileSync('file.yml', 'utf8'));
+```
+4. Aap `yamlFile` object ka istemal karke apne YAML data ko access kar sakte hain, jaise:
+```Javascript
+console.log(yamlFile.key); // "value"
 ```
 
-मैंने एक YAML फाइल बनाई है और sample.yaml जैसा दिखता है। मुझे सभी डेटा का प्रिंट आउट चाहिए:
+## Gahrai Se Jaaein
+Agar aapko YAML ke baare mein aur jaankari chahiye, toh aap `js-yaml` library ke official documentation aur GitHub repository par jaa sakte hain. Iske alawa, aap YAML ke Python, Ruby aur Java ke implementations ke baare mein bhi padh sakte hain.
 
-```JavaScript
-// फाइल sample.yaml
-menu:
-  home:
-    text: 'Home Page'
-  about:
-    text: 'About Page'
-  contact:
-    text: 'Contact Page'
-services:
-  - title: 'Web Design'
-    description: 'Professional web design services for your business.'
-  - title: 'Social Media Management'
-    description: 'Increase your online presence with our social media services.'
-```
-परिणाम - दिया
+## Dekhein Bhi
+Yadi aapko YAML ke saath kaam karne mein aur madad chahiye, toh yeh links aapke kaam aa sakte hain:
+- [js-yaml library documentation](https://www.npmjs.com/package/js-yaml)
+- [js-yaml GitHub repository](https://github.com/nodeca/js-yaml)
+- [YAML Wikipedia page](https://en.wikipedia.org/wiki/YAML)

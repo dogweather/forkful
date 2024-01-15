@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Tulevaisuuteen tai menneisyyteen päivämäärän laskeminen"
+html_title:           "Clojure: Tulevaisuuteen tai menneisyyteen päivämäärän laskeminen"
+simple_title:         "Tulevaisuuteen tai menneisyyteen päivämäärän laskeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,36 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia tilanteita, jolloin tarvitset tietää tulevia tai menneitä päiviä. Ehkä haluat suunnitella tulevia tapahtumia tai tarkistaa, kuinka kauan sitten jotain tapahtui. Clojuren avulla voit helposti laskea päivien määrän tulevaisuudessa tai menneisyydessä.
+Miksi haluaisit laskea päivämäärän tulevaisuudessa tai menneisyydessä? Yksi syy voisi olla esimerkiksi tarve laskea tulevan laskun eräpäivää tai tarkistaa, milloin tietty tapahtuma on tapahtunut aiemmin.
 
 ## Miten tehdä
 
+Laskeminen tulevaisuuden tai menneisyyden päivämääriä Clojurella on helppoa käyttämällä `calendar/date-time`-kirjastoa. Voit käyttää `plus`- ja `minus`-funktioita lisäämään tai vähentämään päiviä halutusta päivämäärästä.
+
+```Clojure
+(require '[clojure.java-time :as t])
+(require '[java-time.calendar :as calendar])
+
+(def today (t/now))
+
+(calendar/plus today (t/days 30))
+;; Tulostaa päivämäärän 30 päivää tulevaisuudessa
+
+(calendar/minus today (t/months 6))
+;; Tulostaa päivämäärän 6 kuukautta taaksepäin
 ```
-Clojure (local-date ...)
+
+Voit myös käyttää `plus`- ja `minus`-funktioita yhdessä muiden java-time-kirjaston funktioiden kanssa, kuten `with-zone`. Tällä voit määrittää aikavyöhykkeen, jossa päivämäärä lasketaan.
+
+```Clojure
+(require '[java-time.zone :as zone])
+
+(calendar/minus today (t/days 7) (zone/utc))
+;; Laskee päivämäärän 7 päivää taaksepäin, mutta käyttää UTC-aikavyöhykettä
 ```
 
-Clojuren `local-date`-funktio mahdollistaa uuden päivän luomisen. Se ottaa parametreinä vuoden, kuukauden ja päivämäärän:
+## Syvempi sukellus
 
+`calendar/date-time`-kirjaston funktioilla laskettavat päivämäärät ovat immutaabeleja, mikä tarkoittaa, että ne eivät muutu vaan uusi päivämäärä palautetaan. Tämä tekee laskemisesta turvallisempaa, sillä et vahingossa muuta alkuperäistä päivämäärää.
+
+Voit myös käyttää muita kirjastojen funktioita, kuten `format`, jotta saat tulostettua päivämäärän halutussa muodossa.
+
+```Clojure
+(require '[java-time.format :as format])
+
+(def future-date (calendar/plus today (t/days 10)))
+(format/formatted "dd.MM.yyyy" future-date)
+;; Tulostaa päivämäärän muodossa 10.01.2022
 ```
-Clojure (local-date 2021 7 10)
-```
-
-Tämä luo uuden päivän vuonna 2021, heinäkuun 10. päivänä. Voit myös lisätä tai vähentää päiviä luomaasi päivään käyttämällä `plus` tai `minus`-funktioita:
-
-```
-Clojure (plus (local-date 2021 7 10) 3)
-```
-
-Tämä lisää uuteen päivään kolme päivää, ja näin luodaan päivä heinäkuun 13. päivänä. Voit myös käyttää `minus`-funktiota vähentämään päiviä tai `multiple`-funktiota kertomaan päivien määrän halutulla kertoimella.
-
-## Syvällisempi tarkastelu
-
-Clojuren päivämäärätoiminnot ovat mahdollisia Clojuren sisäänrakennettujen Javan Date ja Time luokkien ansiosta. Tämä tekee päivämäärien käsittelystä erittäin tehokasta ja monipuolista.
-
-Voit myös käyttää muita funktioita, kuten `parse`, `to-date` ja `utc` muuntaaksesi päivämääriä halutun muodon tai aikavyöhykkeen mukaan. Lisätietoja näistä ja muista Clojuren päivämäärätoimintoa löydät virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- Clojuren virallinen dokumentaatio (https://clojure.org/reference/dates)
-- Java Date ja Time -luokat (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- Clojuren päivämäärätoimintoja opastava ohje (https://practicalli.github.io/blog/posts/clojure-dates/)
+- [Clojure java-time -kirjasto](https://github.com/dm3/clojure.java-time)
+- [Java 8 java.time API -opas](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

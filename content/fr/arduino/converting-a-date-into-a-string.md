@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Convertir une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Arduino: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi Convertir une Date en Chaîne de Caractères en Arduino
+## Pourquoi
+Tu te demandes peut-être pourquoi il est important de convertir une date en chaîne de caractères pour ton projet Arduino. Eh bien, cela peut être utile pour l'affichage d'informations sur un écran LCD ou pour l'enregistrement de données dans un fichier.
 
-Si vous êtes un passionné d'Arduino, vous savez probablement déjà que ce microcontrôleur peut être utilisé pour réaliser une variété de projets passionnants. L'une des fonctionnalités les plus utiles de l'Arduino est sa capacité à enregistrer et traiter des dates. Mais parfois, il peut être nécessaire de convertir cette date en une chaîne de caractères, c'est-à-dire un ensemble de caractères en texte. Dans cet article, nous allons expliquer pourquoi vous pourriez avoir besoin de convertir une date en une chaîne de caractères et comment le faire en utilisant Arduino.
-
-## Comment Convertir une Date en Chaîne de Caractères en Arduino
-
-Pour convertir une date en une chaîne de caractères, vous devez utiliser la fonction `sprintf()` en Arduino. Cette fonction prend trois arguments : le premier est une chaîne de caractères qui spécifie le format dans lequel vous souhaitez que la date soit convertie, le deuxième est une variable qui stocke la date en tant que `Struct tm` et le troisième est la chaîne de caractères résultante.
+## Comment faire
+Pour convertir une date en chaîne de caractères sur Arduino, tu peux utiliser la fonction `String()` et la fonction `sprintf()`. Voici un exemple de code pour obtenir la date et l'heure actuelles sous forme de chaîne de caractères :
 
 ```Arduino
-#include <Time.h>
+#include <TimeLib.h> // inclus la bibliothèque Time
+#include <TimeAlarms.h> // inclus la bibliothèque TimeAlarms
 
-// Variable pour stocker la date et l'heure actuelles
-tmElements_t date;
+void setup() {
+  Serial.begin(9600); // initialise la communication série
+  setTime(14, 20, 0, 1, 1, 2021); // définit la date et l'heure actuelles
+}
 
-// Récupérer la date actuelle
-RTC.read(date);
-
-// Convertir la date en une chaîne de caractères
-char dateString[25];
-sprintf(dateString, "%02d/%02d/%04d", date.Day, date.Month, date.Year + 1970);
+void loop() {
+  // utilise la fonction String() pour convertir la date en chaîne de caractères
+  String date = String(day()) + "/" + String(month()) + "/" + String(year());
+  // utilise la fonction sprintf() pour convertir l'heure en chaîne de caractères
+  char heure[9];
+  sprintf(heure, "%02d:%02d:%02d", hour(), minute(), second());
+  // affiche la date et l'heure sur le moniteur série
+  Serial.print("Date: ");
+  Serial.println(date);
+  Serial.print("Heure: ");
+  Serial.println(heure);
+  delay(1000); // attend une seconde pour afficher les informations suivantes
+}
 ```
 
-Dans cet exemple, nous utilisons le format "jour/mois/année" pour convertir la date en une chaîne de caractères. Vous pouvez choisir le format qui convient le mieux à votre projet en utilisant les spécificateurs de format disponibles pour la fonction `sprintf()`.
+Voici l'exemple de sortie sur le moniteur série :
 
-## Plongeon en Profondeur
+```
+Date: 1/1/2021
+Heure: 14:20:00
+```
 
-Si vous êtes curieux de connaître le fonctionnement interne de la conversion de date en chaîne de caractères en Arduino, voici quelques informations supplémentaires pour vous satisfaire. La fonction `sprintf()` utilise les informations de `Struct tm` pour extraire chaque élément de la date (jour, mois, année) et les ajoute à une chaîne de caractères en respectant le format spécifié.
+## Deep Dive
+Maintenant que tu sais comment convertir une date en chaîne de caractères sur Arduino, voici quelques points à prendre en compte :
 
-De plus, il est important de noter que la prise en charge des dates en Arduino est basée sur le temps Unix, qui représente le nombre de secondes écoulées depuis le 1er janvier 1970. Cela explique pourquoi nous devons ajouter 1970 pour obtenir l'année correcte dans notre exemple.
+- La fonction `sprintf()` utilise un format de chaîne similaire à celui de la fonction `printf()` en langage C.
+- Tu peux utiliser différentes spécifications de format pour afficher des dates et des heures dans différents formats. Par exemple, `%d` pour les jours et les mois, `%02d` pour les heures, minutes et secondes avec le zéro ajouté si seulement un chiffre est présent, etc.
+- La bibliothèque TimeAlarms (incluse dans l'exemple de code) peut être utile pour programmer des alarmes basées sur des dates et des heures.
+- N'oublie pas de définir la date et l'heure correctes dans la fonction `setTime()` pour obtenir les informations actuelles.
 
-## See Also
-
-Si vous souhaitez en savoir plus sur la manipulation des dates en Arduino, voici quelques liens utiles :
-
-- [Documentation Arduino pour la fonction `sprintf()`](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
-- [Tutoriel sur la gestion du temps en Arduino](https://learn.adafruit.com/memories-of-an-arduino/coding-for-use-with-the-real-time-clock)
-
-Nous espérons que cet article vous a aidé à comprendre comment convertir une date en une chaîne de caractères en utilisant Arduino. Amusez-vous bien dans vos projets et n'hésitez pas à explorer davantage les fonctionnalités de ce microcontrôleur polyvalent.
+## Voir aussi
+- [Documentation officielle de la fonction String()](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Documentation officielle de la fonction sprintf()](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
+- [Tutoriel sur la bibliothèque Time pour Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- [Tutoriel sur la bibliothèque TimeAlarms pour Arduino](https://www.arduino.cc/en/Reference/TimeAlarms)

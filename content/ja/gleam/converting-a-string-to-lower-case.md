@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Gleam: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#【なぜ】
-文字列を小文字に変換することについての理由を1-2文で説明します。
+## なぜ
 
-文字列を小文字に変換することは、プログラマーにとって非常に便利な機能です。例えば、ユーザーからの入力を正規化するためや、大文字小文字を区別せずに文字列を比較するためなど、さまざまなシナリオで利用されます。
+文字列を小文字に変換することにかかわる理由は何でしょうか？文字列を処理する際に、大文字と小文字を区別する必要がない場合があるため、文字列を小文字に変換することで処理がより簡単になります。
 
-#【方法】
-以下の「```Gleam ...```」コードブロックを参考に、文字列を小文字に変換する方法を学んでみましょう。
+## 方法
+
+まず、Gleamの標準ライブラリである`String`モジュールを使う必要があります。その後、`to_lower_case`関数を使用して文字列を小文字に変換することができます。
 
 ```Gleam
-fn main() {
-    let str = "Hello World";
-    let lower = str.to_lower_case();
-    io.println(lower);
-}
+import String
+
+let string = "Hello, World!"
+let lower = String.to_lower_case(string)
+
+# Output: "hello, world!"
 ```
 
-上記のコードを実行すると、`hello world`という出力が得られます。
+## ディープダイブ
 
-#【深堀り】
-文字列を小文字に変換するには、Gleamに組み込まれた`to_lower_case()`関数を使用します。この関数は、文字列を小文字に変換して、新しい文字列を返します。元の文字列そのものを変更するわけではありません。
+`to_lower_case`関数は、文字列を小文字に変換するための手段として使われますが、実際にはどのように動作しているのでしょうか？この関数では、Unicodeの規則に従って、各文字を小文字に変換します。また、UTF-8エンコーディングをサポートしているため、多言語の文字列を処理する際にも使用することができます。
 
-また、Gleamでは日本語のようなマルチバイト文字もサポートされています。そのため、日本語の文字列を小文字に変換することも可能です。
+## See Also
 
-#【See Also】
-- [Gleam公式ドキュメント](https://gleam.run/)
-- [Gleamのマルチバイト文字のサポートについて](https://gleam.run/documentation#multibyte-strings)
-
-以上で文字列を小文字に変換する方法を学びました。Gleamに慣れることで、より効率的なプログラミングができるようになるでしょう。ぜひ、Gleamを活用してみてください。
+- [Gleam公式ドキュメント：Stringモジュール](https://gleam.run/documentation/std_lib/string/)
+- [Unicode正規化と文字の大小比較について](https://blog-ja.textpattern.io/articles/unicode-normalization-and-string-comparison/)
+- [UTF-8エンコーディングの仕組みについて](https://ja.wikipedia.org/wiki/UTF-8)

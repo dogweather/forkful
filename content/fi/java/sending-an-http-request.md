@@ -1,5 +1,6 @@
 ---
-title:                "Java: Lähettämällä http-pyyntö"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Java: Lähettämällä http-pyyntö"
 simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Java"
 category:             "Java"
@@ -9,58 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-HTTP-pyyntöjen lähettäminen on tärkeä osa web-ohjelmointia, sillä se mahdollistaa tiedon lähettämisen ja vastaanottamisen eri verkkosivustojen välillä. Se on erityisen hyödyllistä silloin, kun halutaan hakea tietoja jostakin toisesta verkkopalvelusta tai lähettää dataa sille. 
+Miksi joku haluaisi lähettää HTTP-pyynnön? Yksi syy voisi olla kommunikointi sovellusten välillä, esimerkiksi kun halutaan hakea tietoa ulkoisesta API:sta. 
 
-# Miten
+## Kuinka
 
-HTTP-pyyntöjen lähettämiseksi Java-koodissa tarvitaan neljä askelta: muodostetaan osoite, luodaan yhteys, lähetetään pyyntö ja vastaanotetaan vastaus. Tässä esimerkissä käytetään Apache HttpClient-kirjastoa.
-
-````Java
-// Importataan tarvittavat kirjastot
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClientBuilder;
+```Java
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.BufferedReader;
-import java.net.URISyntaxException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-// Määritellään osoite, jonne pyyntö lähetetään
-String url = "https://www.example.com";
+public class HTTPRequestExample {
 
-// Luodaan HttpClient-olio
-HttpClient client = HttpClientBuilder.create().build();
+    public static void main(String[] args) throws IOException {
 
-// Luodaan pyyntöolio ja liitetään siihen osoite
-HttpGet request = new HttpGet(url);
+        // Luodaan URL-olio, joka sisältää halutun pyyntöosoitteen
+        URL url = new URL("https://www.example.com/api/data");
 
-// Lähetetään pyyntö ja tallennetaan vastaus HttpResponse-olioon
-HttpResponse response = client.execute(request);
+        // Avataan yhteys
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-// Vastaanotetaan vastauksen sisältö ja luetaan se BufferedReaderillä
-BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-StringBuilder responseString = new StringBuilder();
-String line;
+        // Määritetään pyyntötyyppi ja lähetetään pyyntö
+        con.setRequestMethod("GET");
 
-while ((line = reader.readLine()) != null) {
-    responseString.append(line);
+        // Luodaan buffered reader lukuavun kanssa
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+
+        // Luetaan pyynnön vastaussanoma ja tulostetaan se näytölle
+        String response;
+        StringBuffer content = new StringBuffer();
+        while ((response = in.readLine()) != null) {
+            content.append(response);
+        }
+        in.close();
+        System.out.println(content);
+
+        // Suljetaan yhteys
+        con.disconnect();
+    }
 }
+```
 
-// Tulostetaan vastaus
-System.out.println(responseString.toString());
-````
+**Esimerkkituloste:**
+```html
+<html>
+  <head>
+    <title>Example</title>
+    <meta name="description" content="This is an example of an HTTP request">
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+  </body>
+</html>
+```
 
-Tämän esimerkkikoodin avulla voidaan lähettää GET-pyyntö haluttuun osoitteeseen ja vastaanottaa sen sisältö. Huomaa, että koodia tulee muokata tarvittaessa eri HTTP-metodien, kuten POST tai PUT, lähettämiseen.
+## Syvällinen sukellus
 
-# Syvällisempi perehtyminen
+HTTP-pyynnön lähettäminen käyttää Java-luokkia `java.net.URL` ja `java.net.HttpURLConnection` luomaan yhteyden URL-osoitteeseen ja lähettämään pyynnön valitulla pyyntötyypillä. Pyyntö voi sisältää myös parametreja, joita voi asettaa luomalla `java.net.URLConnection` ja käyttämällä `setRequestProperty()` -metodia. Yhteys tulee myös sulkea ja vastaussanoma lukea sulkemisen jälkeen. 
 
-HTTP-pyyntöjen lähettäminen sisältää paljon muitakin ominaisuuksia, kuten pyynnön kustomointi, virheiden käsittely ja käytön tehostaminen. Apache HttpClient-kirjastossa on tarjolla monipuolisia toimintoja ja ominaisuuksia, jotka auttavat näissä tehtävissä. Kannattaa tutustua tarkemmin kirjaston dokumentaatioon ja kokeilla erilaisia toimintoja.
+## Katso myös
 
-# Katso myös
-
-- [Apache HttpClient -kirjaston dokumentaatio](https://github.com/apache/httpcomponents-client/blob/master/httpclient5/README.md)
-- [HTTP-pyyntöjen lähettäminen Java-koodissa - Java Code Geeks](https://www.javacodegeeks.com/2012/09/http-post-in-java.html)
-- [HTTP-pyyntöjen lähettäminen Javan peruskirjastoilla - Oracle Docs](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)
+- Oracle Java-tutoriaali: [HTTP-ja virheen käsittely](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)
+- w3schools: [Java HTTP-pyynnön lähettäminen](https://www.w3schools.com/java/java_httpurlconnection.asp)

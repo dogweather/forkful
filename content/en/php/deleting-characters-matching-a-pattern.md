@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "PHP recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,36 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever encountered a situation where you needed to remove certain characters from a string in your PHP code? Perhaps it was a pesky line break or a special character causing unwanted formatting. Whatever the case, deleting characters matching a certain pattern can be a useful tool in your PHP programming arsenal.
+
+Deleting characters matching a pattern can be a useful task in a variety of scenarios. It can help with data cleaning and manipulation, text parsing, and even security checks. By learning how to do this in PHP, you can save time and streamline your coding process.
 
 ## How To
-To delete characters matching a pattern in PHP, we can use the `preg_replace()` function. Let's take a look at an example:
 
+To delete characters matching a pattern in PHP, you can use the `preg_replace()` function. This function takes three parameters: the pattern to match, the replacement string, and the input string. Let's take a look at a simple example:
+
+```PHP
+$input = "Hello123World";
+$pattern = '/[0-9]/'; // matches any number between 0 and 9
+$output = preg_replace($pattern, '', $input);
+
+echo $output; // Output: HelloWorld
 ```
-<?php 
-$string = "Hello, [World]! How are you?";
-$new_string = preg_replace("/\[.*?\]/", "", $string);
-echo $new_string;
 
-// Output: Hello, ! How are you?
-?>
+The `$output` variable will now contain the input string without any numbers in it. In this case, we used a regular expression as the pattern, but you can also use plain text strings. The `preg_replace()` function will replace all matches in the input string with the replacement string.
+
+You can also use the "global" modifier `/g` to replace all matches, instead of just the first one. For example:
+
+```PHP
+$input = "1 apple, 2 oranges, and 3 bananas";
+$pattern = '/[0-9]+/g'; // matches any sequence of numbers
+$output = preg_replace($pattern, '', $input);
+
+echo $output; // Output: apple, oranges, and bananas
 ```
 
-In this example, we use the `preg_replace()` function to remove any characters between square brackets, including the brackets themselves. Let's break down the parameters of this function:
-- The first parameter is the regular expression pattern we want to match. In this case, we use the opening bracket, followed by any number of characters, followed by the closing bracket.
-- The second parameter is the replacement string, which we leave empty since we want to delete the matched characters.
-- The third parameter is the original string that we want to perform this operation on.
-
-The `preg_replace()` function returns a new string with the matched characters removed, but it does not modify the original string. That's why we assign the result to a new variable `$new_string` and then echo it out.
+In this example, we used the `+` modifier to match one or more consecutive numbers. This allows us to replace all numbers in the input string.
 
 ## Deep Dive
-The `preg_replace()` function uses regular expressions (regex) to find and replace text in a string. Regular expressions are a powerful pattern matching tool that allows us to specify patterns of characters we want to search for in a string.
 
-In our example, we used the `.*?` pattern to match any number of characters, including spaces and special characters, between the brackets. The `?` modifier makes this pattern non-greedy, meaning it will stop matching as soon as it finds the first closing bracket.
+Behind the scenes, `preg_replace()` uses the PCRE (Perl Compatible Regular Expressions) library to perform pattern matching and replacement. This library is also used in other programming languages like Python, JavaScript, and Ruby. It provides a powerful and flexible way to match and manipulate strings.
 
-If you want to learn more about regular expressions and how to use them in PHP, [this tutorial](https://www.php.net/manual/en/function.preg-replace.php#example-826) from the official PHP documentation is a great place to start.
+So far, we have only scratched the surface of what is possible with regular expressions and pattern matching in PHP. You can use modifiers, quantifiers, character classes, and more to create complex patterns for matching. It's worth taking the time to learn more about regular expressions and how to use them effectively.
 
 ## See Also
+
 - [PHP documentation on preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regular Expressions 101: A Beginner's Guide](https://www.regular-expressions.info/tutorial.html)
-- [Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [PCRE documentation](https://www.pcre.org/)
+- [Regular expressions tutorial](https://regexone.com/)

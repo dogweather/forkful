@@ -1,5 +1,6 @@
 ---
-title:                "C#: Skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "C#: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "C#"
 category:             "C#"
@@ -9,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Om du någonsin har stött på felmeddelanden medan du kör ett C# program, har du förmodligen sett till standard Error. Men varför skulle någon vilja skriva till standard Error i sitt program? Det finns faktiskt flera anledningar till detta, och i den här artikeln kommer vi att titta på varför det är viktigt och hur man kan göra det.
-
 ## Varför
 
-Skrivning till standard Error är en viktig del av felsökning i C# program. Genom att skriva felmeddelanden till standard Error, kan utvecklare enkelt se vilka problem som uppstår och varför. Detta gör det lättare att spåra och lösa buggar i koden.
+Att skriva till standard error är en viktig felsökningsfunktion i C# som gör att du kan upptäcka och hantera fel i ditt program. Genom att skriva till standard error kan du få nödvändig information om fel som uppstår under körning och på så sätt förbättra ditt program.
 
 ## Hur man gör
 
-För att skriva till standard Error i C#, behöver du använda Console.Error.WriteLine() metoden. Detta kommer att skriva ut ett meddelande till standard Error strömmen, som då kan ses i din konsol eller i en loggfil. Här är ett exempel i kod:
+För att skriva till standard error i C#, behöver du använda Console-klassen och dess metoder. Nedan finns ett enkelt exempel på hur du kan använda Console.Error.WriteLine-metoden för att skriva ett felmeddelande till standard error.
 
 ```C#
-try
-{
-    // Kod som kan orsaka fel
-}
-catch (Exception ex)
-{
-    // Skriver ut felmeddelandet till standard Error
-    Console.Error.WriteLine($"Ett fel inträffade: {ex.Message}");
-}
+Console.Error.WriteLine("Ett fel uppstod!");
 ```
 
-I det här exemplet kommer felmeddelandet att skrivas ut till standard Error i händelse av ett undantag. På så sätt kan utvecklare enkelt se vilken typ av fel som uppstod och varför.
+Detta kommer att skriva ut "Ett fel uppstod!" till standard error och kan hjälpa dig att hitta var felet uppstod i ditt program.
 
 ## Djupdykning
 
-När du skriver till standard Error, är det viktigt att komma ihåg att det är en ström som är avsedd för felförhållanden. Det är inte tänkt att användas för vanliga utskrifter i ditt program. Dessutom är det viktigt att inkludera tillräcklig information i ditt felmeddelande, såsom felmeddelandet i exemplet ovan. Detta gör det lättare att identifiera och åtgärda problemet.
-
-Det finns också andra sätt att skriva till standard Error, som att använda Console.SetError() för att ändra standard Error strömmen eller att använda Trace och Debug klasserna. Det är viktigt att utforska dessa metoder och se vad som fungerar bäst för ditt specifika program.
+Att skriva till standard error i C# är särskilt användbart när du utvecklar stora och komplexa program, eftersom det ger dig möjlighet att spåra och hantera fel som annars kan vara svåra att identifiera. Genom att skriva till standard error kan du också skilja mellan fel som är avsiktliga, till exempel när du vill logga en varning eller annan typ av meddelande, och fel som faktiskt tyder på att något gått fel i ditt program.
 
 ## Se även
 
-- [C# Console.Error.WriteLine() metod dokumentation](https://docs.microsoft.com/sv-se/dotnet/api/system.console.error.writeline?view=netcore-3.1)
-- [Felhanteringsguiden för C#](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/exceptions/)
-- [Loggning och felsökning i C#](https://www.tutorialspoint.com/csharp/csharp_error_handling.htm)
-
-Att skriva till standard Error är en viktig del av felsökning i C# program. Genom att använda rätt metoder och inkludera tillräcklig information i dina felmeddelanden, kan du enkelt spåra och åtgärda buggar i koden. Nu är det dags att gå ut och implementera detta i ditt nästa projekt!
+- [Console-klassen i C#](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1)
+- [Felsökning och felskrivning i C#](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/troubleshooting-dotnet)
+- [Kontrollstrukturer i C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/control-flow-statements)

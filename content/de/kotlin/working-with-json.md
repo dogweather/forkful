@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Arbeiten mit JSON"
-simple_title:         "Arbeiten mit JSON"
+title:                "Arbeiten mit json"
+html_title:           "Kotlin: Arbeiten mit json"
+simple_title:         "Arbeiten mit json"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # Warum
-In der heutigen digitalen Welt ist der Umgang mit Daten unerlässlich und JSON ist eine der häufigsten Datenformate. Mit Kotlin können wir JSON einfach und effizient verarbeiten.
 
-# Wie man JSON in Kotlin verarbeitet
-Um mit JSON in Kotlin zu arbeiten, müssen wir zunächst die Libary 'json' importieren. Diese stellt uns nützliche Funktionen zur Verfügung, um JSON in unsere Kotlin-Objekte zu konvertieren und umgekehrt.
+JSON ist heutzutage ein gängiges Format für den Austausch von Daten in vielen Anwendungen und APIs. Mit Kotlin können Sie auf einfache und effiziente Weise mit JSON umgehen und Daten in und aus JSON-Format konvertieren.
 
-```Kotlin
-implementation 'org.json:json:20210307'
-```
+# Wie geht man vor?
 
-Für die Verarbeitung von JSON benötigen wir auch eine JSON-Zeichenkette. Diese können wir zum Beispiel von einer öffentlichen API abrufen oder eine Test-Zeichenkette erstellen.
+Verwenden Sie die `JSONObject`- und `JSONArray`-Klassen aus dem `org.json` Package, um JSON-Objekte und -Arrays zu erstellen und zu manipulieren. Hier ist ein Beispiel, wie Sie eine JSON-Datei lesen und in ein `JSONObject`-Objekt parsen können:
 
 ```Kotlin
-// Test-JSON-Zeichenkette
-val json = """
+val jsonString = """
     {
         "name": "Max Mustermann",
-        "age": 25,
-        "location": "Berlin"
+        "age": 30,
+        "hobbies": ["lesen", "reisen", "kochen"]
     }
 """.trimIndent()
+
+val jsonObject = JSONObject(jsonString)
+println(jsonObject.getString("name")) // gibt "Max Mustermann" aus
+println(jsonObject.getInt("age")) // gibt 30 aus
+
+val hobbies = jsonObject.getJSONArray("hobbies")
+println(hobbies.get(1)) // gibt "reisen" aus
 ```
 
-Um diese JSON-Zeichenkette in ein Kotlin-Objekt umzuwandeln, können wir die Funktion `JSONObject()` aus der 'json' Library verwenden. Diese Funktion erwartet als Parameter die JSON-Zeichenkette und gibt ein `JSONObject` Objekt zurück.
+Und hier ist ein Beispiel, wie Sie ein `JSONObject`-Objekt in eine JSON-Datei schreiben können:
 
 ```Kotlin
-// JSON-Zeichenkette in JSON-Objekt konvertieren
-val jsonObject = JSONObject(json)
+val person = JSONObject()
+person.put("name", "Lisa Müller")
+person.put("age", 25)
+person.put("hobbies", listOf("malen", "tanzen", "backen"))
+
+val jsonString = person.toString()
+println(jsonString) 
+// gibt '{"name":"Lisa Müller","age":25,"hobbies":["malen","tanzen","backen"]}' aus
 ```
 
-Nun können wir auf die einzelnen Eigenschaften des JSON-Objekts zugreifen, indem wir den entsprechenden Schlüssel verwenden.
+# Tiefere Einblicke
 
-```Kotlin
-// Auf Eigenschaften des JSON-Objekts zugreifen
-val name = jsonObject.getString("name")  // "Max Mustermann"
-val age = jsonObject.getInt("age")  // 25
-val location = jsonObject.getString("location")  // "Berlin"
-```
-
-Umgekehrt können wir auch ein Kotlin-Objekt in eine JSON-Zeichenkette konvertieren. Dazu verwenden wir die Funktion `toString()` der Klasse `JSONObject`.
-
-```Kotlin
-// Kotlin-Objekt in JSON-Zeichenkette konvertieren
-val newJsonString = jsonObject.toString()
-```
-
-# Tiefere Einblicke in die Arbeit mit JSON in Kotlin
-Wenn wir genauer auf die `JSONObject` Klasse schauen, können wir sehen, dass es noch viele weitere nützliche Funktionen gibt, um mit JSON zu arbeiten. So können wir zum Beispiel auch verschachtelte JSON-Objekte erstellen oder auf Arrays innerhalb des JSONs zugreifen.
-
-Auch die 'json' Library bietet noch weitere Funktionen, wie zum Beispiel die Funktion `fromJson()` um ein JSON-Objekt direkt in ein Kotlin-Objekt zu konvertieren.
-
-Mit Kotlin können wir also auf einfache Weise JSON verarbeiten und sowohl JSON-Zeichenketten als auch Kotlin-Objekte erstellen oder konvertieren.
+- Mit `JSONObject.keys()` und `JSONObject.getJSONArray()` können Sie auf die Schlüssel und Werte eines `JSONObject`-Objekts zugreifen und sie z.B. in einer Schleife durchlaufen.
+- Kotlin hat auch eine `JsonObject`-Klasse aus dem `kotlinx.serialization`-Package, die es Ihnen ermöglicht, JSON-Objekte in Datenklassen zu konvertieren und umgekehrt. Lesen Sie hier mehr darüber: https://github.com/Kotlin/kotlinx.serialization.
+- Die `JSONException`-Klasse aus dem `org.json`-Package ermöglicht es Ihnen, Fehler beim Parsen von JSON-Dateien zu behandeln und benutzerdefinierte Fehlermeldungen zu generieren.
 
 # Siehe auch
-- [json Library Dokumentation](https://json.org/)
-- [Kotlin Dokumentation zu JSON](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.json/)
-- [Beispielprojekt zum Umgang mit JSON in Kotlin](https://github.com/example/json-kotlin)
+
+- Offizielle Dokumentation von `org.json`: https://github.com/stleary/JSON-java
+- `kotlinx.serialization` Github Repository: https://github.com/Kotlin/kotlinx.serialization

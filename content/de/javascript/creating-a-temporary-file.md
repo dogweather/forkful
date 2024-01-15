@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Javascript: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,41 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich mit der Erstellung von temporären Dateien beschäftigen? Die Antwort ist einfach - temporäre Dateien sind eine hilfreiche Möglichkeit, um Daten während der Ausführung eines Programms temporär zu speichern. Sie können nützlich sein, um die Leistung zu verbessern oder bestimmte Aufgaben zu automatisieren.
+Warum sollte man sich mit der Erstellung eines temporären Dateisystems beschäftigen? Es gibt viele Gründe, aber einer der wichtigsten ist die Notwendigkeit, Daten temporär zu speichern, um sie später zu verarbeiten oder zu löschen. Temporäre Dateien sind perfekt für die Verarbeitung von großen Mengen an Daten oder für die Durchführung von automatisierten Aufgaben, die nicht permanent gespeichert werden müssen.
 
-## Wie funktioniert es?
+## Wie erstellt man ein temporäres Dateisystem
 
-Um eine temporäre Datei in Javascript zu erstellen, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der Native Module API, beispielsweise das "fs" Modul. Mit dieser Methode kann eine leere temporäre Datei erstellt werden, die dann mit Inhalt gefüllt werden kann. Hier ist ein Beispielcode:
+Die Erstellung eines temporären Dateisystems in Javascript ist relativ einfach. Im Folgenden findest du ein Beispiel, wie man dies mit der `fs` Bibliothek macht:
 
-```Javascript
-const fs = require('fs');
-fs.open('temp.txt', 'w', (err, file) => {
+```
+let fs = require('fs');
+
+fs.mkdtemp('temp', (err, folderPath) => {
   if (err) throw err;
-  console.log('Temporary file created!');
+  console.log(`Temporärer Ordner erstellt unter ${folderPath}`);
 });
 ```
 
-Dieser Code erstellt eine leere temporäre Datei mit dem Namen "temp.txt" und führt dann eine Konsolenausgabe aus. Es ist wichtig zu beachten, dass diese Methode die Datei nicht automatisch löscht - das muss manuell erfolgen.
-
-Eine andere Möglichkeit ist die Verwendung des "tmp" Moduls aus der Node.js Standardbibliothek. Dieses Modul bietet eine einfachere Möglichkeit, eine temporäre Datei zu erstellen und wieder zu löschen. Hier ist ein Beispielcode:
-
-```Javascript
-const tmp = require('tmp');
-const tempFile = tmp.fileSync();
-console.log(tempFile.name);
-tempFile.removeCallback();
-```
-
-Dieser Code erstellt eine temporäre Datei und gibt ihren Namen aus, bevor sie automatisch gelöscht wird.
+Dieses Beispiel erstellt einen temporären Ordner mit dem Präfix "temp" und gibt den Pfad des erstellten Ordners aus. Du kannst dann diesen Ordner nutzen, um temporäre Dateien zu erstellen, zu speichern und zu bearbeiten.
 
 ## Tiefer Einblick
 
-Beim Erstellen einer temporären Datei gibt es einige Dinge zu beachten. Zunächst ist es wichtig, eine eindeutige Dateinamenstruktur zu wählen, um Konflikte mit anderen Dateien zu vermeiden. Auch das Löschen der Datei ist entscheidend, um den Speicher nicht unnötig zu belasten.
+Beim Erstellen eines temporären Dateisystems gibt es ein paar wichtige Dinge zu beachten. Der erste ist, dass die erstellte temporäre Datei automatisch gelöscht wird, sobald dein Programm beendet wird. Das bedeutet, dass du dir keine Sorgen um das manuelle Löschen machen musst.
 
-Darüber hinaus ist es wichtig zu wissen, wie temporäre Dateien vom Betriebssystem behandelt werden. In einigen Fällen können sie automatisch gelöscht werden, während sie in anderen Fällen möglicherweise manuell entfernt werden müssen. Es ist daher ratsam, die Dokumentation des jeweiligen Betriebssystems zu konsultieren, um ein besseres Verständnis zu erhalten.
+Zudem ist es ratsam, eine eindeutige Präfixierung für den temporären Ordner zu verwenden, um sicherzustellen, dass es keine Konflikte mit bereits vorhandenen Ordnern gibt. In unserem Beispiel haben wir "temp" als Präfix verwendet, du kannst jedoch auch einen zufälligen String generieren und als Präfix nutzen.
+
+Eine weitere wichtige Sache ist, dass du die temporäre Datei oder den Ordner nicht doppelt verwenden kannst. Das bedeutet, dass du, wenn du eine temporäre Datei oder einen Ordner erstellt hast und ihn wieder verwenden möchtest, ihn zuerst löschen musst, bevor du ihn erneut nutzt.
 
 ## Siehe auch
 
-- [Node.js fs Modul Dokumentation](https://nodejs.org/api/fs.html)
-- [Node.js tmp Modul Dokumentation](https://nodejs.org/api/fs.html)
-- [Verwendung temporärer Dateien in Javascript](https://www.digitalocean.com/community/tutorials/how-to-use-temporary-files-in-javascript) (Englisch)
+- [Node.js fs Dokumentation](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
+- [Artikel über die Verwendung von temporären Dateien in Javascript](https://www.geeksforgeeks.org/node-js-fs-mkdtemp-method/)
+- [Node.js Tutorials auf freecodecamp.org](https://www.freecodecamp.org/news/how-to-code-with-nodejs/#how-to-create-a-temporary-file-or-directory-in-nodejs)

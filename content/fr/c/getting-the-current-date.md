@@ -1,5 +1,6 @@
 ---
-title:                "C: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "C"
 category:             "C"
@@ -11,97 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La récupération de la date actuelle est une tâche courante pour de nombreux programmeurs, que ce soit pour l'afficher dans une interface utilisateur ou pour suivre l'heure à laquelle une action a été effectuée. Dans cet article, nous allons explorer les différentes façons de récupérer la date actuelle en C et discuter des avantages et des inconvénients de chaque approche.
+Bonjour les programmeurs ! Vous êtes peut-être curieux de savoir comment obtenir la date actuelle dans vos programmes en C. Eh bien, cela peut sembler simple, mais cela peut avoir de nombreuses utilisations pratiques, comme enregistrement de fichiers, création de journaux ou tout simplement afficher la date à des fins de débogage. Alors, continuons et découvrons comment le faire !
 
-## Comment Faire
+## Comment faire
 
-Il existe plusieurs façons de récupérer la date actuelle en C, en utilisant des fonctions prédéfinies ou en écrivant votre propre code. Jetons un coup d'œil à quelques exemples de code pour récupérer la date actuelle en utilisant différentes méthodes.
+Pour obtenir la date actuelle en C, nous avons besoin d'utiliser la fonction `time()` de la bibliothèque `time.h`. Cette fonction renvoie le temps écoulé depuis le 1er janvier 1970 à 00:00:00 UTC en secondes. Ensuite, nous pouvons utiliser la fonction `localtime()` pour convertir le temps en une structure `tm` qui contient les informations sur la date et l'heure locale.
 
-```c
-// Utilisation de la fonction time()
+Voici un exemple de code pour obtenir la date actuelle en utilisant les fonctions mentionnées ci-dessus :
+
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  // Déclaration d'une variable de type time_t
-  time_t currentTime;
-  // Utilisation de la fonction time() pour récupérer la date actuelle
-  time(&currentTime);
-  // Convertit la date en une chaîne de caractères
-  char* dateString = ctime(&currentTime);
-  // Affiche la date actuelle
-  printf("%s", dateString);
-  return 0;
+int main()
+{
+    // Obtention du temps actuel
+    time_t temps_actuel = time(0);
+    
+    // Conversion en une structure tm
+    struct tm *temps_local = localtime(&temps_actuel);
+    
+    // Affichage de la date actuelle
+    printf("La date actuelle est : %d/%d/%d\n", temps_local->tm_mday, temps_local->tm_mon + 1, temps_local->tm_year + 1900);
+    
+    return 0;
 }
-
-/* Output:
-Sun Jul 19 18:36:07 2020
-*/
 ```
 
-Nous pouvons également utiliser la fonction `localtime()` pour obtenir une structure de temps locale à partir de laquelle nous pouvons extraire les informations de date. Voici un exemple de code utilisant cette méthode :
+La sortie de ce code serait :
 
-```c
-// Utilisation de la fonction localtime()
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  // Déclaration d'une variable de type time_t
-  time_t currentTime;
-  // Utilisation de la fonction time() pour récupérer la date actuelle
-  time(&currentTime);
-  // Convertit l'heure actuelle en heure locale
-  struct tm *localTime = localtime(&currentTime);
-  // Affiche le mois, le jour et l'année actuels
-  printf("Mois : %d\nJour : %d\nAnnée : %d\n", 
-    localTime->tm_mon + 1, localTime->tm_mday, localTime->tm_year + 1900);
-  return 0;
-}
-
-/* Output:
-Mois : 7
-Jour : 19
-Année : 2020
-*/
+```
+La date actuelle est : 5/1/2021
 ```
 
-Il est également possible de récupérer la date actuelle en utilisant la fonction `strftime()` pour formater la date selon vos préférences. Voici un exemple de code montrant comment utiliser cette fonction :
+Remarquez que les mois sont numérotés à partir de 0, d'où l'incrémentation de 1 dans l'affichage. De plus, l'année est représentée en nombre d'années depuis 1900.
 
-```c
-// Utilisation de la fonction strftime()
-#include <stdio.h>
-#include <time.h>
+## Plongée en profondeur
 
-int main() {
-  // Déclaration d'une variable de type time_t
-  time_t currentTime;
-  // Utilisation de la fonction time() pour récupérer la date actuelle
-  time(&currentTime);
-  // Définit le format de la date
-  char* format = "%A, %B %d, %Y";
-  // Déclare une variable pour stocker la date formatée
-  char dateString[50];
-  // Utilise la fonction strftime() pour formater la date
-  strftime(dateString, 50, format, localtime(&currentTime));
-  // Affiche la date formatée
-  printf("%s", dateString);
-  return 0;
-}
+Si vous êtes curieux de savoir comment la fonction `time()` parvient à donner le temps en secondes depuis 1970, voici quelques informations intéressantes. La fonction utilise l'horloge interne de l'ordinateur, qui est surtout basée sur le nombre de cycles du processeur. Cela signifie que si votre processeur est plus rapide, la valeur de retour de `time()` augmentera plus rapidement.
 
-/* Output:
-Sunday, July 19, 2020
-*/
-```
+Ensuite, la fonction `localtime()` utilise les informations du fuseau horaire de votre ordinateur pour convertir le temps en une date et une heure locales. Cette information peut même être modifiée si vous changez manuellement le fuseau horaire de votre système.
 
-## Plongée Approfondie
+## Voir aussi
 
-Maintenant que nous avons vu quelques exemples de code pour obtenir la date actuelle, examinons de plus près certaines des fonctions que nous utilisons. La fonction `time()` renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC, également connu sous le nom d'époque Unix. Cette valeur est stockée dans une variable de type `time_t`.
-
-La fonction `localtime()` convertit cette valeur de temps en une structure de type `tm` qui stocke les informations de date et d'heure en fonction du fuseau horaire local. Cette structure contient les membres suivants :
-
-- `tm_sec` : les secondes (de 0 à 61 car il y a une seconde intercalaire tous les quelques ans).
-- `tm_min` : les minutes (de 0 à 59).
-- `tm_hour` : les heures (de 0 à 23).
-- `tm_mday` : le jour du mois (de 1 à 31).
-- `tm_mon` : le mois de l'année (de 0 à 11).
+Pour en savoir plus sur la fonction `time()` et ses utilisations, vous pouvez consulter la documentation officielle de la bibliothèque `time.h` [ici](https://www.tutorialspoint.com/c_standard_library/time_h.htm). Vous pouvez également jeter un coup d'œil à la liste complète des fonctions disponibles pour travailler avec le temps en C [ici](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html). Bon codage !

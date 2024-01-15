@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Working with json"
+title:                "Working with json"
+html_title:           "Elixir recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,83 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-JSON (JavaScript Object Notation) is a widely used data format for exchanging information between web servers and applications. As such, having a good understanding of working with JSON in Elixir can greatly enhance a programmer's abilities and open up new opportunities for working with modern web technologies.
+
+If you're working in the world of web development, chances are you've come across JSON (JavaScript Object Notation) in your work. JSON has become the standard way of exchanging data between web browsers and servers, making it a crucial skill to have. Elixir makes working with JSON a breeze, making it a language of choice for web developers looking to improve their productivity.
 
 ## How To
-To start, we will need to install the ```Jason``` dependency in our project by adding it to our ```mix.exs``` file:
+
+```elixir
+# Importing the Jason library
+iex> {:ok, json} = HTTPoison.get("https://jsonplaceholder.typicode.com/todos/1")
+iex> response = JSON.decode!(json.body)
 ```
-defp deps do
-    [
-        {:jason, "~> 1.0"}
-    ]
-end
-```
-We can then use the ```Jason``` library to encode and decode JSON data. Let's say we have the following JSON object:
-```
-{
-    "name": "Jane Doe",
-    "age": 25,
-    "hobbies": ["hiking", "reading", "painting"]
-}
-```
-To encode this into a string, we can use the ```Jason.encode!/1``` function:
-```
-Jason.encode!(%{
-    name: "Jane Doe",
-    age: 25,
-    hobbies: ["hiking", "reading", "painting"]
-})
-```
-The output would be:
-```
-"{\"name\":\"Jane Doe\",\"age\":25,\"hobbies\":[\"hiking\",\"reading\",\"painting\"]}"
-```
-To decode a JSON string into Elixir data, we can use the ```Jason.decode!/1``` function:
-```
-Jason.decode!("{\"name\":\"Jane Doe\",\"age\":25,\"hobbies\":[\"hiking\",\"reading\",\"painting\"]}")
-```
-The output would be:
-```
-%{
-    "name" => "Jane Doe",
-    "age" => 25,
-    "hobbies" => ["hiking", "reading", "painting"]
-}
-```
+
+This code block demonstrates how easy it is to import the Jason library and use it to retrieve and decode JSON data from a URL. The response variable will now contain a decoded representation of the JSON data, ready for further manipulation or use. You can also use the `Jason.encode()` function to convert Elixir data structures into JSON.
 
 ## Deep Dive
-One interesting feature of the ```Jason``` library is its ability to customize how JSON data is encoded and decoded. This can be useful when working with complex data structures or when you want more control over the output. For example, we can define a custom function to encode and decode a user's profile data:
-```
-defmodule Profile do
-    defstruct [:name, :age, :hobbies]
 
-    def encode(%Profile{name: name, age: age, hobbies: hobbies}) do
-        %{
-            "full_name" => name,
-            "years" => age,
-            "interests" => hobbies
-        }
-    end
-
-    def decode(%{"full_name" => name, "years" => age, "interests" => hobbies}) do
-        %Profile{
-            name: name,
-            age: age,
-            hobbies: hobbies
-        }
-    end
-end
-```
-We can then use this custom function in our encoding and decoding processes:
-```
-json = Profile.encode(%Profile{name: "Jane Doe", age: 25, hobbies: ["hiking", "reading", "painting"]})
-# Output: %{"full_name" => "Jane Doe", "years" => 25, "interests" => ["hiking", "reading", "painting"]}
-
-profile = Jason.decode!(json, as: Profile)
-# Output: %Profile{name: "Jane Doe", age: 25, hobbies: ["hiking", "reading", "painting"]}
-```
+Elixir's Jason library uses Erlang's jiffy library under the hood, which is known for its fast and efficient JSON parsing and encoding capabilities. Jason supports most of the commonly used options for customizing the encoding and decoding process, such as specifying keys to include or exclude, customizing number formats, and more. Furthermore, Elixir's built-in pattern matching allows for easy extraction of specific data from the JSON response.
 
 ## See Also
-- Jason documentation: https://hexdocs.pm/jason/1.1.1/readme.html
-- Elixir JSON Cheat Sheet: https://devhints.io/elixir-json
-- Phoenix Framework JSON API tutorial: https://phoenixframework.org/blog/build-a-json-api-with-phoenix
+
+- [Jason Documentation](https://hexdocs.pm/jason/)
+- [Elixir's Built-In Pattern Matching Guide](https://elixir-lang.org/getting-started/pattern-matching.html)
+- [Elixir School - Working with JSON](https://elixirschool.com/en/lessons/specifics/json/)

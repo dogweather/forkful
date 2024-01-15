@@ -1,5 +1,6 @@
 ---
-title:                "Python: 文字列のキャピタライズ"
+title:                "文字列のキャピタライズ"
+html_title:           "Python: 文字列のキャピタライズ"
 simple_title:         "文字列のキャピタライズ"
 programming_language: "Python"
 category:             "Python"
@@ -9,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃なぜカプロン化するのか？
+## Why
 
-文字列を大文字にすることで、Pythonプログラムの出力をより視覚的に分かりやすくすることができます。
+文字列の最初の文字を大文字に変換することで、見栄えを良くしたり、データを整形したりすることができます。
 
-＃＃ カプロン化の方法
+## How To
 
-```Python 
-# 文字列を定義します
-string = "hello world" 
+```Python
+# 文字列を大文字に変換する方法
+my_string = "hello world"
+capitalized_string = my_string.capitalize()
 
-# 文字列を大文字にする関数を使用します
-capitalized_string = string.capitalize() 
+print(capitalized_string)
 
-# 結果を出力します
-print(capitalized_string) 
-
-# 出力：Hello world
+# 出力結果：Hello world
 ```
 
-＃＃ ディープダイブ
+```Python
+# 文字列の最初の文字のみを大文字に変換する方法
+my_string = "hello world"
+capitalized_string = my_string.title()
 
-カプロン化は、文字列の先頭を大文字にすることによって行われます。しかし、英語以外の言語では、異なるルールが適用される場合があります。また、複数の単語からなる文字列をカプロン化する方法や、特殊な記号を含む文字列をカプロン化する方法など、さまざまな応用方法があります。
+print(capitalized_string)
 
-＃＃参考文献
-- [Python公式ドキュメント：文字列オブジェクトのメソッド](https://docs.python.org/ja/3/library/stdtypes.html#string-methods)
-- [Real Python：Pythonでの文字列の操作](https://realpython.com/python-strings/)
-- [Progate：Pythonプログラミング入門 - 文字列の基本](https://prog-8.com/docs/python-string)
+# 出力結果：Hello World
+```
+
+## Deep Dive
+
+大文字に変換する方法は、文字列を操作する際に非常に便利です。Pythonでは、`capitalize()`や`title()`などの組み込み関数を使用することで、簡単に文字列を大文字に変換することができます。また、正規表現を使うことで、特定のパターンにマッチする文字列の最初の文字を大文字に変換することも可能です。
+
+## See Also
+
+- [Python 文字列](https://docs.python.org/ja/3/library/string.html)
+- [正規表現入門](https://docs.python.org/ja/3/howto/regex.html)

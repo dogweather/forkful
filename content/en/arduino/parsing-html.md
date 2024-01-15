@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Arduino recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,52 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-Arduino is a popular open-source electronics platform that allows users to create interactive projects. One of the most common uses for Arduino is to build projects that involve web scraping or parsing HTML. By parsing HTML, Arduino can gather information from websites and use that data to trigger actions or display information on connected devices.
+## Why
+Parsing HTML is a useful skill for anyone interested in web development, data analysis, or data extraction. It allows you to efficiently extract information from websites and automate tasks.
 
-##How To
-Parsing HTML with Arduino involves a few simple steps. First, you will need to install a library that allows Arduino to read and parse HTML code. One popular library for this is the HTML Parser library by Baldwin Hanno. Once the library is installed, you can start writing your code.
+## How To
+To parse HTML using Arduino, you will need to use the ArduinoJson library. Here is an example code that extracts the text from an HTML page and prints it to the serial monitor:
 
-In the code editor, you will first need to include the library by writing ```Arduino
-#include <HTMLParser.h>
+```
+#include <ArduinoJson.h> // include the library
+
+void setup() {
+  // initialize serial monitor
+  Serial.begin(9600);
+
+  // create a JSON buffer
+  const size_t capacity = JSON_OBJECT_SIZE(1) + 20;
+  DynamicJsonDocument doc(capacity);
+
+  // use the HTTP client to make a GET request to the website
+  HTTPClient http;
+  http.begin("https://www.example.com"); // replace with your desired website
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    // get response and store it in a String variable
+    String payload = http.getString();
+    
+    // parse the HTML using ArduinoJson
+    deserializeJson(doc, payload);
+    
+    // extract the text from the HTML and store it in a variable
+    String text = doc["contents"].as<const char*>();
+    
+    // print the extracted text to the serial monitor
+    Serial.println(text);
+  }
+
+  // close HTTP connection
+  http.end();
+}
+
+void loop() {
+  // do nothing in loop
+}
 ```
 
-Next, you will need to define the URL of the website you want to scrape. For example, if you want to gather data from the home page of Wikipedia, your code would look like this:
-
-```Arduino
-String website = "https://www.wikipedia.org/";
+Sample Output:
+```
+This is the text from the website.
 ```
 
-After that, you can start parsing the HTML code by using the ```Arduino
-parse()``` function from the library. This function will retrieve the HTML code from the website and store it in a variable for further manipulation.
+## Deep Dive
+Parsing HTML involves extracting data from an HTML document, which is written in a specific format called Hypertext Markup Language (HTML). This language uses tags to structure the content of a web page, making it easy for a browser to interpret and display the page. By parsing the HTML, we can extract the desired information by targeting specific tags and their attributes.
 
-```Arduino
-String htmlCode = parse(website);
-```
+The ArduinoJson library offers a simple and lightweight way to parse HTML. It uses the JavaScript Object Notation (JSON) data format, which is commonly used for data manipulation and transfer. Using this library, we first need to create a JSON buffer with enough memory to store the extracted data. Then we can use the HTTP client to make an HTTP request to the desired website and store the response in a String variable. Finally, we can use the functionality of the ArduinoJson library to parse the HTML and extract the data we want.
 
-From here, you can start extracting specific data from the HTML code using simple string manipulation functions. For example, if you want to extract the title of the website, you can use the ```Arduino
-indexOf()``` and ```Arduino
-subString()``` functions to find and isolate the title from the HTML code.
-
-```Arduino
-int titleStart = htmlCode.indexOf("<title>");
-int titleEnd = htmlCode.indexOf("</title>");
-String title = htmlCode.substring(titleStart+7, titleEnd);
-```
-
-Once you have extracted the data you need, you can then use that information to control connected devices or display it on a screen. The possibilities are endless with what you can do with this data!
-
-##Deep Dive
-Parsing HTML with Arduino may seem daunting, but it can actually be quite simple. The key is understanding the structure of HTML code and how to use string manipulation functions to extract data.
-
-HTML code is made up of tags, which indicate the beginning and end of specific elements on a webpage. These tags are enclosed in angled brackets, such as ```<title>```. By using the ```Arduino toString()``` function, you can convert the HTML code into a string, making it easier to manipulate.
-
-To extract data from the HTML code, you will need to use the ```Arduino
-indexOf()``` function. This function searches for a specific string within another string and returns the index of where that string appears. Combined with the ```Arduino
-subString()``` function, which allows you to extract a portion of a string, you can isolate specific data from the HTML code.
-
-##See Also
-- Arduino HTML Parser library by Baldwin Hanno: https://github.com/balhazra/Arduino-HtmlParser
-- Arduino official website: https://www.arduino.cc/
-- HTML tutorial for beginners: https://www.w3schools.com/html/
-- Project example using Arduino and HTML parsing: https://create.arduino.cc/projecthub/Arnov_Sharma/introduction-to-data-scraping-and-display-on-a-lcd-screen-b4ff8c
+## See Also
+- [ArduinoJson Library Documentation](https://arduinojson.org/)
+- [Getting Started with Arduino](https://www.arduino.cc/en/Guide/HomePage)
+- [HTTPClient Library Documentation](https://github.com/espressif/arduino-esp32/tree/master/libraries/HTTPClient)

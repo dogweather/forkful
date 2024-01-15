@@ -1,6 +1,7 @@
 ---
-title:                "Python: Uuden projektin aloitus"
-simple_title:         "Uuden projektin aloitus"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Python: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -9,49 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
+## Miksi
 
-Monet meistä saattavat tuntea tarvetta aloittaa uusi projekti, olipa se sitten henkilökohtainen harrastus tai työtehtävä. Ehkä haluat oppia uutta ohjelmointikieltä tai kehittää taitojasi jo olemassa olevassa kielessä. Ehkä sinulla on innovatiivinen idea, jonka haluat toteuttaa tai haluat korjata jotain ongelmaa, joka vaivaa sinua päivittäin. Aloittamisen pelkkä ajatus voi olla jännittävä, mutta myös hieman pelottava. Tässä blogikirjoituksessa käsittelemme kuinka aloittaa uusi projekti käyttäen Python-ohjelmointikieltä.
+Aloittaessa uutta ohjelmointiprojektia on tärkeää miettiä motivaatiota ja tavoitteita. Ehkä haluat oppia uutta ohjelmointikieltä, luoda sovelluksen jota et ole vielä löytänyt markkinoilta tai vain harrastaa ohjelmointia ilmaisena ajanvietteenä. Valitsemaasi projektiin kannattaa panostaa, jotta siitä tulee onnistunut ja palkitseva kokemus.
 
-## Kuinka aloittaa uusi projekti Pythonilla?
+## Miten aloittaa uusi projekti
 
-Aloittaminen on yleensä haastavin osuus, mutta ei huolta, tässä on muutama yksinkertainen askel, joilla voit aloittaa uuden projektin Pythonilla:
-
-1. Asenna Python-ympäristö tietokoneellesi. Voit ladata Pythonin viralliselta verkkosivustolta ja seuraa asennusohjeita.
-2. Valitse tekstieditori ohjelmointikoodin kirjoittamista varten. Jotkut suositellut vaihtoehdot ovat esimerkiksi PyCharm, Visual Studio Code tai Sublime Text.
-3. Tutustu Pythonin perusteisiin, kuten muuttujiin, funktioihin ja ehtolauseisiin, jotta ymmärrät paremmin kuinka kieli toimii.
-4. Mieti projektillesi tarkoitus ja luo suunnitelma. Ajatuskaavio tai lista tarvittavista toiminnoista voi auttaa sinua hahmottamaan projektisi rakennetta.
-
-#### Esimerkki: Hei maailma!
+Aloittaessasi uutta ohjelmointiprojektia Pythonilla, aloita luomalla uusi tiedosto nimeltä "projekti.py". Tämän jälkeen voit alkaa kirjoittaa koodiasi sisälle käyttäen "```Python ... ```" koodilohkoja. Esimerkiksi, jos haluat tulostaa tekstin "Hei maailma!", kirjoita seuraava koodi sisälle:
 
 ```Python
-# Tämä on yksinkertainen koodiesimerkki aloittelijoille, jossa tulostetaan "Hei maailma!" käyttäen print()-funktiota.
-
 print("Hei maailma!")
 ```
 
-**Tulos:**
+Aja sitten koodisi painamalla "Run" -painiketta tai painamalla "Shift" + "Enter". Näet tulosteen "Hei maailma!" näytön alapuolella olevassa konsolissa. Tästä voit alkaa kehittämään ja laajentamaan projektiasi lisäämällä uusia toimintoja ja ominaisuuksia.
 
-```
-Hei maailma!
-```
+## Syvällinen sukellus aloittamiseen
 
-Nyt olet valmis aloittamaan uuden projektisi Pythonilla!
+Ennen kuin alat koodata, on hyvä idea suunnitella projektiasia etukäteen. Tämä auttaa sinua hahmottamaan projektin tavoitteet, tarvittavat resurssit ja aikataulun. Voit myös luoda koodikarttoja ja suunnitella luokkarakenteita, jotka auttavat sinua pysymään järjestelmällisessä ja tehokkaassa projektin kehityksessä.
 
-## Syvällinen sukellus: Miten onnistua uuden projektin aloittamisessa?
-
-Uuden projektin aloittaminen saattaa tuntua haastavalta, mutta tässä muutama vinkki, jotka auttavat sinua onnistumaan:
-
-1. Aloita pienestä ja lisää toiminnallisuuksia vähitellen. Aloittaminen yksinkertaisella projektilla auttaa sinua ymmärtämään paremmin Pythonin toimintaa ja mahdollisia ongelmia, joita saatat törmätä matkalla.
-2. Käytä resursseja, kuten ohjelmointiyhteisöä ja verkko-oppimateriaaleja. Näillä voi olla paljon hyödyllistä tietoa ja vinkkejä uuden projektin aloittamiseen.
-3. Ole kärsivällinen ja älä pelkää tehdä virheitä. Jokainen ohjelmoija on joskus aloittelija ja oppiminen tapahtuu parhaiten tekemällä virheitä ja korjaamalla niitä.
-
-Toivottavasti tämä auttaa sinua aloittamaan uuden projektin Pythonilla! Koskaan ei ole liian myöhäistä aloittaa jotain uutta ja jännittävää.
+Muista myös hyödyntää Pythonin valmiita moduuleja ja dokumentaatiota. On hyvin todennäköistä, että joku on jo ratkaissut samankaltaisen ongelman, johon sinä olet törmännyt. Tähän asti kirjoittaminen on vain yksi osa projektin aloittamista - tehokas suunnittelu ja hyödyntäminen ovat avaintekijöitä projektimenestyksessä.
 
 ## Katso myös
 
-- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/)
-- [Codecademy Python-course](https://www.codecademy.com/learn/learn-python)
-- [Real Python -blogi](https://realpython.com/)
-
-Kiitos lukemisesta ja onnea uuden projektin aloittamiseen!
+- [Pythonin onnenpyörä - opetusohjelma aloittelijoille](https://www.python.org/about/gettingstarted/)
+- [Pythonin dokumentaatio](https://docs.python.org/3/)
+- [Projektinhallintaohjelmistot](https://www.thoughtco.com/tools-for-project-management-1213347)

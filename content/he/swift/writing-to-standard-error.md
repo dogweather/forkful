@@ -1,6 +1,7 @@
 ---
-title:                "Swift: כתיבה לשגיאת תקן"
-simple_title:         "כתיבה לשגיאת תקן"
+title:                "כתיבה לתקליטור הסטנדרטי"
+html_title:           "Swift: כתיבה לתקליטור הסטנדרטי"
+simple_title:         "כתיבה לתקליטור הסטנדרטי"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,37 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מדוע כדאי לכם לכתוב לפלט שגיאות סטנדרטי?
+כתיבה לסטנדרט השגיאה היא כלי חשוב בתכנות בשפת Swift. היא מאפשרת למפתחים להציג מידע נוסף בזמן הריצה ולטפל בשגיאות בצורה מתקדמת.
 
-## איך לכתוב
+## איך לעשות זאת
 
-כדי לכתוב לפלט שגיאות סטנדרטי בשפת סוויפט, תוכלו להשתמש בפונקציה "fputs". הנה דוגמה לכתיבת שגיאת "הכנסיות" לפלט סטנדרטי על ידי שימוש בפונקציה המתאימה לכך:
-
-``` Swift
-fputs("חרף ציפורי הסתיו", stderr)
+```Swift
+print("Error: Something went wrong!", to: &standardError)
 ```
 
-כאשר נריץ את הקוד הנ"ל, נקבל את הפלט הבא:
+בכדי לכתוב לסטנדרט השגיאה בשפת Swift, ניתן להשתמש בפונקציה `print` ולציין את מחרוזת ההודעה ואת המיקום המיוחד של סטנדרט השגיאה `&standardError`. ניתן גם להשתמש בסימון המיוחד `\(#file) \(#line)` כדי להציג את המיקום הדיווח.
 
-`חרף ציפורי הסתיו`
+**פלט:**
 
-## חפירה עמוקה
-
-כאשר אתם כותבים לפלט שגיאות סטנדרטי בשפת סוויפט, יתרומנה כי אתם יכולים להשתמש בפונקציה "fprintf" במקום במקום בפונקציה "fputs". פונקציה זו מאפשרת לכם להוסיף מידע נוסף לפלט השגיאות. לדוגמה:
-
-``` Swift
-let name = "שלום"
-let age = 30
-
-fprintf(stderr, "היי, שמי הוא %s ואני בן %d", name, age)
+```
+Error: Something went wrong!
 ```
 
-הפלט הוא:
+## חקירה מעמיקה
 
-`היי, שמי הוא שלום ואני בן 30`
+כתיבה לסטנדרט השגיאה מאפשרת למפתחים להציג מידע נוסף ולטפל בשגיאות בצורה מתקדמת. ניתן להתאים את המידע המוצג ולשדרג אותו באמצעות מיקוד וקישורים לדוקומנטציה נוספת.
 
-## ראו גם
+## ראה גם
 
-* [מדריך לשגיאות סטנדרטי בשפת סוויפט](https://www.swiftbysundell.com/articles/standard-errors-in-swift/)
-* [פונקציות פלט סטנדרטיות בשפת סוויפט](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID102)
-* [מדריך מלא לתחום התכנות בשפת סוויפט](https://developer.apple.com/swift/resources/)
+- המדריך הרשמי של Apple לכתיבה לסטנדרט השגיאה בשפת Swift: https://developer.apple.com/documentation/swift/diagnostic_reporting
+- כתיבה לסטנדרט השגיאה בשפת Swift בעזרת Xcode: https://www.youtube.com/watch?v=6h7F4Rb6fVI

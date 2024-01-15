@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: jsonを使ったプログラミングの方法"
-simple_title:         "jsonを使ったプログラミングの方法"
+title:                "JSONを使ったプログラミング"
+html_title:           "Ruby: JSONを使ったプログラミング"
+simple_title:         "JSONを使ったプログラミング"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -9,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+##なぜ
 
-JSONという形式でプログラミングする理由は、データを扱う上でとても便利であり、多くのウェブサイトやアプリケーションで使用されているからです。
+JSONを使って作業することのメリットは、データをやりとりする際に必要となるフォーマットが一貫していることです。データの整理や解析を簡単にするために、JSONはとても便利なツールとなります。
 
-## 方法
-
-JSONをRubyで扱うためには、まずはRubyの標準ライブラリであるJSONをrequireする必要があります。その後、JSON.parseメソッドを使用してJSONデータをRubyオブジェクトに変換することができます。
+##使い方
 
 ```Ruby
-require "json"
+#JSONをパースする
+require 'json'
 
-# JSONデータの例
-data = '{"name": "太郎", "age": 25, "hobbies": ["料理", "旅行", "読書"]}'
+json_data = '{"name": "John", "age": 25, "profession": "developer"}'
 
-# JSONをRubyオブジェクトに変換
-parsed_data = JSON.parse(data)
-# => {"name"=>"太郎", "age"=>25, "hobbies"=>["料理", "旅行", "読書"]}
+user_info = JSON.parse(json_data) #JSONデータをHashに変換
 
-# RubyオブジェクトをJSONに変換
-json_data = parsed_data.to_json
-# => "{\"name\":\"太郎\",\"age\":25,\"hobbies\":[\"料理\",\"旅行\",\"読書\"]}"
+puts user_info["name"] #結果 - John
+puts user_info["age"] #結果 - 25
+puts user_info["profession"] #結果 - developer
 ```
 
-## 深堀り
+```Ruby
+#JSONを作成する
+require 'json'
 
-JSONはJavaScript Object Notationの略であり、JavaScriptのオブジェクトと似たような文法を持っています。JSONはプレーンテキストであり、人間にとっても扱いやすく、またコンピューターにとっても扱いやすい形式です。また、Web APIのレスポンスとしてもよく利用されており、パースして必要なデータを抽出することができます。
+user_info = {
+  "name": "Jane",
+  "age": 30,
+  "profession": "designer"
+}
 
-## 参考リンク
+json_data = JSON.generate(user_info) #HashをJSONに変換
 
-- [Rubyの標準ライブラリ: JSON](https://docs.ruby-lang.org/ja/latest/library/json.html)
-- [JSONチュートリアル](https://www.json.org/json-ja.html)
-- [RubyでJSONを扱う方法](https://qiita.com/ryoqun/items/5ab80345d40d89e886ed)
+puts json_data #結果 - {"name": "Jane", "age": 30, "profession": "designer"}
+```
+
+##深堀り
+
+JSONは、Webサイトやアプリケーションでよく使用されるデータ形式です。Hashと似ていますが、より軽量でデータのやりとりに適したフォーマットです。Rubyでは、標準ライブラリとしてJSONモジュールが提供されており、手軽にJSONを扱うことができます。
+
+##参考文献
+
+- [Ruby公式ドキュメント - JSON](https://docs.ruby-lang.org/ja/latest/class/JSON.html)
+- [JSONとは？メリットや使い方を解説！](https://tech-boost.jp/common/column/71/)

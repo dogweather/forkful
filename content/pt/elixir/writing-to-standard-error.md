@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo para o erro-padrão"
+html_title:           "Elixir: Escrevendo para o erro-padrão"
+simple_title:         "Escrevendo para o erro-padrão"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever no erro padrão?
+## Por que
 
-Escrever no erro padrão (standard error) é uma habilidade importante para qualquer programador de Elixir. Ela permite que você imprima informações de erro detalhadas durante a execução do seu código, o que pode ser muito útil para depurar e corrigir problemas em suas aplicações.
+Escrever para a saída padrão de erro (standard error) é uma forma de melhorar a usabilidade e confiabilidade de seus programas Elixir. Além disso, isso pode ajudar a solucionar problemas e depurar erros em seu código de forma mais eficiente.
 
-## Como fazer
+## Como Fazer
 
-Para escrever no erro padrão em Elixir, basta utilizar a função `IO.puts/2`, passando como primeiro argumento o atom `:stderr` para indicar que a mensagem deve ser escrita nesse canal de saída. Veja um exemplo:
+Usar a função `IO.puts/2` com o `:stderr` como primeiro argumento é a maneira mais simples de escrever para a saída de erro padrão em Elixir. Observe o código abaixo como exemplo:
 
 ```Elixir
-IO.puts(:stderr, "Oops, algo deu errado!")
+IO.puts(:stderr, "Este é um erro de exemplo.")
 ```
 
-Isso irá imprimir a mensagem no console da sua aplicação, acompanhada da informação de qual módulo e linha de código ela foi chamada. Por exemplo:
+Isso irá imprimir a mensagem "Este é um erro de exemplo." na saída de erro padrão. Você também pode usar outras funções de saída, como `IO.inspect/2`, para direcionar a saída para a saída de erro padrão.
 
-```bash
-Oops, algo deu errado!
-** (RuntimeError) Erro na linha 5 do módulo MyApp
+## Mergulho Profundo
+
+Além de simplesmente imprimir mensagens de erro, também é possível formatar e colorir a saída para facilitar a identificação dos erros. Você pode usar a biblioteca `ANSI` para adicionar cores aos seus erros, veja o exemplo abaixo:
+
+```Elixir
+require ANSI
+
+IO.puts(:stderr, "Este é um " <> ANSI.colorize("erro", :red) <> " de exemplo.")
 ```
 
-## Profundidade: Explorando a escrita no erro padrão
+Isso irá imprimir a mensagem "Este é um erro de exemplo." em vermelho na saída de erro padrão. Além disso, você também pode definir os códigos de saída para diferentes tipos de erros, o que pode ajudar na identificação e tratamento desses erros.
 
-Quando você escreve no erro padrão, também pode utilizar a função `IO.inspect/2` para imprimir valores de variáveis e expressões. Isso é especialmente útil para entender o comportamento do seu código em diferentes momentos da execução.
+## Veja Também
 
-Além disso, você pode utilizar o módulo `Logger` para escrever no erro padrão de forma mais sofisticada, permitindo que você personalize o formato e o nível de logs de acordo com suas necessidades.
-
-## Veja também
-
-- [Documentação oficial do Elixir sobre escrever no erro padrão](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Guia completo sobre uso do módulo Logger em Elixir](https://elixir-lang.org/getting-started/logger.html)
+- Documentação oficial Elixir sobre escrita para a saída de erro padrão: https://hexdocs.pm/elixir/IO.html#puts/2
+- Tutorial sobre saída de erro padrão em Elixir: https://elixircasts.io/error-handling-in-elixir-using-puts-to-print-to-stderr

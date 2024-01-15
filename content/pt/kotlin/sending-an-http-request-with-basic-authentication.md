@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica."
+html_title:           "Kotlin: Enviando uma solicitação http com autenticação básica."
+simple_title:         "Enviando uma solicitação http com autenticação básica."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,53 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que enviar uma solicitação HTTP com autenticação básica?
 
-Enviar uma solicitação HTTP com autenticação básica é um método seguro e confiável de se comunicar com um servidor. Isso garante que apenas usuários autorizados tenham acesso aos dados e recursos protegidos pelo servidor. 
+Enviar uma solicitação HTTP com autenticação básica é uma forma segura de autenticar um usuário em um aplicativo ou site. Isso garante que apenas usuários autorizados tenham acesso a determinados recursos ou informações.
 
 ## Como fazer:
 
 ```Kotlin
-val url = URL("https://exemplo.com/api/recurso")
+val url = URL("https://www.example.com/login")
 val connection = url.openConnection() as HttpURLConnection
 connection.requestMethod = "GET"
 
-// Codificando nome de usuário e senha em Base64
-val name = "usuario"
-val password = "senha"
-val authString = "$name:$password"
-val authStringEnc = Base64.getEncoder().encodeToString(authString.toByteArray())
+val userCredentials = "username:password"
+val basicAuth = "Basic " + Base64.encodeToString(userCredentials.toByteArray(), Base64.DEFAULT)
 
-connection.setRequestProperty("Authorization", "Basic $authStringEnc")
+connection.setRequestProperty("Authorization", basicAuth)
 
-// Lendo a resposta
-val bufferedReader = BufferedReader(InputStreamReader(connection.inputStream))
-val response = StringBuffer()
-var inputLine = bufferedReader.readLine()
-while(inputLine !=null){
-    response.append(inputLine)
-    inputLine = bufferedReader.readLine()
-}
-
-bufferedReader.close()
-
-// Imprimindo o resultado
-println(response.toString())
-
+val responseCode = connection.responseCode
 ```
 
-**Saída:**
+Saída do código acima:
 
 ```
-{"status":200,"message":"Recurso enviado com sucesso!"}
+200 OK
 ```
 
-## Mergulho Profundo:
+## Deep Dive:
 
-Ao enviar uma solicitação HTTP com autenticação básica, é importante usar o cabeçalho "Authorization" para incluir as credenciais do usuário codificadas em Base64. Este cabeçalho também deve conter a palavra "Basic" seguida por um espaço, para indicar a codificação utilizada. Além disso, é necessário fornecer a URL correta do servidor e o método de solicitação correto, como GET, POST ou PUT.
-
-Outro fator importante a considerar é a segurança das credenciais de autenticação básica. Como elas são codificadas, elas podem ser facilmente decodificadas por alguém com conhecimento técnico. Portanto, é aconselhável usar a autenticação básica apenas em conexões seguras, como HTTPS.
+Quando se trata de autenticação básica em uma solicitação HTTP, o header "Authorization" é fundamental. Ele contém o tipo de autenticação, que neste caso é "Basic", e as credenciais do usuário, que são o nome de usuário e a senha concatenados e codificados em Base64.
+Na classe HttpURLConnection do Kotlin, o método `setRequestProperty()` é usado para definir esse header. No entanto, é importante lembrar que as credenciais são enviadas em texto simples, por isso é recomendável usar o protocolo HTTPS para criptografar a comunicação.
 
 ## Veja também:
 
-- [Documentação oficial do Kotlin](https://kotlinlang.org/docs/reference/)
-- [Tutorial de autenticação básica HTTP em Java](https://www.baeldung.com/java-http-request-basic-authentication)
-- [Artigo sobre codificação Base64 em Kotlin](https://www.vogella.com/tutorials/Kotlin/article.html)
+- [Documentação oficial do Kotlin sobre HttpURLConnection](https://kotlinlang.org/api/latest/jvm/stdlib/java.net.-u-r-l-connection/request-method.html)
+- [Tutorial do Baeldung sobre autenticação básica em solicitações HTTP](https://www.baeldung.com/java-http-request-basic-authentication)

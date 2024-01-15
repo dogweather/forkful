@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Elixir: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,69 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando com Elixir?
+## Por que
 
-Quando se trabalha com programas em Elixir, é comum a necessidade de receber informações do usuário através de argumentos na linha de comando. Ler esses argumentos é importante para tornar o programa mais interativo e dinâmico, permitindo que o usuário forneça entradas personalizadas de acordo com suas necessidades. Neste artigo, vamos explorar como ler argumentos da linha de comando com Elixir e a importância disso para o desenvolvimento de programas eficientes.
+Já se perguntou como pode interagir com seu programa Elixir através da linha de comando? Ler argumentos de linha de comando pode ser muito útil para personalizar a execução do seu programa e torná-lo mais flexível. Neste artigo, vamos explorar como fazer isso usando o Elixir!
 
-## Como fazer:
+## Como Fazer
 
-Para ler argumentos da linha de comando em Elixir, podemos utilizar a função `System.argv/0`, que retorna uma lista com os argumentos passados pelo usuário. Por exemplo:
+Para ler argumentos de linha de comando em Elixir, podemos usar o módulo `System` e sua função `argv`. Esta função retorna uma lista contendo todos os argumentos passados ​​na linha de comando.
+
+Vamos ver isso em ação com um exemplo simples:
 
 ```Elixir
-# Lendo e imprimindo o primeiro argumento
-IO.puts("O primeiro argumento é #{System.argv[0]}")
-
-# Lendo e armazenando todos os argumentos em uma lista
-args = System.argv()
+# programa.exs
+args = System.argv
 IO.inspect(args)
 ```
 
-A saída do primeiro exemplo seria: `O primeiro argumento é hello.exs`, considerando que o arquivo está sendo executado como `elixir hello.exs ola`. Já a saída do segundo exemplo seria uma lista com os argumentos `["ola"]`.
+Ao executar este programa no terminal, podemos passar os argumentos após o comando `elixir programa.exs`, como por exemplo:
 
-Podemos também utilizar a função `Kernel.get_arguments/0` para obter os argumentos de forma mais estruturada, retornando uma lista de pares chave-valor. Por exemplo:
-
-```Elixir
-# Lendo e imprimindo os argumentos de forma mais estruturada
-args = Kernel.get_arguments()
-IO.inspect(args)
+```terminal
+elixir programa.exs arg1 arg2
 ```
 
-A saída seria: `[{"option", "hello"}, {"value", "ola"}]` para o exemplo acima.
+A saída será:
 
-## Mergulho profundo:
-
-Além de receber argumentos na linha de comando, também podemos passar opções para o programa. Essas opções são muito úteis para definir comportamentos diferentes ou personalizar a execução do programa. Para isso, podemos utilizar a biblioteca `OptionParser` do Elixir, que nos permite parsear os argumentos da linha de comando e definir opções com seus respectivos valores.
-
-Por exemplo, vamos definir uma opção `--name` que recebe um valor como argumento e, caso seja passada, irá imprimir uma mensagem personalizada com o nome fornecido:
-
-```Elixir
-# Definindo as opções do programa
-options = OptionParser.parse(
-  [
-    [short: "--name", description: "Define o nome para a saudação"]
-  ],
-  aliases: [n: :name]
-)
-
-case options do
-  {[:ok, opts], _, _} ->
-    # Verificando se a opção --name foi passada
-    case opts[:name] do
-      name when is_binary(name) ->
-        IO.puts("Olá, #{name}!")
-      _ ->
-        IO.puts("Ola!")
-    end
-  _ ->
-    # Imprimindo mensagem padrão caso não seja passada nenhuma opção
-    IO.puts("Ola!")
-end
+```terminal
+["arg1", "arg2"]
 ```
 
-Agora, quando executamos o programa utilizando `elixir hello.exs -n Jon`, a saída seria `Olá, Jon!`, enquanto simplesmente executar `elixir hello.exs` resultaria em `Ola!`.
+Podemos também usar padrões de correspondência para tratar argumentos específicos. Por exemplo, se quisermos apenas imprimir o segundo argumento, podemos fazer o seguinte:
 
-## Veja também:
+```Elixir
+# programa.exs
+[_ | argumento] = System.argv
+IO.puts("O segundo argumento é: #{argumento}")
+```
 
-- [Documentação sobre argumentos da linha de comando no Elixir](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Documentação sobre a biblioteca OptionParser no Elixir](https://hexdocs.pm/elixir/OptionParser.html)
-- [Artigo sobre leitura de argumentos da linha de comando em Elixir](https://dev.to/diana_adrianne/how-to-read-command-line-arguments-in-elixir-2n9k)
+Agora, ao executar o programa como `elixir programa.exs arg1 arg2`, a saída será:
+
+```terminal
+O segundo argumento é: arg2
+```
+
+## Deep Dive
+
+O módulo `System` oferece outras funções úteis para trabalhar com argumentos de linha de comando, como `get_env`, que obtém o valor de uma variável de ambiente passada como argumento na linha de comando. Além disso, também podemos usar `arg` para obter um argumento específico pelo seu índice.
+
+É importante lembrar que quando usamos `System.argv`, a lista retornada incluirá o nome do próprio programa como primeiro elemento. Portanto, podemos usar `hd` para obter somente os argumentos passados a partir do segundo elemento em diante.
+
+Para mais informações sobre como trabalhar com argumentos de linha de comando em Elixir, consulte a [documentação oficial](https://hexdocs.pm/elixir/System.html#argv/0) e o [artigo em inglês](https://blog.appsignal.com/2020/01/15/command-line-arguments-in-elixir.html).
+
+## Veja Também
+
+- [Documentação Oficial do Elixir sobre `System.argv`](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Artigo em inglês sobre argumentos de linha de comando em Elixir](https://blog.appsignal.com/2020/01/15/command-line-arguments-in-elixir.html)

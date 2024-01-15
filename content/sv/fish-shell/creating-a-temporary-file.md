@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Fish Shell: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,51 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skapa en temporär fil är ett vanligt verktyg inom programmering, och kan vara användbart för att hantera temporär data eller för att spara information för senare bruk.
 
-Har du någonsin stött på situationer där du behöver skapa en temporär fil när du använder Fish Shell? Det finns faktiskt flera användbara fall där en temporär fil kan hjälpa dig att hantera dina uppgifter bättre. Läs vidare för att upptäcka varför du kanske vill skapa en temporär fil och hur du kan göra det i Fish Shell.
-
-## Hur du gör
-
-Att skapa en temporär fil i Fish Shell är ganska enkelt. Du kan använda kommandot `mktemp` för att skapa en temporär fil och tilldela den ett unikt namn. Till exempel:
+## Hur man gör
+Det finns flera olika sätt att skapa en temporär fil i Fish Shell, men ett av de vanligaste är att använda kommandot `mktemp`. Här är ett exempel på hur man kan skapa en temporär fil och skriva data till den:
 
 ```Fish Shell
-mktemp
+set temp_file (mktemp)
+echo "Detta är en temporär fil!" > $temp_file
 ```
-Output: `/tmp/tmp.VuqMXgUHh5`
 
-Som du kan se i exemplet skapas en fil i `/tmp` mappen och tilldelar den ett unikt namn bestående av bokstäver och siffror. Du kan också ange ett prefix för filnamnet genom att använda flaggan `-p`, till exempel:
+När koden körs, kommer en temporär fil att skapas med namnet som genererats av `mktemp`-kommandot. I det här fallet kommer filen att innehålla texten "Detta är en temporär fil!".
+
+För att sedan använda den temporära filen kan man till exempel läsa innehållet med kommandot `cat`:
 
 ```Fish Shell
-mktemp -p foo
+cat $temp_file
 ```
-Output: `/tmp/foo.HmTwZ3aqrK`
 
-Detta lägger till prefixet "foo" till det unika namnet på temporärfilen. Du kan också välja var temporärfilen ska skapas genom att använda flaggan `-t`, till exempel:
+## Deep Dive
+För de som är intresserade av att förstå mer om skapandet av temporära filer i Fish Shell, så finns det en del djupgående information att ta del av. Ett sätt att skapa en temporär fil är att använda sig av `mktemp`-kommandot som nämnts tidigare. Det här kommandot genererar ett unikt filnamn genom att kombinera en fördefinierad prefix och ett slumpmässigt nummer eller bokstäver. På så sätt är det säkert att filnamnet är unikt och inte existerar redan.
 
-```Fish Shell
-mktemp -t ~/Desktop
-```
-Output: `/Users/username/Desktop/tmp.OgPTJ6uM13`
-
-Nu skapas temporärfilen direkt på skrivbordet istället för i /tmp mappen.
-
-## Djupdykning
-
-Kommandot `mktemp` används för att skapa temporära filer som används för tillfälliga uppgifter eller för att undvika att skriva över befintliga filer. Detta är särskilt användbart när du skapar skript eller automatiseringsverktyg som använder sig av tillfälliga filer för att hantera data.
-
-Standardmappen för temporära filer är `/tmp` men det är möjligt att ändra detta genom att redigera variabeln `TMP` i Fish Shell. Du kan också kontrollera var temporärfiler skapas genom att använda flaggan `-u`.
-
-Som standard skapas temporära filer med läs- och skrivrättigheter för den aktuella användaren. Men om du vill ange specifika rättigheter kan du använda `-m` flaggan och ange rättigheter i octal format, till exempel:
-
-```Fish Shell
-mktemp -m 700
-```
-Output: `/tmp/foo.iN1m1JYR64`
-
-Här tilldelas temporärfilen rättigheter 700, vilket innebär att endast den aktuella användaren har rättigheter att läsa och skriva i filen.
+Det finns även andra sätt att skapa en temporär fil, som att använda `touch`-kommandot eller `tmpfile`-funktionen inbyggd i Fish Shell. Det är en bra idé att undersöka vilken metod som passar bäst för det specifika ändamålet.
 
 ## Se även
-
-- [Fish Shell dokumentation för mktemp](https://fishshell.com/docs/current/commands.html#mktemp)
-- [Linux-kommandot för mktemp](https://linux.die.net/man/1/mktemp)
-- [Bash-script: Använda temporära filer](https://linuxize.com/post/bash-temporary-files/)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Bash Hackers Wiki - Creating temporary files](https://wiki.bash-hackers.org/howto/redirection_tutorial#creating_temporary_files)
+- [Shell Scripting for System Administrators - Chapter 5](https://www.shellscript.sh/functions.html)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "C#: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "C#"
 category:             "C#"
@@ -9,66 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué?
 
-Iniciar un nuevo proyecto de programación puede parecer intimidante al principio, pero es una oportunidad emocionante para mejorar tus habilidades y crear algo nuevo y único. Además, te permite explorar tus intereses y experimentar con diferentes técnicas y herramientas. ¡No tengas miedo de embarcarte en un nuevo proyecto y ver a dónde te lleva!
+¡Hola a todos! ¿Están listos para sumergirse en el mundo de la programación? En este artículo, vamos a hablar sobre por qué deberían considerar comenzar un nuevo proyecto en C#. Así que si están interesados en aprender un lenguaje de programación versátil y en constante evolución, ¡siguan leyendo!
 
-##Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para empezar un nuevo proyecto en C#, debes seguir estos pasos:
+Lo primero que necesitan hacer antes de comenzar su proyecto en C# es descargar e instalar Visual Studio, que es el entorno de desarrollo integrado (IDE) más utilizado para escribir y depurar código en este lenguaje. Una vez que lo tengan instalado, ¡están listos para comenzar!
 
-- Primero, asegúrate de tener instalado un entorno de desarrollo integrado (IDE) compatible con C#, como Visual Studio o Visual Studio Code.
-- Crea un nuevo proyecto en tu IDE seleccionando la opción "Nuevo proyecto de C#" en el menú de inicio.
-- Elige un nombre y una ubicación para tu proyecto y selecciona el tipo de aplicación que deseas crear, ya sea una aplicación de consola, una aplicación de escritorio, una aplicación web, etc.
-- Una vez que se haya creado el proyecto, podrás comenzar a escribir tu código en el archivo de código fuente principal (por lo general, llamado "Program.cs").
-- Utiliza los recursos en línea, como documentación oficial y tutoriales, para aprender y escribir código en C#.
-- No tengas miedo de buscar en línea si te encuentras con dificultades, ¡hay una gran comunidad de desarrolladores de C# que estarán dispuestos a ayudarte!
+**Crear una aplicación básica**
 
-A continuación se muestra un pequeño ejemplo de un programa de consola básico en C# que imprime "¡Hola mundo!" en la pantalla:
+Comencemos con algo simple, creemos una aplicación de consola que imprima un mensaje en la pantalla. Para hacerlo, sigan estos pasos:
+
+1. Abren Visual Studio y seleccionan "Crear un Proyecto Nuevo"
+2. En la ventana de plantillas, seleccionan "Consola de Aplicación (.NET Core)" y le dan un nombre a su proyecto
+3. Dentro del archivo "Program.cs", escriben el siguiente código dentro del método `Main()`:
 
 ```C#
-using System; 
-
-namespace MiProyecto { 
-	class Program { 
-		static void Main(string[] args) 
-		{                      
-                      	Console.WriteLine("¡Hola mundo!"); 
-		} 
-	} 
-}
+Console.WriteLine("¡Hola a todos!"); //imprime el mensaje en la pantalla
+Console.ReadLine(); //espera a que el usuario presione alguna tecla para salir de la consola
 ```
 
-La salida de este programa sería:
+4. Presionan F5 para ejecutar el programa y deberían ver el mensaje en la pantalla
 
-```
-¡Hola mundo!
-```
+¡Genial! Han creado su primera aplicación en C#. Pueden seguir practicando y explorando diferentes características y funcionalidades de este lenguaje.
 
-##Profundizando
+**Agregar librerías externas**
 
-Una vez que hayas dominado los conceptos básicos de C# y hayas creado tu primer proyecto, puedes profundizar en otros aspectos importantes para el éxito de tu proyecto. Algunas cosas que puedes hacer incluyen: 
+Una de las ventajas de C# es que pueden agregar librerías externas (también conocidas como paquetes o dependencias) a sus proyectos para agregar funcionalidades adicionales. Una forma de hacerlo es utilizando NuGet, el administrador de paquetes de .NET.
 
-- Aprender sobre los diferentes tipos de datos en C#, como enteros, cadenas y flotantes, y cómo manejarlos en tu código.
-- Familiarizarte con las estructuras de control, como if/else y bucles, para controlar el flujo de tu programa.
-- Investigar sobre el uso de métodos y funciones para dividir tu código en partes más pequeñas y reutilizables.
-- Aprender a utilizar librerías y APIs externas para agregar funcionalidades a tu proyecto.
-- Experimentar con diferentes técnicas de depuración para solucionar problemas en tu código.
+Por ejemplo, si quieren utilizar una librería para trabajar con fechas y horas, pueden seguir estos pasos:
 
-Recuerda que siempre puedes buscar en línea para obtener más información sobre estos temas y consultar ejemplos de código.
+1. Hacen clic derecho en el nombre de su proyecto en el Explorador de Soluciones y seleccionan "Administrar Paquetes NuGet"
+2. En la pestaña "Examinar" buscan "DateTime" y seleccionan la librería que desean agregar (por ejemplo, "DateTimeExtensions")
+3. Le dan clic al botón "Instalar" y luego "Aceptar" en la ventana emergente
+4. Ahora pueden utilizar los métodos y propiedades de esa librería en su proyecto
 
-##Más información
+**Seguir aprendiendo**
 
-Para obtener más información sobre cómo iniciar un proyecto de programación en C#, puedes consultar los siguientes enlaces:
+C# es un lenguaje muy extenso y en constante evolución, así que es importante seguir aprendiendo y explorando sus funcionalidades. Pueden encontrar tutoriales, cursos y recursos en línea para seguir avanzando en su conocimiento.
 
-- [Documentación oficial de C#](https://docs.microsoft.com/es-es/dotnet/csharp/)
-- [Guía de inicio rápido de C#](https://dev.to/shahathsalaudeen/getting-started-with-c-quick-start-guide-1pcp)
-- [Tutorial de C# para principiantes](https://www.tutorialspoint.com/csharp/csharp_tutorial.pdf)
+## Profundizando
 
-¡Buena suerte en tu nuevo proyecto de programación en C#!
+Ahora que ya saben cómo comenzar un proyecto en C# y agregar librerías externas, aquí hay algunas cosas más que deberían tener en cuenta al iniciar su proyecto:
 
-##Ver también
+- C# es un lenguaje orientado a objetos, lo que significa que todo en él se basa en objetos y clases. Asegúrense de entender los conceptos básicos de la programación orientada a objetos antes de seguir adelante.
+- Pueden utilizar Visual Studio para crear diferentes tipos de aplicaciones, como aplicaciones web, aplicaciones móviles y más. Investigen un poco y decidan qué tipo de aplicación quieren crear antes de iniciar un nuevo proyecto.
+- Asegúrense de seguir prácticas de codificación limpias y eficientes, como nombrar adecuadamente variables y utilizar comentarios en su código. Esto les ayudará a mantener su proyecto organizado y fácil de entender.
 
-- [Introducción a la programación orientada a objetos en C#](https://platzi.com/blog/introduccion-programacion-orientada-objetos-csharp/)
-- [Cómo crear un juego simple en C#](https://www.youtube.com/watch?v=LBBeSOF9VkE)
-- [Repositorio de ejemplos de código en C#](https://github.com/dotnet/samples/tree/main/csharp)
+## Vea también
+
+- [Tutorial de C# en Microsoft Docs](https://docs.microsoft.com/es-es/dotnet/csharp/tutorials/)
+- [Canal de programación en YouTube (en español)](https://www.youtube.com/c/ProgramacionEnEspañol)
+- [Comunidad de C# en Reddit](https://www.reddit.com/r/csharp/)

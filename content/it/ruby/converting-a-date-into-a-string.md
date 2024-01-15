@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Ruby: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,36 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Convertire una data in una stringa può sembrare un'operazione semplice, ma è un'abilità fondamentale per chiunque stia imparando a programmare in Ruby. Conoscere come gestire le date è importante per creare applicazioni che richiedono un uso accurato del tempo e per presentare le informazioni in un formato più comprensibile per gli utenti.
+La conversione di una data in una stringa può essere utile quando si lavora con date in un formato specifico o quando si vuole visualizzare una data in un formato più leggibile per gli utenti.
 
 ## Come fare
 
-Per convertire una data in una stringa utilizzando Ruby, è possibile utilizzare il metodo `to_s`. Di seguito è riportato un esempio di codice:
+Per convertire una data in una stringa in Ruby puoi utilizzare il metodo `strftime()` della classe `Time` o `Date`. Questi metodi accettano un argomento che rappresenta il formato della stringa di output. Ad esempio:
 
 ```Ruby
-today = Date.today
-puts today.to_s
+today = Time.now
+puts today.strftime("%d/%m/%Y")
 ```
 
-L'output di questo codice sarà una stringa che rappresenta la data attuale nel formato `YYYY-MM-DD`. In alternativa, è possibile specificare un formato personalizzato utilizzando il metodo `strftime`:
-
-```Ruby
-birthday = Time.new(1990, 8, 12)
-puts birthday.strftime("%d/%m/%Y")
-```
-
-In questo esempio, vengono utilizzate le direttive del formato comune per stampare la data di nascita nel formato `GG/MM/AAAA`.
+Questo codice stampa la data corrente in formato giorno/mese/anno.
 
 ## Approfondimento
 
-Oltre ai metodi `to_s` e `strftime`, Ruby offre anche altre opzioni per convertire una data in una stringa. Ad esempio, il metodo `strftime` può accettare una lingua come parametro per stampare il nome del mese o del giorno della settimana nella lingua specificata. Inoltre, è possibile utilizzare il modulo `Date` per manipolare timestamp o per effettuare calcoli di date.
+La classe `Time` rappresenta un orario specifico, mentre `Date` rappresenta una data senza un orario specifico. Il formato della stringa utilizzato nel metodo `strftime()` è basato sulle direttive presenti nella libreria C standard `strftime()`. Queste direttive indicano come la stringa di output dovrà essere formattata in base ai componenti della data, come il giorno, il mese e l'anno. Ad esempio:
 
-Un altro aspetto da considerare è che le date possono variare in base al fuso orario. Per gestire questa complicazione, Ruby offre il modulo `Timezone` che consente di specificare un fuso orario specifico per le date.
+| Direttiva | Descrizione      | Esempio          | Output      |
+| :-------- | :--------------- | :--------------- | :---------- |
+| %d        | Giorno del mese  | %d/%m/%Y        | 30/06/2021  |
+| %m        | Mese             | %B %Y           | June 2021   |
+| %Y        | Anno con 4 cifre | %d/%m/%Y        | 30/06/2021  |
+| %b        | Nome del mese    | %d %b %Y        | 30 Jun 2021 |
 
-Inoltre, se si lavora con dati sensibili, è importante tenere a mente le diverse convenzioni di formato delle date in tutto il mondo. Per evitare confusioni, è possibile utilizzare i metodi `parse` o `strptime` per convertire una stringa in una data, che poi può essere formattata nel formato desiderato.
+Puoi combinare diverse direttive per ottenere un formato personalizzato per la tua stringa di output.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Ruby su Date](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
-- [Documentazione ufficiale di Ruby su Time](https://ruby-doc.org/core-2.6.3/Time.html)
-- [Risorse online per formattare date in Ruby](https://www.rubyguides.com/2015/06/ruby-time/)
+- [Documentazione di Ruby su Time](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Documentazione di Ruby su Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Tabella delle direttive di `strftime()`](http://man7.org/linux/man-pages/man3/strftime.3.html)

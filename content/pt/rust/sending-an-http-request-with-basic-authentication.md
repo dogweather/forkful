@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição http com autenticação básica"
+html_title:           "Rust: Enviando uma requisição http com autenticação básica"
+simple_title:         "Enviando uma requisição http com autenticação básica"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,54 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com autenticação básica?
+## Por que
 
-Enviar solicitações HTTP com autenticação básica pode ser útil para garantir que apenas usuários autorizados tenham acesso a determinadas informações ou recursos em uma API. Isso adiciona uma camada extra de segurança ao seu aplicativo, especialmente para aquelas que lidam com dados sensíveis.
+Se você está trabalhando com aplicativos ou websites que precisam obter informações de um servidor, você provavelmente já ouviu falar sobre o protocolo HTTP e a autenticação básica. A autenticação básica é uma maneira de proteger o seu servidor, que exige que os usuários enviem um nome de usuário e senha válidos para acessar as informações. Neste artigo, vamos explorar como podemos enviar uma solicitação HTTP com autenticação básica usando Rust.
 
 ## Como fazer
 
-Para enviar uma solicitação HTTP com autenticação básica em Rust, você precisará seguir alguns passos simples:
+Para enviar uma solicitação HTTP com autenticação básica usando Rust, precisamos de duas bibliotecas externas:
 
-**1. Importe a biblioteca `reqwest`**
+- [reqwest](https://docs.rs/reqwest/0.11.0/reqwest/) - para enviar solicitações HTTP
+- [base64](https://docs.rs/base64/0.11.0/base64/) - para codificar o nome de usuário e senha em formato base64
 
-Comece importando a biblioteca `reqwest` no seu código, pois ela nos permitirá fazer solicitações HTTP no nosso aplicativo Rust.
+Em seguida, podemos escrever o código para enviar a solicitação. Primeiro, importamos as bibliotecas externas e definimos as informações de autenticação (nome de usuário e senha) e a URL para a qual queremos enviar a solicitação. Em seguida, usamos o `reqwest::Client` para criar uma nova instância de cliente e `get()` para especificar o tipo de solicitação (GET, POST, PUT, etc.).
 
-```
-use reqwest::header::AUTHORIZATION;
-```
+```Rust
+use reqwest;
+use base64;
 
-**2. Crie uma estrutura de cabeçalho**
+let username = "usuario";
+let password = "senha";
+let url = "https://exemplo.com.br/solicitacao";
 
-Em seguida, crie uma estrutura de cabeçalho que será usada para armazenar as informações de autenticação. Esta estrutura deverá conter o tipo de autenticação, o nome de usuário e a senha.
-
-```
-let username = "seu_nome_de_usuario";
-let password = "sua_senha";
-let auth = format!("{}:{}", username, password);
-let header_value = format!("Basic {}", base64::encode(auth));
-let header = reqwest::header::HeaderValue::from_str(&header_value).unwrap();
-```
-
-**3. Adicione o cabeçalho à sua solicitação**
-
-Agora, adicione o cabeçalho que acabamos de criar à sua solicitação. Isso garantirá que sua solicitação seja autenticada corretamente.
-
-```
-let response = reqwest::Client::new()
-    .post("https://exemplo.com/api/recurso")
-    .header(AUTHORIZATION, header)
+let client = reqwest::Client::new();
+let mut response = client.get(url)
+    .basic_auth(username, Some(password))
     .send()
-    .await?;
+    .expect("Falha ao enviar a solicitação");
 ```
 
-**4. Lide com a resposta da solicitação**
+Em seguida, devemos verificar se a solicitação foi bem sucedida ou se houve algum erro. Podemos usar o método `status()` para verificar o código de status da resposta e `text()` para obter o corpo da resposta como uma string.
 
-Por fim, você pode lidar com a resposta da sua solicitação e usar os dados recebidos como desejar.
+```Rust
+if response.status().is_success() {
+    let body = response.text()
+        .expect("Não foi possível obter o corpo da resposta");
+    println!("Resposta: {}", body);
+} else {
+    println!("Erro: {}", response.status());
+}
+```
 
-## Mergulho profundo
+Com isso, podemos enviar uma solicitação HTTP com autenticação básica usando Rust.
 
-Agora que você sabe como enviar uma solicitação HTTP com autenticação básica em Rust, é importante entender um pouco mais sobre o processo. Básicamente, a autenticação básica envolve a adição de um cabeçalho `Authorization` à sua solicitação, que inclui o nome de usuário e a senha codificados em base64.
+## Deep Dive
+
+Em profundidade, podemos ver que a autenticação básica funciona adicionando um cabeçalho "Authorization" à nossa solicitação. Esse cabeçalho contém o tipo de autenticação (no nosso caso, "Basic") e as informações de nome de usuário e senha codificadas em base64, separadas por dois pontos.
+
+```Rust
+let username = "usuario";
+let password = "senha";
+let basic_auth = format!("{}:{}", username, password);
+let encoded_auth = base64::encode(&basic_auth);
+
+println!("Valor do cabeçalho Authorization: Basic {}", encoded_auth);
+```
+
+Ao enviar a solicitação, o servidor verifica se essas informações são válidas e, se sim, retorna os dados solicitados. É importante notar que a autenticação básica não é a forma mais segura de proteger um servidor, pois as informações de nome de usuário e senha são enviadas em texto simples. Portanto, se você estiver lidando com informações sensíveis, considere usar outras formas de autenticação mais seguras.
 
 ## Veja também
-- [Documentação oficial da biblioteca `reqwest`](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [Exemplo de código no GitHub: "http-basic-auth-rust"](https://github.com/reqwest/http-basic-auth-rust)
+
+- [Documentação do reqwest](https://docs.rs/reqwest/0.11.0/reqwest/)
+- [Documentação do base64](https://docs.rs/base64/0.11.0/base64/)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Merkkijonon muuntaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Elm: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,32 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? Monissa tilanteissa voi olla hyödyllistä muuttaa tekstiä pieniksi kirjaimiksi, esimerkiksi vertailla sanoja tai tarkistaa käyttäjän syöttämää kirjoitusta.
+Miksi muuttaa merkkijono pieniksi kirjaimiksi? Yksinkertaistettuna: se voi olla kätevää tietojen käsittelyssä. Esimerkiksi vertaillessa kahta merkkijonoa, halutaan varmistua siitä, että molemmat ovat pienillä kirjaimilla kirjoitettuja, jotta vertailu on oikeaoppinen.
 
 ## Kuinka
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi Elm-ohjelmoinnissa on helppoa! Voit käyttää valmista funktiota `String.toLower`, joka ottaa parametrina merkkijonon ja palauttaa sen pienillä kirjaimilla. Katso esimerkki alla:
+Oletetaan, että haluat kokonaan muuttaa merkkijonon sisältämät kirjaimet pieniksi kirjaimiksi. Elm:n sisäänrakennettu funktio `String.toLower` tekee tämän puolestasi. Alla on esimerkki koodista ja sen tuottama tuloste tietyillä syötteillä:
 
 ```Elm
-String.toLower "TÄMÄ ON MERKKIJONO" -- "tämä on merkkijono"
+String.toLower "HELLO" --> "hello"
+String.toLower "EVEryDay" --> "everyday"
+String.toLower "123ABC" --> "123abc"
 ```
 
-Hienoa, eikö totta? Voit myös käyttää funktiota suoraan käyttäjän syöttämälle tekstille:
+Funktio toimii myös merkkijonoissa, jotka sisältävät erikoismerkkejä tai suomen kielen aakkosia:
 
 ```Elm
-String.toLower userInput -- muuttaa käyttäjän syöttämän tekstin pieniksi kirjaimiksi
+String.toLower "ÄITI" --> "äiti"
+String.toLower "hYvÃ¤ kaIkeN kaUkkeuSsA" --> "hyvä kaikeen kaukkeudessa"
 ```
 
-## Syvemmälle
+## Deep Dive
 
-Haluaisitko tietää hieman enemmän merkkijonon muuttamisesta pieniksi kirjaimiksi? Tämä funktio käyttää Unicode-standardia, joten se osaa käsitellä myös erikoismerkkejä ja kansainvälisiä kirjaimia oikein. Voit myös yhdistää sen muihin merkkijonojen käsittelyyn tarkoitettuihin funktioihin, kuten `String.map`, joka käy läpi jokaisen merkin merkkijonossa ja suorittaa määritetyn toiminnon. Voit esimerkiksi poistaa välilyönnit ja muuttaa kirjaimet pieniksi samalla kertaa:
+Vaikka `String.toLower` on kätevä funktio, se ei ole aina sopiva ratkaisu. Esimerkiksi jos merkkijonossa on mukana myös numeeroita tai erikoismerkkejä, ne jäävät muuttumattomiksi. Tämä voi aiheuttaa ongelmia halutessa tarkistaa koko merkkijonon pienet kirjaimet.
 
-```Elm
-String.map (\char -> if char == ' ' then '' else toLower char) "TÄMÄ ON MERKKIJONO" -- "tämäonmerkkijono"
-```
+Toinen huomioitava seikka on, että `String.toLower` toimii vain standardilla ASCII-merkkikoodilla. Jos tarvitset konversiota muille koodauksille, kuten UTF-8 tai ISO-8859-1, tarvitaan lisää funktioita tai kirjastoja.
 
 ## Katso myös
 
-- [Elm String -dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Unicode-standardi](https://unicode.org/)
-- [Elm-kurssimateriaalit suomeksi](https://stichydev.github.io/elm-kurssi-fi/)
+- [String API reference](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm dokumentaatio](https://guide.elm-lang.org/)
+- [Elm Slack -yhteisö](https://elmlang.slack.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Clojure: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+# Hvorfor
 
-Å starte et nytt prosjekt kan virke skremmende, men det kan føre til mye kreativitet og læring. Ikke vær redd for å ta sjansen og prøve noe nytt!
+Å starte et nytt prosjekt kan være en spennende og givende opplevelse for utviklere. Med Clojure er det enda mer engasjerende, da språket gir mulighet for å bygge kraftige og skalerbare applikasjoner på en elegant og enkel måte.
 
-## Hvordan Gjøre Det
+# Hvordan
 
-Å starte et nytt Clojure-prosjekt er enkelt! Følg disse trinnene:
+For å starte et nytt Clojure-prosjekt må du først installere Clojure på datamaskinen din. Dette kan gjøres ved å følge instruksjonene på [Clojure sin offisielle nettside] (https://clojure.org/guides/getting_started).
 
-1. Åpne din foretrukne kodeeditor og lag en ny fil med .clj utvidelse.
-2. Importer nødvendige biblioteker ved å legge til ```(require [bibliotek.navn])``` i begynnelsen av filen.
-3. Definer funksjonene du vil bruke ved hjelp av ```(defn funksjonsnavn [parameter] (funksjonskode))```.
-4. Kjør programmet ved å skrive ```(funksjonsnavn verdi)``` ved hjelp av den innebygde ```println``` funksjonen for å skrive ut resultater.
+Når du har installert Clojure, kan du opprette en ny mappe for prosjektet ditt og initialisere det med [Leiningen] (https://leiningen.org/), et byggeverktøy for Clojure-prosjekter. Gå til mappen og skriv følgende kommando i terminalen:
 
-Et eksempel på en enkel funksjon som legger to tall sammen ser slik ut:
-
-```Clojure
-(defn add-numbers [x y]
-  (+ x y))
-
-(println (add-numbers 2 3))
-
-;; Output: 5
+```
+lein new app min-app
 ```
 
-## Dypdykk
+Dette vil generere en standard mappesstruktur og noen filer for prosjektet ditt. Naviger til mappen for prosjektet og åpne filen "src/min_app/core.clj". Her kan du skrive din første Clojure-kode, for eksempel:
 
-Når du starter et nytt prosjekt, kan det være lurt å sette opp en god struktur for koden din. En anbefalt måte å gjøre dette på er å følge Clojure's standard prosjekt layout. Dette innebærer å ha separate mapper for kildekode, tester og ressurser. Det er også viktig å ha en "project.clj" fil som inneholder nødvendige biblioteker og avhengigheter for prosjektet.
+```
+(defn greet [name]
+  (str "Hei " name "!"))
+```
 
-En annen god praksis er å dokumentere koden din ved hjelp av Clojure-docstrings. Dette gjør det lettere for andre å forstå og bruke koden din.
+For å kjøre denne funksjonen, skriv følgende i terminalen:
 
-Hvis du møter på problemer eller trenger mer informasjon, er det mange ressurser og fellesskap tilgjengelig online for å hjelpe deg med å komme i gang med Clojure.
+```
+lein run -m min-app.core
+```
 
-## Se Også
+Du bør se utskriften "Hei verden!" i terminalen din. Dette er bare en enkel demonstrasjon av hvordan du kan bruke Clojure for å bygge funksjonelle programmer.
 
-- [Clojure Dokumentasjon](https://clojuredocs.org/)
-- [Offisiell Clojure Nettside](https://clojure.org/)
-- [Clojure Reddit Fellesskap](https://www.reddit.com/r/Clojure/)
+# Dypdykk
+
+Når du starter et nytt Clojure-prosjekt, kan det være nyttig å vite om noen best practices og verktøy som kan hjelpe deg underveis.
+
+En viktig del av Clojure er dens felles standardbibliotek, eller "core library" som det kalles. Dette inneholder et stort utvalg av funksjoner og datastrukturer som du kan bruke til å bygge dine applikasjoner. Det er også mange tredjepartsbiblioteker tilgjengelig som kan utvide funksjonaliteten til Clojure.
+
+En annen nyttig ting å vite er strukturen til Clojure-prosjekter. Standardmappestrukturen er generert av Leiningen, og den inkluderer mapper for kildekode, ressurser og tester. Det er også en "project.clj" fil som inneholder prosjektets avhengigheter og konfigurasjon.
+
+For mer informasjon om hvordan du kan komme i gang med Clojure, kan du sjekke ut [Clojure sin offisielle dokumentasjon] (https://clojure.org/).
+
+# Se også
+- [Offisiell Clojure nettside] (https://clojure.org/)
+- [Leiningen] (https://leiningen.org/)
+- [Clojure byggeverktøy] (https://clojure.org/guides/deps_and_cli)
+- [Clojure core library] (https://clojure.org/api/cheatsheet)
+- [Clojure best practices] (https://gist.github.com/xeqi/681753)
+- [Clojure programmering] (https://clojure.org/guides/learn/programming)

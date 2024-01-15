@@ -1,6 +1,7 @@
 ---
-title:                "PHP: yaml での作業"
-simple_title:         "yaml での作業"
+title:                "YAMLでの作業"
+html_title:           "PHP: YAMLでの作業"
+simple_title:         "YAMLでの作業"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,36 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜYAMLを使うのか？
+## なぜ
+YAMLを使ったプログラミングに取り組む理由は多岐にわたりますが、一つの理由としては、YAMLが人間にとって読み書きしやすいフォーマットであるということが挙げられます。
 
-YAMLは構成ファイルを作成するための便利な方法です。PHPプログラマーにとって、データを操作することが容易で、コードを整理することができます。これにより、より効率的にプログラムを開発することができます。
-
-## やり方
-
-YAMLを使用するには、まずPHPの拡張モジュールをインストールする必要があります。その後、yaml_parse()関数を使ってYAMLファイルを解析し、必要なデータを抽出することができます。
+## 使い方
+まず、PHPでYAMLを読み込む方法を紹介します。以下のコードを使い、`example.yaml`ファイルを読み込んでみましょう。
 
 ```PHP
-// YAMLファイルを読み込む
-$data = file_get_contents('example.yaml');
-// YAMLデータを解析する
-$parsedData = yaml_parse($data);
-// 配列としてデータを取得する
-$users = $parsedData['users'];
-// ユーザーごとにループする
-foreach($users as $user){
-    // ユーザー名を出力する
-    echo $user['name'] . "\n";
-}
+<?php
+$yaml = file_get_contents('example.yaml');
+$data = yaml_parse($yaml);
+print_r($data);
 ```
 
-上記の例では、YAMLファイル内のデータを配列として取得し、ループを使用してそれぞれのユーザーの名前を出力しています。
+そして、`example.yaml`ファイルには以下のようなデータが書かれているとします。
 
-## もっと詳しく
+```YAML
+name: John Smith
+age: 25
+favorite_foods:
+  - sushi
+  - pizza
+```
 
-YAMLはユーザーフレンドリーな書式で、複雑なデータ構造を表現することができます。さらに、PHPでのYAMLの使用は、様々なライブラリやフレームワークでもサポートされています。そのため、開発プロジェクトにYAMLを取り入れることで、より柔軟なデータ管理が可能になります。
+上記のコードを実行すると、以下のような結果が表示されます。
 
-## また読む
+```PHP
+Array
+(
+    [name] => John Smith
+    [age] => 25
+    [favorite_foods] => Array
+        (
+            [0] => sushi
+            [1] => pizza
+        )
+)
+```
 
+YAMLは、複数の言語で扱うことができるフォーマットです。そのため、上記のコードは他の言語でも同様に動作します。また、YAMLを使うことで、複雑なデータをよりシンプルに表現することができます。
+
+## より詳しく
+YAMLは、それ自体がプログラミング言語ではありませんが、データの構造を表現するための非常に便利なツールです。YAMLは、タブや空白を使って階層を表現することができ、データをより見やすく記述できるため、コーディングの効率を上げることができます。
+
+## 参考リンク
 - [YAML公式サイト](https://yaml.org/)
-- [PHPの拡張モジュールのインストール方法](https://www.php.net/manual/en/book.yaml.php)
-- [YAMLを使ったデータ構造の表現方法の例](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+- [PHPマニュアル - yaml_parse](https://www.php.net/manual/en/function.yaml-parse.php)
+- [YAMLを使ってみよう](https://www.oreilly.co.jp/books/9784873113367/)

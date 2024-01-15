@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Haskell: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför skriva till standard error i Haskell
-
-Att skriva till standard error är ett viktigt koncept inom Haskell-programmering och kan vara till nytta i många olika situationer. Oavsett om du vill felsöka ditt program eller skriva ut användbar information till användaren, så är skrivning till standard error ett värdefullt verktyg som alla bör ha i sin verktygslåda.
+## Varför
+Att skriva till standard error kan vara användbart i vissa situationer, till exempel när man vill skicka felmeddelanden eller logga information som inte är avsedd att synas för användaren.
 
 ## Så här gör du
-
-Skrivning till standard error i Haskell är enkelt och kan utföras med hjälp av funktionen "hPutStrLn" från modulen "System.IO". Här är ett exempel på hur du kan skriva till standard error:
+För att skriva till standard error i Haskell kan du använda funktionen `hPutStrLn` från modulen `System.IO`. Detta gör det möjligt att skriva en sträng till standard error, vilket vanligtvis är kopplat till terminalen. Nedan visas ett exempel på hur detta kan implementeras:
 
 ```Haskell
 import System.IO
 
-main :: IO ()
 main = do
-  hPutStrLn stderr "Detta är ett felmeddelande."
-  hPutStrLn stderr "Försök igen."
+    hPutStrLn stderr "Det här är ett felmeddelande."
 ```
 
-När du kör detta program kommer det att skriva ut de två meddelandena till standard error, vilket vanligtvis visas i terminalen eller kommandotolken.
+När detta program körs kommer felmeddelandet att skrivas till standard error, vilket i sin tur kan ses i terminalen. Om du istället vill skriva till standard output kan du använda funktionen `putStrLn` på samma sätt.
 
 ## Djupdykning
-
-Att skriva till standard error kan vara särskilt användbart när du vill separera olika typer av utskrifter. Till exempel kan du använda "hPutStrLn" för att skriva felmeddelanden till standard error och "putStrLn" för att skriva vanliga meddelanden till standard out. På så sätt kan du enkelt skilja mellan dem och veta var du ska leta när du felsöker ditt program.
-
-Standard out, eller "stdout", är vanligtvis där alla utskrifter hamnar som standard i Haskell-program. Detta innefattar även användarens input om du använder "getLine" funktionen. Genom att istället skriva till standard error kan du säkerställa att ditt felmeddelande inte blandas med ditt programs vanliga utskrifter.
-
-Även om vi här har använt funktionen "hPutStrLn" för att skriva till standard error, så finns det flera andra funktioner som kan användas för att uppnå samma resultat. Det är bara en fråga om personlig preferens och vad som passar bäst för ditt program.
+I Haskell finns det flera olika sätt att hantera felmeddelanden. Det är vanligt att använda antingen `Either` monad eller `IO` monad för att fånga och hantera fel. Att skriva till standard error är ett sätt att logga information om eventuella fel som uppstår i programmet. Det kan också vara användbart att låta felmeddelanden innehålla specifika detaljer som kan hjälpa till att hitta och åtgärda problemet.
 
 ## Se även
-
-Här är några andra användbara resurser för att lära dig mer om att skriva till standard error i Haskell:
-
-- [Official Haskell documentation on "System.IO" module](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Haskell wiki page on "Streams"](https://wiki.haskell.org/Streams)
-- [Tutorialspoint article on "Haskell Files and I/O"](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)
-
-Med dessa resurser och förmågan att skriva till standard error i din verktygslåda, kommer du att kunna skriva robusta och felsökande Haskell-program som är både lättlästa och användarvänliga. Lycka till!
+- [Officiell Haskell-dokumentation för hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Haskellers-forumtråd om att skriva till standard error](https://mail.haskell.org/pipermail/haskell-cafe/2018-October/130515.html)

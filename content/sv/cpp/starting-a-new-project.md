@@ -1,6 +1,7 @@
 ---
-title:                "C++: Börja ett nytt projekt."
-simple_title:         "Börja ett nytt projekt."
+title:                "Att starta ett nytt projekt"
+html_title:           "C++: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,46 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Det finns många anledningar till varför någon skulle vilja starta ett nytt projekt i C++. Det kan vara för att lära sig ett nytt språk, bygga en personlig hobbyapplikation eller skapa ett professionellt program för företaget.
+Att starta ett nytt projekt i C++ kan vara ett spännande äventyr där du får uttrycka din kreativitet och utmana dig själv. Det är också ett bra sätt att lära sig nya koncept och tekniker inom programmering.
 
 ## Hur man gör
+För att starta ett nytt projekt i C++, följ dessa steg:
 
-Det första steget för att börja ett nytt C++ projekt är att se till att du har rätt verktyg installerat på din dator. Detta inkluderar en C++ kompilator, en texteditor eller en integrerad utvecklingsmiljö (IDE). När du har rätt verktyg installerat kan du följa dessa tre grundläggande steg för att skapa ditt projekt:
+1. Öppna din favorit textredigerare och skapa en ny fil.
+2. Spara filen med ett lämpligt namn följt av `.cpp` filändelsen. Till exempel `nytt_projekt.cpp`.
+3. Börja med att inkludera nödvändiga bibliotek, till exempel `iostream` för standard input/output.
+4. Skriv din kod inom en `main()` funktion. Detta är den grundläggande funktionen i alla C++ program.
+5. Kompilera din kod med en C++ kompilator. Om du använder en terminal, kan du använda kommandot `g++ filnamn.cpp -o utput-filnamn` för att skapa en exekverbar fil.
+6. Kör din kod genom att skriva in `./utput-filnamn` i terminalen och trycka på Enter.
+7. Där har du det! Du har startat ett nytt projekt i C++.
 
-1. Skapa en fil med filändelsen .cpp
-2. Skriv din kod i filen med hjälp av grundläggande C++ syntax
-3. Kompilera koden för att skapa ett körbart program
+Ett enkelt exempel på en C++ kod för att skriva ut "Hej Världen!" i terminalen:
 
-Här är ett exempel på en enkel "Hello World" program i C++:
+```
+#include <iostream> 
 
-```C++
-#include <iostream>
-
-int main() {
-    std::cout << "Hej världen!" << std::endl;
-    return 0;
+int main() 
+{
+    std::cout << "Hej Världen!" << std::endl;
+    return 0; 
 }
 ```
 
-När du har skapat och kompilerat ditt program, kan du köra det och se följande utmatning: 
+Output:
 
 ```
-Hej världen!
+Hej Världen!
 ```
 
-## Djupdykning
+## Fördjupning
+Att starta ett nytt projekt i C++ kan vara överväldigande för nybörjare. Men det finns några saker att tänka på som kan göra processen lite enklare:
 
-Att starta ett nytt projekt i C++ kan verka överväldigande, men med lite övning blir det enklare. Här är några tips för att komma igång:
-
-- Ta dig tid att förstå C++'s syntax och grundläggande koncept som variabler, loopar och villkor
-- Använd dokumentation eller onlineresurser för att lära dig mer om specifika funktioner eller bibliotek som du kan behöva
-- Öva på att skapa små program och utöka dem successivt för att lära dig mer om C++
-- Använd en integrerad utvecklingsmiljö (IDE) för att göra programmering enklare och effektivare
-
-Att känna sig bekväm i C++ kan ta lite tid och engagemang, men det kan bli värt det när du skapar dina egna professionella program.
+- Planera din kod: Innan du börjar programmera, ta dig tid att planera din kod. Tänk på vilket problem du försöker lösa och vilka steg som behövs för att lösa det.
+- Använd kommentarer: Kommentarer är ett viktigt verktyg för att göra din kod mer läsbar och lättare att förstå för andra utvecklare. Ta dig tid att kommentera din kod på ett konsistent sätt.
+- Testa din kod: För att säkerställa att din kod fungerar som förväntat är det viktigt att testa den. Lär dig grundläggande debugging tekniker och använd dem för att identifiera och lösa eventuella fel i din kod.
 
 ## Se även
-
-- [C++ Quickstart Guide](https://www.cplusplus.com/doc/)
-- [En komplett guide till C++ programmering](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [Visual Studio Code - En populär IDE för C++ programmering](https://code.visualstudio.com/docs/languages/cpp)
+- [C++ Tutorial for Complete Beginners](https://www.youtube.com/watch?v=vLnPwxZdW4Y)
+- [C++ Documentation](https://isocpp.org/)

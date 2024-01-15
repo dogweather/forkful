@@ -1,5 +1,6 @@
 ---
-title:                "Python: स्ट्रिंग को लोअर केस में रूपांतरण करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+html_title:           "Python: स्ट्रिंग को लोअर केस में रूपांतरण करना"
 simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
 programming_language: "Python"
 category:             "Python"
@@ -9,23 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-हमारे समय में डिजिटल दुनिया में, गणना सबसे महत्वपूर्ण कौशल है जो कि एक कंप्यूटर या मोबाइल डिवाइस को समझने के लिए उपयोग किया जाता है। जब हम कोडिंग करते हैं, तो हमें कुछ भी करने से पहले भाषा की समझ होनी चाहिए ताकि हम अपना वर्क सही ढंग से कर सकें। इसलिए, सभी को चाहिए कि वे पिछले कोडिंग प्रोजेक्ट का निरीक्षण करें और भाषा की समझ को बढ़ाएं। इसलिए, हमारे लिए यह जानना जरूरी है कि एक स्ट्रिंग को छोटे अक्षरों में कैसे बदला जाता है।
+## Kyun
+Kisi bhi programming bhasha mein, humein string (shreni) ko manipulate karna sikhna zaroori hai. Ek aise common manipulation technique hai string ko lower case mein convert karna. Isse humara code easier to read aur comprehend hojata hai aur humare saath bhi bahut se fayde hote hain. Is article mein hum aapko batayenge ki kis tarah se aap Python mein ek string ko lower case mein convert kar sakte hain.
 
-## कैसे करें
-यदि आपको एक स्ट्रिंग को छोटे अक्षरों में बदलकर शुरु करना है, तो सबसे पहले आपको हमे एक स्ट्रिंग का उपयोग करना होगा। आप यह ```Python
-str.lower()``` फंक्शन का प्रयोग कर सकते हैं। यह फंक्शन स्ट्रिंग को एक नए स्ट्रिंग के रूप में लौटाता है जो कि सभी अक्षरों को छोटे अक्षरों में परिवर्तित करता है। इसका उपयोग आपके कोड में सुधार करके उन्हें अधिक सुगम और अच्छा बना सकता है। इसका एक उदाहरण निम्न सारणी में दिखाया गया है।
+## Kaise Kare
+```python
+# Example 1
+string = "HELLO WORLD"
+print(string.lower())
+# Output: hello world
 
-```Python
-my_string = "HELLO WORLD"
-print(my_string.lower())
+# Example 2
+string = "HeLLO WoRLd"
+print(string.lower())
+# Output: hello world
 ```
+Jaisa ki humne dekha, humein bas string variable ke naam ke baad "lower()" function ka use karna hota hai, jo humare string ko lower case mein convert kar deta hai.
 
-आउटपुट:
-```
-hello world
-```
+## Deep Dive
+Python mein strings immutable (change nahi ho sakti) hoti hain, isliye hum count and replace ka use nahi kar sakte hain unke case ko badalne ke liye. Iske instead, hum lower() function ka use karte hain jo ek copy banake original string ke case ko change karta hai. Ye case-insensitive hota hai, matlab upper case letters ko bhi lower case mein convert kar deta hai.
 
-इस उदाहरण में, हमने "HELLO WORLD" स्ट्रिंग को ```lower()``` फंक्शन का प्रयोग करके "hello world" में बदला। यह दिखाता है कि स्ट्रिंग को छोटे अक्षरों में कैसे बदला जाता है।
-
-## ग
+## Dekhein Bhi
+- String methods in Python: https://www.w3schools.com/python/python_ref_string.asp
+- Official Python documentation on string methods: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Lowercase string in Python: https://www.programiz.com/python-programming/methods/string/lower

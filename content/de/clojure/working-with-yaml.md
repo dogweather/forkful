@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Clojure: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,66 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn du ein Entwickler bist, der mit Daten arbeitet, hast du wahrscheinlich schon von YAML gehört. YAML, auch bekannt als "YAML Ain't Markup Language", ist eine einfache und benutzerfreundliche Art, Daten in strukturierter Form zu speichern. Es ist eine große Hilfe, wenn es darum geht, Daten zwischen verschiedenen Programmen oder Plattformen auszutauschen.
+Warum sollte man sich mit YAML auseinandersetzen? Nun, YAML ist eine einfache, menschenlesbare Struktursprache, die hauptsächlich zur Konfiguration von Anwendungen, zum Speichern von Daten oder zum Austausch von Informationen zwischen verschiedenen Systemen verwendet wird.
 
-## Wie man YAML in Clojure verwendet
+## Wie
 
-Das Einbinden von YAML in deine Clojure-Projekte ist ganz einfach. Zunächst musst du die Bibliothek [clj-yaml](https://github.com/lancepantz/clj-yaml) zu deinem `project.clj` hinzufügen. Dann kannst du mit `use` oder `require` den Namespace `clj-yaml.core` importieren.
+Um mit YAML in Clojure zu arbeiten, müssen wir zunächst die Bibliothek "clj-yaml" einbinden. Dies kann ganz einfach durch das Hinzufügen von `[org.clojure/data.yaml "1.0.0"]` als Abhängigkeit in unser Projekt.clj-Datei erreicht werden.
 
-Lass uns ein einfaches Beispiel betrachten, bei dem wir YAML-Daten aus einer Datei auslesen und in ein Clojure-Map umwandeln. Hier ist der Code für unsere Datei "example.yml":
-
-```YAML
-name: Max
-age: 25
-favorite_color: Blue
-```
-
-Und hier ist der Code, den wir in unserem Clojure-Projekt verwenden würden:
+Im Folgenden sind ein paar Beispiele, wie wir YAML mit Clojure verwenden können:
 
 ```Clojure
-(use 'clj-yaml.core)
+(require '[clojure.data.yaml :as yaml])
 
-(def data (load-data "example.yml"))
-(println (:name data)) ;; Ausgabe: Max
-(println (:age data)) ;; Ausgabe: 25
-(println (:favorite_color data)) ;; Ausgabe: Blue
+;; Laden einer YAML-Datei als Clojure-Datenstruktur
+(def config (yaml/read-string "foo: bar"))
+
+;; Konvertieren einer Clojure-Datenstruktur in YAML
+(yaml/generate-string {:name "Max" :age 30})
+
+;; Erstellen einer YAML-Datei
+(with-open [out-file (clojure.java.io/writer "config.yml")]
+  (yaml/spit out-file {:language "Clojure" :version "1.10.1"}))
+
+;; Einlesen von YAML-Dateien mit Fehlerbehandlung
+(try
+  (yaml/read-string "{ 123: abc")
+  (catch Exception e
+    (println "Fehler beim Einlesen von YAML: " (.getMessage e))))
 ```
 
-Wie du sehen kannst, können wir mit der `load-data` Funktion die YAML-Daten in eine Clojure-Map konvertieren und dann ganz einfach auf die einzelnen Werte zugreifen.
+Die Ausgabe für das letzte Beispiel sieht folgendermaßen aus:
 
-## Tiefergehende Erläuterungen
-
-Du hast wahrscheinlich bemerkt, dass wir bei der Verwendung von `load-data` keine explizite Typangabe gemacht haben. Das liegt daran, dass YAML flexible Datentypen unterstützt und daher eine explizite Typenumwandlung in Clojure nicht notwendig ist.
-
-Außerdem können wir mit YAML auch komplexe Strukturen wie Listen und verschachtelte Maps speichern. Hier ist ein Beispiel für eine YAML-Datei mit einer Liste von Personen:
-
-```YAML
-- name: Anna
-  age: 30
-  favorite_color: Red
-- name: Ben
-  age: 28
-  favorite_color: Green
-- name: Clara
-  age: 32
-  favorite_color: Yellow
+```
+Fehler beim Einlesen von YAML:  java.lang.NumberFormatException: For input string: "abc"
 ```
 
-Und hier ist der Code, den wir verwenden würden, um die Daten in eine Clojure-Liste von Maps zu konvertieren:
+## Tiefergehende Einblicke
 
-```Clojure
-(use 'clj-yaml.core)
+Clojure bietet uns viele Funktionen, um mit YAML-Daten umzugehen. Hier sind einige nützliche Funktionen, die wir verwenden können:
 
-(def data (load-data "example.yml"))
-(doseq [person data]
-  (println (:name person))) ;; Ausgabe: Anna Ben Clara
-```
+- `yaml/read` - Liest eine YAML-Datei und gibt eine Clojure-Datenstruktur zurück.
+- `yaml/parse-stream` - Liest einen YAML-Stream und gibt eine Clojure-Datenstruktur zurück.
+- `yaml/emit` - Gibt eine YAML-Zeichenkette aus einer Clojure-Datenstruktur zurück.
+- `yaml/generate-stream` - Schreibt einen YAML-Stream aus einer Clojure-Datenstruktur.
 
-Dies ist nur ein kleiner Einblick in die Verwendung von YAML in Clojure. Es gibt viele weitere Funktionen und Möglichkeiten, die du erkunden kannst. Wir empfehlen dir, die offizielle Dokumentation von [YAML](https://yaml.org/) und [clj-yaml](https://github.com/lancepantz/clj-yaml) zu lesen, um mehr darüber zu erfahren.
+Zusätzlich gibt es auch einige Optionen, die wir beim Lesen und Schreiben von YAML angeben können, z.B. die Unterstützung von interaktiven Datentypen wie `sets` und `maps`.
+
+Insgesamt ist YAML eine einfache und effektive Möglichkeit, strukturierte Daten in unserer Clojure-Anwendung zu verwenden. Es ist jedoch wichtig, sorgfältig zu prüfen, ob YAML für unser spezifisches Anwendungsfall geeignet ist, da es nicht so stark typisiert ist wie andere Formate wie z.B. JSON.
 
 ## Siehe auch
 
-- [Offizielle YAML Dokumentation](https://yaml.org/)
-- [clj-yaml Bibliothek](https://github.com/lancepantz/clj-yaml)
+- [Offizielle YAML-Website](https://yaml.org/)
+- [Dokumentation zu clj-yaml](https://github.com/clj-commons/clj-yaml)

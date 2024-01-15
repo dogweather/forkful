@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Mallin mukaisia merkkejä poistaminen"
+html_title:           "Clojure: Mallin mukaisia merkkejä poistaminen"
+simple_title:         "Mallin mukaisia merkkejä poistaminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,44 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Usein tämä tapahtuu, kun tarvitsemme muuttaa tai puhdistaa dataa, joka sisältää ylimääräisiä tai tarpeettomia merkkejä.
+Joskus ohjelmoijana joudut käsittelemään tekstimuotoista dataa, ja saattaa olla tarpeellista poistaa tietyt merkit tai merkkijonot tietystä tekstistä. Clojure tarjoaa helpon ja tehokkaan tavan poistaa merkkijonoja ja merkkejä, mikä voi säästää paljon aikaa ja vaivaa.
 
-## Kuinka se tehdään
+## Näin teet sen
 
-Poistaaksesi merkit vastaavat kaavaa, voit käyttää `replace`-funktiota yhdessä `re-seq`-funktion kanssa. `replace` korvaa kaikki vastaavat merkit toisella merkillä tai tyhjällä merkkijonolla. `re-seq` kerää kaikki kaavan mukaiset merkit listaksi.
+```Clojure 
+;; Määritellään apufunktio "poista-merkki", joka poistaa yhden merkin merkkijonosta (str)
+(defn poista-merkki [str merkki]
+  (apply str (remove #(= % merkki) str)))
 
-```Clojure
-;; Määritellään muuttuja, joka sisältää tiedot, joista haluamme poistaa välilyönnit
+;; Käyttökelpoinen silloin, kun halutaan poistaa vain tietty merkki merkkijonosta
+(poista-merkki "Tervetuloa!" \!)
+;; Output: "Tervetuloa"
 
-(def data "He ll o wo rl d")
+;; Jos halutaan poistaa useita merkkejä, voidaan käyttää "reduce"-funktiota
+(reduce poista-merkki "Tervetuloa!" [\! \? \.])
+;; Output: "Tervetuloa"
 
-;; Luo listan välilyönneistä
+;; Samalla logiikalla voidaan poistaa myös merkkijonoja
+(reduce poista-merkki "Tervetuloa kaikille!" [" kaikille" "Tervetuloa "])
+;; Output: "!"
 
-(def whitespaces " ")
-
-;; Korvaa välilyönnit tyhjillä merkkijonoilla
-
-(replace data whitespaces "")
-
-;; Tulostaa "HelloWorld"
 ```
 
-Voit myös käyttää säännöllisiä lausekkeita poistaaksesi haluamasi kaavan mukaiset merkit. Esimerkiksi, jos haluat poistaa kaikki numerot datasta, voit käyttää `[0-9]`-kaavaa.
+## Syvempi sukellus
 
-```Clojure
-(def data "Text with 1 number")
-
-(replace data #"[0-9]" "")
-
-;; Tulostaa "Text with number"
-```
-
-## Syvällisempi sukellus
-
-Poistaessa merkkejä vastaavalla kaavalla, on tärkeää ymmärtää säännöllisiä lausekkeita. Voit käyttää erilaisia kaavoja sen perusteella, mitä haluat poistaa, kuten eri merkkejä tai merkkijonoja. Lisäksi `replace`- ja `re-seq`-funktiot ovat hyödyllisiä yhdistettynä säännöllisten lausekkeiden kanssa.
+Clojuren "remove"-funktio ottaa kaksi argumenttia: predikaatin ja listan. Se palauttaa uuden listan, jossa ovat kaikki alkuperäisen listan arvot poislukien ne, jotka vastaavat predikaattia. "remove" ei muuta alkuperäistä listaa, vaan palauttaa aina uuden listan. Tämä on tärkeää muistaa, sillä esimerkiksi yllä olevassa koodissa käytetty "apply" -funktio hyväksyy vain yhden argementin, joten "remove"-funktiota tulee käyttää poistamaan vain yksi merkki kerrallaan.
 
 ## Katso myös
 
-- [ClojureDocs: replace](https://clojuredocs.org/clojure.core/replace)
-- [ClojureDocs: re-seq](https://clojuredocs.org/clojure.core/re-seq)
-- [Regular Expression Tutorial](https://regexone.com/) (säännöllisten lausekkeiden opas)
+- [Clojure dokumentaatio "remove"-funktiosta](https://clojuredocs.org/clojure.core/remove)
+- [Opas Clojuren käyttöön tekstimuotoisen datan käsittelyssä](https://clojure.org/guides/data_manipulation#general_string_manipulation)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 패턴과 일치하는 문자 삭제"
-simple_title:         "패턴과 일치하는 문자 삭제"
+title:                "패턴과 일치하는 문자 삭제하기"
+html_title:           "Javascript: 패턴과 일치하는 문자 삭제하기"
+simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-자바스크립트 프로그래밍을 하다보면, 때때로 문자열에서 특정 패턴에 맞는 문자를 제거해야 할 때가 있습니다. 이럴 때는 어떤 이유로 이 작업을 해야 하는지 알아보겠습니다.
+캐릭터 매칭 패턴을 지우는 것에 관심이 있을 수 있는 이유는 문자열 데이터를 정리하거나 선택적으로 특정 문자열을 삭제하기 위해서입니다.
 
-# 어떻게
+## 방법
 
-문자열에서 특정 패턴을 찾아 제거하는 방법은 여러 가지가 있지만, 가장 쉽고 간단한 방법은 정규식(Regular Expression)을 사용하는 것입니다. 아래의 코드 예시를 참고해보세요.
+예를 들어, 문자열 내에서 특정 단어를 삭제하고 싶다면 다음과 같이 할 수 있습니다.
 
 ```Javascript
-// "Hello, world!" 문자열에서 모음을 제거하는 예시
-let str = "Hello, world!";
-let pattern = /[aeiou]/gi; // [aeiou]는 모음을 나타내는 정규식입니다. g는 모든 발생을, i는 대소문자를 구분하지 않도록 설정합니다.
-let result = str.replace(pattern, ""); // 문자열에서 해당 정규식에 부합하는 모든 부분을 빈 문자열로 바꿉니다.
-console.log(result); //Hll, wrld!
+let str = "Hello world, my name is John.";
+let updatedStr = str.replace("John", "");
+console.log(updatedStr);
+// 결과: "Hello world, my name is."
 ```
+위 예시에서는 `replace()` 함수를 사용하여 "John"이라는 단어를 빈 문자열로 대체하여 원하는 문자열을 삭제했습니다.
 
-위 코드에서 볼 수 있듯이, 문자열에서 해당 패턴에 부합하는 문자를 제거하는 것은 정규식을 이용하여 간단하게 구현할 수 있습니다.
+또는 정규식을 사용하여 패턴을 지정해 삭제할 수도 있습니다. 예를 들어, 다음 예시에서는 숫자를 모두 삭제하는 코드를 작성해보겠습니다.
 
-# 딥 다이브
+```Javascript
+let str = "I have 3 apples and 5 bananas.";
+let updatedStr = str.replace(/\d+/g, "");
+console.log(updatedStr);
+// 결과: "I have apples and bananas."
+```
+위 예시에서는 `replace()` 함수의 첫 번째 매개변수에 정규식 `/d+/g`를 사용하였습니다. 이 정규식은 문자열 내에서 모든 숫자를 찾아 삭제하도록 지정한 것입니다.
 
-다른 언어들과 마찬가지로, 자바스크립트에서도 정규식에 대한 많은 기능들을 제공하고 있습니다. 예를 들어, 패턴에 부합하는 문자를 선택적으로 제거할 수 있는 방법이나, 대체 문자열로 치환하는 방법 등이 있습니다. 이에 대한 자세한 내용은 공식 문서를 참고하는 것을 추천합니다.
+## 깊이 들어가기
 
-# 함께 보기
+`replace()` 함수는 문자열 내에서 일치하는 첫 번째 패턴만을 삭제한다는 것에 주의해야 합니다. 만약 모든 패턴을 삭제하고 싶다면 `replace()` 함수의 두 번째 매개변수로 `g`라는 플래그 값을 설정해야 합니다. 또한, 정규식에 대한 이해가 부족하다면 패턴을 작성하는데 어려움이 있을 수 있습니다. 이 경우 인터넷에서 정규식 패턴을 찾아 사용하는 것도 좋은 방법이 될 수 있습니다. 
 
-- [정규식 튜토리얼 - MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [정규식 연습 및 디버깅 사이트 - Regex101](https://regex101.com/)
+## 참고자료
+
+- [MDN replace() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [정규식 패턴 빌더](https://regexr.com/)

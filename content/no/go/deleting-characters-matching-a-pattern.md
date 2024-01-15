@@ -1,6 +1,7 @@
 ---
-title:                "Go: Slette tegn som matcher et mønster."
-simple_title:         "Slette tegn som matcher et mønster."
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Go: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,57 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Det er mange grunner til å ville slette karakterer som matcher et bestemt mønster i Go-programmering. Det kan være for å rense tekststrenger eller filtrere ut uønskede data. Uansett årsak, er det viktig å kunne behandle og manipulere data effektivt for å skrive gode og funksjonelle programmer.
+## Hvorfor
+Målet med denne artikkelen er å vise deg hvordan du kan slette tegn som matcher et spesifikt mønster. Dette kan være nyttig hvis du for eksempel ønsker å fjerne tegn som ikke er tillatt i en tekst eller ønsker å fjerne uønskede tegn fra en streng.
 
-# Hvordan
-
-En enkel måte å slette karakterer som matcher et mønster på, er å bruke funksjonene strings.ReplaceAll() og strings.Count() som finnes i standardbiblioteket for Go. Disse kan brukes til å erstatte alle forekomster av et spesifikt mønster med en tom streng, og også telle hvor mange ganger mønsteret forekommer.
+## Slik gjør du det
+Det første du må gjøre er å importere "regexp" pakken til Go-programmet ditt ved å inkludere følgende linje på toppen av koden din:
 
 ```Go
-package main
-
 import (
-	"fmt"
-	"strings"
+  "fmt"
+  "regexp"
 )
-
-func main() {
-	// Opprett en tekststreng med noen uønskede karakterer
-	text := "D3t eR en T%ekst me+ mye o1!sant&"
-
-	// Bruk strings.ReplaceAll() for å slette alle tall, spesielle tegn og mellomrom
-	cleanedText := strings.ReplaceAll(text, "1", "")
-	cleanedText = strings.ReplaceAll(cleanedText, "3", "")
-	cleanedText = strings.ReplaceAll(cleanedText, "%", "")
-	cleanedText = strings.ReplaceAll(cleanedText, "+", "")
-	cleanedText = strings.ReplaceAll(cleanedText, " ", "")
-
-	// Bruk strings.Count() for å telle antall forekomster av bokstaven "e"
-	countE := strings.Count(text, "e")
-
-	fmt.Println("Orginal tekst:", text)
-	fmt.Println("Renset tekst:", cleanedText)
-	fmt.Println("Antall forekomster av bokstaven 'e':", countE)
-}
 ```
 
-Denne koden vil ha følgende output:
+Deretter kan du bruke funksjonen "ReplaceAllString" fra pakken for å slette tegn som matcher et mønster. Her er et eksempel på hvordan du kan bruke det:
 
+```Go
+pattern := "[^a-zA-Z0-9\\s]" //Dette vil matche alle tegn som ikke er bokstaver, tall eller mellomrom
+str := "Hei, jeg har en aprilie! #" //Opprinnelig tekst med uønskede tegn
+repl := "" //Erstatt med ingenting - altså sletter tegnene
+result := regexp.ReplaceAllString(str, pattern) //returnerer den nye teksten uten de uønskede tegnene
+fmt.Println(result) //Output: "Hei jeg har en aprilie"
 ```
-Orginal tekst: D3t eR en T%ekst me+ mye o1!sant&
-Renset tekst: DtRnTkstmeyesoant
-Antall forekomster av bokstaven 'e': 2
-```
 
-Det er også mulig å bruke regulære uttrykk og funksjonen regexp.MatchString() for å finne og slette karakterer som matcher et mer komplekst mønster. Dette kan være nyttig hvis man ønsker å fjerne uttrykk som følger et spesifikt mønster, for eksempel telefonnummer eller e-postadresser.
+Som du kan se fra eksemplet vil alle tegn som matcher mønsteret bli slettet fra teksten. Du kan også bruke dette til å erstatte tegn med noe annet hvis du ønsker det.
 
-# Dykk ned
+## Dykk dypere
+La oss se nærmere på hvordan funksjonen "ReplaceAllString" fungerer. Den tar inn tre parametere: en tekststreng, et mønster og en erstatningstreng. Den leter så gjennom tekststrengen og finner alle forekomster av mønsteret. Hvis et tegn matcher mønsteret blir det erstattet med erstatningstrengen. Hvis erstatningstrengen er tom blir tegnet slettet.
 
-For de som er interessert i å lære mer om å slette karakterer som matcher et mønster i Go, er det mange ressurser tilgjengelig. Standardbiblioteket for Go har en omfattende dokumentasjon om strings-pakken som inneholder flere nyttige funksjoner for å håndtere tekststrenger. Det finnes også flere gode tutorials og onlinekurs som tar for seg bruken av regulære uttrykk i Go-programmering.
+Det finnes også andre nyttige funksjoner i "regexp" pakken for å håndtere og manipulere tekst. Utforsk mer og se hva du kan finne ut!
 
-# Se også
-
-- [Go dokumentasjon - strings-pakken](https://golang.org/pkg/strings/)
-- [Go by Example - regex](https://gobyexample.com/regular-expressions)
-- [Utdannet.no - Lær Go fra grunnleggende til avansert](https://utdannet.no/kurs/programmering/go/)
+## Se også
+- [Golang "regexp" pakken](https://golang.org/pkg/regexp/)
+- [Dokumentasjon for "ReplaceAllString" funksjonen](https://golang.org/pkg/regexp/#Regexp.ReplaceAllString)
+- [Eksempel på hvordan bruke "regexp" pakken i praksis](https://golang.org/pkg/regexp/#example_ReplaceAllString)

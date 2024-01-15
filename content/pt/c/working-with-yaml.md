@@ -1,5 +1,6 @@
 ---
-title:                "C: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "C: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "C"
 category:             "C"
@@ -9,58 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML
+## Por que trabalhar com YAML?
 
-Se você é um programador C em busca de uma forma eficiente de gerenciar as configurações e dados estruturados em seus projetos, o YAML pode ser a solução ideal para você! Ele é uma linguagem de marcação simples, legível e muito popular entre desenvolvedores, oferecendo diversas vantagens em relação a outros formatos de dados, como o XML e o JSON.
+Trabalhar com YAML pode ser benéfico para programadores, pois é uma formatação leve e fácil de ler para arquivos de configuração e estruturas de dados. Além disso, é amplamente suportada por diferentes linguagens de programação, incluindo o C.
 
-## Como usar YAML em seus projetos C
+## Como trabalhar com YAML em C
 
-Usar YAML em seus projetos C é muito simples e pode te poupar tempo e esforço. Primeiro, você precisa incluir a biblioteca "libyaml" em seu código, utilizando o comando "```C #include <yaml.h>```". Em seguida, você pode manipular os dados em formato YAML utilizando funções específicas da biblioteca, como "yaml_parser_parse()" e "yaml_emitter_emit()". Veja um exemplo abaixo:
+Para trabalhar com YAML em C, é necessário primeiro incluir a biblioteca "libyaml" em seu código. Em seguida, é preciso criar um objeto "yaml_parser_t" para analisar o arquivo YAML e um "yaml_emitter_t" para gerar o arquivo YAML.
+
+Dentro do código, utilize as funções da biblioteca "libyaml" para analisar e gerar o arquivo YAML. Por exemplo:
 
 ```C
-#include <yaml.h>
+yaml_parser_t parser;
+yaml_parser_initialize(&parser);
 
-int main() {
+FILE *arquivo = fopen("dados.yaml", "rb");
+yaml_parser_set_input_file(&parser, arquivo);
 
-    // Criando um parser para ler dados YAML
-    yaml_parser_t parser;
-    yaml_parser_initialize(&parser);
+yaml_event_t evento;
 
-    // Carregando o arquivo YAML
-    FILE *file = fopen("config.yml", "r");
-    yaml_parser_set_input_file(&parser, file);
-
-    // Lendo e imprimindo as configurações do arquivo YAML
-    yaml_event_t event;
-    do {
-        if(!yaml_parser_parse(&parser, &event)) {
-            printf("Erro ao ler arquivo YAML.\n");
-            exit(EXIT_FAILURE);
-        }
-        switch(event.type) {
-            case YAML_SCALAR_EVENT:
-                printf("%s\n", event.data.scalar.value);
-                break;
-            // Outros tipos de eventos aqui
-        }
-        yaml_event_delete(&event);
-    } while(event.type != YAML_STREAM_END_EVENT);
-
-    // Finalizando o parser
-    yaml_parser_delete(&parser);
-
-    return 0;
+// Obtendo o próximo evento do arquivo YAML
+if (!yaml_parser_parse(&parser, &evento)) {
+    // Tratar possíveis erros de parsing
 }
+
+// Gerando o arquivo YAML
+yaml_emitter_emitted_t emitido = yaml_emitter_emit(&emitter, &evento);
+
+// Fechando o arquivo e liberando memória
+fclose(arquivo);
+yaml_parser_delete(&parser);
 ```
 
-A saída desse código será a impressão de todos os dados do arquivo YAML, um por linha.
+## Detalhes sobre o trabalho com YAML em C
 
-## Aprofundando-se em YAML
+Ao trabalhar com YAML em C, é importante ter em mente que existem diferentes tipos de dados suportados, como strings, números e booleanos. Além disso, a biblioteca "libyaml" possui funções para manipulação de erros e gerenciamento de memória.
 
-Além de ser uma linguagem fácil de utilizar, o YAML também possui diversas funcionalidades avançadas, como a capacidade de incluir e referenciar outros arquivos YAML, tornando-o uma ótima opção para projetos de grande escala. Além disso, ele é altamente configurável, permitindo que você personalize suas configurações de acordo com as necessidades de seu projeto.
-
-Caso queira se aprofundar ainda mais em YAML, uma ótima opção é estudar a documentação oficial da biblioteca "libyaml", que oferece uma lista completa de funções e exemplos de uso.
+Uma vantagem de usar YAML em C é que é possível trabalhar com estruturas de dados complexas, como listas e mapas, de maneira simples e legível.
 
 ## Veja também
 
-- Documentação oficial "libyaml": https://pyyaml.org/wiki/LibYAML
+- [Documentação da biblioteca libyaml](https://yaml.org/spec/1.2/spec.html)
+- [Tutorial de YAML em C](https://www.tutorialspoint.com/yaml/yaml_tutorial.pdf)
+- [Exemplos de código em C usando libyaml](https://github.com/yaml/libyaml)

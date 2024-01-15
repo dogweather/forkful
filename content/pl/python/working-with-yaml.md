@@ -1,6 +1,7 @@
 ---
-title:                "Python: Praca z yaml"
-simple_title:         "Praca z yaml"
+title:                "Praca z plikiem yaml"
+html_title:           "Python: Praca z plikiem yaml"
+simple_title:         "Praca z plikiem yaml"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -9,84 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Python jest jednym z najpopularniejszych języków programowania na świecie, a YAML (Yet Another Markup Language) jest jednym z wielu formatów używanych w programowaniu. Kombinacja tych dwóch narzędzi może umożliwić programistom pracę z danymi i konfiguracją w sposób bardziej czytelny i intuicyjny. W tym artykule dowiesz się, dlaczego warto zainteresować się pracą z YAML w Pythonie.
+Dlaczego zdecydowałbyś się na pracę z YAML? Otóż jest to bardzo popularny format danych, który jest wykorzystywany w wielu aplikacjach i narzędziach programistycznych. Praca z YAML może być niezwykle przydatna w zarządzaniu konfiguracją, przechowywaniu danych czy integracji pomiędzy różnymi systemami.
 
-## Jak zacząć
+# Jak to zrobić
 
-Aby rozpocząć pracę z YAML w Pythonie, pierwszą rzeczą, którą musisz zrobić, to zainstalować paczkę pyyaml. W tym celu możesz użyć pip, czyli menedżera pakietów dla języka Python:
+Aby rozpocząć pracę z YAML w Pythonie, musimy najpierw zainstalować odpowiedni moduł za pomocą polecenia `pip install pyyaml`. Następnie możemy już bez problemu importować go do swojego kodu:
 
-```Python
-pip install pyyaml
+```python
+import yaml
 ```
 
-Po zainstalowaniu pyyaml, możesz zacząć korzystać z jego funkcjonalności. Najważniejszą częścią pracy z YAML w Pythonie jest umiejętne przetwarzanie danych w tym formacie. Poniżej przedstawiono prosty przykład wykorzystania pyyaml:
+## Wczytywanie i zapisywanie danych
 
-```Python
+Aby wczytać dane z pliku YAML, możemy skorzystać z metody `load`:
+
+```python
+with open('dane.yaml', 'r') as f:
+  data = yaml.load(f, Loader=yaml.FullLoader)
+```
+
+Wynikiem tej operacji będzie obiekt Pythona zawierający wczytane dane. Aby zapisać dane do pliku YAML, możemy wykorzystać metodę `dump`:
+
+```python
+data = {
+  'imie': 'Anna',
+  'nazwisko': 'Kowalska',
+  'wiek': 30
+}
+
+with open('dane.yaml', 'w') as f:
+  yaml.dump(data, f)
+```
+
+Ten prosty przykład pokazuje, że praca z YAML w Pythonie jest bardzo prosta i intuicyjna.
+
+## Przetwarzanie danych
+
+Praca z danymi w formacie YAML w Pythonie jest możliwa dzięki wykorzystaniu dwóch typów obiektów: `dict` i `list`. Możemy na nich wykonywać różnego rodzaju operacje, takie jak iterowanie, dodawanie lub usuwanie elementów.
+
+```python
 import yaml
 
-# Przykładowe dane w formacie YAML
-data = """
-fruits:
-  - apple
-  - orange
-  - banana
-vegetables:
-  - carrot
-  - tomato
-  - cucumber
-"""
+with open('dane.yaml', 'r') as f:
+  data = yaml.load(f, Loader=yaml.FullLoader)
 
-# Parsowanie danych YAML do słownika
-parsed_data = yaml.safe_load(data)
+# Iterowanie po słowniku
+for key, value in data.items():
+  print(f'{key}: {value}')
 
-# Wyświetlenie zawartości słownika
-print(parsed_data)
+# Dodawanie nowego klucza i wartości
+data['miasto'] = 'Warszawa'
 
-# Wynik:
-# {'fruits': ['apple', 'orange', 'banana'], 'vegetables': ['carrot', 'tomato', 'cucumber']}
+# Usuwanie klucza i wartości
+del data['wiek']
+
+# Zapisywanie danych do pliku YAML
+with open('nowe_dane.yaml', 'w') as f:
+  yaml.dump(data, f)
 ```
-
-Jak widać, po zaimportowaniu modułu yaml i wykorzystaniu funkcji safe_load, dane w formacie YAML są przetwarzane do postaci słownika Pythonowego, co umożliwia łatwe korzystanie z tych danych w dalszej części kodu.
 
 ## Deep Dive
 
-Dzięki wykorzystaniu pakietu pyyaml, możesz również utworzyć plik YAML za pomocą kodu Pythona, a także łatwo modyfikować już istniejące pliki tego typu. Poniżej przedstawiono przykładowy kod, który tworzy plik YAML i zapisuje go na dysku:
+W formacie YAML możemy wykorzystywać również bardziej złożone struktury danych, takie jak listy zagnieżdżone czy słowniki z listami jako wartości. Możemy również definiować własne typy danych i wykorzystywać je w plikach YAML.
 
-```Python
-import yaml
+```yaml
+# Przykład listy zagnieżdżonej
+- Anna
+- Kowalska
+- adresy:
+  - Warszawa
+  - Gdańsk
 
-# Przygotowanie danych do zapisania w formacie YAML
-config = {
-  'server': 'localhost',
-  'port': 8080,
-  'database': {
-    'name': 'example_db',
-    'user': 'admin',
-    'password': 'admin123'
-  }
-}
-
-# Zapisanie danych do pliku YAML
-with open('config.yaml', 'w') as f:
-    yaml.dump(config, f)
-
-# Wynik: plik config.yaml z zawartością:
-# server: localhost
-# port: 8080
-# database:
-#   name: example_db
-#   user: admin
-#   password: admin123
+# Przykład definiowania własnego typu danych
+!!osoba
+imie: Anna
+nazwisko: Kowalska
+wiek: 30
 ```
 
-Powyższy kod może być również wykorzystany do modyfikacji już istniejących plików YAML. Wystarczy zmienić wartości w słowniku config i ponownie wywołać funkcję dump.
+Dzięki temu, praca z YAML w Pythonie jest jeszcze bardziej elastyczna i możemy dostosować ją do swoich potrzeb.
 
-Podsumowując, wykorzystanie YAML w Pythonie może ułatwić pracę z danymi i konfiguracją, szczególnie w przypadku dużej ilości informacji. Ponadto, dzięki pakietowi pyyaml, możesz łatwo przetwarzać i tworzyć pliki tego typu za pomocą swojego kodu.
+# Zobacz również
 
-## Zobacz również
-
-- [Dokumentacja modułu pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Paczka pyyaml na stronie PyPI](https://pypi.org/project/PyYAML/)
-- [Oficjalna strona języka YAML](https://yaml.org/)
+- Oficjalna dokumentacja modułu YAML dla Pythona: https://pyyaml.org/wiki/PyYAMLDocumentation
+- Przydatne narzędzia i biblioteki Python do pracy z YAML: https://realpython.com/python-yaml/
+- Poradnik z praktycznymi przykładami wykorzystania YAML w Pythonie: https://towardsdatascience.com/an-introduction-to-yaml-2bcb433afd8e

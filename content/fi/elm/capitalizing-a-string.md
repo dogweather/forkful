@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Itsekirjoittavan merkkijonon nimeäminen"
-simple_title:         "Itsekirjoittavan merkkijonon nimeäminen"
+title:                "Merkkijonon pääkirjainmuunnos"
+html_title:           "Elm: Merkkijonon pääkirjainmuunnos"
+simple_title:         "Merkkijonon pääkirjainmuunnos"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,25 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Joskus ohjelmoinnissa tarvitsemme muuttaa merkkijonojen kirjainten suuruutta ja silloin käytetään usein funktiota, joka muuntaa pienet kirjaimet isoiksi.
 
-## Miten
+Miksi haluat muuntaa tekstin isoiksi kirjaimiksi? Se voi olla hyödyllistä esimerkiksi, kun haluat korostaa tärkeää sanaa tai otsikkoa.
+
+## Kuinka
+
+Yksinkertaisin tapa muuttaa merkkijono isoiksi kirjaimiksi on käyttää `toUpper` -funktiota.
+
 ```Elm
-capitalize : String -> String
-capitalize s =
-  String.toUpper s
-```
-Tämä funktio ottaa merkkijonon ja palauttaa saman merkkijonon, mutta jossa kirjainkoko on muutettu isoiksi.
+import String
 
-Esimerkiksi:
-```
-capitalize "moi" --> "MOI"
-capitalize "Elämä on kaunista" --> "ELÄMÄ ON KAUNISTA"
+capitalizedWord = String.toUpper "tämä on isoiksi kirjaimiksi"
+-- "TÄMÄ ON ISOIKSI KIRJAIMIKSI"
 ```
 
-## Syväsukellus
-Funktion toiminnan ymmärtämiseksi on hyvä tietää pari asiaa merkkijonoista Elm-kielessä. Ensinnäkin, merkkijonot eivät ole muokattavissa, joten kun muutamme kirjainkokoa, meidän täytyy palauttaa uusi merkkijono. Toiseksi, funktio `String.toUpper` ottaa merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat isoja.
+Voit myös muuttaa vain tietyn alueen merkkijonosta isoiksi kirjaimiksi käyttämällä `toUpper` yhdessä `slice` -funktion kanssa.
+
+```Elm
+import String
+
+partialCapitalizedWord = String.slice 0 5 (String.toUpper "tämä on isoiksi kirjaimiksi")
+-- "TÄMÄ "
+```
+
+## Syvällinen sukellus
+
+Elm-kielessä merkkijonot ovat muuttumattomia, mikä tarkoittaa, että merkkijonon muuttaminen vaatii uuden merkkijonon luomista ja alkuperäisen merkkijonon hylkäämistä. Tästä syystä on hyvä välttää merkkijonojen jatkuvaan muokkaamiseen perustuvaa ohjelmointityyliä, sillä se voi aiheuttaa turhaa suorituskyvyn laskua.
 
 ## Katso myös
-- [Elm-kielessä käytetyt merkkijono-funktiot](https://guide.elm-lang.org/strings/)
-- [Tarkempi selitys merkkijonon muokkaamisesta Elm-kielessä](https://jakegoulding.com/blog/2014/12/01/string-explained/)
+
+- [Ohjelmoinnin perusteet: Merkkijonon muuttaminen](https://guide.elm-lang.org/language_basics/strings.html)
+- [Elm-paketin dokumentaatio: String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Muut tapoja muuntaa merkkijonoja isoiksi kirjaimiksi](https://stackoverflow.com/questions/34995233/how-to-make-a-word-uppercase-in-elm)

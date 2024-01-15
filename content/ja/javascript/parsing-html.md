@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 「HTMLの構文解析」"
-simple_title:         "「HTMLの構文解析」"
+title:                "HTMLの解析"
+html_title:           "Javascript: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,39 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-HTMLを解析するとは、ウェブ開発において非常に重要なスキルです。これにより、ウェブサイトやアプリケーションで必要なデータを取得したり、スクレイピングを行ったりすることができます。また、HTMLを解析することで、ウェブの動向やトレンドを把握することもできます。
+HTMLを解析することの重要性は、現在のウェブ開発で必須となっています。HTMLを解析することで、ウェブサイトやアプリケーションのデータを有効に取得し、表示することができます。
 
 ## 方法
-
-HTMLを解析するには、Javascriptを使用します。まず、HTMLのコードを読み込みます。次に、特定の要素を取得するために、`querySelector()`や`getElementById()`などのメソッドを使用します。そして、取得した要素から必要なデータを抽出し、それを使ってウェブアプリケーションを作成することができます。
-
-例えば、以下のようにコードを書くことで、同じクラス名を持つ要素をすべて取得し、それらの要素に対して処理を行うことができます。
-
 ```Javascript
-let elements = document.querySelectorAll(".class-name");
-
-elements.forEach(element => {
-  // 要素に対する処理
-  console.log(element.textContent);
-})
+const html = "<div id='title'>タイトル</div>"
+const parser = new DOMParser();
+const { documentElement: doc } = parser.parseFromString(html, "text/html");
+const title = doc.querySelector('#title').textContent;
+console.log(title); // タイトル
 ```
 
-これにより、コンソールに要素のテキスト内容が表示されます。
+HTMLの解析には、DOMパーサーを使用します。まずは、`DOMParser`オブジェクトを作成し、HTMLを解析する前の状態に設定します。次に、`parseFromString`メソッドを使用して、HTMLと解析を行うタイプを指定します。最後に、`querySelector`メソッドを使用して、目的の要素を取得し、そのテキストコンテンツを取得します。
 
 ## ディープダイブ
+HTMLを解析する際には、特定の要素や属性を取得することが重要です。`querySelector`メソッドを使用して、CSSセレクターを指定することで、目的の要素をより簡単に取得することができます。また、`querySelectorAll`メソッドを使用すると、複数の要素を一度に取得することができます。HTML解析は、より高度なウェブスクレイピングやデータ収集にも応用することができます。
 
-HTMLを解析する時に注意するポイントとして、HTMLの構造を理解しておくことが重要です。HTMLはツリー構造で表現されており、親要素から子要素へと階層構造を持っています。したがって、要素を取得する際には、適切な親要素や子要素を指定することが重要です。
-
-また、HTML解析には正規表現を使用する方法もあります。正規表現を使用することで、より柔軟にHTMLを解析することができます。しかし、正規表現を使用する際には注意が必要であり、誤ったパターンを指定することで意図しない結果が得られる可能性があります。
-
-## 参考文献
-
-- [MDN Web Docs: Web開発](https://developer.mozilla.org/ja/docs/Web)
-- [HTMLを解析する方法](https://www.w3schools.com/js/js_htmldom_elements.asp)
-- [正規表現入門](https://www.d-wood.com/blog/2007/09/14_1651.html)
-
-## 関連リンク
-
-- [HTML解析について知る](https://techacademy.jp/magazine/17891)
-- [スクレイピングでHTMLを解析する方法](https://qiita.com/yuki_h/items/ebb8d25efe55c0b57c08)
+## その他の参考文献
+- [MDN Web Docs: DOMParser](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)
+- [JavaScriptでHTMLの解析とDOM操作を行う方法](https://www.sejuku.net/blog/66578)
+- [Node.jsでHTMLを解析しよう！](https://qiita.com/zaburo/items/dcd43481d835e0b96038)

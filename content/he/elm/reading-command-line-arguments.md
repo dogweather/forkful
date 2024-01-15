@@ -1,6 +1,7 @@
 ---
-title:                "Elm: קריאת ארגומנטים בשורת הפקודה"
-simple_title:         "קריאת ארגומנטים בשורת הפקודה"
+title:                "קריאת ארגומנטים מקו הפקודה"
+html_title:           "Elm: קריאת ארגומנטים מקו הפקודה"
+simple_title:         "קריאת ארגומנטים מקו הפקודה"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+למה: כדי להפעיל תוכניות שלנו מהטרמינל בצורה יעילה ולקבל ערכים מזוהים באופן דינמי, ניתן לקרוא ולעבוד עם ארגומנטים שנכנסו דרך שורת הפקודה.
 
-קריאת ארגומנטים בשורת הפקודה היא כלי חשוב בתכנות ב-Elm שיכול להעצים את יכולות התוכנה שלכם. כתיבת תוכניות שישתמשו בארגומנטים בשורת הפקודה יכולה להפוך את התוכניות שלכם לנמכות יותר וחכמות יותר, תוך שימוש בקלות בשורת הפקודה.
-
-## איך לעשות זאת
+כיצד לקרוא ארגומנטים מהשורת הפקודה ב-Elm:
 
 ```Elm
-import Html exposing (text)
-import Platform.Cmd exposing (args)
+import Platform
 
-main =
-    Html.text (args)
+main = Platform.worker
+    { init = \_ -> ((), readCommandLineArgs)
+    , update = \_ model -> (model, Cmd.none)
+    }
+
+type Msg = GotArgs (List String)
+
+readCommandLineArgs : Cmd Msg
+readCommandLineArgs =
+    Platform.sendToSelf GotArgs
+
+Note.fromText : String -> Maybe Float
 ```
-```
-elmi
-```
-```
-| "Hello"
-```
 
-הדוגמא הבאה מראה כיצד לכתוב קוד ב-Elm שיקרא את המשתנה `args` באמצעות פונקציות מובנות של הפלטפורמה. פלט התוכנית הינו הרשימה של תפוצות המשתנים שהועברו לשורת הפקודה.
+Deep Dive: ישנם שני אפשרויות לקריאת ארגומנטים מהשורת הפקודה ב-Elm. האופציה הראשונה היא להשתמש בפונקציה `getArgs` מחבילת `Platform.Cmd`, שמחזירה את רשימת הארגומנטים שהתקבלו. האופציה השנייה היא להשתמש בפונקציה `sendToSelf` של `Platform.Cmd`, שאוספת את הארגומנטים בצד השרת ומשתמשת בפונקציית האיניט המוגדרת על ידי המשתמש על מנת לטפל בארגומנטים באופן אסינכרוני.
 
-## להעמיק
+עמוד הסיום:
 
-כאשר מעוניינים לקרוא את הפרמטרים שהועברו לתכנית בשורת הפקודה, ניתן לעשות זאת על ידי כתיבת קוד שיקרא מערך המשתנים `argv`, או ליצור קובץ מיוחד שמכיל את הפרמטרים או להשתמש בתוכנית חיצונית שתמצא את הפרמטרים לכם.
+ראה גם:
 
-## ראו גם
-
-- [תיעוד רשמי של שורת הפקודה של Elm](https://guide.elm-lang.org/interop/cmd.html)
-- [מדריך על כתיבת תוכניות בשורת הפקודה עם Elm](https://medium.com/@preethi_a/writing-command-line-tools-using-elm-c2bf4ac42a7a)
-- [פרויקט בגיטהאב של ניידת כיוונים בשורת הפקודה ב-Elm](https://github.com/ababkin/elm-cli-zygohora)
+- [Platform.Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
+- [Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker)
+- [Platform.sendToSelf](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#sendToSelf)

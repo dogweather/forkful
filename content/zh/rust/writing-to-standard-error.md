@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 写入标准错误"
+title:                "写入标准错误"
+html_title:           "Rust: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,57 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+#为什么
 
-编程时，有时候我们可能会遇到一些错误或者异常情况。当出现这些情况时，我们需要将它们记录下来以便后续排查。而将这些信息输出到标准错误流（standard error）是一种常见的做法。通过这篇文章，我们将详细介绍如何使用Rust语言来写入标准错误。
+为什么要将信息写入标准错误（standard error）？有时候我们的程序可能会出现一些错误，当我们想要知道这些错误是什么时，就可以通过将信息写入标准错误来进行调试和排查问题。
 
-##如何进行
+#如何操作
 
-在Rust中，我们可以使用标准库中的`eprintln!`宏来实现向标准错误流输出信息。
+要将信息写入标准错误，我们可以使用标准库中的 `eprintln!` 宏。这个宏可以将信息以错误的形式打印出来，并且会自动将信息写入标准错误。
+
+```Rust
+let number = 42;
+
+eprintln!("错误：数字 {} 超出范围", number);
 ```
-Rust
-fn main() {
-    eprintln!("This is an error message!");
-}
+
+输出结果：
+
 ```
-这样就可以在程序出错时，向标准错误流输出一条错误信息。除了简单的字符串，我们也可以传入变量来输出更加详细的信息。
+错误：数字 42 超出范围
 ```
-Rust
-fn main() {
-    let value = 10;
-    eprintln!("The value is {}", value);
-}
-```
-输出结果会是：`The value is 10`。
 
-##深入了解
+#深度了解
 
-在Rust中，标准错误流通常用来输出一些重要的信息，比如错误提示、警告等。在编写更复杂的程序时，我们可能需要自定义错误类型来更精确地指定错误信息。这时，我们可以使用`eprintln!`宏来输出自定义的错误类型。
-```
-Rust
-use std::error::Error;
-use std::fmt;
-#[derive(Debug)]
-struct CustomError;
-impl Error for CustomError {}
-impl fmt::Display for CustomError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "This is a custom error!")
-    }
-}
-fn main() -> Result<(), Box<dyn Error>> {
-    Err(Box::new(CustomError))
-}
-```
-在这个例子中，我们定义了一个自定义错误类型`CustomError`，并在`main`函数中返回了一个包含该错误类型的`Result`。当程序运行时，我们会在标准错误流中看到输出信息`This is a custom error!`。
+标准错误是处理错误信息的重要工具，它可以让我们快速定位错误并进行调试。除了使用 `eprintln!` 宏外，我们还可以使用 `writeln!` 宏来将信息写入其他的流，比如标准输出或者文件。
 
-##参考链接
+#相关阅读
 
-- [Rust标准库文档](https://rust-lang.github.io/stdlib/doc/std/io/index.html#standard-error-stream)
-- [Rust官方教程](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)
-- [Rust编程语言](https://www.rust-lang.org/)
+- [Rust 标准库文档](https://doc.rust-lang.org/std/)
+- [深入理解标准错误](https://blog.csdn.net/u011436429/article/details/79855920)
+- [Rust 语言入门教程](https://rustlang-cn.org/office/rust/book/getting-started.html)
 
+#参考链接
 
-##参见
-
-- [将错误信息输出到标准输出流的方法](https://example.com)（英文）
+- [《Rust 程序设计语言》官方中文版](https://rustlang-cn.org/office/rust/book/title-page.html)
+- [Rust 语言编程指南](https://www.runoob.com/rust/rust-basic-syntax.html)

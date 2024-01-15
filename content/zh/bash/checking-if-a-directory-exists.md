@@ -1,5 +1,6 @@
 ---
-title:                "Bash: 检查目录是否存在"
+title:                "检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要检查是否存在目录？
+## 为什么
 
-在Bash编程中，经常需要检查某个目录是否存在。这有助于程序的可靠性和稳定性，因为如果目录不存在，程序可能会出现错误。通过检查目录是否存在，我们可以在程序中添加相应的逻辑处理来防止错误发生。
+首先，它是一种常见的编程需求，毕竟在编程中我们需要处理很多文件和目录。其次，通过检查目录是否存在，我们可以避免产生不必要的错误，并可以更有效地处理文件操作。
 
-## 如何做？
+## 如何进行
 
-在Bash中，我们可以使用`test`命令来检查目录是否存在。以下是一个示例代码：
+使用Bash中的test命令来检查目录是否存在，语法为：```test -d <目录路径>```。具体示例如下：
 
-```Bash
-if test -d "/home/user/test_dir"; then
-  echo "Directory exists."
-else
-  echo "Directory does not exist."
-fi
+```
+test -d /home/user/Downloads
+echo $?
 ```
 
-上面的代码会先检查`/home/user/test_dir`目录是否存在，如果存在则会输出"Directory exists."，否则输出"Directory does not exist."。
+如果目录存在，输出将为0；如果目录不存在，输出将为1。
 
 ## 深入了解
 
-除了使用`test`命令，我们也可以使用`[ -d "/home/user/test_dir" ]`来检查目录是否存在。这两种方法是等效的，只是写法上略有不同，选择一种适合自己的写法即可。
+除了使用test命令，我们还可以使用[bracket扩展](https://www.gnu.org/software/bash/manual/html_node/The-Conditional-Expression-Building.html)，语法为：```[ -d <目录路径> ]```。具体示例如下：
 
-此外，我们也可以使用`-e`来检查文件是否存在，`-f`来检查普通文件是否存在，`-s`来检查文件是否为空，等等。对于这些可以使用的选项，可以在`man test`命令的文档中找到更多信息。
+```
+[ -d /home/user/Downloads ]
+echo $?
+```
 
-## 同样也可了解
+同样的，如果目录存在，输出将为0；如果目录不存在，输出将为1。
 
-- [Linux Bash：如何使用test来检查文件是否存在](https://www.howtogeek.com/76269/how-to-test-for-file-or-directory-existence-using-bash/)
-- [Bash入门教程：文件操作](https://wangdoc.com/bash/basic/files.html)
+## 参考链接
+
+- [Bash官方文档](https://www.gnu.org/software/bash/manual/html_node/index.html)
+- [test命令的用法](https://linux.die.net/man/1/test)
+- [bracket扩展的用法](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [检查目录是否存在的更多方法](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)

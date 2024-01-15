@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "PHP: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,71 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum Regular Expressions verwenden?
+## Warum
 
-Regular Expressions, oder auch reguläre Ausdrücke, sind ein leistungsstarkes Tool für alle Programmierer und Entwickler. Sie ermöglichen es, Textmuster in Strings zu finden und zu manipulieren. Dies spart nicht nur Zeit, sondern auch viele Codezeilen. Wenn du komplexe Such- und Ersetzungsvorgänge in deinem Code durchführen musst, sind Regular Expressions die beste Option.
+Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug zur Mustererkennung in Texten und ermöglichen es Entwicklern, komplexe Such- und Ersetzungsvorgänge schnell und effizient durchzuführen. Sie sind in der PHP-Programmierung unverzichtbar und können in verschiedenen Anwendungsfällen eingesetzt werden, einschließlich Validierung von Benutzereingaben, Parsing von Daten oder Änderung von Textformaten.
 
-## Wie man Regular Expressions verwendet
+## Wie geht's
 
-Um Regular Expressions in PHP zu verwenden, musst du die Funktion `preg_match()` verwenden. Diese Funktion nimmt zwei Argumente an: das Muster, nach dem gesucht werden soll, und den String, in dem gesucht werden soll. Zum Beispiel:
-
-```PHP
-<?php
-
-$string = "Hallo, mein Name ist Lisa und ich bin 25 Jahre alt.";
-$pattern = "/[a-z]+/i";
-
-preg_match($pattern, $string, $matches);
-
-print_r($matches);
-
-// Ausgabe: Array ( [0] => Hallo [1] => mein [2] => Name [3] => ist [4] => Lisa [5] => und [6] => ich [7] => bin [8] => Jahre [9] => alt )
-```
-
-In diesem Beispiel wird das Muster `[a-z]+` verwendet, um nach allen Wörtern im String zu suchen, die aus mindestens einem Kleinbuchstaben bestehen. Das `i` am Ende des Musters bedeutet, dass die Groß- und Kleinschreibung ignoriert wird.
-
-Du kannst auch mit regulären Ausdrücken ersetzen, indem du die Funktion `preg_replace()` verwendest. Diese Funktion nimmt drei Argumente an: das Muster, nach dem gesucht werden soll, die Ersetzung und der String, in dem die Ersetzung durchgeführt werden soll. Beispiel:
+Um reguläre Ausdrücke in PHP zu verwenden, müssen Sie die integrierten Funktionen und Operators verstehen, die für die Arbeit mit regulären Ausdrücken zur Verfügung stehen. Zum Beispiel können Sie mit der Funktion ```preg_match()``` überprüfen, ob ein bestimmtes Muster in einem String gefunden wird. Hier ist ein einfaches Beispiel:
 
 ```PHP
-<?php
-
-$string = "Heute ist ein schöner Tag";
-$pattern = "/schöner/";
-$replace = "herrlicher";
-
-$new_string = preg_replace($pattern, $replace, $string);
-
-echo $new_string;
-
-// Ausgabe: Heute ist ein herrlicher Tag
+$string = "Hallo, mein Name ist Maria und ich bin 27 Jahre alt.";
+if(preg_match("/Maria/", $string)){
+  echo "Das Muster wurde gefunden!";
+}
+else{
+  echo "Das Muster wurde nicht gefunden";
+}
 ```
 
-Wie du sehen kannst, wird das Wort "schöner" durch "herrlicher" ersetzt.
+Dieses Codebeispiel sucht nach dem Wort "Maria" in dem String und gibt "Das Muster wurde gefunden!" aus. Wenn das Wort nicht gefunden werden würde, würde der zweite Teil der Bedingung ausgeführt werden.
 
-## Tiefer Einblick in Regular Expressions
-
-Regular Expressions können noch viel mehr als nur einfache Such- und Ersetzungsvorgänge. Du kannst zum Beispiel mit sogenannten Quantifizierern wie `+` oder `*` arbeiten, um das Muster anzupassen. `+` bedeutet, dass das vorhergehende Zeichen ein oder mehrmals vorkommen muss, während `*` bedeutet, dass es beliebig oft oder gar nicht vorkommen kann. Beispiel:
+Sie können auch reguläre Ausdrücke verwenden, um Teile eines Strings zu extrahieren oder zu ersetzen. Mit der Funktion ```preg_replace()``` können Sie beispielsweise alle Vorkommen eines bestimmten Musters in einem String ersetzen. Hier ist ein Beispiel:
 
 ```PHP
-<?php
-
-$string = "aaaab";
-$pattern = "/a+b/";
-$replace = "c";
-
-$new_string = preg_replace($pattern, $replace, $string);
-
-echo $new_string;
-
-// Ausgabe: cab
+$string = "Hello, World!";
+$newString = preg_replace("/Hello/", "Hi", $string);
+echo $newString; // "Hi, World!"
 ```
 
-Hier wird das Muster `a+b` verwendet, was bedeutet, dass mindestens ein "a" vorkommen muss, aber auch mehrere nebeneinander vorkommen können.
+In diesem Beispiel wird das Wort "Hello" im String durch "Hi" ersetzt, was zur Ausgabe von "Hi, World!" führt.
 
-Es gibt noch viele weitere Möglichkeiten und Optionen bei der Verwendung von Regular Expressions, die es dir ermöglichen, komplexe Textmanipulationen effizient durchzuführen. Es lohnt sich auf jeden Fall, sich tiefer damit zu beschäftigen.
+## Deep Dive
+
+Reguläre Ausdrücke können komplexe Muster enthalten und einige Sonderzeichen, die für spezielle Funktionen stehen. Hier sind einige der häufig verwendeten Sonderzeichen:
+
+- ```^```: Steht für den Anfang eines Strings
+- ```$```: Steht für das Ende eines Strings
+- ```*```: Steht für null oder mehr Vorkommen des vorherigen Zeichens
+- ```+```: Steht für ein oder mehr Vorkommen des vorherigen Zeichens
+- ```?```: Steht für null oder ein Vorkommen des vorherigen Zeichens
+- ```.```: Steht für ein beliebiges Zeichen außer einer neuen Zeile
+- ```\s```: Steht für ein Leerzeichen, Tabulatorzeichen oder eine neue Zeile
+- ```\d```: Steht für eine Ziffer
+- ```\w```: Steht für ein alphanumerisches Zeichen oder Unterstrich
+
+Es gibt auch weitere Funktionen und Optionen, die mit regulären Ausdrücken in PHP verwendet werden können. Es ist wichtig, sich ausführlicher mit der Syntax und den Möglichkeiten von regulären Ausdrücken zu befassen, um sie effektiv einzusetzen.
 
 ## Siehe auch
 
-- [PHP Regular Expressions Dokumentation](https://www.php.net/manual/de/book.pcre.php)
+- [PHP reguläre Ausdrücke Referenz](https://www.php.net/manual/de/reference.pcre.pattern.syntax.php)
+- [Regex Tutorial auf PHP.net](https://www.php.net/manual/de/regexp.reference.php)
 - [RegExr - Online Regular Expression Tester](https://regexr.com/)
-- [Regular Expressions Cheat Sheet](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285) (Englisch)

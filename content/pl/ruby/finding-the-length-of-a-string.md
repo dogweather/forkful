@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Znalezienie długości ciągu znaków"
-simple_title:         "Znalezienie długości ciągu znaków"
+title:                "Znajdowanie długości łańcucha znaków"
+html_title:           "Ruby: Znajdowanie długości łańcucha znaków"
+simple_title:         "Znajdowanie długości łańcucha znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,44 +12,119 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie kodu jest jak rozwiązywanie łamigłówek - zawsze istnieje więcej niż jedno możliwe rozwiązanie. Często musimy wykonać pewne operacje na tekstach i jedną z takich czynności jest obliczenie długości tekstu. W tym artykule dowiesz się jak w prosty sposób znaleźć długość ciągu znaków w języku Ruby.
+Znalezienie długości ciągu znaków jest niezbędne w wielu programach, szczególnie do sprawdzania poprawności wprowadzanych danych i ich przetwarzania. W języku Ruby istnieje kilka różnych sposobów na znalezienie długości stringa, które omówimy w tym artykule.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby znaleźć długość ciągu znaków możemy skorzystać z metody `length` lub `size`, które zwracają liczbę znaków w danym tekście. Poniżej znajduje się przykładowy kod wraz z odpowiadającym mu wynikiem.
-
-```Ruby
-text = "Cześć, jestem blogiem o programowaniu!"
-puts text.length # Output: 35
-puts text.size # Output: 35
-```
-
-W powyższym przykładzie została utworzona zmienna `text`, do której przypisany został ciąg znaków. Następnie wywołujemy metodę `length` oraz `size` i wyświetlamy jej wynik za pomocą funkcji `puts`. Oba sposoby zwracają tę samą wartość, więc możesz użyć dowolnej z nich.
-
-Jeśli chcesz uzyskać długość tekstu zawierającego polskie znaki, takie jak `ł` czy `ż`, możesz skorzystać z metody `bytesize`, która zwraca ilość bajtów w tekście. Przykład:
+Po pierwsze, można użyć metody `length` na obiekcie stringa, która zwróci liczbę znaków w ciągu. Przykładowy kod wyglądałby tak:
 
 ```Ruby
-text = "Światło w międzynarodowym języku programowania"
-puts text.bytesize # Output: 49
+str = "To jest przykładowy ciąg znaków."
+puts str.length
 ```
 
-Warto również zauważyć, że metoda `length`, `size` oraz `bytesize` mogą być używane również do obliczania długości tablicy lub hasha.
+**Wynik:**
+
+`33`
+
+Kolejną możliwością jest użycie metody `size`, która działa w podobny sposób do `length`. Jednak w niektórych przypadkach może dać nieco odmienny wynik, ponieważ działa także na innego rodzaju obiektach.
+
+```Ruby
+str = "To jest kolejny przykład."
+puts str.size
+```
+
+**Wynik:**
+
+`25`
+
+Można również wykorzystać metodę `bytesize`, która zwraca liczbę bajtów użytych do przechowywania danego ciągu. Jest to przydatne, gdy pracujemy z ciągami znaków w różnych kodowaniach.
+
+```Ruby
+str = "Tutaj jest użyty UTF-8"
+puts str.bytesize
+```
+
+**Wynik:**
+
+`21`
+
+Ostatnią metodą, którą omówimy jest `count`, która pozwala na policzenie wystąpień określonego znaku lub ciągu znaków w danym stringu.
+
+```Ruby
+str = "Jestem programistą Ruby."
+puts str.count("Ruby")
+```
+
+**Wynik:**
+
+`1`
 
 ## Deep Dive
 
-Podczas tworzenia aplikacji internetowych często potrzebujemy sprawdzić, czy użytkownik podał odpowiednią długość hasła lub imienia. Wtedy bardzo przydatną funkcją jest metoda `validates_length_of`, która pozwala nam określić minimalną i maksymalną długość ciągu znaków. Przykład:
+W języku Ruby stringi są traktowane jako tablice znaków, co oznacza, że można na nich wykonywać metody charakterystyczne dla tablic. Dlatego też można użyć metody `each_char`, aby w przejrzysty sposób wyświetlić każdy znak danego stringa.
 
 ```Ruby
-class User < ApplicationRecord
-  validates_length_of :username, in: 5..20 # username musi mieć od 5 do 20 znaków
-  validates_length_of :password, minimum: 8 # hasło musi mieć minimum 8 znaków
+str = "Programowanie jest super!"
+str.each_char do |char|
+  puts char
 end
 ```
 
-Dzięki użyciu tej metody możemy zapewnić, że użytkownicy podadzą odpowiednio długie informacje, co pozwoli nam zwiększyć bezpieczeństwo naszej aplikacji.
+**Wynik:**
 
-## Zobacz również
+`P`
 
-* [Dokumentacja Ruby o metodzie `length`](https://ruby-doc.org/core-2.6/String.html#method-i-length)
-* [Dokumentacja Ruby on Rails o walidacji długości modeli](https://guides.rubyonrails.org/active_record_validations.html#length)
-* [Kurs Ruby na Codecademy](https://www.codecademy.com/learn/learn-ruby)
+`r`
+
+`o`
+
+`g`
+
+`r`
+
+`a`
+
+`m`
+
+`o`
+
+`w`
+
+`a`
+
+`n`
+
+`i`
+
+`e`
+
+` `
+
+`j`
+
+`e`
+
+`s`
+
+`t`
+
+` `
+
+`s`
+
+`u`
+
+`p`
+
+`e`
+
+`r`
+
+`!`
+
+## Zobacz także
+
+- [Dokumentacja Ruby](https://www.ruby-lang.org/pl/documentation/)
+- [Kurs Ruby na Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- [Ruby dla początkujących – artykuł na Medium](https://medium.com/code-interview/ruby-dla-pocz%C4%85tkuj%C4%85cych-podsumowanie-bcb660c4c5a1)

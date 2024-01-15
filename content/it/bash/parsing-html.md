@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Analisi dell'HTML"
-simple_title:         "Analisi dell'HTML"
+title:                "Analisi di HTML"
+html_title:           "Bash: Analisi di HTML"
+simple_title:         "Analisi di HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,37 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Il parsing di HTML è fondamentale per estrarre informazioni significative da pagine web. Ciò può essere utile per automazione, data mining o semplicemente per comprendere i contenuti di una pagina.
+Molti siti web sono basati su HTML, quindi la capacità di estrarre informazioni da questo linguaggio di markup può essere estremamente utile per il web scraping, l'analisi dei dati e altre attività informatiche.
 
 ## Come Fare
 
-Per iniziare, è necessario avere una conoscenza di base del linguaggio di programmazione Bash. È possibile utilizzare strumenti come wget per scaricare la pagina HTML che si desidera analizzare. Successivamente, è possibile utilizzare comandi come `grep` e `sed` per isolare le informazioni desiderate dal codice HTML.
+Per iniziare a parsare HTML in Bash, è necessario utilizzare lo strumento "sed" (stream editor) che permette di modificare i contenuti dei file di testo. Vediamo un esempio pratico:
 
-Ecco un esempio di come estrarre il titolo di un articolo da una pagina web utilizzando questi comandi:
-
-```
+```Bash
 #!/bin/bash
 
-# Scarica la pagina web
-wget -O pagina.html https://www.esempio.com/articolo.html
+# Scarica la pagina web di Google
+curl "https://www.google.com" > google.html
 
-# Estrae il titolo
-titolo=$(cat pagina.html | grep "<title>" | sed 's/<title>//;s/<\/title>//')
+# Utilizza "sed" per eliminare tutti i tag HTML e stampare solo il testo
+sed "s/<[^>]*>//g" google.html > testo_google.txt
 
-# Stampa il risultato
-echo "Il titolo dell'articolo è: $titolo"
+# Stampa il contenuto del file di testo risultante
+cat testo_google.txt
 ```
 
-Questo è solo un esempio semplice, ma ci sono molte altre opzioni e comandi che possono essere utilizzati per estrarre ulteriori informazioni dal codice HTML.
+Output:
 
-## Approfondimenti
+```
+Google offered in: ខ្មែរ Advertising Programs‎Business Solutions‎Privacy‎About Google‎
+```
 
-Il parsing di HTML può diventare più complesso a seconda della pagina web che si sta analizzando. Ad esempio, potrebbe essere necessario gestire più tag HTML all'interno del codice o estrarre informazioni da pagine con una struttura più complicata. In questi casi, potrebbe essere utile utilizzare strumenti come `awk` o `perl` per affrontare situazioni più complicate.
+Come puoi vedere, utilizzando il comando "sed" siamo riusciti a eliminare tutti i tag HTML dalla pagina web di Google e ottenere solo il testo desiderato.
 
-Inoltre, è importante comprendere la struttura del codice HTML per poter identificare e isolare le informazioni desiderate. Questo richiede spesso un approccio di tipo trial-and-error e una buona comprensione del linguaggio HTML.
+## Deep Dive
+
+Per comprendere meglio il processo di parsing HTML in Bash, è importante capire come funziona lo strumento "sed". Questo è in grado di cercare ed eliminare un determinato pattern all'interno di un file di testo utilizzando le espressioni regolari. Possiamo utilizzare questa funzionalità per cercare i tag HTML e sostituirli con una stringa vuota, ovvero eliminarli.
+
+È importante notare che questa tecnica funziona solo per pagine web con una struttura semplice, come nel caso dell'esempio di Google. Per pagine più complesse, potrebbe essere necessario utilizzare un tool di parsing più avanzato come "grep" o "awk".
 
 ## Vedi Anche
 
-- [Guida al parsing di HTML con Bash](https://www.thegeekstuff.com/2010/06/bash-string-manipulation/)
-- [Documentazione di GNU grep](https://www.gnu.org/software/grep/manual/grep.html)
-- [Documentazione di GNU sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Documentazione sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Tutorial Regex per Bash](https://linuxhandbook.com/bash-regex/)
+- [Esempi pratici di parsing HTML in Bash](https://www.lemoda.net/sh/sed-html/)

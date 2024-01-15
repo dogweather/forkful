@@ -1,6 +1,7 @@
 ---
-title:                "Swift: למיצוא תת מחרוזות"
-simple_title:         "למיצוא תת מחרוזות"
+title:                "הפצת תת-מחרוזות"
+html_title:           "Swift: הפצת תת-מחרוזות"
+simple_title:         "הפצת תת-מחרוזות"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,65 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##למה
+## למה
 
-יש לנו מחרוזת גדולה ורעיון מוחשי לבצע בתוכה. אפשר לחלץ חלקים קטנים מהמחרוזת לפי תבניות שונות ולהשתמש בהם לצורך מטרות שונות. כך ניתן לבצע פעולות יעילות וממוקדות יותר על המחרוזת.
+בעולם תכנות, תפקיד המחרוזות (strings) בנתונים הוא נמוך מכיוון שהן מייצגות רק טקסט שממופשט במחשב. לכן, לפעמים נצטרך לשנות את תצורת המחרוזת על מנת להשתמש בה בצורה שימושית יותר בקוד שלנו. קטעי קוד נוספים אף יכולים לגרום לנו להרחיב את מחרוזות כדי ליצור פונקציונליות מתקדמת יותר. אם אנו רוצים להשתמש במחרוזות בצורה טובה יותר ב- Swift, אנחנו צריכים למדוד את הכלים שיש לנו בכדי לעבוד איתם.
 
-##איך לבצע
-
-מניעת קלט למשקולת מחיר. למשל, אפשר לכתוב פונקציה שמחלצת מהמחרוזת רק את המילים שמתחילות באות גדולה ולהציג רק את המילים המהוות מספרים.
+## איך לעשות זאת
 
 ```Swift
-func extractWords(string: String) -> [String] {
-    var result: [String] = []
-    let words = string.components(separatedBy: " ")
-    for word in words {
-        if let firstChar = word.first, firstChar.isUppercase {
-            result.append(word)
-        }
-    }
-    return result
-}
-
-let string = "Hello World 2021 Swift Programming Blog"
-let result = extractWords(string: string)
+let str = "Hello, Swift!"
+let range = str.index(str.startIndex, offsetBy: 7)..<str.endIndex
+let substring = str[range] // Swift!
 ```
 
-הפלט:
-
-> ["Hello", "World", "Swift", "Programming", "Blog"]
-
-##מעמק
-
-פונקציות כמו `components(separatedBy:)` ו- `index(of:)` מסייעות לנו לחלץ חלקים מהמחרוזת המקורית. ניתן להשתמש גם בפונקציות נוספות כגון `prefix(_:)`, `suffix(_:)`, ו- `substring(to:)` כדי לחלץ חלקים מדויקים מהמחרוזת.
-
-הנה דוגמא לפונקציה שמחלצת את המילים שנמצאות במחרוזת עד כמה תווים מסוימים מההתחלה:
+תחילה, אנו יוצרים מחרוזת חדשה עם המשתנה "str". אחר כך, אנו מגדירים את טווח התת מחרוזת שאנו רוצים להשתמש בו, ע"י מציאת האינדקסים המתאימים להתחלה ולסוף של התת מחרוזת. לבסוף, אנו יכולים לשים לב שאנו יכולים להשתמש בפעולת המלן של "st.range" כדי לקבל את התת מחרוזת המבוקשת.
 
 ```Swift
-func extractWords(string: String, length: Int) -> [String] {
-    var result: [String] = []
-    let words = string.components(separatedBy: " ")
-    for word in words {
-        if word.count <= length {
-            result.append(word)
-        } else {
-            let index = string.index(string.startIndex, offsetBy: length)
-            let substring = string[..<index]
-            result.append(String(substring))
-        }
-    }
-    return result
-}
-
-let string = "Hello World 2021 Swift Programming Blog"
-let result = extractWords(string: string, length: 5)
+let str = "Hello, Swift!"
+let range = str.range(of: "Swift")
+let substring = str[range!] // Swift!
 ```
 
-הפלט:
+בדוגמא הקודמת, אנו משתמשים בפעולת ה-matches בכדי להחזיר את התת מחרוזת הראשונה שמתאימה למחרוזת שאנו מחפשים. ניתן לחבר את הפעולה הזאת עם פעולת ה-matches בכדי לקבל תוצאות מתאימות יותר.
 
-> ["Hello", "World", "2021", "Swift", "Progr", "Blog"]
+## לשטוף עומק
 
-##ראו גם
-
-- [מדריך מאתר Apple על חיתוך מחרוזת באמצעות אופרטורים](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/WorkingWithStrings/WorkingWithStrings.html#//apple_ref/doc/uid/TP40009542-CH5-SW8)
-- [מדריך מאתר Hacking with Swift על חיתוך מחרוזת בעזרת Substring](https://www.hackingwithswift.com/example-code/strings
+אתמול, אנו לא אתמול ראינו כזאת עומת. ה-strings בני: הודעת error (מספר 0) מתאם למחרוזת הראויית שאנו רוצים לשנות. אנו יכולים להשתמש בזה כדי לקבל תוצאות טובות

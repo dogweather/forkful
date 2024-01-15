@@ -1,6 +1,7 @@
 ---
-title:                "C#: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Työskentely yamlin kanssa"
+html_title:           "C#: Työskentely yamlin kanssa"
+simple_title:         "Työskentely yamlin kanssa"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttää YAML-muotoa C# ohjelmoinnissa?
+## Miksi
 
-YAML (Yet Another Markup Language) on helppokäyttöinen tapa tallentaa ja jakaa tietoa JSON- tai XML-muodon sijaan. Se on suunniteltu ihmisille luettavaksi ja kirjoittamiseen, mikä tekee siitä hyvin suositun monissa ohjelmointiympäristöissä.
+YAML (YAML Ain't Markup Language) on tiedostomuoto, jossa informaatio on tallennettu tavallisessa tekstimuodossa. Se on helppolukuinen ja ymmärrettävä, mikä tekee siitä suosittun ohjelmointikielten välisenä tietokantana. YAML:lla on myös laaja käyttö erilaisten konfiguraatiotiedostojen, kuten web-sovellusten ja tietokantojen, käsittelyssä.
 
-## Miten käyttää YAML-muotoa C# ohjelmoinnissa
+## Kuinka
 
-YAML-muotoa voidaan käyttää C# ohjelmoinnissa käyttämällä sopivaa kirjastoa, kuten esimerkiksi YamlDotNet. Esimerkiksi voimme tallentaa tietojen objekteja YAML-muodossa käyttämällä YamlSerializer-luokkaa seuraavalla tavalla:
+YAML-tiedostojen käsittely C#-ohjelmoinnissa on helppoa ja vaivatonta. Tässä muutama esimerkki koodinpätkä, joita voi hyödyntää YAML-tiedostojen lukemiseen ja kirjoittamiseen.
+
+### YAML-tiedoston lukeminen
 
 ```C#
-// Luodaan objekti, jota haluamme tallentaa
-MyClass obj = new MyClass();
-obj.Name = "Johannes";
-obj.Age = 30;
+using System.IO; 
+using YamlDotNet.RepresentationModel;
 
-// Luodaan tallennuspaikka
-string path = "C:\\tiedosto.yaml";
-
-// Tallennetaan objekti YAML-muodossa
-YamlSerializer serializer = new YamlSerializer();
-using (TextWriter writer = File.CreateText(path))
+//Avataan YAML-tiedosto lukemista varten
+var yamlStream = new YamlStream();
+using (var reader = new StreamReader("tiedostonimi.yml")) 
 {
-    serializer.Serialize(writer, obj);
+    yamlStream.Load(reader);
+}
+            
+//Haetaan dokumentti YAML-tiedostosta
+var yamlDocument = yamlStream.Documents[0];
+
+//Haetaan YAML-tiedoston juuri, jonka alle tiedot on tallennettu
+var rootNode = yamlDocument.RootNode;
+
+//Haetaan arvojuuri (Scalar) ja tulostetaan sen sisältö
+var valueRoot = (YamlScalarNode)rootNode;
+Console.WriteLine("Arvo: " + valueRoot.Value);
+```
+
+### YAML-tiedoston kirjoittaminen
+
+```C#
+using YamlDotNet.RepresentationModel;
+
+//Luodaan uusi YAML-tiedosto
+var yamlStream = new YamlStream();
+yamlStream.Add(new YamlDocument());
+
+//Lisätään tietoa tiedoston juureen
+var rootNode = (YamlMappingNode)yamlStream.Documents[0].RootNode;
+rootNode.Add("nimi", "Johanna");
+rootNode.Add("syntymävuosi", 1988);
+
+//Kirjoitetaan tiedosto
+using (var writer = new StreamWriter("tiedostonimi.yml")) 
+{
+    yamlStream.Save(writer, false);
+}
+
+```
+
+### Navigointi YAML-tiedostossa
+
+YAML-tiedostoissa tieto on tallennettu hierarkkisesti, joten tiedostoja käsitellessä on tärkeää pystyä navigoimaan oikeisiin kohtiin. Tässä muutama esimerkki navigoinnista ja tietojen haku YAML-tiedostosta.
+
+```C#
+using YamlDotNet.RepresentationModel;
+
+//Haetaan allekomentodi YAML-tiedostosta
+var subordinateCommands = (YamlMappingNode)rootNode["allekomennot"];
+
+//Haetaan tietty alikomento syntaksilla
+var firstCommand = subordinateCommands["eka_alikomento"];
+
+//Haetaan useamman alikomennon joukko
+var commands = (YamlSequenceNode)rootNode["komennot"];
+foreach (var command in commands)
+{
+    //Tulostetaan komennon nimi ja kuvaus
+    var name = command["nimi"];
+    var description = command["kuvaus"];
+    Console.WriteLine("Nimi: " + name);
+    Console.WriteLine("Kuvaus: " + description);
 }
 ```
 
-Yllä olevassa esimerkissä, YamlSerializer-luokka tallentaa objektin `MyClass` tiedostoon "tiedosto.yaml". Tämän jälkeen voimme helposti lukea ja käsitellä tallennettuja tietoja YAML-muodossa.
+## Syvempi sukellus
 
-## Syväsukellus YAML-muodon maailmaan
+YAML on erittäin monipuolinen tiedostomuoto, joten sen ominaisuuksia ja käyttömahdollisuuksia on paljon. Tarkemman tiedon ja dokumentaation YAML:sta löydät osoitteesta https://yaml.org/.
 
-YAML-muoto tarjoaa monia hyödyllisiä ominaisuuksia, kuten mahdollisuuden käyttää ankkurointia ja viittauksia, jolloin voidaan välttää tietojen toistaminen. Lisäksi YAML tukee myös monia erilaisia tietotyyppejä, kuten numeroita, merkkijonoja, listoja ja karttoja. Tämä tekee siitä erittäin monipuolisen ja joustavan tietojen tallennusmuodon.
+## Katso myös
 
-Mikä parasta, YAML-muoto on myös helppo lukea ja kirjoittaa ihmisille, mikä helpottaa merkittävästi tietojen hallintaa ja jakamista tiimien välillä.
-
-# Katso myös
-
-- [YamlDotNet kirjasto](https://github.com/aaubry/YamlDotNet)
-- [YAML-muoto virallisilla verkkosivuilla](https://yaml.org/)
-- [JSON-muodon ja YAML-muodon vertailu](https://www.infoworld.com/article/3454742/json-vs-xml-vs-yaml-which-format-should-you-use-for-configuration-files.html)
+- https://yaml.org/
+- https://dotnet.microsoft.com/
+- https://www.c-sharpcorner.com/technologies/yaml

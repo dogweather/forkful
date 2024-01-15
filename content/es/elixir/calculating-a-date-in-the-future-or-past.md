@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Elixir: Calculando una fecha en el futuro o pasado"
 simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías calcular una fecha en el futuro o en el pasado?
+## ¿Por qué deberías calcular una fecha en el futuro o pasado?
 
-Existe una gran variedad de razones por las que puedes necesitar calcular una fecha en el futuro o en el pasado en tu programa de Elixir. Tal vez necesites realizar un seguimiento de una fecha de vencimiento, o quizás necesites planificar eventos con antelación. Sea cual sea el caso, el cálculo de fechas puede ser una tarea complicada, pero en Elixir, es más sencillo de lo que piensas. ¡Sigue leyendo para aprender cómo hacerlo!
+Irás a una fiesta en dos semanas y quieres saber qué día será dentro de un mes. O tal vez estás planificando un viaje y necesitas saber qué día cae en tu cumpleaños en tres años. Sea cual sea tu razón, el cálculo de fechas en el futuro o pasado es una habilidad útil para tener en tu caja de herramientas de programación.
 
-## Cómo calcular una fecha en el futuro o en el pasado en Elixir
+## Cómo hacerlo
 
-El módulo `DateTime` de Elixir contiene varias funciones útiles para calcular y manipular fechas. Para calcular una fecha en el futuro, podemos usar la función `add/3` que toma tres argumentos: una fecha, un número de días y una unidad de tiempo (días, meses o años).
-
-```Elixir
-iex> date = ~D[2021-10-13] # definimos la fecha de partida
-~D[2021-10-13]
-iex> DateTime.add(date, 3, :days) # sumamos 3 días a la fecha
-~D[2021-10-16]
-iex> DateTime.add(date, 2, :months) # sumamos 2 meses a la fecha
-~D[2021-12-13]
-iex> DateTime.add(date, 1, :years) # sumamos 1 año a la fecha
-~D[2022-10-13]
-```
-
-Para calcular una fecha en el pasado, también podemos utilizar la función `add/3`, pero en este caso le pasamos un número negativo como segundo argumento.
+Usando Elixir, calcular una fecha en el futuro o pasado es realmente sencillo. Simplemente tienes que usar la función ```Date.add```, que toma tres argumentos: la fecha inicial, el número de días a añadir o restar, y la unidad de tiempo (días, semanas, meses, años). Aquí hay un ejemplo de código que calcula la fecha dentro de 2 semanas:
 
 ```Elixir
-iex> date = ~D[2021-10-13] # definimos la fecha de partida
-~D[2021-10-13]
-iex> DateTime.add(date, -5, :days) # restamos 5 días a la fecha
-~D[2021-10-08]
-iex> DateTime.add(date, -1, :months) # restamos 1 mes a la fecha
-~D[2021-09-13]
-iex> DateTime.add(date, -2, :years) # restamos 2 años a la fecha
-~D[2019-10-13]
+initial_date = Date.today() # Esta será la fecha inicial
+future_date = Date.add(initial_date, 14, :days) # 14 días en el futuro
+IO.puts(future_date) # Imprime el resultado: 2020-08-05
 ```
 
-Puedes jugar con diferentes valores para los argumentos y probar distintas unidades de tiempo para ver cómo afecta al resultado. También puedes utilizar otras funciones del módulo `DateTime` para manipular las fechas de diferentes maneras.
+Como puedes ver, simplemente añadimos 14 días a la fecha inicial y obtuvimos la fecha dentro de 2 semanas. También puedes cambiar la unidad de tiempo a semanas, meses o años según tus necesidades.
 
-## Profundizando en el cálculo de fechas en Elixir
+## Profundizando
 
-Ahora que sabes cómo calcular una fecha en el futuro o en el pasado, puede que te preguntes qué tipo de cálculos más complejos puedes hacer con fechas en Elixir. Una de las posibilidades es determinar el día de la semana en el que cae una fecha específica. Para hacerlo, podemos utilizar la función `day_of_week/1` del módulo `DateTime`, que devuelve un número del 1 al 7 correspondiente al día de la semana (lunes a domingo).
+Aunque la función ```Date.add``` es útil para calcular fechas en el futuro o pasado, también hay otras funciones que se pueden utilizar para hacer cálculos más complejos. Por ejemplo, la función ```Date.diff``` te permite obtener la diferencia entre dos fechas en días, semanas, meses o años. También hay funciones para obtener el primer o último día del mes y funciones para validar si una fecha es válida o no.
 
-```Elixir
-iex> date = ~D[2021-10-13]
-~D[2021-10-13]
-iex> DateTime.day_of_week(date) # nos devuelve el día de la semana (3 es miércoles)
-3
-```
+En resumen, el cálculo de fechas en el futuro o pasado en Elixir es muy fácil y hay varias funciones útiles que puedes utilizar para hacer cálculos más complejos. ¡Ahora tienes una nueva habilidad para sorprender a tus amigos en la próxima fiesta!
 
-Esto puede ser especialmente útil si, por ejemplo, queremos programar una tarea para que se ejecute solo en ciertos días de la semana.
+## Ver También
 
-## Mira también
-
-¡Ahora ya sabes cómo calcular fechas en el futuro o en el pasado en Elixir! Si quieres aprender más sobre el manejo de fechas y tiempos en Elixir, puedes consultar la documentación oficial, [este blog post](https://learningelixir.jot.com/WikiHome/ElixirTricks) y [este tutorial](http://wsmoak.net/2016/09/13/manipulate-dates-and-times-with-elixir.html). ¡Diviértete programando!
+- Documentación de Elixir sobre fechas: https://hexdocs.pm/elixir/Date.html
+- Tutorial de Elixir sobre fechas: https://elixir-lang.org/getting-started/dates-times-and-strings.html#dates-and-times-in-elixir
+- Ejemplos de código para calcular fechas en Elixir: https://gist.github.com/aaronrenner/155add21f5d572ccd193c5c6bd0a4bb5

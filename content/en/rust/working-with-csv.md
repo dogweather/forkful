@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Rust recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,115 +12,110 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-CSV (Comma-Separated Values) is a common file format for storing tabular data. If you are working with data analysis or manipulating large datasets, understanding how to work with CSV files can be incredibly useful. In this tutorial, we will explore how to work with CSV files in Rust. Whether you are a beginner or an experienced programmer, Rust's strong type system and memory safety will make CSV manipulation a breeze.
+CSV (Comma-Separated Values) is a widely used file format for storing and exchanging tabular data. As a Rust programmer, learning how to work with CSV can greatly expand your skills and allow you to handle a wide variety of data formats.
 
 ## How To
 
-Before diving into code, let's first take a look at a sample CSV file that we will be working with. Suppose we have a CSV file called `cars.csv` containing information about different car models and their specifications.
+To start working with CSV in Rust, we first need to add the `csv` crate to our project's dependencies. This can be done by adding the following line to our `Cargo.toml` file:
 
 ```
-Make, Model, Year, Price
-Toyota, Camry, 2018, $24,000
-Honda, Civic, 2017, $19,500
-Ford, Mustang, 2016, $30,000
-```
-
-To read this file in Rust, we first need to add the `csv` crate to our `Cargo.toml` file:
-
-```
-[dependencies]
 csv = "1.1.1"
 ```
 
-Now, let's open and read the file using the `csv` crate:
+Next, let's import the `csv` crate in our code by adding the line `use csv;` to the top of our file. Now, we can start reading and writing CSV files using the functionalities provided by the `csv` crate.
 
-```rust
-use csv::ReaderBuilder;
+### Reading CSV
 
-fn main() {
-    let mut reader = ReaderBuilder::new()
-        .has_headers(true)
-        .from_path("cars.csv")
-        .unwrap();
+Let's say we have a CSV file named `data.csv` with the following content:
 
-    for result in reader.records() {
-        let record = result.unwrap();
-        let make: String = record[0].to_string();
-        let model: String = record[1].to_string();
-        let year: u32 = record[2].parse().unwrap();
-        let price: f64 = record[3].parse().unwrap();
+```
+Name,Age,Occupation
+John,25,Software Engineer
+Jane,28,Data Analyst
+Mike,31,Project Manager
+```
 
-        println!("The {} {} {} costs ${}", year, make, model, price);
-    }
+To read this file in Rust, we can use the `Reader` struct from the `csv` crate. Here's an example of how we can read the `data.csv` file and print out its contents:
+
+```
+use csv::Reader;
+
+let mut reader = Reader::from_path("data.csv").expect("Failed to open CSV file.");
+for result in reader.records() {
+    let record = result.expect("Failed to read record.");
+    println!("{:?}", record);
 }
 ```
 
-Running this code will give us the following output:
+When we run this code, we should see the following output:
 
 ```
-The 2018 Toyota Camry costs $24000.0
-The 2017 Honda Civic costs $19500.0
-The 2016 Ford Mustang costs $30000.0
+["John", "25", "Software Engineer"]
+["Jane", "28", "Data Analyst"]
+["Mike", "31", "Project Manager"]
 ```
 
-Here, we used a `Reader` from the `csv` crate to read the CSV file and extract data from each row. Notice how we had to specify the data type for each value. In Rust, CSV data is represented as a `String` by default, so we need to explicitly convert it to the appropriate type.
+### Writing CSV
+
+In addition to reading CSV files, the `csv` crate also allows us to write CSV files. Let's say we have a `Vec` of `Person` structs, each representing a person's name, age, and occupation. Here's an example of how we can write this data to a CSV file named `people.csv`:
+
+```
+use csv::Writer;
+
+struct Person {
+    name: String,
+    age: u8,
+    occupation: String,
+}
+
+let people = vec![
+    Person {
+        name: "John".to_string(),
+        age: 25,
+        occupation: "Software Engineer".to_string(),
+    },
+    Person {
+        name: "Jane".to_string(),
+        age: 28,
+        occupation: "Data Analyst".to_string(),
+    },
+    Person {
+        name: "Mike".to_string(),
+        age: 31,
+        occupation: "Project Manager".to_string(),
+    },
+];
+
+let file = File::create("people.csv").expect("Failed to create CSV file.");
+let mut writer = Writer::from_writer(file);
+
+for person in &people {
+    writer.write_record(vec![
+        person.name.as_str(),
+        person.age.to_string().as_str(),
+        person.occupation.as_str(),
+    ]).expect("Failed to write to CSV file.");
+}
+
+writer.flush().expect("Failed to flush writer.");
+```
+
+After running this code, we should have a `people.csv` file with the following contents:
+
+```
+John,25,Software Engineer
+Jane,28,Data Analyst
+Mike,31,Project Manager
+```
 
 ## Deep Dive
 
-Now that we have seen how to read a CSV file, let's dive deeper and explore some other common operations that we may need to perform.
+The `csv` crate offers many more functionalities for handling CSV files, such as custom delimiters, quoting characters, and encoding. It also provides options for handling errors and headers in CSV files. For more information on how to use the `csv` crate, be sure to check out its documentation.
 
-### Writing to a CSV file
+## See Also
 
-We can also use the `Writer` from the `csv` crate to create new CSV files or append data to existing ones. Here's an example of how we can write data to a new CSV file:
+Here are some useful links to learn more about working with CSV in Rust:
 
-```rust
-use csv::Writer;
-
-fn main() {
-    let mut writer = Writer::from_path("new_cars.csv").unwrap();
-
-    writer.write_record(&["Make", "Model", "Year", "Price"]).unwrap();
-    writer.write_record(&["Chevrolet", "Corvette", "2021", "$60,000"]).unwrap();
-    writer.write_record(&["BMW", "X5", "2020", "$70,000"]).unwrap();
-
-}
-```
-
-Running this code will create a new file called `new_cars.csv` with the following content:
-
-```
-Make,Model,Year,Price
-Chevrolet,Corvette,2021,$60,000
-BMW,X5,2020,$70,000
-```
-
-### Working with headers
-
-In the previous examples, we have been assuming that our CSV file has headers (i.e. the first row contains the names of each column). However, if our file doesn't have headers, we can use the `ReaderBuilder` to specify that and access the data differently:
-
-```rust
-use csv::ReaderBuilder;
-
-fn main() {
-    let mut reader = ReaderBuilder::new()
-        .has_headers(false)
-        .from_path("cars.csv")
-        .unwrap();
-
-    for result in reader.records() {
-        let record = result.unwrap();
-        let make: String = record[0].to_string();
-        let model: String = record[1].to_string();
-        let year: u32 = record[2].parse().unwrap();
-        let price: f64 = record[3].parse().unwrap();
-
-        println!("The {} {} {} costs ${}", year, make, model, price);
-    }
-}
-```
-
-In this case, we access the data by index instead of using the header names.
-
-### Dealing with errors
-
-When working with real-world data, it's important to handle errors gracefully. In CSV manipulation, we may encounter errors such as missing data or incompatible data types. Luckily, the `csv` crate provides us with methods
+- [csv documentation](https://docs.rs/csv/1.1.1/csv/)
+- [Rust Programming Language website](https://www.rust-lang.org/)
+- [Rust community forum](https://users.rust-lang.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Leyendo un archivo de texto"
-simple_title:         "Leyendo un archivo de texto"
+title:                "Lectura de un archivo de texto"
+html_title:           "Bash: Lectura de un archivo de texto"
+simple_title:         "Lectura de un archivo de texto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -9,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué leer un archivo de texto en Bash
+## ¿Por qué leer un archivo de texto?
 
-¿Alguna vez te has preguntado cómo puedes leer y manipular un archivo de texto usando Bash? Aprender a hacerlo puede ser increíblemente útil, ya que te permitirá automatizar tareas y procesar información de manera más eficiente. En este artículo, te mostraremos cómo leer un archivo de texto en Bash y profundizaremos en algunos conceptos importantes sobre este tema.
+Si eres un programador o un usuario de Linux, es muy probable que en algún momento necesites leer un archivo de texto en la línea de comandos. Ya sea para revisar un documento, leer un archivo de configuración o extraer datos de un archivo, saber cómo leer un archivo de texto en Bash es una habilidad esencial.
 
 ## Cómo hacerlo
 
-Para leer un archivo de texto en Bash, podemos utilizar el comando `cat`. Por ejemplo, si tenemos un archivo llamado "nombres.txt" con una lista de nombres, podemos usar el siguiente comando para imprimir el contenido del archivo en la terminal:
+La forma más sencilla de leer un archivo de texto en Bash es usando el comando `cat`. Este comando imprimirá el contenido completo del archivo en la línea de comandos. Por ejemplo, si queremos leer el archivo "ejemplo.txt", podemos escribir lo siguiente en la terminal:
 
 ```Bash
-cat nombres.txt
+cat ejemplo.txt
 ```
 
-El resultado sería una lista con los nombres contenidos en el archivo, uno en cada línea. Podemos también almacenar el contenido del archivo en una variable para posteriormente manipularlo. Por ejemplo:
+Esto imprimirá el contenido del archivo en la terminal. Si el archivo es muy grande, puede ser útil usar la opción `less` en lugar de `cat`. Esto nos permitirá desplazarnos por el archivo con las teclas de flecha y la tecla "q" para salir.
 
 ```Bash
-nombres=$(cat nombres.txt)
+less ejemplo.txt
 ```
 
-Ahora la variable `nombres` contiene una cadena con todos los nombres del archivo de texto. También podemos utilizar el comando `read`, que nos permitirá leer cada línea del archivo de texto y almacenarla en una variable. Por ejemplo:
+Si queremos guardar el contenido del archivo en una variable, podemos usar la redirección de entrada (`<`) y el comando `read`. Por ejemplo, si queremos almacenar el contenido del archivo "ejemplo.txt" en la variable `texto`, podemos hacer lo siguiente:
 
 ```Bash
-while read linea; do
-  echo "El nombre es: $linea"
-done < nombres.txt
+read texto < ejemplo.txt
 ```
 
-Este código recorre cada línea del archivo y la imprime en la pantalla precedida por "El nombre es:". Ten en cuenta que para poder usar el comando `read`, debemos usar el operador `<` seguido del nombre del archivo que queremos leer.
+## Profundizando
 
-## Profundizando en la lectura de archivos de texto
+Hay varios comandos y herramientas que puedes utilizar para leer un archivo de texto en Bash. Algunas opciones son: `head` para mostrar las primeras líneas del archivo, `tail` para mostrar las últimas líneas, `grep` para buscar patrones específicos en el archivo, entre otros.
 
-Ahora que ya sabemos cómo leer archivos de texto en Bash, es importante recordar algunos aspectos importantes al trabajar con ellos. Por ejemplo, es posible que nuestro archivo contenga espacios en blanco o caracteres especiales que puedan causar errores al leerlo. Para solucionar esto, podemos utilizar el comando `IFS` para especificar un delimitador al leer cada línea del archivo. Por ejemplo, si nuestro archivo está separado por comas, podemos usar lo siguiente:
+Además, Bash también nos permite utilizar expresiones regulares para filtrar y procesar el contenido de un archivo de texto. Esto puede ser muy útil si estamos trabajando con datos estructurados en un archivo.
 
-```Bash
-while IFS=',' read -r nombre apellido; do
-  echo "El nombre es: $nombre y el apellido es: $apellido"
-done < nombres.txt
-```
+## Vea también
 
-De esta manera, cada línea del archivo será asignada a las variables `nombre` y `apellido`, separadas por la coma especificada en `IFS`.
-
-Otro tema importante a tener en cuenta al leer archivos de texto en Bash es el manejo de errores. Si nuestro archivo no existe o no tiene permisos de lectura, nuestro script puede fallar. Para evitar esto, podemos usar una estructura `if` para verificar si el archivo existe y si podemos leerlo. En caso contrario, podemos mostrar un mensaje de error o finalizar el script.
-
-## Ver también
-
-- [Bash Reference Manual: Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Bash Guide for Beginners: Reading files](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html)
+- [10 comandos básicos de Bash que deberías conocer](https://dev.to/lucis/10-bash-comandos-que-deberas-conocer-2p2j)
+- [Cómo trabajar con archivos y directorios en Bash](https://linuxize.com/post/bash-check-if-file-exists/)
+- [La guía completa de expresiones regulares en Bash](https://www.regular-expressions.info/posix.html)

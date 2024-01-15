@@ -1,5 +1,6 @@
 ---
-title:                "C#: Створення тимчасового файлу"
+title:                "Створення тимчасового файлу"
+html_title:           "C#: Створення тимчасового файлу"
 simple_title:         "Створення тимчасового файлу"
 programming_language: "C#"
 category:             "C#"
@@ -9,38 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Чому:
+## З чого почати
 
-Створення тимчасових файлів є важливим аспектом програмування у C#. Це допомагає оптимізувати і зберігати ресурси, а також захищає від можливих помилок або витоку пам'яті.
+Створення тимчасового файлу - це корисний процес, який може бути використаний в багатьох програмах. Чи є це тестування програмного забезпечення або зберігання тимчасової інформації, створення тимчасового файлу допоможе вам здійснити вашу задачу з легкістю.
 
-##Як створити тимчасовий файл в C#
-
-Існує декілька способів створення тимчасового файлу в C#, але простий із них - використання класу "System.IO.Path". У нього є метод "GetTempFileName()", який автоматично створює унікальне ім'я для тимчасового файлу. Після цього файл можна створити, використовуючи це ім'я.
+## Як це зробити
 
 ```C#
-string tempFile = System.IO.Path.GetTempFileName();
-Console.WriteLine("Новий тимчасовий файл: " + tempFile);
+using System;
+using System.IO;
 
-// Output: Новий тимчасовий файл: C:\Users\Username\AppData\Local\Temp\tmpAAC2.tmp
+namespace TemporaryFile
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Створення тимчасового файлу у директорії за замовчуванням
+            string tempFile = Path.GetTempFileName();
+            Console.WriteLine("Тимчасовий файл створено: {0}", tempFile);
+
+            // Записати у тимчасовий файл
+            using (StreamWriter writer = new StreamWriter(tempFile))
+            {
+                writer.WriteLine("Вітаю, це тимчасовий файл!");
+            }
+
+            // Прочитати дані з тимчасового файлу
+            using (StreamReader reader = new StreamReader(tempFile))
+            {
+                string contents = reader.ReadToEnd();
+                Console.WriteLine("Вміст тимчасового файлу: {0}", contents);
+            }
+
+            // Видалити тимчасовий файл
+            File.Delete(tempFile);
+            Console.WriteLine("Тимчасовий файл успішно видалено!");
+        }
+    }
+}
 ```
 
-Крім цього, можна встановити бажане розширення для тимчасового файлу, використовуючи метод "GetTempPath()" та "GetRandomFileName()".
+Вищенаведений код показує, як створити, записати та прочитати дані з тимчасового файлу за допомогою класів з простору імен System.IO. Зверніть увагу, що після використання тимчасового файлу, його необхідно видалити за допомогою методу File.Delete().
 
-```C#
-string tempPath = System.IO.Path.GetTempPath();
-string tempFile = System.IO.Path.GetRandomFileName() + ".txt";
-string fullTempPath = System.IO.Path.Combine(tempPath, tempFile);
-Console.WriteLine("Новий тимчасовий файл: " + fullTempPath);
+## Глибше
 
-// Output: Новий тимчасовий файл: C:\Users\Username\AppData\Local\Temp\bb4nc34x.txt
-```
+Створення тимчасового файлу слід використовувати з обережністю, оскільки це може призвести до зайвого використання місця на диску. Краще використовувати цей процес, коли необхідно працювати з невеликими об'ємами даних або як тимчасовий засіб для розв'язання певної задачі. Крім того, навіть видаляючи тимчасовий файл після використання, необхідно впевнитися, що він був видалений успішно, щоб уникнути ситуації, коли він залишається на диску і споживає місце.
 
-##Глибока погруження
+## Дивіться також
 
-Після створення тимчасового файлу, важливо виконати його очищення після завершення роботи. Для цього можна використовувати метод "Dispose()", який буде видаляти сформований файл. Для більш складної роботи з тимчасовими файлами, можна використовувати клас "System.IO.FileStream", який дозволяє встановлювати різні настройки і доступи до файлу.
-
-##Дивись також
-
-- [Клас "System.IO.Path" в MSDN](https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=netcore-3.1)
-- [Клас "System.IO.FileStream" в MSDN](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netcore-3.1)
-- [Стаття про тимчасові файли в C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-temporary-files)
+- [Документація Microsoft про створення тимчасових файлів в C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-create-a-temporary-file)
+- [Більш докладний опис тимчасових файлів на Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)

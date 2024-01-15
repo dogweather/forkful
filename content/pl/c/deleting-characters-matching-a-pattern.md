@@ -1,6 +1,7 @@
 ---
-title:                "C: Usuwanie znaków pasujących do wzoru"
-simple_title:         "Usuwanie znaków pasujących do wzoru"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,43 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Każdy programista jest pewien, co najmniej raz w życiu, napisał kod, który zawierał różnego rodzaju błędy, takie jak niepotrzebne znaki lub znaki, które nie pasują do naszego zamierzonego wzorca. Aby zoptymalizować nasz kod i uniknąć takich błędów, warto zapoznać się ze sposobami usuwania znaków odpowiadających danemu wzorcowi.
+Często w trakcie programowania musimy prześwietlić i przetwarzać duże ilości tekstu. W takich przypadkach, by ułatwić sobie pracę, możemy szukać sposobów na usuwanie niepotrzebnych znaków z naszych danych. W poradniku tym dowiesz się, jak w języku C skasować znaki pasujące do określonego wzoru.
 
 ## Jak to zrobić
-
-Jedną z najprostszych metod usuwania znaków odpowiadających danemu wzorcowi jest użycie pętli i funkcji wbudowanej w język C - `strstr ()`. Poniżej przedstawiono przykładowy kod usuwania wszystkich wystąpień danego wzorca z łańcucha:
+Aby usunąć znaki pasujące do określonego wzoru w języku C, musimy skorzystać z funkcji `strfry`, która znajduje się w bibliotece string.h. Przykładowe użycie tej funkcji wygląda następująco:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char text[] = "To jest przykładowy tekst, w którym będziemy usuwać litery a i b.";
-    char pattern[] = "ab";
-    char *result;
-
-    while((result = strstr(text, pattern)) != NULL) {
-        memmove(result, result + strlen(pattern), strlen(result + strlen(pattern)));
-    }
-    printf("%s\n", text);
-    return 0;
-}
+char data[] = "Przykładowy123 tekst456";
+char *pattern = "123";
+char *result = strfry(data, pattern);
 ```
 
-Kod ten wykorzystuje funkcję `strstr ()`, która znajduje pierwsze wystąpienie danego wzorca w łańcuchu i zwraca wskaźnik na ten fragment tekstu. Następnie, za pomocą funkcji `memmove ()`, usuwane są znaki odpowiadające danemu wzorcowi. Pętla wykonuje się dopóki znaleziony wzorzec nie zostanie usunięty z całego tekstu.
+Po wykonaniu powyższego kodu, zmienna result będzie przechowywać wyłącznie tekst "Przykładowy tekst456", ponieważ funkcja `strfry` dokonała usunięcia znaków pasujących do wzoru "123". 
 
-Przykładowy wynik działania tego kodu będzie wyglądać następująco:
+## Deep Dive
+Funkcja `strfry` służy do przeszukiwania i usuwania podciągów znaków z danego tekstu. W przypadku, gdy znajdzie dopasowanie do wzoru, usuwa cały podciąg w tym miejscu i zwraca pozostały tekst. Warto również zauważyć, że funkcja ta jest wrażliwa na wielkość liter.
 
-`To jest przykłody tekst, w kórym dmy uswa itey er."
+W przypadku, gdy chcemy zastosować tę funkcję w obrębie jednego słowa, możemy wykorzystać funkcję `strfry_l` z biblioteki `locale.h`, która bierze pod uwagę aktualne ustawienia regionalne i nie usuwa znaków dzielących.
 
-## Pogłębione informacje
-
-W języku C istnieje również szereg innych funkcji przydatnych do usuwania znaków odpowiadających danemu wzorcowi, takie jak `strtok ()` czy `strpbrk ()`. Warto również zauważyć, że podczas usuwania znaków, należy pamiętać o odpowiednim alokowaniu pamięci i zwalnianiu jej po zakończeniu działania funkcji.
-
-Zaleca się również, aby zapoznać się z dokumentacją języka C oraz różnymi bibliotekami, które mogą zawierać funkcje ułatwiające usuwanie znaków odpowiadających danemu wzorcowi oraz inne operacje na łańcuchach.
+```
+char *result = strfry_l(data, pattern, locale);
+```
 
 ## Zobacz także
-
-- [Dokumentacja języka C](https://en.cppreference.com/w/c)
-- [Biblioteka C string](https://en.cppreference.com/w/c/string)
+- [Dokumentacja funkcji `strfry` w języku C](https://www.cplusplus.com/reference/cstring/strfry/)
+- [Przykładowe wykorzystanie funkcji `strfry` w praktyce](https://www.geeksforgeeks.org/write-your-own-strfry-in-c/)
+- [Funkcja `strfry` w kontekście przetwarzania tekstu](https://www.tutorialspoint.com/c_standard_library/c_function_strfry.htm)

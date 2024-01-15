@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Java recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Java"
 category:             "Java"
@@ -9,116 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever needed to compare two dates in a Java program? Maybe you want to check if a certain event is happening before or after another. Or perhaps you need to calculate the time difference between two dates. Whatever your reason may be, learning how to compare dates in Java can come in handy in many situations.
+As a developer, it is important to properly compare dates in Java in order to ensure accurate data analysis and manipulation. This skill is crucial when working with time-sensitive applications or when handling data from multiple sources.
 
-## How To 
+## How To
 
-To compare dates in Java, we will be using the `java.util.Date` class. This class represents a specific moment in time and has methods to perform various operations on dates. Here is an example of comparing two dates using the `before()` and `after()` methods:
+To compare two dates in Java, we will use the `LocalDate` class from the `java.time` package. This class provides useful methods for date comparison and manipulation.
 
-```Java
-import java.util.Date;
+First, we will create two `LocalDate` objects using the `of()` method and passing in the respective dates in `YYYY-MM-DD` format.
 
-public class DateComparisonExample {
-
-    public static void main(String[] args) {
-        // Create two sample dates
-        Date date1 = new Date();
-        Date date2 = new Date(2020, 7, 23); // Year, month, day
-
-        // Compare dates
-        if (date1.before(date2)) {
-            System.out.println("Date 1 is before Date 2");
-        } else {
-            System.out.println("Date 2 is before Date 1");
-        }
-
-        if (date1.after(date2)) {
-            System.out.println("Date 1 is after Date 2");
-        } else {
-            System.out.println("Date 2 is after Date 1");
-        }
-    }
-}
+```
+Java
+LocalDate date1 = LocalDate.of(2021, 5, 10);
+LocalDate date2 = LocalDate.of(2021, 8, 14);
 ```
 
-Output:
+We can now use the `isBefore()` and `isAfter()` methods to compare these dates. These methods return a boolean value, `true` if the first date is before or after the second date, and `false` if they are equal.
+
 ```
-Date 1 is after Date 2
-Date 2 is before Date 1
-```
-
-You can also use the `compareTo()` method to compare two dates. This method returns an integer value based on the comparison result, with a positive value indicating Date 1 is after Date 2, a negative value indicating Date 1 is before Date 2, and 0 indicating both dates are equal. Here is an example:
-
-```Java
-import java.util.Date;
-
-public class DateComparisonExample {
-
-    public static void main(String[] args) {
-        // Create two sample dates
-        Date date1 = new Date();
-        Date date2 = new Date(2020, 7, 23); // Year, month, day
-
-        // Compare dates
-        int result = date1.compareTo(date2);
-        if (result > 0) {
-            System.out.println("Date 1 is after Date 2");
-        } else if (result < 0) {
-            System.out.println("Date 1 is before Date 2");
-        } else {
-            System.out.println("Both dates are equal");
-        }
-    }
-}
+Java
+date1.isBefore(date2); // returns true
+date1.isAfter(date2);  // returns false
 ```
 
-Output: 
+Similarly, we can use the `isEqual()` method to check if the two dates are equal.
+
 ```
-Date 1 is after Date 2
-```
-
-## Deep Dive 
-
-While comparing two dates may seem like a simple task, it is important to understand that when using the `Date` class, the comparison is based on the millisecond values of the dates. This means that the result of the comparison can be affected by factors like time zones, leap seconds, and daylight saving time. 
-
-To avoid these issues, it is recommended to use the newer `java.time` package introduced in Java 8. This package provides the `LocalDate` and `LocalDateTime` classes which can be used to compare dates without any time zone or daylight saving time complications. Here is an example:
-
-```Java
-import java.time.LocalDate;
-
-public class DateComparisonExample {
-
-    public static void main(String[] args) {
-        // Create two sample dates
-        LocalDate date1 = LocalDate.now();
-        LocalDate date2 = LocalDate.of(2020, 7, 23); // Year, month, day
-
-        // Compare dates
-        if (date1.isBefore(date2)) {
-            System.out.println("Date 1 is before Date 2");
-        } else {
-            System.out.println("Date 2 is before Date 1");
-        }
-
-        if (date1.isAfter(date2)) {
-            System.out.println("Date 1 is after Date 2");
-        } else {
-            System.out.println("Date 2 is after Date 1");
-        }
-    }
-}
+Java
+date1.isEqual(date2);  // returns false
 ```
 
-Output:
+We can also use the `compareTo()` method, which returns an integer value depending on the comparison result. If the first date is before the second date, it returns a negative number; if the dates are equal, it returns 0, and if the first date is after the second date, it returns a positive number.
+
 ```
-Date 1 is after Date 2
-Date 2 is before Date 1
+Java
+date1.compareTo(date2);  // returns -92
 ```
 
-## See Also 
+This method is useful when we need to sort dates in a specific order.
 
-- [Comparing Dates in Java](https://www.baeldung.com/java-compare-dates)
-- [Comparison of dates in Java](https://www.javatpoint.com/compare-dates-in-java)
-- [Date and Time Tutorial](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+## Deep Dive
+
+When comparing dates, we should also consider the time zone and daylight saving time (DST) changes. The `LocalDate` class only deals with dates, not time or time zones. To handle time and time zone differences, we can use the `ZonedDateTime` class from the same package.
+
+We can use the `atStartOfDay()` method to get the start of the day in the system's default time zone. This will default to the local time zone but can be customized to a specific time zone using the `ZoneId` class.
+
+```
+Java
+ZonedDateTime date1 = LocalDate.of(2021, 5, 10).atStartOfDay(); // default time zone
+ZonedDateTime date2 = LocalDate.of(2021, 8, 14).atStartOfDay(ZoneId.of("Europe/Paris")); // customized time zone
+```
+
+We can then compare the `ZonedDateTime` objects using the same methods as before.
+
+```
+Java
+date1.isBefore(date2); // returns true
+date1.isAfter(date2);  // returns false
+```
+
+It is also important to consider DST changes when comparing dates. We can use the `withEarlierOffsetAtOverlap()` and `withLaterOffsetAtOverlap()` methods to handle ambiguous DST overlaps. These methods will adjust the date and time based on the earlier or later offset during an overlap.
+
+```
+Java
+// Assuming DST changes on 2021-10-31 at 2:00AM in the local time zone
+ZonedDateTime date1 = ZonedDateTime.of(2021, 10, 31, 1, 30, 0, 0, ZoneId.systemDefault());
+ZonedDateTime date2 = ZonedDateTime.of(2021, 10, 31, 3, 30, 0, 0, ZoneId.systemDefault());
+date1.compareTo(date2);  // returns 0
+date1 = date1.withEarlierOffsetAtOverlap();
+date1.compareTo(date2);  // returns -1
+```
+
+## See Also
+
+- [Java Documentation on Comparing Dates](https://docs.oracle.com/javase/tutorial/datetime/iso/meaning.html)
+- [ZoneId Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html)
+- [ZonedDateTime Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)

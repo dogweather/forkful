@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규식을 사용하는 방법"
+html_title:           "TypeScript: 정규식을 사용하는 방법"
+simple_title:         "정규식을 사용하는 방법"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,62 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-자바스크립트에서 정규 표현식을 사용하는 이유는 문자열에서 패턴을 찾거나 대체, 분리할 수 있기 때문입니다.
+정규 표현식을 사용하는 이유의 목적은 입력된 문자열에서 원하는 패턴을 찾기 위해서 입니다. 이를 통해 빠르고 정확하게 원하는 데이터를 추출할 수 있습니다.
 
 ## 사용 방법
 
-정규 표현식을 사용하는 방법은 간단합니다. 먼저, `RegExp` 객체를 사용하여 패턴을 만들어야 합니다. 그 다음 `test()` 메소드를 사용하여 해당 패턴이 문자열에 존재하는지 확인할 수 있습니다. 만약 문자열에서 패턴을 찾는다면 `true`를 반환하고, 찾지 못한다면 `false`를 반환합니다.
-
 ```TypeScript
-const regex = /hello/;
+// 단어 'apple'을 검색하는 정규 표현식
+let re = /apple/;
 
-// 문자열에서 패턴이 존재하는지 확인
-console.log(regex.test("hello world")); // 결과: true
-console.log(regex.test("goodbye world")); // 결과: false
+// 문자열에서 정규 표현식과 일치하는 단어 찾기
+let result = re.exec("I love apples");
+console.log(result[0]); // 'apple'
 ```
 
-또한, `match()` 메소드를 사용하여 문자열에서 패턴에 맞는 부분을 찾아 배열로 반환할 수 있습니다.
+위의 예시에서 볼 수 있듯이, 정규 표현식은 `/`사이에 원하는 패턴을 작성하여 사용합니다. `exec` 메소드는 일치하는 첫 번째 결과를 배열로 반환하고, `result[0]`을 통해 해당 결과에 접근할 수 있습니다.
 
 ```TypeScript
-const regex = /hello/;
+// 숫자만을 가진 문자열에서 숫자를 찾는 정규 표현식
+let re = /\d+/;
 
-// 문자열에서 패턴에 맞는 부분 찾기
-console.log("hello world".match(regex)); // 결과: ["hello"]
-console.log("goodbye world".match(regex)); // 결과: null
+// 문자열에서 숫자만을 추출하여 배열로 반환
+let result = "I have 4 apples".match(re);
+console.log(result); // ['4']
 ```
 
-정규 표현식은 패턴을 나타내는 문자열이기 때문에 변수를 사용할 수도 있습니다. `RegExp()` 생성자 함수를 사용하여 동적으로 패턴을 만들 수 있습니다.
+또 다른 예시로, `match` 메소드를 사용하여 정규 표현식과 일치하는 부분을 추출하는 방법을 보여드렸습니다. `/` 사이에 있는 `\d+`는 0부터 9까지의 숫자 중 하나 이상이 있는지를 검사하는 패턴입니다. 따라서 `"I have 4 apples"`에서 `4`만 추출됩니다.
 
-```TypeScript
-const name = "John";
-const regex = new RegExp(`Hello, ${name}!`);
+## 깊이 알아보기
 
-console.log(regex.test("Hello, John!")); // 결과: true
-console.log(regex.test("Hello, Jane!")); // 결과: false
-```
+정규 표현식은 문자열에서 패턴을 찾는 데에만 사용되는 것이 아닙니다. 많은 프로그래밍 언어에서 정규 표현식을 지원하고 있으며, 여러분의 필요에 따라 파일 검색, 데이터 분석 등 다양한 용도로 사용할 수 있습니다.
 
-## 깊이 파고들기
+또한 정규 표현식에서는 다양한 메타 문자와 플래그를 사용할 수 있습니다. 메타 문자는 특별한 의미를 가지고 있으며, 주로 검색 패턴을 더 유연하게 만들어줍니다. 플래그는 검색 대상에 대한 옵션을 설정하는 역할을 하며, 예를 들어 대소문자 구분 여부를 결정할 수 있습니다.
 
-정규 표현식에는 다양한 메타 문자와 기능이 있습니다. 간단한 예제로는 `^`를 사용하여 문자열의 시작을 나타낼 수 있고, `$`를 사용하여 문자열의 끝을 나타낼 수 있습니다.
+## 참고
 
-```TypeScript
-const regex = /^Hello/; // 문자열의 시작이 "Hello"로 시작하는지 확인하는 패턴
-
-console.log(regex.test("Hello, world!")); // 결과: true
-console.log(regex.test("Goodbye, world!")); // 결과: false
-```
-
-또한 `()`를 사용하여 그룹을 만들 수 있고, `|`를 사용하여 여러 패턴 중 하나를 찾을 수 있습니다.
-
-```TypeScript
-const regex = /(hello|goodbye) world/; // "hello world" 또는 "goodbye world" 패턴을 찾는 그룹
-
-console.log("hello world".match(regex)); // 결과: ["hello world"]
-console.log("goodbye world".match(regex)); // 결과: ["goodbye world"]
-```
-
-더 자세한 정보는 [MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp)를 참고하세요.
-
-## 관련 정보
-
-[TypeScript 공식 문서](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)에서도 정규 표현식에 대해 더 많은 정보를 확인할 수 있습니다. 또한 [자바스크립트에 대한 정규 표현식 강좌](https://regexone.com/)를 통해 연습해보세요.
+- [MDN 정규 표현식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [정규 표현식 테스트 사이트](https://regexr.com/)

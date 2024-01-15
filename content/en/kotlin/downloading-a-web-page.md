@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Kotlin recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,43 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Downloading a Web Page is Important
+## Why
 
-In today's digital age, having access to information is crucial. Downloading a web page allows you to have offline access to important resources, whether it be for research, reference, or entertainment.
+If you've ever wanted to download a web page, whether it's for archiving purposes, offline viewing, or simply to save an interesting article, Kotlin offers a simple solution.
 
-# How To Download a Web Page using Kotlin
+## How To
 
-To download a web page using Kotlin, you will need to use the `URL` and `BufferedReader` classes from the `java.net` package. First, you will need to create a `URL` object with the desired web page's URL. Then, you can use the `openStream()` method to open a connection to the web page.
+To download a web page in Kotlin, we can use the `URL` and `BufferedReader` classes from the Java API. First, we need to import these classes:
 
-```
-Kotlin
+```Kotlin
 import java.net.URL
 import java.io.BufferedReader
+```
 
+Next, we'll specify the URL of the web page we want to download and use the `URL` class to open a connection to that URL:
+
+```Kotlin
 val url = URL("https://www.example.com")
-val connection = url.openStream()
+val connection = url.openConnection()
 ```
 
-Once the connection is opened, you can use a `BufferedReader` to read the content of the web page. The `BufferedReader` class provides a `readLine()` method, which reads the web page's content line by line and stores it in a string variable.
+Once we have a connection, we can read the contents of the web page using a `BufferedReader` and its `readLine()` method in a loop:
 
+```Kotlin
+val reader = BufferedReader(InputStreamReader(connection.inputStream))
+var inputLine: String?
+
+while (reader.readLine().also { inputLine = it } != null) {
+    println(inputLine)
+}
 ```
-Kotlin
-val reader = BufferedReader(InputStreamReader(connection))
-var content = ""
-reader.useLines { lines -> lines.forEach { content += it } }
-println(content)
+
+This will print out the HTML source code of the web page. We can also store this content in a variable for further processing:
+
+```Kotlin
+val content = StringBuilder()
+while (reader.readLine().also { inputLine = it } != null) {
+    content.append(inputLine)
+}
 ```
 
-The above code will print out the entire content of the web page. You can also specify a specific line or section of the web page that you want to read by using the `readLine()` method multiple times.
+And that's it! We now have the web page downloaded and stored in the `content` variable.
 
-# Deep Dive into Downloading a Web Page
+## Deep Dive
 
-Downloading a web page involves making a request to a server and receiving a response containing the page's HTML content. This can be done using various methods and classes, such as the `URLConnection` class or third-party libraries like Retrofit.
+When downloading a web page, there are a few things to keep in mind. First, the URL must be valid and accessible. If the web page requires authentication, we can use the `URLConnection` class to send authentication credentials. Additionally, the `BufferedReader` has methods for handling timeouts and redirections.
 
-Depending on the website, you may need to handle authentication or use different methods to retrieve the content. It is also important to consider performance and error handling when downloading web pages, as some websites may have large amounts of data or be prone to errors.
+It is also important to note that downloading a web page can be subject to copyright laws, so it's important to check the terms of use of the website before downloading any content.
 
-# See Also
+## See Also
 
-- [Java.net package documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.net/module-summary.html)
-- [Kotlin stdlib documentation](https://kotlinlang.org/api/latest/jvm/stdlib/)
-- [Retrofit documentation](https://square.github.io/retrofit/)
+- [Kotlin documentation on URL and BufferedReader](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l/index.html)
+- [Java documentation on URL and BufferedReader](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html)
+- [Download a file from URL using Kotlin](https://www.techiedelight.com/download-file-from-url-kotlin/)

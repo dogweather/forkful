@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Inviare una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Ruby: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Molti sviluppatori utilizzano le richieste HTTP con autenticazione di base per accedere e scambiare dati con applicazioni web. Questo può essere utile per creare integrazioni tra diversi sistemi o per accedere a risorse protette su un server. In questo articolo, esploreremo come inviare una richiesta HTTP con autenticazione di base utilizzando Ruby.
+Se stai sviluppando un'applicazione web o un'API, potresti aver bisogno di autenticazione di base per proteggerla e limitare l'accesso solo agli utenti autorizzati. Invio di una richiesta HTTP con autenticazione di base è un modo semplice ed efficace per garantire la sicurezza delle tue risorse.
 
-## Come Fare 
+## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base, possiamo utilizzare la libreria Net::HTTP di Ruby. Iniziamo importando la libreria nel nostro codice:
+Per inviare una richiesta HTTP con autenticazione di base in Ruby, puoi utilizzare la libreria ```Net::HTTP``` inclusa nella libreria standard di Ruby. Ecco un esempio di come creare un'istanza di ```Net::HTTP``` e inviare una richiesta GET con autenticazione di base:
 
-```Ruby
-require 'net/http'
 ```
-
-Successivamente, dobbiamo creare una nuova istanza della classe Net::HTTP, specificando l'URL del server a cui vogliamo fare la richiesta:
-
-```Ruby
-uri = URI('https://www.example.com') # sostituisci con l'URL desiderato
+uri = URI('http://esempio.com')
 http = Net::HTTP.new(uri.host, uri.port)
-```
-
-A questo punto, dobbiamo creare una nuova istanza della classe Net::HTTP::Get, specificando l'endpoint a cui vogliamo fare la richiesta:
-
-```Ruby
-request = Net::HTTP::Get.new(uri.request_uri) # sostituisci con l'endpoint desiderato
-```
-
-Ora, dobbiamo aggiungere le credenziali per l'autenticazione di base alla nostra richiesta. Per fare ciò, utilizziamo il metodo base64.encode64 per codificare il nome utente e la password in base64, e poi impostiamo l'header Authorization sulla nostra richiesta:
-
-```Ruby
-username = "username" # sostituisci con il tuo nome utente
-password = "password" # sostituisci con la tua password
-auth = "Basic " + Base64.encode64("#{username}:#{password}")
-request["Authorization"] = auth
-```
-
-Infine, possiamo effettuare la richiesta al server e ottenere la risposta:
-
-```Ruby
+request = Net::HTTP::Get.new(uri)
+request.basic_auth('nome_utente', 'password')
 response = http.request(request)
-puts response.body # stampa il corpo della risposta
+puts response.body 
 ```
 
-Con questo codice, dovresti essere in grado di inviare una richiesta HTTP con autenticazione di base e ottenere una risposta dal server.
+Il codice sopra invia una richiesta GET all'URL fornito e passa le credenziali di autenticazione tramite il metodo ```basic_auth```. Se la richiesta ha successo, il corpo della risposta verrà stampato a schermo.
 
-## Approfondimento
+## Approfondimenti
 
-L'autenticazione di base è uno dei vari metodi di autenticazione che possono essere utilizzati nelle richieste HTTP. Questo metodo richiede che il client includa le credenziali di accesso (nome utente e password) nella richiesta, codificate in base64. Tuttavia, questo metodo è considerato non sicuro perché le credenziali possono essere facilmente decodificate e lette. Alcuni dei metodi di autenticazione più sicuri includono OAuth e JSON Web Tokens (JWT).
+Per comprendere meglio come funziona l'autenticazione di base in una richiesta HTTP, è utile esaminare il formato dei dati che vengono inviati. L'autenticazione di base richiede che le credenziali siano codificate in Base64 e inserite all'interno dell'header ```Authorization```. Questo processo di codifica rende le credenziali leggibili solo al server e non ai possibili spettatori delle richieste HTTP. Puoi saperne di più sulla codifica Base64 e sull'header Authorization nella documentazione ufficiale di HTTP.
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione di Net::HTTP](https://ruby-doc.org/stdlib-2.6.4/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Panoramica sui metodi di autenticazione HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication) 
-- [Esempi di autenticazione HTTP con Ruby](https://www.rubyguides.com/2018/08/ruby-http-authentication/)
+- [Documentazione ufficiale di HTTP](https://tools.ietf.org/html/rfc2617)
+- [Libreria Net::HTTP di Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)

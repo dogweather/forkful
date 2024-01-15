@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 標準エラーへの書き込み"
-simple_title:         "標準エラーへの書き込み"
+title:                "標準エラーに書き込む"
+html_title:           "Arduino: 標準エラーに書き込む"
+simple_title:         "標準エラーに書き込む"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜStandard Errorを書くのか
+## なぜ
 
-プログラミングをする人々にとって、エラーは日常的なものです。しかし、それらのエラーを解読するのは非常に大変です。そこで、実行中に何が起こっているのかをより正確に把握するために、Standard Errorを書くことが重要です。
+標準エラーへの書き込みをする理由は、エラーをデバッグしたり、プログラミングの問題を特定したりするために必要です。
 
-# 方法
+## 方法
 
-**Arduinoのライブラリを``#include``することを忘れないように!**
+Arduinoの最新版では、`Serial` オブジェクトを使用して標準エラーへの書き込みができます。例えば、`Serial.println()` を使用すると、文字列を標準エラーに書き込むことができます。以下は、`Hello World!` を書き込む例です。
+
 ```Arduino
-#include <iostream> 
+Serial.println("Hello World!");
 ```
 
-**``std::cerr``を使用してStandard Errorに書き込む**
+出力結果は、シリアルモニターに表示されます。もし、エラーを書き込む場合は、`Serial.write()` を使用します。例えば、`Error!` を書き込む例です。
+
 ```Arduino
-std::cerr << "エラーメッセージ" << std::endl;
+Serial.write("Error!");
 ```
 
-**サンプル出力:**
-```
-エラーメッセージ
-```
+出力結果は、シリアルモニターやシリアルプロットタブに表示されます。シリアルモニターでは、文字列がそのまま表示されますが、シリアルプロットタブでは、文字列を1バイトずつプロットします。
 
-# 深く掘り下げる
+## 深堀り
 
-Standard Errorに書き込むことで、プログラムの実行中に発生したエラーをターミナルに表示できます。これにより、プログラムをデバッグする際に追加の情報を提供し、問題を追跡するのに役立ちます。ストリーム操作子``<<``を使用して、様々なデータ型の情報をStandard Errorに書き込むことができ、より詳細なデバッグが可能になります。
+標準エラーへの書き込みには、`Serial` オブジェクト以外にも方法があります。例えば、`sprintf()` を使用して、文字列をフォーマットしてから標準エラーに書き込むことができます。また、`printf()` を使用して、シリアルプロットタブに文字列をプロットすることができます。詳細な使い方は、ドキュメンテーションを参照してください。
 
-# 参考文献
+## 関連リンク
 
-- [標準エラー出力 (Standard Error)](https://wa3.i-3-i.info/word11481.html)
-- [C++で標準エラー出力](https://qiita.com/kawaMk4/items/bba378e38cb926138d2d)
-- [Arduino: Serial.printとSerial.println](https://iot-nozaki.blogspot.com/2015/03/arduino-serialprintserialprintln.html)
-
-# もっと詳しく知りたい方は是非参考にしてください。
-
-## 参考文献
-
-- [標準エラー出力 (Standard Error)](https://wa3.i-3-i.info/word11481.html)
-- [C++で標準エラー出力](https://qiita.com/kawaMk4/items/bba378e38cb926138d2d)
-- [Arduino: Serial.printとSerial.println](https://iot-nozaki.blogspot.com/2015/03/arduino-serialprintserialprintln.html)
+- [Arduino リファレンス](https://www.arduino.cc/reference/en/)
+- [Serial.println()  ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [sprintf() ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
+- [printf() ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/printf/)

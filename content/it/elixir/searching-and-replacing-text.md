@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Ricerca e sostituzione di testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Elixir: Ricerca e sostituzione di testo"
 simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,52 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La modifica di testo è una pratica comune nella programmazione, che permette di automatizzare la sostituzione di determinati caratteri o stringhe all'interno di un file o di un codice. In Elixir, questa operazione è ancora più efficiente grazie alle potenti funzioni e pattern matching offerti dal linguaggio.
+La ricerca e la sostituzione di testo sono operazioni comuni nella programmazione, soprattutto quando si lavora con stringhe di testo. Grazie all'utilizzo di Elixir, è possibile eseguire queste operazioni in modo semplice ed efficiente, risparmiando tempo e riducendo gli errori.
 
 ## Come fare
 
-Per utilizzare la funzione di ricerca e sostituzione in Elixir, è necessario utilizzare il modulo `String`. Inoltre, è possibile specificare opzioni come la sensibilità al maiuscolo/minuscolo o la gestione dei caratteri di escape.
+Per eseguire la ricerca e la sostituzione di testo in Elixir, è possibile utilizzare la funzione `String.replace/3`. Questa funzione richiede tre argomenti: la stringa di input, il pattern da cercare e il pattern di sostituzione. Ad esempio:
 
-Un esempio semplice potrebbe essere questo:
-
-```elixir
-# Creazione di una stringa di prova
-str = "Ciao a tutti!"
-
-# Ricerca e sostituzione di una parola
-new_str = String.replace(str, "Ciao", "Hello")
-
-# Output: "Hello a tutti!"
-IO.puts(new_str) 
+```Elixir
+iex> String.replace("Ciao, mondo!", "Ciao", "Hello")
+"Hello, mondo!"
 ```
 
-Oltre alla funzione `replace`, esistono altre utile funzioni per la modifica di testo come `replace_at`, `replace_before` e `replace_after`. Si consiglia di consultare la documentazione ufficiale di Elixir per ulteriori dettagli e opzioni disponibili.
+In questo esempio, la funzione sostituisce il testo "Ciao" con "Hello" nella stringa di input "Ciao, mondo!". La funzione restituisce la stringa modificata come risultato.
+
+La funzione `String.replace/3` è anche molto utile quando si lavora con espressioni regolari. Ad esempio, se si vuole sostituire tutte le vocali di una stringa con il simbolo "*", è possibile utilizzare il seguente codice:
+
+```Elixir
+iex> String.replace("Elixir", ~r/[aeiou]/, "*")
+"*l*x*r"
+```
+
+In questa esempio, viene utilizzata un'espressione regolare per cercare tutte le vocali nella stringa "Elixir" e sostituirle con "*". È importante notare che il pattern di sostituzione può anche essere una funzione, permettendo una maggiore flessibilità nell'esecuzione della sostituzione.
 
 ## Approfondimenti
 
-In Elixir, la ricerca e sostituzione di testo può essere fatta non solo su stringhe, ma anche su altre strutture dati come liste e mappe. Inoltre, grazie all'utilizzo di pattern matching, è possibile personalizzare la logica di sostituzione in modo più flessibile.
+La funzione `String.replace/3` è solo una delle numerose funzioni fornite da Elixir per eseguire la ricerca e la sostituzione di testo. Altre funzioni utili sono `String.replace_leading/3` e `String.replace_trailing/3`, che permettono di sostituire rispettivamente solo il primo o l'ultimo caso trovato del pattern cercato.
 
-Ad esempio, con la funzione `replace_match` è possibile specificare una lambda function che verrà applicata solo ai match trovati, come nel seguente esempio:
+Anche i pattern di sostituzione possono essere più complessi di un semplice stringa, grazie all'utilizzo di funzioni o espressioni regolari. Inoltre, Elixir offre anche funzioni per eseguire il confronto delle stringhe senza tenere conto delle maiuscole e minuscole (`String.upcase/1` e `String.downcase/1`).
 
-```elixir
-# Creazione di una lista di numeri
-list = [1, 2, 3]
-
-# Ricerca e sostituzione solo dei numeri pari
-new_list = Enum.map(list, fn
-  0 -> "pari"
-  x when rem(x, 2) == 0 -> "pari"
-  x -> x
-end)
-
-# Output: ["pari", 2, 3]
-IO.inspect(new_list)
-```
-
-Inoltre, l'utilizzo del modulo `Regex` permette di effettuare ricerche e sostituzioni basate su espressioni regolari, aggiungendo un ulteriore livello di precisione.
+Inoltre, è importante ricordare che la funzione `String.replace/3` non modifica la stringa di input originale, ma restituisce sempre una nuova stringa. Se si vuole modificare la stringa originale, è necessario assegnare il risultato della funzione alla variabile desiderata.
 
 ## Vedi anche
 
-- [String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Official Elixir website](https://elixir-lang.org/)
-- [Elixir School - String Functions](https://elixirschool.com/it/lessons/basics/string-functions/)
+- [Documentazione ufficiale di Elixir](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Tutorial di ricerca e sostituzione di testo in Elixir](https://www.freecodecamp.org/news/elixir-tutorial-search-replace-text/)

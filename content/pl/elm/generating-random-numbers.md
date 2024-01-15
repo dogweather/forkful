@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Elm: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego używać losowych liczb w Elm?
+## Dlaczego
 
-Generowanie losowych liczb jest ważnym aspektem programowania w języku Elm, który pozwala na tworzenie różnorodnych aplikacji i rozwiązań. Umożliwia to wprowadzenie elementu losowości, co może być przydatne w wielu przypadkach, np. w grach czy symulacjach.
+Generowanie liczb losowych jest jednym z najważniejszych narzędzi w programowaniu, które pozwalają na wykorzystanie losowych danych w tworzeniu aplikacji, gier czy symulacji. W przypadku języka Elm, generowanie liczb losowych jest nie tylko proste, ale także niezwykle efektywne.
 
-# Jak generować losowe liczby w Elm?
+## Jak to zrobić
 
-Możemy wykorzystać wbudowaną funkcję `Random` w bibliotece `Random` do generowania losowych liczb w Elm. Przykładowo, możemy użyć funkcji `generate` wraz z określoną wartością `Int` dla minimalnej i maksymalnej wartości, a następnie wykorzystać wygenerowany wynik w naszym kodzie.
-
-```Elm
-import Random
-
-losowaLiczba : Int
-losowaLiczba =
-  Random.generate (\_ -> Random.int 1 10)
-```
-
-W powyższym przykładzie wygenerujemy liczbę całkowitą z przedziału od 1 do 10. Możemy również wykorzystać funkcję `posFloat` do generowania liczb zmiennoprzecinkowych.
+Aby wygenerować liczbę losową w Elm, należy użyć wbudowanej funkcji `random` oraz modułu `Random`. Poniżej znajduje się przykładowy kod:
 
 ```Elm
-Random.generate (\_ -> Random.float 0 1)
+import Random exposing (..)
+
+-- Generowanie liczby z przedziału od 1 do 10
+randomInt = 
+    random 1 10 int
+
+-- Generowanie liczby zmiennoprzecinkowej z przedziału od 0 do 1
+randomFloat = 
+    random 0 1 float
+
+-- Generowanie losowej wartości typu String
+randomString = 
+    randomString "Ala ma kota" string
 ```
 
-Powyższy kod wygeneruje liczbę zmiennoprzecinkową z przedziału od 0 do 1. Możemy również określić konkretny typ danych, jakiego oczekujemy, np. `bool`, `char` czy `string`.
+W powyższym przykładzie `random` przyjmuje dwa argumenty – minimalną i maksymalną wartość, a także określa typ wartości, który ma zostać wygenerowany. Dzięki temu w łatwy sposób możemy wygenerować dowolną liczbę lub nawet ciąg znaków.
 
-# Głębsze zagadnienia dotyczące generowania losowych liczb
+## Zagłębianie się
 
-Funkcja ` Random` wykorzystuje tzw. generator losowości, który jest ustawiony na podstawie bieżącego stanu aplikacji. Możemy również zdefiniować własny generator, co daje nam większą kontrolę nad generowanymi liczbami. W przypadku generowania liczb zmiennoprzecinkowych, możemy również określić precyzję wyniku za pomocą funkcji `floatFrom`. 
+W przypadku generowania liczb losowych, ważne jest, aby pamiętać o tym, że są one wybierane z ustalonego zakresu. Jeśli więc chcemy mieć większą kontrolę nad generowanymi wartościami, możemy zastosować funkcję `map` oraz `andThen`. Pozwalają one na dostosowanie wyniku w zależności od wybranej przez nas funkcji.
 
-Bardziej szczegółowe informacje na temat generowania losowych liczb w Elm można znaleźć w oficjalnej dokumentacji: https://package.elm-lang.org/packages/elm/random/latest/.
+```Elm
+-- Generowanie losowej wartości z przedziału od 1 do 100, 
+-- ale tylko w przypadku gdy jest ona parzysta
+randomEvenNumber = 
+    random 1 100 int
+        |> map (\x -> x * 2)
+        |> andThen (\x -> if x % 2 == 0 then Ok x else randomEvenNumber)
+```
 
-# Zobacz również
+W powyższym przykładzie używamy `map` do wygenerowania liczby parzystej oraz `andThen` do sprawdzenia, czy wygenerowana liczba spełnia nasze wymagania. Jeśli nie, to wywołujemy funkcję `randomEvenNumber` ponownie, aż do momentu, gdy zostanie wygenerowana liczba spełniająca nasze kryteria.
 
-- DuoCode: "Generating and Working with Random Numbers in Elm": https://duo.com/decipher/generating-and-working-with-random-numbers-in-elm
-- Elm Spacemacs: "Generating Random Numbers in Elm": https://www.spacemacs.org/layers/+lang/elm/README.html#generating-random-numbers-in-elm
-- Elm Weekly: "Random numbers in Elm": https://elm
+## Zobacz także
+
+- Oficjalna dokumentacja: https://elm-lang.org/docs/random
+- Przykłady z wykorzystaniem modułu Random: https://elmprogramming.com/random-numbers.html
+- Grywalizacja aplikacji z wykorzystaniem liczb losowych: https://medium.com/@ckirkwood/adding-gamification-to-elm-apps-with-randomness-d0562bad4df2

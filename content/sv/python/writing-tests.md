@@ -1,5 +1,6 @@
 ---
-title:                "Python: Skriva tester"
+title:                "Skriva tester"
+html_title:           "Python: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Python"
 category:             "Python"
@@ -9,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att skriva tester är en viktig del av att utveckla mjukvara på ett pålitligt och effektivt sätt. Genom att testa koden kan vi säkerställa att den fungerar som den ska och undvika buggar och felaktigt beteende. Det hjälper också till att förbättra kvaliteten på koden och underlättar vid framtida uppgraderingar och förändringar.
+Att skriva tester är en viktig del av utvecklingsprocessen för att säkerställa att din kod fungerar som den ska. Det hjälper även till att upptäcka fel och förhindrar potentiella buggar i framtiden.
 
-# Hur man skriver tester
+## Så här gör du
 
-Att skriva tester är enkelt och kan göras genom att använda innebyggda testningsramar som pytest eller unittest. Det första steget är att definiera en funktion eller en metod som ska testas. Sedan kan du skapa en testfunktion som använder sig av assertions för att jämföra det förväntade resultatet med det faktiska resultatet av funktionen. Nedan följer ett exempel i Python:
+För att skriva tester i Python, används det inbyggda testramverket 'unittest'. Det börjar med att importera unittest biblioteket och de funktioner eller klasser som ska testas.
 
+```Python
+import unittest
+
+def add(num1, num2):
+    return num1 + num2
+
+class TestCalc(unittest.TestCase):
+    
+    def test_add(self):
+        self.assertEqual(add(2,3), 5)
+
+if __name__ == '__main__':
+    unittest.main()
 ```
-def square(x):
-    return x * x
 
-def test_square():
-    assert square(5) == 25
-    assert square(2) == 4
-```
+I detta exempel skapas en enkel funktion som adderar två tal och sedan testas det med hjälp av 'unittest.TestCase' klassen. AssertEqual-funktionen kontrollerar om resultatet är det förväntade och om så är fallet så passerar testet. Om resultatet inte stämmer så misslyckas testet och en felmeddelande visas.
 
-I detta exempel definierar vi en funktion som beräknar kvadraten av ett tal och sedan skapar vi två testfall med hjälp av assertions. Om de påstådda resultaten matchar de faktiska resultaten kommer testet att passera, annars kommer det att misslyckas och indikera att något behöver fixas.
+## Djupdykning
 
-# Fördjupning
+Vid skrivande av tester är det viktigt att täcka alla möjliga fall, både för korrekt och inkorrekt indata. Detta hjälper till att säkerställa att koden hanterar alla scenarier ordentligt och inte orsakar oväntade fel.
 
-Att skriva tester kan verka onödigt och tidsödande, men det sparar tid och frustration i det långa loppet. Genom att ha en ordentlig testningsprocess på plats kan vi undvika att upptäcka buggar när de redan har blivit en del av produktionskoden. Det är också bra att testa olika gränssnitt, användardata och olika användarscenarier för att säkerställa att koden fungerar för alla potentiella situationer.
+En annan viktig aspekt är att testen bör vara isolerade, vilket betyder att varje test ska köra oberoende av varandra. Detta förhindrar eventuella beroenden mellan olika tester och gör det lättare att felsöka om ett test fallerar.
 
-# Se även
+Det finns också möjlighet att använda externa bibliotek för att hjälpa till med skrivandet av tester, som till exempel 'pytest' och 'nose'. Dessa erbjuder fler funktioner för att underlätta skrivandet av tester och öka testtäckningen för din kod.
 
-Här är några relevanta länkar som kan hjälpa dig att lära dig mer om att skriva tester i Python:
+## Se även
 
-- [Pytest tutorial på svenska](https://medium.com/@eliasfikse/simple-unit-testing-with-pytest-a-step-by-step-tutorial-ebdb77a78815)
-- [Unittest dokumentation](https://docs.python.org/3/library/unittest.html)
-- [TDD (test-driven development) i Python](https://realpython.com/python-testing/#test-driven-development-tdd)
-- [10 fördelar med att skriva tester i Python](https://hackernoon.com/10-reasons-why-you-should-write-tests-in-python-2d452a670bbd)
-
-Vi hoppas att denna artikel har gett dig en bättre förståelse för hur och varför man bör skriva tester i Python. Lycka till med ditt testande!
+- [En guide till enhetstester i Python](https://realpython.com/python-testing/)
+- [Dokumentation för unittest](https://docs.python.org/3/library/unittest.html)
+- [Dokumentation för pytest](https://docs.pytest.org/en/latest/)
+- [Dokumentation för nose](https://nose.readthedocs.io/en/latest/)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Comparando dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "Bash: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,44 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Comparar dos fechas puede ser muy útil en la programación de Bash. Puede ayudarte a verificar si una fecha es anterior, posterior o igual a otra fecha. También te permite realizar acciones en base a esas comparaciones, como mostrar un mensaje o ejecutar un comando específico. En resumen, comparar dos fechas puede simplificar y optimizar tus scripts de Bash.
+Comparar dos fechas en Bash es una práctica común en la programación, ya sea para realizar operaciones matemáticas o para determinar la fecha más reciente o más antigua. En este artículo, aprenderás cómo comparar dos fechas en Bash de forma sencilla y efectiva.
 
 ## Cómo hacerlo
 
-Primero, necesitarás tener las fechas en un formato reconocible por Bash, como por ejemplo YYYY/MM/DD. Luego, puedes usar el comando "test" con la opción "-nt" para verificar si una fecha es más reciente que otra, o "-ot" para verificar si es más antigua. También puedes usar el operador "-eq" para comprobar si las fechas son iguales.
-
-Aquí hay un ejemplo de código en Bash para comparar dos fechas y mostrar un mensaje basado en la comparación:
+Para comparar dos fechas en Bash, primero debes asegurarte de tener las fechas en un formato reconocible por el sistema. Utilizaremos el comando `date` para obtener la fecha actual y el comando `read` para capturar la fecha que ingrese el usuario.
 
 ```Bash
-#!/bin/bash
-fecha1="2021/01/01"
-fecha2="2021/03/15"
+# Obtener la fecha actual
+fecha_actual=$(date +%Y-%m-%d)
 
-if [ $fecha1 -nt $fecha2 ]
-then
-	echo "La fecha 1 es más reciente que la fecha 2"
-elif [ $fecha1 -ot $fecha2 ]
-then
-	echo "La fecha 1 es más antigua que la fecha 2"
-else
-	echo "Las fechas son iguales"
+# Capturar la fecha ingresada por el usuario
+echo "Ingresa una fecha en formato YYYY-MM-DD:"
+read fecha_ingresada
+```
+
+Una vez que tenemos ambas fechas, podemos utilizar el operador de comparación `>` (mayor que) o `<` (menor que) para determinar cuál es la fecha más reciente o más antigua.
+
+```Bash
+if [[ $fecha_actual > $fecha_ingresada ]]; then
+    echo "La fecha actual es más reciente que la fecha ingresada"
+else 
+    echo "La fecha ingresada es más reciente que la fecha actual"
 fi
 ```
 
-La salida de este script sería:
+Si quieres comparar fechas en un formato diferente, puedes utilizar el comando `date` para convertir las fechas a un formato específico antes de compararlas. Por ejemplo, si quieres comparar fechas en formato DD-MM-YYYY, puedes utilizar el siguiente código:
 
-```
-La fecha 1 es más antigua que la fecha 2
+```Bash
+# Convertir la fecha actual a formato DD-MM-YYYY
+fecha_actual_ddmmyyyy=$(date +%d-%m-%Y)
+
+# Convertir la fecha ingresada por el usuario a formato DD-MM-YYYY
+fecha_ingresada_ddmmyyyy=$(date -d "$fecha_ingresada" +%d-%m-%Y)
+
+# Comparar las fechas en formato DD-MM-YYYY
+if [[ $fecha_actual_ddmmyyyy > $fecha_ingresada_ddmmyyyy ]]; then
+    echo "La fecha actual es más reciente que la fecha ingresada"
+else 
+    echo "La fecha ingresada es más reciente que la fecha actual"
+fi
 ```
 
 ## Profundizando
 
-Además de las opciones mencionadas anteriormente, hay otras formas de comparar fechas en Bash. Puedes usar el comando "date" con el formato "+%s" para convertir las fechas en segundos desde el Epoch y luego comparar esos valores numéricos. Otra opción es usar la herramienta "awk" para separar las fechas en elementos (año, mes, día) y luego comparar uno por uno.
+Hay varios factores a tener en cuenta al comparar fechas en Bash. En primer lugar, debes asegurarte de que ambas fechas estén en el mismo formato antes de realizar la comparación. De lo contrario, el resultado puede no ser el esperado.
 
-También es importante tener en cuenta que Bash puede ser sensible a la configuración regional del sistema, por lo que es posible que necesites ajustar el formato de las fechas en tu script.
+Además, el operador de comparación `>` y `<` solo funciona con fechas en formato numérico. Si quieres comparar fechas en un formato diferente, como texto, deberás utilizar otros métodos, como la función `diff` o el comando `sort`.
 
 ## Ver también
 
-- [Comandos básicos de Bash](https://www.linode.com/docs/guides/basic-bash-commands/)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de comparación de fechas en Bash](https://www.lifewire.com/comparing-dates-bash-shell-scripts-2200573)
+* [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+* [Guía de referencia de Bash](https://www.shellscript.sh/)
+* [Cheat sheet de Bash](https://devhints.io/bash)

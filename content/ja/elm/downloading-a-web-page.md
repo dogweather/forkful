@@ -1,5 +1,6 @@
 ---
-title:                "Elm: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Elm: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-Webページをダウンロードする理由はさまざまです。たとえば、データを抽出するためにスクレイピングを行う、オフラインで閲覧するためにページを保存する、あるいは単純にページをバックアップするためにダウンロードするかもしれません。
+ウェブページのダウンロードをする理由は様々ですが、例えばオフラインで閲覧したい場合や、コンテンツの更新をチェックするために使用することができます。
 
-## 使い方
-
-Elmプログラミング言語を使用してWebページをダウンロードする方法はとても簡単です。まず、`Http`モジュールをインポートします。次に、ダウンロードしたいページのURLを指定し、`send`関数を使用してリクエストを送信します。最後に、取得したレスポンスを解析して必要なデータを取得します。
+## ダウンロードの方法
 
 ```Elm
+import Html exposing (text)
 import Http
 
-Http.send
-    { url = "https://www.example.com"
-    , expect = Http.expectString handleResponse
-    }
-
-handleResponse : Result Http.Error String -> msg
-handleResponse result =
-    case result of
-        Ok body ->
-            -- 解析して必要なデータを取得する
-
-        Err error ->
-            -- エラー処理を行う
+main =
+    Http.get "www.example.com" -- ダウンロードしたいページのURLを指定
+        |> Http.send
+        |> Task.attempt handleResponse
 ```
 
-## ディープダイブ
+このコードは`Html.text`をインポートし、`Http`を使って指定したURLからページをダウンロードする方法を示しています。`Task.attempt`という関数を使って、ダウンロードが完了した際に`handleResponse`という関数を実行します。ダウンロードが成功した場合、`handleResponse`はダウンロードされたページのデータを引数として受け取り、欲しいコンテンツを取り出すことができます。
 
-Webページをダウンロードする方法にはいくつかのオプションがあります。たとえば、リクエストヘッダーをカスタマイズすることや、ダウンロード速度を管理するためにチャンクを使用することができます。また、コマンドライン引数からURLを受け取ってダウンロードするスクリプトを作成することもできます。
+## 詳細を掘り下げる
 
-## 参考リンク
+ウェブページのダウンロードはElmの`Http`モジュールを使って行うことができます。`Http.get`を使って`GET`リクエストを送信し、ダウンロードしたいページのURLを指定します。ダウンロードが成功した場合、受け取ることができるデータの種類は`Http.expectString`や`Http.expectJson`を使って指定することができます。また、ダウンロードの進捗状況を監視するために`Http.sendProgress`を使用することもできます。
 
-- [Elmの公式ドキュメント](https://guide.elm-lang.jp/)
-- [httpパッケージのドキュメント](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Webスクレイピングのチュートリアル（英語）](https://dev.to/rjmurtagh/scraping-the-web-with-elm-2o7d)
+## 併せて参考にしてください
+
+- [Elm Lang 公式ドキュメント](https://elm-lang.org/)
+- [Elm in Action](https://www.manning.com/books/elm-in-action)
+- [Elm Community](https://discourse.elm-lang.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Lecture des arguments de ligne de commande"
-simple_title:         "Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de la ligne de commande"
+html_title:           "Kotlin: Lecture des arguments de la ligne de commande"
+simple_title:         "Lecture des arguments de la ligne de commande"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,70 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'utilisation des arguments de ligne de commande peut être une compétence utile pour les programmeurs Kotlin, car cela leur permet de fournir des entrées personnalisées à leur programme lors de son exécution. Cela peut être utile pour effectuer certaines opérations spécifiques ou pour effectuer des tests et des débogages.
+Si vous êtes un programmeur en herbe ou expérimenté, vous savez probablement déjà que les arguments de ligne de commande sont un élément essentiel de la programmation. Ils permettent aux utilisateurs de votre programme de passer des valeurs spécifiques au moment de l'exécution, ce qui peut être très utile pour personnaliser l'expérience utilisateur ou pour automatiser certaines tâches. Dans cet article, nous allons explorer comment lire les arguments de ligne de commande en utilisant Kotlin.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Kotlin, nous pouvons utiliser la fonction `main()` et l'objet `args`. Voici un exemple de code:
+Pour lire les arguments de ligne de commande en Kotlin, il existe une classe prédéfinie appelée "args" qui stocke tous les arguments passés lors de l'exécution du programme. Pour accéder à ces arguments, il suffit d'itérer sur cette liste en utilisant une boucle "foreach" et d'afficher chaque argument. Voici un exemple de code :
 
 ```Kotlin
 fun main(args: Array<String>) {
-  // Connexion à une base de données en utilisant les arguments de ligne de commande
-  val database = Database(args[0], args[1])
-  // Affichage de l'entrée personnalisée pour le nom d'utilisateur et le mot de passe
-  println("Nom d'utilisateur: ${args[0]}, Mot de passe: ${args[1]}")
+    args.forEach { arg ->
+        println(arg)
+    }
 }
 ```
 
-Si nous exécutons ce programme avec les arguments `john` et `1234`, nous obtiendrons la sortie suivante:
+Si nous exécutons ce programme avec les arguments "Bonjour" et "Monde", nous obtenons la sortie suivante :
 
 ```
-Nom d'utilisateur: john, Mot de passe: 1234
+Bonjour
+Monde
 ```
 
-Nous pouvons également utiliser une boucle `for` pour parcourir tous les arguments de ligne de commande si nous ne connaissons pas à l'avance leur nombre. Par exemple:
+Nous pouvons également utiliser ces arguments pour effectuer des calculs ou des opérations spécifiques, en utilisant des fonctions prédéfinies telles que "toInt()" ou "toDouble()" pour convertir les valeurs en nombres. Voici un autre exemple qui additionne deux nombres passés en arguments :
 
 ```Kotlin
 fun main(args: Array<String>) {
-  // Affichage de chaque argument de ligne de commande
-  for (arg in args) {
-    println(arg)
-  }
+    val nb1 = args[0].toInt()
+    val nb2 = args[1].toInt()
+    println("La somme de $nb1 et $nb2 est égale à ${nb1 + nb2}")
 }
 ```
 
-Si nous exécutons ce programme avec les arguments `1 2 3`, nous obtiendrons la sortie suivante:
+Si nous exécutons ce programme avec les arguments "10" et "5", nous obtenons la sortie suivante :
 
 ```
-1
-2
-3
+La somme de 10 et 5 est égale à 15
 ```
 
-## Plongée profonde
+## Plongée en profondeur
 
-L'objet `args` est de type `Array<String>`, ce qui signifie que nous pouvons également utiliser des méthodes telles que `size` pour obtenir le nombre total d'arguments, ou `contains` pour vérifier si un argument spécifique a été fourni. Voici un exemple:
+Maintenant que vous savez comment lire les arguments de ligne de commande en Kotlin, il est bon de comprendre comment ils sont organisés. En utilisant la classe "args", vous pouvez également accéder aux informations telles que le nombre total d'arguments ("args.size") ou l'argument à une position particulière ("args[index]"). De plus, il est possible de les combiner avec des structures de contrôle telles que "if" ou "when" pour gérer différents scénarios.
+
+Par exemple, si nous voulons afficher un message d'erreur si aucun argument n'est passé, nous pouvons le faire avec le code suivant :
 
 ```Kotlin
 fun main(args: Array<String>) {
-  // Vérification si l'argument 'username' a été fourni
-  if (args.contains("username")) {
-    println("L'argument 'username' a été fourni")
-  }
-  // Affichage du nombre total d'arguments
-  println("Nombre total d'arguments: ${args.size}")
+    if (args.isEmpty()) {
+        println("Veuillez fournir au moins un argument.")
+    } else {
+        args.forEach { arg ->
+            println(arg)
+        }
+    }
 }
-```
-
-Si nous exécutons ce programme avec les arguments `username=john`, nous obtiendrons la sortie suivante:
-
-```
-L'argument 'username' a été fourni
-Nombre total d'arguments: 1
 ```
 
 ## Voir aussi
 
-- [Documentation officielle Kotlin sur les arguments de ligne de commande](https://kotlinlang.org/docs/reference/command-line.html)
-- [Tutoriel sur les arguments de ligne de commande en Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)
-- [Exemple de projet GitHub montrant l'utilisation des arguments de ligne de commande en Kotlin](https://github.com/Eliah-Senpai/Kotlin-Command-Line-Arguments-Example)
+Vous pouvez également consulter d'autres articles sur Kotlin et la programmation en général :
+- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/reference/)
+- [Comment utiliser des boucles en Kotlin](https://dev.to/banej/kotlin-for-loop-explained-1dkg)
+- [Introduction à la programmation en Kotlin](https://www.codecademy.com/learn/learn-kotlin)
+
+Merci d'avoir lu cet article sur la lecture des arguments de ligne de commande en Kotlin ! Nous espérons que cela vous a été utile dans votre parcours de développement.

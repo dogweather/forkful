@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "Elm: Tworzenie pliku tymczasowego"
 simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,47 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
+Gdy pracujemy z programowaniem, często potrzebujemy tworzyć tymczasowe pliki w celu przechowania danych lub jako etap pośredni w przetwarzaniu informacji. W takich sytuacjach, ważne jest aby mieć wydajne i niezawodne narzędzie do tworzenia tymczasowych plików. W tym artykule przedstawimy jak rozwiązać ten problem przy użyciu języka programowania Elm.
 
-Tworzenie tymczasowych plików jest ważnym aspektem programowania, ponieważ umożliwia nam tymczasowe przechowywanie danych lub wyników obliczeń. Jest to szczególnie przydatne w przypadku tworzenia aplikacji internetowych, gdzie często potrzebujemy zapisać dane do pliku, ale nie chcemy ich trwale przechowywać na serwerze. Elm oferuje prosty sposób na tworzenie tymczasowych plików, co ułatwia nam pracę z danymi w naszych aplikacjach. 
+## Jak to zrobić
+Tworzenie tymczasowego pliku w Elm jest bardzo proste. Wystarczy użyć funkcji "File.createTemp" podając ścieżkę, w której chcemy utworzyć plik, oraz jego nazwę. Przykładowy kod wygląda następująco:
 
-## Jak to zrobić?
-
-Aby stworzyć tymczasowy plik w Elm, musimy użyć funkcji `File.temp` z modułu `File`. Funkcja ta przyjmuje dwa argumenty: nazwę pliku oraz jego zawartość. W poniższym przykładzie stworzymy tymczasowy plik o nazwie "temp.txt" zawierający tekst "To jest przykładowa zawartość pliku":
-
-```
-Elm File.temp "temp.txt" "To jest przykładowa zawartość pliku"
+```Elm
+File.createTemp "tmp/" "plik.docx"
 ```
 
-Możemy też użyć funkcji `File.write` do zapisania danych do utworzonego przez nas pliku:
+Rezultatem będzie utworzenie pliku o nazwie "plik.docx" w folderze "tmp". Możliwe jest również podanie pełnej ścieżki w celu utworzenia pliku w konkretnym miejscu.
 
-```
-Elm File.write "temp.txt" "Nowa zawartość pliku"
-```
+Aby upewnić się, że plik został utworzony poprawnie, możemy użyć funkcji "File.exists", która sprawdzi czy plik istnieje. Przykładowy kod prezentuje się tak:
 
-Aby odczytać zawartość tymczasowego pliku, możemy użyć funkcji `File.read`:
-
-```
-Elm File.read "temp.txt"
+```Elm
+File.exists "tmp/plik.docx" --> True 
 ```
 
-W wyniku otrzymamy tekst "Nowa zawartość pliku". Po zakończeniu pracy z plikiem, możemy go usunąć za pomocą funkcji `File.delete`:
+Możemy również użyć funkcji "Basics.toString" aby wyświetlić zawartość pliku w konsoli. Należy jednak pamiętać, że w przypadku dużych plików może to wywołać błąd.
 
+## Deep Dive
+Funkcja "File.createTemp" jest bardzo użyteczna, ale istnieje kilka rzeczy, o których warto wiedzieć. Po pierwsze, nazwa pliku musi mieć rozszerzenie, które jest zgodne z typem MIME. Na przykład, jeśli chcemy utworzyć plik tekstowy, nazwa powinna kończyć się na ".txt".
+
+Po drugie, jeśli potrzebujemy utworzyć plik tymczasowy, który zostanie usunięty po zamknięciu programu, możemy użyć funkcji "File.withTemp". Przyjmuje ona funkcję jako argument, która zostanie wykonana na utworzonym pliku.
+
+```Elm
+File.withTemp "tmp/" "log.txt" (\path -> 
+  Basics.append path "Plik został utworzony tymczasowo."
+)
 ```
-Elm File.delete "temp.txt"
-```
 
-## W głębi programowania
-
-Tworzenie tymczasowych plików w Elm bazuje na funkcjonalności modułu `File`. Warto zdawać sobie sprawę z kilku istotnych elementów przy korzystaniu z tej funkcjonalności:
-
-1. Pliki tymczasowe są usuwane automatycznie po zakończeniu działania naszej aplikacji.
-2. Domyślnie pliki tymczasowe są zapisywane w tej samej lokalizacji, co aplikacja.
-3. Możemy określić inną lokalizację poprzez podanie pełnej ścieżki dostępu w nazwie pliku.
-
-Tworzenie tymczasowych plików jest bardzo przydatną umiejętnością w programowaniu, a dzięki prostym funkcjom dostępnym w Elm, możemy to zrobić w łatwy i bezpieczny sposób.
+W tym przypadku, funkcja "Basics.append" zostanie wykonana na pliku "log.txt" znajdującym się w folderze "tmp". Po zamknięciu programu, plik ten zostanie automatycznie usunięty.
 
 ## Zobacz także
-
-* [Dokumentacja Elm o tymczasowych plikach](https://guide.elm-lang.org/io/files.html)
-* [Tutorial dotyczący obsługi plików w Elm](https://dev.to/rtfeldman/elm-files-without-ports-a-walkthrough-of-how-to-talk-to-external-files-1kja)
+- Oficjalna dokumentacja Elm: https://guide.elm-lang.org/
+- Operacje na plikach w Elm: https://package.elm-lang.org/packages/elm/file/latest/
+- Przykładowe kody w Elm: https://github.com/elm/compiler/tree/master/examples

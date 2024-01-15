@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Konwertowanie ciągu znaków na małe litery."
-simple_title:         "Konwertowanie ciągu znaków na małe litery."
+title:                "Konwersja ciągu znaków do małych liter"
+html_title:           "Ruby: Konwersja ciągu znaków do małych liter"
+simple_title:         "Konwersja ciągu znaków do małych liter"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,45 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W tym wpisie chciałbym przybliżyć Wam temat konwersji ciągu znaków na małe litery w języku Ruby. Dowiecie się, dlaczego jest to przydatne i jak to zrobić przy użyciu kilku prostych linii kodu.
+Istnieje kilka powodów, dla których warto przekonwertować ciąg znaków na małe litery w języku Ruby. Pierwszym z nich jest poprawność danych, ponieważ wiele funkcji w Ruby oczekuje, że dane będą w jednym formacie, a zamiana na małe litery ułatwia porównywanie i przetwarzanie danych. Kolejnym powodem jest estetyka i czytelność kodu - korzystanie z jednego konwencjonalnego formatu liter jest przyjemniejsze dla oka i ułatwia czytanie kodu innym programistom.
 
 ## Jak to zrobić
-
-W celu przekształcenia ciągu znaków na małe litery, używamy metody `downcase`. Możemy ją wywołać na dowolnym stringu i zwróci ona nowy string z wszystkimi literami w małym formacie. Przykładowy kod wyglądałby następująco:
-
-```Ruby
-str = "Hello World!"
-puts str.downcase
-```
-
-Output: `hello world!`
-
-Możemy również wywołać tę metodę na stałej, na przykład:
+Czasami wystarczy jedna prosta metoda, aby przekonwertować ciąg znaków na małe litery w języku Ruby. Wystarczy wywołać metodę `downcase` na zmiennej zawierającej łańcuch znaków. Zobaczmy to na przykładzie:
 
 ```Ruby
-CONSTANT = "UPPERCASE"
-puts CONSTANT.downcase
+string = "PRzyKłAdOWy TEKST"
+puts string.downcase
 ```
 
-Output: `uppercase`
-
-Warto również wiedzieć, że ta metoda nie tylko konwertuje duże litery na małe, ale także pozostawi niezmienione znaki specjalne oraz numeryczne. Dzięki temu nie musimy martwić się o przypadkowe usunięcie lub zmianę innych znaków niż litery.
-
-## Głębszy wgląd
-
-Metoda `downcase` używana jest głównie do porównywania stringów bez uwzględniania wielkości liter. Dzięki temu mamy pewność, że nawet jeśli użytkownik wpisze słowo z małych liter, a my oczekujemy wielkich, nasz program i tak wykona poprawne porównanie.
-
-Jednakże, warto zaznaczyć, że ta metoda jest zależna od aktualnego ustawienia lokalizacji językowej. Dlatego, jeśli chcemy mieć pewność, że wszystkie litery zostaną przekształcone na małe, możemy użyć metody `unicode_normalize` wraz z `downcase`. Oto przykładowy kod:
-
-```Ruby
-str = "ŁĄKA"
-puts str.unicode_normalize(:nfkc).downcase
+Output:
+```
+przykładowy tekst
 ```
 
-Output: `łąka`
+Jeśli chcemy, aby zmiana była tymczasowa i nie chcemy zmieniać wartości zmiennej, możemy użyć `downcase!` z wykrzyknikiem na końcu, co spowoduje, że zmienimy oryginalny ciąg znaków. Możemy również przekazać dużą literę lub cały wyraz jako argument do metody, aby zamienić na małe litery tylko te części ciągu, które chcemy.
 
-## Zobacz również
+## Głębszy zanurzenie
+Zanim przejdziemy do konkluzji, warto zauważyć, że zamiana ciągu znaków na małe litery w języku Ruby może przebiegać nieco inaczej, jeśli używamy znaków spoza alfabetu angielskiego lub specjalnych znaków. W tym przypadku zależy to od kodowania znaków, które używamy. Możemy także wykorzystać inne metody, takie jak `swapcase`, `upcase`, czy `capitalize`, aby manipulować wielkością liter w ciągu.
 
-1. [Dokumentacja Ruby o metodzie downcase](https://ruby-doc.org/core-2.5.0/String.html#method-i-downcase)
-2. [Porównywanie Stringów w języku Ruby](https://devstyle.pl/2011/02/26/porownywanie-stringow-w-ruby/) (po polsku)
-3. [Metody stringów w języku Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm) (po angielsku)
+## Zobacz także
+Jeśli chcesz dowiedzieć się więcej o konwersji i manipulacji ciągami znaków w języku Ruby, zapoznaj się z tymi pomocnymi materiałami:
+
+- [Ruby String class documentation](https://ruby-doc.org/core-#{RUBY_VERSION}/String.html)
+- [Ruby String methods guide](https://www.rubyguides.com/2015/05/ruby-string-methods/)
+- [Ruby String Cookbook](https://learnbyexample.github.io/Ruby_String/#table-of-contents)
+
+Dziękujemy za przeczytanie! Mam nadzieję, że ten krótki artykuł był dla Ciebie pomocny. Do zobaczenia w kolejnych!

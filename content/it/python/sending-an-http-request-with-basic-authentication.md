@@ -1,6 +1,7 @@
 ---
-title:                "Python: Inviare una richiesta HTTP con autenticazione di base"
-simple_title:         "Inviare una richiesta HTTP con autenticazione di base"
+title:                "Invio di una richiesta http con autenticazione di base"
+html_title:           "Python: Invio di una richiesta http con autenticazione di base"
+simple_title:         "Invio di una richiesta http con autenticazione di base"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,43 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Perché dovresti impegnarti nella creazione di una richiesta HTTP con autenticazione di base? In un mondo sempre più interconnesso, l'utilizzo di autenticazione di base è una pratica comune per proteggere l'accesso ai dati sensibili sui siti web. Imparare a inviare richieste HTTP con autenticazione di base ti aiuterà ad acquisire una conoscenza fondamentale degli strumenti di sicurezza del web e potrebbe essere utile per il tuo lavoro o il tuo prossimo progetto.
+Probabilmente ti sarai chiesto almeno una volta: perché dovrei inviare una richiesta HTTP con l'autenticazione di base? La risposta è semplice, con l'autenticazione di base puoi garantire l'accesso sicuro ai tuoi dati e servizi su una rete.
 
-## Come fare
+## Come usare l'autenticazione di base in Python
 
-Per inviare una richiesta HTTP con autenticazione di base in Python, segui i seguenti passaggi:
+Per utilizzare l'autenticazione di base in Python, devi seguire questi semplici passaggi:
 
-1. Importa il modulo `requests` per gestire le richieste HTTP:
+1. Importa il modulo "requests" per effettuare richieste HTTP.
+2. Definisci le credenziali dell'utente (nome utente e password) da utilizzare per l'autenticazione.
+3. Passa le credenziali all'intestazione dell'autenticazione di base nella richiesta HTTP.
+4. Fai la richiesta al server desiderato.
+
+Di seguito un esempio di codice che effettua una richiesta GET con autenticazione di base e stampa l'output nella console:
 
 ```Python
 import requests
-```
 
-2. Crea un dizionario contenente le credenziali di autenticazione di base, sostituendo `username` e `password` con le tue credenziali:
+username = "mario"
+password = "p@ssw0rd"
 
-```Python
-auth = {'username': 'password'}
-```
+response = requests.get("https://api.example.com", auth=(username, password))
 
-3. Utilizza il metodo `get` di `requests` per inviare la richiesta al server desiderato, passando come parametro il dizionario delle credenziali di autenticazione:
-
-```Python
-response = requests.get('https://www.example.com', auth=auth)
-```
-
-4. Controlla lo stato della risposta utilizzando il metodo `status_code` e stampa il contenuto della risposta utilizzando il metodo `text`:
-
-```Python
-print(response.status_code)
 print(response.text)
 ```
 
+L'output nella console sarà il contenuto della risposta ricevuta dal server.
+
 ## Approfondimento
 
-In una richiesta con autenticazione di base, il client invia le credenziali come parte dell'header della richiesta, utilizzando un codice di autenticazione codificato Base64. Il server verifica quindi le credenziali fornite per concedere l'accesso o rifiutare la richiesta. È importante notare che l'utilizzo di autenticazione di base non è considerato completamente sicuro, poiché le credenziali sono facilmente decodificabili. Pertanto, è consigliabile utilizzare un metodo di autenticazione più sicuro, come HTTPS, per proteggere le informazioni sensibili.
+L'autenticazione di base è uno dei metodi di autenticazione più semplici e ampiamente utilizzati per garantire la sicurezza delle comunicazioni su una rete. Consiste nell'invio di un nome utente e una password in chiaro all'interno delle intestazioni della richiesta HTTP.
+
+Per garantire una maggiore sicurezza, è consigliato utilizzare il protocollo HTTPS, che cifra i dati scambiati tra il client e il server. Inoltre, è importante utilizzare password sicure e non condividerle con nessuno.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Requests su autenticazione di base in Python](https://docs.python-requests.org/en/master/user/authentication/)
-- [Tutorial su autenticazione di base in Python su Real Python](https://realpython.com/intermediate-python-requests/)
-- [Informazioni sull'utilizzo di autenticazione di base e altre tecniche di sicurezza per proteggere le tue applicazioni web](https://www.owasp.org/index.php/Web_Application_Security_Testing_Cheat_Sheet#Authentication_Testing)
+- [Documentazione ufficiale di Python](https://docs.python.org/3/library/urllib.request.html?highlight=authentication#urllib.request.Request.add_header)
+- [Tutorial su come utilizzare l'autenticazione di base in Python](https://www.geeksforgeeks.org/send-getpost-request-using-python/)
+- [Manuale di riferimento di requests](https://requests.readthedocs.io/en/master/user/authentication/)

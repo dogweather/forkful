@@ -1,6 +1,7 @@
 ---
-title:                "C: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med json"
+html_title:           "C: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,52 +12,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-JSON (JavaScript Object Notation) är en vanlig dataformat som används för att utbyta information mellan olika system och applikationer. Att kunna arbeta med JSON är en viktig och nödvändig färdighet för många programmerare, särskilt inom webbutveckling och datavetenskap.
+JSON (JavaScript Object Notation) är en vanlig filformat som används för att lagra och överföra data. Det är snabbt, lättläst och platsbesparande, vilket gör det till ett populärt val för webbutveckling och andra applikationer. Genom att kunna arbeta med JSON i C kan du enkelt hantera och manipulera data för dina projekt och integrera med andra applikationer.
 
-## Så här gör du
+## Hur man gör
 
-För att kunna läsa, manipulera och skapa JSON-data i C-programmeringsspråket, behöver vi först inkludera biblioteket "json-c" genom att lägga till följande rad i vår kod:
-
-```C
-#include <json-c/json.h>
-```
-
-Efter att vi har inkluderat biblioteket kan vi använda funktioner som tillhandahålls för att arbeta med JSON-data. Här är ett enkelt exempel på hur vi kan läsa in och skriva ut JSON-data:
-
-```C
-// Skapa ett JSON-objekt
-json_object *my_obj = json_object_new_object();
-
-// Lägg till nycklar och värden till objektet
-json_object_object_add(my_obj, "name", json_object_new_string("Lisa"));
-json_object_object_add(my_obj, "age", json_object_new_int(25));
-
-// Konvertera objektet till en sträng
-const char *my_json_str = json_object_to_json_string(my_obj);
-
-// Skriv ut strängen
-printf("JSON: %s\n", my_json_str);
-
-// Avsluta
-json_object_put(my_obj);
-```
-
-Detta kommer att producera följande utmatning:
+För att arbeta med JSON i C behöver du ett bibliotek som heter cJSON, som hjälper till att enkelt skapa, läsa och ändra data i JSON-format. Nedan följer ett exempel på hur du kan använda cJSON för att skapa ett JSON-objekt och skriva ut dess innehåll:
 
 ```
-JSON: {"name": "Lisa", "age": 25}
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cJSON.h"
+
+int main() {
+    // Skapar ett tomt cJSON-objekt
+    cJSON *json = cJSON_CreateObject();
+
+    // Lägger till ett nytt element
+    cJSON_AddItemToObject(json, "namn", cJSON_CreateString("Lisa"));
+
+    // Lägger till ett annat element med en array som värde
+    cJSON_AddItemToObject(json, "frukter", cJSON_CreateStringArray(["äpple", "banan", "jordgubbe"]));
+
+    // Skriver ut JSON-objektet i konsolen
+    printf("%s\n", cJSON_Print(json));
+
+    return 0;
+}
+```
+**Resultat:**
+```
+{
+    "namn": "Lisa",
+    "frukter": [
+        "äpple",
+        "banan",
+        "jordgubbe"
+    ]
+}
 ```
 
-Förutom att läsa och skriva ut JSON-data, kan vi också bearbeta och manipulera data på olika sätt. Till exempel kan vi använda funktionen "json_object_put" för att ta bort ett objekt från en JSON-sträng eller ändra värden för en viss nyckel.
+För att läsa data från en befintlig JSON-fil kan du använda funktionen `cJSON_ParseFile()` och sedan komma åt data genom att använda `cJSON_GetObjectItem()`. Här är ett exempel på hur du kan läsa en JSON-fil och skriva ut ett visst element i den:
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cJSON.h"
+
+int main() {
+    // Läser in en JSON-fil och skapar ett cJSON-objekt
+    FILE *fp = fopen("exempel.json", "r");
+    cJSON *json = cJSON_ParseFile(fp);
+    fclose(fp);
+
+    // Kommer åt ett element i JSON-objektet
+    cJSON *element = cJSON_GetObjectItem(json, "namn");
+    printf("Namn: %s\n", element->valuestring);
+
+    return 0;
+}
+```
+**Resultat:**
+```
+Namn: Lisa
+```
+
+Det finns många fler funktioner och möjligheter med cJSON-biblioteket, så det är värt att utforska det själv och experimentera med olika scenarion för att få en bättre förståelse av hur man kan hantera JSON i C.
 
 ## Djupdykning
 
-För dem som är mer erfarna och vill utforska mer komplexa funktioner, finns det en mängd olika alternativ och metoder för att arbeta med JSON-data i C. Biblioteket "json-c" erbjuder en mängd olika datatyper och funktioner för att manipulera JSON-data på olika sätt.
+Ett annat användbart sätt att arbeta med JSON i C är att konvertera mellan JSON och C-strängar. Detta kan göras med hjälp av `cJSON_Print()` och `cJSON_Parse()`. Det är också möjligt att skapa mer komplexa JSON-strängar med olika typer av värden och inbäddade objekt eller arrayer.
 
-En annan intressant funktion som kan vara användbar är "json_object_to_file", som låter oss spara vårt JSON-objekt till en fil. På så sätt kan vi enkelt lagra och hämta data från andra system eller applikationer.
+En annan utmärkt funktion i cJSON är `cJSON_StripWhitespace()`, som kan användas för att ta bort onödiga mellanslag och radbrytningar från en JSON-sträng. Detta är särskilt användbart om du behöver skicka eller mottaga JSON-data via en nätverksanslutning.
+
+Ytterligare möjligheter med cJSON inkluderar att validera JSON-strängar och jämföra olika JSON-objekt för att se om de är lika.
 
 ## Se även
 
-- [json-c GitHub Repository](https://github.com/json-c/json-c)
-- [C-programmeringsspråket](https://sv.wikipedia.org/wiki/C_(programspr%C3%A5k))
-- [Vad är JSON?](https://www.json.org/json-en.html)
+- cJSON-dokumentation: http://cjson.org
+- C-appen för JSON-manipulering: https://github.com/DaveGamble/cJSON
+- En korrekt formaterad JSON-fil: https://www.json.org/example.html

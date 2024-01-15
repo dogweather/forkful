@@ -1,5 +1,6 @@
 ---
-title:                "Java: Nedlasting av en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Java: Nedlasting av en nettside"
 simple_title:         "Nedlasting av en nettside"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å laste ned en nettside er en vanlig oppgave for en utvikler, enten det er for å analysere data eller bygge applikasjoner som bruker nettsiden som en kilde. Uansett årsak er det viktig å ha en god forståelse av hvordan man kan laste ned en nettside i Java.
 
-## Hvordan
+Skal du lage et program som skal hente en nettside, trenger du å bruke Java. Dette er fordi Java har innebygde biblioteker og funksjoner som gjør det enkelt å laste ned og håndtere nettinnhold.
 
-Vi kan laste ned en nettside i Java ved å bruke klassen URL og åpne en forbindelse til nettsiden. Deretter kan vi lese innholdet på nettsiden med en BufferedReader og skrive det til en lokal fil.
+## Hvordan gjøre det
+
+For å laste ned en nettside i Java, må du først importere biblioteket "java.net.URL" for å få tilgang til funksjonene vi trenger. Deretter kan du bruke følgende kode for å opprette en tilkobling og lese innholdet på nettsiden:
 
 ```Java
-URL url = new URL("https://www.eksempel.no");
-URLConnection connection = url.openConnection();
-BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-BufferedWriter writer = new BufferedWriter(new FileWriter("eksempel.html"));
-String line;
-while ((line = reader.readLine()) != null) {
-    writer.append(line);
+try {
+    URL url = new URL("https://www.example.com"); // bytt ut URLen med den faktiske nettsiden du vil laste ned
+    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line); // skriver ut hver linje i innholdet på nettsiden
+    }
+
+    reader.close(); // husk å lukke leseren
+} catch (IOException e) {
+    e.printStackTrace(); // håndter eventuelle feil som kan oppstå under tilkobling eller lesing
 }
-reader.close();
-writer.close();
 ```
 
-Dette eksemplet vil laste ned nettsiden eksempel.no og lagre den som en lokal fil kalt "eksempel.html". Det er viktig å merke seg at dette kun henter den statiske delen av nettsiden, og ikke dynamisk generert innhold.
+Det kan også være nyttig å kunne håndtere henting av spesifikke deler av nettsiden, for eksempel bare teksten i en paragraf eller bildet på en knapp. For dette kan du bruke verktøy som "Jsoup" eller "HtmlUnit" for å analysere og manipulere HTML-koden til nettsiden.
 
-## Dypdykk
+## Dykk dypere
 
-Når du laster ned en nettside, henter du informasjonen som blir sendt tilbake fra en server til din datamaskin. Dette kan være html, javascript, bilder og annet innhold. Det er viktig å merke seg at det er serveren som bestemmer hva som blir sendt tilbake, og hvordan det blir formatert.
+Når du henter en nettside, er det viktig å forstå hvordan protokollen "HTTP" fungerer. Dette vil hjelpe deg med å håndtere forskjellige koder for status for tilkoblingen og kunne håndtere eventuelle omdirigeringsløkker eller sikkerhetsproblemer.
 
-Etter å ha lastet ned nettsiden, kan vi utføre forskjellige manipulasjoner på innholdet, for eksempel filtrering av data eller å fjerne unødvendig informasjon. Det er også mulig å bruke forskjellige biblioteker eller rammeverk for å gjøre prosessen mer effektiv og enkel.
+Det er også viktig å være forsiktig med hvordan du bruker programmet ditt, slik at du ikke overbelaster nettsiden eller bryter noen opphavsrettslige regler. Sørg for å lese gjennom nettsidens vilkår og betingelser før du laster ned noe innhold.
 
 ## Se også
 
-- [Official Java documentation on URL](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/net/URL.html)
-- [Java URLConnection tutorial](https://www.baeldung.com/java-http-request)
-- [Jsoup - Java HTML parser](https://jsoup.org/)
+- [Offisiell Java-dokumentasjon for "java.net.URL" biblioteket](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
+- [Offisiell "Jsoup" dokumentasjon for HTML-analyse i Java](https://jsoup.org/)
+- [Offisiell "HtmlUnit" dokumentasjon for manipulering av HTML-kode i Java](https://htmlunit.sourceforge.io/)

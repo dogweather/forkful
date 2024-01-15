@@ -1,5 +1,6 @@
 ---
-title:                "Go: Sammenslåing av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Go: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Go"
 category:             "Go"
@@ -11,52 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sette sammen strenger, også kalt concatenation, er en viktig del av å programmere i Go. Ved å kombinere forskjellige strenger, kan du lage mer komplekse tekster som er nyttige for å lage brukervennlige grensesnitt, generere rapporter eller utføre andre operasjoner i programmet ditt.
+Å slå sammen strenger, også kjent som å concatenate strings på engelsk, er en viktig del av programmering. Det lar deg kombinere flere tekstelementer og lage nye setninger eller verdier som kan brukes i ditt program. Dette gjør det enklere å lage dynamiske og varierte utdata.
 
-## Slik gjør du det
-
-Den enkleste måten å sette sammen to strenger på i Go er ved å bruke operatoren "+" mellom dem. La oss se på et enkelt eksempel:
+## Hvordan
 
 ```Go
-str1 := "Hei"
-str2 := "verden!"
+package main
 
-resultat := str1 + str2
+import "fmt"
 
-fmt.Println(resultat) // Output: Hei verden!
+func main() {
+  firstName := "Ole"
+  lastName := "Nordmann"
+  fullName := firstName + " " + lastName
+  fmt.Println(fullName)
+}
 ```
 
-Som du ser, blir de to strengene satt sammen til en enkelt streng, og resultatet skrives ut på skjermen. Husk at når du bruker "+", må begge operandene være av typen string. Ellers vil du få en feilmelding.
-
-Du kan også sette sammen flere strenger ved å bruke funksjonen "fmt.Sprint". Dette er spesielt nyttig når du vil kombinere strenger med andre data, for eksempel tall eller variabler. Her er et eksempel på hvordan du kan bruke denne funksjonen:
-
+Output:
 ```Go
-alder := 30
-
-resultat := fmt.Sprint("Jeg er", alder, "år gammel.")
-
-fmt.Println(resultat) // Output: Jeg er 30 år gammel.
+Ole Nordmann
 ```
 
-En annen måte å sette sammen strenger på er ved å bruke funksjonen "strings.Join". Denne funksjonen tar inn en liste med strenger og en separator som argumenter, og setter sammen strengene med separator mellom dem. La oss se på et eksempel:
+I dette eksempelet bruker vi variabler for å lagre hver del av navnet. Så bruker vi "+" for å kombinere dem og lage en ny variabel med det fulle navnet. Til slutt, bruker vi "fmt" pakken for å skrive ut det fulle navnet til konsollen.
 
-```Go
-navn := []string{"Marius", "Johansen"}
+## Deep Dive
 
-resultat := strings.Join(navn, " ")
+Concatenating strings i Go kan gjøres med "+" operatorer eller med "fmt.Sprintf()" funksjonen. Den første metoden er enklere og mer lesbar, mens den andre er mer fleksibel og kan brukes til å lage mer komplekse setninger ved hjelp av formatterspecifiers. Formatterspecifiers lar deg sette inn variabelverdier i en tekststreng på en spesifisert måte.
 
-fmt.Println(resultat) // Output: Marius Johansen
-```
+Det er også viktig å merke seg at i Go, er strenger immutable, som betyr at de ikke kan endres etter at de er opprettet. Derfor vil hver gang du concatenater strenger, vil det faktisk bli opprettet en ny streng.
 
-## Dypdykk
+## Se Også
 
-Når du jobber med concatenation i Go, er det viktig å huske på at strenger er uforanderlige, det betyr at de ikke kan endres etter at de er opprettet. Dette betyr at hver gang du bruker en concatenation operasjon, opprettes det en helt ny streng i minnet. Dette kan føre til dårlig ytelse hvis du gjør det mange ganger i løpet av programmet ditt. For å unngå dette, kan du bruke "strings.Builder" for å bygge en streng gradvis uten å opprette nye strenger hver gang.
-
-En annen ting å huske på er at Go bruker UTF-8 som standard for strenger, så hvis du jobber med språk som bruker spesielle tegn, må du være oppmerksom på dette når du setter sammen strenger.
-
-## Se også
-
-- https://gobyexample.com/string-concatenation 
-- https://golang.org/pkg/fmt/#Sprint 
-- https://golang.org/pkg/strings/#Join 
-- https://blog.golang.org/strings
+- [Strings i Go](https://golang.org/pkg/strings/)
+- [Formatterspecifiers i Go](https://pkg.go.dev/fmt#pkg-overview)
+- [Manipulerbar tilsvarende av strings i Go](https://golang.org/pkg/bytes/)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 下载网页。"
-simple_title:         "下载网页。"
+title:                "下载网页"
+html_title:           "Clojure: 下载网页"
+simple_title:         "下载网页"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 为什么
 
-在当今互联网时代，我们经常需要从网页中获取数据来进行分析、处理或展示。因此，学习如何使用Clojure来下载网页是非常有价值的技能，它能帮助我们更有效地获取我们需要的数据。
+下载网页是一个非常常见的操作，可以用来获取网页的内容、数据或者图片。无论是进行数据分析、制作网页备份还是获取信息，都会有下载网页的需求。
 
-## 如何做？
+## 如何
 
-首先，我们需要导入Clojure的一个库，叫做clj-http。它提供了一些函数来帮助我们发送和接收HTTP请求。
+在Clojure中，可以使用 `clj-http` 库来下载网页。首先，需要在项目中引入这个库：
 
-```Clojure
-(ns my-clojure-project 
-  (:require [clj-http.client :as http]))
+```
+[clj-http "3.7.0"]
 ```
 
-然后，我们可以使用 `GET` 函数来获取网页的内容。假设我们想要下载Wikipedia的主页，我们可以像下面这样写：
+然后，使用 `client/get` 函数来下载网页，指定网页的URL，并将结果保存在一个变量中：
 
-```Clojure
-(def wikipedia-page (http/get "https://zh.wikipedia.org/"))
+```
+(def page (client/get "https://www.example.com"))
 ```
 
-如果我们想要查看页面的返回状态码，可以使用 `:status` 关键字：
+通过 `:body` 键获取网页内容，在控制台上打印网页的内容：
 
-```Clojure
-(:status wikipedia-page) ; 返回 200 表示成功
+```
+(println (:body page))
 ```
 
-如果我们想要获取网页的HTML源代码，可以使用 `:body` 关键字：
+最后，关闭连接，以释放资源：
 
-```Clojure
-(:body wikipedia-page) ; 返回一个字符串，表示页面的HTML源代码
+```
+(client/close page)
 ```
 
-## 深入挖掘
+## 深入了解
 
-除了基本的 `GET` 函数外，clj-http 还提供了很多其他有用的函数，例如 `POST`、`PUT`、`DELETE` 等，可以帮助我们发送不同类型的HTTP请求。
-
-另外，我们还可以使用一些参数来定制我们的请求，例如添加请求头、设置超时时间等。具体的使用方法可以参考 clj-http 的官方文档。
+除了基本的下载功能，`clj-http` 还提供了许多其他选项，例如可选的HTTP头、代理设置、错误处理等。可以参考官方文档来了解更多详情。
 
 ## 参考链接
 
-- clj-http 官方文档: https://github.com/dakrone/clj-http
-- Clojure 官网: https://clojure.org/
-- 学习 Clojure 的免费资源: https://purelyfunctional.tv/guide/best-practices-learning-clojure/zh-cn/
+* [Clojure官方网站](https://clojure.org/)
+* [clj-http文档](https://github.com/dakrone/clj-http)
+* [Clojure社区论坛](https://clojureverse.org/)

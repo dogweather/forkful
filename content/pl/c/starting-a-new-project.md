@@ -1,5 +1,6 @@
 ---
-title:                "C: Rozpoczynanie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "C: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C"
 category:             "C"
@@ -11,47 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Rozpoczęcie nowego projektu w języku C może być straszne dla wielu programistów, ale przynosi wiele korzyści. Może to być idealny sposób na ulepszenie swoich umiejętności programistycznych, zaspokajanie swojej ciekawości lub po prostu na zdobycie doświadczenia w pracy z jednym z najważniejszych języków programowania.
+Jeśli jesteś zainteresowany rozwojem umiejętności w programowaniu lub chcesz tworzyć własne projekty, C jest doskonałym językiem do nauki. Jest on powszechnie stosowany w systemach operacyjnych i aplikacjach o wysokiej wydajności, dzięki czemu warto zacząć naukę jego języka programowania.
 
-## Jak to zrobić
+## Jak zacząć
 
-Pierwszym krokiem w rozpoczęciu projektu w języku C jest wybranie odpowiedniego edytora tekstu lub środowiska programistycznego. Niektórzy preferują prostsze narzędzia, takie jak notatnik lub Vim, podczas gdy inni wolą bardziej zaawansowane edytory, takie jak Visual Studio Code czy Eclipse. Następnie należy zapoznać się z podstawowymi elementami języka C, takimi jak deklaracja zmiennych, pętle i instrukcje warunkowe.
-
-Poniżej przedstawiam przykładowy kod, który oblicza silnię przy użyciu pętli for:
+Najpierw musisz zainstalować odpowiedni kompilator C dla swojego systemu operacyjnego. Na przykład, jeśli korzystasz z systemu Windows, możesz wybrać dostępny kompilator Mingw lub MSVC. Dobrym wyborem dla systemów Linux lub macOS jest kompilator GCC. Po zainstalowaniu kompilatora, utwórz nowy plik o rozszerzeniu `.c` i wpisz poniższy kod:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    int n, fact = 1;
 
-    printf("Podaj liczbę: ");
-    scanf("%d", &n);
-
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-
-    printf("Silnia liczby %d wynosi %d", n, fact);
+    printf("Witaj świecie!");
     return 0;
 }
 ```
 
-Po uruchomieniu tego programu, jeśli podamy liczbę 5, otrzymamy następujący wynik:
+Możesz skompilować ten kod poleceniem `gcc nazwa_pliku.c` i uruchomić wygenerowany plik wykonywalny. Powinieneś zobaczyć w konsoli napis "Witaj świecie!". Gratulacje, właśnie uruchomiłeś swój pierwszy program w C!
 
-```
-Podaj liczbę: 5
-Silnia liczby 5 wynosi 120
-```
+## Deep Dive
 
-## Głębszy zanurzenie
+Jeśli jesteś zainteresowany bardziej zaawansowanymi aspektami języka C, warto poznać poniższe zagadnienia:
 
-Po zapoznaniu się z podstawami, można zacząć projektować i pisać bardziej zaawansowane programy. Język C jest wykorzystywany w różnych dziedzinach, takich jak tworzenie systemów operacyjnych, programowanie mikrokontrolerów czy tworzenie gier. Możliwości są nieograniczone i można kontynuować naukę i rozwój umiejętności przez cały czas.
+- Struktury danych: w C możesz tworzyć własne struktury danych, np. tablice, listy czy drzewa.
+- Wskaźniki: są to zmienne, które przechowują adresy w pamięci i są niezbędnym narzędziem przy pracy z niektórymi funkcjami języka C.
+- Dynamiczna alokacja pamięci: dzięki niej możesz przydzielać i zwalniać pamięć w trakcie działania programu.
 
-Jednym z ważniejszych aspektów projektowania w języku C jest uwzględnienie wydajności i pamięci komputera. Dlatego warto rozważyć używanie wskaźników i dynamicznej alokacji pamięci.
+Ponadto, warto zapoznać się z dobrymi praktykami programowania w C, takimi jak udzielanie komentarzy, unikanie niebezpiecznych funkcji czy korzystanie z narzędzi do testowania kodu.
 
 ## Zobacz także
 
-- [Podstawy języka C](https://www.tutorialspoint.com/cprogramming/)
-- [Podstawowy przewodnik programowania w języku C](https://www.programiz.com/c-programming)
-- [Lista popularnych narzędzi i IDE dla języka C](https://www.techjunkie.com/best-c-ides-programming-editors-software/)
+- [Oficjalna strona języka C](https://devdocs.io/c/)
+- [Poradnik dla początkujących w języku C](https://www.learn-c.org/)
+- [Książka "The C Programming Language" dla początkujących](https://en.wikipedia.org/wiki/The_C_Programming_Language)

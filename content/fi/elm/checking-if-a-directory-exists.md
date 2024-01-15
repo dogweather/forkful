@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Tarkistetaan löytyykö kansio"
-simple_title:         "Tarkistetaan löytyykö kansio"
+title:                "Tarkistetaan, onko kansio olemassa"
+html_title:           "Elm: Tarkistetaan, onko kansio olemassa"
+simple_title:         "Tarkistetaan, onko kansio olemassa"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,30 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kannattaa tarkistaa, onko hakemistoa olemassa? Tämä on tärkeää tietoa, jota tarvitaan ohjelmoinnissa esimerkiksi, kun halutaan varmistaa tiettyjen tiedostojen olemassaolo tietyssä hakemistossa ennen kuin niitä käytetään. Näin varmistetaan, että ohjelma toimii suunnitellusti ja vältetään mahdollisia virheitä.
+Kun teet ohjelmoijana, on tärkeää tietää, miten tarkistaa, onko kansio olemassa . Tämä auttaa varmistamaan, että koodisi toimii sujuvasti ja välttämään virheitä.
 
-## Miten tehdä se Elmilla
+## Kuinka tehdä
 
-Tässä on esimerkki koodista, jolla voidaan tarkistaa, onko hakemistoa olemassa Elmilla:
+#### Elm haasteen
 
 ```Elm
-import File
+-- Tämä funktio tarkistaa, onko annetun polun kansio olemassa
+checkDirectoryExists : String -> Bool
+checkDirectoryExists path =
+	let
+		result = 
+			case path of
+				"/" ->
+					True
 
-directoryName = "hakemiston_nimi"
+				_ ->
+					case String.split "/" path of
+						"." :: rest ->
+							checkDirectoryExists (String.join "/" rest)
 
-case File.exists directoryName of
-    True -> "Hakemisto on olemassa."
-    False -> "Hakemistoa ei löydy."
+						[a, b] ->
+							isDirectory a b
+
+						_ ->
+							False
+	in
+		if result then
+			True
+
+		else
+			case String.split "/" path of
+				["", a] ->
+					isDirectory "/" a
+
+				[root, a] ->
+					isDirectory ("/" ++ root) a
+
+				other ->
+					False
 ```
 
-Koodin tulos riippuu siitä, onko annetulla nimellä olemassa oleva hakemisto vai ei. Jos hakemisto löytyy, tulostuu "Hakemisto on olemassa", jos taas ei, tulostuu "Hakemistoa ei löydy".
+Tässä esimerkissä käytetään Elm funktiota nimeltä "checkDirectoryExists", joka tarkistaa, onko annettu polku olemassa oleva kansio. Funktio käyttää tapauslausekkeita käsittelemään erilaisia mahdollisia polkuja ja palauttaa lopuksi "True" tai "False" arvon. Voit käyttää tätä funktiota omassa koodissasi varmistaaksesi, että kansiot ovat olemassa ennen kuin yrität kirjoittaa tai lukea niitä.
 
-## Syvemmälle aiheeseen
+#### Esimerkki
 
-Kun tarkistetaan hakemiston olemassaoloa, on tärkeää huomioida myös käsiteltävänä oleva käyttöjärjestelmä. Esimerkiksi Windows-käyttöjärjestelmässä hakemistot erotetaan kenoviivoilla ("\") kun taas Unix-pohjaisissa järjestelmissä käytetään käänteisillä vinoviivoilla ("/"). Tätä tulee ottaa huomioon, jotta koodi toimii kaikissa ympäristöissä oikein.
+```Elm
+-- Tarkista, onko kansion "documents" polku olemassa
+checkDirectoryExists "home/documents" -- palauttaa "True"
+
+-- Tarkista, onko kansion "pictures" polku olemassa
+checkDirectoryExists "home/pictures" -- palauttaa "False"
+```
+
+## Syventyminen
+
+Kun tarkistat kansion olemassaoloa Elmillä, otat käyttöön erilaisia tapauksia, joita sinun tulee käsitellä. Nämä voivat sisältää ottaa huomioon erilaisia erikoismerkkejä, kuten "/" ja "." ja käsitellä täydellisiä ja osittaisia polkuja. On myös tärkeää huomata, että kansion tarkistaminen ei välttämättä takaa kansion olemassaoloa, sillä se voi olla luotu toisessa kohdassa koodia.
 
 ## Katso myös
 
-- [Elm-tiedostojen käsittely](https://guide.elm-lang.org/interop/javascript.html)
-- [Hakemistojen tarkistaminen JavaScriptillä](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Hakemistojen käsittely eri käyttöjärjestelmissä](https://www.learnshell.org/en/Handling-Files/Bash-Permissions/)
+- [Elm dokumentaatio](https://elm-lang.org/)
+- [Elm oppaat ja opetusohjelmat](https://guide.elm-lang.org/)
+- [Elm yhteisöfoorumi](https://discourse.elm-lang.org/)

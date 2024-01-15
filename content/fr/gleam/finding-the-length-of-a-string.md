@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Gleam: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-
-Il y a plusieurs raisons pour lesquelles vous pourriez vouloir trouver la longueur d'une chaîne de caractères dans votre code Gleam. Cela peut être utile lorsque vous travaillez avec des chaînes de caractères dynamiques, ou lorsque vous avez besoin d'une vérification de validation pour un certain nombre de caractères.
+# Pourquoi
+Avouons-le, tout le monde a déjà eu besoin de connaître la longueur d'une chaîne de caractères dans un programme. Que ce soit pour valider la saisie d'un utilisateur ou pour manipuler des données, cette opération est incontournable. Heureusement, en utilisant Gleam, trouver la longueur d'une chaîne de caractères est un jeu d'enfant !
 
 ## Comment faire
-
-Pour trouver la longueur d'une chaîne de caractères en Gleam, vous pouvez utiliser la fonction `String.length` et passer votre chaîne en tant qu'argument. Voici un exemple de code avec une chaîne de caractères et une sortie de résultat correspondante :
-
+Pour trouver la longueur d'une chaîne de caractères en utilisant Gleam, vous pouvez utiliser la fonction `length()` en passant en argument votre chaîne de caractères. Voici un exemple de code avec une chaîne de caractères prédéfinie :
+```Gleam
+let string = "Bonjour le monde !"
+let length = string |> length()
 ```
-Gleam
-let my_string = "Bonjour, je m'appelle Sophie."
-IO.print(String.length(my_string))```
-
-Cette fonction renverra le nombre total de caractères dans votre chaîne, y compris les espaces. Si vous voulez exclure les espaces de la longueur, vous pouvez utiliser la méthode `String.trim` pour enlever ces caractères avant d'utiliser `String.length`.
+Ce code va renvoyer la valeur `18` dans la variable `length` car il y a 18 caractères dans la chaîne "Bonjour le monde !". 
+Il est également possible de trouver la longueur d'une chaîne de caractères en utilisant la méthode `String.len()` :
+```Gleam
+let string = "Hello"
+let length = String.len(string)
+```
+Ce code renvoie également la valeur `5` dans la variable `length`.
 
 ## Plongée en profondeur
+En cherchant à trouver la longueur d'une chaîne de caractères en utilisant Gleam, il est important de comprendre que la fonction `length()` et la méthode `String.len()` font la même chose en interne. La fonction `length()` est simplement un raccourci pour la méthode `String.len()`. Vous pouvez donc utiliser l'une ou l'autre selon vos préférences. 
+Une autre chose à noter est que ces méthodes ne fonctionnent qu'avec les chaînes de caractères et non avec d'autres types de données. Si vous essayez de trouver la longueur d'un entier ou d'un booléen, par exemple, cela entraînera une erreur.
 
-Il est important de noter que la fonction `String.length` compte également les caractères Unicode dans votre chaîne. Cela signifie que certains caractères peuvent compter pour plus d'un caractère dans la longueur totale de la chaîne. Si vous avez besoin de compter uniquement les caractères ASCII, vous pouvez utiliser la méthode `String.trim_to_graphemes` avant d'utiliser `String.length`.
-
-De plus, si vous travaillez avec des chaînes de caractères dynamiques, vous pouvez utiliser la fonction `String.len_bytes` pour compter la longueur en octets de votre chaîne. Cela peut être utile si vous devez limiter la taille de votre chaîne pour éviter les problèmes de performance.
-
-## Voir aussi
-
-- Documentation de Gleam sur la fonction `String.length` : [lien](https://gleam.run/core/String.html#length)
-- Documentation de Gleam sur la fonction `String.len_bytes` : [lien](https://gleam.run/core/String.html#len_bytes)
-- Définition de l'UTF-8 pour mieux comprendre la comptabilisation des caractères Unicode : [lien](https://www.rapidtables.com/code/text/unicode-characters.html)
+# Voir aussi
+Pour en savoir plus sur les différentes fonctions et méthodes disponibles en Gleam, vous pouvez consulter la documentation officielle sur les chaînes de caractères :
+- [Documentation Gleam sur les chaînes de caractères](https://gleam.run/core/string.html)
+- [Documentation Gleam sur les fonctions prédéfinies](https://gleam.run/core/functions.html)
+- [Documentation Gleam sur les opérateurs](https://gleam.run/core/operators.html)

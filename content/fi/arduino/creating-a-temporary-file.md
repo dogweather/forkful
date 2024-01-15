@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Arduino: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,50 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Miksi luoda väliaikainen tiedosto Arduino-ohjelmoinnissa?
+## Miksi luoda väliaikainen tiedosto?
 
-Jos olet koskaan työskennellyt Arduino-ohjelmoinnin parissa, tiedät miten tärkeää on tallentaa ja käsitellä tietoa tarkasti. Joissakin tapauksissa saattaa olla tarpeen luoda väliaikainen tiedosto, johon tallennetaan tilapäistä tietoa tai väliaikainen versio tiedostosta, johon haluat tehdä muutoksia. Tässä blogikirjoituksessa näytämme, miten luodaan väliaikainen tiedosto Arduino-ohjelmoinnissa ja miten sitä käytetään.
+On olemassa monia syitä, miksi voit luoda väliaikaisen tiedoston Arduino-projektillesi. Yksi syy voi olla tallentaa väliaikaisia ​​tietoja, kuten käyttäjän syötteitä, jotka eivät ole välttämättömiä ohjelman lopullisessa versiossa. Tiedoston luominen voi myös auttaa ohjelman sisäisessä järjestelyssä ja suorituskyvyssä.
 
-Kuinka luoda väliaikainen tiedosto Arduino-ohjelmoinnissa?
+## Näin teet sen
 
-Voit luoda väliaikaisen tiedoston Arduino-ohjelmoinnissa ```tempFile```-muuttujan avulla. Tämä muuttuja luodaan käyttämällä ```File```-kirjastoa, jota voidaan käyttää tiedostojen luomiseen, avaamiseen ja muuhun käsittelyyn.
+```Arduino
+
+// Luodaan väliaikainen tiedosto nimeltä "data.txt"
+File data = SD.open("data.txt", FILE_WRITE);
+
+// Kirjoitetaan tiedostoon merkkijono "Hei maailma!"
+data.println("Hei maailma!");
+
+// Suljetaan tiedosto
+data.close();
 
 ```
-#include <SPI.h>
-#include <SD.h>
 
-const int chipSelect = 10; // SD-kortin liitäntä
+Koodiesimerkissä luodaan väliaikainen tiedosto nimeltä "data.txt" ja kirjoitetaan siihen merkkijono "Hei maailma!". Tiedosto suljetaan lopuksi.
 
-File tempFile; // Luo "tempFile"-muuttuja
+## Syvemmälle asiassa
 
-void setup() {
-  // Alustetaan SD-moduuli
-  SD.begin(chipSelect);
-  
-  // Luodaan tiedosto "temp.txt"
-  tempFile = SD.open("temp.txt", FILE_WRITE);
-  
-  // Kirjoitetaan tiedostonumeron arvo
-  tempFile.println(1234);
-  
-  // Suljetaan tiedosto
-  tempFile.close();
-}
-
-void loop() {
-  // Tässä voit tehdä muutoksia tiedostoon ja tallentaa ne
-  // Väliaikainen tiedosto säilyy, kunnes moduuli sammutetaan
-  
-  // Lopuksi voit poistaa tiedoston, kun sitä ei enää tarvita
-  SD.remove("temp.txt");
-}
-```
-
-Deep Dive: Väliaikaisen tiedoston luominen
-
-Väliaikainen tiedosto luodaan käyttämällä ```FILE_WRITE```-tilaa, joka tarkoittaa, että tiedostoon voi kirjoittaa tietoa. Voit myös käyttää ```FILE_READ```-tilaa, jos haluat lukea tiedostoa. Tiedosto poistetaan lopuksi käyttämällä ```SD.remove()```-toimintoa. Väliaikainen tiedosto on hyödyllinen silloin, kun tarvitset tallentaa tilapäistä tietoa, jota ei tarvita pitkäaikaiseen tallennukseen.
+On tärkeää huomata, että väliaikaisen tiedoston luominen vie tilaa Arduino-piirin muistista. Sen sijaan, että tallentaisit tiedoston lopullisen version ohjelmassa, voit myös käyttää esimerkiksi muuttujia ja taulukoita tallentamaan väliaikaisia ​​tietoja. Näin säästät tilaa muistissa ja saat saman lopputuloksen.
 
 ## Katso myös
 
-- [Arduino-ohjelmointiopas](https://www.arduino.cc/en/Guide/Introduction)
-- [SD-kortin käyttö Arduino-ohjelmoinnissa](https://www.arduino.cc/en/Reference/SD)
+- Opas Arduino-piirin muistin optimointiin: [https://arduino.cc/memoryoptimization](https://arduino.cc/memoryoptimization)
+- SD-kirjaston dokumentaatio: [https://www.arduino.cc/en/Reference/SD](https://www.arduino.cc/en/Reference/SD)

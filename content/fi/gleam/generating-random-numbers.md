@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "Gleam: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi haluaisit käyttää satunnaislukugenerointia ohjelmoinnissa? Syitä voi olla monia, mutta yleisimpiä ovat pelit, tilastolliset tutkimukset ja salauksen generointi.
 
-Satunnaislukujen generointi on tärkeä osa monia ohjelmia ja sovelluksia, joita käytämme päivittäin. Se voi auttaa arvonta- ja arpajaissovelluksissa, satunnaisen sisällön luomisessa tietokonepeleihin ja jopa satunnaisen datan luomisessa testaukseen. Gleam-ohjelmointikieli tarjoaa tehokkaat työkalut satunnaislukujen generointiin, mikä tekee siitä loistavan vaihtoehdon tähän tarkoitukseen.
+Satunnaislukujen generointi on tärkeä työkalu monissa ohjelmointiprojekteissa. Se voi lisätä pelin dynamiikkaa, antaa tärkeitä tilastollisia tietoja tai varmistaa turvallisuutta kryptografisissa sovelluksissa.
 
-## Kuinka
+## Miten
+Gleamissa on useita tapoja generoida satunnaislukuja. Yksinkertaisin tapa on käyttää Gleamin sisäänrakennettua `random` -kirjastoa, joka tarjoaa erilaisia funktioita satunnaislukujen luomiseen.
 
-Gleam tarjoaa useita sisäänrakennettuja toimintoja satunnaislukujen luomiseen. Yksi yksinkertaisimmista tavoista on käyttää `random` -funktiota. Alla on esimerkki, jossa luodaan satunnainen kokonaisluku välillä 1-10:
+```
+Gleam import random
 
-```Gleam
-let satunnainen = random.int(1, 10)
+let number = random.generate_int(1,10) // Generoi satunnaisen kokonaisluvun väliltä 1-10
 ```
 
-Tämä koodi palauttaa arvon, kuten 7 tai 2, jokainen suorituskerta. Voit myös generoida tietyn määrän satunnaislukuja kerrallaan `random.ints` -funktiolla:
+Voit myös luoda satunnaisen merkkijonon käyttämällä `random.string` -funktiota:
 
-```Gleam
-let satunnaiset_luvut = random.ints(5, 1, 10)
+```
+Gleam import random
+
+let string = random.generate_string(10) // Generoi 10 merkin mittaisen satunnaisen merkkijonon
 ```
 
-Tämä koodi palauttaisi listan, jossa on viisi satunnaista kokonaislukua välillä 1-10, kuten esimerkiksi `[3, 9, 6, 4, 8]`.
+Kun generoit satunnaisia lukuja, on tärkeää huolehtia niiden tasaisesta jakautumisesta sekä suuresta riippumattomuudesta. Gleamin `random` -kirjasto takaa tämän varmistamalla korkealaatuiset satunnaislukugeneraattorit.
 
-## Syventävä tarkastelu
+## Syvempi sukellus
+Satunnaislukujen generointi on mielenkiintoinen matemaattinen ilmiö ja sillä on tärkeä rooli monissa tieteen ja teknologian osa-alueissa.
 
-Gleam tarjoaa myös muita hyödyllisiä toimintoja satunnaislukujen generointiin. Voit esimerkiksi käyttää `random.float` -funktiota luodaksesi satunnaisen liukuluvun välillä 0.0-1.0. Jos haluat määrittää tarkan numeron desimaalipaikkoja, voit käyttää `random.float_with_precision` -funktiota. Voit myös luoda satunnaisen merkkijonon tietystä merkkien joukosta `random.from_chars` tai satunnaisen elementin listalta `random.from_list`.
+Yksi tärkeimmistä asioista satunnaislukujen generoinnissa on sen epädeterministisyys eli seuraavan luvun ennustamattomuus. Gleamin `random` -kirjasto käyttää tämän varmistamiseen kryptografisia algoritmeja, jotka antavat suuren määrän todennäköisiä arvoja.
+
+Toinen mielenkiintoinen osa satunnaislukujen generointia on sen käyttötilanteiden moninaisuus. Monien ohjelmointitehtävien ratkaiseminen vaatii satunnaisuuden käyttöä ja Gleam tarjoaa helpon ja luotettavan tavan tämän saavuttamiseen.
 
 ## Katso myös
-
-- Gleamin virallinen dokumentaatio: https://gleam.run/
-- Satunnaislukujen generointi Pythonilla: https://www.python.org/
-- Satunnaislukujen merkitys ohjelmoinnissa: https://medium.com/
+- Gleamin virallinen dokumentaatio satunnaislukugeneroinnista: [https://gleam.run/lib/random](https://gleam.run/lib/random)
+- Satunnaislukujen käyttö pelimoottorin ohjelmoinnissa: [https://gafferongames.com/post/fixyourstep/](https://gafferongames.com/post/fixyourstep/)
+- Satunnaislukujen käyttö salauksessa: [https://www.cloudflare.com/learning/ssl/how-randomness-works-in-tls/](https://www.cloudflare.com/learning/ssl/how-randomness-works-in-tls/)

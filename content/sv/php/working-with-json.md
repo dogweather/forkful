@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "PHP: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,52 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför arbeta med JSON?
+## Varför
 
-JSON (JavaScript Object Notation) är ett populärt datautbytesformat som används inom webbutveckling. Det är enkelt att läsa och skriva både för människor och maskiner, och har blivit det föredragna valet för att skicka data mellan en klient och server. Att kunna arbeta med JSON är en viktig färdighet för alla PHP-programmerare på grund av dess vanliga användning i moderna webbtjänster.
+Varför arbeta med JSON i PHP? JSON (JavaScript Object Notation) är ett vanligt förekommande format för datalagring och utbyte av data mellan olika system och plattformar. Det är också ett populärt sätt att hämta data från API:er. Att kunna hantera JSON-data i PHP är därför en viktig kunskap för att kunna bygga dynamiska webbsidor och applikationer.
 
-# Så här gör du det:
+## Hur man arbetar med JSON i PHP
 
-För att arbeta med JSON i PHP behöver du först och främst en JSON-sträng som innehåller datan du vill arbeta med. Detta kan vara en sträng som kommer från en extern källa, som en API-anrop eller en databasfråga. Du kan också skapa din egen JSON-sträng med hjälp av PHP arrays.
+För att kunna arbeta med JSON i PHP behöver du först konvertera datan till en PHP-array. Detta kan göras på två sätt - antingen genom att använda funktionen `json_decode()` för att konvertera en JSON-sträng till en PHP-array, eller genom att använda `json_encode()` för att konvertera en PHP-array till en JSON-sträng.
 
-För att läsa en JSON-sträng använder du funktionen `json_decode()` som konverterar den till ett associativt PHP array. Till exempel så här:
+Här är ett exempel på hur man konverterar en JSON-sträng till en PHP-array:
+
 ```PHP
-// Exempelsträng
-$jsonStrang = '{"namn": "Anna", "ålder": 30, "hobbyer": ["läsa", "måla", "resa"]}';
+<?php
+// JSON-strängen som ska konverteras
+$json = '{"name":"John","age":30,"city":"Stockholm"}';
 
-// Konvertera från JSON till PHP array
-$phpArray = json_decode($jsonStrang, true);
+// Konvertera JSON-strängen till en PHP-array
+$array = json_decode($json, true);
 
-// Skriv ut attribut från arrayen
-echo $phpArray['namn']; // output: Anna
-echo $phpArray['ålder']; // output: 30
-echo $phpArray['hobbyer'][1]; // output: måla
+// Skriv ut namnet
+echo $array['name']; // John
 ```
 
-För att skapa en JSON-sträng från en PHP array används funktionen `json_encode()`. Till exempel så här:
-```PHP
-// Exempelarray
-$person = [
-    'namn' => 'Pelle',
-    'ålder' => 25,
-    'hobbyer' => ['träna', 'spela musik']
-];
+Här är ett exempel på hur man konverterar en PHP-array till en JSON-sträng:
 
-// Skapa en JSON-sträng
-$jsonStrang = json_encode($person);
+```PHP
+<?php
+// PHP-arrayen som ska konverteras
+$array = array('name' => 'John', 'age' => 30, 'city' => 'Stockholm');
+
+// Konvertera PHP-arrayen till en JSON-sträng
+$json = json_encode($array);
 
 // Skriv ut JSON-strängen
-echo $jsonStrang; // output: {"namn": "Pelle", "ålder": 25, "hobbyer": ["träna", "spela musik"]}
+echo $json; // {"name":"John","age":30,"city":"Stockholm"}
 ```
 
-Det finns även andra funktioner och metoder som hjälper dig att manipulera och arbeta med JSON i PHP. Det är viktigt att läsa på dokumentationen för att lära dig mer om dessa.
+Att arbeta med JSON i PHP är relativt enkelt och det finns många inbyggda funktioner som gör det smidigt att hantera både JSON-strängar och PHP-arrayer.
 
-# Djupdykning:
+## Djupdykning
 
-Det finns många fördelar med att använda JSON i webbutveckling, som prestanda och enkelhet att arbeta med. Men det finns också några saker att tänka på när du arbetar med JSON. Till exempel kan det vara svårt att hantera felaktigt formaterade eller trasiga JSON-strängar vilket kräver extra kod för att hantera. Det är också viktigt att använda funktioner som `json_encode()` och `json_decode()` på rätt sätt för att undvika potentiella säkerhetshål.
+En viktig aspekt att ha i åtanke när man arbetar med JSON i PHP är att kontrollera datatypen innan man börjar konvertera. Om en felaktig datatyp skickas till en av funktionerna (`json_decode()` eller `json_encode()`) kan det leda till oväntade resultat.
 
-# Se även:
+En annan viktig sak att tänka på är hantering av eventuella fel. Om konverteringen av JSON till en PHP-array misslyckas, kommer funktionen `json_decode()` att returnera `null`. Detta kan leda till problem om man försöker använda datan utan att först kontrollera dess värde. Det är därför viktigt att alltid ha en kontrollstruktur för att hantera eventuella fel.
 
-- [PHP: JSON Functions](https://www.php.net/manual/en/ref.json.php)
-- [Working with JSON in PHP](https://www.geeksforgeeks.org/working-with-json-data-in-php/)
-- [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp) (på svenska)
+Att känna till de vanligaste funktionerna för att hantera JSON i PHP är också viktigt. Några sådana funktioner är `json_decode()`, `json_encode()`, `json_last_error()` och `json_last_error_msg()`. Genom att känna till vad dessa funktioner gör och hur de används, blir det enklare att arbeta med JSON i PHP.
+
+## Se även
+
+- [PHP-dokumentationen för JSON](https://www.php.net/manual/en/book.json.php)
+- [JSON i JavaScript](https://www.json.org/json-sv.html)
+- [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)

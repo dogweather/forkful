@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "Swift: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-I denne bloggposten skal vi utforske et vanlig problem i Swift-programmering - hvordan å slette tegn som matcher et bestemt mønster. Dette kan være nyttig når du arbeider med strenger og trenger å fjerne uønskede tegn.
+Noen ganger kan vi møte på situasjoner hvor vi trenger å slette bestemte tegn i en rekke med tekst. Dette kan være for å fjerne uønsket formatering, filtrere ut sensitive data, eller rense tekst før den skal brukes videre.
 
 ## Hvordan
-
-For å slette tegn som matcher et mønster i Swift, kan du bruke metoden `replacingOccurrences(of:with:)` på en streng. Denne metoden tar to parametere - mønsteret du vil matche og den nye strengen du vil erstatte den matchende delen med.
-
-La oss si at vi har en streng med navn og ønsker å slette alle mellomrommene i navnet. Vi kan bruke følgende kode:
+For å slette tegn i en tekststreng i Swift, kan vi bruke funksjonen `replacingOccurrences(of:with:)` som lar oss erstatte alle forekomster av et bestemt tegn eller tegnmønster med en annen tekst. La oss se på et eksempel:
 
 ```Swift
-let navn = "Mari Olsen"
-let nyttNavn = navn.replacingOccurrences(of: " ", with: "")
-print(nyttNavn) // Output: MariOlsen
+let tekst = "Jeg elsker å spise epler"
+let endretTekst = tekst.replacingOccurrences(of: "e", with: "")
+print(endretTekst)
 ```
 
-I dette eksempelet brukte vi metoden til å erstatte alle mellomrom med en tom streng, dermed sletter vi dem. Dette kan også gjøres med andre karakterer og mønstre, avhengig av hva du trenger å fjerne.
+Dette vil gi oss utskriften `Jg lskr å spis aplr`, hvor alle bokstavene "e" er blitt slettet fra teksten. Vi kan også bruke denne funksjonen til å fjerne enkelttegn eller spesifikke ord, som vist i dette eksempelet:
+
+```Swift
+let setning = "Å gå ut og nyte naturen er en flott måte å lade opp på"
+let endretSetning = setning.replacingOccurrences(of: "på", with: "")
+print(endretSetning)
+```
+
+Dette vil gi oss utskriften `Å gå ut og nyte naturen er en flott måte å lade opp`.
 
 ## Dypdykk
-
-Når du bruker metoden `replacingOccurrences`, er det viktig å vite at den ikke endrer den opprinnelige strengen, men returnerer en ny, modifisert kopi. Dette betyr at hvis du vil beholde den opprinnelige strengen, må du tilordne den nye verdien til en ny variabel. Ellers vil den opprinnelige strengen forbli uendret.
-
-I tillegg kan du bruke denne metoden til å erstatte flere mønstre på en gang ved å bruke en `for`-loop og en dictionary med alle mønstrene og deres tilsvarende erstatning. Dette kan være nyttig når du jobber med komplekse strenger og trenger å utføre flere endringer på en gang.
+For å slette tegn fra en tekststreng bruker `replacingOccurrences(of:with:)` funksjonen en algoritme kalt "finite-state automata" for å finne og erstatte tegnene som matcher det spesifiserte mønsteret. Denne algoritmen er effektiv og kan håndtere store tekster raskt. Det er også mulig å bruke regulære uttrykk for å finne og erstatte komplekse mønstre.
 
 ## Se også
-- [Swift Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Working with Strings in Swift](https://www.hackingwithswift.com/articles/141/working-with-strings-in-swift)
-- [Regular Expressions in Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
-
-Takk for at du leste denne bloggposten om hvordan å slette tegn som matcher et mønster i Swift. Jeg håper det var nyttig og husk å bruke denne kunnskapen for å forbedre kodingen din!
+- [Apple's dokumentasjon om string manipulasjon](https://developer.apple.com/documentation/foundation/string_manipulation)
+- [Tutorial om bruk av regulære uttrykk i Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+- [Mer informasjon om "finite-state automata" algoritmen](https://www.educative.io/blog/finite-state-machines-explained)

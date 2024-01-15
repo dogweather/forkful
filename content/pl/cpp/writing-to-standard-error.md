@@ -1,5 +1,6 @@
 ---
-title:                "C++: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "C++: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C++"
 category:             "C++"
@@ -9,30 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać na standardowe wyjście błędów jest ważne
+## Dlaczego
 
-Pisanie na standardowe wyjście błędów jest nieodłączną częścią procesu programowania w języku C++. Jest to ważne, ponieważ pozwala programistom łatwiej śledzić i rozwiązywać błędy w swoim kodzie. Dzięki temu można uniknąć nieprzewidzianych błędów i zapewnić lepszą jakość swojego programu.
+Jeśli zajmujesz się programowaniem w języku C++, prawdopodobnie wielokrotnie spotkałeś się z potrzebą wypisywania informacji na standardowe wyjście błędu. Jest to przydatne w celu raportowania błędów lub ostrzeżeń, które mogą się pojawić w trakcie działania programu. W tym artykule dowiesz się, dlaczego i w jaki sposób można to zrobić.
 
 ## Jak to zrobić
 
-Aby napisać na standardowe wyjście błędów w C++, należy użyć funkcji `std::cerr` lub `std::clog` z biblioteki standardowej. Następnie należy przekazać wiadomość błędu jako parametr do tej funkcji. Przykładowy kod wyglądałby mniej więcej tak:
+Aby wypisać informację na standardowe wyjście błędu, możemy skorzystać z funkcji `std::cerr` z biblioteki standardowej C++. Oto przykładowe użycie tej funkcji:
 
 ```C++
 #include <iostream>
 
 int main() {
-    std::cerr << "Błąd: nie można odnaleźć pliku." << std::endl;
+    std::cerr << "To jest informacja na standardowe wyjście błędu" << std::endl;
     return 0;
 }
 ```
 
-To spowoduje wyświetlenie wiadomości "Błąd: nie można odnaleźć pliku" na standardowym wyjściu błędów podczas uruchamiania programu. Analogicznie, można użyć funkcji `std::clog` do wyświetlenia informacji o mniej ważnych błędach lub ostrzeżeń.
+Powyższy kod wypisze na standardowe wyjście błędu tekst "To jest informacja na standardowe wyjście błędu". Warto zauważyć, że do wypisywania na standardowe wyjście błędu używamy specjalnego strumienia `std::cerr`, a nie standardowego strumienia `std::cout`.
 
-## Głębokie wnioskowanie
+Możemy również wykorzystać operator `<<` do wypisywania różnych typów danych, na przykład:
 
-Warto pamiętać, że opisane powyżej funkcje wyświetlają wiadomości na standardowym wyjściu błędów, co oznacza, że ​​będą one wyświetlane nawet w przypadku, gdy przekierujemy standardowe wyjście do pliku lub innego urządzenia. Ponadto, w przypadku bardziej skomplikowanych programów, zaleca się przechwytywanie wyjątków i wyświetlanie odpowiednich wiadomości błędów na standardowym wyjściu. W ten sposób można dokładniej i precyzyjniej śledzić ewentualne problemy w kodzie.
+```C++
+#include <iostream>
 
-## Zobacz również
+int main() {
+    int liczba = 123;
+    std::cerr << "Liczba to: " << liczba << std::endl;
+    return 0;
+}
+```
 
-- [Standardowa biblioteka języka C++](https://pl.wikipedia.org/wiki/Biblioteka_standardowa_j%C4%99zyka_C%2B%2B)
-- [Obsługa wyjątków w języku C++](https://www.cplusplus.com/doc/tutorial/exceptions/)
+Wyjściem powyższego kodu będzie tekst "Liczba to: 123".
+
+## Wnikliwy rzut oka
+
+Podczas wypisywania na standardowe wyjście błędu, warto zwrócić uwagę na kilka rzeczy. Po pierwsze, warto pamiętać, że strumień `std::cerr` jest buforyzowany, co oznacza, że tekst może nie być od razu wypisywany, a dopiero po wywołaniu funkcji `std::endl` lub `std::flush`.
+
+Kolejną ważną kwestią jest możliwość przekierowania standardowego wyjścia błędu np. do pliku lub innego urządzenia. Możemy to zrobić wykorzystując funkcję `freopen` z biblioteki `cstdio`. Poniżej przedstawiam przykład przekierowania standardowego wyjścia błędu do pliku "error.txt":
+
+```C++
+#include <iostream>
+#include <cstdio>
+
+int main() {
+    freopen("error.txt", "w", stderr); // przekierowanie do pliku error.txt
+    std::cerr << "To będzie wypisane do pliku error.txt" << std::endl;
+    return 0;
+}
+```
+
+Warto również zauważyć, że w niektórych przypadkach mogą pojawić się problemy z wypisywaniem na standardowe wyjście błędu, gdy program kończy się niepowodzeniem (np. zwraca kod błędu). Jednym ze sposobów na uniknięcie tego problemu jest wykorzystanie funkcji `std::abort()` z biblioteki standardowej C++, która powoduje natychmiastowe zakończenie programu bez wywoływania destruktora.
+
+## Zobacz także
+
+- [Dokumentacja funkcji std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
+- [Poradnik C++ - strumienie wejścia i wyjścia](https://pl.wikibooks.org/wiki/C%2B%2B/Programowanie_proceduralne/Strumienie_wej%C5%9Bcia_i_wyj%C5%9Bcia)
+- [Przekierowanie wyjścia błędu do pliku w C++](https://stackoverflow.com/questions/10075404/capture-and-log-all-stderr-and-stdout-to-a-file-while-still-being-able-to-view)

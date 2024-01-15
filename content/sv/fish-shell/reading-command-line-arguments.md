@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Läsning av kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Fish Shell: Läsning av kommandoradsargument"
 simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,48 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna läsa och hantera kommandoradsargument kan vara en otroligt användbar färdighet inom programmering. Genom att behärska denna kunskap kan du effektivt interagera med program och kommandon via terminalen.
+Det finns många olika sätt att interagera med datorer, men ibland kan det enklaste sättet vara via kommandoraden. Genom att läsa kommandoradsargument kan du snabbt och enkelt utföra olika uppgifter utan att behöva öppna ett grafiskt gränssnitt. I denna artikel kommer vi att utforska hur du kan läsa kommandoradsargument i Fish Shell och hur det kan förenkla din arbetsflöde.
 
-## Hur man gör
+## Så här
 
-För att läsa och hantera kommandoradsargument i Fish Shell används variabeln `$argv`. Den innehåller en lista av alla argument som skickas med till programmet vid körning. För att få en översikt av alla argument kan vi använda `count`-kommandot tillsammans med `$argv`. Nedan följer ett exempel:
+### Skapa ett nytt Fish Shell-skript
+Först måste du skapa ett nytt skript i Fish Shell. Öppna din terminal och skriv in kommandot `touch script.fish` för att skapa en ny tom fil med namnet "script". Du kan sedan öppna filen i din favorittextredigerare för att börja koda.
 
 ```Fish Shell
-echo "Antal kommandoradsargument: (count $argv)"
+touch script.fish // Skapar en ny fil med namnet script
 ```
 
-Detta kommer att skriva ut på skärmen hur många argument som skickats med. För att få ut själva argumenten kan vi använda indexering på `$argv`. Till exempel, för att få ut det första argumentet skriver vi följande kod:
+### Läs ett specifikt kommandoradsargument
+För att läsa ett specifikt kommandoradsargument kan du använda variabeln `$argv`. Den innehåller en lista med alla argument som skickas till ditt skript. I exemplet nedan kommer vi att läsa första argumentet som skickas till skriptet och skriva ut det i terminalen.
 
 ```Fish Shell
-echo "Det första argumentet är: $argv[1]"
+echo $argv[1] // Skriver ut första argumentet
 ```
 
-Vi kan också använda range-indexering för att få ut flera argument samtidigt. Till exempel, för att få ut de två första argumenten skriver vi:
+Om vi nu kör vårt skript med kommandot `./script.fish Hello`, kommer output att bli "Hello" eftersom "Hello" är det första argumentet som vi skickade till skriptet.
+
+### Loopa igenom alla kommandoradsargument
+Ibland kan du vilja läsa och hantera flera kommandoradsargument. För att göra det kan du använda en for-loop för att loopa igenom alla argumenten. I exemplet nedan kommer vi att skriva ut varje argument i en egen rad.
 
 ```Fish Shell
-echo $argv[1..2]
+for arg in $argv
+  echo $arg
+end
+```
+
+Kör du nu skriptet med kommandot `./script.fish Hello World`, kommer output att bli:
+
+```
+Hello
+World
 ```
 
 ## Djupdykning
 
-Det finns flera användbara funktioner inom Fish Shell som underlättar för hanteringen av kommandoradsargument. Här är några av dem:
+Det finns många olika kommandoradsalternativ som du kan använda för att läsa argument i Fish Shell. Här är några exempel:
 
-- `contains($var, $val)`: Används för att kontrollera om en variabel innehåller ett visst värde.
-- `abbr($val)`: Ger en "förkortning" av ett visst värde. Till exempel kan `abbr "fish"` ge "f".
-- `sep($val)`: Används för att dela upp en sträng vid ett visst tecken eller mönster.
+- `$argv[0]` innehåller namnet på det skript som körs.
+- Om ingen input ges i kommandoraden, kommer `$argv` att vara en tom lista.
+- `$argv[-1]` innehåller det sista argumentet i listan.
+- Du kan även använda `$#` för att få antalet argument som skickats till skriptet.
 
-Det finns även möjlighet att använda "wildcards" (jokertecken) när man läser kommandoradsargument. Till exempel, om man bara vill få ut argument som börjar med ett visst tecken kan man använda följande:
+## Se också
 
-```Fish Shell
-echo $argv[\$arg[1] = 'a'*]
-```
-
-Denna kod kommer att ge ut alla argument som börjar med bokstaven "a".
-
-Sammanfattningsvis är det viktigt att förstå hur man kan läsa och hantera kommandoradsargument i Fish Shell för att underlätta interaktion med terminalen och effektivisera programmeringsarbetet.
-
-## Se även
-
-- [Dokumentation om kommandoradsargument inom Fish Shell](https://fishshell.com/docs/current/commands.html#managing-command-line-arguments)
-- [En tutorial på YouTube om manipulation av kommandoradsargument i Fish Shell](https://www.youtube.com/watch?v=SEJVsYPrY00)
-- [En bloggpost om användbara Fish Shell-funktioner](https://medium.com/@gregce/fish-shell-functions-you-should-know-cee4ee27dd96)
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [En introduktion till Fish Shell](https://dev.to/jonmcalder/an-introduction-to-fish-shell-3b7)
+- [Bash vs Fish Shell: En jämförelse](https://medium.com/@ivanaugustobd/bash-vs-fish-shell-e7080a184557)

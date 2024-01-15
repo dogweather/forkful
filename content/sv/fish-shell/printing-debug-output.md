@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Fish Shell: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -11,36 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva program kan vara en ganska komplicerad process, speciellt när det kommer till felsökning. Att lägga till debug output i ditt Fish Shell-program kan underlätta denna process och hjälpa dig att hitta och åtgärda eventuella fel. Det är därför viktigt att förstå hur man skriver och använder debug output i Fish Shell.
+Att skriva ut debug-utgång är ett vanligt sätt för programmerare att felsöka och hitta fel i sitt kod. Genom att skriva ut värden och variabler i olika delar av programmet kan man få en bättre förståelse för hur koden körs och var eventuella problem uppstår.
 
 ## Så här gör du
 
-Debug output i Fish Shell är ganska enkelt att använda. Du behöver bara lägga till kommandot `echo` följt av det meddelande som du vill skriva ut i terminalen. Till exempel:
-
-```Fish Shell
-echo "Detta är ett debug-meddelande"
+För att skriva ut debug-utgång i Fish Shell kan du använda kommandot `echo`. Detta kommando skriver ut en sträng som du anger till standardutgången. I följande exempel skriver vi ut värdet av variabeln `num`:
+```
+Fish Shell
+set num 5
+echo "Värdet av num är $num"
 ```
 
-Det här kommer att skriva ut "Detta är ett debug-meddelande" i terminalen när ditt program körs. Detta kan vara särskilt användbart när du behöver kontrollera värdet på variabler eller följden av vissa steg i ditt program.
-
-Du kan också använda kommandot `printf` för att formatera ditt debug-meddelande på ett specifikt sätt. Till exempel:
-
-```Fish Shell 
-set name "Emilia"
-set age 25
-printf "Personens namn är %s och åldern är %d\n" $name $age
+Output: 
+```
+Värdet av num är 5
 ```
 
-Detta kommer att skriva ut "Personens namn är Emilia och åldern är 25" i terminalen. Du kan lägga till så många variabler som du vill i ditt printf-meddelande genom att använda procenttecken och rätt formatering för respektive variabeltyp.
+För att enkelt se skillnaden mellan olika värden kan du också använda `printf` kommandot. Detta kommando tillåter dig att formatera utmatningen enligt specifika instruktioner. I följande exempel skriver vi ut två variabler i olika former:
+```
+Fish Shell
+set num 5
+set text "Det här är en text"
+printf "Värdet av num är %d. %s\n" $num $text
+```
+
+Output:
+```
+Värdet av num är 5. Det här är en text
+```
 
 ## Djupdykning
 
-Det finns flera sätt att anpassa och förbättra din användning av debug output i Fish Shell. Till exempel kan du använda flaggor som `-s` för att skriva ut tysta meddelanden, vilket kommer att vara osynliga för användaren. Du kan också använda `tee` kommandot för att spara debug output i en fil istället för att skriva ut den i terminalen.
+En annan användbar teknik för att skriva ut debug-utgång är att använda `status` kommandot. Detta kommando låter dig se statuskoden för det senaste kommandot som kördes. Detta kan vara särskilt användbart när du vill kontrollera om ett visst kommando har kört korrekt eller inte.
 
-För mer avancerade användare kan det vara användbart att lära sig om Funksjoner i Fish Shell och hur man kan använda dessa för att strukturera och organisera sina debug-meddelanden.
+```
+Fish Shell
+status
+```
 
-## Se också
+Output:
+```
+0
+```
 
-- [Det officiella dokumentationen för Fish Shell](https://fishshell.com/docs/current/index.html)
-- [En guide till att använda Fish Shell för felsökning](https://www.linuxjournal.com/content/debugging-your-kernel-fishes)
-- [En tutorial om hur man använder printf i Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-use-printf-in-fish-shell)
+Om kommandot kördes utan några problem kommer du att se `0` som resultat. Om det däremot uppstod problem kommer du att se en annan siffra som representerar en felkod.
+
+## Se även
+
+- [Officiell Fish Shell-dokumentation](https://fishshell.com/docs/current/)
+- [How to Debug in Fish Shell](https://medium.com/@flashpoint.eth/how-to-debug-in-fish-shell-3afa8b5d6b)
+- [Fish Shell Tips and Tricks](https://medium.com/@rafaelcalsaverini/fish-shell-tips-and-tricks-94d1bb66fe3a)

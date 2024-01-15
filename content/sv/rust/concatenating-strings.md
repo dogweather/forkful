@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Sammanslagning av strängar"
-simple_title:         "Sammanslagning av strängar"
+title:                "Sammanfogning av strängar"
+html_title:           "Rust: Sammanfogning av strängar"
+simple_title:         "Sammanfogning av strängar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,28 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Concatenating, eller att sammanfoga, strängar är en vanlig uppgift vid programmering. Det är en metod för att sammanfoga flera strängar, eller ord, till en enda sträng. Detta kan vara användbart för att skapa dynamisk text, som till exempel för användargränssnitt eller loggar. På grund av dess vanliga förekomst är det en viktig färdighet för programmerare att ha.
+Om du någonsin har hanterat data som innehåller textsträngar, så har du antagligen stött på behovet av att sammanslå flera strängar till en enda. Rust har en enkel och effektiv metod för att göra just det. 
 
-## Hur man gör det
+## Så här gör man
 
-I Rust finns det flera sätt att utföra string concatenation, men det mest vanliga är att använda "format!" makron. Det här är en inbyggd makro som tar emot en formatteringssträng och en lista med värden, och returnerar en ny sträng som är sammansatt av dessa värden. Här är ett exempel på hur man skulle använda det:
+För att sammanslå två strängar i Rust, kan du använda "+" operatorn.
 
-```Rust
-let first_name = "Erika";
-let last_name = "Larsson";
-let full_name = format!("{} {}", first_name, last_name);
-println!("Välkommen, {}!", full_name);
+```rust
+let fornamn = "Lisa";
+let efternamn = "Andersson";
+
+let hela_namnet = fornamn + efternamn;
+println!("{}", hela_namnet);
+```
+Output:
+```
+LisaAndersson
 ```
 
-Det här skulle skapa en ny sträng som heter "Erika Larsson" och sedan skriva ut "Välkommen, Erika Larsson!" i terminalen. I detta exempel används "{}" i formatteringssträngen för att indikera var värdena ska sättas in.
+Du kan också sammanslå flera strängar på en gång genom att använda "format!" macro:n. Denna metod använder "placeholder" för att hålla reda på vilken ordning strängarna ska sättas ihop i.
 
-## Djupdykning
+```rust
+let favorit_mat = "Pizza";
+let favorit_dryck = "Coca Cola";
 
-I Rust finns det också andra metoder för string concatenation, såsom "push_str" och "push". Dessa är dock mindre effektiva eftersom de kräver att programmeraren måste skapa en ny sträng och sedan ändra den, vilket kan bli resurskrävande. "Format!" makron är därför en mer föredragen metod.
+let beskrivning = format!("Jag älskar {} med en kall {} till!", favorit_mat, favorit_dryck);
+println!("{}", beskrivning);
+```
+Output:
+```
+Jag älskar Pizza med en kall Coca Cola till!
+```
 
-En annan viktig aspekt att tänka på är att Rust har immutabla strängar som standard. Detta innebär att strängar inte kan ändras efter att de har skapats. Så när man sammanfogar strängar i Rust, måste man skapa en helt ny sträng istället för att bara lägga till på den befintliga, som man kanske skulle kunna göra i andra språk.
+## Deep Dive
 
-## Se även
+När du använder "+" operatorn för att sammanslå strängar, så kan dessa inte ändras i efterhand. Detta beror på att strängar i Rust är immutabla, vilket innebär att de inte kan ändras efter att de har skapats. Om du försöker ändra en sammanslagen sträng, så kommer du få ett felmeddelande.
 
-- [Standard Library Documentation](https://doc.rust-lang.org/std/index.html)
-- [The Rust Book: Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+För att lösa detta, kan du använda en "String" typ istället för en "str" typ. En "String" är en dynamiskt allokerad sträng som kan ändras efter att den har skapats. För att sammanslå strängar med typen "String", kan du använda "format!"macro:n eller "push_str" funktionen.
+
+```rust
+let mut fornamn = String::from("Lisa");
+let efternamn = "Andersson";
+
+fornamn.push_str(efternamn);
+println!("{}", fornamn);
+```
+Output:
+```
+LisaAndersson
+```
+
+## Se också
+
+- [Rust String Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Tutorial: Strings in Rust](https://www.youtube.com/watch?v=xD5slrrhkpc)
+- [Översikt av Rust's Data typer](https://doc.rust-lang.org/book/ch03-02-data-types.html)

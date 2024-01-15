@@ -1,6 +1,7 @@
 ---
-title:                "Elm: स्टैंडर्ड त्रुटि में लेखन"
-simple_title:         "स्टैंडर्ड त्रुटि में लेखन"
+title:                "स्टैंडर्ड त्रुटि में लिखना"
+html_title:           "Elm: स्टैंडर्ड त्रुटि में लिखना"
+simple_title:         "स्टैंडर्ड त्रुटि में लिखना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun: Kaarn dwaara koi vyakti standard error kaa anuvaad karne me samay nikaalega, kaarn ki dushro gorvrn ki qurbaani karke hum apne code ko behtar tareeke se debug kar skte hain.
 
-एलम प्रोग्रामिंग के बारे में जानने में, आपने कभी न कभी वर्ग से स्टैंडर्ड त्रुटि पर लिखने की बात सुनी होगी। लेकिन क्या आप जानते हैं कि आपको इसका उपयोग क्यों करना चाहिए? इस आलेख में, हम आपको बताएंगे कि आप एलम में स्टैंडर्ड त्रुटि पर क्यों लिखें और इसके क्या लाभ हैं। 
+## Kaise Kare: Is prograaamig mee hmae adiaa  se standard errr ko kese likhaa?
 
-## कैसे करें
+```Elm
+import Debug
 
-आप स्टैंडर्ड त्रुटि पर लिखने के लिए `Result.Err` का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक में एक उदाहरण है: 
-
-```elm
-import Html
-
--- फंक्शन जो उपयोगकर्ता के 5 से भी कम अंकों के साथ दो संख्याओं का विभाजन करता है
-divideSmallNumbers : Float -> Float -> Result String Float
-divideSmallNumbers num1 num2 =
-    if num2 < 5 then
-        Result.Err "दूसरा संख्या 5 से छोटा है। लेकिन इसे 5 से अधिक होना चाहिए।"
-    else
-        Result.Ok (num1 / num2)
-
--- उपयोगकर्ता के 2 और 3 को विभाजित करें
-divideSmallNumbers 2 3
--- उत्पादन: Err "दूसरा संख्या 5 से छोटा है। लेकिन इसे 5 से अधिक होना चाहिए।"
-
--- उपयोगकर्ता के 6 और 2 को विभाजित करें
-divideSmallNumbers 6 2
--- उत्पादन: Ok 3
+Debug.crash "Ye ek sample error hai"
 ```
 
-इस उदाहरण में, हम `divideSmallNumbers` नामक फंक्शन का उपयोग कर रहे हैं जो नंबरों की विभाजन करता है। यदि दूसरा संख्या 5 से कम है, तो हम `Result.Err` का उपयोग करके एक त्रुटि संदेश लौटाते हैं, और अन्यथा हम उत्पादक को (भाजित) संख्या लौटाते हैं। 
+Output: `
 
-## गहराई में
+Oops! Kuch galat ho gaya hai.
+- Vakya: Ye ek sample error hai
+- Lain: Null
 
-स्टैंडर्ड त्रुटि प
+## Gehraai Tak Jaayein: Dusra chizo mein samae bachakar lie, standard error ke baare mein adhik jaankari aapko bahut kaam aasakti hai. Isse, aap apne code ko behtar dhang se samajh sakte hain.
+
+## Dekhein Bhi: Unn logon ke liye jinke saath aap apne Elm programming skills ko sudhaarna chate hain, humne kuch aur bhi articles likhe hain!
+
+1. "Getting Started with Elm": [https://medium.com/@examplearticle1](https://medium.com/@examplearticle1)
+2. "Debugging Techniques in Elm": [https://medium.com/@examplearticle2](https://medium.com/@examplearticle2)
+3. "Elm Language Reference": [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

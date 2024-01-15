@@ -1,5 +1,6 @@
 ---
-title:                "Swift: एक वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Swift: एक वेब पेज डाउनलोड करना"
 simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##हम क्यों
+## क्यों
+क्या आप भी कभी वेब पेज डाउनलोड की आवश्यकता महसूस करते हैं? वेबसाइटों का संदर्भ (reference) महत्वपूर्ण हैं और इन्हें अपने कंप्यूटर पर सुरक्षित रूप से डाउनलोड और संशोधित करना आपको दृश्यमानता (visibility) और सुविधा (convenience) देता है।
 
-एप्लिकेशन या वेबसाइट पर आप जब भी दिखाई देखता है एक सामान्य समस्या हो सकती है - जो हो सकता है ऐसा कि ऊह! यह आपकी तब हुआ है जब आप वेब पेज का URL कॉपी-पेस्ट करके जाना स्क्रीन पर ऐच्छिक करते हैं। वह पृष्ठसूचीकरण लाने मुश्किल होता है। तो आप एक दोस्त को पूछ सकते हैं "... मैं कैसे उस पृष्ठ को डाउनलोड कर सकता हूँ?" हां, हम इस ब्लॉग पोस्ट में हमें कैसे डाउनलोड करने के लिए एक सरल Swift उदाहरण साझा करेंगे।
-
-##कैसे करे
-
-अब हम अपनी Swift ऐप्लिकेशन में एक पृष्ठ डाउनलोड करने के लिए कुछ कोड लिखेंगे।
-
+## कैसे करें
 ```Swift
-if let url = URL(string: "आपके_पेज_का_URL") {
-    URLSession.shared.dataTask(with: url) { data, response, error in
-        guard let data = data else { return }
-        print(data)
-    }.resume()
+let url = URL(string: "https://www.examplewebsite.com/") // वेब पेज का URL
+let request = URLRequest(url: url!) // वेब पेज का अनुरोध बनाएं
+let task = URLSession.shared.dataTask(with: request) { // डेटा को डाउनलोड करें
+    (data, response, error) in
+    if let error = error { // यदि कोई त्रुटि है तो उसकी जांच करें
+        print("त्रुटि: \(error)")
+    } else {
+        if let data = data { // यदि डेटा मौजूद है तो उसे प्रिंट करें
+            print(data)
+        }
+    }
 }
+task.resume() // अनुरोध को शुरू करें
 ```
 
-इस उदाहरण में, हम एक URL को बनाते हैं, जो हमें पाठ से उपलब्ध कराए गए पृष्ठ को डाउनलोड करने की अनुमति देता है। हम फिर से ताजगी को जांचते हैं, और जब वह पूरा है, हम इसे लाभ का हिस्सा के रूप में छापते हैं। एक बार जब हम इसे बताते हैं हमेशा हम प्रोग्राम के हीसाब से सुलझाएंगे Error तब बार में।
+यहां हमने `URLSession` का इस्तेमाल करके डेटा को डाउनलोड करने का तरीका दिखाया है। आप चाहे तो `URLSession` के बजाय `URLSessionConfiguration` का भी प्रयोग कर सकते हैं। अपनी सुविधा के अनुसार कोडिंग करें।
 
-##गहराई में डिव
+## गहराई में जाएं
+वेब पेज को डाउनलोड करने के लिए सीधी आदेश (direct command) `curl` भी हो सकता है। लेकिन `curl` का उपयोग `URLSession` से करने के मुकाबले कठिन हो सकता है। इसलिए, आपको `URLSession` और `URLSessionConfiguration` का इस्तेमाल सीखना चाहिए। पढ़े [Yalini Ravi की रचनाएं](https://yaliniravi.medium.com/downloading-files-using-swifts-urlsession-and-urlsessionconfiguration-427132956f0d) जो आपको डेटा को डाउनलोड करने में मदद करेंगी।
 
-अब हम साथ चलकर, हम उस तकनीकी कार्य में हैं, जो हमें अपने पोस्ट के रूप में बताता है, हम अपने पेज को डाउनलोड करने के लिए एक URLSession औवेदन का उपयोग करेंगे। यह हमें रूप में requesting रूप में एक API और प्राप्त सुल
+## देखें और होगा अगला (See Also)
+- [Apple के रिकमंदेशं (guidelines) को पढ़ें](https://developer.apple.com/documentation/foundation/urlsession) जो `URLSession` और `URLSessionConfiguration` के ब

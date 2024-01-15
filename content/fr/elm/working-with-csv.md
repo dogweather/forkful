@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Travailler avec les fichiers csv"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Elm: Travailler avec les fichiers csv"
 simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,56 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-CSV (Comma Separated Values) est un format de fichier couramment utilisé pour stocker des données tabulaires telles que les données financières, les listes de contacts, ou même des données de traduction. Travailler avec des fichiers CSV peut être très utile pour les développeurs, car cela leur permet de traiter et d'analyser facilement de grandes quantités de données tabulaires.
+Si vous travaillez avec des données structurées, telles que des feuilles de calcul ou des bases de données, vous avez probablement eu affaire au format CSV. Ce format est largement utilisé pour stocker et échanger des données tabulaires en raison de sa simplicité et de sa compatibilité avec de nombreux logiciels. En utilisant Elm, vous pouvez facilement intégrer la manipulation de fichiers CSV dans vos projets et travailler avec ces données de manière structurée et efficace.
 
 ## Comment faire
 
-Pour travailler avec des fichiers CSV en Elm, nous allons utiliser le package "csv" qui peut être trouvé sur le site de la bibliothèque Elm. Tout d'abord, il faut ajouter ce package à votre fichier Elm en utilisant la commande : `elm install elm-csv`. Ensuite, vous pouvez charger vos données CSV en utilisant la fonction `Csv.Decode.decodeString`.
+Pour commencer à travailler avec des fichiers CSV en Elm, vous devez inclure le paquet "elm/parser" dans votre projet. Ce paquet contient des fonctions utiles pour analyser les données CSV et les transformer en structures de données utilisables.
+
+Voici un exemple de code pour lire un fichier CSV et afficher son contenu dans la console :
 
 ```Elm
 import Csv
-import Csv.Decode as Decode
+import Delimited exposing (..)
 
+-- Fonction pour convertir une chaîne CSV en une liste de listes de chaînes
+parseCsv : String -> List (List String)
+parseCsv input =
+    input
+        |> Delimited.fromString
+        |> Result.map (Csv.parseWithParser Csv.csv)
+        |> Result.withDefault []
+
+-- Lire le fichier CSV et afficher son contenu
+main : Program Never
 main =
-    Csv.Decode.decodeString csvDecoder csvData
-
-csvDecoder : Decode.Decoder (List (List String))
-csvDecoder =
-    let
-        separator =
-            Decode.succeed identity
-    in
-        Csv.Decode.fields separator
+    File.contents "mon-fichier.csv"
+        |> Task.perform (always []) parseCsv
+        |> Task.map (List.map (\row -> row |> String.join ", " |> Debug.log "ligne CSV"))
 ```
 
-Dans cet exemple, nous utilisons la fonction `fields` pour séparer les données en colonnes et la fonction `succeed` pour ignorer le premier ligne qui contient les en-têtes de colonnes. Vous pouvez également utiliser d'autres fonctions telles que `field` pour décoder des colonnes spécifiques ou `row` pour décoder des lignes complètes.
-
-Une fois que vous avez chargé vos données CSV, vous pouvez les manipuler en utilisant les fonctions de la bibliothèque Elm telles que `List.map` et `List.filter`. Ensuite, vous pouvez afficher les données résultantes en utilisant la fonction `text` du package `elm-lang/html`.
-
-```Elm
-view : List (List String) -> Html msg
-view csvData =
-    div [] (List.map rowToHtml csvData)
-
-rowToHtml : List String -> Html msg
-rowToHtml row =
-    div []
-        (List.map cellToHtml row)
-
-cellToHtml : String -> Html msg
-cellToHtml cell =
-    text cell
-```
+En utilisant cette méthode, vous pouvez facilement lire un fichier CSV et travailler avec ses données dans votre application Elm.
 
 ## Plongée en profondeur
 
-Il est important de noter que le package "csv" n'est pas conçu pour gérer des données CSV avec des en-têtes de colonnes multiples ou des valeurs vides. Dans ces cas, vous pouvez utiliser le package "elm-csv-decode" qui offre une fonctionnalité plus robuste pour traiter toutes sortes de données CSV.
+En plus de lire les données d'un fichier CSV, vous pouvez également utiliser les fonctions de transformation de données du paquet "elm/parser" pour manipuler les données et les enregistrer dans un nouveau format. Par exemple, vous pouvez trier les données par ordre alphabétique ou filtrer les lignes en fonction de certains critères.
 
-De plus, si vous souhaitez générer des fichiers CSV à partir de données Elm, vous pouvez utiliser le package "jxxcarlson/elm-csv" qui inclut des fonctions pour convertir des données Elm en format CSV.
+De plus, vous pouvez également utiliser des bibliothèques externes telles que "NoRedInk/elm-csv" qui offrent des fonctionnalités supplémentaires pour travailler avec des données CSV, telles que la création de diagrammes ou de graphiques à partir de vos données.
 
 ## Voir aussi
 
-- La bibliothèque Elm : https://package.elm-lang.org/
-- Package "csv" : https://package.elm-lang.org/packages/ozmat/elm-csv/latest/
-- Package "elm-csv-decode" : https://package.elm-lang.org/packages/NoRedInk/elm-csv-decode/latest/
-- Package "jxxcarlson/elm-csv" : https://package.elm-lang.org/packages/jxxcarlson/elm-csv/latest/
+- [Documentation officielle du paquet "elm/parser"](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [Documentation officielle du paquet "NoRedInk/elm-csv"](https://package.elm-lang.org/packages/NoRedInk/elm-csv/latest/)

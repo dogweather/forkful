@@ -1,6 +1,7 @@
 ---
-title:                "Java: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Java: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,64 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till små bokstäver är en vanlig uppgift inom programmering, särskilt när man hanterar användarinput eller andra externa data. Genom att konvertera strängen till små bokstäver säkerställer man att den är enhetlig och lättare att jämföra och bearbeta.
 
-##Hur man gör
-Det finns flera olika sätt att konvertera en sträng till små bokstäver i Java. Ett av de enklaste sätten är att använda inbyggda metoder i Java String-klassen.
+Att kunna konvertera en sträng till små bokstäver kan vara väldigt användbart i vissa programmeringsscenarier. Till exempel kan det vara användbart när du jämför strängar eller när du får indata från en användare och vill bearbeta det på ett enhetligt sätt.
 
-```Java
-String str = "Hej, SWEDEN!";
-String lowerCaseStr = str.toLowerCase();
-System.out.println(lowerCaseStr);
-```
+## Hur man gör
 
-Output:
-```
-hej, sweden!
-```
-
-En annan metod är att använda en for-loop för att gå igenom varje bokstav i strängen och ändra den till motsvarande små bokstav.
+Det finns ett enkelt sätt att konvertera en sträng till små bokstäver i Java genom att använda metoden "toLowerCase()". Nedan följer ett exempel på hur du kan använda detta i din kod:
 
 ```Java
-String str = "Välkommen till JAVABLOGG!";
-String lowerCaseStr = "";
-for (int i = 0; i < str.length(); i++) {
-  lowerCaseStr += Character.toLowerCase(str.charAt(i));
-}
-System.out.println(lowerCaseStr);
+String name = "Jag Är En Sträng";
+System.out.println(name.toLowerCase());
 ```
 
-Output:
-```
-välkommen till javablogg!
-```
-
-En tredje metod är att använda StringBuilder-klassen för att bygga en ny sträng med små bokstäver.
-
-```Java
-String str = "Hej, DETTA ÄR EN JAVABLOGG!";
-StringBuilder sb = new StringBuilder();
-for (char c : str.toCharArray()) {
-  if (Character.isUpperCase(c)) {
-    sb.append(Character.toLowerCase(c));
-  } else {
-    sb.append(c);
-  }
-}
-String lowerCaseStr = sb.toString();
-System.out.println(lowerCaseStr);
-```
-
-Output:
-```
-hej, detta är en javablogg!
-```
+Detta kommer att ge följande utmatning: "jag är en sträng". Metoden "toLowerCase()" returnerar en ny sträng med alla tecken i små bokstäver.
 
 ## Djupdykning
-Det är viktigt att notera att alla dessa metoder returnerar en ny sträng, istället för att modifiera den ursprungliga strängen. Detta beror på att strängar i Java är immutabla, vilket innebär att de inte kan ändras. Därför är det viktigt att tilldela resultatet av konverteringsmetoderna till en ny variabel, som vi har gjort i exemplen ovan.
 
-Det finns också några andra saker att tänka på när man konverterar strängar till små bokstäver. För det första, om strängen redan är i små bokstäver kommer ingen konvertering att ske. Det kan också finnas språk- eller teckenberoenden skillnader när man konverterar strängar till små bokstäver. Därför är det alltid viktigt att testa koden på olika typer av data för att säkerställa att den fungerar som förväntat.
+I Java är alla tecken representerade av numeriska värden enligt Unicode-standarden. Bokstäverna A-Z har värdena 65-90 och a-z har värdena 97-122. När man använder metoden "toLowerCase()" i Java jämförs varje teckens numeriska värde för att avgöra om det ska konverteras till en små bokstav. Om det redan är en små bokstav behålls det oförändrat.
+
+Det är också viktigt att notera att "toLowerCase()" bara fungerar på strängar med bokstäver från det engelska alfabetet. Om en sträng innehåller specialtecken eller bokstäver från andra alfabet, kommer de inte att påverkas av metoden.
 
 ## Se även
-- [Java String-klassen JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Tutorialspoint Java String-översikt](https://www.tutorialspoint.com/java/java_string_unnecessary_equal.htm)
+
+- [Javas officiella dokumentation om string-klassens metoder](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [En annan artikel om strängkonvertering i Java](https://www.baeldung.com/java-string-to-lowercase)
+- [En generell guide för Java-programmerare](https://www.tutorialspoint.com/java/index.htm)

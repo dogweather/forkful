@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Zwei Daten vergleichen"
-simple_title:         "Zwei Daten vergleichen"
+title:                "Vergleich von zwei Daten"
+html_title:           "Arduino: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -9,37 +10,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Vergleichen von zwei Daten kann in verschiedenen Anwendungen sehr nützlich sein, wie zum Beispiel in der Home-Automation, um zu prüfen, ob eine bestimmte Zeit überschritten wurde, oder in der Datenaufzeichnung, um zu sehen, ob Daten in einem bestimmten Zeitintervall aufgezeichnet wurden.
+Warum sollte man sich mit dem Vergleichen von zwei Daten beschäftigen? Ganz einfach: Datumswerte sind oft entscheidend für die Funktionalität von Anwendungen und eine korrekte Vergleichsfunktion kann dabei helfen, mögliche Fehler zu verhindern.
 
-## Wie zu...
+# Wie geht das?
 
-Die Arduino-Programmiersprache bietet verschiedene Funktionen, um das Vergleichen von zwei Daten einfach zu gestalten. Zunächst müssen die beiden Daten in einem geeigneten Datentyp definiert werden. In diesem Beispiel verwenden wir das `int` Datentyp für beide Daten. Dann kann der Vergleich mit dem `if`-Statement durchgeführt werden, um zu sehen, ob die erste Daten größer, kleiner oder gleich der zweiten Daten ist.
+Um zwei Daten miteinander zu vergleichen, gibt es verschiedene Ansätze. Im Folgenden werden zwei Beispiele mit dem aktuellen Stand der Arduino-Programmierung gezeigt.
 
 ```Arduino
-int date1 = 20201215;
-int date2 = 20210101;
+#include <TimeLib.h> // Bibliothek für Zeitfunktionen
 
-if (date1 > date2) {
-  Serial.println("Date 1 is later than Date 2");
-} else if (date1 < date2) {
-  Serial.println("Date 1 is earlier than Date 2");
-} else {
-  Serial.println("Both dates are the same");
+void setup() {
+  // Initialisierung der seriellen Verbindung
+  Serial.begin(9600); 
+
+  // Erstellung von zwei verschiedenen Zeitvariablen
+  // mit je einem festgelegten Datum
+  // Beachte: bei der Angabe von Monat und Tag muss eine führende Null verwendet werden 
+  // 03.02.2020 --> 03/02/20
+  // 13.10.2021 --> 13/10/21
+  time_t date1 = makeTime(0, 0, 0, 03, 02, 2020);
+  time_t date2 = makeTime(0, 0, 0, 10, 13, 2021);
+
+  // Vergleich der beiden Daten
+  if (date1 < date2) {
+    Serial.println("Date 1 liegt vor Date 2");
+  } else if (date1 > date2) {
+    Serial.println("Date 2 liegt vor Date 1");
+  } else {
+    Serial.println("Beide Daten sind identisch");
+  }
+}
+
+void loop() {
+  // Hier können weitere Funktionen oder Aktionen ausgeführt werden
 }
 ```
 
-Die Ausgabe dieses Codes wäre "Date 1 is earlier than Date 2". Dies zeigt, dass das Programm in der Lage ist, die Datumsangaben richtig zu vergleichen.
+Die Ausgabe dieses Codes wäre in der seriellen Konsole: "Date 1 liegt vor Date 2".
 
-## Tiefergehende Informationen
+Ein weiterer Ansatz ist die Verwendung von UNIX-Zeitstempeln. Diese sind eine gängige Darstellung von Datum und Uhrzeit als Anzahl der seit dem 01.01.1970 vergangenen Sekunden. Mit dieser Darstellung lassen sich Daten einfach vergleichen, indem man die entsprechenden Zeitspannen berechnet und vergleicht.
 
-Die `if`-Bedingungen können auch mit anderen Vergleichsoperatoren wie größer-gleich (`>=`) oder kleiner-gleich (`<=`) kombiniert werden, um spezifischere Vergleiche zu machen. Es ist auch möglich, mehrere Daten miteinander zu vergleichen, indem man die `if`-Statements verschachtelt oder logische Operatoren wie `&&` (und) oder `||` (oder) verwendet.
+```Arduino
+#include <TimeLib.h> // Bibliothek für Zeitfunktionen
 
-Wenn es um das Vergleichen von Datum und Uhrzeit geht, kann es hilfreich sein, die Arduino Time Library zu verwenden, die spezielle Funktionen zum Parsen und Vergleichen von Datum und Uhrzeit bietet.
+void setup() {
+  // Initialisierung der seriellen Verbindung
+  Serial.begin(9600); 
 
-## Siehe auch
+  // Erstellung von zwei Variablen als UNIX-Zeitstempel
+  // hier werden die aktuellen Zeiten verwendet
+  time_t now = now();
+  time_t future = now() + 24*60*60; // entspricht einem Tag in Sekunden
+  // Die Funktion now() gibt die aktuelle Uhrzeit als UNIX-Zeitstempel zurück
 
-- https://www.arduino.cc/reference/de/language/structure/control-structure/if/
-- https://www.arduino.cc/reference/de/language/variables/data-types/
-- https://www.arduino.cc/reference/de/libraries/time/
+  // Vergleich der beiden Stempel
+  if (now < future) {
+    Serial.println("Der zukünftige Zeitstempel liegt später als der aktuelle");
+  } else if (now > future) {
+    Serial.println("Der zukünftige Zeitstempel liegt früher als der aktuelle");
+  } else {
+    Serial.println("Beide Zeitstempel sind identisch");
+  }
+}
+
+void loop() {
+  // Hier können weitere Funktionen oder Aktionen ausgeführt werden
+}
+```
+
+Die Ausgabe dieses Codes wäre: "Der zukünftige Zeitstempel liegt später als der aktuelle", da wir mit "future" einen Zeitstempel erzeugt haben, der genau einen Tag in der Zukunft liegt.
+
+# Tiefergehende Informationen
+
+Das Vergleichen von Daten kann in komplexeren Anwendungen auch noch weitere Herausforderungen mit sich bringen, z.B. beim Vergleich unterschiedlicher Zeitzonen oder bei der Berücksichtigung von Schaltjahren. Hier ist es wichtig, sich in die genaue Funktionsweise und die möglichen Fallstricke einzulesen und gezielt auf Bibliotheken oder Funktionen zurückzugreifen, die diese Probleme bereits lösen.
+
+# Siehe auch
+
+- [Offizielle Dokumentation für die Time-Library](https://www.arduino.cc/reference/en/libraries/time/)
+- [Informationen zu UNIX-Zeitstempeln](https://www.epochconverter.com/)
+- [Beispielprojekt zur Berechnung von Schaltjahren mit Arduino](https://create.arduino.cc/projecthub/dancili/calculating-leap-years-with-arduino-087503)

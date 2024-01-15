@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Konvertering av dato til streng"
-simple_title:         "Konvertering av dato til streng"
+title:                "Oversette en dato til en streng"
+html_title:           "Bash: Oversette en dato til en streng"
+simple_title:         "Oversette en dato til en streng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -9,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Nå som stadig flere bedrifter og organisasjoner tar i bruk Bash-programmering, er det viktig å kunne mestre ulike aspekter av dette programmeringsspråket. En av de vanligste utfordringene i Bash er å konvertere en dato til en streng. Dette kan være nødvendig i ulike situasjoner, for eksempel når man skal generere rapporter eller manipulere filnavn. Derfor er det nyttig å vite hvordan man enkelt kan konvertere en dato til en streng i Bash.
+## Hvorfor
 
-# Hvordan
-Bash tilbyr flere ulike metoder for å konvertere en dato til en streng, men den enkleste og mest pålitelige måten er å bruke "date" kommandoen. Denne kommandoen har en rekke formateringsalternativer som gjør det enkelt å konvertere en dato til en ønsket streng.
+Å konvertere en dato til en streng er et viktig verktøy i Bash-programmering. Det lar deg presentere datoer på en leserlig måte og gjøre de enklere å behandle i programmene dine.
 
-For å konvertere dagens dato til en streng, kan du bruke følgende kode:
+## Hvordan
 
-```Bash
-today=$(date +'%d-%m-%Y')
-echo $today
-```
-Dette vil resultere i en output som ser slik ut:
+For å konvertere en dato til en streng i Bash, kan du bruke kommandoen `date` sammen med formateringsalternativet `+%m/%d/%Y` som vil gi datoen i måned/dag/år format. Her er et eksempel på kode og tilhørende utdata:
 
 ```Bash
-25-11-2020
+date +%m/%d/%Y
 ```
 
-På samme måte kan du også tilpasse formatet etter dine behov. For eksempel, hvis du ønsker å legge til navnet på måneden og året, kan du bruke følgende kode:
+Utdata:
 
-```Bash
-current_date=$(date +'%d %B %Y')
-echo $current_date
 ```
-Dette gir en output som ser slik ut:
-
-```Bash
-25 September 2020
+08/25/2021
 ```
 
-# Dypeste dykk
-Det finnes flere ulike formateringsalternativer for "date" kommandoen, og disse kan brukes til å tilpasse utseendet på den konverterte datoen. Noen av de vanligste alternativene er:
+Dette formateringsalternativet kan også kombineres med andre alternativer for å tilpasse utdataen etter dine behov. Ta en titt på Bash-dokumentasjonen for å utforske ulike muligheter.
 
-- %A: Navnet på dagen
-- %B: Navnet på måneden
-- %d: Dagen i måneden (med ledende null)
-- %m: Måneden (med ledende null)
-- %Y: Året (med fire siffer)
-- %y: Året (med to siffer)
-- %I: Timen (12-timers format)
-- %H: Timen (24-timers format)
-- %M: Minutten
-- %S: Sekunden
+## Dypdykk
 
-I tillegg til disse, kan du også legge til spesifikke "locales" for å konvertere datoer på andre språk. Du kan lese mer om dette i Bash dokumentasjonen.
+Datoformatering kan virke forvirrende, men ved å forstå noen enkle konsepter, kan du raskt lære hvordan du konverterer en dato til en streng i Bash-programmering. Biporumsjonen `%m` brukes for å få måneden med to sifre, `%d` for å få dagen med to sifre og `%Y` for å få året med fire sifre. Du kan også bruke `%b` for å få måneden i forkortet form og `%B` for å få den i full form.
 
-# Se også
-- Bash dokumentasjon: https://www.gnu.org/software/bash/
-- Norsk Bash forum: https://www.diskusjon.no/forum/100-bash-programmering/
+Det finnes også andre forhåndsdefinerte alternativer som `%a` for å få ukedagen i forkortet form og `%A` for å få den i full form. Du kan også legge til en ` ` (mellomrom) eller `-` (bindestrek) etter prosenttegnet for å få spaces eller bindestrek mellom dato elementene. Se på noen eksempler under:
+
+| Alternativ | Utput  | Eksempel |
+| ---------- | ------ | --- |
+| `%m/%d/%Y` | `08/25/2021` | Dagens dato |
+| `%B %d, %Y` | `August 25, 2021` | Dagens dato |
+| `%a, %d %b` | `Wed, 25 Aug` | Dagens dato |
+| `%d-%m-%Y` | `25-08-2021` | Dagens dato |
+
+Det er også mulig å kombinere flere alternativer for å få en mer spesifikk datoformat. For eksempel kan du bruke `%B %d, %Y %H:%M` for å få følgende utdata: `August 25, 2021 09:45`.
+
+## Se også
+
+- [Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
+- [Stack Overflow: How to convert date to string in bash](https://stackoverflow.com/questions/1401482/how-to-convert-date-to-string-in-bash)

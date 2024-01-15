@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Daten"
+html_title:           "Clojure: Ausgabe von Debugging-Daten"
+simple_title:         "Ausgabe von Debugging-Daten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,68 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Debugging ist ein wichtiger Teil des Programmierens und das Ausgeben von Debug-Informationen ist eine effektive Methode, um Fehler in Ihrem Code zu finden. Es kann auch hilfreich sein, um das Verhalten Ihres Codes zu verstehen und zu überprüfen, ob die erwarteten Ergebnisse erzielt werden.
+Wenn du an einem Clojure Programm arbeitest und Fehlerbeseitigung betreibst, kann das Drucken von Debug Ausgaben sehr hilfreich sein. Es ermöglicht dir, den Programmfluss zu verfolgen und zu verstehen, was genau im Code passiert.
 
-# Wie geht man vor
+## Wie geht man vor?
 
-Das Drucken von Debug-Informationen in Clojure ist einfach und kann auf verschiedene Arten erfolgen. Eines der gebräuchlichsten Methoden ist die Verwendung von `println`, um eine Nachricht in der Konsole auszugeben. Zum Beispiel:
-
-```Clojure
-(println "Dies ist eine Debug-Nachricht.")
-```
-
-Dies wird die Nachricht "Dies ist eine Debug-Nachricht." in der Konsolenansicht ausgeben.
-
-Eine weitere Möglichkeit ist die Verwendung von `prn`, um eine lesbarere Ausgabe zu erzeugen. Zum Beispiel:
+Um Debug Ausgaben in Clojure zu drucken, kann man die Funktion `println` verwenden. Diese Funktion gibt die übergebenen Argumente in der Konsole aus. Hier ist ein Beispiel:
 
 ```Clojure
-(def my-map {:name "Max" :age 30})
-(prn my-map)
+(defn foo [x]
+  (println "Der Wert von x ist" x)
+  (+ x 2))
+
+(foo 5)
 ```
 
-Dies wird das Datum in einer geordneteren und lesbareren Form ausgeben:
+Die Ausgabe dieses Codes ist:
+
+```
+Der Wert von x ist 5
+=> 8
+```
+
+Man kann auch Variablen innerhalb von Debug Ausgaben ausgeben, um ihren aktuellen Wert zu sehen:
 
 ```Clojure
-{:name "Max" :age 30}
+(defn bar []
+  (let [x 10]
+    (println "Der Wert von x ist" x)
+    (+ x 5)))
+
+(bar)
 ```
 
-Sie können auch Spezialformen wie `tap>` verwenden, um gezielt Debug-Informationen auszugeben. Dieses Beispiel zeigt, wie Sie eine Variable überwachen können, um sicherzustellen, dass sie den erwarteten Wert enthält:
+Die Ausgabe ist:
+
+```
+Der Wert von x ist 10
+=> 15
+```
+
+## Tiefes Eintauchen
+
+Es gibt einige Dinge, die man beachten sollte, wenn man Debug Ausgaben in Clojure verwendet. Zuerst ist es wichtig, die `println` Funktion nur für Debug Zwecke zu verwenden, da sie die Lesbarkeit des Codes beeinträchtigen kann.
+
+Eine alternative Möglichkeit, Debug Ausgaben zu drucken, ist die Verwendung von `clojure.pprint/pprint`, welche eine schön formatierte Ausgabe erstellt. Hier ist ein Beispiel:
 
 ```Clojure
-(def my-var 10)
-(def my-var-tap (tap> my-var (println "Meine Variable hat jetzt den Wert:")))
+(require '[clojure.pprint :refer [pprint]])
+
+(defn baz []
+  (let [x 5
+        y 10]
+    (pprint {:x x :y y})))
+
+(baz)
 ```
 
-Dieser Code wird jedes Mal, wenn `my-var` geändert wird, die aktuelle Nummer in der Konsole ausgeben.
+Die Ausgabe ist:
 
-# Tiefer eintauchen
-
-Erfahrene Clojure-Entwickler können auch `clojure.spec` verwenden, um Debug-Informationen auszugeben. `clojure.spec` ist eine Funktion, die es Ihnen ermöglicht, spezifische Regeln und Überprüfungen für Ihre Datenstrukturen zu definieren. Die `explain`-Funktion kann verwendet werden, um detaillierte Informationen über die Werte zurückzugeben, die nicht den Spezifikationen entsprechen. Zum Beispiel:
-
-```Clojure
-(require '[clojure.spec.alpha :as s])
-
-(s/def ::name string?)
-(s/def ::age int?)
-
-(def my-map {:name "Max" :age "30"}) ; beachten Sie den falschen Datentyp für :age
-
-(s/explain ::person my-map)
+```
+{:x 5,
+ :y 10}
+=> nil
 ```
 
-Die Ausgabe wird Folgendes beinhalten:
+Eine weitere Sache, die man beachten sollte, ist, dass man Debug Ausgaben in Funktionen verwenden sollte, die keine Seiteneffekte haben. Wenn die Funktion Seiteneffekte hat, wie zum Beispiel das Ändern von globalen Variablen, kann dies zu unerwarteten Ergebnissen führen, wenn man Debug Ausgaben verwendet.
 
-```Clojure
-{:name "Max", :age "30"}
-% in: [:age] val: "30" fails spec
-```
+## Siehe auch
 
-Dies kann Ihnen helfen, schnell zu identifizieren, welche spezifischen Werte nicht den Erwartungen entsprechen und Ihnen helfen, die Ursache für Fehler in Ihrem Code herauszufinden.
-
-# Siehe auch
-
-- Offizielle Clojure Dokumentation zu debuggen (https://clojure.org/guides/debugging)
-- Clojure Cheatsheet (https://clojure.org/api/cheatsheet)
-- LearnXinY-Materialien zur Fehlersuche (https://www.learnxinyminutes.com/docs/clojure/)
+- [Clojure Dokumentation über Debugging](https://clojure.org/guides/debugging)
+- [Artikel über Debugging in Clojure](https://www.baeldung.com/clojure-debugging)

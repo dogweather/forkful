@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+html_title:           "Fish Shell: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que utilizar a linguagem Fish Shell para parsear HTML?
+## Por que?
 
-A linguagem Fish Shell é uma ferramenta poderosa para realizar tarefas de forma eficiente e intuitiva. Ao utilizar o Fish Shell para realizar o parsing de HTML, você poderá automatizar processos, extrair informações relevantes e manipular dados de forma simples e direta.
+Você já se deparou com a tarefa de extrair informações específicas de uma página da web? Talvez você esteja criando um programa que precisa coletar dados de um site. É aí que a análise de HTML se torna útil. Ao parsear HTML, você pode extrair facilmente os dados desejados de uma página da web.
 
-# Como fazer o parsing de HTML com Fish Shell
+## Como fazer
 
-Para realizar o parsing de HTML com Fish Shell, você pode utilizar diversas ferramentas e comandos específicos da linguagem. Um exemplo é o comando `sed`, que utiliza expressões regulares para buscar e substituir padrões em um arquivo. Por exemplo, utilizando o `sed`, é possível extrair apenas o conteúdo entre determinadas tags HTML, como `<h1>` ou `<p>`. Veja um exemplo de código abaixo:
+Para realizar a análise de HTML no Fish Shell, vamos utilizar o utilitário "html-parsing" disponível no Fisherman. Primeiro, certifique-se de ter o Fisherman instalado em seu sistema e, em seguida, execute o seguinte comando no terminal:
 
 ```Fish Shell
-sed -n '/<h1>/,/<\/h1>/p' index.html
+fisher install html-parsing
 ```
 
-O comando acima irá imprimir no terminal apenas o conteúdo dentro da tag `<h1>` do arquivo `index.html`.
+Com o html-parsing instalado, agora podemos usá-lo para analisar o HTML de uma página da web. Por exemplo, vamos supor que queremos extrair o título de uma página. Podemos fazer isso da seguinte maneira:
 
-# Aprofundando-se no parsing de HTML
+```Fish Shell
+title = curl https://www.example.com/ | html-parsing ".title" | string trim
+echo $title
+```
 
-Além do comando `sed`, existem outras ferramentas e comandos que podem ser utilizados para realizar o parsing de HTML com Fish Shell. É possível, por exemplo, utilizar a ferramenta `grep` para buscar padrões específicos em um arquivo HTML e, em seguida, utilizar o comando `awk` para manipular e extrair informações específicas.
+Neste exemplo, usamos o comando "curl" para obter o código HTML da página e, em seguida, usamos o html-parsing para extrair o elemento "title" e, finalmente, usamos o comando "string trim" para remover quaisquer espaços em branco adicionais. 
 
-É importante ressaltar que o uso dessas ferramentas pode ser combinado para obter resultados ainda mais precisos e eficientes. Além disso, é possível utilizar variáveis, laços de repetição e outras funcionalidades do Fish Shell para automatizar o processo de parsing de HTML.
+O mesmo pode ser feito para extrair qualquer outro elemento ou atributo de uma página da web. Basta fornecer o seletor adequado ao comando "html-parsing".
 
-# Veja também
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de parsing de HTML com Fish Shell](https://medium.com/@umluizlima/extraindo-dados-de-uma-p%C3%A1gina-web-com-fish-shell-68dfd351d54d)
-- [Tutorial de comandos básicos do Fish Shell](https://dev.to/ayaanruhi/fish-shell-commands-you-need-to-know-explained-447l)
+## Aprofundando
+
+O Fish Shell usa o utilitário "libtidy" para fazer a análise de HTML. Portanto, os elementos e atributos suportados pelo libtidy também serão suportados pelo html-parsing. Para uma lista completa de seletores e atributos suportados, consulte a documentação do libtidy.
+
+Além disso, é possível usar o html-parsing em scripts do Fish Shell para automatizar a análise de várias páginas. Com ele, você pode criar programas poderosos que podem lidar com dados provenientes de diferentes fontes na web.
+
+## Veja também
+
+- Documentação do html-parsing: https://github.com/oh-my-fish/plugin-html-parsing
+- Documentação do libtidy: https://www.html-tidy.org/documentation/
+- Fisherman: https://fisherman.github.io/

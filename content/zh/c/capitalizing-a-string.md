@@ -1,6 +1,7 @@
 ---
-title:                "C: 改变字符串的大小写"
-simple_title:         "改变字符串的大小写"
+title:                "将字符串转换为大写"
+html_title:           "C: 将字符串转换为大写"
+simple_title:         "将字符串转换为大写"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,66 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在程序设计中，有时候我们需要将字符串中的字母变成大写。这可能是为了遵循特定的格式要求，或者是为了方便数据的处理。无论出于什么原因，大写化字符串是一个常见的需求，因此学习如何实现这一功能是很重要的。
+当我们处理字符串时，有时候需要将其中的某些字符大写，这样可以让字符串更易读并且与其他字符串进行比较。这篇文章将会介绍如何使用C语言来实现字符串的大写操作。
 
-## 如何实现
+## 如何实现字符串大写
 
-大写化字符串可以通过使用C语言的标准库函数 `toupper()`来实现。这个函数可以将小写字母转换为大写字母，并返回转换后的字符。下面的代码展示了如何使用 `toupper()`函数来大写化一个字符串，并打印出结果：
-
-```C
-#include <stdio.h>
-#include <ctype.h>
-
-int main() {
-    // 声明一个字符串并赋值
-    char str[] = "hello world";
-    // 用于遍历字符串的循环
-    int i;
-    // 使用循环将字符串中的每个字符转换为大写字母
-    for (i = 0; str[i] != '\0'; i++) {
-        str[i] = toupper(str[i]);
-    }
-    // 打印大写化后的字符串
-    printf("%s\n", str);
-
-    return 0;
-}
-
-```
-
-上面的代码输出为 `HELLO WORLD`，就是我们想要的结果。
-
-## 深入探讨
-
-在上面的例子中，我们通过使用循环来遍历字符串中的每个字符，然后使用 `toupper()`函数将它们转换为大写字母。但是，这种方法只适用于单词中没有空格的情况。如果字符串中有空格，我们需要另一种方法来处理。
-
-一种解决方法是使用 `gets()`函数来接受用户输入的字符串，然后再使用循环和 `toupper()`函数来处理。但是，由于 `gets()`函数已被弃用，所以我们推荐使用 `fgets()`函数来接受输入。下面的代码展示了如何使用 `fgets()`函数来接受用户输入，并将输入的字符串转换为大写字母：
+首先，我们需要声明一个字符串变量，这样我们就可以在其上进行操作。然后，我们可以使用C语言内置的函数`toupper()`来将字符串中的字符转换为大写形式。下面是一个简单的例子：
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
+ 
+int main()
+{
+    char str[20] = "hello world";
+    int i = 0;
 
-int main() {
-    // 声明一个字符串并预先分配内存
-    char str[100];
-    // 使用fgets()函数接受用户输入
-    fgets(str, 100, stdin);
-    // 使用循环和toupper()函数将字符串转换为大写字母
-    for (int i = 0; str[i] != '\0'; i++) {
+    // 使用循环将字符串中的每个字符都转换为大写
+    while (str[i])
+    {
         str[i] = toupper(str[i]);
+        i++;
     }
-    // 打印大写化后的字符串
+
+    // 输出结果 "HELLO WORLD"
     printf("%s\n", str);
 
     return 0;
 }
-
 ```
 
-上面的代码可以处理包含空格的字符串，并且使用 `fgets()`函数可以避免缓冲区溢出的问题。
+这个例子中，我们使用了`while`循环来遍历字符串中的每个字符，并在循环中使用了`toupper()`函数来将字符转换为大写形式。在循环结束后，我们再次输出字符串，这时就会显示出转换后的大写形式。
 
-## 参考链接
+## 更深入地了解字符串大写
 
-- [toupper()函数文档](https://www.cplusplus.com/reference/cctype/toupper/)
-- [gets()函数文档](https://www.cplusplus.com/reference/cstdio/gets/)
-- [fgets()函数文档](https://www.cplusplus.com/reference/cstdio/fgets/)
+在C语言中，字符串实际上是由字符数组来实现的。这意味着我们可以像处理数组一样来处理字符串，例如通过索引来访问特定字符。因此，我们也可以使用循环以外的方法来进行字符串的大写操作，例如使用`strcpy()`函数来复制字符串到一个新的变量中，并在其中进行大写转换。此外，`toupper()`函数只能将字符转换为大写形式，如果我们需要将字符串中的某些字符转换为小写形式，可以使用`tolower()`函数来实现。
+
+## 查看更多
+
+- [C语言字符串大写操作教程](https://www.runoob.com/cprogramming/c-function-toupper.html)
+- [C语言字符串教程](https://www.runoob.com/cprogramming/c-strings.html)

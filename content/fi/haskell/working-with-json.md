@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Haskell: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,64 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tervetuloa ensimmäiseen blogikirjoitukseeni, jossa tutustumme JSONiin Haskell-ohjelmointikielellä. JSON on erittäin hyödyllinen tiedonmuoto web-sovellusten ja pilvipalveluiden kehityksessä. Sen avulla voimme helposti vaihtaa tietoa eri järjestelmien välillä ja käsitellä monimutkaisempia tietorakenteita. Joten, jos olet kiinnostunut web-kehityksestä tai yleisesti informatiikan alasta, JSONin kanssa työskentely on ehdottomasti sinun tulee osata.
+Haskell on nykypäivänä yksi suosituimmista ohjelmointikielistä, ja sen käyttö JSON-tiedostojen käsittelyyn on erittäin tehokasta ja helppoa. JSON on myös laajasti käytetty tiedostomuoto, joten sen kanssa työskentely voi olla tarpeellista monille ohjelmoijille.
 
-## Miten tehdä
+## Miten
 
-Aloitetaan perusteista. Voit käyttää Haskellissa JSONin käsittelyyn `aeson`-kirjastoa, joka tarjoaa helpon tavan muuntaa JSON-tietorakenteita Haskellin omiksi tietotyypeiksi. Ensimmäisenä tarvitset `aeson` kirjaston tuontilausekkeen yläosaan:
+Haskellissa JSON-tiedoston lukeminen ja kirjoittaminen tapahtuu käyttämällä Data.Aeson -kirjastoa. Alla on esimerkki koodista, joka lukee JSON-tiedoston ja tulostaa sen sisällön:
 
 ```Haskell
 import Data.Aeson
+import Data.ByteString.Lazy
+
+main = do 
+    fileContents <- ByteString.Lazy.readFile "example.json"
+    let decodedJSON = decode fileContents :: Maybe Value
+    case decodedJSON of 
+        Just contents -> print contents
+        Nothing -> print "Error decoding JSON"
 ```
 
-Nyt voimme luoda JSON-dataa esimerkiksi käyttämällä `object`-funktiota, joka luo sanakirjamaisen tietorakenteen avaimien ja arvojen pohjalta. Tässä esimerkissä luomme JSON-tietorakenteen, joka sisältää tiedot käyttäjän nimestä, iästä ja harrastuksista:
+Kuten nähdään, meidän täytyy ensin lukea tiedosto bytestring-muodossa ja sitten käyttää `decode` -funktiota muuttamaan se `Value`-muodoksi. Tässä tapauksessa käytämme `Maybe`-tyyppiä, jotta voimme käsitellä virhetilanteet.
+
+Seuraavaksi esimerkissä näytämme, kuinka voimme luoda ja kirjoittaa JSON-tiedoston sisällön:
 
 ```Haskell
-user :: Value
-user = object [
-  "name" .= "Matti",
-  "age" .= 25,
-  "hobbies" .= ["luistelu", "matkailu", "lukeminen"]
-]
+import Data.Aeson
+import Data.ByteString.Lazy
+
+main = do 
+    let json = object ["name" .= "John", "age" .= (30 :: Int), "hobbies" .= ["hiking", "coding"]]
+    let byteString = encode json
+    ByteString.Lazy.writeFile "new.json" byteString
 ```
 
-Huomaa, että käytämme `.`-operaattoria lisätäksemme avaimen ja `.= `-operaattoria asettaaksemme arvon. Tämä on yleinen käytäntö `aeson`-kirjastossa JSONin käsittelyssä.
+Täällä me ensin luomme `object`-funktiolla JSON-arvon ja sitten käytämme `encode`-funktiota muuttamaan sen bytestring-muotoon. Lopuksi kirjoitamme sisällön uuteen tiedostoon.
 
-Nyt kun meillä on JSON-tieto, voimme muuntaa sen Haskellin omaksi tietotyypiksi `decode`-funktion avulla. Tässä tapauksessa `User`-niminen tietotyyppi:
+## Deep Dive
 
-```Haskell
-data User = User {
-  name :: String,
-  age :: Int,
-  hobbies :: [String]
-} deriving (Show, Generic)
+Haskellissa JSON-tietueet ovat dynaamisia ja samanlaisia kuin JavaScriptin objektit. Ne ovat kuitenkin staattisesti tyypitettyjä ja voimme käyttää vahvistinta (`::`) määrittelemään, millainen tietotyyppi haluamme. Lisäksi voimme käyttää `.`-merkkiä hakeaksemme tietueesta tietyn kentän. Esimerkiksi jos haluamme hakea nimen JSON-tietueesta, käytämme `json . name`.
 
-instance FromJSON User
+See Also
 
-main :: IO ()
-main = do
-  let maybeUser = decode user :: Maybe User
-  print maybeUser
-  -- Output: Just (User {name = "Matti", age = 25, hobbies = ["luistelu", "matkailu", "lukeminen"]})
-```
-
-Nyt `maybeUser` on Haskellin `Maybe`-tyyppi, joka voi olla joko `Just User` tai `Nothing`. Kannattaa aina tarkistaa `Nothing`-tapaus, jos tietorakenne ei olisi oikeassa muodossa.
-
-## Syväsukellus
-
-On myös tärkeää huomata, että Haskellissa voimme muuntaa `User`-tietotyypin takaisin JSON-tietorakenteeksi käyttämällä `encode`-funktiota. Tässä on esimerkki:
-
-```Haskell
-encodedUser :: ByteString
-encodedUser = encode maybeUser
-  -- Output: "{\"name\":\"Matti\",\"age\":25,\"hobbies\":[\"luistelu\",\"matkailu\",\"lukeminen\"]}"
-```
-
-Ilman `Maybe`-tyyppiä voimme myös käyttää `eitherDecode`-funktiota, joka palauttaa joko oikean tietotyypin tai virheen:
-
-```Haskell
-eitherUser :: Either String User
-eitherUser = eitherDecode encodedUser
-```
-
-Kuten näet, JSONin käsittely Haskellissa on helppoa ja tehokasta `aeson`-kirjaston avulla. Muista kuitenkin aina tarkistaa virhetapaukset, jotta koodisi olisi turvallista ja robust
+- Data.Aeson dokumentaatio: https://hackage.haskell.org/package/aeson-1.4.5.0/docs/Data-Aeson.html
+- Haskell Wikibooks: https://en.wikibooks.org/wiki/Haskell

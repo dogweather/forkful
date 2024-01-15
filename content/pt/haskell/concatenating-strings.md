@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Concatenando strings"
+title:                "Concatenando strings"
+html_title:           "Haskell: Concatenando strings"
 simple_title:         "Concatenando strings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Muitas vezes, programadores precisam combinar várias strings em uma só. Isso pode ser útil para criar mensagens personalizadas, montar URLs dinâmicos e muito mais.
+## Porquê
 
-## Como fazer
-Em Haskell, podemos concatenar strings usando a função "++", que adiciona a segunda string ao final da primeira. Por exemplo:
+Você já se deparou com a necessidade de unir ou agrupar pedaços de informação dentro da programação? É comum utilizar concatenado para juntar strings e formar uma nova string. Neste artigo, vamos explorar como realizar essa operação em Haskell de forma simples e eficiente.
 
-```Haskell
-concatenar :: String -> String -> String
-concatenar str1 str2 = str1 ++ str2
+## Como Fazer
 
-concatenar "O meu nome é " "João" -- saída: "O meu nome é João"
-```
-
-Podemos até mesmo concatenar mais de duas strings ao mesmo tempo:
+Para concatenar strings em Haskell, podemos utilizar o operador "++" ou a função "concat". O operador "++" une duas strings em uma nova string, enquanto a função "concat" pode receber uma lista de strings e concatená-las em uma única string.
 
 ```Haskell
-concatenarTres :: String -> String -> String -> String
-concatenarTres str1 str2 str3 = str1 ++ str2 ++ str3
+"Hello" ++ " World" -- Resultado: "Hello World"
 
-concatenarTres "Eu sou " "o " "melhor" -- saída: "Eu sou o melhor"
+concat ["Hello", " ", "World"] -- Resultado: "Hello World"
 ```
 
-## Mergulho profundo
-Quando usamos a função "++", o compilador de Haskell converte a primeira string em uma lista de caracteres, adiciona a segunda string no final dessa lista e, em seguida, é gerada uma nova string. Por exemplo, ao concatenar "Hello" e "world", o compilador faz o seguinte:
+Podemos também utilizar funções de manipulação de strings, como "show" e "++" para inserir valores e variáveis dentro de uma string. Veja um exemplo:
 
-- Converte "Hello" em uma lista de caracteres: ['H', 'e', 'l', 'l', 'o']
-- Adiciona a lista de caracteres de "world" no final dessa lista: ['H', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']
-- Gera uma nova string a partir dessa lista de caracteres: "Hello world"
+```Haskell
+nome = "Maria"
+idade = 25
 
-Isso pode parecer um processo simples, mas é importante ter em mente, principalmente quando tratamos de concatenação de grandes strings em sistemas com limitações de memória.
+"Meu nome é " ++ nome ++ " e tenho " ++ show idade ++ " anos." -- Resultado: "Meu nome é Maria e tenho 25 anos."
+```
 
-## Veja também
-- [Documentação da função "++" do Haskell](https://www.haskell.org/hoogle/?hoogle=%2B%2B)
-- [Tutorial de Haskell para Iniciantes](https://wiki.haskell.org/Haskell_in_5_steps)
-- [Listas em Haskell](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
+A saída impressa é uma string que contém os valores de "nome" e "idade" inseridos na frase.
 
-*[Este artigo foi escrito usando a linguagem de programação Haskell](https://www.haskell.org/) e [a sintaxe de Markdown](https://www.markdownguide.org/).]
+## Deep Dive
+
+Em Haskell, strings são listas de caracteres, o que significa que as funções de listas, como "map" e "fold", também podem ser utilizadas para manipular strings. Além disso, a função "intercalate" pode ser utilizada para unir strings em uma lista e adicionar um separador entre elas.
+
+```Haskell
+map toUpper "hello world" -- Resultado: "HELLO WORLD"
+
+foldr (++) " Programming" ["Haskell", " is", " Fun"] -- Resultado: "Haskell is Fun Programming"
+
+intercalate ", " ["apple", "bananas", "oranges"] -- Resultado: "apple, bananas, oranges"
+```
+
+## Veja Também
+
+- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+- [Tutorial de Haskell no Wikibooks](https://en.wikibooks.org/wiki/Haskell)
+- [Curso de Programação Funcional com Haskell do Coursera](https://www.coursera.org/learn/programacao-funcional-haskell/)

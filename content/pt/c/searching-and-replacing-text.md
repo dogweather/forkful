@@ -1,5 +1,6 @@
 ---
-title:                "C: Buscando e substituindo texto"
+title:                "Buscando e substituindo texto"
+html_title:           "C: Buscando e substituindo texto"
 simple_title:         "Buscando e substituindo texto"
 programming_language: "C"
 category:             "C"
@@ -11,47 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-O processo de busca e substituição de texto é uma técnica essencial em programação. Ele permite que desenvolvedores encontrem e modifiquem padrões específicos em um texto, tornando a manipulação de dados mais eficiente e precisa.
+Você já se deparou com um grande texto ou código e precisou realizar uma mudança em várias partes dele? Isso pode ser uma tarefa cansativa e demorada se for feita manualmente. Felizmente, no C, existe uma maneira fácil de encontrar e substituir parte do texto, economizando tempo e esforço.
 
-## Como fazer
+## Como Fazer
 
-Existem várias maneiras de realizar busca e substituição de texto em linguagem C. Uma delas é utilizando a função `strstr()` para encontrar uma sequência de caracteres e a função `strcpy()` para copiar a nova sequência no lugar da antiga. Veja um exemplo abaixo:
+Para encontrar e substituir texto em um programa C, você precisará utilizar a função `strstr()`. Essa função busca a ocorrência de uma string dentro de outra, retornando um ponteiro para a primeira ocorrência. Em seguida, você pode usar a função `strcpy()` para substituir a string encontrada pela nova string desejada.
 
-```C
-#include <stdio.h>
-#include <string.h>
+Por exemplo, se quisermos substituir a palavra "mundo" pela palavra "futuro" em uma string, podemos fazer o seguinte:
 
-int main() {
-  char texto[] = "Este é um exemplo de busca e substituição de texto.";
-  char antigo[] = "busca";
-  char novo[] = "procura";
-  char *ponteiro;
-
-  ponteiro = strstr(texto, antigo);
-
-  if(ponteiro != NULL) {
-    strcpy(ponteiro, novo);
-  }
-
-  printf("%s", texto);
-
-  return 0;
-}
+```
+char texto[100] = "Olá, mundo!";
+char *posicao = strstr(texto, "mundo");
+strcpy(posicao, "futuro");
+printf("%s", texto);
 ```
 
-Saída:
-`Este é um exemplo de procura e substituição de texto.`
+Isso resultará em um texto com a seguinte saída: "Olá, futuro!".
 
-Com esse exemplo, podemos ver como é possível realizar uma busca e substituição em uma string. Mas lembre-se, esse é apenas um exemplo básico e existem outras maneiras de atingir o mesmo resultado.
+## Mergulho Profundo
 
-## Detalhes sobre busca e substituição de texto
+Além da função `strstr()`, existem outras opções para realizar a busca e substituição de texto em C. Uma delas é a função `strtok()`, que divide uma string em tokens, permitindo uma busca mais específica em cada parte do texto.
 
-Além da função `strstr()`, existem outras funções em linguagem C que podem ser úteis para realizar busca e substituição de texto, como a `strchr()`, `strrchr()` e `strtok()`. Além disso, é importante ter conhecimento sobre expressões regulares e como utilizá-las para buscar padrões específicos em um texto.
+Outra opção é o uso de expressões regulares, que permitem uma busca ainda mais complexa e precisa. Para isso, é necessário incluir a biblioteca `regex.h` e utilizar as funções `regcomp()` e `regexec()` para compilar e executar a expressão regular desejada.
 
-Outro ponto importante é ter cuidado ao substituir informações em um texto. É necessário garantir que a nova sequência de caracteres tenha o mesmo tamanho que a antiga, caso contrário, poderão ocorrer erros de memória.
+Lembre-se de sempre tomar cuidado com as alterações feitas no seu código durante o processo de busca e substituição de texto. Certifique-se de ter feito um backup do seu código antes de realizar qualquer mudança.
 
-## Ver também
+## Veja Também
 
-- [Tutorial sobre expressões regulares em C](https://www.geeksforgeeks.org/regular-expressions-in-c-programming/)
-- [Função strstr() - Documentação oficial](https://www.cplusplus.com/reference/cstring/strstr/)
-- [Manipulação de strings em C - Documentação oficial](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- Link 1: https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
+- Link 2: https://www.geeksforgeeks.org/c-program-find-replace-word-text-file/
+- Link 3: https://www.gnu.org/software/libc/manual/html_node/String-Matching.html

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 텍스트 파일 읽기"
+title:                "텍스트 파일 읽기"
+html_title:           "Elm: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,51 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 읽기 텍스트 파일?
 
-텍스트 파일을 읽는 것에 대해 고민할 필요가 있습니다. 모든 프로그램은 데이터를 처리하고 이를 이용해 결과물을 만들기 때문이죠. 텍스트 파일을 읽는 것은 많은 장점을 가지고 있습니다. 가령, 이전에 접한적 없는 데이터셋에 대해 통찰력을 얻을 수 있고, 다른 애플리케이션에서 생성한 데이터를 읽고 병합할 수도 있습니다.
+이번 글에서는 Elm 프로그래밍 언어를 사용하여 텍스트 파일을 읽는 방법에 대해 알아보겠습니다. 텍스트 파일을 읽는 것은 매우 기본적인 작업이지만, Elm의 강력한 기능을 이용하여 텍스트 파일을 읽는 방법을 배우는 것은 여러분에게 큰 도움이 될 것입니다.
 
-## 어떻게
+## 어떻게 진행할까요?
 
-우선 다음 코드와 같이 `File` 모듈을 가져옵니다.
-
-```Elm
-import File exposing (readFile)
-```
-
-그리고 `readFile` 함수를 통해 텍스트 파일의 경로를 전달하고 `Result`를 반환하도록 합니다. 이를 통해 파일을 읽고 쓸 수 있는 권한을 얻을 수 있습니다.
+우선, Elm의 파일 모듈을 import하여 사용할 준비를 해야 합니다. 그리고 Text 모듈을 이용하여 텍스트 파일을 읽습니다.
 
 ```Elm
-readFile : String -> Task x (Result x String)
+import Text
+import File
+
+readTextFile : String -> Task x String
+readTextFile filePath =
+  File.readString filePath
+    |> Task.mapError (always "파일을 읽을 수 없습니다.")
 ```
 
-마지막으로, `readFile` 함수의 콜백함수를 통해 파일의 내용을 읽을 수 있고, 이를 활용하여 필요한 작업을 수행할 수 있습니다.
+위의 코드에서는 `File.readString` 함수를 이용하여 지정된 경로에 있는 파일의 내용을 읽어옵니다. 이때 Task 타입을 반환하는데, Task는 비동기 작업을 처리하는 데 사용되는 Elm의 핵심 타입입니다. 따라서 이 함수를 사용하면 파일을 읽는 작업이 완료될 때까지 대기하고, 작업이 완료된 후에야 파일의 내용을 추출할 수 있습니다.
+
+이제 어떻게 사용하는지 예를 들어보겠습니다.
 
 ```Elm
-readFile path
-    |> Task.perform
-        (\_ -> []
-        )
-        (\result ->
-            case result of
-                Err err ->
-                    Debug.log "Error reading file" err
+filePath : String
+filePath = "example.txt"
 
-                Ok contents ->
-                    -- 파일 내용을 활용하여 필요한 작업 수행
-        )
+textFileTask : Task String String
+textFileTask = readTextFile filePath
+
+textFile : String
+textFile =
+  case Task.attempt identity textFileTask of
+    Err _ ->
+      "파일을 읽을 수 없습니다."
+
+    Ok text ->
+      text
 ```
 
-## 깊이 파고들기
+위의 예제에서는 `filePath`라는 변수에 읽을 파일의 경로를 저장하고, `readTextFile` 함수를 이용하여 `filePath`에 저장된 경로의 파일을 읽어옵니다. 그리고 `Task` 타입을 이용하여 비동기 작업을 처리하고, 최종적으로 파일의 내용을 `textFile` 변수에 저장합니다. 이렇게 하면 파일의 내용을 추출하기 위해 추가적인 작업을 할 필요 없이 바로 사용할 수 있습니다.
 
-하기 링크들을 참조하시면 `File` 모듈의 더 구체적인 사용법을 알 수 있습니다.
+## 깊이 들어가기
 
-- [Elm 공식 문서](https://guide.elm-lang.org/io/files.html)
-- [괴팍한 존재의 블로그](http://www.gpfault.org/blog/2016/06/30/elm%EC%97%90%EC%84%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EC%9D%BD%EA%B8%B0/)
-- [진일모의 블로그](https://jinhyewon.github.io/elm/file-io/) 
+지금까지 간단하게 Elm을 이용하여 텍스트 파일을 읽는 방법을 살펴보았습니다. 하지만 파일을 읽는 과정에서 발생할 수 있는 오류를 처리하는 방법에 대해 더 알아보겠습니다.
 
-## 또 다른 참고 자료
+보통 파일을 읽을 때 가장 자주 발생하는 오류는 파일이 존재하지 않거나 읽을 권한이 없는 경우입니다. 이때는 `Task.attempt` 함수와 `Task.onError` 함수를 이용하여 오류를 처리할 수 있습니다. 예를 들어, 아래와 같이 `textFileTask` 함수를 정의하고, `Task.onError` 함수를 사용하여 오류가 발생한 경우에 대한 응답을 정의할 수 있습니다.
 
-- [Elm 설치 가이드](https://dogfeet.github.io/articles/2018/elm01)
-- [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)
-- [Elm 한국 사용자 그룹 Facebook 페이지](https://www.facebook.com/groups/elminkorea/)
+```Elm
+textFileTask : Task x String
+textFileTask =
+  readTextFile filePath
+    |> Task.onError (\_ -> Task.succeed "파일이 존재하지 않습니다.")
+```
+
+또 다른 방법으로는 `Task.mapError` 함수를 이용하여 오류 메시지를 정의하는 방법도 있습니다. 위의 코드에서는 `Task.onError` 함수와 비슷한 동작을 수행하지만, 더 간단한 형태로 오류 메시지를 처리할 수 있습니다.
+
+## 더 배우기
+
+이외에도 Elm에서는 다양한 방법으로 파일을 읽는 것을 지원하고 있습니다. 더 많은 정보를 알고 싶다면 아래 링크를

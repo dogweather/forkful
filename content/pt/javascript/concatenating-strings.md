@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Unindo strings"
-simple_title:         "Unindo strings"
+title:                "Concatenando strings"
+html_title:           "Javascript: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,70 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-A concatenação de strings é uma técnica muito comum em programação JavaScript, especialmente em tarefas envolvendo manipulação de texto. Essa técnica permite combinar várias strings em uma única string, facilitando o trabalho com dados e tornando o código mais eficiente. 
+Concatenar strings é uma funcionalidade essencial ao escrever códigos em Javascript. Ao mesclar duas ou mais strings, podemos criar textos dinâmicos e personalizados, tornando nossos programas mais interativos e eficientes.
 
-## Como fazer
+## Como Fazer
 
-A concatenação de strings é feita utilizando o operador "+". Veja um exemplo de código abaixo: 
-
-```Javascript
-let nome = "João";
-let sobrenome = "Silva";
-
-let nomeCompleto = nome + " " + sobrenome;
-console.log(nomeCompleto);
 ```
+const firstName = "Maria";
+const lastName = "Silva";
 
-Nesse exemplo, declaramos duas variáveis com nomes e sobrenomes, e em seguida utilizamos o operador "+" para concatenar as duas strings em uma única variável chamada "nomeCompleto". Ao executar o código, a saída será "João Silva". 
-
-Também é possível utilizar o método `concat()` para concatenar duas ou mais strings. Veja um exemplo: 
-
-```Javascript
-let parte1 = "Esse é";
-let parte2 = "um exemplo";
-let parte3 = "de concatenação.";
-
-let fraseCompleta = parte1.concat(" ", parte2, " ", parte3);
-console.log(fraseCompleta);
+console.log(`Bem-vinda, ${firstName} ${lastName}!`);
 ```
+Output: Bem-vinda, Maria Silva!
 
-Nesse caso, utilizamos o método `concat()` para unir as três partes de uma frase em uma única string. A saída será "Esse é um exemplo de concatenação." 
-
-É importante lembrar que ao trabalhar com números e strings na concatenação, os números serão convertidos automaticamente em strings. Por exemplo: 
-
-```Javascript
-let numero = 42;
-let texto = " é a resposta para a vida, o universo e tudo mais.";
-
-let resposta = numero + texto;
-console.log(resposta);
 ```
+const hobby = "dançar";
+const age = 26;
 
-A saída será "42 é a resposta para a vida, o universo e tudo mais." 
-
-## Mergulho profundo
-
-Além do operador "+" e do método `concat()`, também podemos utilizar a template string para fazer a concatenação de strings de forma mais prática e legível. Com ela, podemos incluir variáveis e expressões dentro de uma string utilizando a sintaxe `${}`. Veja um exemplo: 
-
-```Javascript
-let nome = "Maria";
-let sobrenome = "Souza";
-
-console.log(`Meu nome é ${nome} ${sobrenome}.`);
+console.log(`Eu amo ${hobby} e tenho ${age} anos de idade!`);
 ```
+Output: Eu amo dançar e tenho 26 anos de idade!
 
-A saída será "Meu nome é Maria Souza.". 
+## Deep Dive
 
-Também é possível utilizar o método `join()` para concatenar elementos de um array em uma única string, utilizando um caractere ou string como separador. Por exemplo: 
+Em Javascript, podemos concatenar strings de duas maneiras: usando o operador "+" ou o método "concat()". Ambos funcionam da mesma forma, mas o método "concat()" é preferido por ser mais eficiente em termos de desempenho. Além disso, quando concatenamos uma string com um número usando o operador "+", ele é automaticamente convertido em string.
 
-```Javascript
-let frutas = ["maçã", "banana", "laranja"];
-console.log(`Eu gosto de ${frutas.join(", ")}s.`);
+Outra maneira interessante de concatenar strings é usando o template literals (ou template strings) introduzido no ES6. Com eles, podemos inserir expressões e variáveis dentro de strings usando o operador "${}". Isso torna o código mais legível e fácil de manusear.
 
-// Saída: Eu gosto de maçãs, bananas, laranjas.
 ```
+const name = "João";
+const age = 35;
 
-## Veja também
+console.log(`Olá, meu nome é ${name} e eu tenho ${age} anos de idade.`)
+```
+Output: Olá, meu nome é João e eu tenho 35 anos de idade.
 
-- [Documentação do JavaScript sobre concatenação de strings](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types#Concatenacao_de_strings)
-- [Explicação detalhada sobre template strings](https://www.youtube.com/watch?v=QyLiGElrSI4) (em português)
+## Veja Também
+
+- [MDN Web Docs: Concatenação de Strings](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Text_formatting#concatena%C3%A7%C3%A3o_de_strings)
+- [W3Schools: Javascript Strings](https://www.w3schools.com/js/js_strings.asp)
+- [Blog da Alura: Concatenação de Strings em Javascript](https://blog.alura.com.br/concatenacao-de-strings-em-javascript/)

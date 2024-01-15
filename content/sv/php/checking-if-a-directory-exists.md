@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "PHP: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -11,40 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en mapp existerar är en viktig del av PHP-programmering eftersom det kan hjälpa till att undvika fel i koden genom att säkerställa att rätt filer och mappar finns innan de behövs.
+Att känna till hur man kontrollerar om en katalog finns kan vara otroligt användbart för programutvecklare. Det kan bidra till en mer robust och pålitlig kod, då man kan undvika felmeddelanden och hantera potentiella fel på ett bättre sätt.
 
 ## Hur man gör
 
-För att kontrollera om en mapp existerar i PHP, används funktionen `file_exists()`. Här är ett enkelt exempel:
-
 ```PHP
-<?php
-// Ange sökvägen till mappen som ska kontrolleras
-$mapp = "bilder/";
-
-// Kontrollera om mappen existerar
-if (file_exists($mapp)) {
-    echo "Mappen finns!";
+if (is_dir('/sökväg/till/katalog')) {
+    echo "Katalogen finns!";
 } else {
-    echo "Mappen finns inte!";
+    echo "Katalogen finns inte...";
 }
-?>
 ```
 
-Om mappen "bilder" finns kommer detta att ge följande utmatning:
+Om du försöker testa en katalog som inte finns, kommer du att få utskriften 'Katalogen finns inte...'. Om katalogen däremot finns på den angivna sökvägen, kommer du istället att få utskriften 'Katalogen finns!'.
 
-`Mappen finns!`
+##deep dive
 
-Vid behov kan du också ange en sökväg till en arbetskatalog som en andra parameter i `file_exists()`-funktionen.
+För att utföra denna kontroll använder vi PHP-funktionen `is_dir()` som tar emot en sökväg som parameter och returnerar en `boolean`-värde beroende på om katalogen finns eller inte.
 
-## Djupdykning
+Det är också viktigt att notera att denna funktion endast fungerar för lokala sökvägar och inte externt via URL: er.
 
-När du kontrollerar om en mapp existerar kan det vara bra att veta att funktionen också fungerar för att kontrollera om en fil eller en extern webbadress existerar. Om du behöver specificera sökvägen till en extern webbadress, kom ihåg att ange ett prefix såsom "http://" eller "https://" för att funktionen ska fungera korrekt.
+## Se även
 
-Det är också värt att notera att `file_exists()`-funktionen inte kan avgöra om du har tillgång till en mapp eller fil. Den endast kontrollerar om den finns eller inte. Om du också behöver kontrollera åtkomstbehörigheter, kan du använda funktionen `is_readable()` för att kontrollera om en fil eller mapp är läsbar.
-
-## Se också
-
-- En djupare förståelse för olika filsystemsfunktioner i PHP: [PHP Filesystem Functions (PHP Filsystemsfunktioner)](https://www.php.net/manual/en/ref.filesystem.php)
-- Hur man hanterar användarens filuppladdningar: [Handling File Uploads in PHP (Hantera filuppladdningar i PHP)](https://www.php.net/manual/en/features.file-upload.php) 
-- Att använda PHPs inbyggda funktioner i säkerhetssyfte: [Common Security Pitfalls with File Uploads (Vanliga säkerhetsfallgropar med filuppladdningar)](https://www.owasp.org/index.php/Unrestricted_File_Upload)
+- [PHP: is_dir() - Manual](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP: Directory Functions - Manual](https://www.php.net/manual/en/ref.dir.php)

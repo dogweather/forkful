@@ -1,6 +1,7 @@
 ---
-title:                "C#: Töiden tekeminen csv:n kanssa"
-simple_title:         "Töiden tekeminen csv:n kanssa"
+title:                "Törmääminen csv:n kanssa"
+html_title:           "C#: Törmääminen csv:n kanssa"
+simple_title:         "Törmääminen csv:n kanssa"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -9,44 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää CSV-tiedostoja ohjelmoinnissa?
+## Miksi
 
-## Kuinka tehdä CSV-tiedostoja C#-ohjelmoinnissa?
+CSV-tiedostot ovat yksi yleisimmistä tiedostomuodoista, joita käytetään tietojen tallentamiseen ja jakamiseen. Tämän vuoksi on tärkeää ymmärtää, miten työskennellä CSV-tiedostojen kanssa, jotta voit tehokkaasti käsitellä tietoa ja tehdä siitä hyödyllistä.
 
-```C#
-// Luodaan uusi CSV-tiedosto
+## Kuinka
+
+CSV-tiedostojen käsittely C#-ohjelmointikielellä on helppoa ja suoraviivaista. Käytämme tätä esimerkkina:
+
+```
+using System;
 using System.IO;
-string filePath = "tiedosto.csv";
-using (var writer = new StreamWriter(filePath))
-{
-    // Kirjoitetaan otsikkorivi
-    writer.WriteLine("Nimi, Ikä, Sähköposti");
-    // Kirjoitetaan tietueet
-    writer.WriteLine("Matti, 35, matti@mail.com");
-    writer.WriteLine("Liisa, 28, liisa@mail.com");
-}
 
-// Luetaan ja tulostetaan CSV-tiedoston sisältö
-using (var reader = new StreamReader(filePath))
+class Program
 {
-    string line;
-    while ((line = reader.ReadLine()) != null)
+    static void Main()
     {
-        Console.WriteLine(line);
+        // Määritellään CSV-tiedoston polku ja nimi
+        string csvFilePath = @"C:\Users\Käyttäjä\Documents\data.csv";
+
+        // Luodaan tiedostoon yhteys
+        StreamReader reader = new StreamReader(csvFilePath);
+
+        // Luodaan muuttujat CSV-tiedoston sisällön lukemista varten
+        string line;
+        string[] fields;
+
+        // Luetaan CSV-tiedostoa rivi kerrallaan
+        while ((line = reader.ReadLine()) != null)
+        {
+            // Jaetaan rivi osiin pilkun perusteella
+            fields = line.Split(',');
+
+            // Tulostetaan ensimmäinen kenttä
+            Console.WriteLine(fields[0]);
+        }
+
+        // Suljetaan yhteys tiedostoon
+        reader.Close();
     }
 }
-
-// Tulos:
-// Nimi, Ikä, Sähköposti
-// Matti, 35, matti@mail.com
-// Liisa, 28, liisa@mail.com
 ```
 
-## Syvempi sukellus CSV-tiedostoihin
+Tämä yksinkertainen ohjelma lukee CSV-tiedoston ja tulostaa ensimmäisen kentän jokaisesta rivistä. Voit muokata koodia tarpeen mukaan lukeaksesi ja käsitelläksesi haluamiasi kenttiä.
 
-CSV-tiedostot ovat erittäin kätevä tapa tallentaa taulukkomuotoisia tietoja, kuten Excel-taulukoita, ja käsitellä niitä ohjelmallisesti. Niiden käyttö ei vaadi erillisiä lisenssejä tai ohjelmia, vaan ne voidaan luoda ja lukea suoraan C#-koodilla. CSV-tiedostot ovat myös erittäin kevyitä ja helppoja jakaa eri järjestelmien välillä.
+## Syvemmälle CSV-tiedostojen käsittelyyn
+
+CSV-tiedostojen käsittelyyn on olemassa paljon erilaisia työkaluja ja kirjastoja. Voit esimerkiksi käyttää "Microsoft.VisualBasic.FileIO" -kirjastoa, joka tarjoaa helppokäyttöisiä työkaluja CSV-tiedostojen lukemiseen ja kirjoittamiseen. Voit myös tutustua "CsvHelper" -kirjastoon, joka tarjoaa monipuolisia ominaisuuksia, kuten tiedostoon lisääminen ja poistaminen, tiedostojen yhdistäminen ja tiedoston sisällön muokkaus.
 
 ## Katso myös
 
-- [Microsoftin ohjeet CSV-tiedostojen käsittelyyn C#-ohjelmoinnissa](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
-- [CSVHelper-kirjaston käyttö C#-ohjelmoinnissa](https://joshclose.github.io/CsvHelper/)
+- [Microsoft.VisualBasic.FileIO](https://docs.microsoft.com/en-us/dotnet/visual-basic/files/how-to-read-from-comma-delimited-text-files)
+- [CsvHelper](https://joshclose.github.io/CsvHelper/)

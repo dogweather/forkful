@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "एक एचटीटीपी अनुरोध भेजना"
+html_title:           "Kotlin: एक एचटीटीपी अनुरोध भेजना"
+simple_title:         "एक एचटीटीपी अनुरोध भेजना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,33 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-एचटीटीपी अनुरोध भेजने में कोई काम नहीं है क्योंकि एचटीटीपी अनुरोध सर्वर से डेटा या संसाधनों को अपडेट करने के लिए अन्य साइटों और वेब सर्विसेज़ से मदद करता है। इसके अलावा, कई ऐप्स भी अन्य तकनीकी सीमाओं को पार करने के लिए एचटीटीपी अनुरोध के साथ काम करते हैं।
+HTTP (Hypertext Transfer Protocol) एक प्रोटोकॉल है जिसका उपयोग वेब डेवलपमेंट में किया जाता है और यह अन्य कंप्यूटर मशीनों में डेटा को भेजने और प्राप्त करने के लिए इस्तेमाल होता है। HTTP रिक्वेस्ट भेजना सबसे साधारण तरीका है जो आपको दूसरे वेब सर्वरों के साथ संवाद करने में मदद करता है। कंप्यूटर सॉफ्टवेयर डेवलपमेंट में, आप HTTP रिक्वेस्ट द्वारा डेटा को भेजकर काम को आसान बना सकते हैं।
 
 ## कैसे करें
 
-एचटीटीपी अनुरोध भेजने के लिए, सबसे पहले हमें URL विलोम यानी वह साइट का पता जिस से हम डेटा या संसाधनों को प्राप्त करना चाहते हैं और उसके बाद कुछ डेटा भेजने को में POST या GET जैसे होगा उन जानकारियों प्राप्त देखते हैं। कोटलिन में, हम एक HttpURLConnection ऑब्जेक्ट क्रिएट कर सकते हैं और उसके अंदर एचटीटीपी अनुरोध को भेज सकते हैं। नीचे दिए गए कोड ब्लॉक में हम एक GET रिक्वेस्ट को कैसे भेज सकते हैं दिखाएंगे।
-
 ```Kotlin
-val url = URL("https://example.com") // URL बनाएं
-val connection = url.openConnection() as HttpURLConnection // HttpURLConnection बनाएं
-connection.requestMethod = "GET" // रिक्वेस्ट मेथड सेट करें
-val responseCode = connection.responseCode // रिस्पॉन्स कोड प्राप्त करें
-println("Response Code: $responseCode") 
+fun main() {
+    val url = "https://google.com"
+    val client = OkHttpClient()
 
-// यदि रिस्पॉन्स कोड 200 है, तो डेटा प्राप्त करें
-if(responseCode == 200) {
-    val inputStream = connection.inputStream // इनपुट स्ट्रीम प्राप्त करें
-    val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-    var inputLine: String?
-    val response = StringBuffer()
-    while(bufferedReader.readLine().also { inputLine = it } != null) {
-        response.append(inputLine)
-    }
-    bufferedReader.close()
-    println("Response Data: $response") // रिस्पॉन्स डेटा प्रिंट करें
+    val request = Request.Builder()
+        .url(url)
+        .build()
+
+    val response = client.newCall(request).execute()
+    println(response.body?.string())
 }
 ```
 
-## गहराई में जाएं
+इस कोड के अंतर्गत, हमने हुमारी प्रथम HTTP रिक्वेस्ट भेजी है। पहले एक यूआरएल बनाते हैं जो हमें कंप्यूटर सभ्दारण में भेजना है। फिर हमने OkHttpClient क्लास का एक नया ऑब्जेक्ट बनाया है जो हमारी रिक्वेस्ट को भेजने में मदद करता है। हमने एक Request बिल्डर भी बनाया है जिसमें हमने हमारे यूआरएल को सेट किया है और फिर यह बिल्ड किया गया request ऑब्जेक्ट है। अंत में, हमने client को कहा है कि response को execute करें और फिर हमने उसके बॉडी को प्रिंट किया है। यदि सब कुछ सही से काम करता है, तो आपको google.com का HTML देखना चाहिए।
 
-एचटीटीपी अनुरोध भेजने के पीछे के तकनीकी पक्षों से, ह
+## गहराई में
+
+HTTP रिक्वेस्ट हमें कनेक्शन को स्थापित करने और उससे डेटा को भेजने के लिए एक स्टेप ऑवर है। यदि आपको अधिक जानकारी चाहिए तो [okhttp डॉक्यूमें

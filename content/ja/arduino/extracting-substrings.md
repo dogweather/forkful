@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: サブストリング抽出"
-simple_title:         "サブストリング抽出"
+title:                "「サブストリングの抽出」"
+html_title:           "Arduino: 「サブストリングの抽出」"
+simple_title:         "「サブストリングの抽出」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-なぜ文字列から部分文字列を抽出するか。Arduinoプログラマーの皆さんは、時には文字列を処理しなければならない場面に遭遇することがあります。例えば、文字列から特定の情報を抽出したり、ある部分を置き換えたりする必要があるかもしれません。そのような場合には、文字列内の部分的な情報を取得するために部分文字列抽出が必要になる場合があります。
+## どうして
 
-## テクニック
-部分文字列抽出のプログラミング方法を説明します。まず、文字列を格納するための変数を定義します。次に、その変数から特定の位置にある文字を抽出するために、インデックスと呼ばれる数字を使用します。インデックスは、文字列内の文字の位置を指定するために使用されます。例えば、 "Hello"という文字列において、インデックス0は"H"、インデックス1は"e"を指定します。そして、抽出したい部分文字列の開始位置と終了位置をインデックスで指定します。抽出したい部分文字列を指定するためには、Arduinoのサブストリング関数を使用します。
+抽出された部分文字列を取得することは、コーディングの際により柔軟性をもたらし、データ処理をより簡単にする方法です。例えば、センサーから受け取った値の中から特定の情報を抽出したい場合、部分文字列を取得することで必要な情報を簡単に抽出することができます。
+
+## 使い方
+
+部分文字列を取得するには、```Arduino.substring()``` 関数を使用します。この関数は、2つの引数を必要とします。最初の引数は、取得したい部分文字列の開始位置を示すインデックス番号で、2番目の引数は終了位置を示すインデックス番号です。
 
 ```Arduino
-// 文字列を格納する変数の定義
-String str = "Hello World";
-
-// 部分文字列を抽出する
-String sub = str.substring(6, 11); // "World"が抽出される
-
-// 抽出した部分文字列をシリアルモニターに出力する
-Serial.println(sub); // "World"が出力される
+String myString = "Hello world!";
+String subString = myString.substring(6, 11);
+Serial.println(subString); // 出力: world 
 ```
 
-## 詳細
-部分文字列抽出には、さまざまな方法があります。上記の例では、特定の位置から特定の文字数を抽出する方法を見てきましたが、他にもさまざまな方法があります。例えば、部分文字列内の特定の文字を検索して抽出する方法や、正規表現を使用してパターンに一致する部分文字列を抽出する方法などがあります。Arduinoのドキュメントやインターネット上のチュートリアルを参考にして、自分に合った抽出方法を見つけてみてください。
+この例では、"Hello world!"という文字列の、6番目から11番目の文字を抽出し、"world"という部分文字列を取得しています。
 
-## さらに見る
-今回紹介したのは部分文字列抽出の基本的な方法でしたが、Arduinoでは他にも便利な文字列操作の関数がたくさんあります。以下のリンクを参考にして、さまざまな文字列操作の方法を学んでみましょう。
+別の例として、センサーから受け取った文字列の中から数値だけを抽出し、その値を使用してLEDを制御することができます。
 
-- https://www.arduino.cc/en/Reference/StringObject
-- https://www.arduino.cc/en/Tutorial/StringConstructors
-- https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
+```Arduino
+String sensorString = "ID:453,Value:987";
+int value = sensorString.substring(14).toInt(); // 文字列から数値だけを抽出し、数値に変換
+analogWrite(ledPin, value); // 抽出した値を使用してLEDを制御
+```
+
+このように、部分文字列を取得することで、必要な情報を簡単に抽出し、利用することができます。
+
+## 詳細を見る
+
+さらに深く部分文字列を理解するには、以下のリンクを参考にしてください。
+
+- [Arduino Reference - String.substring()](https://www.arduino.cc/reference/en/language/variables/data-types/substring/)
+- [Tech Target - Substring](https://searchsqlserver.techtarget.com/definition/substring)
+- [Stack Overflow - How to extract a substring from a string?](https://stackoverflow.com/questions/1871230/how-to-extract-a-substring-from-a-string)
+
+## 詳しくは
+
+抽出された部分文字列は、より簡潔にコードを書くことができるだけでなく、データ処理をより簡単にすることができます。是非、部分文字列を積極的に活用してみてください。
+
+## 参考
+
+- [Markdown記法 チートシート - Qiita](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)
+- [Markdown マークダウンチートシート - bungu](https://bun.gy/markdown-cheat-sheet)

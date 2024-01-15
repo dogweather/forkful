@@ -1,5 +1,6 @@
 ---
-title:                "C++: Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "C++: Lendo argumentos da linha de comando"
 simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "C++"
 category:             "C++"
@@ -9,54 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
-
-Ler argumentos da linha de comando é uma habilidade fundamental para qualquer programador em C++. Com ela, é possível interagir com o usuário e criar programas mais dinâmicos e flexíveis. Além disso, a leitura de argumentos da linha de comando permite que o usuário passe informações essenciais para a execução do programa, como arquivos de entrada e configurações específicas.
+## Por que
+Você já se perguntou como programas em C++ conseguem receber informações diretamente da linha de comando? Aprender a ler argumentos da linha de comando pode ser extremamente útil para tornar seus programas mais interativos e flexíveis.
 
 ## Como Fazer
-
-Ler argumentos da linha de comando em C++ é bastante simples e pode ser feito usando a função `main()`. Basta declarar os parâmetros `argc` e `argv` que representam, respectivamente, o número de argumentos passados e um vetor que armazena os argumentos em strings.
+A leitura de argumentos da linha de comando em C++ é feita utilizando a função `main` que possui dois parâmetros, `argc` e `argv`. O `argc` representa o número de argumentos passados e o `argv` é um vetor contendo esses argumentos.
 
 ```C++
-int main(int argc, char *argv[]) {
-    // código para processar os argumentos aqui
+#include <iostream>
+
+// Função main com dois parâmetros
+int main(int argc, char** argv) {
+    // Imprime o primeiro argumento após o nome do programa
+    std::cout << "O primeiro argumento é: " << argv[1] << std::endl;
+
+    // Imprime o segundo argumento
+    std::cout << "O segundo argumento é: " << argv[2] << std::endl;
+
     return 0;
 }
 ```
 
-Agora, é possível acessar cada argumento passado pelo usuário através do vetor `argv` e executar as ações desejadas. Por exemplo, se o usuário passar o argumento "-h" para exibir a ajuda do programa, podemos fazer:
-
-```C++
-if (strcmp(argv[1], "-h") == 0) {
-    cout << "Este programa realiza operações matemáticas." << endl;
-    cout << "Opções disponíveis: " << endl;
-    cout << "-s : calcular soma" << endl;
-    cout << "-m : calcular multiplicação" << endl;
-    cout << "-p : calcular potência" << endl;
-}
-```
-
-A saída do programa seria:
+Supondo que o programa seja nomeado como `meu_programa.exe` e seja executado com os argumentos `arg1` e `arg2`, a saída seria a seguinte:
 
 ```
-$ ./calculadora -h
-Este programa realiza operações matemáticas.
-Opções disponíveis:
--s : calcular soma
--m : calcular multiplicação
--p : calcular potência
+O primeiro argumento é: arg1
+O segundo argumento é: arg2
 ```
 
-## Aprofundando-se
+## Mergulho Profundo
+Nos sistemas operacionais, sempre que um programa é executado, é criado um processo para ele. Esse processo é responsável por armazenar todos os dados necessários para a execução do programa, incluindo os argumentos da linha de comando. Ao utilizar a função `main` com os parâmetros `argc` e `argv`, você está acessando essas informações armazenadas no processo do programa em execução.
 
-Além dos argumentos que o usuário pode passar, também existem argumentos obrigatórios que precisam ser tratados pelo programa. Para isso, é necessário verificar se o número de argumentos `argc` é maior ou igual ao número mínimo esperado e, caso contrário, informar ao usuário que algo está faltando.
-
-Outro ponto importante é considerar possíveis erros de digitação ou entrada incorreta de informações pelo usuário. Para isso, é recomendado o uso de validação e tratamento de exceções para garantir que o programa não tenha falhas inesperadas.
-
-Além disso, é importante entender a diferença entre argumentos de linha de comando com e sem opção. Argumentos com opção são aqueles que possuem um valor associado, como por exemplo o argumento `-n 10` em que 10 é o valor da opção `n`. Já argumentos sem opção são apenas marcadores que indicam a execução de uma determinada tarefa.
-
-## Ver também
-
-- [Tutorial de command line arguments em C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Documentação sobre a função main() em C++](https://www.cplusplus.com/articles/yAqpX9L8/)
-- [Exemplos de uso de argumentos da linha de comando em C++](https://www.techiedelight.com/command-line-arguments-cpp/)
+## Veja Também
+- [Referência da função main em C++](https://en.cppreference.com/w/cpp/language/main_function)
+- [Tutorial de linha de comando em C++](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
+- [Leitura de argumentos em C++ utilizando a biblioteca Boost](https://www.boost.org/doc/libs/1_68_0/doc/html/program_options/tutorial.html)

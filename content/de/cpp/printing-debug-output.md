@@ -1,6 +1,7 @@
 ---
-title:                "C++: Fehlersuch-Ausgaben ausgeben"
-simple_title:         "Fehlersuch-Ausgaben ausgeben"
+title:                "Debug-Ausgabe drucken"
+html_title:           "C++: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Debug-Ausgaben sind ein wichtiger Bestandteil der C++-Programmierung und können dabei helfen, Fehler zu finden und zu beheben. Es ist eine einfache Methode, um den Code während der Entwicklung zu überprüfen und zu verstehen, wie das Programm innerhalb des Codes arbeitet. Es ermöglicht auch, das Verhalten des Programms zu überwachen und Feedback zu erhalten, um es besser zu optimieren.
+# Warum
+Debugausgabe ist ein wichtiger Teil des Programmierens, da sie dabei hilft, Fehler im Code zu finden und zu beheben. Durch das Drucken von Debugausgaben können Entwickler*innen ihre Programme effektiver und effizienter debuggen und somit schneller zu einem fehlerfreien Ergebnis gelangen.
 
-## Wie geht es
-Um Debug-Ausgaben in C++ zu verwenden, können Sie die Funktion `std::cout` aus der Standardbibliothek verwenden. Diese Funktion ermöglicht es, Daten in die Konsole auszugeben. Sie benötigen auch die Header-Datei `iostream` in Ihrem Code, damit die Funktion ordnungsgemäß funktioniert. Schauen wir uns ein Beispiel an:
+# Wie funktioniert es?
+Das Drucken von Debugausgaben in C++ ist eine einfache Methode, um den Programmierprozess zu unterstützen. Dafür gibt es die Funktion `cout`, die den Text oder die Werte von Variablen auf der Konsole ausgibt. Hier ist ein Beispiel:
 
 ```C++
 #include <iostream>
 
-int main() {
-    int zahl = 10;
-    std::cout << "Die Zahl ist: " << zahl << std::endl;
+using namespace std;
+
+int main(){
+    int a = 10;
+    float b = 1.5;
+
+    // Debugausgabe
+    cout << "Der Wert von a ist: " << a << endl;
+    cout << "Der Wert von b ist: " << b << endl;
+
     return 0;
 }
+
+// Ausgabe:
+Der Wert von a ist: 10
+Der Wert von b ist: 1.5
 ```
 
-In diesem Beispiel wird die Variable `zahl` initialisiert und der Wert 10 zugewiesen. Mit `std::cout` können wir dann die Nachricht "Die Zahl ist: " zusammen mit dem Wert von `zahl` in der Konsole ausgeben. Die Verwendung von `std::endl` ermöglicht auch, dass die Ausgabe in einer neuen Zeile erfolgt.
+In diesem Beispiel wird der Wert der Variablen `a` und `b` ausgegeben, was hilfreich sein kann, um sicherzustellen, dass die Variablen die gewünschten Werte haben.
 
-## Tiefer Abstieg
-Obwohl der Einsatz von `std::cout` recht einfach ist, gibt es verschiedene Möglichkeiten, sie zu verwenden, um die Ausgabe auf verschiedene Weise zu formatieren und zu gestalten. Zum Beispiel können Sie mehrere Variablen in einer Ausgabezeile verwenden, indem Sie sie mit dem `<<`-Operator trennen. Sie können auch verschiedene Datentypen wie Strings, Integer, Gleitkommazahlen usw. kombinieren.
+# Tiefergehende Informationen
+Es gibt verschiedene Möglichkeiten, Debugausgaben in C++ zu nutzen, je nachdem, welchen Teil des Codes Sie überprüfen möchten. Hier sind einige zusätzliche Funktionen, die Sie beim Debuggen verwenden können:
 
-Eine weitere Möglichkeit, Debug-Ausgaben zu verwenden, ist die Verwendung von Konditionalen, um nur unter bestimmten Bedingungen Ausgaben zu machen. Dies kann hilfreich sein, um die Ausgabe zu vermeiden, wenn sie nicht benötigt wird, und somit den Code effizienter zu gestalten.
+- `cerr`: Gibt Text auf der Fehlerausgabe aus und kann helfen, schwerwiegende Fehler im Programm zu finden.
+- ` #ifdef DEBUG`: Diese Bedingung ermöglicht es, Debugausgaben nur im Entwicklungsmodus zu nutzen und sie beim Kompilieren für die endgültige Version zu entfernen.
+- `assert()`: Eine Funktion, die es Ihnen ermöglicht, Bedingungen im Code zu überprüfen und zu prüfen, ob diese Bedingungen wahr sind oder nicht.
+
+Es ist wichtig zu beachten, dass Debugausgaben auch den Code verlangsamen können, daher sollten sie nur verwendet werden, wenn sie wirklich benötigt werden.
 
 ## Siehe auch
-- [C++ Debugging-Tutorial auf YouTube](https://www.youtube.com/watch?v=nlYs5kBR5Ds)
-- [Verwendung von `std::cout` in C++](https://www.geeksforgeeks.org/using-stdcout-separately-in-cpp/)
-- [Debugging in C++ mit Code::Blocks](https://www.codingunit.com/cplusplus-tutorial-3-2-the-great-mystery-of-cout)
+- [Übersicht der C++ Debugging Tools von Microsoft](https://docs.microsoft.com/en-us/cpp/cpp/debugging-tools-for-windows)
+- [Tutorial: Debuggen von C++-Code mit Visual Studio Code](https://code.visualstudio.com/docs/cpp/cpp-debug)
+- [Tipps und Tricks für effektives Debuggen in C++](https://www.alessandromacor.com/de/how-to-debug-cpp-with-visual-studio-code/)

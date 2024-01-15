@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 「ディレクトリが存在するかどうかをチェックする」"
-simple_title:         "「ディレクトリが存在するかどうかをチェックする」"
+title:                "ディレクトリが存在するかどうかを確認する"
+html_title:           "PHP: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-ディレクトリの存在をチェックすることの重要性は、プログラムで特定のファイルやディレクトリにアクセスする必要があるときに非常に重要です。存在しないディレクトリをチェックしないと、プログラムが失敗する可能性があります。ディレクトリの存在を確認することで、プログラムの安全性と信頼性が向上します。
+ディレクトリが存在しているかどうかは、ファイルの読み書きやアクセス制御など、多くのプログラミングタスクで重要な役割を果たします。そのため、PHPではディレクトリの存在をチェックする方法が用意されています。
 
-## 使い方
+ファイルシステム内で特定のディレクトリが存在するかどうかを確認することで、ユーザーに適切なアクセスを提供することができ、セキュリティを強化することができます。
 
-ディレクトリが存在するかどうかを確認するには、`file_exists()`関数を使用します。以下のコード例を参考にし、ディレクトリが存在する場合には「ディレクトリが存在します」というメッセージを、存在しない場合には「ディレクトリが存在しません」というメッセージを表示します。
+## How To
+
+PHPでは、`file_exists()`関数を使用してディレクトリの存在を確認することができます。以下のコードを使用することで、指定したディレクトリの存在を確認することができます。
 
 ```PHP
-if (file_exists("ディレクトリのパス")) {
-    echo "ディレクトリが存在します";
+<?php
+$directory = '/path/to/directory';
+
+if (file_exists($directory)) {
+  echo "The directory exists!";
 } else {
-    echo "ディレクトリが存在しません";
+  echo "The directory does not exist.";
 }
-```
-サンプル出力:
-```
-ディレクトリが存在します
+?>
 ```
 
-## 深堀り
+上記の例では、指定したディレクトリが存在する場合には「The directory exists!」、存在しない場合には「The directory does not exist.」というメッセージが表示されます。
 
-`file_exists()`関数は、あらゆる種類のファイルやディレクトリに対して使用することができます。また、ディレクトリが存在しない場合には`false`を返しますが、存在しないファイルやパーミッションの問題など、何かしらのエラーがあるときにも`false`を返すことがあります。そのため、`file_exists()`関数だけではディレクトリが存在するのかどうかの正確な判断ができません。ファイルやディレクトリに対するパーミッションなども含めて、より詳細な確認が必要です。
+## Deep Dive
 
-## 参考リンク
+`file_exists()`関数は、指定されたパスがファイルでもディレクトリでも存在する場合には`true`を返し、存在しない場合には`false`を返します。そのため、ディレクトリの存在をチェックする際には、ファイルの存在も同時にチェックすることになります。
 
-- [PHP: file_exists - Manual](https://www.php.net/manual/ja/function.file-exists.php)
-- [How to Check if a Directory Exists in PHP - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-check-if-a-directory-exists-in-php/)
-- [PHP Directory Functions](https://www.php.net/manual/ja/ref.dir.php)
+また、PHPでは`is_dir()`関数を使用してもディレクトリの存在を確認することができます。`is_dir()`関数は、指定されたパスがディレクトリである場合には`true`を返し、そうでない場合には`false`を返します。そのため、ファイルの存在をチェックする必要がない場合には、`is_dir()`関数を使用する方法もあります。
+
+## See Also
+
+- PHP公式ドキュメント: [file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- PHP公式ドキュメント: [is_dir()](https://www.php.net/manual/en/function.is-dir.php)

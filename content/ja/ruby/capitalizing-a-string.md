@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 文字列の大文字化"
+title:                "文字列の大文字化"
+html_title:           "Ruby: 文字列の大文字化"
 simple_title:         "文字列の大文字化"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,28 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を大文字にすることに関わる理由は、メッセージや文書を強調したい場合や、データの整理や分類をする際に役立ちます。
+
+文字列を大文字に変換する理由はいくつかあります。例えば、入力された文字列を正規化するためや、プログラムで処理する際に一貫性を保つためです。また、単に見た目を美しくするためにも利用されます。
 
 ## 方法
-文字列を大文字にするには、Rubyのcapitalizeメソッドを使用します。下記のコード例をご確認ください。
+
+### 文字列を大文字に変換する方法
+
+入力された文字列を大文字に変換するには、RubyのStringクラスにあるupcaseメソッドを使用します。また、downcaseメソッドを使用すると文字列を小文字に変換することもできます。以下のコードを参考にしてください。
 
 ```Ruby
-# 変数に文字列を代入する
-str = "hello world"
-
-# capitalizeメソッドを使用して大文字に変換する
-str.capitalize
-
-# 出力結果: "Hello world"
+input = "Hello World"
+puts input.upcase # 出力結果: HELLO WORLD
+puts input.downcase # 出力結果: hello world
 ```
 
-## 深堀り
-文字列を大文字にする際、空白や句読点などの特殊文字も大文字に変換されることに注意してください。また、日本語の文字列を大文字に変換する場合は、Stringクラスのcapitalizeメソッドではなく、UnicodeUtilsライブラリの方法を使用する必要があります。詳細は下記のリンクをご参照ください。
+### 文字列の最初の文字を大文字に変換する方法
+
+文字列の最初の文字を大文字に変換するには、capitalizeメソッドを使用します。以下のコードを参考にしてください。
+
+```Ruby
+input = "hello world"
+puts input.capitalize # 出力結果: Hello world
+```
+
+### 文字列の各単語の最初の文字を大文字に変換する方法
+
+文字列の各単語の最初の文字を大文字に変換するには、titleizeメソッドを使用します。以下のコードを参考にしてください。
+
+```Ruby
+input = "hello world"
+puts input.titleize # 出力結果: Hello World
+```
+
+## ディープダイブ
+
+Rubyでは、Stringクラスに多数のメソッドが用意されており、文字列の大文字・小文字変換だけでなく、部分文字列の取得や置換など、さまざまな処理が可能です。また、文字コードによる大文字・小文字の違いも考慮されています。詳細な情報は公式ドキュメントを参照してください。
 
 ## 参考リンク
-- [RubyのStringクラスAPI](https://docs.ruby-lang.org/ja/latest/class/String.html#I_CAPITALIZE)
-- [UnicodeUtilsライブラリ](https://github.com/lang/unicode_utils)
-- [文字列操作のチートシート](https://qiita.com/jnchito/items/268ae0059c98a3fce68b)
 
-## 参考文献
-- ["Rubyではじめるプログラミング" by 松前洋一郎・嶋田淳](https://www.amazon.co.jp/dp/4797383925/ref=cm_sw_r_tw_dp_U_x_rV3lBbSCR6CJC)
+- [Rubyドキュメント: Stringクラス](https://docs.ruby-lang.org/ja/latest/class/String.html)
+- [RubyGuides: Rubyの文字列操作ガイド](https://www.rubyguides.com/2019/06/ruby-string-methods/)
+- [Progate: Rubyの文字列操作について学ぼう](https://prog-8.com/docs/ruby-string)

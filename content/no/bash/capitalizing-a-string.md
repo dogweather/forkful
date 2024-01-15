@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Store bokstaver i en streng"
+html_title:           "Bash: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,47 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Har du noen gang lurt på hvordan du kan få en tekst til å se mer profesjonell ut? Eller kanskje du bare vil lære deg et nytt triks i Bash-programmering? Uansett grunn, er det nyttig å kunne formatere tekst, og en av måtene å gjøre det på er å kapitalisere en streng. I denne bloggposten vil vi se på hvorfor det kan være nyttig å kapitalisere en streng, og hvordan du gjør det i Bash.
+
+Å ha riktig utforming på tekst kan være viktig av ulike årsaker, enten det er for å gjøre den mer lesbar eller for å følge et bestemt format. En vanlig formateringsmetode er å ha store bokstaver i begynnelsen av ord, også kalt "Kapitalisering". I Bash kan du enkelt endre en streng til å bli kapitalisert ved hjelp av noen kodelinjer.
 
 ## Hvordan
-For å kapitalisere en streng i Bash er det noen få enkle trinn du kan følge. For det første må du definere strengen du vil kapitalisere som en variabel. La oss for eksempel si at strengen vår er "hei, dette er en test".
+
+For å kapitalisere en streng i Bash, kan du bruke kommandoen `tr`. Her er et eksempel på hvordan du kan bruke den:
 
 ```Bash
-streng="hei, dette er en test"
+input="dette er en test"
+output=$(tr '[:lower:]' '[:upper:]' <<< "$input")
+echo "$output"
 ```
 
-Deretter bruker du kommandoen `tr` for å gjøre om alle små bokstaver i strengen til store bokstaver.
-
-```Bash
-stor_streng=$(echo "$streng" | tr '[:lower:]' '[:upper:]')
-```
-
-Merk at vi lagrer den kapitaliserte strengen i en ny variabel kalt `stor_streng`, slik at vi beholder den originale strengen i `streng`-variabelen. Nå kan du skrive ut begge strengene for å se forskjellen.
-
-```Bash
-echo "Original streng: $streng"
-echo "Kapitalisert streng: $stor_streng"
-```
-
-Det vil gi følgende utdata:
-
-```
-Original streng: hei, dette er en test
-Kapitalisert streng: HEI, DETTE ER EN TEST
-```
-
-Det er også verdt å merke seg at den originale strengen forblir uendret, og bare den kapitaliserte versjonen er lagret i `stor_streng`-variabelen.
+I dette eksempelet definerer vi en variabel `input` som inneholder en streng. Ved å bruke `tr` og spesifisere både små og store bokstaver, vil kommandoen kapitalisere alle bokstavene i strengen vår. Outputet blir deretter lagret i variabelen `output` og deretter skrevet ut ved hjelp av `echo` kommandoen.
 
 ## Dypdykk
-Å kapitalisere en streng er et enkelt og nyttig triks, men det er viktig å forstå hva som skjer under overflaten. Når vi bruker kommandoen `tr`, erstattes hver bokstav i strengen med en annen bokstav basert på definerte regler. I dette tilfellet bruker vi `[:lower:]` og `[:upper:]` for å definere hvilke bokstaver som skal erstattes.
 
-Det finnes også andre måter å kapitalisere en streng på i Bash, som å bruke en løkke eller et regex-uttrykk. Men `tr`-kommandoen er ofte den enkleste og mest effektive måten å gjøre det på.
+Det er viktig å merke seg at `tr` kommandoen i Bash ikke bare kan kapitalisere en hel streng, men også bytte ut en bestemt del av en streng med en annen. Ved å bruke den riktige syntaksen, kan du endre en tekst til å oppfylle dine spesifikke behov.
 
-## Se Også
-Hvis du er interessert i å lære mer om Bash-programmering, kan du sjekke ut følgende ressurser:
+En annen nyttig kommando du kan bruke for å kapitalisere strenger er `sed`. Denne kommandoen er spesielt nyttig hvis du vil kapitalisere bare første bokstav i hvert ord i en streng. Her er et eksempel:
 
-- [Bash-dokumentasjonen](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Guide for nybegynnere](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Bash-skripting for systemadministratorer](https://tldp.org/LDP/abs/html/)
+```Bash
+input="dette er en test"
+output=$(sed -e 's/\b\(.\)/\u\1/g' <<< "$input")
+echo "$output"
+```
 
-Nå som du vet hvordan du kan kapitalisere en streng i Bash, håper vi at det vil være nyttig for deg i dine programmeringsprosjekter! Lykke til!
+Med denne kommandoen vil `sed` kapitalisere første bokstav i hvert ord i strengen vår, og returnere "Dette Er En Test".
+
+## Se også
+
+- [Bash-siden på WikiBooks](https://en.wikibooks.org/wiki/Bash_Shell_Scripting)
+- [Offisiell dokumentasjon for Bash](https://www.gnu.org/software/bash/manual/bash.pdf)

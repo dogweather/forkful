@@ -1,6 +1,7 @@
 ---
-title:                "Python: Capitalizzazione di una stringa"
-simple_title:         "Capitalizzazione di una stringa"
+title:                "Maiuscolare una stringa."
+html_title:           "Python: Maiuscolare una stringa."
+simple_title:         "Maiuscolare una stringa."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,47 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-La capitalizzazione di una stringa è un'operazione comune nella programmazione Python che permette di modificare la formattazione di una stringa, rendendo la prima lettera maiuscola e il resto in minuscolo. Questo può essere utile per rendere più leggibili i testi o per adattarli a determinati standard di formattazione.
+Capitalize è una funzione utile in Python per rendere una stringa maiuscola, utile per formattare testi o per garantire una corretta sintassi in alcune situazioni.
 
 ## Come fare
-Per capitalizzare una stringa in Python, è possibile utilizzare il metodo `capitalize()` che fa parte della classe `str`. Ad esempio:
+Utilizzare la funzione `capitalize()` è molto semplice, basta chiamarla su una stringa e il primo carattere verrà reso maiuscolo. 
 
+```Python
+testo = "questo è un esempio"
+nuovo_testo = testo.capitalize()
+print(nuovo_testo)
 ```
-nome = "marco"
-nome_capitalizzato = nome.capitalize()
-print(nome_capitalizzato)
-```
-Output: Marco
+Output: "Questo è un esempio"
 
-Possiamo anche applicare la capitalizzazione solo alla prima lettera di ogni parola in una stringa utilizzando il metodo `title()`. Ad esempio:
+Si può anche specificare un indice di inizio e fine per capitilare solo una parte della stringa.
 
+```Python
+testo = "questo è un esempio"
+nuovo_testo = testo.capitalize(8, 12)
+print(nuovo_testo)
 ```
-testo = "questo è un esempio di stringa da capitalizzare"
-testo_capitalizzato = testo.title()
-print(testo_capitalizzato)
-```
-Output: Questo È Un Esempio Di Stringa Da Capitalizzare
+Output: "questo È un Esempio"
 
-Per applicare la capitalizzazione ad una stringa immessa dall'utente, possiamo utilizzare la funzione `input()` per richiedere l'input all'utente e poi applicare il metodo `capitalize()` o `title()`. Ad esempio:
+## Approfondimenti
+La funzione `capitalize()` può essere utile anche per convertire le iniziali delle parole di una stringa in maiuscolo. Tuttavia, bisogna prestare attenzione perché non funziona correttamente con parole già in maiuscolo.
 
-```
-nome = input("Inserisci il tuo nome: ")
-nome_capitalizzato = nome.capitalize()
-print("Ciao " + nome_capitalizzato + ", benvenuto!")
-```
+Un altro modo per capitalizzare una stringa è utilizzare il metodo `title()`, che trasforma ogni parola iniziale in maiuscolo.
 
-## Approfondimento
-Durante la capitalizzazione di una stringa, Python non modifica l'originale, ma ne crea una copia con la formattazione corretta. Inoltre, se la stringa originale ha già una prima lettera maiuscola, il metodo `capitalize()` non la modificherà.
-
-Un altro metodo utile per la formattazione di una stringa è `swapcase()` che si occupa di invertire la capitalizzazione delle lettere all'interno della stringa, rendendo maiuscole le minuscole e viceversa. Ad esempio:
-
+```Python
+testo = "questo è un esempio"
+nuovo_testo = testo.title()
+print(nuovo_testo)
 ```
-testo = "ProVa Ad AppLiCare La CaPitalizZazione"
-testo_modificato = testo.swapcase()
-print(testo_modificato)
+Output: "Questo È Un Esempio"
+
+Ad esempio, se si vuole capitalizzare solo la prima lettera di ogni parola, si può utilizzare il modulo `string.capwords()`.
+
+```Python
+import string
+
+testo = "questa è una frase di prova"
+nuovo_testo = string.capwords(testo)
+print(nuovo_testo)
 ```
-Output: pROvA aD aPPlIcARE lA cApITALIZZAZIONE
+Output: "Questa È Una Frase Di Prova"
 
 ## Vedi anche
-- [Documentazione Python su stringhe](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Capitalizzazione di una stringa in Python](https://www.programiz.com/python-programming/methods/string/capitalize)
+- Documentazione ufficiale di Python sulla funzione `capitalize()`: https://docs.python.org/3/library/stdtypes.html#str.capitalize
+- Tutorial su come manipolare le stringhe in Python: https://realpython.com/python-strings/
+- Approfondimenti sulle diverse funzioni di formattazione delle stringhe in Python: https://www.askpython.com/python/examples/format-strings-in-python

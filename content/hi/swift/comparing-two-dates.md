@@ -1,6 +1,7 @@
 ---
-title:                "Swift: दो तिथियों की तुलना करना"
-simple_title:         "दो तिथियों की तुलना करना"
+title:                "दो तारीखों की तुलना करना"
+html_title:           "Swift: दो तारीखों की तुलना करना"
+simple_title:         "दो तारीखों की तुलना करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,22 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-कैसे दो तारीखों की तुलना करने से कोई लाभ हो सकता है? यह आमतौर पर बहुत सारे उदाहरण में उपयोगी हो सकता है, जैसे कि बैंकिंग ट्रांजैक्शन, और ऐसे समय की ज़रूरत हो सकती है जब हमें दो तारीखों को तुलना करने की ज़रूरत होती है।
+## Kyun
 
-## कैसे करें
-तारीखों की तुलना करने के लिए हम `Calendar` का उपयोग कर सकते हैं जो निम्न तरह से दो तारीखों के बीच की दूरी की गणना करता है:
+Aksar hume apni applications mein do tarikhon ko compare karna hota hai, jaise ki kisi event ki start date aur end date. Swift mein dates ko compare karna kaafi aasaan hai aur iske liye aapko sirf thodi si coding aani chahiye.
+
+## Kaise Karein
 
 ```Swift
-let calendar = Calendar.current
-let startDate = calendar.startOfDay(for: Date())
-let endDate = calendar.date(byAdding: .day, value: 7, to: startDate)!
+let formatter = DateFormatter()
 
-let differenceInDays = calendar.dateComponents([.day], from: startDate, to: endDate).day
-print(differenceInDays!) // Output: 7
+formatter.dateStyle = .short
+
+formatter.dateFormat = "dd/MM/yyyy"
+
+let firstDate = formatter.date(from: "15/08/2021")
+
+let secondDate = formatter.date(from: "25/08/2021")
+
+if firstDate == secondDate {
+    print("Dono dates barabar hai.")
+} else if firstDate < secondDate {
+    print("First date chota hai second date se.")
+} else {
+    print("First date bada hai second date se.")
+}
 ```
 
-इस उदाहरण में हम स्थानीय टारीख को प्राप्त करने के लिए `startOfDay()` फंक्शन का उपयोग करते हैं, उसके बाद हम 7 दिन को शामिल करने के लिए `date(byAdding:to:)` फंक्शन का उपयोग करते हैं। फिर हम शुरुआत तारीख और अंत तारीख के बीच की दिनों की गणना करने के लिए `dateComponents(_:from:to:)` फंक्शन का उपयोग करते हैं और उसकी दिन की वैल्यू को प्रिंट करते हैं।
+**Output:** First date chota hai second date se.
 
-## डीप डाइव
-तुलना करने के लिए दो तारीखों के बीच की दुर्लभता को समझने के लिए, हमें `DateInterval` डेटा संरचना का उपयोग करना चाहिए। इस तरह, हम एक अधिक आरामदायक और सुलभ तरीके से तारीखों की तुलना कर सकते हैं। इस तरह से, हम किसी भी अंतराल को सुलभता से बूट करके तत्काल जान सकते हैं कि क्या दो तारीखें समान हैं या
+Yahan humne `DateFormatter` ka use kiya hai, jo hume date ko string mein convert karne mein madad karta hai. Fir humne `date(from:)` method se string ko date mein convert kiya. Phir hum `==` aur `<` operators ka use karke dates ko compare kar rahe hai. Aap is code snippet ko apni application mein use karke results dekh sakte hai.
+
+## Deep Dive
+
+Dates ko compare karne ke liye aapko `Date` structure ka use karna hoga. Iske alawa `DateFormatter` bhi kaafi important hai, jis se hum dates ko string mein aur vice versa convert kar sakte hai. Swift mein hum `==`, `<`, `>` operators ka use karke dates ko compare kar sakte hai. Iske alawa `compare(_:, to:)` method bhi available hai jo dates ko compare karne mein madad karta hai.
+
+## Dekhiye Bhi
+
+Agar aapko Swift aur dates ke baare mein aur jaankari chahiye, toh aap neeche diye gaye links check kar sakte hai:
+
+- [Dates in Swift](https://developer.apple.com/documentation/foundation/date)
+- [DateFormatter in Swift](https://developer.apple.com/documentation/foundation/dateformatter)

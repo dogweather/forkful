@@ -1,6 +1,7 @@
 ---
-title:                "C: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Last ned en nettside"
+html_title:           "C: Last ned en nettside"
+simple_title:         "Last ned en nettside"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,64 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det er mange grunner til å laste ned en nettside. Kanskje du vil lagre informasjonen for senere bruk, eller kanskje du vil endre nettsiden og laste den opp igjen. Uansett årsak er det nyttig å vite hvordan man kan laste ned en nettside ved hjelp av C-programmering.
 
-Å laste ned en webside ved hjelp av C-programmering kan være nyttig for å hente eller manipulere data fra internett. Dette kan være nyttig for å hente informasjon fra nettsider for å bruke i andre programmer eller for å automatisere oppgaver som ellers ville blitt gjort manuelt.
-
-## Hvordan
-
-Vi skal se på et enkelt eksempel på hvordan man kan laste ned en webside ved hjelp av C-programmering. Først må vi inkludere `<stdio.h>` og `<curl/curl.h>` bibliotekene.
+## Hvordan gjøre det
+For å laste ned en nettside ved hjelp av C, trenger du først å inkludere standardbiblioteket `stdio.h` og `stdlib.h` i koden din. Deretter må du initialisere en variabel med `fopen` funksjonen for å åpne en kobling til nettsiden du ønsker å laste ned. Deretter bruker du `fputc` funksjonen til å skrive innholdet i nettsiden til en fil. Du kan velge å lese innholdet i nettsiden linje for linje, eller ved hjelp av `getc` funksjonen.
 
 ```C
-#include <stdio.h>
-#include <curl/curl.h>
-```
+#include<stdio.h>
+#include<stdlib.h>
 
-Deretter må vi opprette en funksjon for å håndtere dataene som vi henter fra websiden. Dette kan gjøres ved hjelp av `CURL_WRITEFUNCTION` og `fwrite()` funksjonen.
-
-```C
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-   return fwrite(ptr, size, nmemb, stream);
+int main(){
+    FILE *fptr;
+    int ch;
+    fptr = fopen("nettside.txt","w"); // Åpner en ny fil kalt nettside.txt
+    FILE *nettsiden = fopen("https://www.example.com", "r"); // Åpner nettsiden som en lesbar fil
+    if(nettsiden == NULL) {
+        printf("Kan ikke åpne nettsiden");
+        exit(1);
+    }
+    // Leser og lagrer nettsiden i en fil
+    while((ch = getc(nettsiden)) != EOF) {
+        fputc(ch, fptr);
+    }
+    fclose(nettsiden);
+    fclose(fptr);
 }
 ```
 
-Nå kan vi opprette en `CURL`-håndterer og sette innstillingene våre. Vi må spesifisere URL-en til websiden vi ønsker å laste ned og også sette `CURLOPT_WRITEFUNCTION` til å bruke funksjonen vi opprettet tidligere.
+Dette vil skrive innholdet fra nettsiden til en fil som heter `nettside.txt`. Du kan også bruke `fgets` funksjonen til å lese og skrive en bestemt del av nettsiden.
 
-```C
-CURL *curl;
-CURLEcode res;
-
-FILE *fp;
-
-char *url = "https://www.eksempel.no/";
-char outfilename[FILENAME_MAX] = "webside.html";
-
-curl = curl_easy_init();
-
-if (curl) {
-    fp = fopen(outfilename, "wb");
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-    res = curl_easy_perform(curl);
-
-    /* Sjekk for feil */
-    if(res != CURLE_OK)
-        fprintf(stderr, "laste ned feilet: %s\n",
-                curl_easy_strerror(res));
-    
-    /* Lukk filen og frigjør ressurser */
-    curl_easy_cleanup(curl);
-}
-```
-
-Når programmet vårt kjører, vil websiden bli lastet ned og lagret som en HTML-fil med navnet "webside.html". Dette er et enkelt eksempel, men denne metodikken kan utvides og tilpasses for å hente mer data eller for å håndtere andre typer nettverkskall.
-
-## Dypdykk
-
-Det å laste ned en webside ved hjelp av C-programmering kan også innebære å bruke spesifikke protokoller som HTTP eller HTTPS, samt å sende forespørsler og motta svar fra serveren. Det er også viktig å håndtere eventuelle feil som kan oppstå underveis, som for eksempel manglende tilgang til en nettside eller en ugyldig URL. Det finnes også forskjellige biblioteker og rammeverk som kan hjelpe med å gjøre prosessen med å laste ned og håndtere data fra websider enda enklere.
+## Dybdeundersøkelse
+Ved å dykke dypere inn i C-programmering, kan man oppdage flere avanserte måter å laste ned en nettside på. For eksempel kan man bruke `libcurl` biblioteket for å hente nettsiden ved hjelp av HTTP-protokoller. Man kan også bruke `getaddrinfo` funksjonen for å hente IP-adressen til nettsiden og åpne forbindelse direkte til serveren.
 
 ## Se også
-
-- [Libcurl Library](https://curl.se/libcurl/)
-- [Open Source C Programming Resources](https://www.cprogramming.com/)
-- [The Ultimate Resource for C Programming](https://www.learn-c.org/)
+- [Libcurl dokumentasjon](https://curl.haxx.se/libcurl/)
+- [getaddrinfo dokumentasjon](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html)

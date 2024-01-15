@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "Gleam: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,77 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous travaillez avec des données structurées, il est probable que vous ayez déjà entendu parler de YAML. Ce langage de sérialisation de données est de plus en plus populaire grâce à sa simplicité et sa lisibilité. Si vous souhaitez automatiser ou simplifier la gestion de votre configuration, travailler avec YAML peut être très utile.
+Écrire des fichiers de configuration peut souvent être fastidieux et sujet à des erreurs, en particulier lorsqu'il s'agit de fichiers de configuration volumineux et complexes. C'est là que YAML entre en jeu. YAML est un format de sérialisation de données léger et facilement lisible pour les humains, conçu pour faciliter la création et la manipulation de données structurées. En utilisant YAML, vous pouvez simplifier le processus de création et de gestion des fichiers de configuration.
 
-## Comment faire
+# Comment faire
 
-Pour commencer à travailler avec YAML, vous devez d'abord comprendre sa structure de base. YAML utilise une syntaxe basée sur l'indentation avec des niveaux, ce qui facilite la lecture du code. Voici un exemple de code Gleam utilisant YAML :
+Pour commencer à utiliser YAML dans vos projets Gleam, vous pouvez suivre ces quelques étapes simples :
 
-```Gleam
-import gleam/yaml
-
-// Création d'une carte pour stocker les données
-data = yaml.new_map()
-
-// Ajouter des clés et valeurs à la carte
-yaml.put(data, "nom", "Jean")
-yaml.put(data, "âge", 30)
-
-// Convertir la carte en YAML
-resultat = yaml.to_string(data)
-
-// Afficher le résultat
-Debug.format("Les données sont : {}", [resultat])
-```
-
-Le résultat de ce code sera :
+1. Installez le paquet "gleam-yaml" en utilisant la commande `gleam install gleam-lang/yaml`.
+2. Importez le module YAML dans votre fichier Gleam en utilisant `import "yaml"`.
+3. Utilisez la fonction `from_yaml` pour obtenir une représentation de vos données à partir d'un fichier YAML externe. Par exemple :
 
 ```
-Les données sont : |- 
-  nom: Jean
-  âge: 30
+gleam> import "yaml"
+gleam> let data = yaml.from_yaml("config.yml") // Si votre fichier de configuration s'appelle "config.yml"
 ```
 
-Comme vous pouvez le constater, YAML est facile à écrire et à lire. Vous pouvez également utiliser des tableaux pour stocker des données. Voici un exemple :
-
-```Gleam
-import gleam/yaml
-
-// Création d'un tableau pour stocker les données
-data = yaml.new_array()
-
-// Ajouter des valeurs au tableau
-yaml.append(data, "rouge")
-yaml.append(data, "vert")
-yaml.append(data, "bleu")
-
-// Convertir le tableau en YAML
-resultat = yaml.to_string(data)
-
-// Afficher le résultat
-Debug.format("Les données sont : {}", [resultat])
-```
-
-Le résultat sera :
+4. Une fois que vous avez votre représentation de données, vous pouvez l'utiliser dans votre code Gleam comme bon vous semble. Par exemple, vous pouvez accéder à des valeurs spécifiques en utilisant des tuples de clés ou en utilisant des index numériques. Voici un exemple de code :
 
 ```
-Les données sont : [rouge, vert, bleu]
+gleam> let data = yaml.from_yaml("config.yml")
+gleam> let name = data.("name")
+gleam> let version = data.("version")
+gleam> let authors = data.("authors")
+gleam> let first_author = authors.0
 ```
 
-Vous pouvez également utiliser Gleam pour lire des données à partir d'un fichier YAML, modifier les données existantes et les convertir en d'autres formats si nécessaire.
+5. Lorsque vous avez terminé de travailler avec les données, vous pouvez les sérialiser à nouveau en utilisant la fonction `to_yaml`.
 
-## Plongée en profondeur
+```
+gleam> import "yaml"
+gleam> let data = {(.) "name" ("Gleam"), (.) "version" (1), (.) "authors" (["Alice", "Bob", "Carol"])}
+gleam> let data_yaml = yaml.to_yaml(data)
+```
 
-Si vous souhaitez en savoir plus sur YAML et comment travailler avec ce langage de sérialisation de données en profondeur, vous pouvez consulter la documentation de Gleam sur YAML et les ressources suivantes :
+# Plongée profonde
 
-- Site officiel de YAML : https://yaml.org/
-- Documentation complète de Gleam : https://gleam.run/documentation/
-- Bibliothèque Gleam pour travailler avec YAML : https://github.com/lpil/gleam-yaml
+Il y a d'autres fonctionnalités utiles fournies par le module YAML que vous pouvez explorer en utilisant la documentation ou en expérimentant par vous-même. Par exemple, vous pouvez utiliser la fonction `decode` pour convertir une chaîne YAML en un type personnalisé défini par l'utilisateur. Vous pouvez également utiliser la fonction `merge` pour fusionner deux structures de données YAML en une seule.
 
-## Voir aussi
+L'une des fonctionnalités les plus puissantes de YAML est la possibilité d'inclure des références à des fichiers externes dans votre fichier de configuration YAML. Cela peut être utile lorsque vous avez besoin de séparer vos données en différents fichiers pour une meilleure organisation et une meilleure lisibilité.
 
-- [Introduction to YAML for Beginners](https://www.educative.io/blog/yaml-tutorial-for-beginners)
-- [Using YAML to organize your configuration files](https://medium.com/@thinkrefactoring/gentle-introduction-to-yaml-13a11a8dc99d)
-- [Mastering YAML: Syntax, engines, and pitfalls](https://rollout.io/blog/mastering-yaml/)
+# Voir aussi
+
+Pour en savoir plus sur YAML et comment l'utiliser dans vos projets Gleam, n'hésitez pas à consulter ces ressources supplémentaires :
+
+- [Documentation de YAML sur le site Gleam](https://gleam.run/modules/yaml.html)
+- [Exemple de projet Gleam utilisant YAML](https://github.com/gleam-lang/gleam-lang.github.io/blob/master/examples/yaml/src/yaml_app.gleam)
+- [Guide officiel de YAML](https://yaml.org/spec/1.2/spec.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Fish Shell: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar a Fish Shell para enviar uma solicitação HTTP com autenticação básica?
+## Por que?
 
-Enviar solicitações HTTP é uma tarefa comum em programação, e a autenticação básica é um meio simples de garantir a segurança das informações transmitidas através dessas solicitações. A Fish Shell tem uma sintaxe simplificada e intuitiva, o que a torna uma ótima escolha para automatizar esse processo.
+Se você está trabalhando com APIs (interfaces de programação de aplicações), é provável que, em algum momento, precise enviar uma solicitação HTTP autenticada com autenticação básica. Isso geralmente é necessário para acessar dados protegidos ou realizar ações específicas na API.
 
-## Como fazer:
+## Como fazer
 
-Para demonstrar como enviar uma solicitação HTTP com autenticação básica usando a Fish Shell, seguimos os seguintes passos:
+O Shell Fish possui um recurso integrado que facilita o envio de solicitações HTTP com autenticação básica. Veja como fazer isso em alguns passos simples:
 
-1. Instale a Fish Shell em seu sistema, caso ainda não tenha.
-2. Crie um novo arquivo de script com a extensão `.fish` e adicione as seguintes linhas de código:
+1. Defina as variáveis `username` e `password` com suas credenciais de autenticação:
 
 ```Fish Shell
-set -gx username "seuusername" # substitua pelo seu nome de usuário
-set -gx password "suasenha" # substitua pela sua senha
-
-set headers -r "Content-Type: application/json" # define o cabeçalho da solicitação
-
-set data -r "{ \"key\": \"value\" }" # define os dados a serem enviados na solicitação
-
-curl -u $username:$password -H $headers -d $data https://api.example.com/endpoint # envia a solicitação com a autenticação básica e dados definidos
+set username "seu_usuario"
+set password "sua_senha"
 ```
 
-3. Salve o arquivo e execute-o no terminal usando `fish nome-do-arquivo.fish`.
-4. Se a solicitação for bem sucedida, você deve receber a resposta no formato JSON contendo a chave e o valor definidos no passo 2.
+2. Crie uma string com o cabeçalho de autenticação, utilizando a função `printf` para formatar as variáveis criadas anteriormente:
 
-## Profundando no assunto:
+```Fish Shell
+set auth_header (printf "Authorization: Basic %s" (base64 -w0 (printf "%s:%s" $username $password)))
+```
 
-No código acima, usamos o comando `set -r` para definir variáveis que serão usadas durante o envio da solicitação. A opção `-r` garante que a string definida não será interpretada, o que pode ser importante para evitar problemas com caracteres especiais nas suas credenciais ou dados da solicitação.
+3. Envie a solicitação HTTP utilizando o comando `curl` e passando a opção `-H` para adicionar o cabeçalho de autenticação à solicitação:
 
-Outro ponto a ser observado é o uso do comando `curl`, que é uma ferramenta de linha de comando para transferir dados usando vários protocolos, incluindo o HTTP. Neste caso, utilizamos a opção `-u` para definir o nome de usuário e senha para a autenticação básica. Também definimos o cabeçalho da solicitação e os dados a serem enviados usando as variáveis criadas no passo 2.
+```Fish Shell
+curl -H $auth_header https://api.com/recurso/protegido
+```
 
-Lembrando que essas são apenas algumas opções de utilização da Fish Shell para enviar uma solicitação HTTP com autenticação básica. Você pode explorar mais comandos e opções para personalizar o processo de acordo com suas necessidades.
+4. Você também pode adicionar outras opções, como `-X` para definir o método da solicitação ou `-d` para enviar dados no corpo da solicitação, conforme necessário.
 
-## Veja também:
+## Mergulho profundo
 
-- [Documentação da Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Curl Command Tutorial](https://www.codecademy.com/articles/command-line-curl)
-- [API Design Guide for HTTP APIs](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+Ao enviar uma solicitação HTTP com autenticação básica, é importante entender como esse tipo de autenticação funciona. Basicamente, as credenciais de autenticação são convertidas para Base64 e adicionadas ao cabeçalho da solicitação utilizando o formato `Authorization: Basic <credenciais>`, onde `<credenciais>` é a string codificada em Base64 das credenciais no formato `usuário:senha`.
+
+É importante mencionar que a autenticação básica não é considerada segura, pois as credenciais são enviadas em texto simples. É sempre uma boa ideia garantir que a conexão seja feita através de HTTPS.
+
+## Veja também
+
+- Documentação oficial do comando `curl` em inglês: https://curl.haxx.se/docs/
+- Tutorial completo sobre como enviar solicitações HTTP com autenticação básica utilizando o Shell Fish: <ins>link para tutorial em português</ins>

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Sända en http-request"
-simple_title:         "Sända en http-request"
+title:                "Skicka en http-förfrågan"
+html_title:           "Swift: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skicka en HTTP-begäran är en viktig del av att skapa en app som interagerar med internet. Det gör det möjligt för din app att kommunicera med servrar och hämta data som behövs för att presentera för användaren.
 
-## Så här gör du
-För att skicka en HTTP-begäran i Swift, behöver du använda dig av URLSession-klassen. Först behöver du skapa en URL-instans som representerar den resurs du vill hämta. Sedan skapar du en URLRequest-instans med hjälp av den skapade URL:en. Slutligen skapar du en URLSessionDataTask där du kan använda URLRequest-instansen för att skicka begäran till servern. Nedan är ett exempel som hämtar data från en API-tjänst och skriver ut det till konsolen:
+Att kunna skicka HTTP-förfrågningar är en viktig del av att bygga moderna webbanvändargränssnitt. Genom att förstå hur man skickar förfrågningar kan du skapa interaktioner mellan ditt Swift-program och webbtjänster.
+
+## Hur man gör
 
 ```Swift
-// Skapa URL-instans baserat på en given adress
-let url = URL(string: "https://example.com/api")
+let url = URL(string: "https://example.com")
+let request = URLRequest(url: url!)
 
-// Skapa URLRequest-instans med hjälp av URL:en
-var request = URLRequest(url: url!)
-
-// Sätt metod till GET (kan också vara POST, PUT eller DELETE)
-request.httpMethod = "GET"
-
-// Skapa URLSession och URLSessionDataTask
-let session = URLSession.shared
-let task = session.dataTask(with: request) { data, response, error in
-    // Kontrollera om det finns några fel och hämta data om det inte finns något fel
-    if let error = error {
-        print("Något gick fel: \(error.localizedDescription)")
-    } else if let data = data {
-        // Skriv ut data som en sträng
-        let dataAsString = String(data: data, encoding: .utf8)!
-        print(dataAsString)
-    }
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+  if let error = error {
+    print("Error: \(error)")
+    return
+  }
+  guard let data = data, let response = response as? HTTPURLResponse else {
+    print("Invalid response")
+    return
+  }
+  print("Response status code: \(response.statusCode)")
+  print("Response body: \(String(data: data, encoding: .utf8)!)")
 }
 
-// Starta uppgiften
 task.resume()
 ```
 
-Output:
-```
-Detta är vad som hämtades från API-tjänsten.
-```
+Kodexemplet ovan visar hur du kan skicka en enkel HTTP GET-förfrågan med Swift. Genom att använda URLSession-klassen kan du skapa en anslutning till en URL och sedan hämta data från den. I detta exempel skriver vi också ut svaret från vår förfrågan, inklusive statuskoden och svarets innehåll.
 
-## Deep Dive
-Det finns många olika parametrar du kan sätta för din URLRequest-instans, till exempel HTTP-headers, timeout, cachning och autentisering. Du kan också skicka data i en begäran genom att sätta body-egenskapen på URLRequest-instansen och ange data som behövs för begäran. Det finns också möjligheter att hantera eventuella fel som kan uppstå vid en begäran genom att använda sig av delegate-mönstret i URLSession-klassen. Det finns även andra sätt att skicka HTTP-begäran på, till exempel med hjälp av en tredjepartsbibliotek eller genom att skriva anpassad kod, men grundprinciperna är samma.
+## Djupdykning
+
+Vid skickande av HTTP-förfrågningar finns det flera saker att tänka på, såsom vilken metod som ska användas (GET, POST, PUT, etc.), om några parametrar eller en payload behöver skickas med förfrågan, och hur din app ska hantera eventuella felmeddelanden från servern. Det är också viktigt att hantera eventuella säkerhetsmekanismer som autentisering eller tokenbaserad åtkomst.
+
+En annan viktig aspekt att tänka på är att rikta in dig på asynkron kommunikation när du skickar HTTP-förfrågningar i Swift. Detta gör du genom att använda sig av URLSession och dess dataTask-metod, som vi använder i vårt kodexempel ovan. Detta är viktigt för att undvika att blockera huvudtråden för din app och förbättra prestandan.
 
 ## Se även
-- [Apple Developer Documentation – URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Pieter Omvlee – A Beginner’s Guide to URLSession in Swift](https://blog.usejournal.com/a-beginners-guide-to-urlsession-in-swift-5-aeda7ae9a2b8)
-- [Ray Wenderlich – URLSession Tutorial](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
+
+Här är några relaterade länkar för att hjälpa dig att utforska ämnet vidare:
+
+- [Apple Developer Documentation for URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [A Beginner's Guide to URLSession in Swift](https://www.raywenderlich.com/960-urlsession-tutorial-getting-started)
+- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)

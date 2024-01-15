@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Haskell: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,28 +12,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Beim Programmieren mit Haskell gibt es viele verschiedene Anwendungsbereiche, in denen man sich mit dem Herunterladen von Webseiten beschäftigen kann. Zum Beispiel kann man Webseiten scannen, Daten extrahieren oder sogar ganze Webanwendungen erstellen. Das Herunterladen von Webseiten kann auch hilfreich sein, um bestimmte Informationen für Datenanalysen zu sammeln oder um automatisierte Aktionen durchzuführen.
+Warum sollte man sich mit dem Herunterladen einer Webseite beschäftigen? Nun, es kann viele Gründe geben. Vielleicht möchtest du automatisch Daten von einer bestimmten Webseite sammeln oder einen Teil einer Webseite in deiner eigenen Anwendung verwenden. Oder du möchtest einfach lernen, wie du in Haskell Dateien herunterladen kannst.
 
-## Wie Es Geht
+## So geht's
 
-Das Herunterladen von Webseiten in Haskell ist ziemlich einfach und kann mithilfe von Bibliotheken wie "http-conduit" oder "scrapy" durchgeführt werden. Im Folgenden finden Sie ein Beispiel, wie man mit der "http-conduit" Bibliothek eine Webseite herunterladen und deren Inhalt ausgeben kann:
+Um eine Webseite in Haskell herunterzuladen, gibt es einige Schritte zu beachten. Zunächst müssen wir die HTTP-Bibliothek "HTTP.Simple" implementieren, um die Verbindung zur Webseite zu ermöglichen.
 
-```Haskell
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy.Char8 as L8
-
-main = do
-  response <- simpleHttp "https://www.example.com"
-  putStrLn $ L8.unpack response
 ```
-Das Ergebnis dieser Code-Ausführung ist der gesamte HTML-Code der Webseite, der mit der Funktion "unpack" in einen lesbaren String umgewandelt wurde. Mit diesem Ansatz kann man auch bestimmte Abschnitte der Webseite auswählen und spezifische Daten extrahieren.
+import Network.HTTP.Simple
 
-## Tiefes Eintauchen
+```
 
-Wenn man sich tiefer mit dem Herunterladen von Webseiten in Haskell beschäftigt, kann man auch fortgeschrittene Techniken wie asynchrone Anfragen oder Verwendung von HTTPS-Verbindungen lernen. Eine andere nützliche Bibliothek für dieses Thema ist "taggy", mit der man HTML-Tags in einfachere Datenstrukturen umwandeln kann, um spezifische Informationen zu extrahieren.
+Als nächstes müssen wir eine Anfrage an die gewünschte URL senden und die Antwort speichern.
 
-## Siehe Auch
+```
 
-- [http-conduit Dokumentation](https://hackage.haskell.org/package/http-conduit)
-- [Scrapy](https://scrapy.org/)
-- [Taggy Bibliothek](https://hackage.haskell.org/package/taggy)
+request <- parseRequest "https://www.example.com"
+response <- httpLBS request
+
+```
+
+Jetzt können wir die heruntergeladene Seite im HTML-Format bekommen.
+
+```
+let html = getResponseBody response :: ByteString
+```
+
+Um die Seite als Text zu erhalten, können wir die Funktion "decodeUtf8" aus der Bibliothek "Data.ByteString.Lazy.Char8" verwenden.
+
+```
+import qualified Data.ByteString.Lazy.Char8 as L8
+import Data.Text.Encoding (decodeUtf8)
+
+let text = decodeUtf8 (L8.toStrict html)
+```
+
+Schließlich können wir die heruntergeladene Seite ausdrucken.
+
+```
+
+putStrLn text
+```
+
+Der gesamte Code sieht also wie folgt aus:
+
+```
+
+import Network.HTTP.Simple
+import qualified Data.ByteString.Lazy.Char8 as L8
+import Data.Text.Encoding (decodeUtf8)
+
+main :: IO ()
+main = do
+    request <- parseRequest "https://www.example.com"
+    response <- httpLBS request
+    let html = getResponseBody response :: ByteString
+        text = decodeUtf8 (L8.toStrict html)
+    putStrLn text
+
+```
+
+Die Ausgabe sollte ähnlich aussehen wie die Seite, die wir heruntergeladen haben.
+
+## Tiefergehende Informationen
+
+Wenn du tiefer in die Welt des Herunterladens von Webseiten in Haskell eintauchen möchtest, gibt es viele Bibliotheken und Funktionen, die dir dabei helfen können. Zum Beispiel könnte die Bibliothek "Network.HTTP.Conduit" dabei nützlich sein, wenn du authentifizierte Anfragen senden möchtest. Oder du könntest die Bibliothek "Network.Curl" verwenden, um das Herunterladen von Webseiten parallel zu gestalten.
+
+Egal welche Bibliothek du verwendest, es ist wichtig, dass du verstehst, wie HTTP-Anfragen funktionieren und wie du die erhaltenen Daten verarbeiten kannst. Mit genügend Übung wirst du in der Lage sein, jede Webseite erfolgreich herunterzuladen und zu nutzen.
+
+## Siehe auch
+
+- [Haskell Documentation](https://www.haskell.org/documentation/)
+- [HTTP.Simple Package on Hackage](https://hackage.haskell.org/package/http-client)
+- [Network.HTTP.Conduit Package on Hackage](https://hackage.haskell.org/package/http-conduit)
+- [Network.Curl Package on Hackage](https://hackage.haskell.org/package/http-client-curl)

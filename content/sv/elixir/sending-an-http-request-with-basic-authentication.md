@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Sänd en http-förfrågan med grundläggande autentisering"
-simple_title:         "Sänd en http-förfrågan med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering."
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering."
+simple_title:         "Skicka en http-begäran med grundläggande autentisering."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,39 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en vanlig uppgift inom webbutveckling. Det kan användas för att skydda känslig information eller för att begränsa åtkomst till vissa resurser på en server. I denna artikel, kommer vi att titta närmare på hur man kan implementera detta med Elixir programmeringsspråk.
+
+Att skicka en HTTP-förfrågan med grundläggande autentisering kan vara användbart när man behöver säkerställa att en förfrågan kommer från en auktoriserad användare innan åtgärder vidtas. Det är en enkel och grundläggande autentiseringsmetod som är vanligt förekommande inom webbutveckling.
 
 ## Så här gör du
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Elixir, behöver vi använda oss av en modul som heter ```HTTPoison```. Det är en HTTP-klient som gör det enkelt att göra förfrågningar och få svar från externa webbsidor.
 
-För att börja, måste vi importera ```HTTPoison``` modulen och definiera en bas URL för den webbplats som vi vill skicka en förfrågan till. Sedan skapar vi en ```credentials``` variabel som innehåller användarnamn och lösenord för den grundläggande autentiseringen.
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Elixir, behöver du först installera biblioteket `HTTPoison` som tillhandahåller funktioner för att bygga och skicka HTTP-förfrågningar.
 
 ```
-defmodule Example do
-  use HTTPoison
-  
-  @base_url "https://example.com/api"
-  credentials = {:basic_auth, "username", "password"}
-  
-  # Skicka en GET-förfrågan
-  response = get(@base_url, credentials)
-  
-  # Skicka en POST-förfrågan med data
-  body = %{name: "John", age: 30}
-  response = post(@base_url, body, credentials)
+mix deps.get
+```
+
+Först importerar du biblioteket i din kod:
+
+```
+import HTTPoison
+```
+
+För att skicka en förfrågan behöver du ange URL:en till den resurs du vill nå och autentiseringens användarnamn och lösenord i en `username` och `password`-tupel. Du kan också lägga till eventuella parametrar eller en request body i en `params` variabel.
+
+```
+url = "https://exempel.com/api/produkter"
+username = "användarnamn"
+password = "lösenord"
+params = %{kund: "John Doe", produkt: "elcykel"}
+```
+
+Sedan kan du använda funktionen `get/4` eller `post/4` beroende på vilken förfrågan du vill göra. Funktionen tar också ett valfritt argument med alternativa http-förfrågningsparametrar, t.ex. om du behöver sätta en timeout eller ange önskat format på svaret.
+
+```
+get(url, username, password, params, timeout: 5000, as: :json)
+```
+
+Du kan sedan hantera svaret från förfrågan genom att använda Elixir's pattern matching för att extrahera den relevanta informationen från responsen.
+
+```
+case response do
+  {:ok, %{status_code: 200, body: body}} ->
+    # gör något med body
+  {:ok, %{status_code: 401}} ->
+    # felaktig autentisering
+  {:error, %{reason: reason}} ->
+    # fel vid förfrågan
 end
 ```
 
-När vi skickar en GET-förfrågan, behöver vi bara ange bas URL och grundläggande autentiseringsuppgifterna. Men när vi skickar en POST-förfrågan, måste vi också ange data som vi vill skicka.
-
 ## Djupdykning
-För att förstå hur HTTP-förfrågan med grundläggande autentisering fungerar bakom kulisserna, måste vi titta på hur ```HTTPoison``` modulen arbetar. När vi använder ```get``` eller ```post``` funktionerna, gör modulen faktiskt ett anrop till funktionen ```request``` som tar emot olika parametrar såsom URL, metod, data och autentiseringsuppgifter.
 
-För grundläggande autentisering, skickar ```HTTPoison``` en ```Authorization``` header med värdet av användarnamn och lösenord som är kodade i base64. Detta säkerställer att våra autentiseringsuppgifter är krypterade och säkra vid överföring.
+HTTP-begäranden med grundläggande autentisering skickar användarnamn och lösenord i klartext, vilket kan betraktas som säkerhetshot. Det är därför viktigt att använda HTTPS för att kryptera förfrågan och skydda känslig information.
 
-Vid mottagandet av förfrågan, kommer servern att verifiera autentiseringsuppgifterna genom att avkoda base64-värdet och matcha det med användarnamnet och lösenordet som lagrats på servern. Om det är en matchning, kommer servern att skicka tillbaka en 200 OK-status och vi kommer att få ett svar från vår förfrågan.
+Även om grundläggande autentisering är en enkel och snabbmetod för autentisering, finns det andra mer avancerade autentiseringsmetoder som kan vara bättre lämpade för vissa användningsfall. Det är viktigt att undersöka vilken autentiseringsmetod som passar bäst för ditt specifika projekt.
 
-## Se också
-- [HTTPoison dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Elixir officiell webbplats](https://elixir-lang.org/)
-- [HTTP Basic Authentication - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## Se även
+
+- Officiell Elixir dokumentation för HTTPoison: https://hexdocs.pm/httpoison/
+- En detaljerad guide om Elixir, HTTP och REST: https://adoptingerlang.org/docs/networking-elixir/
+- En artikel om att använda autentisering och auktorisationsbibliotek i Elixir: https://www.cogini.com/blog/up-and-running-with-authentication-and-authorization-in-elixir-phoenix/

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Descargando una página web"
-simple_title:         "Descargando una página web"
+title:                "Descargando una página web."
+html_title:           "Clojure: Descargando una página web."
+simple_title:         "Descargando una página web."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,33 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Descargar una página web puede ser útil para obtener información o datos de una página específica. Además, puede ser una técnica útil para automatizar ciertas tareas en línea.
+¿Alguna vez has necesitado descargar una página web completa para consultarla sin conexión? O tal vez quieres extraer información específica de una página web para usarla en tu propio programa. Sea cual sea la razón, en este artículo aprenderás cómo descargar páginas web utilizando Clojure.
 
 ## Cómo hacerlo
 
-En Clojure, podemos utilizar la biblioteca `clj-http` para descargar una página web. Primero, debemos importar la biblioteca en nuestro proyecto:
+El proceso de descarga de una página web con Clojure es bastante simple. Primero, necesitamos importar la librería `clj-http` que nos permitirá hacer solicitudes HTTP.
 
 ```Clojure
-(ns mi-proyecto.core
-  (:require [clj-http.client :as client]))
+(require '[clj-http.client :as client])
 ```
 
-Luego, podemos utilizar la función `client/get` para descargar la página. Por ejemplo, para descargar la página de Google, podemos hacer lo siguiente:
+Luego, utilizamos la función `get` de la librería para hacer una solicitud HTTP GET a la URL de la página web que queremos descargar. Por ejemplo, si queremos descargar la página principal de Google, podemos hacer lo siguiente:
 
 ```Clojure
-(client/get "http://www.google.com")
+(def page (client/get "https://www.google.com"))
 ```
 
-Esto nos devolverá un mapa con información sobre la respuesta, incluyendo el código de estado, encabezados y el contenido de la página.
+La variable `page` ahora contiene toda la información de la página web descargada. Podemos acceder al código de estado de la respuesta, encabezados y cuerpo utilizando las siguientes funciones:
 
-Una vez que tenemos la página descargada, podemos extraer la información que necesitamos utilizando herramientas como `clojure.xml` o `clojure.data.json` dependiendo del formato de la página.
+```Clojure
+(:status page) ; código de estado de la respuesta
+(:headers page) ; encabezados de la respuesta
+(:body page) ; cuerpo de la respuesta
+```
 
-## Profundizando
+Por ejemplo, si queremos imprimir el código de estado de la respuesta de la página de Google, podemos hacer lo siguiente:
 
-Descargar una página web puede ser más complejo de lo que parece a simple vista. Hay muchas variables a considerar, como autorización, cookies, redireccionamiento, entre otros. Es importante investigar y tener en cuenta estos factores al desarrollar una solución para descargar páginas web en Clojure.
+```Clojure
+(println "Código de estado:" (:status page))
+```
+
+Esto imprimirá "Código de estado: 200" que significa que la descarga fue exitosa.
+
+## Inmersión Profunda
+
+Si queremos extraer información específica de la página web descargada, podemos usar la librería `clojure.xml` para convertir el cuerpo de la respuesta a un mapa y luego utilizar funciones de Clojure para acceder a los datos que necesitamos.
+
+Por ejemplo, si queremos obtener todos los enlaces de la página web descargada, podemos utilizar la función `select` de la librería `clojure.xml` junto con la función `:href` para obtener los enlaces. El código se vería así:
+
+```Clojure
+(require '[clojure.xml :as xml])
+
+(def page-map (xml/parse (:body page)))
+
+(def links (xml/select page-map :a))
+
+(def hrefs (map :href links))
+
+(println "Enlaces encontrados:" hrefs)
+```
+
+Esto imprimirá todos los enlaces encontrados en la página web descargada.
 
 ## Ver también
 
-- [Documentación de `clj-http`](https://github.com/dakrone/clj-http)
-- [Tutorial básico de Clojure](https://clojure.org/guides/getting_started)
-- [Introducción a la programación funcional en Clojure](https://clojure.org/community/resources)
+- Documentación oficial de `clj-http`: https://clj-http.github.io/
+- Tutorial de Clojure para principiantes: https://clojure.org/guides/repl/introduction
+- Librería `clojure.xml`: https://clojure.github.io/clojure/clojure.xml-api.html

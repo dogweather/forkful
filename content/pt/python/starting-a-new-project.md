@@ -1,6 +1,7 @@
 ---
-title:                "Python: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Python: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -9,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Python?
+## Porquê
+Você está cansado de trabalhar em projetos chatos e quer se desafiar com algo novo? Ou talvez você tenha uma ideia brilhante que está ansioso para transformá-la em realidade? Independentemente da razão, começar um novo projeto de programação pode ser emocionante e gratificante. Aprenda como começar da maneira certa e se prepare para um sucesso criativo.
 
-Existem muitas razões pelas quais alguém pode querer iniciar um novo projeto em Python. Talvez você esteja interessado em aprender uma nova linguagem de programação ou precise de uma ferramenta específica para resolver um problema. Ou talvez você queira criar um aplicativo ou website para compartilhar com o mundo. Independentemente do motivo, Python é uma ótima escolha para o seu próximo projeto de programação.
+## Como Fazer
+Primeiro, é importante ter uma linguagem de programação escolhida. Neste artigo, nos concentraremos em Python, devido à sua popularidade e versatilidade. Você pode baixar o Python gratuitamente no site oficial e instalá-lo em seu computador.
 
-## Como começar um novo projeto em Python
-
-Começar um novo projeto em Python é relativamente simples. Primeiro, certifique-se de ter o Python instalado em seu computador. Em seguida, abra seu editor de código preferido e crie um novo arquivo com a extensão .py. Agora, é hora de escrever seu primeiro código Python.
-
-```Python
-print("Olá, mundo!")
-```
-
-Ao executar esse código, você deve ver a seguinte saída:
+Agora, vamos ao código. Use o comando ```python``` para iniciar o interpretador Python no seu terminal. Você também pode abrir um editor de código de sua preferência e salvar seu arquivo com a extensão ```.py```. Em seguida, é hora de escrever o seu primeiro "Hello, World!" programa:
 
 ```
-Olá, mundo!
+```python
+print("Hello, World!")
 ```
 
-Isso pode parecer simples, mas já é um ótimo começo! Agora você pode ir além e começar a aprender os conceitos básicos de Python, como tipos de dados, estruturas de controle e funções.
+E quando você executar este código, você verá a saída abaixo:
 
-## Mais informações sobre como começar um projeto em Python
+```
+Hello, World!
+```
 
-Se você quiser mergulhar mais fundo na criação de um novo projeto em Python, existem muitos recursos disponíveis para ajudá-lo. Consulte a documentação oficial do Python para obter informações detalhadas sobre a linguagem e suas bibliotecas padrão. Além disso, existem muitos tutoriais e fóruns online onde você pode encontrar ajuda e compartilhar suas ideias e códigos com outros desenvolvedores.
+Parabéns! Você acabou de escrever seu primeiro código Python. Agora você está pronto para mergulhar mais fundo e começar seu novo projeto.
+
+## Imersão Profunda
+Ao iniciar um novo projeto de programação, é importante ter um plano e seguir algumas etapas essenciais:
+
+- Comece com um objetivo claro: certifique-se de ter uma ideia clara do que você deseja alcançar com o seu projeto.
+- Quebre o projeto em partes menores: isso ajudará a manter o projeto organizado e gerenciável.
+- Pesquise e use recursos: existem muitos recursos disponíveis on-line para ajudá-lo a aprender e solucionar problemas ao longo do caminho.
+- Seja persistente e divirta-se: a programação pode ser desafiadora, mas também pode ser extremamente gratificante. Mantenha-se motivado e divirta-se ao longo do processo.
+
+Ao seguir essas etapas, você estará bem encaminhado para começar seu novo projeto de programação com sucesso.
 
 ## Veja também
-
-- [Documentação oficial do Python](https://docs.python.org/pt-br/3/)
-- [Fórum do Python](https://forum.python.org.br/)
-- [Python Brasil](https://python.org.br/)
+- [Python.org](https://www.python.org/)
+- [Codecademy - Python Courses](https://www.codecademy.com/catalog/language/python)
+- [Real Python - Tutorials, Books, and Packages](https://realpython.com/)

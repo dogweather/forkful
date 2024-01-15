@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Rust: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,53 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför skriva till standard error i Rust?
+## Varför
 
-Att skriva till standard error kan vara användbart när man vill skicka ut felmeddelanden eller annan felsökning till användaren. Det är också vanligt att logga viktiga händelser eller information till standard error.
+Att skriva till standard error kan vara användbart för att skriva ut felmeddelanden eller andra viktiga meddelanden som inte behöver visas för användaren. Det kan hjälpa till att felsöka och förbättra programmet.
 
-## Så här gör du det i Rust
+## Hur man gör det
 
-För att skriva till standard error i Rust kan du använda "eprint!" och "eprintln!" makron. Dessa fungerar på samma sätt som "print!" och "println!" makron, men skriver till standard error istället för standard output.
+Det finns flera sätt att skriva till standard error i Rust, men det enklaste sättet är att använda "eprint!" eller "eprintln!" makron. Här är ett exempel på hur man skriver ut ett felmeddelande till standard error:
 
-```rust
-fn main() {
-    let name = "Sofia";
-    eprintln!("Hello, {}!", name);
+```Rust
+let error_message = "Något gick fel!";
+eprintln!("Fel: {}", error_message);
+```
+
+Detta kommer att skriva ut "Fel: Något gick fel!" till standard error. Notera att användningen av "eprintln!" makronet kräver att du importerar "std::io::Write" biblioteket.
+
+En annan metod är att använda "writeln!" makronet och ange standard error som första argument. Detta gör att du inte behöver importera "std::io::Write" biblioteket. Här är ett exempel på hur man skriver till standard error med "writeln!" makronet:
+
+```Rust
+writeln!(std::io::stderr(), "Något gick fel!");
+```
+
+Det finns också en "stderr!" funktion som kan användas för att skriva till standard error. Här är ett exempel på hur man kan använda den:
+
+```Rust
+use std::io::{self, Write};
+
+if let Err(e) = do_something_that_may_fail() {
+    let mut stderr = io::stderr();
+    let _ = writeln!(&mut stderr, "Error: {}", e);
 }
 ```
 
-Output:
-```
-Hello, Sofia!
-```
+Notera att det kan finnas andra sätt att skriva till standard error, men dessa tre är de vanligaste och enklaste att använda.
 
 ## Djupdykning
 
-När du skriver till standard error i Rust, skickas outputen direkt till den enhet som är ansvarig för att hantera felmeddelanden och annan felsökning. Detta gör det lättare att separera vanlig output från felmeddelanden och gör det enklare att läsa och förstå felmeddelanden.
+När du skriver till standard error används standard error begränsade buffert, vilket innebär att skrivning till det är relativt snabbt. Det är dock viktigt att notera att det inte är avsett för att skriva stora mängder data, det är mer för utskrift av felmeddelanden och andra viktiga meddelanden.
 
-För att läsa input från standard error kan du använda "read_line" funktionen från standardbiblioteket "std::io". Denna funktion läser en rad från standard error och returnerar en sträng.
-
-```rust
-use std::io;
-
-fn main() {
-    println!("Skriv något till standard error:");
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("Kunde inte läsa input");
-    
-    eprintln!("Du skrev: {}", input);
-}
-```
-
-Output:
-```
-Skriv något till standard error:
-Hello world!
-Du skrev: Hello world!
-```
+Det finns också möjlighet att använda andra bibliotek för att hantera standard error, som "stderrlog" som ger mer flexibilitet och kontroll över hur meddelanden skrivs till standard error.
 
 ## Se även
 
-- [Rust `std::io` biblioteket](https://doc.rust-lang.org/std/io/index.html)
-- [Ett enkelt exempel på att använda standard error i Rust](https://www.geeksforgeeks.org/add-a-data-field-to-a-given-genotype-in-r/)
-- [En guide till Rusts standard bibliotek](https://blog.logrocket.com/a-tale-of-std-and-friends-in-rust/)
+- [Rust standardbiblioteket](https://doc.rust-lang.org/std/index.html)
+- [Rust dokumentation om hantering av standard streams](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#managing-growth-by-separating-error-handling-logic)

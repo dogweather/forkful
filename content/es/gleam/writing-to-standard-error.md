@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Escritura en error estándar"
-simple_title:         "Escritura en error estándar"
+title:                "Escribiendo a error estándar"
+html_title:           "Gleam: Escribiendo a error estándar"
+simple_title:         "Escribiendo a error estándar"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,22 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir a la salida de error estándar en Gleam?
+## Por qué
 
-La impresión de mensajes de error es una parte importante de cualquier programa. Al escribir a la salida de error estándar en Gleam, se pueden proporcionar mensajes claros y precisos que ayudarán a los desarrolladores a detectar y solucionar errores en su código de manera más eficiente.
+¿Alguna vez te has preguntado por qué es importante escribir en el error estándar en tus programas? Bueno, aquí te lo explicamos. 
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Gleam, se puede utilizar la función `std.io.write_error/1`. Por ejemplo:
+La versión actual de Gleam cuenta con una función incorporada para escribir en el error estándar. Es muy sencillo de usar y puede ser muy útil para encontrar errores en tu código. Aquí te mostramos un ejemplo de cómo hacerlo en Gleam:
 
 ```Gleam
-import std.io
+import gleam/io
 
 fn main() {
-    std.io.write_error("¡Este es un mensaje de error!")
+  io.stderr("¡Este es un mensaje de error!")
 }
 ```
-Este código imprimirá el mensaje de error en la consola cuando se compile y ejecute el programa, como se puede ver en la siguiente salida:
+
+La salida de este código sería algo como esto:
 
 ```
 ¡Este es un mensaje de error!
@@ -32,27 +34,10 @@ Este código imprimirá el mensaje de error en la consola cuando se compile y ej
 
 ## Profundizando
 
-Además de la función `std.io.write_error/1`, Gleam también proporciona la función `std.io.write_error_line/1`, que agrega automáticamente un salto de línea al final del mensaje de error. También se pueden usar caracteres de escape, como `\n`, para agregar saltos de línea en cualquier lugar del mensaje.
+Escribir en el error estándar es una práctica común en el mundo de la programación. No solo es útil para identificar errores en tu código, sino que también puede ser útil para imprimir mensajes de advertencia o depuración en tiempo de ejecución. Además, es una forma de comunicarse con el usuario en tiempo real, en lugar de simplemente imprimir en la consola. 
 
-Otra característica útil es la posibilidad de formatear mensajes de error utilizando la macro `format!` de Gleam. Esto permite combinar variables y texto para crear mensajes más complejos y personalizados. Por ejemplo:
+## Ver también
 
-```Gleam
-import std.io
-
-fn main() {
-    let name = "Juan"
-    let age = 25
-    std.io.write_error_line(format!("¡Hola, {}! Tienes {} años de edad.", name, age))
-}
-```
-
-Salida:
-
-```
-¡Hola, Juan! Tienes 25 años de edad.
-```
-
-# Ver también
-
-- Documentación oficial de Gleam para `std.io`: https://gleam.run/documentation/stdlib/io
-- Ejemplos de uso de la función `std.io.write_error/1`: https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/run_test/src/io_test.gleam#L31
+- Documentación oficial de Gleam sobre la escritura en el error estándar: https://gleam.run/articles/writing_to_stderr
+- Otras formas de imprimir en la consola en Gleam: https://gleam.run/articles/hello_world#output
+- Tutorial de Gleam para principiantes: https://gleam.run/getting-started/

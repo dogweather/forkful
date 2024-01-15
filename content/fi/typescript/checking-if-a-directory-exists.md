@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Tarkista, onko hakemisto olemassa."
-simple_title:         "Tarkista, onko hakemisto olemassa."
+title:                "Tarkistetaan onko kansiossa olemassa"
+html_title:           "TypeScript: Tarkistetaan onko kansiossa olemassa"
+simple_title:         "Tarkistetaan onko kansiossa olemassa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,61 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa, onko hakemisto olemassa?
+## Miksi
 
-On monia tilanteita, joissa ohjelmoijan on tarkistettava, onko tietyssä sijainnissa olemassa olevaa hakemistoa tai tiedostoa. Tämä voi olla tarpeen ohjelman suorituksen aikana, jotta voidaan varmistaa tietyn toiminnon oikeellisuus tai tarvittavan tiedoston saatavuus. Se voi myös auttaa välttämään virheitä, kuten yrityksiä käsitellä ei-olemassa olevaa hakemistoa tai tiedostoa.
+Joskus ohjelmointia tehdessä tarvitaan tarkistaa, onko tietyssä paikassa olemassa olevaa kansiorakennetta. Tämä voi olla hyödyllistä esimerkiksi tiettyjen tiedostojen käsittelyssä tai ohjelman toiminnan testaamisessa.
 
-## Miten tarkistaa, onko hakemisto olemassa?
+## Kuinka tehdä
 
-Tarkistaaksesi, onko hakemisto olemassa TypeScriptillä, voit käyttää Node.js:n *fs* -moduulia. Tämä moduuli sisältää *stat* -metodin, joka voidaan käyttää tarkistamaan, onko tiedostopolku olemassa. Seuraavassa esimerkissä tarkistetaan, onko hakemisto *testi* olemassa ja kaivetaan konsoliin vastaava viesti:
-
-```TypeScript
-import fs from 'fs';
-
-const hakemistopolku = './testi';
-
-fs.stat(hakemistopolku, (err, stats) => {
-  if (err) {
-    // Hakemistoa ei löytynyt, tulostetaan virheviesti
-    console.log('Hakemistoa ei löytynyt!');
-  } else {
-    // Hakemisto löytyi, tulostetaan viesti
-    console.log('Hakemisto löytyi!');
-  }
-})
+```typescript
+if (fs.existsSync("/polku/kansioon")) {
+  console.log("Kansio on olemassa!");
+} else {
+  console.log("Kansiota ei ole olemassa!");
+}
 ```
 
-Tulostus olisi seuraavanlainen:
+Yllä olevassa koodiesimerkissä käytetään TypeScriptin `fs`-moduulia tarkistamaan, onko annetussa polussa olevaa kansiorakennetta olemassa. Jos kansio löytyy, tulostetaan ilmoitus siitä. Muussa tapauksessa tulostetaan ilmoitus, että kansiota ei ole olemassa.
 
-```console
-Hakemisto löytyi!
-```
+## Syventävä tieto
 
-On myös huomattava, että *stat* -metodi tuottaa *FileStats* -objektin, jossa on tietoa hakemiston tai tiedoston koosta ja muutoksista. Tämän tiedon avulla voit tehdä edistyneempiä tarkistuksia tarpeidesi mukaan.
+Tarkistaessasi kansioiden olemassaoloa kannattaa myös huomioida, että eri käyttöjärjestelmät voivat käyttää erilaisia polkumerkintöjä. Esimerkiksi Windows-käyttöjärjestelmässä polkumerkintä on yleensä muodossa `C:\polku\kansioon`, kun taas Unix-pohjaisissa järjestelmissä se voi olla muodossa `/polku/kansioon`.
 
-## Syvällisempi tarkastelu
+Voit myös tarkistaa, onko kyseinen polku kansiorakenteeseen, jolloin `fs.existsSync()`-funktion paluuarvo on `false` jos polku osoittaa tiedostoon eikä kansiorakenteeseen.
 
-Harkitse, että haluat tarkistaa, onko hakemistossa olemassa olevaa tiedostoa, ennen kuin luot sen uudestaan. Tämä voi olla tapaus, jossa haluat varmistaa, ettei käyttäjä menetä tärkeitä tietoja tekemällä samannimisen tiedoston uudelleen. Voit tehdä tämän käyttämällä *stat* -metodia ja tarkistamalla, onko tiedostolle annettu päivämäärä uudempi kuin tietyllä aikavälillä. Seuraava esimerkki havainnollistaa tätä ajatusta:
+## Katso myös
 
-```TypeScript
-import fs from 'fs';
-
-const tiedostonimi = 'tiedosto.txt';
-
-fs.stat(tiedostonimi, (err, stats) => {
-  if (err) {
-    // Tiedostoa ei löytynyt, luodaan uusi
-    fs.writeFile(tiedostonimi, 'Tärkeitä tietoja!', (err) => {
-      if (err) throw err;
-      console.log('Uusi tiedosto luotu!');
-    });
-  } else {
-    // Tiedosto löytyi, tarkistetaan päivämäärä
-    const uusinPaivays = Date.now() - 86400000; // Tarkistetaan viimeisen 24h aikana
-    if (stats.mtimeMs > uusinPaivays) {
-      console.log('Tiedosto on luotu viimeisen päivän aikana, joten se on uudempi. Ei tarvetta uudelleenluomiseen.');
-    } else {
-      console.log('Tiedosto on luotu yli päivä sitten, joten luodaan uusi versio varmuuden vuoksi.');
-      fs.writeFile(tiedostonimi, 'Tärkeitä tietoja!', (err) => {
-        if (err) throw err;
-        console.log('Uusi tiedosto luot
+- [fs moduuli (Node.js)](https://nodejs.org/api/fs.html)
+- [fs.existsSync() (Node.js)](https://nodejs.org/api/fs.html#fs_fsexistsync_path)

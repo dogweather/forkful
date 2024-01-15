@@ -1,5 +1,6 @@
 ---
-title:                "Java: 텍스트 파일 읽기"
+title:                "텍스트 파일 읽기"
+html_title:           "Java: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Java"
 category:             "Java"
@@ -9,60 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-텍스트 파일을 읽는 것에 대해 궁금해하는 분들이 많을 것 같아 이 글을 쓰게 되었습니다. 텍스트 파일을 읽는 방법과 그 과정에 대해 알아보고 실제로 코드를 작성해보며 자세히 살펴보겠습니다.
+이 문서를 읽는 이유는 텍스트 파일을 읽는 방법을 배우고 싶어서 일 것입니다. Java 프로그래밍 언어를 이용해 텍스트 파일을 읽는 방법을 설명해 드리겠습니다.
 
 ## 어떻게
 
-먼저, 텍스트 파일을 읽기 위해서는 Java의 내장 라이브러리인 `java.io` 패키지를 사용해야 합니다. 다음 코드를 참고해보세요.
+텍스트 파일을 읽기 위해서는 ````Java``` 코드 블록 안에 다음 코드를 작성해야 합니다.
 
-```Java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+````Java
+import java.io.*;
 
-public class ReadTextFile{
-  public static void main(String[] args){
-    // 파일 경로 지정
-    String filePath = "sample.txt";
-
-    // try-catch 문으로 예외 처리
-    try{
-      // BufferedReader를 이용해 파일을 읽음
-      BufferedReader br = new BufferedReader(new FileReader(filePath));
-      // 한 줄씩 읽어와서 출력
-      String line;
-      while ((line = br.readLine()) != null){
-        System.out.println(line);
-      }
-      // 파일 닫기
-      br.close();
-    } catch (IOException e) {
-       e.printStackTrace();
+public class ReadFile {
+    public static void main(String[] args){
+        // 파일 경로 설정
+        File file = new File("Example.txt");
+        
+        try{
+            // 파일 읽기
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            
+            // 한 줄씩 읽어서 출력
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+            }
+            
+            // 파일 닫기
+            br.close();
+        } catch (IOException e) {
+            System.out.println("파일을 읽는 중 오류 발생: " + e.getMessage());
+        }
     }
-  }
 }
-```
+````
 
-위 코드를 실행하면 `sample.txt` 파일 안의 내용이 한 줄씩 출력될 것입니다. `BufferedReader`는 `IOException`이 발생할 수 있기 때문에 `try-catch` 문으로 예외를 처리해주는 것이 중요합니다. 또한, 파일을 다 사용한 뒤에는 꼭 `close()` 메소드를 호출하여 자원을 반환해야 합니다.
+위 코드는 ``Example.txt`` 파일을 한 줄씩 읽어서 콘솔에 출력하는 예제입니다. 만약 파일을 읽는 도중 오류가 발생하면 해당 오류 메시지가 출력됩니다.
 
-## 깊이 들어가기
+## 딥 다이브
 
-실제로 텍스트 파일을 읽는 과정은 그리 복잡하지 않습니다. `BufferedReader`를 이용해 파일을 읽기만 하면 됩니다. 하지만, 자주 사용하는 메소드들에 대해 더 자세히 알아보고 싶은 분들을 위해 간단히 설명하겠습니다.
+텍스트 파일을 읽기 위해서는 올바른 파일 경로를 설정해야 합니다. 또한 파일을 열고 사용한 뒤에는 반드시 파일을 닫아야 합니다. 그렇지 않으면 파일이 사용 중인 상태로 남아 있게 되어 다른 프로그램에서 파일을 사용할 수 없게 됩니다. 더 많은 정보를 원한다면 Java 공식 문서를 참고해보세요.
 
-- `BufferedReader.readLine()`: 한 줄씩 읽어오는 메소드로, 파일의 끝까지 읽으면 `null`을 반환합니다.
+# 참고
 
-- `BufferedReader.skip(long n)`: `n` 바이트만큼 읽어와서 버립니다. 특정 부분을 건너뛰고 싶을 때 사용할 수 있습니다.
+[Java 공식 문서](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
 
-- `BufferedReader.mark(int readAheadLimit)`: 읽은 바이트의 위치를 표시합니다. `reset()` 메소드를 이용해 해당 위치로 다시 돌아갈 수 있습니다.
+# 관련 글
 
-- `BufferedReader.reset()`: `mark()` 메소드를 이용한 표식 위치로 돌아갑니다.
-
-자세한 내용은 공식 문서를 참고해주시면 됩니다.
-
-## 관련 링크
-
-- [Java 공식 문서 - Text Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [BufferedReader 문서](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Java IO Tutorial from Baeldung](https://www.baeldung.com/java-io-tutorial)
+[Java로 텍스트 파일 쓰기](https://github.com/ShinAhYoung21/Java-File-Writing-Article/blob/main/article_ko.md)

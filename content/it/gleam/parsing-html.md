@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Analizzazione di HTML"
-simple_title:         "Analizzazione di HTML"
+title:                "Analisi di html."
+html_title:           "Gleam: Analisi di html."
+simple_title:         "Analisi di html."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,46 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molti di noi sono incappati almeno una volta in un sito web con informazioni preziose che vogliamo estrarre, ma senza la possibilità di trovare un modo semplice per farlo. Grazie a Gleam, possiamo automatizzare il processo di parsing HTML, rendendo più facile e veloce l'estrazione dei dati che ci interessano.
+Se hai mai lavorato con pagine web, probabilmente hai incontrato il formato HTML. Potresti voler analizzare un sito web per raccogliere dati o forse vuoi analizzare il contenuto di una pagina web per eseguire azioni specifiche. L'analisi di HTML è un'abilità preziosa per creare script automatizzati e prendere decisioni informate.
 
 ## Come Fare
 
-Il primo passo è includere il modulo `html` nel nostro file Gleam:
+Usando la libreria Gleam, analizzare HTML è facile e divertente. Segui questi semplici passaggi per iniziare:
+
+1. Installa la libreria Gleam nel tuo progetto usando `gleam install gleam/html`
+2. Importa la libreria nel tuo file `main.gleam` usando `import gleam/html`
+3. Usa la funzione `Html.parse` per analizzare una stringa di HTML in una struttura dati di tipo `Html.document`
+4. Puoi usare i metodi della struttura dati `Html.document` per estrarre informazioni e navigare attraverso la struttura HTML in modo programmatico
+5. Ecco un esempio di come analizzare il contenuto di una pagina web estrarre tutti i link:
 
 ```Gleam
-import html
+import gleam/io
+import gleam/html
+
+let html = "<html><body><a href='https://gleam.run'>Gleam</a><a href='https://www.google.com'>Google</a></body></html>"
+let document = Html.parse(html)
+
+let links = document
+  |> Html.Node.find_all("a")
+  |> List.map(Html.Node.get_attribute("href"))
+
+gleam/io.println(links)
 ```
 
-Una volta incluso il modulo, possiamo utilizzare la funzione `parse` per analizzare il codice HTML di una pagina web. Ad esempio, vogliamo estrarre il titolo e la descrizione di un articolo di un sito di notizie:
-
-```Gleam
-html
-|> parse("https://www.esempio.it/articolo")
-|> html.element("h1")
-|> html.child()
-|> html.text() // Estrae il titolo del nostro articolo
-```
-
-L'output sarà il titolo dell'articolo come stringa. Per estrarre la descrizione, possiamo utilizzare ancora la funzione `parse` con una selezione più specifica:
-
-```Gleam
-html
-|> parse("https://www.esempio.it/articolo")
-|> html.element(".description") // Seleziona l'elemento con classe "description"
-|> html.child()
-|> html.text() // Estrae la descrizione del nostro articolo
-```
-
-È importante notare che alcuni siti web possono avere una struttura HTML più complessa, quindi potrebbe essere necessario utilizzare altri metodi di ricerca come `html.children()` o `html.descendants()` per ottenere i dati desiderati. È sempre una buona idea esaminare il codice HTML della pagina per avere un'idea della struttura e dei nomi degli elementi.
+Questo dovrebbe stampare `[Ok("https://gleam.run"), Ok("https://www.google.com")]`.
 
 ## Approfondimento
 
-La funzione `parse` del modulo `html` utilizza il modulo `parse_html` che a sua volta si basa sulla libreria Erlang `html_parse`. Ciò significa che Gleam utilizza un parser HTML solido e altamente performante, rendendo il processo di analisi dei dati ancora più efficiente.
-
-Inoltre, possiamo utilizzare l'algebra del tipo `Html.Node` per eseguire pattern matching più complessi e aggiungere una maggiore flessibilità nella nostra implementazione. Ad esempio, possiamo utilizzare `Html.element()` per selezionare un elemento specifico o `Html.attribute()` per estrarre un attributo di un elemento.
+La libreria Gleam offre molte altre funzioni utili per analizzare HTML, come `Html.Node.get_text` per ottenere il testo di un elemento HTML e `Html.Node.find` per trovare un elemento specifico in base al suo id o classe. Inoltre, puoi utilizzare il modulo `gleam/html/parser` per analizzare HTML dalle pagine web direttamente. La libreria è ben documentata quindi assicurati di consultare la documentazione ufficiale per ulteriori informazioni.
 
 ## Vedi Anche
 
-- Documentazione ufficiale di Gleam sul modulo HTML: https://gleam.run/modules/html.html
-- Esempi di utilizzo del parsing HTML con Gleam: https://github.com/gleam-lang/gleam_stdlib_examples/tree/master/html_parsing
-- Articoli che approfondiscono il concetto di parsing HTML: https://www.html.it/guide/guida-al-parsing-html/
+- Documentazione ufficiale di Gleam su come analizzare HTML: https://gleam.run/libraries/html
+- Esempi di codice di analisi HTML usando Gleam: https://github.com/gleam-lang/gleam/blob/master/examples/html_parsing.gleam
+- Tutorial su come analizzare HTML con Gleam: https://gleam.run/tutorials/html_parsing

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Die Länge eines Strings finden"
+title:                "Die Länge eines Strings finden"
+html_title:           "Kotlin: Die Länge eines Strings finden"
 simple_title:         "Die Länge eines Strings finden"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Es gibt viele Anwendungen, bei denen man die Länge eines Strings benötigt, z.B. zur Validierung von Benutzereingaben oder zur Erstellung von benutzerdefinierten Funktionen. Mit Kotlin ist es ganz einfach, die Länge eines Strings zu ermitteln und so das volle Potenzial der Sprache auszuschöpfen.
 
-Das Finden der Länge eines Strings ist ein häufig verwendeter Prozess bei der Entwicklung von Software. Es ermöglicht Programmierern, die Länge eines Textes oder einer Kombination von Zeichen zu bestimmen, um sie dann für verschiedene Zwecke zu nutzen.
-
-# Wie
-
-In Kotlin ist das Finden der Länge eines Strings sehr einfach. Hier ist ein Beispiel, wie man dies in einer Funktion nutzen kann:
+## Wie geht das?
+Das Ermitteln der Länge eines Strings ist mit Kotlin sehr einfach. Man muss nur die `length`-Eigenschaft des Strings aufrufen, um die Anzahl der Zeichen zu erhalten. Hier ist ein Beispielcode, um die Länge eines Strings zu bestimmen:
 
 ```Kotlin
-fun main() {
-    val text = "Guten Tag"
-    val length = text.length
-    
-    println("Die Länge des Strings ist: $length")
-}
-
-// Output: Die Länge des Strings ist: 9
+val str = "Hallo Welt"
+println(str.length)
 ```
 
-In diesem Beispiel haben wir ein String-Objekt mit dem Wert "Guten Tag" erstellt. Dann haben wir die Länge dieses Strings mithilfe der `length`-Funktion ermittelt und in einer Variable gespeichert. Schließlich geben wir die Länge über die `println`-Funktion aus.
+Die Ausgabe dieses Codeschnipsels wäre `11`, da der String "Hallo Welt" aus 11 Zeichen besteht. Man kann auch direkt die Länge in einer Variable speichern, um sie später weiterzuverwenden:
 
-# Deep Dive
+```Kotlin
+val str = "Dies ist ein langer Satz"
+val length = str.length
+println("Der Satz enthält $length Zeichen.")
+```
 
-Um das Konzept des String-Längen-Findens besser zu verstehen, ist es hilfreich zu wissen, dass ein String in Kotlin im Wesentlichen eine Kette von einzelnen Zeichen darstellt. Die Funktion `length` gibt einfach die Anzahl der Zeichen in diesem String zurück.
+Die Ausgabe dieses Codeschnipsels wäre `Der Satz enthält 24 Zeichen.`. So kann man die Länge eines Strings auf vielfältige Weise in seinem Code nutzen.
 
-Eine wichtige Sache zu beachten ist, dass die `length`-Funktion nicht nur bei normalen Strings, sondern auch bei anderen Kotlin-Datentypen wie beispielsweise Arrays verwendet werden kann.
+## Tiefergehende Informationen
+Die `length`-Eigenschaft gibt die Anzahl der Zeichen eines Strings zurück, unabhängig von der Art der Zeichen. Das bedeutet, dass auch Leerzeichen, Sonderzeichen und Umlaute in die Länge mit einbezogen werden. Wenn man nur die Anzahl der Buchstaben eines Strings ermitteln möchte, gibt es noch die `count()`-Funktion. Diese gibt die Anzahl der Zeichen zurück, die dem angegebenen Kriterium entsprechen. Hier ein Beispiel, um nur die Anzahl der Buchstaben zu erhalten:
 
-# Siehe auch
+```Kotlin
+val str = "Hallo Welt"
+val letters = str.count { it.isLetter() }
+println("Der String enthält $letters Buchstaben.")
+```
 
-- Offizielle Dokumentation zu Strings und deren Größe in Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Einführung in Kotlin: https://developer.android.com/kotlin/learn
-- Weitere nützliche Funktionen bei der Arbeit mit Strings in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/
+Die Ausgabe wäre in diesem Fall `Der String enthält 9 Buchstaben.`. Die `isLetter()`-Funktion überprüft dabei, ob es sich bei dem Zeichen um einen Buchstaben handelt.
+
+## Siehe auch
+- [Kotlin String Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin Collection Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/)

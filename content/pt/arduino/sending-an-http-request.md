@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Arduino: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,67 +10,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com o Arduino?
+## Por que
+Se você está procurando enviar solicitações HTTP com Arduino, provavelmente está tentando se comunicar com um servidor ou obter informações de uma API. Este recurso pode ser útil para projetos que envolvam a transferência de dados pela internet, como monitoramento remoto ou conectividade com a nuvem.
 
-Se você já trabalhou com o Arduino, provavelmente sabe que ele é capaz de se comunicar com outros dispositivos através de diferentes protocolos. Mas por que você precisaria enviar uma solicitação HTTP com o Arduino?
+## Como fazer
+Enviar uma solicitação HTTP com Arduino não é tão complicado quanto parece. Tudo o que você precisa é de uma placa Arduino com capacidade de conexão à internet, como o modelo Uno WiFi Rev2, e um módulo WiFi ou Ethernet. Siga os passos abaixo para começar:
 
-Bem, enviar uma solicitação HTTP é uma forma de fazer uma comunicação com a internet. Com isso, você pode coletar dados de diferentes fontes, como APIs, bancos de dados e páginas da web. Com sua capacidade de fazer a coleta de dados e se comunicar com outros dispositivos, o Arduino pode ser um aliado poderoso em projetos de Internet das Coisas (IoT).
+1. Certifique-se de ter os cabos de energia e dados adequados para sua placa e módulo WiFi ou Ethernet.
 
-## Como enviar uma solicitação HTTP com o Arduino
+2. Conecte o módulo ao Arduino de acordo com as instruções do fabricante.
 
-O processo de enviar uma solicitação HTTP com o Arduino é relativamente simples. Primeiro, você precisará de um módulo Wi-Fi ou Ethernet para se conectar à internet. Em seguida, você precisará de uma biblioteca para fazer a comunicação HTTP, como a biblioteca "HTTPClient" para o Arduino. Agora, vamos dar uma olhada em um exemplo de como enviar uma solicitação HTTP com o Arduino usando a biblioteca "HTTPClient":
+3. Abra o IDE do Arduino em seu computador e crie um novo sketch.
 
-```
+4. Importe as bibliotecas necessárias para fazer uma solicitação HTTP. Por exemplo, se você estiver usando o módulo WiFi, inclua as bibliotecas "WiFi.h" e "WiFiClient.h".
+
+5. Defina as constantes que serão usadas em sua solicitação, como a URL do servidor e o caminho da API.
+
+6. Inicialize e conecte-se ao módulo WiFi ou Ethernet na função "setup()". Verifique se a conexão foi estabelecida corretamente.
+
+7. Na função "loop()", crie um objeto de cliente e use o método "connect()" para se conectar ao servidor especificado.
+
+8. Use o método "print()" para enviar sua solicitação HTTP, incluindo o método, caminho e cabeçalhos necessários.
+
+9. Use o método "available()" para verificar se a resposta do servidor está disponível.
+
+10. Leia e processe os dados da resposta usando os métodos "read()" e "findUntil()" conforme necessário.
+
+11. Feche a conexão usando o método "stop()" e retorne para a função "loop()".
+
+Aqui está um exemplo simples de código para enviar uma solicitação GET a uma API usando o módulo WiFi:
+
+```Arduino
 #include <WiFi.h>
-#include <HTTPClient.h>
+#include <WiFiClient.h>
 
-const char* ssid = "SEU_SSID";
-const char* password = "SUA_SENHA";
+// Constantes da solicitação HTTP
+const char* SSID = "nome-da-sua-rede";
+const char* SSID_PASSWORD = "senha-da-sua-rede";
+const char* SERVER_URL = "endereco-do-servidor";
+const int SERVER_PORT = 80;
+const char* API_PATH = "/api/exemplo";
+
+WiFiClient client;
 
 void setup() {
-  Serial.begin(115200);
-
-  WiFi.begin(ssid, password);
-
+  // Inicialize o módulo WiFi e conecte-se à rede
+  WiFi.begin(SSID, SSID_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.println("Conectando à rede Wi-Fi...");
   }
+  // Verifique se a conexão foi estabelecida
+  Serial.println("Conectado à rede WiFi!");
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) {  // se estiver conectado
-    HTTPClient http;
-
-    http.begin("URL_DO_SEU_SERVIDOR");  // insira aqui a URL do seu servidor
-
-    int httpCode = http.GET();  // envia uma solicitação GET HTTP e recebe o código de resposta
-
-    if (httpCode == HTTP_CODE_OK) {  // se o código de resposta for "ok"
-      String response = http.getString();  // salva a resposta em uma variável
-
-      Serial.println(response);  // imprime a resposta no Monitor Serial
-    }
-
-    http.end();  // finaliza a conexão HTTP
+  // Crie uma conexão com o servidor
+  if (!client.connect(SERVER_URL, SERVER_PORT)) {
+    Serial.println("Falha na conexão!");
+    return;
   }
-
-  delay(5000);  // espera 5 segundos antes de fazer outra solicitação
+  // Envie a solicitação GET com os cabeçalhos necessários
+  client.println("GET " + String(API_PATH) + " HTTP/1.1");
+  client.println("Host: " + String(SERVER_URL));
+  client.println("Connection: close");
+  client.println();
+  // Leia e processe a resposta do servidor
+  while (client.available()) {
+    String response = client.readStringUntil('\r');
+    Serial.print(response);
+  }
+  // Feche a conexão
+  client.stop();
+  // Espere 5 segundos antes de enviar outra solicitação
+  delay(5000);
 }
 ```
 
-Nesse exemplo, estamos nos conectando à internet, acessando uma URL específica e armazenando a resposta em uma variável. Você pode modificar esse código conforme necessário para se adequar aos seus projetos.
+A saída na Serial Monitor deve ser semelhante a isso:
 
-## Aprofundando no envio de solicitações HTTP com o Arduino
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-Agora que você já tem uma ideia básica de como enviar uma solicitação HTTP com o Arduino, vamos nos aprofundar um pouco mais nesse processo.
+{"dado1": 123, "dado2": "abc"}
+```
 
-Uma solicitação HTTP geralmente consiste em um cabeçalho (header) e um corpo (body). O cabeçalho contém informações sobre a solicitação, como o método HTTP (GET, POST, PUT, DELETE), uma URL e os cabeçalhos de autenticação ou cookies, se necessário. O corpo contém os dados da solicitação, como os parâmetros de uma requisição POST. É importante entender essas partes de uma solicitação HTTP para poder enviar solicitações corretamente com o Arduino.
+## Mergulho profundo
+Existem várias bibliotecas disponíveis para enviar solicitações HTTP com Arduino, cada uma com suas próprias vantagens e requisitos de hardware. Além disso, códigos de status, como redirecionamentos e erros, devem ser tratados adequadamente para garantir o correto processamento da resposta do servidor. Além disso, considere a segurança ao lidar com dados confidenciais em suas solicitações. É importante ter um bom entendimento de como o protocolo HTTP funciona para enviar solicitações corretamente.
 
-Além disso, é possível usar um servidor local para receber e processar solicitações HTTP do Arduino. Isso pode ser útil em projetos em que você não precisa se comunicar com a internet, mas ainda deseja usar a estrutura do protocolo HTTP para enviar e receber dados.
-
-## Veja também
-
-- Documentação oficial do Arduino: https://www.arduino.cc/reference/en/libraries/httpclient/
-- Tutorial de envio de solicitações HTTP com o Arduino: https://randomnerdtutorials.com/esp32-http-get-post-arduino/
-- Exemplo de servidor local para comunicação com o Arduino: https://circuits4you.com/2019/05/26/esp32-http-post-get-body-parameters-using-url/
+## Veja

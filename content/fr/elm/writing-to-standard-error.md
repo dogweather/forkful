@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "L'écriture dans la sortie d'erreur standard"
+html_title:           "Elm: L'écriture dans la sortie d'erreur standard"
+simple_title:         "L'écriture dans la sortie d'erreur standard"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Écrire sur la sortie d'erreur standard (Standard Error) est un moyen important pour les développeurs Elm de gérer et de résoudre les erreurs dans leur code. Cela peut améliorer considérablement le processus de débogage et permet aux développeurs de mieux comprendre les problèmes qui surviennent dans leur application.
+Si vous êtes un programmeur Elm passionné, vous savez déjà que l'une de ses forces est la gestion des erreurs. Cela signifie que votre application Elm sera moins susceptible de planter ou de générer des erreurs imprévues. Cependant, il peut être utile de comprendre comment écrire dans la sortie d'erreur standard pour déboguer votre code et détecter les erreurs plus rapidement.
 
-## Comment faire
+## Comment procéder
 
-Pour écrire sur la sortie d'erreur standard en Elm, vous pouvez utiliser la fonction `Debug.log` qui prend en paramètre une chaîne de caractères et une valeur à afficher. Par exemple :
+Pour écrire dans la sortie d'erreur standard, tout ce que vous avez à faire est d'utiliser la fonction `Debug.crash` avec une chaîne de caractères en tant que paramètre. Cette fonction provoque une erreur et affiche la chaîne de caractères dans la sortie d'erreur standard. Voici un exemple de code pour illustrer cela :
 
+```elm
+import Debug exposing (crash)
+
+main =
+  crash "Une erreur est survenue"
 ```
+
+Lorsque vous exécutez ce code, vous devriez voir "Une erreur est survenue" s'afficher dans la sortie d'erreur standard. Cela peut être utile pour déterminer où se situe une erreur dans votre code et pour vous aider à la corriger.
+
+## Explorer en profondeur
+
+En plus de la fonction `Debug.crash`, nous pouvons également utiliser la fonction `Debug.log` pour écrire dans la sortie d'erreur standard. Cette fonction prend deux paramètres : une chaîne de caractères et une valeur. Elle affichera la chaîne de caractères suivie de la valeur dans la sortie d'erreur standard. Voici un exemple :
+
+```elm
 import Debug exposing (log)
 
-x = 42
-log "La valeur de x est :" x
+main =
+  log "La longueur de la chaîne est : " (String.length "Elm est génial !")
 ```
 
-Cela affichera dans la console : `La valeur de x est : 42`
+Cela affichera "La longueur de la chaîne est : 16" dans la sortie d'erreur standard. Vous pouvez également utiliser la fonction `toString` pour afficher des valeurs de types différents dans la sortie d'erreur standard. Par exemple :
 
-Il est également possible de spécifier l'emplacement de l'erreur en ajoutant un troisième paramètre à la fonction `Debug.log`, qui prendra le nom du module et le numéro de ligne. Cela peut s'avérer utile pour localiser plus facilement les erreurs dans un code plus complexe.
-
-```
+```elm
 import Debug exposing (log)
 
-x = 42
-log "La valeur de x est :" x "MonModule" 10 
+main =
+  log "La valeur de mon entier est : " (toString 10)
 ```
 
-Si une erreur se produit dans la ligne 10 du module "MonModule", l'erreur sera affichée dans la console avec cette information.
+Cela affichera "La valeur de mon entier est : 10" dans la sortie d'erreur standard.
 
-## Plongeons plus profondément
+## Voir aussi 
 
-Il est important de noter que la fonction `Debug.log` ne doit être utilisée que pour le débogage et ne doit pas être laissée dans le code final. En effet, cela pourrait causer des problèmes de performance et de sécurité.
-
-En utilisant `Debug.log` de manière efficace, les développeurs peuvent mieux comprendre les erreurs dans leur code et trouver plus rapidement des solutions. Il est également possible d'utiliser des bibliothèques telles que `elm-debug-tools` qui offrent des fonctionnalités de débogage plus avancées telles que l'inspection des valeurs ou la mise en pause du programme.
-
-## Voir aussi
-
-- Documentation officielle Elm sur `Debug.log`: https://package.elm-lang.org/packages/elm/core/latest/Debug#log
-- `elm-debug-tools` : https://package.elm-lang.org/packages/jaredramirez/elm-debug-tools/latest/
+- [`Debug` module in the Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/)
+- [Article sur la gestion des erreurs en Elm](https://www.parlez-vous.org/2017/05/29/error-handling-in-elm/)

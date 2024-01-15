@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Extracting substrings"
+title:                "Extracting substrings"
+html_title:           "C# recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "C#"
 category:             "C#"
@@ -9,45 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Extracting Substrings in C# is Useful
+## Why
 
-Extracting substrings is a common task in everyday programming. It involves taking a small portion of a larger string and using it for a specific purpose. This can be useful in situations where you only need a certain part of a string, such as extracting a name from a full email address or getting the day and month from a date string.
+Substrings are an important concept in programming, especially in C#. They allow us to extract specific parts of a string, which can be useful in various scenarios such as data manipulation, data validation, and more. In this article, we will discuss the basics of extracting substrings in C# and see how they can be applied in practical situations.
 
-## How To Extract Substrings in C#
+## How To
 
-The process of extracting substrings in C# is fairly straightforward. Here is an example of how you can extract a substring from a string:
-
-```C#
-string fullName = "John Doe";
-string firstName = fullName.Substring(0, 4); // Output: "John"
-string lastName = fullName.Substring(5); // Output: "Doe"
-```
-
-In this example, we have a full name string and we want to extract the first name and last name. Using the `Substring()` method, we can specify the starting index and length of characters we want to extract. In the first line, we start at index 0 and extract 4 characters, which gives us the first name "John". In the second line, we only specify the starting index, so the `Substring()` method extracts all the characters from that index until the end of the string, giving us the last name "Doe".
-
-We can also use the `Substring()` method to extract part of a string based on a specific character. Here's an example:
+To extract a substring in C#, we use the `Substring()` method. This method takes in two parameters: the starting index and the length of the substring. Let's see an example:
 
 ```C#
-string email = "johndoe@example.com";
-string username = email.Substring(0, email.IndexOf("@")); // Output: "johndoe"
+string sentence = "Hello world!";
+string substring = sentence.Substring(6, 5);
+
+Console.WriteLine(substring);
+// Output: world
 ```
 
-In this example, we have an email address and we want to extract the username before the "@" symbol. We use the `Substring()` method and the `IndexOf()` method to get the index of the "@" symbol, which we then use in the `Substring()` method to extract the characters before it.
+In the above code, we have a `sentence` string and we want to extract the word "world" from it. The first parameter in the `Substring()` method is the starting index, which in this case is 6 because "world" starts at index 6 in the string. The second parameter is the length of the substring, which is 5 because "world" has 5 characters.
 
-##Deep Dive into Substring Extraction
+We can also use string indexes instead of a length to extract a substring. For example:
 
-While the examples above show the basic usage of the `Substring()` method, there are a few other things to keep in mind when extracting substrings in C#:
+```C#
+string sentence = "Hello world!";
+string substring = sentence.Substring(6);
 
-- The starting index for `Substring()` is zero-based, meaning the first character has an index of 0.
-- If you don't specify a length in the `Substring()` method, it will extract all the characters from the starting index until the end of the string.
-- If the starting index or length is out of range, an `ArgumentOutOfRangeException` will be thrown.
-- Substring extraction in C# is culture-sensitive, meaning it takes into account the culture of the system the code is running on. This can affect the behavior of methods such as `IndexOf()`.
+Console.WriteLine(substring);
+// Output: world!
+```
 
-For more information on the `Substring()` method and other string manipulation methods in C#, check out the official documentation [here](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring).
+In this code, we have only specified the starting index and not the length. This will extract all the characters from the starting index to the end of the string.
+
+We can also use the `Substring()` method on a character array instead of a string. Let's see an example:
+
+```C#
+char[] characters = { 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!' };
+string sentence = new string(characters);
+string substring = sentence.Substring(6, 5);
+
+Console.WriteLine(substring);
+// Output: world
+```
+
+In this code, we first convert the character array to a string using the `new` keyword, and then we use the `Substring()` method on the string.
+
+## Deep Dive
+
+Behind the scenes, the `Substring()` method uses the `StringBuilder` class to create a new string with the specified substring. It also performs some checks to make sure that the starting index and length are within the boundaries of the string to avoid any errors.
+
+It's worth noting that the `Substring()` method does not modify the original string. Instead, it creates a new string with the extracted substring. This means that if we modify the extracted substring, it will not affect the original string.
+
+Another important thing to keep in mind is that the `Substring()` method is case-sensitive. This means that if we pass in a different case string for the starting index, it will not return the expected substring.
 
 ## See Also
 
-- [String Manipulation in C#](https://www.c-sharpcorner.com/blogs/string-manipulation-in-c-sharp)
-- [Using the Substring Method in C#](https://www.c-sharpcorner.com/article/using-the-substring-method-in-c-sharp/)
-
-Happy coding!
+- [C# String.Substring Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [C# StringBuilder Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)

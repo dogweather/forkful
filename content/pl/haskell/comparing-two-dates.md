@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Porównywanie dwóch dat"
-simple_title:         "Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat."
+html_title:           "Haskell: Porównywanie dwóch dat."
+simple_title:         "Porównywanie dwóch dat."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,60 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często spotykamy się z sytuacją, gdy musimy porównać dwie daty w naszym programie. Może to być potrzebne, aby upewnić się, że użytkownik podaje prawidłowe dane, lub w celu sortowania lub filtrowania danych. W tym artykule dowiesz się, jak porównywać daty w języku Haskell i jak to zrobić w najlepszy sposób.
+Czasami w programowaniu potrzebujemy porównać dwa daty, na przykład aby upewnić się, że jedna jest późniejsza niż druga. Haskell ma wiele wbudowanych funkcji, które ułatwiają to zadanie. W tym artykule dowiesz się jak to zrobić.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Język Haskell oferuje nam kilka sposobów na porównywanie dat. Jednym z nich jest użycie funkcji `compare`, która porównuje dwie daty i zwraca wartość `Ordering`. Istnieją trzy możliwe wartości `Ordering` -`LT`, `GT` i `EQ`, które odpowiadają odpowiednio mniejszej, większej lub równej wartości. Poniżej znajduje się przykład kodu, który pokazuje to w praktyce:
-
-```Haskell
-import Data.Time
-
-date1 = fromGregorian 2019 1 1
-date2 = fromGregorian 2020 1 1
-
-main = do
-  let comparison = compare date1 date2
-  putStrLn $ "Porównanie dat: " ++ show comparison
-```
-
-Output:
-```
-Porównanie dat: LT
-```
-
-Możemy również użyć funkcji `==`, `<=` lub `>=`, aby bezpośrednio porównać dwie daty. Przykład:
+Porównywanie dat w Haskell jest proste, ponieważ operacje na datach są wykonywane za pomocą specjalnej stuktury danych o nazwie `Data.Time.UTCTime`. Aby wykonać porównanie, musimy najpierw utworzyć dwa obiekty `UTCTime`.
 
 ```Haskell
-date1 == date2 -- False
-date1 <= date2 -- True
+-- Tworzenie daty 1 stycznia 2021
+let data1 = UTCTime (fromGregorian 2021 1 1) (secondsToDiffTime 0)
+-- Tworzenie daty 31 grudnia 2020
+let data2 = UTCTime (fromGregorian 2020 12 31) (secondsToDiffTime 0)
+-- Porównanie czy data1 jest późniejsza niż data2
+data1 > data2 -- zwróci wartość True
 ```
 
-Możemy również użyć biblioteki `time` w celu porównania dat, tak jak w przykładzie poniżej:
+W powyższym przykładzie użyliśmy funkcji `fromGregorian`, która umożliwia tworzenie daty za pomocą rok, miesiąc i dzień. Funkcja `secondsToDiffTime` pozwala na ustawienie godziny i minut na 0. Możesz również użyć danych z prawdziwego życia, takich jak te pobrane z bazy danych lub wprowadzonych przez użytkownika.
 
-```Haskell
-import Data.Time
+## Głębszy Przegląd
 
-date1 = fromGregorian 2019 1 1
-date2 = fromGregorian 2020 1 1
+Istnieje wiele funkcji, które możesz użyć do porównywania dat w Haskell. W funkcji `Data.Time.Clock` możesz znaleźć między innymi takie funkcje jak:
+- `diffUTCTime` - oblicza różnicę pomiędzy dwiema datami w sekundach
+- `addUTCTime` - dodaje określoną ilość sekund do podanej daty
+- `getCurrentTime` - zwraca bieżącą datę i czas
 
-main = do
-  let diffDays = diffDays date1 date2
-  putStrLn $ "Liczba dni między datami: " ++ show diffDays
-```
+Możesz również użyć funkcji z modułu `Data.Time.Calendar`, aby dokonać operacji na konkretnych częściach daty, takich jak dzień, miesiąc czy rok.
 
-Output:
-```
-Liczba dni między datami: -365
-```
+See Also
 
-## Głębszy wgląd
-
-W języku Haskell, daty są reprezentowane za pomocą typu `Day`, który jest częścią biblioteki `time`. Typ ten przechowuje tylko datę, bez informacji o czasie. W bibliotece `time` możemy również używać typów `UTCTime` lub `LocalTime`, jeśli potrzebujemy również danych o czasie.
-
-Kiedy porównujemy daty, ważne jest, aby być ostrożnym ze strefami czasowymi. Na przykład, jeśli chcemy porównać daty z różnych stref, musimy konwertować je do odpowiedniej strefy czasowej przed porównaniem. W przeciwnym razie, porównanie może nie być dokładne.
-
-## Zobacz też
-
-- Dokumentacja biblioteki `time`: https://hackage.haskell.org/package/time
-- Porównywanie wartości w języku Haskell: https://www.haskell.org/tutorial/comparison.html.
+- [Dokumentacja modułu Data.Time.Clock](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
+- [Dokumentacja modułu Data.Time.Calendar](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)

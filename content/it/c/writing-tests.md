@@ -1,5 +1,6 @@
 ---
-title:                "C: Scrivere test"
+title:                "Scrivere test"
+html_title:           "C: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "C"
 category:             "C"
@@ -9,75 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in C?
-Scrivere test può sembrare una pratica lunga e noiosa, ma ha numerosi vantaggi. Innanzitutto, aiuta a individuare eventuali bug o errori nel codice prima che possano causare problemi più grandi. Inoltre, i test possono essere riutilizzati e automatizzati per risparmiare tempo e sforzo nelle fasi di sviluppo successive.
+##Perché
 
-## Come scrivere test in C
-Per scrivere test in C, è necessario utilizzare una libreria di unit testing come CUnit o Unity. Queste librerie forniscono funzionalità e strumenti per creare e gestire i test in modo semplice ed efficace.
+Scrivere test può sembrare una parte noiosa e tediosa del processo di sviluppo software, ma in realtà è uno strumento fondamentale per garantire la qualità del codice e facilitare il processo di debugging. Inoltre, scrivere test può aiutare a risparmiare tempo e risorse in futuro, poiché individua eventuali errori o bug fin dalla fase di sviluppo.
 
-Ecco un esempio di codice che utilizza CUnit per testare una funzione che calcola il quadrato di un numero:
-```
-// Inclusione delle librerie necessarie
-#include <CUnit/Basic.h>
+##Come fare
+
+Per scrivere test efficaci in C, è importante comprendere i concetti di base del linguaggio e le librerie standard. Inoltre, ci sono alcune buone pratiche da seguire per assicurarsi che i test siano affidabili e di facile manutenzione. Ecco un esempio di test di una funzione che calcola il massimo tra due numeri:
+
+```C
 #include <stdio.h>
-#include "square.h" // File contenente la definizione della funzione "square"
 
-// Definizione del test
-void testSquare(void) {
-    // Valore di input
-    int input = 5;
-    // Valore atteso
-    int expected = 25;
-    // Richiamo della funzione da testare
-    int result = square(input);
-    // Confronto tra il risultato ottenuto e quello atteso
-    CU_ASSERT_EQUAL(result, expected);
-}
+int max(int a, int b);
 
-// Funzione di inizializzazione delle suite di test
-int init_suite(void) {
-    return 0;
-}
-
-// Funzione di pulizia delle suite di test
-int clean_suite(void) {
-    return 0;
-}
-
-// Funzione main che avvia l'esecuzione dei test
 int main() {
-    // Inizializzazione della suite di test
-    CU_pSuite pSuite = NULL;
-    // Creazione della suite di test
-    pSuite = CU_add_suite("Square Test", init_suite, clean_suite);
-    // Aggiunta del test alla suite
-    CU_add_test(pSuite, "testSquare", testSquare);
-    // Avvio dell'esecuzione dei test
-    CU_basic_run_tests();
-    // Pulizia delle suite di test
-    CU_cleanup_registry();
-    return CU_get_error();
+    int result = max(5, 10);
+    printf("Il massimo è: %d", result);
+    return 0;
+}
+
+int max(int a, int b) {
+    int max = a > b ? a : b; // operatore ternario per semplificare il codice
+    return max;
 }
 ```
-Questo codice definisce un test per la funzione "square" e lo esegue utilizzando la libreria CUnit. Una volta eseguito il test, si otterrà un output come questo:
+
+In questo esempio, viene definita una funzione `max` che prende in input due interi e restituisce il maggiore dei due. Nella funzione `main`, viene chiamata la funzione `max` con due valori e il risultato viene stampato a video. Per creare il test di questa funzione, è possibile utilizzare una libreria di unit testing come `cmocka` o `minunit`:
+
+```C
+#include <stdio.h>
+#include <stdarg.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <cmocka.h>
+
+int max(int a, int b);
+
+static void max_test(void **state) {
+    assert_int_equal(max(5, 10), 10);
+    assert_int_equal(max(-5, 0), 0);
+}
+
+int main() {
+    const struct CMUnitTest tests[] = {
+            cmocka_unit_test(max_test),
+    };
+    return cmocka_run_group_tests(tests, NULL, NULL);
+}
+
+int max(int a, int b) {
+    int max = a > b ? a : b;
+    return max;
+}
 ```
-CUnit - A unit testing framework for C
 
-Suite: Square Test
-  Test: testSquare ...passed
+In questo caso, la libreria `cmocka` viene utilizzata per definire un test chiamato `max_test`, che verifica se la funzione `max` restituisce il valore corretto per due input diversi. Per eseguire il test, è necessario compilare il codice con la libreria e avviare il programma, che restituirà un resoconto dettagliato su eventuali errori o fallimenti dei test.
 
-Run Summary:    Type  Total   Ran Passed Failed Inactive
-              suites      1     1    n/a      0        0
-              tests       1     1      1      0        0
-              asserts     1     1      1      0      n/a
+##Approfondimento
 
-Elapsed time =    0.000 seconds
-```
+Scrivere test accurati e completi può richiedere una certa quantità di tempo ed energia, ma i suoi vantaggi sono molteplici. Inoltre, i test possono essere utilizzati in diversi modi, come per la verifica dell'integrità del codice durante il processo di sviluppo o per la validazione del software prima della distribuzione. Inoltre, un buon set di test ben strutturato può fungere da documentazione aggiuntiva per il codice, fornendo esempi di utilizzo delle funzioni.
 
-## Approfondimenti sui test in C
-Scrivere test può essere un processo complesso, ma esistono diverse best practice che possono aiutare a semplificarlo. Ad esempio, è importante scrivere test che siano facilmente ripetibili e che si concentrino sulle funzionalità più critiche del codice. Inoltre, è consigliato monitorare regolarmente i test per garantire che siano ancora validi e aggiornarli quando il codice viene modificato.
+##Vedi anche
 
-## Vedi anche
-- [Guida alla scrittura di test con CUnit](http://cunit.sourceforge.net/doc/index.html)
-- [Libreria di test Unity per C](https://github.com/ThrowTheSwitch/Unity)
-- [Best practice per la scrittura di test in C](https://begriffs.com/posts/2017-04-13-designing-a-c-testing-framework.html)
+- [Guida alle buone pratiche di testing in C](https://www.seguridad.unam.mx/media/archivo/proyecto3/good-practices-for-unit-testing-in-c-c-j-owner-s-guide-en-us.pdf)
+- [Esempi di test in C con la libreria Unity](https://www.throwtheswitch.org/unity)
+- [Tutorial su come utilizzare la libreria cmocka per fare unit testing in C](https://blog.jgc.org/2019/01/a-tutorial-on-how-to-do-unit-testing-of.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Elixir: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du er en programmerer, enten nybegynner eller erfaren, som er på utkikk etter et nytt prosjekt å dykke inn i, kan Elixir være et spennende valg. Dette funksjonelle programmeringspråket kombinerer funksjonalitet og skalerbarhet, noe som gjør det til et kraftig verktøy for å bygge pålitelige og fleksible applikasjoner.
+Hvorfor skulle man engasjere seg i å starte et nytt prosjekt med Elixir? Vel, Elixir er et kraftig og stadig voksende programmeringsspråk som er bygget for å håndtere distribuerte og tolerante systemer. Dette gjør det til et flott valg for å bygge moderne og skalerbare applikasjoner.
 
-# Hvordan
+## Hvordan
 
-For å starte et nytt prosjekt i Elixir, må du først installere språket på datamaskinen din. Deretter kan du følge disse trinnene for å komme i gang:
+For å starte et nytt prosjekt med Elixir, må du først installere det på datamaskinen din. Deretter kan du følge disse enkle trinnene:
 
-```
-Elixir new prosjektnavn
-cd prosjektnavn
-mix test
-```
+```Elixir
+# Opprett en ny mappe for prosjektet ditt
+mkdir nyttprosjekt
 
-Dette vil opprette en ny mappe med prosjektnavnet ditt, navigere deg til mappen og kjøre en test for å sikre at alt fungerer som det skal.
+# Gå inn i mappen
+cd nyttprosjekt
 
-For å legge til avhengigheter i prosjektet ditt, kan du redigere filen `mix.exs` og legge til nødvendige biblioteker under `deps`. Når du har gjort endringer, kjør `mix deps.get` for å laste ned de nye avhengighetene.
+# Opprett en ny fil for koden din
+touch koden.min
 
-For å skrive kode i Elixir, kan du bruke enten en fil med `.ex`-utvidelse eller kjøre interactive mode ved å skrive `iex` i terminalen. Her er et eksempel på Elixir-kode, som definerer en funksjon som beregner summen av to tall:
+# Åpne filen og begynn å skrive Elixir-koden din
+nano koden.min
 
-```
-defmodule Kalkulator do
-  def sum(a, b) do
-    a + b
-  end
-end
+# Kjør koden din ved å bruke Elixir-konsollen
+iex -S mix
 
-IO.puts Kalkulator.sum(2, 3)
-# Output: 5
+# Se på output og gjør eventuelle endringer i koden din
 ```
 
-# Dykk dypere
+Når du er ferdig med å kode, må du sørge for å lagre alle endringene og lukke filen. Deretter kan du kjøre koden din og se resultatet av arbeidet ditt!
 
-Elixir har et rikt økosystem med mange løsninger for å håndtere forskjellige funksjoner, som webutvikling, databehandling og parallelle programmer. Ta deg tid til å utforske forskjellige biblioteker og ressurser som er tilgjengelige for å hjelpe deg med ditt prosjekt. Du kan også lære mer om Elixir ved å sjekke ut offisiell dokumentasjon og delta i det aktive samfunnet på nettet.
+## Deep Dive
 
-# Se også
+Før du begynner å kode, er det viktig å ha en god forståelse av Elixir og dens syntaks. Elixir følger funksjonell programmeringstil og er bygget på Erlang VM, noe som gjør det svært effektivt og skalerbart. Det er også et dynamisk språk, noe som betyr at det ikke krever noe kjørekode, og det tillater utviklere å gjøre endringer i koden mens den kjører.
 
-- [Elixir Official Documentation](https://elixir-lang.org/docs.html)
-- [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
-- [Elixir Forum](https://elixirforum.com/)
+En annen viktig ting å huske på når du starter et nytt prosjekt med Elixir, er å implementere konsepter som "fault tolerance" og "concurrency". Dette er integrerte funksjoner i Elixir, og det er viktig å utnytte disse fra begynnelsen av for å sikre at prosjektet ditt er robust og skalerbart.
+
+## Se også
+
+- Offisiell Elixir-nettside: https://elixir-lang.org/
+- Elixir Dokumentasjon: https://elixir-lang.org/getting-started/introduction.html
+- Ted Talk om Elixir av skaperen Jose Valim: https://www.youtube.com/watch?v=4IzU8fBvjEI

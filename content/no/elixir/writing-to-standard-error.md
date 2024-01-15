@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Å skrive til standardfeil"
+html_title:           "Elixir: Å skrive til standardfeil"
+simple_title:         "Å skrive til standardfeil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,45 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Skriving til standardfeil kan være en nyttig del av en Elixir programmerers verktøykasse. Det tillater deg å sende feilmeldinger eller annen informasjon som skal ses av brukeren i terminalen samtidig som koden kjører.
+Å skrive til standard error kan være nyttig når du vil få ut ekstra informasjon fra programmet ditt til terminalen. Det er også en måte å skille mellom feilmeldinger og vanlige utskrifter.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å skrive til standardfeil i Elixir, kan du bruke `IO.puts/2` eller `IO.write/2` funksjoner og passere `:stderr` som første argument. La oss se på et eksempel:
-
-```Elixir
-IO.puts(:stderr, "Dette er en feilmelding")
-```
-
-Dette vil skrive ut "Dette er en feilmelding" i standard feilstrømmen.
-
-Du kan også kombinere dette med annen informasjon, for eksempel variabler eller funksjoner:
+For å skrive til standard error i Elixir, kan du bruke funksjonen `IO.puts/2` og sette `:stderr` som første argument. La oss se på et eksempel:
 
 ```Elixir
-error_message = "En uventet feil oppstod"
-IO.puts(:stderr, error_message <> " for bruker #{username}")
+IO.puts(:stderr, "Dette er en feilmelding!")
 ```
 
-Dette vil skrive ut "En uventet feil oppstod for bruker Jane" hvis `username` variabelen er satt til "Jane".
+Dette vil skrive ut teksten "Dette er en feilmelding!" til standard error. Her er en annen variant som inkluderer en variabel:
+
+```Elixir
+feilmelding = "Kan ikke åpne filen."
+IO.puts(:stderr, "Feil: #{feilmelding}")
+```
+
+Denne gangen vil teksten "Feil: Kan ikke åpne filen." bli skrevet ut til standard error. Du kan også bruke `IO.write/2` funksjonen på samme måte for å skrive ut tekst uten å legge til noen nye linjer på slutten.
 
 ## Dypdykk
 
-En ting å merke seg er at skriving til standardfeil ikke vil stoppe programmet hvis det oppstår en feil. Det vil bare skrive ut informasjonen til brukeren. Du kan også se etter feil som oppstår og skrive dem til standardfeil ved hjelp av `try/catch` blokker:
+Standard error er en del av det såkalte "file descriptors" systemet som brukes i operativsystemet. Når et program kjører, blir det tildelt tre file descriptors: standard input (`:stdin`), standard output (`:stdout`) og standard error (`:stderr`).
 
-```Elixir
-try do
-  # Kode som kan føre til en feil
-catch
-  message ->
-    IO.puts(:stderr, message)
-end
-```
+Standard error brukes vanligvis for å skrive feilmeldinger og andre viktige meldinger som brukeren trenger å vite om. Det er også vanlig å omdirigere standard error til en loggfil i stedet for å skrive ut det til terminalen, noe som kan være nyttig når programmet kjøres i bakgrunnen.
 
-Dette vil fange en eventuell feil som oppstår i `try` blokken og skrive den til standard feilstrømmen.
+## Se også
 
-## Se Også
-
-- [Elixir IO modul](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Try/Catch dokumentasjon](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#try/1)
-- [Elixir Error modul](https://hexdocs.pm/elixir/Error.html)
-- [Elixir Exception dokumentasjon](https://hexdocs.pm/elixir/Exception.html)
+- Elixir `IO` modul [dokumentasjon](https://hexdocs.pm/elixir/IO.html)
+- Elixir `Kernel` modul [dokumentasjon](https://hexdocs.pm/elixir/Kernel.html)

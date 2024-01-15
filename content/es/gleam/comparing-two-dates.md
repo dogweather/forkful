@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Comparando dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "Gleam: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,63 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué comparar dos fechas en Gleam?
+## Por qué
+A veces, cuando estamos programando, es necesario comparar dos fechas para realizar ciertas acciones. En Gleam, esta tarea es muy sencilla y puede ahorrarnos tiempo y esfuerzo en nuestro código.
 
-Comparar dos fechas puede ser una tarea común al trabajar con datos temporales en Gleam. Esto puede ayudarte a determinar la diferencia en tiempo entre dos eventos, o a ordenar tus datos de manera cronológica. En esta entrada, aprenderemos cómo realizar comparaciones de fechas en Gleam.
-
-# Cómo hacerlo
-
-Para comparar dos fechas en Gleam, utilizaremos el módulo `gleam/chrono` que nos permite trabajar con datos temporales. Primero, importaremos el módulo en nuestro archivo:
+## Cómo hacerlo
+Para comparar dos fechas en Gleam, podemos utilizar el módulo `Time` y su función `diff_in_seconds` que nos permite obtener la diferencia en segundos entre dos fechas. Veamos un ejemplo:
 
 ```Gleam
-import gleam/chrono
+import Time
+
+let fecha1 = Time.from_date(2020, 1, 1)
+let fecha2 = Time.from_date(2020, 1, 2)
+
+let diferencia = Time.diff_in_seconds(fecha1, fecha2)
+
+Log.info("La diferencia en segundos es {}", [diferencia])
+
+// Resultado:
+// La diferencia en segundos es 86400
 ```
 
-A continuación, crearemos dos variables con fechas para comparar:
+En este ejemplo, creamos dos fechas diferentes utilizando `Time.from_date` y luego utilizamos la función `diff_in_seconds` para obtener la diferencia en segundos entre ellas. Podemos utilizar esta información para realizar cualquier acción que necesitemos en nuestro código.
 
-```Gleam
-let today = chrono.today()
-let tomorrow = chrono.add_days(today, 1)
-```
+## Profundizando
+La función `diff_in_seconds` en realidad hace uso del módulo `Duration` de Gleam, que nos permite trabajar con intervalos de tiempo y realizar diferentes operaciones con ellos. Podemos obtener la diferencia no solo en segundos, sino también en horas, días, meses, etc.
 
-Podemos usar la función `add_days` del módulo `chrono` para obtener la fecha de mañana a partir de la fecha de hoy. Ahora, podemos usar la función `chrono.compare` para comparar estas dos fechas:
+Además, Gleam también nos ofrece la función `is_before` en el módulo `Time` para comparar si una fecha es anterior a otra, y la función `is_after` para verificar si es posterior. Estas funciones pueden ser muy útiles en diferentes situaciones y nos permiten tener un control preciso de nuestras fechas en el código.
 
-```Gleam
-let comparison = chrono.compare(today, tomorrow)
-```
-
-El resultado de esta comparación será `LessThan`, `Equal` o `GreaterThan`, dependiendo de si la primera fecha es anterior, igual o posterior a la segunda fecha. Para imprimir el resultado, podemos usar una expresión `case`:
-
-```Gleam
-case comparison {
-  Equal -> io.println("Las fechas son iguales")
-  LessThan -> io.println("La primera fecha es anterior a la segunda")
-  GreaterThan -> io.println("La primera fecha es posterior a la segunda")
-}
-```
-
-La salida en consola sería:
-
-`La primera fecha es anterior a la segunda`
-
-# Profundizando
-
-Si queremos comparar más que solo fechas, podemos utilizar el módulo `gleam/chrono/datetime` para trabajar con datos de fecha y hora. Este módulo nos proporciona funciones para crear fechas a partir de valores individuales de año, mes, día, hora, minuto y segundo. También podemos usar la función `from_string` para crear una fecha a partir de una cadena de texto en un formato específico.
-
-Además, podemos cambiar el lenguaje de salida para que esté en español, por ejemplo:
-
-```Gleam
-let default_locale = chrono.Locale.default()
-let spanish_locale = chrono.Locale.new(
-  default_locale.language,
-  default_locale.country,
-  Some("es")
-)
-```
-
-Esto nos permitirá obtener la salida de tiempos y fechas en español.
-
-# Ver también
-
-- [Documentación del módulo `gleam/chrono`](https://gleam.run/modules/chrono.html)
-- [Ejemplos de comparación de fechas en Gleam](https://github.com/gleam-lang/example-code/blob/master/chrono/compare_dates.gleam)
+## Ver también
+- Documentación oficial de Gleam sobre el módulo `Time`: https://gleam.run/modules/time
+- Documentación oficial de Gleam sobre el módulo `Duration`: https://gleam.run/modules/duration

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Elm: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Om du arbetar med stora mängder data, är du förmodligen bekant med CSV-filer. Dessa filer tillåter dig att lägga ut data i en tabellstruktur, vilket gör det enklare att organisera och analysera. Men varför ska du använda Elm för att arbeta med CSV-filer? Fortsätt läsa för att ta reda på det.
+Att arbeta med CSV-filer kan vara en användbar färdighet för många olika yrken och projekt. Med Elm som språk är det enkelt och effektivt att hantera stora mängder data och utföra olika operationer på det.
 
-## Så här gör du
+## Hur man gör
 
-För att arbeta med CSV i Elm, behöver du först importera paketet `elm-csv` i din kod. Sedan kan du använda funktionen `parse` för att läsa in din CSV-fil och konvertera den till en Elm-modell. Här är ett enkelt exempel:
+För att arbeta med CSV-filer i Elm behöver du först importera modulen `Csv.Decode` och öppna en CSV-fil i ett `Csv.Document`-objekt. Sedan kan du använda funktionen `Decode.csv` för att tolka filen och göra om den till en Elm-lista. 
 
 ```Elm
-import Csv exposing (..)
+import Csv.Decode exposing (document, csv)
+import Html exposing (..)
 
-type alias Person =
-  { name : String
-  , age : Int
-  }
+view : Model -> Html Msg
+view model =
+  let
+    file = "data.csv"
+    csvDoc = Csv.Decode.document file
 
-csvData : String
-csvData = 
-  "name,age
-  John,30
-  Jane,25
-  Bob,40"
+    rows = case csvDoc of
+      Ok doc ->
+        Parse.csv doc |> Expect.equal [ ["1","John","Doe"]
+                                       ["2","Jane","Smith"]
+                                       ["3","Bob","Johnson"]
+                                     ]
 
-main : List Person
-main = 
-  case parse csvData of
-    Ok people ->
-      people
-    Err error ->
-      Debug.crash error
+      Err err ->
+        Debug.crash err
+  in
+  div []
+    [ h1 [] [ text "CSV Hantering" ]
+    , rows -- Ersätt med din egen kod för att rendera datan
+    ]
+
 ```
-
-Genom att köra `main` funktionen i din Elm REPL, kommer du att få en lista med `Person` objekt som representerar varje rad i din CSV-fil.
-
 ## Djupdykning
 
-När du arbetar med CSV-filer i Elm, finns det några användbara funktioner som du kan använda dig av. Till exempel, om du vill välja specifika kolumner från din CSV, kan du använda `fields` funktionen för att välja dessa och konvertera dem till `String` eller `Int`. Om du vill filtrera bort vissa rader baserat på ett visst villkor, kan du använda `filter` funktionen.
-
-Det viktigaste att komma ihåg när du arbetar med CSV-filer i Elm är att det är ett starkt typat språk. Detta innebär att du måste definiera en specifik modell för din CSV-data och sedan matcha denna modell när du läser in och bearbetar filen. Detta ger dig en säkrare och mer strukturerad process för att hantera data.
+Att arbeta med CSV-filer i Elm kan även inkludera att välja specifika kolumner, filtrera rader baserat på villkor och skapa nya filer baserat på det bearbetade resultatet. Det finns även en rad andra moduler som kan vara användbara när man hanterar CSV-filer i Elm, som `Csv.Encode` för att spara data till en CSV-fil och `Csv.Decode.Mappers` för att anpassa sin dekoder efter ens specifika databehov. 
 
 ## Se även
 
-- Elm CSV paket dokumentation: https://package.elm-lang.org/packages/elm-explorations/csv/latest/
-- Elm REPL: https://elm-lang.org/try
+- [Elm Dokumentation](https://guide.elm-lang.org/)
+- [CSV Hantering i Elm Guide](https://elmprogramming.com/csv-file-processing-in-elm.html)

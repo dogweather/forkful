@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Swift recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,30 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing tests may seem like an additional task to your already busy programming schedule, but it can greatly benefit your code in the long run. By writing tests, you can catch bugs earlier and ensure your code is functioning as intended. It also makes it easier to make changes and refactoring in the future.
+Writing tests in Swift may not seem like the most exciting task, but it is an important part of the development process. By writing tests, you can ensure that your code is functioning as intended and catch any potential errors early on. It also allows for easier debugging and maintenance in the long run.
 
 ## How To
 
-Writing tests in Swift is relatively simple and can be done using the XCTest framework. Let's take a look at an example of testing a basic function that returns the sum of two numbers:
+First, make sure you have a project set up in Xcode. Then follow these steps to start writing tests:
+
+1. Create a new file by going to File > New > File (or using the shortcut Command+N).
+2. Select "Swift File" under the "Source" header and name your file something like "MyProjectTests". This will be where you write your tests.
+3. Next, we need to import the XCTest framework. To do this, add `import XCTest` at the top of your new file.
+4. Now we can start writing our tests. Below is an example of a simple test that checks if 2+2 equals 4:
 
 ```
-Swift func calculateSum(num1: Int, num2: Int) -> Int { return num1 + num2 }
-
-XCTAssertEqual(calculateSum(num1: 5, num2: 7), 12, "Incorrect sum!") 
+func testAddition() {
+    let result = 2 + 2
+    XCTAssertEqual(result, 4)
+}
 ```
 
-In this code block, we first define our function `calculateSum` which takes in two `Int` parameters and returns their sum. Then, using the `XCTAssertEqual` method, we test the function by passing in two numbers and making sure the output is equal to our expected value of 12. If the test passes, the console will show a success message, but if it fails, it will show the provided error message.
+5. To run your tests, go to the "Test Navigator" tab in Xcode (usually located on the left side of the screen) and click on the "Run" button next to your test file. You should see a green checkmark if all your tests pass, or a red X if there are any failures.
+6. You can also add multiple tests to your file, each with a different function name, to test different parts of your code.
 
 ## Deep Dive
 
-There are different types of tests that can be written, such as unit tests, integration tests, and UI tests. It's important to choose the appropriate type of test depending on the scenario. Additionally, using test-driven development (TDD) can be helpful in writing tests as it follows a cycle of writing a test, watching it fail, and then writing the code to make it pass.
+Writing tests can be a tedious process, but it is worth it in the long run. It helps to catch any errors or bugs before they have a chance to make it into your final product. It also makes it easier to make changes and refactoring later on, as you can quickly check if your changes have caused any issues.
 
-Another approach to testing is using mocks, which are fake objects that can simulate real objects and their behaviors. This can be useful in testing code that depends on external services or APIs.
+When writing tests, it is important to cover as many edge cases as possible. These are scenarios that may not be obvious at first, but could potentially cause problems with your code. It is also helpful to use descriptive function names for your tests, as this makes it easier to pinpoint any issues when running them.
+
+Another important aspect of writing tests is maintaining them. As your code changes and evolves, so should your tests. Be sure to update them accordingly to ensure they are still accurately testing your code.
 
 ## See Also
 
-- [iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial)
-- [Testing in Swift](https://www.swiftbysundell.com/articles/testing-in-swift/)
-- [An Intro to Testing in Swift](https://medium.com/flawless-app-stories/an-intro-to-testing-in-swift-7f832099482f)
+For more information on writing tests in Swift, check out these helpful resources:
 
-By incorporating tests into your programming process, you can ensure the quality and stability of your code. Happy testing!
+- [Apple Developer Documentation: Testing with Xcode](https://developer.apple.com/documentation/xcode/testing_with_xcode)
+- [How to Write Swift Tests with XCTest](https://www.swiftbysundell.com/basics/testing/)
+- [TDD in Swift: The Ultimate Guide to Unit Testing and Beyond](https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Rust recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,52 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Rust is a relatively new programming language that has gained popularity for its focus on performance, safety, and concurrency. One common task in programming is finding the length of a string, which gives us important information about the data we are working with. In this blog post, we'll explore how this can be done efficiently in Rust and why it's an important skill to have in your programming toolbox.
+It's a common programming task to find the length of a string. Whether you're working on a simple text processing program or a more complex project, knowing how to find the length of a string can come in handy.
 
 ## How To
 
-The first step in finding the length of a string is to declare a string variable using the `let` keyword. Next, we can use the `.len()` method to get the length of the string. Let's see how this is done in Rust:
+```rust
+let my_string = "Hello World!";
+let length = my_string.len();
 
-```Rust
-let my_string = String::from("Hello, world!");
-println!("The length of the string is {}", my_string.len());
+println!("The length of my string is {}", length);
 ```
 
-Running this code will give us the output:
+Output: The length of my string is 12.
 
+In Rust, strings are UTF-8 encoded, which means that each character is represented by a varying number of bytes. Therefore, to find the length of a string, we use the `len()` method which returns the number of bytes in the string.
+
+Another way to find the length of a string is to use the `chars()` method, which returns an iterator over the characters of the string. We can then use the `count()` method to count the number of characters in the string.
+
+```rust
+let my_string = "Rust is awesome!";
+let char_count = my_string.chars().count();
+
+println!("The string has {} characters", char_count);
 ```
-The length of the string is 13
-```
 
-We can also use the `.len()` method on string literals:
-
-```Rust
-let my_literal = "Hello, world!";
-println!("The length of the string is {}", my_literal.len());
-```
-
-This will give us the same output as before.
-
-We can also use a for loop and the `chars()` method to iterate through each character in the string and manually count the number of characters. However, this method is less efficient and should only be used if necessary.
-
-```Rust
-let my_string = String::from("Hello, world!");
-let mut count = 0;
-for character in my_string.chars() {
-    count += 1;
-}
-println!("The length of the string is {}", count);
-```
+Output: The string has 16 characters.
 
 ## Deep Dive
 
-Rust's `String` type is a wrapper over a sequence of bytes, making it a flexible and efficient way to store and manipulate text data. The `String` type also comes with a variety of useful methods, including the `.len()` method which returns the number of bytes in the string. This value can be different from the number of characters, as some characters may be represented by more than one byte.
+When working with strings in Rust, it's important to keep in mind that strings are immutable by default. This means that any operations on a string will return a new string, rather than modifying the original one. This is why the `len()` method does not have any parameters - it is simply returning the length of the original string.
 
-To handle this potential discrepancy, Rust also has the `.chars()` method which returns an iterator over the Unicode characters of the string. This allows us to accurately count the number of characters in a string, regardless of the number of bytes used to represent each character.
-
-It's also worth mentioning that Rust's `str` type, which is used for string literals, has the same methods as the `String` type, making it consistent and easy to use when dealing with strings.
+Additionally, the `len()` method only counts the number of bytes in a string, not the number of visible characters. This is because some characters may be represented by multiple bytes, depending on the encoding used. If you want the length of a string in terms of visible characters, using the `chars()` method is a more accurate approach.
 
 ## See Also
 
-- Rust Documentation: [Strings and Characters](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- Rust by Example: [String Length](https://doc.rust-lang.org/rust-by-example/std/str.html#length)
+For more information on strings and the methods mentioned above, check out the official Rust documentation:
+
+- [The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust Standard Library - Strings](https://doc.rust-lang.org/std/string/index.html)
+- [Rust By Example - Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Kontrollera om en katalog finns"
-simple_title:         "Kontrollera om en katalog finns"
+title:                "Kontrollera om en mapp finns"
+html_title:           "Java: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,30 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-I Java är det viktigt att kunna kolla om en mapp finns eller inte. Det är användbart när du behöver hantera filer och göra säkerhetskontroller i ditt program.
+Att kontrollera om en mapp existerar är en viktig del av programmering eftersom det möjliggör för oss att hantera filer och mappar korrekt. Det kan hjälpa oss att undvika felmeddelanden och garantera att vårt program fungerar som det ska.
 
 ## Hur man gör
-För att kolla om en mapp finns, används metoden `exists()` från klassen `File` i Java. Här är ett exempel på kod:
+För att kontrollera om en mapp existerar i Java, kan du använda metoden `exists()` från klassen `File`. Här är ett exempel:
 
-```Java
-File directory = new File("minMapp");
+```java
+import java.io.File;
 
-// Kontrollera om mappen finns
-if(directory.exists()){
-  System.out.println("Mappen finns.");
-} else {
-  System.out.println("Mappen finns inte.");
+public class DirectoryCheck {
+
+    public static void main(String[] args) {
+
+        // Använd sökvägen till din mapp här
+        File directory = new File("/Users/johndoe/Documents/test");
+
+        if (directory.exists()) {
+            System.out.println("Mappen finns!");
+        } else {
+            System.out.println("Mappen finns inte.");
+        }
+    }
 }
 ```
 
-I detta exempel skapar vi en ny `File`-objekt och kallar den "minMapp". Sedan använder vi `exists()`-metoden för att kontrollera om denna mapp faktiskt finns. Om den gör det, kommer vi att få utskriften "Mappen finns.", annars kommer vi att få utskriften "Mappen finns inte.".
+Output:
+```
+Mappen finns inte.
+```
+
+Om mappen existerar kommer `exists()` att returnera `true` annars kommer det att returnera `false`.
 
 ## Djupdykning
-Vi kan också utföra andra åtgärder baserat på resultatet av `exists()`-metoden. Till exempel, om mappen inte finns, kan vi använda `mkdir()`-metoden för att skapa den. Vi kan också använda `isDirectory()`-metoden för att säkerställa att det är en mapp och inte en fil. Det finns också andra metoder som `isHidden()` och `canRead()` som kan vara användbara i olika scenarier.
+För att förstå hur `exists()` fungerar behöver vi titta på dess implementation. Enligt Java-dokumentationen är implementationen av `exists()` som följer:
 
-Att kolla om en mapp finns är också användbart i samband med try-with-resources-satsen, då vi kan undvika att försöka stänga en mapp som inte finns.
+```java
+public boolean exists() {
+    return ((this.status & EXISTS) != 0);
+}
+```
 
-## Se även
+Det här ser kanske komplicerat ut, men i grund och botten kollar `exists()` om attributet `EXISTS` är satt till `true` för det givna objektet. Detta attribut sätts till `true` när `File`-objektet skapas, eller när `refresh()`-metoden anropas.
+
+## Se också
+Här är några andra användbara resurser för att lära sig mer om att arbeta med filer och mappar i Java:
+
 - [Java File-klassens dokumentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java IO-tutorial på svenska](https://www.javatpoint.com/java-io-tutorial)
-- [Enkel guide till fil- och mapphantering i Java](https://www.baeldung.com/java-io)
+- [Creating a Directory in Java](https://www.baeldung.com/java-create-directory)
+- [Handling Exceptions in Java](https://www.tutorialspoint.com/java/java_exceptions.htm)
+
+Tack för att du läste! Fortsätt utforska Java och ha kul med programmering! 🚀

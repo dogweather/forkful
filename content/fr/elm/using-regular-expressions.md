@@ -1,6 +1,7 @@
 ---
-title:                "Elm: L'utilisation des expressions régulières"
-simple_title:         "L'utilisation des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Elm: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,40 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Elm en herbe, vous avez probablement entendu parler des expressions régulières (ou *regular expressions* en anglais). Mais pourquoi voudriez-vous les utiliser dans votre code ?
-
-Les expressions régulières sont des outils puissants pour manipuler et chercher des chaînes de caractères dans vos programmes. Elles sont particulièrement utiles lorsqu'il s'agit de valider des entrées utilisateur ou de filtrer des données. En les maîtrisant, vous pourrez simplifier et améliorer efficacement vos scripts Elm.
+Si vous avez déjà essayé de chercher ou de manipuler des chaînes de caractères dans un langage de programmation, vous avez probablement réalisé à quel point cela peut être fastidieux et répétitif. Les expressions régulières, ou regex, sont un outil très utile pour rechercher, extraire et remplacer des motifs de chaînes de caractères de manière efficace et rapide.
 
 ## Comment faire
 
-Pour utiliser des expressions régulières en Elm, vous pouvez utiliser la bibliothèque `elm/regex` intégrée. Vous devez d'abord importer cette bibliothèque dans votre fichier en ajoutant la ligne suivante :
+Dans Elm, les regex sont introduites avec la syntaxe `/pattern options/`, où le motif est entouré de deux barres obliques et les options sont facultatives et apparaissent après le motif. Voici un exemple de regex simple qui recherche les mots "hello" ou "salut" dans une chaîne de caractères :
 
 ```Elm
-import Regex
+import Regex exposing (Regex)
+
+input = "Bonjour à tous! Salut les amis!"
+
+pattern = Regex.regex "/(hello|salut)/"
+
+result = Regex.find pattern input
+
+-- Le résultat sera [|(Just (1,5, "salut"))|]
 ```
 
-Ensuite, vous pouvez utiliser la fonction `Regex.contains` pour vérifier si une chaîne de caractères contient une expression régulière spécifique. Par exemple, si vous voulez vérifier si une adresse e-mail est valide, vous pouvez utiliser le code suivant :
+Comme vous pouvez le voir, la fonction `Regex.find` renvoie le résultat sous forme de liste contenant des tuples avec les correspondances trouvées. Dans cet exemple, nous avons trouvé le mot "salut" à partir de l'index 1 (en raison de l'option "g" pour une recherche globale).
+
+Les regex peuvent également être utilisées pour capturer des sous-groupes de motifs en utilisant des parenthèses. Voici un exemple où nous cherchons à capturer un numéro de téléphone avec un code de pays à partir d'une chaîne de caractères :
 
 ```Elm
-Regex.contains (Regex.regex "[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}") "monemail@elm.com"
+input = "Mon numéro de téléphone est +33 6 12 34 56 78"
+
+pattern = Regex.regex "/\\+(\\d{2}) (\\d{1,2} ?){5}/"
+
+result = Regex.find pattern input
+
+-- Le résultat sera [|(Just (21,24, "33")),(Just (25,27, "6")),(Just (28,32, "12")),(Just (33,35, "34")),(Just (36,38, "56")),(Just (39,41, "78"))|]
 ```
 
-Ce code renverra `True` car l'adresse e-mail est valide. Si vous voulez extraire une partie d'une chaîne de caractères, vous pouvez utiliser la fonction `Regex.find` et spécifier la partie que vous voulez extraire en utilisant des groupes de capture. Par exemple :
-
-```Elm
-Regex.find (Regex.regex "([A-Z0-9._%+-]+)@[A-Z0-9.-]+\.[A-Z]{2,63}") "monemail@elm.com"
-```
-
-Cela renverra `Just "monemail"` car nous avons spécifié que nous voulons extraire la partie avant le symbole "@".
+Pour plus d'exemples et d'informations sur les options disponibles en Elm pour les regex, consultez la documentation officielle.
 
 ## Plongée en profondeur
 
-Si vous voulez en savoir plus sur les expressions régulières et leur syntaxe, il existe de nombreuses ressources en ligne, telles que [ce tutoriel sur les expressions régulières en français](https://www.creativejuiz.fr/blog/astuces/regex-pour-les-nuls-20-exemples-reguliers-utiles) ou [cette documentation sur les expressions régulières en Elm](https://package.elm-lang.org/packages/elm/regex/latest/Regex).
+Les regex peuvent sembler déroutantes au début en raison de leur syntaxe cryptique et de leur utilisation de caractères spéciaux pour définir des motifs. Cependant, une fois que vous avez compris les bases, elles peuvent être un outil puissant pour automatiser des tâches de manipulation de chaînes de caractères. Voici quelques conseils à garder en tête lors de l'utilisation de regex en Elm :
 
-Il est important de noter que les expressions régulières peuvent être difficiles à comprendre et à déboguer, surtout pour les débutants. Il est donc recommandé de pratiquer et de tester vos expressions régulières avant de les utiliser dans votre code.
+- Utilisez des caractères d'échappement pour éviter toute confusion avec les caractères spéciaux.
+- Utilisez des options telles que "i" pour une recherche insensible à la casse et "m" pour rechercher sur plusieurs lignes.
+- Expérimentez avec différents sites en ligne pour tester vos regex.
+- N'oubliez pas que les regex peuvent être coûteuses en termes de performances, essayez donc d'optimiser votre motif si possible.
 
 ## Voir aussi
 
-- [Documentation officielle Elm sur les expressions régulières](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- [Tutoriel sur les expressions régulières en français](https://www.creativejuiz.fr/blog/astuces/regex-pour-les-nuls-20-exemples-reguliers-utiles)
-- [Différents outils pour tester et expérimenter avec des expressions régulières](https://www.creativejuiz.fr/blog/outils-tester-adn-texte-expressions-regulieres)
+- [Documentation officielle Elm pour les regex](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Un guide complet pour apprendre les regex](https://regexone.com/)
+- [Un outil interactif en ligne pour tester les regex en temps réel](https://regex101.com/)

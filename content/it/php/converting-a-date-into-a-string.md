@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "PHP: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché convertire una data in una stringa?
+## Perché
 
-In programmazione, ci sono molti casi in cui è necessario manipolare le date. A volte, potrebbe essere necessario convertire una data in una stringa per poterla visualizzare correttamente o utilizzarla in un'operazione di confronto. In questo articolo, vedremo come fare questa conversione utilizzando PHP e quali sono le migliori pratiche da seguire.
+Convertire una data in una stringa è un'operazione comune quando si lavora con le date in PHP. Ciò può essere utile per visualizzare le date in un formato specifico o per manipolare i dati in modo più semplice.
 
-## Come convertire una data in una stringa
+## Come Fare
 
-Per convertire una data in una stringa, possiamo utilizzare la funzione `date` di PHP. Questa funzione accetta due parametri: il formato desiderato per la data e la data da convertire. Ad esempio, se vogliamo visualizzare la data di oggi nel formato "giorno, mese anno", possiamo utilizzare il seguente codice:
-
-```PHP
-$data = date("d, m Y", time());
-echo $data; // Output: 27, 11 2020
-```
-
-È importante notare che il parametro `time()` viene utilizzato per specificare la data di oggi. Tuttavia, possiamo passare qualsiasi altra data come secondo parametro se vogliamo convertire una data specifica invece della data corrente.
-
-## Deep Dive
-
-La funzione `date` di PHP supporta una vasta gamma di formati per le date. Ad esempio, possiamo utilizzare i seguenti caratteri per formattare la data:
-
-- `d`: giorno del mese, con due cifre
-- `m`: mese, con due cifre
-- `Y`: anno con quattro cifre
-- `D`: abbreviazione del giorno della settimana (es. Mon, Tue, Wed...)
-- `M`: abbreviazione del mese (es. Jan, Feb, Mar...)
-- `l`: nome completo del giorno della settimana (es. Monday, Tuesday, Wednesday...)
-- `F`: nome completo del mese (es. January, February, March...)
-
-Inoltre, possiamo anche utilizzare caratteri speciali come `/`, `.` o `-` per separare i parametri del formato utilizzati. Ad esempio:
+Per convertire una data in una stringa in PHP, possiamo utilizzare la funzione `date()` che accetta due parametri: il formato della data desiderato e la data stessa.
 
 ```PHP
-$data = date("d-m-Y", time());
-echo $data; // Output: 27-11-2020
-
-$data = date("l, d M Y", time());
-echo $data; // Output: Friday, 27 Nov 2020
+$date = date('d/m/Y', time()); // Restituisce la data odierna nel formato "giorno/mese/anno"
+echo $date; // Output: 18/07/2020
 ```
 
-## Vedi anche
+Possiamo anche specificare una data diversa da quella odierna utilizzando la funzione `strtotime()`.
 
-- [PHP date function documentation](https://www.php.net/manual/en/function.date.php)
-- [10 common date formatting mistakes in PHP](https://www.noupe.com/php/common-php-date-format-mistakes.html)
-- [How to compare dates in PHP](https://www.php.net/manual/en/datetime.diff.php)
+```PHP
+$date = date('F j, Y', strtotime('2020-12-25')); // Restituisce la data del 25 dicembre 2020 nel formato "mese giorno, anno"
+echo $date; // Output: December 25, 2020
+```
+
+Inoltre, possiamo utilizzare le lettere chiave del formato per personalizzare ulteriormente la nostra stringa di data. Ad esempio:
+
+```PHP
+$date = date('d \d\e\l m \d\e\l Y', strtotime('yesterday')); // Restituisce la data di ieri nel formato "dd del mm del yyyy"
+echo $date; // Output: 17 del 07 del 2020
+```
+
+Ci sono molte altre possibili combinazioni di formato e opzioni disponibili per la funzione `date()`. Assicurati di consultare la documentazione ufficiale di PHP per ulteriori dettagli.
+
+## Approfondimento
+
+La funzione `date()` utilizza il timestamp Unix come valore di default. Questo rappresenta il numero di secondi trascorsi dal 1° gennaio 1970 a mezzanotte (00:00:00) di una data specifica. Questo rende più facile per PHP calcolare date e orari, in quanto tutti i dati sono basati su un unico numero.
+
+Inoltre, è possibile utilizzare la funzione `setlocale()` per specificare la lingua e il paese desiderati per la formattazione della data. Ad esempio, se si vuole visualizzare la data in italiano, possiamo utilizzare il seguente codice:
+
+```PHP
+setlocale(LC_TIME, 'it_IT');
+
+$date = strftime('%A, %d %B %Y', time()); // Restituisce la data odierna nel formato "giorno della settimana, giorno mese anno"
+echo $date; // Output: Sabato, 18 Luglio 2020
+```
+
+## Vedi Anche
+
+- Documentazione ufficiale di PHP sulla funzione `date()`: https://www.php.net/manual/it/function.date.php
+- Documentazione ufficiale di PHP sulla funzione `setlocale()`: https://www.php.net/manual/it/function.setlocale.php

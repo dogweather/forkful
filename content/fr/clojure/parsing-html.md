@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Analyse de code html"
-simple_title:         "Analyse de code html"
+title:                "Analyse de code HTML"
+html_title:           "Clojure: Analyse de code HTML"
+simple_title:         "Analyse de code HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,86 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # Pourquoi
+ 
+Si vous êtes un développeur Web, vous avez probablement été confronté à la tâche de parcourir du code HTML pour extraire des informations pertinentes. Cela peut être nécessaire lors de la collecte de données, de la création de web scrapers ou de la mise en forme des données pour les présenter sur un site Web. Le parsing HTML est donc un outil utile pour les développeurs qui cherchent à interagir avec le contenu Web de manière efficace.
 
-Si vous êtes un programmeur débutant en Clojure ou si vous cherchez simplement à étendre vos compétences en programmation, vous vous demandez peut-être pourquoi vous devriez vous intéresser à l'analyse du HTML. Eh bien, la réponse est simple : le HTML est le langage de balisage standard pour la création de pages web. En comprenant comment analyser le HTML, vous pourriez non seulement être en mesure de mieux comprendre l'architecture des sites web, mais également de manipuler et de traiter les données contenues dans ces pages.
+## Comment faire
 
-# Comment faire
-
-Pour analyser le HTML en Clojure, vous aurez besoin de la bibliothèque clj-html-parse. Cette bibliothèque permet de convertir du HTML en données Clojure structurées, ce qui facilite grandement l'analyse et le traitement des informations. Voici un exemple de code montrant comment utiliser la bibliothèque pour récupérer le titre d'un site web :
-
-```Clojure
-(ns mon-projet.html
-  (:require [net.cgrand.jsoup :as jsoup]))
-
-(defn get-title [url]
-  (-> (jsoup/get url)
-      :body
-      (select "title")
-      first
-      (text)))
-
-(get-title "https://www.example.com")
-;; => "Example Domain"
-```
-
-En utilisant la fonction `get` de la bibliothèque jsoup, nous récupérons le contenu HTML de l'URL spécifiée. Ensuite, nous utilisons la fonction `select` pour cibler l'élément `title` dans le body du HTML et nous utilisons `text` pour extraire le contenu texte de cet élément.
-
-Ceci n'est qu'un exemple de base, mais la bibliothèque clj-html-parse offre une grande variété de fonctions pour faciliter l'analyse du HTML en Clojure. N'hésitez pas à l'explorer davantage pour en apprendre davantage sur ses fonctionnalités.
-
-# Plongée en profondeur
-
-Maintenant que nous avons vu comment utiliser la bibliothèque clj-html-parse pour analyser le HTML, explorons un peu plus en profondeur ce à quoi ressemblent les données structurelles générées par la bibliothèque.
-
-Étant donné que le HTML est un langage de balisage, il est structuré en éléments et en attributs. La bibliothèque clj-html-parse convertit ces éléments et attributs en une structure de données Clojure appelée un "arbre". Un arbre est une structure de données composée de nœuds connectés les uns aux autres.
-
-Voici un exemple d'un arbre généré par la bibliothèque clj-html-parse :
+Pour effectuer du parsing HTML en Clojure, nous allons utiliser la bibliothèque "clj-tagsoup". Tout d'abord, nous devons l'ajouter en tant que dépendance dans notre projet Clojure. Ensuite, nous pouvons importer la bibliothèque dans notre code en utilisant la directive "require" :
 
 ```Clojure
-{:tag :html,
- :attrs {},
- :content
- [{:tag :head,
-   :attrs {},
-   :content
-   [{:tag :meta,
-     :attrs {:charset "UTF-8"},
-     :content nil}
-    {:tag :title,
-     :attrs {},
-     :content
-     [{:tag :text,
-       :content "Example Domain"}]}]}
-  {:tag :body,
-   :attrs {},
-   :content
-   [{:tag :h1,
-     :attrs {},
-     :content
-     [{:tag :text,
-       :content "Example Domain"}]}
-    {:tag :div,
-     :attrs {:class "container"},
-     :content
-     [{:tag :p,
-       :attrs {},
-       :content
-       [{:tag :text, :content "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission."}]}
-      {:tag :p,
-       :attrs {},
-       :content
-       [{:tag :a,
-         :attrs {:href "https://www.iana.org/domains/example"},
-         :content
-          [{:tag :text, :content "More information"}]}]}]}]}]}
+(require '[net.cgrand.tagsoup :as xml])
 ```
 
-Comme vous pouvez le voir, chaque nœud de l'arbre correspond à un élément du HTML et contient ses propres attributs et contenu.
+Maintenant, nous pouvons utiliser la fonction "parse" de la bibliothèque pour convertir notre code HTML en une structure de données Clojure :
 
-En comprenant cette structure, vous pouvez mieux naviguer et extraire les informations du HTML à l'aide de fonctions de manipulation de données Clojure telles que `get-in` et `map`.
+```Clojure
+(def html "<html><body><h1>Hello World</h1></body></html>")
+(def parsed-html (xml/parse html))
+```
 
-# Voir aussi
+Nous pouvons maintenant utiliser des sélecteurs CSS pour extraire des informations spécifiques de notre structure de données :
 
-Pour en savoir plus sur l'analyse du HTML en Clojure, voici quelques liens utiles :
+```Clojure
+(def title (xml/select parsed-html [:h1]))
+```
 
-- [Documentation de la bibliothèque clj-html-parse](https://github.com/netceteragroup/clj-html-parse)
-- [Tutorial de Clojure sur l'extraction de
+Le résultat sera une liste contenant tous les éléments de type h1 dans notre code HTML. Nous pouvons ensuite accéder à leurs valeurs en utilisant la fonction "content" :
+
+```Clojure
+(def title-value (xml/content (first title)))
+```
+
+Le résultat sera "Hello World". Vous pouvez également utiliser des sélecteurs plus complexes pour extraire des données à partir de balises, de classes ou d'identifiants spécifiques.
+
+## Plongée en profondeur
+
+La bibliothèque "clj-tagsoup" utilise la spécification XML pour créer une structure de données Clojure à partir du code HTML. Cela signifie qu'elle est plus robuste que d'autres méthodes de parsing qui utilisent des expressions régulières ou des sélecteurs jQuery. De plus, en utilisant des sélecteurs CSS, nous pouvons facilement naviguer dans le code HTML même si la structure de celui-ci change.
+
+Outre "clj-tagsoup", il existe d'autres bibliothèques en Clojure qui peuvent être utilisées pour du parsing HTML, comme "enlive" ou "hiccup". Chacune a ses avantages et ses inconvénients, il est donc important de comprendre les différentes options disponibles pour choisir celle qui convient le mieux à votre projet.
+
+## Voir aussi
+
+- Documentation de "clj-tagsoup" : https://github.com/clj-commons/tagsoup
+- Tutoriel sur le parsing HTML en Clojure : https://www.baeldung.com/clojure-parse-html

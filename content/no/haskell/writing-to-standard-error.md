@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriver til standardfeil"
+html_title:           "Haskell: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,35 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når man skriver kode i Haskell, er det viktig å kunne håndtere feil og unntak på en effektiv måte. En god måte å gjøre dette på er å skrive til standard error (stderr) i stedet for standard output (stdout). Dette lar våre brukere få informasjon om feil og unntak som påvirker programmets utførelse.
+Å skrive til standard error kan være nyttig for å få mer informasjon om feil i programmering. Det lar deg få informasjon om hva som gikk galt og hvor i koden det skjedde, noe som kan være nyttig for å finne og rette feil.
 
-## Hvordan
+## Slik gjør du det
 
-For å skrive til stderr i Haskell, må vi bruke "System.IO" biblioteket og importere "stderr" funksjonen. Deretter kan vi kalle denne funksjonen og gi den en melding som parameter. Her er et enkelt eksempel som viser hvordan man skriver en enkel feilmelding til stderr:
-
-```Haskell
-import System.IO
-
-main = hPutStrLn stderr "En feil har oppstått i programmet."
-```
-
-Når vi kjører dette programmet, vil vi se at meldingen blir skrevet til stderr i stedet for stdout.
-
-## Dypdykk
-
-Det finnes også en rekke andre funksjoner og metoder for å håndtere stderr i Haskell. For eksempel kan vi bruke "System.IO.hPutStrLn" funksjonen til å skrive en melding til stderr, men denne gangen med mulighet for å formatere meldingen med argumenter. Her er et eksempel som viser dette:
+For å skrive til standard error i Haskell, kan du bruke funksjonen `hPutStrLn` fra `System.IO`-modulen. Denne funksjonen tar inn en handle, som i dette tilfellet er `stderr`, og en streng som skal skrives ut. Her er et eksempel på hvordan du kan bruke den:
 
 ```Haskell
-import System.IO
+import System.IO (hPutStrLn, stderr)
 
 main = do
-  let num = 100
-  hPutStrLn stderr $ "En feil med nummer " ++ show num ++ " har oppstått."
+  hPutStrLn stderr "Dette er en feilmelding"
 ```
 
-I dette tilfellet bruker vi "show" funksjonen for å konvertere tallet vår til en streng, slik at vi kan inkludere det i meldingen.
+Dette vil skrive ut teksten "Dette er en feilmelding" til standard error. Merk at du må importere modulen `System.IO` for å bruke `hPutStrLn`-funksjonen.
 
-## Se Også
+## Dykk dypere
 
-- [System.IO.stderr dokumentasjon](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:stderr)
-- [hPutStrLn dokumentasjon](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+Det finnes også andre funksjoner i `System.IO`-modulen som kan være nyttige for å skrive til standard error. For eksempel kan du bruke `hPrintf` for å skrive ut formatert tekst til handle. Du kan også bruke `hPutStr` eller `hPutChar` for å skrive ut uten ny linje, eller `hFlush` for å tømme buffere og få teksten til å vises umiddelbart.
+
+Det kan også være nyttig å vite at du kan definere din egen handle til standard error ved hjelp av `stderr :: Handle`. Dette kan være nyttig hvis du vil ha en egen handle spesifikt for å skrive til standard error.
+
+## Se også
+
+- [Offisiell dokumentasjon for `System.IO`-modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [Haskell Programmering fra Scratch av Timothy Renner](https://www.simplesnippets.tech/haskell-for-beginners/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Skicka en http-förfrågan med grundläggande autentisering"
-simple_title:         "Skicka en http-förfrågan med grundläggande autentisering"
+title:                "Sända en http-begäran med grundläggande autentisering"
+html_title:           "Fish Shell: Sända en http-begäran med grundläggande autentisering"
+simple_title:         "Sända en http-begäran med grundläggande autentisering"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,38 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Det finns många tillfällen där du behöver skicka en HTTP-begäran med grundlegitimering, till exempel när du kommunicerar med en API-tjänst som kräver autentisering. Genom att lära dig hur man gör det i Fish Shell kan du enkelt automatisera uppgifter som kräver kommunikation med externa servrar.
 
-Att skicka en HTTP-begäran med grundläggande autentisering kan vara en nödvändig del av många Fish Shell-program. Genom att använda denna metod kan du säkert skicka användarnamn och lösenord till en server för autentiseringsändamål.
+## Hur man gör
+För att kunna skicka en HTTP-begäran med grundlegitimering i Fish Shell behöver du använda kommandot "curl". Curl är ett verktyg som används för att skicka och ta emot data från en server. Här är ett exempel på hur du kan skicka en GET-begäran med grundlegitimering och spara svaret i en textfil:
 
-## Så här gör du
-
-Det första steget är att definiera din begäran med rätt URL och metod. I detta exempel använder vi kommandot *curl* för att skicka en GET-begäran till en server:
-
-```Fish Shell
-curl example.com/api -X GET
+```
+fish shell 
+curl -u username:password -o response.txt https://www.example.com/api/endpoint
 ```
 
-Nu måste vi lägga till den grundläggande autentiseringsinformationen. Detta kan göras genom att använda flaggan *-u* följt av ditt användarnamn och lösenord:
+I det här exemplet ersätter du "username" och "password" med dina faktiska autentiseringsuppgifter och "https://www.example.com/api/endpoint" med den URL du vill skicka begäran till. Detta kommer att skapa en textfil med namnet "response.txt" som innehåller svaret från servern.
 
-```Fish Shell
-curl example.com/api -X GET -u username:password
-```
-
-Ett annat sätt att göra detta är att använda flaggan *--basic*:
-
-```Fish Shell
-curl example.com/api -X GET --basic -u username:password
-```
-
-Om autentiseringen lyckas, kommer du att få ett svar från servern med statuskoden 200. Om autentiseringen misslyckas får du istället en statuskod på 401. Se till att inkludera autentiseringsinformationen i varje begäran till servern för att säkerställa en korrekt autentiseringsprocess.
-
-## Deep Dive
-
-Vad händer egentligen när vi skickar en HTTP-begäran med grundläggande autentisering? När vi inkluderar autentiseringsinformationen i vår begäran, skickas en särskild HTTP-header, kallad *Authorization*, till servern. Denna header innehåller bas64-kodad information som visar vårt användarnamn och lösenord i formatet "Användarnamn:Lösenord". Servern kan då dekoda denna information och autentisera oss innan den behandlar begäran.
-
-Det är viktigt att komma ihåg att grundläggande autentisering inte krypterar någon av dina autentiseringsuppgifter. Det enda skydd som erbjuds är baserad på att informationen är kodad i bas64-format. För att säkerställa en riktigt säker autentiseringsprocess bör du istället överväga att använda andra autentiseringsmetoder som OAuth eller JWT.
+## Djupdykning
+För att förstå hur det här kommandot fungerar behöver vi bryta ner det och förklara varje del. "Curl" är kommandonamnet som startar programvaran som används för att skicka begäran. "-u" är en flagga som indikerar att du ska använda grundläggande autentisering. "Username" och "password" är de autentiseringsuppgifter som krävs. "-o" är en flagga som talar om att du vill spara utdata från servern i en fil, och "response.txt" är namnet på den filen. Slutligen är "https://www.example.com/api/endpoint" den URL du skickar begäran till.
 
 ## Se även
-
-- [Curl dokumentation](https://curl.se/docs/)
-- [HTTP-headers och autentisering](https://www.w3.org/Protocols/HTTP/1.0/spec.html#Authentication)
+- [Fish Shell](https://fishshell.com/)
+- [Curl dokumentation](https://curl.se/docs/manual.html)
+- [HTTP-begäran med grundläggande autentisering](https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 发送一个http请求"
-simple_title:         "发送一个http请求"
+title:                "发送一个http请求。"
+html_title:           "Clojure: 发送一个http请求。"
+simple_title:         "发送一个http请求。"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要发送HTTP请求？
 
-HTTP请求是现代互联网世界中至关重要的一部分。它们允许我们通过网络发送和接收数据，从而让我们的应用程序能够与服务器进行通信。无论是构建网站、开发API还是处理数据，发送HTTP请求都是必不可少的步骤。
+当我们浏览网页、使用手机应用或者和服务器交互数据时，我们都在与HTTP请求打交道。通过发送HTTP请求，我们能够获取所需的数据或者与其他系统进行通信，这在现代软件开发中非常常见。
 
-## 如何做
+## 如何发送HTTP请求
 
-首先，我们需要导入Clojure的`clj-http`库，它提供了许多有用的函数来帮助我们发送HTTP请求。
+我们可以使用Clojure的内置库`clojure.java.net`来发送HTTP请求。下面是一个简单的示例，我们将发送GET请求到一个API，并打印出响应内容：
 
-```Clojure
-(ns my-app.core
-  (:require [clj-http.client :as http]))
+```clojure
+(require '[clojure.java.net :as http])
+
+(defn send-request [url]
+  (-> url
+    (http/request)
+    (http/response)
+    (http/entity)
+    (slurp)))
+
+(def response (send-request "https://dog.ceo/api/breeds/image/random"))
+(println response)
 ```
 
-接下来，使用`http/get`函数来发送一个GET请求。我们可以指定URL、可选的请求头和请求体。
+运行以上代码，我们将得到一个包含随机狗狗图片链接的字符串。
 
-```Clojure
-(def url "https://jsonplaceholder.typicode.com/posts/1")
-
-(def res (http/get url
-            {:headers {"Content-Type" "application/json"}
-             :body "{\"title\":\"Hello\",\"body\":\"World\",\"userId\":1}"})) ; 发送一个请求体
-
-(println (:body res)) ; 输出响应的主体内容
+```clojure
+{:data {:image "https://images.dog.ceo/breeds/doberman/n02107142_1293.jpg", :message "https://images.dog.ceo/breeds/doberman/n02107142_1293.jpg", :status "success"}}
 ```
 
-这个请求将会返回一个类似于以下内容的响应：
+## 深入了解HTTP请求
 
-```json
-{
-    "userId": 1,
-    "id": 1,
-    "title": "Hello",
-    "body": "World"
-}
-```
+HTTP是一种客户端-服务器协议，客户端通过发送请求获得服务器端的响应。HTTP请求由请求方法、URL、请求头和可选的请求体组成。主要的请求方法包括GET、POST、PUT、DELETE等。
 
-我们也可以发送其它类型的请求，比如POST、PUT、DELETE等等。只需要使用相应的函数（`http/post`、`http/put`、`http/delete`）并提供相应的参数。
+除了使用内置库，我们还可以使用第三方库如`clj-http`来发送HTTP请求。这些库提供了额外的特性，如错误处理和异步请求。
 
-## 深入了解
+# 同样也看看这些
 
-发送HTTP请求的过程实际上涉及到许多的细节，包括建立TCP连接、HTTP协议的细节、请求头和响应的处理等等。如果你对此感兴趣，建议你阅读更多关于HTTP协议的资料，来更好地理解发送HTTP请求的过程。
-
-## 参考链接
-
-- [clj-http官方文档](https://github.com/dakrone/clj-http)
-- [HTTP协议介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
-- [官方Clojure文档](https://clojure.org/)
+- [HTTP请求的详细文档](https://clojure.github.io/clojure/clojure.java.net-api.html)
+- [Clj-http库的文档](https://clojars.org/clj-http)
+- [HTTP请求的常见问题解答](https://stackoverflow.com/questions/32306827/clojure-http-request-example)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 현재 날짜 받기"
-simple_title:         "현재 날짜 받기"
+title:                "현재 날짜 가져오기"
+html_title:           "Gleam: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,89 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 얻는 것에 대한 의미는 대부분의 사람들에게 명확합니다. 우리는 우리의 일정, 회의 및 이벤트를 추적하며 기한을 준수할 필요가 있기 때문에 현재 날짜를 알고 싶어합니다. 따라서 모든 프로그래밍 언어에는 현재 날짜를 얻는 기능이 있으며 Gleam 역시 예외는 아닙니다.
+현재 날짜를 얻는 방법에 대해 궁금해 졌다면, 당신은 고민할 필요가 없습니다! Gleam에서 제공하는 내장 함수를 사용하여 쉽게 현재 날짜를 얻을 수 있습니다.
 
-## 어떻게
+## 사용 방법
 
-Gleam에서 현재 날짜를 얻기 위해서는 `gleam/time` 모듈을 임포트해야 합니다. 그런 다음 `Time.now()` 함수를 호출하면 현재 시간이 `Time` 구조체로 반환됩니다.
-
-예를 들어, 다음과 같은 코드를 실행하면 현재 날짜와 시간이 출력됩니다.
-
-```Gleam
+``` Gleam
 import gleam/time
 
-fn main() {
-  time = Time.now()
-  IO.print(time)
-}
+let today = time.now()
+
+// 2021-05-27T14:18:06+00:00
 ```
 
-출력:
+위의 코드는 현재 날짜와 시간을 UTC로 출력합니다. 만약 자신의 타임존에 맞게 출력하고 싶다면, `now()` 함수를 `now_tz()`로 바꾸어 사용할 수 있습니다.
 
-```Gleam
-#<Time { 
-  day: 3, # day of the month
-  day_of_week: Fri,
-  day_of_year: 316,
-  hour: 16,
-  microsecond: 259625,
-  minute: 10,
-  month: Nov,
-  nanosecond: 259625000,
-  second: 53,
-  timezone: +00,
-  year: 2021
-}>
+``` Gleam
+let today = time.now_tz("Asia/Seoul")
+
+// 2021-05-27T23:18:06+09:00
 ```
 
-Gleam에서는 `Time` 구조체를 사용하여 원하는 포맷으로 날짜와 시간을 출력할 수도 있습니다. 예를 들어, 다음과 같은 코드로 현재 날짜와 시간을 `yyyy-MM-dd hh:mm:ss` 형식으로 출력할 수 있습니다.
+또한, `local_now()` 함수를 사용하여 현재 로컬 시간을 얻을 수도 있습니다.
 
-```Gleam
-import gleam/time
+``` Gleam
+let now = time.local_now()
 
-fn main() {
-  time = Time.now()
-  datetime = Time.format(time, "%Y-%m-%d %H:%M:%S")
-  IO.print(datetime)
-}
+// 2021-05-27T23:18:06+09:00
 ```
 
-출력:
+더 많은 사용 예제를 보려면 [Gleam 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)를 참고해주세요.
 
-```Gleam
-2021-11-03 16:17:54
-```
+## 더 들어가기
 
-## 딥 다이브
+Gleam에서는 내장 함수를 통해 현재 날짜를 얻는 것 외에도 다양한 작업을 할 수 있습니다. 예를 들어, `add()` 함수를 사용하면 날짜에 일정 기간만큼 더하거나 빼는 것도 가능합니다. 또한, `format()` 함수를 사용하여 날짜를 원하는 형식으로 표현할 수 있습니다.
 
-Gleam에서 날짜와 시간을 다루는 더욱 심화된 내용을 알아봅시다. `Time` 구조체는 12개의 필드를 가지고 있습니다. 각 필드의 의미는 다음과 같습니다.
+더 많은 내장 함수와 예제는 [Gleam 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)에서 확인할 수 있습니다.
 
-- `day`: 일
-- `day_of_week`: 일주일 중 몇 번째 요일인지 나타냄 (Mon, Tue, Wed, Thu, Fri, Sat, Sun)
-- `day_of_year`: 일년 중 몇 번째 날인지 나타냄
-- `hour`: 시간 (24시간 형식)
-- `microsecond`: 마이크로초
-- `minute`: 분
-- `month`: 월 (1월부터 12월까지)
-- `nanosecond`: 나노초
-- `second`: 초
-- `timezone`: 시간대 (현재는 +00 고정)
-- `year`: 연도
+## 더 알아보기
 
-현재 날짜와 시간을 `Time` 구조체의 각 필드별로 어떻게 얻을 수 있는지 살펴봅시다.
+현재 날짜를 얻는 것은 프로그램에서 매우 중요한 작업입니다. Gleam에서는 일반적으로 사용되는 구문을 내장 함수로 제공하므로 더 간단하게 현재 날짜를 다룰 수 있습니다. 하지만, 이 내장 함수들이 어떻게 동작하는지 궁금하다면 [Gleam의 소스 코드](https://github.com/gleam-lang/gleam/blob/master/lib/std/src/time.gleam)를 살펴보는 것도 좋은 학습 방법입니다.
 
-- `day`: `time.day`
-- `day_of_week`: `time.day_of_week`
-- `day_of_year`: `time.day_of_year`
-- `hour`: `time.hour`
-- `microsecond`: `time.microsecond`
-- `minute`: `time.minute`
-- `month`: `time.month`
-- `nanosecond`: `time.nanosecond`
-- `second`: `time.second`
-- `timezone`: `time.timezone`
-- `year`: `time.year`
+## 관련 링크
 
-## 따라 해보기
+[Gleam 날짜와 시간 관련 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)
 
-마지막으로, Gleam에서 현재 날짜와 시간을 얻는 방법을 직접 해보세요. Gleam REPL에서 간단한 코드를 실행해보거나, 새로운 프로젝트를 시작하여 날짜와 시간을 출력하는 코드를 작성
+[Gleam 소스 코드에서 날짜와 시간 관련 내장 함수 확인하기](https://github.com/gleam-lang/gleam/blob/master/lib/std/src/time.gleam)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Gleam: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil kan vara en viktig del av programmering. Det kan användas för att lagra data, skapa konfigurationsfiler eller till och med för att kommunicera med andra program. Att kunna skriva en textfil effektivt är därför en viktig färdighet för programmerare.
+Att skriva en textfil är ett enkelt och användbart sätt att lagra och dela information med andra. Textfiler kan användas för allt från att spara anteckningar och listor till att skapa kodfiler och dokumentation för ett projekt.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva en textfil i Gleam behöver du först skapa en fil med rätt filändelse, till exempel `.txt` eller `.csv`, och sedan öppna den för att skriva till den. Detta kan göras med hjälp av `File.open`-funktionen. Här är ett exempel på hur man kan öppna och skriva till en textfil:
+För att skriva en textfil i Gleam, behöver du använda funktionen `gleam/io/filesystem.write_file`. Här är ett enkelt exempel på hur du kan använda den:
 
 ```Gleam
-let fil = File.open("min_textfil.txt")   // öppnar en fil vid namn "min_textfil.txt"
-File.write(fil, "Detta är en text som vi skriver till filen.") // skriver till filen
-File.close(fil) // stänger filen när vi är klara med den
+import gleam/io/filesystem
+
+fn write() {
+    let text = "Hej, det här är en textfil!"
+    let result = filesystem.write_file("textfil.txt", text)
+    case result {
+        Ok -> println!("Textfilen har skrivits!")
+        Error(e) -> println("Ett fel uppstod: {}", e)
+    }
+}
 ```
 
-När vi har öppnat och skrivit till filen kan vi även specificera var i filen vi vill skriva. Till exempel kan vi använda `File.seek`-funktionen för att positionera oss till en specifik rad i filen innan vi börjar skriva. Detta kommer att vara användbart när vi ska läsa från filen senare.
+I detta exempel skapar vi en variabel `text` som innehåller den text som vi vill skriva till textfilen. Sedan använder vi funktionen `write_file` för att skriva innehållet i variabeln till en fil med namnet "textfil.txt". Om allt går bra, kommer vi att se ett meddelande som bekräftar att textfilen har skrivits. Om det uppstår ett fel, kommer vi att se ett felmeddelande istället.
+
+Det finns också andra funktioner som kan användas för att skriva textfiler i Gleam, till exempel `gleam/io/filesystem.append_file` för att lägga till text till en befintlig textfil eller `gleam/io/filesystem.write_bytes` för att skriva binära data till en fil.
 
 ## Djupdykning
 
-Att skriva en textfil innebär inte bara att bara skriva en massa text. Det finns även andra aspekter att tänka på, som till exempel att formatera texten eller hantera eventuella felmeddelanden som kan uppstå.
+När vi skriver en textfil, kan vi använda olika teckenkodningar för att bestämma hur tecken i filen ska representeras. Standardteckenkodningen som används i Gleam är UTF-8, vilket är en vanlig teckenkodning som stödjs av de flesta moderna operativsystem och program.
 
-En viktig del av att skriva en textfil är att förstå vilken typ av data som kan skrivas till olika filformat. Till exempel måste data skrivas på ett visst sätt för att en CSV-fil ska kunna läsas korrekt. Att förstå detta kan hjälpa till att undvika problem längre ner i programmet.
-
-Det är även viktigt att hantera felmeddelanden som kan uppstå vid skrivning till en fil. Om filen av någon anledning inte kan öppnas eller skrivas till måste detta hanteras på ett korrekt sätt för att programmet inte ska krascha.
+Det är också viktigt att vara medveten om att textfiler har en bestämd slutmarkör som används för att indikera slutet på en rad. Slutmarkören kan variera mellan olika operativsystem, så det kan vara bra att använda funktionen `gleam/io/filesystem.write_system_text_file` istället för `write_file` om du vill att din textfil ska användas på flera olika plattformar.
 
 ## Se även
 
-- [Gleam filbibliotekets dokumentation](https://gleam.run/lib/io/file.html)
-- [En guide till att skriva en grundläggande textfil i Gleam](https://pragmaticstudio.com/tutorials/creating-files-in-gleam)
-- [En utförlig beskrivning av filhantering i Gleam](https://gleam.run/book/tour/file-handling.html)
+Här är några användbara länkar för att lära dig mer om att skriva textfiler i Gleam:
+
+- [Gleams officiella dokumentation för filsystemmodulen (på engelska)](https://gleam.run/book/standard-library.html#filesystem)
+- [En kort handledning om att skriva textfiler i Gleam (på engelska)](https://medium.com/@eliseuvideiramorales/creating-and-reading-files-in-gleam-f572a17be7f3)

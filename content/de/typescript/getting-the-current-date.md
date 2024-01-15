@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Das aktuelle Datum erhalten."
-simple_title:         "Das aktuelle Datum erhalten."
+title:                "Erfassen des aktuellen Datums"
+html_title:           "TypeScript: Erfassen des aktuellen Datums"
+simple_title:         "Erfassen des aktuellen Datums"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,37 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Gründe, warum man sich mit dem aktuellen Datum in TypeScript beschäftigen sollte. Zum Beispiel kann es hilfreich sein, um Zeitstempel in Programmen zu nutzen oder um die Dauer zwischen verschiedenen Datumswerten zu berechnen. In diesem Artikel werden wir uns damit beschäftigen, wie man in TypeScript das aktuelle Datum bekommen und nutzen kann.
 
-## Wie 
-Es gibt mehrere Möglichkeiten, in TypeScript das aktuelle Datum zu erhalten. Eine Möglichkeit ist die Verwendung der Date-Klasse. Hier ein Beispiel:
+Das aktuelle Datum ist eine wichtige Information in vielen Programmen, sei es für die Anzeige auf einer Benutzeroberfläche, als Teil eines Zeitstempels oder für komplexe Datumsberechnungen. Im TypeScript gibt es verschiedene Möglichkeiten, das aktuelle Datum zu erhalten und zu manipulieren. In diesem Artikel werfen wir einen kurzen Blick darauf, wie man das aktuelle Datum in TypeScript erhalten kann.
 
-```TypeScript
-const aktuellesDatum = new Date();
-console.log(aktuellesDatum.getDate());
-```
+## Wie geht man vor?
 
-Das obige Beispiel erstellt eine neue Instanz der `Date`-Klasse und gibt den Tag des Monats des aktuellen Datums aus. Hier sind einige weitere Beispiele, wie man die Date-Klasse nutzen kann:
+Um das aktuelle Datum in TypeScript zu erhalten, können wir die integrierte `Date()`-Funktion verwenden. Diese Funktion gibt ein Objekt mit dem Datum und der Zeit des aktuellen Zeitpunkts zurück. Wir können dann Methoden wie `getDate()` und `getMonth()` verwenden, um bestimmte Teile des Datums zu erhalten.
 
 ```TypeScript
-const aktuellesDatum = new Date();
-console.log(aktuellesDatum.getFullYear()); // Gibt das aktuelle Jahr aus
-console.log(aktuellesDatum.getMonth()); // Gibt den aktuellen Monat aus (beginnend bei 0 für Januar)
-console.log(aktuellesDatum.getHours()); // Gibt die aktuelle Stunde aus
-console.log(aktuellesDatum.getMinutes()); // Gibt die aktuellen Minuten aus
-console.log(aktuellesDatum.getSeconds()); // Gibt die aktuellen Sekunden aus
+let currentDate = new Date();
+console.log(currentDate); // Ausgabe: current Date and time object
+
+let currentDay = currentDate.getDate();
+console.log(currentDay); // Ausgabe: aktueller Tag
 ```
 
-## Deep Dive
-Die Date-Klasse bietet noch viele weitere Methoden, um mit Datumswerten zu arbeiten. Hier sind einige Beispiele:
+Um das Datum in einem bestimmten Format auszugeben, können wir die `toLocaleDateString()`-Methode verwenden. Diese Methode akzeptiert als Parameter das gewünschte Format, in dem das Datum angezeigt werden soll.
 
-- `getTime()`: Gibt die Anzahl der Millisekunden seit dem 1. Januar 1970 zurück
-- `setFullYear()`: Setzt das Jahr des Datums auf den angegebenen Wert
-- `setMonth()`: Setzt den Monat des Datums auf den angegebenen Wert
-- `setDate()`: Setzt den Tag des Datums auf den angegebenen Wert
+```TypeScript
+let currentDate = new Date();
+console.log(currentDate.toLocaleDateString("de-DE")); // Ausgabe: 09.12.2021 (Dezember 09, 2021)
+```
 
-Es gibt auch die Möglichkeit, das Datum im ISO-8601-Format zu erhalten oder zu setzen. Dafür kann man die `toISOString()`-Methode nutzen.
+Es gibt auch die Möglichkeit, das aktuelle Datum in einer bestimmten Zeitzone zu erhalten. Dazu können wir die `toLocaleTimeString()`-Methode verwenden und als Parameter eine Zeitzone übergeben, z.B. "en-US" für die Zeitzone "Eastern Standard Time" in den USA.
 
-## Siehe Auch
-- [MDN Web Docs - Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Dokumentation - Date Objekt](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
+```TypeScript
+let currentDate = new Date();
+console.log(currentDate.toLocaleTimeString("en-US")); // Ausgabe: 11:29:00 PM (Eastern Standard Time)
+```
+
+## Tiefergehende Einblicke
+
+Das aktuelle Datum kann in TypeScript auch durch die Verwendung von Bibliotheken wie `moment.js` oder `date-fns` verarbeitet werden. Diese Bibliotheken bieten viele nützliche Funktionen für die Arbeit mit Datumsangaben und erleichtern die Datumsberechnungen.
+
+Es ist auch wichtig zu beachten, dass das Datum von JavaScript-Engines aufgrund von Zeitzoneunterschieden und Schaltsekunden möglicherweise nicht immer präzise ist. Deshalb ist es ratsam, mit diesen Unterschieden bei der Verarbeitung von Datumswerten umzugehen.
+
+## Siehe auch
+
+- [Offizielle TypeScript-Dokumentation zu Date-Objekten](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
+- [Moment.js-Library-Dokumentation](https://momentjs.com/docs/)
+- [Date-fns-Library-Dokumentation](https://date-fns.org/docs/Getting-Started)

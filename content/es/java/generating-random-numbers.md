@@ -1,6 +1,7 @@
 ---
-title:                "Java: Generación de números aleatorios"
-simple_title:         "Generación de números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Java: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -9,53 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué generar números aleatorios en Java?
+## Por qué
 
-Generar números aleatorios es una práctica común en la programación para simular situaciones y tomar decisiones de manera impredecible. Además, también se utiliza en la criptografía y en la creación de juegos.
+Generar números aleatorios en Java puede ser útil para una variedad de aplicaciones, como juegos, simulaciones y pruebas de algoritmos. También se puede utilizar para generar datos de prueba para probar el funcionamiento de una aplicación.
 
-## Cómo hacerlo en Java
+## Cómo hacerlo
 
-Para generar números aleatorios en Java, se utiliza la clase Random. Primero, se debe importar la clase en la parte superior del código:
+Generar números aleatorios en Java es muy sencillo utilizando la clase `Random`. Para ello, primero debemos importar la clase en nuestro código:
 
 ```Java
 import java.util.Random;
 ```
 
-Luego, se instancia un objeto de la clase Random:
+Luego, podemos crear una instancia de la clase `Random` y utilizar sus métodos para generar números aleatorios:
 
 ```Java
+// Crear una instancia de la clase Random
 Random random = new Random();
-```
 
-Para generar un número aleatorio entero, se utiliza el método nextInt() de la clase Random. Por ejemplo, si queremos generar un número entre 1 y 10:
+// Generar un número entero aleatorio entre 0 y 100 (excluyendo 100)
+int randomNumber = random.nextInt(100);
 
-```Java
-int randomNumber = random.nextInt(10) + 1;
-System.out.println(randomNumber); // Output: 5 (el resultado será un número entre 1 y 10)
-```
-
-Para generar un número aleatorio de tipo double, se utiliza el método nextDouble(). Por ejemplo:
-
-```Java
+// Generar un número real aleatorio entre 0 y 1
 double randomDouble = random.nextDouble();
-System.out.println(randomDouble); // Output: 0.653 (el resultado será un número entre 0 y 1)
 ```
 
-También se pueden generar números aleatorios dentro de un rango específico utilizando el método nextInt() junto con la fórmula correspondiente. Por ejemplo, si queremos generar un número entre 50 y 100:
+Podemos especificar un rango diferente pasando los valores mínimo y máximo como parámetros a los métodos `nextInt()` y `nextDouble()`. También podemos generar números aleatorios de otros tipos de datos, como `long` y `float`.
+
+Además, podemos utilizar métodos como `nextInt(n)` para generar un número entero aleatorio entre 0 (incluyendo 0) y el número especificado `n` (excluyendo `n`). Esto puede ser útil para generar índices aleatorios para acceder a elementos de una lista o array.
+
+Podemos ver el resultado de nuestro código con un simple `System.out.println()`:
 
 ```Java
-int randomNumberInRange = random.nextInt(51) + 50;
-System.out.println(randomNumberInRange); // Output: 82 (el resultado será un número entre 50 y 100)
+System.out.println(randomNumber); // Imprime un número entero aleatorio entre 0 y 100
+System.out.println(randomDouble); // Imprime un número real aleatorio entre 0 y 1
 ```
 
-## Profundizando en la generación de números aleatorios
+## Profundizando
 
-Java utiliza un algoritmo llamado "Linear Congruential Generator" para generar números aleatorios utilizando la clase Random. Este algoritmo utiliza una semilla (seed) para comenzar a generar una secuencia de pseudoaleatorios. Si no se especifica una semilla, la clase Random utilizará la hora del sistema como semilla por defecto.
+La clase `Random` utiliza un algoritmo para generar números aleatorios. Este algoritmo se basa en una semilla (un número inicial) y utiliza operaciones matemáticas para generar una secuencia de números aparentemente aleatoria.
 
-Es importante tener en cuenta que, aunque los números generados parecen ser aleatorios, en realidad siguen una secuencia predecible basada en la semilla utilizada. Por lo tanto, siempre se recomienda utilizar una semilla diferente si se quiere obtener una secuencia diferente de números aleatorios.
+Es importante tener en cuenta que los números generados por la clase `Random` no son completamente aleatorios, sino que siguen un patrón predecible. Es por eso que, si creamos una instancia de la clase `Random` con la misma semilla, obtendremos la misma secuencia de números aleatorios.
+
+Para generar números más cercanos a la verdadera aleatoriedad, Java ofrece la clase `SecureRandom`, que utiliza una fuente de entropía externa como semilla para su algoritmo. Sin embargo, esta clase puede ser menos eficiente que la clase `Random` ya que requiere acceder a recursos externos.
 
 ## Ver también
 
-- [Documentación de la clase Random en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Tutorial sobre generación de números aleatorios en Java](https://www.geeksforgeeks.org/random-setseed-method-in-java-with-examples/)
-- [Métodos matemáticos para generar números aleatorios](https://www.geeksforgeeks.org/maths-behind-simulating-rolling-of-two-dice/)
+- Documentación oficial de la clase `Random` en Java: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+- Tutorial sobre cómo generar números aleatorios en Java: https://www.geeksforgeeks.org/generating-random-numbers-in-java/

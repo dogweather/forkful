@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Affichage des sorties de débogage"
-simple_title:         "Affichage des sorties de débogage"
+title:                "Afficher les sorties de débogage"
+html_title:           "Kotlin: Afficher les sorties de débogage"
+simple_title:         "Afficher les sorties de débogage"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,28 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'un des défis majeurs en programmation est de trouver et de résoudre les erreurs qui se produisent dans notre code. L'une des meilleures façons de comprendre ce qui se passe réellement dans notre programme est d'utiliser des instructions d'impression de débogage. Cela permet d'afficher des informations sur les différentes étapes de notre code afin de mieux comprendre où se trouvent les erreurs et comment les résoudre.
+Vous êtes en train de coder avec Kotlin et vous rencontrez des problèmes dans votre code. Vous avez réussi à incorporer quelques fonctions et vous voulez maintenant les tester. L'impression de sorties de débogage peut vous aider à comprendre le comportement de votre code et à résoudre les problèmes plus rapidement.
 
 ## Comment faire
 
-Voici un exemple simple de code en Kotlin pour imprimer du débogage :
+Les instructions suivantes vous montreront comment imprimer les sorties de débogage dans vos projets Kotlin :
 
 ```Kotlin
-fun main() {
-    val num1 = 5
-    val num2 = 10
-    println("La somme de $num1 et $num2 est ${num1 + num2}")
-}
+// Déclaration d'un message de débogage
+val message = "Ceci est un message de débogage"
+
+// Imprimer le message dans la console
+println(message)
+
+// Imprimer un message avec un argument
+val count = 5
+println("Il y a $count éléments dans la liste.")
+```
+```
+Output:
+Ceci est un message de débogage
+Il y a 5 éléments dans la liste.
+```
+Vous pouvez également utiliser la fonction de débogage intégrée de Kotlin pour imprimer les valeurs de variables :
+
+```Kotlin
+val name = "Marie"
+val age = 25
+debug { "Le nom est $name et l'âge est $age" }
+```
+```
+Output:
+[app_name out] Le nom est Marie et l'âge est 25
 ```
 
-La ligne de code ```println``` est l'instruction d'impression de débogage. Elle nous permet d'afficher le résultat de l'opération entre ```num1``` et ```num2```. Dans ce cas, le résultat affiché sera "La somme de 5 et 10 est 15". Cette technique peut être utilisée pour afficher toutes sortes d'informations, telles que des valeurs de variables, des erreurs ou des messages de contrôle, afin de mieux comprendre le comportement de notre code.
+## Deep Dive
 
-## Plongée en profondeur
-
-Il existe plusieurs façons de personnaliser les instructions d'impression de débogage en Kotlin. Par exemple, nous pouvons utiliser la fonction ```print``` au lieu de ```println``` pour afficher les informations sur la même ligne. De plus, nous pouvons utiliser les fonctions de formattage telles que ```printf``` pour contrôler l'apparence des données imprimées. En utilisant ces techniques, nous pouvons rendre notre débogage plus efficace et plus facile à analyser.
+L'impression de sorties de débogage est utile pour afficher des informations sur votre programme en cours d'exécution, y compris les valeurs des variables et les messages de débogage. Cela peut vous aider à identifier les erreurs dans votre code, à suivre l'exécution de votre algorithme et à comprendre la logique de votre programme. Vous pouvez également personnaliser vos messages de débogage en y incluant des expressions Kotlin, comme nous l'avons montré dans notre deuxième exemple.
 
 ## Voir aussi
-
-- [Guide de débogage en Kotlin](https://www.kotlincodes.com/debugging-in-kotlin/)
-- [Documentation officielle sur les instructions d'impression en Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#printing-information)
-- [Vidéo YouTube sur les techniques de débogage en Kotlin](https://www.youtube.com/watch?v=Nlpg-JXkUmA)
+- [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/)
+- [Debugging in Kotlin](https://www.raywenderlich.com/77235-debugging-on-android-studio-tutorial)

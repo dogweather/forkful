@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 텍스트 파일 작성하기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Clojure: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-왜 누군가가 텍스트 파일을 작성하는 것에 참여하게 될까요? Clojure 프로그래밍 언어는 다양한 목적으로 사용될 수 있지만, 텍스트 파일을 작성하는 것은 중요한 부분입니다. 텍스트 파일은 다른 프로그램에서 사용되거나, 데이터 저장 용도로 사용될 수 있기 때문입니다.
+텍스트 파일을 써야만 할까요? 텍스트 파일은 데이터를 쉽게 저장하고 공유하는 데 유용합니다. 또한 텍스트 파일은 사람이 읽고 쓸 수 있는 형식이기 때문에 다른 프로그래밍 언어에서도 쉽게 읽을 수 있습니다.
 
-# 어떻게
+## 사용 방법
 
 ```Clojure
-;; Clojure에서 텍스트 파일을 작성하는 방법
-(with-open [file (clojure.java.io/writer "myFile.txt")]
-  (.write file "안녕하세요?")
-  (.write file "Clojure는 멋진 언어입니다!"))
+(defn write-file [file-name]
+  (with-open [wrtr (clojure.java.io/writer file-name :append true)]
+    (.write wrtr "Hello World!")
+    (.close wrtr)))
 
-(with-open [file (clojure.java.io/reader "myFile.txt")]
-  (println (.readLine file))
-  (println (.readLine file)))
-```
-```
-출력:
-안녕하세요?
-Clojure는 멋진 언어입니다!
+(write-file "test.txt")
 ```
 
-# 깊이 파고들기
+위의 코드는 "Hello World!" 라는 내용을 가지는 "test.txt" 파일을 생성합니다. 파일을 쓰기 위해서는 `with-open` 함수를 사용하고, `clojure.java.io/writer` 함수로 파일을 열어서 `.write` 함수를 통해 내용을 씁니다. 마지막으로 `.close` 함수를 이용해 파일을 닫습니다.
 
-이제 우리는 Clojure로 간단한 텍스트 파일을 작성하는 방법을 알게 되었습니다. 하지만 우리는 더 많은 것을 배울 수 있습니다. Clojure에서는 java.io 라이브러리를 사용하여 파일과 관련된 다양한 작업을 수행할 수 있습니다. 파일을 읽고 쓰는 것 뿐만 아니라, 파일의 존재 여부를 확인하고 새로운 파일을 생성할 수도 있습니다.
+## 깊은 곳으로
 
-# 관련 자료
+텍스트 파일은 매우 유용한 데이터 저장 방식 중 하나입니다. 텍스트 파일에는 다양한 데이터를 쉽게 저장할 수 있고, 특히 CSV 형식으로 저장할 경우 데이터베이스의 대안으로 사용할 수 있습니다. 또한 텍스트 파일은 버전 관리 시스템에서도 매우 유용하며, 프로그램에서 읽고 쓰기가 쉬운 형식이기 때문에 다른 프로그램과의 데이터 교환에도 매우 유용합니다.
 
-## Clojure 공식 문서 - 파일 다루기
-https://clojuredocs.org/clojure.java.io/file
+## 더 많은 정보
 
-## Clojure 공식 홈페이지
-https://clojure.org/
+https://clojure.org/ - 공식 Clojure 웹사이트
 
-### 참고 링크
-- 쓰기 예제: https://clojure.org/guides/io#writing
-- 읽기 예제: https://clojure.org/guides/io#reading
-- 파일 존재 여부 확인: https://clojure.org/guides/io#test-file
+https://www.clojure.or.kr/ - 한국 채택센터의 Clojure 정보 사이트
+
+https://github.com/clojure/clojure - Clojure GitHub 저장소

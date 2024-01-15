@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Capitaliser une chaîne"
-simple_title:         "Capitaliser une chaîne"
+title:                "Majuscule d'une chaîne de caractères"
+html_title:           "Elixir: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Il est souvent nécessaire de capitaliser une chaîne de caractères dans un programme Elixir, que ce soit pour des raisons d'affichage esthétique ou pour des besoins de manipulation de données. Dans cet article, nous allons explorer comment effectuer cette opération de manière efficace et élégante.
+La capitalisation de chaînes de caractères est une tâche courante en programmation, que ce soit pour améliorer la lisibilité des données ou pour de la manipulation de texte. Avec Elixir, vous pouvez facilement réaliser cette opération grâce à des fonctions intégrées dans le langage.
 
-## Comment Faire
+## Comment faire
 
-Pour capitaliser une chaîne de caractères en Elixir, il existe plusieurs options selon vos besoins spécifiques. Voici quelques exemples :
+Pour capitaliser une chaîne de caractères en Elixir, vous pouvez utiliser la fonction `String.capitalize/1`. Cette fonction prend en paramètre la chaîne de caractères que vous souhaitez capitaliser et renvoie une nouvelle chaîne avec la première lettre en majuscule.
 
-```Elixir
-string = "bonjour le monde"
-
-# En utilisant la fonction String.capitalize/1
-capitalized = String.capitalize(string)
-IO.puts capitalized
-# Output: Bonjour le monde
-
-# En utilisant la fonction String.replace/3 et une expression régulière
-capitalized = String.replace(string, ~r/.*/, &String.capitalize/1)
-IO.puts capitalized
-# Output: Bonjour le monde
-
-# En utilisant une méthode de chaîne de caractères en mutable
-capitalized = string |> String.to_charlist() |> :lists.map(fn(x) -> String.capitalize(x) end) |> to_string()
-IO.puts capitalized
-# Output: Bonjour le monde
+```Elixir 
+iex> String.capitalize("bonjour")
+"Bonjour"
 ```
 
-Comme vous pouvez le voir, il existe plusieurs façons d'accomplir cette tâche en Elixir, chacune avec ses avantages et ses limites. À vous de choisir celle qui convient le mieux à votre situation.
+Il est également possible de capitaliser toutes les lettres d'une chaîne de caractères avec la fonction `String.upcase/1`.
 
-## Deep Dive
+```Elixir
+iex> String.upcase("bonjour")
+"BONJOUR"
+```
 
-Maintenant, rentrons un peu plus dans les détails et examinons comment fonctionne la fonction String.capitalize/1. Elle prend en paramètre une chaîne de caractères et renvoie cette même chaîne de caractères avec la première lettre en majuscule. Facile, n'est-ce pas ?
+Si vous souhaitez seulement capitaliser la première lettre d'une phrase, vous pouvez utiliser la fonction `String.capitalize_words/1`.
 
-Mais attention, cette fonction utilise la convention Unicode pour les majuscules et les minuscules, ce qui signifie que les caractères accentués ne seront pas forcément convertis comme vous le souhaitez. Par exemple, "éclat" deviendra "Éclat" et non pas "ÉClat" comme on pourrait s'y attendre.
+```Elixir
+iex> String.capitalize_words("bonjour tout le monde")
+"Bonjour Tout Le Monde"
+```
 
-Si vous souhaitez conserver la casse exacte du reste de la chaîne et ne modifier que la première lettre, alors String.replace/3 avec une expression régulière sera votre meilleur allié. En utilisant `[a-z]` comme motif dans l'expression régulière, cela signifie "tous les caractères de a à z", et ainsi, seuls les caractères minuscules seront touchés.
+## Plongée en profondeur
 
-## Voir Aussi
+Derrière ces fonctions pratiques se cache en réalité une utilisation de la librairie standard d'Elixir, `String`, qui fournit de nombreuses autres fonctions utiles pour la manipulation de chaînes de caractères.
 
-- [Documentation officielle de la fonction String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Tutoriel sur les expressions régulières en Elixir](https://elixir-lang.org/getting-started/regex.html)
-- [Article sur les méthodes de chaîne de caractères en mutable en Elixir](https://www.poeticoding.com/elixir-strings-functions-to-char-list-from-char-list-to-string/)
+Il est bon de noter que la plupart des fonctions de manipulation de chaînes en Elixir renvoient une nouvelle chaîne plutôt que de modifier la chaîne d'origine. Cela est dû au fait que les chaînes de caractères sont immuables en Elixir, c'est-à-dire qu'elles ne peuvent pas être modifiées une fois qu'elles ont été créées. Cela permet à Elixir de garantir une immutabilité complète et de mieux gérer l'état de vos données.
+
+# Voir également
+
+- [Documentation officielle d'Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
+- [Blog post sur la manipulation de chaînes de caractères en Elixir](https://medium.com/@nicoamador99/elixir-strings-manipulation-made-easy-2c3b2ffde7df)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Verificando se um diretório existe"
+title:                "Verificando se um diretório existe"
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,37 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que verificar se um diretório existe?
 
-Ao escrever um programa em Fish Shell, é importante garantir que o código seja robusto e possa lidar com diferentes situações, como a possibilidade de um diretório não existir. Portanto, verificar se um diretório existe é uma boa prática para evitar erros e falhas no seu programa.
+Você pode querer verificar se um diretório existe antes de criar um novo diretório ou executar outras operações nele. Isso evita erros e problemas em seu código e economiza tempo, pois não é necessário lidar com erros desnecessários.
 
-## Como fazer isso no Fish Shell
+## Como fazer
 
-A seguir, mostrarei como você pode verificar se um diretório existe usando a sintaxe do Fish Shell e também como verificar o status de saída do comando para determinar se o diretório existe ou não.
+Para verificar se um diretório existe em Fish Shell, você pode usar o comando `test -d` seguido pelo caminho do diretório que deseja verificar. Por exemplo:
 
 ```Fish Shell
-if test -d /caminho/do/diretório
-    echo "O diretório existe."
-end
+test -d /Users/usuario/Documentos
 ```
 
-Neste exemplo, usamos o comando `test` com a opção `-d` para verificar se o caminho especificado é um diretório válido. Em seguida, usamos o comando `echo` para imprimir uma mensagem caso o diretório exista.
+Se o diretório existir, esse comando retornará um valor de "verdadeiro" (true). Caso contrário, retornará "falso" (false).
 
-Você também pode usar o status de saída do comando `test` para realizar uma ação com base no resultado. Por exemplo:
+Você também pode usar o comando `if` para executar ações específicas com base no resultado da verificação. Por exemplo:
 
 ```Fish Shell
-if test -d /caminho/do/diretório
-    # Executa um comando se o diretório existir
+if test -d /Users/usuario/Downloads
+    echo "O diretório Downloads existe!"
 else
-    # Executa outro comando se o diretório não existir
+    echo "O diretório não existe. Criando agora..."
+    mkdir /Users/usuario/Downloads
 end
 ```
 
-## Uma análise mais profunda
+Isso irá imprimir uma mensagem diferente com base no resultado da verificação. Se o diretório existir, será exibida a mensagem "O diretório Downloads existe!" Caso contrário, será criado um novo diretório com o nome "Downloads".
 
-Além de verificar se um diretório existe, você também pode usar comandos do Fish Shell para realizar verificações mais específicas, como se o diretório está vazio ou tem permissões de escrita. Você também pode combinar a verificação de diretório com outros comandos e expressões, como a verificação de tamanho ou conteúdo de arquivos dentro do diretório.
+## Mergulho profundo
 
-Outro fator importante é o uso de variáveis para armazenar os caminhos dos diretórios e tornar seu programa mais flexível e dinâmico. Você pode usar a sintaxe `set` para criar e atribuir valores a variáveis no Fish Shell.
+O comando `test -d` faz parte dos comandos de teste no Fish Shell, que são usados ​​para avaliar valores e retornar "verdadeiro" ou "falso". Outros comandos de teste incluem `test -e` para verificar a existência de um arquivo e `test -f` para verificar se um arquivo é um arquivo regular.
+
+Ao usar o comando `if`, você pode usar a opção `-s` para verificar se o tamanho de um arquivo/diretório é maior que zero. Por exemplo:
+
+```Fish Shell
+if test -s /Users/usuario/Documentos/meu_arquivo.txt
+    rm /Users/usuario/Documentos/meu_arquivo.txt
+else
+    echo "O arquivo está vazio."
+end
+```
+
+Isso irá excluir o arquivo apenas se ele tiver um tamanho maior que zero.
 
 ## Veja também
 
-- Documentação oficial do Fish Shell (em inglês): https://fishshell.com/docs/current/
-- Tutoriais de programação em Fish Shell (em inglês): https://edouardklein.com/fish-sh
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Comandos de teste no Fish Shell (em inglês)](https://fishshell.com/docs/current/index.html#conditional-execution)
+- [Tutorial do Fish Shell no dev.to (em inglês)](https://dev.to/erik109/navigating-fish-shell-for-the-first-time-8o7/)

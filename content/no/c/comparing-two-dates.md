@@ -1,6 +1,7 @@
 ---
-title:                "C: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "C: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,71 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
+Å sammenligne to datoer kan være nyttig når man for eksempel jobber med å sortere eller filtrere data, eller når man ønsker å finne ut hvilken dato som kommer først eller sist. Å kunne sammenligne datoer er en viktig ferdighet å ha som programmerer, og det kan bidra til å gjøre koden din mer robust og effektiv. 
 
-Når man lager et program eller en applikasjon, kan det ofte være nyttig å kunne sammenligne to datoer. Dette kan for eksempel være relevant når man skal filtrere data eller utføre ulike handlinger basert på datoer. I denne bloggposten vil vi se på hvordan man kan sammenligne to datoer i C-programmering.
-
-## Hvordan
-
-Det finnes flere ulike måter å sammenligne datoer på i C-programmering, men den enkleste og mest nøyaktige metoden er å konvertere datoene til tidsstempel og deretter sammenligne disse. Et tidsstempel er et numerisk verdien som representerer antall sekunder siden en gitt dato og tid. For å gjøre dette, trenger vi å bruke noen innebygde funksjoner og datastrukturer i C, som `time_t` og `struct tm`.
-
-En enkel kode for å sammenligne to datoer i C kan se slik ut:
+## Hvordan 
+For å sammenligne to datoer i C, må man først konvertere dem til en datatype som kan sammenlignes, som for eksempel `time_t`. Dette kan gjøres ved hjelp av funksjoner som `mktime()` eller `strptime()`. Deretter kan man bruke operatorer som `<` eller `>` for å sammenligne datoene. Her er et enkelt eksempel:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-// Definerer en funksjon for å konvertere en gitt dato til tidsstempel
-time_t to_timestamp(int dag, int måned, int år) {
-    struct tm tid;
-    time_t tidsstempel;
-
-    tid.tm_mon = måned - 1; // Månedene i C starter på 0
-    tid.tm_mday = dag;
-    tid.tm_year = år - 1900; // Årstall i C er basert på år 1900
-    tid.tm_hour = 0;
-    tid.tm_min = 0;
-    tid.tm_sec = 0;
-    tid.tm_isdst = -1; // Setter sommer/vintertid til automatisk
-
-    tidsstempel = mktime(&tid); // Konverterer til tidsstempel
-    return tidsstempel;
-}
-
 int main() {
-    // Definerer to datoer i form av dag, måned og år
-    int dag1 = 25, måned1 = 6, år1 = 2021;
-    int dag2 = 1, måned2 = 7, år2 = 2021;
+  // Opprett to datoer
+  struct tm dato1 = {31, 7, 2020};
+  struct tm dato2 = {14, 2, 2021};
 
-    // Konverterer datoene til tidsstempel
-    time_t dato1 = to_timestamp(dag1, måned1, år1);
-    time_t dato2 = to_timestamp(dag2, måned2, år2);
+  // Konverter til time_t
+  time_t tid1 = mktime(&dato1);
+  time_t tid2 = mktime(&dato2);
 
-    // Sammenligner datoene og printer ut resultatet
-    if (dato1 > dato2) {
-        printf("%d.%d.%d er senere enn %d.%d.%d\n", dag1, måned1, år1, dag2, måned2, år2);
-    } else if (dato1 < dato2) {
-        printf("%d.%d.%d er tidligere enn %d.%d.%d\n", dag1, måned1, år1, dag2, måned2, år2);
-    } else {
-        printf("%d.%d.%d er lik %d.%d.%d\n", dag1, måned1, år1, dag2, måned2, år2);
-    }
-
-    return 0;
+  // Sammenlign datoene og skriv ut resultatet
+  if (tid1 < tid2) {
+    printf("Dato 1 kommer før Dato 2");
+  } else {
+    printf("Dato 2 kommer før Dato 1");
+  }
+  return 0;
 }
 ```
 
-Kjører man denne koden, vil man få følgende output:
-
+Output:
 ```
-25.6.2021 er tidligere enn 1.7.2021
+Dato 1 kommer før Dato 2
 ```
 
-## Dypdykk
+Det er også mulig å sammenligne datoer ved å konvertere dem til en datostring og deretter bruke `strcmp()`-funksjonen til å sammenligne dem. 
 
-Når man konverterer datoer til tidsstempel, er det viktig å være oppmerksom på at dette kun vil fungere for datoer innenfor en viss tidsperiode. Når man bruker `struct tm` i C, er året begrenset til å være mellom 1900 og 1999. For å kunne håndtere datoer utenfor dette tidsrommet, må man bruke en annen metode for å regne ut tidsstempel. En mulighet kan være å bruke en annen datastruktur som kan representere større verdier, som for eksempel `long long int`.
+## Dypdykk 
+Når man sammenligner to datoer, må man være oppmerksom på at det kan oppstå feil på grunn av formatering eller ulikhet mellom tidssoner. Det er viktig å sørge for at datoene er konsistente og korrekt formatert før man sammenligner dem. Det kan også være lurt å bruke funksjoner som `difftime()` for å få differansen mellom to datoer i sekunder. 
 
-Det er også viktig å være klar over at tidsstempelene som genereres vil være basert på datoen og tiden til systemklokken på datamaskinen programmet kjører på. Dette kan føre til ulike resultater på forskjellige datamaskiner, avhengig av hvordan klokken er satt opp.
+En annen ting å være oppmerksom på er at å sammenligne datoer kan være ulikt på forskjellige plattformer eller operativsystemer. Det kan derfor være lurt å ta hensyn til dette når man utvikler kode som skal være plattformuavhengig. 
 
-## Se også
-
-- [Time handling in C](
+## Se Også 
+- [How to Compare Dates in C](https://www.tutorialspoint.com/how-to-compare-dates-in-c-programming) 
+- [Standard Library date and time utilities in C](https://en.cppreference.com/w/c/chrono) 
+- [C Language reference](https://www.cplusplus.com/reference/clibrary/ctime/)

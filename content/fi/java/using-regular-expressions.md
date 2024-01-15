@@ -1,5 +1,6 @@
 ---
-title:                "Java: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Java: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Java"
 category:             "Java"
@@ -9,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi
 
-Säännölliset lausekkeet ovat tehokkaita työkaluja, jotka mahdollistavat tarkkojen haku- ja korvausoperaatioiden suorittamisen tekstimuotoisessa datassa. Ne ovat erittäin hyödyllisiä esimerkiksi tiedostojen käsittelyssä, tietokantakyselyissä ja web-sovelluksissa. Niiden avulla voi säästää paljon aikaa ja vaivaa, sillä manuaalinen tekstinhaku voi olla monimutkaista ja aikaa vievää.
+Regular expressionit ovat hyödyllisiä työkaluja, joita voi käyttää merkkijonojen etsimiseen ja manipulointiin Java-ohjelmoinnissa. Ne mahdollistavat monimutkaisten haku- ja korvausoperaatioiden suorittamisen vain muutamalla rivillä koodia.
 
-## Miten käyttää säännöllisiä lausekkeita Java-ohjelmoinnissa?
+## Kuinka
 
-Java tarjoaa omat luokkansa säännöllisten lausekkeiden käsittelemistä varten. Yksi näistä luokista on `Pattern`, joka mahdollistaa säännöllisten lausekkeiden luomisen ja käyttämisen. Alla on esimerkki säännöllisen lausekkeen käytöstä ja sen seurauksista Java-koodissa:
+Regular expressionit luodaan käyttämällä Java:n valmiita luokkia, kuten `Pattern` ja `Matcher`. Alla on esimerkki, jossa etsitään merkkijonosta kaikki numerot ja tulostetaan ne näytölle.
 
 ```Java
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class RegularExpressions {
-    public static void main(String[] args) {
-        String input = "Tervetuloa Java-maailmaan!";
-        Pattern pattern = Pattern.compile("Java");
-        Matcher matcher = pattern.matcher(input);
-
-        while (matcher.find()) {
-            System.out.println("Löysin sanan Java.");
-            System.out.println("Osuma alkaa indeksistä " + matcher.start() + " ja päättyy indeksiin " + (matcher.end() - 1) + ".");
-        }
-    }
+String teksti = "Tämä on esimerkki123 merkkijonosta.";
+Pattern p = Pattern.compile("\\d+");
+Matcher m = p.matcher(teksti);
+while (m.find()) {
+	System.out.println(m.group());
 }
 ```
 
-Koodin tuloste on:
+Tämä tulostaa seuraavan:
 
 ```
-Löysin sanan Java.
-Osuma alkaa indeksistä 12 ja päättyy indeksiin 15.
+123
 ```
 
-Kuten nähdään, säännöllisen lausekkeen avulla voitiin löytää ja tulostaa tekstin sisältämä sana. Lisäksi `Pattern`-luokassa on monia erilaisia metodeita, jotka tarjoavat erilaisia toimintoja säännöllisten lausekkeiden käsittelemiseen.
+Regular expressionit käyttävät erityisiä merkkejä ja lausekkeita, joiden avulla voidaan määritellä halutunlainen haku. Esimerkiksi `\d` tarkoittaa numeromerkkiä ja `+` tarkoittaa, että merkkiä voi olla yhdestä useaan kertaan peräkkäin.
 
-## Syvällä säännöllisissä lausekkeissa
+## Syvemmälle
 
-Vaikka säännöllisten lausekkeiden käyttö Java-ohjelmoinnissa voi tuntua haastavalta, niiden hallitseminen voi olla hyödyllistä. Monimutkaiset säännölliset lausekkeet voivat auttaa esimerkiksi tekstin puhdistamisessa ja muotoilussa, ja niitä voi käyttää myös esimerkiksi tiedostonimeä vastaavien tiedostojen etsimiseen. On tärkeää harjoitella ja tutustua erilaisiin säännöllisiin lausekkeisiin, jotta niiden käyttö sujuisi helposti tarvittaessa.
+Regular expressioneilla on laaja valikoima erilaisia merkkejä ja lausekkeita, joilla voidaan määrittää tarkkoja hakuja ja korvauksia. Esimerkiksi seuraavat merkit ovat yleisesti käytössä:
+
+- `\d` tarkoittaa numeromerkkiä
+- `\w` tarkoittaa kirjainta, numeroa tai alaviivaa
+- `\s` tarkoittaa välilyöntiä tai muuta tyhjää merkkiä
+- `.` tarkoittaa mitä tahansa merkkiä
+- `[]` luodaan merkkijonoja, joihin matches-parametrilla täsmätä
+- `^` merkki tarkoittaa merkkijonon alkuosaa
+- `$` merkki tarkoittaa merkkijonon loppuosaa
+- `()` luodaan ryhmiä, joihin tiedon voidaan tallentaa ja käsitellä sen jälkeen
+
+On hyödyllistä tutustua tarkemmin erilaisiin syntaksiin ja mahdollisuuksiin, jotta voi luoda tehokkaita ja tarkkoja regular expressioneita ohjelmoinnissa.
 
 ## Katso myös
 
-- [Java Regex – A Beginner’s Guide](https://www.baeldung.com/java-regex)
-- [Regular Expressions in Java](https://www.javatpoint.com/java-regex)
-- [Java Regular Expressions Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [Oracle:n Regular Expressions -dokumentaatio (englanniksi)](https://docs.oracle.com/javase/10/docs/api/java/util/regex/package-summary.html)
+- [Regular expressions -w3schools (englanniksi)](https://www.w3schools.com/java/java_regex.asp)
+- [RegExr - online regular expressions editor (englanniksi)](https://regexr.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Rust: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,61 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP em Rust?
+## Por que
 
-Enviar uma solicitação HTTP é uma tarefa comum em muitos aplicativos e projetos de programação. É útil quando você precisa se comunicar com um servidor remoto para obter dados ou executar ações. Em Rust, existem bibliotecas e recursos poderosos que tornam o envio de solicitações HTTP uma tarefa simples e eficiente.
+Você já se perguntou como as aplicações web funcionam? Neste artigo, vamos explorar o envio de solicitações HTTP usando Rust. Isso pode ser útil para criar APIs, interagir com serviços web ou até mesmo construir seu próprio navegador!
 
 ## Como fazer
 
-Para enviar uma solicitação HTTP em Rust, vamos utilizar a biblioteca "reqwest". Começaremos criando um projeto em Rust e adicionando a dependência "reqwest" ao nosso arquivo "Cargo.toml":
+Para enviar uma solicitação HTTP em Rust, primeiro precisamos adicionar a dependência "reqwest" ao nosso projeto. Em seguida, podemos criar um cliente HTTP e usar o método `get()` para especificar a URL que queremos acessar.
 
 ```Rust
-[dependencies]
-reqwest = { version = "0.10.6", features = ["blocking", "json"] }
-```
+extern crate reqwest; // adicionando a dependência
 
-Em seguida, importamos a biblioteca no nosso código:
+fn main() {
+    let client = reqwest::Client::new(); // criando um cliente HTTP
+    let response = client.get("https://exemplo.com").send(); // enviando a solicitação
 
-```Rust
-use reqwest;
-```
-
-Vamos enviar uma solicitação GET para a API do GitHub para obter os detalhes do nosso repositório. Para isso, precisamos fornecer a URL da API e a chave de acesso pessoal para autenticação:
-
-```Rust
-let url = "https://api.github.com/repos/<seu_nome_de_usuário>/<seu_repositório>";
-let token = "<sua_chave_de_acesso_pessoal_github>";
-```
-
-Em seguida, criamos uma instância da solicitação e adicionamos o cabeçalho de autenticação com a chave de acesso pessoal:
-
-```Rust
-let client = reqwest::blocking::Client::new();
-let res = client.get(url)
-                .header("Authorization", format!("Bearer {}", token))
-                .send();
-```
-
-Finalmente, imprimimos os dados de resposta no terminal:
-
-```Rust
-match res {
-    Ok(res) => println!("Status: {}", res.status()),
-    Err(err) => println!("Erro: {}", err),
+    match response {
+        Ok(mut res) => { // caso a resposta seja bem-sucedida
+            println!("Status code: {}", res.status()); // imprimindo o status da resposta
+            let body = res.text().unwrap(); // extraindo o corpo da resposta e imprimindo
+            println!("Resposta do servidor: {}", body);
+        }
+        Err(e) => println!("Erro: {}", e), // caso ocorra algum erro
+    }
 }
 ```
 
-## Deep Dive
+A saída deste código seria algo parecido com isso:
 
-Ao enviar uma solicitação HTTP em Rust, é importante entender os diferentes tipos de solicitações e respostas, bem como os códigos de status e cabeçalhos que podem ser retornados. A biblioteca "reqwest" suporta vários tipos de solicitações, incluindo GET, POST, PUT, DELETE, entre outros.
+```
+Status code: 200
+Resposta do servidor: <!DOCTYPE html>
+<html>
+<head>
+...
+```
 
-Além disso, é importante lembrar que as solicitações podem ser síncronas ou assíncronas em Rust. Na nossa solução acima, utilizamos uma solicitação síncrona com a função "send()", que bloqueia a thread atual até que a solicitação seja concluída. No entanto, também é possível utilizar solicitações assíncronas com a função "async()", que retorna uma promise a ser resolvida posteriormente.
+## Mergulho profundo
 
-Ao lidar com respostas, é importante entender os diferentes códigos de status, que indicam se a solicitação foi bem sucedida ou não, e os cabeçalhos, que contêm informações adicionais sobre a resposta, como o tipo de conteúdo retornado.
+Ao usar o método `get()`, podemos fornecer uma série de opções para personalizar nossa solicitação. Algumas delas incluem o cabeçalho, corpo e autenticação. Podemos até mesmo enviar solicitações assíncronas usando o Rust Async/Await. Além disso, o pacote "reqwest" também suporta recursos de streaming e redirecionamento de solicitações.
 
 ## Veja também
 
-- Documentação da biblioteca "reqwest": https://docs.rs/reqwest/ 
-- Tutorial sobre como realizar solicitações HTTP em Rust: https://www.freecodecamp.org/news/a-guide-to-making-http-requests-in-rust/
+Se você quiser aprender mais sobre como enviar solicitações HTTP com Rust, aqui estão alguns recursos úteis:
 
-O envio de solicitações HTTP é uma habilidade essencial para qualquer programador Rust, e com as bibliotecas e recursos disponíveis, isso pode ser feito de forma clara e concisa. Esperamos que este artigo tenha sido útil para você aprender como realizar esta tarefa em Rust.
+- [Documentação oficial do "reqwest"](https://docs.rs/reqwest/0.11.3/reqwest/)
+- [Exemplos de código do "reqwest" no GitHub](https://github.com/seanmonstar/reqwest/tree/master/examples)
+- [Tutorial de Rust sobre enviar solicitações HTTP](https://www.datbruce.com/2019/09/how-to-send-http-requests-in-rust.html)
+
+Agora você está pronto para começar a enviar suas próprias solicitações HTTP em seus projetos Rust! Divirta-se explorando e criando incríveis aplicações web.

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Umwandeln einer Zeichenkette in Kleinschreibung"
-simple_title:         "Umwandeln einer Zeichenkette in Kleinschreibung"
+title:                "Umwandeln einer Zeichenfolge in Kleinbuchstaben"
+html_title:           "Bash: Umwandeln einer Zeichenfolge in Kleinbuchstaben"
+simple_title:         "Umwandeln einer Zeichenfolge in Kleinbuchstaben"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,33 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben ist eine nützliche Fähigkeit für jeden, der gerne Bash-Programmierung betreibt. Es ermöglicht eine einfachere und konsistentere Verarbeitung von Texten.
+Wer regelmäßig mit Bash programmiert, wird sich früher oder später in der Situation befinden, eine eingegebene Zeichenfolge in Kleinbuchstaben zu konvertieren. Dies kann aus verschiedenen Gründen erforderlich sein, wie z.B. die Überprüfung von Benutzereingaben oder die Formatierung von Daten. In diesem Artikel werden wir sehen, wie man in Bash eine Zeichenfolge in Kleinbuchstaben umwandelt.
 
-## Anleitung
+## Wie geht man vor
 
-Um einen String in Kleinbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten in Bash. Eine Möglichkeit ist die Verwendung der integrierten Funktion `tr`, die den Inhalt einer Datei oder eines Strings bearbeiten kann. Die Syntax sieht folgendermaßen aus:
-
-```Bash
-echo "HALLO" | tr '[:upper:]' '[:lower:]'
-```
-
-Die Ausgabe wäre `hallo`, da `tr` den String `HALLO` in Kleinbuchstaben umgewandelt hat.
-
-Eine weitere Möglichkeit ist die Verwendung des Befehls `sed`, der ähnlich wie `tr` funktioniert. Die Syntax sieht wie folgt aus:
+Um eine Zeichenfolge in Bash in Kleinbuchstaben umzuwandeln, gibt es verschiedene Ansätze. Hier sind zwei Beispiele:
 
 ```Bash
-echo "WELT" | sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/'
+# Beispiel 1: Mit dem Befehl 'tr'
+echo "HALLO WELT" | tr '[:upper:]' '[:lower:]'        # Ausgabe: hallo welt
+
+# Beispiel 2: Mit dem von Bash unterstützten Parametererweiterung "${parameter,,}"
+text="EINE ZEICHENFOLGE"
+echo "${text,,}"                                      # Ausgabe: eine zeichenfolge
 ```
 
-Auch hier wird die Ausgabe `welt` sein.
+Die Verwendung des Befehls `tr` ist eine schnelle und einfache Möglichkeit, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Dieser Befehl ersetzt alle Großbuchstaben in der Zeichenfolge durch entsprechende Kleinbuchstaben. Auf der anderen Seite bietet die Parametererweiterung von Bash eine mehrsprachige Lösung, die auch Sonderzeichen korrekt verarbeitet. 
 
-Es ist auch möglich, eine Schleife zu verwenden, um jeden Buchstaben im String manuell in einen Kleinbuchstaben zu konvertieren. Dies erfordert jedoch etwas mehr Code und ist möglicherweise nicht so effizient wie die beiden oben genannten Methoden.
+## Tiefer Einblick
 
-## Tiefgreifender Einblick
+Bei der Verwendung des Befehls `tr` ist es wichtig zu beachten, dass der Befehl die Zeichenfolge in der Standardeingabe erwartet. Dies bedeutet, dass sie entweder direkt über die Standardeingabe eingegeben oder durch einen Pipe-Befehl weitergeleitet werden muss. Alternativ können Sie den `tr` Befehl auch auf eine Variablengröße anwenden, wie im ersten Beispiel gezeigt.
 
-Beim Konvertieren eines Strings in Kleinbuchstaben verwenden sowohl `tr` als auch `sed` die ASCII-Tabelle, um zu bestimmen, welcher Buchstabe in welchen Buchstaben konvertiert werden soll. Dies bedeutet, dass alle Sonderzeichen oder Zeichen aus anderen Sprachen möglicherweise nicht korrekt konvertiert werden. In solchen Fällen ist es möglicherweise besser, eine eigene benutzerdefinierte Funktion zu erstellen, die diese Zeichen berücksichtigt.
+Bei der Parametererweiterung von Bash ist es wichtig zu wissen, dass sie nicht von allen Bash-Versionen unterstützt wird. Sie wurde mit Bash 4 eingeführt und ist somit nicht auf älteren Versionen verfügbar. Daher sollte bei der Verwendung dieser Methode darauf geachtet werden, dass die Kompatibilität mit anderen Versionen sichergestellt ist.
 
 ## Siehe auch
 
-- Eine umfassende Übersicht über den `tr`-Befehl in Bash: https://www.computerhope.com/unix/utr.htm
-- Weitere Informationen zum `sed`-Befehl und seiner Verwendung zur Konvertierung von Texten: https://www.computerhope.com/unix/used.htm
+- [Bash-Parametererweiterung](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [tr Befehl in der GNU Coreutils Doku](https://www.gnu.org/software/coreutils/manual/coreutils.html#tr-invocation)

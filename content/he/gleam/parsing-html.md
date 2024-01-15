@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: ניתוח HTML"
-simple_title:         "ניתוח HTML"
+title:                "ניתוח html"
+html_title:           "Gleam: ניתוח html"
+simple_title:         "ניתוח html"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Shalom,
+# מדוע
+אנו תמיד מגלים מידע חדש באינטרנט, וכאשר מתגוררים ליצור אפליקציות או אתרים, זה חשוב להבין ולהציג את המידע הנדרש בצורה ארגונית. לכן, לדעת איך לצרף תגי HTML יכול להיות מועיל מאוד עבור מפתחי אתרי אינטרנט ואפליקציות.
 
-## מדוע
-
-מאחר ואיננו יכולים לשנות את מבנה האתרים באינטרנט, עיבוד ומיון (Parsing) של קוד HTML הינו מהותי בכדי לקרוא ולהבין מידע מרובה בקודים מורכבים.
-
-## כיצד לבצע
+## איך לעשות זאת
+קוד Gleam נועד לעזור לך להפעיל תהליך זה בצורה יעילה ופשוטה. כאן נמצא דוגמאות של כיצד לצרף תגי HTML באמצעות קוד Gleam.
 
 ```Gleam
-let parser = Parser.from_string("<html><body><h1>Hello, world!</h1></body></html>")
+import gleam/http
+import gleam/html/parser as parser
 
-try case parser of
-| Ok(nodes) ->
-  io.println(nodes)
-| Error(error) ->
-  // handle parse error
+pub fn parse_html(body: http.ResponseBody) {
+    let doc = parser.parse(body)
+    let title = doc % "title" |> parser.text
+    let links = doc %% "a" |> parser.attr("href")
+    let images = doc %% "img" |> parser.attr("src")
+    let paragraphs = doc %% "p" |> parser.text
+}
 ```
 
-כאן אנו משתמשים בפונקציית `Parser.from_string()` כדי ליצור מפענח חדש. מאחר והקוד שראינו הינו תקין, הפענח יחזיר כתוצאה רשימת תגיות מקודדות את המידע שלנו. בדוגמה שלנו, הפלט יחזיר `["html", "body", "h1", "Hello, world!"]` כמו כן, במידה והקוד לא יהיה תקין, נתקל בשגיאת עיבוד (Parsing) ונוכל להתמודד עם השגיאה באמצעות הבלוק `case` המאפשר לנו לטפל בכל מצב אפשרי.
+### הפלט הצפוי:
 
-## חפירה מעמוק
+```Gleam
+title: "כותרת האתר"
+links: ["/about", "/contact", "/services"]
+images: ["/image1.jpg", "/image2.jpg", "/image3.jpg"]
+paragraphs: ["פרטים בנוגע לאתר", "כל הפרטים על הכתובת שלנו", "השירותים שאנו מציעים"]
+```
 
-עיבוד (Parsing) הינו פעולה בסיסית במיני-שפת Gleam. מאחר והיא מאפשרת לנו לקרוא פונקציות ויצירת מהפכות בעולם האינטרנט, חשוב להשקיע בלימוד עמוק של מתודות עיבוד המידע. מרבית הפעמים אנו נתקלים בקודים מורכבים עם הרבה תגיות ומידע רב, ועלינו לדעת איך לעבוד ולחלץ את המידע הרלוונטי בכדי להשתמש בו במימושים ויצירת אפליקציות.
+## Deep Dive
+כאשר משתמשים בקוד Gleam לצרף תגי HTML, כדאי לקחת בחשבון הבאים:
+- יש לוודא שהתגייה היא חוקית ותואם ל-Standards הנכונים.
+- ניתן לצרף את התגיות בכל מספר תוך כדי מציאת פרטי התוכן הטקסטואלי שלהם.
+- יש לשמור את הקוד שגוף (body) עבור כל תגית יחידה.
 
-## ראו גם
-
-- [Gleam פוקים](https://gleam.run/)
-- [רכיב HTML-5 (גליים)](https://github.com/gleam-lang/html5)
-- [למד גליים בפעילות Gleam School](https://luminiferous.solutions/gleam-school/)
+## ראה גם
+- [מדריך על השתמשות קוד Gleam לצרף תגי XML](https://gleam.run/documentation/guide/using-xml-code-gleam/)
+- [דוגמאות על מנת להתחיל בשימוש קוד Gleam לתחילת דרך](https://gleam.run/documentation/getting-started/examples/)

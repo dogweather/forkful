@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Att läsa kommandoradsargument"
+html_title:           "Bash: Att läsa kommandoradsargument"
+simple_title:         "Att läsa kommandoradsargument"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,82 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Många program behöver ta emot input från användaren för att utföra sina uppgifter. Det kan handla om en söksträng för en sökmotor, ett förnamn och efternamn för en registrering eller ett filnamn för att öppna en fil. Genom att kunna läsa och använda kommandoradsargument kan du skräddarsy dina program för att göra dem mer användarvänliga och kraftfulla.
+Att läsa in och använda kommandoradsargument kan vara väldigt användbart för att automatisera uppgifter och snabbt utföra olika operationer på filer eller program. Det är också ett sätt att anpassa och effektivisera din terminalupplevelse.
 
-## Hur man läser kommandoradsargument
+## Hur man gör det
 
-Det finns flera sätt att läsa kommandoradsargument i Bash. Ett sätt är att använda variabeln $1 för att hämta det första argumentet, $2 för det andra argumentet och så vidare. Du kan också använda $0 för att hämta hela kommandoraden. Nedan är ett exempel på hur du kan använda dessa variabler:
+För att läsa in och använda kommandoradsargument i Bash, används variabler som representerar de argument som användaren skriver in vid körningen av skriptet. Dessa variabler används sedan som input till kommandon och skript som utförligen tolkar och utför åtgärder baserade på värdet av argumenten.
 
 ```Bash
-# Hämta det första argumentet och skriv ut det
-echo "Det första argumentet är: $1"
-# Hämta det andra argumentet och använda det för en sökning
-grep "$2" file.txt
-# Hämta hela kommandoraden och skriv ut den
-echo "Kommandoraden är: $0"
+#!/bin/bash
+
+# Ett enkelt skript som visar användning av kommandoradsargument
+echo "Hej $1, välkommen till världen av Bash-skript!"
+echo "Jag heter $2 och är din guide."
 ```
 
-**Output:**
-```Bash
-$ bash command_line_args.sh hello world
-Det första argumentet är: hello
-Kommandoraden är: bash command_line_args.sh hello world
-```
-Det är viktigt att notera att argumenten ska anges efter filnamnet när du kör skriptet i terminalen.
+Om detta skript sparas som "welcome.sh" och sedan körs med följande kommando: ```./welcome.sh Johan Skript```, kommer utmatningen att vara: ```Hej Johan, välkommen till världen av Bash-skript! Jag heter Skript och är din guide.``` I detta fall är kommandoradsargumenten "Johan" och "Skript" tilldelade till variablerna $1 och $2, vilket används i skriptet.
 
 ## Djupdykning
 
-Utöver att använda variabler kan du även använda read-kommandot för att läsa kommandoradsargument. Detta gör det möjligt att läsa flera argument på en rad och till och med be användaren om input om argument inte har angetts. Nedan är ett exempel på hur du kan använda read för att läsa tre argument och sedan skriva ut dem:
+Det finns flera olika sätt att läsa in och använda kommandoradsargument i Bash, inklusive att använda tonoptioner som "-f" eller "-h". Det är också möjligt att processa argument med hjälp av loopen "for" och hantera argument med flaggor i en logisk ordning. Det är också viktigt att hantera felhantering och validering av argument för att undvika ogiltiga eller potentiellt farliga operationer.
 
-```Bash
-read arg1 arg2 arg3
-echo "Argument 1 är: $arg1"
-echo "Argument 2 är: $arg2"
-echo "Argument 3 är: $arg3"
-```
+Se även:
 
-**Output:**
-```Bash
-$ bash read_args.sh hej kompis!
-Argument 1 är: hej
-Argument 2 är: kompis!
-Argument 3 är:
-```
-
-Om du vill kan du också specificera en prompt för användaren att svara på, vilket kan göra det tydligare vad programmet förväntar sig som input:
-
-```Bash
-read -p "Ange ditt för- och efternamn: " first_name last_name
-echo "Välkommen $first_name $last_name!"
-```
-
-**Output:**
-```Bash
-$ bash read_args.sh
-Ange ditt för- och efternamn: John Doe
-Välkommen John Doe!
-```
-Det finns också möjlighet att använda flaggor för att läsa specifika argument. Flaggor kan definieras med "-". Till exempel om du vill läsa ett valfritt argument kan du använda flaggan "-f" och sedan ange en standardvärde om argumentet inte ges. Nedan är ett exempel:
-
-```Bash
-# Standardvärdet för argumentet är "världen"
-while getopts ":f" option; do
-	case $option in
-		f) arg1=$OPTARG ;;
-	esac
-done
-echo "Hej $arg1!"
-```
-
-**Output:**
-```Bash
-$ bash flag_args.sh
-Hej världen!
-$ bash flag_args.sh -f "Sverige"
-Hej Sverige!
-```
-
-## Se även
-
-- [Bash dokumentation](https://www.gnu.org/software/bash/manual/bash.html#Shell-Variables)
-- [Tutorial: bash kommandoradsargument](https://www.tutorialspoint.com/unix_commands/bash_shell_scripting.htm)
+-[The Beginner's Guide to Bash Scripting](https://www.linode.com/docs/guides/beginners-guide-to-bash-scripting/)
+-[Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)

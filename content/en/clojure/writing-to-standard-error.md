@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Writing to standard error"
+title:                "Writing to standard error"
+html_title:           "Clojure recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-At some point in your coding journey, you may have encountered the term "standard error" or "stderr". But what exactly is it and why would you want to write to it in your Clojure programs? Simply put, standard error is a stream of data that is used to output error messages from a program. Writing to standard error allows you to provide valuable information to help debug and troubleshoot your code.
+Have you ever encountered an error while coding and wished you could have more information about what went wrong? Writing to standard error in Clojure allows you to do just that, providing valuable insights into your code's execution and errors.
 
 ## How To
 
-Writing to standard error in Clojure is a simple task. Let's take a look at the following code snippet:
-
 ```Clojure
-(defn divide [a b]
-  (if (zero? b)
-    (println "Error: Cannot divide by zero")
-    (println "The result is" (/ a b)))
+(defn divide [x y]
+  (if (zero? y)
+    (println "ERROR: Cannot divide by zero!")
+    (println (/ x y))))
+
+(defn -main []
+  (try
+    (divide 10 2)
+    (divide 5 0)
+    (divide 8 4))
+  (catch ArithmeticException e
+    (e.printStackTrace)))
 ```
 
-In this example, we have a function called `divide` that takes two parameters, *a* and *b*. We use the `if` statement to check if *b* is equal to zero. If it is, we print an error message to standard error using `println`. Otherwise, we print the result of dividing *a* by *b* to standard output. Let's take a look at the output of this function:
+Output:
 
 ```Clojure
-(divide 10 2)
-The result is 5
-(divide 10 0)
-Error: Cannot divide by zero
+5
+ERROR: Cannot divide by zero!
+2
+#<ArithmeticException java.lang.ArithmeticException: Divide by zero>
 ```
 
-As you can see, the error message is printed to standard error while the result is printed to standard output. This separation allows for easier debugging and understanding of the flow of your code.
+The `println` function in Clojure prints its arguments to standard output by default. However, by using `e.printStackTrace`, we can print the error to standard error instead. This allows us to distinguish between regular program output and error messages.
 
 ## Deep Dive
 
-In Clojure, there are two main ways to write to standard error: `println` and `eprintln`. The `println` function will print to standard output while the `eprintln` function will print to standard error. Additionally, you can use the `with-out-str` and `with-err-str` functions to capture and manipulate the output of `println` and `eprintln` respectively.
+Writing to standard error in Clojure can be useful when debugging and troubleshooting your code. By writing error messages to standard error, you can separate them from regular program output and easily identify where errors occurred in your code. Additionally, standard error can be redirected to a file for later analysis.
 
-It's important to note that writing to standard error should be used for important, critical, or error-related messages, while standard output should be used for general messages and data.
+It's important to note that on some platforms, standard output and standard error may be displayed in different colors in the terminal, making it easier to differentiate between the two. This can be especially helpful when dealing with large amounts of log data.
 
-## See Also
+See Also
 
-- [Official Clojure Documentation on println and eprintln](https://clojure.github.io/clojure/clojure.core-api.html#println)
-- [Clojure for the Brave and True: Writing to Standard Output and Error](https://www.braveclojure.com/inside-clojure-standard-io/)
-
-Now that you have a better understanding of writing to standard error in Clojure, try implementing it in your own programs and see how it can improve your debugging process. Happy coding!
+- [Clojure official website](https://clojure.org/)
+- [Clojure for the Brave and True by Daniel Higginbotham](https://www.braveclojure.com/clojure-for-the-brave-and-true/) 
+- [ClojureDocs](https://clojuredocs.org/)

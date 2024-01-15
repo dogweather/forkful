@@ -1,6 +1,7 @@
 ---
-title:                "Go: 텍스트 파일 작성"
-simple_title:         "텍스트 파일 작성"
+title:                "텍스트 파일 쓰기"
+html_title:           "Go: 텍스트 파일 쓰기"
+simple_title:         "텍스트 파일 쓰기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,48 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜: 텍스트 파일을 작성하는 이유
+## 왜
 
-텍스트 파일을 작성하면서 우리는 컴퓨터 프로그래밍의 기초를 배우고, 애플리케이션과 시스템을 구축하는 등 다양한 분야에서 쓰일 수 있는 중요한 기술을 배우게 됩니다.
+텍스트 파일을 작성하는 이유는 여러 가지가 있지만, 대표적으로는 데이터를 보관하거나 공유하기 위해서입니다. 예를 들어, 시스템 설정 파일이나 로그 파일 등이 텍스트 파일로 작성됩니다.
 
-# 작성하는 법: Golang 예제 코드와 샘플 출력
+## 작성하는 방법
 
-위에서 언급한 것처럼 텍스트 파일을 작성하는 것은 매우 중요한 프로그래밍 기술입니다. 그래서 이번 섹션에서는 Go 언어를 사용하여 텍스트 파일을 작성하는 방법을 알아보도록 하겠습니다.
-
-먼저, `create_file.go`라는 파일을 만들고 다음과 같이 코드를 작성해보겠습니다.
+텍스트 파일을 작성하는 방법은 매우 간단합니다. 먼저, Go 언어에서 파일을 다루기 위해 `os` 패키지를 임포트해야 합니다. 그 다음, `os.Create()` 함수를 이용하여 새로운 파일을 생성하고 `os.Write()` 함수를 이용하여 텍스트를 입력할 수 있습니다. 아래는 간단한 예제 코드입니다.
 
 ```Go
+package main
+
+import "os"
+
 func main() {
-    file, err := os.Create("test.txt") // 텍스트 파일 생성
-    if err != nil { // 에러 처리
-        log.Fatal(err)
+    file, err := os.Create("sample.txt")      // 새로운 파일 생성
+    if err != nil {
+        panic(err)                           // 에러 처리
     }
-    defer file.Close() // 프로그램이 끝나면 파일 닫기
+    defer file.Close()                       // 작업이 종료되면 파일 닫기
 
-    text := "안녕하세요, Go 언어로 텍스트 파일을 작성하는 예제입니다." // 작성할 텍스트 정의
-    _, err = file.WriteString(text) // 파일에 텍스트 작성
-    if err != nil { // 에러 처리
-        log.Fatal(err)
+    text := "This is a sample text."          // 파일에 쓸 텍스트
+    _, err = file.Write([]byte(text))        // 파일에 텍스트 입력
+    if err != nil {
+        panic(err)                           // 에러 처리
     }
 
-    fmt.Println("텍스트 파일이 성공적으로 작성되었습니다.")
+    fmt.Println("Text file created.")
 }
 ```
 
-위 코드를 실행하면 `test.txt`라는 파일이 생성되고, 해당 파일 안에는 `안녕하세요, Go 언어로 텍스트 파일을 작성하는 예제입니다.` 라는 텍스트가 작성된 것을 확인할 수 있습니다.
+위 코드를 실행하면 현재 디렉토리에 `sample.txt` 파일이 생성되고, 내용으로 `This is a sample text.`가 입력될 것입니다.
 
-# 깊이있는 정보: 텍스트 파일 작성에 대한 더 깊은 이해
+## 깊게 들어가기
 
-텍스트 파일을 작성하는 것은 초보자에게는 쉽지 않은 작업일 수 있습니다. 하지만 우리가 배우게 될 일련의 스킬만 있다면 텍스트 파일을 작성하는 것은 매우 간단한 작업이 될 수 있습니다. 그래서 우리는 이제부터 더 깊게 텍스트 파일작성에 대해 알아보도록 하겠습니다.
+텍스트 파일을 작성하는 과정에서는 `os.Create()` 함수가 실제로 파일을 생성하는 것이 아니라 운영체제에 파일을 요청하는 것입니다. 따라서 파일에 대한 작업이 모두 끝나면 `file.Close()` 함수를 호출하여 파일을 닫아주어야 합니다. 또한, `os.Write()` 함수는 바이트 형태의 데이터를 입력하므로 `[]byte` 형태로 변환해주어야 합니다. 이러한 세부 사항들을 모두 고려하여 텍스트 파일을 작성하는 것이 중요합니다.
 
-우리는 `fmt` 패키지를 사용하여 콘솔에 출력을 할 수 있었습니다. 하지만 텍스트 파일을 작성할 때는 `fmt` 패키지 대신 `bufio` 패키지를 사용하는 것이 더 좋습니다. 이 패키지를 사용하면 더 빠르고 효율적으로 파일에 텍스트를 작성할 수 있습니다.
+## 관련 자료
 
-# 참고문헌
-- [파이썬으로 쉽게 배우는 프로그래밍 기초](https://github.com/TimothyBang1/PythonBasic)
-- [텍스트 파일 작성 관련 Go 문서 페이지](https://golang.org/pkg/bufio/)
-
-# 관련링크
-
-- [Markdown 사용법 안내](https://www.markdownguide.org/basic-syntax/)
-- [Golang 공식 문서 사이트](https://golang.org/doc/)
-- [Go 언어 공식 블로그](https://blog.golang.org/)
+- [Go 공식 문서 - os 패키지](https://golang.org/pkg/os/)
+- [OS 파일 다루기 - go.dev](https://go.dev/blog/files)
+- [텍스트 파일 다루기 예제 코드 - GeeksforGeeks](https://www.geeksforgeeks.org/write-data-in-a-text-file-int-struct-string/?ref=rp)

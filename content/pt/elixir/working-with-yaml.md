@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Elixir: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,63 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML no Elixir?
+## Por que trabalhar com YAML?
 
-YAML é uma linguagem de serialização de dados que é amplamente usada para configurações e arquivos de dados estruturados. No contexto de programação Elixir, manipular dados em formato YAML pode ser muito útil para tarefas como leitura e escrita de configurações de aplicativos, geração de relatórios ou até mesmo para comunicação com outras linguagens de programação.
+YAML (YAML Ain't Markup Language) é uma linguagem de marcação de dados que pode ser utilizada para estruturar e armazenar informações de forma legível para humanos e máquinas. É especialmente útil para configurar e gerenciar projetos de software. Ao aprender a trabalhar com YAML, você conseguirá organizar melhor seus dados e otimizar seu fluxo de trabalho.
 
-## Como fazer:
+## Como fazer?
 
-Para trabalhar com YAML no Elixir, primeiramente é necessário instalar a biblioteca `YamlElixir`. Isso pode ser feito através do gerenciador de pacotes `mix`, seguindo os passos abaixo:
+Para começar a trabalhar com YAML em Elixir, primeiro precisamos importar o módulo YAML do pacote `:yaml_elixir`.
 
-1. Abra o terminal e navegue até o diretório do seu projeto Elixir.
-2. Execute o comando `mix deps.get` para baixar as dependências do projeto.
-3. Adicione a biblioteca `YamlElixir` ao seu arquivo `mix.exs` na seção `deps`:
-
-    ```Elixir
-    defp deps do
-      [
-        {:yaml_elixir, "~> 0.0.1"}
-      ]
-    end
-    ```
-4. Execute o comando `mix deps.compile` para compilar a biblioteca.
-5. Agora você pode importar o módulo `YamlElixir` e começar a trabalhar com YAML em seu código Elixir.
-
-### Lendo um arquivo YAML:
-
-```Elixir
-# Importando o módulo
-import YamlElixir
-# Lendo o arquivo
-{:ok, data} = read_file("config.yml")
+```
+iex> import YAML
 ```
 
-### Escrevendo em um arquivo YAML:
+Em seguida, podemos usar a função `decode/1` para converter um arquivo YAML em uma estrutura de dados que possamos manipular em nosso código.
 
-```Elixir
-# Criando um mapa com os dados
-data = %{nome: "Elixir", categoria: "linguagem"}
-# Escrevendo no arquivo
-{:ok, _} = write_file("data.yml", data)
+```
+iex> data = decode(File.read!("arquivo.yml"))
+%{
+  "nome" => "João",
+  "idade" => 30,
+  "hobbies" => ["viajar", "ler", "cozinhar"]
+}
 ```
 
-### Convertendo dados para YAML:
+Podemos acessar os valores do arquivo YAML como um mapa:
 
-```Elixir
-# Criando uma lista
-lista = ["Elixir", "é", "incrível"]
-# Convertendo para YAML
-yaml = to_yaml(lista)
+```
+iex> data["nome"]
+"João"
 ```
 
-## Mergulho Profundo:
+E também podemos adicionar novas entradas ou alterar valores existentes:
 
-Por baixo dos panos, a biblioteca `YamlElixir` utiliza a biblioteca `LibYAML` escrita em C, que lida com a análise sintática e serialização de YAML. Por isso, é importante seguir as convenções de formatação de YAML para garantir que o código funcione corretamente.
+```
+iex> data["país"] = "Brasil"
+%{
+  "nome" => "João",
+  "idade" => 30,
+  "hobbies" => ["viajar", "ler", "cozinhar"],
+  "país" => "Brasil"
+}
 
-Além disso, a biblioteca `YamlElixir` oferece funções adicionais para manipulação de dados YAML, como leitura e escrita a partir de strings e conversão para formatos de dados como JSON.
+iex> data["idade"] = 31
+%{
+  "nome" => "João",
+  "idade" => 31,
+  "hobbies" => ["viajar", "ler", "cozinhar"],
+  "país" => "Brasil"
+}
+```
 
-## Veja também:
+Para transformar uma estrutura de dados em um arquivo YAML, podemos usar a função `encode/2`:
 
-- [Documentação da biblioteca YamlElixir](https://hexdocs.pm/yaml_elixir/api-reference.html)
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Site oficial do Elixir](https://elixir-lang.org/)
+```
+iex> encode(data, "arquivo.yml")
+:ok
+```
+
+Com isso, teremos um arquivo `arquivo.yml` contendo nossas alterações.
+
+## Mergulho profundo
+
+O pacote `:yaml_elixir` também oferece outras funções úteis para trabalhar com YAML, como `load/1` para carregar um arquivo YAML diretamente em uma variável, `dump/2` para converter diretamente uma estrutura de dados em YAML, e `encode!/1` e `decode!/1`, que funcionam como as funções mencionadas anteriormente, mas retornam erros se algo der errado durante o processo.
+
+Também é possível personalizar o processo de codificação e decodificação de dados YAML fornecendo opções adicionais para as funções `encode/2` e `decode/2`. Isso pode ser útil especialmente para lidar com tipos personalizados, como datas ou enumerações.
+
+## Veja também
+
+- [Documentação do pacote YAML Elixir](https://hexdocs.pm/yaml_elixir/YAML.html)
+- [Artigo sobre YAML no Medium](https://medium.com/@alexandreservian/um-guia-prático-para-yaml-8786d5a72a3f)
+- [Tutorial sobre YAML em Elixir no YouTube](https://www.youtube.com/watch?v=w9u_vkzQHvk)

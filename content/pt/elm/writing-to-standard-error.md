@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo para o Erro Padrão"
+html_title:           "Elm: Escrevendo para o Erro Padrão"
+simple_title:         "Escrevendo para o Erro Padrão"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,60 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever no padrão de erro?
+## Por que
 
-Escrever no padrão de erro é uma prática comum em programação que permite ao desenvolvedor capturar e exibir mensagens de erro para ajudar a identificar e solucionar problemas em seu código. É uma maneira útil de depurar e aprimorar seu programa, tornando-o mais robusto e confiável.
+Se você é um programador iniciante ou experiente, sabe a importância de escrever códigos limpos e eficientes. Mas o que muitos não sabem é que uma das melhores ferramentas que temos em nossas mãos para garantir isso é o registro de erros. Escrever para o erro padrão pode ajudá-lo a identificar e corrigir rapidamente problemas em seu código.
 
-## Como fazer
+## Como Fazer
 
-Para escrever no padrão de erro em Elm, você pode usar a função `Debug.crash` que recebe uma mensagem de erro como argumento. Por exemplo:
+Escrever para o erro padrão em Elm é bastante simples. Você só precisa usar a função `Debug.crash` e passar uma mensagem de erro como argumento. A seguinte linha de código é um exemplo de como isso pode ser feito:
 
-```Elm
-import Debug
-
-Debug.crash "Houve um erro aqui!"
+```
+Debug.crash "Erro inesperado: x não pode ser igual a y."
 ```
 
-Isso exibirá uma mensagem de erro personalizada no console do navegador. Você também pode adicionar valores de variáveis ​​à sua mensagem de erro para ajudar a rastrear problemas específicos em seu código. Por exemplo:
+Quando este código é executado, ele irá parar a execução do programa e imprimir a mensagem de erro no console do navegador. Aqui está a saída que você pode ver no console:
 
-```Elm
-import Debug
-
-let
-  num1 = 10
-  num2 = 0
-  result = num1 / num2
-in
-  Debug.crash ("Não é possível dividir " ++ toString num1 ++ " por " ++ toString num2)
+```
+Error: Erro inesperado: x não pode ser igual a y.
 ```
 
-Isso exibirá uma mensagem de erro indicando o motivo pelo qual a operação de divisão falhou.
+Você também pode usar a função `Debug.log` para escrever para o erro padrão quando estiver depurando seu código. Esta função aceita um valor e uma mensagem de erro como argumentos e irá imprimi-los no console. Aqui está um exemplo de como usá-lo:
 
-## Aprofundando
-
-No Elm, é possível personalizar ainda mais as mensagens de erro, adicionando identificadores de tipo e de linha ao seu código. Isso pode ser útil quando você tem muitas funções e deseja saber em qual delas ocorreu o erro. Por exemplo:
-
-```Elm
-import Debug
-
-let
-  num1 = 10
-  num2 = 0
-  result = num1 / num2
-
-foo: Int -> Int
-foo x =
-  Debug.crashWithId "Divisão" x ("Não é possível dividir por 0")
-
-bar: Int
-bar =
-  foo result
+```
+Debug.log "Variável x" x
 ```
 
-Isso exibirá uma mensagem de erro com o nome da função (`foo`) e o número da linha em que o erro ocorreu.
+Isso irá imprimir o valor da variável `x` junto com a mensagem "Variável x" no console do navegador.
 
-## Veja também
+## Profundando
 
-- [Documentação oficial do Elm sobre escrever no padrão de erro](https://guide.elm-lang.org/error_handling/debugging.html#crash-functions)
-- [Artigo sobre como rastrear e depurar erros em Elm](https://www.elm-tutorial.org/en/05-resources/02-debugging.html#crash-and-referrer-functions)
-- [Vídeo tutorial sobre depuração de erros em Elm](https://www.youtube.com/watch?v=uxUdsNSlyZA)
+Para aqueles que gostam de entender como as coisas funcionam por trás dos panos, é importante saber que, quando usamos as funções `Debug.crash` e `Debug.log`, estamos escrevendo para um tipo de dado chamado `Msg` (mensagem). Este tipo de dado é usado para enviar mensagens simples entre partes do seu programa. Quando você chama `Debug.crash` ou `Debug.log`, está enviando uma mensagem para o log de erros (ou seja, escrevendo para o erro padrão).
+
+Além disso, é importante notar que, ao usar `Debug.crash`, você está interrompendo a execução do programa. Por esse motivo, é recomendável usá-la apenas em situações de erro graves. Use `Debug.log` para mensagens informativas durante o processo de depuração.
+
+## Veja Também
+
+- Documentação oficial sobre registro de erros em Elm: https://guide.elm-lang.org/debugging/errors.html
+- Tutorial sobre depuração de código em Elm: https://thoughtbot.com/blog/clearer-errors-with-type-annotations-in-elm
+- Exemplo de uso de `Debug.log` em um projeto Elm: https://github.com/zalando/elm-street-view/blob/master/src/Main.elm#L36

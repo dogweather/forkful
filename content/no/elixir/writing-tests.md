@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Å skrive tester"
+html_title:           "Elixir: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -9,46 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Testdrevet utvikling har blitt en stadig mer populær metode innen programmering, og det med god grunn. Ved å skrive tester før man skriver selve koden, kan man oppdage feil og sørge for at koden fungerer som den skal. Det kan spare deg for mye tid og frustrasjon på lengre sikt.
+Hvorfor skal man bruke tid på å skrive tester? Vel, det er flere grunner til det. Først og fremst vil tester bidra til å sikre kvaliteten på kildekoden din. Det vil også hjelpe deg med å identifisere eventuelle feil og sørge for at alt fungerer som det skal. I tillegg vil det gjøre det enklere å vedlikeholde og videreutvikle koden din i fremtiden.
 
-# Hvordan
+## Hvordan
 
-For å skrive tester i Elixir, bruker man ofte et rammeverk som heter ExUnit. Her er et eksempel på hvordan man kan skrive en enkel test for en funksjon som legger sammen to tall:
+For å skrive tester i Elixir, trenger du først å opprette en `test` mappe i prosjektet ditt. Deretter kan du lage en `test.exs` fil hvor du kan definere og kjøre tester. La oss se på et eksempel:
 
 ```Elixir
-defmodule Math do
+defmodule Calculator do
   def add(x, y) do
     x + y
   end
 end
 
-defmodule MathTest do
+ExUnit.start()
+
+defmodule CalculatorTest do
   use ExUnit.Case
 
-  test "add funksjonen legger sammen to tall" do
-    assert Math.add(2, 3) == 5
+  test "adds two numbers" do
+    assert Calculator.add(2, 3) == 5
   end
 end
 ```
 
-Koden over viser hvordan man kan definere en funksjon i Elixir, og deretter hvordan man kan teste funksjonen ved hjelp av ExUnit. Når man kjører testen, vil man få følgende output:
+I dette eksempelet har vi opprettet en enkel kalkulatorfunksjon og en tilhørende test som sjekker om funksjonen returnerer riktig svar. Ved å kjøre testen, vil vi få en output som sier at testen har passert.
 
-```
-1 test, 0 failures
-```
+## Deep Dive
 
-Dette betyr at testen ble vellykket og at funksjonen fungerer som den skal. Man kan også legge til flere tester for å sjekke flere forskjellige scenarioer.
+Å skrive tester bygger på prinsippet om "Test Driven Development" (TDD). Dette innebærer å først skrive tester som skal svikte, og deretter skrive kode som består testene. Dette hjelper deg med å fokusere på den eksakte funksjonaliteten du ønsker å implementere, og fører ofte til bedre og mer strukturert kode.
 
-# Dypdykk
+I Elixir kan du også bruke biblioteker som `ExUnit` og `ExSpec` for å strukturere og organisere tester på en mer effektiv måte. I tillegg til å teste funksjonaliteten til koden din, kan du også skrive tester for å sjekke input/output, forventet feilhåndtering og ytelse.
 
-Når man skriver tester, er det viktig å tenke på hvilke deler av koden som er mest sårbare for feil. Disse delene bør testes grundigere for å sikre at de fungerer som de skal. Det kan også være lurt å skrive tester for "edge cases", altså situasjoner som kan føre til uventet oppførsel.
+## Se også
 
-I tillegg kan man bruke assert statements til å sjekke at funksjonene returnerer de riktige verdiene eller at de kaster riktig feilmelding når de skal. Man kan også teste sideeffekter av funksjonene, som for eksempel at de oppdaterer en database eller sender ut en e-post.
-
-# Se også
-
-- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [TDD in Elixir for beginners](http://blog.plataformatec.com.br/2017/01/tdd-in-elixir-for-beginners/)
-- [Unit testing your Phoenix controllers](https://blog.drewolson.org/unit-testing-your-phoenix-controllers/)
+- [Elixir Testing: From Beginner to Master](https://www.codementor.io/@joshuaballoch/elixir-testing-from-beginner-to-master-34hm3wrfu)
+- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [ExSpec Documentation](https://hexdocs.pm/exspec/ExSpec.html)

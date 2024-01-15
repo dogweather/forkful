@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Å sende en http forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http forespørsel med grunnleggende autentisering"
+title:                "Å sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Gleam: Å sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,50 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du trenger å kommunisere med et API som krever godkjenning, er det nødvendig å sende en HTTP forespørsel med grunnleggende autentisering. Dette sikrer at bare autoriserte brukere kan få tilgang til API-en og beskytter sensitiv informasjon.
+HTTP-forespørsler med grunnleggende autentisering er en viktig del av å kommunisere med eksterne tjenester og API-er. Dette tillater oss å sende og motta data på en sikker måte ved å autentisere oss mot tjenesten vi kommuniserer med.
 
-## Hvordan
+## Slik gjør du det
 
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Gleam, må du først importere http- og unicode-modulene. Deretter kan du bruke ```Gleam.Http.request``` funksjonen og spesifisere hvilken metode (GET, POST, PUT, etc.) du trenger, samt URL-en til API-en du kommuniserer med. I koden nedenfor, bruker vi ```Gleam.Unicode.utf8_to_binary``` funksjonen for å konvertere brukernavnet og passordet til hex-verdier som kreves for grunnleggende autentisering.
+Ettersom Gleam er et nytt programmeringsspråk, er det ikke mye informasjon der ute om hvordan man sender HTTP-forespørsler med grunnleggende autentisering. Men det er ganske enkelt å gjøre det i Gleam med hjelp av biblioteket [`ninenines/hackney`](https://github.com/ninenines/hackney). Følg de enkle trinnene nedenfor for å begynne å sende autentiserte HTTP-forespørsler i Gleam.
 
+Først må vi legge til `ninenines/hackney` i `gleam.toml`-filen vår under `dependencies`-seksjonen:
+
+```Gleam
+[dependencies]
+ninenines/hackney = "3.1.0"
 ```
-import http
-import unicode
 
-let username = "bruker"
-let password = "passord"
+Deretter kan vi importere [`hackney`](https://hexdocs.pm/hackney/readme.html) biblioteket i filen vår og sette opp et `httpClient`-objekt for å kommunisere med tjenesten vi vil sende en forespørsel til:
 
-let url = "https://api.com/"
+```Gleam
+import hackney
 
-let headers =
-  List.map(Tuple2.new,
-    ["Authorization"("Basic "
-         ++ Gleam.Unicode.utf8_to_binary(username ++ ":" ++ password))
-    ])
+httpClient = hackney:start()
+```
 
-let response = Gleam.Http.request(
-  method: "GET",
-  url: url,
-  headers: headers
+Nå kan vi sende en HTTP-forespørsel med autentisering ved hjelp av `hackney:basic_auth()`-funksjonen. Den tar inn en URL, brukernavn og passord og returnerer et `Result`-objekt som enten vil være `Ok` med responsen fra tjenesten eller `Error` med en feilmelding. Her er et eksempel på hvordan dette kan se ut i Gleam:
+
+```Gleam
+hackney:basic_auth(
+    httpClient,
+    "https://example.com/api",
+    "my_username",
+    "my_password"
 )
+|> case _ {
+    Ok(response) -> io:format("Got successful response: {}", [response])
+    Error(error) -> io:format("Got error: {}", [error])
+}
 ```
 
-Eksempel på output (dersom forespørselen var vellykket):
+Dette vil sende en GET-forespørsel til `https://example.com/api` med autentiseringsinformasjonen som en del av headeren. Du kan også bruke [`hackney:basic_auth_headers()`](https://hexdocs.pm/hackney/readme.html#basic_auth_headers/2) hvis du vil legge til autentiseringen manuelt i headeren din. Se [`hackney`-dokumentasjonen](https://hexdocs.pm/hackney/readme.html#basic_auth/3) for mer informasjon.
 
-```
-status_code: 200,
-headers: [...],
-body: "..."
-```
+## Dykk dypere
 
-## Dypdykk
+Det er også mulig å bruke [`hackney:basic_auth/3`](https://hexdocs.pm/hackney/readme.html#basic_auth/3) for å sende en spesifikk HTTP-metode (som POST eller PUT) med autentisering. Det er også viktig å merke seg at hvis tjenesten du kommuniserer med bruker en annen autentiseringsform enn grunnleggende autentisering, som OAuth, må du bruke en annen funksjon fra `hackney`-biblioteket. Så sørg for å lese dokumentasjonen nøye for å velge riktig funksjon for din situasjon.
 
-En HTTP-forespørsel med grunnleggende autentisering inneholder en "Authentication" header, som i koden over er satt til "Basic" etterfulgt av en hex-verdi av brukernavn og passord kombinert med et kolon. Dette sikrer at dataene blir sendt i kryptert form og ikke kan leses av uautoriserte.
+## Se også
 
-Når du sender en HTTP-forespørsel med Gleam, blir dataene automatisk convertert til binærform før de sendes. Dette sikrer at dataene er korrekt formatert for kryptering og senderingen.
-
-## Se Også
-
-https://gleam.run/modules/http.html
-https://gleam.run/modules/unicode.html
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- [Gleam offisiell dokumentasjon](https://gleam.run/)
+- [Hackney dokumentasjon](https://hexdocs.pm/hackney/readme.html)

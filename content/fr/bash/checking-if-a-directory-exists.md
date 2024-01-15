@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier l'existence d'un répertoire"
+html_title:           "Bash: Vérifier l'existence d'un répertoire"
+simple_title:         "Vérifier l'existence d'un répertoire"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,37 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous vous demandez peut-être pourquoi il est important de vérifier si un répertoire existe avant de continuer votre programme Bash. Eh bien, c'est une étape cruciale pour s'assurer que votre script fonctionne correctement et éviter les erreurs inattendues.
+Il est souvent utile de vérifier si un dossier existe avant de continuer avec un script Bash. Cela permet de s'assurer que toutes les opérations nécessaires peuvent être effectuées sans causer d'erreurs.
 
-## Comment faire
+## Comment Faire
 
-La bonne nouvelle est qu'il est très facile de vérifier si un répertoire existe en utilisant quelques lignes de code Bash. Voici un exemple de code qui vérifie si un répertoire appelé "documents" existe dans votre répertoire Home :
+Il existe plusieurs façons de vérifier si un dossier existe en utilisant Bash. La méthode la plus simple consiste à utiliser l'opérateur de condition `-d`, qui vérifie s'il s'agit d'un dossier existant.
 
-```Bash
-if [ -d ~/documents ]
-then
-  echo "Le répertoire existe."
+```
+#!/bin/bash
+
+if [ -d "/chemin/vers/dossier" ]; then
+  echo "Le dossier existe."
 else
-  echo "Le répertoire n'existe pas."
+  echo "Le dossier n'existe pas."
 fi
 ```
 
-Dans cet exemple, nous utilisons la commande "[-d](https://wiki.bash-hackers.org/commands/classictest#the_determinator_command)" pour vérifier si le répertoire "documents" existe dans le répertoire Home, représenté par le symbole "~" en Bash. Si le répertoire existe, le programme affichera "Le répertoire existe." Sinon, il affichera "Le répertoire n'existe pas."
+Dans cet exemple, si le dossier existe, le script affichera "Le dossier existe." Sinon, il affichera "Le dossier n'existe pas.".
 
-## Plongée en profondeur
+Une autre méthode consiste à utiliser la commande `test`. Cette commande peut vérifier différentes conditions, y compris si un fichier ou un dossier existe.
 
-Maintenant que vous savez comment vérifier si un répertoire existe en utilisant le code ci-dessus, vous pourriez vous demander quels autres outils et options vous pouvez utiliser pour ce processus. Voici quelques éléments à prendre en compte :
+```
+#!/bin/bash
 
-- Utilisez l'option "-e" pour vérifier si un fichier ou un répertoire existe, au lieu de la commande "[-d](https://wiki.bash-hackers.org/commands/classictest#the_determinator_command)" pour spécifier un fichier ou un répertoire spécifique.
-- Vous pouvez également utiliser la commande "test" au lieu de "[-d](https://wiki.bash-hackers.org/commands/classictest#the_determinator_command)". Par exemple, "test -d ~/documents" fonctionnera de la même manière que "[-d](https://wiki.bash-hackers.org/commands/classictest#the_determinator_command) ~/documents".
-- Pour vérifier si un répertoire existe dans un emplacement spécifique, vous pouvez utiliser le chemin absolu au lieu du chemin relatif.
-- Vous pouvez également utiliser des variables pour spécifier le chemin du répertoire que vous souhaitez vérifier.
+if test -d "/chemin/vers/dossier"
+then
+  echo "Le dossier existe."
+else
+  echo "Le dossier n'existe pas."
+fi
+```
 
-## Voir aussi
+Vous pouvez également utiliser la commande `ls` avec l'option `-d` pour vérifier si un dossier spécifique existe dans un répertoire.
 
-- [Documentation sur la commande '[-d'](https://wiki.bash-hackers.org/commands/classictest#the_determinator_command)
-- [Documentation sur la commande 'test'](https://ss64.com/bash/test.html)
-- [Article sur la vérification de la présence d'un répertoire en Bash](https://linuxhint.com/bash_check_if_a_directory_exists/)
-- [Vidéo tutoriel sur la vérification de la présence d'un répertoire en Bash](https://www.youtube.com/watch?v=JaVcaRcyknI)
+```
+#!/bin/bash
 
-Maintenant que vous savez comment vérifier si un répertoire existe en Bash, vous pouvez utiliser cette étape dans vos scripts pour assurer une exécution sans avarie. N'hésitez pas à consulter les liens ci-dessus pour plus d'informations et de ressources utiles. Bon codage !
+# Vérifie si le dossier "dossier1" existe dans le répertoire "chemin/vers"
+if ls -d /chemin/vers/dossier1; then
+  echo "Le dossier existe."
+else
+  echo "Le dossier n'existe pas."
+fi
+```
+
+## Approfondissement
+
+Si vous souhaitez vérifier l'existence d'un dossier dans un script Bash et continuer avec des opérations ultérieures, vous pouvez utiliser une structure `if-else` comme dans les exemples ci-dessus. Cependant, si vous souhaitez simplement afficher un message d'erreur et quitter le script si le dossier n'existe pas, vous pouvez utiliser l'option `-e` avec `exit` dans la structure `if`.
+
+```
+#!/bin/bash
+
+if [ -d "/chemin/vers/dossier" ]; then
+  echo "Le dossier existe."
+else
+  echo "Le dossier n'existe pas."
+  exit -1
+fi
+```
+
+De plus, si vous souhaitez vérifier l'existence de plusieurs dossiers dans un script, vous pouvez utiliser une boucle `for` pour parcourir une liste de chemins de dossiers et vérifier chacun d'eux.
+
+## Voir Aussi
+
+- La documentation officielle de Bash sur les opérateurs de conditions : https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+- Un autre article sur les meilleures pratiques pour vérifier si un dossier existe en Bash : https://linuxize.com/post/bash-check-if-directory-exists/

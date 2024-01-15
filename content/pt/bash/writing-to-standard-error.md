@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Escrevendo para o erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Bash: Escrevendo para o erro padrão"
 simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que escrever para o erro padrão no Bash
+## Por que
 
-Se você já programou em Bash, provavelmente já se deparou com o uso do comando "echo" para imprimir mensagens na tela. No entanto, nem sempre queremos que essas mensagens sejam impressas no terminal padrão. É aqui que entra o uso de escrever para o erro padrão, permitindo que mensagens importantes sejam exibidas durante a execução do programa, mesmo se a saída padrão estiver sendo redirecionada ou suprimida.
+Você pode estar se perguntando por que escrever para o erro padrão em seu script Bash? Bem, a resposta é simples - para lidar melhor com erros e depuração. Ao escrever mensagens de erro para o erro padrão, você pode facilmente encontrar e corrigir problemas em seu código.
 
-## Como fazer
+## Como Fazer
 
-A forma mais comum de escrever para o erro padrão em Bash é utilizando o comando ">&2" após a mensagem que se deseja imprimir. Por exemplo, se quisermos imprimir uma mensagem de erro, podemos usar o seguinte código:
+Para escrever para o erro padrão em Bash, você pode usar o comando `echo` com a opção `-e` para habilitar escapes de caractere. Aqui está um exemplo de código para imprimir uma mensagem de erro:
 
 ```Bash
-echo "Erro: o arquivo não pode ser encontrado!" >&2
+echo -e "Erro: Não foi possível encontrar o arquivo."
 ```
 
-Isso garantirá que a mensagem seja impressa no erro padrão, tornando-a mais visível e garantindo que o usuário a veja, independente da saída padrão.
+Isso irá imprimir a mensagem na tela do erro padrão. Você também pode redirecionar o erro padrão para um arquivo usando o operador `>` após o comando `echo`. Por exemplo:
 
-## Deep Dive
+```Bash
+echo "Erro: Não foi possível encontrar o arquivo." > erro.log
+```
 
-Para entender melhor como funciona a escrita para o erro padrão no Bash, precisamos primeiro entender um pouco sobre os descritores de arquivo. Todo arquivo aberto em um sistema operacional possui um número exclusivo associado a ele, chamado de descritor de arquivo. O descritor de arquivo 1 é o padrão para a saída do terminal, enquanto o descritor de arquivo 2 é o padrão para o erro padrão.
+Isso irá redirecionar a mensagem de erro para um arquivo chamado "erro.log".
 
-Ao usar o comando ">&2", estamos redirecionando a saída para o descritor de arquivo 2, ou seja, o erro padrão. Isso garante que a mensagem seja tratada como um erro pelo Bash e seja impressa no terminal, mesmo que a saída padrão esteja sendo redirecionada ou suprimida.
+## Aprofundando
 
-Além disso, é importante lembrar que o Bash possui um comando "exec" que pode mudar os descritores de arquivo e permitir que a saída padrão seja redirecionada para o erro padrão e vice-versa. Isso pode ser útil em casos específicos, mas requer cuidado ao ser utilizado.
+Para uma opção mais avançada, você pode usar o comando `>&2` após o comando `echo` para redirecionar explicitamente a saída para o erro padrão. Isso é útil quando você precisa escrever mensagens de erro dentro de uma função em seu script Bash. Aqui está um exemplo de código:
 
-## Veja também
+```Bash
+funcao_erro() {
+    >&2 echo "Erro: Nome de usuário inválido."
+}
 
-- Guia de redirecionamento de saída e erro em Bash: https://linuxhint.com/bash_output_redirection_guide/
-- Compreendendo o comando "exec" em Bash: https://www.shell-tips.com/bash/exec/
-- Documentação oficial do Bash (em português): https://www.gnu.org/software/bash/manual/html_node/index.html#Top
+funcao_erro
+```
+
+Este código irá enviar a mensagem de erro para o erro padrão, mesmo que a função esteja sendo chamada dentro do script.
+
+## Veja Também
+
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Artigo sobre redirecionamento de entrada/saída em Bash](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection)
+- [Lista de comandos Bash úteis](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)

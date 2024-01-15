@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Elixir: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,78 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum YAML in Elixir verwenden?
+## Warum
 
-YAML ist eine einfache und leistungsstarke Methode, um Daten darzustellen und zu speichern. Es ist besonders nützlich in der Programmierung, da es menschenlesbar ist und eine benutzerfreundliche Alternative zu JSON und XML bietet. Es wird auch häufig in Elixir Projekten verwendet, da es gut mit der Syntax von Elixir harmoniert und eine einfache Integration ermöglicht.
+Wenn du mit Konfigurationsdateien arbeitest, musst du möglicherweise auch mit YAML umgehen. YAML ist eine einfache und benutzerfreundliche Syntax, um Daten zu strukturieren und zu speichern. Mit Elixir kannst du problemlos mit YAML-Dateien arbeiten und sie in deiner Anwendung verwenden.
 
-## Wie man YAML in Elixir nutzt
+## Wie man mit YAML in Elixir arbeitet
 
-Um YAML in Elixir zu verwenden, muss zuerst das Paket "YamlElixir" installiert werden. Dann kann man es in seinem Code importieren und mit dem beliebten "YAML.load_file/1" function die Daten aus einer YAML-Datei laden. Die Syntax sieht folgendermaßen aus:
+Um mit YAML in Elixir zu arbeiten, musst du zuerst das Paket "YAML" installieren. Öffne dazu deine Elixir-Projektkonfiguration und füge das folgende Paket hinzu:
 
 ```Elixir
-import YamlElixir
-
-data = YAML.load_file("data.yml")
+{:yaml, "~> 0.0.2"}
 ```
 
-Eine YAML-Datei könnte beispielsweise folgendermaßen aussehen:
+Dann führe `mix deps.get` aus, um die Abhängigkeit zu installieren. Nun kannst du das `YAML`-Modul in deinem Code importieren:
+
+```Elixir
+import YAML
+```
+
+Um eine YAML-Datei in Elixir zu lesen, verwende die `YAML.load_file/1` Funktion und gib den Pfad zur Datei an:
+
+```Elixir
+config = YAML.load_file("config.yml")
+```
+
+Du kannst nun auf die Werte in der YAML-Datei zugreifen, indem du den entsprechenden Schlüssel verwendest:
+
+```Elixir
+config[:database][:username]
+```
+
+Um eine YAML-Datei zu schreiben, verwende die `YAML.dump/1` Funktion und gib ein beliebiges Elixir-Datenformat an:
+
+```Elixir
+data = %{name: "Max Mustermann", age: 25}
+YAML.dump(data, "profile.yml")
+```
+
+Das Ergebnis wird eine YAML-Datei sein, die wie folgt aussieht:
 
 ```YAML
-name: Jane
-age: 28
-hobbies:
-  - hiking
-  - cooking
-  - dancing
+name: Max Mustermann
+age: 25
 ```
 
-Wenn man nun die Variable "data" ausgibt, würde man folgendes Ergebnis sehen:
+## Tiefer Einblick
 
-```Elixir
-%{age: 28, hobbies: ["hiking", "cooking", "dancing"], name: "Jane"}
-```
+YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine einfache und benutzerfreundliche Möglichkeit zu bieten, Daten in einer menschenlesbaren Struktur zu speichern. In Elixir wird das `YAML`-Modul verwendet, das auf YamlElixir basiert, einer leistungsstarken YAML-Bibliothek.
 
-Man kann auch direkt einen String benutzen, um YAML Daten zu laden:
-
-```Elixir
-yaml_string = """
-name: John
-age: 35
-hobbies:
-  - painting
-  - reading
-  - gardening
-"""
-
-data = YAML.load(yaml_string)
-```
-
-Dies würde wiederum folgendes Ergebnis liefern:
-
-```Elixir
-%{age: 35, hobbies: ["painting", "reading", "gardening"], name: "John"}
-```
-
-## Tiefere Einblicke in die Arbeit mit YAML
-
-YAML bietet eine breite Palette an Funktionen und Möglichkeiten, um Daten zu repräsentieren. Eine wichtige Sache zu beachten, ist die Verwendung von Leerzeichen und Einrückungen, um die Struktur der Daten zu definieren. Diese Leerzeichen und Einrückungen müssen korrekt sein, um fehlerhafte Ergebnisse zu vermeiden.
-
-Zudem können auch komplexe Datenstrukturen wie Listen, Arrays und assoziative Arrays in YAML dargestellt werden. Hier ein Beispiel, wie man in YAML Objekte und deren Eigenschaften miteinander verbinden kann:
-
-```YAML
-object:
-  name: Jane
-  age: 28
-  hobbies:
-    - hiking
-    - cooking
-    - dancing
-```
-
-Man kann auch Kommentare in YAML einfügen, um den Code besser zu strukturieren und zu verstehen.
+Mit dem `YAML`-Modul kannst du auch benutzerdefinierte Typen definieren und verwenden. Dies ermöglicht es dir, komplexere Datenstrukturen in einer YAML-Datei zu speichern, die dann direkt in Elixir eingelesen werden können. Du kannst mehr über die Verwendung von benutzerdefinierten Typen in der offiziellen Elixir-Dokumentation erfahren.
 
 ## Siehe auch
 
-- Offizielle Elixir Dokumentation zu YAML: https://hexdocs.pm/elixir/YAML.Elixir.html
-- YAML Syntax Erklärung: https://yaml.org/spec/1.2/spec.html
-- Einführung in Elixir: https://elixir-lang.org/getting-started/introduction.html
+- Offizielle Elixir-Dokumentation: https://hexdocs.pm/elixir/YAML.html
+- YamlElixir-Bibliothek: https://github.com/KamilLelonek/yamler
+- YAML-Spezifikation: https://yaml.org/spec/1.2/spec.html

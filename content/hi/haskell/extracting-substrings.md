@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: सबस्ट्रिंग निकालना"
-simple_title:         "सबस्ट्रिंग निकालना"
+title:                "उपक्षेत्रों को निकालना"
+html_title:           "Haskell: उपक्षेत्रों को निकालना"
+simple_title:         "उपक्षेत्रों को निकालना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्यों
 
-Substring extraction ek kaafi aasan aur uttam tarika hai jo aapke kaam ko saral aur sahi banata hai. Iska upyog bahut se programming tasks mein ho sakta hai jaise ki string manipulation, data cleaning aur aisi anya kaam.
+क्या आपको कभी एक बड़े स्ट्रिंग से कुछ छोटे टेक्स्ट स्ट्रिंग निकालने की जरूरत हुई है? यदि हाँ, तो आप जानते होंगे कि यह बहुत बार दोहराना और मोनोटन हो सकता है, स्थानीय विधाओं और तारीख और समय मूल्यों को अलग करने जैसे फॉर्मेटिंग दृश्यता के लिए बहुत उपयोगी है। हास्केल में, हम इसे स्ट्रिंगों को अलग करने की तकनीक से कर सकते हैं, जिससे हमारे कोड को आसान और स्पष्ट बनाने में मदद मिलती है।
 
-## Kaise Karein
+## कैसे करें
+
+यदि आपने पहले से ही हास्केल में स्ट्रिंग अलग करने की तकनीक का उपयोग नहीं किया है, तो आपको इसके बारे में जानकारी जारी रखना चाहिए कि कैसे यह काम करता है। हास्केल में, हम `take` और `drop` फ़ंक्शन का उपयोग कर सकते हैं जो स्ट्रिंग के नगेरा अंशों को अलग कर सकते हैं। यहां एक उदाहरण है:
 
 ```Haskell
--- Substring ko start aur end index se extract karna
-substring :: Int -> Int -> [a] -> [a]
-substring start end list = take (end - start + 1) (drop start list)
+let str = "Haskell programming"
 
--- Example
-main = do
-  let str = "Haskell is amazing"
-  let result = substring 8 13 str
-  print result
+let firstFour = take 4 str  -- "Hask"
+let rest = drop 6 str       -- "programming"
+
+-- या सीधे इस प्रकार करें:
+let (firstFour, rest) = splitAt 4 str  -- ("Hask", "ell programming")
 ```
 
-Is code ko run karne par aapko `is ama` ka output milega. Isi tarah aap apne code mein alag-alag starting aur ending index ka upyog karke alag alag substrings extract kar sakte hain.
+`take` फ़ंक्शन से हम पहले से तय संख्या के अंशों को ले सकते हैं, जबकि `drop` फ़ंक्शन परवर्ती संख्या के अंशों को छोड़ देगा। आप इसे अपनी आवश्यकतानुसार बदल सकते हैं और अन्य स्ट्रिंगों को अलग करने के लिए स मिश्रण कर सकते हैं।
 
-## Gehri Jhaank
+## गहराई में
 
-Substring extraction ke peeche kaaran hai ki humara samay aur mehnat bachta hai. Ek baar hume substrings ki prakriya samajh aa jaati hai, tab hum bahut se alag alag aur kaam ke tarike dhoondh sakte hain jisse hum apne code ko aur bhi efficient banate hain.
-
-Iske saath hi, substring extraction ek bahut hi flexible process hai jisme hume shuru aur ant ke index ke alawa aur bhi bahut se chunne ke options hote hain jaise ki specific words, characters ya patterns ko bhi extract kar sakte hain.
-
-## Dekhein Bhi
-
-- [Haskell Strings](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-String.html)
-- [Substring Functions in Haskell](https://www.geeksforgeeks.org/haskell-substring-functions/)
-- [A Beginner's Guide to Substrings in Haskell](https://www.codewars.com/kata/a-beginners-guide-to-substrings-in-haskell)
+स्ट्रिंग अलग करने की अपेक्षा भविष्य में क

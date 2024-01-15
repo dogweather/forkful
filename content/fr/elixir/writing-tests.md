@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Écriture de tests"
+html_title:           "Elixir: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -9,67 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en Elixir?
+## Pourquoi
 
-L'écriture de tests est une pratique courante dans le développement de logiciels pour vérifier le bon fonctionnement du code et prévenir les erreurs. En Elixir, l'écriture de tests peut également aider à garantir que toutes les fonctionnalités du langage sont utilisées correctement et contribuer à maintenir un code propre et facile à débuguer.
+Ecrire des tests est essentiel pour garantir la fiabilité et la stabilité de nos programmes. De plus, cela permet de détecter rapidement les erreurs et de les corriger avant qu'elles ne deviennent de plus gros problèmes.
 
-## Comment écrire des tests en Elixir
+## Comment faire
 
-Pour écrire des tests en Elixir, il est nécessaire d'utiliser le module `ExUnit`, qui est inclus dans la bibliothèque standard du langage. Voici un exemple de fonction Elixir à tester :
+Ecrire des tests en Elixir est simple et intuitif grâce à son framework de tests intégré appelé ExUnit. Voici un exemple de test pour une fonction qui retourne la somme de deux nombres :
 
 ```Elixir
-def add(a, b) do
-  a + b
+defmodule Calculator do
+  def add(a, b) do
+    a + b
+  end
 end
-```
 
-Pour tester cette fonction, on peut utiliser `assert` dans un module de test `ExampleTest`.
-
-```Elixir
-defmodule ExampleTest do
+defmodule CalculatorTest do
   use ExUnit.Case
-  
-  test "addition" do
-    result = add(3, 5)
-    assert result == 8
+
+  test "add" do
+    assert Calculator.add(2, 5) == 7
   end
 end
 ```
 
-Lorsque nous exécutons le test avec `mix test`, nous obtenons le message suivant :
+Vous pouvez exécuter ce test en utilisant la commande `mix test`, qui exécutera tous les tests présents dans votre projet. Le résultat devrait être le suivant :
 
 ```
-==> Example
-Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-1 tests, 0 failures
+...
+
+Finished in 0.04 seconds
+1 test, 0 failures
+
+Randomized with seed 605633
 ```
 
-Cela signifie que notre test s'est exécuté avec succès sans aucun échec. Maintenant, si nous voulons tester un résultat incorrect, nous pouvons modifier notre assertion ainsi :
+Nous pouvons voir que notre test a réussi. Cependant, imaginons que nous passions les mauvais arguments à notre fonction `add`. Notre test échouera alors et nous pourrons immédiatement détecter et corriger l'erreur.
 
-```Elixir
-assert result == 7
-```
+## Plongeon en profondeur
 
-Et si nous exécutons le test, nous obtenons cette fois-ci un message indiquant un échec :
+En plus de tester les fonctions individuelles, il est également important de tester l'interaction entre différentes parties de votre code. Cela peut être fait en utilisant des mocks et des stubs pour simuler les comportements de certaines fonctions ou modules. Vous pouvez également utiliser des outils comme `mix cover` pour mesurer la couverture de vos tests et vous assurer qu'ils couvrent suffisamment de code.
 
-```
-==> Example
-Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-1 tests, 1 failures
-```
-
-De cette façon, en écrivant des tests pour chaque fonction de notre code, nous pouvons nous assurer que notre code fonctionne correctement et détecter rapidement les erreurs.
-
-## Approfondir l'écriture de tests
-
-En plus des tests unitaires comme celui que nous avons vu précédemment, il existe d'autres types de tests en Elixir, tels que les tests d'intégration et les tests de bout en bout. Ces différents types de tests peuvent être utilisés en combinaison pour garantir la qualité du code et la couverture des fonctionnalités. De plus, il est également possible de créer des tests plus complexes en utilisant différentes méthodes de test telles que `setup_all` et `teardown_all` pour préparer et nettoyer l'environnement de test.
+Vous devriez également avoir un bon équilibre entre les tests unitaires, qui testent une seule fonction ou un seul module, et les tests d'intégration, qui testent l'ensemble de votre système. Les tests d'intégration peuvent être effectués à l'aide d'outils comme `Hound` pour tester l'interface utilisateur de votre application.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'écriture de tests en Elixir, vous pouvez consulter les ressources suivantes :
-
-- [Documentation officielle Elixir - Tests](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-ct.html)
-- [Formation Udemy - Tests en Elixir](https://www.udemy.com/course/elixir-for-beginners/learn/lecture/4945132?start=0#overview)
-- [Blog Programez.com - Écrire des tests en Elixir](https://www.programmez.com/etudes/un-petit-tour-dhorizon-des-tests-en-elixir-26865)
-
-Maintenant que vous connaissez les bases de l'écriture de tests en Elixir, n'hésitez pas à les utiliser dans votre prochain projet pour garantir un code de qualité et facile à maintenir. Happy coding!
+- [Documentation officielle d'ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Tutoriel sur les tests en Elixir](https://elixir-lang.org/getting-started/testing.html)
+- [Elixir School - ExUnit](https://elixirschool.com/lessons/specifics/exunit/)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Zufallszahlen erzeugen"
-simple_title:         "Zufallszahlen erzeugen"
+title:                "Generieren von Zufallszahlen"
+html_title:           "Swift: Generieren von Zufallszahlen"
+simple_title:         "Generieren von Zufallszahlen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -9,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In der Welt der Programmierung gibt es immer wieder Aufgaben, die zufällige Zahlen erfordern, sei es für die Simulation von Spielen oder für die Erzeugung von Passwörtern. In diesem Blogbeitrag werden wir uns daher damit beschäftigen, wie man in Swift Zufallszahlen generieren kann.
+Wir alle wissen, dass Zufallszahlen ein wichtiger Bestandteil der Informatik sind, aber warum sollten wir uns überhaupt damit beschäftigen? Nun, das Erzeugen von Zufallszahlen kann in vielen Anwendungsfällen sehr nützlich sein, zum Beispiel bei der Erstellung von Passwörtern, beim Testen von Software oder bei der Simulation von Ereignissen.
 
-# Wie geht man vor?
+## Wie es geht
 
-Um in Swift Zufallszahlen zu generieren, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der `random()` Funktion. Diese gibt eine zufällige Zahl zwischen 0 und 1 zurück. Hier ein Beispiel:
-
-```Swift
-let randomNumber = random()
-print(randomNumber) // Output: 0.713523
-```
-
-Wenn man eine zufällige ganze Zahl braucht, kann man die `Int` Methode verwenden. Diese nimmt als Parameter einen Bereich an, aus dem die Zufallszahl gezogen werden kann. Im folgenden Beispiel wird eine zufällige Zahl zwischen 1 und 10 generiert:
+Um in Swift Zufallszahlen zu generieren, können wir die integrierte Funktion `arc4random_uniform()` verwenden. Diese Funktion gibt eine zufällige Zahl im angegebenen Bereich zurück. Zum Beispiel gibt `arc4random_uniform(10)` eine Zufallszahl zwischen 0 und 9 zurück. Hier ist ein Beispielcode:
 
 ```Swift
-let randomInt = Int.random(in: 1...10)
-print(randomInt) // Output: 7
+let randomNum = arc4random_uniform(10)
+print(randomNum)
 ```
+Das obige Beispiel gibt eine zufällige Zahl zwischen 0 und 9 aus. Um eine größere Zufallszahl zu generieren, können wir einfach den angegebenen Bereich ändern. Zum Beispiel gibt `arc4random_uniform(100)` eine Zufallszahl zwischen 0 und 99 zurück.
 
-Wenn man eine zufällige Zahl mit Nachkommastellen braucht, kann man die `Double` Methode nutzen. Diese funktioniert ähnlich wie die `Int` Methode, nimmt jedoch einen `Double` als Parameter an. Im folgenden Beispiel wird eine zufällige Zahl zwischen 1 und 100 mit zwei Nachkommastellen generiert:
+## Tiefergehende Infos
 
-```Swift
-let randomDouble = Double.random(in: 1...100)
-print(randomDouble) // Output: 75.82
-```
+Wenn Sie genauer verstehen möchten, wie Zufallszahlen in Swift funktionieren, können Sie einen Blick auf die zugrunde liegende Methode `arc4random()` werfen. Diese Funktion generiert eine Zufallszahl basierend auf einem Entropie-Pool, der von der Kernel-Ebene verwaltet wird. Dies stellt sicher, dass die generierten Zufallszahlen tatsächlich zufällig sind und nicht vorhersehbar.
 
-# Tiefergehende Informationen
+## Siehe auch
 
-Die in Swift verwendeten Methoden für die Generierung von Zufallszahlen basieren auf der "Mersenne Twister" Algorithmus. Dieser Algorithmus sorgt dafür, dass die generierten Zahlen wirklich zufällig sind und nicht durch eine gewisse Sequenz vorhersehbar werden.
-
-Wenn man mehr Kontrolle über die Generierung von Zufallszahlen haben möchte, gibt es in Swift auch die Möglichkeit, die Klasse `RandomNumberGenerator` zu verwenden. Mit dieser können eigene Algorithmen zur Generierung von Zufallszahlen implementiert werden.
-
-# Siehe auch
-
-[Mersenne Twister Algorithmus](https://de.wikipedia.org/wiki/Mersenne-Twister)
-
-[Offizielle Dokumentation zu Random in Swift](https://developer.apple.com/documentation/swift/random)
-
-[Swift Tutorial: Zufallszahlen generieren](https://www.raywenderlich.com/17483599-swift-tutorial-random-numbers)
+- [Swift Dokumentation zu Zufallszahlen](https://developer.apple.com/documentation/swift/int)
+- [Tutorial: Zufallszahlen in Swift generieren](https://www.hackingwithswift.com/example-code/language/how-to-generate-random-numbers-in-swift)
+- [Vorhersehbarkeit von Zufallszahlen vermeiden](https://stackoverflow.com/questions/10106493/)
+- [Mehr zu Entropie-Pools](https://en.wikipedia.org/wiki/Entropy_(computing))

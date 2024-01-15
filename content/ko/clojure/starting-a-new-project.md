@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 새 프로젝트 시작하기"
+title:                "새 프로젝트 시작하기"
+html_title:           "Clojure: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,30 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-새로운 프로젝트를 시작하는 이유 - 다양한 기능을 가진 강력한 함수, 뛰어난 확장성, 쉬운 문법 등을 통해 Clojure는 많은 개발자들에게 인기가 있는 프로그래밍 언어입니다.
+Clojure는 다른 프로그래밍 언어와 달리, 단순한 코드와 강력한 기능을 결합하여 효율적이고 성능이 우수한 프로그램을 만들 수 있도록 해줍니다. 새로운 프로젝트를 시작하면서 Clojure를 사용하면, 보다 견고하고 간결한 코드를 작성할 수 있으며, 훌륭한 성능을 발휘할 수 있습니다.
 
-## 시작하는 방법
+## 시작하는 법
 
-새로운 Clojure 프로젝트를 시작하는 것은 간단합니다. 먼저, Clojure를 설치해야 합니다. 그리고 새롭고 깔끔한 프로젝트 디렉토리를 만든 후, 다음과 같은 명령어를 입력하세요:
+### 새 프로젝트 만들기
 
-```Clojure
-clj -X:new :template app :name my-project
+우선, Clojure를 사용할 수 있는 개발 환경을 설정해야 합니다. 이를 위해 다음과 같은 단계를 따르세요:
+
+1. 먼저, Java 개발 키트(JDK)를 다운로드하고 설치합니다. Clojure는 Java 가상 머신 위에서 실행되므로, JDK가 필요합니다.
+2. 다음으로, 빌드 관리 도구인 Leiningen을 설치합니다. Leiningen은 Clojure 프로젝트를 관리하는데 사용되며, 프로젝트 구조를 자동으로 생성하고 필요한 라이브러리를 다운로드합니다.
+3. 이제 새로운 프로젝트를 생성할 준비가 되었습니다. 프로젝트 디렉토리를 생성하고, 다음 명령어를 실행하세요:
+
+```
+lein new <프로젝트명>
 ```
 
-그러면 새로운 Clojure 프로젝트를 자동으로 생성할 수 있습니다. 이제 프로젝트 디렉토리에 들어가서 `deps.edn` 파일을 열어 다른 라이브러리를 추가하거나 관리할 수 있습니다. 또한 `src/my_project/core.clj` 파일에서 코드를 작성하고 실행해 볼 수 있습니다.
+### 새로운 함수 정의하기
 
-만약 IDE를 사용하고 싶다면, Clojure 공식 홈페이지에서 다양한 IDE 확장 기능을 찾아볼 수 있습니다.
+새 프로젝트를 시작했다면, Clojure의 강력한 기능 중 하나인 함수를 정의하는 방법을 알아보겠습니다. 함수는 다음과 같이 정의할 수 있습니다:
 
-## 깊이 들어가기
+```
+(defn 함수명 [매개변수]
+    (함수 본문)) 
+```
 
-새로운 프로젝트를 시작하는 데에는 더 많은 내용이 있을 수 있습니다. 예를 들어, Clojure는 함수형 프로그래밍 언어이기 때문에 기존의 객체 지향 프로그래밍 언어와 다른 접근 방식을 요구합니다. 하지만 이러한 접근 방식은 코드를 간결하게 만들어줄 뿐만 아니라 유지 보수하기도 쉽게 만들어 줍니다.
+예를 들어, `plus-five`라는 이름의 함수를 정의하고, 매개변수로 숫자 `x`를 받아 `x`에 `5`를 더해주는 함수를 작성해보겠습니다:
 
-또한 Clojure는 리액트와 함께 사용될 때 뛰어난 성능을 발휘합니다. 그리고 아직도 많은 개발자들이 사용하기 때문에 인터넷 상에서 다양한 정보와 도움을 받을 수 있습니다.
+```
+(defn plus-five [x]
+    (+ x 5)) 
+```
 
-## 또 다른 정보 찾아보기
+이 함수를 호출하기 위해서는, 다음과 같이 입력하세요:
+
+```
+(plus-five 10) 
+```
+
+위의 호출은 `15`라는 결과값을 반환합니다.
+
+## 더 깊게 알아보기
+
+새로운 프로젝트를 시작할 때, Clojure에 명시적으로 종속되지 않고 다른 라이브러리를 사용하고 싶을 수 있습니다. 이런 경우 `project.clj`라는 파일에 직접 종속성을 추가할 수 있습니다. 예를 들어, `org.clojure/math.numeric-tower` 라이브러리를 추가하고 싶다면, 다음과 같은 코드를 `project.clj`에 추가하면 됩니다:
+
+```
+(defproject <프로젝트명> "0.1.0-SNAPSHOT"
+    :description "My project"
+    :dependencies [[org.clojure/clojure "1.10.0"]
+                   [org.clojure/math.numeric-tower "0.0.4"]]) 
+```
+
+새로운 프로젝트를 시작할 때 이렇게 라이브러리를 직접 추가하면, 프로그래밍 과정에서 라이브러리를 자유롭게 사용할 수 있습니다.
+
+## 봐도 좋아요
 
 - [Clojure 공식 홈페이지](https://clojure.org/)
-- [Clojure 확장 기능](https://clojure.org/community/editor_support)
-- [리액트와 함께 사용하는 Clojure 레시피](https://practicalli.github.io/clojure-webapps/react-clojure/README.html)
+- [Clojure 문서](https://clojure.org/about/documentation)
+- [Leiningen 문서](https://leiningen.org/)

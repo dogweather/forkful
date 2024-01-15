@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Java recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Java"
 category:             "Java"
@@ -9,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Java:
+
 ## Why
-As a programmer, you may come across the need to search and replace text in your code or text files. This can be a tedious task if done manually, and it also increases the risk of human error. By using programming, you can automate this process and save time and effort.
+Searching and replacing text are fundamental tasks in programming and can save you time and effort when dealing with large amounts of text. By learning how to perform these actions in Java, you can easily manipulate your data and make your code more efficient.
 
 ## How To
-To search and replace text in Java, follow these steps:
-
-1. Create a `String` variable containing the text or code you want to search through.
-2. Use the `replace()` method to replace the desired text with the new text. This method takes two arguments - the text to be replaced and the text to replace it with.
-3. Store the updated text in a new `String` variable.
-4. Print out the new `String` variable to see the replaced text.
-
-Here's a Java code example that replaces all occurrences of "hello" with "hi" in a given string:
+To perform a search and replace in Java, you can use the `replace()` method from the `String` class. Let's take a look at an example:
 
 ```Java
-String text = "Hello, world! Hello, Java!";
-String updatedText = text.replace("hello", "hi");
-System.out.println(updatedText);
+String text = "Hello World";
+String replacedText = text.replace("Hello", "Hi");
+System.out.println(replacedText);
 ```
 
-The output of this code would be:
+This code will print out "Hi World" as it replaces the word "Hello" with "Hi" in the original string.
 
-```
-Hi, world! Hi, Java!
-```
-
-You can also use the `replaceAll()` method to replace text using regular expressions. This is useful if you want to replace multiple occurrences of a word or if you want to replace text based on a pattern.
+You can also use regular expressions to search and replace patterns within a string. The `replaceAll()` method allows you to specify a regular expression and the replacement text. Here's an example:
 
 ```Java
-String text = "I love programming in Java!";
-String updatedText = text.replaceAll("Java", "Python");
-System.out.println(updatedText);
+String text = "I love Java programming";
+String replacedText = text.replaceAll("Java", "Python");
+System.out.println(replacedText);
 ```
 
-The output of this code would be:
-
-```
-I love programming in Python!
-```
+This code will output "I love Python programming" as it replaces all instances of "Java" with "Python" in the string.
 
 ## Deep Dive
-The `replace()` and `replaceAll()` methods are both case-sensitive. However, you can use the `equalsIgnoreCase()` and `toLowerCase()` methods to make the search case-insensitive.
+When using the `replaceAll()` method, you have the option to use capturing groups in your regular expression. This allows you to capture specific parts of the text and use them in the replacement string. Let's take a look at an example:
 
-It's also important to note that these methods return a new `String` object and do not modify the original one. This makes them safe to use as they do not affect the original data.
+```Java
+String text = "Name: John, Age: 25";
+String replacedText = text.replaceAll("Name: (.*), Age: (.*)", "Name: $1, Age: $2, Gender: Male");
+System.out.println(replacedText);
+```
 
-In addition to the `replace()` and `replaceAll()` methods, Java also has the `replaceFirst()` method which replaces only the first occurrence of the text. There is also a `replaceLast()` method which does not exist in Java natively, but you can implement it using regular expressions.
+In this code, we use two capturing groups to extract the name and age from the original string. The `$1` and `$2` in the replacement string refer to the first and second capturing group respectively. The output will be "Name: John, Age: 25, Gender: Male" as it adds the gender "Male" to the string.
+
+You can also use the `StringBuffer` and `StringBuilder` classes to improve performance when doing multiple replacements in a single string. These classes provide a more efficient way to manipulate strings in Java.
 
 ## See Also
-- [Java API Documentation: String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [GeeksforGeeks: String replace() method in Java](https://www.geeksforgeeks.org/string-replace-method-in-java/)
-- [Java Tutorials: Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Java String Class](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [Java Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)

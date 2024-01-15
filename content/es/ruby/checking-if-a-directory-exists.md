@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Ruby: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué?
 
-Hay muchas razones por las cuales alguien puede querer verificar si un directorio existe en Ruby. Puede ser para asegurarse de que un archivo pueda ser guardado correctamente en un lugar específico, o para confirmar la existencia de un directorio antes de realizar una acción en él.
+Si estás escribiendo un código en Ruby que involucra la manipulación de archivos y directorios, es útil saber si un directorio ya existe antes de crear uno nuevo. Esto te ahorrará tiempo y garantizará que tu código funcione correctamente.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Verificar si un directorio existe en Ruby es bastante fácil. Primero, necesitamos importar la clase `FileUtils` para poder usar su método `mkdir` para crear un directorio, si no existe. Luego, usamos el método `exist?` para verificar si el directorio existe o no. A continuación, un ejemplo de cómo hacerlo:
+Comprobar si un directorio existe en Ruby es muy sencillo. Primero, necesitamos importar la biblioteca "FileUtils" y luego podemos usar el método "exist?" para verificar si un directorio existe en una ubicación específica. Veamos un ejemplo:
 
-```
+```Ruby
 require 'fileutils'
 
-# Crear un directorio llamado "proyectos" en la carpeta actual
-FileUtils.mkdir("proyectos")
-
-# Verificar si el directorio "proyectos" existe
-if FileUtils.exist?("proyectos")
-  puts "El directorio proyectos existe."
+if FileUtils.exist?('ruta/al/directorio')
+  puts "¡El directorio ya existe!"
 else
-  puts "El directorio proyectos no existe."
+  puts "El directorio no existe, se creará uno nuevo."
 end
 ```
 
-El programa mostrará la siguiente salida:
+En este ejemplo, utilizamos la palabra clave "require" para importar la biblioteca "FileUtils", que nos proporciona una variedad de métodos útiles para trabajar con archivos y directorios. Luego, usamos el método "exist?" y le pasamos la ruta del directorio que queremos verificar. Este método devuelve un valor booleano, por lo que podemos usar una declaración "if" para imprimir un mensaje apropiado según el resultado.
 
-```
-El directorio proyectos existe.
-```
+## Profundizando
 
-##Profundizando
+Ahora que sabemos cómo verificar si un directorio existe en Ruby, es importante tener en cuenta algunas cosas adicionales. Por ejemplo, el método "exist?" también puede verificar si un archivo existe en lugar de un directorio, por lo que debes asegurarte de pasar la ruta correcta en tu código. Además, si necesitas realizar operaciones más complejas, como crear o cambiar permisos en un directorio existente, puedes utilizar otros métodos de la biblioteca "FileUtils" como "mkdir" o "chmod".
 
-Para aquellos que quieran saber más sobre cómo funciona la verificación de directorios en Ruby, aquí hay algunos detalles adicionales a tener en cuenta. En primer lugar, como se mencionó anteriormente, utilizamos el método `exist?` de la clase `FileUtils` para verificar la existencia de un directorio. Este método devuelve un valor booleano, `true` si el directorio existe y `false` si no existe.
+## Ver también
 
-También es importante tener en cuenta que `exist?` no solo se aplica a directorios, sino también a archivos. Por lo tanto, es importante ser específico en nuestra ruta al verificar la existencia de un directorio para evitar falsos positivos.
-
-En caso de que necesitemos crear un directorio que no exista, podemos usar el método `mkdir_p` en lugar de simplemente `mkdir`. Esto asegurará que si el directorio ya existe, no se genere un error y si no existe, se creará correctamente.
-
-##Ver también
-
-- [Ruby Docs: FileUtils](https://ruby-doc.org/stdlib-2.7.2/libdoc/fileutils/rdoc/FileUtils.html)
-- [The Ruby Toolbox: FileUtils](https://www.ruby-toolbox.com/projects/fileutils)
-- [Ejemplo de verificación de directorios en Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Documentación de la biblioteca FileUtils de Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/fileutils/rdoc/FileUtils.html)
+- [Comprobación de la existencia de un archivo en Ruby](https://www.rubyguides.com/2018/09/ruby-file-exist/)
+- [Manipulación de archivos y directorios con Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-file-operations-in-ruby-es)

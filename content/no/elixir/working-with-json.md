@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Å jobbe med json"
+html_title:           "Elixir: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,45 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å jobbe med JSON kan åpne opp for uendelige muligheter innen Elixir-programmering. JSON er en populær måte å strukturere og lagre data på, og bruk av det i Elixir gir en enkel og effektiv måte å kommunisere med nettjenester.
+Hvorfor bry seg med å jobbe med JSON i Elixir? Som et programmeringsspråk som fokuserer på samspill mellom systemer og skalerbarhet, er det viktig å kunne arbeide med populære dataformater som JSON. JSON (Javascript Object Notation) er en vanlig måte å strukturere og lagre data på, og er mye brukt i webapplikasjoner og APIer.
 
 ## Hvordan
 
-For å jobbe med JSON i Elixir, kan man først importere biblioteket `Jason` ved å legge til `{:jason, "~> 1.0"}` i `mix.exs`-filen. Dette gir oss tilgang til funksjoner som lar oss konvertere data til og fra JSON-formatet.
-
-La oss si at vi har en liste med navn som vi ønsker å konvertere til JSON-format:
+Det er enkelt å håndtere JSON i Elixir ved hjelp av noen få funksjoner og moduler. Først må du importere modulen `Jason`:
 
 ```Elixir
-names = ["Ingrid", "Bjørn", "Marianne"]
+import Jason
 ```
 
-Vi kan da bruke funksjonen `Jason.encode!/1` for å konvertere listen til JSON:
+For å konvertere en liste eller et kart til JSON-format, kan du bruke funksjonen `encode!/1`:
 
 ```Elixir
-json = Jason.encode!(names)
+encode!([1, 2, 3])
+# Output: "[1, 2, 3]"
+
+encode!(%{name: "Elixir", version: 1.12})
+# Output: "{\"name\":\"Elixir\",\"version\":1.12}"
 ```
 
-Output av `json` variabelen vil være:
+For å konvertere JSON tilbake til en liste eller et kart, bruk funksjonen `decode!/1`:
 
 ```Elixir
-"[\"Ingrid\", \"Bjørn\", \"Marianne\"]"
+decode!("[1, 2, 3]")
+# Output: [1, 2, 3]
+
+decode!("{\"name\":\"Elixir\",\"version\":1.12}")
+# Output: %{name: "Elixir", version: 1.12}
 ```
 
-For å konvertere JSON tilbake til en liste, kan vi bruke funksjonen `Jason.decode!/1`:
+Det er også mulig å håndtere feil ved å bruke funksjoner som `decode/1` og `decode!/2`.
 
-```Elixir
-Jason.decode!(json)
-```
+For mer avansert arbeid med JSON, kan du også bruke biblioteket `jiffy` som tilbyr raske og effektive funksjoner for å lese og skrive JSON-data.
 
-Dette vil gi oss tilbake den opprinnelige listen med navn.
+## Utforske videre
 
-## Dypdykk
+Å jobbe med JSON i Elixir handler ikke bare om å konvertere data til og fra JSON-format, men også å håndtere komplekse strukturer og behandle feil. Hvis du ønsker å utforske mer avansert bruk av JSON i Elixir, kan du ta en titt på følgende ressurser:
 
-Det er også mulig å jobbe med mer komplekse strukturer i JSON-formatet. Funksjonen `Jason.decode!/1` kan for eksempel håndtere nestede objekter og lister. I tillegg kan vi bruke funksjoner som `Jason.encode!/2` for å gi mer kontroll over hvordan dataen blir konvertert til JSON.
-
-Det er også verdt å nevne at Elixir har støtte for asynkron kommunikasjon med JSON ved hjelp av `Jason.Stream`. Dette kan være nyttig når man skal håndtere store mengder data eller ved bruk av nettverkstjenester.
+- [JSON Elixir Dokumentasjon](https://hexdocs.pm/elixir/Json.html)
+- [jiffy - JSON-tilpasning for Elixir](https://github.com/davisp/jiffy)
+- [Elixir forumtråd om JSON-håndtering](https://elixirforum.com/t/json-parsing-and-generation-with-elixir/4391)
 
 ## Se også
 
-- [Jason dokumentasjon](https://hexdocs.pm/jason/1.1.2/readme.html)
-- [Elixir dokumentasjon om JSON](https://elixir-lang.org/getting-started/erlang-libraries.html#json)
+Her er noen nyttige lenker for å lære mer om Elixir og relaterte emner:
+
+- [Elixir Offisiell Hjemmeside](https://elixir-lang.org/)
+- [Elixir Offisiell Dokumentasjon](https://elixir-lang.org/docs.html)
+- [Elixir Programmeringskurs på Udemy](https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/)

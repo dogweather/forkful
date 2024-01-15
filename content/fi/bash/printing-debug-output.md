@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Tulostamalla debuggaustulosteita"
-simple_title:         "Tulostamalla debuggaustulosteita"
+title:                "Vianmääritystulostus"
+html_title:           "Bash: Vianmääritystulostus"
+simple_title:         "Vianmääritystulostus"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -9,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi tulostaa virheenkorjaustiedot?
+## Miksi
 
-Virheenkorjaustietojen tulostaminen on tärkeä osa ohjelmointia ja auttaa kehittäjiä löytämään ja korjaamaan ohjelmien virheitä. Se voi myös auttaa ymmärtämään ohjelman suorituksen aikana tapahtuvia prosesseja ja löytämään mahdollisia optimointimahdollisuuksia.
+Tiedätkö sen tunteen, kun koodia on kirjoitettu tuntikausia ja se ei toimi? Se voi olla todella turhauttavaa. Tästä syystä on tärkeää lisätä debug-tulostusta koodiisi. Tämä auttaa sinua ymmärtämään, mitä koodisi todella tekee ja miksi se ei toimi odotetulla tavalla. Se on kuin katsoa koodisi lasin läpi ja selvittää, mikä sen toimintaa hidastaa.
 
-# Miten tulostaa virheenkorjaustiedot?
+## Kuinka
 
-Virheenkorjaustietojen tulostaminen Bash-ohjelmassa on helppoa. Tulostus tapahtuu käyttämällä `echo`-komentoa ja lisäämällä siihen halutut muuttujat tai merkkijonot. Alla on esimerkkikoodi ja sen tulostama tulos:
+Aloitetaanpa perusteilla. Bashilla on sisäänrakennettu komento "echo", joka tulostaa halutun tekstin tai arvon. Voit käyttää tätä komentoa debug-tulostukseen lisäämällä sen haluamaasi kohtaan koodissasi.
+
+```Bash 
+echo "Sisäänkirjautuminen suoritettu onnistuneesti"
+```
+
+Tämä tulostaisi tekstin "Sisäänkirjautuminen suoritettu onnistuneesti" terminaaliisi. Tämä auttaa sinua selvittämään, mikä osa koodiasi on juuri suoritettu.
+
+Voit myös tulostaa muuttujien arvoja käyttämällä muuttujien nimiä yhdessä "echo" -komennon kanssa. Tämä on erittäin hyödyllistä, jos epäilet, että jokin muuttuja ei ole oikein määritetty.
 
 ```Bash
-#!/bin/bash
-nimi="Matti"
-lause="Terve $nimi, mitä kuuluu?"
-echo $lause
+Nimi="Matti"
+echo "Käyttäjän nimi on: $Nimi"
 ```
 
-Tämä koodi tulostaa seuraavan rivin:
+Tämä tulostaisi "Käyttäjän nimi on: Matti". Näin voit varmistaa, että muuttuja on oikein asetettu ja voit jäljittää ongelmia helpommin.
 
-```
-Terve Matti, mitä kuuluu?
-```
+## Syväsukellus
 
-## Syvä sukellus
+On myös muita tapoja lisätä debug-tulostusta bash-koodiin. Voit esimerkiksi käyttää "set -x" -komennon avulla aktivoidaksesi koko scriptin debug-tulostuksen. Tämä tulostaa kaikki komentoriviltä suoritetut komentosi, joten voit seurata koodin suorittamista vaihe vaiheelta.
 
-Bashilla on mahdollista myös tulostaa virheenkorjaustietoja eri tasoisilla painikkeilla, kuten `-v` ja `-x`. Nämä painikkeet auttavat seuraamaan ohjelman suoritusta tarkemmin ja löytämään mahdollisia ongelmakohtia.
-
-On myös hyödyllistä lisätä `echo`-lauseita ohjelman eri osiin, jotta voidaan seurata suorituksen kulkua ja löytää mahdollisia virheitä tai pullonkauloja. Näitä lisäyksiä kutsutaan myös nimellä "debugging prints".
+Voit myös tallentaa debug-tulostuksen tiedostoon lisäämällä "> debug.log" -tarjaimen komentosi perään. Tämä tallentaa kaikki tulostetut asiat tiedostoon, jotta voit tarkastella niitä myöhemmin.
 
 ## Katso myös
 
-Tässä muutamia hyödyllisiä linkkejä, jotka voivat auttaa sinua tulostamaan virheenkorjaustietoja Bash-ohjelmissasi:
-
-- [Bashin opas tulostamiseen](https://www.tutorialspoint.com/unix_commands/echo.htm)
-- [Tämä Stack Overflow-kysymys selittää, miten tulostaa painikkeiden avulla](https://stackoverflow.com/questions/1682661/how-can-i-echo-a-4-digit-code-in-a-while-loop-in-the-unix-shell)
-- [Debuggausvinkkejä Bash-ohjelmistoille](https://dev.to/tanwanimohit/debugging-tips-for-bash-programming-13lp)
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
+- [Debug-tulostuksen lisääminen Shell-skripteihin](https://www.linuxjournal.com/content/add-debugging-your-shell-scripts-bash-x-trace-and-shell-debugger)
+- [Debugging in Bash](https://www.baeldung.com/linux/bash-debugging)

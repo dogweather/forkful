@@ -1,5 +1,6 @@
 ---
-title:                "C++: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "C++: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "C++"
 category:             "C++"
@@ -11,36 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Komentoriviargumenttien lukeminen on tärkeä osa C++ ohjelmointia, sillä se mahdollistaa käyttäjien syötteiden käsittelyn ja erilaisten toimintojen suorittamisen ohjelmassa. Tässä blogikirjoituksessa tutustumme tarkemmin komentoriviargumenttien lukemiseen C++ -koodissa ja opimme, miten voimme hyödyntää tätä taitoa ohjelmoinnissamme.
+Jos haluat rakentaa monipuolisempia ja interaktiivisempia C++-ohjelmia, lukea komentoriviparametreja on hyödyllinen taito. Se antaa sinulle mahdollisuuden lukea syötteitä suoraan ohjelman suoritustilasta, mikä tekee ohjelmastasi joustavamman ja helpommin käytettävän.
 
-## Miten
-
-Komentoriviargumenttien lukeminen onnistuu C++:n standardikirjaston `argc` ja `argv` muuttujien avulla. `argc` sisältää arvonaan komentoriviargumenttien lukumäärän ja `argv` on merkkijonojen taulukko, joka sisältää itse komentoriviargumentit. Alla on esimerkkikoodi, joka tulostaa kaikki komentoriviargumentit yksitellen:
+## Kuinka
 
 ```C++
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-  for (int i = 0; i < argc; i++) {
-    std::cout << argv[i] << std::endl;
-  }
-  return 0;
+int main(int argc, char *argv[]) {
+    // argc kertoo kuinka monta parametria on annettu komentoriviltä
+    // argv sisältää kaikki parametrit merkkijonoina
+    // huomaa, että ensimmäinen parametri on aina itse ohjelman nimi (esim. ./ohjelma)
+    std::cout << "Ohjelmaan annettiin " << argc - 1 << " parametriä." << std::endl;
+
+    // käydään läpi kaikki parametrit ja tulostetaan ne yksi kerrallaan
+    for (int i = 1; i < argc; i++) {
+        std::cout << "Parametri " << i << ": " << argv[i] << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-Esimerkkituloste, kun ohjelmaa suoritetaan komennolla `./my_program hello world`:
+Esimerkkituloste, kun suoritetaan ohjelma komentoriviltä seuraavasti: `./ohjelma hello world`
 
 ```
-./my_program
-hello
-world
+Ohjelmaan annettiin 2 parametriä.
+Parametri 1: hello
+Parametri 2: world
 ```
 
-## Syvällisempi tarkastelu
+## Syväsukellus
 
-Komentoriviargumenttien lukeminen ei rajoitu vain yksittäisten syötteiden tulostamiseen, vaan niitä voi myös käyttää esimerkiksi ehtolauseiden tai silmukoiden ehtoina. Lisäksi `argc` ja `argv` muuttujia voidaan hyödyntää myös erilaisten virheiden käsittelyssä. Esimerkiksi jos tiettyjä argumentteja ei ole määritelty tai niiden arvot ovat virheellisiä, voidaan ohjelma lopettaa virheilmoituksella.
+Kun suoritat C++-ohjelmaa komentoriviltä, voit antaa sille haluamasi parametrit. Usein tätä ominaisuutta käytetään esimerkiksi tietokantayhteyksien määrittämiseen tai muokkaamaan ohjelman asetuksia. Komentoriviparametrien lukeminen tapahtuu `argc` ja `argv` muuttujien avulla. `argc` kertoo, kuinka monta parametria annettiin, ja `argv` sisältää nämä parametrit merkkijonoina.
+
+Kun käsittelet komentoriviparametreja C++-koodissa, on tärkeää muistaa, että `argv` sisältää vain merkkijonot, eli sinun täytyy muuntaa ne tarvittaessa halutulle datatyyppiälle, kuten kokonaisluvuksi tai liukuluvuksi. Lisäksi kannattaa varmistaa, että käyttäjä antaa oikeat parametrit, esimerkiksi tietokantayhteyksissä tarkastellaan, onko annettu tietokantatiedosto olemassa ennen kuin yritetään muodostaa yhteys.
 
 ## Katso myös
-
-- [C++ Standardikirjaston dokumentaatio](https://en.cppreference.com/w/cpp/language/main_function)
-- [C++ Kirja: Komentoriviargumenttien lukeminen](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Standard_C_Library/Functions/argc_and_argv)
+- [C++ - Komentoriviparametrit](https://www.cplusplus.com/articles/DEN36Up4/)
+- [C++ Tutorial - Command Line Arguments](https://www.studytonight.com/cpp/command-line-arguments-in-cpp.php)
+- [How to read command line arguments in C++](https://stackoverflow.com/questions/3024197/how-to-read-command-line-arguments-in-c)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Konwertowanie daty na ciąg znaków."
-simple_title:         "Konwertowanie daty na ciąg znaków."
+title:                "Konwertowanie daty na ciąg znaków"
+html_title:           "Swift: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czemu
+## Dlaczego
 
-Konwersja daty na łańcuch znaków może być użyteczna, gdy chcesz wyświetlić datę w czytelny dla użytkownika sposób lub zapisać ją w pliku tekstowym.
+Konwertowanie daty na ciąg znaków może być niezbędnym krokiem podczas pracy z datami w aplikacjach. Może to być również przydatne przy wyświetlaniu daty w czytelnej formie dla użytkownika.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-```Swift 
+```Swift
 let date = Date()
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy"
-let dateString = dateFormatter.string(from: date)
-
-print(dateString)
-// Output: 30.10.2021 
+let formatter = DateFormatter()
+formatter.dateFormat = "dd.MM.yyyy"
+let dateString = formatter.string(from: date)
+print(dateString) // Output: 25.01.2021
 ```
 
-Najpierw tworzymy obiekt typu `Date`, który przechowuje aktualną datę. Następnie tworzymy obiekt `DateFormatter` i ustawiamy format daty, w tym przypadku `dd.MM.yyyy`. Na koniec wywołujemy metodę `string(from:)` obiektu `DateFormatter`, aby przekonwertować naszą datę na łancuch znaków i przypisujemy go do zmiennej `dateString`. Wypisując tę zmienną, otrzymamy sformatowaną datę jako wynik.
+W powyższym przykładzie użyliśmy obiektu `Date` do utworzenia daty bieżącej, następnie zdefiniowaliśmy formater dat `DateFormatter` i ustawiliśmy format na `dd.MM.yyyy`, który reprezentuje dzień, miesiąc i rok. Następnie wykorzystaliśmy metodę `string(from: date)` by skonwertować datę na ciąg znaków, który możemy wyświetlić w konsoli.
 
-## Głębszy Przegląd
+## Dogłębne wgląd
 
-Konwersja daty na łańcuch znaków jest możliwa dzięki obiektowi `DateFormatter`, który odpowiada za formatowanie i wyświetlanie daty. Funkcja `dateFormat` jest jednym z wielu formatów dostępnych do wyboru, w zależności od preferencji użytkownika lub specyfikacji projektu.
+Konwertowanie daty na ciąg znaków może być nieco bardziej złożone, jeśli chcemy włączyć w to także informacje o czasie. W takim przypadku musimy użyć formatu, który zawiera także informacje o godzinie i minucie, na przykład `"dd.MM.yyyy HH:mm"`. Istnieje wiele różnych formatów dat, które można wykorzystać podczas konwertowania daty na ciąg znaków w zależności od naszych potrzeb. Warto również pamiętać o lokalizacji i ustawieniach regionalnych, ponieważ mogą one mieć wpływ na wyświetlane daty.
 
-Możemy również wykorzystać funkcję `string(with:)`, aby wyświetlić tylko część daty, na przykład tylko dzień tygodnia lub miesiąc. Ważne jest, aby uważnie wybierać format daty, ponieważ różne kraje mogą mieć różne konwencje datowania.
+## Zobacz także
 
-## Zobacz Również
-
-- Dokumentacja Apple dla DateFormatter: https://developer.apple.com/documentation/foundation/dateformatter
-- Przewodnik po formatach daty: https://nsdateformatter.com/
+- [Dokumentacja Apple: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Przewodnik po konfiguracji formaterów dat w Swift](https://www.hackingwithswift.com/articles/145/how-to-use-date-and-dateformatter-in-swift)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Bash: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,41 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często podczas przeglądania internetu potrzebujemy dostępu do stron z większą ilością informacji lub chcemy mieć dostęp do nich offline. W takim przypadku, pobranie strony internetowej i zapisanie jej na naszym komputerze może być bardzo przydatne. W tym wpisie pokażę w jaki sposób możemy to zrobić za pomocą programowania w Bash.
+Pobieranie stron internetowych może być przydatne w wielu różnych sytuacjach - od tworzenia kopii zapasowych witryny po analizowanie kodu źródłowego lub pobieranie informacji. W tym artykule dowiesz się, jak używać Bash do pobierania stron internetowych w sposób prosty i efektywny.
 
 ## Jak to zrobić
 
-Pobranie strony internetowej w Bash jest bardzo proste dzięki użyciu narzędzia o nazwie `wget`. Wystarczy wywołać polecenie `wget` oraz adres URL strony, którą chcemy pobrać. Na przykład:
+Najprostszym sposobem na pobranie strony internetowej za pomocą Bash jest użycie narzędzia `curl` oraz przekierowanie wyniku do pliku. Oto przykład kodu:
 
 ```Bash
-wget https://www.example.com
+curl https://example.com > index.html
 ```
+W powyższym przykładzie używamy komendy `curl` do pobrania strony internetowej `example.com` i przekierowania jej zawartości do pliku `index.html`.
 
-Możemy także określić nazwę pliku, do którego chcemy zapisać pobraną stronę za pomocą opcji `-O`:
+Jeśli chcesz pobrać tylko nagłówki strony, możesz użyć opcji `-I`:
 
 ```Bash
-wget https://www.example.com -O example.html
+curl -I https://example.com
 ```
 
-Po wykonaniu tych poleceń, pobrana strona internetowa zostanie zapisana w pliku `example.html` w bieżącym katalogu.
-
-## Głębsza analiza
-
-Jeśli chcemy pobrać więcej niż tylko pojedynczą stronę, możemy wykorzystać funkcjonalność pętli w Bash. Na przykład, jeśli chcemy pobrać wszystkie stron z serwisu BBC News, możemy wykorzystać pętlę `for` do pobrania stron z numerami 1-10:
+Jeśli natomiast chcesz pobrać tylko część strony, na przykład tylko elementy tekstu znajdujące się pomiędzy znacznikami `<body>`, możesz skorzystać z narzędzia `grep`:
 
 ```Bash
-for ((i=1; i<=10; i++))
-do
-    wget https://www.bbc.com/news/page/$i
-done
+curl https://example.com | grep '<body>'
 ```
 
-Kod ten będzie pobierał strony https://www.bbc.com/news/page/1, https://www.bbc.com/news/page/2 itd. aż do 10.
+## Deep Dive
 
-Warto również zauważyć, że `wget` może być również używane do pobierania plików z innych protokołów niż HTTP, takich jak FTP czy nawet BitTorrent.
+Powyższe przykłady są tylko niewielką częścią możliwości pobierania stron internetowych za pomocą Bash. W rzeczywistości, możesz wykorzystać różne narzędzia i opcje do precyzyjnego pobrania wybranych fragmentów strony.
+
+Na przykład, jeśli chcesz pobierać tylko określone części strony przy użyciu określonych wzorców, możesz skorzystać z narzędzia `awk`. Natomiast, jeśli chcesz pobierać więcej niż jedną stronę naraz, możesz wykorzystać pętlę `for` do wykonania kolejnych zapytań.
 
 ## Zobacz także
 
-- `wget` dokumentacja: https://www.gnu.org/software/wget/manual/wget.html
-- Tutorial o programowaniu w Bash: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
-- Przydatne narzędzia dla programistów w Bash: https://blog.newrelic.com/engineering/bash-programming-cheat-sheet/
+- [Bash Command Line Cookbook — Downloading Web Pages](https://www.oreilly.com/library/view/bash-command-line/0596009658/ch04s07.html)
+- [Bash One-Liners Explained, Part III: All about redirections](https://catonmat.net/bash-one-liners-explained-part-three)
+- [Linux Command Line: Downloading Files](https://ryanstutorials.net/linuxtutorial/downloading.php)

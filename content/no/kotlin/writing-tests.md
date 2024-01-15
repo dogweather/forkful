@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Å skrive tester"
+html_title:           "Kotlin: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,60 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av å være en effektiv programmerer. Det hjelper deg å sikre at koden din fungerer som den skal og reduserer bugs og feil i produksjon.
+Å skrive tester i Kotlin kan virke som en unødvendig og tidkrevende oppgave, men det kan faktisk spare tid og forhindre feil på lang sikt. Ved å skrive tester sikrer du at koden din fungerer som den skal, samtidig som du identifiserer eventuelle problemer tidlig i utviklingsprosessen.
 
 ## Hvordan
 
-For å skrive tester i Kotlin, må du først importere JUnit-biblioteket. Deretter kan du lage en testklasse ved å legge til "@RunWith (JUnit4 :: class)" over klassenavnet og "@Test" over testmetodene.
+For å skrive tester i Kotlin trenger du først å importere "test" modulen i gradle.build-filen din. Deretter kan du begynne å skrive tester ved å bruke "```Kotlin ... ```" kodelinjer.
+
+For eksempel, la oss si at vi har en funksjon som legger sammen to tall:
 
 ```Kotlin
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-
-@RunWith(JUnit4::class)
-class TestClass {
-
-    @Test
-    fun testMethod(){
-        // test kode her
-    }
+fun addNumbers(num1: Int, num2: Int): Int {
+    return num1 + num2
 }
 ```
 
-Innenfor testmetoden kan du bruke ulike asserter for å sjekke at resultatene er som forventet. For eksempel kan du bruke "assertEquals" for å sammenligne to verdier og "assertTrue" for å sjekke om en betingelse er sann.
+For å skrive en test for denne funksjonen, kan vi bruke "assertEquals" som sammenligner forventet resultat med faktisk resultat:
 
 ```Kotlin
 @Test
-fun testMethod(){
-    val num1 = 5
-    val num2 = 10
-
-    assertEquals(15, num1 + num2)
-    assertTrue(num1 < num2)
+fun testAddNumbers() {
+    // Arrange
+    val result = addNumbers(2, 3)
+    
+    // Assert
+    assertEquals(5, result)
 }
 ```
 
-Du kan også bruke "assertEquals" for å sammenligne utskrift fra metoder med forventede resultater.
+Denne testen vil passere hvis resultatet er lik 5, og feile hvis resultatet er noe annet. På denne måten kan du forsikre deg om at koden din fungerer som den skal.
 
-```Kotlin
-@Test
-fun testMethod(){
-    val output = methodToTest()
-    assertEquals("the expected output", output)
-}
-```
+## Dypdykk
 
-## Deep Dive
+Det er mange forskjellige tester du kan skrive i Kotlin, som unit-tester, integrasjonstester og end-to-end tester. Det er også mulig å legge til tester i Kotlin-kodebasen din ved hjelp av annotasjoner som "@Test" og "@Before".
 
-Når du skriver tester, er det viktig å tenke på forskjellige scenarier og ikke bare teste positivt. Du bør også teste for feilinndata og håndtering av unntak.
-
-Det er også viktig å organisere testene dine på en logisk måte, kanskje ved å ha en testklasse for hver klasse du tester.
-
-Husk også å oppdatere og vedlikeholde testene mens du gjør endringer i koden. Dette sikrer at testene er i samsvar med den oppdaterte koden.
+Det er viktig å huske at det å skrive tester betyr ikke nødvendigvis at du har 100% testdekning. Noen deler av koden din kan være vanskelige å teste, og det er greit å prioritere og fokusere på de mest kritiske delene av koden din.
 
 ## Se også
 
-- [JUnit dokumentasjon](https://junit.org/junit5/docs/current/user-guide/)
-- [Kotlin Testing dokumentasjon](https://kotlinlang.org/docs/reference/testing.html)
-- [TDD (Test Driven Development) guide på norsk](https://www.tdd-guide.com/)
+- [Offisiell Kotlin dokumentasjon](https://kotlinlang.org/docs/reference/)
+- [En guide til testdrevet utvikling med Kotlin](https://www.raywenderlich.com/7109-test-driven-development-tutorials-for-kotlin)
+- [Beste praksis for testing i Kotlin](https://proandroiddev.com/kotlin-testing-best-practices-1923334a9059)

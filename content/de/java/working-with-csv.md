@@ -1,5 +1,6 @@
 ---
-title:                "Java: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Java: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Java"
 category:             "Java"
@@ -10,108 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man sich mit CSV beschäftigen? Nun, CSV (Comma-Separated Values) ist ein gängiges Dateiformat für Tabellendaten und wird in vielen Anwendungen verwendet, wie z.B. in Microsoft Excel oder Google Sheets. Es ist wichtig zu verstehen, wie man CSV-Daten in Java lesen und schreiben kann, um effektiv mit diesen Dateien zu arbeiten.
 
-Das Arbeiten mit CSV-Dateien ist für viele Programmierer eine gängige Aufgabe, da es oft als Datenspeicherformat verwendet wird. Es ist wichtig zu wissen, wie man CSV-Dateien in Java verwenden kann, um Daten effizient zu speichern und zu verarbeiten.
-
-## Wie macht man das?
-
-Es gibt mehrere Möglichkeiten, CSV-Dateien in Java zu verwenden. Eine Möglichkeit ist die Verwendung einer externen Bibliothek wie Apache Commons CSV oder OpenCSV, die speziell für die Verarbeitung von CSV-Dateien entwickelt wurden. Eine andere Möglichkeit ist die Verwendung von Java-Klassen wie FileReader und BufferedReader, um die Datei zu lesen und sie dann manuell zu analysieren und zu verarbeiten.
-
-### Beispiel 1: Verwendung von Apache Commons CSV
-
-Um Apache Commons CSV zu verwenden, müssen Sie zunächst die Bibliothek zu Ihrem Projekt hinzufügen. In Eclipse können Sie dies tun, indem Sie mit der rechten Maustaste auf Ihr Projekt klicken, auf "Eigenschaften" gehen und dann unter "Java Build Path" die Bibliothek hinzufügen.
-
-Sobald die Bibliothek hinzugefügt wurde, können Sie sie verwenden, um eine CSV-Datei zu lesen und die Daten in eine Liste zu speichern. Hier ist ein Beispielcode, der eine CSV-Datei mit den Spalten "Name" und "Alter" liest und die Daten in einer Liste von Person-Objekten speichert.
-
-```Java
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-
-public class CSVReader {
-
-    public static void main(String[] args) throws IOException {
-
-        // Pfad zur CSV-Datei
-        String path = "pfad/zur/datei.csv";
-
-        // Liste zum Speichern der Daten
-        ArrayList<Person> personenListe = new ArrayList<>();
-
-        // CSV-Parser mit angegebenem Format erstellen
-        CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(new FileReader(path));
-
-        // Durch alle Datensätze in der Datei iterieren
-        for (CSVRecord record : parser) {
-            // Daten aus dem Datensatz auslesen
-            String name = record.get("Name");
-            int alter = Integer.parseInt(record.get("Alter"));
-
-            // Neues Person-Objekt erstellen und zur Liste hinzufügen
-            Person person = new Person(name, alter);
-            personenListe.add(person);
-        }
-
-        // Personendaten ausgeben
-        for (Person person : personenListe) {
-            System.out.println(person.getName() + ", " + person.getAlter());
-        }
-    }
-}
-```
-
-### Beispiel 2: Verwendung von Java-Klassen
-
-Um CSV-Dateien mit Java-Klassen wie FileReader und BufferedReader zu verwenden, müssen Sie die Datei Zeile für Zeile lesen und die Trennzeichen (in der Regel ein Komma) verwenden, um die Daten zu trennen und zu verarbeiten. Hier ist ein Beispielcode, der dieselbe CSV-Datei wie im ersten Beispiel liest und die Daten in einer Liste von Person-Objekten speichert.
+## Wie geht's
+Um CSV-Daten in Java zu lesen und zu schreiben, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der integrierten Klasse "BufferedReader", um die Datei Zeile für Zeile zu lesen oder zu schreiben. Folgendes Beispiel zeigt, wie man eine CSV-Datei liest und die Daten in der Konsole ausgibt:
 
 ```Java
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class CSVReader {
-
-    public static void main(String[] args) throws IOException {
-
-        // Pfad zur CSV-Datei
-        String path = "pfad/zur/datei.csv";
-
-        // Liste zum Speichern der Daten
-        ArrayList<Person> personenListe = new ArrayList<>();
-
-        // FileReader und BufferedReader zum Lesen der Datei verwenden
-        FileReader fileReader = new FileReader(path);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        // Überschrift überspringen
-        bufferedReader.readLine();
-
-        // Durch jede Zeile in der Datei iterieren
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            // Daten in der Zeile anhand des Trennzeichens trennen
-            String[] data = line.split(",");
-
-            // Daten auslesen
-            String name = data[0];
-            int alter = Integer.parseInt(data[1]);
-
-            // Neues Person-Objekt erstellen und zur Liste hinzufügen
-            Person person = new Person(name, alter);
-            personenListe.add(person);
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("beispiel.csv"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                System.out.println("Name: " + data[0] + " | Alter: " + data[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        // Personendaten ausgeben
-        for (Person person : personenListe) {
-            System.out.println(person.getName() + ", " + person.getAlter());
-        }
-
-        // BufferedReader schließen
-        bufferedReader.close();
     }
 }
+```
+
+Als Ausgabe erhalten wir die Inhalte der CSV-Datei in folgendem Format:
+```
+Name: Max | Alter: 25
+Name: Anna | Alter: 30
+Name: Tim | Alter: 28
+```
+
+Um eine CSV-Datei zu schreiben, können wir die Klasse "BufferedWriter" verwenden, die ähnlich wie "BufferedReader" funktioniert. Hier ist ein Beispiel, das Daten in eine CSV-Datei schreibt:
+
+```Java
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CSVWriter {
+    public static void main(String[] args) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("neue_datei.csv"))) {
+            bw.write("Max,25");
+            bw.newLine();
+            bw.write("Anna,30");
+            bw.newLine();
+            bw.write("Tim,28");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Dieses Beispiel schreibt die Daten in die Datei in der gleichen Formatierung, wie wir sie vorher gelesen haben.
+
+## Tiefergehende Informationen
+Beim Arbeiten mit CSV-Dateien ist es wichtig zu beachten, dass Werte in Anführungszeichen vorhanden sein können, um speziellen Zeichen und Trennzeichen zu enthalten. Um diese Zeichen zu behandeln, kann die Klasse "CSVReader" aus der Apache Commons CSV Bibliothek verwendet werden. Diese bietet zusätzliche Funktionen für das Lesen und Schreiben von CSV-Daten. Auch die Apache Commons CSV Bibliothek ist eine gute Wahl, wenn die CSV-Datei große Datenmengen beinhaltet, da sie effizienter als die oben genannten Beispiele ist.
+
+## Siehe auch
+- [Dokumentation zu BufferedReader in Java](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+- [Dokumentation zu BufferedWriter in Java](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)
+- [Dokumentation zu CSVReader in Apache Commons CSV](https://commons.apache.org/proper/commons-csv/apidocs/org/apache/commons/csv/CSVReader.html)
+- [Dokumentation zu CSVWriter in Apache Commons CSV](https://commons.apache.org/proper/commons-csv/apidocs/org/apache/commons/csv/CSVWriter.html)

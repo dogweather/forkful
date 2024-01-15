@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 乱数の生成"
-simple_title:         "乱数の生成"
+title:                "ランダムナンバーの生成"
+html_title:           "Bash: ランダムナンバーの生成"
+simple_title:         "ランダムナンバーの生成"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -11,61 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ランダムな数字を生成することのメリットは何でしょうか？プログラミングにおいて、ランダムな数字は非常に重要です。たとえば、ゲームや乱数を必要とするアプリケーションを開発する際に、ランダムな数字を生成することで、よりリアルな体験を提供することができます。また、ランダムな数字を使うことで、予測不可能な動作を作り出すこともできます。さらに、ランダムな数字を生成することで、セキュリティやプライバシーの向上にもつながります。
+ランダムな数字を生成することにどのような意味があるのか疑問に思ったことはありませんか？実は、ランダムな数字を生成することは多くのゲームやシミュレーション、暗号化など様々なアプリケーションで重要な役割を果たしています。
 
-## 方法
+## 生成方法
 
-Bashでランダムな数字を生成する方法を紹介します。まず、次のコードを`script.sh`という名前で保存します。
-
-```Bash
-#!/bin/bash
-
-# `$RANDOM`変数を使ってランダムな数字を生成する
-echo "ランダムな数字: $RANDOM"
-```
-
-次に、ターミナルで`script.sh`を実行します。
+Bashを使ってランダムな数字を生成するには、`$RANDOM`変数を使用します。この変数は0から32767までのランダムな整数を生成します。
 
 ```Bash
-$ bash script.sh
+echo $RANDOM
 ```
 
-すると、毎回異なるランダムな数字が表示されることを確認できるでしょう。
-
-もし、特定の範囲内の数字をランダムに生成したい場合は、`$RANDOM`変数に`%`（剰余）演算子を使うことで可能です。例えば、1から10までのランダムな数字を生成するには、次のようにします。
+上記のコマンドを実行すると、毎回異なる数が表示されることが確認できるでしょう。また、範囲を指定することも可能です。例えば、10から100までのランダムな数を生成するには以下のようにします。
 
 ```Bash
-#!/bin/bash
-
-# 1から10までのランダムな数字を生成する
-echo "ランダムな数字: $((RANDOM % 10 + 1))"
+echo $((RANDOM%91+10))
 ```
+
+さらに、シェルスクリプト内でランダムな数を使用する場合は、次のように変数に代入することもできます。
+
+```Bash
+number=$((RANDOM%50+50))
+echo "ランダムな数は$numberです。"
+```
+
+ターミナル上で試してみると、毎回異なる範囲の数が表示されることがわかります。
 
 ## ディープダイブ
 
-`$RANDOM`変数は、シェルスクリプトの実行時にシステムから取得された乱数を返します。ただし、この方法では、予測可能な数字のパターンが存在し、セキュリティ的に弱いという欠点があります。
+ランダムな数字を生成するには、ストリームから生成される疑似乱数を使用します。詳しい仕組みは深く掘り下げると長くなってしまいますが、簡単に言えば、プログラミング言語やオペレーティングシステムに組み込まれたアルゴリズムによって生成される数の並びです。
 
-より安全なランダムな数字を生成するには、`/dev/random`または`/dev/urandom`を使用します。これらのデバイスは、カーネルが管理するエントロピープールから乱数を生成するためのインターフェースです。具体的には、`/dev/random`は十分なエントロピーがある場合にしかデータを返さず、`/dev/urandom`は常にデータを返します。
-
-例えば、次のコードでは、`/dev/random`からランダムなバイト列を読み取り、それを16進数に変換して表示しています。
-
-```Bash
-#!/bin/bash
-
-# /dev/randomからランダムなバイト列を読み取り、16進数に変換して表示する
-echo "ランダムな数字: $(od -An -N2 -tx1 /dev/random | tr -d " " | tr "\n" " ")"
-```
-
-## 関連情報
-
-- [Bashのドキュメント](https://www.gnu.org/software/bash/)
-- [Bashでの数値操作](http://www.linux-mag.com/id/357/)
-- [ランダムな数字の生成とセキュリティ](https://www.eetimes.com/how-to-generate-random-numbers-in-software-part-1/)
-- [dev/random vs dev/urandom](https://blog.ontoillogical.com/blog/2015/01/24/dev-random-dev-urandom/)
+しかし、これらの疑似乱数は本当のランダム性を持たず、実際は初期値やアルゴリズムによって決まる周期性を持っています。そのため、暗号化などセキュリティに関わる場合には注意が必要です。真のランダム性を実現するには、外部デバイスから入力を受け取り、その値を使用する方法などがあります。
 
 ## 参考リンク
 
-https://www.gnu.org/software/bash/
-http://www.linux-mag.com/id/357/
-https://www.eetimes.com/how-to-generate-random-numbers-in-software-part-1/
-https://blog.ontoillogical.com/blog/2015/01/24/dev-random
+- [Bashの$RANDOM変数の詳細](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+- [シェルスクリプトでランダムな数値を生成する方法](https://linuxhint.com/generate_random_num_bash/)
+- [ランダム数列の生成ソースコード](https://www.phiresky.de/random-numbers-from-dev-random-in-bash)
+- [セキュリティに関わる場合には注意が必要な疑似乱数の使用](https://resources.infosecinstitute.com/prng-vs-csprng-specifics/#gref)
+
+## 関連リンク

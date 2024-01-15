@@ -1,5 +1,6 @@
 ---
-title:                "C: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "C: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "C"
 category:             "C"
@@ -11,63 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W programowaniu tekstowym zwykle występuje potrzeba zmiany fragmentu tekstu w jednej lub wielu liniach kodu. To może być spowodowane błędami w pisowni, aktualizacją danych lub po prostu potrzebą dostosowania tekstu do konkretnych wymagań. W takich przypadkach przydatne jest narzędzie do wyszukiwania i zamiany tekstu. W tym artykule omówimy, jak zrealizować to zadanie za pomocą języka programowania C.
+Szukanie i zamiana tekstu są kluczowymi umiejętnościami w programowaniu. Pozwalają one na szybkie dostosowanie kodu do zmieniających się wymagań i ułatwiają jego czytelność. Ponadto, dzięki nim można automatycznie zmienić duże ilości tekstu, co znacznie przyspiesza pracę.
 
 ## Jak to zrobić
 
-Aby przeprowadzić wyszukiwanie i zamianę tekstu w języku C, potrzebujemy dwóch podstawowych elementów: funkcji `strstr()` i funkcji `strcpy()`. Funkcja `strstr()` służy do wyszukania ciągu znaków w danej napisie, a funkcja `strcpy()` do kopiowania tekstu z jednego miejsca do drugiego. W poniższym przykładzie użyjemy również funkcji `printf()`, aby wyświetlić rezultaty na ekranie.
+Mamy kilka sposobów na wyszukiwanie i zamianę tekstu w języku C. Najprostszym z nich jest użycie funkcji `strstr()` do znalezienia konkretnej frazy w tekście i funkcji `strncpy()` do jej zamiany. Przykładowy kod wyglądać może tak:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-// Funkcja wyszukująca i zamieniająca tekst 
-void searchAndReplace(char *text, char *search, char *replace) {
-    char *textPtr;
-    // Używamy pętli while, aby przeszukiwać cały napis
-    while((textPtr = strstr(text, search))) {
-        // Kopiujemy tekst przed szukanym ciągiem do nowej zmiennej
-        char before[100];
-        strncpy(before, text, textPtr-text);
-        // Dodajemy znak końca linii
-        before[textPtr-text] = '\0';
-
-        // Teraz dodajemy tekst do zmiennej zastępczej
-        char after[100];
-        strcpy(after, replace);
-
-        // Dodajemy tekst po szukanym ciągu do zmiennej zastępczej
-        strcat(after, textPtr+strlen(search));
-
-        // Kopiujemy tekst ze zmiennej po zmianie do zmiennej oryginalnej
-        // W ten sposób dokonujemy zamiany tekstu
-        strcpy(text, before);
-        strcat(text, after);
-    }
+char str[] = "Ten tekst zawiera słowo pomidor.";
+char search[] = "pomidor";
+char replace[] = "arbuz";
+char *ptr;
+ptr = strstr(str, search); // szukamy frazy "pomidor" w tekście
+if (ptr != NULL) // jeśli udało się ją znaleźć
+{
+    strncpy(ptr, replace, strlen(replace)); // zamieniamy na "arbuz"
 }
-
-int main() {
-    // Przykładowy napis do przeszukania i zmiany
-    char text[] = "Przykladowy napis do przeszukania i zmiany.";
-
-    // Wywołujemy funkcję searchAndReplace(), przekazując jako argumenty 
-    // napis do przeszukania, szukany ciąg i ciąg zastępczy
-    searchAndReplace(text, "zmiany", "modyfikacji");
-
-    // Wyświetlamy zmieniony napis na ekranie
-    printf("%s", text);
-    return 0;
-}
+printf("%s", str); // nowy tekst: "Ten tekst zawiera słowo arbuz."
 ```
 
-Powyższy przykład wyświetli na ekranie: "Przykladowy napis do przeszukania i modyfikacji." Jak widać, używając funkcji `strstr()` i `strcpy()`, możemy łatwo przeprowadzić zamianę tekstu w napisie.
+Jeśli mamy do zamiany wiele wystąpień danej frazy, możemy użyć pętli `while` do iteracji po tekście. Innym wygodnym sposobem jest użycie funkcji `str_replace()` dostępnej w bibliotece `string.h`. Poniżej przykładowy kod korzystający z tej funkcji:
 
-## Wnikliwe spojrzenie
+```C
+#include <string.h>
+char str[] = "Ten tekst to tylko przykład.";
+char search[] = "tylko";
+char replace[] = "jedynie";
+printf("%s", str_replace(str, search, replace)); // nowy tekst: "Ten tekst to jedynie przykład."
+```
 
-W języku C istnieje wiele innych funkcji, które mogą być przydatne w przeprowadzaniu zmian tekstowych. Na przykład funkcja `strncpy()` kopiująca n znaków z jednego ciągu do drugiego lub funkcja `strtok()` służąca do dzielenia tekstu na mniejsze części. Zawsze warto zapoznać się z możliwościami danego języka programowania i wybrać najlepszą funkcję do konkretnego zadania.
+## Głębszy zanurzenie
 
-## Zobacz też
+W języku C jest też dostępnych wiele innych funkcji do manipulacji tekstem, takich jak `strtok()` do dzielenia tekstu na części, `strcat()` do łączenia tekstu czy `strlen()` do obliczania długości ciągu znaków. Ponadto, w przypadku bardziej skomplikowanych operacji można użyć wyrażeń regularnych za pomocą funkcji `regcomp()` i `regexec()`.
 
-- [Oficjalna dokumentacja języka C](https://www.cplusplus.com/reference/cstring/strstr/)
-- [Przewodnik po funkcjach string w C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Wyszukiwanie i zamiana w tekście w języku C++](https://www.educative.io/edpresso/how-to-find-and-replace
+Podstawową zasadą przy wyszukiwaniu i zamianie tekstu jest pamiętanie o wielkości liter. Można to rozwiązać na przykład poprzez użycie funkcji `toupper()` lub `tolower()` do zmiany wszystkich liter na wielkie lub małe.
+
+## Zobacz także
+
+- Dokumentacja funkcji `string.h` w języku C: https://www.tutorialspoint.com/c_standard_library/string_h.htm
+- Przewodnik po wyrażeniach regularnych w języku C: http://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html

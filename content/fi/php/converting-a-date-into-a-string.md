@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "PHP: Päivämäärän muuntaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Usein PHP-ohjelmoinnissa joudutaan käsittelemään päivämääriä. Näiden päivämäärien muuntaminen string-muotoon on yleinen tehtävä, ja tässä blogikirjoituksessa käymme läpi, miten tämä tehdään käytännössä.
 
-## Kuinka
-Päivämäärän muuntaminen stringiksi onnistuu helposti PHP:n date-funktion avulla. Alla on esimerkki, miten voit muuntaa tämän päivän päivämäärän string-muotoon:
+Monissa tilanteissa on kätevä muuttaa päivämäärä merkkijonoksi, esimerkiksi näyttääkseen sen ihmisille luettavassa muodossa tai tallentaakseen sen tietokantaan. PHP:ssä tämän tekeminen on helppoa ja nopeaa.
 
-```PHP
-echo date("d.m.Y"); // Tulostaa esimerkiksi 14.04.2021
-```
+## Miten
 
-Jos haluat tulostaa myös kellonajan, se onnistuu seuraavasti:
+Muuttaaksesi päivämäärän merkkijonoksi PHP:ssä, voit käyttää `date()` funktiota ja antaa sille sekä alkuperäisen päivämäärän että muotoilun, jota haluat käyttää. Esimerkiksi:
 
 ```PHP
-echo date("d.m.Y H:i"); // Tulostaa esimerkiksi 14.04.2021 15:30
+$date = '2019-11-11'; // alkuperäinen päivämäärä
+$muoto = 'j.n.Y'; // muotoilu, jossa j = päivä, n = kuukausi ja Y = vuosi
+$muunnettu_pvm = date($muoto, strtotime($date)); // muunnetaan päivämäärä
+echo $muunnettu_pvm; // tulostaa "11.11.2019"
 ```
 
-Voit myös antaa date-funktiolle parametrina annetun päivämäärän ja muuntaa sen haluamaasi muotoon. Esimerkiksi:
+Huomaa, että `strtotime()` funktiolla muutetaan päivämäärä ensin numeroarvoksi ja vasta sitten `date()` funktio muuntaa sen merkkijonoksi.
+
+Voit myös käyttää `DateTime` luokkaa, joka tarjoaa enemmän vaihtoehtoja päivämäärän muotoiluun:
 
 ```PHP
-$date = "2021-04-14";
-echo date("d.m.Y", strtotime($date)); // Tulostaa 14.04.2021
+$date = '2019-11-11'; // alkuperäinen päivämäärä
+$dtime = new DateTime($date); // luodaan uusi DateTime objekti päivämäärällä
+echo $dtime->format('Y-m-d'); // tulostaa "2019-11-11"
+echo $dtime->format('d.m.Y'); // tulostaa "11.11.2019"
+echo $dtime->format('l, jS F Y'); // tulostaa "Monday, 11th November 2019"
 ```
 
-## Deep Dive
-PHP:ssa päivämäärän muuntamiseen stringiksi on muitakin keinoja kuin date-funktio. Voit esimerkiksi käyttää DateTime-luokkaa, joka tarjoaa enemmän vaihtoehtoja päivämäärän käsittelyyn. Alla on esimerkki siitä, miten DateTime-luokan avulla voit muuttaa päivämäärän stringiksi ja lisätä siihen tiettyä formaattia:
+## Syvällinen sukellus
 
-```PHP
-$date = new DateTime();
-echo $date->format("d.m.Y"); // Tulostaa esimerkiksi 14.04.2021
-```
+Päivämäärän muuttaminen merkkijonoksi voi kuulostaa yksinkertaiselta, mutta voi aiheuttaa ongelmia, jos et huomioi muotoilua oikein. Esimerkiksi jos käytät merkintöjä `m` ja `d` kuukausien ja päivien sijaan, saatat saada odottamattomia tuloksia kuten "01.01.2020" sijaan "1.1.2020". Lisäksi, jos käytät `Y` merkintää vuodelle nelinumeroisen sijaan, muuntuu vuosi automaattisesti kahteen numeroon vuosisadan mukaan.
 
-DateTime-luokalla voit myös helposti muuttaa aikavyöhykettä ja käsitellä erilaisia aikaleimoja.
+On myös tärkeää huomata, että `date()` ja `DateTime` funktioiden avulla muutettu päivämäärä on edelleen merkkijono, eikä sitä voi käyttää laskutoimituksissa tai vertailuissa päivämäärämuotoisten muuttujien kanssa.
 
 ## Katso myös
-- [PHP:n date-funktio](https://www.php.net/manual/en/function.date.php)
-- [DateTime-luokka](https://www.php.net/manual/en/class.datetime.php)
-- [Päivämäärän muuttaminen timestampiksi](https://www.php.net/manual/en/function.strtotime.php)
-- [Aikavyöhykkeet PHP:ssa](https://www.php.net/manual/en/timezones.php)
+
+- PHP date() funktio: https://www.php.net/manual/en/function.date.php
+- PHP DateTime luokka: https://www.php.net/manual/en/class.datetime.php

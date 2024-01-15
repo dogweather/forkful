@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Надсилання http-запиту з базовою аутентифікацією"
-simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
+title:                "Надсилання запиту http з базовою аутентифікацією"
+html_title:           "Kotlin: Надсилання запиту http з базовою аутентифікацією"
+simple_title:         "Надсилання запиту http з базовою аутентифікацією"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,47 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Надсилання HTTP-запиту з базовою аутентифікацією - це важливе поняття для будь-якого розробника програмного забезпечення. Це дозволяє надійно передавати користувачам інформацію з захищених ресурсів.
+Базова автентифікація - це один з найпростіших методів захисту данних при відправці HTTP запитів. Вона дозволяє передавати ідентифікатор користувача та пароль разом з запитом, щоб сервер міг перевірити права доступу і забезпечити безпечне з'єднання.
 
 ## Як це зробити
 
-Для того, щоб надіслати HTTP-запит з базовою аутентифікацією, вам знадобиться вказати URL, HTTP метод, а також ім'я користувача та пароль для аутентифікації. Для цього використовуйте бібліотеку `kotlinx`. Ось приклад коду:
+Для відправлення HTTP запиту з базовою автентифікацією використовується `URL` та `HttpURLConnection` класи. Спочатку ми створюємо об'єкт URL з адресою, до якої хочемо зробити запит:
 
 ```Kotlin
-import io.ktor.client.*
-import io.ktor.client.request.*
-import io.ktor.client.authentication.*
+val url = URL("https://example.com/api/endpoint")
+```
 
-suspend fun main() {
-    // Вказуємо URL, метод та аутентифікацію
-    val client = HttpClient {
-        install(Authentication) {
-            basic {
-                username = "JohnDoe"
-                password = "secret"
-            }
-        }
-    }
+Далі потрібно створити об'єкт `HttpURLConnection` і встановити метод запиту (GET, POST, PUT тощо):
 
-    // Надсилаємо GET-запит до захищеного ресурсу
-    val response: String = client.get("https://example.com/protected")
-    println(response)
+```Kotlin
+val connection = url.openConnection() as HttpURLConnection
+connection.requestMethod = "GET"
+```
+
+Тепер можемо встановити базову автентифікацію, передавши ідентифікатор користувача та пароль у вигляді строки кодуваного Base64:
+
+```Kotlin
+val username = "user"
+val password = "password"
+val auth = "$username:$password".toByteArray().encodeBase64()
+connection.setRequestProperty("Authorization", "Basic $auth")
+```
+
+На останньому кроці потрібно передати запит, отримати відповідь та обробити її результат:
+
+```Kotlin
+val response = connection.inputStream.bufferedReader().use {
+    it.readText()
 }
-
-```
-Вивід: `Доступ успішно наданий!`
-
-## Глибоке копання
-
-При надсиланні HTTP-запитів з базовою аутентифікацією, необхідно зазначити користувача та пароль у заголовках запиту. Для цього просто додайте наступну строку до бібліотеки `kotlinx`:
-
-```Kotlin
-header("Authorization", "${HttpAuthHeader.basic(username, password)}")
+println(response) // виводимо отриману відповідь
 ```
 
-Також важливо пам'ятати, що ім'я користувача та пароль повинні бути закодовані у форматі base64.
+## Глибший аналіз
+
+Базова автентифікація - це дуже простий метод захисту, який не забезпечує надійного захисту. Якщо для вас важлива безпека данних, рекомендовано використовувати більш сучасні методи аутентифікації, такі як OAuth.
 
 ## Дивись також
 
-- [Офіційна документація по бібліотеці `kotlinx`](https://ktor.io/clients/http-client/quick-start/requests.html)
-- [Стаття про базову аутентифікацію](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+- [Офіційна документація Kotlin](https://kotlinlang.org/docs/reference/)
+- [Стаття про аутентифікацію в Android за допомогою Retrofit та OkHttp](https://proandroiddev.com/authentication-in-android-using-retrofit-and-okhttp-a2794a415426)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Tekstitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Ruby: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,31 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen ja lukeminen ovat kaksi tärkeintä osaa ohjelmointia. Tekstin tallentaminen tiedostoon on tapa tallentaa ja lukea tietoja ohjelmista, ja se on yksi tärkeimmistä taidoista, joita jokaisen ohjelmoijan on hallittava.
+Miksi kirjoittaa tiedostoon Ruby-kielellä? Tässä artikkelissa opit perusteet tekstitiedoston kirjoittamisesta ja saat samalla tärkeää tietoa Ruby-kielestä.
 
-## Kuinka kirjoittaa tekstitiedosto Rubylla
+## Miten
 
-Ruby-ohjelmoinnissa on useita tapoja kirjoittaa tekstitiedostoja, mutta yksinkertaisin tapa on käyttää `File`-luokkaa. Ensinnäkin, avaa tiedosto `testi.txt` kirjoittamista varten käyttämällä `File.open`-metodia. Tämän jälkeen voit kirjoittaa haluamasi tekstin tiedostoon käyttämällä `puts`-komentoa. Lopuksi sulje tiedosto `File.close`-metodilla.
+Ruby-kielellä on helppo kirjoittaa tekstitiedostoja. Seuraa alla olevia esimerkkejä ja käytä koodinpätkät "```Ruby ... ```" määritelläksesi koodiesimerkkisi.
+
+### Peruskomennon käyttö
 
 ```Ruby
-File.open('testi.txt', 'w') do |tiedosto|
-    tiedosto.puts "Tämä on tekstiä, joka tallennetaan tiedostoon."
-end
+File.write("tiedosto.txt", "Tämä on tekstiä")
 ```
 
-Tämän jälkeen voit lukea tiedoston käyttämällä `File.read`-metodia ja tulostaa sen sisällön komentoriville.
+Tämä koodi luo tai kirjoittaa tiedostoon "tiedosto.txt" tekstin "Tämä on tekstiä". Jos tiedosto on jo olemassa, se korvataan uudella tekstillä. Jos tiedostoa ei ole, se luodaan automaattisesti ja siihen kirjoitetaan teksti.
 
-```Ruby 
-puts File.read('testi.txt')
+### Tiedostoon kirjoittaminen muuttujan avulla
+
+```Ruby
+nimi = "Mari"
+File.write("tiedosto.txt", nimi)
 ```
 
-Tämän avulla voit tallentaa ja lukea tietoja tekstitiedostoista Rubylla.
+Tämä esimerkki luo tai kirjoittaa tiedostoon "tiedosto.txt" muuttujan nimen arvon. Tiedostoon tallennetaan siis "Mari".
 
-## Syvällinen sukellus
+### Tiedostoon kirjoittaminen muotoilulla
 
-Kirjoittaessa tekstitiedostoja Rubylla, on tärkeää olla huolellinen tiedoston avaamisessa ja sulkemisessa. Jos unohdat sulkea tiedoston, se voi aiheuttaa ongelmia ja jopa kadottaa tietoja. Voit myös käyttää `File.write`-metodia kirjoittamiseen, mutta muista kuitenkin sulkea tiedosto käsin. Voit myös kokeilla eri tiedostomuotoja, kuten `.csv`-tiedostoja, ja käyttää `CSV`-kirjastoa tiedon tallentamiseksi.
+```Ruby
+teksti = "Tämä on tekstiä "
+numerot = 123
+File.write("tiedosto.txt", "#{teksti}ja #{numerot}")
+```
+
+Tässä esimerkissä kirjoitetaan tiedostoon "tiedosto.txt" teksti "Tämä on tekstiä ja 123". Käytössä on muotoilu, jossa käytetään #{}-merkintää muuttujien asettamiseen tekstiin.
+
+## Syväkatsaus
+
+Tekstitiedostojen kirjoittaminen on tärkeä osa ohjelmointia ja se tuo monia hyötyjä. Tekstitiedostoja voidaan käyttää esimerkiksi tietojen tallentamiseen tai backupsaamiseen, ja niitä voidaan myös lukea ja käsitellä myöhemmin esimerkiksi toisten ohjelmien kautta.
+
+Ruby-kielellä on monipuoliset mahdollisuudet tiedostojen käsittelyyn ja sen syntax on helppo omaksua. Harjoittele kirjoittamista ja kokeile erilaisia vaihtoehtoja, niin opit hyödyntämään Ruby-kieen tekstitiedostoja monipuolisesti.
 
 ## Katso myös
-- [File-luokka Rubyssa](https://ruby-doc.org/core-3.0.0/File.html)
-- [Ruby-tekstinkäsittely](http://ruby-doc.org/core-3.0.0/doc/syntax/calling_methods_rdoc.html)
-- [Ruby CSV-kirjasto](https://ruby-doc.org/stdlib-2.5.1/libdoc/csv/rdoc/CSV.html)
+
+- [Ruby-ohjelmointiopas](https://www.codecademy.com/learn/learn-ruby)
+- [Official Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+- [Rubyfor example](https://www.ruby-for-example.com/)

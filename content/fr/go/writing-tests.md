@@ -1,5 +1,6 @@
 ---
-title:                "Go: Écrire des tests"
+title:                "Écrire des tests"
+html_title:           "Go: Écrire des tests"
 simple_title:         "Écrire des tests"
 programming_language: "Go"
 category:             "Go"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Ecrire des tests peut sembler fastidieux et prendre du temps, mais cela peut en réalité être bénéfique pour les développeurs Go. Les tests aident à détecter les problèmes potentiels dès le début du processus de développement, ce qui peut finalement gagner du temps et de l'effort à long terme.
+Ecrire des tests est essentiel pour garantir la qualité et la stabilité du code. Les tests aident à détecter et à corriger les bogues avant qu'ils n'affectent les utilisateurs finaux, ce qui permet d'économiser du temps et de l'argent à long terme.
 
 ## Comment faire
 
-Ecrire des tests en Go est relativement simple. Tout d'abord, vous devez créer un fichier de test en utilisant un nom de fichier avec le suffixe `_test.go`. Ensuite, vous pouvez écrire des fonctions de test en utilisant le framework de tests intégré de Go. Voici un exemple de fonction de test :
+Ecrire des tests en Go est simple et efficace grâce à son intégration native avec le package de tests standard. Voici un exemple de test simple pour une fonction qui retourne la somme de deux nombres :
 
 ```Go
-func TestCalculer(t *testing.T) {
-    résultat := calculer(5, 10)
-    if résultat != 15 {
-        t.Errorf("Résultat incorrect, attendu : %d, obtenu : %d", 15, résultat)
+func Sum(a, b int) int {
+    return a + b
+}
+
+func TestSum(t *testing.T) {
+    result := Sum(2, 3)
+    expected := 5
+
+    if result != expected {
+        t.Errorf("Expected %d, but received %d", expected, result)
     }
 }
 ```
 
-Cet exemple teste une fonction "calculer" qui prend deux entiers en paramètres et renvoie leur somme. Le framework de tests de Go utilise la fonction "T.Error" pour signaler une erreur si le résultat obtenu ne correspond pas au résultat attendu. Vous pouvez également utiliser `T.Fail` pour signaler un test en échec s'il y a une erreur de logique dans votre fonction de test.
+L'utilisation de "testing.T" permet d'effectuer des assertions pour vérifier si les résultats sont conformes aux attentes. En exécutant "go test" dans le terminal, le test sera exécuté et le résultat sera affiché : "PASS".
 
-## Plongée en profondeur
+## Approfondissement
 
-Il est important de noter que les tests en Go sont exécutés en parallèle, ce qui peut être utile pour accélérer l'exécution des tests. De plus, vous pouvez utiliser l'option -count pour exécuter le même test plusieurs fois, ce qui peut être utile pour détecter les fuites de mémoire et autres problèmes de performances.
+Ecrire des tests en Go offre une grande flexibilité. Les tests peuvent être organisés en différents fichiers, ce qui facilite la maintenance à mesure que le code s'agrandit. De plus, les tests peuvent être exécutés en parallèle, ce qui permet de gagner du temps lors de la phase de test.
 
-Il est également possible d'écrire des tests de table pour tester plusieurs cas avec différentes entrées et résultats attendus. Cette approche est utile pour tester les fonctions ayant plusieurs chemins d'exécution possibles.
+Pour écrire des tests plus complexes, Go offre des fonctionnalités telles que les table-driven tests, qui permettent de tester plusieurs valeurs d'entrée avec les mêmes assertions. Les sous-tests sont également utiles pour tester plusieurs scénarios avec différentes mises en place de données.
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur l'écriture des tests en Go :
-
-- [Documentation officielle sur le framework de tests de Go](https://pkg.go.dev/testing)
-- [Tutoriel sur les tests en Go](https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go)
-
-Maintenant que vous savez comment écrire des tests en Go, n'hésitez pas à les incorporer dans votre processus de développement pour améliorer la qualité de votre code et gagner du temps à long terme !
+- [Documentation de Go sur le package de tests](https://golang.org/pkg/testing/)
+- [Guide pour écrire des tests en Go](https://blog.golang.org/subtests)
+- [Table-driven tests en Go](https://medium.com/@quii/learn-go-by-writing-tests-345b0c0c0d8b)

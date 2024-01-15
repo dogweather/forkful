@@ -1,6 +1,7 @@
 ---
-title:                "C++: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Skriver en tekstfil"
+html_title:           "C++: Skriver en tekstfil"
+simple_title:         "Skriver en tekstfil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,43 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil er en vanlig oppgave for programmerere, spesielt i C++. Tekstfiler lar deg lagre og manipulere tekstbasert data på en enkel og effektiv måte. Enten du trenger å lagre brukerinnstillinger eller behandle store deler av tekst, er tekstfiler et nyttig verktøy å ha i verktøykassen din.
+Skriving av en tekstfil kan være nyttig for å lagre strukturerte data eller for å lage enkel dokumentasjon for programmet ditt.
 
-## Hvordan
+## Slik gjør du det
 
-For å skrive en tekstfil i C++, må du følge disse trinnene:
+For å skrive en tekstfil i C++ trenger du å inkludere fstream biblioteket og å åpne en strøm til filen du ønsker å skrive til. Deretter kan du bruke << operator for å skrive data til filen, som vist i eksempelet nedenfor:
 
-1. Åpne en ny `ofstream`-strøm ved hjelp av `open()`-funksjonen og angi filnavnet du vil bruke.
+```C++
+#include <fstream>
+#include <iostream>
 
-````C++
-ofstream utstrøm("tekstfil.txt");
-````
+using namespace std;
 
-2. Skriv til tekstfilen ved å bruke strømoperatoren `<<`.
+int main() {
+  // Åpner en strøm til tekstfilen "eksempel.txt"
+  ofstream fil{"eksempel.txt"};
 
-````C++
-utstrøm << "Dette er en eksempeltekst som vil bli lagret i tekstfilen." << endl;
-````
+  // Skriver tekst til filen ved hjelp av << operator
+  fil << "Dette er en tekstfil. \n";
+  fil << "Her kan du skrive noe tekst og lagre den. \n";
+  fil << "Du kan også inkludere variabler, som for eksempel: " << 10 << " eller " << "true \n";
 
-3. Når du er ferdig med å skrive til filen, må du lukke strømmen ved hjelp av `close()`-funksjonen.
+  // Lukker filstrømmen når du er ferdig
+  fil.close();
 
-````C++
-utstrøm.close();
-````
+  return 0;
+}
+```
 
-## Dykk dypere
+Når programmet kjøres vil det opprette en tekstfil kalt "eksempel.txt" og skrive følgende innhold til den:
 
-Det er viktig å merke seg at når du åpner en `ofstream`-strøm, vil den opprette en ny fil hvis filen ikke allerede eksisterer. Hvis filen allerede eksisterer, vil den bli overskrevet. Dette kan være problematisk hvis du ikke ønsker å miste data som allerede er lagret i filen. I så fall kan du bruke `app`-flagget sammen med `open()`-funksjonen for å åpne filen i append-modus, noe som betyr at nytt innhold vil bli lagt til på slutten av filen i stedet for å bli overskrevet.
+```
+Dette er en tekstfil.
+Her kan du skrive noe tekst og lagre den.
+Du kan også inkludere variabler, som for eksempel: 10 eller true
+```
 
-````C++
-ofstream utstrøm;
-utstrøm.open("tekstfil.txt", ios::app);
-````
+## Dypdykk
 
-Det er også viktig å lukke strømmen når du er ferdig med å bruke den. Dette sikrer at eventuelle ufullstendige operasjoner blir fullført og at ressurser blir frigjort.
+Hvis du ønsker å skrive mer komplekse data til en fil, kan du bruke C++'s iomanip bibliotek for å formatere utgangen. Du kan også bruke løkker og betingelser for å skrive en liste eller tabell til filen. Husk å alltid lukke filstrømmen når du er ferdig for å sikre at dataen blir skrevet riktig.
 
 ## Se også
 
-- [C++ - Grundleggende om filbehandling](https://www.w3schools.com/cpp/cpp_files.asp)
-- [C++ - ofstream](https://www.geeksforgeeks.org/ofstream-objects-in-cpp/)
-- [Hvordan bruke Markdown](https://www.markdownguide.org/getting-started/)
+- [C++ dokumentasjon](https://www.cplusplus.com/doc/)
+- [C++ ressurser hos W3Schools](https://www.w3schools.com/cpp/)
+- [Eksempel på å lese fra en tekstfil i C++](https://www.programiz.com/cpp-programming/examples/read-file)

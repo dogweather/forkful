@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Analizando html"
+title:                "Analizando html"
+html_title:           "Bash: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Si estás interesado en la programación, seguramente has escuchado o visto el término "parsear HTML". Pero, ¿qué significa realmente y por qué deberías aprender a hacerlo? Básicamente, parsear HTML es una forma de extraer información específica de una página web y utilizarla para tus propios fines, como por ejemplo automatizar ciertas acciones o realizar un análisis de datos. Esto puede ser útil en una variedad de situaciones, desde scraping de datos hasta la creación de bots para tareas repetitivas en la web.
+Si alguna vez has navegado por internet, es muy probable que te hayas encontrado con páginas web cuyas estructuras y contenidos están escritos en lenguaje HTML. Aunque visualmente puedan ser atractivas, a veces necesitamos extraer información específica de estas páginas, ya sea para uso personal o para diferentes propósitos. Aquí es donde entra en juego el parsing de HTML en Bash, ya que nos permite analizar y extraer datos de estas páginas web de manera sencilla.
 
 ## Cómo hacerlo
 
-Para hacer un parseo básico de HTML, necesitarás una combinación de algunas herramientas: Bash, sed y awk. Primero, asegúrate de que tienes instalados estos programas en tu sistema. Luego, sigue estos pasos:
+El parsing de HTML en Bash puede ser realizado con diferentes herramientas, pero en este artículo nos enfocaremos en la librería `html-xml-utils`. Para empezar, debes asegurarte de tener instalada esta librería en tu sistema. Luego, puedes seguir los siguientes pasos:
 
-1. Descarga el archivo HTML que quieres parsear y guarda los comandos que necesitas para parsearlo en un archivo de texto.
-2. Usa el comando `sed` para eliminar el formato no deseado del archivo. Por ejemplo, puedes eliminar las etiquetas HTML utilizando la opción `-e` seguida de la expresión regular `s/<[^>]*>//g` y redireccionar la salida al archivo de texto que creaste anteriormente.
-3. Usa el comando `awk` para extraer la información específica que quieres de la página web parseada. Puedes especificar el patrón que buscas utilizando `awk '/patrón/ {print $0}'` y también redireccionar la salida hacia tu archivo de texto previamente creado.
-4. ¡Listo! Ahora puedes utilizar la información extraída para tu propósito deseado. Puedes guardarla en un archivo CSV o utilizarla directamente en tus scripts de Bash.
-
-Un ejemplo de un archivo de texto con los comandos necesarios para parsear una página web podría verse así:
+1. Descarga el código fuente de la página web que deseas analizar, por ejemplo `https://www.example.com/`.
 
 ```Bash
-wget www.ejemplo.com -O archivo_html
-sed -e 's/<[^>]*>//g' archivo_html > archivo_limpiado
-awk '/patrón/ {print $0}' archivo_limpiado > información_extraída
+curl https://www.example.com/ > webpage.html 
 ```
 
-## Profundizando
+2. Utilizando el comando `hxnormalize` de `html-xml-utils`, limpiamos y normalizamos el código HTML de la página web descargada.
 
-Aunque los pasos básicos mencionados anteriormente pueden ser suficientes para algunas aplicaciones simples, es importante mencionar que el proceso de parsear HTML puede volverse mucho más complejo dependiendo de la estructura de la página web. Algunas páginas pueden tener un HTML muy desordenado o que requiera operaciones más avanzadas como dividir la información en diferentes archivos o utilizar expresiones regulares más complejas.
+```Bash
+hxnormalize -l 100 webpage.html > clean_webpage.html
+```
 
-Además, es importante tener en cuenta que el proceso de parsear HTML puede ser frágil y puede requerir revisión y actualizaciones regularmente en caso de que la página web cambie su estructura o formato.
+3. Ahora, podemos utilizar el comando `hxselect` para filtrar y extraer las etiquetas y elementos específicos que deseamos de la página web. Por ejemplo, si queremos obtener el título de la página, podemos indicarle a `hxselect` que busque la etiqueta `title` dentro del archivo HTML limpio.
+
+```Bash
+hxselect -c 'title' clean_webpage.html 
+```
+
+4. También es posible realizar búsquedas más específicas utilizando selectores de CSS. Por ejemplo, si queremos obtener todos los enlaces de una determinada sección de la página web, podemos utilizar el siguiente comando:
+
+```Bash
+hxselect -c 'div.section a' clean_webpage.html 
+```
+
+## Deep Dive
+
+El comando `hxselect` utiliza selectores de CSS para filtrar y extraer información de una página HTML. Estos selectores son similares a los que se usan en lenguajes de estilo como CSS y pueden ser muy útiles para realizar búsquedas más precisas. Además, la librería `html-xml-utils` cuenta con otras herramientas como `hxtoxml` y `hxwls` que nos permiten convertir archivos HTML a XML y realizar operaciones en ellos de manera más avanzada.
 
 ## Ver también
 
-- [Documentación de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Documentación de sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Documentación de awk](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Documentación de `html-xml-utils`](https://www.w3.org/Tools/HTML-XML-utils/)
+- [Artículo sobre parsing de HTML con Bash en SitePoint (en inglés)](https://www.sitepoint.com/essential-command-line-tools-for-html-xml-and-xhtml/)

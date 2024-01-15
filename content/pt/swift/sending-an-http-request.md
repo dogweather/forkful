@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Enviando uma Solicitação http"
-simple_title:         "Enviando uma Solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Swift: Enviando uma solicitação http"
+simple_title:         "Enviando uma solicitação http"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma requisição HTTP?
+## Por que
 
-A utilização de requisições HTTP é fundamental em desenvolvimento de aplicativos, permitindo a comunicação com servidores para obter, enviar ou alterar dados. Isso é essencial para que seus aplicativos sejam capazes de acessar informações externas e fornecer uma melhor experiência para o usuário.
+Enviar uma solicitação HTTP é uma forma essencial de comunicação entre dispositivos e servidores da web. Ao enviar uma solicitação HTTP, o dispositivo pode obter informações, atualizações ou interagir com um servidor da web.
 
-## Como fazer:
-
-Enviar uma requisição HTTP em Swift é bastante simples. Veja um exemplo abaixo:
+## Como Fazer
 
 ```Swift
-let url = URL(string: "https://api.example.com/users")
-let session = URLSession.shared
-let task = session.dataTask(with: url!) { (data, response, error) in
-    guard let data = data else { return }
-    do {
-        let response = try JSONDecoder().decode(User.self, from: data)
-        // Use os dados recebidos aqui
-    } catch let error {
-        print(error)
+import UIKit
+
+func sendHTTPRequest(url: String) {
+    let request = URLRequest(url: URL(string: url)!)
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        guard let response = response as? HTTPURLResponse, let data = data else {
+            print("Erro ao enviar solicitação HTTP")
+            return
+        }
+
+        if response.statusCode == 200 {
+            // sucesso
+            print(data)
+        } else {
+            // erro
+            print("Erro ao obter dados. Código de erro: \(response.statusCode)")
+        }
     }
+    task.resume()
 }
-task.resume()
+
+// exemplo de solicitação HTTP
+let url = "https://www.example.com/api/getData"
+sendHTTPRequest(url: url)
 ```
 
-No exemplo acima, é criada uma NSURLSession com o URL fornecido. Em seguida, é realizado uma tarefa de dados (dataTask) com o URL, e uma cláusula de fechamento (closure) para processar os dados recebidos. O retorno de dados é convertido para o tipo de objeto especificado (User, neste caso) usando JSONDecoder e está pronto para ser usado.
+O código acima mostra uma função simples para enviar uma solicitação HTTP usando a classe `URLSession` da API `Foundation`. Primeiro, criamos uma `URLRequest` com o URL desejado. Em seguida, usamos essa `URLRequest` para criar uma `URLSessionDataTask` que executa a solicitação e retorna uma resposta HTTP, que podemos verificar para determinar o sucesso ou erro da solicitação. Se a resposta tiver um código de status 200 (OK), podemos acessar os dados retornados na resposta.
 
-## Mergulho profundo:
+## Mergulho Profundo
 
-Ao enviar uma requisição HTTP, é importante entender os diferentes tipos de métodos (GET, POST, PUT, DELETE) e quais dados são esperados como resposta. Além disso, é importante estar ciente dos diferentes formatos de dados, como JSON, XML ou YAML, e escolher o mais adequado para o seu aplicativo.
+Uma solicitação HTTP é composta por um número de elementos, como o URL do servidor, o método usado (GET, POST, etc.), cabeçalhos e corpo da solicitação. Além disso, podemos especificar parâmetros ou dados para serem enviados junto com a solicitação. Existem também diferentes tipos de solicitações HTTP, como `GET`, `POST`, `PUT` e `DELETE`, que são usadas para diferentes propósitos.
 
-Além disso, é importante considerar a segurança ao enviar uma requisição HTTP. Certifique-se de usar uma conexão segura (HTTPS) e adicionar autenticação para proteger os dados sensíveis.
+Ao enviar uma solicitação HTTP, também é importante considerar a segurança, pois informações confidenciais podem ser enviadas pelo corpo da solicitação. Portanto, é altamente recomendável usar protocolos de criptografia, como HTTPS, ao enviar solicitações HTTP.
 
-## Veja também:
+## Veja Também
 
-- [Documentação oficial da Foundation para URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [Como fazer uma requisição HTTP em Swift](https://www.hackingwithswift.com/read/32/2/making-http-requests-with-swift-3-urlsession-cookies-and-authentication)
-
----
-
-Obrigado por ler! Esperamos que este artigo tenha sido útil e que você agora se sinta confiante em enviar requisições HTTP em seus aplicativos Swift. Se tiver alguma dúvida ou sugestão, sinta-se à vontade para deixar um comentário abaixo.
+- [Apple Developer Documentation - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Retrieving Data From the Web - Hacking with Swift](https://www.hackingwithswift.com/example-code/networking/how-to-download-json-from-a-url-coding-challenge)
+- [HTTP Requests in Swift - Medium](https://medium.com/@tomgielen/http-requests-in-swift-c6e78b82a89d)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Comparer deux dates"
+title:                "Comparer deux dates"
+html_title:           "Elm: Comparer deux dates"
 simple_title:         "Comparer deux dates"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Comparer deux dates est une pratique essentielle lors de la programmation en Elm. Cela peut être utile pour trier des données, créer des rappels ou vérifier l'ancienneté d'une information. Dans cet article, nous allons voir comment comparer facilement et efficacement deux dates en utilisant Elm.
+Si vous avez déjà dû comparer deux dates en programmation, vous savez peut-être à quel point cela peut être fastidieux et source d'erreurs. Heureusement, avec Elm, il existe une méthode simple et efficace pour comparer facilement deux dates.
 
 ## Comment faire
 
-Pour comparer deux dates en Elm, nous pouvons utiliser la fonction `compare` du module `Date`. Cette fonction prend deux arguments de type `Date` et renvoie un `Order` qui peut être `LT` (inférieur), `EQ` (égal) ou `GT` (supérieur). Voici un exemple de code pour comparer deux dates :
+La première étape pour comparer deux dates en Elm est de les convertir en un format compréhensible pour le langage de programmation. Pour cela, nous pouvons utiliser la fonction `Time.fromString` qui prend une chaîne de caractères en tant que paramètre et renvoie une `Maybe Time` (une valeur pouvant être soit `Just Time`, soit `Nothing` en cas d'erreur de conversion).
 
-```Elm
-firstDate = Date.fromYearMonthDay 2020 05 15
-secondDate = Date.fromYearMonthDay 2021 05 20
-
-comparison = Date.compare firstDate secondDate
-
-case comparison of 
-    LT ->
-        "La première date est plus ancienne que la deuxième."
-    
-    EQ ->
-        "Les deux dates sont identiques."
-    
-    GT ->
-        "La première date est plus récente que la deuxième."
+```
+Elm Time.fromString "2021-07-27"
 ```
 
-Dans cet exemple, nous créons deux dates différentes et nous utilisons la fonction `compare` pour obtenir le résultat de la comparaison. Ensuite, nous utilisons un `case` pour traiter les différents cas possibles et afficher un message correspondant.
+Si nous voulons comparer des dates avec une précision plus fine, comme l'heure ou les millisecondes, nous pouvons également utiliser la fonction `Time.fromStringIso8601` qui prend un paramètre supplémentaire spécifiant le niveau de précision souhaité.
 
-## Plongeons plus profondément
+```
+Elm Time.fromStringIso8601 "2021-07-27T12:30:00.000Z"
+```
 
-Lorsque nous utilisons `compare`, le résultat est basé sur la comparaison des timestamps des deux dates. Un timestamp représente le nombre de millisecondes écoulées depuis le 1er janvier 1970 à minuit en temps universel (UTC). Cela signifie que si deux dates sont exactement identiques jusqu'au millisecondes, elles seront considérées comme égales.
+Une fois que nous avons nos deux dates dans un format compréhensible pour Elm, nous pouvons utiliser la fonction `Time.compare` pour les comparer. Cette fonction prend deux dates en tant que paramètres et renvoie `LT` (plus petite), `EQ` (égale) ou `GT` (plus grande), en fonction de leur ordre chronologique.
 
-De plus, si l'une des dates est vide, la fonction renverra automatiquement `EQ`. Enfin, il est important de noter que la fonction `compare` ne prend pas en compte le fuseau horaire. Si les dates ont des fuseaux horaires différents, il est préférable de les convertir en UTC avant de les comparer.
+```
+let date1 = Time.fromString "2021-07-27"
+let date2 = Time.fromString "2021-07-28"
+Time.compare date1 date2  -- renverra LT car date1 est plus petite que date2
+```
+
+Enfin, si nous voulons vérifier si une date est comprise entre deux autres dates, nous pouvons utiliser la fonction `Time.isBetween`. Cette fonction prend trois dates en tant que paramètres et renvoie `True` si la première date est comprise entre les deux autres dates et `False` sinon.
+
+```
+let date1 = Time.fromString "2021-07-27"
+let date2 = Time.fromString "2021-07-28"
+let date3 = Time.fromString "2021-07-29"
+Time.isBetween date2 date1 date3  -- renverra True car date2 est comprise entre date1 et date3
+```
+
+## Deep Dive
+
+Lorsque nous comparons des dates en Elm, il est important de noter que les dates sont comparées en utilisant le fuseau horaire UTC par défaut. Si nous voulons utiliser un fuseau horaire différent, nous devons d'abord convertir notre date en utilisant la fonction `Time.toUtc`.
+
+De plus, la fonction `Time.compare` prend également en compte la précision jusqu'à la milliseconde lorsqu'elle compare les dates. Si nous ne voulons pas prendre en compte la précision des millisecondes, nous pouvons utiliser la fonction `Time.compareWithoutZone` qui ignore cette précision.
 
 ## Voir aussi
 
-- [Documentation officielle d'Elm sur le module Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Différentes façons de comparer des dates en JavaScript](https://www.sitepoint.com/comparing-datestimes-using-javascript/)
-- [Article sur la gestion des dates en français avec Elm](https://www.theodo.fr/blog/2021/02/gestion-dates-elm/)
+Pour en savoir plus sur la manipulation des dates en Elm, vous pouvez consulter ces ressources :
+
+- [Documentation officielle Elm pour la manipulation des dates](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Article sur la comparaison de dates en Elm de dev.to](https://dev.to/benansell/comparing-dates-in-elm-1915)

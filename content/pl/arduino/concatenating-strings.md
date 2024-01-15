@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Konkatenacja łańcuchów"
-simple_title:         "Konkatenacja łańcuchów"
+title:                "Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,40 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W programowaniu z użyciem Arduino, łączenie lub łączenie ciągów jest częstym zadaniem. Jest to przydatne w celu łączenia różnych znaków lub wartości liczbowych w jeden ciąg, który można wykorzystać do wyświetlenia danych lub przekazania ich do innego urządzenia. W tym artykule dowiecie się, jak w prosty sposób wykonywać tę operację i jak możecie ją wykorzystać w swoich projektach.
+Czy kiedykolwiek zastanawiałeś się, dlaczego warto łączyć łańcuchy w programowaniu Arduino? Może wydawać się to zbędne, ale istnieją wiele sytuacji, w których konieczne będzie połączenie kilku łańcuchów w jedną linię tekstu. W tym artykule dowiesz się dlaczego i jak to zrobić.
 
 ## Jak to zrobić
 
-Aby skonkatenować ciągi w Arduino, używamy funkcji `strcat()` lub operatora `+`. Na przykład:
+Arduino oferuje nam różne sposoby na łączenie łańcuchów, ale dzisiaj skupimy się na trzech najważniejszych: operator "+" (plus), funkcja "concat()" oraz funkcja "sprintf()". 
 
 ```Arduino
- char ciag1[] = "Hello";
- char ciag2[] = "world!";
- 
- strcat(ciag1, ciag2);
- 
- Serial.println(ciag1);
+String tekst = "Witaj";
+String imie = "Jan";
+String powitanie = tekst + " " + imie;
+// wynik: "Witaj Jan"
 ```
-
-W powyższym przykładzie używamy funkcji `strcat()` do połączenia dwóch ciągów w jeden. Połączyliśmy "Hello" i "world!" w "Hello world!" i wyświetliliśmy go za pomocą funkcji `Serial.println()`.
-
-Możemy również użyć operatora `+` do skonkatenowania ciągów:
 
 ```Arduino
-char ciag1[] = "Lubię";
-char ciag2[] = "Arduino";
-
-Serial.println(ciag1 + " " + ciag2);
+String pierwszy = "Arduino";
+String drugi = "jest";
+String trzeci = "fajne";
+String zdanie = pierwszy.concat(" ", drugi, " ", trzeci);
+// wynik: "Arduino jest fajne"
 ```
 
-W wyniku tego kodu otrzymamy ciąg "Lubię Arduino".
+```Arduino
+char zdanie[20];
+char pierwszy[] = "Hello";
+char drugi[] = "world";
+sprintf(zdanie, "%s %s", pierwszy, drugi);
+// wynik: "Hello world"
+```
 
-## Głębsza analiza
+## Deep Dive
 
-Podczas korzystania z funkcji `strcat()` lub operatora `+` należy pamiętać o kilku ważnych aspektach. Po pierwsze, musimy łączyć tylko ciągi tego samego typu, na przykład tylko `char`, a nie `char` i `int`. Po drugie, należy zapewnić wystarczającą ilość pamięci dla skonkatenowanego ciągu. Jeśli pamięci nie będzie wystarczająco, może dojść do błędu lub niepożądanego rezultatu.
+Połączenie łańcuchów może być przydatne w różnych sytuacjach, np.:
 
-## Zobacz także
+- tworzenie dynamicznych komunikatów w zależności od wartości sensora
+- tworzenie dłuższych linii tekstu w prosty sposób
+- łączenie nazw zmiennych z wartościami w celu wyświetlenia informacji na ekranie
 
-- [Funkcja strcat() w dokumentacji Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/strcat/)
-- [Operator + w dokumentacji Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/operator-plus/)
-- [Przykładowe projekty z użyciem łączenia ciągów w Arduino](https://create.arduino.cc/projecthub/tags/string+concatenation)
+Warto również zwrócić uwagę na to, że wszystkie wymienione powyżej sposoby łączenia łańcuchów są dostępne również w wielu innych językach programowania, więc poznając je na Arduino, zyskujesz umiejętności, które możesz wykorzystać również w innych projektach.
+
+## Zobacz również
+
+- Dokumentacja Arduino na temat łączenia łańcuchów: https://www.arduino.cc/reference/tr/language/functions/string-functions/concat/
+- Przykładowe projekty wykorzystujące łączenie łańcuchów w Arduino: https://www.hackster.io/search?i=projects&q=concatenating%20strings%20arduino
+- Wprowadzenie do podstaw programowania w Arduino: https://euske.github.io/arduino/samples/hello.html

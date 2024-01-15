@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Skriva tester"
+title:                "Skriva tester"
+html_title:           "Elm: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,45 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Även om det kan verka tråkigt och tidskrävande, är det väldigt viktigt att skriva tester när man programmerar i Elm. Tester hjälper till att säkerställa att koden fungerar som den ska och förhindrar att felaktiga ändringar görs senare. Det kan också ge bättre förståelse för koden och underlätta vid framtida utveckling.
+Att skriva tests är ett viktigt steg i utvecklingsprocessen eftersom det hjälper dig att säkerställa att din kod fungerar som den ska och att den inte bryts när du gör ändringar. Det sparar tid och resurser på lång sikt och ger dig en ökad kvalitetssäkring för din kod.
 
-## Hur man skriver tester
+## Så gör du
 
-För att skriva tester i Elm behöver man först importera modulen `Test` och allt som behövs för testningen, såsom modellerna som ska testas och eventuella funktioner.
-
-```Elm
+För att skriva tests i Elm behöver du använda ett testramverk som heter elm-test. Först och främst bör du skapa en separat fil för alla dina tests och inkludera den i ditt elm-program genom att använda "import"-kod:
+```
+import Expect
+import Fuzzer
 import Test
-import ExampleModule exposing (..)
+
 ```
-
-Sedan kan man definiera ett `Test.suite` där man anger namn och en lista med `Test.test` för varje test man vill köra. Inuti varje test kan man utnyttja `Test.equal` eller andra liknande funktioner för att kontrollera om ett visst uttryck är lika med förväntat resultat.
-
-```Elm
-Test.suite "Exempeltest"
-    [ Test.test "Kontrollera add funktionen"
-        (\_ -> 
-            let 
-                result = add 2 3
-            in
-                Test.equal result 5
-        )
-    ]
+Nästa steg är att definiera dina tester som funktioner som returnerar en Bool för att indikera om testet har lyckats eller misslyckats. Du kan använda funktionen Expect.equal för att jämföra förväntade värden med faktiska värden.
 ```
-
-För att köra testerna kan man sedan använda terminalen och kommandot `elm-test` eller verktyg som "elm-test-rs" för att få en mer visuell representation av testerna. Det är också rekommenderat att köra testerna regelbundet, gärna vid varje ny kodändring.
+addTest : Test
+addTest =
+    describe "add"
+        [ test "adds two numbers" <|
+            \_ ->
+                Expect.equal 5 (add 2 3)
+        ]
+```
+Slutligen kan du köra dina tester genom att använda elm-test i terminalen:
+```
+elm-test
+```
 
 ## Djupdykning
 
-För att skriva effektiva tester är det viktigt att förstå hur Elm fungerar. Det finns till exempel några viktiga koncept att ha koll på:
+För att skriva effektiva och pålitliga tester är det viktigt att förstå skillnaden mellan enhetstester och integrationstester. Enhetstester fokuserar på att testa enskilda delar av din kod, medan integrationstester testar hur de olika delarna fungerar tillsammans. Båda är viktiga och bör användas i kombination för att säkerställa en bra testning av din kod.
 
-- Modularitet: Det är en bra idé att dela upp testerna i moduler som motsvarar modulerna i den faktiska koden.
-- Mocking: Ibland kan det vara användbart att använda `Test.succeed` för att simulera ett positivt testfall eller `Test.fail` för att testa felaktiga förhållanden.
-- Generering: Med hjälp av biblioteket `elm-test-generators` kan man generera slumpmässiga testfall för att testa kod på ett mer omfattande sätt.
-
-Se till att läsa på om dessa och andra koncept för att skapa mer sofistikerade tester.
+En annan aspekt att tänka på är att skriva tydliga och läsbara tests. Detta är viktigt för att underlätta felsökning och för att andra utvecklare ska kunna förstå och bygga vidare på din kod. Användande av tydliga namn på tester och kommentarer kan hjälpa till i detta.
 
 ## Se även
 
-- [Elm Test documention](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm Test genererators](https://package.elm-lang.org/packages/elm-community/elm-test-extra/latest/Generators)
-- [Elm Test exempelprojekt](https://github.com/elm-explorations/test/tree/latest/example) för att se testning i praktiken
+- [elm-test GitHub-repositorium](https://github.com/elm-community/elm-test)
+- [Elm-test officiell dokumentation](https://www.elm-test.org/)
+- [Enkel guide till att skriva tests i Elm](https://medium.com/@DanT8n/a-simple-guide-to-testing-in-elm-9d672e8b7b34)

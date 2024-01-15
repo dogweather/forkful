@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: json 사용하기"
-simple_title:         "json 사용하기"
+title:                "Json으로 작업하기"
+html_title:           "TypeScript: Json으로 작업하기"
+simple_title:         "Json으로 작업하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -9,37 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-JSON(JavaScript Object Notation)은 현대의 웹 애플리케이션에서 데이터를 다루는 데에 광범위하게 사용되는 데이터 포맷입니다. 이러한 이유로 TypeScript 개발자 여러분은 중요한 데이터를 다룰 때 JSON을 사용하는 것이 좋습니다.
+JSON은 개발자들이 데이터를 효율적으로 전달하고 이해하기 위해 자주 사용되는 데이터 형식입니다. 따라서 JSON을 다루는 능력은 현대 웹 개발에 필수적입니다.
 
-## 어떻게
+## 어떻게?
 
-데이터를 JSON 형식으로 다루는 것은 TypeScript에서 간단하게 할 수 있습니다. 우선, `JSON.parse()` 함수를 사용하여 JSON 문자열을 JavaScript 객체로 분석할 수 있습니다. 또한, `JSON.stringify()` 함수를 사용하여 JavaScript 객체를 JSON 문자열로 변환할 수 있습니다.
+JSON을 TypeScript에서 다루는 것은 간단합니다. 먼저, `import`문을 사용하여 `JSON` 모듈을 불러옵니다.
 
-```TypeScript
-// JSON 문자열 분석
-const jsonString = '{"name": "John", "age": 30}';
-const person = JSON.parse(jsonString);
-console.log(person.name); // "John"
-
-// JavaScript 객체를 JSON 문자열로 변환하기
-const car = { make: "Toyota", model: "Corolla", year: "2020" };
-const carString = JSON.stringify(car);
-console.log(carString); // '{"make": "Toyota", "model": "Corolla", "year": "2020"}'
+```
+// TypeScript  import 문
+import JSON from 'json';
 ```
 
-## 깊이 파고들기
+그런 다음, `JSON.parse()` 함수를 사용하여 JSON 형식의 데이터를 파싱하고, `JSON.stringify()`를 사용하여 JavaScript 데이터를 JSON 형식의 문자열로 변환할 수 있습니다.
 
-JSON은 매우 자유로운 형식이기 때문에 다양한 종류의 데이터를 다룰 수 있습니다. 하지만 이러한 유연성 때문에 JSON 데이터를 다루는 것은 종종 복잡하고 어려운 과정일 수 있습니다. 따라서, 항상 데이터 스트럭쳐에 대한 깊은 이해가 필요합니다. 또한, TypeScript에서는 인터페이스와 제네릭을 사용하여 JSON 데이터를 구조화할 수 있습니다.
+```
+// TypeScript 코드 예제
+const jsonStr = `{"name": "John", "age": 25, "hobby": "coding"}`;
 
-## 더 알아보기
+// JSON 파싱
+const data = JSON.parse(jsonStr);
 
-- [JSON 공식 문서](https://www.json.org/json-en.html)
-- [TypeScript에서 JSON 다루기](https://blog.logrocket.com/json-in-typescript/)
-- [인터페이스와 제네릭을 이용한 JSON 데이터 구조화](https://medium.com/weboptimer/write-better-typescript-json-parsers-with-type-mapping-decoding-made-easy-d427c33b6fa)<br/><br/>
+// JSON 문자열로 변환
+const newData = JSON.stringify(data);
 
-## 참고
+console.log(newData); // 출력: {"name": "John", "age": 25, "hobby": "coding"}
+```
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [JSON](https://www.json.org/json-en.html)
+## Deep Dive
+
+TypeScript에서 JSON을 다루는 데에는 몇 가지 유용한 메소드가 있습니다.
+
+### `JSON.parse()`
+
+`JSON.parse()` 함수는 JSON 형식의 문자열을 파싱하여 JavaScript 데이터로 변환합니다. 만약 파싱에 실패하면 `SyntaxError`를 발생시킵니다.
+
+### `JSON.stringify()`
+
+`JSON.stringify()` 함수는 JavaScript 데이터를 JSON 형식의 문자열로 변환합니다. 필요에 따라 보기 좋은 형식으로 출력할 수 있도록 `space` 매개변수를 지정해줄 수 있습니다.
+
+### `JSON.parse(text[, reviver])`
+
+`JSON.parse()` 함수의 두 번째 매개변수인 `reviver`를 사용하면 JSON의 키 및 값에 대한 변환 처리를 할 수 있습니다. 이를 활용하면 파싱한 데이터에 대한 추가적인 로직을 구현할 수 있습니다.
+
+## See Also
+- [MDN - JSON](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+- [JSON Lint - JSON 형식 확인 사이트](https://jsonlint.com/)

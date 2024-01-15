@@ -1,5 +1,6 @@
 ---
-title:                "Go: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Go: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Go"
 category:             "Go"
@@ -11,32 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit löytää merkkijonon pituuden? Monissa ohjelmoinnin tehtävissä on tarpeen tietää, kuinka monta merkkiä merkkijonossa on. Tämä tieto voi auttaa esimerkiksi merkkijonon käsittelyssä tai sen muokkaamisessa.
+## Kuinka
 
-## Miten
+Koodin pituus on tärkeä tieto monessa ohjelmoinnin käyttötarkoituksessa. Onneksi Go-kieli tarjoaa helpon tavan löytää merkkijonon pituus. 
 
-Merkkijonon pituuden löytäminen Go-kielellä on yksinkertaista käyttämällä `len()` -funktiota. Oletetaan, että haluat tietää, kuinka monta merkkiä on "Hei maailma!", voit käyttää seuraavaa koodia:
+```Go 
+package main
 
-```Go
-s := "Hei maailma!"
-pituus := len(s)
-fmt.Println(pituus)
+import "fmt"
+
+func main() {
+	s := "Tämä on merkkijono"
+	fmt.Println("Merkkijonon pituus on", len(s))
+}
 ```
 
-Tämä tulostaa konsoliin luvun 12, mikä vastaa merkkijonon "Hei maailma!" pituutta. Voit myös käyttää `len()` -funktiota suoraan ilman väliaikaista muuttujaa:
+Tuloste: `Merkkijonon pituus on 20`
+
+## Syvempi sukellus
+
+Merkkijonon pituus löytyy käyttämällä Go-kielen `len()` -funktiota, joka palauttaa merkkijonon merkkien lukumäärän. Merkkien lukumäärä sisältää myös välilyönnit ja muut erikoismerkit.
+
+Toinen tapa löytää merkkijonon pituus on käyttämällä `for`-silmukkaa ja laskemalla merkkien lukumäärä itse. Tämä lähestymistapa vaatii enemmän koodia, mutta antaa enemmän kontrollia ja mahdollisuuden tehdä lisätoimenpiteitä merkkijonon kanssa.
 
 ```Go
-fmt.Println(len("Hei maailma!"))
+package main
+
+import "fmt"
+
+func main() {
+	s := "Tämä on merkkijono"
+	count := 0
+	for range s {
+		count++
+	}
+	fmt.Println("Merkkijonon pituus on", count)
+}
 ```
 
-Tämä tuottaa saman tuloksen.
-
-## Syvemmälle
-
-Go-kielessä merkkijonon pituus lasketaan tavuina eikä merkkeinä. Tämä tarkoittaa, että jotkut merkit, kuten ääkköset, voivat vaatia useamman tavun tallentamiseen ja siten vaikuttaa merkkijonon pituuteen. Lisäksi `len()`-funktio voi laskea myös muiden tietotyyppien, kuten taulukoiden ja karttojen, pituuden.
+Tuloste: `Merkkijonon pituus on 20`
 
 ## Katso myös
 
-- Merkkijonojen käsittely Go-kielessä: https://www.golang-book.com/books/intro/4#section3
-- Go-kielen dokumentaatio: https://golang.org/doc/
-- Go-kielessä käytettävät tietotyypit: https://golang.org/ref/spec#Types
+- [Go-opas - Merkkijonot](https://golang.org/doc/effective_go.html#strings)
+- [Go-kirjasto - strings](https://golang.org/pkg/strings/)

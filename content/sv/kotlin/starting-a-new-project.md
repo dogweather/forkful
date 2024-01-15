@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Att börja ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "Kotlin: Att börja ett nytt projekt"
 simple_title:         "Att börja ett nytt projekt"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Det finns många anledningar till varför man skulle vilja starta ett nytt projekt i Kotlin. Det är ett modernt och öppen källkod-baserat språk som är enkelt att lära sig och använder sig av JVM (Java Virtual Machine) vilket innebär att det kan köras på många olika plattformar. Dessutom har Kotlin ett starkt typsystem och stöd för funktionell programmering vilket gör det till ett effektivt verktyg för att bygga pålitliga och skalbara program.
 
-Att starta ett nytt programmeringsprojekt kan vara spännande och givande. Det ger möjlighet att utveckla nya färdigheter, bidra till samhället och uppnå personliga mål.
+## Så här gör du
+För att starta ett nytt projekt i Kotlin behöver du först installera Kotlin-pluginet för ditt utvecklingsverktyg. Detta kan antingen vara Android Studio, IntelliJ IDEA eller en annan Java IDE som stödjer plugins. När du har installerat pluginet kan du följa dessa steg för att starta ett nytt projekt:
 
-## Hur man gör
+1. Öppna din IDE och välj "File" (Fil) > "New" (Ny) > "Project" (Projekt).
+2. Välj Kotlin som projektspråk och välj sedan den plattform som du vill utveckla för (t.ex. JVM, Android eller JavaScript).
+3. Ange namn och plats för ditt projekt och klicka på "Create" (Skapa).
+4. Nu är ditt projekt klart att börja koda i!
 
-För att starta ett nytt Kotlin-projekt behöver du först installera Kotlin och en lämplig kodredigerare, till exempel IntelliJ IDEA eller Android Studio. När du har fått dessa på plats kan du skapa en ny Kotlin-fil genom att öppna din kodredigerare och välja "New Project". Ge sedan ditt projekt ett lämpligt namn och välj "Kotlin" som språk. Du kommer då kunna börja skriva din kod.
+För att skapa en enkel "Hello World"-applikation kan du använda följande kod i en ny Kotlin-fil:
 
 ```Kotlin
-fun main() {
-    println("Hej världen!")
+fun main(args: Array<String>) {
+    println("Hello World!")
 }
 ```
 
-Koden ovan visar en enkel "Hej världen!"-applikation i Kotlin. Genom att köra detta får du som output "Hej världen!" i din terminal eller konsol.
+Du kan köra koden genom att högerklicka på filen och välja "Run" (Kör) i din IDE.
 
-## Djupdykning
+## Deep Dive
+När du har startat ett nytt projekt i Kotlin kan det vara bra att lära känna språket lite mer för att dra full nytta av dess funktioner och möjligheter. Här är några viktiga saker att notera:
 
-Innan du börjar koda i ditt nya projekt är det viktigt att du först har en klar förståelse för dina mål och krav. Det är också bra att ha en plan för hur du vill organisera din kod och eventuellt identifiera potentiella problem som kan uppstå längs vägen. Det är också viktigt att undersöka vilka verktyg och bibliotek som finns tillgängliga för att underlätta utvecklingen i Kotlin.
+- Kotlin är ett objektorienterat språk vilket innebär att all kod måste vara inuti en klass.
+- Språket har också stöd för funktionell programmering genom användning av högre ordningsfunktioner och lambda-uttryck.
+- Kotlin har ett mycket starkt och säkert typsystem, vilket betyder att det hittar och förhindrar många fel under kompileringen istället för att de uppstår under körning.
+- En annan viktig aspekt av Kotlin är dess "null-säkerhet". Detta innebär att programmerare måste vara explicita om ett värde kan vara null eller inte, vilket hjälper till att undvika crashar under körning.
 
-När du väl har en bra grund kan du börja koda din applikation. Tänk på att följa god kodningspraxis och dokumentera din kod för att underlätta för dig själv och andra som ska bidra till projektet.
+För mer information om de olika aspekterna av Kotlin, rekommenderar vi att du utforskar språkets officiella dokumentation och tutorials.
 
 ## Se även
-
-Här är några användbara resurser för dig som vill lära dig mer om att starta ett nytt Kotlin-projekt:
-
-- [Kotlins officiella hemsida](https://kotlinlang.org/) - här hittar du dokumentation, guider och språkreferenser.
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/) - en populär kodredigerare för Kotlin och andra programmeringsspråk.
-- [Android Studio](https://developer.android.com/studio) - en annan populär kodredigerare för Kotlin som är särskilt inriktad på Android-utveckling.
-
-Lycka till med ditt nya projekt!
+- [Kotlin officiell hemsida](https://kotlinlang.org/)
+- [Kotlin på GitHub](https://github.com/JetBrains/kotlin)
+- [Kotlin samlade resurser](https://kotlin.link/)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Utmatning av felsökningsresultat"
-simple_title:         "Utmatning av felsökningsresultat"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Kotlin: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,75 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Felsökning är en viktig del av programmering som hjälper till att hitta och lösa problem i koden. Genom att skriva ut debug-utskrifter kan man enkelt få insikt i vad som händer i programmet vid olika punkter under körningen.
+Att skriva ut debug-utdata är ett viktigt verktyg för att felsöka och förstå vad som händer i din kod. Genom att skriva ut relevant information vid olika steg i koden kan du enklare identifiera problem och förbättra din kod. Det är ett enkelt sätt att få inblick i exakt vad som händer bakom kulisserna.
 
-## Så här gör du
+## Hur man gör
 
-För att skriva ut debug-utskrifter i Kotlin kan man använda en enkel inbyggd funktion kallad `println()`. Denna funktion tar emot ett värde som argument och skriver ut det till konsolen. Till exempel:
-
-```Kotlin
-val name = "Johan"
-val age = 30
-println("Hej, mitt namn är $name och jag är $age år gammal.")
-```
-
-Detta kommer att skriva ut följande i konsolen:
-
-```
-Hej, mitt namn är Johan och jag är 30 år gammal.
-```
-
-Man kan också skriva ut flera värden genom att separera dem med kommatecken inom samma `println()` funktion. Till exempel:
+För att skriva ut debug-utdata i Kotlin kan du använda funktionen `println()` eller `print()`. Dessa funktioner skriver ut text utan att lägga till en ny rad efter, vilket gör det bra för att skriva ut variabler eller andra värden, till exempel:
 
 ```Kotlin
-val num1 = 10
-val num2 = 5
-println("Summan av $num1 och $num2 är ${num1 + num2}.")
+val nummer = 10
+println("Detta är värdet av nummer: $nummer")
 ```
 
-Detta kommer att skriva ut följande:
+Detta kommer att skriva ut "Detta är värdet av nummer: 10". Som du kan se används dollartecken och variabelnamnet inom `println()`-funktionen för att skriva ut värdet av variabeln. Detta gör att du kan skriva ut flera variabler eller text i samma `println()`-funktion.
 
-```
-Summan av 10 och 5 är 15.
-```
-
-## Djupdykning
-
-För att få mer detaljerad information om vad som händer i programmet kan man använda funktionen `print()` istället för `println()`. Skillnaden är att `print()` inte lägger till en ny rad efter utskriften, vilket innebär att flera utskrifter kommer att visas på samma rad. Till exempel:
+Om du vill lägga till en ny rad efter utskriften kan du använda `println()` med en tom sträng som argument, till exempel:
 
 ```Kotlin
-val num1 = 10
-val num2 = 5
-print("Nummer 1 är $num1, ")
-print("Nummer 2 är $num2 och ")
-print("summan är ${num1 + num2}.")
+val namn = "Anna"
+val ålder = 25 
+println("Namn: $namn")
+println("Ålder: $ålder")
+println()
 ```
 
-Detta kommer att skriva ut följande:
+Detta kommer att skriva ut:
 
 ```
-Nummer 1 är 10, Nummer 2 är 5 och summan är 15.
+Namn: Anna
+Ålder: 25
 ```
 
-Det är också möjligt att formatera utskriften för att göra den mer läslig. Detta kan göras genom att använda `println()` och `print()` med formattecken som `%s` för strängar, `%d` för heltal, `%f` för flyttal och så vidare. Till exempel:
+En annan användbar funktion för debug-utdata är `debug()` som finns i `android.util.Log`-klassen. Denna funktion används vanligtvis i Android-utveckling för att logga information till Android Studio's loggverktyg. Du kan till exempel använda den för att logga ett felmeddelande:
 
 ```Kotlin
-val name = "Sara"
-val age = 25
-val height = 1.65
-println("%s är %d år gammal och är %.2f meter lång.".format(name, age, height))
+Log.d("TAG", "Ett fel har inträffat.")
 ```
 
-Detta kommer att skriva ut följande:
+Där "TAG" är en sträng som identifierar loggmeddelandet och "Ett fel har inträffat." är det faktiska meddelandet som kommer att visas i loggen.
 
-```
-Sara är 25 år gammal och är 1.65 meter lång.
-```
+## Fördjupning
+
+Det finns många andra användbara funktioner och metoder som kan hjälpa dig att skriva ut debug-utdata, till exempel `assert()` för att testa förväntade värden och `warn()` för att logga varningar. Du kan också använda `Log.i()` för att logga information och `Log.e()` för att logga felmeddelanden av högre prioritet.
+
+Du kan också använda och formatera strängar med hjälp av `String.format()` för att skapa mer läsbar och strukturerad debug-utdata. Dessutom finns det många tredjepartsbibliotek som kan hjälpa dig att logga, spåra och analysera debug-utdata.
+
+Med alla dessa olika verktyg är det viktigt att vara selektiv med vad du skriver ut. Att ha för mycket debug-utdata kan göra det svårt att hitta viktig information och kan sakta ner din kod. Se till att välja ut relevant information och radera all debug-kod innan du skickar din app till produktion.
 
 ## Se även
 
-För mer information om felsökning i Kotlin och användningen av `println()` och `print()`, besök gärna följande länkar:
+Här är några användbara resurser för att lära dig mer om debug-utdata med Kotlin:
 
-- https://kotlinlang.org/docs/reference/basic-types.html#string-templates
-- https://www.jetbrains.com/help/idea/debugging.html#debugConsole
-- https://www.baeldung.com/kotlin-printing-debug-output
+- [Officiell Kotlin dokumentation för debugging](https://kotlinlang.org/docs/debugging.html)
+- [Stack Overflow: How to debug using println](https://stackoverflow.com/a/51116072)
+- [Android Developers: Logging](https://developer.android.com/reference/android/util/Log)

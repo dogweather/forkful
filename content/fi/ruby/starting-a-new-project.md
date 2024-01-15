@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uudessa projektissa"
+html_title:           "Ruby: Aloittaminen uudessa projektissa"
+simple_title:         "Aloittaminen uudessa projektissa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -9,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Aloittaessasi uuden projektin Ruby-koodauksella on useita syitä, miksi sitä kannattaa tehdä. Saatat haluta oppia uuden kielen ja haastaa itseäsi tai ehkä sinulla on jo idea jonkin uuden ja mielenkiintoisen sovelluksen luomiseen.
+Miksi joku aloittaisi uuden projektin Ruby-ohjelmointikielellä? Ruby on dynaaminen ja helppolukuinen kieli, joka tarjoaa paljon hyödyllisiä kirjastoja ja työkaluja ohjelmistokehittäjille. Se on myös suosittu kieli, joten yhteisön tuki ja resurssit ovat helposti saatavilla.
 
-# Miten
+## Kuinka aloittaa uusi Ruby-projekti
 
-Ruby-koodauksen aloittaminen on helppoa! Tässä on muutama esimerkki, miten voit aloittaa uuden projektin:
+Aloittaaksesi uuden Ruby-projektin, tarvitset ensin Ruby-kääntäjän. Voit ladata sen ilmaiseksi Ruby-sivustolta tai asentamalla kääntäjän paketinhallintajärjestelmän kautta.
 
-```Ruby 
-# Lasketaan yhteen kaksi numeroa
-puts 2 + 3 
+Kun kääntäjä on asennettu, voit aloittaa luomalla uuden tiedoston `.rb`-tiedostopäätteellä ja avaamalla sen tekstieditorilla.
 
-# Tulostaa "Hello World"
-puts "Hello World" 
+Alta löydät muutamia esimerkkejä Ruby-koodista:
 
-# Määritellään muuttujat ja käytetään niitä laskussa
-x = 5 
-y = 10 
-puts x + y 
+```Ruby
+# Tallennetaan muuttujaan merkkijono ja tulostetaan se konsoliin
+message = "Hei maailma!"
+puts message
+
+# Lasketaan listaan syötettyjen lukujen summa
+lukulista = [5, 10, 15, 20]
+puts lukulista.sum
 ```
 
-Tässä on nähtävissä yksinkertaisia esimerkkejä käytännön Ruby-koodista. Kokeile itse ja näet kuinka helppoa on aloittaa uuden projektin luominen!
+Ja tässä on mitä tulostus näyttäisi:
 
-# Syvemmälle
+```
+Hei maailma!
+50
+```
 
-Ennen kuin aloitat uuden projektin, on hyvä miettiä muutamia asioita. Ensinnäkin, minkä tyyppistä sovellusta haluat luoda? Ruby-koodia voi käyttää monenlaisiin projekteihin, kuten verkkosivustoihin, mobiilisovelluksiin ja tietokantasovelluksiin.
+Näiden esimerkkien avulla voit aloittaa oman Ruby-projektisi! Muista käyttää myös Ruby:n tarjoamia kirjastoja ja työkaluja helpottaaksesi ohjelmointia.
 
-Toiseksi, sinun tulee miettiä millaiset työkalut ja resurssit tarvitset projektin toteuttamiseen. On hyvä tutustua Ruby-yhteisöön ja ymmärtää mistä saat tarvittavaa tukea ja apua tarvittaessa.
+## Syvemmälle uuden projektin aloituksessa
 
-Lopuksi, muista aloittaa pienestä ja laajentaa projektia vähitellen. Älä anna mahdollisten haasteiden estää sinua aloittamasta uutta projektia!
+Kun aloitat uuden Ruby-projektin, on tärkeää miettiä, mitä haluat saavuttaa ja mitä kirjastoja/tuotteita tarvitset sen toteuttamiseksi. Tutki erilaisia kirjastoja ja valitse ne, jotka sopivat parhaiten tarpeisiisi.
 
-# Katso myös
+Voit myös harkita käyttäjäystävällisiä projektinhallintatyökaluja, kuten Github, jotta voit jakaa ja hallita koodiasi yhteistyössä muiden kanssa.
 
-- [Ruby opetusohjelmat ja oppaat](https://www.ruby-lang.org/fi/learning/)
-- [Ruby-leirit ja konferenssit](https://www.rubyconferences.org/)
-- [Ruby-yhteisön foorumit ja keskusteluryhmät](https://www.ruby-forum.com/)
+## Katso myös
+
+- [Ruby-sivusto](https://www.ruby-lang.org/fi/)
+- [Github](https://github.com/)

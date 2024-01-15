@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: सूचना लाइन तार्किक तरिके का पठन"
-simple_title:         "सूचना लाइन तार्किक तरिके का पठन"
+title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
+html_title:           "TypeScript: कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-कमांड लाइन आर्गुमेंट पढ़ने का मतलब यह है कि आप अपने प्रोग्राम में डेटा दर्ज कर सकते हैं जो आपको दूसरों से प्राप्त करने से बचाता है।
+Agar aap TypeScript ka estemaal karte hai, to aapko jaanna zaroori hai ki command line arguments kya hai aur inka istemaal kaise karte hai. Is article mein hum aapko batayenge ki TypeScript mein command line arguments ka istemaal kaise kiya jaata hai.
 
-## कैसे करें
+## Kaise Karein
 
-कमांड लाइन आर्गुमेंट पढ़ने के लिए आपको सबसे पहले अपने प्रोग्राम में `process` ऑब्जेक्ट इम्पोर्ट करना होगा। फिर आप फाइल के साथ `process.argv` वेरिएबल जोड़ सकते हैं जो आपको सभी कमांड लाइन आर्गुमेंट्स की सूची देगा। उदाहरण के लिए, यदि आपका फाइल `index.ts` है और आपको 3 आर्गुमेंट पढ़ने हैं तो आप निम्नलिखित कोड का उपयोग कर सकते हैं:
+Command line arguments ko TypeScript mein read karne ke liye, hum `process.argv` ka istemaal karte hai. Iska format hai `process.argv[index]` jahan index 0 se shuru hota hai aur pehla argument ko index 2 par store kiya jaata hai. Is tarah se hum saare arguments ko access kar sakte hai. Neeche ek coding example diya gaya hai jis mein hum ek file ko run karne ke liye require kiye gaye arguments ko print karenge:
 
 ```TypeScript
-import process from "process";
+// File Name: arguments.ts
 
-let argument1 = process.argv[2];
-let argument2 = process.argv[3];
-let argument3 = process.argv[4];
+console.log("Chal raha hai!");
 
-console.log(argument1, argument2, argument3);
+console.log("Command line arguments:");
+
+for (let i = 2; i < process.argv.length; i++) {
+  console.log(`Index ${i}: ${process.argv[i]}`);
+}
 ```
 
-इसका आउटपुट निम्न होगा:
+Output:
 
-```bash
-$ ts-node index.ts hello world !
-hello world !
+```
+Chal raha hai!
+Command line arguments:
+Index 2: abc
+Index 3: def
+Index 4: ghi
 ```
 
-## गहराई की तरफ
+## Deep Dive
 
-कई बार, हमारे पास अधिकतम संख्या या निर्दिष्ट प्रकार के कमांड लाइन आर्गुमेंट्स हो सकते हैं। इस स्थिति में, हम `if/else` चेकिंग या `switch` लोजिक का उपयोग कर सकते हैं जो आर्गुमेंट्स को विभिन्न वेरिएबल्स में स्थानांतरित करेंगे। इससे हमारे पास आसानी से पहुंच और व्यवस्था रहती है, जो हमारे प्रोग्राम को लंबे समय तक दौरान साफ और स्पष्ट रखेगा।
+Command line arguments ko read karne se pehle, humein `string[]` type ka interface define karna hoga. Yeh interface humein `process.argv` ki help se provide kiya jaata hai. TypeScript ke saare standard libraries mein `process.argv` defined hai. 
 
-## देखें भी
+Agar aap multiple values ko alag alag arguments ke roop mein pass karna chahte hai, to aap backticks (`) ka istemaal kar sakte hai. Is tarah se aap ek string ko multiple arguments ke roop mein pass kar sakte hai.
 
-- [TypeScript ऑफिशियल डॉक्यूमेंटेशन](https://www.typescriptlang.org/docs/)
-- [कमांड लाइन आर्गुमेंट्स को पढ़ने का वीडियो ट्यूटोरियल](https://www.youtube.com/watch?v=qCdCeXAMf
+Interfaces ko define karne ke liye, aap `*.d.ts` files ka estemaal kar sakte hai. Yeh files TypeScript ke type checking ka kaam karte hai aur humare local `typings` folder mein store kiye jaate hai.
+
+## Dekhiye Bhi
+
+- [Official TypeScript Documentation on Command Line Arguments](https://www.typescriptlang.org/docs/handbook/modules.html)
+- [TypeScript Tutorials for Beginners](https://www.tutorialspoint.com/typescript/)

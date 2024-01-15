@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Elixir recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,60 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Concatenating strings is a crucial aspect of programming in any language, including Elixir. It allows us to combine multiple strings together to form a new, longer string. This can be useful for creating dynamic messages, building URLs, or formatting text in various ways. Learning how to effectively concatenate strings in Elixir can greatly enhance your coding skills and make your code more versatile.
+Why would someone want to concatenate strings in Elixir? Well, concatenating strings allows for the combination of multiple strings into a single string, making it easier to manipulate and display data in a desired format. This can be particularly useful when working with string operations such as building URLs or creating output for user interfaces.
 
 ## How To
 
-To concatenate strings in Elixir, we can use the `<>` operator or the `string_concat()` function. Let's see some examples:
+To concatenate strings in Elixir, we use the `<>` operator, also known as the "string concatenation operator." Let's take a look at some code examples to see how it works.
 
-```elixir
-# Using the <> operator
-"Greetings " <> "from " <> "Elixir!" #=> "Greetings from Elixir!"
+```Elixir
+# Basic concatenation
+"Hello " <> "world" 
+# Output: "Hello world"
 
-# Using the string_concat() function
-string_concat("Hello ", "world!") #=> "Hello world!"
+# Concatenation with variables
+name = "John"
+"Hello, my name is " <> name 
+# Output: "Hello, my name is John"
+
+# Concatenation with string interpolation
+age = 30
+"I am #{age} years old" 
+# Output: "I am 30 years old"
 ```
 
-As we can see, both methods produce the same result. However, when dealing with longer strings or more complex concatenations, it is recommended to use the `string_concat()` function for better readability and maintainability.
-
-We can also use interpolation to concatenate strings with variables:
-
-```elixir
-name = "Lisa"
-
-# Using the <> operator
-"Hello " <> name <> "! Welcome to Elixir!" #=> "Hello Lisa! Welcome to Elixir!"
-
-# Using the string_concat() function
-string_concat("Hello ", name, "! Welcome to Elixir!") #=> "Hello Lisa! Welcome to Elixir!"
-```
-
-Lastly, we can use the `string()` function to convert non-string values to strings before concatenating:
-
-```elixir
-"Today is " <> string(3) <> "rd of " <> string(5) #=> "Today is 3rd of 5"
-```
+As you can see, the `<>` operator allows us to combine multiple strings, variables, and even string interpolation to create a new string. It is important to note that the `<>` operator only works with strings and will produce an error if used with other data types.
 
 ## Deep Dive
 
-Strings in Elixir are represented as binaries - a sequence of 8-bit bytes. This allows for efficient handling of strings, as binary operations are faster than character-based operations.
+Behind the scenes, concatenation in Elixir is handled by the underlying Erlang VM, which follows certain rules when dealing with strings. This can sometimes lead to unexpected results, particularly when it comes to performance.
 
-Elixir also provides the `IO.puts()` function for printing strings to the console. It automatically adds a new line at the end of the output, making it perfect for printing concatenated strings:
+One important rule to keep in mind is that strings in Elixir are UTF-8 encoded, meaning each character is represented by one or more bytes. This can lead to longer processing times when concatenating large strings, as the VM needs to allocate memory for the new, larger string and then copy the previous strings into it. In some cases, using a `~s` sigil (to create a string literal) or a `<<>>` binary constructor (to create a binary) can be more performant than using the `<>` operator.
 
-```elixir
-IO.puts("Hi there!")
-IO.puts("What's " <> "your " <> "name?") #=> Hi there!
-#=> What's your name?
-```
-
-Additionally, we can also use `IO.inspect()` to output the string representation of any data structure, including concatenated strings:
-
-```elixir
-IO.inspect("Good" <> " " <> "morning!") #=> "Good morning!"
-```
+Additionally, if you are concatenating more than two strings, it is recommended to use `List.foldl` for better performance, as it avoids creating intermediary strings. However, for smaller strings, using the `<>` operator is usually more than sufficient.
 
 ## See Also
 
-- [Elixir String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir String concatenation guide](https://elixirschool.com/lessons/basics/strings/#string-concatenation)
-- [Elixir String interpolation](https://elixir-lang.org/getting-started/strings-and-binaries.html#string-interpolation)
+- [Elixir strings documentation](https://hexdocs.pm/elixir/String.html)
+- [Erlang string handling](https://erlang.org/doc/programming_examples/strings.html)

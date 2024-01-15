@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Henter nåværende dato"
-simple_title:         "Henter nåværende dato"
+title:                "Få gjeldende dato"
+html_title:           "TypeScript: Få gjeldende dato"
+simple_title:         "Få gjeldende dato"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,51 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å få dagens dato er en viktig del av mange programmeringsprosjekter. Det kan være nyttig for å vise brukeren den nåværende datoen, eller for å håndtere tidssensitive data i et program. Det er også en god måte å lære om håndtering av datoer og tidsstyring i programmering.
+Før vi hopper inn i hvordan man kan få tak i dagens dato ved hjelp av TypeScript, la oss først se på hvorfor dette er nyttig. Å få tak i dagens dato er en vanlig oppgave i mange programmeringsprosjekter, spesielt når man jobber med tidsstyring og planlegging. Å kunne få tak i den nåværende datoen kan være nyttig for å holde styr på deadlines, opprette datoen for en transaksjon eller for å vise den nåværende datoen til brukere.
 
-## Hvordan
+## Hvordan man får tak i dagens dato
 
-For å få dagens dato i TypeScript, kan du bruke den innebygde klassen "Date" og dens metoder. Her er et eksempel på hvordan du kan få dagens dato og skrive den ut til konsollen:
+For å få tak i dagens dato ved hjelp av TypeScript, kan vi bruke det innebygde Date-objektet. Det er flere metoder som kan brukes til å hente ut informasjon om dagens dato, for eksempel `getDate()`, `getMonth()` og `getFullYear()`.
 
-```TypeScript
-const dato = new Date();
-console.log(dato.toDateString());
-```
-
-Dette koden vil opprette en ny datoobjekt og deretter bruke "toDateString()" for å konvertere datoen til en mer lesbar streng og skrive den til konsollen. Output vil se ut som dette:
-
-```
-Tue Aug 11 2020
-```
-
-Du kan også bruke "get" metodene til å få spesifikke deler av datoen, for eksempel å få måneden som et tall:
+Her er et eksempel på hvordan man kan bruke Date-objektet til å få tak i dagens dato og skrive den ut i konsollen:
 
 ```TypeScript
-const dato = new Date();
-const måned = dato.getMonth() + 1;
-console.log(måned);
+let currentDate = new Date(); // Oppretter et Date-objekt med dagens dato
+console.log(currentDate); // Skriver ut dato-objektet i konsollen
 ```
 
-Dette vil returnere dagens måned som et tall mellom 1 og 12. Output vil se slik ut:
+Sample output:
+`2021-06-22T08:54:55.298Z`
 
+Vi kan også formatere utskriften ved hjelp av `getMonth()`, `getDate()` og `getFullYear()`-metodene:
+
+```TypeScript
+let month = currentDate.getMonth() + 1; // Legger til 1, siden måneder starter på 0
+let day = currentDate.getDate();
+let year = currentDate.getFullYear();
+console.log(`I dag er det ${day}.${month}.${year}`); // Skriver ut datoen i formatet DD.MM.ÅÅÅÅ
 ```
-8
-```
 
-Det er også mulig å formatere datoen ved hjelp av biblioteker som "moment.js" eller "date-fns". Disse gir mer fleksibilitet og funksjonalitet for å arbeide med datoer.
+Sample output:
+`I dag er det 22.6.2021`
 
-## Deep Dive
+## Dypdykk
 
-Dagens dato blir vanligvis lagret som en "timestamp" i programmering, som er antall millisekunder som har gått siden 1. januar 1970. Dette er en standardenhet for å håndtere datoer og tidspunkter i de fleste programmeringsspråk.
+Date-objektet i TypeScript støtter også en rekke andre nyttige metoder for å håndtere datoer og tid, for eksempel `toLocaleDateString()`, `toLocaleTimeString()` og `toLocaleString()`. Disse metodene lar deg formatere dato og klokkeslett basert på brukerens lokale innstillinger.
 
-I TypeScript kan du også opprette egendefinert "Date" objekt ved å angi et spesifikt år, måned og dag, og bruke metoder som "getHours()" og "getMinutes()" for å få nøyaktig tidspunkt. Det er også viktig å ta hensyn til tidssonen når man håndterer datoer, da det kan påvirke hva som faktisk er "dagens dato".
+Det finnes også biblioteker som Moment.js som gir en mer robust løsning for dato og tid-manipulasjon i TypeScript. Dette kan være nyttig hvis du trenger å håndtere kompliserte datofunksjoner i prosjektet ditt.
 
-## Se Også
+## Se også
 
-Her er noen nyttige ressurser for å lære mer om å få dagens dato i TypeScript:
-
--Offisiell dokumentasjon for "Date" klassen i TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#example-1
--Moment.js dokumentasjon: https://momentjs.com/
--Date-fns dokumentasjon: https://date-fns.org/
-
-Det er også nyttig å utforske ulike måter å formatere og håndtere datoer basert på det aktuelle prosjektet og dets behov.
+- [Date - MDN web docs](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)

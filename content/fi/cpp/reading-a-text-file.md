@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tiedostotekstin lukeminen"
+html_title:           "C++: Tiedostotekstin lukeminen"
+simple_title:         "Tiedostotekstin lukeminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,74 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi siis avata ja lukea tekstitiedostoja C++:lla? Se on kätevä tapa lukea ja käsitellä suuria määriä dataa, kuten käyttäjän syötteitä tai tiedostoja verkosta.
 
-On monia erilaisia käyttötarkoituksia, joiden vuoksi henkilö haluaisi lukea tekstitiedostoa C++-ohjelmoinnilla. Ehkä he haluavat analysoida tietoja tai tallentaa niitä myöhempää käyttöä varten. Olipa kyseessä sitten mikä tahansa syy, lukeminen tekstitiedostoista on tärkeä taito kaikille C++-ohjelmoijille.
-
-## Miten
-
-Aloitetaan luomalla tekstiruutu, jossa on teksti sisällä. Tämän avulla voimme harjoitella tiedoston lukemista ja tulostamista konsoliin. Katso esimerkki alla olevassa koodilohkossa:
+## Kuinka
+Tässä esimerkissä näytämme, kuinka lukea ja tulostaa tiedoston sisältö käyttäen C++:aa.
 
 ```C++
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
-int main()
-{
-  // Avataan tiedosto streamiin
-  ifstream tiedosto("tekstitiedosto.txt");
-
-  // Alustetaan merkkijono, johon tallennetaan tiedoston sisältö
-  string sisalto;
-
-  // Luetaan tiedosto while-silmukassa
-  while (getline(tiedosto, sisalto))
-  {
-    // Tulostetaan sisältö konsoliin
-    cout << sisalto << endl;
+int main() {
+  // Avataan tiedosto objectiksi
+  std::ifstream tiedosto("esimerkki.txt"); 
+  
+  // Tarkistetaan, että tiedosto on avattu
+  if (tiedosto.is_open()) { 
+    
+    // Luetaan ja tulostetaan jokainen rivi tiedostosta
+    std::string rivi;
+    while (std::getline(tiedosto, rivi)) { 
+      std::cout << rivi << std::endl; 
+    }
+    
+    // Suljetaan tiedosto, kun ollaan luettu kaikki rivit
+    tiedosto.close();
   }
-
-  // Suljetaan tiedosto
-  tiedosto.close();
-
+  
   return 0;
 }
 ```
 
-Koodin suorittamisen jälkeen konsoliin tulostuu tiedoston sisältö.
+Seuraava koodin pohjalta luotu esimerkkitekstitiedosto "esimerkki.txt" sisältää seuraavan tekstin:
 
 ```
-Tämä on esimerkki
-tekstiruudusta
-jossa on sisältöä.
+Tämä on ensimmäinen rivi.
+Tämä on toinen rivi.
+Ja tämä on kolmas.
 ```
 
-Koodissa käytetään `ifstream`-luokkaa, joka mahdollistaa tiedostojen lukemisen input streamina. Tämän jälkeen `getline()`-funktiolla voidaan lukea yksi rivi tiedostosta ja tallentaa se merkkijonoon. Sen jälkeen luettu rivi voidaan tulostaa konsoliin `cout`-komennolla.
+Kun koodi suoritetaan, tulostuu seuraava:
 
-## Syvempää tietoa
-
-Jos haluat lukea tiedoston sisällön toiseen muuttujaan, esimerkiksi `char`-taulukkoon, voit käyttää `get()`-funktiota. Esimerkiksi:
-
-```C++
-// Alustetaan taulukko, johon tallennetaan tiedoston sisältö
-char sisalto[100];
-
-// Luetaan tiedostoa kunnes ollaan saavutettu sen loppu
-while (!tiedosto.eof())
-{
-  // Luetaan yksi merkki kerrallaan ja tallennetaan se taulukkoon
-  tiedosto.get(sisalto, 100, EOF);
-}
-
-// Tulostetaan sisältö konsoliin
-cout << sisalto << endl;
+```
+Tämä on ensimmäinen rivi.
+Tämä on toinen rivi.
+Ja tämä on kolmas.
 ```
 
-Huomaatko eron `getline()`-funktiosta? `get()` lukee tiedostoa kerrallaan ja asettaa lukukohdan tiedostossa eteenpäin. Siksi seuraavan `get()`-kutsun ei tarvitse aloittaa tiedoston alusta.
+## Syvällisempi sukellus
+Fstream-kirjasto sisältää monia eri metodeja tiedostojen lukemiseen ja käsittelemiseen. Yksi hyödyllinen metodi on "peek()", joka palauttaa seuraavan merkin tiedostossa ilman sen lukemista. Tämä on hyödyllistä esimerkiksi tiedoston käsittelyssä rivien välistä tyhjän rivin löytämiseen.
 
 ## Katso myös
-
-- [C++ - Tekstitiedostojen käsittely](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [fstream-luokan dokumentaatio](http://www.cplusplus.com/reference/fstream/fstream/)
-- [Harjoituksia tiedostojen lukemiseen ja kirjoittamiseen C++:lla](https://www.w3resource.com/cpp-exercises/file-handling/index.php)
+- [C++ tiedostojen käsittely (w3schools)](https://www.w3schools.com/cpp/cpp_files.asp)
+- [Fstream referenssi (cplusplus.com)](http://www.cplusplus.com/reference/fstream/)

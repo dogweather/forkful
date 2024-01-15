@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med yaml"
+html_title:           "Swift: Arbeid med yaml"
+simple_title:         "Arbeid med yaml"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -11,73 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I denne bloggposten skal vi se nærmere på hvordan man kan jobbe med YAML i Swift-programmering. YAML, eller YAML Ain't Markup Language, er et strukturert filformat som er brukt til å beskrive data på en enkel og lesbar måte. Det er spesielt nyttig i utviklingen av større og komplekse programmer, da det gjør det enklere å håndtere store mengder data.
+Å jobbe med YAML kan være en nyttig ferdighet for alle som er interessert i å jobbe med data og konfigurasjonsfiler. Det å kunne formatere og lagre data på en strukturert måte kan gjøre det enklere å organisere og modifisere informasjon.
 
 ## Slik gjør du det
 
-For å kunne jobbe med YAML i Swift, må du først installere et tredjepartsbibliotek kalt "Yams". Dette kan enkelt gjøres ved å legge til følgende linje i dependencies i Package.swift-filen:
+YAML er et tekstbasert filformat som brukes til å representere strukturerte data på en lesbar måte. Det kan brukes til å konfigurere applikasjoner, lage metadata eller lagre data for programmeringsspråk som Swift. For å begynne å jobbe med YAML, følg disse enkle stegene:
 
-```Swift
-.package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
+1. Installer en teksteditor som støtter YAML-formatet, som for eksempel Visual Studio Code, Sublime Text eller Atom.
+2. Lag en ny YAML-fil med filtypen ".yml" eller ".yaml".
+3. Skriv inn ønsket datastruktur basert på YAML-syntaksen (se nedenfor for eksempler).
+4. Lagre filen og du er klar til å bruke YAML i ditt prosjekt!
+
+Et eksempel på en grunnleggende YAML-fil:
+
+```
+# Kommentarer skrives med hashtag foran
+navn: Ylva
+alder: 25
+hobbyer:
+  - fotografering
+  - streaming
+  - reise
 ```
 
-Deretter må du importere Yams i den filen du ønsker å jobbe med YAML i:
+I dette eksemplet er "navn" og "alder" nøkkelverdier, mens "hobbyer" er en underliste av flere elementer.
 
-```Swift
-import Yams
+## Dykk dypere
+
+Når du har blitt mer komfortabel med YAML-syntaksen, kan du utforske mer avanserte konsepter som inkluderer flerlagsstrukturer, referanser og inkludering av filer. Du kan også bruke YAML til å definere dataklasser og objekter i ditt Swift-prosjekt ved hjelp av tredjepartsbiblioteker som "Yams" eller innebygde funksjoner som "Codable".
+
+Et eksempel på en mer avansert YAML-fil:
+
+```
+# Produktkatalog
+produkter:
+  - navn: Skjorte
+    beskrivelse: En enkel, men elegant skjorte
+    pris: 300
+    tilgjengelige størrelser:
+      - S
+      - M
+      - L
+  - navn: Bukse
+    beskrivelse: Komfortabel og stilfull bukse
+    pris: 450
+    tilgjengelige størrelser:
+      - S
+      - M
+      - L
+  - navn: Kjole
+    beskrivelse: Fantastisk festkjole
+    pris: 700
+    tilgjengelige størrelser:
+      - XS
+      - S
+      - M
 ```
 
-For å konvertere YAML-data til Swift-objekter, kan du bruke funksjonen `load(yaml:)` fra Yams-biblioteket:
-
-```Swift
-let yamlString = """
-myKey: myValue
-myArray:
-  - value1
-  - value2
-"""
-
-do {
-    let yamlObject = try load(yaml: yamlString)
-    print(yamlObject)
-} catch {
-    print("Feil ved lasting av YAML-data: \(error)")
-}
-```
-
-Outputen vil bli en Swift Dictionary som inneholder nøkler og verdier som tilsvarer YAML-dataen:
-
-```Swift
-["myKey": "myValue", "myArray": ["value1", "value2"]]
-```
-
-Du kan også konvertere Swift-objekter til YAML-data ved å bruke funksjonen `dump` fra Yams-biblioteket:
-
-```Swift
-let myDict = ["myKey": "myValue", "myArray": ["value1", "value2"]]
-
-do {
-    let yamlData = try dump(object: myDict)
-    print(yamlData)
-} catch {
-    print("Feil ved dumping av YAML-data: \(error)")
-}
-```
-
-Outputen vil bli en streng som inneholder YAML-formatert data:
-
-```Swift
-myKey: myValue
-myArray:
-  - value1
-  - value2
-```
-
-## Dypdykk
-
-Yams-biblioteket støtter også mer avansert håndtering av YAML-data, som for eksempel å opprette egne typer som kan serialiseres til og deserialiseres fra YAML-data. Du kan lese mer om dette i dokumentasjonen til Yams-biblioteket.
+Her bruker vi flerlagsstruktur for å organisere produktdata og inkluderer også en underliste for å vise tilgjengelige størrelser for hvert produkt.
 
 ## Se også
 
-- Yams dokumentasjon: https://github.com/jpsim/Yams
-- Swift Package Manager dokumentasjon: https://swift.org/package-manager/
+* [YAML-spesifikasjon](https://yaml.org/spec/1.2/spec.html)
+* [Yams - Swift YAML-parser](https://github.com/jpsim/Yams)
+* [Codable - innebygd Swift-funksjon for å konvertere dataklasser til og fra YAML](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html#ID566)

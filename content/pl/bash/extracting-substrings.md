@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+html_title:           "Bash: Wycinanie podłańcuchów"
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,61 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Witaj w moim blogu poświęconym programowaniu w Bash. Dziś skupimy się na temacie wydobywania podciągów z tekstu, co może wydawać się być zadaniem trywialnym, ale może być bardzo przydatne w wielu sytuacjach. Dlatego zachęcam do lektury tego wpisu, aby nauczyć się jak wykorzystać tę technikę w swoim kodzie.
+Znajdywanie i wyodrębnianie podciągów tekstowych jest często niezbędnym krokiem w wielu programach Bash. Nie tylko ułatwia to manipulację i analizę danych, ale także może przyspieszyć wykonanie skryptu poprzez zmniejszenie potrzebnej ilości danych do przetworzenia.
 
 ## Jak to zrobić
 
-Wydobywanie podciągów z tekstu w Bash może być osiągnięte za pomocą kilku metod, w zależności od potrzeb i preferencji programisty. Jedną z najprostszych metod jest użycie wbudowanego operatora `:` oraz ukośników (`/`) do określenia początku i końca naszego podciągu.
+W Bash istnieje kilka sposobów na ekstrakcję podciągów z tekstu, w tym wykorzystanie `awk`, `cut` oraz operatorów `#` i `%`. Przedstawione są poniżej podstawowe przykłady kodu oraz wyników.
+
+### Wykorzystanie `awk`
 
 ```Bash
-# Przykładowy tekst
-string="Dzień dobry, witaj w moim blogu!"
-
-# Wydobywanie podciągu od indeksu 6 do końca
-echo ${string:6}
-
-# Wynik: dobry, witaj w moim blogu!
+fruit="jabłko gruszka pomarańcza"
+echo $fruit | awk '{print $2}' # wypisze "gruszka"
+echo $fruit | awk '{print substr($1, 1, 4)}' # wypisze "jabł"
 ```
 
-Możemy również określić początkowy i końcowy indeks naszego podciągu, aby wydobyć tylko pewną część tekstu.
+### Wykorzystanie `cut`
 
 ```Bash
-# Wydobywanie podciągu od indeksu 6 do 15
-echo ${string:6:15}
-
-# Wynik: dobry, witaj w
+fruit="jabłko-gruszka-pomarańcza"
+echo $fruit | cut -d "-" -f 2 # wypisze "gruszka"
 ```
 
-Inną metodą jest użycie wbudowanej funkcji `cut` w Bash. Wymaga ona podania separatora oraz numerów pola, z którego chcemy wydobyć podciąg.
+### Wykorzystanie operatorów # i %
 
 ```Bash
-# Użycie funkcji cut z separatorem przecinka
-echo $string | cut -d"," -f1
-
-# Wynik: Dzień dobry
-```
-
-Możemy też skorzystać z funkcji `sed`, która jest potężnym narzędziem do manipulacji tekstem. Tutaj przykładowo wydobywamy podciąg znajdujący się między dwoma słowami.
-
-```Bash
-# Znajdujemy słowa "miło" i "blog"
-# i wydobywamy wszystko pomiędzy nimi
-echo $string | sed 's/.*miło\(.*\)blog.*/\1/'
-
-# Wynik: w moim
+fruit="jabłko-gruszka-pomarańcza"
+echo ${fruit#*-} # wypisze "gruszka-pomarańcza"
+echo ${fruit%-*} # wypisze "jabłko-gruszka"
 ```
 
 ## Deep Dive
 
-Wydobywanie podciągów z tekstu jest przydatną, ale prostą funkcjonalnością w Bash. Jednak warto pamiętać, że operacje na tekstach w Bash nie są tak wydajne jak w językach wysokiego poziomu, dlatego lepiej unikać wykorzystywania ich w przypadku dużych i złożonych tekstów.
-
-Bardziej rozbudowane wyrażenia regularne mogą również zostać wykorzystane do bardziej precyzyjnego wydobywania podciągów. Warto również pamiętać o możliwości użycia pętli i warunków, aby dynamicznie wydobywać podciągi w zależności od zmieniających się danych.
+Funkcja `substr` w Bash pozwala na wyodrębnienie podciągu z danego tekstu na podstawie jego indeksów. Pierwszy argument określa, od którego indeksu ma rozpocząć się ekstrakcja, a drugi określa długość wyodrębnionego podciągu. Można również wykorzystać `length` w drugim argumencie, aby wyciągnąć podciąg od określonego indeksu do końca tekstu. Natomiast wykorzystanie `cut` pozwala na wycięcie określonej części tekstu na podstawie ustalonego separatora. Ostatni przykład wykorzystuje operator `#` lub `%` do usunięcia określonego tekstu z lewej lub prawej strony.
 
 ## Zobacz również
 
-Chcesz dowiedzieć o wydobywania podciągów w Bash więcej? Sprawdź poniższe linki, aby zgłębić swoją wiedzę:
-
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [Tutorial na FreeCodeCamp](https://www.freecodecamp.org/news/bash-string-manipulation/)
-
-Dziękujemy za przeczytanie naszego wpisu, mam nadzieję że dowiedziałeś się czegoś ciekawego i użytecznego. Do zobaczenia w kolejnych artykułach!
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Podstawowe operacje tekstowe w Bash](https://www.programiz.com/bash-scripting/text-processing)
+- [Wyjaśnienie podciągów w Bash](https://www.baeldung.com/linux/substring-extraction-linux)

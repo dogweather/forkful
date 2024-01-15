@@ -1,5 +1,6 @@
 ---
-title:                "C#: 解析HTML"
+title:                "解析HTML"
+html_title:           "C#: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "C#"
 category:             "C#"
@@ -9,71 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今天我们来谈谈在C#中如何解析HTML。HTML是一种用于创建网页的标记语言，解析它可以让我们从网页中提取出需要的信息。比如，我们可以通过解析HTML来获取某个网站的标题、文本内容、图片等信息。在这篇文章中，我们将学习如何使用C#来解析HTML，并且将深入了解HTML解析的更多细节。
+## 为什么
 
-## 为什么要解析HTML
+网页上的信息都是以HTML代码的形式存在，而HTML代码通常是冗长且难以阅读的。因此，解析HTML成为了获取有用信息的必要步骤。
 
-解析HTML可以让我们从网页中提取出需要的信息，并将其用于数据分析、网页抓取等应用。在很多Web开发和数据科学领域，解析HTML都是非常常见的操作。通过学习如何解析HTML，我们可以更加灵活地处理网页数据，从中挖掘出有价值的信息。
-
-## 如何解析HTML
-
-下面我们将使用C#来解析HTML，并获取其中的文本内容和图片链接。首先，我们需要引入HtmlAgilityPack包，它是一个常用的HTML解析器。然后，我们可以通过以下代码来解析HTML：
+## 如何使用
 
 ```C#
-// 引入HtmlAgilityPack包
+// 导入HtmlAgilityPack库
 using HtmlAgilityPack;
 
 // 创建HtmlDocument对象
-var doc = new HtmlDocument();
+HtmlDocument doc = new HtmlDocument();
 
-// 加载HTML文件
-doc.Load("sample.html");
+// 从URL获取HTML代码
+doc.Load("https://www.example.com/");
 
-// 使用XPath获取h1标签中的文本
-var title = doc.DocumentNode.SelectSingleNode("//h1").InnerText;
+// 选择某个HTML元素进行解析
+HtmlNode node = doc.DocumentNode.SelectSingleNode("//div[@class='title']");
 
-// 使用XPath获取所有p标签中的文本
-var paragraphs = doc.DocumentNode.SelectNodes("//p");
-
-// 使用foreach循环输出p标签中的文本
-foreach (var p in paragraphs)
-{
-    Console.WriteLine(p.InnerText);
-}
-
-// 使用CssSelector获取第一个img标签中的src属性
-var imgSrc = doc.DocumentNode.SelectSingleNode("img:first-of-type").GetAttributeValue("src", "no-src");
+// 获取元素的文本内容
+string title = node.InnerText;
 
 // 输出结果
-Console.WriteLine("标题：" + title);
-Console.WriteLine("第一段文本：" + paragraphs[0].InnerText);
-Console.WriteLine("第二段文本：" + paragraphs[1].InnerText);
-Console.WriteLine("图片链接：" + imgSrc);
+Console.WriteLine("标题：{0}", title);
 ```
 
-运行以上代码，我们可以得到以下输出：
+文本输出：标题：这是网页的标题
 
-```
-标题：Hello World!
-第一段文本：欢迎来到我的博客。
-第二段文本：我是一名程序员，喜欢写博客分享技术和经验。
-图片链接：https://myblog.com/img/logo.png
-```
+## 深入探讨
 
-## 深入了解HTML解析
-
-除了使用XPath和CssSelector来提取文本和属性外，我们还可以使用HtmlDocument对象提供的其他方法来处理HTML。例如，我们可以通过HtmlDocument对象的`CreateNavigator`方法来创建一个XPathNavigator对象，然后使用它来更加灵活地定位和提取HTML中的元素。
-
-同时，HtmlAgilityPack还支持解析含有无效或不规范HTML的网页，它可以自动修复HTML并生成有效的DOM树。这对于大部分实际应用场景是非常必要的。
+解析HTML并不仅仅是简单地获取某个元素的文本内容。使用HtmlAgilityPack库，可以实现更复杂的操作，例如：选择多个HTML元素、从特定位置开始选择元素、根据CSS类名进行选择、提取属性值等等。通过深入学习和使用该库，可以更加灵活地提取出想要的信息。
 
 ## 参考链接
 
-- [HtmlAgilityPack官方文档](https://html-agility-pack.net/documentation)
-- [C#中解析HTML的几种方法](https://www.cnblogs.com/tianma3798/p/11312904.html)
-
-## 参见
-
-见长链接：
-
-- [C#中使用正则表达式的基本方法](https://github.com/jason2017/myblog/blob/master/csharp-regex.md)
-- [C#中使用LINQ进行数据处理](https://github.com/jason2017/myblog/blob/master/csharp-linq.md)
+- [HtmlAgilityPack](https://html-agility-pack.net/)
+- [C#官方文档](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [C#入门教程](https://code.visualstudio.com/docs/languages/csharp)
+- [W3School HTML教程](https://www.w3school.com.cn/html/)
+- [W3School XPath教程](https://www.w3school.com.cn/xpath/)

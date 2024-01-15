@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Aloittaminen uudella projektilla."
-simple_title:         "Aloittaminen uudella projektilla."
+title:                "Uuden projektin aloittaminen"
+html_title:           "Haskell: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -11,34 +12,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi aloittaa uusi Haskell-projekti? Haskell on vahvasti tyypitetty, puhtaasti funktionaalinen ohjelmointikieli, joka mahdollistaa tehokkaan ja turvallisen koodin kirjoittamisen. Tämä tekee siitä loistavan vaihtoehdon monimutkaisiin ja vaativiin projekteihin.
+Olet ehkä kuullut puhuttavan Haskell-ohjelmointikielestä ja mietit, miksi kannattaisi aloittaa uusi projekti juuri tämän kielen avulla. Haskell tarjoaa tehokkaan ja laajalti käytetyn ohjelmointiympäristön, joka mahdollistaa vakaan ja turvallisen koodauksen. Lisäksi Haskellin vahvat toiminnalliset ominaisuudet tekevät siitä erittäin joustavan ja helpon ymmärtää.
 
-## Miten
-
-Aloittaaksesi uuden projektin Haskellissa, sinun tulee ensin asentaa GHC (Glasgow Haskell Compiler). Voit tehdä tämän käyttämällä suosittua työkalua nimeltä Cabal, joka hallinnoi projektien riippuvuuksia ja rakentaa tarvittavat kirjastot. 
+## Kuinka aloittaa
 
 ```Haskell
-cabal install ghc
+main :: IO()
+main = putStrLn "Tervetuloa Haskellin maailmaan!"
 ```
+Tämä yksinkertainen koodiesimerkki tulostaa tervehdyksen Haskellilla. Ennen kuin aloitat uuden projektin, sinun tulee asentaa Haskell-paketti paketinhallintajärjestelmän avulla. Voit sitten käyttää komentoa `new-project` luodaksesi uuden projektin.
 
-Tämän jälkeen voit luoda uuden projektin komennolla:
+## Syvemmälle
 
-```Haskell
-cabal init
-```
-
-Tämä luo projektisi juurihakemistoon tiedostonimeltä `my-project.cabal`, joka sisältää projektisi metatiedot, kuten riippuvuudet ja tärkeimmät tiedostot. Voit nyt muokata tätä tiedostoa vastaamaan projektisi tarpeita ja aloittaa koodaamisen! 
-
-## Syvällinen sukellus
-
-Muutamia huomioon otettavia asioita aloittaessasi uutta Haskell-projektia:
-
-- Kirjoita selkeää ja luettavaa koodia. Haskellissa on vahva tyypitys ja tyyppitiedot auttavat ymmärtämään koodin tarkoitusta ja rakennetta. 
-- Hyödynnä funktionaalisen ohjelmoinnin paradigmoja, kuten rekursiota ja korkeamman asteen funktioita. Nämä auttavat kirjoittamaan lyhyempää ja selvempää koodia. 
-- Käytä muuttumattomia arvoja aina kun mahdollista. Muuttumattomuus tekee koodista turvallisempaa ja helpottaa koodin ymmärtämistä. 
-- Käytä kommentteja ja dokumentaatiota selittämään koodisi toimintaa ja tarkoitusta. Näin muut voivat helposti ymmärtää koodisi ja sinä itse pystyt palauttamaan mieleesi vanhoja toimintoja. 
+Haskellin aloittaminen uuden projektin parissa voi tuntua ylivoimaiselta, mutta älä huoli - on olemassa monia hyödyllisiä resursseja, jotka auttavat sinua matkallasi. Voit löytää laajan valikoiman harjoituksia ja oppaita verkosta, jotka auttavat sinua ymmärtämään Haskellin toiminnallisuudet ja rakenteen paremmin. Lisäksi yhteisöllä on laaja tuki, joten älä epäröi jakaa kysymyksiäsi ja ideoitasi muiden kanssa.
 
 ## Katso myös
 
-- [Haskellin aloittelijan opas](https://www.haskell.org/documentation/)
-- [Cabal-hallintajärjestelmä](https://wiki.haskell.org/Cabal-Introduction)
+- [Haskell Wiki](https://wiki.haskell.org/Haskell) - Löydät täältä ohjeita ja ohjelmointikäytäntöjä.
+- [Haskell-toverit](https://www.haskell.org/) - Käy foorumilla ja keskustele muiden Haskellin käyttäjien kanssa.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - Ilmainen online-opas, joka opettaa sinulle Haskellin perusteet.

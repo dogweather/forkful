@@ -1,6 +1,7 @@
 ---
-title:                "C++: Skriving til standard feil"
-simple_title:         "Skriving til standard feil"
+title:                "Skriving til standardfeil"
+html_title:           "C++: Skriving til standardfeil"
+simple_title:         "Skriving til standardfeil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,67 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive til standardfeil
+## Hvorfor
 
-Å skrive til standardfeil kan være et nyttig verktøy for å få informasjon ut av programmet ditt som ikke skal vises til brukeren. Dette kan inkludere feilmeldinger, debugging informasjon eller annen viktig informasjon som kan hjelpe deg med å forstå og forbedre koden din.
+Så du har akkurat begynt å lære programmering, og du har hørt om standard error, men du lurer på hvorfor du skulle bry deg om å skrive til det? Vel, her er to grunner: 
 
-## Slik gjør du det
+1. Feilsøking: Skriv til standard error for å feilsøke og finne ut hva som går galt i koden din. Dette gir deg mer spesifikk informasjon om feilene dine, som kan hjelpe deg med å fikse dem raskere.
+2. Enkelhet: Det er enklere å skrive til standard error enn å skrive til standard utgang. Å skrive til standard utgang krever flere trinn for å få ut riktig format, mens skriving til standard error beholder koden din i sin opprinnelige form.
 
-Hvis du vil skrive til standardfeil i C++, kan du bruke std::cerr-objektet. Dette vil skrive ut informasjon på standard feilstrøm, som standard blir sendt til konsollen din.
+## Hvordan gjøre det
 
-```C++
+For å skrive til standard error i C++, bruker vi objektet ```cerr``` og << operatøren. La oss se på et eksempel:
+
+```
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    std::cerr << "Dette er en feilmelding" << std::endl;
+    int num = 5;
+    cerr << "Det høres ut som at du har problemer med num = " << num << endl;
+    
     return 0;
 }
 ```
-
-Dette vil resultere i følgende utdata:
-
+Output:
 ```
-Dette er en feilmelding
+Det høres ut som at du har problemer med num = 5
 ```
 
-Du kan også kombinere dette med forskjellige variabler eller uttrykk for å skrive ut mer dynamisk informasjon:
-
-```C++
-#include <iostream>
-
-int main() {
-    int x = 5;
-    std::cerr << "Verdien av x er: " << x << std::endl;
-    return 0;
-}
-```
-
-Dette vil resultere i følgende utdata:
-
-```
-Verdien av x er: 5
-```
+Her har vi brukt 
+objektet ```cerr``` og << operatøren til å skrive en feilmelding. Merk at vi også inkluderer ```<iostream>``` og bruker ```using namespace std;``` for å skrive ut feilmeldingen.
 
 ## Dypdykk
 
-En annen måte å skrive til standardfeil på er å bruke std::errbuf-objektet. Dette vil skrive ut informasjon til en buffer som deretter kan bli hentet ut og brukt senere i programmet.
+Når vi skriver til standard error, bruker vi ofte begrepet "stderr stream". Dette er bare navnet på strømmen som brukes til standard error, akkurat som cin og cout er navnene på strømmene som brukes til henholdsvis standard input og standard utgang.
 
-```C++
-#include <iostream>
+Det er også viktig å merke seg at stderr stream er uavhengig av standard output stream (cout). Dette betyr at du kan skrive til stderr og cout i samme program uten å måtte bekymre deg for å blande dem sammen.
 
-int main() {
-    std::errbuf << "Dette vil bli lagret i bufferen" << std::endl;
+## Se også
 
-    // koden din fortsetter her
-
-    std::cerr << std::errbuf; // henter ut bufferen og skriver til standardfeil
-    return 0;
-}
-```
-
-Dette kan være nyttig når du trenger å loggføre informasjon eller når du må skrive ut informasjon senere i koden din.
-
-# Se også
-
-- [C++ Standard Library](https://www.cplusplus.com/reference/) for mer informasjon om std::cerr og std::errbuf.
-- [Feilhåndtering i C++: try, catch, throw](https://www.w3schools.com/cpp/cpp_exceptions.asp) for å lære om hvordan du kan håndtere og skrive ut feil i C++.
+- [C++ Dokumentasjon - Standard Error](https://www.cplusplus.com/reference/cstdio/fprintf/?kw=stderr)
+- [Wikipedia - Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- [Guide til feilhåndtering i C++](https://www.programiz.com/cpp-programming/error-handling)

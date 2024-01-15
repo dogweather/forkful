@@ -1,6 +1,7 @@
 ---
-title:                "Python: ウェブページをダウンロードする"
-simple_title:         "ウェブページをダウンロードする"
+title:                "ウェブページのダウンロード"
+html_title:           "Python: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -9,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ウェブページをダウンロードする理由は様々です。例えば、ウェブスクレイピングやデータ収集のために必要だったり、オフラインでコンテンツを閲覧したりするために必要だったりします。
+## Why
 
-## 方法
-ウェブページをダウンロードするには、Pythonの `requests` ライブラリを使用します。以下のコード例を参考にしてください。
+何故Webページをダウンロードするかと言うと、インターネット上にある情報をオフラインで閲覧したい時や、自分の作成したプログラムでWebページの内容を解析したい時に便利です。
+
+## How To
+
+以下にPythonを使ったWebページのダウンロード方法を示します。まずは「urllib.request」モジュールをインポートしましょう。
+
+```Python
+import urllib.request
+```
+
+そして、以下のコードで指定したURLからWebページをダウンロードできます。例として、Googleのホームページをダウンロードしてみましょう。
+
+```Python
+url = "https://www.google.com/"
+response = urllib.request.urlopen(url)
+data = response.read()
+print(data)
+```
+
+このコードを実行すると、GoogleのホームページのHTMLコードが表示されます。これでWebページのダウンロードは完了です！
+
+## Deep Dive
+
+また、より詳細にWebページのダウンロードについて知りたい場合は、以下のようにコードを改良することができます。例えば、「requests」モジュールを使うことで、より簡潔かつ柔軟なコードを書くことができます。
 
 ```Python
 import requests
-
-# ダウンロードしたいページのURLを指定する
-url = "https://example.com"
-
-# requestsモジュールを使ってページをダウンロードし、responseオブジェクトに格納する
+url = "https://www.google.com/"
 response = requests.get(url)
-
-# responseからのコンテンツをテキスト形式で取得する
-content = response.text
-
-# ファイルに保存する
-with open("page.html", "w", encoding="utf-8") as f:
-    f.write(content)
-
-# ダウンロードが成功したかどうかを確認する
-if response.status_code == 200:
-    print("ダウンロードが完了しました。")
-else:
-    print("ダウンロードに失敗しました。")
+data = response.text
+print(data)
 ```
 
-## ディープダイブ
-ウェブページをダウンロードする際には、`get()` メソッド以外にも `post()` や `head()` メソッドなども使うことができます。また、`requests` ライブラリの他にも `urllib` や `urllib2` モジュールなどでもダウンロードが可能です。しかし、`requests` ライブラリはシンプルで使いやすく、多くの機能を提供しているので、初心者にもお勧めです。
+さらに、Webページのダウンロードだけでなく、特定の要素を取得したり、スクレイピングすることもできます。例えば、以下のコードではBeautifulSoupを使って、GoogleのロゴのURLを取得しています。
 
-## 参考リンク
-- [Requests: HTTP for Humans (公式ドキュメント)](https://requests.readthedocs.io/)
-- [PythonでHTTP通信をする方法 (Qiita)](https://qiita.com/kenichi_cc/items/adeb66752abf6970d916)
-- [Scraping the Web With Python (Real Python)](https://realpython.com/python-web-scraping-practical-introduction/)
+```Python
+from bs4 import BeautifulSoup
+url = "https://www.google.com/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+logo = soup.find("img", {"id": "hplogo"})['src']
+print(logo)
+```
+
+## See Also
+
+- [Python公式ドキュメント](https://www.python.org/doc/)
+- [Requestsモジュール公式ドキュメント](https://requests.readthedocs.io/en/master/)
+- [Beautiful Soup公式ドキュメント](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

@@ -1,6 +1,7 @@
 ---
-title:                "C: 문자열 소문자로 변환하기"
-simple_title:         "문자열 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "C: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,51 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 소문자로 변환하는 것에 참여하는 이유는 매우 간단합니다. 혹시 영어 문서나 프로그램에서 대문자로 쓰여 있는 문자열을 소문자로 바꿔야 할 때가 있지 않을까요? 소문자로 변환하게 되면 보기 좋아지고, 문자열 간의 정확한 비교가 가능해집니다. 이를 위해 C 프로그래밍을 사용하여 문자열을 간단하게 소문자로 바꾸는 방법을 알아보겠습니다.
+## 왜?
 
-## 방법
-C 프로그래밍에서 문자열을 소문자로 바꾸는 작업은 실제로 매우 쉽습니다. 아래 코드는 이를 실제로 구현한 예시입니다.
+문자열을 소문자로 변환하는 이유는 다양할 수 있습니다. 영문 대소문자 구분을 하지 않는 경우 데이터를 일관되게 처리하기 위해서, 또는 사용자가 입력한 문자열을 비교하기 전에 일관성을 유지하기 위해서 등등 다양한 이유가 있습니다.
 
-```C
+## 어떻게?
+
+가장 간단한 방법은 `toupper()` 함수를 사용하는 것입니다. 이 함수는 ASCII 문자열을 대문자로 변환해주는 역할을 합니다. 하지만 이 함수는 이미 대문자인 문자는 건들지 않기 때문에 소문자로 변환하려면 다른 방법을 사용해야 합니다.
+
+다음은 `tolower()` 함수를 사용하여 소문자로 변환하는 예제입니다.
+
+```c
 #include <stdio.h>
 #include <string.h>
 
-char* convertToLower(char* str) {
-    for (int i = 0; i < strlen(str); i++) {
-        if (str[i] >= 'A' && str[i] <= 'Z') {
-            str[i] = str[i] + 32;
-        }
-    }
-    return str;
-}
-
 int main() {
-    char str[100];
-    printf("문자열을 입력하세요: ");
-    fgets(str, 100, stdin);
-    char* lowercase = convertToLower(str);
-    printf("변환된 문자열: %s", lowercase);
+    char my_str[] = "Hello, World";
+    int len = strlen(my_str);
+
+    for (int i = 0; i < len; i++) {
+        my_str[i] = tolower(my_str[i]);
+    }
+
+    printf("%s", my_str); // 출력: hello, world
+
     return 0;
 }
 ```
 
-위 코드에서는 문자열을 입력받고, `convertToLower` 함수를 사용하여 문자열을 소문자로 변환하고 출력하는 예시입니다. `convertToLower` 함수에서는 `strlen` 함수를 사용하여 문자열의 길이를 구하고, 반복문을 사용하여 문자열의 각 문자를 확인하고 대문자인 경우에만 ASCII 값에 32를 더하여 소문자로 변환합니다. 이후 변환된 문자열을 메인 함수에서 출력합니다. 아래는 위 코드를 실행한 결과입니다.
+위 예제에서 `strlen()` 함수를 사용하여 문자열의 길이를 구하고, 반복문을 사용하여 모든 문자를 `tolower()` 함수를 통해 소문자로 변환합니다. 그 후 변환된 문자열을 `printf()` 함수를 사용하여 출력합니다.
 
+## 깊게 파고들기
+
+C 언어에서 문자열을 소문자로 변환하는 방법은 여러 가지가 있습니다. 하지만 위에서 작성한 예제처럼 `toupper()` 또는 `tolower()` 함수를 사용하는 것이 가장 간단한 방법입니다.
+
+또 다른 방법으로는 `std::transform()` 함수를 사용하는 방법이 있습니다. 이 함수는 표준 C++ 라이브러리에 포함되어 있지만, C 언어에서도 `#include <algorithm>`을 추가하여 사용할 수 있습니다. 이 함수는 두 개의 반복자를 인자로 받아서 해당 범위의 값을 변환하는 역할을 합니다. 다음은 위 예제를 `std::transform()`을 사용하여 작성한 경우입니다.
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+
+int main() {
+    char my_str[] = "Hello, World";
+    int len = strlen(my_str);
+
+    std::transform(my_str, my_str + len, my_str, ::tolower);
+
+    printf("%s", my_str); // 출력: hello, world
+
+    return 0;
+}
 ```
-문자열을 입력하세요: HELLO WORLD
-변환된 문자열: hello world
-```
 
-이와 같이 간단하게 C 프로그래밍을 사용하여 문자열을 소문자로 변환할 수 있습니다.
+위 예제에서는 `std::transform()` 함수를 사용하여 모든 문자를 소문자로 변환하였습니다.
 
-## 딥 다이브
-실제로는 문자열을 소문자로 변환하는 작업이 이렇게 간단하지 않을 수 있습니다. 영어 문서의 경우에는 대문자가 있는 문자 뿐만 아니라 다양한 언어의 문자가 혼합되어 있을 수 있기 때문입니다. 이런 경우에는 각 언어별로 대소문자에 대한 규칙을 정확하게 적용해야 합니다. 또한, 문자열 내에 숫자나 특수문자가 포함된 경우에도 적절하게 처리해주어야 합니다. 이러한 추가적인 처리를 위해 정규식을 사용하는 경우도 있습니다. 따라서, 문자열을 소문자로 변환하는 작업은 단순한 것처럼 보이지만 실제로는 꽤 복잡합니다.
+## 참고자료
 
-## 관련 링크
-- [C 프로그래밍 기초](https://www.learn-c.org/)
-- [ASCII 테이블](http://www.asciitable.com/)
-- [정규식 튜토리얼](https://www.regular-expressions.info/tutorial.html)
-
-## 참고
-본 포스트에서 사용된 코드 및 개념은 모두 [링크](https://github.com/grapherft/korean-readme-template)에서 확인하실 수 있습니다. 따라서, 이에 대한 라이선스는 해당 GitHub 레포지토리의 라이선스를 따릅니다.
+- [C 언어 | `toupper()` 함수](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [C 언어 | `tolower()` 함수](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Standard C++ Library | `std::transform()` 함수](https://www.cplusplus.com/reference/algorithm/transform/)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "TypeScript: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,31 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Haluatko tietää kuinka monta merkkiä on kussakin sanassa? Tai ehkä haluat tarkistaa, onko annettu merkkijono tarpeeksi pitkä ennen kuin lähetät sen palvelimelle. Oli syysi mikä tahansa, on tärkeää tietää kuinka löytää merkkijonon pituus TypeScriptissä.
+Stringin pituuden selvittäminen on tärkeä perustaito jokaiselle TypeScript-kehittäjälle. Se auttaa sinua ymmärtämään paremmin ohjelmointikielen toimintaa ja parantamaan koodisi tehokkuutta.
 
-## Kuinka
-
-```TypeScript
-let sana: string = "Tervetuloa";
-console.log(sana.length); // Output: 10
-```
-
-Käyttämällä `.length` metodia, voit helposti löytää annetun merkkijonon pituuden TypeScriptissä. Tässä esimerkissä olemme alustaneet muuttujan `sana` arvolla "Tervetuloa" ja sitten tulostaneet sen pituuden konsoliin.
-
-Voit myös käyttää tätä metodia suoraan merkkijonoon ilman muuttujaa:
+## Miten
 
 ```TypeScript
-console.log("Hei maailma".length); // Output: 11
+// Esimerkki 1: Selvitä stringin pituus käyttäen .length-metodia
+let teksti = "Tämä on esimerkki";
+console.log(teksti.length);
+// Output: 19
+
+// Esimerkki 2: Selvitä stringin pituus käyttäen for-silmukkaa
+let sana = "koodaus";
+let pituus = 0;
+
+for(let i=0; i < sana.length; i++) {
+    pituus++;
+}
+
+console.log(pituus);
+// Output: 7
 ```
 
-## Syvällinen perehtyminen
+Kuten esimerkeistä nähdään, stringin pituuden selvittäminen on helppoa. Voit käyttää joko .length-metodia tai for-silmukkaa, joka laskee jokaisen merkin yksitellen. Ole kuitenkin varovainen, sillä joissakin tapauksissa .length-metodi saattaa antaa väärän arvon, jos merkkijonassa on erikoismerkkejä.
 
-`.length` metodi palauttaa numeron, joka vastaa merkkijonon merkkien määrää. Tämä sisältää myös välilyönnit ja muut erikoismerkit. Se on erittäin hyödyllinen esimerkiksi silloin kun haluat varmistaa, että käyttäjän antama syöte on tarpeeksi pitkä ennen kuin käsittelet sitä. Voit myös käyttää `.length` metodia for-silmukassa käsitelläksesi jokaisen merkin erikseen.
+## Syvempi sukellus
 
-On myös hyvä huomata, että `.length` metodi toimii myös muiden tietotyyppien, kuten numeroiden ja boolean-arvojen, kanssa. Se palauttaa niiden "pituuden" eli numeron merkkien määrästä, jotka ovat tarvittavia sen esittämiseen.
+Stringin pituus lasketaan sen sisältämien merkkien määrän perusteella. Merkkejä, kuten space ja enter, lasketaan myös mukaan pituuteen. On myös tärkeä huomata, että stringin pituus ei ole muutettavissa. Jos haluat muuttaa stringin pituutta, joudut luomaan uuden stringin.
 
 ## Katso myös
 
-- [String.prototype.length - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [TypeScript Strings - W3Schools](https://www.w3schools.com/js/js_strings.asp)
-- [Lukujen ja merkkijonojen vertailu | TypeScript-tutoriaali](https://typescript-tutoriaalit.net/numerot/vertailu/)
+- [MDN web docs - String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [TypeScript Documentation - Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)

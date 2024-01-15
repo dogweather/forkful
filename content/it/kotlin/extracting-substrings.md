@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Kotlin: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
-Molti programmatori si trovano spesso a gestire stringhe di testo e a dover estrarre parti specifiche da esse. L'uso di substrings può semplificare notevolmente questa operazione.
+## Perché
 
-# Come fare
-Per estrarre una substring da una stringa in Kotlin, è possibile utilizzare il metodo `substring()` fornito dalla classe `String`. Il metodo accetta due parametri: l'indice di inizio e l'indice di fine della substring desiderata.
+Spesso può essere necessario e utile estrarre parti specifiche di una stringa all'interno di un programma. In questo articolo, vedremo come fare ciò utilizzando Kotlin in modo semplice e veloce.
+
+## Come fare
+
+Per estrarre una parte di una stringa in Kotlin, possiamo utilizzare il metodo `substring()` che accetta due parametri: l'indice iniziale e l'indice finale della sottostringa che vogliamo estrarre. Ad esempio, se abbiamo una stringa "Ciao Mondo" e vogliamo estrarre solo la parola "Mondo", possiamo usare il metodo `substring(5, 10)` dove 5 è l'indice iniziale della parola "Mondo" e 10 è l'indice finale (notare che l'indice finale non verrà incluso nella sottostringa).
+
+Possiamo anche utilizzare il metodo `drop()` per eliminare le prime n lettere della stringa e poi utilizzare il metodo `take()` per prendere le prossime m lettere. Ad esempio, se abbiamo una stringa "Ciao Mondo" e vogliamo eliminare la parola "Ciao" e prendere solo la parola "Mondo", possiamo usare il metodo `drop(5).take(5)`. Questo ci darà una sottostringa di 5 lettere a partire dal sesto carattere della stringa originale.
+
+Di seguito un esempio di codice completo:
 
 ```Kotlin
-val stringa = "Ciao a tutti"
-val substring = stringa.substring(5, 7)
-println(substring) // Output: a t
+fun main() {
+   val str = "Ciao Mondo"
+   val subStr1 = str.substring(5, 10)
+   val subStr2 = str.drop(5).take(5)
+  
+   println(subStr1) // Output: Mondo
+   println(subStr2) // Output: Mondo
+}
 ```
 
-In questo esempio, la substring sarà compresa tra il carattere alla posizione 5 (incluso) e il carattere alla posizione 7 (escluso) della stringa originale.
+## Deep Dive
 
-Inoltre, è possibile utilizzare i metodi `indexOf()` e `lastIndexOf()` per trovare l'indice di un determinato carattere all'interno di una stringa. Questo può essere utile per determinare gli indici da passare al metodo `substring()`.
+Kotlin offre anche altri metodi per estrarre sottostringhe, come ad esempio `slice()` che permette di estrarre più sottostringhe specificando gli indici desiderati, oppure `subSequence()` che restituisce una sequenza dei caratteri della sottostringa indicata. Inoltre, è possibile utilizzare espressioni regolari per estrarre sottostringhe più complesse e utilizzare il metodo `replace()` per sostituire una sottostringa nella stringa originale.
 
-# Approfondimento
-La classe `String` di Kotlin offre anche altri metodi utili per la gestione delle substrings, come ad esempio `substringAfter()` e `substringBefore()` che permettono di estrarre una substring a partire da una determinata stringa di riferimento.
+Vale la pena notare che Kotlin considera tutte le stringhe come sequenze di caratteri unicode, quindi è possibile utilizzare i metodi sopra menzionati anche per estrarre sottostringhe di caratteri speciali.
 
-Inoltre, è possibile utilizzare le espressioni regolari per estrarre substrings in base a determinati pattern. Per farlo, è sufficiente utilizzare il metodo `Regex.find()` che restituirà il match trovato, oppure il metodo `Regex.replace()` per sostituire i match trovati con una nuova stringa.
+## Vedi anche
 
-# Vedi anche
-- Documentazione ufficiale di Kotlin sulla classe `String`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string
-- Tutorial su espressioni regolari in Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm
+- [Documentazione ufficiale di Kotlin sulle stringhe](https://kotlinlang.org/docs/basic-types.html#strings)
+- [Kotlin String extensions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-string/index.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: Envoi d'une requête http avec authentification de base"
-simple_title:         "Envoi d'une requête http avec authentification de base"
+title:                "Envoi d'une demande http avec authentification de base"
+html_title:           "Go: Envoi d'une demande http avec authentification de base"
+simple_title:         "Envoi d'une demande http avec authentification de base"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,62 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous travaillez avec des API, vous avez probablement rencontré des cas où vous avez besoin d'authentifier vos requêtes. L'une des méthodes les plus courantes est l'authentification de base par le biais d'identifiants de connexion. Dans cet article, nous allons explorer comment envoyer une requête HTTP avec une authentification de base en utilisant le langage Go. 
+L'envoi de requêtes HTTP avec une authentification de base est une pratique courante dans la programmation. Cela permet d'assurer la sécurité des données échangées entre le client et le serveur. Par exemple, lors de la connexion à un site web protégé par un mot de passe, votre navigateur envoie une requête HTTP avec l'authentification de base pour que le serveur puisse vérifier si vos informations de connexion sont valides.
 
-## Comment Faire
+## Comment faire
 
-Pour envoyer une requête HTTP avec une authentification de base en Go, nous avons besoin de quelques étapes simples :
+Pour envoyer une requête HTTP avec l'authentification de base en utilisant le langage de programmation Go, vous devez suivre les étapes suivantes :
 
-1. Tout d'abord, nous devons importer le package `net/http` pour pouvoir effectuer des requêtes HTTP.
-2. Ensuite, nous devons créer une structure `Request` en utilisant la fonction `NewRequest` du package `net/http`.
-3. Nous spécifions ensuite l'URL vers laquelle nous voulons envoyer la requête, ainsi que la méthode HTTP (GET, POST, etc.).
-4. Nous utilisons ensuite la fonction `SetBasicAuth` pour ajouter nos identifiants de connexion à la requête.
-5. Enfin, nous utilisons la fonction `Client` du package `net/http` pour envoyer la requête et récupérer la réponse.
+1. Importez le package "net/http" pour pouvoir utiliser les fonctionnalités liées aux requêtes HTTP.
+2. Définissez les informations d'authentification, c'est-à-dire le nom d'utilisateur et le mot de passe à envoyer avec la requête. Vous pouvez les stocker dans une variable ou les récupérer depuis une source externe.
+3. Utilisez la fonction `http.NewRequest` pour créer une nouvelle requête avec la méthode HTTP, l'URL et les en-têtes requis.
+4. Appelez la méthode `SetBasicAuth` sur la requête créée pour lui fournir les informations d'authentification.
+5. Enfin, envoyez la requête en utilisant la fonction `http.DefaultClient.Do` et récupérez la réponse pour la traiter.
 
-Voici un exemple de code qui envoie une requête GET à une API avec une authentification de base :
+Voici un exemple de code qui envoie une requête GET à l'API GitHub en utilisant l'authentification de base :
 
-```Go
+```
+package main
+
 import (
     "fmt"
-    "log"
     "net/http"
+    "io/ioutil"
 )
 
 func main() {
-    // Créer une nouvelle requête
-    req, err := http.NewRequest("GET", "https://monapi.com/users", nil)
+
+    // Définir les informations d'authentification
+    username := "votre_nom_dutilisateur"
+    password := "votre_mot_de_passe"
+
+    // Créer une nouvelle requête avec l'URL cible
+    req, err := http.NewRequest("GET", "https://api.github.com/user/repos", nil)
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 
-    // Ajouter les identifiants de connexion
-    req.SetBasicAuth("utilisateur", "motdepasse")
+    // Ajouter l'authentification de base à la requête
+    req.SetBasicAuth(username, password)
 
     // Envoyer la requête et récupérer la réponse
-    client := &http.Client{}
-    resp, err := client.Do(req)
+    resp, err := http.DefaultClient.Do(req)
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
     defer resp.Body.Close()
 
+    // Lire la réponse en tant que chaîne de caractères
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
     // Afficher la réponse
-    fmt.Println(resp.Status)
+    fmt.Println(string(body))
 }
 ```
 
-Voici un exemple de sortie possible : `200 OK`
+Lorsque vous exécutez ce code, vous devriez voir la liste de vos dépôts sur GitHub s'afficher dans la console.
 
-## Plongée en Profondeur 
+## Plongée en profondeur
 
-Maintenant que nous avons vu comment envoyer une requête HTTP avec une authentification de base en utilisant Go, voyons de plus près ce qui se passe en coulisses. 
+L'authentification de base est une méthode d'authentification très simple mais peu sécurisée. Elle envoie les informations d'identification en clair dans la requête HTTP, ce qui les rend vulnérables aux attaques par interception. Il est recommandé d'utiliser d'autres méthodes d'authentification plus sécurisées, comme OAuth ou l'authentification à clé publique/privée.
 
-Lorsque nous utilisons la fonction `SetBasicAuth`, Go encode automatiquement les identifiants de connexion en utilisant Base64. Cela signifie que les identifiants ne sont pas envoyés en clair, mais plutôt sous la forme d'une chaîne de caractères encodée. De plus, nous utilisons le package `Client` pour envoyer la requête, qui gère automatiquement la création et la fermeture des connexions réseau, ainsi que la gestion des redémarrages en cas d'erreur.
+En outre, il est important de noter que certains fournisseurs de services peuvent exiger une authentification plus complexe. Dans ce cas, vous devrez peut-être utiliser une librairie externe pour gérer l'authentification avec ce fournisseur spécifique.
 
-## Voir Aussi
+## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur l'envoi de requêtes HTTP avec une authentification de base en Go :
-
-- Documentation officielle sur la gestion des requêtes HTTP en Go (https://golang.org/pkg/net/http/)
-- Tutoriel sur l'envoi de requêtes HTTP en utilisant le package `net/http` (https://tutorialedge.net/golang/creating-simple-web-server-with-golang/)
-- Article sur l'utilisation de l'authentification de base en Go (https://medium.com/@acoshift/basic-authentication-in-go-d1d05d75159a)
+- https://golang.org/pkg/net/http/ - Documentation officielle du package "http" en Go.
+- https://developer.github.com/v3/#authentication - Informations sur l'authentification pour l'API GitHub.
+- https://oauth.net/2/ - Informations sur le protocole OAuth.

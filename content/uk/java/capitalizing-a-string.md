@@ -1,6 +1,7 @@
 ---
-title:                "Java: Капіталізація рядка"
-simple_title:         "Капіталізація рядка"
+title:                "Перетворення рядка у великі літери"
+html_title:           "Java: Перетворення рядка у великі літери"
+simple_title:         "Перетворення рядка у великі літери"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,57 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# З чого почати: Капіталізація рядкових даних
+## Чому
 
-Капіталізація рядкових даних - це процес перетворення першої літери кожного слова в рядку на велику. Це може бути корисним при форматуванні тексту або при відображенні імен користувачів в програмі. Давайте поглянемо на те, як реалізувати це в Java.
+Капіталізація рядків - це процес перетворення першої букви кожного слова в рядку на велику літеру. Це може бути корисним для полегшення читання і розпізнавання слів у великих текстових документах, а також для створення естетичної форматування.
 
-## Як це зробити
-
-Для початку створимо змінну типу String та присвоїмо їй будь-який текст, який ми хочемо капіталізувати.
+## Як
 
 ```Java
-String text = "цей текст буде капіталізований";
-```
+public class CapitalizeString {
 
-Тепер нам потрібно розділити рядок на окремі слова. Це можна зробити за допомогою методу `split()`, який розділяє текст на масив рядкових значень за заданим роздільником. У нашому випадку роздільником буде пробіл.
+    public static String capitalize(String str) {
+        StringBuilder result = new StringBuilder(str.length());
 
-```Java
-String[] words = text.split(" ");
-```
+        // розділити строку на слова за допомогою методу split()
+        String[] words = str.split("\\s");
 
-Далі ми можемо перебрати отриманий масив слів та використовувати методи класу `String` для капіталізації першої літери кожного слова. Наприклад, метод `substring()` дозволяє нам отримати певну частину рядку, а метод `toUpperCase()` перетворює символи на великі літери.
+        // перетворити першу букву кожного слова на велику і додати до результату
+        for (String word : words) {
+            result.append(Character.toUpperCase(word.charAt(0)))
+                    .append(word.substring(1)).append(" ");
+        }
 
-```Java
-for (int i = 0; i < words.length; i++) {
-  words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String sentence = "це приклад рядка для капіталізації";
+        String capitalizedSentence = capitalize(sentence);
+        System.out.println(capitalizedSentence);
+
+        // результат: Це Приклад Рядка Для Капіталізації
+    }
 }
 ```
 
-Нарешті, склеємо наші слова знову в один рядок за допомогою методу `join()`, який приймає роздільник та масив значень.
+## Глибоке погруження
 
-```Java
-String capitalizedText = String.join(" ", words);
-```
+У цьому прикладі ми використовуємо метод `split()` для розділення рядка на окремі слова та метод `charAt()` для доступу до першої букви кожного слова. Ми також використовуємо метод `substring()` для отримання решти букв слова після першої. Завдяки цьому нам вдається перетворити тільки першу букву кожного слова без зміни решти тексту. Також варто зазначити, що цей приклад може бути покращеним для врахування різних варіацій роздільників між словами, а також для врахування великих літер у середині слова.
 
-Весь наш код можна зібрати в один метод та застосувати до будь-якого рядка, який хочете капіталізувати.
+## Дивись також
 
-```Java
-public static String capitalizeString(String text) {
-  String[] words = text.split(" ");
-  for (int i = 0; i < words.length; i++) {
-    words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
-  }
-  return String.join(" ", words);
-}
-
-
-// Використання
-String originalText = "цей текст буде капіталізований";
-String capitalizedText = capitalizeString(originalText);
-System.out.println(originalText); // цей текст буде капіталізований
-System.out.println(capitalizedText); // Цей Текст Буде Капіталізований
-```
-
-## Детальний огляд
-
-У вище наведеному прикладі ми використовували метод `split()` з роздільником " " для розбиття рядка на окремі слова. Але, якщо ви хочете розбити рядок за допомогою іншого роздільника, ви можете передати його як аргумент у метод `split()`. Наприклад, якщо ви хочете розбити слова, розділені ком
+- [Документація Java по методу `split()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-)
+- [Документація Java по методу `charAt()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#charAt-int-)
+- [Документація Java по методу `substring()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)

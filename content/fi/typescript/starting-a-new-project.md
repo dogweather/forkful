@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "TypeScript: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi TypeScript-projekti?
+## Miksi
 
-Aloittaminen uuden projektin kanssa voi tuntua pelottavalta, mutta TypeScriptin avulla voit tehdä sen helpommin ja tehokkaammin. Tässä blogikirjoituksessa käymme läpi, miksi kannattaa harkita TypeScriptin käyttöä uudessa projektissa ja miten voit aloittaa sen.
+Uuden projektin aloittaminen voi tuntua haastavalta ja pelottavalta, mutta se voi myös tarjota lukuisia etuja. Pääset puhtaalta pöydältä luomaan jotain uutta ja voit hyödyntää uusimpia teknologioita ja menetelmiä.
 
-## Kuinka aloittaa TypeScript-projekti
-
-Aloittaaksesi uuden TypeScript-projektin, sinun tulee ensin ladata TypeScriptin asennuspaketti. Voit tehdä tämän käyttämällä NPM:ää seuraavasti:
-
-```TypeScript
-npm install -g typescript
-```
-
-Tämän jälkeen voit luoda uuden TypeScript-projektin käyttämällä komentoa "tsc":
+## Miten aloittaa uusi projekti
+Jos olet kiinnostunut aloittamaan uuden projektin TypeScriptillä, tässä on muutama yksinkertainen askel johdantona.
 
 ```TypeScript
-tsc --init
+// Luodaan muuttuja merkkijonon tyyppisellä arvolla
+let nimi: string = "Matti";
+
+// Tämä funktio tervehtii käyttäjää ja yhdistää nimen muuttujasta
+function tervehdi(nimi: string) {
+  console.log("Hei " + nimi + ", tervetuloa TypeScript-maailmaan!");
+}
+// Kutsutaan funktiota ja annetaan sille muuttujan arvo
+tervehdi(nimi);
+
+/* Tulostaa:
+
+Hei Matti, tervetuloa TypeScript-maailmaan!
+*/
 ```
+Kuten näet, TypeScriptissä on mahdollista määritellä muuttujien tyyppi ja siten vähentää mahdollisia virheitä koodissa. Voit myös hyödyntää TypeScriptin tarjoamia muita ominaisuuksia, kuten luokkia ja rajapintoja, projektissasi.
 
-Tämä luo tsconfig.json -tiedoston, jossa voit asettaa tarvittavat konfiguraatiot projektia varten.
+## Syvällinen sukellus
+Jotta aloitat uuden projektin TypeScriptillä, sinun tulee ensin asentaa TypeScriptin kehitysympäristö, kuten Visual Studio Code tai WebStorm. Tämän jälkeen voit luoda uuden TypeScript-projektin ja konfiguroida sen tarpeen mukaan.
 
-Seuraavaksi voit luoda ensimmäisen TypeScript-tiedostosi ja tallentaa sen esim. nimellä "index.ts". Voit sitten suorittaa tiedoston käyttämällä komentoa "tsc":
-
-```TypeScript
-tsc index.ts
-```
-
-Tämä komento muuttaa typescript-tiedoston JavaScript-tiedostoksi, jota voidaan sitten ajaa komennolla "node":
-
-```TypeScript
-node index.js
-```
-
-## Syvällinen sukellus uuden projektin aloittamiseen
-
-Kun aloitat uuden projektin TypeScriptillä, on tärkeää huolehtia oikeista asetuksista tsconfig.json-tiedostossa. Tämä määrittää, kuinka TypeScript-koodisi muunnetaan JavaScriptiksi ja miten se suoritetaan.
-
-Voit myös käyttää työkaluja, kuten Webpack ja Gulp, helpottamaan projektisi rakentamista ja kehittämistä.
-
-Lisäksi TypeScript tarjoaa monia hyödyllisiä ominaisuuksia, kuten tyypitettyjä muuttujia ja parempaa virheenhallintaa, jotka voivat tehdä koodistasi helpommin ylläpidettävää ja vähemmän vikaherkkää.
+On myös tärkeää muistaa pitää TypeScript-koodi järjestettynä ja hyvin dokumentoituna, jotta muut tiimin jäsenet voivat helposti ymmärtää ja muokata sitä.
 
 ## Katso myös
-
-- [TypeScriptin kotisivut](https://www.typescriptlang.org/)
-- [TypeScript-tutoriaalit](https://www.tutorialspoint.com/typescript/index.htm)
-- [Asennusohjeet Windowsille, Macille ja Linuxille](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-
-Tämä oli pieni esittely TypeScriptin käytöstä uudessa projektissa. Toivottavasti tämä auttoi sinua harkitsemaan TypeScriptin käyttöä seuraavassa projektissasi! Muista tutustua myös TypeScriptin dokumentaatioon ja tutoriaaleihin lisätietojen saamiseksi. Onnea uuden projektin aloittamiseen!
+- [TypeScriptin virallinen sivusto](https://www.typescriptlang.org/)
+- [TypeScript-opetusohjelma](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+- [TypeScriptin aloittelijan opas](https://github.com/xcatliu/typescript-tutorial)

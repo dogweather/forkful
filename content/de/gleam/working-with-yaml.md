@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Arbeiten mit yaml"
-simple_title:         "Arbeiten mit yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "Gleam: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum 
 
-Wenn Sie schon einmal mit Hochsprachen wie Ruby oder Python gearbeitet haben, sind Sie wahrscheinlich mit YAML vertraut. YAML steht für "YAML Ain't Markup Language" und ist eine einfache, menschenlesbare Daten Formatsprache. In der Gleam-Programmierung wird YAML oft verwendet, um Konfigurationsdateien zu erstellen und zu verwalten. In diesem Blogbeitrag erfahren Sie, warum YAML ein hilfreiches Werkzeug in Ihrem Gleam-Entwicklungsarsenal sein kann.
+In der Welt der Softwareentwicklung gibt es oft Situationen, in denen wir Daten speichern und verarbeiten müssen. Egal ob es sich um Konfigurationsdateien, Datenbanken oder APIs handelt, YAML ist eine beliebte Wahl als Datenformat aufgrund seiner Lesbarkeit und Einfachheit. In diesem Artikel werden wir untersuchen, wie Sie mit YAML in Gleam arbeiten können. 
 
-# Wie funktioniert
+## Wie geht das
 
-Die Verwendung von YAML in Gleam ist einfach und übersichtlich. Um zu beginnen, müssen Sie zunächst eine YAML-Bibliothek installieren. Eine beliebte Option ist die "yamler"-Bibliothek, die in der Gleam-Community entwickelt wurde. Sobald Sie die Bibliothek installiert haben, können Sie beginnen, YAML-Konfigurationsdateien in Gleam zu verarbeiten.
+Um mit YAML in Gleam zu arbeiten, benötigen wir die bibliothek `gleam-yaml`, die wir zum `rebar.config` unseres Projekts hinzufügen. Als nächstes importieren wir die Funktionen aus der `gleam-yaml` Bibliothek und bereiten unser Beispiel vor, indem wir ein YAML-Dokument erstellen. 
 
-Um eine YAML-Datei in Gleam zu öffnen und zu lesen, verwenden Sie einfach die "yamler" -Bibliotheksfunktion "from_file". Zum Beispiel:
+```Gleam 
+import gleam-yaml 
 
-```
-use yamler
+let my_yaml = 
+    """ 
+    name: Gleam 
+    category: Programming Language 
+    website: https://gleam.run/ 
+    """ 
+``` 
 
-config := Yamler.from_file("config.yml")
-```
+Um das YAML-Dokument zu analysieren und die Daten zu extrahieren, verwenden wir die Funktion `Yaml.parse`. Dies gibt uns ein Gleam-Typ `Result(Yaml.Error, Yaml.Value)`, der entweder eine Fehlermeldung oder die extrahierten Daten enthält. 
 
-Dieser Code öffnet die Datei "config.yml" und speichert die in der Datei enthaltenen Daten in der Variable "config". Sie können dann auf die Daten in der gleichen Weise zugreifen, wie Sie es in einer regulären Gleam-Datenstruktur tun würden.
+```Gleam 
+let parsed_yaml = Yaml.parse(my_yaml) 
+``` 
 
-# Vertiefung
+Um auf die Daten zuzugreifen, können wir das `match`-Ausdruck verwenden, um auf die beiden möglichen Fälle, also Fehler oder Erfolg, zu reagieren. 
 
-YAML bietet viele nützliche Funktionen, die es zu einem wertvollen Werkzeug in der Gleam-Programmierung machen. Zum Beispiel unterstützt YAML Kommentare, Array- und Objektstrukturen und die Möglichkeit, Variablen zu referenzieren. Alle diese Funktionen können in Gleam-Code verwendet werden, um die Verarbeitung von Konfigurationsdateien einfacher und übersichtlicher zu gestalten.
+```Gleam 
+match Yaml.parse(my_yaml) { 
+    Ok(yaml_value) -> 
+        // Hier können wir auf die Daten zugreifen 
+        let name = yaml_value |. Yaml.Key("name") |. Yaml.String 
+    Err(error) -> 
+        // Hier können wir auf den Fehler reagieren 
+        Debug.todo(error) 
+} 
+``` 
 
-Ein weiterer großer Vorteil von YAML ist seine Einfachheit und Lesbarkeit. Im Gegensatz zu anderen Daten Formatsprachen wie JSON oder XML, ist YAML so angelegt, dass es für Menschen leicht lesbar und verständlich ist. Dies macht es ideal für die Verwendung in der Gleam-Programmierung, wo Klarheit und Struktur wichtig sind.
+## Tief eintauchen 
 
-# Siehe auch
+Wir haben bereits gesehen, wie wir YAML-Daten in Gleam analysieren können, aber es gibt noch viel mehr zu entdecken. 
+Als nächstes können wir beispielsweise die Daten in ein anderes Format konvertieren, indem wir die Funktion `Yaml.encode` verwenden. Wir können auch komplexere Daten wie Arrays und verschachtelte Objekte analysieren. Um mehr über die verfügbaren Funktionen und Optionen zu erfahren, empfehlen wir Ihnen, die Dokumentation der `gleam-yaml` Bibliothek zu lesen. 
 
-- Gleam Documentation: https://gleam.run/
-- YAML Ain't Markup Language: https://yaml.org/
-- Yamler Library: https://github.com/gleam-lang/yamler
+## Siehe auch 
+
+- [Gleam Dokumentation zu YAML](https://gleam.run/articles/yaml-processing) 
+- [Offizielle YAML-Website](https://yaml.org/) 
+- [Eine Einführung in YAML](https://codebeautify.org/yaml-introduction)

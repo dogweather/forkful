@@ -1,5 +1,6 @@
 ---
-title:                "Java: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Java: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Java"
 category:             "Java"
@@ -9,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
+Testien kirjoittaminen on tärkeä ja olennainen osa Java-ohjelmointia, koska se auttaa varmistamaan koodin toimivuuden ja parantaa sen luotettavuutta. Hyvin testattu koodi on myös helpompi ylläpitää ja päivittää tulevaisuudessa.
 
-Testien kirjoittaminen on tärkeä osa Java-ohjelmointia, sillä se auttaa varmistamaan, että koodi toimii oikein ja se on helposti ylläpidettävissä. Lisäksi testien avulla pystytään havaitsemaan mahdolliset virheet ja puutteet koodissa ennen sen julkaisemista.
-
-## Kuinka
-
-Testien kirjoittaminen Java-ohjelmointikielellä on helppoa ja vaatii vain muutamia perusaskelia. Ensinnäkin, sinun tarvitsee sisällyttää JUnit-testaustyökalu projektisi riippuvuuksiin. Tämän jälkeen voit käyttää JUnitin @Test -annotaatioita testien luomiseen. 
+# Kuinka
+Testien kirjoittaminen Java-ohjelmointikielellä on helppoa ja vaivatonta. Seuraavassa on esimerkki yksinkertaisesta testistä, joka tarkistaa, että annettu funktio palauttaa odotetun tuloksen:
 
 ```Java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+public class Testi {
 
-public class CalculatorTest {
-
-	@Test
-	public void testAddition() {
-		Calculator calc = new Calculator();
-		int result = calc.add(2, 3);
-		assertEquals(5, result);
-	}
+  public static void main(String[] args) {
+    // Kutsutaan testattavaa funktiota ja tallennetaan tulos muuttujaan
+    int tulos = laskeSumma(5, 7);
+    // Tarkistetaan, että tulos on odotettu
+    if (tulos == 12) {
+      System.out.println("Testi läpäisty: oikea tulos saatiin!");
+    } else {
+      System.out.println("Testi ei läpäissyt: odotettu tulos oli 12, mutta saatiin " + tulos);
+    }
+  }
+  
+  // Yksinkertainen funktio, joka laskee kahden luvun summan
+  public static int laskeSumma(int luku1, int luku2) {
+    return luku1 + luku2;
+  }
 }
 ```
 
-Yllä olevassa esimerkissä luomme yksinkertaisen testin, joka testaa laskimen lisäysmetodia. @Test -annotaatio kertoo JUnitille, että tämä metodi on testi, jonka tulee suorittaa tarkistettava laskenta ja Assert-metodi vertaa odotettua ja palautettua tulosta. 
+Tulostus:
 
-## Deep Dive
+```
+Testi läpäisty: oikea tulos saatiin!
+```
 
-Testien kirjoittaminen on tehokas tapa varmistaa, että koodisi toimii halutulla tavalla. Lisäksi se auttaa myös parantamaan koodin laatua ja ylläpidettävyyttä. Hyvät testit kattavat kaikki mahdolliset rajatapaukset ja huomioivat myös virheiden käsittelyn.
+# Deep Dive
+Testien kirjoittamisessa on hyvä noudattaa muutamia periaatteita, jotta ne olisivat mahdollisimman tehokkaita ja helppolukuisia. Ensinnäkin, on tärkeää testata rajatapauksia ja erikoistilanteita, jotta koodin virhealttius saadaan minimoitua. Lisäksi testit tulisi pitää mahdollisimman yksinkertaisina ja keskittyä vain yhteen asiaan kerrallaan. Testien tulee myös olla riippumattomia muista testeistä ja suorittua nopeasti.
 
-JUnit ei ole ainoa Java-ohjelmointikielen testaustyökalu, vaan on olemassa myös muita vaihtoehtoja, kuten TestNG ja Mockito. Näitä työkaluja voi käyttää yhdessä JUnitin kanssa saadaksesi monipuolisemmat testit ja testaustaustan.
-
-On myös tärkeää muistaa, että testien kirjoittaminen ei ole vain kertaluontoinen tapahtuma, vaan niitä tulee päivittää ja ylläpitää koodin muuttuessa ja kehittyessä.
+Mikäli olet kiinnostunut syvemmin testien kirjoittamisesta ja miten niitä voidaan hyödyntää Java-ohjelmoinnissa, suosittelemme tutustumaan seuraaviin resursseihin:
 
 ## Katso myös
-
-- [JUnit Documentation](https://junit.org/junit4/)
-- [TestNG Documentation](https://testng.org/doc/)
-- [Mockito Documentation](https://site.mockito.org/)
+- Java Test Driven Development: https://guides.webschools.io/community-guides/testing/java/
+- JUnit testing framework: https://junit.org/junit5/
+- TDD tutorial: https://www.tutorialspoint.com/junit/junit_test_framework.htm

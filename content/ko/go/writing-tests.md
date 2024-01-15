@@ -1,6 +1,7 @@
 ---
-title:                "Go: 프로그래밍에서 테스트 작성하기"
-simple_title:         "프로그래밍에서 테스트 작성하기"
+title:                "테스트 쓰기"
+html_title:           "Go: 테스트 쓰기"
+simple_title:         "테스트 쓰기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -9,62 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+왜 우리는 테스트를 작성하는 것에 참여해야 할까요? 그 이유는 간단합니다. 우리는 소프트웨어 개발 과정에서 발생할 수 있는 버그를 사전에 찾고 수정하여 더 효율적이고 안정적인 코드를 작성하기 위해서입니다.
 
-Go 프로그래밍에서 테스트를 작성하는 이유는 코드의 정확성과 안정성을 보장하기 위해서입니다. 테스트를 통해 버그를 예방하고 파일을 깔끔하게 유지할 수 있습니다.
-
-## 어떻게?
-
-테스트 작성하기
+## 방법
+우리의 논의 대상은 현재 Go 버전입니다. 우리는 `Hello, world!`를 출력하는 간단한 예제를 통해 테스트 작성 방법을 알아보겠습니다.
 
 ```Go
+// main.go 파일
 package main
 
-import (
-  "testing"
-  "github.com/stretchr/testify/assert"
-)
+import "fmt"
 
-func TestSum(t *testing.T) {
-  result := sum(2, 3)
-  expected := 5
-  assert.Equal(t, expected, result, "Sum() 함수 결과는 5여야 합니다.")
-}
-
-func TestSubtract(t *testing.T) {
-  result := subtract(5, 2)
-  expected := 3
-  assert.Equal(t, expected, result, "Subtract() 함수 결과는 3이여야 합니다.")
-}
-
-func sum(a, b int) int {
-  return a + b
-}
-
-func subtract(a, b int) int {
-  return a - b
+func main() {
+    fmt.Println("Hello, world!")
 }
 ```
 
-테스트 실행하기
+테스트를 작성하기 위해서는 먼저 `testing` 패키지를 임포트하고, `test`라는 이름의 함수를 만들어야 합니다. 그리고 `t.Errorf()` 함수를 이용해 테스트 실패 시 출력할 에러 메시지를 작성할 수 있습니다.
+
+```Go
+// main_test.go 파일
+package main
+
+import "testing"
+
+func test(t *testing.T) {
+    result := "Hello, world!"
+    if result != "Hello, world!" {
+        t.Errorf("실제 출력: %v, 기대한 출력: %v", result, "Hello, world!")
+    }
+}
+```
+
+`go test` 명령어를 실행하면 테스트가 실행되고, 위에서 작성한 함수가 테스트되어 결과가 반환됩니다.
 
 ```
-go test
-```
+$ go test
 
-테스트 결과
-
-```
 PASS
-ok      [패키지 경로]      0.007s
+ok     아래코드 폴더   0.009s
 ```
 
-## 깊이 파고들기
+위의 테스트는 매우 간단하지만, 실제 개발 과정에서는 더 복잡한 테스트를 작성해야 합니다. 애플리케이션의 각 부분을 테스트하는 것은 엄청난 장점을 제공합니다. 이를 통해 버그를 찾고 수정할 수 있으며, 코드를 변경할 때마다 다시 검증해줄 수도 있습니다.
 
-테스트 작성에는 다양한 방법이 있습니다. 위의 예시는 아주 간단한 유닛 테스트이며, 더 복잡한 테스트에는 모의 객체와 테이블 테스트를 사용할 수 있습니다. 또한 코드의 매니저로서의 역할도 테스트를 작성할 때 고려해야 하는 중요한 부분입니다.
+## 깊은 핑크
+테스트를 작성할 때 지켜야 할 최적의 방법은 여러 가지가 있습니다. 몇 가지 중요한 지침을 알아보겠습니다.
 
-## 참고 자료
+1. 각 테스트는 독립적으로 실행되어야 합니다. 각 테스트가 서로에게 영향을 미치지 않고 독립적으로 실행될 수 있어야 합니다.
+2. 테스트할 기능 또는 메서드의 코드만 테스트해야 합니다. 다른 코드에 대한 테스트는 다른 테스트에서 진행되어야 합니다.
+3. 테스트 케이스를 깊이 있는 분석 작업으로 취급해야 합니다. 다양한 시나리오를 고려하고 버그를 철저하게 테스트하여 신뢰성을 확보할 수 있어야 합니다.
+4. 재사용 가능한 테스트 코드를 작성해야 합니다. 유사한 기능을 테스트 하는 데에도 같은 코드를 사용할 수 있도록 테스트 함수를 재사용 가능하게 작성해야 합니다.
 
-- [GoLang.org: Test](https://golang.org/pkg/testing/)
-- [Medium: Go언어 테스트 코드 작성하기](https://medium.com/@daeseokhan88/go%EC%96%B8%EC%96%B4-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-996069c7df82)
-- [디렉토리 구조를 매니징하는 Go 프로젝트의 테스트 케이스 추가법](https://blog.ysmood.org/unit-testing-in-golang/)
+위의 지침들을 따르면 효율적이고 신뢰성 높은 테스트 코드를 작성할 수 있습니다.
+
+## 그 외
+테스트를 작성하는 것만으로 완벽한 코드를 작성할 수는 없습니다. 하지만 테스트를 작성하지 않고 코드를 작성하는 것보다 테스트를 작성하는 것이 더 안정적이고 효율적인 방법입니다. 테스트 하지 않은 코드는 문제를 일으킬 가능성이 높기 때문에 항상

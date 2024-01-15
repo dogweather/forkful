@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päiväyksen muuntaminen merkkijonoksi"
+html_title:           "Rust: Päiväyksen muuntaminen merkkijonoksi"
+simple_title:         "Päiväyksen muuntaminen merkkijonoksi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,41 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmoinnin projekteissa joudutaan muuttamaan päivämäärä merkkijonoksi esimerkiksi käyttäjän lukemisen tai tulostamisen yhteydessä. Rust tarjoaa tehokkaan ja turvallisen tavan muuntaa päivämäärä halutussa muodossa.
+Joskus ohjelmoijana sinun täytyy muuntaa päivämäärä tekstiksi. Tämä voi olla tarpeellista esimerkiksi silloin, kun haluat tulostaa päivämäärän käyttäjälle tai tallentaa sen tietokantaan.
 
-## Miten tehdä
+## Miten
 
-Rust tarjoaa valmiin Date-muuttujan muuntaa päivämäärä mukautetun merkkijonon avulla. Alla olevassa koodiesimerkissä näytämme, miten tämä voidaan tehdä:
+Rust tarjoaa erilaisia tapoja muuntaa päivämäärä tekstiksi. Käymme tässä läpi kaksi yleisintä tapaa, `strftime` ja `to_string`.
 
-```Rust
-use std::time::SystemTime;
+```
+Rust ## Miksi
+
+Joskus ohjelmoijana sinun täytyy muuntaa päivämäärä tekstiksi. Tämä voi olla tarpeellista esimerkiksi silloin, kun haluat tulostaa päivämäärän käyttäjälle tai tallentaa sen tietokantaan.
+
+## Miten
+
+Rust tarjoaa erilaisia tapoja muuntaa päivämäärä tekstiksi. Käymme tässä läpi kaksi yleisintä tapaa, `strftime` ja `to_string`.
+
+```
+use chrono::format::strftime::StrftimeItems;
+use chrono::Date;
+use chrono::Utc;
 
 fn main() {
-    // Luo uusi Date-muuttuja nykyisellä ajalla
-    let today = SystemTime::now();
-    
-    // Muunna päivämäärä merkkijonoksi
-    let date_string = today.to_string();
-    println!("Päivämäärä merkkijonona: {}", date_string);
+    let date = Utc::today();
+    let items = StrftimeItems::new("%A, %B %d, %Y");
+    let formatted = date.format_with_items(items);
+    println!("{}", formatted);
 }
 ```
 
-Tämä tulostaa seuraavan:
+Tämä koodi tulostaa päivämäärän seuraavassa muodossa: "keskiviikko, tammikuu 27, 2021".
 
-```bash
-Päivämäärä merkkijonona: Thu Oct 29 16:31:06 2020
+Voit myös käyttää `to_string`-metodia muuntaaksesi päivämäärän suoraan tekstiksi ilman erillisiä muotoiluja:
+
+```
+use chrono::Date;
+use chrono::Utc;
+
+fn main() {
+    let date = Utc::today();
+    let formatted = date.to_string();
+    println!("{}", formatted);
+}
 ```
 
-## Syvällisempi sukellus
+Tämä koodi tulostaa päivämäärän seuraavassa muodossa: "2021-01-27".
 
-Rustin Date-muuttujalla on useita sisäisiä metodeja, jotka mahdollistavat päivämäärän muuntamisen eri muodoissa, kuten Unix-aikaleimalla tai UTC-muodossa. Voit lukea lisää näistä metodeista [Rustin virallisesta dokumentaatiosta](https://doc.rust-lang.org/std/time/struct.SystemTime.html).
+## Syvemmälle
 
-Jokainen Rustin Date-muuttujan metodi palauttaa Result<T, E> -tyyppisen arvon, joka mahdollistaa virheiden käsittelyn sen sijaan, että ohjelma kaatuisi suorittaessaan. Tämä lisää luotettavuutta ja vähentää potentiaalisten ongelmien riskiä.
+Chrono-kirjasto, joka tarjoaa päivämäärämuunnostyökalut Rust-ohjelmointikieleen, perustuu osittain Glossary-kirjastoon. Glossary tarjoaa monia erilaisia muotoiluja, jotka voit antaa `strftime`-metodille muuntaaksesi päivämäärän tekstiksi haluamallasi tavalla.
+
+Voit myös käyttää erilaisia pikanäppäimiä, kuten `%B` tai `%Y`, jotka muodostavat automaattisesti osan päivämäärästä (esimerkiksi kuukauden nimen tai vuosiluvun).
 
 ## Katso myös
 
-Tässä oli lyhyt esittely siitä, miten Rustilla voidaan muuntaa päivämäärä merkkijonoksi. Jos haluat lukea lisää Rust-ohjelmoinnista, suosittelemme tarkistamaan seuraavat resurssit:
-
-- [Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/)
-- [Rustin dokumentaatio](https://doc.rust-lang.org/)
-- [Rust-ohjelmoinnin aloittelijan opas](https://doc.rust-lang.org/book/)
+- Chrono-kirjasto: https://docs.rs/chrono/latest/chrono/
+- Glossary-kirjasto: https://docs.rs/glossary/latest/glossary/

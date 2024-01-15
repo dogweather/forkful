@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फ़ाइल बनाना"
+html_title:           "Fish Shell: अस्थायी फ़ाइल बनाना"
+simple_title:         "अस्थायी फ़ाइल बनाना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-अगर आप किसी भी प्रोग्रामिंग निर्देशिका को लिख रहे हैं और आपको अस्थायी रूप से एक फ़ाइल तैयार करने की आवश्यकता होती है, तो आपको इस आलेख को पढ़ना चाहिए। इसमें हम आपको बताएंगे कि कैसे आप फ़िश शेल का उपयोग करके अस्थायी फ़ाइल तैयार कर सकते हैं।
+Temporary files ko banane ka mukhya uddeshya hai ki hum ek temporary storage space prapt kar sakein apne program ke liye. Ye temporary files humare kam ke liye temporary storage provide karte hain jo ki humare program ke execution ke dauran require ho sakte hain.
 
-## कैसे करें
+## Kaise Karein
+
+```Fish Shell``` ko temporary file create karne ke liye ```touch``` command ka upyog karein. Command ke sath file ka naam specify karein, jaise ki ```touch temp.txt``` aur ye ek temporary file create kar degi. Agar hum ```ls``` command se dekhein to ye file ```temp.txt``` naam se list hogi.
+
+## Deep Dive
+
+```touch``` command ke alawa bhi temporary file create karne ke aur options available hain. Ismein hum ```mktemp``` command ka upyog kar sakte hain jo ki random naam se file create kar degi. Example ke liye, ```mktemp``` command ka upyog karke ```mktemp -p ~/Desktop``` karke hum ek temporary file create kar sakte hain jise humare desktop par save hoga.
+
+Temporary files create karne ke liye ek aur prakriya hai, jise "here document" kehte hain. Ismein hum ek temporary file ka content dynamically generate kar sakte hain. Example ke liye, neeche diye gaye code block mein humein ek temporary file create karna hai jiska naam "temp.txt" hoga aur usmein kuch text add karna hai.
 
 ```Fish Shell
-# एक नई अस्थायी फ़ाइल बनाएं
-touch temp.txt
-# फ़ाइल में कुछ डेटा लिखें
-echo "मेरा अस्थायी फ़ाइल" > temp.txt
-# फ़ाइल का सामग्री दिखाएं
-cat temp.txt
+cat > temp.txt << EOF
+This is a temporary file.
+EOF
 ```
 
-आप यहां दिखाए गए कोड फ़ाइल नाम "temp.txt" के साथ 1MB का अस्थायी फ़ाइल बनाते हैं और इसके बाद उसमें कुछ डेटा लिखते हैं। यह हो सकता है कि आपके मन में सवाल उठेंगे कि यह कैसे काम करता है। तो चलिए हम आपको इसके बारे में और अधिक जानकारी देते हैं।
+Agar hum ```cat temp.txt``` command se dekhein to humein output mein "This is a temporary file." dikhega.
 
-## गहराई में जाएं
+## Dekhte Hain
 
-आपको स्पष्ट हो सकता है कि इससे आपको क्या फायदा होगा। यह अस्थायी फ़ाइल उत्पन्न करने में आपको कई फायदे प्रदान कर सकता हैं। अस्थायी फ़ाइल का उपयोग करने से आप संगठित तरीके से अपने कोड को संशोधित कर सकते हैं और आपको अस्थायी फ़ाइल को दूसरे स्थान पर भी उपयोग करने की आवश्यकता नहीं होती है।
+Hum ```touch```, ```mktemp``` aur "here document" ka upyog karke temporary files create kar sakte hain. Inke alawa bhi aur bhi options hote hain jinhe aap explore kar sakte hain. Maine niche kuch links diye hain jinhe aap padhkar aur samajhkar apne projects mein temporary files ka upyog kar sakte hain.
 
-अगर आप अस्थायी फ़ाइल को स्क्रिप्ट बनाते हैं तो आप उसे हर बार नए नए नाम से बनाने क
+## Dekhiye Bhi
+
+- [Linuxize - How to Create Temporary Files in Shell Scripting](https://linuxize.com/post/create-temporary-files-in-shell-scripting/)
+- [Geomajas - How to Create Temporary Files in the Shell](https://www.geomajas.org/tutorials/file-handling/how-to-create-temporary-files-in-the-shell/)
+- [ShellHacks - How to Create Temporary Files in Shell Scripts](https://www.shellhacks.com/create-temporary-file-shell-script-linux/)

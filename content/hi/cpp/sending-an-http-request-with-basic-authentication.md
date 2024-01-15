@@ -1,6 +1,7 @@
 ---
-title:                "C++: बेसिक प्रमाणीकरण के साथ संदेश भेजना - कंप्यूटर प्रोग्रामिंग में एक लेख"
-simple_title:         "बेसिक प्रमाणीकरण के साथ संदेश भेजना - कंप्यूटर प्रोग्रामिंग में एक लेख"
+title:                "HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ"
+html_title:           "C++: HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ"
+simple_title:         "HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,67 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-वर्तमान दौर में, आज की तारीफ़े और भुगतानी जैसी घटियापूर्ण स्थितियों के चलते बहुत से अनुसंधानात्मक वेब अनुप्रयोगों को अपनी सुरक्षा बढ़ाने के लिए एक सुरक्षित तरीके का आविष्कार करने की आवश्यकता है। HTTP अनुरोध में बेसिक प्रमाणीकरण का उपयोग करके, हम अपने अनुरोध और उत्तर के बीच सुरक्षित संवाद सुनिश्चित कर सकते हैं।
+बेसिक ऑथेंटिकेशन के साथ एचटीटीपी अनुरोध भेजने का काम क्यों किया जाता है। इसका सबसे बड़ा उद्देश्य होता है कि उपभोक्ता के डेटा की सुरक्षा बनाए रखना। जब भी एक उपयोगकर्ता HTTP अनुरोध भेजता है, तो उनके द्वारा भेजे गए डेटा को सुरक्षित रूप से सर्वर तक पहुंचने के लिए उपयोगकर्ता को अपना प्रमाणीकरण सब्जेक्ट और क्रेडेंशियल्स कहने होते हैं। यह सुनिश्चित करता है कि केवल अधिकृत उपयोगकर्ता ही सर्वर से डेटा को प्राप्त कर सकते हैं।
 
 ## कैसे करें
 
-```
+```C++
 #include <iostream>
 #include <curl/curl.h>
-using namespace std;
 
-static size_t writeCallback(void *contents, size_t size, size_t nmemb, void *userp)
-{
-    ((string*)userp)->append((char*)contents, size * nmemb);
-    return size * nmemb;
-}
+// बेसिक ऑथेंटिकेशन के साथ एचटीटीपी अनुरोध भेजने के लिए कोड
+int main() {
 
-int main()
-{
+  // सर्वर URL और क्रेडेंशियल्स को सेट करें
+  const std::string server_url = "https://example.com";
+  const std::string username = "username";
+  const std::string password = "password";
 
-    CURL *curl;
-    CURLcode res;
-    string readBuffer;
+  // CURL इंस्टेंस बनाये और प्रमाणीकरण जोड़ें
+  CURL *curl = curl_easy_init();
+  if(curl) {
 
-    curl_global_init(CURL_GLOBAL_ALL);
+    // प्रमाणीकरण जोड़ने के लिए ऑप्शन सेट करें
+    curl_easy_setopt(curl, CURLOPT_USERNAME, username.c_str());
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, password.c_str());
 
-    curl = curl_easy_init();
-    if (curl)
-    {
-        // Set URL
-        curl_easy_setopt(curl, CURLOPT_URL, "www.example.com");
+    // एचटीटीपी पोस्ट रिक्वेस्ट बनाये
+    struct curl_slist *headers = NULL;
+    headers = curl_slist_append(headers, "Content-Type: application/json"); // से कोई भी अनुरोध शीर्षक जोड़ें
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
-        // Set basic authentication credentials
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+    // सर्वर से प्रतिसाद को प्राप्त करने के लिए कॉलबैक फंक्शन निर्देशित करें
+    curl_easy_setopt(curl, CURLOPT_URL, server_url.c_str());
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+    
+    // पोस्ट डेटा सेट करें
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"name\": \"John\", \"age\": 25}");
 
-        // Set callback function for retrieving response data
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-
-        // Perform HTTP request
-        res = curl_easy_perform(curl);
-
-        // Check for errors
-        if (res != CURLE_OK)
-        {
-            cout << "Error occurred: " << curl_easy_strerror(res) << endl;
-        }
-
-        // Print response
-        cout << readBuffer << endl;
-
-        // Clean up
-        curl_easy_cleanup(curl);
-    }
-
-    return 0;
-}
-```
-
-इस कोड के द्वारा, हम एक C++ कमांड लाइन अनुप्रयोग में एक HTTP अनुरोध भेज सकते हैं जो बेसिक प्रमाणीकरण की आवश्यकता परिभाषित करता है। हम यह सुनिश्चित करते हैं कि हमारी प्रतिक्रिया सुरक्षित है और हम अपने उपयोगकर्ता नाम और पासवर्ड के साथ अपने सर्वर से संवाद कर सकते हैं।
-
-## गहराई में जाएं
-
-बेसिक प्रमाणीकरण HTTP अनुरोध में एक अत्यंत महत्वपूर्ण तकनीक है जो इंटरनेट सुरक्षा को सुनिश्चित करता है। यह विशेषता भुगतान और
+    // अनुरोध भेजने के लिए कॉल करें
+    CURLcode res = curl_easy_perform(curl);
+    
+    // कॉल कार्रवाई को समाप्त क

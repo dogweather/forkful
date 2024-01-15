@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: デバッグ出力の印刷"
-simple_title:         "デバッグ出力の印刷"
+title:                "「デバッグ出力のプリント」"
+html_title:           "Clojure: 「デバッグ出力のプリント」"
+simple_title:         "「デバッグ出力のプリント」"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,50 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-デバッグ出力をプリントするのにエンゲージするのか？それは、何が問題なのかを理解し、効率的にバグを修正するために不可欠です。
+デバッグ出力をプリントすることの目的は、コードの実行中に特定の値や処理の結果を確認することができるからです。これにより、コードの動作をより理解し、バグを特定することができます。
 
-# 使い方
-
-まず最初に、プリントする情報を決める必要があります。それから、以下のように、`println()`関数を使用して、その出力を表示します。
+## プリントする方法
 
 ```Clojure
-(def name "太郎")
-(println "こんにちは、私の名前は" name "です。")
+(prn "Hello, world!")
+```
+```
+"Hello, world!"
 ```
 
-上記のコードを実行すると、以下のように出力されます。
+デバッグ出力を行うためには、 `prn` 関数を使います。この関数は、与えられた値を文字列として表示します。 `prn` は `println` と似ていますが、自動的に改行を追加しない点が異なります。このことが、関数や関数内の値を確認する際に便利です。また、 `prn` は任意の数の引数を受け取ることができます。
 
-```
-こんにちは、私の名前は太郎です。
-```
+## ディープダイブ
 
-その他、さまざまなデータ型をプリントする例を示します。
+ `prn` 関数は、実際には `println` 関数のラッパーであり、 `print` 関数と `newline` 関数を組み合わせて動作します。したがって、 `prn` を使う際には、 `print` や `newline` を直接使うこともできます。また、 `pr` という別の関数もあります。この関数は、 `prn` と同じく値を文字列として表示しますが、値をプリントする前に `pr-str` 関数を使って文字列に変換する点が異なります。
 
-```Clojure
-(def data [1 2 3])
-(println "データの値は" data "です。")
-```
+## 関連リンク
 
-```
-データの値は [1 2 3] です。
-```
-
-```Clojure
-(def age 25)
-(println "私の年齢は" age "歳です。")
-```
-
-```
-私の年齢は 25 歳です。
-```
-
-# ディープダイブ
-
-デバッグ出力のプリントには、いくつかのメリットがあります。第一に、プリントする情報を見ることで、コードのどの部分が問題を引き起こしているかを理解できます。また、特定の変数やデータの値を知ることで、コードのロジックを追跡しやすくなります。さらに、デバッグ出力を使用することで、コードで期待される結果と実際の結果を比較し、問題を解決するためのヒントを得ることもできます。
-
-# 参考資料
-
-- [Clojureの公式ドキュメント](https://clojure.org/)
-- [Clojureを使ったデバッグの基本](https://blog.cognitect.com/blog/2017/11/15/clojure-debug-basics)
+- [Clojureドキュメント](https://clojure.org/)
+- [Clojureチュートリアル](https://clojure.org/guides/getting_started)
+- [ClojureScript公式サイト](https://clojurescript.org/)
+- [Clojureプログラミングの基礎](https://clojure-doc.org/articles/tutorials/introduction.html)

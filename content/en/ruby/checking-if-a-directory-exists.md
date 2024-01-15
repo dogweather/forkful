@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Ruby recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Checking if a directory exists is an important aspect of programming, especially when dealing with file management tasks. It allows us to ensure that our code is robust and prevents errors that may occur when attempting to access non-existent directories.
+
+If you're a Ruby programmer, you know the importance of error handling and ensuring your code can handle unexpected situations. One common scenario is needing to check if a directory exists before performing operations on it, such as creating a new file inside it. This prevents errors and improves the overall reliability and stability of your code.
 
 ## How To
-To check if a directory exists in Ruby, we can use the `Dir.exist?()` method. This method takes in a string representing the path of the directory and returns a boolean value. Let's take a look at an example:
 
-```Ruby
-if Dir.exist?("blog_posts")
-  puts "The 'blog_posts' directory exists."
+To check if a directory exists in Ruby, you can use the `Dir.exist?` method. Let's take a look at an example:
+
+```ruby
+# Check if a 'documents' directory exists
+if Dir.exist?('documents')
+  puts "The 'documents' directory already exists!"
 else
-  puts "The 'blog_posts' directory does not exist."
+  puts "Creating the 'documents' directory..."
+  Dir.mkdir('documents')
 end
 ```
 
-The above code checks if a directory named "blog_posts" exists in the current directory. If it does, it will print a message stating that it exists, and if not, it will print a message stating that it does not exist.
+In the example above, we first use the `exist?` method to check if the 'documents' directory exists. If it does, we print a message stating that it already exists. If it doesn't, we use the `mkdir` method to create the directory.
 
-We can also use the `File.directory?()` method to check if a directory exists. This method works similarly to the `Dir.exist?()` method, except it takes in a file or directory path as an argument. Let's see it in action:
+You can also use the `Dir.exist?` method in combination with the `File.directory?` method to check if a specific path is a directory, like this:
 
-```Ruby
-if File.directory?("/Users/username/Documents")
-  puts "The 'Documents' directory exists."
-else
-  puts "The 'Documents' directory does not exist."
+```ruby
+# Check if a specific path is a directory
+path = 'users/john/documents'
+if Dir.exist?(path) && File.directory?(path)
+  puts "'#{path}' is a directory!"
 end
 ```
 
-If the "Documents" directory exists in the specified file path, the code will output a message saying so. Otherwise, it will output a message stating that it does not exist.
+As you can see, we first use the `Dir.exist?` method to check if the path exists, then we use the `File.directory?` method to confirm that it is a directory.
 
 ## Deep Dive
-Under the hood, both the `Dir.exist?()` and `File.directory?()` methods use the `FileTest.exist?()` method. This method checks if the specified path exists, whether it is a file or directory.
 
-It is worth noting that the `Dir.exist?()` and `File.directory?()` methods only check for the existence of directories and not the validity. This means that they will return `true` even if the specified path leads to a file or a broken symlink.
+Under the hood, the `Dir.exist?` method uses the `Dir.open` method to open the specified path and check if it is a directory. It then returns a boolean value based on the result. The `File.directory?` method also uses a similar approach, but it also checks for additional details such as permissions and file type.
+
+It's worth mentioning that both these methods will return `true` even if the specified path is a symbolic link to a directory. If you want to specifically check if the actual directory exists, you can use the `File.realdirpath` method.
 
 ## See Also
-- [Ruby Documentation on File and Directory Classes](https://ruby-doc.org/core-2.7.1/File.html)
-- [Check if Directory Exists in Ruby](https://www.rubyguides.com/2017/09/ruby-directory-exists/)
-- [Working with Files and Directories in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+
+- [Dir.exist? documentation](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
+- [File.directory? documentation](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
+- [File.realdirpath documentation](https://ruby-doc.org/core-2.7.1/File.html#method-c-realdirpath)

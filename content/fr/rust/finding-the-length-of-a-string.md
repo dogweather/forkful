@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Trouver la longueur d'une chaîne de caractères."
-simple_title:         "Trouver la longueur d'une chaîne de caractères."
+title:                "Trouver la longueur d'une chaîne."
+html_title:           "Rust: Trouver la longueur d'une chaîne."
+simple_title:         "Trouver la longueur d'une chaîne."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,42 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous pourriez vous demander, pourquoi est-ce important de connaître la longueur d'une chaîne de caractères en Rust ? Eh bien, cela peut être utile lors de la manipulation de données ou de l'affichage de chaînes de caractères dans une certaine limite de longueur.
+Vous vous demandez peut-être pourquoi il est important de connaître la longueur d'une chaîne de caractères en programmation Rust. Eh bien, cela peut être extrêmement utile dans de nombreuses situations, que ce soit pour manipuler ou afficher des données de manière précise.
 
 ## Comment faire
 
-Pour trouver la longueur d'une chaîne de caractères en Rust, vous pouvez utiliser la méthode `len()` qui renvoie un entier représentant le nombre de caractères dans la chaîne.
+Pour trouver la longueur d'une chaîne en Rust, vous pouvez utiliser la fonction `len()` de la structure `str`. Voici un exemple de code pour y parvenir:
 
-Voici un exemple de code pour trouver la longueur d'une chaîne de caractères :
+```Rust
+let string = "Bonjour!";
+let length = string.len();
 
-```rust
-let s = String::from("Bonjour !");
-let len = s.len();
-
-println!("La longueur de la chaîne est : {}", len); // output: La longueur de la chaîne est : 9
+println!("La longueur de la chaîne est de {}", length);
 ```
 
-Dans cet exemple, nous créons une nouvelle chaîne de caractères `s` et utilisons la méthode `len()` pour trouver sa longueur. Nous imprimons ensuite la longueur à l'aide de la fonction `println!()`.
+Ce code créera une variable `length` qui stockera la longueur de la chaîne `string`. Ensuite, la fonction `println!` affichera la longueur à l'écran.
+
+Voici un autre exemple qui affiche toutes les lettres d'une chaîne avec leur position respective:
+
+```Rust
+let string = "Hello";
+let length = string.len();
+
+for (i, c) in string.chars().enumerate() {
+    println!("{} est en position {}", c, i);
+}
+```
+
+La sortie de ce code sera:
+
+```
+H est en position 0
+e est en position 1
+l est en position 2
+l est en position 3
+o est en position 4
+```
 
 ## Plongée en profondeur
 
-Vous vous demandez peut-être comment la méthode `len()` fonctionne en interne. En fait, elle compte le nombre d'octets dans la chaîne de caractères et ne tient pas compte des caractères Unicode. Cela signifie qu'une chaîne de caractères contenant des caractères non ASCII aura une longueur différente de celle attendue.
+Maintenant que vous savez comment trouver la longueur d'une chaîne en Rust, il est important de comprendre comment cela fonctionne en interne. En réalité, la fonction `len()` ne compte pas réellement les caractères d'une chaîne, mais plutôt les octets. Cela est dû au fait que Rust utilise l'encodage UTF-8 par défaut, où chaque caractère peut être codé sur plusieurs octets.
 
-Pour obtenir la longueur réelle de la chaîne de caractères en prenant en compte les caractères Unicode, vous pouvez utiliser la méthode `chars()` qui sépare chaque caractère de la chaîne et ensuite utiliser la méthode `count()` pour compter le nombre de caractères.
+Cela signifie que la longueur d'une chaîne peut varier en fonction des caractères qu'elle contient. Par exemple, la chaîne "こんにちは" contient 5 caractères, mais sa longueur est de 15 octets car chaque caractère est codé sur 3 octets en UTF-8.
 
-Voici un exemple de code pour trouver la longueur d'une chaîne de caractères en utilisant `count()`:
-
-```rust
-let s = String::from("Bonjour !");
-let len = s.chars().count();
-
-println!("La longueur de la chaîne est : {}", len); // output: La longueur de la chaîne est : 8
-```
-
-Comme vous pouvez le voir, la longueur est différente de l'exemple précédent car cette fois-ci, nous prenons en compte les caractères Unicode.
+Il est également important de noter que la fonction `len()` ne compte que les caractères valides en UTF-8. Si une chaîne contient des octets invalides, la fonction renverra une longueur incorrecte.
 
 ## Voir aussi
 
-- [Documentation de la méthode `len()` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
-- [Documentation de la méthode `chars()` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)
-- [Documentation de la méthode `count()` en Rust](https://doc.rust-lang.org/std/str/struct.Chars.html#method.count)
+- [Documentation officielle sur la structure `str`](https://doc.rust-lang.org/std/primitive.str.html)
+- [Article sur l'encodage UTF-8 en Rust](https://towardsdatascience.com/understanding-utf-8-in-rust-a609705bb29b)

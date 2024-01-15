@@ -1,6 +1,7 @@
 ---
-title:                "C++: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeid med yaml"
+html_title:           "C++: Arbeid med yaml"
+simple_title:         "Arbeid med yaml"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -11,50 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-YAML (YAML Ain't Markup Language) er et populært og enkelt format for å lagre og overføre strukturerte data i programmering. Det brukes ofte for konfigurasjonsfiler og dataoverføring mellom forskjellige systemer. Ved å lære hvordan man jobber med YAML, kan du effektivt håndtere data i ulike formater og integrere dem i dine programmer.
+Hvis du er en C++ programmerer, har du sannsynligvis hørt om YAML-filer. Som er enkelt og leselig format som brukes for å lagre og overføre data. Denne artikkelen vil fortelle deg hvorfor det er verdt å lære hvordan du kan jobbe med YAML i din C++ kode.
 
-## Slik gjør du det
+## Hvordan
 
-For å arbeide med YAML i C ++, må du først laste ned et YAML-bibliotek som gir funksjoner for å lese og skrive YAML-filer. Et populært bibliotek er YAML-cpp, som kan installeres via pakkesjefen din eller lastes ned fra GitHub.
-
-Etter at du har installert biblioteket, kan du begynne å bruke det i dine programmer. Her er et eksempel på hvordan du kan lese og skrive data fra en YAML-fil ved hjelp av YAML-cpp:
+For å jobbe med YAML i C++, må du først inkludere yaml-cpp biblioteket i din kode. Dette biblioteket tillater deg å lese, skrive og manipulere YAML-filer i din C++ applikasjon.
 
 ```C++
 #include <yaml-cpp/yaml.h>
-#include <iostream>
-
-int main() {
-  // Leser data fra YAML-fil
-  YAML::Node data = YAML::LoadFile("eksempel.yml");
-
-  // Henter informasjon fra YAML-filen
-  std::string navn = data["navn"].as<std::string>();
-  int alder = data["alder"].as<int>();
-
-  // Skriver ut informasjon
-  std::cout << "Navn: " << navn << std::endl;
-  std::cout << "Alder: " << alder << std::endl;
-
-  // Oppdaterer alderen og lagrer til YAML-filen
-  data["alder"] = 28;
-  YAML::Emitter out;
-  out << data;
-  std::ofstream file("eksempel.yml");
-  file << out.c_str();
-}
 ```
 
-I dette eksempelet bruker vi YAML::LoadFile-funksjonen for å lese data fra en YAML-fil og lagrer dataene i en YAML::Node-variabel. Deretter henter vi ut informasjonen vi trenger fra noden ved hjelp av "navn" og "alder"-nøklene. Til slutt oppdaterer vi alderen og lagrer de endrede dataene tilbake i filen ved hjelp av YAML::Emitter og std::ofstream.
+Deretter kan du enkelt lese en YAML-fil ved å bruke YAML::Load() metoden og angi filnavnet som parameter. Dette vil returnere en YAML::Node som kan brukes til å få tilgang til dataene i filen.
 
-## Dypdykk
+```C++
+YAML::Node data = YAML::Load("example.yaml");
+```
 
-YAML-cpp tilbyr flere funksjoner for å håndtere komplekse datastrukturer, inkludert støtte for lister, kart og innebygde typer som strenger og tall. Du kan også bruke operatorer som << og >> for å enkelt lese og skrive data til YAML-filer.
+For å få tilgang til en bestemt dataen i noden, kan du bruke operator[] og angi nøkkelen til dataen som du ønsker å hente.
 
-I tillegg til å lese og skrive data, tilbyr YAML-cpp også muligheten til å validere og konvertere YAML-data til andre formater som JSON og XML.
+```C++
+std::string name = data["name"].as<std::string>();
+```
 
-Sjekk ut dokumentasjonen til YAML-cpp for å få full oversikt over biblioteket og dets funksjoner.
+Du kan også enkelt legge til data i en YAML-fil ved å bruke operator<< og angi nøkkelen og verdien til dataen du ønsker å legge til.
+
+```C++
+data << "age" << 25;
+```
+
+For å skrive endringene tilbake til filen, kan du bruke YAML::Emitter og YAML::Node::Write() metoden.
+
+```C++
+YAML::Emitter out;
+out << data;
+std::ofstream myfile("example.yaml");
+myfile << out.c_str();
+```
+
+## Deep Dive
+
+En av fordelene med å jobbe med YAML-filer i C++ er at det er enkelt og effektivt å lese og skrive store mengder data. YAML støtter alle de grunnleggende datatypene, inkludert int, string, float og bool. Det støtter til og med lister og komplekse datatyper som kan være nyttige hvis du trenger å lagre hierarkisk data.
+
+YAML::Node har også mange nyttige metoder som YAML::Node::size() for å få størrelsen på en liste, YAML::Node::begin() og YAML::Node::end() for å iterere gjennom en liste, og YAML::Node::IsScalar() for å sjekke om noden inneholder en enkel verdi.
+
+Hvis du vil ha en mer detaljert forklaring på hvordan du kan jobbe med YAML i C++, kan du sjekke ut yaml-cpp dokumentasjonen på GitHub (https://github.com/jbeder/yaml-cpp/wiki).
 
 ## Se også
 
-- YAML-cpp dokumentasjon: https://github.com/jbeder/yaml-cpp/wiki
-- YAML-spesifikasjon: https://yaml.org/spec/1.2/spec.html
+- YAML.org (https://yaml.org/)
+- yaml-cpp dokumentasjon (https://github.com/jbeder/yaml-cpp/wiki)

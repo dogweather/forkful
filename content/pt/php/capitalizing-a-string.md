@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Capitalizando uma string"
-simple_title:         "Capitalizando uma string"
+title:                "Convertendo uma string em maiúsculas"
+html_title:           "PHP: Convertendo uma string em maiúsculas"
+simple_title:         "Convertendo uma string em maiúsculas"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em PHP?
+## Por que
 
-Capitalizar uma string em PHP é uma tarefa comum em muitos projetos de desenvolvimento web. Isso permite que o texto seja formatado corretamente, tornando-o mais legível e profissional. Além disso, pode ser necessário capitalizar nomes de usuários ou títulos de artigos em um sistema de gerenciamento de conteúdo. Neste artigo, vamos explorar como capitalizar uma string em PHP e o porquê dessa prática ser importante.
+Você já se deparou com um texto em que todas as palavras estão com as letras maiúsculas? Isso pode ser confuso e difícil de ler. Em alguns casos, é necessário capitalizar apenas a primeira letra de cada palavra em um texto, seja por questões estéticas ou de formatação. Neste artigo, vamos aprender a como capitalizar uma string em PHP de forma simples e eficiente.
 
-## Como capitalizar uma string em PHP
+## Como Fazer
 
-A função `ucwords()` do PHP pode ser usada para capitalizar uma string. Esta função recebe uma string como parâmetro e retorna uma nova string com a primeira letra de cada palavra em maiúsculo. Veja um exemplo:
-
-```PHP
-<?php
-$titulo = "como capitalizar uma string em PHP";
-echo ucwords($titulo); // Saída: Como Capitalizar Uma String Em PHP
-```
-
-Outra opção é usar a função `mb_convert_case()` que permite especificar como a capitalização deve ser feita (maiúscula, minúscula ou título). Essa função é especialmente útil quando se trabalha com caracteres multibyte, como no caso do idioma português. Veja um exemplo:
+Para capitalizar uma string em PHP, podemos utilizar a função `ucwords()`. Esta função recebe como parâmetro a string que desejamos capitalizar e retorna uma nova string com a primeira letra de cada palavra em maiúscula. Veja um exemplo abaixo:
 
 ```PHP
-<?php
-$artigo = "aprendendo a programar em PHP";
-echo mb_convert_case($artigo, MB_CASE_TITLE, "UTF-8"); // Saída: Aprendendo a Programar em PHP
+$string = "ola mundo";
+echo ucwords($string);
 ```
 
-## Mergulho Profundo
+**Saída: Ola Mundo**
 
-A função `ucwords()` é uma das funções mais fáceis de usar para capitalizar uma string em PHP. Ela funciona corretamente com a maioria dos idiomas e caracteres multibyte. No entanto, é importante lembrar que essa função não é indicada para casos em que é necessário ter controle mais preciso sobre a capitalização, como em nomes próprios ou abreviações. Nestes casos, a função `mb_convert_case()` pode ser mais adequada.
+Além disso, também é possível utilizar a função `ucfirst()`, que capitaliza apenas a primeira letra de uma string. Veja um exemplo:
 
-Também é importante mencionar que a capitalização de uma string em PHP é sensível ao idioma configurado no servidor. Por exemplo, se o servidor estiver configurado para o idioma inglês, a função `ucwords()` irá capitalizar apenas a primeira palavra de uma string, enquanto se estiver configurado para o português, ela irá capitalizar todas as primeiras letras de cada palavra.
+```PHP
+$string = "ola mundo";
+echo ucfirst($string);
+```
 
-## Veja também
+**Saída: Ola mundo**
 
-- [Função `ucwords()` no site oficial do PHP](https://www.php.net/manual/pt_BR/function.ucwords.php)
-- [Função `mb_convert_case()` no site oficial do PHP](https://www.php.net/manual/pt_BR/function.mb-convert-case.php)
-- [Acentuação nas strings em PHP](https://www.alura.com.br/artigos/acentuacao-nas-strings-em-php)
+A função `ucwords()` é útil para casos em que precisamos capitalizar mais de uma palavra e `ucfirst()` para casos em que é necessário capitalizar apenas a primeira letra de uma sentença.
+
+Uma outra opção é utilizar a função `mb_convert_case()`, que permite escolher entre capitalizar todas as letras de uma string, apenas a primeira letra de cada palavra ou apenas a primeira letra de uma sentença. Veja um exemplo:
+
+```PHP
+$string = "ola mundo";
+echo mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+```
+
+**Saída: Ola Mundo**
+
+## Deep Dive
+
+Para entendermos melhor como essas funções funcionam, é importante saber que o PHP possui uma função interna chamada `ord()` que retorna o valor ASCII de um caractere. O valor ASCII para as letras minúsculas varia de 97 a 122 e para as letras maiúsculas varia de 65 a 90.
+
+Ao utilizar a função `ucwords()` ou `ucfirst()`, o PHP verifica o valor ASCII de cada caractere na string e, caso o valor esteja entre 97 e 122, é feita uma subtração de 32 para transformar o caractere em sua letra maiúscula correspondente.
+
+Já a função `mb_convert_case()` utiliza uma biblioteca de caracteres interna do PHP e não a tabela ASCII, o que permite que ela consiga lidar com caracteres multibyte, como os acentuados.
+
+## Veja Também
+
+- Documentação oficial do PHP sobre a função `ucwords()`: http://php.net/manual/pt_BR/function.ucwords.php
+- Documentação oficial do PHP sobre a função `ucfirst()`: http://php.net/manual/pt_BR/function.ucfirst.php
+- Documentação oficial do PHP sobre a função `mb_convert_case()`: http://php.net/manual/pt_BR/function.mb-convert-case.php

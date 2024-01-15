@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Beräkna ett datum i framtiden eller i det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller i det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Haskell: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,59 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna beräkna ett datum i framtiden eller i det förflutna kan vara användbart i många olika programmeringsprojekt. Det kan hjälpa till att automatisera uppgifter eller visa information på ett mer lättförståeligt sätt för användare.
 
-## Hur man gör det
+Att kunna räkna ut ett datum i framtiden eller det förflutna är användbart i många situationer, som att planera evenemang eller hålla koll på födelsedagar. Med hjälp av Haskell kan du enkelt skapa kod som kan utföra dessa beräkningar åt dig.
 
-Det finns flera bibliotek tillgängliga på Haskell som kan hjälpa till att beräkna datum. Ett populärt val är "time" biblioteket, som ger många funktioner för att hantera datum och tid.
+## Så här gör du
 
-Först måste vi importera biblioteket och sedan definiera ett datum som vi vill beräkna från. I detta exempel kommer vi att använda det aktuella datumet.
-
-```Haskell
-import Data.Time
-idag <- getCurrentTime
-```
-
-För att beräkna ett datum i framtiden eller förflutna måste vi använda oss av funktionen "addDays" som tar ett heltal, antalet dagar som vi vill lägga till eller dra bort, och returerar ett nytt datum.
-
-För att beräkna ett datum tio dagar framåt från dagens datum skulle koden se ut som följande:
+Det första steget för att kunna räkna ut ett datum i framtiden eller det förflutna är att förstå hur datum representeras i Haskell. I Haskell finns det en inbyggd typ för datum som heter `Day`, som representerar ett datum med år, månad och dag. Du kan skapa ett `Day`-värde genom att använda funktionen `fromGregorian`, som tar år, månad och dag som argument.
 
 ```Haskell
-framtidigtDatum <- addDays 10 idag
+import Data.Time.Calendar
+
+day = fromGregorian 2021 10 31
 ```
 
-Om vi vill beräkna ett datum ett år bakåt från dagens datum skulle det se ut så här:
+För att räkna ut ett datum i framtiden eller det förflutna behöver vi också använda oss av funktionen `addDays`, som tar ett `Day`-värde och ett antal dagar som argument och returnerar ett nytt `Day`-värde. Antalet dagar kan vara både positivt och negativt, beroende på om du vill räkna framåt eller bakåt.
 
 ```Haskell
-forflutetDatum <- addDays (-365) idag
+tomorrow = addDays 1 day
+yesterday = addDays (-1) day
 ```
 
-När vi har vårt nya datum kan vi sedan sedan använda det i vårt program. Här är ett exempel där vi skriver ut det beräknade datumet på skärmen:
+Det går också att kombinera flera `addDays`-funktioner för att till exempel räkna ut ett datum tre dagar framåt.
 
 ```Haskell
-putStrLn $ "Framtida datum: " ++ show framtidigtDatum
+threeDaysAhead = addDays 1 (addDays 1 (addDays 1 day))
 ```
 
-Resultatet av detta program skulle bli:
-
-```
-Framtida datum: 2021-03-28 12:00:00 UTC
-```
+För att kunna använda `Day`-värden i dina program måste du också importera modulen `Data.Time.Calendar` med ett `import`-uttryck.
 
 ## Djupdykning
 
-Att kunna beräkna datum är nyckeln till att skapa mer dynamiska och anpassningsbara program. Men det finns också flera andra funktioner i "time" biblioteket som kan vara användbara när det gäller att hantera datum och tid i ditt program.
-
-En sådan funktion är "diffDays" som tar två datum som argument och beräknar antalet dagar mellan dem. Detta kan vara användbart för att jämföra datum eller för att beräkna tidsperioder mellan olika händelser.
+I Haskell finns det också en typ för tider, `TimeOfDay`, som representerar en specifik tid på dagen med timmar, minuter och sekunder. Med hjälp av funktionen `fromGregorian`, som vi använde tidigare, tillsammans med funktionen `timeOfDayToTime` kan vi kombinera ett `Day`-värde med en `TimeOfDay` för att få ett komplett datum och tid. Detta kan vara användbart om du till exempel behöver räkna ut ett specifikt tidpunkt i framtiden eller det förflutna.
 
 ```Haskell
-diffDays forflutetDatum framtidigtDatum
-```
+import Data.Time.Calendar
+import Data.Time.LocalTime
 
-Djupdykningen innehåller också information om andra bibliotek för datumhantering i Haskell, till exempel "datetime" och "chronos".
+day = fromGregorian 2021 10 31
+time = timeOfDayToTime (TimeOfDay 18 30 0)
+dateTime = LocalTime day time -- dateTime är ett komplett datum och tid
+```
 
 ## Se även
 
-- [Time bibliotekets dokumentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Ett exempel på att hantera datum med datetime biblioteket](https://github.com/jonathanknowles/date-haskell/blob/master/src/MiniTime.hs)
-- [Haskell Chronos bibliotekets GitHub-sida](https://github.com/snoyberg/chronos)
+För mer information om `Day`-typen och andra funktioner för datum och tid i Haskell, se följande länkar:
+
+- Dokumentation för `Data.Time.Calendar`: https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html
+- Dokumentation för `Data.Time.LocalTime`: https://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Obliczanie daty w przyszłości lub przeszłości"
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości."
+html_title:           "Java: Obliczanie daty w przyszłości lub przeszłości."
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -9,38 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości może być bardzo przydatne w programowaniu, szczególnie w przypadku tworzenia aplikacji, które muszą śledzić terminy lub okresy czasu. Może to również być przydatne podczas tworzenia narzędzi do planowania lub organizowania zadań w przyszłości.
+Chcesz wiedzieć, jak obliczyć datę w przyszłości lub przeszłości w Javie? Być może musisz wykonać obliczenia dla swojej aplikacji lub projektu. W tym artykule dowiesz się, jak prostym kodem w Javie wykonać tę operację.
 
-## Jak to zrobić
+# Jak To Zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości, należy użyć klasy "Calendar" z pakietu "java.util". Poniższy przykład pokazuje, jak użyć tej klasy w celu obliczenia daty dziesięć dni w przyszłości:
+Do obliczenia daty w przyszłości lub przeszłości w Javie potrzebne będą nam dwie rzeczy: obiekt typu LocalDate oraz obiekt typu Period.
+
+Pierwszym krokiem jest stworzenie obiektu typu LocalDate z aktualną datą. Możemy to zrobić za pomocą metody `now()`.
 
 ```Java
-Calendar calendar = Calendar.getInstance();
-calendar.add(Calendar.DATE, 10);
-System.out.println("Data dziesięć dni w przyszłości: " + calendar.getTime());
+LocalDate dzisiaj = LocalDate.now();
 ```
 
-Wyjście:
+Następnie, aby obliczyć datę w przyszłości, możemy wykorzystać metodę `plus()` na obiekcie LocalDate i przekazać jako argument obiekt typu Period z określoną ilością dni, miesięcy lub lat, które chcemy dodać.
 
+```Java
+LocalDate dataWPrzyszlosci = dzisiaj.plus(Period.ofDays(7));
 ```
-Data dziesięć dni w przyszłości: Tue Nov 17 11:41:34 EST 2020
+
+W ten sam sposób, aby obliczyć datę w przeszłości, możemy użyć metody `minus()` i przekazać obiekt Period ze zwiększoną wartością ujemną.
+
+```Java
+LocalDate dataWPrzeszlosci = dzisiaj.minus(Period.ofMonths(2));
 ```
 
-W powyższym przykładzie najpierw tworzona jest instancja klasy "Calendar" z użyciem metody "getInstance()". Następnie za pomocą metody "add()" dodajemy 10 dni do aktualnej daty. Na koniec, wyświetlamy wynik za pomocą metody "getTime()".
+Po wykonaniu tych operacji możemy wyświetlić obliczone daty za pomocą metody `toString()`.
 
-## Wnikliwe zagłębienie
+```Java
+System.out.println(dataWPrzyszlosci.toString()); //wyświetli datę z siedmioma dniami w przód
+```
 
-Klasa "Calendar" zawiera wiele innych metod, które umożliwiają bardziej precyzyjne obliczenia daty w przyszłości lub przeszłości. Na przykład, można użyć metody "set()" do ustawienia konkretnego dnia, miesiąca i roku. Można również użyć metod "roll()" lub "setTime()" do manipulowania datą i czasem na poziomie pól, takich jak godzina, minuta lub sekunda.
+Możesz także dodać lub odjąć więcej niż tylko dni lub miesięcy. Możesz także przekazać jako argumenty lata, miesiące i dni osobno.
 
-Inną przydatną klasą jest "Date", która pozwala na obliczanie daty w różnych strefach czasowych. Można także użyć klasy "SimpleDateFormat" do formatowania daty w określonym formacie.
+```Java
+LocalDate dataWInnejJednostce = dzisiaj.plus(Period.of(2, 3, 10)); //doda 2 lata, 3 miesiące i 10 dni
+```
 
-Zachęcamy do dokładnego zapoznania się z dokumentacją klas "Calendar" i "Date" oraz eksperymentowania z różnymi metodami, aby dostosować obliczenia daty według indywidualnych potrzeb.
+# Deep Dive
 
-## Zobacz również
+Metoda `plus()` i `minus()` używają obiektu typu TemporalAmount, który jest interfejsem rozszerzającym interfejs TemporalUnit. Dzięki temu możemy przekazać różne obiekty jako argumenty, takie jak Period, Duration czy Instant.
 
-- Dokumentacja klasy Calendar: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
-- Dokumentacja klasy Date: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
-- Przewodnik po klasie SimpleDateFormat: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+W przypadku użycia obiektu typu Duration, możemy dodać lub odjąć liczbę sekund, minut, godzin czy nawet dni.
+
+```Java
+LocalDate data = dzisiaj.plus(Duration.ofMinutes(30)); //dodaje 30 minut do aktualnej daty
+```
+
+Możemy również przekazać ilość dni jako argument do metody `plusDays()` lub `minusDays()`.
+
+```Java
+LocalDate dataZNastepnegoTygodnia = dzisiaj.plusDays(7); //dodaje 7 dni do aktualnej daty
+```
+
+# Zobacz również
+
+- [Java 8 LocalDate Class: A Brief Introduction](https://www.baeldung.com/java-8-localdate)
+- [Java LocalDate API Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java Period API Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html)

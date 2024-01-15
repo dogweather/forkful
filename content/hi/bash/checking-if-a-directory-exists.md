@@ -1,6 +1,7 @@
 ---
-title:                "Bash: डायरेक्टरी मौजूद है या नहीं जांच करना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं जांच करना"
+title:                "डायरेक्ट्री का अस्तित्व जांच करना"
+html_title:           "Bash: डायरेक्ट्री का अस्तित्व जांच करना"
+simple_title:         "डायरेक्ट्री का अस्तित्व जांच करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -9,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-किसी भी डायरेक्टरी की उपस्थिति को जांचने का काम क्यों किया जाता है? यह एक उपयोगी कौशल है जो हमें अपनी स्क्रिप्ट्स को ऑप्टिमाइज करने में मदद करता है। 
+## Why
+Aksar humare paas kuch aise bash scripts hote hai jinhe hum directories ke saath kaam karne ke liye banate hai. Lekin kabhi kabhi hume yeh confirm karna hota hai ki kya woh directory asal mein maujood hai ya nahi. Isiliye hume directory ke maujoodgi ko check karne ki zarurat padti hai.
 
-## कैसे करें
-
+## How To
+Agar aap bhi directory ke maujoodgi ko check karna chahte hai, toh aapko iss tarah se bash code likhna hoga:
 ```Bash
-# यदि आपको जांचना है कि कोई डायरेक्टरी मौजूद है या नहीं
-if [ -d <डायरेक्टरी का नाम> ]; then
-    echo "डायरेक्टरी मौजूद है"
+if [ -d /path/to/directory/ ]; then
+    echo "Directory exists"
 else
-    echo "डायरेक्टरी मौजूद नहीं है"
+    echo "Directory does not exist"
 fi
 ```
+Iss code mein humne `if` statement andar `[-d]` flag ka use kiya hai jo directory ke upar maujood operations perform karne ke liye hota hai. Agar directory maujood hota hai, toh hume `Directory exists` ka output milega, nahi toh `Directory does not exist` ka output milega.
 
-यहां, आपको `-d` स्विच का उपयोग करना होगा, जो डायरेक्टरी की उपस्थिति को जांचने के लिए विकल्प देता है। यदि डायरेक्टरी मौजूद होती है, तो स्क्रिप्ट दिया गया संदेश प्रिंट करेगा और अन्यथा वह दूसरा संदेश प्रिंट करेगा।
+## Deep Dive
+Bash mein directory ke maujoodgi ko check karne ke liye hum `[-d]` flag ke alawa aur bhi kuch flags ka use kar sakte hai. Jaise `-f` flag directory ke upar file operations perform karne ke liye hota hai. Iske alawa, aap `[-e]` flag ka use karke file ya directory ke upar operations perform kar sakte hai.
 
-## डीप डाइव
+Agar aapko directory ke permission bhi check karni hai, toh aap `[-r]` flag ka use karke directory ke read permission ko check kar sakte hai. Iske alawa, aap `[-w]` flag ka use karke write permission ko bhi check kar sakte hai.
 
-डायरेक्टरी की उपस्थिति को जांचने का एक और सरल और उपयोगी तरीका स्टैंडर्ड लाइन टूल `test` है। आप इसका उपयोग करके भी डायरेक्टरी की उपस्थिति की जांच कर सकते हैं।
-
-```Bash
-# एक डायरेक्टरी मौजूद होने का पता लगाने के लिए उपयोग
-
-# आपको टर्मिनल में निम्नलिखित कमांड देना होगा
-test -d <डायरेक्टरी का नाम>
-
-# यदि डायरेक्टरी मौजूद होती है, तो कमांड लाइन में निम्नलिखित आउटपुट प्रिंट होगा
-echo $?
-
-# यदि डायरेक्टरी मौजूद नहीं होती है, तो कमांड लाइन में निम्नलिखित आउटपुट प्रिंट होगा
-echo $?
-``
+## See Also
+Iss article mein humne bash mein directory ke maujoodgi ko check karne ka tareeka sikhaya hai. Agar aapko bash scripting aur directories ke baare mein aur jaanna hai, toh yeh links aapke kaam aa sakte hai:
+- [Bash Scripting Tutorial](https://www.howtogeek.com/102723/how-to-write-a-simple-bash-script/)
+- [Working with Directories in Bash](https://linuxhint.com/working_directories_bash/)
+- [Directory Operations in Bash](https://ubuntu.com/tutorials/command-line-for-beginners#6-directory-operations)

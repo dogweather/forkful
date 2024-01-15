@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convertir una fecha en una cadena de caracteres"
+html_title:           "Elixir: Convertir una fecha en una cadena de caracteres"
+simple_title:         "Convertir una fecha en una cadena de caracteres"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,41 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-La conversión de una fecha a una cadena de caracteres es una habilidad fundamental en la programación Elixir, ya que permite mostrar fechas de una manera más legible y fácil de entender para los usuarios de una aplicación.
+Convertir un date en una cadena de caracteres puede ser una necesidad común en la programación. Ya sea para mostrar fechas en formato legible para el usuario o para realizar cálculos con fechas, esta conversión es esencial en muchos casos.
 
 ## Cómo hacerlo
 
-Para convertir una fecha a una cadena de caracteres en Elixir, utilizamos la función `DateTime.to_string/2`. Esta función toma dos argumentos, la fecha que queremos convertir y un formato opcional. Veamos un ejemplo:
+```elixir
+# Primero, importamos el módulo "DateTime" para poder trabajar con fechas y horas.
+import DateTime
 
-```Elixir
-DateTime.to_string(~U[2021-03-21T12:00:00Z], "{0} {1}") 
-# Output: "21 de Mar del 2021 12:00:00 PM UTC"
+# Creamos una variable de fecha con el formato "año-mes-día".
+fecha = ~D[2021-05-03]
+
+# Utilizamos la función "to_string" para convertir la fecha en una cadena de caracteres.
+DateTime.to_string(fecha)
+
+# La salida será: "2021-05-03T00:00:00Z"
 ```
 
-En este caso, estamos convirtiendo una fecha en formato universal `~U` y especificando un formato personalizado en el que la fecha se mostrará como "Día de Mes del Año Hora:Minuto:Segundo Zona Horaria".
+En este ejemplo, especificamos el formato de salida como "año-mes-día", pero es posible utilizar otros formatos como "mes/día/año" o "día-mes-año", entre otros.
 
-También podemos utilizar `DateTime.to_string/4` para especificar un idioma y una zona horaria específicos. Veamos otro ejemplo:
+Para obtener la hora actual en una cadena de caracteres, podemos utilizar la función `DateTime.utc_now/0`, la cual nos devuelve un objeto de fecha y hora que luego podemos convertir a una cadena de caracteres con la función `to_string`.
 
-```Elixir
-DateTime.to_string(~N[2021-W12-3T12:00:00], "{D} {MMMM} {YYYY} en {h}:{m} {a}", locale: "es", timezone: "UTC") 
-# Output: "17 marzo 2021 en 12:00 PM"
+```elixir
+# Obtenemos la hora actual en UTC y lo convertimos en una cadena de caracteres.
+DateTime.utc_now() |> DateTime.to_string()
+
+# La salida será algo como: "2021-05-03T11:30:00Z"
 ```
-
-En este caso, estamos utilizando un formato de fecha específico, `~N`, y convirtiéndolo a una cadena de caracteres en español y en la zona horaria universal (`UTC`).
 
 ## Profundizando
 
-Existen diferentes opciones de formato que podemos usar en `DateTime.to_string`, como `D` para el día, `d` para el día de la semana, `Y` para el año, `M` para el mes, `m` para el minuto, entre otros. También podemos especificar un idioma utilizando la opción `locale` y una zona horaria con la opción `timezone`.
+La función `to_string` no solo nos permite especificar el formato de salida, sino también podemos especificar si queremos incluir la zona horaria o no. Por ejemplo, si queremos obtener la fecha y hora actual sin la zona horaria, podemos utilizar la opción `zone: false`:
 
-Otra opción útil es la función `DateTime.format/3`, que nos permite especificar un formato personalizado para la fecha. Por ejemplo:
+```elixir
+# Convertimos la hora actual en una cadena de caracteres sin la zona horaria.
+DateTime.utc_now() |> DateTime.to_string(zone: false)
 
-```Elixir
-DateTime.format(~U[2021-03-21T12:00:00Z], "{YYYY}-{MM}-{DD}") 
-# Output: "2021-03-21"
+# La salida será algo como: "2021-05-03T11:30:00"
 ```
-Esta función nos da más flexibilidad para mostrar la fecha de la manera que deseemos.
+
+También es importante tener en cuenta que la función `to_string` solo funciona con objetos de fecha y hora del módulo `DateTime`. Si queremos convertir un objeto de fecha de otro módulo, como `Date`, debemos convertirlo primero a `DateTime`.
+
+```elixir
+# Creamos un objeto de fecha del módulo "Date".
+fecha = Date.new(2021, 5, 3)
+
+# Intentamos convertirlo directamente a una cadena de caracteres.
+DateTime.to_string(fecha)
+
+# Esto nos dará un error, ya que la función "to_string" solo funciona con objetos de "DateTime".
+
+# Primero convertimos el objeto de fecha a "DateTime".
+DateTime.from_date(fecha) |> DateTime.to_string()
+
+# La salida será: "2021-05-03T00:00:00Z"
+```
+
+En resumen, convertir un date en una cadena de caracteres es una tarea sencilla en Elixir gracias a la función `to_string` del módulo `DateTime`. Es importante tener en cuenta el formato de salida y las opciones disponibles, así como también asegurarse de utilizar objetos de fecha del módulo correcto.
 
 ## Ver también
 
-- Documentación oficial sobre `DateTime.to_string`: https://hexdocs.pm/elixir/DateTime.html#to_string/2
-- Ejemplos de formatos de fecha en Elixir: https://www.electrictoolbox.com/formatting-dates-elixir/
+- Documentación oficial sobre la función `to_string` en el módulo `DateTime`: https://hexdocs.pm/elixir/DateTime.html#to_string/3
+- Ejemplos de formatos de salida para fechas y horas: https://hexdocs.pm/elixir/DateTime.html#module-formatting

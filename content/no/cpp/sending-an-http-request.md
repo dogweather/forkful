@@ -1,6 +1,7 @@
 ---
-title:                "C++: Å sende en http forespørsel"
-simple_title:         "Å sende en http forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,83 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende HTTP-forespørsler er en viktig del av webutvikling og serverkommunikasjon. Det lar deg be om og motta data fra en ekstern server, som gjør det mulig å lage dynamiske og interaktive nettsteder. 
+Å sende en HTTP forespørsel er en viktig del av webutvikling og kan hjelpe deg med å få tilgang til data og ressurser fra eksterne kilder. Det kan også brukes til å kommunisere med applikasjoner og APIer, noe som gjør det til et viktig verktøy for å bygge moderne og dynamiske nettsider.
 
 ## Slik gjør du det
 
-For å sende en HTTP-forespørsel i C++, trenger vi å bruke et bibliotek som kalles "libcurl". Dette biblioteket gir oss funksjoner og metoder for å utføre forskjellige HTTP-operasjoner, for eksempel GET-forespørsler for å hente data og POST-forespørsler for å legge inn data. 
+For å sende en HTTP forespørsel i C++, må du først inkludere "curl/curl.h"-biblioteket i koden din. Dette biblioteket lar deg lage og utføre HTTP-forespørsler på en enkel måte.
 
-### Eksempelkode:
+Deretter kan du opprette en ny instans av CURL-objektet og angi URL-adressen til serveren du vil sende forespørselen til. Du kan også sette eventuelle parametere eller headers som kreves for å fullføre forespørselen.
 
 ```C++
-#include <iostream>
 #include <curl/curl.h>
+// Opprett instans av CURL-objekt
+CURL *curl = curl_easy_init();
+// Angi URL-adresse
+curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
+```
 
-using namespace std;
+Neste steg er å utføre selve forespørselen. Dette kan gjøres ved å kalle "curl_easy_perform" funksjonen og lagre resultatet i en variabel.
 
-// Denne funksjonen vil bli kalt av libcurl når en HTTP-respons mottas
-// Her kan vi behandle responsen ved å skrive den ut eller gjøre andre handlinger
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
-{
-    ((string*)userp)->append((char*)contents, size * nmemb);
-    return size * nmemb;
-}
-
-int main()
-{
-    CURL *curl;
-    CURLcode res;
-    string response;
-
-    // Initialiserer curl
-    curl = curl_easy_init();
-
-    if(curl) {
-        // Setter URL-en du vil sende en GET-forespørsel til
-        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com");
-
-        // Setter WriteCallback-funksjonen vår som skal bli kalt når en respons er mottatt
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        // Setter variabelen hvor responsen skal bli lagret
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
-
-        // Utfører forespørselen og lagrer resultatet i 'res'
-        res = curl_easy_perform(curl);
-
-        // Sjekker om forespørselen var vellykket
-        if(res != CURLE_OK) {
-            // Hvis det ikke var det, skriver vi ut feilmeldingen
-            cout << "Forespørselen feilet: " << curl_easy_strerror(res) << endl;
-        } else {
-            // Hvis det var vellykket, skriver vi ut responsen som ble lagret i 'response'
-            cout << response << endl;
-        }
-
-        // Lukker curl-objektet
-        curl_easy_cleanup(curl);
-    }
-
-    return 0;
+```C++
+// Utfør forespørselen og lagre resultatet
+CURLcode res = curl_easy_perform(curl);
+// Kontroller for eventuelle feil
+if(res != CURLE_OK) {
+  fprintf(stderr, "curl_easy_perform() failed: %s\n",
+          curl_easy_strerror(res));
 }
 ```
 
-### Konsolloutput:
+For å behandle svaret fra serveren, kan du bruke "curl_easy_getinfo" funksjonen og angir ønsket informasjon som parameter. Dette kan omfatte statuskoder, svartider og innholdstype.
 
-````
-{"message": "Forespørselen ble utført suksessfullt!"}
-````
+```C++
+// Få statuskoden fra serveren
+long statuscode;
+curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &statuscode);
+// Skriv ut statuskoden
+printf("Statuskode: %ld\n", statuscode);
+```
 
-Som du ser, bruker vi `curl`-"easy" grensesnittet for å sende en GET-forespørsel og lagre responsen i en variabel. Dette er en veldig grunnleggende implementasjon, og libcurl tilbyr mange flere funksjoner og muligheter for å tilpasse HTTP-forespørsler.
+## Dypdykk
 
-## Dykk dypere
+Når du sender en HTTP-forespørsel, er det flere elementer du bør være oppmerksom på. Dette inkluderer ulike typer forespørsler, som GET, POST, PUT og DELETE, samt hvordan du håndterer responsen fra serveren.
 
-For å dykke dypere inn i hvordan HTTP-forespørsler fungerer, er det nødvendig å forstå protokollen bak. HTTP eller "Hypertext Transfer Protocol" er den standardiserte metoden for kommunikasjon mellom klienter og servere på nettet. Det består av forskjellige metoder, som GET, POST, PUT, DELETE og mer, og hver av disse har et spesifikt formål og bruk.
+Du bør også sørge for å håndtere eventuelle feilsituasjoner, som når serveren ikke svarer eller når det oppstår en nettverksfeil. Dette kan gjøres ved å bruke returkoden fra "curl_easy_perform" funksjonen og sjekke for tilhørende feilmeldinger.
 
-Det er også viktig å forstå HTTP-responskoder som blir returnert fra serveren. Disse kodene indikerer om forespørselen var vellykket, og hvis ikke, hva som gikk galt. Noen vanlige responskoder er 200 for "OK", 404 for "Ikke funnet" og 500 for "Intern serverfeil".
-
-Libcurl gir også muligheter for å tilpasse HTTP-forespørsler ved å legge til header-informasjon, autentisering, og mye mer. Det er definitivt verdt å utforske for å få en grundig forståelse av hvordan å sende HTTP-forespørsler i C++.
+Selv om sending av en enkel HTTP-forespørsel kan virke som en enkel oppgave, er det viktig å følge beste praksis og sørge for å sikre at koden din håndterer alle potensielle utfall.
 
 ## Se også
 
-- [libcurl dokumentasjon](https://curl.se/libcurl/c/)
-- [HTTP spesifikasjonen](https://tools
+- [C++ CURL-bibliotek dokumentasjon](https://curl.haxx.se/libcurl/c/)
+- [En guide til HTTP-forespørsler i C++](https://www.theserverside.com/feature/A-guide-to-HTTP-requests-in-C)
+- [Eksempler på bruk av CURL i C++ programmering](https://stackoverflow.com/questions/978061/http-post-request-in-c)

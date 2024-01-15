@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Radera tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "Elm: Radera tecken som matchar ett mönster"
 simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
+Det kan finnas olika skäl till varför man skulle vilja ta bort tecken som matchar ett visst mönster i en text. Det kan till exempel vara för att rensa bort onödiga eller felaktiga tecken, eller för att förbereda texten för vidare bearbetning.
 
-Att ta bort tecken som matchar ett mönster kan vara ett användbart verktyg för att manipulera strängar i din Elm-kod. Det kan hjälpa dig att filtrera ut oönskade tecken eller byta ut dem mot andra.
-
-# Så här gör du
-
-För att ta bort tecken som matchar ett visst mönster i Elm, kan du använda funktionen `String.strip` tillsammans med `Regex.replace`. Här är ett exempel på hur du kan använda detta för att ta bort alla siffror från en sträng:
+## Så här gör du
+För att ta bort tecken som matchar ett visst mönster i Elm finns det flera olika metoder att använda sig av. En av de vanligaste är att använda funktionen `String.filter`, som tar emot två argument - en funktion som avgör vilka tecken som ska behållas och en sträng som ska filtreras. Ett exempel på hur detta kan se ut i kod är:
 
 ```Elm
-import String
-import Regex
-
-sträng = "Jag är 25 år gammal"
-färdigSträng =
-    String.strip (Regex.replace Regex.All "\d" (\_ -> "") sträng)
--- Resultatet blir "Jag är år gammal"
+text = "Det här är en text med olika tecken som ska tas bort 12345"
+filtredText = text |> String.filter (\char -> not (Char.isDigit char))
 ```
 
-Förklaring:
-1. Importera modulen `String` och `Regex` för att kunna använda deras funktioner i din kod.
-2. Skapa en sträng som du vill ta bort tecken från.
-3. Använd funktionen `Regex.replace` tillsammans med `String.strip` för att filtrera ut alla siffror från strängen.
-4. Det första argumentet för `Regex.replace` är `Regex.All`, vilket betyder att vi vill matcha alla förekomster av mönstret.
-5. Det andra argumentet är mönstret vi vill matcha, i det här fallet `"\d"` som står för en siffra.
-6. Det sista argumentet är en funktion som avgör vad som ska ersätta de matchande tecknen. I vårt fall vill vi bara ha en tom sträng, så vi använder lambdafunktionen `(\_ -> "")`.
-7. Slutligen använder vi `String.strip` för att ta bort eventuella mellanslag som lämnats kvar efter borttagningen av siffrorna.
+I detta exempel använder vi funktionen `not` tillsammans med `Char.isDigit` för att ta bort alla siffror från texten. Resultatet blir då `Det här är en text med olika tecken som ska tas bort`. Det finns många olika inbyggda funktioner för att hantera tecken och strängar i Elm, vilket gör att det finns många olika sätt att ta bort tecken som matchar ett visst mönster.
 
-# Djupdykning
+## Djupdykning
+Om man vill gå djupare in i ämnet och förstå hur man kan ta bort tecken som matchar ett mönster i Elm, så finns det en del olika saker man kan titta på. En nyckelkomponent är användningen av funktionen `String.filter`, som nämnts ovan. Genom att förstå hur denna funktion fungerar och hur man kan använda den på olika sätt, kan man lösa olika problem som rör borttagning av tecken i text.
 
-Det finns många olika sätt att använda funktionen `Regex.replace` för att ta bort tecken som matchar ett mönster. Du kan till exempel använda mer komplexa mönster för att filtrera ut flera olika tecken på en gång. Det finns också andra användbara funktioner för strängmanipulering i Elm, som `String.split` och `String.repeat`.
+Det finns också andra användbara funktioner för att hantera tecken i Elm, såsom `String.slice`, `String.split` och `String.trim`, som kan vara relevanta i olika sammanhang. Dessutom kan det vara viktigt att förstå skillnaderna mellan Unicode och ASCII-kodning och hur man tar hänsyn till dessa när man arbetar med textsträngar.
 
-# Se också
-
-- Elm guide om strängmanipulering: https://guide.elm-lang.org/strings/
-- Dokumentation för `String`-modulen: https://package.elm-lang.org/packages/elm/core/latest/String
+## Se också
+* [Officiell dokumentation för Elm](https://guide.elm-lang.org/)
+* [En guide för att hantera tecken i Elm](https://dev.to/rtfeldman/elm-strings-are-not-just-arrays-of-characters-2pck)
+* [En artikel om Unicode och ASCII i Elm](https://dev.to/mpizenberg/from-javascript-to-elm-unicode-romanization-as-unicode-scripts-feature-2h02)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Kotlin: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,40 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Verarbeiten von Argumenten über die Befehlszeile ist ein wichtiger Teil der Programmierung in jeder Sprache, einschließlich Kotlin. Es ermöglicht es dem Benutzer, das Verhalten des Programms anzupassen und macht es flexibler.
+Wenn du mit Kotlin programmierst, wirst du früher oder später auf die Notwendigkeit stoßen, Kommandozeilenargumente zu lesen. Das kann zum Beispiel bei der Entwicklung von Konsolenanwendungen oder bei der Verwendung von externen Libraries notwendig sein. In diesem Artikel lernst du, wie du Kommandozeilenargumente in Kotlin lesen kannst.
 
-## Wie Geht's
+## Anleitung
 
-Um Argumente aus der Befehlszeile in Kotlin zu lesen, verwenden wir die `args`-Variable im `main`-Funktionsblock. Die Argumente werden als Array von Strings in der richtigen Reihenfolge übergeben.
-
-```Kotlin
-fun main(args: Array<String>) {
-  // Code zum Lesen der Argumente
-  for (arg in args) {
-    println(arg)
-  }
-}
-```
-
-Der Codeblock liest alle Argumente und gibt sie einzeln aus. Wenn wir also `kotlin main.kt argument1 argument2` in der Befehlszeile ausführen, wird `argument1` und `argument2` ausgegeben.
-
-## Tief eintauchen
-
-Wir können auch prüfen, ob die Argumente bestimmte Bedingungen erfüllen oder spezielle Aktionen ausführen sollen. Beispielsweise können wir mithilfe von `when`-Statements entscheiden, was mit den Argumenten geschehen soll.
+Um Kommandozeilenargumente in Kotlin zu lesen, muss zunächst die `main` Funktion deklariert werden. Diese wird automatisch von Kotlin ausgeführt, wenn das Programm gestartet wird. Zusätzlich müssen die Kommandozeilenargumente als Parameter der `main` Funktion angegeben werden.
 
 ```Kotlin
 fun main(args: Array<String>) {
-  when (args[0]) {
-    "uhrzeit" -> println("Es ist ${Date()}")
-    "name" -> println("Hallo, ${args[1]}!")
-    "quadrat" -> println("Das Quadrat von ${args[1]} ist ${args[1].toInt()*args[1].toInt()}")
-    else -> println("Das Argument ${args[0]} ist ungültig.")
-  }
+    // Code zum Lesen der Kommandozeilenargumente
 }
 ```
 
-Wenn wir nun beispielsweise `kotlin main.kt uhrzeit` ausführen, wird die aktuelle Uhrzeit ausgegeben. Oder wenn wir `kotlin main.kt name Max` ausführen, wird uns mit "Hallo, Max!" geantwortet.
+Die `args` Variable ist ein Array von Strings, in dem alle eingegebenen Kommandozeilenargumente enthalten sind. Um auf ein bestimmtes Argument zuzugreifen, kann auf die entsprechende Position im Array zugegriffen werden. Zum Beispiel:
 
-## Siehe Auch
+```Kotlin
+fun main(args: Array<String>) {
+    val ersteArgument = args[0]
+    println("Das erste Argument ist $ersteArgument")
+}
+```
 
-- Kotlin-Referenz für `args`: https://kotlinlang.org/docs/tutorials/command-line.html#reading-command-line-arguments
+Wenn keine Kommandozeilenargumente angegeben werden, ist das `args` Array leer.
+
+Um alle Argumente nacheinander auszugeben, kann eine `for` Schleife verwendet werden:
+
+```Kotlin
+fun main(args: Array<String>) {
+    for (argument in args) {
+        println(argument)
+    }
+}
+```
+
+Die Reihenfolge der Argumente entspricht der Reihenfolge, in der sie bei Aufruf des Programms eingegeben wurden.
+
+## Tiefere Einblicke
+
+In der `main` Funktion kann zusätzlich der `println` Befehl verwendet werden, um die Werte der einzelnen Argumente zu überprüfen. Außerdem können Bedingungen verwendet werden, um auf bestimmte Argumente zu reagieren oder diese weiterzuverarbeiten.
+
+Es ist außerdem möglich, Optionen mit Werten zu definieren. In diesem Fall müssen die Argumente beim Aufruf des Programms in der Form "Option=Wert" angegeben werden. Im Code können dann entsprechende Bedingungen verwendet werden, um auf die Optionen und Werte zuzugreifen.
+
+```Kotlin
+fun main(args: Array<String>) {
+    if (args.contains("-n")) {
+        val name = args[args.indexOf("-n") + 1]
+        println("Hallo $name!")
+    } else {
+        println("Willkommen!")
+    }
+}
+```
+
+Mit diesen Grundlagen kannst du nun Kommandozeilenargumente in deinem Kotlin Programm lesen.
+
+## Siehe auch
+
+- Offizielle Dokumentation zu Kotlin: https://kotlinlang.org/docs/home.html
+- Tutorial zu Kotlin von JetBrains: https://www.jetbrains.com/help/idea/creating-and-running-your-first-kotlin-application.html
+- Kotlin in Action Buch: https://www.manning.com/books/kotlin-in-action (in Englisch)

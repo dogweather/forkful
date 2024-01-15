@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "Clojure: Tworzenie pliku tymczasowego"
 simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,31 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Tworzenie pliku tymczasowego może być przydatne, gdy potrzebujemy wygenerować dane lub przeprowadzić operacje na pliku, ale nie chcemy pozostawiać go na stałe w naszym systemie. Może to być szczególnie pomocne podczas testowania kodu lub w sytuacji, gdy mamy do czynienia z ograniczoną przestrzenią dyskową.
+Tworzenie plików tymczasowych jest nieodłączną częścią procesu tworzenia oprogramowania. Często potrzebujemy tymczasowego miejsca na przechowywanie danych, które będą użyte tylko w określonym momencie, bez konieczności trwałego zapisywania ich na dysku. W takich przypadkach tworzenie plików tymczasowych może okazać się bardzo przydatne.
 
 ## Jak to zrobić
 
-W Clojure możemy łatwo utworzyć plik tymczasowy za pomocą funkcji `with-open` i `TemporaryFileWriter`. Oto przykładowy kod:
+W Clojure możemy łatwo utworzyć pliki tymczasowe przy użyciu funkcji `with-open` i `java.io.File/createTempFile`. Przykładowy kod wyglądałby następująco:
 
 ```Clojure
-(with-open [file (java.io.File/createTempFile "temp" ".txt")]
-  (let [writer (clojure.java.io/writer file)]
-    (.write writer "Hello World!")
-    (.flush writer)))
+(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
+  (println (.getName temp-file))) ; wyświetli nazwę tymczasowego pliku, np. "temp12345.txt"
 ```
 
-W tym przykładzie najpierw tworzymy plik tymczasowy o nazwie "temp" i rozszerzeniu ".txt". Następnie używamy funkcji `writer` z modułu `clojure.java.io`, aby utworzyć obiekt do zapisu danych do naszego pliku. W końcu zapisujemy naszą wiadomość i zamykamy plik. Dzięki użyciu `with-open`, plik zostanie automatycznie usunięty po zakończeniu tego bloku kodu.
-
-Warto również pamiętać, że można używać różnych funkcji z modułu `clojure.java.io` do operacji na plikach, takich jak czytanie lub usuwanie.
+W powyższym przykładzie tworzymy plik tymczasowy o nazwie "temp12345.txt". Jest on automatycznie usuwany po wyjściu z bloku `with-open`. Ponadto, możemy wewnątrz bloku wykonać dowolne operacje na pliku, np. jego zapis lub odczyt danych.
 
 ## Dogłębna analiza
 
-Tworzenie pliku tymczasowego jest zdecydowanie prostszym i bezpieczniejszym sposobem na tymczasowe zapisywanie danych niż ręczne tworzenie i usuwanie plików. Ponadto funkcje z modułu `clojure.java.io` są zgodne z interfejsem Javy, więc możemy używać ich w połączeniu z innymi językami programowania.
+Funkcja `java.io.File/createTempFile` przyjmuje dwa argumenty: prefiks i sufiks dla nazwy tymczasowego pliku. Jest również dostępna opcjonalna trzecia wartość, która może określić katalog, w którym ma zostać utworzony plik tymczasowy. Domyślnie plik jest tworzony w katalogu systemowym przeznaczonym na tymczasowe pliki.
 
-Jednak warto pamiętać, że plik tymczasowy jest traktowany przez system operacyjny jako normalny plik, więc może wystąpić konflikt nazw, jeśli użyjemy tej samej nazwy kilka razy w różnych częściach naszego kodu. Dlatego dobrą praktyką jest generowanie różnych i unikalnych nazw dla plików tymczasowych.
+Funkcja `with-open` jest szczególnie przydatna, ponieważ dba o zamknięcie pliku po zakończeniu wykonywania bloku kodu. Dzięki temu nie musimy martwić się o ręczne zamknięcie pliku.
 
-## Zobacz również
+## Zobacz także
 
-- [Dokumentacja funkcji with-open w Clojure](https://clojuredocs.org/clojure.java.io/with-open)
-- [Sekcja Java Interop w praktyce w oficjalnym tutorialu Clojure](https://clojure.org/guides/interop_in_depth)
-- [Tutorial na temat operacji na plikach w Clojure](https://yobriefca.se/blog/2014/07/15/file-handling-reading-writing-and-appending-with-clojure/)
+- Dokumentacja funkcji `java.io.File/createTempFile`: https://clojuredocs.org/clojure.java.io/file/createTempFile
+- Dokumentacja funkcji `with-open`: https://clojuredocs.org/clojure.core/with-open

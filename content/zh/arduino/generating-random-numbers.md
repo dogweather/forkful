@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 生成随机数"
+title:                "生成随机数"
+html_title:           "Arduino: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为何要使用Arduino生成随机数
+# 为什么
 
-在编写Arduino程序时，我们经常会遇到需要生成随机数的情况。随机数可以帮助我们创建更多样化和有趣的程序，增加程序的互动性，让我们的项目更有趣。因此，学习如何使用Arduino生成随机数是非常有用的。
+在编程中，随机数的生成非常有用。随机数可以帮助我们在游戏中创建不同的关卡，或者在实验中模拟不同的情况。使用Arduino编程，我们可以轻松地生成随机数，使我们的项目变得更加有趣和多样化。
 
-## 如何使用Arduino生成随机数
+# 如何
 
-在Arduino编程中，我们可以使用`random()`函数来生成随机数。这个函数能够产生从0到指定范围内的随机数，我们只需要在括号内输入范围的最小值和最大值即可。例如，如果我们想要产生从1到10之间的随机数，我们可以这样写：
+使用Arduino生成随机数非常简单。只需在代码中使用 "random(min, max)" 函数，其中min是最小值，max是最大值。让我们来创建一个简单的示例，生成一个1-10之间的随机数。
 
 ```Arduino
-int randomNumber = random(1, 11); // 定义一个变量来存储随机数
-Serial.println(randomNumber); // 打印随机数到串口监视器
+int randomNumber = random(1, 10);
+Serial.println(randomNumber);
 ```
 
-这样，每次我们运行程序，都会得到一个1到10之间的随机数。
+这将在串行监视器中打印出一个随机的整数，例如：5，8，2等等。每次运行代码，都会生成一个新的随机数。
 
-## 深入了解随机数生成
+# 深入了解
 
-在电子设备中，实现真正的随机数是一件非常困难的事情。因此，Arduino使用了伪随机数生成器（PRNG）来产生随机数。PRNG其实是一个算法，它通过一个种子（seed）值来计算下一个随机数，而种子值是我们所指定的范围。因此，当我们每次运行程序时，都会得到相同的随机数序列。
+在编程中，我们常常需要生成真正随机的数字，这样我们的程序才能更加真实和多样化。在Arduino中，我们可以使用 "randomSeed()" 函数来设置随机数种子，从而生成更真实的随机数。
 
-为了让随机数看起来更加随机，我们可以使用一个不断变化的种子值。Arduino中的`randomSeed()`函数可以实现这个功能。它通常使用`analogRead()`函数读取模拟引脚上的电压值来作为种子值，因为模拟引脚上的电压值每次都会变化。
+```Arduino
+randomSeed(analogRead(A0));  // 使用A0引脚上的模拟值作为种子
+int randomNum = random(1, 10);  // 生成一个1-10之间的随机数
+Serial.println(randomNum);
+```
 
-## 参考阅读
+此外，我们还可以使用 "random(0, n)" 函数来生成一个从0到n-1的随机整数。这可以用于循环中生成随机的索引值，从而创建随机的事件。
 
-- Arduino官方文档：https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
-- PRNG知识介绍：https://en.wikipedia.org/wiki/Pseudorandom_number_generator
-- `analogRead()`函数介绍：https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
+# 参考资料
+
+如果想要了解更多关于Arduino中随机数的信息，可以参考以下资源：
+
+- [Arduino随机数函数文档](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [随机数生成器的原理](http://www.instructables.com/id/Introduction-on-How-to-Use-Arduino-Random-Number-/)
+- [使用Arduino创建随机游戏](http://www.buildcircuit.com/how-to-create-a-random-number-generator/)
+
+# 查看更多
+
+- [Markdown语法指南](https://www.markdownguide.org/basic-syntax/)
+- [Arduino中文官方网站](https://www.arduino.cn/)
+- [GitHub上的Arduino代码示例库](https://github.com/arduino/Arduino/blob/master/build/shared/examples/02.Digital/random/Random.ino)

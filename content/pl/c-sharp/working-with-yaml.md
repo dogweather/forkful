@@ -1,5 +1,6 @@
 ---
-title:                "C#: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "C#: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "C#"
 category:             "C#"
@@ -9,83 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Dlaczego ktoś powinien zainteresować się pracą z YAML? Jest to aktualnie jedna z najpopularniejszych form formatowania tekstu, która jest wykorzystywana w wielu językach programowania, w tym również w C#. Ponadto jest to bardzo prosty i czytelny sposób na przechowywanie danych, co pozwala na łatwą komunikację między różnymi systemami.
+Jeśli jesteś programistą w języku C# i często pracujesz z konfiguracją aplikacji, to z pewnością zetknąłeś się z plikami YAML. YAML jest formatem danych, który jest coraz bardziej popularny w świecie programowania, ponieważ jest czytelny dla ludzi i łatwy do przetwarzania przez komputery. To dlatego warto poznać go bliżej i wykorzystywać w swoich projektach.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-### Tworzenie pliku YAML
+Aby pracować z YAML w języku C#, musimy najpierw zainstalować odpowiednią bibliotekę. Możemy to zrobić poprzez menedżera pakietów NuGet lub ręcznie dodać referencję do projektu.
 
-Pierwszym krokiem jest utworzenie pliku YAML w Twoim projekcie C#. W tym celu wystarczy kliknąć prawym przyciskiem myszy na nazwę projektu w Visual Studio, wybrać opcję "Dodaj" i następnie "Nowy element". Wybierz "Plik YAML" i nadaj mu odpowiednią nazwę.
-
-### Struktura pliku YAML
-
-Plik YAML składa się z kluczy i wartości, które są od siebie oddzielone dwukropkiem. Przykładowa struktura może wyglądać tak:
+Następnie, aby zacząć parsować pliki YAML, musimy utworzyć instancję obiektu `YamlDotNet.Core.YamlStream`. Przyjmie on jako argument strumień pliku lub ciąg znaków zawierający dane YAML.
 
 ```C#
-klucz: wartość
-inna_klucz: inna_wartość
+var input = @"
+ - name: John
+   age: 25
+ - name: Emily
+   age: 30
+";
+var stream = new YamlStream();
+stream.Load(new StringReader(input));
 ```
 
-### Wczytywanie pliku YAML
-
-Aby wczytać dane znajdujące się w pliku YAML, należy skorzystać z odpowiedniej biblioteki, na przykład yaml-dotnet. W poniższym przykładzie wczytujemy dane i wyświetlamy je na konsoli:
+Teraz możemy uzyskać dostęp do danych z pliku YAML. Na przykład, jeśli chcemy pobrać imię i wiek pierwszej osoby z listy, możemy to zrobić w następujący sposób:
 
 ```C#
-using System;
-using YamlDotNet.Serialization;
- 
-public class Program 
-{
-    public static void Main() 
-    {
-        var input = @"
-            jedzenie:
-              - pizza
-              - hamburgery
-              - sushi
-            napoje:
-              - cola
-              - woda
-              - sok pomarańczowy
-        ";
- 
-        Deserializer deserializer = new DeserializerBuilder().Build();
-        var menu = deserializer.Deserialize<Dictionary<string, List<string>>>(input);
- 
-        foreach (var category in menu) 
-        {
-            Console.WriteLine(category.Key + ": ");
-            foreach (var item in category.Value) 
-            {
-                Console.WriteLine(" " + item);
-            }
-        }
-    }
-}
+var name = (string) stream.Documents[0].RootNode["name"];
+var age = (int) stream.Documents[0].RootNode["age"];
 ```
 
-### Wynik
+Podobnie, możemy również tworzyć pliki YAML poprzez tworzenie obiektów `YamlMappingNode` i `YamlScalarNode`. Na przykład, aby stworzyć prosty plik YAML, możemy użyć kodu:
 
-```
-jedzenie:
-  pizza
-  hamburgery
-  sushi
-napoje:
-  cola
-  woda
-  sok pomarańczowy
+```C#
+var mapping = new YamlMappingNode();
+mapping.Add("name", "Mark");
+mapping.Add("age", 35);
+
+var output = new YamlStream(mapping);
 ```
 
-## Deep Dive
+Kod ten utworzy następujący plik YAML:
 
-Istnieje wiele różnych sposobów na pracę z YAML w C#, w tym modyfikowanie i zapisywanie danych oraz tworzenie własnych obiektów. Warto również zwrócić uwagę na narzędzia, takie jak Visual Studio Code czy YAML Lint, które ułatwiają pracę z tym formatem. Pamiętaj również o aktualizowaniu bibliotek zależnych, aby uniknąć błędów i utrzymać kompatybilność z najnowszymi wersjami YAML.
+```yaml
+name: Mark
+age: 35
+```
+
+## Głębsze zagadnienia
+
+Istnieje wiele innych możliwości pracy z YAML w języku C#, takich jak możliwość walidacji danych, obsługa kolekcji i niestandardowych typów czy także serializacja obiektów do formatu YAML. Aby dowiedzieć się więcej, polecam zapoznać się z dokumentacją biblioteki YamlDotNet lub szukać tutoriali i przykładów w internecie.
 
 ## Zobacz też
 
-- [Dokumentacja YAML](https://yaml.org/spec/)
-- [yaml-dotnet](https://github.com/aaubry/YamlDotNet)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [YAML Lint](https://www.yamllint.com/)
+- [Oficjalna dokumentacja YamlDotNet](https://github.com/aaubry/YamlDotNet/wiki)
+- [Przykładowy projekt wykorzystujący YAML w C#](https://github.com/markrogersjr/Yaml-Example)

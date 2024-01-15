@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z formatem json"
+html_title:           "Clojure: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,53 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-JSON (JavaScript Object Notation) jest jednym z najpopularniejszych formatów danych w dzisiejszym świecie programowania. Jest to popularna metoda przechowywania i przesyłania danych, szczególnie w aplikacjach internetowych. Praca z JSON jest nieodłączną częścią wielu projektów, dlatego warto poznać podstawy tego formatu danych.
+JSON (JavaScript Object Notation) jest powszechnie wykorzystywanym formatem do przesyłania danych w aplikacjach internetowych. Dla osób pracujących z programowaniem w Clojure, umiejętność manipulowania danymi JSON jest niezbędna do efektywnej pracy z API i interfejsami użytkownika.
 
-## Jak
-
-```Clojure
-; Tworzenie prostego JSON obiektu
-(def moj-json {:imie "Kasia"
-               :wiek 27
-               :zainteresowania ["programowanie" "podroze" "gotowanie"]})
-
-; Konwersja do formatu tekstowego
-(clojure.data.json/write-str moj-json)
-
-; Wyjście:
-; {"imie":"Kasia","wiek":27,"zainteresowania":["programowanie","podroze","gotowanie"]}
-```
+## Jak to zrobić
 
 ```Clojure
-; Wczytywanie JSON z zewnętrznego pliku
-(require '[cheshire.core :as json])
-(def dane-json (json/parse-string (slurp "moj-plik.json" :encoding "UTF-8")))
+;; Tworzenie pustego obiektu JSON
+(def empty-json (json/write-str {}))
 
-; Pobieranie wartości z obiektu
-(println (get-in dane-json [:dane :produkt :cena]))
+;; Tworzenie obiektu JSON z danymi
+(def user-json (json/write-str {:name "John" :age 30}))
 
-; Wyjście:
-; 49.99
+;; Przerabianie danych JSON na postać Clojure
+(json/read-str user-json)
+
+;; Odczytywanie wartości z obiektu JSON
+(def user-name (-> user-json json/parse-keyword :name))
+(def user-age (-> user-json json/parse-keyword :age))
+
+;; Przykładowe użycie z funkcją API
+(def endpoint "https://example.com/api/users")
+(def users-response (http/get endpoint)) ;; zwraca odpowiedź w formacie JSON
+(json/read-str (:body users-response)) ;; przetwarza JSON na postać Clojure
 ```
+**Wyjście:**
 
 ```Clojure
-; Modyfikacja istniejącego JSON obiektu
-(defn dodaj-kategorie [dane kategorie]
-  (update-in dane [:produkty] #(conj % :kategorie kategorie)))
-
-(def moj-nowy-json (dodaj-kategorie dane-json ["elektronika" "gry komputerowe"]))
-(println (get-in moj-nowy-json [:produkty 2 :kategorie]))
-
-; Wyjście:
-; ["muzyka" "elektronika" "gry komputerowe"]
+"{}" ;; empty-json
+"{\"name\":\"John\",\"age\":\"30\"}" ;; user-json
+{:name "John", :age "30"} ;; dane przetworzone do postaci Clojure
+;; wyjście z funkcji API w formacie JSON
+"{\"users\":[{\"id\":1,\"name\":\"John\"},{\"id\":2,\"name\":\"Anna\"},{\"id\":3,\"name\":\"Mike\"}]}"
 ```
 
-## Deep Dive
+## Głębsze zagadnienia
 
-Pojęcie JSON pojawiło się w latach 90. XX wieku jako alternatywny format dla XML. Jest to prosty, lekki i czytelny format, który jest łatwy do zrozumienia przez ludzi, jak i przez komputery. Struktura JSON’a składa się z par klucz-wartość, gdzie wartości mogą być liczbami, tekstami, tablicami lub innymi obiektami JSON. Praca z tym formatem jest podobna do pracy z mapami w Clojure, co sprawia, że jest to jedna z najłatwiejszych rzeczy w języku.
+Ponieważ JSON jest często wykorzystywanym formatem w programowaniu w języku Clojure, istnieje wiele bibliotek i narzędzi do jego obsługi. Jednym z najpopularniejszych jest biblioteka `data.json` zawarta w standardowej bibliotece Clojure. Pozwala ona na konwersję między danymi Clojure a JSON, a także na wykonywanie zaawansowanych operacji na danych, takich jak filtrowanie, sortowanie czy grupowanie.
+
+W przypadku bardziej zaawansowanych zastosowań, warto również zapoznać się z bibliotekami `cheshire` oraz `jsonista`, które oferują wydajniejsze funkcje przetwarzania danych JSON.
 
 ## Zobacz również
 
-- [Clojure Cookbook - JSON](https://clojure.org/api/cheatsheet)
-- [Clojure Data JSON](https://github.com/clojure/data.json)
-- [A Beginners Guide to JSON](https://www.digitalocean.com/community/tutorials/a-beginner-s-guide-to-json)
+- Oficjalna dokumentacja biblioteki `data.json`: https://clojure.github.io/data.json/
+- Dokumentacja biblioteki `cheshire`: https://github.com/dakrone/cheshire
+- Dokumentacja biblioteki `jsonista`: https://github.com/metosin/jsonista

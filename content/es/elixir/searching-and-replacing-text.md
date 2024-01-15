@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Búsqueda y reemplazo de texto"
-simple_title:         "Búsqueda y reemplazo de texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "Elixir: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué buscar y reemplazar es útil
 
-¿Alguna vez has necesitado realizar cambios en grandes cantidades de texto? ¿Te imaginas tener que hacerlo manualmente? ¡Eso sería una tarea tediosa y extremadamente demorada! Afortunadamente, en Elixir contamos con una función para buscar y reemplazar texto de manera eficiente. En esta publicación, aprenderemos cómo usarla para ahorrar tiempo y esfuerzo en nuestras tareas de programación.
+Buscar y reemplazar texto es una tarea común en la programación, especialmente cuando se trabaja en proyectos más grandes. Esta función permite a los programadores realizar cambios rápidos y eficientes en su código, ahorrando tiempo y evitando errores manuales.
 
-## Cómo hacerlo
+## Cómo hacerlo en Elixir
 
-Para utilizar la función de búsqueda y reemplazo en Elixir, primero debemos importar el módulo `String` en nuestro código. Luego, podemos llamar a la función `replace/3` indicando el texto que queremos modificar, la cadena que queremos buscar y la cadena con la que queremos reemplazarla. Por ejemplo:
-
-```Elixir
-String.replace("Hola, mundo", "mundo", "amigos")
-
-# Salida: "Hola, amigos"
+```elixir
+string = "Hola, Bienvenido a Elixir"
 ```
 
-También podemos usar expresiones regulares para realizar búsquedas más complejas. Por ejemplo, podemos reemplazar todas las vocales de una palabra con una "x" utilizando una expresión regular:
+Para buscar y reemplazar en Elixir, se utiliza la función `String.replace`. Esta función toma tres argumentos: la cadena en la que se realizará el reemplazo, la cadena que se busca y la cadena que se utilizará para el reemplazo. Por ejemplo, si queremos cambiar "Hola" por "Hola a todos", podemos escribir:
 
-```Elixir
-String.replace("Elixir", ~r/[aeiou]/, "x")
-
-# Salida: "Exlxrx"
+```elixir
+string = String.replace(string, "Hola", "Hola a todos")
 ```
 
-Incluso podemos usar una función de reemplazo en lugar de una cadena estática, lo que nos permite realizar cambios dinámicos en nuestro texto. Por ejemplo, podemos convertir todas las letras a mayúsculas:
+Esto modificará la variable `string` para que ahora tenga el valor "Hola a todos, Bienvenido a Elixir". También se pueden realizar búsquedas y reemplazos con expresiones regulares utilizando la función `Regex.replace`.
 
-```Elixir
-String.replace("hola", ~r/[a-z]/, &String.upcase(&1))
+Para realizar cambios en un archivo, se puede utilizar la librería `File`. Por ejemplo, si queremos reemplazar todas las instancias de "Hola" en un archivo con "Hola a todos", podemos usar:
 
-# Salida: "HOLA"
+```elixir
+file = File.read("archivo.txt")
+new_file = String.replace(file, "Hola", "Hola a todos")
+File.write("archivo.txt", new_file)
 ```
 
-## Profundizando
+## Profundizando en la búsqueda y reemplazo
 
-Además de la función `replace/3`, Elixir también nos ofrece otras opciones para realizar búsquedas y reemplazos de texto. Por ejemplo, la función `replace/4` nos permite especificar cuántas ocurrencias de la cadena queremos reemplazar.
+La función `String.replace` utiliza internamente la función `String.replace_at`. Esto significa que no sólo se pueden reemplazar cadenas, sino también caracteres individuales en una cadena.
 
-También podemos utilizar la función `replace_first/3` para reemplazar solo la primera ocurrencia de una cadena en lugar de todas. Y si necesitamos una opción más avanzada, la función `replace/5` nos permite especificar un patrón de búsqueda y un bloque de código que se ejecutará para cada ocurrencia encontrada.
+Además, Elixir ofrece la función `String.replace_leading`, que se utiliza para reemplazar solamente la primera aparición de la cadena buscada. También existen las funciones `String.replace_last` y `String.replace_all` para reemplazar la última aparición y todas las apariciones, respectivamente.
+
+Otra característica interesante es que tanto la cadena buscada como la cadena de reemplazo pueden ser de cualquier tipo en Elixir, no sólo cadenas. Esto significa que se pueden buscar y reemplazar no sólo texto, sino también otras estructuras de datos.
 
 ## Ver también
 
-- Documentación oficial de Elixir sobre funciones de reemplazo de texto: https://hexdocs.pm/elixir/String.html#replace/3
-- Tutorial de Elixir sobre expresiones regulares: https://elixirschool.com/es/lessons/basics/pattern-matching/
-- Ejemplos prácticos en línea de búsquedas y reemplazos en Elixir: https://kodestat.gitlab.io/post/054-string-replacement-in-elixir/
+- Documentación de String en Elixir: https://hexdocs.pm/elixir/String.html
+- Tutorial de Elixir: https://elixir-lang.org/getting-started/introduction.html

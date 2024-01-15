@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Elm: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,42 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML
+## Por que usar YAML no Elm?
 
-Se você é um programador em busca de uma linguagem de marcação simples e flexível, o YAML pode ser a escolha perfeita. Com sua sintaxe simples e facilidade de leitura, o YAML é ideal para tarefas como configuração de aplicativos e estruturação de dados.
+Você está cansado de trabalhar com arquivos de configuração complexos e difíceis de entender? Então o YAML pode ser a solução perfeita para você! Com sua sintaxe simples e legível, ele é uma ótima opção para gerenciar dados estruturados em projetos Elm.
 
-## Como começar a usar o YAML em Elm
+## Como utilizar YAML no Elm
 
-Para começar a utilizar o YAML em seus projetos Elm, você precisará primeiro importar o pacote `mortonsc / elm-yaml` em seu código. Em seguida, você pode começar a criar seus dados YAML usando a função `encode` e então decodificá-los usando a função `decode`.
+Para começar, vamos importar o pacote YAML no seu projeto Elm:
 
-Vamos dar uma olhada em um exemplo simples de como criar e decodificar um arquivo YAML em Elm:
-
-```
-import Yaml
-
--- Criando os dados YAML
-yamlData = Yaml.encode
-    { "nome": "Sarah",
-      "idade": 28,
-      "hobbies": ["programar", "ler", "viajar"]
-    }
-
--- Decodificando os dados YAML
-decodedData = Yaml.decode yamlData
+```Elm
+import YAML
 ```
 
-O resultado da função `decode` será um conjunto de dados que podem ser facilmente manipulados em sua aplicação.
+Em seguida, podemos usar a função `parse` para transformar um arquivo YAML em uma estrutura de dados Elm:
 
-## Mergulhando mais fundo no YAML
+```Elm
+fileContent : String
+fileContent =
+  """
+  nome: João
+  idade: 25
+  profissão: Desenvolvedor
+  """
 
-Ao trabalhar com YAML em Elm, é importante entender que ele é baseado em uma estrutura de chave-valor, semelhante ao JSON. No exemplo acima, "nome", "idade" e "hobbies" são as chaves e seus respectivos valores são "Sarah", 28 e ["programar", "ler", "viajar"].
+parsedData : Result YAML.Error (YAML.Value)
+parsedData =
+  YAML.parse fileContent
 
-Além disso, o YAML permite a utilização de listas e objetos aninhados, o que o torna ainda mais versátil para estruturar dados.
+case parsedData of
+  Ok (YAML.Object obj) ->
+    -- Faça algo com os dados do objeto aqui
+  Err err ->
+    -- Trate o erro aqui
+```
 
-Outro aspecto importante a ser considerado é que o YAML é sensível à indentação, o que significa que a estrutura dos dados deve ser corretamente indentada para que possa ser decodificada corretamente.
+Podemos acessar os valores do objeto de forma semelhante a um dicionário em Elm:
+
+```Elm
+case parsedData of
+  Ok (YAML.Object obj) ->
+    case Dict.get "nome" obj of
+      Just nome ->
+        -- Faça algo com o valor do nome
+      Nothing ->
+        -- Trate o caso em que o nome não foi encontrado
+  Err err ->
+    -- Trate o erro aqui
+```
+
+## Mergulhando mais fundo
+
+Além da função `parse`, o pacote YAML também oferece outras funcionalidades úteis, como a função `encode` para transformar uma estrutura de dados Elm em YAML e as funções `merge` e `mergeDeep` para mesclar diferentes objetos YAML.
+
+Também é possível definir tipos personalizados em YAML e convertê-los em tipos de dados Elm usando o decodificador de JSON. Isso permite que você utilize YAML para configurar a estrutura do seu aplicativo de forma mais flexível.
+
+Não deixe de conferir a documentação completa do pacote para saber mais sobre todas as suas funcionalidades e possibilidades de uso.
 
 ## Veja também
 
-- [Documentação oficial do pacote Elm-YAML](https://package.elm-lang.org/packages/mortonsc/elm-yaml/latest/)
-- [Exemplo de uso do YAML em Elm](https://github.com/mortonsc/elm-yaml/blob/master/demo/src/Main.elm)
-- [Tutorial de YAML para iniciantes (em inglês)](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+- [Pacote YAML para Elm](https://package.elm-lang.org/packages/elm-explorations/yaml/latest/)
+- [Sintaxe YAML](https://www.yaml.info/spec/)
+- [Documentação oficial de Elm](https://guide.elm-lang.org/)

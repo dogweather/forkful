@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Haskell: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,47 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
+文字を削除するパターンにマッチする文字を削除することに注意を払う理由は何ですか？
 
-あるパターンに一致する文字を削除することについて考える方がいると思います。それは、文字列から特定の文字を除外したい場合や、文字列から特定のパターンを除外したい場合に役立ちます。
+文字を削除する必要がある特定の状況があるかもしれません。たとえば、入力データから特定の文字を排除したい場合などです。または、テキストから特定のパターンを削除したい場合もあります。
 
-# 方法
+## 方法
+Haskellを使用して、指定したパターンにマッチする文字を削除する方法を説明します。
 
-まず、「Data.Text」というHaskellのモジュールを読み込む必要があります。次に、文字列の変数を作成し、`deleteAll`関数を使用して、削除したい文字のパターンを指定します。
-
-```Haskell
-import Data.Text (Text)
-import qualified Data.Text as T
-
-myString :: Text
-myString = "こんにちは、世界"
-
-deleteAll :: Char -> Text -> Text
-deleteAll char = T.filter (/= char)
-
-deleteAll 'ん' myString -- "こんにちは、世界"
 ```
-上記の例では、文字列`"こんにちは、世界"`から文字`'ん'`を削除しました。同じ方法で、さまざまなパターンの文字を削除することができます。
+import Data.List
 
-また、`deleteAll`関数を`Data.List`モジュールを使って以下のように定義することもできます。
-
-```Haskell
-import Data.List (delete)
-
-deleteAll :: Eq a => a -> [a] -> [a]
-deleteAll = delete
+deleteMatching :: String -> String
+deleteMatching str = delete 'a' str
 ```
 
-どちらの定義方法でも、同じ結果が得られます。
+上記の例では、`delete`関数を使用して文字列から`a`の文字を削除しています。
 
-# 深堀り
+サンプル入力： `"Haskell is awesome!"`
 
-上記の例では、文字列を操作するために`Data.Text`と`Data.List`を使用しました。`Data.Text`は、`String`と比べてより効率的な文字列の表現を提供します。`Data.List`は、リストを操作するための便利な関数をたくさん提供しています。
+サンプル出力： `"Hskell is wesome!"`
 
-また、`deleteAll`関数を定義する際に使用した高階関数`(=)`は、プレディケートを引数にとり、与えられた引数と等しいものをフィルタリングする関数です。このように、Haskellでは高階関数を積極的に用いることができます。
+## ディープダイブ
+Haskellでは、リストや文字列を操作するための多くの便利な関数が用意されています。その中の1つが`delete`関数です。この関数は、指定した要素をリストから削除することができます。`delete`関数は、文字列にも使用することができ、指定した文字を文字列から削除することができます。また、文字列の代わりにリストを使用することもできます。
 
-# 関連記事
+Haskellの強力なパターンマッチング機能を使えば、より特定のパターンにマッチする文字を削除することが可能です。パターンマッチングについては、別の記事で詳しく説明しています。
 
-- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Real World Haskell](http://book.realworldhaskell.org/read/)
+## See Also
+- [Haskellのパターンマッチングについて](https://example.com/pattern-matching-haskell)
+- [Haskellのリスト操作関数一覧](https://example.com/list-functions-haskell)
+- [Haskellの文字列操作関数一覧](https://example.com/string-functions-haskell)

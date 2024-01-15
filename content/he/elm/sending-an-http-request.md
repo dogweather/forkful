@@ -1,6 +1,7 @@
 ---
-title:                "Elm: ישליטת שאילתת http"
-simple_title:         "ישליטת שאילתת http"
+title:                "שליחת בקשת http"
+html_title:           "Elm: שליחת בקשת http"
+simple_title:         "שליחת בקשת http"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-רק טורים אחד-שניים המסבירים מדוע מישהו ירצה לשלוח בקשת HTTP.
+##Why
 
-השליחה של בקשת HTTP היא כלי מאוד חשוב בתכנות של Elm. בדרך כלל, בקשת HTTP משמשת לקבלת מידע משרת אחר או לשליחת מידע לשרת. זה מאפשר לאפליקציות לשתף מידע עם מקורות חיצוניים ולקבל תגובות מהירות.
+כדי לקבל נתונים מאתר או שירות חיצוני, יש לבצע בקשה (HTTP request) בקוד. זה יכול לאפשר טעינת תוכן דינמי בדף אינטרנט או יישומון וכן לאפשר תקשורת בין שתי אתרים.
 
-## איך לעשות
-תחת כותרת זו אנחנו נספק דוגמאות קוד ופלט מוכן כדי להראות כיצד לשלוח בקשת HTTP ב- Elm.
+##How To
 
-```Elm
-type Msg
-    = HttpSuccess (List User)
-    | HttpFail (Result Http.Error String)
+כדי לבצע בקשה HTTP ב-Elm, ניתן להשתמש בתפקיד Http.send. כדי להשתמש בו, נצטרך לייבא את המודול Http ולהגדיר פונקציה שתחזיר את הבקשה ולשלוח אותה עם תיבת חיפוש. לדוגמה:
 
-type alias User =
-    { id : Int
-    , name : String
-    }
+```elm
+...
+import Http
+...
 
-fetchUsers : Cmd Msg
-fetchUsers =
-    Http.send HttpSuccess (Http.get "https://example.com/users" decodeUsers)
-
-decodeUsers : Decoder (List User)
-decodeUsers =
-    list userDecoder
-
-userDecoder : Decoder User
-userDecoder =
-    map2 User
-        (field "id" int)
-        (field "name" string)
+getUser : String -> Cmd msg
+getUser username =
+  Http.send {
+    method = "GET",
+    headers = [],
+    body = Http.emptyBody,
+    url = "https://example.com/users/" ++ username
+  }
 ```
 
-בדוגמה זו, אנחנו משתמשים בסוג Msg כדי להפעיל את פקודת לקבלת בקשה HTTP ולהעביר את התוצאה לתגובת ה- User המוצפנת. אנחנו משתמשים גם במנגנון פעולות באמצעות הפקודה Http.send כדי לשלוח את הבקשה ולקבל את התוצאה המתאימה.
+כאשר הפונקציה תופעל, היא תשלח בקשה GET לכתובת האתר המתאימה ותחזיר את התוצאות בתור Cmd כדי שנוכל לעבוד איתן.
 
-## חקירה מעמיקה
-כאן אנחנו נכנסים לפרטים העמוקים יותר של שליחת בקשת HTTP ב- Elm. מדוע זה כל כך חשוב וכיצד זה יכול להיות מועיל למתכנתים?
+##Deep Dive
 
-המרבית של הפעמים, כאשר אנחנו מפעילים אפליקציות, אנחנו נדרשים לשתף מידע עם מקורות חיצוניים כגון שרתי API ו-"web services". השימוש בשליחת בקשת HTTP מאפשר לנו לקבל גישה למידע הגולמי ממצבים אלה ולהנות ממהירות ויעילות.
+בנוסף לאפשרות לבצע בקשות מסוג GET, ניתן גם לבצע בקשות מסוגים אחרים כדוגמת POST, PUT ו-DELETE. בנוסף, ניתן להוסיף כותרות, גוף ופרמטרים לבקשה בצורה דינמית בכדי לשלוט יותר על התהליך.
 
-בנוסף, שליחת בקשת HTTP מאפשרת לנו לשלוח מידע לשרתים חיצוניים, כגון שליחת טופ
+##See Also
+
+למידע נוסף על שליחת בקשות HTTP ב-Elm, ניתן לעיין במסמכים הבאים:
+
+- Http.send: https://package.elm-lang.org/packages/elm/http/latest/Http#send
+- עוד על שליחת בקשות HTTP ב-Elm: https://guide.elm-lang.org/effects/http.html

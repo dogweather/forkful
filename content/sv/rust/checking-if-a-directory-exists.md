@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Rust: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,49 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en mapp finns är en viktig del av att skriva effektiv kod i Rust. Genom att koda på ett sätt som gör att du kan hantera fall där en mapp inte finns, kan du förbättra användarupplevelsen och förhindra oönskade buggar i din programvara.
+Att kolla om en mapp existerar kan vara användbart i många situationer, till exempel för att undvika att dubbelkolla om en mapp redan finns innan du skapar den, eller för att verifiera att en angiven mapp verkligen existerar innan du försöker använda den.
 
-## Hur man gör det
+## Så här gör du
+Kontrollera om en mapp existerar i Rust är enkelt och kräver bara några få rader kod. Här är ett exempel:
 
-För att kontrollera om en mapp finns i Rust, behöver du importera "std::fs" biblioteket och använda funktionen "metadata" för att hämta metadata om en fil eller mapp. Därifrån kan du använda "is_dir" funktionen för att avgöra om det är en mapp eller inte. Nedan finns ett exempel på hur det skulle se ut i kod:
-
-```Rust
+```rust
 use std::fs;
 
-let path = Path::new("mappen/som/vi/testar");
+let dir_name = "min_mapp";
 
-let metadata = fs::metadata(path).expect("Kan inte hämta metadata");
-
-if metadata.is_dir() {
+if fs::metadata(dir_name).is_ok() {
     println!("Mappen finns!");
 } else {
-    println!("Mappen finns inte!");
+    println!("Mappen finns inte.");
 }
 ```
 
-I exemplet ovan använder vi "expect" funktionen för att hantera eventuella fel som kan uppstå när vi försöker hämta metadata för en mapp. Det är viktigt att hantera detta på ett korrekt sätt för att undvika att programmet kraschar om en mapp inte finns.
+Om mappen "min_mapp" faktiskt existerar i det aktuella systemet, kommer du att se "Mappen finns!" som utskrift. Annars kommer du att se "Mappen finns inte.".
 
-## Djupdykning
+Det här är bara en grundläggande kontroll, men det finns flera andra sätt att kontrollera om en mapp existerar i Rust beroende på ditt specifika behov.
 
-När du använder "expect" funktionen i ovanstående kod, använder vi en panik för att hantera eventuella fel. Detta kan dock orsaka problem om du vill implementera en mer sofistikerad felhantering. Istället kan du använda "match" uttrycket för att hantera olika returvärden från "fs::metadata" funktionen. Här är ett exempel på hur det skulle se ut:
+## Gräva djupare
+I exemplet ovan använde vi funktionen `metadata()` från standardbiblioteket för att kontrollera om en mapp existerar. Detta returnerar en `Result` som antingen är `Ok` om mappen finns, eller `Err` om den inte finns.
 
-```Rust
-match fs::metadata(path) {
-    Ok(metadata)  => {
-        if metadata.is_dir() {
-            println!("Mappen finns!");
-        } else {
-            println!("Mappen finns inte!");
-        }
-    },
-    Err(e) => println!("Ett fel inträffade: {}", e),
-}
-```
+En annan funktion som kan vara användbar för att kontrollera mappar är `exists()`, som returnerar ett `bool` direkt istället för ett `Result`. Det finns även möjlighet att använda `PathBuf` och `Path` för att skapa och manipulera sökvägar till mappar.
 
-Genom att använda detta sätt att hantera fel kan du definiera åtgärder för olika situationer, istället för att bara använda en generell "panik" meddelande. Detta ger dig mer kontroll över din kod och kan hjälpa dig att hantera edge cases på ett bättre sätt.
+Det finns också flera externa bibliotek som är inriktade på filsystemshantering som kan vara värdefulla att utforska.
 
-## Se också
+## Se även
 
-- [Rust dokumentation för "fs" biblioteket](https://doc.rust-lang.org/std/fs/index.html)
-- [Tutorial för att hantera fel i Rust](https://www.youtube.com/watch?v=TB_9Va3jYOI)
-- [Bästa praxis för att hantera filer och mappar i Rust](https://dev.to/qnighy/managing-files-and-directories-with-rust-3ad4)
+* [Dokumentation för std::fs-modulen](https://doc.rust-lang.org/std/fs/index.html)
+* [Dokumentation för PathBuf och Path](https://doc.rust-lang.org/std/path/)
+* [rust-fs-extra biblioteket](https://github.com/webdesus/rust-fs-extra)

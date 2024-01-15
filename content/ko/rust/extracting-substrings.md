@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 부분 문자열 추출하기"
+title:                "부분 문자열 추출하기"
+html_title:           "Rust: 부분 문자열 추출하기"
 simple_title:         "부분 문자열 추출하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,33 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-때로는 문자열에서 일부분만을 추출해야 할 때가 있습니다. 이를 위해 Rust의 문자열 추출 기능을 활용할 수 있습니다. 이 기능을 사용하면 더 나은 코드를 작성하고 문자열을 효율적으로 다룰 수 있습니다.
+이번에는 Rust 언어로 문자열의 일부분을 추출하는 방법에 대해 알아보도록 하겠습니다. 이 기능을 알게 되면 보다 효율적인 문자열 처리가 가능하며, 문제 해결 능력도 향상될 수 있습니다.
 
-## 사용 방법
+## 어떻게
 
-추출하려는 문자열이 있는 변수를 만들고, `substring` 함수를 사용하여 시작 위치와 길이를 지정할 수 있습니다. 이 함수는 해당 문자열의 일부분만 복사하여 새로운 문자열 객체를 반환합니다. 아래는 예시 코드와 출력 결과입니다.
+우선, `str` 변수를 생성하고 그 안에 문자열을 할당합니다. 그리고 `substring()` 메소드를 사용하여 원하는 부분 문자열을 추출할 수 있습니다.
 
-```Rust
-let word = "Rust 프로그래밍";
-let extracted = word.substring(5, 6);
-println!("{}", extracted);
+예를 들어, 다음과 같은 코드를 작성해보겠습니다.
+
+```rust
+let name = "Amy Lee"; // str 변수 생성
+let last_name = name.substring(4..); // "Lee"를 추출하여 last_name 변수에 할당
+println!("{}", last_name); // 콘솔에 "Lee" 출력
 ```
 
-```
-프
+위 코드에서 `substring()` 메소드는 첫 번째 인덱스 뒤부터 끝까지의 문자열을 추출하도록 설정하였습니다. 이처럼 시작과 끝 인덱스를 지정하여 원하는 부분 문자열을 추출할 수 있습니다.
+
+또한, 원하는 문자열을 찾기 위해 `find()` 메소드를 사용하여 해당 문자열이 시작하는 인덱스를 찾은 후 `substring()` 메소드를 통해 추출할 수도 있습니다.
+
+```rust
+let sentence = "I love Rust language";
+let love_index = sentence.find("love").unwrap(); // "love"가 시작하는 인덱스를 찾은 후 love_index 변수에 할당
+let rust = sentence.substring(love_index + 5..); // love_index 다음부터 끝까지 추출하여 rust 변수에 할당
+println!("{}", rust); // 콘솔에 "Rust language" 출력
 ```
 
-## 깊이 파고들기
+여기서 `unwrap()` 메소드는 `find()` 메소드가 찾는 문자열을 찾지 못한 경우 오류를 표시하지 않고 `None`이나 `Err`값을 반환하는 것을 방지하기 위해 사용됩니다.
 
-`substring` 함수를 사용하여 추출된 문자열은 지정된 길이 이상일 때 오류가 발생하지 않습니다. 대신, 최대 길이까지만 추출되며 나머지는 무시됩니다. 또한, 문자열의 시작 위치와 끝 위치가 각각 0 또는 음수일 때는 문자열의 오른쪽 끝부터 시작 위치를 계산합니다. 예를 들어, `substring(0, 3)`이나 `substring(-4, 3)`의 경우, 문자열의 첫 3글자를 추출하게 됩니다.
+## 깊게 파고들기
+
+위의 예시에서는 `substring()` 메소드를 사용하여 부분 문자열을 추출했지만, Rust에서는 문자열 슬라이싱(slice)을 사용하여 같은 작업을 수행할 수도 있습니다.
+
+문자열 슬라이싱은 `[]` 안에 시작과 끝 인덱스를 적어 원하는 부분 문자열을 추출하는 방식입니다. 선언한 문자열 변수 뒤에 `[]`을 붙여 인덱스를 지정하면, 해당하는 부분 문자열이 추출되게 됩니다.
+
+```rust
+let song = "Bring Me to Life";
+println!("{}", song[11..]); // 콘솔에 "Life" 출력
+```
+
+또한, `chars()` 메소드를 사용하여 각 문자를 분리해낼 수도 있으며, 이를 활용하여 특정 문자열을 제거하는 등의 작업도 가능합니다.
+
+```rust
+let sentence = "Hello, my name is Jin";
+let jin_name = sentence.chars().skip(17).collect::<String>(); // "my name is Jin" 추출
+println!("{}", jin_name); // 콘솔에 "my name is Jin" 출력
+```
 
 ## 참고 자료
 
-- [Rust 공식 문서 - 문자열 자르기](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
-- [Rust book - 텍스트 처리 - 문자열 슬라이스](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#summary)
-
-## 더 알아보기
-
-Rust 문자열 추출 기능을 사용하는 방법에 대해 더 자세히 알아보고 싶다면, 위의 참고 자료를 확인해 보세요. 또한, Rust의 다른 문자열 관련 메소드에 대해서도 학습할 수 있습니다.
+- [Rust언어 공식 홈페이지](https://www.rust-lang.org/ko/)
+- [Rust언어 한국 커뮤니티](https://www.rustlang.kr/)
+- [Rust언어 공식 도큐먼트](https://doc.rust-lang.org/std/string/struct.String.html)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: तारीख को एक स्ट्रिंग में बदलना"
-simple_title:         "तारीख को एक स्ट्रिंग में बदलना"
+title:                "एक तारीख को स्ट्रिंग में रूपांतरण करना।"
+html_title:           "C#: एक तारीख को स्ट्रिंग में रूपांतरण करना।"
+simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरण करना।"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -9,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## लोग इस प्रोग्रामिंग का उपयोग क्यों करते हैं? 
+## Kyu
+Ek common programming task hai ek tarikh ko ek string mein convert karna. Iske kai reasons ho sakte hain, jaise ki display purposes, database storage, ya information exchange.
 
-दिनांक को स्ट्रिंग में रूपांतरित करने से लेकर लोगों को दिनांक के साथ काम करने में सुविधा होती है।
-
-## कैसे करें
+## Kaise Kare
+Tarikh ko string mein convert karne ke liye C# mein kuch simple steps hain:
 
 ```C#
-//उदाहरण 1: वर्तमान दिनांक को लंबा दिनांक स्ट्रिंग में रूपांतरित करें
-DateTime current = DateTime.Now;
-string dateString = current.ToString("D");
-Console.WriteLine(dateString);
-// प्रदर्शित होने वाला आउटपुट: गुरुवार, 31 दिसंबर 2020
+// DateTime object create kare
+DateTime date = new DateTime(2020, 12, 25);
 
-//उदाहरण 2: डेट फॉर्मेट को स्वचालित रूप से परिवर्तित करें
-DateTime input = new DateTime(2020, 12, 31);
-string output = input.ToShortDateString();
-Console.WriteLine(output);
-// प्रदर्शित होने वाला आउटपुट: 31/12/2020
+// ToString() method use karke tarikh ko string mein convert kare
+string dateString = date.ToString();
+
+// Output: 12/25/2020 12:00:00 AM
+Console.WriteLine(dateString);
+
+// Agar specific format chahte hain toh ToString() method ko overload kare
+string formattedDate = date.ToString("yyyy/MM/dd");
+
+// Output: 2020/12/25
+Console.WriteLine(formattedDate);
 ```
 
-## गहराई तक जाओ
+## Deep Dive
+Tarikh ko string mein convert karne ke liye C# mein kuch important points hai. Pehle, ek DateTime object create karna zaruri hai. Ye object DateTime structure ka ek instance hota hai jo tarikh aur samay ko store karta hai. Phir ToString() method use karke hum apne DateTime object ko string mein convert kar sakte hain. Iski madad se hum different formats mein apni tarikh ko display kar sakte hain. Iske alawa, ToString() method ko overload karke hum specific format ke hisab se output bhi customize kar sakte hain.
 
-दिनांक को स्ट्रिंग में रूपांतरित करने का शास्त्रीय तरीका ```ToString()``` में समझाया गया है जो दिनांक को अलग-अलग तारीख फॉर्मेटों में रूपांतरित करने में मदद करता है। यह मेथड दो प्रमाणों को स्वीकार करता है - पहला प्रमाण दिनांक का दृश्य है और दूसरा प्रमाण दिनांक फॉर्मेट है जिसमें दिनांक को रूपांतरित किया जाएगा। लेकिन इस उदाहरण में, हमने तो बस एक ही प्रमाण का उपयोग किया है जो दिनांक को लंबा स्ट्रिंग में रूपांतरित कर देता है।
-
-## देखें भी
-
-[MSDN के डेट फंक्शन्स कैनेगोरी](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
-
-[कैसे किसी भी दिनांक को रूपांतरित करें?](https://www.geeksforgeeks.org/how-to-format-a-date-in-c-sharp/)
+See Also:
+- https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-format-strings
+- https://www.geeksforgeeks.org/c-sharp-datetime-structure-with-examples/

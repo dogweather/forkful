@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en temporär fil"
+html_title:           "Ruby: Att skapa en temporär fil"
+simple_title:         "Att skapa en temporär fil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,45 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-I många tillfällen när vi utvecklar program måste vi tillfälligt skapa en fil för att lagra data eller utföra operationer som behöver ett fysiskt utrymme. Att skapa en temporär fil är ett vanligt sätt att hantera detta problem, och det är en enkel och effektiv lösning som gör att våra program kan fungera smidigt. 
+Att skapa temporära filer är ett vanligt förfarande inom programmering, särskilt inom Ruby. Dessa filer används för att temporärt lagra data eller utföra vissa operationer innan de raderas. Det kan vara användbart för att göra temporära backupfiler eller för att hantera stora datamängder som behöver rensas upp efteråt.
 
-## Hur 
+## Så här gör du
 
-För att skapa en temporär fil i Ruby kan vi använda metoden `Tempfile.create` och ange en önskad filändelse. Här är en kod som visar hur detta kan göras: 
+För att skapa en temporär fil i Ruby, använder du "Tempfile" klassen. Här är ett exempel på kod som skapar en temporär fil och skriver några rader till den:
 
-```Ruby 
-# Skapa en temporär fil med filändelse .txt 
-tempfil = Tempfile.create(['ruby', '.txt']) 
-``` 
+```Ruby
+require 'tempfile'
 
-Vi kan även använda en blockstruktur för att se till att filen stängs och raderas automatiskt när vi är klara med den: 
+temp_file = Tempfile.new('example') # "example" är det prefix som används för filnamnet
+temp_file.puts "Detta är en temporär fil."
+temp_file.puts "Den kommer att raderas när programmet avslutas."
+```
 
-```Ruby 
-Tempfile.create(['ruby', '.txt']) do |tempfil| 
-  # Koda här för att göra något med den temporära filen 
-end 
-``` 
+Om du vill ha åtkomst till den temporära filen under programmets körning, kan du använda "path" metoden för att få filvägen:
 
-När den temporära filen skapas kommer den att ha ett unikt namn, vilket vi kan få tillgång till genom att anropa `tempfil.path`. Vi kan även skriva till filen genom att använda `tempfil.write` och läsa från filen genom att använda `tempfil.read`. När vi är klara med filen kan vi stänga den genom att anropa `tempfil.close`. 
+```Ruby
+puts temp_file.path #=> /tmp/example20190201-64362-2ais0h
+```
 
-Om vi vill ha mer kontroll över var den temporära filen ska skapas och hur den ska namnges kan vi ange dessa inställningar som argument till metoden. Här är ett exempel på hur vi kan göra detta: 
+För att radera den temporära filen efter att du är klar med den, kan du använda "delete" metoden:
 
-```Ruby 
-# Skapa en temporär fil i mappen "tmp" och ange "ruby" som prefix 
-Tempfile.create(['ruby', '.txt'], 'tmp') do |tempfil|
-  # Gör något med filen här 
-end 
-``` 
+```Ruby
+temp_file.delete # raderar filen här
+```
 
-## Djupdykning 
+## Djupdykning
 
-När vi använder `Tempfile.create` i Ruby skapas faktiskt en instans av klassen `Tempfile`, som finns som en del av Ruby's standardbibliotek. Denna klass innehåller flera metoder för att hantera den temporära filen, såsom att ändra filändelsen, flytta filen eller skriva till den i binärt läge. 
+När du använder "Tempfile" klassen, skapas faktiskt inte en riktig fil på din dator. Istället skapas en temporär fil i ditt systems "temp" mapp. Detta är en förinställd plats där temporära filer lagras och som töms av systemet regelbundet.
 
-En intressant egenskap hos `Tempfile` är att den kommer att raderas automatiskt när den skapas, om vi inte tar bort detta beteende. Detta kan vara användbart om vi bara vill ha den temporära filen under en kort tid och sedan ta bort den igen. För att ändra detta beteende kan vi använda `Tempfile.open` istället för `Tempfile.create`. 
+Du kan också ange en anpassad mapp för att lagra dina temporära filer genom att använda "tmpdir" argumentet:
 
-## Se även 
+```Ruby
+Tempfile.new('example', '/Users/johndoe/Documents') #=> /Users/johndoe/Documents/example20190201-64362-2ais0h
+```
 
-- Tempfile dokumentation: https://ruby-doc.org/stdlib-3.0.1/libdoc/tempfile/rdoc/Tempfile.html 
-- Mer om Ruby standardbiblioteket: https://ruby-doc.org/stdlib-3.0.1/
+En annan viktig sak att notera är att den temporära filen kommer att raderas automatiskt när programmet avslutas, men om du vill kan du också specificera att filen ska raderas direkt genom att använda "close" metoden:
+
+```Ruby
+temp_file.close # stänger och raderar filen direkt
+```
+
+## Se även
+
+- [Ruby Tempfile dokumentation](https://ruby-doc.org/stdlib-2.6.1/libdoc/tempfile/rdoc/Tempfile.html)
+- [Ruby Tempfile blogginlägg av David Black](http://davidbliss.com/2007/03/02/advanced-temp-file-management-in-ruby/)
+- [The Ruby Toolbox - Tempfiles](https://www.ruby-toolbox.com/categories/tempfiles)

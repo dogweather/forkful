@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Å finne lengden av en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "Bash: Å finne lengden av en streng"
 simple_title:         "Å finne lengden av en streng"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,34 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å finne lengden på en tekststreng er en vanlig oppgave innen Bash-programmering. Det kan være nyttig når vi ønsker å behandle forskjellige tekststrenger på en effektiv måte, for eksempel ved å sortere dem eller søke gjennom dem. Ved å lære å finne lengden på en tekststreng i Bash, vil du ha et viktig verktøy i verktøykassen din for å håndtere tekstbehandling.
+Har du noen gang lurt på hvor mange tegn en tekststreng inneholder? Kanskje du jobber med dataanalyse eller programmering, og trenger å vite lengden på en streng for å kunne behandle den riktig. Uansett årsak, å kunne finne lengden på en streng er en nyttig ferdighet å ha i verktøykassen din.
 
 ## Hvordan
 
-For å finne lengden på en tekststreng i Bash, kan vi bruke kommandoen `expr length`, etterfulgt av selve tekststrengen innenfor gåseøyne. La oss se på et eksempel:
+Det finnes flere måter å finne lengden på en streng i Bash på. En av de vanligste metodene er å bruke kommandoen `expr length`, som tar inn en streng og returnerer antall tegn i den. La oss se på et eksempel:
 
 ```Bash
-str="Hei, verden!"
-echo "Lengden på tekststrengen er: `expr length "$str"`"
+streng="Hei, verden!"
+echo `expr length $streng`
 ```
 
-Dette vil gi følgende output: `Lengden på tekststrengen er: 12`. Denne kommandoen teller også mellomrom og spesialtegn, så vær oppmerksom på dette når du bruker den.
+Dette vil returnere verdien 12, siden tekststrengen består av 12 tegn. Merk at vi først må sette strengen i en variabel (`streng=`) og så bruke variabelen i kommandoen med `$`. Ellers vil kommandoen ikke vite hvilken streng den skal telle antall tegn i.
+
+En annen metode er å bruke parameterutvidelsen `${#string}`, som også returnerer lengden på en streng. Her er et eksempel:
+
+```Bash
+streng="Hei, verden!"
+echo ${#streng}
+```
+
+Dette vil også gi oss verdien 12 som output. Forskjellen her er at vi ikke trenger å bruke `expr` kommandoen, bare parameterutvidelsen `${#}`.
 
 ## Dypdykk
 
-Det er viktig å merke seg at `expr length` kun fungerer for å finne lengden på en enkelt tekststreng. Hvis du ønsker å finne lengden på en liste av tekststrenger, kan du bruke `wc` kommandoen i kombinasjon med en `here string` som inneholder alle tekststrengene. En `here string` er en spesiell type input hvor tekststrenger er separert av linjeskift. La oss se på et eksempel:
+Visste du at det også er mulig å telle antall tegn i en fil ved hjelp av Bash? For å gjøre dette, kan du bruke kommandoen `wc`, som står for "word count". Siden denne kommandoen er ment for å telle ord, må du bruke parameterutvidelsen `${#}` for å bare telle tegn. Her er et eksempel:
 
 ```Bash
-str1="En"
-str2="to"
-str3="tre"
-echo -e "$str1\n$str2\n$str3" | wc -c
+fil="eksempel.txt"
+tegn=$(wc -m < $fil)
+echo $tegn
 ```
 
-Dette vil gi følgende output: `10`. `wc -c` teller antall tegn i inputen, som i dette tilfellet er `1`, `2`, `3` og to ekstra linjeskift. Ved å trekke fra disse to ekstra tegnene fra resultatet, vil vi få den totale lengden på de tre tekststrengene.
+I dette tilfellet vil variabelen `tegn` inneholde antall tegn i filen `eksempel.txt` og output vil være det samme tallet. Igjen, merk at vi må bruke parameterutvidelsen for å bare få antall tegn.
 
 ## Se også
 
-- [Bash - Hvordan bruke variabelverdi i en annen variabel](https://www.davidkonsumerer.no/bash-hvordan-bruke-variabelverdi-i-en-annen-variabel/)
-- [Bash User Guide - Text Processing](https://tiswww.case.edu/php/chet/bash/bashref.html#Text-Processing)
-- [Bash man-siden for `expr`](https://www.man7.org/linux/man-pages/man1/expr.1.html)
+- [Bash parameterutvidelser](https://wiki.bash-hackers.org/syntax/pe)
+- [Kommandoen `wc`](https://www.hostinger.com/tutorials/linux-wc-command)

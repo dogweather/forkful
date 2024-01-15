@@ -1,6 +1,7 @@
 ---
-title:                "C: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneen päivämäärän laskeminen"
+html_title:           "C: Tulevaisuuden tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,70 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jokaisella meistä on joskus ollut tilanne, jossa olemme joutuneet laskemaan tietyn päivämäärän tulevaisuudessa tai menneisyydessä. Tämä voi johtua esimerkiksi suunnittelemastamme matkasta tai tärkeästä tapahtumasta, kuten syntymäpäivästä. Onneksi C-ohjelmointikielellä voimme tehdä tämän laskutoimituksen helposti ja tarkasti.
+On monia syitä, miksi joku haluaisi laskea tulevan tai menneen päivämäärän. Esimerkiksi ohjelmointiprojekteissa voi olla tarvetta laskea päiviä tai vuosia tietystä päivämäärästä eteen- tai taaksepäin. Tässä artikkelissa opit, miten voit helposti laskea päivämääriä käyttämällä C-kieltä.
 
-## Kuinka
-
-Laskeminen päivämäärä tulevaisuudessa tai menneisyydessä C-kielellä vaatii vain muutaman rivin koodia. Ennen kuin aloitamme, on tärkeää tietää, että C-kielessä käytetään Gregoriaanista kalenteria, joka ei ota huomioon kaikkia historiallisia kalenterimuutoksia. Tästä syystä laskelmat saattavat poiketa hieman todellisesta päivämäärästä menneisyydessä. 
-
-Alla on esimerkkiohjelma, joka laskee tulevaisuuden päivämäärän annetun päivämäärän ja päivien määrän perusteella:
+## Miten
 
 ```C
 #include <stdio.h>
-int main() {
-    // Tämä on alkuperäinen päivämäärä
-    int paiva = 20;
-    int kuukausi = 6;
-    int vuosi = 2021;
+#include <stdlib.h>
 
-    // Lisätään päiviä laskennan avulla
-    int lisattavatPaivat = 30;
+int main()
+{
+    // Määritellään muuttujat päivämääräksi ja vuosiksi
+    int paivat, vuodet;
+    // Kysytään käyttäjältä haluttu päivämäärä ja tallennetaan se muuttujaan
+    printf("Anna haluttu päivämäärä: ");
+    scanf("%d", &paivat);
 
-    // Tulostetaan tulevaisuuden päivämäärä
-    printf("Tulevaisuuden päivämäärä: %d.%d.%d\n",
-            paiva + lisattavatPaivat, kuukausi, vuosi);
+    // Lasketaan annetun päivämäärän ja nykyisen päivämäärän välinen ero päivissä
+    int ajassaSiirtyma = paivat - today;
+    // Muunnetaan päivät vuosiksi jakamalla ne 365 päivällä
+    vuodet = ajassaSiirtyma / 365;
+
+    // Tulostetaan vuosien määrä
+    printf("Annettuna päivämääränä on kulunut %d vuotta.", vuodet);
+
     return 0;
 }
 ```
 
-Ohjelman tulosteena näkyy:
+Esimerkissä käytämme nykyisen päivämäärän arvoa laskemaan annetun päivämäärän ja nykyisen päivämäärän välisen eron päivinä. Tämän jälkeen muutamme päivät vuosiksi jakamalla ne 365 päivällä. Lopuksi tulostamme vuosien määrän käyttäjälle.
 
-```
-Tulevaisuuden päivämäärä: 20.7.2021
-```
+## Syventävä sukellus
 
-Samoin voimme laskea menneisyyden päivämäärän vähentämällä päiviä alkuperäisestä päivämäärästä:
-
-```C
-#include <stdio.h>
-int main() {
-    // Tämä on alkuperäinen päivämäärä
-    int paiva = 25;
-    int kuukausi = 6;
-    int vuosi = 2021;
-
-    // Vähennetään päiviä laskennan avulla
-    int vahennettavatPaivat = 10;
-
-    // Tulostetaan menneisyyden päivämäärä
-    printf("Menneisyyden päivämäärä: %d.%d.%d\n",
-            paiva - vahennettavatPaivat, kuukausi, vuosi);
-    return 0;
-}
-```
-
-Tulosteena näkyy:
-
-```
-Menneisyyden päivämäärä: 15.6.2021
-```
-
-## Syventävä tutkimus
-
-C-kielellä laskettaessa päivämäärää kannattaa huomioida, että funktioilla kuten `time()` ja `localtime()` on rajoitus vuodelle 2038. Tämän vuoksi laskelmat saattavat virheellisesti näyttää päivämäärän vuoden 2038 jälkeen. Tämä on otettava huomioon sovelluksissa, joissa käsitellään suuria päivämääriä.
-
-On myös tärkeää huomata, että päivämäärälaskujen tarkkuus riippuu laitteen käyttämästä kellosta. Esimerkiksi jos laitteen kello on virheellinen tai sitä ei ole asetettu oikeaan aikaan, päivämäärälaskelmat saattavat olla epätarkkoja.
+Jos haluat laskea päivämääriä tarkemmalla tasolla, voit käyttää C-kielen `time.h` -kirjastoa. Tämä kirjasto tarjoaa erilaisia toimintoja, jotka sallivat päivämäärien laskemisen ja muokkaamisen muilla tarkkuustasoilla. Voit esimerkiksi käyttää `struct tm` -rakennetta tallentamaan ja käsittelemään päivämääriä. Lisätietoja tästä löydät C-kielen `time.h` -dokumentaatiosta.
 
 ## Katso myös
 
-- [Date and Time Functions in C](https://www.tutorialspoint.com/c_standard_library/time
+- https://www.tutorialspoint.com/c_standard_library/time_h.htm
+- https://www.cs.utah.edu/~germain/PPS/Topics/time.html
+- https://www.programiz.com/c-programming/library-function/time.h

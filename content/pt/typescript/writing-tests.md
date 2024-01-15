@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Escrevendo testes"
+title:                "Escrevendo testes"
+html_title:           "TypeScript: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## Por que
 
-Escrever testes é uma parte importante do processo de desenvolvimento de software. Eles garantem que o código esteja funcionando corretamente e previnem a ocorrência de erros no futuro. Além disso, testes bem escritos também ajudam a documentar o funcionamento do código, facilitando sua manutenção e atualização.
+Escrever testes é uma prática essencial para garantir a qualidade do código e minimizar a ocorrência de erros em projetos de desenvolvimento de software. Além disso, escrever testes permite a detecção precoce de possíveis falhas, economizando tempo e recursos no longo prazo.
 
-## Como escrever testes em TypeScript
-
-Escrever testes em TypeScript é simples e pode ser feito usando a biblioteca de testes Jest. Primeiro, instale o Jest usando o comando `npm install jest --save-dev`. Em seguida, crie um arquivo de teste com a extensão `.spec.ts` e importe a função ou classe que deseja testar. Dentro do arquivo de teste, crie uma função utilizando o método `test()` do Jest para definir o nome e o corpo do teste. Por exemplo:
+## Como fazer
 
 ```TypeScript
-import { sum } from './utils'
+// Função simples que retorna true se o número for positivo e false se for negativo
+function isPositiveNumber(num: number) {
+    if (num >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-test('Teste de soma', () => {
-  expect(sum(2, 2)).toBe(4)
-})
+// Teste da função para números positivos
+console.log(isPositiveNumber(5)); // expected output: true
+console.log(isPositiveNumber(-2)); // expected output: false
 ```
 
-O código acima testa se a função `sum` do arquivo `utils.ts` retorna corretamente o resultado de 2+2. É possível adicionar quantos testes forem necessários para garantir que a função está funcionando corretamente.
+Para escrever testes em TypeScript, é necessário utilizar um framework de testes, como o Jest ou o Mocha. Esses frameworks permitem criar funções de teste que recebem uma entrada e verificam se a saída é a esperada. É importante também usar asserções, que são declarações que permitem verificar se um resultado é igual ao esperado.
 
-## Aprofundando em escrita de testes
+## Mergulho Profundo
 
-Escrever testes em TypeScript envolve entender alguns conceitos importantes, como mocking (simular valores de retorno de funções) e asserções (verificar valores retornados ou alterações feitas pelo código). O Jest possui uma documentação extensa que aborda esses e outros conceitos de forma detalhada. É importante também seguir boas práticas, como escrever testes independentes uns dos outros e utilizar nomes descritivos para os testes.
+Ao escrever testes, é importante cobrir todos os cenários possíveis, como entradas inválidas ou situações de erro. Além disso, é importante manter os testes atualizados e executá-los regularmente para garantir que nenhuma alteração no código cause falhas.
+
+Existem diferentes tipos de testes, como testes unitários, testes de integração e testes funcionais. Cada um tem seu propósito e deve ser usado em conjunto para garantir uma cobertura completa do código.
+
+Ao utilizar o TypeScript, é possível utilizar recursos como tipos e interfaces para tornar os testes mais robustos e seguros. Além disso, é importante escrever testes que sejam fáceis de entender e manter, para que possam ser utilizados como documentação do código.
 
 ## Veja também
-- Documentação do Jest (https://jestjs.io/docs/en/getting-started)
-- Artigo "Testes em Typescript com jest" - Medium (https://medium.com/flutterando/testes-em-typescript-com-jest-ed9021236a0f?source=---------8-----------------------)
+
+- [Documentação oficial do Jest](https://jestjs.io/)
+- [Documentação oficial do Mocha](https://mochajs.org/)
+- [Artigo sobre testes de software](https://www.devmedia.com.br/testes-de-software-conheca-os-tipos-e-descubra-por-que-eles-sao-importantes/28337)

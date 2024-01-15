@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Надсилання запиту http з основною аутентифікацією"
-simple_title:         "Надсилання запиту http з основною аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою аутентифікацією"
+html_title:           "Swift: Надсилання HTTP-запиту з базовою аутентифікацією"
+simple_title:         "Надсилання HTTP-запиту з базовою аутентифікацією"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,45 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Відправлення HTTP-запиту з базовою автентифікацією є важливим кроком у забезпеченні безпечної та захищеної комунікації між сервером та клієнтом.
+За допомогою відправлення HTTP-запиту з основною аутентифікацією можна отримати доступ до захищених ресурсів, які вимагають підтвердження ідентифікації користувача. Це може бути потрібно, наприклад, для отримання даних з API або для авторизації на веб-сайті.
 
-## Як
+## Як це зробити
 
-За допомогою базової автентифікації, клієнт може надіслати запит на сервер, включаючи інформацію про свій ідентифікатор та пароль. Це дозволяє серверу перевірити ідентичність клієнта та надійно засекретити дані.
+Щоб відправити HTTP-запит з основною аутентифікацією використовуємо функцію `URLRequest` зі встановленим параметром аутентифікації типу `URLAuthenticationChallenge`. Для цього використовуються ідентифікатор і пароль, які передаються у заголовку `Authorization`. Давайте розглянемо цей приклад коду, який допоможе нам краще зрозуміти процес.
 
 ```Swift
-// Створення запиту з базовою автентифікацією
-var url = URL(string: "https://www.example.com")!
+// Створюємо базовий URL
+let url = URL(string: "https://example.com/api")!
+
+// Створюємо запит
 var request = URLRequest(url: url)
-request.addValue("Basic YWxhZGRpbjpvcGVuc2VzYW1l", forHTTPHeaderField: "Authorization")
 
-// Відправлення запиту та обробка відповіді
-let session = URLSession.shared
-session.dataTask(with: request) { data, response, error in
+// Встановлюємо HTTP-метод і параметри запиту
+request.httpMethod = "GET"
+request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+// Додаємо аутентифікацію
+let username = "user"
+let password = "password"
+let loginString = "\(username):\(password)"
+let base64LoginString = Data(loginString.utf8).base64EncodedString()
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+// Створюємо сесію для отримання даних
+let session = URLSession(configuration: .default)
+
+// Виконуємо запит і отримуємо відповідь
+let task = session.dataTask(with: request) { (data, response, error) in
+    // Обробляємо отримані дані
     if let error = error {
-        print("Сталася помилка: \(error.localizedDescription)")
+        print("Помилка: \(error)")
+    } else if let data = data,
+        let response = response as? HTTPURLResponse,
+        response.statusCode == 200 {
+        // Обробляємо отримані дані, якщо все в порядку
+        print("Отримані дані: \(data)")
     }
-    guard let data = data else { return }
-    print("Отримана відповідь: \(String(data: data, encoding: .utf8) ?? "")")
-}.resume()
+}
+task.resume()
 ```
 
-### Вихід
+Якщо у нас є успішне підключення і аутентифікація пройшла успішно, у виводі буде міститися отримана відповідь. У противному випадку з'явиться повідомлення про помилку.
 
-Запит: `https://www.example.com`
-Метод: `GET`
-Заголовки:
-```
-Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
-```
+## Глибока занурення
 
-## Deep Dive
-
-Автентифікація в рамках HTTP використовує заголовок `Authorization`, який містить тип автентифікації та дані користувача у форматі `username:password`. Перед надсиланням запиту, користувачі повинні закодувати цю інформацію у форматі base64 та включити її у заголовок `Authorization`.
-
-Базова автентифікація не є надійним методом безпеки, оскільки дані кодуються лише у форматі base64, який може бути легко декодований. Тому варто розглянути більш безпечні методи автентифікації, наприклад, HTTPS.
-
-## Дивись також
-
-- [HTTP Authentication: Basic and Digest Access Authentication](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-- [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+HTTP-аутентифікація дозволяє перевірити ідентифікацію користувача перед доступом до захищених ресурсів. Завдяки основній аутентифікації ми можемо передавати ідентифікатор і пароль у закодованому форматі через заголовок `Authorization`, забезпечуючи більшу безпеку захищених даних. Крім того, HTTP-аутентифікація є стандартом, що підтримується більшістю серверів, що робить її універсальним інструментом для отримання доступу

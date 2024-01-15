@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Downloading une page web."
-simple_title:         "Downloading une page web."
+title:                "Le téléchargement d'une page web"
+html_title:           "Haskell: Le téléchargement d'une page web"
+simple_title:         "Le téléchargement d'une page web"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,24 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Télécharger une page Web est une tâche commune pour les programmeurs souhaitant extraire des données ou créer des bots. En utilisant Haskell, vous pouvez facilement automatiser cette tâche en utilisant des outils puissants tels que le paquetage `http-conduit`.
+Si vous voulez apprendre à programmer en Haskell, l'une des tâches de base que vous devriez maîtriser est le téléchargement d'une page web. Cela vous permettra de récupérer de l'information à partir d'Internet et de l'utiliser dans votre programme.
 
 ## Comment faire
 
-Pour commencer, vous devrez importer le paquetage `http-conduit` en ajoutant la ligne `import Network.HTTP.Conduit` à votre fichier Haskell. Ensuite, vous pouvez utiliser la fonction `simpleHttp` pour télécharger une page Web. Par exemple, pour télécharger la page d'accueil de Google :
+Pour télécharger une page web en Haskell, vous devez utiliser la bibliothèque `http-conduit`. Tout d'abord, importez-la dans votre fichier :
 
 ```Haskell
-simpleHttp "http://www.google.com"
+import Network.HTTP.Conduit
 ```
 
-Cela renverra une valeur de type `ByteString` représentant le contenu de la page Web. Vous pouvez ensuite traiter cette valeur comme vous le souhaitez, que ce soit pour extraire des informations spécifiques ou pour enregistrer la page sur votre disque dur.
+Ensuite, vous pouvez utiliser la fonction `simpleHttp` pour télécharger une page à partir de son URL :
 
-## Plongée profonde
+```Haskell
+simpleHttp "https://www.example.com"
+```
 
-Le paquetage `http-conduit` offre de nombreuses fonctionnalités avancées telles que la gestion des cookies, la compression, l'authentification et bien plus encore. Vous pouvez également contrôler les paramètres de la requête HTTP en utilisant la fonction `parseUrl` pour créer un objet `Request` et en le passant à `httpLbs` pour exécuter la requête. De plus, vous pouvez gérer les erreurs en utilisant la fonction `catch` pour une gestion plus robuste des erreurs.
+Vous pouvez ensuite traiter l'output comme une chaîne de caractères (String) ou le convertir en un type de données tel que `ByteString`.
+
+## Plongée en profondeur
+
+La bibliothèque `http-conduit` utilise la gestion des exceptions pour gérer les erreurs lors du téléchargement d'une page web. Vous pouvez utiliser les fonctions `catch` et `handle` pour gérer ces exceptions.
+
+De plus, vous pouvez également spécifier des options de requête telles que les en-têtes (headers), les cookies et les timeouts pour personnaliser votre demande de téléchargement.
 
 ## Voir aussi
 
-- Documentation officielle du paquetage `http-conduit` : https://www.stackage.org/package/http-conduit
-- Tutoriel sur la récupération de données en Haskell : https://haskell-lang.org/tutorial/data-retrieval
-- Exemple de code pour télécharger une page Web en Haskell : https://www.stackbuilders.com/tutorials/haskell/web-scraping/
+- [Documentation de `http-conduit`](https://hackage.haskell.org/package/http-conduit)
+- [Exemples de code en Haskell](https://wiki.haskell.org/Documentation/Examples)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Обчислення дати у майбутньому або минулому"
-simple_title:         "Обчислення дати у майбутньому або минулому"
+title:                "Розрахунок дати в майбутньому або минулому"
+html_title:           "Javascript: Розрахунок дати в майбутньому або минулому"
+simple_title:         "Розрахунок дати в майбутньому або минулому"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,29 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-Розрахунок дати в майбутньому або в минулому може бути корисним для створення функціональності веб-сайтів, програм або інших проєктів. Наприклад, ви можете використовувати цей метод для відображення таймера або для обчислення дати події в майбутньому або минулому.
 
-## Як робити
-Безперечно, при використанні Javascript є кілька шляхів що до обчислення дати в майбутньому або минулому, але найбільш швидкий і простий спосіб - використання вбудованих функцій Date. Використовуйте ```Javascript new Date() ``` для створення змінної, що містить поточну дату, а потім використайте методи ```Javascript setDate() ```і ```Javascript getDate() ``` для зміни дати і отримання нової дати.
+В даний час програмування є необхідною умінням, яка може допомогти у розв'язанні багатьох проблем. Розрахунок дати в майбутньому або минулому є необхідною задачею для багатьох проектів, яка може бути вирішена за допомогою Javascript.
 
-```Javascript
-let currentDate = new Date(); //створення змінної з поточною датою
-let futureDate = currentDate.setDate(currentDate.getDate() + 7); //отримання дати через 7 днів у майбутньому
-let pastDate = currentDate.setDate(currentDate.getDate() - 14); //отримання дати 14 днів тому
-console.log(new Date(futureDate)); //виведення дати в новому форматі
-console.log(new Date(pastDate));
-```
+## Як
 
-Ви можете також використовувати функцію ```Javascript getDate() ``` для отримання конкретної дати в майбутньому або минулому за допомогою передачі аргументу, що відповідає кількості днів. Наприклад:
+Одним з шляхів розрахунку дати в майбутньому або минулому є використання вбудованих функцій ```Date()``` та ```setFullYear()```. Нижче показаний приклад коду для обчислення дати за допомогою цих функцій:
 
 ```Javascript
-let futureDate = currentDate.getDate() + 30; //отримання дати через 30 днів у майбутньому
-console.log(new Date(futureDate)); 
+// обчислення дати за 10 днів вперед
+var now = new Date();
+now.setDate(now.getDate() + 10);
+console.log(now); // виведе дату через 10 днів
+
+// обчислення дати за 3 роки назад
+var now = new Date();
+now.setFullYear(now.getFullYear() - 3);
+console.log(now); // виведе дату 3 роки тому
 ```
 
-## Глибокий погляд
-Якщо ви хочете отримати більш повну інформацію про обрахунок дати в майбутньому або минулому, варто дослідити інші методи Date, такі як ```Javascript getFullYear() ```, ```Javascript getMonth() ``` і ```Javascript getDay() ```. Крім того, ви можете використовувати бібліотеки, наприклад Moment.js, для спрощення процесу обчислення дат.
+## Deep Dive
 
-## Дивись також
-- [MDN документація про методи Date](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js бібліотека для роботи з датами](https://momentjs.com/)
+Основна концепція щодо розрахунку дати в майбутньому або минулому полягає в тому, щоб використовувати дату за замовчуванням і додавати (або віднімати) необхідну кількість днів чи років за допомогою вбудованих функцій.
+
+Важливо також звернути увагу на формат виведення дати, який може бути змінений за допомогою функції ```toLocaleDateString()``` та передання потрібних параметрів. Докладніше про це можна дізнатися у [документації](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+
+## Дивіться також
+
+- [W3Schools: Робота з датою і часом в Javascript](https://www.w3schools.com/js/js_dates.asp)
+- [MDN: Робота з датою в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Codecademy: Онлайн курс з Javascript](https://www.codecademy.com/learn/introduction-to-javascript)

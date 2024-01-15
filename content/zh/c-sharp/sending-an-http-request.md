@@ -1,6 +1,7 @@
 ---
-title:                "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发送 HTTP 请求"
+html_title:           "C#: 发送 HTTP 请求"
+simple_title:         "发送 HTTP 请求"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,31 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编写程序时，您可能会遇到需要发送HTTP请求的情况。通过发送HTTP请求，您可以从其他网站或服务中获取数据，例如API。这可以让您的程序变得更加功能强大，为用户提供更好的体验。
+发送HTTP请求是许多C#程序员必须掌握的技能。它使他们能够与网络资源进行交互，从而实现更多功能。
 
-## 如何
+## 如何实现
 
-要发送HTTP请求，您需要使用C#中的HttpClient类。首先，您需要在程序中引入System.Net.Http命名空间。然后，创建一个新的HttpClient实例，并指定您要发送请求的URL。接下来，您需要指定所需的HTTP方法，如GET、POST或PUT，并添加所需的任何参数。最后，使用SendAsync方法发送请求，并等待响应。以下是一个简单的示例，向Google发送GET请求并打印响应的内容：
+以下是一个简单的示例，演示如何使用C#发送HTTP请求并获取响应：
 
 ```C#
 using System;
 using System.Net.Http;
 
-namespace HelloWorld
+class Program
 {
-    class Program
+    static async System.Threading.Tasks.Task Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                // 发送一个GET请求，获取www.google.com的主页内容
-                HttpResponseMessage response = client.GetAsync("https://www.google.com").Result;
+        // 创建一个HttpClient实例
+        var client = new HttpClient();
 
-                // 打印响应内容
-                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
-            }
-        }
+        // 发送GET请求并获取响应
+        HttpResponseMessage response = await client.GetAsync("https://myapi.com/users");
+
+        // 读取响应内容并打印
+        string responseBody = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseBody);
     }
 }
 ```
@@ -43,15 +42,14 @@ namespace HelloWorld
 输出：
 
 ```
-<!doctype html> <html itemscope="" ... // 此处省略了Google主页的HTML内容
+[{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}, {"id": 3, "name": "Bob"}]
 ```
 
 ## 深入了解
 
-除了基本的HTTP请求方法外，您还可以使用HttpClient类来设置请求头、处理重定向、验证SSL证书等。此外，您还可以使用HttpContent类来发送POST请求，并将任何数据发送到服务器。了解这些功能可以帮助您更有效地发送HTTP请求，并根据您的需求进行定制。
+除了上述简单的例子，还可以使用C#发送更复杂的HTTP请求。要添加请求头、设置请求体或使用特定的HTTP方法，可以通过创建HttpRequestMessage对象来实现。此外，还可以使用HttpClient实例的SendAsync()方法发送请求，并使用HttpResponseMessage对象获取响应。
 
-## 参考资料
+## 参考链接
 
-- [C# HttpClient文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient)
-- [HTTP请求方法](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
-- [使用C#发送HTTP请求](https://www.codementor.io/@mirko0/how-to-make-http-requests-in-c-phnk59pce)（英文）
+- [HttpClient Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netframework-4.8)
+- [Sending HTTP Requests Using C# (C-SharpCorner)](https://www.c-sharpcorner.com/article/sending-http-requests-using-c-sharp/)

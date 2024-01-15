@@ -1,6 +1,7 @@
 ---
-title:                "C#: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
-simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "C#: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,50 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi ohjelmoijat saattavat haluta kirjoittaa standardi virheeseen. Ehkä he haluavat seurata ohjelmansa suorittamista ja korjata mahdollisia virheitä. Ehkä he haluavat tallentaa tietoa suorituksen aikaisten ongelmien ilmenemisestä. Joten siirrytään kirjoittamaan!
+Miksi ihminen kirjoittaisi ohjelmaan standardi virheestä?
 
-## Kuinka tehdä
+Kirjoittaminen standardi virheeseen on tärkeä osa ohjelmointia, koska se auttaa löytämään ja korjaamaan virheitä ohjelmassa. Kun ohjelma kohtaa virheen, se kirjoittaa virheilmoituksen standardi virheeseen, joka voidaan sitten lukea ja käsitellä. Tämä auttaa kehittäjiä löytämään ja korjaamaan virheet nopeammin, mikä säästää aikaa ja vaivaa.
 
-Käytä C#:n ```Console``` luokan ```WriteLine()``` -metodia kirjoittaaksesi viestin toiseen pääteasteikkoon (tavallisesti terminaalina tunnetaan). Tässä on esimerkki siitä, kuinka voimme käyttää sitä:
+## Miten
 
-```C#
-Console.Error.WriteLine("Tämä on virheviesti!");
+Koodiesimerkkejä ja näytelähtöä "```C# ... ```" koodilohkoissa.
 
-// Output:
-// Tämä on virheviesti!
-```
-
-Mutta mitä tapahtuu, jos haluamme kirjoittaa muuttuvan arvon standardi virheeseen? Ei hätää, voimme yksinkertaisesti muuttaa merkkijonon osaa käyttämällä ```+``` -operaattoria, kuten tässä:
+Kirjoittaminen standardi virheeseen on helppoa C# -ohjelmointikielen avulla. Käytä `Console.Error.WriteLine()` -metodia kirjoitaaksesi haluamasi tekstin standardi virheeseen. Voit myös käyttää `Console.Error.Write()` -metodia, jos haluat kirjoittaa ilman rivinvaihtoa. Alla oleva koodiesimerkki näyttää, kuinka kirjoittaa teksti "Virhe!" standardi virheeseen ja sitten "Success!" standardi tulostukseen.
 
 ```C#
-int luku = 42;
-Console.Error.WriteLine("Valitsemasi numero on: " + luku);
-
-// Output:
-// Valitsemasi numero on: 42
+Console.Error.WriteLine("Virhe!");
+Console.WriteLine("Success!");
 ```
 
-Näin meillä on nyt kyky kirjoittaa muuttuvan arvon standardi virheeseen ja säilyttää ohjelman suorituksen seuranta!
+Tulostus näyttää seuraavalta:
 
-## Syväsukellus
+Virhe! 
+Success!
 
-Mutta mitä tapahtuu, jos haluamme lukea standardi virheestä kirjoittamamme viestit? Tässä tapauksessa voimme käyttää ```Console``` luokan ```OpenStandardError()``` -metodia avataksemme pääteasteikon, joka tulee sisältämään kaikki kirjoittamamme viestit. Tässä on esimerkki:
+## Syvempi sukellus
 
-```C#
-var virheViestit = Console.OpenStandardError();
-var luetutViViestit = new byte[virheViestit.Length];
-virheViestit.Read(luetutViViestit, 0, (int)virheViestit.Length);
+Kirjoittaminen standardi virheeseen voi olla hyödyllistä myös virheen jäljittämisessä ja debuggaamisessa. Voit lisätä lisätietoja virheilmoitukseen käyttämällä `Console.Error.Write()` -metodia useammin, jolloin saat enemmän tietoa siitä, missä virhe on tapahtunut ja minkä arvojen kanssa ohjelma on toiminut ennen virheen tapahtumista.
 
-Console.WriteLine(Encoding.UTF8.GetString(luetutViViestit));
-
-// Output:
-// Tämä on virheviesti!
-// Valitsemasi numero on: 42
-```
-
-Kuten näette, standardi virheestä lukeminen voi olla hyödyllistä, jos haluamme tallentaa tai näyttää ne jossakin muodossa. Kannattaa kokeilla ja löytää oma tapasi käyttää standardi virhettä!
+Voit myös käyttää `Console.Error.SetOut()` -metodia ohjaamaan standardi virheen tulostus toiseen tiedostoon tai tietovirtaan. Tämä voi olla hyödyllistä, jos haluat tallentaa kaikki virheilmoitukset erilliseen lokitiedostoon.
 
 ## Katso myös
 
-- [C# DokuWiki - Standardi-virheen kirjoittaminen](https://www.c-sharpcorner.com/uploadfile/a25be7/console-class-in-C-Sharp/)
-- [Microsoftin viralliset dokumentaatiot - Console-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+- [C# Console-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0) 
+- [C# kirjoitusarvot](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/assignment-operator) 
+- [Debuggaaminen C# -ohjelmissa](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code)

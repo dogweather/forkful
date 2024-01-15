@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,33 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Convertire una data in una stringa può sembrare un'operazione banale, ma in realtà è un'operazione comune e utile nella programmazione. È possibile utilizzare questa funzionalità per visualizzare la data in un formato specifico, come ad esempio "27 Marzo 2021" anziché "2021-03-27".
+
+Converting a date into a string in Javascript is a common task that allows us to display dates in a specific format or manipulate them in various ways. It also allows us to work with dates in a readable format that is understandable for both human and machine.
 
 ## Come Fare
-Per convertire una data in una stringa in Javascript, possiamo utilizzare il metodo `toString ()` dell'oggetto `Date`. Ecco un esempio di codice:
 
-```Javascript
-let data = new Date();
-let dataStringa = data.toString();
-console.log(dataStringa); // Output: Sab Mar 27 2021 16:30:00 GMT+0100 (Ora standard dell'Europa centrale)
+Per convertire una data in una stringa in Javascript, possiamo utilizzare il metodo `toString()` di un oggetto `Date` seguito da una serie di metodi per formattare la stringa secondo le nostre esigenze. Ad esempio:
+
+```javascript
+let today = new Date();
+
+let dateAsString = today.toString(); // "Fri Nov 20 2020 14:15:30 GMT+0100 (Central European Standard Time)"
 ```
 
-È anche possibile specificare un formato personalizzato utilizzando i metodi `getDate()`, `getMonth()` e `getFullYear()` combinati con stringhe di testo. Di seguito un esempio:
+Possiamo anche utilizzare un oggetto `Intl.DateTimeFormat` per formattare la data in una specifica localizzazione. Ad esempio, se vogliamo ottenere la data attuale in formato italiano:
 
-```Javascript
-let data = new Date();
-let giorno = data.getDate();
-let mese = data.getMonth() + 1; // Mese viene rappresentato con numeri da 0 a 11, quindi aggiungiamo 1 per ottenerne il valore corretto
-let anno = data.getFullYear();
-let dataStringa = giorno + " " + mese + " " + anno;
-console.log(dataStringa); // Output: 27 3 2021
+```javascript
+let today = new Date();
+
+let italyDate = new Intl.DateTimeFormat('it-IT').format(today); // "20/11/2020"
 ```
 
 ## Approfondimento
-Nel linguaggio Javascript, le date sono rappresentate come oggetti e possiamo accedere ai suoi diversi componenti (giorno, mese, anno, ecc.) tramite i metodi `getDate()`, `getMonth()`, `getFullYear()` e così via. Quando utilizziamo il metodo `toString()` stiamo effettivamente convertendo l'oggetto data in una stringa leggibile per l'utente.
 
-Inoltre, possiamo utilizzare librerie esterne come Moment.js per gestire le date in modo più efficiente e fornire maggiori opzioni di formattazione.
+Il metodo `toString()` restituisce la data completa con orario e fuso orario nell'output. Per rimuovere queste informazioni e ottenere solo la data, possiamo utilizzare il metodo `toDateString()`:
+
+```javascript
+let today = new Date();
+
+let dateOnly = today.toDateString(); // "Fri Nov 20 2020"
+```
+
+Inoltre, possiamo utilizzare il metodo `toLocaleDateString()` per ottenere la data in formato locale specifico, senza dover specificare il codice di localizzazione come nel caso dell'oggetto `Intl.DateTimeFormat`:
+
+```javascript
+let today = new Date();
+
+let localeDate = today.toLocaleDateString(); // "20/11/2020" (per localizzazione italiano)
+```
 
 ## Vedi Anche
-- [La documentazione di MDN su Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - Libreria per la gestione delle date in Javascript](https://momentjs.com/)
+
+- [Documentazione ufficiale di Javascript sulla gestione delle date](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Tutorial su come lavorare con le date in Javascript](https://www.html.it/pag/53458/lavorare-con-le-date-in-javascript/)

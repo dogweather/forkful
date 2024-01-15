@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Muunna merkkijono pienaakkoseksi"
+html_title:           "Haskell: Muunna merkkijono pienaakkoseksi"
+simple_title:         "Muunna merkkijono pienaakkoseksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,30 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? On monia tapauksia, joissa tämä voi olla hyödyllistä, kuten tietokoneohjelmointi tai tekstikäsittely.
+Kaikki meistä ovat jossain vaiheessa törmänneet tarpeeseen muuttaa merkkijono pienaakkosiksi. Olipa kyse sitten tekstin muokkaamisesta tai tietokantahakuja suorittaessa, on tärkeää tietää, miten tämä tehdään tehokkaasti ja oikein.
 
 ## Miten
 
-Haskell tarjoaa meille kätevän toiminnon, `toLower`, joka muuttaa merkkijonon pieniksi kirjaimiksi. Voit käyttää sitä seuraavasti:
+Merkkijonon muuttaminen pienaakkosiksi on helppoa ja nopeaa käyttämällä vain muutamaa rivikoodia. Kaikki mitä tarvitset on `toLower`-funktio, joka on osa Haskellin `Data.Char`-moduulia.
 
 ```Haskell
-toLower :: String -> String
-toLower "LOMA"  -- palauttaa "loma"
-toLower "Mökki" -- palauttaa "mökki"
+import Data.Char
+
+toLower "TÄMÄ ON MALLIMERKIT merkkijono" 
+--tulostaa "tämä on mallimerkit merkkijono"
 ```
 
-Mutta miksi toLower on tärkeämpi kuin yksinkertaisesti miettiä merkkijonon kirjainten pienentämistä? Haskellin funktionaalisen ohjelmoinnin yksi periaatteista on välttää sivuvaikutuksia, mikä tarkoittaa, että funktiot eivät muuta alkuperäisiä syötteitä vaan palauttavat uusia arvoja.
+Kuten nähdään esimerkistä, `toLower` muuttaa kaikki merkkijonon isot kirjaimet pieniksi.
 
-## Syväsukellus
+## Syvällinen sukellus
 
-ToLower toimii hyvin kaikkien merkkijonon kirjainten muuttamiseen pieniksi kirjaimiksi, mutta miten se toimii? On olemassa muutamia tapoja, joilla se voitaisiin toteuttaa, mutta yksi yleisimmistä keinoista on käyttää ASCII-taulukkoa kirjainten muuttamiseen.
+Haskelin `toLower`-funktio käyttää Unicode-standardia muuntaessaan merkkijonon pienaakkosiksi. Tämä tarkoittaa, että jos merkkijono sisältää kansainvälisiä tai erikoismerkkejä, ne muutetaan myös näiden sääntöjen mukaan.
 
-ASCII-taulukko on taulukko, jossa jokaiselle merkkijonon symbolille on annettu numerollinen arvo. Pienimmät arvot ovat varattu erikoismerkeille ja isommat kirjaimille. Pienet kirjaimet ovat aina suurempia kuin isoilla kirjaimilla.
-
-ToLower-funktio käy läpi merkkijonon jokaisen kirjaimen ja muuttaa arvon pienemmäksi, jos se on iso kirjain. Lopuksi palautetaan uusi merkkijono muuttuneilla arvoilla.
+On myös tärkeä huomata, että `toLower` toimii vain merkkijonoilla. Jos haluat muuttaa yksittäisen merkin pienaakkoseksi, voit käyttää `toLower`-funktiota yhden kirjaimen sisältävälle listalle (esim. `[c]`). Tämä palauttaa yksittäisen merkin, joka on muutettu pienaakkoseksi.
 
 ## Katso myös
 
-- [Haskell dokumentation - toLower](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#g:3)
-- [ASCII-taulukko](https://fi.wikipedia.org/wiki/ASCII)
-- [Funktionaalinen ohjelmointi](https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi)
+- [Haskellin viralliset verkkosivut](https://www.haskell.org/)
+- [Haskellin oppikirja](http://learnyouahaskell.com/)
+- [Haskellin Data.Char-moduulin dokumentaatio](https://hackage.haskell.org/package/base/docs/Data-Char.html)

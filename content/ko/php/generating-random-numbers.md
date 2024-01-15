@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 난수 생성하기"
-simple_title:         "난수 생성하기"
+title:                "랜덤 숫자 생성하기"
+html_title:           "PHP: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -9,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-PHP에서 임의의 숫자를 생성하는 것에 대해 관심이 생길 수 있습니다. 이를 통해 새로운 콘텐츠를 만들거나 데이터를 랜덤하게 처리할 수 있습니다.
+랜덤 숫자를 생성해야 하는 이유는 다양합니다. 일반적으로 데이터를 무작위로 선택하거나 추출하고자 할 때, 그리고 무작위로 변형한 값들을 사용하는 시뮬레이션 작업을 할 때 랜덤 숫자가 필요합니다.
 
 ## 방법
 
-PHP에서 임의의 숫자를 생성하는 방법은 매우 간단합니다. 다음 코드를 사용하면 됩니다.
+PHP에서 랜덤 숫자를 생성하는 방법은 다양합니다. 아래는 가장 일반적인 방법입니다.
 
 ```PHP
-// 랜덤한 숫자를 생성하는 예제
-$number = rand(1, 10); // 1에서 10 사이의 숫자를 랜덤하게 선택
+// 1과 10 사이의 임의의 정수를 생성
+$random_number = rand(1, 10);
+echo $random_number;
+// 예시 출력: 7
 
-// 랜덤한 숫자와 문자열을 조합하는 예제
-$randomString = "Your lucky number for today is " . rand(1, 100); // 1에서 100 사이의 숫자를 랜덤하게 선택하여 문자열과 조합
-echo $randomString; // 예시 출력: Your lucky number for today is 42
+// 0과 1 사이의 임의의 실수를 생성
+$random_float = rand() / getrandmax();
+echo $random_float;
+// 예시 출력: 0.626356071226
+
+// 주어진 배열에서 무작위로 하나의 요소 선택
+$fruits = ['apple', 'orange', 'banana', 'kiwi'];
+$random_fruit = array_rand($fruits);
+echo $fruits[$random_fruit];
+// 예시 출력: banana
 ```
 
-위의 예제는 `rand()` 함수를 사용하여 랜덤한 숫자를 생성하는 방법을 보여줍니다. 첫 번째 매개변수는 가장 작은 숫자이고, 두 번째 매개변수는 가장 큰 숫자입니다. 따라서 위의 예제에서는 1부터 10까지의 숫자를, 또 다른 예제에서는 1부터 100까지의 숫자를 랜덤하게 선택합니다.
+## 깊게 들어가보기
 
-## 딥 다이브
+PHP에서 랜덤 숫자를 생성하는 함수는 크게 두 가지가 있습니다. 첫 번째는 `rand()` 함수로, 주어진 두 개의 매개변수 사이의 임의의 정수를 반환합니다. 이때 매개변수는 양의 정수이어야 합니다. 두 번째는 `getrandmax()` 함수로, 현재 시스템에서 생성될 수 있는 가장 큰 수를 반환합니다. 또한, 랜덤 숫자를 생성할 때 주의해야 할 점은 시드(Seed) 값을 설정하는 것입니다. 시드 값이 같다면 같은 랜덤 숫자를 반복적으로 생성하게 됩니다. 따라서 시드 값은 가능한 한 고유한 값이 되어야 합니다.
 
-PHP에서 임의의 숫자를 생성하는 방법은 여러 가지가 있습니다. `rand()` 함수 외에도 `mt_rand()` 함수, `random_int()` 함수 등이 있습니다. 또한 각 함수마다 다양한 매개변수를 사용할 수 있고, 보안 측면에서 추천되는 함수가 있으므로 사용하기 전에 알아두는 것이 좋습니다.
+## 관련 링크들
 
-또한, PHP에서는 버전에 따라 난수 생성 방식이 달라질 수 있으므로 원하는 대로 숫자를 생성하지 못하는 경우가 있을 수 있습니다. 이 때는 `phpinfo()` 함수를 사용하여 PHP 버전과 난수 생성 방식을 확인한 뒤 적절한 함수를 선택하여 사용해야 합니다.
-
-# 참고 자료
-
-- [PHP 공식 문서 - 임의의 숫자 생성](https://www.php.net/manual/en/function.rand.php)
-- [Randomness in PHP - Secure random numbers](https://paragonie.com/blog/2016/05/how-generate-secure-random-numbers-in-various-programming-languages#advice-php)
-- [Learn PHP with Codecademy - Random Numbers](https://www.codecademy.com/learn/learn-php/modules/introduction-to-php/cheatsheet)
+- [PHP 공식 문서 - 랜덤 함수들](https://www.php.net/manual/en/function.rand.php)
+- [컴퓨터의 랜덤과 유사성](https://www.random.org/randomness/)
+- [파이썬에서 랜덤 숫자 생성하기](https://www.digitalocean.com/community/tutorials/how-to-use-the-python-random-module-to-generate-numbers)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Arbeiten mit csv"
-simple_title:         "Arbeiten mit csv"
+title:                "Arbeiten mit CSV"
+html_title:           "C: Arbeiten mit CSV"
+simple_title:         "Arbeiten mit CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,81 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-CSV ist ein gängiges Format, das zur Speicherung und Übertragung von Daten verwendet wird. Es ist besonders nützlich für Programmierer, die mit Tabellenkalkulationen arbeiten, da es einfach zu lesen und zu erstellen ist. Durch die Verarbeitung von CSV-Daten können Programmierer große Mengen an Informationen organisieren und analysieren.
+CSV (Comma Separated Values) ist ein weit verbreitetes Dateiformat für die Speicherung von Daten in tabellarischer Form. In der Programmierung kann es oft notwendig sein, mit CSV-Dateien zu arbeiten, sei es für den Import von Daten oder für die Ausgabe von Ergebnissen. In diesem Artikel erfahren Sie, wie Sie mit CSV-Dateien in C arbeiten können.
 
-## Wie Geht's
+## Wie geht es
 
-Um mit CSV in C zu arbeiten, müssen wir zunächst die entsprechenden Bibliotheken einbinden:
+Zunächst müssen wir eine CSV-Datei öffnen und die Daten in unserem Programm verarbeiten. Dazu verwenden wir die fopen() Funktion, um die Datei zu öffnen, und die Funktionen fscanf() oder fgets() zum Lesen der Daten. Wir können dann die gelesenen Daten in einer Datenstruktur speichern, z. B. einem Array oder einer Linked List. Hier ist ein Beispielcode:
 
 ```C
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-```
 
-Als nächstes müssen wir eine Funktion erstellen, die die CSV-Datei öffnet und die Daten in unser Programm lädt:
+int main() {
+    // Öffnet die CSV-Datei zum Lesen
+    FILE *csvFile = fopen("meine_datei.csv", "r");
 
-```C
-void read_csv(char* filename) {
-    FILE *csv_file = fopen(filename, "r"); // Öffnen der CSV-Datei
-    char line[1000]; // Maximale Länge einer CSV-Zeile
-
-    while (fgets(line, 1000, csv_file) != NULL) { // Lesen jeder Zeile der CSV-Datei
-        int i = 0; // Index für line
-        char *value; // Speichert einzelne Werte aus jeder Zeile
-
-        value = strtok(line, ","); // Teilt die Zeile an jeder Komma-Stelle und weist das Ergebnis zu value zu
-
-        while (value != NULL) {
-            printf("%s\n", value); // Gibt den Wert aus
-            value = strtok(NULL, ","); // Weist value den nächsten Wert in der Zeile zu
-        }
+    // Überprüft, ob die Datei erfolgreich geöffnet wurde
+    if (csvFile == NULL) {
+        printf("Fehler beim Öffnen der Datei!");
+        return 1;
     }
 
-    fclose(csv_file);
-}
-```
+    // Erstellt eine Datenstruktur zum Speichern der Daten
+    // Hier verwenden wir ein Array
+    int daten[100];
+    int i = 0;
 
-Um die Funktion auszuführen, rufen wir sie in unserem Hauptprogramm auf und übergeben den Dateinamen als Parameter:
+    // Liest die Daten aus der Datei und speichert sie im Array
+    while (fscanf(csvFile, "%d,%d", &daten[i], &daten[i+1]) == 2) {
+        i += 2;
+    }
 
-```C
-int main() {
-    read_csv("beispiel.csv"); // Aufruf der Funktion mit dem Dateinamen "beispiel.csv"
+    // Schließt die Datei
+    fclose(csvFile);
+
+    // Gibt die Daten aus
+    for (int j = 0; j < i; j += 2) {
+        printf("Datenreihe %d: %d, %d\n", (j+2)/2, daten[j], daten[j+1]);
+    }
 
     return 0;
 }
 ```
 
-Die Ausgabe sieht dann wie folgt aus:
+Das obige Beispiel liest die ersten beiden Spalten jeder Zeile der CSV-Datei und speichert sie in einem Array. Sie können dies entsprechend Ihren Anforderungen anpassen.
 
-```
-Name
-Alter
-Hobbys
-```
+## Deep Dive
 
-```
-Max
-25
-Schwimmen, Lesen, Reisen
-```
+In der Lektüre von CSV-Dateien ist es wichtig, auf die Formatierung der Daten zu achten. CSV-Dateien verwenden Kommata, um die Spalten zu trennen und Zeilenumbrüche, um die Zeilen zu trennen. Stellen Sie daher sicher, dass Ihre Daten die richtige Anzahl an Spalten haben und dass Zeichen wie Kommata oder Zeilenumbrüche in den Daten korrekt behandelt werden. Außerdem kann es hilfreich sein, einen CSV-Parser-Bibliothek zu verwenden, um die Arbeit mit CSV-Dateien zu erleichtern.
 
-```
-Anna
-28
-Tennis, Fotografie, Wandern
-```
+## Siehe auch
 
-## Tieferer Einblick
-
-CSV-Dateien können in verschiedenen Formaten vorliegen, z.B. mit oder ohne Überschriften oder mit unterschiedlichen Trennzeichen. Beim Lesen und Verarbeiten von CSV-Daten ist es wichtig, die genauen Formate zu kennen und ggf. Anpassungen an unserem Code vorzunehmen.
-
-Zudem können CSV-Dateien sehr große Datensätze enthalten, die möglicherweise nicht komplett in den Arbeitsspeicher passen. In diesem Fall sollte man darauf achten, den Speicher effizient zu nutzen und Daten möglicherweise in kleinen Chargen zu verarbeiten.
-
-Zu guter Letzt ist es auch wichtig, Fehler beim Lesen oder Verarbeiten von CSV-Daten zu beachten und entsprechende Maßnahmen zu ergreifen, um das Programm nicht zum Absturz zu bringen.
-
-## Siehe Auch
-
-- [C-Programmiergrundlagen für Anfänger](https://www.geeksforgeeks.org/c-programming-language/)
-
-- [Offizielle Dokumentation für CSV-Bibliotheken in C](https://www.jp1.eu/en/csv/)
+- [Die offizielle C-Dokumentation zu Dateien](https://en.cppreference.com/w/c/io)
+- [Einführung in CSV-Dateien](https://www.w3schools.com/csv/)
+- [Eine Liste von CSV-Parser-Bibliotheken für C](https://github.com/datasets/csv/blob/master/README.md#csv-parsers)

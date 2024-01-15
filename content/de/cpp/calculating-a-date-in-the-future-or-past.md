@@ -1,6 +1,7 @@
 ---
-title:                "C++: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Eine Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "C++: Eine Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Eine Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-In der Programmierung kann es nützlich sein, ein Datum in der Zukunft oder Vergangenheit zu berechnen, wenn zum Beispiel bestimmte Ereignisse auf einem bestimmten Datum stattfinden sollen.
+Möglichkeiten zur Berechnung von zukünftigen oder vergangenen Daten können hilfreich sein, um Zeitangaben in Programmen oder Skripten zu automatisieren oder um genaue Zeitberechnungen durchzuführen.
 
-## Wie geht das?
+## Wie geht es?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann die C++ Standardbibliotheksfunktion `std::chrono::system_clock::now()` verwendet werden. Diese Funktion gibt die aktuelle Systemzeit in Form eines Zeitpunktes zurück. 
+Das Berechnen von zukünftigen oder vergangenen Daten in C++ ist relativ einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, das zeigt, wie man drei Monate zu einem bestimmten Datum hinzufügt:
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <chrono> // Bibliothek für Datum und Zeit
 
-int main() {
-    // Erhalte die aktuelle Systemzeit
-    auto now = std::chrono::system_clock::now();
-    
-    // Berechne ein Datum in der Zukunft (+30 Tage)
-    auto future = now + std::chrono::hours(24*30);
-    
-    // Berechne ein Datum in der Vergangenheit (-1 Jahr)
-    auto past = now - std::chrono::hours(24*365);
-    
-    // Gib die Ergebnisse aus
-    std::cout << "Aktuelles Datum: " << now << "\n";
-    std::cout << "Zukünftiges Datum: " << future << "\n";
-    std::cout << "Vergangenes Datum: " << past << "\n";
+int main()
+{
+  // Datum festlegen
+  std::chrono::system_clock::time_point date{ std::chrono::system_clock::now() }; 
+
+  // Drei Monate hinzufügen
+  date += std::chrono::months{ 3 };
+
+  // Ausgabe des Ergebnisses
+  std::cout << "In drei Monaten ist es der " << date << "\n";
+  return 0;
 }
 ```
-
-Die Ausgabe sieht dann ungefähr so aus:
-
+Die Ausgabe sieht folgendermaßen aus:
 ```
-Aktuelles Datum: 1593181331s
-Zukünftiges Datum: 1595909331s
-Vergangenes Datum: 1561645331s
+In drei Monaten ist es der 2021-03-02 14:49:28.857661
 ```
 
-Die Zahlen repräsentieren dabei die Anzahl an Sekunden seit dem 1. Januar 1970.
+## Tiefergehen
 
-## Tiefergehende Informationen
-
-Die C++ Standardbibliothek bietet auch Funktionen wie `std::chrono::time_point` und `std::chrono::duration`, um genauer mit Zeit und Datum zu arbeiten. Außerdem gibt es auch die Möglichkeit, Daten in verschiedenen Zeitzonen zu berechnen, indem man die Funktion `std::chrono::time_point_cast` verwendet.
+Um genaue Berechnungen zu zukünftigen oder vergangenen Daten durchzuführen, ist es wichtig zu verstehen, wie Zeit in C++ dargestellt wird. In der Regel wird die Zeit als Anzahl von Sekunden oder Nanosekunden seit dem 1. Januar 1970 gespeichert. Mit Hilfe von Bibliotheken wie "chrono" können wir diese Zeitangaben in verschiedene Formate umwandeln, um unsere Berechnungen durchzuführen. Es ist auch wichtig zu beachten, dass Zeitzonen und Sommerzeit berücksichtigt werden müssen, um genaue Ergebnisse zu erzielen.
 
 ## Siehe auch
 
-- Dokumentation von C++ Chrono: https://devdocs.io/cpp/header/chrono
-- Einrichten von Zeitzonen in C++: https://www.gormanalysis.com/blog/reading-and-writing-time-values-with-chrono/
-- Datum und Uhrzeit in C++: https://www.learncpp.com/cpp-tutorial/18-11-dates-and-times/
+- [Guide zu Datum und Zeit in C++](https://www.learncpp.com/cpp-tutorial/8-11-a-simple-date-class/)
+- [Chrono Dokumentation](https://en.cppreference.com/w/cpp/chrono)
+- [Zeitrechnung in C++ verstehen](https://www.educative.io/edpresso/how-to-use-dates-and-time-properly-in-cpp)

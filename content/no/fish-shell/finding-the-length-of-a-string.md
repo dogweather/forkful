@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "Fish Shell: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,55 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å finne lengden på en streng er en vanlig oppgave i programmering som kan være nyttig for å håndtere og manipulere tekst. Ved å bruke Fish Shell, kan du enkelt finne lengden på en streng ved hjelp av noen få kommandoer.
+Å finne lengden til en tekststreng kan være nyttig for å kunne behandle og manipulere data på en mer effektiv måte. Ved å vite lengden til en streng, kan vi blant annet bestemme hvor mange ganger en løkke skal kjøre eller hvor mange tegn som skal hentes ut fra en streng.
 
 ## Hvordan
 
-For å finne lengden på en streng i Fish Shell, kan du bruke ```string len```kommandoen. Her er et enkelt eksempel:
+Vi kan bruke Fish Shell sin innebygde kommando `string length` for å finne lengden til en streng. Denne kommandoen tar en streng som argument og returnerer antall tegn i strengen.
 
+```Fish Shell
+string length "Hei verden"
 ```
-Fish Shell> string len "Hei, verden!"
+Output:
+```
+11
+```
+
+Vi kan også bruke variabler og funksjoner sammen med `string length` for å få mer fleksibilitet. For eksempel, hvis vi ønsker å finne lengden til en tekststreng som brukeren skriver inn, kan vi bruke følgende kode:
+
+```Fish Shell
+set input (read -l "Skriv inn en tekststreng: ")
+string length $input
+```
+Output:
+```
 12
 ```
 
-Som du kan se, returnerer ```string len```kommandoen antallet tegn i den gitte strengen.
+## Dypdykk
 
-Du kan også finne lengden på en variabel ved å bruke ```string len```kommandoen med variabelnavnet som argument:
+Det er verdt å merke seg at `string length` kun teller antall tegn i en streng og ikke antall ord. Derfor, hvis vi ønsker å finne antall ord i en streng, må vi først bruke `string split` for å dele strengen inn i en liste av ord, og deretter bruke `count` funksjonen for å telle antall elementer i lista.
 
-```
-Fish Shell> set tekst "Hello, world!"
-Fish Shell> string len $text
-13
-```
-
-Hvis variabelen inneholder en liste av strenger, vil ```string len```kommandoen returnere antallet strenger i listen:
-
-```
-Fish Shell> set liste "Eple Jordbær Drue"
-Fish Shell> string len $liste
-3
-```
-
-## Dykk dypere
-
-Det er viktig å merke seg at ```string len```kommandoen regner med mellomrom og andre tegn i lengden på en streng. Dette betyr at følgende eksempel vil returnere 14 i stedet for 12:
-
-```
-Fish Shell> string len "Hei,  verden!"
-14
-```
-
-Det er også verdt å nevne at du kan bruke en kombinasjon av kommandoer for å finne lengden på en streng. For eksempel, hvis du skal finne lengden på en streng og legge til en annen verdi, kan du bruke følgende format:
-
-```
-Fish Shell> set tekst "Hello, world!"
-Fish Shell> echo (expr string len $tekst + 2)
-15
-```
-
-Dette kan være nyttig for å manipulere tekst i lengden av en streng. Det gir deg også muligheten til å kombinere flere kommandoer for å oppnå ønsket resultat.
+Det er også viktig å være oppmerksom på at `string length` tar hensyn til alle tegn, inkludert mellomrom og spesialtegn. Dette kan påvirke resultatet hvis vi for eksempel har en tekststreng med blandede tegn og ønsker å finne lengden til bare bokstavene.
 
 ## Se også
 
-- Fish Shell dokumentasjon for "string len": https://fishshell.com/docs/current/cmds/string-len.html
-- Sammenligning av strenglengde i forskjellige programmeringsspråk: https://www.rosettacode.org/wiki/String_length
+- [Fish Shell sin offisielle dokumentasjon](https://fishshell.com/docs/current/commands.html)
+- [Tutorial: How to Use Fish Shell to Automate Tasks on a VPS](https://www.digitalocean.com/community/tutorials/how-to-use-fish-shell-to-automate-tasks-on-a-vps)
+- [10 Useful Tips for Fish Shell](https://computingforgeeks.com/10-useful-tips-for-fish-shell-on-linux-macos/)

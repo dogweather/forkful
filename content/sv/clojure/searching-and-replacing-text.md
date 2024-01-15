@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och ersätta text"
+html_title:           "Clojure: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-En vanlig uppgift inom programmering är att söka och ersätta text i en given fil eller sträng. Det kan bero på att man vill korrigera stavfel, byta ut vissa ord eller helt enkelt göra en snabb ändring i en stor mängd text. Men varför skulle man behöva göra det i Clojure?
+##Varför
 
-## How To
+Att söka och byta ut text är en vanlig uppgift för programmerare, oavsett vilket språk de arbetar med. Det kan vara ett viktigt steg i att lösa ett problem eller för att uppdatera kod som har blivit föråldrad. Med Clojure är det lätt att söka och ersätta text på ett effektivt sätt.
 
-Sök och ersätt funktionen i Clojure är enkel och kraftfull tack vare användningen av reguljära uttryck. För att söka efter en viss textsträng i en fil eller sträng använder man sig av `re-seq` funktionen tillsammans med ett reguljärt uttryck och den text man vill söka i. Till exempel om vi vill hitta alla förekomster av ordet "häst" i en fil kan vi använda följande kod:
+##Så här gör du
 
-```Clojure
-(def fil-innehåll (slurp "minfil.txt"))  ; läser in hela filens innehåll som en sträng
-(re-seq #"\bhäst\b" fil-innehåll) ; söker efter ordet häst i filinnehållet
-```
-Output:
-```
-("häst" "häst" "häst") ; antal förekomster av ordet "häst"
-```
-För att ersätta alla förekomster av ordet "häst" med "katt" kan man använda sig av `re-find` tillsammans med `re-replace` funktionen. Detta gör att vi kan söka efter en textsträng och samtidigt byta ut den. Koden skulle se ut så här:
+Du kan enkelt söka och byta ut text i Clojure genom att använda den inbyggda "replace" funktionen. Här är ett enkelt exempel på hur du kan använda den:
 
 ```Clojure
-(re-replace #"häst" "katt" fil-innehåll)
+(replace "hej" "hello" "Hej världen!") 
 ```
-Output:
-```
-"katt äter morötter och gräs" ; ursprungliga filinnehållet med alla förekomster av "häst" bytta mot "katt"
-```
-I exempelkoden ovan har vi använt `#` före vårt reguljära uttryck, detta betyder att vi skapar en reguljär uttrycksliteral som är en effektivare och snabbare metod jämfört med `re-find` som tar emot en regexp-sträng.
 
-## Deep Dive
-I Clojure kan man också använda sig av `re-pattern` funktionen för att kompilera en regexp-sträng till ett pattern objekt. Detta kan skapa en prestandaförbättring om man behöver söka efter samma reguljära uttryck flera gånger. Man kan också använda sig av `re-matcher` funktionen för att hitta ytterligare information om den sökta texten, till exempel vilken position i texten den finns på.
+Detta kommer att söka igenom textsträngen "Hej världen!" och byta ut alla förekomster av "hej" med "hello". Detta ger dig följande output:
 
-## Se också
-- [The Clojure cheat sheet](https://clojure.org/api/cheatsheet): En snabb referensguide för Clojure.
-- [ClojureDocs](https://clojuredocs.org/): En online samling av Clojure dokumentation och exempel.
-- [Mastering Regular Expressions](https://regex.info/book.html): En guide för att lära sig reguljära uttryck på djupet.
+```Clojure
+"Hello världen!"
+```
+
+För att söka igenom en hel fil och ersätta text kan du använda funktionen "slurp" för att läsa in filen som en textsträng och sedan använda "replace" på den. Till exempel:
+
+```Clojure
+(with-open [file (clojure.java.io/reader "minfil.txt")] 
+  (let [content (slurp file)] 
+    (replace "hund" "katt" content)))
+```
+
+Detta kommer att söka igenom filen "minfil.txt" och byta ut alla förekomster av "hund" med "katt". Outputen är den uppdaterade texten från filen.
+
+##Djupdykning
+
+Det finns också andra alternativ för att utföra sökningar och byta ut text i Clojure, såsom att använda reguljära uttryck med funktionen "re-seq" eller att använda molnfunktioner som "sed". Det är viktigt att notera att Clojure används för att manipulera data på en funktionell nivå, vilket gör att sökningar och ersättningar kan bli enklare och mer lättlästa jämfört med andra språk.
+
+##Se även
+
+- [ClojureDocs](https://clojuredocs.org/clojure.core/replace)
+- [En introduktion till Clojure](https://github.com/hjorturlarsen/artikel-clojure)
+- [Tutorial: Att bygga en enkel webbapplikation med Clojure och Ring](https://www.dailydrip.com/blog/clojure-building-web-apps-with-compojure)

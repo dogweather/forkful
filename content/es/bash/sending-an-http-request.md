@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Enviando una solicitud http."
-simple_title:         "Enviando una solicitud http."
+title:                "Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -9,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué 
 
-Enviar solicitudes HTTP es una parte fundamental de la programación de Bash, ya que permite a los usuarios interactuar con redes y servidores externos. Esto es especialmente útil cuando se trabaja con aplicaciones web o se necesita acceder a datos externos.
+Enviar solicitudes HTTP es una habilidad importante para la programación de Bash, ya que permite interactuar con diferentes servidores y obtener información o realizar acciones a través de Internet. Además, es una herramienta útil para automatizar tareas en el desarrollo web.
 
-## Cómo hacerlo
+## Cómo 
 
-Para enviar una solicitud HTTP en Bash, se utiliza el comando `curl`. Por ejemplo, para obtener la página web de Google, se puede escribir lo siguiente en la terminal:
+Para enviar una solicitud HTTP en Bash, utilizamos el comando `curl` seguido de la URL del servidor y cualquier parámetro adicional que necesitemos. Por ejemplo: 
 
-```bash
-curl https://www.google.com
+```Bash
+curl www.ejemplo.com
 ```
 
-Esto enviará una solicitud GET a la URL especificada y devolverá el contenido de la página en la terminal. Si se quiere guardar el contenido en un archivo, se puede usar la opción `-o` seguido del nombre del archivo:
+Esto enviará una solicitud GET al servidor y mostrará la respuesta en la consola. También podemos incluir parámetros adicionales, como el método de solicitud, el tipo de contenido y los datos que queremos enviar, entre otros.
 
-```bash
-curl -o google.html https://www.google.com
+```Bash
+curl -X POST -H "Content-Type: application/json" -d '{"nombre": "Juan", "apellido": "Perez"}' www.ejemplo.com/api/usuarios
 ```
 
-También se pueden enviar solicitudes POST con `curl` incluyendo la opción `-X POST` seguida de los datos a enviar entre comillas simples:
+Esto enviará una solicitud POST con datos en formato JSON al servidor y recibiremos una respuesta en la que se puede ver si la acción se realizó exitosamente. 
 
-```bash
-curl -X POST -d '{"username":"ejemplo", "password":"contraseña"}' https://www.ejemplo.com/login
-```
+## Profundizando 
 
-La respuesta será el resultado de la solicitud POST en la terminal. Se pueden usar muchas otras opciones y personalizar la solicitud según sea necesario.
+Ahora que conocemos la sintaxis básica de la solicitud HTTP en Bash, podemos explorar más opciones y parámetros disponibles. 
 
-## Profundizando
+Para especificar el método de solicitud, utilizamos la opción `-X` seguido del método deseado, como `GET`, `POST`, `PUT`, `PATCH` o `DELETE`. 
 
-Enviar una solicitud HTTP en Bash puede ser más complejo que simplemente usar el comando `curl`. Es posible que se necesite agregar encabezados, autenticación u otros parámetros a la solicitud. Para hacerlo, se pueden utilizar variables y concatenarlas en la solicitud. Por ejemplo, para agregar un encabezado de autenticación con un token de acceso, se puede escribir lo siguiente:
+Podemos especificar los encabezados de la solicitud utilizando la opción `-H` y pasar el nombre y el valor del encabezado que deseamos agregar. Por ejemplo, `-H "Content-Type: application/json"` establecerá el tipo de contenido de la solicitud como JSON. 
 
-```bash
-token="mi_token_de_acceso"
-curl -H "Authorization: Bearer $token" https://www.ejemplo.com/api/data
-```
+Otra opción útil es la opción `-i`, que nos mostrará tanto la información de los encabezados de la respuesta como el cuerpo. Esto es especialmente útil para depurar y comprender mejor la respuesta del servidor. 
 
-Además, se pueden usar lenguajes como Awk para procesar la salida de una solicitud y extraer datos específicos de ella.
+Finalmente, podemos utilizar la opción `-o` seguida de un nombre de archivo para guardar la respuesta en un archivo en lugar de mostrarla en la consola. Esto puede ser útil cuando se trabaja con grandes cantidades de datos. 
 
-## Ver también
+## Ver también 
 
-- [Documentación de cURL](https://curl.haxx.se/docs/)
-- [Tutorial de cURL para principiantes](https://www.codecademy.com/articles/curl)
-- [Tutorial de Bash para principiantes](https://www.codecademy.com/learn/learn-the-command-line)
+- [Documentación oficial de `curl`](https://curl.se/docs/manpage.html)
+- [Ejemplos de uso de `curl`](https://www.baeldung.com/curl-rest)

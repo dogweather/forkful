@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "TypeScript: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,40 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Descargar una página web es una habilidad útil en el mundo del desarrollo web. Puede ser útil para realizar pruebas, realizar análisis o simplemente almacenar una copia de la página para uso futuro. En este artículo, exploraremos cómo podemos descargar una página web utilizando TypeScript.
+Descargar una página web puede ser útil en diferentes situaciones, como por ejemplo para obtener información específica, guardar contenido para accederlo sin conexión o simplemente por curiosidad. En este artículo, aprenderemos cómo descargar una página web utilizando TypeScript.
 
 ## Cómo hacerlo
 
-Para descargar una página web en TypeScript, primero necesitamos importar el módulo `https` de Node.js. Luego, podemos utilizar la función `get()` para realizar una solicitud HTTP GET a la URL que queremos descargar. A continuación, utilizaremos la función `pipe()` para redirigir la respuesta a un archivo en nuestro sistema.
+```TypeScript 
+const request = require('request');
+const fs = require('fs');
 
-```TypeScript
-// Importamos el módulo https
-import * as https from 'https';
-// Importamos el módulo fs para manejo de archivos
-import * as fs from 'fs';
-
-// URL de la página que queremos descargar
-const url = 'https://ejemplo.com';
-// Ruta donde queremos guardar el archivo descargado
-const path = './ejemplo.html';
-
-// Realizamos la solicitud GET
-https.get(url, (res) => {
-    // Redirigimos la respuesta al archivo
-    res.pipe(fs.createWriteStream(path));
-})
+request('www.example.com', (error, response, body) => {
+    if (!error && response.statusCode === 200) {
+        fs.writeFile('example.html', body, (error) => {
+            if (error) {
+                console.log('Hubo un error al guardar el archivo');
+            } else {
+                console.log('La página web se ha descargado con éxito');
+            }
+        });
+    } else {
+        console.log('Hubo un error al hacer la solicitud');
+    }
+});
 ```
 
-Una vez que se completa la descarga, encontraremos el archivo `ejemplo.html` en la ruta especificada, listo para ser utilizado.
+En este ejemplo, estamos utilizando el módulo `request` para hacer una solicitud a la página web en la URL especificada. Luego, utilizamos el módulo `fs` para guardar el contenido de la respuesta en un archivo HTML. Si la solicitud es exitosa, el archivo se guardará en la carpeta actual con el nombre `example.html`. Si hay algún error, se mostrará un mensaje de error en la consola.
 
-## Profundizando
+## Profundizando en el tema
 
-Hay varias opciones que podemos considerar al descargar una página web. Por ejemplo, podemos usar una librería como `cheerio` para analizar y extraer datos específicos de la página descargada. También podemos configurar la solicitud para incluir encabezados de agente de usuario y cookies si es necesario.
-
-Otra consideración importante es manejar posibles errores al descargar una página. Podemos utilizar el bloque `try-catch` para manejar excepciones o podemos verificar el código de estado de la respuesta para asegurarnos de que se descargó correctamente.
+Al descargar una página web, es importante tener en cuenta que cualquier contenido dinámico (como elementos cargados con JavaScript) no se descargará. Solo se obtendrá el código HTML que está presente en el momento de la descarga. Además, es posible que algunos sitios web requieran autenticación o bloqueen solicitudes malintencionadas, por lo que es posible que no se pueda descargar la página deseada. Otro detalle a tener en cuenta es que al descargar una página web, se está consumiendo el ancho de banda del servidor al hacer una solicitud, por lo que se debe utilizar esta técnica con responsabilidad.
 
 ## Ver también
 
-- Documentación oficial de Node.js `https` módulo: https://nodejs.org/api/https.html
-- Documentación de TypeScript: https://www.typescriptlang.org/
-- Librería `cheerio`: https://cheerio.js.org/
+- [Cómo hacer solicitudes HTTP en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-use-the-request-module-in-node-js)
+- [Documentación oficial de TypeScript](https://www.typescriptlang.org/docs/)
+- [Node.js - documentación oficial](https://nodejs.org/es/docs/)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Sammenstilling av strenger"
-simple_title:         "Sammenstilling av strenger"
+title:                "Sammenføyning av tekststrenger"
+html_title:           "TypeScript: Sammenføyning av tekststrenger"
+simple_title:         "Sammenføyning av tekststrenger"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,41 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er en programutvikler som jobber med TypeScript, vet du sannsynligvis allerede at stringmanipulering er en viktig del av kodingen din. En av de mest grunnleggende og nyttige funksjonene innen stringmanipulering er konkatenering av strenger. Denne prosessen innebærer å kombinere to eller flere strenger for å danne en enkelt streng. Men hvorfor er dette viktig? Svaret er ganske enkelt: det gjør kodingen din mer fleksibel og lar deg håndtere variabel data på en effektiv måte.
+Å kombinere strenger kan være nyttig når du ønsker å lage dynamiske setninger, som inkluderer variabler eller brukerinput. Dette gjør det enkelt å lage mer dynamisk og tilpasningsdyktig kode.
 
-## Hvordan du gjør det
+## Hvordan Kombinere Strenger i TypeScript
 
-For å konkatenere strenger i TypeScript, kan vi bruke "+" operatør til å kombinere strenger. La oss si at vi har to variabler, navn og yrke, som inneholder informasjonen "Johan" og "programmerer". For å kombinere disse to strengene, kan vi bruke følgende kode:
-
-```TypeScript
-let navn: string = "Johan;
-let yrke: string = "programmerer";
-let beskrivelse: string = navn + yrke;
-console.log(beskrivelse);
-```
-
-Dette vil gi følgende utskrift i konsollen: "Johan programmerer". Som du kan se, blir de to strengene kombinert til en enkelt streng. Det er viktig å merke seg at rekkefølgen på strengene er viktig. Hvis vi bytter om rekkefølgen på "navn" og "yrke" i koden vår, vil utskriften være "programmerer Johan".
-
-I tillegg til "+" operatøren, kan vi også bruke string interpolation for å konkatenere strenger i TypeScript. Dette gjøres ved å bruke " `${}`" syntaks. La oss se på et eksempel:
+I TypeScript, kan du kombinere strenger på to måter: ved hjelp av "+" operatøren eller ved hjelp av "Template Strings". La oss se på et eksempel på begge metodene:
 
 ```TypeScript
+let navn: string = "Nina";
 let alder: number = 25;
-let tekst: string = `Jeg er ${alder} år gammel.`
-console.log(tekst);
+
+// Ved hjelp av "+" operatøren
+let setningA: string = "Hei, mitt navn er " + navn + ", og jeg er " + alder + " år gammel.";
+
+// Ved hjelp av "Template Strings"
+let setningB: string = `Hei, mitt navn er ${navn}, og jeg er ${alder} år gammel.`;
+
+console.log(setningA);
+console.log(setningB);
+
+/*
+Setning A output: Hei, mitt navn er Nina, og jeg er 25 år gammel.
+Setning B output: Hei, mitt navn er Nina, og jeg er 25 år gammel.
+*/
+
 ```
 
-Utskriften vil være "Jeg er 25 år gammel.". Merk at aldersvariabelen ble plassert inne i " `${}`" uttrykket mellom ordet "er" og setningen "år gammel".
+Som du kan se, produserer begge metodene samme output. Forskjellen er at "Template Strings" gjør det enklere å inkludere variabler i en streng, ved å bruke ${} syntaks rundt variabelnavnet.
 
-## Dypdykk
+## Dykk Dypere Inn
 
-Det er viktig å merke seg at når vi konkatenere tall og strenger i TypeScript, blir resultatet alltid en streng. Selv om alder variabelen i eksempelet vårt tidligere var en numerisk verdi, blir den omgjort til en streng når vi kombinerer den med en annen streng.
+Nå som vi har sett på de to måtene å kombinere strenger på, la oss se på noen flere ting å huske på når du jobber med dette i TypeScript.
 
-En annen ting å huske på er å bruke riktig data type når du arbeider med konkatenere. Hvis vi prøver å kombinere en streng og et tall uten å omgjøre tallet til en streng først, vil TypeScript gi oss en feilmelding.
+- Kan også kombinere strenger med += operatøren: I tillegg til å bruke + operatøren, kan du også bruke += operatøren for å legge til en streng på slutten av en eksisterende streng. For eksempel: `let setning: string = "Dette er en " + "test.";` kan også skrives som `let setning: string = "Dette er en "; setning += "test.";`.
 
-## Se også
+- Bruk av backslash (\): Hvis du ønsker å inkludere spesialtegn, som for eksempel et anførselstegn, i en kombinert streng, kan du bruke backslash (\) foran tegnet. Dette signaliserer at det er en del av strengen og ikke en del av syntaksen. For eksempel: `let setning: string = "Dette er et \"anførselstegn\".";`.
 
-Hvis du ønsker mer informasjon om TypeScript, anbefaler vi å sjekke ut følgende ressurser:
+## Se Også
 
-- [Offisiell TypeScript dokumentasjon](https://www.typescriptlang.org/docs/home.html)
-- [TypeScript på GitHub](https://github.com/microsoft/TypeScript)
-- [Tutorial: Lag et TypeScript-prosjekt fra bunnen av](https://www.tutorialspoint.com/typescript/typescript_projects.htm)
+- [Offisiell TypeScript Dokumentasjon - Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [JavaScript.info - Strings](https://javascript.info/types#string)
+- [MDN Web Docs - Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

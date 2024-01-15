@@ -1,5 +1,6 @@
 ---
-title:                "C: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "C: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "C"
 category:             "C"
@@ -9,74 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum YAML in der C-Programmierung verwenden?
+## Warum
 
-YAML steht für "Yet Another Markup Language" und ist eine einfache und intuitive Möglichkeit, strukturierte Daten in einem menschenlesbaren Format zu speichern. In der C-Programmierung kann YAML zum Beispiel für die Konfiguration von Programmen oder das Lesen und Schreiben von Daten verwendet werden.
+Wenn du das Programmieren mit C beherrschst, hast du vielleicht schon von YAML gehört. Aber wofür braucht man das überhaupt? Nun, YAML ist eine außerordentlich nützliche Datenformatierungssprache, die dabei hilft, komplexe Daten leicht lesbar und übersichtlich zu machen. Mit C und YAML kannst du komplexe Datenstrukturen erstellen und verwalten, was dir dabei hilft, effizientere und professionellere Programme zu schreiben.
 
-# Wie man YAML in C verwendet
+## How To
 
-Um YAML in C zu verwenden, müssen wir zuerst die Bibliothek "libyaml" installieren. Diese Bibliothek ermöglicht es uns, in unserem Code auf die Funktionen zuzugreifen, die zum Lesen und Schreiben von YAML-Dokumenten benötigt werden.
-
-Um mit YAML zu arbeiten, müssen wir zunächst ein neues Dokument erstellen, in dem wir unsere Daten speichern können. Dies kann mit der Funktion `yaml_document_initialize()` erreicht werden, die ein leeres Dokument erstellt. Dann können wir mithilfe der Funktionen `yaml_document_add_scalar()` und `yaml_document_add_mapping()` Schlüssel-Wert-Paare oder komplexe Datenstrukturen hinzufügen.
-
-Hier ist ein Beispielcode, der einen einfachen YAML-Datensatz erstellt und ausgibt:
+Um mit YAML in C zu arbeiten, musst du zunächst die Bibliothek "libyaml" in dein Programm einbinden. Diese Bibliothek ermöglicht es, YAML-Dateien zu lesen und zu schreiben. Anschließend kannst du mit den YAML-Daten arbeiten, indem du sie in eine geeignete Datenstruktur einliest, beispielsweise in ein Array oder eine Struktur. Hier ein Beispielcode:
 
 ```C
 #include <stdio.h>
-#include "yaml.h"
+#include <yaml.h>
 
-int main(void)
+int main()
 {
-    // initialisiere ein neues Dokument
-    yaml_document_t doc;
-    yaml_document_initialize(&doc, NULL, NULL, NULL, 0, 0);
+    // Öffne YAML-Datei
+    FILE *yaml_file = fopen("beispiel.yaml", "r");
 
-    // füge einen Skalar-Wert hinzu
-    yaml_node_t *key = yaml_document_add_scalar(
-        &doc, (yaml_char_t *) "name", (yaml_char_t *) "Max Mustermann");
+    // Initialisiere den Parser
+    yaml_parser_t parser;
+    yaml_parser_initialize(&parser);
 
-    // füge einen Mapping-Wert hinzu
-    yaml_node_t *mapping = yaml_document_add_mapping(&doc, NULL, YAML_FLOW_MAPPING_STYLE);
+    // Wenn das Einlesen erfolgreich war...
+    if (yaml_parser_load(&parser, yaml_file))
+    {
+        yaml_event_t event;
+        int done = 0;
 
-    // füge ein weiteres Schlüssel-Wert-Paar hinzu
-    yaml_node_t *key2 = yaml_document_add_scalar(
-        &doc, (yaml_char_t *) "age", (yaml_char_t *) "30");
+        // Gehe durch jedes Element und gib es aus
+        while (!done)
+        {
+            // Lese das nächste Event
+            if (!yaml_parser_parse(&parser, &event))
+                break;
 
-    // füge den Mapping-Wert dem Dokument hinzu
-    yaml_document_append_mapping_pair(&doc, mapping, key, key2);
+            // Wenn das Event ein Mapping ist...
+            if (event.type == YAML_MAPPING_START_EVENT)
+            {
+                fprintf(stdout, "Eintrag gefunden:\n");
+            }
+            else if (event.type == YAML_SCALAR_EVENT)
+            {
+                // Gib den Eintrag und seinen Wert aus
+                fprintf(stdout, "%s: %s\n", event.data.scalar.value, event.data.scalar.value);
+            }
+            done = (event.type == YAML_STREAM_END_EVENT);
+            // Event löschen
+            yaml_event_delete(&event);
+        }
 
-    // erzeuge einen YAML-String aus dem Dokument
-    yaml_char_t *yaml = (yaml_char_t *) malloc(1024 * sizeof(yaml_char_t));
-    int yaml_size = yaml_document_dump(&doc, yaml, 0, 0);
+        // Parser beenden
+        yaml_parser_delete(&parser);
+    }
 
-    // gib den YAML-String aus
-    printf("%s", yaml);
-
-    // gib den Speicher wieder frei
-    free(yaml);
-
-    // lösche das Dokument
-    yaml_document_delete(&doc);
+    // Schließe die Datei
+    fclose(fp);
 
     return 0;
 }
 ```
 
-Die Ausgabe dieses Codes sieht folgendermaßen aus:
+Der Code liest eine YAML-Datei mit dem Namen "beispiel.yaml" ein und gibt dann alle Einträge und ihre Werte aus. Natürlich kannst du diesen Code anpassen und erweitern, um damit Datenstrukturen zu erstellen, zu ändern oder zu speichern.
 
-```YAML
-name: Max Mustermann
-{age: '30'}
-```
+## Deep Dive
 
-# Tiefergehende Informationen zu YAML in C
+Jetzt wo du den Grundsatz von YAML in C kennengelernt hast, kannst du weiter forschen und noch mehr lernen. Zum Beispiel kannst du dir die Dokumentation zur "libyaml"-Bibliothek ansehen, um mehr über die verfügbaren Funktionen zu erfahren. Du kannst auch damit experimentieren, wie du komplexe Datenstrukturen mit YAML und C erstellen und verwalten kannst. Die Möglichkeiten sind endlos, also zögere nicht, noch tiefer in dieses spannende Thema einzutauchen.
 
-Es ist wichtig zu beachten, dass YAML in C mit einer gewissen Einschränkung verwendet werden kann. Beim Lesen von YAML-Dokumenten kann es zu Problemen kommen, wenn die Dokumente nicht korrekt formatiert sind oder nicht den erwarteten Datentypen entsprechen. Es ist daher wichtig, dass wir immer sicherstellen, dass unsere YAML-Daten gültig sind, bevor wir versuchen, sie zu lesen oder zu schreiben.
+## Siehe auch
 
-Eine weitere wichtige Sache zu beachten ist, dass libyaml die Möglichkeit bietet, benutzerdefinierte Handler für verschiedene Event-Typen zu erstellen. Dies kann nützlich sein, wenn wir bestimmte Aktionen ausführen möchten, während ein YAML-Dokument gelesen oder geschrieben wird, wie zum Beispiel die Validierung von Daten oder die Ausführung von Berechnungen.
+- [offizielle YAML-Website](http://yaml.org/)
+- [libyaml-Dokumentation](https://pyyaml.org/wiki/LibYAML)
+- [Beispiele für YAML-Coding in verschiedenen Programmiersprachen](https://github.com/jeremygiberson/yaml-cpp/wiki/Tutorials)
 
-# Siehe auch
-
-- Die offizielle Dokumentation von libyaml: [https://pyyaml.org/wiki/LibYAML](https://pyyaml.org/wiki/LibYAML)
-- YAML-Spezifikation: [https://yaml.org/spec/](https://yaml.org/spec/)
-- Ein einfaches Tutorial zur Verwendung von libyaml: [https://blog.stackhpc.com/2019/04/13/c-as-yaml/](https://blog.stackhpc.com/2019/04/13/c-as-yaml/)
+Danke fürs Lesen und viel Spaß beim Coden mit YAML in C!

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Création d'un fichier temporaire"
+title:                "Création d'un fichier temporaire"
+html_title:           "Ruby: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,66 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Créer un fichier temporaire peut être utile dans de nombreuses situations lors de la programmation en Ruby. Par exemple, cela peut être utile pour stocker des données temporaires ou pour réaliser des opérations intermédiaires avant de les traiter définitivement.
+Créer un fichier temporaire est souvent nécessaire lorsque l'on travaille avec des données temporaires ou que l'on souhaite stocker des informations de manière provisoire. Cela peut faciliter la manipulation de ces données et permettre une meilleure organisation du code.
 
 ## Comment faire
 
-Pour créer un fichier temporaire en Ruby, vous pouvez utiliser la méthode `Tempfile.create`. Cela va créer un fichier avec un nom aléatoire et l'ouvrir en mode écriture.
+La création d'un fichier temporaire en Ruby est assez simple. Il suffit d'utiliser la méthode `Tempfile.create` et de préciser un préfixe pour le nom du fichier (par exemple "temp") :
 
 ```Ruby
-require 'tempfile'
+require 'tempfile' # Importer la bibliothèque Tempfile
 
-# Créer un nouveau fichier temporaire
-temp_file = Tempfile.create
-
-# Ajouter du contenu au fichier
-temp_file.write("Ceci est un fichier temporaire créé en Ruby.")
-
-# Fermer le fichier
-temp_file.close
-
-# Afficher le contenu du fichier
-puts File.read(temp_file.path)
-
-# Supprimer le fichier temporaire
-temp_file.unlink
-
-# Output:
-# Ceci est un fichier temporaire créé en Ruby.
+# Créer un fichier temporaire avec le préfixe "temp"
+file = Tempfile.create("temp")
 ```
 
-Vous pouvez également spécifier un nom de fichier personnalisé en passant un argument à la méthode `Tempfile.create`.
+Ensuite, vous pouvez écrire du contenu dans ce fichier à l'aide de la méthode `write` :
 
 ```Ruby
-require 'tempfile'
+file.write("Contenu du fichier temporaire") # Écrire dans le fichier
+```
 
-# Créer un nouveau fichier temporaire avec un nom personnalisé
-temp_file = Tempfile.create('mon_fichier_temporaire')
+Il est également possible de lire le contenu du fichier avec la méthode `read` ou de lancer une commande dans le fichier avec la méthode `system` :
 
-# Ajouter du contenu au fichier
-temp_file.write("Voici mon fichier temporaire personnalisé en Ruby.")
+```Ruby
+file.read # Lire le contenu du fichier
+file.system("ls") # Exécuter la commande "ls" dans le fichier
+```
 
-# Fermer le fichier
-temp_file.close
+Une fois que vous avez terminé d'utiliser le fichier temporaire, n'oubliez pas de le fermer avec la méthode `close` et de le supprimer avec la méthode `unlink` :
 
-# Afficher le contenu du fichier
-puts File.read(temp_file.path)
-
-# Supprimer le fichier temporaire
-temp_file.unlink
-
-# Output:
-# Voici mon fichier temporaire personnalisé en Ruby.
+```Ruby
+file.close # Fermer le fichier
+file.unlink # Supprimer le fichier
 ```
 
 ## Plongée en profondeur
 
-La méthode `Tempfile.create` prend également en charge plusieurs options facultatives telles que `encoding`, `dir` et `perm`. Vous pouvez les utiliser pour spécifier l'encodage du fichier, le répertoire dans lequel le fichier sera créé et les permissions du fichier.
-
-De plus, la méthode `Tempfile#create` renvoie un objet `Tempfile` qui possède des méthodes pratiques telles que `open` pour ouvrir le fichier dans différents modes, `rewind` pour rembobiner le fichier et `flush` pour vider le tampon et écrire les données dans le fichier.
+En creusant un peu plus, vous pouvez également spécifier un dossier de destination pour le fichier temporaire, ou encore définir des options telles que le mode d'accès ou le préfixe de nom. Tout cela est possible grâce aux nombreux paramètres que la méthode `create` accepte. De plus, vous pouvez également utiliser la classe `Tempfile` pour créer des objets de type fichier temporaire, offrant ainsi plus de flexibilité dans la gestion de ces fichiers provisoires.
 
 ## Voir aussi
 
-- Documentation sur les fichiers temporaires en Ruby : https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html
-- Tutoriel sur la création et la manipulation de fichiers en Ruby : https://www.rubyguides.com/2015/05/working-with-files-ruby/
-- Exemples de projets utilisant des fichiers temporaires en Ruby : https://github.com/topics/tempfile
+- La documentation officielle sur la classe Tempfile : https://ruby-doc.org/stdlib-2.7.2/libdoc/tempfile/rdoc/Tempfile.html
+- Un tutoriel sur la création de fichiers temporaires en Ruby : https://www.rubyguides.com/2016/05/temporary-files-ruby/
+- Un exemple d'utilisation de fichiers temporaires dans un projet Ruby : https://github.com/seattlerb/tempfile

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 编写文本文件"
+title:                "编写文本文件"
+html_title:           "Gleam: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写文本文件？
+为什么：写文本文件是一种常见的编程任务，它可以用于存储和处理数据，从而使程序更加灵活和可扩展。
 
-编程是一种有趣而创造性的活动，而编写文本文件是许多程序员都会遇到的任务。无论是在搭建网站、创建应用还是处理数据，文本文件都是必不可少的。它们可以存储大量的文本信息，并且易于共享和编辑。因此，学习如何编写文本文件可以帮助您提高编程技能并更有效地处理文本数据。
+##为什么要写文本文件？
 
-## 如何编写文本文件
+写文本文件是一种有用的技能，它可以帮助我们在编程过程中更有效地存储和处理数据。无论是用于保存用户输入的数据，还是用于生成报告和日志，文本文件都是必不可少的工具。它们可以帮助我们保持代码的可读性和可维护性，从而让我们的程序更加健壮和可扩展。
+
+##如何写文本文件？
+
+要写文本文件，我们可以使用Gleam编程语言中的`write_file`函数。它接受两个参数，第一个参数是要写入的文件名，第二个参数是要写入的内容。下面是一个简单的代码示例：
 
 ```Gleam
-//创建一个文本文件
-let file = File.open("my_file.txt", :write)
+let file_name = "hello.txt"
+let content = "Hello, world!"
 
-//将文本写入文件
-File.write(file, "这是我的第一个文本文件")
-
-//关闭文件
-File.close(file)
+write_file(file_name, content)
 ```
 
-在上面的代码示例中，我们使用Gleam语言的File模块来创建一个名为“my_file.txt”的文本文件，并将一条文本信息写入文件中。最后，我们使用File模块的close函数来关闭文件。这样，我们就成功地创建了一个文本文件并向其中写入了文本信息。
+运行这段代码后，我们就会在当前目录下生成一个名为`hello.txt`的文件，其中包含了`Hello, world!`这句话。
 
-## 深入了解文本文件的编写
+##深入了解文本文件的写入过程
 
-编写文本文件并非只能使用Gleam的File模块。许多编程语言都有类似的操作文本文件的函数或方法。在Gleam中，我们可以使用File.open函数来创建文件句柄，使用File.write函数来将文本信息写入文件，以及使用File.close函数来关闭文件。除此之外，我们还可以在创建文件句柄时指定文件的编码方式，以便更好地处理不同语言的文本信息。
+当我们调用`write_file`函数时，它实际上是先将要写入的内容保存在内存中，然后再将其写入到目标文件当中。这种方式可以保证数据的安全性，因为如果在写入过程中程序出现了异常，我们的原始文件将不会被破坏。
 
-# 参考资料
+另外，我们也可以在调用`write_file`函数之前使用Gleam中的`format`函数来格式化要写入的内容。这样可以让我们更灵活地处理数据，从而生成更复杂的文本文件。
+
+##参考链接
 
 - [Gleam文档](https://gleam.run/documentation/)
-- [如何在Gleam中操作文件](https://gleam.run/articles/files/)
-- [了解文本编码方式](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) 
-
-# 参见
-
-- [如何在Gleam中读取文本文件](https://gleam.run/articles/files/)
-- [如何在Gleam中处理文本数据](https://gleam.run/articles/strings/)
+- [使用Gleam编程语言来处理文本文件](https://gleam.run/articles/reading-and-writing-text-files/)

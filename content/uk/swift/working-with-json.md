@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Робота з json"
+title:                "Робота з json"
+html_title:           "Swift: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,44 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-В сучасному світі програмування дуже важливо володіти такими технологіями, як JSON. Це дозволяє нам зручно обмінюватися та зберігати дані різного формату. Робота з JSON є необхідною навичкою для будь-якого програміста, тому що цей формат є дуже популярним у сфері веб-розробки та інших галузях.
+У сучасному програмуванні, є безліч форматів для обміну даними між додатками. Один із них, JSON, є дуже поширеним завдяки своїй простоті та легкості використання. Розуміння того, як працювати з JSON, дозволить зберігати та обмінюватися даними з різних джерел без зайвих зусиль.
 
-## Як
+## Як працювати з JSON у Swift
 
-Для роботи з JSON у Swift нам знадобиться використовувати спеціальний фреймворк - `Foundation`. Це вбудований фреймворк, який надає нам всі необхідні інструменти для роботи з JSON. Давайте розглянемо приклад коду, який демонструє, як розпарсити JSON-рядок та отримати дані з нього:
+Існує кілька способів обробки даних у форматі JSON у Swift, але найбільш простим і найпопулярнішим є використання стандартної бібліотеки Foundation.
 
-```Swift
-// Приклад JSON-рядка
-let jsonString = """
-{
-    "name" : "John",
-    "age" : 25,
-    "interests" : ["programming", "photography", "music"]
-}
-"""
+Наприклад, якщо ми маємо JSON-файл з даними про користувачів, ми можемо здійснити його парсинг та отримати вміст у вигляді словника Swift за допомогою наступного коду:
 
-// Розпарсимо JSON та отримаємо дані
-do {
-    if let json = try JSONSerialization.jsonObject(with: Data(string: jsonString), options: []) as? [String: Any] {
-        let name = json["name"] as? String
-        let age = json["age"] as? Int
-        let interests = json["interests"] as? [String]
-        
-        print(name, age, interests) // виведе "John", 25, ["programming", "photography", "music"]
+```Swift 
+if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+    do {
+        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        let users = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        print(users)
+    } catch {
+        print(error)
     }
-} catch {
-    print(error)
 }
 ```
 
-Як бачимо, для розпарсингу ми використовуємо метод `JSONSerialization.jsonObject`, який повертає нам об'єкт типу `[String: Any]`, де ключ - це назва параметра, а значення - це уже самі дані. Після цього, ми можемо зручно отримати необхідні дані з цього об'єкта.
+Результат виконання цього коду буде виглядати приблизно так:
 
-## Глибоке дослідження
+```
+Optional(["users": <__NSArrayM 0x600002462e10>(
+{
+    "name" = "John";
+    "age" = 25;
+},
+{
+    "name" = "Amanda";
+    "age" = 30;
+},
+{
+    "name" = "Mark";
+    "age" = 20;
+}
+)
+])
+```
 
-Розглянутий приклад є досить простим, проте робота з більш складними структурами JSON не відрізняється суттєво. Для кращого розуміння роботи з JSON в Swift, рекомендуємо ознайомитися з документацією та робити більше власних експериментів з цим форматом даних.
+Тут ми звернулися до файлу "users.json", який містить список користувачів та їх вік. Зчитавши цей файл із допомогою методу `Data(contentsOf:options:)` та використавши метод `jsonObject(with:options:)`, ми отримали словник у форматі [String: Any]. Далі, ми можемо легко отримати доступ до конкретної інформації, як наприклад, ім'я першого користувача: `users["users"]?[0]["name"]`.
 
-## Дивись також
+## Детальніше про роботу з JSON у Swift
 
-- [Офіційна документація Swift по роботі з JSON](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Стаття "Робота з JSON у Swift" на сайті swiftbook.ru](https://swiftbook.ru/post/tutorials/swift-work-with-json/)
-- [Відео "Робота з JSON у Swift" на каналі CodeWithChris](https://www.youtube.com/watch?v=iEKbd5rbmNA)
+Методи `Data(contentsOf:options:)` та `jsonObject(with:options:)` не єдині способи обробки даних у форматі JSON у Swift. Також можна використовувати сторонні бібліотеки, які дозволяють більш зручно та ефективно працювати з JSON-даними.
+
+Наприклад, бібліотека SwiftyJSON дозволяє отримати доступ до JSON-даних за допомогою зручних методів та операцій, зробивши код більш зрозумілим та елегантним. Вона також автоматично переводить типи даних, зменшуючи ризик помилок при роботі з JSON.
+
+Для ознайомлення з іншими бібліотеками та рішеннями для роботи з JSON у Swift, рекоменд

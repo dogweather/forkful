@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Rust: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,46 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie jemals ein Programm geschrieben haben, das auf der Befehlszeile ausgeführt werden kann, haben Sie wahrscheinlich schon einmal benutzerdefinierte Argumente verwendet. Diese nützliche Funktion ermöglicht es dem Benutzer, bestimmte Einstellungen oder Funktionalitäten beim Ausführen des Programms anzupassen. In dieser Anleitung werden wir uns anschauen, wie man in Rust Befehlszeilenargumente liest und verarbeitet.
+Du hast vielleicht schon mal die Möglichkeit gesehen, in der Eingabeaufforderung eines Programmes Werte einzugeben. Diese Werte werden als Argumente bezeichnet und sind eine wichtige Methode, um die Funktionalität eines Programms anzupassen. In dieser Anleitung werde ich dir zeigen, wie du in Rust Befehlszeilenargumente lesen und verarbeiten kannst.
 
-## Wie man Befehlszeilenargumente in Rust liest
+## Wie geht es
 
-Das Lesen von Befehlszeilenargumenten in Rust ist relativ einfach und erfordert nur wenige Zeilen Code. Wir verwenden die [`std::env` Bibliothek](https://doc.rust-lang.org/std/env/) um an die Argumente heranzukommen. Der folgende Codeausschnitt zeigt, wie man alle Argumente ausgibt:
+Das Lesen von Befehlszeilenargumenten in Rust ist ziemlich einfach. Zunächst musst du die Bibliothek `std::env` importieren, um auf die Funktionen zuzugreifen, die wir benötigen. Dann verwenden wir die Funktion `args()` aus dieser Bibliothek, um alle Befehlszeilenargumente in einem Vektor zu speichern. Hier ist ein Beispielcode:
 
-```rust
+```Rust
 use std::env;
 
 fn main() {
-  let args: Vec<String> = env::args().collect();
-  for arg in args {
-    println!("{}", arg);
-  }
+    let args: Vec<String> = env::args().collect();
+    println!("Das Programm befindet sich in der Datei: {}", args[0]);
+    println!("Das erste Befehlszeilenargument lautet: {}", args[1]);
 }
 ```
 
-Der erste Eintrag im `args` Vektor ist immer der Name des Programms selbst. Wenn wir also unser Programm "hello_world" nennen, wird `args[0]` der String "hello_world" sein. Wir können auch auf bestimmte Argumente zugreifen, indem wir ihren Index übergeben. Zum Beispiel, um das dritte Argument auszugeben, würden wir `args[2]` verwenden. Der folgende Codeausschnitt zeigt, wie man das dritte Argument ausgibt, wenn es vorhanden ist, ansonsten eine Standardnachricht ausgibt:
+Diese Beispiele nutzen die Tatsache aus, dass der Vektor `args` den Namen der ausführbaren Datei als erstes Element enthält. Alle weiteren Argumente, die der Benutzer eingegeben hat, werden in der Reihenfolge in der sie eingegeben wurden, als darauf folgende Elemente des Vektors gespeichert. In der Ausgabe der beiden `println!()`-Anweisungen sehen wir, wie diese Elemente ausgegeben werden können.
 
-```rust
-use std::env;
+Wenn du möchtest, kannst du auch die `for`-Schleife nutzen, um alle Argumente der Reihe nach auszugeben.
 
-fn main() {
-  let args: Vec<String> = env::args().collect();
-  
-  let third_arg = args.get(2); // Index 2 entspricht dem dritten Argument
-  
-  match third_arg {
-    Some(arg) => println!("{}", arg),
-    None => println!("Kein drittes Argument vorhanden.")
-  }
+```Rust
+for argument in args {
+    println!("Das nächste Argument lautet: {}", argument);
 }
 ```
 
-## Tiefere Einblicke
+Du kannst auch überprüfen, ob bei der Eingabe ein bestimmtes Argument angegeben wurde, indem du die Länge des Vektors mit den Argumenten vergleichst.
 
-Es gibt noch weitere Möglichkeiten, Befehlszeilenargumente in Rust zu verarbeiten, wie z.B. das Parsen von Argumenten mit der [`clap` Bibliothek](https://crates.io/crates/clap) oder das Lesen von Environment-Variablen mit der [`std::env::var()`](https://doc.rust-lang.org/std/env/fn.var.html) Funktion. Es gibt auch viele verschiedene Möglichkeiten, wie Sie Ihre Argumente strukturieren und verarbeiten können, je nach den Anforderungen Ihres Programms.
+```Rust
+if args.len() > 2 {
+    println!("Es wurden mehr als zwei Argumente eingegeben.");
+}
+```
+
+Um die Argumente in andere Datentypen zu konvertieren, musst du die Funktionen `parse()` und `unwrap()` nutzen. Hier ist ein Beispiel, um ein Argument in eine `u32` Zahl umzuwandeln.
+
+```Rust
+let num: u32 = args[1].parse().unwrap();
+```
+
+## Tiefentauchen
+
+Wenn du mehr über das Verarbeiten von Befehlszeilenargumenten in Rust erfahren möchtest, gibt es einige wichtige Begriffe, die du kennen solltest. Zum Beispiel gibt es die `std::env::Args`-Struktur, mit der du auf einzelne Argumente zugreifen kannst, und die `std::env::args_os()`-Funktion, die die Argumente als `OsString`-Objekte zurückgibt.
+
+Du kannst auch eine umfangreichere Bibliothek wie `clap` nutzen, die die Verarbeitung von Befehlszeilenargumenten vereinfacht und zusätzliche Funktionen wie die Unterstützung von Optionen und Unterbefehlen bietet.
 
 ## Siehe auch
 
-- [`std::env`](https://doc.rust-lang.org/std/env/)
-- [`clap`](https://crates.io/crates/clap)
-- [`std::env::var()`](https://doc.rust-lang.org/std/env/fn.var.html)
+- [Dokumentation zu Befehlszeilenargumenten in Rust](https://doc.rust-lang.org/std/env/index.html)
+- [clap Bibliothek für Befehlszeilenargumente in Rust](https://github.com/clap-rs/clap)

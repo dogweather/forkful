@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Generering av slumpmässiga tal"
+title:                "Generering av slumpmässiga tal"
+html_title:           "Kotlin: Generering av slumpmässiga tal"
 simple_title:         "Generering av slumpmässiga tal"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att generera slumpmässiga nummer är en vanlig uppgift inom programmering och kan ha många användningsområden. Det kan användas för att skapa slumpmässiga listor, simulera spel eller testa olika algoritmer. Oavsett anledning, är kunskap om hur man genererar slumpmässiga nummer en bra färdighet att ha som programmerare.
+Randoma nummer behövs för att skapa variation och slumpmässighet i program och spel. Dessutom kan det vara ett användbart verktyg för att testa och simulera olika scenarier i kod.
 
-## Hur man gör det
+## Hur man gör 
 
-För att generera slumpmässiga nummer i Kotlin, kan vi använda funktionen `random()` som är tillgänglig i standardbiblioteket. Denna funktion returnerar ett slumpmässigt decimaltal mellan 0 och 1.
-
-```Kotlin
-val randomNum = Math.random()
-println(randomNum)
-```
-
-För att få ett heltal, kan vi använda `nextInt()` funktionen som finns i `Random` klassen. Denna funktion tar in ett argument för att sätta ett övre gränsvärde för det slumpmässiga numret.
+För att generera slumpmässiga nummer i Kotlin, används funktionen "random()". Detta returnerar ett nummer mellan 0 och 1.
 
 ```Kotlin
-val randomInt = Random().nextInt(10)
-println(randomInt)
+val randomNumber = random()
 ```
 
-Vi kan även generera slumpmässiga nummer inom ett givet intervall genom att använda `nextInt()` tillsammans med `+ 1` för att inkludera det övre gränsvärdet.
+För att få ett nummer inom ett visst intervall, används "nextInt()" funktionen tillsammans med det önskade intervallet som parameter. I följande exempel kommer ett slumpmässigt nummer att genereras mellan 1 och 10.
 
 ```Kotlin
-val randomNumInRange = Random().nextInt(10) + 1
-println(randomNumInRange)
+val randomNumber = nextInt(10) + 1
 ```
 
-Slutligen, för att få ett slumpmässigt Boolean-värde, kan vi använda `nextBoolean()` funktionen i `Random` klassen.
+Om du vill generera slumpmässiga flyttal, används "nextDouble()" funktionen.
 
 ```Kotlin
-val randomBool = Random().nextBoolean()
-println(randomBool)
+val randomDecimal = nextDouble()
 ```
 
-## Djupdykning
+Slutligen, för att få ett slumpmässigt heltal inom ett visst intervall, kan "nextInt()" användas tillsammans med både start- och slutvärde som parametrar.
 
-Det finns flera olika algoritmer som kan användas för att generera slumpmässiga nummer, men en vanlig metod är den så kallade "linear congruential generator" (LCG). Det är en enkel och effektiv algoritm som använder en formel för att beräkna nästa slumpmässiga nummer baserat på det föregående numret. Detta gör den snabbare än andra algoritmer som använder en tabell för att generera nummer.
+```Kotlin
+val randomNumber = nextInt(5, 10)
+```
 
-Det är dock viktigt att notera att LCG kan leda till en viss bias i distributionen av slumpmässiga nummer och bör därför inte användas för kryptografiska ändamål.
+## Deep Dive 
 
-## Se även
+För att generera slumpmässiga nummer i Kotlin, används Mersenne Twister-algoritmen som är en av de mest använda algoritmerna för slumpmässighet. Detta beror på dess höga hastighet och periodicitet. Enligt dokumentationen för Kotlin, genererar Mersenne Twister-algoritmen ett 32-bitars binärt tal som sedan konverteras till ett flyttal mellan 0 och 1.
 
-För mer information om generering av slumpmässiga nummer i Kotlin, rekommenderar vi att läsa dokumentationen för `Random` klassen och `Math` objektet.
+## Se även 
 
-[Dokumentation för Random klassen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
-
-[Dokumentation för Math objektet](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/index.html)
+- Kotlin's Random class documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html
+- Mersenne Twister algorithm: https://en.wikipedia.org/wiki/Mersenne_Twister

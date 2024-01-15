@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Ein String großschreiben"
-simple_title:         "Ein String großschreiben"
+title:                "Großschreibung einer Zeichenkette"
+html_title:           "Rust: Großschreibung einer Zeichenkette"
+simple_title:         "Großschreibung einer Zeichenkette"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,47 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum solltest du dich mit dem Hauptbuchstaben eines Strings beschäftigen? Es gibt viele Gründe, aber einer der wichtigsten ist die Konsistenz. Wenn du in deinem Programm Logik hast, die davon ausgeht, dass alle Strings großgeschrieben sind, aber tatsächlich einige klein geschrieben sind, kann das zu unerwartetem Verhalten führen. Das Festlegen der Groß- oder Kleinschreibung von Strings kann auch dazu beitragen, Sicherheitslücken zu vermeiden.
+Warum sollte jemand sich dafür interessieren, einen String in Rust groß zu schreiben? Nun, es gibt mehrere Gründe dafür. Zum einen kann es sein, dass man bestimmte String-Manipulationen durchführen möchte, bei denen es wichtig ist, dass der String in der richtigen Formatierung ist. Zum anderen kann es auch für die Ästhetik des Codes wichtig sein, dass alle Strings einheitlich großgeschrieben sind.
 
-## Wie geht das?
+## Wie es geht
 
-Es gibt mehrere Möglichkeiten, einen String in Rust großzuschreiben. Hier sind einige Beispielcodes mit den entsprechenden Ausgaben innerhalb von "```Rust ... ```" Codeblöcken:
-
-### Verwendung der `to_uppercase()` Methode
+Um einen String in Rust groß zu schreiben, gibt es mehrere Möglichkeiten. Eine Möglichkeit ist, die Funktion `to_uppercase()` auf dem String aufzurufen. Hier ein Beispiel:
 
 ```Rust
 let string = String::from("hallo welt");
-let capitalized = string.to_uppercase();
-println!("{}", capitalized); // Ausgabe: HALLO WELT
+let uppercase_string = string.to_uppercase();
 ```
-
-### Mit Hilfe des `String::from_uppercase()` Konstruktors
-
-```Rust
-let string = String::from("hallo welt");
-let capitalized = String::from_uppercase(string);
-println!("{}", capitalized); // Ausgabe: HALLO WELT
-```
-
-### Verwendung einer Schleife und `push()` Methode
+Dieser Code wandelt den String "hallo welt" in "HALLO WELT" um. Man kann auch eine bereits bestehende Variable nutzen, um den großgeschriebenen String zu speichern:
 
 ```Rust
 let mut string = String::from("hallo welt");
-let mut capitalized = String::new();
-for c in string.chars() {
-    capitalized.push(c.to_uppercase().next().unwrap());
-}
-println!("{}", capitalized); // Ausgabe: HALLO WELT
+string = string.to_uppercase();
 ```
 
-Es gibt auch weitere Methoden wie `replace()` oder `chars()` und `map()` Kombinationen, die zum Großschreiben eines Strings in Rust verwendet werden können.
+Eine weitere Möglichkeit ist, das `String`-Modul aus der Standardbibliothek zu importieren und die Methode `make_ascii_uppercase()` auf dem String aufzurufen:
+
+```Rust
+use std::string::String;
+let mut string = String::from("hallo welt");
+string.make_ascii_uppercase();
+```
+
+Dies hat den gleichen Effekt wie `to_uppercase()`, jedoch wird hier der ASCII-Standard für die Großschreibung verwendet.
 
 ## Tiefere Einblicke
 
-Wenn du dich fragst, warum in Rust keine standardmäßige Funktion zum Großschreiben von Strings vorhanden ist, liegt dies daran, dass Rust Strings auf Unicode basieren und es mehrere Möglichkeiten gibt, einen Buchstaben in Großschreibung zu setzen. Dies kann je nach Kontext und Sprache variieren. Daher überlässt Rust es den Entwicklern, die passende Methode für ihre spezifische Anwendung zu wählen.
+Beide Methoden, `to_uppercase()` und `make_ascii_uppercase()` nutzen intern die `chars()`-Methode auf dem String, um jede einzelne Zeichen des Strings zu überprüfen und gegebenenfalls in Großbuchstaben umzuwandeln. Dies kann nützlich sein zu wissen, wenn man eigene Funktionen für die Großschreibung von Strings schreiben möchte.
+
+Zudem ist zu beachten, dass beide Methoden den ursprünglichen String nicht verändern, sondern stattdessen einen neuen String zurückgeben. Deshalb muss man den neuen String entweder einer neuen Variable zuweisen oder die ursprüngliche Variable überschreiben.
 
 ## Siehe auch
-
-- [Rust String Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
-- [String Methoden in Rust](https://www.educative.io/edpresso/what-are-the-string-methods-in-rust)
-- [String Manipulation in Rust](https://www.rust-lang.org/learn/introduction#string-manipulation)
+- [Rust Standardbibliothek String-Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [How to Convert Strings to Upper or Lower Case in Rust](https://www.tutorialspoint.com/how-to-convert-strings-to-upper-or-lower-case-in-rust)
+- [Rust By Example: Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)

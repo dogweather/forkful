@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "C++ recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Debugging is an essential part of the software development process. It helps us identify and fix potential errors and issues in our code. One useful tool in the debugging process is printing debug output. It allows us to see the values of variables and the flow of our program, making it easier to pinpoint the source of a bug. In this blog post, we will explore the why and how of printing debug output in C++.
+Printing debug output is an important aspect of programming as it helps developers identify and fix any errors or bugs in their code. It allows for easier troubleshooting and ensures the overall functionality and stability of the program.
 
 ## How To
+To print debug output in C++, you can use the `cout` or `printf` statements. These statements will output the specified message or variable to the console for debugging purposes. For example:
 
-To print debug output in C++, we can use the `cout` statement from the standard library's `iostream` header. This statement allows us to display the value of a variable or a custom message on the console. Let's look at some examples:
-
-```C++
+```
 #include <iostream>
 
-using namespace std;
+int main() {
+    int num = 5;
+    // using cout statement
+    std::cout << "The value of num is: " << num << std::endl;
 
-int main(){
-  int number = 5;
-  cout << "The value of number is: " << number << endl; //output: The value of number is: 5
+    // using printf statement
+    printf("The value of num is: %d\n", num);
+
+    return 0;
 }
 ```
 
-In the above code, we use the `cout` statement to print the value of the `number` variable. We can also use multiple `cout` statements to print out different values or messages in a single line, as shown below:
-
-```C++
-#include <iostream>
-
-using namespace std;
-
-int main(){
-  int age = 25;
-  int weight = 150;
-  cout << "Age: " << age << ", Weight: " << weight << endl; //output: Age: 25, Weight: 150
-}
-```
-
-Additionally, we can use conditional statements and loops to control when and how often we print out debug output. This allows us to narrow down our focus on specific parts of our code and analyze them in more detail.
+The above code will output: `The value of num is: 5` twice, one using `cout` and the other using `printf`.
 
 ## Deep Dive
+In order to make debug output more efficient and organized, there are a few techniques you can use.
 
-Printing debug output not only helps us identify and fix bugs, but it also provides insight into the flow of our program. By printing out the values of variables at various stages of our code, we can track the changes and better understand how our program is executing. This is especially useful for larger and more complex programs.
+### Custom Debug Macros
+You can create custom debug macros to print out useful information while debugging. For example:
 
-However, it is important to note that excessive use of debug output can clutter the console and make it difficult to spot important information. It is recommended to use it sparingly and strategically.
+```
+#include <iostream>
 
-Another helpful tip is to add additional information to our debug output, such as the name of the variable, to make it easier to track and understand. This can be done by using the `endl` statement to add line breaks between outputs.
+// custom debug macro
+#define DEBUG_MSG(x) { std::cout << "Debug: " << x << std::endl; }
+
+int main() {
+    int num = 5;
+    // using custom debug macro
+    DEBUG_MSG("The value of num is: " << num);
+
+    return 0;
+}
+```
+
+This will output: `Debug: The value of num is: 5`.
+
+### Conditional Debugging
+You can also use conditional statements to control when debug output is printed. For example:
+
+```
+#include <iostream>
+
+int main() {
+    int num = 5;
+    // conditional debug output
+    if (num == 5) {
+        std::cout << "Debug: The value of num is: " << num << std::endl;
+    }
+
+    return 0;
+}
+```
+
+This will only print the debug message if `num` is equal to 5.
 
 ## See Also
-
-- [Debugging in C++](https://www.cplusplus.com/debugging/)
-- [Using cout for debugging](https://stackoverflow.com/questions/12796219/using-cout-for-debugging)
-
-Debugging is an essential skill for any programmer, and printing debug output is just one of the many tools we can use to make the process easier and more efficient. So next time you encounter a bug in your C++ program, don't forget to add some `cout` statements to help you out!
+- [Debugging in C++](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/yt4dkbzs(v=vs.100))
+- [Cout vs printf in C++](https://www.geeksforgeeks.org/cout-vs-printf-for-debugging-in-c/)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
+title:                "कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
+html_title:           "Clojure: कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
+यदि आपको डेटा विश्लेषण और प्रोग्रामिंग में रुचि है, तो CSV फाइलें आपके लिए बहुत उपयोगी हो सकती हैं। इन फाइलों में डेटा तालिकाओं को सुरक्षित और स्ट्रक्चर्ड फॉर्मेट में स्टोर किया जाता है जो आपको डेटा को स्थानों पर संपादित और प्रोसेस करने के लिए आसान बनाता है।
 
-CSV फाइलें डेटा संग्रह और एनालिटिक्स में बहुत महत्वपूर्ण हैं। Clojure विकसित के द्वारा CSV फाइलों को पढ़ना और उनके साथ काम करना आसान है।
-
-## कैसे करें
-
+## कैसे करे 
+आप Clojure का उपयोग करके CSV फाइलों से डेटा प्रोसेस करना आसान है। पहले, आप CSV लाइब्रेरी को आपके प्रोग्राम में लोड कर सकते हैं:
 ```Clojure
-(require '[clojure.java.io :as io])
 (require '[clojure.data.csv :as csv])
-
-(with-open [file (io/reader "example.csv")]
-  (doall (csv/read-csv file)))
-
 ```
-
-यह उदाहरण सुनिश्चित करेगा कि आप से CSV फ़ाइल खोल सकते हैं और उसका डेटा पढ़ सकते हैं।
-
+अब, आप अपनी CSV फाइल को `csv/read-csv` फ़ंक्शन के साथ पढ़ सकते हैं।
 ```Clojure
-(with-open [file (io/writer "output.csv")]
-  (csv/write-csv file [["Name" "Age" "City"]
-                        ["John" "25" "New York"]
-                        ["Jane" "30" "London"]]))
-
+(def csv-data (csv/read-csv "path/to/file.csv"))
 ```
+फिर, आप डेटा को सूची में संपादित कर सकते हैं और किसी अन्य फ़ंक्शन के साथ उसे प्रोसेस कर सकते हैं। उदाहरण के लिए, यदि आप एक स्कूल के बच्चों के उम्र के रूप में दिया गया CSV फाइल है और आप उम्र के अनुसार बच्चों की संख्या को गणना करना चाहते हैं, तो आप इस तरह कोड कर सकते हैं:
+```Clojure
+(def age-counts (frequencies (map #(nth % 2) csv-data)))
+```
+यहां, `nth` फ़ंक्शन के साथ आप हर दो स्तंभों की संख्या को ले सकते हैं जो रूप में [name, age] है। फिर, `frequencies` फ़ंक्शन आपको अलग उम्र के बच्चों की संख्या को देखने के लिए सूची में लौटाता है। आप भी अन्य Clojure फ़ंक्शन का उपयोग करके अपनी CSV फाइल से डेटा को प्रोसेस कर सकते हैं।
 
-इस उदाहरण में, हम एक डेटा फोर्मेट करते हैं और उसे नए CSV फ़ाइल में लिखते हैं।
-
-## गहराई में जाएं
-
-CSV फाइलों को Clojure में उपयोग करना स्वर्गीय तरीके से सुविधाजनक है। कुछ उपयोगी कार्य शामिल हैं:
-
-- `csv/read-csv` फ़ंक्शन पढ़ने के लिए CSV फ़ाइल से लाइन एरे लौटाता है।
-- `csv/write-csv` फ़ंक्शन CSV फ़ाइल में डेटा लिखता है।
-- `csv/indexed-csv` फ़ंक्शन CSV फ़ाइल से प्रत्येक पंक्ति को उनके शीर्षक द्वारा ग्रुप करता है।
-- `csv/csv-input-stream` और `csv/csv-output-stream` स्ट्रीम ऑब्जेक्ट बनाते हैं जो CSV फ़ाइल से डेटा पढ़ने और उसमें प्रतिक्रिया करने को समर्थ करते हैं।
-
-## देखें भी
-
-- [Clojure डॉक्यूमेंटेशन](https://clojure.org/index)
-- [Clojure CSV दस्तावेज़ीकरण](https://clojure.github.io/data.csv/)
-- [How to Read and Write CSV Files in Clojure](https://medium.com/@Deepak_Negi/how-to-read-and-write-csv-files-in-clojure-e7cdd39529a3)
+## डीप डाइव
+CSV

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Ausgabe von Debug-Meldungen"
-simple_title:         "Ausgabe von Debug-Meldungen"
+title:                "Fehlersuchausgabe drucken"
+html_title:           "Arduino: Fehlersuchausgabe drucken"
+simple_title:         "Fehlersuchausgabe drucken"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -11,34 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Beim Programmieren mit Arduino kann es manchmal schwierig sein, Fehler zu finden oder zu verstehen, was das Programm gerade tut. Das Drucken von Debug-Ausgaben kann dabei helfen, diese Probleme zu lösen und das Verständnis für den Code zu verbessern.
+Beim Programmieren von Arduino-Projekten ist es wichtig, die Funktionen und Abläufe im Blick zu behalten. Um eventuelle Fehler zu beheben oder Probleme zu verstehen, kann es hilfreich sein, Debug-Ausgaben zu nutzen. Diese geben Auskunft darüber, welcher Codeblock ausgeführt wurde und welche Werte bestimmte Variablen haben.
 
-## How To
+## Wie funktioniert es?
 
-Um Debug-Ausgaben zu drucken, können wir die Funktion `Serial.print()` verwenden. Diese Funktion nimmt eine Variable oder einen Text als Parameter und gibt ihn über die serielle Verbindung an den Computer aus.
+Es gibt verschiedene Möglichkeiten, um Debug-Ausgaben in Arduino zu integrieren. Die einfachste Variante ist die Verwendung der Funktion "Serial.print()". Diese gibt einen Text oder eine Variable auf dem seriellen Monitor aus.
 
-Um dies in der Praxis zu sehen, schauen wir uns ein einfaches Beispiel an:
+Beispiel:
 
-```Arduino
-
-int zahl = 42; // Eine beliebige Zahl definieren
-Serial.begin(9600); // Serielle Verbindung starten
-Serial.print("Die Zahl ist: "); // Text ausgeben
-Serial.println(zahl); // Variable ausgeben
+```arduino
+int temperatur = 25;
+Serial.print("Die aktuelle Temperatur beträgt: ");
+Serial.println(temperatur);
 ```
 
-Wenn wir dieses Beispiel ausführen, sehen wir in der seriellen Monitor-Ausgabe `Die Zahl ist: 42`. Wenn wir `Serial.print()` anstelle von `Serial.println()` verwenden, wird die Variable ohne Zeilenumbruch ausgegeben.
+Ausgabe:
 
-## Deep Dive
+Die aktuelle Temperatur beträgt: 25
 
-Es gibt viele verschiedene Möglichkeiten, Debug-Ausgaben zu nutzen. Zum Beispiel können wir `Serial.print()` verwenden, um den aktuellen Wert von Variablen während der Ausführung des Programms zu überwachen. Dies kann besonders hilfreich sein, wenn wir mit Sensoren oder anderen externen Geräten arbeiten. Wir können auch `Serial.print()` nutzen, um zu überprüfen, ob unser Code bestimmte Bedingungen erfüllt und gegebenenfalls Fehlermeldungen ausgeben.
+Alternativ kann auch die Funktion "Serial.println()" genutzt werden, um direkt einen Zeilenumbruch anzuhängen.
 
-Eine weitere hilfreiche Funktion ist `Serial.begin()`, mit der wir die Geschwindigkeit der seriellen Verbindung einstellen können. Standardmäßig ist diese auf 9600 Baud eingestellt, aber je nach Anwendungsfall kann es sinnvoll sein, diese anzupassen.
+Neben Zahlen können auch Buchstaben und andere Zeichen ausgegeben werden. Dafür muss die gewünschte Variable in Anführungszeichen gesetzt werden.
 
-Es ist wichtig zu beachten, dass Debug-Ausgaben nur während der Entwicklung und zum Zweck der Fehlerbehebung verwendet werden sollten. Wenn das Programm fertig ist, sollten diese Ausgaben entfernt werden, um den Speicher und die Ausführungsgeschwindigkeit des Programms nicht unnötig zu belasten.
+Beispiel:
 
-## Siehe Auch
+```arduino
+char zeichen = 'A';
+Serial.print("Das eingegebene Zeichen ist: ");
+Serial.println(zeichen);
+```
 
-- [Arduino Referenz](https://www.arduino.cc/reference/de/): Eine umfassende Sammlung von Befehlen und Funktionen für Arduino
-- [Debugging Arduino Code](https://www.arduino.cc/en/Guide/ArduinoDebugging): Offizielle Anleitung zum Debuggen von Arduino-Code
-- [Serial.print() vs Serial.println()](https://www.maketecheasier.com/arduino-serial-print-vs-println/): Ein Vergleich der beiden Funktionen und ihre Verwendung im Code
+Ausgabe:
+
+Das eingegebene Zeichen ist: A
+
+## Tiefer Einblick
+
+Neben einfachen Debug-Ausgaben können auch komplexere Informationen auf dem seriellen Monitor ausgegeben werden. Dafür gibt es die Funktion "Serial.printf()". Mit dieser können mehrere Variablen in einem String formatiert ausgegeben werden.
+
+Beispiel:
+
+```arduino
+int a = 5;
+float b = 3.14;
+String c = "Hallo Welt";
+Serial.printf("Der Wert von a ist %d, b ist %.2f und c ist %s", a, b, c);
+```
+
+Ausgabe:
+
+Der Wert von a ist 5, b ist 3.14 und c ist Hallo Welt
+
+Durch die verschiedenen Formatierungszeichen können die Ausgaben übersichtlich gestaltet werden.
+
+## Siehe auch
+
+- [Offizielle Dokumentation zu Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Weiterführende Tipps zum Debuggen von Arduino-Projekten](https://create.arduino.cc/projecthub/Ritchie1337/how-to-debug-poorly-behaving-arduino-projects-129b12)
+- [Video-Tutorial zu Debug-Ausgaben in Arduino](https://www.youtube.com/watch?v=nqPslqpjlLI)

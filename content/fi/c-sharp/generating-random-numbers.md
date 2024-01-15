@@ -1,6 +1,7 @@
 ---
-title:                "C#: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "C#: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -9,30 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Why
 
-Satunnaisilla numeroilla on monia käyttötarkoituksia ohjelmoinnissa, kuten pelien kehittäminen, satunnaisten käyttäjätunnusten tai salasanojen luominen ja tietojen salaaminen. Ne voivat myös olla hyödyllisiä testattaessa ohjelmistojen toimintaa erilaisilla syötteillä.
+Kuten kaikissa tietokoneohjelmissa, satunnaisten numeroiden generointia tarvitaan myös C# -ohjelmoinnissa. Satunnaisilla numeroilla voi esimerkiksi simuloida pelattavan pelin eri vaihtoehtoja tai luoda salasanan, joka on mahdollisimman vaikea arvata. 
 
-## Miten?
+## How To
 
-C#:ssa on valmiina toiminto satunnaisluvun generoimiseksi. Tämän toiminnon nimi on "Random" ja se löytyy "System" nimisestä nimiavaruudesta. Käytämme sitä seuraavalla tavalla:
+Satunnaisia numeroita voidaan generoida C#:ssa rand() -funktion avulla. Tämä funktio palauttaa liukuluvun välillä 0.0 ja 1.0. Alla on esimerkki, miten sitä voidaan hyödyntää: 
 
 ```C#
-Random rnd = new Random();
-int randomNumero = rnd.Next(1,100);
-Console.WriteLine($"Satunnainen numero väliltä 1-100: {randomNumero}");
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine("Satunnaisesti generoitu kokonaisluku: " + rand());
+  }
+}
 ```
-Tämä koodi luo uuden Random-olion ja kutsuu sen Next-metodia, joka ottaa kaksi parametria. Ensimmäinen parametri määrittelee alarajan ja toinen ylärajan, joiden väliltä satunnaisluku generoidaan. Tässä esimerkissä saatamme saada esimerkiksi luvun 42. Voimme myös käyttää toista Next-metodin versiota, joka palauttaa desimaalilukuja.
 
-On tärkeää huomata, että Random-olion luoma satunnaisuus perustuu koneen kellonaikaan. Tämä tarkoittaa sitä, että mikäli satunnaisluku tarvitaan useaan kertaan hyvin lyhyen ajan sisällä, saatamme saada saman luvun useita kertoja. Tätä voidaan välttää siirtämällä Random-olion luonti ohjelman alkuun tai luomalla se staattisesti, esimerkiksi luokan sisällä. Näin varmistetaan, että sama satunnaisluku ei toistu.
+Syötteellä:
 
-## Syvällisempi sukellus
+```
+Satunnaisesti generoitu kokonaisluku: 0.375514
+```
 
-Random-luokassa on myös muita metodeja, kuten NextBytes ja NextDouble. NextBytes-metodi täyttää annetun taulukon satunnaisilla tavuilla ja NextDouble palauttaa satunnaisen desimaaliluvun väliltä 0 ja 1. Voit myös määrittää Random-olion siemenen, jolloin saat aina saman sarjan satunnaislukuja.
+Voimme myös määrittää rand() -funktiolle ala- ja ylärajan, jolloin generoidut numerot ovat tällä välillä. Esimerkiksi seuraava koodi generoi satunnaisen kokonaisluvun väliltä 1-10:
 
-On myös tärkeää olla varovainen käytettäessä Random-luokkaa tietoturvallisuuteen liittyvissä tarkoituksissa. Random-luokka ei luo todellista satunnaisuutta, vaan se perustuu matemaattisiin algoritmeihin. Tästä syystä sitä ei suositella esimerkiksi salasanojen luomiseen.
+```C#
+using System;
 
-## Katso myös
-- C# Random-luokan virallinen dokumentaatio: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8
-- Bensu blogi, Miten ja miksi käyttää satunnaisia numeroita ohjelmoinnissa: https://www.bensu.com/blogi/miten-ja-miksi-kayttaa-satunnaisia-numeroita-ohjelmoinnissa/
-- Codecademy, Kuinka käyttää satunnaislukuja C#-kielisessä ohjelmoinnissa: https://www.codecademy.com/articles/using-random-in-C%23
+class MainClass {
+  public static void Main (string[] args) {
+    Random rnd = new Random();
+    int satunnainenNumero = rnd.Next(1,11);
+    Console.WriteLine("Satunnaisesti generoitu kokonaisluku väliltä 1-10: " + satunnainenNumero);
+  }
+}
+```
+
+Syötteellä:
+
+```
+Satunnaisesti generoitu kokonaisluku väliltä 1-10: 7
+```
+
+## Deep Dive 
+
+Rand() -funktio käyttää C:n rand() -funktiota, joka perustuu lineaariseen kongruenssimenetelmään. Tämä tarkoittaa, että jokainen generoitu luku riippuu edellisestä generoidusta luvusta ja funktiolla on myös periodisuus eli se palauttaa samat numerot tietyllä toistuvalla syötteellä. Sen vuoksi oikeaoppisessa käytössä suositellaan alkuarvon asettamista seed-toiminnolla ennen rand()-funktion käyttöä. 
+
+## See Also
+
+- [C#:n dokumentaatio satunnaisista numeroista](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
+- [Miksi C# on suosittu kieli ohjelmoinnissa?](https://medium.com/@aeriontech/why-c-has-become-a-popular-language-for-programmers-6546b33ddbfe)
+- [Miten satunnaisia numeroita voidaan käyttää pelinkehityksessä?](https://www.gamasutra.com/blogs/LeviDmith/20170714/300866/Random_Numbers_and_Game_Design.php)

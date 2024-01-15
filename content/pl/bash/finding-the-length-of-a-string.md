@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Bash: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,44 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+**## Dlaczego**
 
-Programowanie w Bashu jest bardzo popularne wśród programistów i administratorów systemów. Jednym z podstawowych zadań w Bashu jest manipulacja ciągami znaków, a znajomość długości tych ciągów jest niezbędna do wykonywania różnych operacji. W tym artykule dowiesz się, jak znaleźć długość ciągu znaków w Bashu, a także dlaczego jest to ważne.
+Jeśli jesteś początkującym lub nawet doświadczonym programistą, to z pewnością natknąłeś się już na różne zadania związane z manipulacją ciągami tekstowymi. Jednym z takich zadań może być obliczenie długości ciągu znaków. Dlaczego warto poznać ten temat? Ponieważ jest to podstawowa umiejętność, która przyda się w wielu sytuacjach podczas programowania w Bashu.
 
-## Jak to zrobić
+**## Jak to zrobić**
 
-Aby znaleźć długość ciągu znaków w Bashu, możesz użyć wbudowanego polecenia ```len```. Przyjmie ono jeden argument - ciąg znaków - i zwróci jego długość. Instrukcja wygląda następująco:
+Aby obliczyć długość ciągu znaków w Bashu, musimy skorzystać z wbudowanej komendy `expr`. Przed jej użyciem musimy jednak pamiętać o kilku ważnych rzeczach. Przede wszystkim, `expr` przyjmuje tylko jeden argument, więc jeśli chcemy obliczyć długość ciągu, musimy go umieścić w cudzysłowie. Ponadto, aby przeczytać wynik z komendy `expr`, musimy przekierować go do zmiennej, w której będziemy go przechowywać.
 
+Przykładowy kod wykorzystujący `expr` do obliczenia długości ciągu `Hello World` wyglądałby następująco:
+
+```Bash
+my_string="Hello World"
+length=$(expr length "$my_string")
+
+echo $length # wyświetli 11
 ```
-len="To jest przykładowy ciąg znaków"
-echo ${#len}
+Jeśli chcemy wyświetlić długość ciągu w jednym wierszu wraz z komunikatem, możemy użyć potoku (`|`) i składni `printf`:
+
+```Bash
+printf "Długość ciągu 'Hello World' to: $(expr length 'Hello World')\n"
 ```
 
-Wyjście z tego polecenia będzie wynosić 29, ponieważ to jest długość całego ciągu znaków.
+**## Deep Dive**
 
-Możesz również wykorzystać to polecenie w celu znalezienia długości ciągu znajdującego się w zmiennej. Na przykład:
+Jak już wspomnieliśmy wcześniej, `expr` przyjmuje tylko jeden argument, dlatego musimy umieścić ciąg znaków w cudzysłowie. W przeciwnym razie, jeśli ciąg zawiera spacje lub inne znaki specjalne, zostaną one traktowane jako oddzielne argumenty, co może skutkować błędnym wynikiem lub nawet błędem.
 
-```
-name="Kasia"
-echo ${#name}
-```
+Ponadto, warto wiedzieć, że `expr` ma także inne funkcje, takie jak obliczanie wartości arytmetycznych lub porównywanie liczb. Możesz przeczytać więcej o tych funkcjach korzystając z komendy `man expr`.
 
-Wyjście wyniesie 5, co oznacza długość ciągu "Kasia".
+**See Also**
 
-Pamiętaj, że to polecenie zwraca długość ciągu znaków, a nie indeks ostatniego znaku. Przykładowo, jeśli masz ciąg znaków "Hello World", długość wyniesie 11, a nie 10 (ponieważ polecenie zlicza też spację).
+Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w Bashu, możesz przeczytać te artykuły:
 
-## Deep Dive
-
-Podczas przetwarzania danych w Bashu, często będziesz musiał określać długość ciągu znaków w celu wykonania odpowiednich operacji. Jednym z przykładów jest walidacja danych wprowadzonych przez użytkownika - jeśli wprowadzony ciąg jest za krótki lub za długi, możesz wyświetlić odpowiedni komunikat.
-
-Możesz również wykorzystać długość ciągu do wyciągania konkretnej części z tekstu. Na przykład, jeśli masz listę nazwisk w formacie "Nazwisko, Imię", możesz użyć długości ciągu i poleceń takich jak ```cut``` lub ```awk``` do wyciągnięcia tylko imienia lub nazwiska.
-
-Warto także pamiętać, że Bash oferuje inne przydatne polecenia do manipulacji ciągami znaków, takie jak ```substr``` czy ```expr```. Warto zapoznać się z nimi i wybrać odpowiednie narzędzie do danego problemu.
-
-## Zobacz też
-
-* [Intro to Bash Strings](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html)
-* [String Manipulation in Bash](https://linuxconfig.org/string-manipulation-in-bash)
-* [Bash String Manipulation Examples](https://linuxhint.com/bash-string-manipulation-examples/)
-
-Dzięki temu artykułowi powinieneś/-aś mieć już wyraźniejszy obraz tego, jak znaleźć długość ciągu znaków w Bashu i dlaczego jest to przydatne. Pamiętaj, że ciągi znaków są podstawowymi elementami w wielu programach i warto zapoznać się z różnymi metodami ich przetwarzania.
+- [Manipulacja ciągami znaków w Bashu](https://linuxhint.com/bash_string_manipulation/)
+- [Manipulacja ciągami znaków w Bashu - poradnik dla początkujących](https://blog.balthazar-rouberol.com/manipulating-strings-in-bash)

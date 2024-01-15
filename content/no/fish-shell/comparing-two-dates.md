@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Sammenligning av to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "Fish Shell: Sammenligning av to datoer"
 simple_title:         "Sammenligning av to datoer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-I denne bloggposten skal vi se nærmere på hvordan man kan sammenligne to datoer ved hjelp av Fish Shell programmeringsspråk. Dette kan være nyttig når man ønsker å filtrere eller sortere data etter dato.
+## Hvorfor
+Hvis du noensinne har programmert i Fish Shell, har du kanskje hatt behov for å sammenligne to datoer. Dette kan være nyttig når man skal filtrere eller sortere data basert på datoer, eller når man trenger å utføre handlinger på data som befinner seg innenfor en bestemt tidsperiode. I denne artikkelen vil jeg vise deg hvordan du kan sammenligne to datoer ved hjelp av Fish Shell.
 
-# Hvordan gjøre det
-For å sammenligne to datoer i Fish Shell, kan man bruke kommandoen `date1 > date2` der `date1` og `date2` er de to datoene som skal sammenlignes. Her er et eksempel på hvordan dette kan gjøres:
+## Hvordan
+For å sammenligne to datoer i Fish Shell, kan du bruke kommandoen `date -j -f`. La oss si at vi har to datoer, 19. juni 2021 og 25. juni 2021, og ønsker å finne ut om 25. juni er etter 19. juni. Dette kan gjøres ved å bruke følgende kommando:
 
 ```Fish Shell
-set start_date (date -u +'%Y-%m-%d')
-set end_date (date -u +'%Y-%m-%d' -d '2 days ago')
+date -j -f "%d.%m.%Y" 19.06.2021 +%s
+```
+Dette vil konvertere den første datoen til et tall som representerer antall sekunder siden 1. januar 1970. Deretter kan vi gjøre det samme for den andre datoen:
 
-if test $start_date \> $end_date
-    echo "Start dato er senere enn sluttdato"
-else if test $start_date == $end_date
-    echo "Start og sluttdato er lik"
-else
-    echo "Start dato er tidligere enn sluttdato"
-end
+```Fish Shell
+date -j -f "%d.%m.%Y" 25.06.2021 +%s
 ```
 
-I dette eksempelet brukes `date`-kommandoen til å sette variablene `start_date` og `end_date` til dagens dato og dagen før. Deretter brukes `test`-kommandoen til å sammenligne datoene og gi en tilbakemelding basert på resultatet. Resultatet av dette eksempelet vil være `Start dato er tidligere enn sluttdato` ettersom `start_date` er satt til dagens dato mens `end_date` er satt til dagen før.
+Til slutt kan vi sammenligne de to tallene, og hvis resultatet er positivt, vet vi at 25. juni er etter 19. juni.
 
-# Dypdykk
-Det finnes ulike måter å sammenligne datoer på i Fish Shell, blant annet ved å bruke operatørene `>`, `<`, `==` og `!=` i kombinasjon med `date`-kommandoen. Man kan også bruke `test`-kommandoen med argumentet `-nt` for å sammenligne om en fil er nyere enn en annen. Dette kan være nyttig i situasjoner der man ønsker å sjekke om en fil har blitt endret etter en bestemt dato.
+Du kan også bruke samme metode for å sammenligne klokkeslett i tillegg til datoer.
 
-# Se også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Bruk av dato i Fish Shell](https://fishshell.com/docs/current/tutorial.html#use-dates)
-- [Sammenligning av data i Fish Shell](https://fishshell.com/docs/current/tutorial.html#conditionals)
+## Deep Dive
+Hvis du ønsker å gå enda dypere i sammenligning av datoer i Fish Shell, finnes det flere metoder du kan bruke. En annen måte å sammenligne datoer på er å bruke `strftime` kommandoen. Denne kommandoen lar deg formatere datoer og klokkeslett på forskjellige måter, og deretter sammenligne dem.
+
+Du kan også bruke `set -l` kommandoen til å lagre datoen som en variabel, og deretter bruke `test` kommandoen til å utføre sammenligningen. Dette kan være nyttig hvis du trenger å sammenligne flere datoer eller klokkeslett i en løkke.
+
+Det finnes også mange plugins tilgjengelig for Fish Shell som tilbyr mer avanserte funksjoner for å sammenligne datoer og klokkeslett. Utforsk gjerne disse hvis du vil ta dypdykk i emnet.
+
+## Se også
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
+- [10 Fish Shell tips og triks](https://www.telegraph.co.uk/men/thinking-man/10-fish-shell-tips-tricks-getting-work-done-command-line/)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Fehlersuchausgabe drucken"
-simple_title:         "Fehlersuchausgabe drucken"
+title:                "Ausgabe von Fehlerbehebung drucken"
+html_title:           "C: Ausgabe von Fehlerbehebung drucken"
+simple_title:         "Ausgabe von Fehlerbehebung drucken"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Debug-Ausgaben sind ein wesentlicher Bestandteil der Programmierung. Sie helfen dabei, Fehler in unserem Code zu finden und zu beheben. Durch das Drucken von Debug-Ausgaben können wir den Ablauf unseres Programms verfolgen und überprüfen, ob die Variablen die erwarteten Werte haben. Dies trägt erheblich zu einer effizienten Fehlerbehebung bei und spart uns Zeit während der Entwicklung.
+Warum sollte man sich überhaupt die Mühe machen, Debug-Ausgaben zu drucken? Nun, Debugging ist ein wichtiger Teil des Programmierens, und das Drucken von Ausgaben kann uns dabei helfen, unsere Codefehler zu finden und zu beheben.
 
 ## Wie geht das?
 
-Um Debug-Ausgaben in C zu drucken, verwenden wir die Funktion `printf()`. Diese Funktion erlaubt es uns, Variablen und Text auf dem Bildschirm auszugeben. Schauen wir uns ein Beispiel an:
+Die einfachste Methode, um Debug-Ausgaben zu drucken, ist die Verwendung der `printf()` Funktion. Diese Funktion ermöglicht es, eine beliebige Anzahl von Variablen und Text in der Konsole auszugeben. Hier ist ein Beispiel:
 
 ```C
-int num = 10;
-printf("Die Zahl ist: %d", num);
+// Dieses Programm soll die Summe von zwei Zahlen berechnen
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 5;
+    int b = 3;
+
+    // Hier werden die Debug-Ausgaben gedruckt
+    printf("Der Wert von a ist %d\n", a);
+    printf("Der Wert von b ist %d\n", b);
+
+    // Die Summe wird berechnet
+    int sum = a + b;
+
+    // Hier wird das Ergebnis gedruckt
+    printf("Die Summe von %d und %d ist %d\n", a, b, sum);
+
+    return 0;
+}
 ```
 
-In diesem Beispiel wird die Variable `num` mithilfe des Format-Spezifiers `%d` ausgegeben. Dies gibt den Wert von `num` als Ganzzahl aus. Wir können auch mehrere Variablen und Text kombinieren:
+Und hier ist die Ausgabe:
 
-```C
-int num1 = 5;
-int num2 = 7;
-printf("Summe der Zahlen %d und %d ist: %d", num1, num2, (num1 + num2));
+```
+Der Wert von a ist 5
+Der Wert von b ist 3
+Die Summe von 5 und 3 ist 8
 ```
 
-Das Ergebnis dieser Ausgabe wäre: "Summe der Zahlen 5 und 7 ist: 12".
+Wie Sie sehen können, können wir mit `printf()` nicht nur die Werte der Variablen, sondern auch aussagekräftige Texte ausgeben, die uns helfen können, den Codeablauf besser zu verstehen.
 
-## Tiefere Einblicke
+## Tiefer in die Materie
 
-Um Debug-Ausgaben noch effektiver zu gestalten, können wir auch Formatierungsanweisungen verwenden. Diese Anweisungen ermöglichen es uns, Variablenwerte mit bestimmten Formaten auszugeben, beispielsweise als Hexadezimalzahlen oder mit einer bestimmten Anzahl von Nachkommastellen. Schauen wir uns ein Beispiel an:
+Es gibt verschiedene Möglichkeiten, Debug-Ausgaben mit C zu drucken. Eine weitere nützliche Funktion ist `fprintf()`, mit der wir Ausgaben in eine Datei statt in die Konsole drucken können. Dies kann besonders hilfreich sein, wenn wir große Mengen an Ausgaben haben, die in der Konsole unübersichtlich werden würden.
 
-```C
-float pi = 3.14159265359;
-printf("Der Wert von pi ist: %.2f", pi);
-```
+Außerdem gibt es die Möglichkeit, die Ausgaben mit Farbe zu formatieren. Das kann uns dabei helfen, wichtige Ausgaben hervorzuheben oder sie von normalen Ausgaben zu unterscheiden.
 
-Das Ergebnis dieser Ausgabe wäre: "Der Wert von pi ist: 3.14". In diesem Beispiel haben wir mit der Formatierung `%.2f` angegeben, dass die Ausgabe des Float-Wertes `pi` auf zwei Nachkommastellen begrenzt werden soll.
+Eine weitere interessante Technik ist die Verwendung von Bedingungen, um zu entscheiden, ob eine Debug-Ausgabe gedruckt werden soll oder nicht. Mit diesem Ansatz können wir Debug-Ausgaben in unserem Code lassen, ohne sie manuell ein- oder auszuschalten. Stattdessen können wir eine spezielle Variable oder einen Compiler-Flag verwenden, um die Debug-Ausgaben zu aktivieren oder zu deaktivieren.
 
-Es ist wichtig zu beachten, dass Debug-Ausgaben nicht in der endgültigen Version unseres Programms enthalten sein sollten. Sie sind nur zur Unterstützung während der Entwicklungsphase gedacht und sollten später entfernt werden.
+## Weitere Informationen
+
+Hier sind einige Ressourcen, die Ihnen helfen können, Debug-Ausgaben in C zu verstehen und effektiv einzusetzen:
+
+- [Debugging mit GDB](https://www.gnu.org/software/gdb/)
+- [Printf-Dokumentation](https://www.cplusplus.com/reference/cstdio/printf/)
+- [C Debug-Ausgaben für Anfänger](https://www.guru99.com/c-programming/debugging-gdb.html)
 
 ## Siehe auch
 
-- [Verwendung von printf in C](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
-- [Debugging-Tipps für C-Programmierer](https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/dbgdbg.htm)
+- [Debugging in C: Eine Einführung](https://www.freecodecamp.org/news/debugging-in-c-a-tutorial/)
+- [Korrekte Verwendung von printf für Fehlersuchen](https://solarianprogrammer.com/2017/12/09/c-correct-usage-of-printf/)
+- [Effektives Debugging mit fprintf](https://www.drdobbs.com/cpp/effective-collaborative-debugging-with/240148369)

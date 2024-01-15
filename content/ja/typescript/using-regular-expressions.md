@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 正規表現の使用"
-simple_title:         "正規表現の使用"
+title:                "正規表現を使用する"
+html_title:           "TypeScript: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,33 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-正規表現を使用する理由を説明します。
+正規表現を使用する理由は、テキストデータ内のパターンを検索、抽出、置換するためです。この機能により、テキスト処理をより効率的かつ正確に行うことができます。
 
-正規表現とは、テキスト内のパターンを検索、抽出、置換するための強力なツールです。例えば、電話番号やメールアドレスなどの特定の形式を持つ文字列を検索することができます。これにより、テキスト内の特定の情報を素早く収集することができます。また、パターンに基づいてテキストを置換することで、テキストのフォーマットを簡単に変更することもできます。
+## 使い方
 
-## ハウツー
-
-TypeScriptで正規表現を使用する方法を実際のコーディング例と共に紹介します。まず、正規表現を使用するためには`RegExp`クラスを使用する必要があります。以下の例では、文字列から電話番号を抽出する方法を示します。
+正規表現を使用するには、まず "RegExp" オブジェクトを作成する必要があります。次に、検索や抽出などの操作を行うメソッドを使用することで、パターンを指定してテキストに対して処理を行うことができます。それでは、実際にTypeScriptで正規表現を使う例を見てみましょう。
 
 ```TypeScript
-const phoneNumber = "電話番号：012-345-6789";
-const regex = new RegExp(/\d{3}-\d{3}-\d{4}/);
-const extractedNumber = regex.exec(phoneNumber);
-console.log(extractedNumber[0]); // output: 012-345-6789
+// 文字列がメールアドレスの形式かどうかをチェックする
+const regex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
+ 
+const email = "example@domain.com";
+const isValid = regex.test(email);
+ 
+console.log(isValid); // true
 ```
 
-上記の例では、電話番号の形式に一致する文字列を抽出しています。`RegExp`クラスの`exec()`メソッドを使用することで、マッチした文字列を取得できます。
-
-また、正規表現には様々なオプションもあります。例えば、`i`オプションを使用することで、大文字と小文字を区別せずにマッチングを行うことができます。詳細な使い方については、公式ドキュメントを参照してください。
+この例では、テキストがメールアドレスの形式に合致しているかどうかをチェックしています。正規表現を使用することで、複数の文字列に対して同じパターンを適用することができるため、効率的にデータを処理することができます。
 
 ## ディープダイブ
 
-正規表現をより深く理解するための情報を紹介します。正規表現を使用する際には、思いがけないエラーが発生することがあります。例えば、マッチした文字列が複数ある場合には、`exec()`メソッドを複数回呼び出す必要があります。また、文字列内に特殊文字が含まれている場合にはエスケープが必要になるなど、詳細な挙動を把握することが重要です。
+正規表現にはさまざまなパターン記法があり、より複雑なパターンを指定することができます。たとえば、以下のような記法があります。
 
-また、正規表現を使用する際のパフォーマンスにも注意が必要です。正規表現はパターンマッチングのために複雑な処理が行われるため、使用頻度が高い場合にはパフォーマンスの低下を引き起こすことがあります。より良いパフォーマンスを得るためには、正規表現を適切に最適化する必要があります。
+- `[]` : 文字の範囲を指定する
+- `()` : グループを作成する
+- `|` : OR条件を指定する
+- `^` : 文字列の先頭を表す
+- `$` : 文字列の末尾を表す
+
+また、正規表現のメソッドには `exec()` や `matchAll()` など、さまざまなオプションがあります。詳しくは公式ドキュメントを参照してください。
 
 ## 参考リンク
 
-- [MDN Web Docs - 正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScriptハンドブック - 正規表現](https://www.typescriptlang.org/docs/handbook/regex.html)
-- [正規表現とは？基礎知識と使い方を初心者向けに解説！](https://techacademy.jp/magazine/19903)
+- TypeScript 公式ドキュメント: https://www.typescriptlang.org/docs/handbook/regular-expressions.html
+- 正規表現チュートリアル: https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+- マスターアップ TypeScript 正規表現入門: https://www.masterup.net/contents/how_to_use_regexp.html
+- 正規表現を強力にする26のコマンド: https://qiita.com/shibukawa/items/d8bdb6a000d30583f6fc

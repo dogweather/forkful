@@ -1,6 +1,7 @@
 ---
-title:                "Java: Sattumanvaraisten numeroiden luominen"
-simple_title:         "Sattumanvaraisten numeroiden luominen"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "Java: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -9,52 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi - satunnaislukujen tuottaminen Java-ohjelmoinnissa
+## Miksi
 
-Satunnaislukujen tuottaminen on tärkeä osa Java-ohjelmointia monessa eri käyttötarkoituksessa. Satunnaislukuja käytetään esimerkiksi tietokonepelien, arvontojen ja simulaatioiden luomisessa. Ne voivat myös olla hyödyllisiä testauksessa ja salausalgoritmeissa. Tässä oppaassa käymme läpi, miten voit luoda satunnaislukuja Java-koodilla.
+Monissa Java-ohjelmissa tarvitaan satunnaisia numeroita esimerkiksi pelilogiikassa, testauksessa tai tietojen generoinnissa.
 
-## Kuinka - esimerkkejä koodista ja tulostuksista
-
-Satunnaislukujen generoimiseen Java-koodissa on useita erilaisia tapoja. Yksi yleisimmistä on käyttää Math-luokan random-metodeita. Ne palauttavat double-tyyppisen satunnaisluvun välillä 0.0 ja 1.0. Voit myös määrittää haluamasi ala- ja ylärajan käyttämällä Math.random() metodia yhdessä Math.floor-metodin kanssa, joka pyöristää luvun alaspäin.
+## Kuinka tehdä
 
 ```Java
-// Palauttaa satunnaisen luvun väliltä 0.0 ja 1.0
-double luku = Math.random();
+// Java Random-luokkaa käyttäen
 
-// Palauttaa satunnaisen luvun väliltä 1 ja 10
-int luku = (int) (Math.random() * 10) + 1;
+import java.util.Random;
 
-// Palauttaa satunnaisen luvun väliltä 5 ja 15
-int luku = (int) (Math.floor(Math.random() * 11) + 5);
-```
+public class RandomNumbers {
+    public static void main(String[] args) {
 
-Toinen tapa luoda satunnaislukuja on käyttää Random-luokkaa. Sen avulla voidaan määrittää myös muun tyyppisiä lukuja, kuten kokonais- ja liukulukuja. Alla on esimerkki, miten voidaan luoda lista satunnaisia kokonaislukuja väliltä 1 ja 100.
+        // Luo uusi Random-objekti
+        Random random = new Random();
 
-```Java
-Random random = new Random();
+        // Satunnaisen kokonaisluvun generointi väliltä 1-10
+        int randomInt = random.nextInt(10) + 1;
+        System.out.println("Satunnainen kokonaisluku: " + randomInt);
 
-// Luodaan 5 satunnaista kokonaislukua väliltä 1 ja 100
-for (int i = 0; i < 5; i++) {
-    int luku = random.nextInt(100) + 1;
-    System.out.println(luku);
+        // Satunnaisen liukuluvun generointi väliltä 0.0-1.0
+        double randomDouble = random.nextDouble();
+        System.out.println("Satunnainen liukuluku: " + randomDouble);
+    }
 }
-
-// Tulostus voi olla esimerkiksi:
-// 67
-// 24
-// 89
-// 43
-// 12
 ```
 
-## Syvempi sukellus - lisätietoa satunnaislukujen generoinnista
+```Java
+// Java Math-luokkaa käyttäen
 
-On tärkeää huomata, että satunnaislukujen generoiminen Java-koodissa ei ole täysin sattumanvaraista. Generoitu luku perustuu aina annettuun siemenarvoon, joka määritetään joko automaattisesti tai käyttäjän toimesta. Jos käyttää samaa siemenarvoa, saadaan aina sama satunnaisluku. Tämä voi olla hyödyllistä testauksessa, mutta esimerkiksi salausalgoritmeissa halutaan käyttää mahdollisimman satunnaista siemenarvoa.
+public class RandomNumbers {
+    public static void main(String[] args) {
 
-On myös tärkeää muistaa, että satunnaislukuja luodessa tärkeä osa on niiden jakautuminen. Esimerkiksi jos haluat generoida satunnaislukuja, jotka noudattavat normaalijakaumaa, voit käyttää apuna Random ja Gaussian-metodeita. Tämä tarkoittaa, että generoidut luvut ovat todennäköisesti lähempänä keskiarvoa, ja harvemmin poikkeavat reilusti siitä.
+        // Satunnaisen kokonaisluvun generointi väliltä 1-10
+        int randomInt = (int)(Math.random() * 10) + 1;
+        System.out.println("Satunnainen kokonaisluku: " + randomInt);
+
+        // Satunnaisen liukuluvun generointi väliltä 0.0-1.0
+        double randomDouble = Math.random();
+        System.out.println("Satunnainen liukuluku: " + randomDouble);
+    }
+}
+```
+
+Esimerkkilähtö:
+
+> Satunnainen kokonaisluku: 7
+>
+> Satunnainen liukuluku: 0.8708039083763881
+
+## Syvempi sukellus
+
+Java tarjoaa sekä Random- että Math-luokan avulla mahdollisuuden generoida satunnaisia numeroita. Random-luokkaa käyttämällä voimme luoda uuden objektin, joka tarjoaa erilaisia metodeja satunnaisen numeron luomiseen. Math-luokka tarjoaa puolestaan staattisia metodeja, joiden avulla satunnainen luku voidaan generoida ilman erillistä objektia.
+
+Satunnaisien numeroiden luomisessa on tärkeä ottaa huomioon, että ne eivät ole täysin satunnaisia vaan ennalta määrättyjen kaavojen ja algoritmien tulosta. Siksi niitä ei tulisi käyttää tietoturvasovelluksissa.
 
 ## Katso myös
 
-- [Java Random Class](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Generating Random Numbers in Java](https://www.baeldung.com/java-generating-random-numbers)
-- [Math Class](
+- [Java Random-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Java Math-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)

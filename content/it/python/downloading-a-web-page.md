@@ -1,6 +1,7 @@
 ---
-title:                "Python: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "Python: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,30 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Se sei interessato allo sviluppo web o al data scraping, potresti essere curioso di conoscere come scaricare una pagina web utilizzando Python.
 
-Scaricare una pagina web è un'abilità essenziale per tutti i programmatori Python che lavorano con dati da internet. Questa abilità consente di accedere e analizzare informazioni provenienti da fonti online.
+## Come
+Per scaricare una pagina web utilizzando Python, c'è bisogno di due librerie: `requests` e `urllib`. Per prima cosa, importa le librerie nel tuo codice:
 
-## Come fare
-
-Per scaricare una pagina web in Python, esistono diverse opzioni. Una delle più comuni è utilizzare la libreria `requests`, che permette di effettuare richieste HTTP in modo semplice ed efficiente. Vediamo un esempio di codice per scaricare la pagina principale di Google:
-
-```python
+```Python
 import requests
-
-response = requests.get("https://www.google.com")
-
-print(response.status_code)
-print(response.content)
+import urllib.request
 ```
 
-Il codice sopra fa prima un `import` della libreria `requests`. Poi è usata la funzione `get()` per effettuare una richiesta all'URL specificato. Infine, viene stampato il codice di stato della risposta (che dovrebbe essere 200 se la richiesta è andata a buon fine) e il contenuto della pagina web, che viene restituito come una stringa di byte.
+Quindi, puoi utilizzare il metodo `get()` dalla libreria `requests` per scaricare il contenuto della pagina web specificando l'URL come argomento:
 
-## Approfondimento
+```Python
+url = "https://www.example.com"
+web_page = requests.get(url)
+```
 
-Mentre il codice di esempio funziona semplicemente per una pagina come quella di Google, scaricare pagine web può diventare più complicato quando si incontrano situazioni come autenticazione, header personalizzati o richieste POST. Per questo, è sempre bene consultare la documentazione della libreria `requests` o ricorrere ad altre alternative come `urllib` o `httplib`.
+Ora puoi accedere al contenuto della pagina utilizzando l'attributo `.text`:
+
+```Python
+print(web_page.text)
+```
+
+In alternativa, puoi utilizzare la libreria `urllib` e il metodo `urlopen()` per scaricare la pagina web nello stesso modo:
+
+```Python
+url = "https://www.example.com"
+web_page = urllib.request.urlopen(url)
+```
+
+Anche in questo caso, puoi accedere al contenuto della pagina utilizzando l'attributo `.read()`:
+
+```Python
+print(web_page.read())
+```
+
+## Deep Dive
+In entrambi i casi, utilizzando `requests` o `urllib`, è possibile specificare altri parametri come header, cookies o autenticazione per personalizzare la richiesta. Inoltre, è possibile gestire gli errori utilizzando il try-except block e scaricare il contenuto in diversi formati utilizzando il metodo `json()` da `requests` o il modulo `json` integrato da `urllib`.
 
 ## Vedi anche
-
-- [Documentazione di requests](https://2.python-requests.org/)
-- [Gestione degli errori in Python](https://realpython.com/python-exceptions/)
-- [Un'introduzione a scrivere script Python efficaci](https://realpython.com/python-scripts/)
+- Documentazione su `requests`: https://requests.readthedocs.io/en/latest/
+- Documentazione su `urllib`: https://docs.python.org/3/library/urllib.html

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Das Senden einer http-Anfrage"
-simple_title:         "Das Senden einer http-Anfrage"
+title:                "Eine http Anfrage senden"
+html_title:           "Bash: Eine http Anfrage senden"
+simple_title:         "Eine http Anfrage senden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,25 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Ein HTTP Request zu senden ist eine grundlegende Fähigkeit, die jeder Bash Programmierer kennen sollte. Es ermöglicht dir, mit anderen Webseiten und Servern zu interagieren und Daten auszutauschen. Dies ist besonders nützlich, wenn du Skripte schreibst, die automatisierte Tasks ausführen und mit externen APIs kommunizieren müssen.
+Wer sich mit dem Thema Webentwicklung oder Automatisierung beschäftigt, wird oft auf den Begriff "HTTP Request" stoßen. Doch was genau verbirgt sich dahinter und warum ist es wichtig, sich damit auseinanderzusetzen? HTTP (Hypertext Transfer Protocol) ist ein grundlegender Bestandteil des World Wide Web und ermöglicht die Kommunikation zwischen Client und Server. Das Versenden von HTTP Requests ist der Schlüssel, um Daten von einem Server zu erhalten oder an diesen zu senden.
 
-## Wie man das macht
+## Wie geht's
 
-Das Senden eines HTTP Requests in Bash erfordert die Verwendung des Befehls `curl`. Mit `curl` kannst du einen HTTP Request an eine bestimmte URL senden und sogar Parameter und Header hinzufügen. Schau dir dieses Beispiel an:
+Um eine HTTP Anfrage zu senden, können verschiedene Tools und Programmiersprachen verwendet werden. In diesem Artikel werden wir uns jedoch auf das Senden von HTTP Requests mit Bash, der Shell eines Linux-Systems, konzentrieren.
 
+Um eine HTTP Anfrage mit Bash zu senden, verwenden wir das Tool `curl`. Es ist bereits in den meisten Linux-Distributionen vorinstalliert und ermöglicht das Senden von HTTP Requests über die Kommandozeile.
+
+Ein einfaches Beispiel für den Aufruf einer Website mit `curl` sieht wie folgt aus:
 ```Bash
-curl -X GET https://api.example.com/users?id=12345 -H "Authorization: Bearer abcdefg123"
+curl www.example.com
 ```
 
-In diesem Beispiel wird ein GET Request an die URL `https://api.example.com/users` gesendet und die Parameter `id=12345` werden hinzugefügt. Der Header `Authorization` mit dem Wert `Bearer abcdefg123` wird ebenfalls angegeben.
+Dieser Befehl sendet GET Request an die angegebene URL und gibt die HTML des Webservers in der Konsole aus. Möchtest du die Ausgabe stattdessen in eine Datei schreiben, kannst du folgenden Befehl verwenden:
+```Bash
+curl -o output.html www.example.com
+```
 
-Die Ausgabe dieses Befehls wird den Inhalt der empfangenen Antwort anzeigen. Du kannst auch die Option `-o` verwenden, um die Antwort in eine Datei zu schreiben, oder `-i` um die Header der Antwort anzuzeigen.
+Neben GET Requests kann `curl` auch POST Requests senden, die oft zur Übermittlung von Formulardaten verwendet werden. Dazu muss der Content-Type Header angegeben werden und die Daten in das JSON-Format konvertiert werden. Ein Beispiel sieht wie folgt aus:
+```Bash
+curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "password":"1234"}' www.example.com/login
+```
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Es gibt noch viele weitere Optionen, die du beim Senden von HTTP Requests mit `curl` verwenden kannst. Zum Beispiel kannst du die Methode des Requests mit `-X` angeben, den zu verwendenden Port mit `-p` festlegen oder eine Benutzername und Passwort für eine HTTP Basic Authentifizierung mit `-u` hinzufügen. Es lohnt sich, ein wenig Zeit zu investieren, um die verschiedenen Möglichkeiten des Befehls `curl` kennenzulernen und auszuprobieren.
+`curl` bietet viele weitere Funktionen, um HTTP Requests zu konfigurieren und zu automatisieren. Zum Beispiel kann man mit dem `-H` Parameter beliebige Header hinzufügen, mit `-u` einen Benutzernamen und ein Passwort angeben und mit `-s` die Ausgabe der Anfrage komplett deaktivieren.
+
+Eine detaillierte Beschreibung aller Parameter und Funktionen findest du in der offiziellen Dokumentation von `curl`. Auch die `man`-Seite von Bash enthält weitere Informationen und Beispiele.
 
 ## Siehe auch
 
-- Offizielle Dokumentation von `curl`: https://curl.haxx.se/docs/manpage.html
-- Ein Tutorial zum Senden von HTTP Requests mit Bash: https://linuxhint.com/curl_bash_examples/
+- [Offizielle Dokumentation von `curl`](https://curl.se/docs/)
+- [`man`-Seite von Bash](https://linux.die.net/man/1/bash)
+- [HTTP Requests mit Python in 60 Sekunden](https://realpython.com/python-requests/)

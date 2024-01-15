@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Å jobbe med json"
+html_title:           "Haskell: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvis du er en Haskell-programmerer, har du sannsynligvis hørt om JSON før. JSON står for JavaScript Object Notation, og det er et populært format for å lagre og utveksle data mellom forskjellige programmeringsspråk. Så hvorfor bør du interessere deg for å jobbe med JSON i Haskell? En grunn kan være for å kunne samhandle med APIer som bruker JSON-formatet, noe som er vanlig i moderne webutvikling. Det kan også være nyttig når du jobber med databehandling og ønsker å lagre eller dele data på tvers av programmer.
+Å jobbe med JSON i Haskell kan gi deg muligheten til å enkelt behandle og håndtere data i form av strukturerte objekter. Dette kan være nyttig for å kommunisere med andre programmer, eller for å organisere og analysere store datasett.
 
-## Hvordan
+# Hvordan
 
-Haskell har innebygde funksjoner for å håndtere JSON-data, noe som gjør det enkelt å jobbe med dette formatet. La oss se på noen eksempler på hvordan du kan bruke disse funksjonene:
+For å jobbe med JSON i Haskell, kan du bruke biblioteket `aeson`. Følgende kode viser et eksempel på hvordan du parser en JSON-streng:
 
 ```Haskell
 import Data.Aeson
 
--- Konverterer en Haskell-verdi til JSON
-encode "Hei verden" 
--- Output: "\"Hei verden\""
+data Person = Person
+  { name :: String
+  , age :: Int
+  } deriving (Show, Generic) -- Deriving Generic gjør at biblioteket automatisk kan generere instanser av `ToJSON` og `FromJSON`
 
--- Konverterer JSON til en Haskell-verdi
-decode "\"Hei verden\"" :: Maybe String 
--- Output: Just "Hei verden"
+-- Definerer en instans av `FromJSON` for `Person`
+instance FromJSON Person
 
--- Oppretter en JSON-verdi fra en liste med tuples
-toJSON [("Navn", "Maria"), ("Alder", 30), ("Land", "Norge")] 
--- Output: Object (fromList [("Navn",String "Maria"),("Alder",Number 30.0),("Land",String "Norge")])
+-- Eksempel på en JSON-streng
+jsonStr = "{\"name\": \"Per\", \"age\": 25}"
+
+-- Bruker `parseMaybe` for å parse JSON-strengen og returnere en `Maybe`-verdi
+result = parseMaybe (.: "name") <=< parseJSON $ jsonStr :: Maybe String
 ```
 
-Som du kan se, kan Haskell enkelt håndtere konvertering mellom JSON og Haskell-verdier, samt å opprette JSON-verdier fra en liste med tuples. Det finnes også mange nyttige funksjoner for å manipulere og gjøre operasjoner på JSON-data, som du kan utforske videre på egen hånd.
+Koden over vil parse JSON-strengen og hente ut navnet `Per` som en `Maybe`-verdi. Med `aeson` kan du også enkelt lage og sende JSON-objekter ved å bruke funksjonen `encode`.
 
-## Dypdykk
+# Dypdykk
 
-Hvis du ønsker å lære mer om hvordan Haskell håndterer JSON, kan du se nærmere på pakken "aeson". Denne pakken tilbyr en rekke funksjoner og verktøy for å jobbe med JSON-data i Haskell, inkludert marshalling og unmarshalling av komplekse datastrukturer, validering av JSON-data og mye mer.
+Biblioteket `aeson` gir en rekke ulike funksjoner for å behandle JSON-data. Du kan blant annet lage egendefinerte datatype og definere instanser av `ToJSON` og `FromJSON` for disse. Dette gjør det enkelt å tilpasse JSON-lesing og skriving etter dine behov. Det finnes også muligheter for å håndtere mer komplekse JSON-datastrukturer, som å inkludere lister, structs og arrays. Sjekk ut dokumentasjonen for `aeson` for å lære mer om alle mulighetene dette biblioteket har å tilby.
 
-En annen nyttig ressurs er Learning Haskell Data Analysis, som blant annet tar for seg hvordan man kan bruke Haskell og JSON for å analysere data og bygge datadrivne applikasjoner.
+# Se også
 
-## Se også
-
-- [Data.Aeson dokumentasjon](https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html)
-- [Haskell for datanalyse](https://www.packtpub.com/big-data-and-business-intelligence/haskell-data-analysis)
+- [aeson documentation](https://hackage.haskell.org/package/aeson)
+- [JSON på Wikipedia](https://no.wikipedia.org/wiki/JSON)
+- [En introduksjon til Haskell](https://wiki.haskell.org/Introduksjon)

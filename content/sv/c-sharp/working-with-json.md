@@ -1,5 +1,6 @@
 ---
-title:                "C#: Att arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "C#: Att arbeta med json"
 simple_title:         "Att arbeta med json"
 programming_language: "C#"
 category:             "C#"
@@ -9,45 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför använda JSON för att utveckla i C#
+## Varför
+Det är vanligt att vilja utbyta data mellan program och system. JSON är en vanlig filformat för att lägga strukturerad data i filer. Så här använder du JSON med C#.
 
-JSON (JavaScript Object Notation) är ett populärt sätt att strukturera och lagra data i ett format som är lättläst för både människor och maskiner. Denna bloggpost kommer att förklara varför det är en fördel att använda JSON när du arbetar med C# och hur du kan göra det på ett effektivt sätt. Låt oss ta en titt!
+## Hur du gör det
+Alla versioner av C# kommer med inbyggda verktyg för att arbeta med JSON. Här är några exempel på hur du kan arbeta med JSON-data i C#.
 
-## Hur man arbetar med JSON i C#
-
-För att använda JSON i dina C#-projekt behöver du först importera JSON-paketet från NuGet-paketet. Du kan sedan använda Json.NET-biblioteket för att hantera JSON-data. Här är ett exempel på kod som visar hur du kan deserialisera ett JSON-objekt och få tillbaka dess egenskaper:
-
+### Skapa en JSON-fil
+Om du vill skapa en JSON-fil i C# kan du använda följande kod:
 ```C#
-// Installera Json.NET-paketet
-
-using Newtonsoft.Json; // Ladda in Json.NET-biblioteket
-
-// Definiera ett JSON-objekt
-string json = "{'name': 'Lisa', 'age': 25}";
-
-// Deserialisera JSON-data
-Person person = JsonConvert.DeserializeObject<Person>(json);
-
-// Hämta egenskaper från JSON-objektet
-string name = person.Name; // Resultat: Lisa
-int age = person.Age; // Resultat: 25
-
-// Skicka utdata till konsolen
-Console.WriteLine($"Namn: {name}, Ålder: {age}");
+var data = new { name = "Anna", age = 25 };
+var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+System.IO.File.WriteAllText(@"C:\Users\Anna\Documents\data.json", json);
+```
+Detta skapar en JSON-fil med innehållet 
+```json
+{ 
+    "name": "Anna", 
+    "age": 25 
+}
 ```
 
-I det här exemplet skapar vi ett JSON-objekt med hjälp av en sträng och deserialiserar sedan det till en personklass med hjälp av JsonConvert-metoden från Json.NET-biblioteket. Sedan kan vi enkelt få tillbaka egenskaper från JSON-objektet och skriva ut dem till konsolen.
+### Läsa en JSON-fil
+Om du redan har en JSON-fil och vill läsa in datan i din C#-kod kan du använda följande kod:
+```C#
+var json = System.IO.File.ReadAllText(@"C:\Users\Anna\Documents\data.json");
+var data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+Console.WriteLine(data.name); // Skriver ut "Anna"
+```
 
-## Djupdykning i JSON
+### Konvertera mellan JSON och C#-objekt
+JSON-filer kan enkelt konverteras till C#-objekt och vice versa. I exemplet nedan skapar vi ett C#-objekt från JSON-datan och sedan konverterar tillbaka till en JSON-sträng:
+```C#
+var json = System.IO.File.ReadAllText(@"C:\Users\Anna\Documents\data.json");
+var data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+Console.WriteLine(data.name); // Skriver ut "Anna"
 
-JSON är ett mycket användbart sätt att strukturera data eftersom det tillåter hierarkiska strukturer och lätt kan integreras med andra programmeringsspråk och databaser. Det är också enklare att läsa än t.ex. XML-formatet.
+// Konverterar C#-objektet tillbaka till en JSON-sträng
+var newJson = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+Console.WriteLine(newJson); // Skriver ut { "name": "Anna", "age": 25 }
+```
 
-För att få ut mesta möjliga av JSON i dina C#-projekt är det viktigt att förstå det grundläggande syntaxen och hur man kan manipulera och manipulera data från ett JSON-objekt. Det finns många resurser online för att lära dig mer om detta, inklusive dokumentationen för Json.NET och andra programmeringsguider.
-
-För att hålla JSON-data effektiv och strukturerad är det också bra att använda en JSON-validator för att se till att alla objekt följer samma struktur och inte innehåller några felaktiga data.
+## Deep Dive
+JSON är en lättviktig och läsbar filformat som ofta används för att överföra data mellan olika system. C# har många inbyggda funktioner för att arbeta med JSON, inklusive deserialisering och serialisering av objekt. Det finns också flera externa bibliotek för mer avancerad hantering av JSON-filer.
 
 ## Se även
-
-- [Json.NET-dokumentation](https://www.newtonsoft.com/json/help/html/Introduction.htm)
-- [En introduktion till Json.NET](https://www.codeproject.com/Articles/1104363/Introduction-to-JSON-Using-JSON-NET-in-Csharp)
-- [Json.NET användarguide](https://blog.udemy.com/c-sharp-json/)
+- [Officiell dokumentation för System.Text.Json Namespace](https://docs.microsoft.com/en-us/dotnet/api/system.text.json?view=netcore-3.1)
+- [JSON i .NET: En tutorial](https://www.newtonsoft.com/json/help/html/Introduction.htm)
+- [Detaljerad information om JSON och C#](https://www.c-sharpcorner.com/UploadFile/dhananjaycoder/json-serialization-and-deserialization-in-C-Sharp/)

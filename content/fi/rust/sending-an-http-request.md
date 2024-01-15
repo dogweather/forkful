@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "Lähetetään http-pyyntö"
+html_title:           "Rust: Lähetetään http-pyyntö"
+simple_title:         "Lähetetään http-pyyntö"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,42 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-HTTP-pyynnön lähettäminen on tärkeä osa monia verkkosovelluksia ja -palveluita. Se mahdollistaa tietojen hakemisen ja lähettämisen eri verkkosivustoilta ja -palveluilta.
+
+Miksi haluat lähettää HTTP-pyynnön? Koska sinun täytyy kommunikoida internetin kanssa! HTTP-pyynnöt ovat tapa lähettää ja vastaanottaa tietoa verkon yli, ja niitä käytetään esimerkiksi verkkosivustojen selaamiseen ja tietojen hakemiseen.
 
 ## Miten
-Ensimmäiseksi meidän täytyy lisätä `reqwest` kirjasto `Cargo.toml` -tiedostoon. Tämä voidaan tehdä helposti suorittamalla seuraava komento Rust projektin juurella:
 
-```
-cargo add reqwest
-```
+Onneksi Rustilla on erittäin helppo lähettää HTTP-pyyntöjä. Sinun tarvitsee vain käyttää "reqwest" -kirjastoa ja sen avulla luoda "Client" -objekti. Sitten voit käyttää "get" -funktiota ja antaa sille URL-osoitteen, jonka haluat hakea. Lopuksi voit kutsua "send" -funktiota ja saada vastauksen takaisin "Response" -objektina, jossa voit käyttää erilaisia metodeja kuten "text" tai "json" saadaksesi haluamasi tiedot.
 
-Seuraavaksi meidän täytyy tuoda `reqwest` kirjasto koodiin `main.rs` tiedostossa:
+```Rust
+use reqwest::Client;
 
-```
-use reqwest;
-```
+let client = Client::new();
+let response = client.get("https://www.example.com").send().unwrap();
 
-Nyt me voimme luoda HTTP-pyynnön `reqwest::get` funktion avulla ja tallentaa sen muuttujaan `response`:
-
-```
-let response = reqwest::get("https://www.example.com")
-    .expect("Could not send request");
+println!("{}", response.text().unwrap());
 ```
 
-Voimme tulostaa pyynnön vastauksen staattinen sisältö seuraavasti:
+Tämä koodi lähettää GET-pyynnön "www.example.com" -osoitteeseen ja tallentaa vastauksen "response" -muuttujaan. Sen jälkeen voimme käyttää "text" -metodia saadaksemme vastauksen tekstimuodossa ja tulostaa sen konsoliin.
 
-```
-println!("Response: {}", response.text().unwrap());
-```
+## Syventävä tieto
 
-Tämän tulisi tulostaa verkkosivun sisältö terminaalissa.
-
-## Syvemmälle
-HTTP-pyynnön lähettäminen sisältää monia eri osia, kuten URL-osoitteen luomisen, otsikkojen määrittämisen ja pyynnön tekemisen. `reqwest` kirjasto ottaa tämän työn hoitaakseen puolestamme, joten meidän ei tarvitse huolehtia niistä.
-
-On myös tärkeää huomata, että `reqwest` kirjasto käyttää `async` ja `await` syntaksia, mikä tarkoittaa sitä, että pyyntö tehdään asynkronisesti. Tämä mahdollistaa muiden tehtävien suorittamisen samalla, kun odotamme vastausta pyynnöltä.
+Lisätietoja HTTP-pyyntöjen lähettämisestä Rustilla löytyy "reqwest" -kirjaston dokumentaatiosta ja Rustin standardikirjaston "std::io::Read" -dokumentaatiosta. Voit myös tutustua REST-arkkitehtuuriin ja HTTP-metodien käyttöön tarkemmin saadaksesi paremman käsityksen siitä, miten HTTP-pyyntöjä käytetään ja miksi.
 
 ## Katso myös
-- [Rustin asennus ja ensimmäinen projekti](https://www.example.com/rust-installation)
-- [Async ja await selitettynä](https://www.example.com/async-await-explained)
-- [reqwest kirjaston dokumentaatio](https://www.example.com/reqwest-docs)
+
+- "reqwest" -kirjaston dokumentaatio: https://docs.rs/reqwest/*/reqwest/
+- Rustin "std::io::Read" -dokumentaatio: https://doc.rust-lang.org/std/io/trait.Read.html
+- REST-arkkitehtuurin perusteet: https://restfulapi.net/
+- HTTP-metodien selitykset ja käyttö: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods

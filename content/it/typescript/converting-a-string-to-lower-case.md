@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Convertire una stringa in minuscolo"
+title:                "Convertire una stringa in minuscolo"
+html_title:           "TypeScript: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-La conversione di una stringa in lettere minuscole è un'operazione comune nella programmazione. Ciò può essere utile per confrontare stringhe in modo non sensibile alle maiuscole/minuscole o per formattare i dati in un modo specifico. In questo articolo, vedremo come eseguire questa operazione in TypeScript.
+Ci sono diverse ragioni per cui potresti voler convertire una stringa in lettere minuscole in TypeScript. Una delle ragioni più comuni è che è importante mantenere la coerenza nella formattazione del testo all'interno del tuo codice. Inoltre, convertire una stringa in lettere minuscole potrebbe essere utile quando si compara o si cerca all'interno di una stringa.
 
 ## Come fare
-
-Per convertire una stringa in lettere minuscole in TypeScript, possiamo utilizzare il metodo `toLowerCase()` della classe `String`. Questo metodo restituisce una nuova stringa con tutti i caratteri in lettere minuscole.
-
-Ecco un esempio di codice che utilizza il metodo `toLowerCase()`:
+Per convertire una stringa in lettere minuscole in TypeScript, puoi utilizzare il metodo built-in `toLowerCase()`. Questo metodo può essere utilizzato su una variabile di tipo stringa e restituirà una nuova stringa contenente solamente lettere minuscole.
 
 ```TypeScript
-let stringa: string = "CIAO AMICI";
-let stringaInMinuscolo: string = stringa.toLowerCase();
-console.log(stringaInMinuscolo); // output: ciao amici
+let testo = "CIAO AMICI";
+console.log(testo.toLowerCase()); // output: ciao amici
 ```
+
+In questo esempio, abbiamo definito una variabile `testo` che contiene la stringa "CIAO AMICI". Utilizzando il metodo `toLowerCase()`, abbiamo convertito il testo in lettere minuscole e poi stampato il risultato in console.
 
 ## Approfondimento
+È importante notare che il metodo `toLowerCase()` non altera la stringa originale, ma ne crea una nuova con le lettere in minuscolo. Se si desidera conservare la stringa originale, è necessario assegnare il risultato del metodo a una nuova variabile.
 
-In alcuni casi, potresti voler mantenere solo la prima lettera di una stringa in maiuscolo e convertire il resto in minuscolo. In TypeScript, possiamo farlo utilizzando il metodo `toUpperCase()` della classe `String` e poi abbassando le lettere restanti con `toLowerCase()`.
-
-Ecco un esempio:
-
-```TypeScript
-let nome: string = "mARiA";
-let nomeFormattato: string = nome[0].toUpperCase() + nome.slice(1).toLowerCase();
-console.log(nomeFormattato); // output: Maria
-```
-
-Questa tecnica può essere utile quando si deve formattare un input di un utente, come ad esempio un nome o un cognome.
+Inoltre, è possibile che il metodo `toLowerCase()` non funzioni correttamente su certe lettere con accento o caratteri speciali, poiché il comportamento può variare a seconda del sistema operativo e della codifica dei caratteri.
 
 ## Vedi anche
-
-- Documentazione su `toLowerCase()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-- Documentazione su `toUpperCase()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- Il metodo `toLowerCase()` nella documentazione ufficiale di TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-8.html#lowercaseAndUppercase
+- Un esempio di utilizzo di `toLowerCase()` in un progetto TypeScript: https://medium.com/@jorgeucano/manipulando-strings-que-es-to-lower-case-to-upper-case-normalize-y-more-d059c12c8be6
+- Una spiegazione dettagliata su come funzionano le codifiche dei caratteri e perché possono influire su `toLowerCase()`: https://www.toptal.com/developers/string-encoding-tutorial

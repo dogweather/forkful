@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Nedlasting av nettside"
+html_title:           "Ruby: Nedlasting av nettside"
+simple_title:         "Nedlasting av nettside"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,47 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å laste ned en nettside kan være nyttig for å hente informasjon fra en nettside, som for eksempel data om en produktside, prisene på et nettsted eller lignende.
+Hvorfor ville noen ønske å laste ned en nettside? Jo, kanskje du ønsker å lagre en kopi av en nettside for senere lesing uten å være koblet til internett, eller kanskje du ønsker å analysere koden eller innholdet på nettsiden.
 
 ## Hvordan gjøre det
 
-Det er enkelt å laste ned en nettside ved hjelp av Ruby kode. Først må du installere et bibliotek kalt "Net/HTTP" ved bruk av RubyGems. Deretter kan du bruke følgende kode for å laste ned en nettside:
-
-```Ruby
-require 'net/http'
-
-url = URI('urlen til nettsiden du vil laste ned')
-
-res = Net::HTTP.get_response(url)
-puts res.body
-```
-
-Koden over vil hente nettsiden og skrive ut innholdet som respons. Du kan også gjøre et GET request direkte til nettsiden ved hjelp av følgende kode:
-
-```Ruby
-require 'net/http'
-
-url = URI('urlen til nettsiden du vil laste ned')
-
-res = Net::HTTP.get(url)
-puts res
-```
-
-I tillegg kan du bruke "open-uri" biblioteket for å laste ned en nettside på en mer enkel måte:
+For å laste ned en nettside i Ruby, kan du bruke biblioteket "open-uri" og metoden "open" for å åpne en URL. Deretter kan du bruke "read" metoden for å lese innholdet på nettsiden. Her er et eksempel som vil lagre innholdet på nettsiden "https://www.vg.no" i en variabel kalt "vg":
 
 ```Ruby
 require 'open-uri'
-
-url = 'urlen til nettsiden du vil laste ned'
-puts open(url).read
+vg = open("https://www.vg.no").read
 ```
+
+Etter dette kan du gjøre hva du måtte ønske med innholdet på nettsiden, for eksempel analysere koden eller skrive den ut til konsollen. Ved å bruke metoden "puts" vil innholdet på nettsiden bli skrevet ut:
+
+```Ruby
+puts vg
+```
+
+Dette vil skrive ut alt innholdet på nettsiden til konsollen, slik at du kan lese det der. Du kan også lagre innholdet på nettsiden til en fil ved å bruke "open" og "write" metodene:
+
+```Ruby
+File.open("vg.html", 'w') do |file|
+  file.write(vg)
+end
+```
+
+Dette vil lagre innholdet på nettsiden i en fil kalt "vg.html". Du kan endre filnavnet og lagre innholdet på nettsiden til en fil med et passende navn.
 
 ## Dypdykk
 
-Når du laster ned en nettside, vil du også laste ned all HTML-koden og eventuelle bilder og andre ressurser som er på nettsiden. Dette innebærer at du kan analysere og bearbeide koden for å få ut spesifikk informasjon, som for eksempel ved å bruke søkemotorer eller scrapping verktøy. Du kan også bruke ekstra parametere i GET requestet, som for eksempel å legge til en brukeragent eller begrense resultatene til bare å vise teksten uten HTML-taggene.
+Når du bruker "open-uri" biblioteket, kan du også legge til ekstra parametere som å spesifisere HTTP-headers, håndtere omadressering og autentisering. Dette kan være nyttig i mer komplekse situasjoner hvor du trenger å laste ned en nettside med spesifikke innstillinger. Du kan også velge å lagre innholdet på nettsiden i forskjellige formater, som for eksempel JSON eller CSV, ved å bruke passende metoder og libs.
 
 ## Se også
 
-- [Net/HTTP biblioteket for Ruby](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Open-uri biblioteket for Ruby](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
-- [Scrapping med Ruby](https://realpython.com/beautiful-soup-web-scraper-python/)
+- Ruby's open-uri og File biblioteker: [https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/index.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/index.html)
+  [https://ruby-doc.org/core-2.6.3/File.html](https://ruby-doc.org/core-2.6.3/File.html)
+- En artikkel om å parse og manipulere nettsider i Ruby: [https://www.rubyguides.com/ruby-tutorial/scraping-websites/](https://www.rubyguides.com/ruby-tutorial/scraping-websites/)

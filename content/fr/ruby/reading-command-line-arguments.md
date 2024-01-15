@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Lecture des arguments de ligne de commande"
-simple_title:         "Lecture des arguments de ligne de commande"
+title:                "La lecture des arguments de ligne de commande"
+html_title:           "Ruby: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,36 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi lire les arguments de la ligne de commande en Ruby
-La lecture des arguments de la ligne de commande est une compétence essentielle pour tout programmeur Ruby. Cela vous permet de passer des paramètres à votre programme lors de son exécution, ou de fournir des informations supplémentaires au programme pendant son exécution. Cela peut également vous aider à automatiser certaines tâches et à rendre votre code plus flexible. Dans cet article, nous allons couvrir les bases de la lecture des arguments de la ligne de commande en Ruby.
+## Pourquoi
+
+Pourquoi devriez-vous vous intéresser à la lecture des arguments de la ligne de commande ? C'est simple : c'est un moyen efficace d'interagir avec votre programme. En utilisant des arguments en ligne de commande, vous pouvez personnaliser l'exécution de votre programme et le rendre plus polyvalent.
 
 ## Comment faire
-Pour lire les arguments de la ligne de commande en Ruby, vous pouvez utiliser la variable globale `ARGV`. Cette variable contient un tableau avec tous les arguments passés à votre programme lors de son exécution. Voici un exemple :
 
-```Ruby
-# code exemple
-ARGV.each do |arg|
-  puts "Argument passé : #{arg}"
-end
+La lecture des arguments de la ligne de commande en Ruby est simple et peut être réalisée en quelques étapes faciles.
+
+Tout d'abord, vous devez accéder aux arguments de la ligne de commande en utilisant la variable spéciale `$ARGUMENTS` (ou `$ARGV`). Cette variable contient un tableau de toutes les valeurs passées en tant qu'arguments lors de l'exécution du programme.
+
+Ensuite, vous pouvez parcourir le tableau pour accéder à chaque argument individuellement. Par exemple :
+
+```ruby
+# Exemple d'utilisation des arguments en ligne de commande
+# ruby mon_programme.rb argument1 argument2 argument3
+
+# Accéder aux arguments en ligne de commande
+arguments = ARGV
+
+# Utiliser le premier argument
+puts "Le premier argument est : #{arguments[0]}"
 ```
 
-Si vous exécutez le programme ci-dessus en tapant `ruby mon_programme.rb un_argument deux_arguments`, vous obtiendrez la sortie suivante :
+Output : `Le premier argument est : argument1`
 
+Vous pouvez également utiliser la méthode `join` pour rassembler tous les arguments en une seule chaîne de caractères :
+
+```ruby
+# Exemple d'utilisation de la méthode 'join'
+# ruby mon_programme.rb argument1 argument2 argument3
+
+# Accéder aux arguments en ligne de commande
+arguments = ARGV
+
+# Rassembler tous les arguments en une seule chaîne de caractères
+arguments_string = arguments.join(" ")
+
+# Afficher la chaîne de caractères formée par les arguments
+puts "Les arguments passés sont : #{arguments_string}"
 ```
-Argument passé : un_argument
-Argument passé : deux_arguments
-```
 
-Comme vous pouvez le voir, chaque argument est stocké comme une chaîne de caractères dans le tableau `ARGV`.
+Output : `Les arguments passés sont : argument1 argument2 argument3`
 
-## Plongée en profondeur
-Il y a quelques points importants à garder à l'esprit lors de la lecture des arguments de la ligne de commande en Ruby. Tout d'abord, la première valeur du tableau `ARGV` sera toujours le nom du fichier Ruby que vous exécutez. Cela peut être utile si vous devez spécifier des fichiers d'entrée ou de sortie dans votre programme.
+Et voilà ! Vous savez maintenant comment lire et utiliser les arguments de la ligne de commande en Ruby.
 
-Deuxièmement, les arguments passés à votre programme seront séparés par des espaces. Si vous avez besoin de passer des arguments contenant des espaces, vous devrez les entourer de guillemets doubles (") ou simples ('). Sinon, les espaces seront considérés comme des séparateurs et vos arguments seront incorrects.
+## Approfondissement
 
-Enfin, vous pouvez également spécifier des options courtes et longues en utilisant la gem `optparse`. Cela vous permettra de définir des options avec des noms explicites et de les utiliser dans votre programme. Vous pouvez en savoir plus sur la gem `optparse` en consultant la [documentation officielle](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html).
+Maintenant que vous savez comment utiliser les arguments en ligne de commande, vous pouvez également explorer des options plus avancées telles que la validation des arguments, l'utilisation de librairies spécifiques pour gérer les arguments, ou encore créer des options d'aide pour votre programme.
 
-# Voir aussi
-- [Documentation sur la variable globale ARGV](https://ruby-doc.org/core/ARGF.html)
-- [Tutoriel sur la gem optparse](https://www.rubyguides.com/2018/10/ruby-optionsparser/)
-- [Autre exemple de lecture des arguments de la ligne de commande en Ruby](https://www.devdungeon.com/content/ruby-getting-command-line-arguments)
+Pour en savoir plus, vous pouvez consulter ces ressources :
+
+- [Documentation officielle de Ruby sur les arguments de la ligne de commande](https://ruby-doc.org/core-2.7.2/ARGF.html)
+- [Un tutoriel sur l'utilisation des arguments en ligne de commande en Ruby](https://www.rubyguides.com/2018/10/ruby-command-line-arguments/)
+- [Une librairie Ruby pour gérer facilement les arguments en ligne de commande](https://github.com/docopt/docopt.rb)
+
+## A voir aussi
+
+Découvrez également ces autres articles sur Ruby :
+
+- [Comment créer une classe en Ruby](https://www.ssbloggingtips.com/create-class-ruby/)
+- [Guide pratique pour la manipulation de chaînes de caractères en Ruby](https://www.aaronlasseigne.com/2016/10/25/strscan-ruby-secret-weapon/)
+- [Une introduction à la programmation orientée objet en Ruby](https://www.tutorialspoint.com/ruby/ruby_object_oriented.htm)

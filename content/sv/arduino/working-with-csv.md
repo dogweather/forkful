@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med CSV"
+html_title:           "Arduino: Arbeta med CSV"
+simple_title:         "Arbeta med CSV"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,54 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-CSV är ett vanligt filformat för att lagra och dela data. Att lära sig hur man läser och behandlar CSV-filer i Arduino kan öppna upp möjligheter för att integrera externa datakällor eller skapa program som behöver hantera stora mängder data.
+CSV-filer är vanligt förekommande i datahantering och används ofta för att lagra stora mängder information på ett enkelt och lättläst sätt. Genom att lära sig arbeta med CSV-filer kan du effektivt samla och bearbeta data för dina Arduino-projekt.
 
-## Hur man gör
+##Så här gör du
 
-För att läsa och behandla CSV-filer i Arduino behöver du först importera ett specialbyggt bibliotek som heter "CSV.h". Detta bibliotek ger dig funktioner för att öppna, läsa och bearbeta CSV-filer.
+För att kunna arbeta med CSV-filer på din Arduino, behöver du först och främst lägga till ett bibliotek för CSV-hantering till ditt projekt. Ett populärt sådant bibliotek är "ArduinoCSV", som du kan ladda ner och installera via "Sketch" > "Include Library" > "Manage Libraries" i Arduino IDE.
 
-För att öppna en CSV-fil använder du funktionen "parse". Exempelkod nedan visar hur du kan använda denna funktion för att öppna en fil vid namn "data.csv" på ett SD-kort:
+När biblioteket är installerat kan du börja arbeta med CSV-filer genom att skapa en ny variabel av typen "CSV" och ange sökvägen till din CSV-fil som argument. Sedan kan du använda funktioner som "readCSV" för att läsa in data från filen och "writeCSV" för att skriva data till filen.
+
+Här är ett exempel på kod för att läsa in data från en CSV-fil och skriva ut den på seriell port:
 
 ```
-#include <SD.h> // importera SD biblioteket
-#include <CSV.h> // importera CSV biblioteket
-File dataFile;
+#include <ArduinoCSV.h>                     // Hämtar biblioteket
 
-void setup() {
-  Serial.begin(9600);
-  // montera SD-kortet
-  if (!SD.begin(10)) {
-    Serial.println("Error: SD-kort kunde inte monteras.");
-    return;
+CSV myFile("data.csv");                     // Skapar en variabel för vår fil
+if(myFile.open()){                         // Öppnar filen
+  while(myFile.available()){                // Loopar tills all data är läst
+    Serial.print(myFile.read());           // Skriver ut data på seriell port
   }
-  // öppna CSV-filen
-  dataFile = SD.open("data.csv");
-  // skicka filen till funktionen "parse"
-  CSV.parse(&dataFile);
-}
-
-void loop() {
-  // hämta en rad från filen
-  Row rowData = CSV.readRow();
-  // skriv ut innehållet i raden
-  Serial.println(rowData[0]); // skriver ut första värdet i raden
+  myFile.close();                           // Stänger filen
 }
 ```
 
-Output av ovanstående kod kommer att varje rad i CSV-filen, med det första värdet i raden skrivet ut till seriell monitor.
+##Djupdykning
 
-## Deep Dive
+En CSV-fil (Comma-Separated Values) består av rader med data, där varje rad är uppdelad i flera kolumner genom kommatecken. Det finns olika sätt att hantera CSV-filer beroende på deras struktur och datainnehåll.
 
-För att kunna behandla data på ett effektivt sätt rekommenderas det att du konverterar den lästa datan till lämpliga datatyper. Till exempel, om du vet att det första värdet i raden är en float, kan du använda "toFloat" funktionen för att konvertera det lästa värdet till en float.
+Om filen innehåller en rad med kolumnrubriker, kan du använda funktionen "readHeader" för att läsa in dessa rubriker och sedan använda dem som referens för att läsa in data från relevanta kolumner. Du kan också använda funktionen "writeHeader" för att skriva in kolumnrubriker i en ny fil.
 
-Det är även viktigt att hantera eventuella separatorer (vanligtvis komma eller semikolon) mellan värdena i raden. Funktionen "setDelimiter" kan användas för att specificera vilken separator som används i filen.
+Om du vill lägga till data i en befintlig CSV-fil, kan du använda funktionen "append" istället för "read" för att lägga till data efter den sista raden i filen.
 
-För mer avancerade användare finns det även möjlighet att ändra och spara data till CSV-filer med hjälp av funktionerna "write" och "save". Dessa är användbara om du behöver uppdatera eller skapa nya CSV-filer.
+Det finns också möjlighet att arbeta med mer avancerade CSV-format, som delade kolumner eller olika tecken för gruppering av data. Detta kräver dock en mer omfattande förståelse för CSV-specifikationen och eventuellt anpassade funktioner.
 
-## Se också
+##Se även
 
-- [CSV bibliotek för Arduino](https://github.com/rodolk/TinyCSV)
-- [Tutorial för att läsa och behandla CSV-filer i Arduino](https://circuitdigest.com/microcontroller-projects/arduino-csv-file-processing)
-- [Mer information om CSV-filer](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [Arduino Libraries](https://www.arduino.cc/en/Reference/Libraries)
+- [ArduinoCSV GitHub Repository](https://github.com/adafruit/Adafruit_CircuitPython_CSV)
+- [CSV Specifications](https://tools.ietf.org/html/rfc4180)

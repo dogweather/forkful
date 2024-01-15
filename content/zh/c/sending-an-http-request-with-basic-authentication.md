@@ -1,6 +1,7 @@
 ---
-title:                "C: 使用基本身份验证发送一个HTTP请求"
-simple_title:         "使用基本身份验证发送一个HTTP请求"
+title:                "使用基本身份验证发送HTTP请求。"
+html_title:           "C: 使用基本身份验证发送HTTP请求。"
+simple_title:         "使用基本身份验证发送HTTP请求。"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,88 +10,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用基本认证发送HTTP请求
+## 为什么
 
-基本认证是一种简单的安全机制，可以保护HTTP请求的隐私和安全性。通过使用基本认证，用户可以在发送HTTP请求时提供用户名和密码，从而验证其身份，并且只有经过身份验证的用户才能访问受保护的资源。
+发送HTTP请求时，带有基本身份验证信息的原因是为了确保请求是被授权的。这可以保护敏感的数据和网站免受未经授权的访问。
 
-## 如何发送带有基本认证的HTTP请求
+## 如何进行
 
-如果您想在C语言中发送带有基本认证的HTTP请求，您可以遵循以下步骤：
-
-1. 创建一个包含基本认证头部的HTTP请求对象
-2. 设置请求方法和URL
-3. 将用户名和密码编码为Base64字符串，并将其添加到HTTP头部中
-4. 发送HTTP请求并接收响应
-5. 检查响应状态码和内容
-
-下面是一个示例代码，展示如何使用libcurl库在C语言中发送带有基本认证的HTTP请求，并打印出响应：
+在C语言中发送带有基本身份验证的HTTP请求非常简单。首先，我们需要使用curl库来构建和发送请求。然后，我们需要提供基本身份验证的用户名和密码。以下是一个简单的示例代码：
 
 ```C
-#include <stdio.h>
+// 导入所需的头文件
 #include <curl/curl.h>
+#include <stdio.h>
 
-int main(void)
-{
-    CURL *curl;
-    CURLcode res;
+// 定义用户名和密码
+#define USERNAME "username"
+#define PASSWORD "password"
 
-    /* 初始化libcurl */
-    curl = curl_easy_init();
-    if(curl) {
-        /* 设置URL和要发送的用户名密码 */
-        char *url = "https://example.com/api";
-        char *username = "user123";
-        char *password = "password456";
-        char auth[100];
-        sprintf(auth, "%s:%s", username, password);
+int main(void) {
+  // 初始化curl
+  CURL *curl;
+  CURLcode res;
 
-        /* 创建HTTP请求对象 */
-        curl_easy_setopt(curl, CURLOPT_URL, url);
+  // 为用户名和密码创建认证字符串
+  char auth_string[100];
+  sprintf(auth_string, "%s:%s", USERNAME, PASSWORD);
 
-        /* 添加基本认证头部 */
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERPWD, auth);
+  // 使用curl_easy_init()来构建新的curl对象
+  curl = curl_easy_init();
+  if(curl) {
+    // 设置要发送的URL
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
 
-        /* 发送HTTP请求 */
-        res = curl_easy_perform(curl);
+    // 设置要发送的身份验证信息
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "Authorization: Basic %s", auth_string);
 
-        /* 检查响应状态码 */
-        long status;
-        curl_easy_getinfo(curl, CURLINFO_RESPONSECODE, &status);
-        if (status == 200) {
-            /* 如果响应成功，则读取响应内容并打印出来 */
-            char *response;
-            curl_easy_getinfo(curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD,
-                              &size);
-            response = (char*) malloc((int)size * sizeof(char));
-            curl_easy_getinfo(curl, CURLINFO_CONTENT_TYPE, &type);
-            curl_easy_getinfo(curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD,
-                              &size);
-            response = realloc(response, size + 1);
-            curl_easy_getinfo(curl, CURLINFO_CONTENT_TYPE, &type);
-            printf("响应内容类型:%s\n", type);
-            printf("响应内容长度:%d\n", size);
-            printf("响应内容:\n%s", response);
-        } else {
-            /* 如果响应失败，则打印出错误信息 */
-            fprintf(stderr, "HTTP请求失败，错误码: %ld\n", (long)status);
-        }
+    // 发送请求
+    res = curl_easy_perform(curl);
 
-        /* 释放资源 */
-        curl_easy_cleanup(curl);
-    }
-    return 0;
+    // 检查请求结果
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
+    // 清理curl对象
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
 
-上面的代码中，我们使用libcurl库创建了一个带有基本认证头部的HTTP请求对象，并发送了一个HTTP请求到https://example.com/api。我们还对响应状态码进行了检查，如果响应成功则读取响应内容并打印出来，如果响应失败则打印出错误信息。
+以下是在控制台上运行上述代码的样本输出：
 
-## 深入了解发送带有基本认证的HTTP请求
+```
+HTTP/1.1 200 OK
+Date: Fri, 27 Nov 2020 00:00:00 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 138
+Server: Apache
 
-当我们使用基本认证发送HTTP请求时，服务器会返回一个401 Unauthorized的响应（如果请求没有提供用户名和密码）。客户端收到此响应后，会重新发送带有认证信息的HTTP请求。基本认证的用户名和密码信息是通过Base64编码添加到HTTP头部中的，但是这种编码并不安全，因此基本认证也不是最安全的认证机制。
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
 
-为了增强安全性，可以考虑使用其他认证机制，例如Digest认证或OAuth认证。同时，还可以使用HTTPS协议来保护HTTP请求的传输过程中的安全性。
+请注意，上述示例代码仅用于演示目的，并且并非完整的可执行程序。您可能需要根据您的具体需求进行修改和调整。
 
-# 参考资料
+## 深入了解
 
-- [libcurl官方文档](https://curl.haxx.se/libcurl
+发送带有基本身份验证的HTTP请求过程涉及设置HTTP标头。除了使用```CURLOPT_HTTPHEADER```之外，您也可以使用```curl_easy_setopt()```函数来设置其他HTTP标头，例如User-Agent，Content-Type等。您可以通过查看curl文档来了解更多关于设置HTTP标头的详细信息。
+
+此外，如何处理服务器的身份验证错误也是非常重要的。通常，如果提供的用户名和密码不正确，则服务器会返回401 Unauthorized错误响应。您可以通过检查```CURLcode```变量的值来处理此类错误。
+
+## 参考
+
+1. [libcurl - the multiprotocol file transfer library](https://curl.haxx.se/libcurl/)
+2. [curl_easy_setopt() function](https://curl.haxx.se/libcurl/c/curl_easy_setopt.html)
+3. [curl文档](https://curl.haxx.se/docs/manual.html)
+
+## 参见
+
+- [HTTP身份验证基础知识](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
+- [如何使用C语言发送HTTP请求](https://www.geeksforgeeks.org/http-requests-c-language/)
+- [基于C语言的libcurl教程](https://curl.haxx.se/libcurl/c/libcurl-tutorial.html)

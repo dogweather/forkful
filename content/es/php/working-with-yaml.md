@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Trabajando con yaml."
-simple_title:         "Trabajando con yaml."
+title:                "Trabajando con yaml"
+html_title:           "PHP: Trabajando con yaml"
+simple_title:         "Trabajando con yaml"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
-El lenguaje de programación PHP es una herramienta muy versátil y ampliamente utilizado en la programación web. Una de las razones por las que es tan popular es debido a la flexibilidad que ofrece a los desarrolladores para trabajar con diferentes formatos de datos, incluyendo YAML. 
+## Por qué
+Si eres un programador PHP, probablemente hayas escuchado hablar de YAML, un formato de serialización de datos. Trabajar con YAML puede ayudarte a organizar y gestionar grandes cantidades de datos de una manera más legible y estructurada. Además, es ampliamente compatible con otros lenguajes de programación.
 
-YAML (YAML Ain't Markup Language) es un formato de datos legible para humanos y fácil de usar, ideal para almacenar y transferir datos estructurados. Al trabajar con PHP y YAML, se puede lograr una mayor eficiencia en la gestión de datos y una mejor organización del código.
-
-##Cómo hacerlo
-Para trabajar con YAML en PHP, es necesario utilizar una biblioteca externa llamada "Symfony YAML". Esta biblioteca permite leer y escribir en archivos YAML y convertirlo a un formato compatible con PHP.
-
-A continuación, se muestra un ejemplo de cómo leer un archivo YAML usando la biblioteca Symfony:
-
+## Cómo hacerlo
+Para empezar a trabajar con YAML en PHP, debes asegurarte de tener instalada la extensión YAML en tu entorno de desarrollo. Una vez instalada, puedes utilizar la función `yaml_parse()` para convertir un archivo YAML en un array PHP. Por ejemplo:
 ```PHP
-$yaml = file_get_contents('datos.yml');
-$datos = Yaml::parse($yaml);
-
+$datos = yaml_parse(file_get_contents("datos.yml"));
 print_r($datos);
 ```
+Este código leerá el archivo "datos.yml" y lo convertirá en un array en PHP, que luego puede ser tratado y manipulado de la misma manera que cualquier otro array en el lenguaje.
 
-En el código anterior, primero se abre y lee el archivo YAML y luego se utiliza la función `parse()` para convertirlo en un array de PHP que se puede imprimir con `print_r()` para visualizar su contenido.
-
-##Profundizando
-Además de leer y escribir archivos YAML, la biblioteca Symfony también permite la validación y el mapeo de datos. También ofrece opciones para personalizar la forma en que se maneja la indentación y otros detalles de formato.
-
-Para aquellos que deseen profundizar aún más en el trabajo con YAML en PHP, se pueden consultar recursos como la documentación oficial de Symfony YAML y otros tutoriales en línea.
+## Profundizando
+Aunque la función `yaml_parse()` es útil para la mayoría de las situaciones, puede que necesites un mayor control sobre el proceso de parseo de YAML. En ese caso, puedes utilizar la clase `Yaml` del paquete Symfony para realizar tareas más avanzadas, como validar la sintaxis o convertir objetos a YAML. Por ejemplo:
+```PHP
+$yaml = new Yaml();
+$data = $yaml->parse(file_get_contents("datos.yml"));
+$yaml->dump($data, "datos_nuevos.yml");
+```
+En este ejemplo, utilizamos la función `parse()` para convertir el archivo YAML en un array, y luego la función `dump()` para convertir ese array en un nuevo archivo YAML llamado "datos_nuevos.yml".
 
 ## Ver también
-- [Documentación oficial de Symfony YAML](https://symfony.com/doc/current/components/yaml.html)
-- [Tutorial de TutsPlus sobre YAML y PHP](https://code.tutsplus.com/es/tutorials/working-with-yaml---cms-31582)
-- [Guía de inicio rápido de YAML y PHP](https://dev.to/fruitysheep/working-with-yaml-on-php--suit)
+- La documentación oficial de la extensión YAML para PHP: https://php.net/manual/es/book.yaml.php
+- La documentación de la clase `Yaml` del paquete Symfony: https://symfony.com/doc/current/components/yaml.html

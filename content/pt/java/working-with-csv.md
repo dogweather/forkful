@@ -1,6 +1,7 @@
 ---
-title:                "Java: Trabalhando com arquivos csv"
-simple_title:         "Trabalhando com arquivos csv"
+title:                "Trabalhando com csv"
+html_title:           "Java: Trabalhando com csv"
+simple_title:         "Trabalhando com csv"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,56 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com arquivos CSV?
+## Por que
 
-Trabalhar com arquivos CSV (Comma-Separated Values) é uma habilidade importante para quem lida com dados em qualquer área. CSV é um formato de arquivo simples e eficiente para armazenar dados em uma tabela, que pode ser facilmente lido e manipulado por programas e ferramentas de análise de dados.
+CSV (Comma-Separated Values) é um formato de arquivo utilizado para armazenar e transferir dados tabulares de forma simples e compatível com uma ampla gama de softwares. Trabalhar com CSV no Java pode ser útil para importar e exportar dados de um banco de dados, gerar relatórios ou realizar integrações com outras aplicações. 
 
 ## Como fazer
 
-Para trabalhar com arquivos CSV em Java, é necessário utilizar a biblioteca java.io e suas classes FileReader e BufferedReader. É importante lembrar de tratar possíveis erros durante a leitura do arquivo. Veja um exemplo de código abaixo:
-
+Para trabalhar com CSV no Java, existem diversas bibliotecas disponíveis. Uma das mais populares é a Apache Commons CSV, que oferece uma API simples e fácil de usar. O primeiro passo é adicionar a dependência da biblioteca em seu projeto. No Maven, basta adicionar a seguinte linha no arquivo pom.xml:
+```Java
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.8</version>
+</dependency>
 ```
-import java.io.File;
-import java.io.FileReader;
-import java.io.BufferedReader;
 
-public class CSVReader {
-    public static void main(String[] args) {
-        File file = new File("dados.csv");
-        try {
-            FileReader reader = new FileReader(file);
-            BufferedReader br = new BufferedReader(reader);
-            String line;
-            while ((line = br.readLine()) != null) {
-                // faz algo com cada linha do arquivo
-                System.out.println(line);
-            }
-            br.close();
-        } catch (IOException e) {
-            // tratamento de erros
-            e.printStackTrace();
-        }
+Com a biblioteca adicionada, podemos começar a ler e escrever em arquivos CSV. Veja um exemplo de como ler um arquivo CSV com a biblioteca Apache Commons CSV e imprimir seus dados:
+```Java
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+public static void main(String[] args) throws IOException {
+    // Criando um parser para o arquivo utilizando o formato padrão de CSV
+    CSVParser parser = CSVParser.parse(new FileReader("caminho/do/arquivo.csv"), CSVFormat.DEFAULT);
+    // Iterando sobre as linhas do arquivo
+    for (CSVRecord record : parser) {
+        // Imprimindo os dados da linha atual
+        System.out.print(record.get(0)); // imprime a primeira coluna
+        System.out.print(record.get("coluna")); // imprime a coluna com o nome "coluna"
     }
 }
 ```
 
-Ao executar o código acima, a saída será algo como:
+Além de ler, também podemos escrever em arquivos CSV com a biblioteca Apache Commons CSV. Veja um exemplo de como criar um arquivo CSV e adicionar dados a ele:
+```Java
+import java.io.FileWriter;
+import java.io.IOException;
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
+public static void main(String[] args) throws IOException {
+    // Criando um writer para o arquivo utilizando o formato padrão de CSV
+    CSVPrinter printer = new CSVPrinter(new FileWriter("caminho/do/arquivo.csv"), CSVFormat.DEFAULT);
+    // Adicionando dados ao arquivo
+    printer.printRecord("dado1", "dado2", "dado3"); // adiciona uma linha com os dados na ordem especificada
+    printer.printRecord("dado4", "dado5", "dado6");
+    // Fechando o writer
+    printer.close();
+}
 ```
-nome,idade,cidade
-João,30,São Paulo
-Maria,25,Rio de Janeiro
-Pedro,40,Belo Horizonte
-```
 
-## Aprofundando
+## Aprofundando-se
 
-Existem várias opções de bibliotecas e frameworks que podem facilitar a leitura e manipulação de arquivos CSV em Java, como o OpenCSV e o Apache Commons CSV. Além disso, é possível definir separadores e delimitadores personalizados em caso de necessidade.
+Trabalhar com CSV pode ser ainda mais interessante quando precisamos lidar com situações mais complexas, como arquivos com diferentes tipos de dados, delimitadores especiais ou até mesmo dados faltantes. A biblioteca Apache Commons CSV oferece diversos métodos e configurações para lidar com esses casos, por isso é importante ter conhecimento sobre suas funcionalidades. 
 
-É importante lembrar também de tratar possíveis problemas com caracteres especiais, como acentos, durante a leitura e escrita dos dados em um arquivo CSV.
+Além disso, é possível utilizar outras bibliotecas no Java para trabalhar com CSV, como por exemplo a opencsv e a Super CSV. Vale a pena explorar essas opções para escolher qual melhor se adequa às suas necessidades.
 
-## Veja também
-- [Tutorial de leitura de CSV em Java com OpenCSV](https://www.baeldung.com/java-csv)
-- [Documentação da classe FileReader](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
-- [Apache Commons CSV - Página oficial](https://commons.apache.org/proper/commons-csv/)
-- [OpenCSV - Página oficial](http://opencsv.sourceforge.net/)
+## Consulte também
+
+- [Documentação da biblioteca Apache Commons CSV](https://commons.apache.org/proper/commons-csv)
+- [Exemplos de código com CSV no Java](https://www.baeldung.com/apache-commons-csv)
+- [Comparação entre diferentes bibliotecas de CSV em Java](https://www.baeldung.com/java-csv-libraries)

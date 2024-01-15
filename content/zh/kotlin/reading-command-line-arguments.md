@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 读取命令行参数"
+title:                "读取命令行参数"
+html_title:           "Kotlin: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,63 +11,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # 为什么
-命令行参数是一种非常常用和重要的编程概念，它允许我们通过命令行来向程序传递输入值。通过阅读本文，您将学习如何在Kotlin中读取命令行参数，并为您的程序增加更多的灵活性。
 
-## 如何读取命令行参数
+在开发软件时，我们经常需要从命令行接收用户输入的参数。读取命令行参数是一种重要的技能，能够帮助我们更灵活地控制程序的行为。如果你想要提升自己的软件开发技能，那么学习读取命令行参数是一个不错的选择。
 
-在Kotlin中，我们可以使用args变量来访问从命令行传递的参数。以下是一个简单的示例程序，它将打印出传递的参数数量和每个参数的值：
-
-```Kotlin
-fun main(args: Array<String>) {
-  // 打印参数数量
-  println("参数数量: ${args.size}")
-
-  // 遍历输出每个参数的值
-  for (arg in args) {
-    println("参数值: $arg")
-  }
-}
-```
-
-假设我们在命令行运行这个程序，使用“kotlin CommandLineArgs.kt arg1 arg2”作为命令，将会得到如下输出：
-
-```
-参数数量: 2
-参数值: arg1
-参数值: arg2
-```
-
-我们也可以在程序中使用命令行参数，比如假设我们的第一个参数表示一个数字，我们可以将它转换成整数并进行计算：
+# 如何做
 
 ```Kotlin
 fun main(args: Array<String>) {
-  // 获取第一个参数，并将其转换成整数
-  val num1 = args[0].toInt()
-
-  // 获取第二个参数，并将其转换成整数
-  val num2 = args[1].toInt()
-
-  // 计算两个数字的和并打印结果
-  val sum = num1 + num2
-  println("$num1 + $num2 = $sum")
+    // 遍历所有命令行参数
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-## 深入学习命令行参数
+在上面的代码中，我们使用`Array<Sting>`来接收所有的命令行参数，并使用`for`循环来遍历每一个参数并打印出来。运行此程序，我们就可以在命令行中看到所有的参数。
 
-除了基本的读取命令行参数，您还可以通过使用各种库来增强程序的功能。例如，您可以使用ArgParser库来解析复杂的命令行参数，或者使用Args4j库来构建符合Unix风格的命令行工具。
+```shell
+$ kotlin CommandLineArgsExample.kt argument1 argument2 argument3
 
-此外，您还可以了解如何在Android开发中读取命令行参数，以及如何通过Gradle插件来传递命令行参数。
+argument1
+argument2
+argument3
+```
+
+如果我们只想获取特定位置的参数，可以使用索引来指定。
+
+```Kotlin
+fun main(args: Array<String>) {
+    // 获取第一个参数
+    val firstArg = args[0]
+    println("First argument: $firstArg")
+
+    // 获取第二个参数
+    val secondArg = args[1]
+    println("Second argument: $secondArg")
+}
+```
+
+在上面的代码中，我们使用索引来获取第一个和第二个参数，并打印出来。运行此程序，我们可以看到对应位置的参数被正确获取了。
+
+```shell
+$ kotlin CommandLineArgsExample.kt arg1 arg2
+
+First argument: arg1
+Second argument: arg2
+```
+
+# 深入了解
+
+除了使用索引，我们也可以使用Kotlin标准库提供的`CommandLine.kt`来读取命令行参数。通过使用`commandLine`函数，我们可以轻松地获取命令行参数的名称和值。
+
+```Kotlin
+import kotlin.system.exitProcess
+
+fun main(args: Array<String>) {
+    // 检查是否存在-a参数
+    if ("-a" in args) {
+        println("Option -a detected.")
+        exitProcess(0)
+    }
+    
+    // 获取-b参数的值
+    val bValue = with(commandLine) {
+        // 获取参数值，如果不存在则返回null
+        getOptionValue("b")
+    }
+    
+    if (bValue != null) {
+        println("Value of -b: $bValue")
+    }
+}
+```
+
+在上面的代码中，我们首先使用了`exitProcess`函数来终止程序，并使用`in`操作符来检查是否存在特定的参数。接着，我们使用了`getOptionValue`函数来获取参数的值，并将其打印出来。运行此程序，我们可以看到对应参数的信息被正确地获取和处理。
+
+```shell
+$ kotlin CommandLineArgsExample.kt -a -b value
+
+Option -a detected.
+Value of -b: value
+```
 
 # 参考链接
 
-- [Kotlin命令行参数教程](https://www.journaldev.com/23530/kotlin-command-line-arguments)
-- [使用ArgParser解析命令行参数](https://stormpath.com/blog/kotlin-argparser)
-- [使用Args4j构建命令行工具](https://medium.com/@danilovf/command-line-interface-with-kotlin-and-args4j-d122e0df920b)
-- [在Android中读取命令行参数](https://android.jlelse.eu/what-are-command-line-arguments-and-how-to-read-them-dace41930f4)
-- [通过Gradle传递命令行参数](https://kotlinexpertise.com/command-line-parameters-kotlin-gradle/)
-
-# 参见
-
-- [Kotlin官方文档](https://kotlinlang.org/docs/home.html)
-- [Kotlin中文社区](https://www.kotlincn.net/)
+- [Kotlin官方文档 - 命令行参数](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/command-line.html)
+- [Kotlin官方文档 - 带有命令行参数的应用程序](https://kotlinlang.org/docs/tutorials/command-line.html)

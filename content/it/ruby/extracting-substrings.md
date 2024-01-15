@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Ruby: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-A volte nella programmazione Ruby, potresti aver bisogno di estrarre porzioni di una stringa per elaborare o manipolare i dati in modo più efficace.
+
+Ci sono molte ragioni per cui potresti voler estrarre sottostringhe in Ruby. Forse vuoi manipolare dei dati per elaborare informazioni più specifiche, o forse vuoi semplificare il tuo codice rendendo più leggibili le tue stringhe.
 
 ## Come fare
-Per estrarre una sottostringa da una stringa in Ruby, puoi utilizzare il metodo `.slice` o la sua forma abbreviata `.[]` con l'indice iniziale e finale della sottostringa desiderata. Ad esempio:
 
-```Ruby
-stringa = "Buongiorno a tutti!"
-
-# Estrae la sottostringa "giorno"
-stringa.slice(5,5)
-
-# Stessa uscita
-stringa[5,5]
-```
-
-Se hai bisogno di estrarre una sottostringa con una lunghezza specifica, puoi utilizzare il metodo `.substring` che prende in input l'indice di inizio e la lunghezza della sottostringa desiderata. Ad esempio:
+Per estrarre una sottostringa in Ruby, possiamo utilizzare il metodo `slice` o `[]`. Ad esempio, se vogliamo estrarre una sottostringa di 3 caratteri a partire dalla terza posizione di una stringa, il nostro codice sarebbe simile a questo:
 
 ```Ruby
 stringa = "Ciao a tutti!"
+sottostringa = stringa.slice(2, 3)
 
-# Estrae la sottostringa "tutti"
-stringa.substring(6,5)
+puts sottostringa # output: "ao "
 ```
 
-Puoi anche utilizzare un espressione regolare per estrarre una sottostringa in base a un pattern. Ad esempio, se vuoi estrarre solo le vocali da una parola:
+In questo caso, il primo numero rappresenta l'indice di partenza, mentre il secondo numero indica il numero di caratteri da estrarre. Possiamo anche utilizzare uno o più numeri negativi per estrarre una sottostringa a partire dalla fine della stringa. Ad esempio:
 
 ```Ruby
-parola = "ciao"
+stringa = "Ciao a tutti!"
+sottostringa = stringa[-6, 6]
 
-# Estrae la sottostringa "ia"
-parola[1..-2].gsub(/[^aeiou]/,"")
+puts sottostringa # output: "a tutti"
 ```
 
 ## Approfondimento
-Se vuoi imparare di più su come estrarre substrati in Ruby, puoi esplorare i metodi `.slice`, `.substring` e le espressioni regolari. Inoltre, puoi anche sperimentare con più metodi di estrazione per trovare il più efficace per la tua specifica situazione.
+
+Oltre al semplice utilizzo di `slice` o `[]`, ci sono altri metodi che possiamo utilizzare per estrarre sottostringhe in Ruby. Ad esempio, il metodo `scan` può essere utilizzato per estrarre sottostringhe basate su una determinata espressione regolare. Possiamo anche utilizzare il metodo `split` per dividere una stringa in un array di sottostringhe basate su un determinato delimitatore.
 
 ## Vedi anche
-- [Documentazione di Ruby per i metodi di estrazione](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice)
-- [Guida all'espressione regolare in Ruby](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
+
+- Documentazione ufficiale di Ruby: https://ruby-doc.org/core-2.7.0/String.html#method-i-slice
+- Esempi pratici di estrarre sottostringhe in Ruby: https://www.rubyguides.com/2019/07/ruby-substring/

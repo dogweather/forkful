@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Utskrift av feilsøkningsutdata"
-simple_title:         "Utskrift av feilsøkningsutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Gleam: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,29 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive koden din kan ofte føles som en tålmodighetsprøve, spesielt når du støter på feil og feil i koden din. En måte å sikre at koden din fungerer slik den skal, er å bruke debugging. Printing av debug-output kan hjelpe deg med å identifisere og løse feil i koden din, og derfor er det et viktig verktøy for alle programmører.
+Hvorfor vil du bruke tid på å legge til utskriftsfeil i koden din? Vel, feilsøking er en nødvendig del av enhver programmerers jobb, og debug-informasjon er en enkel og effektiv måte å finne og rette feil på. Uten utskriftsfeil kan du bruke unødvendig mye tid på å lete etter og rette feil, noe som kan føre til frustrasjon og dårligere kode.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å skrive debug-utdata i Gleam, bruker du en innebygd funksjon kalt ```debug.print``` og leverer en verdi som en parameter. La oss si at du har en funksjon som legger sammen to tall:
+For å legge til utskriftsfeil i Gleam, bruker du funksjonen `debug!` med en verdi eller variabel du vil skrive ut som argument. For eksempel:
 
 ```Gleam
-fun sum(x, y) {
-    let result = x + y
-    debug.print(result)
-}
+debug!(navn)
 ```
 
-Når du kaller denne funksjonen, vil den skrive ut resultatet i terminalen din. For eksempel, hvis du kaller ```sum(2, 3)```, vil output være ```5```. Dette kan hjelpe deg med å bekrefte at koden din kjører som forventet.
+Dette resulterer i at verdien av variabelen `navn` blir skrevet ut i debug-informasjonen. Du kan også skrive ut en kombinasjon av tekst og variabler ved å bruke en interpolert streng, som dette:
+
+```Gleam
+debug!("Bestillingsnummer: {}", bestillingsnummer)
+```
+
+Dette vil skrive ut en melding som inkluderer både teksten "Bestillingsnummer:" og verdien av variabelen `bestillingsnummer`.
 
 ## Dypdykk
 
-Etter å ha printet debug-utdata, kan det være nyttig å formatere og organisere output for å gjøre det lettere å lese og analysere. Gleam tilbyr flere funksjoner for å hjelpe deg med dette, som for eksempel ```debug.inspect``` for å inspisere komplekse datastrukturer og ```debug.format``` for å formatere utdataen etter dine behov.
-
-I tillegg kan du også bruke logging-biblioteker som f.eks. ```gleam-logger``` for å lagre debug-utdata til en loggfil, noe som kan være nyttig for lengre og mer komplekse koder.
+Hvis du vil ha mer kontroll over hvordan debug-informasjonen vises, kan du bruke funksjonen `debug` i stedet for `debug!`. Dette lar deg velge et format for utskriften, for eksempel JSON, og angi en fil eller strøm som utgang. Du kan også velge å deaktivere utskrift i produksjonsmiljøet ved å bruke `debug_disabled`.
 
 ## Se også
 
-- [Offisiell Gleam dokumentasjon for debugging](https://gleam.run/book/tour/debugging.html)
-- [Gleam Logger bibliotek](https://github.com/gleam-lang/gleam-logger)
-- [Eksperimentell Gleam feature for å skrive loggdata](https://github.com/gleam-lang/gleam/pull/618)
+- [Offisiell dokumentasjon for debug-modulen](https://gleam.run/modules/gleam_debug/latest)
+- [Video tutorial om å legge til debug-informasjon i Gleam](https://www.youtube.com/watch?v=ocqBMDl7xZY) 
+- [Gleam slack community - #debug channel](https://gleam-lang.slack.com/archives/C01HS9MGLG0)

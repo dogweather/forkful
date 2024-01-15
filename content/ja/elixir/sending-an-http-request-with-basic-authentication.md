@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 基本認証を使用したHTTPリクエストの送信"
-simple_title:         "基本認証を使用したHTTPリクエストの送信"
+title:                "基本認証でHTTPリクエストを送信する"
+html_title:           "Elixir: 基本認証でHTTPリクエストを送信する"
+simple_title:         "基本認証でHTTPリクエストを送信する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,51 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-ElixirでHTTPリクエストを基本認証で送信する方法
+# なぜ？
 
-## Why
+HTTPリクエストに基本認証を使って送信する理由は、ウェブサービスの認証を行うためです。これはデータを安全に送信するために重要です。
 
-Elixirは、動的なWebアプリケーションを構築するための優れたプログラミング言語です。HTTPリクエストを送信することは、Webアプリケーションでデータを取得する必要がある場合には必須です。基本認証を使用することで、セキュリティを強化し、データの取得を制御することができます。
-
-## How To
-
-基本認証を使用してHTTPリクエストを送信する方法を見ていきましょう。
-
-まずは、HTTPヘッダーにBasic認証の情報を追加します。認証には、ユーザー名とパスワードの組み合わせをBase64エンコードした文字列を使用します。
+# 使い方
 
 ```elixir
-headers = [{"Authorization", "Basic #{Base.encode64("<username>:<password>")}}]
+alias HTTPoison.Response
+HTTPoison.start
+
+# URLと認証情報を設定
+url = "https://example.com"
+auth = {"username", "password"}
+
+# リクエストを送信
+response = HTTPoison.get(url, [], basic_auth: auth)
+
+# レスポンスのステータスコードを確認
+if response.status_code == 200 do
+  IO.puts "リクエストが成功しました。"
+else
+  IO.puts "リクエストが失敗しました。"
+end
+
+# レスポンスのボディを表示
+IO.puts response.body
 ```
 
-次に、HTTPクライアントを作成します。Elixirでは、HTTPリクエストを簡単に作成することができるHTTPoisonというライブラリがあります。
-
-```elixir
-client = HTTPoison.Client.new()
+出力例：
+```
+リクエストが成功しました。
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Example.com</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+</body>
+</html>
 ```
 
-そして、HTTPリクエストを送信します。ここでは、GETメソッドを使用してwww.example.comからデータを取得する例を示します。
+# 詳細を深く掘り下げる
 
-```elixir
-response = HTTPoison.Client.get(client, "http://www.example.com", headers)
-```
+基本認証は、HTTPリクエストのヘッダー内にusernameとpasswordを含めることで、サーバーがリクエストを認証できるようにします。これにより、機密性の高いデータのやりとりなど、セキュリティが必要な環境で使用されます。
 
-最後に、レスポンスを取得します。
+# 他にも参考になる情報
 
-```elixir
-response.body
-```
-
-これで、基本認証を使用してHTTPリクエストを送信することができました。
-
-## Deep Dive
-
-HTTPリクエストを送信する際に、基本認証を使用することで、セキュアな通信を行うことができます。基本認証にはユーザー名とパスワードを平文で送信する欠点がありますが、HTTPSを使用することで情報を暗号化することができます。
-
-また、ElixirではBasic認証の他にも、Digest認証やOAuth認証など様々な認証方法をサポートしています。それぞれの認証方法についても、HTTPリクエストを送信する際に同じようにヘッダーを設定することで使用することができます。
-
-## See Also
-
-こちらのリンクも参考にしてみてください。
-
-- HTTPoisonライブラリのドキュメンテーション：https://hexdocs.pm/httpoison/
-- ElixirでのHTTPクライアントの作成方法についてのチュートリアル：https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#creating-an-http-client
+- [ElixirでのHTTPリクエストを扱う方法](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [基本認証について詳しく学ぶ](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+- [Elixirの基本文法を学ぶ](https://elixir-lang.org/getting-started/introduction.html)

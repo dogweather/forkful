@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Alirivien poimiminen"
-simple_title:         "Alirivien poimiminen"
+title:                "Napsaustaminen alamerkkijonoista"
+html_title:           "PHP: Napsaustaminen alamerkkijonoista"
+simple_title:         "Napsaustaminen alamerkkijonoista"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi joku haluaisi käyttää alastringien hakua PHP:ssa? Yksinkertaisesti siksi, että se on tehokas tapa käsitellä merkkijonoja ja hakea tiettyjä tietoja suuremmista merkkijonoista.
 
-Substringien louhinta on erittäin hyödyllistä, kun haluat käsitellä ja manipuloida merkkijonoja PHP:ssä. Se voi auttaa sinua saamaan tarkemman otannan tiedoista tai suodattamaan haluamasi tiedot tietokannassa.
+## Kuinka
+Substringien hakeminen PHP:ssa on helppoa ja nopeaa. Käytämme tähän strpos() -funktiota, joka palauttaa merkkijonon tietyn alastringin ensimmäisen esiintymän sijainnin. Tämän jälkeen voimme käyttää substr() -funktiota hakeaksemme haluamamme alastringin.
 
-## Miten tehdä
-
-PHP:ssä substringien louhinta voidaan tehdä useilla eri tavoilla, mutta yksi yleisimmistä on käyttää `substr()` -funktiota. Voit käyttää sitä seuraavalla tavalla:
+Esimerkiksi, jos haluamme hakea alistringin "maailma" merkkijonosta "Hello maailma!", voimme käyttää seuraavaa koodia:
 
 ```PHP
-$string = "Tämä on esimerkkilause.";
-// Louhitaan ensimmäinen 8 merkkiä
-$louhittu = substr($string, 0, 8);
-// Tulostetaan tulos
-echo $louhittu; //Tämä on
+$merkkijono = "Hello maailma!";
+$sijainti = strpos($merkkijono, "maailma");
+$alistring = substr($merkkijono, $sijainti, 7);
+echo $alistring; // tulostaa "maailma"
 ```
 
-`substr()` -funktio ottaa kolme parametria: alkuperäinen merkkijono, aloitusindeksi ja haluttu pituus. Tämä tarkoittaa, että voit louhia merkkijonosta haluamasi määrän merkkejä haluamastasi kohdasta.
+Voimme myös asettaa alistringin aloituskohdan ja pituuden itse. Esimerkiksi, jos haluamme hakea "maailma" alistringin "Hello maailma!" -merkkijonon lopusta, voimme käyttää seuraavaa koodia:
 
-Voit myös käyttää `mb_substr()` -funktiota, jota suositellaan käytettäväksi UTF-8 -merkkikoodauksen kanssa, jotta vältetään mahdolliset ongelmat monibyte -merkkien kanssa. Se toimii samalla tavalla kuin `substr()`, mutta se huomioi merkistön monimutkaisuuden.
+```PHP
+$merkkijono = "Hello maailma!";
+$alistring = substr($merkkijono, -7, 7);
+echo $alistring; // tulostaa "maailma"
+```
 
 ## Syvempi sukellus
+Hakemalla alastringejä PHP:ssa, voimme myös käyttää erilaisia hakuparametrejä, kuten alistringin sijoittumista merkkijonon sisällä ja alistringin suuruutta. Voimme myös käyttää regex-sääntöjä (regular expressions) alistringin hakemiseen, mikä tekee prosessista vieläkin monipuolisemman.
 
-PHP tarjoaa myös muita tapoja louhia substringeja, kuten `str_replace()` ja `preg_replace()` -funktiot. Näiden avulla voit louhia ja korvata tiettyjä merkkejä tai osia merkkijonosta.
-
-On tärkeää huomata, että substringien louhinta voi olla tehokas, mutta se voi myös hidastaa suorituskykyä ja aiheuttaa turhia kustannuksia. Varmista siis aina, että käytät sitä oikeissa tilanteissa ja optimoit koodisi asianmukaisesti.
+On kuitenkin tärkeää huomata, että alistringien haku voi aiheuttaa ongelmia, jos käsiteltävänä oleva merkkijono muuttuu. Tällöin sijainti ja pituus, joilla olemme hakenneet alastringiä, eivät enää ole oikein.
 
 ## Katso myös
-
-- PHP:n `substr()` -dokumentaatio: https://www.php.net/manual/en/function.substr.php
-- `mb_substr()` vs `substr()`: https://stackoverflow.com/questions/6684776/use-of-mb-substr-in-php
-- `str_replace()` dokumentaatio: https://www.php.net/manual/en/function.str-replace.php
-- `preg_replace()` dokumentaatio: https://www.php.net/manual/en/function.preg-replace.php
+- [PHP strpos dokumentaatio](https://www.php.net/manual/en/function.strpos.php)
+- [PHP substr dokumentaatio](https://www.php.net/manual/en/function.substr.php)
+- [Regular expressions in PHP](https://www.php.net/manual/en/book.pcre.php) (englanniksi)

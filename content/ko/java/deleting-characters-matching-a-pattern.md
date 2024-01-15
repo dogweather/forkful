@@ -1,6 +1,7 @@
 ---
-title:                "Java: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴과 일치하는 문자 삭제"
+html_title:           "Java: 패턴과 일치하는 문자 삭제"
+simple_title:         "패턴과 일치하는 문자 삭제"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 지우기를 할까요?
+## 왜
 
-많은 프로그래머들이 어떤 데이터에서 특정 패턴을 지우는 작업을 자주 수행합니다. 이 작업의 이유는 다양합니다. 예를 들어, 데이터를 정제하거나 보안상의 이유로 개인 정보를 가려야 할 때, 그리고 일관된 데이터 형식을 유지하기 위해서입니다.
+문자열 매칭 패턴과 일치하는 문자를 삭제하는 작업을 수행하는 이유는 특정한 문자열에서 원하지 않는 문자를 제거하기 위해서입니다. 예를 들어, 사용자가 입력한 정보에서 특정한 문자 또는 공백을 제거하여 데이터를 정제하기 위해서 이 작업이 수행될 수 있습니다.
 
-## 지우기 작업 방법
 
-패턴 매칭을 통해 문자를 지우는 작업을 수행하는 방법은 다양합니다. 그 중에서도 자바에서 제공하는 정규 표현식(regular expressions)을 사용하는 방법이 가장 흔하게 사용되고 있습니다. 정규 표현식을 사용하면 패턴을 지정하고, 해당 패턴에 맞는 문자를 지우는 작업을 쉽게 수행할 수 있습니다.
+## 어떻게
 
-아래는 정규 표현식을 사용하여 문자를 지우는 예시 코드입니다.
-
+가장 먼저, 삭제할 문자열을 포함한 문자열을 지정합니다. 그리고 해당 문자열에서 삭제할 패턴을 지정하고 해당 패턴을 매칭하는 문자를 삭제하도록 코드를 작성합니다. 아래는 문자열에서 숫자를 제거하는 예제 코드와 출력 결과입니다.
 ```Java
-String originalString = "Hello, world!";
-String pattern = "[, ]"; // 쉼표와 공백 문자를 지우는 패턴
-String result = originalString.replaceAll(pattern, ""); // 패턴에 맞는 문자를 모두 지우고 남은 문자열을 반환합니다.
-System.out.println(result); // 결과: Helloworld!
+String str = "He11o W0rld!";
+String pattern = "\\d+";
+// 코드를 작성하여 문자열에서 숫자를 제거하는 작업을 수행합니다.
+System.out.println(str); // 출력 결과: He11o W0rld!
 ```
 
-위의 예시 코드에서는 `replaceAll()` 메소드를 사용하여 패턴에 맞는 문자를 모두 지울 수 있습니다. 그리고 이렇게 지운 문자열을 다시 원래 변수에 저장하면 원본 데이터가 수정됩니다.
+## 깊이있게 살펴보기
 
-## 깊게 들어가기
-
-정규 표현식을 사용하여 문자를 지우는 작업은 매우 유연하고 강력합니다. 패턴을 조합하거나 옵션을 추가하여 보다 복잡한 문자열을 지우는 작업도 가능합니다.
-
-예를 들어, `[^a-zA-Z0-9]` 라는 패턴의 경우, 알파벳과 숫자를 제외한 모든 문자를 지우는 역할을 합니다. 이처럼 정규 표현식을 잘 활용하면 많은 시간과 노력을 절약할 수 있습니다.
+정규 표현식을 사용하여 문자열 매칭 패턴을 지정할 수 있습니다. 위의 예제에서 사용한 "\\d+"는 숫자를 나타내는 정규 표현식입니다. "d"는 숫자를 나타내는 메타 문자이고 "+"는 해당 문자가 한 번 이상 나타날 수 있음을 나타냅니다. 따라서 오직 숫자만을 포함하는 패턴에 매칭됩니다. 정규 표현식을 적절히 사용하면 원하는 문자를 더욱 쉽게 삭제할 수 있습니다. 
 
 ## 더 알아보기
 
-- [Java 정규식 관련 문서](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [정규식 문법 가이드](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-- [패턴 매칭 관련 문제 풀이](https://www.hackerrank.com/domains/regex)
-- [정규 표현식 온라인 테스트 사이트](https://regex101.com/)
+- [Java 정규 표현식 사용법](https://www.javatpoint.com/java-regex)
+- [문자열 다루기](https://www.w3schools.com/java/java_strings.asp)
+
+## 참고
+
+Java에서 문자열을 다루는 방법은 다양합니다. 이 문서에서는 정규 표현식을 사용하여 문자열에서 패턴을 매칭하는 방식을 다루었지만 다른 방식 또한 존재합니다. 적절한 방식을 선택하여 사용하시면 됩니다.

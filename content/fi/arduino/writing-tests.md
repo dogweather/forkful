@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,65 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Testien kirjoittaminen on välttämätöntä Arduino-ohjelmoinnissa varmistaaksemme, että koodimme toimii odotetulla tavalla ja välttääksemme mahdolliset virheet ja ongelmat käytössä. Testien avulla voimme myös helpottaa koodin muokkaamista ja ylläpitämistä tulevaisuudessa.
+Miksi sinun kannattaisi kirjoittaa testejä Arduino-ohjelmillesi? Yksinkertaisesti sanottuna, testit auttavat varmistamaan, että koodisi toimii oikein ja välttämään mahdollisia virheitä.
 
-## Kuinka tehdä
+## Miten
 
-Kirjoittamalla testit koodiimme, voimme varmistaa sen toimivuuden ja välttää mahdolliset virheet. Tässä on esimerkki testien kirjoittamisesta Arduino-koodissamme:
+Aluksi sinun tulee asentaa testikirjasto Arduino-ympäristöösi. Voit tehdä tämän valitsemalla "Manage Libraries" ("Hallitse kirjastoja") Tools-valikosta ja etsimällä "ArduinoUnit" kirjaston. Asenna kirjasto ja käynnistä Arduino-ympäristö uudelleen.
+
+Nyt voit aloittaa testien kirjoittamisen. Kirjoita testikoodi setup-funktioon ja määritä sen lopuksi run-tests-funktioon. Alla on yksinkertainen esimerkki testistä näppäimistön painallusta varten:
 
 ```Arduino
-#include <gtest/gtest.h>
+#include <ArduinoUnit.h>
 
-// Testikoodi, joka testaa loop-funktion toimivuuden
-void loopTest() {
-  // alustetaan tarvittavat muuttujat
-  int x = 10;
-  int y = x + 5;
-  
-  // testataan x- ja y-muuttujien arvoja
-  EXPECT_EQ(x, 10);
-  EXPECT_EQ(y, 15);
-  
-  // odotetaan muutama millisekuntia ennen seuraavaa testiä
-  delay(10);
-}
-
-// Testien suoritus
 void setup() {
-  // Kutsutaan GTest-teekin alustusfunktiota
-  testing::InitGoogleTest();
+  test(keypressTest);
+  runTests();
 }
 
-void loop() {
-  // Suoritetaan testi
-  loopTest();
-  
-  // Ajetaan GTest-teekin funkio, joka suorittaa testit
-  RUN_ALL_TESTS();
+test(keypressTest) {
+  Keyboard.press('A');
+  assertEqual('A', Keyboard.read());
 }
-
 ```
 
-Tulostus:
+Voit suorittaa testin valitsemalla "Verify and Upload (Compile and Upload)" Tools-valikosta. Jos kaikki menee hyvin, testi ilmoittaa "PASS" ("ONNISTUI"). Jos taas jokin menee pieleen, testi ilmoittaa "FAIL" ("EPÄONNISTUI") ja antaa tarkemman virheilmoituksen.
 
-```
-[Test Output]
-[==========] Running 1 test cases.
-[----------] Global test environment set-up.
-[----------] 1 tests from LoopTest
-[ RUN ] LoopTest.TestLoop
-[ OK ] TestLoop.TestLoop (1 ms total, 1 ms single)
-[----------] 1 tests from TestLoop (1 ms total)
-[----------] Global test environment tear-down
-[==========] 1 test cases run. (1 ms total)
+## Syventävä sukellus
 
-```
+Voit myös käyttää muita testikirjastoja, kuten Unity-testikirjastoa, joka tarjoaa enemmän ominaisuuksia ja joustavuutta. Voit myös suorittaa testejä suoraan Arduinolla käyttämällä Serial.print()-komentoja ja tarkkailla tulostusta sarjaportin kautta.
 
-## Syvällisempi sukellus
-
-Testien kirjoittaminen ei ole vaikeaa ja se tuo paljon hyötyä koodiimme. Testien avulla voimme varmistaa koodimme toimivuuden erilaisissa tilanteissa ja välttää mahdolliset virheet. Testien kirjoittamiseen on myös olemassa erilaisia kirjastoja ja työkaluja, kuten GTest, jotka voivat helpottaa testien luomista ja suorittamista.
+Testejä kirjoittaessa on hyvä ottaa huomioon myös testaamisen periaatteet, kuten yksikkötestaus ja testien luotettavuus. Näiden avulla varmistat, että testit ovat tehokkaita ja luotettavia.
 
 ## Katso myös
 
-- [Arduino Test Library](https://www.arduino.cc/reference/en/libraries/testlibrary/)
-- [SimpleArduinoUnitTest](https://github.com/bitlash/SimpleArduinoUnitTest)
+- [ArduinoUnit library documentation](https://www.arduino.cc/en/Reference/ArduinoUnit)
+- [Unity Arduino library](https://github.com/ThrowTheSwitch/Unity)
+- [Arduino Testing for Beginners](https://randrineer.github.io/arduino/testing/2016/04/05/arduino-testing-for-beginners.html)

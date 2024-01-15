@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Stora första bokstäver i en sträng"
-simple_title:         "Stora första bokstäver i en sträng"
+title:                "Att göra en sträng stor bokstavsförsjuten"
+html_title:           "TypeScript: Att göra en sträng stor bokstavsförsjuten"
+simple_title:         "Att göra en sträng stor bokstavsförsjuten"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,36 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna koda är en stor fördel i dagens digitala värld. Ett programmeringsspråk som blivit alltmer populärt är TypeScript. En användbar funktion i TypeScript är kapitalisering av strängar, vilket kan vara användbart vid formatering av input från användare eller när man behöver presentera text på ett mer professionellt sätt.
+Du kanske undrar varför du skulle vilja ta dig tid att "capitalizing" en sträng, eller göra första bokstaven i varje ord i en sträng till en stor bokstav. Det finns faktiskt flera fördelar med att använda denna teknik i dina applikationer.
 
-## Hur man gör
+För det första, kan det förbättra läsbarheten och estetiken av din kod. Genom att använda stora bokstäver vid början av varje ord, blir det enklare att skilja mellan olika variabler och namn i din kod. Dessutom kan det hjälpa till att göra ditt kod till mer lättläst och professionellt utseende.
 
-För att kapitalisera en sträng i TypeScript finns det flera olika sätt att göra det på, beroende på vad som passar bäst för ditt specifika projekt. Här är två exempel, ett med inbyggd TypeScript-funktion och ett med vanlig JavaScript-funktion:
+## Så här gör du
 
-```TypeScript
-// Med inbyggd TypeScript-funktion
-let str = "hello world";
-let capitalizedStr = str.toUpperCase();
-console.log(capitalizedStr); // Output: HELLO WORLD 
-```
+För att capitalizing en sträng i TypeScript, finns det flera olika sätt att åstadkomma detta. Här är två enkla sätt att göra det:
 
 ```TypeScript
-// Med vanlig JavaScript-funktion
-let str = "hello world";
-let capitalizedStr = str.replace(str[0], str[0].toUpperCase());
-console.log(capitalizedStr); // Output: Hello world
+// Använda inbyggd JavaScript metod
+const str = "hej, detta är en exempelsträng";
+const capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalizedStr);
+// Output: "Hej, detta är en exempelsträng"
+
+// Använda TypeScript inbyggd metod
+const str = "hej, detta är en exempelsträng";
+const capitalizedStr = str.replace(/\b\w/g, c => c.toUpperCase());
+console.log(capitalizedStr);
+// Output: "Hej, Detta Är En Exempelsträng"
 ```
 
-Som ni kan se i exemplen ovan är det enkelt att kapitalisera en sträng i TypeScript genom inbyggda funktioner eller genom att använda vanliga JavaScript-funktioner. Det viktigaste är att förstå hur metoderna fungerar och när de kan vara mest fördelaktiga att använda.
+Som du kan se, kan du antingen använda den inbyggda JavaScript-metoden "toUpperCase()" för att göra första bokstaven till en stor bokstav och sedan använda "slice()" för att återställa resten av strängen, eller så kan du använda TypeScript-metoden "replace()" med ett reguljärt uttryck för att samtidigt ändra alla första bokstäver i varje ord.
 
 ## Djupdykning
 
-En djupdykning i kapitalisering av strängar i TypeScript innebär att titta närmare på inbyggda funktioner och hur de fungerar under huven. Till exempel kan man lägga till fler parametrar för att specificera vilka bokstäver som ska kapitaliseras, vilket är användbart när man behöver hantera olika språks regler för kapitalisering. Det finns också möjligheter att skapa egna funktioner för att kapitalisera strängar baserat på specifika behov i ens projekt.
+För dem som är intresserade av att förstå mer om hur capitalizing en sträng fungerar i bakgrunden, kan vi titta närmare på den inbyggda "replace()" metoden i TypeScript. Det reguljära uttrycket "\b\w" söker efter enbart de första bokstäverna i varje ord i strängen. När matchningen är hittad, ersätts det med en stora bokstav genom användning av pil notationen (=>), vilket är en av de snygga funktionerna i TypeScript. Denna process upprepas för varje matchning som hittas i strängen, vilket ger oss en "capitalized" version av strängen.
 
-## Se även
+## Se också
 
-Här är några användbara länkar för mer information om kapitalisering av strängar i TypeScript:
-
-- [Officiell TypeScript-dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [En artikel om grundläggande funktioner i TypeScript](https://medium.com/javascript-in-plain-english/learn-typescript-in-5-minutes-13f3aeda0c2a)
-- [Exempelkod för kapitalisering av strängar i TypeScript](https://gist.github.com/YousefED/10078102)
+* [TypeScript officiella hemsida](https://www.typescriptlang.org/)
+* [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+* [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

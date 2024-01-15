@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Fish Shell: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué encontrar la longitud de una cadena?
+## ¿Por qué?
 
-En la programación, a menudo nos enfrentamos a situaciones en las que necesitamos conocer la longitud de una cadena de texto. Ya sea para establecer límites, validar entradas o realizar operaciones matemáticas, conocer la longitud de una cadena puede ser una habilidad útil en la programación. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en Fish Shell.
+Si estás programando en Fish Shell, es posible que en algún momento necesites saber la longitud de una cadena de texto. Esta información puede ser útil para realizar acciones específicas en tu programa o simplemente para mostrar información al usuario. En este artículo te explicaremos cómo puedes hacerlo de manera sencilla.
 
 ## Cómo hacerlo
 
-Fish Shell nos ofrece una función integrada llamada `string length` que nos permite encontrar la longitud de una cadena. Simplemente escribimos `string length mi_cadena` en la línea de comandos y Fish Shell nos devolverá el número de caracteres que contiene la cadena.
+Para obtener la longitud de una cadena de texto en Fish Shell, utilizaremos el comando `string length`. Este comando toma como argumento la cadena de texto de la cual queremos obtener la longitud, y devuelve un número que representa dicha longitud. Veamos un ejemplo en el que declaramos una variable con una cadena de texto y utilizamos el comando `string length` para obtener su longitud:
 
 ```Fish Shell
-string length "Hola mundo"
+set cadena "¡Hola mundo!"
+echo (string length $cadena)
 ```
 
-Salida: `10`
-
-También podemos almacenar la longitud de una cadena en una variable para su uso posterior, utilizando el operador de asignación `=`:
-
-```Fish Shell
-set mi_longitud (string length "Ejemplo")
-echo $mi_longitud
-```
-
-Salida: `7`
+La salida de este código será `12`, ya que la cadena de texto "¡Hola mundo!" tiene 12 caracteres. Fácil, ¿verdad?
 
 ## Profundizando
 
-Existen varias formas de encontrar la longitud de una cadena en Fish Shell, ya sea utilizando la función `string length`, la función `count` o incluso la función `wc`. Sin embargo, la función `string length` es la más común y recomendada.
+Es importante mencionar que Fish Shell cuenta con una serie de comandos y atajos que facilitan la manipulación de cadenas de texto. Algunos de ellos son `string sub`, que nos permite obtener una subcadena de una cadena original, y `string replace`, que nos permite reemplazar una parte de una cadena por otra. Además, Fish Shell también nos ofrece la posibilidad de utilizar expresiones regulares para manipular cadenas de texto de manera más avanzada.
 
-Además, es importante tener en cuenta que la longitud de una cadena se mide en caracteres, no en palabras. Por lo tanto, si hay espacios en blanco o caracteres especiales en una cadena, estos también se tendrán en cuenta al calcular la longitud.
+En resumen, conocer la longitud de una cadena de texto puede ser de gran ayuda en nuestras tareas de programación, y gracias a los comandos y atajos de Fish Shell podemos hacerlo de manera rápida y sencilla.
 
-## Vea también
+## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de Fish Shell en español](https://www.atareao.es/tutorial/fish-shell/)
-- [Documentación sobre la función `string length`](https://fishshell.com/docs/3.1/cmds/string-length.html)
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial de Fish Shell en español](https://medium.com/@guillermo_andreu/tutorial-de-fish-shell-en-espa%C3%B1ol-c5ae22ba9a28)
+- [Expresiones regulares en Fish Shell](https://fishshell.com/docs/current/cmds/string.html#string-replace)

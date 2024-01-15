@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lecture des arguments de ligne de commande"
-simple_title:         "Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments en ligne de commande"
+html_title:           "Gleam: Lecture des arguments en ligne de commande"
+simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,34 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur qui aime travailler avec la ligne de commande, alors vous savez que la manipulation des arguments en ligne de commande est un aspect important de la programmation. Lire les arguments en ligne de commande peut vous aider à personnaliser l'exécution de votre programme en fonction des entrées de l'utilisateur. Dans cet article, nous allons vous montrer comment lire les arguments en ligne de commande en utilisant Gleam.
-
 ## Comment faire
 
-Pour lire les arguments en ligne de commande en utilisant Gleam, nous allons utiliser la fonction `gleam/program/args.get()` qui retourne une liste de valeurs. Dans l'exemple ci-dessous, nous allons afficher tous les arguments passés lors de l'exécution du programme :
+La lecture des arguments de ligne de commande peut sembler être une tâche simple et ennuyeuse, mais elle peut en fait être très utile dans de nombreux cas. Que vous souhaitiez personnaliser le comportement de votre programme en fonction de l'entrée de l'utilisateur ou que vous ayez besoin d'informations spécifiques pour le débogage, la lecture des arguments de ligne de commande peut être une compétence très pratique à avoir.
+
+Pour lire les arguments de ligne de commande en utilisant Gleam, nous devons utiliser le module `std/args`. Ce module fournit des fonctions qui nous permettent de récupérer les arguments passés à notre programme, de les traiter et de les utiliser selon nos besoins.
+
+Voici un exemple simple de lecture des arguments de ligne de commande en utilisant Gleam:
 
 ```
-Gleam program args.get()
-|> io.format("%?", "/"println)
+Gleam import std/args
+
+fn main(_args) {
+    Gleam let args = Args.parse(_args)
+    Gleam let name = Args.flag("--name", "World", args)
+    Gleam IO.print("Hello, ") ++ name ++ "!"
+}
 ```
 
-Si nous exécutons ce programme avec `gleam run program.gleam un deux trois`, la sortie sera `["un", "deux", "trois"]`.
+Dans cet exemple, nous importons d'abord le module `std/args`. Nous utilisons ensuite la fonction `Args.parse` pour convertir les arguments passés à notre programme en un type de données approprié. Ensuite, nous utilisons la fonction `Args.flag` pour récupérer la valeur de l'argument nommé `--name` si elle existe. Si l'argument n'est pas passé, nous utilisons la valeur par défaut "World". Enfin, nous utilisons la fonction `IO.print` pour afficher un message de salutation en utilisant la valeur de `name`.
+
+Si nous exécutons notre programme en utilisant la commande suivante :
+
+```
+$ gleam run hello.gleam --name "John"
+```
+
+Nous obtiendrons la sortie suivante :
+
+```
+Hello, John!
+```
+
+Maintenant, que se passe-t-il si nous voulons passer plusieurs arguments de ligne de commande ? Gleam a également une fonction appelée `Args.non_flag_arguments` qui nous permet de récupérer tous les arguments qui ne sont pas des drapeaux (flags). Par exemple :
+
+```
+fn main(_args) {
+    let args = Args.parse(_args)
+    let name = Args.flag("--name", "World", args)
+    let arguments = Args.non_flag_arguments(args)
+
+    IO.print("Hello, ") ++ name ++ "!"
+    Gleam IO.print("You passed the following arguments: ") ++ arguments
+}
+```
+
+Si nous exécutons notre programme avec la commande suivante :
+
+```
+$ gleam run hello.gleam --name "John" "Gleam is awesome"
+```
+
+Nous obtiendrons cette sortie :
+
+```
+Hello, John!
+You passed the following arguments: ["Gleam", "is", "awesome"]
+```
 
 ## Plongée en profondeur
 
-Il est important de noter que les arguments en ligne de commande sont traités comme des chaînes de caractères par Gleam. Cela signifie que si vous voulez les utiliser comme des entiers ou des booléens, vous devrez les convertir en utilisant des fonctions telles que `int.from_string()` ou `bool.from_string()`. De plus, il est possible de spécifier des arguments avec des drapeaux en utilisant le préfixe `-` ou `--` avant le nom du drapeau. Dans cet exemple, nous allons afficher la valeur du drapeau `--message` :
+Maintenant que nous avons vu comment lire les arguments de ligne de commande en utilisant Gleam, il est important de noter que le module `std/args` offre d'autres fonctions pratiques pour la gestion des arguments. Par exemple, vous pouvez utiliser la fonction `Args.flag_with_default` pour définir une option avec une valeur par défaut, ou la fonction `Args.flag_with_callback` pour exécuter une fonction spécifique lorsque l'argument est passé.
 
-```
-Gleam program args.get()
-|> Map.get("message")
-|> option.unwrap_or_else(|| "NO MESSAGE")
-|> io.format("The message is: %?", "/", println)
-```
+Nous pouvons également utiliser des drapeaux de type booléen avec la fonction `Args.flag_with_default`, qui sera true par défaut si l'argument est passé et false sinon. Nous pouvons également utiliser des valeurs de type `string` pour les arguments avec la fonction `Args.flag_string`, ou des valeurs de type `int` avec la fonction `Args.flag_int`. Pour plus d'informations sur ces fonctions et leurs utilisations, consultez la documentation du module `std/args`.
 
-Si nous exécutons ce programme avec `gleam run program.gleam --message "Hello World!"`, la sortie sera `The message is: Hello World!`.
+## Voir aussi 
 
-## Voir aussi
-
-- La documentation officielle de Gleam sur la manipulation des arguments en ligne de commande : https://gleam.run/book/basics/block-arguments.html
-- Un tutoriel en français pour débuter avec Gleam : https://dev.to/csstoltenberg/commencer-avec-gleam-2fig
-- Un guide en ligne de Gleam pour apprendre les bases : https://gleam.run/
+- Documentation sur les arguments de ligne de commande en Gleam : https://gleam.run/modules/std.args.html
+- Tutoriel sur l'écriture de ligne de commande en Gleam : https://ellipses.io/learn/cli-app-gleam/

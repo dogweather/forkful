@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Przesyłanie żądania http z podstawową autoryzacją"
+html_title:           "Clojure: Przesyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Przesyłanie żądania http z podstawową autoryzacją"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,31 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach wiele aplikacji i serwisów korzysta z protokołu HTTP do komunikacji miedzy klientami i serwerami. Aby zapewnić bezpieczną wymianę danych, niektóre z tych żądań muszą być uwierzytelnione. W tym artykule dowiesz się, dlaczego warto używać autoryzacji podstawowej w żądaniach HTTP przy użyciu języka programowania Clojure.
+Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym jest ważne, ponieważ umożliwia bezpieczny dostęp do zasobów w Internecie. Użycie uwierzytelnienia podstawowego pozwala użytkownikom potwierdzić swoją tożsamość przed uzyskaniem dostępu do chronionych danych.
 
 ## Jak to zrobić
 
-W celu przesłania żądania HTTP z autoryzacją podstawową, należy użyć funkcji `(clj-http.client/post "url" {:basic-auth ["username" "password"]})`. Kody odpowiedzi HTTP zostaną zwrócone w formacie mapy Clojure, co ułatwia dalsze przetwarzanie.
+```Clojure
+(require '[org.httpkit.client :as http])
+(http/post "https://example.com/api/resource" {:basic-auth ["username" "password"]})
+```
+
+Kod powyżej pokazuje przykład wysłania żądania POST z uwierzytelnieniem podstawowym do zasobu API na stronie internetowej. W celu użycia uwierzytelnienia podstawowego, należy przekazać wektor z nazwą użytkownika i hasłem jako drugi argument do funkcji `post`.
+
+Output:
 
 ```Clojure
-(require '[clj-http.client :as client])
-
-(def response (client/post "https://example.com" {:basic-auth ["john" "passw0rd"]}))
-
-(println (:status response)) ;; wyświetli kod odpowiedzi, np. 200
-
-(println (:body response)) ;; wyświetli zawartość odpowiedzi, np. Hello World!
+{:status 200, :headers {...}, :body "..."}
 ```
+
+Gdy serwer odpowiedział na żądanie, otrzymamy obiekt z odpowiedzią zawierającym informacje o statusie odpowiedzi, nagłówkach i ciele odpowiedzi.
 
 ## Deep Dive
 
-Podczas autoryzacji podstawowej, klient przesyła nazwę użytkownika i hasło w formacie zakodowanym Base64 w nagłówku `Authorization`. Serwer następnie uwierzytelnia te dane, a jeśli są one poprawne, zwraca kod odpowiedzi 200, co oznacza udane uwierzytelnienie. W przypadku nieprawidłowych danych, serwer zwraca kod odpowiedzi 401, informując o błędzie uwierzytelnienia.
+W przypadku wysyłania żądania z uwierzytelnieniem podstawowym, należy pamiętać, że dane uwierzytelniające są przesyłane w formacie Base64. Dzięki temu, że dane są kodowane, są one bezpieczniejsze w transmisji i mogą być odczytane tylko przez autoryzowaną stronę.
 
-Warto również pamiętać, że autoryzacja podstawowa nie jest bezpieczna, ponieważ nazwa użytkownika i hasło są wysyłane w formie tekstu jawnej. Zaleca się używanie autoryzacji za pomocą tokenów lub innego bezpiecznego sposobu uwierzytelniania w przypadku wymagania bezpieczeństwa.
+Istnieje również możliwość dodania uwierzytelnienia podstawowego do żądań GET, DELETE i PUT poprzez ustawienie odpowiednich kluczy w parametrze `:query-params` funkcji `http/get`, `http/delete` lub `http/put`.
 
-## Zobacz także
+## Zobacz też
 
-Jeśli chcesz dowiedzieć się więcej na temat przesyłania żądań HTTP z uwierzytelnieniem podstawowym w Clojure, polecamy zapoznanie się z dokumentacją języka Clojure oraz narzędziem `clj-http`.
-
-- Dokumentacja Clojure: https://clojure.org/
-- Narzędzie clj-http: https://github.com/dakrone/clj-http
+- [Dokumentacja Clojure dotycząca uwierzytelnienia HTTP](https://clojure.github.io/http-kit/#http-kit.client-auth/broadcast-request-cors-interactive)
+- [RFC 2617 dotyczące uwierzytelniania HTTP](https://tools.ietf.org/html/rfc2617)

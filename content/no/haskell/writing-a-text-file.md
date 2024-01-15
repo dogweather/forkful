@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skrive en tekstdokument"
+html_title:           "Haskell: Skrive en tekstdokument"
+simple_title:         "Skrive en tekstdokument"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,29 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil er en essensiell del av programmering, spesielt i Haskell. Det lar deg lagre og behandle data på en effektiv måte, som kan være nyttig for ulike programmeringsoppgaver.
+Så hvorfor skulle du engasjere deg i å skrive en tekstfil i Haskell? Vel, hvis du er en programmerer eller dataentusiast, så har du kanskje hørt om Haskell som et funksjonelt programmeringsspråk som er sterkt typet og hadde en kraftig typeinferensmotor. Det er også kjent for å være svært elegant og uttrykksfullt, noe som gjør det til en favoritt blant mange utviklere.
 
-## Slik gjør du det
+## Hvordan
 
-For å skrive en tekstfil i Haskell, begynner du først med å importere "System.IO" biblioteket. Deretter kan du bruke funksjoner som "openFile" og "hPutStrLn" for å åpne en fil og skrive til den. Her er et eksempel på en kodeblokk som viser hvordan du skriver "Hei verden!" til en tekstfil med navnet "tekstfil.txt":
+For å begynne å skrive en tekstfil i Haskell, må du først åpne en fil for skriving ved å bruke `openFile` funksjonen. Deretter må du bestemme hvilken modus du vil skrive i ved å bruke `IOMode` datatype. For eksempel, hvis du vil skrive i enden av en eksisterende fil, kan du bruke `AppendMode`. Etter det kan du bruke `hPutStr` funksjonen til å skrive dataen din til filen. Her er et eksempel på hvordan koden kan se ut:
 
 ```Haskell
 import System.IO
 
 main = do
-  fil <- openFile "tekstfil.txt" WriteMode
-  hPutStrLn fil "Hei verden!"
-  hClose fil
+    handle <- openFile "filnavn.txt" AppendMode
+    hPutStr handle "Dette er en tekstfil skrevet i Haskell"
+    hClose handle
 ```
 
-Når du kjører denne koden, vil det bli opprettet en tekstfil med navnet "tekstfil.txt" som inneholder teksten "Hei verden!".
+Output av denne koden vil være en tekstfil med innholdet "Dette er en tekstfil skrevet i Haskell".
 
-## Dykk dypere
+## Dypdykk
 
-Det finnes flere forskjellige funksjoner og metoder for å skrive til en tekstfil i Haskell. Du kan for eksempel endre skrivemodusen til "AppendMode" for å legge til mer tekst i en allerede eksisterende fil. Du kan også bruke "withFile" funksjonen for å unngå manuell håndtering av filen. Utforsk forskjellige metoder og finn ut hvilken som passer best for ditt behov.
+En av de store fordelene med å skrive en tekstfil i Haskell er bruken av lazy evaluation. Dette betyr at filen ikke skrives til før du trenger å lese den. Dette er spesielt nyttig når du har med store filer å gjøre. Du kan også bruke `hPutStrLn` funksjonen for å skrive en ny linje til filen etter behov. Husk å alltid lukke filen din etter at du har skrevet til den ved å bruke `hClose` funksjonen.
 
-## Se også
+## Se Også
 
-- [Haskell Tutorial: Writing Your First Text File](https://www.fpcomplete.com/haskell/tutorial/writing-your-first-programs/)
-- [Haskell IO Documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Learning Haskell: Working with Files and Handles](https://making.pusher.com/learning-haskell-working-files-handles/)
+- [Haskell's offisielle hjemmeside](https://www.haskell.org/)
+- [Haskell Programmering Språk Wiki](https://wiki.haskell.org/Haskell)
+- [Haskell Programmering Språk Tutorial](https://www.tutorialspoint.com/haskell/)

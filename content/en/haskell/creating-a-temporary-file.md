@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Haskell recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,43 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common practice in programming, especially in Haskell. Temporary files are used to store information temporarily and are automatically deleted when the program terminates. This can be useful for tasks such as caching data, sharing files between processes, or simply to avoid cluttering the main file system.
+Creating temporary files can be a useful tool for manipulating data or performing calculations without permanently altering the original source files. It allows for temporary storage and retrieval of data in a program, making it a valuable technique in various programming tasks.
 
 ## How To
 
-Creating a temporary file in Haskell is a simple process. First, we need to import the `System.IO.Temp` module, which provides functions for creating and managing temporary files. Then, we can use the `withSystemTempFile` function to create the file and automatically manage its lifecycle.
+Creating a temporary file in Haskell is a simple process using the `System.IO.Temp` module. To begin, import the module at the top of your file:
 
 ```Haskell
 import System.IO.Temp
-
-main = do
-  -- create a temporary file with the prefix "temp-"
-  withSystemTempFile "temp-" $ \tempFilePath tempHandle -> do
-    -- do something with the file handle
-    hPutStrLn tempHandle "Hello, World!"
-    -- the file will be automatically deleted after this block
 ```
 
-In the above example, we used the `withSystemTempFile` function as a higher-order function, providing it with a function that takes two parameters: the temporary file path and the file handle. Within this function, we can manipulate the file handle as we would with any other file.
-
-We can also specify a specific location for the temporary file by using the `withTempFile` function and providing a directory path. This can be useful when we want to ensure that the temporary file is created within a specific directory.
+Next, use the `withSystemTempFile` function to create a temporary file and perform operations on it. The function takes in two arguments: a string that will be used as a prefix for the temporary file name, and a function that will take in a `FilePath` as a parameter.
 
 ```Haskell
-main = do
-  -- create a temporary file within the "/temp" directory
-  withTempFile "/temp" "temp-file.txt" $ \tempFilePath tempHandle -> do
-    -- do something with the file handle
-    hPutStrLn tempHandle "This is a temporary file created in the /temp directory."
-    -- the file will be automatically deleted after this block
+withSystemTempFile "temp" $ \fp handle -> do
+    hPutStrLn handle "This is a temporary file!"
+    hClose handle
 ```
+
+In this example, we use "temp" as the prefix and write a line of text to the file before closing it. The `withSystemTempFile` function automatically deletes the temporary file after it is closed, making it ideal for quick and temporary operations.
+
+You can also use the `withSystemTempDirectory` function to create a temporary directory instead, following the same syntax using a prefix and a function.
 
 ## Deep Dive
 
-Behind the scenes, the `System.IO.Temp` module uses the operating system's utility functions to create temporary files. This means that the exact implementation of creating temporary files may differ based on the operating system.
+Behind the scenes, the `withSystemTempFile` and `withSystemTempDirectory` functions are using the `createTempFile` and `createTempDirectory` functions respectively.
 
-In addition to `withSystemTempFile` and `withTempFile`, there are other functions in the `System.IO.Temp` module that allow more customization, such as specifying the file's permissions, file name, and directory. These functions can be useful when working with specific file systems or when we need more control over the temporary file creation process.
+The `createTempFile` function takes in a `FilePath` and a string, which will be used as the suffix for the temporary file name. It then creates a new file with a unique name in the system's temporary directory.
+
+Similarly, the `createTempDirectory` function creates a new temporary directory in the system's temporary directory and returns the path to it as a `FilePath`.
+
+Both `createTempFile` and `createTempDirectory` also take in an optional third parameter for the directory to place the temporary file or directory in, by default it uses the system's temporary directory.
 
 ## See Also
 
-- [Haskell documentation for creating temporary files](https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html)
-- [Using Temporary Files in Haskell](https://www.fpcomplete.com/blog/2016/12/using-temporary-files-in-haskell/) by FP Complete
+- [System.IO.Temp documentation]("https://hackage.haskell.org/package/temporary-1.2.1.3/docs/System-IO-Temp.html")
+- [Haskell I/O tutorial]("https://wiki.haskell.org/Introduction_to_IO")
+- [Creating temporary files in other languages]("https://en.wikipedia.org/wiki/Temporary_folder#Creating_temporary_files")

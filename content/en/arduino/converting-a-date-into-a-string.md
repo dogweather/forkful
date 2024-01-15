@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Converting a date into a string"
+title:                "Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,41 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-As an Arduino programmer, you may come across a scenario where you need to display the date on a LCD screen or log data with a timestamp. In such cases, it is necessary to convert the date into a string format so that it can be easily displayed or stored. In this blog post, we will explore how to convert a date into a string using Arduino.
+
+Have you ever wanted to display the current date in a specific format on your Arduino project? Maybe you want to include the date in a data-logging system or display it on an LCD screen. Whatever your reason may be, converting a date into a string is an essential skill for any Arduino programmer.
 
 ## How To
-Converting a date into a string can be accomplished by using the built-in function `strftime()` from the Arduino Time Library. This function takes in a date and time structure and formats it into a string according to the specified format.
 
-```Arduino
-#include <TimeLib.h> // Include Time Library
-tmElements_t time; // Create a time structure
+Converting a date into a string on Arduino is a straightforward process that can be achieved using the standard `sprintf()` function. Let's take a look at an example of how we can use this function to display the current date in the format *Day, Month Date, Year*.
 
-// Set the date and time using a Unix timestamp
-time_t t = 1588657100; // Representing May 05, 2020 10:05:00
-breakTime(t, time); // Break time into individual elements
+``` Arduino
+#include <TimeLib.h>
+#include <Time.h>
 
-// Convert the date into a string using strftime function
-char dateString[20]; // Define a char array for the string
-strftime(dateString, sizeof(dateString), "%d/%m/%Y", &time); // Format: DD/MM/YYYY
+void setup() {
+  // initialize serial communication
+  Serial.begin(9600);
 
-// Print the date string
-Serial.println(dateString); // Output: 05/05/2020
+  // wait for Serial Monitor to open
+  while (!Serial);
+
+  // set the current time and date
+  setTime(11, 0, 0, 15, 1, 2020);
+
+  // create a char array to store the date
+  char date[20];
+
+  // use sprintf function to format the date
+  sprintf(date, "%s %02d, %s %04d", dayStr(weekday()), day(), monthStr(month()), year());
+
+  // print the date to the Serial Monitor
+  Serial.println(date);
+}
+
+void loop() {
+  // do nothing
+}
 ```
 
-In the code above, we first include the Time Library and create a `tmElements_t` structure to store the date and time. Then, using a Unix timestamp representing a specific date and time, we break it down into individual elements using the `breakTime()` function. Finally, we use the `strftime()` function to format the date into a string and print it to the Serial Monitor.
+**Output:**
+
+```
+Wed 15, Jan 2020
+```
+
+This code snippet uses the `setTime()` function from the TimeLib library to set the current time and date. Then, the `sprintf()` function is used to store the formatted date into the `date` char array. Finally, the date is printed to the Serial Monitor using the `println()` function.
+
+Feel free to experiment with different formats and use cases to display the date in your project.
 
 ## Deep Dive
-The `strftime()` function allows you to specify the format of the output string by using format specifiers. Some commonly used format specifiers for date are:
 
-- `%d` for day of the month (01-31)
-- `%m` for month (01-12)
-- `%Y` for year (4 digits)
-- `%y` for year (2 digits)
+Now, let's take a deeper look at how the `sprintf()` function works. This function is used to format and store a series of characters and values into a string, similar to the `printf()` function in languages like C.
 
-There are also options to include the day of the week, time, and other variations. You can find a list of all the format specifiers and their meanings in the Arduino Time Library documentation.
+The first argument of the `sprintf()` function is the array or pointer where the resulting string will be stored. The remaining arguments are the values that will be formatted and inserted into the string.
 
-Additionally, the `strftime()` function also allows you to convert the date and time into different time zones by using the `setTime()` and `setTZ()` functions. This can be useful if you want to display the date and time in a specific location or adjust for daylight saving time.
+In our example, we used the `%s` and `%d` specifiers to format the string with the day, month, and year values. You can find a complete list of specifiers and their corresponding data types on the Arduino Reference page.
 
 ## See Also
-- [Arduino Time Library documentation](https://www.arduino.cc/reference/en/libraries/time/)
-- [TimeLib.h Library Reference](https://github.com/PaulStoffregen/Time/blob/master/TimeLib.h)
+
+Check out these resources for more information on converting a date into a string on Arduino:
+
+- [Arduino Reference - sprintf()](https://www.arduino.cc/reference/en/libraries/time/time-lib/sprintf/)
+- [C++ Reference - printf()](https://www.cplusplus.com/reference/cstdio/printf/)
+- [TimeLib Library](https://github.com/PaulStoffregen/Time)

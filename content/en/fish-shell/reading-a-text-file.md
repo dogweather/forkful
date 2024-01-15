@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Fish Shell recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,46 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to read through a large text file but found it tedious and time-consuming? Or perhaps you just want to quickly search for a specific word or phrase within a text file without scrolling through lines of irrelevant information. In this blog post, we will explore how to efficiently read and search text files using Fish Shell.
+If you're a programmer or someone who works with command-line tools, you may have come across the need to read and manipulate text files. Whether it's parsing data or creating automated tasks, being able to read a text file using Fish Shell can greatly improve your efficiency and productivity.
 
 ## How To
 
-First, let's create a sample text file by typing the following command into your Fish Shell prompt:
+To read a text file using Fish Shell, follow these steps:
 
-```Fish Shell
-echo "Hello, World!" > sample.txt
-```
-
-This will create a new text file called "sample.txt" and write the text "Hello, World!" into it. Now, let's use the `cat` command to view the contents of our text file:
-
+1. Open your Fish Shell terminal.
+2. Navigate to the directory where the text file is located using the `cd` command.
+3. Use the `cat` command followed by the name of the text file to display its contents in the terminal. For example: 
 ```Fish Shell
 cat sample.txt
 ```
-
-You should see the output "Hello, World!" in your terminal. The `cat` command is a simple and quick way to view the contents of a text file. Now, let's say we want to search for a specific word within the text file. We can use the `grep` command followed by the word we want to search for and the text file we want to search within:
-
+4. Alternatively, you can use the `less` command to view the text file in a more user-friendly format. This allows you to scroll through the file and search for specific words or phrases. For example:
 ```Fish Shell
-grep "World" sample.txt
+less sample.txt
 ```
-
-The output should be "Hello, World!" which is the line that contains the word "World". The `grep` command is useful for searching through large text files for specific words or phrases.
+5. You can also use the `head` or `tail` commands to show the first or last few lines of the text file, respectively. For example:
+```Fish Shell
+head sample.txt
+tail sample.txt
+```
 
 ## Deep Dive
 
-Fish Shell also has a built-in command called `ll` which stands for "less is more". It allows us to view large text files in a more readable format, with the ability to scroll up and down, search for keywords, and view line numbers. Let's use the `ll` command to view our sample text file:
+There are various ways to read a text file in Fish Shell, and each of these commands has additional options that allow you to manipulate the output. For example, the `cat` command has the `-n` option which displays line numbers, and the `less` command has the ability to search for specific words using the `/` key.
 
-```Fish Shell
-ll sample.txt
-```
+Additionally, you can use the output of these commands in conjunction with other Fish Shell commands to perform further actions on the text file. For example, you can pipe the output of `cat` or `less` to `grep` to search for specific patterns, or use `awk` to extract specific columns from a text file.
 
-You can use the arrow keys to scroll up and down, and the `/` key to search for a specific word or phrase. To quit the `ll` command, simply press the `q` key.
-
-Additionally, Fish Shell allows you to use regular expressions when searching through text files. This adds another layer of flexibility and power when dealing with large and complex text files.
+Overall, being familiar with how to read and manipulate a text file using Fish Shell can greatly enhance your command-line skills and make you a more efficient programmer.
 
 ## See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [A Guide to Using Cat and Grep for Text File Processing in Linux](https://www.tecmint.com/linux-cat-and-linux-grep-commands-for-text-manipulation/)
-- [Mastering Regular Expressions](https://regex.info/blog/2006-09-15/247)
-
-Now that you have learned how to efficiently read and search text files using Fish Shell, go ahead and put your new skills to use. Happy coding!
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
+- [A Beginner's Guide to Fish Shell](https://dev.to/siddharth/latest-dev-tips-introduction-to-fish-shell-3445)
+- [10 Useful Tips for Using the Fish Shell](https://www.tecmint.com/fish-tips-and-tricks/)

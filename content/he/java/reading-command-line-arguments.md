@@ -1,6 +1,7 @@
 ---
-title:                "Java: קריאת ארגומנטים משורת הפקודה"
-simple_title:         "קריאת ארגומנטים משורת הפקודה"
+title:                "קריאת ארגומנטים מהשורת פקודה"
+html_title:           "Java: קריאת ארגומנטים מהשורת פקודה"
+simple_title:         "קריאת ארגומנטים מהשורת פקודה"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##מדוע
-אדם יבחר לקרוא ארגומנטים של שורת פקודה רק במקרים מסוימים בסיסיים?
+##
+למה: בכדי ליישם את הקוד שלכם בצורה יעילה ומאפשרת מידע נלווה לתוכנית שלכם.
 
-##איך לעשות זאת
- ` ``Java
-public static void main(String[] args) {
-  // Declare main method
-  for(int i = 0; i < args.length; i++) {
-    // Use a for loop to iterate through the arguments
-    System.out.println("Argument " + i + ": " + args[i]);
-    // Print out each argument along with its index
-  }
+איך לעשות זאת: הכי פשוט זה להתחיל לקרוא פרמטרים של שורת הפקודה בעזרת המתודה "getArgs()" ולהשתמש במערך הפלט שנוצר כדי לקבל את הפרמטרים הקולטים.
+
+```Java
+public class CommandLineArguments {
+    public static void main(String[] args) {
+        // print out each argument
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
 }
 ```
 
-הפלט המשוערך יחזיר:
+כאשר כיתבתי בצורה זו "Java CommandLineArguments Hello World" יתקבל הפלט הבא:
+"Hello World"
 
-`Argument 0: argument1`<br/>
-`Argument 1: argument2`<br/>
-`...`
+מכאן תוכלו לפתח את התוכנית שלכם ולהשתמש בפרמטרים שהכנסתם כדי למקסם את היכולות של התוכנית שלכם.
 
-##טיול עמוק
-קריאת ארגומנטים של שורת פקודה היא כלי מאוד נוח כאשר אנו רוצים לתקשר ישירות עם המשתמש ולהעביר לו פרמטרים לתכנית שלנו. בדרך כלל, כאשר אנו בונים אפליקציה גרפית איתנה ממשק משתמש, אנו משתמשים בקריאת פרמטרים של שורת פקודה כדי להפעיל פעולות ולשנות תכנית באופן דינאמי.
+הצצה עמוקה: כאשר אתם מטפלים בפרמטרים שהתקבלו משורת הפקודה, יש לקחת בחשבון כי הם יכולים להיות בכל צורה וסדר שתרצו כדי להתאים לצרכי התוכנית שלכם. אתם יכולים להשתמש בתנאים ולבדוק את כל האפשרויות האפשריות על מנת לקבל את המידע שאתם רוצים מהפרמטרים הנתונים.
 
-##ראו גם
-- [Java שמות של בינתחומיים עבור פקודת מערכת בחלונות](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [השרות העליון לכתיבת אפליקציות טרמינלית גרפיות בשפת Java](https://eclipse.org/efxclipse/index.html)
-- [מדריך לעבודה עם פקודות מערכת עם Java](https://www.tutorialspoint.com/java/util/java_util_scanner.htm)
+הקוד הבא מדגים איך ניתן להשתמש במתודה "startsWith()" כדי לבדוק אם הפרמטר הנתון מתחיל עם מילה מסוימת ולאחר מכן לבדוק עם "substring()" כמה מילים יש לאחר המילה הראשונה.
+
+```Java
+public class CheckArgs {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            if (arg.startsWith("Hello")) { // if the argument starts with "Hello"
+                String rest = arg.substring(5); // get the rest of the word (after "Hello")
+                if (rest.length() > 5) { // if the rest of the word is longer than 5 characters
+                    System.out.println(rest); // print it out
+                }
+            }
+        }
+    }
+}
+```
+
+לדוגמה, כאשר נכניס את הפרמטר "HelloWorld Java", יתקבל הפלט הבא:
+"World Java"
+
+רואים כאן שאפשר להשתמש גם במתודות נוספות בשילוב

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Confronto tra due date"
-simple_title:         "Confronto tra due date"
+title:                "Confrontare due date"
+html_title:           "C++: Confrontare due date"
+simple_title:         "Confrontare due date"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,66 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché confrontare due date in C++
+## Perché
 
-Confrontare due date è una delle operazioni più comuni in programmazione. Ciò può essere utile per verificare la validità di input utente, creare logiche di flusso o semplicemente per eseguire controlli di validità in generale. In questo post, vedremo come confrontare due date utilizzando il linguaggio di programmazione C++.
+Quando si lavora con date in un programma, può essere necessario confrontare due diverse date per determinare quale è successa prima o se sono equivalenti. In questo articolo, esploreremo come confrontare due date in C++, fornendo esempi di codice e informazioni più approfondite sul processo.
 
 ## Come fare
 
-Per realizzare la comparazione delle date in C++, utilizzeremo l'oggetto `std::tm` della libreria standard di C++. Questo oggetto rappresenta una struttura temporale composta da elementi come il giorno, il mese, l'anno, l'ora, i minuti e i secondi. 
+Per confrontare due date in C++, puoi seguire questi semplici passaggi:
 
-Per confrontare due date, è necessario prima di tutto convertire le date in oggetti `std::tm`. Ciò può essere fatto con l'aiuto della funzione `std::mktime`, che converte una struttura `std::tm` in un valore di tempo di tipo `time_t`. 
+1. Includi la libreria `"chrono"` nel tuo programma, che contiene le funzioni e le strutture dati per lavorare con il tempo.
+2. Definisci due oggetti di tipo `chrono::system_clock::time_point` che rappresentano le date che vuoi confrontare.
+3. Utilizza l'operatore di confronto `==`, `!=`, `>`, `<`, `>=` o `<=` per confrontare le due date e determinare quale è precedente o se sono equivalenti.
 
-Una volta che abbiamo convertito le due date in oggetti `time_t`, possiamo semplicemente confrontarle utilizzando gli operatori di confronto standard di C++, come ad esempio `>` o `<`. Il seguente codice mostra come confrontare due date rappresentate come stringhe:
+Ecco un esempio completo di codice che confronta due date e stampa il risultato:
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
-int main() {
-  // definiamo due date come stringhe
-  std::string date1 = "01/01/2021";
-  std::string date2 = "15/06/2021";
+using namespace std;
 
-  // convertiamo le date in oggetti std::tm
-  std::tm tm1 = {};
-  std::tm tm2 = {};
-
-  strptime(date1.c_str(), "%d/%m/%Y", &tm1);
-  strptime(date2.c_str(), "%d/%m/%Y", &tm2);
-
-  // convertiamo le date in time_t
-  time_t t1 = mktime(&tm1);
-  time_t t2 = mktime(&tm2);
-
-  // confrontiamo le date utilizzando gli operatori <
-  if (t1 < t2) {
-    std::cout << date1 << " viene prima di " << date2 << std::endl;
+int main() 
+{
+  chrono::system_clock::time_point date1 = chrono::system_clock::now(); //data corrente
+  chrono::system_clock::time_point date2 = chrono::system_clock::now() + chrono::hours(24); //data di domani
+  
+  if (date1 == date2) 
+  {
+    cout << "Le due date sono uguali." << endl;
   }
-  else {
-    std::cout << date2 << " viene prima di " << date1 << std::endl;
+  else if (date1 < date2) 
+  {
+    cout << "La prima data è precedente alla seconda." << endl;
+  }
+  else 
+  {
+    cout << "La seconda data è precedente alla prima." << endl;
   }
 
   return 0;
 }
 ```
 
-In questo esempio, utilizziamo la funzione `strptime` per convertire le date dal formato stringa al formato `std::tm`. In seguito, utilizziamo la funzione `mktime` per ottenere i valori di tempo corrispondenti alle date, che poi confrontiamo utilizzando l'operatore `<`. 
-
-L'output del codice sopra riportato sarà:
+L'output di questo codice sarà:
 
 ```
-01/01/2021 viene prima di 15/06/2021
+La prima data è precedente alla seconda.
 ```
 
 ## Approfondimento
 
-Esistono diverse librerie esterne che possono semplificare la comparazione delle date in C++, come ad esempio Chrono. Questa libreria offre una maggiore precisione e flessibilità nella gestione del tempo e delle date.
-
-Inoltre, è importante tenere presente che la funzione `mktime` converte le date in base alla timezone del sistema operativo. Ciò può causare problemi in caso di cambi di timezone o quando si lavora con date storiche. In questi casi, può essere più utile utilizzare la libreria Boost.Date_Time, che gestisce le date in modo indipendente dalla timezone del sistema.
+Oltre all'operatore di confronto, ci sono altri metodi per confrontare due date in C++, come ad esempio utilizzare la funzione `chrono::duration` per calcolare la differenza tra le due date in millisecondi, secondi, minuti, ore, giorni, ecc. Inoltre, se si vogliono confrontare le date con una maggiore precisione, è possibile utilizzare il metodo `chrono::duration::count()` per ottenere il numero di unità (ad esempio millisecondi) tra le due date. Per ulteriori informazioni su queste funzioni e metodi, si consiglia di consultare la documentazione ufficiale di C++.
 
 ## Vedi anche
 
-- [Funzione std::mktime - cppreference.com](https://en.cppreference.com/w/cpp/chrono/mktime)
-- [Libreria Chrono - cppreference.com](https://en.cppreference.com/w/cpp/chrono)
-- [Libreria Boost.Date_Time - boost.org](https://www.boost.org/doc/html/date_time.html)
+- [Documentazione ufficiale di C++ su std::chrono](https://en.cppreference.com/w/cpp/chrono)
+- [Esempi di confronto di date in C++](https://www.techiedelight.com/compare-date-time-cpp/)

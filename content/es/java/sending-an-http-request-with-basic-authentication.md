@@ -1,5 +1,6 @@
 ---
-title:                "Java: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Java: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Java"
 category:             "Java"
@@ -10,57 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-Enviar una solicitud HTTP con autenticación básica es esencial para la seguridad de una aplicación. Al utilizar la autenticación básica, se requiere un usuario y una contraseña para acceder a una determinada solicitud, lo que ayuda a proteger la información sensible y evitar accesos no autorizados.
+
+Enviar una solicitud HTTP con autenticación básica es una forma segura y sencilla de proteger la comunicación entre un cliente y un servidor. Esto permite que solo los usuarios autorizados puedan acceder a ciertos recursos en un sitio web o aplicación.
 
 ## Cómo hacerlo
-Para enviar una solicitud HTTP con autenticación básica en Java, necesitaremos utilizar la clase `HttpURLConnection` y establecer las credenciales mediante el encabezado `Authorization` en el formato `Basic <username>:<password>`. Aquí hay un ejemplo de código utilizando esta clase:
 
-```
-Java
-// Importar las clases de Java necesarias
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+Para enviar una solicitud HTTP con autenticación básica en Java, primero debemos crear un objeto `URL` con la dirección del servidor y el recurso al que queremos acceder. Luego, se debe crear un objeto `HttpURLConnection` a partir de la URL y especificar el tipo de solicitud que se desea realizar usando el método `setRequestMethod()`. A continuación, se debe establecer el encabezado `Authorization` con las credenciales de autenticación básica en formato Base64 utilizando el método `setRequestProperty()`. Finalmente, se pueden agregar parámetros adicionales a la solicitud y se puede obtener la respuesta del servidor utilizando los métodos `getInputStream()` y `getResponseCode()`.
 
-// URL de la solicitud
-URL url = new URL("https://miaplicacion.com/endpoint");
+Un ejemplo de código completo se muestra a continuación:
 
-// Abrir la conexión utilizando la URL
+```java
+URL url = new URL("https://www.mi-servidor.com/recurso");
 HttpURLConnection con = (HttpURLConnection) url.openConnection();
- 
-// Establecer el método de solicitud como GET
-con.setRequestMethod("GET");
- 
-// Establecer las credenciales utilizando el encabezado Authorization
-String username = "usuario";
-String password = "contraseña";
-String encodedCredentials = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+con.setRequestMethod("GET"); // Se puede cambiar a POST si se desea
+String encodedCredentials = Base64.getEncoder().encodeToString("usuario:contraseña".getBytes());
 con.setRequestProperty("Authorization", "Basic " + encodedCredentials);
- 
-// Obtener la respuesta y leerla como una cadena
- BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-String output;
-StringBuilder response = new StringBuilder();
-while ((output = in.readLine()) != null) {
-	response.append(output);
-}
-in.close();
- 
-// Imprimir la respuesta
-System.out.println("Respuesta: " + response.toString());
+
+// Se pueden agregar parámetros adicionales con el método setRequestProperty()
+
+int responseCode = con.getResponseCode();
+InputStream inputStream = con.getInputStream();
+// Lógica para manejar la respuesta del servidor...
 ```
 
-El resultado de este ejemplo sería algo similar a:
-
-```
-Respuesta: { "message": "¡Hola, usuario!" }
-```
+El resultado de la solicitud dependerá de la respuesta del servidor y de los parámetros y encabezados específicos de la solicitud.
 
 ## Profundizando
-Hay algunas cosas a tener en cuenta al enviar una solicitud HTTP con autenticación básica. Primero, es importante asegurarse de que la URL sea válida y esté bien formada. Además, es vital verificar la documentación de la API o la plataforma con la que se está comunicando para asegurarse de utilizar el formato correcto para las credenciales en el encabezado de autorización. También es recomendable utilizar métodos de encriptación para asegurar aún más las contraseñas antes de enviarlas a través de una solicitud HTTP.
+
+La autenticación básica funciona mediante el envío de las credenciales de usuario en texto plano a través del encabezado `Authorization`. Sin embargo, esto no es suficiente para mantener una comunicación completamente segura, ya que las credenciales pueden ser interceptadas por un atacante. Por lo tanto, es importante usar HTTPS en lugar de HTTP para establecer una conexión cifrada entre el cliente y el servidor.
+
+Otra forma de mejorar la seguridad es utilizando un mecanismo de autenticación más robusto, como la autenticación de tokens o con SSL.
 
 ## Ver también
-- [Documentación de la clase `HttpURLConnection` en Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/HttpURLConnection.html)
-- [Ejemplo de autenticación básica en PHP](https://www.php.net/manual/es/features.http-auth.php)
-- [Ejemplo de autenticación básica en Python utilizando la librería `requests`](https://realpython.com/python-requests/)
+
+- [Documentación de Java para HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) 
+- [Tutorial sobre autenticación básica en Java](https://www.baeldung.com/java-http-request)

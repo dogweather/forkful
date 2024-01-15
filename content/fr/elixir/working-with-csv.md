@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Elixir: Travailler avec les fichiers csv"
+simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Que vous soyez un développeur débutant ou expérimenté, travailler avec des fichiers CSV est une compétence précieuse à avoir dans votre boîte à outils de programmation. Les fichiers CSV sont un moyen simple et efficace de stocker et d'échanger des données tabulaires, ce qui en fait un format de fichier couramment utilisé dans de nombreux domaines, tels que la finance, les statistiques et les sciences de données.
+Pourquoi travailler avec les fichiers CSV en utilisant Elixir ? Avec Elixir, vous pouvez traiter rapidement et efficacement des données structurées stockées dans des fichiers CSV. Cela peut être utile pour des tâches telles que la manipulation de données, l'analyse de données et l'importation/exportation de données.
 
 ## Comment faire
 
-Pour travailler avec des fichiers CSV en utilisant Elixir, nous pouvons utiliser la bibliothèque `CSV` incluse dans le langage. Tout d'abord, nous devons l'ajouter à notre projet en ajoutant `:csv` à notre liste de dépendances dans le fichier `mix.exs`. 
+Pour travailler avec des fichiers CSV en utilisant Elixir, suivez ces étapes simples :
 
-Ensuite, nous pouvons utiliser la fonction `CSV.parse/2` pour lire un fichier CSV et renvoyer une liste de lignes. Par exemple, si nous avons un fichier CSV contenant des données de fruits avec trois colonnes (fruit, couleur et prix), nous pouvons le lire de la manière suivante :
+1. Tout d'abord, installez la librairie CSV en ajoutant `{:csv, "~> 2.0"}` à votre `mix.exs`.
 
-```elixir
-data = File.read!("fruits.csv")
-CSV.parse(data, headers: true)
+2. Ensuite, importez la librairie CSV en appelant `require CSV` dans votre fichier.
+
+3. Pour lire un fichier CSV, utilisez la fonction `CSV.parse/2` en passant le nom du fichier en tant que premier argument et les options de parsing en tant que deuxième argument. Par exemple :
+
+```
+Elixir iex> csv_data = CSV.parse("mon_fichier.csv", ["headers", "binary", "trim"])
 ```
 
-Le paramètre `headers: true` indique que la première ligne du fichier est une ligne d'en-tête contenant les noms des colonnes. Cela nous permet d'accéder aux données de chaque ligne en utilisant ces noms de colonne, par exemple `line["fruit"]` pour accéder au nom du fruit dans la ligne. 
+4. Vous pouvez accéder aux données en utilisant la fonction `CSV.get_row/2` en passant l'index de la ligne et les données CSV en tant que deuxième argument. Par exemple :
 
-Nous pouvons également utiliser la fonction `CSV.encode/1` pour convertir une liste de lignes en un fichier CSV. Par exemple, si nous avons une liste de tuples représentant des données de fruits, nous pouvons les encoder et les écrire dans un fichier CSV de la manière suivante :
-
-```elixir
-fruits = [ {"Apple", "Red", "2.99"}, {"Banana", "Yellow", "1.50"} ]
-data = CSV.encode(fruits, headers: [:fruit, :color, :price])
-File.write!("fruits.csv", data)
+```
+Elixir iex> row = CSV.get_row(0, csv_data)
 ```
 
-Cela produira un fichier CSV avec les mêmes données que nous avons lues précédemment. 
+5. Pour écrire des données dans un nouveau fichier CSV, utilisez la fonction `CSV.encode/2` en passant les données à écrire et les options de parsing. Par exemple :
 
-Pour plus d'informations sur les fonctions disponibles pour travailler avec des CSV en utilisant Elixir, vous pouvez consulter la documentation de `CSV` en exécutant `h CSV` dans votre terminal.
+```
+Elixir iex> new_csv_data = [%{"id" => "1", "name" => "John"}, %{"id" => "2", "name" => "Jane"}]
+Elixir iex> CSV.encode(new_csv_data,["headers"])
+```
 
-## Approfondissement
+## Plongée en profondeur
 
-Il existe plusieurs options disponibles pour personnaliser la façon dont les données sont lues et écrites lors de l'utilisation de `CSV`. Par exemple, nous pouvons utiliser des options pour spécifier un délimiteur de colonne différent de la virgule par défaut, ou pour définir des convertisseurs personnalisés pour gérer des types de données spécifiques. 
+Voici quelques astuces supplémentaires pour travailler avec des fichiers CSV en utilisant Elixir :
 
-De plus, si nous avons un fichier CSV volumineux et que nous ne voulons pas charger toutes les lignes en mémoire à la fois, nous pouvons utiliser la fonction `CSV.stream/2` pour lire et traiter les données ligne par ligne. Cette fonction renvoie un flux qui peut ensuite être manipulé à l'aide de fonctions de flux telles que `Enum.map/2` ou `Stream.filter/2`.
+- N'oubliez pas de toujours spécifier les options de parsing appropriées pour votre fichier CSV avec la fonction `CSV.parse/2`. Par exemple : `["headers", "binary", "trim"]`.
+- Pour effectuer des opérations sur des colonnes spécifiques, utilisez la fonction `CSV.column/2` en passant le nom de la colonne et les données CSV en tant que deuxième argument.
+- Si vous travaillez avec de grands fichiers CSV, il peut être plus efficace d'utiliser la fonction `CSV.stream!/2` pour traiter les données par lots, plutôt que de les charger toutes en mémoire en une seule fois.
 
 ## Voir aussi
 
-- Documentation officielle de CSV : https://hexdocs.pm/csv/CSV.html
-- Tutoriel sur le traitement des CSV en utilisant Elixir : https://kipalog.com/posts/Elixir-va-Xu-ly-tap-tin-CSV
+Pour en savoir plus sur la manipulation de fichiers CSV en utilisant Elixir, consultez les ressources suivantes :
+
+- [Documentation CSV](https://hexdocs.pm/csv/CSV.html)
+- [Article sur le parsing CSV en Elixir](https://dev.to/rtfeldman/parsing-csv-in-elixir-please-dont-1386)

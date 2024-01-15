@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Bash: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-
-Si estás buscando una forma fácil de organizar y almacenar datos de forma legible y estructurada, trabajar con YAML podría ser la solución perfecta para ti. Además, ¡es compatible con una variedad de lenguajes de programación y herramientas como Bash!
+## ¿Por qué trabajar con YAML?
+Si estás buscando una forma sencilla de almacenar y transmitir datos en tus scripts de Bash, entonces YAML es la respuesta. Es un formato de texto legible para humanos y fácil de entender, lo que lo hace ideal para aquellos que no están familiarizados con la programación.
 
 ## Cómo hacerlo
 
-Para empezar, debes tener en cuenta que YAML (YAML Ain't Markup Language) es un formato para representar datos en forma de texto plano. A diferencia de otros formatos como JSON o XML, YAML es más fácil de leer y escribir para los humanos.
-
-Veamos un ejemplo de cómo estructurar datos en YAML utilizando Bash:
+Para trabajar con YAML en Bash, necesitarás usar el comando "yq", que es una herramienta de línea de comandos para procesar y manipular archivos YAML. Aquí tienes un ejemplo de cómo puedes utilizarlo para leer y escribir en un archivo YAML:
 
 ```
-# Estructura simple de datos en YAML
-nombre: Juan
-apellidos: Pérez
-edad: 30
+# Leer un archivo YAML
+yq r example.yml
+
+# Escribir en un archivo YAML
+yq w -i example.yml foo.bar "nuevo valor"
 ```
 
-En el código anterior, utilizamos el formato clave: valor para definir los datos de una persona. Ahora, si queremos acceder a estos datos desde nuestro script de Bash, podemos hacerlo de la siguiente manera:
-
-```
-# Accediendo a los datos de YAML en Bash
-nombre=$(cat datos.yml | grep 'nombre' | cut -d ':' -f 2)
-apellidos=$(cat datos.yml | grep 'apellidos' | cut -d ':' -f 2)
-edad=$(cat datos.yml | grep 'edad' | cut -d ':' -f 2)
-echo "La persona es $nombre $apellidos, y tiene $edad años."
-```
-
-En este ejemplo, utilizamos el comando "grep" para buscar y filtrar los datos que necesitamos, y luego usamos "cut" para obtener solo el valor deseado. Esto nos permite acceder a los datos de YAML desde Bash de una manera clara y sencilla.
+Esto te permitirá acceder y modificar los datos almacenados en tu archivo YAML de manera rápida y fácil.
 
 ## Profundizando
 
-Aparte de su facilidad de uso y legibilidad, YAML también tiene una serie de características que lo hacen aún más útil para programadores. Por ejemplo, es posible definir estructuras de datos anidadas y utilizar listas y diccionarios para organizar la información de una manera más compleja.
+YAML tiene una serie de características útiles que hacen que sea una gran opción para trabajar con datos en Bash. Por ejemplo, puedes crear listas y diccionarios con sintaxis sencilla y anidarlos para estructurar tus datos de manera más eficiente.
 
-Además, YAML permite comentarios y etiquetas, lo que puede ser útil para documentar y facilitar la lectura del código. Y si necesitas compartir tus datos con otros sistemas no basados en YAML, ¡puedes convertir los datos de forma sencilla a otros formatos como JSON o XML!
+Además, también puedes utilizar comentarios en tus archivos YAML para explicar qué hace cada elemento y asegurarte de que otros entiendan tu código.
+
+Para aprovechar al máximo YAML, también puedes explorar el uso de otras herramientas como "jq" y "yq" para procesar y manipular archivos JSON y YAML juntos.
 
 ## Ver también
 
-- [Documentación oficial de YAML](https://yaml.org/)
-- [Tutorial de YAML para programadores de Bash](https://medium.com/devtter/yaml-yaml-aint-markup-language-d002af47b9da)
-- [Ejemplos de uso de YAML en Bash](https://github.com/jeffcsauer/bash-yaml-examples)
+- [Página oficial de YAML](https://yaml.org/)
+- [Documentación de yq](https://mikefarah.gitbook.io/yq/)
+- [Introducción a JSON y YAML en Bash](https://www.ostechnix.com/introduction-json-yaml-bash-scripts/)

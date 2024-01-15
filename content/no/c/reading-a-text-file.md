@@ -1,6 +1,7 @@
 ---
-title:                "C: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Leser en tekstfil"
+html_title:           "C: Leser en tekstfil"
+simple_title:         "Leser en tekstfil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,59 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lese en tekstfil er en grunnleggende og nødvendig del av å programmere i C. Ved å lese en tekstfil kan du få tilgang til ulike former for data som kan brukes i programmet ditt. Dette kan for eksempel være en liste over brukernavn og passord, eller en liste over produkter som skal vises i en nettbutikk. Uansett hva slags informasjon du trenger, kan du finne det i en tekstfil.
+Du lurer sikkert på hvorfor du bør lese en tekstfil når du allerede vet hvordan du leser vanlige filer. Vel, tekstfiler er en spesiell type fil som inneholder ren tekst uten noen formatering. Det kan være nyttig for å lagre eller utveksle data på en enkel og lesbar måte.
 
-## Slik gjør du det
+## Hvordan
 
-For å lese en tekstfil i C, må du følge disse enkle stegene:
+For å lese en tekstfil i C, må du følge noen enkle trinn:
 
-1. Åpne tekstfilen: Her bruker du funksjonen `fopen()` for å åpne tekstfilen og få tilgang til den. Du må angi filnavnet og åpne den i lesmodus ved å bruke bokstaven `r` som parameter.
-2. Sjekke om filen er åpen: Før du kan begynne å lese fra tekstfilen, må du sørge for at den faktisk er åpen. Dette kan du gjøre ved å bruke `if`-setningen og sjekke om `fopen()` returnerer en gyldig peker.
-3. Les tekstfilen: Du kan bruke funksjonen `fgets()` til å lese linjer fra tekstfilen, en etter en. Husk å lukke filen når du er ferdig med å lese.
+  * Åpne filen ved hjelp av `fopen()` funksjonen og lagre den i en `FILE` variabel.
+  * Bruk `fscanf()` eller `fgets()` funksjonene til å lese linje for linje fra filen.
+  * Når du er ferdig med å lese, må du lukke filen ved hjelp av `fclose()` funksjonen.
+
+Her er et eksempel på hvordan du kan lese og skrive ut innholdet i en tekstfil:
 
 ```C
-#include <stdio.h>
-int main()
-{
-    FILE *fptr;
-    char tekst[100];
+FILE *fptr;
+char buffer[50];
 
-    // Åpne filen
-    fptr = fopen("tekstfil.txt", "r");
-    
-    // Sjekke om filen er åpen
-    if (fptr == NULL)
-    {
-        printf("Feil ved å åpne filen.");
-        return 1;
-    }
-    
-    // Les tekstfilen og skriv ut innholdet
-    while (fgets(tekst, 100, fptr) != NULL)
-    {
-        printf("%s", tekst);
-    }
-    
-    // Lukk filen
-    fclose(fptr);
-    return 0;
+fptr = fopen("test.txt", "r");
+while (fscanf(fptr, "%s", buffer) == 1) {
+  printf("%s ", buffer);
 }
+
+fclose(fptr);
 ```
 
-Output:
+Dette koden vil åpne filen "test.txt" i lesemodus, lese hver ord og skrive det ut i terminalen. Husk at `fscanf()` funksjonen leser et ord av gangen, mens `fgets()` leser en hel linje. Du kan velge den som passer best for ditt formål.
 
-```bash
-Dette er en tekstfil.
-Den inneholder noen eksempelsetninger.
-Du kan lese denne teksten med et enkelt C-program.
-```
+## Dypdykk
 
-## Dykk dypere
+Hvis du ønsker å forstå mer om hvordan tekstfiler fungerer og hvordan de kan være nyttige, bør du ta en titt på konseptene bak knyttet til filbehandling i C. Det finnes forskjellige måter å lese og skrive filer på, inkludert lese og skrive i binære filer og omgå buffere ved hjelp av `fread()` og `fwrite()` funksjoner. Forskning og eksperimentering vil hjelpe deg med å bli mer komfortabel med å jobbe med tekstfiler.
 
-Det finnes andre måter å lese en tekstfil på, for eksempel med funksjonene `fgetc()` og `fscanf()`. Disse har forskjellige bruksområder, og det kan være lurt å utforske dem nærmere for å finne ut hva som passer best til din situasjon. Det er også viktig å huske å håndtere eventuelle feil som kan oppstå ved å bruke disse funksjonene. Du kan lese mer om dette i C-programmeringens dokumentasjon eller andre online ressurser.
+## Se Også
 
-## Se også
+Her er noen nyttige ressurser for å lære mer om tekstfilbehandling i C:
 
-- [C-programmeringens offisielle dokumentasjon](https://devdocs.io/c/)
-- [Lesing og skriving av filer i C](https://www.programiz.com/c-programming/c-file-input-output) (på engelsk)
-- [Grunnleggende om tekstbehandling i C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm) (på engelsk)
+  * [C File I/O](https://www.programiz.com/c-programming/c-file-input-output)
+  * [The C Programming Language by Kernighan and Ritchie](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
+  * [File Handling in C - A Beginner's Tutorial](https://beginnersbook.com/2015/02/c-file-io/)
+
+Lykke til med å lese og håndtere tekstfiler i C!

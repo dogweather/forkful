@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Javascript recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,54 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-
-Starting a new programming project can feel overwhelming, especially for those new to coding. But the opportunities it presents, such as learning new skills and creating something unique, make it a worthwhile endeavor.
+## Why
+So, you've decided to tackle a new project with Javascript. But why start a new project in the first place? Perhaps you have a brilliant idea or a problem to solve. Or maybe you just want to expand your skills and challenge yourself. No matter the reason, starting a new project can bring a sense of excitement and accomplishment.
 
 ## How To
+To start a new project in Javascript, you'll need to follow these steps:
 
-To start a new Javascript project, follow these simple steps:
+1. Choose an IDE: An Integrated Development Environment (IDE) is a software application that helps with coding. Some popular options for Javascript include Visual Studio Code, Atom, and Sublime Text. Choose the one that works best for you.
+2. Set up a folder structure: A clear and organized folder structure will make your life easier in the long run. Create folders for your HTML, CSS, and Javascript files.
+3. Create an index.html file: This will be the starting point of your project. Add your basic HTML structure to this file, including the <head> and <body> tags.
+4. Link your CSS and Javascript files: Inside the head tag, use the <link> tag to link your CSS file. Inside the body tag, use the <script> tag to link your Javascript file.
+5. Start coding: Within your Javascript file, you can start writing your code using the ```Javascript ... ``` code blocks. You can use variables, functions, loops, and other Javascript features to bring your project to life.
+6. Test and debug: As you code, make sure to regularly test and debug your project. This will help you catch any errors and ensure your code is working as intended.
+7. Final touches: Once your project is complete, add any final touches such as styling and comments to make your code more readable.
 
-1. Choose a project idea: Decide on a project that interests you, whether it be a game, a web application, or something else entirely.
-2. Set up your environment: Make sure you have a code text editor, such as Visual Studio Code, and a web browser.
-3. Create a new folder for your project: This will keep your project files organized.
-4. Initialize your project: Open your command line, navigate to the project folder, and run the command `npm init` to create a package.json file.
-5. Install any necessary dependencies: If your project requires external libraries or frameworks, use the `npm install` command.
-6. Start coding: Use the `index.js` file to write your Javascript code. Remember to save your work regularly.
+Example of a basic index.html file:
 
-Here's an example of a simple "Hello World" program in Javascript:
+    ```HTML
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="./css/styles.css">
+        </head>
+        <body>
+            <h1>Hello World!</h1>
+            <script src="./js/app.js"></script>
+        </body>
+    </html>
+    ```
 
-```Javascript
-// Create a variable for the name
-var name = "John";
+Example of a simple Javascript code block:
 
-// Print a greeting using the variable
-console.log("Hello " + name);
-```
-
-When you run this code, the output in your terminal should be:
-
-```
-Hello John
-```
-
-Congratulations, you have created your first Javascript project!
+    ```Javascript
+    // This code will display a message on the console
+    console.log("Welcome to my new project!");
+    ```
 
 ## Deep Dive
+When starting a new project in Javascript, it's important to have a clear understanding of what you want to achieve. This will help guide your coding decisions and make the development process smoother. You can also consider these tips:
 
-When starting a new project, it's important to have a clear idea of what you want to accomplish. Here are some tips to help you get organized:
-
-1. Define your project scope: Decide what features and functionalities your project will have.
-2. Plan out your project structure: This can include creating a flow chart or a wireframe.
-3. Utilize source control: Use a version control system, such as Git, to track changes and collaborate with others.
-4. Write clean and organized code: Following coding best practices will make your project easier to maintain and expand in the future.
-5. Test and debug: Don't forget to test your code and fix any errors before moving on to the next step.
-6. Document your code: Adding comments and documentation will make it easier for others to understand your code and for you to come back to it later.
-
-Starting a new project can also be a great learning opportunity. Don't be afraid to research and explore new tools and techniques to improve your project.
+- Plan out your code before you start writing it. This will help you stay organized and save time in the long run.
+- Break down your project into smaller, manageable tasks. This will make it easier to track your progress and stay motivated.
+- Use online resources, such as tutorials and forums, to learn new techniques and troubleshoot any issues you encounter.
+- Don't be afraid to try new things and experiment with different approaches. This is a great way to learn and improve your coding skills.
 
 ## See Also
-
-- [The Coding Train on YouTube](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
-- [Eloquent Javascript book by Marijn Haverbeke](https://eloquentjavascript.net/)
-- [W3Schools Javascript tutorials](https://www.w3schools.com/js/default.asp)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Atom](https://atom.io/)
+- [Sublime Text](https://www.sublimetext.com/)

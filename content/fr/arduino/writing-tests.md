@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Écriture de tests"
+html_title:           "Arduino: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -9,48 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests dans Arduino
+## Pourquoi
 
-Le processus de développement d'un projet Arduino peut sembler intimidant, et la dernière chose que vous voulez faire est de passer du temps à écrire des tests. Mais la vérité est que les tests sont essentiels pour garantir que votre code fonctionne correctement et qu'il n'y a pas de bugs cachés. En fin de compte, cela vous fera gagner du temps et vous aidera à créer un meilleur projet global.
+Si vous êtes un fan d'Arduino, vous savez probablement déjà que les tests sont importants pour assurer le bon fonctionnement de votre code. Mais pour ceux qui ne sont pas familiers avec le concept, voici pourquoi il est important d'écrire des tests pour vos projets Arduino.
 
-# Comment écrire des tests dans Arduino
+Les tests vous aident à identifier et à corriger les erreurs dans votre code avant même de le télécharger sur votre carte Arduino. Cela vous fait gagner du temps et vous évite des frustrations à essayer de comprendre pourquoi votre projet ne fonctionne pas correctement.
 
-Pour écrire des tests dans Arduino, vous pouvez utiliser la bibliothèque de test ArduinoUnit. Voici un exemple de code pour un test de fonction simple :
+## Comment faire
 
-```
-#include <ArduinoUnit.h>
+Écrire des tests pour vos projets Arduino n'est pas compliqué et peut vous épargner beaucoup de maux de tête à long terme. Voici un exemple simple de code Arduino avec des tests intégrés:
+
+```arduino
+int LED = 13;  // Broche de la LED
+
+// Fonction qui allume la LED pour 1 seconde
+void turnOnLed(){
+  digitalWrite(LED, HIGH);
+  delay(1000);
+  digitalWrite(LED, LOW);
+}
 
 void setup() {
-  Serial.begin(9600);
+  pinMode(LED, OUTPUT);  // Définir la broche de la LED comme sortie
 }
 
 void loop() {
-  assertTrue(2 + 2 == 4);
-}
-
-unittest(main) {
-  runAllTests();
+  turnOnLed(); // Appel de notre fonction pour allumer la LED
 }
 ```
-Output :
+
+Pour tester cette fonction, nous pouvons ajouter une autre fonction qui vérifie si la LED a été allumée pour la bonne durée. Voici un exemple de test en utilisant la bibliothèque [Arduino Unit](https://github.com/mmurdoch/arduinounit):
+
+```arduino
+unittest(LED_test) {  // Définition du test
+  turnOnLed();  // Appel de la fonction à tester
+  assertTrue(digitalRead(LED), "La LED n'a pas été allumée");  // Vérification de l'état de la broche de la LED
+  delay(1000);  // Attente de 1 seconde
+  assertFalse(digitalRead(LED), "La LED n'a pas été éteinte après la durée spécifiée");  // Vérification de l'état de la broche de la LED après la durée spécifiée
+}
 ```
-one test run
-- lineupSetup
-PASS
-```
 
-Vous pouvez également utiliser des assertions et des tests plus complexes pour valider le comportement de vos fonctions et de votre code. Ces tests peuvent être utiles lors du débogage de problèmes ou de l'ajout de nouvelles fonctionnalités à votre projet.
+En utilisant des tests comme celui-ci, vous pouvez vérifier le bon fonctionnement de votre code en toute confiance, en sachant que vous avez pris en compte les différentes conditions possibles.
 
-# Plongée en profondeur dans l'écriture de tests
+## Plongée en profondeur
 
-Il y a plusieurs avantages à écrire des tests pour votre code Arduino. Tout d'abord, cela vous obligera à penser à chaque aspect de votre code et à le tester rigoureusement. Vous pourrez ainsi trouver des bugs potentiels avant qu'ils ne deviennent un problème majeur pour votre projet. De plus, les tests vous permettent de valider que votre code fait bien ce que vous attendez à chaque étape de son exécution.
+Écrire des tests pour votre code Arduino peut sembler fastidieux, mais cela en vaut la peine à long terme. En utilisant des outils comme la bibliothèque Arduino Unit, vous pouvez tester des fonctions plus complexes avec plusieurs cas de test.
 
-L'écriture de tests vous aide également à mieux comprendre votre code et à l'organiser de manière plus efficace. En développant des tests, vous réaliserez peut-être que certaines parties de votre code sont difficiles à tester et nécessitent une refonte. Cela peut vous conduire à adopter une approche plus modulaire et à rendre votre code plus propre et plus facile à maintenir.
-
-Enfin, la pratique de l'écriture de tests peut être une compétence précieuse à ajouter à votre boîte à outils de développement. De nombreux employeurs dans le domaine de la technologie valorisent les développeurs qui sont capables d'écrire du code testable et de qualité.
+Il est également important de noter que les tests peuvent aider à détecter les bugs dans votre code lorsque vous apportez des modifications ou ajoutez de nouvelles fonctionnalités. En plus d'assurer un code de meilleure qualité, les tests peuvent également vous faire gagner du temps à long terme en réduisant le temps passé à déboguer des erreurs.
 
 ## Voir aussi
 
-- [Documentation officielle d'ArduinoUnit](https://github.com/mmurdoch/arduinounit/wiki)
-- [Article de blog : Comment bien tester son code Arduino](https://www.techcoil.com/blog/how-to-write-effective-tests-for-your-arduino-projects/)
-- [Tutoriel vidéo : Écrire et exécuter des tests avec ArduinoUnit](https://www.youtube.com/watch?v=eABi4SR4Dac)
+- [Documentation Arduino Unit](https://github.com/mmurdoch/arduinounit)
+- [Guide sur les tests pour les projets Arduino](https://www.martyncurrey.com/testing-projects-with-arduino-unit/)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uusi projekti"
+html_title:           "Java: Aloittaminen uusi projekti"
+simple_title:         "Aloittaminen uusi projekti"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -11,31 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi aloittaisit uuden ohjelmointiprojektin? Uusia projekteja aloitetaan usein siksi, että halutaan oppia uutta, ratkaista ongelmia tai kehittää jotakin uutta ja mielenkiintoista.
+Uuden projektin aloittaminen voi tarjota jännittävän ja luovan haasteen, jossa voit soveltaa ja kehittää ohjelmointitaitojasi ja luoda jotain uutta ja hyödyllistä.
 
-## Kuinka
+## Kuinka aloittaa uusi projekti
 
-Aloittaaksesi uuden Java-projektin, sinun tulee ensin luoda uusi projektikansio ja avata se Java-kehitysympäristössäsi. Seuraavaksi voit aloittaa koodaamisen luomalla uusia luokkia ja kirjoittamalla niihin haluamasi toiminnallisuudet. Alla on esimerkki uuden luokan luomisesta ja sen metodin kirjoittamisesta, joka tulostaa tekstin "Hei maailma!"
+Aloittaaksesi uuden Java-projektin, seuraa näitä yksinkertaisia vaiheita:
+
+1. Avaa suosikki Java-koodieditori tai IDE (Integrated Development Environment).
+
+2. Luo uusi projekti valitsemalla *File* ja sitten *New Project*.
+
+3. Anna projektillesi nimi ja valitse projektille sopiva sijainti.
+
+4. Valitse projektin tyyppi, joka voi olla esimerkiksi tyhjä projekti, valmis mallipohja tai GitHub-projekti.
+
+5. Viimeistele projektin luominen klikkaamalla *Finish*.
+
+Uuden projektin luomisen jälkeen voit alkaa kirjoittaa koodia ja rakentaa oman ohjelmistosi.
 
 ```Java
-public class HelloWorld {
-
-  public static void main(String[] args) {
-    System.out.println("Hei maailma!");
-  }
-
+public class UusiProjekti {
+    public static void main(String[] args) {
+        System.out.println("Tervetuloa uuden projektin maailmaan!");
+    }
 }
 ```
 
-Tämän jälkeen voit suorittaa koodin ja näet tuloksen "Hei maailma!" konsolissasi. Voit jatkaa koodisi kirjoittamista ja testaamista, kunnes olet tyytyväinen lopputulokseen. Muista myös tallentaa työsi säännöllisesti!
+Tämä yksinkertainen esimerkki tulostaa näytölle "Tervetuloa uuden projektin maailmaan!" ja antaa sinulle mahdollisuuden aloittaa projektisi ensimmäisen tulosteen asettamisen.
 
-## Syventyvää tietoa
+## Syventyminen
 
-Ennen uuden projektin aloittamista on tärkeää miettiä, mitä haluat saavuttaa ja miten aiot sen tehdä. Kannattaa myös tutustua Java-kielen perusteisiin ja mahdollisiin työkaluihin ja kirjastoihin, jotka voivat auttaa projektissasi. Lisäksi on hyvä ottaa huomioon myös koodin hyvä dokumentaatio ja versionhallinta, jotta projekti pysyy hallinnassa ja ymmärrettävänä myös tulevaisuudessa.
+Uuden projektin aloittaminen Java-kielellä voi olla haastavaa, mutta samalla myös palkitsevaa. Ennen kuin ryhdyt luomaan projektia, on tärkeää suunnitella se huolellisesti ja harkita seuraavia asioita:
+
+- Mikä on projektisi tarkoitus ja mitä se pyrkii ratkaisemaan?
+- Mitä ominaisuuksia projektisi tulee sisältämään?
+- Mitkä ovat projektin vaatimukset ja rajoitukset?
+- Millainen arkkitehtuuri sopii parhaiten projektisi tarpeisiin?
+
+On myös hyvä harkita erilaisia suunnittelumalleja, kuten Agile-menetelmää, joka voi auttaa projektin hallinnassa ja joustavassa kehittämisessä.
+
+Lisäksi on tärkeää tutustua Java-luokkiin ja niiden käyttöön, sekä opetella käyttämään oikeita sovellusliittymiä (API) projektissasi. Hyvin suunniteltu ja toteutettu projekti voi helpottaa ja nopeuttaa sovelluksen kehitystä ja ylläpitoa.
 
 ## Katso myös
 
-- [Java-tutoriaali](https://www.tutorialspoint.com/java)
-- [JavaDocs](https://docs.oracle.com/javase/8/docs/api/)
-- [Git-versionhallinta](https://git-scm.com/)
-- [Maven-työkalu](https://maven.apache.org/)
+- [Java-opetusohjelma aloittelijoille](https://github.com/carmen-tang/java-tutorial-for-beginners)
+- [Java-oppimateriaaleja ja -resursseja](https://www.javatpoint.com/)
+- [Java-ohjelmointikielen virallinen sivusto](https://www.oracle.com/java/)

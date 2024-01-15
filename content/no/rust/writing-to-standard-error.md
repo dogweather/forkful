@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Å skrive til standardfeil"
-simple_title:         "Å skrive til standardfeil"
+title:                "Skriver til standardfeil"
+html_title:           "Rust: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,36 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor Skrive Til Standardfeil I Rust?
 
-Hvorfor skrive til standardfeil i Rust-programmering? Det kan være flere grunner til dette, men ofte er det for å gi mer informasjon om hva som skjer i programmet ditt mens det kjører. Dette kan være nyttig for debugging eller for å gi brukeren en bedre forståelse av programmet.
+Å skrive til standardfeil i Rust er en viktig måte å kommunisere feil og advarsler til brukeren av et program. Når man skriver en Rust-applikasjon, er det viktig å gi tydelig og pålitelig informasjon hvis noe går galt. Ved å skrive til standardfeil, kan man sikre at brukeren får nødvendig informasjon for å kunne løse eventuelle problemer som oppstår.
 
-## Hvordan gjøre det
+## Hvordan Gjøre Det
 
-Det er enkelt å skrive til standardfeil i Rust-programmering. Du kan bruke funksjonen `eprintln!` som tar inn en formatstreng og eventuelle verdier du vil inkludere. La oss se på et eksempel:
+Det er enkelt å skrive til standardfeil i Rust ved å bruke standardbiblioteket `std::io`. Her er et enkelt eksempel på hvordan man kan skrive en feilmelding til standardfeil:
 
-```Rust
-eprintln!("Feil: {} er ikke et gyldig tall", num);
+```rust
+fn main() {
+    let err_msg = "Noe gikk galt!";
+    eprintln!("{}", err_msg);
+}
 ```
 
-I dette tilfellet vil verdien av `num` bli satt inn i formatstrengen, og teksten vil bli skrevet til standardfeil. Output vil se slik ut:
+Dette vil skrive ut følgende melding til standardfeil:
 
 ```
-Feil: 10 er ikke et gyldig tall
+Noe gikk galt!
 ```
 
-Hvis du vil skrive til standardfeil uten å bruke en formatstreng, kan du bruke `writeln!`-funksjonen. Denne funksjonen fungerer på samme måte som `eprintln!`, men legger også til en linjeskift på slutten.
+Man kan også bruke `panic!` makroen for å skrive til standardfeil og avslutte programmet med en feilmelding:
 
-Det er også mulig å bruke `eprint!` og `print!` for å skrive til standardfeil og standardutgang, henholdsvis.
+```rust
+fn main() {
+    let err_msg = "Noe gikk galt!";
+    panic!("{}", err_msg);
+}
+```
+
+I tillegg til å skrive feilmeldinger, kan man også skrive advarsler til standardfeil ved å bruke `eprintln!` makroen.
 
 ## Dypdykk
 
-Når du skriver til standardfeil i Rust, vil du kanskje også vite hva som skjer i kulissene. Når du bruker `eprintln!` eller `eprint!`, blir standardfeilstrømmen brukt. Dette betyr at utskriften ikke vil bli påvirket av utdaterte operativsystemnivåbuffere og vil bli skrevet umiddelbart.
+Når man skriver til standardfeil, bruker man vanligvis `eprintln!` makroen i stedet for `println!` makroen. Dette er fordi `eprintln!` automatisk legger til en ny linje på slutten av meldingen, mens `println!` ikke gjør det. Dette kan føre til uklare utskrifter hvis man skriver flere meldinger etter hverandre. Her er et eksempel som viser forskjellen:
 
-Det kan også være nyttig å vite at det er mulig å endre standardfeilstrømmen ved å bruke funksjonen `set_panic_hook`. Dette gjør det mulig å skrive ut feilmeldinger eller tracebacks til hvilken som helst strøm som du ønsker.
+```rust
+fn main() {
+    let err_msg = "Noe gikk galt!";
+    eprintln!("Dette er første feilmelding.");
+    eprintln!("{} Dette er andre feilmelding.", err_msg);
+}
+```
 
-## Se også
+Dette vil skrive ut følgende til standardfeil:
 
-- [Rust dokumentasjon om standardfeil](https://doc.rust-lang.org/std/io/struct.Stderr.html)
-- [Rust dokumentasjon om strømmer](https://doc.rust-lang.org/std/io/trait.Write.html)
-- [Artikkel om standardfeil i Rust](https://andrewkinnear.tech/2019/08/29/understanding-the-println-macro-and-standard-error-in-rust/)
+```
+Dette er første feilmelding.
+Noe gikk galt! Dette er andre feilmelding.
+```
+
+Hvis man bruker `println!` i stedet, vil meldingene skrives ut på samme linje, noe som kan være forvirrende for brukeren.
+
+Det er også verdt å merke seg at man kan skrive større og mer detaljerte meldinger til standardfeil ved å bruke `format!` og `eprintln!` sammen. Her er et eksempel:
+
+```rust
+fn main() {
+    let err_code = 404;
+    let err_msg = "Ressursen ble ikke funnet.";
+    eprintln!("Error {}: {}", err_code, err_msg);
+}
+```
+
+Dette vil skrive ut følgende melding til standardfeil:
+
+```
+Error 404: Ressursen ble ikke funnet.
+```
+
+# Se Også
+
+- [The `std::io` module in the Rust Standard Library](https://doc.rust-lang.org/std/io/index.html)
+- [Rust Error Handling](https://www.rust-lang.org/learn/error-handling-in-rust)

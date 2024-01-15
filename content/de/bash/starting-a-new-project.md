@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Ein neues Projekt beginnen."
-simple_title:         "Ein neues Projekt beginnen."
+title:                "Ein neues Projekt beginnen"
+html_title:           "Bash: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -11,28 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Programmierung in Bash kann eine hervorragende Möglichkeit sein, um eigene Projekte zu starten und Ideen zum Leben zu erwecken. Mit seiner einfachen Syntax und der Fähigkeit, direkt auf das Linux-Betriebssystem zuzugreifen, ist Bash eine effektive Methode, um schnelle Skripte und Tools zu erstellen. Lesen Sie weiter, um mehr über die Vorteile und Schritte zu erfahren, um Ihr eigenes Bash-Projekt zu starten.
+Möchtest du ein neues Projekt beginnen? Vielleicht hast du eine großartige Idee oder möchtest deine Fähigkeiten in Bash verbessern. Mit diesen einfachen Schritten kannst du schnell und effektiv ein neues Projekt starten.
 
-## Wie es geht
+## Wie es gemacht wird
 
-Um ein Bash-Projekt zu starten, müssen Sie zunächst ein neues Skript erstellen, indem Sie die Dateiendung ".sh" verwenden. Öffnen Sie ein Terminalfenster und navigieren Sie zum gewünschten Speicherort für Ihr Projekt. Verwenden Sie dann den Befehl `touch` und den Namen Ihrer Datei, gefolgt von der Dateiendung ".sh", um das Skript zu erstellen. Sie können auch einen beliebigen Texteditor verwenden, um das Skript zu erstellen. Sobald das Skript erstellt wurde, können Sie die gewünschten Befehle und Funktionen hinzufügen.
+Das erste, was du tun musst, ist ein neues Verzeichnis für dein Projekt zu erstellen. Nenne es, was auch immer du möchtest, aber denke daran, dass es später leicht zu finden sein sollte. Verwende diesen Befehl im Terminal, um ein neues Verzeichnis namens "meinprojekt" zu erstellen:
 
-Zum Beispiel möchten Sie vielleicht eine Nachricht ausgeben, wenn das Skript ausgeführt wird. Verwenden Sie dazu `echo` und fügen Sie den Text hinzu, den Sie ausgeben möchten. Das Skript könnte dann so aussehen:
+```Bash
+mkdir meinprojekt
 ```
+
+Als nächstes wechselst du in dieses Verzeichnis, indem du den Befehl `cd` verwendest:
+
+```Bash
+cd meinprojekt
+```
+
+Jetzt kannst du mit der eigentlichen Programmierung beginnen. Erstelle eine neue Datei namens "main.sh" mit dem Texteditor deiner Wahl. Hier ist ein einfaches Beispiel einer Bash-Datei:
+
+```Bash
 #!/bin/bash
-
-echo "Willkommen bei meinem Bash-Projekt"
+echo "Hallo Welt!"
 ```
-Speichern Sie das Skript und führen Sie es aus, indem Sie im Terminalfenster den Befehl `./` gefolgt vom Namen des Skripts eingeben. Sie sollten die Nachricht ausgegeben sehen.
 
-Sie können auch Variablen, Bedingungen und Schleifen in Ihr Skript einfügen, um komplexe Aufgaben zu automatisieren. Informieren Sie sich darüber, wie diese Konzepte in Bash funktionieren und experimentieren Sie mit verschiedenen Funktionen, um mehr zu lernen.
+Speichere die Datei und führe sie aus, indem du diesen Befehl verwendest:
 
-## Tief eintauchen
+```Bash
+./main.sh
+```
 
-Wenn Sie sich mit Bash und dem Erstellen von Skripten vertraut gemacht haben, können Sie tiefer eintauchen, indem Sie Befehle aus dem Linux-Betriebssystem in Ihr Skript einfügen. Mit Bash können Sie direkt auf das Betriebssystem zugreifen und somit eine Vielzahl von Aufgaben automatisieren und selbst erstellen. Seien Sie kreativ und nutzen Sie die vielfältigen Möglichkeiten von Bash aus.
+Du solltest jetzt das Wort "Hallo Welt!" in der Ausgabe sehen. Voila, du hast gerade dein erstes Bash-Skript erstellt!
 
-## Siehe auch
+## Tiefen Einblick
 
-- [Einführung in die Bash-Programmierung](https://www.tecmint.com/bash-loop-examples-for-linux/)
-- [Bash-Skripte für Anfänger](https://www.howtoforge.com/tutorial/linux-bash-scripting-beginners-guide/)
-- [Befehlsreferenz für Bash](http://hyperpolyglot.org/unix-shells)
+Jetzt, da du dein neues Projekt erstellt und dein erstes Skript geschrieben hast, kannst du tiefer in die Welt von Bash eintauchen. Hier sind einige nützliche Ressourcen, die dir dabei helfen können:
+
+- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash bei Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
+- [Bash-Tutorial bei Codecademy](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+
+Sieh auch
+
+- [Einführung in die Shell-Programmierung](https://www.linode.com/docs/development/shell-scripting-beginners-guide/)
+- [Liste von Bash-Befehlen](https://github.com/learnbyexample/Command-line-text-processing/blob/master/gnu_grep_sed_awk.md#bash-builtin-commands) (englisch)
+- [Bilder in der Konsole](https://stackoverflow.com/questions/10795745/image-in-a-terminal) (englisch)

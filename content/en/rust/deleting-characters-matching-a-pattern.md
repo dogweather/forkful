@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Rust recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,51 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In programming, deleting characters that match a certain pattern is a common task. Whether it's cleaning up user input or removing unwanted characters from a string, this can be a useful skill to have in your programming arsenal. In this blog post, we'll explore how to efficiently delete characters matching a pattern in the Rust programming language.
+Deleting characters that match a specific pattern can be incredibly useful when working with strings or in text processing. It allows for efficient manipulation of large amounts of data and can simplify tasks such as data cleaning or formatting.
 
 ## How To
 
-To delete characters that match a pattern in Rust, we can use the `replace` method from the standard library's `String` type. This method takes in a pattern and a replacement string and returns a new string with all occurrences of the pattern replaced with the replacement string.
-
-Let's take a look at an example:
+To delete characters matching a pattern in Rust, we can use the `replace()` function from the standard library. This function takes in three parameters: the original string, the pattern to match, and the replacement string. Here's an example:
 
 ```Rust
-let str = "Hello,world!";
-let new_str = str.replace(",", "");
+let original = "Hello, World!";
+let modified = original.replace(",", "");
 ```
 
-In this code, we have a string that contains a comma between the words "Hello" and "world". Using the `replace` method, we provide the comma as our pattern and an empty string as our replacement. The output will be a string without the comma, which is equal to "Hello world!".
+This code will replace all commas in the original string with an empty string, effectively deleting them. The resulting `modified` string will now be "Hello World!".
 
-We can also use the `replace` method to remove multiple characters that match a specific pattern. We can provide a string as our pattern and an empty string as the replacement, and all the characters in the pattern string will be removed.
-
-Let's see another example:
+We can also use regular expressions to match more complex patterns. Rust provides the `regex` crate, which allows us to use regular expressions in our code. Here's an example:
 
 ```Rust
-let str = "This is a test string!";
-let new_str = str.replace("aeiou", "");
+use regex::Regex;
+
+let original = "The quick brown fox jumps over the lazy dog.";
+let regex = Regex::new("[aeiou]").unwrap();
+let modified = regex.replace_all(original, "");
 ```
 
-In this code, we use the `replace` method to remove all vowels from the string. The result will be "Ths s  tst strng!".
+In this code, we are using the `replace_all()` function from the `Regex` struct to replace all vowels in the original string with an empty string. The resulting `modified` string will be "Th qck brwn fx jmps vr th lzy dg.".
 
 ## Deep Dive
 
-Under the hood, the `replace` method is using the `std::mem::replace` function, which replaces all occurrences of a pattern in a string slice with a replacement string. It also handles Unicode characters properly, making it a safe and efficient method to use.
+The `replace()` and `replace_all()` functions in Rust use a technique called "in-place replacement". This means that the original string is mutated instead of creating a new string. This can be more efficient in terms of memory usage, especially when working with large strings.
 
-Additionally, if we want to only remove characters from a string without replacing them with anything, we can use the `retain` method from the `String` type. This method takes a closure as an argument, and any character that returns `false` from the closure will be removed from the string.
-
-Here's an example:
-
-```Rust
-let str = "123abc456";
-let new_str = str.retain(|c| c.is_numeric()); 
-```
-
-This code will keep only the numbers in the string and remove all the alphabetic characters, resulting in "123456".
+It's worth noting that both functions return a `String` type, which is a dynamically allocated string. This means that the original string must be copied to a new location in memory, even though the mutation is done in-place. This is something to keep in mind when dealing with memory-sensitive applications.
 
 ## See Also
 
-If you want to dive deeper into string manipulation in Rust, here are some recommended resources:
+Here are some additional resources for working with patterns and string manipulation in Rust:
 
-- [Rust standard library documentation on String](https://doc.rust-lang.org/std/string/index.html)
-- [Official Rust book chapter on strings and operations](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)
-- [Rust Playground](https://play.rust-lang.org/) for quick and easy coding experiments.
+- [Rust String documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Regex crate documentation](https://docs.rs/regex/1.4.3/regex/)
+- [Official Rust website](https://www.rust-lang.org/)

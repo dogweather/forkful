@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання запиту http."
+html_title:           "Clojure: Надсилання запиту http."
+simple_title:         "Надсилання запиту http."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,57 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Зчому: Існує безліч причин, чому люди використовують HTTP запити в програмуванні. Наприклад, вони можуть бути використані для взаємодії зі зовнішніми API, отримання даних з веб-сторінок або навіть для збереження і передачі даних між різними додатками.
+## Чому
+Запити HTTP є необхідною частиною веб-розробки. Вони дозволяють отримувати інформацію з інших сайтів або сервісів, що робить їх корисними для побудови багатофункціональних додатків.
 
-Як: У цьому прикладі ми будемо використовувати Clojure для створення HTTP запиту до API сервісу Github. Використовуючи бібліотеку "clj-http", ми зможемо легко і швидко зробити запит та обробити відповідь.
+## Як
+Найпростішим способом відправити запит HTTP в Clojure є використання функції `clj-http.client/request`. Приклад коду:
 
 ```Clojure
 (ns my-app.core
-  (:require [clj-http.client :as client]))
+  (:require [clj-http.client :as http]))
 
-(defn make-request [url]
-  (let [response (client/get url)]
-    (println (:status response))
-    (println (:body response))))
+(def response (http/request {:method :get :url "https://www.example.com"}))
 
-(def github-api-url "https://api.github.com")
-
-(make-request github-api-url)
+(println (:body response))
 ```
 
-Вивід: 200
-{
-  "current_user_url": "https://api.github.com/user",
-  "current_user_authorizations_html_url": "https://github.com/settings/connections/applications{/client_id}",
-  "authorizations_url": "https://api.github.com/authorizations",
-  "code_search_url": "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
-  "commit_search_url": "https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}"
-  ...
+В даному прикладі ми використовуємо функцію `request` для відправлення GET-запиту на сайт https://www.example.com. Ми отримуємо об'єкт відповіді, з якого ми можемо отримати тіло відповіді за допомогою ключа `:body`.
 
+## Глибше
+Функція `request` надає багато параметрів, які можна використовувати для налаштування запиту. Деякі з них:
 
-Глибокий занур: В цьому прикладі ми використовуємо метод "get" з бібліотеки "clj-http", щоб зробити GET запит до API сервісу Github. Метод "get" приймає URL та додаткові параметри, такі як заголовки, тіло запиту та інше.
+- `:method` - метод запиту (GET, POST, PUT, DELETE тощо)
+- `:url` - URL-адреса для відправки запиту
+- `:body` - тіло запиту, яке може бути різного типу (рядок, мапа тощо)
+- `:headers` - заголовки запиту, представлені у вигляді мапи
+- `:query-params` - параметри запиту для GET-запитів
 
-```Clojure
-(defn make-get-request [url]
-  (let [response (client/get url {:basic-auth ["username" "password"]
-                                  :headers {"Accept" "application/json"}})]
-    (println (:status response))
-    (println (:body response))))
+Крім того, за допомогою параметра `:as` ми можемо задати формат відповіді, в якому ми хочемо, щоб були повернуті дані. Наприклад, `:as :json` поверне JSON-об'єкт, а `:as :string` поверне рядок.
 
-(make-get-request github-api-url)
-```
-
-Вивід: 200
-{
-  "current_user_url": "https://api.github.com/user",
-  "current_user_authorizations_html_url": "https://github.com/settings/connections/applications{/client_id}",
-  "authorizations_url": "https://api.github.com/authorizations",
-  "code_search_url": "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
-  "commit_search_url": "https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}"
-  ...
-
-
-Дивіться також:
-- [Офіційна документація бібліотеки "clj-http"](https://github.com/dakrone/clj-http)
-- [Документація по використанню API сервісу Github](https://docs.github.com/en/rest)
-- [Приклади використання HTTP запитів у Clojure](https://clojuredocs.org/clojure.core/http-kit)
+## Дивіться також
+- [Офіційна документація по функції request](https://github.com/dakrone/clj-http/blob/master/doc/http/client.md#cljhtt

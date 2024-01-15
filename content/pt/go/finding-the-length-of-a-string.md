@@ -1,6 +1,7 @@
 ---
-title:                "Go: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Encontrando o tamanho de uma string"
+html_title:           "Go: Encontrando o tamanho de uma string"
+simple_title:         "Encontrando o tamanho de uma string"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,76 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+# Por que encontrar o comprimento de uma string em Go
 
-Encontrar o comprimento de uma string é uma tarefa básica na programação e pode ser útil em várias situações. Saber o tamanho de uma string pode ajudar a validar entradas de usuário, formatar a saída de dados ou até mesmo otimizar algoritmos de busca.
+Muitas vezes, ao trabalhar com strings em um programa em Go, pode ser necessário calcular o seu comprimento. Isso pode ser útil, por exemplo, ao validar a entrada de um usuário ou manipular dados em um banco de dados. Felizmente, a linguagem Go oferece uma maneira simples de encontrar o comprimento de uma string. Neste artigo, vamos explorar como fazer isso.
 
 ## Como fazer
 
-Para encontrar o comprimento de uma string em Go, podemos usar a função `len ()` que retorna o número de bytes da string. Vamos dar uma olhada em alguns exemplos:
+Para encontrar o comprimento de uma string em Go, usamos a função `len()`, que é nativa da linguagem. Essa função retorna o número de bytes que compõem a string. Vamos ver um exemplo prático:
 
 ```
-package main
-
-import "fmt"
-
-func main() {
-    str1 := "Olá Mundo!"
-    str2 := "😊🚀"
-
-    fmt.Println(len(str1))
-    fmt.Println(len(str2))
-}
+nome := "Maria"
+comprimento := len(nome)
+fmt.Println(comprimento) // Output: 5
 ```
 
-A saída desse código será:
+No exemplo acima, declaramos uma variável `nome` com o valor "Maria" e, em seguida, usamos a função `len()` para encontrar o seu comprimento, que é 5. É importante lembrar que, em Go, uma string é uma sequência de bytes, não um caractere como em outras linguagens.
+
+Também podemos usar a função `len()` em strings multibyte, como caracteres acentuados ou emojis. Por exemplo:
 
 ```
-10
-4
+mensagem := "Olá 😊"
+comprimento := len(mensagem)
+fmt.Println(comprimento) // Output: 6
 ```
 
-Note que, como o Go é uma linguagem unicode, os emojis também são contados como um byte cada. Isso pode ser útil quando trabalhamos com caracteres unicode em nossos programas.
+## Aprofundando-se
 
-Também podemos usar a função `RuneCountInString ()` para contar o número de caracteres em uma string:
+Se você está se perguntando por que a função `len()` retorna o número de bytes e não o número de caracteres, é porque em Go, uma string é um tipo de dados imutável. Isso significa que cada caractere em uma string é armazenado como um byte individual. Isso torna a manipulação de strings mais eficiente em termos de desempenho e também evita problemas de codificação.
 
-```
-package main
+Outro ponto importante é que a função `len()` não conta o número de palavras de uma string, apenas os bytes. Por isso, se você quiser encontrar o número de palavras em uma string, é necessário separá-la em uma array de strings e usar a função `len()` nessa array.
 
-import "fmt"
-import "unicode/utf8"
-
-func main() {
-    str := "Olá Mundo!"
-
-    fmt.Println(utf8.RuneCountInString(str))
-}
-```
-
-A saída desse código será `10`, já que a função `RuneCountInString()` conta o número de caracteres e não de bytes.
-
-## Mergulho Profundo
-
-A função `len()` e `RuneCountInString()` são eficientes para encontrar o comprimento de uma string, mas elas podem não fornecer o resultado esperado em alguns casos. Por exemplo, elas não contam corretamente o número de caracteres se a string contém caracteres acentuados ou emojis compostos por mais de um caractere.
-
-Para lidar com esse problema, podemos usar a biblioteca `utf8` do Go e a função `RuneCount()`, que conta o número de runas em uma string. Uma runa é um caractere unicode e é representado por um ou mais bytes.
-
-```
-package main
-
-import "fmt"
-import "unicode/utf8"
-
-func main() {
-    str := "Olá Mundo!"
-
-    fmt.Println(utf8.RuneCount([]byte(str)))
-}
-```
-
-A saída desse código será `10`, pois a função `RuneCount()` conta corretamente o número de caracteres unicode na string.
+Além disso, a função `len()` também pode ser usada em outros tipos de dados, como arrays, slices e maps. Experimente e veja como ela se comporta em cada um desses tipos!
 
 ## Veja também
-- [Documentação oficial do Go sobre strings](https://golang.org/pkg/strings/)
-- [Tutorial sobre strings em Go](https://www.tutorialspoint.com/go/go_strings.htm)
-- [Guia de referência rápida para manipulação de strings em Go](https://yourbasic.org/golang/string-functions-reference-cheat-sheet/)
+
+- [Documentação oficial do pacote strings em Go](https://golang.org/pkg/strings/)
+- [Tutorial sobre strings em Go no site Learn Go](https://www.learn-golang.org/string)
+- [Artigo em inglês sobre a função len() em Go](https://www.digitalocean.com/community/tutorials/how-to-find-the-length-of-a-string-in-go)

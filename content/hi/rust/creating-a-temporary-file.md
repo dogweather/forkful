@@ -1,6 +1,7 @@
 ---
-title:                "Rust: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फ़ाइल बनाना"
+html_title:           "Rust: अस्थायी फ़ाइल बनाना"
+simple_title:         "अस्थायी फ़ाइल बनाना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,26 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-कोई भी आधुनिक या समृद्ध भाषा में नए भाषाई कार्यों को समझने और सीखने का सबसे अच्छा तरीका है, उन्हें वास्तविक कोडिंग में लागू करके। तो हम आज जानेंगे कि Rust में temporary file कैसे बनाते हैं। अगर आप Rust प्रोग्रामिंग में नए हैं, तो आपको यह जानना जरूरी है कि temporary file क्या है और आप इसे कैसे इस्तेमाल कर सकते हैं। 
+Kya aapne kabhi temporary file ka istemal kiya hai? Agar nahi, toh aapko sochne ki zaroorat hai. Temporary files programming mein kaafi mahatvapurna hote hain. Ye file temporary taur par banaayi jaati hain aur kisi specific task ke liye istemal ki jaati hain. Rust mein, temporary files create karne ka process kaafi easy hai aur isme kuch alag interesting features bhi hain jinse aapko fayda ho sakta hai.
 
-## कैसे करें
+## Kaise Karein
 
-Temporary file को बनाने के लिए हम आरंभ में एक फाइल फ़ंक्शन से शुरू करते हैं। इसके बाद हम विभिन्न Rust लाइब्रेरी और कार्य प्रवाहों का उपयोग करते हैं जैसे कि tempfile और std::fs। नीचे दिए गए कोड ब्लॉक में आप इस कोड को देख सकते हैं:
+Temporary files create karne ke liye, aapko "tempfile" crate ko use karke ek naya temporary file object create karna hoga. Iske baad, aap "tempfile::Builder" ka use karke file ka naam aur location define kar sakte hain. Iss builder object ke baad, hume file ko open aur write karne ke liye "File" object ki zaroorat hogi. Yeh process kuch is tarah se hai:
 
 ```Rust
-use std::fs::File;
-use tempfile::tempfile;
+use tempfile::Builder;
 
 fn main() {
-   let temp_file = tempfile().unwrap();
-   let mut f = File::create(temp_file).unwrap();
-   f.write("Hello World!");
+    let file = Builder::new()
+        .prefix("tempfile")
+        .tempfile()
+        .expect("Failed to create temporary file");
+
+    println!("File name: {}", file.path().display());
+    
+    // File operations can be performed here
+    
 }
 ```
-यहां हमने पहले tempfile लाइब्रेरी को इम्पोर्ट किया है और एक temporary file के लिए एक ऑब्जेक्ट लिया है। इसके बाद हमने File लाइब्रेरी से एक नयी फ़ंक्शन create() का उपयोग करके temporary file को बनाया है। अंत में हमने विभिन्न काम को करने के लिए temporary file का उपयोग किया है। 
 
-## डीप डाइव
+Is code block mein humne "tempfile" crate ko import kiya hai aur Builder object create kiya hai. Iske baad, humne builder object ko use karke file ka naam set kiya aur temp file create kiya. Iske baad, hum file ka naam display kar sakte hain. Aap file operations ko kuch is tarike se perform kar sakte hain:
 
-Temporary file बनाने से पहले हमेशा यह ध्यान रखना चाहिए कि इसमें सुरक्षित तरीके से डाटा को लिखा जाए। आपको अपने कोड में error handling को शामिल करना होगा ताकि आपको किसी भी प्रकार की अनुचित हालत का सामना न करना पड़े। Rust में error handling को बहुत सरल बनाया गया है, आप उसे try/catch के जैसे इस
+```Rust
+use tempfile::NamedTempFile;
+
+fn main() {
+    let mut file = NamedTempFile::new().expect("Failed to create temporary file");
+
+    // Write operations
+    file.write_all(b"Hello World!").expect("Failed to write to file");
+
+    // Read operations
+    file.read_to_string(&mut contents).expect("Failed to read file");
+
+    println!("File contents: {}", contents);
+}
+```
+
+Is code block mein humne "tempfile" crate ko import kiya hai aur NamedTempFile object create kiya hai. Iske baad, hum ne file mein data write aur read kiya hai. Aap isme koi bhi file operations perform kar sakte hain jaise read, write ya delete.
+
+## Gehri Jhaank
+
+Temporary files create karne ka process kaafi simple hai lekin iski peechhe ka logic kaafi gehra aur important hai. Temporary files crate mein, ek unique file name generate karne ka algorithm hai jo duplicate file names se bachata hai. Iske alawa, ye process kuch safety precautions bhi follow karta hai jaise file deletion aur overwrite prevention.
+
+## Dekhein Bhi
+
+Agar aapko temporary files ke baare mein aur jaankaari chahiye ya aapko base libraries aur crates ke baare mein aur jaankaari chahiye, toh aap neeche diye gaye links check kar sakte hain:
+
+- [Rust Programming Language](https://www.rust-lang.org/)
+- [Official Rust Documentation](https://doc.rust-lang.org/)
+- [Tempfile Crate Documentation](https://docs.rs/tempfile/latest/tempfile/)
+- [Standard Library Documentation](https://doc.rust-lang.org/std/index.html)

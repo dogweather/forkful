@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Elm: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,38 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy zdarzyło Ci się już kiedyś szukać i zamieniać tekst w swoim kodzie? W programowaniu często musimy zmieniać nazwy funkcji, zmienne czy też szukać i poprawiać błędy. W tym artykule dowiesz się, dlaczego wyszukiwanie i zamienianie tekstu jest ważne dla programistów i jak to zrobić w języku Elm.
+Szukanie i zamiana tekstu to podstawowy element programowania. Jest to codzienna czynność dla każdego, kto pracuje z tekstem. W tym artykule opowiemy o tym, jak wykorzystać język Elm do automatyzacji tego procesu i zaoszczędzić czas.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-W języku Elm istnieją różne sposoby na wyszukiwanie i zamienianie tekstu. W tym przykładzie wykorzystamy funkcję `String.replace` oraz `String.replaceOne` do zamiany tekstu w łańcuchu znaków.
-
+Za pomocą funkcji `replace` możesz łatwo zmienić wybrany tekst na inny. Poniżej znajduje się przykładowy kod wykorzystujący tę funkcję:
 ```Elm
-s = "Witaj w świecie programowania!"
-newS = String.replace "Witaj" "Cześć" s
+replace "Hello World!" "Hello" "Hi"
 ```
-W powyższym przykładzie zmienna `newS` będzie przechowywać wartość "Cześć w świecie programowania!". Możesz także użyć funkcji `String.replaceOne`, aby zamienić tylko pierwsze znalezione wystąpienie tekstu.
+W powyższym przykładzie, tekst "Hello World!" zostanie zastąpiony przez "Hi World!". Funkcja `replace` przyjmuje trzy argumenty: tekst, który chcemy zmienić, tekst, który chcemy usunąć oraz tekst, którym chcemy go zastąpić.
 
-Możesz także użyć wyrażeń regularnych w funkcji `String.replace` do dokładniejszego dopasowania tekstu, na przykład zamiany tylko wybranych słów lub liter.
-
+Możesz również użyć funkcji `replaceAll` do zmiany wszystkich wystąpień danego tekstu na inny. Poniżej znajduje się kod wykorzystujący tę funkcję:
 ```Elm
-s = "Każdy programista powinien umieć programować."
-newS = String.replace (Regex.regex "programi(?:ści|st)[a-z]*") "deweloperzy" s
+replaceAll "aaabbbccc" "a" "x"
 ```
-W tym przykładzie zostaną zamienione wszystkie słowa zaczynające się od "programi" na słowo "deweloperzy", bez względu na końcówkę. Funkcja `Regex.regex` pozwala na skomplikowane i precyzyjne dopasowanie tekstu.
+W tym wypadku, tekst "aaabbbccc" zostanie zmieniony na "xxxbbbccc".
 
-## Deep Dive
+Każda z funkcji `replace` i `replaceAll` zwraca zmieniony tekst jako wynik. Możesz go przypisać do zmiennej i wykorzystać w dalszej części kodu.
 
-Istnieje wiele innych funkcji w języku Elm, które mogą być użyteczne podczas wyszukiwania i zamieniania tekstu. Na przykład, funkcja `String.split` pozwala na podzielenie tekstu na listę według określonego separatora. Możesz także użyć funkcji `String.join` do ponownego złączenia listy w jeden łańcuch znaków.
+## Głębsze wgląd
 
-Funkcje `String.startsWith` i `String.endsWith` pozwala sprawdzić, czy dany tekst zaczyna się lub kończy na określoną wartość. Funkcja `String.toUpper` i `String.toLower` pozwalają na zmianę wielkości liter w tekście.
+W języku Elm istnieje wiele innych funkcji związanych ze zmianą tekstu, takich jak `removeFirst`, `removeLast`, `trim`, `split`, `join` i wiele innych. Możesz dowiedzieć się więcej o nich w [oficjalnej dokumentacji Elm](https://guide.elm-lang.org/strings/).
 
-Możesz także użyć funkcji `String.trim` do usunięcia zbędnych spacji z początku i końca tekstu lub `String.contains` do sprawdzenia, czy dany tekst zawiera określony ciąg znaków.
+Jedną z przydatnych funkcji jest również `replaceChar`, która pozwala na zmianę pojedynczego znaku w tekście. Na przykład, można zmienić wszystkie małe litery w tekście na duże lub na odwrót.
 
-Zauważ, że wszystkie te funkcje zwracają nowy łańcuch znaków, a nie zmieniają pierwotnej wartości. Jest to ważne, ponieważ język Elm jest funkcyjny i unika zmiany wartości zmiennych w miejscu.
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja języka Elm: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Wprowadzenie do programowania funkcyjnego w języku Elm](https://www.freecodecamp.org/news/an-introduction-to-functional-programming-with-elm/)
-- [Praktyczne użycie wyrażeń regularnych w Elm](https://www.degoes.net/articles/parse-time)
+Jeśli chcesz dowiedzieć się więcej o tworzeniu aplikacji w języku Elm, polecamy zapoznać się z [oferowanymi przez nich kursami](https://www.elm-in-action.com/) lub zasubskrybować [podręcznik "Elm in Action"](https://www.manning.com/books/elm-in-action).

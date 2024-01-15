@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Kotlin: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,33 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que calcular datas no futuro ou no passado?
+## Por que
 
-Há muitas situações em que é necessário calcular uma data no futuro ou no passado. Por exemplo, em um aplicativo de calendário, é essencial calcular as datas de eventos futuros ou lembrá-lo de eventos passados importantes. Também pode ser necessário calcular o prazo de entrega de um projeto ou o vencimento de uma conta. Em resumo, calcular datas no futuro ou no passado é uma habilidade valiosa em programação e pode ser útil em diferentes situações.
+Se você já se perguntou como saber qual será a data daqui a uma semana ou em que dia da semana você nasceu, calcular datas no futuro ou passado pode ser útil. Além disso, pode ser um desafio divertido para testar suas habilidades de programação.
 
-## Como calcular datas no futuro ou no passado com Kotlin
+## Como Fazer
 
-Para calcular datas no futuro ou no passado com Kotlin, usaremos a classe `LocalDate` da biblioteca `java.time` do Java. Esta classe representa uma data (ano, mês e dia) sem informações de hora e fuso horário. Vamos supor que queremos calcular a data daqui a 2 semanas a partir de hoje. O código em Kotlin ficaria assim:
+Para calcular uma data no futuro ou passado com Kotlin, é preciso usar a classe `LocalDate` da biblioteca `java.time`. Primeiro, importe a biblioteca no início do seu código:
 
 ```Kotlin
 import java.time.LocalDate
-
-fun main() {
-  val dataAtual = LocalDate.now() //pega a data atual
-  val dataCalculada = dataAtual.plusWeeks(2) //adiciona 2 semanas à data atual
-  println("A data daqui a 2 semanas será: $dataCalculada")
-}
-//-- output: A data daqui a 2 semanas será: 2021-07-14
 ```
 
-Podemos passar outros valores como parâmetros para os métodos `plusYears()`, `plusMonths()` e `plusDays()` para calcular datas mais distantes ou próximas. Também podemos calcular datas no passado usando os métodos `minusYears()`, `minusMonths()` e `minusDays()`.
+Em seguida, é necessário criar uma instância da classe `LocalDate` com uma data específica. Por exemplo, para representar o dia de hoje, você pode usar a função `now()`:
 
-## Profundidade no calculo de datas no futuro ou no passado
+```Kotlin
+val dataAtual = LocalDate.now()
+```
 
-Além dos métodos utilizados no exemplo acima, a classe `LocalDate` possui uma variedade de outros métodos úteis para realizar cálculos com datas. Alguns exemplos são `withYear()`, `withMonth()` e `withDayOfMonth()`, que permitem alterar o ano, mês ou dia de uma data. Também existem métodos para comparar datas, como `isAfter()` e `isBefore()`, e para verificar se um ano é bissexto, como `isLeapYear()`. É importante mencionar que a classe `LocalDate` é imutável, ou seja, após criar uma data, ela não pode ser alterada. Por isso, todos os métodos retornam uma nova instância da classe `LocalDate` com as alterações desejadas.
+Para calcular uma data no futuro, utilize o método `plus` passando como parâmetro a quantidade desejada de dias, semanas, meses ou anos:
 
-## Veja também
+```Kotlin
+val dataNoFuturo = dataAtual.plusWeeks(2) // soma 2 semanas à data atual
+```
 
-- Documentação oficial do Java sobre a classe `LocalDate` - https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- Outras formas de trabalhar com datas no Kotlin - https://kotlinlang.org/docs/datetime.html
-- Exemplo de aplicação prática do cálculo de datas no futuro em um aplicativo Android - https://medium.com/swlh/calendaring-with-kotlin-kiloloco-github-io-70a5f4690292
+Já para calcular uma data no passado, utilize o método `minus`:
+
+```Kotlin
+val dataNoPassado = dataAtual.minusMonths(6) // subtrai 6 meses da data atual
+```
+
+Por fim, você pode imprimir a data resultante utilizando o método `format` e especificando o formato desejado:
+
+```Kotlin
+println("Data no futuro: ${dataNoFuturo.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))}") // imprime no formato dd/MM/yyyy
+```
+
+## Mergulho Profundo
+
+A classe `LocalDate` possui diversos outros métodos úteis para manipulação de datas, como `plusDays`, `plusMonths`, `plusYears`, `minusDays`, `minusWeeks` e `minusMonths`. Além disso, também é possível realizar comparações entre datas utilizando os métodos `isBefore`, `isAfter` e `isEqual`.
+
+Caso precise de mais precisão em relação a horários e fusos horários, a biblioteca `java.time` também oferece outras classes, como `LocalDateTime`, `ZonedDateTime` e `OffsetDateTime`.
+
+## Veja Também
+
+- [Documentação oficial da classe LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial sobre a biblioteca java.time](https://www.baeldung.com/kotlin/java-time-dates)
+- [Outros recursos de Kotlin](https://kotlinlang.org/docs/reference/)

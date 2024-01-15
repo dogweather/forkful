@@ -1,6 +1,7 @@
 ---
-title:                "Java: Analiza html"
-simple_title:         "Analiza html"
+title:                "Analiza składni HTML"
+html_title:           "Java: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,34 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą Javy, na pewno słyszałeś o parsowaniu HTML. Ale czy wiesz dlaczego warto się za to zabrać? Parsowanie HTML jest niezbędnym narzędziem dla tworzenia różnego rodzaju aplikacji internetowych, w szczególności tych opartych na web scrapingu. Dzięki parsowaniu HTML możesz w prosty sposób pobierać informacje z witryn internetowych i wykorzystywać je w swoim kodzie.
+Masz już dość ręcznego przeglądania i kopiowania danych z stron internetowych? Chcesz poznać sposoby, jak automatycznie wyodrębnić potrzebne informacje z kodu HTML? Właśnie dlatego warto poznać parsing HTML w języku Java!
 
 ## Jak to zrobić
 
-Aby wykonać parsowanie HTML za pomocą Javy, musimy najpierw skorzystać z narzędzia o nazwie JSoup. Jest to niesamowicie użyteczna biblioteka, która pozwala nam przetwarzać i pobierać dane z dokumentów HTML. W poniższym przykładzie użyjemy JSoup do pobrania tytułu artykułu z wybranej strony internetowej.
-
 ```Java
-import org.jsoup.Jsoup; 
-import org.jsoup.nodes.Document;
+//importowanie bibliotek
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Scanner;
 
-Document doc = Jsoup.connect("https://example.com").get();
+public class HTMLParser {
 
-String title = doc.title();
-System.out.println(title); // Wypisze "Przykładowa strona internetowa"
+    public static void main(String[] args) {
+        try {
+            //pobranie kodu źródłowego strony
+            URL url = new URL("https://example.com/");
+            InputStream is = url.openStream();
+            Scanner scanner = new Scanner(is);
+
+            //przeszukiwanie kodu linia po linii
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                //wyszukiwanie wybranego tagu HTML
+                if (line.contains("<h1>")) {
+                    //wyodrębnianie tekstu znajdującego się pomiędzy tagami
+                    String result = line.substring(line.indexOf("<h1>") + 4, line.indexOf("</h1>"));
+                    System.out.println(result);
+                }
+            }
+            scanner.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-W powyższym kodzie najpierw musimy zaimportować bibliotekę JSoup, a następnie utworzyć obiekt Document dla wybranej strony internetowej. Następnie możemy wykorzystać metodę `title()` do pobrania tytułu strony i wyświetlić go na ekranie.
+Przykładowy output: 
+```
+Hello World!
+```
 
 ## Głębszy zanurzenie
 
-Parsowanie HTML może być jednak bardziej złożonym procesem niż wskazuje na to prosty przykład powyżej. Często musimy wykonać wiele kroków, aby uzyskać żądane dane. Na szczęście JSoup pozwala na użycie selektorów CSS do wybierania odpowiednich elementów HTML, co ułatwia nam zadanie. Możemy również korzystać z metod `getElementsByClass()` lub `getElementsByTag()` do pobierania elementów po klasie lub tagu.
-
-Ponadto, jeśli zdecydujemy się na bardziej zaawansowane parsowanie, możemy także wykorzystać reguły XPath. Dzięki temu będziemy mogli precyzyjniej określić, które elementy chcemy pobrać z dokumentu HTML.
+Parsing HTML polega na analizowaniu kodu HTML i wyodrębnianiu z niego potrzebnych informacji. W języku Java możemy to osiągnąć za pomocą różnych bibliotek, takich jak JSoup, HTML Parser czy TagSoup. Warto zapoznać się z ich różnicami i możliwościami, a także nauczyć się wykorzystywać XPath do precyzyjnego wyszukiwania węzłów w dokumencie HTML.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o parsowaniu HTML z wykorzystaniem Javy, polecamy zapoznanie się z poniższymi artykułami:
-
-- [Tutoriale o JSoup](https://jsoup.org/cookbook/)
-- [Oficjalna dokumentacja JSoup](https://jsoup.org/apidocs/)
-- [Przykładowe projekty wykorzystujące parsowanie HTML](https://github.com/topics/jsoup) (Github)
+- [JSoup - biblioteka do parsowania HTML w języku Java](https://jsoup.org/)
+- [HTML Parser - darmowa biblioteka do wyodrębniania danych z kodu HTML](http://htmlparser.sourceforge.net/)
+- [TagSoup - narzędzie umożliwiające parsowanie niepoprawnych dokumentów HTML](https://vrici.lojban.org/~cowan/XML/tagsoup/)

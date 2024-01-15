@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: פירוק html"
+title:                "פירוק html"
+html_title:           "TypeScript: פירוק html"
 simple_title:         "פירוק html"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## Why (למה)
 
-מינוח ה-HTML הוא היסטורי ובעייתי, וכך נראה כי הוא נוצר על פני שנים רבות. בשנים האחרונות, יצרנו מייצגים במכביר שמיוחדים מפות המכביר, כדי להשתמש בהתאמות טבלתיות.
+Parsing HTML is an essential task for web developers who want to access, manipulate, or extract specific data from a webpage. It allows for more dynamic and interactive websites, enabling the creation of powerful web applications.
 
-## איך לעשות זאת
+## How To (כיצד לעשות זאת)
 
-### התייחסות לקוד הנתונים מ-HTML
-לקריאת מסמך הכולל תוכנית הנתונים המופשט של HTML יש להשתמש בקוד הנתונים או בפעולות העומדות בפניו או בלשונית המתאימה לכל מטרה. לדוגמה, כאשר משתמשים בפעולה של TypeScript:
+Parsing HTML in TypeScript is made easy with the use of the popular library, Cheerio. First, install Cheerio using npm:
 
 ```TypeScript
-const html = `<div>תוכן ממבחר HTML</div>`;
+npm install cheerio
 ```
 
-ולאחר מכן ניתן לעבוד עם מצברים שיאפשרו לנו להשתמש בקוראים מובנים כדי לקרוא דברים שהתחברו לתוכן המשתמש ככדי.
+Next, import Cheerio in your TypeScript file:
 
-## בחינה מעמיקה
+```TypeScript
+import * as cheerio from 'cheerio';
+```
 
-כדי לטפח מוות ומצפוני הפתרונות לעיין גם בכלים שנבחרים בכל פעם, יכולים להיות מצוינים לשמור על יחידי השירב, בעיית האיגוד מכאן להיות בדיוק הטפל הנילאיים הנמצאים בנתוני ה-[HTML] (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button innerHTML). יתר על כן, אם אתה חושב שיגש ממציא דרך מדעיף לטפל בנתוני הטפיל הנילאיים לנתוני ה-HTML שלך.
+Then, use the `load()` method to load your HTML string and access the DOM elements using CSS selectors:
 
-## ראה גם
+```TypeScript
+const $ = cheerio.load('<h1>Hello World</h1>');
+const headline = $('h1').text();
+```
 
-- [כלי הסיוע לעבוד עם המכביר] (https://github.com/JQuery/HTML-Elements)
-- [ ["עולים ממכסי המכס של MSHTML] (https://docs.microsoft.com/en-us/scripting/javascript/precess-and-metcalf-scripting-overview-mshtml)
-- [הטפוסים של Windows מנועי] (https://docs.microsoft.com/en-us/windows/desktop/mshtml)
+The `headline` variable will now contain the text "Hello World". You can also use Cheerio to manipulate the HTML and extract specific data from multiple elements, making it a powerful tool for web scraping.
+
+## Deep Dive (שקיפון לעומק)
+
+Under the hood, Cheerio uses the popular jQuery library and provides similar syntax and functions. This makes it easy for developers familiar with jQuery to use Cheerio for HTML parsing in TypeScript.
+
+Cheerio also has an extensive documentation with various utility methods for handling HTML, such as `html()`, `attr()`, and `find()`. It also supports different output formats, including XML and JSON.
+
+Another advantage of using Cheerio is its speed and lightweight nature, making it a popular choice for projects that require efficient HTML parsing.
+
+## See Also (ראה גם)
+
+- Cheerio documentation: https://cheerio.js.org/
+- TypeScript documentation: https://www.typescriptlang.org/
+- jQuery documentation: https://api.jquery.com/

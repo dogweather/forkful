@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Verknüpfung von Zeichenketten"
-simple_title:         "Verknüpfung von Zeichenketten"
+title:                "Verbinden von Zeichenfolgen"
+html_title:           "Gleam: Verbinden von Zeichenfolgen"
+simple_title:         "Verbinden von Zeichenfolgen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,40 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Ein wichtiger Teil des Programmierens ist die Manipulation von Text. Eine entscheidende Fähigkeit in dieser Manipulation ist das Verbinden von Strings, auch als "Concatenation" bezeichnet. Aber warum ist es überhaupt wichtig, das zu tun?
 
-Wenn Sie beispielsweise eine Webanwendung schreiben, müssen Sie möglicherweise verschiedene Textfetzen zu einer vollständigen Nachricht zusammenfügen. Oder Sie möchten eine personalisierte E-Mail an Ihre Nutzer senden, in der bestimmte Textteile mit individuellen Informationen kombiniert werden. In all diesen Situationen ist das Verbinden von Strings unerlässlich.
+Die Verkettung von Strings ist eine häufige Aufgabe bei der Entwicklung von Software und kann dabei helfen, Texte dynamisch zu erstellen und zu formatieren. Es ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte.
 
-In dieser kurzen "How To"-Anleitung werde ich Ihnen zeigen, wie Sie in Gleam Strings miteinander verbinden können.
+## Wie es funktioniert
 
-## Wie geht das?
-Um Strings in Gleam zu verbinden, können Sie das `<>`-Operator verwenden. Dieser Operator akzeptiert zwei Strings als Parameter und gibt einen neuen String zurück, der beide miteinander verbunden hat.
+Die Verkettung von Strings bezieht sich auf die Zusammenführung von mehreren Textelementen zu einem einzigen String. In Gleam wird dies mit dem "+" Operator erreicht, der zwei Strings miteinander verbindet.
 
-Ein Beispiel dazu in Gleam:
-
-```
-Gleam> name = "Max"
-Gleam> greeting = "Hallo "
-Gleam> message = greeting <> name
-Gleam> IO.puts(message)
-"Hello Max"
+```Gleam
+let name = "Max"
+let greeting = "Hallo " + name
 ```
 
-Hier haben wir den Operator verwendet, um `greeting` und `name` miteinander zu verbinden und den neuen String `message` zu erstellen. Wenn wir `message` ausgeben, erhalten wir die Nachricht "Hallo Max".
+Dieses Beispiel würde "Hallo Max" als Ergebnis ausgeben. Es ist auch möglich, mehrere Strings nacheinander zu verketten, um längere Texte zu erstellen.
 
-Sie können auch mehr als zwei Strings miteinander verbinden, indem Sie den Operator mehrmals hintereinander verwenden oder die `concat`-Funktion verwenden.
+```Gleam
+let sentence = "Mein Name ist " + name + " und ich bin " + age + " Jahre alt."
+```
 
-## Deep Dive
-Um noch tiefer in das Thema der String-Verknüpfung einzutauchen, ist es wichtig zu verstehen, dass Strings in Gleam unveränderliche Werte sind. Das bedeutet, dass wenn Sie Strings miteinander verbinden, tatsächlich neue Strings erstellt werden. Die ursprünglichen Strings bleiben unberührt.
+Dies würde "Mein Name ist Max und ich bin 30 Jahre alt." als Ergebnis liefern, wenn die Variable "age" den Wert "30" hat.
 
-Außerdem sollten Sie beachten, dass der `<>`-Operator nur Strings miteinander verbinden kann. Wenn Sie andere Datentypen, wie z.B. Zahlen oder Booleans, kombinieren möchten, müssen Sie diese vorher in Strings umwandeln.
+## Tiefes Eintauchen
 
-In komplexeren Anwendungen kann es auch sinnvoll sein, eine spezielle Funktion für die String-Verknüpfung zu erstellen, um die Wartbarkeit des Codes zu verbessern.
+Bei der Verkettung von Strings ist es wichtig, auf die Reihenfolge der einzelnen Elemente zu achten. Wenn zum Beispiel eine Zahl mit einem String verknüpft wird, muss sie zuerst in einen String umgewandelt werden, da Gleam keine implizite Konvertierung durchführt.
+
+```Gleam
+let count = 5
+let message = "Die Anzahl der Elemente beträgt: " + String.from_int(count)
+// Ergebnis: "Die Anzahl der Elemente beträgt: 5"
+```
+
+Es ist auch möglich, Variablen oder Funktionen innerhalb der Verkettung zu verwenden.
+
+```Gleam
+let number = 10
+let formatted = "Das doppelte von " + String.from_int(number) + " ist " + String.from_int(double(number))
+
+// Verwendung der 'double' Funktion
+fn double(n: Int) {
+    n * 2
+}
+```
+
+Ein weiterer wichtiger Aspekt ist die Verwendung von Leerzeichen. Beim Verketten von Strings werden die einzelnen Elemente direkt aneinander gereiht, daher ist es wichtig, Leerzeichen innerhalb der Textelemente oder manuell einzufügen, um die gewünschte Formatierung zu erhalten.
 
 ## Siehe auch
-- Die offizielle Gleam-Dokumentation zu Strings: https://gleam.run/articles/strings
-- Weitere Beispiele für String-Verknüpfung in Gleam: https://gist.github.com/mrvisser/4ed9de0af1950fde890351ec30f4fde0
 
-*Möchten Sie mehr über die Funktionalität von Gleam erfahren? Schauen Sie sich doch auch unsere anderen Blog-Einträge an!*
-
-*Möchten Sie mit anderen Gleam-Enthusiasten in Kontakt treten? Werden Sie Teil der Gleam-Community auf Discord: https://discord.com/invite/gleam*
+- Dokumentation zu Strings in Gleam: https://gleam.run/book/tour/strings.html
+- Gutes Beispielprojekt, das Strings verwendet: https://github.com/gleam-lang/example-projects/tree/master/echo

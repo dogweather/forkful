@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Reading command line arguments"
+title:                "Reading command line arguments"
+html_title:           "Ruby recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,74 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Reading command line arguments may seem like a small aspect of Ruby programming, but it can greatly enhance the functionality and versatility of your code. Command line arguments allow users to provide input directly from the terminal, making your programs more user-friendly and customizable. 
+If you're a Ruby programmer, chances are, you've encountered a situation where you needed to interact with a user through the command line. Reading command line arguments is essential for building interactive command line tools or for handling user inputs in your scripts. In this article, we'll explore how to read command line arguments in Ruby and how it can make your code more dynamic and user-friendly.
 
 ## How To
 
-To read command line arguments in Ruby, we can use the "ARGV" variable, which contains an array of strings representing the arguments passed in from the command line. Let's take a look at an example:
+In Ruby, reading command line arguments is made easy with the `ARGV` array. This array contains all the arguments passed to your script when it is executed. Let's take a look at a simple example:
 
 ```Ruby
-# Running this program in the terminal with the following command:
-# ruby read_arguments.rb Hello World
-
-ARGV.each do |arg|
-  puts "Argument passed in: " + arg
-end
+# demo.rb
+puts "Hello, #{ARGV[0]}!"
 ```
 
-In this example, we have used the "each" method to iterate through the "ARGV" array and print out each argument that was passed in. When we run this program in the terminal with the command "ruby read_arguments.rb Hello World", we will get the following output:
+When we execute this script with `ruby demo.rb world`, the output will be `Hello, world!`. Here, `ARGV[0]` refers to the first argument passed in, which in this case is "world". 
 
-```Console
-Argument passed in: Hello
-Argument passed in: World
-```
+You can also access multiple arguments by using their respective indexes in the `ARGV` array. For example, if we run `ruby demo.rb hello world`, the output will be `Hello, hello world!`, since `ARGV[0]` refers to the first argument "hello" and `ARGV[1]` refers to the second argument "world". 
 
-We can also access individual arguments by their index in the "ARGV" array. For example, if we wanted to access the first argument "Hello", we would use "ARGV[0]". Keep in mind that the first argument is always located at index 0, not 1.
+Another useful feature is the ability to pass in arguments with flags using the `-` symbol. These arguments can be accessed with the `ARGV.shift` method. For example, if we run `ruby demo.rb -greeting hello`, the output will be `Hello, hello!` since `ARGV.shift` will return the first argument after the flag "-greeting".
 
 ## Deep Dive
 
-In addition to reading command line arguments with the "ARGV" variable, we can also use the "OptionParser" class to handle more complex arguments. This allows us to define options and flags with specific behaviors, making our programs even more dynamic. Let's see how this works:
+You may have noticed that `ARGV` is an array, which means it has all the array methods available to use. This makes it easy to manipulate the arguments passed in to fit your needs. You can also explicitly convert the arguments to different data types using methods like `to_i` or `to_f` for integers and floats, respectively.
 
-```Ruby
-require 'optparse'
-
-options = {}
-
-OptionParser.new do |opts|
-  opts.banner = "Usage: read_arguments.rb [options]"
-
-  opts.on("-s", "--string STRING", "Specify a string") do |string|
-    options[:string] = string
-  end
-
-  opts.on("-n", "--number NUMBER", Integer, "Specify a number") do |number|
-    options[:number] = number
-  end
-
-  opts.on("-f", "--flag", "Specify a flag") do |flag|
-    options[:flag] = flag
-  end
-end.parse!
-
-puts "String: " + options[:string] if options[:string]
-puts "Number: " + options[:number].to_s if options[:number]
-puts "Flag: " + options[:flag].to_s if options[:flag]
-```
-
-In this example, we have defined three options: a string, a number, and a flag. We can specify these options when running our program in the terminal, for example, using the command "ruby read_arguments.rb -s Hello -n 123 -f". This would output:
-
-```Console
-String: Hello
-Number: 123
-Flag: true
-```
-
-We can also add descriptions for each option, making our program more user-friendly and providing guidance for users who may not be familiar with the program. This is just one example of how we can take a deeper dive into reading command line arguments with Ruby. 
+It is also important to note that the `ARGV` array is not limited to just strings. It can also contain any valid data type, including arrays and hashes. This can be useful for passing in complex data structures as command line arguments.
 
 ## See Also
 
-For more information on reading command line arguments in Ruby and using the "OptionParser" class, check out these helpful resources:
-
-- [Ruby-Doc: ARGV](https://ruby-doc.org/core-3.0.1/ARGF.html)
-- [Ruby-Doc: OptionParser](https://ruby-doc.org/stdlib-3.0.1/libdoc/optparse/rdoc/OptionParser.html)
-- [Tutorial: Reading command line arguments in Ruby](https://www.tutorialspoint.com/ruby/ruby_command_line.htm)
+- [Ruby ARGV Documentation](https://ruby-doc.org/core-2.7.1/ARGV.html)
+- [Command Line Arguments in Ruby - Medium Article](https://medium.com/rubycademy/reading-command-line-arguments-in-ruby-d662d7b2c85b)
+- [Ruby ARGV Tutorial - YouTube Video](https://www.youtube.com/watch?v=0us5PINRUZM)

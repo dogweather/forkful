@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Elm recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,78 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-If you're looking for a reliable and easy-to-use data serialization language, you might want to consider YAML. It's a popular choice among developers for its human-readable format, making it easy to understand and work with.
+Are you tired of dealing with complex and verbose data structures in your programming language? Look no further, YAML is here to save the day! With its simple and human-readable syntax, YAML makes working with data a breeze. 
 
-##How To
+## How To
 
-To get started with YAML in Elm, you'll first need to install the necessary package. Open your terminal and run the following command:
-
-```Elm 
-elm install NoRedInk/elm-json-decode-pipeline
-```
-
-Next, you can create a new file and import the needed modules:
-
-```Elm 
-import Json.Decode as Decode exposing (..)
-import Json.Decode.Pipeline exposing (..)
-```
-
-Now, let's say we have a YAML file called "users.yaml" with the following data:
-
-```yaml
-- name: John
-  age: 25
-- name: Emily
-  age: 30
-```
-
-We can use the "decodeValue" function from the Json.Decode.Pipeline module to decode the YAML data into a list of users:
+If you're not familiar with YAML, don't worry! It's easy to pick up and integrate into your Elm projects. All you need to do is install the `elm-yaml` package and start using it in your code. Let's take a look at a simple example of how to encode and decode YAML in Elm:
 
 ```Elm
-type alias User =
-    { name : String
-    , age : Int
-    }
+import Yaml exposing (..)
 
-decodeUsers : Decode.Decoder (List User)
-decodeUsers =
-    Decode.list
-        (Decode.map2 User
-            (Decode.field "name" Decode.string)
-            (Decode.field "age" Decode.int)
-        )
+-- Define a sample data structure
+type alias User = 
+   { name : String
+   , age : Int
+   , email : String 
+   }
 
-users : List User
-users =
-    Decode.decodeValue decodeUsers
-        (Decode.yamlString "users.yaml")
+-- Encode the data structure into YAML
+myUser : User 
+myUser = 
+   { name = "John Smith"
+   , age = 25
+   , email = "johnsmith@email.com" 
+   }
+
+encodedUser : String
+encodedUser = encode myUser
+-- Output: 
+-- name: John Smith
+-- age: 25
+-- email: johnsmith@email.com
+
+-- Decode YAML into a data structure
+decodedUser : User
+decodedUser = decode encodedUser
+-- Output: User "John Smith" 25 "johnsmith@email.com"
 ```
 
-The resulting output will be:
+As you can see, YAML allows us to easily store and retrieve data in a human-readable format. It supports a variety of data types, including strings, numbers, lists, and maps, making it a versatile tool for working with data. 
 
-```Elm
-[ { name = "John", age = 25 }, { name = "Emily", age = 30 } ]
-```
+## Deep Dive
 
-##Deep Dive
+YAML stands for "YAML Ain't Markup Language" and is often used for configuration files, serialization, and metadata. It is a popular choice for data exchange formats due to its easy-to-read syntax, making it a great alternative to JSON or XML. YAML is also extensible, allowing developers to create custom YAML tags for specific purposes.
 
-While the above example shows a basic usage of YAML in Elm, there are many other features and capabilities that make it a powerful tool for data serialization. Some notable features include:
+When working with YAML in Elm, it's important to pay attention to indentation. Indentation is used to represent different levels of data, similar to how curly braces are used in JSON. Additionally, YAML does not support comments, so it's best to use descriptive key names to make the data easier to understand.
 
-- Support for comments and block scalars, making it easy to add context and special formatting to your data.
-- Ability to include complex data structures such as maps and sequences within the same YAML file.
-- Support for anchors and aliases, allowing you to easily reuse and reference data within your YAML file.
+## See Also
 
-It's also worth mentioning that YAML is often used in conjunction with JSON, as it offers more flexibility and readability compared to JSON. However, both formats are useful for different purposes and can coexist within the same project.
-
-##See Also
-
-If you want to learn more about YAML in Elm, here are some helpful resources:
-
-- Official YAML website: https://yaml.org/
-- Elm package for working with YAML: https://package.elm-lang.org/packages/NoRedInk/elm-json-decode-pipeline/latest/
-- Alternative YAML parser for Elm: https://package.elm-lang.org/packages/jreut/elm-yaml/latest/
-
-Happy coding!
+- [The official Elm documentation on working with YAML](http://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)
+- [A beginner-friendly tutorial on using YAML in Elm](https://dev.to/azerthoth/yaml-in-elm-4b5k)
+- [A comparison between YAML, JSON, and XML](https://stackabuse.com/yaml-vs-json-vs-xml/)

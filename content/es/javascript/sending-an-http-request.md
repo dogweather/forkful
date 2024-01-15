@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Envío de una solicitud http"
-simple_title:         "Envío de una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Javascript: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,44 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué enviar una petición HTTP
+## Por qué
 
-Enviar una petición HTTP es una parte fundamental del desarrollo web. Nos permite comunicarnos con servidores externos y obtener información que puede ser usada para mostrar contenido dinámico en nuestras aplicaciones. También es esencial para la creación de aplicaciones web que interactúan con bases de datos o servicios externos. Si quieres llevar tus habilidades de programación al siguiente nivel, aprender a enviar una petición HTTP es clave.
+Si estás desarrollando una aplicación web o un servicio en línea, es posible que en algún momento necesites enviar una solicitud HTTP a otro servidor para obtener datos o realizar una acción específica. Esto es especialmente común en aplicaciones que interactúan con API de terceros. En lugar de tener que lidiar con protocolos de red complicados y conexiones de sockets, Javascript proporciona una manera sencilla de enviar y recibir datos a través de solicitudes HTTP.
 
 ## Cómo hacerlo
 
-En Javascript, podemos enviar una petición HTTP utilizando la función `fetch`. Esta función toma como argumento la URL del recurso al que queremos acceder y devuelve una promesa con la respuesta del servidor. Veamos un ejemplo:
+Para enviar una solicitud HTTP en Javascript, puedes utilizar la función `fetch()` o el objeto `XMLHttpRequest`. Ambos métodos son ampliamente utilizados y tienen sus propias ventajas y desventajas.
+
+### Usando `fetch()`
+
+La función `fetch()` es relativamente nueva y ofrece una sintaxis más simple y moderna para enviar solicitudes HTTP. Aquí hay un ejemplo de cómo enviar una solicitud GET a una API y recibir una respuesta en formato JSON:
 
 ```Javascript
-fetch('https://jsonplaceholder.typicode.com/posts/1')
+fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
   .then(data => console.log(data));
 ```
 
-En este código, estamos enviando una petición a la API de JSON placeholder para obtener información sobre el post con el ID 1. Luego, utilizamos el método `json()` para convertir la respuesta en un objeto JSON legible. Finalmente, imprimimos el resultado en la consola.
+En este ejemplo, utilizamos `then()` para manejar la respuesta de la solicitud. Primero, convertimos la respuesta a formato JSON y luego imprimimos los datos en la consola. También puedes especificar el tipo de solicitud y agregar parámetros en el objeto `fetch()`.
 
-La salida de este código sería:
+### Usando `XMLHttpRequest`
+
+El objeto `XMLHttpRequest` ha existido desde los primeros días de Javascript y sigue siendo ampliamente utilizado. Aquí hay un ejemplo de cómo enviar la misma solicitud GET anterior utilizando este objeto:
 
 ```Javascript
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit " +
-          "molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-}
+let request = new XMLHttpRequest();
+request.open('GET', 'https://jsonplaceholder.typicode.com/users');
+request.responseType = 'json';
+
+request.onload = function() {
+  console.log(request.response);
+};
+
+request.send();
 ```
 
-Este es solo un ejemplo sencillo de cómo enviar una petición HTTP en Javascript, pero hay muchas formas de hacerlo y diferentes opciones de configuración que pueden ser utilizadas. Asegúrate de investigar y probar diferentes métodos para encontrar el que mejor se adapte a tus necesidades.
+En este ejemplo, establecemos la respuesta en formato JSON y manejamos la respuesta en la función `onload()`.
 
 ## Profundizando
 
-Para enviar una petición HTTP, debemos tener en cuenta diferentes aspectos de la misma, como el método que estamos utilizando (GET, POST, PUT, DELETE), los encabezados o headers que enviamos y recibimos, y el tipo de datos que queremos enviar y recibir. Además, también es importante manejar los errores y posibles respuestas no exitosas del servidor.
+Si quieres profundizar más en el tema de enviar solicitudes HTTP en Javascript, es importante que entiendas los distintos tipos de metodologías de solicitud, como GET, POST, PUT y DELETE, y cómo usar parámetros en tus solicitudes. También deberías investigar sobre cómo manejar los errores y las respuestas de error en tus solicitudes.
 
-Una herramienta muy útil para probar y entender mejor las peticiones HTTP es el uso de una plataforma como Postman. Con esta herramienta, podemos enviar diferentes tipos de peticiones y experimentar con distintas configuraciones para entender mejor cómo funciona el proceso de envío y recepción de datos entre nuestro código y el servidor.
+## Ver También
 
-## Ver también
+Si quieres aprender más sobre el uso de HTTP en Javascript, aquí hay algunos enlaces útiles:
 
-- [Guía de introducción a fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
-- [Documentación de Postman](https://learning.postman.com/docs/getting-started/introduction/)
-- [Libro "Eloquent JavaScript" (capítulo sobre peticiones HTTP)](https://eloquentjavascript.net/18_http.html)
+- [Documentación oficial de fetch()](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
+- [Documentación oficial de XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest)
+- [Artículo sobre cómo utilizar fetch() y XMLHttpRequest juntos](https://www.javascripttutorial.net/javascript-fetch-api/)
+- [Tutorial de Codecademy sobre solicitudes HTTP en Javascript](https://www.codecademy.com/learn/introduction-to-javascript)

@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Python recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Python"
 category:             "Python"
@@ -9,61 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Python is a popular programming language because of its versatility and ease of use. One of the many great features of Python is its ability to work with different file formats, including YAML. This makes it a valuable tool for developers and data scientists who need to manipulate and analyze YAML files.
+## Why
 
-## How To 
-Working with YAML in Python is simple and straightforward. Let's take a look at some coding examples and sample output to see just how easy it is.
+YAML is a lightweight and human-readable data format that is commonly used in programming for data serialization and configuration. It is often preferred over other formats, such as JSON, due to its simplicity and ease of use.
 
-Firstly, we need to import the necessary library, PyYAML, which can be done with the following code: 
+## How To
 
-```Python
+To work with YAML in Python, we first need to install the `pyyaml` package using pip:
+
+```
+pip install pyyaml
+```
+
+Once the package is installed, we can import it into our Python code:
+
+```
 import yaml
 ```
 
-Next, we can load a YAML file using the `load()` method. Let's say we have a YAML file named `pets.yaml`, which contains a list of different pets and their attributes. We can load this file and store its contents in a variable called `pet_list` by using the following code: 
+To read a YAML file, we can use the `load()` function:
 
-```Python
-with open('pets.yaml') as f:
-    pet_list = yaml.load(f, Loader=yaml.FullLoader)
+```
+with open('data.yml') as f:
+    data = yaml.load(f, Loader=yaml.FullLoader)
 ```
 
-Now, we can easily access and work with the data in the `pet_list` variable. For example, if we want to print all the names of the pets in the list, we can do so with a for loop as shown below:
+This will read the data from the YAML file and store it in the variable `data` as a dictionary. We can then access the data by using standard dictionary notation, for example:
 
-```Python
-for pet in pet_list:
-    print(pet['name'])
+```
+print(data['name']) # prints the value of the 'name' key
 ```
 
-This will give us the following output:
+To write data to a YAML file, we can use the `dump()` function:
 
-```bash
-Fluffy
-Buddy
-Spot
-Luna
+```
+my_data = {'foo': 'bar', 'baz': [1, 2, 3]}
+with open('output.yml', 'w') as f:
+    yaml.dump(my_data, f)
 ```
 
-We can also modify the data in the YAML file and save it using the `dump()` method. For example, if we want to add a new pet to the list, we can do so with the following code:
+This will create a new YAML file called `output.yml` and write the data from the `my_data` dictionary to it in YAML format.
 
-```Python
-pet_list.append({'name': 'Max', 'age': 3, 'type': 'dog'})
-with open('pets.yaml', 'w') as f:
-    yaml.dump(pet_list, f)
-```
+## Deep Dive
 
-This will add the new pet to the `pets.yaml` file and save the changes.
+YAML stands for "YAML Ain't Markup Language" and is designed to be a human-friendly data serialization format. It uses indentation and whitespace to represent data structures, making it easy to read and write for humans.
 
-## Deep Dive 
-YAML, which stands for "YAML Ain't Markup Language", is a human-readable data serialization language. It is commonly used for configuration files, but it can also be used for data storage and exchange.
+YAML supports a variety of data types, including strings, lists, dictionaries, and even custom objects. It also allows for comments and references, making it flexible for a variety of use cases.
 
-YAML files follow a hierarchical structure and use indentation to define the relationships between data. It uses key-value pairs and supports various data types such as strings, numbers, lists, and dictionaries.
+One important thing to note when working with YAML in Python is the use of the `yaml.SafeLoader` or `yaml.FullLoader` to prevent arbitrary code execution. By using these safer loaders, we can ensure that the data in our YAML file is not accidentally executed as code.
 
-In Python, the PyYAML library provides functions for loading and dumping YAML files. It also offers different loaders for more flexible and secure handling of YAML files.
+## See Also
 
-A unique feature of YAML is its ability to use anchors and aliases, which allow for the reuse of data by referencing it in other parts of the file. This makes YAML files more concise and easier to maintain.
-
-## See Also 
-- Official PyYAML documentation: https://pyyaml.org/wiki/PyYAMLDocumentation
-- YAML official website: https://yaml.org/
-- YAML tutorial for beginners: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
+- [Official PyYAML Documentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- [Real Python Guide to YAML in Python](https://realpython.com/python-yaml/)
+- [Python YAML Tutorial from TutorialsPoint](https://www.tutorialspoint.com/python/yaml_processing_in_python.htm)

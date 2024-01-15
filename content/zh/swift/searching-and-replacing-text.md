@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 搜索和替换文本"
+title:                "搜索和替换文本"
+html_title:           "Swift: 搜索和替换文本"
 simple_title:         "搜索和替换文本"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,69 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-文本搜索和替换是程序员经常遇到的任务，这可以帮助他们快速地更改代码中的错误或重复的内容。使用Swift编程语言，你可以轻松地进行文本搜索和替换，让你的工作更有效率。
+在编程过程中，我们经常需要对大量的文本进行修改。搜索和替换文字是一个非常有效的方法，可以帮助我们节省大量的时间和精力。
 
-## 如何做
-
-首先，让我们来看一个简单的例子，我们想把一个字符串中的所有"apple"替换为"orange"。我们可以使用Swift的`replacingOccurrences(of:with)`方法来实现。
+## 如何搜索和替换文字
 
 ```Swift
-let str = "I love apples, apples are my favorite fruit."
-let newStr = str.replacingOccurrences(of: "apple", with: "orange")
-print(newStr)
+// 定义一个字符串变量
+var sentence = "今天是周一，明天是周二。"
+
+// 使用replaceOccurrences方法，将“周一”替换为“周日”
+sentence.replaceOccurrences(of: "周一", with: "周日")
+
+// 输出结果为：“今天是周日，明天是周二。”
 ```
 
-运行这段代码后，输出将会是：
-
-```
-I love oranges, oranges are my favorite fruit.
-```
-
-除了替换全部的匹配字符串，我们还可以指定替换的次数，例如只替换前两个匹配的字符串：
+我们可以看到，使用replaceOccurrences方法可以很方便地替换文本中的特定内容。除了使用具体的文字，也可以使用正则表达式来进行替换。
 
 ```Swift
-let str = "apple, apple, apple, apple"
-let newStr = str.replacingOccurrences(of: "apple", with: "orange", options: .literal, range: nil)
-print(newStr)
+// 定义一个字符串变量
+var sentence = "李明的电话号码是：13888888888。"
+
+// 使用正则表达式，将电话号码替换为"***********"，保护隐私
+let regex = try NSRegularExpression(pattern: "\\d{11}", options: [])
+let modifiedString = regex.stringByReplacingMatches(in: sentence, options: [], range: NSRange(0..<sentence.utf16.count), withTemplate: "***********")
+
+// 输出结果为：“李明的电话号码是：***********。”
 ```
 
-输出将会是：
+## 深入了解搜索和替换文字
 
-```
-orange, orange, apple, apple
-```
+除了replaceOccurrences方法，Swift还提供了其他方法来搜索和替换文字。其中，range方法可以帮助我们精确定位要替换的文字。另外，利用replaceSubrange方法也可以实现相同的效果。
 
-除了常规的字符串替换，我们也可以使用正则表达式来进行替换。例如，我们想把所有以数字开头的字符串替换为"#"：
-
-```Swift
-let str = "1 abc, 2 def, 3 ghi"
-let regex = try NSRegularExpression(pattern: "^[0-9]", options: .caseInsensitive)
-let newStr = regex.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.utf16.count), withTemplate: "#")
-print(newStr)
-```
-
-输出将会是：
-
-```
-# abc, # def, # ghi
-```
-
-## 深入了解
-
-文本搜索和替换的方法有很多，Swift也提供了很多方便的API来实现。除了`replacingOccurrences(of:with)`方法，Swift还提供了`range(of:options:)`方法来检查字符串是否包含某个特定的值，并返回其在字符串中的位置。这些方法都在`String`类中定义。
-
-除了替换字符串，我们还可以使用Swift的`replaceAll()`方法来替换整个文本文件中的内容。这可以在处理大量文本数据时提高效率。
+另外，正则表达式也是非常强大的工具，它可以帮助我们快速地搜索和替换文本中的特定内容。如果您想更深入地了解正则表达式的使用，请参考官方文档。
 
 ## 参考链接
 
-- [Swift官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID296)
-- [Swift字符串API文档](https://developer.apple.com/documentation/swift/string)
-- [NSRegularExpression文档](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [正则表达式使用指南](https://www.jianshu.com/p/113f59a9c9fe)
+- [iOS开发常用正则表达式汇总](http://www.cocoachina.com/ios/20180109/21717.html)
 
 ## 参见
 
-英文原文链接：[How to Search and Replace Text with Swift](https://www.example.com)
-
-## 请注意
-
-使用Swift进行文本搜索和替换，可以大大提高你的编程效率。但是请注意，在替换字符串时，一定要小心检查替换的内容，以免意外覆盖了重要的代码内容。祝你编程愉快！
+- [Swift文本处理指南](https://blog.csdn.net/lingfengSU/article/details/54271159)
+- [Swift高阶字符串操作技巧](https://blog.csdn.net/fc_lemon3/article/details/53347880)
+- [Swift字符串常用方法总结](https://blog.csdn.net/qq_36408030/article/details/78665335)

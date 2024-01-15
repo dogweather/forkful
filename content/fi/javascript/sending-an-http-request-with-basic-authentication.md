@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Perusso/Ohjelmointi: Lähetä http-pyyntö perusvarmennuksella"
-simple_title:         "Perusso/Ohjelmointi: Lähetä http-pyyntö perusvarmennuksella"
+title:                "Lähettäminen http-pyynnöstä perusautentikoinnilla"
+html_title:           "Javascript: Lähettäminen http-pyynnöstä perusautentikoinnilla"
+simple_title:         "Lähettäminen http-pyynnöstä perusautentikoinnilla"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,33 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeä taito web-kehityksessä, koska se mahdollistaa turvallisen tavan kommunikoida palvelimen ja käyttäjien välillä.
 
-## Miten
+Javascriptia käytetään usein verkkosivujen kehittämisessä ja yhtenä tärkeänä osana on kommunikaatio eri palvelimien välillä. HTTP-pyyntöjen lähettäminen on yksi tapa lähettää ja vastaanottaa tietoja palvelimelta. Basic Authenticationin käyttö yhdessä HTTP-pyyntöjen kanssa mahdollistaa turvallisen tiedonvälityksen palvelimien välillä.
+
+## Kuinka
+
 ```Javascript
-// Luodaan uusi XMLHTTPRequest-olio
-var xhr = new XMLHttpRequest();
-// Määritetään pyynnön tyyppi ja URL
-xhr.open('GET', 'https://example.com/api', true);
-// Asetetaan otsikko käyttäjätunnukselle ja salasanalle HTTP-otsakkeessa
-xhr.setRequestHeader('Authorization', 'Basic ' + btoa('käyttäjätunnus:salasana'));
+// Luodaan uusi XMLHttpRequest-olio
+var xhttp = new XMLHttpRequest();
+
+// Määritellään HTTP-pyynnön tyyppi ja osoite
+xhttp.open("GET", "https://esimerkkisivu.com/api/tiedot", true);
+
+// Lisätään käyttäjätunnus ja salasana requestin headeriin
+var encodedCredentials = btoa("kayttajatunnus:salasana"); // Muutetaan käyttäjätunnus ja salasana Base64-muotoon
+xhttp.setRequestHeader("Authorization", "Basic " + encodedCredentials);
+
 // Lähetetään pyyntö ja käsitellään vastaus
-xhr.send();
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        console.log(xhr.responseText);
-    }
+xhttp.send();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    // Vastaus saapui onnistuneesti
+    console.log(this.responseText);
+  } else {
+    // Jokin meni vikaan
+    console.log("Virhe! Tarkista käyttäjätunnus ja salasana.");
+  }
 };
 ```
 
-Ylläolevassa koodiesimerkissä luodaan uusi XMLHTTPRequest-olio ja lähetetään GET-pyyntö palvelimelle. Pyyntöön lisätään HTTP-otsikossa perusautentikointi, jossa käyttäjätunnus ja salasana on encodettu base64-muotoon. Pyyntöön vastauksen saapuessa, tarkistetaan sen tila ja status, ja jos vastaus on onnistunut, tulostetaan vastauksen sisältö konsoliin.
+```Javascript
+// Palvelinpään koodi (esim. Node.js)
+var http = require('http');
+var username = 'kayttajatunnus';
+var password = 'salasana';
 
-## Syvempi katsaus
-Perusautentikointi on yleinen tapa suojata web-sovelluksia käyttäjien lähettämiltä pyynnöiltä. Sitä käytetään usein yhdessä muiden turvallisuusmenetelmien, kuten SSL-sertifikaattien, kanssa. Perusautentikoinnin toimintaperiaate on yksinkertainen: käyttäjän tulee lähettää pyyntöön mukanaan käyttäjätunnus ja salasana, jotka on encodettu base64-muotoon. Palvelin tarkistaa sitten näiden tietojen oikeellisuuden ja vastaa sen mukaan.
+http.createServer(function (req, res) {
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla voi myös helpottaa monimutkaisempien käyttäjätunnusten ja salasanojen käsittelyä. Se tarjoaa myös helpon ja nopean tavan suojata erilaisia web-sovelluksia, kuten REST APIjaä tai Ajax-kutsuja.
+    // Tarkistetaan pyynnön authentikaatio headerista
+    var auth = req.headers['authorization'];
+    if (!auth || auth.indexOf('Basic ') !== 0) {
+        // Pyyntö ei sisältänyt authentikaatiota
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate', 'Basic realm="Sisäänkirjautuminen vaaditaan"');
+        res.end('Käyttäjätunnus ja salasana vaaditaan.');
+        return;
+    }
 
-## Katso myös
-* [XMLHttpRequest - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-* [Base64 Encoding - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding)
-* [Basic Access Authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+    // Tarkistetaan käyttäjätunnus ja salasana
+    var credentials = new Buffer(auth.split(' ')[1], 'base64').toString();
+    var user = credentials.split(':')[0];
+    var pass = credentials.split(':')[1];
+    if (user !== username || pass !== password) {
+        // Väärä käyttäjätunnus tai salasana
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate', 'Basic realm="Väärä käyttäjätunnus tai salasana"');
+        res.end('Käyttäjätunnus tai salasana on väärä.');
+        return;
+    }
+
+    // Palautetaan vastaus
+    res.end('Oikeat tiedot, pääset eteenpäin!');
+}).listen(3000);
+```
+
+Esimerkkikoodissa luodaan uusi XMLHttpRequest-olio ja määritellään sen avulla GET-pyyntö osoitteeseen https://esimerkkisivu.com/api/tiedot. Sen jälkeen lisätään käyttäjätunnus ja salasanapyynnön headeriin Base64-muodossa ja lähetetään pyyntö. Palvelinpuolella pyynnön authentikaatio tarkistetaan ja jos tiedot ovat oikein, palautetaan vastaus onnistuneen authentikaation merkiksi.
+
+## Syväsukellus
+
+HTTP-pyyntöjen englanninkielinen nimi on "HTTP request" ja se on tapa lähettää ja vastaanottaa tietoja palvelimien välillä. Pyyntö koostuu useista osista, kuten metodista (GET, POST jne.), osoitteesta ja mahdollisista parametreista. Basic Authentication mahdollistaa käyttäjän tunnistamisen pyynnön header:ssä. Salasana kuitenkin lähetetään Base64-muodossa, mikä ei ole täysin tur

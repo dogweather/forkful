@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o tamanho de uma string"
+html_title:           "Kotlin: Encontrando o tamanho de uma string"
+simple_title:         "Encontrando o tamanho de uma string"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que?
 
-Encontrar o comprimento de uma string é uma tarefa comum na programação e é importante para manipular adequadamente os dados em um programa. Aprender como fazer isso em Kotlin pode ser benéfico para melhorar suas habilidades de programação.
+Aprender a encontrar o comprimento de uma string é essencial para desenvolver habilidades básicas de programação e resolver problemas comuns em projetos. Compreender como determinar o tamanho de uma string pode ser útil em várias situações, desde validar entradas do usuário até formatar saídas de dados.
 
-## Como fazer
+## Como fazer?
 
-Para encontrar o comprimento de uma string em Kotlin, podemos usar a função "length". Veja um exemplo abaixo:
+Para encontrar o comprimento de uma string em Kotlin, podemos usar a função `length()` que retorna o número de caracteres na string. Aqui está um exemplo simples:
 
 ```Kotlin
-val str = "Olá mundo"
-println(str.length)
-
-// Output: 10
+val nome = "Aline"
+val tamanho = nome.length()
+println(tamanho)
 ```
 
-Neste exemplo, declaramos a string "Olá mundo" e usando a função "length" imprimimos seu comprimento, que é igual a 10.
+Este código irá imprimir "5", pois há 5 caracteres na string "Aline". Além disso, podemos usar esta função em conjunto com um loop para encontrar o comprimento de uma string dinamicamente. Por exemplo:
 
-Temos outros métodos que podem ser usados para encontrar o comprimento de uma string, como "count", "size" e "indices". Cada método tem suas próprias particularidades, portanto é importante entender a diferença entre eles.
+```Kotlin
+fun getLength(string: String): Int {
+    var count = 0
+    for (char in string) {
+        count++
+    }
+    return count
+}
 
-## Aprofundando-se
+val nome = "Maria"
+val tamanho = getLength(nome)
+println(tamanho)
+```
 
-A função "length" é usada para encontrar o tamanho de uma string, incluindo espaços em branco e caracteres especiais, mas excluindo linhas em branco. Já o método "count" retorna o número de caracteres em uma string, incluindo espaços em branco, caracteres especiais e linhas em branco.
+A saída será novamente "5". Neste exemplo, criamos nossa própria função `getLength()` para encontrar o comprimento da string, contando quantas vezes o loop é executado.
 
-O método "size" é semelhante a "length", mas só pode ser usado em strings mutáveis, que podem ser alteradas. Por fim, o método "indices" retorna um intervalo de índices da string.
+## Aprofundando
 
-Aproveite para experimentar esses métodos e veja como os resultados podem variar dependendo do tipo de string e método utilizado.
+Embora a função `length()` seja a maneira mais simples de encontrar o comprimento de uma string, existem outras formas de fazer isso. Por exemplo, podemos usar o operador de atribuição de arrays `size()` e até mesmo utilizar o método `substring()` para encontrar a parte da string que queremos e, em seguida, usar a função `length()` nessa substring. Vale a pena explorar e experimentar diferentes abordagens para encontrar o comprimento de uma string.
 
 ## Veja também
 
 - [Documentação oficial do Kotlin sobre strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Tutorial sobre como trabalhar com strings em Kotlin](https://www.baeldung.com/kotlin/strings)
-- [Exemplos práticos de strings em Kotlin](https://www.programiz.com/kotlin-programming/strings)
+- [Artigo sobre manipulação de strings em Kotlin](https://www.baeldung.com/kotlin/string-manipulation)

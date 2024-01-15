@@ -1,6 +1,7 @@
 ---
-title:                "C: 컴퓨터 프로그래밍: 명령 줄 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍: 명령 줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "C: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-커맨드 라인 인수를 읽는 방법을 배우는 것은 효율적인 프로그래밍을 위해 필수적입니다.
+
+*왜* 누군가가 명령 줄 매개 변수를 읽는 것에 참여할지 설명해보겠습니다. 명령 줄 매개 변수는 C 프로그램에서 사용자에게 입력을 요청하는 것보다 더 유연한 방식입니다. 이를 통해 사용자는 실행 시에 다양한 매개 변수를 제공하고 원하는 동작을 만들 수 있습니다.
 
 ## 방법
-커맨드 라인 인수를 읽는 방법은 간단합니다. 다음과 같은 코드를 작성하면 됩니다.
 
-```C
+다음은 C 프로그램에서 명령 줄 매개 변수를 읽는 방법을 보여주는 예제입니다. 코드 블록은 "```C ...```" 형식으로 제공됩니다.
+
+```
+#include <stdio.h>
+
 int main(int argc, char *argv[]) {
-    // 커맨드 라인 인수 출력
-    for (int i = 0; i < argc; i++) {
-        printf("인수 %d: %s\n", i, argv[i]);
-    }
-    return 0;
+  printf("입력된 매개 변수의 개수: %d\n", argc);
+
+  for(int i = 0; i < argc; i++) {
+    printf("%d 번째 매개 변수: %s\n", i, argv[i]);
+  }
+
+  return 0;
 }
 ```
 
-위 코드를 실행하면 인수 0에는 프로그램의 실행 경로가, 인수 1부터는 사용자가 입력한 인수들이 출력됩니다. 예를 들어, `./program argument1 argument2`와 같이 입력하면 인수 0에는 `./program`이, 인수 1에는 `argument1`이, 인수 2에는 `argument2`가 출력됩니다.
+아래는 프로그램을 실행할 때 다양한 매개 변수를 제공하고 출력 결과를 확인하는 방법입니다.
 
-위 방법 말고도 `getopt` 함수를 사용하여 더 유연하게 인수를 읽을 수 있습니다.
+```
+$ ./command_line_arguments hello world 123
+입력된 매개 변수의 개수: 4
+0 번째 매개 변수: ./command_line_arguments
+1 번째 매개 변수: hello
+2 번째 매개 변수: world
+3 번째 매개 변수: 123
+```
 
-## 심층 분석
-커맨드 라인 인수는 사용자로부터 입력을 받아 프로그램을 실행할 때 매우 유용하게 사용됩니다. 개발자는 사용자가 입력한 인수들을 분석하여 프로그램의 동작을 다르게 조절할 수 있습니다. 또한, 커맨드 라인 인수를 사용하면 프로그램의 테스트를 더 쉽게 할 수 있습니다. 예를 들어, 프로그램을 실행할 때 다른 인수를 입력하면서 프로그램이 정상적으로 동작하는지 확인할 수 있습니다.
+## 깊이 탐구
 
-커맨드 라인 인수를 사용할 때 주의해야 할 점은 입력된 인수들의 타입을 정확하게 맞추는 것입니다. 예를 들어, `atoi` 함수를 사용하여 문자열 타입의 인수를 정수로 변환할 수 있지만, 입력된 인수가 정수가 아닌 경우 프로그램에서 오류가 발생할 수 있습니다. 따라서 개발자는 사용자가 입력할 수 있는 모든 경우를 예상하고 그에 맞는 예외처리를 해주어야 합니다.
+C 프로그램에서는 `argc`와 `argv` 변수를 사용하여 명령 줄 매개 변수를 읽습니다. `argc`는 입력된 매개 변수의 개수를 나타내는 정수이고, `argv`는 매개 변수를 저장하는 문자열 배열입니다. `argv` 배열의 첫 번째 요소는 프로그램의 이름을 포함하고, 이후 요소들은 사용자가 제공한 매개 변수를 순서대로 나타냅니다.
 
-## 참고 자료
-- [C언어 커맨드 라인 인수 읽기](https://www.joinc.co.kr/w/Site/system_programing/File/File_IO#AEN853)
-- [getopt 함수 정리](https://black-live.tistory.com/13)
-- [커맨드 라인 인수 사용 예제](https://github.com/jhyeok0220/C_Language/blob/master/%5BSTD%5D03_C%EC%96%B8%EC%96%B4/%5BSTD%5D03_%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%9D%B8%EC%88%98.c)
-
-## 참고 자료 (See Also)
-- [C언어 메모리 관리](https://www.joinc.co.kr/w/man/2/malloc)
-- [데이터 타입 변환](https://modoocode.com/12)
+See Also
+[Command Line Arguments in C Programming](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+[Using Command Line Arguments in C/C++](https://www.thegeekstuff.com/2012/05/c-cpp-sample-commands/)

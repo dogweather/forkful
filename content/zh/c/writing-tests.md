@@ -1,5 +1,6 @@
 ---
-title:                "C: 编写测试"
+title:                "编写测试"
+html_title:           "C: 编写测试"
 simple_title:         "编写测试"
 programming_language: "C"
 category:             "C"
@@ -9,52 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么写测试？
+# 为什么要写测试？
 
-每个程序员都知道写测试是一个重要的过程，但是很多人都会忽略它。但是，写测试有很多好处。首先，它可以帮助我们识别程序中的错误和漏洞。通过运行测试，我们可以确保我们的代码可以正确地运行，并且能够在未来进行修改和维护。
+编写测试在编程中非常重要，它可以帮助我们发现和修复潜在的错误，从而提高代码的质量和可靠性。如果我们不写测试，可能会很难发现并修复代码中的问题，最终导致出现严重的bug。
 
-另外，写测试可以帮助我们构建更可靠的代码。通过编写测试，我们可以更好地了解我们的代码如何与其他部分交互，从而可以更有效地进行调试和修复错误。
+# 怎样写测试？
 
-总的来说，编写测试可以提高我们的代码质量，并帮助我们节省宝贵的时间和精力。
+在C语言中，我们可以使用```assert()```语句来编写测试。这个语句需要两个参数，第一个是一个表达式，第二个是一个错误消息。如果表达式为false，测试就会失败并打印出错误消息。
 
-# 如何写测试？
-
-对于C语言，写测试需要使用一个称为“断言”的工具。断言是一个布尔语句，它可以验证一些条件是否为真。如果条件为真，则断言没有任何效果。但是如果条件为假，则断言会抛出一个错误，表明代码中存在问题。
-
-让我们来看一个例子：
+下面是一个简单的例子：
 
 ```C
 #include <assert.h>
 
-int divide(int a, int b) {
-  // 断言，如果b为0，则抛出错误
-  assert(b != 0);
-  return a / b;
+// 定义一个函数，返回两个数字的和
+int sum(int a, int b){
+    return a + b;
 }
 
-int main() {
-  int result = divide(10, 2);
-  // 断言，如果结果不是5，则抛出错误
-  assert(result == 5);
-
-  return 0;
+int main(){
+    // 测试函数sum()是否返回正确的结果
+    assert(sum(2, 3) == 5); // 如果表达式为false，测试就会失败并打印出错误消息
+    return 0;
 }
 ```
 
-在上面的示例中，我们使用`assert`函数来确保除数不为零，并且通过比较结果来验证程序是否正常工作。
+运行上面的代码，如果测试通过，我们将看到屏幕上没有任何输出；如果测试失败，将会打印出一条错误消息。这样，我们就可以及时发现代码中的问题，并进行修复。
 
-# 深入了解测试
+# 深入了解写测试
 
-当涉及到编写测试时，有一些最佳实践值得我们注意。首先，每个函数应该至少有一个相关的测试。这可以帮助我们找出可能存在的潜在问题。
+除了使用```assert()```语句外，我们还可以使用其他的测试框架，如[CUnit](http://cunit.sourceforge.net/)或[Unity](https://github.com/ThrowTheSwitch/Unity)。这些框架可以为我们提供更多的功能和灵活性，使得编写测试更加方便和高效。
 
-其次，测试应该涵盖尽可能多的边界条件，以及正常的输入和异常输入。这可以帮助我们确保代码在各种情况下都能正常工作。
-
-另外，我们应该定期运行测试，以确保代码在任何更改后都能正确运行。最后，我们应该编写易于阅读和维护的测试案例，这样可以帮助我们更快地定位和修复问题。
-
-查看下面的链接，以获取更多关于如何编写好的测试的信息。
+另外，编写测试时应该遵循一些原则，如单一职责原则，每个测试应该只测试一个功能点；可读性原则，测试代码应该易于读懂和理解等。
 
 # 参考链接
 
-- [JUnit:手工编码测试](https://learn.mairie-at.fr/codewars/best-practices-for-writing-tests)
-- [测试最佳实践：从单元测试到黄金测试到测试驱动开发](http://blog.codinglabs.org/articles/test-best-practices.html)
-- [谷歌测试官方教程](https://developers.google.com/edu/testing/overview)
+- [C语言中写测试的重要性](https://www.tutorialspoint.com/codingground.htm)
+- [如何在C语言中编写简单的测试](https://linux.die.net/man/3/assert)
+
+# 参见
+
+- [assert()函数的官方文档](https://www.ibm.com/docs/en/zos-basic-skills?topic=functions-assert-explained)
+- [CUnit框架的官方网站](http://cunit.sourceforge.net/)
+- [Unity框架的GitHub页面](https://github.com/ThrowTheSwitch/Unity)

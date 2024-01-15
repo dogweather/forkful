@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Аналізування html"
-simple_title:         "Аналізування html"
+title:                "Розбір html"
+html_title:           "Swift: Розбір html"
+simple_title:         "Розбір html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,37 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Веб-скрапінг, або аналіз HTML сторінок, є корисним інструментом у сфері програмування. Він дозволяє отримати необхідні дані з веб-сайтів, що допомагає автоматизувати процеси або зробити пошук інформації більш ефективним.
+HTML - це одна з основних мов, яка використовується для створення веб-сторінок. Парсинг HTML може бути корисним для отримання текстової інформації з веб-сторінок для подальшого використання в скриптах або додатках.
 
-## Як робити
+## Як це зробити
 
-Для аналізу HTML сторінок у Swift існує кілька варіантів, але ми розглянемо один з найпростіших з них - за допомогою бібліотеки SwiftSoup. Спочатку потрібно встановити цю бібліотеку за допомогою менеджера пакетів Swift Package Manager. Після цього можна розпочати роботу з SwiftSoup.
+Для початку, вам потрібно завантажити та імпортувати бібліотеку SwiftSoup, яка дозволяє парсити HTML. Далі, використовуйте функцію "do try catch" для зчитування HTML з веб-сторінки та перетворення його в об'єкт типу Document використовуючи бібліотеку SwiftSoup.
 
-Для початку створимо об'єкт Document, який буде містити HTML сторінку, яку ми хочемо розібрати. Зобразимо це на прикладі:
+```swift
+do {
 
-```Swift
-// Імпортуємо бібліотеку SwiftSoup
-import SwiftSoup
+    let html = try String(contentsOf: URL(string: "https://example.com")!)
+    let doc: Document = try SwiftSoup.parse(html)
 
-// Створюємо змінну, в яку збережемо HTML сторінку
-let html = "<html><head><title>Мій перший блог по Swift</title></head><body><p>Ласкаво просимо на мій блог!</p></body></html>"
+} catch Exception.Error(let type, let message) {
 
-// Створюємо об'єкт Document, передаючи в якості параметра HTML код сторінки
-let document = try! SwiftSoup.parse(html)
+    print(message)
+    
+} catch {
+
+    print("error")
+}
+
 ```
 
-Тепер, коли у нас є об'єкт Document, ми можемо отримувати інформацію з HTML сторінки за допомогою методів бібліотеки SwiftSoup. Наприклад, якщо ми хочемо отримати назву нашого блогу, ми можемо використати метод `title()`:
+Після цього, ви можете використовувати різні методи та функції бібліотеки SwiftSoup для отримання потрібної вам інформації з HTML сторінки. Наприклад, для отримання всього тексту з веб-сторінки, використовуйте наступний код:
 
-```Swift
-// Отримуємо назву блогу
-let title = try! document.title()
+```swift
+do {
 
-// Виводимо результат у консоль
-print(title) // Виводить: "Мій перший блог по Swift"
+    let html = try String(contentsOf: URL(string: "https://example.com")!)
+    let doc: Document = try SwiftSoup.parse(html)
+    let text = try doc.text()
+
+    print(text)
+
+} catch Exception.Error(let type, let message) {
+
+    print(message)
+    
+} catch {
+
+    print("error")
+}
+
 ```
 
-За допомогою бібліотеки SwiftSoup також можна отримувати іншу інформацію з HTML сторінки, наприклад, текст певних елементів або посилання на інші сторінки. Для більш детального ознайомлення з методами бібліотеки можна використовувати офіційну документацію або посилання з розділу "See Also" нижче.
+## Детальний аналіз
 
-## Розглиблене дослідження
+Щоб розібратися з парсингом HTML детальніше, можна поглянути на різні методи та функції бібліотеки SwiftSoup, такі як "getElementsByClass", "getElementsById" або "select", які дозволяють вибирати елементи з HTML сторінки за допомогою CSS селекторів. Крім того, можна використовувати регулярні вирази для пошуку конкретної інформації на сторінці.
 
-Якщо ви цікавитесь більш технічними аспектами парсингу HTML, можна розглянути інші бібліотеки, наприклад, Kanna або SwiftHTML. Ці бібліотеки мають більше можливостей і можуть бути корисними для складніших задач. Також важливо звернути увагу
+## Дивіться також
+
+- [SwiftSoup бібліотека](https://github.com/scinfu/SwiftSoup)
+- [Основи парсингу HTML в Swift](https://www.raywenderlich.com/2201-swift-algorithm-club-swift-html-parser-stack-queue#toc-anchor-002)
+- [Офіційна документація SwiftSoup](https://jsoup.org/cookbook/extracting-data/selector-syntax)

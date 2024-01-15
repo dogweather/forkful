@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Att analysera HTML"
+html_title:           "Javascript: Att analysera HTML"
+simple_title:         "Att analysera HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Att kunna parsra HTML är en viktig färdighet för utvecklare som arbetar med webbutveckling. Genom att kunna extrahera specifika delar av en webbsidas HTML-kod kan man manipulera och visa information på ett mer dynamiskt sätt.
 
-Att parsra HTML är en viktig del av front-end programmering. Genom att kunna läsa och manipulera HTML-kod kan du skapa dynamiska och interaktiva webbplatser. Det är också användbart för att hämta och använda data från andra webbplatser.
-
-## Hur man gör det
-
-Att parsra HTML i Javascript är relativt enkelt med hjälp av verktyget "DOM", som står för Document Object Model. Det låter dig hämta och manipulera olika element på en webbsida. Här är ett exempel på kod som visar hur man kan hämta en specifik element på en sida och ändra dess innehåll:
+# Så här gör du
+```Javascript
+const parser = new DOMParser();
+const htmlString = "<html><body><h1>Hej världen!</h1></body></html>";
+const htmlDoc = parser.parseFromString(htmlString, "text/html");
+```
+Det första steget för att kunna parsra HTML i Javascript är att skapa en DOMParser-instans. Sedan kan man ange en sträng med HTML-koden som ska parsras och det önskade formatet (texthtml) till `parser.parseFromString()`-metoden. Det returnerar ett dokumentobjekt som vi kan använda för att navigera i HTML-koden.
 
 ```Javascript
-// Hämta en element baserat på dess ID
-var element = document.getElementById("minElement");
-
-// Ändra elementets innehåll
-element.innerHTML = "Nytt innehåll";
+const text = htmlDoc.getElementsByTagName("h1")[0].textContent;
+// text = "Hej världen!"
 ```
+Genom att använda `getElementsByTagName()`-metoden kan vi få tag på alla element med ett visst HTML-elementnamn, i det här fallet "h1". Det returnerar en `HTMLCollection`, som är liknande en `array`, där vi kan hämta en specifik element med indexet. Sedan kan vi använda `textContent` för att hämta texten inuti elementet.
 
-Det här är bara ett enkelt exempel, men det finns många fler sätt att manipulera HTML-kod med Javascript. 
+# Djupdykning
+Det finns flera olika sätt att parsra HTML i Javascript, men det vanligaste är att använda DOMParser-klassen som nämndes i föregående avsnitt. Det går också att använda `innerHTML` för att hämta HTML-koden inuti ett element, men det är inte lika stabilt och kan lätt störa andra delar av koden. Det är därför rekommenderat att använda DOMParser för att vara mer specifik i vilken del av HTML-koden som ska parsras.
 
-## Utforska djupare
-
-Att lära sig mer om DOM och hur man parsar HTML kan ta din webbutveckling till en högre nivå. Genom att förstå hur man kan hämta olika element på en sida och manipulera dess innehåll kan du skapa dynamiska och interaktiva webbplatser som gör användarupplevelsen mer engagerande. Det finns också många andra koncept inom HTML-parsing, såsom att skapa nya element och ändra attribut.
-
-## Se även
-
-- https://www.w3schools.com/js/js_htmldom.asp
-- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
-- https://www.tutorialspoint.com/javascript/javascript_html_dom.htm
+# Se även
+- [DOMParser i Javascript](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [HTMLCollection i Javascript](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection)
+- [index.js - ett verktyg för att parsra HTML i Node.js](https://github.com/isaacs/index.js)

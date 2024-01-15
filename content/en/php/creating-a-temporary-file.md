@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "PHP recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,47 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a useful skill to have for any PHP programmer. Temporary files are often used when dealing with large amounts of data or when you need to save data that is not meant to be stored permanently. In this blog post, we will explore the benefits of creating temporary files and how it can help improve your code.
+Temporary files are a crucial part of web development and programming in general. They allow developers to store and manipulate data in a temporary location before permanently saving it to a file or database. This can be useful for tasks such as data processing, file uploading, and debugging. 
 
 ## How To
 
-Creating a temporary file in PHP is a simple and straightforward process. Let's take a look at an example:
+Creating a temporary file in PHP is a simple process that can be achieved with just a few lines of code. First, we will need to choose a temporary directory to store our file in. This can be done using the `sys_get_temp_dir()` function, which returns the current system's temporary directory path.
 
 ```PHP
-// Create a temporary file
-$tempFile = tmpfile();
-
-// Write data to the file
-fwrite($tempFile, "This is a temporary file.");
-
-// Read data from the file
-echo fread($tempFile, filesize($tempFile));
-
-// Close the file
-fclose($tempFile);
+$tempDir = sys_get_temp_dir();
 ```
 
-In this code, we first use the `tmpfile()` function to create a temporary file and assign it to the variable `$tempFile`. Then, we use the `fwrite()` function to write data to the file. In this case, we are writing the string "This is a temporary file." Next, we use the `fread()` function to read the data from the file and output it using `echo`. Finally, we close the file using the `fclose()` function.
-
-You can also specify a directory where the temporary file should be created by passing the directory path as an argument to the `tmpfile()` function. For example:
+Next, we can use the `tempnam()` function to generate a unique temporary file name within our chosen directory. This function takes the temporary directory path as the first parameter and an optional prefix for the file name as the second parameter. 
 
 ```PHP
-// Create a temporary file in a specific directory
-$tempFile = tmpfile("/tmp");
+$fileName = tempnam($tempDir, 'myTempFile');
+```
+
+We now have a unique file name for our temporary file, but it has not been created yet. To create the file, we can use the `fopen()` function, passing in the file name and the mode in which we want to open the file (such as "w" for write mode). 
+
+```PHP
+$file = fopen($fileName, 'w');
+```
+
+We can then write data to our temporary file as needed using the `fwrite()` function and close it with the `fclose()` function when we are finished. 
+
+```PHP
+fwrite($file, "This is some sample data.");
+fclose($file);
+```
+
+Once the script has finished running, the temporary file will automatically be deleted by the system. If for some reason you need to delete the temporary file manually, you can use the `unlink()` function, passing in the file name as the parameter. 
+
+```PHP
+unlink($fileName);
+```
+
+Here is an example of the output from running the above code:
+
+```shell
+$Temp File Path: /var/folders/8m/0h7cn1884lx0qbz1732l29z5z9_2g6/T/
+$Temp File Name: /var/folders/8m/0h7cn1884lx0qbz1732l29z5z9_2g6/T/myTempFile413343522
 ```
 
 ## Deep Dive
 
-Now, let's take a deeper look at creating temporary files in PHP. When we use the `tmpfile()` function, PHP automatically creates a unique file name and returns a file pointer to the newly created file. This eliminates the need for us to generate a unique file name ourselves.
+Temporary files can be used for a variety of purposes in PHP, such as storing form data, creating downloadable files, or caching data. They can also be used for debugging purposes by saving data to a temporary file for analysis.
 
-Additionally, the temporary file created by `tmpfile()` is automatically deleted when the script ends or when the file is closed using `fclose()`. This ensures that we don't have to worry about deleting the file manually.
+It is important to note that temporary files can potentially be accessed by other users on the same system or server. Therefore, it is important to secure the data in the file by setting appropriate file permissions and deleting the file as soon as it is no longer needed.
 
-It is worth noting that the `tmpfile()` function only creates an empty file. If you want to write data to the file, you will need to use the `fwrite()` function as shown in the example above.
+It is also worth mentioning that PHP has alternative functions for creating temporary files, such as `tmpfile()` and `sys_get_temp_dir()`. These may be useful for specific use cases or personal preference, so it is recommended to research and understand the differences before using them.
 
 ## See Also
 
-- [PHP Official Documentation: tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP Official Documentation: fwrite()](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP Official Documentation: fclose()](https://www.php.net/manual/en/function.fclose.php)
-
-Creating temporary files in PHP can be a useful tool in your programming arsenal. Whether you need to manage large amounts of data or just need to store temporary information, now you know how to create temporary files with ease. Happy coding!
+- [PHP fopen() function](https://www.php.net/manual/en/function.fopen.php)
+- [PHP unlink() function](https://www.php.net/manual/en/function.unlink.php) 
+- [PHP Temporary Files Tutorial](https://www.w3schools.com/php/php_file_create.asp)

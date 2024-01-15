@@ -1,6 +1,7 @@
 ---
-title:                "C++: स्ट्रिंग प्रथमाकरण"
-simple_title:         "स्ट्रिंग प्रथमाकरण"
+title:                "स्ट्रिंग को अपरकेस में बदलना"
+html_title:           "C++: स्ट्रिंग को अपरकेस में बदलना"
+simple_title:         "स्ट्रिंग को अपरकेस में बदलना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-
-शब्दों को बड़ी अक्षरों में लिखने का काम बहुत अहम है। यह उपयोगकर्ता को दिखाता है कि कौन से शब्द प्रत्येक वाक्य के शुरुआत में हैं। इसके अलावा, यह प्रोग्राम को कम्प्यूटर को पढ़ने और समझने में आसानी प्रदान करता है।
+कोई भी एक रूचि वाला या प्रोग्रामिंग शुरुआती उपयोगकर्ता एक स्ट्रिंग को कैपिटलाइज़ करने के माध्यम से उसके फायदे को अधिक जानने के लिए उनके स्ट्रिंग मैनिपुलेशन कौशल को बढ़ाने के लिए इस आलेख की तलाश में हो सकते हैं।
 
 ## कैसे करें
+यदि आपके पास एक संचिका में कुछ संहिता है और आप उसे लिखना चाहते हैं, तो उसे कैपिटलाइज़ करना भी बहुत आसान हो सकता है। यहां हम आपको उस सॉल्यूशन की एक संख्या बताएंगे जो आपकी समस्या को हल कर सकती है। यह एक संदर्भ पाठ है और आपको तक गठरी लिखने की आवश्यकता होगी।
 
-```C++ 
-#include<iostream> 
-#include<string> 
-using namespace std; 
+```C++
+#include <iostream>
+#include <string>
+using namespace std;
 
-int main() { 
-    // स्ट्रिंग दर्ज करें 
-    string str = "programming"; 
-    
-    // शब्दों को बड़ी लेटरों में बदलें 
-    for(int i = 0; i < str.length(); i++) { 
-        str[i] = toupper(str[i]); 
-    } 
-    
-    // परिणाम प्रिंट करें 
-    cout<<"परिणाम: "<<str; 
-    
-    return 0; 
-} 
+// Function to capitalize a string
+void capitalize(string& s)
+{
+    // Loop through each character
+    for (int i = 0; i < s.length(); i++)
+    {
+        // Check if the character is lowercase
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            // Convert it to uppercase
+            s[i] = toupper(s[i]);
+        }
+    }
+}
+
+int main()
+{
+    // Input string from user
+    string str;
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    // Call the capitalize function
+    capitalize(str);
+
+    // Print the capitalized string
+    cout << "Capitalized string: " << str;
+
+    return 0;
+}
 ```
 
-### परिणाम
-```
-परिणाम: PROGRAMMING
-```
+उपरोक्त कोड को एक आईडिया के माध्यम से, हमें आप के मामले में जिन शब्दों को लिखने होंगे, उन्हें प्रवर्धित करने की आवश्यकता होती है, वे सभी शब्द शुरूआत में बहुत साधारण होते हैं, तो आपको केवल अपने स्ट्रिंग नाम का उपयोग करना होगा। यह स्पष्टीकरण का काम काफी आसान है।
 
-## गहराई तक खुद से खोज करें
-
-जब हम ऊपर दिए गए कोड को गहराई से बात करते हैं, तो हम देख सकते हैं कि हम शब्दों को बड़ी अक्षरों में बदलने के लिए `toupper()` फ़ंक्शन का उपयोग करते हैं। इससे हमें स्ट्रिंग के प्रत्येक अक्षर पर गहराई से पहुंचने की और उसे बड़े फेस्टर मिलाने की अनुमति मिलती है। इससे यह बेहतर तरीके से चलेगा जब हम बड़ी स्ट्रिंग्स का उपयोग करते हैं।
-
-## देखें भी
-
-- [C++ String Functions](https://www.programiz.com/cpp-programming/library-function/cstring/toupper)
-- [How to Capitalize the First Letter of a String in C++](https://www.techiedelight.com/capitalize-first-letter-of-string-cpp/)
+## गहराई से जानना
+स्ट्रिंग कैपिटलाइज़ को संभव बनाने के लिए सटीक रूप से हमारे अ्दारा उपयोग किए

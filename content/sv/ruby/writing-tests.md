@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Ruby: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -11,32 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av att skriva bra kod i Ruby. Genom att skriva tester kan du säkerställa att din kod fungerar korrekt och är robust. Det hjälper också till att förebygga buggar och minska risken för fel i ditt program.
+Det finns många anledningar till varför det är viktigt att skriva tester när man programmerar, men den främsta anledningen är för att säkerställa att koden fungerar som den ska. Tester hjälper till att hitta och förebygga eventuella buggar och problem i koden innan de når produktion, vilket sparar tid och resurser på lång sikt.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva tester i Ruby finns det ett inbyggt testramverk som heter Minitest. Detta ramverk ger en strukturerad och effektiv metod för att skapa och köra tester. Här är ett exempel på hur du kan skriva ett enkelt test:
+För att skriva tester i Ruby behöver du först och främst installera ett testbibliotek såsom RSpec eller Minitest. Efter det kan du skapa en testsuite med olika testfall för att kontrollera olika delar av din kod. Se exempel nedanför:
 
-```Ruby
-require "minitest/autorun"
+```ruby
+RSpec.describe Calculator do 
+  describe "#add" do 
+    it "adds two numbers together" do 
+      expect(Calculator.add(5,3)).to eq(8) 
+    end 
+  end 
 
-class CalculatorTest < Minitest::Test
-  def test_addition
-    result = 5 + 5
-    assert_equal 10, result
-  end
+  describe "#subtract" do 
+    it "subtracts one number from another" do 
+     expect(Calculator.subtract(10,2)).to eq(8) 
+    end 
+  end 
 end
 ```
 
-I detta exempel testar vi additionsfunktionen i en kalkylator. Vi förväntar oss att resultatet ska vara 10 och använder metoden `assert_equal` för att jämföra detta med det faktiska resultatet av vår summering. Om testet är framgångsrikt visas "1 passed" i terminalen.
+I detta exempel skapar vi en testsuite för ett enkelt räknar-program med två metoder, #add och #subtract. Vi testar sedan att dessa metoder ger rätt svar för olika inputvärden.
 
 ## Djupdykning
 
-Att skriva tester handlar inte bara om att verifiera att ditt program fungerar som det ska, det handlar också om att skriva välstrukturerad och syntaktiskt korrekt kod. När du skriver tester, se till att följa konventionerna för din kodstil och håll testerna enkla och lättlästa. Detta kommer att göra dem enklare att underhålla och modifiera i framtiden.
+När man skriver tester är det viktigt att tänka på att täcka så många olika scenarion som möjligt för att få en så fullständig testsuite som möjligt. Det är också viktigt att testa både positiva och negativa scenarion för att se till att koden fungerar oavsett vilken typ av input den får.
 
-En annan viktig aspekt av att skriva tester är täckningsgraden. Detta innebär att du vill se till att alla delar av din kod har testats, så att du kan vara säker på att det fungerar som det ska. Minitest ger en täckningsrapport efter att du har kört dina tester, så du kan enkelt se vilka delar av din kod som behöver mer testning.
+En annan viktig aspekt av att skriva tester är att hålla testerna uppdaterade när koden utvecklas och förändras. Det är inte ovanligt att testerna behöver uppdateras i takt med att koden utvecklas, och det är en viktig del av att ha en stabil och pålitlig kodbas.
 
 ## Se också
 
-- [Minitest dokumentation](https://github.com/seattlerb/minitest)
-- [The Ruby Testing Tutorial](https://www.activestate.com/blog/the-ruby-testing-tutorial-your-getting-started-guide/)
+- https://rspec.info/ - officiell hemsida för RSpec
+- http://www.rubydoc.info/gems/minitest - dokumentation för Minitest
+- https://thoughtbot.com/blog/vim-ruby-debugging - guide för hur man debugger Ruby-kod i Vim

@@ -1,6 +1,7 @@
 ---
-title:                "C++: कम्प्यूटर प्रोग्रामिंग में अस्थायी फ़ाइल बनाना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग में अस्थायी फ़ाइल बनाना"
+title:                "एक अस्थायी फाइल बनाना"
+html_title:           "C++: एक अस्थायी फाइल बनाना"
+simple_title:         "एक अस्थायी फाइल बनाना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,23 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-आजकल C++ प्रोग्रामिंग काफी लोकप्रिय हो रही है और यह बहुत से विभिन्न कामों में उपयोग किया जा रहा है। इसके साथ ही इसके विभिन्न फीचर्स भी हैं जो हमें यह आसानी से किसी भी अप्प्लिकेशन को बनाने में मदद करते हैं। इस ब्लॉग पोस्ट में हम आपको बताएंगे कि आप किस तरह से C++ में टेम्पररी फाइल बना सकते हैं और इससे आपको कैसे लाभ मिल सकते हैं।
+## क्यों
 
-## क्यों 
-टेम्पररी फाइल बनाना अलग-अलग स्थितियों में बहुत उपयोगी हो सकता है। किसी भी अप्प्लिकेशन में डेटा को स्टोर करने के लिए टेम्पररी फाइल बनाने का सबसे सरल तरीका है। यह फाइल अस्थायी होती है और प्रोग्राम के समापन होने के बाद इसे स्वचालित रूप से हटा दिया जाता है।
+कभी-कभी अपने कोड में आपको एक अस्थायी फ़ाइल की आवश्यकता होती है जो कि आपको अपने काम को प्रभावी ढंग से पूरा करने में मदद करती है। इस लेख में हम आपको बताएंगे कि अस्थायी फ़ाइल क्या है और कैसे आप C++ में उसे बना सकते हैं।
 
-## कैसे करें 
-अगर आपको C++ में टेम्पररी फाइल बनानी है तो आपको सबसे पहले <fstream> हेडर फाइल को इन्क्लूड करना होगा। इसके बाद आप fstream क्लास की एक नई इंस्टेंस बनाएंगे और इसे आप open() फंक्शन के साथ इस तरह से कॉल करेंगे:
+## कैसे
 
-```C++
-std::fstream tempFile;
-tempFile.open("temporary.txt", std::ios::out | std::ios::trunc);
-```
-
-इसमें "temporary.txt" फाइल का नाम है और हमने यहां "out" और "trunc" जोड़े हैं जो इसे राइट करने के लिए खोलेगा और यदि फाइल पहले से मौजूद है तो उसे रीसेट करेगा। फाइल को लिखने के बाद, आपको उसे बंद करना होगा:
+जब अपने कोड रन किया जाता है, तो उसे रेममेंबर और स्टॉर करने के लिए एक अस्थायी फ़ाइल की आवश्यकता होती है। इसे बनाने के लिए हम यहां ```tmpfile()``` फ़ंक्शन का उपयोग करेंगे।
 
 ```C++
-tempFile.close();
+#include <stdio.h>
+
+// Creating a temporary file using "tmpfile()"
+
+int main(){
+
+  FILE * tmpFile;
+  int value = 10;
+
+  tmpFile = tmpfile();  // Creating the temporary file
+
+  if(tmpFile == NULL){  // Checking if file was created successfully
+    printf("Error in creating the temporary file");
+    return 0;
+  }
+
+  fprintf(tmpFile, "This file was created using tmpfile() function!"); // Writing to the temporary file
+  fprintf(tmpFile, "\nValue = %d", value);
+  fclose(tmpFile);  // Closing the temporary file
+
+  return 0;
+}
 ```
 
-अगर आप चाहें तो आप
+उपरोक्त कोड को रन करने पर, आपको एक अस्थायी फ़ाइल बनाई गई होगी जिसमें ```This file was created using tmpfile() function!``` और ```Value = 10``` के साथ कुछ पाठ लिखा हुआ होगा।
+
+## गहराई में
+
+अस्थायी फ़ाइलें सिस्टम के temp फ़ोल्डर में स्थानांतरित होती हैं जो कि दौरान कोड के अंत में स्वचालित रूप से हट जाती हैं। यह एक आसान, शीर्षक और text स्टाइल फ़ाइल होती हैं जिन्हें कृत्रिम रूप में इस्तेमाल किया जाता है।
+
+## देखें भी
+
+- [C++ File Handling](https://www.geeksforgeeks.org/c-file-handling/)
+- [Temporary File in C++](https://www.geeksforgeeks.org/tmpfile-function-in-c-c/)
+- [Quick explanation of tmpfile() in C](https://stackoverflow.com/questions/3135484/quick-explanation-of-tmpfile-in-c)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 正規表現の利用"
-simple_title:         "正規表現の利用"
+title:                "正規表現を使用する"
+html_title:           "Javascript: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,30 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか 
+## なぜ
+正規表現を使うメリットについて簡潔に説明する。
 
-正規表現とは、パターンを表現する為の特殊な文字列であり、文字列のマッチングや検索に役立つ便利なツールです。これを使うことで、より効率的に文字列を処理することができ、コードの量も減らすことができます。
+正規表現は、文字列の処理をより効率的に行うことができるため、開発者にとって非常に便利です。例えば、あるテキストの中から特定のパターンを抽出したり、文字列の置換やチェックを行ったりすることができます。正規表現を使うことで、繰り返し行う処理を簡単に実装でき、開発時間を短縮することができます。
 
-## 正規表現の使い方
-
-正規表現を使うには、まず正規表現を表す文字列を定義します。例えば、`/hello/`という正規表現は、文字列の中に"hello"という文字列が含まれるかどうかをチェックします。次に、`.test()`メソッドを使って指定した文字列が正規表現にマッチするかどうかを確認します。下のコードブロックを参考にしてみてください。
+## 使い方
+正規表現を使う際に実際にコード例を紹介します。以下のコードブロックは、与えられた文字列の中から電話番号を抽出する例です。
 
 ```Javascript
-const regex = /hello/;
-const string1 = "Hello, world!";
-const string2 = "Goodbye, world!";
-regex.test(string1); // Output: true
-regex.test(string2); // Output: false
+let str = "私の電話番号は012-345-6789です。";
+let regex = /\d{3}-\d{3}-\d{4}/;
+let phoneNumber = str.match(regex);
+console.log(phoneNumber[0]); // 出力結果：012-345-6789
 ```
 
-このように使うことで、単純な文字列検索だけでなく、文字列の置換や指定した形式に合った文字列の抽出も行うことができます。
+上記の例では、正規表現パターンを定義し、`match()`メソッドを使って文字列からマッチする部分を取得しています。このように、正規表現を使うことで、複雑な文字列処理を簡単に実装することができます。
 
-## 正規表現の深い掘り下げ
+## 深堀り
+正規表現は、文字列パターンだけでなく、様々なオプションも含めることができます。例えば、大文字と小文字を区別するかどうかや、マルチラインの文字列にマッチさせるかどうか、グローバル検索を行うかどうかなど、細かな設定が可能です。
 
-正規表現を使いこなすためには、パターンの作り方や特殊文字の使い方を理解する必要があります。例えば、ブラケット`[]`を使うことで、指定した文字の1つをマッチさせることができます。また、カレット`^`を使うことで、指定した文字以外の文字をマッチさせることもできます。正規表現を使う際には、より高度なパターンやオプションを使うことで、より複雑な文字列の処理を行えるようになります。
+また、正規表現には`test()`や`exec()`といったメソッドがあります。`test()`はマッチする部分が存在するかどうかを`true`または`false`で返し、`exec()`はマッチする部分を返します。これらのメソッドを使うことで、さまざまなパターンの検索や置換を行うことができます。
 
-## 関連リンク
-
-- [MDN - 正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [レギュラーミート - 正規表現入門](https://www.regular-meet.com/lesson/regexp1.html)
-- [Regex101 - 正規表現のテストツール](https://regex101.com/)
+## 参考リンク
+- [MDN web docs: 正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [JavaScript.info: 正規表現チュートリアル](https://ja.javascript.info/regular-expressions)
+- [Qiita: JavaScriptで正規表現を使ってみよう](https://qiita.com/shunkakinoki/items/a447089aacc9a497161e)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "Gleam: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -11,55 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-JSON jest jednym z najpopularniejszych formatów danych używanych w dzisiejszym świecie programowania. Jest to uniwersalny i łatwy do czytania sposób na przechowywanie i przesyłanie informacji. W artykule tym dowiecie się, dlaczego warto poznać podstawy obsługi JSON w języku Gleam.
+Jeśli masz do czynienia z danymi w formacie JSON (JavaScript Object Notation), warto wiedzieć, że Gleam jest idealnym narzędziem do ich przetwarzania. Dzięki wbudowanemu parserowi JSON i silnie typowanym funkcjom, programowanie w Gleam nie tylko ułatwi pracę z danymi, ale także poprawi bezpieczeństwo Twojego kodu.
 
 ## Jak to zrobić
 
-```Gleam
-let json = Json.Encode.object([
-        ( "name", "John" ),
-        ( "age", Json.Encode.int(27) )
-      ])
-
-let encoded_json = Json.Encode.encode_pretty(2, json)
-```
-
-Wykorzystując powyższy przykład, można utworzyć obiekt JSON, zawierający informacje o imieniu i wieku osoby. Następnie za pomocą metody `encode_pretty` można zakodować ten obiekt w sposób czytelny dla człowieka i wyświetlić go na ekranie.
-
-```
-{
-  "name": "John",
-  "age": 27
-}
-```
-
-Można również odczytać dane z pliku JSON i przetworzyć je na obiekty w języku Gleam, korzystając z metody `Decode`.
+Aby rozpocząć pracę z danymi JSON w Gleam, wystarczy wykorzystać wbudowany moduł ```json```. Możesz użyć funkcji ```parse``` do przekonwertowania ciągu znaków w formacie JSON na strukturę danych w Gleam. Na przykład:
 
 ```Gleam
-  let json =
-    """
-    {
-      "name": "Emma",
-      "age": 34
-    }
-    """
-
-  case Json.Decode.decodeString(json) {
-    Ok(person) ->
-      println("Name: " ++ person.name)
-      println("Age: " ++ person.age |> String.from_int)
-    Error(err) ->
-      println("Error: " ++ Json.Decode.error_to_string(err))
-  }
+let json_string = "{\"id\": 1, \"name\": \"John\"}"
+let data = json.parse(json_string)
 ```
-W powyższym przykładzie odczytujemy dane z obiektu JSON i wyświetlamy informacje o imieniu i wieku osoby. Jeśli wystąpił błąd podczas przetwarzania danych, zostanie wypisany odpowiedni komunikat.
 
-## Głębsza analiza
+W przypisanym obiekcie ```data``` mamy teraz dostęp do pól ```id``` i ```name``` oraz odpowiednich wartości.
 
-Obsługa JSON w języku Gleam jest bardzo prosta i intuicyjna. Można wykorzystać wiele metod i funkcji, aby manipulować danymi w formacie JSON. Warto jednak pamiętać, że należy uważać na niezgodności w nazwach kluczy i typach danych przy pracy z różnymi źródłami JSON.
+Jeśli chcesz stworzyć obiekt JSON z danymi w Gleam, możesz użyć funkcji ```encode```:
 
-## Zobacz również
+```Gleam
+let data = (%{id: 2, name: "Jane"})
+let json_string = json.encode(data)
+```
 
-- Dokumentacja języka Gleam dotycząca obsługi JSON: https://gleam.run/modules/std/json
-- Przykładowy projekt wykorzystujący dane w formacie JSON w języku Gleam: https://github.com/mylesj/json-demo-gleam
-- Blog o programowaniu w języku Gleam (w języku polskim): https://gleam-lang.org/blog
+W tym przypadku, zmienna ```json_string``` zawiera ciąg znaków w formacie JSON odpowiadający strukturze danych w Gleam. 
+
+## Gleboka przygoda
+
+W celu bardziej zaawansowanej obróbki danych JSON w Gleam, możemy wykorzystać funkcje z modułu ```Json.Decode``` i ```Json.Encode```. Na przykład, jeśli chcielibyśmy wyciągnąć pewne wartości z obiektu JSON i przekonwertować je na inny format, możemy skorzystać z funkcji ```map```:
+
+```Gleam
+let json_string = "{\"id\": 1, \"name\": \"John\"}"
+let data = json.parse(json_string)
+let name = Json.Decode.map(data, (\obj -> obj.name))
+let upper_case_name = String.to_uppercase(name)
+let json_name = Json.Encode.encode_string(upper_case_name)
+```
+
+W powyższym przykładzie, dla danych o strukturze ```{%{id: 1, name: "John"}}```, zmienna ```json_name``` przechowuje przekonwertowane dane w formacie JSON: ```"JOHN"```.
+
+## Zobacz także
+
+- Moduł ```json``` w dokumentacji Gleam: https://gleam.run/modules/json.html
+- Przykładowe projekty i zastosowania JSON w Gleam: https://github.com/search?q=topic%3Ajson+org%3Agleam-lang&type=Repositories

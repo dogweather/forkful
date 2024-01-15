@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Å bruke regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "Rust: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Regular expressions er et kraftig verktøy for strukturert tekstbehandling. Enten du leter etter bestemte ord eller mønster i store mengder tekst, kan regular expressions hjelpe deg med å finne og manipulere informasjonen du trenger.
 
-## Slik gjør du det
-For å bruke regular expressions i Rust, må du først importere "regex" biblioteket. Deretter kan du opprette et nytt Regex-objekt og bruke forskjellige metoder som "find" og "captures" for å finne og manipulere tekst. Her er et eksempel på hvordan du kan bruke regular expressions for å finne og erstatte et ord i en tekst:
+Å bruke regulære uttrykk kan være en effektiv måte å søke og manipulere tekst på i programmering. Det kan være spesielt nyttig når du jobber med data som følger et mønster eller format.
 
-```Rust
+## Hvordan
+
+For å bruke regulære uttrykk i Rust, må vi først importere biblioteket `regex` ved å legge til følgende linje i koden vår:
+
+```rust
+extern crate regex;
 use regex::Regex;
-
-// Opprett et nytt Regex-objekt med ønsket mønster
-let re = Regex::new(r"\b(heisann)\b").unwrap();
-
-// Definer teksten som skal sjekkes
-let text = "Heisann! Hvordan går det?";
-
-// Bruk metoden "replace_all" for å erstatte "heisann" med "hallo"
-let result = re.replace_all(text, "hallo");
-
-// Skriv ut det nye resultatet
-println!("{}", result); // Hallo! Hvordan går det?
 ```
 
-I dette eksempelet bruker vi mønsteret "\b(heisann)\b" for å finne ordet "heisann" kun når det står som et eget ord, og ikke som en del av et større ord. Dette er et enkelt eksempel, men med regular expressions kan du lage mer komplekse mønstre for å finne og manipulere tekst på ulike måter.
+Vi kan deretter opprette et nytt regulært uttrykk ved å passe inn ønsket mønster som en streng til `Regex::new()`-funksjonen:
+
+```rust
+let re = Regex::new(r"^\w+").unwrap();
+```
+
+I dette tilfellet vil vi ha et uttrykk som søker etter ord som starter med én eller flere bokstaver.
+
+For å teste om et gitt uttrykk matcher med en tekststreng, kan vi bruke `is_match()`-metoden:
+
+```rust
+let text = "Dette er en test.";
+if re.is_match(text) {
+    println!("Første ord i teksten: {}", text.split_whitespace().next().unwrap());
+} else {
+    println!("Ingen match funnet.");
+}
+```
+
+I dette tilfellet vil utgangen bli `Første ord i teksten: Dette`.
+
+For å få ut alle matchene i en tekststreng, kan vi bruke `find_iter()`-metoden:
+
+```rust
+let text = "Dette er en test av regulære uttrykk.";
+for mat ch in re.find_iter(text) {
+    println!("Match funnet: {}", mat ch.as_str());
+}
+```
+
+Dette vil gi oss følgende utgang:
+
+```text
+Match funnet: Dette
+Match funnet: er
+Match funnet: en
+```
 
 ## Dypdykk
-Regular expressions støtter også metakarakterer, som gir deg enda mer kraft til å finne spesifikk tekst. For eksempel kan du bruke "+" for å finne ett eller flere forekomster av et tegn eller gruppe av tegn, "*" for å finne null eller flere forekomster, og "?" for å finne null eller én forekomst. Dette kan være nyttig når du skal finne tekst som varierer i format eller lengde.
 
-Det finnes også mange forskjellige metoder du kan bruke sammen med Regex-objekter, for eksempel "is_match" for å sjekke om et mønster finnes i en tekst, eller "captures_iter" for å iterere gjennom alle forekomster av et mønster. Det er også mulig å bruke flags for å utføre søk og erstatninger med forskjellige innstillinger, som å ignorere store og små bokstaver.
+Når vi bruker regulære uttrykk i Rust, kan vi også bruke såkalte "capture groups" for å hente ut spesifikke deler av en matchet tekststreng. For å gjøre dette, plasserer vi bare paranteser rundt delen vi vil hente ut i uttrykket vårt:
 
-Hvis du ønsker å lære mer om regular expressions i Rust, kan du sjekke ut dokumentasjonen for "regex" biblioteket, eller se på forskjellige eksempler og artikler på nettet. Å forstå hvordan regular expressions fungerer og å bli fortrolig med bruken av dem, kan gjøre tekstbehandling i Rust mye mer effektivt og elegant.
+```rust
+let re = Regex::new(r"^(\w+) (\d+)").unwrap();
+let text = "Dette er test 123.";
+let mat ch = re.captures(text).unwrap();
+println!("Første ord: {}", mat ch.get(1).unwrap().as_str());
+println!("Tall: {}", mat ch.get(2).unwrap().as_str());
+```
+
+I dette tilfellet vil utgangen være:
+
+```text
+Første ord: Dette
+Tall: 123
+```
+
+Det er også mulig å bruke såkalte "lookahead" og "lookbehind" i uttrykkene våre. Dette lar oss søke etter tekst som er foran eller etter en bestemt del av vår matchede tekst. Mer informasjon om dette finner du i [Rust sin dokumentasjon](https://docs.rs/regex/1.3.1/regex/#lookaround).
 
 ## Se også
-- [Rust "regex" bibliotek dokumentasjon](https://docs.rs/regex)
-- [Offisiell Rust nettside](https://www.rust-lang.org/)
-- [Tutorial: Regex in Rust, a simple tutorial](https://sjollis.com/2020/06/17/regex-in-rust-a-simple-tutorial/)
+- [Rust sin offisielle nettside](https://www.rust-lang.org/no)
+- [Regulære uttrykk tutorial på Rust-språket](https://chrismorgan.info/blog/rust-regex-tutorial/)
+- [Utforske Rust sin regex-bibliotek](https://docs.rs/regex/1.3.1/regex/)

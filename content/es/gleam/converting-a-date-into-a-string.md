@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena"
+html_title:           "Gleam: Convirtiendo una fecha en una cadena"
 simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,55 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Convertir una fecha a una cadena de texto es una tarea común en la programación, especialmente cuando se trabaja con datos de fechas en una aplicación. En este artículo, vamos a explorar cómo podemos lograr esto utilizando el lenguaje de programación Gleam.
+Convertir una fecha a un string puede ser útil para mostrar información de manera más legible en una interfaz de usuario, generar nombres de archivos o formatear fechas para ser incluidas en URL. En general, es una habilidad importante para tener en la programación.
 
 ## Cómo hacerlo
 
-Para convertir una fecha a una cadena de texto en Gleam, podemos utilizar la función `from_date` del módulo `Gleam.Date` y luego llamar a la función `format` con el formato deseado. Por ejemplo, si queremos obtener una cadena en formato `dd/mm/yyyy`, podemos usar el siguiente código:
+Para convertir una fecha a un string en Gleam, se puede utilizar la función `Date.to_string` y especificar el formato deseado. Aquí hay un ejemplo:
 
 ```Gleam
-import Gleam.Date
-
-let date = Date.from_date(2020, 12, 25)
-
-// Convertir a cadena con formato dd/mm/yyyy
-let date_string = Date.format(date, "{dd}/{mm}/{yyyy}")
-
-// Imprimir resultado
-io.print(date_string) // 25/12/2020
+let fecha = Date.from_string("2021-06-15", "YYYY-MM-DD")
+let fecha_string = Date.to_string(fecha, "DD/MM/YYYY")
+println(fecha_string) // Salida: "15/06/2021" 
 ```
 
-Podemos ver que primero creamos una fecha utilizando la función `from_date` y luego llamamos a `format` con el formato deseado. También podemos cambiar el orden de los elementos de la fecha como deseemos en el formato, por ejemplo, `{mm}/{dd}/{yyyy}` produciría `12/25/2020`.
+## Inmersión profunda
 
-Podemos obtener diferentes formatos de fecha utilizando códigos específicos para cada elemento de la fecha, como `{yyyy}` para el año, `{mm}` para el mes, y `{dd}` para el día. Además, también podemos agregar texto estático o caracteres especiales en el formato, como en el siguiente ejemplo:
+La función `Date.to_string` acepta cualquier formato compatible con la librería de formateo de fechas de Rust (la cual Gleam utiliza). Además de especificar el año, mes y día con "YYYY", "MM" y "DD", también se pueden incluir información sobre la hora, minutos, segundos y zona horaria. Por ejemplo:
 
-```Gleam
-// Enero 1, 2020
-Date.format(date, "Esta fecha es del día {d} de {m}, {yyyy}")
-```
+- `"HH:mm:ss"`: escribe la hora en formato de 24 horas (13:45:30)
+- `"hh:mm:ss aa"`: escribe la hora en formato de 12 horas con AM o PM (01:45:30 PM)
+- `"ZZ"`: escribe la zona horaria en formato de dos dígitos (UTC: +00, Nueva York: -04)
+- `"ZZZ"`: escribe la zona horaria en formato de tres dígitos con minutos (UTC: +00:00, Nueva York: -04:00)
 
-## Profundizando
-
-La función `format` también acepta otros parámetros además del formato, como el idioma y la zona horaria. Podemos especificar el idioma utilizando la función `with_locale` y la zona horaria con `with_time_zone`. Por ejemplo:
-
-```Gleam
-import Gleam.Date
-
-let date = Date.from_date(2020, 12, 25)
-
-// Convertir a cadena con formato "dd de mm del yyyy", en español y en la zona horaria "America/Argentina/Buenos_Aires"
-let date_string = Date.format(date, "dd de mm del yyyy")
-  |> Date.with_locale("es")
-  |> Date.with_time_zone("America/Argentina/Buenos_Aires")
-
-// Imprimir resultado
-io.print(date_string) // 25 de diciembre del 2020
-```
-
-En este ejemplo, especificamos que queremos la fecha en español y en la zona horaria de Buenos Aires. Podemos encontrar la lista de códigos de idioma y zonas horarias disponibles en el [sitio web de Gleam](https://gleam.run/modules/gleam_date/).
+Para ver una lista completa de los formatos disponibles, se puede consultar la documentación de la librería de formateo de fechas de Rust.
 
 ## Ver también
 
-- [Documentación de Gleam sobre el módulo Date](https://gleam.run/modules/gleam_date/)
-- [Tutorial de Gleam sobre fechas y horas](https://gleam.run/reference/basics/dates_times.html)
-- [Códigos de formato de fecha en la especificación de Unicode](https://www.unicode.org/reports/tr35/tr35-52/tr35-dates.html#Date_Format_Patterns)
+- [Documentación de la librería de formateo de fechas de Rust](https://doc.rust-lang.org/std/time/format/index.html)
+- [Guía de Gleam sobre tipos de datos](https://gleam.run/book/tour/types.html#af29-cada-bbf7-tvot0)
+- [Página de inicio de Gleam](https://gleam.run/)

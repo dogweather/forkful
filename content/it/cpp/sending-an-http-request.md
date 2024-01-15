@@ -1,6 +1,7 @@
 ---
-title:                "C++: Inviare una richiesta http"
-simple_title:         "Inviare una richiesta http"
+title:                "Inviare una richiesta http."
+html_title:           "C++: Inviare una richiesta http."
+simple_title:         "Inviare una richiesta http."
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,57 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-In questo post esploreremo come inviare una richiesta HTTP utilizzando il linguaggio di programmazione C++. Le richieste HTTP sono un elemento essenziale per comunicare con le applicazioni web, quindi imparare a inviarle con il nostro codice è uno strumento fondamentale per qualsiasi programmatore.
 
-## Come farlo
-Per inviare una richiesta HTTP in C++, dobbiamo utilizzare una libreria esterna chiamata "cpp-httplib". Iniziamo scaricando e installando questa libreria sul nostro sistema. Una volta completata l'installazione, possiamo iniziare a usare la libreria all'interno del nostro codice.
+Molti moderni linguaggi di programmazione, tra cui C++, offrono un modo semplice per inviare una richiesta HTTP: questo consente agli sviluppatori di interagire con server remoti e accedere a dati e servizi esterni.
 
-```C++
+## Come Fare
+
+Per inviare una richiesta HTTP in C++, il primo passo è includere la libreria "iostream". Successivamente, si crea un oggetto "string" contenente l'URL del server a cui si vuole inviare la richiesta.
+
+```
 #include <iostream>
-#include "httplib.h"
+#include <string>
 
-int main() {
-  // Creiamo un client HTTP
-  httplib::Client client("httpbin.org");
-
-  // Inviamo una richiesta GET
-  auto response = client.Get("/get");
-
-  // Controlliamo lo stato della risposta
-  if (response->status == 200) {
-    // Stampa del corpo della risposta
-    std::cout << response->body << std::endl;
-  } else {
-    std::cout << "Errore nella richiesta HTTP: " << response->error << std::endl;
-  }
-
-  return 0;
-}
-```
-
-Se eseguiamo questo codice, otterremo in output il corpo della risposta della richiesta HTTP, che contiene informazioni sulle intestazioni, sul corpo e sul metodo utilizzato.
-
-```
+int main()
 {
-  "args": {},
-  "headers": {
-    "Accept-Encoding": "gzip",
-    "Host": "httpbin.org",
-    "User-Agent": "cpp-httplib/0.8"
-  },
-  "origin": "xxx.xxx.xxx.xxx",
-  "url": "https://httpbin.org/get"
+  // Creazione dell'oggetto string con l'URL
+  std::string url = "https://www.example.com";
+
+  // Codice per inviare la richiesta HTTP
 }
 ```
 
-In questo esempio, abbiamo utilizzato il metodo `Get` per inviare una richiesta GET, ma è possibile utilizzare anche altri metodi come `Post` o `Delete`. Dobbiamo solo assicurarci di fornire i parametri corretti e il corpo della richiesta, se necessario.
+Dopo aver creato l'oggetto "string", è necessario utilizzare la libreria "curl" per configurare e inviare la richiesta. Ciò può essere fatto tramite le funzioni "curl_easy_init()" e "curl_easy_perform()", passando l'URL come parametro.
 
-## Approfondimenti
-Come accennato in precedenza, le richieste HTTP sono fondamentali per creare applicazioni web in grado di comunicare tra loro. Questo processo consente di scambiare dati e informazioni tra il server e il client, consentendo all'utente di interagire con l'applicazione. Quando un utente apre una pagina web, il suo browser invia una richiesta HTTP al server e questo risponde con un documento HTML che verrà visualizzato sulla pagina web.
+```
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
 
-Oltre al metodo `Get` per ottenere informazioni dal server, ci sono altri metodi comuni utilizzati per comunicare con il server: `Post` per inviare dati al server, `Put` per aggiornare le informazioni esistenti, `Delete` per eliminare le informazioni e `Patch` per apportare modifiche parziali ai dati esistenti. È importante conoscere questi metodi e quando utilizzarli correttamente per garantire il corretto funzionamento delle nostre applicazioni web.
+int main()
+{
+  // Creazione dell'oggetto string con l'URL
+  std::string url = "https://www.example.com";
 
-## Vedi anche
-- Documentazione della libreria cpp-httplib: https://github.com/yhirose/cpp-httplib
-- Tutorial sulle richieste HTTP in C++: https://www.thecodingdelight.com/send-http-request-cpp/
-- Guida su come inviare richieste HTTP in C++: https://www.geeksforgeeks.org/http-request-in-cpp/
+  // Inizializzazione di curl
+  CURL *curl;
+  curl = curl_easy_init();
+
+  // Invio della richiesta HTTP all'URL specificato
+  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+  curl_easy_perform(curl);
+  curl_easy_cleanup(curl);
+}
+```
+
+Una volta che la richiesta è stata inviata, è possibile visualizzare la risposta ottenuta dal server. Per fare ciò, è necessario utilizzare la funzione "curl_easy_getinfo()" e passare il parametro "CURLINFO_RESPONSE_CODE".
+
+```
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
+
+int main()
+{
+  // Creazione dell'oggetto string con l'URL
+  std::string url = "https://www.example.com";
+
+  // Inizializzazione di curl
+  CURL *curl;
+  curl = curl_easy_init();
+
+  // Invio della richiesta HTTP all'URL specificato
+  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+  curl_easy_perform(curl);
+  
+  // Ottenimento del codice di risposta dal server
+  long response_code;
+  curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+  std::cout << "Codice di risposta del server: " << response_code << std::endl;
+  
+  curl_easy_cleanup(curl);
+}
+```
+
+## Deep Dive
+
+Per inviare una richiesta HTTP più complessa, è possibile utilizzare la funzione "curl_easy_setopt()" per impostare diversi parametri, come il tipo di richiesta (GET, POST, PUT, etc.), il corpo della richiesta e gli header.
+
+Inoltre, la libreria "curl" offre anche una vasta gamma di opzioni avanzate per gestire la comunicazione con il server, come la gestione dei certificati SSL e dei cookie.
+
+## Vedi Anche
+
+- [Documentazione di cURL](https://curl.se/libcurl/c/)
+- [Tutorial di programmazione in C++](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [Guida a cURL in C++](https://curl.haxx.se/libcurl/c/)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Видалення символів, що відповідають шаблону"
-simple_title:         "Видалення символів, що відповідають шаблону"
+title:                "Вилучення символів, що відповідають шаблону"
+html_title:           "Haskell: Вилучення символів, що відповідають шаблону"
+simple_title:         "Вилучення символів, що відповідають шаблону"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,42 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Зазвичай, коли працюємо зі стрічками у функціональній мові програмування Haskell, часом нам потрібно видаляти символи, які відповідають певному шаблону. Це може бути корисно, наприклад, для очищення даних або фільтрування потрібних даних.
+Існує багато ситуацій, коли нам потрібно обробляти рядки і видаляти з них певні символи, які відповідають певному патерну. Це може бути зроблено за допомогою функції `filter` в мові програмування Haskell. Деякі приклади включають видалення пробілів перед або після кожного слова, видалення крапок з рядка для перевірки орфографії або видалення всіх символів, які не є літерами.
 
-## Як це зробити
+## Як
 
-### З використанням функції *filter*
-
-```Haskell
--- Видаляє всі літери, що повторюються
-
-removeDuplicates :: String -> String
-removeDuplicates str = filter (not . `elem` ['a'..'z']) str
-
-main = do
-  let str = "abbaccadd"
-  putStrLn $ removeDuplicates str -- виведе "bc"
-```
-
-### З використанням функції *delete*
+Ми можемо використовувати функцію `filter` для видалення підрядків, що відповідають певному патерну. Наприклад, для видалення пробілів перед кожним словом, нам потрібно перевірити, чи символ є пробілом за допомогою функції `isSpace` з модуля `Data.Char`, а потім застосувати функцію `filter` до рядка. Такий код здійснює видалення всіх пробілів перед кожним словом:
 
 ```Haskell
--- Видаляє всі голосні зі стрічки
+import Data.Char (isSpace)
 
-removeVowels :: String -> String
-removeVowels str = delete 'a' (delete 'e' (delete 'i' (delete 'o' (delete 'u' str))))
-
-main = do
-  let str = "Hello world"
-  putStrLn $ removeVowels str -- виведе "Hll wrld"
+deleteSpaces :: String -> String
+deleteSpaces = filter (not . isSpace)
 ```
 
-## Глибоке вивчення
+Використовуючи цей самий підхід, ми можемо видалити крапки з рядка, використовуючи функцію `isPunctuation`, або видалити всі символи, які не є літерами, застосовуючи функцію `isLetter`.
 
-У Haskell існує багато додаткових функцій для роботи зі стрічками, які можуть бути корисними для видалення символів за певним шаблоном. Наприклад, функція *deleteFirstsBy* дозволяє видаляти символи за певним критерієм.
+## Глибокий погляд
+
+Функція `filter` в Haskell приймає функцію і список, і повертає список, який містить тільки ті елементи, для яких передана функція повернула True. Це називається фільтруванням списку.
+
+Позначимо, що функції `isSpace`, `isPunctuation` і` isLetter` є частиною модуля `Data.Char` і можуть бути використані для перевірки типу символів в рядках.
 
 ## Дивись також
 
-- [Функція *filter* в Haskell](https://wiki.haskell.org/Filter)
-- [Функція *delete* в Haskell](https://www.geeksforgeeks.org/haskell-delete-function/)
-- [Повний список функцій для роботи зі стрічками в Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+- [Документація по `filter` з офіційного сайту Haskell](https://www.haskell.org/hoogle/?hoogle=%28%2D%3E+Bool%29+%2D%3E+[])
+- [Туторіал по роботі з рядками в Haskell](https://wiki.haskell.org/Strings_as_lists)
+- [Приклади використання `filter` для фільтрування списків](https://stackoverflow.com/questions/50988203/filter-in-haskell-how-does-it-works)

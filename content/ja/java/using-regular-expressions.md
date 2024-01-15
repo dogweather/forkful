@@ -1,5 +1,6 @@
 ---
-title:                "Java: 正規表現の使用"
+title:                "正規表現の使用"
+html_title:           "Java: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "Java"
 category:             "Java"
@@ -9,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、Javaプログラミング界へようこそ！今日は、正規表現についてお話ししたいと思います。正規表現は、パターンマッチングやテキスト検索に非常に便利なツールです。プログラマーとして、正規表現を学ぶことでより効率的にコードを書くことができるようになります。
+## なぜ
 
-## Why
-正規表現を使う理由は、文字列を効率的に操るためです。例えば、あるサイトから情報を収集する際に特定のパターンのURLを抽出する必要があるとします。このような場合、正規表現を使えば簡単に対象のURLを抽出することができます。また、フォーム入力の制限やバリデーションなど、文字列を制御する様々な場面で正規表現が役立ちます。
+正規表現を使用する理由はたくさんありますが、一番の理由はデータのパターンを効率的にマッチングできることです。これにより、大量のデータを手動で処理する必要がなくなり、時間の節約につながります。
 
-## How To
-正規表現を使うためには、まずは正しい文法を学ぶ必要があります。以下に、Javaで正規表現を使う例を示します。
+## 使い方
+
+正規表現を使用するには、まず ```java java.util.regex``` パッケージをインポートします。次に、パターンを定義し、マッチしたい文字列と比較します。
 
 ```java
-// パターンを作成する
-Pattern pattern = Pattern.compile("[0-9]{3}-[0-9]{4}");
+import java.util.regex.*;
 
-// 文字列をマッチングする
-Matcher matcher = pattern.matcher("123-4567");
-
-// マッチした部分を表示する
-while (matcher.find()) {
-    System.out.println(matcher.group());
+String str = "今日の天気は晴れです";
+String pattern = ".*晴れ.*"; // マッチしたいパターンを定義する
+Pattern p = Pattern.compile(pattern);
+Matcher m = p.matcher(str);
+if (m.find()) { // マッチしたらtrueを返す
+    System.out.println("天気が晴れです！");
+} else {
+    System.out.println("天気が晴れではありません。");
 }
 ```
 
-上記のコードでは、文字列が「123-4567」の場合に「123-4567」をマッチングし、マッチした部分を表示します。コードの実行結果は以下のようになります。
+上記のコードでは、パターン ```.*晴れ.*``` が文字列にマッチしているかどうかを確認しています。 ```.*``` は任意の文字列を表し、その前後に ```晴れ``` という文字列があるかどうかをチェックします。もしマッチしていれば、```天気が晴れです！``` というメッセージが出力されます。
 
-```
-123-4567
-```
+複雑なパターンを定義することも可能です。例えば、電話番号の形式をチェックする場合、```[0-9]{2,4}-[0-9]{3,4}-[0-9]{4}``` というパターンを定義し、それにマッチするかどうかを確認します。詳しくは「深堀」セクションで説明します。
 
-## Deep Dive
-正規表現には、様々な特殊文字やメタ文字が使われます。これらを理解することで、より高度なパターンマッチングが可能になります。また、グループ化や後方参照などの機能を使うことで、より柔軟な正規表現を作成することができます。
+## 深堀
 
-さらに、Javaでは「Pattern」と「Matcher」というクラスを使って正規表現を扱いますが、これらのクラスには多くのメソッドが用意されています。これらを駆使することで、より複雑なマッチングを行うことが可能です。
+正規表現はテキスト内の指定したパターンを検索するための特別な文字列です。基本的には、任意の文字を表す「ワイルドカード」や特定の文字を指定する「キャラクタークラス」を使用して、パターンを定義します。例えば、```.*``` は任意の文字列を表し、```[a-zA-Z]``` はアルファベットの小文字と大文字を指定します。詳しい正規表現のルールについては、以下のリンクを参考にしてください。
 
-## See Also
-正規表現を使う際に役立つ情報をまとめました。
+- [正規表現チュートリアル](https://www.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)
+- [Javaの正規表現について](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
 
-- [Java正規表現チュートリアル](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
-- [正規表現エディター](https://regex101.com/)
-- [正規表現チートシート](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Java APIドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/)
+## 関連リンク
 
-それでは、これから正規表現を使いこなして、より効率的なコーディングを楽しんでください！
+- [Java正規表現リファレンス (Oracle)](https://docs.oracle.com/javase/jp/6/api/java/util/regex/Pattern.html)
+- [正規表現を使用したテキスト処理 (JavaMagazine)](https://www.javamagazine.mozaicreader.com/JulAug2018/Launch.action#article-id=63425)
+- [練習用の正規表現サイト (Regex101)](https://regex101.com/)

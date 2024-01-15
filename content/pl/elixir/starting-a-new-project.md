@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczynając nowy projekt"
+html_title:           "Elixir: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -9,51 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto rozpocząć nowy projekt w Elixir?
+## Dlaczego
 
-Rozpoczęcie nowego projektu w Elixir może być bardzo wartościowe dla programistów z różnych dziedzin. Elixir to funkcjonalny i produktywny język programowania, który jest oparty na erlangowych maszynach wirtualnych. Obecnie używany jest przez takie firmy jak WhatsApp, Pinterest i Discord. Jeśli szukasz nowego wyzwania lub chcesz rozpocząć swoją przygodę z Elixir, jest to doskonały moment, aby rozpocząć nowy projekt.
+Jeśli jesteś programistą szukającym nowego języka programowania, powinieneś rozważyć Elixir! Jest to dynamiczny i funkcjonalny język, który jest wysoce skalowalny i odporny na błędy. Jego prostota i wydajność sprawiają, że jest idealny do tworzenia nowych projektów.
 
-## Jak zacząć?
+## Jak to zrobić
 
-Aby rozpocząć nowy projekt w Elixir, najpierw musisz mieć zainstalowany Elixir i Erlang na swoim komputerze. Możesz pobrać i zainstalować je z ich oficjalnych stron internetowych. Gdy już to zrobisz, możesz przejść do tworzenia swojego projektu.
+Pierwszym krokiem w tworzeniu projektu w Elixir jest zainstalowanie języka na swoim komputerze. Możesz to zrobić poprzez pobranie pakietu instalacyjnego na stronie internetowej Elixir lub użyć menedżera pakietów, takiego jak Homebrew na systemie macOS.
 
-Aby utworzyć nowy projekt, otwórz terminal i przejdź do wybranego przez siebie folderu. Następnie wpisz polecenie:
+Następnie, musisz utworzyć strukturę projektu, używając polecenia `mix new project_name`. Spowoduje to utworzenie plików i folderów zawierających podstawową strukturę projektu. W tym momencie możesz również wybrać framework, taki jak Phoenix, który ułatwi tworzenie aplikacji webowych w Elixir.
 
-```
-mix new nazwa_projektu
-```
+Gdy już masz stworzoną strukturę projektu, możesz zacząć pisać kod w plikach `.ex` lub `.exs`. Możesz również wykonywać kod w konsoli Elixir używając polecenia `iex`.
 
-Polecenie to utworzy nowy katalog z wszystkimi potrzebnymi plikami i konfiguracjami dla Twojego projektu. Następnie możesz przejść do swojego projektu, wpisując:
+Poniżej przedstawione są przykłady kodu wraz z odpowiednimi wyjściami:
 
-```
-cd nazwa_projektu
+```Elixir
+IO.puts("Witaj, świecie!")
 ```
 
-W tym momencie możesz już rozpocząć kodowanie swojej aplikacji. Aby wyświetlić przykładowy tekst na ekranie, użyj następującego kodu:
-
+Wynik:
 ```
-IO.puts "Witaj w Elixir!"
-```
-
-Po zapisaniu i uruchomieniu pliku za pomocą komendy:
-
-```
-elixir nazwa_pliku.ex
+Witaj, świecie!
 ```
 
-Na ekranie powinien pojawić się tekst "Witaj w Elixir!". Teraz możesz dalej eksperymentować i tworzyć swoją własną aplikację w Elixir.
+```Elixir
+suma = 2 + 2
+IO.puts(sum)
+```
 
-## Deep Dive
+Wynik:
+```
+4
+```
 
-Kodowanie w Elixir jest wyjątkowo przyjemne dzięki jego wygodnej składni i możliwościom programowania w sposób funkcyjny. Jest bardzo ważne, aby skupić się na nauce podstaw języka, takich jak deklarowanie zmiennych, funkcje, listy i mapy.
+## Głębszy wybieg
 
-Ponadto, warto rozważyć wykorzystanie narzędzia Mix do zarządzania zależnościami w projekcie oraz do budowania i uruchamiania aplikacji.
+Aby naprawdę wykorzystać potencjał Elixir, możesz wykorzystać jego biblioteki i narzędzia. Na przykład Ecto jest biblioteką do obsługi baz danych, a ExUnit to narzędzie do testowania.
 
-Ważną rzeczą jest także wykorzystanie dokumentacji Elixir i kontaktowanie się ze społecznością, która chętnie pomoże ci w rozwiązywaniu problemów i udzielaniu porad.
+Ważne jest również aby poznać konwencje i najlepsze praktyki programowania w Elixir. Na przykład, używanie wzorców funkcjonalnych i unikanie mutowalności danych jest kluczowe w pisaniu czystego i bezpiecznego kodu.
 
-## Zobacz także
+W końcu, aby udoskonalić swoje umiejętności w Elixir, zachęcamy do czytania dokumentacji i uczestnictwa w społeczności Elixir.
 
-- [Oficjalna strona Elixir](https://elixir-lang.org/)
-- [Dokumentacja Elixir](https://hexdocs.pm/elixir/Kernel.html)
-- [Społeczność Elixir na Slacku](https://elixir-slackin.herokuapp.com/)
-- [Kurs Elixir na Codecademy](https://www.codecademy.com/learn/learn-elixir)
+## Zobacz również
+
+- [Dokumentacja Elixir](https://elixir-lang.org/docs.html)
+- [Oficjalny samouczek Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Phoenix framework](https://www.phoenixframework.org/)

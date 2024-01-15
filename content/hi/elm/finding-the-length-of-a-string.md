@@ -1,6 +1,7 @@
 ---
-title:                "Elm: स्ट्रिंग की लंबाई को खोजना"
-simple_title:         "स्ट्रिंग की लंबाई को खोजना"
+title:                "स्ट्रिंग की लंबाई का पता लगाना"
+html_title:           "Elm: स्ट्रिंग की लंबाई का पता लगाना"
+simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों?
+## Kyon
 
-क्या आपने कभी सोचा है कि एक स्ट्रिंग की लंबाई को कैसे जाना जाता है? शायद आपको यह जानकारी न जाने का कोई सबब हो, लेकिन Elm में स्ट्रिंग की लंबाई को निकालना एक उपयोगी काम हो सकता है। इस ब्लॉग पोस्ट में, हम इसकी जानकारी आपको देंगे जिससे आप इस काम को कर सकते हैं।
+Kya kabhi aapne socha hai ki string ke length ko find karna kyu zaruri hai? Ye bahut hi common si problem hai jo har programmer ke samne aati hai. Kisi bhi programming language mein string ko manipulate karne ke liye, uski length ko find karna zaruri hai. Isse hume pata chalta hai ki string mein kitne characters hai aur hum usse sahi tarike se handle kar sakte hain. Isliye, string ke length ko find karna ek bahut zaruri skill hai har programmer ke liye.
 
-## कैसे?
+## Kaise
 
-आइए हम एक सरल Elm कोड का उदाहरण देखते हैं जो एक स्ट्रिंग की लंबाई को निकालता है।
+Agar aapne kabhi Elm programming language se kaam kiya hai, to aapko pata hoga ki isme strings ko represent karne ke liye "String" data type hota hai. Aur is data type ka ek function hai "length" jo string ki length ko find karne mein help karta hai.
 
-```Elm
-lengthOfStr str = String.length str
-```
-उपरोक्त कोड में, हम `String.length` फंक्शन का उपयोग करके स्ट्रिंग की लंबाई को निकाल सकते हैं। आपको पंक्तियों के बीच एक स्ट्रिंग पास करनी होगी जिसकी लंबाई आप जानना चाहते हैं।
-
-चलिए एक उदाहरण देखते हैं:
+To chaliye dekhte hain kaise hum is function ka use karke string ki length ko find kar sakte hain. Neeche diye gaye code block mein humne ek sample string "Namaste" declare kiya hai aur uski length ko find karne ke liye "length" function ka use kiya hai. Iske baad, humne "Console.log" function ka use karke output ko console pe print kiya hai.
 
 ```Elm
-lengthOfStr "Hello World" 
--- Output: 11
+str = "Namaste"
+length(str)
 ```
 
-यहां, हमने "Hello World" स्ट्रिंग की लंबाई को जाना है और हमें 11 का आउटपुट मिला है। आप अपनी स्ट्रिंग देख सकते हैं और यह फंक्शन दुबारा चलाकर अपना आउटपुट प्राप्त कर सकते हैं।
+Output:
+```
+7
+```
 
-## डीप डाइव
+Jaise aap dekh sakte hain, "length" function ne hume string "Namaste" ki length, yani 7 return kiya hai. Isi tarah aap kisi bhi string ki length ko find kar sakte hain is simple se function ka use karke.
 
-अब हम एक दरासल जानकारी हेतु स्ट्रिंग की लंबाई के अलग-थलगे तरीके देखेंगे।
+## Deep Dive
 
-- `String.length` फंक्शन के अलावा, आप `String.toList` फंक्शन का उपयोग करके भी स्ट्रिंग की लंबाई को जान सकते हैं। यह फंक्शन स्ट्रिंग में मौजूद हर एक अक्षर को एक लिस्ट में रूपांतरित करता है। उस लिस्ट का आकार आपको स्ट्रिंग क
+Agar hum iss problem ko deep dive karein to hume pata chalta hai ki strings ko manipulate karne ke liye hume unki length ko find karna kitna zaruri hai. Isse hume pata chalta hai ki string mein kitne characters hai aur hum usse sahi tarike se access aur handle kar sakte hain.
+
+Elm programming language mein, strings immutable (unchangeable) hote hain. Yani, ek baar string create ho jane ke baad, hum usme koi changes nahi kar sakte hain. Isliye, agar hume string ko modify karna hai, hume uski length ko find karke, usme se kuch characters remove ya add karne honge aur fir uss naye string ko create karna hoga.
+
+Isi liye, string ki length ko find karna ek bahut hi zaruri task hai jo har programmer ko perfect tarike se karna chahiye. Kyunki iske bina hum string ko manipulate nahi kar sakte hain aur apne desired output ko achieve nahi kar sakte.
+
+## Dekhiye Bhi
+
+- [Official documentation for Elm string functions](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Tutorial on working with strings in Elm](https://elmprogramming.com/strings.html)

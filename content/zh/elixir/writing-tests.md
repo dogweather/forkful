@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 编写测试"
+title:                "编写测试"
+html_title:           "Elixir: 编写测试"
 simple_title:         "编写测试"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,56 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要编写测试
 
-在编写代码的过程中，我们经常会遇到各种各样的问题。而写测试就可以帮助我们在开发过程中发现和解决这些问题，同时也可以确保我们的代码质量和稳定性。
+编写测试可以帮助我们确保代码的正确性和稳定性。通过编写测试，我们可以在开发过程中及时发现潜在的 bug，并能快速定位和修复问题。这样可以节省我们的时间和精力，使整个开发流程更加高效。
 
-## 如何
+## 如何编写测试
 
-为了写测试，我们需要使用 Elixir 的测试框架 ExUnit。下面是一个简单的示例，展示了如何编写测试来测试一个函数是否返回正确的结果。
-
-```Elixir
-defmodule Math do
-  def add(a, b) do
-    a + b
-  end
-end
-```
+编写测试通常分为三个步骤：准备测试环境、编写测试代码和运行测试。首先，我们需要安装 Elixir 的测试框架 ExUnit。然后在每个需要测试的函数前添加 `@test` 注解，然后在对应的测试函数中编写对应的断言代码。最后，我们可以使用 `mix test` 命令来运行所有的测试用例，或者使用 `mix test 文件名` 来运行单个文件的测试。
 
 ```Elixir
-defmodule MathTest do
+# 准备测试环境
+defmodule CalculatorTest do
   use ExUnit.Case
 
-  test "adds two numbers" do
-    assert Math.add(1, 2) == 3
+  # 添加 `@tag :test` 注解
+  @tag :test
+  defmodule #add/2 函数的测试
+    # 添加对应的测试函数
   end
 end
-```
 
-运行测试命令 `mix test` 后，我们就可以看到测试结果输出为 `1 test, 0 failures`，表示测试通过。
-
-## 深入探讨
-
-除了简单的测试，我们还可以在测试中使用一些特殊的断言函数，来确保代码的正确性。例如，可以使用 `assert_raise` 来测试一个函数是否会抛出异常。
-
-```Elixir
-test "raises an error if dividing by zero" do
-  assert_raise ArgumentError, fn ->  
-    Math.div(10, 0)
-  end
+# 编写测试代码
+test "#add/2 正确计算结果" do
+  assert Calculator.add(2, 3) == 5
 end
+
+# 运行测试
+mix test
 ```
 
-另外，我们也可以在测试中使用 `setup` 和 `teardown` 函数来准备和清理测试所需的环境，以及使用 `async: true` 参数来并发运行测试。
+## 深入了解编写测试
 
-## 参考链接
+编写测试可以帮助我们更好地理解代码的逻辑和细节。通过对不同情况的编写测试用例，我们可以更加全面地覆盖我们的代码，从而减少潜在的 bug。同时，编写测试也是一种良好的编程习惯，能够帮助我们更加专注和规范地编写代码。
 
-- [Elixir官方文档 - 测试](https://elixir-lang.org/getting-started/introduction.html#testing)
+## 参考资料
+
 - [ExUnit文档](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School - 测试](https://elixirschool.com/zh-hans/lessons/basics/testing/)
-
-## 更多阅读
-
-- [如何使用 ExCoveralls 测试覆盖率工具](https://cloud.tencent.com/developer/article/1518689)
-- [5个步骤编写高质量的 Elixir 测试代码](https://medium.com/@mikulskibartosz/writing-great-elixir-tests-in-5-easy-steps-f62f6cc825b6)
-- [Elixir与Clojure测试比较](https://blog.rowanhu.com/2017/01/18/clojure%E4%B8%8Eelixir%E7%9A%84%E6%B5%8B%E8%AF%95%E6%AF%94%E8%BE%83/)
+- [Elixir School的测试章节](https://elixirschool.com/zh-hans/lessons/advanced/testing/)
+- [常见的测试框架比较](https://www.edureka.co/blog/elixir-testing-frameworks/)

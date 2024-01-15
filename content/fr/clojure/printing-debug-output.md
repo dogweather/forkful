@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Afficher les messages de débogage"
-simple_title:         "Afficher les messages de débogage"
+title:                "Affichage du débogage"
+html_title:           "Clojure: Affichage du débogage"
+simple_title:         "Affichage du débogage"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,49 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Imaginons que vous travailliez sur un projet Clojure et que vous rencontriez un problème avec une partie de votre code. Vous avez identifié la section du code où le problème se produit, mais vous ne savez pas exactement quelles valeurs sont utilisées à ce moment-là. C'est là que l'impression de sortie de débogage entre en jeu. En imprimant les valeurs des variables ou des expressions à un moment précis dans votre code, vous pouvez mieux comprendre ce qui se passe et résoudre votre problème plus rapidement.
+La sortie de débogage est un outil essentiel pour comprendre le fonctionnement de votre code et résoudre les problèmes. En imprimant des informations sur l'état de votre programme à différents points d'exécution, vous pouvez identifier les erreurs et suivre le parcours de vos données.
 
-## Comment faire 
-
-L'impression de sortie de débogage en Clojure est très simple. Vous pouvez utiliser la fonction `println` pour afficher une valeur ou un message spécifique dans la console. Par exemple : 
+## Comment faire
 
 ```Clojure
-(def name "Jean")
-(println "Bonjour" name)
-
-;; Output: Bonjour Jean
+(defn afficher-statut [statut]
+  (println "Le statut actuel est :" statut))
+  
+(defn operation-complexe [a b]
+  (print "Effectuer une opération complexe avec les valeurs :" a b)
+  (+ a b))
 ```
 
-Vous pouvez également afficher plusieurs valeurs en les séparant avec une virgule : 
+L'exemple ci-dessus montre comment imprimer des informations sur des variables et des expressions dans votre code. En utilisant `println` et `print`, vous pouvez afficher la valeur actuelle des variables ainsi que des messages pour aider à comprendre le contexte de l'exécution du code.
+
+Voici un exemple de sortie de débogage pour la fonction `operation-complexe` avec une valeur de `a` de 2 et une valeur de `b` de 3 :
+
+```
+Effectuer une opération complexe avec les valeurs : 2 3
+Le résultat est : 5
+```
+
+## Plongée en profondeur
+
+L'impression de sortie de débogage peut être personnalisée en utilisant des options telles que `pr`, `prn` et `pprint`, qui offrent différentes façons de formater les données pour une lisibilité maximale. Vous pouvez également utiliser des bibliothèques telles que `clojure.tools.logging` pour une meilleure gestion de l'output de débogage.
+
+Voici un exemple de sortie de débogage avec la fonction `pr` :
 
 ```Clojure
-(def age 30)
-(def country "France")
-(println "Je suis" name "et j'ai" age "ans. Je viens de" country)
-
-;; Output: Je suis Jean et j'ai 30 ans. Je viens de France
+(defn afficher-nombre [nombre]
+  (pr "Le type de nombre est : " (type nombre))
+  (pr "La valeur de nombre est : " nombre))
+  
+(afficher-nombre 5)
 ```
 
-En utilisant une combinaison de `println` et de la fonction `str`, vous pouvez même afficher des valeurs à l'intérieur d'une chaîne de caractères : 
+La sortie sera :
 
-```Clojure
-(def num1 10)
-(def num2 20)
-(println (str "La somme de " num1 " et " num2 " est " (+ num1 num2)))
-
-;; Output: La somme de 10 et 20 est 30
+```
+Le type de nombre est : java.lang.Long
+La valeur de nombre est : 5
 ```
 
-## Plongée approfondie 
+## Voir aussi
 
-En plus de `println`, il existe d'autres fonctions et outils utiles pour l'impression de sortie de débogage en Clojure. La bibliothèque `clojure.pprint` offre des fonctions telles que `pprint` et `pprint-table` pour imprimer des valeurs de manière plus lisible. Vous pouvez également utiliser la macro `clojure.pprint/pprint` pour limiter la profondeur d'impression et éviter d'afficher des valeurs trop complexes.
-
-En outre, certaines intégrations de développement telles que Cider pour Emacs et Calva pour VS Code offrent des fonctionnalités de débogage avancées, y compris l'impression de variables en direct dans votre éditeur.
-
-## Voir aussi 
-
-- [Documentation officielle de Clojure sur l'impression de sortie de débogage](https://clojure.org/guides/repl/debugging)
-- [Tutoriel de Clojure sur l'impression de sortie de débogage](https://clojure.org/guides/repl/debugging_with_clojure_repl)
-- [Vidéo de formation sur l'impression de sortie de débogage en Clojure](https://www.youtube.com/watch?v=yIMCw7s7pjE)
+- [Documentation officielle de Clojure](https://clojure.org/)
+- [Tutoriels Clojure de Clojure for the Brave and True](https://www.braveclojure.com/programming/)
+- [Exemples de code sur GitHub](https://github.com/clojure/clojure)

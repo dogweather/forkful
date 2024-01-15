@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: ランダム数の生成"
-simple_title:         "ランダム数の生成"
+title:                "ランダムな数値の生成"
+html_title:           "Clojure: ランダムな数値の生成"
+simple_title:         "ランダムな数値の生成"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -9,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ: ランダムな数値の生成を行う必要性
+## Why
+コンピュータープログラミングでランダムな数字を生成するのは、さまざまなアプリケーションやゲームで使用される重要な機能です。ランダムな値を生成することで、プログラムをより面白くしたり、多様性をもたらしたりすることができます。
 
-ランダムな数値の生成にはさまざまな理由があります。たとえば、ゲームやシミュレーション、暗号化、テストデータの作成などが挙げられます。また、ランダム性を持たせることでプログラムの予想外の動作を確認することもできます。
-
-## 方法: コード例とサンプル出力
-
+## How To
 ```Clojure
-; ランダムな整数の生成 (1から10まで)
-(rand-int 10) ; => 7
+;; ランダムな整数を生成する方法
+(rand-int n)
 
-; ランダムな小数の生成 (0から1まで)
-(rand) ; => 0.546928458
+;; ランダムな浮動小数点数を生成する方法
+(rand)
 
-; 指定した範囲内のランダムな数値の生成
-(rand-nth (range 20 30)) ; => 24
+;; 範囲内のランダムな整数を生成する方法
+(rand-range start end)
 
-; ランダムな文字列の生成 (A-Zから10文字)
-(apply str (repeatedly 10 #(char (+ (rand-int 26) 65)))) ; => "REFDZBNRHJ"
+;; ランダムな要素を取得する方法
+(rand-nth coll)
+
+;; 複数の値からランダムに1つ選択する方法
+(rand-choice val1 val2 val3)
 
 ```
 
-## ディープダイブ: ランダムな数値生成について詳しく
+生成される乱数の範囲や種類は、引数の設定によって変更することができます。また、ランダムな値を使用する際には、必ず乱数の種を指定するようにしてください。
 
-Clojureでは、ランダムな数値を生成するために`rand`や`rand-int`などの関数が利用できます。これらの関数は内部的にはPseudo-random number generator (PRNG)を使用しており、シード値を指定することで再現性を持たせることもできます。
+## Deep Dive
+Clojureでは、乱数生成に様々なアルゴリズムを使用しています。その中でも、擬似乱数生成アルゴリズムは最も一般的な方法です。擬似乱数生成アルゴリズムでは、一定の計算に基づいて数値を生成し、ランダムに見える数字を取得することができます。
 
-また、`rand`関数はデフォルトでは0から1の範囲内の小数を返しますが、`rand-int`は整数のみを返します。さらに、`range`や`repeatedly`などのClojureの他の関数を組み合わせることで、さまざまなランダムな数値の生成が可能です。
+Clojureでは、デフォルトでJavaの擬似乱数生成アルゴリズムを使用していますが、安全性の観点から別のアルゴリズムを使用することもできます。その際には、`setRandomeSeed`関数を使用して乱数の種を設定することが必要です。
 
-## 参考リンク
-
-- [Clojureのドキュメンテーション](https://clojuredocs.org/clojure.core/rand)
-- [Clojureでランダムな数字を生成する方法](https://qiita.com/yuya_takeyama/items/5e91170c247618eb3a02)
-- [Understanding random numbers in Clojure](https://blog.8thlight.com/axis-of-entropy/2011/01/15/understanding-random-numbers-in-clojure.html)
-
-## 参考書籍
-
-- 『Clojureプログラミングクックブック』, Luke VanderHart, Ryan Neufeld
-- 『プログラミングClojure 第2版』, Stuart Halloway
-- 『Mastering Clojure』, Ed Ipri, Akhil Wali
+## See Also
+- [Clojure ランダム - Clojure公式ドキュメント](https://clojure.org/reference/data_structures#hash-maps) 
+- [Clojure Programming by Chas Emerick, Brian Carper, & Christophe Grand](https://www.amazon.co.jp/Clojure-Programming-Chas-Emerick/dp/1449394701/ref=sr_1_1?__mk_ja_JP=カタカナ&dchild=1&keywords=clojure&qid=1591477606&sr=8-1)

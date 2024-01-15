@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "Elm: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,21 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##क्यों
-यामल के साथ काम करने का मतलब क्या है? आपके मन में शायद यह सवाल होगा। आमतौर पर, यामल एक सामान्य और सुलभ भाषा है जो और संगठित और विशेष भाषाओं के जैसे है। लेकिन इसके लिए कोई भी मध्यमावश्यक नहीं है, यह आपको समय और प्रसंस्करण के साथ अधिक उपकरण प्रदान करता है।
+## Kyun
 
-##कैसे करें
-जैसा कि हमने पहले कहा, YAML aएक साधारण और सुविधाजनक भाषा है जो अन्य भाषाओं की तुलना में संरचित और विशेष है। इसे उदाहरण के साथ समझना आसान होता है। नीचे एल्म कोड ब्लॉक में कुछ कोड उदाहरण दिए गए हैं:
+YAML ke saath kaam karne ka karan ek simple aur lightweight programming language ka use karne se hai. Elm, jo ki functional programming paradigm par based hai, YAML files ko manipulate aur interact karne ke liye ek powerful tool hai.
+
+## Kaise
 
 ```Elm
---
-- name: पृष्ठ
-  order: 1
- - name: उत्पादों
-  order: 2
+import YAML exposing (..)
+
+ymlString = """
+name: John Doe
+age: 25
+hobbies:
+- reading
+- coding
+- hiking
+"""
+
+yml = parse ymlString
+
+yml.name -- "John Doe"
+
+yml.hobbies -- ["reading", "coding", "hiking"]
+
+yml.age -- 25
+
+ymlString' = toYaml yml
 ```
 
-उपरोक्त उदाहरण में, हमने दो पृष्ठों को एक उत्पादों के साथ प्रदर्शित किया है। यह पृष्ठों को इकाइयां में व्यवस्थित करने के लिए सुनिश्चित करता है।
+Iss code example mein humne Elm ke YAML library ko import kiya aur ek sample YAML string ko parse karke usse interact kiya. Yahaan par hum dekh sakte hai ki hum kis tarah se YAML properties aur unke values ko access aur manipulate kar sakte hai. Iske alawa, humne `toYaml` function ka use kiya hai jo YAML data ko string mein convert karta hai.
 
-##गहराई में खोज
-अगर आप यामल के साथ काम करना सीख रहे हैं, तो आपको इसके गहराई में खोज करना चाहिए। इस भाषा को सीखने में आपको कुछ समय लग सकता है लेकिन आप इसे सीखकर आगे बढ़ सकते हैं। ऊपर दिए गए उदाहरण से प्रेरित होकर अपने खुद के यामल फ़ाइल बनाएं और उसे संशोधित करें। आप इस भाषा को सीखने के लिए आनंद करेंगे और अगर आप इसे एल्म के साथ उपयोग करते हैं तो आपको अपने क
+## Deep Dive
+
+YAML ke saath kam karne mein aur bhi kai interesting aur advanced techniques hai, jaise ki YAML anchors, aliases, aur flow style notation. Elm ke YAML library mein bhi in features ka support hai jiski madad se hum YAML files ko even more efficient tarike se handle kar sakte hai. Iske alawa, Elm ke type system ki flexibility aur powerful error handling features hume YAML data ko validate aur transform karne mein bhi madad karte hai.
+
+## Dekhiye Bhi
+
+- [Elm Documentation](https://elm-lang.org/docs)
+- [YAML Website](https://yaml.org/)
+- [YAML Tutorials](https://www.tutorialspoint.com/yaml/)
+- [Elm-YAML Github repository](https://github.com/shibukawa/elm-yaml)

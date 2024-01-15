@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Starting a new project"
+title:                "Starting a new project"
+html_title:           "Swift recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,48 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Starting a new project can be both exciting and daunting. You may have a great idea in mind or a business problem that needs to be solved. Whatever the reason, beginning a new programming project is a thrilling opportunity to bring your ideas to life.
+Are you ready to dive into the world of Swift programming? Maybe you have an amazing app idea that you want to bring to life, or you simply want to learn a new programming language. Whatever your reason may be, starting a new project in Swift is an exciting and rewarding experience.
 
 ## How To
 
-To get started, you'll need to have Xcode installed on your Mac. If you're new to Swift, don't worry! It's a beginner-friendly programming language with a simple syntax. Let's dive into some examples using Swift playgrounds.
+To start a new project in Swift, follow these simple steps:
 
-### Setting Up a Blank Project
+1. Open Xcode, the IDE (integrated development environment) for Swift.
+2. Click on "Create a new Xcode project" or go to File > New > Project.
+3. Choose the type of project you want to create (e.g. iOS app, macOS app, etc.).
+4. Enter the necessary information for your project, such as name, organization, and bundle identifier.
+5. Choose a location to save your project and click "Create".
 
-First, let's open Xcode and create a new project. Select "Single View App" and click "Next". Name your project and select "Swift" as the language and make sure you have "Storyboard" selected for User Interface. Click "Next" and save your project. Congratulations, you've just set up a blank Swift project!
+Congratulations, you have now created your first Swift project! Now, let's take a closer look at what's inside.
 
-### Declaring Variables
-
-Next, let's learn how to declare variables in Swift. Variables in Swift can hold different types of data, such as strings, integers, and booleans. To declare a variable, use the `var` keyword followed by the variable name and the data type. Let's see this in action:
-
-```Swift
-var projectName: String = "My New Project"
-var numberOfTasks: Int = 10
-var isComplete: Bool = false
+```swift
+print("Hello, world!")
 ```
 
-### Creating Functions
+This simple line of code will print the famous "Hello, world!" message, confirming that your project is up and running. Simple, right?
 
-Functions are blocks of code that perform a specific task. In Swift, you can create a function by using the `func` keyword followed by the function name and its parameters within parentheses. Let's create a simple function that prints a message to the console:
+Now, let's add a bit more code to demonstrate the power of Swift. Inside the `ViewController` class, add the following code:
 
-```Swift
-func printMessage(message: String) {
-  print(message)
-}
-
-printMessage("Welcome to my new project!")
+```swift
+var favoriteColor = "blue"
+var favoriteNumber = 7
+print("My favorite color is \(favoriteColor) and my favorite number is \(favoriteNumber).")
 ```
 
-### Running Your Code
-
-To see the output of your code, click the "Run" button on the top left of Xcode. You should see your message printed in the console area at the bottom of the Xcode window. Congratulations, you've successfully run your first Swift project!
+You will notice that we can declare variables without specifying their type, as Swift is a type-inferred language. In this case, `favoriteColor` will be inferred as a `String` and `favoriteNumber` as an `Int`. The backslash preceding the parentheses in the `print` statement allows us to include the variables' values in the output. If you run the code, you should see "My favorite color is blue and my favorite number is 7" printed in the console.
 
 ## Deep Dive
 
-Starting a new project can feel overwhelming, but don't let that discourage you. Take some time to plan out your project and break it down into smaller tasks. This will help you stay organized and motivated. You can also make use of official Swift documentation and online resources to learn more about the language and its features.
+Now that you have successfully created a new project, let's dive a bit deeper into what you can expect when starting a Swift project. You will notice that Xcode has generated a few files for you, including the `AppDelegate` and `ViewController` files.
 
-## See Also
+The `AppDelegate` file is the entry point for your app and contains important methods for handling the app's life cycle. The `ViewController` file is where you will write most of your code for your app's user interface.
 
-- [Official Swift Documentation](https://swift.org/documentation/)
-- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/)
-- [Swift Community on GitHub](https://github.com/apple/swift-community-hosted-projects)
+One of the great features of Swift is its strong typing system, which helps prevent errors and improve code readability. You will also notice that Swift uses optionals, which allow for safer handling of data that may be nil. This is just the tip of the iceberg when it comes to the features and advantages of using Swift for your projects.
+
+See Also
+
+- Official Swift Documentation: https://developer.apple.com/documentation/swift
+- Xcode Tutorials: https://developer.apple.com/tutorials/swiftui/creating-and-combining-views

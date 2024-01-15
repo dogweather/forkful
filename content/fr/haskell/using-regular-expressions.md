@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Utiliser des expressions régulières"
-simple_title:         "Utiliser des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Haskell: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,41 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les expressions régulières sont un outil puissant et efficace pour le traitement et la manipulation de chaînes de caractères dans les programmes Haskell. Ils permettent de rechercher, d'extraire et de modifier des données textuelles de manière plus précise et plus rapide que les méthodes traditionnelles de manipulation de chaînes. L'utilisation de expressions régulières peut grandement améliorer l'efficacité et la robustesse de votre code.
+Si vous êtes un programmeur en Haskell, vous connaissez sûrement l'importance des expressions régulières dans le traitement des données. Les expressions régulières sont des motifs de recherche permettant de trouver et de manipuler des chaînes de caractères de façon efficace. Engager dans l'utilisation des expressions régulières peut grandement améliorer votre productivité et simplifier vos tâches de manipulation de données.
 
-## Comment Faire
+## Comment faire
 
-Pour utiliser des expressions régulières dans Haskell, il faut d'abord importer le module `Text.Regex.Posix` dans votre code. Ensuite, vous pouvez utiliser la fonction `matchRegex` pour rechercher une expression régulière dans une chaîne de caractères spécifique. Par exemple:
-
-```Haskell
-import Text.Regex.Posix
-
-myString = "Hello, world"
-matchingExpression = "^Hello"
-
-matchRegex matchingExpression myString
-```
-
-La sortie de ce code sera `Just ["Hello"]`, indiquant que l'expression régulière a été trouvée dans la chaîne de caractères. Si l'expression régulière n'est pas trouvée, la sortie sera `Nothing`.
-
-Il est également possible d'utiliser des groupes de captures dans vos expressions régulières, en utilisant des parenthèses pour délimiter les parties que vous souhaitez extraire. Par exemple:
+Pour utiliser les expressions régulières en Haskell, vous devez d'abord importer le module `Text.Regex.Posix`. Ensuite, vous pouvez utiliser la fonction `match` pour vérifier si une chaîne de caractères correspond à un motif régulier. Voici un exemple de code montrant comment utiliser les expressions régulières pour vérifier si une adresse email est valide :
 
 ```Haskell
 import Text.Regex.Posix
 
-myString = "John Doe, 30 ans"
-matchingExpression = "([A-Za-z]+) ([A-Za-z]+), ([0-9]+) ans"
+isValidEmail :: String -> Bool
+isValidEmail email = match emailRegex email
+  where emailRegex = "[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.com"
 
-matchRegex matchingExpression myString
+main :: IO ()
+main = do
+  putStrLn "Entrez une adresse email : "
+  email <- getLine
+  if isValidEmail email
+    then putStrLn "Valide!"
+    else putStrLn "Invalide."
 ```
 
-La sortie de ce code sera `Just ["John Doe, 30 ans", "John", "Doe", "30"]`, montrant que les parties du nom et de l'âge ont été capturées dans des groupes séparés.
+Dans cet exemple, nous utilisons le motif `"[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.com"` qui correspond à l'adresse email typique avec un nom d'utilisateur composé de lettres et de chiffres, suivi du symbole "@" et d'un domaine composé de lettres et de chiffres, suivi de l'extension ".com". Vous pouvez bien sûr utiliser des motifs plus complexes pour des validations plus précises.
 
-## Plongez Plus Profondément
+## Plongée profonde
 
-Il existe de nombreuses autres fonctions et options dans le module `Text.Regex.Posix` qui permettent de manipuler, remplacer et valider des chaînes de caractères en utilisant des expressions régulières. Il est également possible d'utiliser des expressions régulières paresseuses, qui utilisent une stratégie de correspondance plus efficace pour les chaînes de caractères de grande taille. Pour en savoir plus sur toutes les possibilités offertes par les expressions régulières dans Haskell, consultez la documentation complète du module.
+Haskell offre de nombreuses fonctions utiles pour manipuler des chaînes de caractères avec des expressions régulières. Par exemple, la fonction `subRegex` permet de remplacer une partie d'une chaîne de caractères correspondant à un motif par une autre chaîne de caractères. Voici un exemple de son utilisation :
 
-## Voir Aussi
+```Haskell
+import Text.Regex.Posix
 
-- La documentation officielle du module `Text.Regex.Posix` : https://hackage.haskell.org/package/regex-posix
-- Un tutoriel sur les expressions régulières en Haskell : https://wiki.haskell.org/Regular_expressions
+main :: IO ()
+main = do
+  let sentence = "La pomme est délicieuse!"
+  let modifiedSentence = subRegex (mkRegex "pomme") sentence "poire"
+  putStrLn modifiedSentence
+  -- Affiche : "La poire est délicieuse!"
+```
+
+Il existe également des fonctions pour extraire des sous-chaînes correspondants à un motif spécifique, pour diviser une chaîne de caractères en différents morceaux selon un motif, ou encore pour effectuer des remplacements avec prise en compte du contenu des sous-matches.
+
+## Voir aussi
+
+- [Documentation du module `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html)
+- [Tutorial sur les expressions régulières en Haskell](https://www.cs.helsinki.fi/u/phannahe/Compilers2011/metahaskel3.html)
+- [Les principales fonctions pour manipuler les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions)

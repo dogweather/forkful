@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "PHP recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,32 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever found yourself wanting to save a webpage for offline viewing? Maybe you're going on a trip with limited internet access or want to keep a backup of important information. Whatever the reason, downloading a webpage can come in handy in many situations.
+
+Ever wanted to save a webpage for offline viewing or reference? You can easily do so by downloading the webpage using PHP. This can come in handy when you have limited internet access or need to refer to a webpage frequently without having to load it every time.
 
 ## How To
-Downloading a webpage using PHP is a simple process that can be accomplished with just a few lines of code. First, we need to create a new instance of the `DomDocument` class, which will allow us to manipulate HTML documents. Then, we use the `loadHTMLFile()` method to load the webpage we want to download.
 
-```
-<?php
-$doc = new DomDocument();
-$doc->loadHTMLFile("https://www.example.com");
-```
+To download a webpage using PHP, you need to follow these steps:
 
-Next, we need to specify the file path and name where we want to save the webpage. We can do this by using the `saveHTMLFile()` method and passing in the desired file path and name.
+1. First, we need to initialize a new cURL session using the `curl_init()` function. This allows us to send and receive HTTP requests.
 
-```
-<?php
-$doc->saveHTMLFile("saved_page.html");
+```PHP
+$curl = curl_init();
 ```
 
-That's it! Our webpage has been downloaded and saved as an HTML file. We can now open it in any browser and view it offline.
+2. Next, we set the URL of the webpage we want to download using the `curl_setopt()` function.
+
+```PHP
+curl_setopt($curl, CURLOPT_URL, 'https://www.example.com');
+```
+
+3. We also need to set the `CURLOPT_RETURNTRANSFER` option to true, which will return the response data instead of printing it.
+
+```PHP
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+```
+
+4. Now, we can execute the cURL request and save the response data into a variable using the `curl_exec()` function.
+
+```PHP
+$response = curl_exec($curl);
+```
+
+5. Finally, we can close the cURL session using the `curl_close()` function.
+
+```PHP
+curl_close($curl);
+```
+
+The `response` variable now contains the webpage's HTML code, which can be saved into a file for offline viewing.
 
 ## Deep Dive
-While the above example is a simple demonstration of how to download a webpage using PHP, there are other methods and techniques that can be used. For example, you can also use the `file_get_contents()` function to retrieve the page source and then save it as an HTML file.
 
-One thing to keep in mind when downloading a webpage is that the page's CSS and images may not be included in the saved file. This can result in an incomplete or distorted version of the webpage. To ensure that all elements are saved, you can use a library like cURL to retrieve and save all the page's resources.
+cURL (Client URL Library) is a popular library for performing URL-related operations like downloading webpages. It supports various protocols like HTTP, HTTPS, FTP, and more. You can also set various options, headers, and authentication methods using cURL. For advanced usage, you can refer to the official cURL documentation.
+
+There are also other PHP libraries and packages available, like Guzzle and file_get_contents, that can be used to download webpages. However, cURL is the recommended option for its flexibility and widespread usage.
 
 ## See Also
-- [PHP DomDocument documentation](https://www.php.net/manual/en/class.domdocument.php)
-- [PHP file_get_contents() documentation](https://www.php.net/manual/en/function.file-get-contents.php)
-- [cURL library documentation](https://www.php.net/manual/en/book.curl.php)
+
+- [cURL documentation](https://www.php.net/manual/en/book.curl.php)
+- [Guzzle library](https://docs.guzzlephp.org/en/stable/)
+- [file_get_contents function](https://www.php.net/manual/en/function.file-get-contents.php)

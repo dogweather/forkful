@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Usuwanie znaków pasujących do wzorca"
-simple_title:         "Usuwanie znaków pasujących do wzorca"
+title:                "Usuwanie znaków dopasowujących się do wzorca"
+html_title:           "Elixir: Usuwanie znaków dopasowujących się do wzorca"
+simple_title:         "Usuwanie znaków dopasowujących się do wzorca"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,30 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Usuwanie znaków pasujących do wzorca jest powszechnie stosowaną techniką w wielu językach programowania, a także w Elixirze. Może to być przydatne, gdy chcemy rozdzielić ciąg znaków na mniejsze fragmenty, usunąć zbędne informacje lub po prostu zmienić format danych. 
+Usuwanie znaków pasujących do wzoru może być przydatne w wielu przypadkach, od transformacji danych po oczyszczanie tekstu czy obliczanie statystyk. W Elixirze istnieją różne funkcje, które pozwalają nam na wykonanie tego zadania w łatwy i efektywny sposób.
 
 ## Jak to zrobić
 
-W Elixirze istnieje wiele sposobów na usuwanie znaków pasujących do wzorca. Jednym z najprostszych sposobów jest użycie wbudowanej funkcji `String.replace/4`, która przyjmuje cztery argumenty: ciąg znaków, wzorzec do usunięcia, nowy wzorzec i opcje. Poniższy przykład pokazuje wykorzystanie tej funkcji, aby usunąć wszystkie cyfry z ciągu znaków:
+Możemy użyć funkcji `String.replace/3` do zastąpienia znaków pasujących do wzoru pustym ciągiem, co w efekcie spowoduje ich usunięcie. Przykładowo:
+
 ```Elixir
-string = "To jest przykład123 tekstu456, który zawiera liczby789"
-String.replace(string, ~r/[0-9]/, "")
+input = "Hello Elixir World"
+String.replace(input, ~r/Elixir/, "")
+# Output: "Hello World"
 ```
-Jeśli chcemy usunąć tylko konkretny wzorzec, np. wszystkie znaki niebędące literami, możemy użyć funkcji `String.replace_leading/3` lub `String.replace_trailing/3`. Poniższy przykład pokazuje zastosowanie `String.replace_trailing/3` do usunięcia znaków `!` z końca ciągu znaków:
+
+Możemy także wykorzystać funkcję `String.replace/4`, która w połączeniu z flagą `global: true` umożliwia usunięcie wszystkich pasujących znaków z danego ciągu. Przykładowo:
+
 ```Elixir
-string = "To jest przykład tekstu!!!"
-String.replace_trailing(string, "!", "")
+input = "abc123def456ghi"
+String.replace(input, ~r/[0-9]+/, "", global: true)
+# Output: "abcdefghi"
 ```
-Inną przydatną funkcją jest `String.replace_first/4`, która umożliwia usunięcie tylko pierwszego wystąpienia wzorca. 
 
-## Deep Dive
+Możemy również skorzystać z biblioteki `Regex` i funkcji `Regex.replace/3`, która pozwala nam na bardziej zaawansowane operacje usuwania znaków pasujących do wzoru. Przykładowo:
 
-Przed użyciem funkcji `String.replace/4`, należy pamiętać o podaniu odpowiednich opcji, takich jak `global: true`, jeśli chcemy usunąć wszystkie wystąpienia wzorca, lub `caseless: true`, jeśli wzorzec ma być niewrażliwy na wielkość liter. Możliwe jest również użycie wyrażeń regularnych w miejsce prostych wzorców, co daje większą kontrolę nad usuwanymi znakami. 
+```Elixir
+input = "abc123def456ghi"
+Regex.replace(~r/[0-9]+/, input, "", global: true)
+# Output: "abcdefghi"
+```
 
-W przypadku bardziej zaawansowanych operacji na ciągach znaków, warto zapoznać się z biblioteką `Regex`, która umożliwia wykorzystanie pełnej mocy wyrażeń regularnych. 
+## Wnikliwsze spojrzenie
 
-## Zobacz również
+Podczas usuwania znaków zgodnych z wzorem, warto zwrócić uwagę na wybór odpowiedniej funkcji oraz flag, które umożliwią nam wykonywanie konkretnych operacji. W Elixirze istnieje również wiele innych funkcji i bibliotek, które mogą być przydatne podczas usuwania znaków pasujących do wzoru, takich jak `String.trim/2`, `String.split/3` czy `String.strip/2`.
 
-- [Dokumentacja Elixir](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Kurs programowania w Elixirze](https://www.elixircasts.io/)
-- [Przykład usunięcia danych z ciągu znaków w Elixirze](https://github.com/Ben-McLean/elixir-examples/blob/master/string_cleaning.exs)
+## Zobacz także
+
+- Oficjalna dokumentacja Elixir: https://hexdocs.pm/elixir/
+- Dokumentacja funkcji `String.replace/3`: https://hexdocs.pm/elixir/String.html#replace/3
+- Dokumentacja funkcji `Regex.replace/3`: https://hexdocs.pm/elixir/Regex.html#replace/3

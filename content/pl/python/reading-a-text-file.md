@@ -1,5 +1,6 @@
 ---
-title:                "Python: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Python: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Python"
 category:             "Python"
@@ -11,29 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zdarzyło Ci się, że musiałeś przeczytać plik tekstowy w języku Python? Jeśli tak, wiesz już prawdopodobnie, że jest to bardzo powszechny scenariusz w świecie programowania. Czytanie plików tekstowych jest ważną umiejętnością i niezbędnym elementem wielu projektów. Zapoznanie się z tą tematyką pozwoli Ci na pracę z różnymi typami danych i dostęp do informacji, które są przechowywane w plikach.
+Czy kiedykolwiek zastanawiałeś się, jak programy czytają pliki tekstowe? Czy chciałbyś nauczyć się, jak łatwo i skutecznie odczytać plik tekstowy w Pythonie? Jeśli tak, to ten artykuł jest dla Ciebie!
 
 ## Jak to zrobić
 
-Najprostszym sposobem na odczytanie pliku tekstowego w języku Python jest użycie funkcji wbudowanej `open`. Wymaga ona dwóch argumentów — nazwy pliku oraz trybu, w jakim plik będzie otwarty (np. tylko do odczytu czy do zapisu). Poniżej przedstawiony jest przykładowy kod, który otwiera plik `tekst.txt` i wypisuje jego zawartość na ekranie:
-
 ```Python
-file = open("tekst.txt", "r")
-print(file.read())
+# Otwieramy plik tekstowy w trybie odczytu
+file = open("tekstowy_plik.txt", "r")
+
+# Czytamy całą zawartość pliku
+data = file.read()
+
+# Wyświetlamy zawartość pliku
+print(data)
+
+# Zamykamy plik
+file.close()
+```
+Przykładowy plik tekstowy może wyglądać tak:
+```
+To jest przykładowy plik tekstowy, który będzie czytany przez nasz program. 
+Może zawierać różne linijki tekstu, symbole, liczby czy też puste linie. 
+To nie ma znaczenia, ponieważ nasz program jest w stanie odczytać go bez problemu. 
 ```
 
-W tym przykładzie użyliśmy trybu "r", czyli tylko do odczytu. Możemy także określić inne dostępne tryby, takie jak "w" (zapis) czy "a" (dopisywanie danych na końcu pliku). Po zakończeniu pracy z plikiem, należy pamiętać o jego zamknięciu za pomocą metody `close()`.
+Po uruchomieniu powyższego skryptu, otrzymamy na konsoli następujące wyjście:
+```
+To jest przykładowy plik tekstowy, który będzie czytany przez nasz program. 
+Może zawierać różne linijki tekstu, symbole, liczby czy też puste linie. 
+To nie ma znaczenia, ponieważ nasz program jest w stanie odczytać go bez problemu. 
+```
+
+W ten sposób w prosty sposób możemy odczytać całą zawartość pliku tekstowego przy pomocy Pythona.
 
 ## Deep Dive
 
-Podczas czytania plików tekstowych warto pamiętać o kilku istotnych kwestiach. Po pierwsze, zwróć uwagę na dokładną ścieżkę dostępu do pliku, aby program wiedział, gdzie go szukać. Po drugie, należy pamiętać o odpowiednim kodowaniu pliku, ponieważ różne języki mogą wymagać różnych kodowań znaków. W przypadku braku określonego kodowania, przyjętym będzie kodowanie domyślne systemu operacyjnego.
+Podczas czytania pliku tekstowego przy pomocy Pythona, istnieją różne tryby dostępu, w których może on zostać otwarty. W przykładzie powyżej użyliśmy trybu "r", który oznacza "odczyt". Istnieją również inne tryby, takie jak "w" (zapis), "a" (dopisywanie), "x" (tworzenie), czy "rb" (odczyt w trybie binarnym). Więcej informacji o tych trybach można znaleźć w dokumentacji Pythona.
 
-Warto także wiedzieć, że funkcja `open()` zwraca obiekt typu `File`, na którym możemy wywoływać różne metody, takie jak `read()` czy `write()`. Pozwala to na bardziej zaawansowane operacje na plikach, na przykład dzielenie ich na linie czy modyfikowanie zawartości.
+Podczas czytania pliku tekstowego, możemy również ustalić punkt, w którym chcemy rozpocząć lub zakończyć czytanie. Dzieje się to za pomocą metody `read()`, w której jest możliwe podanie liczby bajtów, które chcemy odczytać. Na przykład, jeśli podamy `file.read(10)`, otrzymamy tylko pierwsze 10 bajtów pliku tekstowego.
 
-## Zobacz też
-
-Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w języku Python, polecamy zapoznać się z poniższymi materiałami:
-
-- Dokumentacja Pythona na temat plików: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-- Poradnik "Python — odczytywanie pliku tekstowego": https://realpython.com/read-write-files-python/
-- Wideo "Python Tutorial: File Objects — Reading and Writing to Files": https://www.youtube.com/watch?v=Uh2ebFW8OYM
+See Also
+- [Dokumentacja Pythona](https://docs.python.org/pl/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Wprowadzenie do czytania plików w Pythonie](https://realpython.com/read-write-files-python/#reading-files-in-python)
+- [Czytanie i zapisywanie plików tekstowych w Pythonie](https://www.w3schools.com/python/python_file_handling.asp)

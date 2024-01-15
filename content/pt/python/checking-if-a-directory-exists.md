@@ -1,5 +1,6 @@
 ---
-title:                "Python: Verificando se um diretório existe."
+title:                "Verificando se um diretório existe."
+html_title:           "Python: Verificando se um diretório existe."
 simple_title:         "Verificando se um diretório existe."
 programming_language: "Python"
 category:             "Python"
@@ -9,53 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que
+Algumas vezes, ao trabalhar com arquivos em um programa Python, pode ser necessário verificar se um diretório existe antes de realizar alguma operação. Isso pode ser útil para evitar erros e garantir que o programa funcione corretamente.
 
-Verificar se um diretório existe é uma tarefa importante em programação, pois nos permite confirmar se um caminho especificado existe ou não, antes de tentarmos realizar operações como leitura ou gravação de arquivos nesse caminho. Isso evita erros e falhas inesperadas no código.
-
-## Como fazer:
-
-Para verificar a existência de um diretório em Python, podemos utilizar a função `path.exists()` do módulo `os` ou `pathlib.Path()`. Veja um exemplo abaixo:
-
-```Python
-import os
-import pathlib
-
-# Verificando com o módulo `os`
-if os.path.exists("meu_diretorio"):
-     print("O diretório existe!")
-else:
-     print("O diretório não existe!")
-
-# Verificando com a classe `Path` do módulo `pathlib`
-if pathlib.Path("meu_diretorio").exists():
-     print("O diretório existe!")
-else:
-     print("O diretório não existe!")
-```
-
-Ambas as opções nos retornam um valor booleano (True ou False) indicando se o diretório existe ou não.
-
-## Profundando:
-
-Além de verificar a existência de um diretório, podemos também obter mais informações sobre ele, como por exemplo, se é um arquivo ou um diretório, utilizando as funções `os.path.isfile()` e `os.path.isdir()`. Podemos também usar a função `os.listdir()` para obter uma lista dos arquivos e diretórios dentro do diretório especificado. Veja um exemplo abaixo:
+## Como fazer
+Para verificar se um diretório existe em Python, podemos utilizar o módulo `os` e a função `path.exists()`. Veja um exemplo de código abaixo:
 
 ```Python
 import os
 
-# Verificando se é um arquivo ou um diretório
-if os.path.isfile("meu_arquivo.txt"):
-    print("É um arquivo!")
-elif os.path.isdir("meu_diretorio"):
-    print("É um diretório!")
-
-# Obtendo a lista de conteúdo dentro do diretório
-conteudo = os.listdir("meu_diretorio")
-print("Conteúdo do diretório: ", conteudo)
+# Verifica se o diretório "meus_arquivos" existe
+if os.path.exists("meus_arquivos"):
+    print("O diretório existe!")
+else:
+    print("O diretório não existe!")
 ```
 
-## Veja também:
-- Documentação oficial do Python sobre o módulo `os`: https://docs.python.org/3/library/os.path.html
-- Documentação oficial do Python sobre o módulo `pathlib`: https://docs.python.org/3/library/pathlib.html
-- Tutorial sobre o uso de paths em Python: https://realpython.com/python-pathlib/
-- Videoaula explicando como verificar a existência de um diretório em Python: https://www.youtube.com/watch?v=g-zoDLZLNo0
+O código acima irá verificar se o diretório "meus_arquivos" existe e, caso exista, irá imprimir a mensagem "O diretório existe!". Caso contrário, irá imprimir a mensagem "O diretório não existe!".
+
+## Aprofundando
+Além da função `path.exists()`, existem outras opções para verificar a existência de um diretório em Python. Por exemplo, podemos utilizar a função `path.isdir()` para verificar se o caminho passado como parâmetro é realmente um diretório.
+
+```Python
+import os
+
+# Verifica se o caminho é um diretório
+if os.path.isdir("/home/usuario/meus_arquivos"):
+    print("O caminho é um diretório!")
+else:
+    print("O caminho não é um diretório!")
+```
+
+Também é possível utilizar a função `path.isabs()` para verificar se o caminho passado como parâmetro é absoluto (começa com `/`) ou relativo.
+
+```Python
+import os
+
+# Verifica se o caminho é absoluto
+if os.path.isabs("meus_arquivos"):
+    print("O caminho é absoluto!")
+else:
+    print("O caminho é relativo!")
+```
+
+Outra opção é utilizar o módulo `glob` e a função `glob.glob()` para fazer uma busca por diretórios que correspondam a um determinado padrão.
+
+```Python
+import glob
+
+# Busca por diretórios que iniciam com "meus"
+meus_dirs = glob.glob("meus*")
+
+print(meus_dirs)
+# Saída: ['meus_arquivos', 'meus_documentos', 'meus_videos']
+```
+
+Ficar atento a essas opções pode ser útil dependendo da situação em que você precisa verificar a existência de um diretório.
+
+## Veja também
+- [Documentação oficial do módulo `os`](https://docs.python.org/3/library/os.html)
+- [Documentação oficial do módulo `glob`](https://docs.python.org/3/library/glob.html)

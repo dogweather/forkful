@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Arduino: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,51 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
+שלום חברים, אם אתם מתעניינים בעולם הטכנולוגיה ואוהבים לשחק עם חומרה, אנחנו ממליצים לכם לנסות לשלוח בקשת HTTP באמצעות ארדואינו. תהליך זה יאפשר לכם לשלוט ולקבל מידע ממכשירים חיצוניים כגון מכשירי חיישן, אינטרנט ועוד.
 
-ביצוע בקשות HTTP יכול להיות מאוד שימושי בפרויקטי ארדואינו. למשל, אם אתה רוצה לקבל מידע מאתר אינטרנט או לשלוח נתונים לשרת, בקשות HTTP מאפשרות לך לעשות זאת בקלות ובמהירות. 
+## כיצד לעשות זאת
+לפני שנתחיל, ניצור פרויקט חדש באמצעות תוכנת Arduino IDE ונשמור אותו. כעת נתחיל לכתוב את הקוד לשליחת בקשת HTTP.
 
-## איך לעשות זאת
+בשורת הפתיחה, נכין את המשתנים הבאים:
 
-על מנת לשלוח בקשת HTTP, ניצור מקש על הלוח שלנו כדי להפעיל את התכנית. למשל, אם ברצונך לשלוח בקשת GET לאתר אינטרנט מסוים, תוכל לעשות זאת כך:
+```Arduino
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-```arduino
-#include <WiFi.h>
-#include <WiFiClient.h>
+const char* ssid = "my_wifi_network"; // לשנות לשם הרשת המדויק
+const char* password = "my_wifi_password"; // לשנות לסיסמא של הרשת
+const char* serverName = "https://www.example.com"; // להחליף לכתובת האתר שלכם
+```
 
-char server[] = "www.example.com";
-WiFiClient client;
+זה הזמן להתחבר לרשת WiFi שלכם:
 
+```Arduino
 void setup() {
-  Serial.begin(9600);
-  WiFi.begin("SSID", "password"); // הכנס את שם הרשת והסיסמה שלך כאן
-  Serial.print("Connecting to WiFi");
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println();
-  Serial.print("Connected to WiFi: ");
-  Serial.println(WiFi.localIP());
-}
-
-void loop() {
-  if (client.connect(server, 80)) { // התחברות לשרת בפורט 80
-    Serial.println("Connected to server");
-    client.print("GET / HTTP/1.1\r\n"); // שליחת בקשת GET
-    client.print("Host: www.example.com\r\n");
-    client.print("Connection: close\r\n\r\n");
-    while (client.available()) {
-      char c = client.read();
-      Serial.print(c);
+    Serial.begin(115200);
+    
+    WiFi.begin(ssid, password); // מתחברים לרשת WiFi
+    
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.println("Connecting to WiFi...");
     }
-  }
-  client.stop();
-  while(1);
+
+    Serial.println("Connected to WiFi network!");
 }
 ```
 
-כאן אנו רואים כי התחברנו לאינטרנט ושלחנו בקשת GET. התוכנית תדפיס את התגובה המלאה של האתר בטרם היא נסגרת. כמו כן, יש לוודא שנסגרת הלולאה שליצת התוכנית כדי שהתכנית תרוץ רק פעם אחת.
+עכשיו, נגדיר פונקציה המכילה את הלוגיקה לשליחת הבקשה:
 
-## אילוף עמוק
+```Arduino
+void sendRequest() {
+    WiFiClient client;
 
-בשלב הזה אתה כבר יודע כיצד לבצע בקשות HTTP באמצעות ארדואינו. אתה יכול לשנות את התכנית כדי לאפשר את השליחה של נתונים כמו משתנים שלנו אל השרת. בנוסף, אתה יכול לחקור עוד אקטיבים נתחי של בקשות, כגון POST ו- PUT. אתה יכול גם ללמוד עוד על קודי מצבים וכיצד לטפל בתוצאות התגובה שע
+    if (!client.connect(serverName, 80)) { // נעבור לHTTP בפורט 80
+        Serial.println("Connection failed!");
+        return;
+    }
+
+    // שולחים GET בקשה לאתר ואחכ קוראים את התשובה
+    client.print(String("GET") + " / HTTP/1.1\r\n" +
+                "Host: " + serverName + "\r\n" +
+                "Connection: close\r\n\r\n");
+    
+    while (client.connected()) {
+        String line = client.readStringUntil('\n');
+        Serial.println(line);
+    }
+
+    client.stop();
+}
+```
+
+ולסיום, נקרא לפונקציה בפונקציית העיקרית setup כדי לשלוח את הבקשה לאתר שציינו:
+
+```Arduino
+void setup() {
+    // כל הפונקציות הקודמות
+
+    // קריאה לפונקציה לשליחת בקשת HTTP
+    sendRequest();
+}
+```
+
+וזהו! הקוד המלא כולל פונקציות מלאות נראה כך:

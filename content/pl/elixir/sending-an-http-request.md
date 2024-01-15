@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Elixir: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,47 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto wysyłać zapytania HTTP w swoim kodzie? Gdy tworzymy aplikacje internetowe, często musimy komunikować się z innymi serwerami, aby uzyskać dostęp do danych lub wykonania pewnych operacji. Właśnie wtedy wysyłanie zapytań HTTP jest niezbędną umiejętnością. W tym artykule dowiesz się, jak w łatwy sposób wykonać to zadanie za pomocą języka Elixir.
+Dlaczego ktoś chciałby wysłać żądanie HTTP? W dzisiejszych czasach wiele aplikacji wykorzystuje żądania HTTP do komunikacji z serwerami. Oznacza to, że nauka, jak wysyłać żądania HTTP w Elixirze, jest niezbędnym narzędziem dla każdego programisty.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-W Elixirze, aby wysłać zapytanie HTTP, musimy użyć modułu `HTTPoison`, który jest dostępny w bibliotece standardowej Elixira. Najpierw musimy zadeklarować środowisko wykonywania zapytania, takie jak metoda HTTP, URL, nagłówki i treść. Następnie możemy użyć funkcji `HTTPoison.request!/5`, aby wysłać zapytanie i otrzymać odpowiedź.
+Wysyłanie żądania HTTP w Elixirze jest prostsze niż się wydaje. Wystarczy użyć funkcji `HTTPoison.get` i przekazać jej adres URL, z którego chcemy pobrać dane. Spójrzmy na przykładowy kod:
 
 ```Elixir
-defmodule HTTPRequest do
-  def get_request(url) do
-    response = HTTPoison.request!(:get, url)
-    IO.inspect response.status_code
-    IO.inspect response.body
-  end
-end
+response = HTTPoison.get("https://www.example.com")
 
-HTTPRequest.get_request("https://www.example.com")
+IO.puts(response.body)
 ```
 
-Powyżej przedstawiono prosty przykład kodu, który obrazuje, jak wysłać zapytanie GET do adresu URL i otrzymać odpowiedź. W odpowiedzi otrzymujemy status zapytania oraz treść, która może być przetworzona w dowolny sposób. W ten sposób możemy komunikować się z innymi serwerami i pobierać ważne informacje dla naszej aplikacji.
+Każda odpowiedź zwracana przez `HTTPoison` jest obiektem `HTTPoison.Response`, który ma wiele przydatnych metod, takich jak `status_code` czy `headers`. Przykładowy wynik wykonania powyższego kodu może wyglądać tak:
+
+```Elixir
+<!doctype html>
+<html>
+  <head>
+    <title>Przykładowa strona</title>
+  </head>
+  <body>
+    <h1>Witaj w przykładowej stronie!</h1>
+  </body>
+</html>
+```
+
+Zauważ, że pobrana odpowiedź jest w formacie HTML. W przypadku, gdy chcemy pobrać dane w formacie JSON, możemy skorzystać z funkcji `HTTPoison.get!/2` i dodać opcję `:headers` zgodną z `content-type: "application/json"`.
 
 ## Deep Dive
 
-Podczas wysyłania zapytania HTTP, możemy dostosować środowisko wykonywania, aby uzyskać więcej szczegółów w odpowiedzi. Na przykład, jeśli chcemy ustawić nagłówki, możemy przekazać listę w trzecim argumencie funkcji `HTTPoison.request!/5`. Podobnie, jeśli chcemy wysłać zapytanie POST lub PUT, musimy przekazać dodatkową treść w czwartym argumencie. Możemy również użyć funkcji `HTTPoison.get!/3` lub `HTTPoison.post!/4`, które wykorzystują domyślne wartości dla odpowiednio metody oraz opcjonalnych danych.
+Aby zrozumieć, jak dokładnie działa wysyłanie żądań HTTP w Elixirze, warto dowiedzieć się o bibliotece `HTTPoison`. Jest ona oparta na popularnej bibliotece HTTP Client dla języka Ruby - `HTTParty`. Dzięki temu, wiele funkcji jest podobnych do tych, które wykorzystujemy w Ruby. Ponadto, dzięki użyciu wzorca "pipelining", kod wygląda bardzo wyraźnie i czytelnie.
 
-```Elixir
-defmodule HTTPRequest do
-  def post_request(url, body) do
-    headers = [{"Content-Type", "application/json"}]
-    response = HTTPoison.post!(url, body, headers)
-    IO.inspect response.status_code
-    IO.inspect response.body
-  end
-end
+Należy również zauważyć, że `HTTPoison` domyślnie używa procesów, co pozwala na równoległe wysyłanie wielu żądań jednocześnie. Dzięki temu, aplikacje napisane w Elixirze mogą łatwo obsługiwać wiele żądań jednocześnie.
 
-HTTPRequest.post_request("https://www.example.com", "{ \"foo\": \"bar\" }")
-```
+## Zobacz również
 
-W powyższym przykładzie, używając funkcji `post_request/2`, wysyłamy zapytanie POST z ustalonymi nagłówkami i ciałem w formacie JSON. W ten sposób możemy dostosować nasze żądania według naszych potrzeb.
-
-## Zobacz też
-
-- [Oficjalna dokumentacja Elixir](https://elixir-lang.org/docs.html)
-- [HTTPoison moduł](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Inne popularne banery Elixir](https://www.codementor.io/blog/top-elixir-blogs-9avqbqwh1d)
+- [Dokumentacja HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Strona główna Elixir](https://elixir-lang.org/)
+- [Ruby HTTParty](https://github.com/jnunemaker/httparty)

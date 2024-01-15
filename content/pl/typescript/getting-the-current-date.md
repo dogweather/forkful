@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Otrzymywanie aktualnej daty"
-simple_title:         "Otrzymywanie aktualnej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "TypeScript: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,47 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pozyskiwanie aktualnej daty jest nieodłączną częścią wielu aplikacji i skryptów. W TypeScript możemy to zrobić w prosty sposób, korzystając z wbudowanej funkcji "Date()".
+Pobranie bieżącej daty jest częstym elementem wielu aplikacji, szczególnie tych, które są związane z obsługą czasu i daty, np. kalendarze, dzienniki lub aplikacje do planowania zadań. Warto więc opanować sposób na pobranie bieżącej daty w języku TypeScript, aby móc wykorzystać ją w swoich projektach.
 
 ## Jak to zrobić
 
-Możemy uzyskać aktualną datę na kilka sposobów, na przykład:
+W języku TypeScript istnieje wiele sposobów na pobranie bieżącej daty. Jednym z najłatwiejszych jest użycie wbudowanej metody JavaScript `Date()`, która zwraca aktualną datę i czas. Przykładowy kod wygląda następująco:
 
-```TypeScript
+```
 let currentDate = new Date();
+
 console.log(currentDate);
 ```
 
-Wynik wyświetli się na konsoli w formacie: `YYYY-MM-DD HH:MM:SS`.
+Powyższy kod wyświetli bieżące dane w formacie `Sat Jun 26 2021 21:27:35 GMT+0200 (Central European Summer Time)`.
 
-Możemy również wyświetlić separowane dane z daty, takie jak dzień, miesiąc czy rok:
+Jeśli chcemy wyświetlić datę w bardziej czytelny sposób, możemy skorzystać z metody `toLocaleDateString()`, która zwraca datę w lokalnym formacie, np. w Polsce będzie to `26.06.2021`. Przykładowy kod:
 
-```TypeScript
+```
 let currentDate = new Date();
 
-let day = currentDate.getDate(); // pobieramy dzień
-let month = currentDate.getMonth() + 1; // pobieramy miesiąc (+ 1, ponieważ styczeń to index 0)
-let year = currentDate.getFullYear(); // pobieramy rok
-
-console.log(`${day}.${month}.${year}`); // wyświetlamy date w formacie DD.MM.YYYY
+console.log(currentDate.toLocaleDateString());
 ```
 
-Wynik: `13.12.2021`
+Możemy również korzystać z pakietów zewnętrznych, takich jak `moment.js`, które oferują jeszcze większą elastyczność i funkcjonalność przy pracy z datami. W takim przypadku musimy najpierw zainstalować pakiet za pomocą menedżera pakietów, a następnie zaimportować go do naszego pliku TypeScript. Przykładowy kod wykorzystujący bibliotekę `moment.js`:
 
-## Deep Dive
+```
+import moment from 'moment';
 
-Funkcja "Date()" może przyjmować również argumenty, pozwalając nam na ustawianie własnej daty. Możemy podać rok, miesiąc i dzień, aby uzyskać konkretny dzień tygodnia, na przykład:
+let currentDate = moment();
 
-```TypeScript
-let specifiedDate = new Date(2021, 11, 25); // rok, miesiąc, dzień
-console.log(specifiedDate.getDay()); // wyświetli index dnia tygodnia (0 - niedziela, 6 - sobota)
+console.log(currentDate.format('DD.MM.YYYY'));
 ```
 
-Wynik: `6`
+## W czym tkwi głębsza magia?
 
-Funkcja "Date()" pozwala również na uzyskanie innych danych, takich jak godzina, minuty czy sekundy. Dokładny opis dostępnych metod można znaleźć w dokumentacji TypeScript.
+Pomimo że pobranie bieżącej daty wydaje się być prostym zadaniem, kryje się za tym wiele bardziej złożonych procesów. Na przykład, niektóre systemy operacyjne lub przeglądarki mogą mieć różne strefy czasowe, co może skutkować różnicami w pobieraniu daty. Dodatkowo, identyfikacja bieżącej daty może również wymagać synchronizacji z serwerem czasu lub korzystania z matematycznych operacji, takich jak przeliczanie jednostek czasu. Dlatego warto wypróbować różne metody pobierania daty i dostosować je do własnych potrzeb.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja TypeScript dotycząca funkcji "Date()": https://www.typescriptlang.org/docs/handbook/standard-library.html#date
-- Przykładowe tutorial na temat pozyskiwania daty w TypeScript: https://www.techiedelight.com/get-current-date-time-timestamp-typescript/
+- [Dokumentacja Date w języku TypeScript](https://www.typescriptlang.org/docs/handbook/internationalization.html#date-time-intl)
+- [Biblioteka moment.js](https://momentjs.com/)
+- [Artykuł o przeliczaniu strefy czasowej w TypeScript](https://digitalfortress.tech/tutorial/how-to-convert-a-timezone-in-typescript/)

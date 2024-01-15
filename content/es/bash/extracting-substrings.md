@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Bash: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### ¿Por qué extraer subcadenas en Bash?
+## ¿Por qué?
 
-Extraer subcadenas es una técnica útil en la programación Bash que permite obtener una parte específica de una cadena de texto. Esto puede ser útil en situaciones donde solo se necesita una parte de la información contenida en una cadena más larga. Por ejemplo, si se tiene una lista de nombres en un archivo y se desea obtener solo los apellidos, se podría utilizar la técnica de extracción de subcadenas para lograrlo.
+Extraer subcadenas de una cadena de caracteres es una habilidad útil que te permitirá realizar diversas tareas en Bash, como manipular archivos, extraer información específica de un texto o validar entradas de usuario.
 
-### Cómo extraer subcadenas en Bash
+## Cómo hacerlo
 
-La extracción de subcadenas en Bash se puede lograr utilizando una combinación de variables, comandos y expresiones regulares. A continuación, se presentan algunos ejemplos de código para ilustrar cómo se puede realizar esta tarea.
+Extraer una subcadena de una cadena en Bash es muy sencillo. Solo necesitas seguir los siguientes pasos:
+
+1. Identifica la cadena de donde quieres extraer la subcadena.
+2. Utiliza el comando ```substring``` seguido del índice inicial y la longitud deseada de la subcadena, separados por ```:```.
+3. Ejecuta el comando y la subcadena será mostrada en la terminal.
+
+Por ejemplo, si tenemos la cadena ```"Hola Mundo"``` y queremos extraer la subcadena ```"Mundo"```, podemos utilizar el siguiente código:
 
 ```Bash
-# Definir una cadena de texto
-texto="Hola a todos"
-
-# Extraer la primera palabra de la cadena
-primera_palabra=${texto%% *}
-
-echo "La primera palabra es: $primera_palabra"
-# Output: La primera palabra es: Hola
-
-# Extraer la segunda palabra de la cadena
-segunda_palabra=${texto##* }
-
-echo "La segunda palabra es: $segunda_palabra"
-# Output: La segunda palabra es: todos
-
-# Extraer la tercera palabra de la cadena
-tercera_palabra=${texto##* * }
-
-echo "La tercera palabra es: $tercera_palabra"
-# Output: La tercera palabra es: todos
+cadena="Hola Mundo"
+echo ${cadena:5:5}
 ```
 
-En este ejemplo, el operador `%%` se utiliza para extraer todo lo que está antes del primer espacio en blanco y el operador `##` se utiliza para extraer todo lo que está después del último espacio en blanco.
+En este caso, el resultado sería ```Mundo```, ya que el índice inicial es 5 y la longitud de la subcadena es 5.
 
-### Inmersión profunda en la extracción de subcadenas
+Es importante tener en cuenta que en Bash, los índices comienzan desde 0, por lo que si queremos extraer la subcadena ```"Hola"``` de ```"Hola Mundo"```, tendríamos que utilizar el comando ```substring``` de la siguiente manera:
 
-Además de los ejemplos presentados anteriormente, existen otras opciones y técnicas para extraer subcadenas en Bash. Por ejemplo, se pueden utilizar expresiones regulares más complejas para extraer cadenas según ciertos patrones o criterios. También se pueden utilizar variables especiales como `IFS` (Internal Field Separator) para definir un delimitador personalizado en la cadena.
+```Bash
+cadena="Hola Mundo"
+echo ${cadena:0:4}
+```
 
-Es importante tener en cuenta que la posición de los caracteres dentro de una cadena puede afectar el resultado de la extracción de subcadenas. Por lo tanto, es recomendable revisar cuidadosamente la cadena y los operadores utilizados antes de realizar la extracción.
+El resultado sería ```Hola```, ya que empezamos en el índice 0 y la longitud de la subcadena es 4.
+
+## Profundizando
+
+Además de utilizar el comando ```substring```, también podemos utilizar diferentes métodos para extraer subcadenas en Bash. Por ejemplo, podemos utilizar el comando ```cut``` para extraer una sección de una cadena utilizando un delimitador específico.
+
+También podemos utilizar comodines, como el asterisco ```*```, para extraer subcadenas que cumplan con un patrón determinado.
+
+Es importante familiarizarse con estos diferentes métodos y encontrar el que mejor se adapte a tus necesidades.
 
 ## Ver también
 
-- [Documentación de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Expresiones regulares en Bash](https://tldp.org/LDP/abs/html/x17129.html)
-- [Variables especiales en Bash](https://tldp.org/LDP/abs/html/internalvariables.html#SUBSTR-REF)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+- [Manipulación de cadenas en Bash](https://www.linux.com/training-tutorials/bash-string-manipulation-beginners-examples/)

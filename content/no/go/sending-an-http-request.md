@@ -1,6 +1,7 @@
 ---
-title:                "Go: Å sende en http forespørsel"
-simple_title:         "Å sende en http forespørsel"
+title:                "Sending en http-forespørsel"
+html_title:           "Go: Sending en http-forespørsel"
+simple_title:         "Sending en http-forespørsel"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,53 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende HTTP-forespørsler er en viktig del av å bygge moderne webapplikasjoner og kommunisere med andre nettverksbaserte tjenester. Med Go-programmeringsspråket er det enkelt å implementere HTTP-forespørsler og håndtere responsen på en effektiv måte.
+Å sende HTTP-forespørsler er en essensiell del av webutvikling, og med Go's innebygde nettpakker er det enkelt å implementere dette i programmene dine. Ved å sende HTTP-forespørsler, kan du hente data fra eksterne API-er, kommunisere med servere og mye mer.
 
 ## Hvordan
 
-Først må vi importere "net/http" -pakken for å bruke funksjonaliteten for HTTP-forespørsler. Deretter kan vi sende en GET-forespørsel ved å bruke "http.Get()" -funksjonen og oppgi URL-en som en parameter. For å få tilgang til responsen, kan vi bruke "resp.Body" -verdien som returneres, og lese dataene ved hjelp av "ioutil.ReadAll()" -funksjonen. Et eksempel på dette i Go-kode kan se slik ut:
+Først må du importere "net/http" pakken i koden din. Deretter kan du bruke "http.Get()" funksjonen for å sende en HTTP-forespørsel til en angitt URL. For å få tilgang til svaret og håndtere eventuelle feil, kan du bruke "resp, err := http.Get()" og deretter bruke "resp.Body" til å lese svaret fra nettstedet.
 
 ```Go
 package main
 
-import(
-    "fmt"
-    "net/http"
-    "io/ioutil"
+import (
+  "fmt"
+  "net/http"
 )
 
 func main() {
-    // Send en GET-forespørsel og lagre responsen i en variabel
-    resp, err := http.Get("http://example.com")
-    if err != nil {
-        // Hvis det oppstår en feil, skriv ut den på konsollen
-        fmt.Println("Error:", err)
-        return
-    }
-    // Les responsen og skriv ut den som en streng
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        fmt.Println("Error:", err)
-        return
-    }
-    fmt.Println(string(body))
+  resp, err := http.Get("https://example.com")
+
+  if err != nil {
+    panic(err)
+  }
+  
+  fmt.Println("Statuskode:", resp.StatusCode)
 }
 ```
 
-Dette eksempelet vil skrive ut HTML-koden for nettsiden "http://example.com". Som du kan se, kan vi enkelt få tilgang til responsdataene og behandle dem videre etter behov.
+I dette eksempelet sender vi en HTTP GET-forespørsel til nettsiden "https://example.com" og skriver ut svaret ved å få tilgang til "StatusCode" -attributtet i "resp" -variabelen. Dette er en enkel måte å sjekke om forespørselen vår var vellykket eller ikke.
 
 ## Dypdykk
 
-For de som er interessert i å lære mer om å sende HTTP-forespørsler i Go, er det noen viktige ting å merke seg.
+Det er mange ulike måter å tilpasse og forbedre dine HTTP-forespørsler. Du kan legge til "Headers" for å sende spesifisert informasjon til nettstedet, som autentiseringsnøkler eller user-agent. Du kan også bruke ulike metoder som "POST" eller "PUT" for å sende data til serveren i tillegg til å bare få data fra den.
 
-Først og fremst kan "http.Client" -objektet brukes til å tilpasse innstillinger for en HTTP-forespørsel. For eksempel kan timeout-verdien endres, eller en HTTP-proxy kan legges til for å sende forespørsler gjennom.
-
-I tillegg kan vi bruke "http.NewRequest()" -funksjonen for å lage en HTTP-forespørsel med mer komplekse innstillinger, for eksempel å legge til egendefinerte header-felter eller sende en POST-forespørsel med data.
-
-Det er også viktig å merke seg at Go har innebygde midler for å håndtere feil og gjøre asynkrone HTTP-forespørsler ved hjelp av "gorutiner". Dette gjør det mulig å sende flere forespørsler samtidig uten å måtte vente på at en forespørsel er ferdig før du starter en annen.
+I tillegg lar Go deg også bygge egne HTTP-handlere, som kan brukes til å opprette din egen server og svare på inngående forespørsler. Dette gir deg enda mer kontroll og fleksibilitet til å utvikle dine egne webapplikasjoner.
 
 ## Se også
 
-- [Offisiell dokumentasjon for "net/http" -pakken på Go-språket](https://golang.org/pkg/net/http/)
-- [Tutorial om å sende HTTP-forespørsler med Go](https://www.digitalocean.com/community/tutorials/how-to-send-http-requests-in-go)
-- [Artikkel om asynkrone HTTP-forespørsler i Go](https://medium.com/@MasimaHeidar/async-http-requests-with-golang-using-goroutines-4226ae9821d9)
+- [Nett-pakker i Go](https://golang.org/pkg/net/)
+- [Offisiell Go-dokumentasjon for å håndtere HTTP-forespørsler](https://golang.org/doc/tutorial/web-service-gin)
+- [Eksempelkode for å sende HTTP-forespørsler i Go](https://github.com/golang/go/wiki/Draft-Go-HTTP-clients)

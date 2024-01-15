@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Clojure: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Regular Expression eli säännöllinen lauseke on voimakas työkalu tekstinkäsittelyssä. Se mahdollistaa tarkkojen haku- ja korvaustoimintojen tekemisen tekstissä. Säännölliset lausekkeet ovat suosittuja ohjelmointikielistä riippumatta ja niiden oppiminen on hyödyllistä monessa eri ohjelmointiympäristössä.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä apuvälineitä koodauksessa, sillä ne mahdollistavat tiettyjen merkkijonojen löytämisen ja käsittelyn tekstissä. Ne ovat erityisen käteviä tekstien etsimisessä ja muokkaamisessa, ja voivat säästää aikaa ja vaivaa monimutkaisten etsintä- ja korvaustoimintojen suorittamisessa.
 
-## Miten
+## Kuinka käyttää säännöllisiä lausekkeita Clojurella
 
-Regular Expressionit ovat osa Clojuren ydinbibliotekkia ja niitä voi käyttää "trygemin" funktiolla. Käytännössä säännöllinen lauseke annetaan merkkijonona ja sen kanssa käytetään sitten monia erilaisia funktioita, jotka suorittavat erilaisia hakutoimintoja. Esimerkiksi voit etsiä tietyn kuvion tekstistä tai korvata sen toisella.
+Säännöllisiä lausekkeita voi käyttää Clojurella eri tavoin, mutta yleisimmin niitä käytetään "re-seq" ja "re-find" funktioiden yhteydessä. "re-seq" palauttaa listan kaikista tekstissä esiintyvistä merkkijonoista, jotka vastaavat määriteltyä säännöllistä lauseketta. "re-find" puolestaan palauttaa ensimmäisen löydetyn vastaavuuden. Käytännön esimerkki näyttää kuinka etsiä ja korvata kaikki ensimmäisen b-kirjaimen jälkeen tulevat h-kirjaimet merkkijonossa:
 
 ```Clojure
-;; etsii kaikki numerot sanasta "12345"
-(re-find #"\d+" "12345") ; "12345"
-
-;; korvaa merkkijonon "world" merkkijonolla "universe"
-(re-place #"world" "hello world" "world" "universe") ; "hello universe"
+(def s "abcde fghi jklmn")
+(re-find #"b[\w]*h" s) ; palauttaa bde
+(re-seq #"b[\w]*h" s) ; palauttaa listan [bde, fgh]
+(re-replace #"b[\w]*h" s "replaced") ; palauttaa "areplaced fghi jklmn"
 ```
 
-## Syvempää sukellusta
+## Syvempi sukellus säännöllisiin lausekkeisiin
 
-Säännöllisten lausekkeiden merkintätavoissa on eroja eri ohjelmointikielien välillä, mutta Clojuren tapauksessa käytössä on Perl-yhteensopiva merkintätapa. Tämä tarkoittaa, että perinteiset säännöllisen lausekkeen merkit toimivat myös Clojuressa. Esimerkiksi `+` merkki tarkoittaa "yhdestä useaan kertaa esiintyvää" ja `*` merkki taas "ei-yhtään tai useampaa kertaa esiintyvää".
-
-Säännöllisten lausekkeiden käyttö voi aluksi tuntua haastavalta, mutta niiden opettelu palkitsee pitkällä tähtäimellä. Niitä voi käyttää monipuolisesti kaikentyyppisessä tekstikäsittelyssä ja ne tehostavat ohjelmointikokemusta merkittävästi.
+Säännölliset lausekkeet perustuvat usein merkkijonojen erilaisiin järjestelmiin ja merkistöihin. Ne ovat myös vahvasti käytettyjä tiedonkäsittelyssä ja tiedonlouhinnassa. Clojurella on käytössä Java Regular Expression Syntax, joten Java:n dokumentaatiosta ja esimerkeistä voi olla hyötyä ymmärtämiseen. Säännöllisiä lausekkeita voi myös laajentaa monimutkaisemmaksi käyttämällä esimerkiksi kvantifikaattoreita, ryhmittelemistä ja toistolausekkeita.
 
 ## Katso myös
 
-- [Clojuren virallinen dokumentaatio regular expressioneistä](https://clojuredocs.org/clojure.core/re-pattern)
-- [Vinkkejä regular expressionien käyttöön Clojuressa](https://stackoverflow.com/questions/40197139/using-re-seq-with-match-groups-in-clojure/40197724#40197724)
-- [Tutoriaali regular expressioneista ja niiden soveltamisesta käytännössä](https://coderwall.com/p/fdvcjq/effective-regular-expressions-in-clojure)
+- [Java säännöllinen lausekeopas](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Clojure re-seq dokumentaatio](https://clojuredocs.org/clojure.core/re-seq)
+- [Clojure re-find dokumentaatio](https://clojuredocs.org/clojure.core/re-find)

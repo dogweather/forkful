@@ -1,6 +1,7 @@
 ---
-title:                "Java: Å opprette en midlertidig fil"
-simple_title:         "Å opprette en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "Java: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Oppretting av midlertidige filer er en vanlig oppgave i Java-programmering. Dette kan være nyttig når man trenger å lagre midlertidige data eller behandle store mengder data som ikke trenger å lagres permanent. Midlertidige filer kan også være nyttige for testing, debugging og logging formål.
+Noen ganger når vi jobber med større programmer eller har behov for midlertidig lagring av data, kan det være nyttig å opprette en midlertidig fil i Java. Denne artikkelen vil lære deg hvordan du kan opprette og håndtere midlertidige filer i Java.
 
 ## Hvordan
-Oppretting av en midlertidig fil i Java er en enkel prosess. Det første du må gjøre er å importere "java.io.File" og "java.io.IOException" bibliotekene. Deretter kan du bruke "createTempFile()" metoden i File-klassen for å opprette en midlertidig fil. Her er et eksempel på kode som kan brukes for å opprette en midlertidig fil med navnet "temp.txt" i rotmappen:
+For å opprette en midlertidig fil i Java, kan du bruke klassen `File` og dens metode `createTempFile()`. Her er et eksempel på hvordan du kan gjøre det:
 
 ```Java
-import java.io.File;
-import java.io.IOException;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        File tempFile = File.createTempFile("temp", ".txt");
-        System.out.println("Midlertidig fil opprettet på: " + tempFile.getAbsolutePath());
-    }
-}
+File tempFile = File.createTempFile("myTempFile", ".txt");
 ```
 
-Dette vil skrive ut banen til den nyopprettede midlertidige filen. Det er viktig å merke seg at filen vil automatisk bli slettet når programmet avsluttes.
+Dette oppretter en midlertidig fil med navnet "myTempFile[tilfeldig tall].txt", der "[tilfeldig tall]" er et unikt tall som blir generert for å sikre at filnavnet er unikt. 
+
+Du kan også spesifisere en bestemt plassering for å opprette den midlertidige filen, for eksempel:
+
+```Java
+File tempFile = File.createTempFile("myTempFile", ".txt", new File("C:/temp"));
+```
+
+Dette vil opprette filen "myTempFile[tilfeldig tall].txt" i mappen "C:/temp".
+
+Når du er ferdig med å bruke den midlertidige filen, kan du slette den ved å bruke metoden `delete()`:
+
+```Java
+tempFile.delete();
+```
 
 ## Deep Dive
-For å forstå mer om opprettelse av midlertidige filer, er det viktig å vite at det er to typer midlertidige filer i Java: hardlink-filer og slettede filer. Hardlink-filer opprettes ved å kopiere eksisterende filer, mens slettede filer opprettes ved å skrive til en ny fil. Hardlink-filer har samme inode-nummer som den originale filen og tar derfor opp mindre plass på disken.
+Når du oppretter en midlertidig fil i Java, er det viktig å vite at denne filen vil bli slettet så snart Java-programmet avsluttes eller når den midlertidige filen blir eksplisitt slettet ved hjelp av `delete()`-metoden. Dette er noe du må være klar over når du håndterer data som skal lagres midlertidig.
 
-En annen viktig ting å merke seg er at midlertidige filer kan opprettes på et bestemt sted ved å bruke "createTempFile(String prefix, String suffix, File directory)" metoden. Dette kan være nyttig hvis du vil ha kontroll over hvor midlertidige filer skal lagres.
+Du kan også spesifisere en prefiks og suffiks på filnavnet ved å bruke metoden `createTempFile(String prefix, String suffix)`. Dette kan være nyttig hvis du vil ha bedre kontroll over filnavnet. 
+
+En annen viktig ting å huske på er at midlertidige filer blir opprettet som skjulte filer, så hvis du vil se dem i filutforskeren må du aktivere muligheten for å vise skjulte filer.
 
 ## Se også
-- [Java Documentation for File class](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-- [Tutorialspoint article on creating temporary files in Java](https://www.tutorialspoint.com/java/io/java_io_file_createtempfile.htm)
-- [Stack Overflow thread on the difference between hardlink and deleted temporary files](https://stackoverflow.com/questions/16458147/what-is-the-difference-between-hard-link-and-temporary-file)
-
-For mer informasjon om opprettelse av midlertidige filer i Java, sjekk ut disse ressursene. Til neste gang, happy coding!
+- [Offisiell Java API dokumentasjon for File-klasse](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Tutorialspoint: Working with Temporary Files in Java](https://www.tutorialspoint.com/javaexamples/java_files.htm)

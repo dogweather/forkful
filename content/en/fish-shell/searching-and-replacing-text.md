@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Fish Shell recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever found yourself in a situation where you needed to quickly replace certain words or phrases in a file? Whether it's for formatting purposes or simply fixing a typo, text searching and replacing is a common need in programming. Luckily, the Fish Shell has a built-in feature that makes this task a breeze.
+
+Searching and replacing text is a common task in programming, especially when working with large files or repetitive tasks. Using the Fish Shell's built-in functions for searching and replacing offers a more efficient and streamlined approach to this task, saving you time and effort.
 
 ## How To
-To search and replace text using Fish Shell, you can use the `sed` command. This command stands for "stream editor" and allows you to perform search and replace operations on files or streams of text. Let's take a look at an example.
+
+To search and replace text in the Fish Shell, we will be using the `sed` and `awk` commands. These commands allow us to specify patterns in a text file and replace them with new text.
+
+To search and replace using `sed`, we use the following syntax:
 
 ```
-Fish Shell code block:
-
-# Create a sample file with some text
-echo "Hello World, how are you?" > sample.txt
-
-# View the file
-cat sample.txt
-
-# Search and replace using sed
-sed -i 's/Hello/Hi/g' sample.txt
-
-# View the updated file
-cat sample.txt
+Fish Shell:
+sed 's/search/replace/g' file.txt
 ```
 
-Sample Output:
+This command will search for the pattern "search" in the file "file.txt" and replace it with "replace". The "g" at the end of the command ensures that all instances of the pattern are replaced, not just the first one.
+
+For example, if we have a file named "test.txt" with the following content:
+
 ```
-Hi World, how are you?
+This is a test sentence.
 ```
 
-In this example, we used the `-i` flag to perform the search and replace operation directly on the file. The `s` in the command stands for "substitute", and we specified the word "Hello" to be replaced with "Hi" using the `g` flag (which stands for global, meaning replace all occurrences). You can also use regular expressions to specify more complex search patterns.
+And we want to replace all instances of the word "test" with "replace", we can use the following command:
+
+```
+Fish Shell:
+sed 's/test/replace/g' test.txt
+```
+
+The output will be:
+
+```
+This is a replace sentence.
+```
+
+`awk` works in a similar way, but allows us to specify more complex patterns. Here's the syntax for using `awk`:
+
+```
+Fish Shell:
+awk '{gsub(/pattern1/, "replacement string"); print}' file.txt
+```
+
+Using the same example as before, we can use `awk` to replace all instances of "test" with "replace" with the following command:
+
+```
+Fish Shell:
+awk '{gsub(/test/, "replace"); print}' test.txt
+```
+
+The output will be the same as the `sed` command.
 
 ## Deep Dive
-The `sed` command has various other options and flags that allow for more specific and advanced search and replace operations. For example, you can use the `-n` flag to suppress the default output and use the `p` command to print the replaced lines. You can also use the `-e` flag to specify multiple commands in one `sed` call. To learn more about all the available options, you can check out the Fish Shell documentation or any other online resources that cover this command in detail.
+
+Both `sed` and `awk` have more advanced options for searching and replacing text. For example, we can use regular expressions with `sed`, allowing us to specify more complex patterns to search for. We can also use flags such as "i" to make the search case-insensitive.
+
+Similarly, `awk` allows us to specify more complex patterns using regular expressions. It also has additional built-in functions for manipulating text, making it a powerful tool for searching and replacing.
+
+For more information on the syntax and available options for `sed` and `awk`, refer to their respective documentations.
 
 ## See Also
-- [Fish Shell documentation for `sed` command](https://fishshell.com/docs/current/cmds/sed.html)
-- [Linuxize tutorial for `sed` command](https://linuxize.com/post/sed-command-in-linux/)
-- [Video tutorial on search and replace in Fish Shell](https://www.youtube.com/watch?v=auct4bsbGu0)
+
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
+- [sed Command Documentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [awk Command Documentation](https://www.gnu.org/software/gawk/manual/gawk.html)

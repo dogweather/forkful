@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Trabalhando com csv"
+title:                "Trabalhando com csv"
+html_title:           "Rust: Trabalhando com csv"
 simple_title:         "Trabalhando com csv"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,64 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que trabalhar com CSV (Comma-Separated Values) em Rust?
+## Por que
 
-CSV é um formato amplamente utilizado para armazenar dados tabulares, como planilhas e bancos de dados. Ao trabalhar com dados em formato CSV, é essencial ter uma boa compreensão do seu conteúdo e manipulá-lo de forma eficiente. Se você é um programador em Rust ou quer aprender essa linguagem, este é o momento ideal para entender como trabalhar com CSV neste ambiente. Neste artigo, vamos explorar o porquê e como de trabalhar com CSV em Rust, além de uma breve análise mais profunda deste processo.
+Se você precisa trabalhar com dados em formato CSV (Comma Separated Values), provavelmente está buscando uma forma eficiente e confiável de manipular essas informações. Com a linguagem de programação Rust, você pode facilmente gerenciar CSVs com segurança e desempenho.
 
 ## Como fazer
 
-Para começar, vamos criar um pequeno exemplo de como ler um arquivo CSV em Rust e imprimir seu conteúdo na tela. Primeiro, precisamos importar a biblioteca de CSV para nosso código:
+Para começar a trabalhar com CSVs em Rust, você precisará importar a biblioteca `csv` no seu código. Em seguida, é necessário definir o caminho do arquivo CSV que você deseja manipular.
 
 ```
-use csv; // Importar biblioteca CSV
-```
+use csv::Reader; // Importa a biblioteca csv
+use std::fs::File; // Importa a biblioteca de manipulação de arquivos
 
-Agora, vamos abrir o arquivo CSV usando a função `Reader` da biblioteca CSV:
-
-```
-let file = File::open("arquivo.csv")?; // Abrir o arquivo CSV
-let mut reader = csv::Reader::from_reader(file); // Inicializar o leitor do arquivo CSV
-```
-
-Em seguida, vamos iterar sobre cada linha do arquivo e imprimir seu conteúdo na tela:
-
-```
-// Iterar sobre cada linha do arquivo
-for result in reader.records() {
-    // Armazenar cada linha em uma variável
-    let record = result?;
-
-    // Imprimir o conteúdo da linha
-    println!("{:?}", record); 
+fn main() {
+  let file = File::open("dados.csv").unwrap(); // Define o caminho do arquivo CSV
+  let mut reader = Reader::from_reader(file); // Inicializa o leitor do arquivo CSV
 }
 ```
 
-Se o arquivo CSV tiver os seguintes dados:
+Agora que o arquivo foi aberto, você pode ler as linhas do CSV e realizar operações com os dados.
 
 ```
-nome, sobrenome, idade
-João, Silva, 30
-Maria, Santos, 25
+// Lê a primeira linha e imprime na tela
+let result = reader.records().next().unwrap().unwrap();
+println!("{:?}", result);
+
+// Imprime o campo "Nome" da primeira linha
+println!("{}", result.get(0).unwrap());
 ```
 
-O resultado do nosso código será:
+O código acima apresenta apenas uma pequena demonstração do que é possível fazer com a biblioteca `csv` em Rust. É importante lembrar que ao trabalhar com CSVs, é necessário lidar com possíveis erros, como valores nulos ou formatação incorreta.
 
-```
-["nome", "sobrenome", "idade"]
-["João", "Silva", "30"]
-["Maria", "Santos", "25"]
-```
+## Mergulho profundo
 
-Agora que sabemos como ler e imprimir o conteúdo de um arquivo CSV em Rust, podemos manipular esses dados da forma que desejarmos.
-
-## Aprofundando
-
-Além de apenas ler o conteúdo de um arquivo CSV, é possível também escrever e manipular os dados de forma mais complexa. A biblioteca CSV em Rust possui muitas funções úteis para isso, como a capacidade de selecionar colunas específicas, filtrar dados com base em determinados critérios e converter os dados para outros tipos, como `Vec` e `HashMap`.
-
-Além disso, Rust também oferece recursos poderosos de tratamento de erros, o que ajuda a evitar problemas comuns ao trabalhar com dados em formato CSV, como valores ausentes ou inválidos.
-
-Se você quer se aprofundar ainda mais no assunto, a documentação oficial do Rust possui uma seção dedicada à biblioteca CSV, com uma lista completa de funções e exemplos detalhados.
+Além das funções básicas de leitura e manipulação de dados, a biblioteca `csv` em Rust também oferece recursos avançados, como a possibilidade de definir delimitadores personalizados e trabalhar com tipos de dados personalizados. Além disso, a linguagem Rust tem um sistema de gerenciamento de memória que garante a segurança e eficiência no processamento de grandes volumes de dados.
 
 ## Veja também
 
-- Documentação da biblioteca CSV em Rust: https://docs.rs/csv/1.1.3/csv/
+- [Documentação da biblioteca csv em Rust](https://docs.rs/csv/latest/csv/) (em inglês)
+- [Tutorial de como trabalhar com CSVs em Rust](https://www.youtube.com/watch?v=BmWrBwrWqwA) (em inglês)
+- [Exemplos de código para manipular CSVs em Rust](https://github.com/BurntSushi/rust-csv/tree/master/examples) (em inglês)

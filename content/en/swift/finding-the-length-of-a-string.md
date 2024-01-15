@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Swift recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,43 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Finding the length of a string may seem like a simple task, but it can actually be quite useful and essential in many programming scenarios. For example, when dealing with user input or manipulating data, it's important to know the length of a string in order to properly handle it. In this blog post, we're going to dive into the world of string length in Swift and explore different ways to find it.
+Strings are an essential part of any programming language, and knowing the length of a string can be incredibly useful for a variety of reasons. Whether you are building an app, creating a website, or just learning Swift, being able to find the length of a string is a fundamental skill that will come in handy.
 
 ## How To
-
-To find the length of a string in Swift, we can use the `count` property of the string. Let's take a look at a simple example:
-
-```Swift
-let message = "Hello World!"
-print(message.count)
-// Output: 12
-```
-
-As you can see, we simply use the `count` property and print it out to get the length of the string. But what about empty strings? Let's try it out:
+Finding the length of a string in Swift is a simple and straightforward process. First, let's take a look at how to create a string variable:
 
 ```Swift
-let emptyString = ""
-print(emptyString.count)
-// Output: 0
+let myString = "Hello World!"
 ```
 
-As expected, the `count` property returns 0 for an empty string. But what happens when we have an emoji in our string? Let's find out:
+Now, to find the length of this string, we can use the built-in `count` method. Here's an example:
 
 ```Swift
-let smiley = "😊"
-print(smiley.count)
-// Output: 2
+print(myString.count) // Output: 12
 ```
 
-Surprisingly, the `count` property also counts emojis as 2 characters. This is because emojis are made up of Unicode characters, with some being represented by only 1 Unicode value and others by 2. Therefore, it's important to keep this in mind when working with strings that may contain emojis.
+As you can see, the `count` method returns the total number of characters in the string, including any spaces or punctuation.
+
+We can also use the `count` method on a string variable that is not explicitly defined. For example:
+
+```Swift
+let name = "John"
+print(name.count) // Output: 4
+```
+
+Lastly, we can also use the `count` method on string literals:
+
+```Swift
+print("Hello".count) // Output: 5
+```
 
 ## Deep Dive
+Now, let's take a deeper dive into finding the length of a string in Swift. Behind the scenes, the `count` method is using a property called `unicodeScalars` to calculate the length of the string. This property breaks down the string into its individual characters and counts them.
 
-In Swift, strings are represented by the `String` type, which is a collection of individual characters. This means that finding the length of a string is actually finding the number of characters it contains. However, it's important to note that not all characters have the same length in terms of memory. For example, a single Unicode character can have a varying length in memory, depending on the encoding format used. This can result in the `count` property returning different values for strings with the same number of characters but different Unicode representations.
+Additionally, you can also use the `unicodeScalars` property directly to get a more in-depth view of the characters in a string. Here's an example:
+
+```Swift
+let myString = "Swift is awesome!"
+print(Array(myString.unicodeScalars)) // Output: ["S", "w", "i", "f", "t", " ", "i", "s", " ", "a", "w", "e", "s", "o", "m", "e", "!"]
+```
+
+This is especially helpful when working with multilingual strings that may contain characters from different languages.
 
 ## See Also
-
-- [Apple documentation on string length](https://developer.apple.com/documentation/swift/string/2894149-count)
-- [Stack Overflow discussion on counting emoji characters](https://stackoverflow.com/questions/41938886/how-to-count-emoji-characters-in-string-in-swift)
-- [Hacking with Swift article on string basics](https://www.hackingwithswift.com/quick-start/understanding-swift/whats-the-difference-between-a-unicode-character-a-glyph-and-a-code-point)
+- [Apple Official Documentation on Strings in Swift](https://developer.apple.com/documentation/swift/string)
+- [String Manipulation in Swift: Tips and Tricks](https://medium.com/better-programming/swift-string-manipulation-tips-and-tricks-66e65ac172e7)
+- [Learn Swift: Strings](https://www.hackingwithswift.com/read/0/overview)

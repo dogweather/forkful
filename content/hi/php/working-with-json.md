@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Json के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "PHP: Json के साथ काम करना"
 simple_title:         "Json के साथ काम करना"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## बताते हैं की क्यों करें हम JSON के साथ काम?
+## क्यों
 
-JSON एक आसान, लोकप्रिय और लोगों के बीच पसंद किया जाने वाला डेटा का संरचना प्रारूप है। हम JSON का उपयोग अपने वेब एप्लिकेशन में कर सकते हैं ताकि हम डेटा को आसानी से प्रसंस्करण और ट्रांसफर कर सकें। 
+JSON कोडिंग में लोग उसका उपयोग इसलिए करते हैं क्योंकि यह एक लोकप्रिय एवं सुरक्षित प्रारूप है जो डेटा को आसानी से संगठित करता है।
 
-## कैसे करें JSON के साथ काम?
+## कैसे करें
+
+जब हम अपने PHP स्क्रिप्ट में JSON कोड का उपयोग करते हैं, तो हम उसे इस प्रकार से पारस्परिक विश्लेषण कर सकते हैं:
 
 ```PHP
-// डेटा बनाएं
-$data = array(
-  'name' => 'रवि',
-  'age' => 25,
-  'city' => 'मुंबई'
-);
-
-// JSON में बदलें
-$json = json_encode($data);
-
-// समाचार को कंसोल पर प्रिंट करें
-echo $json;
+$json = '{"name":"John", "age":30, "city":"New York"}'; // JSON स्ट्रिंग
+$data = json_decode($json, true); // यह डेटा असोसियटिव एरे में परिवर्तित हो जाएगा
+echo $data['name']; // John आउटपुट
+echo $data['age']; // 30 आउटपुट
 ```
 
-आउटपुट:
+जोड़ सकते हैं:
+
 ```PHP
-{"name":"रवि","age":25,"city":"मुंबई"}
+$data = ['name' => 'John', 'age' => 30, 'city' => 'New York']; // एरे
+$json = json_encode($data); // इसे JSON स्ट्रिंग में परिवर्तित करें
+echo $json; // {"name":"John","age":30,"city":"New York"} आउटपुट
 ```
 
-## डीप डाइव: JSON के साथ कैसे काम करें?
+इस तरह से, हम PHP में JSON कोड का उपयोग कर सकते हैं।
 
-- JSON को अपनी वेब एप्लिकेशन में असामान्य से अधिक डेटा तक पहुंचया जा सकता है।
-- एकरूपता प्राप्त करने के लिए, हम डेटा को सामान्य रूप से ऑप्शन या प्रोपर्टी के रूप में या फिर कमजोरी या डिलीट की शर्तों से हटकर भी स्वरूपित कर सकते हैं।
-- JSON को अन्य डेटा संरचना प्रारूपों में रूपांतरित करने के लिए कई उपयोगी फंक्शन हैं।
+## गहराई में
 
-## देखें भी: 
+JSON पैरसर पैकेज PHP में स्थापित है, इसलिए हम उसे कोड से आसानी से अपनी PHP एप्लीकेशन में शामिल कर सकते हैं। JSON कोडिंग के लिए यह एक ब्रिलियेंट और सरल विकल्प है।
 
-- JSON क्या है और उसे कैसे उपयोग करें: https://www.php.net/manual/en/function.json-encode.php
-- अन्य डेटा संरचनाएं: https://www.php.net/manual/en/function.json-decode.php
-- हॉटेल की बुकिंग फॉर्म का उदाहरण: https://www.php.net/manual/en/function.json-last-error.php
+## देखें भी
+
+- [PHP में JSON कोडिंग का आसान गाइड](https://www.php.net/manual/en/book.json.php)
+- [JSON.org में PHP](https://www.json.org/php.html)
+- [PHP में JSON परिवर्तन](https://www.php.net/manual/en/json.requirements.php)

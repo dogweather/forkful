@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,56 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTTP 요청을 보내는 일은 우리가 웹 브라우저를 통해 웹 사이트에 접속할 때 매우 중요합니다. 이를 통해 서버와 클라이언트 간의 통신이 가능해지기 때문입니다. Clojure 프로그래밍에서 HTTP 요청을 보내는 방법을 배우기 전에 그 이유에 대해 간단히 살펴보겠습니다.
+선택적인 API와 통신하거나 웹 페이지에 요청을 보내기 위해 HTTP 요청을 보내는 법을 배워야 할 때가 있습니다.
 
-## 하우 투
+## 방법
 
-Clojure에서 HTTP 요청을 보내기 위해서는 먼저 클라이언트 라이브러리를 사용해야 합니다. 예를 들어, 여러분이 클라이언트 라이브러리 중에서 Http Client를 선택했다고 가정해봅시다. 그렇다면 다음과 같이 라이브러리를 추가하고 namespace를 선언해주어야 합니다.
-
-```Clojure
-[http-client "0.1.0"]
-```
+HTTP 클라이언트 라이브러리를 사용하여 Clojure에서 HTTP 요청을 보내는 방법을 알아보겠습니다.
 
 ```Clojure
-(require '[http-client.core :as http])
+(require '[clj-http.client :as client])
 ```
 
-이제 HTTP 요청을 보내는 방법은 매우 간단합니다. 다음과 같이 `http/get` 함수를 사용하면 됩니다.
+우리가 보낼 요청의 기본적인 형태는 다음과 같습니다:
 
 ```Clojure
-(http/get "http://www.example.com")
+(client/request {:method :get :url "https://www.example.com"})
 ```
 
-그리고 `response`를 출력하면 다음과 같은 sample output을 얻을 수 있습니다.
+위의 코드는 :method를 통해 어떤 유형의 요청을 할지, :url을 통해 어느 사이트로 요청을 보낼지를 지정합니다. 이제 이 요청에 대한 응답을 받아서 볼 수 있습니다.
 
 ```Clojure
-{:status 200
- :headers {"content-type" "text/html; charset=UTF-8"}
- :body <!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to Example Corporation</title>
-</head>
-<body>
-<h1>Welcome!</h1>
-<p>Hello, World!</p>
-</body>
-</html>}
+(client/request {:method :get :url "https://www.example.com"})
+;;=> {:status 200, :headers {"Content-Type" "text/html"}, :body "<html><body>Hello world!</body></html>"}
 ```
 
-## 깊이 파고들기
-
-보다 복잡한 HTTP 요청을 보내기 위해선, 각종 매개변수를 추가해주어야 합니다. 예를 들어, 사용자가 입력한 정보를 서버로 전송하거나 페이지의 특정 부분만 가져오는 등의 작업을 해야할 때가 있습니다. 이럴 때는 `http/get` 함수 대신 `http/post` 함수를 사용해야 합니다.
+우리는 또한 옵션으로 request의 바디에 파라미터를 추가할 수 있습니다.
 
 ```Clojure
-(http/post "http://www.example.com" {:form-params {"username" "example_user",
-                                                   "password" "example_password"}})
+(client/request {:method :post :url "https://www.example.com/login" :form-params {:username "user" :password "pass"}})
 ```
 
-더 자세한 내용은 [이 공식 문서](https://github.com/tailrecursion/cljs-http)를 참고하시기 바랍니다.
+위의 코드는 POST 요청을 보내며, :form-params를 통해 전달할 파라미터를 설정합니다. 이제 이를 보낸 결과를 받아 볼 수 있습니다.
 
-## 또 다른 참고 자료
+```Clojure
+(client/request {:method :post :url "https://www.example.com/login" :form-params {:username "user" :password "pass"}})
+;;=> {:status 200, :headers {"Content-Type" "application/json"}, :body "{\"success\": true, \"message\": \"Login successful.\"}"}
+```
 
-- [Clojure 공식 홈페이지](https://clojure.org/)
-- [뉴비를 위한 Clojure 프로그래밍 가이드](https://clojure.org/guides/getting_started)
-- [HTTP 요청에 대한 자세한 설명](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+## 깊게 파헤치기
+
+Clojure에서 HTTP 요청을 보내는 방법에 대해 더 자세히 알아보겠습니다. 클라이언트 라이브러리는 많은 다양한 옵션을 제공합니다. 기본적인 신택스 외에도 여러 옵션을 사용하여 요청을 보낼 수 있으며, 이를 통해 다양한 유형의 요청을 보낼 수 있습니다. 예를 들어, :headers 옵션을 통해 헤더를 추가하여 특정 정보를 전달할 수 있습니다.
+
+```Clojure
+(client/request {:method :get :url "https://www.example.com" :headers {"User-Agent" "My-Clojure-App"}})
+```
+
+또한 임의의 복잡한 용도로 사용하기 위해, 클라이언트 라이브러리는 콜백 함수를 사용할 수 있는 옵션을 제공합니다. 이를 통해 요청을 보내고 받은 응답을 직접 처리할 수 있습니다.
+
+```Clojure
+(client/request {:method :get
+                  :url "https://api.example.com/items"
+                  :params {:limit 10}
+                  :callback (fn [response] (println (count (:body response)))))})
+```
+
+더 많은 옵션과 사용 방법은 공식 문서를 참조하세요.
+
+## 참고 자료
+
+- [공식 Clojure 문서](https://clojure.org)
+- [clj-http 라이브러리](https://github.com/dakrone/clj-http)
+- [Clojure 공식 라이브러리 문서](https://clojure.github.io/clojure/clojure.core-api.html)

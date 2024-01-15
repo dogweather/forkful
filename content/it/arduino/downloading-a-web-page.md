@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricando una pagina web"
+html_title:           "Arduino: Scaricando una pagina web"
+simple_title:         "Scaricando una pagina web"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,58 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Se vuoi integrare la tua scheda Arduino con il mondo online e accedere ai dati di Internet, è fondamentale saper scaricare e analizzare una pagina web. In questo modo potrai creare progetti interattivi e ottenere informazioni direttamente dal web.
 
-Scaricare una pagina web può sembrare un'attività banale, ma in realtà può essere molto utile quando si programma un progetto con Arduino. Questo permette di ottenere dati in tempo reale da fonti esterne come sensori online o pagine web contenenti informazioni aggiornate.
+## Come fare
+Per iniziare a scaricare una pagina web, avrai bisogno di alcune librerie. Per fortuna, il compilatore di Arduino ha una vasta gamma di librerie tra cui scegliere.
 
-## Come Fare
-
-Per scaricare una pagina web con Arduino, è necessario utilizzare una connessione Internet e un modulo WiFi o Ethernet. Esistono diverse librerie disponibili online per semplificare questo processo, come ad esempio la libreria ESP8266WiFi per i moduli WiFi o la libreria Ethernet per i moduli Ethernet.
-
-Il primo passo è connettere il modulo WiFi o Ethernet alla rete Internet. Una volta stabilita la connessione, è possibile utilizzare il metodo `client.connect()` per stabilire una connessione con il server contenente la pagina web che si desidera scaricare.
-
-Una volta stabilita la connessione, è possibile utilizzare il metodo `client.print()` per inviare una richiesta HTTP al server specificando il metodo di richiesta (GET, POST, ecc.) e il percorso della pagina web. Ad esempio, se si desidera scaricare la pagina web http://www.example.com/page.html, la richiesta HTTP dovrebbe essere `client.print("GET /page.html HTTP/1.1\r\n")`.
-
-Successivamente, è necessario leggere la risposta del server utilizzando il metodo `client.read()`. La risposta sarà un codice di stato HTTP seguito dai dati della pagina web richiesta. Per salvare i dati, è possibile utilizzare una variabile di tipo stringa e aggiungere ogni riga della risposta utilizzando il metodo `client.readStringUntil('\n')`. Una volta ottenuti tutti i dati, è possibile utilizzarli nel programma Arduino come si desidera.
-
-Ecco un esempio di codice per scaricare e stampare il contenuto della pagina web http://www.example.com/page.html:
-
+```Arduino
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiMulti.h>
+#include <HTTPClient.h>
 ```
-#include <ESP8266WiFi.h> //libreria per il modulo WiFi
 
-WiFiClient client; //crea un'istanza del client WiFi
+Una volta inclusi questi componenti nel tuo codice, potrai utilizzare l'oggetto `HTTPClient` per connetterti al server web e scaricare una pagina. Di seguito un esempio di codice che scarica la pagina in formato testo e la stampa sulla console seriale.
 
-void setup() {
-  Serial.begin(9600); //inizializza la comunicazione seriale
-  WiFi.begin("nome_rete", "password_rete"); //connessione alla rete WiFi
-  while (WiFi.status() != WL_CONNECTED) { //aspetta la connessione alla rete
-    delay(500);
-    Serial.println("Connesso!");
-  }
+```Arduino
+WiFiClient client;
+HTTPClient http;
+
+// Connetti WiFi
+WiFi.begin(ssid, password);
+while (WiFi.status() != WL_CONNECTED) {
+  delay(500);
+  Serial.println("Sto cercando la rete WiFi...");
 }
+Serial.println("Connesso alla rete WiFi!");
 
-void loop() {
-  if (client.connect("www.example.com", 80)) { //connette al server
-    client.print("GET /page.html HTTP/1.1\r\n"); //richiesta HTTP
-    client.println("Host: www.example.com"); //specificare l'host del server
-    client.println("Connection: close"); //chiude la connessione dopo la richiesta
-    client.println(); //fine della richiesta
-    while (client.available()) { //legge la risposta del server
-      String line = client.readStringUntil('\n'); //legge ogni riga della risposta
-      Serial.println(line); //stampa la riga ricevuta
-    }
+// Connessione al server e scarico della pagina
+Serial.print("Connetto a ");
+Serial.println(webserver);
+
+if (http.begin(client, webserver)) {
+  int httpCode = http.GET();
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(payload);
   }
-  client.stop(); //chiude la connessione con il server
-  delay(5000); //aspetta 5 secondi prima di fare una nuova richiesta
+  http.end();
+} else {
+  Serial.println("Non posso connettermi al server");
 }
 ```
 
-## Approfondimenti
+Il codice è abbastanza semplice ma molto efficace. Ti consiglio di approfondire con la documentazione delle librerie incluse per personalizzare la tua connessione e i dati da scaricare.
 
-Scaricare una pagina web può essere un'operazione più complessa di quanto descritto sopra. Ad esempio, ci possono essere problemi di connessione o limitazioni del server che possono causare errori nella ricezione dei dati. Inoltre, è possibile specificare parametri aggiuntivi nella richiesta HTTP per personalizzare il download, come l'utilizzo di un cookie o l'invio di dati tramite il metodo POST. Per ulteriori informazioni, si consiglia di consultare la documentazione delle librerie utilizzate.
+## Approfondimento
+Scaricare una pagina web è solo l'inizio di ciò che puoi fare con l'Arduino e il mondo online. Utilizzando le librerie corrette, potrai anche analizzare il contenuto delle pagine scaricate, reagire in base a determinate informazioni o addirittura controllare il tuo Arduino da remoto tramite il web. Non ci sono limiti alle possibilità!
 
 ## Vedi Anche
-
-- [Libreria ESP8266WiFi per moduli WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
-- [Libreria Ethernet per moduli Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
-- [Protocollo HTTP](https://www.w3.org/Protocols/)
-- [Sito ufficiale di Arduino](https://www.arduino.cc/)
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/)
+- [Esempi delle librerie WiFi e HTTPClient](https://github.com/arduino-libraries/WiFi/tree/master/examples)
+- [Tutorial su come utilizzare l'Arduino con il web](https://create.arduino.cc/projecthub/Matrix-Rex/connect-arduino-wifi-module-with-internet-using-at-commands-4cf6f0)

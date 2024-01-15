@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 比较两个日期。"
-simple_title:         "比较两个日期。"
+title:                "比较两个日期"
+html_title:           "Haskell: 比较两个日期"
+simple_title:         "比较两个日期"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -9,62 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要比较两个日期？
+为什么：为什么要比较两个日期？可能是因为我们需要知道哪个日期更早或者更晚，或者我们需要按照日期对数据进行排序。
 
-在编程过程中，我们经常需要比较不同的日期，例如根据日期筛选数据或者计算日期之间的差值。比较两个日期可以帮助我们更有效地处理这些任务。
-
-## 如何比较日期？
-
-在Haskell中，比较两个日期最常用的方法是使用`Data.Time`库中的`Day`类型。让我们来看一个简单的例子：
+如何：
+比较两个日期是一个很简单的任务，Haskell提供了一种便捷的方法来完成它。我们可以使用`diffDays`函数来计算两个日期之间的天数差异，然后根据返回的结果进行条件判断。下面是一个简单的例子：
 
 ```Haskell
-import Data.Time (Day, fromGregorian, diffDays)
+import Data.Time
 
--- 创建两个日期
-firstDate :: Day
-firstDate = fromGregorian 2020 1 1
+-- 定义两个日期
+date1 = fromGregorian 2021 8 1
+date2 = fromGregorian 2021 8 10
 
-secondDate :: Day
-secondDate = fromGregorian 2021 1 1
-
--- 计算两个日期之间的天数差
-daysDiff :: Integer
-daysDiff = diffDays secondDate firstDate
-
--- 打印结果
-main = print daysDiff
--- 输出：365
+-- 比较两个日期并打印结果
+main = print $ diffDays date1 date2
 ```
 
-在这个例子中，我们使用`fromGregorian`函数创建了两个日期，然后使用`diffDays`函数计算了它们之间的天数差。将`Day`类型的日期作为参数传入这些函数即可。对于更复杂的日期比较，您可以使用`Data.Time`库中提供的其他函数来实现。
+运行以上代码，我们可以得到`9`作为输出结果，表示`date1`比`date2`早9天。
 
-## 深入了解日期比较
+深入了解：
+除了比较两个日期的天数差异，我们也可以通过其他函数来进行更多的比较。例如，`diffJulianDuration`函数可以计算两个日期之间的Julian时间间隔，`compare`函数可以比较两个日期之间的大小关系。此外，Haskell还提供了一系列的日期处理函数，例如`addDays`和`addGregorianMonthsClip`等，可以让我们更灵活地操作日期。
 
-有时候，我们需要比较日期的精确时间，而不仅仅是日期。在Haskell中，我们可以使用`Data.Time.Clock`库中的`UTCTime`类型来比较日期和时间。让我们修改上面的例子，并加入具体的时间：
-
-```Haskell
-import Data.Time.Clock (UTCTime, UTCTime (UTCTime), diffUTCTime)
-
--- 创建两个精确时间
-firstTime :: UTCTime
-firstTime = UTCTime firstDate (8 * 3600)
-
-secondTime :: UTCTime
-secondTime = UTCTime secondDate (12 * 3600)
-
--- 计算两个时间之间的秒数差
-secondsDiff :: NominalDiffTime
-secondsDiff = diffUTCTime secondTime firstTime
-
--- 打印结果
-main = print secondsDiff
--- 输出：14400
-```
-
-在这个例子中，我们使用`UTCTime`类型来表示具体的日期和时间，并使用`diffUTCTime`函数计算了它们之间的秒数差。
-
-# 参考链接
+见下文：
 
 - [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Data.Time库文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Data.Time.Clock库文档](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
+- [Haskell Data.Time模块文档](https://hackage.haskell.org/package/time-1.10.0.3/docs/Data-Time.html)

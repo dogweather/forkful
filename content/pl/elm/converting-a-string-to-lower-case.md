@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Zamiana ciągu znaków na małe litery"
+html_title:           "Elm: Zamiana ciągu znaków na małe litery"
+simple_title:         "Zamiana ciągu znaków na małe litery"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,43 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery może być bardzo przydatna w wielu przypadkach, na przykład w filtracji i sortowaniu danych, porównywaniu ciągów znaków, czy w procesie walidacji danych. W tym blogu dowiesz się jak w prosty sposób przekonwertować dowolny ciąg znaków na małe litery w języku Elm.
+Cześć programiści! W dzisiejszym artykule rozwiniemy nasze umiejętności w Elm poprzez naukę przekształcania ciągu znaków w małe litery. To ważne narzędzie w tworzeniu aplikacji, ponieważ umożliwia sprawdzanie równoważności liter, co jest szczególnie przydatne przy weryfikacji haseł czy nazw użytkowników.
+
+Przed przystąpieniem do kodowania, warto zaznaczyć, że w Elm nie można modyfikować istniejącego ciągu znaków, ponieważ jest on niezmienny (immutable). Zamiast tego, musimy przekształcić oryginalny ciąg znaków w nowy, zawierający odpowiednie litery.
 
 ## Jak to zrobić
 
-Do konwertowania tekstu na małe litery w Elmie używamy wbudowanej funkcji `String.toLower`, która przyjmuje jako argument ciąg znaków i zwraca nowy ciąg znaków w formacie małych liter.
+W celu przekształcenia ciągu znaków w małe litery, musimy użyć funkcji `String.toLower`. Przyjrzyjmy się przykładom:
 
-```elm
-import String exposing (toLower)
+```Elm
+import String
 
-name = "JAN"
-lowerCaseName = toLower name
-
--- Output
-lowerCaseName = "jan"
+String.toLower "ELM" -- output: "elm"
+String.toLower "Hello World!" -- output: "hello world!"
 ```
 
-Funkcja `toLower` jest bardzo prosta w użyciu i idealnie sprawdza się w większości przypadków. Możemy ją również wykorzystać do konwertowania ciągów znaków pobieranych z pola input w formularzach oraz do pracy z danymi pobieranymi z zewnętrznych źródeł.
+W pierwszym przykładzie przekształcamy ciąg "ELM" w "elm". W drugim natomiast, zmieniamy "Hello World!" na "hello world!".
 
-## Deep Dive
+Ważne jest również zwrócenie uwagi na znaki nietypowe, takie jak litery ze znakami diakrytycznymi czy spacje, które również są przekształcane na odpowiednie małe litery.
 
-W niektórych przypadkach konwertowanie tekstu na małe litery może wymagać więcej uwagi. Na przykład, w języku polskim niektóre znaki diakrytyczne takie jak "ą" czy "ó" nie mają swoich odpowiedników w formacie małych liter. Dlatego w celu poprawnej konwersji tekstu zawierającego takie znaki, musimy najpierw wykorzystać funkcję `toLower` a następnie zastosować funkcję `String.normalize` aby zamienić polskie znaki na ich odpowiedniki w formacie małych liter.
+## Głębsze zagadnienia
 
-```elm
-import String exposing (toLower, normalize)
+W Elm, funkcja `String.toLower` wykorzystuje standard Unicode do transformacji liter. Oznacza to, że nie tylko litery z alfabetu łacińskiego są przekształcane, ale również znaki z innych języków.
 
-name = "Łukasz"
-lowerCaseName = toLower name
-normalizedName = normalize lowerCaseName
-
--- Output
-normalizedName = "łukasz"
-```
-
-Zazwyczaj jednak nie musimy się martwić o ten szczegół, ponieważ najczęściej używane znaki diakrytyczne w języku polskim są obsługiwane przez funkcję `toLower`.
+Jedną z zalet używania funkcji `String.toLower` jest fakt, że ta sama funkcja może być stosowana zarówno do pojedynczego ciągu znaków, jak i listy ciągów. Dzieje się tak dzięki tzw. "funkcyjnemu programowaniu", które jest bardzo popularne w Elm.
 
 ## Zobacz również
 
-- Dokumentacja Elm: [String.toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- Dokumentacja Elm: [String.normalize](https://package.elm-lang.org/packages/elm/core/latest/String#normalize)
-- Poradnik Elm po polsku: [Programowanie funkcyjne w Elmie](https://programowanie.elm.pl/)
+Jeśli chcesz poznać więcej funkcji manipulujących ciągami znaków w Elm, polecam przeczytać ten artykuł: [Manipulowanie ciągami znaków w Elm](https://medium.com/@kanonzm/functional-programming-with-elm-string-manipulation-6f9fe0b350ba).
+
+A jeśli jesteś ciekawy, jak działa funkcjonalne programowanie w Elm, zapraszam do zapoznania się z tym kursem: [Wprowadzenie do funkcyjnego programowania w Elm](https://egghead.io/browse/frameworks/elm).

@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "PHP: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,38 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att söka och ersätta text är en vanlig uppgift inom programmering och kan vara till nytta för många olika ändamål. Det kan inkludera att byta ut felaktig eller föråldrad information, formatera text på ett enhetligt sätt eller göra omfattande ändringar i en stor textmängd.
+När man arbetar med programmering är det ofta nödvändigt att söka och ersätta text i sin kod. Det kan till exempel handla om att byta namn på en variabel eller korrigera stavfel. Till skillnad från manuell ändring påverkar en sök- och ersätt-operation alla förekomster av den sökta texten på en gång, vilket kan spara mycket tid och undvika misstag.
 
-## Hur man gör det
+## Hur man gör
 
-Det finns flera sätt att söka och ersätta text i PHP, men en av de enklaste metoderna är att använda en inbyggd funktion som heter `str_replace()`. Den tar tre parametrar: sökordet som ska ersättas, det nya ordet som ska sättas in samt texten som ska ändras.
-
-```PHP
-$text = "Hej världen!";
-$ny_text = str_replace("världen", "världen av programmering", $text);
-echo $ny_text;
-```
-
-Koden ovan kommer att ge följande utmatning: `Hej världen av programmering!` Ett annat sätt är att använda reguljära uttryck, vilket ger mer flexibilitet och möjlighet att söka efter mönster istället för en specifik textsträng.
+Sök och ersätt-funktionen i PHP är väldigt enkel att använda. Den tar två parametrar, den sökta texten och den text som ska ersätta den. Om det finns flera förekomster av den sökta texten kommer de alla att ersättas. Det finns även möjlighet att ange ett tredje argument som anger det maximala antalet förekomster som ska ersättas.
 
 ```PHP
-$text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-$ny_text = preg_replace("/[a-z]/", "X", $text);
-echo $ny_text;
+<?php
+// En enkel sök och ersättning
+$nation = "Sverige";
+echo str_replace("Sverige", "Danmark", $nation);
+// Output: Danmark
 ```
 
-Koden ovan kommer att ersätta alla små bokstäver i texten med stora bokstäver, vilket ger följande utmatning: `XXXXXX XXXXX XXXXX XXX XXXXXXXXXXXXXX XXXXXXXXXXX XXXXX.` Det finns även andra funktioner som `str_ireplace()` som är antingen skiftlägeskänslig eller inte, beroende på behovet.
+Det är viktigt att komma ihåg att sökningen är casesensitive, vilket betyder att stora och små bokstäver måste matcha för att en ersättning ska ske. För att undvika detta kan man använda funktionen str_ireplace(), som är casesensitive.
 
 ## Djupdykning
 
-Att söka och ersätta text innebär inte bara byte av ord, utan kan också användas för att manipulera och hantera text på olika sätt. Det kan inkludera att ta bort eller lägga till tecken, använda reguljära uttryck för att söka efter mönster eller till och med utföra flera ersättningar i en text på samma gång.
+En viktig aspekt att tänka på när man utför en sök och ersätt-operation är att den alltid bör användas med försiktighet. Eftersom alla förekomster av den sökta texten kommer att ersättas, kan det leda till oönskade resultat om man inte är noga med vad man söker efter. Det är också viktigt att ha kontroll över vilken del av koden som påverkas, för att undvika att sökningen och ersättningen sker i kommentarer eller strängar som inte ska ändras.
 
-En annan användbar funktion är `strtr()`, som erbjuder möjligheten att byta ut flera ord samtidigt enligt ett angivet mönster och ersättning. Till exempel:
+För mer avancerade sök och ersätt-operationer kan man använda reguljära uttryck (Regex) för att hitta och ersätta text i koden. PHP erbjuder en rad olika funktioner för detta ändamål, som preg_replace() och preg_replace_callback(). Dessa funktioner ger möjlighet att söka efter mönster i texten istället för bara en exakt matchning.
 
-```PHP
-$text = "Jag tycker om äpplen och bananer.";
-$ny_text = strtr($text, ["äpplen" => "päron", "bananer" => "apelsiner"]);
-echo $ny_text;
-```
+## Se även
 
-Koden ovan kommer att ge följande utmatning: `Jag tycker om päron och apelsiner.` Det finns också många olika PHP-funktioner och bibliotek som kan hjälpa till med mer avancerad textmanipulering, som tex
+Läs mer om sök och ersätt-funktionen i PHP:s officiella dokumentation:
+- https://www.php.net/manual/en/function.str-replace.php
+- https://www.php.net/manual/en/function.str-ireplace.php
+- https://www.php.net/manual/en/function.preg-replace.php
+- https://www.php.net/manual/en/function.preg-replace-callback.php

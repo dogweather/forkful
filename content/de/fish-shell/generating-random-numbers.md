@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Generierung von Zufallszahlen"
+html_title:           "Fish Shell: Generierung von Zufallszahlen"
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -9,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Warum sollte man sich mit der Generierung von zufälligen Zahlen beschäftigen? Nun, zufällige Zahlen sind in der Programmierung äußerst nützlich, insbesondere wenn es darum geht, Tests durchzuführen oder Daten zu verfälschen. Sie können auch bei der Erstellung von Spielen oder bei der Simulation von Prozessen verwendet werden.
+Wenn du dich fragst, warum du dich überhaupt mit dem Generieren von Zufallszahlen beschäftigen solltest, dann bist du hier richtig. Ob für Spiele, Simulationen oder Verschlüsselung - das Generieren von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung und kann in vielen Anwendungsbereichen nützlich sein.
 
-## Wie geht das?
+# Wie
 
-Die Generierung von zufälligen Zahlen ist in Fish Shell überraschend einfach. Hier sind ein paar Beispiele, wie man in Fish Shell zufällige Zahlen generieren kann:
+Die Fish Shell bietet verschiedene Funktionen, um Zufallszahlen zu generieren. Hier sind einige Beispiele für die Generierung von Zufallszahlen mit der Fish Shell:
 
+```Fish Shell
+# Eine zufällige Zahl zwischen 1 und 10 generieren
+echo (random 1 10) 
+
+# Eine Zufallszahl zwischen 0 und 1 generieren
+echo (math random) 
+
+# Eine zufällige Zeichenkette mit 10 Zeichen generieren
+echo (string random -l 10)
 ```
-# Erzeugt eine zufällige Ganzzahl zwischen 1 und 100
-set number (math % (random 100 + 1))
 
-# Erzeugt eine zufällige Gleitkommazahl zwischen 0 und 1
-set float (math (random) / (random))
+Das obige Beispiel verwendet die Funktionen "random", "math" und "string", die in der Fish Shell eingebaut sind. Die Ausgabe wird jedes Mal anders sein, da jede Generierung von Zufallszahlen einzigartig ist.
 
-# Erzeugt eine zufällige Zeichenfolge aus alphanumerischen Zeichen
-set string (seq 16 | (shuf -r -n 1 . /dev/stdin | tr -dc '[:alnum:]'))
-```
+# Deep Dive
 
-Die ```random``` Funktion gibt eine zufällige Zahl zwischen 0 und 1 zurück, die mit der ```math``` Funktion in eine passende Ganzzahl oder Gleitkommazahl umgewandelt werden kann. Für die Erzeugung von zufälligen Zeichenfolgen werden die Befehle ```seq```, ```shuf```und ```tr``` verwendet.
+Wenn du dich für die Details hinter der Generierung von Zufallszahlen interessierst, gibt es einige Faktoren, die berücksichtigt werden müssen. Zum Beispiel kann die Verwendung von Pseudozufallszahlen, die auf einem Algorithmus basieren, zu vorhersehbaren Ergebnissen führen. Daher ist es wichtig, sich mit den verschiedenen Generierungsmethoden vertraut zu machen und zu entscheiden, welche am besten für deine spezifische Anwendung geeignet ist.
 
-## Tiefere Einblicke
+# Siehe auch
 
-Beim Generieren von zufälligen Zahlen gibt es einige Dinge zu beachten. Zum Beispiel ist es wichtig, eine geeignete Anzahl von Zufallszahlen zu verwenden, um sicherzustellen, dass die Ergebnisse tatsächlich zufällig sind. In Fish Shell wird die Anzahl der Zufallszahlen durch den Parameter ```random``` bestimmt, der standardmäßig auf 32 Bits eingestellt ist.
-
-Eine weitere wichtige Sache ist, dass die Methode der Zufallszahlengenerierung von der verwendeten Hardware abhängig ist und daher die Ergebnisse auf verschiedenen Systemen unterschiedlich sein können. Es gibt auch fortgeschrittenere Techniken für das Generieren von zufälligen Zahlen, wie beispielsweise die Verwendung von externen Quellen für mehr Entropie. Für tiefergehende Informationen empfehlen wir, sich mit dem Thema Zufallszahlengenerierung in Fish Shell genauer zu beschäftigen.
-
-## Siehe auch
-
-- [Fish Shell Referenz zur ```random``` Funktion](https://fishshell.com/docs/current/commands.html#command-random)
-- [Cheat Sheet mit nützlichen Befehlen für die Generierung von Zufallszahlen in Fish Shell](https://cheatography.com/akkio-sasaki/cheat-sheets/fish-shell-basics/)
-- [Blog-Beitrag von Stack Overflow über die Generierung von zufälligen Zeichenfolgen in Fish Shell](https://stackoverflow.com/questions/39715169/generating-random-string-in-fish-shell)
+- Offizielle Dokumentation der Fish Shell zu Zufallszahlen: https://fishshell.com/docs/current/cmds/random.html
+- Ein nützlicher Blogpost über die Generierung von Zufallszahlen mit der Fish Shell: https://afontenot.github.io/fish-fu/#randomization

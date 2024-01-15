@@ -1,6 +1,7 @@
 ---
-title:                "Java: Skriva till standardfel"
-simple_title:         "Skriva till standardfel"
+title:                "Skriv till standardfel"
+html_title:           "Java: Skriv till standardfel"
+simple_title:         "Skriv till standardfel"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,31 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standard error, även kallad stderr, är en viktig del av felsökning och debugging inom Java-programmering. Det ger dig möjlighet att skriva ut felmeddelanden och annan viktig information till error streamen istället för till standard output streamen.
+
+Ibland när vi kör våra Java-program, kan det hända att något går fel. Istället för att programmet bara fortsätter köra, vill vi veta vad som gick fel och varför. Här kommer skrivning till standard error in i bilden.
 
 ## Hur man gör det
-För att skriva till stderr i Java kan du använda "System.error" klassen tillsammans med "println" metoden för att skriva ut önskat meddelande. Här är ett exempel på hur det kan se ut i din kod:
+
+Skrivning till standard error i Java är enkelt. Allt du behöver göra är att använda ```System.err.println()``` istället för ```System.out.println()```. Här är ett exempel:
 
 ```Java
-System.err.println("Ett fel har inträffat.");
+public static void main(String[] args) {
+    System.err.println("Detta är ett felmeddelande.");
+}
 ```
 
-Detta kommer att skriva ut "Ett fel har inträffat." till error streamen när koden körs. Om du vill skriva ut mer information, som variabler eller stack traces, kan du använda "System.err.format" metoden tillsammans med formatters. Här är ett exempel på hur detta kan se ut:
-
-```Java
-String name = "John Doe";
-int age = 30;
-System.err.format("Namn: %s, Ålder: %d", name, age);
-```
-
-Detta kommer att skriva ut "Namn: John Doe, Ålder: 30" till error streamen. Kom ihåg att du kan använda detta för debugging och även för att ge användbara felmeddelanden till användare av din kod.
+Detta kommer att skriva ut det meddelandet till standard error och om något går fel i ditt program, så kommer du att kunna se det.
 
 ## Djupdykning
-Den största skillnaden mellan standard output streamen och error streamen är att error streamen inte buffras. Det betyder att allt som skrivs till stderr kommer att skrivas ut direkt. Detta är användbart när du vill vara säker på att felmeddelanden inte missas, men det kan också leda till att felmeddelanden blandas ihop om flera processer skriver till stderr samtidigt.
 
-Det är också viktigt att notera att System.out och System.err delar samma standard output stream, vilket betyder att de inte bör användas för olika ändamål. Om du vill skriva till stderr ska du alltid använda System.err klassen.
+Så vad är egentligen standard error och varför skriver vi till det istället för att bara använda ```System.out```? I Java finns det tre standardutströmningar: ```System.in```, ```System.out``` och ```System.err```. ```System.out``` används för vanligt utdata, medan ```System.err``` används för felutdata. Det är en bra idé att skilja på dessa två för att kunna felsöka enklare och bättre förstå ditt programs beteende.
 
 ## Se även
-- [Java Dokumentation: System klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [The Java Tutorials: Flöden för input och output](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
-- [Java Code Geeks: System.out vs System.err in Java](https://www.javacodegeeks.com/2015/04/system-out-vs-system-err-in-java.html)
+
+- [Java API](https://docs.oracle.com/javase/8/docs/api/)
+- [Skrivning till standard out i Java](https://www.java67.com/2015/08/how-to-print-to-standard-error-in-java.html)
+- [Felsökningsguide för Java](https://www.baeldung.com/java-debugging)

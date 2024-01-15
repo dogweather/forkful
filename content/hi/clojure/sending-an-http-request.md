@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Clojure: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyu
+Kya aapko kabhi website par jaate waqt keval text aur images ke sath interact karna hai? Ya phir aapko kisi third-party API se data retrieve karna hai? In sab situations me, aapka program HTTP request ka upyog karke apne server se data lene me madad karta hai.
 
-HTTP अनुरोध भेजना आज के डिजिटल युग में प्रचलित एक क्रिटिकल क्रिया है। यह अनुरोध उपयोगकर्ताओं द्वारा सेवाओं को कुछ भी मांगने के लिए होता है, जैसे वेब पेज, डेटा एपीआई या अन्य सामग्री। इसके अलावा, यह डेटा या गतिविधियों को भी प्राप्त करने का सबसे सुगम तरीका है।
-
-## कैसे करें
-
-अपने क्टोब को सम्बोधित करते हुए HTTP अनुरोध के प्रस्तुतिकरण करना बहुत आसान है। नीचे कुछ सामान्य उदाहरण हैं जो समझने में मदद करेंगे।
-
+## Kaise Kare
 ```Clojure
-;; Simple GET request
-(:require [clj-http.client :as client])
-(println (client/get "https://example.com"))
+(ns my-project.core
+  (:require [clj-http.client :as client]))
 
-;; POST request with data
-(println (client/post "https://example.com/api/user"
-                      {:body {:name "John" :age 25}}))
+;; Basic GET Request
+(def response (client/get "https://www.example.com"))
 
-;; Custom header and query parameters
-(println (client/get "https://example.com"
-                     {:headers {"Authorization" "Token abc123"}
-                      :query-params {:page 1 :limit 10}}))
+;; POST Request with Header and Body
+(def response
+  (client/post "https://www.example.com"
+             {:headers {"Content-Type" "application/json"}
+              :body (json/write-str {:username "john" :password "12345"})}))
+
+;; Retrieving response status code and body
+(def status (client/status response))
+(def body (client/string response))
+
 ```
 
-आउटपुट:
+## Deep Dive
+HTTP request bhejne ke liye, aapko `clj-http.client` library ka upyog karna hoga, jo ki standard Clojure library me available nahi hai. Is library ka upyog karke aap GET, POST, PUT, DELETE jaise alag-alag HTTP methods ka upyog kar sakte hai. Aap header, body, query parameters aur cookies ko customize bhi kar sakte hai. Iske alawa, aap response ke status code, headers aur body ko bhi retrieve kar sakte hai.
 
-```Clojure
-;; GET
-{:status 200
- :headers {"content-type" "text/html"}
- :body "<html>...</html>"}
-
-;; POST
-{:status 201
- :headers {"content-type" "application/json"}
- :body "{\"id\": 123, \"name\": \"John\", \"age\": 25}"}
-
-;; GET with custom header and query parameters
-{:status 200
- :headers {"content-type" "application/json"}
- :body "{\"results\": [...], \"total\": 100}"}
-```
-
-## गहराई से जाने
-
-HTTP अनुरोध भेजने के लिए क्लोजरमें कई विकल्प उपलब्ध हैं। ये उपायों में से कुछ निम्न हैं:
-
-- `clj-http` नामक लाइब्रेरी का उपयोग करना, जो यह एक सरल अपश्रृंखला और विशिष्ट फंक्शन शामिल करता है।
-- `clj-http-lite` का इस्तेमाल करना, जो एक छोटा परन्तु अधिक पथ प्रदान करता है। यह प्रमाण लाइब्रेरी है जो केवल सर्वर संवाद करता हैं और उपयोगकर्ताओं को सर्वर द्वारा प्रदत्त जवाब को प्रक्रिया करने की अनुम
+## Dekhiye Bhi
+* [clj-http Documentation](https://github.com/dakrone/clj-http#documentation)
+* [HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+* [Understanding HTTP Requests and Responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

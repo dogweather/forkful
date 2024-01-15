@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Javascript: Beregning av en dato i fremtiden eller fortiden"
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,52 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det finnes mange situasjoner hvor man trenger å kunne beregne en dato i fremtiden eller fortiden i et Javascript-program. Dette kan være nyttig for å planlegge fremtidige hendelser eller for å håndtere datoer i en database. I denne bloggposten vil jeg vise deg hvordan du kan gjøre dette på en enkel måte ved hjelp av Javascript.
+Tenk deg at du skal planlegge en fremtidig begivenhet eller sjekke når en historisk hendelse fant sted. Da kan det være nyttig å kunne regne ut en dato i fortiden eller fremtiden. Med JavaScript kan du enkelt gjøre dette ved hjelp av innebygde funksjoner og metoder. I denne artikkelen skal vi se nærmere på hvordan du kan beregne datoer i fortiden eller fremtiden, og hvordan det kan være nyttig.
 
 ## Hvordan
 
-For å beregne en dato i fremtiden eller fortiden, trenger vi å bruke Date-objektet i Javascript. Dette objektet inneholder all informasjon om en dato og gjør det enkelt å manipulere den.
+For å kunne beregne en dato i fortiden eller fremtiden i JavaScript, må du først forstå hvordan datoer blir representert og håndtert i språket. JavaScript bruker en spesiell datoobjekttype som inneholder informasjon om år, måned, dag og klokkeslett. For å beregne en dato i fortiden eller fremtiden, må vi først opprette en datoobjekt og deretter bruke funksjoner og metoder for å endre datoen.
 
-La oss si at vi ønsker å beregne en dato 3 dager frem i tid. Vi kan gjøre dette ved å først opprette et nytt Date-objekt og deretter bruke metoden setDate() til å legge til 3 dager til datoen. Deretter kan vi bruke metoden toLocaleDateString() for å formatere dato-objektet til en lesbar streng.
-
-```javascript
-let today = new Date();
-today.setDate(today.getDate() + 3);
-let futureDate = today.toLocaleDateString();
-console.log(futureDate); // Output: 17. mai 2021
-```
-
-På samme måte kan vi også beregne en dato i fortiden ved å bruke metoden setDate() og angi et negativt tall. Her er et eksempel på hvordan vi kan beregne en dato for 1 uke siden:
+Her er et eksempel på hvordan du kan beregne en dato i fremtiden ved hjelp av JavaScript:
 
 ```javascript
-let today = new Date();
-today.setDate(today.getDate() - 7);
-let pastDate = today.toLocaleDateString();
-console.log(pastDate); // Output: 3. mai 2021
+let nå = new Date(); // Oppretter et datoobjekt med dagens dato og klokkeslett
+nå.setDate(nå.getDate() + 7); // Legger til 7 dager for å få datoen i fremtiden
+console.log(nå); // Output: Sun Jul 19 2020 14:36:54 GMT+0200 (Central European Summer Time)
 ```
+
+Her legger vi en uke til dagens dato og får dermed datoen for en uke frem i tid. På samme måte kan du også trekke fra dager, måneder eller år ved å bruke `setDate`, `setMonth` og `setFullYear` metoder.
+
+For å beregne en dato i fortiden kan du følge samme logikk og trekke fra ønsket antall dager, måneder eller år. Det er også mulig å kombinere flere funksjoner og metoder for å få mer nøyaktige og komplekse datoer.
 
 ## Dypdykk
 
-Som nevnt tidligere inneholder Date-objektet mye nyttig informasjon om datoer. For å utforske dette mer grundig, kan vi bruke forskjellige metoder som er tilgjengelige for dette objektet.
+Som nevnt tidligere, bruker JavaScript en spesiell datoobjekttype for å håndtere datoer. Denne objekttypen har også en rekke innebygde funksjoner og metoder som kan gjøre beregning av datoer enkle og effektive.
 
-En av disse metodene er getDay(), som returnerer nummeret som representerer dagen i uken (0-6). Dette kan være nyttig for å sjekke om for eksempel en dato er en helgedag eller ikke.
+En viktig ting å huske på er at datoer i JavaScript er basert på UTC (Coordinated Universal Time) og kan variere i forskjellige tidssoner. Det er derfor viktig å justere datoen for ønsket tidssone før du gjør beregninger.
 
-```javascript
-let date = new Date();
-let dayOfWeek = date.getDay();
-console.log(dayOfWeek); // Output: 1 (mandag)
-```
-
-En annen nyttig metode er getMonth(), som returnerer nummeret som representerer måneden (0-11). Dette kan være spesielt viktig når man jobber med internasjonale datoformater som bruker forskjellige månedsnummereringer.
-
-```javascript
-let date = new Date();
-let month = date.getMonth();
-console.log(month); // Output: 4 (mai)
-```
+Det finnes også flere tredjeparts biblioteker som kan være nyttige for mer avanserte beregninger av datoer og håndtering av tidssoner. Det kan være lurt å utforske disse for å finne den beste løsningen for ditt prosjekt.
 
 ## Se også
 
-- [Date-objektet i Javascript](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Manipulering av datoer i Javascript](https://www.freecodecamp.org/news/how-to-manipulate-dates-in-javascript/)
-- [Håndtering av datoer i et front-end rammeverk](https://blog.logrocket.com/working-with-dates-in-a-front-end-framework/)
+- [Date objektet i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Timezone-js biblioteket](https://github.com/mde/timezone-js)
+- [Luxon biblioteket](https://moment.github.io/luxon/)

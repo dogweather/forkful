@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Elixir: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
+Kuvittele, että sinulla on ohjelma, jossa haluat näyttää päivämäärän käyttäjälle ymmärrettävässä muodossa, esimerkiksi "14. tammikuuta 2021". Tässä tilanteessa parseeraamalla ja muuntamalla päivämäärän stringiksi voit helposti toteuttaa halutun toiminnallisuuden.
 
-Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Usein tämä on tarpeen muun muassa tietokannan kanssa työskennellessä tai kun sinun täytyy näyttää päivämäärä käyttäjälle selkeässä muodossa.
-
-## Kuinka?
-
-```Elixir
-Date.to_string(Date.utc_today())
-```
-
-Tämä koodi muuttaa tänään olevan päivämäärän UTC-ajassa merkkijonoksi. 
+## Kuinka
+Käytä Elixirin `Date`-moduulia löytääksesi tarvittavan toiminnon. Voit ensin luoda päivämäärä-olion antamalla sille vuoden, kuukauden ja päivän sisältävät numerot:
 
 ```Elixir
-"UTC Today: 2019-11-10"
+date = Date.new(2021, 1, 14)
 ```
 
-Voit myös halutessasi muuttaa päivämäärän haluamaasi muotoon. Esimerkiksi:
+Tämän jälkeen voit käyttää `Date`-moduulin `format`-funktiota määrittelemällä halutun formaatin merkkinä:
 
 ```Elixir
-Date.to_string(Date.utc_today(), "{YYYY}-{MM}-{DD}") 
+string_date = Date.format(date, "%e. %B %Y") # 14. tammikuuta 2021
 ```
 
-Palauttaa päivämäärän tänään muodossa "2019-11-10".
+Muita hyödyllisiä formaattivaihtoehtoja ovat esimerkiksi `%d.%m.%Y` (14.01.2021) ja `%A, %d.%m.%Y` (torstai, 14.01.2021). Voit löytää lisää vaihtoehtoja Elixirin [Dokumentaatiosta](https://hexdocs.pm/elixir/Date.html#module-formatting-and-parsing).
 
-## Syväsukellus
-
-Merkkijonoksi muuttamisen toiminta perustuu pohjimmiltaan Elixirin Date-moduulin toimintaan. Date-moduuli tarjoaa useita funktioita, joilla voi muuttaa päivämäärän eri muodoiksi, esimerkiksi Date.to_iso8601 ja Date.to_ical.
-
-Voit myös käyttää Elixirin hienoa hakukyselykirjastoa, kuten Timexiä, joka tarjoaa lisämahdollisuuksia päivämäärän käsittelyyn.
+## Syvenny
+`Date`-moduulin takana oleva toiminnallisuus perustuu Erlangin `calendar`-moduuliin, joka mahdollistaa päivämäärä- ja aikatoimintojen käytön Elixirissä. Tämä mahdollistaa myös kansainväliset päivämäärämuodot, kuten esimerkiksi `Date.format(date, "%e %B, %Y", :en)`, joka tulostaa päivämäärän englanniksi (14 January 2021).
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio Date-moduulista](https://elixir-lang.org/docs/master/elixir/Date.html)
-- [Timex-kirjasto](https://github.com/bitwalker/timex)
-- [GenDate-kirjasto](https://github.com/securomessage/gendate)
+- [Date-moduulin Dokumentaatio](https://hexdocs.pm/elixir/Date.html)
+- [Elixirin Tietoja ja Opastusta -sivusto](https://elixir-lang.org/)

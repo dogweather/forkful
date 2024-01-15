@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Javascript: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,47 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Fazer o download de uma página da web pode ser necessário em diversas situações, como por exemplo para armazenar o conteúdo de um site offline, realizar análises de dados ou até mesmo para criar um programa de leitura de notícias automaticamente. Além disso, é uma habilidade importante a ser desenvolvida para aqueles que desejam se tornar desenvolvedores web proficientes.
+Baixar uma página da web é uma tarefa comum para desenvolvedores web. Isso pode ser necessário para extrair informações de uma página, fazer testes de integração ou armazenar um site offline.
 
-## Como Fazer
+## Como fazer
 
-Para fazer o download de uma página da web, podemos utilizar o JavaScript para realizar uma requisição HTTP para o servidor onde o site está hospedado. Para isso, é necessário utilizar a função `XMLHttpRequest`, que é responsável por enviar e receber dados de um servidor. Veja um exemplo abaixo:
-
-```Javascript
-var request = new XMLHttpRequest();
-request.open('GET', 'www.example.com');
-request.send();
-```
-
-Com isso, a página da URL especificada será baixada e armazenada na variável `request`. Para acessar o conteúdo da página, podemos utilizar a propriedade `responseText`, como mostrado abaixo:
+Caso você esteja usando o Node.js, você pode baixar uma página da web facilmente usando o módulo `request`. Aqui está um exemplo de como baixar a página inicial do Google e imprimir o conteúdo em seu terminal:
 
 ```Javascript
-console.log(request.responseText);
+const request = require('request');
+request('https://www.google.com', function(err, res, body) {
+  console.log(body);
+});
 ```
 
-Isso irá imprimir no console o código HTML da página baixada. É importante lembrar que esse método só irá funcionar se a página estiver hospedada no mesmo domínio do código em que está sendo executado, caso contrário, pode ser necessário utilizar outras técnicas como o CORS (Cross-Origin Resource Sharing).
+O exemplo acima faz uma chamada HTTP para o URL especificado e retorna o conteúdo da página no parâmetro `body`. Você pode alterar o URL para baixar qualquer página da web que desejar.
 
-## Mergulhando Mais Profundo
+## Mergulho Profundo
 
-Além da função `XMLHttpRequest`, também é possível utilizar a API `fetch()` para fazer o download de uma página da web. Essa API possui uma sintaxe mais simples e suporte a promessas, o que torna o código mais legível e fácil de gerenciar. Veja um exemplo abaixo:
+Existem diferentes maneiras de baixar uma página da web em Javascript, como usando a API `Fetch` ou o módulo` http`. Além disso, você pode especificar cabeçalhos HTTP personalizados ou usar autenticação para fazer o download de páginas restritas. Também é importante considerar a segurança ao fazer chamadas HTTP, pois dados sensíveis podem ser expostos.
 
-```Javascript
-fetch('www.example.com')
-  .then(function(response) {
-    return response.text();
-  })
-  .then(function(text) {
-    console.log(text);
-  });
-```
+## Veja também
 
-Neste exemplo, o primeiro `then` converte o conteúdo baixado para texto e o segundo `then` o imprime no console. Também é possível utilizar expressões regulares para filtrar informações específicas do código HTML baixado.
-
-## Veja Também
-
-Aqui estão alguns links para mais informações e tutoriais sobre como fazer o download de páginas da web utilizando o JavaScript:
-
-- [MDN - XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest)
-- [MDN - Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
-- [W3Schools - XMLHttpRequest](https://www.w3schools.com/js/js_ajax_intro.asp)
-- [W3Schools - Fetch](https://www.w3schools.com/js/js_api_fetch.asp)
+- [Módulo request no NPM](https://www.npmjs.com/package/request)
+- [API Fetch no MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [Módulo HTTP no Node.js](https://nodejs.org/api/http.html)

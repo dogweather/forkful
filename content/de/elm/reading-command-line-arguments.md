@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Das Lesen von Befehlszeilenargumenten"
+html_title:           "Elm: Das Lesen von Befehlszeilenargumenten"
+simple_title:         "Das Lesen von Befehlszeilenargumenten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,68 +12,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten kann für Elm-Entwickler*innen sehr hilfreich sein, um flexiblere und anpassungsfähigere Programme zu erstellen. Es ermöglicht die Verwendung von externen Eingaben zur Steuerung des Programms während der Laufzeit.
+Warum sollte man sich überhaupt mit dem Lesen von Befehlszeilenargumenten beschäftigen? Nun, wenn du schon immer die volle Kontrolle über deine Elm Programme haben wolltest, bist du hier genau richtig. Durch das Lesen von Befehlszeilenargumenten kannst du die Funktionalität deiner Programme erweitern und an die Bedürfnisse deiner Benutzer anpassen.
 
-## Wie geht's
+## Wie geht das?
 
-Um Befehlszeilenargumente in Elm zu lesen, können wir die `Platform.Cmd`-Bibliothek verwenden. Zuerst müssen wir sie importieren:
+Um Befehlszeilenargumente in Elm zu lesen, müssen wir die eingebaute Funktion ```platform.programWithFlags``` verwenden. Diese Funktion ermöglicht es uns, Daten von der Befehlszeile zu empfangen und sie in unserer Elm Anwendung zu verwenden.
 
-```Elm
-import Platform.Cmd exposing (Cmd)
+Hier ist ein Beispiel, wie du ```platform.programWithFlags``` verwenden kannst, um die Anzahl der übergebenen Argumente zu zählen und dann die Argumente auszugeben:
+
 ```
+Elm.Application.platform = platform
+myProgram : Program Never Model
+myProgram =
+    platform.programWithFlags
+        model
+        (Elm.Platform.programWithFlagsParser argParser)
 
-Dann können wir die Funktion `Platform.Cmd.args` verwenden, die eine `List String` zurückgibt. Diese Liste enthält alle Befehlszeilenargumente, die beim Ausführen des Programms angegeben wurden. Hier ist ein Beispielcode, der die Argumente ausgibt:
+type alias Model =
+    { args : List String
+    , numArgs : Int
+    }
 
-```Elm
-main : program
-main =
-    Platform.worker
-        { init = init
-        , update = update
-        , view = view
-        , subscriptions = \model -> Sub.none
-        }
+argParser : Parser ( List String )
+argParser =
+    Parser.sequence
+        (List.repeat numArgs Parser.string)
 
-init : () -> ( model, Cmd msg )
-init _ =
-    ( ()
-    , Platform.Cmd.none
-    )
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Init flags ->
+            ( { model | args = flags
+              , numArgs = List.length flags
+              }
+            , Cmd.none
+            )
 
-update : msg -> model -> ( model, Cmd msg )
-update _ model =
-    ( model
-    , Platform.Cmd.none
-    )
+        ...
 
-view : model -> Html msg
+view : Model -> Html Msg
 view model =
-    Html.text (List.toString (Platform.Cmd.args model))
+    div []
+        [ text ("Anzahl der Argumente: " ++ String.fromInt model.numArgs)
+        , ul []
+            (List.map (\arg -> li [] [text arg]) model.args)
+        ]
 ```
 
-Wenn wir unser Programm mit Befehlszeilenargumenten ausführen, zum Beispiel `elm make Main.elm -- --name John`, wird das Ergebnis `["--name", "John"]` sein.
+Die Ausgabe dieses Programms würde folgendermaßen aussehen:
 
-## Tiefer Einblick
-
-Es gibt auch die Möglichkeit, ein Flag für ein einzelnes Argument festzulegen, indem wir `Platform.Cmd.Arg String` verwenden. Hier ist ein Beispielcode, der das erste Befehlszeilenargument als Namen verwendet und es zusammen mit einer Standardnachricht in der HTML-Ausgabe anzeigt:
-
-```Elm
-view : model -> Html msg
-view model =
-    let
-        name = case Platform.Cmd.arg 0 model of
-            Platform.Cmd.Arg arg ->
-                arg
-
-            Platform.Cmd.NoArg ->
-                "World"
-    in
-        Html.text ("Hello " ++ name)
+```
+> elm-reactor -p 8000
+Anzahl der Argumente: 2
+-p
+8000
 ```
 
-Wenn wir das Programm ohne Argumente ausführen, wird die Ausgabe `Hello World` sein. Wenn wir jedoch ein Argument angeben, z.B. `elm make Main.elm --name John`, wird es als `Hello John` angezeigt.
+## Tiefgang
+
+Jetzt wo du gesehen hast, wie einfach es ist, Befehlszeilenargumente in Elm zu lesen, gibt es noch ein paar Dinge, die du beachten solltest.
+
+Erstens: Es ist wichtig zu wissen, dass die Anzahl der Argumente möglicherweise nicht immer mit der Anzahl der übergebenen Argumente übereinstimmt, da einige Argumente von der Elm Plattform selbst bereitgestellt werden (z.B. ```--port```).
+
+Zweitens: Du kannst deine Argumente auch in benutzerdefinierte Typen parsen, anstatt sie als ```List String``` zu behandeln. Dies ermöglicht es dir, spezifischere Daten aus den Argumenten zu extrahieren.
+
+Und schließlich: Es gibt auch die Möglichkeit, benutzerdefinierte Flags in deiner Elm Anwendung zu verwenden, anstatt sie nur aus der Befehlszeile zu lesen. Diese Flags können sogar von anderen Modulen innerhalb deiner Anwendung verwendet werden.
 
 ## Siehe auch
 
-- [Dokumentation zur Platform.Cmd-Bibliothek](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- [GitHub-Repository von Elm](https://github.com/elm/compiler)
+- Die offizielle Elm Dokumentation zu Befehlszeilenargumenten: https://elm-lang.org/blog/farewell-to-flags
+- Ein Beispielprojekt zum Lesen von Befehlszeilenargumenten in Elm: https://github.com/ryan-senn/elm-cli-arguments/tree/master/examples/short-options

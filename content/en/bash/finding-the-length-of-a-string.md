@@ -1,5 +1,6 @@
 ---
-title:                "Bash recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Bash recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're new to Bash programming, you may have come across the need to find the length of a string. This might be for a variety of reasons, such as manipulating user input or validating data. Whatever the reason may be, learning how to find the length of a string can be a valuable skill in your Bash programming journey.
+You might need to find the length of a string in Bash for a variety of reasons, such as checking for input validation or formatting data correctly for output. It's a useful skill to have in your programming toolkit.
 
 ## How To
 
-Finding the length of a string in Bash is a relatively simple process. First, you need to create a variable containing the string you want to find the length of. Let's use the string "Hello World" as an example.
+To find the length of a string in Bash, you can use the built-in `expr` command with the `-length` option. Here's an example:
 
 ```Bash
 my_string="Hello World"
+length=$(expr length "$my_string")
+echo "The length of the string is $length characters."
 ```
 
-Next, you can use the Bash built-in command `expr` to find the length of the string. This command takes in the string and the option `-length`, which tells it to return the length of the string.
+This will output:
+
+```
+The length of the string is 11 characters.
+```
+
+Another option is to use the `wc` command with the `-c` option, which counts the number of characters in a given file or input. Here's an example:
 
 ```Bash
-expr length "$my_string"
+my_string="Hello World"
+length=$(echo -n "$my_string" | wc -c)
+echo "The length of the string is $length characters."
 ```
 
-The output of this command would be `11`, as "Hello World" consists of 11 characters. You can also combine these two steps into one line, like this:
+This will also output:
 
-```Bash
-expr length "Hello World"
 ```
-
-This will give the same output of `11`.
+The length of the string is 11 characters.
+```
 
 ## Deep Dive
 
-Although finding the length of a string in Bash may seem pretty straightforward, there are a few things to keep in mind.
+Behind the scenes, both the `expr` and `wc` commands use the `strlen` function from the standard C library to determine the length of a string. This function calculates the length by counting the number of bytes until it reaches a null character, which marks the end of a string in C.
 
-First, the `expr` command only works with regular ASCII text. If your string contains non-ASCII characters, the output may not be accurate.
-
-Second, the `expr` command can also be used to find the length of a variable. This can be useful if the string is dynamically generated or stored in a variable from user input.
-
-Lastly, if you want to find the length of a multi-line string, you can use the `tr` command to remove the line breaks and then use `expr` to find the length.
+It's also important to note that the `-length` option in `expr` and the `-c` option in `wc` will include whitespace and special characters in the count, while the `-n` option in `echo` will omit the trailing newline character.
 
 ## See Also
 
-- [Bash Reference Manual: Parameters](https://www.gnu.org/software/bash/manual/html_node/Parameters.html#Parameters)
-- [Linuxize: How to Find the Length of a String in Bash](https://linuxize.com/post/how-to-find-the-length-of-a-string-in-bash/)
-- [TecAdmin: How to Find String Length in Bash](https://tecadmin.net/find-string-length-in-bash/)
+- [Bash Scripting Tutorial - String Operations](https://www.tutorialspoint.com/unix/unix-advanced-concepts.htm)
+- [Bash string length, search and replace](https://opensource.com/article/18/4/how-find-length-string-bash)
+- [A brief introduction to Bash string manipulation](https://blog.fanofyan.com/introduction-to-bash-string-manipulation/)

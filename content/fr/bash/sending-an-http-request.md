@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête http"
+html_title:           "Bash: Envoi d'une requête http"
+simple_title:         "Envoi d'une requête http"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,43 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous utilisez un ordinateur ou un téléphone portable, vous utilisez probablement des applications qui envoient des requêtes HTTP. Les requêtes HTTP sont des demandes d'informations à un serveur, qui sont utilisées pour visualiser des sites web, échanger des données ou accéder à des ressources en ligne. Apprendre à envoyer une requête HTTP peut vous aider à mieux comprendre comment fonctionne Internet et à créer vos propres scripts de communication en ligne.
+Si vous voulez interagir avec un serveur à distance, envoyer une requête HTTP est une étape essentielle. Cela vous permet de récupérer des données, d'envoyer des informations ou de simplement communiquer avec une application ou un site web.
 
-## Comment faire
+## Comment Faire
 
-Afin d'envoyer une requête HTTP en utilisant Bash, vous devez d'abord utiliser la commande `curl`. Voici un exemple basique:
+Tout d'abord, vous aurez besoin d'un terminal pour exécuter des commandes Bash. Une fois que vous avez ouvert votre terminal, suivez ces étapes pour envoyer une requête HTTP :
 
-```Bash
-curl www.exemple.com
+``` Bash
+# Déclarez votre méthode HTTP (GET, POST, PUT, etc.)
+method="GET"
+
+# Définissez l'URL à laquelle vous souhaitez envoyer la requête
+url="https://example.com/api/data"
+
+# Utilisez la commande curl pour exécuter la requête
+# Insérez les variables que vous avez définies pour la méthode et URL
+curl -X "$method" "$url"
 ```
 
-Cette commande envoie une requête GET au serveur de www.exemple.com et affiche le contenu de la réponse dans la console. 
+En exécutant ces commandes, vous avez envoyé une requête GET à l'URL que vous avez spécifiée. Cependant, vous pouvez également ajouter des paramètres, des en-têtes ou un corps de requête en utilisant des options supplémentaires avec la commande curl. Voici un exemple de commande avec des options ajoutées :
 
-Pour spécifier le type de requête, vous pouvez utiliser l'option `-X` et pour ajouter des données au corps de la requête, utilisez l'option `-d`. Voici un exemple de requête POST avec des données JSON:
+``` Bash
+# Déclarez votre méthode HTTP, comme avant
+method="POST"
 
-```Bash
-curl -X POST www.exemple.com -d '{"nom": "Marie", "age": 25}'
+# Définissez l'URL, mais cette fois avec des paramètres
+url="https://example.com/api/users?username=john&email=john@example.com"
+
+# Ajoutez des en-têtes pour spécifier le type de contenu et l'acceptation de réponse
+headers="-H 'Content-Type: application/json' -H 'Accept: application/json'"
+
+# Définissez le corps de votre requête, ici avec un format JSON
+body="{'username': 'john', 'password': '12345'}"
+
+# Utilisez la commande curl avec les options et paramètres que vous avez définis
+curl -X "$method" "$url" "$headers" -d "$body"
 ```
 
-Vous pouvez également spécifier des en-têtes de requête en utilisant l'option `-H`. Voici un exemple avec un en-tête acceptant uniquement les réponses au format JSON:
+En utilisant la commande curl avec des options supplémentaires, vous pouvez personnaliser votre requête HTTP selon vos besoins.
 
-```Bash
-curl -H "Accept:application/json" www.exemple.com
-```
+## Plongée en Profondeur
 
-En plus de la commande `curl`, il existe également de nombreuses bibliothèques et outils en ligne de commande qui peuvent faciliter l'envoi de requêtes HTTP, tels que `httpie` ou `wget`.
+Il est important de comprendre comment fonctionne une requête HTTP pour l'envoyer correctement. Une requête HTTP est composée de plusieurs parties, notamment la méthode, l'URL, les en-têtes, le corps de requête et la réponse.
 
-## Plongée en profondeur
+La méthode définit l'action que vous souhaitez effectuer, comme GET pour récupérer des données ou POST pour en envoyer. L'URL est l'adresse à laquelle vous envoyez la requête. Les en-têtes spécifient les informations sur la requête, comme le type de contenu ou l'authentification. Le corps de requête contient les données à envoyer, telles qu'un formulaire ou un fichier. La réponse contient les informations renvoyées par le serveur, généralement au format JSON ou HTML.
 
-Envoyer une requête HTTP implique plusieurs étapes. Tout d'abord, l'ordinateur envoie le message au serveur en utilisant le protocole TCP/IP. Ensuite, le serveur reçoit la requête et peut effectuer des actions en fonction de celle-ci, comme accéder à une ressource ou exécuter un script. Enfin, le serveur envoie une réponse au client, qui peut être un code de statut, un contenu, ou les deux.
+Maintenant que vous comprenez les composants d'une requête HTTP, vous pouvez les manipuler en utilisant la commande curl pour interagir avec des serveurs à distance.
 
-Il existe également différentes méthodes de requête HTTP telles que GET, POST, PUT et DELETE, qui ont chacune un objectif différent. Par exemple, GET est utilisé pour récupérer des données, POST pour enregistrer ou créer des données, PUT pour mettre à jour des données existantes et DELETE pour supprimer des données.
+## Voir Aussi
 
-Il est également important de comprendre les différents types d'en-têtes de requête que vous pouvez utiliser pour spécifier le type de contenu, l'authentification, etc.
+Pour en savoir plus sur la commande curl et les requêtes HTTP, vous pouvez consulter les liens suivants :
 
-## Voir aussi
-
-- [Introduction à HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Overview)
-- [Commande curl](https://curl.haxx.se/docs/manpage.html)
-- [outil en ligne de commande HTTPie](https://httpie.org/)
-- [bibliothèque de requêtes HTTP en Python](https://requests.readthedocs.io/en/master/)
+- [Documentation officielle de curl](https://curl.haxx.se/docs/)
+- [Guide complet sur les requêtes HTTP](https://www.tutorialspoint.com/http/http_requests.htm)
+- [Vidéo explicative sur les requêtes HTTP et curl](https://www.youtube.com/watch?v=id9jW53_uNk)

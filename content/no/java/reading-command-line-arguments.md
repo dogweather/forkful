@@ -1,6 +1,7 @@
 ---
-title:                "Java: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Java: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,60 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å lese kommandolinjeargumenter er en viktig ferdighet for enhver Java-programmerer. Det lar deg enkelt gi input til programmet ditt mens det kjører, og gjør det mulig å tilpasse programmet for ulike scenarier.
+Hvis du noen gang har laget et Java-program som må ta inn variabler eller verdier fra brukeren, har du kanskje lagt merke til at dette vanligvis gjøres fra en brukergrensesnitt. Men hva om du vil kunne gi input til programmet ditt direkte fra kommandolinjen? Dette er når det er nyttig å vite hvordan man leser kommandolinjeargumenter i Java.
 
-# Hvordan
+## Hvordan
 
-Det er flere måter å lese kommandolinjeargumenter på i Java, men den enkleste og vanligste måten er å bruke `args` parameteren i `main`-metoden. Her er et eksempel på hvordan dette kan gjøres:
+For å lese kommandolinjeargumenter i Java, må du bruke `args` -parameteren i `main` -metoden din. Denne parameteren er en array av `String` -objekter som inneholder alle argumentene som ble gitt til programmet når det ble startet. Lat oss se på et enkelt eksempel:
 
 ```Java
-public class CommandLineArgsExample {
+public class Main {
   public static void main(String[] args) {
-    // Itererer gjennom alle argumentene og skriver dem ut
     for (String arg : args) {
       System.out.println(arg);
     }
   }
 }
 ```
-Hvis vi kjører dette programmet med følgende kommandolinjeinput: `java CommandLineArgsExample arg1 arg2 arg3`, vil output bli:
 
-```
-arg1
-arg2
-arg3
-```
-
-Du kan også bruke `args`-parameteren til å ta imot spesifikke argumenter, for eksempel:
+La oss si at vi kompilerer og kjører dette programmet med følgende kommandolinjeinndata:
 
 ```Java
-public class SpecificArgsExample {
-  public static void main(String[] args) {
-    // Sjekker om det tredje argumentet er "hello"
-    if (args[2].equals("hello")) {
-      System.out.println("Hello there!");
-    } else {
-      System.out.println("Invalid input!");
-    }
-  }
-}
-```
-Hvis vi nå kjører dette programmet med kommandolinjeinput: `java SpecificArgsExample arg1 arg2 hello`, vil output bli:
-
-```
-Hello there!
+java Main hello world !
 ```
 
-# Dypdykk
+Vi vil da få følgende utskrift:
 
-Når du leser kommandolinjeargumenter, er det viktig å være oppmerksom på at det er grenser for hvor mange argumenter du kan sende inn. Dette kan variere avhengig av operativsystemet ditt og din JDK-versjon. Det er også viktig å sørge for at argumentene er på riktig format, for eksempel hvis du forventer et tall som input, må du konvertere det til `int` eller `double` før du bruker det.
+```
+hello 
+world 
+!
+```
 
-En annen viktig ting å huske på er at rekkefølgen på argumentene betyr noe. Hvis du for eksempel forventer to tall som input og bruker dem for å utføre en matematisk operasjon, må du sørge for at de blir gitt i korrekt rekkefølge.
+Som du kan se, blir hvert argument lagt til i `args` -arrayen, og vi kan deretter gjøre hva vi vil med dem, for eksempel skrive dem ut til konsollen som i eksempelet ovenfor.
 
-# Se Også
+## Dypdykk
 
-- [Java Main Method: How to Read Command Line Arguments](https://www.javatpoint.com/java-main-method)
-- [Passing command line arguments to a Java program](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
-- [Java Read Command Line Arguments Examples](https://www.codejava.net/java-se/reading-command-line-arguments-in-java-examples)
+I tillegg til å lese argumentene som blir gitt til programmet, kan du også sjekke hvor mange argumenter som er gitt ved å bruke `args.length` -metoden. Du kan også endre rekkefølgen på argumentene ved å bruke indekser på `args` -arrayen.
+
+Det er imidlertid viktig å merke seg at kommandolinjeargumenter alltid er av typen `String`, så hvis du trenger å bruke disse verdiene som numeriske eller booleske verdier, må du konvertere dem først.
+
+## Se også
+
+- [Official documentation for Command-Line Arguments in Java](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Tutorialspoint's guide to Command-Line Arguments in Java (in Norwegian)](https://www.tutorialspoint.com/norskprogrammering/command_line_arguments_in_java.htm)

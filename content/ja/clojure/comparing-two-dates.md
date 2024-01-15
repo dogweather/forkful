@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 2つの日付の比較"
-simple_title:         "2つの日付の比較"
+title:                "「2つの日付を比較する」"
+html_title:           "Clojure: 「2つの日付を比較する」"
+simple_title:         "「2つの日付を比較する」"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -9,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、みなさん。今日は、 Clojure プログラミング言語についてのブログ投稿をお届けします。今回のテーマは「日付の比較」です。
+## なぜ
 
-## Why
-日付の比較を行う理由は、日々の生活において非常に重要です。例えば、特定の日付にイベントを予定したり、過去の日付と現在の日付を比較したりする必要があったりします。Clojure は日付の比較を行うためのさまざまな方法を提供しており、便利な機能です。
+日付を比較することの利点を説明します。日付を比較することで、特定の期間の経過を把握したり、イベントの予定を立てたりすることができます。
 
-## How To
-Clojure で日付の比較を行うには、まずは `clojure.java-time` ライブラリをプロジェクトに追加する必要があります。そして、比較したい二つの日付を `java.time.LocalDate` オブジェクトに変換します。
+## 使い方
 
-```Clojure
-(require '[clojure.java-time :as t])
-
-(def date1 (t/to-local-date "2020-05-15"))
-(def date2 (t/to-local-date "2020-05-20"))
-
-```
-
-比較したい日付が正しいデータ型になったら、`java.time.LocalDate/compareTo` 関数を使用して比較を行うことができます。この関数は、二つの日付を比較し、数値を返します。もし、date1 が date2 よりも過去の日付であれば、-1 を、同じ日付であれば 0 を、過去であれば 1 を返します。
+日付を比較するには、`<`、`>`、`=`のような演算子を使用します。例えば、`(< "2021-10-01" "2021-10-15")`は、1つ目の日付が2つ目の日付よりも前であるかどうかを判断します。
 
 ```Clojure
-;; 日付が同じ場合
-(.compareTo date1 date2) ;=> 0
+;; 今日の日付を取得
+(def today (java.time.LocalDate/now))
 
-;; date1 が過去の日付の場合
-(.compareTo date1 date2) ;=> -1
+;; 明日の日付を取得
+(def tomorrow (.plusDays today 1))
 
-;; date2 が過去の日付の場合
-(.compareTo date1 date2) ;=> 1
+;; 日付を比較する
+(< tomorrow today)
+=> false
+(< today tomorrow)
+=> true
 ```
 
-また、日付を文字列として比較することもできます。その場合、`java.time.LocalDate/parse` 関数を使用して、文字列から `java.time.LocalDate` オブジェクトを作成します。
+## 詳細を調べる
 
-```Clojure
-(def date3 (t/parse "2020-05-10"))
-(def date4 (t/parse "2020-05-15"))
+日付を比較する際には、日付のフォーマットが重要です。特に、時刻やタイムゾーンを含む日付を比較する場合は、正しいフォーマットを指定する必要があります。
 
-;; date3 が過去の日付の場合
-(.compareTo date3 date4) ;=> -1
-```
+また、Clojureでは、`java.time`ライブラリを使用して日付を扱います。このライブラリには、日付の加算や減算、フォーマット変換など、便利な機能がたくさん用意されています。
 
-## Deep Dive
-日付の比較にはさまざまなケースがあります。もし、今回紹介した方法でうまくいかない場合は、`java.time.LocalDate/equals` 関数を使用して、二つの日付が同じかどうかを確認することができます。また、日付の年や月、日にちを個別に比較するためには、`java.time.LocalDate/getYear`、`java.time.LocalDate/getMonth`、`java.time.LocalDate/getDayOfMonth` 関数を使用することもできます。
+## 参考リンク
 
-## See Also
-- [clojure.java-time ライブラリ](https://clojure.github.io/java-time/)
-- [Java Time API ドキュメント](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java 8 日付と時刻 API を Clojure で使う](https://qiita.com/totemcaf/items/edc35d20f9cb0476ec69)
+- [Clojureの日付操作](https://clojuredocs.org/clojure.instant)
+- [java.timeライブラリのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [よく使われる日付のフォーマット](https://docs.oracle.com/javase/tutorial/datetime/formats/index.html)
+
+## 参考
+
+日付を比較する際には、正しいフォーマットを指定するというポイントが重要です。また、さまざまな日付の操作を行うために、`java.time`ライブラリを使用することが役立つでしょう。ぜひ、日常的なプログラミングでこの知識を活用してみてください。

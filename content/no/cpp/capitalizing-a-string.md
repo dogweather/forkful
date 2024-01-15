@@ -1,6 +1,7 @@
 ---
-title:                "C++: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Store bokstaver i en tekststreng"
+html_title:           "C++: Store bokstaver i en tekststreng"
+simple_title:         "Store bokstaver i en tekststreng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,54 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Uansett om du er en erfaren programmerer eller bare begynner å lære C++, kan det være nyttig å vite hvordan man kan kapitalisere en streng i koden din. Enten det er for å formatere utdataen eller behandle brukerinput, er det ofte nødvendig å gjøre en tekststreng til store bokstaver. I denne bloggposten vil vi utforske hvordan man kan gjøre dette på en enkel måte.
+Det kan være flere grunner til å kapitalisere en streng i et program. En vanlig grunn er å gjøre utdataen mer lesbar for brukeren. Det kan også være nødvendig for å følge konvensjoner og standarder i koding.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-Hvis du ønsker å kapitalisere en streng, slik at alle bokstavene er store, har C++ allerede en innebygd funksjon for dette. Funksjonen heter `toupper()` og den kan brukes ved å inkludere `#include <cctype>` i koden din. For å kapitalisere en streng, må du først hente inn strengen med `std::string`, og deretter bruke en for-løkke for å gå gjennom hver bokstav og bruke `toupper()` på hver bokstav ved hjelp av ASCII-verdiene. Her er et eksempel på hvordan det kan gjøres:
+For å kapitalisere en streng i C++, trenger du å bruke en innebygd funksjon kalt `toupper()`. Denne funksjonen konverterer et enkelttegn til dets tilsvarende store bokstav. Ved å bruke en løkke, kan du gå gjennom alle tegnene i strengen og konvertere dem til store bokstaver.
 
 ```C++
-#include <iostream>
-#include <cctype>
-#include <string>
+// Eksempelkode for å kapitalisere en streng i C++
+// Bruker en løkke og toupper() funksjonen
 
+#include <iostream>
+#include <cstring> // for å bruke strcpy() funksjonen
+#include <cctype> // for å bruke toupper() funksjonen
 using namespace std;
 
-int main() {
+int main()
+{
+    char input[100]; // lagrer den opprinnelige strengen
+    char output[100]; // lagrer den kapitaliserte strengen
+    int len; // lengden på strengen
 
-    // Opprett en string
-    string tekst = "dette er en tekststreng";
+    // les inn den opprinnelige strengen fra brukeren
+    cout << "Skriv inn en streng: ";
+    cin.getline(input, 100);
 
-    // Loop gjennom hver bokstav og bruk toupper() for å gjøre den stor
-    for (int i = 0; i < tekst.length(); i++) {
-        tekst[i] = toupper(tekst[i]);
+    len = strlen(input);
+
+    // bruk toupper() funksjonen til å konvertere hvert tegn
+    // og lagre det i output strengen
+    for (int i = 0; i < len; i++)
+    {
+        output[i] = toupper(input[i]);
     }
 
-    // Skriv ut den kapitaliserte strengen
-    cout << tekst << endl;
+    // legg til en avsluttende null-tegn i output strengen
+    output[len] = '\0';
+
+    // skriv ut den kapitaliserte strengen
+    cout << "Den kapitaliserte strengen er: " << output;
 
     return 0;
 }
-```
-
-Eksempelutdata:
 
 ```
-DETTE ER EN TEKSTSTRENG
-```
 
-I dette eksempelet brukte vi `tekst.length()` for å få lengden på strengen, og deretter `toupper()` på hver bokstav ved hjelp av indeksering `tekst[i]`.
+**Eksempel input:** Hei på deg!
+
+**Eksempel output:** HEI PÅ DEG!
 
 ## Dypdykk
 
-Når man bruker `toupper()` funksjonen, er det viktig å huske at den bare fungerer på bokstaver fra A til Z. Bokstaver som æ, ø og å vil ikke bli endret til store bokstaver. Hvis du ønsker å inkludere disse bokstavene, kan du enten bruke `setlocale()` funksjonen eller sjekke ASCII-verdien til hver bokstav og endre den manuelt.
+Mens `toupper()` funksjonen er den vanligste måten å kapitalisere en streng på i C++, er det flere andre metoder tilgjengelig. For eksempel kan du bruke `str.capitalize()` funksjonen fra `cstring` biblioteket i stedet for å lage en løkke. Denne funksjonen vil også konvertere første bokstav i hvert ord til stor bokstav, i tillegg til å konvertere enkelttegn.
 
-En annen ting å huske på er at `toupper()` funksjonen returnerer ASCII-verdien for den store bokstaven, så hvis du ønsker å få ut en faktisk bokstav, må du konvertere ASCII-verdien tilbake til en `char` verdi.
+Det finnes også tilgjengelige biblioteker og tredjepartsverktøy som tilbyr mer avanserte funksjoner for å kapitalisere strenger, som for eksempel å ignorere akronymer eller bestemte ord.
 
 ## Se også
 
-- [C++ strings](https://en.cppreference.com/w/cpp/string)
-- [String functions in C++](https://www.geeksforgeeks.org/string-functions-in-cpp/)
-- [ASCII table](https://www.ascii-code.com/)
+- [C++ toupper() funksjon](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
+- [C++ str.capitalize() funksjon](https://www.programiz.com/cpp-programming/library-function/cstring/strcapitalize)

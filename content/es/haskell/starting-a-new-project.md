@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Comenzando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Haskell: Comenzando un nuevo proyecto"
 simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué iniciar un nuevo proyecto de Haskell?
+## ¿Por qué?
 
-Iniciar un nuevo proyecto de Haskell puede ser una excelente manera de aprender un nuevo lenguaje de programación funcional y mejorar tus habilidades en la resolución de problemas. También puedes utilizar Haskell para crear aplicaciones y herramientas útiles en diferentes campos, ya que su tipado estático y su sistema de tipos avanzado pueden ser muy útiles para proyectos complejos.
+Iniciar un nuevo proyecto en Haskell puede ser una gran oportunidad para aprender un lenguaje de programación funcional y expandir tus habilidades como desarrollador. Además, Haskell se caracteriza por tener un sistema de tipos robusto y herramientas como el *ghci* que te permiten probar y depurar tu código de forma interactiva.
 
 ## Cómo hacerlo
 
-Antes de comenzar, asegúrate de tener instalado Haskell en tu computadora. Puedes seguir las instrucciones de instalación en la página oficial de Haskell. Una vez que tengas Haskell instalado, puedes comenzar a escribir tu código en un editor de texto como VSCode o en un entorno de desarrollo como GHCi.
+Iniciar un nuevo proyecto en Haskell es fácil y sencillo. Solo debes seguir estos pasos:
+
+1. Instalar [Haskell Platform](https://www.haskell.org/platform/)
+2. Crear un nuevo directorio para tu proyecto
+3. Abrir tu terminal y navegar al directorio recién creado
+4. Iniciar el *ghci* ejecutando el comando `ghci` en tu terminal
+5. Dentro del *ghci*, importa el módulo `Cabal` ejecutando `import Distribution.Simple` 
+6. Ahora puedes empezar a escribir tu código en un archivo con extensión `.hs` y guardarlo en el directorio de tu proyecto
+7. En tu terminal, ejecuta el comando `runhaskell nombreDeTuArchivo.hs` para compilar y ejecutar tu código
+8. ¡Listo! Ya tienes tu primer proyecto en Haskell.
+
+Aquí te dejamos un ejemplo de código para que puedas probarlo por ti mismo:
 
 ```Haskell
--- Define una función que suma dos números
-sumar :: Int -> Int -> Int
-sumar x y = x + y
-
--- Llama a la función con dos números y obtén su resultado
-sumar 5 7
+main :: IO ()
+main = do
+  putStrLn "¡Hola mundo!"
 ```
+Este sencillo programa imprime "¡Hola mundo!" en la consola cuando se ejecuta. Ahora es tu turno de experimentar y seguir aprendiendo sobre Haskell.
 
-El resultado de esta función será 12, ya que 5 más 7 es igual a 12.
+## Profundizando
 
-## Profundizando en el tema
-
-Si quieres profundizar en el uso de Haskell para proyectos más complejos, puedes explorar algunos de sus conceptos avanzados, como el patrón de diseño Typeclass o la programación enmascarada usando Mónadas. También puedes unirte a una comunidad de Haskell en línea y discutir con otros desarrolladores sobre diferentes enfoques y desafíos en la programación con Haskell.
+Si quieres profundizar en el proceso de iniciar un nuevo proyecto en Haskell, te recomendamos leer más sobre el formato de archivo `cabal` y cómo escribir un archivo `Setup.hs` para personalizar tu proceso de compilación. Además, puedes investigar sobre el uso de herramientas como *Stack* para manejar dependencias en tus proyectos de Haskell.
 
 ## Ver también
 
-- Página oficial de Haskell: https://www.haskell.org/
-- Página de instalación de Haskell: https://www.haskell.org/downloads/
-- Comunidades de Haskell en línea: https://www.haskell.org/community/
+- [Learn You a Haskell](http://learnyouahaskell.com/) - un gran recurso para aprender Haskell desde cero.
+- [Haskell.org](https://www.haskell.org/) - sitio oficial de Haskell con información, documentación y enlaces útiles.
+- [Real World Haskell](http://book.realworldhaskell.org/) - un libro en línea gratuito sobre Haskell y su uso en proyectos reales.

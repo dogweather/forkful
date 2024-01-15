@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Envoyer une demande http avec authentification de base"
-simple_title:         "Envoyer une demande http avec authentification de base"
+title:                "Envoyer une requête HTTP avec une authentification de base"
+html_title:           "Ruby: Envoyer une requête HTTP avec une authentification de base"
+simple_title:         "Envoyer une requête HTTP avec une authentification de base"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Pourquoi: Envoyer une requête HTTP avec une authentification de base peut être nécessaire lors de la communication avec des services en ligne sécurisés, tels que les API ou les serveurs Web.
+## Pourquoi 
 
-Comment faire: Pour envoyer une requête HTTP avec une authentification de base en utilisant Ruby, vous pouvez utiliser la bibliothèque standard Net::HTTP. Tout d'abord, vous devez exiger cette bibliothèque comme ceci:
+Pour de nombreuses raisons, vous pourriez avoir besoin d'envoyer une requête HTTP avec une authentification de base en Ruby. Peut-être que vous voulez vous connecter à une API, accéder à une ressource protégée ou mettre en place une sécurité pour votre propre application. Quelle que soit votre motivation, il est important de savoir comment le faire correctement.
 
-```ruby
+## Comment faire 
+
+Pour envoyer une requête HTTP avec une authentification de base en Ruby, vous pouvez utiliser la bibliothèque `net/http`. Voici un exemple de code pour effectuer une requête GET avec une authentification de base:
+
+```Ruby
 require 'net/http'
+
+uri = URI('https://www.example.com/api')
+req = Net::HTTP::Get.new(uri)
+req.basic_auth 'username', 'password'
+res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
+puts res.body
 ```
 
-Ensuite, vous devez créer une instance de la classe Net::HTTP en précisant l'URL et le port du serveur auquel vous souhaitez envoyer la requête. Par exemple, si vous souhaitez envoyer une requête à `https://example.com`, vous pouvez faire comme ceci:
+Le code ci-dessus crée une instance `Net::HTTP::Get` pour la ressource `https://www.example.com/api`, ajoute l'authentification de base avec le nom d'utilisateur et le mot de passe fournis, puis envoie la requête en utilisant `Net::HTTP.start`. La réponse est stockée dans la variable `res` et le corps de la réponse peut être accédé en utilisant `res.body`.
 
-```ruby
-http = Net::HTTP.new('example.com', 443)
-```
+## Plongée en profondeur 
 
-Notez que 443 est le port par défaut pour les connexions HTTPS. Ensuite, vous devez définir l'authentification de base en ajoutant les informations d'identification dans les en-têtes de la requête. Voici un exemple de code qui vous montre comment le faire:
+En utilisant la bibliothèque `net/http`, il est également possible de spécifier un autre type d'authentification en utilisant `req.basic_auth` avec une instance `Net::HTTP::DigestAuth` ou `Net::HTTP::TokenAuth`. Vous pouvez également modifier les en-têtes de la requête en utilisant `req.add_field` pour définir des en-têtes personnalisés. Il est important de noter que l'authentification de base est considérée comme une méthode de sécurité de base et ne doit pas être utilisée pour protéger des informations sensibles.
 
-```ruby
-req = Net::HTTP::Get.new('https://example.com/api/data')
-req.basic_auth('username', 'password')
-```
+## Voir aussi 
 
-Enfin, vous pouvez envoyer la requête et récupérer la réponse en utilisant la méthode `#request` de l'instance Net::HTTP que vous avez créée précédemment:
-
-```ruby
-response = http.request(req)
-puts response.body
-```
-
-Cela affichera le résultat de votre requête à l'écran. Si l'authentification a réussi, vous recevrez la réponse attendue. Sinon, vous obtiendrez une erreur d'authentification.
-
-Plongée en profondeur: Envoyer une requête HTTP avec une authentification de base nécessite de préciser les informations d'identification dans les en-têtes de la requête, ainsi que de s'assurer que la connexion est sécurisée en utilisant HTTPS. Il est important de noter que les informations d'identification sont envoyées en clair, il est donc essentiel de s'assurer que la connexion est bien sécurisée.
-
-Voir aussi: 
-
-- [Documentation officielle Ruby pour la classe Net::HTTP](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Exemple de code pour envoyer une requête HTTP avec une authentification de base en utilisant Ruby](https://www.rubyguides.com/2018/08/ruby-http-request/)
-- [Article sur l'importance de sécuriser les communications sur internet](https://www.lejdd.fr/Pourquoi-il-est-important-de-securiser-les-communications-sur-internet)
+- [Documentation officielle de `net/http`](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Tutoriel sur l'authentification de base en Ruby](https://www.rubyguides.com/2018/07/ruby-http-basic-authentication/)
+- [Exemples pratiques d'utilisation de `net/http`](https://web-crunch.com/ruby-on-rails-net-http-cheat-sheet/)

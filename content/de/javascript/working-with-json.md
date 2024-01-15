@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Arbeiten mit JSON"
+title:                "Arbeiten mit JSON"
+html_title:           "Javascript: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,88 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-JSON ist eine gängige Formatierungsmethode für den Austausch von Daten in der Programmierung. Es ist einfach zu lesen und zu schreiben für sowohl Menschen als auch Maschinen, was es zu einem wertvollen Werkzeug macht, um Daten zwischen verschiedenen Systemen zu übertragen. Wenn du als Programmierer:in Daten in deiner Anwendung austauschen musst, ist es wichtig, die Grundlagen von JSON zu kennen.
+Träumst du davon, komplexe Datenstrukturen in deine Webanwendungen zu integrieren, ohne mühsam jede einzelne Variable zu definieren? Dann ist JSON (JavaScript Object Notation) die Lösung für dich! Mit JSON kannst du Daten in ein platzsparendes und leicht lesbares Format konvertieren, das sowohl von Menschen als auch von Maschinen verarbeitet werden kann.
 
-## Wie man mit JSON arbeitet 
-
-Die Verwendung von JSON in deinem JavaScript-Code ist einfach. Du kannst Daten in JSON-Format online generieren oder mit einem JavaScript-Befehl, wie `JSON.stringify()`, aus JavaScript-Objekten erstellen.
-
-Hier ist ein Beispiel, wie du ein JSON-Objekt in deiner JavaScript-Anwendung erstellst:
+## Wie funktioniert es?
 
 ```Javascript
-// Erstellen eines JavaScript-Objekts
-let person = {
-    name: "Max",
-    alter: 25,
-    stadt: "Berlin"
+// Beispiel JSON Objekt
+const person = {
+  name: "Anna",
+  alter: 25,
+  lieblingstiere: ["Hunde", "Katzen"],
+  wohnort: {
+    stadt: "Berlin",
+    land: "Deutschland"
+  }
 };
 
-// Umwandeln des Objekts in JSON-Format
-let jsonPerson = JSON.stringify(person);
-
-// Ausgabe des JSON-Objekts im Terminal
-console.log(jsonPerson);
+// Ausgabe des Objekts in JSON Format
+console.log(JSON.stringify(person));
+// Ausgabe: '{"name":"Anna","alter":25,"lieblingstiere":["Hunde","Katzen"],"wohnort":{"stadt":"Berlin","land":"Deutschland"}}'
 ```
 
-Die Ausgabe dieses Codes wird folgendes JSON-Objekt sein:
+JSON wird häufig verwendet, um Daten zwischen einem Server und einer Webseite auszutauschen. Dank dem `JSON.stringify()` Befehl kannst du ganz einfach komplexe Objekte in einen String konvertieren, der dann über das Internet verschickt werden kann. Auf der anderen Seite kann der `JSON.parse()` Befehl verwendet werden, um einen JSON String in ein JavaScript Objekt umzuwandeln.
 
-`{"name":"Max","alter":25,"stadt":"Berlin"}`
+## Tiefere Einblicke
 
-Wie du sehen kannst, entspricht das JSON-Format der JavaScript-Objekt-Notation, aber alle Werte werden als Strings gespeichert.
-
-Um ein JSON-Objekt in ein JavaScript-Objekt umzuwandeln, kannst du den Befehl `JSON.parse()` verwenden. Hier ist ein Beispiel:
+JSON bietet einige nützliche Funktionen, die du beim Umgang mit Daten in JavaScript nutzen kannst. Zum Beispiel kannst du auf einzelne Datenpunkte in einem JSON Objekt zugreifen, indem du den entsprechenden Schlüssel angibst, ähnlich wie bei einem JavaScript Objekt.
 
 ```Javascript
-// Erstellen eines JSON-Objekts
-let jsonPerson = `{"name":"Max","alter":25,"stadt":"Berlin"}`;
+// Zugriff auf den Namen der Person
+console.log(person.name);
+// Ausgabe: "Anna"
 
-// Umwandeln des JSON-Objekts in ein JavaScript-Objekt
-let person = JSON.parse(jsonPerson);
+// Zugriff auf das Lieblingstier an der ersten Stelle
+console.log(person.lieblingstiere[0]);
+// Ausgabe: "Hunde"
 
-// Ausgabe des JavaScript-Objekts im Terminal
-console.log(person);
+// Zugriff auf den Namen der Stadt
+console.log(person.wohnort.stadt);
+// Ausgabe: "Berlin"
 ```
 
-Die Ausgabe dieses Codes wird folgendes JavaScript-Objekt sein:
-
-`{name: "Max", alter: 25, stadt: "Berlin"}`
-
-Du kannst auch Arrays in JSON-Format erstellen und wieder in JavaScript-Arrays umwandeln. Hier ist ein Beispiel:
-
-```Javascript 
-// Erstellen eines JavaScript-Arrays
-let hobbies = ["Schwimmen", "Lesen", "Reisen"];
-
-// Umwandeln des Arrays in JSON-Format
-let jsonHobbies = JSON.stringify(hobbies);
-
-// Ausgabe des JSON-Arrays im Terminal
-console.log(jsonHobbies);
-```
-
-Die Ausgabe dieses Codes wird folgendes JSON-Array sein: `["Schwimmen", "Lesen", "Reisen"]`
-
-Und hier ist, wie du ein JSON-Array in ein JavaScript-Array umwandeln kannst:
+Ebenfalls nützlich ist die Möglichkeit, JSON Daten miteinander zu vergleichen. Dies funktioniert ähnlich wie bei Objekten in JavaScript. Wenn die Schlüssel und Werte in zwei JSON Objekten übereinstimmen, werden die Objekte als gleich angesehen.
 
 ```Javascript
-// Erstellen eines JSON-Arrays
-let jsonHobbies = `["Schwimmen", "Lesen", "Reisen"]`;
+// Vergleichen der Wohnorte zweier Personen
+const person2 = {
+  name: "Max",
+  alter: 22,
+  lieblingstiere: ["Hunde", "Katzen"],
+  wohnort: {
+    stadt: "Berlin",
+    land: "Deutschland"
+  }
+};
 
-// Umwandeln des JSON-Arrays in ein JavaScript-Array
-let hobbies = JSON.parse(jsonHobbies);
-
-// Ausgabe des JavaScript-Arrays im Terminal
-console.log(hobbies);
+console.log(person.wohnort === person2.wohnort);
+// Ausgabe: true (beide haben den gleichen Wohnort)
 ```
 
-Die Ausgabe dieses Codes wird folgendes JavaScript-Array sein: `["Schwimmen", "Lesen", "Reisen"]`
-
-## Tieferes Eintauchen
-
-Es gibt noch viel mehr, was man über JSON lernen kann, wie zum Beispiel die Verwendung von verschachtelten Objekten oder Arrays, Bedingungen und Schleifen in JSON, und vieles mehr. Es gibt eine Vielzahl von Online-Ressourcen und Tutorials, die dir dabei helfen können, tiefer in die Materie einzutauchen. Eine gute Möglichkeit, das Erlernte zu üben, ist das Schreiben von JSON-Objekten und Arrays in einer Datei und dann ihre Umwandlung in JavaScript-Objekte und Arrays in deiner Anwendung zu verwenden.
+Wenn du tiefer in die Welt von JSON eintauchen möchtest, gibt es noch viele weitere Funktionen und Möglichkeiten, die du entdecken und nutzen kannst. Mit JSON kannst du nicht nur Daten austauschen, sondern auch komplexe Anwendungen erstellen, die auf dynamischen Daten basieren.
 
 ## Siehe auch
 
-- [Einführung in JSON von MDN](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
-- [Praktische Anwendung von JSON in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript) 
-- [Eine interaktive JSON-Lernumgebung](https://jsonmate.com/learn.html)
+- [Einführung in JSON](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [JSON vs. XML – Ein Vergleich](https://www.sitepoint.com/json-vs-xml-whats-the-difference/)
+- [JSON Übungsaufgaben](https://www.freecodecamp.org/news/json-example-tutorial/)

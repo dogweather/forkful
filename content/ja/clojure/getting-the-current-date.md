@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 現在の日付を取得する"
+title:                "現在の日付を取得する"
+html_title:           "Clojure: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,66 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## Why
+なぜ現在の日付を取得するのか？日付を取得することは、プログラミングにおいて非常に一般的なタスクです。例えば、特定の日付を必要とするスケジューリングや、ログに記録するなどの目的があります。プログラムが現在の日付を自動的に取得できるようにすることで、手動で日付を入力する手間を省くことができるため、効率的な作業を行うことができます。
 
-現在の日付を取得する理由は何でしょうか？Clojureには、日付を取得するための便利な機能があります。例えば、今日の日付を使って特定の処理を実行したい場合や、ある日付が特定の範囲内にあるかどうかをチェックする必要がある場合などです。
-
-## 方法
-
-Clojureで現在の日付を取得するには、`java.time.LocalDate`を使います。以下のようにコードを書くことで、現在の日付を取得することができます。
-
+## How To
+### Clojureを使用した現在の日付の取得方法
 ```Clojure
-(def today (java.time.LocalDate/now))
+(println (java.util.Date.))
+```
+出力:
+```
+Thu Feb 25 23:14:32 JST 2021
 ```
 
-このコードを実行すると、以下のような出力が得られます。
-
 ```Clojure
-#object[java.time.LocalDate "2020-06-08"]
+(println (java.time.LocalDate/now))
+```
+出力:
+```
+2021-02-25
 ```
 
-また、時刻も含めたい場合は、`java.time.LocalDateTime`を使います。
+### フォーマットを指定して日付を取得する方法
+Clojureには、フォーマットを指定して日付を取得するための専用のライブラリであるclj-timeがあります。このライブラリを使うと、より詳細な日付の表現を得ることができます。例えば、"MM/dd/yyyy"のようなパターンを指定することで、日付を月/日/年のフォーマットで取得することができます。
 
 ```Clojure
-(def current-time (java.time.LocalDateTime/now))
+(require '[clj-time.core :as t])
+
+(println (t/format (t/now) "MM/dd/yyyy"))
+```
+出力:
+```
+02/25/2021
 ```
 
-出力は以下のようになります。
+### 特定のタイムゾーンの日付を取得する方法
+デフォルトでは、Clojureはシステムのタイムゾーンを使用して日付を取得します。しかし、必要に応じて特定のタイムゾーンの日付を取得することもできます。例えば、アメリカの太平洋標準時の日付を取得する場合は、Pacific/Aucklandというタイムゾーンを指定します。
 
 ```Clojure
-#object[java.time.LocalDateTime "2020-06-08T15:45:28.182627"]
+(require '[clj-time.core :as t])
+(require '[clj-time.coerce :as tconv])
+
+(println (t/format (t/now (tconv/to-time-zone "Pacific/Auckland")) "MM/dd/yyyy"))
+```
+出力:
+```
+02/26/2021
 ```
 
-## 深堀り
+## Deep Dive
+Clojureでは、日付を取得するためにJavaの標準ライブラリであるjava.util.Dateを使用することができます。また、clj-timeライブラリを使うことで、より柔軟なフォーマットやタイムゾーンの指定が可能となります。さらに、clj-timeはJoda-Timeというライブラリをベースにしており、さまざまな便利な関数を提供しています。
 
-Clojureでは、ローカルの日付や時刻だけでなく、他のタイムゾーンの日付や時刻も取得することができます。例えば、東京の現在の日付を取得するには、`withZone`関数を使います。
-
-```Clojure
-(def tokyo-time (java.time.LocalDateTime/now (java.time.ZoneId/of "Asia/Tokyo")))
-```
-
-出力は以下のようになります。
-
-```Clojure
-#object[java.time.LocalDateTime "2020-06-09T00:45:28.182627"]
-```
-
-さらに、日付や時刻のフォーマットも変更することができます。例えば、フォーマットを`yyyy-MM-dd`にするには、`format`関数を使います。
-
-```Clojure
-(def formatted-time (.format (java.time.DateTimeFormatter/ofPattern "yyyy-MM-dd") today))
-```
-
-出力は以下のようになります。
-
-```Clojure
-"2020-06-08"
-```
-
-## 他の関連記事
-
-[Official Java documentation for LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
-
-[Official Java documentation for LocalDateTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html)
-
-[How to get the current date and time in Clojure](https://scottshipp.com/how-to-get-the-current-date-and-time-in-clojure/)
+## See Also
+- [Clojureで日付を扱う方法] (https://clojure.or.jp/timeline/)
+- [clj-timeライブラリの詳細] (https://github.com/clj-time/clj-time)
+- [Joda-Timeライブラリの詳細] (https://www.joda.org/joda-time/)

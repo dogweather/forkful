@@ -1,5 +1,6 @@
 ---
-title:                "Swift: קריאת קובץ טקסט"
+title:                "קריאת קובץ טקסט"
+html_title:           "Swift: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,37 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מה הסיבה לקרוא קובץ טקסט? ניתן לקרוא קבצי טקסט כדי לקבל מידע מכתוביות בסרטים, לייצא נתונים לפורמטים שונים ועוד.
+קריאת קובץ טקסט היא כלי חשוב בפיתוח תוכניות בשפת Swift. באמצעות קריאת קובץ טקסט, ניתן לטעון מידע מקובץ חיצוני ולעבד אותו בתוכנית שלנו. להלן נדבר על המבנה היסודי של קבצי טקסט וכיצד לקרוא קובץ טקסט בשפת Swift.
 
-## כיצד לעשות זאת
+## כיצד לקרוא קובץ טקסט
 
-```swift
-// פתיחת קובץ טקסט
-let fileURL = URL(fileURLWithPath: "file.txt")
+כדי לקרוא קובץ טקסט בשפת Swift, נצטרך להשתמש במחלקת `FileManager` ובפונקציות המסופקות על ידה. נתחיל עם יצירת מפענח לקובץ הטקסט על ידי השתמשות במתודת `url(forResource:withExtension:)` של `FileManager`. לדוגמה, אם קובץ הטקסט שלנו נמצא בתיקייה בשם "files" ונקרא "text_file.txt", הקוד יראה כך:
 
-// קריאה של תוכן קובץ טקסט
-do {
-    let text = try String(contentsOf: fileURL, encoding: .utf8)
-    print(text) // פלט הטקסט מהקובץ
-} catch {
-    print("שגיאה בקריאת הקובץ") 
-}
-
-// כתיבת נתונים לקובץ טקסט
-let text = "זהו טקסט לכתיבה לקובץ"
-do {
-    try text.write(to: fileURL, atomically: false, encoding: .utf8)
-} catch {
-    print("שגיאה בכתיבת הטקסט לקובץ")
+```Swift
+let fileManager = FileManager.default
+if let fileUrl = fileManager.url(forResource: "text_file", withExtension: "txt", subdirectory: "files") {
+    // do something with the fileUrl
 }
 ```
 
-## מעמקים
+כעת, ניתן לקרוא את תוכן הקובץ על ידי השתמשות במתודת `contents` של `String` והבאת התוכן למשתנה מסוג `String`. לדוגמה:
 
-כדי לקרוא קובץ טקסט, ניתן להשתמש בפונקציות של המחלקה המובנית `String` וניתן לייצא נתונים לפורמטים שונים באמצעות המחלקה `Data`. ישנן גם ספריות נוספות כמו `FileKit` שעוזרות בקריאת וכתיבת קבצי טקסט בצורה נוחה יותר.
+```Swift
+let fileManager = FileManager.default
+if let fileUrl = fileManager.url(forResource: "text_file", withExtension: "txt", subdirectory: "files"),
+    let text = try? String(contentsOf: fileUrl) {
+        print(text)
+}
+```
 
-## ראה גם
+כעת, המשתנה `text` מכיל את כל הטקסט שנמצא בקובץ הטקסט ונוכל לבצע עליו פעולות נוספות כפי שנדרש לתוכנית שלנו.
 
-- [מדריך על כתיבה וקריאת קבצי טקסט עם Swift](https://medium.com/flawless-app-stories/read-and-write-files-in-swift-a-users-tutorial-8ff0bcae4ed5)
-- [מסמך רשמי על המחלקה String ופונקציות קריאה וכתיבה](https://developer.apple.com/documentation/foundation/string)
-- [ספריית FileKit לקריאה וכתיבת קבצים בסגנון יותר אינטואיטיבי](https://github.com/nvzqz/FileKit)
+## חקירה מעמיקה
+
+בתוך קובץ טקסט, המידע מאוחסן בסדר לוגי כדי שהמחשב יוכל לקרוא אותו נכון. המבנה היסודי של קבצי טקסט משתלב במבנה ה "Universal Coded Character Set" (UCS) המשומש על ידי סטנדרט ISO 10646. הקבצים מורכבים מבית הכולל 21 סימבולים שונים שמוגדר

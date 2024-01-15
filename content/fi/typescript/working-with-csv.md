@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Töitä csv-tiedostojen kanssa"
-simple_title:         "Töitä csv-tiedostojen kanssa"
+title:                "Kääntämisen otsikko: Työskentely csv:n kanssa"
+html_title:           "TypeScript: Kääntämisen otsikko: Työskentely csv:n kanssa"
+simple_title:         "Kääntämisen otsikko: Työskentely csv:n kanssa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -11,76 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-CSV-tiedostot ovat yleisiä tietojen tallentamiseen ja jakamiseen. Usein näitä tiedostoja käytetään esimerkiksi liiketoimintatiedon tallentamiseen tai Excel-taulukoiden siirtämiseen ohjelmistojen välillä. TypeScriptin avulla voit helposti lukea, kirjoittaa ja manipuloida CSV-tiedostoja. Tässä blogikirjoituksessa kerron tarkemmin, kuinka CSV-tiedostojen käsittely onnistuu TypeScriptillä.
+CSV (Comma-Separated Values) on yleinen tiedostomuoto, jota käytetään tietojen tallentamiseen ja jakamiseen. Se on helppolukuinen ja tukee monia eri ohjelmia ja sovelluksia. Tämän vuoksi on hyödyllistä tietää, kuinka työskennellä CSV-tiedostojen kanssa, jotta voi käsitellä tietoja tehokkaasti.
 
 ## Kuinka
 
-Aloita asentamalla `csv-parse`-paketti komennolla `npm install csv-parse`. Tämä paketti antaa meille tarvittavat työkalut CSV-tiedostojen lukemiseen. Seuraavaksi, voimme luoda yksinkertaisen TypeScript-tiedoston, joka lukee CSV-tiedoston ja tulostaa sen sisällön konsolille.
+Jos haluat lukea ja käsitellä CSV-tiedostoja TypeScriptin avulla, voit käyttää [Papaparse](https://github.com/mholt/PapaParse) -kirjastoa. Se tarjoaa kätevän tavan lukea ja muuntaa CSV-tiedostoja JavaScript-objekteiksi.
+
+Asenna kirjasto ensin npm:llä komennolla `npm install papaparse`.
+
+Sitten voit käyttää sitä TypeScriptin kanssa seuraavasti:
 
 ```TypeScript
-import * as fs from 'fs';
-import * as csv from 'csv-parse';
+// Importoi kirjasto
+import * as Papa from 'papaparse';
 
-// Lue tiedosto ja muunna sen sisältö taulukoksi
-fs.readFile('./data.csv', 'utf8', (err, data) => {
-  csv.parse(data, (err, output) => {
-    // Tulosta taulukon sisältö konsolille
-    console.log(output);
-  });
-});
+// Luo muuttuja CSV-tiedoston sisällölle
+const csv = `
+Nimi, Ikä, Maa
+Matti, 25, Suomi
+Anna, 30, Ruotsi
+`;
+
+// Määritä CSV:n asetukset (valinnainen)
+const options = {
+  header: true // määrittelee, että ensimmäinen rivi sisältää otsikot kullekin sarakkeelle
+};
+
+// Käytä parse-funktiota lukemaan ja muuntamaan tiedot
+const result = Papa.parse(csv, options);
+
+// Tulosta tulos konsoliin
+console.log(result.data); // tulostaa taulukon JavaScript-objekteja
 ```
 
-Käytämme tässä `fs`-moduulia lukemaan tiedostoa ja `csv-parse`-moduulia muuntamaan tiedoston sisällön taulukoksi. Kun ajamme koodin, näemme konsolilla CSV-tiedoston sisällön taulukkomuodossa.
+Tämä koodi luo taulukon kolmesta JavaScript-objektista, joissa jokaisessa on kolme avainta: "Nimi", "Ikä" ja "Maa". Voit käyttää näitä tietoja ohjelmissasi haluamallasi tavalla.
 
-```
-[
-  [ 'id', 'nimi', 'pisteet' ],
-  [ '1', 'Matti', '350' ],
-  [ '2', 'Anna', '500' ],
-  [ '3', 'Jussi', '250' ]
-]
-```
+## Syvempi sukellus
 
-Voimme myös kirjoittaa CSV-tiedoston käyttäen `csv`-moduulin `stringify`-funktiota. Alla olevassa esimerkissä luomme uuden CSV-tiedoston ja lisäämme siihen uuden rivin.
+Papaparse-kirjasto tarjoaa myös paljon muita toimintoja, kuten tiedon kirjoittamisen CSV-muotoon, asetusten määrittämisen ja virheiden käsittelyn. Voit lukea lisää [kirjaston dokumentaatiosta](https://www.papaparse.com/docs).
 
-```TypeScript
-import * as fs from 'fs';
-import * as csv from 'csv-parse';
-
-// Luo uusi rivi
-const newRow = ['4', 'Liisa', '400'];
-
-// Lue tiedosto ja muunna sen sisältö taulukoksi
-fs.readFile('./data.csv', 'utf8', (err, data) => {
-  csv.parse(data, (err, output) => {
-    // Lisää uusi rivi taulukkoon
-    output.push(newRow);
-
-    // Kirjoita uusi taulukko CSV-tiedostoon
-    const newCsv = csv.stringify(output);
-    fs.writeFile('./data_new.csv', newCsv, (err) => {
-      console.log('CSV-tiedosto luotu!');
-    });
-  });
-});
-```
-
-Kun ajamme tämän koodin, näemme uuden CSV-tiedoston, jossa on lisätty uusi rivi.
-
-```
-id,nimi,pisteet
-1,Matti,350
-2,Anna,500
-3,Jussi,250
-4,Liisa,400
-```
-
-## Syvällinen sukellus
-
-Nyt kun olet saanut perusasiat hallintaan, voit tutustua `csv-parse`-paketin dokumentaatioon löytääksesi kaikki sen tarjoamat toiminnot ja ominaisuudet. Voit esimerkiksi määrittää oman erottimen, jos CSV-tiedostossa on poikkeuksellinen erottimen käyttö. Voit myös hyödyntää callback-funktioita ja tapahtumankäsittelijöitä saadaksesi lisää kontrollia CSV-tiedostojen käsittelyssä.
+CSV-tiedostot voivat myös sisältää monimutkaisempia tietoja, kuten upotettuja taulukoita ja rivien yhdistämistä. Tässä tapauksessa sinun on ehkä määriteltävä erilaiset asetukset tai käsiteltävä tiedot manuaalisesti. On hyödyllistä tuntea [CSV:n syntaksia](https://en.wikipedia.org/wiki/Comma-separated_values), jotta voit työskennellä kaikenlaisten tiedostojen kanssa.
 
 ## Katso myös
 
-- [csv-parse paketin dokumentaatio](https://csv.js.org/parse/)
-- [Node.js dokumentaatio](https://nodejs.org/fi/)
-- [TypeScript-tutoriaalit](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+- [Papaparse-dokumentaatio](https://www.papaparse.com/docs)
+- [CSV:n syntaksin opas](https://en.wikipedia.org/wiki/Comma-separated_values)

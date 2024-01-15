@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Scaricare una pagina web."
+title:                "Scaricare una pagina web."
+html_title:           "Rust: Scaricare una pagina web."
 simple_title:         "Scaricare una pagina web."
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Rust è un linguaggio di programmazione moderno e versatile che sta guadagnando sempre più popolarità nella comunità degli sviluppatori. Tra le sue molteplici funzionalità, Rust offre anche la capacità di scaricare pagine web in modo semplice ed efficiente.
+Se stai leggendo questo articolo, probabilmente sei interessato a imparare come scaricare una pagina web utilizzando Rust. Questo linguaggio di programmazione è noto per la sua efficienza e sicurezza, quindi è una scelta eccellente per questo tipo di operazione.
 
-Perché dovresti utilizzare Rust per scaricare pagine web? Prima di tutto, Rust è un linguaggio che offre una sintassi semplice e intuitiva, ma allo stesso tempo è altamente performante. Inoltre, Rust è noto per la sua sicurezza, grazie al suo sistema di gestione della memoria che elimina i tipici errori di accesso alla memoria, rendendolo una scelta ideale per progetti di questo tipo.
+## Come Fare
 
-## Come fare
+In Rust, puoi utilizzare la libreria standard "reqwest" per effettuare richieste HTTP. Iniziamo importando la libreria e creando un'istanza del client:
 
-Per prima cosa, dovrai assicurarti di avere Rust installato sul tuo sistema. Puoi farlo seguendo le istruzioni ufficiali sul sito rust-lang.org.
+```rust
+use reqwest::Client;
 
-Una volta installato, puoi creare un nuovo progetto Rust e aggiungere le dipendenze necessarie nel file `Cargo.toml`. In questo caso, utilizzeremo la libreria `reqwest` per effettuare le richieste HTTP e scaricare la pagina web.
-
-Nel tuo file `main.rs`, inizia importando la libreria `reqwest`:
-
-```Rust
-use reqwest;
+let client = Client::new();
 ```
 
-Successivamente, puoi utilizzare il metodo `get` della libreria `reqwest` per scaricare una determinata pagina:
+Ora possiamo utilizzare il metodo "get" del client per effettuare una richiesta alla pagina web desiderata e ottenere la risposta:
 
-```Rust
-let response = reqwest::get("https://www.example.com")?.text()?;
+```rust
+let response = client.get("https://www.example.com").send();
 ```
 
-Infine, stampa il risultato:
+La risposta è un oggetto "Response" che contiene informazioni sullo stato della richiesta e il contenuto della pagina web. Possiamo accedervi tramite il metodo "text" per ottenere il contenuto come una stringa:
 
-```Rust
-println!("{}", response);
+```rust
+let body = response.text().unwrap();
+println!("{}", body);
 ```
 
-Eseguendo il codice, dovresti ottenere l'output della pagina web desiderata.
+In questo esempio, abbiamo stampato il contenuto della pagina web sulla console. Puoi anche utilizzare il metodo "write_to" per salvare il contenuto in un file.
 
 ## Approfondimento
 
-Se vuoi andare oltre e comprendere meglio come funziona il download di pagine web con Rust, puoi approfondire il funzionamento della libreria `reqwest` e leggere la sua documentazione ufficiale su docs.rs/reqwest.
+Ora che sai come effettuare una richiesta HTTP utilizzando Rust, è utile capire più in dettaglio cosa succede dietro le quinte. La libreria "reqwest" utilizza il protocollo HTTP/2 per le sue richieste, il che significa che è in grado di gestire più richieste contemporaneamente in modo efficiente.
 
-Inoltre, potrebbe esserti utile conoscere il funzionamento delle richieste HTTP e dei protocolli coinvolti nel trasferimento di dati tramite internet. Puoi trovare ulteriori informazioni su queste tematiche su developer.mozilla.org.
+Inoltre, la libreria offre supporto per la gestione degli errori comuni, come ad esempio la gestione di timeout o la gestione delle rese richieste. Questo rende il processo di scaricamento di una pagina web robusto e affidabile.
 
-## Vedi anche
+## Vedi Anche
 
-- Documentazione ufficiale di Rust: rust-lang.org
-- Sito della libreria `reqwest`: github.com/seanmonstar/reqwest
-- Informazioni sulle richieste HTTP e i protocolli: developer.mozilla.org.
+- [Documentazione ufficiale di reqwest](https://docs.rs/reqwest/)
+- [Esempio completo di scaricamento di una pagina web in Rust](https://github.com/seanmonstar/reqwest/blob/master/examples/simple_client.rs)
+- [Tutorial su come utilizzare reqwest per analizzare un documento HTML](https://crates.io/crates/select)

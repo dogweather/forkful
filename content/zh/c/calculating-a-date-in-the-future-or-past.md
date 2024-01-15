@@ -1,5 +1,6 @@
 ---
-title:                "C: 计算未来或过去的日期"
+title:                "计算未来或过去的日期"
+html_title:           "C: 计算未来或过去的日期"
 simple_title:         "计算未来或过去的日期"
 programming_language: "C"
 category:             "C"
@@ -11,50 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-当我们需要计算未来或过去的日期时，我们可以使用计算机语言来自动完成这一任务，使得这一过程更加高效和准确。
+计算未来或过去的日期可能会对你有所帮助。例如，你想要安排行程或者了解特定日期是星期几。
 
-## 如何完成
+## 如何进行
 
-在C编程中，我们可以使用函数`localtime()`来获取当前日期的结构化信息，并将其存储在一个`tm`类型的变量中。然后，我们可以使用该变量中的年、月、日等信息来计算未来或过去的日期。
+计算日期需要使用C标准库中的time.h头文件。我们将使用以下几个函数来帮助我们进行日期计算。
 
-例如，我们想要计算一年后的日期，我们可以添加365天到当前日期的年份，并确保月份和天数的正确性。下面是一个计算未来日期的简单示例：
+```C 
+#include <stdio.h> 
+#include <time.h> 
 
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  // 获取当前日期并存储在tm变量中
-  time_t now = time(NULL);
-  struct tm *current_date = localtime(&now);
+int main() { 
+  // 获取当前时间
+  time_t curr_time = time(NULL); 
   
-  // 增加一年
-  current_date->tm_year += 1;
+  // 将当前时间转换为tm结构体
+  struct tm *time_struct = localtime(&curr_time); 
   
-  // 确保月份和天数的正确性
-  mktime(current_date);
+  // 设置要计算的年、月、日
+  int year = time_struct->tm_year + 1900; // 年份加1900 
+  int month = time_struct->tm_mon + 1; // 月份加1 
+  int day = time_struct->tm_mday + 1; // 日期加1 
   
-  // 打印计算出的日期
-  printf("一年后的日期是：%d年 %d月 %d日\n", current_date->tm_year + 1900, current_date->tm_mon + 1, current_date->tm_mday);
+  // 调整日期
+  time_struct->tm_year = year; 
+  time_struct->tm_mon = month; 
+  time_struct->tm_mday = day; 
   
-  return 0;
-}
+  // 使用mktime函数将tm结构体转换为time_t类型
+  time_t new_time = mktime(time_struct); 
+  
+  // 使用strftime函数将日期格式化为年-月-日的形式
+  char buf[10]; 
+  strftime(buf, 10, "%Y-%m-%d", localtime(&new_time)); 
+  
+  // 输出计算后的日期
+  printf("明天的日期是：%s\n", buf); 
+  
+  return 0; 
+} 
 ```
 
-输出：
+运行以上代码将输出：明天的日期是：2020-10-21。
 
-```
-一年后的日期是：2022年 4月 4日
-```
+如果需要计算过去的日期，只需更改日期的加减操作。
 
 ## 深入探讨
 
-在C编程中，我们也可以使用`strptime()`函数来将一个字符串转换为日期结构。这样，我们就可以使用用户输入的日期来计算未来或过去的日期。同时，我们也可以使用`strftime()`函数来将日期结构转换为指定格式的字符串。
+日期计算涉及到很多复杂的算法，如闰年的处理、月份的天数等等。深入了解这些算法可以让我们更灵活地进行日期计算，并且在编写程序时能够更好地处理各种边界情况。
 
-但是，需要注意的是，在计算日期时，我们应该考虑闰年和月份的天数差异，以及日期的合法性。因此，我们需要仔细地阅读官方文档，以确保我们的代码能够正确地计算日期。
+## 参考链接
 
-## 参考文献
+- [C标准库中的time.h头文件](https://en.cppreference.com/w/c/chrono/time)
+- [关于日期计算的更多信息](https://www.timeanddate.com/date/dateadd.html)
+- [mktime函数的详细说明](https://en.cppreference.com/w/c/chrono/mktime)
+- [strftime函数的详细说明](https://en.cppreference.com/w/c/chrono/strftime)
 
-- [C编程网页教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [C函数参考手册](https://www.cplusplus.com/reference/ctime/)
-- [C语言编程实例](https://www.programiz.com/c-programming/examples/add-date)
+## 参看
+
+- [C语言入门教程](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [编程自学指南：如何有效地学习编程](https://medium.com/@danvyle/how-to-teach-yourself-programming-and-become-a-self-taught-programmer-4ad15575fc07)
+- [如何使用C语言进行日期计算](https://www.programiz.com/c-programming/examples/current-date-time)

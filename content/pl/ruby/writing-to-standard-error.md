@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Pisanie do standardowego błędu."
-simple_title:         "Pisanie do standardowego błędu."
+title:                "Pisanie do standardowego wyjścia błędu"
+html_title:           "Ruby: Pisanie do standardowego wyjścia błędu"
+simple_title:         "Pisanie do standardowego wyjścia błędu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,33 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie do standardowego błędu jest nieodłączną częścią pisania kodu w Ruby. Wiele osób może zastanawiać się dlaczego jest to ważne lub dlaczego w ogóle powinniśmy to robić. W tym wpisie dowiesz się, dlaczego pisanie do standardowego błędu jest tak istotne i jak możesz to zrobić.
+Kiedy piszesz kod, ważne jest aby pamiętać o tzw. "błędach", czyli sytuacjach, w których program może się nie wykonać poprawnie. Jednym z narzędzi, które możesz wykorzystać do obsługi błędów w Ruby, jest standardowe wyjście błędów lub w skrócie `stderr`. Dzięki temu narzędziu możemy otrzymać informacje szczegółowe o błędach, co ułatwia nam debugowanie i poprawianie błędów w kodzie. 
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby napisać do standardowego błędu w Ruby, możesz użyć metody `warn` lub `stderr.puts`. Możesz także przekierować standardowe wyjście do standardowego błędu za pomocą operatora `>>`. Przykładowy kod wyglądałby następująco:
+Aby pisać do standardowego wyjścia błędów w Ruby, musimy użyć metody `puts` z parametrem `STDERR`, jak w przykładzie poniżej:
 
 ```Ruby
-# Metoda warn
-warn "Podany argument jest nieprawidłowy"
+puts STDERR, "To jest wiadomość wysłana do standardowego wyjścia błędów."
+```
+Wynik:
 
-# Metoda stderr.puts
-$stderr.puts "Wystąpił błąd podczas wykonania programu"
-
-# Przekierowanie standardowego wyjścia do standardowego błędu
-puts "Witaj na stronie internetowej" >> $stderr
+```
+To jest wiadomość wysłana do standardowego wyjścia błędów.
 ```
 
-Powyższy kod używa różnych sposobów, aby wypisać informację na standardowy błąd. Możesz wybrać ten, który najlepiej pasuje do twojego kodu i potrzeb.
+Możemy również użyć notacji `STDERR.puts` zamiast `puts STDERR`, ale oba sposoby są równoważne i wykonują tę samą funkcję.
 
-## Deep Dive
+## Głębsze wyjaśnienie
 
-Pisanie do standardowego błędu jest ważne, ponieważ pozwala nam na wyświetlenie informacji o błędach lub problemach występujących podczas wykonania programu. Standardowe wyjście jest używane do wyświetlania informacji wyjściowych dla użytkownika, a standardowy błąd do wyświetlania komunikatów o błędach lub problemach. Dzięki temu możemy lepiej kontrolować i zarządzać naszym kodem.
+W Ruby standardowe wyjście błędów jest obiektem typu IO, który jest dostępny globalnie w całym programie. Oznacza to, że możemy korzystać z tej metody w dowolnym miejscu w naszym kodzie. 
 
-## Zobacz także
+W przypadku, gdy chcemy przekierować błędy do innego miejsca, na przykład do zwykłego wyjścia, możemy użyć metody `warn` zamiast `puts` lub `STDERR.puts`. Przykład:
 
-Zapoznaj się z poniższymi linkami, aby dowiedzieć się więcej o pisaniu do standardowego błędu w Ruby:
+```Ruby
+warn "To jest wiadomość wysłana do zwykłego wyjścia jako ostrzeżenie."
+```
 
-- [Dokumentacja Ruby](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-warn)
-- [Wideo na YouTube](https://www.youtube.com/watch?v=7Cs7TDYhuZI)
-- [Artykuł na Medium](https://medium.com/@josh_cheek/stderr-warn-puts-and-io-64b1224a5c1d)
+Wynik:
+
+```
+To jest wiadomość wysłana do zwykłego wyjścia jako ostrzeżenie.
+```
+
+Dodatkowo, warto zauważyć, że standardowe wyjście błędów nie tylko służy do wypisywania informacji o błędach, ale także może być wykorzystane do wypisywania dowolnego typu komunikatów lub ostrzeżeń podczas działania programu.
+
+## Zobacz również
+
+- [Dokumentacja Ruby o wyjściu błędów](https://ruby-doc.org/core-3.0.0/IO.html#method-c-stderr)
+- [Przewodnik dla początkujących w pisaniu do strumieni w Ruby](https://medium.com/@geebominga/writing-to-streams-in-ruby-f82793f3bea)

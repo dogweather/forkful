@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 写入标准错误"
-simple_title:         "写入标准错误"
+title:                "标准错误的写作"
+html_title:           "Bash: 标准错误的写作"
+simple_title:         "标准错误的写作"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -9,52 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要将信息写入标准错误
+## 为什么
 
-在编写Bash脚本时，我们经常会遇到需要输出一些信息给用户的情况。通常我们使用标准输出来显示这些信息，但是有时候我们也会使用标准错误来输出。使用标准错误可以帮助我们区分正常输出和错误信息，使得程序更易于调试。
+为什么我们会有必要在Bash中编写到标准错误？事实上，写入标准错误可以帮助我们更容易地调试代码，因为它可以打印出错误信息，帮助我们找出问题的根源。
 
-## 如何将信息写入标准错误
+## 如何做
 
-要将信息写入标准错误，我们可以使用 `2>&1` 这个重定向符号。这个符号的意思是将标准错误的输出重定向到标准输出。下面是一个例子：
-
+我们可以使用`echo`命令将文本写入标准错误，语法如下：
 ```Bash
-#!/bin/bash
-
-echo "这是标准输出"
-echo "这是标准错误" >&2
+echo "错误信息" >&2
 ```
-
-运行这个脚本，我们可以看到以下输出：
-
-```
-这是标准输出
-这是标准错误
-```
-
-## 深入了解标准错误
-
-当我们使用 `2>&1` 符号时，标准错误的输出会被重定向到标准输出，但是两者的输出会混合在一起。为了更好地区分它们，我们可以使用 `2>` 符号来将标准错误的输出重定向到一个文件中。例如：
-
+下面是一个简单的例子，输出错误信息"未找到文件"：
 ```Bash
-#!/bin/bash
-
-echo "这是标准输出"
-echo "这是标准错误" >&2
-
-echo "这是标准错误重定向到的文件" 2> error.txt
+echo "未找到文件" >&2
 ```
-
-运行这个脚本后，我们可以看到：
-
+运行命令后，输出结果如下：
 ```
-这是标准输出
-这是标准错误重定向到的文件
+未找到文件
 ```
+可以看到，错误信息被打印到了标准错误中。除了`echo`命令，我们还可以使用其他命令或者脚本来产生错误信息，比如在脚本中使用`exit`命令强制退出，并指定一个错误代码：
+```Bash
+exit 1
+```
+运行脚本后，会返回一个错误代码为1的错误信息。
 
-在 `error.txt` 文件中，我们会看到 `这是标准错误` 这句话。
+## 深入了解
+
+在Bash中，标准输出和标准错误是两个不同的输出流，它们分别用于打印普通的输出和错误信息。默认情况下，标准输出会显示在屏幕上，而标准错误则会显示在屏幕的红色文字中，以区分出错的信息。
+
+除了使用`echo`命令和`exit`命令，我们也可以使用重定向符号`>`和`2>`来将文本写入标准错误。比如，将标准输出重定向到`/dev/null`，将标准错误重定向到标准输出：
+```Bash
+ls -l file1 file2 1>/dev/null 2>&1
+```
+这条命令会将`ls`命令的标准输出重定向到`/dev/null`，意为将输出信息丢弃，然后将标准错误重定向到标准输出，这样错误信息就会显示在屏幕上。
 
 ## 参考资料
 
-- [Linux命令之重定向：标准输出、标准错误和管道](https://www.cnblogs.com/zhang-sujuan/p/7783713.html)
-- [Bash脚本教程](https://wangdoc.com/bash/)
-- [Linux Shell知识](http://c.biancheng.net/cpp/shell/)
+- [Bash Reference Manual: Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Standard Streams: What are the three default standard streams provided by the shell?](https://unix.stackexchange.com/questions/506994/what-are-the-three-default-standard-streams-provided-by-the-shell)

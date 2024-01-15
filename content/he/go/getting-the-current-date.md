@@ -1,6 +1,7 @@
 ---
-title:                "Go: קבלת התאריך הנוכחי"
-simple_title:         "קבלת התאריך הנוכחי"
+title:                "לקבלת התאריך הנוכחי"
+html_title:           "Go: לקבלת התאריך הנוכחי"
+simple_title:         "לקבלת התאריך הנוכחי"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -9,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## למה: ‏2 משפטים מקיאלים את הסיבה *למה* מישהו יעסוק בקבלת תאריך נוכחי.
 
-אנשים משתמשים בגו כדי ליצור יישומים ותוכניות שונות בשפה פשוטה וקצרה. השימוש בפקודת 'date' יכול להיות חשוב לתכנון יישומים, כמו לדוגמה לתאריך ייצור, תאריך המעסיק את תוכנה או לפעולות של ניתוח לפני דוח התפתחות.
+עדכון טכנולוגיות ותאריכים באתר או אפליקציה נחוץ למשתמשים. כשמתכנת יעבוד בפרוייקטים שונים, היום הנוכחי הוא דבר שקורה באופן קבוע כדי לוודא שמידע חדש מתווסף ונשמר כראוי.
 
-## איך לעשות זאת
+## איך לעשות זאת: דוגמאות קוד עם פלט בתוך בלוקי קוד "```Go ... ```"
+
+קוד:
 
 ```Go
-import "fmt"
-import "time"
+package main
+
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-    // קבלת תאריך נוכחי
-    now := time.Now()
-    // המרת התאריך לתאריך מחרוזת בפורמט נתון
-    date := now.Format("2006-01-02")
-    // הדפסת התאריך המוצג בפורמט מסוים
-    fmt.Println("התאריך הנוכחי הוא:", date)
+	currentDateTime := time.Now()
+
+	fmt.Println("The current date and time is:", currentDateTime.Format("Mon, 02 Jan 2006 15:04:05 MST"))
 }
 ```
 
-הפלט: התאריך הנוכחי הוא: 2021-07-23
+פלט:
+```
+The current date and time is: Mon, 01 Feb 2021 12:30:45 EST
+```
 
-## חקירה מעמיקה
+קוד זה מדגים כיצד לקבל את התאריך הנוכחי בפורמט מסוים, ניתן להתאים את הפורמט לפי צרכי המשתמש. ישנן גם מגוון אפשרויות לעבוד עם תאריכים ושעות לצורכי חישובים ושינויים.
 
-פקודת 'date' בגו משתמשת בחבילת time של שפת גו כדי להחזיר את התאריך הנוכחי. החבילה מכילה מספר פונקציות עבור עיבוד תאריכים שונים כגון חישוב השעה, תאריך פורטמטים וכן הלאה. תאריך הנוכחי יכול להיות מחרוזת, כמו גם ערך מבנה ספציפי לפי הפורמטינג שנבחר.
+## Deep Dive: מידע עמוק על קבלת תאריך נוכחי
 
-## ראה גם
+בשפת Go, קיימת ספריה מובנית בשם "time" המאפשרת עבודה עם תאריכים ושעות באופן נוח ויעיל. הפעלת הפונקציה time.Now() תחזיר את התאריך והשעה הנוכחיים בתור אובייקט מסוג time.Time. ניתן להשתמש במתודות נוספות כמו Format() על מנת להתאים את התאריך לפורמט זמן מסוים או לבצע מחשבות חישוביות. כמו כן, ניתן לשנות את התאריך והשעה הנוכחיים באמצעות מתודות כמו Add() ו-Subtract().
 
-- [חבילת Time בגו](https://golang.org/pkg/time/)
-- [הפתרון שלה לחישוב השעה הנוכחית](https://stackoverflow.com/questions/37226757/getting-current-date-and-time-in-go-programming-language)
-- [מדריך למידה על גו](https://tour.golang.org/welcome/1)
+## ראה גם:
+
+- [Time package - The Go Programming Language](https://pkg.go.dev/time)
+- [Get Current Date and Time in Go](https://www.golangprograms.com/get-current-date-and-time-in-golang.html)
+- [Working with Dates and Times in Go](https://octoperf.com/blog/2018/08/29/go-dates-times/#Time_zone_handling)

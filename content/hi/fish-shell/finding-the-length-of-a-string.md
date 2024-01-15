@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: एक स्ट्रिंग की लंबाई ढूंढना।"
-simple_title:         "एक स्ट्रिंग की लंबाई ढूंढना।"
+title:                "तंबु की लंबाई ढूंढना"
+html_title:           "Fish Shell: तंबु की लंबाई ढूंढना"
+simple_title:         "तंबु की लंबाई ढूंढना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,42 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-किसी चुटकी भर कोड से हम तामसील चीज़ों को कंप्यूटर के साथ काम करने में आसानी से समझ सकते हैं जैसे की शब्दों को और ज्यादा सटीकता के साथ देखने में मूल्यपूर्ण है।
+कोई भी पाठ स्ट्रिंग की लंबाई को जानना चाहेगा ताकि वे किसी भी रचना में पाठ स्ट्रिंग को सही तरीके से उपयोग कर सकें।
 
-## कैसे
+## कैसे करें
 
-```Fish Shell में एक बार में सिर्फ एक लाइन इस्तेमाल करके हम चुकंदर का आकार निकाल सकते हैं:```
-
-` set length (count $string) `
-
-उपरोक्त कोड में, हम `$string` वेरिएबल में से संख्या लेकर, जो कि आइटम की संख्या देता है, `$length` वेरिएबल में सेट करते हैं।
-
-अगर हमें स्ट्रिंग की लंबाई को प्रिंट करना चाहते हैं, तो हम निम्नलिखित कोड का उपयोग कर सकते हैं:
-
-`echo $length`
-
-एक और उदाहरण दिया जा रहा है जहां हम अन्य आइटमों को इस्तेमाल कर सकते हैं, जैसे कि `for` लूप, ताकि हम एक स्ट्रिंग एरे बना सकें और उसकी आकार को प्रिंट कर सकें:
+फिश शैल (वर्तमान संस्करण) में पाठ स्ट्रिंग की लंबाई को जानने के लिए आप निम्नानुसार कर सकते हैं। सबसे पहले, एक पाठ स्ट्रिंग बनाएं जिसकी आप लंबाई जानना चाहते हैं। उसके बाद, निम्नलिखित कोड को `length.sh` नाम से सहेजें:
 
 ```
-set items golang java python
-for item in $items
-    set length (count $item)
-    echo "The length of $item is $length"
-end
+#! /usr/bin/env fish 
+
+echo "पाठ स्ट्रिंग लंबाई: (string length (echo $argv))"
 ```
 
-ऊपरोक्त कोड का आउटपुट इस प्रकार होगा:
+अंत में, टर्मिनल में निम्नलिखित कमांड को चलाएं:
 
-```The length of golang is 6
-The length of java is 4
-The length of python is 6```
+```
+$ ./length.sh Hello World
+```
 
-## डीप डाइव
+इस उदाहरण में, पाठ स्ट्रिंग `Hello World` की लंबाई `11` होगी।
 
-Fish Shell में स्ट्रिंग लंबाई के लिए बिल्ट-इन `count` फंक्शन के अलावा भी कई अन्य तरीके हैं। आप `wc` या `grep` कमांड को भी इस्तेमाल कर सकते हैं ताकि आप अपने सरल कोड को और भी बेहतर बना सकें।
+## गहराई में खोज
+
+पाठ स्ट्रिंग की लंबाई को प्राप्त करने के लिए, फिश शैल का बारामदा कार्य `string length` का उपयोग किया जाता है। यह कार्य दिए गए पाठ स्ट्रिंग की लंबाई को निर्धारित करता है। फिश शैल में `string length` को एक प्रभावी तरीके से उपयोग करने के लिए, आपको पाठ स्ट्रिंग को मूल्यांकन करना हो सकता है जिससे आप उस का उपयोग अन्य बारामदा कार्यों में कर सकें।
 
 ## देखें भी
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell tutorials](https://fishshell.com/docs/current/tutorial.html)
-- [Using strings in Fish Shell](https://fishshell.com/docs/current/tutorial.html#using-strings)
+- [फिश शैल विकी](https://fishshell.com/docs/current/index.html)
+- [फिश शैलल सीखें](https://fishshell.com/docs/current/tutorial.html)

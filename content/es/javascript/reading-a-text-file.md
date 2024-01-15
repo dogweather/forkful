@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Leer un archivo de texto"
-simple_title:         "Leer un archivo de texto"
+title:                "Leyendo un archivo de texto"
+html_title:           "Javascript: Leyendo un archivo de texto"
+simple_title:         "Leyendo un archivo de texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-La lectura de archivos de texto es una tarea esencial en la programación. Ya sea que estés extrayendo datos de un archivo CSV o leyendo un archivo de configuración, saber cómo leer un archivo de texto puede ser muy útil.
+La lectura de archivos de texto es una habilidad esencial en el desarrollo de Javascript. Ahora, más que nunca, la capacidad de leer y manipular datos de texto es crucial en la creación de aplicaciones web dinámicas y sofisticadas.
 
 ## Cómo hacerlo
-Para leer un archivo de texto en Javascript, podemos utilizar la función `readFileSync()` del módulo `fs`. Esta función acepta dos parámetros: la ruta del archivo y un objeto `options` que especifica la codificación del archivo.
-
-Por ejemplo, si queremos leer un archivo llamado "datos.csv" que está en la misma carpeta que nuestro archivo Javascript, podemos hacerlo de la siguiente manera:
-
 ```Javascript
-const fs = require('fs');
+let fs = require('fs'); // importar el módulo file system
 
-const datos = fs.readFileSync('datos.csv', { encoding: 'utf-8' });
-console.log(datos);
+// leer el archivo de texto de manera asíncrona
+fs.readFile('datos.txt', 'utf8', (err, data) => { 
+    if (err) throw err; // manejar errores
+    console.log(data); // imprimir los datos del archivo
+});
+
+// leer el archivo de texto de manera síncrona
+let data = fs.readFileSync('datos.txt', 'utf8'); 
+console.log(data); // imprimir los datos del archivo
 ```
 
-Este código leerá el archivo y lo almacenará en la variable `datos`, que luego podemos utilizar para manipular o mostrar los datos.
+Si se desea leer un archivo que no está en formato UTF-8, se puede especificar la codificación adecuada en el segundo parámetro de la función `readFile()` o en la función `readFileSync()`.
 
 ## Profundizando
-Hay varias formas de leer un archivo de texto en Javascript, dependiendo de tus necesidades. Por ejemplo, si necesitas leer un archivo de gran tamaño, puede ser más eficiente utilizar `createReadStream()` en lugar de `readFileSync()`. También puedes utilizar el módulo `path` para trabajar con rutas relativas y absolutas de archivos.
+Además de leer el contenido de un archivo de texto, es importante también conocer y manejar la estructura del mismo. Una vez que se ha leído el archivo, se puede dividir el contenido en líneas o en palabras utilizando funciones como `split()`, `match()`, `slice()` y `substr()`.
 
-Además, es importante tener en cuenta la codificación del archivo que estás leyendo. Si utilizas `readFileSync()` sin especificar la codificación, el resultado puede ser inexacto.
+También es posible manipular el contenido del archivo antes de imprimirlo o guardarlo en una variable, e incluso escribir en él utilizando la función `writeFile()` o `appendFile()`.
 
 ## Ver también
-- [Documentación de la función `readFileSync()`](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
-- [Documentación del módulo `path`](https://nodejs.org/api/path.html)
-- [Tutorial de lectura de archivos en Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Documentación oficial de Node.js sobre el módulo file system](https://nodejs.org/api/fs.html)
+- [Tutorial de codeburst sobre la lectura de archivos de texto en Javascript](https://codeburst.io/reading-a-file-with-node-js-9d5e8076686d)
+- [Artículo de Medium sobre la manipulación de archivos de texto en Javascript](https://medium.com/@anirudhgiri/reading-and-writing-text-files-in-javascript-local-file-system-462ffacc9702)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Herausziehen von Teilzeichenketten"
+html_title:           "Gleam: Herausziehen von Teilzeichenketten"
+simple_title:         "Herausziehen von Teilzeichenketten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,36 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Extrahieren von Teilzeichenfolgen ist eine häufige Aufgabe in der Programmierung. Es kann hilfreich sein, wenn Sie bestimmte Zeichen oder Wörter aus einem längeren Text extrahieren möchten. Mit Gleam können Sie diese Aufgabe schnell und einfach erledigen.
+Das Extrahieren von Substrings kann hilfreich sein, wenn man aus einer größeren Zeichenfolge bestimmte Teilstrings herausfiltern möchte. Zum Beispiel kann man so nur die Telefonnummer aus einer Adresszeile extrahieren oder eine URL aus einem Textabschnitt herausfinden.
 
-# Wie man es macht
+## Wie geht's
 
-Um Teilzeichenfolgen mit Gleam zu extrahieren, verwenden Sie die Funktion `String.substring()`. Hier ist ein Beispielcode, der die ersten 5 Zeichen eines Strings extrahiert:
-
-```Gleam
-let string = "Hallo, Welt!"
-let substring = String.substring(string, 0, 5) // substring = "Hallo"
-```
-
-Sie können auch die Länge des extrahierten Substrings angeben, wie in diesem Beispiel, der die ersten 10 Zeichen extrahiert:
+Die Gleam-Standardbibliothek bietet die Funktion `Substring.slice` an, um Substrings zu extrahieren. Diese Funktion nimmt zwei Argumente: die ursprüngliche Zeichenfolge und einen Bereich, der angibt, welcher Teil extrahiert werden soll. Der Bereich wird in Form eines Tupels angegeben, das die Anfangs- und Endposition des gewünschten Substrings enthält.
 
 ```Gleam
-let string = "Gleam ist fantastisch!"
-let substring = String.substring(string, 0, 10) // substring = "Gleam ist "
+// Definiere eine Zeichenfolge
+let text = "Hallo, mein Name ist Max Mustermann!"
+
+// Extrahiere den Teilstring "Max Mustermann" aus der Zeichenfolge
+Substring.slice(text, (18, 32))
+
+// Output: Max Mustermann
 ```
 
-# Tiefer Einblick
+Bei der Indexierung der Zeichenfolge werden die ersten beiden Zeichen als 0 und 1 gezählt. Das heißt, der erste Buchstabe hat den Index 0 und der letzte Buchstabe den Index der Länge der Zeichenfolge minus 1.
 
-Es ist wichtig zu beachten, dass der Index des ersten Zeichens in Gleam bei 0 beginnt. Dies bedeutet, dass das Zeichen an der Position 0 im Beispiel oben das "H" ist. Wenn Sie beispielsweise die ersten 3 Zeichen von "Hallo" extrahieren möchten, müssten Sie den Index von 0 bis 2 angeben.
+Man kann auch negative Indizes verwenden, um von hinten zu zählen. Dabei entspricht der Index -1 dem letzten Zeichen, -2 dem vorletzten Zeichen und so weiter.
 
-Es gibt auch eine `String.substr() `Funktion in Gleam, die ähnlich wie `String.substring()` funktioniert, außer dass Sie nur den Anfangsindex angeben müssen und der Substring bis zum Ende des Strings extrahiert wird.
+```Gleam
+// Definiere eine Zeichenfolge
+let text = "Hallo, mein Name ist Max Mustermann!"
 
-# Siehe auch
+// Extrahiere den Teilstring "Max Mustermann" aus der Zeichenfolge
+Substring.slice(text, (-15, -1))
 
-Hier sind einige nützliche Links, um mehr über das Extrahieren von Teilzeichenfolgen in Gleam zu erfahren:
+// Output: Max Mustermann
+```
 
-- Offizielle Gleam-Dokumentation: https://gleam.run/documentation
-- Gleam-Tutorial zum Arbeiten mit Zeichenfolgen: https://gleam.run/tutorials/strings
-- Gleam-Quellcode auf GitHub: https://github.com/gleam-lang/gleam
+Um sicherzustellen, dass es keine Fehler gibt, sollte man vor dem Extrahieren die Länge der Zeichenfolge überprüfen. Wenn man sichergehen möchte, dass die angegebenen Indizes innerhalb des erwarteten Bereichs liegen, kann man die Funktion `Substring.length` verwenden.
+
+```Gleam
+// Definiere eine Zeichenfolge
+let text = "Hallo, mein Name ist Max Mustermann!"
+
+// Überprüfe die Länge der Zeichenfolge
+let length = Substring.length(text)
+
+// Extrahiere den Teilstring "Max Mustermann" aus der Zeichenfolge
+if length >= 32 {
+  Substring.slice(text, (18, 32))
+} else {
+  "Text ist zu kurz."
+}
+
+// Output: Max Mustermann
+```
+
+## Eintauchen
+
+Um Substrings effektiv zu extrahieren, ist es wichtig, die Indexierung von Zeichenfolgen zu verstehen. In Gleam beginnen Indizes immer bei 0 und enden bei der Länge der Zeichenfolge minus 1. Negative Indizes zählen immer von hinten.
+
+Außerdem sollte man darauf achten, immer die Länge der Zeichenfolge zu überprüfen, um Fehler zu vermeiden.
+
+## Siehe auch
+
+- [Gleam-Standardbibliothek: Substring](https://gleam.run/modules/gleam_stdlib/string.html#fn.slice)
+- [Gleam-Dokumentation: Zeichenfolgen](https://gleam.run/book/tour/strings.html)
+- [Gleam-Kurs: Lektion 3 - Zeichenfolgen](https://gleam.run/courses/getting_started/lessons/strings.html)

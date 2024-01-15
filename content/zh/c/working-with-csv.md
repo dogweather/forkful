@@ -1,6 +1,7 @@
 ---
-title:                "C: 使用CSV进行编程"
-simple_title:         "使用CSV进行编程"
+title:                "与CSV的工作"
+html_title:           "C: 与CSV的工作"
+simple_title:         "与CSV的工作"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,60 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 为什么
 
-CSV是一种普遍使用的文件格式，它广泛应用于数据存储和交换中。如果您正在处理大量的数据集合，使用CSV文件格式可以让您更轻松地对数据进行操作和管理。
+CSV文件是一个常见的数据交换格式，它允许我们轻松地在不同的程序和系统之间共享数据。使用C语言处理CSV文件可以帮助我们更轻松地处理和分析数据，并将其应用于我们的实际项目中。
 
-# 如何操作CSV文件
+# 如何做
 
-如果您使用C语言进行编程，那么在处理CSV文件时可以很方便地使用标准库中的`csv.h`头文件。下面是一个简单的代码示例：
-
-```
+```C
 #include <stdio.h>
-#include "csv.h"
+#include <stdlib.h>
 
 int main() {
-    // 打开CSV文件
-    FILE *fp = fopen("data.csv", "rb");
-    
-    //读取文件中的数据并存储在一个csv_parser结构中
-    csv_parser *parser = csv_parser_new(fp);
-    
-    // 从CSV文件中逐行读取每条数据
-    while (csv_read_row(parser)) {
-        const char **row = csv_get_row(parser); //获得当前行的数据
-        
-        //输出每个数据字段的值
-        for (int i = 0; i < csv_num_fields(row); i++) {
-            printf("%s ", row[i]);
-        }
-        printf("\n");
-    }
-    
-    // 关闭文件
-    fclose(fp);
-    
-    // 释放parser内存
-    csv_parser_free(parser);
-    
-    return 0;
+  // 打开要处理的CSV文件
+  FILE *file = fopen("data.csv", "r");
+  
+  // 检查文件是否打开成功
+  if (file == NULL) {
+    printf("无法打开CSV文件。\n");
+    return -1;
+  }
+
+  // 创建一个二维数组来存储CSV文件中的数据
+  double data[10][3];
+  
+  // 使用循环来读取CSV文件中的数据，并存储到数组中
+  for (int i = 0; i < 10; i++) {
+    fscanf(file, "%lf,%lf,%lf", &data[i][0], &data[i][1], &data[i][2]);
+  }
+  
+  // 关闭文件
+  fclose(file);
+
+  // 打印数组中的数据来验证是否读取成功
+  for (int i = 0; i < 10; i++) {
+    printf("%.2f  %.2f  %.2f\n", data[i][0], data[i][1], data[i][2]);
+  }
+
+  return 0;
 }
 ```
 
-上面的示例代码将打开一个名为"data.csv"的CSV文件，并逐行读取其中的数据，然后将每条数据按空格分隔输出。下面是示例代码的输出结果：
+这段代码中，我们首先使用`fopen()`函数打开了一个名为`data.csv`的CSV文件，并指定了文件模式为“读取”（`r`）。然后，我们使用`fscanf()`函数来读取每一行数据，并将其存储到二维数组中。最后，我们使用`fclose()`函数关闭文件。通过循环打印数组中的数据，我们可以看到CSV文件中的内容已经成功地读取并存储到了数组中。
 
-> 2019/01/01 ProductA 1000.00  
-> 2019/01/02 ProductB 500.00  
-> 2019/01/03 ProductC 800.00  
+# 深入了解
 
-通过这种方式，您可以很轻松地读取CSV文件中的数据，并在程序中进行处理。
+要处理复杂的CSV文件，我们还可以使用C语言中的一些强大的库函数，比如`strtok()`来分割字符串和`atoi()`来将字符串转换为整数。另外，我们还可以使用`fprintf()`函数来将数据写入CSV文件，以及使用`fgets()`函数来读取一整行数据。在实际项目中，我们可以结合这些函数来更灵活地处理CSV文件，并根据具体需求进行操作。
 
-# 深入学习CSV
+# 参考文献
 
-如果您想要更深入地学习如何处理CSV文件，可以进一步了解`csv.h`头文件中提供的各种函数和结构。例如，您可以使用`csv_set_comment_char()`函数设置CSV文件中的注释字符，或者使用`csv_read_record()`函数来读取指定行的数据。
+- [C语言处理CSV文件的方法和技巧](https://blog.csdn.net/zsk875/article/details/93506377)
+- [C语言文本文件操作：fopen、fclose、fgets、fputs](https://www.cnblogs.com/ggjucheng/archive/2010/06/10/1755320.html)
+- [C语言处理字符串的方法大全](https://www.cnblogs.com/liangyue/p/8297078.html)
 
-此外，还建议您了解CSV文件的常用格式，例如每条数据都由逗号或制表符分隔，每条数据都以换行符结尾等。
+# 参见
 
-# 请参考
-
-- [csv.h头文件文档](https://www.poftut.com/csv-values-handling-in-c-open-source-csv-c-library/)
-- [关于CSV文件格式的简介](https://www.sohamkamani.com/blog/2016/10/14/parsing-csvs-in-c/)
-- [使用C语言处理CSV文件的实践](https://codereview.stackexchange.com/questions/216700/parsing-a-simple-csv-format-in-c)
+[CSV文件格式](https://zh.wikipedia.org/zh-hans/CSV)

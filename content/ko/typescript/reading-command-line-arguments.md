@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 명령 줄 인자 읽기"
-simple_title:         "명령 줄 인자 읽기"
+title:                "컴퓨터 프로그래밍의 기사 제목 : 명령 줄 인수 읽기"
+html_title:           "TypeScript: 컴퓨터 프로그래밍의 기사 제목 : 명령 줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍의 기사 제목 : 명령 줄 인수 읽기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,58 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##왜
+# 왜
 
-프로그래밍에서 커맨드 라인 인자를 읽는 것이 왜 중요한지 궁금하셨나요? 커맨드 라인 인자를 제대로 이해하고 활용하는 것은 코드를 더욱 유연하고 강력하게 만들 수 있습니다.
+## 왜 TypeScript로 커맨드 라인 인수를 읽어야 할까요?
 
-##어떻게 하면 될까요?
+커맨드 라인 인수를 읽는 것은 많은 개발에 필수적입니다. 프로그램에 입력을 제공하고 원하는 작업을 수행할 수 있도록 도와주는 것입니다. TypeScript를 사용하는 이유는 다음과 같습니다. 첫째, TypeScript는 자바스크립트의 일부를 포함하여 강력한 정적 타입 검사를 제공하므로 코드를 더욱 안전하고 예측 가능하게 만듭니다. 둘째, TypeScript는 모듈 시스템을 지원하여 코드의 구조와 유지 보수를 쉽게 만듭니다. 세번째, TypeScript는 많은 개발자들이 즐겨 사용하는 현대적인 언어이기 때문에 자바스크립트를 공부하고 익히는 데 많은 시간을 절약할 수 있습니다.
 
-커맨드 라인 인자를 읽는 것은 TypeScript에서도 간단하게 할 수 있습니다. 먼저, `process` 모듈을 이용하여 커맨드 라인 인자를 가져오는 방법을 살펴보겠습니다.
+# 어떻게
 
-```TypeScript
-// 코드 블록 1: 커맨드 라인 인자를 가져오는 예제
+## 커맨드 라인 인수를 TypeScript로 읽는 방법
 
-// process 모듈 불러오기
-import process from 'process';
+커맨드 라인 인수를 읽는 것은 매우 간단한 작업입니다. TypeScript에서 외부 라이브러리나 모듈 없이도 커맨드 라인 인수를 읽을 수 있습니다.
 
-// 인자 배열 가져오기
-const args = process.argv;
-
-// 첫 번째 인자 출력
-console.log(`첫 번째 인자: ${args[0]}`);
-```
-
-위의 코드 블록을 실행하면 커맨드 라인에서 실행한 파일의 경로가 첫 번째 인자로 출력될 것입니다. 또 다른 예제를 살펴보겠습니다.
+## 예제 코드
 
 ```TypeScript
-// 코드 블록 2: 숫자 인자의 합 구하기
-
-// process 모듈 불러오기
-import process from 'process';
-
-// 인자 배열 가져오기
+// process 객체에서 제공하는 argv 배열을 사용하여 커맨드 라인 인수를 읽을 수 있습니다.
 const args = process.argv;
-
-// 첫 번째 인자는 파일 경로이므로 제외하고 두 번째 인자부터 합을 구합니다
-let sum = 0;
-for (let i = 2; i < args.length; i++) {
-  sum += parseInt(args[i]);
-}
-
-// 합 출력
-console.log(`숫자 인자의 합: ${sum}`);
+// argv 배열의 첫번째 요소는 node 실행 파일의 경로이므로 제외하고 두번째 요소부터 실제 인수가 시작됩니다.
+// slice 함수를 사용하여 argv 배열에서 두번째 요소부터 끝까지를 새로운 배열로 만듭니다.
+const inputArgs = args.slice(2);
+console.log(inputArgs); // 입력한 커맨드 라인 인수 출력
 ```
 
-위의 코드를 실행하면 커맨드 라인에서 공백으로 구분된 숫자를 입력하면 그 숫자들의 합이 출력될 것입니다. 이처럼 커맨드 라인 인자를 활용하여 프로그램의 인자를 직접 전달할 수도 있습니다.
+### 예제 실행
 
-##심화 학습
+코드를 실행할 때 입력한 커맨드 라인 인수가 출력됩니다. 아래 예제는 "node index.ts arg1 arg2 arg3" 명령어를 입력한 후의 결과값입니다.
 
-커맨드 라인 인자를 읽는 방법에 대해 더 깊이 알아보겠습니다. `process.argv` 배열에는 첫 번째 인자로 파일 경로가 들어오고, 두 번째 인자부터 사용자의 입력이 들어옵니다. 이 인자들은 모두 문자열 형태로 저장되니 필요에 따라서 적절한 형변환을 해주어야 합니다. 또한, `process.argv` 이외에도 `process.argv0`을 통해 실행한 Node.js의 경로를 참조할 수 있습니다.
+![예제 실행 결과 이미지](./example-output.png)
 
-##참고 자료
+또 다른 방법으로는 "minimist"라는 외부 라이브러리를 사용하는 것입니다. 이 라이브러리는 입력된 커맨드 라인 인수를 파싱하여 쉽게 사용할 수 있는 객체로 만들어 줍니다.
 
-- [TypeScript Handbook: Command Line Arguments](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-2.html#support-for-command-line-arguments)
-- [Node.js v14.16.0 Documentation: Process](https://nodejs.org/api/process.html#process_process_argv)
-- [Understanding Command Line Arguments in Node.js](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js)
+```TypeScript
+import * as minimist from "minimist";
 
-##더 알아보기
+// minimist를 사용하여 입력된 커맨드 라인 인수를 파싱합니다.
+const args = minimist(process.argv.slice(2));
+// args 객체에서 원하는 인수를 가져와 사용합니다.
+console.log(args.arg1);
+console.log(args.arg2);
+console.log(args.arg3);
+```
+
+### 예제 실행
+
+위 예제 코드도 같은 명령어를 입력한 후 아래와 같은 결과값을 출력합니다.
+
+![예제 실행 결과 이미지](./example-output-2.png)
+
+# 딥 다이브
+
+## 커맨드 라인 인수 읽기의 원리
+
+커맨드 라인 인수를 읽는 원리는 매우 간단합니다. 우선 node 실행 파일의 경로와 실제 인수들이 담긴 문자열 배열이 process 객체에서 제공되는 argv 변수에 할당됩니다. 그리고 우리는 argv 배열에서 필요한 부분만 잘라내어 사용하면 됩니다.
+
+외부 라이브러리를 사용하는 경우에는 해당 라이브러리의 기능에 따라 인수들이 어떻게 파싱되고 처리되는지를 알아야 합니다.
+
+## 자세한 정보

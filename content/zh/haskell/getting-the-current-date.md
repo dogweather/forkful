@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Haskell: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,58 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编写程序时，获取当前日期是一个常见的需求。无论是记录日志、创建文件名或是实现时间敏感的业务逻辑，都需要使用到当前日期信息。因此，了解如何在Haskell中获取当前日期是非常重要的。
+获取当前日期是编写复杂程序或应用程序时的一项基本任务。Haskell提供了简单且强大的方法来获取当前日期，以便在程序中使用。
 
-## 如何做
-
-在Haskell中，我们可以使用`Data.Time`模块来获取当前日期。首先，我们需要导入这个模块：
+## 如何
 
 ```Haskell
-import Data.Time
-```
-
-然后，我们可以使用`getCurrentTime`函数来获取当前日期和时间的`UTCTime`类型值。这个函数的返回类型是`IO UTCTime`，所以我们需要使用`do`表达式来获取具体的日期和时间值：
-
-```Haskell
-currentTime <- getCurrentTime
-```
-
-我们可以使用`formatTime`函数将`UTCTime`类型的值格式化为想要的格式。例如，我们可以将其格式化为年-月-日的形式：
-
-```Haskell
-let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
-```
-
-最后，我们可以使用`putStrLn`函数来打印出当前日期：
-
-```Haskell
-putStrLn formattedDate
-```
-
-完整的代码如下：
-
-```Haskell
-import Data.Time
+import Data.Time.Clock
+import Data.Time.Format
 
 main = do
-  currentTime <- getCurrentTime
-  let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
-  putStrLn formattedDate
+    now <- getCurrentTime
+    printf "当前时间为：%s" (formatTime defaultTimeLocale "%d/%m/%Y %H:%M:%S" now)
 ```
 
-运行结果：
+运行代码后，将输出类似于 `当前时间为：18/06/2021 13:24:45` 的结果，其中日期和时间是根据当地时区和语言格式化的。
 
-```
-2021-10-16
-```
+## 深入探讨
 
-## 深入了解
+获取当前日期的基本方法是使用 `Data.Time.Clock` 和 `Data.Time.Format` 模块中的 `getCurrentTime` 和 `formatTime` 函数。`getCurrentTime` 返回系统的当前时间，以UTC格式表示，而 `formatTime` 函数可以将时间格式化为字符串，如前面示例中所使用的格式。
 
-Haskell中的`Data.Time`模块实现了一个名为`UTCTime`的类型，代表了世界标准时间（UTC），它是一个世界各地都使用的时间标准。通过使用`UTCTime`类型，我们可以保证在任何时区都能获取到相同的当前日期和时间。
+另一个有用的函数是 `getCurrentTimeZone`，它返回当前系统的本地时区。这可以避免使用 `getCurrentTime` 返回的UTC时间与本地时区相差的问题。
 
-除了`getCurrentTime`函数，`Data.Time`模块还提供了其他一些函数来获取不同格式的日期和时间值，详情可参考[官方文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)。
+但是，在某些情况下，格式化字符串中的日期和时间的顺序取决于语言设置。如果你的系统语言设置中的日期顺序与预期的不同，可以使用 `defaultTimeLocale` 更改它。
+
+另外，还有其他有用的日期和时间处理函数，如计算时间差，比较不同的时间等。你可以在官方的[Haskell文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)中查找更多信息。
 
 ## 参考链接
 
-- [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Data.Time模块文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Haskell官方文档：Data.Time.Clock模块](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+- [Haskell官方文档：Data.Time.Format模块](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)

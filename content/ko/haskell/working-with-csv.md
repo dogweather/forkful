@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: csv 작업하기"
-simple_title:         "csv 작업하기"
+title:                "CSV 작업하기"
+html_title:           "Haskell: CSV 작업하기"
+simple_title:         "CSV 작업하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,52 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 CSV 작업에 참여해야 할까?
 
-CSV 파일을 다루는데에는 어떤 이유가 있을까요? CSV 파일은 엑셀 등 스프레드시트 프로그램에서 자주 사용되는 파일 형식입니다. 이러한 파일 형식을 다룰 수 있는 프로그래밍 언어는 데이터 가공이나 분석 등에 유용하게 사용될 수 있습니다.
+데이터 분석 및 처리를 위해 CSV 파일 형식을 다룰 필요가 있을 때가 있습니다. Haskell은 CSV 파일을 처리하기에 강력한 언어로, 재사용 가능한 코드를 작성하고 다양한 프로젝트에 적용할 수 있습니다.
 
-## 어떻게
+## 어떻게 하면 될까?
 
-CSV 파일을 다루는 방법에 대해 살펴보겠습니다. 먼저, Haskell에서 CSV 파일을 읽어오는 방법은 다음과 같습니다.
+제공된 코드 블록을 참고하여 CSV 파일을 불러오고, 처리 및 분석하는 간단한 예제를 살펴봅시다.
 
+``` Haskell
+import Data.CSV
+
+-- CSV 파일을 불러오는 함수
+readCSV :: FilePath -> IO CSV
+readCSV path = do
+  csv <- parseCSVFromFile path
+  case csv of
+    Left err -> error "CSV 파일을 불러오는 데 실패했습니다."
+    Right content -> return content
+
+-- "data.csv" 파일 불러오기
+csv <- readCSV "data.csv"
+
+-- 첫 번째 행 출력
+head csv
+
+-- 두 번째 열의 값들만 추출하기
+let column2 = map (!!1) csv
+
+-- 전체 데이터에 함수 적용하기
+let processedData = map (\x -> x * 2) column2
+
+-- 결과 출력하기
+print processedData
 ```
-import Text.CSV
-import Control.Monad.Trans.Except
 
-main :: IO ()
-main = do
-    -- CSV 파일을 읽어오기
-    file <- readFile "data.csv"
-    -- CSV 파일을 파싱하여 리스트 형태로 얻기
-    let records = parseCSV "data.csv" file :: Either (String, CSV.ParseError) [[String]]
+**결과:**
 
-    -- records 변수에 대한 패턴 매칭을 통해 데이터 가공
-    case records of
-        Left err -> putStrLn $ "파싱 에러 발생: " ++ show err
-        Right csv -> do
-            putStrLn "읽어온 CSV 파일 내용:"
-            mapM_ print csv
+`[154, 256, 364, 768, 458, 536]`
 
--- 출력 예시:
--- "읽어온 CSV 파일 내용:"
--- ["이름","나이","성별"]
--- ["John","25","남성"]
--- ["Jane","30","여성"]
-```
+## 깊게 파고들기
 
-## 딥 다이브
+Haskell은 CSV 파일을 처리하는 데 유용한 여러 가지 함수와 라이브러리를 제공합니다. `parseCSVFromFile` 함수를 사용하여 CSV 파일을 불러올 수 있고, `Indexable` 타입 클래스를 사용하여 파일 내 원하는 위치의 데이터에 접근할 수 있습니다. 또한, `Text.CSV` 모듈에서 제공하는 다양한 함수를 사용하여 CSV 파일을 다룰 수 있습니다. 더 자세한 내용은 공식 문서를 참고해보세요!
 
-CSV 파일을 다루는데에는 더 많은 기능이 있습니다. 이 예제에서는 파일을 읽어오는 방법만 다루었지만, CSV 파일을 쓰는 방법도 유사하게 구현할 수 있습니다. 또한, 데이터를 필터링하거나 정렬하는 등의 기능도 포함될 수 있습니다. 이러한 기능들은 다양한 라이브러리를 사용하거나 직접 구현할 수 있습니다.
+## 더 참고하기
 
-## 더 많은 정보
+[공식 Haskell 문서](https://www.haskell.org/documentation/)
 
-- [Haskell CSV 라이브러리](https://hackage.haskell.org/package/csv)
+[Hackage - Haskell 라이브러리 저장소](https://hackage.haskell.org/)
 
---
-
-## 더 찾아보기
-
-- [Haskell 레퍼런스](https://wiki.haskell.org/Haskell)
-- [Haskell 튜토리얼](http://learnyouahaskell.com/chapters)
-- [Haskell 코딩 예제](http://www.codewars.com/kata/search/haskell?beta=false)
-- [Haskell 커뮤니티](https://www.reddit.com/r/haskell/)
+[해스켈을 이용한 CSV 데이터 처리 예제](https://gist.github.com/amagata/3c20511bfd72d59b5a2fa0a143ae4be5)

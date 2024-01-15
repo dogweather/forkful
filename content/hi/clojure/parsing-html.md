@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: एचटीएमएल पार्सिंग"
-simple_title:         "एचटीएमएल पार्सिंग"
+title:                "HTML का पार्सिंग"
+html_title:           "Clojure: HTML का पार्सिंग"
+simple_title:         "HTML का पार्सिंग"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,47 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-HTML पार्सिंग में लिप्त होने का कारण हो सकता हैं कि आप वेब साइटों से डेटा अथवा जानकारी जुटाना चाहते हों। HTML पार्सिंग आपको आसानी से विभिन्न वेब पेजों से जानकारी निकालने में मदद करता हैं।
+वेब डेवलपमेंट दुनिया में, एचटीएमएल सबसे लोकप्रिय माध्यम है वेब पेजों को दिखाने का। एचटीएमएल को समझने के लिए इन्हें पार्स करना आवश्यक है। तथा क्लोजर के माध्यम से पार्सिंग को बहुत ही आसान बना सकते हैं।
 
 ## कैसे करें
 
 ```Clojure
-(ns parse-html.core
-  (:require [clojure.data.xml :as xml]))
+; एचटीएमएल पार्सिंग के लिए क्लोजर का उपयोग
 
-(defn parse-html [url]
-  (let [html (slurp url)
-        parsed (xml/parse-html html)]
-    parsed))
+; हम वेब साइट से डेटा प्राप्त करने के लिए
+; ❭1। नेट्वर्क पिंग
+; ❭2। क्लाइंट गठन
+; ❭3। डॉक्यूमेंट क्रैफ्टिंग
+(use 'clojure.data.xml)
 
-(defn get-links [parsed-html]
-  (let [links (xml/attr parsed-html :a :href)]
-    (filter #(not (nil? %)) links)))
+; साइट का URL डेक्लेरलैड
+(def site "https://www.example.com)
 
-(defn get-heading [parsed-html]
-  (let [heading (xml/text parsed-html)]
-    heading))
+; हम कुछ डेटा निकालते हैं और उसे पार्सिंग करते हैं
+; ☋
 
-(defn get-elements [parsed-html]
-  (let [elements (xml/contents parsed-html)]
-    elements))
-
-(def url "https://example.com")
-
-;; output:
-;; Parse the HTML of a web page
-(get-heading (parse-html url)) ;; "Welcome to Example"
-(get-elements (parse-html url))
-;; ("<p>Hello there!</p>" "<a href="https://example.com/about">About</a>")
-(get-links (parse-html url)) ;; ("https://example.com/about")
+(def data (slurp site))
+(def parsed-data (parse (ByteArrayInputStream. (.getBytes data))))
 ```
 
-## गहराई में जाएं
+इस उदाहरण में, हमने वेब साइट https://www.example.com से डेटा निकाला और उसे पार्स किया है। हमने `clojure.data.xml` नामक लाइब्रेरी का उपयोग किया है जो कि क्लोजर में भेदभाव से हैंडल कर सकता है। हम `parse` फ़ंक्शन का इस्तेमाल कर डेटा स्ट्रिंग से `ByteArrayInputStream` बनाते हैं और उसे उचित तरीके से पार्स करते हैं। इस तरह, हम एचटीएमएल से डेटा प्राप्त कर सकते हैं और उसे क्लोजर में प्रोसेस कर सकते हैं।
 
-जब आप HTML पार्सिंग करते हैं, आप कुछ मुख्य चरणों को ध्यान में रखना चाहेंगे। सबसे पहले, आपको पेज को डाउनलोड करना होगा। इसके बाद, आपको उस HTML को पार्स करना होगा और उसमें प्रत्येक तुलनात्मक उपभाग को फॉर्मेट करना होगा। आप इसके बाद फॉर्मेटेड उपभागों का उपयोग करके डेटा और जानकारी को निकाल सकते हैं।
+## गहराई में
 
-## इसके अलावा
-
-- [HTML पार्सिंग विडियो ट्यूटोरियल](https://www.youtube.com/watch?v=5NAKOTy8sdA)
-- [Clojure रिक्शा: HTML पार्सिंग](https://risc.io/blog/2017/05/13/html-parsing-in-clojure)
-- [Clojure डॉक्यूमेंटेशन: clojure.data.xml](https://clojure.github.io/data.xml/)
+एचटीएमएल का पार्सिंग निर्विवाद एक अनिवार्य कौशल है। एक बार जब आप उसे समझ लेंगे, आप क्लोजर में अपने वेब डेवलपमेंट कौशल को दर्शाने के लिए तैयार हो जाएंगे। परंत

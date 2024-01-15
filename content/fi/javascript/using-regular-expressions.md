@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Säännöllisten lausekkeiden käyttö"
-simple_title:         "Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten ilmaisujen käyttö"
+html_title:           "Javascript: Säännöllisten ilmaisujen käyttö"
+simple_title:         "Säännöllisten ilmaisujen käyttö"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,30 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat hyödyllisiä työkaluja, kun haluat käsitellä ja etsiä tietoa tekstistä. Ne ovat erityisen käteviä, kun haluat löytää tietyn muotoisia sanoja tai ilmaisuja suuresta tekstimäärästä, kuten esimerkiksi luettelosta tai asiakirjasta.
+Säännölliset lausekkeet ovat voimakas työkalu, jota voi käyttää Javascriptissä tiedonkäsittelyssä. Ne tarjoavat yksinkertaisen ja tehokkaan tavan hakea ja manipuloida merkkijonoja. Joten, jos haluat säästää aikaa ja vaivaa tiedonkäsittelyssä, säännölliset lausekkeet ovat loistava apuväline.
 
-## Miten aloitat säännöllisten lausekkeiden käytön?
-
-Säännöllisten lausekkeiden käyttö aloitetaan *regexp*-funktion avulla. Voit luoda uuden regexp-olion ja määrittää haluamasi hakuehdot sisään. Esimerkiksi voit etsiä kaikki sanat, jotka alkavat "a"-kirjaimella seuraavalla koodilla:
+## Kuinka käyttää säännöllisiä lausekkeita?
 
 ```Javascript
-let regexp = new RegExp("^a\\w+"); // Hakee kaikki "a"-alkuiset sanat
+// Luo säännöllinen lauseke, joka etsii sanoja "Javascript" ja "ohjelmointi"
+const regex = /Javascript|ohjelmointi/;
+
+// Luo merkkijono, jossa haetaan säännöllisen lausekkeen avulla
+const text = "Javascript on loistava ohjelmointikieli.";
+
+// Käytä test-metodia tarkistamaan, löytyykö merkkijonosta haettuja sanoja
+console.log(regex.test(text)); // Output: true
+
+// Käytä replace-metodia vaihtaaksesi säännölliseen lausekkeeseen pohjautuvan merkkijonon uuteen
+console.log(text.replace(regex, "HTML ja CSS")); // Output: HTML ja CSS on loistava ohjelmointikieli.
 ```
 
-Jos haluat etsiä useampia hakuehtoja, voit käyttää erilaisia säännöllisten lausekkeiden metodeja, kuten `.test()` tai `.match()`. Näillä metodeilla voit tarkistaa, täyttyvätkö hakuehdot tekstissä ja/tai palauttaa tulokset taulukkona tai muuna datana. Käytännön esimerkkejä löydät [täältä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+Säännöllisiä lausekkeita voi käyttää myös monimutkaisempien haun ja manipuloinnin tehtävien suorittamiseen. Voit mm. käyttää määriteltyä säännöllistä lauseketta hakuun, vaihtaa merkkejä ja tarkistaa syötteen oikeellisuuden.
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+## Syvemmälle säännöllisiin lausekkeisiin
 
-Säännöllisten lausekkeiden hallitseminen voi tuntua aluksi haastavalta, mutta niiden käytön oppiminen kannattaa. Voit saavuttaa säännöllisten lausekkeiden avulla monia asioita, kuten:
+Säännöllisten lausekkeiden käyttö Javascriptissä on todella laaja-alaista. Voit käyttää erilaisia metodeja, kuten test, replace, search ja match, saadaksesi tarkemman käsityksen säännöllisten lausekkeiden toimintaperiaatteista ja mahdollisuuksista.
 
-- Yksinkertaistaa tekstin käsittelyä ja tarkistamista
-- Tehdä monimutkaisia muutoksia tekstiin
-- Parsia tietoa taulukoihin tai objekteihin helposti
-
-Hyvä tapa oppia säännöllisten lausekkeiden käyttöä on harjoitus: kokeile erilaisia hakuehtoja ja näet, miten ne vaikuttavat tuloksiin. Voit myös hyödyntää verkosta löytyviä oppaita ja oppimateriaaleja.
+On myös tärkeää ymmärtää eri merkitykset ja käyttötarkoitukset säännöllisiin lausekkeisiin liittyvistä erikoismerkeistä ja ilmauksista. Voit löytää lisätietoja säännöllisistä lausekkeista esimerkiksi MDN:n (Mozilla Developer Network) sivuilta.
 
 ## Katso myös
 
-- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Kokonaisvaltainen opas säännöllisiin lausekkeisiin (englanniksi)](https://regexone.com/)
-- [W3Schools - Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
+- [MDN: Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools: Säännölliset lausekkeet](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [JavaScript.info: Säännölliset lausekkeet](https://javascript.info/regular-expressions)

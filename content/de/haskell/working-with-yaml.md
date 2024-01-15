@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Arbeiten mit YAML"
+title:                "Arbeiten mit YAML"
+html_title:           "Haskell: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,52 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # Warum
+Ich meine, es gibt viele Gründe, in Haskell zu arbeiten, sei es wegen seiner funktionalen Programmierweise, seiner Mächtigkeit oder seiner Leichtigkeit. Aber was ist mit YAML? Nun, YAML ist eine einfache und menschenlesbare Datenformatierungssprache, die besonders nützlich ist, wenn man mit Konfigurationsdateien arbeitet. Mit Haskell können wir YAML in unsere Anwendungen integrieren und von seiner Einfachheit und Lesbarkeit profitieren.
 
-Haskell ist eine Programmiersprache, die für ihre Eleganz, Strenge und Ausdrucksstärke bekannt ist. Wenn Sie also auf der Suche nach einer effizienten und klar strukturierten Methode zum Verarbeiten von Daten sind, ist Haskell die richtige Wahl. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie wir YAML-Dateien verwenden können, um unsere Daten in Haskell zu verarbeiten.
+# Wie geht das?
+Um YAML in Haskell zu verwenden, müssen wir die Bibliothek "yaml" importieren. Als erstes müssen wir unser YAML-Dokument in einen Haskell-Datentyp umwandeln, indem wir die Funktion "decodeFileThrow" anwenden. Schauen wir uns ein Beispiel an:
 
-# Wie Gehe Ich Vor
-
-Um mit YAML in Haskell zu arbeiten, müssen Sie zunächst das "yaml" Paket importieren. Anschließend können Sie eine YAML-Datei in Ihrem Code öffnen und die Daten in ein passendes Format konvertieren. Hier ist ein Beispiel:
-
-```Haskell
+```
 import Data.Yaml
+
+data Book = Book
+    { title :: String
+    , author :: String
+    , year :: Int
+    }
 
 main :: IO ()
 main = do
-    -- Datei öffnen
-    file <- readFile "beispiel.yaml"
-    -- Daten in das passende Format konvertieren
-    let result = Data.Yaml.decode file :: Maybe [Int]
-    -- Ausgabe
-    case result of
-        Just numbers -> print numbers
-        Nothing -> print "Datei konnte nicht richtig gelesen werden."
+    book <- decodeFileThrow "book.yaml" :: IO (Maybe Book)
+    case book of
+        Nothing -> putStrLn "Fehler beim Dekodieren der YAML-Datei."
+        Just b -> print b
 ```
 
-In diesem Beispiel verwenden wir die "decode" Funktion aus dem "yaml" Paket, um die Daten in ein "Maybe"-Typ umzuwandeln. Das "Maybe" ist notwendig, da die YAML-Datei sowohl Zeichenketten als auch Nummern enthalten kann und wir uns nicht sicher sein können, welche Art von Daten wir erhalten werden.
+Im obigen Beispiel wird das YAML-Dokument "book.yaml" in den Datentyp "Book" umgewandelt. Wenn es erfolgreich ist, wird es ausgegeben, sonst wird eine Fehlermeldung angezeigt. Beachte, dass wir den Datentyp "Maybe Book" verwenden, da das YAML-Dokument möglicherweise nicht dem vorgegebenen Schema entspricht.
 
-Die Ausgabe wird in diesem Fall eine Liste von Zahlen sein, wie in der YAML-Datei angegeben. Beachten Sie, dass, falls die Datei nicht richtig gelesen werden kann, unsere Anwendung eine entsprechende Fehlermeldung ausgeben wird.
+# Tiefer in die Materie
+Wenn wir genauer in die Bibliothek "yaml" schauen, werden wir viele weitere Funktionen finden, die uns dabei helfen, YAML in Haskell zu verwenden. Zum Beispiel gibt es die Funktion "encode", mit der wir einen Haskell-Datentyp in YAML umwandeln können. Oder die Funktion "decodeThrow", die ähnlich wie "decodeFileThrow" funktioniert, aber Daten aus einem String anstatt aus einer Datei liest. Es gibt auch Funktionen, mit denen wir mit YAML-Dateien arbeiten und diese analysieren können. Wir empfehlen, sich mit den verschiedenen Funktionen vertraut zu machen, um die Bibliothek optimal zu nutzen.
 
-# Tiefer Eintauchen
-
-Eine wichtige Sache, die man bei der Arbeit mit YAML in Haskell beachten sollte, ist die Verwendung von benutzerdefinierten Typen. Um die Daten in eine benutzerdefinierte Struktur zu konvertieren, müssen Sie die "FromJSON"-Instanz der entsprechenden Typklasse für Ihren Datentyp definieren. Hier ist ein Beispiel:
-
-```Haskell
-data Person = Person
-    { name :: String
-    , age :: Int
-    , occupation :: String
-    } deriving Show
-
-instance FromJSON Person where
-    parseJSON (Object v) = Person <$> v .: "name" <*> v .: "age" <*> v .: "occupation"
-    parseJSON _ = mzero
-```
-
-In diesem Beispiel haben wir einen benutzerdefinierten Datentyp namens "Person" definiert und eine Instanz der "FromJSON"-Klasse erstellt, die die Konvertierung von YAML-Daten in ein "Person"-Objekt ermöglicht. Beachten Sie, wie wir die "object" und "v .:" Funktionen verwenden, um die entsprechenden Felder aus der YAML-Datei auszulesen und in unsere "Person"-Struktur einzufügen.
-
-# Siehe Auch
-
-- [Haskell Dokumentation zum YAML-Paket](https://hackage.haskell.org/package/yaml)
-- [Haskell-Kurs auf Codecademy](https://www.codecademy.com/learn/learn-haskell) (Englisch)
-- [YAML 1.2 Spezifikation](http://yaml.org/spec/1.2/spec.html) (Englisch)
+# Siehe auch
+- Offizielle Dokumentation der "yaml" Bibliothek: https://hackage.haskell.org/package/yaml
+- Ein Tutorial zur Verwendung von YAML in Haskell: https://www.stackbuilders.com/tutorials/haskell/yaml/
+- Weitere Informationen über YAML: https://yaml.org/

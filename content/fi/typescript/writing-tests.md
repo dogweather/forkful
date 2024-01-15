@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "TypeScript: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi Kirjoittaa Testejä
+## Miksi
+Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, joka auttaa varmistamaan koodin toimivuuden ja vähentämään virheiden määrää. Se myös auttaa tekemään muutoksia ja lisäyksiä helpommin ja nopeammin.
 
-Testien kirjoittaminen on tärkeä osa hyvää ohjelmistokehitystä. Ne auttavat varmistamaan, että koodi toimii odotetulla tavalla ja vähentävät virheiden riskiä. Ne myös helpottavat uusien ominaisuuksien lisäämistä ja vanhojen parantamista, koska testit voivat havaita mahdolliset rikkomukset.
+## Miten
+Testien kirjoittaminen TypeScriptillä on helppoa ja intuitiivista. Voit aloittaa luomalla uuden tiedoston *.test.ts ja kirjoittamalla testejä "```TypeScript ... ```" -lohkoihin. Esimerkiksi:
 
-## Kuinka Kirjoittaa Testejä
+```TypeScript
+// Luodaan testifunktio
+function add(x: number, y: number): number {
+    return x + y;
+}
 
-Testien kirjoittaminen TypeScriptillä on helppoa ja monipuolista. Voit käyttää esimerkiksi suositeltuja testauskirjastoja, kuten Jest, Mocha tai Jasmine.
+// Testataan funktiota
+describe("add-funktio", () => {
 
-Alla olevassa koodiesimerkissä käytetään Jest-kirjastoa. Ensimmäiseksi tarvitset asennettuna Jestin ja TypeScriptin, jotka voidaan asentaa npm-paketinhallintajärjestelmällä. Seuraavaksi voit luoda uuden testitiedoston esimerkiksi nimeltään "math.test.ts" ja lisätä siihen seuraavan koodin:
+    test("palauttaa oikean tuloksen", () =>{
+        expect(add(2, 3)).toEqual(5); // Odotetaan tuloksen olevan 5
+    });
 
-````TypeScript
-import { sum } from './math';
-
-describe('Math tests', () => {
-  test('sum function should return the correct value', () => {
-    expect(sum(2, 3)).toEqual(5);
-  });
+    test("palauttaa numeron", () =>{
+        expect(typeof add(2,3)).toEqual("number"); // Odotetaan numeron olevan paluuarvo
+    });
 });
-````
+```
 
-Tässä koodissa ensimmäiseksi tuodaan käytettäväksi math.ts-tiedostosta `sum`-funktio. Sitten testit suoritetaan `describe`-blokissa, jossa määritellään testien ryhmän nimi. `test`-funktiossa verrataan sum-funktion palauttaman arvon oikeaan arvoon käyttäen Jest-kirjaston `toEqual`-metodia.
+Yllä olevassa esimerkissä luomme yksinkertaisen funktion, joka lisää kaksi numeroa yhteen. Sen jälkeen testaamme tätä toimintoa käyttäen describe- ja test-lohkoja. Describe sisältää testiryhmän nimen ja testit sisältävät koodin, jota haluamme testata. Lopuksi käytämme expect-metodia arvioimaan testien onnistumista.
 
-Voit ajaa testit komennolla `npm test` ja näet tuloksen, jossa kerrotaan, onko testi läpäissyt vai ei.
+## Syvempi sukellus
+Testien kirjoittaminen auttaa varmistamaan, että koodi toimii oikein ja vähentää virheiden määrää ennen koodin julkaisua tai integrointia muihin projekteihin. Se myös auttaa parantamaan koodin laatua ja helpottaa jatkokehitystä. TypeScriptin avulla voit myös käyttää muita hyödyllisiä ominaisuuksia, kuten tyyppejä ja rajapintoja, testien kirjoittamisessa.
 
-## Syvemmälle Testien Kirjoittamiseen
-
-Testien kirjoittamisen syvällinen ymmärtäminen vaatii perehtymistä niiden eri osa-alueisiin, kuten unit-testaukseen, integraatiotestaukseen ja funktionaaliseen testaukseen. Unit-testauksessa testataan yksittäisiä komponentteja erillisinä, integraatiotestauksessa testataan eri komponenttien toimivuutta yhdessä ja funktionaalisessa testauksessa testataan järjestelmän käyttäytymistä loppukäyttäjän näkökulmasta.
-
-Lisäksi testien kirjoittamisessa on hyvä noudattaa hyviä käytäntöjä, kuten antipatternien välttämistä ja testien ylläpidon huomioimista.
-
-## Katso Myös
-- [Jest](https://jestjs.io/)
-- [Mocha](https://mochajs.org/)
-- [Jasmine](https://jasmine.github.io/)
+## Katso myös
+- [TypeScriptin viralliset dokumentaatiot](https://www.typescriptlang.org/docs)
+- [Jest-testikehys TypeScriptille](https://jestjs.io/docs/getting-started)
+- [Artikkeli testien kirjoittamisesta TypeScriptillä](https://medium.com/@allywit/typescript-and-testing-the-absolute-basics-2f32ab8c0b69)

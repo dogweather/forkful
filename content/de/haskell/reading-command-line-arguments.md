@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Haskell: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Programmierung, da es ermöglicht, Nutzerinteraktion zu ermöglichen und Programme flexibler zu gestalten. Das Verstehen dieses Konzepts ist daher für jeden angehenden Haskell-Programmierer von großer Bedeutung.
+Das Lesen von Befehlszeilenargumenten in Haskell ist eine nützliche Fähigkeit für Entwickler, die Programme schreiben und ausführen möchten, die mit Benutzereingaben interagieren. Durch das Verstehen dieser Funktion können Sie z.B. verschiedene Einstellungen für Ihr Programm festlegen oder es an individuelle Bedürfnisse anpassen.
 
-## So geht's
+## Wie geht's
 
-Das Lesen von Befehlszeilenargumenten in Haskell ist eine einfache Aufgabe, die mit Hilfe der `System.Environment`-Bibliothek durchgeführt werden kann. 
+Um Befehlszeilenargumente in Haskell auszulesen, müssen Sie zunächst das `System.Environment`-Modul importieren. Dann können Sie die Funktion `getArgs` verwenden, um eine Liste mit den übergebenen Argumenten zu erhalten. Diese Liste können Sie dann entsprechend verarbeiten. Hier ist ein Beispielcode:
 
 ```Haskell
 import System.Environment
 
 main = do
-    args <- getArgs
-    putStrLn ("Hallo, " ++ args !! 0 ++ "! Willkommen bei meinem Haskell-Blog!")
+  args <- getArgs
+  putStrLn ("Es wurden " ++ show (length args) ++ " Argumente übergeben:")
+  mapM_ putStrLn args
 ```
 
-Die `getArgs`-Funktion gibt eine Liste von Argumenten zurück, die an das Programm übergeben wurden. In diesem Beispiel wird das erste Argument verwendet, um eine personalisierte Willkommensnachricht auszugeben. 
-
-Die Ausgabe dieses Codes könnte wie folgt aussehen, wenn das Programm mit dem Argument "Lena" ausgeführt wird:
+Wenn wir diesen Code mit dem Befehl `runhaskell args.hs argument1 argument2` ausführen, erhalten wir die Ausgabe:
 
 ```
-Hallo, Lena! Willkommen bei meinem Haskell-Blog!
+Es wurden 2 Argumente übergeben:
+argument1
+argument2
 ```
 
-## Tiefgründiger Einblick
+## Tiefer Einblick
 
-Zusätzlich zu den Befehlszeilenargumenten kann das `System.Environment`-Modul auch verwendet werden, um auf verschiedene Umgebungsvariablen zuzugreifen. Diese könnten z. B. die aktuellen Einstellungen der Shell oder des Systems sein und können hilfreich sein, um Ihr Haskell-Programm anzupassen.
+Die Funktion `getArgs` liefert eine Liste vom Typ `IO [String]`, da es sich um eine Aktion in der `IO` Monad handelt. Dies bedeutet, dass wir innerhalb einer `do`-Blockstruktur arbeiten müssen, um das Ergebnis der `getArgs`-Funktion zu verwenden. Die Funktion `mapM_` in unserem Beispiel nimmt eine Funktion und eine Liste und führt die Funktion für jedes Element der Liste aus. Darüber hinaus können wir auch das erste Argument (den Befehlsnamen) aus der Liste der Argumente entfernen, indem wir `getProgName` verwenden.
+
+Weitere Informationen zu Command Line Arguments in Haskell finden Sie in der offiziellen Dokumentation des `System.Environment`-Moduls [hier](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html).
 
 ## Siehe auch
 
-- [Haskell-Dokumentation zu Befehlszeilenargumenten](https://www.haskell.org/cabal/users-guide/developing-packages.html#accessing-command-line-arguments)
-- [Haskell-Dokumentation zu Umgebungsvariablen](https://www.haskell.org/cabal/users-guide/developing-packages.html#accessing-the-environment)
-- [Interaktive Übung zum Lesen von Befehlszeilenargumenten](https://dev.stephendiehl.com/hask/#command-line-arguments)
+* [Einleitung zu Haskell](https://www.haskell.org/) - Offizielle Website von Haskell
+* [Hoogle](https://hoogle.haskell.org/) - Eine Suchmaschine für Haskell-Funktionen und -Module
+* [Learn You a Haskell](http://learnyouahaskell.com/) - Ein interaktives Online-Buch, das die Grundlagen von Haskell vermittelt

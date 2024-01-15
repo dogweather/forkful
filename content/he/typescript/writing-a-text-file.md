@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: כתיבת קובץ טקסט"
+title:                "כתיבת קובץ טקסט"
+html_title:           "TypeScript: כתיבת קובץ טקסט"
 simple_title:         "כתיבת קובץ טקסט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,72 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-
-למה לכתוב קובץ טקסט בכלל? המניע העיקרי לכתיבת קובץ טקסט הוא לייצר מידע או לשמור מידע שכבר קיים לשימוש מתוכנתים אחרים. ייתכן גם שתוכל להשתמש בקובץ טקסט כחלק מקוד אחר או כדי לשתף מידע עם אנשים אחרים.
+## מדוע
+למה לחבר קוד טקסט בכלל? יכול להיות קשה לראות את הטוב בדבר זה, אבל יש הרבה סיבות שכדאי לחבר קוד טקסט בפרויקטים שונים. לדוגמה, קבצי טקסט הם חיוניים לאתרים אינטרנט, אפליקציות ותוכניות מחשב, כי הם מאפשרים לנו לאחסן ולקרוא מידע בצורה פשוטה ומובנת.
 
 ## איך לעשות זאת
+הראשון, נצטרך להתקין את הכלי הנכון לפני שנוכל לבדוק קוד טקסט. ולמרבה המזל, ישנם כמה אופציות מעולות עבור זה. אחת מהן היא באמצעות טיפוסקריפט - שפת תכנות פופולרית שמאפשרת לנו לכתוב קוד בצורה נקייה ומובנת, וכמובן שהיא מותאמת במיוחד לכתיבה וקריאה של קבצי טקסט. נראה כיצד משתמשים בטיפוסקריפט לכתוב קוד טקסט:
 
-כתיבת קובץ טקסט בטיפוסקריפט היא פשוטה ונוחה. באמצעות הפעולות המתאימות והפונקציות, תוכל לכתוב ולקרוא קבצי טקסט בקלות. הנה דוגמאות לכתיבת וקריאת קובץ טקסט בטיפוסקריפט:
+```TypeScript
+// ייבוא מודול לקבוע אי־מרחב עבור הקוד
+import fs from "fs";
 
-```typescript
-// כתיבה לקובץ טקסט חדש
-const fs = require('fs');
-fs.writeFile('myFile.txt', 'Hello, world!', function (err) {
+// כתיבת פקודה ליצירת קובץ טקסט חדש
+fs.writeFile("new_file.txt", "שלום, עולם!", (err) => {
   if (err) throw err;
-  console.log('Successfully wrote to file!');
+  console.log("הקובץ נוצר בהצלחה!");
 });
 
-// קריאת קובץ טקסט קיים והצגת התוכן
-fs.readFile('myFile.txt', 'utf8', function (err, data) {
-  if (err) throw err;
-  console.log('File content: ', data);
-});
+// קריאה מקובץ טקסט קיים ושמירת התוכן במשתנה
+let content = fs.readFileSync("existing_file.txt", "utf-8");
+console.log(content); // ידפיס "שלום, עולם!"
 ```
 
-פלט:
+בקצרה, אנחנו משתמשים בפקודות ליצירת וקריאה של קבצי טקסט בטיפוסקריפט. המודול המיובא מאפשר לנו לבצע את כל הפעולות הנדרשות לכתיבה וקריאה של קבצי טקסט באופן נוח ומהיר.
 
-```shell
-Successfully wrote to file!
-File content: Hello, world!
-```
-
-אם תרצה להוסיף תוכן לקובץ טקסט קיים, תוכל להשתמש בפונקציית `appendFile()` כך:
-
-```typescript
-const fs = require('fs');
-
-// נוסף לקובץ טקסט קיים
-fs.appendFile('myFile.txt', 'This is an added line.', function (err) {
-  if (err) throw err;
-  console.log('Successfully added to file!');
-});
-```
-
-פלט:
-
-```shell
-Successfully added to file!
-```
-
-ניתן גם למחוק קובץ טקסט בטיפוסקריפט באמצעות הפונקציה `unlink()` כך:
-
-```typescript
-const fs = require('fs');
-
-// מחיקת קובץ טקסט קיים
-fs.unlink('myFile.txt', function (err) {
-  if (err) throw err;
-  console.log('Successfully deleted file!');
-});
-```
-
-פלט:
-
-```shell
-Successfully deleted file!
-```
-
-## חקירה מעמיקה
-
-כתיבת וקריאת קובץ טקסט היא פעולה חשובה בתכנות ובעבודה עם מידע. למרבה המזל, טיפוסקריפט
+## Deep Dive
+כתיבת קבצי טקס

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עובדים עם json"
+html_title:           "Elixir: עובדים עם json"
+simple_title:         "עובדים עם json"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה:
-תוכן זה יועיל לכל מתכנת שרוצה ללמוד איך לעבוד עם נתוני JSON בזהירות במהלך פיתוח בָּאלי־מקבע.
+## למה
 
-## איך לעבוד עם JSON ב-Elixir
-Elixir מספק כמה דרכים לעבוד עם JSON. אחת הדרכים הפשוטות היא להשתמש בפונקציה `Jason.encode!/1` כדי להמיר נתוני Elixir ל-JSON.
-```Elixir
-data = %{name: "ציפורי", age: 28}
-Jason.encode!(data)
+JSON הוא פורמט נתונים פופולרי ופשוט לשימוש, המאפשר תקשורת בין שפות תכנות שונות. אליקסיר מציע כלים יעילים לעבודה עם JSON ויכולת לטפל בו בקלות וביעילות.
+
+## איך לעבוד עם JSON באליקסיר?
+
+כדי להתחיל לעבוד עם JSON באליקסיר, ניתן להשתמש בפונקציות `import` ו `poison.decode` כדי להמיר את נתוני JSON למבנה מבושם באליקסיר. כאן מספר דוגמאות לכיצד לעבוד עם מבנה נתונים JSON באליקסיר:
+
 ```
-תוצאה:
-```json
-{"name": "ציפורי", "age": 28}
+# ניתוח נתוני JSON מורכבים:
+
+json = %{"name": "John", "age": 30, "pets": [%{"name": "Spot", "age": 5}, %{"name": "Spike", "age": 3}]}
+
+# פקודת ניקוי:
+
+clean_json = Poison.decode!(json)
+
+# מבנה החזרה יחזיר שם וגיל של כל משתמש, תוך התעלמות מהחיות המחמד שלהם:
+
+%{name: name, age: age} = clean_json
+IO.puts "#{name} is #{age} years old."
+# פלט: John is 30 years old.
+
+# בנייה של יוחסנים בתוך התוכנית:
+
+pets = Enum.map(clean_json.pets, fn(pet) -> pet.name end)
+# בחזרה לתוכנית עיקרית כאשר נמצאים מספר חיות מחמד:
+IO.puts "John has #{pets} as pets."
+# פלט: John has ['Spot', 'Spike'] as pets.
 ```
 
-אם ברצונך להמיר JSON לנתוני Elixir, תוכל להשתמש בפונקציה `Jason.decode!/1` כדי להמיר את מחרוזת ה-JSON למחרוזת של נתוני Elixir. לדוגמה:
-```Elixir
-json = ~s({"name": "ציפורי", "age": 28})
-Jason.decode!(json)
-```
-תוצאה:
-```Elixir
-%{name: "ציפורי", age: 28}
-```
+## עימוד עמוק
 
-כדי להתאים לנתוני טיפוס מסוים ב-Elixir, ניתן להשתמש בפונקציות הבאות:
-- `Jason.encode!/2` - כדי להמיר את הנתונים לפורמט JSON ולהוסיף מפתחים עבור כל ערך.
-- `Jason.encode!(2, keys: :atoms)` - כדי להמיר את הנתונים לפורמט JSON ולהתאים למפתחים של אטומים.
-- `Jason.encode!(2, keys: :strings)` - כדי להמיר את הנתונים לפורמט JSON ולהתאים למפתחים של מחרוזות.
+כאשר משתמשים באליקסיר לעיבוד נתוני JSON, יש לשים לב לכמה נקודות חשובות. למעשה, כדי לעבוד עם JSON באליקסיר, נתונים אלו חייבים להיות מבנה נתונים לא מסורתי. נתוני JSON חייבים להיות בתבנית תקינה ונמצאים בתוך תוכן Poison ছולו. ניתן למצוא מידע נוסף על איך לעבוד עם JSON באליקסיר ב[תיעוד הרשמי של Poison](https://hexdocs.pm/poison/).
 
-## עוזב עמקים
-כמו שאתה רואה, עבודה עם JSON פשוטה וקלה ב-Elixir תודות לקוד הפתוח של Jason. תוכל למצוא מידע נוסף על הספרייה ועל כיצד להשתמש בה באתר הרשמי של Jason ב- [GitHub](https://github.com/michalmuskala/jason). כמו כן, אתה יכול לראות דוגמאות נוספות ולהתנפץ בקהילת ה-Elixir על [Discord](https://discord.com/invite/elixir-lang) ו[Stack Overflow](https://stackoverflow.com/questions/tagged/elixir).
+## ראו גם
 
-# ראה גם:
-- [איך ליצור נושאים המייצגים OBJ ב-Elixir, בנספח עבודת ברברה מייזל
+למידע נוסף על עבודה עם אליקסיר, ניתן לבחון את [

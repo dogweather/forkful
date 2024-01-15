@@ -1,6 +1,7 @@
 ---
-title:                "Python: टेक्स्ट खोजना और बदलना"
-simple_title:         "टेक्स्ट खोजना और बदलना"
+title:                "पाठ को खोजना और प्रतिस्थापन करना"
+html_title:           "Python: पाठ को खोजना और प्रतिस्थापन करना"
+simple_title:         "पाठ को खोजना और प्रतिस्थापन करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Why
 
-कभी-कभी हमारे पास कई बार बदलने के लिए हरे काम होते हैं, जिन्हें हमारे प्रोग्राम में संशोधन करना आसान नहीं होता है। लेकिन ध्यान दें, यह सभी के लिए थोड़ा समय ले सकता है। इसलिए, हम बहुत समय बचा सकते हैं और अपने प्रोग्राम को अधिक प्रोफेशनल एवं अधिक ऑपरेटिंग प्रोग्राम बनाएंगे।
+Kya aapne kabhi text ko dhoondhne aur badlne ke liye bahut saare documents ko haath se edit karna pada hai? Yeh bahut time-consuming aur exhausting ho sakta hai. Isiliye, Python mai text searching aur replacing ke feature ka istemal karke aap apne documents ko asaani se edit kar sakte hain.
 
-## कैसे करें
+## How To
 
-इस ब्लॉग पोस्ट में, हम आपको Python में टेक्स्ट की खोज और बदलाव करने के तरीके सिखाएंगे। इन उदाहरणों के साथ, आप चरण-चरण प्रक्रिया को समझ सकेंगे और अपने प्रोग्राम में सामान्य बदलाव धन्यवाद तूफानों के बाद दिखाई देंगे।
+```Python
+# Sabse pehle, aapko apne document ko open karna hoga.
+file = open('document.txt', 'r')
 
+# Fir aapko woh string ya word jo aap replace karna chahte hain, specify karna hoga.
+search_string = "lorem"
+
+# Iske baad, woh string ya word jisse aap replace karna chahte hain, specify karna hoga.
+replace_string = "ipsum"
+
+# Ab hum `search_string` ko `replace_string` se replace karenge.
+document = file.read().replace(search_string, replace_string)
+
+# Humne `document` variable ko update kar liya hai, ab hum usse wapas se file mai save karenge.
+file = open('document.txt', 'w')
+file.write(document)
+file.close()
+
+# Aap dekh sakte hain ke `lorem` ab `ipsum` mai convert ho gaya hai.
 ```
-## Python में टेक्स्ट खोजें और बदलें
+Output: Yeh bahut **saral** hai!
 
-text = "मेरा नाम जॉन है, मैं एक पायथन डेवलपर हूं।"
-print(text.replace("पायथन", "Python"))
-```
+## Deep Dive
 
-आउटपुट:
+Aap dekh sakte hain ke humne `replace()` method ko use kar ke kaise text ko replace kiya hai. Yeh method string data type ki built-in method hai aur isse hum string mai se ek specific substring ko dusre substring se replace kar sakte hain.
 
-```
-मेरा नाम जॉन है, मैं एक Python डेवलपर हूं।
-```
+Humne yaha `r` mode ka istemal kiya hai `open()` function mai. Yeh mode file ko read karne ke liye hai. Iske alawa, humne `w` mode ka  istemal kiya hai file ko write karne ke liye. Agar aapne kisi dusri mode ka istemal kiya hai, toh aapko `r` mode se `w` mode mai switch karna hoga.
 
-इस उदाहरण में, हमने `replace()` फ़ंक्शन का उपयोग किया है जो `पायथन` को `Python` के साथ बदल देता है। आप अपने प्रोग्राम में किसी भी वाक्यांश को बदल सकते हैं जो आपको चाहिए और वैसे ही प्रक्रिया को अपनाएं।
+## See Also
 
-## गहराई में जाएं
-
-अब आप Python में टेक्स्ट को खोजने और बदलने के बारे में थोड़ा अधिक जानते हैं। आप इस फ़ंक्शन के अलावा `find()` और `count()` जैसे अन्य फ़ंक्शनों का भी उपयोग कर सकते हैं जो आपको अप
+- [Python String methods](https://www.w3schools.com/python/python_ref_string.asp)
+- [Python File handling](https://www.geeksforgeeks.org/file-handling-python/)
+- [Regular expressions in Python](https://www.programiz.com/python-programming/regex)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Convertendo uma string para minúsculas."
-simple_title:         "Convertendo uma string para minúsculas."
+title:                "Convertendo uma string para minúsculas"
+html_title:           "TypeScript: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,40 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para minúsculas?
+## Por que
 
-Há várias razões para se converter uma string para minúsculas ao trabalhar com programação em TypeScript. Uma das principais razões é padronizar os dados de entrada em um formato comum, facilitando a comparação e manipulação dos mesmos. Além disso, algumas funções e métodos específicos só funcionam corretamente com strings em minúsculas, portanto, é importante realizar essa conversão antes de utilizá-los.
+Muitas vezes é necessário converter uma string para letra minúscula ao lidar com dados de entrada ou fazer comparações de texto em uma aplicação TypeScript. Isso garante que todos os caracteres sejam tratados da mesma forma, independentemente de sua capitalização.
 
-## Como fazer:
+## Como fazer
 
 ```TypeScript
-// Exemplo de função para converter uma string para minúsculas
-function converterParaMinusculas(texto: string): string {
-    return texto.toLowerCase();
+const texto = "Olá, MUndo!";
+const textoMin = texto.toLowerCase();
+console.log(textoMin); // saída: "olá, mundo!"
+```
+
+Outra forma de fazer a conversão é usando a função `toLowerCase()` diretamente em uma variável ou objeto que contenha a string:
+
+```TypeScript
+let nome = "João";
+nome = nome.toLowerCase();
+console.log(nome); // saída: "joão"
+```
+
+## Deep Dive
+
+Ao converter uma string para letra minúscula, é importante lembrar que apenas as letras serão alteradas, os caracteres especiais como acentos e símbolos permanecerão os mesmos. Isso pode ser um problema ao realizar comparações de texto, pois é necessário tratar esses caracteres antes de fazer a comparação.
+
+Por exemplo, se tivermos a seguinte comparação:
+
+```TypeScript
+const texto1 = "café";
+const texto2 = "Café";
+if (texto1 == texto2) {
+    console.log("As strings são iguais!");
+} else {
+    console.log("As strings são diferentes!");
 }
-
-let textoEntrada: string = "ESTE TEXTO SERÁ CONVERTIDO PARA MINÚSCULAS";
-console.log(converterParaMinusculas(textoEntrada)); // saída: "este texto será convertido para minúsculas"
 ```
 
-No código acima, temos uma função simples que utiliza o método `toLowerCase()` da classe `string` para converter o texto para minúsculas. Basta passar a string desejada como parâmetro e a função irá retornar a mesma string em formato de letras minúsculas.
+A saída seria "As strings são diferentes!", pois a letra "C" maiúscula é considerada diferente da letra "c" minúscula.
 
-Além disso, é importante lembrar que a conversão para minúsculas é case sensitive, ou seja, as letras maiúsculas serão convertidas para suas respectivas minúsculas, mas as minúsculas já existentes permanecerão iguais.
+Para evitar essa situação, podemos usar a função `localeCompare()` para comparar as strings independentemente da capitalização:
 
 ```TypeScript
-let textoEntrada: string = "Este é um TEXTO de ExeMplO";
-console.log(converterParaMinusculas(textoEntrada)); // saída: "este é um texto de exemplo"
+const texto1 = "café";
+const texto2 = "Café";
+if (texto1.localeCompare(texto2) === 0) {
+    console.log("As strings são iguais!");
+} else {
+    console.log("As strings são diferentes!");
+}
 ```
 
-## Mergulho Profundo:
+A saída agora seria "As strings são iguais!", pois a função `localeCompare()` realiza a comparação levando em conta a ordem alfabética, independentemente da capitalização.
 
-Agora que já sabemos como converter uma string para minúsculas em TypeScript, podemos nos aprofundar um pouco mais e entender como isso é feito internamente.
+## Veja também
 
-Ao chamar o método `toLowerCase()` de uma string, o TypeScript utiliza a funcionalidade `toLocaleLowerCase()` do JavaScript. Essa funcionalidade retorna uma string com todas as letras convertidas para suas respectivas minúsculas, dependendo das regras do idioma fornecido. Por padrão, se nenhum idioma for especificado, a conversão será realizada de acordo com o idioma do ambiente em que o código está sendo executado.
-
-Outra coisa importante a se mencionar é que o método `toLowerCase()` não altera a string original, mas sim retorna uma nova string com as alterações realizadas. Portanto, para alterar a string original, é necessário atribuir o resultado do método a uma nova variável ou sobrescrever a variável original.
-
-## Veja também:
-
-- [Documentação Oficial do Método `toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Lista de Idiomas Disponíveis para Conversão](https://unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html)
+- [Documentação oficial do TypeScript para a função `toLowerCase()`](https://www.typescriptlang.org/docs/handbook/strings.html#lowercase-and-uppercase-strings)
+- [Função `localeCompare()` no JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)

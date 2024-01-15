@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Uzyskiwanie bieżącej daty"
+html_title:           "Rust: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -9,4 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## DlaczegoMiałeś kiedyś potrzebę sprawdzenia bieżącej daty w swoim programie w języku Rust? W tym blogu przedstawię Ci optymalną metodę na jej uzyskanie, dzięki czemu Twoje aplikacje będą zawsze pracować z najnowszym czasem.## Jak to zrobićRust jest przyjaznym językiem programowania, który oferuje wiele możliwości manipulacji datami. Aby uzyskać bieżącą datę, możesz skorzystać z wbudowanej biblioteki "chrono" i jej funkcji "Local::now()", która zwraca obiekt "DateTime" zawierający informacje o bieżącym czasie. Możesz również ustawić strefę czasową za pomocą metody "with_timezone()" i uzyskać datę dla konkretnego regionu. Poniżej znajduje się przykładowy kod w Rust:"``````Rustuse chrono::{Local, DateTime, TimeZone};fn main() { let now: DateTime<Local> = Local::now(); println!("Bieżąca data i czas: {}", now.format("%Y-%m-%d %H:%M:%S")); let ny_datetime: DateTime<Local> = now.with_timezone(&Region::America::New_York); println!("Bieżąca data i czas dla Nowego Jorku: {}", ny_datetime.format("%Y-%m-%d %H:%M:%S"));}``````"W rezultacie otrzymamy coś takiego:"``````Bieżąca data i czas: 2021-11-27 10:30:00 Bieżąca data i czas dla Nowego Jorku: 2021-11-27 04:30:00``````## Głębsze zanurzenieChociaż uzyskanie bieżącej daty może wydawać się proste, warto poznać bardziej zaawansowane manipulacje z nią. Na przykład, możesz określić datę o kilka dni lub godzin wcześniej lub później za pomocą metody "with_day()". Możesz również porównać daty i sprawdzić, która jest późniejsza za pomocą metody "cmp()". Warto także przejrzeć dokumentację biblioteki "chrono", aby poznać więcej możliwości manipulacji datami.## Zobacz równieżJeśli chcesz więcej informacji na temat pracy z datami w Rust, polecam zapoznać się z poniższymi odnośnikami:- [Dokumentacja biblioteki chrono](https://docs.rs/chrono/latest/chrono/)- [Przykłady użycia biblioteki chrono](https://crates.io/examples/chrono)- [Oficjalna strona języka Rust](https://www.rust-lang.org/pl)- [Blog Rust Polska](https://www.rust-lang.org/pl/blog)Dzięki tym informacjom będziesz w stanie swobodnie pracować z datami w swoich projektach w Rust. Nie wahaj się ich wykorzystać i ciesz się dokładnością czasu w swoich aplikacjach.## Zobacz również- [Dokumentacja biblioteki chrono](https://docs.rs/chrono/latest/chrono/)- [Przykłady użycia biblioteki chrono](https://crates.io/examples/chrono)- [Oficjalna strona języka Rust](https://www.rust-lang.org/pl)- [Blog Rust Polska](https://www.rust-lang.org/pl/blog)
+## Dlaczego
+
+Pobieranie bieżącej daty jest częstym zadaniem w programowaniu, szczególnie w przypadku aplikacji, które muszą wyświetlać aktualny czas lub datę wykonania określonej operacji. Dzięki językowi Rust możemy szybko i łatwo dostać obecną datę w naszych programach.
+
+## Jak to zrobić
+
+Język Rust oferuje kilka sposobów na pobieranie bieżącej daty. Najprostszym i najczęściej wykorzystywanym jest użycie standardowej biblioteki chrono, która dostarcza funkcji i typów do obsługi dat i czasów.
+
+W pierwszym kroku musimy zaimportować bibliotekę chrono, co można zrobić przy użyciu polecenia `use chrono::prelude::*;`. Następnie możemy użyć funkcji `Local::now()` aby uzyskać obecny czas i datę w lokalnej strefie czasowej. Poniższy kod przedstawia przykład pobierania bieżącej daty i wyświetlenia jej w konsoli:
+
+```Rust
+use chrono::prelude::*;
+
+fn main() {
+    let current_date = Local::now().format("%Y-%m-%d").to_string();
+    println!("Bieżąca data: {}", current_date);
+}
+```
+
+Output:
+
+```
+Bieżąca data: 2021-10-17
+```
+
+Możemy także uzyskać bieżący czas i datę w innych strefach czasowych, używając odpowiednich funkcji, takich jak `Utc::now()` dla Uniwersalnego Czasu Koordynowanego (UTC) lub `FixedOffset::east(8).now()` dla strefy czasowej GMT+8. Wszystkie te funkcje zwracają obiekt typu `DateTime` z dokładnym czasem i datą, które możemy sformatować według naszych potrzeb.
+
+## Głębszy wgląd
+
+Biblioteka chrono dostarcza wiele innych funkcji, takich jak obliczanie różnicy czasu między dwoma datami, konwersja między strefami czasowymi czy obliczanie dnia tygodnia dla danej daty. Dodatkowo, Rust udostępnia także moduł `std::time` z funkcjami, takimi jak `SystemTime::now()`, które pozwalają na pobranie obecnego czasu w postaci liczby sekund od startu komputera.
+
+Pamiętaj, że pobieranie daty i czasu w programowaniu jest zawsze zależne od strefy czasowej, w której się znajdujemy, dlatego ważne jest, aby dokładnie określić strefę czasową w naszych aplikacjach.
+
+## Zobacz także
+
+- [Dokumentacja biblioteki chrono](https://docs.rs/chrono)
+- [Poradnik o datach i czasie w języku Rust](https://learnrustwith.github.io/book/keywords/date_time.html)
+- [Dokumentacja modułu std::time](https://doc.rust-lang.org/std/time/)

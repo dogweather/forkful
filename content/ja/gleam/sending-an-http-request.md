@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 送信中のhttpリクエスト"
-simple_title:         "送信中のhttpリクエスト"
+title:                "HTTPリクエストを送信する"
+html_title:           "Gleam: HTTPリクエストを送信する"
+simple_title:         "HTTPリクエストを送信する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,51 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Gleamプログラミングのブログ記事
-
-## なぜ？
-
-HTTPリクエストを送信することの重要性について、わずか1-2文で説明します。Gleamプログラミングを行う際に、なぜHTTPリクエストを送信する必要があるのか、その理由をご紹介いたします。
+## なぜ
+ほとんどのwebアプリケーションは、HTTPリクエストを送信することでデータを取得したり送信したりすることに依存しています。Gleamでは、HTTPリクエストを送信することで、外部のAPIやサーバーとやり取りをすることができます。
 
 ## 方法
+まず、GleamのHTTPモジュールをインポートします。
+```
+Gleamモジュール
 
-コーディングの例と、"```Gleam ... ```"コードブロック内でのサンプルの出力を示します。これを参考に、GleamプログラミングにおけるHTTPリクエストの送信方法を実践的に学んでいきましょう。
-
-```Gleam
-// HTTPリクエストを送信するためのパッケージをインポートします
-import gleam/http.{Request, Response}
-
-// リクエストを作成し、例として"www.example.com"に送信します
-let request =
-  Request.get("https://www.example.com")
-
-// レスポンスを取得します
-let response = Response.send(request)
-
-// レスポンスから状態コードを取得し、表示します
-let status_code = Response.status_code(response)
-io.print("Status code: " ++ String.to_int(status_code))
-
-// レスポンスのボディを取得し、表示します
-let body = Response.body(response)
-io.print("Response body: " ++ body)
+import gleam/http
 ```
 
-上記のコードを実行すると、例えば"Status code: 200"や"Response body: Hello World!"といった出力が得られます。
+次に、送信したいHTTPリクエストの設定を行います。たとえば、GoogleのAPIからJSON形式のデータを取得する場合、以下のようにします。
+```
+リクエストを設定
 
-## ディープダイブ
+let request = http.request(
+    method: "GET",
+    url: "https://www.googleapis.com/books/v1/volumes",
+    headers: [(key: "Accept", value: "application/json")],
+    body: some(gleam/json/encode({"q": "Gleam programming"}))
+)
+```
 
-さらにHTTPリクエストの仕組みや機能について詳しくご紹介します。リクエストヘッダーやボディをカスタマイズする方法や、より複雑な形式のリクエストを送信する方法など、より高度なテクニックも解説します。
+設定したリクエストを送信し、結果を取得します。
+```
+リクエストを送信
 
-注意: 実際にHTTPリクエストを送信する際には、セキュリティ上の理由からアクセストークンやAPIキーなどの機密情報をコード内に直接記述しないようにお気を付けください。
+let response = http.send(request)
 
-## おわりに
+```
 
-ぜひこの記事を参考にして、GleamプログラミングにおけるHTTPリクエストの送信方法をマスターしてください。より高度な処理を行うためには、HTTPリクエストの機能をしっかりと理解することが大切です。
+最後に、結果を確認し、必要なデータを取得します。
+```
+結果を確認
 
-## 関連リンク
+case response {
+    Ok(resp) -> resp.body
+    Err(_err) -> HttpError
+}
+```
 
-- [Gleam公式ドキュメント: HTTPリクエストを送信する方法](https://gleam.run/articles/http-request)
-- [Gleam公式ドキュメント: レスポンスを処理する方法](https://gleam.run/articles/http-response)
-- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam)
-- [Gleamフォーラム](https://gleam.discourse.group/)
+## 深堀り
+リクエストを送信する際、さまざまなオプションを設定することができます。たとえば、ヘッダーやクエリーパラメーターの指定、Basic認証の追加などが可能です。詳細な設定方法については、Gleamの公式ドキュメントを参照してください。
+
+## さらに見る
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [GleamのHTTPモジュールについて](https://gleam.run/documentation/#http)

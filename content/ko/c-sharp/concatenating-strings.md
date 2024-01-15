@@ -1,6 +1,7 @@
 ---
-title:                "C#: 문자열 연결하기"
-simple_title:         "문자열 연결하기"
+title:                "문자열 연결"
+html_title:           "C#: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-왜 누군가가 문자열을 연결하는 것에 집중할까요? 문자열을 연결하는 것은 프로그래밍에서 매우 중요한 역할을 합니다. 이를 통해 여러 개의 문자열을 하나의 문자열로 결합하여 보다 복잡한 데이터를 다룰 수 있습니다.
+
+문자열을 연결하는 것의 중요성은 우리가 자주 수행하는 작업 중 하나입니다. 예를 들어, 이름과 성을 연결하여 전체 이름을 만들거나 여러 정보를 하나의 문자열로 합치는 경우가 있습니다. 이를 효과적으로 수행하기 위해서는 문자열을 연결하는 방법을 알고 있어야 합니다.
 
 ## 방법
-아래는 C#언어로 문자열을 연결하는 방법을 보여주는 예시 코드입니다.
+
+문자열을 연결하는 가장 간단한 방법은 "+" 연산자를 사용하는 것입니다. 아래는 두 개의 문자열을 연결하는 예시입니다.
 
 ```C#
-string firstName = "김";
-string lastName = "철수";
+string firstName = "John";
+string lastName = "Doe";
 string fullName = firstName + lastName;
 
 Console.WriteLine(fullName);
 ```
 
-위 코드를 실행하면 "김철수"라는 문자열이 출력됩니다. 이처럼 "+" 기호를 사용하여 두 문자열을 연결할 수 있습니다.
+출력은 `JohnDoe`가 될 것입니다.
 
-## 깊게 파보기
-단순히 문자열을 연결하는 것 외에도, C#에는 여러가지 문자열 연결 관련 기능이 있습니다. 예를 들어, 문자열 사이에 다른 문자열을 삽입하는 `String.Format()` 메소드나 동일한 문자열을 반복하여 연결하는 `String.Concat()` 메소드 등이 있습니다. 이러한 기능들을 적절히 활용하면 보다 다양한 문자열 조작이 가능해집니다.
+또한 여러 개의 문자열을 한 번에 연결할 수도 있습니다. 이 경우에는 `string.Join()` 메서드를 사용하면 됩니다. 아래는 세 개의 문자열을 연결하는 예시입니다.
 
-## 또 다른 자료
-- [C# String 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.string?view=netcore-3.1)
-- [C# 문자열 연결 관련 메소드 모음](https://www.tutorialsteacher.com/csharp/csharp-string-class)
-- [C# 문자열 연결 예시 코드](https://www.tutorialspoint.com/csharp/csharp_string_concatenation.htm)
+```C#
+string address = "123 Main St.";
+string city = "Seoul";
+string country = "South Korea";
+string fullAddress = string.Join(", ", address, city, country);
 
----
+Console.WriteLine(fullAddress);
+```
 
-## 참고 자료
-- [Markdown 기본 문법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-- [C# 공식 문서 번역 프로젝트](https://github.com/dotnet/csharpdocs)
+출력은 `123 Main St., Seoul, South Korea`가 될 것입니다.
+
+## 더 깊게 알아보기
+
+문자열을 연결하는 방법으로는 위의 예시 외에도 다양한 방법이 있습니다. 예를 들어, `StringBuilder` 클래스를 사용하는 것이 있습니다. 이는 여러 문자열을 하나의 문자열로 합칠 때 성능을 향상시킬 수 있는 방법입니다. 또한 `Format()` 메서드를 사용하여 문자열 내에 변수를 삽입할 수도 있습니다. 아래는 두 개의 변수를 사용하여 문자열을 연결하는 예시입니다.
+
+```C#
+string language = "C#";
+string version = "8.0";
+string intro = string.Format("This is {0} version {1}", language, version);
+
+Console.WriteLine(intro);
+```
+
+출력은 `This is C# version 8.0`이 될 것입니다.
+
+## 더 알아보기
+
+- [String Concatenation in C#](https://www.geeksforgeeks.org/string-concatenation-in-c-sharp/)
+- [Using String.Format in C#](https://www.c-sharpcorner.com/article/using-string-format-in-c-sharp/)
+- [Understanding the StringBuilder Class in C#](https://www.c-sharpcorner.com/article/understanding-the-stringbuilder-class-in-c-sharp/)
+
+## 관련 링크
+
+- [C# Tutorial for Beginners](https://www.tutorialspoint.com/csharp/index.htm)
+- [.NET Documentation](https://docs.microsoft.com/en-us/dotnet/)
+- [C# String Concepts](https://www.tutorialsteacher.com/csharp/csharp-string)

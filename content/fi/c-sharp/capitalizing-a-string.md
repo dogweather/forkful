@@ -1,6 +1,7 @@
 ---
-title:                "C#: Pienentäminen ja suurentaminen"
-simple_title:         "Pienentäminen ja suurentaminen"
+title:                "Tekstin ensimmäisten kirjainten suuraakkostaminen"
+html_title:           "C#: Tekstin ensimmäisten kirjainten suuraakkostaminen"
+simple_title:         "Tekstin ensimmäisten kirjainten suuraakkostaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi:
-Miksi kukaan haluaisi muuttaa merkkijonon kaikki kirjaimet ISOIKSI?
+## Miksi
 
-Vastaus on yksinkertainen - joskus on tarvetta muuttaa merkkijonoa eri muotoon. Tämä voi olla tarpeellista esimerkiksi tietokantakyselyiden tekemisessä, käyttäjän syötteen käsittelyssä tai yksinkertaisesti merkkijonon muotoilussa. Tässä blogikirjoituksessa opit, miten voit käyttää C#-kielen toimintoja muuttaaksesi merkkijonon kaikki kirjaimet isoiksi.
+Ilmeisesti haluat oppia, miten merkkijonoja suurennetaan C#-ohjelmoinnissa. Saatat tarvita tätä taitoa esimerkiksi käsitellessäsi käyttäjien syötteitä tai muokatessasi tietokannasta haettuja tietoja.
 
-## Kuinka:
-```C#
-string merkkijono = "Tämä on esimerkki merkkijonosta.";
+## Miten
 
-// Käytetään string-luokan ToUpper() -metodia muuttaaksesi merkkijonon kaikki kirjaimet isoiksi.
-string uusiMerkkijono = merkkijono.ToUpper();
-
-Console.WriteLine(uusiMerkkijono);
-// Uusi merkkijono on "TÄMÄ ON ESIMERKKI MERKKIJONOSTA."
-```
-
-Kuten yllä olevasta koodiesimerkistä näet, merkkijonon kaikkien kirjainten muuttaminen isoiksi on erittäin helppoa C#-kielen string-luokan ToUpper() -metodilla. Voit käyttää tätä metodia mihin tahansa merkkijonoon, joka sisältää vähintään yhden kirjaimen.
+C#-kielellä merkkijonon suurennus on suhteellisen yksinkertaista. Voit käyttää joko `ToUpper()` tai `ToLower()` -funktiota, riippuen siitä haluatko suurentaa koko merkkijonon vai muuttaa sen pieniksi kirjaimiksi.
 
 ```C#
-string nimi = "Finnish Readers";
+// Suurentaa koko merkkijonon
+string teksti = "Tämä on esimerkki";
+string suuriTeksti = teksti.ToUpper();
+Console.WriteLine(suuriTeksti); // TULOSTAA: TÄMÄ ON ESIMERKKI
 
-Console.WriteLine(nimi.ToUpper());
-// Uusi merkkijono on "FINNISH READERS"
+// Muuttaa merkkijonon pieniksi kirjaimiksi
+string teksti = "TOINEN ESIMERKKI";
+string pieniTeksti = teksti.ToLower();
+Console.WriteLine(pieniTeksti); // TULOSTAA: toinen esimerkki
 ```
 
-Mutta miten tämä toimii taustalla?
+## Syvemmälle
 
-## Syvempi sukellus:
-Kun käytät ToUpper() -metodia, C#-kieli muuttaa merkkijonon jokaisen kirjaimen ISOIKSI. Tämä perustuu siihen, että jokaiselle kirjaimelle on olemassa vastaava ISO-koodi. Esimerkiksi kirjaimelle "a" on olemassa kaksi eri ISO-koodia - "A" ja "a". Metodi tarkistaa jokaisen merkin ja korvaa sen ISO-koodilla, jos sellainen löytyy.
+Merkkijonon suurentaminen perustuu siihen, että jokaisella merkillä on oma ASCII-koodi. ASCII (American Standard Code for Information Interchange) on tavumerkistö, jossa jokaisella kirjaimella, numerolla ja erikoismerkillä on oma tietty numeroarvo.
 
-On myös hyvä huomata, että ToUpper() -metodi ei vaikuta merkkijonon alkuperäiseen muotoon, vaan se luo uuden merkkijonon, joka sisältää muutetut isot kirjaimet. Tämä on tärkeä huomioitava esimerkiksi silloin, kun käsittelet käyttäjän syöttämää tietoa ja haluat säilyttää alkuperäisen merkkijonon muodon.
+Suurentamalla merkkijonon C#-koodin avulla, jokainen merkki tarkastetaan ja muunnetaan vastaavaan ASCII-koodiin. Tämän jälkeen ASCII-koodia vastaava merkki tulostetaan suurella kirjaimella.
 
-## Katso myös:
-- [String-luokka (C#-ohjelmointiopas)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string?view=net-5.0)
-- [ToUpper() -Metodi (C#-ohjelmointiopas)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.toupper?view=net-5.0)
+## Katso myös
+
+- [C#-dokumentaatio merkkijonon suurentamisesta](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
+- [ASCII-taulukko](https://www.ascii-code.com/)

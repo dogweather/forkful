@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Elixir recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Writing Tests is Important in Elixir
+## Why
+Writing tests is an essential part of software development, regardless of the language used. It ensures that the code works as expected and catches any potential bugs. In Elixir, testing also plays a crucial role in maintaining the reliability and fault-tolerance of the code, making it a necessary practice for any Elixir developer.
 
-Writing tests is an essential part of any software development process, and Elixir is no exception. By writing tests, you can ensure that your code runs as intended and avoid potential bugs and errors. Additionally, tests serve as documentation for your code, making it easier for other developers to understand and contribute to your project. Overall, writing tests allows for a more reliable and efficient development process.
-
-## How To Write Tests in Elixir
-
-To write tests in Elixir, we will be using the built-in testing framework, ExUnit. Let's start by creating a new file called "calculator_test.exs" and adding the following code:
+## How To
+To start writing tests in Elixir, you first need to create a `test` directory in your project. This is where all your test files will be located. In each test file, you can write tests using the `defmodule` and `deftest` macros. Here's an example:
 
 ```Elixir
-defmodule CalculatorTest do
+defmodule MathTest do
   use ExUnit.Case
-
-  test "addition test" do
-    assert Calculator.add(2, 3) == 5
+  # 1
+  test "addition" do
+    # 2
+    assert 1 + 2 == 3
   end
 end
 ```
 
-In this test, we are testing the "add" function in our calculator module. We use the "assert" macro to check if the output of our function matches the expected result. To run this test, we can use the command `mix test` in our terminal. If all goes well, we should see a passing test! 
+1. `use ExUnit.Case` provides the necessary testing functionality.
+2. Inside the `test` macro, you can write your test case using the `assert` macro.
 
-## Deep Dive into Testing in Elixir
+Once you have written your test cases, you can run them using the command `mix test` in your terminal. You will see the output of each test case, along with a summary of the total number of tests passed and failed.
 
-One of the unique features of Elixir's testing framework is the use of "doctests" in addition to traditional unit tests. Doctests allow for documentation and testing to be combined, making it easier to keep your documentation up to date. We can add doctests to our calculator module by modifying the code as follows:
+## Deep Dive
+Elixir's testing framework, ExUnit, provides several macros and assertions to help write effective tests. Some of the common macros include `setup` and `teardown` which are run before and after each test respectively. This helps with setting up any necessary data or environment for testing.
 
-```Elixir
-defmodule Calculator do
-  @moduledoc """
-  A module for basic calculations.
-  """
+When writing more complex tests, you can also use the `ExUnit.CaptureIO` module to capture and test outputs to the console or file.
 
-  @doc """
-  Adds two numbers together.
-  
-  ## Examples
-
-      iex> Calculator.add(2, 3)
-      5
-  
-  """
-  def add(x, y) do
-    x + y
-  end
-end
-```
-
-Now, when we run `mix test`, we will see both our unit test and doctests being executed. This allows for more comprehensive testing and documentation within our code.
+One of the key principles of testing in Elixir is the concept of "mocking". This involves replacing external or expensive calls with simple and predictable responses to isolate the behavior being tested. The `ExUnit.Callback` module provides utilities for mocking functions.
 
 ## See Also
-- [ExUnit documentation](https://hexdocs.pm/ex_unit/ex_unit.html)
-- [Elixir School's guide on testing](https://elixirschool.com/en/lessons/basics/testing/)
-- [Testing in Elixir: A Comprehensive Guide](https://thoughtbot.com/blog/testing-in-elixir-a-comprehensive-guide)
+- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School article on testing](https://elixirschool.com/en/lessons/basics/testing/)
+- [ElixirConf talk on writing maintainable tests](https://www.youtube.com/watch?v=5hbas0iZ6wg)

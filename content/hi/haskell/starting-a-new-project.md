@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: एक नए परियोजना की शुरुआत"
-simple_title:         "एक नए परियोजना की शुरुआत"
+title:                "नई परियोजना शुरू करना"
+html_title:           "Haskell: नई परियोजना शुरू करना"
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -9,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon: Naye project shuru karne ka *kyon* karein?
 
-नई प्रोजेक्ट शुरू करने के लिए कोई क्यों होगा? अधिकांश लोगों के लिए, एक नया प्रोजेक्ट शुरू करना उनके कॉम्प्यूटर प्रोग्रामिंग कौशल को सुधारने और नए कॉडिंग कॉन्सेप्ट्स को सीखने के लिए एक बहुत अच्छा तरीका है।
+Agar aap naye samay me kuch naya sikhna chahte hai aur tezi se grow karna chahte hai, toh naye project shuru karna ek accha vikalp ho sakta hai. Haskell se shuru karne me madad karega aur aapko functional programming aur strong typing concepts samjhne me help karega.
 
-## कैसे करें
+## Kaise Shuru Karein: Kood ke Udaaharan aur Sample Output
 
-हासकेल हिन्दी प्रोग्रामिंग के लिए एक बहुत ही मजबूत भाषा है। उदाहरण के लिए, हम यहां एक वर्ग को कैसे बनाया जा सकता है, उसके अंदर कौन से फंक्शन शामिल हो सकते हैं और उसके परिणाम क्या हो सकते हैं उससे जानकारी देंगे।
+Haskell me code likhna kaafi aasaan hai. Yaha kuch udaharan hai jo aapko help karenge naye project shuru karne me:
 
-```Haskell
--- एक नया तालिका बनाएं
-newTable :: [a] -> [a] -> [(a,a)]
-newTable xs ys = [(x,y) | x <- xs, y <- ys]
+```
+-- Hello World
+main = putStrLn "Namaste, duniya!"
 
--- अब हम इस तालिका के कुछ अंश देख सकते हैं
-newTable [1,2] [3,4]
+-- Simple math operation
+add :: Int -> Int -> Int
+add x y = x + y
 
--- परिणाम:
--- [(1,3),(1,4),(2,3),(2,4)]
+-- Output: 15
+add 5 10
 ```
 
-## गहरी खोज
+Yaha `main` function ko dekhein jo program ka entry point hai. `putStrLn` function string ko terminal me print karne ke liye use hota hai. Dusra udaharan me `add` function hai jo do integers ka sum return karta hai. Phir `add` function ko 5 aur 10 ke saath call kiya jata hai. Iska output 15 hoga.
 
-किसी नए प्रोजेक्ट को शुरू करने का अध्ययन करने के बाद, यह महत्वपूर्ण है कि हम अपने इरादे को स्पष्ट करें और उसे सकारात्मक और संभव होने वाला बनाएं। हमें प्रोजेक्ट के लिए उपयुक्त लाइब्रेरी का चयन करना प्रभावी होता है।
+## Gehri Jhanjhavat
 
-इसके अलावा, हमें अपने प्रोजेक्ट के लिए एक अच्छा स्ट्रक्चर का चयन करना चाहिए जो खास उद्देश्यों को पूरा कर सकता है और हमारे कोड को स्पष्ट रूप से संगठित करता है।
+Naya project shuru karne se pehle kuch points ka dhyan rakhna important hai. Haskell me code likhte waqt type safety ka dhyan dena jaruri hai. Type errors ko handle karna kaafi aasan hai aur code ki quality aur maintainability ko improve karta hai. Haskell me mutable variables nahi hote jisse concurrency issues kam hote hai.
 
-## देखें भी
+Naya project shuru karne se pehle ek acchi design aur architecture plan karna bhi important hai. Functional programming ki philosophy me pure functions ka use kiya jata hai jo side-effects se door hote hai. Isse maintainability aur testing asaan hota hai.
 
-- [हासकेल की आधिकारिक वेबसाइट](https://www.haskell.org/)
-- [हासकेल को स
+## Jahan Dekhein
+
+- [Haskell Tutorial](https://www.haskell.org/tutorial/)
+- [Learn You a Haskell](http://learnyouahaskell.com/)
+- [Real World Haskell](http://book.realworldhaskell.org/)
+
+## Dekhne ke liye
+
+- [Haskell Meets Github](https://haskellmeet.github.io/)
+- [Haskell Discord Server](https://discordapp.com/invite/CGDWfqT)
+- [Haskell Subreddit](https://www.reddit.com/r/haskell/)

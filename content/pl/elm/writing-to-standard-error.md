@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Pisanie do standardowego błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Elm: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,24 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie w Elm jest pozbawione wielu typowych błędów, które często występują w innych językach. Jednakże, czasami nadal możemy potrzebować wyjątkowej funkcjonalności. W takich sytuacjach, zapisywanie do błędu standardowego może być bardzo pomocne. W tym artykule dowiemy się dlaczego warto to robić.
+Pisanie do standardowego wyjścia błędu jest niezbędną częścią programowania w Elm. Pozwala nam szybko i efektywnie diagnozować problemy i błędy w naszych aplikacjach. W tym artykule omówimy podstawowe informacje na temat pisania do standardowego wyjścia błędu w Elm oraz pokażemy przykładowe kody.
 
 ## Jak to zrobić
 
-Aby zapisać do błędu standardowego, możemy skorzystać z funkcji `Debug.log` dostępnej w module `Debug`. Na przykład:
+Możemy napisać do standardowego wyjścia błędu w Elm za pomocą funkcji `Debug.crash` lub `Debug.fatal`. W obu przypadkach podajemy komunikat, który chcemy wyświetlić w konsoli. Oto przykład użycia `Debug.crash`:
 
 ```Elm
-Debug.log "Debug message" "This is the debug output"
+import Debug exposing (crash)
+
+age : Int
+age = 25
+
+main =
+  if age < 18 then
+    "Jesteś niepełnoletni!"
+  else if age > 18 && age < 65 then
+    "Jesteś dorosły!"
+  else
+    crash "Jesteś emerytem!"
+```
+Wynik powyższego kodu będzie wyglądać tak:
+
+```
+crash "Jesteś emerytem!"
+^Jesteś emerytem!
 ```
 
-Spowoduje to wyświetlenie wiadomości "Debug message" w razie użycia opcji debugowania podczas kompilacji w przeglądarce. Wynik zmiennej "This is the debug output" zostanie wyświetlony w konsoli błędów.
+## Wchodzi głębiej
 
-## Głębszy wgląd
+Możemy także dostosować wyświetlane informacje dodając do wywołania funkcji `Debug.crash` nazwę funkcji, która zawiera błąd oraz informację debugową. Przykładowo:
 
-Korzystanie z `Debug.log` jest szczególnie przydatne przy debugowaniu kodu, kiedy potrzebujemy śledzić wartości poszczególnych zmiennych i funkcji. Pozwala to na bardziej precyzyjne zlokalizowanie ewentualnych błędów i usprawnienie procesu rozwiązywania problemów. Jednak należy pamiętać, że funkcja ta jest przeznaczona tylko do celów debugowania i nie powinna być używana w kodzie produkcyjnym.
+```Elm
+import Debug exposing (crash)
 
-## Zobacz też
+age : Int
+age = 25
 
-- Dokumentacja Elm: https://elm-lang.org/docs
-- Przewodnik po języku Elm: https://guide.elm-lang.org/
-- Artykuł o tym jak pisać bezpieczny kod w Elm: https://engineering.pivotal.io/post/guaranteed-functional-reactive-programming-in-elm-part-3/
+calculatePercentage : Float -> Float -> Float
+calculatePercentage numerator denominator =
+  if denominator == 0 then
+    crash "calculatePercentage" "Denominator cannot be 0."
+  else
+    (numerator / denominator) * 100
+
+main =
+  calculatePercentage 50 0
+```
+
+Wynik:
+
+```
+calculatePercentage "Denominator cannot be 0."
+^calculatePercentage "Denominator cannot be 0."
+```
+
+## Zobacz także
+
+Dla dalszego zgłębienia tematu pisania do standardowego wyjścia błędu w Elm, polecamy zapoznanie się z oficjalną dokumentacją: 
+
+- https://package.elm-lang.org/packages/elm/core/latest/Debug#crash
+- https://package.elm-lang.org/packages/elm/core/latest/Debug#fatal

@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Trabajando con yaml"
+title:                "Trabajando con yaml"
+html_title:           "Gleam: Trabajando con yaml"
 simple_title:         "Trabajando con yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,48 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Qué Trabajar con YAML en Programación
+## Por qué
 
+YAML es un formato de serialización de datos muy utilizado en el mundo de la programación. Es un lenguaje simple y legible para humanos que permite representar datos estructurados de una manera fácil de entender y procesar. En este artículo, aprenderás cómo trabajar con YAML utilizando el lenguaje de programación Gleam.
 
-Si estás buscando una forma sencilla de almacenar y manejar datos estructurados en tu proyecto de programación, entonces YAML es tu respuesta. Con YAML, puedes crear archivos de configuración legibles para humanos que también son fácilmente procesables por las computadoras. ¡Sigue leyendo para descubrir cómo utilizar YAML en tu proyecto Gleam!
+## Cómo hacerlo
 
-## Cómo Utilizar YAML en Gleam
+Para empezar a trabajar con YAML en Gleam, primero debes importar el módulo `yaml` en tu archivo de código:
 
-Antes de empezar a utilizar YAML en Gleam, debes asegurarte de tener instalada la biblioteca de YAML correspondiente. Luego, para cargar un archivo YAML en Gleam, puedes utilizar el módulo `yaml` y la función `decode_file` de la siguiente manera:
-
-```
-Gleam import yaml
-
-let user = yaml.decode_file("config.yml")
-
+```Gleam
+import yaml
 ```
 
-En este ejemplo, estamos cargando un archivo `config.yml` y almacenando sus datos en la variable `user`.
+Una vez que hayas importado el módulo, puedes utilizar la función `yaml.decode` para convertir un archivo YAML en un objeto de Gleam:
 
-Para trabajar con los datos del archivo YAML, puedes utilizar la función `get` para acceder a los valores de un campo específico. Por ejemplo:
-
-```
-Gleam let email = user.get("email")
-```
-
-También puedes utilizar la función `set` para agregar o modificar valores en tu archivo YAML. Por ejemplo:
-
-```
-Gleam user.set("name", "Juan")
+```Gleam
+yaml_string = "name: John\nage: 25"
+person = yaml.decode(yaml_string)
 ```
 
-Estas son solo algunas de las funcionalidades básicas que puedes realizar con YAML en Gleam. ¡Experimenta y encuentra la forma más adecuada para utilizarlo en tu proyecto!
+En este ejemplo, estamos utilizando una cadena de texto con datos en formato YAML y la función `yaml.decode` para convertirla en un objeto de Gleam llamado `person`. Ahora podemos acceder a los datos en el objeto de la siguiente manera:
 
-## Profundizando en el Uso de YAML
+```Gleam
+person.name // Retorna "John"
+person.age // Retorna 25
+```
 
-Aunque hemos cubierto lo esencial para empezar a trabajar con YAML en Gleam, hay muchas más funcionalidades que puedes descubrir y aplicar en tu código. Por ejemplo, puedes utilizar la función `encode` para convertir datos de Gleam en archivos YAML. También puedes utilizar la notación de llaves y valores para crear una estructura de datos más compleja en un solo archivo YAML.
+También podemos utilizar la función `yaml.encode` para convertir un objeto de Gleam en una cadena de texto con formato YAML:
 
-Otra funcionalidad muy útil es la posibilidad de dividir tu archivo YAML en múltiples documentos, lo que te permite tener diferentes configuraciones para distintos entornos. También puedes utilizar comentarios para hacer anotaciones en tu archivo YAML.
+```Gleam
+person = {name: "John", age: 25}
+yaml_string = yaml.encode(person) // Retorna "name: John\nage: 25"
+```
 
-En resumen, trabajar con YAML en Gleam te da una manera conveniente y legible de manejar tus datos. ¡Así que no dudes en utilizarlo en tu próximo proyecto!
+Puedes utilizar estas funciones para trabajar con archivos YAML en tu código de Gleam, ya sea para leer datos de un archivo o para guardar datos en uno nuevo.
 
-## Ver También
+## Profundizando
 
-- Documentación oficial de YAML: https://yaml.org/
-- Documentación de la biblioteca Gleam YAML: https://gleam.run/modules/yaml
-- Ejemplos de uso de YAML en Gleam: https://github.com/gleam-lang/yaml/tree/main/examples
+Ahora que sabes cómo utilizar YAML en Gleam, aquí hay algunos consejos adicionales para trabajar de manera más eficiente con este formato de datos.
+
+- Si estás trabajando con un archivo YAML grande, puedes utilizar la función `yaml.decode_stream` en lugar de `yaml.decode`. Esto te permitirá leer el archivo de forma progresiva en lugar de cargarlo completamente en la memoria.
+- Si necesitas validar un archivo YAML, puedes utilizar la función `yaml.validate` para asegurarte de que cumpla con la estructura adecuada antes de intentar convertirlo en un objeto de Gleam.
+- Puedes utilizar la función `yaml.decode_file` para leer directamente un archivo YAML en lugar de tener que cargarlo primero en una cadena y luego decodificarlo.
+
+Con estas herramientas, trabajar con YAML en Gleam será mucho más sencillo y eficiente.
+
+## Ver también
+
+- [Documentación oficial de YAML](https://yaml.org/)
+- [Página de inicio de Gleam](https://gleam.run/)
+- [Ejemplos de código en Gleam](https://github.com/gleam-lang/gleam/tree/main/examples)

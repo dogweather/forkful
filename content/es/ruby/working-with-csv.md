@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos csv"
+html_title:           "Ruby: Trabajando con archivos csv"
+simple_title:         "Trabajando con archivos csv"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -9,63 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con CSV en Ruby?
+## Por qué
 
-CSV (Comma-Separated Values) son archivos de texto que permiten almacenar y organizar datos de manera tabular. Esto es muy útil para trabajar con grandes cantidades de información, como por ejemplo en el ámbito empresarial. En Ruby, podemos utilizar la librería `CSV` para manipular estos archivos y realizar tareas como importar o exportar datos.
+Si estás interesado en el procesamiento de datos y análisis, trabajar con archivos CSV es una habilidad esencial para poder manipular y utilizar datos de manera eficiente. Además, muchas aplicaciones y proyectos utilizan archivos CSV como formato de almacenamiento de datos, por lo que conocer cómo trabajar con ellos es valioso para cualquier desarrollador.
 
 ## Cómo hacerlo
 
-**Importar datos desde un archivo CSV**
-
-Podemos importar datos desde un archivo CSV utilizando el método `read` de la clase `CSV`. En este ejemplo, tenemos un archivo `users.csv` con información de usuarios, y queremos almacenarla en un array de hashes.
+Para trabajar con archivos CSV en Ruby, necesitamos utilizar la clase `CSV` que es parte de la librería estándar. Primero, debemos requerir esta clase en nuestro código:
 
 ```Ruby
 require 'csv'
-
-users = []
-
-CSV.read('users.csv', headers: true).each do |row|
-    users << row.to_hash
-end
-
-puts users
-
-# Output:
-# [{:name=>"John", :age=>"28", :country=>"USA"}, {:name=>"Maria", :age=>"32", :country=>"Spain"}, {:name=>"Jane", :age=>"25", :country=>"Canada"}]
 ```
 
-**Exportar datos a un archivo CSV**
+Una vez que tenemos la clase `CSV` disponible, podemos utilizar sus métodos para leer, escribir y manipular archivos CSV.
 
-También podemos exportar datos a un archivo CSV utilizando el método `open` de la clase `CSV`. En este ejemplo, tenemos un array de hashes con información de productos y queremos exportarla a un archivo `products.csv`.
+### Leer archivos
+
+Para leer un archivo CSV, podemos usar el método `read` de la clase `CSV`, pasando como argumento la ruta al archivo CSV. Este método devolverá un arreglo con los datos del archivo.
 
 ```Ruby
-require 'csv'
-
-products = [
-  { name: "Laptop", price: "$1000", brand: "Apple" },
-  { name: "Phone", price: "$500", brand: "Samsung" },
-  { name: "Headphones", price: "$100", brand: "Sony" }
-]
-
-CSV.open('products.csv', 'w') do |csv|
-  csv << ["Name", "Price", "Brand"]
-  products.each do |product|
-    csv << [product[:name], product[:price], product[:brand]]
-  end
-end
-
-# Output:
-# Name,Price,Brand
-# Laptop,$1000,Apple
-# Phone,$500,Samsung
-# Headphones,$100,Sony
+data = CSV.read("archivo.csv")
 ```
+
+Si queremos especificar un separador diferente del valor por defecto (coma), podemos pasar un segundo argumento con el separador como una cadena.
+
+```Ruby
+data = CSV.read("archivo.csv", ";")
+```
+
+Si nuestro archivo CSV contiene encabezados, podemos usar el método `read_headers` en lugar de `read`, que tomará la primera línea del archivo como los nombres de las columnas y devolverá un objeto `CSV::Table` que nos permite acceder a los datos por nombre de columna.
+
+```Ruby
+tabla = CSV.read_headers("archivo.csv")
+# Acceder a la fila 2, columna "nombre"
+puts tabla[1]["nombre"]
+```
+
+### Escribir archivos
+
+Para escribir en un archivo CSV, podemos usar el método `open` de la clase `CSV`, pasando como argumentos la ruta al archivo y el modo de escritura. Luego, podemos usar el método `<<` para agregar datos.
+
+```Ruby
+CSV.open("nuevo_archivo.csv", "w") do |csv|
+  csv << ["Nombre", "Apellido"]
+  csv << ["Juan", "Pérez"]
+  csv << ["María", "González"]
+end
+```
+
+### Manipulación de datos
+
+La clase `CSV` también nos proporciona otros métodos útiles para manipular datos en archivos CSV, como `parse`, que nos permite convertir una cadena con formato CSV a un arreglo o `CSV.table`, que nos devuelve una tabla similar al método `read_headers` que mencionamos anteriormente.
 
 ## Profundizando
 
-La librería `CSV` de Ruby también nos permite realizar otras tareas como modificar datos existentes, ordenarlos, o incluso crear nuevos archivos CSV. Podemos revisar la documentación oficial para obtener más información y descubrir todas las posibilidades que nos ofrece.
+Si quieres profundizar en el trabajo con archivos CSV en Ruby, puedes consultar la documentación oficial de la clase `CSV` y la librería `csv` para obtener más información y conocer todas las opciones disponibles.
 
 ## Ver también
 
-* [Documentación oficial de la librería `CSV` de Ruby](https://ruby-doc.org/stdlib-2.5.1/libdoc/csv/rdoc/CSV.html)
-* [Tutorial de Ruby: Trabajando con archivos CSV](https://www.rubyguides.com/2018/10/parse-csv-ruby/)
+- [Documentación oficial de la clase CSV en Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
+- [Página de la librería csv en RubyGems](https://rubygems.org/gems/csv)

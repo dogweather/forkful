@@ -1,5 +1,6 @@
 ---
-title:                "C: Omvandla ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "C: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "C"
 category:             "C"
@@ -11,60 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna konvertera en datum till en sträng är en viktig färdighet inom C-programmering. Detta gör det möjligt för utvecklare att presentera datum i ett läsbart format för användare, spara datum som strängar i databaser och hantera datumbaserade funktioner på ett effektivt sätt.
+Att konvertera en datum till en sträng är ett vanligt problem inom programmering. Det kan vara användbart för att presentera datum på ett visuellt sätt eller för att spara datum som en sträng i en databas. I den här artikeln kommer jag att förklara hur du kan göra det med hjälp av C.
 
-## Hur man gör det
+## Så här gör du
 
-För att konvertera ett datum till en sträng, används funktionen strftime(). Denna funktion tar tre parametrar: en buffert för att lagra den resulterande strängen, storleken på bufferten och ett format för hur datumet ska visas. Här är ett exempel som visar hur man kan konvertera datumen i olika format:
+För att kunna konvertera ett datum till en sträng i C behöver du använda funktionen `strftime()`. Detta är en inbyggd funktion i C som tillåter dig att formatera ett datum enligt en viss mall och spara det som en sträng. Här är ett exempel på hur du kan använda `strftime()`:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  time_t t = time(NULL);
-  struct tm tm = *localtime(&t);
-
-  char buff[100];
-  strftime(buff, sizeof(buff), "%d/%m/%Y", &tm);
-  printf("Datum som dd/mm/yyyy format: %s\n", buff);
-
-  strftime(buff, sizeof(buff), "%A, %d %B %Y", &tm);
-  printf("Datum som veckodag, dd månad yyyy format: %s\n", buff);
-  
-  strftime(buff, sizeof(buff), "%I:%M %p", &tm);
-  printf("Klockslag i timme:minut am/pm format: %s\n", buff);
-
-  return 0;
+    // Skapa en struktur för datum och tid
+    struct tm datum;
+    // Ställ in datumet till 3 mars 2021
+    datum.tm_year = 121; // år 2021 minus 1900
+    datum.tm_mon = 2; // mars (månaden börjar på 0)
+    datum.tm_mday = 3; // 3:e dagen i månaden
+    // Anropa strftime för att formatera datumet
+    char str[50]; // En sträng som lagrar datumet
+    strftime(str, 50, "%d/%m/%Y", &datum); // Formatera till DD/MM/YYYY
+    // Skriv ut strängen
+    printf("Datumet är: %s\n", str);
+    return 0;
 }
 ```
 
 Output:
-
 ```
-Datum som dd/mm/yyyy format: 31/08/2021
-Datum som veckodag, dd månad yyyy format: Tuesday, 31 August 2021
-Klockslag i timme:minut am/pm format: 12:48 PM
+Datumet är: 03/03/2021
 ```
 
-## Djupdykning
+Som du kan se i exemplet ovan kan du anpassa formatet för datumet genom att ändra på mallen som du skickar till `strftime()`. Här är några vanliga mallar:
 
-Med hjälp av strftime() funktionen kan man skapa nästan obegränsade varianter av datumformat. Det finns olika konverteringsspecifikationer som kan användas för att utforma datumet enligt önskemål.
+- `%d` - Dag av månaden med ledande nolla
+- `%m` - Månad med ledande nolla
+- `%Y` - År med 4 siffror
+- `%y` - År med 2 siffror
+- `%H` - Timme (24-timmars format)
+- `%I` - Timme (12-timmars format)
+- `%M` - Minut
+- `%S` - Sekund
 
-Några av de vanligaste specifikationerna är:
+Här är en komplett lista över alla mallar: [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)
 
-- %d - dag i månaden (01-31)
-- %m - månad i året (01-12)
-- %Y - år i fyra siffror (2021)
-- %B - fullständig månadsnamn (augusti)
-- %A - fullständigt veckodagsnamn (tisdag)
-- %I - timme på 12-timmarsformat (01-12)
-- %p - "am" eller "pm" beroende på tiden
-- %M - minut i timmen (00-59)
+## Deep Dive
 
-Det är viktigt att notera att konverteringsformaten kan variera beroende på operativsystem. Det är alltid bra att konsultera dokumentationen för strftime() för att se vilka format som stöds på din specifika plattform.
+Det finns många funktioner i C som kan hjälpa dig att konvertera ett datum till en sträng, men `strftime()` är den vanligaste. Det finns också en liknande funktion som heter `ctime()` som kan användas för att konvertera ett datum till en sträng på ett enklare sätt. En annan viktig aspekt att notera är att `strftime()` returnerar en `size_t` variabel, vilket bara är ett alias för en osignerad heltalstyp. Detta innebär att du kan använda funktionen för att räkna antalet tecken i den konverterade strängen.
 
-## Se även
+## Se också
 
-- [Dokumentation för strftime() funktionen](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Beskrivning av konverteringsformat](https://www.cplusplus.com/reference/ctime/strftime/)
+- [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)
+- [https://www.cplusplus.com/reference/ctime/ctime/](https://www.cplusplus.com/reference/ctime/ctime/)
+- [https://www.geeksforgeeks.org/how-to-convert-string-to-date-in-c/](https://www.geeksforgeeks.org/how-to-convert-string-to-date-in-c/)

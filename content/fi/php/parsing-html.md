@@ -1,6 +1,7 @@
 ---
-title:                "PHP: HTML:n jäsentäminen."
-simple_title:         "HTML:n jäsentäminen."
+title:                "HTML:n jäsentäminen"
+html_title:           "PHP: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,63 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi HTML:n jäsentäminen on tärkeää
+## Miksi
 
-HTML-jäsennys on tärkeä taito jokaiselle PHP-ohjelmoijalle. Se mahdollistaa tiedon hakemisen ja muokkaamisen HTML-koodista, mikä on usein tarpeen web-sivujen kehittämisessä. Lisäksi se auttaa automatisoimaan rutiinitehtäviä ja säästämään aikaa.
+HTML-analyysi on tärkeä taito PHP-ohjelmoijille, koska se mahdollistaa tietojen keräämisen verkosta ja niiden käsittelyn omassa koodissa. Tämä voi säästää aikaa ja vaivaa manuaalisesta tiedon keräämisestä ja parantaa ohjelman tehokkuutta.
 
-## Miten tehdä HTML:n jäsentäminen PHP:lla
+## Kuinka tehdä
 
-PHP:lla on kätevät työkalut HTML-dokumenttien jäsentämiseen ja manipuloimiseen. Alla on esimerkkejä, joissa käytetään PHP:n "```simple_html_dom```" -kirjastoa.
-
-### Esimerkki 1: Tiedon hakeminen HTML-dokumentista
-
-Seremoniaorkesterin sivuilla on liuta jäsenten nimiä ja soittimia. Voimme hakea nämä tiedot "```find```" -metodilla.
+Analysointikoodin suorittaminen:
 
 ```PHP
-<?php
-include('simple_html_dom.php');
-$html = file_get_html('http://www.seremo.fi/?s=soittaja');
-foreach($html->find('.soittaja') as $element) {
-    $nimi = $element->find('.nakyviin');
-    $soitin = $element->find('.nakyviin img');
-    echo $nimi . ' soittaa ' . $soitin;
+$html = '<h1>Otsikko</h1><p>Tämä on esimerkkiparagraafi<h2>Toinen otsikko</h2>';
+$dom = new DOMDocument();
+$dom->loadHTML($html);
+$elements = $dom->getElementsByTagName('h1');
+
+foreach ($elements as $element) {
+    echo $element->nodeValue; // Tulostaa "Otsikko"
 }
-?>
+
+$paragraphs = $dom->getElementsByTagName('p');
+foreach ($paragraphs as $paragraph) {
+    echo $paragraph->nodeValue; // Tulostaa "Tämä on esimerkkiparagraafi"
+}
+
+// Voit myös hakea elementtejä id-tunnisteella:
+$element = $dom->getElementById('id-tunniste');
+echo $element->nodeValue; // Tulostaa kyseisen elementin sisällön
 ```
 
-Tulos:
+Voit myös hakea tietoja eri tyyppisistä HTML-elementeistä, kuten linkeistä, kuvista ja lomakkeista. Kun olet hakenut tiedot haluamistasi elementeistä, voit käsitellä niitä haluamallasi tavalla, esimerkiksi tallentaa ne tietokantaan tai näyttää ne käyttäjälle.
 
->Leevi Malinen soittaa kitara<br>
->Kirsi Toivonsalmi soittaa viulu<br>
->Tino Siren soittaa rummut
+## Syvempi sukellus
 
-### Esimerkki 2: Tiedon muokkaaminen ja tallentaminen
+HTML-analyysin käyttö on tärkeä taito PHP-ohjelmoijille, sillä se mahdollistaa monipuolisen tiedon keräämisen ja käsittelyn. Analysoimalla HTML:ää voit myös parantaa verkkosivujen suorituskykyä, esimerkiksi optimoimalla CSS- ja JavaScript-tiedostoja tai poistamalla tarpeettoman koodin.
 
-Voimme myös muokata HTML-dokumentin tietoja ja tallentaa muutokset takaisin dokumenttiin. Alla olevassa esimerkissä muutamme otsikkotagin arvon ja tallennamme muutokset takaisin HTML-dokumenttiin.
-
-```PHP
-<?php
-include('simple_html_dom.php');
-$html = file_get_html('https://www.php.net/');
-
-// Muutetaan otsikkotagin arvo
-$html->find('h1', 0)->innertext = 'Tervetuloa PHP-ohjelmointimaailmaan';
-
-// Tallennetaan muutokset takaisin tiedostoon
-file_put_contents('php.html', $html);
-?>
-```
-
-### Tulos:
-
-Voit tarkistaa "php.html" -tiedostosta, että otsikkotagin arvo on muuttunut.
-
-## Syvempi sukellus HTML:n jäsentämiseen
-
-HTML:n jäsentämiseen on käytettävissä myös muita työkaluja, kuten "```DOMDocument```" ja "```XPath```". Nämä ovat hyödyllisiä, kun halutaan tarkemman ja monimutkaisemman jäsentämisen, kuten tietojen hakemisen tietystä elementistä ja sen alielementeistä.
+On tärkeää muistaa, että HTML-tietojen analysointi ei ole täysin virheetöntä, sillä sivustojen rakenne ja koodin laatu vaihtelevat. Siksi on hyvä testata analysointikoodia erilaisilla sivustoilla ja ottaa huomioon mahdolliset virheelliset tulokset.
 
 ## Katso myös
 
-- [simple_html_dom-kirjaston dokumentaatio](https://simplehtmldom.sourceforge.io/)
-- [PHP:n virallinen dokumentaatio HTML:n jäsentämisestä](https://www.php.net/manual/en/domdocument.loadhtml.php)
-- [XPath-opas](https://www.w3schools.com/xml/xpath_intro.asp)
+- [PHP:n viralliset dokumentaatiot HTML-analyysista](https://www.php.net/manual/en/domdocument.loadhtml.php)
+- [W3Schools HTML-analyysin harjoituksia](https://www.w3schools.com/php/php_ref_dom.asp)
+- [Stack Overflowin ohjeita HTML-analyysin käyttöön](https://stackoverflow.com/questions/tagged/html-parsing?sort=votes)

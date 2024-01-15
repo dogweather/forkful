@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Надсилання http запиту."
-simple_title:         "Надсилання http запиту."
+title:                "Відправлення http-запиту"
+html_title:           "Fish Shell: Відправлення http-запиту"
+simple_title:         "Відправлення http-запиту"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,30 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Надсилання запиту HTTP є важливою частиною програмування. Це дозволяє зробити з'єднання з веб-сайтами та отримати необхідну інформацію з сервера. Наприклад, ви можете отримати дані з API, яке надає різні сервіси в мережі.
+Надсилання HTTP запиту є важливою частиною розробки програмного забезпечення. Це дозволяє отримати дані з сервера та взаємодіяти з веб-сайтами.
 
-## Як
+## Як виконати
 
-Існує багато способів надсилання HTTP запитів, але у цьому блозі ми покажемо, як зробити це за допомогою Fish Shell. Нижче подано код для створення базового запиту GET на сайт Google та виводу отриманої відповіді:
-
-```Fish Shell
-curl https://www.google.com
-```
-
-Буде виведено HTML-код головної сторінки Google. Також можна додати параметри запиту, як показано у прикладі нижче:
+Надсилання HTTP запиту в Fish Shell можливо за допомогою команди `curl`. Нижче наведено приклад коду та очікуваний результат:
 
 ```Fish Shell
-curl https://www.google.com/?q=fish+shell
+curl https://www.example.com
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</head>
+<body>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. ...</p>
+</body>
+</html>
 ```
 
-Тепер запит буде шукати слово "fish shell" у Google та повертати результати пошуку.
+## Поглиблене дослідження
 
-## Глибше
+Команда `curl` виглядає просто, але насправді це потужний інструмент з багатьма опціями. Для отримання більшої інформації можна використати допомогу команди `curl` або прочитати документацію.
 
-Fish Shell надає багато можливостей для надсилання HTTP запитів та маніпулювання отриманими даними. Тут ви можете дізнатися більше про параметри запитів, авторизацію та обробку JSON даних. Також, для більшої гнучкості, ви можете використовувати змінну "http_proxy" для налаштування проксі-сервера для відправки запитів.
+## Дивись також
 
-## Дивіться також
-
-- [Офіційна документація Fish Shell](http://fishshell.com/docs/)
-- [Авторизація за допомогою Fish Shell](https://github.com/deanishe/alfred-http-auth/wiki/Curl-basics) 
-- [Обробка JSON даних з Fish Shell](https://fishshell.com/docs/current/tutorial.html#json)
+- [Документація з команди `curl`](https://curl.se/docs/manual.html)
+- [Допомога по команді `curl` в Fish Shell](https://fishshell.com/docs/current/commands.html#curl)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Herunterladen einer Webseite"
+html_title:           "Ruby: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,61 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Beim Programmieren mit Ruby gibt es unzählige Möglichkeiten, um Daten im Internet abzurufen. Sei es für das Scraping von Informationen, das Durchsuchen von Webseiten oder die Verwendung von APIs, der Download einer Webseite kann ein nützliches Werkzeug sein. In diesem Blogbeitrag werden wir uns genauer damit beschäftigen, wie man eine Webseite mit Ruby herunterladen kann.
+Wenn du schon immer mal wissen wolltest, wie man eine Webseite herunterladen kann, bist du hier genau richtig! Mit Ruby ist es ganz einfach, eine Webseite herunterzuladen und den HTML-Code zu analysieren.
 
 ## Wie funktioniert es?
 
-Zunächst müssen wir die erforderlichen Gems installieren, um die Webseite herunterladen zu können. Ein weit verbreitetes Gem ist "net/http", das uns die nötigen Funktionen bereitstellt.
+Um eine Webseite herunterzuladen, verwenden wir die Ruby Standard Library `net/http`. Zuerst müssen wir die URL der Webseite angeben, die wir herunterladen möchten.
 
-```
 ```Ruby
 require 'net/http'
+url = URI.parse('https://www.ruby-lang.org/de/')
 ```
 
-Als nächstes definieren wir die URL der Webseite, die wir herunterladen möchten.
+Dann verwenden wir `Net::HTTP.get_response` um die Antwort von der Webseite zu erhalten.
 
 ```Ruby
-url = 'https://www.example.com'
+response = Net::HTTP.get_response(url)
 ```
 
-Wir verwenden dann die Methode `get`, um eine HTTP GET-Anfrage an die angegebene URL zu senden und die Antwort in einer Variable zu speichern.
-
-```Ruby
-response = Net::HTTP.get_response(URI(url))
-```
-
-Um den Inhalt der Webseite anzuzeigen, können wir die Methode `body` verwenden.
+Der zurückgegebene Wert ist ein Objekt der Klasse `Net::HTTPResponse`, welches Informationen wie den Statuscode und den HTML-Inhalt der Seite enthält. Wir können `body` verwenden, um den HTML-Code der Seite zu erhalten.
 
 ```Ruby
 puts response.body
 ```
 
-Damit haben wir erfolgreich eine Webseite mit Ruby heruntergeladen!
-
-## Tiefergehende Einblicke
-
-Es gibt viele verschiedene Funktionen und Möglichkeiten, um eine Webseite mit Ruby herunterzuladen. Zum Beispiel können wir auch eine Datei direkt auf unseren Computer speichern, anstatt sie nur im Terminal anzuzeigen. Dazu müssen wir die Response in einen Stream umwandeln und den Inhalt der Datei in diesen Stream schreiben.
+Dies gibt uns den gesamten HTML-Code der Webseite aus. Wir können auch zusätzliche Informationen wie den Response Code und die Header der Seite anzeigen lassen.
 
 ```Ruby
-# Öffne die Datei zum Schreiben
-file = File.open('index.html', 'w')
-
-# Definiere den Stream
-stream = response.body
-
-# Schreibe den Inhalt der Datei in den Stream
-while data = stream.read(4096)
-  # Schreibe die Daten in die Datei
-  file.write(data)
-end
-
-# Schließe die Datei
-file.close
+puts response.code # Gibt den Statuscode der Antwort aus (z.B. 200 für Erfolg)
+puts response.header # Gibt die Header der Antwort aus (z.B. Content-Type)
 ```
 
-Diese Methode ermöglicht es uns, die heruntergeladene Webseite auch offline zu nutzen.
+## Tief tauchen
+
+Wenn wir uns den HTML-Code genauer ansehen möchten, können wir Tools wie Nokogiri verwenden, um den Code zu analysieren und spezifische Elemente auszuwählen.
+
+```Ruby
+require 'nokogiri'
+doc = Nokogiri::HTML(response.body)
+
+# Gibt den Titel der Seite aus
+puts doc.css('title').text
+
+# Gibt alle Links auf der Seite aus
+puts doc.css('a').to_s
+```
+
+Nokogiri hat viele mächtige Funktionen, die es uns ermöglichen, auf spezifische Elemente im HTML-Code zuzugreifen und sie zu manipulieren.
 
 ## Siehe auch
 
-- Ruby Documentation: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
-- Tutorial: https://www.rubyguides.com/2016/07/ruby-web-scraping-libraries/
+- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Nokogiri Dokumentation](https://nokogiri.org/)

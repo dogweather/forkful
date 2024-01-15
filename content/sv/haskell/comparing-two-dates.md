@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämföring av två datum"
+html_title:           "Haskell: Jämföring av två datum"
+simple_title:         "Jämföring av två datum"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -9,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att jämföra två datum är en viktig del av många programmeringsprojekt. Det kan hjälpa till med att sortera eller filtrera data, beräkna tidsintervaller eller hantera tidslinjer. Att kunna göra detta på ett effektivt och pålitligt sätt är avgörande för många program.
+Att jämföra två datum kan vara en viktig del av många program, från att kontrollera användares ålder till att sortera data efter datum. Genom att använda Haskell, kan man enkelt utföra denna jämförelse och hantera olika datumformat.
 
-## Så här gör du
+## Hur man gör
 
-För att jämföra två datum i Haskell, måste vi först importera Date.Time-modulen. Sedan kan vi använda funktioner som `diffDays` och `addDays` för att hantera datum på en enkel nivå.
+Först behöver vi importera `Data.Time` modulen för att hantera datum och tid i Haskell. Sedan definierar vi två datum i önskat format:
 
-```Haskell
+```Haskell 
 import Data.Time
 
--- Skapa två datum
-let date1 = fromGregorian 2020 1 1
-let date2 = fromGregorian 2020 2 1
-
--- Jämför dagar mellan två datum
-let daysBetween = diffDays date2 date1
--- Resultatet blir 31
-
--- Lägg till 10 dagar till ett datum
-let laterDate = addDays 10 date1
--- Resultatet blir 2020-01-11
+start <- parseTimeM True defaultTimeLocale "%Y-%m-%d" "2021-01-01"
+end <- parseTimeM True defaultTimeLocale "%Y-%m-%d" "2021-02-01"
 ```
 
-Haskell erbjuder också mer avancerade sätt att hantera datum, som att konvertera dem till olika tidszoner och formatera dem på specifika sätt. Det finns också många bibliotek som kan hjälpa till med mer komplicerade jämförelser, beräkningar och manipulationer av datum.
+Sedan kan vi använda de inbyggda funktionerna `compare` och `diffDays` för att jämföra och beräkna antalet dagar mellan de två datumen:
 
-## Fördjupa dig
+```Haskell 
+compare start end
+-- LT (mindre än)
 
-Att förstå hur datum fungerar och hur man kan hantera dem är ett viktigt steg mot att bli en bättre Haskell-programmerare. Det finns många olika sätt att representera datum och hur man jämför dem kan variera beroende på ens behov. Det är också viktigt att förstå skillnaden mellan lokala och globala tidszoner, och hur man hanterar dessa i sina program.
+diffDays end start
+-- 31 (antalet dagar mellan datumet)
+```
+
+Vi kan också använda `diffUTCTime` för att jämföra tider, och `addDays` för att lägga till ett visst antal dagar till ett datum.
+
+## Djupdykning
+
+Haskell har en stark typ-system som kan vara till hjälp när man arbetar med datum och tider. Genom att använda `Data.Time.Calendar.Days` modulen, kan man definiera datatyperna `Day` och `DiffDays` för att representera datum och antal dagar.
+
+En annan användbar funktion är `formatTime` som kan användas för att konvertera ett datum till olika format. Det finns också flera andra moduler för att hantera tidszon, som `Data.Time.LocalTime` och `Data.Time.TimeZone`.
+
+Att förstå och använda dessa moduler kan hjälpa till att undvika vanliga problem som att hantera sommar- och vintertid och tidszoners skillnader.
 
 ## Se även
 
-- [Date.Time-modulen i Haskell-dokumentationen](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Hoogle, ett sökmotor för Haskell-funktioner](https://www.haskell.org/hoogle/)
+- [Haskell dokumentation för Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Handbok för datum och tider i Haskell](https://www.cs.yale.edu/homes/hudak/Papers/HSoC/HSoC.html)

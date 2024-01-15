@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilrettingsresultater"
+html_title:           "Clojure: Utskrift av feilrettingsresultater"
+simple_title:         "Utskrift av feilrettingsresultater"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,44 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hvorfor
 
-Det er ofte nødvendig å finne ut hva som skjer under kjøring, spesielt når man arbeider med komplekse kodebaser eller feilsøker problemer. Ved å skrive ut debug-utdata kan man få en bedre forståelse av hva koden gjør, og hvor potensielle feil kan ligge.
+Hvorfor skulle noen engasjere seg i å skrive ut feilsøkingsutgang? Det er en vanlig praksis for å få mer innsikt i koden og identifisere feil og problemer som kan oppstå under kjøring.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å skrive ut debug-utdata, kan man bruke funksjonene `prn` eller `println` i Clojure. Disse funksjonene tar inn en eller flere verdier og skriver dem ut til konsollen. La oss se på et eksempel:
-
-```Clojure
-(def num 42)
-(prn "The meaning of life is:" num)
-```
-
-Dette vil skrive ut "The meaning of life is: 42" til konsollen. Man kan også bruke `println` på samme måte, men denne funksjonen legger til et ekstra nytt linjeskift på slutten.
-
-Det er også mulig å skrive ut mer kompleks datastrukturer ved hjelp av funksjonen `pprint`. Denne funksjonen sørger for at utdataen blir formatert på en mer lesbar måte. La oss se på et eksempel:
-
-```Clojure
-(def person {:name "John Doe" :age 30 :country "Norway"})
-(pprint person)
-```
-
-Dette vil skrive ut person-objektet på en fin måte til konsollen:
+For å skrive ut feilsøkingsutgang i Clojure, kan du bruke funksjonen `prn`. Dette vil skrive ut hvilken som helst form for data som en lesbar streng i terminalen.
 
 ```
-{:name "John Doe",
- :age 30,
- :country "Norway"}
+Clojure
+(prn "Dette er en tekststreng")
+; Dette er en tekststreng
+```
+
+Du kan også skrive ut datastrukturer, som for eksempel vektorer og kart, ved hjelp av `prn` funksjonen.
+
+```
+Clojure
+(prn [1 2 3 4])
+; [1 2 3 4]
+
+(prn {:navn "Mia" :alder 25})
+; {:navn "Mia", :alder 25}
+```
+
+Hvis du vil skrive ut mer spesifikk informasjon, kan du bruke `println` funksjonen og inkludere variabler eller ekstra tekst for å gi mer kontekst.
+
+```
+Clojure
+(def navn "Maria")
+(def alder 30)
+
+(println "Brukeren heter" navn "og er" alder "år gammel.")
+; Brukeren heter Maria og er 30 år gammel.
 ```
 
 ## Dypdykk
 
-Når man skal skrive ut debug-utdata, er det viktig å være bevisst på hva man skriver ut. Selv om det kan være fristende å skrive ut alle variablene i et program, kan dette føre til unødvendig mye utdata. Det er bedre å være selektiv og kun skrive ut de verdiene man faktisk trenger for å forstå koden.
+En annen nyttig metode for å skrive ut feilsøkingsutgang er ved hjelp av `clojure.pprint` biblioteket. Dette gir mer detaljert og organiseret utdata, spesielt for komplekse datastrukturer.
 
-Det er også viktig å huske at debug-utdata ikke bør være en permanent del av koden. Når man har løst problemet og forstått hva som skjer, bør man fjerne debug-utdataen for å unngå å forurense koden.
+For eksempel, hvis vi har et kart med flere lag, kan vi bruke `pprint` funksjonen for å skrive ut det organiserte og leselige utdataet.
+
+```
+Clojure
+(require '[clojure.pprint :refer [pprint]])
+
+(def bruker {:navn "Sara"
+             :adresse {:gate "Hovedveien 10"
+                       :postnummer 12345
+                       :by "Oslo"}})
+
+(pprint bruker)
+; {:navn "Sara",
+;  :adresse {:gate "Hovedveien 10",
+;            :postnummer 12345,
+;            :by "Oslo"}}
+```
+
+Ved å inkludere `:linear` argumentet i `pprint` funksjonen, kan vi få utskrift av datastrukturen på en enklere og mer kompakt måte.
+
+```
+Clojure
+(pprint bruker :linear)
+; {:navn "Sara",
+;  :adresse {:gate "Hovedveien 10",
+;            :postnummer 12345,
+;            :by "Oslo"}}
+```
 
 ## Se også
 
-- [Clojure debug guide](https://clojure.org/guides/debugging)
-- [Debugging in Clojure - Learn Clojure](https://www.learn-clojure.com/clojure/debugging-in-clojure/)
-- [Instrumenting code for debugging in Clojure](https://alexdvance.com/blog/instrumenting-code-for-debugging-in-clojure/)
+- [Clojure Official Documentation](https://clojure.org/)
+- [Effective Debugging Techniques in Clojure](https://blog.codeship.com/effective-debugging-techniques-clojure/)
+- [Mastering Clojure's Debugging Techniques](https://practicalli.github.io/clojure/development/debugging/)

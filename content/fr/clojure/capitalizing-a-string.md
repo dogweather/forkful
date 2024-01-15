@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Capitalisation d'une chaîne de caractères"
-simple_title:         "Capitalisation d'une chaîne de caractères"
+title:                "Majuscule d'une chaîne de caractères"
+html_title:           "Clojure: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Il y a souvent des cas où l'on veut capitaliser une chaîne de caractères, par exemple pour donner une apparence plus élégante à du texte ou pour respecter les conventions de présentation d'un certain langage. Dans cet article, nous allons apprendre à utiliser Clojure pour capitaliser une chaîne de caractères.
 
-## Comment Faire
-La fonction `clojure.string/capitalize` permet de capitaliser la première lettre d'une chaîne de caractères. Elle prend en paramètre la chaîne de caractères à capitaliser et renvoie une nouvelle chaîne de caractères en laquel la première lettre est en majuscule. Voici un exemple d'utilisation:
+Sérieusement, pourquoi vouloir capitaliser une chaîne de caractères en Clojure ? Honnêtement, il n'y a pas de réponse claire et précise à cette question. Certaines personnes peuvent le faire pour des raisons esthétiques ou pour suivre les conventions de codage, tandis que d'autres peuvent le faire pour des raisons pratiques. Quelle que soit la raison, capitaliser une chaîne de caractères en Clojure est assez simple et peut vous aider à écrire du code plus propre et plus lisible.
 
-```Clojure
-(clojure.string/capitalize "bonjour")
+## Comment faire
+
+Pour commencer, vous devez comprendre ce qu'est une chaîne de caractères en Clojure. En bref, une chaîne de caractères est une séquence de caractères entourée de guillemets doubles. Par exemple, "Bonjour le monde !" est une chaîne de caractères valide en Clojure.
+
+Maintenant que nous savons ce qu'est une chaîne de caractères, voici comment capitaliser une chaîne de caractères en Clojure :
+
 ```
-Résultat: "Bonjour"
-
-On peut également utiliser la fonction `clojure.string/upper-case` pour avoir une chaîne de caractères entièrement en majuscules:
-
-```Clojure
-(clojure.string/upper-case "bonjour")
+(defn capitalize-string [str]
+  (str/upper-case str))
 ```
-Résultat: "BONJOUR"
 
-## Plongée en Profondeur
-Il est important de noter que la fonction `capitalize` a une option pour la langue qui est utilisée pour déterminer les règles de capitalisation. Si vous travaillez en français, vous devrez définir cette option pour que la fonction fonctionne correctement. Voici un exemple:
+Dans cet exemple, nous avons défini une fonction appelée "capitalize-string" qui prend une chaîne de caractères en entrée et utilise la fonction "upper-case" du namespace "str" pour la convertir en majuscules. Nous pouvons ensuite appeler cette fonction avec une chaîne de caractères et voir le résultat :
 
-```Clojure
-(clojure.string/capitalize "école" {:locale "fr"})
 ```
-Résultat: "École"
+(capitalize-string "bonjour le monde") ;;= "BONJOUR LE MONDE"
+```
 
-De plus, la fonction `capitalize` ne modifie pas la chaîne de caractères originale, mais renvoie une nouvelle chaîne de caractères avec la première lettre en majuscule. Si vous voulez modifier directement la chaîne de caractères originale, il faut utiliser la fonction `capitalize!`.
+Comme vous pouvez le constater, notre chaîne de caractères a bien été capitalisée en utilisant cette méthode.
 
-## Voir Aussi
-- [Documentation officielle de Clojure sur la fonction capitalize](https://clojuredocs.org/clojure.string/capitalize)
-- [Guide pour apprendre à programmer en Clojure](https://clojure.org/guides/learn/syntax)
-- [Exemples d'utilisation de la fonction capitalize](https://www.clojuredatascience.com/nlp/named-entity-recognition/)
+## Plongée plus profonde
+
+Maintenant que nous avons vu comment capitaliser une chaîne de caractères en Clojure, voici quelques points importants à retenir :
+
+- Il existe d'autres fonctions de manipulation de chaînes de caractères disponibles dans le namespace "str" tels que "lower-case", "capitalize" et "title-case".
+
+- Vous pouvez également utiliser la fonction "clojure.string/capitalize" pour capitaliser uniquement la première lettre d'une chaîne de caractères.
+
+- La fonction "str/upper-case" convertit tous les caractères en majuscules, y compris les caractères spéciaux tels que les accents et les caractères unicode.
+
+- Rappelez-vous que les chaînes de caractères sont immuables en Clojure, ce qui signifie qu'elles ne peuvent pas être modifiées directement. Toute fonction de manipulation de chaîne de caractères renverra une nouvelle chaîne de caractères plutôt que de modifier l'originale.
+
+## Voir aussi
+
+Maintenant que vous savez comment capitaliser une chaîne de caractères en Clojure, voici quelques liens utiles pour en apprendre plus sur la manipulation de chaînes de caractères :
+
+- [La documentation officielle de la bibliothèque standard de Clojure](https://clojure.org/reference/strings)
+- [Un tutoriel sur les fonctions de manipulation de chaînes de caractères en Clojure](https://purelyfunctional.tv/guide/clojure-strings/)
+- [Un article approfondi sur l'immutabilité en Clojure](https://blog.klipse.tech/clojure/2016/07/15/clojure-strings-1.html)

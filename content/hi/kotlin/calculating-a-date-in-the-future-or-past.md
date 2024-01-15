@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या भूतकाल में तारीख की गणना करना"
+html_title:           "Kotlin: भविष्य या भूतकाल में तारीख की गणना करना"
+simple_title:         "भविष्य या भूतकाल में तारीख की गणना करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyon
+Agar aapko pata karna hai ki aapko kis din kisi event ko celebrate karna hai ya aapko ek certain date tak kaam karna hai, to aapko pichle aur aane waale dates ka calculation karna hoga. Isliye, dates ko calculate karne ki jarurat padti hai.
 
-किसी को भविष्य में या भूतकाल में तारीख का हिसाब करने में क्यों रूचि हो सकती है, इसे समझने के लिए थोड़ी सी बात करें। 
+## Kaise Kare
+Date ko calculate karne ke liye, Kotlin mein "Calendar" class ka istemal kiya ja sakta hai. Is class mein "add()" method ka use karke hum dates mein changes kar sakte hain. Yahan hamne ek example diya hai jo current date se 3 din aage ki date calculate karta hai.
 
-## कैसे करें 
+```Kotlin
+fun main() {
+    var calendar = Calendar.getInstance()
+    calendar.add(Calendar.DATE, 3)
 
-यदि आपको कोटलिन में एक तारीख की गणना करने की जरूरत है, तो निम्न उदाहरण सहित निर्देशों को फॉलो करें। 
-
-```Kotlin 
-import java.time.LocalDate 
-
-// आज की दिनांक से 50 दिन बाद की तारीख को पाएं 
-val futureDate = LocalDate.now().plusDays(50) 
-
-// "yyyy-MM-dd" के फॉर्मेट में तारीख प्रिंट करें 
-println(futureDate.toString("yyyy-MM-dd")) 
-
-// आज की दिनांक से 2 वर्ष पहले की तारीख को पाएं 
-val pastDate = LocalDate.now().minusYears(2) 
-
-// "dd/MM/yyyy" के फॉर्मेट में तारीख प्रिंट करें 
-println(pastDate.toString("dd/MM/yyyy")) 
-``` 
-
-आउटपुट: 
-
+    println("Aane waali date: ${calendar.time}")
+}
 ```
-2021-09-01 
-28/08/2019 
-``` 
 
-## गहराई में जाएं 
+Output:
+```
+Aane waali date: Wed Oct 13 12:45:38 IST 2021
+```
 
-अब आप कोटलिन में तारीख की गणना कर सकते हैं, लेकिन इसके पीछे की जानकारी समझना भी महत्वपूर्ण है। कोटलिन में `java.time` पैकेज का उपयोग करके हम तारीख के साथ विभिन्न गणनाओं को कर सकते हैं जैसे कि तारीखों को सम्मिलित करना, अंतर निकालना, साल/महीना/दिन की संख्या कोईबार मापना आदि। 
+Is code mein humne "add()" method mein "Calendar.DATE" aur "3" ka istemal kiya hai. "Calendar.DATE" current date ko represent karta hai aur "3" number of days bataata hai jinhe hum aane waali date mein add karna chahte hain.
 
-# देखें भी 
+## Deep Dive
+Date ko calculate karne ke liye, hum "add()" method mein alag-alag constants use kar sakte hain jaise "Calendar.MONTH" ya "Calendar.YEAR". Yeh date ko calculate karne ke liye ek flexible aur easy way hai.
 
-- [कोटलिन में तारीख का प्रसन्नता](https://kotlinlang.org/docs/datetime-frustrations.html) 
-- [कोटलिन डेटा और टाइम API दस्तावेज़ीकरण](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html)
+Ek aur tareeka date ka calculation karne ka hai "Calendar" class mein maujood "set()" method ka istemal karna. Is method se hum date ko set kar sakte hain aur phir use "add()" method ke jariye modify kar sakte hain.
+
+## Dekhna Bhi
+- [Kotlin Date and Time API](https://developer.android.com/reference/kotlin/java/util/Calendar)
+- [Kotlin Reference for Calendar class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-calendar/index.html)

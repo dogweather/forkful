@@ -1,5 +1,6 @@
 ---
-title:                "C: 一時ファイルの作成"
+title:                "一時ファイルの作成"
+html_title:           "C: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "C"
 category:             "C"
@@ -9,56 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ作成するのか
+## なぜ
+一時ファイルを作ることの意義について、最大2文で説明します。
 
-一時的なファイルを作成する理由はさまざまです。主な理由は、プログラム上で一時的にデータを保存する必要がある場合です。また、一時的なファイルを使用することでプログラムの実行速度を向上させることができます。
+一時ファイルを作ることは、プログラムの実行中に一時的にデータを保存したい場合や、ファイル操作を行う際に競合を防ぐために利用することができます。
 
 ## 作り方
 
-一時的なファイルを作成する方法はいくつかありますが、ここではC言語を使用した方法を紹介します。
+一時ファイルを作るには、C言語で提供されている以下の関数を使用します。
 
-```
+```C
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
-  // 一時的なファイルの名前を生成する
-  char temp_name[20];
-  sprintf(temp_name, "temp%d.txt", rand());
-  
-  // ファイルを作成して書き込む
-  FILE *fp = fopen(temp_name, "w");
-  fputs("このファイルは一時的なファイルです。", fp);
-  fclose(fp);
-  
-  // ファイルの中身を出力する
-  fp = fopen(temp_name, "r");
-  char c = fgetc(fp);
-  while (c != EOF)
-  {
-    printf("%c", c);
-    c = fgetc(fp);
-  }
-  fclose(fp);
-  
-  // ファイルを削除する
-  remove(temp_name);
-  
-  return 0;
+FILE *tmpfile(void);
+```
+
+この関数は、一時ファイルを作成し、そのファイルへのポインタを返します。一時ファイルはプログラムが終了すると自動的に削除されるため、明示的に削除する必要はありません。
+
+また、一時ファイルを作成する際には、`tmpfile()`関数の返り値が`NULL`でないかを確認することが重要です。もし`NULL`であれば、一時ファイルを作成できなかったことを意味します。
+
+以下に、一時ファイルを作成するサンプルコードを示します。
+
+```C
+#include <stdio.h>
+
+int main() {
+    // 一時ファイルを作成
+    FILE *temp = tmpfile();
+
+    // 一時ファイルが作成できたか確認
+    if (temp != NULL) {
+        printf("一時ファイルが作成されました。\n");
+    } else {
+        printf("一時ファイルを作成できませんでした。\n");
+    }
+
+    return 0;
 }
 ```
 
+上記のコードを実行すると、以下のような出力が得られます。
+
 ```
-このファイルは一時的なファイルです。
+一時ファイルが作成されました。
 ```
 
-## さらに深く
+## 深く掘り下げる
 
-一時的なファイルを作成する際には、ファイルの一意性を確保しなければなりません。そのため、ランダムな名前を生成する必要があります。また、ファイルを使用した後は適切に削除することも重要です。
+一時ファイルを作成する際には、`tmpfile()`関数以外にも、以下のような関数を使用することもできます。
 
-## 参考リンク
+- `tmpnam()`関数：一時ファイルのファイル名を生成する。
+- `remove()`関数：一時ファイルを明示的に削除する。
 
-- [C言語で一時的なファイルを作成する方法](https://www.codeleading.com/article/70490973809/)
-- [一時的なファイルを作成する際の注意点](https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_73/rzai2/rzai2tempfiles.htm)
-- [わかりやすく解説！一時的なファイルの使い方](https://note.com/krkoba0216/n/ne62d9ca1984c)
+また、一時ファイルを使用する場合は、ファイルへのアクセス権限やディレクトリのパスなども考慮する必要があります。セキュリティ上のリスクを避けるために、十分な確認を行うことが重要です。
+
+## 関連リンク（See Also)
+
+- [C言語入門｜一時ファイルを扱う方法](https://www.javadrive.jp/cstart/file/index7.html)
+- [C言語入門サンプル｜一時ファイルの作り方](https://www.k-cube.co.jp/wakaba/server/ftemp.html)
+- [C言語の標準ライブラリ：一時ファイルを作成する方法](https://www.codingboo.com/c99/tmpfile.html)

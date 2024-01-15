@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Die aktuelle Datum erhalten"
-simple_title:         "Die aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Haskell: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,41 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man das aktuelle Datum in Haskell abrufen möchte. Vielleicht möchtest du eine Funktion schreiben, die das Datum verwendet, um verschiedene Aufgaben auszuführen, wie zum Beispiel das Erstellen von Dateinamen oder das Überprüfen, ob ein bestimmtes Datum in der Zukunft liegt. Oder du möchtest einfach nur aus Interesse sehen, wie Haskell das aktuelle Datum handhabt. In jedem Fall ist es wichtig zu wissen, wie man das aktuelle Datum in Haskell abrufen kann.
+Wenn du dich für die Programmiersprache Haskell interessierst und mehr darüber lernen möchtest, ist das Lesen dieses Artikels das Richtige für dich. Hier erfährst du, wie du das aktuelle Datum in Haskell abrufen kannst. Dadurch kannst du deine Programmierkenntnisse erweitern und nützliche Funktionen in deine Projekte integrieren.
 
-## Wie geht's
+## Wie geht das?
 
-Die aktuelle Datum kann in Haskell auf verschiedene Weise abgerufen werden. Hier sind zwei gängige Methoden:
+Um das aktuelle Datum in Haskell abzurufen, verwenden wir die Funktion `getCurrentTime` aus dem Modul `Data.Time`.
 
 ```Haskell
 import Data.Time
-import Data.Time.Format
-import Data.Time.Clock
 
--- Methode 1: mithilfe der getCurrentTime-Funktion
--- Output: 2019-09-17 14:30:00.112856 UTC
 main = do
-    currentTime <- getCurrentTime
-    print currentTime
-
--- Methode 2: mithilfe der getCurrentTime-Funktion und Formatierung mit strftime
--- Output: "17.09.19, 14:30:00"
-main = do
-    currentTime <- getCurrentTime
-    let formattedTime = formatTime defaultTimeLocale "%d.%m.%y, %H:%M:%S" currentTime
-    print formattedTime
+  currentTime <- getCurrentTime
+  print currentTime
 ```
 
-## Tiefere Einblicke
+Dieser Code importiert das `Data.Time` Modul und ruft die Funktion `getCurrentTime` auf. Das aktuelle Datum wird in der Variable `currentTime` gespeichert und mit `print` ausgegeben.
 
-Die Verwendung von `getCurrentTime` gibt uns ein `UTCTime`-Objekt, das die Uhrzeit im UTC-Format beinhaltet. Um es in ein benutzerfreundlicheres Format zu bringen, können wir es mit `formatTime` und einer entsprechenden Formatierungsfunktion wie `defaultTimeLocale` konvertieren. Alternativ können andere Funktionen wie `localTime` und `getCurrentTimeZone` verwendet werden, um die aktuelle lokale Uhrzeit zu erhalten.
+Die Ausgabe wird in folgendem Format angezeigt:
 
-Es ist auch zu beachten, dass `getCurrentTime` eine IO-Aktion ist, was bedeutet, dass sie Seiteneffekte haben kann, wie zum Beispiel die Verbindung zum Internet zur Synchronisierung der Uhrzeit. Aus diesem Grund wird in der zweiten Methode die Uhrzeit in einer separaten Variable gespeichert und dann mit `print` ausgegeben, um mögliche unerwünschte Seiteneffekte zu vermeiden.
+```
+2021-09-25 12:00:00 UTC
+```
 
-Insgesamt bietet Haskell viele verschiedene Möglichkeiten, das aktuelle Datum zu erhalten, je nach den Anforderungen deines Codes.
+Du kannst auch das Paket `time` installieren, um das Datum in einem bestimmten Format auszugeben:
+
+```Haskell
+import Data.Time.Format
+
+main = do
+  currentTime <- getCurrentTime
+  print $ formatTime defaultTimeLocale "%B %e, %Y" currentTime
+```
+
+Die Ausgabe wird in diesem Format angezeigt:
+
+```
+September 25, 2021
+```
+
+## Tiefergehende Erklärung
+
+Das `Data.Time` Modul bietet viele nützliche Funktionen für die Arbeit mit Datum und Zeit in Haskell. Die `getCurrentTime` Funktion ruft die aktuelle Zeit aus dem System ab und gibt sie als `UTCTime` zurück. Diese Datenstruktur enthält Informationen wie Jahr, Monat, Tag, Uhrzeit und Zeitzone.
+
+Um das Datum oder die Uhrzeit in einem anderen Format auszugeben, können verschiedene Funktionen aus dem `Data.Time.Format` Modul verwendet werden. Die `formatTime` Funktion akzeptiert ein Formatierungsspezifikation und eine `UTCTime` und gibt das Datum in diesem Format zurück.
 
 ## Siehe auch
 
-- [Dokumentation zu Data.Time-Modul](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Beispiele für Datumsformatierung](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html#g:2)
-- [Stack Overflow-Fragen zu aktuellen Dateien in Haskell](https://stackoverflow.com/questions/3916065/how-to-get-the-current-time-in-hour-minute-second-format)
+- [Haskell Dokumentation: Modul Data.Time](https://hackage.haskell.org/package/time-1.10.0.0/docs/Data-Time.html)
+- [Haskell Couch: Datum und Uhrzeit](https://www.haskell.org/couch/node/351)

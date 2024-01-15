@@ -1,6 +1,7 @@
 ---
-title:                "Python: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit csv"
+html_title:           "Python: Arbeiten mit csv"
+simple_title:         "Arbeiten mit csv"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,71 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-CSV-Dateien, auch bekannt als Comma-Separated Values, sind ein gebräuchliches Dateiformat für den Austausch von Daten zwischen verschiedenen Programmen. Sie können in Programmen wie Microsoft Excel oder Google Sheets geöffnet und bearbeitet werden, sind jedoch auch in der Programmierung sehr nützlich. In diesem Blogbeitrag werden wir uns ansehen, warum es sich lohnt, mit CSV-Dateien in Python zu arbeiten.
+CSV (Comma Separated Values) ist ein gängiges Dateiformat für den Austausch von Daten zwischen verschiedenen Programmen. Es ist einfach zu erstellen und zu lesen, daher ist es eine beliebte Wahl für den Umgang mit tabellarischen Daten in Python.
 
-## Wie geht das?
+## Wie man CSV in Python verwendet
 
-Um mit CSV-Dateien in Python zu arbeiten, müssen wir zuerst das CSV-Modul importieren. Dann können wir die `reader()`-Funktion nutzen, um die Daten aus einer CSV-Datei zu lesen. Die Syntax ist dabei wie folgt:
-
-```Python
+Um mit CSV-Dateien in Python zu arbeiten, müssen wir die `csv`-Bibliothek importieren.
+```
 import csv
+```
+Als nächstes müssen wir die CSV-Datei öffnen und den Inhalt in ein `csv.reader`-Objekt konvertieren.
+```
+with open('beispiel.csv') as csvdatei:
+    csv_reader = csv.reader(csvdatei)
+```
+Jetzt können wir auf die einzelnen Zeilen der CSV-Datei zugreifen, indem wir über das `csv_reader`-Objekt iterieren.
+```
+for zeile in csv_reader:
+    print(zeile)
+```
+Dies wird jede Zeile der CSV-Datei als Liste von Werten ausgeben.
 
-# Öffnen der CSV-Datei
-with open('beispiel.csv', 'r') as csv_datei:
-    # Einlesen der Daten mit der reader() Funktion
-    csv_reader = csv.reader(csv_datei)
-
-    # Iteration über die Zeilen der CSV-Datei
+Wir können auch spezifische Spalten auswählen und in einer neuen Liste speichern.
+```
+with open('beispiel.csv') as csvdatei:
+    csv_reader = csv.reader(csvdatei)
     for zeile in csv_reader:
-        # Ausgabe der Daten pro Zeile
-        print(zeile)
+        name = zeile[0]
+        alter = zeile[1]
+        print(name + " ist " + alter + " Jahre alt.")
 ```
 
-Die Ausgabe sieht dann folgendermaßen aus:
-
+Um eine CSV-Datei zu schreiben, müssen wir das `csv.writer`-Objekt verwenden.
 ```
-['Name', 'Alter', 'Stadt']
-['Anna', '25', 'Berlin']
-['Max', '30', 'Hamburg']
-['Lisa', '35', 'München']
-```
-
-Wir können auch die `writer()`-Funktion nutzen, um Daten in eine CSV-Datei zu schreiben. Hier ist ein Beispiel:
-
-```Python
-import csv
-
-# Öffnen einer neuen CSV-Datei zum Schreiben
-with open('neue_daten.csv', 'w') as csv_datei:
-    # Erstellen eines csv_writer Objekts
-    csv_writer = csv.writer(csv_datei)
-
-    # Schreiben von Daten in die CSV-Datei
-    csv_writer.writerow(['Name', 'Alter', 'Stadt'])
-    csv_writer.writerow(['Peter', '40', 'Berlin'])
-    csv_writer.writerow(['Sarah', '28', 'Hamburg'])
-    csv_writer.writerow(['Tom', '33', 'München'])
+with open('neue_datei.csv', 'w', newline='') as csvdatei:
+    csv_writer = csv.writer(csvdatei)
+    csv_writer.writerow(['Name', 'Alter'])    # Überschriften hinzufügen
+    csv_writer.writerow(['Tom', '25'])        # Daten hinzufügen
+    csv_writer.writerow(['Anna', '30'])
 ```
 
-Die neue Datei `neue_daten.csv` würde dann folgende Daten enthalten:
+## Tiefergehende Informationen
 
-```
-Name,Alter,Stadt
-Peter,40,Berlin
-Sarah,28,Hamburg
-Tom,33,München
-```
+Die `csv`-Bibliothek bietet viele nützliche Funktionen, um mit CSV-Dateien zu arbeiten. Hier sind einige wichtige Dinge, die Sie wissen sollten:
 
-## Tiefentauchen
+- Wenn Ihre CSV-Datei Trennzeichen verwendet, die nicht eindeutig sind (z.B. ein Tabulator anstelle eines Kommas), können Sie den `csv.reader`- und `csv.writer`-Funktionen das Trennzeichen als Argument übergeben.
+- Wenn Sie mit großen CSV-Dateien arbeiten, kann es effizienter sein, das `csv.DictReader`-Objekt zu verwenden, das die Daten in ein Wörterbuch (Dictionary) konvertiert.
+- Die `csv`-Bibliothek bietet auch Funktionen zum Lesen und Schreiben von Daten in DictWriter- und DictReader-Objekten, die es einfacher machen, mit komplexen Datenstrukturen umzugehen.
 
-Das CSV-Modul bietet außerdem Funktionen zum Konvertieren von Daten in ein anderes Format, zum Beispiel mit der `DictReader()`-Funktion, die CSV-Daten in ein Dictionary umwandelt. Wir können auch spezifische Trennzeichen und Zeilenumbrüche angeben, die in der CSV-Datei verwendet werden.
+## Siehe Auch
 
-Außerdem können wir mit der `delimiter()`-Funktion bestimmte Zellen aus der CSV-Datei auswählen, basierend auf der Position in der Datei oder auf bestimmten Kriterien wie einem bestimmten Wort oder Wert.
-
-Es lohnt sich, sich mit den verschiedenen Funktionen des CSV-Moduls in Python auseinanderzusetzen, da sie viele nützliche Methoden bieten, um effektiv mit CSV-Dateien zu arbeiten.
-
-## Siehe auch
-
-- [Python CSV-Modul Dokumentation](https://docs.python.org/3/library/csv.html)
-- [Tutorial: CSV-Dateien in Python lesen und schreiben](https://realpython.com/python-csv/)
-- [Python: Wann sollte ich CSV verwenden?](https://realpython.com/python-csv/#when-should-you-use-csv)
+- [Dokumentation der CSV-Bibliothek](https://docs.python.org/3/library/csv.html)
+- [Tutorial für den Umgang mit CSV-Dateien in Python](https://realpython.com/python-csv/)
+- [CSV Dateien mit Python lesen und schreiben - Ein Tutorial von Pythonbuch](https://pythonbuch.com/kapitel-5-csv-dateien.html)

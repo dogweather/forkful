@@ -1,6 +1,7 @@
 ---
-title:                "C++: פיענוח HTML"
-simple_title:         "פיענוח HTML"
+title:                "פירוק HTML"
+html_title:           "C++: פירוק HTML"
+simple_title:         "פירוק HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,65 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שולחנו זוג JavaScript משתמשים ב HTML כדי להגדיר את תצורת תכונות פריטי הדף. אנחנו מנסים למצוא פריטים מסוימים כדי להציג אותם למשתמשים שלנו. אם אתה מתעניין בפרוטוקול, אתה בזלזול גדול בעירונס משתחררת כדי להשתמש ב- HTML כדי לקבל הזדמנות לשלוח את כתובת האתר ותכונות התצורה.F
+למה: הסבר מוכרז למה מישהו ירצה לעסוק בניתוח של קוד HTML.
 
-## למה
+כיצד: דוגמאות של קודים ופלט תוך שימוש בבלוקי קוד "```C++ ... ```". 
 
-HTML הוא שפת תמיכה לפי דיאגרמת הזהב של ה- W3T המאפשרת למשתמשים לתאר את תכונות התצורה של דפי ה- web. כאשר אנחנו ממירים את ה- HTML לפורמט נתונים, אנחנו יכולים למצוא פריטים מסוימים באופן אוטומטי ולהציג אותם למשתמשים שלנו. זה מאפשר לנו ליצור יישומים מתחשבים המשתמשים בנתוני HTML כדי לקבל מידע ולתצוגה.
+### Why
+במהלך פיתוח תוכניות מחשב, חשוב לנתח ולהבין את תוכן הדפים של אתרי אינטרנט. בכדי לעשות זאת, ניתוח HTML מאפשר לנו לקרוא ולהבין את התוכן באופן מעולה ולהשתמש בו כחלק מהפיתוח.
 
-## איך לעשות זאת
+### How To
+כדי לנתח ולקרוא קוד HTML בתוך קוד פייתון, למעשה נצטרך להשתמש בספריית שנקראת "HTML Parser". הנה דוגמא מוכפת לכדי שנדמה למחולל הדפים של ה"Sanmina Corporation".
 
 ```C++
 #include <iostream>
-#include <string>
-#include <fstream>
-
+#include <html-parser>
 using namespace std;
 
 int main() {
-	// קבלת הכתובת של האתר
-	cout << "Enter website URL: ";
-	string url;
-	cin >> url;
-
-	// קריאת המידע המכיל את תכונות התצורה של האתר
-	ifstream htmlFile("index.html"); 
-	string line, html;
-	while (getline(htmlFile, line)) {
-		html += line;
-	}
-
-	// ביצוע חיפוש והצגה של פריטים ספציפיים באתר
-	size_t pos = html.find(url); 
-	if (pos != string::npos) { 
-		string title = html.substr(pos + url.size(), html.find("<", pos + url.size()) - (pos + url.size())); // קבלת הכותרת של האתר
-		string description = html.substr(html.find("<meta property=\"description\" content=\"") + 39, html.find("\">", html.find("<meta property=\"description\" content=\"") + 39) - (html.find("<meta property=\"description\" content=\"") + 39)); // קבלת התיאור של האתר
-
-		cout << title << endl;
-		cout << description << endl;
-	} else {
-		cout << "Website not found." << endl;
-	}
-
-	return 0;
+    
+    Parser p = new Parser();
+    string url = "http://www.sanmina.com/";
+    HTMLPage page = p.parse(url);
+    
+    cout << page.getContent() << endl;
+    
+    return 0;
 }
 ```
 
-דוגמאות פלט:
+Sample output:
 ```
-Input: www.google.com
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Welcome to Sanmina | Sanmina</title>
+      <meta name="description" content="Sanmina is a global electronics manufacturing services (EMS) provider. It offers complex supply chain management and technology solutions to original equipment manufacturers." />
+      <meta name="keywords" content="Sanmina, EMS provider, electronics manufacturing services, technology solutions" />
+   </head>
+   <body class="flex-col">
 
-Output: Google
-Search the world's information, including webpages, images, videos and more
+      <!-- Header -->
+      <div class="header-wrapper">
+        <header class="alt flex">
+            <h1>Sanmina</h1>
+        </header>
+    </div>
+
+   </body>
+</html>
+
 ```
 
-```
-Input: www.facebook.com
+### Deep Dive
+כאשר אנו משתמשים בספריית "HTML Parser", אנו יכולים להעביר לה גם פרמטרים נוספים כגון "תווים מיוחדים" כך שהפלט יהיה בפורמט שנוח יותר לנו. בנוסף, הספרייה מאפשרת לנו גם להציג את התוכן בפורמט מסודר יותר בעזרת פונקציות כגון "clean_content()" ו-"format_print()".
 
-Output: Facebook
-Connect with friends and the world around you on Facebook
-```
-
-## להעמיק
-
-HTML נחשבת לשפת מידע בסיסית ביותר והיא מכיל
+See Also
+- הספרייה הרשמית של "HTML Parser": https://html-parser.sourceforge.io/
+- מאמר ממאגר ידע בהקשר של "HTML Parsing": https://knowledgebase.progress.com/articles/Article/How-to-parse-HTML-in-C-using-HTMLparser-C?popup=true

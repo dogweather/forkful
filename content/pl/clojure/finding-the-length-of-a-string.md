@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Clojure: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
+Dlaczego ktoś interesowałby się znajdowaniem długości ciągu? Istnieje wiele sytuacji, w których potrzebujemy określić liczbę znaków w stringu, na przykład w celu walidacji danych lub wyświetlenia informacji o wybranym tekście.
 
-Dlaczego chcielibyśmy dowiedzieć się długości ciągu znaków? Jest to przydatne w wielu przypadkach, na przykład w walidacji danych wejściowych lub w implementacji algorytmów szukania wzorca.
-
-## Jak to zrobić?
-
-Możemy użyć wbudowanej funkcji "count", która zwraca liczbę elementów w sekwencji lub kolekcji. W przypadku ciągu znaków, jest to po prostu jego długość.
-
+## Jak to zrobić
 ```Clojure
-(count "Hello world") ; Output: 11
-(count "こんにちは") ; Output: 5
+(def str "To jest przykładowy string")
+(count str)
 ```
 
-## Głębszy zanurzenie
+Przykładowy output: `25`
 
-Warto zauważyć, że funkcja "count" nie tylko działa na ciągach znaków, ale również na innych kolekcjach, takich jak listy, wektory czy mapy.
+Innym sposobem jest użycie funkcji `length` na stringu, która również zwróci jego długość.
 
-Ponadto, większość funkcji w Clojure jest "leniwa", co oznacza, że nie wykonują swojej operacji, dopóki nie są wymagane. W przypadku funkcji "count", może to oznaczać wywołanie jej na ogromnej sekwencji lub kolekcji, bez konieczności obliczania wszystkich jej elementów.
+```Clojure
+(length "Jesteśmy w 2021 roku")
+```
 
-## Zobacz także
+Przykładowy output: `20`
 
-- https://clojuredocs.org/clojure.core/count
-- https://clojure.org/about/sequences
-- https://clojure.org/guides/learn/functions
+Możemy również wykorzystać pętlę `for` w połączeniu z funkcją `count` w celu zliczenia długości każdego stringa w liście.
+
+```Clojure
+(def strings ["Cześć" "Hello" "Hola"])
+(for [str strings]
+  (count str))
+```
+
+Przykładowy output: `(5 5 4)`
+
+## Głębszy wgląd
+W Clojure, funkcja `count` może być używana nie tylko do znajdowania długości stringów, ale również innych kolekcji, takich jak listy, wektory czy mapy. Dzięki temu jest to uniwersalny sposób na obliczanie rozmiaru różnych typów danych w programie.
+
+## Zobacz również
+- [Dokumentacja Clojure: count](https://clojure.org/reference/sequences#count)

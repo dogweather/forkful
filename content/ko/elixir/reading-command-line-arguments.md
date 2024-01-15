@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 명령 줄 인수 읽기"
+title:                "명령 줄 인수 읽기"
+html_title:           "Elixir: 명령 줄 인수 읽기"
 simple_title:         "명령 줄 인수 읽기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-커맨드 라인 인자를 읽는 데 왜 관심을 가져야 하는지는 중요한 질문입니다. Elixir는 강력하고 다양한 기능을 제공하므로 이 기능을 활용하는 것이 중요합니다.
+만약 당신이 프로그래밍을 공부하거나, 개발을 하거나, 혹은 이를 통해 새로운 언어를 배우려면, 커맨드 라인 인자를 읽는 방법은 필수적입니다.
 
-## 어떻게
+## 어떻게 하는지
 
-커맨드 라인 인자를 읽는 방법은 간단합니다. 우리는 먼저 ```System.argv()``` 함수를 사용하여 커맨드 라인 인자를 리스트로 가져올 수 있습니다. 이후에는 사용자가 원하는 방식으로 데이터를 처리할 수 있습니다. 아래는 간단한 예시입니다.
+커맨드 라인 인자를 읽는 것은 간단합니다. 우선, `System.argv` 함수를 사용하여 전달받은 인자들의 리스트를 얻으세요. 그 다음, `Enum.each` 함수를 사용하여 각 인자들에 대한 작업을 수행할 수 있습니다. 아래는 간단한 예제 코드입니다.
 
-```elixir
+```Elixir
 defmodule CommandLine do
-  def read_args do
-    args = System.argv()
-    IO.inspect(args)
+  def print_args do
+    System.argv 
+    |> Enum.each(fn(arg) -> IO.puts(arg) end) 
   end
 end
 
-CommandLine.read_args()
+CommandLine.print_args()
 ```
 
-위의 코드를 실행해보면, 커맨드 라인에서 사용한 인자들이 리스트로 출력되는 것을 볼 수 있습니다. 예를 들어, 만약 ```elixir my_file.exs arg1 arg2```와 같이 커맨드 라인에서 실행한다면, ```["arg1", "arg2"]```가 출력될 것입니다.
+위 코드를 `script.exs`라는 파일로 저장하고, 터미널에서 `elixir script.exs hello world`라는 명령을 실행하면 아래와 같은 결과가 출력됩니다.
 
-## 깊이 파고들기
+```
+hello
+world
+```
 
-커맨드 라인 인자를 읽는 것은 Elixir의 기본 함수 중 하나입니다. 그렇기 때문에 우리는 다양한 방식으로 이 기능을 활용할 수 있습니다. 예를 들어, 우리는 애플리케이션을 실행할 때 사용자가 입력한 옵션을 커맨드 라인 인자로 받아서 그에 따라 동작하도록 할 수 있습니다. 또한, 커맨드 라인 인자를 통해 사용자가 원하는 파일의 경로를 받아서 해당 파일을 열어서 처리할 수도 있습니다. 이처럼 커맨드 라인 인자는 우리가 애플리케이션을 더 유동적이고 다양한 방식으로 동작하도록 할 수 있게 해준다는 것을 기억해주세요.
+간단하죠? 이제 여러분이 원하는대로 커맨드 라인 인자들을 사용할 수 있습니다.
 
-# 더 많은 정보
+## 더 깊이 들어가기
 
-더 많은 정보를 원한다면, [Elixir 공식 문서](https://hexdocs.pm/elixir/System.html#argv/0)를 참고하시기 바랍니다. 여기에는 더 많은 예시 코드와 설명이 제공되어 있으며, 더 자세한 정보를 얻을 수 있습니다.
+`System.argv` 함수는 여러 옵션을 제공하지만, 몇 가지 중요한 것들만 살펴보겠습니다. 먼저, `System.argv()`를 호출하는 것만으로도 커맨드 라인 인자들을 리스트로 얻을 수 있습니다.
 
-# 관련 링크
+또한, `System.argv(0)`는 실행되는 스크립트의 경로를 나타내는 문자열을 반환합니다. 실행되는 스크립트의 이름을 알고 싶다면, `Path.basename(System.argv(0))`를 사용하시면 됩니다. 그리고 `System.argv([])`에 대한 문서를 읽어보시면 더 많은 옵션들을 찾을 수 있을 것입니다.
 
-- [Elixir 공식 문서](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Elixir 프로그래밍 기초](https://brunch.co.kr/@junho85/14)
-- [Elixir 커맨드 라인 인자 다루기](https://medium.com/@sepidehsohrabi/handle-command-line-argument-in-elixir-a1bb540ca21b)
+## 자세히 알아보기
+
+커맨드 라인 인자를 읽는 방법은 매우 간단하며, 새로운 언어를 배우기 전에 먼저 익히는 것이 좋습니다. 그리고 더 많이 알아보고 싶다면, [Elixir 문서](https://hexdocs.pm/elixir/System.html)를 참고하세요.
+
+## 관련 링크
+
+- [Elixir 문서](https://hexdocs.pm/elixir/System.html)
+- [Enum.each 함수 문서](https://hexdocs.pm/elixir/Enum.html#each/2)
+- [IO.puts 함수 문서](https://hexdocs.pm/elixir/IO.html#puts/1)

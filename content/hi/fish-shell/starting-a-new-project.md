@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: नए परियोजना की शुरुआत"
-simple_title:         "नए परियोजना की शुरुआत"
+title:                "एक नए परियोजना की शुरुआत करना"
+html_title:           "Fish Shell: एक नए परियोजना की शुरुआत करना"
+simple_title:         "एक नए परियोजना की शुरुआत करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -9,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Why
+Agar aap ek programming project shuru karna chahte hain to Fish Shell ek acha option ho sakta hai. Ye aapko efficient aur streamlined coding experience provide karta hai, jisse aapka project jaldi se develop ho sakta hai aur aapko kam samay mein zyada kaam karne ki permission deta hai.
 
-नया प्रोजेक्ट शुरू करने में जुटने का सबसे बड़ा कारण आसानी से अपने कामों को संगठित करने और अधिक महत्वपूर्ण टास्कों पर ध्यान केंद्रित करने का है।
-
-## कैसे करें
-
-```Fish Shell "नया प्रोजेक्ट शुरू करने के लिए उदाहरण"
-
-नया प्रोजेक्ट शुरू करने की स्थापना के लिए निम्नलिखित चरणों का पालन करें:
-1. आपके सिस्टम पर Fish Shell इंस्टॉल करें
-2. `fish` कमांड को टर्मिनल में टाइप करें
-3. `mkdir new-project` कमांड से एक नया फ़ोल्डर बनाएं
-4. `cd new-project` कमांड द्वारा उन नए फ़ोल्डर में जाएं
-5. `touch index.html` कमांड से एक नयी HTML फ़ाइल बनाएं
-
-इसके लिए आपके नये फ़ोल्डर में एक नया HTML फाइल होनी चाहिए जिसे आप `cat index.html` कमांड से देख सकते हैं।
+## How To
+Fish Shell mein ek naya project shuru karne ke liye, aapko kuch simple steps follow karne honge:
 
 ```
+Fish Shell mein naya project shuru karne ke liye, aapko pehle `mkdir` command ka use karke ek naya directory create karna hoga.
+Uske baad, `cd` command se uss directory mein enter karein.
+Ab `touch` command ka use karke ek naya file banayein, jisme aap apna code likhenge.
+Finally, apne code ko run karne ke liye `./filename` command use karein.
+```
 
-## गहराई में जाओ
+Sample output:
 
-एक नया प्रोजेक्ट शुरू करना आसान हो सकता है, लेकिन कुछ चीज़ें ध्यान में रखने के लिए हमेशा उपयोगी होते हैं। जैसे कि आपने आपके प्रोजेक्ट का नाम और स्थान पुष्टि कर लिया है, एक अस्पष्ट नाम या बुरे स्थान के बारे में बाद में संशोधन न करना पड़े। इसके अलावा, आप अपने प्रोजेक्ट में अपने सामाजिक और नैतिक उद्देश्यों को स्पष्ट कर सकते हैं ताकि आप वे उद्देश्य और मानकों के साथ प्रोजेक्ट को संचालित कर सकें।
+```
+mkdir my_project
+cd my_project
+touch main.py
+./main.py
+```
 
-## देखें भी
+## Deep Dive
+Fish Shell mein naya project shuru karte waqt, aapko kuch important considerations rakhne honge. Jaise ki aapko apne project ke liye sahi se syntax highlighting aur code completion setup karna hoga. Iske liye aap Fish Shell ke built-in options ka use kar sakte hain ya fir third-party plugins install kar sakte hain.
 
-[Fish Shell ऑफिशियल वेबसाइट](https://fishshell.com/)
+Ek aur important aspect hai virtual environment setup. Fish Shell mein, `virtualenv` command ka use karke aap aasani se ek virtual environment create kar sakte hain, jisse aapke project dependencies alag rehte hain aur aapke system dependencies ko affect nahi karte hain.
 
-[Fish Shell GitHub रिपोजिट
+## See Also
+- [Official Fish Shell Website](https://fishshell.com/)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)

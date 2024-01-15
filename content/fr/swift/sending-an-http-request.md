@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Envoyer une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Swift: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,52 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Envoyer une requête HTTP est une compétence importante pour tout programmeur Swift. Cela vous permet de communiquer avec des serveurs distants et de récupérer des données pour alimenter vos applications. Apprenons comment le faire!
+Si vous êtes un développeur en herbe ou un codeur chevronné, il est très probable que vous ayez entendu parler du protocole HTTP. Il s'agit d'un élément crucial dans la construction d'applications Web, car il permet de communiquer avec des serveurs et d'obtenir des données de manière fiable et sécurisée. Dans cet article, nous allons explorer comment envoyer une requête HTTP en utilisant Swift.
 
 ## Comment faire
 
-Tout d'abord, vous devez créer une URL à partir de l'adresse du serveur que vous souhaitez contacter. Ensuite, vous créez une instance de `URLRequest` et spécifiez la méthode HTTP que vous souhaitez utiliser, par exemple GET ou POST. Enfin, vous pouvez utiliser la méthode `URLSession` pour envoyer la requête et recevoir la réponse.
+Pour envoyer une requête HTTP avec Swift, nous utiliserons la classe `URLSession` qui fournit une API pour interagir avec des serveurs via les protocoles HTTP et HTTPS. Tout d'abord, nous devons créer une instance de `URLSession` en utilisant la configuration par défaut.
 
 ```Swift
-guard let url = URL(string: "https://www.example.com/api") else {
-    print("Invalid URL")
-    return
-}
+let session = URLSession(configuration: .default)
+```
 
+Ensuite, nous devons créer une instance de `URLRequest` en spécifiant l'URL de destination, la méthode de la requête et éventuellement des données à envoyer.
+
+```Swift
+let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
 var request = URLRequest(url: url)
-request.httpMethod = "GET"
+request.httpMethod = "POST"
+let body = "title=Hello&body=World"
+request.httpBody = body.data(using: .utf8)
+```
 
-let session = URLSession.shared
+Enfin, nous devons utiliser l'instance de `URLSession` pour envoyer notre requête en utilisant la méthode `dataTask`.
+
+```Swift
 let task = session.dataTask(with: request) { (data, response, error) in
     if let error = error {
-        print("Error: \(error.localizedDescription)")
+        print("Erreur : \(error.localizedDescription)")
         return
     }
-
-    if let httpResponse = response as? HTTPURLResponse {
-        print("Status code: \(httpResponse.statusCode)")
-    }
-
-    if let data = data {
-        print("Response: \(String(data: data, encoding: .utf8) ?? "No data")")
+    if let data = data, let response = response as? HTTPURLResponse {
+        if response.statusCode == 200 {
+            print(String(data: data, encoding: .utf8) ?? "")
+        }
     }
 }
-
 task.resume()
 ```
 
-Cela va envoyer une requête HTTP GET à l'URL spécifiée et afficher le code de statut de la réponse ainsi que les données récupérées.
+Dans cet exemple, nous envoyons une requête POST à l'URL `https://jsonplaceholder.typicode.com/posts` avec des données contenant un titre et un corps. En cas de succès, nous affichons le contenu de la réponse.
 
 ## Plongée profonde
 
-Il est important de noter que lorsque vous envoyez une requête HTTP, vous pouvez également inclure des informations supplémentaires dans l'en-tête de la requête, telles que des données d'authentification ou des paramètres spécifiques. Vous pouvez également spécifier le type de données que vous attendez en réponse, ce qui peut être utile si vous devez communiquer avec des serveurs utilisant différents formats de données.
+Maintenant que nous avons vu comment envoyer une requête HTTP avec Swift, il est important de comprendre certains concepts sous-jacents. Tout d'abord, il existe plusieurs méthodes de requête HTTP telles que `GET`, `POST`, `PUT`, `DELETE`, etc. Chacune de ces méthodes a son propre but et il est important de les choisir correctement en fonction de l'action que vous souhaitez effectuer sur le serveur.
 
-Il est également possible de créer une requête HTTP à l'aide de la méthode `dataTask(with:completionHandler:)` de `URLSession` en fournissant des données au lieu d'une URL. Cela peut être utile si vous avez besoin de personnaliser complètement la requête envoyée.
+Ensuite, il est également important de comprendre les codes de statut de réponse HTTP, tels que `200`, `404`, `500`, etc. Ces codes indiquent si la requête a réussi ou échoué et fournissent des informations supplémentaires sur l'état de la réponse.
 
-## Voir aussi
+Enfin, il faut également prendre en compte les en-têtes de requête et de réponse HTTP. Ces en-têtes fournissent des informations supplémentaires sur la requête ou la réponse, telles que le type de contenu, la longueur du contenu, etc.
 
-- [Documentation officielle d'Apple sur l'envoi de requêtes HTTP](https://developer.apple.com/documentation/foundation/url_loading_system/sending_an_http_request)
-- [Tutoriel sur l'envoi de requêtes HTTP en Swift](https://medium.com/swift-productions/swift-tutorial-how-to-make-a-simple-http-request-13277b128fd1)
-- [Exemple de projet GitHub utilisant l'envoi de requêtes HTTP en Swift](https://github.com/fullsour/HTTP-Request-in-Swift)
+# Voir aussi
+
+- [Documentation officielle de URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Liste complète des méthodes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Methods)
+- [Liste des codes de réponse HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -9,56 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
+Har du någonsin velat skapa dina egna elektroniska apparater och projekt? Med Arduino kan du göra precis det! Om du är nybörjare är det enkelt att komma igång och om du är en erfaren programmerare finns det utmaningar för att utveckla dina färdigheter.
 
-Att starta ett nytt Arduino-projekt kan vara en spännande utmaning som ger möjlighet att skapa egna unika elektroniska lösningar för olika ändamål. Det är också ett utmärkt sätt att lära sig programmering och elektronik på ett praktiskt sätt.
+## Hur du kommer igång
+Det första du behöver göra är att skaffa en Arduino-bräda och en dator med Arduino-programvaran installerad. Anslut sedan brädan till datorn och öppna programvaran. För att testa att allt fungerar som det ska kan du köra ett enkelt blinkande LED-program. Kopiera koden nedan och klistra in den i Arduino-programmet.
 
-# Hur man gör
-
-Arduino är en öppen källkodsplattform som är relativt lätt att komma igång med. För att börja behöver du en Arduino-mikrocontroller, en dator med Arduino-programvaran installerad och några grundläggande elektronikkomponenter som kretskort, kablar, LED-lampor och motstånd.
-
-För att skapa ditt första projekt kan du följa dessa steg:
-
-1. Anslut din Arduino till datorn med en USB-kabel.
-2. Öppna Arduino-programvaran och välj rätt modell av Arduino från verktygsfältet.
-3. Skriv din kod i det stora textfältet på programvaran. Kontrollera att det finns rätt tabbning och användning av semikolon för att undvika fel.
-4. Kompilera och ladda upp din kod till Arduino genom att klicka på "Ladda upp" -knappen.
-5. Se din kod i aktion genom att ansluta och testa de olika elektronikkomponenterna som du har anslutit till din Arduino.
-
-Här är ett enkelt kodexempel som blinkar en LED-lampa varje sekund:
-
-```Arduino
-// Definiera vilken pinne LED-lampan är ansluten till
-int ledPin = 13;
-
-void setup() {
-  // Sätt LED-pinnen till OUTPUT-mode
-  pinMode(ledPin, OUTPUT);
+```arduino
+void setup(){
+  pinMode(LED_BUILTIN, OUTPUT);  
 }
 
-void loop() {
-  // Tänd LED-lampan
-  digitalWrite(ledPin, HIGH);
-  // Vänta en sekund
-  delay(1000);
-  // Släck LED-lampan
-  digitalWrite(ledPin, LOW);
-  // Vänta en sekund
-  delay(1000);
+void loop(){
+  digitalWrite(LED_BUILTIN, HIGH);  
+  delay(1000);                      
+  digitalWrite(LED_BUILTIN, LOW);    
+  delay(1000);                      
 }
 ```
 
-När detta är uppladdat och anslutet korrekt till din Arduino, bör du se LED-lampan blinka varje sekund.
+När du har kopierat in koden kan du trycka på knappen "Verify" för att kontrollera om det är några fel i koden. Om allt är som det ska kan du sedan ladda upp programmet genom att klicka på knappen "Upload". Nu borde LED-lampan på brädan börja blinka med en sekunds mellanrum.
 
-# Djupdykning
+## Djupdykning
+För att starta ett nytt projekt med Arduino behöver du först ha en idé på vad du vill skapa. Det finns massor av projektidéer online som du kan inspireras av. Efter att du har en idé är det dags att bestämma vilka komponenter och sensorer du behöver. Du kan enkelt köpa dessa online eller i en elektronikbutik.
 
-När du väl har förstått grunderna i att skriva kod för Arduino är det dags att ge sig på ett mer avancerat projekt. Det finns många resurser online för att få idéer och lära sig nya färdigheter, som till exempel att skapa ett smart hemsystem eller bygga en robot.
+När du har alla dina komponenter är det dags att sätta igång med att skapa koden. Det finns massor av resurser online för att hjälpa dig att lära dig kodning på Arduino, inklusive officiella dokumentationen och olika forum där du kan ställa frågor och få hjälp. Var inte rädd för att testa och experimentera för att lära dig mer och utveckla dina färdigheter.
 
-En annan viktig del av att starta ett projekt är att förstå hur du kan kombinera olika elektronikkomponenter för att uppnå det du vill. Detta kan kräva grundläggande kunskaper om kretsdesign och användning av olika sensorer och aktuatorer.
-
-Ett annat tips är att använda dig av open source-projekt. Dessa är projekt som är tillgängliga för allmänheten att använda, modifiera och bygga på. Genom att använda sådana projekt kan du lära dig av andras erfarenheter och få inspiration till dina egna projekt.
-
-# Se även
-
+## Se även
 - [Officiell Arduino-hemsida](https://www.arduino.cc/)
-- [Arduino-hemsida på svenska](https://www.arduino.cc/)
+- [Arduino-projekt på Instructables](https://www.instructables.com/arduino/projects/)
+- [Arduino-forum på Reddit](https://www.reddit.com/r/arduino/)

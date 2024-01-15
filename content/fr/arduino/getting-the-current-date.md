@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Obtenir la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Arduino: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,29 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous êtes peut-être en train de vous demander pourquoi avoir la date actuelle serait important dans votre projet Arduino. Eh bien, permettez-moi de vous dire que c'est une fonctionnalité très utile dans de nombreux cas. Par exemple, vous pourriez avoir besoin de savoir quel jour il est pour un système d'arrosage automatique ou pour enregistrer la date et l'heure d'un événement dans un journal.
+Si vous êtes en train de construire un projet avec votre Arduino, il est probable que vous ayez besoin de connaître la date et l'heure actuelles. Que vous souhaitiez afficher la date sur un écran LCD ou enregistrer des données avec un horodatage, obtenir la date actuelle peut être très utile.
 
 ## Comment faire
 
-La bonne nouvelle est qu'il est très facile de récupérer la date actuelle en utilisant Arduino. Tout d'abord, vous devez inclure la bibliothèque Time.h dans votre code en utilisant l'instruction `#include <Time.h>`. Ensuite, vous devez initialiser la bibliothèque en appelant la fonction `setTime()` avec les valeurs de l'heure et de la date actuelles. Par exemple :
+Pour obtenir la date et l'heure actuelles sur votre Arduino, vous pouvez utiliser la bibliothèque intégrée "Time". Voici un exemple de code pour obtenir la date et l'heure actuelles :
 
-```
-Arduino setTime(14, 30, 0, 20, 3, 2021); // Définit l'heure à 14:30, le jour à 20 et le mois à mars en 2021
+```Arduino
+#include <Time.h> // Importer la bibliothèque Time
+
+void setup() {
+
+  Serial.begin(9600); // Initialiser la communication série
+  while (!Serial) {
+    ; // Attendre que la communication série soit établie
+  }
+
+  setTime(9, 30, 0, 10, 8, 2021); // Définir manuellement la date et l'heure actuelles (heure, minute, seconde, jour, mois, année)
+
+}
+
+void loop() {
+
+  // Obtenir la date et l'heure actuelles
+  Serial.println("La date et l'heure actuelles sont :");
+  Serial.print(day()); // Jour en cours
+  Serial.print("/");
+  Serial.print(month()); // Mois en cours
+  Serial.print("/");
+  Serial.print(year()); // Année en cours
+  Serial.print(" ");
+  Serial.print(hour()); // Heure en cours (format 24 heures)
+  Serial.print(":");
+  Serial.print(minute()); // Minute en cours
+  Serial.print(":");
+  Serial.println(second()); // Seconde en cours
+
+  delay(1000); // Attendre 1 seconde avant de répéter
+
+}
 ```
 
-Ensuite, vous pouvez utiliser la fonction `now()` pour obtenir un objet Time qui contient toutes les informations sur la date et l'heure actuelles. Vous pouvez ensuite utiliser les fonctions `hour()`, `minute()`, `second()`, `day()`, `month()` et `year()` pour obtenir des valeurs spécifiques.
-
-```
-Arduino now = now(); // Stocke la date et l'heure actuelles dans l'objet Time
-int heure = hour(now); // Stocke l'heure actuelle dans la variable heure
-```
+Lorsque vous téléversez ce code sur votre Arduino et ouvrez le moniteur série (9600 bauds), vous devriez voir la date et l'heure actuelles s'afficher en continu.
 
 ## Plongée en profondeur
 
-Time.h utilise l'horloge interne de l'Arduino pour suivre l'heure et la date, donc il est important de s'assurer que l'heure et la date sont correctement définies avant d'utiliser cette bibliothèque. Vous pouvez le faire en utilisant un module RTC (Real Time Clock) ou en utilisant un code pour ajuster manuellement l'heure et la date. De plus, vous pouvez utiliser des fonctions telles que `dayOfWeek()` et `dayOfYear()` pour obtenir des informations supplémentaires sur la date actuelle.
+La bibliothèque "Time" utilise l'horloge temps réel (RTC) intégrée à votre carte Arduino pour obtenir la date et l'heure actuelles. Cela signifie que votre Arduino doit être alimenté en permanence pour conserver l'heure, même lorsque vous le débranchez. Si vous avez besoin de changer manuellement la date et l'heure, vous pouvez utiliser la fonction `setTime()` comme dans l'exemple précédent.
+
+La bibliothèque "Time" offre également d'autres fonctions pratiques pour travailler avec le temps, telles que `hour()`, `minute()` et `second()` pour obtenir séparément l'heure, la minute et la seconde actuelles.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque Time.h](https://www.arduino.cc/reference/en/libraries/time/)
-- [Tutoriel vidéo sur la récupération de la date et de l'heure avec Arduino](https://www.youtube.com/watch?v=1JJhVviPDT0)
-- [Utilisation d'un module RTC avec Arduino](https://howtomechatronics.com/tutorials/arduino/arduino-ds3231-real-time-clock-tutorial/)
+- [Documentation officielle de la bibliothèque Time](https://www.arduino.cc/reference/en/libraries/time/)
+- [Tutorial sur comment utiliser la bibliothèque Time](https://playground.arduino.cc/Code/time/)

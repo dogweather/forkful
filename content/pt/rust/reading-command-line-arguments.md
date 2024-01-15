@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Rust: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,56 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando
+## Por que ler argumentos da linha de comando?
 
-Ao escrever programas em Rust, muitas vezes é necessário ler os argumentos fornecidos pelo usuário na linha de comando. Isso permite que o programa seja executado de maneira diferente dependendo dos argumentos inseridos, tornando-o mais versátil e útil para os usuários.
+É útil saber como ler argumentos da linha de comando quando você está desenvolvendo um programa em Rust. Isso permite que seu programa interaja com o usuário de diferentes maneiras, como receber entradas do usuário ou executar comandos específicos. Além disso, pode facilitar a execução de seu programa em diferentes plataformas.
 
 ## Como fazer
 
-Para ler argumentos da linha de comando em Rust, primeiro é necessário importar a biblioteca `std::env`. Em seguida, podemos usar a função `args()` para recuperar uma lista dos argumentos passados para o programa. Aqui está um exemplo de como isso é feito:
+Para ler argumentos da linha de comando em Rust, você precisa importar a biblioteca padrão `std::env`. A partir disso, você pode acessar os argumentos fornecidos pelo usuário através do `std::env::args`. Cada argumento é retornado como uma string e você pode iterar sobre eles para obter o valor específico que você precisa. Aqui está um exemplo:
 
 ```Rust
 use std::env;
 
 fn main() {
+    // Obtém os argumentos da linha de comando
     let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
+    // Itera sobre os argumentos
+    for arg in args.iter() {
+        println!("{}", arg);
+    }
 }
 ```
 
-Neste exemplo, a variável `args` irá conter uma lista de Strings contendo os argumentos fornecidos pelo usuário. Podemos então usá-la para executar diferentes operações com base nos argumentos inseridos.
+Supondo que você compile e execute o código acima com o argumento "hello" na linha de comando, o resultado será:
 
-## Mergulho profundo
+```
+hello
+```
 
-Para uma exploração mais aprofundada, podemos utilizar o pacote `clap` para facilitar a leitura de argumentos da linha de comando em Rust. O `clap` é uma biblioteca de análise de linha de comando que nos permite definir facilmente opções, argumentos e flag para o nosso programa. Aqui está um exemplo de como usá-lo:
+Você também pode acessar argumentos específicos diretamente através de seu índice na lista de argumentos, assim como você faria com um vetor normal. Veja este exemplo:
 
 ```Rust
-use clap::{App, Arg};
+use std::env;
 
 fn main() {
-    let matches = App::new("Meu Programa")
-        .version("1.0")
-        .author("Meu Nome")
-        .about("Este programa lê argumentos da linha de comando")
-        .arg(Arg::with_name("arquivo")
-             .short("f")
-             .long("file")
-             .value_name("ARQUIVO")
-             .help("Define o arquivo a ser lido")
-             .takes_value(true))
-        .get_matches();
-
-    // Usando o argumento fornecido pelo usuário
-    let arquivo = matches.value_of("arquivo").unwrap_or("config.txt");
-
-    println!("Lendo o arquivo: {}", arquivo);
+    // Obtém o segundo argumento da linha de comando
+    let arg_two = env::args().nth(2);
+    
+    match arg_two {
+        // Se o segundo argumento existir, imprime seu valor
+        Some(value) => println!("{}", value),
+        // Se não existir, imprime uma mensagem de erro
+        None => println!("O segundo argumento não foi fornecido"),
+    }
 }
 ```
 
-Este é apenas um exemplo simples do uso do `clap` para facilitar a leitura de argumentos da linha de comando. Para mais informações e opções avançadas, consulte a documentação oficial do `clap`.
+## Aprofundando um pouco mais
+
+Existem algumas coisas importantes para se ter em mente ao ler argumentos da linha de comando em Rust. Primeiro, é importante lembrar que a lista de argumentos começa no índice 1, não no índice 0. Por exemplo, o primeiro argumento será `env::args().nth(1)`, não `env::args().nth(0)`. 
+Além disso, ao converter os argumentos em um vetor de strings, o primeiro argumento (que é o nome do programa) será incluído no vetor também. Você pode usar o método `env::args().skip(1)` para ignorar o primeiro argumento, se necessário.
+
+Outro ponto a ter em mente é que os argumentos serão retornados como strings, então você precisará convertê-los para o tipo de dado apropriado antes de usá-los em seu programa.
 
 ## Veja também
 
-- [Documentação oficial do `std::env`](https://doc.rust-lang.org/std/env/index.html)
-- [Documentação oficial do `clap`](https://docs.rs/clap/2.33.0/clap/)
-- [Tutorial sobre como ler argumentos da linha de comando em Rust](https://www.it-swarm.net/pt/rust/como-posso-implementar-a-análise-de-linha-de-comandos-em-rust/940772095/)
+- [Documentação oficial Rust sobre leitura de argumentos da linha de comando](https://doc.rust-lang.org/stable/std/env/fn.args.html)
+- [Tutorial sobre leitura de argumentos da linha de comando em Rust](https://www.tutorialspoint.com/rust-program-to-read-command-line-arguments)

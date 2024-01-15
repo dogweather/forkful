@@ -1,6 +1,7 @@
 ---
-title:                "Rust: परीक्षाओं को लिखना"
-simple_title:         "परीक्षाओं को लिखना"
+title:                "प्रोग्रामिंग में परीक्षण लिखना"
+html_title:           "Rust: प्रोग्रामिंग में परीक्षण लिखना"
+simple_title:         "प्रोग्रामिंग में परीक्षण लिखना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -9,44 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyon
+## क्यों
 
-Unit testing is an essential aspect of software development, ensuring that the code is functioning as intended and catching bugs before they become bigger issues. In Rust, writing tests is particularly important due to its focus on stability and reliability. By writing tests, you can have confidence in your code and prevent potential errors.
+टेस्ट लिखने में सामान्य तौर पर हम सभी के समय की बहुत खर्च होती है। लेकिन अगर हम्हारे कोड में कुछ भी गलतियां होती हैं तो हम समझ सकते हैं कि वो कहा हुईं हैं। यह टेस्टिंग का मतलब है। इन परिक्षणों के साथ हम सुनिश्चित कर सकते हैं कि हमारा कोड सही से काम कर रहा है या नहीं। इससे हम सकारात्मक प्रतिक्रिया प्राप्त कर सकते हैं और अधिक विश्वसनीय और दुरुस्त कोड लिख सकते हैं।
 
-# Kaise Karein
+## कैसे करें
 
-Tests in Rust are written using the built-in testing framework called [`assert!`](https://doc.rust-lang.org/beta/std/macro.assert.html). This macro checks if the provided expression evaluates to `true` and returns an error if it doesn't. Let's take a look at an example of writing a simple test for a function that adds two numbers:
+टेस्ट लिखने के लिए, हमने अपने कोड के साथ संलग्न एक दूसरी फाइल में `#[test]` अनुक्रम नामक फंक्शन सामान्य रूप से `main.rs` या `lib.rs` नामक फाइल के साथ संलग्न करते हैं। यह फंक्शन हमारे कोड को टेस्ट करने के लिए योग्य कोड को प्रस्तुत करता है। नीचे उदाहरण दिया गया है:
 
-```
-Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
-
-#[test]   //this attribute marks the function as a test
+```Rust
+#[test]
 fn test_add() {
-    assert!(add(2, 3) == 5);   //this test will pass
-    assert!(add(-1, 2) == 5);   //this test will fail
+    assert_eq!(add(2, 3), 5);
 }
 ```
 
-In the above code, we define a function `add` that adds two numbers and then use the `assert!` macro to test its output. We use the `#[test]` attribute above the function to mark it as a test. Running this test will give us the output:
+इस उदाहरण में, हमने `test_add` नामक एक फंक्शन बनाया है जो `add` नामक फंक्शन को टेस्ट करता है। हम जांचते हैं कि दो संख्याओं को जोड़ने पर हमारे द्वारा दिए गए जवाब से यह संख्या समान है या नहीं। अगर समान है तो टेस्ट पास हो जाएगा, लेकिन अगर गलत है तो टेस्ट फेल हो जाएगा।
 
-```
-failures:
----- test_add failures ----
-thread 'main' panicked at 'assertion failed: `(left == right)`
-  left: `-1`,
- right: `5`', src\main.rs:10:5
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
+## गहराई में जाएं
 
-This shows us that our second assertion has failed, and the test needs to be fixed.
-
-# Gehri Jaankari
-
-Apart from the basic `assert!` macro, there are other useful macros provided by Rust's testing framework, such as `assert_eq!` and `assert_ne!` for comparing equality and inequality, `assert!(block)` for checking if the provided code block returns no errors, and more. Additionally, Rust also supports integration tests, which allows for testing the interaction between multiple modules in your code.
-
-# Dekhein Bhi
-
-[The Rust Book](https://doc.rust-lang.org/stable/book/) is an excellent resource for learning more about writing tests in Rust. Additionally, [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/testing/unit_testing.html) also has a chapter on unit testing that provides further examples and explanations.
+टेस्ट लिखना एक उत्तम तरीका है हमारे कोड को सुनिश्चित करने का और उसे दुरुस्त बनाने का। लेकिन हमें यह समझने के

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "C++: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att konvertera en sträng till små bokstäver är användbart när du vill standardisera indata eller göra jämförelser mellan strängar oberoende av stora eller små bokstäver.
 
-Att konvertera en sträng till små bokstäver kan vara en viktig del av att hantera användarinput eller behandla data på ett enhetligt sätt. Detta kan vara speciellt användbart när man jämför strängar eller gör sökoperationer.
-
-## Såhär gör man
+## Hur man gör
+Det finns flera sätt att konvertera en sträng till små bokstäver i C++, men en vanlig metod är att använda standardfunktionen `tolower()` tillsammans med en `for`-loop.
 
 ```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    // Skapa en sträng med blandade bokstäver
-    string str = "HeLLo WoRLd";
-
-    // Konvertera strängen till små bokstäver
-    for (int i = 0; i < str.length(); i++) {
-        str[i] = tolower(str[i]);
-    }
-
-    // Skriv ut konverterade strängen
-    cout << str << endl; // hello world
-
-    return 0;
+string str = "SVENSKA";
+for (int i = 0; i < str.length(); i++) {
+    str[i] = tolower(str[i]);
 }
+cout << str << endl;
 ```
+Output: svenska
 
-## Djupdykning
+Det finns också bibliotek som erbjuder funktioner för att konvertera strängar till små bokstäver, såsom `<algorithm>` och `<string>`.
 
-I C++ finns det flera sätt att konvertera en sträng till små bokstäver. En metod är att använda en loop och `tolower()` funktionen för att ändra varje enskild bokstav. En annan metod är att använda `transform()` funktionen tillsammans med `tolower()` för att konvertera hela strängen på en gång.
+## Deep Dive
+Vid konvertering till små bokstäver finns det vissa saker att tänka på. Till exempel, i vissa språk kan vissa bokstäver ha olika teckenkoder för stora och små bokstäver, och det kan påverka resultatet av konverteringen. Det är också viktigt att veta att konvertering av en sträng till små bokstäver inte förändrar originalet, utan skapar en kopia av strängen med små bokstäver.
 
-Det finns också bibliotek och externa funktioner som kan användas för att konvertera en sträng till små bokstäver, som `boost::algorithm::to_lower()` från Boost biblioteket.
-
-## Se också
-
-- [C++ Documentation: tolower()](https://www.cplusplus.com/reference/cctype/tolower/)
-- [C++ Documentation: transform()](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Boost Library: to_lower()](https://www.boost.org/doc/libs/1_77_0/doc/html/string_algo/reference.html#header_boost_algorithm_string_h)
-- [Stack Overflow: Convert to Lower Case in C++](https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case)
+## Se även
+- [C++ Standardbibliotek](https://en.cppreference.com/w/cpp/algorithm)
+- [C++ Strängbibliotek](https://en.cppreference.com/w/cpp/string/basic_string)

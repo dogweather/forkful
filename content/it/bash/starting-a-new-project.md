@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Avviare un nuovo progetto"
+title:                "Avviare un nuovo progetto"
+html_title:           "Bash: Avviare un nuovo progetto"
 simple_title:         "Avviare un nuovo progetto"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,56 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Sei pronto per iniziare un nuovo progetto di programmazione ma non sai da dove cominciare? Questo articolo è qui per aiutarti ad affrontare la programmazione di Bash con sicurezza e competenza.
+Hai mai pensato di iniziare un nuovo progetto con Bash? Forse hai voglia di imparare un nuovo linguaggio di programmazione o forse sei semplicemente curioso di sperimentare con uno strumento diverso. In ogni caso, ci sono molti buoni motivi per iniziare un nuovo progetto con Bash!
 
-## Come si fa
+## Come fare
 
-Per iniziare un nuovo progetto di programmazione Bash, segui questi semplici passi:
+Per iniziare un nuovo progetto con Bash, puoi seguire questi semplici passaggi:
 
-```Bash
-#1. Crea una nuova directory per il tuo progetto
-mkdir nuovo_progetto
+1. Assicurati di avere la versione corrente di Bash installata sul tuo computer.
+2. Crea una nuova cartella per il tuo progetto.
+3. Crea un file "script.sh" all'interno della cartella, questo sarà il tuo file di script Bash.
+4. Apri il file "script.sh" con il tuo editor preferito e inizia a scrivere il codice Bash.
 
-#2. Entra nella directory appena creata
-cd nuovo_progetto
+Ecco un esempio semplice di codice Bash che stamperà "Ciao mondo!" nella console:
 
-#3. Crea un nuovo file di script Bash
-touch script.sh
+```
+#!/bin/bash
 
-#4. Aggiungi i permessi di esecuzione al tuo file di script
-chmod +x script.sh
-
-#5. Apri il tuo file di script con un editor di testo, come nano o vim, e inizia a scrivere il tuo codice
-nano script.sh
+echo "Ciao mondo!"
 ```
 
-Una volta che hai scritto il tuo codice, puoi eseguirlo direttamente dalla riga di comando utilizzando il seguente comando:
+Salva il file e dal terminale naviga nella cartella del tuo progetto. Quindi esegui il file di script Bash usando questo comando:
 
-```Bash
-./script.sh
+```
+sh script.sh
 ```
 
-Ecco un esempio di output che potresti vedere:
-
-```Bash
-Benvenuti al mio nuovo progetto di Bash!
-```
+E dovresti vedere "Ciao mondo!" stampato nella console.
 
 ## Approfondimento
 
-Ora che hai iniziato il tuo nuovo progetto di programmazione Bash, ecco alcuni consigli per approfondire la tua conoscenza:
+Ora che hai iniziato il tuo primo progetto con Bash, ci sono alcune cose che dovresti tenere a mente mentre continui a lavorare su di esso. Una delle cose più importanti è la sintassi di Bash - assicurati di essere preciso con la punteggiatura e gli operatori.
 
-- Utilizza i commenti per rendere il tuo codice più leggibile e comprensibile per te stesso e per gli altri collaboratori del progetto.
-- Usa le variabili per rendere il tuo codice più flessibile e riutilizzabile.
-- Sperimenta con i loop e le condizioni per automatizzare processi ripetitivi o creare logiche di decisione all'interno del tuo codice.
-- Impara a scrivere funzioni per suddividere il tuo codice in blocchi gestibili e facili da testare.
-- Esplora la vasta gamma di comandi e funzioni disponibili in Bash per ampliare le tue possibilità di programmazione.
-
-Con un po' di pratica e perseveranza, sarai in grado di padroneggiare la programmazione Bash e creare progetti sempre più complessi e interessanti.
+Inoltre, assicurati di comprendere le diverse funzionalità di Bash, come la gestione dei loop e delle variabili. Ci sono molte risorse online che possono aiutarti a imparare e padroneggiare Bash.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
-- [Tutorial di Bash di Linuxize](https://linuxize.com/post/bash-scripting-tutorial/)
-- [Comandi utili di Bash di Tecmint](https://www.tecmint.com/useful-linux-bash-one-line-scripts/)
-- [Esercizi di programmazione Bash di LinuxHint](https://linuxhint.com/100_bash_exercises/)
+- [Bash Guide](https://www.gnu.org/software/bash/manual/)
+- [Bash Programming - Introduction HOW-TO](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Learn Bash in Y Minutes](https://learnxinyminutes.com/docs/bash/)
+- [Bash Scripting Cheat Sheet](https://devhints.io/bash)

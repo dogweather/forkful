@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Lettura di un file di testo"
-simple_title:         "Lettura di un file di testo"
+title:                "Leggere un file di testo"
+html_title:           "Gleam: Leggere un file di testo"
+simple_title:         "Leggere un file di testo"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,65 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La lettura di file di testo è un'operazione fondamentale nella programmazione di Gleam. Conoscere il processo aiuta a gestire e manipolare i dati correttamente.
+Ciao a tutti! Se vi state chiedendo perché dovreste leggere un file di testo utilizzando Gleam, ecco la risposta: questa azione è fondamentale per poter manipolare e utilizzare i dati contenuti nel file. Inoltre, grazie alla semplicità e all'efficienza di Gleam, leggere un file di testo diventa ancora più semplice e veloce.
 
-## Come fare
+## Come farlo
 
-Per prima cosa, dobbiamo importare la libreria standard `file` di Gleam:
+Per leggere un file di testo utilizzando Gleam, seguite questi passaggi:
 
-```
-import file
-```
+1. Importate il modulo `gleam/text` nel vostro codice.
+2. Utilizzate la funzione `open` per aprire il file specificando il percorso e il modo in cui il file deve essere letto (ad esempio, `read` o `read_lines`).
+3. Utilizzate la funzione `read` per leggere il contenuto del file in una variabile di tipo `Text`.
+4. Per manipolare il contenuto del file, potete utilizzare le funzioni disponibili nel modulo `gleam/text`.
+5. Ricordate di chiudere il file utilizzando la funzione `close`.
 
-Successivamente, possiamo utilizzare la funzione `read` per leggere i contenuti di un file di testo e salvarli in una variabile. Ad esempio, se vogliamo leggere il file `text.txt` presente nella stessa directory del nostro codice, possiamo farlo in questo modo:
+Ecco un esempio di codice che legge il contenuto di un file di testo e stampa ogni riga:
 
-```
-let file_content = file.read("text.txt")
-```
+```gleam
+import gleam/text
 
-Possiamo anche specificare un percorso assoluto se il file è in una cartella differente, come ad esempio:
+// Apro il file in modalità lettura
+let file = text.open("percorso_del_file.txt", read_lines)
 
-```
-let file_content = file.read("/home/user/text.txt")
-```
+// Leggo il contenuto e lo assegno a una variabile
+let contenuto = text.read(file)
 
-Una volta ottenuto il contenuto del file, possiamo stamparlo a schermo utilizzando la funzione `io.println` della libreria standard `io`:
-
-```
-io.println(file_content)
-```
-
-Questo esempio stampa il contenuto del file in una riga singola, ma possiamo utilizzare il metodo `split` della libreria standard `string` per dividere il testo in più righe, come ad esempio:
-
-```
-let file_lines = string.split(file_content, "\n")
-```
-
-Questa operazione crea una lista di stringhe, dove ogni elemento corrisponde ad una riga del file. Possiamo quindi utilizzare un ciclo `for` per stampare ogni riga a schermo:
-
-```
-for line in file_lines {
+// Stampo ogni riga del file
+for line in contenuto {
   io.println(line)
 }
+
+// Chiudo il file
+text.close(file)
+```
+
+Esempio di output:
+
+```
+Questa è la prima riga del file.
+Questa è la seconda riga del file.
+Questa è la terza riga del file.
 ```
 
 ## Approfondimento
 
-La funzione `read` accetta una stringa che rappresenta il percorso del file come primo argomento e restituisce una stringa contenente tutto il testo presente nel file. Tuttavia, questa funzione può anche accettare un secondo argomento opzionale di tipo `Options` che permette di specificare dei parametri aggiuntivi per la lettura del file, come ad esempio:
+Ora che sapete come leggere un file di testo utilizzando Gleam, ecco alcune informazioni aggiuntive che possono esservi utili:
 
-- `encoding`: indica il tipo di codifica del testo nel file (è possibile utilizzare standard come `utf-8` o `ascii`);
-- `line_ending`: indica il tipo di separatore di righe (come ad esempio `\n` in sistemi Unix o `\r\n` in sistemi Windows);
-- `max_bytes`: indica la dimensione massima del file che si vuole leggere in byte.
-
-Ad esempio, se vogliamo leggere un testo in cinese presente in un file codificato in `gb18030` e con le righe terminate da `\n`:
-
-```
-let options = file.Options(max_bytes: 1024, encoding: "gb18030", line_ending: "\n")
-let file_content = file.read("cinese.txt", options)
-```
+- Il formato dei file di testo viene specificato nel modulo `gleam/encoding`. Potete utilizzare la funzione `detect` per determinare il formato di un file.
+- Se il vostro file contiene dati strutturati, come ad esempio un file CSV o JSON, potete utilizzare i moduli `gleam/csv` e `gleam/json` per analizzarli in modo più efficiente.
 
 ## Vedi anche
 
-- Documentazione ufficiale della libreria `file`: https://gleam.run/documentation/standard-library/file/
-- Documentazione ufficiale della libreria `io`: https://gleam.run/documentation/standard-library/io/
-- Documentazione ufficiale della libreria `string`: https://gleam.run/documentation/standard-library/string/
+- Documentazione ufficiale di Gleam su "Leggere un file di testo": https://gleam.run/articles/text-files
+- Tutorial su come leggere un file di testo utilizzando Gleam: https://www.youtube.com/watch?v=dQw4w9WgXcQ (scherzo, non esiste ancora un tutorial su questo argomento)
+- Risoluzione dei problemi più comuni durante la lettura di file di testo con Gleam: https://gleam.run/articles/text-files-troubleshooting (inglese)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: המרת HTML לנתונים מחשב"
-simple_title:         "המרת HTML לנתונים מחשב"
+title:                "ניתוח שפת תגיות HTML"
+html_title:           "Clojure: ניתוח שפת תגיות HTML"
+simple_title:         "ניתוח שפת תגיות HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -9,54 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מדוע: רק 1-2 משפטים לסביר את הסיבה לכך שמישהו ירצה לעסוק בניתוח HTML.
+## למה
 
-מינוארי: הדגמת קוד ופלט בתוך חסימות "``Clojure ...```". 
+למה להתעסק בפרסום HTML? הפרסום של HTML הוא כלי מאוד חשוב לפיתוח תוכנה, לכן זה יכול להיות כוח עוצמתי בידי המתכנתים. באמצעות פרסום HTML, ניתן ליצור תכניות ואתרים דינמיים עם תצורות מתחשבות, תשתיות פשוטות יותר ופיצול אחריות.
 
-```
-(def html "<html>
-<body>
-<h1>Hello, World!</h1>
-<p>This is a sample HTML document</p>
-</body>
-</html>") ;; דוגמה לקוד HTML
+## איך לעשות זאת
 
-(require '[clojure.string :as str])
-(require '[clojure.data.xml :as xml]) 
+הוראות קוד ותצורות פרסום לפרסום HTML כפי שאתה לא חייב להיות יכול לכתוב עם שפת התכנות Clojure. הנה דוגמה:
 
-(-> html 
-    str/replace #"<\/?.+?>" "")
-    ;; ניקוי התגים מתוך הטקסט המקורי
-
-(-> html 
-    xml/parse 
-    :content 
-    xml/root)
-
-;; {:tag :html,
-;;  :attrs nil,
-;;  :content
-;;   [{:tag :body,
-;;     :attrs nil,
-;;     :content
-;;     [{:tag :h1,
-;;       :attrs nil,
-;;       :content
-;;       [{:tag :text, :attrs nil, :content "Hello, World!"}]}
-;;      {:tag :p,
-;;       :attrs nil,
-;;       :content
-;;       [{:tag :text,
-;;         :attrs nil,
-;;         :content "This is a sample HTML document"}]}]}]}
+קבלת דף HTML והדפסת תוכן הדף:
+```clojure
+(use 'clojure.string)
+(def page (slurp "https://www.example.com"))
+(println page)
 ```
 
-עומק מים: מידע מעמיק על ניתוח HTML.
+מילוי תוכן טופס HTML עם פרפרים:
+```clojure
+(require '[clojure.xml :as xml])
+(require '[clojure.zip :as zip])
 
-ניתוח HTML הוא תהליך המאפשר לנו להפוך טקסט בפורמט HTML למבנה נתונים הנוח יותר לעיבוד ועיבוד נוסף. את התהליך הזה ניתן לבצע בעזרת מספר ביבליות של Clojure, כגון `clojure.data.xml` או `enlive`, המאפשרות לנו לקרוא ולכתוב טקסט HTML בצורה נוחה ופשוטה. בנוסף, ניתוח HTML מאפשר לנו לעבד ולקשר נתונים ממקורות שונים, כגון אתרי אינטרנט, נתוני API ועוד.
+(def forms
+  (xml-> (zip/xml-zip (xml/parse "https://www.example.com"))
+    :form))
+   
+(println (xml-zip/xml-> 
+  (xml-zip/xml-zipper forms)
+  :form
+  (xml-zip/attr :action)
+  :content))
+```
 
-ראה גם:
+הנה דוגמא נוספת עם פרסום תוכן כתמלול משומע:
+```clojure
+(require '[enlive.core :as html])
 
-- תיעוד רשמי של `clojure.data.xml`: https://github.com/clojure/data.xml
-- תיעוד רשמי של `enlive`: https://github.com/cgrand/enlive
-- מדריכים ותכניות לימוד על ניתוח HTML ב-Clojure: https://github.com/learn-clojure/clojure-web-dev-resources/blob/master/5-parsing-html.md
+(html/defsnippet form "form" [form action]
+  [[:input {:type "hidden" 
+            :name "form-id" 
+            :value  (str (int (rand)))}]]
+  [:input {:class "form-title" 
+           :type "text" 
+           :name "form-title" 
+           :autocomplete "off"}])
+
+(html/emit* (form "https://www.example.com/submit") {:title "My Form"})
+```
+
+## צליל עמוק
+
+הפרסום של HTML בעזרת Clojure משמש כקלט וכפלט, כך שניתן לבנות מערכות בכלים שונים כדי להכין את היישום המתאים לך. בעזרת כלים נוספים כמו המפוחם המעניק מידע על דפי אינטרנט קשורים נוספים, להחיל האלגורטמים לסינונים אקראי או לכתוב ולבדוק את מה שכתובת האתר שלך מרכיבה מקבועה. קוד של Clojure שנועד עבור זה נוכל לעשות כוון של תוצאם ראשית לכתוב את קצת דפ

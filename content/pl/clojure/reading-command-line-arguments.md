@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Clojure: Odczytywanie argumentów wiersza poleceń"
 simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,71 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto wczytać argumenty wiersza poleceń w Clojure
+## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Wiele języków programowania wciąż jest wykorzystywanych w różnych dziedzinach - od tworzenia stron internetowych po analizę danych. Jednym z popularnych języków jest Clojure, który wyróżnia się swoją składnią i możliwościami programowania funkcyjnego. Jedną z przydatnych umiejętności w Clojure jest wczytywanie argumentów z linii poleceń. W tym wpisie dowiesz się, dlaczego warto to umiejętność zdobyć oraz jak to zrobić.
+W dzisiejszych czasach coraz więcej programów wymaga wprowadzania argumentów wiersza poleceń. Jeśli jesteś programistą Clojure i chcesz nauczyć się jak czytać argumenty wiersza poleceń w swoich programach, to ten artykuł jest dla Ciebie!
 
-## Jak wczytać argumenty z linii poleceń w Clojure
-
-Wczytywanie argumentów z linii poleceń jest przydatne w przypadku, gdy chcemy uruchamiać nasz program z różnymi parametrami. W Clojure możemy tego dokonać za pomocą funkcji *command-line-args* z biblioteki *clojure.java.shell*. Poniżej znajduje się przykładowy kod, który wczyta argumenty i wyświetli je na konsoli.
+## Jak to zrobić
 
 ```Clojure
-(ns args-example.core
-  (:require [clojure.java.shell :refer [command-line-args]]))
+(defn parse-args [args]
+  (split-with #(not= % "--") args))
 
-(defn -main
-  [args]
-  (println "Wczytane argumenty:")
-  (println args))
+(defn get-flags [args]
+  (->> args
+       (drop 1)
+       (map first)))
 
-```
+(defn get-args [args]
+  (->> args
+       (drop 1)
+       (partition 2)
+       (map second)
+       (into {})))
 
-Kod ten wykorzystuje funkcję *command-line-args*, która zwraca listę wszystkich argumentów podanych podczas uruchamiania programu. Możemy także dokonać konwersji tych argumentów na odpowiednie typy danych, na przykład za pomocą funkcji *read-string*.
+(defn parse-cmd-args [args]
+  (let [[flags args] (parse-args args)
+        flags (into #{} (get-flags flags))
+        args (get-args args)]
+    (merge args {:flags flags})))
 
-```Clojure
-(ns args-example.core
-  (:require [clojure.java.shell :refer [command-line-args]]
-            [clojure.edn :as edn]))
-
-(defn -main
-  [args]
-  (println "Wczytane argumenty:")
-  (println args)
-  (println "Pierwszy argument jako int:")
-  (let [first-arg (read-string (first args))]
-    (println (type first-arg))
-    (println first-arg)))
-
-```
-
-Wydruk na konsoli dla argumentów "5" "hello":
+(defn -main [& args]
+  (let [{:flags flags :args args} (parse-cmd-args args)]
+    (println "Flags:" flags)
+    (println "Arguments:" args)))
 
 ```
-Wczytane argumenty:
-("5" "hello")
-Pierwszy argument jako int:
-clojure.lang.Long
-5
-```
 
-## Głębszy wgląd w wczytywanie argumentów z linii poleceń
-
-Warto wiedzieć, że funkcja *command-line-args* zwraca również informacje o środowisku, w którym uruchomiono program. Możemy to wykorzystać, aby wykonać odpowiednie akcje w zależności od tego, czy program został uruchomiony w środowisku produkcyjnym czy testowym. 
-
-```Clojure
-(ns args-example.core
-  (:require [clojure.java.shell :refer [command-line-args]]
-            [clojure.edn :as edn]))
-
-(defn -main
-  [args]
-  (if (contains? (first args) :env)
-    (println "Program został uruchomiony w środowisku testowym.")
-    (println "Program został uruchomiony w środowisku produkcyjnym.")))
+Po uruchomieniu powyższego kodu z argumentami `--debug --name John` otrzymamy następujący wynik:
 
 ```
+Flags: #{:debug}
+Arguments: {:name "John"}
+```
+
+## Deep Dive
+
+Do obsługi argumentów wiersza poleceń w Clojure możemy wykorzystać funkcje `parse-args`, `get-flags` i `get-args`, które są odpowiedzialne za podzielenie argumentów na flagi i wyodrębnienie wartości pomiędzy nimi. Następnie funkcja `parse-cmd-args` łączy ze sobą wszystkie wcześniej zdefiniowane funkcje, aby zwrócić mapę zawierającą wszystkie podane argumenty oraz flagi.
+
+Możemy również dodać własne funkcje do obsługi konkretnych argumentów. Na przykład, jeśli chcemy, aby nasz program przyjmował tylko liczby jako argumenty, możemy napisać funkcję, która będzie sprawdzać, czy wartość podana w argumencie jest liczbą. Dzięki takiemu podejściu uzyskujemy pełną kontrolę nad obsługą argumentów w naszym programie.
 
 ## Zobacz także
 
-- Dokumentacja funkcji command-line-args w [ClojureDocs](https://clojuredocs.org/clojure.java.shell/command-line-args). 
-- Wprowadzenie do programowania funkcyjnego w [Clojure na hackernoon.com](https://hackernoon.com/clojure-beginner-guide-advanced-concepts-callbacks-higher-order-fn-fb628c1f3e16).
+- Dokumentacja Clojure: https://clojure.org/documentation
+- Przewodnik po języku Clojure: https://clojure.org/guides
+- Blog Clojure: https://clojure.com/blog

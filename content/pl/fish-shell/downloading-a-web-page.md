@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Fish Shell: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,36 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pobieranie stron internetowych jest nieodzownym elementem wielu działań programistycznych. Czasami potrzebujemy szybko uzyskać dostęp do danej strony, przykładowo w celu pozyskania informacji lub przetworzenia jej zawartości w innym programie. W tym wpisie dowiesz się, jak użyć Fish Shell do pobierania stron internetowych.
+Jeśli potrzebujesz szybkiego sposobu na pobieranie stron internetowych za pomocą wiersza poleceń, to Fish Shell jest dla Ciebie. Jest to potężne narzędzie, które umożliwia łatwe pobieranie zawartości stron internetowych bez konieczności korzystania z przeglądarki.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Fish Shell nie posiada wbudowanej funkcjonalności do pobierania stron internetowych, jednak za pomocą kilku poleceń możemy szybko i łatwo uzyskać dostęp do zawartości strony. Aby pobrać stronę, użyjemy polecenia `curl` wraz z adresem URL strony. Przykładowo, jeśli chcemy pobrać stronę google.com, wpiszemy:
+### 1. Instalacja Fish Shell
 
-```Fish Shell
-$ curl http://www.google.com
+Pierwszym krokiem jest zainstalowanie Fish Shell na swoim komputerze. Możesz to zrobić poprzez menedżer pakietów lub pobranie pliku binarnego ze strony https://fishshell.com/. Po zainstalowaniu, upewnij się, że Fish Shell jest wybranym domyślnym wierszem poleceń.
+
+### 2. Używanie poleceń w Fish Shell
+
+Fish Shell ma wiele wbudowanych poleceń, które ułatwiają pobieranie stron internetowych. Możesz użyć komendy ```curl```, aby pobrać zawartość strony i zapisać ją w pliku tekstowym, na przykład:
+
 ```
- 
-W rezultacie powinniśmy uzyskać kod HTML strony w konsoli, co oznacza, że pomyślnie pobraliśmy stronę. Jeśli chcemy zapisać zawartość strony do pliku, możemy użyć opcji `-o` oraz podać nazwę pliku, do którego chcemy zapisać dane. W tym przypadku polecenie będzie wyglądać następująco:
-
-```Fish Shell
-$ curl -o google.html http://www.google.com
+curl https://www.example.com > example.txt
 ```
 
-Zawartość strony zostanie zapisana do pliku `google.html`, który możemy potem otworzyć w przeglądarce internetowej lub przetworzyć w innym programie.
+Możesz również użyć komendy ```wget```, która oferuje więcej opcji, takich jak pobieranie całych witryn z podłączonymi plikami, na przykład:
 
-## Deep Dive
+```
+wget --mirror -p --convert-links https://www.example.com
+```
 
-Pobieranie stron internetowych przy użyciu Fish Shell może odbywać się na wiele sposobów i z wykorzystaniem różnych poleceń. Jednym z popularniejszych sposobów jest użycie poleceń `curl` lub `wget`. Oba umożliwiają pobranie zawartości strony, jednak różnią się nieco w sposobie działania. 
+### 3. Przetwarzanie pobranej zawartości
 
-Polecenie `curl` zostało już użyte w przykładach powyżej i jest bardzo wszechstronne, umożliwiając pobieranie nie tylko stron internetowych, ale też innych rodzajów danych. Natomiast `wget` jest bardziej wyspecjalizowany w pobieraniu strony internetowej i oferuje dodatkowe funkcjonalności, takie jak możliwość wznawiania pobierania w przypadku przerwanej transmisji.
+Fish Shell pozwala również na łatwe przetwarzanie pobranej zawartości. Możesz użyć komendy ```grep```, aby znaleźć konkretne wyrażenia w pobranej stronie, na przykład:
 
-Warto zaznaczyć, że niektóre strony internetowe mogą blokować pobieranie zawartości w ten sposób, dlatego warto przetestować różne podejścia i wybrać to, które najlepiej zadziała dla danej strony.
+```
+grep "example" example.txt
+```
 
-## Zobacz Również
+Możesz również przetworzyć stronę za pomocą poleceń awk, sed lub perl.
 
-Jeśli interesuje Cię więcej sposobów na pobieranie stron internetowych, warto zapoznać się z dokumentacją Fish Shell oraz opracowaniami na temat poleceń `curl` i `wget`, które użyliśmy w tym wpisie.
+## Głębszy zanurzenie
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Dokumentacja polecenia curl](https://curl.haxx.se/docs/manpage.html)
-- [Dokumentacja polecenia wget](https://www.gnu.org/software/wget/manual/wget.html)
+Fish Shell ma wiele innych przydatnych funkcji związanych z pobieraniem stron internetowych. Możesz na przykład pobierać tylko nagłówki stron przy użyciu komendy ```head```, sprawdzać status strony przy użyciu komendy ```curl```, lub pobierać pliki zabezpieczające (np. certyfikaty SSL) przy użyciu komendy ```openssl```. Możliwości są nieograniczone, a wszystkie te komendy są łatwe w użyciu w Fish Shell.
+
+## Zobacz również
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [Porównanie polesień w Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-cmd-compare)
+- [Podstawowe komendy w Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-cmds)

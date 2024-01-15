@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Painettaessa komentoriviparametreja"
-simple_title:         "Painettaessa komentoriviparametreja"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Clojure: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentoriviparametreja?
+## Miksi
 
-Komentoriviparametrit ovat tärkeä osa ohjelmointia, sillä ne mahdollistavat käyttäjien antaman syötteen käsittelemisen ja ohjelman suorituksen mukauttamisen sen avulla. Komentoriviparametrien lukeminen on erittäin tärkeä taito, joka auttaa tekemään ohjelmista monipuolisempia ja joustavampia.
+Jos haluat hallita tietokoneesi tai ohjelmasi käynnistystä ja toimintaa komentoriviltä, tarvitset tietoa siitä, miten lukea komentorivin argumentteja. Se on hyödyllistä esimerkiksi skriptien ja ohjelmien kehittämisen ja testaamisen aikana.
 
-## Näin luet komentoriviparametreja Clojurella
+## Miten
 
-Komentoriviparametrien lukeminen Clojurella on helppoa ja suoraviivaista. Käytämme tähän tarkoitukseen "command-line" kirjastoa, joka tarjoaa valmiit työkalut komentoriviparametrien käsittelyyn.
+Voit lukea komentorivin argumentteja Clojure-kielellä helposti `command-line-args`-funktion avulla. Voit käyttää sitä esimerkiksi seuraavalla tavalla:
 
-```Clojure
-(require '[clojure.tools.cli :refer [cli]])
 ```
-Tämän jälkeen voimme asettaa haluamamme parametrit käyttöömme yksinkertaisella komennolla:
+Vaihtoehdot komentoriviltä:
 
-```Clojure
-(def parameters (cli args
-      ["-n" "--name" "User's name" :parse-fn #(.toUpperCase %)]
-      ["-a" "--age" "User's age"])
-```
-Parametrit tallentuvat "parameters" muuttujaan ja niitä voidaan käsitellä helposti koodissa. Esimerkiksi voimme tulostaa käyttäjän nimen ja iän seuraavasti:
+$ clojure -m ohjelma
+Oletusasetuksilla käynnistyvä ohjelma
 
-```Clojure
-(println "Hello" (:name parameters), "you are" (:age parameters), "years old!")
-```
-Syötteenä annetut parametrit voidaan myös tarkistaa ja validoida ennen niiden käyttöä. Esimerkiksi voimme tarkistaa, että käyttäjä antaa nimen parametrina ennen sen käyttämistä:
-
-```Clojure
-(if (:name parameters)
-    (println "Hello" (:name parameters))
-    (println "Please provide a name with the -n or --name parameter."))
+$ clojure -m ohjelma -tiedosto testi.txt
+Ohjelma käynnistyy ja lukee tiedoston testi.txt
 ```
 
-## Syvällisempi sukellus komentoriviparametreihin
+```Clojure
+(ns ohjelma
+  (:require [clojure.edn :as edn]))
 
-Komentoriviparametrit voivat olla myös valinnaisia, jolloin niiden antaminen on käyttäjälle vapaaehtoista. Tähän tarkoitukseen voimme käyttää "cli" kirjaston "optional" funktiota, joka sallii parametrien ohittamisen ilman virheilmoituksia.
+(defn -main
+  [& args]
+  (let [options (edn/read-string (first args))]
+    (println "Vaihtoehdot komentoriviltä:")
+    (println options)
+    (println "Oletusasetuksilla käynnistyvä ohjelma")))
 
-Komentoriviparametrejä voidaan myös käsitellä monipuolisesti erilaisten funktioiden avulla, kuten "parse-fn" joka mahdollistaa parametrien muokkaamisen ennen niiden tallentamista. Lisäksi komentoriviparametrille voidaan antaa oletusarvo, mikäli käyttäjä ei anna sille mitään syötettä.
+;; Käyttämällä `-m`-vaihtoehtoa, voit antaa ohjelmalle parametreja
+```
+
+Tässä esimerkissä käytetään `edn`-kirjastoa lukemaan komentorivin vaihtoehdot ja tulostetaan ne konsoliin.
+
+## Syväsukellus
+
+Komentorivin argumenttien lukeminen tapahtuu käyttämällä Clojuren integroimaa Java-luokkaa `java.lang.System`. Tässä luokassa on `getProperty`-funktio, joka palauttaa komentorivin argumenttina annetun arvon.
+
+Voit myös käyttää Clojuren `command-line-args`-kirjastoa, joka tekee samaa asiaa mutta käsittelee argumentit suoraan kokoelmaksi.
+
+Voit myös käyttää `getenv`-funktiota, joka lukee ympäristömuuttujista.
 
 ## Katso myös
 
-- [Komentoriviparametrien lukeminen Clojurella](https://clojure.org/guides/cli)
-- [Clojure "command-line" kirjasto](https://github.com/clojure/tools.cli)
-- [Java-komentoriviparametrien käsittely](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Clojure-command-line-args](https://github.com/clojure/tools.cli)
+- [Java-luokka System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
+- [Clojure stringien lukeminen komentoriviltä](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/parse-opts)

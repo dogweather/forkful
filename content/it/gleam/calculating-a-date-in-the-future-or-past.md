@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Gleam: Calcolare una data nel futuro o nel passato"
 simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-
-Sempre è utile sapere come calcolare una data futura o passata per pianificare eventi o riunioni. Con Gleam, è un gioco da ragazzi!
+Sebbene la maggior parte dei programmi utilizzino date attuali, potrebbe essere necessario calcolare date in futuro o in passato per svolgere specifiche attività come tracciare scadenze o gestire eventi programmati. In questo articolo, impareremo come utilizzare Gleam per eseguire questo tipo di calcoli.
 
 ## Come Fare
+Per calcolare una data futura o passata, possiamo utilizzare la funzione `Calendar.advance` che accetta come argomenti la data di partenza e la quantità di tempo da avanzare (positivo per date future, negativo per date passate) e restituisce la data risultante. Ecco un esempio di codice:
 
-Per calcolare una data in futuro o passato, possiamo utilizzare la funzione `Date.add` o `Date.subtract`. Ad esempio, se vogliamo aggiungere 3 giorni alla data corrente, possiamo scrivere:
-
-```Gleam
-let data_corrente = Date.now()
-let data_futura = Date.add(data_corrente, 3, Date.Unit.Day)
-
-Debug.to_string(data_futura) // Output: "2021-11-08T09:00:00Z"
+```
+Gleam> Calendar.advance(#year(2021), #day(2), #month(7), 10)
+#date(2021, 7, 12) 
 ```
 
-Allo stesso modo, se vogliamo sottrarre 2 settimane dalla data corrente, possiamo scrivere:
+In questo esempio, abbiamo calcolato la data risultante di avanzare di 10 giorni a partire dal 2 luglio 2021. Possiamo anche specificare un tempo più preciso, ad esempio avanzare di 2 anni, 7 mesi e 10 giorni:
 
-```Gleam
-let data_corrente = Date.now()
-let data_passata = Date.subtract(data_corrente, 2, Date.Unit.Week)
-
-Debug.to_string(data_passata) // Output: "2021-10-25T09:00:00Z"
+```
+Gleam> Calendar.advance(#datetime(#date(2021, 7, 2), #time(10, 30, 0)), #days(2), #months(7), #years(2))
+#datetime(#date(2023, 2, 4), #time(10, 30, 0))
 ```
 
-Possiamo anche specificare l'unità di tempo desiderata come terzo argomento della funzione, come mostrato negli esempi sopra.
+In questo caso, abbiamo utilizzato la funzione `Calendar.datetime` per specificare sia la data che l'orario di partenza.
 
 ## Approfondimento
-
-Gleam offre anche altre funzioni per manipolare le date, come `Date.diff` per calcolare la differenza tra due date e `Date.compare` per confrontare due date. Inoltre, è possibile specificare il fuso orario nella creazione di una nuova data utilizzando `Date.from_timestamp` o `Date.from_fields`.
+Calcolare date in futuro o in passato può risultare utile anche nel caso di gestione di fusi orari o durante l'analisi di dati storici. In questi casi, è importante prestare attenzione alle differenze nei formati delle date e ai possibili errori di calcolo dovuti alla presenza di anni bisestili.
 
 ## Vedi Anche
-
-- [Documentazione su Date in Gleam](https://gleam.run/documentation/std/datetime/)
-- [Tutorial su Gleam per principianti](https://medium.com/@gleamlang/gleam-language-building-an-api-f1c2b7909b96)
-- [Esempi di progetti in Gleam](https://github.com/gleam-lang/awesome-gleam)
+- Documentazione ufficiale di Gleam sulla gestione delle date: https://gleam.run/documentation//current/lib/calendar.html
+- Esempi di utilizzo di Gleam per il calcolo di date in futuro e in passato: https://github.com/gleam-lang/gleam-examples/tree/master/dates

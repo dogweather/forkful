@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Bash: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,54 +10,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum CSV?
 
-CSV-Dateien sind eine gängige Art, Daten zu speichern und auszutauschen. Sie werden häufig in Unternehmen, wissenschaftlichen Projekten und sogar in privaten Haushalten verwendet. Als Bash-Programmierer möchten Sie möglicherweise lernen, wie Sie mit CSV-Dateien umgehen und sie in Ihre Skripte integrieren können. In diesem Blog-Beitrag werden wir diskutieren, warum es nützlich ist, mit CSV zu arbeiten und wie Sie dies tun können.
+CSV (Comma-Separated Values) ist ein gängiges Dateiformat, das häufig für die Speicherung und den Austausch von tabellarischen Daten verwendet wird. Es ist sehr einfach zu lesen und zu schreiben, sowohl für Menschen als auch für Computer, wodurch es zu einem beliebten Format in der Programmierung wird.
 
-## Wie geht das?
+## Wie man mit CSV arbeitet
 
-Um mit CSV-Dateien in Bash zu arbeiten, benötigen Sie das "csvtool" -Programm, das Sie mit dem Befehl `apt-get install csvtool` auf Debian-basierten Systemen installieren können. Nach der Installation können Sie "csvtool" verwenden, um mit CSV-Dateien zu arbeiten.
-
-Um beispielsweise eine CSV-Datei zu lesen und auszugeben, können Sie den folgenden Befehl verwenden:
+Um mit CSV-Dateien in Bash zu arbeiten, benötigt man grundlegende Kenntnisse über die Befehle "cut", "head", "tail" und "grep". Hier sind einige Beispiele dafür, wie man diese Befehle verwendet, um mit CSV-Dateien zu arbeiten:
 
 ```Bash
-csvtool -t ';' -u ' ' cat input.csv
+# CSV-Datei in drei Spalten aufteilen und nur die erste Spalte ausgeben
+cut -d"," -f1 eingabe.csv
+
+# Erste Zeilen einer CSV-Datei ausgeben
+head -n 5 eingabe.csv
+
+# Letzten Zeilen einer CSV-Datei ausgeben
+tail -n 5 eingabe.csv
+
+# Zeilen mit einer bestimmten Zeichenkette in der CSV-Datei finden
+grep "Keyword" eingabe.csv
 ```
 
-Dieser Befehl liest die Datei "input.csv", die Trennzeichen verwendet, und gibt sie mit Leerzeichen als Trennzeichen aus. Sie können auch spezifische Spalten auswählen und die Ausgabe in eine neue Datei schreiben, wie im folgenden Beispiel gezeigt:
+Hier ist eine Beispiel-CSV-Datei, die wir für diese Coding-Beispiele verwenden werden:
 
 ```Bash
-csvtool -t ';' col 1,3 input.csv > output.csv
+Name,Alter,Stadt
+Anna,25,Berlin
+Max,32,München
+Lisa,28,Hamburg
 ```
 
-In diesem Beispiel wird die Ausgabe der ersten und dritten Spalte der Datei "input.csv" in die Datei "output.csv" geschrieben.
+Nun, da wir wissen, wie wir mit den grundlegenden Befehlen arbeiten können, können wir tiefer in die Arbeit mit CSV-Dateien eintauchen.
 
-## Tiefergehende Einblicke
+## Tiefer eintauchen
 
-Nun, da Sie wissen, wie Sie CSV-Dateien in Bash lesen und schreiben können, lassen Sie uns etwas in die Tiefe gehen. Sie können auch mit CSV-Dateien in Schleifen arbeiten und komplexe Bedingungen verwenden, um bestimmte Daten auszuwählen oder zu verarbeiten.
+### Zeichenfolgen in CSV-Dateien formatieren
 
-In diesem Beispiel möchten wir alle Zeilen aus einer CSV-Datei ausgeben, die nur positive Zahlen in der ersten Spalte enthält. Dies kann mit dem folgenden Skript erreicht werden:
+Standardmäßig werden CSV-Dateien in Bash wie jede andere Textdatei behandelt, was bedeutet, dass jede Zeile einfach als eine lange Zeichenfolge angezeigt wird. Um die Lesbarkeit zu verbessern, können wir die Befehle "echo" und "printf" verwenden, um die Zeichenfolgen in einer CSV-Datei formatiert auszugeben.
 
 ```Bash
-while read line; do
-    if [[ "$line" =~ ^[1-9][0-9]*, ]]; then
-        echo "$line"
-    fi
-done < input.csv
+# Zeilen in einer CSV-Datei formatiert ausgeben
+echo "Name     Alter    Stadt"
+printf "%-10s %-7s %-7s \n" Anna 25 Berlin
 ```
 
-Dieser Code prüft jede Zeile auf das Muster einer positiven Zahl in der ersten Spalte und gibt nur die Zeilen aus, die diesem Muster entsprechen.
-
-Sie können auch spezifische Zeilen in einer CSV-Datei ändern und die Änderungen in eine neue Datei schreiben. Dies kann mit der Option `-u` und dem Befehl `col` erreicht werden. In diesem Beispiel ändern wir den Inhalt der zweiten Spalte, indem wir jedes Vorkommen von "Ja" durch "Nein" ersetzen und die Ausgabe in eine neue Datei schreiben:
+Dies würde die folgende Ausgabe erzeugen:
 
 ```Bash
-csvtool -t ';' -u ' ' col 2,2 input.csv | sed 's/Yes/No/g' > output.csv
+Name     Alter    Stadt
+Anna     25       Berlin
 ```
 
-Dies sind nur einige Beispiele, wie Sie mit CSV-Dateien in Bash umgehen können. Es gibt noch viele weitere Möglichkeiten, je nach Ihren spezifischen Anforderungen und Daten.
+### CSV-Dateien zusammenführen
+
+Manchmal haben wir mehrere separate CSV-Dateien und müssen sie zu einer einzigen Datei zusammenführen. Dafür können wir den Befehl "cat" verwenden, der die Dateien zeilenweise zusammenfügt. Aber in CSV-Dateien gibt es normalerweise eine Header-Zeile, die nicht dupliziert werden sollte. Daher müssen wir diese Zeile aus der zweiten Datei mit dem Befehl "tail" entfernen, bevor wir die Dateien zusammenführen.
+
+```Bash
+# CSV-Dateien zusammenführen
+cat eingabe1.csv eingabe2.csv > ausgabe.csv
+tail -n +2 eingabe2.csv >> ausgabe.csv
+```
+
+### CSV-Dateien bearbeiten und speichern
+
+Um eine CSV-Datei zu bearbeiten und die Änderungen zu speichern, müssen wir die Datei in eine Variable laden, die bearbeitet werden kann, und dann die Variable in eine neue Datei speichern.
+
+```Bash
+# CSV-Datei in eine Variable laden
+csv="$(cat eingabe.csv)"
+
+# Eine Zeile in der Variable bearbeiten
+csv="${csv//$Keyword/$New_keyword}"
+
+# Variable in eine neue Datei speichern
+echo "$csv" > ausgabe.csv
+```
+
+Jetzt können wir die bearbeitete CSV-Datei "ausgabe.csv" verwenden.
 
 ## Siehe auch
 
-- Offizielle Dokumentation von csvtool: https://github.com/mbauman/csvtool
-- Ein interaktives Tutorial für den Umgang mit CSV-Dateien in Bash: https://www.codementor.io/blog/csv-file-data-parsing-using-bash-practical-tutorial-du1070471
-- Ein Stack Overflow-Beitrag mit Tipps und Tricks zum Umgang mit CSV-Dateien in Bash: https://stackoverflow.com/questions/26785478/bash-scripting-how-to-parse-a-csv-file-to-separate-columns
+- [Bash Kurzanleitung] (https://dev.to/awwsmm/bash-commands-hello-world-examples-4nk9)
+- [Bash for Beginners: Handling CSV Files] (https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-csvs)
+- [Offizielle Bash-Dokumentation] (https://www.gnu.org/software/bash/manual/bash.html)

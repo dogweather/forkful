@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Capitalizando uma String"
-simple_title:         "Capitalizando uma String"
+title:                "Transformando uma string em maiúsculas"
+html_title:           "Ruby: Transformando uma string em maiúsculas"
+simple_title:         "Transformando uma string em maiúsculas"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Capitalizar um String em Ruby?
+## Por que 
 
-Uma questão comum que muitos programadores iniciantes em Ruby têm é por que é importante capitalizar um string. A resposta é simples: capitalizar um string é uma maneira de melhorar a legibilidade e organização do seu código. Além disso, em muitos casos, é necessário capitalizar strings para que eles correspondam a determinadas condições ou critérios em um programa.
+Se você está trabalhando com strings no Ruby e quer deixar as primeiras letras em maiúsculas, capitalizar é a maneira ideal de fazer isso. Isso pode ser útil em situações como mostrar nomes de pessoas ou títulos de livros.
 
-## Como Fazer a Capitalização de um String em Ruby
+## Como fazer
 
-Para capitalizar um string em Ruby, podemos usar o método `capitalize` ou `capitalize!`. Veja um exemplo abaixo:
+```Ruby 
+"ruby".capitalize #=> "Ruby"
+"olá, tudo bem?".capitalize #=> "Olá, tudo bem?"
+```
 
-````Ruby
-string = "bem vindo"
-puts string.capitalize
-````
+Na primeira linha, a string "ruby" é capitalizada, transformando a primeira letra em maiúscula e mantendo as outras letras como minúsculas. Na segunda linha, a string "olá, tudo bem?" também é capitalizada, mas agora a primeira letra de cada palavra é maiúscula.
 
-O output será:
+Outra opção é usar o método `capitalize!`, que irá alterar a string original:
 
-````Ruby
-Bem vindo
-````
+```Ruby 
+str = "ruby"
+str.capitalize! #=> "Ruby"
+str #=> "Ruby"
+```
 
-Podemos ver que o primeiro caractere do string foi convertido para letra maiúscula.
+## Mergulho profundo 
 
-Também podemos usar o método `upcase` ou `upcase!` para capitalizar todas as letras do string. Veja um exemplo:
+O método `capitalize` é útil para casos básicos, mas pode apresentar alguns problemas caso a string já esteja em formato de título, ou seja, com as palavras já capitalizadas. Nesse caso, podemos utilizar o método `titleize`, que irá capitalizar cada palavra da string, independentemente de ela já estar capitalizada ou não.
 
-````Ruby
-string = "bem vindo"
-puts string.upcase
-````
+```Ruby 
+"o guia completo de Ruby".titleize #=> "O Guia Completo de Ruby"
+"o guia COMPLETO de rUby".titleize #=> "O Guia Completo de Ruby"
+```
 
-O output será:
+Outra coisa importante a se notar é que o método `capitalize` só irá afetar a primeira letra da string, mesmo que tenha outras letras maiúsculas no meio dela. Já o método `titleize` irá formatar todas as palavras corretamente.
 
-````Ruby
-BEM VINDO
-````
+## Veja também
 
-## Mergulho Profundo: Mais Informações Sobre a Capitalização de Strings em Ruby
-
-Além dos métodos mencionados acima, Ruby também tem o método `capitalize!` que muda permanentemente o valor do string para uma versão capitalizada. Isso significa que, se você chamar esse método no string original, ele será alterado permanentemente em vez de apenas ser exibido no output.
-
-Também é importante lembrar que a capitalização de strings em Ruby respeita a formatação dos caracteres do alfabeto. Por exemplo, em português, a letra `ç` só é capitalizada se estiver no início da frase, caso contrário, ela permanecerá minúscula.
-
-## Veja Também
-
-- [Método `capitalize` na documentação oficial do Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize)
-- [Método `upcase` na documentação oficial do Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
-- [Método `capitalize!` na documentação oficial do Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize-21)
+- [Documentação oficial do Ruby sobre o método `capitalize`](https://ruby-doc.org/core-#{EMOJI}String.html#method-i-capitalize)
+- [Documentação oficial do Ruby sobre o método `titleize`](https://ruby-doc.org/activesupport-#{EMOJI}String.html#method-i-titleize)
+- [Lista de outras manipulações de strings no Ruby](https://www.rubyguides.com/tag/strings/)

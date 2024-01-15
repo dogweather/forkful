@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: להשוואת שני תאריכים"
-simple_title:         "להשוואת שני תאריכים"
+title:                "השוואת שתי תאריכים"
+html_title:           "Javascript: השוואת שתי תאריכים"
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -9,49 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-משהו מאתגר בתכנות הוא להשוות שתי תאריכים זמניים. ייתכן שתרצו לבדוק אם תאריך מסוים קורס כבר עבר, או לחשב את כמות הימים ביניהם. כתבה זו תעזור לכם ללמוד כיצד להשוות שתי תאריכים בקוד ג'אווהסקריפט.
+ב-Javascript, ישנן מצבים מסוימים שבהם נדרש להשוות בין שני תאריכים. למשל, כאשר יש לנו תאריך התחלתי ותאריך סיום של אירוע, ואנחנו רוצים לוודא אם האירוע עבר או לא. במאמר זה, נלמד כיצד לבצע השוואת תאריכים באמצעות קוד Javascript.
 
-## איך לעשות את זה
+## איך לעשות
 
-מצאנו כי ישנן שלוש שיטות להשוות שתי תאריכים בג'אווהסקריפט, ואנחנו נדגים כאן כמה דוגמאות כדי להראות את התהליך.
+השוואת תאריכים ב-JavaScript נעשה בעזרת הפעולות הבאות: `>, <, >=, <=, ===, !==` . לפניכם כמה דוגמאות לשימוש בפעולות אלה על מנת להשוות בין שני תאריכים.
 
+קוד:
 ```Javascript
-// אופציה א': השווה תאריך ישירות
-let date1 = new Date('2021/08/01');
-let date2 = new Date('2021/09/01');
-if (date1.getTime() === date2.getTime()){
-    console.log('התאריכים זהים!');
-} else {
-    console.log('התאריכים שונים.');
-} // התוצאה תהיה: "התאריכים שונים."
+const date1 = new Date('2021-06-01');
+const date2 = new Date('2021-06-15');
+if (date1 > date2) {
+  console.log('תאריך 1 אחר תאריך 2');
+} else if (date1 < date2) {
+  console.log('תאריך 1 קודם תאריך 2');
+} else if (date1 === date2) {
+  console.log('תאריך 1 שווה לתאריך 2');
+}
 ```
 
-```Javascript
-// אופציה ב': השווה את השנה, החודש והיום של שני התאריכים
-let date1 = new Date('2021/08/01');
-let date2 = new Date('2021/09/01');
-if (date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate()){
-    console.log('התאריכים זהים!');
-} else {
-    console.log('התאריכים שונים.');
-} // התוצאה תהיה: "התאריכים שונים."
+פלט:
+```
+תאריך 1 קודם תאריך 2
 ```
 
+קוד:
 ```Javascript
-// אופציה ג': השווה את התאריך המלא כמשתנה
-let date1 = new Date('2021/08/01');
-let date2 = new Date('2021/09/01');
-let fullDate1 = date1.getFullYear().toString() + date1.getMonth().toString() + date1.getDate().toString();
-let fullDate2 = date2.getFullYear().toString() + date2.getMonth().toString() + date2.getDate().toString();
-if (fullDate1 === fullDate2){
-    console.log('התאריכים זהים!');
-} else {
-    console.log('התאריכים שונים.');
-} // התוצאה תהיה: "התאריכים שונים."
+const date1 = new Date('2021-06-01');
+const date2 = new Date('2021-06-15');
+if (date1 >= date2) {
+  console.log('תאריך 1 יותר מתאריך 2 או שווה לו');
+} else if (date1 <= date2) {
+  console.log('תאריך 1 פחות מתאריך 2 או שווה לו');
+} else if (date1 !== date2) {
+  console.log('תאריך 1 לא שווה לתאריך 2');
+}
 ```
 
-## התרגול לעומק
+פלט:
+```
+תאריך 1 פחות מתאריך 2 או שווה לו
+```
 
-בכתבה זו השתמשנו בכלים יסודיים כמו `getTime()`, `getFullYear()`, ו- `getMonth()` כדי להשוות שתי תאריכים. אך ישנן גם אפשרויות מתקדמות יותר להשוואת תאריכים, כגון שימוש בספריית Moment.js או כ
+## Deep Dive
+
+כאשר משווה בין שני תאריכים, חשוב להתחשב בכמה פרמטרים שמשפיעים על תוצאת השוואה:
+
+1. מחשבי השעון נעים לפי הזמן המקומי של המשתמש. כלומר, אם תאריך אחד הוא בזמן מקומי שונה מתאריך השני, הפעולות הלוגיות יכולות לתת תוצאה שונה ממה שהמשתמש מצפה.
+2. השוואת תאריכים משתמשת בפעולות מתמטיות. זה אומר שבמקרה של תאריכים בפורמט

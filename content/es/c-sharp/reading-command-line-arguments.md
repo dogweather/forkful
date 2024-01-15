@@ -1,5 +1,6 @@
 ---
-title:                "C#: Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de línea de comando"
+html_title:           "C#: Leyendo argumentos de línea de comando"
 simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "C#"
 category:             "C#"
@@ -9,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comandos
-
-Leer argumentos de línea de comandos es una habilidad útil para cualquier programador de C#. Te permitirá crear programas que puedan recibir inputs específicos al momento de ejecutarlos, lo que puede mejorar la experiencia del usuario y hacer que tus programas sean más versátiles.
+## ¿Por qué?
+Si eres un programador en C#, seguramente estás familiarizado con la idea de usar argumentos de línea de comando en tus programas. Pero si eres nuevo en el lenguaje, puede que te preguntes ¿por qué deberías utilizarlos? La respuesta es simple: los argumentos de línea de comando pueden hacer que tu código sea más dinámico y flexible, permitiéndote interactuar con el programa de diversas maneras.
 
 ## Cómo hacerlo
-
-Para leer argumentos de línea de comandos en C#, podemos utilizar la clase `Environment` y su método `GetCommandLineArgs()`. Por ejemplo:
+Usar argumentos de línea de comando en C# es muy sencillo. Simplemente necesitas acceder a los argumentos proporcionados por el usuario en la función Main(). Esto se hace utilizando el parámetro string[] args dentro de la función. Aquí hay un ejemplo que muestra cómo imprimir los argumentos ingresados por el usuario:
 
 ```C#
-//declarar una variable para almacenar los argumentos
-string[] arguments;
-
-//obtener los argumentos de la línea de comandos y asignarlos a la variable
-arguments = Environment.GetCommandLineArgs();
-
-//iterar sobre cada argumento e imprimirlo en la consola
-foreach(string arg in arguments)
+static void Main(string[] args)
 {
-    Console.WriteLine(arg);
+    for (int i = 0; i < args.Length; i++)
+    {
+        Console.WriteLine(args[i]);
+    }
 }
 ```
 
-Si ejecutamos este código en la línea de comandos y le pasamos algunos argumentos, por ejemplo `dotnet myProgram.cs arg1 arg2`, obtendremos la siguiente salida:
-
+Si ejecutas este programa desde la línea de comando e ingresas varios argumentos, como por ejemplo "Hola" y "Mundo", el output sería:
 ```
-dotnet
-myProgram.cs
-arg1
-arg2
+Hola
+Mundo
 ```
 
-Como se puede ver, los argumentos se almacenan en un array de strings y podemos acceder a cada uno de ellos para manipularlos en nuestro programa.
+Puedes utilizar esta técnica para crear programas que dependan de la entrada del usuario de manera dinámica, lo que los hace más interactivos y útiles.
 
-## Deep Dive
+## Profundizando
+Ahora que sabes cómo acceder a los argumentos de línea de comando en C#, es importante que entiendas cómo funciona este proceso. Cuando ejecutas un programa desde la línea de comandos, puedes incluir argumentos después del nombre del archivo ejecutable. Este conjunto de argumentos se pasa como un array de strings al parámetro args en la función Main(). Esto significa que puedes acceder a los argumentos ingresados utilizando indexación y un ciclo for, como se mostró en el ejemplo anterior.
 
-Además de leer y almacenar los argumentos de la línea de comandos, también podemos realizar validaciones y convertirlos a otros tipos de datos si es necesario. Por ejemplo, podemos convertir un argumento a un número entero utilizando el método `int.Parse()`.
-
-También es importante mencionar que los argumentos de la línea de comandos se pueden combinar con otros métodos de interacción con el usuario, como la lectura de inputs por consola o la entrada por formularios, para crear programas más complejos y dinámicos.
+Es importante tener en cuenta que los argumentos de línea de comando son sensibles a mayúsculas y minúsculas. También puedes utilizar comillas dobles para incluir espacios en un solo argumento. Por ejemplo, si ingresas "Hola mundo" como argumento, se tratará como un solo elemento dentro del array, a pesar de tener un espacio en blanco.
 
 ## Ver también
-
-- [Microsoft Docs - Environment.GetCommandLineArgs Method](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netcore-3.1)
-- [YouTube - Reading Command Line Arguments in C#](https://www.youtube.com/watch?v=Lr_qxgA_GAg)
-- [Stack Overflow - Passing Command Line Arguments to C# Program](https://stackoverflow.com/questions/10493482/passing-command-line-arguments-to-c-sharp-program)
+Ahora que tienes una comprensión básica de cómo leer argumentos de línea de comando en C#, ¡puedes comenzar a utilizarlos en tus programas! Si quieres profundizar más en el tema, puedes revisar estos recursos adicionales:
+- Documentación oficial de Microsoft sobre argumentos de línea de comando en C#: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
+- Un tutorial paso a paso sobre cómo usar argumentos de línea de comando en C#: https://www.c-sharpcorner.com/UploadFile/mahesh/ReadingCommandLineArgs01282006012101AM/ReadingCommandLineArgs.aspx
+- Ejemplos de código de argumentos de línea de comando en C#: https://www.c-sharpcorner.com/uploadfile/mahesh/readingcommandlineargs/

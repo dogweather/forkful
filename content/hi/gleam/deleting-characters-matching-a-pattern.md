@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: पैटर्न को मैचिंग करने वाले अक्षरों को हटाना"
-simple_title:         "पैटर्न को मैचिंग करने वाले अक्षरों को हटाना"
+title:                "पैटर्न से मिलते हुए अक्षरों को हटाना"
+html_title:           "Gleam: पैटर्न से मिलते हुए अक्षरों को हटाना"
+simple_title:         "पैटर्न से मिलते हुए अक्षरों को हटाना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,22 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
 
-ग्लीम प्रोग्रामिंग भाषा में एक आम समस्या है कि अक्सर कोड में गैर-चालू की आवश्यकता हो सकती है। इससे कोड को साफ़ और अधिक सुव्यवस्थित बनाना मुश्किल हो सकता है। इससे बचने के लिए ग्लीम प्रोग्रामर्स को किसी भी पद्धति से संबंधित तुच्छ स्वरूप वाले अक्षरों को हटाने की आवश्यकता हो सकती है। इस लेख में, हम इस विशेषता के तीन उपशीर्षकों में से एक उन लोगों को ध्यान में रखते हुए दिखाएंगे जो इस चुनौती से गुजर रहे हैं।
+Kayi baar, humein kisi bhi likhit kaam mein se kuch unnischiya alfaz ya characters ko hatana padta hai, jaise ki spam emails mein "[Advertisement]" ya "[SPAM]" likhna. Iske alawa, WhatsApp par naye messages ka notification delete karne ya kisi pattern ke hisab se kisi specific type ke messages ko delete karne ke liye bhi humein characters ko pattern ke saath match karna padta hai. Isse hum apni coding tasks ko automate kar sakte hain aur samay bacha sakte hain. Isiliye, aaj hum dekhenge ki kaise Gleam programming language se characters ko pattern ke saath match karte huye delete kiya ja sakta hai.
 
-## कैसे
+## Kaise Karein?
 
-```Gleam
-import gleam/string
+```
+Gleam "Characters delete karne ka example"
+fn main() {
+	let input = "Hum[SPAM]es"[SPAM] }
+	println!(input);
+}
 
-let input_string = "यहका।यहका।यहका।"
-
-let cleaned_string = string.replace(input_string, "।", "")
+Output: Hum es
 ```
 
-उपरोक्त उदाहरण में, हमने गैर-चालू फ़ोरमेट वाले गुरुद्वारे का उपयोग करके स्ट्रिंग बदलवाना किया है। इस उदाहरण से, ग्लीम में गुरुद्वारे के साथ स्ट्रिंग को बदलना कैसे है और क्लीन स्ट्रिंग कार्य को कुछ समांतर उत्पादी बनाने की आवश्यकता है, सामने आता है। एक महत्वपूर्ण सावधानी: कर्स लेखन को निरंतर बदलते रहें जो सतर्क होने के भीतर निर्देशित रूप से संपादित या संशोधित स्रोत के भीतर और संदेशन के साथ पेश हो सकते हैं।
+Is coding example mein humne "[SPAM]" pattern ke saath match karne ke liye code likha hai, jisse "[SPAM]" ke pehle aur baad ke characters hat jayenge aur humein sirf "Hum es" output milega.
 
-## गहराई तक
+## Deep Dive
 
-यदि आप गुरुद्वारे के साथ स्ट्रिंग को बदलने के लिए अधिक चुनौतियों का सामना करना चाहते हैं, तो आप गहराइयों तक खोज कर सकते हैं।
+Gleam programming language patterns ko bahut acchi tarah handle karta hai. Ismein aap partial matching kar sakte hain, jismein sirf pattern ke matching characters ko delete kiya ja sakta hai aur baki characters ko code mein use kar sakte hain. Iske alawa, wildcards ka bhi use kiya ja sakta hai. Wildcards kisi bhi character or set of characters ke saath match ho sakte hain aur uske jagah hamein kuch bhi output print kar sakte hain.
+
+## See Also
+
+- [Gleam Programming Language website](https://gleam.run/)
+- [Gleam Tutorial for Beginners](https://gleam.run/documentation/#tutorial)

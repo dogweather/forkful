@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: HTML analysieren"
-simple_title:         "HTML analysieren"
+title:                "HTML-Analyse"
+html_title:           "Haskell: HTML-Analyse"
+simple_title:         "HTML-Analyse"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,42 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-HTML ist eine der grundlegenden Technologien des World Wide Web und wird für die Darstellung von Webseiten verwendet. Wenn Sie in der Programmierung tätig sind und Webdaten analysieren müssen, ist es daher hilfreich zu wissen, wie man HTML-Dokumente parsen kann. Dies ermöglicht es Ihnen, die Daten in einer strukturierten Form zu erhalten, die weiterverarbeitet und analysiert werden kann.
+Warum sollte jemand sich mit dem Parsen von HTML beschäftigen? Nun, HTML ist die Sprache, die verwendet wird, um Webseiten zu erstellen und es gibt Millionen von Webseiten da draußen. Es ist also sehr nützlich, HTML zu verstehen, um Webinhalte zu extrahieren oder zu manipulieren.
 
-## Wie
+## Wie geht das?
 
-Um HTML zu parsen, können Sie die Haskell-Bibliothek "tagsoup" verwenden. Importieren Sie zuerst die Bibliothek in Ihrem Code:
-
-```Haskell
-import Text.HTML.TagSoup
-```
-
-Als nächstes lesen Sie das HTML-Dokument ein und wandeln es in eine Liste von Tags um:
+Um mit dem Parsen von HTML in Haskell zu beginnen, müssen wir zunächst das Paket "html-conduit" mit dem Paketmanager stack installieren. Anschließend können wir mit dem Importieren des Moduls "Text.HTML.DOM" und der Funktion "parseLBS" starten.
 
 ```Haskell
-html <- readFile "index.html"
-let tags = parseTags html
+import Text.HTML.DOM
+import Data.Text
+import Data.ByteString.Lazy
+import Text.XML
 ```
 
-Sie können dann die Tags nach passenden Mustern durchsuchen und die gewünschten Daten extrahieren. Zum Beispiel, wenn Sie den Titel einer Webseite erhalten möchten, können Sie nach dem Tag "title" suchen und den Text innerhalb des Tags extrahieren:
+Wir können nun eine HTML-Datei einlesen und sie in eine Datenstruktur transformieren, die wir in unserem Code verwenden können.
 
 ```Haskell
-let title = fromTagText $ head $ dropWhile (~/= TagOpen "title" []) tags
+getFileContents :: IO ByteString
+getFileContents = readFile "page.html"
+
+contents <- getFileContents
+let doc = parseLBS contents
+
+print doc
 ```
 
-Das Ergebnis wird in einer einfachen Textform zurückgegeben, die Sie weiterverarbeiten können.
+Die Ausgabe wird so aussehen:
 
-## Deep Dive
+```Haskell
+<div>
+    <h1>Meine Webseite</h1>
+    <p>Willkommen auf meiner Webseite!</p>
+    <ul>
+        <li><a href="https://www.example.com">Beispiel-Link 1</a></li>
+        <li><a href="https://www.example2.com">Beispiel-Link 2</a></li>
+        <li><a href="https://www.example3.com">Beispiel-Link 3</a></li>
+    </ul>
+</div>
+```
 
-Das Parsen von HTML ist aufgrund der flexiblen und unstrukturierten Natur des Formats nicht immer einfach. Es gibt jedoch einige Tipps und Tricks, die Ihnen dabei helfen können:
+Wir können nun bestimmte Elemente in dieser Datenstruktur auswählen und sie in unsere Ausgabe einfügen. Zum Beispiel können wir die ersten beiden Links aus der Liste extrahieren und anzeigen lassen.
 
-- Seien Sie so spezifisch wie möglich mit Ihrem Musterabgleich. Verwenden Sie zum Beispiel nicht nur "div", um alle Div-Tags zu finden, sondern unterscheiden Sie zwischen Klassen und IDs, um nur die gewünschten Tags zu erhalten.
-- Vermeiden Sie harte Codierung von Tag-Positionen. Versuchen Sie stattdessen, Tags nach ihrer Hierarchie und ihren Attributen zu suchen, um das Risiko von Fehlern zu minimieren.
-- Beachten Sie die Verwendung von geschachtelten Tags und beachten Sie, dass Tags auch Attribute haben können.
-- Nutzen Sie Haskell-Funktionen wie "map" und "filter", um die verarbeiteten Daten weiter zu transformieren.
+```Haskell
+let links = doc $// el "a" &/ content
+putStrLn $ "Die ersten beiden Links sind: " ++ links !! 0 ++ " und " ++ links !! 1
+```
 
-See Also
+Die Ausgabe wird so aussehen:
 
-- [Offizielle Dokumentation von Tagsoup](http://hackage.haskell.org/package/tagsoup)
-- [Tutorial zu HTML-Parsing mit Tagsoup](https://www.codementor.io/@ayushdev/html-parsing-in-haskell-using-tagsoup-fhlddfq16)
-- [Weitere nützliche Haskell-Bibliotheken](https://wiki.haskell.org/Applications_and_libraries/Web_programming)
+```Haskell
+Die ersten beiden Links sind: Beispiel-Link 1 und Beispiel-Link 2
+```
+
+## Tiefer Einblick
+
+Beim Parsen von HTML ist es wichtig zu beachten, dass nicht alle HTML-Dokumente korrekt formatiert sind. Es gibt verschiedene Tools und Bibliotheken, die dabei helfen, Fehler in HTML-Dateien zu erkennen und zu beheben. Außerdem kann es nützlich sein, sich mit den verschiedenen DOM- und XPath-Methoden vertraut zu machen, um die Auswahl von bestimmten Elementen zu erleichtern.
+
+## Siehe auch
+
+- "A Guide to HTML parsing in Haskell" von Michael Snoyman: https://www.yesodweb.com/blog/2010/05/html-parsing
+- "A Beginner's Guide to HTML Parsing in Haskell with tagsoup" von Taymon Beal: https://taymonbeal.medium.com/a-beginners-guide-to-html-parsing-in-haskell-with-tagsoup-f5d70f506112
+- "html-conduit Dokumentation" auf Hackage: https://hackage.haskell.org/package/html-conduit

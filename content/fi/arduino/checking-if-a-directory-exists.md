@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Alustahakemiston olemassaolon tarkistus"
-simple_title:         "Alustahakemiston olemassaolon tarkistus"
+title:                "Tarkistetaan, onko hakemistoa olemassa"
+html_title:           "Arduino: Tarkistetaan, onko hakemistoa olemassa"
+simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,28 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi Arduino-ohjelmoijan kannattaa tarkistaa, onko kansio olemassa? Tarkistamalla kansion olemassaolon voit varmistaa, että ohjelmasi toimii halutulla tavalla ja välttää mahdollisia virheitä voidaan havaita ja korjata ennen kuin ne aiheuttavat suurempia ongelmia.
+Olet ehkä törmännyt tilanteeseen, jossa haluat tarkistaa, onko tietyssä hakemistossa olemassa olevia tiedostoja tai kansioita. Tämä on hyödyllistä ennen esimerkiksi tiedoston avaamista ja käsittelyä, jotta vältetään virheet ja ohjelma toimii sujuvasti. Jatkossa kerromme, miten tätä tarkistusta voidaan toteuttaa Arduino-ohjelmoinnissa.
 
-## Kuinka
-
-Kansiot voidaan tarkistaa Arduino IDE:lla käyttämällä `SD.exists()` -komennon. Tämä komento palauttaa `true` tai `false` arvon, riippuen siitä, onko kansio olemassa vai ei. Esimerkiksi:
+## Miten tehdä
 
 ```Arduino
-if (SD.exists("/kansio/")) {
-  Serial.println("Kansio on olemassa!");
-} else {
-  Serial.println("Kansiota ei ole olemassa!");
+#include <SD.h>
+
+void setup() {
+  // Alustetaan SD-kortin tiedostonhallinta
+  if (!SD.begin(10)) {
+    // Tulostetaan viesti, jos SD-korttia ei löydetty
+    Serial.println("SD-korttia ei löydy");
+    while (1);
+  }
+
+  // Tarkistetaan, onko hakemisto olemassa
+  if (!SD.exists("/hakemisto/")) {
+    // Tulostetaan viesti, jos hakemistoa ei löydy
+    Serial.println("Hakemistoa ei löydy");
+    // Tehdään halutut toimenpiteet, jos hakemistoa ei löytynyt
+  } else {
+    // Tehdään halutut toimenpiteet, jos hakemisto löytyi
+  }
+}
+
+void loop() {
+
 }
 ```
 
-Kun ohjelma ajetaan, se tulostaa joko "Kansio on olemassa!" tai "Kansiota ei ole olemassa!" riippuen kansion olemassaolosta.
+Tässä esimerkissä käytämme SD-kortin tiedostonhallinta-kirjastoa (SD.h). Aluksi alustamme SD-kortin `SD.begin()` ja tarkistamme, onko korttia löydetty `!SD.begin()`. Jos korttia ei löydy, tulostetaan kyseinen viesti ja ohjelma pysähtyy `while`-silmukkaan. Seuraavaksi tarkistamme, onko hakemisto olemassa `SD.exists("/hakemisto/")`. Jos hakemistoa ei löydy, tulostetaan viesti ja voidaan tehdä halutut toimenpiteet, kuten luoda uusi hakemisto `SD.mkdir()` tai ladata tiedosto `SD.open()` ja tallentaa se hakemistoon.
 
 ## Syvempi sukellus
 
-Kun tarkistat kansion olemassaolon, on tärkeää pitää mielessä, että `SD.exists()` -komennon tarkistama polku on suhteellinen polku. Tämä tarkoittaa, että se vertailee polkua Arduino-mikrokontrollerin sijaintiin eikä tietokoneesi kansioihin. Siksi on tärkeää varmistaa, että kansion sijainti osoitetaan oikein.
+Tarkasteltaessa `SD.exists()`-funktiota tarkemmin, huomaamme sen palauttavan `true` tai `false`-arvon riippuen siitä, löytyykö hakemisto vai ei. Funktio tarkistaa, onko tiedoston koko nolla tavua vai ei. Jos tiedosto on tyhjä, funktio palauttaa `false`. Muissa tapauksissa se palauttaa `true`, vaikka hakemistossa ei olisi tiedostoja tai alihakemistoja.
+
+Tämä tarkistus on hyödyllinen myös muissa tilanteissa, kuten tiedostojen kopiointiin tai kansioiden läpikäyntiin.
 
 ## Katso myös
 
-- [Arduino-tietokannan ohjelmointi](https://www.arduino.cc/reference/en/libraries/sd/)
-- [SD-biblioteca Arduino-oppaat](https://www.arduino.cc/en/Reference/SD)
-- [Arduino tiedostojen hallinta](https://create.arduino.cc/projecthub/Arduino_Genuino/file-management-with-arduino-04f078)
+- SD-Kirjastodokumentaatio: https://www.arduino.cc/en/reference/SD
+- SD-kirjaston esimerkit: https://www.arduino.cc/en/Tutorial/LibraryExamples/SD
+- SD-tiedostojärjestelmä: https://www.arduino.cc/en/Reference/FileExtensionSD

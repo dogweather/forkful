@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Verkkosivun lataaminen"
-simple_title:         "Verkkosivun lataaminen"
+title:                "Tietokoneohjelmointi: Verkkosivun lataaminen"
+html_title:           "TypeScript: Tietokoneohjelmointi: Verkkosivun lataaminen"
+simple_title:         "Tietokoneohjelmointi: Verkkosivun lataaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,61 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Miksi
+## Miksi
 
-Monet ihmiset haluavat ladata verkkosivuja omalle tietokoneelleen eri syistä, kuten offline-käyttöä varten, tietojen varmuuskopiointia varten tai vaikkapa webskrapingin tarpeisiin. TypeScript tarjoaa helpon ja tehokkaan tavan ladata verkkosivuja suoraan koodista.
+Web-sivun lataaminen voi olla tärkeä osa verkkokehitystä, sillä se mahdollistaa sivuston sisällön tallentamisen paikallisesti ja sen tietojen käytön muilla ohjelmilla.
 
-### Miten tehdä
+## Kuinka
 
-Verkkosivun lataaminen TypeScriptillä on yksinkertaista. Ensinnäkin, tuodaan sisään `axios` -kirjasto, joka auttaa meitä tekemään HTTP-pyyntöjä.
-
-```
-TypeScript
+```TypeScript
 import axios from 'axios';
+
+// Ladataan web-sivu käyttäen axios-kirjastoa
+axios.get('https://www.esimerkkisivu.fi').then(response => {
+    // Tulostetaan vastauksen data
+    console.log(response.data);
+});
 ```
 
-Seuraavaksi luodaan funktio, joka ottaa argumenttina verkkosivun URL-osoitteen.
+Tällä yksinkertaisella koodilla voidaan ladata haluttu web-sivu ja saada talteen sen sisältö. Käyttämällä HTTP-pyyntökirjastoa, kuten axios, lataaminen käy helposti ja luotettavasti. 
 
-```
-TypeScript
-function lataaVerkkosivu(url) {
-    // koodi tänne
-}
-```
+## Syväsukellus
 
-Käytämme `axios` -kirjaston `get` -metodia lähettääksemme GET-pyynnön verkkosivulle ja tallentamaan vastauksen muuttujaan
+Web-sivujen lataamisella on monia käyttötarkoituksia, kuten sivuston sisällön muokkaaminen ja kääntäminen eri kielille, tiedon kerääminen tai verkkorobotin luominen. Lataaminen voidaan tehdä myös taustaprosessina ohjelman suorituksen aikana.
 
-```
-TypeScript
-async function lataaVerkkosivu(url) {
-    const vastaus = await axios.get(url);
-}
-```
+## Katso myös
 
-Lopuksi voimme tulostaa vastauksen konsoliin ja nähdä, mitä tiedot saimme verkkosivulta.
-
-```
-TypeScript
-async function lataaVerkkosivu(url) {
-    const vastaus = await axios.get(url);
-    console.log(vastaus.data);
-}
-```
-
-Nyt voimme kutsua funktiota antamalla sille halutun verkkosivun URL-osoitteen.
-
-```
-TypeScript
-lataaVerkkosivu('https://www.example.com');
-```
-
-Tämän koodin suorittaminen tulostaisi konsoliin verkkosivun HTML-koodin.
-
-### Syvällisempi sukellus
-
-Voit myös ladata muita tiedostotyyppejä verkkosivuilta, kuten kuvia tai dokumentteja, käyttämällä `axios` -kirjastoa. Voit myös käyttää muita kirjastoja, kuten `puppeteer`, jos haluat jopa suorittaa JavaScript-koodia verkkosivulla.
-
-### Katso myös
-
-- [Axios - dokumentaatio](https://www.npmjs.com/package/axios)
-- [Puppeteer - dokumentaatio](https://pptr.dev/)
+- [axios-kirjaston dokumentaatio](https://github.com/axios/axios)
+- [Web-sivun lataaminen käyttämällä JavaScriptiä](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-request-and-cheerio-to-set-up-simple-web-scraping)
+- [Web-sivujen lataaminen ja käyttö paikallisesti](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)

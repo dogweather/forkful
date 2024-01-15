@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeide med YAML"
+html_title:           "Elm: Arbeide med YAML"
+simple_title:         "Arbeide med YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -9,59 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Om du er en programmerer eller bare interessert i programmering, er det stor sjanse for at du har hørt om YAML. YAML, som står for "YAML Ain't Markup Language", er et konfigurasjonsformat som har blitt veldig populært de siste årene. Det er en enkel og intuitiv måte å strukturere data på, og det er spesielt nyttig for å konfigurere programmer og nettsider.
+Hvis du jobber med frontend-utvikling, har du kanskje hørt om YAML, men lurer på hva det egentlig er. YAML står for "YAML Ain't Markup Language" og det er et verktøy som kan hjelpe deg med å strukturere og organisere data på en enklere måte. Hvis du ønsker å forbedre utviklingsprosessen din og lage mer lesbar kode, kan læring av YAML være en god idé.
 
-# Hvordan
+## Hvordan
 
-For å jobbe med YAML i Elm, trenger vi å bruke et bibliotek som heter elm-yaml. Dette biblioteket lar oss lese og skrive YAML-filer ved hjelp av Elm-kode. La oss se på et enkelt eksempel på hvordan vi kan lese en YAML-fil og få ut dataen ved hjelp av elm-yaml:
+For å begynne å bruke YAML i Elm, må du først legge til en avhengighet i prosjektet ditt:
 
-```
-Elm ...
-
-import Yaml
-import Yaml.Decode as Decode
-
-type alias Person =
-    { name : String
-    , age : Int
-    }
-
-decoder : Decode.Decoder Person
-decoder =
-    Decode.map2 Person
-        (Decode.field "name" Decode.string)
-        (Decode.field "age" Decode.int)
-
-output : Result String Person
-output =
-    """
-    name: John
-    age: 25
-    """
-    |> Yaml.parse
-    |> Result.map (Yaml.decode decoder)
-
-case output of
-    Ok person ->
-        Debug.log "Person" person
-
-    Err err ->
-        Debug.log "Error" err
-
+```Elm
+import Yaml exposing (scalar, list, mapping, decode)
 ```
 
-I dette eksempelet har vi definert en Person-type som har et navn og en alder. Vi oppretter deretter en dekoder som passer til YAML-strukturen vår og bruker den til å lese dataen fra en tekststreng. Til slutt bruker vi Debug.log for å skrive ut resultatet. Dette er bare et enkelt eksempel på hvordan man kan jobbe med YAML i Elm, men det finnes mange flere muligheter og funksjonaliteter i dette biblioteket.
+Deretter kan du begynne å definere dine YAML-data. Her er et eksempel på en enkel liste med ulike språk:
 
-# Deep Dive
+```Elm
+languages : Yaml.Value
+languages =
+    list
+        [ scalar "Javascript"
+        , scalar "Elm"
+        , scalar "Python"
+        , scalar "PHP"
+        ]
+```
 
-Et av de beste aspektene ved å jobbe med YAML i Elm er at det gir deg en enkel og lesbar måte å konfigurere data på. YAML er mye mindre "bråkete" enn tradisjonelle konfigurasjonsfiler som JSON eller XML. Det er også veldig fleksibelt, noe som gjør det enkelt å legge til eller endre data uten å måtte endre hele strukturen. Elm-biblioteket elm-yaml håndterer også feil og feilmeldinger på en god måte, slik at du enkelt kan se hva som har gått galt i YAML-filen din.
+For å konvertere YAML-dataene til Elm, kan du bruke funksjonen `decode`:
 
-Det er også verdt å nevne at YAML er et mye mer ekspressivt format enn tradisjonelle konfigurasjonsfiler. Du kan bruke kommentarer, flerlinjede tekstblokker og andre funksjoner for å gjøre dataene dine mer leselige. Dette gjør det enklere å samarbeide med andre programmerere og å forstå komplekse datastrukturer.
+```Elm
+elmLanguages : Result String (List String)
+elmLanguages =
+    case decode languages of
+        Ok result ->
+            result
 
-# Se også
+        Err error ->
+            Err (Debug.toString error)
+```
 
-- Offisiell dokumentasjon for elm-yaml: https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/
-- En tutorial på hvordan bruke YAML i Elm: https://dev.to/paulweichhart/using-yaml-in-elm-13g1
-- Elm-samfunnets forum om YAML: https://discourse.elm-lang.org/t/yaml-parsing-the-elm-way/1743
+Etter å ha kjørt koden ovenfor, vil du få en liste med språk som kan brukes i ditt Elm-prosjekt.
+
+## Dypdykk
+
+YAML har flere interessante funksjoner som kan gjøre utviklingsprosessen din mer effektiv. For eksempel kan du bruke flere typer datastrukturer som `scalar`, `list`og `mapping` for å bygge mer komplekse YAML-data. Du kan også legge til kommentarer i dine YAML-filer for å gjøre det enklere å forstå koden senere.
+
+Føler du deg klar til å begynne å bruke YAML i ditt Elm-prosjekt? Start med å utforske dokumentasjonen for mer informasjon og flere muligheter.
+
+## Se Også
+
+- [YAML offisiell hjemmeside](https://yaml.org/)
+- [Elm dokumentasjon om YAML](https://package.elm-lang.org/packages/mdgriffith/yaml/latest/)

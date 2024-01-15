@@ -1,5 +1,6 @@
 ---
-title:                "Python: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Python: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Python"
 category:             "Python"
@@ -10,45 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Python on yksi maailman suosituimmista ohjelmointikielistä, ja sen avulla voi tehdä monenlaisia asioita. Yksi hyödyllisimmistä toiminnoista on tekstin etsiminen ja korvaaminen. Tämä on erityisen hyödyllistä esimerkiksi tekstinkäsittelyohjelmassa tai datan käsittelyssä.
 
-## Kuinka tehdä
-Käytä Pythonin "replace()" -metodia etsimään ja korvaamaan tiettyä tekstiä.
+Syytä etsiä ja korvata tekstiä voi olla monia, kuten halu muuttaa tietyn sanan tai lauseen jokaisen esiintymän tai korjata kirjoitusvirheitä.
 
-```Python
-# Luo teksti
-teksti = "Tervetuloa kotiin!"
+## Miten
 
-# Käytä replace()-metodia korvataksesi "Tervetuloa" "Hei" -sanalla
-uusi_teksti = teksti.replace("Tervetuloa", "Hei")
+Etsi ja korvaa tekstiä Pythonilla on helppoa! Käytämme tähän replace() -funktiota, joka toimii seuraavalla tavalla:
 
-# Tulosta uusi teksti
+```Python 
+# Alkuperäinen teksti
+teksti = "Tämä on esimerkkiteksti."
+
+# Korvataan sana "esimerkki" sanoilla "loistava"
+uusi_teksti = teksti.replace("esimerkki", "loistava")
+
+# Tulostetaan uusi teksti
 print(uusi_teksti)
 
->>> Hei kotiin!
+# Output: Tämä on loistava teksti.
 ```
 
-## Syvempi sukellus
-Pythonilla voi tehdä tarkempaa tekstien etsimistä ja korvaamista käyttämällä säännöllisiä lausekkeita. Tämä mahdollistaa esimerkiksi useiden erilaisten hakusanojen korvaamisen tai erikoismerkkien huomioimisen.
+Yllä olevassa esimerkissä olemme ensin tallentaneet alkuperäisen tekstin muuttujaan "teksti". Sitten replace() -funktion avulla olemme korvanneet sanan "esimerkki" sanalla "loistava" ja lopuksi tulostaneet uuden tekstimme. Voit myös vaihtaa vanhan tekstin uuteen muuttamalla sanat ja tekemällä tarvittavat muutokset. 
 
-```Python
-# Tuodaan syvempi tekstityökalu
-import re
+## Syvemmälle
 
-# Luo teksti
-teksti = "Tänään on aurinkoinen päivä ja sinne on paljon ihmisiä tulossa."
-
-# Käytä re.sub()-funktiota korvaamaan "sinne" "tänne"
-# ja "ihmisiä" "ihmisiäni"
-uusi_teksti = re.sub(r'sinne|ihmisiä', lambda x: x.group().capitalize() + 'ni', teksti)
-
-# Tulosta uusi teksti
-print(uusi_teksti)
-
->>> Tänään on aurinkoinen päivä ja tänne on paljon ihmisiäni tulossa.
-```
+Replace() -funktio toimii myös kirjaimien ja numeroiden kanssa. Esimerkiksi voit korvata kaikki pienet kirjaimet isoilla kirjaimilla tai poistaa numerot tekstistäsi. Voit myös antaa vaihtoehdon, kuinka monta kertaa tekstiä korvataan. Jos haluat korvata kaikki esiintymät, voit käyttää rstrip() -funktiota. Tarkempia tietoja ja esimerkkejä löydät Pythonin virallisesta dokumentaatiosta.
 
 ## Katso myös
-- [Pythonin dokumentaatio tekstin korvaamisesta](https://docs.python.org/3/library/string.html#string.replace)
-- [Regex kirjasto Pythonissa](https://docs.python.org/3/library/re.html)
-- [10 hyödyllistä Python-käskyä tekstin käsittelyyn](https://www.pythonforbeginners.com/text-processing/using-regexes-in-python)
+
+- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Tutoriaali videoiden ja esimerkkien kanssa](https://www.youtube.com/watch?v=qEYZDm6vPCQ)
+- [Githubin hakutyökalut](https://www.youtube.com/watch?v=yxXX1aQaAKU)

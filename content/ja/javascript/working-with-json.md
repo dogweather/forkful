@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを使用する"
+html_title:           "Javascript: JSONを使用する"
+simple_title:         "JSONを使用する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -9,59 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜJSONを使うのか？
+## なぜJSONを使うのか
 
-JSONはJavaScript Object Notationの略で、ネット上でデータをやり取りする際に非常に便利です。記事では、JSONを使うメリットや基本的な使い方を紹介します。
+JavaScriptにおいて、データの受け渡しは重要な役割を持っています。JSONは、データを扱う際に非常に便利であり、より優れたユーザーエクスペリエンスを提供することができます。そのため、開発者はJSONに対する習熟を必要とします。
 
-## JSONの基本的な使い方
+## JSONの使い方
 
-まずは、JSONを使ってデータを取得する方法を学びましょう。
+JSONを扱うための最も基本的な方法は、JavaScriptでオブジェクトを利用することです。オブジェクトを使用することで、JSON形式のデータを簡単に扱うことができます。
+
+例えば、次のコードを見てみましょう。
+
 ```Javascript
-let jsonExample = `{
-  "name": "John",
-  "age": 30,
-  "hobbies": ["reading", "playing games", "watching movies"],
-  "address": {
-    "city": "Tokyo",
-    "country": "Japan"
-  }
-}`;
-
-let parsedJson = JSON.parse(jsonExample);
-console.log(parsedJson.name); // output: "John"
-console.log(parsedJson.hobbies[1]); // output: "playing games"
-console.log(parsedJson.address.country); // output: "Japan"
-```
-上記のコードでは、変数jsonExampleにJSON形式のデータを代入し、JSON.parse()メソッドを使ってオブジェクトに変換しています。その後、オブジェクトのプロパティを使ってデータを取得しています。
-
-次に、JSONを使ってデータを送信する方法を見てみましょう。
-```Javascript
-let sendData = {
-  "name": "Jane",
-  "age": 25,
-  "hobbies": ["playing guitar", "cooking", "traveling"],
-  "address": {
-    "city": "Osaka",
-    "country": "Japan"
-  }
+let person = {
+  name: "John",
+  age: 25,
+  city: "Tokyo"
 };
 
-let jsonString = JSON.stringify(sendData);
-console.log(jsonString); // output: "{"name":"Jane","age":25,"hobbies":["playing guitar","cooking","traveling"],"address":{"city":"Osaka","country":"Japan"}}"
-
-// ここで、jsonStringをネット上で送信するなどしてデータをやり取りします
+console.log(person.name);
 ```
-上記のコードでは、オブジェクトをJSON形式の文字列に変換するためにJSON.stringify()メソッドを使っています。これを使うことで、データをやり取りする際にJSON形式を使うことができます。
 
-## JSONの詳細
+このコードでは、オブジェクトを作成し、データをkey-valueの形式で定義しています。そして、`person.name`を使うことで、オブジェクトから名前を取得しています。
 
-JSONはJavaScriptのオブジェクトの形式を取り入れたデータ形式です。そのため、JavaScriptの文法に沿ってデータを記述することができます。また、JSONは他のプログラミング言語でも使われており、データをやり取りする際に非常に便利です。
+また、JSON形式のデータを取得する場合は、`JSON.parse()`を使います。以下の例を見てみましょう。
 
-さらに、JSONは人間でも読みやすい形式であり、コンピューターでも解析しやすい形式です。そのため、データの取得や送信がスムーズに行えるように設計されています。
+```Javascript
+let jsonData = '{"name": "Jane", "age": 30, "city": "Osaka"}';
 
-## その他のリンク
+let person = JSON.parse(jsonData);
 
-- [JSONの公式ドキュメント](https://www.json.org/json-ja.html)
-- [JSONを使ったデータの送受信方法](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON)
-- [JSON vs XML: どちらを使うべきか](https://www.smashingmagazine.com/2016/09/json-vs-xml-which-one-is-right-for-you/)
-- [JSONのエディターやビューアーのリスト](https://www.json.org/json-es.html)
+console.log(person.age);
+```
+
+このコードでは、JSON形式のデータをJavaScriptのオブジェクトに変換し、その中から年齢を取得しています。
+
+## JSONの深層について
+
+JSONは、非常にシンプルな形式でありながら、多くのデータを扱うことができるように設計されています。そのため、大規模なアプリケーションやウェブサイトでも扱いやすいです。
+
+また、パースやシリアライズの性能も高く、現在ではほとんどのプログラミング言語でJSONをサポートしています。
+
+## 参考リンク
+
+- [JSONとは？JavaScriptでJSONを扱う方法を学ぼう](https://udemy.benesse.co.jp/development/javascript-json.html)
+- [JavaScriptのオブジェクトをJSON文字列に変換する方法を学ぼう](https://www.sejuku.net/blog/64318)
+- [JSONの実践的な使い方とその活用術](https://techcrunch.xsrv.jp/language/json/)
+- [モダンなJavaScriptでJSONを利用する方法](https://webdesign-trends.net/entry/10501)
+- [JavaScriptにおけるJSONのパースとシリアライズの方法](https://www.yoheim.net/blog.php?q=201315) 
+
+## 参考文献
+
+- [JSON.org - The JavaScript Object Notation website](https://www.json.org/json-ja.html)
+- [ECMAScript® 2019 Language Specification](https://tc39.es/ecma262)

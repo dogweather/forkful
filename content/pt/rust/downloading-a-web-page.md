@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Baixando uma página da web"
-simple_title:         "Baixando uma página da web"
+title:                "Fazendo o download de uma página da web"
+html_title:           "Rust: Fazendo o download de uma página da web"
+simple_title:         "Fazendo o download de uma página da web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar Rust para baixar páginas da web?
+## Por que baixar uma página da web?
 
-A programação com Rust se tornou uma opção popular para os desenvolvedores, especialmente para projetos que envolvem manipulação de dados e interações com a internet. Quando se trata de baixar páginas da web, a escolha do Rust pode trazer algumas vantagens, como alta performance e segurança.
+Há várias razões pelas quais alguém pode querer baixar uma página da web. Pode ser para fazer backup de conteúdo importante, para acessar o conteúdo offline ou para analisar o código fonte da página para fins de estudo ou aprimoramento de suas próprias habilidades de programação.
 
 ## Como fazer
 
-Para baixar uma página da web com Rust, podemos usar a biblioteca crates.io. Com ela, podemos facilmente fazer uma solicitação HTTP e obter o conteúdo da página de forma assíncrona. Veja um exemplo de código abaixo:
+Para baixar uma página da web em Rust, você pode usar a biblioteca `reqwest`, que é amplamente utilizada pela comunidade de programação Rust para fazer solicitações HTTP. Primeiro, adicione `reqwest` como dependência ao seu projeto em `Cargo.toml`:
 
-````Rust
-let res = reqwest::get("https://www.exemplo.com").await?;
-let body = res.text().await?;
+```Rust
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+```
 
-println!("Conteúdo da página: \n {}", body);
-````
+Em seguida, importe a biblioteca no seu código:
 
-Ao executar esse código, o resultado será a impressão do conteúdo da página no console.
+```Rust
+use reqwest::blocking::get;
+```
 
-## Aprofundando-se
+Agora, podemos usar a função `get()` para fazer uma solicitação HTTP e salvar o conteúdo da resposta em uma variável. Por exemplo, para baixar a página inicial da Wikipedia em inglês, podemos fazer o seguinte:
 
-Para entender melhor o processo de baixar uma página da web em Rust, é importante entender como funciona o protocolo HTTP e como ele é tratado pela biblioteca crates.io. Além disso, podemos explorar outros recursos da biblioteca, como o gerenciamento de erros e a configuração de cabeçalhos.
+```Rust
+let response = get("https://en.wikipedia.org/wiki/Main_Page")?;
+let body = response.text()?;
+```
 
-Vale lembrar que, ao lidar com solicitações HTTP, é importante ter cuidado com a segurança e autenticação. O Rust possui ferramentas e práticas recomendadas para garantir que sua aplicação esteja protegida contra possíveis vulnerabilidades.
+O `?` no final de cada linha é usado para lidar com possíveis erros que podem ocorrer durante a execução. Isso é conhecido como "try operator" e é usado para evitar o uso excessivo de `match` ou `unwrap`, tornando o código mais legível.
+
+O conteúdo da página será salvo na variável `body`, que podemos, então, imprimir na tela ou salvar em um arquivo.
+
+## Profundidade
+
+A biblioteca `reqwest` também oferece várias opções de configuração, como adicionar cabeçalhos personalizados ou lidar com redirecionamentos. Além disso, é possível fazer solicitações assíncronas usando `reqwest::Client`. Você também pode usar outras bibliotecas, como `scraper`, para analisar o conteúdo HTML da página baixada.
 
 ## Veja também
 
-- [Documentação oficial da biblioteca reqwest](https://docs.rs/reqwest/latest/reqwest/)
-- [Tutorial de como fazer uma solicitação HTTP com Rust](https://dev.to/karataev/how-to-make-http-requests-with-rust-364h)
-- [Artigo sobre segurança na programação com Rust](https://www.techrepublic.com/article/why-rust-is-the-most-secure-programming-language/)
+- [Documentação da biblioteca `reqwest`](https://docs.rs/reqwest)
+- [Exemplo de código para baixar uma página da web em Rust](https://github.com/catak1st/reqwest-example-rs)

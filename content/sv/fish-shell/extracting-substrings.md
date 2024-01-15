@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Extrahering av delsträngar"
+title:                "Extrahering av delsträngar"
+html_title:           "Fish Shell: Extrahering av delsträngar"
 simple_title:         "Extrahering av delsträngar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,47 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna extrahera substrängar är en användbar färdighet för programmerare. Det kan hjälpa till att effektivisera och automatisera processer, och göra det lättare att hantera data i program. Fish Shell erbjuder ett enkelt sätt att extrahera substrängar från en sträng i terminalen, vilket kan vara till stor hjälp för att lösa olika problem.
+Substring-extrahering är en vanlig uppgift vid programmering, särskilt när du hanterar textdata. Det kan hjälpa dig att effektivt manipulera och hantera textsträngar enligt specifika kriterier.
 
 ## Hur man gör det
 
-För att extrahera substrängar i Fish Shell behöver du använda en inbyggd funktion som heter "string". Detta kommando tar två argument, den ursprungliga strängen och en specifik del av den strängen som du vill extrahera.
+Det finns många olika sätt att extrahera substrings i Fish Shell, men vi kommer att fokusera på två vanliga metoder: användning av inbyggda kommandon och användning av reguljära uttryck.
 
-```Fish Shell
-string SUBSTRING ORIGIN_STRING
+Först ska vi se på hur man använder inbyggda kommandon för att extrahera substrings:
+```
+Fish Shell
+# Spara textsträngen i en variabel
+set sträng "Hej världen"
+
+# Extrahera de första 3 tecknen
+string sub --start 0 --length 3 $sträng
+# Resultat: "Hej"
+
+# Extrahera tecknen mellan index 4 och 8
+string sub --start 4 --length 4 $sträng
+# Resultat: "värld"
+
+# Extrahera de sista 5 tecknen
+string sub --length -5 $sträng
+# Resultat: "världen"
 ```
 
-För att illustrera detta, låt oss använda ett exempel där vi har en sträng med ett ord och vi vill extrahera en del av det ordet. Så här ser vår ursprungliga sträng ut:
+Nu ska vi titta på hur man använder reguljära uttryck för att extrahera substrings:
+```
+Fish Shell
+# Spara textsträngen i en variabel
+set sträng "Detta är en text"
 
-```Fish Shell
-set strängen "Jag älskar fiskar"
+# Extrahera första ordet (allt innan första mellanslaget)
+string match -r "(\w+)" $sträng
+# Resultat: "Detta"
+
+# Extrahera alla ord som börjar med bokstaven "t"
+string match -rx "t\w+" $sträng
+# Resultat: "text"
+
+# Extrahera alla tecken mellan "är" och "en"
+string match -r "är (\w+) en" $sträng
+# Resultat: "en"
 ```
 
-Om vi nu vill extrahera "fiskar" från den här strängen kan vi använda följande kommando:
+## Djupgående
 
-```Fish Shell
-string fiskar $strängen
-```
-
-Detta kommer att ge oss resultatet "fiskar", som är vår extraherade substräng.
-
-## Djupdykning
-
-För mer komplexa extractioner erbjuder Fish Shell även möjligheten att använda reguljära uttryck. Reguljära uttryck är en syntax för att matcha och manipulera textsträngar på ett flexibelt sätt.
-
-Ett enkelt exempel på detta är om vi vill extrahera alla siffror från en sträng. Då kan vi använda detta kommando:
-
-```Fish Shell
-set strängen "Jag har 12 fiskar"
-string '[0-9]+.' $strängen
-```
-
-Detta kommer att extrahera "12" från vår sträng och ge oss resultatet "12.".
+Det finns många fler alternativ och möjligheter när det gäller substring-extrahering i Fish Shell. Det är värt att utforska olika kommandon och tekniker för att hitta vad som fungerar bäst för ditt specifika projekt. En annan användbar funktion är "string replace", som låter dig byta ut en del av en textsträng med en annan. Du kan också använda "string split" för att dela upp en sträng baserat på ett givet tecken eller mönster.
 
 ## Se även
 
-Här är några andra resurser som kan vara användbara för att lära sig mer om att extrahera substrängar i Fish Shell:
-
-- Fish Shell dokumentation för stringkommandot: https://fishshell.com/docs/current/cmds/string.html
-- En guide om reguljära uttryck i Fish Shell: https://dev.to/codefreak/regular-expressions-in-fish-shell-2n4j
-- Fish Shell Cheat Sheet: https://devhints.io/fish-shell
+- Fish Shell-dokumentation om "string" kommandon: https://fishshell.com/docs/current/cmds/string.html
+- Tutorial om reguljära uttryck: https://www.regular-expressions.info/tutorial.html
+- Bevaka String Extraction i Bash Shell: https://usefulangle.com/post/78/string-extraction-bash-shell

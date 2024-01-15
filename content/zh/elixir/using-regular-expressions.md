@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 使用正则表达式"
+title:                "使用正则表达式"
+html_title:           "Elixir: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用Elixir中的正则表达式？
+##为什么会使用正则表达式
 
-Elixir是一种流行的动态函数式编程语言，它提供了强大的正则表达式功能。正则表达式能够帮助开发者更有效地处理和操作字符串数据。无论你是初学者还是经验丰富的开发者，学习并使用Elixir中的正则表达式都能大大提高你的编程技能，让你的代码更加简洁高效。
+正则表达式是一种强大的工具，它可以帮助我们在文本中搜索和匹配特定的模式。无论是在提取数据，还是在字符串替换上，正则表达式都能发挥强大的作用。因此，学习使用正则表达式是提高编程效率和处理文本的重要技能。
 
-## 如何使用
+##如何使用
 
-Elixir中的正则表达式使用`Regex`模块来实现，我们可以使用`Regex.match?/2`函数来进行匹配。比如我们想要提取一个字符串中的数字，并将其转换为整数，可以使用如下代码：
+```elixir
+# 在Elixir中使用正则表达式
+Regex.match?(~r/hello/, "Hello World!")
+# output: true
 
-```Elixir
-Regex.match?(~r/\d+/, "这里有123个鸡蛋")
-|> case do
-  true -> Regex.run(~r/\d+/, "这里有123个鸡蛋")[0] |> String.to_integer()
-  _ -> "没有找到数字"
-end
+# 从字符串中提取数据
+str = "Elixir version 1.8.2"
+Regex.run(~r/\d+\.\d+\.\d+/, str)
+# output: ["1.8.2"]
+
+# 替换字符串中的特定内容
+str = "Hi John, welcome to Elixir!"
+Regex.replace(~r/John/, str, "Mary")
+# output: "Hi Mary, welcome to Elixir!"
 ```
 
-运行上述代码，输出结果为`123`，我们成功地提取出了字符串中的数字。
+##深入了解
 
-## 深入了解
+正则表达式是由特殊的字符和语法组成，它们对应了不同的匹配规则。例如，`\d+`表示一个或多个数字，`\w`表示一个字母、数字或下划线。除此之外，正则表达式还可以使用分组、界定符和反向引用等特色功能。
 
-除了基础的匹配和提取功能，Elixir中的正则表达式还提供了更多的高级用法，比如替换、捕获组等等。同时，Elixir中的正则表达式也支持Unicode字符和UTF-8编码，能够满足更多复杂的匹配需求。如果想要深入了解如何使用Elixir中的正则表达式，你可以阅读官方文档或者参考其他相关资料。
+在Elixir中，使用`~r`开头的语法糖来表示正则表达式，后面紧跟着对应的匹配规则。配合Elixir中的正则表达式函数，可以实现更加复杂的文本处理功能。
 
-# 参考链接
+##参考链接
 
-- [Elixir官方文档：Regex](https://hexdocs.pm/elixir/Regex.html)
-- [正则表达式测试工具RegExr](https://regexr.com/)
-- [Elixir字符串处理函数一览](https://elixirschool.com/zh-hans/lessons/basics/string/)
-- [深入理解正则表达式：匹配原理与验正法](https://www.ig180.com/?/article/2012/1335)
+- [Elixir正则表达式文档](https://hexdocs.pm/elixir/1.8/Regex.html)
+- [正则表达式基础教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+- [正则表达式在线测试工具](https://regex101.com/)

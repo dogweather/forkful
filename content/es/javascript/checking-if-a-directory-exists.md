@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Javascript: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué 
 
-Revisar si un directorio existe es una tarea esencial para cualquier programador de JavaScript. Esta comprobación nos permite asegurarnos de que el directorio que estamos intentando acceder existe antes de realizar cualquier acción en él. Además, nos ayuda a evitar errores y mejora la experiencia del usuario final.
+Si eres un desarrollador de Javascript, es probable que en algún momento necesites verificar si un directorio existe dentro de tu código. Esto te ayudará a asegurarte de que tu programa se esté ejecutando correctamente y a tomar decisiones basadas en la existencia o no de una ruta específica.
 
-## Cómo
+## Cómo hacerlo 
 
-Para revisar si un directorio existe en JavaScript, utilizamos la función ```fs.existsSync()```. Esta función toma como argumento la ruta del directorio que queremos comprobar y devuelve un valor booleano: ```true``` si el directorio existe y ```false``` si no existe.
+Para verificar si un directorio existe, podemos utilizar la función `fs.existsSync()` de Node.js. Esta función nos permite verificar si una ruta existe o no en el sistema de archivos. Veamos un ejemplo de cómo utilizarla:
 
-Veamos un ejemplo de cómo usar esta función para verificar si un directorio llamado "archivos" existe en nuestro proyecto:
+```javascript
+const fs = require('fs');
 
-```Javascript
-const fs = require("fs");
-const directorio = "./archivos";
-
-if (fs.existsSync(directorio)) {
-  console.log("El directorio existe");
-}
-else {
-  console.log("El directorio no existe");
+if (fs.existsSync('/mi/directorio')) {
+  console.log('El directorio existe');
+} else {
+  console.log('El directorio no existe');
 }
 ```
 
-En este ejemplo, estamos utilizando la función ```require()``` para importar el módulo "fs" de Node.js, que nos permite interactuar con los archivos del sistema. Luego, creamos una variable que almacena la ruta del directorio que queremos comprobar.
+Este código primero importa el módulo `fs` de Node.js y luego utiliza la función `existsSync()` para verificar si la ruta `/mi/directorio` existe. Si la ruta existe, se imprimirá en la consola "El directorio existe", de lo contrario, se imprimirá "El directorio no existe".
 
-Dentro de un bloque ```if-else```, utilizamos la función ```fs.existsSync()``` para verificar si el directorio existe o no. Dependiendo del resultado, imprimimos un mensaje en la consola para informar al usuario.
+## Deep Dive 
 
-## Deep Dive
+Cuando utilizamos la función `fs.existsSync()`, en realidad estamos verificando si existe un archivo o un directorio en la ruta especificada. Si queremos asegurarnos de que el elemento en la ruta sea un directorio, podemos utilizar la función `fs.statSync()` y verificar la propiedad `isDirectory()` del objeto devuelto. Por ejemplo:
 
-Ahora que hemos visto cómo utilizar la función ```fs.existsSync()```, es importante mencionar algunos detalles importantes sobre esta comprobación.
+```javascript
+const fs = require('fs');
 
-En primer lugar, debemos tener en cuenta que esta función solo comprueba si un directorio existe o no. No nos dice si tenemos permisos para acceder a él o si está vacío. También es importante destacar que esta función solo funciona para directorios locales, no para directorios en línea (URL).
+if (fs.existsSync('/mi/directorio')) {
+  const stats = fs.statSync('/mi/directorio');
+  if (stats.isDirectory()) {
+    console.log('La ruta especificada es un directorio');
+  } else {
+    console.log('La ruta especificada no es un directorio');
+  }
+} else {
+  console.log('El directorio no existe');
+}
+```
 
-Otra cosa a tener en cuenta es que la ruta que pasamos como argumento debe ser una ruta absoluta, no una ruta relativa. Por ejemplo, en el ejemplo anterior, utilizamos la variable ```directorio``` para almacenar la ruta del directorio "archivos", pero si lo hubiéramos hecho como ```./archivos```, la comprobación no habría funcionado.
+Al utilizar la función `fs.statSync()`, obtenemos un objeto con información sobre el elemento en la ruta especificada. Luego podemos utilizar la propiedad `isDirectory()` para determinar si el elemento es un directorio o no.
 
-## See Also
+## Ver también 
 
-Para obtener más información sobre cómo trabajar con archivos y directorios en JavaScript, asegúrese de revisar la documentación oficial de Node.js [aquí](https://nodejs.org/api/fs.html).
-
-En caso de que quiera aprender más sobre rutas absolutas y relativas, recomendamos leer este artículo [aquí](https://www.freecodecamp.org/espanol/news/rutas-absolutas-y-rutas-relativas-en-un-sistema-de-archivos/).
+- Documentación de Node.js sobre la función `fs.existsSync()`: https://nodejs.org/api/fs.html#fs_fs_existssync_path
+- Documentación de Node.js sobre la función `fs.statSync()`: https://nodejs.org/api/fs.html#fs_fs_statsync_path_options

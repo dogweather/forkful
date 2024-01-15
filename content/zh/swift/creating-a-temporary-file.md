@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 创建临时文件"
+title:                "创建临时文件"
+html_title:           "Swift: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,49 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要创建临时文件
+## 为什么
 
-临时文件在编写Swift程序时经常会用到。它们是暂时存储数据的有效方法，可以帮助节省磁盘空间，同时也可以帮助我们在处理数据时保持程序的整洁。让我们来看看如何在Swift中创建临时文件。
+在编写Swift程序时，有时我们需要在运行过程中创建临时文件来储存数据、临时记录日志等。创建临时文件可以帮助我们更有效地管理和处理数据，提高程序的运行效率。
 
-# 如何创建临时文件
+## 如何操作
 
-在Swift中，我们可以使用FileManager类来创建临时文件。首先，我们需要创建一个文件的路径，并将其存储在变量中。接下来，我们可以使用FileManager的createFile方法来创建一个临时文件，如下所示：
-
-```Swift
-// 创建临时文件的路径
-let tempPath = NSTemporaryDirectory().appending("tempfile.txt")
-
-// 使用FileManager创建临时文件
-FileManager.default.createFile(atPath: tempPath, contents: nil, attributes: nil)
-```
-
-接下来，我们可以使用write方法向临时文件中写入数据，如下所示：
+在Swift中，我们可以使用 `FileManager` 类来创建临时文件。下面是一个简单的例子：
 
 ```Swift
-// 定义要写入临时文件的数据
-let data = "这是一个临时文件".data(using: .utf8)
+let fileManager = FileManager.default
+let tempDirectoryURL = NSURL.fileURL(withPath: NSTemporaryDirectory())
+let tempFileURL = tempDirectoryURL.appendingPathComponent("tempFile.txt")
 
-// 使用FileManager的write方法将数据写入临时文件
-FileManager.default.createFile(atPath: tempPath, contents: data, attributes: nil)
+do {
+    // 在临时目录中创建文件
+    try "Hello World".write(to: tempFileURL, atomically: true, encoding: String.Encoding.utf8)
+
+    // 读取文件内容
+    let data = try Data(contentsOf: tempFileURL)
+    let fileContent = String(data: data, encoding: .utf8)
+
+    // 打印输出
+    print("临时文件路径：\(tempFileURL)")
+    print("临时文件内容：\(fileContent)")
+} catch {
+    print("创建临时文件失败：\(error)")
+}
 ```
 
-我们也可以使用FileManager的removeItem方法来删除临时文件，如下所示：
+运行以上代码，你会在控制台看到下面的输出：
 
 ```Swift
-// 使用FileManager的removeItem方法来删除临时文件
-try? FileManager.default.removeItem(atPath: tempPath)
+临时文件路径：file:///Users/username/Library/Developer/CoreSimulator/Devices/DEVICE_ID/data/Containers/Data/Application/APP_ID/tmp/tempFile.txt
+临时文件内容：Hello World
 ```
 
-完成以上步骤后，我们就成功地创建并操作了一个临时文件。
+这里使用了 `FileManager` 类的 `default` 属性来获取一个默认的文件管理对象。然后，我们通过 `NSURL` 的 `fileURL(withPath:)` 方法获取了一个指向临时目录的URL。接下来，使用 `appendingPathComponent(_:)` 方法在临时目录中创建了一个名为 "tempFile.txt" 的文件，并将 "Hello World" 写入其中。最后，通过 `Data` 类读取文件内容并用 `String` 类解码为字符串来输出。
 
-# 深入了解临时文件
+## 深入了解
 
-临时文件是指在程序执行过程中创建的临时文件，它们的存在时间通常只在程序执行期间。创建临时文件的路径通常是操作系统提供的临时文件夹，我们可以使用NSTemporaryDirectory方法来获取临时文件夹的路径。
+除了上面介绍的方法，我们还可以使用 `mkstemp(_:)` 函数来创建临时文件。这个函数会返回一个文件描述符和一个包含文件路径的C字符串。下面是一个示例：
 
-临时文件也可以是被写入内容的本地文件，它们可以被用于缓存数据、临时存储用户设置等。但是请注意，由于临时文件的生命周期短暂，当程序重新启动时，它们将被删除。
+```Swift
+var buffer = [Int8](repeating: 0, count: Int(PATH_MAX))
+let fileDescriptor = mkstemp(&buffer)
+let path = String(cString: buffer)
+```
 
-# 查看也使用
+这里使用了 `mkstemp(_:)` 函数来创建临时文件，并将返回的文件描述符和路径保存在 `fileDescriptor` 和 `path` 变量中。需要注意的是，我们需要手动将 `buffer` 转换为C字符串来获取文件路径。
 
-- [Swift官方文档-FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [了解NSTemporaryDirectory方法](https://stackoverflow.com/questions/24097826/what-is-nstemporarydirectory-give-examples-using-it)
-- [如何使用临时文件来缓存数据](https://www.appcoda.com.hk/temporary-files-data-caching/)
+## 参考链接
+
+- [Apple官方文档 - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift八卦 - 如何操作临时文件？ | 非凡计算机](https://www.willson.net/post/create-temporary-file-in-swift/)
+
+## 参考链接
+
+- [Apple官方文档 - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift八卦 - 如何操作临时文件？ | 非凡计算机](https://www.willson.net/post/create-temporary-file-in-swift/)

@@ -1,5 +1,6 @@
 ---
-title:                "Java: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Java: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Java"
 category:             "Java"
@@ -11,45 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Komentoriviparametrien lukeminen on tärkeä osa Java-ohjelmointia, sillä se mahdollistaa käyttäjien syötteiden ottamisen dynaamisesti suoritettaviin ohjelmiin. Tässä blogikirjoituksessa käymme läpi, miten voit lukea komentoriviltä syötettyjä parametreja ja kuinka ne voidaan hyödyntää Java-ohjelmoinnissa.
+Miksi kukaan haluaisi lukea komentorivin argumentteja Java-ohjelmoinnissa? Yksi syy voi olla tarve saada käyttäjältä tietoja ohjelman suorituksen aikana. 
 
-## Miten
+## Kuinka
 
-Komentoriviparametrien lukeminen Java-ohjelmassa on helppoa käyttämällä `args`-parametria `main`-metodissa. Tämä parametri saa arvokseen taulukon, jossa on kaikki komentoriviltä annetut syötteet. Voit lukea taulukon arvoja käyttämällä indeksejä, kuten esimerkissä alla:
+Usein ohjelmat vaativat tiettyjä arvoja tai vaihtoehtoja tulkittavaksi ja käsiteltäväksi. Tämä voidaan tehdä helposti hyödyntäen komentorivin argumentteja. Katso alla oleva esimerkki, jossa luodaan ohjelma, joka tulostaa käyttäjän antaman parametrin mukaisen viestin.
 
-```java
-public static void main(String[] args) {
-    for (int i = 0; i < args.length; i++) {
-        System.out.println("Parametri " + i + " : " + args[i]);
+```java 
+public class ArgumentExample {
+
+  public static void main(String[] args) {
+
+    if (args.length == 0) {
+      System.out.println("Anna parametri tulostettavalle viestille!");
+    } else {
+      System.out.println("Käyttäjän antama parametri: " + args[0]);
     }
+
+  }
 }
 ```
 
-###### Syöte:
+Esimerkki syöte ja tuloste:
 
+```bash 
+java ArgumentExample Hello
+Käyttäjän antama parametri: Hello
 ```
-java Ohjelma ensimmäinen toinen -optio 123
-```
-
-##### Tuloste:
-
-```
-Parametri 0 : ensimmäinen
-Parametri 1 : toinen
-Parametri 2 : -optio
-Parametri 3 : 123
-```
-
-Kuten nähdään esimerkistä, komentoriviparametrit järjestetään taulukkoon oikeassa järjestyksessä ja niitä voi käsitellä kuten mitä tahansa taulukkoa Java-ohjelmassa.
 
 ## Syvemmälle
 
-Komentoriviparametrien lukeminen on hyödyllistä esimerkiksi silloin, kun halutaan suorittaa ohjelma eri parametreilla eri tuloksilla. Tällöin ohjelman käynnistämistä voidaan muokata dynaamisesti käyttäjän syötteiden avulla.
+Komentorivin argumentit voidaan lukea Java-ohjelmassa hyödyntämällä `args`-muuttujaa, joka on `String`-taulukko. Tämä taulukko sisältää kaikki parametrit, jotka on annettu ohjelman käynnistyksen yhteydessä. Voit myös käyttää `foreach`-silmukkaa helpottamaan argumenttien käsittelyä, kuten alla olevassa esimerkissä:
 
-Lisäksi komentoriviparametreilla voidaan välittää ohjelmalle tietoa esimerkiksi tiedostojen sijainnista tai erilaisista asetuksista, jolloin ohjelma voi toimia joustavasti eri tilanteissa.
+```java
+public class ArgumentLoopExample {
+
+  public static void main(String[] args) {
+
+    for (String arg : args) {
+      System.out.println("Käyttäjän antama parametri: " + arg);
+    }
+
+  }
+}
+```
+
+Esimerkki syöte ja tuloste:
+
+```bash
+java ArgumentLoopExample Hello World
+Käyttäjän antama parametri: Hello
+Käyttäjän antama parametri: World
+```
 
 ## Katso myös
 
-- [Oracle Java - Komentoriviparametrit](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Tutorials Point - Komentoriviparametrit Java-ohjelmassa](https://www.tutorialspoint.com/command-line-arguments-in-java)
-- [Javatpoint - Komentoriviparametrien esimerkkejä](https://www.javatpoint.com/command-line-argument)
+- [Oracle:n Java dokumentointi: Komentorivin argumentit](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Baeldung:n artikkeli: Java Command-Line Arguments Parsing](https://www.baeldung.com/java-command-line-arguments-parsing)

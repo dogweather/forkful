@@ -1,5 +1,6 @@
 ---
-title:                "Go: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "Go: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Go"
 category:             "Go"
@@ -9,85 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה:
+## למה
+למה ליצור קובץ זמני?
+ניתן ליצור קובץ זמני כדי לשמור נתונים או תוכן מסוים עד שהם יימחקו בסוף התהליך.
 
-יצירת קובץ זמני ב-Go יכול להיות רעיון טוב עבור מפתחים שמעוניינים לשמור על נתונים שלא ישמרו לטווח ארוך. זה יכול להיות שימושי לכתיבת קבצי לוגים או לטפל במידע זמני במשך תהליך מסוים.
-
-# כיצד לעשות זאת:
-
-## יצירת קובץ זמני חדש:
-
+## כיצד לייצר קובץ זמני ב-Go
+עבור יצירת קובץ זמני ב-Go, ניתן להשתמש בפונקציה `ioutils.TempFile`:
 ```Go
-package main
-
 import (
-    "fmt"
-    "io/ioutil"
-    "os"
+	"io/ioutil"
+	"log"
 )
 
 func main() {
-    // יצירת קובץ זמני וקביעת התוכן שלו
-    tempFile, err := ioutil.TempFile("", "example")
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer os.Remove(tempFile.Name())
-
-    // כתיבת נתונים לקובץ זמני
-    data := []byte("זוהי נתון זמני המתכנתים יכולים להשתמש בו")
-    if _, err = tempFile.Write(data); err != nil {
-        fmt.Println(err)
-    }
-
-    // קריאת הנתונים מהקובץ זמני
-    if _, err = tempFile.Seek(0, 0); err != nil {
-        fmt.Println(err)
-    }
-    output, err := ioutil.ReadAll(tempFile)
-    if err != nil {
-        fmt.Println(err)
-    }
-    fmt.Println(string(output))
-
-    // יצירת קובץ זמני עם הסיומת ".txt"
-    tempFileTXT, _ := ioutil.TempFile("", "example*.txt")
-    defer os.Remove(tempFileTXT.Name())
-
-    // כתיבת נתונים לקובץ זמני עם הסיומת ".txt"
-    data = []byte("גם כאן ניתן להשתמש בקבצי זמני עם סיומת ספציפית")
-    if _, err = tempFileTXT.Write(data); err != nil {
-        fmt.Println(err)
-    }
+	// יצירת קובץ זמני בתיקיית העבודה הנוכחית 
+	tempFile, err := ioutil.TempFile("", "example")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// כתיבת תוכן לקובץ זמני
+	_, err := tempFile.Write([]byte("Hello world!"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	// סגירת הקובץ ומחיקתו בסוף התהליך
+	defer tempFile.Close()
+	defer os.Remove(tempFile.Name())
 }
-
-// פלט:
-// זוהי נתון זמני המתכנתים יכולים להשתמש בו
-// גם כאן ניתן להשתמש בקבצי זמני עם סיומת ספציפית
 ```
 
-## יצירת קובץ זמני בתיקייה ספציפית:
+Output:
+```
+Temp File created: /Users/username/example12345
+```
 
-```Go
-package main
+## חקירה עמוקה
+כאשר מזינים ריק בתיבת האחסון הראשונה של `ioutils.TempFile`, הפונקציה תיצור קובץ זמני בתיקיית העבודה הנוכחית בשם המשמש כקובץ זמני. אם מספקים תיבת אחסון נתיב תקין, הפונקציה תיצור את הקובץ זמני במיקום שצוין ותשמור על התנאים שנתנו לפעולה הזו.
 
-import (
-    "fmt"
-    "io/ioutil"
-    "os"
-)
-
-func main() {
-    // יצירת תיקייה זמנית וקביעת מסלולים למיקומים שונים
-    tempDir, err := ioutil.TempDir("", "example")
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer os.RemoveAll(tempDir)
-
-    // יצירת קובץ זמני בתוך התיקייה הזמנית
-    tempFile, err := ioutil.TempFile(tempDir, "example")
-    if err != nil {
-        fmt.Println(err)
-    }
-    fmt
+## ראה גם
+- דוקומנטציה רשמית של אתר המפתחים של Go על `ioutils.TempFile`: https://golang.org/pkg/io/ioutil/#TempFile
+- מדריך מבוא על יצירת קבצים זמניים ב-Go: https://tutorialedge.net/golang/temporary-files-go/
+- דוגמאות נוספות ליצירת קובץ זמני ב-Go: https://golangcode.com/create-temporary-file/

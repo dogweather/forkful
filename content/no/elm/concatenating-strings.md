@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenkobling av strenger"
+html_title:           "Elm: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-En viktig del av å programmere er å kunne behandle tekst og data på en effektiv måte. En måte å gjøre dette på er gjennom å kombinere, eller konkatenere, ulike strenger. Dette kan være nyttig for å bygge mer komplekse strenger som skal brukes i kall til API-er eller utskrift til brukerinteraksjoner. I denne blogginnlegget vil vi se på hvordan man enkelt kan concatenate strenger i Elm.
+## Hvorfor
+
+Hvorfor kombinere strenger? Fordi det kan gi en mer dynamisk og tilpasset tekst til forespørsler og brukerinteraksjoner i en applikasjon. Det å kombinere forskjellige variabler og tekststrenger i en kohesiv setning kan også gjøre koden mer lesbar og effektiv.
 
 ## Hvordan gjøre det
-I Elm er det veldig enkelt å concatenere strenger ved å bruke operatøren ++. Her er et eksempel på hvordan dette kan gjøres:
+
+For å kombinere strenger i Elm, kan vi bruke funksjonen "++" (også kjent som "concat" eller "append"). Denne funksjonen tar inn to strenger og kombinerer dem til én. La oss se på et eksempel:
 
 ```Elm
-navn = "Ola"
-alder = "25"
-beskjed = navn ++ " er " ++ alder ++ " år gammel."
+concatStrings name age =
+    "Hei, mitt navn er " ++ name ++ " og jeg er " ++ (String.fromInt age) ++ " år gammel."
 ```
-Dette vil produsere en streng som sier "Ola er 25 år gammel". Som du kan se, bruker vi ++ operatøren for å kombinere variabler og strenger. Det er viktig å merke seg at operatøren kun fungerer med strenger, så om du ønsker å konvertere tall eller andre data typer må du først gjøre de om til strenger.
 
-Du kan også concatenere strenger som er lagret i en liste. I følgende eksempel viser vi hvordan man kan bruke en map funksjon for å concatenate alle strengene i en liste:
+I dette eksemplet tar vi inn en variabel for navn og en for alder. Ved å bruke ++-operatøren, kombinerer vi variablene og skaper en ny streng som inneholder både navn og alder.
+
+**Output:**
+```
+Hei, mitt navn er Eric og jeg er 27 år gammel.
+```
+
+Vi kan også bruke ++-operatøren til å kombinere strenger med vanlige tekststrenger som ikke er variabler. La oss se på et annet eksempel:
 
 ```Elm
-strenger = [ "Hei ", "på ", "deg!" ]
-resultat = List.foldl (\streng akk -> akk ++ streng) "" strenger
+concatWithText color fruit =
+    "Jeg elsker min " ++ color ++ " " ++ fruit ++ "."
 ```
 
-Dette vil resultere i en streng som sier "Hei på deg!".
+I dette eksemplet tar vi inn variabler for farge og frukt og kombinerer dem med en fast tekststreng. Det er viktig å merke seg at hvis vi ikke bruker paranteser rundt den numeriske variabelen, vil ikke ++-operatøren fungere. Dette er fordi Elm trenger å vite hvilken del av uttrykket som skal evalueres som en streng og hvilken som skal evalueres som en numerisk verdi.
+
+**Output:**
+```
+Jeg elsker min røde eple.
+```
 
 ## Deep Dive
-En ting å huske på når man concatenate strenger er at det også innebærer å håndtere mellomrom og formatering. Dette kan være spesielt viktig når man jobber med brukerinteraksjoner eller API-kall.
 
-For å unngå uønskede mellomrom kan man bruke funksjonen String.join som vil concatenate strenger med et gitt mellomrom. For eksempel:
+Det finnes også andre måter å kombinere strenger på i Elm, som å bruke built-in funksjoner som "concat", "append", eller å bruke lister og "foldl" funksjonen.
 
-```Elm
-strenger = [ "Det", "er", "kaldt", "ute" ]
-resultat = String.join " " strenger
-```
-
-Dette vil resultere i en streng som sier "Det er kaldt ute".
-
-Når man jobber med API-kall er det også viktig å formatere strenger riktig. For eksempel, hvis man skal bygge en URL som tar inn en variabel for å gjøre et søk, må man være sikker på at variabelen er riktig formatert. Dette kan enkelt gjøres ved hjelp av en concatenate funksjon som tar inn nødvendig formatering som et argument.
-
-Generelt sett er det viktig å være klar over formatering og mellomrom når man jobber med concatenating strenger. Det kan være lurt å planlegge og teste grundig for å unngå uønskede resultater.
+Det er også verdt å merke seg at i Elm er strenger uforanderlige, noe som betyr at når vi kombinerer strenger, oppretter vi faktisk en ny streng i stedet for å endre den eksisterende. Dette er en viktig designbeslutning i Elm og kan hjelpe til med å forebygge feil i koden.
 
 ## Se også
-- Elm Offisiell Dokumentasjon for String Modul: https://package.elm-lang.org/packages/elm/string/latest/
-- Elm Offisiell Dokumentasjon for List Modul: https://package.elm-lang.org/packages/elm/core/latest/List
-- Elm Bygge og Kombinere Strenger guide: https://guide.elm-lang.org/effects/string_conc
+
+Ønsker du å lære mer om strenger i Elm? Sjekk ut disse ressursene:
+
+- [Elm Offisiell Dokumentasjon](https://elm-lang.org/docs)
+- [Liniker for å lære Elm](https://lineofcode.io/learn-elm)

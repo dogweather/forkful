@@ -1,6 +1,7 @@
 ---
-title:                "Elm: コンピュータプログラミングについて「コマンドライン引数の読み込み」という記事のタイトルです。"
-simple_title:         "コンピュータプログラミングについて「コマンドライン引数の読み込み」という記事のタイトルです。"
+title:                "コマンドライン引数の読み込み"
+html_title:           "Elm: コマンドライン引数の読み込み"
+simple_title:         "コマンドライン引数の読み込み"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,46 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-コマンドライン引数を読むために、なぜ誰かが参加する必要があるのでしょうか？それについて説明します。
+コマンドライン引数を読み取ることは、Elmプログラミングにおいて非常に便利な能力です。簡単なコマンドラインツールを作成したり、パラメーターを渡すことであなたのプログラムをカスタマイズすることができます。
 
-プログラミング言語Elmを学ぶことは、非常に強力なツールを手に入れることを意味します。その中でも、コマンドライン引数の読み取りは、さまざまなアプリケーション開発やスクリプトの作成において重要な役割を果たします。例えば、ユーザーからの入力を受け付ける必要があるアプリケーションや、外部からのデータを処理する必要があるスクリプトを作成する際には、コマンドライン引数の読み取りが必要になることがあります。
+## 使い方
 
-## ハウツー
+コマンドライン引数を読み取るには、まずElmの`Platform.worker`を使って、コマンドライン引数を環境変数として公開する任意のアウトプットスタイルを実装する必要があります。
 
-では、実際にElmを使用してコマンドライン引数を読み取る方法を見ていきましょう。
+さらに、アプリケーションの`main`関数を次のように書くことで、コマンドライン引数を読み取ることができます。
 
-まず、Elmプログラムの最初の行に`import String`を追加してください。これにより、文字列の操作に必要なモジュールがインポートされます。
-
-次に、以下のようなコードを追加してください。
-
-```
-Elm Html exposing (..)
-import String exposing (..)
+```Elm
+main : Program Flags Model Msg
 main =
-  Html.text "Hello, World!"
+    Platform.worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        , react =
+            Platform.platformCmdToCmd
+                >> Cmd.map Cmd.map
+                >> Maybe.fromJust
+        }
 ```
 
-このコードでは、`Html.text`を使用して、HTML要素を作成しています。さらに、`String.explode`を使用して、コマンドライン引数を文字列に変換し、それを`Html.text`に渡すことで、コマンドライン引数をHTML上に表示することができます。
+そして、コマンドライン引数を取得するための関数を作ります：
 
-例えば、ターミナルで以下のように入力して実行した場合、
+```Elm
+getArguments : (List String -> msg) -> Sub msg
+getArguments msg =
+    Sub.batch
+        [ Sub.map msg (Platform.worker (\_ -> [])
+        , Sub.map msg
+            (Platform.worker
+                (\{ actual } -> Maybe.withDefault [] actual)
+                >> Maybe.map (List.map String.fromCharList)
+            )
+                |> Maybe.withDefault []
+        ]
+        |> Sub.batch
 
-`elm make Main.elm`
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    getArguments SetArguments
+```
 
-出力結果は以下のようになります。
+これで、コマンドライン引数をモデルに保存することができます。例えば、引数を使って特定のファイルを開くようなアプリケーションを作成することができます。
 
-`Hello, World!`
+## 深く掘り下げる
 
-## ディープダイブ
+コマンドライン引数を読み取る組み込みの方法以外にも、外部のJavaScriptライブラリを使うことでさまざまなカスタマイズが可能です。例えば、`elm-cli-options-parser`を使うことでより高度な引数のパースやバリデーションを行うことができます。また、npmパッケージを介して`elm-flags`を使うことで、アプリケーションに静的なコマンドライン引数を含めることもできます。
 
-コマンドライン引数を読み取るプロセスの詳細について見ていきましょう。
+## 関連情報を見る
 
-コマンドライン引数は、ターミナル上で実行する際に、プログラムに与える追加のパラメーターのことを指します。Elmでは、`Platform`モジュールを使用することで、これらの引数を扱うことができます。`Platform.Cmd`モジュールには、コマンドライン引数を取得するために使用する`Worker`という型があります。これは、ターミナル上で実行する際に与えられた引数を文字列のリストとして扱うことができます。
-
-また、コマンドライン引数として与えられる値は、Elmのプログラム内で変数として受け取ることができます。例えば、`elm make Main.elm -- --name John`というように実行した場合、`--name`の後に与えられた名前を`name`という変数で受け取ることができます。
-
-## See Also
-
-この記事で紹介した内容に関連するリンクをいくつかご紹介します。
-
-- [Elm Language](https://elm-lang.org/)
-- [コマンドライン引数の扱い方](https://qiita.com/YutaUsuda/items/67f2faf28f1a395052b4)
+- [Elmのドキュメンテーション](https://guide.elm-lang.org/)
+- [Elmの公式サイト](https://elm-lang.org/)
+- [elm-cli-options-parser](https://package.elm-lang.org/packages/jxxcarlson/elm-cli-options-parser/latest/)
+- [elm-flags](https://github.com/uriva/elm-flags)

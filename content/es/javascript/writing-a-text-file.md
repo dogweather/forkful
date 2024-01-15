@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escribir un archivo de texto"
+html_title:           "Javascript: Escribir un archivo de texto"
+simple_title:         "Escribir un archivo de texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,62 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Escribir un archivo de texto es una habilidad fundamental para cualquier programador de Javascript. Esto nos permite almacenar y organizar información en un formato legible para nosotros y para la computadora. Ya sea para crear una lista de tareas, un archivo de configuración o incluso un archivo de código, escribir un texto es una habilidad esencial para cualquier proyecto.
+Escribir un archivo de texto puede ser una tarea útil y necesaria para cualquier programador. No solo te permite guardar y almacenar información, sino que también es una forma sencilla de compartir datos con otros desarrolladores o equipos de trabajo.
 
-## Cómo hacerlo
+## Cómo
 
-Para escribir un archivo de texto en Javascript, utilizamos la función `writeFile` del módulo `fs`. Primero, debemos importar este módulo en nuestro código usando la palabra clave `require`:
+Para escribir un archivo de texto en Javascript, podemos utilizar la función `fs.writeFileSync()` que nos permite crear un archivo, escribir contenido en él y guardarlo en una ubicación específica.
+
+Por ejemplo, si queremos crear un archivo llamado `nombres.txt` con una lista de nombres separados por coma, podemos utilizar el siguiente código:
 
 ```Javascript
 const fs = require('fs');
+const nombres = ["María", "Juan", "Sofía"];
+fs.writeFileSync("nombres.txt", nombres.join(","));
 ```
 
-Luego, utilizamos la función `writeFile` de la siguiente manera:
+Este código primero importa el módulo `fs` que nos permite interactuar con el sistema de archivos, luego define una variable `nombres` con una lista de nombres y, finalmente, utiliza la función `writeFileSync()` para crear el archivo `nombres.txt` y escribir en él los nombres separados por coma.
 
-```Javascript
-fs.writeFile('mi-archivo.txt', 'Este es el contenido de mi archivo', (err) => {
-  if (err) throw err;
-  console.log('¡Archivo creado exitosamente!');
-});
+El resultado del archivo `nombres.txt` será el siguiente:
+
 ```
-
-La primera parte del código es la ruta y el nombre del archivo que queremos crear, en este caso `mi-archivo.txt`. Luego, pasamos el contenido que queremos escribir en el archivo, en este caso `'Este es el contenido de mi archivo'`. Finalmente, la función toma un tercer argumento, que es una función de retorno de llamada que se ejecutará una vez que el archivo se haya creado con éxito.
-
-Si queremos añadir más contenido a nuestro archivo en lugar de reemplazarlo, podemos usar la función `appendFile` en su lugar.
-
-```Javascript
-fs.appendFile('mi-archivo.txt', 'Este es un texto adicional', (err) => {
-  if (err) throw err;
-  console.log('¡Contenido agregado exitosamente!');
-});
+María, Juan, Sofía
 ```
 
 ## Profundizando
 
-Además de escribir y agregar contenido a archivos de texto, también podemos leer y eliminar archivos utilizando el módulo `fs` en Javascript. Esto nos permite tener un control completo sobre la manipulación de archivos en nuestro código.
+La función `writeFileSync()` acepta tres parámetros: el nombre del archivo que queremos crear, el contenido que queremos escribir en él y una opción para especificar el formato en el que queremos guardar el archivo.
 
-Para leer un archivo de texto, utilizamos la función `readFile`. Al igual que con `writeFile`, pasamos la ruta del archivo y una función de retorno de llamada. Sin embargo, esta vez el contenido del archivo se pasa como un argumento a esta función de retorno de llamada.
+También podemos utilizar la función `writeFile()` en lugar de `writeFileSync()`, que acepta los mismos parámetros pero se ejecuta de forma asíncrona, lo que significa que no detiene la ejecución del programa mientras escribe el archivo.
 
-```Javascript
-fs.readFile('mi-archivo.txt', (err, data) => {
-  if (err) throw err;
-  console.log(data); // Imprime el contenido del archivo
-});
-```
-
-Para eliminar un archivo, utilizamos la función `unlink` y proporcionamos la ruta del archivo que queremos borrar. Esta función también toma una función de retorno de llamada que se ejecutará una vez que el archivo se haya eliminado correctamente.
-
-```Javascript
-fs.unlink('mi-archivo.txt', (err) => {
-  if (err) throw err;
-  console.log('¡Archivo eliminado exitosamente!');
-});
-```
-
-Con estas funciones, podemos escribir, leer y eliminar archivos de texto en Javascript de manera sencilla y eficiente.
+Si queremos añadir contenido a un archivo que ya existe, podemos utilizar la función `appendFileSync()` que funciona de la misma manera que `writeFileSync()` pero agrega el contenido al final del archivo en lugar de reemplazarlo.
 
 ## Ver también
 
-- [Documentación de Node.js: Módulo fs](https://nodejs.org/api/fs.html)
-- [Tutorial de Node.js: Manipulación de archivos con el módulo fs](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Escribir y leer archivos con Javascript](https://www.freecodecamp.org/news/node-js-tutorial-write-files-in-node-js-using-the-fs-module/)
+- [Documentación oficial de Node.js](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options)
+- [Guía de programación en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide)

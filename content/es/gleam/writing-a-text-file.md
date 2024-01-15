@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Escribiendo un archivo de texto"
+title:                "Escribiendo un archivo de texto"
+html_title:           "Gleam: Escribiendo un archivo de texto"
 simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,32 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir un archivo de texto en Gleam?
+# ¿Por qué escribir un archivo de texto?
 
-Escribir un archivo de texto en Gleam puede ser una tarea útil y necesaria al trabajar en proyectos de programación. Al guardar información en un archivo de texto, podemos acceder a ella fácilmente en el futuro y compartirla con otros desarrolladores.
+Escribir un archivo de texto es una forma sencilla y eficiente de almacenar información y datos en un formato legible por humanos. Puede ser una parte esencial en el desarrollo de un programa, ya que permite guardar y acceder a información necesaria para su funcionamiento.
 
-## Cómo hacerlo
+# Cómo hacerlo
 
-Primero, debemos importar el módulo `gleam/fs` para tener acceso a las funciones de manejo de archivos. Luego, podemos utilizar la función `fs.write_file` para escribir un archivo de texto. Esta función toma dos argumentos: la ruta del archivo y el contenido que queremos escribir. Por ejemplo:
+Para escribir un archivo de texto en Gleam, necesitaremos utilizar la librería `gleam/io`, la cual nos proporciona funciones para manejar archivos. A continuación, veremos un ejemplo simple de cómo crear un archivo de texto y escribir en él:
 
 ```Gleam
-import gleam/fs
+import gleam/io
 
-fs.write_file("ejemplo.txt", "Este es un archivo de ejemplo")
+pub fn main() {
+  // Creamos un archivo llamado "mi_archivo.txt"
+  let file = io.write_file("mi_archivo.txt");
+
+  // Escribimos "¡Hola, mundo!" en el archivo
+  io.write(file, "¡Hola, mundo!");
+}
 ```
 
-Este código creará un archivo llamado "ejemplo.txt" en el mismo directorio donde se encuentra el archivo de código fuente. El contenido del archivo será "Este es un archivo de ejemplo".
+Podemos ver que primero importamos la librería `gleam/io` y luego utilizamos la función `write_file` para crear un archivo. Luego, utilizando la función `write`, escribimos la cadena de texto "¡Hola, mundo!" en el archivo.
 
-También podemos utilizar la función `fs.append_file` para agregar contenido a un archivo existente. Esta función toma los mismos argumentos que `fs.write_file`.
+El resultado de este ejemplo sería un archivo de texto llamado "mi_archivo.txt" con el contenido "¡Hola, mundo!".
 
-## Inmersión profunda
+# Profundizando
 
-Al escribir un archivo de texto en Gleam, es importante tener en cuenta la codificación del archivo. Por defecto, los archivos se guardan en UTF-8, pero si necesitamos utilizar una codificación diferente, podemos usar la función `fs.write_file_with_encoding`. Esta función toma un tercer argumento que especifica la codificación que queremos utilizar.
+Escribir un archivo de texto no se limita solo a escribir cadenas de texto simples. Podemos utilizar otras funciones y tipos de datos para crear un archivo más complejo. Por ejemplo:
 
-Además, es importante cerrar el archivo después de escribir en él utilizando la función `fs.close_file`. De esta manera, nos aseguramos de que el archivo sea guardado correctamente y que no haya problemas de permisos al intentar acceder nuevamente al archivo.
+```Gleam
+import gleam/io
+
+type Person(name: String, age: Int)
+
+pub fn main() {
+  // Creamos un archivo llamado "personas.txt"
+  let file = io.write_file("personas.txt");
+
+  // Creamos dos personas
+  let john = Person("John", 25)
+  let sarah = Person("Sarah", 32)
+
+  // Escribimos sus datos en el archivo
+  io.write(file, john.name ++ " tiene " ++ john.age ++ " años.")
+  io.write(file, sarah.name ++ " tiene " ++ sarah.age ++ " años.")
+}
+```
+
+En este ejemplo, creamos un tipo de datos `Person` que representa a una persona con un nombre y una edad. Luego, utilizamos ese tipo de datos para crear dos personas y escribimos su información en el archivo. Al final, el archivo "personas.txt" tendría el contenido "John tiene 25 años. Sarah tiene 32 años."
 
 # Ver también
 
-- Documentación oficial de Gleam sobre el módulo `gleam/fs`: [https://gleam.run/documentation/stdlib/fs/](https://gleam.run/documentation/stdlib/fs/)
-- Tutorial de Gleam en español: [https://gleam.run/es/tutorials/](https://gleam.run/es/tutorials/)
-- Repositorio de código fuente de Gleam: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Documentación oficial de `gleam/io`: enlace aquí
+- Tutorial de Gleam para principiantes: enlace aquí

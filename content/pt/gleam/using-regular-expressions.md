@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Utilizando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Gleam: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares no Gleam?
+## Por que
 
-As expressões regulares são uma ferramenta poderosa para processar e manipular texto. E no contexto do Gleam, elas podem ser usadas para validar entradas, extrair dados específicos de uma string, ou até mesmo facilitar a construção de algoritmos mais complexos. Com as expressões regulares, é possível economizar tempo e esforço ao lidar com tarefas relacionadas à manipulação de texto.
+Muitas vezes, quando estamos escrevendo um programa, precisamos pesquisar e manipular padrões de texto específicos. É aí que entram as expressões regulares, uma ferramenta poderosa para trabalhar com strings. Elas permitem que você encontre e substitua padrões de uma forma mais eficiente do que simplesmente usando funções padrão de strings.
 
-## Como usar Expressões Regulares em Gleam
+## Como Fazer
 
-Para usar expressões regulares em Gleam, é necessário o conhecimento básico da sintaxe de expressões regulares. Depois disso, basta utilizar o módulo `regex` do Gleam, que fornece funções para criar e executar as expressões regulares. Veja um exemplo de como validar um endereço de e-mail usando expressões regulares em Gleam:
+Para usar expressões regulares no Gleam, você precisa importar a biblioteca "re". Você pode fazer isso adicionando `import re` no início do seu código. Agora, vamos ver como encontrar um padrão específico em uma string e substituí-lo por outro.
 
-````Gleam
-import regex
+```
+Gleam import re
 
-let email_regex = regex.compile("^\\w+@[a-z]+\\.[a-z]{2,}$") // cria a expressão regular
-
-fn validar_email(email) {
-  result = regex.matches(email_regex, email) // executa a expressão regular no email
-  
-  case result {
-    Ok(_) -> "Endereço de e-mail válido."
-    Error(_) -> "Endereço de e-mail inválido."
-  }
+fn main() {
+  let regex = `(?i)apple` // Define o padrão que queremos encontrar
+  let string = "Eu amo Apple." // Declara a string que será pesquisada
+  let novo_string = re.replace(string, regex, "abacate") // Substitui "Apple" por "abacate"
 }
+```
 
-email = "joao@email.com"
+Neste exemplo, usamos o sinal `(?i)` para indicar que a busca deve ser feita sem diferenciação entre maiúsculas e minúsculas. Você pode usar outros sinais para especificar diferentes tipos de padrões, como `+` para indicar uma ou mais ocorrências e `*` para indicar nenhuma ou mais ocorrências. Para mais detalhes sobre como criar e usar expressões regulares no Gleam, você pode conferir a documentação oficial da biblioteca "re".
 
-validar_email(email) // output: "Endereço de e-mail válido."
-````
+## Mergulho Profundo
 
-## Navegando pelas Expressões Regulares
+Uma das vantagens de usar expressões regulares é que elas podem economizar tempo e linhas de código. Por exemplo, ao invés de criar várias condições com operadores de strings, você pode usar apenas uma expressão regular para encontrar e manipular padrões específicos. Além disso, as expressões regulares são amplamente utilizadas em diversas linguagens de programação, o que significa que aprendê-las no Gleam pode te ajudar a entender e trabalhar com essas ferramentas em outras linguagens também.
 
-Existem diversos recursos e padrões que podem ser utilizados nas expressões regulares, como classes de caracteres, quantificadores, capturas de grupos e muito mais. Por isso, é importante ter um bom entendimento de como esses elementos funcionam para criar expressões regulares eficazes. Além disso, é recomendado testar e verificar as expressões regulares em sites como o [Regex101](https://regex101.com/) antes de usá-las no código.
+## Veja Também
 
-## Veja também
-
-- [Documentação oficial do módulo Regex no Gleam](https://gleam.run/modules/regex.md)
-- [Tutorial sobre expressões regulares em Gleam](https://gleam.run/book/tutorials/regular-expressions.html)
-- [Página de cheatsheet de expressões regulares em Gleam](https://gleam.run/cms/docs/regular-expressions/)
-- [Livro "Aprenda a Programar com Gleam", que aborda expressões regulares em um de seus capítulos](https://www.aprendaprog.com.br/livro/gleam/)
+- Documentação oficial da biblioteca "re": https://gleam.run/modules/re.html
+- Tutorial sobre expressões regulares no Gleam: https://gleam.run/book/tour-regular-expressions.html

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Lesing av tekstfil"
-simple_title:         "Lesing av tekstfil"
+title:                "Lesing av en tekstfil"
+html_title:           "Javascript: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Lesing av tekstfiler er en grunnleggende ferdighet innenfor programmering og kan være nyttig for å lese og behandle datafiler, konfigurasjonsfiler og mer. Det er viktig for enhver programmerer å ha kunnskap om hvordan man leser tekstfiler i Javascript.
+Hvorfor skulle noen bry seg om å lese en tekstfil? Vel, det er ganske enkelt. Å kunne lese en tekstfil er en viktig ferdighet for de som jobber med webutvikling eller programmering. Tekstfiler er ofte brukt til å lagre data, konfigurasjoner og andre viktige opplysninger som trengs for å drive et program eller nettsted.
 
-## Hvordan
+# Hvordan gjøre det
 
-Det finnes flere måter å lese tekstfiler i Javascript, men her vil vi fokusere på en enkel og grunnleggende metode ved hjelp av fs-modulen.
+Det er flere måter å lese en tekstfil på i Javascript, men jeg vil vise deg den enkleste og mest effektive måten. Først må du åpne filen du vil lese ved å bruke `fs`-modulen. Så kan du bruke `readFileSync()`-funksjonen, som vil lese hele filen og returnere innholdet som en streng. 
 
-Først må du importere fs-modulen ved å bruke `require`-funksjonen:
-
-```Javascript
+```javascript
 const fs = require('fs');
+let content = fs.readFileSync('filnavn.txt', 'utf8');
+console.log(content);
 ```
 
-Deretter kan du lese en tekstfil ved hjelp av `readFile`-funksjonen, som tar inn filnavnet og en callback-funksjon som argumenter:
+I eksempelet over åpner vi en fil med navnet "filnavn.txt" og bruker `console.log()` for å skrive ut innholdet på konsollen. Husk å erstatte "filnavn.txt" med navnet på den faktiske filen du vil lese.
 
-```Javascript
-fs.readFile('test.txt', (err, data) => {
-    if(err) throw err;
-    console.log(data); // viser innholdet i tekstfilen
-});
+# Dykk dypere
+
+Nå som du vet hvordan du kan lese en tekstfil, la oss dykke litt dypere inn i funksjonen `readFileSync()`. Denne funksjonen tar inn to parametere: filnavnet og tegnkodingen som skal brukes. Hvis du ikke spesifiserer tegnkoding, vil standard tegnkodingen være `utf8`. Hvis du for eksempel skulle prøve å lese en fil som bruker en annen tegnkoding, som `latin1`, må du spesifisere det i funksjonen:
+
+```javascript
+const fs = require('fs');
+let content = fs.readFileSync('filnavn.txt', 'latin1');
+console.log(content);
 ```
 
-Hvis alt går som planlagt, vil filinnholdet bli lagret i `data`-variabelen og kan behandles videre etter behov.
+Det er også viktig å merke seg at `readFileSync()`-funksjonen vil kaste en feil hvis den ikke kan lese filen av en eller annen grunn. Derfor bør du alltid inkludere en `try...catch`-blokk for å håndtere eventuelle feil som kan oppstå.
 
-## Dykk ned
+# Se også
 
-Det er viktig å være klar over at lesing av tekstfiler i Javascript må håndteres asynkront, da fileravlesningen kan ta litt tid og ikke vil blokkere andre kodelinjer. I eksempelet ovenfor brukte vi en callback-funksjon for å håndtere eventuelle feil og vise resultatet når lesingen er fullført.
+- [fs-modulen i Node.js dokumentasjon](https://nodejs.org/api/fs.html)
+- [Begynnerguide for å lese og skrive filer i Node.js](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-node-js)
 
-Det finnes også andre metoder for å lese tekstfiler, som for eksempel `readFileSync` som vil blokkere kodelinjene til filen er fullstendig lest. Det er viktig å velge den riktige metoden etter behov.
-
-## Se også
-
-- [fs-modulen dokumentasjon (engelsk)](https://nodejs.org/api/fs.html)
-- [En komplett guide til å lese og skrive tekstfiler i Javascript (engelsk)](https://www.digitalocean.com/community/tutorials/nodejs-reading-files)
+Takk for at du leste! Håper denne artikkelen var nyttig for deg i din læringsprosess. Fortsett å øve på å lese filer, og du vil snart være en ekspert på dette området. Lykke til!

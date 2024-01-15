@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Huvudstavigering av en sträng"
-simple_title:         "Huvudstavigering av en sträng"
+title:                "Stora bokstäver i en sträng"
+html_title:           "Elm: Stora bokstäver i en sträng"
+simple_title:         "Stora bokstäver i en sträng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,30 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna manipulera strängar är en grundläggande färdighet i programmering. Genom att lära dig hur man gör en sträng stor eller liten kan du anpassa ditt program efter användarens behov och skapa en bättre användarupplevelse.
+Att förstora bokstäver i en sträng är en viktig funktion i många programmeringsspråk, inklusive Elm. Genom att förstå hur man gör det kan du enkelt modifiera strängar för att passa dina behov.
 
-## Hur man gör
+## Så här gör du
 
-Att göra en sträng stor eller liten kan göras med hjälp av inbyggda funktioner i Elm.
+```elm
+import String
 
-```Elm
--- För att göra en sträng stor:
-String.toUpper "hej"  -- ger "HEJ"
-
--- För att göra en sträng liten:
-String.toLower "HEJ"  -- ger "hej"
+String.toUpper "hej världen"
 ```
 
-Dessa funktioner är användbara för att till exempel anpassa text på en knapp eller i en textinput. Genom att kombinera dem med andra funktioner kan du skapa mer komplexa strängmanipulationer.
+Detta kodblock använder den inbyggda funktionen `toUpper` i `String`-modulen för att förstora alla bokstäver i strängen `"hej världen"`. Resultatet är `"HEJ VÄRLDEN"`.
+
+En annan möjlighet är att använda `String.map` för att iterera över varje tecken i en sträng och förstora det.
+
+```elm
+import String exposing (map, toUpper)
+
+map toUpper "hej världen"
+```
+
+Detta kodblock ger samma resultat som det föregående, men visar hur man kan använda `map` för att förstora en sträng på ett mer flexibelt sätt.
 
 ## Djupdykning
 
-För att förstå hur dessa funktioner fungerar under ytan kan det vara bra att titta på hur strängar är representerade i Elm. Strängar är egentligen bara listor av tecken, vilket gör att vi kan använda List-funktioner på dem.
+Att förstora bokstäver i en sträng är en relativt enkel uppgift, men kan vara till stor hjälp i vissa situationer. Till exempel kan du använda det för att standardisera inmatning från användare eller för att enkelt jämföra strängar oavsett storlek på bokstäver.
 
-Till exempel används `List.map` för att applicera en funktion på varje element i en lista. I fallet med att göra en sträng stor eller liten applicerar funktionen `Char.toUpper` eller `Char.toLower` på varje tecken i strängen.
+I Elm finns det också möjlighet att förstora specifika tecken i en sträng baserat på deras position. Detta kan göras med hjälp av den inbyggda funktionen `toUpperAt`.
+
+```elm
+import String
+
+String.toUpperAt 2 "hej världen"
+```
+
+Detta kodblock kommer att förstora bokstäverna vid position 2 i strängen, vilket resulterar i `"HeJ Världen"`.
 
 ## Se även
 
-- [Officiell Elm dokumentation om strängar](https://elm-lang.org/docs/strings)
-- [Elm guide om listor](https://guide.elm-lang.org/lists/)
-- [Elm community-forum](https://discourse.elm-lang.org/)
+- [Officiell Elm-dokumentation för String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Guide: Strings](https://guide.elm-lang.org/types/strings.html)
+- [Elm Tutorial: Working with Strings](https://korban.net/elm/elm-tutorial-working-with-strings/)

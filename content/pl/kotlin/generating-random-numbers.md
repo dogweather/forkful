@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Generowanie losowych liczb"
+title:                "Generowanie losowych liczb"
+html_title:           "Kotlin: Generowanie losowych liczb"
 simple_title:         "Generowanie losowych liczb"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,53 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie liczb losowych jest nieodłączną częścią programowania, szczególnie w przypadku gier, symulacji, kryptografii i wielu innych zastosowań. Dzięki temu możemy uzyskać różnorodność i nieprzewidywalność w naszych aplikacjach, co jest niezbędne w wielu przypadkach.
+Generowanie liczb losowych jest nieodzownym elementem wielu zastosowań programistycznych, takich jak testowanie, sztuczna inteligencja, generowanie symulacji, gry itp. Jest to niezwykle przydatne narzędzie, które pozwala na tworzenie różnorodnych danych i scenariuszy, które mogą być wykorzystane w programowaniu.
 
 ## Jak to zrobić
 
-Język programowania Kotlin posiada wiele wbudowanych funkcji do generowania liczb losowych. Jedną z nich jest funkcja ```random()```, która zwraca liczbę z przedziału od 0 do 1. Możemy również określić własny zakres poprzez wykorzystanie funkcji ```nextInt()``` lub ```nextDouble()```. Przykładowy kod wykorzystujący te funkcje wyglądałby następująco:
+```Kotlin
+// Generator liczb losowych
+val randomNumber = (1..10).random()
+println(randomNumber)
+// Wynik: 5
+```
+
+Aby wygenerować losową liczbę w języku Kotlin, możemy skorzystać z metody `random()` w połączeniu z zakresem liczb, z którego chcemy wybierać. W powyższym przykładzie wykorzystaliśmy zakres od 1 do 10, więc zostanie wygenerowana liczba z tego przedziału. Możemy również wykorzystać metodę `nextInt()` w połączeniu z maksymalną liczbą, którą chcemy wygenerować. Na przykład:
 
 ```Kotlin
-fun main() {
-    val randomNumber = (0..10).random()
-    println("Wylosowana liczba: $randomNumber")
-}
+// Generator liczb losowych
+val randomNumber = Random.nextInt(20)
+println(randomNumber)
+// Wynik: 14
 ```
 
-Wynik wykonania kodu będzie wyglądać mniej więcej tak:
+Możemy również generować losowe wartości zmiennoprzecinkowe korzystając z metody `nextDouble()`. Aby to zrobić, musimy określić przedział wartości, z którego chcemy wybierać. Przykład:
 
-```
-Wylosowana liczba: 7
+```Kotlin
+// Generator wartości losowych zmiennoprzecinkowych
+val randomValue = Random.nextDouble(1.0, 10.0)
+println(randomValue)
+// Wynik: 6.342
 ```
 
 ## Deep Dive
 
-Generator liczb losowych wykorzystuje algorytm do wygenerowania pseudolosowych wartości. Oznacza to, że wyniki nie są całkowicie losowe, ale wykorzystują pewne wzorce, które są trudne do przewidzenia. W języku Kotlin wykorzystywany jest algorytm Mersenne Twister, który jest bardzo skuteczny w generowaniu liczb o znacznej losowości.
+Generowanie liczb losowych jest możliwe dzięki wykorzystaniu tzw. generatorów pseudolosowych. Są to algorytmy, które na podstawie jednej liczby - tzw. ziarna (ang. seed) - generują ciąg liczb, które wydają się być losowe. W języku Kotlin generator losowych liczb jest zaimplementowany w klasie `Random`. Przy wywołaniu metody `random()` bez określenia ziarna, zostanie użyty domyślny ziarno - aktualny czas systemowy.
 
-Kluczowym elementem wykorzystywanym w generowaniu liczb losowych jest tzw. "ziarno" (ang. seed). Jest to wartość, która jest wykorzystywana do inicjalizacji generatora i determinuje generowane liczby. Dzięki temu można uzyskać ten sam ciąg liczb, jeśli użyjemy tego samego ziarna. Możemy określić własne ziarno poprzez ustawienie parametru w funkcji ```Random()```. Przykładowo:
+## Zobacz także
 
-```Kotlin
-fun main() {
-    val randomSeed = Random(1234)
-    for(i in 0..5) {
-        println(randomSeed.nextInt(100))
-    }
-}
-```
-
-Wynik działania tego kodu będzie zawsze taki sam:
-
-```
-32
-98
-70
-66
-77
-87
-```
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o generowaniu liczb losowych w języku Kotlin, polecam zapoznanie się z dokumentacją oficjalną: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/)
-
-Jeśli interesuje Cię zagadnienie generowania liczb losowych w innych językach programowania, możesz przeczytać ten artykuł: [https://www.baeldung.com/java-generating-random-numbers](https://www.baeldung.com/java-generating-random-numbers)
+- [Dokumentacja metody random() w języku Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
+- [Poradnik użytkownika języka Kotlin - Generatory losowych liczb](https://kotlinlang.org/docs/reference/basic-types.html#random-number-generators)
+- [Wprowadzenie do generowania liczb losowych w Java](https://www.baeldung.com/java-generating-random-numbers)

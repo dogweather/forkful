@@ -1,5 +1,6 @@
 ---
-title:                "Python: Tests schreiben"
+title:                "Tests schreiben"
+html_title:           "Python: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Python"
 category:             "Python"
@@ -9,47 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum Tests schreiben?
+## Warum
+Der Gedanke, Tests für den eigenen Code zu schreiben, kann zunächst etwas lästig erscheinen. Doch Tests haben viele Vorteile: Sie stellen sicher, dass der Code fehlerfrei funktioniert, vereinfachen die Fehlersuche und ermöglichen es, die Funktionalität bei zukünftigen Änderungen schnell zu überprüfen. Es lohnt sich also, Zeit in das Schreiben von Tests zu investieren.
 
-Tests sind ein wichtiger Bestandteil der Softwareentwicklung und ermöglichen es uns, unsere Programme auf mögliche Fehler zu überprüfen. Sie helfen uns, Sicherheit und Qualität in unseren Code zu bringen und erleichtern die Wartung und Erweiterung unserer Anwendungen. Ohne Tests können wir nie sicher sein, dass unser Code zuverlässig funktioniert. Daher ist es wichtig, Tests zu schreiben, um eine stabile und fehlerfreie Software zu erstellen.
-
-## Wie schreibt man Tests?
-
-Das Schreiben von Tests in Python ist einfach und kann in wenigen Schritten durchgeführt werden. Zunächst müssen wir das Python-Modul `unittest` importieren, das uns die nötigen Werkzeuge zur Verfügung stellt, um Tests zu schreiben. Dann können wir unsere Tests in einer speziellen Testklasse schreiben, die von `unittest.TestCase` erbt. Innerhalb dieser Klasse können wir verschiedene Testmethoden definieren, die jeweils einen Teil unseres Codes überprüfen. Zum Beispiel könnte eine Testmethode überprüfen, ob eine bestimmte Funktion den erwarteten Wert zurückgibt.
-
-Hier ist ein einfaches Beispiel, wie wir mit `unittest` eine Funktion `add()` testen könnten:
+## Wie geht's
+Das Schreiben von Tests ist in Python sehr einfach. Hier ist ein Beispiel, wie man eine einfache Funktion testen kann:
 
 ```Python
-import unittest
-
 def add(x, y):
-    return x + y
+  return x + y
 
-class TestAddFunction(unittest.TestCase):
-    def test_positive_numbers(self):
-        result = add(2, 3)
-        self.assertEqual(result, 5)
-        
-    def test_negative_numbers(self):
-        result = add(-3, -5)
-        self.assertEqual(result, -8)
+# Testfall
+assert add(2, 3) == 5
 ```
 
-In diesem Beispiel haben wir eine Testklasse `TestAddFunction` erstellt, die zwei Testmethoden enthält. Die `test_positive_numbers()` Methode überprüft, ob die Funktion `add()` den korrekten Wert für positive Zahlen zurückgibt. Die `test_negative_numbers()` Methode überprüft das Verhalten für negative Zahlen. Wir verwenden die Methode `assertEqual()` um zu überprüfen, ob der erwartete Wert mit dem tatsächlichen Ergebnis übereinstimmt.
+Die "assert" Anweisung überprüft, ob die Funktion den erwarteten Wert zurückgibt. Wenn der Test fehlschlägt, wird ein Fehler gemeldet.
 
-Um unsere Tests auszuführen, können wir das `unittest`-Modul direkt ausführen oder eine Test Runner-Anwendung wie `pytest` verwenden. Wir erhalten dann eine Übersicht über alle durchgeführten Tests und ob sie erfolgreich waren.
-
-## Tiefergehende Informationen über das Schreiben von Tests
-
-Es gibt verschiedene Arten von Tests, die wir in unserem Code schreiben können. Einige Beispiele sind Unittests, Integrationstests, Funktionstests oder Akzeptanztests. Jede dieser Testarten hat ihre eigene Bedeutung und wird in verschiedenen Entwicklungsphasen eingesetzt.
-
-Unittests sind in der Regel Tests auf niedrigstem Niveau, die einzelne Funktionen oder Methoden überprüfen. Integrationstests testen, wie verschiedene Komponenten zusammenarbeiten und kommunizieren. Funktionstests überprüfen die korrekte Ausführung einer bestimmten Funktion oder Aufgabe. Und Akzeptanztests überprüfen, ob die Anwendung den Anforderungen der Benutzer entspricht.
-
-Beim Schreiben von Tests ist es wichtig, gut lesbaren und verständlichen Code zu schreiben. Achte darauf, aussagekräftige Namen für deine Tests zu verwenden und kommentiere ggf. komplexe Testabläufe, um anderen Entwicklern zu helfen, den Zweck des Tests zu verstehen.
-
-Ein weiterer wichtiger Aspekt beim Testen ist die Testabdeckung. Dies beschreibt, wie viel unseres Codes durch Tests abgedeckt wird. Eine hohe Testabdeckung bedeutet, dass fast alle Teile unseres Codes mindestens einmal getestet wurden. Eine hohe Testabdeckung hilft uns, potenzielle Fehlerquellen ausfindig zu machen und unseren Code qualitativ hochwertiger zu machen.
+## Tiefergehende Einblicke
+Es gibt verschiedene Arten von Tests, die man schreiben kann, z.B. Modul- oder Integrationstests. Auch das Schreiben von Mock- und Unittests wird immer wichtiger. Es ist wichtig, die geeigneten Tests für den jeweiligen Code auszuwählen und diese regelmäßig auszuführen, um sicherzustellen, dass der Code fehlerfrei bleibt. Es gibt auch verschiedene Test-Frameworks, die das Schreiben von Tests erleichtern, z.B. das beliebte "pytest" oder "unittest" Modul aus der Python Standardbibliothek.
 
 ## Siehe auch
-
-- [Python unittest Module](https://docs.python.org/3/library/unittest.html)
-- [pytest Test Runner](https://docs.pytest.org/en/stable/)
+- [Die Vorteile von Tests in Python (auf Englisch)](https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html)
+- [Python pytest Dokumentation](https://docs.pytest.org/en/latest/)
+- [Python unittest Dokumentation](https://docs.python.org/3/library/unittest.html)

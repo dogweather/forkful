@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 写入标准错误"
+title:                "写入标准错误"
+html_title:           "Javascript: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,76 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要记录错误信息
+## 为什么
 
-当我们编写代码时，难免会遇到错误。尤其是在大型项目中，出现bug会耗费大量的时间去定位和解决。这时候，记录错误信息就变得非常重要。通过记录错误信息，我们可以快速地定位和解决bug，提高代码质量和效率。
+写入标准错误 (Standard Error) 是一种常见的调试技术，可以帮助开发人员识别并解决 JavaScript 代码中的错误。它可以让开发人员快速定位错误并进行调试，提高代码质量。
 
-# 如何记录错误信息
+## 如何操作
 
-在Javascript中，我们可以使用console.error()方法来向标准错误流写入错误信息。例如：
-
-```Javascript
-console.error("发生了一个错误");
+```javascript
+console.error("Oops, something went wrong!"); // Output: Oops, something went wrong!
 ```
 
-输出结果为：
+以上是一个简单的示例，演示了如何使用 `console.error()` 函数将错误信息输出到标准错误。在这个例子中，我们将错误信息设置为 "Oops, something went wrong!"，然后通过调用 `console.error()` 函数将其输出到标准错误中。这样一来，在我们执行代码时，就可以在控制台中看到错误信息，从而帮助我们识别和解决代码中的问题。
 
-```Javascript
-发生了一个错误
-```
+## 深入探讨
 
-我们也可以在错误信息中添加变量，来更详细地描述错误的来源。例如：
+标准错误的概念可能并不那么容易理解，但它实际上是与标准输出 (standard output) 相对应的概念。标准输出通常用于输出程序的正常结果，而标准错误则用于输出错误信息。它们通常都会显示在控制台中，但是各自有特定的作用，而且在某些情况下，它们可能会显示在不同的地方。因此，当我们使用 `console.error()` 函数将错误信息输出到标准错误时，我们就可以很容易地区分正常输出和错误信息。
 
-```Javascript
-let number = 5;
-console.error(`无效的数字：${number}`);
-```
+## 参考资料
 
-输出结果为：
-
-```Javascript
-无效的数字：5
-```
-
-# 深入了解错误信息记录
-
-除了使用console.error()方法外，我们还可以使用try-catch语句来捕获和处理错误。例如：
-
-```Javascript
-try{
-    // 需要执行的代码
-}catch(error){
-    console.error(error);
-}
-```
-
-这样的话，即使发生了错误，程序也不会终止运行，而是会在catch语句中输出错误信息。
-
-另外，我们还可以自定义错误，并使用throw语句抛出错误。例如：
-
-```Javascript
-function multiply(a, b){
-    if(typeof(a) !== "number" || typeof(b) !== "number"){
-        throw new Error("输入的参数必须是数字");
-    }else{
-        return a * b;
-    }
-}
-
-// 使用示例
-console.log(multiply(2, "3")); // 抛出错误："输入的参数必须是数字"
-```
-
-通过自定义错误，我们可以更清晰地指明错误的类型和来源。
-
-# 参考链接
-
-- [Javascript错误处理](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_went_wrong)
-- [深入理解try-catch语句](https://www.w3schools.com/js/js_errors.asp)
-- [自定义错误](https://www.w3schools.com/js/js_error.asp)
-
-# 参见
-
-- [Javascript基础语法介绍](https://www.runoob.com/js/js-tutorial.html)
-- [学习Javascript的5个技巧](https://www.runoob.com/w3cnote/5-tips-for-learning-javascript.html)
-- [Markdown教程](https://www.runoob.com/markdown/md-tutorial.html)
+- [标准错误 (Standard Error)](https://zh.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E9%8C%AF%E8%AA%A4)
+- [console.error()](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/error)

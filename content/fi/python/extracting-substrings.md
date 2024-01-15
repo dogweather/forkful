@@ -1,6 +1,7 @@
 ---
-title:                "Python: Alimerkkijonojen erottaminen"
-simple_title:         "Alimerkkijonojen erottaminen"
+title:                "Alastringien erottaminen"
+html_title:           "Python: Alastringien erottaminen"
+simple_title:         "Alastringien erottaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,48 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi haluaisit erottaa osajonon? Jos käyttäjien syötteen täytyy sisältää tiettyä mallia, kuten puhelinnumero tai sähköpostiosoite, voit käyttää osajonojen erotusta varmistaaksesi, että käyttäjän syöttö täyttää vaaditut kriteerit.
+
+Voi olla monia syitä, miksi haluat irrottaa osajoukkoja merkkijonoista. Ehkä haluat tarkistaa, onko tietyllä tekstinpätkällä haluamiasi ominaisuuksia, tai ehkä haluat muokata merkkijonoa jollakin tavalla.
 
 ## Miten
-Voit erottaa osajonot käyttämällä "substring" -funktiota tai säikeiden pilkkomismenetelmää, joka antaa sinulle osajonon tietystä merkkijonosta. Seuraavassa koodiesimerkissä käytämme "substring" -funktiota erottaaksemme ensimmäiset kolme merkkiä merkkijonosta ja tulostamme sen:
+
+Irrota osajoukkoja merkkijonoista Pythonilla on helppoa käyttäen slice-merkintää. Slice-merkinnällä voit valita haluamasi osan merkkijonosta käyttämällä suluilla [ja ] ja määrittämällä alku- ja loppuindeksit. Esimerkiksi:
 
 ```Python
 teksti = "Tämä on esimerkki"
-osajonot = teksti.substring(0, 3)
-print(osajonot)
+print(teksti[5:8])
 ```
-Tämän koodin tulostus olisi:
-```
-Täm
-```
-Voit myös käyttää "split" -funktiota pilkkoaksesi merkkijonon tietyn merkin perusteella. Esimerkiksi seuraava koodi jakaa merkkijonon pisteiden kohdalla ja tulostaa jokaisen osajonon erikseen:
+
+Tämä tulostaisi "on", koska se valitsi merkkijonon 5. indeksistä 8. indeksiin asti (huomaa, että viimeistä indeksiä ei sisällytetä).
+
+Voit myös määrittää askeleen käyttämällä kolmatta arvoa slice-merkinnässä. Esimerkiksi:
 
 ```Python
-teksti = "Tämä.on.esimerkki"
-osajonot = teksti.split(".")
-print(osajonot)
-```
-Tämän koodin tulostus olisi:
-```
-["Tämä", "on", "esimerkki"]
+teksti = "Tämä on esimerkki"
+print(teksti[::2])
 ```
 
-## Syvempi sukellus
-Voit myös käyttää säännöllisiä lausekkeita erottaaksesi osajonot haluamallasi tavalla. Säännölliset lausekkeet ovat erittäin hyödyllisiä, kun haluat erottaa monimutkaisempia osajonoja, kuten puhelinnumeroita tai sähköpostiosoitteita. Käytä "re" -moduulia ja säännöllisiä lausekkeita seuraavalla tavalla:
+Tulostaisi "Tm neeiek", koska se valitsi joka toisen merkin merkkijonosta.
 
-```Python
-import re
-teksti = "Minun puhelinnumeroni on (123) 456-7890."
-puhelinnumero = re.search("\(\d{3}\) \d{3}-\d{4}", teksti)
-print(puhelinnumero.group())
-```
-Tämän koodin tulostus olisi:
-```
-(123) 456-7890
-```
-Tässä käytetään säännöllistä lauseketta, joka etsii tietyn mallisen puhelinnumeron merkkijonossa.
+## Syvemmälle
+
+Slice-merkintä on kätevä tapa irrottaa osajoukkoja merkkijonoista, mutta sinun kannattaa myös muistaa, että merkkijonoilla on monta muuta hyödyllistä toimintoa. Esimerkiksi voit käyttää metodia .find() etsimään tietyllä tekstinpätkällä sijaitsevan indeksin tai .replace() korvaamaan tietyt merkit toisilla. Slice-merkintä on kuitenkin nopein tapa irrottaa osajoukkoja, joten sitä kannattaa hyödyntää, kun se on mahdollista.
 
 ## Katso myös
-- [Pythonin merkkijonomenetelmät](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Säännölliset lausekkeet](https://docs.python.org/3.7/library/re.html)
-- [Täydellinen opas Pythonin osajonojen erotukseen](https://www.geeksforgeeks.org/python-extracting-nth-key-in-given-string/)
+
+- [Pythonin virallinen dokumentaatio osajoukkojen irrottamisesta merkkijonoista](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [Stack Overflow -kysymys: "Miten irrottaa osajoukko merkkijonosta Pythonilla?"](https://stackoverflow.com/questions/663171/how-do-i-get-a-substring-of-a-string-in-python)

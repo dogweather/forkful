@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Tulostamassa virheenjäljitystulosteita"
-simple_title:         "Tulostamassa virheenjäljitystulosteita"
+title:                "Virheenkorjaustulosteen tulostaminen"
+html_title:           "Clojure: Virheenkorjaustulosteen tulostaminen"
+simple_title:         "Virheenkorjaustulosteen tulostaminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -11,44 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Printtaaminen tahnaustulosteita on tärkeä osa Clojure-ohjelmoinnin kehittämistä ja virheiden korjaamista. Se auttaa kehittäjiä ymmärtämään, mitä koodi todella tekee ja missä mahdolliset virheet voivat olla.
+Debug-tulosteiden tulostaminen voi olla hyödyllistä ohjelmoinnin aikana, sillä se auttaa löytämään mahdollisia virheitä ja ymmärtämään ohjelman toimintaa paremmin.
 
 ## Miten
 
-Useimmat Clojure-kehittäjät käyttävät `println`-funktiota tahnaustulosteiden printtaamiseen. Tämä funktio hyväksyy minkä tahansa arvon ja tulostaa sen konsoliin. Alla on esimerkki, jossa printataan muuttujan `nimi` arvo konsoliin:
-
 ```Clojure
-(def nimi "Jesse")
-(println nimi)
+;; Yksinkertainen tapa tulostaa debug-tulosteita on käyttää "println" funktiota.
+(println "Debug-tuloste: " (+ 1 2))
+
+;; Voit myös käyttää "println" funktiota yhdistämällä sen merkkijonojen ja muuttujien kanssa.
+(def x 5)
+(println "Muuttujan x arvo on:" x)
+
+;; Voit myös käyttää "prn" funktiota tulostamaan debug-tulosteita muodossa, joka helpompi lukea.
+(prn "Tämä on debug-tuloste.")
+
+;; Voit käyttää "printf" funktiota tulostamaan muotoillun tekstin ja muuttujien arvot.
+(printf "Piin arvo on %f." Math/PI)
 ```
 
-Tämä tulostaa `Jesse` konsoliin. Voit myös ketjuttaa useita arvoja yhdessä `println`-funktion kanssa käyttämällä `str`-funktiota. Alla on esimerkki printtaamisesta useammalla arvolla:
+Runkokoodissa voit käyttää myös "comment" makroa tulostamaan debug-tulosteita, jotka näkyvät vain kehitysvaiheessa. Esimerkiksi:
 
 ```Clojure
-(def luku1 10)
-(def luku2 5)
-
-(println (str "Ensimmäinen luku: " luku1 ", toinen luku: " luku2))
+(comment
+  (println "Tämä debug-tuloste näytetään vain kehitysvaiheessa.")
+  (prn "Tämä on toinen debug-tuloste.")
+  (printf "Hei, maailma!"))
 ```
 
-Tämä tulostaa `Ensimmäinen luku: 10, toinen luku: 5` konsoliin.
-
-## Syvemmälle
-
-Tahnaustulosteen printtaaminen voi auttaa kehittäjiä myös muokkaamaan ja tarkistamaan koodia. Voit käyttää `prn`-funktiota, joka toimii samalla tavalla kuin `println`, mutta tulostaa myös koodin lukuarvon. Tämä voi auttaa sinua ymmärtämään paremmin koodin suoritusjärjestystä ja mahdollisia virheitä.
-
-Jos haluat tarkistaa, onko jokin ehto totta tai epätotta, voit käyttää `println`-funktiota yhdistettynä `if`-lauseeseen. Alla on esimerkki:
+Tulosteen voit myös ohjata toiseen tiedostoon "spit" funktiolla. Esimerkiksi:
 
 ```Clojure
-(let [luku 5]
-  (if (> luku 10)
-    (println "Luku on suurempi kuin 10")
-    (println "Luku on pienempi tai yhtä suuri kuin 10")))
+(spit "debug-tulosteet.txt" (str "Tämä on debug-tuloste numero " 1))
 ```
 
-Tämä tulostaa `Luku on pienempi tai yhtä suuri kuin 10`, koska ehto `luku > 10` ei ole totta.
+## Syvempi sukellus
+
+Printtaus ja debug-tulosteiden tulostaminen on tärkeä osa ohjelmointia. Se auttaa sinua ymmärtämään ohjelmasi toimintaa paremmin ja löytämään mahdollisia virheitä. Voit yhdistellä erilaisia printtauksen tapoja ja valita itsellesi sopivimman tavan.
 
 ## Katso myös
 
-- [Clojure-line editor](https://github.com/clojure-emacs/clojure-mode)
-- [Clojure-kirjoittajan opas](https://clojure.org/guides/learn/guides-for-professional-programmers)
+- [Clojure dokumentaatio](https://clojure.org)
+- [Clojure debuggaus vinkkejä](https://purelyfunctional.tv/article/how-to-debug-clojure)

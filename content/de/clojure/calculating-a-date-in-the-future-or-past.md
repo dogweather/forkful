@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Berechnung eines Datums in der Vergangenheit oder Zukunft"
-simple_title:         "Berechnung eines Datums in der Vergangenheit oder Zukunft"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Clojure: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -9,52 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit in der Programmierung, insbesondere in der Clojure-Sprache. Es kann bei der Erstellung von Kalender- oder Terminverwaltungsprogrammen oder bei der Berechnung von längeren Zeitspannen für statistische Analysen hilfreich sein.
+Viele Anwendungen erfordern die Berechnung von zukünftigen oder vergangenen Daten. Mit Clojure können Sie dies einfach und präzise tun. In diesem Artikel erfahren Sie, wie Sie mithilfe von Clojure schnell und effizient ein Datum in der Zukunft oder Vergangenheit berechnen können.
 
-## Wie
+## Wie man ein Datum in der Zukunft oder Vergangenheit berechnet
 
-Um ein zukünftiges oder vergangenes Datum in Clojure zu berechnen, verwenden wir die "plus" Funktion aus dem "clojure.java.time" Paket. Wir geben das aktuelle Datum als Argument und verwenden dann die "plus" Funktion, um eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu addieren oder subtrahieren.
+Die Schlüsselkomponente, die in der Berechnung von zukünftigen oder vergangenen Daten verwendet wird, ist die Clojure-Funktion `java.util.Calendar`. Diese Funktion ermöglicht es Ihnen, ein Datum zu managen und verschiedene Berechnungen durchzuführen.
 
-```Clojure
-(require '[clojure.java.time :as t])
-
-;; Berechnung eines Datums in der Zukunft
-(t/plus (t/local-date) {:days 5 :months 1 :years 2})
-=> #object[java.time.LocalDate 0x2cf241f "04.09.2022"]
-
-;; Berechnung eines Datums in der Vergangenheit
-(t/plus (t/local-date) {:days -10 :months -2 :years -1})
-=> #object[java.time.LocalDate 0x381d2f8f "17.02.2018"]
-```
-
-## Deep Dive
-
-Die "plus" Funktion kann auch mit anderen Zeiteinheiten wie Stunden, Minuten oder Sekunden verwendet werden. Außerdem können wir auch spezifische Daten auswählen, z.B. das Datum in einer anderen Zeitzone berechnen.
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst eine Instanz von `java.util.Calendar` erstellen:
 
 ```Clojure
-;; Berechnung einer Uhrzeit in der Zukunft
-(t/plus (t/local-time) {:hours 3 :minutes 40 :seconds 15})
-=> #object[java.time.LocalTime 0x33a32e3e "12:33:26"]
-
-;; Berechnung einer Uhrzeit in einer anderen Zeitzone
-(t/plus (t/local-date-time (t/local-date)) {:minutes 30 :zone "Europe/Berlin"})
-=> #object[java.time.LocalDateTime 0xc026dfd "30.07.2021T16:00:00"]
+(def cal (java.util.Calendar/getInstance))
 ```
 
-Es ist auch möglich, ein bestimmtes Datum oder eine bestimmte Uhrzeit direkt zu einem anderen Datum oder einer anderen Uhrzeit hinzuzufügen. Dazu verwenden wir die "plus-days", "plus-months", "plus-years", "plus-hours", "plus-minutes" und "plus-seconds" Funktionen.
+Als nächstes können wir mithilfe von `set` die gewünschten Felder des Kalenders ändern, wie zum Beispiel das Jahr, den Monat oder den Tag. Zum Beispiel, um ein Datum 10 Jahre in der Zukunft zu berechnen, können wir Folgendes tun:
 
 ```Clojure
-(t/plus-days (t/local-date) 10)
-=> #object[java.time.LocalDate 0x1572529e "08.08.2021"]
-
-(t/plus-hours (t/local-time) 2)
-=> #object[java.time.LocalTime 0xf57596d "19:02:13"]
+(.set cal java.util.Calendar/YEAR (+ (.get cal java.util.Calendar/YEAR) 10))
 ```
 
-## Siehe auch
+Dies würde das aktuelle Jahr um 10 erhöhen. Wir können auch andere Felder wie `MONTH` oder `DAY_OF_MONTH` ändern, indem wir ihre entsprechenden Werte mit `+` oder `-` verändern.
 
-- Offizielle Clojure-Dokumentation zu "clojure.java.time": https://clojure.github.io/java.time-api/
+Zuletzt müssen wir die neue Instanz von `java.util.Calendar` in ein Datum umwandeln, das von anderen Funktionen in Clojure verwendet werden kann. Dies kann mit der Funktion `time` durchgeführt werden:
 
-- Nützliche Bibliothek für Datum- und Uhrzeitberechnungen in Clojure: https://github.com/clj-time/clj-time
+```Clojure
+(time (.getTime cal))
+```
+
+Dies gibt uns ein Datum in der Form eines `java.util.Date`-Objekts zurück.
+
+## Tiefer Einblick
+
+Mithilfe der `java.util.Calendar`-Funktion in Clojure können wir nicht nur zukünftige oder vergangene Daten berechnen, sondern auch mehrere andere Operationen durchführen, wie zum Beispiel das Vergleichen von Daten, das Hinzufügen von Zeitintervallen oder das Extrahieren von Informationen aus einem Datum.
+
+Die vollständige Dokumentation zu `java.util.Calendar` kann unter folgendem Link gefunden werden: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+
+# Siehe auch
+
+- https://clojuredocs.org/clojure.core/time
+- https://dzone.com/articles/manipulating-dates-and-intervals-in-clojure
+- https://www.brainonfire.net/files/2013-07-15/clojure-dates.pdf

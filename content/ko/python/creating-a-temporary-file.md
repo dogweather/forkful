@@ -1,5 +1,6 @@
 ---
-title:                "Python: 임시 파일 생성하기"
+title:                "임시 파일 생성하기"
+html_title:           "Python: 임시 파일 생성하기"
 simple_title:         "임시 파일 생성하기"
 programming_language: "Python"
 category:             "Python"
@@ -9,42 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-임시 파일을 만드는 것에 참여하는 이유는 다양합니다. 가장 일반적인 이유는 임시적으로 데이터를 저장하거나 처리할 때 필요합니다. 또 다른 이유는 시스템 자원을 효율적으로 관리하기 위해 사용될 수 있습니다.
+## 왜 
+누군가가 임시 파일을 만들게 되는 이유는 주로 데이터를 일시적으로 저장하거나 임시 작업을 수행하기 위해서입니다.
 
-## 어떻게
-파이썬에서 임시 파일을 만드는 것은 간단합니다. 아래의 예제 코드를 참고하세요.
+## 사용 방법
+일시적인 파일을 만드는 데는 `tempfile` 모듈을 사용합니다. 먼저 `import tempfile`을 해준 후, `tempfile.NamedTemporaryFile()` 함수를 호출하면 임시 파일 객체를 반환해줍니다. 예를 들어서 다음과 같은 식으로 사용할 수 있습니다.
 
 ```Python
 import tempfile
 
-# 임시 파일 생성
-tmp_file = tempfile.NamedTemporaryFile()
-
-# 파일 경로 확인
-print(tmp_file.name)
-
-# 임시 파일에 데이터 쓰기
-tmp_file.write(bytes("안녕하세요!", encoding="utf-8"))
-
-# 임시 파일에서 데이터 읽기
-tmp_file.seek(0)
-print(tmp_file.read())
-
-# 임시 파일 닫기
-tmp_file.close()
+with tempfile.NamedTemporaryFile() as temp_file:
+    temp_file.write('Hello, world!')  # 임시 파일에 문자열을 쓰는 예시입니다.
+    temp_file.seek(0)  # 파일 포인터를 맨 처음으로 이동해줍니다.
+    print(temp_file.read())  # 임시 파일을 읽어옵니다. 출력: b'Hello, world!'
 ```
 
-위의 예제 코드를 실행하면 임시 파일이 생성되고 파일 경로가 출력됩니다. 임시 파일에 데이터를 쓰고 읽은 후, 파일을 닫아줍니다. 이제 필요 없는 임시 파일은 자동으로 삭제됩니다.
+## 깊게 들어가기
+임시 파일을 만들 때, 운영 체제마다 다르게 작동할 수 있습니다. 일반적으로 파일을 열 때 `mode` 파라미터를 지정해주는데, 이 모드에 따라 파일이 어떻게 사용 가능한지가 달라집니다. 예를 들어 `tempfile.NamedTemporaryFile()`의 기본 모드는 `'w+b'`로, 바이너리 쓰기 모드입니다. 또한, `delete` 파라미터를 `False`로 설정하면 임시 파일이 자동으로 삭제되지 않도록 설정할 수 있습니다. 더 자세한 내용은 [공식 문서](https://docs.python.org/3/library/tempfile.html)를 참고하시기 바랍니다.
 
-## 깊게 파헤치기
-Python에서 임시 파일을 만드는 방법에는 `tempfile` 모듈의 `NamedTemporaryFile()` 함수가 있습니다. 이 함수는 `TemporaryFile()` 클래스의 인스턴스를 반환합니다. `TemporaryFile()` 클래스는 `NamedTemporaryFile()` 함수와 동일한 기능을 제공하지만, 이름을 제공하지 않고 시스템에서 임의의 이름으로 파일이 생성됩니다.
-
-임시 파일 생성 후, 해당 파일에 데이터를 쓰고 읽는 것은 일반적인 파일 작업과 동일합니다. 다만 파일을 닫을 때에는 `close()` 메서드 대신 `__exit__()` 메서드를 호출해야 합니다. 이렇게 하면 임시 파일이 자동으로 삭제됩니다.
-
-여러 파일을 생성할 경우, `tempfile` 모듈을 사용하여 특정 디렉토리 내에 임시 파일을 생성할 수도 있습니다. 또한, 임시 파일 생성시 사용할 파일 이름을 직접 정할 수도 있습니다.
-
-## 참고 자료
-- [파이썬 공식 문서 - tempfile 모듈](https://docs.python.org/ko/3/library/tempfile.html)
-- [Python for Beginner - 파일 입출력 - 임시 파일](https://python.flowdas.com/howto/files.html#solving-your-needs-using-temporary-files)
-- [Python Weekly - How do I manipulate temporary files and directories with Python?](https://blog.pythonweekly.xyz/manipulating-temporary-files-and-directories/)
+## 관련 링크 참고
+- [공식 문서](https://docs.python.org/3/library/tempfile.html)
+- [Real Python 튜토리얼](https://realpython.com/python-tempfile/)
+- [GeeksforGeeks 블로그 포스트](https://www.geeksforgeeks.org/temporary-files-python/)

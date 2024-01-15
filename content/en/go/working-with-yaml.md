@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "Go recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Go"
 category:             "Go"
@@ -11,75 +12,102 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're a Go programmer, you may have come across the term YAML at some point. YAML stands for "YAML Ain't Markup Language" and is a human-readable data serialization format. In simpler terms, it's a way to store and transmit data in a structured and easy to read format. So why would someone want to work with YAML in their Go projects?
-
-YAML has become a popular choice for configuring and managing applications due to its simplicity and readability. It also allows for easy merging and version control of configuration files, making it a great fit for use in software development. Plus, since it's based on key-value pairs and indentation, it's easy for both humans and machines to understand.
+Working with YAML can greatly simplify and streamline the process of configuring and managing applications and services. With its easy-to-read syntax and support for structured data, YAML is a popular choice for developers and system administrators alike.
 
 ## How To
 
-Working with YAML in Go is relatively straightforward. First, you'll need to import the "gopkg.in/yaml.v2" package. This package provides functions for encoding and decoding YAML data.
+To work with YAML in Go, we will be using the `gopkg.in/yaml.v2` package. First, we will need to import the package in our code:
 
-Let's say we have a YAML file called "config.yaml" with the following content:
-
-```
-server:
-    port: 8080
-    host: localhost
-database:
-    username: john
-    password: pass123
+```Go
+import "gopkg.in/yaml.v2"
 ```
 
-To decode this file and access its values in Go, we can use the Unmarshal function from the "gopkg.in/yaml.v2" package. We'll need to create a struct that corresponds to the structure of our YAML file. In our case, it would look like this:
+### Reading YAML
 
-```
+To read a YAML file, we can use the `yaml.Unmarshal()` function, passing in the YAML data as a slice of bytes and a pointer to a structure that will hold the data:
+
+```Go
 type Config struct {
-    Server   struct {
-        Port int `yaml:"port"`
-        Host string `yaml:"host"`
-    } `yaml:"server"`
-    Database struct {
-        Username string `yaml:"username"`
-        Password string `yaml:"password"`
-    } `yaml:"database"`
+    DBHost string `yaml:"db_host"`
+    DBPort int `yaml:"db_port"`
+    DBUser string `yaml:"db_user"`
+    DBPass string `yaml:"db_pass"`
+}
+
+// Read YAML file into config struct
+var config Config
+file, err := os.Open("config.yaml")
+if err != nil {
+    panic(err)
+}
+defer file.Close()
+
+yamlData, _ := ioutil.ReadAll(file)
+
+err = yaml.Unmarshal(yamlData, &config)
+if err != nil {
+    panic(err)
+}
+
+fmt.Println(config.DBHost)
+fmt.Println(config.DBPort)
+```
+
+Note that we have defined tags above each field in our struct (e.g. `yaml:"db_host"`) to specify how the fields should be mapped to the YAML data. This allows our code to easily parse the YAML and assign the values to the corresponding fields.
+
+### Writing YAML
+
+To write YAML data, we can use the `yaml.Marshal()` function, passing in a struct or map that contains the data we want to write:
+
+```Go
+type User struct {
+    Name string `yaml:"name"`
+    Age int `yaml:"age"`
+    Email string `yaml:"email"`
+}
+
+// Write YAML data
+user := User {
+    Name: "John Smith",
+    Age: 30,
+    Email: "john@example.com",
+}
+
+yamlData, err := yaml.Marshal(user)
+if err != nil {
+    panic(err)
+}
+
+fmt.Println(string(yamlData))
+```
+
+This will output the following YAML:
+
+```Go
+name: John Smith
+age: 30
+email: john@example.com
+```
+
+We can also write YAML to a file using the `ioutil.WriteFile()` function to create a new YAML file or overwrite an existing one:
+
+```Go
+err = ioutil.WriteFile("new.yaml", yamlData, 0644)
+if err != nil {
+    panic(err)
 }
 ```
-
-Note the use of the "yaml" tag in each field to specify its corresponding key in the YAML file. We can then use the Unmarshal function to decode the YAML file into our struct and access its values:
-
-```
-func main() {
-    var config Config
-    yamlFile, err := ioutil.ReadFile("config.yaml")
-    if err != nil {
-        log.Println("Error opening YAML file:", err)
-    }
-    err = yaml.Unmarshal(yamlFile, &config)
-    if err != nil {
-        log.Println("Error decoding YAML file:", err)
-    }
-    fmt.Println("Server Port:", config.Server.Port)
-    fmt.Println("Database Username:", config.Database.Username)
-}
-```
-
-This will output:
-
-```
-Server Port: 8080
-Database Username: john
-```
-
-Of course, this is just one example, and there are many other ways to work with YAML in Go. Check out the "See Also" section below for more resources and examples.
 
 ## Deep Dive
 
-For those interested in diving deeper into working with YAML in Go, there are a few things to keep in mind. First, YAML supports various data types, including strings, numbers, booleans, arrays, and maps. Make sure to correctly define the corresponding data types in your Go struct to avoid any decoding errors.
+YAML supports a wide range of data types, including strings, integers, booleans, arrays, and maps. It also supports the use of comments, making it easier to document and explain the settings and configurations in a file.
 
-Additionally, you may come across situations where you need to handle comments and tags in your YAML files. The "gopkg.in/yaml.v2" package provides functions for parsing these elements, so be sure to check the documentation for more details.
+One of the main advantages of YAML is its human-readable and intuitive syntax. This makes it easier for developers and system administrators to understand and modify configuration files without needing to learn a complex format.
+
+In addition to its use in configuration files, YAML is also commonly used for data serialization and as a format for storing and exchanging data between applications.
 
 ## See Also
 
+- `gopkg.in/yaml.v2` documentation: https://pkg.go.dev/gopkg.in/yaml.v2
 - Official YAML website: https://yaml.org/
-- "gopkg.in/yaml.v2" package documentation: https://pkg.go.dev/gopkg.in/yaml.v2
-- Example project using YAML in Go: https://github.com/go-yaml/yaml/tree/main/example
+- Additional resources for working with YAML in Go: https://github.com/golang/go/wiki/YAML

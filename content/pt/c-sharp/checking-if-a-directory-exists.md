@@ -1,6 +1,7 @@
 ---
-title:                "C#: Verificando se um diretório existe"
-simple_title:         "Verificando se um diretório existe"
+title:                "Verificando se um diretório existe."
+html_title:           "C#: Verificando se um diretório existe."
+simple_title:         "Verificando se um diretório existe."
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,16 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que
 
-Ao escrever um programa em C# que lida com arquivos e diretórios, pode ser necessário verificar se um diretório especificado pelo usuário realmente existe. Isso pode ser útil na validação de entradas ou na garantia de que o programa não tente acessar um diretório inexistente.
+Você já se perguntou como um programa pode saber se um determinado diretório existe ou não no computador? Bem, neste artigo vamos explorar o processo de como um desenvolvedor pode verificar isso usando a linguagem de programação C#. 
 
-## Como fazer:
+## Como fazer
 
-Para verificar se um diretório existe, podemos usar o método "Directory.Exists" da classe "System.IO". Este método recebe como argumento uma string que representa o caminho do diretório a ser verificado e retorna um valor booleano indicando se o diretório existe ou não.
+Para verificar se um diretório existe em C#, podemos usar o método `Directory.Exists()` da classe `System.IO`. Este método retorna um valor booleano indicando se o diretório especificado existe ou não.
 
 ```C#
-if (Directory.Exists("C:\MeusDocumentos\Imagens"))
+if (Directory.Exists("C:\\Users\\Admin\\Documents"))
 {
     Console.WriteLine("O diretório existe!");
 }
@@ -28,15 +29,19 @@ else
 }
 ```
 
-A saída deste código será "O diretório existe!", caso o diretório "Imagens" exista na pasta "Meus Documentos". Caso contrário, a saída será "O diretório não existe!".
+Ao executar este código, a saída será "O diretório existe!" caso o diretório exista no caminho especificado. Caso contrário, a saída será "O diretório não existe!".
 
-## Profundidade:
+## Deep Dive
 
-O método "Directory.Exists" usa a classe "DirectoryInfo" por trás dos bastidores para realizar a verificação. Esta classe também possui outros métodos úteis para a manipulação de diretórios, como criar, mover e excluir diretórios.
+Por trás dos panos, o método `Directory.Exists()` chama a função `PathInternal.IsDirectoryExists()` do sistema operacional. Esta função é responsável por verificar se o diretório existe.
 
-Além disso, é importante lembrar que, mesmo que o diretório exista no momento da verificação, ele pode ser excluído posteriormente pelo usuário ou por outro programa. Por isso, é preciso ter cuidado ao lidar com arquivos e diretórios no seu código e sempre tratar possíveis erros.
+É importante observar que o método `Directory.Exists()` não verifica se o usuário tem permissão para acessar o diretório, apenas se ele existe ou não. Além disso, este método não funciona para diretórios em unidades de rede.
 
-## Veja também:
+## Veja também
 
-- [Documentação do método Directory.Exists em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [Exemplos práticos de uso da classe DirectoryInfo](https://www.edureka.co/blog/directoryinfo-class-in-c-sharp/)
+Se você quiser aprender mais sobre o uso de diretórios em C#, confira as seguintes referências:
+
+- [Documentação da classe `Directory`](https://docs.microsoft.com/pt-br/dotnet/api/system.io.directory?view=net-5.0)
+- [Guia de C# em português](https://docs.microsoft.com/pt-br/dotnet/csharp/index)
+
+Agora você sabe como verificar se um diretório existe em C#! Experimente usar este conhecimento em seus projetos e veja como ele pode melhorar a funcionalidade do seu programa. Divirta-se codificando!

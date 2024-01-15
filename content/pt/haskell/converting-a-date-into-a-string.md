@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Convertendo uma data em uma string"
-simple_title:         "Convertendo uma data em uma string"
+title:                "Convertendo uma data em uma sequência de caracteres"
+html_title:           "Haskell: Convertendo uma data em uma sequência de caracteres"
+simple_title:         "Convertendo uma data em uma sequência de caracteres"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -9,64 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que
+## Por que
 
-Converter uma data em uma string é uma tarefa importante para qualquer programa de computador que precise lidar com datas. Com a conversão, é possível mostrar a data de maneira mais legível para o usuário ou realizar operações como ordenação e comparação.
+Você provavelmente está se perguntando: "Por que devo me preocupar em converter uma data em uma string?" Bem, se você está trabalhando com dados de datas em seu código, é importante saber como convertê-los em um formato legível para usuários ou para outras aplicações.
 
-# Como fazer
+## Como Fazer
 
-A linguagem de programação Haskell fornece uma biblioteca padrão chamada "Data.Time" que inclui funções e tipos de dados para manipular datas. Para converter uma data em uma string, utilizamos a função "show" que recebe como parâmetro um tipo de dados "Day" (dia) e retorna uma string no formato "AAAA-MM-DD".
+Para converter uma data em uma string em Haskell, podemos usar a função `formatTime` do módulo `Data.Time.Format`. Vamos dar uma olhada em um exemplo simples:
 
-```Haskell
-import Data.Time
-
-main = do
-    let dataAtual = fromGregorian 2021 10 10 -- cria uma data com o formato ano-mês-dia
-    putStr "Data atual no formato string: "
-    putStrLn $ show dataAtual -- converte a data em uma string e imprime na tela
-```
-
-**Saída:**
-
-Data atual no formato string: 2021-10-10
-
-Além disso, é possível utilizar a função "formatTime" para personalizar o formato da string de saída. Essa função recebe como parâmetros um string de formatação e um tipo de dados "Day" e retorna uma string com a data formatada. Abaixo temos um exemplo de código que formata a data no formato "dd/MM/aaaa".
-
-```Haskell
+``` Haskell
 import Data.Time.Format
-import System.Locale
 
-main = do
-    let dataAtual = fromGregorian 2021 10 10
-    putStr "Data atual no formato string: "
-    putStrLn $ formatTime defaultTimeLocale "%d/%m/%Y" dataAtual
+dataString :: IO()
+dataString = do
+  let dataAtual = getCurrentTime
+  let dataFormatada = formatTime defaultTimeLocale "%d/%m/%Y" dataAtual
+  putStrLn dataFormatada
 ```
 
-**Saída:**
+Neste exemplo, importamos o módulo necessário e criamos uma função chamada `dataString` que utiliza a função `getCurrentTime` para obter a data atual e a função `formatTime` para formatá-la em uma string no formato "dia/mês/ano". Em seguida, usamos a função `putStrLn` para imprimir a string resultante. O resultado será algo como "27/10/2021".
 
-Data atual no formato string: 10/10/2021
+Existem diversas opções de formatação que podem ser utilizadas, como adicionar o dia da semana ou a hora da data. Para mais detalhes, consulte a documentação do módulo `Data.Time.Format`.
 
-# Profundidade
+## Mergulho Profundo
 
-Além dos formatos de data mais comuns, a biblioteca "Data.Time" também fornece funções para converter uma data em uma string no formato ISO 8601 (padrão internacional para representação de datas). Esse formato é útil para comunicação entre diferentes sistemas, pois é facilmente interpretado por todos.
+Se você quiser aprofundar seus conhecimentos em como converter uma data em uma string em Haskell, é importante ter uma boa compreensão dos tipos de dados utilizados. Em Haskell, é comum trabalhar com tipos de dados como `UTCTime` (representa uma data e hora universal), `TimeZone` (representa um fuso horário) e `TimeLocale` (representa informações de localização na formatação de datas e horas).
 
-```Haskell
-import Data.Time.Format.ISO8601
+Além disso, é útil estar familiarizado com outras funções relacionadas a datas e horas, como `parseTime` (para converter uma string em uma data) e `diffUTCTime` (para calcular a diferença entre duas datas).
 
-main = do
-    let dataAtual = fromDate (fromGregorian 2021 10 10) -- cria uma data a partir dos componentes ano, mês e dia
-    putStr "Data atual no formato ISO 8601: "
-    putStrLn $ iso8601Show dataAtual
-```
+## Veja Também
 
-**Saída:**
-
-Data atual no formato ISO 8601: 2021-10-10
-
-Além disso, a biblioteca "Data.Time" também possui funções para converter uma data em uma string utilizando diferentes fuso horários, como "utc" e "local". É importante ter em mente essas variações ao lidar com datas em sistemas que podem estar em diferentes regiões do mundo.
-
-# Veja também
-
-- [Documentação da biblioteca Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial sobre manipulação de datas em Haskell](https://www.learnyouahaskell.com/databases-and-serialization#using-a-custom-date-type)
-- [Artigo sobre o padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+- [Documentação do módulo `Data.Time.Format`](https://hackage.haskell.org/package/time-1.12.0.2/docs/Data-Time-Format.html)
+- [Tutorial Haskell do Wikibooks sobre o módulo `Data.Time.Format`](https://en.wikibooks.org/wiki/Haskell/FormatTime)
+- [Post no blog Dev Community sobre como trabalhar com datas em Haskell](https://dev.to/chrisakwei/working-with-dates-and-time-in-haskell-ib4)

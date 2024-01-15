@@ -1,5 +1,6 @@
 ---
-title:                "C++: קריאת קובץ טקסט"
+title:                "קריאת קובץ טקסט"
+html_title:           "C++: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "C++"
 category:             "C++"
@@ -9,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##למה
-כיוון שקריאת קבצי טקסט הוא חלק חשוב בתכנות ומאפשרת לבדוק ולהשתמש במידע ממקור חיצוני. כתיבת קוד לקריאת קבצי טקסט היא מיומנות חיונית לכל מתכנת.
+## מדוע
 
-##כיצד לעשות זאת
-```c++
-#include <iostream>
+בכדי לעבוד בקוד שכתבנו בעצמנו והרצה עליו, נצטרך לקרוא כתוביות שונות תחת קובץ עם סיומת .ttxt או .txt כדי לאחסן מידע אחר.
+
+## איך לקרוא בפאייתון
+
+```C++
 #include <fstream>
+#include <iostream>
+using namespace std;
 
-// פתיחת קובץ טקסט לכתיבה 
-std::ifstream file("example.txt");
-
-// בדיקה אם הקובץ נפתח בהצלחה
-if(file.is_open()){
-    //משתנה לשמירת קלט מהקובץ
-    std::string input;
-    //לולאה לחיצוניית קריאת הקובץ 
-    while(getline(file, input)){
-        std::cout << input << std::endl; // תדפיס את התוכן של הקובץ שורה-שורה
+int main() {
+    string line;
+    ifstream file("example.txt"); // replace with your file path
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
     }
-    // סגירת קובץ
-    file.close();
-} 
-else{
-    // לפעולות אם הקובץ לא נפתח
+    return 0;
 }
-````
-
-Output:
-```text
-שלום עולם!
-היי אני קורא קובץ טקסט.
 ```
 
-##עומק נוסף
-כדי לקרוא קובץ טקסט ב-C++, ניתן להשתמש בעזרתה של הספריה fstream. פקודות חשובות לשימוש כאשר מתרגלים את קריאת קבצי טקסט הן: 
-1. `open()` - לפתיחת קובץ
-2. `close()` - לסגירת קובץ
-3. `getline()` - לקריאת שורה שלמה מהקובץ
-4. `eof()` - לבדיקה אם הקובץ הגיע לסופו
-מומלץ גם לקרוא על כיצד לנהל שגיאות כאשר מתבצעת קריאה לקובץ טקסט.
+כאן אנו משתמשים בספריית `<fstream>` לקריאת הקובץ וסטרינג לקרוא כל שורה מהקובץ. נפתח את הקובץ באמצעות הפקודה `ifstream` ונותנים לקובץ שם. אחר כך, נבדוק אם הפתיחה נעשתה בהצלחה ואם כן, נעבור על כל שורה עם הפקודה `getline` ונדפיס אותה. סופית, נסגור את הקובץ עם הפקודה `close`.
 
-##ראה גם
-- [מדריך לאיתור וטיפול בשגיאות קריאת קבצי טקסט ב-C++](https://www.geeksforgeeks.org/problems-with-reading-writing-a-text-file-in-c-c/)
-- [ספריה fstream ב-C++](http://www.cplusplus.com/reference/fstream/)
-- [קריאה לקובץ טקסט עם רווחים ב-C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+## פינה עמוקה
+
+כאשר אנו קוראים קובץ טקסט, אנו מעבירים נקודת קלט על כל שורה ונחלצים מידע נדרש. ניתן לשים לב כי אנו משתמשים בלולאת `while` כדי לעבור על כל הקובץ, אך ניתן גם להשתמש בלולאת `for` עם מספר מסופק מראש של שורות שאנו רוצים לקרוא.
+
+## ראה גם
+
+- [כיצד לקרוא קבצי טקסט בשפת פייתון](https://www.tutorialspoint.com/python/python_files_io.htm)
+- [קריאת קבצים בשפת C++](https://www.cplusplus.com/doc/tutorial/files/)

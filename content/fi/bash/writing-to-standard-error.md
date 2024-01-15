@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Kirjoittaminen standardi virheisiin."
-simple_title:         "Kirjoittaminen standardi virheisiin."
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "Bash: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,27 +11,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Tervetuloa lukemaan Bash-ohjelmoinnin artikkelia, jossa opit miten kirjoittaa standardivirheelle. Tämä taito on hyödyllinen, sillä se auttaa sinua havaitsemaan ja korjaamaan virheitä koodissasi.
 
-Kun ohjelmoit Bash-kielellä, voit käyttää komentoja, joilla voit hallita tiedostojärjestelmää ja suorittaa tehtäviä käyttöjärjestelmässä. Näiden toimenpiteiden tulokset voi usein ohjata standarditähtitteeseen, mutta miksi haluaisit tehdä niin? Standarditähtitteen käyttö voi olla hyödyllistä, kun haluat tallentaa tietoa, jota et halua näyttää tavalliselle käyttäjälle tai tallentaa virheilmoituksia suorituksen aikana.
-
-## Kuinka
-
-Standarditähtitteen käyttö on yksinkertaista. Voit ohjata tulosteen käyttäen "> /dev/stderr" -merkintää komennon lopussa. Esimerkiksi, jos haluat näyttää virheilmoituksen käyttäjälle:
-
+## Miten
 ```Bash
-ls /tuntematon/hakemisto > /dev/stderr
+echo "Tämä teksti tulostuu standardivirheelle" 1>&2
 ```
 
-Tämä kääntää hakukuulustelun Bash-kielelle ja ohjaa tuloksen suoraan standarditähtitteeseen. Tämän jälkeen näet virheilmoituksen, joka kertoo, että hakemistoa ei löydy.
+Kun haluat kirjoittaa jotain standardivirheelle Bash-skriptissäsi, voit käyttää 1>&2 -merkintää. Tämä ohjaa tulostetun tiedon standardivirheen sijaan standarditulostevirtaan. Voit myös käyttää tätä tekniikkaa yhdistettynä muihin komentoihin, kuten grep-välin tai if-lauseiden kanssa.
 
-## Syventävä sukellus
-
-Standarditähtitteen käyttö voi olla hyödyllistä myös skriptejä kirjoittaessa. Voit lisätä skriptiin tarkoituksella virheen, jotta voit testata, miten se käsittelee virheitä. Voit myös käyttää standarditähtitteen kautta tulostettuja virheilmoituksia hallitaksesi skriptin suorituksen kulkua ja suorittaa haluttuja toimenpiteitä virheiden kohdatessa.
-
-On myös tärkeää muistaa, että standarditähtitteeseen ohjattu tulostus ei näy tavalliselle käyttäjälle. Näin voit suojata tärkeitä tietoja ja estää epätoivottujen tietojen näkyvyyden.
+## Syväsukellus
+Standardivirhe on virta, joka kerää kaiken virheellisen tiedon Bash-skriptissäsi. Tämä auttaa sinua havaitsemaan ja korjaamaan virheet nopeasti ennen kuin ne aiheuttavat ongelmia. Voit myös ohjata standardivirheen uudelleen selkeämpään tiedostoon, jolloin voit helpommin tarkistaa virheet ja niiden syyt.
 
 ## Katso myös
-
-- [Redirecting Standard Error](https://www.tecmint.com/redirect-stdout-and-stderr-to-file-in-linux/): Ohjeita standarditähtitteen ohjaamiseen tiedostoon Linux-käyttöjärjestelmässä.
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php): Opas Bash-skriptien kirjoittamiseen, jossa käsitellään myös standarditähtitteen käyttöä.
-- [Bash Operators](https://www.tldp.org/LDP/abs/html/ops.html): Tietoa erilaisista Bash-kielessä käytetyistä operaattoreista, mukaan lukien standarditähtitee merkintöjen käyttö.
+- [Bash-skriptauksen perusteet](https://linux.die.net/man/1/bash)
+- [Standardivirheen hallintatekniikat](https://shapeshed.com/unix-exit-codes/)
+- [Bash-skriptien virheenhallintastrategiat](https://linuxcommand.org/lc3_writing_shell_scripts.php#standard_error_and_features_you_want)

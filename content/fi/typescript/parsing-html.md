@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Html:n erittely"
-simple_title:         "Html:n erittely"
+title:                "HTML:n jäsentäminen"
+html_title:           "TypeScript: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,64 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTML-analysointi on tärkeä taito, joka on hyödyllinen web-kehityksessä. Sen avulla voit purkaa ja käsitellä sivuston rakennetta ja sisältöä, mikä mahdollistaa tiedon poimimisen ja muokkaamisen.
+Miksi joku haluaisi analysoida HTML:ää? Yksinkertaisesti sanottuna, HTML-analyysi on tärkeä osa verkkosivujen ja -sovellusten kehittämistä ja ylläpitoa. HTML-analyysin avulla voidaan hakea ja käsitellä verkkosivujen sisältöä, mikä auttaa esimerkiksi tiedon scrapettamisessa, SEO-analyysissä ja testaamisessa.
 
-## Kuinka tehdä
+## Kuinka
 
-HTML-analysointi TypeScriptillä on helppoa ja tehokasta. Käytä ```parse```-funktiota ```htmlparser2```-kirjastosta ottaaksesi HTML-sisällön ja muunnat sen rakenteeksi, jota on helppo käsitellä.
+HTML-analyysiin on olemassa monia erilaisia tapoja, mutta tässä artikkelissa keskitymme TypeScript-kieleen. TypeScript on suosittu JavaScriptin laajennus, joka tarjoaa vahvemman tyyppitarkastuksen ja muita kehittäjäystävällisiä ominaisuuksia.
 
-Esimerkki: 
-```
-import { parse } from 'htmlparser2';
+```TypeScript
+// Tuo tarvittavat moduulit
+import * as cheerio from "cheerio";
+import * as request from "request";
 
-const html = `
-<html>
-  <body>
-    <h1>Tervetuloa!</h1>
-  </body>
-</html>
-`;
-
-const parsedHTML = parse(html);
-
-console.log(parsedHTML);
-```
-
-Tuloste:
-```
-{ 
-  type: 'tag',
-  name: 'html',
-  attribs: {},
-  children: [ 
-    { 
-      type: 'tag',
-      name: 'body',
-      attribs: {},
-      children: [ 
-        { 
-          type: 'tag',
-          name: 'h1',
-          attribs: {},
-          children: [ 
-            { 
-              type: 'text',
-              data: 'Tervetuloa!'
-            } ] 
-        } ] 
-    } ] 
-}
+// Haetaan verkkosivun sisältö
+request("https://www.example.com", (error, response, body) => {
+  // Avataan sisältö cheerio-kirjaston avulla
+  const $ = cheerio.load(body);
+  // Haetaan otsikko elementti
+  const title = $("h1").text();
+  // Tulostetaan otsikko konsolille
+  console.log(`Sivun otsikko on: ${title}`);
+});
 ```
 
-## Syvemmälle analyyziiin
+Tämä yksinkertainen koodiesimerkki näyttää, kuinka verkkosivun sisältö voidaan hakea ja käsitellä cheerio-kirjaston avulla. Kirjasto tarjoaa samankaltaisen syntaksin kuin jQuery ja helpottaa HTML-elementtien hakemista ja manipulointia verkkosivun sisällöstä.
 
-HTML-analysointi voi olla monimutkaisempaa kuin näyttää aluksi. Se vaatii ymmärrystä HTML-syntaksista ja tietämystä erilaisista tagityypeistä ja niiden rooleista. Lisäksi on tärkeää tietää, miten erilaiset selaimet voivat käsitellä HTML-tiedostoja ja miten tämä voi vaikuttaa analyysiin.
+## Syvällisempi tarkastelu
 
-HTML-analysointi voi myös olla hyödyllistä tiettyjen elementtien tai atribuuttien tunnistamisessa ja niiden tietojen keräämisessä. Tämä voi auttaa esimerkiksi tiettyjen ominaisuuksien seuraamisessa tai sivustojen vertailussa.
+Vaikka cheerio on yksi suosituimmista kirjastoista HTML-analyysiin TypeScriptillä, on olemassa myös muita vaihtoehtoja, kuten jsdom ja HTML-parseri. Näitä kirjastoja voidaan käyttää samalla tavalla kuin cheeriota ja niitä kannattaa tutkia, jos haluaa vertailla ominaisuuksia ja suorituskykyä.
+
+Lisäksi HTML-analyysin syvällisempi ymmärtäminen auttaa kehittäjiä tehokkaammin hyödyntämään sitä. Esimerkiksi ymmärtämällä CSS-selectorien toimintaa voi helpommin hakea tiettyjä elementtejä verkkosivun sisällöstä. Lisäksi on hyvä tietää, kuinka DOM-puu toimii ja kuinka sitä voidaan käyttää HTML-elementtien manipulointiin.
 
 ## Katso myös
 
-- [https://github.com/fb55/htmlparser2](https://github.com/fb55/htmlparser2) - htmlparser2-kirjasto GitHubissa
-- [https://cheerio.js.org/](https://cheerio.js.org/) - toinen HTML-analysointiin käytetty kirjasto
-
-Kiitos kun luit tämän artikkelin! Toivottavasti se auttoi sinua ymmärtämään paremmin HTML-analysointia TypeScriptillä. Onnea web-kehitykseen!
+- [Cheerio-kirjasto](https://github.com/cheeriojs/cheerio)
+- [JavaScript DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [HTML-analyysi TypeScriptillä opetusohjelma](https://dev.to/nniaemeka/html-parsing-with-typescript-4f5a)

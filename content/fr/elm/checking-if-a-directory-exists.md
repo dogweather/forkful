@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Vérification de l'existence d'un répertoire"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Elm: Vérification de l'existence d'un répertoire"
 simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,62 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
+Si vous êtes un développeur Elm, il est probable que vous ayez rencontré le besoin de vérifier si un dossier existe avant de continuer l'exécution de votre programme. Cela peut sembler être une tâche facile, mais c'est en fait un peu plus complexe que ça. Dans cet article, nous allons vous montrer comment le faire en utilisant Elm.
 
-Dans la programmation, il est important de s'assurer que les fichiers ou les dossiers que l'on souhaite utiliser existent avant de les manipuler. Cela peut éviter des erreurs et des problèmes lors de l'exécution du code. En utilisant Elm, on peut facilement vérifier si un dossier existe avant de continuer avec les opérations prévues.
+## Comment faire 
+```Elm
+import File exposing (exists)
+import File.System.Path as Path
 
-## Comment faire
-
-Pour vérifier si un dossier existe en Elm, il faut utiliser la fonction `dirExists` du module `FileSystem`. Cette fonction prend en paramètre le chemin du dossier à vérifier et renvoie un `Task` avec un `Result` indiquant si le dossier existe ou non.
-
-Voici un exemple de code avec un dossier existant :
-
-```
-Elm.FileSystem.dirExists "chemin/vers/mon_dossier"
-    |> Task.perform checkDirectory
-  where
-    checkDirectory result =
-        case result of
-            Err error ->
-                Debug.log "Erreur: " error
-
-            Ok exists ->
-                if exists then
-                    Debug.log "Le dossier existe !"
-                else
-                    Debug.log "Le dossier n'existe pas."
+checkDirectoryExists : String -> Task x Bool
+checkDirectoryExists directory =
+    exists (Path.directory directory)
 ```
 
-Et voici un exemple avec un dossier inexistant :
+Voici un exemple de fonction en Elm qui prend en paramètre le chemin d'un dossier et renvoie une tâche qui se termine par un booléen indiquant si le dossier existe ou non. Nous utilisons la fonction `exists` de la bibliothèque `File` et nous lui passons le chemin du dossier en utilisant la fonction `directory` de la bibliothèque `File.System.Path`.
 
+Maintenant, si vous souhaitez utiliser cette fonction dans votre application, voici comment vous pouvez le faire :
+
+```Elm
+import Task
+import Task.Extra
+import Platform
+import Html exposing (text)
+
+main : Program Never
+main =
+    Program.none
+        { init = ( Model "my_directory", Cmd.none )
+        , update = update
+        , subscriptions = always Sub.none
+        , view = view
+        }
+
+type alias Model =
+    { directory : String
+    , exists : Bool
+    }
+
+type Msg
+    = DirectoryExists (Result x Bool)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        DirectoryExists result ->
+            case result of
+                Result.Ok bool ->
+                    ( { model | exists = bool }, Cmd.none )
+
+                Result.Err _ ->
+                    ( { model | exists = False }, Cmd.none )
+
+view : Model -> Html Msg
+view model =
+    text (toString model.exists)
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    if not model.exists then
+        Sub.batch
+            [ Task.Extra.attempt DirectoryExists (checkDirectoryExists model.directory) ]
+    else
+        Sub.none
 ```
-Elm.FileSystem.dirExists "chemin/vers/dossier/incorrect"
-    |> Task.perform checkDirectory
-  where
-    checkDirectory result =
-        case result of
-            Err error ->
-                Debug.log "Erreur: " error
 
-            Ok exists ->
-                if exists then
-                    Debug.log "Le dossier existe !"
-                else
-                    Debug.log "Le dossier n'existe pas."
-```
+Nous créons une application Elm simple avec un modèle qui contient le chemin du dossier et un booléen pour indiquer s'il existe ou non. Dans le gestionnaire de mise à jour, nous utilisons la fonction `checkDirectoryExists` pour vérifier si le dossier existe et si oui, nous mettons à jour notre modèle avec la valeur renvoyée. Dans le gestionnaire de vue, nous affichons simplement la valeur booléenne.
 
-La sortie pour ces deux exemples serait respectivement "Le dossier existe !" et "Le dossier n'existe pas.".
+## Plongée en profondeur 
+Maintenant que vous avez vu comment vérifier si un dossier existe en utilisant Elm, il est important de comprendre que cela ne fonctionne que pour les dossiers qui se trouvent sur le système de fichiers de l'utilisateur. Cela signifie que vous ne pourrez pas vérifier l'existence de dossiers sur un serveur distant, par exemple.
 
-## Approfondissement
+De plus, la fonction `exists` ne prend en compte que les dossiers et non les fichiers. Si vous souhaitez vérifier l'existence d'un fichier, vous devrez utiliser une autre fonction de la bibliothèque `File`, comme `FileInfo.exists`.
 
-La fonction `dirExists` utilise la bibliothèque JavaScript `fs-extra` pour interagir avec le système de fichiers. Cela signifie que la fonction peut ne pas fonctionner sur certains navigateurs ou environnements. Il est donc important de s'assurer que l'environnement dans lequel on exécute le code est compatible avec `fs-extra`.
-
-Il est également possible d'utiliser la fonction `fileExists` du même module pour vérifier l'existence d'un fichier plutôt que d'un dossier.
-
-## Voir aussi
-
-- Documentation officielle d'Elm sur le module FileSystem : <https://package.elm-lang.org/packages/elm/file/latest/>
-
-- Documentation de `fs-extra` : <https://www.npmjs.com/package/fs-extra>
-
-- Liste des modules officiels d'Elm : <https://package.elm-lang.org/>
+## Voir aussi 
+- [Documentation sur la bibliothèque File d'Elm](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Documentation sur la bibliothèque File.System.Path d'Elm](https://package.elm-lang.org/packages/elm/file/latest/File-System-Path)
+- [Exemple d'utilisation de la fonction `FileInfo.exists`](https://github.com/elm/file/blob/master/examples/existingFile.elm)

@@ -1,6 +1,7 @@
 ---
-title:                "Go: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Skriver tester"
+html_title:           "Go: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -9,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hvorfor
 
-Å skrive tester er en viktig del av å lage gode Go-programmer. Tester hjelper deg med å oppdage og fikse feil i koden før den blir utgitt, og sikrer at koden din fungerer som den skal. Det er også en god praksis å følge i programmering, og viser at du bryr deg om kvaliteten på arbeidet ditt.
+Å skrive tester i koden din kan kanskje virke som tidkrevende og unødvendig arbeid, men det kan faktisk være en verdifull investering på lang sikt. Tester bidrar til å oppdage feil og sikre at koden din fungerer som den skal, og gjør det lettere å vedlikeholde og utvide koden i fremtiden.
 
-## Hvordan 
+## Slik gjør du det
 
-For å skrive tester i Go, kan du bruke standardbiblioteket "testing" som følger med språket. Her er et eksempel på hvordan en enkel test kan se ut:
+For å skrive tester i Go, må du først importere "testing" pakken. Deretter kan du definere testfunksjoner ved å bruke "Test" prefix før navnet på funksjonen. Inne i testfunksjonen bruker du "t" objektet for å kjøre tester og sjekke verdier ved hjelp av "t.Run" og "t.Fail" metoder. Se et eksempel nedenfor:
 
 ```Go
-func Sum(a, b int) int {
-   return a + b
-}
+import "testing"
 
-func TestSum(t *testing.T) {
-   result := Sum(2, 3)
-   if result != 5 {
-      t.Errorf("Sum should be 5, got %d instead", result)
-   }
+func TestAddition(t *testing.T) {
+  result := add(2, 3)
+  if result != 5 {
+    t.Fail()
+  }
 }
 ```
 
-Output fra denne testen vil være:
+For å kjøre testene dine, bruk kommandoen "go test" i terminalen. Dette vil kjøre alle testfunksjonene i pakken og gi deg en rapport om eventuelle feil som er oppdaget. Du kan også bruke flagg for å kjøre bestemte tester eller få mer detaljert informasjon om resultatene.
 
-```Go
---- FAIL: TestSum (0.00s)
-    main_test.go:11: Sum should be 5, got 6 instead
-```
+## Dypdykk
 
-For å kjøre alle testene i pakken kan du bruke følgende kommando i terminalen:
+Å skrive gode tester handler ikke bare om å få dem til å passere, men også om å skrive dem på en effektiv og pålitelig måte. Husk at tester bør være uavhengige, lesbare og dekkende for å gi deg tillit til koden din. Du kan også skrive benchmarks for å sammenligne forskjellige implementasjoner av funksjoner og identifisere eventuelle ytelsesproblemer.
 
-```
-go test
-```
+## Se også
 
-## Dypdykk 
-
-Det finnes flere metoder for å skrive tester i Go, som for eksempel å bruke "subtests" for å dele opp en stor test i mindre deler. Det er også mulig å bruke tredjeparts biblioteker som "Testify", som gir deg flere verktøy for å skrive tester. Det er viktig å huske på at koden din bør være godt strukturert og testbar for å kunne skrive effektive tester.
-
-## Se også 
-
-- [testing package - Go standardbibliotek](https://golang.org/pkg/testing/)
-- [Testify - tredjeparts testbibliotek for Go](https://github.com/stretchr/testify)
+- [Testing i Go](https://golang.org/pkg/testing/)
+- [God testingpraksis for Go](https://blog.alexellis.io/golang-writing-unit-tests/)

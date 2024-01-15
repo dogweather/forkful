@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Zufällige Zahlen generieren."
-simple_title:         "Zufällige Zahlen generieren."
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -11,61 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Generierung von Zufallszahlen ist ein wichtiger Aspekt der Arduino-Programmierung. Durch das Erzeugen von Zufallszahlen können wir unberechenbare und vielfältige Verhaltensmuster erzeugen, die unsere Projekte interessanter und interaktiver machen.
+Das Generieren von Zufallszahlen ist eine nützliche Fähigkeit in der Welt des Programmierens, da es viele Anwendungsfälle gibt, in denen wir zufällige Werte benötigen. Zum Beispiel können wir sie verwenden, um zufällige Entscheidungen zu treffen, Spiele zu erstellen oder Verschlüsselung zu verbessern.
 
-## Wie es geht
+## So geht's
 
-Um Zufallszahlen mit Arduino zu generieren, verwenden wir die Funktion `random(min,max)`, die eine zufällige Ganzzahl zwischen dem angegebenen minimalen und maximalen Wert zurückgibt. Hier ist ein Beispielcode, der eine zufällige Zahl zwischen 1 und 10 generiert und sie auf dem Seriellen Monitor ausgibt:
+Um zufällige Zahlen in Arduino zu generieren, können wir die `random()` Funktion verwenden. Wir müssen jedoch zuerst darauf achten, dass der Zufallszahlengenerator initialisiert wird, indem wir `randomSeed()` verwenden. Schauen wir uns ein Beispiel an:
 
-```
-Arduino
+```Arduino
+// Initialisieren des Zufallszahlengenerators
+randomSeed(analogRead(A0));
 
-// Definiere zwei Variablen als Minimalwert und Maximalwert
-int min = 1;
-int max = 10;
+// Generieren einer zufälligen Ganzzahl zwischen 0 und 10
+int randomNumber = random(10); 
 
-void setup() {
-  // Beginne die Kommunikation mit dem Seriellen Monitor
-  Serial.begin(9600);
-
-  // Initialisiere den Zufallsgenerator
-  randomSeed(analogRead(0));
-}
-
-void loop() {
-  // Rufe die Funktion random(min,max) auf und speichere die zufällige Zahl in der Variable "zufall"
-  int zufall = random(min, max+1);
-
-  // Gib die zufällige Zahl auf dem Seriellen Monitor aus
-  Serial.println(zufall);
-
-  // Warte 1 Sekunde, bevor der Code wieder von vorne ausgeführt wird
-  delay(1000);
-}
-
+// Ausgabe der Zufallszahl auf dem seriellen Monitor
+Serial.println(randomNumber); 
 ```
 
-Die Ausgabe auf dem Seriellen Monitor könnte beispielsweise folgendermaßen aussehen:
+In diesem Beispiel haben wir den Zufallszahlengenerator mit einer analogen Messung initialisiert, um eine unvorhersehbare Ausgangsbasis zu schaffen. Wir haben dann eine zufällige Ganzzahl zwischen 0 und 10 generiert und sie auf dem seriellen Monitor ausgegeben.
 
-```
-3
-8
-5
-1
-10
-```
+Neben der `random()` Funktion gibt es auch andere Funktionen wie `random(min, max)` zum Generieren von Zufallszahlen in einem bestimmten Bereich, `randomSeed(seed)` zum Festlegen einer benutzerdefinierten Startzahl und `randomize()` zum Aktualisieren des Zufallszahlengenerators basierend auf externen Einflüssen.
 
-## Tiefeneintauchung
+## Tiefentauchen
 
-Die Zufallsfunktion von Arduino verwendet den physikalischen Rausch des Analog-Digital-Wandlers, um eine zufällige Startposition für den Zufallsgenerator zu erhalten. Die Funktion `random()` verwendet dann einen mathematischen Algorithmus, um aus dieser Startposition eine "zufällige" Folge von Zahlen zu erzeugen. Diese Zahlen sind natürlich nicht wirklich zufällig, aber für die meisten Anwendungsfälle sind sie ausreichend und bieten ein hohes Maß an Unvorhersehbarkeit.
+Hinter den Kulissen verwendet der Zufallszahlengenerator in Arduino den linearen kongruenten Generator (LCG) Algorithmus. Dieser Algorithmus ist relativ einfach und schnell, aber er kann bei bestimmten Anwendungsfällen unzuverlässige Ergebnisse liefern, da er periodische Muster aufweisen kann.
 
-Es ist jedoch wichtig zu beachten, dass der Zufallsgenerator standardmäßig immer die gleiche Sequenz von Zahlen ausgibt, wenn der Arduino neu gestartet wird. Um dies zu vermeiden, verwenden wir die Funktion `randomSeed(analogRead(0))`, die den Zufallsgenerator jedes Mal mit einem anderen Startwert versorgt.
-
-Wir können auch den Zufallsgenerator durch die Funktion `randomSeed(seed)` mit einem bestimmten Startwert initialisieren, um spezifische Sequenzen von Zufallszahlen zu erhalten. Dies kann nützlich sein, wenn wir bestimmte Muster oder Verhaltensweisen erzeugen möchten.
-
-Eine weitere Möglichkeit, die Zufallszahlen zu beeinflussen, besteht darin, die Werte der Variablen `min` und `max` zu ändern, die in der Funktion `random()` verwendet werden. Indem wir diese Werte anpassen, können wir den Bereich der generierten Zufallszahlen verändern.
+Um dieses Problem zu umgehen, gibt es in Arduino auch die `randomBytes()` Funktion, die auf einer Pseudozufallszahlengenerator-Bibliothek basiert und eine bessere Qualität der Zufallszahlen bietet. Dies ist besonders wichtig, wenn es um kryptografische Anwendungen geht.
 
 ## Siehe auch
 
-- [Arduino Referenzdokumentation für die Funktion random()](https://www.arduino.cc/reference/de/language/functions/random-numbers/random/)
-- [Ein Tutorial zur Generierung von Zufallszahlen mit Arduino](https://lastminuteengineers.com/random-numbers-digital-arduino/)
+- [Arduino - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Arduino - randomSeed()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
+- [Arduino - randomBytes()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randombytes/)

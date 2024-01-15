@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Zusammenführen von Zeichenketten"
-simple_title:         "Zusammenführen von Zeichenketten"
+title:                "Verketten von Zeichenketten."
+html_title:           "Rust: Verketten von Zeichenketten."
+simple_title:         "Verketten von Zeichenketten."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Die Verkettung von Strings ist ein verbreitetes Konzept in der Programmierung, das auch in Rust häufig verwendet wird. Durch das Verbinden von mehreren Strings lässt sich Text auf einfache und effiziente Weise manipulieren und formatieren. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie dies in der Programmiersprache Rust funktioniert.
+Strings sind ein wichtiges Konzept in der Programmierung und sie werden oft benötigt, um Daten aussagekräftiger zu machen und das Nutzererlebnis zu verbessern. Das Verketten oder Zusammensetzen von Strings ist eine gängige Aufgabe, die es ermöglicht, mehrere Strings zu einem zusammenzufügen und so eine neue, kombinierte String zu erstellen. Diese Funktion ist besonders nützlich, wenn es darum geht, dynamische Texte zu erstellen, zum Beispiel in einer Benutzeroberfläche oder in der Ausgabe von Daten.
 
-# Wie geht es?
+## Wie geht man vor?
 
-Um Strings in Rust zu verketten, wird die Methode `push_str()` verwendet. Diese Methode fügt einen weiteren String an das Ende des ursprünglichen Strings an. Es ist auch möglich, mehrere Strings zusammenzufügen, indem `push_str()` mehrmals hintereinander aufgerufen wird. Hier ist ein Beispielcode, der zwei Strings zu einem einzigen String verbindet:
+Die Verkettung von Strings in Rust kann auf verschiedene Arten erfolgen, abhängig von den zu verwendenden Daten. Hier sind einige gebräuchliche Methoden:
 
-```Rust
-let mut string_1 = String::from("Hallo");
-let string_2 = String::from("Welt");
-string_1.push_str(" ");
-string_1.push_str(&string_2);
-println!("{}", string_1);
-```
-
-Die erste Zeile erstellt einen mutierbaren String namens `string_1`, der den Text "Hallo" enthält. Dann wird ein weiterer String namens `string_2` erstellt, der den Text "Welt" enthält. Mit `push_str()` wird nun ein Leerzeichen an `string_1` angehängt, gefolgt von `string_2`. Das Ergebnis des Programms ist "Hallo Welt".
-
-# Tief Tauchen
-
-Neben der `push_str()` Methode gibt es in Rust auch die `+` Operator Überladung, um Strings zu verketten. Dies funktioniert ähnlich wie bei numerischen Werten und erzeugt einen neuen String, anstatt den ursprünglichen zu ändern. Hier ist ein Beispielcode, der den `+` Operator verwendet:
+1. Die `+` Operator-Methode: Diese Methode verwendet den `+` Operator, um zwei Strings zusammenzufügen. Der `+` Operator ist in Rust definiert, um die ```add()``` Methode zu verwenden, die Strings verkettet. Hier ist ein Beispiel:
 
 ```Rust
-let string_1 = String::from("Hallo");
-let string_2 = String::from("Welt");
-let new_string = string_1 + " " + &string_2;
-println!("{}", new_string);
+let name = "Max";
+let greeting = "Hallo, ";
+let message = greeting + name;
+println!("{}", message);
 ```
 
-Dieser Code erzeugt den gleichen String "Hallo Welt" wie im vorherigen Beispiel, ändert aber `string_1` und `string_2` nicht. Außerdem gibt es in Rust auch die `format!()` Makro, das zur Formatierung von Strings verwendet werden kann. Es akzeptiert eine beliebige Anzahl von Argumenten und gibt einen formatierten String zurück. Hier ist ein Beispiel mit `format!()`:
+Die Ausgabe wäre: "Hallo, Max".
+
+2. Die `format!()`-Methode: Diese Methode ermöglicht es, mehrere Werte in eine String-Vorlage einzufügen und sie so zu kombinieren. Hier ist ein Beispiel:
 
 ```Rust
-let name = "Rust";
-let phrase = format!("Hallo, {}!", name);
-println!("{}", phrase);
+let name = "Max";
+let age = 25;
+let message = format!("Mein Name ist {} und ich bin {} Jahre alt.", name, age);
+println!("{}", message);
 ```
 
-Die Ausgabe dieses Codes ist "Hallo, Rust!".
+Die Ausgabe wäre: "Mein Name ist Max und ich bin 25 Jahre alt."
 
-# Siehe auch
+Es ist wichtig anzumerken, dass diese Methode die Werte nicht direkt in den String einfügt, sondern eine neue String-Instanz erstellt, die die eingesetzten Werte enthält.
 
-- [Offizielle Rust Dokumentation über String Verkettung](https://doc.rust-lang.org/std/string/struct.String.html#method.push_str)
-- [Rust By Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [The Rust Programming Language - Kapitel 8: Common Collections](https://doc.rust-lang.org/book/ch08-00-common-collections.html)
+## Tiefere Einblicke
+
+Es gibt verschiedene Ansätze, um Strings in Rust zu verketten, je nach Anwendungsfall und Leistungsoptimierung. Hier sind einige zusätzliche Informationen, die bei der Verwendung von Strings in Rust nützlich sein können:
+
+- Strings in Rust sind standardmäßig unveränderbar, was bedeutet, dass sie nach der Erstellung nicht mehr geändert werden können. Daher erstellt jeder Verkettungsvorgang eine neue String-Instanz, anstatt die ursprüngliche zu ändern.
+- Es ist auch möglich, mehrere Strings mit der `concat!()` Macro-Methode zu verketteten. Diese Methode funktioniert ähnlich wie die `format!()` Methode, aber sie ist typsicherer und kann zur Kompilierzeit optimiert werden.
+- Wenn die Leistung entscheidend ist, kann die Verwendung von Bibliotheken wie `StringBuilder` oder `StringBuffer` empfohlen werden, die eine optimierte und effizientere String-Verkettung ermöglichen.
+
+## Siehe auch
+
+- [Rust-Dokumentation zu String-Verkettung](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#using-hash-maps)
+- [Offizielle Rust-Website](https://www.rust-lang.org/)
+- [Rust-Lernmaterial auf Deutsch](https://wiki.openstreetmap.org/wiki/Rust#Lernmaterial)

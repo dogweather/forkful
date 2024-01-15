@@ -1,6 +1,7 @@
 ---
-title:                "Python: Lese kommandolinje-argumenter"
-simple_title:         "Lese kommandolinje-argumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "Python: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -11,47 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lese kommandolinje-argumenter er en viktig ferdighet for alle som ønsker å bli effektive Python-programmerere. Det gir deg muligheten til å interagere med programmene dine på en mer dynamisk måte og gjør det enklere å håndtere store og komplekse datasett.
+Har du noen gang lurt på hvordan du kan gjøre programmene dine mer interaktive? Vil du vite hvordan du kan endre oppførselen til et program uten å endre selve koden? Da bør du lære deg hvordan du kan lese og håndtere kommandolinje-argumenter i Python!
 
-## Hvordan
+## Slik gjør du det
 
-Prosessen med å lese kommandolinje-argumenter i Python er enkel og kan gjøres med bare noen få linjer med kode. Først må du importere sys-modulen, som lar deg få tilgang til argumentene som er gitt ved kjøring av programmet. Deretter kan du bruke funksjonen "sys.argv" for å få en liste over alle argumentene. Her er et eksempel på hvordan du kan lese et enkelt argument og skrive det ut:
+Det første du må gjøre er å importere sys-biblioteket i Python. Dette biblioteket gir tilgang til systemspesifikke funksjoner, blant annet kommandolinje-argumenter.
+
+```Python
+import sys
+```
+
+For å lese argumentene som er gitt når du kjører et program i kommandolinjen, kan du bruke sys.argv-listen. Denne listen inneholder alle argumentene, der det første argumentet er navnet på programmet.
+
+La oss si at du kjører programmet ditt slik: `python program.py argument1 argument2`
+
+Da vil sys.argv-listen inneholde følgende:
+
+```
+['program.py', 'argument1', 'argument2']
+```
+
+Du kan nå hente ut og bruke disse argumentene i koden din. Her er et eksempel på hvordan du kan skrive ut argumentene du har gitt til programmet:
 
 ```Python
 import sys
 
-navn = sys.argv[1]
-
-print("Hei " + navn)
+print("Argumentene du ga til programmet er:")
+print(sys.argv[1:])
 ```
 
-I eksempelet over bruker vi sys.argv[1] for å få tilgang til det første argumentet (indeksert som 1 i stedet for 0). Når du kjører programmet og gir et navn som argument, vil det bli skrevet ut en hilsen med navnet ditt.
+Output for dette eksemplet vil være:
+
+```
+Argumentene du ga til programmet er:
+['argument1', 'argument2']
+```
 
 ## Dypdykk
 
-For de som ønsker å lære mer om håndtering av kommandolinje-argumenter i Python, er det verdt å merke seg at du også kan bruke modulen "argparse". Dette gjør det mulig å legge til mer funksjonalitet, som å legge til flagg og parameterverdier for å tilpasse programmet ditt ytterligere.
-
-Når du bruker argparse, må du definere de ulike argumentene og deres tilhørende aksjoner. Du kan også legge til beskrivelser og standardverdier for hvert argument. Her er et eksempel på hvordan du kan bruke argparse for å lese to argumenter og utføre en enkel matematisk operasjon:
-
-```Python
-import argparse
-
-parser = argparse.ArgumentParser()
-
-parser.add_argument("tall1", type=int, help="Første tall")
-parser.add_argument("tall2", type=int, help="Andre tall")
-
-args = parser.parse_args()
-
-resultat = args.tall1 + args.tall2
-
-print("Resultat: " + str(resultat))
-```
-
-Når du kjører programmet og gir to tall som argumenter, vil resultatet av summen av tallene bli skrevet ut.
+Hvis du ønsker å gå dypere inn i dette emnet, kan du lese mer om hvordan du håndterer kommandolinje-argumenter i Python i dokumentasjonen til sys-modulen. Du kan også lære mer om hvordan du kan gi argumenter til et Python-program ved hjelp av argumentparser-modulen.
 
 ## Se også
 
-- Python's offisielle dokumentasjon om kommandolinje-argumenter: [https://docs.python.org/3/library/sys.html](https://docs.python.org/3/library/sys.html)
-- Tutorial om bruk av argparse: [https://realpython.com/command-line-interfaces-python-argparse/](https://realpython.com/command-line-interfaces-python-argparse/)
-- Eksempelkode og mer informasjon om hvordan du kan bruke kommandolinje-argumenter i Python: [https://www.tutorialspoint.com/python/python_command_line_arguments.htm](https://www.tutorialspoint.com/python/python_command_line_arguments.htm)
+- [Dokumentasjon for sys-modulen](https://docs.python.org/3/library/sys.html)
+- [Håndtering av kommandolinje-argumenter i Python](https://realpython.com/command-line-interfaces-python-argparse/)
+- [Argumentparser-modulen](https://docs.python.org/3/library/argparse.html)

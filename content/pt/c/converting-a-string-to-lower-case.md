@@ -1,5 +1,6 @@
 ---
-title:                "C: Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "C: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C"
 category:             "C"
@@ -10,64 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
-
-Se você é um programador iniciante ou experiente, provavelmente já se deparou com a necessidade de converter strings para letras minúsculas em algum momento. Há várias razões pelas quais isso pode ser importante em um projeto de programação, desde a formatação de dados até o processamento de entrada do usuário. Dominar essa habilidade pode facilitar muito o seu trabalho e melhorar a eficácia do seu código.
+Se você já teve a necessidade de usar strings em seu código C e se deparou com a diferença de capitalização entre elas, provavelmente já pensou em converter todas para o mesmo formato. Neste artigo, você vai aprender como fazer isso de forma simples e eficiente.
 
 ## Como Fazer
+Para iniciar o processo de conversão de uma string para letras minúsculas, você precisa utilizar a função `tolower` da biblioteca padrão `ctype.h`. Essa função recebe como parâmetro um caractere e retorna o seu equivalente em minúsculo. Então, para converter uma string completa, basta percorrê-la letra por letra e aplicar a função.
 
-Há várias maneiras diferentes de converter uma string para letras minúsculas em C. Aqui, vamos mostrar dois exemplos utilizando a função `tolower()` da biblioteca padrão `<ctype.h>` e uma solução usando loops e condicionais.
+Veja um exemplo de código abaixo:
 
-#### Utilizando `tolower()`
-
-````C
-#include <stdio.h> 
-#include <ctype.h> 
-
-int main() { 
-    char palavra[] = "CASA"; 
-
-    for (int i = 0; palavra[i] != '\0'; i++) { 
-        palavra[i] = tolower(palavra[i]); 
-    } 
-
-    printf("%s", palavra); 
-    // saída será "casa"
-    
-    return 0; 
-}
-````
-
-#### Com loops e condicionais
-
-````C
-#include <stdio.h> 
+```
+#include <stdio.h>
+#include <ctype.h>
 
 int main() {
-    char palavra[] = "CASA"; 
+  char palavra[] = "ExemploDeString";
+  int i;
 
-    for (int i = 0; palavra[i] != '\0'; i++) {
-        if (palavra[i] >= 'A' && palavra[i] <= 'Z') { 
-            palavra[i] = palavra[i] + 32; 
-        } 
-    } 
+  for(i = 0; palavra[i]; i++) {
+    palavra[i] = tolower(palavra[i]);
+  }
 
-    printf("%s", palavra); 
-    // saída será "casa"
-    
-    return 0; 
+  printf("String em letras minúsculas: %s", palavra); 
+  // saída: "exemplodestring"
+
+  return 0;
 }
-````
+```
 
-Este é apenas um exemplo básico de como isso pode ser feito e é importante lembrar que há várias outras maneiras de alcançar o mesmo resultado. É importante entender a lógica por trás da conversão e escolher a abordagem que melhor se adapta ao seu projeto.
+A função `tolower` também pode ser utilizada em conjunto com outras funções de manipulação de strings, como `strlen` e `strcpy`, para realizar tarefas mais complexas. Além disso, é importante lembrar de sempre tratar caracteres especiais e acentos, para evitar possíveis erros na conversão.
 
-## Mergulho Profundo
+## Deep Dive
+Para uma conversão mais precisa, é interessante ter conhecimento sobre a tabela ASCII, pois é ela que define a ordem e representação dos caracteres em um computador. Por exemplo, a letra "A" está no valor 65 e a letra "a" está no valor 97. Com isso em mente, podemos entender melhor a função `tolower`, que retorna o valor correspondente da letra em minúsculo, de acordo com a tabela ASCII.
 
-Agora, vamos dar uma olhada mais profunda no processo de conversão de strings para letras minúsculas. Linguagens de programação usam códigos ASCII para representar caracteres. Para letras maiúsculas, os códigos variam de 65 a 90, enquanto que para letras minúsculas eles vão de 97 a 122. Portanto, simplesmente adicionando 32 ao código ASCII da letra maiúscula, podemos convertê-la para minúscula. No entanto, se a string contiver caracteres especiais ou acentos, pode ser necessário utilizar bibliotecas adicionais para garantir a correta conversão.
-
-Outra coisa importante a se considerar é o impacto que a conversão pode ter no desempenho do seu código, especialmente se a string for longa. Em alguns casos, pode ser mais eficiente trabalhar com strings em maiúsculas e fazer a conversão apenas quando necessário.
+Além disso, é possível utilizar a função `toupper` para converter uma string para letras maiúsculas, seguindo o mesmo raciocínio.
 
 ## Veja Também
+Para mais informações sobre strings e funções de manipulação de strings em C, confira os links abaixo:
 
-- [Conversão de Strings para Maiúsculas em C](https://www.programiz.com/c-programming/examples/uppercase-string)
-- [Manipulação de Strings em C](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-library-function/)
-- [Documentação da função `tolower()`](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Documentação oficial sobre a função tolower](https://www.cplusplus.com/reference/cctype/tolower/)
+- [Explicação sobre a tabela ASCII](https://www.ascii-code.com/)
+- [Tutorial sobre manipulação de strings em C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)

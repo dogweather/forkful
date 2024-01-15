@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Comparando duas datas"
+title:                "Comparando duas datas"
+html_title:           "Haskell: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,36 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Comparar Duas Datas
+## Por que
 
-Ao escrever programas em Haskell, muitas vezes surge a necessidade de comparar duas datas. Pode ser para verificar qual data é a mais recente ou para determinar a diferença entre duas datas. Independentemente do motivo, é importante entender como comparar datas em Haskell para escrever um código eficiente e livre de erros.
+Se você é um programador em Haskell, provavelmente já precisou comparar duas datas em algum momento de seu desenvolvimento. Comparar duas datas é útil para diversas aplicações, como por exemplo, verificar se uma data está antes ou depois de outra, calcular a diferença entre duas datas ou verificar se uma data é igual a outra.
 
 ## Como Fazer
 
-Comparar duas datas em Haskell é bastante simples. Primeiro, é necessário importar o módulo `Data.Time` que contém as funções necessárias para lidar com datas. Em seguida, podemos criar duas variáveis contendo as datas a serem comparadas, utilizando o formato `UTCTime`. Por exemplo:
+Comparar duas datas em Haskell é bastante simples e podemos utilizar algumas funções básicas da linguagem para isso. Vamos ver alguns exemplos:
 
 ```
-import Data.Time
+-- Verificar se uma data está antes de outra
+compareDates :: (Int, Int, Int) -> (Int, Int, Int) -> Bool
+compareDates (d1, m1, y1) (d2, m2, y2) = 
+  if y1 == y2
+    then if m1 == m2
+      then if d1 < d2
+        then True
+        else False
+      else if m1 < m2
+        then True
+        else False
+    else if y1 < y2
+      then True
+      else False
 
-dia_1 = UTCTime (fromGregorian 2020 10 10) (secondsToDiffTime 0)
-dia_2 = UTCTime (fromGregorian 2020 10 11) (secondsToDiffTime 0)
+-- Verificar se uma data é igual a outra
+checkIfEqual :: (Int, Int, Int) -> (Int, Int, Int) -> Bool
+checkIfEqual date1 date2 = date1 == date2
+
+-- Calcular a diferença em dias entre duas datas
+diffDates :: (Int, Int, Int) -> (Int, Int, Int) -> Int
+diffDates (d1, m1, y1) (d2, m2, y2) = abs (dateToDays (d1, m1, y1) - dateToDays (d2, m2, y2)) where
+  dateToDays :: (Int, Int, Int) -> Int
+  dateToDays (date, month, year) = year * 365 + month * 30 + date
 ```
 
-Com as duas datas criadas, podemos utilizar as funções `compare` e `diffUTCTime` para compará-las e determinar a diferença entre elas, respectivamente. Por exemplo:
+Aqui utilizamos a função `compareDates` para verificar se uma data está antes de outra, a função `checkIfEqual` para verificar se duas datas são iguais e a função `diffDates` para calcular a diferença em dias entre duas datas. Podemos utilizar essas funções em nosso código para realizar comparações de datas de forma rápida e eficiente.
 
-```
-compare dia_1 dia_2  -- Resultado: LT (menor que)
-diffUTCTime dia_1 dia_2  -- Resultado: 86400.0 (1 dia em segundos)
-```
+## Deep Dive
 
-É importante notar que a função `diffUTCTime` retorna a diferença em segundos, por isso é necessário fazer a conversão para o formato desejado (dias, horas, minutos, etc).
+Comparar duas datas em Haskell pode parecer simples, mas existem algumas coisas que devemos ter em mente. Primeiramente, é importante ressaltar que datas são apenas tuplas de três números inteiros, e Haskell permite que utilizemos pattern matching para extrair esses valores facilmente.
 
-## Mergulho Profundo
+Além disso, é importante trabalharmos com as datas de forma consistente, ou seja, sempre utilizar o formato (d, m, y) para representá-las, onde d é o dia, m é o mês e y é o ano. Isso nos ajuda a evitar erros de comparação e cálculos incorretos.
 
-Em Haskell, datas são representadas pelo tipo `UTCTime`, que contém o dia e o horário em segundos. Portanto, a função `compare` compara primeiramente o dia e, em caso de empate, compara os horários. Já a função `diffUTCTime` simplesmente subtrai o horário da primeira data pelo horário da segunda data para obter a diferença em segundos. Além disso, é possível utilizar outros formatos de data, como `ZonedTime` e `LocalTime`, dependendo da necessidade do programa. Para mais detalhes sobre a biblioteca `Data.Time`, consulte a documentação oficial [aqui](https://hackage.haskell.org/package/time/docs/Data-Time.html).
+Outro ponto importante é a utilização da função `abs` para calcular a diferença em dias entre duas datas. Isso é necessário porque, caso a primeira data seja maior do que a segunda, o resultado será um valor negativo, o que pode gerar erro em nossos códigos caso não tratemos esse valor corretamente.
 
-## Veja Também
+Com essas dicas em mente, você estará pronto para utilizar a comparação de datas em seu código Haskell de forma eficiente e sem complicações.
 
-- [Documentação oficial do módulo `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial sobre como lidar com datas em Haskell](https://www.haskellforall.com/2019/04/haskell-dates.html)
-- [Comparando datas em outras linguagens de programação](https://www.guru99.com/date-time-and-epoch-time.html)
+## Veja também
+
+- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+- [Tutorial de Haskell para iniciantes](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
+- [Exemplos práticos de comparação de datas em Haskell](https://wiki.haskell.org/Comparing_dates_and_times)

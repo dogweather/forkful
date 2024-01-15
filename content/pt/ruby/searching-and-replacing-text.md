@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Buscar e substituir texto"
+html_title:           "Ruby: Buscar e substituir texto"
+simple_title:         "Buscar e substituir texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
-
-Há momentos em que você precisa fazer alterações em todo o texto de um arquivo, seja para corrigir erros ortográficos ou para substituir uma expressão por outra. Fazer isso manualmente pode ser tedioso e demorado, mas felizmente, existem maneiras de automatizar esse processo através da programação.
+## Por que
+Há muitas situações em que precisamos fazer alterações específicas em um texto. Seja corrigindo um erro de digitação ou atualizando informações, realizar buscas e substituições de texto é uma tarefa comum na programação.
 
 ## Como Fazer
-
-Em Ruby, podemos usar o método `.gsub()` para realizar a busca e substituição de texto. Este método aceita dois argumentos: o primeiro é a expressão que desejamos substituir e o segundo é a nova expressão que será usada no lugar. Vamos dar uma olhada em um exemplo:
-
-```Ruby
-texto = "Estou aprendendo Ruby programação!"
-novo_texto = texto.gsub("aprendendo", "explorando")
-puts novo_texto
-```
-
-O código acima irá resultar em "Estou explorando Ruby programação!". Podemos ver que a palavra "aprendendo" foi substituída por "explorando". Mas e se quisermos substituir todas as ocorrências de uma palavra em uma string? Podemos usar uma expressão regular dentro do método `.gsub()` para isso. Por exemplo:
+Para realizar buscas e substituições de texto em Ruby, podemos usar o método `.gsub`. Este método recebe dois argumentos: o texto que queremos substituir e o texto que será usado como substituto. Por exemplo, se quisermos substituir todas as ocorrências de "cachorro" por "gato" em uma string, podemos fazer dessa forma:
 
 ```Ruby
-texto = "A vida é muito curta para aprender uma única linguagem de programação."
-novo_texto = texto.gsub(/aprender/, "explorar")
-puts novo_texto
+texto = "Eu tenho um cachorro, ele se chama Max."
+puts texto.gsub("cachorro", "gato")
 ```
 
-Agora, todas as ocorrências da palavra "aprender" serão substituídas por "explorar". Além disso, podemos usar a flag `i` para tornar a substituição case-insensitive, ou seja, ela irá substituir tanto "aprender" quanto "Aprender". Assim:
+Neste exemplo, a saída será: "Eu tenho um gato, ele se chama Max." Note que o método `.gsub` substitui todas as ocorrências encontradas.
+
+Podemos também usar expressões regulares para realizar buscas mais precisas. Por exemplo, se quisermos substituir apenas as vogais por asteriscos, poderíamos utilizar o seguinte código:
 
 ```Ruby
-novo_texto = texto.gsub(/aprender/i, "explorar")
+texto = "Olá, mundo!"
+puts texto.gsub(/[aeiou]/, "*")
 ```
 
-## Mergulho Profundo
+A saída seria: "*lá, m*nd*!". Como podemos ver, o método `.gsub` funciona de forma muito versátil e pode ser utilizado de diversas maneiras para realizar buscas e substituições de texto.
 
-Além do método `.gsub()`, Ruby também possui outros métodos que nos permitem buscar e substituir texto, como o `.sub()`, que substitui apenas a primeira ocorrência encontrada, e o `.scan()`, que nos permite procurar por padrões e retornar uma lista com os resultados encontrados. Existem também gemas (ou gems) como o `Stringex` que fornecem ainda mais funcionalidades para tarefas de busca e substituição de texto.
+## Deep Dive
+O método `.gsub` é muito poderoso, mas é importante entender como ele funciona por baixo dos panos. Ele utiliza expressões regulares para encontrar as ocorrências do texto a ser substituído e, em seguida, utiliza o texto substituto para realizar a troca.
+
+Além disso, é importante ressaltar que o método `.gsub` retorna uma nova string com as alterações realizadas, preservando a string original. Se quisermos modificar a string original, podemos utilizar o método `.gsub!`, com o ponto de exclamação no final.
 
 ## Veja Também
-
-- [Documentação do método `.gsub()` em Ruby](https://ruby-doc.org/core-2.5.1/String.html#method-i-gsub)
-- [Como usar Expressões Regulares em Ruby](https://www.regexpedia.com/ruby)
-- [Gema Stringex para manipulação de strings em Ruby](https://github.com/svenfuchs/stringex)
+- [Documentação do método gsub](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
+- [Expressões Regulares em Ruby](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)

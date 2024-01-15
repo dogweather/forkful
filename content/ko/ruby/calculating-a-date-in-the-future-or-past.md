@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래나 과거에서의 날짜 계산하기"
+html_title:           "Ruby: 미래나 과거에서의 날짜 계산하기"
+simple_title:         "미래나 과거에서의 날짜 계산하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,29 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-날짜를 미래나 과거로 계산하는 것에 참여하려면 왜? 매우 유용하고 간단한 방법입니다. 생일이나 기념일, 예약한 여행 날짜 등을 계산할 수 있습니다.
 
-## 방법
+날짜를 미래나 과거로 계산하는 것에 참여하는 이유는 다양합니다. 예를 들어, 이번 달의 마감일을 계산하거나 생일을 알아내는 등 일상 생활에서 유용하게 활용할 수 있습니다.
+
+## 사용 방법
+
 ```Ruby
-# 미래의 날짜 계산하기
-future = Time.now + (60*60*24*7) # 현재 시간보다 일주일 후 날짜 계산
-puts future.strftime("%Y년 %m월 %d일") # 연, 월, 일 포맷으로 출력
+require 'date'
 
-# 과거의 날짜 계산하기
-past = Time.now - (60*60*24*30) # 현재 시간보다 30일 전 날짜 계산
-puts past.strftime("%Y년 %m월 %d일") # 연, 월, 일 포맷으로 출력
+# 오늘 날짜 구하기
+today = Date.today
+
+# 미래 날짜 계산하기
+future_date = today + 30
+
+# 과거 날짜 계산하기
+past_date = today - 7
+
+puts "오늘 날짜는 #{today}, 30일 후는 #{future_date}, 7일 전은 #{past_date}입니다."
 ```
 
-출력:
+위의 예제 코드를 실행하면 아래와 같은 결과가 나옵니다.
+
 ```
-2019년 11월 18일
-2019년 10월 20일
+오늘 날짜는 2021-08-21, 30일 후는 2021-09-20, 7일 전은 2021-08-14입니다.
 ```
+
+위의 코드에서는 Ruby의 `Date` 모듈을 활용하여 오늘 날짜를 구한 뒤, `+`나 `-` 연산자를 이용하여 미래나 과거 날짜를 계산하는 방법을 보여주고 있습니다.
 
 ## 딥 다이브
-Ruby의 Time 클래스는 날짜와 시간을 쉽게 계산할 수 있도록 많은 메소드를 제공합니다. 예를 들어, `Time.now`는 현재 날짜와 시간을 보여주고, `strftime("%Y년 %m월 %d일")`는 원하는 포맷으로 날짜를 출력해줍니다. 또한, 덧셈과 뺄셈을 사용하여 미래나 과거 날짜를 계산할 수 있습니다.
 
-## 알아두면 유용한 링크들
-[Time 클래스 문서](https://ruby-doc.org/core-2.6.5/Time.html) <br>
-[Ruby에서 날짜와 시간 다루기](https://ruby-doc.org/core-2.6.5/DateTime.html) <br>
-[광고없이 Ruby 프로그래밍 배우기](https://www.learnruby.online/)
+날짜를 계산하는 방법은 Ruby에서 매우 간단합니다. `Date` 모듈을 사용하면 날짜를 다루는 다양한 기능을 쉽게 활용할 수 있습니다. 또한 `DateTime` 모듈을 사용하면 시간까지 함께 계산하는 것도 가능합니다. Ruby는 이와 같은 모듈들을 통해 날짜와 시간을 다루는 기능을 완벽하게 제공하고 있습니다.
+
+## 참고 문서
+
+- [Ruby 공식 문서 - 날짜와 시간 다루기](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/index.html)
+- [Ruby Guide - 날짜와 시간 계산하기](https://www.rubyguides.com/2019/02/ruby-date-time-class/)

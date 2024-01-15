@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "Javascript: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -9,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att arbeta med JSON i Javascript kan vara en användbar färdighet för utvecklare som vill hantera data på ett effektivt, strukturerat och läsbart sätt. JSON, som står för JavaScript Object Notion, är ett populärt format för att lagra och överföra data mellan applikationer och webbplatser.
+JSON (Javascript Object Notation) är ett vanligt format för att utbyta och spara data i webbutveckling. Det är lättläst för både människor och datorer, vilket gör det till ett populärt val för att hantera data i webbapplikationer och API:er. Att lära sig hur man arbetar med JSON kan hjälpa dig att förstå hur data skickas och tas emot på internet.
 
 ## Hur man gör
 
-För att skapa och använda JSON i Javascript behöver du först förstå dess syntax. JSON är i grunden en textbaserad datastruktur som består av ett antal värden och nycklar. Värdena kan vara av olika typer, som strängar, tal eller booleska värden, medan nycklarna är de namn som refererar till varje värde.
-
-För att skapa en JSON-sträng kan du använda formatet ```JSON.stringify()``` och ange dina värden och nycklar som parametrar. Till exempel:
+Att arbeta med JSON är relativt enkelt i Javascript. För att använda JSON måste du först konvertera ett Javascript-objekt till JSON-format, använda JSON.stringify() funktionen. Här är ett exempel:
 
 ```Javascript
-let obj = {
-  name: "Lisa",
-  age: 25, 
+let person = {
+  name: "Anna",
+  age: 25,
   city: "Stockholm"
 };
 
-let jsonStr = JSON.stringify(obj);
-console.log(jsonStr);
+let personJson = JSON.stringify(person);
 ```
 
-Detta kommer att ge följande output:
-
-```
-{"name":"Lisa","age":25,"city":"Stockholm"}
-```
-
-För att sedan kunna använda JSON-data i ditt Javascript-program kan du använda ```JSON.parse()``` för att omvandla den till ett vanligt Javascript-objekt. Till exempel:
+I det här exemplet konverterar vi ett Javascript-objekt som representerar en person till JSON-format och sparar sedan resultatet i en variabel. Nu kan vi skicka personJson variabeln över internet och den kommer att visas som JSON-data på mottagarsidan. För att konvertera tillbaka till ett Javascript-objekt, använd JSON.parse() funktionen. Här är ett annat exempel:
 
 ```Javascript
-let jsonObj = JSON.parse(jsonStr);
-console.log(jsonObj.name); // Output: Lisa
+let personObj = JSON.parse(personJson);
+console.log(personObj.name); // output: Anna
 ```
 
-På liknande sätt kan du också lägga till, uppdatera eller ta bort värden från ditt JSON-objekt genom att använda dess nycklar.
+Detta exempel visar hur vi kan konvertera JSON-data till ett Javascript-objekt igen och komma åt dess värden genom att använda det angivna nyckelordet.
 
 ## Djupdykning
 
-Det finns många andra funktioner och metoder som du kan använda dig av när du arbetar med JSON i Javascript. Till exempel kan du använda ```JSON.stringify()``` med en annan parameter, ```replacer```, för att välja vilka värden som ska läggas till i din JSON-sträng. Du kan också använda ```JSON.parse()``` med argumentet ```reviver``` för att direkt konvertera din JSON-data till ett Javascript-objekt med önskad typ.
+JSON stöder flera olika datatyper, inklusive strängar, nummer, boolean, arrayer och objekt. Det tillåter också nästlade objekt och arrayer, vilket gör det möjligt att skapa mer komplexa datastrukturer. Det är dock viktigt att vara medveten om att egenskaperna i ett JSON-objekt måste vara omgivna av citatmarkeringar, annars kommer konverteringen att misslyckas. En annan viktig aspekt att tänka på är att JSON inte stöder kommentarer, så du måste se till att ta bort eventuella kommentarer från din data innan du konverterar den.
 
-Det är också viktigt att känna till att JSON inte tillåter värden av typen undefined och det kan orsaka felaktigheter om du inte hanterar det korrekt. Du kan använda ```undefined``` för att ta bort en egenskap från ditt JSON-objekt, men det kommer att resultera i att egenskapen inte finns med alls i din resulterande JSON-sträng.
+JSON är också fördelaktigt eftersom det är plattformsoberoende, vilket innebär att det fungerar på alla moderna webbläsare och även på server-sidan med hjälp av Node.js. Det är också lätt att läsa och skriva, vilket gör det enkelt att arbeta med JSON-data även för nybörjare.
 
-## Se också
+## Se även
 
-- [MDN - JSON](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [W3Schools - JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-- [JavaScript.info - JSON](https://javascript.info/json)
+- [JSON.org](https://www.json.org/json-en.html)
+- [MDN - JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [W3Schools - JSON](https://www.w3schools.com/js/js_json_intro.asp)

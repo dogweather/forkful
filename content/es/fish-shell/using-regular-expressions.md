@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Utilizando expresiones regulares"
+title:                "Utilizando expresiones regulares"
+html_title:           "Fish Shell: Utilizando expresiones regulares"
 simple_title:         "Utilizando expresiones regulares"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,45 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué utilizar expresiones regulares en Fish Shell
+## Por qué
 
-Las expresiones regulares son una herramienta útil para manipular y buscar texto de manera eficiente en cualquier lenguaje de programación. En Fish Shell, son especialmente útiles para crear comandos y scripts poderosos que pueden trabajar con patrones complejos de texto.
+Si eres un programador que trabaja en la línea de comandos, es probable que hayas utilizado regular expressions (expresiones regulares) antes. Estas poderosas herramientas te permiten realizar búsquedas y manipular cadenas de texto de una manera muy precisa y eficiente. Aprender a utilizar las expresiones regulares en Fish Shell te ahorrará tiempo y te hará más productivo en tus tareas diarias.
 
-## Cómo utilizar expresiones regulares en Fish Shell
+## Cómo hacerlo
 
-Las expresiones regulares en Fish Shell se escriben entre llaves: `{expresión}`. Esto indica a Fish que debe tratar todo lo que está dentro de las llaves como una expresión regular. Por ejemplo, para buscar palabras que empiecen con una vocal en un archivo de texto, podemos usar:
+Utilizar expresiones regulares en Fish Shell es sencillo. Simplemente sigue estos pasos:
 
-```
-Fish Shell: grep -E '{[aeiou][a-z]*}' archivo.txt
-Retroceder: grep -E '{[aeiou][a-z]*}' archivo.txt
-```
+1. Abre tu terminal y ejecuta `fish` para activar Fish Shell.
+2. Escribe `man fish` para acceder al manual de Fish Shell y busca la sección sobre expresiones regulares.
+3. Ahora que tienes una idea de cómo funcionan las expresiones regulares en Fish Shell, ¡es hora de probarlas! En los bloques de código siguientes, te mostraré algunos ejemplos de cómo utilizarlas.
 
-Esto imprimirá todas las palabras que empiezan con una vocal seguidas por una o más letras en el archivo `archivo.txt`.
+```Fish Shell
+# Buscar el patrón "hello" en una cadena de texto
+echo "Hola amigos, hello world" | grep -o "hello"
 
-Además, Fish Shell también ofrece la opción `-E`, que nos permite usar etiquetas como `:alpha:` o `:digit:` para representar diferentes tipos de caracteres. Por ejemplo:
-
-```
-Fish Shell: grep -E '{:[digit:]+:[digit:]}' archivo.txt
-Retroceder: grep -E '{:[digit:]+:[digit:]}' archivo.txt
+# Resultado: hello
 ```
 
-Esto imprimirá todas las cadenas que tengan un número seguido por otro número en el archivo `archivo.txt`.
+```Fish Shell
+# Reemplazar el primer "hello" por "hola"
+echo "Hola amigos, hello world" | sed "s/hello/hola/"
 
-## Profundizando en el uso de expresiones regulares en Fish Shell
+# Resultado: Hola amigos, hola world
+```
 
-Las expresiones regulares pueden ser bastante complejas, pero ofrecen una gran flexibilidad para buscar y manipular patrones de texto. Aquí hay algunos conceptos clave a tener en cuenta cuando se trabaja con expresiones regulares en Fish Shell:
+```Fish Shell
+# Reemplazar todas las vocales por "X"
+echo "Este es un texto de ejemplo." | sed "s/[aeiou]/X/g"
 
-- El punto (`.`) representa cualquier caracter.
-- El asterisco (`*`) representa cualquier cantidad de repeticiones del caracter anterior.
-- El signo más (`+`) representa una o más repeticiones del caracter anterior.
-- El signo de interrogación (`?`) representa cero o una repetición del caracter anterior.
-- Los paréntesis (`()`) permiten agrupar y combinar diferentes patrones.
-- Las llaves (`{}`) permiten especificar repeticiones de un patrón.
+# Resultado: XstX Xs Xn tXxtX dX XjXmplX.
+```
 
-Para obtener más información sobre cómo utilizar expresiones regulares en Fish Shell, se recomienda consultar la documentación oficial y practicar con diferentes ejemplos.
+## Más información
+
+Ahora, profundicemos un poco más en el uso de las expresiones regulares en Fish Shell. Una de las características únicas de Fish Shell es que utiliza el lenguaje de patrones de Unix (UPattern) en lugar del lenguaje de patrones de texto comúnmente utilizado en otros shells. Esto significa que las expresiones regulares en Fish Shell tienen una sintaxis ligeramente diferente.
+
+Algunas cosas a tener en cuenta al utilizar expresiones regulares en Fish Shell:
+
+- Los metacaracteres comodín como `*` y `?` no funcionan en expresiones regulares. En su lugar, se utilizan los metacaracteres `+` y `.`.
+- No es necesario utilizar comillas en las expresiones regulares.
+- Puedes utilizar `[[:alpha:]]` para hacer coincidir letras y `[[:digit:]]` para hacer coincidir números.
+- Puedes utilizar `$1`, `$2`, etc. para referirte a los grupos de captura en la sustitución de texto.
+
+¡Experimenta con diferentes patrones y verás lo poderosas que son las expresiones regulares en Fish Shell!
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell sobre expresiones regulares](https://fishshell.com/docs/current/cmds/grep.html)
-- [Tutorial interactivo de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/cmds/grep.html)
-- [Guía rápida para expresiones regulares en Fish Shell](https://fishshell.com/docs/current/cmds/grep.html)
+- [Página de manual de Fish Shell - Sección de expresiones regulares](https://fishshell.com/docs/current/cmds/man.html#regexp-regular-expression-syntax)
+- [Página de manual de Unix - Sección sobre el lenguaje de patrones](http://man7.org/linux/man-pages/man7/regex.7.html)
+- [Guía de expresiones regulares en Computer Hope](https://www.computerhope.com/unix/regex.htm)

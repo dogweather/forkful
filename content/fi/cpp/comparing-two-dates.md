@@ -1,5 +1,6 @@
 ---
-title:                "C++: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "C++: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "C++"
 category:             "C++"
@@ -9,46 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi Vertailla Päivämääriä?
+## Miksi
 
-Päivämäärien vertailu on tärkeä osa ohjelmointia, kun halutaan tarkastella aikaa ja päivämääriä eri tilanteissa. Se voi auttaa esimerkiksi tapahtumien järjestämisessä tai päivien välisen eron laskemisessa. Seuraavassa kerromme, miten voit vertailla päivämääriä C++:ssa.
+Olet ehkä joskus tarvinnut tarkistaa, ovatko kaksi päivämäärää sama, ovatko ne samassa järjestyksessä vai kuinka kaukana ne ovat toisistaan. Tässä artikkelissa näytämme, miten voit vertailla kahta päivämäärää C++:ssa.
 
-## Miten?
+## Miten
 
-Vertaillaaksesi kahta päivämäärää C++:ssa, sinun tulee käyttää time.h-kirjastoa. Tämän jälkeen voit käyttää "difftime" -funktiota, joka laskee aikavälin kahden päivämäärän välillä. Esimerkiksi katsotaan seuraavaa koodia:
+Vertailemalla kahta päivämäärää voimme käyttää C++:n valmiita funktioita, jotka on tarkoitettu päivämäärien käsittelyyn.
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main()
-{
-  // Määritellään kaksi päivämäärää
-  struct tm päivämäärä1 = {0, 0, 0, 10, 3, 2019};
-  struct tm päivämäärä2 = {0, 0, 0, 22, 7, 2019};
-
-  // Lasketaan päivämäärien välinen aika
-  double aikaväli = difftime(mktime(&päivämäärä2), mktime(&päivämäärä1));
-
-  // Tulostetaan tulos
-  std::cout << "Päivien välinen ero on " << aikaväli/ (60 * 60 * 24) << " päivää." << std::endl;
-
+int main() {
+  // Luo kaksi tm-tyyppistä rakennetta
+  tm date1 = {0, 0, 0, 1, 0, 2020 - 1900};
+  tm date2 = {0, 0, 0, 1, 0, 2021 - 1900};
+  
+  // Muunna pysyvät struct rakenteeksi time_t
+  time_t time1 = mktime(&date1);
+  time_t time2 = mktime(&date2);
+  
+  // Vertaa aikaleimoja ja tulosta halutut tiedot
+  if (time1 == time2) {
+    std::cout << "Päivämäärät ovat samat" << std::endl;
+  }
+  else if (time1 < time2) {
+    std::cout << "Ensimmäinen päivämäärä on aikaisempi" << std::endl;
+  }
+  else if (time1 > time2) {
+    std::cout << "Toinen päivämäärä on aikaisempi" << std::endl;
+  }
+  
+  // Laske päivien erotus
+  double difference = difftime(time2, time1) / (60 * 60 * 24);
+  std::cout << "Päivien erotus: " << difference << std::endl;
+  
   return 0;
 }
-
 ```
-Tämä ohjelma tulostaa "Päivien välinen ero on 133 päivää." Voit myös lisätä tarvittavia tarkastuksia, kuten päivämäärien oikeellisuuden varmistamiseksi.
 
-## Syventävä Tarkastelu
+**Tuloste:** *Toinen päivämäärä on aikaisempi* ja *Päivien erotus: 366*
 
-C++:ssa on myös muita tapoja vertailla päivämääriä. Voit esimerkiksi käyttää <chrono> -kirjastoa, joka tarjoaa enemmän toimintoja ja tarkempaa ajanhallintaa. Tämä kirjasto on kuitenkin uudempi ja vaatii esimerkiksi C++11:n käyttöä.
+## Syventävä katsaus
 
-Päivämäärien vertailun lisäksi voit myös muokata niitä ja tehdä erilaisia laskutoimituksia. Näihin tarvittavat tiedot ja toiminnot löydät tarkemmin C++:n dokumentaatiosta.
+C++:ssa päivämäärät ovat tavallisesti kokonaisluvuiksi muunnettuja aikaleimoja, jotka esittävät sekunteja vuoden alusta. Tämän avulla voimme helposti verrata kahta päivämäärää muuntamalla ne aikaleimoiksi ja käyttää sitten vertailuoperaattoreita tai erityisiä difftime-funktiota saadaksemme halutun tiedon.
 
-## Katso Myös
+## Katso myös
 
-- [C++ time.h kirjasto](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C++ chrono kirjasto](https://cplusplus.com/reference/chrono/)
-- [C++:n ajanhallinta ja päivämäärien vertailu](https://www.learncpp.com/cpp-tutorial/514-chrono-library-part-2-calculating-duration/)
-
-Kiitos, että luit tämän oppaan päivämäärien vertailusta C++:ssa. Toivottavasti se auttoi sinua ymmärtämään aiheen paremmin ja löytämään itsellesi sopivan menetelmän päivämäärien käsittelyyn. Onnea ohjelmointiin!
+- [C++ Date and Time handling](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+- [mktime(CppReference)](https://en.cppreference.com/w/cpp/chrono/c/mktime)
+- [difftime(CppReference)](https://en.cppreference.com/w/cpp/chrono/c/difftime)

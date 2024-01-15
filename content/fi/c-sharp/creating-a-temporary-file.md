@@ -1,5 +1,6 @@
 ---
-title:                "C#: Luodaan väliaikainen tiedosto"
+title:                "Luodaan väliaikainen tiedosto"
+html_title:           "C#: Luodaan väliaikainen tiedosto"
 simple_title:         "Luodaan väliaikainen tiedosto"
 programming_language: "C#"
 category:             "C#"
@@ -9,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikaistiedosto?
+## Miksi
+Temporary filejen luominen on hyödyllistä tilanteissa, joissa halutaan väliaikaisesti tallentaa tai käsitellä tietoja ohjelmassa. Tämä voi auttaa välttämään pysyvien muutosten tekemistä, mikäli tiedot eivät ole lopullisia tai tarpeeksi tarkkoja.
 
-Luodaan väliaikaistiedostoja usein silloin, kun tarvitaan tilapäistä tallennustilaa ohjelman suorituksen aikana. Tämä voi olla esimerkiksi tilanne, jossa ohjelman täytyy käsitellä suurta määrää dataa ja tarvitsee väliaikaisen tallennustilan sen väliaikaiseen käsittelyyn.
-
-## Kuinka luoda väliaikaistiedosto C#:ssa
-
-Käyttämällä System.IO.Path.GetTempFileName () metodia, voimme helposti luoda väliaikaistiedoston C#:ssa. Alla näet esimerkin, miten tämä tehdään:
+## Kuinka
+Voidaksesi luoda temporary filen C#-ohjelmassa, käytä "System.IO.Path.GetTempFileName()" -metodia ja anna sille haluttu nimi parametrinä. Tämä metodi luo tiedoston väliaikaisessa hakemistossa ja palauttaa sen polun kutsujalle.
 
 ```C#
-string tempFile = Path.GetTempFileName();
+string tempFilePath = System.IO.Path.GetTempFileName("tilapainen.txt");
+Console.WriteLine("Temporary file created at: " + tempFilePath);
 
-Console.WriteLine("Luotu väliaikaistiedosto: " + tempFile);
+// Output:
+// Temporary file created at: C:\Users\<username>\AppData\Local\Temp\tilapainen.txt
 ```
-Tämän koodin suorittamisen jälkeen näet konsolissa tulosteen, jossa kerrotaan luodun väliaikaistiedoston nimi.
 
-## Syvälle väliaikaistiedostojen luomiseen
+Oletuksena temporary filet poistetaan automaattisesti, kun ne eivät enää ole käytössä. Mikäli haluat poistaa tiedoston manuaalisesti, voit käyttää "System.IO.File.Delete()" -metodia ja antaa sille temporary filen polun parametrinä.
 
-Väliaikaistiedostoja luodessa on tärkeää huomioida niiden oikea käyttö ja turvallisuus. Väliaikaistiedostot eivät nimittäin ole pysyviä, vaan ne poistetaan automaattisesti, kun ohjelma suljetaan. Tämän takia niiden käyttöön liittyy riskejä, joiden välttämiseksi kannattaa käyttää esimerkiksi using-lausetta varmistamaan tiedoston turvallinen poistaminen.
+## Deep Dive
+Temporary filejen luominen on usein tarpeellista silloin, kun ohjelma käsittelee suurta määrää dataa ja tarvitsee väliaikaisen tallennuspaikan. Tämä voi esimerkiksi olla hyödyllistä tietokonelaskennassa, jossa datan käsittelyyn tarvitaan enemmän muistia kuin mitä koneella on saatavilla. Temporary file voi myös toimia turvallisempana vaihtoehtona kuin käyttöjärjestelmän välimuisti, sillä se varmistaa, että tiedosto poistetaan käytön jälkeen.
 
-See Also:
+Temporary filen polkua voidaan myös käyttää viestinvälitykseen eri komponenttien välillä. Esimerkiksi jos ohjelmassa on useampia säikeitä, voidaan temporary filea käyttää kommunikointiin niiden välillä.
 
-- Microsoftin dokumetointi Path.GetTempFileName() -metodista: https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0
-- Blogiartikkeli väliaikaistiedostojen käytöstä: https://docs.microsoft.com/en-us/dotnet/standard/io/creating-temporary-files
+## Katso myös
+- [C#-oppaat ja dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/csharp/)
+- [Temporary files MSDN-dokumentaatiossa](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-temporary-files)
+- [Temporary filejen turvallisuus](https://www.schneier.com/blog/archives/2010/06/creating_tempor.html)

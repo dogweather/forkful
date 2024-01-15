@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "PHP: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,31 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ehkä olet kokenut sen. Olet kirjoittanut pitkän ja monimutkaisen koodin ja huomaat, että sinun täytyy vaihtaa jokainen esiintyminen tietystä merkkijonosta toiseen. Se voi olla uuvuttavaa, mutta ei hätää - PHP tarjoaa kätevän tavan tehdä tämä prosessi nopeasti ja vaivattomasti.
+Miksi joku haluaisi etsiä ja korvata tekstiä? Yksi syy voi olla, että he haluavat nopeasti ja tehokkaasti muuttaa suuria määriä tekstiä sivustollaan tai sovelluksessaan ilman manuaalista työtä.
 
-## Kuinka tehdä
+## Miten
 
-PHP tarjoaa kaksi pääasiallista funktiota tekstin etsimiseen ja korvaamiseen: `str_replace()` ja `preg_replace()`. Molemmat toimivat lähes samalla tavalla, mutta preg_replace() tarjoaa enemmän joustavuutta säännöllisten lausekkeiden kanssa.
+Etsiminen ja korvaaminen tekstistä on helppoa PHP:llä. Sinun tarvitsee vain käyttää "preg_replace" -funktiota, joka etsii määrättyä tekstiä ja korvaa sen halutulla tekstillä. Katso alla oleva koodiesimerkki:
 
-Alla on esimerkki koodista, joka korvaa kaikki "hello" esiintymät merkkijonosta "world". Tämän esimerkin oletetaan olevan muuttuja nimeltä $text:
-
-```PHP
-str_replace("hello", "world", $text);
 ```
-Seuraava esimerkki käyttää preg_replace() säännöllistä lauseketta etsimään ja korvaamaan "hello" ja sen perään tulevan sanan "there" merkkijonolla "world":
+PHP
+$text = "Tervetuloa maailmaan";
+$new_text = preg_replace("/Tervetuloa/", "Welcome", $text);
+echo $new_text;
+// Output: Welcome maailmaan
+```
+Ensimmäisessä rivissä luodaan muuttuja "text", joka sisältää alkuperäisen tekstin. Toisessa rivissä käytetään "preg_replace" -funktiota, jossa ensimmäisessä parametrissa annetaan etsittävä teksti, toisessa parametrissa korvaava teksti ja kolmannessa parametrissa alkuperäinen teksti. Lopuksi koodi tulostaa uuden tekstin, jossa alkuperäinen teksti on korvattu halutulla tekstillä.
 
-```PHP
-preg_replace("/hello\s+\w+/", "world", $text);
+## Syvällinen sukellus
+
+"Preg_replace" -funktion avulla voit myös käyttää säännöllisiä lausekkeita etsiessäsi tekstiä. Tämä antaa sinulle enemmän tarkkuutta ja joustavuutta korvataessa tekstiä. Voit esimerkiksi etsiä kaikki sanat, jotka alkavat "T" -kirjaimella ja korvata ne tekstillä "Hei". Katso alla oleva koodiesimerkki:
+
+```
+PHP
+$text = "Tämä on vain esimerkki";
+$new_text = preg_replace("/(^|\W)T(\w*)/", "$1Hei$2", $text);
+echo $new_text;
+// Output: Hei on vain esimerkki
 ```
 
-## Syvempää tietoa
-
-PHP tarjoaa myös muita hyödyllisiä funktioita, kuten `mb_ereg_replace()` ja `strtr()`, joiden avulla voit tehdä monimutkaisempia tekstikorvauksia. On myös tärkeää muistaa, että säännölliset lausekkeet voivat auttaa tekstin etsimisessä ja korvaamisessa, mutta ne voivat myös olla hieman hankalia, joten tutustu niihin huolellisesti ennen niiden käyttöä.
+Tässä koodissa käytetään säännöllistä lauseketta "/(^|\W)T(\w*)/" ensimmäisessä parametrissa, mikä merkitsee kaikkia sanoja, jotka alkavat "T" -kirjaimella. Sitten korvaavassa tekstissä käytetään merkkijonoja "$1" ja "$2", jotka tarkoittavat ensimmäistä ja toista osumaa säännöllisestä lausekkeesta. Tämä tarkoittaa, että alkuperäiset välimerkit ja seuraava kirjain ovat edelleen uudessa tekstissä.
 
 ## Katso myös
 
-[Tämä artikkeli](https://www.php.net/manual/en/function.str-replace.php) antaa sinulle lisätietoa PHP:n `str_replace()` -funktiosta ja sen käytöstä.
-
-[Tämä blogikirjoitus](https://www.regular-expressions.info/php.html) tarjoaa kattavan oppaan PHP:n säännöllisiin lausekkeisiin ja niiden käyttöön.
-
-[Tämä Stack Overflow -vastaus](https://stackoverflow.com/questions/5615229/finding-and-replacing-words-in-a-string-using-php) sisältää esimerkkejä monimutkaisemmista tekstikorvauksista PHP:n avulla.
+- [PHP: preg_replace docs](https://www.php.net/manual/en/function.preg-replace.php)
+- [RegExp Tester](https://regex101.com/) - sivusto, jossa voit testata säännöllisiä lausekkeita ja niiden osumia.

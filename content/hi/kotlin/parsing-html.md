@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: एचटीएमएल की विश्लेषणा"
-simple_title:         "एचटीएमएल की विश्लेषणा"
+title:                "Hindi: HTML को खोजना"
+html_title:           "Kotlin: Hindi: HTML को खोजना"
+simple_title:         "Hindi: HTML को खोजना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-HTML पार्सिंग से क्या लाभ है? आप वेब डेवलपमेंट और डेटा सिंजनिंग में हिस्सा ले सकते हैं।
+Kya aapne kabhi HTML ko padhne ki koshish ki hai? Yeh ek markup language hai jo web pages ko design aur format karne ke liye use ki jaati hai. Lekin HTML ka code manual aur confusing ho sakta hai, isliye kuch log HTML parsing techniques use karte hain. Iske through, hum HTML code ko parse, yaani analyze, kar sakte hain aur usme se zaroori data extract kar sakte hain. Iss article mein hum aapko batayenge ki HTML parsing kyun important hai aur kaise aap ise kar sakte hain Kotlin mein.
 
-## कैसे करें
+## Kaise Kare
+
+### Chuninda Library Ka Istemaal
+
+Kotlin mein, hum XML aur HTML ko parse karne ke liye bahut si libraries ka istemaal kar sakte hain. Ek popular library hai JSoup, jo XML aur HTML document ko parse karne mein madad karta hai. Syntax bahut simple hai aur hum isse Java me bhi use kar sakte hain, jisse purane HTML projects ko Kotlin mein convert karne mein madad milti hai. Neeche diye gaye code block mein ek basic example hai jiske through aap JSoup ka istemaal kar sakte hain.
 
 ```Kotlin
-// कोड उदाहरण
-fun main() {
-    // HTML का संदर्भ बनाएं
-    val html = "<html><body><h1>Hello, world!</h1></body></html>"
-    
-    // HTML को आपातित करें
-    val parsedHtml = parseHtml(html)
-    
-    // HTML से सार्वजनिक टेक्स्ट प्राप्त करें
-    val text = parsedHtml.text()
-    
-    println(text) // उत्पादन: Hello, world!
-}
+val doc: Document = Jsoup.connect("https://www.example.com").get()
+val title: String = doc.title()
+println("Title of page: $title")
+```
+Yeh code snippet website ke title ko print karega. Iske ilawa, hum headers, forms, links aur dusre HTML elements ko bhi parse kar sakte hain is library ke through.
 
-fun parseHtml(html: String): Document {
-    // JSoup पुस्तकालय का स्थापना करें
-    val document = Jsoup.parse(html)
-    
-    return document
-}
+### Regex Ka Istemaal
+
+Regex, yaani Regular Expressions, Kotlin mein built-in feature hai aur hum iska istemaal karke string ko parse kar sakte hain. Regex ka istemaal karke hum specific patterns ya expressions ko detect aur extract kar sakte hain. Yeh kaafi powerful aur helpful technique hai HTML parsing ke liye. Neeche diye gaye code block mein ek example hai jiske through aap Regex ka istemaal kar sakte hain.
+
+```Kotlin
+val html: String = "<p>Example paragraph</p>"
+val regex: Regex = Regex("""<p>(.*?)<\/p>""")
+val matchResult = regex.find(html)
+println("Extracted paragraph: ${matchResult?.groupValues?.get(1)}")
 ```
 
-## डीप डाइव
+Yeh code snippet uss paragraph ko extract karega jiske tags <p> aur </p> ke beech likhi hai.
 
-HTML को पार्सिंग करना स्ट्रक्चर्ड डाटा इनपुट से काफी मुश्किल हो सकता है। JSoup पुस्तकालय इसमें सुविधाजनक सुलभ फंक्शंस प्रदान करता है जिससे आप सुरक्षित और स्कैलेबल डेटा प्राप्त कर सकते हैं। और अधिक जानकारी के लिए, [JSoup के दस सुपरहिट फीचर्स](https://www.baeldung.com/javasoup) पर जाएं।
+## Deep Dive
 
-## देखें भी
+HTML parsing mein, hum various techniques aur libraries ka istemaal kar sakte hain jaise ki XPath, JSONPath, HTML Cleaners ya phir apne khud ke regex patterns. Iske alawa, hum HTML document kayi tarah se parse kar sakte hain jaise ki DOM parse, SAX parse aur StAX parse. Har technique apne advantages aur limitations ke saath aati hai, isliye koshish karein ki aapka use case kya hai aur konsi technique uss use case ke liye best hai.
 
-- [Kotlin के लिए एक नजर HTML पार्सिंग के साथ अपनी वेब साइटों को स्क्रैप कैसे करें](https://medium.com/@brainy_sebastian/scraping-your-webpages-with-kotlin-a-look-at-html-parsing-for-kotlin-7d7a01d8c9a9)
-- [बच्चों के प्रभावशाली और जनसंख्या साइटों को कैसे स्क्रैप करें और एनरिच करें](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
-- [Kotlin में Web Scraping कैसे करें](https://stackoverflow.com/questions/51631798/how-can-i-do-web-scraping-in-kotlin)
+## See Also
+
+Agar aap HTML parsing ke bare mein aur janna chahte hain, toh neeche diye gaye links helpful honge:
+
+- [JSoup documentation](https://jsoup.org/)
+- [Kotlin regular expressions documentation](https://kotlinlang.org/docs/reference/regular-classes.html)
+- [XML parsing in Kotlin using DOM](https://www.geeksforgeeks.org/xml-parsing-in-kotlin-using-dom/)
+
+Is article mein humne dekha ki kaise Kotlin mein HTML parsing ka istemaal kar sakte hain aur kyun yeh important hai. Ummeed hai aapko yeh article pasand aaya hoga. Happy coding!

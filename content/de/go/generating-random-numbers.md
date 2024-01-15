@@ -1,6 +1,7 @@
 ---
-title:                "Go: Erzeugung von zufälligen Zahlen"
-simple_title:         "Erzeugung von zufälligen Zahlen"
+title:                "Erzeugung von Zufallszahlen"
+html_title:           "Go: Erzeugung von Zufallszahlen"
+simple_title:         "Erzeugung von Zufallszahlen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn du schon immer wissen wolltest, wie du in deinen Go-Programmen Zufallszahlen generieren kannst, bist du hier genau richtig. Das Erzeugen von Zufallszahlen ist eine nützliche Fähigkeit, die in vielen Anwendungen, wie z.B. bei der Simulation von Spielen oder bei statistischen Analysen, verwendet wird.
 
-## Wie geht man vor
-Um Zufallszahlen in Go zu generieren, gibt es verschiedene Methoden, aber die einfachste Methode ist die Verwendung der `math/rand` Package. Schau dir das folgende Beispiel an:
+Sie fragen sich vielleicht, warum Sie sich über das Generieren von Zufallszahlen in Go informieren sollten. Nun, es gibt viele Situationen, in denen Sie in Ihrem Code zufällige Elemente benötigen, sei es für einfache Spiele oder komplexe Algorithmen. Das Verständnis der Techniken und Funktionen in Go zur Generierung von Zufallszahlen kann Ihnen helfen, effizientere und zuverlässigere Programme zu schreiben.
+
+## Wie geht's
+
+Um Zufallszahlen in Go zu generieren, müssen Sie die standardmäßige "math/rand" Bibliothek importieren. Dann verwenden Sie die Funktion `Intn(n)` , um eine zufällige Ganzzahl zwischen 0 und n-1 zu generieren. Dies kann zum Beispiel so aussehen:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "math/rand"
+	"fmt"
+	"math/rand"
 )
 
 func main() {
-    // Initialisiere den Zufallsgenerator
-    rand.Seed(time.Now().UnixNano())
-    
-    // Erzeuge eine Zufallszahl zwischen 1 und 10
-    randomNumber := rand.Intn(10) + 1
-    
-    // Gib die Zufallszahl aus
-    fmt.Println("Die generierte Zufallszahl ist:", randomNumber)
+	// Generiere eine zufällige Ganzzahl zwischen 0 und 9
+	num := rand.Intn(10)
+	fmt.Println("Die zufällige Zahl ist:", num)
 }
 ```
 
-Dieses kurze Programm wird eine Zufallszahl zwischen 1 und 10 erzeugen und sie auf der Konsole ausgeben. Um sicherzustellen, dass bei jedem Programmstart eine neue Zufallszahl erzeugt wird, muss der Zufallsgenerator mit `rand.Seed()` initialisiert werden. Für die Seed-Funktion wird hier die aktuelle Zeit verwendet, um sicherzustellen, dass die Zufallszahl immer unterschiedlich ist.
+Dieses Beispiel wird jedes Mal, wenn es ausgeführt wird, eine andere zufällige Zahl ausgeben.
 
-## Tiefergehende Informationen
-Die Methode, die in diesem Beispiel verwendet wurde, um eine Zufallszahl zu generieren, ist die `Intn()` Funktion aus der `math/rand` Package. Diese Funktion gibt eine Zufallszahl vom Typ `int` zurück, die kleiner ist als der übergebene Parameter. Wenn du also eine Zufallszahl zwischen 5 und 10 erzeugen möchtest, kannst du `rand.Intn(6) + 5` verwenden.
+## Tiefergehende Erklärung
 
-Es ist auch möglich, Zufallszahlen vom Typ `float64` zu generieren. Dafür gibt es die Funktion `Float64()`, die eine Fließkommazahl zwischen 0 und 1 zurückgibt. Um eine Zufallszahl mit einem bestimmten Bereich zu erhalten, multipliziere einfach das Ergebnis mit der Größe des gewünschten Bereichs und addiere den Startwert.
+Die in Go verwendete Methode zur Generierung von Zufallszahlen basiert auf einem sogenannten Pseudozufallszahlengenerator (PRNG). Das bedeutet, dass die Zahlenfolge, die vom Generator erzeugt wird, vorhersehbar ist, aber aufgrund ihrer Komplexität für den menschlichen Verstand als zufällig erscheint.
 
-```Go
-// Erzeuge eine Zufallszahl zwischen 10 und 20
-randomFloat := rand.Float64() * 10 + 10
-```
+In Go wird der PRNG durch einen intern verwendeten Seed initialisiert. Wenn Sie in Ihrem Code dieselbe Seed-Zahl verwenden, erhalten Sie jedes Mal dieselbe Zahlenfolge. Um ein wirklich zufälliges Verhalten zu erzielen, können Sie die Funktion `rand.Seed()` verwenden, um den Seed basierend auf zum Beispiel aktueller Zeit oder Systemvariablen zu setzen.
 
-Weitere Informationen über die verschiedenen Möglichkeiten, Zufallszahlen in Go zu generieren, findest du in der offiziellen Dokumentation.
+Eine weitere Möglichkeit, Zufallszahlen in Go zu generieren, ist die Verwendung der "crypto/rand" Bibliothek. Diese bietet eine sicherere Methode zur Generierung von Zufallszahlen, die nicht vorhersehbar sind. Diese Methode kann jedoch etwas langsamer sein und wird in der Regel in sicherheitskritischen Anwendungen verwendet.
 
 ## Siehe auch
-- Offizielle Go-Dokumentation: https://golang.org/pkg/math/rand
-- Zufallszahlen in Go - ein Tutorial: https://golangbot.com/random-numbers
 
-Vielen Dank, dass du diesen Artikel gelesen hast. Wir hoffen, er war hilfreich und du weißt jetzt, wie du Zufallszahlen in deinen Go-Programmen verwenden kannst. Probiere es doch direkt aus und experimentiere mit verschiedenen Methoden, um deine eigenen Anwendungen zu erstellen. Viel Spaß dabei!
+Hier sind einige nützliche Links, um mehr über die Generierung von Zufallszahlen in Go zu erfahren:
+
+- [Math/rand Dokumentation](https://golang.org/pkg/math/rand/)
+- [Crypto/rand Dokumentation](https://golang.org/pkg/crypto/rand/)
+- [Video: Generating Random Numbers in Go](https://www.youtube.com/watch?v=UVbIMAPoo8o)
+- [Post zu diesem Thema auf Go Blog](https://blog.golang.org/rand)

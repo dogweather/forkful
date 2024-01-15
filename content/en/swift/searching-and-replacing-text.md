@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "Swift recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,37 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When coding in Swift, it is common to encounter situations where you need to search and replace certain text within your code. This can be a tedious task if done manually, but luckily Swift has built-in methods that make this process much easier.
+If you're a programmer, you know how frustrating it can be to manually search and replace text in your code. Not only is it time-consuming, but it's also prone to errors. With Swift, you can easily automate this process, saving yourself time and reducing the chances of mistakes.
 
 ## How To
 
-To search and replace text in Swift, we will be using the `.replacingOccurrences(of:with:)` method. This method takes two parameters: the text you want to replace and the text you want to replace it with. Let's take a look at an example:
+Searching and replacing text in Swift can be done with a few simple steps.
+
+1. First, identify the text you want to replace. This can be a single word or a phrase.
+2. Next, decide what you want to replace it with. This can also be a single word or a phrase.
+3. In your Swift code, use the `replacingOccurrences(of:with:)` method to specify the text you want to replace and what you want to replace it with. Here's an example:
 
 ```Swift
-var str = "Hello World"
-str.replacingOccurrences(of: "World", with: "Universe")
+let originalText = "I love coding in Swift!"
+let newText = originalText.replacingOccurrences(of: "Swift", with: "Python")
+print(newText)
 ```
 
-The above code will replace the text "World" with "Universe" in the `str` variable, resulting in a new string "Hello Universe". Notice that the method does not change the original string, it instead returns a new string with the replaced text.
-
-We can also use this method to replace multiple occurrences of text by passing in an additional parameter, `options`. This allows us to specify things like case-sensitivity and search direction. Here's an example:
-
-```Swift
-var longStr = "The quick brown fox jumps over the lazy dog"
-longStr.replacingOccurrences(of: "o", with: "e", options: [.caseInsensitive, .backwards])
-```
-
-In the above code, we are replacing all occurrences of the letter "o" with "e" in the `longStr` variable while ignoring case and searching from back to front. This will result in the new string "The quick breen fox jumps ever the lazy deg".
+This will print out "I love coding in Python!", with the word "Swift" replaced with "Python".
 
 ## Deep Dive
 
-Under the hood, the `.replacingOccurrences(of:with:)` method uses regular expressions to find and replace text. Regular expressions are a powerful tool for pattern matching and can also be used in other areas of Swift, such as validation and string manipulation.
+The `replacingOccurrences(of:with:)` method is a part of the `String` class in Swift. It takes in two parameters - the text you want to replace and what you want to replace it with. It then returns a new string with the specified changes made.
 
-In addition to the `.replacingOccurrences(of:with:)` method, there are also other methods available for searching and replacing text in Swift, such as `.replacingCharacters(in:with:)` and `.replaceSubrange(_:with:)`. These methods also use regular expressions to perform their tasks.
+This method also has two additional parameters, `options` and `range`, which you can use to specify the options for searching and replacing, as well as the range of text to perform the operation on. You can refer to the official Swift documentation for more information on these parameters.
 
-It is important to note that when using regular expressions, certain characters like backslashes and parentheses need to be escaped with an additional backslash in order to be used in the search text.
+Another approach to searching and replacing text in Swift is using regular expressions. Regular expressions, also known as regex, are a powerful way to search for patterns in strings and replace them with desired text. For more advanced use cases or when dealing with more complex text, regular expressions can be a useful tool.
 
 ## See Also
 
-- [Apple Developer Documentation: String Protocol](https://developer.apple.com/documentation/swift/string)
-- [Regular Expressions in Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+If you're interested in learning more about string manipulation in Swift, check out these helpful resources:
+
+- [Apple's official String documentation](https://developer.apple.com/documentation/swift/string)
+- [A Swiftly Tilting Planet: Hello, Data](https://www.swiftlytiltingplanet.com/hello-data/)
+- [iOS Programming: The Big Nerd Ranch Guide](https://www.amazon.com/iOS-Programming-Ranch-Guide-Guides/dp/0321942051)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Konvertering av dato til en streng"
-simple_title:         "Konvertering av dato til en streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "TypeScript: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -9,32 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Et av de vanligste prosessene i programmering er å konvertere data fra en type til en annen. Å konvertere en dato til en streng er spesielt nyttig for å vise datoen på en lesbar måte, for eksempel på et brukergrensesnitt eller i en logg. I denne bloggposten vil vi gå gjennom hvordan du kan konvertere en dato til en streng ved hjelp av TypeScript.
+## Hvorfor
+Å konvertere en dato til en streng er et vanlig oppgave når man jobber med programmering. Dette kan være nyttig når man for eksempel trenger å vise en dato i et grafisk grensesnitt eller lagre den i en database.
 
-# Hvordan
-For å konvertere en dato til en streng i TypeScript, bruker vi metoden `toString()`. La oss ta en enkel dato som eksempel og konvertere den til en streng:
-
-```TypeScript
-let date = new Date(2021, 7, 20); // Oppretter en dato for 20. august 2021
-console.log(date.toString()); // Output: Wed Aug 20 2021 00:00:00 GMT+0200 (Central European Summer Time)
-```
-
-Vi kan også endre formatet på datoen ved å bruke metoden `toLocaleDateString()` og spesifisere hvilket språk vi ønsker datoen på. Se eksempelet nedenfor:
+## Hvordan
+For å konvertere en dato til en streng i TypeScript, kan man bruke den innebygde metoden `toString()`. Denne metoden tar imot et valgfritt parameter som spesifiserer formatet på datoen. Her er et eksempel på hvordan man kan bruke denne metoden:
 
 ```TypeScript
-console.log(date.toLocaleDateString('nb-NO')); // Output: 20.08.2021
+let today = new Date();
+let stringDate = today.toString('MM/dd/yyyy');
+console.log(stringDate);
 ```
 
-Ved å bruke `toLocaleDateString()` kan vi også spesifisere ønsket format for datoen. Dette kan gjøres ved hjelp av en såkalt formatstring, som består av forskjellige symboler som representerer ulike deler av datoen. For eksempel kan du bruke `dd/MM/yy` for å få datoen i formatet dag/måned/år. Se eksempelet nedenfor:
+Output vil være: `09/15/2021`. Her har vi spesifisert at datoen skal være i måned/dag/år-formatet.
 
-```TypeScript
-console.log(date.toLocaleDateString('nb-NO', { format: "dd/MM/yy" })); // Output: 20/08/21
-```
+Man kan også bruke andre formateringsalternativer som `toDateString()` for å bare få datoen uten klokkeslettet eller `toLocaleDateString()` for å få en lokal datetime string basert på brukerens sted.
 
-# Dypdykk
-Når vi bruker `toLocaleDateString()` i TypeScript, bruker den standard språkinnstillingene på datamaskinen. Dette kan resultere i at datoen vises på et annet språk enn det som er ønsket. For å løse dette problemet kan vi bruke tredjeparts pakker som `date-fns` eller `moment.js` som gir oss mer kontroll over konverteringen og formatet på datoen. Disse pakkene lar oss også enkelt oversette datoen til ønsket språk.
+## Dypdykk
+Når man bruker `toString()` eller lignende metoder, vil man merke at datoen kan bli formatert på forskjellige måter avhengig av nettleseren eller operativsystemet man bruker. Dette kan føre til uforutsette problemer, spesielt når man jobber med internasjonale brukere. For å unngå dette, kan man bruke biblioteker som Moment.js som har mer robuste funksjoner for håndtering av datoer og formatering av disse.
 
-# Se også
-- [date-fns dokumentasjon](https://date-fns.org/v2.23.0/docs/format)
-- [moment.js dokumentasjon](https://momentjs.com/docs/#/displaying/format/)
+## Se også
+- [Offisiell dokumentasjon for Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js biblioteket](https://momentjs.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "C#: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "C#"
 category:             "C#"
@@ -9,20 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comprobar si existe un directorio?
+## ¿Por qué?
 
-Comprobar si un directorio existe antes de realizar operaciones en él es una buena práctica de programación. Esto puede ayudar a prevenir errores inesperados y garantizar un flujo de trabajo más eficiente. 
+A veces, mientras se está programando en C#, es necesario comprobar si un directorio existe antes de realizar ciertas operaciones en él. Esta verificación puede evitar errores y mejorar el rendimiento del programa.
 
 ## Cómo hacerlo
 
-Para comprobar si una carpeta existe en C#, podemos utilizar la clase `Directory` del espacio de nombres `System.IO`. A continuación se muestra un ejemplo de código que verifica si un directorio llamado "Documentos" existe en la ruta especificada:
+Para comprobar si un directorio existe en C#, podemos utilizar el método `Directory.Exists()` de la librería `System.IO`.
 
 ```C#
-using System.IO;
-
-string ruta = "C:/Usuarios/Usuario/MisDocumentos";
-
-if (Directory.Exists(ruta + "/Documentos"))
+if (Directory.Exists("ruta/directorio"))
 {
     Console.WriteLine("El directorio existe.");
 }
@@ -32,16 +29,31 @@ else
 }
 ```
 
-La salida de este código sería "El directorio existe." Si cambiamos la ruta a una que no contenga un directorio llamado "Documentos", la salida sería "El directorio no existe." 
+En este ejemplo, utilizamos un condicional `if` para verificar si el directorio especificado en la ruta existe. Si el método `Directory.Exists()` devuelve `true`, significa que el directorio existe y se muestra un mensaje en la consola. En caso contrario, se muestra otro mensaje.
 
-## Profundizando
+## Detalles más profundos
 
-Para comprender mejor cómo funciona la comprobación de existencia de directorios en C#, es importante conocer la diferencia entre rutas relativas y absolutas. Una ruta absoluta especifica la ubicación completa de un archivo o directorio, mientras que una ruta relativa se basa en la ubicación actual.
+El método `Directory.Exists()` devuelve un valor booleano que indica si el directorio existe o no. Sin embargo, no nos proporciona información adicional, como por ejemplo si se trata de un directorio válido o si tenemos permisos para acceder a él.
 
-También es importante tener en cuenta que al verificar si un directorio existe, se comprueba si existe un archivo con el mismo nombre y extensión como directorio. Por ejemplo, si tenemos un archivo llamado "Documentos.txt" en lugar de un directorio "Documentos", la comprobación de existencia devolverá verdadero.
+Para obtener más detalles sobre el directorio, podemos utilizar el método `Directory.GetDirectories()` de la misma librería. Este método devuelve una matriz con los subdirectorios del directorio especificado, lo que nos permite acceder a información como el tamaño o la fecha de creación del directorio.
 
-## Ver También
+```C#
+string[] subdirectorios = Directory.GetDirectories("ruta/directorio");
 
-- [Documentación de la clase `Directory` en C#](https://docs.microsoft.com/es-es/dotnet/api/system.io.directory?view=net-5.0)
-- [Artículo sobre rutas en C#](https://www.c-sharpcorner.com/article/c-sharp-basics-of-path-handling/)
-- [Guía para desarrolladores de C# en español](https://www.tutorialsteacher.com/csharp/csharp-tutorials)
+if (subdirectorios.Length > 0)
+{
+    Console.WriteLine("El directorio tiene " + subdirectorios.Length + " subdirectorios.");
+}
+else
+{
+    Console.WriteLine("El directorio está vacío.");
+}
+```
+
+En este ejemplo, utilizamos el método `Length` de la matriz `subdirectorios` para obtener el número de subdirectorios del directorio especificado. Si el valor es mayor que 0, significa que hay subdirectorios y se muestra un mensaje sobre esto. De lo contrario, se muestra un mensaje indicando que el directorio está vacío.
+
+## Ver también
+
+- [Documentación oficial de Microsoft sobre el método Directory.Exists()](https://docs.microsoft.com/es-es/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [Ejemplos prácticos utilizando Directory.Exists()](https://www.codeproject.com/Tips/324971/Avoid-errors-by-checking-if-a-directory-exists-befo)
+- [Tutorial en vídeo sobre cómo comprobar si un directorio existe en C#](https://www.youtube.com/watch?v=a7zW-ZS39No)

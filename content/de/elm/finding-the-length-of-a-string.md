@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Ermittlung der Länge eines Strings"
-simple_title:         "Ermittlung der Länge eines Strings"
+title:                "Die Länge eines Strings finden"
+html_title:           "Elm: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Die Länge einer Zeichenkette zu finden kann in vielen Programmierprojekten von entscheidender Bedeutung sein, zum Beispiel beim Überprüfen von Benutzereingaben oder bei der Manipulation von Textdaten.
 
-Das Finden der Länge eines Strings kann eine nützliche Fähigkeit sein, wenn man mit Texten in der Programmierung arbeitet. Es kann helfen, die Effizienz des Codes zu verbessern und Fehler zu vermeiden. In diesem Blog-Beitrag werden wir uns ansehen, wie man die Länge eines Strings in Elm bestimmen kann.
-
-## Wie geht's
-
-Um die Länge eines Strings in Elm zu finden, können wir die `String.length` Funktion verwenden. Diese Funktion gibt die Anzahl der Zeichen im String zurück.
+# Wie das geht
 
 ```Elm
-import String
+value : String
+value = "Dies ist eine Beispielzeichenkette"
 
-string = "Hallo Welt!"
-length = String.length string
+length : Int
+length = String.length value
+
+main =
+  text (toString length) -- Output: 30
 ```
 
-Die Variable `length` wird hier den Wert 11 haben, da der String "Hallo Welt!" aus 11 Zeichen besteht. Wir können auch Strings mit Sonderzeichen verwenden, die `String.length` korrekt verarbeiten kann.
+Wie in unserem Beispiel zu sehen ist, können wir mit der `String.length` Funktion die Länge einer Zeichenkette in Elm finden. Diese Funktion gibt uns ein Integer zurück, der die Anzahl der in der Zeichenkette enthaltenen Zeichen repräsentiert. Wir können dann diesen Wert mit `toString` in einen String umwandeln, um ihn mit `text` auszugeben.
 
-```Elm
-import String
+# Tiefer Einblick
+Bevor wir die `String.length` Funktion nutzen können, müssen wir verstehen, wie Zeichenketten in Elm dargestellt werden. Elm verwendet Unicode zur Codierung von Zeichenketten, was bedeutet, dass jedes Zeichen in einer Zeichenkette einen numerischen Code hat, der es repräsentiert. Ein einzelnes Zeichen kann jedoch aus mehreren Codepunkten bestehen, was seine tatsächliche Darstellung beeinflusst. Dies ist wichtig zu wissen, da die `String.length` Funktion die Anzahl der Codepunkte in einer Zeichenkette zurückgibt, nicht die Anzahl der sichtbaren Zeichen.
 
-string = "Äpfel und Birnen sind lecker 🍎🍐"
-length = String.length string
-```
+Ein weiteres wichtiges Konzept beim Finden der Länge einer Zeichenkette ist die Verwendung von `toString`. Diese Funktion konvertiert jedes gegebene Argument in einen String, unabhängig von seinem Datentyp. Daher müssen wir `toString` verwenden, um den Integer-Wert, den wir von `String.length` erhalten, in einen String umzuwandeln, damit wir ihn mit `text` ausgeben können.
 
-In diesem Beispiel wird die Variable `length` den Wert 30 haben, da unser String aus 30 Zeichen besteht, einschließlich des Emoji-Symbols.
+# Siehe auch
 
-## Tiefer Einblick
-
-Die `String.length` Funktion ist eine von vielen hilfreichen Funktionen in der Elm-Standardbibliothek, die uns bei der Arbeit mit Strings unterstützen können. Sie arbeitet effizient und ist in der Lage, Unicode-Zeichen korrekt zu zählen, unabhängig von ihrer Länge oder Komplexität. Es ist auch wichtig zu beachten, dass die Länge eines Strings immer dynamisch sein kann und sich ändern kann, abhängig davon, welche Operationen auf den String angewendet werden.
-
-## Siehe auch
-
-- [Offizielle Elm-Dokumentation über Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Ein Leitfaden zur Erstellung von Strings in Elm](https://guide.elm-lang.org/error_handling/strings.html)
-- [Einführung in die Programmierung mit Elm](https://medium.com/@Floriangavillet/elm-tutorial-introduction-to-programming-with-the-pleasant-language-6b1479f631ff)
+- [Elm Dokumentation zu Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Offizielles Elm Guide](https://guide.elm-lang.org/)
+- [Codebeispiele auf Ellie](https://ellie-app.com/new) (Online-Elm-Compiler zum Ausprobieren)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Wyszukiwanie i zmienianie tekstu"
-simple_title:         "Wyszukiwanie i zmienianie tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Python: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,55 +12,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często podczas pisania kodu zdarza się nam popełnić błędy lub skorzystać z innej nazwy dla zmiennej czy funkcji. W takich sytuacjach bardzo przydatne jest narzędzie do wyszukiwania i zamiany tekstu. Pozwala ono szybko i łatwo odnaleźć wszystkie wystąpienia danego fragmentu tekstu i zamienić je na żądany.
+Zastępowanie tekstu jest powszechnym zadaniem podczas programowania. Dzięki tej technice możemy szybko i wygodnie zmienić dużą ilość tekstów w naszym kodzie. Jest to szczególnie przydatne, gdy potrzebujemy dokonać zmiany w wielu miejscach jednocześnie.
 
 ## Jak to zrobić
 
-Do wyszukiwania i zamiany tekstu w Pythonie możemy użyć wbudowanej metody `replace()`. Musimy podać dwa argumenty: tekst, który chcemy zamienić, oraz tekst, na który chcemy go zamienić. W poniższym przykładzie zamienimy wszystkie wystąpienia słowa "pies" na słowo "kot".
+Aby wykonać zastępowanie tekstu w Pythonie, używamy metody `replace()`. Przyjmuje ona dwa argumenty - pierwszy to tekst, który chcemy zamienić, a drugi to tekst, na który chcemy go zamienić. Przykładowo:
 
 ```Python
-text = "Mam dwa psy, pieska i suczkę."
-new_text = text.replace("pies", "kot")
+text = "Cześć świecie!"
+new_text = text.replace("świecie", "pythonie")
 print(new_text)
 ```
 
 Output:
+
 ```
-Mam dwa koty, kotka i suczkę.
+Cześć pythonie!
 ```
 
-Jeśli chcemy zamienić tylko część wystąpień, możemy podać dodatkowy argument `count`, określający ile razy zamiana ma zostać wykonana. W poniższym przykładzie zamienimy tylko pierwsze dwa wystąpienia słowa "pies" na słowo "kot".
+Mogę też użyć tej metody do usuwania tekstu, podając jako drugi argument pusty ciąg znaków:
 
 ```Python
-text = "Mam dwa psy, pieska i suczkę."
-new_text = text.replace("pies", "kot", 2)
+text = "Lorem ipsum dolor sit amet"
+new_text = text.replace("ipsum ", "") # usuwam "ipsum "
 print(new_text)
 ```
 
 Output:
+
 ```
-Mam dwa koty, kotka i suczkę.
+Lorem dolor sit amet
 ```
 
-## Głębszy zanurzenie
-
-Metoda `replace()` działa tylko na pojedynczych zmiennych typu string. Jeśli chcemy wykonać zamianę w większej ilości plików, możemy skorzystać z pętli `for` i funkcji `glob` do odnalezienia odpowiednich plików.
+Możemy również dokonywać zastępowania wielokrotnie. Metoda `replace()` zwraca nowy łańcuch znaków zawierający zmienione teksty, więc możemy po prostu nadpisać naszą zmienną `text`:
 
 ```Python
-import glob
-
-for file in glob.glob("*.txt"):
-    with open(file, "r") as f:
-        text = f.read()
-        new_text = text.replace("pies", "kot")
-    with open(file, "w") as f:
-        f.write(new_text)
+text = "Ala ma kota i lubi czytać książki"
+text = text.replace("Ala", "Adam").replace("kota", "psa").replace("lubi", "nie lubi")
+print(text)
 ```
 
-W powyższym przykładzie wszystkie pliki z rozszerzeniem ".txt" w bieżącym katalogu zostaną otwarte, a następnie wszystkie wystąpienia słowa "pies" zostaną zamienione na słowo "kot". Oryginalne pliki zostaną nadpisane nowym tekstem.
+Output:
+
+```
+Adam ma psa i nie czytać książki
+```
+
+## Głęboki zanurzenie
+
+Metoda `replace()` działa jedynie na łańcuchach znaków. Jeśli chcemy dokonać zastępowania na innych elementach, takich jak listy czy tuple, musimy użyć pętli i warunków. Na przykład możemy napisać prostą funkcję, która będzie zastępować wszystkie wystąpienia danej liczby w liście:
+
+```Python
+numbers = [2, 5, 2, 1, 2] # lista z liczbami
+to_replace = 2 # liczba, która ma być zastąpiona
+replacement = 0 # liczba, na którą ma być zastąpiona
+
+def replace_numbers(list, to_replace, replacement):
+    for index, value in enumerate(list):
+        if value == to_replace:
+            list[index] = replacement
+    return list
+
+print(replace_numbers(numbers, to_replace, replacement))
+```
+
+Output:
+
+```
+[0, 5, 0, 1, 0]
+```
+
+W ten sposób możemy dokonywać zastępowania w dowolnych typach danych, które można indeksować.
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja Pythona](https://docs.python.org/3.9/library/stdtypes.html#str.replace)
-- [Przewodnik po pakiecie glob](https://realpython.com/working-with-files-in-python/#the-glob-module)
-- [Przydatne metody dla typu string w Pythonie](https://www.programiz.com/python-programming/methods/string)
+- [Dokumentacja metody replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Szybkie i wygodne zastępowanie tekstu w Pythonie](https://towardsdatascience.com/easy-and-fast-text-replacement-in-python-3bea19e987be)
+- [Obsługa wyjątków przy zastępowaniu tekstu w Pythonie](https://stackoverflow.com/questions/49455653/how-to-replace-values-which-are-not-in-list-with-nan)

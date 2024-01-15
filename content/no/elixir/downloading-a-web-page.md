@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Last ned en nettside"
+html_title:           "Elixir: Last ned en nettside"
+simple_title:         "Last ned en nettside"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Tenk deg at du ønsker å hente informasjon fra en nettside, kanskje for å bygge en app eller automatisere noe. Ved hjelp av Elixir kan du gjøre dette på en enkel og effektiv måte. I denne blogginnlegget vil vi diskutere hvordan man kan laste ned en nettside ved hjelp av Elixir.
+Å laste ned en nettside kan være en nyttig ferdighet å ha for å bygge webapplikasjoner, automatisere oppgaver eller som en del av et større prosjekt. Det kan også være nyttig for å få tilgang til informasjon på en nettside når du ikke har en pålitelig internettilkobling.
 
-# Hvordan
-
-## URL bibliotek
-
-Først må vi importere URL biblioteket som gjør det mulig å hente data fra en nettside. Dette kan gjøres ved å legge til følgende linje i din Elixir-fil:
+## Slik gjør du det
 
 ```Elixir
-iex> {:ok, url} = HTTPoison.get("https://www.example.com")
+# Først må vi laste inn HTTP-biblioteket
+require HTTPoison
+
+# Deretter kan vi bruke get-funksjonen for å sende en forespørsel og få tilbake en respons
+HTTPoison.get("https://www.example.com")
+
+# Hvis vi ønsker å lagre responsen i en variabel, kan vi gjøre det ved å bruke pipelining
+response = HTTPoison.get("https://www.example.com")
 ```
 
-Her bruker vi `HTTPoison` biblioteket som lar oss gjøre http-forespørsler, og vi spesifiserer nettsiden vi ønsker å laste ned. Denne metoden returnerer `{:ok, url}` som betyr at forespørselen var vellykket, og gir oss en `url` variabel som inneholder dataen fra nettsiden.
-
-## Hente data fra nettsiden
-
-For å få tilgang til dataen fra nettsiden kan vi bruke `url` variabelen og bruke funksjonen `body` for å hente ut innholdet fra nettsiden. Dette kan gjøres ved å skrive følgende kode:
+Dette vil gi oss en respons-oppføring med informasjon om statuskoder, kropp og headers. For å få tilgang til responskroppen, kan vi bruke:
 
 ```Elixir
-iex> data = url.body
+response.body
 ```
 
-Dataen som er hentet ut vil være i `UTF-8` format, slik at du kan enkelt behandle og manipulere den videre med Elixir funksjoner.
-
-## Konvertere til tekst
-
-For å få dataen i ren tekst-format kan vi bruke `HTTPoison` funksjonen `body_to_string`. Dette vil konvertere dataen til vanlig tekst og gjøre den enklere å håndtere. Koden for dette ser slik ut:
+Dette vil returnere en liste med byte-kode som vi kan konvertere til en streng for å få det endelige resultatet. For å lagre resultatet til en fil, kan vi bruke:
 
 ```Elixir
-iex> text = url.body_to_string
+File.write!("nettsted.html", response.body)
 ```
 
-Dette vil gi oss `text` variabelen som inneholder innholdet fra nettsiden i tekst-format.
+Dette vil lagre nettsiden som en .html-fil i samme mappe som koden.
 
-# Dykk ned
+## Dypdykk
 
-Det er verdt å merke seg at `HTTPoison` biblioteket har mange andre funksjoner og muligheter som kan utforskes for å få enda mer kontroll over http-forespørslene. Du kan lese mer om dette i dokumentasjonen for biblioteket.
+Nå som vi kan laste ned en nettside og lagre den som en fil, kan vi enkelt behandle og manipulere dataene etter behov. Dette kan være nyttig for å analysere nettinnhold, automatisk oppdatering av siden eller for å generere en samling av nettsider.
 
-# Se også
+Det er også mulig å legge til tilleggsparametere i get-funksjonen for å inkludere autentisering, spesifisere HEADERS eller bruke proxy-servere.
 
-Her er noen nyttige ressurser for å lære mer om hvordan man kan laste ned en nettside ved hjelp av Elixir:
+## Se også
 
-- [Elixir Docs for HTTPoison](https://hexdocs.pm/httpoison/)
-- [Elixir School - HTTP Library](https://elixirschool.com/en/lessons/specifics/http-libraries/)
-- [How to Make a HTTP Request in Elixir](https://medium.com/swlh/how-to-make-a-http-request-in-elixir-d6d1fa61faee)
+- [Offisiell Elixir Dokumentasjon (engelsk)](https://elixir-lang.org/docs.html)
+- [HTTPoison GitHub Repository (engelsk)](https://github.com/edgurgel/httpoison)

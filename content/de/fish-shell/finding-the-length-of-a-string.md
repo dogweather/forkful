@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge einer Zeichenkette finden"
+html_title:           "Fish Shell: Die Länge einer Zeichenkette finden"
+simple_title:         "Die Länge einer Zeichenkette finden"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,42 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
+Warum sollte man sich überhaupt mit der Länge eines Strings beschäftigen? Nun, in der Programmierung ist es manchmal wichtig zu wissen, wie viele Zeichen ein String enthält, um zum Beispiel die Ausgabe eines Textes anzupassen.
 
-Haben Sie schon einmal versucht, die Länge eines Strings in Ihrem Fish Shell Programm zu ermitteln? Vielleicht möchten Sie die Länge eines Benutzernamens oder einer E-Mail-Adresse überprüfen. In diesem Blogbeitrag zeigen wir Ihnen, wie Sie dies schnell und effizient tun können.
+## Wie geht's
+#### Fish Shell Installation
+Bevor wir loslegen können, muss die Fish Shell installiert werden. Dies kann einfach über einen Paketmanager wie Homebrew oder Aptitude geschehen.
 
-## So geht's
-
-Um die Länge eines Strings in Fish Shell zu finden, können Sie das integrierte `string length` Befehl verwenden. Durch Hinzufügen des zu überprüfenden Strings als Argument erhalten Sie die Anzahl der Zeichen zurück.
-
+#### Länge eines Strings finden
+Um die Länge eines Strings zu finden, können wir die `string` Funktion `length` verwenden. Hier ein Beispiel:
 ```Fish Shell
-string length "Hallo"
-# Output: 5
+set name "John"
+echo (string length $name)
 ```
+Dieser Code gibt die Länge des Strings "John" aus, in diesem Fall also die Zahl 4.
 
-Sie können auch eine Variable verwenden, um die Länge eines Strings zu speichern und später zu verwenden.
+## Tiefergehende Information
+Wie funktioniert die `length` Funktion eigentlich? Sie zählt einfach die Anzahl an Zeichen im String und gibt diese als Zahl zurück. Beachte, dass Leerzeichen und Sonderzeichen auch als Zeichen gezählt werden.
 
-```Fish Shell
-set str "Hello"
-string length $str
-set len (string length $str)
-echo "Die Länge von '$str' ist $len."
-# Output: Die Länge von 'Hello' ist 5.
-```
-
-Wenn Sie nur die Anzahl der Buchstaben in einem String zählen möchten, können Sie die Option `-b` verwenden.
-
-```Fish Shell
-string length -b "Hello World"
-# Output: 11
-```
-
-## Tiefer tauchen
-
-Nun, wo Sie wissen, wie Sie die Länge eines Strings finden, sollten Sie sich bewusst sein, dass diese Methode je nach Umgebung unterschiedlich sein kann. Wenn Sie beispielsweise einen Unicode-String in einem Terminal mit einer begrenzten Zeichenfolge ausgeben, wird die Länge möglicherweise nicht korrekt angezeigt.
-
-Um diese Probleme zu vermeiden, gibt es in Fish Shell die Funktion `count` im Modul `string`. Diese berücksichtigt die tatsächliche Länge eines Unicode-Strings und gibt das korrekte Ergebnis zurück.
-
-## Siehe auch
-
-- [`string length` Dokumentation](https://fishshell.com/docs/current/cmds/string-length.html)
-- [`count` Modul Dokumentation](https://fishshell.com/docs/current/cmds/count.html)
+## Siehe Auch
+- [Offizielle Dokumentation der `length` Funktion](https://fishshell.com/docs/current/cmds/string.html#length)
+- [String Manipulation mit Fish Shell](https://dev.to/mishmanners/working-with-strings-in-fish-shell-4he7)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Kotlin: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,35 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-On monia tilanteita, joissa haluat luoda väliaikaisen tiedoston ohjelman suorituksen aikana. Väliaikaisia tiedostoja voi tarvita esimerkiksi tiedon tallentamiseen, jakamiseen tai prosessointiin, mutta niitä ei välttämättä tarvita pysyvästi. Tämä voi auttaa välttämään tietojen sekoittumista tai tarpeettomien tiedostojen pysyvää tallentamista.
+Luodaan tilapäinen tiedosto (temporary file) ylimääräisen tilan luomiseksi väliaikaiseksi käyttöön tai tiedon tallentamiseksi lyhyeksi ajaksi. 
 
-## Kuinka luoda väliaikainen tiedosto
+## Miten tehdä
 
-Voit luoda väliaikaisen tiedoston helposti käyttämällä Kotlinin `createTempFile()` -funktiota. Se ottaa kaksi parametria: tiedoston nimen ja tiedostopäätteen. Funktio luo väliaikaisen tiedoston automaattisesti järjestelmän tmp-hakemistoon ja palauttaa sen `File` -objektina.
-
-```Kotlin
-val tempFile = File.createTempFile("temp", ".txt")
-println(tempFile.name) // tulostaa "temp1561574522292066844.txt"
-```
-
-Voit myös määrittää tarvittaessa tiedoston tallennuspaikan:
+Tilapäisen tiedoston luominen Kotlinilla on helppoa ja nopeaa. Seuraavassa muutamia esimerkkejä koodista ja niiden tulostuksesta:
 
 ```Kotlin
-val tempFile = File.createTempFile("temp", ".txt", File("C:/temp"))
-println(tempFile.path) // tulostaa "C:/temp/temp1561574522292066844.txt"
+
+// Luodaan tilapäinen tiedosto "tempFile.txt" hakemistoon "documents/":
+val tempFile = File("documents/", "tempFile.txt")
+tempFile.createNewFile()
+
+// Tarkistetaan, onko tiedosto luotu:
+if(tempFile.exists()){
+    println("Tilapäinen tiedosto luotu hakemistoon documents/")
+}
+
+// Kirjoitetaan tekstiä tiedostoon:
+tempFile.printWriter().use { out ->
+    out.println("Tervetuloa luomaan tilapäistä tiedostoa Kotlinilla!")
+}
+
+// Luetaan tiedoston sisältö:
+println(tempFile.readText())
+
+// Poistetaan tiedosto:
+tempFile.delete()
+
+// Tarkistetaan, että tiedosto on poistettu:
+if(!tempFile.exists()){
+    println("Tilapäinen tiedosto poistettu!")
+}
+
 ```
 
-## Syvempi sukellus väliaikaisen tiedoston luomiseen
+Tulostus:
 
-Käyttäessäsi `createTempFile()` -funktiota, sinun kannattaa huomioida muutamia asioita:
+> Tilapäinen tiedosto luotu hakemistoon documents/
+> Tervetuloa luomaan tilapäistä tiedostoa Kotlinilla!
+> Tilapäinen tiedosto poistettu!
 
-- Jos et määrittele tiedoston tallennuspaikkaa, järjestelmän tmp-hakemisto käytetään automaattisesti. Tiedostot tallennetaan usein oletuksena jonnekin käyttöjärjestelmän määrittelemään tmp-hakemistoon.
-- Väliaikaiset tiedostot ovat oletuksena poistettavia, eli niitä ei tallenneta pysyvästi. Jos haluat tallentaa tiedoston pysyvästi, voit käyttää `deleteOnExit()` -funktiota.
-- Varmista, että käytät uniikkia tiedostopäätettä, jotta vältytään mahdollisilta yhteentörmäyksiltä järjestelmän jo olemassa olevien tiedostojen kanssa.
+## Syvemmälle aiheeseen
+
+Tilapäisen tiedoston luominen on hyödyllistä, kun tarvitsemme väliaikaisesti tallentaa tai käsitellä tietoa ilman, että se pysyvästi tallentuu järjestelmään. Tällainen tiedosto voi esimerkiksi olla väliaikainen työskentelytiedosto, jota ei tarvita enää kun työ on tehty.
+
+Kotlin tarjoaa mahdollisuuden luoda tilapäisiä tiedostoja File-luokan createTempFile-metodilla. Tämä metodi luo automaattisesti uniikin tiedostonimen, joten käyttäjän ei tarvitse huolehtia siitä, että luodaanko tiedosto oikeaan hakemistoon ja että se saa uniikin nimen. Tiedoston poisto suoritetaan kätevästi File-luokan delete-metodilla, jolloin käyttäjän ei tarvitse erikseen poistaa tiedostoa.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html) väliaikaisen tiedoston luomisesta
-- [Väliaikaiset tiedostot Windows-käyttöjärjestelmässä](https://ss64.com/nt/syntax-temp.html)
+- [Kotlinin virallinen dokumentaatio tilapäisten tiedostojen luomisesta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [Tilapäisen tiedoston luominen Javan avulla](https://www.baeldung.com/java-temporary-file)
+- [Tiedostojen käsittely Kotlinilla](https://www.baeldung.com/kotlin-file-handling)

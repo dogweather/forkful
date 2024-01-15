@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Elixir: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,33 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att parsa HTML är en viktig färdighet för Elixir-programmerare eftersom det är ett vanligt problem att lösa när man arbetar med webbutveckling eller webb-skrapning.
+Att extrahera data från HTML-dokument är en viktig uppgift inom webbutveckling. Oavsett om du behöver skrapa data från en webbsida, utföra SEO-analyser eller bygga en webskrapa, så är HTML-parsing en viktig del av processen. Genom att lära dig hur man gör det på rätt sätt med hjälp av Elixir, kan du effektivt och pålitligt hantera ditt HTML-innehåll.
 
-## Så här gör du
+## Hur man gör det
 
-För att komma igång med att parsa HTML i Elixir, måste du först installera ett bibliotek som heter Floki. Detta bibliotek ger dig verktygen du behöver för att navigera genom HTML-dokument. Här är ett exempel på hur du kan använda det:
+För att parsra HTML med Elixir, kan du använda biblioteket Floki. Här är ett exempel på kod som hämtar länkar från en webbsida och returnerar en lista med URL:er:
 
-```Elixir
-html = "<div class="article"><h1>Elixir-programmering</h1><p>En fantastiskt kraftfull språk för webbutveckling.</p></div>"
-
-doc = Floki.parse(html)
-H1 = Floki.find(doc, "h1")
-p = Floki.find(doc, "p")
-
-IO.puts "Rubrik: #{Floki.text(H1)}" #Rubrik: Elixir-programmering
-IO.puts "Brödtext: #{Floki.text(p)}" #Brödtext: En fantastiskt kraftfullt språk för webbutveckling
+```
+page = Floki.parse_document(html) 
+links = Floki.find(page, "a") 
+urls = Enum.map(links, fn link -> Floki.attribute(link, "href") end) 
 ```
 
-Som du kan se i exemplet, parsar vi först vår HTML och lagrar den i en variabel. Sedan använder vi Floki för att hitta de specifika elementen som vi vill extrahera och skriver ut deras text med hjälp av `Floki.text()` funktionen.
+Denna kod använder sig av Floki-funktioner för att hitta och hämta länkarna från HTML-sidan. Resultatet blir en lista med URL:er som du kan använda för att utföra olika åtgärder, som till exempel att besöka webbplatserna eller spara dem i en databas.
 
 ## Djupdykning
 
-Det finns många andra funktioner i Floki för att navigera genom HTML-dokument, inklusive `Floki.all()` för att hitta alla förekomster av ett visst element och `Floki.attribute()` för att hämta värden från attribut. Du kan läsa mer om dessa funktioner och mer i Flokis dokumentation.
+När du behöver hantera mer komplexa HTML-strukturer, kan du använda dig av Flokis CSS-selectors för att välja specifika delar av dokumentet. Till exempel, om du vill hämta alla bilder från en sida, kan du använda följande kod:
 
-En annan viktig aspekt av att parsa HTML i Elixir är hanteringen av fel. Om du försöker extrahera data från ett HTML-dokument som inte är välformaterat kan det leda till fel i din kod. För att hantera detta kan du använda `Floki.html_to_iodata()` för att konvertera ditt HTML till en IODATA-struktur som är säkrare att arbeta med.
+```
+images = Floki.find(page, "img")
+```
 
-## Se även
+Du kan också använda Flokis inbyggda funktioner för att filtrera och manipulera HTML-innehållet. Till exempel, om du bara vill hämta länkar som innehåller en viss term, kan du använda följande kod:
 
-- [Floki dokumentation](https://hexdocs.pm/floki/Floki.html)
-- [Elixir programing-language tutorial](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixir official website](https://elixir-lang.org/)
+```
+links = Floki.find(page, "a", fn(el) -> String.contains?(Floki.attribute(el, "href"), "elixir") end)
+```
+
+Genom att utforska Flokis olika funktioner och möjligheter kan du effektivt hantera även de mest komplexa HTML-strukturerna.
+
+## Se också
+
+- Officiell Elixir-dokumentation om Floki: https://hexdocs.pm/floki/readme.html
+- En introduktion till Elixir: https://elixir-lang.org/getting-started/introduction.html
+- Elixir-skolan (på svenska): https://elixirskolan.se/

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Javascript: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,33 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que: 
-Uma das razões mais comuns para uma pessoa utilizar o envio de uma requisição HTTP com autenticação básica é para acessar recursos ou informações confidenciais em uma aplicação web. Isso garante que apenas usuários autorizados tenham acesso a esses dados, tornando a comunicação mais segura.
+## Por que
 
-## Como fazer:
-Para enviar uma requisição HTTP com autenticação básica em Javascript, você precisará utilizar o método `fetch`. Primeiro, crie um objeto `Headers` contendo as informações de autenticação, como o nome de usuário e senha. Em seguida, passe esse objeto como argumento para o método `fetch`, junto com a URL do recurso que você deseja acessar. Veja um exemplo abaixo:
+Enviar uma solicitação HTTP com autenticação básica é uma forma segura de se comunicar com servidores externos. Isso permite que apenas usuários autorizados tenham acesso às informações solicitadas, protegendo os dados sensíveis.
+
+## Como fazer
+
+Para enviar uma solicitação HTTP com autenticação básica em Javascript, é necessário seguir alguns passos simples:
+
+1. Primeiramente, crie uma instância de um objeto `XMLHttpRequest`, que é responsável por fazer chamadas HTTP assíncronas.
 
 ```Javascript
-const headers = new Headers();
-headers.set('Authorization', 'Basic ' + btoa('seunomeusuario:suasenha'));
-const url = 'https://www.exemplo.com/recurso-seguro';
-fetch(url, {
-  method: 'GET',
-  headers: headers
-})
-.then(response => console.log(response))
-.catch(error => console.log(error));
+let request = new XMLHttpRequest();
 ```
-Neste exemplo, estamos acessando um recurso seguro na URL `https://www.exemplo.com/recurso-seguro`, incluindo as credenciais de autenticação no cabeçalho da requisição. Ao chamar o método `fetch`, você receberá uma resposta com as informações solicitadas, que pode ser manipulada de acordo com suas necessidades.
 
-## Aprofundando:
-A autenticação básica é um dos métodos de autenticação mais simples, porém não é o mais seguro. As credenciais de autenticação são codificadas em ASCII e podem ser facilmente decodificadas por programas maliciosos. Além disso, essas informações são enviadas em texto não criptografado, tornando-as vulneráveis a ataques de 'man-in-the-middle'.
+2. Em seguida, defina o método e a URL que será utilizada para enviar a requisição.
 
-Para melhorar a segurança ao utilizar autenticação básica, recomenda-se utilizar o protocolo HTTPS, que criptografa todas as informações trocadas entre o cliente e o servidor. Outra opção seria adicionar uma camada extra de segurança, como um token de autenticação, que é gerado e renovado a cada requisição.
+```Javascript
+request.open('GET', 'http://www.example.com/api/data');
+```
 
-Lembre-se também de nunca armazenar informações de autenticação em código Javascript, pois elas podem ser facilmente acessadas por qualquer pessoa.
+3. Adicione as credenciais de autenticação no cabeçalho da solicitação utilizando o método `setRequestHeader()`, passando o nome do cabeçalho e um valor codificado em Base64 com o padrão `username:password`.
 
-## Veja também:
-- [Método fetch() em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
-- [Autenticação HTTP básica](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
-- [Autenticação HTTP com HTTPS](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#Limita%C3%A7%C3%B5es_do_esquema_Autentica%C3%A7%C3%A3o_B%C3%A1sica)
+```Javascript
+let username = 'user123';
+let password = 'pass456';
+
+request.setRequestHeader('Authorization', 'Basic ' + btoa(username + ':' + password));
+```
+
+4. Por fim, envie a solicitação utilizando o método `send()` e trate a resposta no evento `onreadystatechange`.
+
+```Javascript
+request.send();
+
+request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // A resposta do servidor pode ser acessada no atributo responseText
+        console.log(this.responseText);
+    }
+};
+```
+
+O resultado será a resposta da requisição, que pode ser utilizada para exibir os dados requisitados ou realizar alguma outra ação.
+
+## Aprofundando
+
+É importante ressaltar que a autenticação básica no envio de solicitações HTTP não é considerada muito segura, pois as credenciais são transmitidas em texto simples e podem ser interceptadas por terceiros. Por isso, é aconselhável utilizar um protocolo HTTPS para criptografar a comunicação e torná-la mais segura.
+
+Além disso, é importante validar as credenciais no servidor para garantir que apenas usuários autenticados tenham acesso às informações solicitadas.
+
+## Veja também
+
+- Documentação oficial do objeto XMLHttpRequest: https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest
+- Tutorial sobre autenticação básica com Javascript: https://www.digitalocean.com/community/tutorials/js-xmlhttprequest-with-basic-authentication
+- Vantagens e desvantagens da autenticação básica em requisições HTTP: https://www.owasp.org/index.php/Basic_authentication

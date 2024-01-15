@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Téléchargement d'une page web."
+html_title:           "PHP: Téléchargement d'une page web."
+simple_title:         "Téléchargement d'une page web."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,73 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Télécharger une page Web est une tâche commune dans le développement Web. Que ce soit pour récupérer des données, effectuer des tests ou simplement explorer le code source d'une page, il est souvent nécessaire de télécharger une page Web. Dans cet article, nous allons vous montrer comment le faire en PHP.
+Télécharger une page web peut sembler banal, mais c'est en fait une tâche importante pour tout développeur web. Cela permet de récupérer des informations et des données à utiliser plus tard dans un projet, de tester le bon fonctionnement d'une page et même d'effectuer des tâches d'automatisation.
 
 ## Comment faire
 
-Pour télécharger une page Web en utilisant PHP, nous allons utiliser la fonction `file_get_contents()`. Cette fonction prend en paramètre l'URL de la page à télécharger et renvoie son contenu sous forme de chaîne de caractères. Voyons un exemple concret :
+Pour télécharger une page web en PHP, il existe différentes méthodes en fonction de vos besoins. Voici quelques exemples :
 
 ```PHP
-<?php 
+// Utilisation de la fonction file_get_contents()
 $url = "https://www.example.com";
 $page = file_get_contents($url);
-echo $page; // Affiche le contenu de la page
-?>
-```
+echo $page;
 
-Dans cet exemple, nous avons stocké l'URL de la page cible dans une variable `$url` puis nous avons utilisé la fonction `file_get_contents()` pour télécharger la page et stocker son contenu dans une variable `$page`. Enfin, nous avons affiché le contenu de la page en utilisant `echo`.
-
-Mais que se passe-t-il si la page que nous voulons télécharger contient des paramètres GET ? Dans ce cas, nous devons les inclure dans l'URL. Par exemple :
-
-```PHP
-<?php 
-$url = "https://www.example.com/search?q=php";
-$page = file_get_contents($url);
-echo $page; // Affiche le contenu de la page de recherche pour "php"
-?>
-```
-
-De plus, si nous voulons personnaliser notre requête en ajoutant des en-têtes HTTP ou en utilisant une méthode autre que GET, nous pouvons utiliser la fonction `stream_context_create()`. Elle nous permet de créer un contexte pour notre requête et d'inclure toutes les informations supplémentaires nécessaires. Par exemple :
-
-```PHP
-<?php
+// Utilisation de cURL
 $url = "https://www.example.com";
-$options = array(
-    'http' => array(
-        'method' => "POST",
-        'header' => "Content-Type: application/x-www-form-urlencoded\r\n\r\n",
-        'content' => http_build_query(array('key' => 'valeur')) // Les paramètres POST sous forme de chaîne de caractères
-    ),
-);
-
-$context = stream_context_create($options);
-$page = file_get_contents($url, false, $context);
-echo $page; // Affiche le contenu de la page
-?>
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$page = curl_exec($ch);
+curl_close($ch);
+echo $page;
 ```
 
-## Plongée en profondeur
+Le premier exemple utilise la fonction native `file_get_contents()`, qui récupère le contenu d'une URL et le stocke dans une variable. Le second exemple utilise cURL, une bibliothèque qui permet de récupérer des ressources à partir d'URL. Dans les deux cas, le contenu de la page web est stocké dans une variable `$page` et peut être manipulé selon vos besoins.
 
-Lorsque vous utilisez la fonction `file_get_contents()` pour télécharger une page, il est important de noter qu'elle ne suit pas les redirections HTTP. Si la page cible effectue une redirection, vous obtiendrez le code HTML de la page de redirection plutôt que celui de la page cible. Pour suivre les redirections, nous pouvons utiliser la fonction `curl`. Voici un exemple :
+## Plongez plus profondément
 
-```PHP
-<?php
-$url = "https://www.example.com";
+Pour des tâches plus avancées, vous pouvez également utiliser des bibliothèques et des outils dédiés au téléchargement de pages web en PHP. Par exemple, la bibliothèque Guzzle offre une API plus complète et flexible pour l'accès aux ressources en ligne, tandis que l'outil PhantomJS permet de récupérer des pages web avec JavaScript actif.
 
-$curl_handle = curl_init();
-curl_setopt($curl_handle, CURLOPT_URL, $url);
-curl_setopt($curl_handle, CURLOPT_HEADER, 0);
-curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-$page = curl_exec($curl_handle);
-curl_close($curl_handle);
-echo $page; // Affiche le contenu de la page cible
-?>
-```
-
-En utilisant la fonction `curl`, nous pouvons également personnaliser nos requêtes en utilisant différentes méthodes HTTP, des en-têtes, des cookies, etc.
+En outre, il est important de comprendre les différentes méthodes permettant de manipuler le contenu téléchargé, telles que l'utilisation de flux de données ou de fonctions de traitement de chaînes de caractères.
 
 ## Voir aussi
 
-- [Documentation officielle de PHP sur la fonction `file_get_contents()`](https://www.php.net/manual/fr/function.file-get-contents.php)
-- [Documentation officielle de PHP sur la fonction `stream_context_create()`](https://www.php.net/manual/fr/function.stream-context-create.php)
-- [Documentation officielle de PHP sur la fonction `curl` ](https://www.php.net/manual/fr/book.curl.php)
+- [Bibliothèque Guzzle](https://docs.guzzlephp.org/en/stable/)
+- [PhantomJS](https://phantomjs.org/)
+- [Documentation officielle de PHP sur les flux de données](https://www.php.net/manual/fr/wrappers.php.php)

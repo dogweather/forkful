@@ -1,6 +1,7 @@
 ---
-title:                "Go: Puhekomentoriviparametrien lukeminen"
-simple_title:         "Puhekomentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Go: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,50 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentorivin argumentteja?
+## Miksi
 
-Yksi Go-ohjelmoinnin tärkeimmistä taidoista on käyttäjän syöttämän datan käsittely. Komentorivin argumentit ovat yksi tapa saada käyttäjältä tietoa ohjelmalle. Tässä blogikirjoituksessa opit, kuinka lukea ja käsitellä komentorivin argumentteja Go-kielellä.
+On monia tilanteita, joissa tarvitset käyttäjän syötettä tai parametreja suorittaaksesi ohjelman tietyllä tavalla. Esimerkiksi komentorivillä suorittaessa on kätevää antaa ohjelmalle tietoa ennen sen suorittamista. Siksi on hyödyllistä tietää, miten komentoriviparametreja voidaan lukea ja käsitellä Go-kielellä. 
 
-## Miten tehdä se?
+## Miten tämä tehdään
 
-Go-kielellä komentorivin argumentteja voidaan lukea `os`-paketin `Args`-muuttujan avulla. Alla on esimerkki, jolla tulostetaan kaikki komentorivin argumentit:
+Komentoriviparametrit on helppo lukea Go-kielellä, sillä siihen sisältyy valmiita toimintoja niiden käsittelyyn. Voit lukea parametreja käyttämällä `os.Args` -muuttujaa, joka palauttaa kaikki parametrit taulukkona. Voit käyttää myös `flag` -pakettia, joka tarjoaa mahdollisuuden määritellä ja lukea tiettyjä parametreja.
 
 ```Go
 package main
 
 import (
+    "flag"
     "fmt"
     "os"
 )
 
 func main() {
-    args := os.Args[1:]
-    for _, arg := range args {
-        fmt.Println(arg)
-    }
+    // Lukee komentoriviparametrit ja tallentaa ne taulukkoon
+    args := os.Args
+    
+    // Lukee parametrit f-lippuun
+    var fileName string
+    flag.StringVar(&fileName, "f", "", "Tiedoston nimi")
+    flag.Parse()
+    
+    fmt.Println("Kaikki parametrit:", args)
+    fmt.Println("Tiedoston nimi:", fileName)
 }
 ```
 
-Jos käytämme yllä olevaa ohjelmaa komentorivillä seuraavasti:
+### Tulostus
 
 ```
-go run main.go Hello World
+$ go run main.go -f testi.txt
+
+Kaikki parametrit: [main.go -f testi.txt]
+Tiedoston nimi: testi.txt
 ```
 
-Saamme seuraavan tulosteen:
+## Syvällistä
 
-```
-Hello
-World
-```
-
-Kuten näet, `os.Args`-muuttuja tallettaa kaikki komentorivin argumentit `[]string`-tyypin listana. Voit käyttää tavallisia `for`-silmukoita tai `range`-silmukoita käsitelläksesi näitä argumentteja.
-
-## Syvällisempi tarkastelu
-
-Komentorivin argumenttien lukeminen ei rajoitu vain `os.Args`-muuttujan käyttöön. Go-kielessä on myös `flag`-paketti, joka tarjoaa enemmän toiminnallisuutta komentorivin argumenttien käsittelyyn. Voit lukea lisätietoja tästä paketista Go:n [virallisesta dokumentaatiosta](https://golang.org/pkg/flag/).
+Parametrit luetaan ohjelman argumenteista, jotka annetaan sen suorituksen yhteydessä. Ne voivat sisältää tietoa mm. halutusta tiedostosta, suoritusasetuksista tai muista tarpeellisista tiedoista. Komentoriviparametrit ovat käyttäjälle helposti muokattavissa ja ohjaavat ohjelman suoritusta halutulla tavalla. 
 
 ## Katso myös
 
-- [Go:n viralliset dokumentaatiot komentorivin argumenttien käsittelystä](https://golang.org/pkg/os/#Args)
-- [Go:n viralliset dokumentaatiot `flag`-paketista](https://golang.org/pkg/flag/)
+- [Go-kielen virallinen dokumentaatio komentoriviparametrien lukemisesta](https://golang.org/pkg/os/)
+- [Esimerkkejä käytöstä ja selityksiä Go-kielen `flag`-paketista](https://gobyexample.com/command-line-flags)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Hindi में एचटीएमएल पार्सिंग"
-simple_title:         "Hindi में एचटीएमएल पार्सिंग"
+title:                "एचटीएमएल विश्लेषण"
+html_title:           "TypeScript: एचटीएमएल विश्लेषण"
+simple_title:         "एचटीएमएल विश्लेषण"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,27 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-कभी-कभी तो हमें वेब पृष्ठों से डेटा को निकालने की जरूरत होती है, जैसे कि वेब स्क्रैपिंग या डेटा माइनिंग की आवश्यकता हो सकती है। ऐसे मामलों में, HTML को पास करना बहुत ही उपयोगी हो सकता है।
+
+HTML पार्सिंग क्यों करना उपयोगी हो सकता है? HTML परिवर्तन विन्यास करने या आवश्यक डेटा को उपयोग करने के लिए।
 
 ## कैसे करें
-महज़ 5-10 मिनटों में हम TypeScript और Cheerio लाइब्रेरी का प्रयोग करके HTML पार्सिंग के बारे में सीखेंगे। सबसे पहले, आपको ```npm install typescript``` और ```npm install cheerio``` कमांड्स को अपनी टर्मिनल में दर्ज करना होगा। तब आपको इस वीडियो लिंक पर अधिकारिक डॉक्यूमेंटेशन से अपना लर्निंग शुरू कर सकते हैं।
+
 ```TypeScript
-// इस उदाहरण में हम उदाहरण हटाओं का अनुसरण करेंगे।
+// HTML पार्सिंग के लिए उपयोगी पुस्तकालय वार्तालाप करें
+import * as parser from 'htmlparser2';
 
-import * as cheerio from 'cheerio';
-
-// HTML डॉक्यूमेंट लोड करें
-let html = '<div><h1>Hello World</h1><p>This is a paragraph</p></div>';
-const $ = cheerio.load(html);
-
-// हेडिंग के लिए जीएस मिलाओ
-let heading = $('h1').text();
-console.log(heading); // आउटपुट: "Hello World"
-
-// पैराग्राफ के लिए जीएस मिलाओ
-let paragraph = $('p').text();
-console.log(paragraph); // आउटपुट: "This is a paragraph"
+// HTML से डेटा प्राप्त करें
+const htmlData = '<body><h1>Hello World!</h1></body>';
+// HTML पार्सर बनाएं
+const parsedData = parser.parseDOM(htmlData);
+// चाहे स्ट्रिंग या ऑब्जेक्ट फॉर्मैट में डेटा आउटपुट करें
+console.log(parsedData);
 ```
 
-## गहराई में जाएं
-HTML पार्सिंग का क्या सचमुच अर्थ है? इसके पीछे की विज्ञान और तकनीक क्या है? आइये हम थोड़ी गहराई में जानते हैं। HTML पार्सिंग एक प्रकार का डेटा माइनिंग है जो वेब पेज़ों से डेटा को निकालता है। यह प्रक्रिया सरल है, लेकिन बहुत सारे ऑनलाइन टूल्स भी उपलब्ध हैं जो आपको डेटा पार्सिंग का काम आसान बना देते हैं। HTML पार्सिंग आमत
+## डीप डाइव
+
+HTML पार्सिंग में क्या ध्यान देना चाहिए? आपको सुनिश्चित करना होगा कि आपका पार्सिंग बिल्कुल सही रूप से काम कर रहा है और आप उचित विन्यास के लिए समर्थन दे रहे हैं। आपको अपने प्रोजेक्ट के लिए सबसे उपयुक्त पुस्तकालय चुनने की आवश्यकता हो सकती है, जो आपके कोड को अधिक सरल बनाता है।
+
+## देखिये भी
+
+- [HTML पार्सिंग के बारे में विवरण](https://www.tutorialspoint.com/html/html_parsing.htm)
+- [htmlparser2 पुस्तकालय का आधिकारिक डॉक्यूमेंटेशन](https://github.com/fb55/htmlparser2/wiki)
+- [HTML प्रोसेसिंग लाइब्रेरी का उपयोग](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_Browser_Interpreter_Language_Processors)

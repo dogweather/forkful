@@ -1,5 +1,6 @@
 ---
-title:                "C: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "C: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "C"
 category:             "C"
@@ -9,61 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON em programação em C?
+## Por que trabalhar com JSON?
 
-JSON (JavaScript Object Notation) é um formato de arquivo amplamente usado em programação, especialmente em aplicações web e de API. Ele permite estruturar e transmitir dados de forma rápida e eficiente, o que o torna uma escolha popular para troca de informações entre sistemas. Se você está interessado em desenvolver aplicações que se conectam à internet ou consumir dados de uma API, é importante conhecer e saber trabalhar com JSON em C.
+Se você está se aventurando no mundo da programação, é provável que já tenha ouvido falar em JSON. Esta é uma forma popular de armazenar e trocar dados entre diferentes aplicações. Com a crescente demanda pela integração de sistemas e a criação de APIs, é importante entender como trabalhar com JSON em uma linguagem de programação como C.
 
-## Como trabalhar com JSON em C
+## Como fazer
 
-Antes de iniciar, é importante ter um bom entendimento de como JSON é estruturado. Ele consiste em pares de chave-valor, onde a chave é uma string e o valor pode ser qualquer tipo de dado válido em JSON: string, número, booleano, objeto ou array. Aqui está um exemplo de JSON válido:
+Para começar, é preciso ter em mente que JSON é uma estrutura de dados bastante simples. Ele consiste em pares de chave e valor, semelhante a um dicionário. A principal diferença é que os valores podem ser de vários tipos, como strings, números e até mesmo outras estruturas JSON.
 
-```C
-{
-    "nome": "João",
-    "idade": 30,
-    "casado": true
-}
+Para criar um objeto JSON em C, primeiro precisamos incluir a biblioteca "json-c" em nosso código:
+
 ```
-Para começar a trabalhar com JSON em C, é necessário incluir o arquivo de cabeçalho `json-c/json.h`. A biblioteca JSON-C é uma das mais populares para manipulação de JSON em C e pode ser encontrada em diversas plataformas e sistemas operacionais. Uma vez que a biblioteca está incluída, a função `json_object` pode ser utilizada para criar um novo objeto JSON vazio. Em seguida, é possível adicionar pares de chave-valor ao objeto utilizando funções como `json_object_object_add` e `json_object_array_add`. Aqui está um exemplo de como criar e imprimir um objeto JSON utilizando a biblioteca JSON-C:
-
-```C 
-// inclui biblioteca JSON-C
+#include <stdio.h>
 #include <json-c/json.h>
-
-int main()
-{
-    // cria objeto JSON vazio
-    json_object *obj = json_object_new_object();
-
-    // adiciona pares de chave-valor ao objeto
-    json_object_object_add(obj, "nome", json_object_new_string("João"));
-    json_object_object_add(obj, "idade", json_object_new_int(30));
-    json_object_object_add(obj, "casado", json_object_new_boolean(true));
-
-    // imprime objeto JSON
-    printf("%s\n", json_object_to_json_string(obj));
-
-    return 0;
-}
-
 ```
 
-A saída deste código será o objeto JSON apresentado anteriormente:
-```C
-{
-    "nome": "João",
-    "idade": 30,
-    "casado": true
-}
+Em seguida, podemos criar um objeto JSON básico com a função `json_object` e adicionar pares de chave e valor usando `json_object_object_add`. Vamos dar uma olhada em um exemplo que cria um objeto JSON com duas chaves: "nome" e "idade":
+
+```
+struct json_object *obj = json_object_new_object();
+json_object_object_add(obj, "nome", json_object_new_string("João"));
+json_object_object_add(obj, "idade", json_object_new_int(25));
+
+printf("%s", json_object_to_json_string(obj));
 ```
 
-## Explorando mais sobre JSON em C
+A saída deste código seria:
 
-Há muitas outras funções disponíveis na biblioteca JSON-C para manipulação e validação de JSON em C. É possível, por exemplo, carregar um arquivo JSON existente através da função `json_object_from_file`, ou converter um objeto JSON em uma string com a função `json_object_to_json_string`. Além disso, existem funções para verificar o tipo de um valor em JSON, acessar elementos específicos em objetos e arrays, entre outras possibilidades.
+```
+{"nome":"João","idade":25}
+```
 
-Além da biblioteca JSON-C, há também outras opções disponíveis para trabalhar com JSON em C, como a jsmn (https://github.com/zserge/jsmn) e a jansson (https://github.com/akheron/jansson). Cada uma delas possui suas próprias características e vantagens, então é importante experimentar e encontrar a opção que melhor se encaixa nas necessidades do seu projeto.
+Além de criar objetos JSON, também é possível ler e manipular dados de um arquivo JSON. Supondo que temos um arquivo "dados.json" que contém as informações do exemplo acima, podemos ler e imprimir os valores da seguinte maneira:
+
+```
+/* Lê o arquivo */
+FILE *arquivo = fopen("dados.json", "r");
+struct json_object *obj = json_object_from_fd(fileno(arquivo));
+
+/* Obtém os valores das chaves */
+struct json_object *nome;
+struct json_object *idade;
+json_bool sucesso = json_object_object_get_ex(obj, "nome", &nome);
+sucesso = json_object_object_get_ex(obj, "idade", &idade);
+
+/* Imprime os valores */
+printf("Nome: %s\n", json_object_to_json_string(nome));
+printf("Idade: %d\n", json_object_get_int(idade));
+```
+
+A saída seria:
+
+```
+Nome: "João"
+Idade: 25
+```
+
+## Aprofundando-se
+
+Para quem deseja se aprofundar mais no assunto, é importante conhecer as diferentes funções e métodos disponíveis na biblioteca "json-c". Além das já mencionadas `json_object_new_object` e `json_object_object_add`, também há outras como `json_object_get_type`, que retorna o tipo de dado de um objeto JSON, e `json_object_to_json_string_ext`, que permite definir o formato de saída do objeto.
+
+Também é interessante explorar como percorrer e manipular objetos JSON com loops e condicionais. Além disso, é importante se familiarizar com o formato do arquivo JSON e suas possibilidades, como arrays e objetos aninhados.
 
 ## Veja também
-- [Tutorial em vídeo de como trabalhar com JSON em C](https://www.youtube.com/watch?v=JPcry2F1Yxs)
-- [Documentação da biblioteca JSON-C oficial](https://github.com/json-c/json-c/)
-- [Exemplos práticos de como trabalhar com JSON em C](https://www.learn-c.org/en/JSON)
+
+- [Documentação oficial do json-c](https://json-c.github.io/json-c/)
+- [Tutorial em vídeo sobre json-c em C](https://www.youtube.com/watch?v=cGVfIauw25s)
+- [Curso completo de introdução ao JSON em C](https://www.udemy.com/course/introducao-json-c/?referralCode=CAFABF66016A387FAAB3)

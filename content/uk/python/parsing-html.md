@@ -1,6 +1,7 @@
 ---
-title:                "Python: Аналіз html."
-simple_title:         "Аналіз html."
+title:                "Розбір HTML"
+html_title:           "Python: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,46 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Зараз насамперед користувачі нашого сайту, скоріш за все, цікавимуться тим, чому вони повинні вчитися парсити HTML. На початку може здатися, що це складний процес, але насправді, це корисний і необхідний навичка для всіх програмістів.
+Вивчення розбору HTML є корисним для веб-розробки, веб-скрапінгу та автоматизації задач, пов'язаних з вебом.
 
-## Як це зробити
-
-Нижче наведені приклади коду Python для парсингу HTML та відображення результату:
+## Як
 
 ```Python
-# імпортуємо необхідні бібліотеки
 from bs4 import BeautifulSoup
 import requests
 
-# створюємо з'єднання з сторінкою
+# Запит на веб-сторінку
 url = "https://www.example.com"
-page = requests.get(url)
+response = requests.get(url)
 
-# отримуємо HTML-код сторінки
-soup = BeautifulSoup(page.content, 'html.parser')
+# Створення об'єкту BeautifulSoup для роботи з HTML
+soup = BeautifulSoup(response.text, 'html.parser')
 
-# шукаємо всі елементи <h1> та відображаємо їх текст
-headings = soup.find_all('h1')
-for heading in headings:
-    print(heading.get_text())
+# Пошук елементів за тегом або класом
+titles = soup.find_all('h1')
+paragraphs = soup.find_all(class_='description')
 
-# шукаємо всі посилання та відображаємо їх URL
-links = soup.find_all('a')
-for link in links:
-    print(link['href'])
+# Виведення знайдених елементів
+print(titles)
+print(paragraphs)
 ```
 
-Запустивши цей код, ви отримаєте заголовки <h1> та посилання, які знаходяться на сторінці "https://www.example.com".
+Результат:
+```Python
+[<h1>Hello, world!</h1>, <h1>Welcome to my website</h1>]
+[<p class="description">This is a sample website for demonstration purposes only.</p>]
+```
 
-## Глибше погрузження
+## Deep Dive
 
-Парсинг HTML - це процес структуризації та отримання даних з HTML-коду сторінки. Для цього використовуються спеціальні бібліотеки, такі як BeautifulSoup або lxml. Парсинг HTML корисний для отримання інформації з веб-сторінок для подальшого використання або аналізу даних.
+Один з основних інструментів для розбору HTML в Python - це бібліотека BeautifulSoup. Вона дозволяє забезпечити зручний доступ до різних елементів веб-сторінки за допомогою зручних методів. Крім того, дана бібліотека підтримує парсинг за допомогою CSS селекторів, що дозволяє швидко і ефективно отримувати потрібні дані з веб-сторінок.
 
-Є багато різних методів та підходів до парсингу HTML, тому рекомендуємо докладно ознайомитися з документацією бібліотек та виконувати вправи, щоб отримати більше навичок.
-
-## Приклади додаткових матеріалів
-
+## Дивитися Також
 - [Документація BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Документація requests](https://requests.readthedocs.io/en/latest/)
-- [Документація lxml](https://lxml.de/)
-- [Приклади коду для парсингу HTML](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Розбір HTML з Python за допомогою BeautifulSoup](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Навчальне відео по розбору HTML в Python](https://www.youtube.com/watch?v=xm_kmudXFWI)

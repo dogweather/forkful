@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: HTMLの解析"
+title:                "HTMLの解析"
+html_title:           "Ruby: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
+HTMLをパースする理由は多々あります。例えば、ウェブスクレイピングやスクレイピングされたデータを分析するためなどです。RubyはHTMLを簡単にパースできる強力な言語なので、これから紹介する方法を使ってHTMLをパースしてみましょう！
 
-HTMLを解析することに何か意味があるの？プログラマーにとっては、情報を全ての形に分解するようなものです。例えば、Webスクレイピングやデータ収集などのタスクを実行するときに便利です。
+## パースする方法
+HTMLをパースするのに必要なのは、Nokogiriというライブラリをインストールすることです。下記のコードをターミナルに入力してください。
 
-## 使い方
+```Ruby
+gem install nokogiri
+```
 
-RailsやSinatraなどのRubyフレームワークを使用している場合、HTML解析のための便利なライブラリがあります。NokogiriやMechanizeなどのライブラリを使用して、簡単にHTMLを解析することができます。
-
-例えば、以下のコードを使用すると、指定したURLからHTMLを取得し、特定の要素を抽出することができます。
+次に、HTMLをパースするためのコードを書いていきましょう。例として、ruby-lang.orgのトップページのタイトルを取得してみます。
 
 ```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(URI.open("https://example.com/"))
-puts doc.css("h1").text # h1タグのテキストを出力
+doc = Nokogiri::HTML(open("https://www.ruby-lang.org/"))
+puts doc.at_css("title").text
 ```
 
-出力結果は以下のようになります。
+上記のコードを実行すると、以下のような出力が得られます。
 
 ```
-RubyのHTML解析
+Ruby Programming Language
 ```
 
-## ディープダイブ
+これで、HTMLからタイトルを取得することができました！
 
-HTML解析には、タグやクラスなどの識別子を使用して要素を特定する方法があります。また、XPathやCSSセレクターを使用することもできます。
-
-さらに、Nokogiriを使用してHTMLを変更することも可能です。例えば、`.css`を`.xpath`に変更することで、XPathを使用して要素を取得することができます。
+## もっと深く掘り下げる
+もし、より複雑なHTMLをパースしなければならない場合は、CSSセレクターを使うことができます。Nokogiriでは、以下のようにCSSセレクターを使うことで、特定の要素を取得することができます。
 
 ```Ruby
-require 'nokogiri'
-require 'open-uri'
-
-doc = Nokogiri::HTML(URI.open("https://example.com/"))
-puts doc.xpath("//h1").text # h1タグのテキストを出力
+doc.css("div#top-section .hero")
 ```
 
-出力結果は先ほどと同じです。
+このコードは、idが"top-section"でクラスが"hero"のdiv要素を取得します。また、複数の要素を取得したい場合は、`.each`メソッドを使ってループ処理を行うこともできます。
 
-## 併せて読みたい
+また、NokogiriではXPathという言語を使ってもHTMLをパースすることができます。XPathは、より柔軟なクエリを書くことができるので、パースするHTMLによってはCSSセレクターよりも便利です。
 
-- [Ruby on Rails Tutorial: 文字列操作とデータ処理](https://railstutorial.jp/chapters/string_operations.html)
-- [Nokogiriの公式ドキュメント](https://nokogiri.org/)
-- [Mechanizeの公式ドキュメント](https://github.com/sparklemotion/mechanize)
+## 参考リンク
+- [Nokogiri公式ドキュメント](https://nokogiri.org/)
+- [CSSセレクターガイド](https://www.w3schools.com/cssref/css_selectors.asp)
+- [XPathチュートリアル](https://www.guru99.com/xpath-selenium.html)
+
+## 参照
+- [Nokogiriを使ったHTMLのパース](https://www.rubyguides.com/2018/10/nokogiri/)

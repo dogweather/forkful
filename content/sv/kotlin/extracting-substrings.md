@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Utdrag av delsträngar"
-simple_title:         "Utdrag av delsträngar"
+title:                "Extrahera delsträngar"
+html_title:           "Kotlin: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Det kan finnas flera olika anledningar till varför man vill extrahera substrängar i Kotlin. Det kan vara för att få ut specifikt data från en sträng, manipulera data eller bara för att göra koden mer läsbar. Oavsett anledning kan förmågan att extrahera substrängar vara mycket användbar i Kotlin.
 
-## Hur man gör det
-För att extrahera substrängar i Kotlin använder vi oss av funktionen `substring()` som finns tillgänglig för alla strängobjekt. Syntaxen för denna funktion är `string.substring(startIndex, endIndex)`, där `startIndex` är indexet för den första tecknet i substrängen och `endIndex` är indexet för det sista tecknet i substrängen. Det är viktigt att notera att `endIndex` är exklusivt, vilket innebär att tecknet på detta index inte kommer att vara inkluderat i den resulterande substrängen.
+Om du någonsin behövt extrahera en del av en textsträng i ditt Kotlin-program, har du säkert undrat hur du ska göra det på ett enkelt och effektivt sätt. Att lära sig hur man extraherar substrängar kan hjälpa dig att hantera och manipulera text på ett smidigare sätt och göra ditt kodande liv lite enklare.
 
-Låt oss ta ett enkelt exempel för att förstå detta bättre:
+## Så här gör du
 
-```Kotlin
-val str = "Hej alla där ute!"
-val subStr = str.substring(4, 9)
-println(subStr)
-```
-
-Output: `alla`
-
-Vi börjar med att deklarera en strängvariabel `str` med värdet "Hej alla där ute!". Sedan använder vi funktionen `substring()` för att extrahera en ny substräng från index 4 till index 9 i `str` och tilldelar det till en ny variabel `subStr`. Slutligen skriver vi ut den nya substrängen och får som resultat "alla".
-
-Vi kan också ange endast `startIndex`, vilket i så fall kommer att inkludera alla tecken från det indexet till slutet av strängen. Om vi om vi inte specificerar något `endIndex` kommer det att antas vara strängens slut.
+Extrahera en substräng i Kotlin är en relativt enkel process. Här är ett exempel på hur du kan göra det:
 
 ```Kotlin
-val str = "Det är en fin dag!"
-val subStr = str.substring(12)
-println(subStr)
+val text = "Det här är ett exempel"
+val substräng = text.subSequence(0, 9)
+println(substräng)
 ```
+Output:
+```
+Det här är 
+```
+För att extrahera en del av en textsträng använder vi funktionen "subSequence()" tillsammans med index för början och slut på den del av strängen som du vill extrahera. I kodexemplet ovan använder vi index 0 och 9 för att få en substräng av de första 9 tecknen i den ursprungliga strängen. 
 
-Output: `fin dag!`
+Du kan även använda funktionen "substring()" om du vill extrahera en del av en textsträng baserat på tecken istället för index. Här är ett annat exempel:
 
-Här extraherar vi en substräng från index 12 till slutet av strängen och får som resultat "fin dag!".
+```Kotlin
+val text = "Det här är ett exempel"
+val substräng = text.substring(0, 9)
+println(substräng)
+```
+Output:
+```
+Det här är 
+```
+Det finns även möjligheten att använda regex för att extrahera en del av en textsträng som matchar ett visst mönster. 
 
 ## Djupdykning
-Det finns några viktiga saker att komma ihåg när man arbetar med `substring()` i Kotlin. För det första, om `startIndex` är större än `endIndex` kommer funktionen att returnera en tom sträng. Dessutom, om antingen `startIndex` eller `endIndex` är utanför strängens indexområdet, kommer en `IndexOutOfBoundsException` att kastas.
 
-En annan intressant funktion är `substringAfter()` och `substringBefore()`. Dessa funktioner använder sig av ett separat tecken som markör för att extrahera substrängar. Om vi till exempel har en sträng `Hej alla! Välkommen till min sida` och använder `substringAfter("!")`, kommer den att returnera en substräng från det första utropstecknet till slutet, vilket är ` Välkommen till min sida`.
+Det finns vissa saker du bör hålla i åtanke när du extraherar substrängar i Kotlin. Först och främst, om indexet för slutet är längre än längden på den ursprungliga strängen, kommer funktionen att kasta ett "IndexOutOfBoundsException". Detta kan undvikas genom att kontrollera längden på strängen innan du utför subSträng- operationen.
+
+Det är också viktigt att komma ihåg att strängar är oföränderliga i Kotlin, vilket betyder att en substräng är en ny sträng och ändringar i en substräng kommer inte att påverka den ursprungliga strängen. 
 
 ## Se även
-- [Kotlin String Interpolation](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation)
-- [Kotlin do while() Loop](https://kotlinlang.org/docs/reference/control-flow.html#do-while-loops)
-- [Kotlin Ranges](https://kotlinlang.org/docs/reference/ranges.html)
+
+- [Kotlin Standardbibliotek](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/#subSequence)
+- [Java String API](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int, int))
+- [Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)

@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Python recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Python"
 category:             "Python"
@@ -11,53 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to compare two dates in your Python program? Maybe you're working on a project that requires checking the difference between two dates, or maybe you simply want to know which date comes first. Whatever the reason may be, comparing dates is a common task in programming and can be easily accomplished in Python. In this blog post, we will explore how to compare two dates in Python and dive into the underlying concepts.
+Have you ever needed to compare two dates in your Python code? Maybe you're building a program that tracks events or reminders, and you need to know if one date comes before or after another. Being able to compare dates is an essential skill in many programming projects.
 
 ## How To
 
-To compare two dates in Python, we will be using the `date` class from the `datetime` module. First, let's import the necessary module:
+The good news is that comparing two dates in Python is simple and straightforward. Let's take a look at a few examples using the built-in `datetime` module.
+
+To start, we'll create two `datetime` objects representing different dates:
 
 ```Python
 import datetime
+
+date1 = datetime.datetime(2021, 3, 15)
+date2 = datetime.datetime(2021, 3, 20)
 ```
 
-Next, we need to create two date objects with the `date()` constructor. Here's an example:
+We can now compare these two dates using the comparison operators `<` and `>`. These operators return a boolean value indicating if the first date is before or after the second date:
 
 ```Python
-date1 = datetime.date(2021, 7, 10)
-date2 = datetime.date(2021, 7, 15)
+print(date1 < date2)  # Output: True
+print(date1 > date2)  # Output: False
 ```
 
-Now that we have our two dates, we can use the `>` and `<` operators to compare them. The `>` operator checks if the left operand is greater than the right, while the `<` operator checks if the left operand is less than the right. Using these operators, we can easily determine which date comes first. Let's see some examples:
+We can also check if two dates are equal using the `==` operator:
 
 ```Python
-# compare two dates
-date1 > date2  # False
-date1 < date2  # True
-
-# compare same dates
-date1 > date1  # False
-date2 < date2  # False
-
-# compare dates with different years
-date1 > datetime.date(2020, 7, 10)  # True
+print(date1 == date2)  # Output: False
 ```
 
-As you can see, we can compare dates just like we compare numbers. This makes it very easy to check the relationship between two dates. However, what if we want to check if two dates are exactly the same? For that, we can use the `==` operator, just like we do with other data types.
+But what if we want to compare the dates based on their time, not just their date? We can use the `.time()` method to access the time component of a `datetime` object:
 
 ```Python
-date1 == date2  # False
-date1 == datetime.date(2021, 7, 10)  # True
+date3 = datetime.datetime(2021, 3, 15, 8, 0, 0) # 8 AM on March 15th
+
+print(date1.time() < date3.time())  # Output: True
 ```
+
+In this example, we are comparing only the time component, so `date3` is considered to be before `date1`.
 
 ## Deep Dive
 
-Behind the scenes, Python uses the `__lt__()`, `__gt__()`, and `__eq__()` magic methods to perform the comparison operations. These methods are used to define the behavior of an object when compared with another object. In our case, the `date` class has already defined these methods, which is why we can easily compare dates using the operators. However, if you are creating your own class, you will need to define these methods to enable comparison.
+Under the hood, the comparison operators are using the `__lt__` (less than), `__gt__` (greater than), and `__eq__` (equal) methods of the `datetime` class to perform the comparisons. These methods allow us to customize how dates are compared if needed.
 
-It's also important to note that the `date` objects are immutable, meaning they cannot be changed once created. This is why we use the `date()` constructor to create new date objects, rather than changing the existing ones.
+Additionally, the `datetime` module includes a handy `timedelta` class that allows us to compare the difference between two dates in terms of days, hours, minutes, etc. For example, we can find the number of days between `date1` and `date2` using the following code:
+
+```Python
+delta = date2 - date1
+print(delta.days)  # Output: 5
+```
 
 ## See Also
 
-* [Python Documentation on Date Objects](https://docs.python.org/3/library/datetime.html#date-objects)
-* [Real Python Blog on Working with Dates and Times in Python](https://realpython.com/python-datetime/)
-* [Python Tutorial on Comparing Objects](https://www.programiz.com/python-programming/comparison-operators#object)
+- [Python datetime documentation](https://docs.python.org/3/library/datetime.html)
+- [Python timedelta documentation](https://docs.python.org/3/library/datetime.html#timedelta-objects)

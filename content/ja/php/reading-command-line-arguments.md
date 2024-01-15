@@ -1,6 +1,7 @@
 ---
-title:                "PHP: コマンドライン引数の読み取り"
-simple_title:         "コマンドライン引数の読み取り"
+title:                "コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
+html_title:           "PHP: コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
+simple_title:         "コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,47 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜコマンドライン引数を読み取るのか
+## なぜCLI引数を読む必要があるのか
 
-コマンドライン引数は、プログラミング言語でよく使用される重要な機能です。これを使用することで、プログラムをより柔軟に制御することができます。例えば、プログラムに必要な設定やパラメーターを動的に指定することができます。また、コマンドライン引数を用いることで、プログラムを実行する際の手間を省くことができます。
+CLI引数を読むことは、ユーザーから入力を受け取るために非常に便利です。例えば、スクリプトを起動するときに様々なオプションやパラメーターを指定できます。これにより、より柔軟なプログラムを作成することができます。
 
-# コマンドライン引数の読み取り方
+## CLI引数を読む方法
 
-PHPでコマンドライン引数を読み取るには、`$argv`という特別な配列を使用します。この配列には、プログラムを実行する際に指定したすべての引数が含まれています。以下のコードブロックを参考にしてください。
+CLI引数を読むには、`$argv`配列を使用します。以下のコードを参考にしてください。
 
 ```PHP
 <?php
-// ファイル名を除いたコマンドライン引数の数を取得する
-$count = count($argv) - 1;
-// 引数が指定されていない場合はエラーメッセージを表示する
-if ($count < 1) {
-    exit("引数が必要です。");
+// 引数が渡されたかを確認
+if (isset($argv[1])) {
+    // 第1引数を出力
+    echo "Hello, " . $argv[1] . "!";
+} else {
+    echo "Hello, world!";
 }
-// コマンドライン引数を取得して出力する
-for ($i = 0; $i < $count; $i++) {
-    // $argv[0]にはファイル名が含まれるため、+1した値を使用する
-    echo "引数" . ($i + 1) . ": " . $argv[$i + 1] . "\n";
+
+// 結果例：
+// $ php script.php John
+// Hello, John!
+// $ php script.php
+// Hello, world!
+```
+
+## 深堀り
+
+CLI引数には、長いオプション名と短いオプション名の両方を指定することができます。長いオプション名は`--`で始まる文字列で指定します。短いオプション名は`-`で始まる文字で指定します。
+
+また、CLI引数をパースするために`getopt()`関数を使用することもできます。これにより、引数の順序に依存せずにオプションが読み取られます。以下のコードを参考にしてください。
+
+```PHP
+<?php
+// オプションやパラメーターを指定
+$options = getopt("l:n:");
+
+// オプションが指定された場合は値を出力
+if (isset($options['l'])) {
+    echo "Language: " . $options['l'];
 }
+
+// パラメーターが指定された場合は値を出力
+if (isset($options['n'])) {
+    echo "Name: " . $options['n'];
+}
+
+// 結果例：
+// $ php script.php -l PHP -n John
+// Language: PHP
+// Name: John
 ```
 
-実行時に、`php script.php argument1 argument2 argument3`のように引数を指定すると、以下のような出力が得られます。
+## 他に見るべきもの
 
-```
-引数1: argument1
-引数2: argument2
-引数3: argument3
-```
-
-# コマンドライン引数の詳細
-
-コマンドライン引数を読み取る際には、`$argv`の他にも`$argc`という特別な変数が使用されます。`$argc`には、コマンドライン引数の数を示す整数値が格納されます。また、`$argv`の各要素は文字列として扱われるため、数字やブール値を取得する際には適切な型変換が必要です。
-
-# おわりに
-
-コマンドライン引数を読み取る方法について学びました。この機能を上手に活用することで、プログラムをより柔軟に構築することができます。ぜひ実践してみてください！
-
-# 関連リンク
-
-- [PHPの公式ドキュメント: コマンドライン実行時の引数](https://www.php.net/manual/ja/reserved.variables.argv.php)
-- [「PHPプログラミング」: コマンドライン引数の取得方法](https://www.php.net/manual/ja/reserved.variables.argv.php)
-- [Qiita: PHPでコマンドライン引数を使用する方法](https://qiita.com/ukiuni@github/items/8373989e1afc5f3291bb)
+- [PHP CLI引数ドキュメント](https://www.php.net/manual/ja/features.commandline.php)
+- [getopt()関数ドキュメント](https://www.php.net/manual/ja/function.getopt.php)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Descargando una página web"
-simple_title:         "Descargando una página web"
+title:                "Descargar una página web"
+html_title:           "C: Descargar una página web"
+simple_title:         "Descargar una página web"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,64 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+<br>
 
-La descarga de páginas web puede ser una tarea muy útil para los programadores de C. Con este proceso, se pueden obtener datos actualizados en tiempo real o guardar información útil para su uso posterior. Además, es una excelente forma de aprender sobre programación web y cómo funciona Internet.
+## ¿Por qué descargar una página web?
+
+Descargar una página web puede ser útil por diversas razones, como guardar una copia de seguridad, acceder a contenido sin conexión a internet o analizar su estructura para propósitos educativos o profesionales.
+
+<br>
 
 ## Cómo hacerlo
-Para descargar una página web en C, se requiere utilizar la biblioteca de sockets. Primero, se debe crear un socket TCP utilizando la función `socket()`. A continuación, se deben especificar la dirección del servidor y el puerto mediante la función `bind()`. Luego, se establece una conexión con el servidor utilizando la función `connect()`. Una vez establecida la conexión, se pueden enviar solicitudes HTTP al servidor utilizando la función `send()`. Finalmente, se recibirá la respuesta del servidor utilizando la función `recv()` y se puede guardar la página web en un archivo o visualizarla en la terminal.
 
-A continuación se muestra un ejemplo de código para descargar y guardar una página web en un archivo llamado "webpage.html":
+Para descargar una página web utilizando C, podemos utilizar la librería `libcurl`. Primero, debemos incluir la librería en nuestro código:
 
 ```C
 #include <stdio.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netdb.h>
+#include <curl/curl.h>
+```
 
-int main() {
-    int sockfd, port, bytes, file;
-    char hostname[] = "www.example.com";
-    char request[] = "GET / HTTP/1.1\r\nHost: www.example.com\r\n\r\n";
-    char buffer[4096];
-    struct sockaddr_in server_addr;
-    struct hostent *server;
+Luego, necesitamos definir una función de callback que se encargará de guardar los datos recibidos en un archivo:
 
-    // Crear un socket TCP
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
-
-    // Obtener dirección IP del servidor
-    server = gethostbyname(hostname);
-
-    // Especificar dirección y puerto del servidor
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(80);
-    bcopy((char *)server->h_addr, (char *)&server_addr.sin_addr.s_addr, server->h_length);
-
-    // Establecer conexión con el servidor
-    connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
-
-    // Enviar solicitud HTTP al servidor
-    send(sockfd, request, strlen(request), 0);
-
-    // Recibir respuesta del servidor y guardarla en un archivo
-    file = open("webpage.html", O_CREAT | O_WRONLY, 0666);
-    while ((bytes = recv(sockfd, buffer, 4096, 0)) > 0) {
-        write(file, buffer, bytes);
-    }
-
-    // Cerrar conexión y archivo
-    close(sockfd);
-    close(file);
-
-    return 0;
+```C
+size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
+   FILE *fp = (FILE *)userdata;
+   return fwrite(ptr, size, nmemb, fp);
 }
 ```
 
-## Profundizando
-Además de la descarga de páginas web, también se pueden realizar otras acciones utilizando sockets en C, como el envío y recepción de correos electrónicos, el uso de aplicaciones de mensajería instantánea o incluso la conexión a juegos en línea. La biblioteca de sockets proporciona una gran cantidad de funciones y opciones para trabajar con conexiones de red, por lo que es muy útil para una amplia gama de aplicaciones.
+A continuación, utilizamos la función `curl_easy_init()` para inicializar una sesión de `libcurl` y la función `curl_easy_setopt()` para establecer las opciones de nuestra solicitud, como la URL y la función de callback:
+
+```C
+CURL *curl;
+CURLcode result;
+curl = curl_easy_init();
+
+if(curl) {
+  FILE *fp = fopen("pagina.html", "wb");
+  curl_easy_setopt(curl, CURLOPT_URL, "https://ejemplo.com/");
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+```
+
+Por último, ejecutamos la solicitud utilizando la función `curl_easy_perform()` y cerramos la sesión con `curl_easy_cleanup()`:
+
+```C
+  result = curl_easy_perform(curl);
+  curl_easy_cleanup(curl);
+  fclose(fp);
+}
+```
+
+Al ejecutar nuestro código, se descargará la página web en el archivo `pagina.html` en nuestro directorio actual.
+
+<br>
+
+## Detalles técnicos
+
+`libcurl` es una librería de código abierto que nos permite realizar solicitudes HTTP en múltiples plataformas. Utilizando la función `curl_easy_setopt()`, podemos establecer diferentes opciones para personalizar nuestras solicitudes, como el tipo de petición, encabezados y autenticación. Para más información, podemos consultar la documentación oficial de `libcurl` o revisar el código fuente de la librería.
+
+<br>
 
 ## Ver también
-- [Documentación de la biblioteca de sockets en C](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_socket.h.html)
-- [Tutorial de programación de sockets en C](https://www.geeksforgeeks.org/socket-programming-cc/) 
-- [Ejemplos de descarga de páginas web en C](https://github.com/kiritigowda/Download-a-Webpage-in-C-Language)
+
+- [Documentación de libcurl](https://curl.se/libcurl/)
+- [Código fuente de libcurl](https://github.com/curl/curl)
+- [Ejemplo de descarga de una página web en C](https://www.geeksforgeeks.org/c-program-download-webpages-program/)

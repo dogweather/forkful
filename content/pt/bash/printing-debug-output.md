@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Impressão de saída de depuração"
+html_title:           "Bash: Impressão de saída de depuração"
+simple_title:         "Impressão de saída de depuração"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -9,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração?
+## Por que
 
-Imprimir saída de depuração é uma técnica muito útil para programadores que estão tentando descobrir erros em seus códigos Bash. Através da impressão de mensagens de depuração durante a execução do programa, é possível entender melhor o que está acontecendo com o código e identificar possíveis problemas.
+Se você já se perguntou como descobrir o que seu código Bash está realmente fazendo, a impressão de saída de depuração pode ser a sua resposta. Ao imprimir saída de depuração, você pode ver exatamente os valores de suas variáveis e o processo do seu código, tornando a solução de erros e aprimoramento do seu código muito mais fácil.
 
-## Como fazer:
+## Como Fazer
 
-Para imprimir uma mensagem de depuração em Bash, utilizamos o comando `echo`. O comando `echo` permite imprimir qualquer texto na tela. Podemos utilizá-lo com a opção `-e` para habilitar a interpretação de caracteres de escape, como por exemplo, a quebra de linha `\n`.
-
-Podemos ainda utilizar o comando `printf`, que permite formatar a saída de acordo com parâmetros fornecidos. Por exemplo:
+Para imprimir saída de depuração em seu código Bash, você pode usar o comando "echo" seguido pela variável que deseja imprimir. Por exemplo:
 
 ```Bash
-echo -e "Iniciando execução do programa...\n"
+# Criando uma variável
+nome="Maria"
 
-# Exemplo de uso do comando printf
-mensagem="Total de usuários cadastrados: %d\n"
-usuarios=10
-printf "$mensagem" $usuarios
+# Imprimindo a variável de depuração
+echo "O nome é: $nome"
 ```
 
-A saída deste código seria:
+Isso irá imprimir "O nome é: Maria" na sua saída, permitindo que você veja o valor da variável "nome" e entenda o que está acontecendo em seu código.
 
+Você também pode usar o comando "set -x" para ativar a impressão de saída de depuração em todo o seu script. Por exemplo:
+
+```Bash
+#!/bin/bash
+
+# Ativando impressão de saída de depuração
+set -x
+
+# Seu código aqui
 ```
-Iniciando execução do programa...
 
-Total de usuários cadastrados: 10
-```
+Cada linha do seu código será impressa na saída, facilitando a visualização do processo do seu script.
 
-## Mergulho Profundo:
+## Mergulho Profundo
 
-Além de simplesmente imprimir mensagens de texto, é possível utilizar outras ferramentas e técnicas para depurar um código em Bash. Por exemplo, podemos utilizar o comando `set -x` para habilitar a exibição dos comandos executados pelo programa, permitindo visualizar em detalhes como o código está sendo executado e identificar possíveis erros.
+Além do comando "echo" e "set -x", existem outras ferramentas que você pode usar para imprimir saída de depuração em Bash. Por exemplo, o comando "printf" pode ser usado para formatar a saída para uma melhor legibilidade.
 
-Também é possível redirecionar a saída de depuração para um arquivo, utilizando o operador `>>`. Isso permite que possamos revisar a saída de depuração mais tarde, caso necessário.
+Você também pode redirecionar a saída de depuração para um arquivo de log, usando o operador ">>" seguido pelo nome do arquivo que deseja usar. Isso é útil quando você precisa analisar a saída de depuração mais tarde ou compartilhá-la com outros desenvolvedores para solucionar problemas.
 
-## Veja também:
+## Veja Também
 
-- [Documentação do Bash](https://www.gnu.org/software/bash/manual/)
-- [Como utilizar o comando echo no Bash](https://www.hostinger.com.br/tutoriais/comando-echo-linux/)
-- [Debugando um código em Bash](https://www.cyberciti.biz/faq/debugging-bash-shell-script/)
+- [Bash Debugging Techniques](https://dev.to/freaksauce/bash-debugging-techniques-1h8h)
+- [Mastering Bash debug output](https://www.linuxjournal.com/content/mastering-bash-debug-output)

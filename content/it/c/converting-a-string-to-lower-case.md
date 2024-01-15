@@ -1,6 +1,7 @@
 ---
-title:                "C: Convertire una stringa in minuscolo"
-simple_title:         "Convertire una stringa in minuscolo"
+title:                "Trasformare una stringa in minuscolo"
+html_title:           "C: Trasformare una stringa in minuscolo"
+simple_title:         "Trasformare una stringa in minuscolo"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte ragioni per cui potresti voler convertire una stringa in minuscolo in C. Ad esempio, potresti dover confrontare stringhe o filtrare i dati in base alla loro formattazione.
 
-La conversione di una stringa in lettere minuscole può essere utile per uniformare l'input di un utente, rendere più semplice la ricerca all'interno di una stringa o semplicemente per motivi estetici.
-
-## Come
-
-Per convertire una stringa in lettere minuscole in linguaggio C, è necessario utilizzare la funzione "tolower" che prende come argomento un carattere e restituisce la sua controparte minuscola, se disponibile. Di seguito un esempio di codice:
+## Come fare
+Per farlo, è necessario utilizzare la funzione `tolower()` inclusa nella libreria standard `ctype.h`. Ecco un esempio di come puoi utilizzarla:
 
 ```C
-#include <stdio.h> 
+#include <stdio.h>
+#include <ctype.h>
 
-int main() 
-{ 
-    char str[] = "CIAO A TUTTI"; 
-    int i; 
-
-    for (i = 0; str[i]!='\0'; i++) {
-        str[i] = tolower(str[i]); // utilizzo della funzione tolower
-    } 
-
-    printf("La stringa convertita in minuscolo è: %s", str); // output: ciao a tutti
-
-    return 0; 
-} 
+int main() {
+  char stringa[] = "Ciao Mondo!";
+  
+  // Converte tutti i caratteri della stringa in minuscolo
+  for (int i = 0; stringa[i] != '\0'; i++) {
+    stringa[i] = tolower(stringa[i]);
+  }
+  
+  printf("%s", stringa);
+  
+  return 0;
+}
 ```
+Output: ciao mondo!
 
 ## Approfondimento
-
-Quando si utilizza la funzione "tolower" per convertire una stringa in lettere minuscole, è importante tenere conto della codifica dei caratteri. Se si sta lavorando su una piattaforma che utilizza una codifica diversa rispetto alla codifica ASCII standard, potrebbero essere necessarie alcune modifiche al codice per ottenere il risultato desiderato.
-
-Inoltre, è importante ricordare che la funzione "tolower" non supporta caratteri speciali o accenti, quindi se si vuole convertire una stringa contenente questi caratteri, è necessario implementare una logica aggiuntiva che gestisca queste eccezioni.
+La funzione `tolower()` prende in input un carattere e restituisce la sua versione in minuscolo se è una lettera. Se il carattere in input non è una lettera, viene restituito inalterato. È importante notare che questa funzione lavora solo con i caratteri ASCII, quindi potrebbe non funzionare correttamente con caratteri di altre lingue.
 
 ## Vedi anche
-
-- [Funzione "tolower" in C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Codifica dei caratteri in C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Gestione dei caratteri speciali in C](https://www.programiz.com/c-programming/c-characters-strings)
+- [Documentazione ufficiale di C](https://devdocs.io/c/)
+- [Guida completa per principianti di C](https://www.learn-c.org/)
+- [Utilizzo delle funzioni di libreria in C](https://www.tutorialspoint.com/c_standard_library/index.htm)

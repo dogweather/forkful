@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Порівняння двох дат"
+title:                "Порівняння двох дат"
+html_title:           "Swift: Порівняння двох дат"
 simple_title:         "Порівняння двох дат"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому 
+## Чому
 
-В програмуванні часто необхідно порівнювати дати, щоб визначити, чи одна дата відбулася до іншої, чи після неї. Це може бути корисно при створенні функцій для розрахунку віку, перевірки термінів дії документів та багатьох інших сценаріїв. У цій статті ми розглянемо, як порівнювати дві дати за допомогою мови програмування Swift.
+Порівняння дат є важливою задачею в програмуванні, оскільки воно дозволяє перевірити, чи дві дати співпадають або яка з них більша чи менша. Це необхідно для роботи з часовими данними та для виконання певних дій в залежності від дат.
 
-## Як 
+## Як
 
-Для порівняння дат у Swift використовується структура `Date`. Давайте розглянемо два приклади:
+Для порівняння двох дат використовується функція `compare()` з класу `Date`. Ця функція повертає об'єкт типу `ComparisonResult`, який може мати три значення: `.orderedAscending`, `.orderedDescending` або `.orderedSame`. Перші два вказують на те, що одна дата більша або менша за іншу, а третє - що вони рівні.
 
-```Swift
-// Приклад 1
-let date1 = Date() // Поточна дата
-let date2 = Date(timeIntervalSinceNow: -86400) // Дата, представляюча понеділок цього тижня
-print(date1 > date2) // Виводить "true"
-```
+Давайте розглянемо приклад коду, щоб зрозуміти як це працює:
 
 ```Swift
-// Приклад 2
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let date1 = dateFormatter.date(from: "01/01/2020") // 1 січня 2020 року
-let date2 = dateFormatter.date(from: "31/12/2020") // 31 грудня 2020 року
-print(date1! < date2!) // Виводить "true"
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 3600)
+
+let comparisonResult = date1.compare(date2)
+
+switch comparisonResult {
+    case .orderedAscending:
+        print("\(date1) є більшою за \(date2)")
+    case .orderedDescending:
+        print("\(date1) є меншою за \(date2)")
+    case .orderedSame:
+        print("\(date1) та \(date2) рівні")
+}
 ```
 
-У першому прикладі ми використали конструктор `Date(timeIntervalSinceNow:)`, щоб створити дату, яка розташовується за 24 години від поточної. Далі ми порівняли її з поточною датою за допомогою оператора "більше" (`>`). У другому прикладі ми використовуємо `DateFormatter` для перетворення рядка у дату та порівняли дві дати за допомогою оператора "менше" (`<`).
+В цьому прикладі ми створюємо два об'єкти `Date`: `date1` - поточна дата і `date2` - дата, яка наступає через 1 годину від поточної. За допомогою функції `compare()` ми отримуємо результат порівняння цих дат і за допомогою оператора `switch` виводимо в консоль відповідне повідомлення.
 
-## Огляд 
+## Глибоке дослідження
 
-Існує декілька способів глибше дослідити порівняння дат у Swift. Наприклад, можна вивчити додаткові методи структури `Date`, такі як `timeIntervalSince(_: Date)`, який повертає час, що пройшов з вказаної дати до поточної. Також можна дізнатися більше про те, як працює `DateFormatter` та як налаштувати його для різних форматів дат.
+Також існує можливість порівнювати дати за допомогою операторів `>`, `<`, `==` тощо. Також варто зазначити, що за замовчуванням дати порівнюються з точністю до секунди, але варто пам'ятати, що це може призводити до неточного результату, оскільки деякі дати можуть мати різний час до секунди.
 
-## Дивіться також 
+## Дивись також
 
-- [Документація Swift для структури `Date`](https://developer.apple.com/documentation/foundation/date)
-- [Офіційний сайт мови Swift](https://swift.org/)
-- [Спільнота Swift в Україні](https://www.facebook.com/swiftukraine/)
+Для отримання додаткової інформації про роботу з датами в Swift, дивіться наступні ресурси:
+
+- [Working with Dates in Swift](https://www.raywenderlich.com/67483099-working-with-dates-in-swift)
+- [How to Use the Date Class in Swift](https://www.hackingwithswift.com/example-code/system/how-to-use-the-date-class-in-swift)
+- [Introduction to Date and Time in Swift](https://medium.com/@abhimuralidharan/introduction-to-date-and-time-in-swift-c10b5eae99c1)

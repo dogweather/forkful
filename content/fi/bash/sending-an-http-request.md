@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Lähettäminen http-pyyntö"
-simple_title:         "Lähettäminen http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,36 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+HTTP-pyynnön lähettäminen on tärkeä taito monille ohjelmoijille ja web-kehittäjille, koska se mahdollistaa tiedon hakemisen ja lähettämisen verkkosivuilta ja sovelluksilta.
 
-HTTP-pyyntöjen lähettäminen on tärkeä osa ohjelmoinnin maailmaa, varsinkin jos työskentelet verkkopalveluiden kanssa. Se antaa mahdollisuuden kommunikoida muiden palveluiden kanssa ja hakea tietoa tarpeidemme mukaan. HTTP-pyyntöjen lähettäminen voi myös auttaa parantamaan sivustojen suorituskykyä ja käyttäjäkokemusta.
+## Kuinka tehdä
+```Bash
+# Lähetä GET-pyyntö
+curl www.example.com
 
-## Kuinka
+# Lähetä POST-pyyntö
+curl -X POST -d "parametri=arvo" www.example.com
 
-HTTP-pyyntöjen lähettämistä Bash-kielellä varten tarvitsemme työkalun, jota kutsutaan "curl". Se on kätevä ja helppokäyttöinen työkalu, jonka avulla voi lähettää erilaisia HTTP-pyyntöjä. Esimerkiksi, jos haluat hakea tietoa Ylen uutisista, voit käyttää seuraavaa komentoa:
+# Lähetä mukautettu HTTP-pyyntöotsikko
+curl -H "Otsikko: arvo" www.example.com
+
+# Tallenna vastaus tiedostoon
+curl -o tiedosto.html www.example.com
+
+# Suorita JavaScript-koodi pyynnön kanssa
+curl -s https://www.example.com | grep "hakusanat"
+```
 
 ```Bash
-curl https://yle.fi/uutiset.json
+# Esimerkkitulos GET-pyynnöstä
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Esimerkki</title>
+</head>
+<body>
+  <h1>Tervetuloa</h1>
+  <p>Tämä on esimerkkisivu.</p>
+</body>
+</html>
+
+# Pyynnön mukana lähetetty vastaus
+URL: www.example.com
+HTTP-metodi: GET
+Statuskoodi: 200 OK
 ```
-Tämä komento lähettää GET-pyynnön osoitteeseen "https://yle.fi/uutiset.json" ja palauttaa JSON-muotoisen vastauksen, joka sisältää uutisten tiedot. Voit myös käyttää muita HTTP-metodeja, kuten POST ja PUT, erilaisten tietojen lähettämiseen palvelimille.
 
-## Syvällisempi katsaus
-
-Kun lähetämme HTTP-pyyntöjä curl-työkalulla, voimme myös määrittää erilaisia vaihtoehtoja pyynnölle. Esimerkiksi voimme määrittää otsikot, parametrit ja jopa lähettää dataa tietyssä muodossa. Tässä on muutamia esimerkkejä:
-
-```Bash
-curl https://example.com -H "Authorization: Bearer token" -d "name=John"
-```
-Tämä komento lähettää POST-pyynnön osoitteeseen "https://example.com" ja määrittelee otsikkona "Authorization" ja arvona "Bearer token". Lisäksi se lähettää POST-tiedot, joissa on määritetty "name" -kenttään arvoksi "John".
-
-```Bash
-curl https://example.com/index.html -o index.html
-```
-Tämä komento lataa "https://example.com/index.html" -sivun ja tallentaa sen paikallisesti tiedostoon nimeltä "index.html".
-
-Kun lähetämme HTTP-pyyntöjä Bash-kielellä, voimme myös käsitellä vastaukset helposti komentorivillä. Voimme esimerkiksi tallentaa vastauksen muuttujaan ja käyttää sitä tarvittavalla tavalla. Voit tutustua tarkemmin curl-työkalun vaihtoehtoihin ja toimintoihin sen dokumentaatiosta.
+## Syvemmälle
+HTTP-pyynnöt ovat tärkeä osa web-kehittämistä ja käytetään usein erilaisten APIen ja palveluiden integroimiseen sovelluksiin. Niissä on myös vaihtoehtoja, jotka mahdollistavat mukautettujen pyyntöjen lähettämisen, kuten erilaisten HTTP-metodien käyttäminen ja pyyntöjen automatisointi bash-skripteillä.
 
 ## Katso myös
-
-- [Curl manuaali](https://man.cx/curl)
-- [Bash Skriptaus](https://linux.fi/wiki/Bash-skriptaus)
-- [HTTP-pyyntöjen lähettäminen Bash-skriptillä](https://www.linode.com/docs/networking/curl/how-to-use-curl/)
+- [Curl-komentojen dokumentaatio](https://curl.haxx.se/docs/manpage.html)
+- [HTTP-opetusohjelma](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [Postman-työkalu HTTP-pyyntöjen testaamiseen](https://www.postman.com/)

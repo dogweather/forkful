@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Parsing html"
+html_title:           "Kotlin: Parsing html"
+simple_title:         "Parsing html"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,44 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Se sei un programmatore, probabilmente sei già familiare con HTML - il linguaggio utilizzato per creare pagine web. Tuttavia, ci potrebbe essere una situazione in cui hai bisogno di estrarre alcune informazioni specifiche da una pagina HTML. In questo caso, la soluzione migliore è il parsing HTML. In poche parole, si tratta di analizzare il codice HTML in modo da poter estrarre solo le parti rilevanti di una pagina web.
 
-## Come Fare
-Ci sono molti modi per effettuare il parsing HTML, ma oggi ci concentreremo su come farlo utilizzando Kotlin. Per prima cosa, assicurati di avere Kotlin installato sul tuo computer. Quindi, puoi seguire questi semplici passaggi per iniziare:
+Se sei interessato alla creazione di applicazioni web, la conoscenza del parsing HTML è fondamentale. Attraverso il parsing, puoi estrarre e manipolare i dati all'interno di un documento HTML, rendendo possibile la creazione di applicazioni che utilizzano contenuti da fonti esterne come siti web o API.
 
-```kotlin
-// Importa le librerie necessarie
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.select.Elements
+## Come fare
 
-// Inizializza un oggetto Document con l'URL della pagina HTML che vuoi analizzare
-val url = "https://example.com/"
-val doc: Document = Jsoup.connect(url).get()
+Prima di tutto, dobbiamo importare la libreria Jsoup nel nostro progetto. Facciamo ciò aggiungendo la seguente dipendenza nel nostro file build.gradle:
 
-// Seleziona gli elementi specifici che desideri estrarre dalla pagina HTML
-val elements: Elements = doc.select("h1")
+```
+implementation "org.jsoup:jsoup:1.13.1"
+```
 
-// Itera sugli elementi e stampali
-for (element in elements) {
-    println(element.text())
+Una volta importata la libreria, possiamo iniziare ad eseguire il parsing HTML utilizzando il metodo `parse()` di Jsoup. Vediamo un esempio:
+
+```Kotlin
+val html = "<html><head><title>Il mio sito</title></head><body><h1>Ciao, mondo!</h1></body></html>"
+val doc = Jsoup.parse(html)
+println(doc.title()) //stamperà "Il mio sito"
+```
+
+In questo esempio, abbiamo creato una stringa contenente un frammento di codice HTML e l'abbiamo passata al metodo `parse()` di Jsoup. Il risultato è un oggetto `Document` che rappresenta la struttura del documento HTML. Utilizzando i metodi disponibili su questo oggetto, possiamo estrarre dati specifici dal documento, come il titolo nella riga successiva.
+
+Ma il parsing HTML non riguarda solo il recupero di elementi specifici. Possiamo anche cercare elementi all'interno del documento utilizzando selettori CSS. Vediamo un altro esempio in cui vogliamo ottenere tutti gli elementi `<a>` all'interno del nostro documento:
+
+```Kotlin
+val html = "<html><body><a href="https://www.example.com">Link 1</a><a href="https://www.example2.com">Link 2</a></body></html>"
+val doc = Jsoup.parse(html)
+val links = doc.select("a") //seleziona tutti gli elementi <a>
+for (link in links) {
+    println(link.attr("href")) //stamperà "https://www.example.com" e "https://www.example2.com"
 }
 ```
-Output:
-```
-Titolo Principale Pagina
-```
-Come puoi vedere, l'oggetto Document ti consente di ottenere il codice HTML della pagina specificata e il metodo "select" ti aiuta a selezionare gli elementi desiderati nella pagina.
+
+Come puoi vedere, con l'utilizzo dei selezionatori CSS, possiamo ottenere facilmente tutti gli elementi desiderati dal documento.
 
 ## Approfondimento
-Ora, se vuoi approfondire ulteriormente il parsing HTML con Kotlin, potresti voler esplorare altre librerie come HtmlCleaner o JsoupXpath. Inoltre, esistono anche alcuni framework come Kanna e neko-html che sono specificamente progettati per il parsing HTML con Kotlin.
 
-Inoltre, il parsing di HTML può diventare molto complicato se la pagina ha una struttura complessa o se stai cercando di estrarre informazioni specifiche da più pagine. In questo caso, potresti dover utilizzare concetti avanzati come le espressioni regolari o il parsing di HTML con XPath.
+Il parsing HTML può essere molto utile non solo per recuperare dati, ma anche per manipolare il contenuto del documento. Con Jsoup, possiamo aggiungere o rimuovere elementi, modificare attributi e persino eseguire operazioni di sostituzione di testo.
 
-In ogni caso, il parsing HTML può essere estremamente utile in diverse situazioni, come l'automazione di compiti di estrazione di dati da internet o la creazione di strumenti di analisi dei dati.
+Inoltre, possiamo anche gestire eventuali errori di parsing o condizioni di errore nel documento utilizzando metodi come `error()` e `ignoreContentType()`.
 
-## Vedi Anche
-- [Documentazione ufficiale di Kotlin](https://kotlinlang.org/docs/reference/)
-- [Documentazione di Jsoup](https://jsoup.org/apidocs/)
-- [Kanna Framework](https://github.com/takeshixx/kanna)
-- [Neko-HTML Framework](https://github.com/utwud/NekoHTML)
+Ma ricorda che il parsing HTML può essere un'operazione pesante, quindi è importante saper valutare quando è necessario utilizzarlo e quando è possibile utilizzare altre tecniche per ottenere i dati desiderati.
+
+## Vedi anche
+- Documentazione ufficiale di Jsoup: https://jsoup.org/
+- Tutorial di Kotlin su parsing HTML con Jsoup: https://kotlinexpertise.com/parse-html-in-kotlin-with-jsoup/
+- Esempi di selezionatori CSS: https://www.w3schools.com/cssref/css_selectors.asp

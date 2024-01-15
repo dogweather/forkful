@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Obtendo a data atual"
-simple_title:         "Obtendo a data atual"
+title:                "Obtendo a data atual."
+html_title:           "Rust: Obtendo a data atual."
+simple_title:         "Obtendo a data atual."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -9,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que
-Se você está lendo este post, é porque tem interesse em aprender mais sobre programação em Rust. Uma das coisas mais básicas que você pode fazer em qualquer linguagem de programação é obter a data atual. Isso pode parecer simples, mas pode ser um bom ponto de partida para entender melhor como a linguagem funciona.
+## Por que
+A obtenção da data e hora atuais é uma tarefa comum em muitos projetos de programação. Isso pode ser usado para registrar eventos, medir o tempo de execução de um programa e várias outras aplicações.
 
-##Como fazer
-Para obter a data atual em Rust, você pode usar a função `now()` do pacote externo `chrono`. Primeiro, você precisa adicionar essa dependência ao seu projeto. Você pode usar o gerenciador de pacotes `Cargo` para fazer isso:
+## Como Fazer
+Em Rust, podemos obter a data e hora atuais usando a biblioteca padrão `time`. Começamos importando a biblioteca:
 
-```
-Rust
-[dependências]
-chrono = "0.4"
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
 ```
 
-Agora, dentro da sua função `main`, você pode chamar a função `now()` passando como parâmetro um `TimeZone`. Em seguida, você pode formatar a data de acordo com o seu formato preferido. Aqui está um exemplo de código:
+Em seguida, podemos usar o método `now()` para obter a data e hora do sistema:
 
-```
-Rust
-use chrono::{Datelike, Timelike, Local};
-
-fn main() {
-    let now = Local::now(); // obtém a data atual
-    let year = now.year(); // obtém o ano atual
-    let month = now.month(); // obtém o mês atual
-    let day = now.day(); // obtém o dia atual
-    let hour = now.hour(); // obtém a hora atual
-    let minute = now.minute(); // obtém o minuto atual
-    let second = now.second(); // obtém o segundo atual
-
-    println!("A data atual é: {}/{}/{} às {}:{}:{}", day, month, year, hour, minute, second);
-}
+```rust
+let current_time = SystemTime::now();
 ```
 
-O resultado desse código seria:
-```
-A data atual é: 2/5/2021 às 10:30:00
+Agora, podemos usar o método `duration_since()` para encontrar a diferença entre a data e hora atual e o ano de referência, 1970:
+
+```rust
+let time_since_epoch = current_time.duration_since(UNIX_EPOCH).expect("Failed to get current time");
 ```
 
-##Deep Dive
-A função `now()` retorna um objeto `DateTime` que armazena informações sobre a data e hora atuais. Você pode usar os métodos disponíveis para obter informações específicas, como o exemplo mostrado acima. Além disso, a estrutura `DateTime` também possui métodos para comparar datas, converter fusos horários e muito mais. Se você quiser aprender mais sobre as funções disponíveis, pode acessar a documentação oficial do `chrono`.
+Por fim, podemos imprimir a data e hora atuais usando o método `as_secs()` para converter o tempo em segundos e, em seguida, usando a função `println!()`:
 
-##Veja também
-- Documentação oficial do `chrono`: https://docs.rs/chrono/0.4.19/chrono/
-- Tutorial básico sobre Rust: https://www.rust-lang.org/pt-BR/learn
-- Comunidade Rust Brasil: https://forum.rustbr.org/
+```rust
+println!("A data e hora atuais são: {:?}", time_since_epoch.as_secs());
+```
+
+O caractere `?` é usado para indicar que estamos lidando com um valor opcional e, em caso de falha em obter a data e hora atual, a mensagem de erro fornecida será impressa. Aqui está um exemplo de saída:
+
+```
+A data e hora atuais são: 1594848416
+```
+
+## Mergulho Profundo
+A razão pela qual usamos a data de referência, 1970, é porque esse é o início do tempo UNIX, um sistema de rastreamento de tempo amplamente usado em sistemas operacionais baseados em UNIX. Na verdade, em sistemas baseados em UNIX, o número de segundos desde o início do tempo UNIX é usado para representar a data e hora atual.
+
+A estrutura de dados usada para a nossa data e hora atual é `Duration`, que armazena o tempo em segundos, minutos, horas, dias, semanas, etc. Cada uma dessas unidades é armazenada como um número inteiro de 64 bits, permitindo que os dados sejam representados com precisão e abrangência. O método `as_secs()` converte essa estrutura de dados em segundos para facilitar a exibição.
+
+## Veja Também
+- [Documentação da Biblioteca `time`](https://doc.rust-lang.org/std/time/)
+- [Tutorial do Rust: Data e Hora](https://stevedonovan.github.io/rust-gentle-intro/6-dates.html)
+- [Guia da Comunidade do Rust](https://www.rust-lang.org/community)

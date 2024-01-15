@@ -1,6 +1,7 @@
 ---
-title:                "Go: Søk og erstatt tekst"
-simple_title:         "Søk og erstatt tekst"
+title:                "Searching and replacing tekst"
+html_title:           "Go: Searching and replacing tekst"
+simple_title:         "Searching and replacing tekst"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvorfor ville noen engasjere seg i å søke og erstatte tekst? Det kan være nyttig når man ønsker å gjøre endringer i en større kodebase eller når man ønsker å standardisere tekstformatet i et dokument.
 
-Når du arbeider med programvareutvikling eller tekstbehandling, er det ofte nødvendig å finne og erstatte bestemte deler av en tekst. Dette kan være tidkrevende og feilfylt hvis du gjør det manuelt. Ved å bruke søke- og erstattingsfunksjonaliteten i Go-programmeringsspråket, kan du effektivt gjøre endringer i store mengder tekst.
+## Hvordan
 
-## Slik gjør du det
-
-For å søke og erstatte tekst i Go, kan du bruke den innebygde replace-funksjonen. Denne funksjonen tar inn tre parametere: originalteksten, hva som skal søkes etter, og hva som skal erstattes med. For eksempel:
-
-```Go
-text := "Hei, hvordan har du det?"
-nyTekst := strings.Replace(text, "har du det", "går det", -1)
-fmt.Println(nyTekst)
-```
-Output: Hei, hvordan går det?
-
-I dette eksempelet erstattet vi "har du det" med "går det" i teksten. Det fjerde parameteret er antall ganger teksten skal erstattes, hvis du ikke er sikker på antall forekomster, kan du bruke "-1".
-
-## Dypdykk
-
-Når du bruker replace-funksjonen, er det viktig å merke seg at den er case-sensitive. Dette betyr at hvis teksten inneholder store og små bokstaver, må du følge dette nøyaktig. Hvis du ønsker å gjøre søk og erstatt på en tekst uavhengig av store og små bokstaver, kan du bruke toLower-funksjonen i kombinasjon med replace. For eksempel:
+Du kan bruke `strings.Replace` funksjonen i Go for å søke og erstatte tekst. Her er et eksempel på hvordan du bruker den:
 
 ```Go
-text := "I dag skal vi på fottur."
-nyTekst := strings.Replace(strings.ToLower(text), "på fottur", "til parken", -1)
-fmt.Println(nyTekst)
-```
-Output: I dag skal vi til parken.
+package main
 
-Ved å bruke toLower-funksjonen, vil teksten bli konvertert til små bokstaver, og deretter kan du søke etter det du ønsker å erstatte uavhengig av store og små bokstaver.
+import (
+  "fmt"
+  "strings"
+)
+
+func main() {
+  str := "Hei, verden!"
+  // Erstatter "Hei" med "Hallo" i teksten
+  result := strings.Replace(str, "Hei", "Hallo", 1)
+  fmt.Println(result) // Hallo, verden!
+}
+```
+
+Her erstatter vi den første forekomsten av "Hei" med "Hallo" i teksten. `1` parameteret sier til funksjonen å bare gjøre en enkelt utskifting. Du kan også bruke `-1` for å erstatte alle forekomstene av tekst.
+
+## Dykk Dypere
+
+`strings.Replace` funksjonen tar også inn et `count` parameter som bestemmer hvor mange ganger teksten skal erstattes. Som standard, erstattes alle forekomstene. I tillegg kan man også bruke `strings.ReplaceAll` som forenkler koden ved å automatisk sette `count` til `-1`.
 
 ## Se også
 
-- Go offisiell nettside: https://golang.org/
-- Strings-pakken i Go: https://golang.org/pkg/strings/
-- Gode tips for å bruke replace-funksjonen i Go: https://gobyexample.com/replace
+- [Go strings pakken](https://pkg.go.dev/strings)
+- [Andre nyttige string funksjoner i Go](https://yourbasic.org/golang/string-functions-reference-cheat-sheet/)

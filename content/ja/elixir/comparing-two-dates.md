@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 「二つの日付を比較する」"
-simple_title:         "「二つの日付を比較する」"
+title:                "日付の比較"
+html_title:           "Elixir: 日付の比較"
+simple_title:         "日付の比較"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,66 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-日付を比較することの重要性は、よく知られています。日付を比較することによって、特定の日付が過去、現在、または未来のどの時点に属するかを判断することができます。これは、データを分析したり、アプリケーションのロジックを決定したりする際に非常に役立ちます。Elixirプログラミングの世界では、日付の比較は非常に重要であり、その方法を知ることは非常に役に立ちます。
+日付の比較を行うことの重要性を説明すると、日付を比較することで、データベースやアプリケーションで重要な日付に基づいて処理を行うことができるようになります。例えば、急いで処理を行う必要がある支払いの日付や、期限に追われているタスクの締め切り日などが挙げられます。
 
 ## 方法
+日付を比較するためには、Elixirのビルトイン関数である`Date.compare/2`を使用します。以下のようにコードを記述することで、2つの日付を比較し、比較結果を表示することができます。
 
-Elixirでは、DateTimeモジュールを使用して日付の比較を行うことができます。以下のコード例を参考にしてください。
+```
+Elixir
+first_date = ~D[2020-01-01]
+second_date = ~D[2020-01-15]
 
-```Elixir
-# 2つの日付を定義する
-date1 = ~D[2020-01-01]
-date2 = ~D[2021-01-01]
-
-# 比較演算子を使用して日付を比較する
-date1 < date2
-#=> true
-
-date1 > date2
-#=> false
-
-# 日付に関する様々な情報を取得することができる
-DateTime.diff(date1, date2)
-#=> {:absolute, 31536000}
-
-DateTime.before?(date1, date2)
-#=> true
-
-DateTime.same?(date1, date2)
-#=> false
+comparison_result = Date.compare(first_date, second_date)
+IO.puts "Comparison result: #{comparison_result}"
 ```
 
-また、日付の文字列を使用して日付の比較を行うこともできます。
+上記のコードを実行すると、比較結果が表示されます。比較結果は3種類あり、`-1`は最初の日付が2つ目の日付よりも前、`0`は2つの日付が同じで、`1`は最初の日付が2つ目の日付よりも後を表します。
 
-```Elixir
-# 日付の文字列を定義する
-date1 = "2020-01-01"
-date2 = "2021-01-01"
+## ディープダイブ
+Elixirの日付モジュールには、2つの異なる日付を比較する他にも、さまざまな便利な関数が用意されています。`Date.compare/2`以外にも、`Date.same_day?/2`を使用することで、2つの日付が同じ日であるかどうかを簡単に判断することができます。さらに、`Date.before?/2`や`Date.after?/2`を使用することで、それぞれ最初の日付が2つ目の日付よりも前や後になるかどうかを判定することができます。
 
-# 文字列をDateTimeオブジェクトに変換する
-DateTime.from_iso8601(date1)
-#=> {:ok, ~D[2020-01-01]}
-
-DateTime.from_iso8601(date2)
-#=> {:ok, ~D[2021-01-01]}
-
-# DateTimeオブジェクトを使用して日付を比較する
-DateTime.from_iso8601(date1) < DateTime.from_iso8601(date2)
-#=> true
-```
-
-## ディープダイブ 
-
-日付の比較を行う際に、注意すべき点があります。Elixirでは、日付を比較する際にタイムゾーンを考慮することができます。デフォルトでは、UTCタイムゾーンが使用されますが、必要に応じてタイムゾーンを指定することもできます。
-
-また、DateTimeモジュールには、日付を操作するためのさまざまな便利な関数が用意されています。このモジュールを上手に活用することで、日付の比較をより効率的に行うことができます。
+また、日付の比較に加えて、`DateTime`モジュールを使用することで、日付と時間を同時に比較することもできます。さらに詳しい情報は公式のElixirドキュメントを参照してください。
 
 ## 参考リンク
-
-- [DateTime — Elixir v1.12.2](https://hexdocs.pm/elixir/DateTime.html)
-- [日付と時刻 — Elixir v1.12.2](https://elixirschool.com/ja/lessons/basics/basics-and-datetime/) 
-
-## 参考文献
-
-- [Elixir v1.12.2 日付と時刻](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir公式ドキュメント](https://hexdocs.pm/elixir/Date.html)
+- [Elixir School - Dates, Times and Naive Datetimes](https://elixirschool.com/ja/lessons/basics/dates-times-and-naive-datetimes/)
+- [ElixirのDateモジュールを使って年齢を計算する](https://blog.yuhiisk.com/archive/20191028/)
+- [演算子のオーバーロードでElixirで日付計算してみる](https://blog.yuhiisk.com/archive/20180422/)
+- [Elixirで日付処理を楽に行うためのヘルパーモジュール](https://blog.yuhiisk.com/archive/20170716/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "Elixir: Tworzenie pliku tymczasowego"
 simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,29 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami, podczas pisania kodu w Elixir, musimy utworzyć plik tymczasowy, który służy jako bufor do przechowywania danych. Może to być przydatne na przykład podczas pobierania plików z sieci lub gdy chcemy przekazać dane do innej aplikacji. W tym artykule dowiesz się, jak i dlaczego tworzyć tymczasowe pliki w Elixir.
+ Jeśli jesteś programistą Elixira, na pewno wiesz, że czasami potrzebujesz stworzyć tymczasowy plik w swoim kodzie. Może to mieć różne zastosowania, na przykład do tymczasowego przechowywania danych czy też do tworzenia kopii zapasowych. W tym artykule dowiecie się jak stworzyć tymczasowy plik w Elixirze i jakie są możliwe zastosowania.
 
 ## Jak to zrobić
 
-Utworzenie tymczasowego pliku w Elixir jest bardzo proste. Musimy użyć funkcji `File.open/2` i przekazać mu ścieżkę oraz tryb `:w` (zapis). Następnie możemy zapisywać do pliku za pomocą funkcji `IO.write/2` lub `IO.binwrite/2`. Przykładowy kod wygląda następująco:
+Aby stworzyć tymczasowy plik w Elixirze, musisz wykorzystać jedną z bibliotek dostępnych w tym języku. Jedną z najpopularniejszych jest biblioteka ExFile, która oferuje wiele funkcji związanych z plikami.
 
-```elixir
-path = "./tempfile.txt" 
-{:ok, file} = File.open(path, [:w])
-IO.write(file, "To jest przykładowy tekst.")
-IO.close(file)
+Pierwszym krokiem jest zainstalowanie biblioteki w swoim projekcie. Można to zrobić poprzez dodanie jej do pliku "mix.exs" w sekcji "deps":
 ```
+def deps do
+  [{:ex_file, "~> 0.1.2"}]
+end
+```
+Następnie należy wywołać funkcję "Temporary.file" z parametrem określającym nazwę pliku oraz ścieżkę, w której ma zostać utworzony. Przykładowo:
+```
+{:ok, file} = ExFile.Temporary.file("example", "/tmp")
+```
+Kod ten utworzy tymczasowy plik "example" w folderze "/tmp". W przypadku sukcesu, funkcja zwróci krotkę zawierającą atom ":ok" oraz stworzony plik. Można również podać dodatkowe opcje, takie jak rozszerzenie pliku czy też prefiks nazwy.
 
-Po uruchomieniu powyższego kodu, w aktualnym katalogu powinien pojawić się plik `tempfile.txt` zawierający tekst "To jest przykładowy tekst." W celu usunięcia pliku, możemy użyć funkcji `File.rm/1` podając jej ścieżkę do pliku.
+Możliwości w bibliotece ExFile są bardzo szerokie i warto zapoznać się z dokumentacją, aby poznać wszystkie dostępne funkcje. 
 
-## Głębszy wgląd
+## Deep Dive
 
-Istnieją również inne tryby otwierania plików w Elixir, takie jak `:r` (odczyt), `:a` (dopisywanie) czy `:rw` (odczyt i zapis). Możemy również wykorzystać funkcję `File.temp_path/1` do wygenerowania losowej ścieżki do tymczasowego pliku. Ponadto, warto pamiętać o upewnieniu się, czy plik został poprawnie otwarty poprzez sprawdzenie wyniku zwracanego przez funkcję `File.open/2`.
+Stworzenie tymczasowego pliku może być bardzo przydatne w różnych sytuacjach. Niektóre z możliwych zastosowań to:
 
-## Zobacz również
+- tymczasowe przechowywanie danych w trakcie wykonywania programu
+- zapisywanie stanu w razie awarii systemu
+- tworzenie kopii zapasowych danych przed ich modyfikacją
 
-Oto kilka przydatnych linków, które mogą Ci się przydać:
+Warto również pamiętać, że wiele kolejnych operacji na plikach, takich jak odczyt czy zapis, można wykonać wykorzystując właśnie tymczasowy plik.
 
-- [Dokumentacja Elixir na temat obsługi plików](https://hexdocs.pm/elixir/File.html)
-- [Wprowadzenie do Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Dokumentacja Markdown](https://daringfireball.net/projects/markdown/syntax)
+## Zobacz też
+
+Jeśli chcesz dowiedzieć się więcej o tworzeniu plików w Elixirze, polecamy zapoznanie się z poniższymi źródłami:
+
+- [Dokumentacja biblioteki ExFile](https://hexdocs.pm/ex_file/ExFile.Temporary.html)
+- [Wprowadzenie do tworzenia plików w Elixirze](https://medium.com/@ajaypai/draft-creating-files-in-a-functional-way-with-elixir-9f53be3ec8de)
+- [Przykładowy projekt wykorzystujący tworzenie plików w Elixirze](https://github.com/ryo33/Elixir-Fake-CSV)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: स्ट्रिंग को लोअर केस में रूपांतरित करना"
-simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
+title:                "स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
+html_title:           "Ruby: स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,27 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-यह पोस्ट आपको बताएगी कि रूबी में स्ट्रिंग को लोअर केस में कन्वर्ट कैसे किया जाता है और इसका क्या उपयोग हो सकता है।
+## Kyu
+Kisi vyakti ko ek string ko lower case mein convert karne mein kyun ruchi hogi, uska maksad 2 vaakyon mein samaanya karna.
 
-## कैसे करें
-यदि आप रूबी में स्ट्रिंग को लोअर केस में कन्वर्ट करना चाहते हैं, तो आपको सबसे पहले String ऑब्जेक्ट को create करना होगा। उसके बाद String ऑब्जेक्ट के `.downcase` method का इस्तेमाल करके आप स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं। नीचे दिए गए कोड ब्लॉक में आपको इसका एक उदाहरण दिया गया है। 
-
+## Kaise Kare
+Coding ke udaharan aur sample output ke saath "```Ruby ... ```" code blocks ke andar.
 ```Ruby
 string = "HELLO WORLD"
 puts string.downcase
+
+# output: hello world
 ```
 
-आपको निम्नलिखित आउटपुट मिलेगा:
+## Gehri Jhaank
+Ek string ko lower case mein convert karne ka sabse aasan tarika `downcase` method ka upyog karna hai. Is method se hum string ke saare aksharon ko lower case mein tabdeel kar sakte hain aur uska output ek naya string mein prapt kar sakte hain. Yadi hume string ke kisi hisse ko capital letter se lower case mein badalna ho, to hum `gsub` method ka bhi upyog kar sakte hain.
 
-```bash
-hello world
-```
-
-## गहराई में खोज
-स्ट्रिंग को लोअर केस में कन्वर्ट करने के बारे में और गहराई में जानने के लिए, आपको पहले से ही रूबी में Mutable और Immutable Types के बारे में थोड़ी जानकारी होनी चाहिए। Immutable डेटा types बिना कोई changes किये बनाया जा सकता है, जबकि Mutable types को लोग उनमें changes कर सकते हैं। जैसा कि हम जानते हैं कि स्ट्रिंग Immutable types के उदाहरण है। जबकि मूल उदाहरण जैसे arrays और hashes Mutable types होते हैं। 
-
-इसलिए, स्ट्रिंग को लोअर केस में कन्वर्ट करने से पहले, आपको स्ट्रिंग को `.downcase` method का इस्तेमाल करके किसी अन्य उपकरण में assign करना हो सकता है जहां आपको Immutable types की आवश्यकता होती है।
-
-## अधिक जानकारी के लिए
-स्ट्रिंग को लोअर केस में कन्वर्ट करना हमेशा महत्वपूर्ण होता है क्योंकि यह डेटा
+## Dekhein Bhi
+"See Also" 
+- [Ruby Strings](https://ruby-doc.org/core-2.7.1/String.html)
+- [Ruby Downcase Method](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
+- [Ruby Gsub Method](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczęcie nowego projektu"
+html_title:           "Clojure: Rozpoczęcie nowego projektu"
+simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -11,43 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Rozpoczynanie nowego projektu w Clojure może być nieco przerażające, zwłaszcza dla początkujących programistów. Jednak jest to język programowania, który oferuje wiele zalet i może być bardzo satysfakcjonujący dla tych, którzy sięgo nauczą. W tym artykule dowiesz się dlaczego warto zacząć nowy projekt w Clojure.
+Jeśli jesteś programistą i szukasz nowego wyzwania lub chcesz rozpocząć nowy projekt w swoim dziale, Clojure jest jednym z najbardziej wartościowych języków programowania do rozważenia. Clojure jest językiem funkcyjnym z silnymi możliwościami programowania współbieżnego, który działa na platformie JVM, co sprawia, że jest wyjątkowo wydajny i wygodny w użyciu.
 
 ## Jak to zrobić
 
-Aby rozpocząć nowy projekt w Clojure, potrzebujesz tylko dwóch rzeczy: edytora kodu i Clojure REPL (Read-Evaluate-Print Loop). Edytor kodu można wybrać według własnych upodobań, jednak początkujący mogą zacząć od popularnych narzędzi, takich jak Atom, Sublime Text lub IntelliJ IDEA. Następnie musisz pobrać i zainstalować Clojure REPL. Możesz to zrobić ręcznie lub za pomocą menedżera paczek, np. dla systemu macOS można użyć Homebrew.
-
-Gdy masz już edytor i REPL, możesz zacząć pisać kod w Clojure. Poniżej przedstawiamy przykładowy kod, który wyświetla proste powitania w konsoli:
+Clojure jest bardzo elastycznym językiem programowania, który można wykorzystać do wielu różnych zastosowań. Jeśli chcesz rozpocząć nowy projekt w Clojure, musisz najpierw zainstalować Clojure i edytor kodu, takie jak IntelliJ IDEA lub Atom. Następnie możesz przejść do tworzenia swojego pierwszego projektu Clojure.
 
 ```Clojure
-;; Definiujemy funkcję, która przyjmuje jako argument imię i zwraca powitanie
-(defn powitanie [imie]
-   (str "Cześć " imie "! Jak się masz?"))
-
-;; Wywołujemy funkcję z różnymi imionami i wyświetlamy wyniki
-(println (powitanie "Jan"))
-(println (powitanie "Karolina"))
+(defn hello-world []
+  (println "Witaj świecie!"))
 ```
+Zapisz ten kod jako plik "hello.clj" i uruchom go w terminalu za pomocą komendy `clojure hello.clj`. Powinieneś zobaczyć wiadomość "Witaj świecie!" na swoim ekranie.
 
-**Output:**
+## Głęboki zanurzenie
 
-```
-Cześć Jan! Jak się masz?
-Cześć Karolina! Jak się masz?
-```
+Aby uzyskać głębsze informacje na temat rozpoczynania projektów w Clojure, polecam przeczytać oficjalną dokumentację Clojure oraz blogi i artykuły programistów, którzy już pracują z tym językiem. Istnieje wiele narzędzi i bibliotek, które mogą ułatwić tworzenie projektów w Clojure, takie jak "Leiningen" dla zarządzania zależnościami, "ClojureScript" dla programowania front-endu w Clojure, oraz "Ring" i "Compojure" dla tworzenia aplikacji webowych w Clojure.
 
-Powyższy przykład pokazuje proste funkcje i obsługę argumentów. Ale Clojure oferuje wiele więcej możliwości, takich jak funkcje wyższego rzędu, dopasowywanie wzorców i wiele więcej. Polecamy zagłębić się w materiały dostępne w sieci, aby poznać wszystkie możliwości programowania w Clojure.
+## Zobacz też
 
-## Deep Dive
-
-Zanim przystąpisz do pisania kodu, ważne jest, aby przemyśleć podstawowe kwestie dotyczące projektu, takie jak cel, struktura danych i algorytmy. W Clojure struktury danych są niezmiennicze, co oznacza, że ​​nie zmieniają się po utworzeniu. To może wydawać się nieco dziwne na początku, ale ułatwia to pisanie funkcji bez stanu i zapewnia bezpieczeństwo wątków.
-
-Ważną częścią projektu jest również wybór odpowiedniego frameworka lub biblioteki. W Clojure istnieje wiele dojrzałych i popularnych narzędzi, takich jak Ring, Compojure czy Hiccup. Warto również zwrócić uwagę na takie koncepty jak transducers, które pozwalają na wydajną operację na sekwencjach danych.
-
-Pamiętaj, że Clojure oferuje również wiele przydatnych narzędzi deweloperskich, takich jak REPL, debugger czy profilowanie kodu. Te narzędzia mogą znacznie ulżyć w pracy nad projektem i ułatwić debugowanie i optymalizację.
-
-## Zobacz także
-
-1. [Clojure - dokumentacja ](https://clojure.org/documentation)
-2. [Clojure Cookbook](https://clojure-cookbook.org/)
-3. [Clojure for the Brave and True](https://www.braveclojure.com/)
+- Oficjalna strona Clojure: https://clojure.org/
+- Leiningen: https://leiningen.org/
+- ClojureScript: https://clojurescript.org/
+- Ring: https://github.com/ring-clojure/ring
+- Compojure: https://github.com/weavejester/compojure

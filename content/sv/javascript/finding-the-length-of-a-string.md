@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Att hitta strängens längd"
+html_title:           "Javascript: Att hitta strängens längd"
+simple_title:         "Att hitta strängens längd"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att hitta längden på en sträng är en vanlig uppgift när man arbetar med Javascript-programmering. Det kan vara användbart när man behöver kontrollera om en inmatad text är tillräckligt lång eller för att trimma bort onödig text.
+Att veta längden på en sträng är en grundläggande funktion inom programmering, speciellt inom språket Javascript. Det kan vara användbart för att hantera textinput, validera data och för att skapa dynamiska funktioner.
 
-## Så här gör du
-För att hitta längden på en sträng i Javascript, använder man metoden `.length`. Till exempel:
-
-```Javascript
-let string = "Hej, jag heter Anna!";
-console.log(string.length);
-```
-
-Detta kommer att ge outputen `20`, eftersom det finns 20 tecken i den givna strängen, inklusive mellanslag.
-
-Innan man kan använda `.length` metoden, måste man se till att strängen är lagrad i en variabel. Det är också viktigt att komma ihåg att `.length` metoden returnerar antalet tecken i en sträng, inte antalet ord.
+## Hur man gör
+För att få längden på en sträng i Javascript, används funktionen `.length` tillsammans med variabeln som innehåller strängen.
 
 ```Javascript
-let str1 = "Det här är en sträng med flera ord";
-let str2 = "Enkelt";
-console.log(str1.length); // output: 33
-console.log(str2.length); // output: 6
+// Skapa en variabel som innehåller en sträng
+var namn = "Anna";
+
+// Använd .length för att få längden på strängen
+console.log(namn.length); // Output: 4
 ```
 
-Det är också möjligt att använda `.length` metoden på andra Javascript-datatyper, såsom arrayer.
+Om du vill kunna räkna med antalet tecken i en sträng utan mellanslag, kan du använda `.replace()` metoden tillsammans med en reguljäruttryck (RegExp) för att ta bort mellanslag från strängen.
+
+```Javascript
+// Skapa en sträng med mellanslag
+var mening = "Det är en vacker dag";
+
+// Använd .replace() metoden för att ta bort mellanslag med hjälp av reguljäruttrycket /\s/g
+var renMening = mening.replace(/\s/g,"");
+
+// Använd .length för att få längden på den rena strängen
+console.log(renMening.length); // Output: 14
+```
 
 ## Djupdykning
-Det finns flera sätt att hitta längden på en sträng i Javascript, men den vanligaste metoden är genom att använda `.length` metoden som vi nämnde tidigare.
+När du använder funktionen `.length` på en variabel som inte innehåller en sträng, kommer Javascript att automatiskt konvertera variabeln till en sträng och sedan räkna antalet tecken.
 
-En annan metod är att använda en `for-loop` och räkna antalet iterationer. Detta kan vara användbart för strängar som innehåller specifika tecken eller teckenkombinationer som man vill söka efter.
+En annan sak att tänka på är att `.length` funktionen räknar både siffror och bokstäver. Så om du har en variabel med värdet `1234`, kommer längden att bli 4 trots att det egentligen bara är en siffra. 
 
-```Javascript
-let string = "Hej, jag heter Anna!";
-let count = 0;
-for (let i = 0; i < string.length; i++) {
-  if (string[i] === "e") {
-    count++;
-  }
-}
-console.log(count); // output: 2
-```
-
-Slutligen, är det viktigt att komma ihåg att `.length` metoden inte tar hänsyn till teckenkodning. Det betyder att flerbyte-tecken inte räknas som ett enda tecken, vilket kan ge en felaktig längd på strängen om man inte tar hänsyn till detta.
+Du kan också använda `.length` i en loop för att gå igenom varje tecken i en sträng och göra viss manipulation av data baserat på dess position. Detta kan vara användbart när du arbetar med stora dataset eller om du vill använda specifika delar av en sträng.
 
 ## Se även
-- [Javascript: Strings](https://www.w3schools.com/js/js_strings.asp)
-- [MDN Web Docs: String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Tutorialeando: Como obtener la longitud de una cadena en JavaScript](https://www.tutorialeando.com/java-script/obtener-la-longitud-de-una-cadena-en-javascript/)
+- [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) (engelska)
+- [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) (engelska)

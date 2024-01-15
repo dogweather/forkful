@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Go recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Go"
 category:             "Go"
@@ -10,86 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-String concatenation is a common task in programming, especially when dealing with user input or generating dynamic output. It allows us to combine multiple strings into one, making our code more concise and efficient. In this blog post, we will explore how to concatenate strings in Go and delve into some deeper info about this useful operation.
+
+String concatenation is a commonly used operation in programming, especially when dealing with user input or data from external sources. It allows developers to combine multiple strings into one, creating a cohesive and organized output.
 
 ## How To
-In Go, the `+` operator is used for string concatenation. Let's see an example of how to concatenate two strings:
+
+To concatenate strings in Go, we can use the `+` operator or the `fmt.Sprintf()` function. Let's take a look at some coding examples and their output.
+
+### Using `+` operator
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    str1 := "Hello"
-    str2 := "world"
-
-    fmt.Println(str1 + " " + str2)
-}
+name := "John"
+greeting := "Hello " + name
+fmt.Println(greeting)
 ```
 
-The output of this code will be: `Hello world`. As you can see, the `+` operator combines the two strings into one, with a space in between.
+Output:
+`Hello John`
 
-We can also concatenate strings with variables and other data types. For example:
+### Using `fmt.Sprintf()`
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    name := "Jane"
-    age := 30
-
-    fmt.Println("Hi, my name is " + name + " and I am " + string(age) + " years old.")
-}
+num1 := 10
+num2 := 20
+result := fmt.Sprintf("The sum of %d and %d is %d.", num1, num2, num1+num2)
+fmt.Println(result)
 ```
 
-The output of this code will be: `Hi, my name is Jane and I am 30 years old.` Here, we have used the `+` operator to concatenate strings with a variable and an integer converted to a string using the `string()` function.
-
-There is another way to concatenate strings in Go using the `fmt.Sprintf()` function. It takes in a format string and any number of arguments, and returns a formatted string. Let's see an example:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    name := "John"
-    balance := 100.50
-
-    fmt.Println(fmt.Sprintf("Hi %s, your current balance is $%.2f.", name, balance))
-}
-```
-
-The output of this code will be: `Hi John, your current balance is $100.50.` As you can see, the `fmt.Sprintf()` function allows us to format and concatenate strings in one step.
+Output:
+`The sum of 10 and 20 is 30.`
 
 ## Deep Dive
-In Go, strings are immutable, which means they cannot be changed. This means that every time we concatenate strings, a new string is created in memory. To avoid unnecessary memory allocation, it is recommended to use the `strings.Builder` type when concatenating multiple strings in a loop.
+
+There are a few things to keep in mind when concatenating strings in Go. First, it is important to note that the `+` operator is not just meant for string concatenation, it can also be used for arithmetic operations. Therefore, it is recommended to use `fmt.Sprintf()` when concatenating strings to avoid any unexpected results.
+
+Additionally, Go provides the `strings.Join()` function for more efficient string concatenation. It takes in a slice of strings and a separator, and returns a single string with all the elements of the slice joined together.
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    var sb strings.Builder
-
-    for i := 0; i < 5; i++ {
-        sb.WriteString("Number ")
-        sb.WriteString(string(i))
-    }
-
-    fmt.Println(sb.String())
-}
+names := []string{"John", "Jane", "Bob"}
+result := strings.Join(names, " - ")
+fmt.Println(result)
 ```
 
-The output of this code will be: `Number 01234`. The `strings.Builder` type allows us to efficiently build and concatenate strings without creating new strings in memory each time.
+Output:
+`John - Jane - Bob`
 
-## See Also
-- [Go strings package documentation](https://golang.org/pkg/strings/)
-- [Go fmt package documentation](https://golang.org/pkg/fmt/)
-- [Example code for string concatenation in Go](https://play.golang.org/p/gxRhp5U0y3O)
+Lastly, it is important to note that string concatenation in Go is not just limited to combining two strings. It can also be used to combine variables, constants, and even expressions.
+
+See Also
+- [Official Go Documentation on String Operations](https://golang.org/pkg/strings/)
+- [Go By Example: String Formatting](https://gobyexample.com/string-formatting)
+- [Go Language Specification: Operators](https://golang.org/ref/spec#Operators)

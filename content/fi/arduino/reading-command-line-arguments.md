@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Arduino: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi lukea komentorivi argumentteja?
+## Miksi
 
-Komentorivi argumentit ovat tärkeitä, koska ne mahdollistavat Arduinon ohjelmoijille monipuolisen ja joustavan tavan antaa komentoja ja asetuksia ohjelmalle. Tämä on erityisen hyödyllistä, kun halutaan muuttaa ohjelman toimintaa tai parametreja ilman, että koodia täytyy muokata ja ladata Arduinoon uudelleen.
+Yleensä, kun kirjoitat Arduinon koodia, sinulla on joitain muuttujia, joihin käyttäjän tarvitsee syöttää tietoja. Tämä onnistuu helposti laitteen pinnien tai näppäimistön avulla, mutta jos haluat antaa käyttäjän syöttää tietoja jo ennen kuin laite käynnistetään, tarvitaan jotain muuta. Tämä "jotain muuta" voi olla komentoriviparametrit, joilla pystytään ohjaamaan laitteen toimintaa jo ennen kuin koodi suoritetaan.
 
-## Kuinka: Koodiesimerkkejä ja tulosteita
+## Miten
 
-Komentorivi argumenttien lukeminen Arduinolla on yksinkertaista. Se tapahtuu käyttämällä Arduino IDE:n sisäänrakennettuja funktioita `argc` ja `argv`. Tässä esimerkissä luetaan komentorivi argumentti ja tulostetaan se Arduino sarjaporttiin:
+Komentoriviparametrien lukeminen Arduinolla onnistuu helposti käyttämällä ```Arduino.h``` kirjastoa ja siihen sisältyvää ```Serial``` kirjastoa. Seuraa alla olevia esimerkkejä saadaksesi paremman käsityksen siitä, miten komentoriviparametreja käytetään koodissa.
 
 ```Arduino
+#include <Arduino.h>
+#include <Serial.h>
+
 void setup() {
-  Serial.begin(9600); // alustaa sarjaportin nopeudella 9600 bps
-  Serial.println(argv[0]); // tulostaa komentorivi argumentin
+    Serial.begin(9600); // käynnistetään sarjayhteys
+    while (!Serial) {
+        // odotetaan, kunnes sarjayhteys on muodostettu
+    }
 }
 
 void loop() {
-  // ei tehdä mitään
+    if (Serial.available()) { // tarkistetaan, onko sarjayhteys avoinna
+        String input = Serial.readString(); // luetaan seriaalipuskuriin tullut data
+        Serial.println("Komentoriviparametrit ovat: " + input); // tulostetaan saatu data
+    }
 }
 ```
 
-Kun tämä koodi ladattaan Arduinoon ja ohjelma käynnistetään, sarjaporttiin tulostuu ensimmäinen komentorivi argumentti, joka annettiin käynnistettäessä. Esimerkiksi jos komentoriville kirjoitettaisiin `arduino-cli sketch -c uno`, sarjaporttiin tulostettaisiin `sketch`.
+Esimerkin koodi lukee sarjayhteyden kautta Arduinolle lähetettyjä komentoriviparametreja ja tulostaa ne sarjayhteyden kautta. Nyt voit antaa Arduinolle komentoriviparametreja ennen sen käynnistämistä ja laite suorittaa niiden mukaisen toiminnon.
 
-## Syvemmälle: Tietoa komentorivi argumenttien lukemisesta
+```bash
+$ arduino-cli upload -p COM3 -b arduino:avr:uno
+```
 
-Komentorivi argumentit annetaan ohjelmalle käynnistettäessä ja ne tallentuvat muuttujiin `argc` (argument count) ja `argv` (argument vector). Muuttujassa `argc` on tallennettuna komentorivi argumenttien lukumäärä, ja muuttujassa `argv` on taulukko merkkijonoja, joissa jokainen taulukon alkio vastaa yhtä komentorivi argumenttia.
+Yllä olevassa komennossa lähetetään Arduinon koodi portille ```COM3``` ja käytetään ```arduino:avr:uno``` alusta.
 
-On tärkeää muistaa, että argumentit tallennetaan taulukkoon merkkijonoina, joten ne täytyy muuttaa sopivaan tyyppiin, jos niitä halutaan käyttää esimerkiksi laskutoimituksissa.
+## Syvempi sukellus
+
+Komentoriviparametrien lukeminen Arduinolla käyttää hyväksi mikro-ohjaimen integroitua sarjayhteyttä. Tämän ansiosta voit kommunikoida laitteen kanssa esimerkiksi ```Serial.print()``` ja ```Serial.read()``` -komennoilla. Muista myös, että voidaksesi käyttää Arduinon komentoriviparametrejä, sinun tulee ensin avata sarjayhteys koodissasi.
 
 ## Katso myös
 
-- Arduino `argc` ja `argv` dokumentaatio: https://www.arduino.cc/reference/en/language/functions/io/argc/
-- Arduino-esimerkki komentorivi argumenttien lukemisesta: https://www.arduino.cc/en/Tutorial/CommandLineArguments
-- Arduino CLI - ohjelman käyttöohjeet: https://arduino.github.io/arduino-cli/latest/
+- [Arduino-hallintakonsoli](https://www.arduino.cc/en/Main/Software)
+- [Arduino-hallintatiedostot](https://github.com/arduino/Arduino/tree/master/build/shared/examples)

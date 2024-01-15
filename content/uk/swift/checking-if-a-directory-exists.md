@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Перевірка існування каталогу"
-simple_title:         "Перевірка існування каталогу"
+title:                "Перевірка наявності директорії"
+html_title:           "Swift: Перевірка наявності директорії"
+simple_title:         "Перевірка наявності директорії"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# З чого почати
+
+If you are a Swift programmer, you probably know that working with files and directories is crucial for many projects. And sometimes, we need to check if a certain directory exists. In this article, we will learn why and how to do it in Swift.
+
 ## Чому
-Перевірка наявності директорії є важливою частиною програмування Swift, оскільки вона дозволяє перевірити, чи існує певний каталог на пристрої перед виконанням певних дій з ним.
+
+Перевірка існування директорії може бути необхідною для безпечного роботи з файлами та даними. Наприклад, перед записом файлу або перед читанням з існуючого каталогу, ми повинні перевірити, чи дійсно існує ця директорія. Також це допомагає уникнути збоїв в програмі та перешкоджає втраті даних.
 
 ## Як це зробити
+
+Ми можемо використовувати функцію `FileManager` з Swift для перевірки існування директорії. Наприклад, ми хочемо перевірити, чи існує директорія "Documents" нашого користувача. Ми можемо використовувати такий код:
+
 ```Swift
 let fileManager = FileManager.default
-let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        
-if fileManager.fileExists(atPath: documentsURL.path) {
-    print("Каталог існує")
+let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+if fileManager.fileExists(atPath: documentsDirectory.path) {
+    print("Директорія існує!")
 } else {
-    print("Каталог не існує")
+    print("Директорія не існує!")
 }
 ```
 
-В цьому прикладі ми використовуємо `FileManager` для отримання шляху до директорії Document на пристрої. Потім ми перевіряємо, чи існує ця директорія за допомогою функції `fileExists(atPath:)` та виводимо відповідне повідомлення.
+Це зробить пошук першої директорії для документів у кореневому каталозі користувача, а потім перевірить, чи існує вона за допомогою функції `fileExists(atPath:)`. Якщо директорія існує, ви побачите по виконанні коду повідомлення "Директорія існує!" у консолі.
 
-## Глибоке дослідження
-Функція `fileExists(atPath:)` використовується для перевірки наявності файлу або директорії за заданим шляхом. Вона повертає значення типу `Bool`, яке вказує на те, чи існує заданий шлях. Ця функція також може бути використана для перевірки наявності інших файлів або директорій на пристрої.
+Можна також використовувати функцію `fileExists(atPath:)` для перевірки інших каталогів або файлів у вашій програмі. Наприклад, ви можете перевірити, чи існує певний файл у "Downloads" або "Photos" директорії.
 
-## Дивись також
-- [FileManager - документація Apple](https://developer.apple.com/documentation/foundation/filemanager)
-- [Операції з файлами та директоріями в Swift](https://medium.com/swift-programming-club/working-with-files-and-directories-in-swift-5d1a4fee2542)
-- [Swift File Handling Tutorial](https://www.raywenderlich.com/contentswp/6-swift-file-handling-tutorial-for-beginners)
+## Глибоке погруження
+
+Якщо ви хочете попередити створення дублікатів файлів або директорій, вам потрібно дізнатися, як перевірити існування певного шляху. Ми можемо це зробити за допомогою функції `fileExists(atPath:)` та класу `URL`. Розглянемо приклад:
+
+```Swift
+let fileManager = FileManager.default
+let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+let myFileURL = documentsDirectory.appendingPathComponent("text_file.txt")
+
+if fileManager.fileExists(atPath: myFileURL.path) {
+    print("Файл існує в директорії!")
+} else {
+    print("Файл не існує в директорії!")
+}
+```
+
+Тут ми використали функцію `appendingPathComponent()` для створення нового шляху до нашого файлу "text_file.txt". Потім ми можемо перевірити, чи існує цей файл у дир

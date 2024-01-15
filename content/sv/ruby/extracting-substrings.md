@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Extrahering av delsträngar"
-simple_title:         "Extrahering av delsträngar"
+title:                "Utdragning av substränger"
+html_title:           "Ruby: Utdragning av substränger"
+simple_title:         "Utdragning av substränger"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att extrahera substrängar är en användbar funktion i Ruby som gör det möjligt att ta ut en del av en sträng baserat på ett visst index eller mönster. Detta kan vara användbart för att hantera data, söka igenom text eller göra kod bearbetningar.
+Varför skulle man vilja extrahera substrängar i Ruby? Det kan vara användbart när du behöver isolera en del av en sträng för att manipulera eller analysa den på ett specifikt sätt.
 
-## Så här gör du
-För att extrahera substrängar i Ruby, använder vi metoden `slice` eller dess aliase `[]`. Den tar in två argument - startindex och längden på substrängen. Här är ett exempel:
+## Hur man gör
+För att extrahera en substräng i Ruby kan du använda metoden `slice` eller `[]` på en sträng med de index som motsvarar den del du vill extrahera. Här är ett exempel som visar hur man kan extrahera de första fyra bokstäverna i en sträng:
 
 ```Ruby
-strang = "Hej! Det här är en textsträng."
-
-# Extrahera de första fyra tecknen
-puts strang[0, 4]
-# Output: Hej!
-
-# Extrahera tecknen från och med index 6 till slutet av strängen
-puts strang[6..-1]
-# Output: Det här är en textsträng.
+name = "Johanna"
+puts name[0..3] #=> "Joha"
+puts name.slice(0, 4) #=> "Joha"
 ```
 
-Vi kan också använda metoden `slice` med ett regex mönster för att extrahera substrängar baserat på ett visst mönster. Här är ett exempel på det:
+Om du vill extrahera från en viss position i strängen kan du också använda `slice` med ett utropstecken före indexet. Det här exemplet visar hur man kan extrahera allt efter den tredje bokstaven:
 
 ```Ruby
-num_strang = "123abc456def"
-
-# Extrahera alla tecken som är siffror
-puts num_strang[/\d+/]
-# Output: 123456
+address = "Stockholm"
+puts address[3..-1] #=> "kholm"
+puts address.slice(3..-1) #=> "kholm"
 ```
 
 ## Djupdykning
-Förutom att extrahera substrängar baserat på index eller mönster, kan vi också använda metoden `slice` med block för att utföra avancerade manipulationer på en sträng. Detta låter oss göra saker som att byta ut delar av en sträng eller flytta tecken runt.
+När du extraherar substrängar bör du vara medveten om att Ruby använder 0-indexing, vilket innebär att det första tecknet i en sträng har index 0. Om du försöker extrahera en del av strängen med ett högre index än det sista tecknet, kommer du inte få någon utdata tillbaka.
 
-Här är ett exempel på hur vi kan använda block med `slice` för att byta ut tecken i en sträng med hjälp av `gsub`:
+Du kan också använda `slice` med bara ett index för att extrahera en singel bokstav, och du kan även använda negativa index för att räkna bakifrån. Här är ett exempel som visar detta:
 
 ```Ruby
-strang = "Hej! Det här är en textsträng."
-
-# Byt ut alla 'e' med '3'
-puts strang.gsub(/e/, '3')
-# Output: H3j! D3t här är 3n t3xtsträng.
+word = "programmering"
+puts word[-5..-1] #=> "ering"
+puts word.slice(-5, 5) #=> "ering"
+puts word[1] #=> "r"
 ```
 
-Detta är bara en av många möjligheter när det kommer till att extrahera substrängar. Var kreativ och experimentera för att se vad du kan åstadkomma!
+En annan användbar funktion när man extraherar substrängar är `split`. Den delar upp en sträng i en array baserad på ett mellanslag eller annan vald karaktär. Här är ett exempel som delar upp en sträng baserad på mellanslag och sedan extraherar en del av den:
+
+```Ruby
+sentence = "Jag älskar att programmera"
+words = sentence.split(" ")
+puts words[2] #=> "att"
+```
 
 ## Se även
-- [Ruby's official documentation on strings](https://ruby-doc.org/core-2.7.0/String.html)
-- [Codecademy's tutorial on string methods in Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-methods/cheatsheet)
+* [Ruby-docs: String](https://ruby-doc.org/core-2.7.0/String.html)
+* [Ruby-docs: Array](https://ruby-doc.org/core-2.7.0/Array.html)
+* [Ruby-docs: Enumerable](https://ruby-doc.org/core-2.7.0/Enumerable.html)

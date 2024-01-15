@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Analizando html"
+title:                "Analizando html"
+html_title:           "Fish Shell: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué es importante el parsing de HTML?
+## ¿Por qué deberías aprender a analizar HTML en Fish Shell?
 
-El parsing de HTML es una habilidad esencial para cualquier programador que trabaje con contenido en la web. Esta técnica permite a los desarrolladores extraer información específica de páginas web y utilizarla en sus proyectos. Ya sea para automatizar tareas o para crear aplicaciones personalizadas, el parsing de HTML es una herramienta poderosa que puede ahorrar tiempo y mejorar la eficiencia en el desarrollo web.
+Hay muchas razones por las que aprender a analizar HTML en Fish Shell puede ser beneficioso. Algunas de ellas son:
 
-## Cómo hacer parsing de HTML en Fish Shell
+- Puede ayudarte a automatizar tareas tediosas y repetitivas en la web, como extraer datos de una página de noticias o de un sitio de compras en línea.
+- Puede mejorar tu capacidad de resolución de problemas y lógica, ya que requiere pensar de manera estructurada y encontrar patrones en el código HTML.
 
-Fish Shell es una popular línea de comandos interactiva para sistemas Unix. A través de su poderosa funcionalidad de scripting, es posible realizar el parsing de HTML de manera sencilla y eficiente. A continuación, se presentan algunos ejemplos de código en Fish Shell para ilustrar cómo hacer parsing de HTML.
+## Cómo hacerlo en Fish Shell
+
+Para analizar HTML en Fish Shell, necesitarás instalar el paquete "html-docs" utilizando el gestor de paquetes "Fisher". Puedes hacerlo utilizando el siguiente comando:
 
 ```Fish Shell
-# Instalar la librería html-xml-utils
-apt-get install html-xml-utils
-
-# Descargar el contenido de una página web
-curl -s https://www.example.com > pagina.html
-
-# Utilizar el comando hxselect para extraer información específica
-hxselect -s '\n' '#titulo' pagina.html
-
-# Resultado: Título de la página
+fisher install html-docs
 ```
 
-En este ejemplo, se utiliza la herramienta hxselect para seleccionar el elemento con la clase "titulo" de la página html descargada previamente. Con la opción "-s" se especifica el separador para imprimir en diferentes líneas y con el símbolo ">" se redirige la salida al terminal.
+Una vez instalado, puedes utilizar la función "htmlparse" incluida en el paquete para analizar cualquier página web. Por ejemplo, si quieres obtener una lista de los títulos de los artículos en la página de noticias de Fish Shell, puedes hacerlo de la siguiente manera:
 
-## Profundizando en el parsing de HTML
+```Fish Shell
+htmlparse "https://fishshell.com/news.html" | grep -i "<h2>" | sed 's/<[^>]\+>//g'
+```
 
-El proceso de parsing de HTML consiste en analizar una página web y extraer información específica basada en etiquetas, atributos y contenido. Fish Shell proporciona algunas herramientas útiles para este propósito, como "hxselect" utilizado en el ejemplo anterior, pero también cuenta con otras opciones como "hxnormalize" para ordenar y estandarizar el código HTML, y "hxpipe" para procesar la salida de manera secuencial.
+Esto buscará en el código HTML de la página y devolverá una lista de los títulos de los artículos, eliminando cualquier etiqueta HTML. También puedes utilizar otras herramientas de Fish Shell, como "awk" o "sed", para manipular aún más los datos obtenidos.
 
-Además de las herramientas predefinidas, Fish Shell permite utilizar otras técnicas de scripting y comandos como "grep" y "sed" para realizar operaciones más avanzadas en el contenido de una página web. La versatilidad y el potencial de esta herramienta hacen que sea una opción interesante para el parsing de HTML en sistemas Unix.
+## Profundizando en el análisis HTML en Fish Shell
 
-# Ver también
+Para entender mejor cómo funciona la función "htmlparse" en Fish Shell, es útil conocer algunos conceptos básicos sobre HTML y cómo se estructura un documento HTML.
 
-- Fish Shell documentación sobre html-xml-utils: http://fishshell.com/docs/current/cmds/html.xml.html
-- Página de manual de html-xml-utils: https://linux.die.net/man/1/html-xml-utils
-- Stack Overflow pregunta sobre parsing de HTML en Fish Shell: https://stackoverflow.com/questions/27025200/how-to-parse-html-in-fish-shell
+HTML es un lenguaje de marcado utilizado para crear páginas web, y está formado por etiquetas que indican la estructura y contenido de un documento. Estas etiquetas pueden contener atributos y valores, y pueden anidarse dentro de otras etiquetas.
+
+La función "htmlparse" de Fish Shell utiliza una herramienta de línea de comandos llamada "xmllint" para analizar el código HTML y convertirlo en formato XML. Luego, utiliza la herramienta "xmlstarlet" para extraer información específica de ese XML, como los valores de las etiquetas.
+
+Al comprender estos conceptos, puedes familiarizarte más con la función "htmlparse" y utilizarla de manera más eficiente para tareas de análisis HTML más complejas.
+
+## Véase también
+
+- Documentación del paquete "html-docs": https://github.com/oh-my-fish/plugin-html-docs
+- Tutorial de Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Repositorio de Fish Shell en GitHub: https://github.com/fish-shell/fish-shell

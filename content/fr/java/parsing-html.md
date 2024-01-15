@@ -1,6 +1,7 @@
 ---
-title:                "Java: Décodage HTML"
-simple_title:         "Décodage HTML"
+title:                "Analyse de HTML"
+html_title:           "Java: Analyse de HTML"
+simple_title:         "Analyse de HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,39 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'analyse HTML est une compétence précieuse pour tout programmeur Java. Cela permet de récupérer des données précieuses à partir de pages web et de les traiter dans votre code. Cela peut être utile pour de nombreux cas d'utilisation, tels que le scraping de données ou la construction de sites web dynamiques.
+Si vous êtes un développeur Java, vous avez probablement déjà entendu parler du terme "HTML parsing". Mais pourquoi est-il important de comprendre ce processus et comment peut-il être utile dans vos projets de développement ?
 
-## Comment faire
-Pour commencer, vous aurez besoin de la bibliothèque Jsoup pour analyser HTML en utilisant Java. Elle est facilement disponible sur internet et peut être ajoutée à votre projet en utilisant Maven ou Gradle.
+En bref, le parsing HTML consiste à analyser et à extraire des informations à partir de pages web en utilisant une structure de balises. Cela peut être utile pour extraire des données spécifiques, telles que des titres, des liens ou des images, à partir d'un site web.
 
-Une fois que vous avez ajouté la bibliothèque à votre projet, vous pouvez commencer à utiliser les méthodes de la classe Jsoup pour analyser le HTML. Voici un exemple simple pour extraire les titres des articles d'un site web :
+## Comment Faire
+
+Pour commencer à pratiquer le parsing HTML en Java, voici un exemple simple qui utilise la bibliothèque JSoup :
 
 ```Java
-Document doc = Jsoup.connect("http://www.example.com").get();
-Elements articles = doc.select("h2"); //Sélectionne tous les éléments h2 dans le document
-for(Element article : articles) {
-  System.out.println(article.text()); //Affiche le texte à l'intérieur de chaque élément h2
+// Importer la bibliothèque JSoup
+import org.jsoup.Jsoup;
+
+// Définir l'URL à parser
+String url = "https://www.example.com";
+
+// Utiliser la méthode connect() pour créer une connection à l'URL
+// et get() pour obtenir une réponse sous forme de Document
+org.jsoup.nodes.Document doc = Jsoup.connect(url).get();
+
+// Utiliser la méthode select() pour sélectionner les balises spécifiques
+// en utilisant le sélecteur CSS
+// Dans cet exemple, nous sélectionnons toutes les balises <a> avec l'attribut "href"
+Elements links = doc.select("a[href]");
+
+// Itérer à travers les liens sélectionnés et imprimer leurs textes et leurs URLs
+for (Element link : links) {
+    System.out.println("Texte : " + link.text());
+    System.out.println("URL : " + link.attr("href"));
 }
 ```
 
-Voici la sortie pour cet exemple :
+Résultat :
 
 ```
-Titre de l'article 1
-Titre de l'article 2
-Titre de l'article 3
-...
-``` 
+Texte : Accueil
+URL : https://www.example.com/home
+Texte : À Propos
+URL : https://www.example.com/about
+Texte : Contact
+URL : https://www.example.com/contact
+```
 
-En utilisant les méthodes de la classe Document, vous pouvez également accéder aux attributs des éléments HTML tels que les liens, les images, les formulaires, etc.
+En utilisant la bibliothèque JSoup, vous pouvez facilement sélectionner et extraire des données à partir d'une page web en fonction de vos besoins. Il existe d'autres bibliothèques disponibles pour le parsing HTML en Java, telles que HTMLParser, jSoup-Android, ou NekoHTML. Il est important de rechercher et de trouver la bibliothèque qui convient le mieux à votre projet.
 
-## Plongée en profondeur
+## Plongée Profonde
 
-L'analyse HTML est un processus complexe qui nécessite une certaine connaissance de la structure des pages web et des différentes balises HTML. La classe Document de Jsoup vous aidera à naviguer dans le document HTML en utilisant des méthodes telles que `getElementsByTag()`, `getElementById()` et `getElementsByClass()`. En plus de cela, vous pouvez également utiliser des sélecteurs CSS pour récupérer des éléments spécifiques du document.
+Pour ceux qui souhaitent une compréhension plus approfondie du parsing HTML en Java, voici quelques points supplémentaires à prendre en compte :
 
-Une chose importante à noter lors de l'analyse HTML est de toujours considérer les scénarios d'erreur, car les pages web peuvent être mal structurées ou contenir des éléments manquants.
+- Les données extraites à partir d'une page web seront souvent sous forme de chaînes de caractères. Par conséquent, il est important de comprendre comment manipuler et convertir ces chaînes pour obtenir les résultats souhaités.
+- Le sélecteur CSS utilisé dans la méthode `select()` peut être complexe et nécessite une certaine pratique pour le maîtriser. N'hésitez pas à consulter des ressources supplémentaires pour en apprendre davantage sur les sélecteurs CSS.
+- Les pages web peuvent être dynamiques, ce qui signifie que le contenu peut changer en fonction des interactions de l'utilisateur. Dans ces cas-là, il peut être nécessaire d'utiliser des outils tels que Selenium pour automatiser les actions et ainsi obtenir les données souhaitées.
 
-## Voir aussi
-- [Documentation officielle de Jsoup en français](https://jsoup.org/apidocs/index.html)
-- [Tutoriel sur l'analyse HTML avec Java](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/5016039-analysez-du-code-html-en-java-avec-la-bibliotheque-jsoup)
-- [Exemples pratiques sur Github](https://github.com/jhy/jsoup/tree/master/src/main/java/org/jsoup/examples)
+## Voir Aussi
+
+Pour en savoir plus sur le parsing HTML en Java, voici quelques liens utiles à consulter :
+
+- [Documentation officielle de JSoup](https://jsoup.org/)
+- [Tutoriel YouTube sur le parsing HTML en Java avec JSoup](https://www.youtube.com/watch?v=rB83DpBJQsE)
+- [Article sur le parsing HTML en Java avec HTMLParser](https://www.baeldung.com/java-html-parsing-htmlparser)

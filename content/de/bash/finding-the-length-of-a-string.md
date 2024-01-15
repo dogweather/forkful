@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Ermitteln der Länge eines Strings"
+html_title:           "Bash: Ermitteln der Länge eines Strings"
+simple_title:         "Ermitteln der Länge eines Strings"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,64 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Bestimmen der Länge einer Zeichenfolge ist eine häufige Aufgabe beim Programmieren in Bash. Es kann hilfreich sein, um zum Beispiel die Eingabe einer Benutzereingabe zu überprüfen oder um sicherzustellen, dass eine bestimmte Bedingung erfüllt ist. In diesem Blog-Beitrag werden wir uns ansehen, wie man die Länge einer Zeichenfolge in Bash berechnen kann und welche Aspekte dabei zu beachten sind.
+Möchtest du wissen, wie lang ein bestimmter Text in deinem Bash-Skript ist? Das Finden der Länge einer Zeichenkette kann sehr nützlich sein, zum Beispiel bei der Validierung von Eingaben oder der Manipulation von Daten.
 
-## Wie geht man vor
+## Wie geht's
 
-Um die Länge einer Zeichenfolge in Bash zu finden, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung der integrierten Funktion `expr length`. Diese Funktion gibt die Anzahl der Zeichen in einer gegebenen Zeichenfolge zurück.
-
-```Bash
-# Beispielcode zur Bestimmung der Länge einer Zeichenfolge
-string="Hallo Welt!"
-echo "Die Länge der Zeichenfolge ist: $(expr length $string)"
-```
-
-Als Ausgabe erhalten wir:
-
-```
-Die Länge der Zeichenfolge ist: 11
-```
-
-Man kann auch die Variante `BASH_SUBSTR` von `expr` verwenden, um nur eine Teilzeichenfolge zu zählen. Dafür muss man die Anfangsposition und die Anzahl der zu zählenden Zeichen angeben.
+Um die Länge einer Zeichenkette in Bash zu finden, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung von `expr length`, wie im folgenden Beispiel:
 
 ```Bash
-# Beispielcode zur Bestimmung der Länge einer Teilzeichenfolge
-string="Hallo Welt!"
-echo "Die Länge der Teilzeichenfolge ist: $((${#string}-5))"
+string='Hallo Welt'
+echo "Die Länge von $string ist $(expr length $string)"
 ```
 
-Dieses Beispiel gibt uns als Ausgabe:
+Die Ausgabe für dieses Skript wäre "Die Länge von Hallo Welt ist 11".
 
-```
-Die Länge der Teilzeichenfolge ist: 6
-```
-
-Es ist auch möglich, die Länge einer Zeichenfolge mit Hilfe der Shell-Parameterverarbeitung zu bestimmen. Dafür können wir die folgende Syntax verwenden:
+Eine andere Möglichkeit ist die Verwendung von `wc -c`, um die Anzahl der Zeichen zu zählen (diese Methode zählt jedoch alle Zeichen, einschließlich Leerzeichen und Sonderzeichen):
 
 ```Bash
-# Beispielcode zur Bestimmung der Länge einer Zeichenfolge mit Hilfe von Shell-Parameterverarbeitung
-string="Hallo Welt!"
-echo "Die Länge der Zeichenfolge ist: ${#string}"
+string='Hallo Welt'
+echo "Die Länge von $string ist $(echo -n $string | wc -c)"
 ```
 
-Die Ausgabe ist dieselbe wie im ersten Beispiel:
+Die Ausgabe für dieses Skript wäre ebenfalls "Die Länge von Hallo Welt ist 11".
 
-```
-Die Länge der Zeichenfolge ist: 11
-```
+## Deep Dive
 
-Es gibt also verschiedene Möglichkeiten, die Länge einer Zeichenfolge in Bash zu finden. Je nach Bedarf kann man die passende Methode auswählen.
-
-## Tieferer Einblick
-
-Beim Bestimmen der Länge einer Zeichenfolge gibt es einige Aspekte zu beachten. Zum Beispiel kann es Unterschiede bei der Behandlung von Leerzeichen oder Sonderzeichen geben. Auch die Verwendung von Unicode-Zeichen kann zu unerwarteten Ergebnissen führen.
-
-Ein weiterer wichtiger Punkt ist die Performance. Je nach Größe der Zeichenfolge und verwendeter Methode kann die Berechnung der Länge mehr oder weniger Zeit in Anspruch nehmen. Es ist daher ratsam, in Bezug auf Geschwindigkeit und Effizienz auch andere Faktoren zu berücksichtigen, bevor man die Länge einer Zeichenfolge bestimmt.
+Der Befehl `expr length` verwendet den `POSIX`-Standard `expr` und gibt die Länge der Zeichenkette in Zeichen zurück. Wenn du jedoch auch mehrsprachige Zeichen oder Sonderzeichen berücksichtigen möchtest, solltest du `wc -m` verwenden, welches die Anzahl der Bytes zurückgibt. Weitere Informationen findest du in der Dokumentation von `wc`.
 
 ## Siehe auch
 
-- [Bash-Referenzhandbuch](https://www.gnu.org/software/bash/manual/bash.html)
-- [Linux Bash Guide for Beginners](https://linuxconfig.org/Linux_bash_scripting_Tutorial)
-- [Online Bash Compiler](https://www.onlinegdb.com/online_bash_compiler)
+- Bash-Befehl: `expr`
+- Bash-Befehl: `wc`
+- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)

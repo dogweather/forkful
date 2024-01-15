@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,50 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Cuando estás escribiendo un programa en Gleam, es importante asegurarte de que tu código sea robusto y pueda manejar todas las posibles situaciones. Una de estas situaciones es verificar si un directorio existe antes de intentar acceder a él. En esta publicación, aprenderemos cómo hacer eso usando el lenguaje de programación Gleam.
+Imagínate que estás escribiendo un programa para gestionar archivos. Es importante asegurarse de que los archivos se guarden en el lugar correcto y que no se sobrescriban accidentalmente. Una forma de garantizarlo es comprobar si un directorio existe antes de guardar un archivo, y eso es exactamente lo que aprenderemos en este artículo.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Comencemos por importar el módulo `os` que nos permitirá acceder a las funciones del sistema operativo.
-
-```Gleam
-import os
-```
-
-A continuación, definiremos una función llamada `check_directory` que tomará como argumento una ruta de directorio y devolverá un valor `bool` indicando si el directorio existe o no.
+En Gleam, existen varias formas de comprobar si un directorio existe. La forma más sencilla es utilizando la función `gleam/os/fs.exists` y pasando la ruta del directorio como argumento. Esta función devolverá `Ok` si el directorio existe y `Error` si no existe.
 
 ```Gleam
-pub fn check_directory(directory) {
-  let result = os.dir_exists(directory)
-  result
-}
+match os/fs.exists("ruta/al/directorio") {
+  Ok(_) -> "El directorio existe.";
+  Error(_) -> "El directorio no existe.";
+};
 ```
 
-Luego, podemos llamar a esta función y pasarle una ruta de directorio como parámetro. Aquí hay un ejemplo donde intentamos verificar si el directorio "docs" existe en la carpeta actual y luego imprimimos un mensaje en consecuencia.
+Otra forma de comprobar si un directorio existe es utilizando la función `gleam/os/fs.read_directory`. Esta función devolverá una lista con los nombres de todos los archivos y directorios que se encuentren en la ruta especificada. Si el directorio no existe, devolverá `Error`.
 
 ```Gleam
-let directory = "./docs"
-let exists = check_directory(directory)
-if exists {
-  println("¡El directorio existe!")
-} else {
-  println("El directorio no existe.")
-}
+match os/fs.read_directory("ruta/al/directorio") {
+  Ok(lista) -> "Los archivos y directorios dentro del directorio son: {lista}.";
+  Error(_) -> "El directorio no existe.";
+};
 ```
 
-Si ejecutamos este código, obtendremos el siguiente resultado:
+## Inmersión profunda
 
+Cuando utilizamos `gleam/os/fs.exists` para comprobar si un directorio existe, la función devuelve `Ok` sin importar si el directorio es accesible o no. Para una comprobación más precisa, podemos utilizar `gleam/os/fs.is_directory` que devuelve `Ok` solo si el directorio existe y es accesible.
+
+```Gleam
+match os/fs.is_directory("ruta/al/directorio") {
+  Ok(_) -> "El directorio existe y es accesible.";
+  Error(_) -> "El directorio no existe o no es accesible.";
+};
 ```
-¡El directorio existe!
-```
 
-## Profundizando
+Además, podemos utilizar funciones como `gleam/os/fs.can_read` y `gleam/os/fs.can_write` para verificar si el directorio tiene permisos de lectura y escritura.
 
-Ahora que sabemos cómo verificar si un directorio existe en Gleam, es importante entender cómo funciona esta función. El módulo `os` utiliza funciones de bajo nivel proporcionadas por el sistema operativo para acceder a los archivos y directorios del sistema. El método `dir_exists` se comunica con el sistema operativo para comprobar si el directorio especificado existe o no. Si el directorio existe, devuelve un valor `true` y si no, devuelve un valor `false`.
+## Véase también
 
-## Ver también
-
-- [Documentación del módulo Gleam os](https://gleam.run/modules/standard-lib/os/)
-- [Funciones del sistema operativo en Gleam](https://gleam.run/book/stdlib-filesystem#operating-system-functions)
+- Documentación de Gleam sobre `gleam/os/fs`
+- Ejemplos de código de Gleam en GitHub
+- Comunidad de Gleam en Discord

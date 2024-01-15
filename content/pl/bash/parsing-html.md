@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Przetwarzanie html"
-simple_title:         "Przetwarzanie html"
+title:                "Analiza składni HTML"
+html_title:           "Bash: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,51 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą Bash i często pracujesz z danymi z internetu, to na pewno wiesz jak ważne jest parsowanie HTML. Bez tego nie byłoby możliwe pobieranie informacji z różnych stron internetowych i przetwarzanie ich w wygodny dla nas sposób.
+Parsing HTML jest niezbędnym narzędziem dla wszystkich, którzy chcą analizować i przetwarzać zawartość stron internetowych. Pomaga on w ekstrakcji informacji oraz w automatyzacji różnych zadań związanych z analizą stron internetowych.
 
 ## Jak to zrobić
 
-Zapewne wiesz już, że do parsowania HTML w Bashu wykorzystuje się narzędzia takie jak Curl, grep czy awk. Możesz także użyć bibliotek takich jak Xmlstarlet lub Jq, aby ułatwić sobie pracę z danymi zaczytanymi z internetu.
-
-Najważniejszą częścią programowania w Bashu jest praktyka. Dzięki niej zrozumiesz lepiej zasady działania narzędzi i będziesz mógł wykorzystać je w swoich projektach. Aby ułatwić ci pierwsze kroki, poniżej przedstawiamy kilka przykładów kodu oraz wyników działania, abyś mógł lepiej zrozumieć jak działa parsowanie HTML w Bashu.
-
+Aby parsować HTML za pomocą Bash, możemy skorzystać z narzędzi takich jak `grep` i `sed`. Na przykład, jeśli chcemy wydobyć wszystkie linki znajdujące się na stronie, możemy użyć następującego polecenia:
 ```Bash
-# Przykład 1: Pobieranie zawartości strony internetowej i zapisywanie wyniku do pliku
-
-# Za pomocą narzędzia Curl pobieramy zawartość strony z linku http://www.example.com
-# Następnie za pomocą grep wybieramy tylko interesującą nas część, a za pomocą > zapisujemy wynik do pliku o nazwie "example.txt"
-curl http://www.example.com | grep "Tytuł" > example.txt
+curl <adres URL> | grep -o '<a [^>]*href=[^>]*>' | sed 's/<a [^>]*href=//g;s/>.*//g'
+```
+Powyższe polecenie pobiera zawartość strony internetowej za pomocą polecenia `curl`, a następnie używa `grep` i `sed` do wyodrębnienia wszystkich wystąpień znacznika `a` z atrybutem `href`. Następnie, używając wewnętrznego separatora `sed`, usuwa wszystko poza samym linkiem. Przykładowy wynik może wyglądać następująco:
+```
+http://example.com/
+https://github.com/
+https://www.google.com/
 ```
 
-Wynik:
-```Bash
-# Zawartość pliku example.txt
-Tytuł strony: Example
-```
+## Głębszy przegląd
 
-```Bash
-# Przykład 2: Wyświetlenie wszystkich linków z danej strony internetowej
+Bash, mimo swojej prostoty, posiada wydajne narzędzia do przetwarzania tekstu, co czyni go dobrym wyborem do parsowania HTML. Większość poleceń wymienionych w dziale "Jak to zrobić" ma możliwość wykorzystania wyrażeń regularnych, co daje dużą elastyczność w wydobywaniu żądanych informacji. Należy jednak pamiętać, że Bash nie jest dedykowanym narzędziem do parsowania HTML i może nie być w stanie poprawnie obsłużyć skomplikowanych struktur dokumentów.
 
-# Za pomocą narzędzia Curl pobieramy zawartość strony z linku http://www.example.com
-# Następnie za pomocą awk wybieramy tylko interesującą nas część, a za pomocą sort usuwamy powtórzenia
-# Na koniec za pomocą uniq wyświetlamy unikalne linki zapisane w jednej linii
-curl http://www.example.com | awk -F "href=" '/http/{print $2}' | sort | uniq
-```
+## Zobacz także
 
-Wynik:
-```Bash
-# Wyświetlone linki w jednej linii
-"http://www.example.com/pl/article1.html" "http://www.example.com/pl/article2.html" "http://www.example.com/pl/article3.html"
-```
-
-## Głębsze zagadnienia
-
-Pomimo tego, że parsowanie HTML w Bashu jest dość proste i przydatne, może być często również wyzwaniem. Nie wszystkie strony internetowe są jednakowo zbudowane i nie zawsze można użyć tych samych narzędzi. Dlatego warto zapoznać się z głębszymi zagadnieniami związanymi z parsowaniem HTML, takimi jak wykorzystanie wyrażeń regularnych, obsługa różnego rodzaju znaczników czy przechwytywanie błędów.
-
-## Zobacz również
-
-- [Dokumentacja Curl](https://curl.haxx.se/docs/)
-- [Dokumentacja grep](https://www.gnu.org/software/grep/manual/grep.html)
-- [Dokumentacja awk](https://www.tutorialspoint.com/awk/index.htm)
-- [Xmlstarlet](http://xmlstar.sourceforge.net/)
-- [Jq](https://stedolan.github.io/jq/)
+- [Platzi - Parsing HTML in Bash](https://platzi.com/blog/parsing-html-in-bash/)
+- [IBM Developer - HTML parsing with Bash](https://developer.ibm.com/tutorials/l-html-bash/)
+- [Awesome Shell - Parsing HTML](https://github.com/alebcay/awesome-shell#parsing-html)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: HTML 구문 분석"
-simple_title:         "HTML 구문 분석"
+title:                "HTML 파싱"
+html_title:           "Javascript: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,52 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTML 파싱을 하는 이유는 웹 개발에서 중요한 요소입니다. HTML은 웹 페이지의 구조를 나타내는 언어이기 때문에 해당 정보를 추출하고 조작하기 위해 파싱이 필요합니다.
+HTML을 파싱하는 것의 이점은, 웹에서 정보를 추출하거나 웹 애플리케이션을 개발하기 위해 필요합니다.
 
 ## 방법
 
-### 기본적인 HTML 파싱
-
-HTML을 파싱하려면 먼저 해당 웹 페이지의 HTML 코드를 얻어와야 합니다. 이는 `fetch()` 메소드를 사용하거나 `XMLHttpRequest` 객체를 이용하여 수행할 수 있습니다. 그리고 `DOMParser` 객체를 생성한 뒤, `parseFromString()` 메소드를 사용하여 HTML 코드를 파싱할 수 있습니다.
+HTML을 파싱하는 가장 간단한 방법은 Javascript의 DOM(Document Object Model)을 사용하는 것입니다. 아래의 코드를 참고하세요.
 
 ```Javascript
-fetch('https://www.example.com')
-  .then(response => response.text())
-  .then(html => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    // 파싱된 HTML에 대한 작업 수행
-  });
+let htmlString = "<html><head><title>My Page<title></head><body><h1>Hello World!</h1></body></html>";
+let parsedHTML = new DOMParser().parseFromString(htmlString, "text/html");
+console.log(parsedHTML.title); // Output: "My Page"
+console.log(parsedHTML.body.children[0].innerHTML); // Output: "Hello World!"
 ```
 
-### CSS 선택자를 이용한 정보 추출
+위의 코드에서는 DOMParser 객체의 parseFromString 메소드를 사용하여 주어진 문자열을 HTML 문서로 파싱한 뒤, 원하는 정보를 추출할 수 있습니다. 이를 활용하면 웹에서 필요한 데이터를 쉽게 추출할 수 있습니다.
 
-CSS 선택자를 사용하여 원하는 정보를 추출할 수도 있습니다. 이를 위해 `querySelector()`나 `querySelectorAll()` 메소드를 사용할 수 있습니다. `querySelector()`는 첫 번째로 일치하는 요소를 반환하고, `querySelectorAll()`은 모든 일치하는 요소를 반환합니다.
+## 깊이 파고들기
 
-```Javascript
-const title = doc.querySelector('h1').innerText;
-console.log(title); // Example 페이지의 h1 요소의 텍스트를 콘솔에 출력
-```
+HTML 파싱은 웹 개발에서 매우 중요한 부분입니다. DOM을 이용하여 HTML 문서를 파싱하면 웹 애플리케이션에서 동적으로 정보를 가져올 수 있기 때문입니다. 또한, 웹 크롤링이나 스크래핑을 할 때도 HTML 파싱이 중요한 역할을 합니다.
 
-### 데이터를 HTML로 출력
+HTML 파싱의 성능을 향상시키기 위해서는, 파싱할 HTML 문서의 구조를 미리 파악하는 것이 중요합니다. 불필요한 DOM 변화를 최소화하고, 적절한 선택자를 이용해 원하는 정보를 추출하는 것이 좋습니다.
 
-파싱한 데이터를 다시 HTML로 출력할 수도 있습니다. 이 때 `innerHTML` 속성을 사용합니다.
+## 더 보기
 
-```Javascript
-const newData = '새로운 데이터';
-const p = document.createElement('p');
-p.innerText = newData;
-
-doc.body.appendChild(p); // body 요소의 맨 마지막에 p 요소 추가
-```
-
-## 깊게 들어가기
-
-HTML 파싱은 보통 스크래핑이나 데이터 마이닝 등의 웹 데이터 관련 작업에서 많이 사용됩니다. 파싱하는 방법에는 여러 가지가 있고, CSS 선택자 이외에도 XPath를 사용하여 원하는 요소를 선택할 수 있습니다. 또한 파싱하기 전에 정규식을 사용하여 필요한 정보를 추출할 수 있습니다.
-
-## 참고자료
-
-- [MDN: Parsing and serializing HTML](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [CSS 선택자 개요](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
-- [XPath로 HTML 파싱하기](https://developer.mozilla.org/en-US/docs/Web/XPath)
-- [정규식을 이용한 데이터 추출](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [DOMParser - MDN](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Introduction to the DOM - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [Parsing HTML With Javascript - Medium](https://medium.com/codex/parsing-html-with-javascript-caf8ca9d84be?source=bookmarks---------0----------------)

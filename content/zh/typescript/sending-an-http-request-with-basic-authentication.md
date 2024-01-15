@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 使用基本身份验证发送http请求"
-simple_title:         "使用基本身份验证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "TypeScript: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,80 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在现代的互联网世界中，我们经常需要与远程服务器交互，从而获取所需的数据。为了保护服务器免受未经授权的访问，我们需要发送HTTP请求时进行身份验证。基本身份验证是一种简单但常用的身份验证方法，它可以通过发送用户名和密码来验证用户的身份，并允许用户访问受保护的资源。
+基本认证是一种通过在HTTP请求中包括用户名和密码来验证用户身份的方式。它可以帮助我们保护敏感数据和资源，以及限制未经授权的访问。
 
-## 如何
+## 如何执行HTTP请求和基本认证
 
-要发送带有基本身份验证的HTTP请求，我们可以使用TypeScript中的内置模块“http”或一些流行的HTTP客户端库，如“axios”或“node-fetch”。让我们来看看如何使用这些方法来发送请求：
-
-```
-// 使用内置模块http发送HTTP请求
-import * as http from "http";
-
-// 设置请求地址
-const url = "http://www.example.com/api/users";
-
-// 设置身份验证凭据
-const username = "user";
-const password = "pass";
-
-// 设置请求选项
-const options = {
-  auth: `${username}:${password}` // 使用用户名和密码进行基本身份验证
-};
-
-// 发送HTTP GET请求
-http.get(url, options, (response) => {
-  // 处理响应
-  response.on("data", (data) => {
-    const result = data.toString();
-    console.log(result);
-  });
-});
-```
-
-下面是使用“axios”库发送HTTP请求的示例：
+首先，我们需要安装`axios`包来处理HTTP请求，可以通过以下命令进行安装：
 
 ```
-// 安装axios库
-npm install axios --save
+npm install axios
+```
 
-// 导入axios
-import axios from "axios";
+接下来，我们需要导入`axios`包，并创建一个实例来执行我们的HTTP请求，在代码中添加以下行：
 
-// 设置请求地址
-const url = "http://www.example.com/api/users";
+```
+const axios = require('axios');
 
-// 设置身份验证凭据
-const username = "user";
-const password = "pass";
-
-// 发送HTTP GET请求
-axios.get(url, {
+const instance = axios.create({
+  baseURL: 'https://example.com', // 替换为你想要发送请求的URL
   auth: {
-    username: username,
-    password: password
+    username: 'username', // 替换为你的用户名
+    password: 'password' // 替换为你的密码
   }
-})
-.then(response => {
-  // 处理响应
-  const result = response.data;
-  console.log(result);
-})
-.catch(error => {
-  // 处理错误
-  console.log(error);
 });
 ```
 
-无论使用哪个方法，我们都可以通过检查响应的状态码来判断身份验证是否成功。401状态码表示身份验证失败，而200表示成功。
+现在，我们可以使用`instance`来发送我们的HTTP请求。例如，我们可以发送一个GET请求来获取页面内容，并在控制台输出结果。在代码中，我们可以添加以下行：
+
+```
+instance.get('/page')
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+在上述示例中，我们使用`then`和`catch`方法来处理请求的响应和错误。你可以根据自己的需求来使用不同的HTTP方法（GET、POST、PUT等）以及适当的响应处理。
 
 ## 深入了解
 
-基本身份验证并不是最安全的身份验证方法，因为它只是通过简单地传递用户名和密码来验证用户的身份。因此，我们建议只在HTTPS协议下使用它。另外，为了进一步保护用户的身份，我们也可以使用更复杂的身份验证方法，如OAuth。
+在发送HTTP请求时，我们可以通过在请求头中添加`Authorization`字段来实现基本认证。这可以通过将用户名和密码使用Base64编码来创建一个令牌来实现。在上面的例子中，我们使用`auth`选项来通过提供用户名和密码来方便地添加`Authorization`头部。
+
+此外，我们还可以使用`axios`提供的拦截器（interceptors）来进行更多的自定义。使用拦截器，我们可以在每个请求中添加特定的头部，以及在响应时验证和处理错误。你可以通过阅读[axios的官方文档](https://github.com/axios/axios)来了解更多关于拦截器的信息。
 
 ## 参考链接
 
-- Node.js官方文档：https://nodejs.org/api/http.html#http_http_get_url_options_callback
-- Axios库文档：https://axios-http.com/docs/intro
-- Node-fetch库文档：https://www.npmjs.com/package/node-fetch
+- [axios官方文档](https://github.com/axios/axios)
+- [理解HTTP基本认证](https://www.ibm.com/docs/en/datapower-gateways/2018.4?topic=topics-http-authentication)

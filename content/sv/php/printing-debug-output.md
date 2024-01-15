@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Felsökningsutskrift"
+html_title:           "PHP: Felsökningsutskrift"
+simple_title:         "Felsökningsutskrift"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -11,67 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva kod kan vara en komplex process och ibland kan det vara svårt att felsöka och hitta fel i koden. En av de mest användbara sätten att felsöka din PHP-kod är genom att skriva ut felsökningsmeddelanden. Detta ger dig en djupare insikt i vad som händer i din kod och kan hjälpa dig att hitta och lösa problem snabbare.
+Att skriva ut felsökningsinformation i sin kod är ett vanligt förekommande tillvägagångssätt för att hitta och lösa problem i ett PHP-program. Det är ett effektivt verktyg för att identifiera fel och förstå hur ens kod fungerar.
 
-## Så här gör du
+## Hur man gör
 
-För att skriva ut debug-utdata i din PHP-kod, kan du använda funktionen ```print_r ()``` eller ```var_dump ()```. Dessa funktioner visar en detaljerad utskrift av variabler eller objekt som du väljer att felsöka.
-
-Här är ett enkelt exempel på hur du kan använda ```print_r ()``` för att felsöka en array i din kod:
+För att skriva ut felsökningsinformation i PHP, kan man använda sig av funktionen `var_dump()` eller `print_r()`. Dessa funktioner tar ett argument och skriver sedan ut en detaljerad beskrivning av det värdet. Här är ett exempel:
 
 ```
 <?php
-$array = ['Apple', 'Orange', 'Banana'];
-print_r($array);
+$namn = "Anna";
+var_dump($namn);
 ?>
 ```
 
-Detta kommer att producera följande utskrift:
+Resultatet blir:
 
 ```
-Array
-(
-    [0] => Apple
-    [1] => Orange
-    [2] => Banana
-)
+string(4) "Anna"
 ```
 
-Som du kan se ger detta en detaljerad utskrift av alla element i arrayen, vilket gör det lättare att hitta eventuella fel eller problem.
-
-Å andra sidan kan ```var_dump ()``` ge dig ännu mer information om variabler eller objekt, inklusive datatyper, storlek och värden. Så här kan du använda ```var_dump ()``` för att felsöka en variabel:
+Man kan också använda `echo` för att skriva ut enklare felsökningsmeddelanden. Här är ett exempel:
 
 ```
 <?php
-$name = 'Emma';
-var_dump($name);
+$ålder = 25;
+echo "Min ålder är " . $ålder;
 ?>
 ```
 
-Denna kod kommer att producera följande utskrift:
+Resultatet blir:
 
 ```
-string(4) "Emma"
+Min ålder är 25
 ```
-
-Som du kan se visar ```var_dump ()``` datatypen och längden på strängen, vilket kan vara mycket användbart vid felsökning av mer komplexa variabler.
 
 ## Djupdykning
 
-En annan metod för att skriva debug-utdata är att använda ```error_log ()```-funktionen. Istället för att skriva ut direkt på skärmen, kan du skicka felsökningsmeddelanden till en loggfilsfil. Detta är särskilt användbart om du vill felsöka en webbapplikation som kör på en server utan direkt åtkomst till en konsol eller terminal.
+När man ska skriva ut felsökningsinformation är det viktigt att tänka på säkerheten. Det kan vara farligt att skriva ut känslig information såsom lösenord eller användaruppgifter. Se därför till att endast skriva ut information som du är bekväm med att visa för andra.
 
-Till exempel kan du använda ```error_log ()``` för att logga ett meddelande när en viss kodruta körs:
-
-```
-<?php
-error_log("Kodruta körs!");
-?>
-```
-
-Meddelandet sparas sedan i en loggfil som du kan granska senare för att hitta eventuella fel eller problem.
+En annan viktig punkt är att inte lämna kvar felsökningskod i produktionsmiljön. Det kan leda till säkerhetsrisker och onödig belastning på servern. Se till att ta bort eller kommentera ut felsökningskoden när den inte längre behövs.
 
 ## Se även
 
-- [PHP - Debuga din kod](https://www.php.net/manual/en/debugger.php)
-- [PHP - Felrapportering](https://www.php.net/manual/en/errorfunc.configuration.php)
-- [PHP - Felloggning](https://www.php.net/manual/en/function.error-log.php)
+* [PHP-funktionen `var_dump()`](https://www.php.net/manual/en/function.var-dump.php)
+* [PHP-funktionen `print_r()`](https://www.php.net/manual/en/function.print-r.php)
+* [PHP-funktionen `echo`](https://www.php.net/manual/en/function.echo.php)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग्स को संयुक्त करना"
+html_title:           "Kotlin: स्ट्रिंग्स को संयुक्त करना"
+simple_title:         "स्ट्रिंग्स को संयुक्त करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,26 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-String ko concat karna programming mein behad hi aam aur zaroori hai. Jab hum alag alag strings ko ek saath jodte hain, to humare code mein flexibility, readability aur functionality badh jati hai.
+## क्यों
 
-## Kaise Karein
-Concatenating strings Kotlin mein behad hi asaan hai. Hum simple "+" operators ka istemal karke strings ko jod sakte hain. Iske liye, hum ek "plus" function ka istemal karte hain jo do strings ko ek saath jodkar ek naya string create karta hai. Chaliye isko ek example ke through samajhte hain:
+कभी-कभी हमारे पास अलग-अलग भाषाओं में लिखे गए टेक्स्ट होते हैं और हमें उनको एक साथ जोड़ना होता है। इसके लिए हम स्ट्रिंग को bond या concatenate करते हैं।
+
+## कैसे करें
+
+आपको अपने Kotlin प्रोग्राम में दो स्ट्रिंग को + ऑपरेटर का उपयोग करके जोड़ना है। यह डेमो कोड में दिखाया गया है:
 
 ```Kotlin
-val firstName = "Aryan"
-val lastName = "Sharma"
-val fullName = firstName + " " + lastName
-println(fullName)
-
-// Output: Aryan Sharma
+val hello = "नमस्ते "
+val name = "जॉन"
+val greeting = hello + name
+println(greeting)
 ```
-Is example mein humne pehle do variables, "firstName" aur "lastName" mein alag alag strings assign kiya. Fir humne "fullName" variable mein "+" operator ka istemal karke dono strings ko jodkar ek naya string create kiya. Aur iski output ko print kiya.
 
-## Deep Dive
-Humne dekha ki '+' operator ka istemal karke hum bahut asaani se strings ko jod sakte hain. Lekin Kotlin mein hum "plus" function ke sath sath "plusAssign" bhi function ka istemal kar sakte hain jo humare variable ko update karke usmein concat kiya hua string rakhta hai. Is tarah se humare code mein less clutter aur better performance milti hai.
+आउटपुट:
 
-## Dekhein Bhi
-* [Official Kotlin Documentation on strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-* [Tutorial on concatenating strings in Kotlin](https://www.geeksforgeeks.org/kotlin-string-concatenation/)
-* [Medium article on string manipulation in Kotlin](https://medium.com/codingtown/kotlin-string-manipulation-ffc3a5a0b445)
+```Kotlin
+नमस्ते जॉन
+```
+
+## गहराई में जाएं
+
+स्ट्रिंग को जोड़ने के लिए Kotlin में + ऑपरेटर का उपयोग किया जाता है। इसके अलावा, आपको अन्य विकल्प भी मिलते हैं। एक विकल्प है string templates जो पदों को स्थानांतरित करता है, जैसे:
+
+```Kotlin
+val country = "भारत"
+val message = "मैं $country में अपना दौरा पूरा करना चाहता हूं।"
+println(message)
+```
+
+आउटपुट:
+
+```Kotlin
+मैं भारत में अपना दौरा पूरा करना चाहता हूं। 
+```
+
+इसके अलावा, आप स्ट्रिंग संयोजन के लिए ```concat()``` फ़ंक्शन का भी उपयोग कर सकते हो। यह एक युग्मन बनाता है जो दो स्ट्रिंग को जोड़ता है और एक नया स्ट्रिंग लौटाता है। उदाहरण:
+
+```Kotlin
+val str1 = "This is "
+val str2 = "sample text"
+val result = str1.concat(str2)
+println(result)
+```
+
+आउटपुट:
+
+```Kotlin
+This is sample text
+```
+
+## देखें भी
+
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin String Concatenation](https://www.geeksforgeeks.org/kotlin-string-interpolation/)
+- [Kotlin String Templates](https://www.baeldung.com/kotlin-string-templates)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Zmiana pierwszej litery na wielką w ciągu znaków"
-simple_title:         "Zmiana pierwszej litery na wielką w ciągu znaków"
+title:                "Zmiana wielkości liter w ciągu znaków"
+html_title:           "Clojure: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,35 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego string powinien być pisany z wielkiej litery? Jest to często stosowana praktyka w programowaniu, aby poprawić czytelność i jednolitą formę w kodzie. Dodatkowo, niektóre funkcje w języku Clojure, takie jak `capitalize`, wymagają, aby pierwsza litera danego stringu była wielka.
+Czy kiedykolwiek zastanawiałeś się, dlaczego czasem słowa w zdaniach są zapisane wielką literą? To nazywane jest kapitalizacją i może pomóc w czytaniu i zrozumieniu tekstu. W tym artykule dowiesz się, jak działa kapitalizacja w języku programowania Clojure i jak jej używać.
 
-## Jak to zrobić
-
-Kodowanie stringa z wielką literę w języku Clojure jest bardzo proste i może być wykonane na kilka różnych sposobów. Przykładowe wykorzystanie `capitalize` wygląda następująco:
+## Jak To Zrobić
 
 ```Clojure
-(capitalize "witaj świecie") ; WYNIK: "Witaj świecie"
+(defn capitalize-word 
+  [string] 
+  (str (clojure.string/capitalize string))) 
+
+(capitalize-word "january") ;; "January"
+(capitalize-word "MAY") ;; "May"
+(capitalize-word "august") ;; "August"
 ```
 
-Można również użyć funkcji `str/split` i `str/join` aby wykorzystać bibliotekę `clojure.string` do zmiany pierwszej litery na wielką:
+Funkcja ```capitalize-word``` przyjmuje argument w postaci stringa i zwraca kapitalizowane słowo. Używamy tutaj funkcji ```clojure.string/capitalize```, która jest częścią biblioteki standardowej Clojure i kapitalizuje pierwszą literę słowa. Następnie używamy funkcji ```str```, aby utworzyć nowy string z kapitalizowaną pierwszą literą. W przykładowych wywołaniach możemy zauważyć, że funkcja ta działa dla różnych wielkości liter.
 
-```Clojure
-(require '[clojure.string :as str])
+## Pogłębiona Analiza
 
-(-> "witaj świecie"
-  (str/split #" ")
-  (mapv #(str/capitalize %))
-  (str/join " ")) ; WYNIK: "Witaj Świecie"
-```
+Aby lepiej zrozumieć, jak działa nasza funkcja, musimy przyjrzeć się nieco bliżej funkcji ```clojure.string/capitalize```. Ta funkcja działa na podstawie prymitywów Clojure - sekwencji. Słowo jest sekwencją, ponieważ składa się z poszczególnych liter, które mogą być traktowane jako elementy sekwencji. Funkcja ```clojure.string/capitalize``` zwraca nową sekwencję, która jest wynikiem zastosowania funkcji ```clojure.core/capitalize``` do każdego elementu sekwencji. Funkcja ```clojure.core/capitalize``` jest wywoływana w celu kapitalizacji pojedynczego znaku. Następnie obrabiamy tę sekwencję za pomocą funkcji ```str```, aby utworzyć nowy string.
 
-## Głębszy wgląd
+## Zobacz Również
 
-W języku Clojure wielkość liter ma znaczenie, ponieważ jest to język funkcyjny i funkcje są niemutowalne. Dlatego też, jeśli próbujesz zmienić wielkość liter w istniejącym stringu, zostanie stworzona nowa kopia z pożądanymi zmianami, a oryginalny string pozostanie bez zmian.
-
-Można również zauważyć, że funkcje `capitalize` i `str/capitalize` zwrócą string z pierwszą literą zmieniającą rozmiar w przypadku, gdy oryginalna litera jest mała, jednak nie zmieniają stringa, jeśli pierwsza litera jest już wielka. W takim przypadku można użyć funkcji `str/upper-case` aby zapewnić, że cały string będzie zapisany dużymi literami.
-
-## Zobacz także
-
-- [Dokumentacja języka Clojure dotycząca zmian liter](https://clojuredocs.org/clojure.string/capitalize)
-- [Oficjalna strona języka Clojure](https://clojure.org/)
-- [Poradnik dla początkujących w języku Clojure](https://learnxinyminutes.com/docs/pl-pl/clojure-pl/)
+- Dokumentacja Clojure o funkcji ```str```: https://clojuredocs.org/clojure.string/str
+- Dokumentacja Clojure o funkcji ```clojure.string/capitalize```: https://clojuredocs.org/clojure.string/capitalize
+- Dokumentacja Clojure o funkcji ```clojure.core/capitalize```: https://clojuredocs.org/clojure.core/capitalize

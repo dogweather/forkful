@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Tietokoneohjelmoinnin kirjoittaminen standardivirheeseen"
-simple_title:         "Tietokoneohjelmoinnin kirjoittaminen standardivirheeseen"
+title:                "Kirjoitus standardivirheeseen"
+html_title:           "Clojure: Kirjoitus standardivirheeseen"
+simple_title:         "Kirjoitus standardivirheeseen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,30 +12,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kirjoittaisit standardivirheeseen (standard error)? Jos haluat tallentaa virheilmoitukset, jotka voivat auttaa sinua löytämään ja korjaamaan ohjelmointivirheitä. Tämä on hyödyllinen vianetsintätyökalu, joka auttaa sinua ymmärtämään, mistä ohjelmassasi havaitut virheet johtuvat.
+Miksi kirjoittaa standardivirheille? Yksi syy voisi olla virheiden parempi hallinta ohjelmassa.
 
-## Kuinka tehdä
-
-Standardivirheeseen kirjoittaminen Clojuressa on yksinkertaista. Voit käyttää "System/err" toimintoa ja antaa sille haluamasi virheilmoituksen merkkijonona. Tämän jälkeen ohjelma tallentaa virheilmoituksen standardivirheeseen sen sijaan, että tulostaisi sen normaalisti.
+## Miten
 
 ```Clojure
-(System/err "Tämä on virheilmoitus, joka tallennetaan standardivirheeseen")
+(println :standardivirhe "Tämä on virhe!")
 ```
+Tämä koodi tulostaa "standardivirhe Tämä on virhe!" standardivirheelle. Tästä syystä se näkyy käyttäjän näytöllä tai tallentuu lokitiedostoon.
 
-Tässä on esimerkki tulosteesta, jonka saat, kun suoritat tämän koodin:
+## Syvällisempi sukellus
 
-```Clojure
-Tämä on virheilmoitus, joka tallennetaan standardivirheeseen
-```
+Kirjoittaminen standardivirheille on hyödyllistä, jos haluat erottaa virheilmoitukset muusta tulostuksesta. Voit myös käyttää `eprintln`-funktiota, joka tulostaa koko virheen ilman ylimääräisiä tekstirivejä.
 
-## Syvemmälle
+# Katso myös
 
-On tärkeää huomata, että standardivirheeseen kirjoittaminen voi olla hyödyllistä vain silloin, kun ohjelma ei pysty jatkamaan normaalisti virheen jälkeen. Jos ohjelmasi kuitenkin kykenee jatkamaan, voi olla parempi käyttää "System/out" toimintoa, joka tallentaa tulosteen standarditulosteeseen.
-
-Kannattaa myös huomata, että standardivirheen sisältöä voidaan lukea ja käsitellä myös ohjelmassa. Voit käyttää "System/err-reader" -toimintoa ja "read-line" -toimintoa lukeaksesi standardivirheeseen tallennetun virheilmoituksen merkkijonona.
-
-## Katso myös
-
-- [Clojure.org: I/O](https://clojure.org/reference/io)
-- [System/err -toiminto](https://clojuredocs.org/clojure.java.io/system%2Ferr)
-- [Standard Input ja Output tulostusten ohjaaminen](https://clojure.org/reference/io#_redirecting_standard_input_and_output)
+- [Ohjeet standardivirheiden käsittelystä Clojuressa](https://clojure.org/guides/err)  
+- [Virheiden hallinta Clojuressa](https://clojure.org/reference/exceptions)

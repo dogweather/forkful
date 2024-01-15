@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Analizar HTML"
-simple_title:         "Analizar HTML"
+title:                "Analizando html"
+html_title:           "Swift: Analizando html"
+simple_title:         "Analizando html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Hoy en día, la información se encuentra en todas partes en la web, pero a veces no es tan fácil de leer o utilizar como nos gustaría. Ahí es donde entra la habilidad de parsear HTML. Al aprender esta técnica, podrás extraer datos de sitios web y utilizarlos en tus propias aplicaciones sin tener que copiar y pegar manualmente. Además, conocer cómo funciona el HTML subyacente puede ayudarte a mejorar tus habilidades de desarrollo web.
+Si estás interesado en extraer información de páginas web, entonces el análisis de HTML es una habilidad esencial. Al analizar el código HTML de una página, puedes obtener datos específicos y utilizarlos para diferentes propósitos, como análisis de datos, automatización web o creación de aplicaciones que extraigan información de páginas web.
 
 ## Cómo hacerlo
 
-A continuación, compartiremos un ejemplo sencillo de cómo se puede hacer un parser de HTML en Swift utilizando la biblioteca HTMLKit. En primer lugar, debes importar la biblioteca en tu proyecto:
+Para analizar HTML en Swift, se utilizan bibliotecas como Kanna o SwiftSoup. Aquí hay un ejemplo sencillo utilizando Kanna para extraer el título de una página web:
 
 ```Swift
-import HTMLKit
+import Kanna
+
+if let html = try? HTML(url: URL(string: "https://www.example.com/")!, encoding: .utf8) {
+    for title in html.css("title") {
+        print(title.text)
+    }
+}
 ```
 
-Luego, necesitamos acceder al sitio web de donde queremos extraer datos y obtener el contenido HTML:
+El resultado sería "Página de ejemplo" si se imprime en la consola. Puedes utilizar otras funciones y selectores para extraer diferentes elementos del código HTML, como enlaces, imágenes o texto.
 
-```Swift
-let url = "https://ejemplo.com"
-guard let htmlData = try? Data(contentsOf: URL(string: url)!) else { return }
-```
+## Profundizando
 
-Con esto, tenemos el contenido HTML almacenado en la variable "htmlData". Ahora, utilizaremos la función de parse de HTMLKit para convertir el contenido en formato HTML a un objeto HTMLNode que podamos tratar y manipular:
+Es importante tener en cuenta que el análisis de HTML no es una tarea sencilla, ya que el código de una página web puede variar significativamente. Es posible que necesites utilizar expresiones regulares o funciones avanzadas para manejar casos específicos. También es importante tener en cuenta que existen diferencias entre el análisis de HTML en un dispositivo iOS y un dispositivo MacOS.
 
-```Swift
-let parser = HTMLParser(data: htmlData)
-let document = parser.parse()
-```
-
-Una vez que tenemos el objeto HTMLNode, podemos utilizar métodos como "querySelectorAll" o "querySelector" para buscar elementos específicos en el HTML utilizando selectores CSS. Por ejemplo, si queremos obtener el título de la página, podemos utilizar el selector "head > title" de la siguiente manera:
-
-```Swift
-guard let title = document?.querySelector("head > title")?.text else { return }
-print(title) // Imprime: "Ejemplo - Página principal"
-```
-
-## Profundizando más
-
-Parsificar HTML puede ser un tema complejo y existen muchas maneras de hacerlo en Swift. Si quieres profundizar más en este tema, te recomendamos revisar la documentación de HTMLKit y otras bibliotecas similares como SwiftSoup.
-
-Otra opción es aprender a hacer un parser personalizado utilizando expresiones regulares. Aunque puede ser más complejo, te permite tener un mayor control sobre cómo se obtienen y procesan los datos.
-
-Recuerda también que es importante tener en cuenta la estructura del HTML y utilizar selectores adecuados para obtener los datos deseados.
+Para obtener más información sobre el análisis de HTML en Swift, puedes consultar la documentación de Kanna y SwiftSoup, así como buscar ejemplos y tutoriales en línea.
 
 ## Ver también
-- [Documentación de HTMLKit](https://htmlkit.com/docs/)
+
+- [Documentación de Kanna](https://github.com/tid-kijyun/Kanna)
 - [Documentación de SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- [Tutorial de parsing de HTML con expresiones regulares en Swift](https://www.raywenderlich.com/3494-nsregularexpression-tutorial-and-cheat-sheet#toc-anchor-017)
+- [Tutorial de análisis de HTML en Swift](https://www.raywenderlich.com/707-regular-expressions-in-swift-tutorial-getting-started)

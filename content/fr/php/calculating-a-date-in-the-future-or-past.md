@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé."
+html_title:           "PHP: Calculer une date dans le futur ou le passé."
+simple_title:         "Calculer une date dans le futur ou le passé."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,43 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Calculer une date dans le futur ou dans le passé peut être utile dans de nombreuses situations en programmation. Cela peut vous aider à planifier des tâches à l'avance, à afficher des informations de manière dynamique ou à effectuer des opérations arithmétiques sur des dates.
 
-## Comment faire
-Pour calculer une date dans le futur ou dans le passé en PHP, vous pouvez utiliser la fonction `strtotime()`. Cette fonction prend en paramètres une chaîne de caractères représentant la date de départ et un nombre de secondes à ajouter ou à soustraire.
+Il est courant en programmation de devoir calculer une date dans le futur ou dans le passé. Cela peut servir dans de nombreuses applications telles que la gestion d'événements, la planification ou la mise à jour de données. Dans cet article, nous allons découvrir comment réaliser ce type de calculs en PHP de manière simple et efficace.
 
-```PHP
-$date = strtotime("now"); //Date actuelle
-echo date("d/m/Y", $date); //Affichage au format jour/mois/année
+## Comment Faire
 
-$date_demain = strtotime("+1 day"); //Date de demain
-echo date("d/m/Y", $date_demain);
+Pour calculer une date dans le futur ou dans le passé en PHP, nous allons utiliser la fonction ```date()``` combinée avec la fonction ```strtotime()```. La fonction ```date()``` permet de retourner la date actuelle selon un format spécifié, tandis que la fonction ```strtotime()``` permet de convertir une chaîne de caractères en timestamp, c'est-à-dire en nombre de secondes écoulées depuis le 1er janvier 1970.
 
-$date_mois_prochain = strtotime("+1 month"); //Date du mois prochain
-echo date("d/m/Y", $date_mois_prochain);
+Par exemple, pour calculer la date dans 2 semaines à partir d'aujourd'hui, nous pouvons utiliser la fonction ```strtotime()``` avec le paramètre ```"+2 weeks"```, qui retournera un timestamp correspondant à cette date. Ensuite, en utilisant la fonction ```date()``` avec le format souhaité, nous pouvons afficher cette date de la manière qui nous convient.
+
+Voici un exemple de code pour calculer la date dans 2 semaines à partir d'aujourd'hui et l'afficher au format jour/mois/année :
+
 ```
-
-L'exemple ci-dessus utilise la fonction `date()` pour formater la date en jour/mois/année. Vous pouvez également utiliser `strtotime()` pour calculer des dates dans le passé en utilisant un nombre négatif comme paramètre.
-
-## Plongée profonde
-En utilisant la fonction `strtotime()`, vous pouvez effectuer des calculs plus avancés sur des dates. Par exemple, vous pouvez ajouter ou soustraire des semaines, des mois ou même des années.
-
-```PHP
-$date = strtotime("+2 weeks 3 days"); //2 semaines et 3 jours à partir de maintenant
+<?php
+$date = strtotime("+2 weeks");
 echo date("d/m/Y", $date);
-
-$date_prochain_mois = strtotime("next month"); //Date du prochain mois en cours
-echo date("d/m/Y", $date_prochain_mois);
-
-$date_prochaine_annee = strtotime("+1 year"); //Date de l'année prochaine
-echo date("d/m/Y", $date_prochaine_annee);
+?>
 ```
 
-En plus de cela, la fonction `strtotime()` peut également gérer des chaînes de caractères telles que "tomorrow" (demain), "next Monday" (lundi prochain) ou "last Friday" (vendredi dernier). Cela vous permet de calculer des dates en fonction des jours de la semaine sans avoir à définir une date spécifique.
+Ce code va afficher la date dans 2 semaines à partir d'aujourd'hui, par exemple : 28/05/2021.
 
-## Voir aussi
-- [Documentation officielle de la fonction strtotime()](https://www.php.net/manual/fr/function.strtotime.php)
-- [Explication complète sur les opérations de dates en PHP](https://www.php.net/manual/fr/datetime.formats.relative.php)
-- [Tutoriel sur la manipulation de dates en PHP](https://www.w3schools.com/php/php_date.asp)
+Il est également possible de calculer une date en utilisant d'autres unités de temps telles que les jours, les mois, les années, les heures ou les minutes. Voici un exemple pour calculer la date dans 1 mois et 3 jours à partir d'aujourd'hui :
 
-Merci d'avoir lu cet article sur comment calculer une date dans le futur ou dans le passé en PHP ! N'hésitez pas à explorer d'autres fonctionnalités de la fonction `strtotime()` pour des opérations de dates plus complexes. À bientôt pour plus de tutoriels de programmation !
+```
+<?php
+$date = strtotime("+1 month +3 days");
+echo date("d/m/Y", $date);
+?>
+```
+
+Cela va afficher la date dans 1 mois et 3 jours à partir d'aujourd'hui, par exemple : 12/06/2021.
+
+## Deep Dive
+
+La fonction ```strtotime()``` peut également être utilisée pour calculer une date à partir d'un timestamp donné. Dans ce cas, nous pouvons utiliser le deuxième paramètre de la fonction pour spécifier le timestamp de référence. Par exemple, si nous voulons calculer une date dans 5 jours à partir du 15/05/2021, nous pouvons utiliser la fonction comme ceci :
+
+```
+<?php
+$date = strtotime("+5 days", strtotime("15/05/2021"));
+echo date("d/m/Y", $date);
+?>
+```
+
+Cela va afficher la date dans 5 jours à partir du 15/05/2021, soit le 20/05/2021.
+
+Il est également important de noter que la fonction ```strtotime()``` peut traiter une grande variété de chaînes de caractères en plus de celles présentées dans cet article. Vous pouvez trouver plus d'informations sur les formats de dates reconnus en consultant la documentation PHP sur la fonction [strtotime()](https://www.php.net/manual/fr/function.strtotime.php).
+
+## Voir Aussi
+
+- [Documentation PHP sur la fonction date()](https://www.php.net/manual/fr/function.date.php)
+- [Documentation PHP sur la fonction strtotime()](https://www.php.net/manual/fr/function.strtotime.php)

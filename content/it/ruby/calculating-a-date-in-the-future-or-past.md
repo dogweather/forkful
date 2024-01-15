@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "Ruby: Calcolare una data nel futuro o nel passato"
 simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,53 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato è un'abilità fondamentale per qualsiasi programmatore Ruby. Questo ti consente di manipolare le date nei tuoi programmi e gestire facilmente le operazioni di tempo.
+Calcolare una data nel futuro o nel passato può essere utile in diversi casi, come ad esempio per pianificare eventi, gestire scadenze o analizzare dati storici.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato in Ruby, hai bisogno di usare la libreria di base `Date` e il suo metodo `+` o `-`, passando come parametro il numero di giorni da aggiungere o sottrarre.
+Per calcolare una data in Ruby, è possibile utilizzare il metodo `Date#advance` o `Date#prev_day` che accettano come argomenti i relativi valori dell'anno, del mese e del giorno.
 
-Ecco un esempio di codice che calcola la data di oggi più 10 giorni nel futuro:
-
-```Ruby
-require 'date'
-
-puts "Oggi è il #{Date.today.strftime('%d/%m/%Y')}"
-
-puts "La data tra 10 giorni sarà il #{(Date.today + 10).strftime('%d/%m/%Y')}"
-```
-
-L'output di questo codice sarà:
-
-```
-Oggi è il 20/08/2021
-La data tra 10 giorni sarà il 30/08/2021
-```
-
-Ecco invece un esempio per calcolare la data di oggi meno 5 giorni nel passato:
+Ecco un esempio di codice per calcolare una data nel futuro o nel passato:
 
 ```Ruby
-require 'date'
+# Calcola la data di domani
+d = Date.today.advance(days: 1)
+puts d #=> 2021-07-09
 
-puts "Oggi è il #{Date.today.strftime('%d/%m/%Y')}"
+# Calcola la data tra due mesi
+d = Date.today.advance(months: 2)
+puts d #=> 2021-09-08
 
-puts "La data di 5 giorni fa era il #{(Date.today - 5).strftime('%d/%m/%Y')}"
+# Calcola la data di ieri
+d = Date.today.prev_day
+puts d #=> 2021-07-07
 ```
 
-L'output di questo codice sarà:
+Inoltre, è possibile specificare anche il numero di settimane o di anni da aggiungere o sottrarre dalla data corrente.
 
-```
-Oggi è il 20/08/2021
-La data di 5 giorni fa era il 15/08/2021
+```Ruby
+# Calcola la data tra due settimane
+d = Date.today.advance(weeks: 2)
+puts d #=> 2021-07-22
+
+# Calcola la data tra tre anni
+d = Date.today.advance(years: 3)
+puts d #=> 2024-07-08
 ```
 
 ## Approfondimento
 
-Oltre all'aggiunta e alla sottrazione di giorni, la libreria `Date` di Ruby offre molti altri metodi utili per manipolare le date. Ad esempio, puoi usare `next_day` per ottenere la data del giorno successivo, `prev_day` per ottenere la data del giorno precedente, oppure `strftime` per formattare la data secondo le tue preferenze.
+Il metodo `advance` utilizza il calendario gregoriano per calcolare le date nel futuro o nel passato. Ciò significa che tiene conto degli anni bisestili e adatta automaticamente il numero di giorni nei mesi corretti.
 
-Assicurati di consultare la documentazione ufficiale di Ruby per saperne di più sulla manipolazione delle date.
+Inoltre, è possibile combinare più argomenti per ottenere una data molto precisa. Ad esempio, si può calcolare la data di due anni e tre mesi fa:
+
+```Ruby
+# Calcola la data di due anni e tre mesi fa
+d = Date.today.advance(years: -2, months: -3)
+puts d #=> 2019-04-08
+```
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Ruby per il modulo Date](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-- [Una guida dettagliata su come lavorare con le date in Ruby](https://www.rubyguides.com/2018/08/ruby-dates/)
+- [Documentazione di Ruby sul metodo `advance`](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-advance)
+- [Documentazione di Ruby sul metodo `prev_day`](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-prev_day)

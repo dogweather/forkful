@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Nykyisen päivämäärän hankkiminen"
-simple_title:         "Nykyisen päivämäärän hankkiminen"
+title:                "Tänään olevan päivämäärän haku"
+html_title:           "Haskell: Tänään olevan päivämäärän haku"
+simple_title:         "Tänään olevan päivämäärän haku"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,33 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Haskell ohjelmointikielellä on monia hyödyllisiä ominaisuuksia, ja yksi näistä on kyky saada tämänhetkinen päivämäärä. Tämä on hyödyllistä esimerkiksi kun haluat tallentaa tietoja ajan mukaisesti tai luoda dynaamisia ohjelmia, jotka käsittelevät päivämääriä. Seuraavassa kerromme, miten voit helposti saada tämänhetkisen päivämäärän Haskellilla.
+Miksi haluaisit selvittää nykyisen päivämäärän? No, ehkä haluat tehdä pienet joululahjalistat tai yksinkertaisesti vain pitää kirjaa ajasta ohjelmassasi. Ei hätää, tässä on helppo tapa selvittää nykyinen päivämäärä käyttäen Haskellia!
 
-## Kuinka
+## Miten
 
-Haskellissa on valmiiksi sisäänrakennettu funktio `getCurrentTime`, joka palauttaa tämänhetkisen ajan `Data.Time.Clock` -moduulissa. Voit käyttää tätä funktiota haluamassasi ohjelmassa "Data.Time.Clock" -moduulin tuomiseen ja seuraavalla tavalla:
-
-```Haskell
-import Data.Time.Clock
-
-currentDate <- getCurrentTime
-```
-
-Tämä luo muuttujan `currentDate`, johon tallennetaan tämänhetkinen aika. Voit muuttaa tämän ajan haluamasi muotoon muiden `Data.Time` -moduulin funktioiden avulla, kuten `formatTime`.
+*Haskellin mukavat minifunktiot takaavat, että ```Data.Time``` on helppo tapa saada nykyinen päivämäärä:*
 
 ```Haskell
-formatTime defaultTimeLocale "%d-%m-%Y" currentDate
+import Data.Time
+
+main = do
+  day <- getCurrentDay
+  print day
+  -- Tulostaa esimerkiksi: 2021-12-02
 ```
 
-Tämä tulostaa päivämäärän muodossa "DD-MM-YYYY". Voit myös käyttää muita muotoilumalleja oman tarpeesi mukaan.
+Voit myös tulostaa päivämäärän haluamassasi muodossa käyttämällä funktiota ```formatTime``` ja antamalla sille haluamasi muodon merkkijonona:
 
-## Syvemmällä
+```Haskell
+import Data.Time
+import System.Locale (TimeLocale, defaultTimeLocale)
 
-Haskellin `getCurrentTime` -funktio perustuu alhaisemmalla tasolla olevaan `Data.Time.Clock.POSIX` -moduuliin, joka palauttaa UNIX-aikaleiman sekunteina. Tämä aikaleima ilmaisee ajan kulun tietystä päivästä tammikuuta 1970. Tämä tapahtuu tarkan ajan ilmoittamiseksi ja käytetään usein teknisissä sovelluksissa.
+main = do
+  day <- getCurrentDay
+  print (formatTime defaultTimeLocale "%A %B %d, %Y" day)
+  -- Tulostaa esimerkiksi: torstai joulukuu 2, 2021
+```
+Voit vaihtaa päivämäärän kieltä käyttämällä ```Data.Time.Locale``` -moduulia ja antamalla haluamasi kielikoodin ```formatTime``` -funktion toisena argumenttina.
 
-Voit käyttää `posixSecondsToUTCTime` -funktiota muuntaaksesi POSIX-aikaleiman UTC-aikaleimaksi ja sitten käyttää `formatTime` -funktiota muotoillaksesi sen haluamallasi tavalla. Tämä tieto voi olla hyödyllinen, jos sinun täytyy käsitellä aikaa tarkemmin.
+## Syväsukellus
 
-## Katso myös (See Also)
+```Data.Time``` sisältää monia hyödyllisiä funktioita, mutta jos haluat syvällisempää tietoa päivämäärän hallinnasta, voit tutustua ```Clock``` -moduuliin.
 
-- [Haskellin ajan käsittely](https://www.haskell.org/hoogle/?hoogle=time)
-- [Haskellin aikaleimojen muuntaminen](https://hackage.haskell.org/package/time-1.9.2/docs/Data-Time-Format.html#v:formatTime)
+Esimerkiksi, voit käyttää ```getCurrentTime``` -funktiota ```Clock``` -moduulista saadaksesi myös nykyisen ajan lisäksi päivämäärän:
+
+```Haskell
+import Data.Time.Clock (getCurrentTime)
+import Data.Time.Calendar (toGregorian)
+
+main = do
+  dateTime <- getCurrentTime
+  let (year, month, day) = toGregorian (utctDay dateTime)
+  putStrLn (show day ++ "/" ++ show month ++ "/" ++ show year)
+  -- Tulostaa esimerkiksi: 2/12/2021 
+```
+
+## Katso myös
+
+- [Haskellin virallinen verkkosivusto](https://www.haskell.org/)
+- [Haskillin dokumentaatio](https://www.haskell.org/documentation/)

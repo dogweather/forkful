@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Lire un fichier texte"
-simple_title:         "Lire un fichier texte"
+title:                "Lecture d'un fichier texte"
+html_title:           "Haskell: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,34 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La lecture de fichiers texte est une compétence importante pour tout programmeur Haskell. Cela vous permet d'importer et d'analyser des données externes dans votre programme, offrant ainsi une grande flexibilité et une utilité pratique. Dans cet article, nous explorerons comment lire un fichier texte en Haskell et partagerons quelques conseils utiles pour vous aider à maîtriser cette compétence.
+Si vous êtes curieux de la programmation fonctionnelle ou si vous souhaitez simplement découvrir de nouveaux langages de programmation, la lecture d'un fichier texte en Haskell est un bon point de départ. Cela vous permettra de comprendre les bases du langage et de voir comment Haskell gère la lecture et l'écriture de fichiers.
 
 ## Comment faire
 
-La première étape pour lire un fichier texte en Haskell consiste à l'ouvrir avec la fonction `openFile` de Haskell. Cette fonction prend deux arguments : le chemin d'accès au fichier et le mode d'ouverture (lecture, écriture, etc.). Une fois que le fichier est ouvert, nous pouvons utiliser la fonction `hGetContents` pour obtenir son contenu sous forme de chaîne de caractères.
-
-Voici un exemple de code qui lit le contenu d'un fichier texte et l'affiche à l'écran :
+La première étape pour lire un fichier texte en Haskell est d'importer le module "System.IO". Ensuite, vous devez utiliser la fonction "openFile" pour ouvrir le fichier en mode lecture, en spécifiant le chemin d'accès et le mode dans lequel vous souhaitez ouvrir le fichier. Voici un exemple de code :
 
 ```Haskell
 import System.IO
 
 main = do
-    handle <- openFile "fichier.txt" ReadMode
-    contents <- hGetContents handle
+    file <- openFile "monfichier.txt" ReadMode
+    contents <- hGetContents file
     putStrLn contents
-    hClose handle
+    hClose file
 ```
 
-Lors de l'exécution de ce code, le contenu du fichier "fichier.txt" sera affiché à l'écran. Il est important de noter que la fonction `hGetContents` retourne une "lazy string", ce qui signifie qu'elle n'évalue pas le contenu du fichier tant que cela n'est pas nécessaire. Cela peut être très utile pour la manipulation de fichiers volumineux.
+Dans cet exemple, nous ouvrons le fichier "monfichier.txt" en mode lecture, stockons son contenu dans la variable "contents" et l'affichons en utilisant la fonction "putStrLn". Enfin, nous fermons le fichier en utilisant la fonction "hClose". L'avantage de cette approche est que le fichier est automatiquement fermé à la fin de l'exécution du programme, même en cas d'erreurs.
+
+Vous pouvez également utiliser la fonction "withFile" pour ouvrir et manipuler le fichier en une seule étape. La syntaxe est la suivante :
+
+```Haskell
+import System.IO
+ 
+main = do
+    withFile "monfichier.txt" ReadMode (\handle -> do
+        contents <- hGetContents handle
+        putStrLn contents)
+```
 
 ## Plongée en profondeur
 
-En plus de la fonction `hGetContents`, Haskell offre de nombreuses autres fonctions pour la lecture et la manipulation de fichiers texte. Par exemple, `hGetLine` permet de lire ligne par ligne, tandis que `hGetChar` peut être utilisé pour lire caractère par caractère.
+En utilisant la fonction "hGetContents", l'intégralité du contenu du fichier est chargée en mémoire sous la forme d'une chaine de caractères (String). Cela peut poser un problème pour les fichiers de grande taille car cela peut saturer la mémoire. Pour éviter cela, vous pouvez utiliser la fonction "hGetLine" pour lire le fichier ligne par ligne ou la fonction "hGetChar" pour lire le fichier caractère par caractère.
 
-Il est également possible de lire un fichier texte au format binaire en utilisant la fonction `hGetBufSome` et de spécifier la taille du buffer de lecture. De plus, la bibliothèque de sérialisation de Haskell, "Data.Binary", peut être utilisée pour lire des données structurées à partir de fichiers binaires.
+De plus, vous pouvez spécifier une limite de taille en utilisant la fonction "hGet" et en spécifiant le nombre de caractères à lire. Enfin, si vous n'avez pas spécifié de mode d'ouverture de fichier, Haskell utilisera automatiquement le mode lecture par défaut.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque standard de Haskell sur les entrées/sorties](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base/System-IO.html)
-- [Tutoriel sur la lecture de fichiers avec Haskell](https://www.haskell.org/tutorial/io.html)
-- [Documentation sur la bibliothèque "Data.Binary"](https://hackage.haskell.org/package/binary-0.8.5.1/docs/Data-Binary.html)
+- [Documentation officielle de Haskell](https://www.haskell.org/documentation/)
+- [Tutoriel sur la programmation Haskell](https://www.tutorialspoint.com/haskell/index.htm)
+- [Liste de modules utiles pour la manipulation de fichiers en Haskell](https://hackage.haskell.org/packages/search?terms=file)

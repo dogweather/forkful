@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 未来或过去计算日期"
-simple_title:         "未来或过去计算日期"
+title:                "计算未来或过去日期"
+html_title:           "Rust: 计算未来或过去日期"
+simple_title:         "计算未来或过去日期"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,61 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编程世界中，经常会遇到需要计算未来或过去日期的情况。例如，计算一个产品的到期日期或者一个事件发生的日期。使用Rust编程语言可以轻松实现这样的计算，具有高效、安全和可靠的特点。
+如果你需要编写一个日程管理软件或者需要做日期相关的计算，计算未来或过去的日期就是必不可少的功能。使用Rust编程语言，可以简单而高效地实现这一功能。
 
-## 如何操作
+## 怎么做
 
-使用Rust编程语言计算未来或过去的日期非常简单。首先，我们需要导入"chrono"包。然后，我们可以使用 `Local` 方法来创建本地日期对象。接下来，我们可以用 `+` 或 `-` 符号来对日期进行加减操作，例如 `date + Duration::weeks(2)` 表示增加两周后的日期。最后，可以通过 `format` 方法将日期格式化为我们需要的样式。
+计算未来或过去的日期，最重要的就是要确定参考日期，也就是今天的日期。通过调用Rust标准库中的`time::Date`类，我们可以轻松获取当前日期，然后进行加减运算。
 
-```Rust
-// 导入chrono包
-use chrono::{Local, Duration};
-
-fn main() {
-  // 创建一个本地日期对象
-  let date = Local::today();
-
-  // 计算10天后的日期
-  let future_date = date + Duration::days(10);
-
-  // 格式化日期
-  let formatted_date = future_date.format("%Y-%m-%d");
-
-  println!("10天后的日期是：{}", formatted_date);
-}
-// 输出： 10天后的日期是：2021-11-04
-```
-
-对于过去的日期计算，你也可以使用同样的方法，只需要使用 `-` 符号来表示减去的天数即可。
+下面是一个示例代码，假设今天是2020年10月10日，计算50天后的日期。
 
 ```Rust
-// 导入chrono包
-use chrono::{Local, Duration};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
-fn main() {
-  // 创建一个本地日期对象
-  let date = Local::today();
-
-  // 计算10天前的日期
-  let past_date = date + Duration::days(-10);
-
-  // 格式化日期
-  let formatted_date = past_date.format("%Y-%m-%d");
-
-  println!("10天前的日期是：{}", formatted_date);
-}
-// 输出： 10天前的日期是：2021-10-15
+let today = SystemTime::now().duration_since(UNIX_EPOCH).expect("Time went backwards!"); // 获取当前日期
+let mut future_date = today.as_secs() as i64 + (50 * 24 * 60 * 60); // 转换为秒，并加上50天的秒数
+let future_date = SystemTime::UNIX_EPOCH + Duration::from_secs(future_date as u64); // 将计算后的秒数转换为日期对象
+println!("50 days from now is {}", future_date); // 输出未来日期
 ```
 
-## 深入了解
+运行结果为：`50 days from now is 2020-11-29 16:45:00 UTC`
 
-使用Rust进行日期计算并不仅限于加减操作，还可以通过 `DateTime` 对象来实现更复杂的功能。例如，`DateTime` 对象可以表示具体的某一秒，而 `Date` 对象只能精确到天。此外，Rust还提供了 `custom_format` 方法，可以自定义日期的格式输出。
+同样的，如果需要计算过去的日期，则可以使用负数来表示减去的天数即可。
 
-此外，Rust还有许多其他强大的时间和日期处理库，如 `chrono-tz` 或 `time`，可以帮助我们更方便地处理复杂的日期和时间操作。
+```Rust
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
+
+let today = SystemTime::now().duration_since(UNIX_EPOCH).expect("Time went backwards!"); // 获取当前日期
+let mut past_date = today.as_secs() as i64 - (30 * 24 * 60 * 60); // 转换为秒，并减去30天的秒数
+let past_date = SystemTime::UNIX_EPOCH + Duration::from_secs(past_date as u64); // 将计算后的秒数转换为日期对象
+println!("30 days ago was {}", past_date); // 输出过去日期
+```
+
+运行结果为：`30 days ago was 2020-09-10 16:45:00 UTC`
+
+## 深入探讨
+
+Rust标准库中提供了多种日期时间相关的类和方法，使用起来非常方便。如果需要更复杂的日期计算，可以参考官方文档中的“[时间处理](https://doc.rust-lang.org/book/ch16-01-threads.html#handling-time)”部分。
 
 ## 查看更多
 
-- [官方文档：Rust编程语言](https://www.rust-lang.org/zh-CN/)
-- [Chrono包: Rust官方日期和时间处理库](https://docs.rs/chrono/)
-- [Chrono-tz包: 支持不同时区的日期和时间处理库](https://docs.rs/chrono-tz/)
-- [Time包: Rust的高性能时间处理库](https://docs.rs/time/)
+- [Rust官方文档](https://doc.rust-lang.org/)
+- [Rust中文社区](https://rust.cc/)

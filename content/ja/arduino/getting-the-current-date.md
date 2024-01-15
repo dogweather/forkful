@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: 現在の日付を取得する"
+title:                "現在の日付を取得する"
+html_title:           "Arduino: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,60 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜこれをするのか
 
-Arduinoプログラミングにおいて、現在の日付を取得する必要があることがあります。例えば、特定の日付をトリガーにしてある動作をするようにプログラムする場合や、データログを取る際に日付と時間を記録する必要がある場合などが挙げられます。今回は、Arduinoで現在の日付を取得する方法について解説します。
+現在の日付を取得する理由はいくつかあります。例えば、制御や監視システムを作成する場合、日付の情報が必要になります。また、デバイスの日付設定を自動化するためにも必要です。それでは、現在の日付を取得する方法を見ていきましょう。
 
 ## 方法
 
-Arduinoで現在の日付を取得するには、最も簡単な方法はRTCモジュールを使用することです。RTCモジュールは、リアルタイムクロックと呼ばれる電子部品で、日付と時間を正確に保持することができます。
-
-まずは、RTCモジュールをArduinoボードに接続し、ライブラリをインストールします。次に、以下のようなコードをArduino IDEに入力してください。
-
 ```Arduino
-#include <RTClib.h>
+#include <RTClib.h> 
 
-RTC_DS1307 rtc; // RTCモジュールを使用するためのオブジェクトを作成
+RTC_DS1307 rtc; 
 
-void setup() {
-  Serial.begin(9600); // シリアル通信を開始
-  if (! rtc.begin()) { // RTCモジュールが接続されているか確認
-   Serial.println("Couldn't find RTC");
-   while (1);
-  }
-  if (! rtc.isrunning()) { // モジュールの時刻が表示されていない場合は設定する
-    Serial.println("RTC is not running!");
-    // 以下の行のコメントを外し、車輪の「年月日」を修正することで設定が可能
-    //rtc.adjust(DateTime(YYYY, MM, DD, hh, mm, ss));
-  }
-}
+void setup() { 
+  // RTCを初期化 
+  rtc.begin(); 
+} 
 
-void loop() {
-  DateTime now = rtc.now(); // 現在の日付と時間を取得
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(' ');
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-  delay(1000); // 1秒毎に繰り返される
-}
+void loop() { 
+  // 現在の日付を取得 
+  DateTime now = rtc.now(); 
+
+  // 日付のフォーマットを設定 
+  String date = String(now.year()) + "/" + String(now.month()) + "/" + String(now.day()); 
+  
+  // シリアルモニターに出力 
+  Serial.println(date); 
+} 
 ```
 
-コードをアップロードし、シリアルモニタを開くと、現在の日付と時間が表示されるはずです。
+このコードを実行すると、RTCモジュールから現在の日付が取得され、シリアルモニターに表示されます。各部分を細かく見ていきましょう。
 
-## 深堀り
+まず、`#include <RTClib.h>`でRTCモジュールを使用するためのライブラリをインポートします。次に、RTCオブジェクトを作成し、`begin()`メソッドで初期化します。
 
-RTCモジュールは、バッテリーでバックアップされているため、電源が切れても日付と時間を保持することができます。また、RTCモジュールを使用することで温度センサーや加速度センサーなどのデータも取得することができます。さらに、NTPサーバーからインターネット経由で正確な日付と時間を取得することも可能です。
+`loop()`関数では、`now`という名前の変数にRTCから取得した現在の日付を代入します。`RTCnow()`メソッドは現在の日時を表す`DateTime`オブジェクトを返すため、`year()`や`month()`、`day()`メソッドを使って年月日を取得します。
 
-## 参考
+そして、`String`クラスを使用して日付を文字列に変換し、`println()`メソッドでシリアルモニターに出力します。日付のフォーマットは自由に変更できます。
 
-- [RTCモジュールの使い方・接続方法](https://www.switch-science.com/catalog/849/)
-- [RTCモジュールとは？](https://qiita.com/rimlabs/items/336c89bcae5513bb1622)
-- [NTPについて](https://ja.wikipedia.org/wiki/Network_Time_Protocol)
+## ディープダイブ
+
+RTCモジュールはリアルタイムクロック（RTC）チップを搭載したデバイスで、年月日や時刻を取得することができます。Arduinoでは、内蔵のRTCモジュールや外付けのモジュールを使用することができます。自分のプロジェクトに合った適切なモジュールを選択しましょう。
+
+また、RTCモジュールを使用するには、追加のライブラリをダウンロードする必要があります。`RTClib`は最も一般的なRTCモジュール用のライブラリですが、使用するモジュールに合わせて適切なライブラリを選択しましょう。
+
+## See Also
+
+- [Arduinoでの日付の取得方法](https://www.arduino.cc/en/tutorial/time)
+- [RTCモジュールの種類と選び方](https://qiita.com/zakzak000/items/5ffe323c2adaec108465)

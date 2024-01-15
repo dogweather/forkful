@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Hitta längden på en sträng"
-simple_title:         "Hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Clojure: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-Att Kunna hitta längden av en sträng är en nyckelfunktion inom många programmeringsspråk, inklusive Clojure. Genom att lära dig hur man gör detta i Clojure kan du öka din förmåga att manipulera text och göra mer avancerade program.
+Att hitta längden på en sträng är en grundläggande och nödvändig uppgift inom programmering. Genom att förstå hur man kan få längden på en sträng i Clojure, kan du göra det enklare att hantera data och skapa mer effektiva och eleganta program.
 
-## Hur man gör
+## Hur 
 
-För att hitta längden av en sträng i Clojure använder vi funktionen `count`, som tar en sekvens som argument och returnerar dess längd. Här är ett exempel som visar hur man kan använda `count` för att hitta längden på en sträng:
+För att få längden på en sträng i Clojure kan du använda funktionen `count`. Den tar en sträng som argument och returnerar längden som ett heltal.
 
-```Clojure
-(def sträng "Hej, världen!")
-(count sträng) ; output: 13
+```Clojure 
+(count "Hej världen") 
+; Output: 11 
 ```
 
-Här kan vi se att funktionen `count` returnerar längden på strängen "Hej, världen!" som är 13 tecken.
+Detta användbara verktyg kan också användas på andra datatyper, som vektorer och listor.
 
-Vi kan också använda `count` för att hitta längden på en lista eller struktur. Till exempel:
-
-```Clojure
-(def lista '(1 2 3 4 5))
-(count lista) ; output: 5
+```Clojure 
+(count [1 2 3 4 5]) 
+; Output: 5 
 ```
 
-Det är viktigt att komma ihåg att `count` bara kan användas på sekvenser som implementerar gränssnittet `ISeq` eller `ILookup`. Detta inkluderar bland annat strängar, listor, vektorer och kartor.
+En annan metod är att använda `(str "sträng")`. Detta konverterar en sträng till en sekvens som du sedan kan räkna med funktionen `count`.
 
-## Djupdykning
+```Clojure 
+(count (str "Hej världen")) 
+; Output: 11 
+```
 
-En intressant sak att notera är att i Clojure har sekvenser ingen inbyggd längd egenskap, men istället använder de funktionen `count`. Detta tillåter olika typer av sekvenser att ha olika sätt att beräkna sin längd, vilket gör att vi kan hantera dem på ett mer flexibelt sätt.
+Du kan också använda `seq` för att förvandla en sträng till en sekvens av tecken, som sedan kan räknas på samma sätt.
 
-En annan viktig aspekt att notera är att `count` är en så kallad "lazy" funktion i Clojure, vilket innebär att den bara beräknar längden av sekvensen på begäran. Detta gör att vi kan använda det på oändliga sekvenser utan att orsaka en oändlig loop.
+```Clojure 
+(count (seq "Hej världen")) 
+; Output: 11 
+``` 
 
-## Se även
+## Djupdykning 
 
-- [Clojure - count function](https://clojuredocs.org/clojure.core/count)
-- [Clojure - strings](https://clojure.org/reference/strings)
-- [Clojure - sequences](https://clojure.org/reference/sequences)
+När du använder `count`-funktionen, måste du vara medveten om att den returnerar antalet tecken och inte antalet bytes eller symboler. Det betyder att om din sträng innehåller multibyte-tecken, som till exempel ä, så kommer `count` att räkna utfärders byte storlek. Det här beteendet kan förändras genom att använda funktionen `counted?`, vilket returnerar sant om längden på sekvensen har räknats. Du kan också använda `nippy/count` som hanterar både bokstäver och bytes på ett bättre sätt, om det är ett problem för ditt program.
+
+## Se även 
+
+- [Clojure.org - Strings](https://clojure.org/guides/strings)
+- [ClojureDocs - count](https://clojuredocs.org/clojure.core/count) 
+- [ClojureDocs - counted?](https://clojuredocs.org/clojure.core/counted_q)
+- [ClojureDocs - str](https://clojuredocs.org/clojure.core/str)
+- [ClojureDocs - seq](https://clojuredocs.org/clojure.core/seq)
+- [ClojureDocs - nippy/count](https://clojuredocs.org/nippy/count)

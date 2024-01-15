@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Verkettung von Zeichenfolgen"
-simple_title:         "Verkettung von Zeichenfolgen"
+title:                "Verknüpfung von Zeichenketten"
+html_title:           "Clojure: Verknüpfung von Zeichenketten"
+simple_title:         "Verknüpfung von Zeichenketten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Verketten von Strings ist in der Programmierung eine sehr gängige und nützliche Aufgabe. Es ermöglicht uns, mehrere String-Werte zu einer Zeichenfolge zusammenzufügen und so komplexe Textausgaben zu erstellen. In diesem Blog-Beitrag werden wir uns genauer damit befassen, wie man Strings in Clojure verbinden kann und warum es eine wichtige Fähigkeit ist, die jeder Programmierer beherrschen sollte.
+Das Verketten von Zeichenfolgen ist eine häufig genutzte Funktion in der Programmierung, die es ermöglicht, mehrere Zeichenfolgen miteinander zu kombinieren, um eine längere Zeichenfolge zu erstellen. Dies kann nützlich sein, um zum Beispiel Texte dynamisch zu generieren oder Daten in einem bestimmten Format auszugeben.
 
-## Wie geht das?
+## How To
 
-Um Strings in Clojure zu verknüpfen, gibt es die Funktion "str". Sie nimmt beliebig viele Argumente entgegen und gibt den resultierenden String zurück. Schauen wir uns ein simples Beispiel an:
-
-```Clojure
-(str "Hallo" "," "welt") => "Hallo, welt"
-```
-
-Wie man sieht, kann man nicht nur einzelne Worte, sondern auch Zeichensymbole und Zahlen miteinander verknüpfen. Die Reihenfolge der Argumente bestimmt dabei auch die Reihenfolge im resultierenden String.
-
-Zudem gibt es noch die Funktion "join", die ähnlich wie "str" funktioniert, aber auch ein Trennzeichen zwischen den Strings einfügen kann. Schauen wir uns dazu ein Beispiel an:
+Um Zeichenfolgen in Clojure zu verketten, verwenden wir die Funktion `str`. Diese nimmt beliebig viele Argumente entgegen und gibt eine neue Zeichenfolge zurück, die aus allen Argumenten zusammengesetzt wird. Schauen wir uns dazu ein paar Beispiele an:
 
 ```Clojure
-(join "-" ["Das" "ist" "ein" "Beispiel"]) => "Das-ist-ein-Beispiel"
+(str "Hallo" " " "Welt") ;; Ausgabe: Hallo Welt
+
+(str "Mein Alter ist" 25) ;; Ausgabe: Mein Alter ist 25
+
+(str "Das Ergebnis von" 5 "+" 3 "ist" (+ 5 3)) ;; Ausgabe: Das Ergebnis von 5 + 3 ist 8
 ```
 
-In diesem Beispiel haben wir die Funktion "join" verwendet, um aus einem Vektor von Strings einen zusammenhängenden String zu erstellen. Dabei haben wir als Trennzeichen das Minuszeichen verwendet.
+In diesen Beispielen können wir sehen, dass `str` nicht nur Zeichenfolgen, sondern auch andere Datentypen wie Zahlen akzeptiert. Es verbindet alle Argumente zu einer neuen Zeichenfolge und gibt sie aus.
 
-## Tiefer Einblick
+## Deep Dive
 
-Bei der Verkettung von Strings müssen wir darauf achten, dass wir auch bestimmte Typen in String-Werte umwandeln. So kann es zum Beispiel vorkommen, dass wir eine Zahl als Teil eines Strings haben und diese in einen String-Wert umwandeln müssen, um sie mit anderen Strings zu verbinden. Dafür gibt es in Clojure die Funktion "str" und auch die Funktion "format", die Formatierungen wie in der Programmiersprache C ermöglicht.
+Die `str` Funktion verwendet intern die Funktion `StringBuilder`, um die Argumente zu verketten. Dadurch ist sie viel effizienter als eine naive Implementierung, bei der jede Zeichenfolge einzeln aneinandergehängt wird. Dies ist besonders wichtig, wenn wir mit großen Zeichenfolgen arbeiten, da es die Leistung unserer Code deutlich verbessern kann.
 
-Ein weiterer wichtiger Aspekt ist die Effizienz beim Verketten von Strings. In Clojure werden Strings als unveränderliche Datentypen angesehen, was bedeutet, dass jeder String generell eine neue Kopie des Originals erstellen muss, um die Verkettung durchzuführen. Um dies zu vermeiden, ist es ratsam, größere Strings als Puffer zu verwenden und diese dann mit den gewünschten Werten zu füllen.
+Es ist auch erwähnenswert, dass Clojure eine spezielle Syntax verwendet, um Zeichenfolgen zu verketten, wenn die Argumente nicht gleichzeitig ausgewertet werden sollen. Dazu müssen wir den `str` Aufruf in runde Klammern einschließen:
+
+```Clojure
+(str "Die Summe von" (+ 2 2) "und" (* 2 3) "ist") ;; Ausgabe: Die Summe von 4 und * ist
+
+(str "Die Summe von" (+ 2 2) "und" (* 2 3) "ist") ;; Ausgabe: Die Summe von 4 und * ist
+```
+
+Dies sorgt dafür, dass die Auswertung der Argumente verzögert wird, bis die `str` Funktion aufgerufen wird. Dies kann nützlich sein, wenn wir komplexe Berechnungen in unsere Zeichenfolgen einbinden wollen.
 
 ## Siehe auch
 
-- [Clojure Dokumentation zu String Manipulation](https://clojure.org/reference/java_interop#compatibility)
-- [Vergleich von "str" und "join" Funktionen in Clojure](https://stuartsierra.com/2008/05/29/stringbuilder-for-clojure)
-- [Weitere Tipps zur Optimierung von String-Verkettungen in Clojure](https://martintrojer.github.io/clojure/2016/04/09/shifting-to-clojure-part-03-string-concatenation.html)
+- [Clojure Dokumentation zu `str`](https://clojuredocs.org/clojure.core/str)
+- [Verschiedene Möglichkeiten, Zeichenfolgen in Clojure zu verketten](https://www.aitowert.de/blog/2015/06/01/3-ways-to-concatenate-strings-in-clojure/)

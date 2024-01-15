@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Wyświetlanie wyników debugowania"
+html_title:           "Clojure: Wyświetlanie wyników debugowania"
+simple_title:         "Wyświetlanie wyników debugowania"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -11,61 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Nie ma nic bardziej frustrującego niż próba znalezienia błędu w swoim kodzie. Często musimy wyświetlić wartości zmiennych w różnych częściach funkcji, aby zrozumieć, co się dzieje. W takich sytuacjach bardzo przydatne jest umiejętne korzystanie z drukowania informacji debugowania.
+W dzisiejszych czasach, debugowanie jest nieodłącznym elementem procesu tworzenia oprogramowania. Wyświetlanie informacji o działaniu programu może pomóc programistom w identyfikacji i rozwiązywaniu błędów w kodzie. Ten artykuł przedstawia metody wyświetlania informacji debugujących w języku Clojure, aby pomóc w zrozumieniu, dlaczego jest to ważne i jak tego dokonać.
 
-## Jak to zrobić
-
-Drukowanie informacji debugowania w Clojure jest bardzo proste. Wystarczy użyć funkcji ```println``` lub ```prn```, a następnie umieścić w niej wartości zmiennych, które chcemy wyświetlić. Na przykład:
+## Jak To Zrobić
 
 ```Clojure
-(def x 5)
-(def y 10)
+;; Użyj funkcji (println), aby wyświetlić tekst lub wartość wyrażenia w konsoli
+(println "Hello World!")
 
-(println "Wartość x to:" x)
-(println "Wartość y to:" y)
+;; Możesz również użyć funkcji (println) do wyświetlania wartości zmiennych
+(def name "John")
+(println "Imię użytkownika to:" name)
 
-; Output:
-; Wartość x to: 5
-; Wartość y to: 10
+;; Użyj funkcji (pr) do wyświetlania sformatowanych informacji lub wyrażeń
+(pr "Suma 2 i 3 to:" (+ 2 3))
+
+;; Aby wyświetlić więcej niż jedną informację na raz, użyj funkcji (println) lub (prn)
+(println "Jesteśmy w funkcji (println)!") (prn "A w (prn)...")
 ```
 
-Możemy również użyć funkcji ```prn```, która wyświetli wartości w bardziej czytelny sposób:
+Przykładowy output:
 
-```Clojure
-(prn "Wartość x to:" x)
-(prn "Wartość y to:" y)
-
-; Output:
-; "Wartość x to:" 5
-; "Wartość y to:" 10
+```
+Hello World!
+Imię użytkownika to: John
+Suma 2 i 3 to: 5
+Jesteśmy w funkcji (println)!
+A w (prn)...
 ```
 
-## Głębsze zagłębienie
+## Deep Dive
 
-Drukowanie informacji debugowania w Clojure może być również niezwykle pomocne podczas testowania kodu. Możemy umieścić drukowanie w różnych miejscach naszego kodu, aby śledzić wartości zmiennych w różnych punktach wykonania. Możemy też umieścić warunki, które będą wyświetlać informacje tylko wtedy, gdy spełnione zostaną odpowiednie warunki.
+W języku Clojure istnieje wiele funkcji, które można użyć do drukowania informacji debugujących. Oprócz funkcji (println) i (pr), istnieją także funkcje (pprint), (format), (printf), (print), (eprintln) i (doseq), aby wymienić tylko kilka przykładów. Każda z tych funkcji może być przydatna w różnych sytuacjach, dlatego warto zapoznać się z nimi i zastosować odpowiednią do potrzeb.
 
-Na przykład, możemy wyświetlić wartości tylko wtedy, gdy jesteśmy w środowisku deweloperskim, a nie w produkcji:
-
-```Clojure
-(def environment "developers")
-
-(if (= environment "developers")
-  (println "Wartość x to:" x)
-  (println "Jesteś w środowisku produkcji, więc nie możesz drukować wartości."))
-```
-
-Możemy również wyświetlić informację tylko wtedy, gdy wartość zmiennej przekracza pewną wartość:
-
-```Clojure
-(def x 20)
-
-(if (> x 10)
-  (prn "Wartość x przekroczyła 10!")
-  (println "Wartość x jest mniejsza niż 10."))
-``` 
+Dodatkowo, w celu lepszego wyświetlania informacji debugujących, można także używać bibliotek takich jak clj-logging i tools.logging, które oferują różne funkcje do formatowania i wyświetlania logów.
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja Clojure](https://clojure.org/)
-- [Blog Clojure](https://blog.clojure.org/)
-- [Repozytorium Clojure na GitHubie](https://github.com/clojure)
+- [Dokumentacja "Clojure spec" dla funkcji (println)](https://clojure.org/reference/repl_and_main#_print_and_friends)
+- [Biblioteka "clj-logging"](https://github.com/bsless/clj-logging)
+- [Biblioteka "tools.logging"](https://github.com/clojure/tools.logging)

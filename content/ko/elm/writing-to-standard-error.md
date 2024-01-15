@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 표준 오류 출력에 쓰기"
-simple_title:         "표준 오류 출력에 쓰기"
+title:                "표준 에러를 작성하기"
+html_title:           "Elm: 표준 에러를 작성하기"
+simple_title:         "표준 에러를 작성하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,57 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 standard error를 사용하는가?
+## 왜
 
-일반적으로 프로그램을 작성하다 보면 디버깅이 필요할 때가 있습니다. 이때 특정 부분의 문제를 찾거나 실행 중에 발생한 오류를 수정하기 위해서는 오류가 발생한 곳을 찾아내야 합니다. Elm에서는 이를 돕기 위해 standard error를 사용합니다.
+오늘 우리는 Elm 프로그래밍 언어에서 한 가지 흥미로운 주제를 다룰 것입니다. 바로 Standard Error에 대한 글쓰기입니다. Standard Error는 코드 디버깅과 에러 처리에 매우 중요한 역할을 합니다. 따라서 우리는 Elm에서 Standard Error를 어떻게 쓸 수 있는지 살펴볼 것입니다.
 
-# 어떻게 사용할까?
+## 방법
 
-## 예제 1: 정수 덧셈
-
-```Elm
-sum : Int -> Int -> Int
-sum a b =
-    a + b
-
-main =
-    Debug.log "결과값:" (sum 3 5)
-```
-
-위의 코드는 `sum` 함수를 정의하고, `main` 함수에서 결과값을 표시하는 예제입니다. `Debug.log` 함수를 사용하여 결과값을 출력하고, 실행 결과는 아래와 같습니다.
-
-```
-결과값: 8
-```
-
-여기서 `Debug.log` 함수는 `Int` 값을 받아서 standard error에 출력하는 역할을 합니다.
-
-## 예제 2: 리스트의 인덱스 접근
+Standard Error에 대한 글쓰기는 매우 쉽습니다. Elm에서 `Debug` 모듈을 불러와서 `toString` 함수를 이용하면 됩니다. 예를 들어서 우리는 다음과 같은 코드를 작성할 수 있습니다:
 
 ```Elm
-list : List String
-list =
-    [ "사과", "바나나", "딸기", "포도" ]
+import Debug
 
-main =
-    Debug.log "인덱스 2번째 값:" (List.get 2 list)
+Debug.toString "Hello World"
 ```
 
-위의 코드는 `list`에 저장된 과일 이름 중 2번째 값인 "딸기"를 출력하는 예제입니다. `List.get` 함수를 사용하여 리스트의 특정 인덱스 값을 가져오고, 결과값은 아래와 같습니다.
+이 코드를 실행하면 `Hello World`라고 콘솔에 출력됩니다. 이렇게 코드를 작성하면 우리는 어떤 변수나 값의 상태를 확인할 수 있습니다. 또한 `toString` 함수는 자바스크립트와는 다르게 더 많은 정보를 보여줍니다. 예를 들어서 리스트의 경우에는 모든 요소들이 출력되는 것을 볼 수 있습니다.
 
-```
-인덱스 2번째 값: Just "딸기"
-```
+## 깊이 들어가기
 
-위에서와 마찬가지로 `Debug.log` 함수가 standard error에 결과값을 출력합니다.
+`Debug` 모듈을 사용하여 Standard Error에 대한 기본적인 기능을 확인했습니다. 이제는 좀 더 깊이 들어가서 코드를 좀 더 정교하게 작성하는 방법을 알아보겠습니다.
 
-# 자세히 살펴보기
+첫 번째로 우리는 람다 함수를 사용하여 좀 더 간단하게 코드를 작성할 수 있습니다. 예를 들어서 `toString` 함수를 사용하지 않고 `Debug.toString` 대신 `(x) -> Debug.toString x`와 같이 작성할 수 있습니다. 이렇게 하면 코드가 좀 더 간결해지고 가독성도 좋아집니다.
 
-`Debug.log` 함수는 말 그대로 결과값을 로그에 출력하는 역할을 합니다. Elm 코드를 실행할 때, `fun main ->` 뒤에 있는 코드 부분이 실행되고, 이때 `Debug.log` 함수가 사용되었다면 결과값이 standard error에 출력됩니다. 이를 이용하여 코드의 실행 결과를 확인하거나, 특정 값을 추적할 수 있습니다. 또한 `Debug.log` 함수를 사용하지 않는 경우에는 결과값이 standard error에 출력되지 않으므로, 코드를 실행할 때 꼭 확인해야 합니다.
+또한 우리는 `Debug` 모듈로부터 불러온 함수만 사용하면 됩니다. 그렇지 않으면 불필요한 메모리 공간을 차지하는 `import Debug` 문장을 작성하게 됩니다.
 
-# 관련 자료
+마지막으로 우리는 `Debug` 모듈 대신 `Console` 모듈을 사용할 수도 있습니다. `Console` 모듈은 `Debug` 모듈보다 더 다양한 기능을 제공하고 더 많은 커스터마이징이 가능합니다. 더 자세한 내용은 [Elm 공식 문서](https://guide.elm-lang.org/error_handling/console.html)를 참고하시면 됩니다.
 
-- See Also:
-    - [Elm 공식 가이드](https://guide.elm-lang.org/)
-    - [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)
-    - [Elm 책 추천 5선](https://openbookshelf.org/book/5election-5-elm-books)
+## 참고
+
+[Ellie Online Editor](https://ellie-app.com/) - Elm 코드를 온라인에서 실행하는 무료 툴
+[Elm 공식 홈페이지](https://elm-lang.org/) - Elm 언어에 대한 정보와 문서를 제공합니다. 
+[Elm 코딩 초보자를 위한 가이드](https://guide.elm-lang.org/) - Elm 언어를 처음 시작하는 분들을 위한 가이드입니다.

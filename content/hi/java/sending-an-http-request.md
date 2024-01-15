@@ -1,6 +1,7 @@
 ---
-title:                "Java: Hindi: एक HTTP अनुरोध भेजना"
-simple_title:         "Hindi: एक HTTP अनुरोध भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Java: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-इस लेख में हम जानेंगे कि एचटीटीपी अनुरोध भेजने के पीछे क्या कारण हो सकते हैं और इसको कैसे किया जाता है। हम जावा में इसका उदाहरण देखेंगे और उस से संबंधित गहराई में भी जानकारी प्राप्त करेंगे।
-
 ## क्यों
 
-एचटीटीपी अनुरोध भेजना आमतौर पर किसी अन्य सर्वर से डेटा प्राप्त करने का एक सबसे आसान और तेज तरीका है। यह वेब एप्लिकेशन और स्क्रिप्ट्स में अनुरोध भेजने के लिए उपयोगी होता है, जो उन्हें संचालित करने के लिए एक सर्वर से दूसरे सर्वर को डेटा स्वीकार करने की अनुमति देता है।
+जब आप इंटरनेट पर साइटों का इस्तेमाल करते हैं तो आपके द्वारा किसी दूसरे सर्वर पर जानकारी का अनुरोध किया जाता है। उदाहरण के लिए, जब आप वेब पेज को खोलते हैं तो आपके द्वारा सर्वर से आपके ब्राउजर में HTML दस्तावेज़ डाउनलोड होता है। हम इस प्रक्रिया को समझने के लिए "HTTP अनुरोध" कहते हैं।
 
-## कैसे करें
+## कैसे
 
-एचटीटीपी अनुरोध भेजने के लिए हम `HttpURLConnection` कक्षा का उपयोग करते हैं। निम्नलिखित उदाहरण में हम इसका उपयोग करके अपने सर्वर से डेटा प्राप्त करेंगे:
+कोडिंग उदाहरण के साथ डेस्कटॉप अनुरोध भेजना काफी सरल हो सकता है। नीचे दिए गए सामान्य स्टेप्स के माध्यम से आप एक "GET" अनुरोध भेज सकते हैं:
 
-```java
-try {
-    // सर्वर का URL बनाएं
-    URL url = new URL("https://www.example.com/");
-    // एचटीटीपी कनेक्शन बनाएं
-    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-    // अनुरोध का तरीका सेट करें
-    connection.setRequestMethod("GET");
-    // अनुरोध को स्वीकार करने के लिए असंयोजित स्ट्रीम प्राप्त करें
-    InputStream inputStream = connection.getInputStream();
-    // स्ट्रीम को पढ़ें
-    InputStreamReader reader = new InputStreamReader(inputStream);
-    // पढ़ें और प्रिंट करें
-    int data = reader.read();
-    while (data != -1) {
-        System.out.print((char) data);
-        data = reader.read();
+```Java
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class HttpExample {
+    public static void main(String[] args) {
+        try {
+            // उदाहरण यूआरएल: google.com
+            URL url = new URL("अपना URL यहां डालें");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // सर्वर से अनुरोध करने के लिए:
+            int responseCode = con.getResponseCode();
+            System.out.println("अनुरोध का प्रतिक्रिया कोड:" + responseCode);
+            // सर्वर से डेटा पाने के लिए:
+            Scanner in = new Scanner(con.getInputStream());
+            while (in.hasNextLine()) {
+                String data = in.nextLine();
+                System.out.println(data);
+            }
+            in.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e);
+        }
     }
-    // समाप्त करें
-    reader.close();
-} catch (IOException e) {
-    e.printStackTrace();
 }
 ```
 
-उपरोक्त कोड को कंपाइल करने पर आपको आपके सर्वर से वेबसाइट के साथ खुलते हुए एक HTML पेज का डेटा प्राप्त होगा। आप अनुरोध का तरीका ब
+आप इस कोड को कंपाइल और रन कर सकते हैं, जिससे आपको अपने द्वारा दिए गए यूआरएल से सर्वर से जुड़े आसानी से सामग्री को देख सकते हैं। आप में 'POST', 'PUT', और 'DELETE' भी लिख सकते हैं और उनके लिए भी संबंधित अनुरोध स्क्रिप्ट भेज सकते हैं।
+
+## गहराई में जाएँ
+
+"HTTP अनुरोध" एक TCP/IP बेस्ड कम्यूनिकेशन प्रोटोकॉल है। इसका उपयोग डाटा प्वाइंट सर्विसेज, एप

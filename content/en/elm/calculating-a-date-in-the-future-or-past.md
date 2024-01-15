@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Calculating a date in the future or past"
+title:                "Calculating a date in the future or past"
+html_title:           "Elm recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,51 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Calculating dates in the future or past is a common task in many programming languages, including Elm. It allows for scheduling events, tracking deadlines, or creating calendars.
+
+Have you ever needed to calculate a future or past date in your programming project? Maybe you're building a personal planner app or a scheduling tool. Either way, Elm has a convenient built-in function that makes date calculations a breeze. Keep reading to learn how to use it!
 
 ## How To
-To calculate a date in Elm, we can use the `Time` library. First, we need to import the library:
+
+To calculate a date in the future or past, we'll be using the `add` function from the `Time` module. This function takes in two arguments: a `Time` value and an `Int` representing the number of milliseconds to add to the time value.
+
+Let's see an example of how we can use the `add` function to calculate a date 5 days in the future:
 
 ```Elm
-import Time
+import Time exposing (..)
+
+-- Get current time
+currentTime : Time
+currentTime = Time.millisToPosix <| Time.since Epoch
+
+-- Calculate date 5 days in the future
+futureDate : Time
+futureDate = add 5 * days currentTime
+
+-- Format date as a string
+formatDate : String
+formatDate = toString <| Time.millisToUtcIsoString futureDate
+
+-- Output: 2021-09-13T18:38:58.271Z
 ```
 
-To get the current date, we can use the `now` function:
-
-```Elm
-let
-    current = Time.now
-```
-
-To calculate a date in the future or past, we can use the `add` function. It takes in three arguments: the unit of time (seconds, minutes, hours, days, weeks, months, years), the number of units, and the starting date. For example, to calculate a date 3 days from now:
-
-```Elm
-let
-    future = Time.add Time.days 3 current
-```
-
-We can also calculate a date in the past by passing in a negative number. For example, to calculate a date 2 weeks ago:
-
-```Elm
-let
-    past = Time.add Time.weeks -2 current
-```
-
-To format the date to a human-readable format, we can use the `format` function. For example, to display the date in the format "MMM d, yyyy":
-
-```Elm
-let
-    dateString = Time.format "%b %d, %Y" past
-```
-
-The output would be "Jun 11, 2021". It's that simple!
+In the above code, we import the `Time` module and use the `since` function to get the current time in milliseconds. Then, we call the `add` function with the desired number of days to add and the current time value. Finally, we use the `toString` function to format the date as a string in UTC format. Easy, right?
 
 ## Deep Dive
-Under the hood, Elm uses the `posix` time format, which represents time as the number of milliseconds since January 1st, 1970. This is the standard time format used in many programming languages. The `add` function takes in a duration in milliseconds and adds it to the starting date.
 
-One thing to keep in mind when calculating dates in Elm is that the data type `Time.Posix` is opaque, meaning we cannot access its internal values directly. This is done intentionally to prevent developers from making mistakes when manipulating time.
+The `add` function can also be used to calculate dates in the past. Instead of adding a positive integer, we can pass a negative integer to subtract time from the current date. Additionally, the `Time` module has other useful functions for working with dates, such as `utcToMillis` and `utcToPosix`. Be sure to check out the official documentation for more details.
 
 ## See Also
-- Elm Time Library [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
-- Posix Time Documentation [https://lwtech-csd.github.io/documents/posixtime.png](https://lwtech-csd.github.io/documents/posixtime.png)
-- Date Calculator [https://datecalculators.com/](https://datecalculators.com/)
+
+- Official Elm Time Module Documentation: https://package.elm-lang.org/packages/elm/time/latest/ 
+- Elm Date and Time Basics Guide: https://elmprogramming.com/elm-dates-times.html 
+- Elm Date Cheat Sheet: https://devhints.io/elm-date

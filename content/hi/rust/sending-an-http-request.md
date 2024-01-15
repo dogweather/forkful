@@ -1,6 +1,7 @@
 ---
-title:                "Rust: एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "एक एचटीटीपी अनुरोध भेजना"
+title:                "Http अनुरोध भेजना"
+html_title:           "Rust: Http अनुरोध भेजना"
+simple_title:         "Http अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## हम क्यों?
+## Why
 
-अगर आप एक भाषा में लिखे गए कंप्यूटरीकृत प्रोग्राम को दूसरी भाषा में बताना चाहते हैं, तो आपको HTTP अनुरोध भेजने की जरूरत होती है। एक HTTP अनुरोध क्या है यह आपको भाषांतर और संपर्क दोनों को कम दिखाता है। यह आपको अपने प्रोग्राम को अन्य आकड़ों से भी संपर्क करने की अनुमति देता है।
+Kya aap ek web developer hai aur apne websites par HTTP request bhejne ka kaam karte hai? Ya phir aap ek avid internet user hai aur HTTP request ke baare mein janana chahte hain? Rust programming language aapke liye ek perfect option ho sakta hai. Ismein built-in support ke saath HTTP request bhejna bahut hi aasaan hai.
 
-## कैसे करें?
+## How To
 
-आइए हम एक उदाहरण को देखें जिसमें हम एक HTTP अनुरोध भेजेंगे। इस के लिए, हमें हायपर पुस्तकालय का उपयोग करना होगा जो हमें HTTP से संबद्ध कुछ नमुनाएं प्रदान करता है। नीचे दिए गए उदाहरण में, हम URL को बनाते हैं और उसे एक HTTP अनुरोध के साथ जोड़ते हैं। हम फिर रिक्वेस्‍ट को भेजते हैं और उसकी प्रतिक्रिया को प्रिंट करते हैं।
+```Rust
+// Import the necessary libraries
+use reqwest::Error;
+use reqwest::blocking::Client;
 
-```Rust 
-use hyper::{Body, Client, Uri};
-
-async fn send_request() {
-    // URL बनाएं
-    let url = Uri::from_static("https://jsonplaceholder.typicode.com/posts/1");
-
-    // CLIENT बनाएं
+fn main() {
+    // Create a client for sending request
     let client = Client::new();
 
-    // अनुरोध भेजें
-    let response = client.get(url).await.unwrap();
+    // Send a GET request to a URL
+    let response = client.get("https://www.example.com").send();
 
-    // प्रिंट उत्तर
-    println!("response: {:?}", response); 
+    // Print the response status code
+    match response {
+        Ok(r) => println!("Response status code: {}", r.status()),
+        Err(e) => println!("Error occurred: {}", e),
+    }
 }
 ```
 
-जब हम इस कोड को चलाते हैं, हमें निम्नलिखित आउटपुट मिलता है:
-`response: Response { status: 200, data: User-Agent: hyper/0.14.8, content-length: 2 }`
+```
+Output:
+Response status code: 200 OK
+```
 
-हम देख सकते हैं कि हमारा अनुरोध सफल है और हमें एक 200 स्थिति कोड मिला है।
+## Deep Dive
 
-## गहराई में जाएं
+Rust language mein HTTP request bhejne ke liye hum `reqwest` library ka use karte hai. Isse ek client bana sakte hai jo humein URL par GET, POST, PUT, DELETE request bhejne mein help karta hai. Iske alawa, hum headers, cookies, body data aur authentication bhi add kar sakte hai apne request mein.
 
-HTTP अनुरोध भेजना बहुत अध्ययनसार और रूस्त की दुनिया में एक महत्वपूर्ण टॉपिक है। एचटीएमएल के माध्यम से एक नेटवर्क स्त
+## See Also
+
+- [Official Reqwest Documentation](https://docs.rs/reqwest)
+- [HTTP Requests in Rust Tutorial](https://dev.to/wackyshenanigans/send-http-requests-in-rust-1jk1)
+- [Rust Programming Language Official Website](https://www.rust-lang.org/)

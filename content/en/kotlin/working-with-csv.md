@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Kotlin recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,54 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-CSV (Comma Separated Values) is a commonly used file format for storing tabular data. It is widely supported by various software and applications, making it a popular choice for data exchange. In this blog post, we will explore how to work with CSV files in Kotlin, one of the fastest-growing programming languages.
+Are you tired of manually organizing and managing large datasets? Look no further, because CSV (Comma Separated Values) is here to save your day! With CSV, you can easily store and retrieve data in a simple and versatile format. In this article, we will explore how to work with CSV in Kotlin and make your data management process much more efficient.
 
 ## How To
 
-To start working with CSV in Kotlin, we first need to add the OpenCSV library to our project. This library provides an easy-to-use API for reading and writing CSV files. To add the library to our project, we can use Gradle by adding the following dependency in our `build.gradle` file:
+To begin working with CSV in Kotlin, we need to add the OpenCSV dependency in our project:
 
-```Kotlin
-implementation 'com.opencsv:opencsv:5.5.1'
+```
+implementation("com.opencsv:opencsv:5.3")
 ```
 
-Once the library is added, we can use it to read and write CSV files in our code. Let's take a look at an example:
+Next, we need to import the necessary classes into our project:
 
-```Kotlin
+```
 import com.opencsv.CSVReader
 import com.opencsv.CSVWriter
-
-// initialize the CSVReader and CSVWriter objects
-val reader = CSVReader("input.csv")
-val writer = CSVWriter("output.csv")
-
-// read data from the CSV file and store it in a list
-val data = reader.readAll()
-
-// modify the data as needed
-data.forEach { record ->
-    record[2] = "New Value" // for example, changing the third column of each row
-}
-
-// write the modified data into a new CSV file
-data.forEach { record ->
-    writer.writeNext(record.toTypedArray())
-}
-
-// close the reader and writer objects
-reader.close()
-writer.close()
 ```
 
-In the above code, we used the `CSVReader` to read data from a CSV file and store it in a list. Then, we used the `CSVWriter` to write the modified data into a new CSV file. This is just a simple example to demonstrate how to work with CSV files in Kotlin using the OpenCSV library. There are many more methods and configurations available in the library, which you can explore in the official documentation.
+### Reading CSV
+
+To read data from a CSV file, we will use the `CSVReader` class. This class takes in a `FileReader` object as a parameter, representing the CSV file we want to read from. We can then use the `readAll()` method to retrieve all the data from the CSV file.
+
+```
+// Create a FileReader object with our CSV file
+val fileReader = FileReader("data.csv")
+// Create a CSVReader object with the fileReader object
+val csvReader = CSVReader(fileReader)
+// Use the readAll() method to get all the data from the CSV file
+val data = csvReader.readAll()
+```
+
+The `data` variable will now contain a list of lists, with each inner list representing a row of data from the CSV file. We can then iterate through this list to access and manipulate our data as needed.
+
+### Writing CSV
+
+To write data to a CSV file, we will use the `CSVWriter` class. Similar to the `CSVReader` class, we will need to provide a `FileWriter` object as a parameter. We can then use the `writeAll()` method to write a list of lists to the CSV file.
+
+```
+// Create a FileWriter object with the CSV file we want to write to
+val fileWriter = FileWriter("data.csv")
+// Create a CSVWriter object with the fileWriter object
+val csvWriter = CSVWriter(fileWriter)
+// Create a list of data we want to write to the CSV file
+val newData = listOf(listOf("John", "Smith", "35"), listOf("Mary", "Johnson", "28"))
+// Use the writeAll() method to write the data to the CSV file
+csvWriter.writeAll(newData)
+```
+
+This will write the data from the `newData` list to the CSV file in the format of "John, Smith, 35" and "Mary, Johnson, 28" on separate rows.
 
 ## Deep Dive
 
-While CSV files may seem simple, there are some nuances to keep in mind when working with them. For example, CSV files can have headers, where the first row contains the names of the columns. When reading a CSV file with headers, we can use the `CSVReader#readNext()` method to skip the first row and not include it in our data list. Additionally, we can also specify the delimiter and quote character used in a CSV file. These are just a few examples of the configurations available in the OpenCSV library.
+CSV files are a popular choice for storing and transferring data because they are lightweight, easy to read and write, and can be opened with any text editor. Additionally, CSV files are compatible with different software and programming languages, making it a versatile choice for data management.
 
-Another important aspect to keep in mind when working with CSV files is data parsing and validation. As CSV files are plain text files, there is no built-in data type for each column. Hence, it is crucial to properly parse and validate the data according to our needs. For example, we might need to convert a string value to an integer or a date object. We can use libraries like `kotlinx-datetime` or `SimpleDateFormat` to handle these conversions.
+Although CSV is a simple format, it can also be customized to fit specific data needs. For example, we can choose to use different delimiters (such as a tab or semicolon) instead of a comma, or add headers to our CSV file to label our data.
+
+It's also important to note that CSV files may not be suitable for complex data structures or data that requires strict data types. In these cases, it may be better to use other file formats such as JSON or XML.
 
 ## See Also
 
-- [OpenCSV Official Documentation](http://opencsv.sourceforge.net/)
-- [Kotlinx-datetime Documentation](https://github.com/Kotlin/kotlinx-datetime)
-- [SimpleDateFormat Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Official Kotlin Website](https://kotlinlang.org/)
+- [OpenCSV Documentation](http://opencsv.sourceforge.net/)
+- [Working with CSV files in Java](https://www.baeldung.com/java-csv-file-array)

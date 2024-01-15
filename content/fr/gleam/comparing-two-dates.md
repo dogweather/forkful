@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Comparer deux dates"
-simple_title:         "Comparer deux dates"
+title:                "Comparaison de deux dates"
+html_title:           "Gleam: Comparaison de deux dates"
+simple_title:         "Comparaison de deux dates"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -9,39 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Pourquoi
+## Pourquoi
 
-Pourquoi comparer deux dates en utilisant Gleam? Lorsque vous travaillez avec des données temporelles dans votre code, il est important de pouvoir comparer ces dates pour effectuer des analyses, des calculs ou des opérations logiques. Gleam offre une syntaxe simple et efficace pour effectuer ces comparaisons, en minimisant le risque d'erreurs et en garantissant des résultats précis.
+Si vous être un développeur en herbe ou expérimenté, vous savez probablement que travailler avec des dates peut être un vrai casse-tête. Heureusement, Gleam vient à la rescousse avec une fonction simple et efficace pour comparer deux dates. Dans cet article, nous allons jeter un coup d'œil à la méthode "compare" pour découvrir comment elle peut simplifier votre vie de programmateur.
 
-#Comment faire
+## Comment faire
 
-Pour comparer deux dates en Gleam, nous pouvons utiliser la fonction `DateTime.compare/2`. Cette fonction prend deux arguments de type `DateTime` et renvoie un résultat de type `Order`. Jetons un coup d'œil à un exemple de code utilisant cette fonction:
+Tout d'abord, nous avons besoin de déclarer nos deux dates à comparer. Dans notre exemple, nous allons utiliser le 1er janvier 2020 et le 1er février 2020 comme nos deux dates.
 
 ```Gleam
-let date_1 = DateTime.from_parts(2000, 1, 1, 0, 0, 0, 0)
-let date_2 = DateTime.from_parts(2020, 1, 1, 0, 0, 0, 0)
-
-let order = DateTime.compare(date_1, date_2)
-
-case order {
-  Lt -> "date_1 est avant date_2"
-  Eq -> "date_1 est égale à date_2"
-  Gt -> "date_1 est après date_2"
-}
+let date_1 = Date.from_iso8601("2020-01-01")
+let date_2 = Date.from_iso8601("2020-02-01")
 ```
 
-Dans cet exemple, nous créons deux objets `DateTime` représentant les dates du 1er janvier 2000 et du 1er janvier 2020. Ensuite, nous utilisons la fonction `DateTime.compare/2` pour comparer ces deux dates et stocker le résultat dans la variable `order`. Nous utilisons ensuite une expression `case` pour vérifier le résultat et imprimer un message approprié en fonction du résultat.
+Une fois que nous avons nos deux dates, nous pouvons facilement comparer leur ordre en utilisant la méthode "compare".
 
-La sortie de ce code serait "date_1 est avant date_2" car 2000 est une année antérieure à 2020.
+```Gleam
+let order = date_1.compare(date_2)
+```
 
-#Plongée en profondeur
+Maintenant, si nous imprimons la valeur de "order", nous devrions avoir -1 car janvier vient avant février en ordre chronologique.
 
-En plus de la fonction `DateTime.compare/2`, Gleam propose également d'autres outils pour comparer des dates. Par exemple, la fonction `DateTime.is_same_day/2` permet de vérifier si deux dates sont le même jour ou non, tandis que la fonction `DateTime.difference_in_days/2` renvoie le nombre de jours entre deux dates.
+```Gleam
+IO.println(order) // output: -1
+```
 
-Il est également possible de comparer des dates en tenant compte du fuseau horaire en utilisant la bibliothèque externe `timezonedb`, qui fournit des fonctions pour convertir les dates dans différents fuseaux horaires et effectuer des comparaisons en conséquence.
+Mais que se passe-t-il si nous comparons deux dates qui ont la même valeur? Par exemple, le 1er janvier 2020 et le 1er janvier 2020. Dans ce cas, la méthode "compare" renverra 0 pour "égal".
 
-#Voir aussi
+```Gleam
+let date_3 = Date.from_iso8601("2020-01-01")
+let order = date_1.compare(date_3) // order = 0
+```
 
-- [Documentation Gleam sur les dates et les heures](https://gleam.run/documentation/std/datetime/)
-- [Exemple de comparaison de dates avec Gleam](https://github.com/gleam-lang/example-datetime-compare)
-- [Bibliothèque externe `timezonedb` pour les comparaisons de dates avec les fuseaux horaires](https://docs.rs/timezonedb/0.14.0/timezonedb/)
+Et enfin, si nous comparons une date qui vient après l'autre en termes chronologiques, la méthode renverra 1 pour "supérieur".
+
+```Gleam
+let date_4 = Date.from_iso8601("2020-03-01")
+let order = date_1.compare(date_4) // order = 1
+```
+
+Et voilà, grâce à Gleam, nous pouvons facilement comparer deux dates sans nous soucier des détails compliqués.
+
+## Plongée profonde
+
+Maintenant que nous avons vu comment utiliser la méthode "compare", nous pouvons également nous pencher sur ce qui se passe en coulisses. En réalité, Gleam utilise des timestamps pour représenter les dates et utilise la méthode "compare" pour comparer ces timestamps. Cela signifie que, en termes de performance, la méthode "compare" est extrêmement rapide et efficace.
+
+## Voir aussi
+
+- Documentation officielle de Gleam sur la méthode "compare": https://gleam.run/documentation/std/datetime#compare
+- Un guide pratique sur la gestion des dates avec Gleam: https://dev.to/jessew/measures-are-ahead-52lp

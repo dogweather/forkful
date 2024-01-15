@@ -1,6 +1,7 @@
 ---
-title:                "C++: 解析html"
-simple_title:         "解析html"
+title:                "解析HTML"
+html_title:           "C++: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,48 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么：
+## 为什么
 
-当你浏览网页时，你可能会注意到每个网页都有不同的布局和格式。但是，当你想要从网页中提取特定的信息时，这些格式就变得很重要了。这就是为什么解析HTML是如此重要的原因。
+想象一下你正在开发一个网页抓取器，并且需要从网页源代码中提取特定的信息。这时，HTML解析就会变得十分重要，它能够让你快速准确地获取你所需的数据。
 
-##如何解析HTML：
+## 如何做
 
-C++是一种功能强大的编程语言，它可以帮助我们解析HTML并从中提取有用的信息。以下是一个简单的例子，展示如何用C++来解析HTML：
+要在C++中解析HTML，你需要使用一个开源的HTML解析库。这里我们选择使用libxml2。首先，在你的C++项目中添加libxml2的路径，然后按照以下步骤进行解析：
+
+1. 引入libxml2的头文件：`#include <libxml/HTMLparser.h>`
+
+2. 创建一个HTML文档：`htmlDocPtr doc = htmlReadMemory(html_code, strlen(html_code), "url", NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);`（其中`html_code`是你要解析的HTML源代码）
+
+3. 遍历HTML文档并提取所需的信息：`xmlNode* root = xmlDocGetRootElement(doc);` （这里的`root`就是HTML文档的根节点）
+
+4. 释放HTML文档的内存：`xmlFreeDoc(doc);`
+
+下面是一个完整的示例代码，展示如何从HTML中提取所有的链接：
 
 ```C++
 #include <iostream>
+#include <libxml/HTMLparser.h>
 
-using namespace std;
+int main()
+{
+    const char* html_code = "<a href=\"https://www.example.com\">link1</a><a href=\"https://www.example.com\">link2</a>";
+    htmlDocPtr doc = htmlReadMemory(html_code, strlen(html_code), "url", NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    xmlNode* root = xmlDocGetRootElement(doc);
+    
+    if (root != NULL)
+    {
+        xmlNode* curr_node = root;
+        while (curr_node != NULL)
+        {
+            if (curr_node->type == XML_ELEMENT_NODE && xmlStrcmp(curr_node->name, (const xmlChar*)"a") == 0)
+            {
+                xmlChar* href = xmlGetProp(curr_node, (const xmlChar*)"href");
+                std::cout << href << std::endl;
+                xmlFree(href);
+            }
+            curr_node = curr_node->next;
+        }
+    }
 
-int main() {
-    //创建一个string变量来存放要解析的HTML
-    string html = "<h1>Hello, World!</h1>";
-
-    //使用find函数来查找<h1>标签的位置
-    int start = html.find("<h1>");
-
-    //使用substr函数来提取<h1>标签中的内容
-    string result = html.substr(start + 4, 12);
-
-    //输出结果
-    cout << "Output: " << result << endl;
-
+    xmlFreeDoc(doc);
     return 0;
 }
 ```
 
-代码的输出将会是：
+输出结果为：
 
 ```
-Output: Hello, World!
+https://www.example.com
+https://www.example.com
 ```
 
-##深入了解解析HTML：
+## 深入了解
 
-在解析HTML时，最重要的是要理解HTML的结构和标签。例如，在上面的例子中，我们使用了`<h1>`标签来提取标题，但是网页中还有很多其他的标签，如`<p>`用于段落，`<a>`用于链接等等。通过学习HTML的基本结构和常用标签，我们可以更有效地解析HTML并提取所需的信息。
+libxml2是一个功能强大的HTML解析库，除了解析HTML，它还可以处理XML等其他类型的文档。它有一个完整的API文档，你可以在这里找到更多关于它的信息：http://xmlsoft.org/.
 
-##另请参阅：
+## 参考资料
 
-- [HTML教程](https://www.w3schools.com/html/)
-- [C++字符串函数](https://www.geeksforgeeks.org/cpp-string-class-and-its-applications/)
-- [学习C++](https://www.cplusplus.com/)
+- libxml2官方文档：http://xmlsoft.org/
+- libxml2 GitHub仓库：https://github.com/GNOME/libxml2
+- C++中文网的libxml2教程：https://www.cplusplus.com/reference/libxml2/

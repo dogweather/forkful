@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Imprimiendo salida de depuración"
-simple_title:         "Imprimiendo salida de depuración"
+title:                "Imprimiendo la salida de depuración"
+html_title:           "TypeScript: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -9,57 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué imprimir salidas de depuración es importante
+## Por qué
+Muchas veces, al desarrollar una aplicación en TypeScript, nos encontramos con errores difíciles de detectar. Para solucionar estos problemas, imprimir información de debug en la consola puede ser de gran ayuda. Esta técnica nos permite inspeccionar valores y seguir el flujo de nuestro código, lo que facilita la identificación y resolución de errores.
 
-La impresión de salidas de depuración es una técnica esencial para cualquier programador. Proporciona una forma de inspeccionar el estado de su código durante la ejecución y ayuda a identificar posibles errores o problemas. Sin embargo, es importante saber cuándo y cómo utilizar esta técnica para obtener resultados efectivos.
-
-## Cómo hacerlo
-
-Para imprimir salidas de depuración en TypeScript, puede utilizar la función `console.log()`. Esta función toma uno o más argumentos y los imprime en la consola del navegador o en la terminal de su editor de texto. Por ejemplo:
+## Cómo
+Para imprimir mensajes de debug en TypeScript, podemos usar el método `console.log()`, que muestra la información en la consola del navegador o la terminal. Veamos un ejemplo:
 
 ```TypeScript
-let mensaje = "¡Hola, mundo!";
-console.log(mensaje);
-// Salida: ¡Hola, mundo!
+let num1: number = 5;
+let num2: number = 10;
+let result: number = num1 + num2;
+console.log('El resultado de la suma es: ' + result);
 ```
-
-También puede utilizar la interpolación de cadenas para imprimir variables en un mensaje. En este caso, debe utilizar el carácter de dólar seguido de llaves `{}` para indicar dónde se debe insertar el valor de la variable. Por ejemplo:
+El output de este código será:
+```TypeScript
+El resultado de la suma es: 15
+```
+También podemos imprimir variables directamente en `console.log()` sin necesidad de concatenar strings:
 
 ```TypeScript
-let edad = 25;
-console.log(`Tengo ${edad} años.`);
-// Salida: Tengo 25 años.
+let name: string = 'Juan';
+console.log(name);
 ```
-
-Otra forma útil de imprimir salidas de depuración es utilizando la función `console.dir()`. Esta función toma un objeto como argumento y lo imprime en formato de árbol para una mejor visualización. Por ejemplo:
+El output será:
+```TypeScript
+Juan
+```
+Otra opción útil es usar la función `JSON.stringify()` para imprimir un objeto en la consola:
 
 ```TypeScript
-let persona = {
-  nombre: "María",
-  edad: 30,
-  profesión: "Desarrolladora"
-};
-console.dir(persona);
-// Salida:
-// { nombre: "María", edad: 30, profesión: "Desarrolladora" }
+let person = { name: 'Ana', age: 25 };
+console.log(JSON.stringify(person));
 ```
-
-## Profundizando
-
-Cuando utilice la función `console.log()`, también puede utilizar etiquetas de tiempo y estilos para personalizar su salida. Puede utilizar `console.time()` y `console.timeEnd()` para medir el tiempo de ejecución de una sección específica de su código. Por ejemplo:
+El output será:
+```TypeScript
+{"name":"Ana","age":25}
+```
+Incluso podemos usar la sintaxis de template strings para imprimir valores de manera más legible:
 
 ```TypeScript
-console.time("Ejecución de bucle");
-for (let i = 0; i < 100000; i++) {
-  // Hacer algo
-}
-console.timeEnd("Ejecución de bucle");
-// Salida: Ejecución de bucle: 10.2197265625ms
+let num: number = 7;
+console.log(`El número es: ${num}`);
+```
+El output será:
+```TypeScript
+El número es: 7
 ```
 
-También puede utilizar estilos para resaltar sus salidas de depuración. Por ejemplo, puede utilizar `console.log("%cTexto a destacar", "color: red; font-weight: bold;")` para imprimir un mensaje en rojo y negrita. Esto puede ser útil para identificar rápidamente ciertas secciones de su código.
+## Deep Dive
+Existen diferentes maneras de imprimir mensajes de debug en TypeScript, como utilizar el método `console.info()` para imprimir mensajes de información o `console.warn()` para imprimir mensajes de advertencia. También podemos usar `console.assert()` para validar una expresión y mostrar un mensaje en caso de que la expresión sea falsa.
+
+Otra herramienta útil es el método `console.table()`, que nos permite imprimir una tabla con los valores de un array o un objeto. Veamos un ejemplo:
+
+```TypeScript
+let fruits: string[] = ['manzana', 'banana', 'naranja'];
+console.table(fruits);
+```
+El output será:
+```TypeScript
+┌─────────┬─────────┐
+│ (index) │ Values  │
+├─────────┼─────────┤
+│    0    │ 'manzana' │
+│    1    │ 'banana' │
+│    2    │ 'naranja' │
+└─────────┴─────────┘
+```
+Para más información sobre las diferentes opciones que ofrece `console`, puedes consultar la [documentación oficial](https://developer.mozilla.org/en-US/docs/Web/API/Console).
 
 ## Ver también
-
-- [Documentación de Console API en MDN](https://developer.mozilla.org/es/docs/Web/API/Console)
-- [Tutorial de debugging en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-visual-studio-code-debugger)
+- [Documentación oficial de TypeScript](https://www.typescriptlang.org/docs/)
+- [Guía práctica de TypeScript para principiantes](https://dev.to/codechips/guide-to-typescript-for-beginners-340d)
+- [Cómo usar TypeScript con React](https://www.freecodecamp.org/news/how-to-use-typescript-with-react/)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "Swift: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -9,61 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-När man vill strukturera och lagra data på ett överskådligt sätt är YAML ett utmärkt val. Det är ett enkelt och lättläst filformat som används inom programmering för att organisera data.
+Att arbeta med YAML kan ge dig möjlighet att enkelt och effektivt strukturera och organisera data. Det är särskilt användbart för hantering av konfigurationsfiler och utbytt av data mellan olika applikationer.
 
-# Hur man använder YAML i Swift
+## Så här
 
-För att använda YAML i Swift behöver man först installera ett externt bibliotek som heter "Yams". Detta gör man enkelt genom att gå till "File" -> "Swift Packages" -> "Add Package Dependency" och sedan söka efter "Yams". Efter att ha installerat biblioteket är man redo att börja använda YAML i sin kod.
+För att börja arbeta med YAML i Swift behöver du först importera YAML-biblioteket. Sedan kan du använda kodexempel som följande för att läsa och skriva YAML-filer:
 
 ```Swift
+// Importera YAML-biblioteket
 import Yams
 
-// Skapa en variabel med en YAML-sträng
+// Läs in en YAML-fil
 let yamlString = """
-myName: John Doe
+name: John Smith
 age: 30
-favoriteColors:
-  - blue
-  - green
-  - red
 """
 
-// Konvertera YAML-strängen till ett Swift-dictionary
-let dictionary = try Yams.load(yaml: yamlString) as! [String: Any]
-
-// Hämta värden från dictionary och skriv ut dem
-if let name = dictionary["myName"] as? String {
-    print("Mitt namn är \(name).")
+do {
+    let yamlData = try Yams.load(yaml: yamlString)
+    print(yamlData)
+} catch {
+    print(error)
 }
 
-if let age = dictionary["age"] as? Int {
-    print("Jag är \(age) år gammal.")
-}
+// Skapa en dictionary för YAML-data
+let yamlDictionary: [String: Any] = [
+    "name": "Jane Doe",
+    "age": 25
+]
 
-if let favoriteColors = dictionary["favoriteColors"] as? [String] {
-    print("Mina favoritfärger är \(favoriteColors.joined(separator: ", ")).")
+// Konvertera till YAML-format
+do {
+    let yamlData = try Yams.dump(object: yamlDictionary)
+    print(yamlData)
+} catch {
+    print(error)
 }
 ```
 
-Output:
+Output för läsningen av YAML-filen kommer att vara en `Any`-typ, medan output för konverteringen till YAML-format kommer att vara en `String`.
 
-> Mitt namn är John Doe.
->
-> Jag är 30 år gammal.
->
-> Mina favoritfärger är blue, green, red.
+## Deep Dive
 
-# Fördjupning
+YAML är en strukturerad datastruktur som är lätt att läsa för både människor och datorer. Den använder enkel syntax som består av nycklar och värden som kan vara antingen enkla värden som strängar eller numeriska värden, eller mer komplexa som listor eller nested dictionaries.
 
-YAML har en enkel och lättläst syntax, vilket gör det till ett populärt val för att lagra och strukturera data. Det är också ett plattformsoberoende format, vilket innebär att det kan användas på olika operativsystem och programmeringsspråk.
+Yaml-biblioteket i Swift är baserat på libyaml som ger en snabb och pålitlig YAML-parsing. Det är tillgängligt för både macOS och iOS.
 
-I YAML kan man använda både objekt och listor för att organisera data. Objekt representeras med användning av "nyckel: värde"-par, medan listor representeras med punktlistor. Dessa kan sedan användas för att skapa hierarkier i YAML-filerna.
+## Se även
 
-YAML stödjer också kommentarer, vilket gör det möjligt för utvecklare att förklara och dokumentera sin kod på ett läsbart sätt.
+Här är några länkar som kan vara relevanta för dig om du är intresserad av att arbeta med YAML och Swift:
 
-# Se även
-
-- [Yams bibliotek](https://github.com/jpsim/Yams)
-- [Officiell YAML-specifikation](https://yaml.org/spec/1.2/spec.html)
+- [LibYAML](https://github.com/yaml/libyaml): Yaml-biblioteket som Yams är baserat på
+- [Yaml.org](https://yaml.org/): Officiell hemsida för YAML
+- [Yams dokumentation](https://github.com/jpsim/Yams/blob/master/Documentation/README.md): Dokumentation för Yams-biblioteket i Swift

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Elixir: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -9,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför starta ett nytt Elixir-projekt?
+## Varför
+Elixir är ett spännande och dynamiskt programmeringsspråk som erbjuder många fördelar för utvecklare. Genom att lära dig Elixir, kan du skapa effektiva och skalbara applikationer som håller hög kvalitet. Om du vill ta din programmeringskarriär till nästa nivå, är det definitivt värt att överväga att börja använda Elixir för dina projekt.
 
-Det finns många olika skäl till varför man skulle vilja börja ett nytt Elixir-projekt. Kanske har du en idé till en ny applikation som du vill bygga, eller så vill du bara lära dig ett nytt programmeringsspråk. Oavsett vad anledningen är så finns det många fördelar med att välja Elixir som ditt verktyg för att skapa din nästa applikation.
-
-## Hur man gör det
-
-För att starta ett nytt Elixir-projekt behöver du först och främst installera Elixir på din dator. Detta kan göras genom att följa instruktionerna på Elixirs officiella hemsida.
-
-När du har installerat Elixir behöver du välja ett utvecklingsverktyg. Det finns många olika alternativ att välja mellan, men ett populärt val är Visual Studio Code med tillägget ElixirLS.
-
-Nästa steg är att skapa en projektmapp där du kan organisera din kod. I terminalen, navigera till den mapp där du vill skapa ditt projekt och kör sedan följande kommando:
-
+## Hur man gör
 ```Elixir
-mix new my_project
+defmodule Hello do
+  def hello(name) do
+    IO.puts "Hej #{name}!"
+  end
+end
+
+Hello.hello("världen")
+
+# Output: Hej världen!
 ```
+Att starta ett nytt Elixir-projekt är enkelt och kräver inte mycket förarbete. Först måste du installera Elixir på din dator. Sedan kan du använda kommandot "mix new" för att skapa ett nytt projekt:
+```Elixir
+mix new mitt_projekt
+```
+Detta kommer att generera en mapp med ditt projekt, som innehåller alla nödvändiga filer och strukturer för att komma igång. Sedan kan du öppna projektet i din favorit textredigerare och börja koda!
 
-Detta kommer att skapa en grundläggande Elixir-app i den valda mappen. Du kan sedan öppna projektet i ditt valda utvecklingsverktyg för att börja koda.
-
-## En djupdykning
-
-Nu när du har skapat ditt nya Elixir-projekt, så är det dags att utforska språket och dess funktioner mer ingående. Elixir är ett funktionellt programmeringsspråk som bygger på Erlang-plattformen. Det har många fördelar, såsom parallellism och skalbarhet, som kan vara mycket användbara i ditt projekt.
-
-En annan fördel med Elixir är dess robusta pakethanteringssystem, Hex. Med Hex kan du enkelt installera och hantera olika paket som kan hjälpa till att bygga din applikation.
-
-Dessutom har Elixir en intuitiv syntax som är lätt att lära sig och utveckla i. Genom att lära dig Elixir, kommer du också att lära dig om funktionell programmering och viktiga koncept som pattern matching och immutability.
+## Djupdykning
+När du väl har startat ditt Elixir-projekt, finns det många resurser tillgängliga för att hjälpa dig att fortsätta utveckla och lära dig mer om språket. Elixir har en aktiv community som delar kunskap och erfarenheter genom bloggar, podcaster och konferenser. Det finns också många bibliotek och ramverk tillgängliga för att underlätta utvecklingen av Elixir-applikationer.
 
 ## Se även
-
-- [Officiell Elixirs hemsida](https://elixir-lang.org/)
-- [ElixirLS](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls)
-- [Hex](https://hex.pm/)
-- [Elixir documentation](https://hexdocs.pm/elixir/getting-started.html)
+- [Elixir's officiella hemsida](https://elixir-lang.org/)
+- [Elixir Forum](https://elixirforum.com/)
+- [Elixir School](https://elixirschool.com/sv/)

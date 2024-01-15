@@ -1,6 +1,7 @@
 ---
-title:                "C++: Konvertera ett datum till en sträng"
-simple_title:         "Konvertera ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "C++: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,34 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera ett datum till en sträng är en vanlig uppgift i en programmerares vardag. Det kan användas för att visa datum i ett användargränssnitt eller för att spara datum som en del av en fil eller databas. I denna bloggpost kommer jag att visa hur du enkelt kan konvertera ett datum till en sträng i C++.
+
+Att konvertera en datum till en sträng är en viktig och vanligt förekommande operation i C ++ programmering. Detta gör det möjligt att visa datumet i ett läsbart format för användare eller att spara datumet i en databas.
 
 ## Hur man gör
-För att konvertera ett datum till en sträng i C++ behöver du först inkludera <iostream> och <string> biblioteken. Sedan kan du använda funktionen std::to_string() för att konvertera ett heltal till en sträng. Du kan också använda funktionen std::tm för att representera ett datum och sedan använda std::put_time() för att formatera datumet till en sträng. Här är ett kodexempel:
+
+För att konvertera ett datum till en sträng i C ++, används strömmar och biblioteket "ctime". Här är ett exempel som visar hur man konverterar dagens datum till en sträng:
 
 ```C++
 #include <iostream>
-#include <string>
-#include <iomanip>
-#include <ctime>
+#include <ctime> // Bibloteket för tid och datum funktioner
+using namespace std;
 
-int main()
-{
-    // Konvertera datumet till en sträng med hjälp av std::tm och std::put_time
-    std::time_t t = std::time(nullptr);
-    std::tm* now = std::localtime(&t);
-    std::string date = std::put_time(now, "%d/%m/%Y");
-
-    std::cout << "Dagens datum är: " << date << std::endl;
-    return 0;
+int main() {
+  time_t now = time(0); // Skapar ett objekt som representerar nuvarande tidpunkten
+  char* str = ctime(&now); // Används för att konvertera "now" till en sträng
+  cout << "Idag är datumet: " << str << endl; // Skriver ut datumet
+  return 0;
 }
 ```
-Detta kodexempel kommer att skriva ut dagens datum i formatet DD/MM/YYYY.
+
+Detta kodexempel kommer att producera output som ser ut så här:
+
+```
+Idag är datumet: Thu Nov 5 12:14:10 2020
+```
 
 ## Djupdykning
-Enligt C++11-standard tillhandahåller standardbiblioteket funktionen std::put_time() för att formatera ett std::tm-objekt (representativt för ett datum och en tid) till en sträng. Formatsträngen som används i detta exempel ("%d/%m/%Y") är en specifierare för datum som består av dag (DD), månad (MM) och år med fyra siffror (YYYY). Det finns också flera andra specifierare som du kan använda för att anpassa formatet på den genererade strängen.
+
+För att ändra formatet på datumet som visas i strängen, kan man använda funktionen "strftime". Detta gör det möjligt att anpassa datumet med hjälp av specifika formatsträngar. I följande exempel är formatsträngen "%d-%m-%Y" för dag/månad/år.
+
+```C++
+#include <iostream>
+#include <ctime> // Bibloteket för tid och datum funktioner
+using namespace std;
+
+int main() {
+  time_t now = time(0); // Skapar ett objekt som representerar nuvarande tidpunkten
+  char str[80]; // Skapar en ny sträng med 80 tecken
+  strftime(str, 80, "%d-%m-%Y", localtime(&now)); // Används för att konvertera och formatera datumet
+  cout << "Idag är datumet: " << str << endl; // Skriver ut datumet
+  return 0;
+}
+```
+
+Output för detta exempel kommer att se ut så här:
+
+```
+Idag är datumet: 05-11-2020
+```
 
 ## Se även
-- [std::to_string()](https://www.cplusplus.com/reference/string/to_string/)
-- [std::tm](https://www.cplusplus.com/reference/ctime/tm/)
-- [std::put_time()](https://www.cplusplus.com/reference/iomanip/put_time/)
+
+- C++ Referens - <http://www.cplusplus.com/reference/ctime/> 
+- C++ Datum och tid - <http://www.cplusplus.com/reference/ctime/>

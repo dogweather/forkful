@@ -1,6 +1,7 @@
 ---
-title:                "C: Radera karaktärer som matchar ett mönster"
-simple_title:         "Radera karaktärer som matchar ett mönster"
+title:                "Borttagning av tecken som matchar ett mönster."
+html_title:           "C: Borttagning av tecken som matchar ett mönster."
+simple_title:         "Borttagning av tecken som matchar ett mönster."
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,77 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Det finns många situationer där en programmerare kan behöva ta bort karaktärer som matchar ett visst mönster. Det kan vara för att rensa en sträng från oönskade tecken eller för att utföra en specifik manipulation av data. Oavsett syftet är kunskap om att ta bort karaktärer som matchar ett mönster en viktig färdighet för alla C-programmerare.
+
+Ibland kan det vara nödvändigt att ta bort tecken som matchar ett visst mönster från en sträng. Det kan vara till exempel för att säkerställa att inmatade data är korrekt formaterad eller för att filtrera ut viss information från en text.
 
 ## Hur man gör det
 
-Det finns många sätt att ta bort karaktärer som matchar ett mönster i C, men här är två vanliga metoder:
-
-### Metod 1: Använda en While-loop och String.h-biblioteket
-En enkel och effektiv metod är att använda en while-loop och funktionen "strchr" från String.h-biblioteket. Här är ett exempel på kod som tar bort alla förekomster av en viss karaktär i en sträng:
+För att ta bort tecken som matchar ett mönster från en sträng i C, finns det flera olika sätt att göra det, varav några visas nedan.
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hej alla C-programmerare!";
-    char to_be_removed = 'a';
-
-    // Loopar igenom alla karaktärer i strängen
-    int i = 0;
-    while (str[i]) {
-        // Om den nuvarande karaktären matchar den som ska tas bort 
-        if (str[i] == to_be_removed) {
-            // Ersätter den med ett tomt tecken
-            memmove(&str[i], &str[i + 1], strlen(str) - i);
-        } else {
-            // Annars fortsätter loopen
-            i++;
+// Här är en funktion som tar en sträng och tar bort alla tecken som matchar det givna mönstret
+void remove_chars(char *str, char pattern){
+    int i, j = 0;
+    for (i = 0; str[i] != '\0'; i++){
+        if (str[i] != pattern){
+            str[j++] = str[i];
         }
     }
-
-    printf("%s", str);
-    return 0;
+    str[j] = '\0';
 }
 
+// Exempel på hur funktionen kan användas
+char str[] = "Hej $varld!";
+remove_chars(str, '$'); // str = "Hej vard!"
+
 ```
-
-**Output:**
-> Hej ll C-progrmmerre!
-
-### Metod 2: Använda funktionen "strtok" och String.h-biblioteket
-En annan metod är att använda funktionen "strtok" från String.h-biblioteket för att dela upp strängen vid ett visst tecken och sedan sätta ihop den utan de karaktärer som matchar mönstret. Här är ett exempel på kod som tar bort alla mellanslag i en sträng:
+Om du vill ta bort flera olika tecken som matchar olika mönster, kan du använda `strstr()` funktionen som letar efter ett teckenmönster i en sträng och returnerar en pekare till det första förekomsten av mönstret.
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hej alla C-programmerare!";
-
-    // Delar upp strängen vid mellanslag 
-    char *token = strtok(str, " ");
-
-    // Loopar tills alla delar av strängen har behandlats
-    while (token) {
-        // Skriver ut den aktuella delen av strängen 
-        printf("%s", token);
-        // Hämtar nästa del av strängen
-        token = strtok(NULL, " ");
+// Här är en funktion som tar en sträng och tar bort alla förekomster av teckenmönster som matchar de tecken som finns i "patterns" arrayen
+void remove_chars(char *str, char *patterns, int num_patterns){
+    int i, j = 0;
+    for (i = 0; str[i] != '\0'; i++){
+        if (strstr(patterns, str[i]) == NULL){ // om tecknet inte finns i "patterns" arrayen
+            str[j++] = str[i];
+        }
     }
-
-    return 0;
+    str[j] = '\0';
 }
 
+// Exempel på hur funktionen kan användas
+char str[] = "Hej! $Varld #123";
+char patterns[] = "$#";
+remove_chars(str, patterns, 3); // str = "Hej! Varld 123"
 ```
 
-**Output:**
-> HejallaC-programmerare!
-
 ## Djupdykning
-Båda metoderna ovan kan anpassas för att ta bort flera karaktärer eller ett mer komplext mönster. Det finns också andra funktioner i String.h-biblioteket som kan vara användbara beroende på vilken situation du står inför. Det är också viktigt att notera att det alltid är viktigt att hantera minnesåtkomst på ett säkert sätt när du manipulerar strängar, särskilt om du tar bort karaktärer från en redan allokerad sträng.
+
+För att ta bort tecken som matchar ett mönster i en sträng, kan man använda sig av olika C-funktioner som `strcpy()`, `strcat()` och `strlen()`. Men för att verkligen utföra operationen på ett effektivt sätt, bör man använda funktioner som `memmove()` eller `memchr()` som gör att man kan flytta tecken i minnet och därmed undvika att skapa onödiga kopior av strängen.
 
 ## Se även
-- [String.h-biblioteket i C](https://www.cplusplus.com/reference/cstring/)
-- [C-tutorial: Strängmanipulation](https://www.programiz.com/c-programming/c-strings)
+
+- [Dokumentation för C-strängar](https://www.programiz.com/c-programming/c-strings)
+- [Guide till teckensträngar i C](https://www.cprogramming.com/tutorial/c/lesson9.html)
+- [Användbara C-funktioner för strängar](https://www.programiz.com/c-programming/library-function/string.h)

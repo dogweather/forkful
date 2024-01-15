@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: सन को निकालना"
-simple_title:         "सन को निकालना"
+title:                "उप-स्ट्रिंग निकालना"
+html_title:           "Elixir: उप-स्ट्रिंग निकालना"
+simple_title:         "उप-स्ट्रिंग निकालना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -9,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इलिक्सिर प्रोग्रामिंग के लिए सुलभ समस्याओं का समाधान: आवश्यकता
+## Kyu
 
-इलिक्सिर प्रोग्रामिंग भाषा में substrings को प्राप्त करना एक सामान्य समस्या है जो निरंतर पैटर्न पहचान और प्रक्रिया तकनीकी अवधारणाओं का उपयोग करके हल किया जा सकता है। substrings को प्राप्त करने के लिए इस्तेमाल किए जाने वाले तकनीक आपके कोड को अधिक उन्नत और विस्तृत कर सकते हैं।
+Kabhi kabhi hamara code ek bada string ho jata hai aur hame kuch specific information extract karni hoti hai jaise ki sirf pahle naam ya last naam. Iss samasya ka samadhan karne ke liye hum substrings ka istemal karte hai.
 
-## कैसे करें substrings को प्राप्त
+## Kaise Kare
 
-#### उदाहरण 1:
-```elixir
-string = "इलिक्सिर प्रोग्रामिंग भाषा"
-substring = String.slice(string, 8..15)
-IO.puts(substring)
+```Elixir
+string = "John Doe"
+IO.puts(String.slice(string, 0..3))
+IO.puts(String.slice(string, 5..8))
+
 ```
-उपयोगकर्ता की गई इनपुट: "इलिक्सिर प्रोग्रामिंग भाषा"
-उत्पाद: "प्रोग्रामिंग"
 
-#### उदाहरण 2:
-```elixir
-string = "यह केवल एक उदाहरण है"
-substring = String.slice(string, 0..7)
-IO.puts(substring)
+Output:
+
 ```
-उपयोगकर्ता की गई इनपुट: "यह केवल एक उदाहरण है"
-उत्पाद: "यह केवल"
-
-## गहराई तक substrings की जानकारी
-
-सबसे पहले, substrings को समझने के लिए आपको पहले एक मूल शब्द में से उन वर्णों को चुनना पड़ता है जिनसे आपको उपलब्ध substrings को बनाना है। यह शब्द आपके `string` वेरिएबल में स्थानान्तरित हो जाते हैं और फिर इससे प्राप्त किए गए `substring` आपकी इच्छानुसार कम्प्यूट किया जाता है।
-
-आप भी दो वर्ण रेंज से उत्पन्न होने वाले उदाहरण को इस तरह से समझ सकते हैं:
-```elixir
-string = "इलिक्सिर प्रोग्रामिंग भाषा"
-substring = String.slice(string, 17..-4)
-IO.puts(substring)
+John
+Doe
 ```
-उपयोगकर्ता की ग
+Is code ke madhyam se aap dekh sakte hai ki humne `String.slice` function ka istemal kiya hai aur usne hame substring return ki hai jise humne range ke saath specify kiya hai. Range ki starting point aur ending point ko humne index numbers ki madad se specify kiya hai. Isse hume string ka specific portion mil jata hai.
+
+## Deep Dive
+
+Substrings extract karne ke liye Elixir me kai functions available hai jaise ki `String.replace`, `String.contains?`, `String.split`, etc. In functions ko istemal karke aap apne string ko manipulate kar sakte hai aur required information extract kar sakte hai.
+
+Ek or interesting feature Elixir me hai string interpolation. Isme aap apne string me code add kar sakte hai aur wo code automatically execute ho jata hai. Isse aap apne string ko dynamic bana sakte hai aur substring extraction ko bhi asaan kar sakte hai.
+
+## Dekhein Bhi
+
+- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
+- [String Module Functions](https://hexdocs.pm/elixir/String.html#functions)
+- [String Interpolation in Elixir](https://elixirschool.com/en/lessons/basics/string-interpolation/)

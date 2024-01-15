@@ -1,5 +1,6 @@
 ---
-title:                "C#: 文字列を小文字に変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "C#: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "C#"
 category:             "C#"
@@ -9,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# *なぜ*文字列を小文字に変換するのか
+## なぜ
+文字列を小文字に変換することについて、なぜ誰かが取り組む必要があるのかを最大2つの文章で説明します。
 
-文字列の大文字と小文字は、プログラミングにおいて非常に重要です。例えば、ユーザーが入力した文字列をデータベースに保存する場合、正しい検索が行われるように大文字と小文字を区別する必要があります。また、文字列を比較する場合にも、大文字と小文字の差が重要になってきます。そのため、文字列を処理する際には、必要に応じて大文字と小文字を変換する必要があります。
-
-## *方法*
-
-文字列を小文字に変換するには、C#においては `ToLower()` メソッドを使用することができます。下記のコード例を参考にしてください：
+## 方法
+以下に、文字列を小文字に変換するためのC#のコーディング例とサンプル出力のあるコードブロックを示します。
 
 ```C#
-string name = "JOHN DOE";
-string lowercaseName = name.ToLower();
-
-Console.WriteLine(lowercaseName);
+// 文字列を小文字に変換する方法
+string name = "JOHN";
+name = name.ToLower();
+Console.WriteLine(name);
+// Output: john
 ```
 
-上記のコードでは、変数 `name` には大文字の "JOHN DOE" が格納されており、それを `ToLower()` メソッドを使用して小文字に変換し、`lowercaseName` 変数に格納しています。最後に `Console.WriteLine()` メソッドを使用して、変換された文字列を表示しています。
+## 深堀り
+文字列を小文字に変換するためのより詳細な情報を提供します。文字列は、Unicode文字に基づいてパフォーマントするため、文字列を小文字に変換する方法は多数あります。また、特定のカルチャーに基づいて変換することも可能です。
 
-実行結果：
-
-```
-john doe
-```
-
-## *深堀り*
-
-文字列を小文字に変換する際には、ASCII文字セットとユニコード文字セットの違いに注意する必要があります。ASCII文字セットでは、大文字と小文字の間には厳密な関係がありますが、ユニコード文字セットでは、そのような関係がありません。そのため、`ToLower()` メソッドを使用する場合は、必ずどの文字セットを対象に変換を行うのかを考慮しなければなりません。
-
-また、`ToLower()` メソッドは、文字列オブジェクトが存在する場合、そのオブジェクトを変更することなく新しい文字列オブジェクトを返します。そのため、変換前の文字列オブジェクトには影響を与えることなく、新しい変換後の文字列オブジェクトを使用することができます。
-
-## *参考リンク*
-
-- [C# string.ToLower() メソッドのドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [ASCII文字セットとユニコード文字セットとの違いについての説明](https://www.japanesestation.com/ascii/)
-- [C# string.ToLower() メソッドを使った文字列の変換の例](https://www.tutorialspoint.com/csharp/csharp_string_tolower.htm)
-
-# 参考リンク
+## See Also
+- [String.ToLower メソッド (C# リファレンス)](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.tolower?view=netcore-3.1)
+- [Unicodeでの大文字と小文字の概要](https://docs.microsoft.com/ja-jp/windows/win32/intl/unicode-case-mapping)
+- [カルチャー固有の情報を使用するための .NET API](https://docs.microsoft.com/ja-jp/dotnet/core/internationalization/)

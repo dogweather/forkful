@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Odczytywanie pliku tekstowego."
-simple_title:         "Odczytywanie pliku tekstowego."
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Elixir: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,46 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą lub chcesz stać się jednym, prawdopodobnie masz do czynienia z przetwarzaniem plików tekstowych w swojej pracy. Niezależnie od tego, czy jest to analiza danych czy przetwarzanie danych logów, odczytywanie plików tekstowych jest częstym zadaniem w pracy programisty. W tym wpisie dowiesz się, jak w języku Elixir można odczytać plik tekstowy i przetworzyć jego zawartość.
+Czy kiedykolwiek chciałeś/-aś przeczytać zawartość pliku tekstowego w swoim kodzie Elixir? Może potrzebowałeś/-aś pobrać dane ze zewnętrznego źródła, a plik tekstowy był jedynym dostępnym sposobem. W tym artykule dowiesz się, jak w łatwy sposób odczytać plik tekstowy w Elixir i wykorzystać jego zawartość w swoim kodzie.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest otwarcie pliku tekstowego w trybie tylko do odczytu przy użyciu funkcji `File.open/2`. Następnie możemy odczytać zawartość pliku przy użyciu metody `IO.read/2`, która zwraca całą zawartość pliku jako łańcuch znaków. Przykładowo:
+Pierwszym krokiem jest otwarcie pliku tekstowego za pomocą funkcji `File.open/2`, gdzie pierwszym argumentem jest ścieżka do pliku, a drugim tryb dostępu. Następnie możesz odczytać zawartość pliku za pomocą funkcji `IO.read/2`, gdzie pierwszym argumentem jest otwarty plik, a drugim liczba bajtów do odczytania. Na przykład:
 
-```Elixir
-file = File.open("plik.txt", [:read])
-IO.read(file)
+```elixir
+file = File.open("plik.txt", [:read, :utf8])
+contents = IO.read(file, 10)
+IO.puts contents
 ```
 
-Jeśli chcemy odczytać plik linia po linii, możemy użyć funkcji `IO.stream/2`, która zwraca strumień zawierający kolejne linie pliku. Następnie możemy wykorzystać strumień w wyrażeniu `for` w celu przetworzenia zawartości pliku linia po linii. Przykładowo:
+W powyższym przykładzie otwieramy plik "plik.txt" w trybie odczytu i ustawiamy kodowanie na UTF-8. Następnie odczytujemy 10 bajtów z pliku i wypisujemy je na ekran. 
 
-```Elixir
-file = File.open("plik.txt", [:read])
-stream = IO.stream(file, :line)
-for line <- stream do
-  IO.puts(line)
-end
+Możesz również przeczytać całą zawartość pliku jednym poleceniem za pomocą funkcji `File.read/1`:
+
+```elixir
+contents = File.read("plik.txt")
+IO.puts contents
 ```
 
-Jeśli wiesz, że plik tekstowy jest strukturalny, możesz skorzystać ze wbudowanych parserów Elixir, takich jak `CSV` lub `Jason`, aby przetworzyć go w bardziej czytelny sposób. Przykładowo:
+Oczywiście, jeśli nie chcesz czytać całego pliku, możesz również wykorzystać funkcję `IO.read/1` zamiast `File.read/1` i przekazać jej liczbę bajtów do odczytania. 
 
-```Elixir
-file = File.open("plik.csv", [:read])
-CSV.decode!(file)
-```
+## Deep Dive
 
-## Głębsze zagłębienie
+Podczas odczytywania pliku tekstowego w Elixir, warto pamiętać o kilku ważnych rzeczach. Po pierwsze, upewnij się, że kodowanie pliku jest zgodne z tym, który ustawiłeś lub domyślnym dla Twojego systemu. Możesz to zrobić, ustawiając drugi argument w funkcjach `File.open/2` i `File.read/2`.
 
-W języku Elixir można również wykorzystać bibliotekę `File` do operacji na plikach tekstowych. Warto zapoznać się z funkcjami takimi jak `File.stream!/3`, `File.read!/2` czy `File.write!/2`, które pozwalają na bardziej zaawansowane operacje na plikach.
+Kolejną rzeczą do zapamiętania jest sposób w jaki traktowany jest ostatni znak nowej linii w pliku. W Elixir, znak nowej linii jest traktowany jako `'\n'`, jednak niektóre systemy operacyjne mogą używać innego znaku, takiego jak `'\r\n'`. Dlatego warto użyć funkcji `String.trim_trailing/1` lub `String.trim_trailing/2` aby pozbyć się tych znaków nowej linii w odczytanym tekście.
 
-Warto również wiedzieć, że w języku Elixir można wykorzystać mechanizm bloków (ang. pipelines) do przetwarzania danych tekstowych. Dzięki temu możemy efektywnie manipulować zawartością pliku tekstowego w przepływie danych, wykorzystując różnego rodzaju funkcje i operatory. Przykładowo:
+## Zobacz także
 
-```Elixir
-File.stream!("plik.txt", [:line]) |> Enum.filter(fn line -> String.length(line) > 10 end) |> Enum.map(fn line -> String.upcase(line) end) |> Enum.each(fn line -> IO.puts(line) end)
-```
-
-## Zobacz również
-
-* [Oficjalna dokumentacja Elixir - Praca z plikami](https://elixir-lang.org/getting-started/file.html)
-* [Poradnik Elixir - Obsługa plików tekstowych](https://elixirschool.com/pl/lessons/basics/file/)
-* [Elixir Forum - Przetwarzanie danych z pliku CSV](https://elixirforum.com/t/how-to-process-data-from-csv-file-using-elixir/10778) (dostępne tylko w języku angielskim)
+- [Dokumentacja Elixir na temat plików](https://hexdocs.pm/elixir/File.html)
+- [Poradnik programowania w Elixir](https://elixirschool.com/pl/)
+- [Pierwsze kroki z Elixir](https://elixir-lang.org/getting-started/introduction.html)

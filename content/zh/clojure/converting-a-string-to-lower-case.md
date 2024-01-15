@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Clojure: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,25 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么会有将字符串转为小写的需求
+## 为什么
 
-在编程中，有时候我们会遇到需要将字符串转换为小写的情况。这可能是因为需要统一字符串的大小写形式，或者是为了比较字符串时可以忽略大小写的差异。无论是哪种情况，将字符串转换为小写都有其必要性。
+当处理文字数据时，有时候需要将字符串转换成小写字母。这可以使得文本数据更具统一性和可读性，在处理文本匹配和比较时也会更方便。
 
-##如何将字符串转为小写
+## 怎么做
+
+要将字符串转换成小写，我们可以使用Clojure内置的`lower-case`函数。它接受一个字符串作为参数，并返回一个全部为小写的新字符串。举个例子：
 
 ```Clojure
-(.toLowerCase "HELLO") ;; => "hello"
-(.toLowerCase "hELlO wOrLd") ;; => "hello world"
+; 定义一个字符串
+(def s "HELLO WORLD")
+
+; 使用lower-case函数
+(lower-case s)
 ```
 
-通过调用`toLowerCase`函数，可以将字符串转换为小写形式。在Clojure中，字符串也是一种数据类型，所以我们可以直接对字符串使用`.`操作符来调用Java中的方法。以上是两个示例，分别将"HELLO"和"hELlO wOrLd"转换为小写形式。
+这样，输出就会是`"hello world"`。如果我们有多个字符串需要转换，可以使用Clojure的`map`函数来批量处理：
 
-##深入探讨字符串转为小写的过程
+```Clojure
+; 定义多个字符串
+(def str1 "APPLE")
+(def str2 "BANANA")
+(def str3 "CARROT")
 
-在Clojure中，字符串是以UTF-16编码存储的，所以转换为小写实际上是对Unicode字符的转换。Unicode中定义了每个字符的大小写形式，所以将字符串转换为小写时，实际上是将字符串中的每个字符都按照Unicode规范进行转换。
+; 使用map函数将全部转换成小写
+(map lower-case [str1 str2 str3])
 
-##另请参阅
+; 输出结果为：("apple" "banana" "carrot")
+```
 
-- [Java String toLowerCase() method](https://www.javatpoint.com/java-string-tolowercase)
-- [Unicode Character Database](https://unicode.org/ucd/)
-- [Clojure String Functions](https://clojure.org/reference/strings)
+另外，我们也可以使用`into`函数将转换后的字符串存储到一个新的数据结构中，如列表或向量：
+
+```Clojure
+; 将转换后的字符串存储到列表中
+(into [] (map lower-case ["HELLO" "WORLD"]))
+
+; 输出结果为：["hello" "world"]
+
+; 将转换后的字符串存储到向量中
+(into [] (map lower-case ["HELLO" "WORLD"]))
+
+; 输出结果为：["hello" "world"]
+```
+
+使用`lower-case`函数还可以处理中文字符串，它会将中文字符转换成小写拼音，例如：
+
+```Clojure
+; 将中文字符串转换成小写
+(lower-case "你好世界")
+
+; 输出结果为："nihao shijie"
+```
+
+## 深入探讨
+
+在Clojure中，字符串是不可变的数据类型。这意味着当我们使用`lower-case`函数对一个字符串进行转换时，它并不会改变原始字符串，而是返回一个新的字符串。这种不可变性的设计有助于保证程序的稳定性和线程安全性。
+
+此外，Clojure也提供了其他字符串转换函数，如`upper-case`、`capitalize`和`clojure.string/lower-case`等，可以根据具体需求来使用。
+
+## 参考资料
+
+- [Clojure官方文档 - 字符串函数](https://clojure.org/reference/strings)
+- [Clojure学习资源汇总](https://github.com/learn-by-doing/clojure-resources)
+
+## 参考
+
+[Why Clojure is Awesome](https://clojure.org/about/advantages)

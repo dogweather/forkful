@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Ruby recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,63 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed a random number in your code? Maybe for a game, a lottery simulation, or even for password generation? Learning how to generate random numbers in Ruby can be a useful skill for any programmer.
+Random numbers play a crucial role in many applications, from games to statistical analysis. In Ruby, generating random numbers is a useful skill to have in your coding arsenal. Whether you need to simulate dice rolls or generate a randomized dataset, understanding how to generate random numbers can be beneficial in various scenarios.
 
 ## How To
 
-Generating random numbers in Ruby is actually quite simple. All you need is the `rand` method. Let's take a look at an example:
+Generating random numbers in Ruby can be achieved using the `rand` method. Let's take a look at how this method works:
 
 ```Ruby
-# Generate a random number between 1 and 10
-random_number = rand(1..10)
-puts random_number
+# To generate a random float between 0 and 1
+rand # Output: 0.346107832 
+
+# To generate a random integer between 0 and n (inclusive)
+rand(n) # Output: 7
+
+# To generate a random float between m and n
+rand(m..n) # Output: 5.825484193 
 ```
 
-In this code, we use the `rand` method with an argument of `1..10` to specify the range of numbers we want the random number to be generated from. You can also use `rand(number)` to generate a number between 0 and that number. For example:
+You can also pass in a range to the `rand` method to generate a random number within that range. Keep in mind that the generated number will always be less than the upper bound of the range.
 
 ```Ruby
-# Generate a random number between 0 and 100
-random_number = rand(100)
-puts random_number
+# To generate a random number between 200 and 500
+rand(200..500) # Output: 342 
 ```
 
-Another useful method is `rand(n..m)`, which generates a number between the given range, including both `n` and `m`. Here's an example:
+To generate a random number with a decimal point, we can use `Float` to specify the precision:
 
 ```Ruby
-# Generate a random number between 5 and 15
-random_number = rand(5..15)
-puts random_number
+# To generate a random float with 2 decimal places
+Float(rand(0..9)).round(2) # Output: 3.85
 ```
-
-You can also use the `rand` method with arrays to generate a random element from that array. For example:
-
-```Ruby
-# Generate a random superhero name from an array
-superhero_names = ["Superman", "Batman", "Spiderman", "Wonder Woman", "Captain America"]
-random_name = superhero_names[rand(superhero_names.length)]
-puts random_name
-```
-
-This will output a random superhero name from the array.
 
 ## Deep Dive
 
-Behind the scenes, the `rand` method uses a pseudo-random number generator algorithm, which generates a sequence of seemingly random numbers based on a given seed. The seed is used as a starting point for the algorithm, and if the same seed is used, the same sequence of numbers will be generated.
+The `rand` method uses a pseudo-random number generator (PRNG) to generate random numbers. A PRNG is an algorithm that produces a sequence of numbers that appear to be random, but in reality, they are deterministic. This means that the generated sequence of numbers is predictable, given the initial state of the PRNG.
 
-To get a different sequence of numbers every time, Ruby uses the current time in milliseconds as the default seed for the `rand` method. However, you can also set a specific seed if you want to get the same sequence of numbers every time. For example:
+In Ruby, the PRNG is seeded with the current time by default. This means that if you call the `rand` method multiple times within a short timeframe, you might get the same sequence of numbers. To avoid this, we can use the `srand` method to set a seed before calling the `rand` method. This will ensure that the generated sequence of numbers is different every time the code is executed.
 
 ```Ruby
-# Set a specific seed to get the same sequence of numbers
-srand(1234)
-puts rand(100)
-puts rand(100)
-puts rand(100)
+# To generate a random number using a specific seed
+srand(12345) # Set the seed to 12345
+rand(10) # Output: 2
+rand(10) # Output: 5
+rand(10) # Output: 9
 ```
-
-This will output the numbers 62, 1, and 28, in that order, every time it's run.
 
 ## See Also
 
-- Ruby `Random` class: https://ruby-doc.org/core-2.7.2/Random.html
-- Ruby `Kernel` module: https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-rand
-- Pseudo-random number generator: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- [Ruby Docs: Random](https://ruby-doc.org/core-3.0.2/Random.html)
+- [Ruby Guides: Random Numbers](https://www.rubyguides.com/2019/11/ruby-random/)
+- [Official Blog: The Basics of Random Number Generation](https://www.ruby-lang.org/en/news/2016/03/19/the-basics-of-random-number-generation-in-ruby/)

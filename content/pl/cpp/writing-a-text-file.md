@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "C++: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,11 +12,9 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie plików tekstowych jest jednym z podstawowych zadań w programowaniu. Jest to niezbędnym krokiem w procesie tworzenia oprogramowania, ponieważ pozwala na zapisanie i przechowywanie danych w formacie tekstowym. Pliki tekstowe są wykorzystywane w wielu programach, takich jak edytory tekstu, przeglądarki internetowe czy bazy danych. Dlatego też każdy programista powinien umieć pisać pliki tekstowe w swoim języku programowania.
+Pisanie plików tekstowych jest ważnym elementem programowania w C++. Pozwala ono na przechowywanie i przetwarzanie danych w sposób uporządkowany oraz umożliwia komunikację między programem a użytkownikami.
 
 ## Jak to zrobić
-
-Pisanie plików tekstowych w języku C++ jest proste i wymaga wykorzystania kilku podstawowych funkcji. Umożliwiają one otwarcie pliku, zapisanie danych, a następnie zamknięcie pliku. Poniżej przedstawiamy przykładowy kod w języku C++, który pokazuje, jak napisać plik tekstowy:
 
 ```C++
 #include <iostream>
@@ -23,44 +22,55 @@ Pisanie plików tekstowych w języku C++ jest proste i wymaga wykorzystania kilk
 
 using namespace std;
 
-int main()
-{
-    // otwieramy plik w trybie zapisu
-    ofstream plik("tekst.txt", ios::out);
+int main() {
+  // Stwórz obiekt pliku tekstowego
+  fstream plik;
 
-    // sprawdzamy, czy plik został otwarty poprawnie
-    if(plik.good())
-    {
-        // zapisujemy tekst do pliku
-        plik << "To jest przykładowy tekst do zapisania w pliku." << endl;
-        
-        // zamykamy plik
-        plik.close();
+  // Otwórz plik do zapisu
+  plik.open("plik.txt", ios::out);
 
-        // wyświetlamy komunikat o poprawnym zapisaniu pliku
-        cout << "Plik tekst.txt został pomyślnie zapisany." << endl;
-    }
-    else
-    {
-        // wyświetlamy komunikat o błędzie otwarcia pliku
-        cout << "Wystąpił błąd podczas otwierania pliku." << endl;
-    }
-    
-    return 0;
+  // Sprawdź, czy plik został poprawnie otwarty
+  if (!plik) {
+    cout << "Błąd otwarcia pliku!" << endl;
+    return 1;
+  }
+
+  // Zapisz dane do pliku
+  plik << "To jest przykładowy tekst." << endl;
+  plik << "Ta linia zostanie dodana do pliku." << endl;
+
+  // Zamknij plik
+  plik.close();
+
+  // Otwórz plik do odczytu
+  plik.open("plik.txt", ios::in);
+
+  // Sprawdź, czy plik został poprawnie otwarty
+  if (!plik) {
+    cout << "Błąd otwarcia pliku!" << endl;
+    return 1;
+  }
+
+  // Odczytaj zawartość pliku i wyświetl ją na ekranie
+  string linia;
+  while (getline(plik, linia)) {
+    cout << linia << endl;
+  }
+
+  // Zamknij plik
+  plik.close();
+
+  return 0;
 }
 ```
 
-Po uruchomieniu powyższego kodu, w katalogu z projektem powinien pojawić się plik o nazwie "tekst.txt", który zawierać będzie tekst: "To jest przykładowy tekst do zapisania w pliku."
+Przedstawiony powyżej kod pokazuje, jak otworzyć plik do zapisu, zapisać do niego dane, a następnie otworzyć ten sam plik do odczytu i wyświetlić jego zawartość na ekranie. W linii 6 używamy obiektu `fstream` do utworzenia pliku tekstowego. W linii 9 otwieramy plik do zapisu, a w linii 22 otwieramy go do odczytu. W linii 13 i 14 zapisujemy dane do pliku, a w linii 26 i 27 odczytujemy je z pliku.
 
-## Dogłębna analiza
+## Głęboki zanurzenie
 
-Pisanie plików tekstowych w języku C++ wymaga od nas kilku rzeczy. Po pierwsze, musimy wykorzystać nagłówek <fstream>, który pozwala na operacje na plikach. Następnie za pomocą funkcji ofstream otwieramy plik w trybie zapisu. Możemy także wybrać inny tryb, takich jak odczyt albo tryb binarny. Po otwarciu pliku, możemy zacząć zapisywać do niego dane za pomocą operatora strumieniowego, a następnie zamknąć plik wywołując funkcję close().
+Pisanie plików tekstowych jest ważną częścią programowania w C++. Oprócz przechowywania i przetwarzania danych, pliki tekstowe mogą być również użyte do komunikacji z innymi programami lub użytkownikami. Aby bardziej zaawansowane operacje na plikach, takie jak dodawanie, usuwanie lub przeszukiwanie danych, warto zapoznać się z biblioteką standardową C++ - `<fstream>`, ponieważ dostarcza ona większą ilość funkcji do pracy z plikami.
 
-Warto także pamiętać, że przed przystąpieniem do operacji na plikach, powinniśmy sprawdzić, czy plik został otwarty poprawnie. Można to zrobić przy użyciu funkcji good(), która zwraca true, jeśli operacje na pliku są możliwe.
+## Zobacz również
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o operacjach na plikach w języku C++, zapoznaj się z poniższymi linkami:
-
-- [Dokumentacja języka C++ na temat operacji na plikach](http://www.cplusplus.com/doc/tutorial/files/)
-- [Przykłady kodu na GitHubie](https://github.com/search?q=c%2B%2B+file+operations&type=Repositories)
+1. Rozmowa z programistą: 10 powodów, dlaczego warto nauczyć się programowania w C++ (https://codecouple.pl/rozmowa-z-programista/10-powodow-dlaczego-warto-nauczyc-sie-programowania-w-c/)
+2. Oficjalna dokumentacja biblioteki `fstream` (https://en.cppreference.com/w/cpp/io/basic_fstream)

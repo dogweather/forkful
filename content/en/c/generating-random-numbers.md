@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "C recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "C"
 category:             "C"
@@ -11,51 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to generate a random number in your C program? Whether it's for a game or to select a random item from a list, generating random numbers is a useful skill to have in your programming arsenal.
+Generating random numbers is a useful function in programming that can be used for various purposes. From creating randomized simulations to selecting random items in a game, having an efficient way to generate random numbers is essential for any programmer.
 
 ## How To
 
-To generate random numbers in C, we will be using the `rand()` function from the `stdlib.h` library. This function returns a pseudo-random number between 0 and `RAND_MAX` (a constant defined in `stdlib.h`).
-
-To use this function, we first need to seed it with a random value by using the `srand()` function. This function takes in an integer value, which will be used as the seed for the `rand()` function. This seed value can be anything, but it's common to use the current time as it changes every second.
-
-Let's take a look at a simple example:
+One of the simplest ways to generate a random number in C is by using the `rand()` function from the `stdlib.h` library. Here's an example of how it can be implemented in a program:
 
 ```C
-#include <stdio,h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-
-    // Seed the rand() function with the current time
-    srand(time(NULL));
-
-    // Generate and print a random number between 1 and 10
-    int random_num = rand() % 10 + 1;
-    printf("Random number between 1 and 10: %d", random_num);
-
+    // Setting seed for the random number generator
+    srand(time(0));
+    
+    // Generating a random number between 1 and 10
+    int random = (rand() % 10) + 1;
+    
+    // Printing the result
+    printf("Random number: %d", random);
+    
     return 0;
 }
 ```
 
-Output:
+Sample output:
 
 ```
-Random number between 1 and 10: 7
+Random number: 8
 ```
 
-As you can see, we have used the `rand()` function to generate a random number between 1 and 10. By using the modulus operator and adding 1, we ensure that the random number will always be between 1 and 10.
+The `srand()` function is used to set the seed for the random number generator, which is necessary in order to generate truly random numbers. In the example above, we used the current time as the seed, but any value can be used. Just make sure to only call `srand()` once in your program, preferably at the beginning.
+
+The `rand()` function returns a random integer between 0 and `RAND_MAX`, which is a constant defined in the `stdlib.h` library. In order to generate a random number within a specific range, we use the modulus operator (`%`) to get the remainder of the division of the random number by the desired range. In the example above, we added 1 to the result in order to get a number between 1 and 10 instead of 0 and 9.
 
 ## Deep Dive
 
-While the `rand()` function is great for most applications, it is not truly random. It is a pseudo-random number generator, meaning it follows a predetermined sequence of numbers based on the seed value. This sequence can be replicated, making it predictable.
+While the basic method shown above is sufficient for most cases, it's important to note that the `rand()` function doesn't always generate truly random numbers. The numbers generated are pseudo-random, meaning they follow a certain pattern and are not truly random. This can cause issues in some scenarios, such as when security is a concern.
 
-To get a more random number, we can use the `rand()` function in combination with other algorithms or add our own logic to it. For example, we can use the current time in milliseconds as the seed value, or we can implement a more complex mathematical formula to generate a more unpredictable sequence of numbers.
-
-It's also important to note that `rand()` is not thread-safe, meaning it can lead to unexpected results when used in multi-threaded programs. For thread-safe random number generation, we can use the `rand_r()` function, which takes in a pointer to a seed value as an additional parameter.
+For situations where true randomness is crucial, there are other libraries like `random` and `arc4random` that provide more robust methods for generating random numbers in C. These libraries use more advanced algorithms to ensure truly random numbers are generated. However, they are not as widely available as `rand()` and may require additional setup.
 
 ## See Also
 
 - [C Library - <stdlib.h>](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm)
-- [Pseudo-random number generation in C](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
-- [Thread-safe random numbers in C](https://www.gnu.org/software/libc/manual/html_node/Primitive-Roots.html#Primitive-Roots)
+- [Pseudo-random number generation - Wikipedia](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Random numbers in C programming - GeeksforGeeks](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Calcolare una data nel futuro o nel passato."
-simple_title:         "Calcolare una data nel futuro o nel passato."
+title:                "Calcolare una Data nel Futuro o nel Passato"
+html_title:           "Clojure: Calcolare una Data nel Futuro o nel Passato"
+simple_title:         "Calcolare una Data nel Futuro o nel Passato"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,63 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso, quando si lavora con dati temporali, può essere necessario calcolare una data in futuro o in passato. Questo può essere utile in vari scenari, come pianificare eventi o gestire scadenze.
+Calcolare una data nel futuro o nel passato può essere utile in molte situazioni, come nel caso di pianificazione di eventi, gestione del tempo, o analisi di dati temporali. Usando Clojure, un linguaggio di programmazione funzionale e dinamico, è possibile scrivere codice efficiente e preciso per eseguire queste operazioni.
 
-## Come fare
+## Come Fare
 
-Per eseguire questo tipo di calcolo in Clojure, è possibile utilizzare la funzione `clj-time` combinata con la libreria `clojure.java-time`. Iniziamo importando entrambe le librerie e definendo una data di riferimento:
-
-```Clojure
-(require '[clj-time.core :as t]
-         '[java-time :as jt])
-
-(def today (jt/now))
-```
-
-Per calcolare una data in futuro, possiamo utilizzare la funzione `plus` di `clj-time` fornendo il numero di giorni, mesi o anni desiderato come parametro:
+Per calcolare una data nel futuro o nel passato usando Clojure, è necessario conoscere la sintassi per la manipolazione delle date e delle ore. Clojure ha una libreria standard chiamata "java.time" che fornisce molte funzioni utili per operare su date e ore.
 
 ```Clojure
-(def tomorrow (t/plus today (t/days 1)))
-```
+(ns myapp.core
+  (:import [java.time LocalDate]
+           [java.time.format DateTimeFormatter]))
 
-Analogamente, per calcolare una data in passato, possiamo utilizzare la funzione `minus` di `clj-time`:
+;; Definiamo una data di riferimento.
+(def date (java.time.LocalDate/now))
 
-```Clojure
-(def yesterday (t/minus today (t/days 1)))
-```
+;; Calcoliamo una data nel futuro aggiungendo 2 mesi alla data di riferimento.
+(def future-date (.plusMonths date 2))
 
-Possiamo anche utilizzare gli operatori aritmetici di base per effettuare questi calcoli:
+;; Calcoliamo una data nel passato sottraendo 1 anno alla data di riferimento.
+(def past-date (.minusYears date 1))
 
-```Clojure
-(def next-week (t/plus today (t/weeks 1)))
-(def last-week (t/minus today (t/weeks 1)))
-```
+;; Formattiamo le date nel formato "anno-mese-giorno".
+(def formatter (DateTimeFormatter/ofPattern "yyyy-MM-dd"))
+(def formatted-future (.format future-date formatter))
+(def formatted-past (.format past-date formatter))
 
-Infine, per ottenere solo la data senza l'orario, possiamo utilizzare la funzione `get-date` di `clojure.java-time`:
+;; Stampiamo le date calcolate.
+(println "Data nel futuro:" formatted-future)
+(println "Data nel passato:" formatted-past)
 
-```Clojure
-(jt/get-date today) ; => #date "2020-05-20"
+;; Output:
+;; Data nel futuro: 2021-08-24
+;; Data nel passato: 2019-06-24
 ```
 
 ## Approfondimento
 
-E' importante notare che quando si effettuano calcoli con date in Clojure, il risultato è sempre un oggetto `org.joda.time.DateTime`, che consente di effettuare ulteriori operazioni come confronti o formattazioni.
+Nel codice di esempio abbiamo usato le funzioni "plusMonths" e "minusYears" per calcolare una data nel futuro o nel passato, ma Clojure offre molte altre funzioni per gestire date e ore. Alcune di queste funzioni sono "of", "get", "with", "truncatedTo" e "isAfter". È possibile consultare la documentazione ufficiale di Clojure per ulteriori informazioni su queste funzioni e sull'utilizzo della libreria "java.time".
 
-Se si vuole calcolare una data in base alla data attuale del sistema, si può utilizzare la funzione `jt/zoned-now` di `clojure.java-time` invece di `jt/now`:
+## Vedi Anche
 
-```Clojure
-(def today (jt/zoned-now))
-```
-
-Per ulteriori informazioni su come gestire date e orari in Clojure, si possono consultare le seguenti risorse:
-
-- [Documentazione di clj-time](https://github.com/clj-time/clj-time)
-- [Documentazione di clojure.java-time](https://github.com/dm3/clojure.java-time)
-- [Articolo sulle date in Clojure di Daniel Higginbotham](https://www.braveclojure.com/core-functions-in-depth/#chronology)
-- [Video tutorial sulle date in Clojure di PurelyFunctional.tv](https://purelyfunctional.tv/article/calculating-dates-clojure/)
-
-## Vedi anche
-
-- [Funzioni per la gestione di date in Clojure](https://clojuredocs.org/clojure.java-time/local-date)
-- [Esempi di calcolo di date in Clojure](https://gist.github.com/nsklaus/6112660)
-- [Calcolo di date utilizzando la libreria clj-time](https://poundbang.in/software/life/2017/02/01/tools-of-the-clojure-trade-clj-time.html)
+- Documentazione ufficiale di Clojure su date e ore: https://clojure.org/reference/java_interop#date_and_time
+- Tutorial sulla libreria "java.time": https://cognitect.com/blog/2016/6/1/date-and-time-in-java-or-not

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 새 프로젝트 시작하기"
-simple_title:         "새 프로젝트 시작하기"
+title:                "새로운 프로젝트 시작하기"
+html_title:           "Haskell: 새로운 프로젝트 시작하기"
+simple_title:         "새로운 프로젝트 시작하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-많은 프로그래머들이 새로운 프로젝트를 시작하는 데 참여하는 이유는 다양합니다. 그 중에는 새로운 기술을 배우고 익히기 위해서일 수도 있고, 더 나은 소프트웨어를 만들기 위해서일 수도 있습니다. 하지만 가장 중요한 이유는 능동적인 학습과 성장을 위해서입니다.
 
-## 어떻게
-먼저, 다른 프로그래밍 언어와는 다르게 Haskell에서 프로젝트를 시작하는 방법에 대해 알아보겠습니다. Haskell은 함수형 프로그래밍 언어이기 때문에, 기존의 명령형 프로그래밍 언어와 다소 다른 방식으로 코드를 작성해야 합니다.
+새 프로젝트를 시작하는 이유는 여러 가지가 있지만 주요한 이유는 첫째로 새로운 언어를 배우고 싶은 욕심일 것입니다. 둘째로 함수형 프로그래밍 언어를 배우는 것이 미래의 컴퓨팅에서 핵심이 될 것이기 때문입니다.
 
-먼저, 새로운 프로젝트를 시작하기 전에 Haskell 프로그래밍 환경을 설치해야 합니다. 이를 위해서는 GHC (Glasgow Haskell Compiler)와 Cabal 패키지 매니저를 설치해야 합니다. 이제 ```Haskell``` 코드 블록을 사용하여 예제 코드를 작성해보겠습니다.
+## 어떻게 시작할까요?
 
-```Haskell
--- 이 코드는 "Hello, world!"를 출력하는 간단한 프로그램입니다.
-main = putStrLn "Hello, world!"
-```
-
-위의 코드에서 ```main``` 함수는 프로그램의 시작점인 것을 알 수 있습니다. 우리는 ```putStrLn``` 함수를 사용하여 텍스트를 콘솔에 출력할 수 있습니다. 이를 실행해보면 "Hello, world!"라는 텍스트가 출력될 것입니다.
-
-더 복잡한 예제를 살펴보겠습니다.
+우선, Haskell을 설치해야 합니다. 이를 위해 Haskell 플랫폼을 다운로드하고 설치할 수 있습니다. 설치가 완료된 후, `ghci`를 실행해 Haskell 인터프리터를 사용할 수 있습니다.
 
 ```Haskell
--- 이 코드는 두 수를 입력받아 더한 후 출력하는 프로그램입니다.
-main = do
-    putStrLn "첫 번째 수를 입력하세요: "
-    num1 <- getLine
-    putStrLn "두 번째 수를 입력하세요: "
-    num2 <- getLine
-    let result = (read num1 :: Int) + (read num2 :: Int)
-    putStrLn $ "두 수의 합은 " ++ show result ++ "입니다."
+$ ghci
+GHCi, version 8.6.5: http://www.haskell.org/ghc/  :? for help
+Prelude>
+```
+우리는 이제 Haskell을 사용할 수 있습니다. 이제 `Hello World`를 출력하는 간단한 예제를 살펴보겠습니다.
+
+```Haskell
+Prelude> putStrLn "Hello World"
+Hello World
 ```
 
-위의 코드에서는 ```do``` 블록을 사용하여 순차적으로 코드를 실행할 수 있습니다. 먼저 사용자로부터 두 개의 수를 입력받은 후, ```read``` 함수를 사용하여 문자열을 정수형으로 변환합니다. 그리고 두 개의 수를 더한 값을 출력합니다.
+## 딥 다이브
 
-## 심층 분석
-새로운 프로젝트를 시작하기 전에는 기획 단계에서부터 심층적인 분석이 필요합니다. 프로젝트의 목표와 필요한 기술, 완성된 프로그램의 기능 등을 명확히 정의해야 합니다. 또한 Haskell 프로그래밍에서는 타입 시스템을 이해하는 것이 중요합니다. 타입 시스템을 제대로 이해하면 버그를 줄이고 코드를 더욱 안전하게 작성할 수 있습니다.
+새 프로젝트를 시작할 때 가장 중요한 것은 목표를 정의하는 것입니다. 목표를 정의할 때, 클린 코드를 작성하는 것을 목표로 삼으면 프로젝트를 시작하기 좋습니다.
 
-Haskell에서는 모든 값에 타입이 정해져 있기 때문에, 함수의 인자와 리턴 값의 타입을 명시적으로 정의해야 합니다. 이를 통해 코드의 가독성이 높아지고 디버깅이 더욱 쉬워집니다. 그리고 이러한 타입 시스템을 이용하여 프로그램을 더욱 견고하게 작성할 수 있습니다.
+Haskell은 함수형 언어이기 때문에, 함수를 중심으로 프로그래밍하게 됩니다. 새 프로젝트를 시작할 때 가장 먼저 해야 할 일은 필요한 함수를 작성하는 것입니다. 함수를 작성할 때에는 타입 시그니처를 명시하는 것이 좋습니다. 이는 함수의 입력과 출력에 대한 정보를 제공하기 때문입니다.
 
-## 참고 자료
-- [Haskell 프로그래밍 환경 구축하기](https://ohyecloudy.com/pnotes/archives
+또한 Haskell에서는 타입을 명시적으로 지정하는 것이 매우 중요합니다. 타입이 지정되지 않은 코드는 컴파일되지 않기 때문입니다. 따라서, 타입 시스템에 익숙해지는 것은 매우 중요합니다.
+
+간단한 프로그램을 작성할 때는 `ghci`를 사용하여 테스트하는 것을 추천합니다. 그러나 실제 프로젝트를 작성할 때는 Haskell 빌드 도구인 `cabal`이나 `stack`을 사용하는 것이 좋습니다. 이 빌드 도구들은 프로젝트를 관리하고 다양한 패키지를 추가할 수 있게 해주기 때문입니다.
+
+## 참고
+
+- [Haskell 사이트](https://www.haskell.org/)
+- [Haskell 플랫폼 다운로드](https://www.haskell.org/platform/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)

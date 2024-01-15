@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 将字符串转换为小写"
+title:                "将字符串转换为小写"
+html_title:           "Rust: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,38 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-为什么要把字符串转换成小写？在编程中，我们经常需要对用户输入的字符串做一些处理，例如比较、搜索或者输出。而将所有的字符串都转换成小写能够简化这些操作，避免大小写带来的混乱。
+当你在开发使用字符串的程序时，有可能会遇到需要将字符串转换为小写的情况。通过这篇文章，你将学习如何用Rust语言来实现这一功能。
 
-## 如何操作
+## 如何做
 
-Rust提供了一个`to_lowercase`方法，可以将字符串转换成小写。下面是一个简单的例子：
+首先，我们需要导入标准库中的 `str` 模块。
 
-```rust
-let str = "Hello, World!";
-let lower_case = str.to_lowercase();
-println!("{}", lower_case); // 输出 "hello, world!"
+```Rust
+use std::str;
 ```
 
-我们首先定义了一个字符串 `str`，然后使用`to_lowercase`方法将其转换成小写，最后使用`println`来输出结果。你可以运行下面的代码段来查看结果：
+接下来，我们可以使用 `to_lowercase()` 方法来将字符串转换为小写。
 
-```rust
-let str = "Hello, World!";
-let lower_case = str.to_lowercase();
-println!("{}", lower_case); // 输出 "hello, world!"
+```Rust
+let example_string = "Hello, World!";
+let lower_case_string = str::to_lowercase(example_string);
 ```
 
-更多关于`to_lowercase`方法的使用方法，可以查看Rust官方文档的说明。
+下面是完整的代码和输出示例：
 
-## 深入了解
+```Rust
+use std::str;
 
-当我们调用`to_lowercase`方法时，实际上Rust会返回一个新的字符串，而不是直接修改原来的字符串。这是因为Rust的字符串是不可变的，所以我们必须使用`let`关键字重新绑定新的字符串。
+fn main() {
+    let example_string = "Hello, World!";
+    let lower_case_string = str::to_lowercase(example_string);
+    
+    println!("{}", lower_case_string);
+}
+```
 
-此外，在将字符串转换成小写时，Rust会考虑不同语言的字母大小写规则。例如在德语中，字母 "ß" 会被转换成两个小写字母 "ss"。这样做能够保证字符串转换的准确性。
+输出：
 
-## 查看更多相关内容
+```bash
+hello, world!
+```
 
-如果你想了解更多关于Rust中字符串的操作，可以查看下面的链接：
+## 深入探讨
 
-- [Rust官方文档](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.to_lowercase)
-- [《Rust编程之道》字符串相关章节](https://rustwiki.org/zh-CN/rust-by-example/string.html)
-- [Rust中文社区的字符串相关讨论](https://rust.cc/article?id=8bdd926d-3f3d-4ff1-ac1e-711a974c597e)
+在 Rust 中，字符串是一个 `String` 类型的变量，它默认是不可变的。因此，我们不能直接修改字符串的大小写，而是需要创建一个新的字符串来存储转换的结果。这就是为什么我们在上面的例子中使用 `str::to_lowercase()` 方法。
+
+此外，`to_lowercase()` 方法并不是仅适用于英文字符，它也可以支持 Unicode 字符集。
+
+## 参考链接
+
+- [Rust官方文档 - str::to_lowercase()](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
+- [Rust编程语言 - 处理字符串](https://kaisery.github.io/trpl-zh-cn/ch08-02-strings.html)
+- [Rust标准库 - 字符串操作](https://doc.rust-lang.org/std/str/)
+
+## 参考
+
+- [为什么要使用 Rust？初学者指南](https://juejin.im/post/5a068bbc5188255de3435360)
+- [Rust语言入门指南](https://juejin.im/post/5cc978f2f265da03aa34e2a0)

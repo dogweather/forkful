@@ -1,6 +1,7 @@
 ---
-title:                "C#: Analyse des arguments de ligne de commande"
-simple_title:         "Analyse des arguments de ligne de commande"
+title:                "La lecture des arguments de la ligne de commande"
+html_title:           "C#: La lecture des arguments de la ligne de commande"
+simple_title:         "La lecture des arguments de la ligne de commande"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,63 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes programmeur en C#, il est très probable que vous ayez déjà entendu parler des arguments de ligne de commande. Mais peut-être que vous ne comprenez pas tout à fait pourquoi ils sont utiles et pourquoi vous devriez apprendre à les utiliser. Dans cet article, je vais vous expliquer pourquoi il est important de pouvoir lire les arguments de ligne de commande dans vos programmes.
+Si vous êtes un développeur en C#, vous vous êtes sûrement déjà retrouvé dans une situation où vous avez besoin de fournir des arguments en ligne de commande à votre programme. Cet article vous expliquera pourquoi il est important de savoir lire les arguments en ligne de commande et comment le faire efficacement.
 
 ## Comment faire
 
-Pour commencer, jetons un coup d'œil à un exemple de code qui utilise des arguments de ligne de commande en C#. Nous allons créer un programme simple qui prend un argument de ligne de commande et l'affiche à l'écran. Voici le code :
-
 ```C#
-using System;
-
-namespace CommandLineArgs
+static void Main(string[] args)
 {
-    class Program
+    // Votre programme commence ici
+    // La variable 'args' contient les arguments en ligne de commande
+    // Utilisez un boucle foreach pour parcourir les arguments
+    foreach (string arg in args)
     {
-        static void Main(string[] args)
-        {
-            // Vérifie si l'argument de ligne de commande a été fourni
-            if (args.Length > 0)
-            {
-                // Affiche le premier argument à l'écran
-                Console.WriteLine("L'argument fourni est : " + args[0]);
-            }
-            else
-            {
-                Console.WriteLine("Aucun argument fourni !");
-            }
-        }
+        Console.WriteLine(arg);
     }
 }
 ```
-
-Ensuite, nous allons compiler et exécuter le code avec différents arguments de ligne de commande :
-
+Output:
 ```
-> csc Program.cs
-> Program.exe
-Aucun argument fourni !
+> MonProgramme.exe argument1 argument2
 
-> Program.exe Bonjour
-L'argument fourni est : Bonjour
+argument1
+argument2
 ```
-
-Comme vous pouvez le voir, lorsque nous exécutons le programme sans argument, il affiche simplement un message indiquant qu'aucun argument n'a été fourni. Mais lorsque nous lui donnons un argument, il l'affiche à l'écran.
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment utiliser les arguments de ligne de commande, vous pourriez vous demander à quoi cela peut vous servir. Eh bien, les arguments de ligne de commande peuvent être très utiles lorsque vous souhaitez que votre programme soit plus flexible. Par exemple, vous pourriez vouloir que votre programme puisse agir différemment en fonction de l'argument fourni. Cela peut être particulièrement utile dans les scripts ou les programmes en ligne de commande.
+Lire les arguments en ligne de commande peut sembler simple, mais il y a quelques détails à prendre en compte pour bien le faire. Tout d'abord, sachez que la variable 'args' est de type 'string[]', c'est-à-dire un tableau de chaînes de caractères. Vous pouvez donc utiliser toutes les méthodes et propriétés d'un tableau pour manipuler vos arguments.
 
-Vous pouvez également utiliser les arguments de ligne de commande pour passer des informations spécifiques à votre programme, telles que des paramètres de configuration ou des chemins de fichiers. Cela peut vous éviter d'avoir à modifier votre code chaque fois que vous devez changer ces valeurs.
+De plus, gardez à l'esprit qu'il est possible de passer des arguments avec des guillemets, ce qui peut entraîner des problèmes si vous n'y faites pas attention. Par exemple, si votre argument contient un espace, il sera considéré comme deux arguments distincts.
 
-Enfin, les arguments de ligne de commande peuvent également être utilisés pour déboguer votre programme. Par exemple, si vous rencontrez un problème avec votre programme, vous pouvez utiliser un argument de ligne de commande pour activer un mode de débogage et afficher plus d'informations sur ce qui se passe dans votre code.
+Enfin, il est important de vérifier que les arguments ont été fournis dans le bon ordre et qu'ils correspondent bien à ceux attendus par votre programme. Une erreur peut facilement survenir si un utilisateur entre des arguments de manière incorrecte.
 
 ## Voir aussi
 
-Maintenant que vous avez compris comment utiliser les arguments de ligne de commande en C#, vous pouvez les incorporer dans vos programmes pour les rendre plus polyvalents et pratiques. Pour en savoir plus sur les arguments de ligne de commande, voici quelques liens utiles :
+- [Documentation officielle sur les arguments de ligne de commande en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Article sur les bonnes pratiques en programmation en ligne de commande avec C#](https://lostechies.com/seanbiefeld/2013/12/29/better-command-line-parsing-in-net/)
 
-- [Documentation officielle de Microsoft sur les arguments de ligne de commande en C#](https://docs.microsoft.com/fr-fr/archive/msdn-magazine/2014/december/command-line-parsing-with-system-commandlineto)
-- [Un tutoriel vidéo sur les arguments de ligne de commande en C#](https://www.youtube.com/watch?v=fnYxuI-JxnI)
-- [Un article sur l'utilisation des arguments de ligne de commande pour personnaliser vos programmes en C#](https://www.codeproject.com/Articles/3111/Command-Line-Arguments-in-C-)
-
-N'hésitez pas à explorer davantage pour découvrir toutes les possibilités qu'offrent les arguments de ligne de commande en C#. Bonne programmation !
+Félicitations, vous savez maintenant comment lire efficacement les arguments en ligne de commande en C#. N'hésitez pas à consulter ces sources pour en apprendre davantage sur les meilleures pratiques en la matière.

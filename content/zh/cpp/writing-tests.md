@@ -1,6 +1,7 @@
 ---
-title:                "C++: 编写测试。"
-simple_title:         "编写测试。"
+title:                "编写测试"
+html_title:           "C++: 编写测试"
+simple_title:         "编写测试"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,70 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+##为什么
 
-编写测试代码是软件开发过程中很重要的一步，可以确保代码的质量和稳定性。通过编写测试，您可以及早发现和解决代码中的bug，减少后期维护成本。此外，测试可以帮助您更好地理解您的代码，并确保每次更改和添加功能不会破坏现有的功能。总而言之，编写测试可以为您的软件开发提供更高的保障，让您的代码更加可靠。
+测试是一个关键部分，是一个程序员应该掌握的技能。它可以帮助我们确保我们的代码的可靠性和正确性，以及发现并纠正潜在的错误，从而提高整体代码质量。
 
-## 如何编写测试
+##如何做
 
-编写测试代码可以分为三个步骤：
-
-1. 选择合适的测试框架。测试框架是一种用于编写和运行测试的工具，如Google Test和Catch2。选择适合您项目的测试框架可以让编写测试更加简单和高效。
-2. 编写测试用例。测试用例是针对您代码中不同功能和情况的测试代码。它们应该能够覆盖所有可能的场景，并验证代码是否按照预期运行。
-3. 运行和分析测试结果。运行测试，并仔细分析测试结果，确保所有的测试用例都通过。如果有测试失败，您就可以找出并解决代码中的问题。
-
-下面是一个简单的例子，演示如何使用Google Test框架来编写和运行测试：
+测试是由许多不同的程序编写的，用于检测和验证不同功能的正确性。下面是一个简单的例子，用于验证一个函数是否按预期工作：
 
 ```C++
-#include <gtest/gtest.h> // 导入Google Test框架
-
-// 定义一个简单的函数，用于计算两个数的和
-int sum(int a, int b) {
+// 定义一个函数，将两个整数相加
+int add(int a, int b) {
     return a + b;
 }
 
-// 定义一个测试用例，使用ASSERT宏来断言测试结果是否符合预期
-TEST(SumTest, PositiveNumbers) {
-    ASSERT_EQ(sum(2, 2), 4); // 验证2 + 2的结果是否为4
-    ASSERT_EQ(sum(5, 10), 15); // 验证5 + 10的结果是否为15
+// 测试函数，验证add函数是否按预期运行
+void test_add() {
+    // 定义输入参数
+    int num1 = 5;
+    int num2 = 3;
+    // 预期输出结果
+    int expected_result = 8;
+    // 调用函数获取实际结果
+    int actual_result = add(num1, num2);
+    // 验证预期结果和实际结果是否相等
+    if (actual_result == expected_result) {
+        // 如果相等，测试通过
+        cout << "Test passed!" << endl;
+    } else {
+        // 如果不相等，测试不通过
+        cout << "Test failed." << endl;
+    }
 }
 
-// 定义另一个测试用例，使用EXPECT宏来断言测试结果是否符合预期
-TEST(SumTest, NegativeNumbers) {
-    EXPECT_EQ(sum(-3, -5), -8); // 验证-3 + -5的结果是否为-8
-    EXPECT_EQ(sum(-10, 10), 0); // 验证-10 + 10的结果是否为0
-}
-
-// 定义一个主函数，在该函数中运行所有的测试用例
-int main(int argc, char* argv[]) {
-    ::testing::InitGoogleTest(&argc, argv); // 初始化Google Test框架
-    return RUN_ALL_TESTS(); // 运行所有的测试用例，并返回测试结果
+// 主函数，调用测试函数进行验证
+int main() {
+    test_add();
+    return 0;
 }
 ```
 
-运行以上代码，将会得到如下输出：
+输出结果：
 
 ```
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from SumTest
-[ RUN      ] SumTest.PositiveNumbers
-[       OK ] SumTest.PositiveNumbers (0 ms)
-[ RUN      ] SumTest.NegativeNumbers
-[       OK ] SumTest.NegativeNumbers (0 ms)
-[----------] 2 tests from SumTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (1 ms total)
-[ PASSED   ] 2 tests.
+Test passed!
 ```
 
-测试结果显示，所有的测试用例都通过了，这意味着函数sum的运行结果符合预期。
+在测试代码中，我们首先定义输入参数和预期输出结果。然后，我们调用函数来获取实际结果，并在测试中验证预期结果和实际结果是否相等。如果测试通过，则输出"Test passed!"，否则输出"Test failed."。
 
-## 深入了解测试
+##深入探索
 
-编写测试代码还有很多更深层次的技巧，如测试覆盖率、参数化测试等。这些技巧可以帮助您更全面地测试您的代码，并提高测试的效率和可靠性。此外，熟悉测试框架的断言宏和各种命令行选项也可以帮助您更好地编写和运行测试。
+编写测试的方法有很多种，而且每种都有其优缺点。一种常用的方法是单元测试，它是针对一个函数或一个模块的测试，可以更快地定位错误。另一种常用的方法是集成测试，它测试多个模块之间的互操作性。无论选择哪种方法，编写测试都需要谨慎和耐心，从而提高代码的可靠性和稳定性。
 
-## 参考资料
+##另请参阅
 
-- [Google Test官方文
+- [C++ 单元测试教程](https://www.codeproject.com/articles/6548/unit-testing-with-visual-cplusplus-using-the-micr)
+- [Google Test：C++ 单元测试框架](https://github.com/google/googletest)

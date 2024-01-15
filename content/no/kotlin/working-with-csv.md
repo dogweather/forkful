@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Å jobbe med csv"
+title:                "Å jobbe med csv"
+html_title:           "Kotlin: Å jobbe med csv"
 simple_title:         "Å jobbe med csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,44 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-CSV-filer er et vanlig format for å lagre og dele data i ulike programmer. Å jobbe med CSV-filer kan være nyttig for både programmerere og ikke-programmerere, da det gir en enkel måte å organisere og analysere data på. I denne bloggposten vil vi ta en titt på hvordan vi kan jobbe med CSV-filer ved hjelp av Kotlin-programmeringsspråket.
+Å jobbe med CSV-filer kan være svært nyttig for å håndtere store mengder data på en strukturert måte. Ved å bruke Kotlin kan man effektivt lese, skrive og manipulere CSV-filer, noe som kan spare mye tid og forenkle datahåndteringsprosessen.
 
-## Slik gjør du det
+## Hvordan
 
-Først og fremst må du importere biblioteket "kotlinx-csv" for å kunne jobbe med CSV-filer i Kotlin. Deretter kan du lese inn en CSV-fil ved å bruke funksjonen `CsvReader().open()` og spesifisere filstien til CSV-filen. For å få tilgang til dataene i CSV-filen, kan du bruke en løkke for å lese gjennom hver rad og deretter hente ut ønskede verdier ved å bruke indeksering.
-
-La oss si at vi har en CSV-fil med følgende innhold:
+For å jobbe med CSV-filer i Kotlin, trenger du først å importere "kotlinx-io" biblioteket. Deretter kan du bruke følgende kode for å lese data fra en CSV-fil:
 
 ```
-Navn,Alder,By
-Marius,28,Oslo
-Sofie,25,Bergen
+import kotlinx.io.core.*
+import kotlinx.serialization.*
+import kotlinx.serialization.csv.*
+
+val csvFile = File("path/to/file.csv")
+val csvContent = csvFile.readText()
+val csv = Csv { delimiter = ';' }
+val csvRecords = csv.readRecords(csvContent)
 ```
 
-Vi kan lese inn denne filen og skrive ut alle navnene ved å bruke følgende kode:
+Dette vil gi deg en liste med rader fra CSV-filen, som hver kan aksesseres ved hjelp av indeksering. For eksempel:
 
 ```
-val filsti = "/bruker/dokumenter/personer.csv"
-val innhold = CsvReader().open(filsti)
-innhold.forEach {
-    println(it[0]) // skriver ut navnene
+val firstRow = csvRecords[0]
+println(firstRow[1]) // Gir deg andre kolonne av første rad
+```
+
+For å skrive data til en ny CSV-fil, kan du bruke følgende kode:
+
+```
+val newCSVFile = File("path/to/newFile.csv")
+csv.write(newCSVFile) {
+    writeRow("Navn", "Alder")
+    writeRow("Anne", 30)
+    writeRow("Ole", 28)
 }
 ```
 
-Du kan også skrive ut hele raden ved å bruke `println(it)`.
+Dette vil opprette en ny CSV-fil med navn og alder i hver rad.
 
 ## Dypdykk
 
-Det finnes mer avanserte metoder for å jobbe med CSV-filer i Kotlin. Du kan for eksempel bruke `CsvWriter` for å skrive data til en CSV-fil, og sjekke om en fil eksisterer før du prøver å lese den inn. Du kan også spesifisere separator og linjeskift når du leser inn og skriver til CSV-filer.
-
-Kotlin har også innebygde funksjoner for å sortere og filtrere data fra CSV-filer, og du kan til og med bruke lambda-uttrykk for å gjøre dette på en enkel måte.
-
-Det er viktig å huske på at det finnes ulike formater og standarder for CSV-filer, så det kan være lurt å dobbeltsjekke at filen du jobber med har riktig struktur og formatering.
+Kotlin tilbyr også muligheten til å definere egendefinerte Serializers for komplekse CSV-strukturer. Dette gjøres ved å implementere CsvInput og CsvOutput grensesnittene. Det finnes også flere tredjepartsbiblioteker for å gjøre arbeidet med CSV-filer enda enklere i Kotlin, som for eksempel "Kotlin-CSV" og "Kotlin-Serialization-CSV".
 
 ## Se også
 
-Her er noen nyttige ressurser for å jobbe med CSV-filer i Kotlin:
-
-- [kotlinx-csv biblioteket](https://github.com/Kotlin/kotlinx-csv)
-- [Kotlin CSV-håndbok](https://kotlinlang.org/docs/reference/idioms.html#read-csv-file-into-list-of-rows)
-- [UOFFISIELL CSV-standard](https://tools.ietf.org/html/rfc4180)
+- [Kotlinx-io biblotek](https://github.com/Kotlin/kotlinx-io)
+- [Kotlin-CSV tredjepartsbibliotek](https://github.com/doyaaaaaken/kotlin-csv)
+- [Kotlin-Serialization-CSV tredjepartsbibliotek](https://github.com/doyaaaaaken/kotlin-csv/tree/master/kotlinx-serialization-csv)

@@ -1,5 +1,6 @@
 ---
-title:                "C: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "C: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "C"
 category:             "C"
@@ -9,78 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi Vertailla Kahden Päivämäärän Välillä?
+## Miksi
 
-Vertailemalla kahta päivämäärää voidaan selvittää eri päivämäärien välisiä suhteita ja mahdollisesti tehdä päätelmiä esimerkiksi ajankäytöstä tai ajanhallinnasta. Tämä voi olla hyödyllistä esimerkiksi projektinhallinnassa tai aikataulutuksessa.
+Monissa ohjelmointitehtävissä joudutaan vertailemaan kahta eri päivämäärää. Tämä voi olla tarpeen esimerkiksi tapahtumien järjestämiseen tai aikajärjestykseen perustuvien toimintojen suorittamiseen. Opi, miten voit helposti vertailla kahta päivämäärää C-ohjelmoinnin avulla.
 
-## Miten Vertailla Kahden Päivämäärän Välillä?
-
-Vertaamalla kahta päivämäärää voidaan käyttää C-ohjelmointikielen sisäänrakennettuja funktioita, kuten `difftime()`, joka laskee kahden annetun päivämäärän välisen ajan eron sekunneissa. Seuraavassa esimerkissä käytämme `difftime()`-funktiota laskemaan kuinka monta päivää on kulunut uudenvuodenpäivästä tänään.
+## Kuinka
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Alustetaan uudenvuodenpäivän aika rakenne
-    struct tm uusi_vuosi = {0};
-    uusi_vuosi.tm_year = 121; // Vuonna 2021
-    uusi_vuosi.tm_mon = 0; // Tammikuussa
-    uusi_vuosi.tm_mday = 1; // Ensimmäinen päivä
+  
+  // Luodaan kaksi aikarakennetta
+  struct tm date1 = {0};
+  struct tm date2 = {0};
 
-    // Selvitetään tämän päivän aika
-    time_t t = time(NULL);
-    struct tm* aika = localtime(&t);
+  // Asetetaan halutut päivämäärät
+  date1.tm_year = 121; // Vuosi 2021
+  date1.tm_mon = 1; // Helmikuu
+  date1.tm_mday = 22; // 22. päivä
 
-    // Lasketaan päivien ero käyttäen difftime() -funktiota
-    double erotus = difftime(mktime(aika), mktime(&uusi_vuosi)) / (60 * 60 * 24);
+  date2.tm_year = 120; // Vuosi 2020
+  date2.tm_mon = 11; // Joulukuu
+  date2.tm_mday = 1; // 1. päivä
 
-    printf("Kuinka monta päivää on kulunut uudenvuodenpäivästä tähän päivään: %d päivää.\n", (int) erotus);
+  // Muunnetaan aikarakenteet aikaleimoiksi
+  mktime(&date1);
+  mktime(&date2);
 
-    return 0;
+  // Vertaillaan päivämääriä
+  if (date1.tm_year > date2.tm_year) {
+    printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
+  }
+  else if (date1.tm_year < date2.tm_year) {
+    printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
+  }
+  else { // Vuodet ovat samat, vertaillaan kuukausia
+    if (date1.tm_mon > date2.tm_mon) {
+      printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
+    }
+    else if (date1.tm_mon < date2.tm_mon) {
+      printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
+    }
+    else { // Kuukaudet ovat samat, vertaillaan päiviä
+      if (date1.tm_mday > date2.tm_mday) {
+        printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
+      }
+      else if (date1.tm_mday < date2.tm_mday) {
+        printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
+      }
+      else { // Päivämäärät ovat samat
+        printf("Päivämäärät ovat samat.");
+      }
+    }
+  }
+
+  return 0;
 }
 ```
 
-**Tulostus:**
-```
-Kuinka monta päivää on kulunut uudenvuodenpäivästä tähän päivään: 215 päivää.
-```
+Tämä esimerkkikoodi osoittaa, miten voit vertailla kahta päivämäärää C-ohjelmoinnin avulla. Koodi hyödyntää aikarakenteita ja aikaleimoja, jotta päivämäärien vertailu onnistuu.
 
-## Syvällisemmin Kahden Päivämäärän Vertailusta
+## Syväsukellus
 
-C-ohjelmointikielen sisäänrakennettujen funktioiden lisäksi voidaan myös käyttää omia funktioita päivämäärien vertailuun. Esimerkiksi seuraavassa funktiossa tarkastellaan kahta annettua päivämäärää ja vertaillaan niiden vuosia, kuukausia ja päiviä.
+Päivämäärien vertaileminen voi joskus olla monimutkaisempaa, sillä päivämäärät voivat sisältää myös aikaa. Tällöin tarvitaan esimerkiksi `difftime`-funktiota, joka vertailee kahta aikaleimaa ja palauttaa niiden välisen ajan erotuksen. Lisäksi voit käyttää `struct tm` -rakenteen muita kenttiä, kuten tunti tai minuutti, vertailuun.
 
-```C
-int vertaa_pvm(struct tm pvm1, struct tm pvm2) {
+## Katso myös
 
-    // Vertaa vuosia
-    if(pvm1.tm_year > pvm2.tm_year) {
-        return 1;
-    } else if(pvm1.tm_year < pvm2.tm_year) {
-        return -1;
-    }
-
-    // Vertaa kuukausia
-    if(pvm1.tm_mon > pvm2.tm_mon) {
-        return 1;
-    } else if(pvm1.tm_mon < pvm2.tm_mon) {
-        return -1;
-    }
-
-    // Vertaa päiviä
-    if(pvm1.tm_mday > pvm2.tm_mday) {
-        return 1;
-    } else if(pvm1.tm_mday < pvm2.tm_mday) {
-        return -1;
-    }
-
-    // Päivämäärät ovat samoja
-    return 0;
-}
-```
-
-Tämä funktio palauttaa arvon `1`, mikäli ensimmäinen annettu päivämäärä (`pvm1`) on myöhäisempi kuin toinen annettu päivämäärä (`pvm2`). Arvo `-1` palautetaan, jos `pvm1` on aikaisempi kuin `pvm2`. Jos päivämäärät ovat samoja, funktio palauttaa `0`.
-
-## Katso Myös
-
-- [C -
+- [C-kielen virallinen dokumentaatio](https://www.iso.org/standard/74528.html)
+- [Aikarakenne C-ohjelmoinnissa](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
+- [Esimerkkejä päivämäärien vertailusta C:ssä](https

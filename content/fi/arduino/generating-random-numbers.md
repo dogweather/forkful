@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Satunnaisten lukujen luominen"
-simple_title:         "Satunnaisten lukujen luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Arduino: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -9,37 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi?
+## Miksi
 
-Monet Arduino-projektit vaativat satunnaisia lukuja, kuten arpajaiset tai pelit. Satunnaisuus lisää jännitystä ja vaihtelua projekteihin. Onneksi Arduinon kirjastossa on helppokäyttöinen toiminto satunnaislukujen luomiseksi.
+Arduinolla satunnaislukujen generointi voi olla hyödyllistä esimerkiksi pelien tai arpajaisten luomisessa, satunnaisten päätösten tekemisessä tai salauksen avaimien generoinnissa.
 
-# Kuinka?
+## Miten
 
-`Arduino -kirjasto tarjoaa alustan satunnaislukujen luomiselle. Tämä tapahtuu käyttämällä `random()` -funktiota ja määrittämällä haluttu vaihteluväli.` Arduino -funktio tuottaa kokonaislukuja (integers), mutta se voidaan muuntaa halutuksi muotoon.`
+**Huom. Tämä ohje on toteutettu käyttäen Arduino UNO -laitetta.**
 
-```Arduino
-int satunnaisluku = random(1, 100); // luo kokonaisluvun väliltä 1-100
-float satunnaisluku = random(0.0, 1.0); // luo liukuluvun väliltä 0.0-1.0
-```
-
-Tässä esimerkissä luomme satunnaisen ledin syttyneen vaihtelemaan 15-30 minuutin välein.
+Satunnaislukujen generoiminen Arduinoilla onnistuu hyödyntämällä laitteen analogista sisäänmenoa ja sen ADC-muunninta. Tässä esimerkissä luomme funktiopakkauksen, joka palauttaa satunnaisen luvun väliltä 0-255.
 
 ```Arduino
-int minuutit = random(15, 30);
-delay(minuutit * 60000); // muutetaan minuutit millisekunneiksi
-digitalWrite(LED_PIN, HIGH); // ledi syttyy
+// Satunnaisen luvun generointi väliltä 0-255
+#include <Arduino.h>
+
+// Funktiopakkaus, joka palauttaa satunnaisen luvun
+// Parametrina käytetään analogisen sisääntulon pinniä
+int satunnainenLuku(int analogPin) {
+  // Asetetaan analogisen sisääntulon pinni INPUT-tilaan
+  pinMode(analogPin, INPUT);
+  
+  // Luetaan pinnin laskennallinen jännite ja tallennetaan se muuttujaan
+  int analoginenArvo = analogRead(analogPin);
+  
+  // Muutetaan laskennallinen jännite välille 0-255 ja palautetaan se
+  return map(analoginenArvo, 0, 1023, 0, 255);
+}
+
+// Pääohjelma
+void setup() {
+  // Alustetaan sarjaliikenne
+  Serial.begin(9600);
+}
+
+// Päälooppi, jossa silmukka jatkuu ikuisesti
+void loop() {
+  // Kutsutaan satunnainenLuku-funktiota ja tulostetaan arvo
+  int randomValue = satunnainenLuku(A0);
+  Serial.println(randomValue);
+
+  // Lyhyt viive ennen seuraavan arvon generointia
+  delay(1000);
+}
 ```
 
-# Syvemmälle
+**Sample output:**
 
-Arduino käyttää sisäistä satunnaislukugeneraattoriaan (`randomSeed()`) luodakseen satunnaislukuja.` Tämä funktio luo uuden alkuarvon (`seed`), joka perustuu laitteen sisäiseen kelloon.` Tämä varmistaa, että saamme jokaisella kerralla erilaisen satunnaisluvun.`
+```
+159
+112
+45
+78
+203
+14
+```
 
-Voit myös määrittää `randomSeed()` -funktion manuaalisesti antamalla sille halutun alkuarvon, mikä on hyödyllistä testauksessa tai tiettyjen lukujen generoimisessa.
+## Syväsukellus
 
-` Arduino tarjoaa myös muita satunnaisuutta liittyviä funktioita, kuten `randomSeed()` -funktio, joka luo jatkuvasti satunnaisia lukuja.` Näitä funktioita voi tutkia lisää Arduinon dokumentaatiosta.
+Arduino käyttää Pseudorandom Number Generator (PRNG) -algoritmia satunnaislukujen generoimiseen. Tämä tarkoittaa sitä, että luvut eivät ole täysin satunnaisia, vaan ne voidaan toistaa tietyillä syötteillä. PRNG-algoritmi perustuu matemaattiseen kaavaan, joka tuottaa pseudo satunnaisia arvoja.
 
-# Katso myös
+Arduinoissa on myös mahdollista käyttää laitteen sisäistä satunnaislukugeneraattoria käyttäen randomSeed() -funktiota. Tämä on luotettavampi tapa generoida satunnaisia lukuja, sillä se perustuu laitteen ympäristön muuttujiin, kuten kelloaikaan ja lämpötilaan. Tämä tekee satunnaislukugeneraattorista arvauksia vaikeamman.
 
-- [Arduino -kirjaston dokumentaatio Satunnainen](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Käyttäjäkysymys Stack Overflow -sivustolla satunnaislukujen luomisesta Arduinolla](https://stackoverflow.com/questions/12702260/how-to-generate-a-random-number-in-arduino)
-- [Instructables -opas satunnaislukujen käytöstä Arduinossa](https://www.instructables.com/id/Using-Random-Numbers-With-Arduino/)
+## Katso myös
+
+- [Arduino Reference - Random](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Arduino Playground - Random](https://playground.arduino.cc/Main/Random/)

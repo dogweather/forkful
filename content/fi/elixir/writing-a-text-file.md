@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Tekstitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Elixir: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,35 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen on olennainen osa monien ohjelmoijien arkea Elixir-ohjelmointikielen käytön myötä. Tekstikenttien kirjoittaminen voi olla hyödyllistä esimerkiksi tiedostojen tallentamisessa tai tietokantojen käsittelyssä.
+Kirjoittamalla tekstilahetis voidaan tallentaa tietoa pysyvästi ja jakaa sitä muille ohjelmille ja käyttäjille.
 
-## Miten
+## Kuinka
 
-Tekstitiedoston kirjoittaminen on melko yksinkertaista Elixirissä. Se voidaan tehdä käyttämällä `File.write/2` -funktiota, joka ottaa parametreinaan tiedoston nimen ja kirjoitettavan tekstin. Esimerkiksi:
+```elixir
+# Avataan uusi tiedosto
+file = File.open("uusi_tiedosto.txt", [:write])
 
-```Elixir
-File.write("tiedosto.txt", "Tämä on tekstiä, joka tallennetaan tiedostoon.")
+# Kirjoitetaan tiedostoon
+File.write(file, "Tämä on tekstiä uudessa tiedostossa")
+File.close(file)
+
+# Luetaan tiedosto
+File.read("uusi_tiedosto.txt")
 ```
 
-Tämän koodin suorittamisen jälkeen, uusi tiedosto nimeltä "tiedosto.txt" luodaan Elixir-projektisi juurikansioon ja siihen tallennetaan annettu teksti.
+Tulostus: "Tämä on tekstiä uudessa tiedostossa"
 
-Voit myös halutessasi luoda uuden tiedoston käyttämällä `File.open/2` -funktiota ja kirjoittaa siihen tekstiä käyttämällä `IO.write/2` -funktiota. Tämä antaa sinulle enemmän hallintaa tiedostoon kirjoittamisessa. Esimerkiksi:
+## Syvällinen syventymis
 
-```Elixir
-File.open("uusi_tiedosto.txt", [:write], fn file ->
-  IO.write(file, "Tämä on uusi tiedosto.")
-end)
-```
-
-Tässä esimerkissä luomme uuden tiedoston nimeltä "uusi_tiedosto.txt" ja kirjoitamme siihen tekstin "Tämä on uusi tiedosto." Käyttämällä `File.open/2` -funktiota ja `IO.write/2` -funktiota, voit myös muokata kirjoitustilan asetuksia, kuten käyttää binäärialiasta tai asettaa tiedostoon kirjoitettava koodausjärjestelmä.
-
-## Syvä sukellus
-
-Elixirin mahdollistama `File` -moduuli tarjoaa useita muita hyödyllisiä toimintoja tiedostoja käsitteleviin tehtäviin. Näihin kuuluu muun muassa `File.cp/2`, joka mahdollistaa tiedoston kopioinnin, ja `File.ls/1`, joka listaa tiedoston sisältämät tiedostot ja kansiot.
-
-Lisäksi, `File` -moduuli sisältää myös `IO.gets/2` ja `IO.read/2` -funktiot, joiden avulla voit lukea tiedostosta tietoa käyttäen esimerkiksi rivien lukumäärää tai merkkijonoa rajauksena. Täysi lista `File` -moduulissa saatavilla olevista funktioista löytyy [Elixirin virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/File.html).
+Tekstilahde on keskeinen osa Elixir-ohjelmointikieltä ja se on integroitu vahvasti kieleen. Textiä voidaan käyttää eri tapoja, kuten tallentaa tietoa, luoda lokitiedostoja tai jopa luoda käyttöliittymään sisältöä. Jatka tutustumista tähän tärkeään osa-alueeseen ja löydä uusia tapoja käyttää tekstilahetis Elixirin kanssa.
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio tiedostojen käsittelystä](https://hexdocs.pm/elixir/File.html)
-- [Elixirin tiedostojen käsittelyn perusteet -opas](https://www.learnelixir.tv/elixir-tutorial/files/)
+- [Elixirin virallinen dokumentaatio tekstilahetiksi](https://hexdocs.pm/elixir/File.html)
+- [Elixirin tekstilahetin perusteet](https://www.tutorialspoint.com/elixir/elixir_files.htm)
+- [Käyttötapoja Elixirin tekstilahetille](https://www.dailydrip.com/blog/working-with-elixir-binary-text-files)

@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Creating a temporary file"
+title:                "Creating a temporary file"
+html_title:           "Elm recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a common task in programming. It allows for the temporary storage and manipulation of data before it is permanently saved or discarded. In Elm, temporary files can be useful for tasks like file uploads, caching, and data processing.
+Ever found yourself in need of creating a temporary file in your Elm program? Temporary files can be useful for various reasons such as storing information that may only be needed temporarily or for testing purposes. Whatever your reason may be, this article will show you how to easily create a temporary file in Elm.
 
 ## How To
 
-To create a temporary file in Elm, we first need to import the `File` module:
+To create a temporary file in Elm, we will be utilizing the `File` and `Task` modules. First, we need to import both of these modules into our program:
 
 ```Elm
 import File
+import Task
 ```
 
-Next, we can use the `create` function from the `File` module to create a temporary file. This function takes in two arguments: a filename and the content of the file.
+Next, we will use the `File.tempFile` function to create the temporary file. This function takes in two arguments: a directory path and a file name. Let's say we want to create a temporary file called `my_temp_file.txt` in our project's root directory. We can achieve this by calling the `File.tempFile` function with the following arguments:
 
 ```Elm
-File.create "temp.txt" "This is the content of the temporary file." 
+let
+  dirPath = "./"
+  fileName = "my_temp_file.txt"
+  result = Task.perform fileCreated (File.tempFile dirPath fileName)
+in
+  text "File created!"
 ```
 
-This will create a temporary file named `temp.txt` with the given content. We can also use `File.create` to create a file with data from a specific source, such as a URL or a user's input:
+We have used the `Task.perform` function to handle the asynchronous nature of creating a file. The `fileCreated` function will be called once the file is successfully created. We can define this function as follows:
 
 ```Elm
-File.create "temp.txt" model.fileData
+fileCreated : Result File.Error FilePath -> Html msg
+fileCreated result =
+  case result of
+    Ok path ->
+      text ("Temporary file created at: " ++ path)
+
+    Err error ->
+      text ("File creation failed with error: " ++ (toString error))
 ```
 
-Once the temporary file is created, we can manipulate and use it as needed within our program. It is important to remember that temporary files are not automatically deleted, so we need to use the `delete` function from the `File` module to remove them when they are no longer needed.
+This code will display a message informing us of the successful creation of our temporary file. We can also use the `File.write` function to write content to our temporary file. Here's an example of writing the string "Hello, World!" to our temporary file:
+
+```Elm
+let
+  dirPath = "./"
+  fileName = "my_temp_file.txt"
+  content = "Hello, World!"
+  result = Task.perform fileWritten (File.tempFile dirPath fileName)
+in
+  text "Content written to file!"
+```
+
+Notice that we have used a different function, `fileWritten`, for handling the result of our `File.write` operation. This function is defined similarly to `fileCreated` but with one small difference:
+
+```Elm
+fileWritten : Result File.Error FilePath -> Html msg
+fileWritten result =
+  case result of
+    Ok path ->
+      Task.perform fileClosed (File.write path content)
+
+    Err error ->
+      text ("Write failed with error: " ++ (toString error))
+```
+
+Here, we have called the `Task.perform` function once again, this time to handle the result of the `File.write` operation. Finally, our `fileClosed` function would close the file once the content is successfully written:
+
+```Elm
+fileClosed : Result File.Error () -> Html msg
+fileClosed result =
+  case result of
+    Ok _ ->
+      text "Temporary file closed!"
+
+    Err error ->
+      text ("File closing failed with error: " ++ (toString error))
+```
+
+And that's it! We have successfully created, written content to, and closed our temporary file in Elm.
 
 ## Deep Dive
 
-Behind the scenes, creating a temporary file in Elm actually creates a real file on your computer's file system. However, the file's name will have a unique indicator attached to it, such as a random number or timestamp, to differentiate it from other files.
-
-It is also worth noting that the temporary file will be stored in a system-specific temporary directory, rather than the directory where your Elm code is located. This is to prevent cluttering your code directory with temporary files.
-
-When using `File.create`, it is also possible to specify the type of data you are including in the file by providing a third argument, such as `text/plain` or `image/png`. This can be useful for file uploads or when working with different types of data.
+Behind the scenes, the `File.tempFile` function is using the browser's `File` API to create the temporary file. This API creates a file with a unique name in the specified directory. So, if we try to create a file with the same name in the same directory, it will generate a new unique name for the file. This ensures that our temporary files do not conflict with each other and are always distinguishable.
 
 ## See Also
 
-- [Elm File module documentation](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Temporary files in programming](https://en.wikipedia.org/wiki/Temporary_file)
+- [Official Elm documentation on File module](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Official Elm documentation on Task module](https://package.elm-lang.org/packages/elm/core/latest/Task)

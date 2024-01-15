@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Skapa en temporär fil"
+title:                "Skapa en temporär fil"
+html_title:           "Elm: Skapa en temporär fil"
 simple_title:         "Skapa en temporär fil"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,42 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skapa en tillfällig fil kan vara användbart i många situationer, speciellt inom programmering. Det kan till exempel vara användbart när man vill spara temporära data som bara behövs under en kort stund eller när man vill skapa en temporär backup av en befintlig fil.
+Att skapa en tillfällig fil är ett vanligt problem som många utvecklare står inför. Det kan handla om att behöva hantera temporära data eller skapa en mellanlagring för en process. Oavsett anledning kan Elm ge en enkel och effektiv lösning på detta problem.
 
-## Hur man gör det
+## Så här gör du
 
-För att skapa en temporär fil i Elm, kan man använda funktionen `File.temp`. Detta skapar en fil med ett unikt namn som är garanterat att inte redan finnas på systemet. Här är ett exempel på hur man kan använda funktionen:
+För att skapa en temporär fil i Elm kan vi använda oss av funktionen `File.temp`. Den tar emot två argument, ett filnamn och en eventuell mapp där filen ska skapas. Om ingen mapp anges kommer filen att skapas i den tillfälliga mappen för applikationen.
 
-```elm
-import File
-
-tempFile : Task x File.Handle
-tempFile =
-  File.temp "miau.txt" -- skapar en temporär fil med namnet "miau.txt"
-
--- Den resulterande fil-handlingen kan användas för att skriva eller läsa data från filen.
+```Elm
+File.temp "tempFile.txt" Nothing
 ```
 
-När man anropar funktionen `File.temp` måste man ange en sträng som bestämmer namnet på filen. Funktionen returnerar sedan en `Task`, vilket är Elm's sätt att hantera asynkrona operationer. Man kan sedan använda `Task.perform` för att hantera resultatet, vilket, i detta fall, är en `File.Handle` som kan användas för att kommunicera med den temporära filen.
+Detta kommer att skapa en temporär fil med namnet "tempFile.txt" i den tillfälliga mappen. Om vi vill skapa filen i en specifik mapp kan vi använda en `Just` med den önskade mappens sökväg som andra argument.
+
+```Elm
+File.temp "log.txt" (Just "/Users/username/logs")
+```
+
+Vi kan även specificera vilken typ av fil vi vill skapa genom att använda funktionen `File.tempWithType`. Den tar emot samma argument som `File.temp` och ett extra argument för filtypen.
+
+```Elm
+File.tempWithType "tempFile" "csv" Nothing
+```
+
+Detta kommer att skapa en temporär CSV-fil med namnet "tempFile" i den tillfälliga mappen.
 
 ## Djupdykning
 
-När man skapar en temporär fil i Elm, blir filen automatiskt borttagen när programmet avslutas. Detta kan dock vara problematiskt om man behöver spara data längre än så, eller om programmet kraschar innan filen har rensats upp. I dessa fall kan man använda funktionen `File.withTemp`, som ger en chans att städa upp filen själv genom att använda en funktion som anropas när filen inte längre behövs. Här är ett exempel på hur man kan göra det:
+När vi skapar en temporär fil i Elm används operativsystemets tillfälliga mappar för att lagra filen. Detta gör att filen kommer att raderas automatiskt när applikationen stängs ner. Om vi behöver spara filen permanent kan vi istället använda funktionen `File.write`.
 
-```elm
-import File
-
-writeToTempFile : File.Handle -> ()
-writeToTempFile handle =
-  -- gör något med fil-handlingen, till exempel skriv till filen
-
-File.withTemp "miau.txt" writeToTempFile
--- filen är nu skapad och funktionen writeToTempFile kommer att anropas innan filen tas bort
+```Elm
+File.write "permFile.txt" "Text som ska sparas i filen"
 ```
 
-Det finns också möjlighet att ange ett annat ställe där den temporära filen ska skapas, genom att använda funktionen `File.withTempIn`. Detta kan vara användbart om man till exempel vill spara en fil på en specifik plats på hårddisken istället för i den temporära katalogen.
+Detta kommer att skapa en permanent fil med namnet "permFile.txt" i den nuvarande mappen och spara den angivna texten i filen. Vi kan även ändra filtyp genom att ange det som ett tredje argument.
+
+```Elm
+File.write "data" "JSON data" "json"
+```
+
+I denna kod kommer filen att sparas som en JSON-fil med namnet "data". Det är även möjligt att skriva till en specifik mapp genom att använda funktionen `File.writeTo`.
+
+```Elm
+File.writeTo "/Users/username/files" "doc.txt" "Text som ska sparas i filen" "txt"
+```
+
+Detta skapar en textfil med namnet "doc.txt" i mappen "/Users/username/files". Filen kommer fortfarande att sparas permanent, men i en specifik mapp istället för den tillfälliga mappen.
 
 ## Se även
 
-- [Elm dokumentation för `File`](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Elm kodexempel som demonstrerar temporära filer](https://github.com/elm/file/tree/master/example)
+- [Officiell Elm dokumentation för File](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm guide: File API](https://guide.elm-lang.org/interop/file.html)

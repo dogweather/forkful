@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Oversette en dato til en streng"
-simple_title:         "Oversette en dato til en streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Javascript: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,57 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er mange grunner til at man vil konvertere en dato til en tekstlig representasjon i et Javascript-program. Dette kan være nyttig for å vise datoer i en mer leselig form for brukere, eller for å lagre datoer i en mer strukturert format.
+Å konvertere en dato til en tekststreng er en nyttig funksjon i JavaScript som lar deg vise datoer på en mer lesbar måte for brukerne dine. Det kan også være nyttig for å lagre datoer i et leselig format for databehandling. 
 
 ## Hvordan
 
-For å konvertere en dato til en tekstlig representasjon, kan du bruke innebygde funksjoner i Javascript. Her er et eksempel på hvordan du kan gjøre dette:
+For å konvertere en dato til en tekststreng i JavaScript, kan vi bruke metoden `toString()`. Dette vil returnere en streng av den spesifikke datoen som er formatert basert på datamaskinens lokale tidssone. La oss se på et eksempel:
 
-```Javascript
-// Opprett en variabel med dagens dato
-var today = new Date();
-
-// Bruk toString()-funksjonen for å konvertere datoen til en tekstlig representasjon
-var dateAsString = today.toString();
-
-// Skriv ut den konverterte datoen i konsollen
-console.log(dateAsString);
-
-// Dette vil gi følgende output:
-// Wed Jun 24 2020 14:36:55 GMT+0200 (Central European Summer Time)
+```javascript
+let date = new Date() // Oppretter en ny dato-objektet som representerer dagens dato
+let dateString = date.toString() // Konverterer dato-objektet til en streng
+console.log(dateString) // Output: "Fri Aug 20 2021 13:27:33 GMT+0200 (sentraleuropeisk sommertid)"
 ```
 
-Som du kan se i eksempelet over, brukte vi funksjonen `toString()` for å konvertere datoen til en tekstlig representasjon. Dette er den enkleste måten å gjøre det på, men det finnes også andre metoder for å konvertere datoer til tekst i Javascript. Det er viktig å merke seg at formateringen av den tekstlige representasjonen vil variere avhengig av språk og region.
+Vi kan også bruke metoden `toLocaleString()` for å få en mer lesevennlig datoformat basert på brukerens lokale tidssone. La oss se på et annet eksempel:
 
-## Dykk ned
-
-Det finnes mange forskjellige formater som man kan bruke for å konvertere en dato til en tekstlig representasjon i Javascript. Dette kan inkludere å legge til klokkeslett, dager i uka eller måneder, og mye mer. Du kan også bruke forskjellige funksjoner for å formatere datoen på en mer spesifikk måte.
-
-Her er et annet eksempel på hvordan du kan konvertere en dato til et spesifikt format:
-
-```Javascript
-// Opprett en ny variabel med dagens dato
-var today = new Date();
-
-// Bruk de innebygde funksjonene for å hente ut dag, måned og år
-var day = today.getDate();
-var month = today.getMonth() + 1;
-var year = today.getFullYear();
-
-// Kombiner verdiene for å danne en tekstlig representasjon i ønsket format
-var dateAsString = day + "-" + month + "-" + year;
-
-// Skriv ut den konverterte datoen i konsollen
-console.log(dateAsString);
-
-// Dette vil gi følgende output:
-// 24-6-2020
+```javascript
+let date = new Date()
+let options = { dateStyle: "long", timeStyle: "short" }
+let dateString = date.toLocaleString("nb-NO", options)
+console.log(dateString) // Output: "20. august 2021 kl. 13:33"
 ```
 
-Som du kan se, kan du tilpasse formatet på den tekstlige representasjonen basert på dine behov og preferanser.
+Vi kan også formatere datoen manuelt ved å bruke metoder som `getDate()`, `getMonth()` og `getFullYear()` for å få informasjon om dag, måned og år. Deretter kan vi bruke disse verdiene sammen med tekststrenger for å bygge vår egen datoformat. La oss se på et eksempel:
+
+```javascript
+let date = new Date()
+let day = date.getDate()
+let month = date.getMonth() + 1 // Månedene starter på 0 i JavaScript, så vi må legge til 1
+let year = date.getFullYear()
+let dateString = day + "." + month + "." + year // Bygger vår egen datoformat
+console.log(dateString) // Output: "20.8.2021"
+```
+
+## Dypdykk
+
+Når vi bruker `toString()` eller `toLocaleString()` for å konvertere en dato til en tekststreng, vil den bli formatert basert på datamaskinens lokale tidssone. Dette betyr at samme JavaScript-kode kan gi forskjellige resultater avhengig av hvor og når den blir kjørt. Hvis du vil konvertere en dato til en tekststreng som alltid er i et spesifikt format, bør du bruke en bibliotek som Moment.js.
+
+En annen ting å merke seg er at datoen i eksemplene våre vil bli returnert i engelsk format, selv om vi bruker `toLocaleString()` med en norsk lokalitet. Dette skyldes at standarddatoformatet i JavaScript er ISO 8601, som bruker engelske navn for måneder og ukedager. Hvis du vil ha en norsk datoformat, bør du bruke bibliotek som Moment.js eller formatere datoen manuelt som vist i eksempelet ovenfor.
 
 ## Se også
 
-* [Javascript Date Objekt](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-* [toString() metode](https://www.w3schools.com/jsref/jsref_tostring_date.asp)
-* [Date Format Library](http://blog.stevenlevithan.com/archives/date-time-format)
+- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Format a Date in JavaScript](https://www.w3schools.com/js/js_date_formats.asp)

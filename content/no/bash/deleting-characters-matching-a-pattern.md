@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "Bash: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,20 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det kan være flere grunner til å slette tegn som matcher et visst mønster i Bash-programmering. Noen ganger kan det være nødvendig for å manipulere tekststrenger eller variabler, mens andre ganger kan det være en del av en større kodeprosess for å filtrere eller sortere data.
+
+Det er flere grunner til hvorfor du kan ønske å slette karakterer som matcher et visst mønster i Bash. Noen ganger kan dette være nødvendig for å rydde opp i en fil eller en tekststreng, eller for å filtrere ut uønsket informasjon.
 
 ## Hvordan
-Vi kan bruke Bash-kommandoen "sed" for å slette tegn som matcher et gitt mønster. La oss si at vi har en liste med telefonnumre i forskjellige formater, for eksempel "(123)456-7890" og "123-456-7890". Vi ønsker å fjerne parentesene og bindestreken og bare beholde tallene. Vi kan gjøre dette ved å kjøre følgende kommando:
+
+For å slette karakterer som matcher et mønster i Bash, kan du bruke kommandoen "sed" (stream editor). Denne kommandoen kan brukes til å manipulere og endre tekstfiler.
 
 ```Bash
-sed 's/[()-]//g' < phone_numbers.txt
+sed 's/[mønster]/[tomt]/g' filnavn.txt
 ```
 
-Her bruker vi "sed" kommandoen med s-erstatningsfunksjonen, etterfulgt av mønsteret vi vil erstatte (parentes og bindestrek) og deretter erstatningen (tom streng). "g" -flagget er også lagt til for å slette alle forekomster av mønsteret i hver linje. Resultatet vil være en liste med bare tall i forskjellige formater.
+La oss si at du har en fil med navnet "liste.txt" som inneholder følgende informasjon:
 
-## Dykk dypere
-For mer avanserte manipulasjoner, kan vi også bruke regulære uttrykk i kombinasjon med "grep" kommandoen for å slette tegn som matcher et bestemt mønster. Dette åpner opp muligheten til å lage mer komplekse søkemønstre og gjøre mer presis tekstbehandling.
+```
+1. Kari
+2. Petter
+3. Line
+```
 
-## Se også
-- [Linuxize - Using sed to Delete Lines Matching a Specific Pattern](https://linuxize.com/post/using-sed-to-delete-lines-matching-a-specific-pattern/)
-- [linux.die.net - sed command examples](https://linux.die.net/man/1/sed)
+Hvis du ønsker å slette alle tallene i denne filen, kan du bruke følgende kommando:
+
+```Bash
+sed 's/[0-9]//g' liste.txt
+```
+
+Dette vil resultere i at filen kun inneholder navnene, uten tallene foran.
+
+```
+Kari
+Petter
+Line
+```
+
+## Deep Dive
+
+Når du bruker "sed" kommandoen til å slette karakterer som matcher et mønster, er det viktig å forstå hvordan det fungerer. Kommandoen tar i bruk regulære uttrykk, som brukes til å beskrive et mønster av karakterer.
+
+I eksempelet over brukte vi [0-9] for å matche alle tall. Dette uttrykket betyr "match alle tall mellom 0 og 9". Hvis du ønsker å lære mer om regulære uttrykk, kan du se på dette nettstedet: https://www.regular-expressions.info/
+
+## Se Også
+
+- [Linux Bash Command Line Cheat Sheet](https://www.guru99.com/linux-bash-command-cheat-sheet.html)
+- [RegExr - Online Regular Expression Testing Tool](https://regexr.com/)

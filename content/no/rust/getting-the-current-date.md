@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Få dagens dato"
-simple_title:         "Få dagens dato"
+title:                "Hente nåværende dato"
+html_title:           "Rust: Hente nåværende dato"
+simple_title:         "Hente nåværende dato"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,37 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I denne bloggposten skal vi se nærmere på hvordan man kan få den nåværende datoen i Rust programmeringsspråket. Dette kan være nyttig i tilfeller der man trenger å vise datoen i et program eller trenger å lagre datoen for senere bruk. 
+Det er mange ulike situasjoner der du kanskje trenger å få den nåværende datoen i et program. For eksempel kan du ønske å registrere når koden din ble kjørt, eller vise datoen i et brukergrensesnitt. Uansett årsak, er det viktig å kunne få tak i den nåværende datoen for å gjøre programmet ditt mer dynamisk og nyttig.
 
-## Hvordan gjøre det
+## Hvordan
 
-Vi kan bruke standard Rust biblioteket chrono for å få den nåværende datoen. Først må vi legge til chrono biblioteket i vår Rust fil:
-```
-extern crate chrono;
-use chrono::{DateTime, Utc};
-```
+Det er flere måter å få tak i den nåværende datoen i Rust, avhengig av dine preferanser og behov.
 
-Deretter kan vi bruke DateTime og Utc funksjonene til å få den nåværende datoen som en streng:
-```
-let current_date: DateTime<Utc> = Utc::now();
-println!("{}", current_date.format("%Y-%m-%d").to_string());
+Først kan du bruke biblioteket `chrono`, som tilbyr en enkel måte å håndtere dato og tid på i Rust. Du kan installere dette biblioteket ved å legge til følgende linje under `[dependencies]` i `Cargo.toml` filen din:
+
+```Rust
+chrono = "0.4.15"
 ```
 
-Dette vil returnere datoen i formatet ÅÅÅÅ-MM-DD som kan endres ved å endre formatet i format funksjonen. For eksempel, hvis vi vil få datoen i formatet DD.MM.ÅÅÅÅ, kan vi bruke følgende kode:
-```
-println!("{}", current_date.format("%d.%m.%Y").to_string());
+Deretter kan du bruke `chrono::Local::now()`, som vil returnere et `DateTime<Local>` objekt som representerer den nåværende datoen og tiden i ditt lokale tidssone.
+
+```Rust
+use chrono::Local;
+
+let now = Local::now();
+println!("Dagens dato er: {}", now.format("%d.%m.%Y"));
 ```
 
-## Dykk dypere
+Dette vil printe ut datoen i formatet "dag.måned.år". Du kan også formatere datoen på andre måter ved å endre på `format()` funksjonen.
 
-Vi kan også bruke DateTime og Utc funksjonene til å få den nåværende datoen med klokkeslettet. I tillegg til å vise datoen, kan vi også bruke chrono biblioteket for å manipulere datoen. For eksempel kan vi legge til en dag til den nåværende datoen ved å bruke følgende kode:
+Du kan også få tak i den nåværende datoen ved hjelp av standardbibliotekets `std::time::SystemTime` type. Dette vil returnere en `SystemTime` struktur med informasjon om den nåværende datoen og tiden.
+
+```Rust
+use std::time::SystemTime;
+use std::time::UNIX_EPOCH;
+
+let now = SystemTime::now();
+let days_since_epoch = now.duration_since(UNIX_EPOCH).expect("Tiden må være etter epoken").as_secs() / (60 * 60 * 24);
+println!("Det har gått {} dager siden epoken.", days_since_epoch);
 ```
-let next_day = current_date + Duration::days(1);
-println!("{}", next_day.format("%Y-%m-%d").to_string());
-```
+
+Dette vil printe ut antall dager siden 1. januar 1970 (også kjent som epoken). Du kan også konvertere `SystemTime` til en `DateTime` objekt ved hjelp av `to_datetime()` funksjonen og deretter formatere datoen slik du ønsker.
+
+## Dypdykk
+
+Det er viktig å merke seg at både `chrono` og `SystemTime` vil gi deg datoen og tiden i ditt lokale tidssone. Dette kan være problematisk dersom du ønsker å vise den nåværende datoen for en bruker i en annen tidssone. I slike tilfeller kan det være lurt å bruke `Utc::now()` i `chrono` biblioteket for å få datoen og tiden i UTC (koordinert universaltid).
+
+Det er også verdt å nevne at `chrono` ikke støtter tidssoner, bare datokonverteringer. Hvis du trenger å arbeide med ulike tidssoner i ditt program, kan du se på biblioteket `chrono-tz` som utvider funksjonaliteten til `chrono`.
 
 ## Se også
 
-- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.11/chrono/)
-- [Offisiell Rust nettside](https://www.rust-lang.org/)
-- [Rust programmering på norsk](https://www.rust-lang-no.org/)
+- Rusts offisielle dokumentasjon: [https://www.rust-lang.org/](https://www.rust-lang.org/)
+- `chrono` biblioteket: [https://docs.rs/chrono/0.4.15/chrono/](https://docs.rs/chrono/0.4.15/chrono/)
+- `chrono-tz` biblioteket: [https://docs.rs/chrono-tz/0.5.0/chrono_tz/](https://docs.rs/chrono-tz/0.5.0/chrono_tz/)

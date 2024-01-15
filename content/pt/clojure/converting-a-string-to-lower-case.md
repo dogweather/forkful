@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Clojure: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que
+## Por que converter uma string em letras minúsculas?
 
-Converter uma string para letras minúsculas é uma tarefa comum em muitos projetos de programação. Isso pode ser útil para validar entradas de usuário, pesquisar em uma lista ou simplesmente padronizar o formato dos dados em um programa.
+Existem várias razões para converter uma string em letras minúsculas quando se está trabalhando com programação. Uma das principais razões é a padronização, já que muitas vezes é necessário comparar strings e essa comparação pode ser afetada pelas letras maiúsculas e minúsculas. Além disso, algumas funções específicas só funcionam com strings em letras minúsculas, então a conversão é necessária para que o código funcione corretamente.
 
-# Como fazer
+## Como fazer a conversão em Clojure
 
-Em Clojure, a função `clojure.string/lower-case` pode ser usada para converter uma string para letras minúsculas. Veja um exemplo abaixo:
+Para converter uma string em letras minúsculas em Clojure, utilizamos a função "lower-case". Veja um exemplo abaixo:
 
-```Clojure 
-(def x "Exemplo String")
-(clojure.string/lower-case x)
+```Clojure
+(lower-case "Olá Mundo")
 ```
-A saída desse código será `"exemplo string"`, com todas as letras minúsculas.
 
-# Mergulho profundo
+A saída desse código será "olá mundo", todas as letras da string em letras minúsculas. Essa função também pode ser utilizada em conjunto com outras funções, como por exemplo:
 
-Ao converter uma string para letras minúsculas, é importante considerar a diferença de acentuação entre diferentes idiomas. Por exemplo, em português, a letra "I" maiúscula com acento agudo é diferente da letra "i" minúscula. Para garantir que a conversão seja feita corretamente, é necessário utilizar a função `java.lang.String/toLowerCase` que leva em consideração essas diferenças.
+```Clojure
 
-Além disso, é importante notar que a função `lower-case` retorna uma nova string, deixando a string original intacta. Se você deseja modificar a string original, é necessário utilizar a função `string/lower-case!` que altera a string original in-place.
+(def texto "Bem vindo ao Universo")
+(println (lower-case (str "Olá " texto "!")))
+```
 
-# Veja também
+Nesse caso, a saída seria "olá bem vindo ao universo!". Como podemos notar, as letras maiúsculas da variável "texto" também foram convertidas para minúsculas.
 
-- [Documentação oficial da função `clojure.string/lower-case`](https://clojuredocs.org/clojure.string/lower-case)
-- [Post sobre conversão de strings para capitalização em Clojure](https://www.hugodias.com.br/conversao-de-string-para-maiuscula-minuscula-e-capitalizada-em-clojure/)
+## Profundidade na conversão de strings
 
----
+A função "lower-case" é uma função básica em Clojure, mas é importante entender que ela pode ter comportamentos diferentes dependendo do tipo de dado que está sendo utilizado. Por exemplo, ao utilizarmos a função em um número, o resultado será diferente do esperado:
 
-# Veja também
+```Clojure
+(lower-case 123)
+```
+
+A saída desse código será "123", já que a função não é capaz de converter um número em uma string. Além disso, é importante lembrar que a função só irá converter as letras que estão no alfabeto inglês, então caracteres especiais ou de outros idiomas não serão convertidos.
+
+## Veja também
+
+- Documentação sobre a função "lower-case" em Clojure: https://clojuredocs.org/clojure.core/lower-case
+- Artigo sobre como trabalhar com strings em Clojure: https://www.infoworld.com/article/3483420/get-started-with-clojure-string-processing-examples.html

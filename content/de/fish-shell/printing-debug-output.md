@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Ausgabe von Debugging-Informationen"
-simple_title:         "Ausgabe von Debugging-Informationen"
+title:                "Fehlersuchausgabe drucken"
+html_title:           "Fish Shell: Fehlersuchausgabe drucken"
+simple_title:         "Fehlersuchausgabe drucken"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -9,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Debug-Ausgaben sind ein nützliches Werkzeug, um Probleme beim Programmieren zu identifizieren und zu lösen. Mit der Fish Shell können wir dank ihrer einfachen und intuitiven Syntax problemlos Debug-Ausgaben in unserem Code einbauen.
 
-Das Drucken von Debug-Ausgaben ist eine nützliche Technik, um während des Programmierens Probleme zu identifizieren und zu beheben. Durch das Anzeigen von Ausgaben in Ihrem Code können Sie verfolgen, was Ihr Programm tut und welche Variablen aktualisiert werden. Auf diese Weise können Sie Fehler effizienter beheben und Ihre Code-Qualität verbessern.
-
-# Wie geht's?
-
-Mit Fish Shell können Sie Debug-Ausgaben auf einfache Weise erstellen. Alles, was Sie tun müssen, ist, den Befehl "echo" zu verwenden, gefolgt von der zu druckenden Nachricht oder Variablen. Zum Beispiel:
+## Wie man das macht
+Um Debug-Ausgaben in der Fish Shell zu drucken, verwenden wir einfach den `echo` Befehl. Hier ist ein Beispiel:
 
 ```Fish Shell
-set name Peter
-echo "Hello, $name!"
+echo "Debug-Ausgabe: Variable x hat den Wert 5"
 ```
 
-Dieser Code wird die Ausgabe "Hello, Peter!" erzeugen. Beachten Sie, dass wir die Variable "name" mit dem Präfix "$" verwenden, um ihren Wert in der Nachricht anzuzeigen. Auf diese Weise können wir die Werte von Variablen in unseren Debug-Ausgaben überwachen.
+Dies wird die Nachricht "Debug-Ausgabe: Variable x hat den Wert 5" auf dem Terminal ausgeben, wenn der Code ausgeführt wird.
 
-# Tiefer Einblick
-
-Es gibt einige Optionen, die Sie beim Drucken von Debug-Ausgaben mit Fish Shell berücksichtigen sollten. Zum Beispiel können Sie mit dem Flag "-n" am Ende des Befehls "echo" Leerzeichen zwischen den Argumenten entfernen. Sie können auch die Ausgabe von mehreren Befehlen in derselben Zeile kombinieren, indem Sie sie mit "&&" verketten.
-
-Eine weitere nützliche Technik ist, die Ausgabe in eine Datei umzuleiten, statt sie in der Konsole anzuzeigen. Dies kann hilfreich sein, um große Mengen an Debug-Ausgaben zu erfassen und später zu überprüfen. Zum Beispiel:
+Wir können auch Variablen oder Ausdrücke in unseren Debug-Ausgaben verwenden, um spezifischere Informationen zu erhalten. Hier ist ein Beispiel:
 
 ```Fish Shell
-echo "Debug-Ausgabe" >> debug.log
+set x 5
+set y "Hallo"
+echo "Debug-Ausgabe: Variable x hat den Wert $x und Variable y hat den Wert $y"
 ```
 
-Diese Zeile fügt die Nachricht "Debug-Ausgabe" am Ende der Datei "debug.log" hinzu. Sie können auch den Befehl "tee" verwenden, um die Ausgabe sowohl in die Konsole als auch in eine Datei zu leiten.
+Dies wird die Nachricht "Debug-Ausgabe: Variable x hat den Wert 5 und Variable y hat den Wert Hallo" ausgeben.
 
-# Siehe auch
+## Tiefentauchgang
+Es gibt verschiedene Arten, Debug-Ausgaben in unserer Fish Shell zu verwenden. Wir können sie zum Beispiel in einer Funktion oder Schleife platzieren, um den Zustand von Variablen oder Ausdrücken während des Programmablaufs zu überwachen. Wir können auch Bedingungen verwenden, um Debug-Ausgaben nur bei bestimmten Bedingungen auszudrucken.
 
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/
-- Solving Problems with Fish Shell's Echo Command: https://dev.to/erikaheidi/solving-problems-with-fish-shell-s-echo-command-5695
-- Mastering Debugging in Fish Shell: https://medium.com/@peterpme/mastering-debugging-in-fish-shell-435befb1bbf5
+Es ist auch möglich, Debug-Ausgaben in eine Datei umzuleiten, anstatt sie direkt auf dem Terminal auszugeben. Dies ist hilfreich, wenn wir lange oder mehrere Debug-Ausgaben haben und sie später leichter analysieren und überprüfen möchten.
+
+Zusätzlich können wir auch die Fish Shell-Erweiterung `fish_trace` verwenden, um detaillierte Debug-Informationen zu erhalten, z.B. welche Befehle ausgeführt wurden und in welcher Reihenfolge.
+
+In jedem Fall ist es wichtig, Debug-Ausgaben nur für Testzwecke zu verwenden und sie vor der Veröffentlichung des Codes zu entfernen.
+
+## Siehe auch
+- Fish-Shell-Dokumentation zu Debug-Ausgaben: https://fishshell.com/docs/current/commands.html#print
+- Fish-Shell-Dokumentation zur Erweiterung `fish_trace`: https://fishshell.com/docs/current/index.html#variables-other
+- Fish-Shell-Tutorials und -Beispiele: https://fishshell.com/docs/current/index.html#tutorials-examples

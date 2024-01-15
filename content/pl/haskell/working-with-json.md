@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "Haskell: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,56 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z formatem JSON jest nieodłączną częścią codziennej pracy programisty w języku Haskell. Jest to popularny sposób przechowywania i przesyłania danych w aplikacjach internetowych, co sprawia, że umiejętność operowania na tych strukturach jest niezbędna. W tej krótkiej notatce dowiesz się, jak łatwo przetwarzać i analizować JSON w Haskell.
+W dzisiejszych czasach, gdzie wszystkie aplikacje i systemy wymieniają dane, kluczowym elementem jest wygodny sposób reprezentacji tych danych. JSON (JavaScript Object Notation) jest popularnym formatem danych, który jest powszechnie stosowany w aplikacjach webowych i mobilnych. Dzięki użyciu JSONa, możliwe jest szybkie i łatwe przesyłanie danych między różnymi platformami. Dlatego, warto poznać jak w prosty sposób pracować z tym formatem w języku Haskell.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Przetwarzanie JSON w Haskell jest możliwe dzięki bibliotece `aeson` (od ang. *a JSON parser/printer*). Aby rozpocząć pracę, należy zaimportować odpowiednie moduły:
+Do pracy z JSON w Haskellu będziemy potrzebować odpowiedniej biblioteki, takiej jak "aeson". Najpierw jednak musimy zainstalować odpowiedni pakiet z pomocą menadżera pakietów - "cabal" lub "stack".
+
+```Haskell
+cabal install aeson
+```
+
+Aby móc przetwarzać dane w formacie JSON, musimy najpierw przekonwertować je na odpowiednie typy danych w Haskellu. Najpowszechniejszym sposobem jest użycie funkcji `decode` z biblioteki "aeson", która zamienia wartość typu `ByteString` na wartość typu `Maybe Value`. Przykładowy kod wyglądałby następująco:
 
 ```Haskell
 import Data.Aeson
+
+jsonData = "{\"name\": \"John\", \"age\": 27}"
+
+main = do
+    let maybeValue = decode jsonData :: Maybe Value
+    case maybeValue of
+        Just value -> print value
+        Nothing -> print "Parsowanie błędne!"
+```
+
+Powyższy kod najpierw dekoduje dane przekazane jako `ByteString` do typu `Maybe Value`, a następnie jeśli dekodowanie powiedzie się, wypisuje odpowiednią wartość. W przeciwnym wypadku, wypisuje informację o błędzie.
+
+Możemy również w prosty sposób przetwarzać dane JSON w plikach. Przykładowy plik "dane.json" zawierający informacje o pracownikach może wyglądać tak:
+
+```JSON
+[
+    {"name": "Anna", "age": 32, "position": "Developer"},
+    {"name": "Marek", "age": 28, "position": "Tester"},
+    {"name": "Kasia", "age": 25, "position": "Project Manager"}
+]
+```
+
+Aby przetworzyć ten plik w Haskellu, musimy najpierw go oczytać, a następnie wykorzystać funkcję `decode`:
+
+```Haskell
 import Data.ByteString.Lazy
+import Data.Aeson
+
+main = do
+    jsonData <- Data.ByteString.Lazy.readFile "dane.json"
+    let maybeValue = decode jsonData :: Maybe Value
+    case maybeValue of
+        Just value -> print value
+        Nothing -> print "Parsowanie błędne!"
 ```
 
-Następnie, można stworzyć wartość zawierającą przykładowy plik JSON:
+Oczywiście, dekodowane dane możemy przypisać już do konkretnych typów danych, np. listy pracowników.
 
 ```Haskell
-json = "{ \"imie\": \"Jan\", \"nazwisko\": \"Kowalski\", \"wiek\": 25 }"
+import Data.ByteString.Lazy
+import Data.Aeson
+
+data Employee = Employee {name :: String, age :: Int, position :: String} deriving (Show)
+
+instance FromJSON Employee where
+    parseJSON (Object v) = Employee <$> v .: "name" <*> v .: "age" <*> v .: "position"
+    -- w powyższym przypadku, nazwy pól w typie "Employee" muszą odpowiadać nazwom kluczy w danych JSON
+
+main = do
+    jsonData <- Data.ByteString.Lazy.readFile "dane.json"
+    let maybeEmployees = decode jsonData :: Maybe [Employee]
+    case maybeEmployees of
+        Just employees -> print employees
+        Nothing -> print "Parsowanie błędne!"
 ```
 
-Następnie, dokonujemy konwersji na strukturę danych w języku Haskell:
-
-```Haskell
-parsedJSON = decode (pack json) :: Maybe Value
-```
-
-Możemy teraz w prosty sposób uzyskać dostęp do konkretnych pól naszego obiektu JSON:
-
-```Haskell
-imie = parsedJSON >>= (\o -> o .: "imie") :: Maybe String
-```
-oraz wyświetlić je na ekranie:
-
-```Haskell
-print imie
-```
-
-Przykładowy output:
-
-`Just "Jan"`
+Warto również wspomnieć o funkcji `encode`, która działa w drugą stronę - zamienia wartości typów danych Haskell na reprezentację JSON.
 
 ## Deep Dive
 
-Warto zwrócić uwagę na to, że funkcja `decode` zwraca wartość typu `Maybe`, co oznacza, że może zwrócić w zależności od sytuacji albo poprawną strukturę danych albo `Nothing` (gdy format jest niepoprawny). Dlatego też, warto dokładnie przetestować kod, aby uniknąć nieoczekiwanych błędów.
-
-Kolejną przydatną funkcją z biblioteki `aeson` jest `encode`, która pozwala na konwersję wartości typu `Value` z powrotem do formatu JSON. Jest to szczególnie przydatne, gdy pracujemy z danymi w formacie JSON wewnątrz naszej aplikacji i chcemy przekonwertować je do postaci zrozumiałej dla innych serwisów czy API.
-
-W skrócie, biblioteka `aeson` pozwala na wygodne i łatwe przetwarzanie oraz konwersję danych w formacie JSON w języku Haskell.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki `aeson`](https://hackage.haskell.org/package/aeson)
-- [Poradnik dla początkujących do pracy z JSON w Haskell](https://www.snoyman.com/blog/2016/10/beginners-guide-to-json-with-haskell)
-- [Porównanie różnych bibliotek do pracy z JSON w Haskell](https://wiki.haskell.org/JSON)
-
-Dziękujemy za lekturę i życzymy owocnych przygód z programowaniem w Haskell!
+Aby łatwiej manipulować danymi typu `Value`, istnieje wiele przydatnych funkcji w bibliotece "aeson", takich jak `object`, `array`, `string`, `number`, `bool`. Moż

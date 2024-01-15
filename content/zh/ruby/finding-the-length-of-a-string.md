@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "计算字符串的长度"
+html_title:           "Ruby: 计算字符串的长度"
+simple_title:         "计算字符串的长度"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,43 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：当我们在编写程序时，可能需要知道字符串的长度。字符串长度可以帮助我们有效地处理和操作文本数据，因此能够提高程序的效率和准确性。
+## 为什么
 
-怎样做：下面是一些示例代码和输出，帮助您理解如何使用Ruby来获得一个字符串的长度：
+当你编写Ruby程序时，有时需要知道字符串的长度。比如说，你想要限制用户输入的字符数量，或者你需要通过字符串的长度来进行一些计算。在这篇文章中，我们将学习如何使用Ruby来找到字符串的长度。
+
+## 怎么做
 
 ```Ruby
-# 定义一个字符串
-str = "大家好，我是一个字符串！"
+# 先定义一个字符串
+str = "你好，世界！"
 
-# 使用.size方法获得字符串的长度
-puts str.size
-# 输出：11
-
-# 使用.length方法也可以获得字符串的长度
+# 使用String类的length方法来获取字符串的长度
 puts str.length
-# 输出：11
-
-# 除了使用内置方法，您也可以使用遍历的方式来获得字符串的长度
-# 定义一个变量用来存储字符串的长度
-length = 0
-
-# 使用.each_char遍历字符串中的每一个字符，并将length变量加一
-str.each_char do
-  length += 1
-end
-
-# 输出字符串的长度
-puts length
-# 输出：11
+#=> 6
 ```
 
-深入了解：除了上述提到的两种常用方法外，Ruby还提供了其他一些方法来获得字符串的长度。比如，使用.bytesize方法可以得到字符串的字节长度，使用.codepoints方法可以得到字符串的码点数量等等。另外，字符串在Ruby中是以对象的形式存在，因此您也可以使用对象的方法来获得字符串的长度。
+在上面的例子中，我们定义了一个字符串并赋值给变量`str`，然后通过调用`length`方法来获取字符串的长度，并用`puts`打印到屏幕上。如你所见，方法返回的值为该字符串中字符的数量。
 
-参考链接：
-- [Ruby官方文档：字符串长度方法](https://ruby-doc.org/core-2.6.3/String.html#method-i-length)
-- [Ruby官方文档：字符串对象的方法](https://ruby-doc.org/core-2.6.3/String.html#class-String-label-Methods)
-- [Ruby String类的有用方法总结](https://ruby-china.org/topics/11068)
+现在让我们来看一个更实际的例子，假设我们要限制用户输入的密码长度为8位，我们可以使用一个if语句来检查输入的密码长度：
 
-另见：
-- [Markdown语法指南](https://www.markdownguide.org/basic-syntax/)
-- [Ruby编程入门指南](https://www.ruby-lang.org/en/documentation/)
+```Ruby
+puts "请输入您的密码："
+password = gets.chomp  #获取用户输入并去掉结尾的换行符
+if password.length == 8
+	puts "密码设置成功！"
+else
+	puts "密码长度必须为8位！"
+end
+```
+
+在这个例子中，我们通过`length`方法来获取用户输入的密码的长度，并通过if语句来判断输入的密码是否符合要求。
+
+## 深入了解
+
+在Ruby中，每个字符串都是一个对象，它们共享`String`类的方法。`length`方法实际上是`String`类的一个实例方法，它返回接收这个方法的字符串的长度。它的工作原理是通过迭代字符串中的每个字符来计算长度。所以如果你有一个很长的字符串，计算它的长度可能会比较耗时。
+
+除了`length`方法，`String`类还有一个`size`方法也可以用来获取字符串的长度，它们的作用是一样的。
+
+## 参考链接
+
+- [Ruby的String类文档](https://ruby-doc.org/core-3.0.0/String.html)
+- [Ruby的length方法介绍](https://www.rubyguides.com/2019/08/ruby-string-length/#:~:text=The%20length%20method%20in%20Ruby,contains%20the%20finer%20details%20aspects.)
+- [通过Ruby中的length方法来计算字符串的长度](https://mentalized.net/journal/2011/03/31/dont_ask_get_with_ruby_question_mark_method/#:~:text=length%20is%20an%20instance%20that%20is%20actually%20implemented%20in%20C.)

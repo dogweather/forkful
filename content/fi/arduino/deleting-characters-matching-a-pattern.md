@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Kuviota vastaavien merkkien poistaminen"
+html_title:           "Arduino: Kuviota vastaavien merkkien poistaminen"
+simple_title:         "Kuviota vastaavien merkkien poistaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,38 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi poistaa merkkejä, jotka vastaavat kaavaa?
+## Miksi
 
-Arduino on suosittu mikrokontrollerijärjestelmä, jota käytetään laajasti tekemään erilaisia elektronisia projekteja. Yksi tärkeimmistä tehtävistä Arduino-ohjelmointissa on käsitellä merkkijonoja, eli tekstidataa. Joskus saattaa olla tarpeen poistaa tiettyjä merkkejä merkkijonosta, jos ne esimerkiksi haittaavat tietojen käsittelyä tai tulostusta.
+Miksi haluaisit poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä esimerkiksi, jos sinulla on tekstimuotoinen data ja haluat puhdistaa sen ennen sen käyttöä.
 
-# Kuinka poistaa merkkejä Arduino-ohjelmoinnissa?
+## Kuinka tehdä
 
-On olemassa monia tapoja poistaa merkkejä Arduino-ohjelmassa, mutta yksi yksinkertainen tapa on käyttää ```replace()``` -funktiota. Tämä funktio korvaa määritetyn merkkijonon uudella merkkijonolla. Alla on esimerkki, jossa ```replace()``` -funktiota käytetään poistamaan kaikki tyhjät välilyönnit merkkijonosta:
-
-```
-Arduino String example = "Hello   World";
-example.replace(" ", "");
-Serial.println(example); // Output: HelloWorld
-```
-
-# Syvemmälle merkkien poistamiseen
-
-Merkkien poistaminen voi olla hyödyllistä myös silloin, kun halutaan poistaa tietyt merkit, jotka vastaavat tiettyä kaavaa. Tämä voidaan tehdä esimerkiksi käyttäen ```if``` -lauseita ja ```substring()``` -funktiota, joka palauttaa halutun osan merkkijonosta.
+Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa, käyttämällä ```Arduino``` -koodia ja ```replace()``` -funktiota. Esimerkiksi, jos haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
 
 ```
-Arduino String example = "1234abc";
-for (int i = 0; i < example.length(); i++) {
-  if (isDigit(example.charAt(i))) {
-    String number = example.substring(i);
-    Serial.println(number); // Output: 1234
-    break;
-  }
-}
+Arduinostring data = "Hei 123 maailma!";
+data.replace("123", "");
 ```
 
-Tässä esimerkissä merkkiä, joka vastaa kaavaa ```[0-9]```, vastaava osa merkkijonosta on tallennettu uuteen String-muuttujaan ja tulostettu sarjaporttiin. Muutaman lisämuutoksen avulla voit helposti mukauttaa tätä koodia poistamaan muita kaavoja vastaavia merkkejä.
+Koodin jälkeen muuttuja ```data``` sisältäisi merkkijonon "Hei maailma!". Notice that the numbers have been deleted.
 
-# Katso myös
+## Syväsyventyminen
 
-- [Arduino String-referenssi](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [String-tiedoston korvaaminen substring-jono](https://www.instructables.com/Replacing-a-Substring-in-a-String-with-an-Arduino/)
+Funktio ```replace()``` toimii poistamalla kaikki merkkijonot, jotka vastaavat annettua kaavaa. Voit myös korvata ne toisella merkkijonolla antamalla kaksi parametria ```replace()``` -funktiolle. Esimerkiksi, ```data.replace("123", "ABC")``` korvaisi merkkijonon "123" merkkijonolla "ABC".
+
+## Katso myös
+
+- Arduino ```replace()``` -funktio: https://www.arduino.cc/reference/en/language/functions/strings/stringobject/replace/
+- Arduino merkkijonot: https://www.arduino.cc/reference/en/language/variables/data-types/string/

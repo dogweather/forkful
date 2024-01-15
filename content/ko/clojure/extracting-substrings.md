@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 서브스트링 추출하기"
-simple_title:         "서브스트링 추출하기"
+title:                "문자열 추출"
+html_title:           "Clojure: 문자열 추출"
+simple_title:         "문자열 추출"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜: 
+## 왜
 
-문자열에서 하위 문자열을 추출하는 것은 개발자들이 자주 사용하는 기술 중 하나입니다. 이를 통해 문자열의 일부분만을 사용하거나 다른 형식으로 변환하여 다양한 용도로 활용할 수 있습니다.
+왜 누군가가 substring을 추출하는 것에 관심을 가질까요? substring 추출은 문자열을 조작하는 엄청난 힘을 부여해줍니다. 예를 들어, substring을 사용하면 문자열을 분석하고 원하는 정보를 가져오는 등 다양한 작업을 할 수 있습니다.
 
-## 어떻게:
+## 하는 방법
 
-다음은 Clojure 프로그래밍에서 하위 문자열 추출의 예시 코드와 결과를 보여줍니다.
+사용자가 입력한 문자열에서 특정 부분만 추출하는 방법을 알아보겠습니다. 다음은 Clojure에서 substring을 추출하는 코드 예시입니다.
 
 ```Clojure
-;; "Clojure"라는 문자열에서 "oj"만 추출하기
-(.substring "Clojure" 2 4)
-;; 결과: "oj"
+;; "Clojure Programming"이라는 문자열에서 "Programming" 부분만 추출하기
 
-;; 특정 위치부터 끝까지의 문자열 추출
-(.substring "Programming" 5)
-;; 결과: "mming"
+(def string "Clojure Programming")
 
-;; 문자열 분할 후 추출
-(def string "Breaking news: this is a headline!")
-(-> string .split " ")
-;; 결과: ["Breaking" "news:" "this" "is" "a" "headline!"]
-(nth (.split string " ") 3)
-;; 결과: "is"
+(subs string 8) ; 8번째 인덱스부터 끝까지 반환
+;; => "Programming"
 
+(subs string 8 17) ; 8번째 인덱스부터 17번째 인덱스 이전까지 반환
+;; => "Program"
 ```
 
-## 딥 다이브:
+위 코드에서 subs 함수로 문자열과 추출할 인덱스를 전달하여 substring을 추출할 수 있습니다. 만약 추출할 인덱스를 지정하지 않으면 문자열의 첫번째 인덱스부터 끝까지 추출합니다. 또한 두 번째 인자로 전달한 인덱스 이전까지만 추출할 수도 있습니다.
 
-하위 문자열 추출을 할 때 주의해야 할 점은 시작과 끝 위치를 정확하게 지정하는 것입니다. 만약 시작 위치가 끝 위치보다 큰 경우 빈 문자열을 반환하게 됩니다. 추가적으로, Clojure에서는 문자열 추출을 위해 `.substring` 함수뿐만 아니라 `subs` 함수도 사용할 수 있습니다.
+## 깊이 파고들기
 
-## 더 알아보기:
+substring을 추출하는 방법은 다양한 옵션을 가지고 있습니다. 예를 들어, 인덱스 대신 문자열의 길이를 전달하여 추출할 수도 있습니다. 또한 정규식 패턴을 이용하여 원하는 문자열만 추출할 수도 있습니다.
 
-[Clojure 문자열 추출 문서](https://clojuredocs.org/clojure.core/substring) 
+또한 substring 추출은 데이터 분석에 유용하게 사용될 수 있습니다. 예를 들어, CSV 파일에서 특정 열의 데이터만 추출해낼 때 substring을 사용할 수 있습니다. Clojure의 다양한 문자열 함수를 활용하여 더욱 복잡한 작업도 가능합니다.
 
-[라이브 데모를 통한 실습](https://mybinder.org/v2/gh/clojurians-org/codox/master?filepath=codox-demo.ipynb)
+## 관련 자료
 
-## 참고 자료: 
-
-[Clojure 패스트 캠프](https://fastcampus.co.kr/class_clojure/#) 
-
-[Clojure 한국 사용자 그룹](https://clojure.or.kr/)
+- [Clojure Strings Documentation](https://clojuredocs.org/clojure.string)
+- [Clojure Applied: From Practice to Practitioner](https://www.amazon.com/Clojure-Applied-Practice-Practitioner-Programmer/dp/1680500740)
+- [How to Use Substring in Clojure?](https://stackoverflow.com/questions/45072810/how-to-use-substring-in-clojure)

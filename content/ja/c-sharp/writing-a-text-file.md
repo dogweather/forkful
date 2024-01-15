@@ -1,6 +1,7 @@
 ---
-title:                "C#: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの作成"
+html_title:           "C#: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-テキストファイルを作成することのメリットはたくさんあります。たとえば、プログラムで使用するデータを整理したり、テキスト文書を作成したりすることができます。また、過去のデータを保管するためにもテキストファイルを使用することができます。
+
+テキストファイルを作成するために取り組む理由は何ですか？それは、テキストファイルを使用してデータを保存して保管することができるからです。たとえば、コンピュータープログラムを実行するときに、そのプログラムが必要とするデータをテキストファイルに保存しておくことで、プログラムが必要なデータを簡単に取得することができます。
 
 ## 作り方
-まずはテキストファイルを作成するために必要なC#コードを書きましょう。以下は基本的な例です。
 
 ```C#
 using System;
 using System.IO;
 
-// ファイルを作成し、テキストを書き込む
-using (StreamWriter writer = new StreamWriter("example.txt")) 
+class Program 
 {
-    writer.WriteLine("こんにちは、世界！");
-}
-
-// ファイルからテキストを読み込む
-using (StreamReader reader = new StreamReader("example.txt")) 
-{
-    string line;
-    while ((line = reader.ReadLine()) != null) 
+    static void Main(string[] args)
     {
-        Console.WriteLine(line);
+        // テキストファイルの作成と書き込み
+        File.WriteAllText("example.txt", "これはテストです。");
+
+        // テキストファイルからデータを読み込む
+        string data = File.ReadAllText("example.txt");
+        Console.WriteLine(data);
     }
 }
 ```
 
-実行すると、"example.txt"ファイルに"こんにちは、世界！"という文字列が書き込まれ、プログラムから読み取ったテキストがコンソールに出力されます。
+上の例では、C#の`File`クラスを使用してテキストファイルを作成し、書き込み、読み込みする方法を示しています。`WriteAllText`メソッドを使用すると、指定したファイル名とデータを渡すことで、テキストファイルを作成し、内容を書き込むことができます。同様に、`ReadAllText`メソッドを使用すると、指定したファイル名からテキストファイルの内容を読み込むことができます。
 
-## 深堀り
-テキストファイルを作成する際には、さまざまなオプションも利用することができます。たとえば、ファイルの拡張子や文字エンコーディングを指定することができます。また、ファイルに追記する際には`StreamWriter`コンストラクタの第二引数に`true`を渡すことで、既存のファイルに追記することができます。
+## 詳細を掘り下げる
 
-さらに詳しい情報を学びたい方は、マイクロソフトの公式ドキュメントやオンラインのチュートリアルを参考にしてください。
+テキストファイルを作成する方法は他にもあります。例えば、`StreamWriter`クラスを使用することで、ファイルを開いてデータを書き込むことができます。また、`File.ReadAllText`メソッドでは、テキストファイル以外のファイルを読み込むこともできます。さらに、ファイルの存在をチェックするための`File.Exists`メソッドや、ファイルの削除を行う`File.Delete`メソッドなど、さまざまなメソッドが用意されています。
 
-## 関連情報
-- [C#によるテキストファイルの作成](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [C#でファイルの読み書きをする方法](https://www.javadrive.jp/csharp/file/index1.html)
-- [C# ファイル操作の基礎](https://www.sejuku.net/blog/6109)
+## 関連リンク
+
+- [C#ドキュメント](https://docs.microsoft.com/ja-jp/dotnet/csharp/)
+- [File.WriteAllTextメソッドのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file.writealltext?view=netcore-3.1)
+- [StreamWriterクラスのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.streamwriter?view=netcore-3.1)
+- [File.Existsメソッドのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file.exists?view=netcore-3.1)
+- [File.Deleteメソッドのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file.delete?view=netcore-3.1)

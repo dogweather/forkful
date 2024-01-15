@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Przetwarzanie html"
-simple_title:         "Przetwarzanie html"
+title:                "Analiza składni HTML"
+html_title:           "Gleam: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,55 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach większość stron internetowych jest oparta na HTML, języku znaczników do tworzenia zawartości w sieci. Często, aby dokonać analizy lub przetworzenia danej strony, potrzebujemy sparsować jej zawartość. W tym blogu dowiesz się, jak w prosty sposób zrobić to przy użyciu języka programowania Gleam.
+Nie ma wątpliwości, że przetwarzanie HTML jest niezwykle ważne w dzisiejszym świecie internetu. Nie tylko pozwala na wyświetlanie treści na stronach internetowych, ale także umożliwia wykorzystanie bogatych funkcji, takich jak web scraping czy parsowanie danych. Dlatego też, umiejętność przetwarzania HTML jest bardzo przydatna dla programistów, szczególnie w języku Gleam.
 
 ## Jak to zrobić
 
-Parsowanie HTML jest możliwe dzięki wykorzystaniu biblioteki o nazwie Scrivener. Najpierw musimy zainstalować tę bibliotekę za pomocą menadżera pakietów, takiego jak Mix. Następnie możemy stworzyć prosty plik `.gleam` i zaimportować bibliotekę Scrivener, aby móc wykonać operacje na sparsowanym HTML.
+Parsowanie HTML w Gleam jest relatywnie proste. Pierwszym krokiem jest zainstalowanie biblioteki `gleam/html`, która zapewnia narzędzia do przetwarzania HTML.
 
 ```Gleam
-import scrivener/html
+import html
 
-let html_text = "<html><body><h1>Title</h1></body></html>"
+let document = html.parse("<html><body><h1>Hello World</h1></body></html>")
 
-let dom = html_text |> parse_html
-
-dom.nodes.each(fn(n) {
-  match n {
-    #scrivener.Tag{ name, _, children } -> {
-      io.format("*** Found tag: %s ***\n", [name])
-      children.each(fn(c) {
-        match c {
-          #scrivener.TextNode{ text } -> {
-            io.format("Found text node: %s\n", [text])
-          }
-          _ -> { /* Ignore other types of nodes */ }
-        }
-      })
-    }
-    _ -> { /* Ignore comments and other types of nodes */ }
-  }
-})
+let h1 = document.children[0].children[0].children[0]
+assert html.is_text(h1) == true
+assert html.get_text(h1) == "Hello World"
 ```
 
-Powyższy kod wyświetli następujący wynik:
+W powyższym przykładzie, importujemy bibliotekę HTML i wykorzystujemy funkcję `parse()` do przetworzenia prostego dokumentu HTML. Później, korzystając z indeksów, pobieramy pierwszego dziecka, które jest tagiem `<h1>`. Następnie wykonujemy asercje, aby upewnić się, że jest to element tekstu i wyświetlamy jego tekst.
 
-```
-*** Found tag: html ***
-*** Found tag: body ***
-Found text node: Title
-```
+## Głębsze zagadnienia
 
-Widzimy, że przy użyciu zaledwie kilku linii kodu udało nam się sparsować zawartość HTML i wyświetlić jej strukturę. Teraz możemy użyć tej biblioteki do dalszej analizy lub przetwarzania danych.
+W przykładzie powyżej użyliśmy tylko prostego dokumentu HTML, ale biblioteka `gleam/html` obsługuje także bardziej złożone struktury, takie jak atrybuty, klasy i style elementów. Warto również wspomnieć o funkcji `find_all()`, która umożliwia wyszukiwanie elementów po nazwie tagu lub klasie. Podczas gdy przetwarzanie HTML może wydawać się skomplikowane, dzięki bibliotece `gleam/html` jest to zadanie, które można łatwo zrealizować w języku Gleam.
 
-## Wnikliwe spojrzenie
+## Zobacz także
 
-Biblioteka Scrivener pozwala nam nie tylko parsować HTML, ale także wykonywać różnego rodzaju operacje na danych, takie jak szukanie elementów, zmiana ich atrybutów czy usuwanie węzłów. Warto zweryfikować dokumentację, aby poznać wszystkie dostępne funkcje.
+Jeśli jesteś zainteresowany dalszym eksplorowaniem możliwości przetwarzania HTML w języku Gleam, zalecamy zapoznanie się z poniższymi linkami:
 
-W przypadku potrzeby obsługi bardziej złożonych lub niestandardowych przypadków, można również skorzystać z innych bibliotek, takich jak Misaki czy Hexpm. Są one bardziej rozbudowane i posiadają większą liczbę opcji.
-
-## Zobacz również
-
-- Dokumentacja biblioteki Scrivener: https://hexdocs.pm/scrivener/Scrivener.html
-- Biblioteka Misaki: https://hexdocs.pm/misaki/Misaki.html
-- Biblioteka Hexpm: https://hexdocs.pm/hexpm/0.8.0/api-reference.html
+- Oficjalna dokumentacja biblioteki `gleam/html`: https://gleam.run/packages/gleam-experimental/html/latest/
+- Przykłady użycia biblioteki `gleam/html`: https://github.com/gleam-lang/gleam/blob/master/examples/web_scraper.gleam

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: HTML-Analyse"
-simple_title:         "HTML-Analyse"
+title:                "HTML-Parsing"
+html_title:           "Swift: HTML-Parsing"
+simple_title:         "HTML-Parsing"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,45 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie schon immer wissen wollten, wie Sie HTML-Code in Ihr Swift-Programm einbinden können, dann ist das Parsen von HTML genau das Richtige für Sie. Mit dieser Technik können Sie auf einfache Weise Daten aus externen Quellen extrahieren und in Ihrem Code nutzen.
+Warum sollte man sich mit dem Parsen von HTML beschäftigen? Nun, es gibt viele Gründe, warum dies eine nützliche Fähigkeit für jeden Swift-Entwickler sein kann. Zum einen ermöglicht es das Extrahieren von Daten aus einer Webseite, die in HTML formatiert ist. Dies kann sehr hilfreich sein, wenn man zum Beispiel Daten von einer externen API erhält, die nur HTML zurückgibt. Außerdem kann das Parsen von HTML auch beim Scraping von Websites oder der Erstellung von nutzerdefinierten Web-Scrapern hilfreich sein.
 
-## Wie geht's
-Um HTML zu parsen, können Sie die Swift-Bibliothek "HTMLKit" verwenden. Es bietet eine einfache und effektive Möglichkeit, HTML-Code zu analysieren und die gewünschten Daten zu extrahieren. Schauen wir uns ein Beispiel an:
+## Wie geht das?
+Um HTML zu parsen, gibt es verschiedene Möglichkeiten in Swift. Eine der beliebtesten ist die Verwendung von Bibliotheken wie SwiftSoup oder Kanna. Diese Bibliotheken ermöglichen es uns, HTML-Dateien zu laden und zu durchsuchen, um die gewünschten Informationen zu extrahieren.
+
+### Ein Beispiel mit SwiftSoup
+Um mit SwiftSoup zu arbeiten, muss man zunächst die Bibliothek mit dem Package Manager hinzufügen. Anschließend kann man den folgenden Code verwenden, um eine URL mit HTML zu laden und alle Links auf der Seite zu extrahieren:
 
 ```Swift
-let html = """
-<html>
-<head>
-<title>Meine Webseite</title>
-</head>
-<body>
-<h1>Willkommen auf meiner Webseite</h1>
-<p>Das ist eine Beispiel-Webseite</p>
-</body>
-</html>
-"""
+let url = URL(string: "https://www.example.com")!
+let html = try! String(contentsOf: url)
+let doc = try! SwiftSoup.parse(html)
 
-let parser = HTMLParser()
-do {
-    let document = try parser.parseDocument(from: html)
-    let title = document.head?.title?.text ?? "Kein Titel gefunden"
-    print(title) // "Meine Webseite"
-    let heading = document.body?.childNodes[0] as? Heading
-    let headingText = heading?.text ?? "Keine Überschrift gefunden"
-    print(headingText) // "Willkommen auf meiner Webseite"
-} catch {
-    print("Fehler beim Parsen des HTML-Codes: \(error)")
+for link in try! doc.select("a") {
+    print(try! link.attr("href"))
 }
 ```
 
-In diesem Beispiel wird der HTML-Code analysiert und der Titel sowie die Überschrift der Webseite ausgegeben. Sie können auch nach bestimmten Elementen suchen und deren Text oder Attribute extrahieren. Die "HTMLKit" -Bibliothek bietet eine umfassende Dokumentation und viele Beispiele, um Ihnen den Einstieg zu erleichtern.
+Dies wird alle Links auf der Webseite ausgeben. Hier ist ein Beispiel der möglichen Ausgabe:
 
-## Deep Dive
-Das Parsen von HTML kann noch komplexer werden, wenn der Code unvollständig oder nicht standardkonform ist. In solchen Fällen kann es hilfreich sein, spezielle Parsing-Strategien zu verwenden, um die Daten trotzdem erfolgreich zu extrahieren. Die "HTMLKit"-Bibliothek bietet auch hierfür verschiedene Optionen und Methoden.
+> https://www.example.com/page1
+> https://www.example.com/page2
+> https://www.example.com/page3
 
-Ein weiteres wichtiges Thema beim Parsen von HTML ist das Verarbeiten von Sonderzeichen und geschützten Zeichenfolgen. In solchen Fällen ist es wichtig, die richtigen Encoding-Methoden zu verwenden, um sicherzustellen, dass die Daten korrekt interpretiert und dargestellt werden.
+### Ein Beispiel mit Kanna
+Kanna bietet eine ähnliche Funktionalität und kann auch mit dem Package Manager hinzugefügt werden. Hier ist ein Beispiel, wie man alle Bilder auf einer Webseite mit Kanna extrahieren kann:
+
+```Swift
+let url = URL(string: "https://www.example.com")!
+let html = try! String(contentsOf: url)
+let doc = try! HTML(html: html, encoding: .utf8)
+
+for img in doc.xpath("//img") {
+    print(img["src"])
+}
+```
+
+Diese Beispiele sind nur ein kleiner Einblick in die Möglichkeiten des Parsens von HTML mit Swift. Die Bibliotheken bieten viele weitere Funktionen, um komplexe Aufgaben wie das Extrahieren von Text oder das Bearbeiten von HTML-Dokumenten zu ermöglichen.
+
+## Tiefergehende Informationen
+Beim Parsen von HTML ist es wichtig zu verstehen, wie die Struktur des HTML-Codes aussieht. Hierbei können sogenannte HTML-Parser helfen, die den HTML-Code analysieren und eine strukturierte Darstellung erstellen. Diese kann dann einfacher durchsucht werden, um die gewünschten Informationen zu extrahieren.
+
+Ein weiterer wichtiger Aspekt beim Parsen von HTML ist das Verständnis von XPath-Ausdrücken. Diese Ausdrücke ermöglichen es, bestimmte Elemente in einem HTML-Dokument auszuwählen, was beim Durchsuchen und Extrahieren von Daten sehr hilft.
 
 ## Siehe auch
-- [HTMLKit Dokumentation](https://github.com/vapor-community/html-kit/blob/master/Documentation/index.md)
-- [Offizielle Swift Dokumentation](https://docs.swift.org/swift-book/)
-- [Tutorials auf raywenderlich.com](https://www.raywenderlich.com/5998155-html-parser-in-swift-using-htmlkit)
+Für weitere Informationen und Tutorials zum Parsen von HTML in Swift empfehle ich diese Ressourcen:
+
+- [SwiftSoup Dokumentation](https://github.com/scinfu/SwiftSoup#readme)
+- [Kanna Dokumentation](https://github.com/tid-kijyun/Kanna#readme)
+- [Swift XML Parser Tutorials](https://www.raywenderlich.com/7737-swift-xml-tutorial-how-to-parse-xml)
+- [XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp)

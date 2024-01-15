@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Parsing html"
+title:                "Parsing html"
+html_title:           "Fish Shell recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,40 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Parsing HTML, the language used to create web pages, can be incredibly useful for various purposes. For example, it can help extract specific data from a website, automate tasks, or create customized web scraping tools. In this blog post, we will explore how to parse HTML using Fish Shell, a user-friendly and powerful command-line shell.
+HTML is the standard markup language used for creating web pages. Parsing HTML allows you to extract and manipulate specific data from a webpage, giving you the ability to automate tasks or gather information quickly and efficiently.
 
 ## How To
 
-To start parsing HTML with Fish Shell, we first need to install the HTML-xml-parser plugin.
+If you're using Fish Shell, you have access to various HTML parsing tools such as `pup`, `hxselect`, and `htmlq` through its package manager, `fisher`. Here's a simple example of using `pup` to parse and extract data from a webpage:
 
 ```
-fisher install jethrokuan/html-xml-parser
+Fish Shell
+# Install pup using fisher
+fisher install jethrokuan/pup
+
+# Define a website URL
+set url "https://www.example.com"
+
+# Use pup to parse the webpage and extract a specific element's text
+pup 'h1 span' < $url
 ```
 
-Once we have the plugin installed, we can use the `hxnormalize` command to convert the HTML to a well-formed XML document. Let's say we want to parse a website's title tag, we can use the following command:
-
-```
-hxnormalize -xL url_to_website | hxselect -c 'title'
-```
-
-This command will output the title of the website. We can also use CSS selectors to target specific elements on the page. For example, if we want to extract all the links from a webpage, we can use the following command:
-
-```
-hxnormalize -xL url_to_website | hxselect -S 'a'
-```
-
-This will give us a list of all the links on the webpage.
+The output of the above code will be the text within the `<h1>` element with a child `<span>` element on the given webpage. You can also use these tools to manipulate HTML and perform other tasks such as web scraping.
 
 ## Deep Dive
 
-HTML parsing in Fish Shell is carried out using the HTML-xml-parser plugin, which is a wrapper around the `libxml` library. This library is responsible for converting the HTML into a well-formed XML document and providing methods for accessing specific elements on the page.
+While there are several HTML parsing tools available for Fish Shell, `pup` is a popular choice due to its simplicity and powerful features. It uses CSS selectors to navigate and search through the HTML structure, making it easy to target specific elements. You can also use it to manipulate HTML attributes and perform more complex operations like filtering, sorting, and even pagination.
 
-Fish Shell provides us with the `hxnormalize` and `hxselect` commands to interact with the `libxml` library. The `hxnormalize` command takes in the raw HTML and converts it into a proper XML document, while the `hxselect` command allows us to target specific elements using CSS selectors.
-
-It is also worth mentioning that the HTML-xml-parser plugin supports various other commands such as `hxunent` for unescaping HTML entities and `hxpipe` for formatting the XML output.
+HTML parsing is not limited to web pages, you can also use it to extract data from local HTML files or any other source that contains HTML code. This can come in handy when working with data stored in different formats or when trying to automate tasks within a larger program or script.
 
 ## See Also
 
-- [HTML-xml-parser plugin](https://github.com/jethrokuan/html-xml-parser)
-- [Official documentation for hxnormalize and hxselect commands](https://www.w3.org/Tools/HTML-XML-utils/doc/)
-- [Introduction to CSS selectors](https://www.w3schools.com/cssref/css_selectors.asp)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Official Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
+- [pup GitHub repository](https://github.com/ericchiang/pup)
+- [hxselect GitHub repository](https://github.com/ericchiang/htmlq)
+- [htmlq GitHub repository](https://github.com/koenrh/htmlq)

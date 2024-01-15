@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "C++ recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "C++"
 category:             "C++"
@@ -9,56 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever come across a situation where you need to delete certain characters from a string that match a specific pattern? Maybe you want to remove all punctuation marks from a sentence or delete all numbers from a string. This is where the concept of deleting characters matching a pattern comes in handy.
+Sometimes, when working with strings or text data, you may want to remove specific characters that match a certain pattern. This could be to clean up the data or to prepare it for further processing. In such cases, knowing how to delete characters matching a pattern can be very useful.
 
-## How To 
+## How To
 
-To delete characters matching a pattern in C++, we will be using the `std::remove_if()` function from the `<algorithm>` header. This function takes in three parameters - beginning iterator, ending iterator, and a predicate function. The beginning and ending iterators represent the range of characters in the string while the predicate function determines which characters to remove.
+To delete characters matching a pattern in C++, you can use the `std::regex_replace` function from the `<regex>` library. This function takes in three parameters: the string to be modified, the regular expression pattern, and the replacement string. Here's an example of using this function to remove all digits from a string:
 
-Let's take a look at an example where we want to remove all lowercase vowels from a string:
-
-```
+```C++
 #include <iostream>
-#include <algorithm>
+#include <regex>
 
-using namespace std;
-
-bool isVowel(char c){
-    // predicate function to check if a character is a lowercase vowel
-    return (c=='a' || c=='e' || c=='i' || c=='o' || c=='u');
-}
-
-int main(){
-    // input string
-    string str = "Hello World";
-
-    // using std::remove_if() function to delete characters matching a pattern
-    str.erase(std::remove_if(str.begin(), str.end(), isVowel), str.end());
-
-    // output string
-    cout << str << endl;
-
-    return 0;
+int main()
+{
+  std::string text = "I have 3 apples and 4 oranges.";
+  std::regex pattern("[0-9]"); // regular expression pattern to match digits
+  std::string replacement = ""; // replacement string, in this case an empty string
+  std::string result = std::regex_replace(text, pattern, replacement); // call to regex_replace
+  std::cout << result << std::endl; // output: "I have apples and oranges."
+  return 0;
 }
 ```
 
-Output:
-```
-Hll Wrld
-```
-
-As we can see, the `erase()` function is used along with `remove_if()` to delete the characters that match the pattern specified by the predicate function.
+In this example, we first define the string `text` that contains both numbers and letters. Then, we define the regular expression `pattern` to match any digit (represented by the character class `[0-9]`). Finally, we specify an empty string as the replacement string, as we want to remove the digits from the text. The resulting string is stored in the `result` variable and is printed to the console.
 
 ## Deep Dive
 
-The `remove_if()` function works by moving all the elements that satisfy the predicate function to the end of the range and returning an iterator pointing to the beginning of the removed elements. The `erase()` function then erases these elements from the string, effectively deleting the characters matching the pattern.
+Regular expressions, often referred to as regex, are patterns used to match and manipulate text. They are widely used in programming languages to perform string operations such as search, replace, and delete. In C++, the `<regex>` library provides various functions for working with regular expressions, including the `std::regex_replace` function used in our example.
 
-One important thing to note is that the `remove_if()` function does not physically remove the characters from the string, it just moves them to the end of the range. The `erase()` function then erases these elements and shifts all the remaining characters to the left, giving the illusion of deleted characters.
+The regular expression pattern can include not just single characters, but also special characters and operators to define complex patterns. In our example, the `[0-9]` character class matches any single digit from 0 to 9. Other commonly used operators in regular expressions include `*` to match zero or more occurrences, `+` to match one or more occurrences, and `?` to match zero or one occurrence.
+
+In addition to the `std::regex_replace` function, the `<regex>` library also provides other useful functions such as `std::regex_match` for validating a string against a regular expression and `std::smatch` for storing matched substrings. Understanding regular expressions can greatly enhance your string manipulation skills in C++.
 
 ## See Also
 
-- [How to remove elements from a string in C++](https://www.geeksforgeeks.org/remove-elements-from-a-string-in-cpp/)
-- [std::remove_if() function in C++](https://en.cppreference.com/w/cpp/algorithm/remove)
-- [Erase-Remove idiom in C++](https://en.wikipedia.org/wiki/Erase%E2%80%93remove_idiom)
+- [C++ Regular Expressions](https://en.cppreference.com/w/cpp/regex)
+- [Regular Expressions 101](https://regex101.com/) (online regex tester and debugger)
+- [C++ String Class](https://en.cppreference.com/w/cpp/string/basic_string) (for more string operations)

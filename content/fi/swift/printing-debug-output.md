@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Virheenkorjaustulosteen tulostaminen"
-simple_title:         "Virheenkorjaustulosteen tulostaminen"
+title:                "Tulostaminen virheenjäljitystiedostoon"
+html_title:           "Swift: Tulostaminen virheenjäljitystiedostoon"
+simple_title:         "Tulostaminen virheenjäljitystiedostoon"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -11,73 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jokainen koodari tietää, että debug-kehitys on oleellinen osa ohjelmointia. Mutta miksi tulostaisimme debug-tietoa? Se on hyvä tapa tarkistaa, mitä ohjelma on tekemässä ja löytää mahdolliset virheet.
+Debug-tulosteen tulostaminen voi olla tärkeää ohjelmoinnin aikana, kun yrität löytää virheitä tai hahmottaa ohjelman toimintaa. Se voi auttaa sinua näkemään, mitä tietoja ohjelma käsittelee ja mikä voi mennä vikaan.
 
 ## Kuinka tehdä
 
-Tulostaessa debug-tietoa Swift-ohjelmassasi, sinun tulee käyttää print()-funktiota. Alla on muutama esimerkki, miten voit tulostaa erilaisia tietotyyppejä:
+Yksinkertaisin tapa tulostaa debug-tulosteita Swiftissä on käyttää "print" -funktiota. Tämä funktio ottaa vastaan ​​yksittäisen parametrin ja tulostaa sen konsoliin.
 
 ```Swift
-let name = "Matti"
-print("Hei "+name+", tervetuloa!")
-
-let age = 25
-print("Olet "+String(age)+" vuotta vanha.")
+print("Tämä on debug-tuloste")
 ```
 
-Tulostaa seuraavan:
-
-```
-Hei Matti, tervetuloa!
-Olet 25 vuotta vanha.
-```
-
-Voit myös tulostaa muuttujien arvot array- ja dictionary-tyyppisille muuttujille:
+Voit myös tulostaa useampia arvoja samalla kertaa käyttämällä pilkulla erotettua listausta:
 
 ```Swift
-let fruits = ["omena", "banaani", "appelsiini"]
-print("Suosikkifruittisi ovat:")
-for fruit in fruits {
-    print("- "+fruit)
+let numero = 5
+let sana = "Hei"
+print(numero, sana) // Tulostaa "5 Hei"
+```
+
+Jos haluat tulostaa monimutkaisemman rakenteen, kuten taulukon tai sanakirjan, voit käyttää ```dump``` -funktiota. Tämä tulostaa kaikki rakenteen tiedot, jotta voit tarkastella niitä tarkemmin.
+
+```Swift
+let lista = ["omena", "banaani", "appelsiini"]
+dump(lista) // Tulostaa "[3 elements]"
+```
+
+Voit myös ohjata debug-tulosteet eri lähteisiin käyttämällä "print" -funktion erilaisia ​​muotoja. Esimerkiksi voit tulostaa tiedostoon tai lähiverkkoon.
+
+## Syväsukellus
+
+Yllä mainitut esimerkit koskivat yksinkertaisia ​​tulosteita, mutta usein tarvitset enemmän tietoa debug-tulosteella. Voit lisätä lisävarmuuksia tulosteisiin käyttämällä ehtolausekkeita tai toistolausekkeita.
+
+```Swift
+let luku = 10
+
+if luku > 5 {
+    print("Luku on suurempi kuin 5")
 }
 
-let person = ["nimi": "Emma", "ikä": 30]
-print("Hän on "+person["name"]+" ja hän on "+String(person["age"])+" vuotta vanha.")
+for i in 1...5 {
+    print("Toistetaan \(i). kerta")
+}
 ```
 
-Tulostaa seuraavan:
-
-```
-Suosikkifruittisi ovat:
-- omena
-- banaani
-- appelsiini
-Hän on Emma ja hän on 30 vuotta vanha.
-```
-
-Voit myös tulostaa erilaisia tietotyyppejä yhdessä, esimerkiksi:
+Voit myös käyttää muotoilumerkintöjä tulosteissa, jotta voit lisätä muuttujien arvoja suoraan tulosteeseen.
 
 ```Swift
-let isTall = true
-let height = 180.5
-print("Oletko pitkä? "+String(isTall))
-print("Kuinka pitkä olet? "+String(height)+" cm.")
+let nimi = "Matti"
+let ika = 33
+
+print("Hei, minun nimeni on \(nimi) ja olen \(ika) vuotta vanha")
 ```
 
-Tulostaa seuraavan:
-
-```
-Oletko pitkä? true
-Kuinka pitkä olet? 180.5 cm.
-```
-
-## Syvempi sukellus
-
-Print() toiminto hyödyllinen debug-tulostuksessa, mutta sitä ei tulisi käyttää lopullisessa koodissa. Sen sijaan voit käyttää esimerkiksi debuggeria tai logeja.
-
-On myös hyvä huomata, että tulostettavat tiedot voivat aiheuttaa tietoturvariskejä, mikäli sovellus käsittelee arkaluonteista tietoa. Siksi on tärkeää olla varovainen, mitä tietoja tulostaa konsoliin.
+Lopuksi, voit asettaa omia tulostusasetuksia, kuten erilaisen erottimen tai uuden rivin lisäämisen tulosteen loppuun.
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio print()-funktiosta](https://developer.apple.com/documentation/swift/1541053-print)
-- [Debug-tulostusten parhaat käytännöt Swiftissä](https://medium.com/@financiermathieu/best-practices-for-debugging-in-swift-4289d5d4d8e5)
+- [Swiftin debuggausvinkit ja -temput](https://www.hackingwithswift.com/debugging)
+- [SWiftin debug-tulosteiden hallinta](https://dev.to/aquilesb/how-to-manage-swift-debug-output-4a4n)

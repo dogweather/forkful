@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「2つの日付の比較」"
-simple_title:         "「2つの日付の比較」"
+title:                "「二つの日付を比較する」"
+html_title:           "Kotlin: 「二つの日付を比較する」"
+simple_title:         "「二つの日付を比較する」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,38 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングをするとき、時々二つの日付を比較する必要があります。それは、アプリケーションで重要な日付を追跡したい場合や、ユーザーにとって忘れられないイベントをリマインダーするための機能を作成する場合などに役立ちます。
+何年か前、カレンダーが手元にない状況で今日の日付と誕生日を確認する必要がありました。そこで、自分でプログラムすることにしました。Kotlinを使って、今日の日付と任意の日付を比較する方法を学んでみましょう。
 
 ## 使い方
 
-Kotlinの```Date```クラスは、2つの日付を比較するための便利なメソッドを持っています。まず、比較する二つの日付を```Date```オブジェクトに変換します。
+まず、Kotlinの標準ライブラリにある`LocalDate`クラスをインポートします。
 
 ```Kotlin
-val date1 = Date("2021-03-15")
-val date2 = Date("2021-03-20")
+import java.time.LocalDate
 ```
 
-次に、```before()```や```after()```などのメソッドを使って比較を行います。
+今日の日付を取得し、`LocalDate`オブジェクトとして定義します。
 
 ```Kotlin
-println(date1.after(date2)) // Output: false
-println(date1.before(date2)) // Output: true
+val today = LocalDate.now()
 ```
 
-また、```compareTo()```メソッドを使っても比較できます。このメソッドは、比較対象の日付が等しい場合は0を返し、比較対象よりも前の場合は負の値を、比較対象よりも後ろの場合は正の値を返します。
+次に、比較する任意の日付を定義しましょう。
 
 ```Kotlin
-println(date1.compareTo(date2)) // Output: -1
+val birthday = LocalDate.of(1995, 7, 15)
+```
+
+そして、`LocalDate`クラスにある`isAfter()`メソッドを使って、今日の日付が誕生日より後の日付かどうかを判定します。
+
+```Kotlin
+if(today.isAfter(birthday)) {
+    println("今日は誕生日よりも後の日付です！")
+} else {
+    println("今日は誕生日よりも前の日付です。")
+}
+```
+
+以上のコードを実行すると、今日が誕生日よりも後の日付であるかどうかを判定してメッセージを出力します。
+
+```
+今日は誕生日よりも後の日付です！
 ```
 
 ## 深堀り
 
-日付の比較にはさまざまな方法がありますが、```Date```クラスのメソッドを使うことで簡単に比較できます。また、```LocalDate```や```Calendar```などのクラスを使うこともできますが、それぞれに特有のメソッドがあるので、使い方をしっかりと把握する必要があります。
+`LocalDate`クラスは、日付の比較以外にもさまざまな便利なメソッドを提供しています。例えば、`isEqual()`メソッドを使うことで、2つの日付が完全に同じかどうかを判定することができます。
 
-さらに、日付の比較はタイプセーフな方法で行うことが重要です。Kotlinでは、```LocalDate```や```ZonedDateTime```などのJava 8で導入されたクラスを使うことで、タイプセーフな日付の比較が可能となっています。
+また、`plusDays()`や`minusDays()`メソッドを使うことで、任意の日数を加算したり減算したりすることもできます。
+
+さらに、`LocalDate`クラスには西暦や月の長さに関する情報を取得できるメソッドも備わっており、より柔軟な日付の操作が可能です。
 
 ## 参考リンク
 
-- [KotlinのDateクラスのドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
-- [Java 8で導入された日付/時刻APIのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
-- [プログラマーのための日付の扱い方 全部くわしく解説！](https://programmingapplications.net/ja/date-comparison/)
+- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/reference/datetime.html)
+- [Javaのjava.util.dateとJava8のLocalDateの違いについて知ろう](https://qiita.com/yukieen-ca/items/f9fb8e426e72ed7ef73e)

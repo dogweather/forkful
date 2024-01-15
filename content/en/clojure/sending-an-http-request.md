@@ -1,5 +1,6 @@
 ---
-title:                "Clojure recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Clojure recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,61 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Sending HTTP requests is a crucial aspect of web development and automation. It allows communication between servers and clients, making it possible to retrieve and send data, perform actions, and integrate multiple systems together. Knowing how to send HTTP requests in Clojure can greatly enhance your ability to create dynamic and interactive web applications.
+Sending an HTTP request is essential for interacting with web servers and retrieving data from remote sources. It allows developers to build powerful and dynamic applications that can communicate with other systems on the internet.
 
 ## How To
-
-Sending HTTP requests in Clojure is made easy with the help of the `clj-http` library, which provides a user-friendly API for making HTTP requests. First, we need to install the library by adding it to our `project.clj` file:
-
+To send an HTTP request in Clojure, we will use the `clj-http` library. First, we need to add it as a dependency in our project.clj file:
 ```Clojure
-[clj-http "3.11.0"]
+:dependencies [[clj-http "3.11.0"]]
 ```
-
-Once the library is installed, we can import it into our namespace:
-
+Next, we need to require the `clj-http.client` namespace in our code:
 ```Clojure
-(:require [clj-http.client :as http])
+(ns my-app.core
+  (:require [clj-http.client :as http]))
 ```
-
-Now, we can make an HTTP GET request to a specific URL and retrieve its response:
-
+Now, we can use the `http/get` function to make a GET request to a specific URL and retrieve the response:
 ```Clojure
-(def response (http/get "https://www.google.com"))
+(def response (http/get "https://www.example.com"))
 ```
-
-To get the response body, we can use the `:body` key:
-
+We can also pass additional parameters to the `http/get` function, such as headers and query parameters:
 ```Clojure
-(:body response) ; returns the HTML of the Google homepage
+(def response (http/get "https://www.example.com"
+                        {:headers {"Content-Type" "application/json"}
+                         :query-params {:page 1 :limit 10}}))
 ```
-
-We can also include query parameters in our request by passing a map to the `:params` key:
-
+To make a POST request, we can use the `http/post` function and pass in the request body:
 ```Clojure
-(def response (http/get "https://www.example.com" {:params {:id 1234 :name "John"}}))
+(def response (http/post "https://www.example.com/users"
+                         {:body {:name "John" :email "john@example.com"}}))
 ```
-
-To send a POST request, we can use the `http/post` function and pass in the URL, headers, and body:
-
-```Clojure
-(def response (http/post "https://www.example.com" {:headers {"Content-Type" "application/json"} :body "{\"name\": \"John\"}"}))
-```
-
-The response returned by these functions is a map containing the status, headers, and body of the HTTP request. We can access the status code using the `:status` key:
-
-```Clojure
-(:status response) ; returns the status code of the request
-```
+The `response` variable will contain a map with the status code, headers, and body of the HTTP response. We can access these values using the `:status`, `:headers`, and `:body` keys, respectively.
 
 ## Deep Dive
+Clojure's `clj-http` library is built on top of the Apache HttpComponents project, which provides a powerful HTTP client for Java. This means that we have access to a wide range of configuration options and features, such as SSL/TLS support, connection pooling, and cookies management.
 
-Behind the scenes, the `clj-http` library uses the Apache HTTP Client to make HTTP requests. This library handles all the low-level details of opening and managing connections, sending and receiving data, and handling errors. This allows us to focus on the logic of our requests without worrying about the underlying implementation.
+In addition to the basic HTTP methods (GET, POST, PUT, DELETE), the `clj-http` library also supports other request methods, including PATCH, HEAD, and OPTIONS. We can specify the method in the request options using the `:method` key.
 
-In addition to the basic GET and POST requests, the `clj-http` library also supports other HTTP methods such as PUT, PATCH, DELETE, and OPTIONS. It also allows for the customization of headers, cookies, and other request parameters. By familiarizing yourself with the library's API, you can unleash the full potential of sending HTTP requests in Clojure.
+Sending HTTP requests asynchronously is also possible with `clj-http`, using the `http/async-get` and `http/async-post` functions. These functions return a `future` object, which is useful for handling long-running requests without blocking the main thread.
 
 ## See Also
-
 - [clj-http documentation](https://github.com/dakrone/clj-http)
-- [Official Apache HTTP Client website](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)
-- [HTTP Methods in Clojure](https://technpol.wordpress.com/2017/02/02/http-methods-in-clojure/)
+- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/): A beginner-friendly guide to HTTP protocol
+- [Ring](https://github.com/ring-clojure/ring): A popular web application library that also provides HTTP request and response handling functionalities.

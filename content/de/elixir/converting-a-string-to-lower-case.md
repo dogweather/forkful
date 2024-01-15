@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "Elixir: Umwandeln eines Strings in Kleinbuchstaben"
 simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,31 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von Strings zu Kleinbuchstaben kann hilfreich sein, wenn man beispielsweise nach Zeichenfolgen sucht oder sie vergleichen möchte. Es ist eine gängige Aufgabe in der Programmierung von Alltagssprachen wie Elixir.
+Das Konvertieren von Strings zu Kleinbuchstaben kann nützlich sein, um Texte zu vereinheitlichen und Vergleiche oder Suchvorgänge einfacher zu gestalten. Es ist eine gängige Aufgabe in der Textverarbeitung und kann auch dazu beitragen, Fehler zu reduzieren.
 
-## Wie geht es
+## Wie geht's?
 
-Das Umwandeln von Strings zu Kleinbuchstaben in Elixir ist einfach. Hier ist ein kurzer Code-Beispiel, um den Vorgang zu demonstrieren:
-
-```Elixir
-str = "GUTEN MORGEN" 
-IO.puts(String.downcase(str))
-```
-Dieser Code gibt "guten morgen" auf der Konsole aus. Wie du sehen kannst, ist der Vorgang sehr einfach und erfordert keine zusätzlichen Bibliotheken oder Funktionen. Elixir bietet eine eingebaute Funktion, um Strings in Kleinbuchstaben zu konvertieren.
-
-## Tiefer eintauchen
-
-Obwohl die Konvertierung von Strings zu Kleinbuchstaben einfach erscheint, gibt es einige Dinge, die man beachten sollte. Zum Beispiel berücksichtigt Elixir bei der Konvertierung die verschiedenen Schriftarten und -zeichen, die in einer Sprache verwendet werden können. Hier sind einige weitere Beispiele für den Umgang mit Sonderfällen:
+Um einen String in Elixir in Kleinbuchstaben umzuwandeln, können Sie die Funktion `String.downcase/1` verwenden.
 
 ```Elixir
-IO.puts(String.downcase("Straße"))
-IO.puts(String.downcase("İstanbul"))
+string = "HALLO WELT"
+String.downcase(string)
+# Ausgabe: "hallo welt" 
 ```
 
-Das erste Beispiel gibt "straße" und das zweite Beispiel gibt "i̇stanbul" aus. Wie du siehst, werden auch akzentuierte Buchstaben oder spezielle Schriftzeichen richtig konvertiert. Damit zeigt Elixir, dass es sich um eine robuste Sprache handelt, die an die Bedürfnisse von Benutzern angepasst werden kann.
+Sie können auch die Pipe-Operator `|>` verwenden, um den Code leserlicher zu machen:
 
-Nun kannst du dich zurücklehnen und deine Elixir-Anwendungen entwickeln, ohne dir Gedanken über die Konvertierung von Strings zu Kleinbuchstaben machen zu müssen.
+```Elixir
+string
+|> String.downcase
+# Ausgabe: "hallo welt"
+```
+
+Möchten Sie alle Buchstaben eines Strings in Großbuchstaben umwandeln, können Sie `String.upcase/1` verwenden. Hier ist ein Beispiel:
+
+```Elixir
+string = "hallo welt"
+String.upcase(string)
+# Ausgabe: "HALLO WELT"
+```
+
+## Tiefere Einblicke
+
+Das Konvertieren von Strings in Elixir funktioniert standardmäßig für Unicode-Zeichen, da Elixir eine erweiterte Unicode-Unterstützung bietet. Dies bedeutet, dass nicht nur Buchstaben des englischen Alphabets, sondern auch Zeichen aus anderen Sprachen korrekt konvertiert werden.
+
+Eine weitere Funktion, die bei der Textverarbeitung hilfreich sein kann, ist `String.capitalize/1`, mit der der erste Buchstabe eines Strings in einen Großbuchstaben umgewandelt wird. Hier ist ein Beispiel für die Anwendung dieser Funktion:
+
+```Elixir
+string = "hallo welt"
+String.capitalize(string)
+# Ausgabe: "Hallo welt"
+```
+
+Es ist wichtig zu beachten, dass diese Funktion nur den ersten Buchstaben in einen Großbuchstaben konvertiert und nicht den Rest des Strings ändert.
 
 ## Siehe auch
-- Offizielle Elixir-Dokumentation zu String-Funktionen (https://hexdocs.pm/elixir/String.html)
-- Ebenfalls auf Deutsch: Elixir-Tutorial-Serie von Elixir Blog (https://elixir-blog.de/tutorial-erste-schritte-mit-elixir)
+
+- [Elixir String-Modul](https://hexdocs.pm/elixir/String.html)
+- [Unicode in Elixir](https://elixir-lang.org/getting-started/unicode-charlists-and-binaries.html)

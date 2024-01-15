@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Sender en http-forespørsel"
+html_title:           "Rust: Sender en http-forespørsel"
+simple_title:         "Sender en http-forespørsel"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Rust er et kraftig programmeringsspråk som har blitt stadig mer populært blant utviklere. En av de mange grunnene til dette er dets evne til å lage sikker og effektiv kode. Og en av de tingene du ofte må gjøre i programmeringen din er å sende HTTP-forespørsler. Hvorfor bry seg med å lære hvordan man gjør dette i Rust? Vel, ved å bruke Rust kan du dra nytte av dets sikkerhet og effektivitet til å opprette pålitelige og raske webapplikasjoner.
+Å sende HTTP-forespørsler kan være en viktig del av å utvikle nettapplikasjoner og automatisere prosesser. Det kan hjelpe deg å kommunisere med eksterne tjenester og få tilgang til data eller ressurser som du trenger.
 
-## Hvordan
+# Hvordan
 
-La oss se på hvordan du kan sende en HTTP-forespørsel ved hjelp av Rust. Først trenger vi å bruke et par biblioteker. I eksempelet vårt vil vi bruke "reqwest" og "tokio". Så la oss importere dem ved hjelp av "use"-uttrykket:
-
-```Rust
-use reqwest::Client;
-use tokio::io::{AsyncBufReadExt, BufReader};
-```
-
-Nå er vi klare til å opprette en ny klient og sende en GET-forespørsel til en URL. Vi kan gjøre dette ved hjelp av kode i følgende form:
+Hvis du vil sende en HTTP-forespørsel i Rust, kan du bruke et bibliotek som heter "reqwest". Først må du legge til det i prosjektet ditt ved å legge til dette i din "Cargo.toml" fil:
 
 ```Rust
-let client = Client::new();
-let response = client.get("https://www.example.com/")
-    .send().await?
-    .text().await?;
-println!("Response body: {}", response);
+[dependencies]
+reqwest = { version = "0.10", features = ["json"] }
 ```
 
-Her oppretter vi først en ny klient med "Client::new()" metoden. Deretter sender vi en GET-forespørsel til en URL ved hjelp av "get" metoden og "send" funksjonen. Denne "await?" er nødvendig for å vente på et asynkront svar fra serveren. Til slutt får vi teksten fra responsen ved hjelp av "text" metoden.
+Deretter kan du importere biblioteket i filen din:
 
-Hvis vi trykker denne koden, vil vi få responsen tilbake som en streng, og deretter vises det i konsollen. Nå kan vi manipulere og bruke svaret som vi vil.
+```Rust
+use reqwest;
+```
 
-## Dykk ned
+For å sende en HTTP GET-forespørsel til en URL, kan du bruke følgende kode:
 
-I dette eksempelet brukte vi bare noen grunnleggende funksjoner for å sende en HTTP-forespørsel. Men det er mye mer som kan utforskes. For eksempel kan vi legge til en "header" til forespørselen vår ved hjelp av "header" metoden og få svaret tilbake som en JSON i stedet for bare en streng ved å bruke "json" metoden. Det er også verdt å se på feilhåndtering og måter å optimalisere koden din på for å gjøre den enda mer effektiv.
+```Rust
+let resp = reqwest::blocking::get("https://www.example.com")?
+    .text()?;
+println!("{:#?}", resp);
+```
 
-## Se også
+Dette vil sende en GET-forespørsel til den spesifiserte URL-en og skrive ut svaret som tekst. Du kan også utføre andre handlinger som å sende POST-forespørsler, sette tilpassede headere og behandle feilmeldinger ved hjelp av dette biblioteket.
 
-- Rust offisielle hjemmeside: https://www.rust-lang.org/no
-- Offisiell dokumentasjon for reqwest: https://docs.rs/reqwest
-- Offisiell dokumentasjon for tokio: https://tokio.rs
+# Dykk dypere
+
+Det finnes forskjellige måter å sende HTTP-forespørsler på i Rust, og "reqwest" er bare ett alternativ. Hvis du er interessert i å se på andre biblioteker eller bygge din egen løsning, kan du lese mer om "hyper" biblioteket eller se på "actix-web" rammeverket for nettutvikling i Rust.
+
+# Se også
+
+- [reqwest dokumentasjon](https://docs.rs/reqwest)
+- [hyper bibliotek](https://hyper.rs/)
+- [actix-web rammeverk](https://actix.rs/)

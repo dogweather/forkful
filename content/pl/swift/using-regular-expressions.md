@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Użycie wyrażeń regularnych"
-simple_title:         "Użycie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Swift: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać wyrażeń regularnych w programowaniu Swift?
+## Dlaczego
+Wynikiem użycia wyrażeń regularnych jest oszczędność czasu i precyzja filtrowania i wyszukiwania tekstu. Jest to szczególnie przydatne w przypadku dużej ilości danych lub złożonych wzorców do znalezienia.
 
-Wyrażenia regularne są niezwykle potężnym narzędziem w programowaniu Swift. Pozwalają one na łatwą i skuteczną manipulację tekstowymi danymi. Dzięki nim możemy wyszukiwać, porównywać, zamieniać i walczyć z niechcianymi znakami w łańcuchach tekstowych. Jeśli pracujesz z dużą ilością tekstowych danych w swoim kodzie, wyrażenia regularne mogą znacznie ułatwić Ci życie. 
+## Jak to zrobić
+Wyrażenia regularne w Swift umożliwiają wyszukiwanie i manipulowanie tekstem na podstawie określonych wzorców. Najpierw musimy zaimportować bibliotekę `Foundation`, wykorzystywaną w wielu frameworkach Apple. Następnie używamy metody `range(of:)`, aby znaleźć dopasowanie do naszego wzorca w łańcuchu tekstowym. Na przykład:
 
-# Jak używać wyrażeń regularnych w Swift?
+```
+import Foundation
 
-Używanie wyrażeń regularnych w Swift jest bardzo proste. Najpierw musisz zaimportować odpowiedni moduł używając polecenia ```import Foundation```. Następnie możesz tworzyć wyrażenia regularne za pomocą symbolu ```try```. Niektóre z podstawowych wyrażeń regularnych to:
-
-- ```let emailRegex = try NSRegularExpression(pattern: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")```: wyrażenie regularne do sprawdzania poprawności adresu e-mail.
-- ```let urlRegex = try NSRegularExpression(pattern: "^(https?:\\/\\/)?([\\w.-]+)\\.([a-z]{2,6}\\.?)(\\/[\\w\\s.-]*)*\\/?$")```: wyrażenie regularne do sprawdzania poprawności adresu URL.
-- ```let passwordRegex = try NSRegularExpression(pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$")```: wyrażenie regularne do sprawdzania siły hasła (minimum 8 znaków, co najmniej jedna mała litera, co najmniej jedna duża litera i co najmniej jedna cyfra).
-
-Możesz również używać funkcji ```matches(in:options:range)``` aby znaleźć dopasowania do wyrażenia regularnego w danym tekście. Przykładowy kod może wyglądać następująco:
-
-```Swift
-if let match = emailRegex.firstMatch(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count)) {
-  print("Wprowadzony adres e-mail jest poprawny.")
+// znajdź wystąpienie wyrażenia regularnego w tekście
+let text = "Kocham programowanie w Swift!"
+let pattern = "programowanie"
+if let range = text.range(of: pattern) {
+    print("Znaleziono dopasowanie na pozycjach \(range.lowerBound) - \(range.upperBound)")
 } else {
-  print("Wprowadzony adres e-mail jest niepoprawny.")
+    print("Nie znaleziono dopasowania")
 }
+
+// aktualizuj tekst na podstawie wyrażenia regularnego
+let newText = text.replacingOccurrences(of: pattern, with: "kodowanie")
+print(newText) // "Kocham kodowanie w Swift!"
 ```
 
-# Głębsze zagłębienie w wyrażeniach regularnych w Swift
+## Głębsza analiza
+Wyrażenia regularne pozwalają na użycie specjalnych znaków i symboli do stworzenia bardziej złożonych wzorców. Na przykład:
 
-Podstawowe wyrażenia regularne mogą być bardzo przydatne, ale istnieje wiele innych funkcji i opcji, które warto poznać. Możesz na przykład użyć wyrażeń regularnych do wyodrębniania określonych części tekstu, zastępowania wyrażeń lub walidacji danych wejściowych. Możesz również używać symboli specjalnych, które pozwalają tworzyć bardziej skomplikowane wyrażenia. W Internecie znajdziesz wiele źródeł z przykładami wyrażeń regularnych w różnych językach programowania, w tym w Swift.
+- `[]` - znaki wyboru, np. `[a-z]` oznacza wszystkie małe litery
+- `*` - symbol wielokrotnej ilości, np. `[a-z]*` dopasowuje do dowolnej liczby małych liter
+- `+` - symbol jednokrotnej lub większej ilości, np. `[0-9]+` dopasowuje do dowolnej liczby cyfr
+- `^` - symbol początku linii, np. `^Swift` dopasowuje do linii zaczynającej się od słowa "Swift"
+- `$` - symbol końca linii, np. `value$` dopasowuje do linii kończącej się na słowie "value"
 
-# Zobacz także
+Istnieje wiele innych znaków specjalnych i możliwości manipulacji tekstem za pomocą wyrażeń regularnych, dlatego warto zagłębić się w ten temat, aby wykorzystać je w pełni.
 
-- [Dokumentacja Apple na temat wyrażeń regularnych w Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Blog Ray'a Wenderlicha: "Wyrażenia regularne w Swift" (ang.)](https://www.raywenderlich.com/262-regular-expressions-tutorial-for-swift-part-1)
-- [Strona Regex101 - narzędzie do testowania wyrażeń regularnych w różnych językach, w tym w Swift](https://regex101.com/)
+## Zobacz także
+- [Podstawy wyrażeń regularnych w Swift](https://medium.com/@jagdeep1/wymaganie-8-podstawy-wyra%C5%BCe%C5%84-regularnych-d6be6a766474)
+- [Oficjalna dokumentacja Swift - Wyrażenia regularne](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Kurs wideo o wyrażeniach regularnych w Swift](https://www.youtube.com/watch?v=rXl9EvoUlIU)

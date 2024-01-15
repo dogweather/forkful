@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Travailler avec json"
+title:                "Travailler avec json"
+html_title:           "Clojure: Travailler avec json"
 simple_title:         "Travailler avec json"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,54 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi travailler avec JSON?
+## Pourquoi 
 
-JSON (JavaScript Object Notation) est un format de données populaire utilisé pour échanger des informations sur le web. En tant que programmeur en Clojure, il est important d'être capable de travailler avec JSON afin d'intégrer des données provenant de différentes sources dans vos projets.
+Si vous êtes un développeur à la recherche d'un moyen efficace de manipuler et de transférer des données, alors travailler avec des fichiers JSON en Clojure pourrait être la solution parfaite. En utilisant Clojure pour traiter des données JSON, vous pouvez bénéficier de la syntaxe concise du langage ainsi que de ses nombreuses bibliothèques et outils qui facilitent le traitement des données.
 
-## Comment travailler avec JSON en Clojure
+## Comment faire 
 
-Pour commencer, vous aurez besoin d'importer la bibliothèque "cheshire" dans votre projet Clojure. Cette bibliothèque vous permettra de manipuler facilement des données JSON en utilisant des fonctions simples et intuitives.
+```Clojure (use '[clojure.data.json :as json])
 
-```
-(require '[cheshire.core :as json])
-```
+;; Créer un fichier JSON avec des données
+(def data {:nom "Jean" :âge 30 :sexe "homme"})
 
-### Convertir des données Clojure en JSON
+;; Convertir les données en format JSON
+(json/write-str data)
+;; Output : {"nom":"Jean","age":30,"sexe":"homme"}
 
-Pour convertir des données Clojure en JSON, vous pouvez utiliser la fonction "generate-string" de la bibliothèque Cheshire. Voici un exemple de données Clojure et le résultat JSON correspondant:
-
-```Clojure
-(def data {:nom "Jean" :age 25 :ville "Paris"})
-(json/generate-string data)
-```
-
-Sortie:
-
-```json
-{"nom":"Jean","age":25,"ville":"Paris"}
+;; Lire un fichier JSON et le convertir en données Clojure
+(json/read-str "{\"nom\":\"Marie\",\"age\":\"25\",\"sexe\":\"femme\"}")
+;; Output : {:nom "Marie", :âge 25, :sexe "femme"}
 ```
 
-### Convertir JSON en données Clojure
+## Plongée en profondeur 
 
-Pour convertir des données JSON en données Clojure, vous pouvez utiliser la fonction "parse-string" de la bibliothèque Cheshire. Voici un exemple de données JSON et le résultat correspondant en données Clojure:
+En travaillant avec Clojure, vous aurez également accès à des bibliothèques telles que `cheshire` et `clj-json` qui fournissent des fonctionnalités avancées pour la manipulation de données JSON. Vous pourriez également trouver utile d'utiliser des outils tels que `json-schema` pour valider la structure de vos fichiers JSON, ou `jsonista` pour simplifier la conversion de données en JSON. N'hésitez pas à explorer ces différentes options pour trouver celle qui correspond le mieux à vos besoins.
 
-```Clojure
-(def json-data "{\"nom\":\"Marie\",\"age\":30,\"ville\":\"Lyon\"}")
-(json/parse-string json-data true)
-```
+## Voir aussi 
 
-Sortie:
-
-```Clojure
-{:nom "Marie" :age 30 :ville "Lyon"}
-```
-
-## Plongée profonde dans JSON en Clojure
-
-En plus des fonctions de base pour travailler avec JSON, la bibliothèque Cheshire offre également des fonctionnalités avancées telles que la validation de schéma, la manipulation de grands fichiers JSON et la personnalisation du format de sortie JSON. Pour en savoir plus sur ces fonctionnalités, vous pouvez consulter la documentation officielle de Cheshire.
-
-## Voir aussi
-
-- [Documentation officielle de Cheshire](https://github.com/dakrone/cheshire)
-- [Tutoriel pour travailler avec JSON en Clojure](https://clojure.org/guides/json)
-- [Blog post sur la manipulation de données JSON en Clojure](https://yogthos.net/posts/2014-08-18-working-with-json-in-clojure.html)
+- [Documentation officielle Clojure pour le traitement de données JSON](https://clojure.org/guides/json)
+- [Tutoriel pour travailler avec des données JSON en Clojure](https://www.baeldung.com/clojure-json)
+- [Comparaison des bibliothèques JSON en Clojure](https://www.dailycred.com/article/clojure-json-libraries-compared)

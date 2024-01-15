@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: तेस्ट लिखना"
-simple_title:         "तेस्ट लिखना"
+title:                "प्रोग्रामिंग कोड लिखना"
+html_title:           "Javascript: प्रोग्रामिंग कोड लिखना"
+simple_title:         "प्रोग्रामिंग कोड लिखना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -9,38 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## Kyu
 
-तेजी से बढ़ती वैश्विक दुनिया में, प्रोग्रामिंग जगत में सफलता पाने के लिए उचित और अनुशासित उपाय निर्धारित करने के लिए, टेस्टिंग एक अत्यावश्यक कौशल है। टेस्टिंग, कोड में विभिन्न त्रुटियों को पहचानने और सुधार करने में मदद करता है जो न केवल प्रोग्रामिंग क्षेत्र में सफलता बढ़ाता है, बल्कि उपयोगकर्ताओं को भी उनके उत्पादों में विश्वास जुटाने में मदद करता है।
+Tests likhna koi optional kaam nahi hai, balki ye ek zaroori step hai code quality ko improve karne ke liye. Isse hum apne code par confidence rakhte hain aur bugs ko pehle se hi detect kar sakte hain, jisse bug fixing time reduce hojata hai.
 
-## कैसे
+## Kaise Kare
 
-टेस्टिंग को सीखने और समझने के लिए, हम जावास्क्रिप्ट में लिखित कोड का उपयोग करते हुए कुछ उदाहरण देखेंगे। नीचे दिए गए कोड ब्लॉक को जावास्क्रिप्ट कोड से घिरा है।
+Unit tests banana bahut hi aasan hai. Pehle hum chai chai (chai assertion library) ka use kartein hain, phir mocha (testing framework) ka use kartein hain.
 
-```Javascript
-// एक सरल गणितीय फ़ंक्शन जो दो संख्याओं को जोड़ता है
-function add(a, b) {
-  return a + b;
-}
-
-// इस फ़ंक्शन को टेस्ट करने के लिए, हम एक टेस्ट केस बनाते हैं
-let result = add(2, 4);
-
-// योग्यता जाँचें कि प्रत्येक केस में सही परिणाम वापस आता है
-if(result === 6) {
-  console.log("टेस्ट पास कैसे हुआ!");
-} else {
-  console.log("टेस्ट फेल्ड आज़ाद।");
-}
-
-// और फिर कुछ अलग सेटिंग पर टेस्ट के लिए, जैसे कि नेगेटिव संख्या के साथ।
-result = add(-5, 2);
-
-if(result === -3) {
-  console.log("टेस्ट पास कैसे हुआ!");
-} else {
-  console.log("टेस्ट फेल्ड आज़ाद।");
-}
+```
+// chai ke saath chai chai install karna
+npm install chai -D
+// mocha install karna, -g flag use karke globally install karna hai
+npm install mocha -g
 ```
 
-आप देख सकते हैं कि हमने कुछ साधारण फ़ंक्शन बनाकर उन्हें टेस्ट केस के साथ परीक्षण किय
+Ab chai chai aur mocha ko use karke ek test file create karenge.
+
+```
+// test.js file create karke chai chai aur mocha ko import karna
+var expect = require('chai').expect;
+var assert = require('chai').assert;
+var request = require('chai').request;
+var app = require('../server.js');
+
+// describe aur it functions use karke ek test case create karna
+describe('GET /user', function() {
+  it('should return a 200 response', function(done) {
+    request(app)
+      .get('/user')
+      .expect(200, done);
+  });
+  it('should return an array of users', function(done) {
+    request(app)
+      .get('/user')
+      .expect(function(res) {
+        expect(res.body).to.be.an('array');
+        assert.isEmpty(res.body);
+      })
+      .end(done);
+  });
+});
+```
+
+Code ke upar dekhein, chai chai ke saath chai banner use karke hum chai chai library ko import karke chai aur assert objects ko initialize kar sakte hain. Phir chai chai ka use karke chai chai banner se chai chai objects create kar sakte hain. Chai chai banner ke baad chai chai ka use karein aur expect aur assert objects ko chai chai banner se initialize karein. Phir mocha banner use karke mocha library ko import karein. Pher mocha ke functions describe aur it ka use karke hum apne test cases likh sakte hain.
+
+## Deep Dive
+
+Unit tests likhna humare code ko prepared rakhte hain unexpected errors aur bugs ke liye. Tests ke help se hum apne code ko robust bana sakte hain aur future mein modifications ko asaani se implement kar sakte hain. Isse humari productivity aur code quality dono hi improve hoti hai.
+
+## Aage Dekhein
+
+- [Chai Assertion Library](https://www.chaijs.com/) 
+- [Mocha Testing Framework](https://mochajs.org/) 
+- [Unit Testing in Javascript](https://www.freecodecamp.org/news/javascript-unit-testing-for-beginners-9182d13a3cc1/)

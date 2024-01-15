@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Analysering av html"
+title:                "Analysering av html"
+html_title:           "Fish Shell: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å tolke HTML kan være en svært nyttig ferdighet for Fish Shell-programmerere. Det gjør det mulig å analysere og manipulere nettsideinnhold, som kan være nyttig for automatisering eller web scraping.
+
+Å parse HTML kan være nyttig for å ekstrahere informasjon fra nettsider eller bygge automatiserte skript for nettlesingsoppgaver.
 
 ## Slik gjør du det
-Det første du trenger å gjøre er å installere `curl`-pakken ved å kjøre følgende kommando i terminalen:
+
+For å parse HTML i Fish Shell, kan du bruke verktøyet `lynx`, som er installert som standard på mange Linux-distribusjoner.
 
 ```Fish Shell
-$ pakkeinstall curl
+lynx -dump -nolist <nettside> | sed 's/.*/\x1b[33m&\x1b[30m/'
 ```
 
-Deretter kan du bruke `curl` for å hente HTML fra en nettside og lagre det i en variabel ved å bruke `set`-kommandoen:
+Dette vil skrive ut teksten fra nettsiden i kommandolinjen og formatere den med gult og svart. Du kan også bruke `curl` og `pup` for å gjøre samme jobben:
 
 ```Fish Shell
-$ set html_curl (curl -s https://www.example.com)
+curl -s <nettside> | pup 'p.text{}'
 ```
 
-Nå kan du bruke `string`-kommandoen til å utføre forskjellige operasjoner på HTML-innholdet. For eksempel, hvis du bare ønsker å se på innholdet av en bestemt HTML-tag, kan du bruke følgende kommando:
+Output vil være i ren tekst, uten formatering.
+
+## Dykk dypere
+
+En mer avansert måte å bruke Fish Shell for å parse HTML er å bruke verktøyet `xidel`. Dette verktøyet lar deg bruke XPath og CSS-selectors for å velge spesifikke elementer fra en nettside.
 
 ```Fish Shell
-$ string extract -r '<tag>.*<\/tag>' $html_curl
+xidel <nettside> -e '//div[@class="innhold"]'
 ```
 
-Dette vil returnere alle forekomster av `<tag>` og deres innhold i HTML-en.
-
-## Mer informasjon
-Hvis du ønsker å lære mer om hvordan du kan tolke HTML med Fish Shell, kan du utforske noen av de forskjellige plugins og pakker som er tilgjengelige. For eksempel, `htmlparse`-pluginet kan være nyttig for å tolke HTML ved hjelp av CSS-selektorer.
+Dette eksemplet vil hente innholdet fra et HTML-element med klassen "innhold" på nettsiden. Du kan også utføre mer avanserte oppgaver som å kombinere flere XPath-forespørsler eller lagre utdataen i en variabel.
 
 ## Se også
-- [Fish Shell nettside](https://fishshell.com/)
-- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Curl pakke for Fish Shell](https://fishshell.com/docs/current/commands.html#curl)
-- [Htmlparse plugin for Fish Shell](https://github.com/fish pkg/htmlparse)
+
+- [Fish Shell dokumentasjon - Pipes og subshells](https://fishshell.com/docs/current/tutorial.html#tut_pipes)
+- [Developer Mozilla - XPath tutorial](https://developer.mozilla.org/en-US/docs/Web/XPath)
+- [CSS Diner - Et interaktivt CSS-selectors spill](https://flukeout.github.io/)

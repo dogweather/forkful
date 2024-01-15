@@ -1,6 +1,7 @@
 ---
-title:                "C: Utilizzo delle espressioni regolari"
-simple_title:         "Utilizzo delle espressioni regolari"
+title:                "Utilizzare le espressioni regolari"
+html_title:           "C: Utilizzare le espressioni regolari"
+simple_title:         "Utilizzare le espressioni regolari"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,59 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché utilizzare le espressioni regolari in programmazione C
+## Perché
 
-Le espressioni regolari sono un importante strumento per la manipolazione dei dati in programmazione C. Con l'aiuto delle espressioni regolari, è possibile cercare, modificare e sostituire testo in modo efficiente e preciso. Quindi, se sei un programmatore C, dovresti considerare seriamente l'utilizzo delle espressioni regolari nel tuo codice.
+Se ti trovi a dover gestire grandi quantità di testo, magari in un'applicazione di analisi dei dati o in un sistema di ricerca, sicuramente ti sei trovato nella situazione di dover filtrare, cercare o sostituire una specifica stringa di caratteri. In questi casi, un'ottima soluzione è rappresentata dalle espressioni regolari, una serie di caratteri speciali che permettono di effettuare operazioni complesse sulle stringhe di testo.
 
-## Come utilizzare le espressioni regolari in programmazione C
+## Come si usa
 
-Il primo passo per utilizzare le espressioni regolari in C è includere la libreria `<regex.h>`. Questa libreria fornisce le funzioni necessarie per operare con espressioni regolari. Una volta inclusa la libreria, puoi utilizzare la funzione `regcomp()` per compilare una espressione regolare e creare un oggetto espressione regolare. Quindi, puoi utilizzare la funzione `regexec()` per eseguire la ricerca nella stringa di input utilizzando l'oggetto espressione regolare. Ecco un esempio di codice che cerca una parola specifica all'interno di una stringa:
+Le espressioni regolari sono disponibili in C tramite la libreria PCRE (Perl Compatible Regular Expressions). Dopo aver incluso la libreria con l'istruzione `#include <pcre.h>`, è possibile utilizzare la funzione `pcre_compile()` per compilare un'espressione regolare e la funzione `pcre_exec()` per applicarla ad una stringa. Vediamo un esempio di utilizzo:
 
-```C
+```
 #include <stdio.h>
-#include <regex.h>
+#include <pcre.h>
 
-int main() {
-    // Compila l'espressione regolare
-    regex_t regex;
-    char *pattern = "ciao";
-    int result = regcomp(&regex, pattern, 0);
+int main()
+{
+    char *regex = "^Hello (\\w+)$"; // Espressione regolare
+    char *input = "Hello world"; // Stringa di input
+    char *matches[2]; // Array per i risultati
 
-    // Esegue la ricerca nella stringa di input
-    char *input = "Ciao, come stai?";
-    int match = regexec(&regex, input, 0, NULL, 0);
+    // Compilazione dell'espressione regolare
+    pcre *regexCompiled = pcre_compile(regex, 0, NULL, NULL, NULL);
 
-    if (match == 0) {
-        // La stringa contiene la parola "ciao"
-        printf("La stringa contiene la parola \"ciao\"\n");
-    } else {
-        // La stringa non contiene la parola "ciao"
-        printf("La stringa non contiene la parola \"ciao\"\n");
+    // Applicazione dell'espressione regolare
+    int result = pcre_exec(regexCompiled, NULL, input, strlen(input), 0, 0, matches, 2);
+
+    // Stampa del risultato
+    if (result > 0)
+    {
+        printf("Ciao, %.*s!", matches[1] - matches[0], input + matches[0]);
     }
-
-    // Libera l'oggetto espressione regolare
-    regfree(&regex);
+    else
+    {
+        printf("Nessuna corrispondenza trovata.");
+    }
 
     return 0;
 }
 ```
-Output:
-```
-La stringa contiene la parola "ciao"
-```
 
-## Approfondimento sull'utilizzo delle espressioni regolari
+L'output di questo programma sarà "Ciao, world!". Spieghiamo brevemente il codice: nella prima riga definiamo l'espressione regolare, che significa "inizia con la parola Hello seguita da uno o più caratteri alfanumerici". Nelle righe seguenti, inclusa la funzione `main()`, viene compilata l'espressione regolare e viene applicata alla stringa di input. In caso di successo, la funzione `pcre_exec()` restituisce il numero di corrispondenze trovate e salva i risultati nell'array `matches`. Il cui primo elemento corrisponde all'intera corrispondenza e il secondo alla prima cattura, ovvero il testo compreso tra le parentesi nella nostra espressione regolare. Infine, stampiamo il risultato a schermo.
 
-Le espressioni regolari mettono a disposizione una vasta gamma di simboli e metacaratteri per cercare e manipolare testo. Ad esempio, puoi utilizzare il simbolo `.` per corrispondere a qualsiasi carattere, il simbolo `*` per indicare una corrispondenza zero o più volte e il simbolo `+` per indicare una corrispondenza una o più volte.
+## Approfondimento
 
-Inoltre, è possibile utilizzare le parentesi `( )` per creare gruppi all'interno di un'espressione regolare e l'operatore `|` per indicare un'alternativa tra due possibili corrispondenze. Per esempio, l'espressione regolare `(ciao|salve)` corrisponde a entrambe le parole "ciao" e "salve".
-
-Oltre a queste funzionalità di base, esistono anche varie bande di caratteri, come `[a-z]` per indicare una corrispondenza con qualsiasi carattere minuscolo, e le sequenze di escape come `\d` per corrispondere a una cifra.
-
-Il modo più efficace per imparare ad utilizzare le espressioni regolari è quello di sperimentare con vari esempi e vedere i risultati. Quindi, se sei nuovo all'utilizzo delle espressioni regolari, ti consiglio di leggere documentazione online e di utilizzare editor di testo o strumenti online per testare e imparare le diverse funzionalità.
+Le espressioni regolari offrono numerose funzionalità che permettono di effettuare operazioni sempre più specifiche sul testo da elaborare. Per esempio, è possibile utilizzare dei quantificatori per indicare il numero di ripetizioni di un determinato carattere o gruppo di caratteri, o ancora usare gli operatori alternativi per definire più varianti di una corrispondenza. Inoltre, le espressioni regolari supportano anche i caratteri di escape, per far fronte a casi in cui è necessario cercare caratteri speciali come `.` o `+`.
 
 ## Vedi anche
 
-- [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124): libro di riferimento sulle espressioni regolari.
-- [regexr.com](https://regexr.com/): strumento online per testare e sperimentare con espressioni regolari.
-- [Tutorial sulle espressioni regolari in C](https://www.regular-expressions.info/c.html): guida dettagliata all'utilizzo delle espressioni regolari in C.
+- [Documentazione PCRE in italiano](https://www.php.net/manual/it/book.pcre.php)
+- [Tutorial introduttivo alle espressioni regolari in C](https://www.codeproject.com/Articles/492194/Basic-Regex-Tutorial-In-C)

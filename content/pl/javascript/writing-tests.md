@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Javascript: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,39 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie testów jest nieodzowną częścią procesu programowania. Pozwala ono na przetestowanie naszego kodu, upewnienie się o jego poprawności i zapobieganie błędom. Dodatkowo, dzięki testom, możemy łatwiej wprowadzać zmiany w naszym programie, ponieważ możemy szybko zweryfikować czy nie wprowadzają one niechcianych efektów.
+Pisanie testów w Javascript może wydawać się zbędne lub czasochłonne, ale rzeczywistość jest taka, że jest to bardzo ważny krok w procesie tworzenia aplikacji. Testy pozwalają zweryfikować poprawność kodu i upewnić się, że wszelkie zmiany nie wpłynęły negatywnie na działanie programu. Jest to szczególnie istotne w większych projektach, gdzie proste błędy mogą mieć poważne konsekwencje.
 
-## Jak napisać testy w Javascript
+## Jak to zrobić?
 
-Aby napisać testy w języku Javascript, potrzebujemy odpowiedniej biblioteki, takiej jak Mocha czy Jest. Następnie, musimy zdefiniować nasze testy w odpowiedniej strukturze. Przykładowy kod testu wyglądałby następująco:
+```Javascript
+// Przykładowa funkcja do testowania
+function dodaj(a, b) {
+  return a + b
+}
 
-```Javascript 
-it('powinno zwrócić sumę dwóch liczb', () => {
-  const result = sum(2, 3);
-  const expected = 5;
-  assert.equal(result, expected);
-});
+// Przykład testu dla powyższej funkcji
+describe("dodaj()", () => {
+  it("powinno prawidłowo zsumować dwie liczby", () => {
+    expect(dodaj(2, 4)).toBe(6)
+  })
+})
 ```
 
-W powyższym przykładzie widzimy, że najpierw definiujemy, co nasz test powinien zwrócić (w naszym przypadku sumę dwóch liczb). Następnie, deklarujemy oczekiwany wynik i porównujemy go z rzeczywistym wynikiem. Dzięki temu, jeśli test nie zwróci oczekiwanego wyniku, zostanie on uznany za nieudany.
+W powyższym przykładzie użyliśmy biblioteki do testów o nazwie Jest, ale istnieje wiele innych narzędzi dostępnych dla języka Javascript. Testowanie funkcji może wydawać się proste, ale można także pisać testy dla bardziej skomplikowanych części kodu, takich jak interakcje z bazą danych czy funkcje asynchroniczne.
 
-## Głębsze zagadnienia
+## Deep Dive
 
-Tworzenie testów w języku Javascript może być trudniejsze ze względu na jego asynchroniczność. W takich przypadkach, musimy użyć struktury "done", aby oznaczyć, że nasz test jest kompletny. Przykład ten jest szczególnie ważny w przypadku testowania funkcji asynchronicznych, takich jak pobieranie danych z bazy danych.
-
-``Javascript
-it('powinno zwrócić listę użytkowników', (done) => {
-  getUsers((users) => {
-    const expected = ['John', 'Jane', 'Tom'];
-    assert.deepEqual(users, expected);
-    done();
-  });
-});
-```
-
-Najważniejszą rzeczą przy tworzeniu testów jest pisanie ich w sposób czytelny i zrozumiały dla innych programistów. Pamiętajmy także, że testy powinny być tworzone równolegle z kodem, aby zapewnić jego jakość.
+Podczas pisania testów warto pamiętać o kilku rzeczach. Po pierwsze, testy powinny być jak najbardziej niezależne od siebie, aby można było w łatwy sposób je modyfikować i dodawać nowe. Dlatego dobrze jest podzielić testy na mniejsze jednostki, np. testowanie pojedynczych funkcji zamiast całych modułów. Po drugie, testy powinny sprawdzać poprawność działania kodu, a nie samą jego składnię. Nie jest to miejsce na poprawianie błędów, należy to zrobić w samym kodzie.
 
 ## Zobacz także
 
-- Artykuł na temat testowania w języku Javascript: [Link](https://developer.mozilla.org/pl/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
-- Przykłady testów w bibliotece Jest: [Link](https://jestjs.io/docs/en/getting-started)
+- [Jest](https://jestjs.io/)
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Czym są testy jednostkowe i dlaczego są ważne](https://blog.devskiller.com/pl/testy-jednostkowe-w-javascript/)
+- [Javascript Testing Best Practices](https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)

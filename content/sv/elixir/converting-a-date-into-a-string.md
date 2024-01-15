@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Omvandla ett datum till en sträng"
-simple_title:         "Omvandla ett datum till en sträng"
+title:                "Omvandla en datum till en sträng"
+html_title:           "Elixir: Omvandla en datum till en sträng"
+simple_title:         "Omvandla en datum till en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,31 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att konvertera en datum till en sträng är en viktig del av programmering eftersom det hjälper till att presentera datum och tid på ett användarvänligt sätt. Det är också en användbar funktion när man arbetar med datahantering och lagring.
 
-Elixir är ett otroligt kraftfullt programmeringsspråk som erbjuder många möjligheter för utvecklare. En av dessa är möjligheten att enkelt konvertera datum till strängar. I denna bloggpost kommer vi att utforska varför man skulle vilja göra detta och hur man kan göra det på ett enkelt sätt.
-
-## Så här gör du
-
-Konvertera ett datum till en sträng är enkelt i Elixir. Vi använder funktionen `~D` som står för "Datum" och lägger bara till datumet som en argument. Låt oss titta på ett exempel:
-
+## Hur man gör det
 ```Elixir
-~D[2021-03-24] 
+defp convert_date_to_string(date) do
+  date |> NaiveDateTime.from_iso8601! |> NaiveDateTime.to_string("YYYY-MM-DD")
+end
 ```
 
-Detta kommer att returnera datumet som en sträng "2021-03-24". Vi kan också lägga till en valfri formattering genom att använda `~D{}` och ange den önskade formatmallen.
+Genom att använda funktionerna `NaiveDateTime.from_iso8601!` och `NaiveDateTime.to_string` kan vi konvertera ett datum till en sträng i det önskade formatet. I exemplet ovan använder vi formatet "YYYY-MM-DD", men det finns många andra format att välja mellan.
+
+Exempel på input och output:
 
 ```Elixir
-~D{2021-03-24, {"månad", "dag", "år"}} 
+iex> convert_date_to_string("2020-07-15")
+"2020-07-15"
 ```
 
-Detta ett annat strängformat "mars 24, 2021". Du kan experimentera med olika formatmallar för att få den önskade strängen för ditt program. 
+## Utforska djupare
+Att konvertera en datumsträng till ett specifikt format kan också användas för att jämföra och sortera datum i en databas. Det finns också olika bibliotek tillgängliga i Elixir för att hantera datum och tider, till exempel `timex` och `calendar`.
 
-## Djupdykning
-
-Konvertering av datum till sträng är faktiskt mycket mer komplicerat bakom kulisserna. Elixir använder sig av Erlangs bibliotek `calendar` för att göra denna process snabb och effektiv. Det finns också många andra inbyggda funktioner som `~D` som gör det möjligt att hantera datum enkelt utan att behöva oroa dig för komplexa algoritmer.
-
-## Se också
-
-- [Elixir Docs - Date and Time](https://elixir-lang.org/docs/master/DateTime.html)
-- [Elixir School - Dates and Times](https://elixirschool.com/en/lessons/basics/dates/)
-- [Learn X in Y Minutes - Elixir](https://learnxinyminutes.com/docs/elixir/)
+## Se även
+- [Elixir Date and Time](https://elixir-lang.org/getting-started/basic-types.html#dates-and-times)
+- [timex documentation](https://hexdocs.pm/timex/Timex.html)
+- [calendar documentation](https://elixir-lang.org/docs/1.11/calendar.html)

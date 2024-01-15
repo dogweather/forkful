@@ -1,5 +1,6 @@
 ---
-title:                "Java: Escribiendo pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Java: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Java"
 category:             "Java"
@@ -9,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas (Why)
+## Por qué
 
-Escribir pruebas (o tests) es una parte esencial en el proceso de desarrollo de software. Las pruebas nos permiten asegurar que nuestro código funcione correctamente y se comporta de la manera esperada, lo que aumenta la calidad y confiabilidad de nuestra aplicación. Además, al escribir pruebas, podemos detectar errores de manera temprana y corregirlos antes de que lleguen a producción.
+Escribir pruebas en Java es una práctica esencial para garantizar que nuestro código sea confiable y funcione correctamente. Al escribir pruebas, podemos detectar y corregir errores antes de que lleguen a producción, lo que a su vez nos permite ahorrar tiempo y evitar problemas en el futuro.
 
-## Cómo escribir pruebas (How To)
+## Cómo hacerlo
 
-Para escribir pruebas en Java, utilizamos el framework de pruebas automatizadas JUnit. Lo primero que debemos hacer es crear una clase de prueba, la cual deberá tener la anotación `@Test` sobre cada método que queramos probar. Dentro de cada método, utilizamos los métodos de aserción de JUnit para comparar el resultado esperado con el resultado real. Por ejemplo:
+Para escribir pruebas en Java, necesitaremos utilizar el framework de pruebas JUnit. Aquí hay un ejemplo de cómo podemos crear una clase de prueba y escribir una prueba simple para una función que devuelve el doble de un número:
 
 ```Java
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-public class CalculadoraTest {
-    @Test
-    public void testSuma() {
-        int resultado = Calculadora.suma(2, 3);
-        assertEquals(5, resultado);
-    }
+public class PruebaEjemplo {
+
+  @Test
+  public void testDoblarNumero() {
+    int resultado = Ejemplo.doblarNumero(5);
+    assertEquals(10, resultado);
+  }
 }
 ```
 
-Una vez que tenemos nuestros métodos de prueba, podemos ejecutarlos utilizando un runner de pruebas, como lo es el runner por defecto de JUnit. Este nos mostrará si las pruebas han pasado o fallado, y en caso de haber fallado, nos mostrará en qué parte de nuestro código se ha producido el error.
+En este ejemplo, estamos importando el paquete JUnit, creando una clase de prueba y utilizando la anotación `@Test` para indicar que este es un método de prueba. Luego, utilizamos el método `assertEquals()` para verificar si el resultado de la función `doblarNumero()` es igual a 10.
 
-## Profundizando en las pruebas (Deep Dive)
+## Profundizando
 
-Existen diferentes tipos de pruebas que podemos escribir en Java, como por ejemplo pruebas unitarias, que se enfocan en probar una unidad de código, pruebas de integración, que verifican la correcta interacción entre módulos de nuestro código, y pruebas de aceptación, que aseguran que el sistema cumpla con los requisitos del negocio. Además, podemos utilizar herramientas como Mockito, que nos permiten simular comportamientos y objetos en nuestras pruebas.
+Aunque esta es solo una prueba simple, podemos escribir pruebas más complejas utilizando diferentes técnicas y herramientas. Algunas de ellas incluyen la creación de pruebas parametrizadas para probar diferentes valores de entrada, la utilización de aserciones más específicas para verificar diferentes tipos de datos y la integración con herramientas de cobertura de código para evaluar la efectividad de nuestras pruebas.
 
-Es importante tener en cuenta que las pruebas no garantizan la ausencia de errores en nuestro código, pero sí nos ayudan a encontrar y corregir errores de manera más eficiente.
+También es importante tener en cuenta que las pruebas deben ser escritas de manera independiente, lo que significa que no deben depender de otras pruebas o del orden en que se ejecutan. Además, es una buena práctica escribir pruebas antes de implementar una nueva funcionalidad, ya que esto nos obliga a pensar en los posibles casos de uso y a diseñar un código más estructurado.
 
-## Ver también (See Also)
+## Ver también
 
-- [Tutorial de JUnit](https://www.tutorialspoint.com/junit/index.htm)
-- [Documentación de Mockito](https://site.mockito.org/)
-- [Beneficios de escribir pruebas en Java](https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html)
+- [Documentación de JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [Tutorial de pruebas en Java](https://www.tutorialspoint.com/junit/junit_quick_guide.htm)
+- [Escribiendo pruebas en Java con JUnit](https://stackabuse.com/writing-tests-in-java-using-junit/)

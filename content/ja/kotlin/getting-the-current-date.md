@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "「現在の日付を取得する」"
+html_title:           "Kotlin: 「現在の日付を取得する」"
+simple_title:         "「現在の日付を取得する」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,32 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-現在の日付を取得する理由は、日々の生活やビジネスにおいて、正確な日付を把握することが重要だからです。プログラミングにおいても、特定のタスクを実行する際に現在の日付を使用することがあります。
+なぜ、現在の日付を取得しようとするのでしょうか。実は、私たちの日常生活やビジネスにおいて、日付はとても重要な情報です。例えば、スケジュール管理やデータベースのレコードに日付を追加したり、特定の日付をユーザーに表示したりするために、現在の日付を取得する必要があります。
 
 ## 方法
 
-例えば、Kotlinを使って現在の日付を取得するには、以下のようにコードを書きます。
+Kotlinを使用して、現在の日付を簡単に取得する方法を紹介します。まずは必要なインポートを行います。
 
 ```Kotlin
 import java.time.LocalDate
-
-fun main() {
-    // 現在の日付を取得する
-    val currentDate = LocalDate.now() 
-    // 日付を表示する
-    println(currentDate)
-}
+import java.time.format.DateTimeFormatter
 ```
 
-実行すると、`2021-06-29`のような出力が得られます。
+次に、現在の日付を取得するためのコードを書きます。
 
-## 詳細
+```Kotlin
+val currentDate = LocalDate.now()
+```
 
-日付を取得する際には、Javaの`java.time`パッケージを使用することが推奨されています。Kotlinでは、`LocalDate`クラスを使用することで現在の日付を取得することができます。`LocalDate.now()`メソッドを使用することで、現在の日付を取得することができます。
+そして、取得した日付を任意のフォーマットで表示するために、```DateTimeFormatter```を使用します。
 
-また、`LocalDate`クラスには、日付を操作するための様々なメソッドが用意されています。例えば、`plusDays()`を使用することで、指定した日数だけ日付を加算することができます。
+```Kotlin
+val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+val formattedCurrentDate = currentDate.format(formatter)
+println("現在の日付は $formattedCurrentDate です。")
+```
 
-## また見る
+実行すると、以下のような結果が得られます。
 
-- [Kotlin公式ドキュメント: `java.time`パッケージ](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/)
-- [コーン日付操作についての記事](https://medium.com/@codemateinc/kotlin-time-manipulation-with-java-time-7d0a0fd1cb14)
+```
+現在の日付は 2021/09/10 です。
+```
+
+## 深堀り
+
+今回使用した```LocalDate```クラスは、Java 8から導入された日付と時刻を扱うための新しいAPIです。このAPIを使用することで、より簡潔かつ柔軟な日付の取得や操作が可能になります。
+
+また、今回は固定のフォーマットで日付を表示しましたが、```DateTimeFormatter```を使うことで任意のフォーマットに変更することができます。詳細なフォーマットの指定方法やパターンは、公式ドキュメントを参照することができます。
+
+## 関連リンク
+
+- [Kotlin 公式サイト](https://kotlinlang.org/)
+- [Java 8 日付と時刻 APIの紹介](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
+- [DateTimeFormatter クラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/format/DateTimeFormatter.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Arduino: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,64 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Convertingire una data in formato stringa è un'operazione utile per visualizzare informazioni su un display o per salvare dati in un file di testo. Questo può essere particolarmente utile quando si lavora con dati temporali in un progetto Arduino.
+Convertire una data in una stringa può essere utile quando si vuole visualizzare la data in un formato specifico o quando si vuole inviarla a un dispositivo esterno che richiede una stringa come input.
 
-## Come Fare
+## Come fare
 
-Il primo passo per convertire una data in una stringa è utilizzare la funzione `String()` per creare un oggetto stringa vuoto. Dopodiché, è necessario utilizzare le funzioni `hour()`, `minute()`, `second()` e `day()`, `month()`, `year()` per estrarre le informazioni dalla data desiderata. Infine, queste informazioni possono essere concatenate all'oggetto stringa utilizzando l'operatore `+`.
+Per convertire una data in una stringa su Arduino, è necessario prima definire la data come un oggetto di tipo `DateTime`. Quindi, si può utilizzare il metodo `toString()` per convertire la data in una stringa nel formato desiderato.
 
-```Arduino 
-// Inizializza l'oggetto stringa
-String data = "";
+```Arduino
+#include <RTClib.h> //libreria per gestire il modulo RTC
 
-// Estrapola informazioni dalla data
-int ora = hour();
-int minuti = minute();
-int secondi = second();
-int giorno = day();
-int mese = month();
-int anno = year();
+RTC_DS1307 rtc; //istanza del modulo RTC
+DateTime data; //oggetto DateTime per gestire la data
 
-// Concatena le informazioni all'oggetto stringa
-data = data + ora + ":" + minuti + ":" + secondi + " " + giorno + "/" + mese + "/" + anno;
+void setup() {
+  //inizializzazione del modulo RTC
+  rtc.begin();
 
-// Stampa la data in formato stringa
-Serial.println(data);
+  //lettura della data attuale dal modulo RTC
+  data = rtc.now();
+}
+
+void loop() {
+  //conversione della data in una stringa nel formato "GG/MM/AAAA"
+  String data_stringa = data.toString("DD/MM/YYYY");
+
+  //stampa della data sulla seriale
+  Serial.println(data_stringa);
+}
 ```
 
-Output: `14:25:03 22/07/2021`
+In questo esempio, viene utilizzata la libreria `RTClib` per gestire il modulo RTC e il metodo `toString()` con il parametro `"DD/MM/YYYY"` per specificare il formato della stringa desiderato. È possibile utilizzare diversi formati di stringa, come ad esempio `"MM/GG/YYYY"`, `"YYYY-MM-DD"`, `"GG/MM/YYYY HH:MM:SS"` e molti altri.
 
 ## Approfondimento
 
-Esistono anche diverse librerie disponibili per semplificare la conversione di una data in una stringa su Arduino. Ad esempio, la libreria `TimeLib` permette di utilizzare la funzione `now()` per ottenere un oggetto `tmElements_t` contenente le informazioni sulla data e utilizzarle per creare una stringa con la funzione `makeDateString()`.
+Mentre il metodo `toString()` è utile per la conversione di una data in una stringa, è importante notare che l'utilizzo di questo metodo può essere dispendioso in termini di memoria. Questo perché il metodo alloca una nuova stringa ogni volta che viene chiamato, che può portare a problemi di memoria in progetti più complessi.
 
-```Arduino 
-// Includi la libreria TimeLib
-#include "TimeLib.h"
+Un'alternativa è quella di utilizzare la funzione `sprintf()` per formattare la data in una stringa senza generare una nuova allocazione di memoria. Tuttavia, questa opzione richiede un po' più di codice e può essere più complessa da gestire per i principianti.
 
-// Inizializza l'oggetto tmElements_t
-tmElements_t data;
+## Vedi anche
 
-// Imposta la data desiderata
-data.Hour = 14;
-data.Minute = 25;
-data.Second = 3;
-data.Day = 22;
-data.Month = 07;
-data.Year = 2021 - 1970; // Il valore del parametro Year deve essere espresso come numero di anni dal 1970
-
-// Converti la data in una stringa e stampala
-String dataString = makeDateString(data);
-Serial.println(dataString);
-```
-
-Output: `14:25:03 22/07/2021`
-
-È importante notare che entrambi gli esempi sopra utilizzano il formato di data americano MM/DD/YYYY. Se si desidera utilizzare un formato differente, è possibile utilizzare una variabile di tipo `char` per specificare un diverso ordine di concatenazione delle informazioni.
-
-## Vedi Anche
-- Guida ad Arduino
-- [Documentazione su `String()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Documentazione su `TimeLib.h`](https://github.com/PaulStoffregen/Time)
-- [Tutorial su come utilizzare l'oggetto `tmElements_t`](https://www.theengineeringprojects.com/2017/03/introduction-to-tmelements_t-structure-in-arduino-dtmf-controlled-home-automation.html)
-- [Altro esempio di conversione di una data in una stringa su Arduino](https://www.techwalla.com/articles/how-to-convert-a-date-to-string-in-arduino)
+- [Documentazione RTClib](https://github.com/adafruit/RTClib)
+- [Guida alla gestione delle date su Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/datetime/)
+- [Tutorial su sprintf() in Arduino](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)

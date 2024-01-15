@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Escribiendo en el error estándar"
-simple_title:         "Escribiendo en el error estándar"
+title:                "Escritura en el error estándar"
+html_title:           "Arduino: Escritura en el error estándar"
+simple_title:         "Escritura en el error estándar"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida de error estándar en Arduino?
+## ¿Por qué hacer esto?
 
-Escribir a la salida de error estándar puede ser útil al momento de depurar y encontrar errores en nuestro código de Arduino. Al mostrar los errores en tiempo real, podemos identificar y corregir problemas de manera más eficiente.
+Escribir a la salida de error estándar puede ser útil para monitorear el comportamiento de su programa y detectar posibles errores. Además, puede ayudar a identificar problemas y mejorar la depuración de su código.
 
-## Cómo escribir a la salida de error estándar
+## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Arduino, primero debemos incluir la biblioteca "Serial.h". Luego, podemos utilizar la función "Serial.println()" para imprimir nuestro mensaje en la salida de error estándar. Por ejemplo:
+Para escribir a la salida de error estándar en Arduino, se puede utilizar la función `Serial.write()` junto con el objeto `Serial` para comunicarse con el puerto serial. A continuación se muestra un ejemplo de cómo se vería esta función en un código:
 
 ```Arduino
-#include <Serial.h>
-
 void setup() {
-  // Iniciamos la comunicación serial a 9600 baudios
+  // Iniciamos la conexión con el puerto serial
   Serial.begin(9600);
 }
 
 void loop() {
-  // Mostramos un mensaje de error en la salida estándar
-  Serial.println("¡Se ha producido un error!");
+  // Ejemplo de escritura a la salida de error estándar
+  Serial.write("Este es un mensaje de error");
+  delay(1000);
 }
 ```
-La consola de Arduino nos mostrará el mensaje "¡Se ha producido un error!" cada vez que se ejecute el bucle "loop()".
 
-## Profundizando en la salida de error estándar
+El resultado de este código se mostrará en la consola de Serial Monitor en el IDE de Arduino.
 
-La salida de error estándar en Arduino utiliza la comunicación serial para enviar mensajes a la consola. Esto nos permite imprimir mensajes de error en tiempo real mientras nuestro código se está ejecutando. Además, podemos utilizar diferentes funciones de la biblioteca "Serial.h" para formatear nuestros mensajes y mostrar información adicional, como el valor de variables o la hora en la que ocurrió el error.
+## Profundizando más
 
-## Ver también
+Para obtener más información sobre la escritura a la salida de error estándar en Arduino, se puede consultar la documentación oficial en el sitio web de Arduino o buscar ejemplos y tutoriales en línea. Además, también se pueden explorar otras funciones y métodos disponibles para imprimir en la consola de Serial Monitor, como `Serial.print()` y `Serial.println()`.
 
-- [Documentación de Serial en Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Tutorial: Depuración con la salida de error estándar en Arduino](https://www.instructables.com/id/Arduino-Debugging-with-the-Standard-Error-Output-C/)
+## Consulte también
+
+- Documentación oficial de Arduino para escribir a la salida de error estándar: https://www.arduino.cc/reference/en/language/functions/communication/serial/write/
+- Ejemplos y tutoriales en línea sobre la escritura a la salida de error estándar en Arduino: https://maker.pro/arduino/tutorial/how-to-use-standard-error-stream-on-an-arduino-board

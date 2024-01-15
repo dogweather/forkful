@@ -1,6 +1,7 @@
 ---
-title:                "Java: Lähettää http-pyyntö perusautentikointia käyttäen."
-simple_title:         "Lähettää http-pyyntö perusautentikointia käyttäen."
+title:                "Perusautentikoinnilla http-pyynnön lähettäminen."
+html_title:           "Java: Perusautentikoinnilla http-pyynnön lähettäminen."
+simple_title:         "Perusautentikoinnilla http-pyynnön lähettäminen."
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,65 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluat lähettää HTTP-pyynnön perusautentikoinnilla? On tärkeää ymmärtää, että perusautentikointi tarjoaa tietoturvaa verkkosovelluksille lähettämällä käyttäjän tunnistetiedot salattuna. Tämä on erityisen tärkeää, kun käsitellään arkaluontoista tietoa.
+Perusautentikaatiota käytetään HTTP-pyyntöjen lähettämisessä turvallisuuden varmistamiseksi. Se auttaa välttämään sivuston tai sovelluksen luvaton käyttö.
 
-## Kuinka tehdä
-
-Koodiesimerkki osoittaa, kuinka lähettää HTTP-pyyntö käyttäen perusautentikointia. 
+## Miten
 
 ```Java
-// Luodaan HttpClient -olio
-HttpClient client = new DefaultHttpClient();
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-// Määritellään verkkopalvelimen osoite, jolle lähetämme pyynnön
-String url = "http://www.example.com/api";
+public class BasicAuthRequestExample {
 
-// Määritellään käyttäjätunnus ja salasana
-String username = "käyttäjätunnus";
-String password = "salasana";
+    public static void main(String[] args) {
+        try {
+            // Luodaan URL ja muotoillaan käyttäjänimi ja salasana
+            URL url = new URL("http://esimerkkisivusto.com");
+            String username = "käyttäjänimi";
+            String password = "salasana";
+            
+            // Avataan yhteys ja asetetaan pyynnölle perusautentikaatio
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            String auth = username + ":" + password;
+            String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
+            connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
+            
+            // Vastaanotetaan vastaus ja luetaan se
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            StringBuffer response = new StringBuffer();
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+            
+            // Tulostetaan vastaus konsoliin
+            System.out.println("HTTP statuskoodi: " + connection.getResponseCode());
+            System.out.println("Vastaus: " + response.toString());
+        } catch (Exception e) {
+            // Tulostetaan mahdollinen virheilmoitus
+            System.out.println("Virhe: " + e.getMessage());
+        }
 
-// Luodaan perusautentikointi -olio käyttäjätunnuksella ja salasanalla
-BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-credentialsProvider.setCredentials(new AuthScope(AuthScope.ANY_HOST, AuthScope.ANY_PORT), new UsernamePasswordCredentials(username, password));
-
-// Rakennetaan pyyntö
-HttpGet request = new HttpGet(url);
-
-// Asetetaan oikea otsake (header) perusautentikoinnille
-request.addHeader(new BasicScheme().authenticate(new UsernamePasswordCredentials(username, password), request, null));
-
-// Suoritetaan pyyntö ja tallennetaan vastaus muuttujaan
-HttpResponse response = client.execute(request);
-
-// Tulostetaan vastauskoodi
-System.out.println(response.getStatusLine().getStatusCode());
-
-// Tulostetaan vastauksen sisältö
-InputStream inputStream = response.getEntity().getContent();
-BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-String line;
-while ((line = reader.readLine()) != null) {
-    System.out.println(line);
+    }
 }
 ```
 
-Esimerkkitulostus:
+Esimerkkikonsolitulos:
 
 ```
-200
-{
-    "message": "Pyyntö hyväksytty",
-    "content": "Tervetuloa!"
-}
+HTTP statuskoodi: 200
+Vastaus: {"message":"Tervetuloa!"}
 ```
 
-Huomaa, että käyttäjän tunnistetiedot ovat vain esimerkkikäyttöä varten ja niitä ei tulisi koskaan sisällyttää koodiin tai jakaa muiden kanssa.
+## Syventävä tieto
 
-## Syväsukellus
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla vaatii useita osia, kuten oikean HttpClient-olion luomisen, pyynnön rakentamisen ja vastauksen käsittelyn. On tärkeää ymmärtää, mitä jokainen osa tekee ja miksi se on tarpeellinen. Lisäksi on hyvä huomioida mahdolliset virhelähteet ja varmistaa, että käyttäjän tunnistetiedot pysyvät turvassa.
+Perusautentikaatio on yksi yleisimmistä tavoista varmistaa HTTP-pyynnön lähettäjän aitous. Se toimii perustuen base64-koodaukseen, jossa käyttäjänimi ja salasana yhdistetään merkkijonona ja koodataan ennen pyynnön lähettämistä. Tämän ansiosta käyttäjätunnukset eivät ole pelkästään selkokielisessä muodossa, jolloin niitä on vaikeampi varastaa. Perusautentikaatio on myös helppo toteuttaa ja yleisesti tuettu eri ohjelmointikielissä ja työkaluissa.
 
 ## Katso myös
 
-- [HTTP-pyynnön lähettäminen Java-kielellä käyttäen HttpClient-rajapintaa](https://www.tutorialspoint.com/http/http_java_client.htm)
-- [Perusautentikointi](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [Java HttpURLConnection documentation](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Base64 Java documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [Basic Authentication article by HTTPwatch](https://blog.httpwatch.com/2009/06/17/http-authentication-dialogs-decoded/)

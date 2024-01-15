@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Att få den aktuella datumen."
-simple_title:         "Att få den aktuella datumen."
+title:                "Att få aktuellt datum"
+html_title:           "PHP: Att få aktuellt datum"
+simple_title:         "Att få aktuellt datum"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna få ut det aktuella datumet är en viktig färdighet för många PHP-utvecklare. Det är användbart för att skapa dynamiskt innehåll på webbplatser, för att spåra användarens aktivitet och för många andra program som kräver att man vet vilket datum det är.
 
-## Hur man gör
-För att hämta det aktuella datumet i PHP kan du använda inbyggda funktionen `date()` med ett format som argument. Nedan visas en enkel kod som returnerar dagens datum som en sträng:
+Att kunna få den aktuella datumet är en viktig färdighet i många programmeringsprojekt. Det kan användas för att skapa loggar, schemalägga uppgifter eller visa datumet till användaren.
 
-```PHP
-echo date('Y-m-d'); // Exempel output: 2021-08-23
-```
+## Hur man gör det
 
-Du kan också ange ett annat format enligt dina behov. Här är ett annat exempel som returnerar datum, dag i veckan och månad:
+Det finns två sätt att få den aktuella datumet i PHP: genom att använda den inbyggda funktionen "date()" eller genom att använda den inbyggda klassen "DateTime". Låt oss undersöka båda metoderna nedan.
+
+### Använda date()
 
 ```PHP
-echo date('l, jS F Y'); // Exempel output: Monday, 23rd August 2021
+$currentDate = date("Y-m-d"); // Formatet för datumet är valfritt
+echo $currentDate; // Output: 2021-11-23
 ```
 
-Det finns många olika formatalternativ att välja mellan, som visas i PHP:s dokumentation för `date()`-funktionen. Prova dig fram för att hitta det ultimata formatet för dina behov.
+I exemplet ovan används funktionen "date()" med en parameter som anger önskat format för datumet. Det finns olika formatalternativ att välja mellan, såsom "d/m/Y" för att visa datumet i formatet dag/månad/år eller "h:i:s A" för att visa tiden i formatet timme:minut:sekund am/pm.
 
-## Djupgående
-Om du vill ha mer kontroll över det datum som returneras kan du använda andra PHP-funktioner tillsammans med `date()`. Till exempel kan du använda funktionen `strtotime()` för att konvertera en sträng till ett datum.
-
-Här är ett exempel där vi konverterar en sträng med datumet "17th August 2021" till ett datum i UNIX-tidsstämpel-formatet (antal sekunder sedan 1 januari 1970):
+### Använda DateTime-klassen
 
 ```PHP
-echo strtotime('17th August 2021'); // Exempel output: 1629148800
+$currentDate = new DateTime(); // Skapar ett nytt DateTime-objekt
+echo $currentDate->format("Y-m-d"); // Output: 2021-11-23
 ```
 
-Sedan kan du använda detta UNIX-tidsstämpel för att ange ett specifikt datum och tid med hjälp av `date()`-funktionen. Detta är användbart om du till exempel vill visa datumet för en specifik händelse oavsett vilket datum det är idag.
+Här skapas ett nytt objekt av klassen "DateTime" som har flera inbyggda metoder för att formatera och manipulera datumet. Genom att använda metoden "format()" med önskat format som parameter kan vi få den aktuella datumet i önskad format.
 
-## Se även
-- [PHP:s dokumentation för date()](https://www.php.net/manual/en/function.date.php)
-- [PHP:s dokumentation för strtotime()](https://www.php.net/manual/en/function.strtotime.php)
-- [Date and Time Functions in PHP](https://www.w3schools.com/php/php_date.asp) (W3Schools)
+## Djupdykning
+
+Båda metoderna som nämnts ovan kan också användas för att få mer detaljerad information om datumet, såsom dag i veckan, veckonummer och tidszon. För att få reda på dag i veckan kan vi använda "l" och för veckonummer "W" i formatet.
+
+```PHP
+$currentDate = new DateTime();
+echo $currentDate->format("l"); // Output: Tuesday
+echo $currentDate->format("W"); // Output: 47
+```
+
+Genom att använda metoden "getTimezone()" kan vi också få information om den aktuella tidszonen.
+
+## Se också
+
+- [PHP date-funktionen](https://www.php.net/manual/en/function.date.php)
+- [PHP DateTime-klassen](https://www.php.net/manual/en/class.datetime.php)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów z wiersza poleceń"
+html_title:           "Bash: Odczytywanie argumentów z wiersza poleceń"
+simple_title:         "Odczytywanie argumentów z wiersza poleceń"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,53 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, co to są argumenty wiersza poleceń i dlaczego są one ważne w programowaniu? Dla wszystkich tych, którzy są zainteresowani tworzeniem własnych skryptów i automatyzacją, znajomość obsługi argumentów wiersza poleceń jest niezbędna. Dowiedz się, dlaczego warto poznać ten temat w poniższym artykule.
+Jeśli jesteś programistą lub osobą, która często korzysta z terminala, na pewno słyszałeś o parametrach wiersza poleceń. Przeczytaj ten artykuł, aby dowiedzieć się, dlaczego warto znać i umieć czytać argumenty wiersza poleceń w Bash.
 
-## Jak to zrobić
+## Jak
 
-Obsługiwanie argumentów wiersza poleceń jest dosyć proste w Bash. Wystarczy użyć zmiennych specjalnych, takich jak "$1" dla pierwszego argumentu, "$2" dla drugiego, itd. Oto przykładowy skrypt:
-
-```Bash
-#!/bin/bash
-
-echo "Twój pierwszy argument to: $1"
-echo "Twój drugi argument to: $2"
-```
-
-Po uruchomieniu skryptu w ten sposób:
-
-`./skrypt.sh pierwszy_argument drugi_argument`
-
-Otrzymamy taki output:
-
-```
-Twój pierwszy argument to: pierwszy_argument
-Twój drugi argument to: drugi_argument
-```
-
-Zauważ, że dopóki podamy odpowiednią ilość argumentów, możemy wykorzystać je do dowolnych zadań w skrypcie.
-
-## Głębsza analiza
-
-W rzeczywistości, Bash oferuje dużo więcej opcji niż tylko te zmienne specjalne, gdy chodzi o obsługę argumentów wiersza poleceń. Na przykład możemy użyć pętli do przetworzenia wszystkich argumentów:
+Zacznijmy od podstaw. Najprostszym sposobem na przekazanie argumentów wiersza poleceń jest użycie zmiennej specjalnej `$1` dla pierwszego argumentu, `$2` dla drugiego argumentu itd.
 
 ```Bash
 #!/bin/bash
 
-for argument in "$@"
-do
-    echo "Pobrany argument to: $argument"
-done
+echo "Pierwszy argument: $1"
+echo "Drugi argument: $2"
 ```
 
-Możemy również dodać warunki do naszego skryptu, aby obsłużyć tylko pewne argumenty lub wyświetlić wiadomość, jeśli podano niepoprawną liczbę argumentów.
+Zapisz ten kod w pliku "arguments.sh" i uruchom go z dwoma argumentami: 
 
-Możliwości jest wiele, więc warto poświęcić trochę czasu na zgłębienie tego tematu i dostosowanie go do swoich potrzeb.
+`$ bash arguments.sh hello world`
+
+Powinieneś zobaczyć następujący wynik:
+
+```
+Pierwszy argument: hello
+Drugi argument: world
+```
+
+Możesz również użyć składni `"$@"` dla wszystkich argumentów. W ten sposób możesz przekazać wiele argumentów do skryptu bez konieczności odwoływania się do każdego z osobna.
+
+```Bash
+#!/bin/bash
+
+echo "Wszystkie argumenty: $@"
+```
+
+Teraz przetestuj ten kod z trzema argumentami: 
+
+`$ bash arguments.sh one two three`
+
+Wynik powinien być następujący:
+
+```
+Wszystkie argumenty: one two three
+```
+
+## Deep Dive
+
+Istnieje wiele innych sposobów na czytanie argumentów wiersza poleceń w Bash, takich jak polecenie `getopts` do parsowania opcji i argumentów lub używanie pętli `for` do przetwarzania wszystkich argumentów. Możesz również wykorzystać zmienne globalne, takie jak `OPTARG` i `OPTIND`. 
+
+Warto poznać również pewne przydatne zmienne, takie jak `#` dla liczby argumentów, `*` dla wszystkich argumentów połączonych w jedną ciągłą linię, lub `?` dla ostatniego błędnego argumentu. 
+
+Pamiętaj, że Bash obsługuje również opcjonalne argumenty flagowe z użyciem znaku "-" przed nazwą flagi. Możesz również przypisać wartości domyślne dla argumentów, gdy nie są przekazywane do skryptu.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o obsłudze argumentów wiersza poleceń w Bash, możesz zapoznać się z poniższymi artykułami:
+Jeśli chcesz poznać więcej o tym, jak czytać argumenty wiersza poleceń w Bash, polecam przeczytać dokumentację na ten temat lub zapoznać się z innymi przydatnymi przykładami.
 
-- [Dokumentacja Bash na temat argumentów wiersza poleceń](https://bash.cyberciti.biz/guide/$1)
-- [Przydatne przykłady korzystania z argumentów wiersza poleceń w Bash](https://www.baeldung.com/linux/use-command-line-arguments-in-bash-script)
-- [Tutorial na temat przetwarzania argumentów wiersza poleceń w Bash](https://www.tutorialspoint.com/unix_commands/bash_argv.htm)
+- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/)
+- [Przykłady użycia argumentów wiersza poleceń w Bash](https://linuxhint.com/args-bash/)
+- [Przewodnik do czytania argumentów wiersza poleceń w Bash](https://www.lifewire.com/pass-arguments-in-shell-script-2200571)

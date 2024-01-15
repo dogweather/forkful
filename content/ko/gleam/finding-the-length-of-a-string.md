@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Gleam: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜: "문자열의 길이"를 찾는 것에 참여하는 이유를 설명합니다.
+## 왜
+문자열의 길이를 찾는 것에 대해 왜 관심이 있을까요? 문자열은 프로그래밍에서 매우 중요하며, 이를 다루는 작업은 매우 일상적입니다. 문자열의 길이를 찾는 것은 프로그래머에게 매우 유용한 작업입니다. 
 
-문자열의 길이를 찾는 것은 프로그래밍에서 중요한 기술 중 하나입니다. 문자열의 길이를 알면, 문자열을 다루는 작업을 더욱 쉽게 할 수 있기 때문입니다.
+## 방법
+문자열의 길이를 찾는 방법은 간단합니다. 먼저 문자열을 변수에 할당한 다음, 해당 변수를 `length()` 함수에 전달하면 문자열의 길이를 반환합니다. 아래의 Gleam 코드 예제를 참고해주세요.
 
-## 어떻게 하나요?
-
-```Gleam
-let string = "안녕하세요!"
-let length = String.length(string)
+ ```Gleam
+let my_string = "Hello World!"
+let string_length = length(my_string)
 ```
 
-위의 코드는 "안녕하세요!"라는 문자열의 길이를 찾는 법을 보여줍니다. 이제 `length`에는 6이라는 값이 저장되어 있게 됩니다.
-
-또 다른 예제를 보면, 아래와 같이 변수에 값을 직접 할당해도 문자열의 길이를 찾을 수 있습니다.
-
-```Gleam
-let string = "Hello, world!"
-let length = String.length(string)
-```
-
-위의 코드에서 `length`에는 13이라는 값이 저장되어 있게 됩니다.
+위의 코드를 실행하면 `string_length` 변수에는 `12` 값이 할당될 것입니다. 이렇게 간단한 방법으로 문자열의 길이를 찾을 수 있습니다. 
 
 ## 깊이 파고들기
+`length()` 함수는 Gleam의 기본 라이브러리중 하나이며, 내부로 들어가보면 확장성 있는 코드로 구성되어 있습니다. 이 함수는 `String.length()` 모듈을 호출하고 이 모듈은 문자열의 길이를 확인하기 위해 `Str.length()` 함수를 호출합니다. 이렇게 층층이 확장되는 구조로 이루어져 있지만, 간단하고 유지보수하기 쉬운 방식으로 구현되어 있습니다.
 
-문자열의 길이를 찾는 것은 매우 간단한 작업처럼 보이지만, 실제로는 조금 더 복잡한 과정이 필요합니다. Gleam에서는 문자열의 길이를 찾을 때 Unicode를 지원하기 때문에, 다양한 문자를 처리하는데 있어서도 더욱 정확한 결과를 얻을 수 있습니다.
-
-또한, 문자열의 길이를 찾는 방법은 언어마다 다를 수 있습니다. 이런 차이점을 깊이 알아보면서 언어의 특징에 대해서도 알아볼 수 있습니다.
-
-## 참고자료
-
-- [Gleam 언어 사이트](https://gleam.run/)
-- [Unicode 관련 정보](https://unicode.org/)
-- [문자열 관련 함수 문서](https://gleam.run/modules/string.html)
+## 참고 자료
+- [Gleam Documentation](https://gleam.run/)
+- [Learn Gleam in Y minutes](https://learnxinyminutes.com/docs/intro-to-gleam/)
+- [Introduction to Gleam: A Functional Language on the BEAM](https://www.sitepoint.com/functional-language-gleam-beam/)

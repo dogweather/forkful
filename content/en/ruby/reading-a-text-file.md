@@ -1,5 +1,6 @@
 ---
-title:                "Ruby recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "Ruby recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,48 +11,103 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Before we dive into the technical details, let’s talk about why reading a text file is important for any Ruby programmer. Text files are a common way of storing and sharing data, and being able to extract and manipulate information from them is a fundamental skill for data processing and analysis. Whether you're working on a small personal project or a large-scale application, being able to read text files will make your programming tasks much easier.
+
+Reading a text file is a common task in programming, especially when dealing with data processing or file manipulation. In this article, we will explore how to read a text file using Ruby, the popular and user-friendly programming language.
 
 ## How To
-Reading a text file in Ruby is a relatively simple process. First, we need to open the file using the `File` class and specify the file mode as `r` for read-only. Next, we use the `read` method to read the contents of the file and store them in a variable. Let's look at an example:
 
-```Ruby
-file = File.open("sample.txt", "r")
-contents = file.read
-puts contents
+To read a text file in Ruby, we will use a combination of built-in methods and File.open(). Let's say we have a text file called "data.txt" which contains the following content:
+
+```
+Hello
+World
 ```
 
-In the above code, we first open the file "sample.txt" in read-only mode and store it in the variable `file`. Then, we use the `read` method to read the contents of the file and store it in the variable `contents`. Finally, we print out the contents using the `puts` method.
+To read this file, we can use the following code:
 
-We can also specify how many characters we want to read from the file by passing a number as an argument to the `read` method. For example, if we only want to read the first 100 characters of the file, we can use `contents = file.read(100)`.
-
-## Deep Dive
-When reading a text file, it's important to understand the different ways in which we can manipulate the file contents. For example, we can use the `each_line` method to iterate through each line of the file and perform specific actions on them. Let's look at an example:
-
-```Ruby
-file = File.open("sample.txt", "r")
-file.each_line do |line|
-  puts line.upcase
+```
+File.open("data.txt").each do |line|
+	puts line
 end
 ```
 
-In this code, we use the `each_line` method to iterate through each line of the file and use the `upcase` method to convert the text to uppercase before printing it out.
+The ```open``` method opens the file in read-only mode, while the ```each``` method iterates through each line in the file. In this case, it will print out:
 
-We can also use the `readlines` method to read all the lines of the file and store them in an array. This allows us to access individual lines and perform operations on them. For example:
-
-```Ruby
-file = File.open("sample.txt", "r")
-lines = file.readlines
-puts "The file has #{lines.length} lines."
+```
+Hello
+World
 ```
 
-In this code, we use the `readlines` method to store all the lines of the file in an array called `lines` and then print out the number of lines in the file.
+We can also specify a variable to store the content of each line, like this:
+
+```
+File.open("data.txt").each do |line|
+	content = line.chomp
+	puts content
+end
+```
+
+The ```chomp``` method removes any trailing newline characters from the line, ensuring that our output doesn't have any extra line breaks.
+
+We can also specify a block of code to perform for each line, like this:
+
+```
+File.open("data.txt").each do |line|
+	puts "The current line is: " + line
+end
+```
+
+This will output:
+
+```
+The current line is: Hello
+The current line is: World
+```
+
+We can also read the entire text file as a single string using the ```read``` method, like this:
+
+```
+content = File.read("data.txt")
+puts content
+```
+
+This will output:
+
+```
+Hello
+World
+```
+
+## Deep Dive
+
+In Ruby, we can also specify the mode in which we want to open the file, using the ```File.open()``` method. For example, if we want to open the file in write-only mode, we can use the mode "w" like this:
+
+```
+File.open("data.txt", "w").write("This is a new line.")
+```
+
+This will overwrite the existing content of the file with the new string "This is a new line.". We can also use the mode "a" to append content to the end of the file, like this:
+
+```
+File.open("data.txt", "a").write("This is another new line.")
+```
+
+This will add the string "This is another new line." to the end of the file, without overwriting the existing content.
+
+Additionally, we can specify the encoding of the file when opening it, using the optional second argument in the ```File.open()``` method. For example, if our text file is in UTF-8 encoding, we can open it like this:
+
+```
+File.open("data.txt", "r:UTF-8").each do |line|
+	puts line
+end
+```
+
+This ensures that any special characters or symbols in the file are properly read and displayed.
 
 ## See Also
-For more information on reading and manipulating text files in Ruby, check out the following resources:
 
-- [Ruby's official documentation on the File class](https://ruby-doc.org/core/IO.html)
-- [A tutorial on reading and writing files in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [An overview of common file handling operations in Ruby](https://www.digitalocean.com/community/tutorials/how-to-handle-files-in-ruby)
+For more information on File I/O in Ruby, check out the following links:
 
-Happy coding!
+- [Official Ruby documentation on File class](https://ruby-doc.org/core-2.7.1/File.html)
+- [Ruby File Handling Tutorial](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
+- [Reading and Writing Files in Ruby](https://www.geeksforgeeks.org/reading-and-writing-files-in-ruby/)

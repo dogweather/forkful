@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Slette tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "Elm: Slette tegn som matcher et mønster"
 simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det kan være mange grunner til å ønske å slette tegn som matcher et visst mønster i programmering. Kanskje du ønsker å rense tekst eller data før du behandler det videre, eller kanskje du ønsker å fjerne uønskede tegn fra en streng. Uansett hva motivasjonen din er, kan du enkelt lære hvordan du gjør det i Elm.
 
-## Hvordan
-For å slette tegn som matcher et mønster i Elm, kan du bruke funksjonen `String.filter`. Denne funksjonen tar inn et predikat (en funksjon som returnerer en boolsk verdi) og en streng, og returnerer den opprinnelige strengen uten de tegnene som matcher det gitte mønsteret. La oss se på et eksempel:
+Å slette tegn som matcher et mønster er en nødvendig funksjon i mange programmeringsspråk, inkludert Elm. Dette kan hjelpe deg med å rydde opp i tekststrenger og fjerne uønskede tegn eller ord.
+
+## Slik gjør du det
+
+For å slette tegn som matcher et mønster i Elm, kan du bruke den innebygde funksjonen "String.filter". Denne funksjonen tar inn et mønster og en tekststreng, og returnerer en ny tekststreng hvor alle tegn som matcher mønsteret er slettet. Her er et enkelt eksempel på hvordan du kan bruke denne funksjonen:
 
 ```elm
--- Funksjon for å sjekke om et tegn er en vokal
-isVowel : Char -> Bool
-isVowel character =
-    (character == 'a') || (character == 'e') || (character == 'i') || (character == 'o') || (character == 'u')
-
--- Filter funksjonen brukes til å fjerne alle vokaler fra en streng
-filteredString : String
-filteredString =
-    String.filter isVowel "Dette er en streng som inneholder flere vokaler"
-
--- Utskrift av den filtrerte strengen
--- Resultat: "Dtt r n strng sm nnhldr flr vklr"
+-- Sletting av alle tall i en tekststreng
+String.filter (\char -> not (Char.isDigit char)) "abc123def"
+-- Output: "abcdef"
 ```
 
-Som du kan se i eksempelet, blir alle vokaler fjernet fra den opprinnelige strengen takket være `String.filter`-funksjonen.
+Du kan også bruke regex (regular expressions) for å identifisere og slette spesifikke mønstre i tekststrengen. Elm har en innebygd regex-modul som gjør dette enkelt. Her er et eksempel på hvordan du kan bruke regex for å slette alle punktum i en tekststreng:
+
+```elm
+import Regex exposing (..)
+
+-- Sletting av alle punktum i en tekststreng
+Regex.replace (Regex.regex "\\.") (\_ -> "") "abc.def.ghi"
+-- Output: "abcdefghi"
+```
 
 ## Dypdykk
-Det er viktig å merke seg at `String.filter`-funksjonen i Elm kun fjerner tegn som matcher det gitte mønsteret, og beholder alle andre tegn intakt. Hvis du ønsker å fjerne alle forekomster av en bestemt type tegn, kan du bruke `String.replace`-funksjonen i stedet. Denne funksjonen tar inn en streng eller et regulært uttrykk og erstatter det med et annet tegn. For en grundigere forklaring av disse to funksjonene og deres bruksområder, sjekk ut dokumentasjonen til Elm.
+
+Når du bruker "String.filter" til å slette tegn som matcher et mønster, må du være klar over at funksjonen også fjerner mellomrom og linjeskift. Dette kan være uønsket i visse situasjoner, for eksempel hvis du ønsker å fjerne enkelte ord eller uttrykk fra en tekststreng. I slike tilfeller kan det være bedre å bruke regex, som gir deg mer fleksibilitet. Du kan også kombinere regex-funksjoner som "replace" og "replacePattern" for å få mer avanserte slettemuligheter.
 
 ## Se også
-* [Elm Docs](https://elm-lang.org/docs)
-* [Guide til Strings i Elm](https://www.elm-tutorial.org/en/02-elm-architecture/05-strings.html)
-* [Regulære uttrykk i Elm](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
+
+- [Elm dokumentasjon for String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+- [Elm dokumentasjon for Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [En guide til regex i Elm](https://wilsonzhang2004.github.io/elm/2019/03/05/learn-regex-with-elm.html)

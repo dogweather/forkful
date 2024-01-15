@@ -1,5 +1,6 @@
 ---
-title:                "Java: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Java: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Java"
 category:             "Java"
@@ -11,44 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego warto połączyć ze sobą stringi w programowaniu?
-
-Połączenie ze sobą wielu stringów jest niezbędne w wielu aplikacjach. Może to być przydatne przy tworzeniu wiadomości, adresów e-mail, dokumentów itp. Funkcja ta jest szczególnie przydatna, gdy mamy do czynienia z dynamicznymi danymi, które zmieniają się w zależności od użytkownika lub sytuacji.
+Otwórzmy oczy na prawdę - ktoś z nas nie kocha łączenia stringów? Oczywiście, nie jest to funkcja, która wzbudza zachwyt, ale jest niezbędna w wielu aspektach programowania. Omówimy więc, dlaczego warto poświęcić czas na naukę konkatenacji stringów w Javie.
 
 ## Jak to zrobić?
 
-Łączenie stringów w języku Java jest bardzo proste i wymaga wykorzystania operatora "+" lub metody "concat()". Przykładowy kod wyglądałby następująco:
+Istnieją różne sposoby na łączenie stringów w Javie, ale najpopularniejszym i najprostszym jest użycie operatora "+".
 
-```java
-String str1 = "Witaj";
-String str2 = "świecie!";
-String str3 = str1 + str2;
-System.out.println(str3);
-```
+```Java
+String firstName = "John";
+String lastName = "Doe";
 
-Output: "Witaj świecie!"
+String fullName = firstName + " " + lastName;
 
-Możemy również użyć metody "concat()" w następujący sposób:
-
-```java
-String name = "Anna";
-String surname = "Kowalska";
-String fullName = name.concat(" ").concat(surname);
 System.out.println(fullName);
 ```
 
-Output: "Anna Kowalska"
+Output: "John Doe"
 
-Pamiętajmy, że operator "+" automatycznie konwertuje inne typy danych na typ String, co oznacza, że możemy połączyć ze sobą nie tylko dwie zmienne typu String, ale również np. liczbę z tekstem.
+Możemy również użyć metody "concat()" dostępnej w klasie String.
+
+```Java
+String firstWord = "Hello";
+String secondWord = "World";
+
+String result = firstWord.concat(secondWord);
+
+System.out.println(result);
+```
+
+Output: "HelloWorld"
 
 ## Deep Dive
 
-Podczas łączenia stringów warto pamiętać o tym, że operacja ta nie jest wykonywana na oryginalnych zmiennych, a jedynie tworzy nowy obiekt zawierający połączenie tych stringów. W przypadku gdy mamy do czynienia z większą ilością stringów, lepiej użyć klasy StringBuilder lub StringBuffer, które są bardziej wydajne.
+Istnieją również inne metody w klasie String, które pozwalają na łączenie stringów. Jedną z nich jest metoda "join()", która pozwala na połączenie wielu stringów w jeden, przy użyciu określonego separatora.
 
-Innym ważnym aspektem jest obsługa znaków specjalnych. Jeśli chcemy, aby znaki takie jak "\n" czy "\t" były poprawnie wyświetlane, powinniśmy użyć metody "replace()" lub "replaceAll()".
+```Java
+String[] words = {"Hello", "my", "name", "is", "John"};
 
-## Zobacz także
+String result = String.join(" ", words);
 
-- [Java String concatenation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- [Java StringBuilder and StringBuffer](https://www.baeldung.com/java-string-builder-string-buffer)
-- [Metoda concat() w Java](https://www.javatpoint.com/java-string-concat)
+System.out.println(result);
+```
+
+Output: "Hello my name is John"
+
+Inną ciekawą funkcją jest klasa StringBuffer, która zapewnia lepszą wydajność łączenia wielu stringów w przypadku, gdy potrzebujemy często zmieniać zawartość.
+
+```Java
+StringBuffer sb = new StringBuffer();
+
+sb.append("Hello");
+sb.append(" World");
+
+String result = sb.toString();
+
+System.out.println(result);
+```
+
+Output: "Hello World"
+
+Jedną z najważniejszych rzeczy, które należy pamiętać podczas łączenia stringów, jest to, że tworzą one nowy obiekt, a nie modyfikują istniejący. Dlatego też ważne jest, aby nie używać operatora "+" w pętli, ponieważ może to prowadzić do problemów z wydajnością.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o łączeniu stringów w Javie, polecamy zapoznać się z dokumentacją Javy oraz innymi artykułami na ten temat:
+
+- [Official Java documentation for String class](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [Concatenating Strings in Java](https://www.baeldung.com/java-concatenate-strings)
+- [Effective Java - Item 63: Beware the performance of string concatenation](https://www.informit.com/articles/article.aspx?p=1216151)

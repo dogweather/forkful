@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Ruby: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que excluir caracteres que correspondem a um padrão?
+## Por que
+Você pode querer excluir caracteres que correspondam a um determinado padrão em uma string por várias razões, como limpar dados, filtrar informações específicas ou modificar a formatação de um texto.
 
-Às vezes, ao trabalhar com strings em um programa Ruby, pode ser necessário excluir certos caracteres que correspondem a um padrão específico. Isso pode ser útil para manipular ou filtrar dados de forma mais eficiente. Neste post, vamos explorar como fazer isso usando Ruby.
+## Como Fazer
+Para excluir caracteres que correspondam a um padrão em uma string, podemos utilizar o método `gsub` do Ruby. Ele recebe dois argumentos: o padrão a ser procurado e o que deve ser substituído no lugar do padrão.
 
-## Como fazer:
+Exemplo:
 
-Para excluir caracteres correspondentes a um padrão em uma string em Ruby, podemos usar o método gsub (substituir globalmente). Este método permite que substituamos uma determinada sequência de caracteres de uma string por outra. No entanto, com o uso do modificador "!", podemos usá-lo para excluir caracteres em vez de substituí-los.
+````Ruby
+# definindo uma string com diversos caracteres especiais
+string = "Hello! This is a #sample# string!"
+# utilizando o método gsub para substituir os caracteres '#' por vazio
+string.gsub("#", "")
+# output => "Hello! This is a sample string!"
+````
 
-Aqui está um exemplo de código que usa gsub para excluir todos os caracteres não numéricos de uma string:
+Caso queiramos substituir mais de um carácter ou utilizar uma expressão regular como padrão, podemos passar um bloco de código para o método `gsub`. Assim, a correspondência do padrão será capturada pelo bloco e podemos manipular essa informação antes de substituí-la.
 
-```Ruby
-nome = "João123Lima!"
-nome.gsub!(/[^0-9]/, "")
-```
+Exemplo:
 
-Neste exemplo, usamos a expressão regular /[^0-9]/ para corresponder a todos os caracteres que não são números. O modificador "!" no final do método gsub garante que essa substituição seja feita diretamente na string original, em vez de retornar uma nova string. Portanto, a variável "nome" agora seria "123".
+````Ruby
+# definindo uma string com diversos caracteres especiais
+string = "Dia 20/04/2021 foi incrível!"
+# utilizando gsub com uma expressão regular para substituir a data no formato original pelo formato dia-mês-ano
+string.gsub(/(\d{2})\/(\d{2})\/(\d{4})/, '\1-\2-\3')
+# output => "Dia 20-04-2021 foi incrível!"
+````
 
-## Profundidade:
+## Mergulho Profundo
+É importante lembrar que o método `gsub` não modifica a string original, mas sim retorna uma nova string com as alterações realizadas. Além disso, também é possível utilizar outros métodos de manipulação de strings, como o `delete`, para realizar a exclusão de caracteres em uma string.
 
-Além do modificador "!", a referência do método gsub em Ruby oferece outros modificadores que podem ser úteis para excluir caracteres correspondentes a um padrão. Por exemplo, se quisermos ignorar maiúsculas e minúsculas ao procurar correspondências, podemos usar o modificador "i". Se quisermos limitar o número de substituições a serem feitas, também podemos usar o modificador "n".
+Para saber mais sobre os métodos de manipulação de strings do Ruby, acesse [a documentação oficial](https://ruby-doc.org/core-3.0.0/String.html) ou confira o [artigo da DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-string-methods-in-ruby) sobre o assunto.
 
-Outra opção é usar o método delete, que é semelhante ao gsub, mas apenas remove os caracteres correspondentes em vez de substituí-los por outros. Aqui está um exemplo de código que usa delete para excluir todos os caracteres que não são letras:
-
-```Ruby
-frase = "Eu tenho 123 maçãs!"
-frase.delete!("^a-z")
-```
-
-Após a execução deste código, a variável "frase" seria "Eutnhmaçãs".
-
-## Veja também:
-
-- [Documentação do método gsub em Ruby](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
-- [Documentação do método delete em Ruby](https://ruby-doc.org/core-2.6.3/String.html#method-i-delete)
-- [Tutorial de expressões regulares em Ruby](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-
-É isso aí, esperamos que este post seja útil para aprender a excluir caracteres que correspondem a um padrão em Ruby! Experimente esses métodos em seus próprios projetos e compartilhe suas experiências nos comentários abaixo.
+## Veja Também
+- [Documentação oficial do método `gsub`](https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub)
+- [Artigo da DigitalOcean sobre métodos de manipulação de strings em Ruby](https://www.digitalocean.com/community/tutorials/how-to-use-string-methods-in-ruby)

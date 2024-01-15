@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Yhdistämällä merkkijonoja"
+html_title:           "PHP: Yhdistämällä merkkijonoja"
+simple_title:         "Yhdistämällä merkkijonoja"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,45 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Stringien yhdistäminen on tärkeä osa PHP-ohjelmointia, ja se auttaa luomaan dynaamisia ja joustavia sovelluksia. Stringien yhdistäminen antaa mahdollisuuden yhdistää erilaisia tietoja ja muuttujia yhteen ja luoda näin monipuolisia sisältöjä.
+Miksi joku haluaisi yhdistellä merkkijonoja PHP:lla? Yksinkertaisesti sanottuna, merkkijonojen yhdistämisen käyttö voi tehdä koodin kirjoittamisesta helpompaa ja säästää aikaa. Se myös auttaa tekemään koodista helpommin luettavaa ja ymmärrettävää.
 
-## Miten tehdä
+## Kuinka tehdä se
 
-Stringien yhdistäminen tapahtuu PHP:ssa käyttäen pistettä ".". Seuraavassa esimerkissä meillä on muuttuja "etunimi" ja "sukunimi", ja haluamme yhdistää ne yhdeksi stringiksi:
+Yhdistäminen eli concatenating on yksinkertainen prosessi PHP:lla. Se mahdollistaa eri merkkijonojen yhdistämisen yhdeksi isoksi merkkijonoksi. Voit tehdä tämän käyttämällä yhdistävä operaattoria ".", joka yhdistää merkkijonot toisiinsa. Alla on esimerkki:
 
 ```PHP
 $etunimi = "Matti";
 $sukunimi = "Meikäläinen";
-echo $etunimi . " " . $sukunimi;
+
+$nimi = $etunimi . $sukunimi;
+
+echo $nimi;
 ```
 
-Tulostus:
+Tämä tulostaa: "Matti Meikäläinen". Huomaa, että ennen yhdistämistä muuttujan nimeä ei tarvitse määrittää uudelleen.
 
-```
-Matti Meikäläinen
-```
-
-Voimme myös yhdistää useita muuttujia yhteen ja sisällyttää välissä haluamamme teksti, kuten seuraavassa esimerkissä:
+Voit myös käyttää yhdistävää operaattoria yhdistäessäsi muuttujia ja tekstiä, kuten esimerkissä alla:
 
 ```PHP
-$ika = 42;
-echo "Olen " . $ika . " vuotta vanha.";
+$nimi = "Matti";
+$tervehdys = "Hei, " . $nimi . "!";
+echo $tervehdys;
 ```
 
-Tulostus:
+Tämä tulostaa: "Hei, Matti!".
 
+## Syvempi sukellus
+
+Yhdistämisessä on myös muita hyödyllisiä toimintoja PHP:ssa. Voit esimerkiksi lisätä välilyönnin yhdistäessäsi merkkijonoja sananjälkeen. Tämä tehdään lisäämällä välilyönti yhdistävän operaattorin jälkeen, kuten alla olevassa koodissa:
+
+```PHP
+$etunimi = "Matti";
+$sukunimi = "Meikäläinen";
+
+$nimi = $etunimi . " " . $sukunimi;
+
+echo $nimi;
 ```
-Olen 42 vuotta vanha.
+
+Tämä tulostaa: "Matti Meikäläinen", mutta tällä kertaa välissä on välilyönti.
+
+Voit myös käyttää PHP:n sisäistä funktiota `sprintf()` mahdollistaen monimutkaisempia yhdistämisiä. Tämä mahdollistaa muuttujien sijoittamisen tiettyihin paikkoihin merkkijonossa. Esimerkiksi:
+
+```PHP
+$tuote = "kakku";
+$maara = 2;
+
+$lause = sprintf("Minulla on %d vaniljakakkua.", $maara);
+
+echo $lause;
 ```
 
-## Syvemmälle
-
-Stringien yhdistämisellä on monia käyttötarkoituksia. Sitä voi käyttää esimerkiksi dynaamisten sivujen luomiseen, joissa haluamme yhdistää tietokannasta haetut tiedot HTML:ään. Stringien yhdistäminen on myös välttämätöntä, kun haluamme luoda linkkejä tai polkuja tiedostojen välillä.
-
-On hyvä muistaa, että stringien yhdistäminen voi olla tehoton tapa luoda isoja ja monimutkaisia stringeja. Tällöin kannattaa harkita käytettävän PHP:n sulkemista, joka on nopeampi ja tehokkaampi tapa yhdistää merkkijonoja.
+Tämä tulostaa: "Minulla on 2 vaniljakakkua.".
 
 ## Katso myös
 
-- [PHP.net: Tietojen yhdistäminen (String Concatenation)](https://www.php.net/manual/en/language.operators.string.php)
-- [W3Schools: PHP stringien yhdistäminen](https://www.w3schools.com/php/php_operators.asp)
-- [Codeacademy: Stringien yhdistäminen](https://www.codecademy.com/learn/learn-php/modules/learn-php-strings/cheatsheet)
+- PHP muuttujat: https://www.php.net/manual/en/language.variables.php
+- Yhdistävä operaattori: https://www.php.net/manual/en/language.operators.string.php#language.operators.string.concat
+- sprintf(): https://www.php.net/manual/en/function.sprintf.php

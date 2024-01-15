@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 현재 날짜 가져오기"
+title:                "현재 날짜 가져오기"
+html_title:           "Javascript: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 Javascript로 오늘 날짜를 가져오는가?
+## 왜
 
-자바스크립트를 사용하여 현재 날짜를 가져오는 것은 많은 이유가 있습니다. 가장 일반적인 이유는 웹 개발에서 날짜가 필요한 경우입니다. 예를 들어, 사용자가 언제 가입했는지를 알려주는 등의 목적으로 사용할 수 있습니다. 또한 생산성 도구로 날짜를 자동으로 기록하는 등 다양한 사용 용도가 있을 수 있습니다.
+날짜를 알아내는 것이 왜 중요한지에 대해 생각해보세요. 생일을 기억하는 것부터 시작해서, 다른 날짜 정보를 추적하거나 시간을 계산하는 등의 다양한 상황에서 날짜 정보가 필요할 수 있습니다.
 
-## 방법
-
-날짜를 가져오는 방법은 매우 간단합니다. `Date()` 객체를 사용하여 현재 날짜와 시간을 가져올 수 있습니다. 아래는 예제 코드와 그에 해당하는 출력입니다.
+## 코딩하는 법
 
 ```Javascript
-let date = new Date();
+// 새로운 Date 객체를 생성합니다.
+let currentDate = new Date();
 
-console.log(date);
+// 날짜 정보를 추출할 수 있습니다.
+let day = currentDate.getDate();
+let month = currentDate.getMonth() + 1; // 0부터 시작하므로 1을 더해줍니다.
+let year = currentDate.getFullYear();
+
+// 결과를 출력합니다.
+console.log(`${month}/${day}/${year}`); // 예: 8/10/2021
 ```
-
-```
-Thu Oct 14 2021 15:48:23 GMT+0900 (대한민국 표준시)
-```
-
-`Date()` 객체는 자바스크립트에서 기본 제공되는 객체이므로 추가적으로 라이브러리를 설치할 필요 없이 바로 사용할 수 있습니다.
-
-## 심층 분석
-
-`Date()` 객체의 출력과 같이 표준 시간대가 포함되어 있기 때문에 특정 지역의 시간을 가져오려면 추가적인 작업이 필요합니다. `toLocaleString()` 메소드를 사용하여 원하는 형식으로 날짜를 변환할 수 있습니다. 아래는 코드와 출력 예시입니다.
 
 ```Javascript
-let date = new Date();
-
-console.log(date.toLocaleString('en-US', {hour12: true}));
+// 한 줄로 날짜 정보를 추출하는 것도 가능합니다.
+let currentDate = new Date();
+console.log(currentDate.toLocaleDateString()); // 예: 8/10/2021
 ```
 
-```
-10/14/2021, 3:51:56 PM
-```
+## 깊이 파헤치기
 
-그리고 `Date()` 객체는 컴퓨터의 로컬 시간을 기준으로 날짜를 가져오기 때문에 사용자의 지역과 다른 시간이 출력될 수 있습니다. 이를 해결하기 위해서는 Javascript의 `Intl` 객체와 `Intl.DateTimeFormat` 메소드를 사용하여 사용자의 지역을 파악하고 그에 맞는 날짜를 출력할 수 있습니다. 아래는 코드와 출력 예시입니다.
+이제 Date 객체를 생성하고 날짜 정보를 추출하는 방법을 알게 되었습니다. 하지만 이 날짜 정보는 우리가 사용하는 시간대를 기준으로 반환됩니다. 예를 들어, 한국에서는 날짜 정보가 한국 시간대를 기준으로 반환됩니다. 따라서 국제적으로 사용되는 시간 정보를 사용할 때에는 조심해야 합니다. 자세한 내용은 [공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)에서 확인할 수 있습니다.
 
-```Javascript
-let date = new Date();
+## 더 알아보기
 
-console.log(new Intl.DateTimeFormat('ko-KR', {year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Seoul'}).format(date));
-```
-
-```
-2021년 10월 14일 목요일, 한국 표준시
-```
-
-# 더 알아보기
-
-더 자세한 정보를 알고 싶다면 아래 링크를 참고해보세요.
-
-[Date() 객체 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-
-[Intl 객체 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Intl)
-
-[Intl.DateTimeFormat() 메소드 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat)
+* [Date 객체 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [Date 객체 관련 팁](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)
+* [Date 객체를 사용하는 방법](https://www.w3schools.com/js/js_date_methods.asp)
+* [날짜 형식을 설정하는 방법](https://www.geeksforgeeks.org/how-to-convert-date-to-another-timezone-in-javascript/)

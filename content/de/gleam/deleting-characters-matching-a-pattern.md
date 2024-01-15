@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Löschen von Zeichen, die einem bestimmten Muster entsprechen"
-simple_title:         "Löschen von Zeichen, die einem bestimmten Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Gleam: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -9,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Oftmals müssen Programmiererinnen und Programmierer Zeichen aus einem String löschen, die einer bestimmten Vorlage entsprechen. Dies kann aus verschiedenen Gründen erforderlich sein, wie zum Beispiel das Entfernen von Leerzeichen, Sonderzeichen oder Formatierungen. Mit Gleam ist dies einfach und schnell zu erledigen, daher zeigen wir in diesem Blogpost, wie es geht.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, um unerwünschte Daten zu entfernen oder einen String in einem bestimmten Format zu formatieren. Gleam bietet eine effiziente und einfache Möglichkeit, diese Art von Aufgaben durchzuführen.
 
-## Wie man Zeichen einer bestimmten Vorlage löscht
-
-Das Löschen von Zeichen einer bestimmten Vorlage in Gleam ist sehr einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir jedoch das Modul `String` importieren, um auf die nötigen Funktionen zugreifen zu können.
+## Wie geht das?
 
 ```Gleam
-import gleam/string
-
-chars_to_delete = ".,!? "
-original_string = "Hello, world!"
-output = string.remove(original_string, |c| c in chars_to_delete)
-
-gleam => "Hello world"
+String.delete_match("HelloAwesome", "weso") // gibt "HellAwe" zurück
 ```
 
-In diesem Beispiel verwenden wir die Funktion `string.remove`, die zwei Parameter erwartet: den ursprünglichen String und eine Funktion, die bestimmt, welche Zeichen gelöscht werden sollen. In unserem Fall übergeben wir eine Funktion, die prüft, ob das aktuelle Zeichen in `chars_to_delete` enthalten ist. Das Ergebnis ist ein neuer String ohne die gelöschten Zeichen.
+Das obige Beispiel zeigt, wie wir mit Gleam einen String verarbeiten und bestimmte Zeichen basierend auf einem Muster löschen können. Der erste Parameter ist der zu verarbeitende String und der zweite Parameter ist das Muster, nach dem gesucht werden soll. Alle Zeichen, die diesem Muster entsprechen, werden aus dem String entfernt.
 
-## Tiefergehende Informationen
+## Tieferes Eintauchen
 
-Es gibt verschiedene Möglichkeiten, um Zeichen in Gleam zu löschen. Eine davon ist die Verwendung der Funktion `string.filter`, die ähnlich wie `string.remove` funktioniert, jedoch ein Ergebnis zurückgibt, das nur die übrig gebliebenen Zeichen enthält. Diese Funktion ist besonders nützlich, wenn man bestimmte Zeichen ersetzen oder durch andere ersetzen möchte.
+Das Löschen von Zeichen basierend auf einem Muster ist dehnbarer als es auf den ersten Blick scheint. Gleam bietet die Möglichkeit, reguläre Ausdrücke zu verwenden, um noch genauere und komplexere Muster zu erstellen. Hier ist ein Beispiel, wie wir mit regulären Ausdrücken arbeiten können, um nur Ziffern aus einem String zu entfernen:
 
-Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, die in Gleam mithilfe des Moduls `Regex` verwendet werden können. Mit regulären Ausdrücken können komplexere Muster definiert werden, nach denen Zeichen gelöscht werden können.
+```Gleam
+String.delete_match_regex("123jsk45ndoz", "[0-9]") // gibt "jskndoz" zurück
+```
 
 ## Siehe auch
 
-- Offizielle Gleam Dokumentation zu `string` Modul: https://gleam.run/docs/stdlib/string/
-- Einführung in reguläre Ausdrücke in Gleam: https://dev.to/gbili/gleam-and-regular-expressions-1h9p
+- Offizielle Gleam Dokumentation: [String Modul](https://gleam.run/documentation/standard-library/string/)
+- Reguläre Ausdrücke in Gleam: [Regex Modul](https://gleam.run/documentation/standard-library/regex/)
+- Weitere Beispiele und Tutorials finden Sie auf [GitHub](https://github.com/gleam-lang/gleam/tree/master/examples)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Tiedostosta lukeminen"
-simple_title:         "Tiedostosta lukeminen"
+title:                "Tiedoston lukeminen"
+html_title:           "C: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,42 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Haluatko oppia lukemaan tekstitiedostoja omassa C-ohjelmoinnissasi? Ei hätää, tässä blogikirjoituksessa käydään läpi helppoja esimerkkejä ja syvällisempää tietoa tekstitiedostojen lukemisesta.
+On monia syitä, miksi tekstitiedoston lukeminen C-ohjelmoinnin avulla on hyödyllistä. Esimerkiksi voit haluta analysoida suuren määrän tekstitiedostoja kokonaisuutena tai etsiä tiettyä tietoa tietyistä tiedostoista. Se voi myös olla hyödyllistä, jos haluat automaattisesti lukea tietoja ulkoisesta lähteestä osaksi ohjelmaasi.
 
-## Kuinka
+## Miten tehdä
 
-Käsittelemme tässä kirjoituksessa tekstitiedoston lukemisen kahdella eri tavalla, käyttäen `scanf` ja `fscanf` funktioita. Näiden lisäksi käytämme myös `while`-silmukkaa tiedoston lukemiseen. Alla on koodiesimerkki, jossa käytämme `scanf` funktiota lukemaan tekstitiedostosta yhden rivin kerrallaan:
+Käytä C:n "fopen" -funktiota avataksesi tiedosto ja tallentaaksesi se muuttujaan. Sitten voit käyttää "fscanf" -funktiota lukemaan tiedoston sisällön ja tallentamaan sen haluamaasi muuttujaan. Voit myös käyttää "fgets" -funktiota lukeaksesi rivin kerrallaan ja käsitelläksesi sen sitten haluamallasi tavalla. Alla on esimerkkejä kummastakin menetelmästä.
 
 ```C
-#include <stdio.h>
-#define MAX_LEN 100
+FILE *file = fopen("tekstitiedosto.txt", "r"); // avaa tiedoston lukemista varten
+char sana[20];
+fscanf(file, "%s", sana); // tallentaa ensimmäisen sanan muuttujaan
+printf("Ensimmäinen sana tiedostossa on: %s", sana); // tulostaa sanan "teksti"
+```
 
-int main(){
-    FILE *file_ptr = fopen("tiedosto.txt", "r");
-    char line[MAX_LEN];
-    
-    while (fscanf(file_ptr, "%[^\n]", line) == 1){
-        printf("%s\n", line);
-    }
-    
-    fclose(file_ptr);
-    
-    return 0;
+```C
+FILE *file = fopen("tekstitiedosto.txt", "r"); // avaa tiedoston lukemista varten
+char rivi[100];
+while (fgets(rivi, 100, file) != NULL) {
+    // käsittele jokainen rivi tässä
 }
 ```
 
-Tämän esimerkin avulla voit lukea tekstitiedostosta yhden rivin kerrallaan, kunnes tiedosto loppuu. `fscanf` funktiolla voit määrittää, miten paljon haluat lukea tiedostosta kerrallaan. Voit myös käyttää muita muotoilumerkkejä, kuten `%d` tai `%f`, jos haluat lukea tiettyjä tyyppejä tiedostosta. 
+## Tarkempi kuvaus
 
-## Syvempää tietoa
-
-On tärkeää muistaa, että `fscanf` funktio lukee tiedoston etenemisen mukaan, joten sinun täytyy olla varovainen, ettei tiedoston lukeminen lopu ennen kuin olet käynyt läpi kaikki rivit. Voit myös käyttää `fgets` funktiota, joka lukee tiedoston rivin kerrallaan ja tallentaa sen merkkijonoon. Voit sitten käyttää `sscanf` funktiota lukeaksesi tiettyjä tietoja merkkijonosta.
-
-Tärkeintä on, että muistat aina sulkea tiedosto `fclose` funktiolla, kun olet lopettanut sen lukemisen.
+Tekstitiedoston lukeminen C-ohjelmoinnissa onnistuu "stdio.h" -kirjaston avulla. Tämän kirjaston avulla voit avata tekstitiedoston "fopen" -funktiolla ja käyttää sitten "fscanf" - tai "fgets" -funktioita lukeaksesi tiedoston sisältöä. Voit myös käyttää "fgetc" -funktiota, joka lukee tiedostosta yksittäisen merkin kerrallaan. Muista aina sulkea tiedosto "fclose" -funktiolla, kun olet lopettanut sen käytön.
 
 ## Katso myös
 
-Katso lisätietoja tekstitiedostojen lukemisesta C-kielellä seuraavien linkkien kautta:
-
-- [GeeksforGeeks: Basics of File Handling in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
-- [Tutorials Point: C - File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C-ohjelmointikieli: Tiedostojen lukeminen ja kirjoittaminen](https://www.c-ohjelmointikieli.fi/toinenluku/tiedostot.html)
+- [Fscanf C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_fscanf.htm)
+- [Fgets C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
+- [Fgetc C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_fgetc.htm)

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Työskentely yaml:n kanssa."
-simple_title:         "Työskentely yaml:n kanssa."
+title:                "Työskentely yaml-koodin kanssa"
+html_title:           "C++: Työskentely yaml-koodin kanssa"
+simple_title:         "Työskentely yaml-koodin kanssa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-YAML on tullut suosituksi tiedostonmuotojen käsittelyssä, koska se on helposti luettavaa ja ymmärrettävää tietokoneille ja ihmisille. Se on myös suosittu valinta monissa moderneissa sovelluksissa, kuten Kubernetes ja Docker, koska se tarjoaa helppokäyttöisen ja joustavan tavan tallentaa ja jakaa tietoa. Joten jos haluat työskennellä näiden suosittujen tekniikoiden kanssa, on tärkeää oppia käyttämään YAMLia.
+YAML on yhä suositumpi tiedostomuoto ohjelmointimaailmassa, erityisesti projektinhallinnassa, konfiguraatiotiedostoissa ja tiedonsiirtomuodona. Sen yksinkertaisuus ja helppokäyttöisyys tekevät siitä houkuttelevan vaihtoehdon muihin tiedostomuotoihin nähden. 
 
 ## Kuinka
 
-YAML-tiedostojen käsittely C++ -ohjelmoinnissa on helppoa ja vaivatonta. Voit käyttää YAML-CPP -kirjastoa, joka on suunniteltu nimenomaan YAML-tiedostojen käsittelyyn. Se tarjoaa käyttäjäystävällisen rajapinnan ja mahdollistaa tiedon tallentamisen ja lataamisen YAML-muodossa. Tässä on esimerkki koodista, joka lataa YAML-tiedoston ja tulostaa sen sisällön näytölle:
-
 ```C++
-#include <yaml-cpp/yaml.h>
 #include <iostream>
+#include <yaml-cpp/yaml.h>
 
 int main() {
-    // Lataa YAML-tiedosto
-    YAML::Node node = YAML::LoadFile("tiedosto.yaml");
+  // Luodaan YAML-tiedosto
+  YAML::Emitter emitter;
+  emitter << YAML::BeginMap;
+  emitter << YAML::Key << "nimi";
+  emitter << YAML::Value << "Jane";
+  emitter << YAML::Key << "ikä";
+  emitter << YAML::Value << 25;
+  emitter << YAML::EndMap;
 
-    // Tulosta tiedoston sisältö näytölle
-    std::cout << "Tiedoston sisältö:" << std::endl;
-    std::cout << node << std::endl;
+  // Talletetaan tiedosto
+  std::ofstream file("tiedosto.yaml");
+  file << emitter.c_str();
+  file.close();
 
-    return 0;
+  // Luetaan YAML-tiedostosta
+  YAML::Node data = YAML::LoadFile("tiedosto.yaml");
+
+  // Tulostetaan YAML-data
+  std::cout << "Nimi: " << data["nimi"].as<std::string>() << std::endl;
+  std::cout << "Ikä: " << data["ikä"].as<int>() << std::endl;
+  
+  return 0;
 }
 ```
-
-Kun suoritat tämän koodin, näet YAML-tiedoston sisällön näytöllä seuraavanlaisesti:
-
+### Tulostus:
 ```
-Tiedoston sisältö:
-name: John
-age: 25
-city: Helsinki
+Nimi: Jane
+Ikä: 25
 ```
 
-## Syvempää perehtymistä
+## Syväsukellus
 
-YAML-CPP tarjoaa myös monia muita toimintoja, kuten tietojen muokkaamisen ja tallentamisen takaisin YAML-muotoon. Voit myös luoda ja muokata YAML-tiedostoja suoraan koodissa käyttämällä YAML::Emitter ja YAML::Parser luokkia. Vaikka YAML-tiedostojen käsittely C++:lla voi olla hieman hankalaa alussa, se tarjoaa lopulta tehokkaan ja luotettavan tavan käsitellä tietoa sovelluksissasi.
+YAML on helppo lukea ja ymmärtää sekä ihmiselle että ohjelmalle, ja sen syntaxi on hyvin joustava. YAML-tiedosto koostuu avain-arvo -pareista ja sisentämisellä on merkitystä tiedoston rakenteen kannalta. Tästä johtuen YAML antaa mahdollisuuden luoda selkeitä ja helposti ylläpidettäviä tiedostoja. 
+
+Tiedostossa on myös mahdollista käyttää erilaisia datatyyppejä kuten numeroita, merkkijonoja, luetteloita ja karttoja. Lisäksi YAML tukee kommentteja, joita voi käyttää selittämään tiedoston sisältöä. 
 
 ## Katso myös
 
-- [YAML-CPP:n dokumentaatio (englanniksi)](https://github.com/jbeder/yaml-cpp/wiki)
-- [YAML-opas (englanniksi)](https://yaml.org/spec/1.2/spec.html)
+- [YAML-käsikirja](https://yaml.org/)
+- [YAML-CPP-kirjaston dokumentaatio](https://github.com/jbeder/yaml-cpp/wiki)
+- [YAML:n käyttö C++:ssa -opas](https://www.geeksforgeeks.org/yaml-cpp-library-c-stl-like-interface-yaml/)

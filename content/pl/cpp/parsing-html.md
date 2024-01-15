@@ -1,6 +1,7 @@
 ---
-title:                "C++: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza kodu html"
+html_title:           "C++: Analiza kodu html"
+simple_title:         "Analiza kodu html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,41 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Analiza, czyli parsowanie, HTML jest niezwykle ważnym i często wykorzystywanym narzędziem w programowaniu. Pozwala nam na wydobycie pożądanych informacji z kodu źródłowego strony internetowej, co jest niezwykle przydatne w tworzeniu różnego rodzaju aplikacji internetowych.
+Każdy, kto chce programować w C++, musi mieć pewną wiedzę na temat parsowania HTML. Jest to niezbędna umiejętność, jeśli planujesz tworzenie aplikacji internetowych lub robotów przeszukujących internet.
 
-## Jak to zrobić
+## Jak
 
-Jeśli chcesz nauczyć się parsować HTML w języku C++, oto kilka przykładowych kodów i wyjść, które mogą Cię zainspirować:
+Możesz użyć biblioteki HTML parser, aby łatwo przetwarzać kod HTML. Oto przykładowy kod, który będzie pobierał zawartość elementów `<p>` z witryny internetowej i wypisywał ją na ekran:
 
 ```C++
-// Wczytanie kodu źródłowego strony internetowej
-std::string html = " <html> <body> <h1>Tytuł strony</h1> <p>Przykładowy tekst</p> </body> </html>";
+#include <iostream>
+#include <htmlparser/htmlparser.h>
 
-// Użycie biblioteki do parsowania HTML
-#include <libhtmlparser.h>
+using namespace std;
 
-// Utworzenie obiektu parsera
-HTMLParser parser;
+int main() {
+    // Tworzenie obiektu parsera HTML
+    HTMLParser parser;
 
-// Przypisanie kodu źródłowego do obiektu parsera
-parser.parse(html);
+    // Wczytywanie pliku HTML z podanej URL
+    bool result = parser.parse("http://www.example.com/index.html");
 
-// Wydrukowanie zawartości elementu <p>
-std::cout << parser.getInnerHTML("p") << std::endl;
+    // Sprawdzanie, czy wczytanie pliku się powiodło
+    if (result == false) {
+        cout << "Wystąpił błąd podczas wczytywania pliku." << endl;
+        return 0;
+    }
 
-// Wynik: Przykładowy tekst
+    // Przechodzenie przez wszystkie znalezione elementy <p> i wypisywanie ich zawartości
+    for (HTMLIterator it = parser.begin(); it != parser.end(); ++it) {
+        if (((*it).tag() == "p")) {
+            cout << (*it).content();
+        }
+    }
+
+    return 0;
+}
 ```
 
-## Głębszy zanurzenie
+Przykładowy output dla strony www.example.com/index.html:
 
-Pisanie własnego parsera HTML może być skomplikowanym zadaniem, dlatego zawsze warto skorzystać z gotowych bibliotek, jak w przykładzie powyżej. Ich wykorzystanie pozwala zaoszczędzić czas i uniknąć błędów.
+```
+To jest zawartość pierwszego akapitu.
+To jest zawartość drugiego akapitu.
+To jest zawartość trzeciego akapitu.
+```
 
-Warto również pamiętać, że parsowanie HTML może być wymagane w różnych kontekstach, na przykład podczas testowania aplikacji internetowych lub w pracy z dużą ilością danych.
+## Deep Dive
 
-Warto również poszerzyć swoją wiedzę o różnych narzędziach i technikach związanych z analizą HTML. Pomoże to w lepszym zrozumieniu procesu parsowania i umożliwi wykorzystanie go w różnego rodzaju projektach.
+Parsowanie HTML może być trudne ze względu na niespójności w strukturze kodu na różnych stronach internetowych. Dlatego ważne jest, aby użyć solidnej biblioteki, która radzi sobie z niepoprawnym formatowaniem. Kilka popularnych bibliotek do parsowania HTML w C++ to na przykład HTMLParser, libxml2 i htmlcxx.
 
-## Zobacz również
+## Zobacz też
 
-- [Biblioteka libhtmlparser w języku C++](https://github.com/GiraffeTools/HTMLParser)
-- [10 przydatnych narzędzi do analizy i parsowania HTML](https://vilmate.com/blog/web-scraping-html-parsing-tools/) 
-- [Poradnik dla początkujących: Jak odczytać i analizować kod HTML](https://scotch.io/tutorials/how-to-read-and-analyze-html-code)
+- [https://github.com/mgdm/htmlparser](https://github.com/mgdm/htmlparser)
+- [http://www.xmlsoft.org/](http://www.xmlsoft.org/)
+- [https://htmlcxx.sourceforge.io/](https://htmlcxx.sourceforge.io/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: डायरेक्टरी मौजूद है या नहीं पर जाँच करना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं पर जाँच करना"
+title:                "डायरेक्टरी मौजूद होने की जाँच करना"
+html_title:           "Fish Shell: डायरेक्टरी मौजूद होने की जाँच करना"
+simple_title:         "डायरेक्टरी मौजूद होने की जाँच करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Kyon: Pratiksha Karte Huye Directory Ko Kaise Check Karein"
+## क्यों
 
-Kabhi kabhi humein apne program mein kisi directory ki upasthiti ko check karna padta hai. Yah jaruri ho sakta hai kisi specific file ko dhoondhne ke liye, ya fir ek directory mein kuch files ko read ya modify karne ke liye. Isliye, directory ki presence check karna, ek zaroori part hota hai humare coding process ka. Is blog post mein hum aapko batayenge ki kisi directory ki presence kaise check kar sakte hain, Fish Shell ke saath.
+डायरेक्ट्री मौजूद होने की जांच करने से हम यह जान सकते हैं कि क्या हमें उस डायरेक्ट्री में फाइलें खोजने की ज़रूरत है या नहीं।
 
-"## Kaise Kare"
+## कैसे
 
-Fish Shell mein, hum `test` command ka use karke directory ki presence check kar sakte hain. Yeh command ek conditional check ke liye use hoti hai. Agar humein kisi specific directory ki presence check karni hai, toh hum `test -d` command ka use karenge, jahan `-d` `test` command ka ek flag hai, jo directory ki presence check karta hai.
-
-### Raasta #1: Directory ki Presence Check karna
-```Fish Shell
-test -d /path/to/directory
-```
-Yeh command `true` ya `false` output degi, jahan `true` hoga agar directory upasthit hai aur `false` hoga agar directory na ho.
-
-### Raasta #2: Agar Directory Upasthit Hai Toh Use Ek Conditional Block Mein Add Karein
-```Fish Shell
-if test -d /path/to/directory
-    echo "Directory upasthit hai!"
+```Fish Shell``` में डायरेक्ट्री की जांच कैसे करें:
+```fish
+# स्लैक्स में डायरेक्ट्री का नाम दर्ज करें
+set dir_name /home/user/Downloads
+# डायरेक्ट्री की जांच करें
+if test -d $dir_name
+  echo "यह डायरेक्ट्री मौजूद है"
+else
+  echo "यह डायरेक्ट्री मौजूद नहीं है"
 end
 ```
-Yahan hum `if` aur `end` keywords ka use kar rahe hain, jismein `if` conditional check ko define karta hai, aur `end` uske baad ka code block ko define karta hai.
 
-### Raasta #3: Output Ko Variable Mein Store Karein
-```Fish Shell
-set directory_present (test -d /path/to/directory; and echo "true")
-```
-Yahan humne `test -d` command ke output ko variable `directory_present` mein store kiya hai. Is raaste mein, hum `; and` use kar rahe hain, jo `test` command ke output ko `echo` command ke saath combine karta hai.
+यदि डायरेक्ट्री मौजूद है, तो आपको "यह डायरेक्ट्री मौजूद है" का संदेश मिलेगा। और अगर यह मौजूद नहीं है, तो आपको "यह डायरेक्ट्री मौजूद नहीं है" का संदेश मिलेगा।
 
-"## Deep Dive"
+## गहराई तक जाएं
 
-`test` command, Fish Shell ke ek built-in command hai, jo file aur directory ko check karne ke liye use hota hai. Yeh command 3 levels of prescription dekhta hai - user, group, aur world. Is command ka format hai `test [switch] file`. Humne is post mein, `-d` switch ka use kiya hai, jiske zariye hum specific directory ko check kar rahe hain.
+डायरेक्ट्री की जांच कोड में ```test``` एक बिल्ट-इन कमांड है जो फ़ाइलों और डायरेक्ट्री के मौजूद होने को जांचता है। ```-d``` पैरामीटर डायरेक्ट्री के मौजूद होने को जांचता है और अगर डायरेक्ट्री मौजूद है तो उसके साथ संबंधित कोड एक्सीक्यूट होगा। आप भी ```-f``` पैरामीटर का उपयोग कर सकते हैं जो एक फ़ाइल के मौजूद होने को जांचता है।
 
-"## See Also"
+## देखें भी
 
-- [Fish Shell documentation on `test` command](https://fishshell.com/docs/current/cmds/test.html)
-- [Tutorialspoint article on `test` command in Fish Shell](https://www.tutorialspoint.com/unix_commands/test.htm)
-- [Maanava Adhikar Foundation blog on basic Fish Shell commands](https://www.manavadhikarfoundation.org/2018/05/27/basic-fish-shell-commands/)
+- [फ़ाइलें कैसे बनाएं](https://fishshell.com/docs/current/tutorial.html#_creating_files)
+- [फ़ाइलों और डायरेक्ट्रीज़ कैसे हटाएं](https://fishshell.com/docs/current/tutorial.html#_removing_files_and_directories)
+- [Shell में परिभाषित चर और उनकी कामनाएं](https://fishshell.com/docs/current/tutorial.html#_defined_variables)

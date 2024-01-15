@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "Fish Shell: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要使用Fish Shell提取子字符串
+## 为什么
 
-在编程中，我们经常需要处理文本数据。有时候，我们只需要提取字符串中的一部分内容，而不是整个字符串。这时候，Fish Shell提供的提取子字符串功能就很有用了。
+提取子字符串是很常见的编程任务，它可以帮助我们更方便地处理文本数据。如果你想精确地匹配或处理特定的文本，提取子字符串是非常有用的。
 
-## 如何使用Fish Shell提取子字符串
+## 如何进行
 
-通过使用Fish Shell提供的内置命令和功能，我们可以轻松地提取子字符串。让我们来看看以下示例：
-
+```fish
+set string "This is a sample string"
+echo $string[1,4]
 ```
-Fish Shell提取子字符串:
+这段代码将在Fish Shell中输出 "This"，它使用了字符串变量以及子字符串的语法来提取字符串"string"中的前四个字符。
 
-set str "Hello World"
+而如果我们想从一个字符串的特定位置开始提取子字符串，可以使用如下代码：
 
-echo $str[2..4] 
-
-# 输出: llo
+```fish
+set string "This is a sample string"
+echo $string[9:]
 ```
+这将输出 "sample string"，因为我们指定了从第九个字符开始提取直到末尾。
 
-在这个例子中，我们首先使用`set`命令将一个字符串赋值给变量`str`。然后，我们使用`echo`命令来输出`str`变量中从第二个字符到第四个字符的子字符串。
+除此之外，我们还可以使用如下代码来提取一个固定长度的子字符串：
 
-除了使用`..`来指定子字符串的开始和结束位置，Fish Shell还提供了其他方便的方法来提取子字符串，比如使用负数来表示从字符串末尾开始计数。
-
-除了基本的提取功能外，我们还可以使用正则表达式来提取符合特定模式的子字符串。让我们来看一个更复杂点的示例：
-
+```fish
+set string "This is a sample string"
+echo $string[3:7]
 ```
-Fish Shell使用正则表达式提取子字符串:
+这将输出 "is is"，因为我们指定了从第三个字符开始提取，长度为七个字符。
 
-set str "My email address is abc@example.com"
+## 深入了解
 
-echo $str =~ "(\w+)@\w+\.\w+"
+除了基本的用法外，还有一些重要的细节需要知道。首先是Fish Shell中使用的子字符串语法，它使用了类似于数组的形式来表示字符串的每个字符。通过指定起始和结束位置，我们可以提取出想要的子字符串。另外，如果我们想要提取最后一个字符，可以使用负数来表示，例如-1表示最后一个字符。
 
-# 输出: abc@example
-```
-
-在这个例子中，我们使用了`=~`操作符和一个正则表达式来提取字符串中的电子邮件地址。
-
-## 深入了解提取子字符串
-
-提取子字符串的功能在编程中非常常用，因此了解如何使用Fish Shell的提取功能可以让我们的工作更加高效。除了上面提到的基本用法，Fish Shell还提供了更多的选项和参数来满足不同的需求。比如，我们可以指定提取子字符串的步长，或者使用其他命令来处理提取的结果。
-
-此外，如果我们想要更深入地了解Fish Shell提取子字符串的原理和实现，我们可以查阅官方文档或者阅读源代码。
+另一个需要注意的重要细节是子字符串的索引起始值为1而不是0，这与其他编程语言有些不同。因此，要注意单独提取第一个字符时，写成 `$string[1]` 而不是 `$string[0]`。
 
 ## 参考链接
 
-- 官方文档: https://fishshell.com/docs/current/index.html
-- Fish Shell源代码: https://github.com/fish-shell/fish-shell
-- 关于正则表达式的详细教程: https://regexone.com/
+- <https://fishshell.com/docs/current/tutorial.html#syntax>
+- <https://fishshell.com/docs/current/commands.html#string-slicing>
+- <https://fishshell.com/docs/current/index.html#performance>

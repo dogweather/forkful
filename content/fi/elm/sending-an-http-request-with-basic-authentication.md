@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Perusautentikaatiolla http-pyynnön lähettäminen"
-simple_title:         "Perusautentikaatiolla http-pyynnön lähettäminen"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
+html_title:           "Elm: HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,43 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Elm ohjelmointikieli tarjoaa helpon tavan luoda web-sovelluksia, jotka käyttävät HTTP-pyyntöjä. Tässä artikkelissa kerron, kuinka voit lähettää HTTP-pyynnön perusautentikoinnilla käyttäen Elmia.
+## Miksi?
 
-## Kuinka tehdä
-Lähetä HTTP-pyyntö perusautentikoinnilla Elmissa käyttäen "Http.sendWithCredentials" -funktiota ja anna pyynnön mukana tarvittavat autentikointitiedot.
+Miksi kukaan haluaisi lähettää HTTP-pyyntöä perusautentikoinnilla? Yksinkertainen vastaus on, että perusautentikointi on yksi tapa suojata verkkosivuston tai sovelluksen tietokantaan tallennettuja tietoja varmistamalla, että ne ovat lähtöisin luotettavasta lähteestä.
+
+## Kuinka?
+
+Aloitetaan luomalla yksinkertainen HTTP-pyyntö, jossa käytetään perusautentikointia Elm-ohjelmointikielellä. Käytämme tätä esimerkkiä osoitteenhakusivustoon, joka vaatii kirjautumisen ennen kuin se palauttaa käyttäjän tietoja. 
 
 ```Elm
 import Http
-import Json.Decode exposing (int, string, decodeString)
+import Http.BasicAuth as Auth
 
-type alias Response = {
-    status: Int,
-    message: String
-}
+-- Määritä tarvittavat tiedot
+username = "käyttäjä"
+password = "salasana"
+url = "https://www.example.com/api/user"
 
-sendRequest : Cmd Msg
-sendRequest =
-    Http.sendWithCredentials
-        { method = "GET"
-        , headers = []
-        , url = "https://example.com/api/"
-        , body = Http.stringBody ""
-        , expect = Http.expectJson decodeResponse
-        }
+-- Luo HTTP-pyyntö käyttäen BasicAuth -moduulia
+req = Http.toRequest
+    { method = "GET"
+    , headers =
+        [ Auth.header username password
+        ]
+    , url = url
+    , body = Http.emptyBody
+    }
 
-decodeResponse : Decoder Response
-decodeResponse =
-    Decode.map2 Response
-        ("status" := int)
-        ("message" := string)
+-- Lähetä pyyntö ja tulosta vastaus
+Http.send (\_ -> (Auth.authenticate req)) |> Task.attempt handleResponse
+ 
+-- Määritä vastauksen käsittely
+handleResponse : Result Http.Error String -> Cmd msg
+handleResponse result =
+    case result of
+        Ok response ->
+            "Käyttäjän tiedot: " ++ response |> log
+
+        Err error ->
+            "Virhe: " ++ Http.errorToString error |> log
 ```
 
-## Syvemmälle
-Perusautentikointi on yleinen tapa suojata web-sovelluksia käyttäen käyttäjätunnusta ja salasanaa. Se vaatii, että jokainen HTTP-pyyntö sisältää autentikointitiedot.
+Tässä koodissa käytämme `Http.BasicAuth` -moduulia luomaan otsakitiedon, joka sisältää annetun käyttäjänimen ja salasanan. Sitten käytämme `Http.send` -funktiota lähettämään pyynnön ja tulostamme vastauksen `handleResponse` -funktion avulla. Lopuksi käsittelemme vastauksen joko onnistuneena tai virheellisenä ja tulostamme vastaavan viestin.
 
-Perusautentikointi voidaan toteuttaa käyttäen "Authorization" -otsaketta, johon liitetään käyttäjätunnus ja salasana, jotka on koodattu Base64-muotoon. Elm tarjoaa "Http.stringBody" -funktion, jolla voit lisätä autentikointitiedot pyyntöön.
+## Syväsukellus
+
+Perusautentikoinnin käyttäminen HTTP-pyynnöissä on vain yksi tapa varmistaa, että käyttäjän tiedot ovat turvattuja. Samalla tavalla voimme käyttää muita kodin tai muita Autentikoinnin tarjoajia soluun.
+
+Elm tarjoaa myös muita vaihtoehtoja, kuten Web.Sockets, joiden avulla voidaan lähettää ja vastaanottaa tietoja reaaliaikaisesti. Deep Elm -verkkosivusto tarjoaa lisätietoja näistä vaihtoehdoista ja auttaa sinua kehittämään edistynympää toiminnallisuutta käyttäen HTTP-pyyntöjä.
 
 ## Katso myös
-- Elm HTTP -dokumentaatio: https://package.elm-lang.org/packages/elm/http/latest/
-- Base64-koodaus Elmissa: https://package.elm-lang.org/packages/truqu/elm-base64/latest/
+
+- [Elm-lang.org - Basic Auth](https://guide.elm-lang.org/webapps/authentication.html)
+- [Deep Elm - HTTP](https://deep.elm-lang.org/web/http)
+- [Elm Weekly - Resting with Elm](https://elmweekly.nl/issues/51)

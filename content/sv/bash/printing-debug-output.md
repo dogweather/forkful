@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Utskrift av felsökningsutmatning"
-simple_title:         "Utskrift av felsökningsutmatning"
+title:                "Utskrift av debuggutdata"
+html_title:           "Bash: Utskrift av debuggutdata"
+simple_title:         "Utskrift av debuggutdata"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -11,51 +12,95 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva Bash-kod kan vara en utmanande uppgift och ofta stöter man på problem längs vägen. Att lägga till debugutmatning i koden kan hjälpa till att hitta fel och lösa dem snabbare. Det kan också ge en bättre förståelse för hur koden fungerar och därmed förbättra kvaliteten på slutprodukten.
+Att skriva ut debug-utdata är en viktig del av bash-programmering eftersom det ger utvecklare en snabb och effektiv metod att förstå hur deras kod fungerar. Detta är särskilt användbart när man letar efter fel och buggar i sin kod. 
 
-## Hur man gör det
+## Så här gör du
 
-Att lägga till debugutmatning i din Bash-kod är en enkel process. Det finns flera sätt att göra det, men här är några enkla sätt att komma igång:
+Det är enkelt att skriva ut debug-utdata i bash-programmering. Allt du behöver göra är att använda kommandot "echo" och skriva ut den önskade informationen. Detta kan göras på flera sätt, nedan finns några exempel:
 
-1. Använd `echo`-kommandot för att skriva ut variabler i olika delar av koden.
 ```Bash
-echo "Variabeln är $var"
+# Skriv ut en enkel sträng
+echo "Hello World"
+
+# Skriv ut värdet på en variabel
+name="John"
+echo "My name is $name"
+
+# Kombinera flera variabler och strängar
+age=25
+echo "Jag är $name och jag är $age år gammal"
 ```
-2. Använd `set -x` för att aktivera debug-läget som kommer att skriva ut varje rad i koden när den körs.
-```Bash
-set -x
-# kod här
-set +x # för att inaktivera debug-läget igen
+
+Detta skulle generera följande utdata:
+
 ```
-3. Använd `read` för att vänta på användarens input och skriva ut det i koden.
-```Bash
-read -p "Ange ett nummer: " num
-echo "Du angav: $num"
+Hello World
+My name is John
+Jag är John och jag är 25 år gammal
 ```
 
 ## Djupdykning
 
-Att lägga till debugutmatning kan vara mycket hjälpsamt men det kan också leda till större filstorlekar och onödigt utskrift. Här är några tips för att optimera din debugutmatning:
+Det finns flera sätt att anpassa och förbättra utskriften av debug-utdata i bash. Ett sätt är att använda flaggan "-e" med echo-kommandot för att tillåta användning av escape-tecken, som tillåter dig att formatera din utdata på ett önskat sätt. Till exempel:
 
-- Använd `>/dev/null` för att dölja output från vissa kommandon såsom `curl` eller `grep`.
 ```Bash
-curl example.com > /dev/null # skriver ut resultaten på skärmen men de ignoreras
+# Använd avstånd mellan olika delar av utdatan
+echo -e "Namn: $name \nÅlder: $age \nLand: Sweden"
+
+# Lägg till färg 
+echo -e "Namn: $name \nÅlder: $age \nLand: \e[34mSweden\e[0m" 
+# \e[34m representerar det blå färgen, medan \e[0m återställer färgen till standard
+
+# Lägg till en horisontell linje
+echo -e "Namn: $name \nÅlder: $age \nLand: United States \n---"
 ```
 
-- Använd `echo -n` för att hålla debug-utmatningen på samma rad som kodraden.
-```Bash
-echo -n "Om du kan läsa detta är koden körd"
+Detta skulle ge ut följande utdata:
+
+```
+Namn: John 
+Ålder: 25 
+Land: Sweden
 ```
 
-- Använd `>&2` för att skriva ut felmeddelanden på standard error istället för standard output.
+```
+Namn: John 
+Ålder: 25 
+Land: Sweden
+```
+
+```
+Namn: John 
+Ålder: 25 
+Land: Sweden
+```
+
+Att skriva ut debug-utdata i bash ger dig också möjlighet att spara utdatan till en fil istället för att bara visa den i terminalen. För att göra detta kan du enkelt använda redirection-operatorn ">>". Till exempel:
+
 ```Bash
-(( 1/0 )) 2>&1 # skriver ut felmeddelandet på standard error istället för skärmen
+# Spara utdatan till en fil
+echo "Hello World" >> output.txt
+
+# Kombinera flera variabler och spara till en fil
+echo -e "Namn: $name \nÅlder: $age \nLand: Sweden" >> output.txt
+```
+
+Detta skulle skapa en fil med namnet "output.txt" och spara följande utdata i filen:
+
+```
+Hello World
+```
+
+```
+Namn: John 
+Ålder: 25 
+Land: Sweden
 ```
 
 ## Se även
 
-Här är några användbara artiklar och resurser för att lära dig mer om att lägga till debugutmatning i din Bash-kod:
+Här är några länkar som kan hjälpa dig att lära dig mer om att skriva ut debug-utdata i bash-programmering:
 
-- [Debug Bash Scripts Like a Pro](https://www.enterprisedb.com/postgres-tutorials/debug-bash-scripts-pro)
-- [Debugging Bash scripts](https://linuxconfig.org/debugging-bash-scripts)
-- [Bash Debugging - Linux Journal](https://www.linuxjournal.com/content/bash-debugging-linux-journal)
+- [Echo Command in Bash](https://linuxize.com/post/echo-command-in-bash/)
+- [How to use colored output in bash script](https://stackoverflow.com/questions/16843382/how-to-use-colored-output-in-bash-script)
+- [Bashing Bash: How to redirect output to a file](https://www.networkworld.com/article/2696144/bashing-bash-how-to-redirect-output-to-a-file.html)

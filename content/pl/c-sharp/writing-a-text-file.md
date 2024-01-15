@@ -1,6 +1,7 @@
 ---
-title:                "C#: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "C#: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,60 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie plików tekstowych jest nieodłączną częścią pisania programów w C#. Pliki tekstowe pozwalają nam na przechowywanie różnego rodzaju informacji w czytelnej dla człowieka formie, co ułatwia nam pracę z nimi w przyszłości. W poniższym artykule dowiesz się, w jaki sposób napisać plik tekstowy w języku C#.
+Zapisywanie pliku tekstowego to podstawowa, ale niezbędna umiejętność w programowaniu. Dzięki temu możemy przechowywać i edytować dane, które są niezbędne dla naszych programów. Bez niego, nasze aplikacje nie mogłyby wykorzystywać informacji, co często prowadziłoby do niezawodności i niepełnej funkcjonalności.
 
 ## Jak to zrobić
 
-Aby napisać plik tekstowy w C#, musimy wykonać kilka prostych kroków:
-
-1. Najpierw musimy zaimportować przestrzeń nazw ```System.IO```, która zawiera klasy i metody umożliwiające manipulowanie plikami w C#.
-2. Następnie tworzymy obiekt typu ```StreamWriter``` i przekazujemy mu ścieżkę do pliku, który chcemy utworzyć lub edytować.
-3. W tym momencie możemy już używać różnych metod dostępnych w klasie ```StreamWriter```, takich jak ```WriteLine()``` czy ```Write()```, aby zapisywać dane do pliku.
-4. Po zakończeniu zapisywania musimy zamknąć plik, wywołując metodę ```Close()``` na obiekcie ```StreamWriter```.
-5. Gotowe! Nasz plik tekstowy został utworzony lub zaktualizowany zgodnie z naszymi oczekiwaniami.
+Aby zapisać plik tekstowy w języku C#, musimy najpierw wykorzystać przestrzeń nazw System.IO, która umożliwia nam dostęp do klas i metod związanych z operacjami wejścia/wyjścia. Następnie, możemy użyć klasy StreamWriter, która pozwala nam pisać do pliku tekstowego. Przykład kodu poniżej pokazuje, jak zapisać trzy linie tekstu do pliku o nazwie "tekstowy.txt".
 
 ```C#
-using System.IO; // Importowanie przestrzeni nazw System.IO
+using System.IO;
 
-// Tworzenie obiektu StreamWriter i przekazanie ścieżki do pliku
-StreamWriter writer = new StreamWriter("moj_plik.txt");
-
-// Zapisywanie danych do pliku
-writer.WriteLine("To jest pierwsza linijka tekstu.");
-writer.Write("A to jest druga linijka tekstu.");
-
-// Zamykanie pliku
-writer.Close();
+StreamWriter sw = new StreamWriter("tekstowy.txt");
+sw.WriteLine("Pierwsza linia tekstu.");
+sw.WriteLine("Druga linia tekstu.");
+sw.WriteLine("Trzecia linia tekstu.");
+sw.Close();
 ```
 
-Po uruchomieniu powyższego kodu, w naszym folderze znajdziemy plik o nazwie "moj_plik.txt" zawierający wprowadzone przez nas dane.
+Po uruchomieniu tego kodu, zostanie utworzony plik tekstowy o nazwie "tekstowy.txt", a w nim będą zawarte trzy linie tekstu, oddzielone nowymi liniami.
 
-## Zanurzenie się w temat
+## Głębsze wędrówki
 
-Pisanie plików tekstowych może się wydawać prostym zadaniem, ale warto poznać kilka dodatkowych informacji na temat tego procesu.
-
-### Tworzenie plików
-
-Jeśli chcemy utworzyć nowy plik tekstowy, musimy wykorzystać obiekt typu ```StreamWriter``` w połączeniu z metodą ```CreateText()``` znajdującą się w klasie ```File```.
-
-```C#
-StreamWriter writer = File.CreateText("nowy_plik.txt");
-```
-
-### Obsługa wyjątków
-
-Podczas manipulowania plikami tekstowymi warto zabezpieczyć się przed ewentualnymi błędami. Należy pamiętać o obsłudze wyjątków, takich jak np. ```IOException```, która może pojawić się w przypadku problemów z dostępem do pliku.
-
-### Zapisywanie danych binarnych
-
-Klasy i metody związane z obsługą plików tekstowych w C# służą głównie do zapisywania tekstu. Jeśli chcemy zapisać dane binarne, np. obrazy, musimy wykorzystać inne mechanizmy.
+Zapisywanie pliku tekstowego może obejmować także bardziej wymagające czynności, takie jak odczytywanie danych z zewnętrznych źródeł lub formatowanie tekstu w celu uzyskania czytelniejszego wyglądu pliku. W takich przypadkach, możemy wykorzystać inne klasy i metody dostępne w przestrzeni nazw System.IO, aby manipulować danymi i tworzyć bardziej zaawansowane pliki tekstowe.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej na temat manipulowania plikami w C#, polecamy zapoznać się z poniższymi linkami:
-
-- [Dokumentacja Microsoft na temat klasy StreamWriter](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter)
-- [Poradnik dotyczący pracy z plikami w C#](https://www.c-sharpcorner.com/uploadfile/mahesh/working-with-streaming-in-C-Sharp/)
-- [Przewodnik dla początkujących na temat plików w C#](https://www.tutorialspoint.com/csharp/csharp_files_io.htm)
-
-Dziękujemy za przeczytanie naszego artykułu na temat pisania plików tekstowych w C#. M
+- [Jak odczytać plik tekstowy w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
+- [Podstawy operacji wejścia/wyjścia w C#](https://docs.microsoft.com/pl-pl/dotnet/standard/io/)
+- [Inne sposoby na zapisywanie danych w C#](https://www.c-sharpcorner.com/UploadFile/mgold/ReadWriteDataTxtFile12062005003829AM/ReadWriteDataTxtFile.aspx)

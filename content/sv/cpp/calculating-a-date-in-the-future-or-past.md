@@ -1,6 +1,7 @@
 ---
-title:                "C++: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkning av ett datum i framtiden eller förflutna"
+html_title:           "C++: Beräkning av ett datum i framtiden eller förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Det kan finnas många anledningar till varför man behöver räkna ut ett datum i framtiden eller det förflutna. Det kan vara för att planera en resa, boka ett möte eller evenemang, eller helt enkelt för att hålla koll på viktiga datum.
+
+Du kanske undrar varför man skulle vilja beräkna ett datum i framtiden eller det förflutna. Kanske håller du på att skapa en kalenderapplikation eller behöver planera en viktig händelse långt i förväg. Oavsett anledning kan det vara användbart att kunna beräkna datum på ett enkelt sätt med hjälp av C++.
 
 ## Så här gör du
-Om du arbetar med C++ programming och behöver beräkna ett datum i framtiden eller det förflutna, finns det några enkla steg att följa.
 
-### Steg 1: Skapa en instans av date-klassen
-Först måste du skapa en instans av date-klassen i C++. Detta kan göras genom att använda konstruktorn för klassen och ange året, månaden och dagen du vill beräkna från.
+Att beräkna ett datum i framtiden eller det förflutna kan göras på olika sätt, men vi kommer att fokusera på en enkel metod som använder sig av några inbyggda funktioner i C++. Här är ett exempel på hur du kan göra det:
 
 ```C++
-date d(2021, 4, 15); // Skapar ett datumobjekt för 15 april 2021
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+  // Beräkna ett datum 20 dagar framåt
+  time_t now = time(0); // Hämta nuvarande tid
+  tm *ltm = localtime(&now); // Skapa ett tm-objekt baserat på nuvarande tid
+
+  // Lägg till 20 dagar på dagens datum
+  ltm->tm_mday += 20; // tm_mday representerar dag i månaden
+  mktime(ltm); // Konvertera tillbaka till en time_t-variabel
+
+  // Skriv ut det nya datumet
+  cout << "Nytt datum: " << ltm->tm_mon + 1 << "/" << ltm->tm_mday << "/" << ltm->tm_year + 1900 << endl;
+  
+  return 0;
+}
 ```
 
-### Steg 2: Använd add_days() eller add_months() funktionen
-Nästa steg är att använda funktionerna add_days() eller add_months(). Dessa funktioner gör det möjligt att lägga till ett visst antal dagar eller månader till det befintliga datumet.
+I det här exemplet använder vi funktionerna `time()` och `localtime()` för att hämta nuvarande tid och skapa ett tm-objekt som representerar detta datum. Sedan lägger vi till det antal dagar vi vill beräkna på `tm_mday` och konverterar sedan tillbaka till en time_t-variabel med hjälp av funktionen `mktime()`. Slutligen skriver vi ut det nya datumet i formatet månad/dag/år.
 
-```C++
-d.add_days(7); // Lägger till 7 dagar till datumet
-d.add_months(2); // Lägger till 2 månader till datumet
-```
+Detta är bara ett grundläggande exempel, det finns många andra sätt att beräkna datum i C++. Det är också viktigt att notera att detta exempel bara fungerar för att beräkna datum i framtiden. För att beräkna datum i det förflutna kan du använda funktionen `difftime()` istället.
 
-### Steg 3: Få ut datumet i önskat format
-Slutligen kan du få ut det beräknade datumet i önskat format genom att använda format()-funktionen.
+## Deep Dive
 
-```C++
-cout << d.format("%Y-%m-%d"); // Skriver ut datumet i formatet ÅÅÅÅ-MM-DD (t.ex. 2021-04-22)
-```
+Om du vill fördjupa dig mer i beräkning av datum i C++ finns det en mängd olika bibliotek och externa funktioner som kan hjälpa till. Till exempel finns det bibliotek som är speciellt utformade för att hantera datum och tid, som [Boost Date Time library](https://www.boost.org/doc/libs/1_66_0/doc/html/date_time.html).
 
-## Djupdykning
-Om du vill gå på djupet och förstå mer om hur datumberäkningar fungerar inom programmering, kan det vara värt att bekanta sig med de olika datumbiblioteken som finns tillgängliga för C++. Ett av de mest populära är "Chrono library", som introducerades i C++11 och erbjuder ett brett spektrum av funktioner för datum- och tidsberäkningar.
+Ett annat sätt att lära sig mer om datumberäkning i C++ är att titta på koden för redan existerande kalenderapplikationer eller tidshanteringssystem. Genom att undersöka hur dessa program hanterar datum och tid kan du få en djupare förståelse för olika metoder och tekniker som används.
 
-För att förstå mer om hur man hanterar datum i C++ är det också viktigt att ha en grundläggande förståelse för datatyper och variabler i språket. Ett datum i C++ kan representeras som en variabel av typen "date", men det är också möjligt att använda andra datatyper, som "tm" eller "time_t".
+## Se även
 
-## Se också
-- https://stackoverflow.com/questions/2602616/c-get-date-and-time-in-a-specific-format
-- https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/
-- https://www.geeksforgeeks.org/challenging-logics/
-- https://www.cplusplus.com/reference/chrono/
+- [Boost Date Time library](https://www.boost.org/doc/libs/1_66_0/doc/html/date_time.html)
+- [Dokumentation för C++ Date and Time](https://www.cplusplus.com/reference/ctime/)
+- [GitHub-repositorium för C++ Calendar](https://github.com/elviswolcott/cpp_calendar)

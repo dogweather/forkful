@@ -1,5 +1,6 @@
 ---
-title:                "Java: Написання текстового файлу"
+title:                "Написання текстового файлу"
+html_title:           "Java: Написання текстового файлу"
 simple_title:         "Написання текстового файлу"
 programming_language: "Java"
 category:             "Java"
@@ -9,23 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Написання текстового файлу є важливою частиною програмування в Яві, оскільки такі файли використовуються для збереження інформації, яку потрібно зберігати довгостроково або обмінювати з іншими програмами.
+## Тому що
 
-## Як виконати
-Написання текстового файлу може бути простим завданням з допомогою деяких основних кроків. Спочатку потрібно створити новий об'єкт типу File, який буде посилатися на наш текстовий файл. Потім створіть новий об'єкт типу FileWriter, який буде використовуватися для запису даних у файл. Для написання тексту у файл використовуйте метод write() у FileWriter. Наприклад:
+Написання текстового файлу є необхідною частиною програмування в Java, оскільки це дозволяє зберігати дані та результати виконання програми на диску для подальшого використання.
+
+## Як це зробити
+
+Найпростіший спосіб написати текстовий файл в Java - це використовувати клас `FileWriter`. Для початку слід створити об'єкт цього класу та передати йому шлях до файлу для записування даних:
+
 ```Java
-File file = new File("myFile.txt");
-FileWriter writer = new FileWriter(file);
-
-writer.write("Це текст, який буде написаний у файл.");
+FileWriter writer = new FileWriter("myFile.txt");
 ```
-Це створить новий файл з назвою "myFile.txt" та записе у нього текст. Важливо закрити запис через метод close() у FileWriter після завершення запису у файл.
 
-## Глибока інформація
-Написання текстового файлу за допомогою FileReader має більше можливостей. Наприклад, ви можете зчитувати та записувати дані побайтово за допомогою класу FileOutputStream. Крім того, FileReader підтримує інші типи кодувань, такі як UTF-8 або UTF-16. Це дозволяє зберігати текст як Unicode та при відкритті файлу у інших програмах він буде правильно відображатися.
+Далі можна використовувати метод `write()` для додавання тексту до файлу:
+
+```Java
+writer.write("Це текст, який буде збережений у файлі.");
+```
+
+Коли всі дані додані до файлу, необхідно закрити об'єкт `FileWriter` за допомогою методу `close()`:
+
+```Java
+writer.close();
+```
+
+#### Приклад
+
+```Java
+import java.io.FileWriter;
+
+public class WritingTextFile {
+    public static void main(String[] args) throws Exception {
+        FileWriter writer = new FileWriter("myFile.txt");
+        writer.write("Це приклад написання текстового файлу в Java.");
+        writer.close();
+    }
+}
+```
+
+#### Вихідний файл `myFile.txt`
+
+Це приклад написання текстового файлу в Java.
+
+## Глибше про написання текстових файлів
+
+### Класи `Writer` та `OutputStreamWriter`
+
+Крім `FileWriter`, в Java є ще два класи, які дозволяють записувати тексові дані до файлу - `Writer` та `OutputStreamWriter`. Ці класи дозволяють зберігати дані в різних форматах, наприклад у UTF-8 або UTF-16.
+
+### Використання буферу
+
+Використання буферу може покращити продуктивність записування текстового файлу. Для цього слід додати буферний об'єкт до екземпляру `Writer` або `OutputStreamWriter`:
+
+```Java
+BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("myFile.txt"));
+```
+
+Після цього можна використовувати метод `write()` для додавання даних до буфера, а метод `flush()` щоб записати дані із буферу до файлу.
+
+## Додатковий матеріал
+
+[Офіційна документація Java - Клас FileWriter](https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html)
+
+[Стаття про роботу з файлами в Java на сайті Tutorials Point](https://www.tutorialspoint.com/java/java_files_io.htm)
+
+[Відеоурок з написання текстових файлів в Java на YouTube](https://www.youtube.com/watch?v=ku6cgvNLkR0)
 
 ## Дивіться також
-- [Документація Яви про класи File та FileWriter](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Поради щодо написання текстових файлів в Яві](https://javarevisited.blogspot.com/2015/08/how-to-write-to-file-in-java-using-bufferedwriter-example.html)
-- [Туторіал на YouTube про написання текстових файлів в Яві](https://www.youtube.com/watch?v=9M33KlK4_ZQ)
+
+[Як читати текстовий файл в Java](https://github.com/OlyaLevchuk/Java-Text-File-Reader-Article-Ukrainian)
+
+[Список методів для роботи з текстовим файлом у Java](https://github.com/OlyaLevchuk/Java-String-File-Methods-Article-Ukrainian)
+
+[Курс Java - Основи програмування на YouTube](https://www.youtube.com/playlist?list=PLZYrS7Oes447a5IftMjImPfDAw41nOOSa)

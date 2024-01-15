@@ -1,6 +1,7 @@
 ---
-title:                "Bash: HTML समाख्यानन"
-simple_title:         "HTML समाख्यानन"
+title:                "Html को विश्लेषण करना"
+html_title:           "Bash: Html को विश्लेषण करना"
+simple_title:         "Html को विश्लेषण करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,33 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्यों
-
-HTML पार्सिंग के लिए *क्यों* कोई भी व्यक्ति जुटाना चाहेगा, वह वेब साइटों से डेटा को उठाने और उसे अपने ऑनलाइन प्रोजेक्ट के साथ सम्मिलित करने के लिए बेहतर तरीके से संगठित करने की आवश्यकता होती है।
+आपने शायद कभी कोई वेब पृष्ठ (HTML) देखा होगा और बेहद चाहते होंगे कि उस पेज की संरचना और आकार क्या है। ऐसे में, आपको HTML को parse करने की जरूरत पड़ सकती है।
 
 ## कैसे करें
-
-यहां हम आपको कुछ बेहतरीन उदाहरण और परिणाम दिखाएंगे जो HTML पार्सिंग का उपयोग कैसे किया जाता है:
+यदि आपको किसी वेब पृष्ठ को parse करने की जरूरत है तो आप कुछ आसान बातों का ध्यान रख सकते हैं। इन बातों को follow करके आप किसी भी पेज को आसानी से पार्स कर सकते हैं।
 
 ```Bash
-# HTML पार्सिंग के लिए आवश्यक लाइब्रेरी की इम्पोर्ट करें
-from bs4 import BeautifulSoup
+# आपको पहले किसी HTML पेज का URL ढूंढना होगा। इसके बाद नीचे दिए गए एक्सैंपल कोड का उपयोग करके उस पेज का source code ले सकते हैं
 
-# HTML सामग्री को लोड करें
-html = open("index.html")
+$ curl https://www.example.com > webpage.html
 
-# BeautifulSoup ऑब्जेक्ट बनाएं
-soup = BeautifulSoup(html, "html.parser")
+# अब HTML पेज का सारा source code webpage.html नाम के file में save हो जायेगा। अब आप इस file को किसी text editor में open करके पूरा code देख सकते हैं
 
-# एक टेबल से सभी <tr> तत्वों को पाएं
-rows = soup.table.find_all("tr")
-
-# सभी पंक्तियों को प्रिंट करें
-for row in rows:
-  print(row.text)
 ```
 
-इस उदाहरण में, हमें BeautifulSoup लाइब्रेरी का उपयोग करके HTML सामग्री को पार्स किया गया है और टेबल से सभी पंक्तियों को प्रिंट किया गया है। आप अपने आवश्यकतानुसार यह कोड बदल सकते हैं और अपनी साइटों से डेटा को पार्स करने के लिए इसका उपयोग कर सकते हैं।
+## डीप डाइव
+HTML पेज को parse करना थोड़ा जटिल हो सकता है। आपको HTML या CSS के बारे में थोड़ी सी जानकारी होनी चाहिए ताकि आप सटीक तरीके से पेज को parse कर सकें। आपको इसमें अलग-अलग tags, attributes और values की समझ होनी चाहिए।
 
-## गहराई में
+## देखें भी
+अगर आप और भी अधिक जानकरी चाहते हैं तो नीचे दिए गए लिंक्स को देख सकते हैं:
 
-HTML पार्सिंग के लिए अन्य लाइब्रेरी भी हो सकती हैं, लेकिन BeautifulSoup एक लोकप्रिय और उपयोगी विकल्प है। यह टैग और उनके आधार पर सामग्री को विश्लेषण करने की सुविधा देता है। इसके अलावा, इसमें समाप्त उपकरण हैं जो आपको अपने कोड को और भी आसान बनाते हैं। अतः, HTML पार्सिंग के लिए BeautifulSoup का उपयोग करन
+- [वेब डेवलपमेंट के बेसिक्स](https://www.geeksforgeeks.org/web-development-basics/)
+- [HTML, CSS और JavaScript की जानकारी](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web)
+- [ऑनलाइन HTML को parser करने के लिए टूल्स](https://html-parser.com/)
+
+**Happy parsing!**

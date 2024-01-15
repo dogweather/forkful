@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Alimerkkijonojen erottaminen"
-simple_title:         "Alimerkkijonojen erottaminen"
+title:                "Alirivien erottaminen"
+html_title:           "Arduino: Alirivien erottaminen"
+simple_title:         "Alirivien erottaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,26 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Arduino-ohjelmointi ei ole aina helppoa, mutta käyttämällä substringien louhimista voit helposti hallita merkkijonoja ja tehdä monimutkaisemmat tehtävät yksinkertaisiksi. Joten miksi et hyödyntäisi tätä hyödyllistä toimintoa?
+Miksi haluaisit erotella alimerkkijonoja? Alimerkkijonot ovat käteviä tapoja käsitellä tekstiä, kun haluat erottaa tietyt osat tekstistä tai muuttaa niitä. Esimerkiksi voit käyttää alimerkkijonoja datan käsittelyyn, kuten lämpötila- tai kosteusarvojen hävittämiseen sensoreilta.
 
-## Kuinka
+## Kuinka tehdä se
 
-Substringien louhiminen Arduinossa on yksinkertaista ja nopeaa. Käytämme tätä kätevää toimintoa merkkijonoissa, kun meidän on esimerkiksi otettava tietty osa merkkijonosta ja käsiteltävä sitä erikseen.
+```Arduino
+String teksti = "Hei maailma!";
+String alimerkkijono = teksti.substring(0, 3);
 
+Serial.println(alimerkkijono);
+
+//Tulostaa "Hei"
 ```
-Arduino String merkkijono = "Hei, olen Arduino!";
-String osa1 = merkkijono.substring(1); // palauttaa "ei, olen Arduino!"
-String osa2 = merkkijono.substring(4, 7); // palauttaa "olen"
+
+Voit käyttää `substring()` funktiota erotellaksesi tekstiä haluamillesi osille. Ensimmäisenä parametrina annetaan alkuindeksi ja toisena parametrina loppuindeksi. Alkuindeksi on mukana alimerkkijonossa, mutta loppuindeksi ei. Voit myös käyttää `substring()` funktiota ilman toista parametria, jolloin alimerkkijono ulottuu loppuun saakka. 
+
+```Arduino
+String teksti = "Hei maailma!";
+String alimerkkijono = teksti.substring(4);
+
+Serial.println(alimerkkijono);
+
+//Tulostaa "maailma!"
 ```
 
-## Syvemmälle
+Voit myös tallentaa alimerkkijonon omaan String-muuttujaan kätevyyden vuoksi.
 
-Substringien louhinta perustuu kahteen parametriin: aloituskohdan indeksiin ja mahdolliseen lopetuskohdan indeksiin. Ensimmäinen parametri on pakollinen ja se määrittää kohdan, josta haluat aloittaa louhimisen. Toinen parametri on valinnainen ja se määrittää kohdan, josta haluat lopettaa louhimisen. Jos toista parametria ei anneta, substring louhitaan loppuun saakka.
+## Syvempi sukellus
 
-`substring()`-funktion käyttö tulee erittäin hyödylliseksi, kun haluat esimerkiksi ottaa osan käyttäjän syöttämästä merkkijonosta tai tarkistaa, onko tietty sana tai lause osa merkkijonoa.
+Alimerkkijonot eivät toimi pelkästään String-muuttujilla, vaan niitä voi käyttää myös char-taulukoilla ja C-tyylisillä merkkijonoilla. Syvällisempi ymmärrys alimerkkijonoista voi auttaa muissakin ohjelmointitehtävissä, kuten tiedostojen käsittelyssä.
+
+Muista, että alimerkkijonojen indeksointi alkaa aina nollasta ja loppuindeksi ei ole osa alimerkkijonoa.
 
 ## Katso myös
 
-- [Arduino String.substring() reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Arduino String.charAt() blogikirjoitus](https://www.arduino.cc/en/Tutorial/StringCharAt)
-- [Arduino perusteet -blogi](https://www.arduino.cc/en/Tutorial/Foundations)
+- [String-luokan dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Substring opas](https://www.arduino.cc/reference/en/language/variables/variable-scope/substring/)

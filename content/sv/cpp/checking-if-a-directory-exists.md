@@ -1,6 +1,7 @@
 ---
-title:                "C++: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en mapp existerar"
+html_title:           "C++: Kontrollera om en mapp existerar"
+simple_title:         "Kontrollera om en mapp existerar"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,47 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Att kunna kontrollera om en mapp finns är en viktig del av programmering. Detta gör det möjligt att hantera olika scenarier och undvika problem som kan uppstå om en mapp inte finns.
 
-Att kolla om en mapp finns är en viktig del av många program som arbetar med filhantering. Det kan hjälpa till att undvika felaktig hantering av filer och också underlätta för användaren genom att indikera om en viss mapp finns tillgänglig för användning.
-
-## Så här gör du
+# Så här gör du
+Du kan enkelt kontrollera om en mapp finns genom att använda funktionen `opendir()` i C++. Funktionen tar in mappens sökväg som argument och returnerar en pekare till mappen om den finns, annars returneras `NULL`.
 
 ```C++
 #include <iostream>
-#include <filesystem>
+#include <dirent.h>
 
-namespace fs = std::filesystem;
+int main(){
 
-int main() {
+    // Ange mappens sökväg
+    const char* path = "/Users/user/Documents/ExampleFolder";
 
-   // Ange sökvägen till mappen du vill kontrollera
-   std::string path = "/dokument/testmapp/";
+    // Kontrollera om mappen finns
+    DIR* dir = opendir(path);
 
-   // Använd exists() för att kontrollera om mappen finns
-   if (fs::exists(path)) {
-      std::cout << "Mappen finns." << std::endl;
-   } else {
-      std::cout << "Mappen finns inte." << std::endl;
-   }
+    // Om mappen finns returneras en pekare
+    if (dir){
+        std::cout << "Mappen finns!" << std::endl;
+        closedir(dir); // Stäng pekaren
+    }
+    // Annars returneras NULL
+    else{
+        std::cout << "Mappen finns inte!" << std::endl;
+    }
 
-   return 0;
+    return 0;
 }
 ```
 
-### Exempeloutput:
+**Output:**
+```
+Mappen finns inte!
+```
 
-Mappen finns inte.
+Om du vill kunna göra fler åtgärder beroende på om mappen finns eller inte, kan du använda styrkoden `if/else` som visas i exemplet ovan. Om mappen finns kan du till exempel skapa en ny mapp med samma namn eller läsa innehållet i mappen.
 
-I det här exemplet används C++ standardbiblioteket "filesystem" för att enkelt kontrollera om en given sökväg representerar en befintlig mapp. Det är enkelt att implementera och ger snabbt resultat.
+# Djupdykning
+För att kunna kontrollera om en mapp finns måste du använda funktionen `opendir()` från C:s standardasbibliotek. Denna funktion öppnar en filström till den angivna mappen och returnerar en pekare till den. Om mappen inte finns returnerar funktionen `NULL`.
 
-## Djupdykning
+Det är viktigt att nämna att funktionen `opendir()` bara kontrollerar om det finns någon filström till mappen, inte om det verkligen är en mapp eller filer i den. Om du behöver kontrollera om det finns filer i mappen måste du loopa igenom innehållet med hjälp av funktionen `readdir()`.
 
-Att kontrollera om en mapp faktiskt finns kan kräva lite mer förståelse av hur ett operativsystem hanterar filer och mappar. I sin enklaste form innebär detta att gå igenom alla filsystemsnivåer som hierarkin i en mappstruktur består av.
-
-I vissa fall kan det också vara användbart att känna till och kunna hantera eventuella fel och undantag som kan uppstå vid kontrollen av en mapp. Till exempel kan en otillräcklig behörighet förhindra att en mapp kontrolleras korrekt.
-
-## Se även
-
-- [C++ standardbiblioteket "filesystem"](https://en.cppreference.com/w/cpp/filesystem)
-- [Kontrollera behörighet i C++](https://www.geeksforgeeks.org/directory-permissions-in-c-programming-language/)
+# Se även
+* [Dokumentation för opendir()](https://www.cplusplus.com/reference/cstdio/opendir/)
+* [Hantering av mappar i C++](https://programmerare.se/hantering-av-mappar-i-c/)

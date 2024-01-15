@@ -1,5 +1,6 @@
 ---
-title:                "C: Å finne lengden av en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "C: Å finne lengden av en streng"
 simple_title:         "Å finne lengden av en streng"
 programming_language: "C"
 category:             "C"
@@ -9,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
+Å finne lengden av en streng kan virke som en enkel oppgave, men det er faktisk et viktig konsept å forstå i programmering. Ved å forstå hvordan man finner lengden av en streng, kan man effektivt manipulere og behandle tekst i programmene sine.
 
-Å finne lengden på en tekststreng er en viktig del av programmering. Det tillater deg å behandle og manipulere tekst på en mer effektiv måte, og det er en grunnleggende ferdighet som alle programvareutviklere burde mestre. Så uavhengig av om du er en nybegynner eller en erfaren programmerer, er det viktig å forstå hvordan man finner lengden på en tekststreng.
-
-# Hvordan
-
-For å finne lengden på en tekststreng i C, bruker vi funksjonen `strlen()`. Denne funksjonen finnes i standard library for C, `string.h`. La oss se på et eksempel på hvordan man bruker denne funksjonen:
+##Hvordan
+For å finne lengden av en streng i C, kan man bruke funksjonen ```strlen()```. Denne funksjonen tar inn en streng som parameter og returnerer antall tegn i strengen, uten å telle med null-terminator-tegnet som brukes for å markere slutten på en streng. La oss se på et eksempel:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main ()
-{
-  char str[20] = "Hei, dette er en tekststreng";
-  int lengde = strlen(str);
-  printf("Lengden på teksten er %d", lengde);
-  
-  return 0;
+int main(void) {
+    char string[] = "Hei, verden!";
+    int lengde = strlen(string);
+    printf("Strengen \"%s\" har en lengde på %d tegn.", string, lengde);
+    return 0;
 }
 ```
-Output:
+
+Dette programmet vil skrive ut følgende:
+
 ```
-Lengden på teksten er 28
+Strengen "Hei, verden!" har en lengde på 12 tegn.
 ```
 
-Vi starter med å inkludere `string.h` i koden vår for å ha tilgang til `strlen()`-funksjonen. Deretter deklarerer vi en variabel `str` som inneholder teksten vi ønsker å finne lengden på. Vi bruker deretter `strlen()`-funksjonen på `str` og lagrer resultatet i variabelen `lengde`. Til slutt skriver vi ut resultatet ved hjelp av `printf()`-funksjonen.
+Vi kan også finne lengden av en streng ved å bruke en løkke for å telle antall tegn, men denne metoden er mer kompleks og mindre effektiv. Her er et eksempel:
 
-# Dypdykk
+```C
+int lengde = 0;
+while (streng[lengde] != '\0') {
+    lengde++;
+}
+```
 
-Nå som vi har sett på en enkel måte å finne lengden på en tekststreng på, kan vi se litt nærmere på hvordan `strlen()`-funksjonen fungerer. Først og fremst, så er det viktig å huske at `strlen()` teller antall tegn i en tekststreng, ikke nødvendigvis antall ord. Dette betyr at den vil inkludere mellomrom og andre spesialtegn i beregningen. 
+Som du kan se, må vi også telle med null-terminator-tegnet, og dette kan føre til feil dersom det blir glemt.
 
-En annen ting å merke seg er at `strlen()` returnerer en `int`-verdi, som betyr at den har en grense på maksimalt antall tegn som kan telle. Dette kan være et problem hvis du trenger å finne lengden på en veldig lang tekststreng. I disse tilfellene, kan du bruke funksjonen `strlen_s()` som tar i bruk et større datatyper for å håndtere større verdier. 
+##Dypdykk
+For å forstå hvordan funksjonen ```strlen()``` virker, er det viktig å vite hvordan strenger er representert i C. Strenger er egentlig bare en rekke med tegn, der den siste er null-terminator-tegnet. Når vi kaller på ```strlen()```, begynner den å telle fra starten av strengen og stopper når den kommer til null-terminator-tegnet.
 
-# Se også
+Det kan også være nyttig å vite at funksjonen ```strlen()``` er definert i header-filen ```string.h```. Dette betyr at vi må inkludere denne filen i programmene våre for å bruke funksjonen.
 
-- [Hva er en streng i C](https://www.programiz.com/c-programming/c-strings)
-- [Bruk av `string.h` library](https://www.geeksforgeeks.org/string-h-header-file-functions-c/)
-- [En utfyllende guide til `strlen()`-funksjonen](https://www.geeksforgeeks.org/strlen-function-in-c/)
+##Se også
+- [Offisiell C-dokumentasjon (engelsk)](https://devdocs.io/c/)
+- [Lære C på 21 dager (engelsk)](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [W3Schools sin introduksjon til C (engelsk)](https://www.w3schools.in/c-tutorial/)

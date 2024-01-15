@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 「二つの日付を比較する」"
+title:                "「二つの日付を比較する」"
+html_title:           "Fish Shell: 「二つの日付を比較する」"
 simple_title:         "「二つの日付を比較する」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,53 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を比較する理由は何でしょうか？プログラミングにおいて、日付を比較することは非常に重要です。例えば、あるイベントが過去に起きたかどうかを判断するために日付を比較することがあります。また、後に起きるイベントよりも前の日付かどうかを確認する場合にも日付の比較が必要になります。この記事では、Fish Shellを使用して日付を比較する方法について紹介します。
+二つの日付を比較することの利点を最大2文で説明します。
+
+日付を比較することにより、特定の期間内のイベントを特定することができます。例えば、ある日付よりも後に行われたタスクを見つけたり、ある期間内に作成されたファイルを抽出することができます。
 
 ## 方法
 
-Fish Shellを使用すると、簡単に日付を比較することができます。まず、比較したい日付を「YYYY-MM-DD」の形式で記入します。次に、比較演算子「-lt」（より小さい）、「-gt」（より大きい）、または「-eq」（等しい）を使用します。例えば、「2019-12-01 -gt 2019-01-15」というコマンドを入力すると、左側の日付が右側の日付よりも大きいことを意味します。
+Fish Shellを使用して、二つの日付を比較する方法を見ていきましょう。
 
-```Fish Shell
-set old_date 2019-12-01
-set new_date 2019-01-15
+まずはFish Shellのターミナルを開き、```date +%Y-%m-%d```コマンドを入力して今日の日付を確認します。
+
 ```
-```Fish Shell
-if [ $old_date -gt $new_date ]
-  echo "古い日付です"
-end
+Fish Shell> date +%Y-%m-%d
+2021-07-02
 ```
 
-この例では、「古い日付です」というメッセージが出力されます。また、日付の比較結果を変数に保存することもできます。例えば、以下のようにコマンドを入力することで、日付の比較結果を変数「result」に保存します。
+次に、比較したい日付を指定して、```set```コマンドで変数に代入します。
 
-```Fish Shell
-set result $old_date -gt $new_date
+```
+Fish Shell> set start_date 2021-06-01
+Fish Shell> set end_date 2021-06-30
 ```
 
-## 深堀り
+そして、```if```条件文を使用して、start_dateとend_dateを比較し、```echo```コマンドで結果を出力します。
 
-Fish Shellでは、日付だけでなく、日時を比較することも可能です。以下のように、「YYYY-MM-DDTHH:MM:SS」の形式で日時を指定することができます。また、特殊な比較演算子「-le」（より小さいまたは等しい）や「-ge」（より大きいまたは等しい）を使用することもできます。
-
-```Fish Shell
-set old_datetime 2019-12-01T08:30:00
-set new_datetime 2019-05-30T12:45:00
 ```
-```Fish Shell
-if [ $old_datetime -gt $new_datetime ]
-  echo "古い日時です"
-end
+Fish Shell> if test $start_date -gt $end_date; echo "start_dateはend_dateよりも遅いです"; else; echo "start_dateはend_dateよりも前です"; end
+start_dateはend_dateよりも前です
 ```
 
-また、日付や日時の加算や減算も可能です。例えば、以下のように「-1 day」や「+5 minutes」を使用すると、日付や日時を1日や5分だけ前後させることができます。
+以上のように、Fish Shellを使用することで簡単に日付を比較することができます。
 
-```Fish Shell
-set new_date 2019-01-15
-```
-```Fish Shell
-set added_date $new_date -1 day
-set subtracted_date $new_date +5 minutes
-```
+## ディープダイブ
 
-## 関連リンク
+日付の比較には、通常Unixエポック時間が使用されます。Unixエポック時間とは、1970年1月1日からの経過秒数のことです。Fish Shellでは、Unixエポック時間を返す```date +%s```コマンドを使用することができます。
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html#comparison)
-- [日付の比較方法（Qiita）](https://qiita.com/tprl/items/411e161dbbea7a86f8c0)
+また、日付の比較をより高度にする方法として、タイムスタンプという概念もあります。タイムスタンプとは、毎秒インクリメントされる番号で、日付と時間の特定のポイントを表します。Fish Shellでは、タイムスタンプを返す```date +%s%N```コマンドを使用することができます。
+
+さらに、日付の比較におけるタイムスタンプの重要な役割として、データベースやログファイルの同期が挙げられます。タイムスタンプを使用することで、正確なタイミングでデータを取得することができます。
+
+## さらに読む
+
+ここまで日付の比較について見てきましたが、Fish Shellには他にも便利なコマンドや機能がたくさんあります。以下のリンクを参考に、より詳細な情報をご覧ください。
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Fish Shell Cheatsheet](https://github.com/fisherman/fisher/blob/master/docs/fish_shell_cheat_sheet.md)
+- [Fish Shell Tips and Tricks](https://medium.com/@JudeOsborn/fish-shell-tips-and-tricks-3154a1c2da7)

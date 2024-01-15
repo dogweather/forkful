@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Iniciando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "TypeScript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em TypeScript?
+## Por que iniciar um novo projeto com TypeScript?
 
-Iniciar um novo projeto em TypeScript pode ser benéfico por várias razões, incluindo a capacidade de escrever código mais limpo e organizado, a possibilidade de detectar erros durante a fase de desenvolvimento e a facilidade de integração com outras bibliotecas e frameworks JavaScript.
+Se você está procurando por uma linguagem de programação versátil e eficiente para iniciar um novo projeto, o TypeScript pode ser a escolha perfeita para você. Além de ser uma linguagem de código aberto, o TypeScript oferece a vantagem de poder ser usado tanto para desenvolvimento frontend como backend, proporcionando uma experiência de desenvolvimento consistente em todo o seu projeto.
 
-## Como começar
+## Como começar um projeto com TypeScript
+Para começar um novo projeto com TypeScript, siga estes passos simples:
 
-Para iniciar um novo projeto em TypeScript, siga estes passos simples:
+1. Certifique-se de ter o Node.js e o TypeScript instalados em sua máquina.
+2. Crie uma pasta para o seu projeto e navegue até ela no terminal.
+3. Execute o comando `npm init` para inicializar um novo projeto npm.
+4. Instale o TypeScript como dependência de desenvolvimento com o comando `npm install -D typescript`.
+5. Crie um arquivo `tsconfig.json` para configurar o seu projeto. Dentro dele, adicione os parâmetros básicos como `target`, `module` e `outDir`.
+6. Crie um arquivo `index.ts` e comece a escrever seu código TypeScript.
+7. Execute o comando `tsc index.ts` para compilar seu código TypeScript em JavaScript.
+8. Agora você pode executar o seu código JavaScript com o comando `node index.js` e ver seus resultados.
 
-1. Instale o TypeScript em seu computador usando o gerenciador de pacotes de sua escolha (npm, Yarn, etc.).
-
-2. Crie uma pasta para o seu projeto e navegue até ela no seu terminal.
-
-3. Execute o seguinte comando para iniciar um novo projeto em TypeScript:
+Veja um exemplo de código TypeScript abaixo:
 
 ```TypeScript
-    tsc --init
+const mensagem: string = "Olá mundo!";
+console.log(mensagem);
 ```
 
-Este comando irá criar um arquivo chamado `tsconfig.json` que contém as configurações básicas para o seu projeto em TypeScript.
+Quando este código for compilado e executado, você verá a seguinte saída:
 
-4. Crie um arquivo `index.ts` dentro da sua pasta do projeto e comece a escrever seu código TypeScript!
+```
+Olá mundo!
+```
 
-## Investigação detalhada
-
-Ao iniciar um novo projeto em TypeScript, é importante entender as configurações no arquivo `tsconfig.json` para personalizar o seu ambiente de desenvolvimento. Aqui estão algumas configurações importantes que você deve conhecer:
-
-- `target`: esta configuração define qual versão do JavaScript será criada pelo compilador do TypeScript. A opção `es5` é recomendada para garantir uma ampla compatibilidade.
-
-- `strict`: ao definir essa configuração como `true`, você habilitará todas as configurações estritas do TypeScript, o que ajudará a evitar erros comuns no código.
-
-- `outDir`: esta configuração define o diretório de saída para os arquivos JavaScript compilados. É recomendado criar uma pasta separada para os arquivos JavaScript compilados a fim de manter seu projeto organizado.
-
-Aprofundar-se mais nessas configurações e em outras pode ajudá-lo a otimizar seu ambiente de desenvolvimento em TypeScript.
+## Profundidade em iniciar um novo projeto com TypeScript
+Ao iniciar um novo projeto com TypeScript, é importante entender alguns conceitos-chave, como o sistema de tipo estático e a compilação de código. O TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem estática e objetos de classe, proporcionando uma experiência de programação mais robusta e escalável. Além disso, a compilação de código TypeScript para JavaScript garante compatibilidade com navegadores e ambientes de execução.
 
 ## Veja também
-
-- [Documentação do TypeScript](https://www.typescriptlang.org/docs/)
-- [Tutorial do TypeScript para iniciantes](https://www.youtube.com/watch?v=BwuLxPH8IDs&ab_channel=CodelyTV)
-- [Curso de TypeScript da Udemy](https://www.udemy.com/course/typescript-pt/)
+- [Tutorial do TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/)
+- [Repositório GitHub do TypeScript](https://github.com/Microsoft/TypeScript)

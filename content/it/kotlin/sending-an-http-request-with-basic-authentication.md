@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Invio di una richiesta http con autenticazione di base."
-simple_title:         "Invio di una richiesta http con autenticazione di base."
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Kotlin: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché inviare una richiesta HTTP con autenticazione di base?
 
-Molte volte, come programmatori, c'è la necessità di comunicare con un server remoto per ottenere o inviare dati. In questi casi, è molto importante garantire che solo le persone autorizzate possano accedere alle informazioni. L'utilizzo dell'autenticazione di base nelle richieste HTTP è uno dei modi per assicurare che solo gli utenti con le credenziali corrette possano accedere ai dati.
+Ci sono molte situazioni in cui è necessario accedere ad un servizio web attraverso un'API che richiede la verifica delle credenziali dell'utente. In questi casi, l'autenticazione di base è un metodo comune e semplice per garantire l'accesso ai propri dati.
 
 ## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base in Kotlin, dobbiamo innanzitutto creare un'istanza della classe `HttpClient` di Ktor, che è un framework per la creazione di applicazioni server e client asincrone basato su coroutines. Utilizziamo quindi il metodo `authBasic` per specificare le credenziali di accesso, che includono il nome utente e la password. Infine, possiamo inviare una richiesta GET o POST utilizzando il metodo `request` di Ktor. Di seguito un esempio di codice:
+Per inviare una richiesta HTTP con autenticazione di base in Kotlin, è necessario prima di tutto importare la libreria Apache HttpClient nel tuo progetto. Puoi farlo aggiungendo questa dipendenza al tuo file di configurazione gradle:
 
-```
-val client = HttpClient()
-
-val response = client
-    .authBasic(username = "utente", password = "password")
-    .request {
-        url("https://www.example.com/api/data")
-        method = HttpMethod.Get
-    }
-
-println(response.readText())
+```Kotlin
+dependencies{
+   implementation "org.apache.httpcomponents:httpclient:4.5.9"
+}
 ```
 
-L'output di questo esempio sarà il contenuto della risposta del server.
+Una volta importata la libreria, puoi utilizzarla per creare la tua richiesta HTTP. Ad esempio, per inviare una richiesta GET a un servizio web protetto da autenticazione di base, puoi usare il seguente codice:
 
-## Approfondimento
+```Kotlin
+val username = "username"
+val password = "password"
+val url = "https://example.com/api/data"
+val httpClient = HttpClientBuilder.create().build()
 
-L'autenticazione di base è uno dei metodi di autenticazione più semplici e meno sicuri. La ragione principale è che il nome utente e la password vengono inviati in chiaro nella richiesta HTTP, quindi possono essere facilmente intercettati da malintenzionati. Per questo motivo, è sempre consigliato utilizzare l'autenticazione HTTPS in aggiunta all'autenticazione di base.
+val credentials = UsernamePasswordCredentials(username, password)
+val authScope = AuthScope(url, AuthScope.ANY_PORT)
+val credentialProvider = BasicCredentialsProvider().also {
+   it.setCredentials(authScope, credentials)
+}
 
-Ktor offre molti altri modi per gestire l'autenticazione, come l'autenticazione OAuth o l'utilizzo di token JWT. Tuttavia, se si desidera una soluzione rapida e semplice, l'autenticazione di base può essere una buona opzione.
+val httpGet = HttpGet(url)
+httpClient.addDefaultCredentialsProvider(credentialProvider)
 
-## Vedi anche
+val httpResponse = httpClient.execute(httpGet)
+val responseContent = String(httpResponse.entity.content.readBytes())
 
-- Documentazione di Ktor per l'autenticazione HTTP: https://ktor.io/docs/auth.html
-- Tutorial su come utilizzare l'autenticazione di base con Ktor: https://www.baeldung.com/kotlin-http-basic-authentication-with-ktor
-- Informativa sulla sicurezza per l'autenticazione di base: https://tools.ietf.org/html/rfc7617#section-3.2
+println(responseContent)
+```
+
+L'output di questo esempio sarà il contenuto della risposta del servizio web.
+
+## Deep Dive
+
+Per inviare una richiesta HTTP con autenticazione di base, il client deve inviare un'intestazione "Authorization" nella sua richiesta, contenente il valore "Basic" seguito dalle credenziali utente codificate in base64. Inoltre, è necessario conoscere l'URL del servizio web e le credenziali dell'utente per autenticarsi correttamente.
+
+Una nota importante è che l'autenticazione di base non è considerata sicura ed è sconsigliata quando si tratta di dati sensibili. In questi casi, è consigliato utilizzare metodi di autenticazione più robusti come OAuth o JWT.
+
+## See Also
+
+- [Apache HttpClient Documentazione](https://hc.apache.org/httpcomponents-client-5.1.x/index.html)
+- [Autenticazione di Base su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
+- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/)

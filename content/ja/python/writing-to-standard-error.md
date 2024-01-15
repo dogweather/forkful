@@ -1,6 +1,7 @@
 ---
-title:                "Python: 標準エラーへの書き込み"
-simple_title:         "標準エラーへの書き込み"
+title:                "「標準エラーに書き込む」"
+html_title:           "Python: 「標準エラーに書き込む」"
+simple_title:         "「標準エラーに書き込む」"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜPythonプログラミングを行うのか 
+## Why
 
-Pythonは今、世界で最も人気のあるプログラミング言語の一つです。さまざまな用途に使われており、データサイエンス、機械学習、Web開発など様々な分野で活躍しています。そして、Pythonのコードは簡潔で読みやすく、初心者にも入門しやすい言語として知られています。そんなPythonで、標準エラーに書き込む方法を学ぶことで、より効率的なプログラミングが可能になります。
+Pythonプログラミングでは、標準エラーへの書き込みは重要な技術です。エラーメッセージを書き込むことで、プログラムのデバッグや問題解決がより簡単になります。
 
-## 標準エラーに書き込む方法
-
-標準エラーとは、プログラムで発生したエラーを表示するためのデフォルトの出力先です。Pythonでは、`sys`モジュールを使用して、標準エラーに書き込むことができます。以下のコードを使用することで、エラーメッセージを標準エラーに書き込むことができます。
+## How To
 
 ```Python
 import sys
 
-sys.stderr.write("エラーメッセージ")
+# ファイルを開いて書き込む例 
+try:
+  file = open("sample.txt", "w")
+  file.write("書き込み内容")
+except:
+  # エラーが発生した場合、標準エラーにメッセージを書き込む
+  sys.stderr.write("ファイルを開けませんでした")
+finally:
+  file.close()
 ```
 
-実際にコードを実行してみると、標準出力とは別にエラーメッセージが表示されることがわかります。このように、標準エラーに書き込むことで、プログラムの処理中に発生したエラーをより詳細に表示することができます。また、エラーをリダイレクトすることで、ログファイルにエラー内容を保存することも可能です。
+上記の例では、`try`ブロックでファイルを開き、`except`ブロックでエラーメッセージを標準エラーに書き込んでいます。また、`finally`ブロックでファイルを閉じることにより、プログラムの安定性を確保しています。
 
-## 深層を探る
+## Deep Dive
 
-標準エラーに書き込むことで、プログラムのデバッグやエラー管理がより簡単になります。さらに、標準出力とは別の出力先を使用することで、ユーザーにとっても分かりやすいエラー表示が可能になります。また、`try-except`文と組み合わせて使用することで、より柔軟なエラー処理が可能になります。
+プログラムを実行する際には、通常は標準出力を使って結果やメッセージを表示します。しかし、エラーが発生した場合、それを標準出力ではなく標準エラーに書き込むことで、プログラムの実行時にエラーメッセージが見やすくなります。
+
+さらに、`sys`モジュールの`stderr`属性を使用することで、標準エラーにも直接書き込むことができます。これにより、より細かなエラーメッセージを表示することができます。
 
 ## See Also
-- [Python公式ドキュメント - sysモジュール](https://docs.python.org/ja/3/library/sys.html)
-- [Python Tutorial - 標準ストリーム](https://docs.python.jp/3/tutorial/inputoutput.html#error-handling)
-- [Python Tips - 標準エラーをファイルに保存する](https://pythontips.com/2018/01/04/output-logging-python-stderr-file/)
+
+- [Python 3 documentation on writing to standard error](https://docs.python.org/3/library/sys.html#sys.stderr)
+- [Understanding Standard Input, Output and Error Streams in Linux](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)

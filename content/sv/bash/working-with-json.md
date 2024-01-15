@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "Bash: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,74 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-
-Att arbeta med JSON, eller JavaScript Object Notation, är en vanlig uppgift för programmerare som arbetar med Bash. JSON är ett strukturerat format för datautbyte, vilket betyder att det är lätt att hantera och läsa av både för människor och datorer. Det är också det format som används för att kommunicera med många API:er och webbtjänster, vilket gör det till en viktig grundläggande kunskap för många projekt.
+Är du intresserad av webbutveckling eller automatisering med Bash? Då kan det vara användbart att lära sig hur man arbetar med JSON-filer!
 
 ## Hur man gör
+Först och främst behöver du ha Bash installerat på din dator. Sedan är det bara att följa dessa enkla steg:
 
-För att börja arbeta med JSON i Bash behöver du först veta hur man läser och manipulerar data. Detta kan uppnås genom att använda kommandot `jq`, som specifikt är utformat för att hantera JSON-data.
+1. Ladda ner eller skapa en JSON-fil
+2. Öppna din terminal och navigera till platsen där filen finns
+3. Använd kommandot `cat` för att visa innehållet i filen eller `jq` för en mer läsbar formatering
+4. För att extrahera specifika värden från JSON-filen kan du använda kommandot `grep` och `cut` tillsammans med `jq`
+5. Du kan också skapa en ny JSON-fil med Bash genom att använda kommandot `echo` och pipa det vidare till en fil med `>` eller `>>`
+
+Här är ett exempel på hur du kan använda kommandon tillsammans för att söka efter alla personer i en JSON-fil vars ålder är över 30 år:
 
 ```Bash
-# Läsa data från en JSON-fil
-jq '.' data.json
-
-# Läsa specifika fält från JSON-fil och spara som en variabel
-field=$(jq '.field' data.json)
-
-# Lägga till data till en befintlig JSON-fil
-jq '. + {"new_field": "new_value"}' data.json
-
-# Utskrift av resultatet
-echo $field
+cat fil.json | jq '.personer[] | select (.ålder >= 30)' | grep "personer"
 ```
 
 Output:
-```Bash
+```
 {
-  "field": "value"
-}
-
-value
+"namn": "Jane",
+"ålder": 35
+},
 {
-  "field": "value",
-  "new_field": "new_value"
+"namn": "John",
+"ålder": 40
 }
 ```
 
-## Djupdykning
+## Deep Dive
+JSON-filer är ett vanligt sätt att lagra och överföra data via webben. De är läsbara för både människor och datorer och är enklare att hantera än andra datalösningsformat som XML. Till skillnad från andra format stöder Bash inte inbyggda funktioner för att hantera JSON, vilket betyder att man måste använda verktyg som `jq` för att söka och manipulera data. Det är också viktigt att ha en god förståelse för syntaxen i JSON-filer för att kunna arbeta effektivt.
 
-För att arbeta med JSON på en mer avancerad nivå kan du också lära dig om filter och selektorer. Dessa används för att välja och bearbeta delar av en JSON-struktur.
-
-```Bash
-# Välja specifikt fält
-jq '.field' data.json
-
-# Välja flera fält
-jq '.field1, .field2' data.json
-
-# Använda filter
-jq '.field | select(.value > 5)' data.json
-```
-
-Output:
-```Bash
-"value"
-
-{
-  "field": "value1",
-  "field2": "value2"
-}
-
-{
-  "value": 10
-}
-```
-
-Att också förstå syntaxen för JSON är viktigt för att kunna navigera och manipulera data korrekt. JSON består av nycklar och värden, där nyckeln är en sträng som identifierar värdet. Värden kan vara av olika typer, som strängar, nummer, objekt eller listor.
-
-## Se också
-
-* [jq manual](https://stedolan.github.io/jq/manual/)
-* [JSON tutorial](https://www.w3schools.com/js/js_json_intro.asp)
-* [JSON i bash: Hantera data från API:er](https://www.howtogeek.com/531932/how-to-work-with-json-in-bash-using-jq/)
-* [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+## Se även
+- [Bash-dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [jq-dokumentation](https://stedolan.github.io/jq/manual/)
+- [JSON-introduktion](https://www.json.org/json-sv.html)

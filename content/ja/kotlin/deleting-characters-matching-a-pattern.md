@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「パターンに一致する文字を削除する」"
-simple_title:         "「パターンに一致する文字を削除する」"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Kotlin: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#なぜ
-あなたが文字パターンに一致する文字を削除することに取り組むべきかを理解するために、この記事を読んでいると思います。文字を削除することは、文字列処理やデータのクリーニングに役立ちます。また、文字パターンを使用して特定の形式の文字列を作成する必要がある場合にも役立ちます。
+## なぜ
 
-##方法
-まず、Kotlinの文字列処理メソッドである「replace」を使用して、文字パターンに一致する文字を置換することができます。以下の例では、文字列「Hello World」から「o」を削除する方法を示します。
+あなたはKotlinで文字列から特定のパターンにマッチする文字を削除する必要があるかもしれません。この記事では、その理由と方法を解説します。
 
-```Kotlin
-val str = "Hello World"
-val newStr = str.replace("o", "")
-println(newStr)
+## 方法
 
-//出力：Hell Wrld
+```
+Kotlin val string = "Hello! This is a sample string." 
+val pattern = "\\p{Punct}".toRegex() 
+val result = string.replace(pattern, "") 
+println(result)
 ```
 
-もし、削除したい文字がパターン内に複数回出現する場合には、正規表現を使用することもできます。以下の例では、文字列「Kotlin is fun!」から「t」を削除する方法を示します。
+このコードを実行すると、以下の結果が得られます。
 
-```Kotlin
-val str = "Kotlin is fun!"
-val newStr = str.replace(Regex("[t]"), "")
-println(newStr)
-
-//出力：Kolin is fun!
+```
+Hello This is a sample string
 ```
 
-##ディープダイブ
-文字パターンに一致する文字を削除する方法は、文字列処理の基本的なテクニックです。Kotlinでは、文字列処理に便利なメソッドやクラスがたくさん提供されています。例えば、文字列内の特定の位置にある文字を削除する「removeRange」や、特定の数の文字を指定した文字で埋める「padStart」「padEnd」などです。さらに、正規表現を使用すると、より柔軟なパターンマッチングが可能になります。
+`replace()`関数を使用して、マッチする文字を空文字に置換することで、簡単に文字列から特定のパターンにマッチする文字を削除することができます。
 
-今回紹介した削除方法以外にも、様々な方法で文字パターンに一致する文字を削除することができます。ぜひKotlinのドキュメントやその他の記事も参考にして、文字列処理の知識を深めてみてください。
+## ディープダイブ
 
-##参考リンク
-- Kotlinドキュメント: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Kotlin Strings Cheat Sheet: https://dev.to/stevebrand/kotlin-strings-cheat-sheet-3na8
-- シングルクォーテーションとダブルクォーテーションの違い: https://stackoverflow.com/questions/55800608/why-are-double-quotes-more-common-in-kotlin-than-single-quotes
+もしもあなたが文字列からマッチする文字を1文字ずつ削除する場合、以下のようなコードを書くことができます。
+
+```
+Kotlin fun deleteChar(string: String, pattern: String): String { 
+    var result = "" 
+    for(char in string) { 
+        if(!pattern.contains(char)) { 
+            result += char 
+        } 
+    } 
+    return result 
+}
+
+val string = "Hello! This is a sample string." 
+val pattern = "\\p{Punct}"
+val result = deleteChar(string, pattern) 
+println(result)
+```
+
+しかし、`replace()`関数を使用することで、より簡潔で効率的なコードを書くことができます。また、`replace()`関数には正規表現を使用することができるため、より柔軟に文字を削除することができます。
+
+## 参考リンク
+
+- Kotlin公式ドキュメント: https://kotlinlang.org/docs/reference/strings.html
+- 正規表現チュートリアル: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions

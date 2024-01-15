@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo subtrings"
+html_title:           "Gleam: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
+ São muitas as situações em que precisamos extrair substrings de uma string maior. Seja para validar dados de entrada, manipular partes específicas de um texto ou otimizar o processamento de informações, é comum a necessidade de trabalhar com partes menores de uma string. Através do processo de extração de substrings, é possível obter exatamente as informações que precisamos, reduzindo o tempo e esforço necessário para realizar determinadas tarefas.
 
-Extrair substrings é uma tarefa essencial em muitos projetos de programação. Seja para manipular strings de texto ou para analisar dados, ter a habilidade de extrair pedaços específicos de uma string é uma ferramenta valiosa para qualquer programador. Felizmente, o Gleam oferece uma maneira simples e eficiente de realizar essa tarefa.
+## Como Fazer
+Extrair substrings em Gleam é bastante simples e flexível. Para começar, você precisará da string original de onde deseja extrair a substring e de um índice inicial e final que delimitem qual parte você deseja obter. Veja o exemplo abaixo para entender melhor:
 
-## Como fazer
+````Gleam
+fn main() {
+  // string original
+  let string = "Olá, mundo!";
+  
+  // índices de início e fim
+  let start = 5;
+  let end = 11;
+  
+  // extração da substring
+  let substring = string[start..end];
+  
+  // exibindo o resultado
+  io.println(substring); // irá imprimir "mundo"
+}
+````
 
-Para extrair uma substring usando o Gleam, você pode usar a função `String.slice()`. Esta função aceita três parâmetros: a string de origem, o início da substring e o comprimento da substring. Por exemplo:
+É importante notar que o índice de início é inclusivo, ou seja, a letra no índice indicado será incluída na substring final. Já o índice final é exclusivo, ou seja, a letra no índice indicado não será incluída na substring final. Isso permite que você trabalhe com intervalos precisos e evite erros de indexação.
 
-```
-Gleam
-import String
+Além disso, é possível utilizar índices negativos, que contam a partir do final da string. Por exemplo, se você utilizar o índice -1 no lugar do índice final, o último caractere será incluído na substring final. Isso é útil quando a string tem um tamanho desconhecido ou variável.
 
-my_string = "Olá Gleam programadores!"
-substring = String.slice(my_string, 5, 5)
+## Aprofundando-se
+Além dos aspectos básicos da extração de substrings apresentados anteriormente, é importante conhecer algumas outras funcionalidades importantes. Primeiramente, é possível utilizar variáveis no lugar dos índices de início e fim, o que possibilita definir esses valores dinamicamente durante a execução do programa.
 
-```
+Também é possível utilizar o método `.len()` em uma string para obter o seu comprimento, o que pode ajudar a definir índices finais dinamicamente ou verificar se um índice é válido. Além disso, é possível utilizar os conceitos de Pattern Matching para extrair substrings em Gleam de maneira ainda mais precisa e avançada.
 
-Neste exemplo, a variável `substring` conterá a string `Gleam`. Você pode alterar os valores dos parâmetros `start` e `length` para extrair diferentes partes da string de origem.
-
-## Deep Dive
-
-Além da função `String.slice()`, o Gleam também oferece a função `String.slice_by_indexes()` para extrair substrings. Esta função aceita como parâmetros a string de origem e uma lista de índices para o início e o fim da substring. Por exemplo:
-
-```
-Gleam
-import String
-
-my_string = "Hello world!"
-substring = String.slice_by_indexes(my_string, [0, 5])
-
-```
-
-Neste exemplo, a variável `substring` conterá a string `Hello`.
-
-Além disso, o Gleam também possui a capacidade de extrair substrings usando expressões regulares. Isso pode ser feito usando a função `Regex.run()`, que aceita a string de origem e a expressão regular como parâmetros. Para mais informações sobre como usar expressões regulares no Gleam, consulte a documentação oficial.
-
-## Veja também
-
-- Documentação oficial do Gleam: https://gleam.run/
-- Tutorial de expressões regulares no Gleam: https://gleam.run/book/tour/regexes.html
-- Exemplo de extrair substrings no Gleam: https://github.com/gleam-lang/website-examples/blob/master/string_substring.gleam
+## Veja Também
+- Documentação oficial sobre extração de substrings em Gleam: https://gleam.run/documentation/stdlib#substr
+- Exemplos de aplicação de extração de substrings em projetos reais: https://github.com/search?q=language%3Agleam+substring&type=Repositories

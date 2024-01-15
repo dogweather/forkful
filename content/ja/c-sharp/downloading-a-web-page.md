@@ -1,6 +1,7 @@
 ---
-title:                "C#: ウェブページをダウンロードする"
-simple_title:         "ウェブページをダウンロードする"
+title:                "ウェブページのダウンロード"
+html_title:           "C#: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、プログラマーのみなさん。今日は、Webページをダウンロードすることがどのようにできるかについてお話しします。
+## なぜ
+ウェブページをダウンロードすることのメリットは、オフラインでもウェブページを閲覧できることです。また、様々なデータを収集するためにも使用できます。
 
-## Why
-
-Webページをダウンロードすることがなぜ重要なのかというと、自分のプログラムやアプリケーションに必要な情報を簡単に取得することができるからです。インターネット上には様々なデータやコンテンツが溢れており、それらをダウンロードすることで自分のプログラムをより有用なものにすることができます。
-
-## How To
-
-まずは、Webページをダウンロードするためにはどのようなツールやメソッドが必要かを見ていきましょう。C#にはこれを簡単に実現できる```WebClient```というクラスがあります。これを使用することで、URLを指定してWebページをダウンロードすることができます。
-
+## 方法
 ```C#
+using System;
+using System.Net;
+
+string url = "https://www.example.com";
+
+// URLからドキュメントを取得する
 WebClient client = new WebClient();
-string htmlCode = client.DownloadString("https://www.example.com");
-Console.WriteLine(htmlCode);
+string html = client.DownloadString(url);
+
+Console.WriteLine(html); // ウェブページのHTMLコードを出力
 ```
-実行すると、指定したURLのWebページのHTMLコードがダウンロードされてコンソール画面に表示されます。これで必要な情報を取得することができます。
 
-## Deep Dive
+上記のコードを実行すると、指定したURLからHTMLコードをダウンロードできます。また、ダウンロードする際にはセキュリティ証明書の有無などを確認できます。
 
-さらに深くWebページをダウンロードする方法を見てみましょう。上記の方法ではHTMLコードを取得することができますが、特定の要素や属性を取得したい場合は```HtmlAgilityPack```というライブラリを使用すると便利です。これを使うことで、HTMLコードを解析して特定の要素を取得することができます。
+## 詳細
+ウェブページのダウンロードでは、HTTPリクエストを使用してサーバーにアクセスし、HTMLコードを取得します。その際、ヘッダー情報を使用してセッションや言語の設定なども行うことができます。また、リクエストのボディにはデータを含めることもできます。
 
-また、ダウンロードしたWebページをローカルに保存したい場合は```WebClient```の```DownloadFile```メソッドを使用することができます。これを使用することで、指定したURLのWebページを指定したパスにダウンロードすることができます。
-
-## See Also
-
-- [Microsoft Docs: WebClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient)
-- [HtmlAgilityPack: HTML Parser in C#](https://html-agility-pack.net/)
-- [C#でWebページをダウンロードする方法](https://codeday.me/jp/qa/20190517/228541.html)
+## 参考リンク
+- [WebClient.DownloadString メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.webclient.downloadstring)
+- [HTTPリクエストの詳細](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)

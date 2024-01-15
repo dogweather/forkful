@@ -1,5 +1,6 @@
 ---
-title:                "Elm: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Elm: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-לפני שנכנסים לדרך הטכנית של שליחת בקשת HTTP עם אימות בסיסי, חשוב להבין את המטרה של התהליך. שליחת בקשת HTTP עם אימות בסיסי היינו כדי לבצע פעולות אימות, כגון כניסה לאתר או גישה למידע המוגן באמצעות אפליקציות חיצוניות.
+# למה
 
-## איך לעשות זאת
-```Elm
-sendBasicAuthRequest : String -> Html msg
-sendBasicAuthRequest url =
-let
-username = "myUsername"
-password = "myPassword"
-headers =
-[ ( "Authorization", "Basic " ++ username ++ ":" ++ password )
-]
-request =
-Http.get url
-|> Http.addHeaders headers
-in
-    Html.div []
-        [ Html.text "Request Sent!" ]
+אחת היישומים הנפוצים של תכנות בשפת Elm הוא לבצע גישה לשירותים חיצוניים על ידי שליחת בקשות HTTP. מסע העבודה זה נוטה להיות מורכב יותר כאשר הצטרפנו לכך גם אימות קל על ידי בקשות מסוג Basic Authentication.
+
+## איך ל
+
+כאשר אנחנו רוצים לשלוח בקשת HTTP עם אימות בסיסי בשפת Elm, נצטרך לעקוב אחר שיטות מסוימות.
+
+תחילה, נצטרך להתקשר אל הספק של השירות ולשלוח את הנתונים המתאימים המתאימים. למשל, אם אנחנו נשתמש בחבילת [HttpBuilder](https://package.elm-lang.org/packages/lukewestby/elm-http-builder/latest/), הקוד ייראה כך:
+
+```elm
+import HttpBuilder exposing (..)
+
+getExampleRequest : Builder Path Int
+getExampleRequest =
+    get "https://example.com/api/example"
+        |> withAuth (Basic "username" "password")
 ```
 
-```
-Output:
-Request Sent!
-```
+בקוד הבא, אנחנו משתמשים בחבילת `HttpBuilder` כדי לבנות את הבקשה. אנחנו משלבים את הפניות לקנות ולקבל עם נתוני בקשת אימות בסיסית (כך ששם המשתמש והסיסמה יישלחו כחלק מהנתונים).
 
-המשתמש נדרש להכניס את שם המשתמש והסיסמה שלו בשורת הקוד, ובכך נוצרת בקשת HTTP עם אימות בסיסי אל האתר שנמצא ב-URL שהוזן. באמצעות פעולה זו, ניתן לקבל גישה למידע המוגן באתר או לפנות ל- API עם אימות בסיסי.
+כשנריץ את הקוד הזה, נקבל תשובה בפורמט `Result`.
+לדוגמה, אם נרצה לקבל תשובת JSON מהבקשה ניתן להשתמש בחבילת [Json.Decode](https://package.elm-lang.org/packages/elm/json/latest/) כדי לשלוח את התוצאה.
 
-## Deep Dive
-כאשר משתמשים באימות בסיסי בשליחת בקשת HTTP, המידע של שם המשתמש והסיסמה שמוסרים בבקשה מוצפן בבסיס 64. זה מאפשר לנו לשלוח בקשה עם נתוני אימות מוצפנים באופן בטוח.
+## מעמקים
 
-כדי לקבל את התוצאה של הבקשה, ניתן להשתמש בפונקציות כמו map או andThen כדי לעבד את המידע המתקבל מהבקשה. ניתן גם להשתמש בתנאי לבדוק את נכונות האימות ולטפל במקרים בהם האימות נכשל.
+כדי להבין טוב יותר איך לבצע בקשות HTTP עם אימות בסיסי בשפת Elm, חשוב לבדוק את התיעוד של הספק המייצג שם שימוש בכדי לגשת לשירותים חיצוניים.
 
-## ראה גם
-כתב העת הרשמי של Elm: https://elm-lang.org/
+דבר טוב בנוגע לשמירת הינתן בעמוד השירות הוא להבין את העמוד המייצג שם השימוש של תוכן של הספק, אך עדיין חשוב להעביר זאת גם דמות בינתנת.
 
-API המכיל מידע על בקשות HTTP ב- Elm: https://package.elm-lang.org/packages/elm/http/latest/Http
-
-מדריך לכתיבת אפליקציות מתקדמות ב- Elm: https://korban.net/posts/elm/2019-08-26-advanced-elm-function-composition/
+בניגוד לכת

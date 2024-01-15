@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "TypeScript: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+ㅇㅇ
 "## 왜"
 
-컴퓨터 프로그래밍에서 우리는 종종 날짜를 비교해야 합니다. 날짜를 비교하는 이유는 우리가 특정 기간 안에 어떤 일이 발생했는지, 또는 두 날짜 사이의 차이를 계산하는데 필요하기 때문입니다.
+두 날짜를 비교하는 것이 왜 중요한지 궁금하셨나요? 비교를 통해 날짜의 순서를 파악하고, 날짜 간의 차이를 계산할 수 있습니다. 이를 통해 시간과 일정을 관리하는 데에 도움을 받을 수 있습니다.
 
-## 어떻게
+"## 사용 방법"
 
-TypeScript에서 두 날짜를 비교하는 방법은 다소 복잡할 수 있지만, 이 글에서는 간단한 예제와 함께 쉽게 이해할 수 있도록 설명하겠습니다.
+\```TypeScript
+// 두 가지 날짜 선언
+const date1: Date = new Date("2021-01-31");
+const date2: Date = new Date("2021-05-01");
 
-### 두 날짜 비교하기
+// 날짜 비교
+console.log(date1 < date2); // true
+console.log(date1 > date2); // false
+console.log(date1 === date2); // false
+console.log(date1.getTime() === date2.getTime()); // true, 밀리초 단위로 비교
 
-두 날짜를 비교하기 위해서는 우선 Date 객체를 생성해야 합니다. 그리고 Date 객체에서 제공하는 메서드를 이용하여 비교할 수 있습니다.
+// 날짜 간의 차이 계산
+const diffInDays: number = (date2.getTime() - date1.getTime()) / (1000 * 3600 * 24); // 일 단위로 변환
+console.log(diffInDays); // 90
+\```
 
-```TypeScript
-// 2021년 8월 10일과 2021년 8월 12일 비교하기
-const date1: Date = new Date(2021, 7, 10); // 월은 0부터 시작하므로, 8월을 나타내려면 7을 입력해야 함
-const date2: Date = new Date(2021, 7, 12);
+위의 코드를 통해 Date 객체를 사용하는 방법과 여러 비교 연산자를 활용하여 날짜를 비교하는 방법을 알아볼 수 있습니다. 또한 getTime() 메소드를 통해 날짜 간의 차이를 계산할 수 있습니다.
 
-// 두 날짜가 같은지 비교하기
-console.log(date1.getTime() === date2.getTime()); // false
+"## 더 깊게"
 
-// 첫 번째 날짜가 두 번째 날짜보다 이후인지 비교하기
-console.log(date1.getTime() > date2.getTime()); // false
+Date 객체는 날짜와 시간을 나타내기 위해 사용되며, 값을 나타내는 시간대, 지역 등 여러 옵션이 존재합니다. 따라서 날짜를 비교할 때에도 이러한 옵션들을 고려해야 합니다. 또한 Date 객체뿐만 아니라 moment.js와 같은 라이브러리를 활용하여 더 다양한 날짜 관련 기능들을 사용할 수 있습니다.
 
-// 두 번째 날짜가 첫 번째 날짜보다 이후인지 비교하기
-console.log(date2.getTime() > date1.getTime()); // true
-```
+"## 관련 자료"
 
-### 날짜 차이 계산하기
-
-두 날짜 사이의 차이를 계산하기 위해서는 먼저 두 날짜 사이의 밀리초 차이를 계산해야 합니다. 그리고 이 값을 원하는 단위(일, 시간, 분, 초 등)로 변환하면 됩니다.
-
-```TypeScript
-// 2021년 8월 10일과 2021년 8월 12일 비교하기
-const date1: Date = new Date(2021, 7, 10); // 월은 0부터 시작하므로, 8월을 나타내려면 7을 입력해야 함
-const date2: Date = new Date(2021, 7, 12);
-
-// 두 날짜 사이에 몇 일 차이가 있는지 계산하기
-const dayDiff: number = Math.round(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
-
-console.log(`${date2.getFullYear()}년 ${date2.getMonth() + 1}월 ${date2.getDate()}일과 ${date1.getFullYear()}년 ${date1.getMonth() + 1}월 ${date1.getDate()}일 사이의 차이는 ${dayDiff}일 입니다.`);
-// 출력 결과: 2021년 8월 12일과 2021년 8월 10일 사이의 차이는 2일 입니다.
-```
-
-## 조금 더 깊게 알아보기
-
-TypeScript에서 날짜를 다루는 방법은 JavaScript와 거의 동일합니다. 따라서 JavaScript에서 제공하는 Date 객체의 메서드와 프로퍼티를 사용할 수 있습니다. 더 자세한 내용은 [MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)를 참고해주세요.
-
-## 관련 자료
-
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
-- [MDN 웹 문서](https://developer.mozilla.org/ko/docs
+- [MDN web docs - Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [TypeScript Official Site](https://www.typescriptlang.org/)

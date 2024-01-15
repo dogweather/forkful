@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: ディレクトリが存在するかどうかをチェックする"
+title:                "ディレクトリが存在するかどうかをチェックする"
+html_title:           "Elixir: ディレクトリが存在するかどうかをチェックする"
 simple_title:         "ディレクトリが存在するかどうかをチェックする"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Why
 ## なぜ
+ディレクトリが存在するかどうかを確認することの利点は、アプリケーションが正しいファイルパスを使用していることを保証し、エラーを回避することです。 
 
-ディレクトリが存在するかどうかをチェックする理由は、アプリケーションのパフォーマンスを向上させるためです。存在しないディレクトリを参照することは、エラーを引き起こし、アプリケーションの実行を妨げる可能性があります。そのため、ディレクトリが存在するかどうかを事前にチェックすることは重要なステップです。
-
+# How To
 ## 方法
-
-下記のコードブロックを参考に、ディレクトリが存在するかどうかをチェックする方法を学びましょう。
+ディレクトリが存在するかどうかを確認するには、`File.exists?/1`関数を使用します。
 
 ```Elixir
-def check_directory(path) do
-  case File.read_dir(path) do
-    {:ok, _} -> IO.puts("Directory exists")
-    {:error, _} -> IO.puts("Directory does not exist")
-  end
-end
+File.exists?("path/to/directory")
 ```
 
-上記のコードでは、`File.read_dir`を使用してディレクトリを読み込み、その結果を`case`文で処理します。ディレクトリが存在する場合は、`:ok`アトムが返され、存在しない場合は、`:error`アトムが返されます。`{:ok, _}`パターンマッチが成功した場合は、ディレクトリが存在することを示すメッセージを出力します。
+もしくは、`File.cwd?/1`関数を使用して、カレントディレクトリが存在するかどうかを確認することもできます。
 
-## ディープダイブ
+```Elixir
+File.cwd?("path/to/directory")
+```
 
-ディレクトリが存在するかどうかをチェックする際、厳密に存在するかどうかをチェックするか、または曖昧なチェックを行うかを検討する必要があります。厳密にチェックする場合は、`File.read_dir`の代わりに、より確実にディレクトリをチェックする`File.stat`関数を使用することができます。
+出力は、`true`もしくは`false`になります。
 
-また、ディレクトリのパスがユーザーが入力した場合は、改ざんされる可能性があるため、入力値を慎重に扱う必要があります。`Path.wildcard`関数を使用すると、不正なパスに対して安全に処理することができます。
+# Deep Dive
+## より詳細な説明
+`File.exists?/1`関数は、引数で指定したパスがディレクトリ、ファイル、シンボリックリンクなど存在するかどうかを確認します。もしくは、`File.cwd?/1`関数は、絶対パスか相対パスを引数に取り、カレントディレクトリが指定したパスと同じかどうかを確認します。
 
-## その他の情報
-
-さらに詳しい情報をお探しの場合は、以下のリンクを参考にしてください。
-
-[File.read_dirドキュメント](https://hexdocs.pm/elixir/File.html#content)
-
-[File.statドキュメント](https://hexdocs.pm/elixir/File.html#stat/1)
-
-[Path.wildcardドキュメント](https://hexdocs.pm/elixir/Path.html#wildcard/1)
-
-## それでは、Happy coding!
+# See Also
+## 関連記事
+- [Elixir 公式ドキュメンテーション] (https://hexdocs.pm/elixir/File.html)
+- [Elixir Dir モジュール] (https://hexdocs.pm/elixir/Dir.html)
+- [Elixir 標準ライブラリ] (https://hexdocs.pm/elixir/stdlib.html#File.cwd?/1)

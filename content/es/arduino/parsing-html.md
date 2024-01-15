@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Analizando html"
+title:                "Analizando html"
+html_title:           "Arduino: Analizando html"
 simple_title:         "Analizando html"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,55 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué 
-
-Muchas veces, al trabajar con páginas web, necesitamos extraer datos específicos de su código HTML para utilizarlos en nuestras aplicaciones. Aquí es donde entra en juego la técnica de parsear HTML. Parsear HTML es el proceso de analizar y extraer información de un documento HTML. En este blog post, exploraremos cómo podemos hacer esto utilizando Arduino.
+## ¿Por qué?
+¿Alguna vez has querido extraer información específica de una página web? Ya sea para utilizarla en tu proyecto de Arduino o simplemente para recopilar datos, el análisis de HTML puede ser una herramienta útil para obtener los datos que necesitas. En este artículo, te enseñaremos cómo realizar este proceso utilizando Arduino.
 
 ## Cómo hacerlo
+Para comenzar, necesitarás un Arduino y una conexión a Internet. También es útil tener conocimientos básicos de HTML y cómo funciona la estructura de una página web.
 
-Para parsear HTML en Arduino, necesitamos seguir los siguientes pasos:
+Primero, debes descargar e instalar la biblioteca "ESP8266HTTPClient.h". Esta biblioteca te permitirá realizar solicitudes HTTP utilizando tu módulo WiFi.
 
-- Paso 1: Instalar la biblioteca "HTMLParser" en Arduino IDE.
-- Paso 2: Incluir la biblioteca en nuestro código utilizando la sentencia ```#include <HTMLParser.h> ```
-- Paso 3: Definir una variable de tipo ```HTMLParser```.
-- Paso 4: Utilizar la función ```parse()``` para analizar y extraer información de nuestro código HTML.
-- Paso 5: Utilizar las funciones ```parseNext()```, ```parseNextChar()``` y ```readTag()``` para obtener datos específicos.
+Luego, utilizando la función "HTTPClient", puedes realizar una solicitud a una página web específica. Por ejemplo, si queremos obtener la temperatura actual de una ciudad, podríamos utilizar la API de OpenWeatherMap. El código se vería algo así:
 
-Veamos un ejemplo de cómo podemos utilizar estas funciones para extraer el título de una página web:
-
-```Arduino
-#include <HTMLParser.h>
+```
+#include <ESP8266HTTPClient.h>
 
 void setup() {
-  HTMLParser parser;  //Definimos nuestra variable parser
-  parser.parse("https://www.miweb.com"); //Analizamos el código HTML de la página web
-  Serial.begin(9600);
-  Serial.println(parser.parseNext("title")); //Imprimimos el título en el monitor serial
+  Serial.begin(115200); // Iniciamos la comunicación serial
+  WiFi.begin("nombre de tu red WiFi", "contraseña"); // Conectamos a la red WiFi
+  while (WiFi.status() != WL_CONNECTED) { // Esperamos a que se conecte
+    delay(500);
+  }
 }
 
 void loop() {
-  // no hay código adicional en este ejemplo
+  if (WiFi.status() == WL_CONNECTED) { // Si estamos conectados a la red
+    HTTPClient http; // Creamos una instancia de HTTPClient
+    http.begin("http://api.openweathermap.org/data/2.5/weather?id=524901&appid=API_KEY"); // Realizamos la solicitud a la URL especificada
+    int httpCode = http.GET(); // Obtenemos el código de respuesta
+    if (httpCode > 0) { // Si existe una respuesta
+      String payload = http.getString(); // Guardamos los datos de la respuesta en una variable
+      Serial.println(payload); // Imprimimos los datos en la consola serial
+    }
+    http.end(); // Terminamos la conexión
+  }
+  delay(60000); // Esperamos 1 minuto antes de realizar otra solicitud
 }
 ```
 
-En este ejemplo, utilizamos la función ```parseNext()``` para encontrar la etiqueta "title" en el código HTML y luego imprimimos su contenido en el monitor serial.
+En este ejemplo, estamos solicitando los datos de la ciudad de Moscú (identificado con "id=524901") utilizando una API key de OpenWeatherMap. Una vez que tenemos los datos, los imprimimos en la consola serial cada 1 minuto.
 
-La salida en el monitor serial sería algo como esto:
-
-> Título de la página
+Este es solo un ejemplo básico de cómo puedes utilizar Arduino para obtener y analizar datos de una página web. Puedes adaptar este código a tus necesidades y realizar solicitudes a diferentes APIs o páginas web.
 
 ## Profundizando
+Si deseas profundizar en el análisis de HTML, hay bibliotecas disponibles que te permiten analizar el contenido de una página web y extraer información específica. Algunas de estas bibliotecas son "ESP8266WebServer.h" y "ESP8266WiFiServer.h". Con estas bibliotecas, puedes crear un servidor web en tu Arduino y utilizarlo para mostrar o enviar datos a través de una página web.
 
-El proceso de parsear HTML puede ser más complejo dependiendo de la estructura y el contenido del código HTML que estemos analizando. La biblioteca "HTMLParser" en Arduino ofrece muchas más funciones que podemos utilizar para obtener información específica de diferentes etiquetas o elementos en el código HTML.
-
-Por ejemplo, podemos utilizar la función ```nextTag()``` para saltar de una etiqueta a otra o la función ```isOpeningTag()``` para verificar si una etiqueta es de apertura o de cierre. También podemos utilizar expresiones regulares para obtener datos más complejos.
-
-Es importante tener en cuenta que, al igual que con cualquier otra técnica, parsear HTML utilizando Arduino puede tener sus limitaciones y debemos ser cuidadosos al manejar datos grandes o complejos.
+También puedes explorar la posibilidad de utilizar Arduino para raspar (scraping) datos de páginas web, lo que implica analizar y extraer información de una gran cantidad de páginas. Sin embargo, es importante tener en cuenta que algunas páginas web pueden prohibir esta práctica, así que asegúrate de comprobar las políticas de cada página antes de realizar cualquier análisis.
 
 ## Ver también
-
-Si quieres profundizar más en la técnica de parsear HTML en Arduino, te recomiendo revisar los siguientes enlaces:
-
-- [Documentación de la biblioteca "HTMLParser"](https://github.com/adafruit/Adafruit_NeoPixel)
-- [Tutorial de Sparkfun sobre parseo de código HTML en Arduino](https://learn.sparkfun.com/tutorials/html-parsing-with-the-htmlparser-library/all)
-- [Ejemplos de código para parsear HTML en Arduino](https://www.hackster.io/search?i=projects&q=html+parser+arduino)
+- [Página oficial de Arduino](https://www.arduino.cc/)
+- [Documentación de la biblioteca ESP8266HTTPClient.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/http-client.html)
+- [Documentación de la biblioteca ESP8266WebServer.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/esp8266webserver.html)
+- [Documentación de la biblioteca ESP8266WiFiServer.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/esp8266wifi-server.html)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 웹 페이지 다운로드하기"
-simple_title:         "웹 페이지 다운로드하기"
+title:                "웹 페이지 다운로드"
+html_title:           "Kotlin: 웹 페이지 다운로드"
+simple_title:         "웹 페이지 다운로드"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-웹 페이지를 다운로드하려는 이유는 여러 가지가 있습니다. 예를 들어, 웹 페이지를 오프라인에서 볼 수 있게 하기 위해서거나, 웹 페이지에 접근하는 데 필요한 데이터를 수집하기 위해서일 수 있습니다.
+## 왜 웹 페이지 다운로드를 하는가?
 
-## 사용 방법
-아래에 있는 코드 블록을 사용하여 간단한 방법으로 웹 페이지를 다운로드할 수 있습니다.
+웹 페이지를 다운로드하는 이유는 간단합니다. 대부분의 사람들은 인터넷을 사용하여 정보를 찾거나 제품을 구매하기 위해 웹 페이지를 방문합니다. 로컬 컴퓨터에 웹 페이지를 다운로드하고 나중에 오프라인으로 확인하면 더 편리합니다.
+
+## 다운로드하는 방법
 
 ```Kotlin
-fun main() {
-    val url = "https://www.example.com"
-    val html = downloadWebPage(url)
-    println(html)
-}
-
-fun downloadWebPage(url: String): String {
-    val connection = URL(url).openConnection() as HttpURLConnection
-    connection.requestMethod = "GET"
-    return connection.inputStream.use { it.reader().readText() }
+// Ktor 의존성을 추가합니다.
+dependencies {
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-features:$ktor_version"
+    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
 }
 ```
 
-위의 예제 코드에서는 `downloadWebPage()` 함수를 사용하여 웹 페이지를 다운로드하고 해당 페이지의 HTML 내용을 출력합니다. 사용자는 `url` 변수에 다운로드하고자 하는 웹 페이지의 주소를 입력하면 됩니다.
+```Kotlin
+// Ktor 클라이언트를 초기화합니다.
+val client = HttpClient(OkHttp) {
+    install(HttpTimeout) {
+        requestTimeoutMillis = 5000L
+    }
+}
+```
 
-## 깊은 곳으로
-코드 예제에서는 `URLConnection`을 사용하여 웹 페이지를 다운로드합니다. 이 클래스는 HTTP 요청을 보내고 응답을 받아오는 기능을 제공합니다. 그리고 `InputStream`을 사용하여 다운로드한 웹 페이지의 내용을 읽어 옵니다.
+```Kotlin
+// 웹 페이지 다운로드 함수를 만듭니다.
+suspend fun downloadWebPage(url: String): String {
+    val response = client.get<String>(url)
+    return response
+}
+```
 
-`URLConnection`의 `openConnection()` 메서드는 `URLConnection`의 인스턴스를 반환하며, 다운로드하려는 웹 페이지의 주소를 파라미터로 전달합니다. 그리고 `inputStream` 속성을 사용하여 다운로드한 내용을 `InputStream` 타입으로 얻을 수 있습니다.
+```Kotlin
+// 다운로드 함수를 호출하고 결과를 출력합니다.
+println(downloadWebPage("https://kotlinlang.org/"))
+```
 
-## 참고
-- [Kotlin 공식 홈페이지](https://kotlinlang.org/)
-- [URLConnection documentation](https://developer.android.com/reference/java/net/URLConnection)
-- [Download a URL Content Using Java](https://wls.wwsleep.com/websleepdev/article/java/android-download-url-page)
-- [Kotlin Programming: The Big Nerd Ranch Guide](https://www.amazon.com/Kotlin-Programming-Nerd-Ranch-Guide/dp/0135161630)
+### 출력:
 
-## 참조하기
-- [Kotlin의 함수](https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md#functions)
-- [Kotlin의 읽기 가능한 확장 함수](https://kotlinlang.org/docs/reference/properties.html)
-- [Kotlin 프로그래밍의 기본](https://www.amazon.co.jp/Kotlin-%E5%9F%BA%E6%9C%AC-Cientic-%E7%B7%A8%E8%91%97%E6%89%80/dp/4302240489/)
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kotlin Programming Language</title>
+    ...
+```
+
+## 깊이 파고들기
+
+- 웹 서버와의 통신에서 Timeout 설정을 적용하여 응답 시간을 제어할 수 있습니다.
+- 웹 페이지 다운로드 외에도, Ktor 라이브러리를 사용하여 웹 소켓 통신, REST API 호출 등 다양한 기능을 구현할 수 있습니다.
+
+## 더 알아보기
+
+- [Ktor 공식 문서](https://ktor.io/)
+- [Kotlin 공식 사이트](https://kotlinlang.org/)
+- [Kotlin 샘플 코드](https://github.com/Kotlin/kotlin-compiler-samples)

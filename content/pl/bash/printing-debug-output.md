@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Generowanie wyników debugowania"
-simple_title:         "Generowanie wyników debugowania"
+title:                "Drukowanie wyjścia debugowania"
+html_title:           "Bash: Drukowanie wyjścia debugowania"
+simple_title:         "Drukowanie wyjścia debugowania"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -11,26 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele osób często korzysta z opisywania kodu za pomocą funkcji print (), jednak drukowanie wyników debugowania może być równie użyteczne. Pozwala to na wyświetlanie aktualnych wartości zmiennych i wykonywanych operacji, co pomaga w identyfikacji i naprawianiu błędów w kodzie.
+Wyświetlanie informacji debugujących jest ważnym narzędziem dla programistów w pracy z językiem Bash. Pozwala to na wgląd w działanie skryptów oraz diagnozowanie ewentualnych błędów.
 
 ## Jak to zrobić
 
-Aby wypisać wyniki debugowania w Bash, należy użyć funkcji echo lub printf. Przykładowy kod wyglądałby tak:
+Aby wyświetlić informacje debugujące w języku Bash, należy użyć polecenia `set -x`, które przełącza tryb debugowania. Następnie, przed linijką kodu, którą chcemy prześledzić, dodajemy prefiks `+` lub `x` w zależności od wersji Bash, które będziemy używali.
 
+```Bash
+set -x
+
+# + lub x przed każdą linijką, która ma być wyświetlona
+echo "Cześć, świecie!"
 ```
-#!/bin/bash
-zmienna="Hello World"
-echo "Zmienna zawiera wartość: $zmienna"
-```
 
-Wywołanie programu spowoduje wyświetlenie tekstu "Zmienna zawiera wartość: Hello World". Podczas debugowania warto również korzystać z flagi -x, która wyświetli pełny zapis wykonywanych poleceń wraz z aktualnymi wartościami zmiennych.
+Powyższy przykład spowoduje wyświetlenie informacji debugujących przy wywołaniu komendy `echo`, co pozwoli nam na zobaczenie, czy zmienna została prawidłowo zdefiniowana czy też czy występują jakieś inne błędy.
 
-## Głębsze zagadnienia
+## W głębi
 
-Drukowanie informacji debugowania może być nie tylko pomocne w znajdowaniu błędów, ale także w badaniu i analizowaniu działania kodu. Za pomocą funkcji print () można wyświetlać zmienne w różnych fazach wykonania programu, co pomaga w zrozumieniu i optymalizacji działania kodu.
+Polecenie `set -x` włącza tryb debugowania na poziomie skrypty. Oznacza to, że wszystkie linie kodu będą wyświetlane w terminalu, co może spowodować przeładowanie informacją. Można jednak również włączyć tryb debugowania tylko dla konkretnego fragmentu kodu, używając polecenia `set +x` w celu wyłączenia trybu debugowania.
 
-## Zobacz również
+Inną przydatną opcją jest użycie polecenia `set -v`, które wyświetla informacje debugujące, ale także wypisuje linie kodu, które są w danej chwili wykonywane. Może to być szczególnie przydatne przy pracy z pętlami, aby śledzić kolejność wykonywanych komend.
 
-- [Bash Debugging Techniques](https://dev.to/awwsmm/bash-debugging-techniques-37ph)
-- [Debugowanie Bash scripts za pomocą echo i printf](https://letsdebugit.com/debugging-bash-scripts-using-echo-and-printf/)
-- [Jak debugować skrypty Bash](https://linuxhint.com/bash_debug_scripts/)
+## Zobacz także
+
+- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Przydatne porady dotyczące debugowania w Bashu](https://www.lifewire.com/debug-code-in-bash-script-2200574)
+- [Artykuł o wykorzystaniu polecenia `set -x` w Bashu](https://www.baeldung.com/linux/enable-set-x-scripting)

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Konwertowanie daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków"
+html_title:           "TypeScript: Konwertowanie daty na ciąg znaków"
 simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,36 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwertowanie daty na ciąg znaków jest nie tylko kluczowym aspektem programowania TypeScript, ale także ogólnie przydatną umiejętnością. Często musimy wyświetlić daty w czytelnej formie dla użytkowników lub przekazać je jako argument w wywołaniach funkcji. Dzięki konwersji daty na ciąg znaków możemy w prosty sposób osiągnąć ten cel.
+Prawdopodobnie każdy programista ma do czynienia z konwersją daty na łańcuch znaków w swojej codziennej pracy. Jest to powszechna operacja, która jest niezbędna do wyświetlania daty użytkownikom lub zapisywania jej w bazie danych. W tym artykule dowiesz się, jak w prosty sposób przekonwertować datę na łańcuch znaków przy użyciu TypeScript, języka programowania, który jest obecnie bardzo popularny w świecie front-endu i back-endu.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na ciąg znaków w TypeScript, wystarczy użyć dedykowanej metody `toString()` dostępnej na obiekcie `Date`. Przykładowo, jeśli mamy zmienną `date`, która przechowuje datę, za pomocą metody `toString()` możemy przekonwertować ją na ciąg znaków w następujący sposób:
+Konwersja daty na łańcuch znaków w TypeScript jest niezwykle prosta i wymaga zaledwie kilku linijek kodu. Aby to zrobić, musisz użyć metody `toLocaleString()` z obiektu `Date` i podać odpowiednie parametry, takie jak format daty oraz lokalizacja. Poniżej znajduje się przykładowy kod, który przekonwertuje obecną datę i godzinę na łańcuch znaków w formacie „dd.MM.yyyy HH:mm”:
 
 ```TypeScript
-let date = new Date(2021, 5, 10);
-let dateString = date.toString();
+const currentDate = new Date();
+const convertedDate = currentDate.toLocaleString('pl-PL', { 
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+});
+
+console.log(convertedDate);
+// wyświetli: "18.07.2021 12:30"
 ```
 
-W takim przypadku, `dateString` będzie zawierać ciąg znaków "Wed Jun 09 2021 00:00:00 GMT+0200 (Central European Summer Time)".
+Możesz również dostosować format wyjściowy, używając innych parametrów, takich jak `weekday`, `era` czy `timeZone`. Dokładną listę wszystkich dostępnych parametrów można znaleźć w dokumentacji TypeScript.
 
-Możemy również użyć specjalnej metody `toLocaleDateString()` do precyzyjnego formatowania daty zgodnie z lokalnymi ustawieniami, np. dla Polski:
+## Deep Dive
 
-```TypeScript
-let date = new Date(2021, 5, 10);
-let polishDateString = date.toLocaleDateString("pl-PL");
-```
+Podczas konwersji daty na łańcuch znaków warto zwrócić uwagę na to, jakie lokalizacje są używane, aby format daty był zgodny z oczekiwaniami użytkowników. Warto również wiedzieć, że w niektórych przypadkach daty mogą być wyświetlane w różnych formatach w zależności od ustawień systemowych użytkownika. Dlatego zawsze warto przetestować działanie swojego kodu w różnych lokalizacjach, aby mieć pewność, że wszystko działa prawidłowo.
 
-W takim przypadku, `polishDateString` będzie zawierać ciąg znaków "09.06.2021". Możemy także podać opcjonalne argumenty, takie jak formatowanie, ilość liczb ułamkowych czy dodatkowe informacje.
+Jednym z przydatnych narzędzi, które może pomóc w konwersji daty na łańcuch znaków, jest biblioteka moment.js, która oferuje więcej funkcjonalności i możliwości formatowania daty. Jest to szczególnie przydatne, jeśli musisz wyświetlać daty w różnych strefach czasowych lub w bardziej skomplikowany sposób.
 
-## Głębsze zagłębienie
+Oczywiście, istnieje także możliwość tworzenia własnych funkcji lub używania innych bibliotek, które mogą pomóc w konwersji daty na łańcuch znaków. Ważne jest jednak, aby zawsze dbać o poprawność formatowania i uwzględniać możliwe różnice w wyświetlaniu dat w różnych lokalizacjach.
 
-Konwersja daty na ciąg znaków może na początku wydawać się trywialna, jednak warto zwrócić uwagę na kilka aspektów. Po pierwsze, należy uważać na formatowanie daty, które może być różne w zależności od ustawień systemowych lub przeglądarki. Dlatego warto zawsze używać odpowiednich metod, takich jak `toLocaleDateString()`.
+## Zobacz również
 
-Ponadto, warto pamiętać o obsłudze różnych stref czasowych oraz formatów daty, takich jak amerykański MM/DD/YYYY czy angielski DD MMMM YYYY. W takim przypadku, warto wykorzystać biblioteki lub narzędzia, które pomogą nam w precyzyjnej konwersji daty.
-
-## Zobacz także
-
-- [Dokumentacja metod `Date` w TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html)
-- [Biblioteka Moment.js do obsługi dat w JavaScript](https://momentjs.com/)
-- [Narzędzie date-fns dla bardziej zaawansowanego formatowania daty](https://date-fns.org/)
+- [Dokumentacja TypeScript dla metody toLocaleString()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+- [Biblioteka moment.js](https://momentjs.com/)

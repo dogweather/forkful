@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Bash: Lendo argumentos da linha de comando"
 simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,37 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que ler argumentos da linha de comando com Bash?
 
-Ler argumentos da linha de comando é uma habilidade essencial para qualquer programador que trabalhe com Bash. Ao utilizar argumentos da linha de comando, você pode tornar seu código mais dinâmico e interativo, fornecendo ao usuário opções e informações adicionais para personalizar a execução do seu script. Além disso, a capacidade de ler argumentos da linha de comando é uma habilidade desejável para trabalhar em ambientes de desenvolvimento profissionais, onde é comum a utilização de ferramentas de linha de comando.
+Você deve estar se perguntando por que alguém se interessaria em ler argumentos da linha de comando com Bash, não é mesmo? Bem, a resposta é simples: isso pode facilitar muito a vida do desenvolvedor!
 
-## Como fazer:
+Quando você executa um programa ou script Bash, é possível passar informações adicionais através de argumentos na linha de comando. Isso pode ser especialmente útil para automatizar tarefas ou para tornar seu código mais flexível, permitindo que ele receba diferentes entradas.
 
-Para ler argumentos da linha de comando em Bash, primeiro você precisa compreender a estrutura básica do comando. Estes argumentos são passados ao script como parâmetros, que são armazenados em variáveis especiais chamadas de "positional parameters".
+## Como fazer isso na prática?
 
-Vamos dar uma olhada em um exemplo simples:
+Para ler argumentos da linha de comando em Bash, utilizamos a variável "$@" que representa todos os argumentos passados. Por exemplo:
 
 ```Bash
 #!/bin/bash
 
-# Este script recebe dois argumentos da linha de comando e exibe o conteúdo
+for arg in "$@" 
+do 
+    echo $arg 
+done
+```
+
+Ao executar o script acima passando alguns argumentos, teremos como saída cada um dos argumentos em uma linha separada. Por exemplo, se executarmos "bash meu_script.sh arg1 arg2 arg3", obteremos:
+
+```
+arg1
+arg2
+arg3
+```
+
+Além disso, também podemos acessar diretamente cada argumento através das variáveis "$1", "$2", "$3" e assim por diante, conforme a posição do argumento na linha de comando. Por exemplo:
+
+```Bash
+#!/bin/bash
 
 echo "O primeiro argumento é $1"
 echo "O segundo argumento é $2"
 ```
 
-Neste exemplo, o primeiro argumento passado após o nome do script seria exibido na tela com a mensagem "O primeiro argumento é" antes. O segundo argumento seria exibido com a mensagem "O segundo argumento é" antes. Simples, certo?
+Ao executar o script acima com os argumentos "primeiro" e "segundo", teremos como saída:
 
-Existem outras variações para a leitura de argumentos, como a utilização de opções e flags usando o comando `getopts`, mas este é um bom ponto de partida para entender como ler argumentos da linha de comando em Bash.
+```
+O primeiro argumento é primeiro
+O segundo argumento é segundo
+```
 
-## Deep Dive:
+## Aprofundando um pouco mais
 
-É importante ressaltar que a ordem dos argumentos é importante. Se você chamar um argumento de forma errada, pode obter resultados inesperados ou até mesmo erros em seu código. Além disso, é possível acessar argumentos posicionais em qualquer ordem, desde que você expresse corretamente qual argumento você está querendo acessar.
+Existem muitas possibilidades quando se trata de ler argumentos da linha de comando em Bash. Além das opções apresentadas acima, é possível também utilizar a estrutura "case" para tratar diferentes ações de acordo com os argumentos recebidos, ou ainda verificar se determinado argumento foi ou não passado utilizando as estruturas condicionais "if" e "else".
 
-É possível passar quantos argumentos quiser para um script em Bash, basta utilizar as variáveis especiais apropriadas. Também é possível checar quantos argumentos foram passados para um script utilizando o comando `($#)`.
+Uma dica importante é sempre utilizar aspas ao redor das variáveis que representam os argumentos (como "$@") para evitar que o Bash as separe em diferentes palavras caso o argumento contenha espaços em branco.
 
-## Veja também:
+Não se esqueça também de utilizar o comando "getopts" para facilitar a leitura de argumentos em formato de opções, como "-a" ou "--help".
 
-- [Documentação oficial do Bash sobre leitura de argumentos da linha de comando](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
-- [Artigo sobre a importância da leitura de argumentos da linha de comando em scripts](https://www.howtogeek.com/67469/the-best-use-of-command-line-arguments-in-bash/)
-- [Tutorial em vídeo sobre a leitura de argumentos da linha de comando em Bash](https://www.youtube.com/watch?v=vL49X3NZ_as)
+## Veja também
+
+- [Guia de argumentos da linha de comando em Bash da Wiki do Linux](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_arguments)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Introdução a Bash scripting do DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-write-a-simple-bash-script-on-ubuntu-18-04-pt)

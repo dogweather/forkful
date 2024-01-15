@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Conversion d'une chaîne de caractères en minuscules"
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "PHP: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,35 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi Convertir une Chaîne en Minuscule en PHP
+## Pourquoi
 
-Si vous avez déjà travaillé avec des données textuelles en PHP, vous avez probablement déjà eu besoin de convertir une chaîne de caractères en minuscule. Mais pourquoi cette conversion est-elle nécessaire ? En bref, cela permet d'uniformiser les données et de faciliter leur manipulation.
+Vous vous êtes peut-être déjà demandé pourquoi il est parfois nécessaire de convertir une chaîne de caractères en minuscules. Eh bien, cela peut être utile dans de nombreuses situations, notamment pour des fins de comparaison de chaînes ou pour une meilleure lisibilité du texte.
 
-## Comment Faire
+## Comment faire
 
-Il existe plusieurs façons de convertir une chaîne de caractères en minuscule en PHP. La plus simple est d'utiliser la fonction prédéfinie `strtolower()`. Voici un exemple de code :
-
-```PHP
-$chaine = "Ceci est une CHAÎNE de CARACTÈRES";
-echo strtolower($chaine); // renvoie "ceci est une chaîne de caractères"
-```
-
-Une autre méthode est d'utiliser la fonction `mb_strtolower()` pour prendre en compte les caractères spéciaux de plusieurs langues. Voici un exemple de code :
+Il existe une fonction native en PHP appelée `strtolower()` qui permet de convertir une chaîne en minuscules. Voici un example de code pour l'utiliser :
 
 ```PHP
-$chaine = "ÉéÀà";
-echo mb_strtolower($chaine); // renvoie "ééàà"
+$string = "VOICI UNE CHAÎNE DE CARACTÈRES";
+echo strtolower($string);
 ```
 
-## Plongeon en Profondeur
+Cela produira la sortie suivante :
+```PHP
+voici une chaîne de caractères
+```
 
-Il est important de noter que la conversion en minuscule peut varier selon les différentes langues et encodages. Par exemple, certaines langues ne possèdent pas de système de majuscules et de minuscules, tandis que d'autres ont des règles spécifiques pour les cas particuliers comme les lettres accentuées.
+Il est également possible d'utiliser cette fonction sur un tableau de chaînes, en utilisant la fonction `array_map()`. Par exemple :
 
-En plus des fonctions mentionnées précédemment, il est également possible d'utiliser des techniques plus avancées telles que l'expression régulière ou les méthodes de la classe `mb_convert_case()` pour gérer les cas particuliers et obtenir une conversion plus précise.
+```PHP
+$strings = ["VOICI", "UNE", "CHAÎNE", "DE", "CARACTÈRES"];
+$lowercase_strings = array_map("strtolower", $strings);
+print_r($lowercase_strings);
+```
 
-## Voir Aussi
+Cela produira la sortie suivante :
+```PHP
+Array
+(
+    [0] => voici
+    [1] => une
+    [2] => chaîne
+    [3] => de
+    [4] => caractères
+)
+```
 
-- [Documentation PHP sur strtolower()](https://www.php.net/manual/fr/function.strtolower.php)
-- [Documentation PHP sur mb_strtolower()](https://www.php.net/manual/fr/function.mb-strtolower.php)
-- [Documentation PHP sur mb_convert_case()](https://www.php.net/manual/fr/function.mb-convert-case.php)
-- [Exemples d'utilisation de la conversion en minuscule en PHP](https://www.php.net/manual/fr/function.mb-strtolower.php#example-4554)
+## Plongez plus profondément
+
+En fait, cette fonction utilise la norme Unicode pour la conversion en minuscules, ce qui signifie qu'elle prend en compte les caractères dans toutes les langues. Cela peut être particulièrement utile si vous travaillez avec du texte multilingue.
+
+Cependant, il est important de noter que la conversion en minuscules ne se fait pas toujours de manière simple. Par exemple, la lettre "I" majuscule en anglais devient "i" minuscule en français, mais en allemand elle reste "I" avec un tréma sur le dessus. Cela peut poser des problèmes si vous effectuez des opérations de comparaison de chaînes dans différentes langues.
+
+## Voir aussi
+
+- [Documentation officielle de la fonction strtolower() en PHP](https://www.php.net/manual/fr/function.strtolower.php)
+- [Différentes méthodes pour convertir une chaîne en minuscules en PHP](https://www.w3schools.com/php/php_string_lowercase.asp)
+- [Explications détaillées sur la norme Unicode pour la conversion en minuscules](https://en.wikipedia.org/wiki/Unicode_character_property#Case_folding)

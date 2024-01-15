@@ -1,5 +1,6 @@
 ---
-title:                "Rust: स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Rust: स्ट्रिंग्स को जोड़ना"
 simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-गीत, अपने सफ़ेद समय या मज़ेदार गंभीरता को व्यक्त करने के लिए लोग सबसे ज्यादा प्रयोग करते हैं। एक मजाक के लिए, आप दो शब्दों को जोड़ सकते हैं और एक अनुवाद दे सकते हैं जो दोनों में व्यापक अलगाव लेता है।
+Agar aap ek programmer hai, toh aapne strings ko apne code mein kai baar use kiya hoga. Kabhi kabhi humein do alag alag strings ko ek saath jodna hota hai, jaise ki "Hello" aur "World" ko jodkar "Hello World" banana. Isko hum string concatenation kehte hain. Is technique ka use karke hum apne code mein strings ko dynamic tarike se use kar sakte hain aur apne program ko aur bhi powerful bana sakte hain. Is article mein hum dekhenge ki Rust mein string concatenation kaise kiya jaata hai aur iske kya benefits hai.
 
-## कैसे करे
+## Kaise
 
-''`Rust
-
+```
 fn main() {
-  let name1 = "दोस्त";
-  let name2 = "मित्र";
-  let combined = name1.to_owned() + " और " + name2;
-  println!("{} हैं।" , combined)
+    let str1 = "Hello";
+    let str2 = "World";
+    let combined_string = str1.to_string() + " " + str2;
+    println!("{}", combined_string);
 }
 ```
 
-आप यहाँ देख सकते हैं कि कैसे आप अपने स्ट्रिंग को जोड़ कर एक और नया शब्द बना सकते हैं। आप भी अन्य तरीकों का उपयोग कर सकते हैं जैसे कि `.to_string()` या `format!()` फ़ंक्शन।
+Is code mein humne `str1` aur `str2` variables mein "Hello" aur "World" strings ko store kiya hai. Fir humne `combined_string` variable mein do strings ko `+` operator ka use karke concatenate kiya hai. Agar hum is code ko run karenge toh humein output mein "Hello World" milega. Rust mein `.to_string()` method se hum string ko `String` type mein convert kar sakte hain jisse hum ise concatenate kar sakein.
 
-## गहराई तक
+## Deep Dive
 
-स्ट्रिंग को जोड़ने के पीछे आपको ध्यान देने की जरूरत है कि मौजूदा स्ट्रोबिंग स्ट्रैट या वेक्टर को फिर से आवश्यक नहीं है। आपको एक नया स्ट्रिंग बनाना पड़ सकता है। सीखने के लिए, आप अपने आप को चुनौती दें और अलग तरीकों का उपयोग करें और अपने कोड को बेहतर बनाने के लिए विभिन्न बैकोर से प्राप्त निर्देश देखें।
+Rust mein humein `String` type mein aur `&str` type mein strings ko use karna hota hai. `String` type mutable hai aur usmein hum koi bhi changes kar sakte hain, jabki `&str` type immutable hai aur usmein hum changes nahi kar sakte. Isliye hum concatenate karte waqt `to_string()` method ka use karte hain taaki hum strings ko modify kar sakein.
 
-## देखें भी
+Iske alawa, Rust mein hum `format!` macro ka bhi use kar sakte hain. Is macro mein hum multiple strings ko ek saath combine kar sakte hain. Below code mein humne `"Hello"` aur `"World"` ko `format!` macro se combine kiya hai aur output mein humein "Hello World" milega.
 
-- [आरडी 2 रेफ्रेंस गाइड](https://doc.rust-lang.org/edition-guide/rust-2018/string-and-str.html)
-- [रस्ता में फोरमेटिंग स्ट्रिंग्स](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#formatting-strings)
+```
+fn main() {
+    let combined_string = format!("{} {}", "Hello", "World");
+    println!("{}", combined_string);
+}
+```
 
-आप अब आरडी में स्ट्रिंग्स को जोड़ने के बारे में अधिक जानते हैं। सफ़ल जोड़ कोड लिखने के लिए धैर्य और अभ्यास करें और आप जल्द ही इस काम की
+## Dekho Bhi
+
+- [Rust Strings Documentation](https://doc.rust-lang.org/std/string/index.html)
+- [Learn Rust in Y Minutes - Strings](https://learnxinyminutes.com/docs/rust/#strings)
+- [Rust Book - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+
+"Chalti Bhais" Image Credit: https://pixabay.com/illustrations/rust-digital-art-stracture-science-426761/

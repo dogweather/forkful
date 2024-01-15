@@ -1,6 +1,7 @@
 ---
-title:                "C: Verificando si existe un directorio"
-simple_title:         "Verificando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "C: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,85 +10,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué comprobar si un directorio existe?
 
-En el mundo de la programación, hay muchas veces que se necesita determinar si un directorio específico existe. Ya sea para asegurarse de que un archivo pueda ser leído o para evitar errores en el código, es importante saber cómo verificar la existencia de un directorio.
+Comprobar si un directorio existe es una tarea común en la programación en C. Puede ser útil cuando se desea crear un nuevo directorio, verificar si un directorio específico está disponible para guardar datos o simplemente asegurarse de que un directorio necesario para el funcionamiento del programa existe.
 
 ## Cómo hacerlo
 
-Hay varias formas de verificar si un directorio existe en un programa escrito en C. Una forma es utilizar la función "opendir()" que abrirá un directorio para lectura. Si la función devuelve un puntero nulo, significa que el directorio no existe. Un ejemplo de código sería el siguiente:
+En C, existen varias formas de verificar si un directorio existe. Una manera simple es utilizando la función `opendir()` de la biblioteca `<dirent.h>` y comprobando si devuelve un puntero diferente de `NULL`. Aquí hay un ejemplo de código:
 
-```
+```C 
 #include <stdio.h> 
-#include <string.h> 
-#include <stdlib.h> 
-#include <sys/types.h> 
 #include <dirent.h> 
 
 int main() 
 { 
-    // Ruta del directorio a verificar 
-    char* ruta = "/directorio/a/verificar"; 
+    // Abrir el directorio
+    DIR *dir = opendir("/home/usuario/mi_directorio"); 
     
-    // Abrir el directorio 
-    DIR* directorio = opendir(ruta); 
-    
-    // Comprobar si se pudo abrir el directorio 
-    if(directorio == NULL) 
+    // Comprobar si se pudo abrir el directorio
+    if (dir == NULL) 
     { 
-        printf("El directorio no existe.\n"); 
-        return 1; 
+        // El directorio no existe
+        printf("El directorio no existe"); 
     } 
-    else
+    else 
     { 
-        printf("El directorio existe.\n"); 
-        closedir(directorio); 
+        // El directorio existe
+        printf("El directorio existe"); 
+        
+        // Cerrar el directorio abierto
+        closedir(dir); 
     } 
     
-    return 0; 
+    return 0;
 } 
 ```
 
-El código anterior imprimirá "El directorio existe" si se encuentra el directorio en la ruta especificada. Si no se encuentra, imprimirá "El directorio no existe".
+El resultado de este código puede variar dependiendo del sistema operativo utilizado. Algunas posibles salidas podrían ser:
 
-## Deep Dive
+- Si el directorio existe: `El directorio existe`
+- Si el directorio no existe: `El directorio no existe`
 
-Otra forma de verificar si un directorio existe es utilizando la función "stat()" que devuelve información sobre un archivo o directorio dado. Si se proporciona un directorio como argumento, la función devolverá un "0" como resultado si existe y "-1" si no existe. Un ejemplo de código sería el siguiente:
+## Profundizando
 
-```
+Una forma más detallada de comprobar si un directorio existe es utilizando la función `stat()` de la biblioteca `<sys/stat.h>`. Esta función puede proporcionar información sobre un archivo o directorio específico, incluyendo su existencia. Aquí hay un ejemplo de código que utiliza `stat()` para verificar la existencia de un directorio:
+
+```C 
 #include <stdio.h> 
-#include <string.h> 
 #include <sys/stat.h> 
 
 int main() 
 { 
-    // Ruta del directorio a verificar 
-    char* ruta = "/directorio/a/verificar"; 
-    
-    // Declarar una variable de tipo structures stat 
+    // Crear una estructura para almacenar información sobre el directorio
     struct stat info; 
     
-    // Utilizar la función stat() para verificar si el directorio existe 
-    int resultado = stat(ruta, &info); 
+    // Obtener la información del directorio especificado
+    int result = stat("/home/usuario/mi_directorio", &info); 
     
-    // Comprobar si la función devolvió "0" o "-1" 
-    if(resultado == 0) 
+    // Comprobar el resultado
+    if (result == 0) 
     { 
-        printf("El directorio existe.\n"); 
+        // El directorio existe
+        printf("El directorio existe"); 
     } 
-    else
+    else 
     { 
-        printf("El directorio no existe.\n"); 
+        // El directorio no existe
+        printf("El directorio no existe"); 
     } 
     
-    return 0; 
+    return 0;
 } 
 ```
 
-Este código también imprimirá un mensaje dependiendo del resultado de la función "stat()". "El directorio existe" se imprimirá si se encuentra el directorio en la ruta especificada y "El directorio no existe" si no se encuentra.
+Algunas posibles salidas de este código podrían ser:
+
+- Si el directorio existe: `El directorio existe`
+- Si el directorio no existe: `El directorio no existe`
+
+Es importante tener en cuenta que esta función también puede proporcionar información sobre otros aspectos del directorio, como su tamaño o los permisos de acceso. Para obtener más información sobre la función `stat()`, se pueden consultar las páginas de manual utilizando el comando `man stat` en un sistema Linux.
 
 ## Ver también
 
-- [Cómo crear y eliminar directorios en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Funciones de gestión de directorios en C](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
-- [Documentación oficial de la función "stat()"](http://man7.org/linux/man-pages/man2/stat.2.html)
+- Tutorial de programación en C: https://www.programiz.com/c-programming
+- Referencia de la biblioteca C estándar: https://www.ibm.com/docs/es/zos/2.3.0?topic=functions-introduction

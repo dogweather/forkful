@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Scaricare una pagina web"
+title:                "Scaricare una pagina web"
+html_title:           "Haskell: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,56 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Scaricare una Pagina Web in Haskell?
+##Perché
 
-Scaricare pagine web è un'operazione comune in molti progetti di programmazione. In Haskell, è possibile farlo in modo semplice e flessibile grazie ad alcune librerie apposite. In questo articolo, mostrerò come scaricare una pagina web utilizzando il linguaggio funzionale Haskell e come approfondire questo concetto.
+Se sei interessato ad estrarre informazioni da una pagina web o ad utilizzare i suoi contenuti in un tuo progetto, allora scaricare una pagina web utilizzando Haskell può essere la soluzione che stai cercando. Inoltre, imparare a utilizzare Haskell per il web può arricchire le tue competenze di programmazione e aprirti ad un nuovo mondo di possibilità.
 
-## Come Fare
+##Come Fare
 
-Per prima cosa, dovrai installare la libreria `http-conduit` utilizzando `cabal`:
+Per prima cosa, assicurati di aver installato il compilatore di Haskell sul tuo computer. Dopo aver fatto ciò, segui questi semplici passaggi per scaricare una pagina web utilizzando Haskell.
 
-```Haskell
-cabal update
-cabal install http-conduit
+```
+Haskell
+import Network.HTTP.Simple -- Importa il modulo per la gestione di richieste HTTP
+
+-- Esegue una richiesta GET all'URL specificato
+pagina <- httpGet "https://www.example.com"
+
+-- Legge il contenuto della pagina e lo converte in una stringa
+contenuto <- getResponseBody pagina
+
+-- Stampa il contenuto della pagina
+print contenuto
 ```
 
-Una volta installata, è possibile importare la libreria nel tuo file Haskell utilizzando il comando `import Network.HTTP.Conduit`.
+Questo codice esegue una richiesta HTTP all'URL specificato e legge il contenuto della pagina in formato di stringa. Utilizzando il modulo `Network.HTTP.Simple`, non è necessario preoccuparsi di gestire le connessioni HTTP, poiché il modulo si occupa di questo per te. Inoltre, puoi utilizzare anche altri metodi di richiesta, come POST o PUT, a seconda delle tue esigenze.
 
-Ora, per scaricare una pagina web, possiamo utilizzare la funzione `simpleHttp` che accetta come argomento un URL e ci restituisce il contenuto della pagina come una stringa:
+##Deep Dive
 
-```Haskell
-paginaWeb <- simpleHttp "https://www.example.com"
-```
+Oltre alla semplice richiesta di una pagina web, Haskell consente di effettuare operazioni più avanzate, come il parsing del contenuto della pagina per estrarre solo le informazioni di interesse. Ci sono molti pacchetti disponibili per il parsing di HTML, come `tagsoup` o `html-conduit`, che possono semplificare notevolmente questa operazione. Inoltre, puoi utilizzare librerie di scraping web come `scrape` o `scraper` per facilitare ulteriormente il processo di estrazione di dati da una pagina web.
 
-Possiamo anche aggiungere degli header personalizzati alla nostra richiesta utilizzando la funzione `requestHeaders`:
+##Vedi Anche
 
-```Haskell
-let header = ("User-Agent", "Haskell/1.0")
-paginaWeb <- simpleHttp $ setRequestHeader header "https://www.example.com"
-```
-
-Una volta scaricata la pagina web, possiamo utilizzare la funzione `unpack` per convertire la stringa in un formato utilizzabile:
-
-```Haskell
-let pagina = unpack paginaWeb
-```
-
-Ora possiamo stampare il contenuto della pagina utilizzando la funzione `putStrLn`:
-
-```Haskell
-putStrLn pagina
-```
-
-## Approfondimenti
-
-Oltre a `http-conduit`, esistono altre librerie che consentono di scaricare pagine web in Haskell, come ad esempio `curl`, `wget`, `HsWebKit`, solo per citarne alcune. Ognuna di queste librerie ha i propri vantaggi e svantaggi, quindi è importante fare ricerche per trovare quella che meglio si adatta alle tue esigenze.
-
-Per ulteriori informazioni sul download di pagine web in Haskell, ti consiglio di leggere il seguente articolo su [HaskellWiki](https://wiki.haskell.org/Downloading_web_pages).
-
-## Vedi Anche
-
-* [HaskellWiki - Downloading web pages](https://wiki.haskell.org/Downloading_web_pages)
-* [Hackage - http-conduit](https://hackage.haskell.org/package/http-conduit)
-* [GitHub - curl](https://github.com/bumptech/curl-hs)
-* [GitHub - wget](https://github.com/jmcarthur/haskell-wget)
-* [Hackage - HsWebKit](https://hackage.haskell.org/package/HsWebKit)
+- [Haskell for Beginners](https://www.haskell.org/learn/)
+- [Haskell Web Programming](https://haskellwebprogramming.com/)
+- [Scraper Package](https://hackage.haskell.org/package/scraper)

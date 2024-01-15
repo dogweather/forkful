@@ -1,6 +1,7 @@
 ---
-title:                "Python: Mallia vastaavien merkkien poistaminen."
-simple_title:         "Mallia vastaavien merkkien poistaminen."
+title:                "Kuvioiden mukaisesti vastaavien merkkien poistaminen."
+html_title:           "Python: Kuvioiden mukaisesti vastaavien merkkien poistaminen."
+simple_title:         "Kuvioiden mukaisesti vastaavien merkkien poistaminen."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+##Miksi
 
-Monissa tilanteissa saattaa olla tarpeellista poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa esimerkiksi siivoamaan dataa tai työskentelemään tietyntyyppisissä tekstissä. Seuraavassa kirjoituksessa tutustutaan, kuinka tämä onnistuu Pythonin avulla.
+Olet varmaankin törmännyt tilanteeseen, jossa joudut poistamaan tietyn mallin mukaisia merkkejä tekstitiedostosta. Tämä voi johtua esimerkiksi tekstin puhdistamisesta ennen analyysiä tai halusta muokata tekstiä tietyn muodon mukaiseksi. Tässä artikkelissa näytetään, kuinka voit poistaa merkkejä, jotka vastaavat tiettyä mallia käyttämällä Pythonin uusinta versiota.
 
-## Kuinka
+##Kuinka tehdä
 
-Poistaaksesi merkit, jotka vastaavat tiettyä kaavaa, voit käyttää Pythonin sisäänrakennettua "re" -moduulia. Tämä moduuli tarjoaa työkalut säännöllisten lausekkeiden käsittelemiseen, mikä on juuri mitä tarvitsemme tässä tapauksessa. Alla on esimerkki koodista, joka poistaa kaikki numerot kokonaan merkkijonosta ja tulostaa lopputuloksen:
+Poistaaksesi merkkejä mallin perusteella, voit käyttää Pythonin built-in replace() -funktiota. Esimerkiksi, jos haluat poistaa kaikki numerot tekstitiedostosta, voit kirjoittaa seuraavan koodin:
 
-```python
-import re
-
-teksti = "Tervetuloa käyttämään 123 Pythonia!"
-puhdas_teksti = re.sub(r"\d+", "", teksti)
-print(puhdas_teksti)
-
-# Tulostaa: Tervetuloa käyttämään Pythonia!
+```Python
+teksti = '13m45e12r45k25k15i18t22'
+puhdistettu_teksti = teksti.replace('[0-9]','')
+print(puhdistettu_teksti)
 ```
 
-Koodissa on ensin tuotu "re" -moduuli "import" -avainsanalla. Sitten alustetaan muuttuja, joka sisältää tekstirivin, josta haluamme poistaa numerot. Käytämme "re" -moduulin "sub" -funktiota, jonka avulla voimme korvata kaavan vastaavat merkit tyhjällä merkkijonolla. Funktioon annetaan ensimmäisenä parametrina kaava, joka etsitään tekstistä, ja toisena parametrina se, millä haluamme korvata kaavan vastaavat merkit. Lopuksi tulostetaan muokattu teksti. Huomaa, että etumerkki "r" tekstin edessä osoittaa, että käytämme raakatekstiä, mikä estää erikoismerkkien, kuten "\", muuttumisen.
+Tässä koodissa vaihdamme kaikki numerot tyhjään merkkijonoon, jolloin numerot poistetaan tekstistä. Tämän tulisi antaa seuraava tulos:
 
-## Syvällisempi tarkastelu
+```Python
+merkkiiit
+```
 
-"Säännölliset lausekkeet" tai "regulaariset lausekkeet" ovat tapa ilmaista kaavoja, joiden avulla voi etsiä ja muokata merkkijonoja halutulla tavalla. Ne sisältävät erilaisia sääntöjä ja erikoismerkkejä, jotka auttavat löytämään tietynlaisia merkkijonoja. Esimerkiksi yllä käyttämämme kaava "\d+" tarkoittaa yhden tai useamman numeron löytämistä.
+Voit myös käyttää regular expression -kirjastoa (regex) poistaaksesi merkkejä tietyn mallin perusteella. Tässä esimerkissä käytämme regex:n sub() -funktiota, joka korvaa kaikki numerot tyhjällä merkkijonolla:
 
-Säännölliset lausekkeet voivat joskus vaikuttaa hankalilta aluksi, mutta kun opettelee niiden perusteet ja ymmärtää niiden rakenteen, ne voivat olla todella hyödyllisiä työkaluja. Suosittelemme tutustumaan lisää säännöllisiin lausekkeisiin ja niiden käyttöön, sillä niitä voi hyödyntää monissa eri tilanteissa Python-ohjelmoinnissa.
+```Python
+import re
+teksti = '13m45e12r45k25k15i18t22'
+puhdistettu_teksti = re.sub('[0-9]','',teksti)
+print(puhdistettu_teksti)
+```
 
-## Muista tutustua myös
+Tulisi saada sama tulos kuin edellisessä esimerkissä.
 
-Olemme nyt käyneet läpi, kuinka voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa, Pythonin avulla. Mikäli haluat syvällisempää tietoa säännöllisistä lausekkeista, suosittelemme tutustumaan alla oleviin linkkeihin:
+##Syventyminen
 
-- [Pythonin dokumentaatio "re" -moduulista](https://docs.python.org/3/library/re.html)
-- [RegExr - säännöllisten lausekkeiden testaustyökalu](https://regexr.com/)
-- [GeeksforGeeks - opetusohjelma säännöllisistä lausekkeista Python
+Nämä esimerkit kattavat vain yksinkertaisimmat tapaukset poistaa merkkejä mallin perusteella. Voit kuitenkin käyttää regex:n laajempia toimintoja, kuten merkkien ryhmittelyä tai kerrannaisuuksien korvaamista, poistaaksesi monimutkaisempia malleja vastaavia merkkejä. Tutustumalla tarkemmin regex-kirjaston dokumentaatioon voit löytää lisää tapoja poistaa merkkejä haluamallasi tavalla.
+
+##Katso myös
+
+- [Pythonin string -dokumentaatio](https://docs.python.org/3/library/string.html)
+- [Regex-kirjaston dokumentaatio](https://docs.python.org/3/library/re.html)

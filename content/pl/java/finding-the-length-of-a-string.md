@@ -1,5 +1,6 @@
 ---
-title:                "Java: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Java: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Java"
 category:             "Java"
@@ -11,67 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdego dnia korzystamy z różnych funkcji w języku programowania Java, ale nie zawsze zastanawiamy się dlaczego są one istotne. Jedną z takich funkcji jest znajdowanie długości napisu. Dlaczego jest to ważne? Dzięki temu możemy w łatwy sposób określić ilość znaków w danym napisie, co może być bardzo przydatne przy tworzeniu aplikacji lub gier. W tym artykule dowiesz się jak to zrobić oraz dlaczego warto.
+Znajdowanie długości ciągu znaków jest ważną umiejętnością w programowaniu w Javie. Pozwala ona na manipulację i analizę tekstu oraz tworzenie funkcjonalności, takich jak sprawdzanie poprawności wprowadzonych danych czy generowanie unikalnych identyfikatorów.
 
 ## Jak to zrobić
 
-Znajdowanie długości napisu w języku Java jest bardzo proste i wymaga tylko kilku linijek kodu. W tej sekcji pokażę Ci przykładowe rozwiązania wraz z wynikami.
-
 ```Java
-// Zadeklarowanie napisu
-String napis = "Cześć, tutaj piszę pierwszy blog post!";
-
-// Użycie metody length() na obiekcie String
-System.out.println("Długość napisu wynosi: " + napis.length());
-
-// Wynik: Długość napisu wynosi: 37
+String str = "Cześć, Java!";
+int length = str.length();
+System.out.println("Długość ciągu znaków \"" + str + "\": " + length);
 ```
 
-Jak widać, używając metody `length()` na obiekcie typu `String`, otrzymujemy liczbę będącą długością tego napisu. Pamiętaj również, że liczymy każdy znak w tym napisie, włączając w to spacje i znaki specjalne.
+**Output:**
+Długość ciągu znaków "Cześć, Java!": 11
 
-Możemy również wykorzystać pętle, aby policzyć długość napisu i wyświetlić wynik dla każdego znaku oddzielnie.
+W powyższym kodzie użyliśmy metody `length()`, dostępnej dla obiektów typu `String`, aby zwrócić długość ciągu. Warto zauważyć, że metoda ta liczy również znaki białe, takie jak spacje czy tabulatory. Jeśli chcesz wykluczyć te znaki, możesz najpierw użyć metody `trim()`. Przykładowe wykorzystanie:
 
 ```Java
-// Zadeklarowanie napisu
-String napis = "Hello there!";
-
-// Użycie pętli for do policzenia długości
-for (int i = 0; i < napis.length(); i++) {
-    System.out.println("Długość znaku " + (i+1) + " to " + napis.charAt(i));
-}
-
-// Wynik:
-// Długość znaku 1 to H
-// Długość znaku 2 to e
-// Długość znaku 3 to l
-// Długość znaku 4 to l
-// Długość znaku 5 to o
-// Długość znaku 6 to
-// Długość znaku 7 to t
-// Długość znaku 8 to h
-// Długość znaku 9 to e
-// Długość znaku 10 to r
-// Długość znaku 11 to e
-// Długość znaku 12 to !
+String str = "   Cześć, Java!   ";
+int length = str.trim().length();
+System.out.println("Długość ciągu znaków \"" + str + "\": " + length);
 ```
+
+**Output:**
+Długość ciągu znaków "Cześć, Java!": 11
 
 ## Deep Dive
 
-W przypadku większych napisów, często przydatne jest określenie długości tylko fragmentu tego napisu. W tym celu możemy użyć metody `substring()`.
+W Javie ciągi znaków są traktowane jako obiekty, a nie jako tablice znaków. Dlatego też nie możemy używać operatora indeksowania `[]`, aby uzyskać dostęp do poszczególnych znaków. Zamiast tego, musimy skorzystać z metody `charAt()`:
 
 ```Java
-// Zadeklarowanie napisu
-String napis = "Lorem ipsum dolor sit amet";
-
-// Użycie metody substring()
-System.out.println("Fragment napisu: " + napis.substring(0, 5));
-
-// Wynik: Fragment napisu: Lorem
+String str = "Hello, Java!";
+char firstChar = str.charAt(0);
+System.out.println("Pierwszy znak ciągu \"" + str + "\": " + firstChar);
 ```
 
-W powyższym przykładzie, jako pierwszy argument metody `substring()` podajemy indeks, od którego chcemy zacząć, a jako drugi argument indeks końcowy (nie włączając tego indeksu). W ten sposób możemy uzyskać dowolny fragment napisu, który nas interesuje.
+**Output:**
+Pierwszy znak ciągu "Hello, Java!": H
 
-## Zobacz również
+Dodatkowo, długość ciągu znaków w Javie jest ograniczona do wartości maksymalnej typu `int`, czyli 2,147,483,647. Jeśli chcesz sprawdzić długość ciągu większą niż ta wartość, możesz skorzystać z metody `length()` klasy `BigInteger`:
 
-- Dokumentacja Oracle: [String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- Poradnik Java: [Jak znaleźć długość napisu w Javie](https://jakaprogramowac.pl/jak-znalezc-dlugosc-napisu-w-javie/)
+```Java
+String longStr = "This is a very long string";
+BigInteger bigInteger = BigInteger.valueOf(longStr.length());
+System.out.println("Długość ciągu znaków \"" + longStr + "\": " + bigInteger.toString());
+```
+
+**Output:**
+Długość ciągu znaków "This is a very long string": 24
+
+## Zobacz też
+
+- [Dokumentacja Java - metody klasy String](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length())
+- [Tutorial o długości ciągu znaków w Javie](https://www.javatpoint.com/java-string-length)

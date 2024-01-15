@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Kotlin recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,38 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Finding the length of a string is a fundamental skill in programming. It allows us to manipulate strings and perform operations based on their length, such as validating user input or creating dynamic text-based applications.
+Finding the length of a string is a common task in programming, especially when dealing with user input or manipulating text data. By knowing the length of a string, we can perform various operations and create more efficient and accurate programs.
 
 ## How To
 
-To find the length of a string in Kotlin, we can use the built-in `length` property. This property returns the number of characters in a string. Let's see an example:
+Finding the length of a string in Kotlin is a simple task that can be accomplished in various ways. Here are three different approaches to finding the length of a string:
 
-```Kotlin
-val name = "John"
-val length = name.length
-
-println("The length of the name is $length") // Output: The length of the name is 4
+```kotlin
+// First, we can use the length property of a string
+val str = "Hello World"
+println(str.length) // Output: 11
 ```
 
-We can also use the `count()` function to get the length of a string. This function takes an optional parameter which represents the predicate for counting elements. In the case of a string, we can simply omit the parameter as it will count all the characters in the string. Here's an example:
-
-```Kotlin
-val message = "Hello world"
-val length = message.count()
-
-println("The length of the message is $length") // Output: The length of the message is 11
+```kotlin
+// Second, we can use the count() function on a string
+val str = "Hello World"
+println(str.count()) // Output: 11
 ```
 
-However, it's important to note that the `length` property and `count()` function may produce different results if the string contains special characters or emojis. This is because the `length` property counts the number of Java characters, while the `count()` function counts the number of Unicode code points.
+```kotlin
+// Lastly, we can convert the string to a character array and use the size property
+val str = "Hello World"
+println(str.toCharArray().size) // Output: 11
+```
+
+All three approaches will give the same result, so choose whichever one you are most comfortable with.
 
 ## Deep Dive
 
-Java characters are a subset of Unicode code points and are typically used in older programming languages. They represent a single character or special symbol. On the other hand, Unicode code points are used to represent a broader range of characters, including emojis and other special characters.
+Behind the scenes, Kotlin uses the Java String class, which has a method called `length()` that returns the length of a string. The `length` property in Kotlin is just a shorthand for this method. The `count()` function in Kotlin is also similar to the `length()` method, but it also takes into account any special characters or emoji in the string.
 
-In Kotlin, a string is represented as a sequence of Unicode code points. This means that the `length` property will return the number of Unicode code points, while the `count()` function will return a more accurate count of characters, regardless of their representation as a Java character or Unicode code point.
+Additionally, when using the character array approach, Kotlin automatically converts the string to an array of characters, which has a `size` property that returns the length of the array. This is a more direct approach that may be useful in certain situations.
+
+Another important thing to note is that the `length` property, as well as the `count()` function, are both constants. This means that once the string is assigned to a variable, the length will remain the same regardless of any modifications to the string.
 
 ## See Also
 
-- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
-- [Java Characters and Unicode](https://www.baeldung.com/java-characters-unicode) 
-- [Understanding Kotlin Strings and Their Manipulations](https://medium.com/@deepakkumardasreddy/understanding-kotlin-strings-and-their-manipulation-e48d9fbd5498)
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

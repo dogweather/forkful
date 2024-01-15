@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 「jsonを使ったプログラミング」"
-simple_title:         "「jsonを使ったプログラミング」"
+title:                "JSONを使用する。"
+html_title:           "Haskell: JSONを使用する。"
+simple_title:         "JSONを使用する。"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-あなたがHaskellでJSONを操作することに興味があるかもしれません。JSONはWeb開発において非常にポピュラーなデータフォーマットであり、Haskellにおいても優れたパーサーライブラリが存在します。
 
-## 作り方
-最初に、HaskellのパッケージマネージャーであるStackをインストールします。その後、以下のコードを実行することで、HaskellのデフォルトのコンパイラであるGHCとJSONパーサーライブラリであるAesonがインストールされます。
+JSONとは、データの交換や保存に適したフォーマットです。Haskellを使用することで、JSONデータを処理して使用する祭に便利です。
 
-```
-stack install ghc
-stack install aeson
-```
+## 簡単な例
 
-次に、Haskellファイルを作成し、Aesonパッケージをインポートします。
+まず、HaskellのJSONライブラリである'Aeson'をインポートします。
 
 ```
 import Data.Aeson
 ```
 
-そして、JSONファイルをパースする関数を作成し、パース結果を任意のデータ型に変換します。
+次に、JSONを表すHaskellのデータ型を定義します。
 
 ```
-parseJSON :: Text -> Maybe MyDataType
-parseJSON jsonString = decode jsonString :: Maybe MyDataType
+data User = User
+  { name :: String
+  , age :: Int
+  , occupation :: String
+  }
+  deriving (Show, Generic)
 ```
 
-最後に、作成した関数を利用してJSONファイルをパースし、結果を出力します。
+そして、データ型をJSONに変換する`ToJSON`型クラスのインスタンスを定義します。
 
 ```
-main = do
-  let jsonFile = "sample.json"
-  jsonString <- readFile jsonFile
-  let parsedData = parseJSON jsonString
-  print parsedData
+instance ToJSON User
 ```
 
-実行結果は以下のようになります。
+JSONに変換したいデータを作成します。
 
 ```
-Just MyData { id = 123, name = "Haskell", description = "Functional programming language" }
+user :: User
+user = User "John Doe" 25 "Software Engineer"
 ```
 
-## 深堀り
-より詳細な情報を知りたい方は、Aesonのドキュメンテーションを参照することをお勧めします。Aesonは高速で強力なパーサーライブラリであり、JSONをHaskellのデータ型に変換する際にも柔軟性があります。また、Aesonを利用することで、JSONの生成や変更も簡単に行うことができます。
+最後に、`encode`関数を使ってJSONに変換します。
 
-## 参考
-- [Aesonのドキュメンテーション](https://hackage.haskell.org/package/aeson)
-- [HaskellのStackの公式サイト](https://docs.haskellstack.org/en/stable/README/)
+```
+encode user
+```
+
+出力結果は以下のようになります。
+
+```
+"{\"name\":\"John Doe\",\"age\":25,\"occupation\":\"Software Engineer\"}"
+```
+
+このように、Haskellでは簡単にJSONデータを作成することができます。
+
+## 深掘り
+
+実際のプログラミングでは、より複雑なJSONデータを扱うことが多いでしょう。そのような場合には、レコード構文を使うことでデータ構造をより明示的に定義することができます。また、`FromJSON`型クラスを定義することで、JSONからHaskellのデータ型に変換することもできます。Haskellの詳細な文法や概念については、公式のドキュメントを参照することをお勧めします。
+
+## 関連リンク
+
+- [Aesonのソースコード](https://github.com/bos/aeson)
+- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Satunnaisten lukujen generointi"
-simple_title:         "Satunnaisten lukujen generointi"
+title:                "Sattumanvaraisten lukujen generointi"
+html_title:           "TypeScript: Sattumanvaraisten lukujen generointi"
+simple_title:         "Sattumanvaraisten lukujen generointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -9,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttää satunnaislukugenerointia TypeScriptissä
-Satunnaislukujen generointi on tärkeä osa ohjelmointia monissa sovelluksissa, kuten pelit, simulaatiot ja salausmenetelmät. Satunnaislukujen avulla voidaan luoda ennustamattomia tapahtumia ja tehdä mahdottomia tehtäviä, jotka vaativat sattumanvaraisuutta. TypeScript tarjoaa helpon tavan generoida satunnaislukuja, joka on olennainen taito jokaiselle ohjelmoijalle.
+## Miksi
 
-## Näin generoit satunnaislukuja TypeScriptissä
-Satunnaislukujen generoimiseksi TypeScriptissä voit käyttää Math-luokkaa, joka tarjoaa valmiita metodeja satunnaislukujen luomiseen. Esimerkiksi voit käyttää Math.random() -metodia, joka palauttaa desimaaliluvun välillä 0-1. Voit myös käyttää Math.floor() ja Math.ceil() -metodeita pyöristämään luku haluamaasi muotoon. Seuraava esimerkki näyttää, miten generoida satunnaisluku väliltä 1-10 ja tulostaa se konsoliin:
+Ihmiset käyttävät satunnaislukuja monissa ohjelmoinnin tehtävissä, kuten lotonumeroiden arvonnassa, pelien luomisessa tai salasanojen generoinnissa. Satunnaislukujen avulla voidaan myös testata erilaisia skenaarioita ja ennustaa mahdollisia tapahtumia.
+
+## Miten
+
+Satunnaislukujen luominen TypeScriptissä on helppoa. Käytämme siihen `Math` -luokkaa ja sen tarjoamia metodeja.
 
 ```TypeScript
-const randomNum = Math.floor(Math.random() * 10) + 1;
-console.log(randomNum);
+// Luo satunnaisluku väliltä 0-1
+const randomNumber = Math.random();
+console.log(randomNumber);
+
+// Luo satunnaisluku väliltä 1-10
+const randomInteger = Math.floor(Math.random() * 10) + 1;
+console.log(randomInteger);
+
+// Luo satunnaisluku väliltä 50-100
+const randomRange = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+console.log(randomRange);
+
+// Luo satunnaisluku annetusta taulukosta
+const fruits = ['apple', 'orange', 'banana', 'kiwi'];
+const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+console.log(randomFruit);
 ```
 
-Tämä koodi käyttää Math.random() -metodia luomaan desimaaliluvun väliltä 0-1 ja sitten Math.floor() -metodia pyöristämään sen alaspäin lähimpään kokonaislukuun. Seuraavaksi se lisää 1 luvun loppuun, jotta saadaan haluttu väli väliltä 1-10. Lopuksi tulostetaan satunnaisluku konsoliin.
+**Tulostus:**
 
-## Syventyvä sukellus satunnaislukujen generointiin
-Vaikka Math-luokka tarjoaa käteviä metodeja satunnaislukujen generointiin, niillä on omat rajoituksensa. Esimerkiksi, jos haluat generoida satunnaisen kokonaisluvun tietyltä väliltä, sinun täytyy käyttää erilaisia kaavoja ja metodeja päästäksesi haluttuun lopputulokseen. Voit myös käyttää algoritmeja, kuten Mersenne Twister, jotka tuottavat sattumanvaraisempia lukuja kuin Math-luokan valmiit metodit.
+```
+0.3749218685137936
+6
+84
+orange
+```
 
-On myös hyvä huomata, että satunnaislukujen generoiminen on mahdotonta ilman ulkopuolista lähdettä, kuten ympäristön kohinaa tai tietokoneen kelloa. Tämä tarkoittaa, että vaikka satunnaislukuja voidaan pitää "sattumanvaraisina", ne ovat itse asiassa ennalta määrättyjä ja jäljitettäviä. Satunnaislukujen käyttöä salauksessa tuleekin harkita tarkkaan.
+## Syväsukellus
+
+`Math.random()` -metodi palauttaa desimaaliluvun välillä 0-1. Halutessamme generoida kokonaislukuja tai määrittää tietyn välialueen, käytämme apuna `Math.floor()` -metodia, joka pyöristää annetun luvun alaspäin lähimpään kokonaislukuun.
+
+Satunnaislukujen luomisessa kannattaa myös huomioida, että kyseessä ei ole oikeasti täysin satunnaisia lukuja. Ne perustuvat tietokoneen kelloa jäljittelevään algoritmiin, joka tuottaa saman sarjan lukuja, jos sitä käytetään samassa järjestyksessä. Tämä tarkoittaa, että emme voi luottaa täysin satunnaisuuteen, etenkin jos generoimme suuren määrän lukuja.
 
 ## Katso myös
-- [Math-luokan dokumentaatio TypeScriptissä](https://www.typescriptlang.org/docs/handbook/stdlib.html#math)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
+
+- [Official TypeScript documentation for Math class](https://www.typescriptlang.org/docs/handbook/standard-library.html#math)
+- [Blog post: The dangers of relying on Math.random()](https://stackabuse.com/random-number-generation-in-javascript/)

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Send en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Send en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Elixir: Å sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,37 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når du jobber med Elixir-programmering, er det ofte nødvendig å kommunisere med andre tjenester og API-er ved hjelp av HTTP. For å sikre at disse kommunikasjonene er trygge, kan det være nødvendig å sende en HTTP-forespørsel med grunnleggende autentisering. Dette sikrer at kun autoriserte brukere får tilgang til tjenesten, og beskytter sensitiv informasjon.
+Hvorfor ville noen sende en HTTP-forespørsel med grunnleggende autentisering? Det kan være nyttig for å legge til et ekstra lag av sikkerhet til en nettapplikasjon. Basic authentication krever at brukeren gir et brukernavn og et passord for å få tilgang til en ressurs, og er derfor en enkel måte å beskytte sensitive data på.
 
 ## Hvordan
 
-For å sende en HTTP-forespørsel med grunnleggende autentisering, må du først opprette en mappe som inneholder forespørselsinformasjon. Dette inkluderer URL-en til tjenesten, nødvendige parametere og eventuelle kroppsdeler. Deretter kan du bruke Elixir sin innebygde HTTP-client, `HTTPoison`, til å sende forespørselen.
+Å sende en HTTP-forespørsel med grunnleggende autentisering i Elixir er enkelt. Først må vi importere modulen for å sende HTTP-forespørsler, og deretter legge til autentiseringsinformasjon i headeren til forespørselen.
 
 ```elixir
-# Opprett en mappe med forespørselsinformasjon
-request = %{
-   url: "https://example.com/api",
-   method: :get,
-   headers: ["Authorization": "Basic <base64 encoded credentials>"],
-   params: %{type: "article", id: 123}
-}
+# Importer HTTP-modulet
+import HTTPoison
 
-# Send forespørselen og lagre svaret
-response = HTTPoison.get(request.url, [], request.headers, request.params)
+# Definer autentiseringsinformasjon
+auth = {:basic, "brukernavn", "passord"}
 
-# Skriv ut svaret
-IO.inspect response.body # => "Data fra tjenesten"
+# Send en GET-forespørsel med basic authentication
+{:ok, response} = HTTPoison.get("https://eksmpel.com/api/ressurs", [auth: auth])
+
+# Skriv ut statuskoden for responsen
+IO.puts(response.status_code)
 ```
 
-Vær oppmerksom på at brukernavnet og passordet må kodes til base64 format i autoriseringshodet før det sendes som en del av forespørselen.
+Dette vil sende en HTTP-forespørsel til "https://eksmpel.com/api/ressurs" og autentisere med brukernavn og passord som er gitt i "auth" variabelen. Hvis autentiseringen er vellykket, vil statuskoden til responsen være 200, ellers vil det være en annen feilkode.
 
 ## Dypdykk
 
-HTTP-forespørsler med grunnleggende autentisering bruker en HTTP-header kalt "Authorization" som inneholder informasjon om brukernavn og passord. Dette er en vanlig metode for autentisering, men det er viktig å merke seg at informasjonen som sendes er kryptert og ikke garantert å være sikker.
+HTTP-forespørsler med grunnleggende autentisering bruker en enkel autentiseringsprotokoll som krever brukernavn og passord som sendes i klartekst. Dette gjør det sårbart for avlytting, så det anbefales å bruke HTTPS i stedet for HTTP når du bruker basic authentication. En annen begrensning er at basic authentication ikke støtter utlogging, så brukeren må sende utloggingsforespørsel for å bli logget ut.
 
-For å sikre kommunikasjonen ytterligere, kan det være lurt å se på andre autentiseringsmetoder som OAuth eller API-nøkler. Disse gir en mer robust og sikker måte å autentisere HTTP-forespørsler på.
+## Se også
 
-## Se Også
-
-- Offisiell Elixir dokumentasjon om HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
-- En grundig guide om å bruke HTTP i Elixir: https://www.poeticoding.com/securing-api-requests-using-basic-authentication-in-elixir/
+* [HTTPoison dokumentasjon](https://github.com/edgurgel/httpoison)
+* [Elixir HTTP-håndbok](https://hexdocs.pm/elixir/http.html)
+* [Grunnleggende autentiseringsprotokoll](https://www.w3.org/Protocols/rfc2617/rfc2617.html)

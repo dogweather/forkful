@@ -1,6 +1,7 @@
 ---
-title:                "C: डायरेक्टरी का अस्तित्व जांच करना"
-simple_title:         "डायरेक्टरी का अस्तित्व जांच करना"
+title:                "डायरेक्टरी मौजूद है कि नहीं जांचना"
+html_title:           "C: डायरेक्टरी मौजूद है कि नहीं जांचना"
+simple_title:         "डायरेक्टरी मौजूद है कि नहीं जांचना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-एक डायरेक्ट्री का अस्तित्व जांचना क्यों जरूरी है? एक फ़ोल्डर में उपलब्ध फ़ाइलों और डाटा को पहचानने के लिए यह जानना आवश्यक होता है कि वहां उस फ़ोल्डर में एक् डायरेक्ट्री मौजूद है या नहीं।
+Kya aap kabhi apne program ke andar kisi directory ki existence ka pata lagana chahte hai? Yeh zaruri hai jab aap kisi file ko read ya write karna chahte hai aur uske liye woh directory exist hona chahiye. Is article mein hum dekhenge ke directory ki existence kaise check ki jaa sakti hai aur iska kya importance hai.
 
-## कैसे
+## Kaise Karein
 
-```C
+```
+C
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 
-int main()
-{
-    char *path = "my_folder"; // अपने फ़ोल्डर का नाम यहां लिखें
-    struct stat stats;
+int main() {
+    char* path = "/home/user/example_dir";
 
-    if (stat(path, &stats) == 0) // स्टैट फ़ंक्शन कोल करें
-    {
-        if (S_ISDIR(stats.st_mode)) // फ़ोल्डर है कि नहीं यह कंडीशन चेक करें
-        {
-            printf("दिए गए फ़ोल्डर में एक् डायरेक्ट्री है।\n");
-        }
-        else
-        {
-            printf("दिए गए फ़ोल्डर में एक् डायरेक्ट्री नहीं है।\n");
-        }
-    }
-    else
-    {
-        printf("फ़ोल्डर नहीं में है।\n");
+    if (access(path, F_OK ) != -1 ) {
+        printf("Directory exists.\n");
+    } else {
+        printf("Directory does not exist.\n");
     }
 
     return 0;
 }
 ```
+Output:
+```
+Directory exists.
+```
 
-उपरोक्त कोड में, हम "sys/stat.h" और "sys/types.h" लाइब्ररी का इस्तेमाल करके फ़ोल्डर के सभी स्टैटस जानकारी को पढ़ते हैं। फिर स्टैट फ़ंक्शन कोल करके पता लगाते हैं कि दिए गए पाथ से फ़ोल्डर में एक् डायरेक्ट्री है या नहीं। अगर फ़ोल्डर है, तो हम उसे डायरेक्ट्री के रूप में पहचानते हैं और साथ ही उसकी स्टैटस भी दिखाते हैं। पर अगर फ़ोल्डर नहीं है तो हम उसे डायरेक्ट्री के रूप में नहीं पहचानते और साथ ही उसका स्टैटस भी दिखाते हैं।
+Yahan humne C programming language mein ek code example diya hai. Ismein humne `access()` function ka use kiya hai jo `unistd.h` library mein available hai. Humne `access` function mein do parameters diye hai - path aur `F_OK` constant. Agar directory exist karti hai, toh hum `Directory exists` print karenge. Agar directory exist nahi karti, toh hum `Directory does not exist` print karenge. Is tarah se hum code mein `if` condition se directory ki existence check kar sakte hai.
 
-ये सब कोड का एक आसान उदाहरण है जो आपको समझने में मदद करेगा कि आप कैसे अपने को
+## Deeper Info
+
+Directory ki existence check karne ke liye hum `access()` ya `stat()` function ka use kar sakte hai. `access()` function mein hum `F_OK` ke saath aur bhi options jaise `R_OK` (read), `W_OK` (write), `X_OK` (execute) ka use kar sakte hai. Agar hum sirf directory ki existence check karna chahte hai, toh `F_OK` ka use karna sufficient hai.
+
+## Dekhiye Bhi
+
+- [Online C Compiler](https://www.onlinegdb.com/online_c_compiler)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/c-programming-language/)
+- [The C Book](https://publications.gbdirect.co.uk/c_book/)

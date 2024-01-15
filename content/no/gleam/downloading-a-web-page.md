@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Gleam: Å laste ned en nettside"
+simple_title:         "Å laste ned en nettside"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Så, du er nysgjerrig på hva Gleam har å tilby for å laste ned nettsider? Vel, det er et nyttig verktøy som lar deg hente data fra nettsider i et strukturert format. Kanskje du vil lage en web scraping applikasjon, eller kanskje du bare trenger å få tak i noen data fra en nettside for å bruke i ditt eget prosjekt. Uansett, Gleam har deg dekket!
+Hvorfor laste ned en nettstedsside? Det kan være mange grunner - kanskje du trenger å analysere data fra siden, eller du ønsker å lagre informasjonen for senere bruk.
 
-##Slik gjør du det
+## Slik gjør du det
 
-Å laste ned en nettside ved hjelp av Gleam er enkelt. Alt du trenger å gjøre er å følge disse trinnene:
+For å laste ned en nettstedsside i Gleam, kan du bruke funksjonen `download.binary()` i HTTP biblioteket. Denne funksjonen tar inn en URL som parameter og returnerer en `Result` som enten er en `Ok` med binærdata fra nedlastingen, eller en `Err` med en feilmelding.
 
-1. Importer "HTML" pakken fra Gleam i ditt prosjekt
-   ```Gleam
-   import html
-   ```
+```Gleam
+import http
 
-2. Bruk "get" funksjonen fra "Html.Downloader" modulen til å hente nettsiden 
-   ```Gleam
-   Html.Downloader.get("https://www.example.com")
-   ```
+let result = http.download.binary("https://www.example.com")
 
-3. Du kan også angi en brukeragent for å få en spesifikk respons fra nettsiden 
-   ```Gleam
-   Html.Downloader.get("https://www.example.com", {user_agent: "Gleam Web Scraper"})
-   ```
+case result {
+    Ok(data) -> {
+        // Gjør noe med den binære dataen
+        // For eksempel lagre den til en fil
+        File.put_contents("./site.html", data)
+        Ok("Nettstedet ble lastet ned og lagret!")
+    }
+    Err(error) -> {
+        // Håndter eventuelle feil
+        Err(error)
+    }
+}
+```
 
-4. Hvis du vil bruke en annen HTTP metode, som POST eller PUT, kan du angi det som en tredje argument 
-   ```Gleam
-   Html.Downloader.get("https://www.example.com", {}, :post)
-   ```
+Output:
 
-5. Og det er det! Nå har du hentet nettsiden og kan begynne å analysere og behandle dataene.
+```
+Nettstedet ble lastet ned og lagret!
+```
 
-##Dypere dykk
+## Dypdykk
 
-Gleam sin HTML modul gir deg også muligheten til å behandle responsen fra et nettsted ved å konvertere den til et "Document" objekt. Dette gjør det enklere å navigere og trekke ut spesifikk informasjon fra nettsiden. Du kan også bruke CSS selektorer til å finne spesifike elementer og data på en nettside.
+Når du laster ned en nettstedsside, får du tilgang til all informasjonen som er på den siden. Dette kan være svært nyttig for å hente ut data eller holde en kopi av en side for fremtidig referanse. Du kan også bruke Gleam sine innebygde stringfunksjoner for å manipulere og analysere innholdet på siden.
 
-Det er også verdt å merke seg at du kan bruke Gleam sine HTTP funksjoner til å sende forespørsler til nettsider og behandle responsen uten å laste ned hele nettsiden. Dette kan være nyttig hvis du bare trenger å hente en liten del av en nettside.
+## Se også
 
-##Se også
-
-- [HTML dokumentasjon i Gleam](https://gleam.run/modules/Html.html)
-- [Eksempler på web scraping med Gleam](https://github.com/gleam-lang/scraper-examples)
-- [Eksempelprosjekt for å laste ned nettsider med Gleam](https://github.com/gleam-lang/example-web-scraper)
+- [Gleam HTTP bibliotek](https://gleam.run/documentation/std-lib-http/)
+- [Offisiell Gleam nettside](https://gleam.run/)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Extraindo substrings"
-simple_title:         "Extraindo substrings"
+title:                "Extraindo subcadeias"
+html_title:           "Javascript: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que extração de substrings é útil para programadores
+## Por que extrair substrings é útil?
 
-Extração de substrings é uma técnica muito útil na programação Javascript, especialmente quando se trabalha com grandes strings de texto. Com essa técnica, é possível obter partes específicas do texto de maneira rápida e eficiente, facilitando a manipulação e análise das informações contidas na string. 
+Extrair substrings é útil quando você precisa obter uma parte específica de uma string maior. Isso pode ser útil em situações como manipulação de dados e formatação de texto.
 
-## Como extrair substrings em Javascript
+## Como Fazer
 
-Para extrair substrings em Javascript, utilizamos o método `substring()` que recebe dois parâmetros: o índice inicial e o índice final desejado. Por exemplo: 
-
-```Javascript
-let str = "Hello World";
-let substring = str.substring(6, 11);
-console.log(substring); // Output: World
-```
-
-Neste exemplo, extraímos a substring "World" a partir do índice 6 até o índice 10 da string original. É importante notar que o índice final não é incluído na substring resultante.
-
-Além do `substring()`, também é possível utilizar o método `slice()` para extrair substrings em Javascript. A diferença entre eles é que o `substring()` não aceita índices negativos, enquanto o `slice()` permite a contagem a partir do final da string. 
+Extrair substrings é simples com o uso do método `substring()` em Javascript. Veja abaixo um exemplo de como usar esse método:
 
 ```Javascript
-let str = "Hello World";
-let substring = str.slice(-5, -1);
-console.log(substring); // Output: Worl
+let texto = "Olá, mundo!";
+let extrair = texto.substring(0, 4);
+
+console.log(extrair);
 ```
 
-## Uma visão mais profunda sobre a extração de substrings
+Este código irá retornar "Olá" como saída, pois estamos extraindo os caracteres da posição 0 até a posição 3 da string original.
 
-Além de extrair substrings a partir de índices específicos, também é possível utilizar outros métodos para encontrar e extrair substrings baseadas em certas condições. Por exemplo, o método `indexOf()` retorna o primeiro índice onde uma determinada substring é encontrada na string original. Podemos então utilizar esse índice como parâmetro para o método `substring()` ou `slice()` para extrair a substring desejada. 
+Você também pode usar índices negativos para extrair uma substring a partir do final da string. Por exemplo:
 
 ```Javascript
-let str = "Hello World";
-let index = str.indexOf("W");
-let substring = str.substring(index);
-console.log(substring); // Output:World
+let texto = "Olá, mundo!";
+let extrair = texto.substring(-6);
+
+console.log(extrair);
 ```
 
-Outro método útil é o `split()` que divide uma string em um array de substrings, utilizando um caractere ou expressão regular como separador. 
+Neste caso, a substring retornada será "mundo!", contando 6 caracteres a partir do final da string original.
 
-```Javascript
-let str = "Hello World";
-let words = str.split(" "); // Separa em palavras
-console.log(words); // Output: ["Hello", "World"]
-```
+## Mergulho Profundo
 
-## Veja também
+Além do método `substring()`, existem outras maneiras de extrair substrings em Javascript. Por exemplo, você pode usar o método `slice()` ou realizar manipulações com a propriedade `length` de uma string.
 
-- [Documentação MDN sobre o método substring()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Documentação MDN sobre o método slice()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Documentação MDN sobre o método indexOf()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-- [Documentação MDN sobre o método split()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+É importante notar que o índice de início do método `substring()` é inclusivo, ou seja, o caracter na posição de início será incluído na substring. Já o índice de fim é exclusivo, ou seja, o caracter na posição de fim não será incluído na substring resultante.
+
+## Veja Também
+
+- [Documentação do método `substring()` em MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Diferenças entre `substring()` e `slice()` em Javascript](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [Manipulação de strings em Javascript](https://www.geeksforgeeks.org/javascript-string-manipulation/)

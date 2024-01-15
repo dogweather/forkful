@@ -1,5 +1,6 @@
 ---
-title:                "Swift: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Swift: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,34 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+### למה
 
-שליחת בקשת HTTP היא כלי חיוני בכל פרוייקט של פיתוח אפליקציות עם כמעט כל שימוש ברשת. בעזרת הבקשה, אנו יכולים לקבל מידע משרת ולשלוח פעולות למשתמשים אחרים באפליקציה.
+אנשים משתמשים בקריאת בקשת HTTP כאמצעי לגשת למידע שנמצא בשרתים מרוחקים. זה מאפשר להם לקבל תגובה מהר יותר ולשתף מידע עם מספר שרתים באופן מקבילי.
 
-## כיצד לעשות זאת
+### איך לעשות זאת
 
-על מנת לשלוח בקשת HTTP בקוד Swift, ניתן להשתמש במחלקת `URLRequest`. לפניכם דוגמא לכיצד ליצור בקשה GET ולשלוח אותה:
+כדי לשלוח בקשת HTTP באמצעות שפת סוויפט, ניתן להשתמש במחלקה המובנית URLSession ולבחור בין מתודות כמו `dataTask` או `uploadTask` על פי הצורך. להלן מספר דוגמאות קוד והתוצאות המצורפות.
 
 ```Swift
-if let url = URL(string: "https://www.example.com") {
-    var request = URLRequest(url: url)
-    request.httpMethod = "GET"
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        if let data = data {
-            print("Response data: \(data)")
-        }
-    }
-    task.resume()
+// דוגמא 1: שליחת בקשת GET
+let url = URL(string: "https://www.example.com/api/data")
+let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+	guard let data = data, error == nil else {
+		print("שגיאה בתהליך קבלת המידע: \(error?.localizedDescription)")
+		return
+	}
+	let response = response as? HTTPURLResponse
+	print("קוד תגובה: \(response!.statusCode)")
+	print("תוכן התגובה: \(String(data: data, encoding: .utf8)!)")
 }
+task.resume()
 ```
 
-כאן אנו משתמשים ב-`URLSession` כדי לבצע את הבקשה ומקבלים את התשובה בפורמט של מערך `Data`.
+תוצאה:
+```
+קוד תגובה: 200
+תוכן התגובה: {"name": "John Doe", "age": 30}
+```
 
-## חפירה עמוקה
+```Swift
+// דוגמא 2: שליחת בקשת POST עם גוף נתונים
+let url = URL(string: "https://www.example.com/api/addUser")
+var request = URLRequest(url: url!)
+request.httpMethod = "POST"
+request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+let jsonBody = ["name": "Jane Smith", "age": 25]
+let jsonData = try JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted)
+request.httpBody = jsonData
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+	guard let data = data, error == nil else {
+		print("שגיאה בתהליך קבלת המידע: \(error?.localizedDescription)")
+		return
+	}
+	let response = response as? HTTPURLResponse
+	print("קוד תגובה: \(response!.statusCode)")
+	print("תוכן התגובה: \(String(data: data, encoding: .utf8)!)")
+}
+task.resume()
+```
 
-תהליך של שליחת בקשת HTTP מכיל מספר צעדים נוספים, כגון הוספת נתונים לבקשה (POST), שימוש בסוגי נתונים שונים כמו JSON או מתחילת הקוד של הבקשה. כאשר אנו מתכנתים בסביבת Swift, אנו יכולים להיעזר בספריות חיצוניות כגון Alamofire כדי לספק לנו פעולות נוספות ותכונות לניהול הבקשות שלנו.
+תוצאה:
+```
+קוד תגובה: 201
+תוכן התגובה: {"message": "המשתמש Jane Smith נוסף בהצלחה!"}
+```
 
-## ראו גם
+### חקירה מעמיקה
 
-- [מדריך לשליחת בקשת HTTP עם Swift](https://www.hackingwithswift.com/articles/113/how-to-send-an-http-request-using-swift)
-- [ספריית Alamofire לניהול דרישות של HTTP](https://github.com/Alamofire/Alamofire)
+לשלוח בקשת HTTP ניתן להזדהות עם כל סוג URL ולהשתמש בכל טיפוסי HTTP מתאימים. ניתן גם לציין כתובת URL מלאה כארגומנט לכל המתודות הראשיות של URLSession.
+
+### ראו

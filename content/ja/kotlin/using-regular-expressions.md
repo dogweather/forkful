@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 正規表現を使用する"
+title:                "正規表現を使用する"
+html_title:           "Kotlin: 正規表現を使用する"
 simple_title:         "正規表現を使用する"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜRegular Expressionsを使うのか
-正規表現はコンピューター上でパターンマッチングを行うための強力なツールです。文字列パターンを比較や検索する際に、時間や手間を節約することができます。
+## なぜ使うのか
+正規表現を使うことの最大のメリットは、複雑なテキスト操作を簡単に行えることです。文字列を検索したり、置換したり、パターンにマッチする部分を取り出したりすることができます。
 
 ## 使い方
-下記のように、Kotlinのコードブロックで実際のプログラミング例と出力を示します。
+正規表現を使って文字列を検索するには、Kotlinの `Regex` クラスを使用します。例えば、以下のコードは文字列中に "apple" という単語が含まれる場合に `true` を返します。 
 
 ```Kotlin
-// 入力文字列
-val input = "こんにちは、私はコーディです。"
-
-// "コーディ"というパターンを正規表現で検索し、見つかった場合は出力する
-val pattern = Regex("コーディ")
-val result = pattern.find(input)
-println("パターンにマッチする文字列は ${result?.value} です。")
-
-// "私[はが]"というパターンを正規表現で置換し、出力する
-val replaced = input.replace(Regex("私[はが]"), "僕")
-println("置換後の文字列は $replaced です。")
+val text = "I love eating apples!"
+val regex = Regex("apple")
+println(text.contains(regex))
+// Output: true
 ```
 
-出力は次のようになります。
+正規表現には特殊な記号や文字クラスを使用することができます。例えば、 `.` は任意の1文字を表し、 `\d` は数字にマッチします。以下の例は、数字が含まれる文字列を検索するコードです。
 
+```Kotlin
+val text = "There are 10 cats in the house."
+val regex = Regex("\\d+")
+println(regex.find(text)?.value)
+// Output: 10
 ```
-パターンにマッチする文字列は コーディ です。
-置換後の文字列は こんにちは、僕はコーディです。 です。
-```
 
-## 深堀り
-正規表現は様々な文字列操作で便利に使われます。例えば、文字列内の特定の単語の出現をカウントすることや、特定の形式に整形することができます。また、文字列のバリデーションやURLの抽出などにも用いることができます。正規表現を熟知することで、より効率的なプログラミングが可能になります。
+置換やパターンにマッチする部分の取り出しも、同じ `Regex` クラスを使って行うことができます。詳細な使い方は[公式ドキュメンテーション](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)を参照してください。
 
-## さらに見る
-- [Kotlin公式ドキュメント: 正規表現](https://kotlinlang.org/docs/regular-expressions.html)
-- [入門正規表現](https://codezine.jp/article/detail/11191)
-- [正規表現のデバッグ方法](https://uhyohyo.net/software/regex/regex_debugging.html)
+## 詳細な説明
+正規表現は強力なツールですが、覚えることが多くとっつきにくい面もあります。実際のプログラミングでは、実用的な問題に対してどのように正規表現を使うかをよく考える必要があります。また、マッチするパターンが複数ある場合や、複雑なパターンを扱う場合には、これらをどのように処理するかも重要なポイントとなります。正規表現のベストプラクティスを学ぶために、多くの実践的な例をチェックしてみてください。
+
+## 関連リンク
+- [正規表現の基本](https://www.javadrive.jp/regex/)
+- [正規表現チュートリアル](https://regexone.com/)
+- [Kotlin公式ドキュメント](https://kotlinlang.org/)の"Regex"のセクション

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Drukowanie danych diagnostycznych"
+title:                "Drukowanie danych diagnostycznych"
+html_title:           "Swift: Drukowanie danych diagnostycznych"
 simple_title:         "Drukowanie danych diagnostycznych"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,43 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Drukowanie wyjścia debugowania jest niezbędne podczas tworzenia i debugowania aplikacji w języku Swift. Umożliwia ono programistom łatwiejsze zrozumienie wykonania programu oraz wykrywanie błędów.
+Debugowanie jest nieodłączną częścią procesu tworzenia aplikacji. Często jest to jedyny sposób na znalezienie i naprawienie błędów w kodzie. Wypisywanie informacji o bieżącym stanie programu jest niezwykle pomocne podczas rozwiązywania problemów, dlatego warto nauczyć się drukować wyjścia debugowania.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby wydrukować wyjście debugowania, możemy użyć funkcji `print()` w języku Swift. Przykładowy kod wyglądałby następująco:
+Aby wyświetlić informacje debugowe w konsoli w języku Swift, należy użyć funkcji `print`. Można wyświetlić różnego rodzaju dane, takie jak wartości zmiennych, komunikaty tekstowe czy struktury danych. Poniżej znajdują się przykładowe kody, które pokazują, jak wykorzystać funkcję `print` w praktyce.
 
-```Swift
-let name = "John"
-let age = 30
-print("Imię: \(name), wiek: \(age)")
-```
-
-Po uruchomieniu powyższego kodu, w konsoli wyświetli się następujące wyjście:
-
-```
-Imię: John, wiek: 30
-```
-
-Możemy również dodawać zmienne lub wyrażenia wewnątrz funkcji `print()`, co ułatwia śledzenie wartości tych elementów w trakcie wykonywania programu. Na przykład:
+### Wyświetlanie wartości zmiennych
 
 ```Swift
-let a = 10
-let b = 20
-let sum = a + b
-print("Wartość a: \(a), wartość b: \(b), suma: \(sum)")
+let liczba = 42
+print(liczba)
+// Output: 42
+
+let imie = "Adam"
+print("Witaj, \(imie)!")
+// Output: Witaj, Adam!
 ```
 
-Za pomocą funkcji `print()` możemy również wyświetlać informacje o zmiennych i obiektach w aplikacji w celu śledzenia ich wartości i stanu.
+### Wyświetlanie komunikatu tekstowego
 
-## Głębsze zanurzanie się
+```Swift
+print("Błąd - wartość nie może być mniejsza niż 0")
+// Output: Błąd - wartość nie może być mniejsza niż 0
+```
 
-W języku Swift istnieje wiele funkcji i opcji związanych z drukowaniem wyjścia debugowania, takich jak `debugPrint()` i `dump()`. Pozwalają one na drukowanie informacji o obiektach i strukturach w bardziej szczegółowy sposób.
+### Wyświetlanie struktur danych
 
-Możemy również wykorzystać tzw. "breakpoints" w środowisku programistycznym Xcode, aby zatrzymać wykonanie programu w określonym miejscu i sprawdzić wartość wybranych zmiennych i obiektów.
+```Swift
+let uczestnicy = ["Adam", "Ewa", "Jan"]
+print(uczestnicy)
+// Output: ["Adam", "Ewa", "Jan"]
 
-## Zobacz również
+let punkt = (x: 5, y: 10)
+print(punkt)
+// Output: (5, 10)
+```
 
-- [Oficjalna dokumentacja Swift: Debugging](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
-- [Tutorial: Introduction to Debugging in Swift](https://www.raywenderlich.com/41-debugging-in-swift)
-- [10 Tips and Tricks for Debugging in Swift](https://medium.com/flawless-app-stories/10-tips-and-tricks-for-debugging-swift-code-9a8ba14f8f53)
+## Wnikliwa Analiza
+
+Możliwość drukowania wyjść debugowania może być szczególnie przydatna w przypadku dużych i złożonych aplikacji, gdzie trudno jest śledzić przebieg programu. Dodatkowo, funkcja ta może być także wykorzystana jako prosty sposób na weryfikację poprawności działania kodu podczas jego tworzenia.
+
+Należy jednak pamiętać, że drukowanie zbyt dużej ilości wyjść debugowania może spowolnić działanie aplikacji. Dlatego warto usuwać niepotrzebne wywołania funkcji `print` po zakończeniu debugowania lub wykorzystywać odpowiednie narzędzia do debugowania, takie jak debugger wbudowany w Xcode.
+
+## Zobacz Również
+
+- [Dokumentacja Swift - Debugowanie](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
+- [Wideo: Debugowanie w języku Swift](https://www.youtube.com/watch?v=QiVjQJPaC8s)
+- [Artykuł: Prosty sposób na debugowanie w Swift](https://medium.com/@innovati4u/simple-way-of-debugging-swift-code-8e3fbe4673e9)

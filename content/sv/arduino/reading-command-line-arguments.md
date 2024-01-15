@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Läsa kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Arduino: Läsa kommandoradsargument"
 simple_title:         "Läsa kommandoradsargument"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,53 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför?
+# Varför
 
-När vi programmerar kommer vi ibland över situationer där vi behöver läsa in argument från kommandoraden. Det kan vara ett sätt att interagera med vårt program på ett mer dynamiskt sätt. I denna bloggpost kommer vi att lära oss hur man kan läsa in kommandoradsargument i Arduino.
+Att läsa kommandoradsargument kan vara användbart i Arduino-programmering för att göra koden mer flexibel och anpassningsbar. Det kan också vara användbart för att skicka kommandon eller parametrar till din Arduino via en extern enhet eller program.
 
-# Så här gör du
+## Hur du gör det
 
-Först måste vi inkludera standardbiblioteket `CommandLine` som ger oss möjlighet att läsa in kommandoradsargument. Sedan behöver vi initiera en instans av `CommandLine` och definiera vilka argument vi vill läsa in. I exemplet nedan läser vi in två argument - ett heltal och en sträng.
+För att läsa kommandoradsargument i Arduino, behöver du först inkludera biblioteket "Arduino.h". Sedan kan du använda funktionen "Serial.readString()" för att läsa de inkommande kommandona som en sträng.
 
-```Arduino
-#include <CommandLine.h>
-
-CommandLine cmd; // Initiera instans av CommandLine
+```arduino
+#include <Arduino.h>
 
 void setup() {
-  // Definiera argument - ett heltal och en sträng
-  cmd.addOption("intArg", 'i');
-  cmd.addOption("strArg", 's');
+  // Initiera seriell kommunikation
+  Serial.begin(9600);
 }
 
 void loop() {
-  // Kontrollera om det finns kommandoradsargument tillgängliga
-  if (cmd.readCommand()) {
-    // Läs in argumenten och spara dem i variabler
-    int num = cmd.getValue("intArg");
-    String str = cmd.getValue("strArg");
-    
-    // Skriv ut argumenten till serien
-    Serial.print("Heltal: ");
-    Serial.println(num);
-    Serial.print("Sträng: ");
-    Serial.println(str);
-  }
+
+  // Läser inkommande kommandoradsargument som en sträng
+  String input = Serial.readString();
+
+  // Skriver ut inkommande kommando
+  Serial.println(input);
 }
 ```
 
-Om vi nu till exempel kör vårt program med kommandoradsargumentet `-i 10 -s hej`, kommer vi att få följande utskrift i seriell monitor:
+Om du skickar "LED ON" till din Arduino via den seriella kommunikationen, kommer det att skrivas ut "LED ON" i seriell monitor.
 
-```
-Heltal: 10
-Sträng: hej
-```
+## Djupdykning
 
-# Deep Dive
-
-Det finns även andra funktioner som finns tillgängliga i `CommandLine`-biblioteket. Till exempel så kan vi kontrollera om ett specifikt argument finns med i kommandoraden med hjälp av `hasOption()` funktionen och vi kan även återställa alla argument med `clear()` funktionen. För mer detaljerad information kan du läsa dokumentationen för `CommandLine`-biblioteket.
+Du kan också använda funktionen "Serial.parseInt()" för att läsa inkommande nummer eller använda olika argument för att läsa inkommande bokstäver som t.ex "Serial.read()". Du kan också lägga till felhantering för att hantera ogiltiga kommandon eller argument.
 
 # Se även
 
-- [Dokumentation för CommandLine-biblioteket](https://github.com/arduino-libraries/CommandLine)
-- [Tutorial om användning av kommandoradsargument i Arduino](https://www.arduino.cc/en/Tutorial/CommandLineArguments)
+- [Arduino Serial Programming](https://www.arduino.cc/en/Serial/Read)
+- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Arduino Forum - Reading Arguments](https://forum.arduino.cc/index.php?topic=335535.0)

@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Aloittaminen uusi projekti"
-simple_title:         "Aloittaminen uusi projekti"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Swift: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -11,30 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi aloittaa uusi ohjelmointiprojekti? Moni saattaa kysyä tätä itseltään ennen kuin tarttuu koodaushaasteeseen. Mutta onneksi vastaus on yksinkertainen - koska se on hauskaa ja opettavaista! Uuden projektin aloittaminen antaa mahdollisuuden kehittää taitojaan ja luoda jotain ainutlaatuista.
+Miksi aloittaa uusi projekti? Vastaus on yksinkertainen - haasteet, oppiminen ja luovuus! Uuden projektin aloittaminen tarjoaa mahdollisuuden kehittää uusia taitoja ja tuottaa jotain uniikkia ja arvokasta.
 
-## Kuinka
+## Miten aloittaa uusi projekti
 
-Aloittaaksesi uuden ohjelmointiprojektin Swiftillä, tarvitset tietokoneen ja Xcode-ohjelmiston, joka on saatavilla ilmaiseksi App Storesta. Kun olet asentanut Xcoden, voit aloittaa uuden projektin valitsemalla "File" ja sitten "New" valikosta.
+Aloittaaksesi uuden projektin Swift-kielellä tarvitset ensin ohjelmointiympäristön. Suosittuja vaihtoehtoja ovat esimerkiksi Xcode tai Visual Studio Code, jotka voit ladata ilmaiseksi. Kun ohjelmointiympäristö on valmis, voit aloittaa koodaamisen!
 
-Seuraavaksi valitse "Single View App" ja anna projektillesi nimi. Voit myös valita alustan, jolle haluat kehittää (esimerkiksi iOS tai macOS). Nyt voit aloittaa koodaamisen!
-
-Alla on esimerkki koodista, joka tulostaa "Hei maailma!" konsoliin:
+Kun olet aloittamassa uutta projektia, tärkeintä on määrittää selkeä tavoite ja suunnitella etenemissuunnitelma. Näin varmistat, että projekti etenee tehokkaasti ja tavoitteisiin päästään. Alla on esimerkki yksinkertaisesta projektista käyttäen Swiftin perusrakenteita.
 
 ```Swift
+// Tulostaa tervehdyksen konsoliin
 print("Hei maailma!")
+
+// Määrittää kaksi muuttujaa ja laskee niiden summan
+var luku1 = 5
+var luku2 = 10
+print(luku1 + luku2) // Tulostaa 15
 ```
 
-Kun olet valmis, voit suorittaa koodisi painamalla "Run"-painiketta Xcoden yläpalkista. Tämä avaa simulointiympäristön, jossa voit nähdä koodisi ulostulon.
+Muista myös aina testata koodiasi ja hakea tarvittaessa apua esimerkiksi oppimateriaaleista tai keskustelufoorumeilta.
 
-## Syväsukellus
+## Syvempi sukellus
 
-Kun olet oppinut perusteet, voit aloittaa syväsukelluksen Swiftin maailmaan. Voit esimerkiksi alkaa tutkia erilaisia ​​Swift-kirjastoja ja -kehyksiä, joita voit käyttää projektissasi. Voit myös opetella edistyneempiä aiheita, kuten moniketjutusta ja sovellusten arkkitehtuuria.
+Uuden projektin aloittaminen Swiftillä voi tuntua hieman haastavalta, mutta älä anna sen estää sinua. Tutustu Swiftin perusrakenteisiin ja tutki erilaisia ohjelmointityylejä ja -malleja.
 
-Aloittaminen uudella ohjelmointiprojektilla saattaa tuntua pelottavalta, mutta muista, että jokainen kehittäjä on kokenut aloittelija kerran. Uskalla kokeilla ja haastaa itsesi, ja älä anna vaikeuksien estää sinua oppimasta uutta.
+Kun olet perehtynyt perusteisiin, voit alkaa tutkia Swiftin monipuolisia ominaisuuksia, kuten esimerkiksi sen vahvaa tyyppisyyttä ja korkeatasoista suorituskykyä. Voit myös hyödyntää monia valmiita kirjastoja ja työkaluja, jotka tekevät ohjelmoinnista nopeampaa ja helpompaa.
+
+Muista myös jatkuvasti harjoitella ja kokeilla uusia asioita. Näin laajennat taitojasi ja voit luoda entistä upeampia projekteja!
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org)
-- [Apple Developer](https://developer.apple.com/swift/)
-- [Swift Playgrounds -sovellus](https://apps.apple.com/fi/app/swift-playgrounds/id908519492?l=fi)
+- [Swiftin virallinen dokumentaatio](https://swift.org/documentation/)
+- [Swiftin opetusohjelmat ja kurssit](https://developer.apple.com/swift/resources/)
+- [Stack Overflow -keskustelufoorumi Swiftille](https://stackoverflow.com/questions/tagged/swift)

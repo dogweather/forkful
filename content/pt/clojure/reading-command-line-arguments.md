@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Clojure: Lendo argumentos da linha de comando"
 simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,85 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando em Clojure?
+## Por que
 
-Ler argumentos da linha de comando pode ser útil para criar programas interativos ou para processar dados de entrada externos. Em Clojure, isso é feito facilmente usando a função `clojure.core/command-line-args`.
+Você pode se perguntar por que é importante aprender a ler argumentos de linha de comando na linguagem Clojure. A resposta é simples: os argumentos de linha de comando são uma maneira eficiente e poderosa de interagir com seus programas. Eles permitem que você personalize a execução do seu código de forma simples e direta, tornando sua aplicação mais versátil e amigável para o usuário final.
 
-## Como fazer:
+## Como Fazer
 
-Para começar, precisamos importar a função `command-line-args` do namespace `clojure.core`. Em seguida, podemos usar a função dentro de um bloco de código delimitado por ```Clojure ... ``` para ler os argumentos passados na linha de comando.
-
-Exemplo de código:
+A leitura de argumentos de linha de comando em Clojure é simples e pode ser feita com apenas algumas linhas de código. Primeiro, importe a biblioteca "clojure.tools.cli", que nos fornece funções para lidar com argumentos de linha de comando. Em seguida, defina as opções que seu programa deve aceitar, especificando o nome, o tipo e a descrição de cada opção. Por fim, basta chamar a função "parse-opts" e passar os argumentos da linha de comando, que serão transformados em um mapa contendo os valores das opções. Veja um exemplo abaixo:
 
 ```Clojure
 (ns meu-programa
-  (:require [clojure.core :refer [command-line-args]]))
-  
-(def argumentos-da-linha-de-comando (command-line-args))
+  (:require [clojure.tools.cli :refer [parse-opts]]))
 
-(print argumentos-da-linha-de-comando)
+(defn -main [& args]
+  (let [[options _ (parse-opts args
+                       [["-n" "--nome" "Nome do usuário. Requerido e deve estar em maiúsculas." :required true :type string]
+                        ["-i" "--idade" "Idade do usuário. Opcional e deve ser um número." :type integer]])
+        nome (get options :nome)
+        idade (get options :idade)]
+    (if nome
+      (println (str "Olá, " nome "! Sua idade é " idade "."))
+      (println "Por favor, informe o seu nome em maiúsculas com a opção -n."))))
+
 ```
 
-Exemplo de saída:
+Podemos então executar o programa com os seguintes argumentos da linha de comando:
 
 ```
-$ leitura-de-argumentos.clj primeiro-argumento segundo-argumento
-
-["primeiro-argumento" "segundo-argumento"]
+$ clojure meu-programa.clj -n JOÃO -i 30
+Olá, JOÃO! Sua idade é 30.
 ```
 
-Podemos também usar a função `get` para acessar argumentos específicos passando seu índice como parâmetro. Por exemplo:
+Caso não seja fornecido um valor para a opção "--nome", o programa irá exibir uma mensagem pedindo para que o usuário informe o nome com a opção "-n".
+
+## Mergulho Profundo
+
+A biblioteca "clojure.tools.cli" também nos permite definir validações para as opções, utilizando funções que retornam um booleano indicando se o valor fornecido é válido. Por exemplo, podemos modificar nosso programa para aceitar apenas idades maiores que 18 anos, utilizando a função "opt-long" no lugar de "opt-integer":
 
 ```Clojure
-(print (get argumentos-da-linha-de-comando 0))
-(print (get argumentos-da-linha-de-comando 1))
-```
+(ns meu-programa
+  (:require [clojure.tools.cli :refer [parse-opts opt-long]]))
 
-Exemplo de saída:
-
-```
-$ leitura-de-argumentos.clj primeiro-argumento segundo-argumento
-
-"primeiro-argumento"
-"segundo-argumento"
-```
-
-## Mergulho profundo:
-
-Além de ler argumentos passados na linha de comando, também podemos especificar argumentos com valores na forma de um vetor. Por exemplo:
-
-```Clojure
-(def argumentos-e-valores [["primeiro" "argumento"] ["segundo" "argumento"]])
-
-(print (get (get argumentos-e-valores "primeiro") 1))
-(print (get (get argumentos-e-valores "segundo") 1))
-```
-
-Exemplo de saída:
+(defn -main [& args]
+  (let [[options _ (parse-opts args
+                       [["-n" "--nome" "Nome do usuário. Requerido e deve estar em maiúsculas." :required true :type string]
+                        ["-i" "--idade" "Idade do usuário. Opcional e deve ser um número maior que 18." :type long :valid? #(> % 18)]])
+        nome (get options :nome)
+        idade (get options :idade)]
+    (if nome
+      (println (str "Olá, " nome "! Sua idade é " idade "."))
+      (println "Por favor, informe o seu nome em maiúsculas com a opção -n."))))
 
 ```
-"argumento"
-"argumento"
-```
 
-Também podemos usar a função `assoc` para adicionar novos argumentos e valores ao vetor. Por exemplo:
-
-```Clojure
-(def argumentos-e-valores (assoc argumentos-e-valores ["terceiro" "argumento"] ["quarto" "argumento"]))
-
-(print (get (get argumentos-e-valores "terceiro") 1))
-(print (get (get argumentos-e-valores "quarto") 1))
-```
-
-Exemplo de saída:
+Agora, se executarmos o programa com uma idade menor que 18, teremos o seguinte resultado:
 
 ```
-"argumento"
-"argumento"
+$ clojure meu-programa.clj -n MARIA -i 17
+Por favor, informe uma idade válida (maior que 18) com a opção -i.
 ```
 
-## Veja também:
+## Veja Também
 
-- [Documentação oficial do Clojure sobre command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
-- [Tutorial em vídeo sobre leitura de argumentos da linha de comando em Clojure (em inglês)](https://www.youtube.com/watch?v=XHIrC3DUBdM)
-- [Exemplos práticos de uso de command-line-args em projetos em Clojure (em inglês)](https://github.com/search?q=command-line-args+language%3Aclojure&type=Repositories)
+- [Documentação da biblioteca "clojure.tools.cli"](https://github.com/clojure/tools.cli)
+- [Tutorial sobre argumentos de linha de comando em Clojure](https://purelyfunctional.tv/series/commandline/)

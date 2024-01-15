@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Generando números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Haskell: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,67 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué deberías utilizar números aleatorios en Haskell?
+## Por qué
 
-La generación de números aleatorios es una habilidad fundamental en la programación, permitiendo la creación de programas y algoritmos más interesantes e impredecibles. Utilizar números aleatorios en Haskell puede llevar tus habilidades de programación al siguiente nivel e introducirte a nuevos conceptos y técnicas.
+Generar números aleatorios puede ser útil en muchos escenarios, desde juegos hasta simulaciones y pruebas de software. Con Haskell, podemos hacerlo de forma sencilla y precisa utilizando la librería `System.Random`.
 
 ## Cómo hacerlo
 
-Generar números aleatorios en Haskell es simple gracias a la biblioteca `System.Random`. Primero, debes importar el módulo utilizando `import System.Random`. Luego, puedes utilizar la función `random` para generar un número aleatorio en un rango específico.
+Para generar un número aleatorio en Haskell, debemos seguir los siguientes pasos:
 
+1. Importar la librería `System.Random` en nuestro archivo de código:
 ```Haskell
 import System.Random
-
--- Generar un número aleatorio entre 1 y 10
-randomNum :: IO Int 
-randomNum = randomRIO (1, 10)
-
-main :: IO ()
-main = do
-  num <- randomNum
-  putStrLn "Tu número aleatorio es:"
-  print num
 ```
-
-La función `randomRIO` toma dos argumentos: el inicio del rango y el final del rango. En nuestro ejemplo, el número aleatorio estará entre 1 y 10. También puedes utilizar la función `randomIO` para generar un número aleatorio de cualquier tipo, como una lista, un carácter o incluso una función.
-
+2. Utilizar la función `random` para generar un número aleatorio en el rango especificado. Por ejemplo, si queremos generar un número entre 1 y 10, podemos hacer lo siguiente:
 ```Haskell
-import System.Random
-
--- Generar una lista aleatoria de 5 elementos
-randomList :: IO [Int]
-randomList = sequence [randomIO | _ <- [1..5]]
-
-main :: IO ()
-main = do
-  list <- randomList
-  putStrLn "Tu lista aleatoria es:"
-  print list
+randomRIO (1, 10)
 ```
-
-## Profundizando en la generación de números aleatorios
-
-La función `randomRIO` utiliza un concepto llamado "generador de números aleatorios" para producir números aleatorios. Este generador comienza con una semilla y utiliza un algoritmo para producir una secuencia aparentemente aleatoria de números. La semilla determina la secuencia de números generados, lo que significa que usando la misma semilla obtendremos la misma secuencia de números. Esto es útil para hacer que tus programas sean predecibles en ciertas circunstancias.
-
-Sin embargo, también puedes utilizar una semilla diferente para obtener una secuencia diferente de números aleatorios. En nuestro ejemplo, no especificamos una semilla, por lo que Haskell utiliza una semilla predeterminada, pero puedes proporcionar tu propia semilla utilizando la función `newStdGen`.
-
+Esta función también puede usarse para otros tipos de datos, como caracteres y elementos de una lista.
+3. Para obtener el número aleatorio generado, debemos encerrar esta función en la mónada `IO` y utilizar la función `readLn` para leer la entrada del usuario. Por ejemplo:
 ```Haskell
-import System.Random
-
--- Generar una lista aleatoria de 5 elementos utilizando una semilla personalizada
-randomList :: Int -> IO [Integer]
-randomList seed = do
-  gen <- newStdGen
-  return $ take 5 (randomRs (1, 10) gen)
-
-main :: IO ()
-main = do
-  list <- randomList 42 -- utilizar la semilla 42
-  putStrLn "Tu lista aleatoria es:"
-  print list
+numero <- randomRIO (1, 10) :: IO Int
+entrada <- readLn
 ```
+La variable `numero` contendrá el número aleatorio generado, mientras que la variable `entrada` contendrá la entrada del usuario.
+4. Si queremos generar más de un número aleatorio, podemos utilizar la función `replicate` para repetir el proceso. Por ejemplo, para generar 5 números aleatorios entre 1 y 10:
+```Haskell
+numeros <- replicate 5 (randomRIO (1, 10) :: IO Int)
+```
+La variable `numeros` contendrá una lista con los 5 números aleatorios generados.
+
+## Profundizando
+
+Haskell utiliza el concepto de mónadas para trabajar con entradas y salidas, como en el caso de la función `randomRIO`. Además, la librería `System.Random` también incluye otras funciones útiles para trabajar con números aleatorios, como `randomRs` para generar una lista de números aleatorios en un rango especificado y `mkStdGen` para generar una semilla aleatoria.
 
 ## Ver también
 
-- [Documentación de System.Random en Haskell.org](https://haskell.org/hoogle/?hoogle=System.Random)
-- [Tutorial sobre números aleatorios en Haskell](https://www.fpcomplete.com/haskell/tutorial/randoms)
+- [Documentación de la librería `System.Random`](https://hackage.haskell.org/package/random/docs/System-Random.html)
+- [Tutorial de Haskell en español](https://haskell-es.gitlab.io/tutorial/)

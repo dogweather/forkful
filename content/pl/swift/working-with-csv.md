@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Praca z plikami csv"
+title:                "Praca z plikami csv"
+html_title:           "Swift: Praca z plikami csv"
 simple_title:         "Praca z plikami csv"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Jeśli potrzebujesz łatwego sposobu na przechowywanie i przetwarzanie danych w formacie tabeli, pliki CSV mogą okazać się bardzo przydatne. W tym artykule dowiesz się, dlaczego warto pracować z CSV i jak to zrobić w języku Swift.
+CSV (ang. Comma Separated Values) jest popularnym formatem przechowywania danych w tabelach i arkuszach kalkulacyjnych. Samoistne przetwarzanie tego formatu może być uciążliwe, dlatego warto poznać narzędzia, które ułatwią jego obsługę.
 
-## Jak to zrobić?
-
-Do rozpoczęcia pracy z plikami CSV w języku Swift potrzebne są tylko trzy kroki: otwarcie pliku, odczytanie danych i zamknięcie pliku. W poniższym przykładzie użyjemy danych dotyczących książek.
+## Jak to zrobić
 
 ```Swift
-import Foundation
-let url = URL(fileURLWithPath: "books.csv")
+let csv = """
+imie,nazwisko,wiek
+Jan,Kowalski,35
+Anna,Nowak,28
+Piotr,Marciniak,42
+"""
 
-do {
-    let data = try Data(contentsOf: url)
-    guard let books = String(data: data, encoding: .utf8) else { return }
-    print(books)
-} catch {
-    print(error)
+let rows = csv
+    .components(separatedBy: "\n")
+    .map{ $0.components(separatedBy: ",") }
+
+let headers = rows[0] // ["imie", "nazwisko", "wiek"]
+
+for row in rows[1...] {
+    let person = Dictionary(uniqueKeysWithValues: zip(headers, row))
+    print(person)
 }
+
+// ["imie": "Jan", "nazwisko": "Kowalski", "wiek": "35"]
+// ["imie": "Anna", "nazwisko": "Nowak", "wiek": "28"]
+// ["imie": "Piotr", "nazwisko": "Marciniak", "wiek": "42"]
 ```
 
-Output:
-```
-Title, Author, Genre, Year
-To Kill a Mockingbird, Harper Lee, Classic, 1960
-Pride and Prejudice, Jane Austen, Romance, 1813
-1984, George Orwell, Dystopian, 1949
-```
+Korzystając z metody `components(separatedBy:)` możemy podzielić nasz plik CSV na wiersze, a następnie użyć `zip` i `Dictionary` aby stworzyć słownik zawierający nagłówki i dane z danego wiersza. W ten sposób możemy łatwo przetwarzać dane z pliku CSV.
 
-W powyższym kodzie najpierw importujemy framework Foundation, który zawiera potrzebne metody do obsługi plików. Następnie tworzymy URL dla naszego pliku CSV i używamy go do wczytania danych. W linii trzeciej konwertujemy dane do formatu String za pomocą metody init(data:encoding:) i wypisujemy je na ekran. W przypadku błędu wyświetlamy go na konsoli.
+## Głębszy zanurzanie się
 
-## Deep Dive
+Istnieje wiele bibliotek i frameworków dostępnych w języku Swift do pracy z plikami CSV. Jednym z nich jest `SwiftCSV`, pozwalający na łatwe wczytywanie i zapisywanie danych w formacie CSV. Istnieją również wiele rozszerzeń do popularnych bibliotek, takich jak `SwiftyJSON`, które umożliwiają prostą obsługę danych w formacie CSV.
 
-Tworząc aplikację obsługującą pliki CSV, warto również zwrócić uwagę na różne separatora i znaki specjalne, które mogą wpłynąć na poprawność odczytu danych. Na przykład, jeśli wartości w danym polu są oddzielone przecinkiem, a jednocześnie przecinek występuje również w środku tekstu, to nasz program może źle zinterpretować dane.
+## Zobacz również
 
-Dodatkowo, w przypadku dużych plików CSV, ważne jest uważne zarządzanie pamięcią, aby uniknąć przeciążenia i awarii aplikacji.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o pracy z plikami CSV w języku Swift, koniecznie zajrzyj na poniższe strony:
-
-- [Dokumentacja Apple na temat klasy String](https://developer.apple.com/documentation/swift/string)
-- [Poradnik o pracy z plikami CSV w Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Biblioteka SwiftCSV do łatwego i szybkiego przetwarzania plików CSV](https://github.com/swiftcsv/SwiftCSV)
+- https://github.com/yaslab/CSV.swift
+- https://github.com/evgenyneu/SwiftCSV
+- https://github.com/tid-kijyun/Kanna (biblioteka do parsowania HTML zawierająca funkcje przetwarzania plików CSV)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: वेब पृष्ठ डाउनलोड करना"
-simple_title:         "वेब पृष्ठ डाउनलोड करना"
+title:                "वेब पन्ना को डाउनलोड करना"
+html_title:           "TypeScript: वेब पन्ना को डाउनलोड करना"
+simple_title:         "वेब पन्ना को डाउनलोड करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,32 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-आपने कभी सोचा है कि ऐसा क्यों हो सकता है कि आप किसी वेब पेज को अपनी कंप्यूटर पर डाउनलोड करने की आवश्यकता महसूस करें? इस लेख में हम आपको बताएंगे कि आप खुद क्यों अपनी वेब पेज को डाउनलोड करना चाहेंगे और इसे कैसे कर सकते हैं।
+### Kyun
+Web page ko download karna bahut zaroori ho sakta hai agar aap kisi website ke code ya content ko analyze karna chahte hain, ya fir offline access ke liye.
 
-## कैसे करें
-अपने कंप्यूटर पर वेब पेज डाउनलोड करने के लिए, आपको एक अप्रयुक्ति या स्क्रिप्ट का उपयोग करना होगा। हम इस उदाहरण में TypeScript का उपयोग करेंगे।
-
+### Kaise Karein
 ```TypeScript
-import axios from 'axios';
+// Import the 'https' module
+import https from 'https';
 
-// यहाँ आपको अपने वेब पेज का URL डालना होगा
-const url = 'https://www.example.com';
-
-// इस कोड में हम axios अप्रयोग का उपयोग करके आसानी से वेब पेज को डाउनलोड कर सकते हैं
-axios.get(url)
-  .then(response => {
-    // यहाँ हम डाउनलोड किए गए पेज के साथ कुछ और काम कर सकते हैं।
-    console.log(response.data);
-  })
-  .catch(err => {
-    // त्रुटियां हैंडल करें यदि कोई होती हैं
+// Make a GET request to the desired URL
+https.get('https://example.com', (res) => {
+  // Store the received data in a string
+  let data = '';
+  
+  // Receive data in chunks and append to the string
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+  
+  // Once all data has been received, log it to the console
+  res.on('end', () => {
+    console.log(data);
+  });
+  
+  // Handle any errors that may occur
+  res.on('error', (err) => {
     console.log(err);
   });
+});
 ```
 
-जैसा कि आप ऊपर देख सकते हैं, हमने `axios` अप्रयोग का उपयोग किया है जो अपने आप एक `GET` अनुरोध भेजकर भी वेब पेज को डाउनलोड करता है। हम फिर `then` लम्बवत का उपयोग करके डेटा को प्रिंट करते हैं, जो हमारे काम के लिए सही रास्ता होता है।
+Output:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example Domain</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  
+  <body>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+  </body>
+</html>
+```
 
-## गहराई में
+### Gehri Jhaank
+Web page ko download karte waqt, aapko kuch cheezein dhyan mein rakhti hui chahiye. Ek baat ka dhyaan rakhein ki koi bhi website ke content aur code ko download karna us website ki permission ke bina na karein. Agar aap iske against koi bhi rules ko todainge, toh aap legal problems ka shikaar ho sakte hain. Ek aur baat ka dhyaan rakhein ki website ya server ki load ke liye aap excessive requests na bhejein, kyunki yeh server ko slow kar sakta hai aur band bhi kar sakta hai.
 
-वेब पेज डाउनलोड करने का एक अन्य तरीका है `fetch` अप्रयोग का उपयोग करना। यह एक native वेब API है जो जावास्क्रिप्ट द्वारा सुविधाजनक रूप से उपलब्ध है। आप उसी तरह वेब प
+### Dekhen Bhi
+[Youtube video on downloading a web page using TypeScript](https://www.youtube.com/watch?v=f_GTPJpi0ic) <br>
+[Official TypeScript documentation on making HTTP requests](https://www.typescriptlang.org/docs/handbook/2/generic-functions.html)

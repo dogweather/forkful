@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 「JSONを使うこと」"
-simple_title:         "「JSONを使うこと」"
+title:                "jsonの扱い方"
+html_title:           "Fish Shell: jsonの扱い方"
+simple_title:         "jsonの扱い方"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-JSONは、データを簡潔かつ効率的に保存および転送するための一般的なフォーマットです。JSONデータを取り扱うことで、ウェブサイトやアプリケーションの開発において、よりスムーズなデータの取得や処理が可能になります。Fish Shellを使用してJSONを扱う方法を学ぶことで、プログラミングのスキルを向上させることができます。
+JSONはデータの交換に使用される一般的なフォーマットです。このフォーマットは非常に人間にとって読みやすく、機械可読性も高いため、プログラミングで使用する必要があります。
 
 ## 使い方
 
-Fish Shellは、JSONデータを取り扱うための便利なツールです。例えば、以下のコードを使用することで、JSONデータをダウンロードし、パースして出力することができます。
+まず、Fish Shellをダウンロードしてインストールします。次に、JSONパッケージをインストールします。
 
 ```Fish Shell
-curl -s https://example.com/api | jq
+brew install jq
 ```
 
-このコマンドは、サーバーからJSONデータをダウンロードし、jqというツールを使用して美しく整形された出力を得ることができます。さらに、以下のコードを使用することで、特定の情報だけを抽出することもできます。
+次に、サンプルのJSONファイルを作成します。
 
 ```Fish Shell
-curl -s https://example.com/api | jq '.results[0].name'
+echo '{"name": "John", "age": 30}' > sample.json
 ```
 
-このコードは、APIの最初の結果からnameフィールドの値を抽出します。Fish Shellの便利なコマンドを使用することで、より効率的にJSONデータを取り扱うことができます。
-
-## 深ぼり
-
-JSONデータをより詳細に取り扱うには、jqというツールが非常に役立ちます。jqは、コマンドライン上でJSONデータを操作する際に便利なツールです。例えば、以下のコードを使用することで、APIから得られた全ての結果のnameフィールドの値をリストで取得することができます。
+これで、`sample.json`ファイルが作成されました。次に、Fish Shellで以下のコマンドを実行してJSONファイルの内容を確認します。
 
 ```Fish Shell
-curl -s https://example.com/api | jq -r '.results[].name'
+jq . sample.json
 ```
 
-また、jqはフィルタリングや条件付き処理など、さまざまな機能をサポートしています。JSONデータを取り扱う際には、jqを使用することでより柔軟な操作が可能になります。
+これにより、JSONファイルの内容が表示されます。もし特定のキーの値だけを取得したい場合は、次のようにコマンドを変更します。
 
-## もっと詳しく知りたい方へ
+```Fish Shell
+jq .name sample.json
+```
 
-- jqの公式ドキュメント：https://stedolan.github.io/jq/
-- JSONフォーマットの詳細について：https://www.json.org/json-ja.html
+これにより、`name`キーの値である`John`が表示されます。
 
-## あわせて読みたい
+## ディープダイブ
 
-- Fish Shellの公式ドキュメント：https://fishshell.com/docs/current/
-- プログラミング初心者向けのJSON解説記事：https://it-plus.jp/fish-json/
+Fish Shellでは、より高度なJSONの処理が可能です。例えば、`jq`コマンドを使用してJSONファイル内の特定の値をフィルタリングすることができます。また、配列やオブジェクト内の値に対しても操作することができます。詳細な使い方やコマンドのオプションについては、[公式ドキュメント](https://stedolan.github.io/jq/)を参照してください。
+
+## 参考リンク
+
+- [Fish Shell](https://fishshell.com/)
+- [JSON Format](https://www.json.org/json-en.html)
+- [jq Official Documentation](https://stedolan.github.io/jq/)

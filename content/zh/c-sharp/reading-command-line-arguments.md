@@ -1,5 +1,6 @@
 ---
-title:                "C#: 读取命令行参数"
+title:                "读取命令行参数"
+html_title:           "C#: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "C#"
 category:             "C#"
@@ -9,75 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么阅读命令行参数
+## 为什么要读取命令行参数？
 
-命令行参数是指在运行程序时，通过命令行给程序传递一些参数，从而影响程序的运行结果。阅读命令行参数可以帮助程序员在开发过程中更加灵活地控制程序的行为，同时也能提高程序的可扩展性。因此，阅读命令行参数是开发人员非常重要的一项技能。
+在编程过程中，有时候我们需要从命令行中读取用户输入的参数来实现特定的功能。读取命令行参数可以帮助程序与用户进行交互并且根据不同的输入来执行不同的操作。
 
-# 如何阅读命令行参数
+## 如何获取命令行参数
 
-阅读命令行参数的过程非常简单，只需要使用C#语言提供的相关类和方法即可。首先，在程序中添加`using System`语句，然后创建一个`Main`方法作为程序的入口。接下来，使用`Environment.GetCommandLineArgs()`方法可以获取到用户在命令行中输入的所有参数。然后，可以通过循环遍历参数数组来获取每个参数的值。下面是一个简单的示例代码：
+在C#中，我们可以通过使用`args`这个参数来访问命令行参数。这个参数是一个字符串数组，其中包含用户在命令行中输入的所有参数。我们可以使用循环来遍历这个数组并对每个参数进行处理。
 
 ```C#
-using System;
-class Program
+// 遍历args数组
+foreach (string arg in args)
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("传递的命令行参数如下：");
-        for (int i = 0; i < args.Length; i++)
-        {
-            Console.WriteLine(args[i]);
-        }
-    }
+    // 对每个参数进行处理
+    // 例如打印参数到控制台
+    Console.WriteLine(arg);
 }
 ```
 
-假设将以上代码保存为`Program.cs`并编译执行，在命令行中输入`dotnet Program.cs Hello World`，则会输出如下结果：
-
-```
-传递的命令行参数如下：
-Hello
-World
-```
-
-# 深入阅读命令行参数
-
-当我们需要处理更加复杂的命令行参数时，可以使用`System.CommandLine`这个第三方库来帮助我们。它提供了更加方便的方式来解析和处理命令行参数，同时还支持自动生成帮助信息。下面是一个简单的示例代码，演示如何使用`System.CommandLine`来解析参数并输出结果：
+如果我们想要获取特定位置的参数，可以通过索引来访问数组中的元素。第一个参数的索引值为0，依次类推。
 
 ```C#
-using System;
-using System.CommandLine;
-using System.CommandLine.Invocation;
+// 获取第一个参数
+string firstArg = args[0];
+```
 
-class Program
+我们也可以使用`Contains()`方法来检查用户是否输入了特定的参数。
+
+```C#
+// 检查用户是否输入了"-h"这个参数
+if (args.Contains("-h"))
 {
-    static void Main(string[] args)
-    {
-        var rootCommand = new RootCommand
-        {
-            new Argument<string>("message"),
-            new Argument<string>("name")
-        };
-
-        rootCommand.Handler = CommandHandler.Create((string message, string name) =>
-        {
-            Console.WriteLine($"{message}, {name}!");
-        });
-
-        rootCommand.Invoke(args);
-    }
+    Console.WriteLine("这个参数会显示帮助信息");
 }
 ```
 
-假设将以上代码保存为`Program.cs`并编译执行，在命令行中输入`dotnet Program.cs "Hello" --name "World"`，则会输出如下结果：
+## 深入探讨
 
+除了上述提到的方法，我们还可以使用`GetCommandLineArgs()`方法来获取命令行参数。这个方法会返回一个包含所有参数的字符串数组。另外，在C# 7.1及以上版本中，我们还可以使用新的`Main(string[])`方法来直接获取命令行参数，不需要使用`args`这个参数。
+
+除了读取命令行参数，我们也可以在命令行中传递特定的标志来指示程序执行不同的操作。这个标志可以通过在参数前加上`/`或`-`来表示，并且可以带有一个值。
+
+```C#
+// /m参数后面跟着一个值
+/m:10
 ```
-Hello, World!
-```
 
-总的来说，阅读和处理命令行参数是C#开发中必不可少的技能，希望本文能够帮助到大家。
+读取命令行参数是编写交互式和灵活的程序的重要部分。通过结合使用字符串处理的技巧，我们可以轻松地实现对命令行参数的处理和解析。
 
-# 参考链接
-- [C#入门教程](https://www.runoob.com/csharp/csharp-tutorial.html)
-- [System namespace](https://docs.microsoft.com/en-us/dotnet/api/system)
-- [System.CommandLine namespace](https://docs.microsoft.com/en-us/dotnet/api/system.commandline)
+## 参考链接
+
+- [MSDN官方文档：使用命令行参数](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [通过命令行参数设置.NET Core控制台应用的行为和配置](https://docs.microsoft.com/zh-cn/dotnet/core/tutorials/cli-arguments)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Lähettäessä http-pyynnön"
-simple_title:         "Lähettäessä http-pyynnön"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Python: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,57 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi kuka tahansa haluaisi lähettää HTTP-pyynnön? Yksinkertaisesti sanottuna, HTTP-pyynnöt mahdollistavat tiedon lähettämisen ja vastaanottamisen internetissä. Tämä on tärkeä osa verkkoon perustuvia sovelluksia ja palveluita.
 
-HTTP-pyyntöjen lähettäminen on tärkeä osa ohjelmoinnin maailmaa ja mahdollistaa kommunikoinnin eri palvelimien välillä. Tämä on erityisen hyödyllistä web-kehityksessä, sillä se mahdollistaa datan lähettämisen ja vastaanottamisen web-sovellusten välillä. 
-
-## Näin se tapahtuu
-
-HTTP-pyyntöjen lähettäminen Pythonilla on helppoa ja vaivatonta. Käytämme tätä esimerkkiä selventämään asiaa:
+## Kuinka Tehdä
+Lähettäminen HTTP-pyynnön Pythonilla on helppoa. Käytä vain `requests`-kirjastoa ja seuraa näitä yksinkertaisia vaiheita.
 
 ```Python
-# Tuodaan request-kirjasto käyttöön
 import requests
 
-# Määritetään URL-osoite
-url = "https://www.example.com"
+# Luo olio, joka sisältää tarvittavat tiedot pyyntöä varten
+pyynto = requests.get("https://www.example.com/")
 
-# Lähetetään GET-pyyntö ja tallennetaan vastaus muuttujaan
-response = requests.get(url)
+# Lähetä pyyntö ja tallenna vastaus olio muuttujaan
+vastaus = pyynto.json()
 
-# Tulostetaan vastauksen sisältö
-print(response.text)
+# Tulosta vastauksen sisältö
+print(vastaus)
 ```
 
-Tämä yksinkertainen esimerkki osoittaa, kuinka helposti voimme lähettää HTTP-pyyntöjä Pythonilla. Käytämme requests-kirjastoa, joka tekee pyyntöjen lähettämisestä vieläkin helpompaa.
+Tässä esimerkissä käytetään `requests`-kirjaston `get()`-metodia lähettämään GET-pyyntö ja tallentamaan vastaus `vastaus`-olioon. Käytämme myös `.json()`-metodia avataksesi vastauksessa olevan JSON-muotoisen tiedon. Lopuksi tulostamme vastauksen sisällön konsolille.
 
-Voimme myös lisätä parametreja ja muita tietoja pyyntöön tarpeemme mukaan. Esimerkiksi, jos haluamme lähettää POST-pyynnön ja lisätä siihen tietoa, se näyttäisi tältä:
-
-```Python
-# Tuodaan request-kirjasto käyttöön
-import requests
-
-# Määritetään URL-osoite
-url = "https://www.example.com"
-
-# Määritetään POST-pyynnön tiedot
-data = {"username": "kayttajanimi", "password": "salasana"}
-
-# Lähetetään POST-pyyntö
-response = requests.post(url, data=data)
-
-# Tulostetaan vastauksen sisältö
-print(response.text)
+```
+{'name': 'John', 'age': 30}
 ```
 
-## Syvemmälle asioihin
+## Syvällinen Pohdinta
+HTTP-pyyntöjen lähettäminen on yksinkertaista, mutta niiden avulla on mahdollista tehdä monimutkaisia asioita. Voit esimerkiksi lähettää POST-pyynnön ja lähettää tiedon muodossa, joka vastaa JavaScript-objektia, tai lisätä pyyntöön otsikoita ja evästeitä. Voit myös käyttää muita `requests`-kirjaston metodeja, kuten `put()`, `patch()` ja `delete()`.
 
-HTTP-pyyntöjen lähettämisessä on paljon muitakin vaihtoehtoja ja ominaisuuksia, jotka voivat olla hyödyllisiä erilaisissa tilanteissa. Voit esimerkiksi lisätä pyyntöön otsikoita tai asettaa aikarajoituksia.
-
-Voit myös tarkastella vastauksen tilakoodia ja sen sisältämää dataa. Tämä auttaa sinua varmistamaan, että pyyntösi on onnistunut ja vastaanottanut haluamasi tiedot.
-
-Pythonin requests-kirjaston dokumentaatiossa on paljon lisätietoa ja esimerkkejä, joita voit tutkia syvällisemmin, jos haluat oppia lisää HTTP-pyyntöjen lähettämisestä.
-
-## Katso myös
-
-- [Python requests-kirjaston dokumentaatio](https://requests.readthedocs.io/en/latest/)
-- [HTTP-viestien merkitykset ja tilakoodit](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+## Katso Myös
+- [Requests kirjaston dokumentaatio](https://requests.readthedocs.io/en/master/)
+- [HTTP-oppiminen Pythonin avulla](https://realpython.com/python-requests/)

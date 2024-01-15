@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Javascript: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,69 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-On monia syitä, miksi joku voisi aloittaa uuden ohjelmointiprojektin. Ehkä haluat kehittää uuden sovelluksen, ratkaista ongelman tai oppia uutta ohjelmointikieltä. Jokainen projekti tarjoaa mahdollisuuden oppia uutta ja kehittää taitojasi, joten se on aina kannattavaa.
+Uuden projektin aloittaminen on innostavaa ja palkitsevaa monella tapaa. Se tarjoaa mahdollisuuden kehittää uusia taitoja, ratkaista haasteita ja luoda jotain ainutlaatuista omilla ideoilla ja näkemyksillä.
 
-## Kuinka
+## Kuinka tehdä se
 
-Aloittaessasi uuden ohjelmointiprojektin Javascriptillä, on tärkeää aloittaa perusteista ja ymmärtää kielen perusominaisuudet. Esimerkiksi, Javascriptilla voit määrittää muuttujia ja käyttää niitä ohjelmassa. Koodiesimerkiksi näyttää tältä:
-
-```Javascript
-// Luodaan muuttujia
-let nimi = "Jenni";
-let ika = 25;
-
-// Tulostetaan muuttujien arvot
-console.log("Hei, nimeni on " + nimi + " ja olen " + ika + "-vuotias.");
-```
-
-Tulostaa tämä koodi seuraavan viestin:
-
-> Hei, nimeni on Jenni ja olen 25-vuotias.
-
-Muuttujien lisäksi Javascriptilla voit myös käyttää ehtolauseita ja silmukoita ohjelman loogisuuden hallitsemiseksi. Koodiesimerkiksi näyttää tältä:
+Aloittaaksesi uuden projektin Javascriptillä, tarvitset vain perustaidot ohjelmoinnista ja pienen annoksen luovuutta. Tässä on esimerkki yksinkertaisesta ohjelmasta, joka tulostaa konsoliin tervehdyksen käyttäjän nimellä:
 
 ```Javascript
-// Tarkistetaan onko käyttäjä täysi-ikäinen
-if(ika > 18) {
-  console.log("Sinä olet täysi-ikäinen.");
-} else {
-  console.log("Sinä et ole täysi-ikäinen.");
-}
-
-// Tulostetaan numerot 1-10 käyttäen silmukkaa
-for(let i = 1; i <= 10; i++) {
-  console.log(i);
-}
+let nimi = prompt("Syötä nimesi:");
+console.log("Hei " + nimi + "!");
 ```
 
-Tulostaa tämä koodi seuraavan viestin:
+Tässä koodissa ensin pyydetään käyttäjältä nimi ja tallennetaan se muuttujaan nimeltä "nimi". Sitten käytetään console.log()-funktiota tulostamaan tervehdys konsoliin. Lopputuloksena mikä tahansa nimi, jonka käyttäjä syöttää, tulostetaan konsoliin tervehdyksellä "Hei [nimi]!".
 
-> Sinä olet täysi-ikäinen.
->
-> 1
-> 2
-> 3
-> 4
-> 5
-> 6
-> 7
-> 8
-> 9
-> 10
+## Syvemmälle aiheeseen
 
-## Syvä sukellus
+Ennen kuin aloitat uuden projektin, on tärkeää tehdä suunnitelma ja miettiä tavoitteita. Mieti, mitä haluat projektillasi saavuttaa ja kuka sen kohdeyleisö on. Tämä auttaa sinua valitsemaan sopivan työkalun ja tekniikan.
 
-Kun aloitat uuden ohjelmointiprojektin, on tärkeää suunnitella hyvin ja tutkia erilaisia ratkaisuja ennen varsinaisen koodin kirjoittamista. Muista myös kommentoida koodiasi, jotta voit helposti palata siihen myöhemmin ja ymmärtää, mitä olet tehnyt.
+Javascriptin avulla voit luoda monipuolisia projekteja, kuten verkkosivuja, verkkosovelluksia ja mobiilisovelluksia. Voit myös käyttää erilaisia kirjastoja ja kehyksiä, kuten React ja Angular, helpottaaksesi projektisi kehittämistä.
 
-Voit myös hyödyntää valmiiksi olemassa olevia kirjastoja ja työkaluja helpottaaksesi ohjelmointityötäsi. Esimerkiksi React ja Angular ovat suosittuja Javascript-kirjastoja, jotka helpottavat verkkosovellusten kehittämistä.
+Muista myös dokumentoida koodisi ja pitää se siistinä ja selkeänä. Tämä auttaa sinua ja muita kehittäjiä palaamaan projektin pariin myöhemmin ja ymmärtämään koodin toimintaa.
 
-Lisäksi on tärkeää muistaa testata ja korjata mahdolliset virheet ennen kuin julkaiset lopullisen tuotteen. Hyvä työnkulku ja testaus auttavat sinua välttämään ongelmia tulevaisuudessa.
+## Katso myös
 
-# Katso myös
-
-- Javascriptin virallinen dokumentaatio (https://developer.mozilla.org/fi/docs/Web/JavaScript)
-- W3Schools Javascript-opetusohjelma (https://www.w3schools.com/js/default.asp)
-- React (https://reactjs.org/)
-- Angular (https://angular.io/)
+- [Javascript-pikaopas](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide)
+- [React-kirjaston viralliset dokumentaatiot](https://reactjs.org/)
+- [Angular-kehyksen viralliset dokumentaatiot](https://angular.io/docs)

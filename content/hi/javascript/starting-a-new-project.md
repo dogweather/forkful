@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: एक नया परियोजना शुरू करना"
-simple_title:         "एक नया परियोजना शुरू करना"
+title:                "एक नया प्रोजेक्ट शुरू करना"
+html_title:           "Javascript: एक नया प्रोजेक्ट शुरू करना"
+simple_title:         "एक नया प्रोजेक्ट शुरू करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -9,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+# Kyun
 
-अगर आप नया प्रोजेक्ट शुरू करना चाहते हैं, तो यह आपको बहुत सारे फायदे प्रदान कर सकता है। आप एक नया और रोमांचक प्रोजेक्ट शुरू कर के अपने कौशल को निखार सकते हैं और नए तकनीकी दक्षताओं को सीख सकते हैं। यह आपको नई चुनौतियों का सामना करने का मौका भी देता है।
+Kisi bhi naye project ko shuru karne ka sabse bada karan hai, ki hum apne dimag ki khurak ko kuch naya aur aakarshak sikhna chahte hain. Daal apne software development skills ko improve karne ka yeh ek accha tarika hai.
 
-# कैसे करें
-
-## जावास्क्रिप्ट को समझना
-
-पहले से बाबत, आप को जावास्क्रिप्ट के बारे में अच्छी तरह से समझना होगा। अगर आपने पहले कभी जावास्क्रिप्ट नहीं सीखा है, तो आप एक शुरुआत में हमारे कुछ बेसिक कन्सेप्ट्स देख सकते हैं:
+# Kaise Karein
 
 ```Javascript
-// बेसिक सिंटैक्स
-var a = 5;
-var b = 2;
-var c = a + b; // c के वैल्यू 7 होगा
+let project = "naya project";
 
-// फंक्शन बनाना
-function printName(name) {
-  console.log(`नमस्ते ${name}!`);
-}
-
-printName("आरयन"); // output: नमस्ते आरयन!
-
-// शर्तियाँ
-if (a > b) {
-  console.log("a बड़ा है b से।");
-} else {
-  console.log("b बड़ा है a से।");
-}
+console.log("Main " + project + " shuru karna chahta hoon!");
 ```
 
-## अपना प्रोजेक्ट शुरू करना
+Is code block mein humne ek variable `project` declare kiya aur usmein "naya project" ka value assign kiya. Uske baad `console.log()` function ka use karke humne apne project ka naam print kiya. Ab hum apne project ko chunne ke liye kisi bhi programming language ka use kar sakte hain aur apne creativity ko express kar sakte hain.
 
-अब जब आपको जावास्क्रिप्ट के बारे में कुछ ज्ञान हो गया है, आप अपना प्रोजेक्ट शुरू करने के लिए तैयार हो सकते हैं। आप इसमें निम्नलिखित कदमों का पालन कर सकते हैं:
+# Gehri Khudaee
 
-1. पहले से उपलब्ध जावास्क्रिप्ट लाइब्रेरी या फ्रेमवर्क का चयन करें।
-2. अपने प्रोजेक्ट के लिए एक फोल्डर बनाएं और उसमें अपने सभी फाइल्स रखें।
-3. अपनी सामग्री और लॉजिक को डिजाइन क
+Aapko apne project ki shuruwat karne se pehle kuch important steps follow karni chahiye. Pehle toh aapko apne project ke liye ek clear goal set karna hoga. Phir aapko apne project ka scope aur time frame decide karna hoga. Saath hi, aapko apne project ke liye kaunsi tools aur technologies ka use karna hai, yeh bhi decide karna hoga.
+
+# Dekhiye Bhi
+
+Agar aapko Javascript programming ke baare mein aur bhi jaankari chahiye, toh neeche diye gaye links ko dekhein:
+
+- [W3Schools Javascript Tutorial](https://www.w3schools.com/js/)
+- [Mozilla Developer Network Javascript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Javascript.com](https://javascript.com/)

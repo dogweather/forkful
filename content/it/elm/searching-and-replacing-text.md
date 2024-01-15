@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Ricerca e sostituzione di testo."
-simple_title:         "Ricerca e sostituzione di testo."
+title:                "Cercare e sostituire testo"
+html_title:           "Elm: Cercare e sostituire testo"
+simple_title:         "Cercare e sostituire testo"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,56 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La ricerca e la sostituzione di testo sono attività comuni nella programmazione, che possono aiutare a risparmiare tempo ed evitare errori. Con Elm, puoi facilmente automatizzare questo processo e ottenere un codice più pulito e leggibile.
+Se sei un programmatore, probabilmente passi gran parte della tua giornata a scrivere e modificare codice. E a volte, devi effettuare modifiche su un gran numero di file o linee di codice. In questi casi, può essere molto utile utilizzare la funzionalità di ricerca e sostituzione del testo.
 
-## Come Fare
+## Come fare
 
-Per eseguire la ricerca e la sostituzione di testo in un file Elm, segui questi semplici passaggi:
+Per effettuare una ricerca e sostituzione del testo in Elm, è necessario utilizzare la funzione `replace` del modulo `String`. Questa funzione accetta tre parametri: la stringa da cercare, la stringa con cui sostituirla e la stringa in cui effettuare la ricerca. Ad esempio:
 
-```Elm
--- Definisci una funzione che accetta una stringa e sostituisce tutte le occorrenze
--- di una parola o frase specifica con un'altra parola o frase.
-
-replaceWord : String -> String -> String -> String
-replaceWord text word newWord =
-  String.replace word newWord text
-
--- Chiama la funzione con i parametri desiderati.
-
-replaceWord "Questa è una frase di esempio." "frase" "stringa"
--- Output: "Questa è una stringa di esempio."
+```
+Elm.replace "gatto" "cane" "Mi piace il mio gatto." -- "Mi piace il mio cane."
 ```
 
-Puoi anche utilizzare la funzione `replace` della libreria `String` per sostituire tutte le occorrenze di una stringa con un'altra stringa, senza dover creare una funzione personalizzata.
+Se vuoi effettuare la sostituzione solo sulla prima occorrenza, puoi utilizzare la funzione `replaceFirst` al posto di `replace`.
 
-```Elm
-import String
-
--- Utilizza la funzione `replace` per sostituire la parola "mondo" con "persona" nella frase.
-
-String.replace "mondo" "persona" "Ciao mondo!"
--- Output: "Ciao persona!"
 ```
+Elm.replaceFirst "casa" "barbapapà" "La mia casa è grande, ma la tua è ancora più grande." -- "La mia barbapapà è grande, ma la tua è ancora più grande."
+```
+
+Inoltre, è possibile utilizzare espressioni regolari per una ricerca e sostituzione più avanzata utilizzando il modulo `Regex`.
 
 ## Approfondimento
 
-A volte, potresti voler effettuare una ricerca e sostituzione su una serie di file o programmi Elm. In questo caso, puoi utilizzare uno strumento come `elm-sed` per automatizzare il processo. `elm-sed` è un utility che utilizza l'IDE di Elm per effettuare ricerca e sostituzione su più file contemporaneamente.
+Quando utilizzi la funzione `replace` di Elm, è importante ricordare che la stessa stringa di input viene restituita se non viene trovata alcuna corrispondenza. Inoltre, la funzione `replaceFirst` restituisce sempre una stringa diversa dalla stringa di input, anche se non viene trovata alcuna corrispondenza.
 
-Puoi installare `elm-sed` utilizzando il gestore di pacchetti npm:
+## Vedi anche
 
-```shell
-npm install -g elm-sed
-```
-
-Una volta installato, puoi eseguirlo su una directory contenente i tuoi file Elm:
-
-```shell
-elm-sed "Ciao mondo" "Salve mondo" *.elm
-```
-
-Questo esempio effettuerà una ricerca della stringa "Ciao mondo" nei file `.elm` presenti nella directory e sostituirà ogni occorrenza con la stringa "Salve mondo".
-
-## Vedi Anche
-
-- [Documentazione String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Elm-sed su GitHub](https://github.com/mimosa-editor/elm-sed)
+- Documentazione di Elm sul modulo `String`: https://package.elm-lang.org/packages/elm/core/latest/String
+- Documentazione di Elm sul modulo `Regex`: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- Articolo su come utilizzare le espressioni regolari in Elm: https://giulioscuro.medium.com/a-beginners-guide-to-regular-expressions-with-elm-d22da77cbd4d

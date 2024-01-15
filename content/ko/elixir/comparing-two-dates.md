@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 두 날짜 비교하기"
+title:                "두 날짜 비교하기"
+html_title:           "Elixir: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
+두 날짜를 비교하는 것에 관심을 가질까요? 날짜 및 시간은 프로그래밍에서 중요한 역할을 합니다. 여러분이 기준 시간과 비교해서 로그를 정리하거나, 예약된 이벤트를 실행하거나, 특정 시간 이후에만 특정 작업을 수행하는 등 다양한 상황에서 날짜를 비교해야 할 수 있습니다.
 
-두 개의 날짜를 비교하는 이유는 프로그래밍에서 자주 하는 작업 중 하나입니다. 날짜를 비교하는 것은 특정 날짜 이후의 이벤트를 예측하거나 이전 이벤트를 추적할 때 유용하며, 데이터 분석 등 다양한 분야에서 사용될 수 있습니다. 이번 블로그 포스트에서는 Elixir 프로그래밍 언어에서 두 날짜를 비교하는 방법을 알아보겠습니다.
-
-## 어떻게?
-
-우선 Elixir에서 두 날짜를 비교하기 위해서는 `Date` 모듈을 불러와야 합니다. 그 다음 `Date.compare/2` 함수를 사용하여 두 날짜를 비교할 수 있습니다.
-
+## 어떻게
 ```Elixir
-Date.compare(~D[2021-06-01], ~D[2021-06-15])
+date1 = ~D[2021-06-01]
+date2 = ~D[2021-05-15]
 
-# output: :lt
-```
+time1 = ~T[09:00:00]
+time2 = ~T[12:00:00]
 
-위 코드에서 `~D[날짜]` 형식은 `날짜`를 나타내는 Elixir 문법입니다. `~D[2021-06-01]`은 `2021-06-01` 날짜를 나타내며, 이를 `Date.compare/2` 함수에 넣어주면 첫 번째 인자와 두 번째 인자를 비교하여 결과를 리턴합니다. 위 코드의 경우, `~D[2021-06-01]`은 `~D[2021-06-15]`보다 이전 날짜이기 때문에 `:lt`가 리턴되었습니다.
+# 날짜 비교
+date1 > date2 # true
+date1 == date2 # false
 
-삼항 연산자를 사용하여 두 날짜를 비교한 후 특정 로직을 수행할 수도 있습니다. 예를 들어, 두 날짜가 같을 경우 "두 날짜가 같습니다."라는 메시지를 출력하고, 첫 번째 날짜가 두 번째 날짜보다 이전인 경우 "첫 번째 날짜가 두 번째 날짜보다 이전입니다."라는 메시지를 출력하는 코드는 다음과 같습니다.
+# 시간 비교
+time1 < time2 # true
+time1 == time2 # false
 
-```Elixir
-defmodule DateComparison do
-  def compare(d1, d2) do
-    case Date.compare(d1, d2) do
-      :eq -> "두 날짜가 같습니다."
-      :lt -> "첫 번째 날짜가 두 번째 날짜보다 이전입니다."
-      :gt -> "첫 번째 날짜가 두 번째 날짜보다 이후입니다."
-    end
-  end
-end
+# 날짜 및 시간 비교
+DateTime.compare(date1, date2) # :gt (더 큰 값)
+DateTime.compare(time1, time2) # :lt (더 작은 값)
+DateTime.compare(date1, date2) # :eq (같은 값)
 
-DateComparison.compare(~D[2021-06-01], ~D[2021-06-01])
-
-# output: "두 날짜가 같습니다."
-
-DateComparison.compare(~D[2021-06-01], ~D[2021-06-15])
-
-# output: "첫 번째 날짜가 두 번째 날짜보다 이전입니다."
+# 날짜 및 시간 차이 계산
+Calendar.Chronos.diff(date1, date2, :days) # -17 (날짜 차이)
+Calendar.Chronos.diff(time1, time2, :hours) # -3 (시간 차이)
 ```
 
 ## 깊이 파고들기
+Elixir에서는 `Date`, `DateTime`, `Time` 모듈을 사용하여 날짜 및 시간을 다루는 것이 가능합니다. 이러한 모듈들은 Elixir에서는 단순한 유니 코드 코드 포인트를 사용하여 날짜 및 시간을 표현합니다. 하지만 이 모듈들을 사용하면 유효하지 않은 날짜 또는 시간을 만들어낼 수 있으니 주의해야 합니다. 유효하지 않은 날짜 또는 시간을 만들지 않기 위해서는 `Date` 모듈에 있는 `valid?` 함수를 사용하면 됩니다. 또한 `Calendar.Chronos` 모듈을 사용하면 날짜 및 시간의 차이를 계산할 수 있습니다.
 
-두 날짜를 비교할 때 고려해야 할 사항은 몇 가지가 있습니다. 첫째, 년, 월, 일을 모두 비교할 것인지 또는 원하는 부분만 비교할 것인지 결정해야 합니다. Elixir에서는 `Date.compare/4` 함수를 사용하여 어떤 부분을 비교할지 선택할 수 있습니다. 두 번째로는 두 날짜가 같을 경우를 어떻게 처리할 것인지 정해야 합니다. 세 번째로는 날짜 형식이나 시간대를 고려해야 할 수도 있습니다. 이런 세부 사항들을 고려해야 정확한 결과를 얻을 수 있습니다.
-
-## 또 다른 참고 자료
-
-- [Elixir
+## 더 알아보기
+This is a Korean translation of article titled ["Comparing Dates in Elixir"](https://blog.appsignal.com/2020/07/22/comparing-dates-in-elixir.html) by AppSignal.

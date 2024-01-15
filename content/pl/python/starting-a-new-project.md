@@ -1,6 +1,7 @@
 ---
-title:                "Python: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczynając nowy projekt"
+html_title:           "Python: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -11,45 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Tworzenie nowego projektu w Pythonie może być ekscytującym wyzwaniem dla wielu programistów. Pozwala ono na rozwijanie umiejętności, odkrywanie nowych technologii oraz budowanie ciekawych aplikacji. Jest to również doskonały sposób na poprawę swojego portfolio i zwiększenie swoich szans na znalezienie pracy w branży IT.
+Zastanawiasz się, dlaczego warto zacząć nowy projekt w języku Python? W artykule dowiesz się, dlaczego Python jest popularnym wyborem dla wielu programistów i jak zacząć swoją przygodę z tym językiem.
 
-## Jak to zrobić
+## Jak zacząć
 
-Aby rozpocząć nowy projekt w Pythonie, należy najpierw zainstalować środowisko programistyczne dla tego języka. Najczęściej używanym narzędziem jest Anaconda, które pozwala na łatwe zarządzanie wersjami Pythona oraz instalację różnych bibliotek. Po zainstalowaniu środowiska, można rozpocząć pisanie kodu.
+Aby rozpocząć projekt w języku Python, najpierw musisz zainstalować interpreter Python na swoim komputerze. Możesz to zrobić poprzez pobranie najnowszej wersji z oficjalnej strony Pythona. Gdy już go zainstalujesz, możesz przejść do pisania swojego pierwszego kodu.
 
-Najważniejszą częścią każdego projektu jest wybór odpowiednich bibliotek i narzędzi, które będą potrzebne do jego realizacji. W Pythonie istnieje wiele popularnych bibliotek, takich jak NumPy do obliczeń naukowych, Pandas do analizy danych czy Django do tworzenia stron internetowych. Można wybrać jedną z nich lub połączyć wiele w celu uzyskania jeszcze lepszych wyników.
-
-Poniżej przedstawiony jest prosty przykład kodu, który wykorzystuje bibliotekę NumPy do obliczenia średniej wartości z listy liczb:
-
+```Python
+# Przykład kodu
+print("Witaj świecie!")
 ```
-import numpy as np
+Ten krótki przykład pokazuje, jak prosty i czytelny jest język Python. Możesz również użyć interpretera Python w trybie interaktywnym, aby przetestować swoje pomysły i eksperymentować z różnymi funkcjami języka.
 
-# lista liczb
-numbers = [5, 8, 12, 6, 9]
-
-# wyliczenie średniej wartości
-mean = np.mean(numbers)
-
-# wyświetlenie wyniku
-print("Średnia wartość: ", mean)
-```
-
-Po uruchomieniu tego kodu, otrzymamy następujący wynik:
-
-```
-Średnia wartość: 8
+```Python
+# Przykład interaktywnego trybu
+>>> x = 5
+>>> print(x*2)
+10
+>>> y = "Python"
+>>> print("Mój ulubiony język to " + y)
+Mój ulubiony język to Python
 ```
 
-## Głębszy wgląd
+Po nauce podstaw języka, możesz poszukać różnych bibliotek i frameworków, które ułatwią Ci tworzenie swojego projektu. Przeczytaj dokumentację różnych modułów, aby znaleźć te, które najlepiej odpowiadają Twoim potrzebom.
 
-Rozpoczynając nowy projekt w Pythonie, ważne jest również zaplanowanie jego struktury. Warto zacząć od stworzenia struktury folderów, w których będziemy przechowywać nasze pliki z kodem. Należy również zadbać o komentarze w kodzie oraz odpowiednie nazewnictwo zmiennych, aby ułatwić jego zrozumienie innym programistom.
+## Deep Dive
 
-Kolejnym ważnym krokiem jest testowanie kodu i poprawianie ewentualnych błędów, a także regularne zapisywanie postępów projektu. Warto także korzystać z systemu kontroli wersji, takiego jak Git, aby móc łatwo wracać do poprzednich wersji kodu w razie potrzeby.
+Podstawy języka Python są bardzo proste do zrozumienia, co sprawia, że jest on idealny dla początkujących programistów. Dzięki czytelnemu składni i bogatej bibliotece standardowej, możesz w szybki sposób używać gotowych funkcji i modułów. Ponadto, język ten jest również popularny w świecie nauki danych i uczenia maszynowego, co daje Ci możliwość rozwoju w tych dziedzinach.
 
-Zakończeniem projektu powinna być jego dokumentacja, która opisuje cel, sposób wykorzystania oraz ważne aspekty kodu. Jest to ważny element każdego projektu, który ułatwia innym programistom zrozumienie i wykorzystanie naszego kodu.
+Jednak zacząć nowy projekt w języku Python może być również wyzwaniem. Musisz poświęcić czas na naukę podstaw i zrozumienie struktury i składni języka. Jednak gdy już opanujesz te podstawy, będziesz mógł tworzyć zaawansowane i skomplikowane projekty.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja języka Python](https://docs.python.org/3/)
-- [Oficjalna strona biblioteki NumPy](https://numpy.org/)
-- [Oficjalna strona narzędzia Git](https://git-scm.com/)
+- [Oficjalna strona Pythona](https://www.python.org/)
+- [Dokumentacja Pythona](https://docs.python.org/)
+- [Kurs Pythona na Codecademy](https://www.codecademy.com/learn/learn-python)

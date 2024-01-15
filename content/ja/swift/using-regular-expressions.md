@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 正規表現の使用"
-simple_title:         "正規表現の使用"
+title:                "正規表現を使用する"
+html_title:           "Swift: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ使うのか
 
-正規表現を使う理由はたくさんあります。例えば、大量のテキストの中から特定のパターンを簡単に見つけたり、複雑な文字列を検索したりする時に役立ちます。Swiftでの正規表現の使用は、よりスマートかつ効率的なプログラミングを実現するための重要なツールです。
+正規表現を使うことの利点は、テキストからパターンを検索したり、特定の形式に合う文字列を取り出したりすることができることです。
 
 ## 使い方
 
-まずは、正規表現を使うために必要な`Foundation`フレームワークをインポートします。次に、`NSRegularExpression`のインスタンスを作成し、パターンとオプションを指定します。
+まずは、Swiftで正規表現を使うために必要なインポートをします。以下のコードは、単語のリストから「cat」が含まれるものを見つけ出す例です。
 
 ```Swift
 import Foundation
 
-let text = "Swiftは素晴らしいプログラミング言語です。正規表現を使って文字列を検索したり、置換したりすることができます。"
+let words = ["cat", "dog", "bird", "catfish", "lion"]
 
-let pattern = "正規表現"
-
-let regex = try! NSRegularExpression(pattern: pattern, options: [])
-
-```
-
-次に、`matches`メソッドを使ってテキスト内でパターンにマッチする箇所を見つけることができます。
-
-```Swift
-let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-
-for match in matches {
-    let range = match.range
-    let matchString = (text as NSString).substring(with: range)
-    print(matchString) // "正規表現"
+for word in words {
+    if let range = word.range(of: "cat") {
+        print("\(word) contains 'cat'")
+    }
 }
 ```
+上記のコードを実行すると、以下の出力が得られます。
 
-## ディープダイブ
+```
+cat contains 'cat'
+catfish contains 'cat'
+```
 
-正規表現の書式を学ぶことで、パターンをより詳細に指定することができます。例えば、`+`や`*`を使って特定の文字が1回以上または0回以上繰り返されることを表現できます。また、`[]`を使って複数の文字の中からマッチするものを選ぶことができます。
+正規表現パターンには、「cat」の他にも「c[a-z]+t」といった表現を使うこともでき、より柔軟な文字列の検索が可能になります。
 
-さらに、正規表現の辞書を用意することで、より複雑なパターンを探すことができます。これにより、複数のパターンを組み合わせたり、特定の文字列のグループを検索することができます。
+## 応用情報
+
+正規表現には、さまざまなオプションや特殊な記号があります。例えば、大文字と小文字を区別しないようにするオプションや、グループ化して文字列を取り出す方法もあります。詳細な情報は、オンラインドキュメントや書籍を参考にしてください。
 
 ## 参考リンク
 
-- [Swiftの正規表現](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID289)
-- [正規表現のチートシート](https://www.ibm.com/support/knowledgecenter/ja/SSMKHH_10.0.0/com.ibm.etools.mft.doc/be43230_.htm#be43230___5symbols)
-- [オンライン正規表現テスター](https://regex101.com/)
+- [Swift Regular Expressions - NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [正規表現入門 (1) マッチさせる・パターンを記述する (基本編) | bermuda](https://www.bermuda-labo.com/regexp/)
+- [Swiftで正規表現を使おう！](https://qiita.com/shiz/items/085d2344d64189643c2f)

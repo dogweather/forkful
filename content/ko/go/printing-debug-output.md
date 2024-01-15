@@ -1,6 +1,7 @@
 ---
-title:                "Go: 디버그 출력 출력"
-simple_title:         "디버그 출력 출력"
+title:                "디버그 출력하기"
+html_title:           "Go: 디버그 출력하기"
+simple_title:         "디버그 출력하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -11,11 +12,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-디버그 출력을 보는 것은 프로그래밍 과정에서 가장 중요한 도구 중 하나입니다. 오류를 파악하고 코드를 디버그하고 최종적으로 원하는 결과를 얻기 위해 디버그 출력을 수행하는 것은 매우 유용합니다. 또한 디버그 출력을 통해 코드가 어떻게 실행되고 변수가 어떻게 변하는지에 대한 정보를 얻을 수 있습니다.
+디버그 출력을 프린트하는 것이 왜 중요한지 궁금하신가요? 간단하게 말해서, 디버그 출력은 프로그램의 오류를 찾아내는 데 매우 유용하며, 코드 작성 과정에서 문제를 파악하는 데 도움이 됩니다.
 
-## 사용 방법
+## 방법
 
-디버그 출력을 위해 고 언어의 내장 함수인 `fmt.Println()`을 사용할 수 있습니다. 아래는 간단한 예시 코드와 그 결과를 보여줍니다.
+디버그 정보를 출력하는 가장 일반적인 방법은 `fmt.Print()`와 `fmt.Println()` 함수를 사용하는 것입니다. 또 다른 유용한 함수는 `fmt.Printf()`로, 포맷된 문자열을 출력할 수 있습니다.
+
+예를 들어, 다음은 `fmt.Println()` 함수를 사용하여 디버그 정보를 출력하는 코드 예제입니다.
 
 ```Go
 package main
@@ -24,37 +27,78 @@ import "fmt"
 
 func main() {
     name := "John"
-    age := 28
+    age := 30
 
-    fmt.Println("My name is", name)
-    fmt.Println("I am", age, "years old")
+    fmt.Println("Name:", name)
+    fmt.Println("Age:", age)
+}
+```
+위 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+
+```
+Name: John
+Age: 30
+```
+
+`fmt.Printf()` 함수를 사용하여 특정 형식으로 디버그 정보를 출력할 수도 있습니다. 예를 들어, 아래 코드는 `name`과 `age` 변수를 포맷 문자열 안에 넣어 출력하는 예제입니다.
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    name := "John"
+    age := 30
+
+    fmt.Printf("Name: %s\nAge: %d\n", name, age)
+}
+```
+위 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+
+```
+Name: John
+Age: 30
+```
+
+이처럼 `fmt` 패키지의 함수들은 문자열, 정수, 실수 등 다양한 데이터 타입을 지원하고 있어, 디버그 정보를 다양한 형식으로 출력할 수 있습니다.
+
+## 딥 다이브
+
+출력된 디버그 정보가 너무 많거나 복잡할 경우, `log` 패키지를 사용하여 로그 파일로 저장할 수도 있습니다. 예를 들어, 아래 코드는 `log` 패키지를 사용하여 로그 파일에 디버그 정보를 저장하는 예제입니다.
+
+```Go
+package main
+
+import (
+    "log"
+    "os"
+)
+
+func main() {
+    file, err := os.Open("debug.log")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
+
+    log.SetOutput(file)
+
+    // 디버그 정보를 로그 파일에 저장
+    log.Println("Debug info")
 }
 ```
 
-위 코드의 출력은 다음과 같습니다.
+위 코드를 실행하면 `debug.log` 파일에 다음과 같은 내용이 저장됩니다.
 
 ```
-My name is John
-I am 28 years old
+2019/10/15 14:10:25 Debug info
 ```
 
-파일을 실행하면 `main` 함수가 실행되고 `fmt.Println()` 함수를 통해 디버그 출력이 터미널에 표시됩니다.
+`log` 패키지는 다양한 로깅 기능을 제공하므로, 프로그램의 디버그 정보를 관리하는 데 매우 유용합니다. 더 자세한 정보는 공식 문서를 참조하길 바랍니다.
 
-## 심층 분석
+## 참고자료
 
-고 언어에서는 `fmt.Println()` 외에도 여러 가지 디버그 출력 함수를 제공합니다. `fmt.Printf()` 함수를 통해 포맷 지정 출력을 할 수 있고 `fmt.Sprintf()` 함수를 통해 문자열로 출력을 반환할 수도 있습니다. 또한 디버깅 중에 변수의 값을 확인해야 할 때 `fmt.Sprint()` 함수를 사용할 수도 있습니다.
-
-디버그 출력을 통해 변수의 값이나 프로그램의 실행 흐름을 파악할 수 있지만, 너무 많은 디버그 출력은 오히려 코드를 어렵게 만들 수 있습니다. 따라서 적절한 위치와 양의 디버그 출력을 사용하는 것이 중요합니다.
-
-## 또 다른 자료
-
-고 언어에서 디버그 출력에 대해 더 알아보고 싶다면 아래 링크를 확인해보세요.
-
-- [Go 언어 공식 문서 - fmt 패키지](https://golang.org/pkg/fmt/)
-- [예제로 배우는 Go 언어](https://doingitwrong.gitbook.io/go/)
-- [Go 언어 디버깅과 테스트 - hongminhee의 블로그](https://mingrammer.com/go-debugging-and-testing/)
-
-## 참고 자료
-
-- [Go 언어 공식 문서 - fmt 패키지](https://golang.org/pkg/fmt/)
-- [TOPIT 메일링 리스트 - 디버그 출력하기](http://topit.or.kr/archive/23264)/
+- [Go 공식 문서: fmt 패키지](https://golang.org/pkg/fmt/)
+- [Go 공식 문서: log 패키지](https://golang.org/pkg/log/)
+- [A Tour of Go: Printing](https://tour.golang.org/basics/15)

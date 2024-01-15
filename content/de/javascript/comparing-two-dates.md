@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Zwei Daten vergleichen"
+title:                "Zwei Daten vergleichen"
+html_title:           "Javascript: Zwei Daten vergleichen"
 simple_title:         "Zwei Daten vergleichen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,53 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Vergleichen von zwei Daten in der Programmierung kann sehr nützlich sein, um zum Beispiel festzustellen, welches Datum später oder früher ist, oder um Verzögerungen zu berechnen.
+Hast du dich jemals gefragt, wie man zwei Daten in Javascript vergleichen kann? Es gibt viele Anwendungsfälle, wie zum Beispiel die Überprüfung, ob eine eingestellte Frist erreicht wurde oder das Sortieren von Daten in einem bestimmten Zeitraum.
 
-## Wie geht es?
-
-Um zwei Daten zu vergleichen, können wir die eingebaute `Date`-Klasse in Javascript verwenden. Diese Klasse ermöglicht es uns, Datumswerte zu erstellen, zu vergleichen und zu manipulieren.
-
-Um zwei Daten zu vergleichen, müssen wir zunächst zwei `Date`-Objekte erstellen. Hier ist ein Beispiel, um den heutigen Tag als Datum zu erstellen:
+## Wie geht das?
 
 ```Javascript
-const heute = new Date();
+let date1 = new Date('2021-01-01');
+let date2 = new Date('2021-01-05');
+
+// Vergleiche ob date1 vor date2 liegt
+if (date1 < date2) {
+  console.log("date1 liegt vor date2");
+}
+
+// Vergleiche ob date1 nach date2 liegt
+if (date1 > date2) {
+  console.log("date1 liegt nach date2");
+}
+
+// Vergleiche ob date1 und date2 gleich sind
+if (date1.getTime() === date2.getTime()) {
+  console.log("date1 und date2 sind gleich");
+}
+
 ```
 
-Um ein bestimmtes Datum zu erstellen, können wir die `Date`-Klasse auch mit einer Datumszeichenfolge als Argument verwenden. Zum Beispiel:
+Die Vergleichsoperatoren `<` und `>` können verwendet werden, um zu überprüfen, welches Datum früher oder später liegt. Aber um sicherzustellen, dass die beiden Daten auch wirklich gleich sind, müssen wir die `getTime()`-Methode verwenden, die die Zeit in Millisekunden seit dem 1. Januar 1970 zurückgibt.
+
+## Tiefer Einblick
+
+Ein weiterer wichtiger Aspekt beim Vergleichen von Daten ist die Zeitzone. Wenn wir zum Beispiel ein Datum aus einer anderen Zeitzone erhalten und es mit einem lokalen Datum vergleichen, kann dies zu unerwarteten Ergebnissen führen. In diesem Fall müssen wir die `getTimezoneOffset()`-Methode verwenden, die die Zeitdifferenz zwischen der lokalen Zeitzone und der UTC-Zeitzone zurückgibt.
 
 ```Javascript
-const geburtstag = new Date("1990-05-12");
+let date1 = new Date('2021-01-01T00:00:00-08:00'); // Datum aus PST-Zeitzone
+let date2 = new Date('2021-01-01T00:00:00Z'); // Datum aus UTC-Zeitzone
+
+if (date1.getTime() === date2.getTime() + date2.getTimezoneOffset() * 60000) {
+  console.log("date1 und date2 sind gleich");
+}
+
 ```
 
-Jetzt haben wir beide Datenobjekte erstellt, können wir sie miteinander vergleichen. Hier sind einige Beispiele, die verschiedene Vergleiche durchführen und das Ergebnis als Konsolenausgabe anzeigen:
-
-```Javascript
-// Vergleiche ob das Geburtsdatum vor heute liegt
-console.log(geburtstag < heute); // output: true
-
-// Vergleiche ob das Geburtsdatum nach dem heutigen Tag ist
-console.log(geburtstag > heute); // output: false
-
-// Vergleiche ob beide Daten gleich sind
-console.log(geburtstag === heute); // output: false
-```
-
-Wie wir sehen können, kehrt der Vergleichsoperator `>` oder `<` `true` oder `false` zurück, abhängig davon, ob das erste Datum früher oder später als das zweite ist. Der `===`-Operator prüft, ob beide Daten genau gleich sind.
-
-## Deep Dive
-
-Um zwei Daten in Javascript zu vergleichen, berücksichtigt die `Date`-Klasse mehrere Faktoren, wie die Zeitzone und die Tageszeit. Dies kann manchmal zu unerwarteten Ergebnissen führen, insbesondere wenn man nicht genau versteht, wie die Vergleiche durchgeführt werden.
-
-Beispielsweise kann ein Datum mit einer Zeitangabe `13:00` auf einem Computer in Deutschland möglicherweise früher liegen als ein Datum mit der gleichen Zeit auf einem Computer in den USA, aufgrund der Zeitverschiebung.
-
-Um diese unerwarteten Ergebnisse zu vermeiden, können wir die Methoden `getDate()` und `getUTCDate()` verwenden, um nur das Datum ohne Berücksichtigung der Zeitzone zu vergleichen. Dies würde wie folgt aussehen:
-
-```Javascript
-// Vergleiche ob beide Daten gleich sind, ohne die Zeitzone zu berücksichtigen
-console.log(geburtstag.getUTCDate() === heute.getUTCDate()); // output: true
-```
+Hier wird die Zeitzoneoffset-Differenz von `date2` in Millisekunden umgewandelt und zum Zeitwert von `date2` addiert, bevor sie mit dem Zeitwert von `date1` verglichen wird.
 
 ## Siehe auch
 
-- [MDN Web Docs - Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
-- [MDN Web Docs - Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [MDN Dokumentation über die Date-Klasse in Javascript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js Bibliothek für das Arbeiten mit Datum und Zeit](https://momentjs.com/)
+- [Vergleichsoperatoren in Javascript](https://www.w3schools.com/js/js_comparisons.asp)

@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "PHP recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,57 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
+Writing tests is an essential part of the development process in PHP and plays a crucial role in ensuring the quality and stability of your code. By writing tests, you can catch bugs and errors before they make it to production, saving you time and effort in the long run.
 
-Writing tests is an essential part of any software development process. It helps ensure the quality and functionality of your code, catches bugs early on, and saves time in the long run. In this blog post, we will explore the importance of writing tests and how to approach it.
+## How To 
+To write tests in PHP, you will need a testing framework. Some popular options include PHPUnit, Codeception, and Behat. In this article, we will focus on PHPUnit.
 
-## How To
+1. First, install PHPUnit using Composer by running the following command in your project directory: 
+```PHP
+composer require --dev phpunit/phpunit
+```
 
-To start writing tests, you will need a PHP testing framework. One popular option is PHPUnit, which has a comprehensive set of tools for unit testing. Let's look at an example of a simple test using PHPUnit:
-
+2. Once PHPUnit is installed, create a new file named "CalculatorTest.php" and add the following code to it:
 ```PHP
 <?php
+  use PHPUnit\Framework\TestCase;
+  require 'Calculator.php';
 
-use PHPUnit\Framework\TestCase;
-
-class CalculatorTest extends TestCase
-{
-    public function testAddition()
-    {
-        $calculator = new Calculator();
-        $result = $calculator->add(2, 3);
-        $this->assertEquals(5, $result);
+  class CalculatorTest extends TestCase {
+    public function testAdd(){
+      $calculator = new Calculator();
+      $this->assertEquals(4, $calculator->add(2,2));
     }
-}
+  }
 ```
 
-In this test, we are creating an instance of a Calculator class and using the `assertEquals()` method to check if the result of adding 2 and 3 is equal to 5. If the test fails, it means there is an error in our code and we need to fix it.
-
-PHPUnit also provides other helpful methods like `assertGreaterThan()` and `assertNotEmpty()` for different types of tests. It's important to write multiple tests for each function to cover different scenarios and edge cases.
-
-Running the test will give us the following output:
-
-```
-PHPUnit 9.5.1 by Sebastian Bergmann and contributors.
-
-.                                                                   1 / 1 (100%)
-
-Time: 00:00.002, Memory: 4.00 MB
-
-OK (1 test, 1 assertion)
+3. In the same directory, create another file named "Calculator.php" and add the following code to it:
+```PHP
+<?php
+  class Calculator {
+    public function add($a, $b){
+      return $a + $b;
+    }
+  }
 ```
 
-This means our test was successful, and our code is working as expected. If we change the expected result in our test to anything other than 5, the test will fail with a helpful message, allowing us to quickly fix the issue.
+4. Finally, run PHPUnit by entering the following command in your terminal:
+```PHP
+./vendor/bin/phpunit CalculatorTest.php
+```
+You should see an output that says "OK (1 test, 1 assertion)".
 
 ## Deep Dive
+Let's break down the code in our "CalculatorTest.php" file. We first import the TestCase class from PHPUnit, which contains the necessary methods for writing tests. Then, we require the "Calculator.php" file, which contains the class we want to test.
 
-When writing tests, it's essential to consider different factors that can affect the functionality of your code. For example, what if a user enters an invalid input? What if there is an error in a third-party library that your code is dependent on? Writing tests for these scenarios can prevent unexpected errors and ensure the stability of your code.
+Next, we create a class named CalculatorTest and extend it from TestCase. Inside our "testAdd" function, we create an instance of the Calculator class and use the "assertEquals" method to compare the expected result (4) with the actual result of calling the "add" method on our calculator object with the parameters 2 and 2.
 
-Another important aspect of writing tests is test coverage. It's not enough to have a few tests that pass; you need to have a comprehensive test suite that covers all parts of your code. This includes testing for different input values, handling exceptions, and checking edge cases.
-
-It's also crucial to write tests for both your application code and your testing code. This ensures that your tests are accurate and reliable. Additionally, following a test-driven development (TDD) approach, where tests are written before the code, can greatly improve the quality of your code and reduce the chances of introducing bugs.
+Writing tests involves creating multiple test cases for each possible scenario and making sure they all pass. This way, we can be confident that our code is functioning correctly.
 
 ## See Also
-
-- [PHPUnit documentation](https://phpunit.de/documentation.html)
-- [Test-driven development: what it is and what it is not](https://medium.com/@jasonrigden/test-driven-development-what-it-is-and-what-it-is-not-91107b3c206a)
-- [Why code coverage is important](https://medium.com/@bryzzzl/why-code-coverage-is-important-bc969f21205f)
+- [PHPUnit - Official Documentation](https://phpunit.de/documentation.html)
+- [Codeception - Testing Framework for PHP](https://codeception.com/)
+- [Behat - Behavior Driven Development for PHP](https://behat.org/)

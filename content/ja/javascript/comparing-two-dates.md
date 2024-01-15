@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 2つの日付を比較する"
-simple_title:         "2つの日付を比較する"
+title:                "「二つの日付の比較」"
+html_title:           "Javascript: 「二つの日付の比較」"
+simple_title:         "「二つの日付の比較」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,49 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を比較することの意義は、日常生活における重要な役割を果たしています。例えば、プログラミングをする際に、特定の日付の前後関係を知ることが必要になることがあります。また、データベースやスプレッドシートなどの操作をする際にも、日付を比較することがよくある作業です。
+JavaScriptでは、日付を比較することで、特定の日付と比較して、何かの結果を得ることができます。これは、期限や期間を管理する際に非常に便利です。
 
-## 使い方
+## 方法
 
-日付を比較する方法は複数ありますが、ここでは`Date()`オブジェクトを用いた方法を紹介します。まずは、比較したい日付をそれぞれの変数に保存します。
-
-```Javascript
-var date1 = new Date('2020/01/01');
-var date2 = new Date('2020/05/05');
-```
-
-次に、`getTime()`メソッドを用いて、日付をミリ秒数に変換します。これにより、日付を数値として比較することができます。
+まず第一に、二つの日付を取得します。これらは、Dateオブジェクトを使用して取得することができます。次に、比較演算子（<, >, <=, >=）を使用して、二つの日付を比較します。例えば、以下のコードは二つの日付を比較し、結果をコンソールに出力します。
 
 ```Javascript
-var time1 = date1.getTime();
-var time2 = date2.getTime();
-```
+let date1 = new Date("2021/01/01");
+let date2 = new Date("2021/01/15");
 
-最後に、比較するためのif文を使用し、日付の前後関係を調べることができます。
-
-```Javascript
-if (time1 > time2) {
-  console.log('date1 is later than date2');
-} else if (time1 < time2) {
-  console.log('date1 is earlier than date2');
-} else {
-  console.log('both dates are the same');
+if (date1 < date2) {
+  console.log("date1はdate2よりも前です。");
 }
 ```
 
-上記の場合、`date1`は`date2`よりも後の日付なので、「date1がdate2よりも後の日付である」というメッセージが出力されます。
+実行結果は以下のようになります。
 
-## 深層
+```
+date1はdate2よりも前です。
+```
 
-日付を比較する際には、特定の精度によって正確な結果が得られることが重要です。例えば、`getTime()`メソッドはミリ秒単位までしか比較ができないため、秒以下の精度まで比較したい場合は、別の方法を用いる必要があります。
+## 深堀り
 
-また、`Date()`オブジェクトの入力形式にも注意が必要です。例えば、月と日の順番が異なるフォーマットなどがあり、正しく比較するためには入力形式を厳密に合わせる必要があります。
+日付を比較する際には、注意しなければならない点がいくつかあります。まず、Dateオブジェクトを作成する際に、注意しなければならないのは、月を表すときに0が1月を表し、11が12月を表すという点です。また、日付が異なっていても、年や月・日が同じであれば、それでも等しいとみなされます。これらのポイントを抑えておくことで、正しく日付を比較することができます。
 
-さらに、時差やサマータイムなどの影響も考慮しなければなりません。より正確な結果を得るためには、そのような要素も考慮することが重要です。
+## はまわなくても
+
+もし日付を比較する際に、他の言語でよく使われているような「日付を数値型に変換してから比較する」という手法を使いたい場合は、DateオブジェクトのgetTime()メソッドを使用することができます。このメソッドは、1970年1月1日からのミリ秒数を返すので、それを利用して日付を数値型に変換することができます。
 
 ## 参考リンク
 
-- [MDN Web Docs: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Qiita: JavaScriptで日付を比較する方法](https://qiita.com/ut0n/items/be4c1136f7a7abf36f6a) 
-
-## 関連ページ
+- [MDN: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Dateオブジェクトの基礎](https://qiita.com/chihiro/items/7ce21bbe991ee87720f8)
+- [Dateを比較するのが辛い人の為に。](https://qiita.com/yarron/items/60a15bba8bbaf5e27dd2#_%E6%AF%94%E8%BC%83%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF)

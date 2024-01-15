@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: עובדים עם json"
-simple_title:         "עובדים עם json"
+title:                "עבודה עם json"
+html_title:           "Fish Shell: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+(Hebrew Translation):
+
 ## למה
-נחשב לעדיף תקשורתית ומקצועית, JSON הוא לוצ'ר טכנולוגיה נפוצה במערכות מידע ותכניתיות. השתמש ב- JSON כדי לקלוט, לאחזר ולערוך נתונים בפורמט פשוט וקריא. בכתיבת תוכניות מחשב עם Fish Shell, הפרמטרים נמצאים בקלות, JSON בנוי נכון במעמד כלי עבודה.
 
-## איך ל
-קלוט נתונים מקובץ JSON לתוך משתנה ב-Fish Shell:
+נתחיל בשאלה הכי חשובה - למה להתעסק עם JSON ולמה כדאי ללמוד כיצד לעבוד איתו מתוך ה- Fish Shell (גירסה הנוכחית)?
 
-```
-set -l data (cat file.json | from-json)
-echo $data[0]
-```
+ JSON הוא שפת תכנות נפוצה מאוד ונמצאת בשימוש רב בפיתוח תוכניות ואתרים. הוא מאפשר יצירת מידע בפורמט נוח וקריא ומיועד להעברת נתונים בין מכשירים ואפליקציות שונות. כל נתונים שמתקבלים כדורשים להיות מאורגנים בפורמט JSON, וכך ניתן לקלוטם ולעבדם בצורה נוחה ויעילה.
 
-כאן, אנו משתמשים בכלי העבודה `from-json` כדי לקלוט נתונים מתוך קובץ נתונים בפורמט JSON ולשמור אותם במשתנה בשם `data`. לאחר מכן, אנו מדפיסים את אלמנט הראשון במערך ה- `data`. להלן פלט הקלט והפלט:
+## איך לפעול עם JSON ב- Fish Shell
 
-קלט (file.json):
-```
-[
-    {
-        "name": "Neta",
-        "age": 25,
-        "occupation": "Developer"
-    },
-    {
-        "name": "Tom",
-        "age": 30,
-        "occupation": "Designer"
-    }
-]
+לעבוד עם נתוני JSON ב- Fish Shell פשוט וקל כמו בכל שפת תכנות אחרת. באמצעות הפקודות המתאימות ניתן ליצור, לקרוא ולעדכן נתונים בפורמט זה. הנה כמה דוגמאות קצרות כדי להדגים את השימוש בפקודות הנכונות:
+
+```Fish Shell
+# יצירת אובייקט JSON
+set person '{"name": "John", "age": 30}'
+
+# קריאה של ערך מתוך אובייקט
+echo $person.name
+
+# עדכון ערך באובייקט
+set person.age 35
+
+# הדפסת אובייקט כטקסט
+echo $person
 ```
 
-פלט:
-```
-Neta
-```
+הפקודות הנ"ל יכולות לשמש ככלים חזקים לעבוד עם JSON בפיתוח תוכניות ותכנות בפרויקטים שונים.
 
-## צלילה עמוקה
-היכן שיש JSON, יש גם דרכים נוחות יותר לעבוד עם נתונים ב-Fish Shell. הנה כמה קודקודים נוספים כדי לעזור לך להתחיל:
+## ירידה מעומק ל- JSON
 
-- [התיעדות של Fish Shell על JSON](https://fishshell.com/docs/current/cmds/from-json.html)
-- [כלי חיפוש והחלפה מהירים לקבצי JSON](https://github.com/fishpkg/fish-json)
-- [תיאור מפורט ותיעוד של פרמטרים שונים שנתמכים עם Fish Shell JSON כלומר מחברי](https://fishshell.com/docs/current/cmds/from-json.html)
-- [מחברת Blog על השתמשות כיוון JSON בכתיבת תוכניות עם Fish Shell](https://dmitryfrank.com/articles/shell_programming_with_json)
+בנוסף לפקודות הבסיסיות שהיא מציעה, Fish Shell מציעה גם כמה פקודות עוצמתיות יותר לעבודה עם JSON. למשל, פקודת `jq` היא אחת מהכלים הנפוצים ביותר לפעילות עם JSON ומאפשרת ביצוע עקבי של מתודות ופקודות לנתונים.
 
-## ראו גם
-- פרויקט [Fish Shell](https://fishshell.com/)
-- [מדריך עבור מתחילים בבניית פיס תוכניות עם כוונת JSON](https://www.linuxquestions.org/questions/programming-9/json-with-awk-and-bash-855102/)
-- [מדריך מפורט על 7 צעדים בכדי
+עוד פקודה חזקה ו

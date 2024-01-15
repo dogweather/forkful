@@ -1,6 +1,7 @@
 ---
-title:                "C#: Testien laatiminen"
-simple_title:         "Testien laatiminen"
+title:                "Testien kirjoittaminen"
+html_title:           "C#: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -11,45 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Testaaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentämään mahdollisia virheitä. Testien avulla voit myös helposti havaita ja korjata bugeja ennen kuin ne aiheuttavat suurempia ongelmia.
+Kirjoittamalla testit varmistat, että koodisi toimii odotetulla tavalla ja että muutokset eivät riko jo olemassa olevaa toiminnallisuutta.
 
-## Kuinka
+## Kuinka tehdä
 
-Testien kirjoittaminen C#:lla on helppoa ja ne voidaan lisätä helposti osaksi ohjelmakoodia. Alla on esimerkki yksinkertaisesta testitapauksesta, jossa testataan laskuoperaatioiden toimivuutta.
+Testien kirjoittaminen C#:ssa on helppoa. Käytämme siihen valmiita testikehyksiä, kuten *NUnit* tai *xUnit*, jotka tekevät testien kirjoittamisesta selkeää ja yksinkertaista.
+
+Seuraavassa esimerkissä luomme yksinkertaisen testin, joka varmistaa, että laskinluokka suorittaa yhteen- ja vähennyslaskut oikein:
 
 ```C#
-// luodaan testiluokka
-public class LaskinTests
+public class Calculator
 {
-    // testifunktio, jossa suoritetaan laskinoperaatio ja verrataan tulosta odotettuun arvoon
-    [Fact]
-    public void TestaaSumma()
+    public int Add(int x, int y)
     {
-        // asetetaan testattava luku
-        int luku1 = 5;
+        return x + y;
+    }
 
-        // asetetaan odotettu tulos
-        int odotettuTulos = 10;
+    public int Subtract(int x, int y)
+    {
+        return x - y;
+    }
+}
 
-        // suoritetaan laskutoimitus
-        int tulos = Laskin.Summa(luku1, luku2);
+[TestFixture] // NUnit-kirjastosta
+public class CalculatorTests 
+{
+    [Test] // Merkintä kertoo, että tämä metodi on testi
+    public void Add_AddsTwoValues_CorrectResult()
+    {
+        // Valmistele: luodaan laskinolio, jonka haluamme testata
+        var calculator = new Calculator();
 
-        // verrataan tulosta odotettuun arvoon
-        Assert.Equal(odotettuTulos, tulos);
+        // Toimi: suoritetaan laskutoimitus
+        var result = calculator.Add(2, 2);
+
+        // Varmista: tarkastetaan, että saatu tulos on odotettu
+        Assert.AreEqual(4, result); // Testi epäonnistuu, jos arvot eivät ole samat
+    }
+
+    [Test]
+    public void Subtract_SubtractsTwoValues_CorrectResult()
+    {
+        var calculator = new Calculator();
+        var result = calculator.Subtract(10, 5);
+        Assert.AreEqual(5, result);
     }
 }
 ```
 
-Testien kirjoittamisessa hyödynnetään yleensä testing framework -kirjastoa, kuten esimerkiksi xUnit tai NUnit. Näiden avulla voit helposti suorittaa testit ja saada selkeän raportin niiden toimivuudesta.
+Kun ajamme testit, saamme seuraavan tulosteen:
 
-## Syventävä sukellus
+```
+Tests run: 2, Passed: 2, Failures: 0, Inconclusive: 0, Skipped: 0
+```
 
-Testien kirjoittamisella on monia etuja, kuten koodin laadun parantaminen, virheiden havaitseminen ja ennaltaehkäisy sekä ohjelmiston luotettavuuden lisääminen. On tärkeää muistaa, että testien tulee olla kattavia ja peittää mahdollisimman monta erilaista skenaariota, jotta ne ovat mahdollisimman hyödyllisiä.
+Mikäli tulokset eivät vastaa odotettua, testi epäonnistuu ja näemme tarkemman virheilmoituksen. Näin voimme nopeasti havaita mahdolliset ongelmat ja korjata ne ennen kuin ne päätyvät tuotantokoodiin.
 
-Toinen tärkeä huomioitava asia on testien jatkuvuus. Testien tulisi aina pysyä ajantasalla koodin muutosten kanssa, jotta ne ovat aina relevantteja ja luotettavia.
+## Syvällisempi sukellus
+
+Testien kirjoittaminen on myös tärkeää koodin laadun parantamiseksi. Hyvin kirjoitetut testit toimivat myös dokumentaationa koodin toiminnallisuudesta ja auttavat uusia kehittäjiä ymmärtämään koodia.
+
+C#:ssa testien kirjoittaminen on helppoa, kun käytämme valmiita testikehyksiä. Voimme myös hyödyntää *Mock* kirjastoa luodessamme ohjelmalle riippuvuuksia, jotta voimme simuloida erilaisia testitilanteita.
+
+On myös tärkeää muistaa, että testien kirjoittaminen ei korvaa manuaalista testausta, vaan täydentää ja nopeuttaa sitä.
 
 ## Katso myös
 
-- [xUnit](https://xunit.net/)
-- [NUnit](https://nunit.org/)
-- [Testausstrategiat ohjelmoinnissa](https://medium.com/@donireyes/testausstrategiat-ohjelmoinnissa-65018dd5a807)
+[.NET Testauskirjasto: NUnit] (https://nunit.org/)
+
+[xUnit.net Test Framework] (https://xunit.net/)
+
+[C# Tester] (https://www.c-sharpcorner.com/uploadfile/rahul4_saxena/teststestscsharpworksheet11262005022424am/teststestscsharpworksheet.aspx/)

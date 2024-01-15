@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: yaml के साथ काम करना"
-simple_title:         "yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "Arduino: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -11,56 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-आर्डुइनो कोडिंग के साथ काम करने का काम YAML सलाहकार बहुत फायदेमंद है।
+क्या आपने कभी सोचा है कि आप अपने Arduino बोर्ड को और अधिक उपयोगी बना सकते हैं? YAML और Arduino का उपयोग करके, आप अपने बोर्ड पर विभिन्न सेटिंग्स को एक आसान तरीके से सेट कर सकते हैं। इससे आपको आवश्यकता होने पर बोर्ड की सेटअप करने के लिए समय बचाने में मदद मिलेगी।
 
-## कैसे करें
+## कैसे
 
-आगे दिए गए कोड उदाहरण में हम देखेंगे कि यमल कैसे दूसरे फाइल के साथ संवाद करता है। इसके पश्चात कोड ब्लॉक के अंदर आपको संदर्भ दिया जायेगा, जो आसानी से समझने के लिए बनाया गया है।
+अपने आर्दुइनो बोर्ड में YAML फाइल का सेटअप करने के लिए, सबसे पहले आपको एक शुरुआती स्केच फाइल बनाना होगा। फिर, आपको 'yaml.h' लाइब्रेरी को अपने स्केच में शामिल करना होगा। नीचे दिए गए कोड ब्लॉक आपको यह स्पष्ट रूप से दर्शाते हैं:
 
-```Arduino
-#include <SPI.h>
-#include <SD.h>
-#include <YAMLCPP.h>
+```arduino
+#include <yaml.h>
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. needed for native USB port boards only
-  }
-
-  Serial.print("Initializing SD card...");
-
-  if (!SD.begin()) {
-    Serial.println("initialization failed!");
-    return;
-  }
-  Serial.println("initialization done.");
-
-  File file = SD.open("sample.yaml");
-  YAML::Node node = YAML::Load(file);
-  file.close();
-
-  std::string name = node["player"]["name"].as<std::string>();
-  int age = node["player"]["age"].as<int>();
-
-  Serial.println("Player Name: " + name);
-  Serial.println("Age: " + age);
 }
 
 void loop() {
-  // do nothing
-}
+  // यहां YAML कोड को शामिल करें
+  YAML::Node config = YAML::Load(R"(
+  name: 'Arduino Uno'
+  version: 3
+  mode: 'manual'
+  )");
 
+  // कॉमेंट कर दी गई लाइनों को हटा कर सीरियल पोर्ट पर सेटिंग्स को प्रिंट करें
+  Serial.print("Board Name: ");
+  Serial.println(config["name"].as<String>());
+  Serial.print("Version: ");
+  Serial.println(config["version"].as<int>());
+  Serial.print("Mode: ");
+  Serial.println(config["mode"].as<String>());
+  delay(5000);
+}
 ```
 
-आप कोड के बारे में बहुत सारी सबक प्राप्त करेंगे - जैसे कि फाइल से डेटा को कैसे लोड करे और आप डेटा को किस प्रकार से एक चर में एक्सेस कर सकते हैं।
+आपको ऊपर दिए गए कोड ब्लॉक में YAML कोड को अपनी आवश्यकतानुसार संशोधित करना होगा। इसके बाद, आप अपने स्केच को अपने बोर्ड पर अपलोड कर सकते हैं। जब आप सीरियल मॉनिटर पर देखेंगे, तो आपको अपनी निर्दिष्ट सेटिंग्स को प्रिंट होते हुए देखेंगे।
 
-## गहराई में जाएं
+## डीप डाइव
 
-यमल प्रतीक्षा का नाम सदियों से कॉन्फ़िगरेशन, डेटा अभिप्राय और साधारण टेक्स्ट फाइल के लिए डेटा संरचना के लिए प्रयुक्त किया जाता है। लेकिन यह कम समझे जाने वाले प्रेरणादायक और कम लोअर राइसेस सूत्र है। यह मानते हैं कि इसको सीखने आसान है जो शुरुआतियों के लिए आसान होता है।
-
-## देखें भी
-
-- [आधिकारिक आर्डुइनो साइट](https://www.arduino.cc/)
-- [आर्डुइनो के बारे में अधिक जानकारी](https://hi.wikipedia.org/wiki/%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A1%E0%A5%81%E0%A4%8F%E0%A4%A8%E0%A5%8B) 
-- [आ
+YAML कोड को Arduino में लोड करने के लिए, आपको 'yaml.h' लाइब्रेरी को अपनी स्केच में शामिल करना होगा। इस

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Tiedostotiedoston kirjoittaminen"
-simple_title:         "Tiedostotiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Kotlin: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa tekstitiedosto?
+## Miksi
 
-Tekstitiedostojen kirjoittaminen on yksi yleisimmistä ohjelmointitehtävistä monilla ohjelmointikielillä, mukaan lukien Kotlinilla. Tekstitiedostoja voidaan käyttää tallentamaan käyttäjän antamia tietoja, kuten lomakkeiden täyttämistä tai yksinkertaisen tekstin tallentamista. Ne voivat myös olla osa isompaa ohjelmaa, jossa ne toimivat tiedon tallennus- tai käyttöliittymäosana. Eli lyhyesti sanottuna, tekstitiedostoja kirjoitetaan usein siitä syystä, että ne tarjoavat kätevän tapa tallentaa tietoa ohjelmoinnin yhteydessä.
+Kirjoittaessamme ohjelmia, on usein tarpeen tallentaa tai lukea tietoa tekstitiedostosta. Tekstitiedostoja voidaan käyttää esimerkiksi tietokantojen korvikkeena tai tallentamaan käyttäjän syöttämiä tietoja. Kotlinilla tekstitiedoston kirjoittaminen on helppoa ja tehokasta.
 
-# Kuinka kirjoittaa tekstitiedosto Kotlinilla
+## Kuinka tehdä se
 
-Kotlinilla tekstitiedoston kirjoittaminen on helppoa ja yksinkertaista. Alla on esimerkki siitä, kuinka voit luoda uuden tiedoston ja kirjoittaa siihen yksinkertaisen tekstin. 
+Kirjoittaaksesi tekstitiedoston Kotlinilla, sinun tulee ensin luoda tiedosto ja siihen liittyvä BufferedWriter-olio. Seuraavaksi voit kirjoittaa haluamasi tiedot käyttäen BufferedWriterin write-metodia ja lopuksi sulkea tiedosto close-metodin avulla.
 
-```Kotlin 
-val tiedosto = File("tekstitiedosto.txt")
-//luo uuden tiedoston nimeltä tekstitiedosto.txt
+```Kotlin
+val tiedosto = File("tiedosto.txt")
+val writer = BufferedWriter(FileWriter(tiedosto))
 
-try {
-    PrintWriter(tiedosto).use { out ->
-        out.println("Tämä on esimerkki tekstistä, joka kirjoitetaan tiedostoon")
-    }
-} catch (e: IOException) {
-    println("Virhe tiedoston kirjoittamisessa: $e")
-}
+writer.write("Tämä on esimerkki tekstitiedoston kirjoittamisesta Kotlinilla.")
+writer.write("Voit lisätä haluamiasi tekstejä ja rivinvaihtoja.")
+
+writer.close()
 ```
 
-Kun suoritat tämän koodin, se luo tekstitiedoston ja kirjoittaa siihen annetun tekstin. Tämä on vain yksinkertainen esimerkki, ja voit muokata sitä tarpeidesi mukaan.
+Tämän jälkeen voit avata tiedoston ja nähdä siellä kirjoittamasi tekstit. Huomaa, että jos tiedostoa ei löydy, se luodaan automaattisesti.
 
-# Syventyvä kurkistus tekstitiedoston kirjoittamiseen
+```
+Tämä on esimerkki tekstitiedoston kirjoittamisesta Kotlinilla.
+Voit lisätä haluamiasi tekstejä ja rivinvaihtoja.
+```
 
-Tekstitiedostot voivat sisältää muutakin kuin vain yksinkertaista tekstiä. Voit esimerkiksi tallentaa käyttäjän antamia tietoja tiedostoon ja lukea niitä myöhemmin käyttämällä `Scanner`-luokkaa. Voit myös kirjoittaa tiedostoon muun tyyppistä tietoa, kuten numerosarjoja tai merkkijonoja. Lisäksi voit käyttää `BufferedWriter`-luokkaa, joka tarjoaa paremman suorituskyvyn ja toimii erinomaisesti suurten tiedostojen kanssa.
+## Syvennä tietämystäsi
 
-Kotlinilla on monia mahdollisuuksia ja tapoja kirjoittaa tiedostoja. Suosittelemme tutustumaan Kotlinin viralliseen dokumentaatioon saadaksesi lisätietoa ja kokeilemaan eri tapoja kirjoittaa tiedostoja.
+Tekstitiedoston kirjoittaminen Kotlinilla käyttäen BufferedWriteria on tehokas tapa tallentaa tietoa, mutta on myös tärkeää ymmärtää, että tiedoston kirjoittaminen on I/O-toiminto, joka voi hidastaa ohjelman suorituskykyä. Tästä syystä on suositeltavaa käyttää esimerkiksi Thread-luokan metodeja kirjoittaessa tekstitiedostoa suorituksen hitaammille alueille.
 
-# Katso myös
+## Katso myös
 
-Tässä blogipostauksessa esitellyt esimerkit ja koodipohjat ovat saatavilla GitHub-repositoriosta osoitteesta [linkki](https://github.com/kotlinguru/Kotlin-Blogi).
-
-Voit myös lukea lisää tekstitiedostojen kirjoittamisesta Kotlinilla JetBrainsin verkkosivuilta: [linkki](https://kotlinlang.org/docs/tutorials/kotlin-for-py/writing-to-a-file.html).
+- [Kotlinin viralliset dokumentit](https://kotlinlang.org/docs/tutorials/kotlin-for-py/creating-classes.html)
+- [Java I/O-opetusohjelma](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-writer-writer-writer.html)

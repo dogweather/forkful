@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com yaml."
+html_title:           "Swift: Trabalhando com yaml."
+simple_title:         "Trabalhando com yaml."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -11,36 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que trabalhar com YAML?
 
-YAML é uma linguagem de marcação de texto simples e intuitiva, que é amplamente utilizada na programação. Ela é especialmente útil para armazenar dados em formato legível por humanos, o que torna seu uso bastante versátil. Além disso, o YAML é compatível com uma grande variedade de linguagens de programação, tornando-se uma opção popular entre os desenvolvedores.
+Se você está desenvolvendo um aplicativo iOS ou macOS, provavelmente já ouviu falar sobre YAML (YAML Ain't Markup Language). Ele é uma linguagem de marcação leve e fácil de entender, projetada para ser legível por humanos e máquinas. Com YAML, você pode armazenar dados estruturados em um formato simples e fácil de editar.
 
-## Como usar o YAML em Swift
+## Como usar YAML em Swift
 
-Para começar a trabalhar com YAML em Swift, é necessário primeiro importar a biblioteca YAML que se encontra disponível no [GitHub] (https://github.com/behrang/YamlSwift). Em seguida, você pode utilizar a função `Yaml.load()` para carregar um arquivo YAML e convertê-lo em um objeto do tipo `YamlValue`. Veja um exemplo abaixo:
+Para começar a trabalhar com YAML em Swift, primeiro você precisa instalar uma biblioteca chamada `YamlSwift`. Você pode fazer isso facilmente usando o gerenciador de pacotes `CocoaPods`. Basta adicionar `pod 'YamlSwift'` ao seu `Podfile` e, em seguida, executar `pod install` no terminal.
 
-```
-import YamlSwift
+Depois de instalar a biblioteca, você pode importá-la no seu arquivo Swift usando o comando `import YamlSwift`. Então, você pode começar a trabalhar com YAML utilizando a classe `Yaml` fornecida pela biblioteca.
 
-if let path = Bundle.main.path(forResource: "arquivo", ofType: "yaml") {
-    let yaml = try String(contentsOfFile: path, encoding: .utf8)
+Aqui está um exemplo simples de como criar um objeto YAML e, em seguida, convertê-lo para uma string:
 
-    if let obj = try Yaml.load(yaml).object {
-        print(obj) // Prints the parsed YAML object
-    }
-} else {
-    print("Arquivo não encontrado")
-}
+```Swift
+let yamlObject = Yaml.dictionary(["nome": "João", "idade": 25])
+let yamlString = yamlObject.description
+print(yamlString)
 ```
 
-A partir do objeto `YamlValue`, você pode acessar os dados do arquivo YAML através de suas propriedades. Por exemplo, para acessar uma lista de itens, utilize `.array` e para acessar um valor específico, utilize `.string`.
+A saída seria:
 
-## Aprofundando no uso de YAML
+```
+nome: João
+idade: 25
+```
 
-Além de carregar arquivos YAML, o Swift também oferece a possibilidade de criar e editar arquivos YAML por meio de sua sintaxe de dicionário. Isso pode ser feito através da função `Yaml.dump()`, que converte um objeto do tipo `YamlValue` em uma string YAML formatada.
+## Mergulho profundo em YAML
 
-Além disso, o YAML oferece suporte a funções mais avançadas, como a inclusão de referências a outros arquivos YAML e a definição de âncoras e aliases. Essas funcionalidades são especialmente úteis quando se trabalha com arquivos YAML extensos e complexos.
+Além das operações básicas de criação e conversão de objetos YAML, você também pode usar a biblioteca `YamlSwift` para fazer consultas mais avançadas nos seus dados. Por exemplo, você pode usar a função `load()` para carregar um arquivo YAML diretamente para o seu código Swift, ou a função `parse()` para analisar uma string yaml em um objeto `Yaml`.
+
+Além disso, a biblioteca fornece métodos para acessar e manipular os dados dentro de um objeto YAML. Por exemplo, você pode usar a função `[].string` para acessar o valor de uma chave específica em um objeto YAML, ou usar a função `removeAll()` para limpar todos os dados de um objeto.
+
+Para mais informações sobre como trabalhar com YAML em Swift, confira a documentação oficial da biblioteca `YamlSwift`.
 
 ## Veja também
 
-- [YAML: uma introdução] (https://forum.da2k.com.br/t/yaml-uma-introducao/)
-- [Documentação oficial do YAML] (https://yaml.org/)
-- [YAML vs. JSON] (https://medium.com/@veppa/yaml-vs-json-4c08a17c2ed1)
+- [Documentação oficial YamlSwift](https://github.com/behrang/YamlSwift)
+- [Tutorial completo de YAML para iniciantes](https://www.tutorialspoint.com/yaml/index.htm)
+- [Artigo sobre o uso de YAML em aplicações iOS](https://gabrieltheodoropoulos.com/using-yaml-in-swift/)

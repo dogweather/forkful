@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Tests schreiben"
+title:                "Tests schreiben"
+html_title:           "Elixir: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Tests sind ein unerlässlicher Bestandteil der Softwareentwicklung und können dabei helfen, Fehler frühzeitig zu erkennen und die Qualität des Codes zu verbessern. Durch das Schreiben von Tests kann man sicherstellen, dass die Funktionen eines Programms wie erwartet arbeiten und dass Änderungen keine unerwünschten Nebenwirkungen haben. In diesem Blogpost werden wir uns anschauen, wie man Tests in Elixir schreibt und warum es wichtig ist, dies in seinen Entwicklungsprozess einzubinden.
+Tests zu schreiben mag auf den ersten Blick wie eine zusätzliche und möglicherweise langweilige Aufgabe erscheinen, die Sie wegen Zeitmangel lieber überspringen möchten. Aber in Wirklichkeit kann das Schreiben von Tests Ihnen viel Zeit und Frustration ersparen, indem es hilft, Fehler in Ihrem Code frühzeitig zu erkennen und zu verhindern. Außerdem ermöglichen Tests auch das Refactoring und die Weiterentwicklung Ihrer Anwendung mit mehr Vertrauen.
 
-## Wie funktionieren Tests in Elixir?
+## Wie geht es
 
-In Elixir gibt es das eingebaute Testing-Framework ExUnit, welches uns beim Schreiben von Tests unterstützt. Zunächst müssen wir unsere Testdateien im Ordner "test" speichern und mit der Erweiterung ".exs" versehen. Um eine Testdatei zu erstellen, können wir entweder das Kommandozeilen-Tool "mix" verwenden oder wir können sie manuell erstellen.
-
-Das Grundgerüst einer Testdatei in Elixir sieht wie folgt aus:
+Um Tests in Elixir zu schreiben, verwenden Sie die eingebaute Test-Bibliothek ExUnit. Beginnen wir mit einem einfachen Beispiel eines Tests, der überprüft, ob eine Funktion den richtigen Wert zurückgibt:
 
 ```Elixir
-defmodule Test do
+defmodule Math do
+  def add(a, b) do
+    a + b
+  end
+end
+
+defmodule MathTest do
   use ExUnit.Case
 
-  test "beispiel test" do
-    assert 1 + 1 == 2
+  test "adding numbers" do
+    assert Math.add(2, 3) == 5
   end
 end
 ```
 
-Hier haben wir eine Testklasse erstellt und eine Testfunktion hinzugefügt, in der wir unsere Assertion schreiben. Mit `assert` vergleichen wir, ob der Ausdruck auf der linken Seite gleich dem auf der rechten Seite ist. Wenn dies der Fall ist, wird der Test als erfolgreich angesehen. Andernfalls wird er als fehlgeschlagen markiert.
+Die `defmodule`-Anweisung definiert ein Modul, in dem wir unsere Funktion `add/2` definieren. In unserem Testmodul verwenden wir `ExUnit.Case`, um den Testfall zu definieren und mit `assert` überprüfen wir, ob unsere Funktion `Math.add/2` den erwarteten Wert von 5 zurückgibt.
 
-Um unsere Tests auszuführen, können wir das Kommando `mix test` verwenden. Dabei werden alle Testdateien im "test"-Ordner ausgeführt und die Ergebnisse werden in der Konsole angezeigt.
+Sie können dieses Beispiel ausführen, indem Sie in Ihrem Terminal `mix test` eingeben. Sie sollten ein Ergebnis sehen, das besagt, dass alle Tests erfolgreich waren:
 
-## Tieferer Einblick in Teststrukturen
+```bash
+Finished in 0.02 seconds
+1 test, 0 failures
+```
 
-ExUnit bietet noch viele weitere Möglichkeiten, um unsere Tests zu strukturieren und zu organisieren. Zum Beispiel können wir unsere Tests in Kontexte gruppieren, um einzelne Teile unserer Anwendung zu testen. Wir können auch Setup- und Teardown-Funktionen verwenden, um vor und nach jedem Test bestimmte Aktionen auszuführen. Es gibt auch die Möglichkeit, Testdaten zu generieren und Mocks zu verwenden, um komplexere Testszenarien abzudecken.
+Sie können auch Parameter an `mix test` übergeben, um bestimmte Tests auszuführen. Weitere Informationen zu ExUnit und seinen Funktionen finden Sie in der offiziellen Dokumentation.
 
-Es ist wichtig, sich mit den verschiedenen Funktionen und Möglichkeiten von ExUnit vertraut zu machen, um effektive und robuste Tests zu schreiben.
+## Deep Dive
+
+Tests können auf verschiedene Arten geschrieben werden, aber im Allgemeinen gibt es zwei Hauptansätze: Ein Test kann entweder die erwarteten Ergebnisse des Codes überprüfen oder überprüfen, ob der Code die gewünschte Funktion ausführt. Mit der `assert`-Funktion können Sie die erwarteten Ergebnisse überprüfen, während die `refute`-Funktion verwendet wird, um sicherzustellen, dass ein bestimmter Wert nicht zurückgegeben wird.
+
+Es ist auch wichtig zu beachten, dass Tests nicht nur dazu dienen, Ihren Code auf Fehler zu überprüfen, sondern auch dazu, Ihre Anwendung zu dokumentieren und anderen Entwicklern zu zeigen, wie Sie sie verwenden können. Eine gut geschriebene Test-Suite kann auch als Teil der Dokumentation Ihrer Anwendung dienen.
 
 ## Siehe auch
 
-- Offizielle Dokumentation zu ExUnit: https://hexdocs.pm/ex_unit/ExUnit.html
-- "Why Testing Matters" von José Valim: https://blog.plataformatec.com.br/2015/10/why-testing-matters/
-- "Unit Testing in Elixir with ExUnit" von Gábor Szabó: https://pragprog.com/book/lmelixir/unit-testing-with-elixir
+- Offizielle Elixir-Website (https://elixir-lang.org/)
+- ExUnit-Dokumentation (https://hexdocs.pm/ex_unit/ExUnit.html)
+- Pragmatic Programmer: "Elixir & Phoenix - a modern approach to dynamic software development" (https://pragprog.com/book/phoenix12/programming-elixir-1-2)

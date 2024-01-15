@@ -1,6 +1,7 @@
 ---
-title:                "C#: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Otrzymywanie aktualnej daty"
+html_title:           "C#: Otrzymywanie aktualnej daty"
+simple_title:         "Otrzymywanie aktualnej daty"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -11,32 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obecna data i godzina są niezwykle ważne w programowaniu. Nie tylko pozwala to na śledzenie postępu działania programu, ale również na wyświetlanie aktualnych informacji dla użytkownika. Dlatego warto poznać sposoby pobierania bieżącej daty za pomocą języka C#.
+Pobranie bieżącej daty jest bardzo powszechnym zadaniem w programowaniu C#. Jest to przydatne w wielu przypadkach, na przykład w tworzeniu aplikacji z funkcją rejestrowania czasu, wyświetlania ostatnio modyfikowanych plików lub tworzenia raportów z datą wykonania. Poniżej zaprezentujemy kilka sposobów, jak można uzyskać bieżącą datę w C#.
 
-## Jak to zrobić
+## Jak?
 
 ```C#
-// Pobranie bieżącej daty i godziny
-DateTime now = DateTime.Now;
-Console.WriteLine(now);
-
-// Pobranie tylko daty
-DateTime currentDate = DateTime.Now.Date;
-Console.WriteLine(currentDate);
-
-// Pobranie tylko godziny
-DateTime currentTime = DateTime.Now.TimeOfDay;
-Console.WriteLine(currentTime);
+DateTime currentDate = DateTime.Now; //Przypisanie bieżącej daty do zmiennej "currentDate"
+Console.WriteLine(currentDate); //Wyświetlenie bieżącej daty w konsoli
 ```
 
-W powyższych przykładach wykorzystaliśmy klasę DateTime, która jest wbudowana w język C#. Aby uzyskać bieżącą datę i godzinę, wystarczy wywołać metodę `Now()` na tej klasie. Możemy również wykorzystać metody `Date` i `TimeOfDay`, aby uzyskać tylko datę lub godzinę.
+W powyższym przykładzie użyliśmy obiektu `DateTime`, który jest wbudowany w język C# i pozwala nam na obsługę dat i godzin. Metoda `Now()` zwraca bieżącą datę i czas, a następnie możemy ją wyświetlić w dowolny sposób, np. za pomocą metody `WriteLine()` z klasy `Console`.
 
-## Dogłębna analiza
+Możemy również sformatować wyświetloną datę za pomocą metody `ToString()` i podając odpowiednie parametry jako argumenty. Na przykład:
 
-Klasa DateTime oferuje wiele innych metod, które pomogą w manipulacji danymi dotyczącymi daty i godziny. Na przykład, możemy użyć metod `Add()` lub `Substract()` do dodawania lub odejmowania określonej liczby dni, godzin lub minut od bieżącej daty. Możemy też porównywać daty za pomocą metod `Equals()` lub `CompareTo()`. W przypadku pracy z międzynarodowymi danymi, warto wykorzystać metody `ToUniversalTime()` lub `ToLocalTime()` do przekształcania stref czasowych.
+```C#
+Console.WriteLine(currentDate.ToString("dddd, dd MMMM yyyy")); // Wyświetli "wtorek, 16 marca 2021"
+```
 
-## Zobacz też
+Każdy z parametrów w nawiasach okrągłych określa kolejno: dzień tygodnia (po polsku), dzień miesiąca, nazwę miesiąca (po polsku) i rok. Pełną listę możliwych parametrów można znaleźć w dokumentacji języka C#.
 
-- [Dokumentacja Microsoft dla klasy DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=netcore-3.1)
-- [Poradnik dla początkujących w programowaniu w języku C#](https://sjp.pl/C%23)
-- [Kurs programowania w języku C# na platformie Codecademy](https://www.codecademy.com/learn/learn-c-sharp)
+## Deep Dive
+
+Jeśli chcemy uzyskać bieżącą datę z większą precyzją, możemy użyć struktury `DateTimeOffset`. Jest to rozszerzenie klasy `DateTime` i pozwala na przechowywanie dodatkowych informacji o strefie czasowej. Przykład użycia:
+
+```C#
+DateTimeOffset currentDateTimeOffset = DateTimeOffset.Now;
+Console.WriteLine(currentDateTimeOffset); //Wyświetli np. "17.03.2021 12:47:15 +01:00"
+```
+
+Pole `Offset` wyświetla przesunięcie czasowe między naszą strefą, a strefą czasową UTC (Coordinated Universal Time). W przykładzie, zakładając że mieszkamy w strefie czasowej GMT+1, wynik będzie 1-godzinny.
+
+## Zobacz też:
+- Dalsze możliwości manipulacji datami w C#: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
+- Dokumentacja klasy `DateTimeOffset`: [https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetimeoffset?view=net-5.0)
+- Przewodnik po formatowaniu dat i godzin w C#: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/custom-date-and-time-format-strings?view=net-5.0)

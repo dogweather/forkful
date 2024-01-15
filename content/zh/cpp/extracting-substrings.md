@@ -1,5 +1,6 @@
 ---
-title:                "C++: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "C++: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "C++"
 category:             "C++"
@@ -9,54 +10,111 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串？
+## 为什么
 
-提取子字符串是一个常见的编程技巧，它可以让我们从一个字符串中获取我们需要的部分。同时，它也可以帮助我们有效地处理大型文本数据，使得我们的程序更加高效和可读。在本文中，我们将介绍如何使用C++来提取子字符串，帮助您更加熟练地使用这一技巧。
+在编程过程中，经常会遇到需要从一个字符串中提取其中的一部分内容的情况。这个过程就被称为提取子字符串。提取子字符串可以帮助我们更有效地处理文本数据，使得我们的程序更加灵活和可靠。
 
-## 如何提取子字符串？
+## 如何做
 
-下面是一个简单的例子，演示了如何使用C++来提取子字符串：
+提取子字符串有很多种方法，下面将介绍其中几种常用的方法。在每种方法的示例后面，都会附上相应的代码块和运行结果，方便读者更好地理解和实践。
+
+### 1. 使用 `substr()` 方法提取子字符串
+
+首先，我们需要包含 `string` 头文件，因为 `substr()` 方法是由该头文件所提供的。
 
 ```C++
-#include <iostream>
+// 包含string头文件
 #include <string>
 
-int main()
-{
-    // 创建一个字符串
-    std::string str = "这是一个测试字符串";
+int main() {
+  // 定义一个字符串
+  std::string str = "Hello world!";
 
-    // 使用substr函数提取子字符串，从索引2开始，长度为5个字符
-    std::string sub = str.substr(2, 5);
+  // 使用substr()方法提取子字符串
+  std::string substr = str.substr(6, 5);  // 提取从第六个字符开始的五个字符
 
-    // 打印提取的子字符串
-    std::cout << sub << std::endl;
+  // 打印提取的子字符串
+  std::cout << substr << std::endl;
 
-    return 0;
+  return 0;
 }
-
 ```
 
-输出结果为：“一个测试”
+运行结果为：
 
-在上面的代码中，我们使用了C++中的substr函数来提取子字符串。该函数需要两个参数：起始索引和子字符串的长度。通过指定这两个参数，我们可以轻松地从一个较长的字符串中提取出需要的部分。
+```
+world
+```
 
-## 深入了解提取子字符串
+### 2. 使用 `substr()` 方法提取到字符串末尾
 
-除了上面的例子中使用的substr函数外，C++还提供了其他几种方法来提取子字符串。比如，使用string类中的[]运算符，我们可以通过索引来访问字符串中的每一个字符，并将其拼接成一个新的子字符串。
+除了指定子字符串的起始位置和长度外，还可以使用 `std::string::npos` 来表示提取到字符串的末尾。例如：
 
-此外，我们还可以使用string类中的find函数来查找子字符串在父字符串中的位置，然后再使用substr函数来提取子字符串。
+```C++
+// 包含string头文件
+#include <string>
 
-总的来说，提取子字符串是一个简单但实用的编程技巧，在日常的编码工作中经常会用到。通过熟练掌握相关函数和方法，我们可以更加高效地处理字符串数据。
+int main() {
+  // 定义一个字符串
+  std::string str = "Hello world!";
 
-## 参考文献
+  // 使用substr()方法提取子字符串
+  std::string substr = str.substr(6);  // 从第6个字符开始，一直提取到末尾
 
-- [C++ string类的substr成员函数用法详解](https://www.cnblogs.com/ly-caocao/p/7061092.html)
-- [C++ string类用法详解](https://www.cnblogs.com/zyalexfy/p/5405490.html)
-- [C++ string类参考手册](http://www.cplusplus.com/reference/string/string/)
+  // 打印提取的子字符串
+  std::cout << substr << std::endl;
+
+  return 0;
+}
+```
+
+运行结果为：
+
+```
+world!
+```
+
+### 3. 使用 `find()` 方法提取子字符串
+
+除了使用起始位置和长度来提取子字符串外，还可以使用 `find()` 方法来找到子字符串的起始位置。然后再利用 `substr()` 方法提取子字符串。
+
+```C++
+// 包含string头文件
+#include <string>
+
+int main() {
+  // 定义一个字符串
+  std::string str = "Hello world!";
+
+  // 使用find()方法找到子字符串的起始位置
+  int start_pos = str.find("world");
+
+  // 使用substr()方法提取子字符串
+  std::string substr = str.substr(start_pos, 5);  // 从起始位置开始提取五个字符
+
+  // 打印提取的子字符串
+  std::cout << substr << std::endl;
+
+  return 0;
+}
+```
+
+运行结果为：
+
+```
+world
+```
+
+## 深入了解
+
+除了上面介绍的方法外，提取子字符串还有其他的一些技巧。比如可以使用 `replace()` 方法来替换子字符串，再利用 `istringstream` 类来将字符串拆分为子字符串。同时，还可以使用正则表达式来提取特定格式的子字符串。这些方法都可以帮助我们更加灵活地提取子字符串。
+
+## 参考资料
+
+- [C++ String manipulation](https://www.cplusplus.com/reference/string/)
+- [Online regex tester and debugger](https://regex101.com/)
 
 ## 参见
 
-- [Learn C++ - Strings](https://www.learn-c.org/en/Strings)
-- [C++ string处理字符串的方法总结](https://www.cnblogs.com/my_lifeisgood/p/5815777.html)
-- [C++ 字符串处理函数解析](https://blog.csdn.net/z1391934512/article/details/93328291)
+- [C++ Strings and Substrings](https://www.programiz.com/cpp-programming/library-function/string/substr)
+- [C++ Standard Library](https://en.cppreference.com/w/cpp/string/basic_string)

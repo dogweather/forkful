@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "Kotlin recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,50 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-String concatenation is a fundamental concept in programming, especially when it comes to working with text data. It involves combining multiple strings together to create a longer string. This can be useful in situations such as creating a full name from separate first and last name variables or creating a URL from a base URL and query parameters. In this blog post, we will explore how to concatenate strings in Kotlin and the various methods available to do so.
+# Why 
 
-## How To
-Concatenating strings in Kotlin can be done in several ways. Let's take a look at some examples using the ```+``` operator and the ```plus()``` function.
+If you're a developer working with strings, you've probably encountered situations where you need to combine multiple smaller strings into one larger string. This process is known as **concatenation**, and it can be a powerful tool in your coding arsenal to create dynamic and flexible strings.
 
-```Kotlin
-val firstName = "John"
-val lastName = "Smith"
-val fullName = firstName + " " + lastName
-println(fullName) // Output: John Smith
+# How To 
 
-val base = "https://example.com/"
-val query = "search?q=Kotlin"
-val url = base.plus(query)
-println(url) // Output: https://example.com/search?q=Kotlin
+To concatenate strings in Kotlin, we can use the `+` operator or the `plus()` function. Let's take a look at both options:
+
+```
+val str1 = "Hello"
+val str2 = "World"
+
+val result = str1 + str2
+println(result) //Output: HelloWorld
+
+val result2 = str1.plus(str2)
+println(result2) //Output: HelloWorld
 ```
 
-As seen in the examples, we can use the ```+``` operator to combine strings or use the ```plus()``` function to achieve the same result. Another approach is using string templates, which allows us to embed variables directly into a string.
+In the code block above, we first created two string variables `str1` and `str2` containing "Hello" and "World" respectively. Then, we used the `+` operator and `plus()` function to concatenate the two strings into a new variable `result` and `result2`. Lastly, we used `println()` to display the concatenated strings, resulting in "HelloWorld" being printed to the console.
 
-```Kotlin
+We can also use string templates to concatenate strings in Kotlin. String templates allow us to insert variables directly into strings. Simply add a `$` sign before the variable name enclosed in curly braces `{}` to use string templates.
+
+```
 val firstName = "John"
-val lastName = "Smith"
+val lastName = "Doe"
 val fullName = "$firstName $lastName"
-println(fullName) // Output: John Smith
+println(fullName) //Output: John Doe
 ```
 
-We can also concatenate strings using the ```StringBuilder``` class, which provides a more efficient way of manipulating strings. This is especially useful when dealing with large amounts of text data.
+In the example above, we used string templates to concatenate `firstName` and `lastName` into `fullName`, resulting in "John Doe" being printed to the console.
 
-```Kotlin
-val builder = StringBuilder()
-builder.append("Kotlin")
-builder.append(" is")
-builder.append(" fun")
-println(builder.toString()) // Output: Kotlin is fun
+# Deep Dive 
+
+In Kotlin, strings are immutable, which means they cannot be changed after they are created. When we concatenate strings, a new string is created with the combined value. This can impact performance if done frequently as it requires the garbage collector to deal with the unused strings.
+
+To avoid this performance impact, we can use the `StringBuilder` class in Kotlin. `StringBuilder` allows us to modify strings without creating new objects, making it more efficient for string concatenation.
+
+```
+val str1 = "This is "
+val str2 = "a sentence."
+val stringBuilder = StringBuilder(str1)
+stringBuilder.append(str2)
+println(stringBuilder.toString()) //Output: This is a sentence.
 ```
 
-## Deep Dive
-When concatenating strings, it is important to understand the difference between using the ```+``` operator and the ```plus()``` function. While the ```+``` operator is concise and easy to read, it can be less efficient when working with large amounts of data as it creates a new string object every time it is used. On the other hand, the ```plus()``` function can be more efficient as it operates on the existing string object.
+In the example above, we first created a `StringBuilder` object using the first string `str1`. Then, we used the `append()` method to add the second string `str2` to the `StringBuilder` object. Lastly, we used `toString()` to convert the `StringBuilder` object to a string and printed it to the console.
 
-Additionally, when using string templates, it is worth noting that they only work when the variables are simple names and not expressions. For example, ```"${2 + 2}"``` will not work as a string template, but ```"$variableName"``` will.
+# See Also 
 
-## See Also
-- [Official Kotlin documentation on string concatenation](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-- [Kotlin Strings and Characters - Concatenation](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
-
-In conclusion, understanding how to concatenate strings in Kotlin is essential for any programmer who works with text data. There are various methods available, so it is important to choose the most efficient one based on the specific situation.
+- [Official Kotlin Documentation on Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin Academy - Concatenating Strings](https://blog.kotlin-academy.com/strings-concatenation-patterns-in-kotlin-d058a1b49158)
+- [Codecademy - String Concatenation in Kotlin](https://www.codecademy.com/learn/learn-kotlin/modules/learn-kotlin-introduction-to-variables/cheatsheet)

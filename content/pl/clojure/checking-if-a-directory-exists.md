@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie czy istnieje katalog"
+html_title:           "Clojure: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,30 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzanie, czy katalog istnieje, jest bardzo ważnym elementem programowania w Clojure. Pozwala to na upewnienie się, że nasz program będzie działał poprawnie i nie będzie wywoływał błędów związanych z brakującymi katalogami.
+Sprawdzanie czy istnieje katalog jest powszechnie wykonywaną operacją w wielu językach programowania. W Clojure istnieje wiele przydatnych funkcji, które ułatwiają ten proces. W tym artykule dowiesz się, dlaczego sprawdzanie czy istnieje katalog jest przydatne w programowaniu i jak to zrobić w Clojure.
 
 ## Jak to zrobić
 
-Sprawdzanie, czy katalog istnieje, może wydawać się trudne, ale w rzeczywistości jest to bardzo prosta czynność w języku Clojure. Wystarczy użyć funkcji "clojure.java.io/file" i podać ścieżkę do katalogu, który chcemy sprawdzić. Następnie wywołujemy funkcję "exists?" na stworzonym obiekcie, która zwróci wartość true, jeśli katalog istnieje, lub false, jeśli nie istnieje.
+Sprawdzenie czy istnieje katalog w Clojure jest bardzo proste. Wystarczy użyć funkcji ```file-seq```, która zwraca sekwencję plików i katalogów w danym katalogu. Następnie można wykorzystać funkcję ```some``` do sprawdzenia czy dany katalog jest na liście.
 
 ```Clojure
-(def dir (clojure.java.io/file "/sciezka/do/katalogu"))
-(exists? dir)
-;; Output: false
+(file-seq "ścieżka/do/katalogu")
+=> ("/ścieżka/do/katalogu/plik1.txt" "/ścieżka/do/katalogu/katalog1" "/ścieżka/do/katalogu/plik2.txt")
+
+(some #"katalog1" (file-seq "ścieżka/do/katalogu"))
+=> true
 ```
 
-W powyższym przykładzie stworzyliśmy zmienną "dir" przechowującą obiekt katalogu. Następnie wywołaliśmy funkcję "exists?" na tej zmiennej, która zwróciła wartość false, ponieważ katalog jeszcze nie istnieje.
+Jeśli katalog nie istnieje, funkcja ```file-seq``` zwróci pustą sekwencję, a funkcja ```some``` zwróci wartość ```false```.
 
-Jednak warto pamiętać, że ta metoda nie jest w 100% niezawodna. Istnieje szansa, że katalog zostanie utworzony lub usunięty między wywołaniami funkcji. Dlatego ważne jest, aby również stosować odpowiednie obsługiwanie wyjątków, aby uniknąć błędów w programie.
+```Clojure
+(file-seq "nieistniejący/katalog")
+=> ()
 
-## Dogłębna analiza
+(some #"katalog1" (file-seq "nieistniejący/katalog"))
+=> false
+```
 
-Podczas sprawdzania, czy katalog istnieje, warto również wiedzieć, że funkcja "exists?" działa dla dowolnego typu pliku, a nie tylko dla katalogów. Oznacza to, że można jej użyć również do sprawdzania istnienia plików lub innych zasobów.
+Sprawdzenie czy dany katalog jest podkatalogiem innego katalogu można wykonać przy użyciu funkcji ```subpath?```.
 
-Ponadto, jeśli chcemy uzyskać więcej informacji o pliku, na którym wywołujemy funkcję "exists?", można również wykorzystać funkcję "file-seq", która zwraca sekwencję plików i katalogów w podanej ścieżce. W ten sposób można uzyskać dostęp do dodatkowych informacji, takich jak nazwa pliku, rozmiar, data utworzenia itp.
+```Clojure
+(subpath? "ścieżka/do/katalogu" "ścieżka/do/katalogu/katalog1")
+=> true
+```
+
+## Deep Dive
+Funkcje ```file-seq``` i ```subpath?``` korzystają z języka Java, aby wykonać operacje na plikach i katalogach. W przypadku funkcji ```file-seq```, korzysta z ```java.io.File``` do pobrania listy plików i katalogów w danym katalogu. Natomiast funkcja ```subpath?``` korzysta z metody ```java.nio.file.Path.subpath()```, która zwraca część ścieżki odpowiadającą podkatalogowi.
+
+Warto zauważyć, że funkcje te nie sprawdzają poprawności ścieżki, ale jedynie czy istniejące pliki i katalogi pasują do podanego wzorca.
 
 ## Zobacz również
-
-- [Dokumentacja Clojure o funkcji "exists?"](https://clojuredocs.org/clojure.java.io/exists_q)
-- [Poradnik o sprawdzaniu istnienia plików w Clojure](https://clojureunraveled.com/check-file-exists/)
-- [Tutorial o obsłudze wyjątków w Clojure](https://purelyfunctional.tv/article/exception-handling-in-clojure/)
+- Dokumentacja Clojure: https://clojuredocs.org/clojure.core/file-seq
+- Poradnik programowania w Clojure: https://www.braveclojure.com/functional-programming-in-clojure/

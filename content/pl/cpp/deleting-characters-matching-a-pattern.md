@@ -1,5 +1,6 @@
 ---
-title:                "C++: Usuwanie znaków pasujących do wzorca"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C++: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C++"
 category:             "C++"
@@ -11,60 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu jest konieczne usunięcie znaków pasujących do określonego wzorca. To może być część procesu weryfikacji wprowadzonych danych lub po prostu czyszczenie tekstu z niechcianych elementów. W tym blogu pokażemy, jak to zrobić w języku programowania C++.
+Czasami w trakcie pisania programów musimy dokonać usuwania znaków, które pasują do określonego wzoru. Jest to szczególnie przydatne w przypadku przetwarzania ciągów znaków, takich jak adresy email czy numery telefonów. Zapoznaj się z poniższym artykułem, aby dowiedzieć się, dlaczego i jak można to zrobić w języku C++.
 
 ## Jak to zrobić
 
-Aby usunąć znaki pasujące do danego wzorca, musimy skorzystać z funkcji `std::regex_replace()` z biblioteki `<regex>`. Funkcja ta wymaga trzech argumentów - tekstu, w którym chcemy dokonać zmian, wzorca do znalezienia oraz ciągu znaków, na który chcemy je zmienić.
+Usuwanie znaków o określonym wzorcu w języku C++ jest stosunkowo proste dzięki wykorzystaniu funkcji bibliotecznej `std::remove_if()`. Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco (zakładając, że wcześniej zostały zdefiniowane odpowiednie zmienne i wektory):
+
+```C++
+std::remove_if(wektor.begin(), wektor.end(), [](char c) { return c == 'a' || c == 'b'; });
+```
+
+Powyższy kod usunie z wektora wszystkie wystąpienia znaków 'a' oraz 'b'. Poniżej znajduje się pełny przykład kodu wraz z wynikiem działania:
 
 ```C++
 #include <iostream>
-#include <regex>
-using namespace std;
+#include <vector>
+#include <algorithm>
 
-int main() {
-   string text = "Hello 123 World!";
+int main()
+{
+    std::vector<char> wektor{'a', 'b', 'c', 'd', 'e', 'f'};
 
-   // usuwanie wszystkich cyfr z tekstu
-   string pattern = "\\d";
-   string replaced = regex_replace(text, regex(pattern), "");
+    std::cout << "Przed usunięciem: ";
+    for (auto c : wektor) {
+        std::cout << c << " ";
+    }
 
-   cout << replaced << endl;
-   // wyświetli "Hello World!"
+    std::cout << std::endl;
 
-   return 0;
+    std::remove_if(wektor.begin(), wektor.end(), [](char c) { return c == 'a' || c == 'b'; });
+
+    std::cout << "Po usunięciu: ";
+    for (auto c : wektor) {
+        std::cout << c << " ";
+    }
+
+    return 0;
 }
 ```
 
-W powyższym przykładzie, najpierw definiujemy zmienną `text` z tekstem, który chcemy zmodyfikować. Następnie tworzymy zmienną `pattern`, która reprezentuje wzorzec, w tym przypadku `\d`, który oznacza wszystkie cyfry. Wreszcie, wywołujemy funkcję `regex_replace()` z podanymi argumentami i wypisujemy zmodyfikowany tekst na ekranie.
+```
+// Wynik działania programu:
+Przed usunięciem: a b c d e f
+Po usunięciu: c d e f
+```
 
 ## Deep Dive
 
-Funkcja `std::regex_replace()` jest bardzo przydatna do usuwania znaków pasujących do określonych wzorców, ale warto zauważyć, że jej wykorzystanie może mieć wpływ na wydajność naszego programu. W niektórych przypadkach, lepszą opcją może być użycie funkcji `std::replace_if()` lub `std::remove_if()` z biblioteki `<algorithm>`. 
+Funkcja `std::remove_if()` działa poprzez przesuwanie wszystkich elementów spełniających warunek na koniec wektora i zwraca iterator wskazujący na pierwszy element, który nie spełnia warunku. Następnie, przy pomocy metody `erase()` można usunąć wszystkie elementy znajdujące się za tym iteratorem. Liczba elementów usuniętych przez funkcję `std::remove_if()` jest zwracana jako wartość zwracana i może być wykorzystana do aktualizacji rozmiaru wektora (np. przy pomocy metody `resize()`).
 
-`std::remove_if()` działa na kontenerach, takich jak `std::string` lub `std::vector`, a jego zadaniem jest przeniesienie wszystkich elementów spełniających podany warunek na koniec kontenera. Następnie, możemy usunąć te elementy z kontenera za pomocą funkcji `erase()`.
+## Zobacz także
 
-```C++
-#include <iostream>
-#include <algorithm>
-using namespace std;
-
-int main() {
-   string text = "Hello 123 World!";
-
-   // usuwanie wszystkich cyfr z tekstu
-   text.erase(remove_if(text.begin(), text.end(), ::isdigit), text.end());
-
-   cout << text << endl;
-   // wyświetli "Hello World!"
-
-   return 0;
-}
-```
-
-Warto również zwrócić uwagę na wyrażenia regularne używane w funkcji `std::regex_replace()`. Są one bardzo potężnym narzędziem, pozwalającym na precyzyjne wyszukiwanie i modyfikację tekstu. Wymagają jednak pewnego stopnia znajomości, aby móc je skutecznie wykorzystać. 
-
-## Zobacz również
-
-- [Podstawy programowania w C++](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [Dokumentacja funkcji `std::regex_replace()`](https://en.cppreference.com/w/cpp/string/regex/replace)
+- Dokumentacja funkcji `std::remove_if()` w języku C++
+- Przykłady usuwania znaków o określonym wzorcu w innych językach programowania: [Python](https://www.geeksforgeeks.org/python-remove-all-values-from-a-list-present-in-other-list/) [JavaScript](https://www.geeksforgeeks.org/javascript-remove-all-the-elements-that-matches-the-given-regular-expression/)

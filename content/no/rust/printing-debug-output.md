@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Utskrift av feilutdata"
-simple_title:         "Utskrift av feilutdata"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Rust: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,49 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å printe ut debug-utdata er en viktig del av enhver programmeringsprosess. Det lar deg se hvordan koden din fungerer, feilsøke eventuelle problemer og forbedre ytelsen. Derfor er det viktig å ha god forståelse av hvordan du gjør dette i Rust.
+Hvis du noen gang har programmert i Rust, har du sannsynligvis også kommet over behovet for å skrive ut feilsøkingsinformasjon. Selv om Rust er kjent for sin strenge typetilordning og kompilatorfeil, kan det fortsatt oppstå situasjoner der du trenger å se hva som foregår i koden din for å finne feilen. Heldigvis tilbyr Rust en enkel og kraftig metode for å skrive ut debug-utdata.
 
 ## Hvordan
 
-Så hvordan printer du ut debug-utdata i Rust? La oss se på et enkelt eksempel:
-
-```Rust 
-fn main() {
-    let num1 = 10;
-    println!("Dette er verdien til num1: {}", num1);
-}
-```
-
-I dette eksempelet bruker vi `println!` macroen til å printe ut verdien til variabelen `num1`. Macroer i Rust er en kraftig måte å generere kode på, og `println!` gjør det enkelt å printe ut tekst og verdier i konsollen.
-
-Du kan også bruke `format!` macroen for å lage en tekststreng med verdier, og deretter printe denne.
+For å skrive ut debug-utdata i Rust, kan du bruke makroen `println!`. Denne makroen fungerer på samme måte som `println!` i andre programmeringsspråk, bortsett fra at den krever et ekstra symbol `#` før anførselstegnet for å skrive ut feilsøkingsinformasjon. Her er et eksempel:
 
 ```Rust
 fn main() {
-    let num1 = 10;
-    let num2 = 5;
-    let string = format!("Summen av num1 og num2 er {}", num1 + num2);
+    let navn = "Kari";
+    println!("Navn: {:?}", navn); // Legg merke til # symbolet
 
-    println!("{}", string);
+    let nummer = 123;
+    println!("Nummer: {:?}", nummer);
 }
 ```
 
-Dette vil printe ut: "Summen av num1 og num2 er 15".
+Dette vil resultere i følgende utskrift:
 
-Det er også mulig å bruke `eprint!` og `eprintln!` macroene for å printe ut debug-utdata til standard error i stedet for standard output.
+```
+Navn: "Kari"
+Nummer: 123
+```
+
+Som du kan se, skriver `println!` ut verdien til variabelen, i dette tilfellet en tekststreng og et heltall. Ved å bruke `{:?}`, forteller du Rust at du vil skrive ut verdien på en måte som er nyttig for feilsøking. Hvis du vil skrive ut verdien på en mer vanlig måte, kan du bruke `{}` i stedet.
+
+Du kan også bruke `print!` makroen hvis du ikke ønsker å inkludere en ny linje i utskriften. Dette kan være nyttig hvis du vil skrive ut flere linjer med informasjon i samme funksjon.
 
 ## Deep Dive
 
-Nå som vi har sett på noen eksempler på hvordan du kan printe ut debug-utdata i Rust, la oss dykke litt dypere inn i konseptet.
+Når du bruker `println!`, kan du skrive ut så mange variabler som du vil, ved å inkludere dem i kommandoen, for eksempel `println!("Verdi 1: {}, Verdi 2: {}", verdi1, verdi2)`. I tillegg kan du også bruke spesielle formateringsmetoder for å gjøre utskriften mer lesbar, for eksempel å begrense desimaler på et tall eller skrive ut binærkoden for en verdi.
 
-En viktig ting å huske på er at Rust ikke tillater deg å printe ut data som ikke implementerer `std::fmt::Display` traiten. Dette betyr at du ikke kan printe ut f.eks. en struct uten å først implementere dette traitet for den.
+En annen nyttig funksjon for debug-utdata er makroen `dbg!`, som skriver ut både navnet på variabelen og verdien den inneholder. Her er et eksempel:
 
-I tillegg til `println!` og `format!` macroene, har Rust også en `dbg!` macro som lar deg printe ut verdien til en variabel og samtidig returnere denne verdien. Dette kan være nyttig for debugging av komplekse kodebaser.
+```Rust
+fn main() {
+    let navn = "Kari";
+    dbg!(navn); // Legg merke til at du ikke trenger å bruke # symbolet her
 
-Du kan også bruke `dbg!` macroen til å printe ut informasjon om en variabel når du kjører koden med `cargo run --release`. Dette kan være nyttig for å sammenligne ytelsen til kode som kjøres i utviklingsmodus og produksjonsmodus.
+    let nummer = 123;
+    dbg!(nummer);
+}
+```
 
-## Se Også
+Dette vil resultere i følgende utskrift:
 
-- [Rust By Example: Formatting](https://doc.rust-lang.org/stable/rust-by-example/hello/print/fmt.html)
-- [Rust Reference: Printing output](https://doc.rust-lang.org/reference/macros.html#printing)
-- [Rust Cookbook: Debugging and Logging](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/debugging.html)
+```
+[src/main.rs:4] navn = "Kari"
+[src/main.rs:7] nummer = 123
+```
+
+Som du kan se, kan `dbg!` være spesielt nyttig når du jobber med flere variabler og trenger å holde styr på hvilken verdi som tilhører hvilken variabel.
+
+## Se også
+
+- [Rust dokumentasjon om debugging](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html#reading-the-environment-to-configure-your-program)
+- [Artikkel om Rusts debugging-funksjoner](https://blog.burntsushi.net/rust-debugging/)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: Merkkijonon kirjoittainen suurentaminen"
-simple_title:         "Merkkijonon kirjoittainen suurentaminen"
+title:                "Pienentäminen merkkijonoksi"
+html_title:           "Python: Pienentäminen merkkijonoksi"
+simple_title:         "Pienentäminen merkkijonoksi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,48 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi pitäisi päätyä muuttamaan merkkijonon ensimmäinen kirjain isoksi?
+## Miksi
 
-Merkkijonon käsittely on tärkeä osa Python-ohjelmointia. Yksi yleinen tehtävä on muuttaa merkkijonon ensimmäinen kirjain isoksi. Tämä voi olla hyödyllistä esimerkiksi silloin, kun halutaan muuttaa käyttäjän syöttämät tiedot yhdenmukaiseen muotoon. Tässä blogikirjoituksessa käymme läpi, miten tämä tehtävä voidaan suorittaa helposti Pythonilla.
+Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi alkukirjaimeksi? Tämä on hyödyllistä esimerkiksi silloin, kun haluat muuttaa käyttäjän syöttämän merkkijonon oikeaan muotoon ennen sen tallentamista tietokantaan tai käytä sitä vertailussa jonkun toisen merkkijonon kanssa.
 
-## Kuinka: Esimerkkejä koodista ja tulosteista
-
-Tekstin muuttaminen isoksi on yksinkertaista käyttämällä sisäänrakennettua `capitalize()` -funktiota. Tämä funktio muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja palauttaa uuden merkkijonon. Alla olevassa esimerkissä käytämme tätä funktiota string-muuttujan kanssa.
+## Kuinka tehdä
 
 ```Python
-string = "tervetuloa!"
-
+# Esimerkki koodi
+string = "tervehdys maailma!"
 print(string.capitalize())
 ```
 
-Tulostus: "Tervetuloa!"
+Tässä esimerkissä annettu merkkijono "tervehdys maailma!" muutetaan isoksi alkukirjaimeksi käyttäen capitalize()-funktiota. Koodin tulostus on "Tervehdys maailma!", jossa ensimmäinen kirjain on nyt isolla alkukirjaimella.
 
-Jos haluamme muuttaa vain ensimmäisen kirjaimen, voimme käyttää myös `title()` -funktiota.
+## Syventävä tieto
 
-```Python
-string = "tervetuloa!"
-
-print(string.title())
-```
-
-Tulostus: "Tervetuloa!"
-
-Molemmat funktiot toimivat myös silloin, kun merkkijonossa on monta sanaa.
-
-```Python
-string = "hei kaikki yhdessä!"
-
-print(string.capitalize())
-print(string.title())
-```
-
-Tulostus: "Hei kaikki yhdessä!" "Hei Kaikki Yhdessä!"
-
-## Syvällinen sukellus: Tietoa merkkijonojen käsittelystä
-
-Merkkijonoilla on useita sisäänrakennettuja metodeja ja funktioita, joiden avulla niitä voidaan muokata ja käsitellä. Käyttämämme `capitalize()` ja `title()` ovat vain muutamia esimerkkejä näistä. On myös tärkeää muistaa, että merkkijonot ovat usein muuttumattomia, eli niitä ei voi muuttaa suoraan vaan ne pitää aina tallentaa uuteen muuttujaan.
+Capitalize()-funktio on osa Pythonin sisäänrakennettua "string" -moduulia ja se voidaan käyttää kaikissa merkkijonoissa. Jokaisen sanan ensimmäinen kirjain muuttuu isoksi, mutta muut kirjaimet pysyvät ennallaan. Tämä toiminto on hyödyllinen myös silloin, kun halutaan päästä eroon mahdollisista kirjoitusvirheistä merkkijonossa, kuten jos käyttäjä on syöttänyt ensimmäisen kirjaimen vahingossa pienellä.
 
 ## Katso myös
 
-- Pythonin merkkijonojen käsittely: https://realpython.com/python-strings/
-- Pythonin sisäänrakennetut merkkijonofunktiot: https://docs.python.org/3/library/stdtypes.html#string-methods
+- [Python string -moduuli](https://docs.python.org/3/library/string.html)
+- [Merkkijonojen käsittely Pythonissa](https://realpython.com/python-strings/)
+- [Pythonin järjestelmävalmiudet](https://docs.python.org/3/library/sys.html)

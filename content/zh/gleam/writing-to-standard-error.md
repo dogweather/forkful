@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 写入标准错误"
+title:                "写入标准错误"
+html_title:           "Gleam: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：
-为什么有时候我们需要将错误信息写入到标准输出流中呢？可能有几个原因。第一，当我们的程序出现错误时，我们想要能够跟踪和调试它，而将错误信息写入标准输出流可以提供给我们必要的信息。第二，如果我们的程序是作为另一个程序的一部分运行的话，将错误信息写入标准输出流可以让父程序捕获并处理这些错误。
+## 為什麼
 
-如何实现：
-要将错误信息写入到标准输出流中，我们可以使用Gleam的日志记录功能。首先，我们需要导入Gleam内置的Logger模块。然后，我们可以使用Logger模块中的函数`log.error`将错误信息写入标准输出流。下面是一个简单的例子：
+當你在編寫程式時，你可能會遇到錯誤或者需要輸出一些訊息給使用者。使用標準錯誤來寫入這些訊息可以使得程式更加有效率和方便。
+
+## 如何操作
+
+要寫入標準錯誤，你需要使用```gleam/io```模組中的```eprint```函數。例如：
 
 ```Gleam
-import gleam/logger
+import gleam/io eprint
 
-pub fn main() {
-  log.error("Oops, something went wrong!");
+fn main() {
+  eprint("這是標準錯誤訊息")
 }
 ```
 
-输出结果将会是：
+輸出將會是：
 
 ```
-[Error] Oops, something went wrong!
+這是標準錯誤訊息
 ```
 
-深入了解：
-除了简单地输出错误信息外，我们还可以在`log.error`函数中传入一些变量或者数据，以便更准确地定位问题。我们还可以使用多个`log.error`语句来输出不同级别的错误信息，例如`log.warn`和`log.info`等。此外，我们还可以自定义日志输出的格式和目的地，例如将错误信息写入特定的文件。
+## 深入瞭解
 
-同样重要的是，我们还可以结合使用Gleam中的异常处理功能来捕获和处理错误信息，以便让我们的程序更加健壮和稳定。
+雖然標準錯誤通常用於輸出錯誤訊息，但它其實也可以用於其他情況。你可以使用```eprint```來輸出任何類型的訊息，並且它也可以與其他函數和宏一起使用。此外，你也可以使用```println!```來輸出至標準輸出。
 
-参考链接：
-- [Gleam Logger模块文档](https://gleam.run/stdlib/logger.html)
-- [Gleam 异常处理文档](https://gleam.run/learn/error-handling.html)
+## 參考資料
 
-另请参阅：
-- [Gleam官方网站](https://gleam.run/)
-- [Gleam官方论坛](https://elixirforum.com/c/gleam/33)
-- [Gleam源代码仓库](https://github.com/gleam-lang/gleam)
+- 標準錯誤的更多資訊：https://gleam.run/articles/errors
+- ```gleam/io```模組的官方文件：https://gleam.run/std/io

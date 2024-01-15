@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 「文字列を小文字に変換する」"
+title:                "「文字列を小文字に変換する」"
+html_title:           "Clojure: 「文字列を小文字に変換する」"
 simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 私たちはなぜ文字列を小文字に変換するのか
+## クロージャーで文字列を小文字に変換する理由
 
-文字列を小文字に変換すると、文字列の比較や処理がより簡単になります。また、データの整理や平準化の際にも便利です。
+文字列を小文字に変換することは、コンピュータ上の文字列操作で非常に一般的です。例えば、ユーザーが入力した文字列を統一したフォーマットで処理するために、小文字に変換する必要があるかもしれません。または、検索エンジンやソート機能を実装する際に、文字列を小文字に変換してより柔軟な検索やソートができるようにするためです。
 
-## 方法
+## クロージャーで文字列を小文字に変換する方法
 
-文字列を小文字に変換するには、`clojure.string/lower-case`関数を使用します。
-
-```Clojure
-(clojure.string/lower-case "HELLO WORLD")
-```
-
-このコードを実行すると、`hello world`という出力が得られます。
+変換したい文字列を `lower-case` 関数に渡すだけで簡単に文字列を小文字に変換することができます。以下のコード例を参考にしてください。
 
 ```Clojure
-(clojure.string/lower-case "こんにちは、世界")
+(lower-case "Hello, World!")
 ```
 
-もちろん、日本語のようなマルチバイト文字列でも同様に動作します。このコードを実行すると、`こんにちは、世界`という出力が得られます。
+上記のコードを実行すると、出力は以下のようになります。
 
-## ディープダイブ
+```Clojure
+"hello, world!"
+```
 
-`clojure.string/lower-case`関数は、文字列を小文字に変換するだけでなく、国際化のための複雑なルールにも対応しています。例えば、トルコ語の`I`の小文字は`ı`になりますが、この関数では適切に処理されるようになっています。
+## クロージャーで文字列を小文字に変換する深堀り
 
-また、`clojure.string/lower-case`関数は、文字列だけでなくシーケンスやマップなどのデータ構造にも適用可能です。これにより、大量のデータを効率的に小文字に変換することができます。
+クロージャーの `lower-case` 関数は、文字列を小文字に変換するだけでなく、国際化や地域毎の文字列操作にも対応しています。また、多言語環境での文字列比較やパターンマッチングにも有用です。詳しくは公式ドキュメントをご覧ください。
+
+## 参考リンク
+
+- `lower-case` 関数の公式ドキュメント: https://clojure.org/reference/strings#clojure.string/lower-case
+- 国際化や地域毎の文字列操作に関する詳細: https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj#L832-L910
+- マルチバイト文字列処理に関する記事 (英語): https://lambdaisland.com/blog/2019-04-11-how-to-compare-strings-in-clojure
+- パターンマッチングに関するチュートリアル (英語): https://www.braveclojure.com/functional-programming/#Pattern_Matching
 
 ## 関連リンク
 
-- [Clojure Documentation: string functions](https://clojuredocs.org/clojure.string/lower-case)
-- [Clojure for Beginners - How to Convert Strings to Lowercase](https://javarevisited.blogspot.com/2020/06/clojure-convert-string-to-lowercase-uppercase.html)
+- クロージャー公式ドキュメント: https://clojure.org/
+- クロージャーについて知りたい方への入門記事: https://qiita.com/t-watanabe/items/efd6e4d033dc7263afed
+- クロージャーを使った実践的なプログラミングの例: https://github.com/karad/aroha/blob/master/README.md

@@ -1,6 +1,7 @@
 ---
-title:                "Rust: コンピュータープログラミングにおける「コマンドライン引数の読み込み」"
-simple_title:         "コンピュータープログラミングにおける「コマンドライン引数の読み込み」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Rust: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,36 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-コマンドライン引数を読み取ることが重要なのか
 
-コマンドライン引数を読み取ることは、プログラムをより柔軟に制御するために重要です。ユーザーはプログラムを実行する際に引数を指定することで、プログラムの挙動を変えることができます。例えば、ファイル名やデータのフォーマットを引数として指定することで、プログラムを異なるデータに対応させることができます。
+コマンドライン引数を読み取る必要性は、プログラムが外部から受け取る情報に依存している場合や、ユーザーがプログラムの挙動をカスタマイズしたい場合に特に重要です。
 
-## 方法
-コマンドライン引数をRustで読み取る方法
-
-まず最初に、`std:env`モジュールから`args()`関数を使用して引数を取得します。次に、引数を文字列のベクターとして扱うために`collect()`関数を使用します。最後に、`get()`メソッドを使用して引数を指定することで、特定の引数を取得することができます。
+## 使い方
 
 ```Rust
 use std::env;
 
 fn main() {
+    // コマンドライン引数を取得
     let args: Vec<String> = env::args().collect();
-    let arg1 = args.get(1);
-
-    // この後にコードを追加
+    
+    // 引数がある場合、第1引数を表示
+    if args.len() > 1 {
+        println!("Hello, {}!", args[1]);
+    } else {
+        println!("Hello, world!");
+    }
 }
 ```
 
-また、Rustでは`clap`という外部クレートを使用することで、より高度なコマンドライン引数の読み取りが可能です。
+プログラムを `hello.rs` というファイル名で保存し、コンパイルした後、ターミナルで `./hello Rust` と入力すると、`Hello, Rust!` という出力が得られます。
 
-## ディープダイブ
-コマンドライン引数のさらに詳細な情報
+## 深堀り
 
-コマンドライン引数を扱う際に注意するポイントの一つは、引数が指定されなかった場合のデフォルト値を考慮することです。また、複数の引数を取得する方法として、`Iterator`を使用する方法もあります。さらに、コマンドライン引数のパースに失敗した場合のエラーハンドリングも重要です。
+コマンドライン引数を扱う際、重要なことは引数の型と個数を把握することです。Rustでは、`std::env` モジュールの `args` 関数を使用して引数を取得し、 `len` メソッドを使用して引数の個数を判断することができます。また、引数の値は `String` 型で扱われるため、必要に応じて `parse` メソッドを使用して数値型に変換することもできます。
 
-## 他に見るもの
-コマンドライン引数を読み取る際に参考になる他の記事やリソース
+## さらに見る
 
-- [Rust公式ドキュメント - コマンドライン引数](https://doc.rust-lang.org/std/env/fn.args.html)
-- [The Rust Programming Language - コマンドライン引数](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
-- [clapクレートのドキュメント](https://docs.rs/clap/2.33.0/clap/)
+- [Rust: Command line arguments](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Rust: Parsing command line arguments](https://doc.rust-lang.org/std/primitive.str.html#method.parse)
+- [Rust: Types and variables](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)

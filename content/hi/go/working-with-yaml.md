@@ -1,5 +1,6 @@
 ---
-title:                "Go: यामल के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "Go: यामल के साथ काम करना"
 simple_title:         "यामल के साथ काम करना"
 programming_language: "Go"
 category:             "Go"
@@ -11,45 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-YAML तार की कार्यवाही में शामिल होने का कारण है कि यह एक लोकप्रिय फॉर्मेट है जो डेटा संरचनाओं को सरलता से संगठित करता है। यह प्रोग्रामिंग डेवलपरों को एक अधिक सुविधाजनक और स्क्रिप्टिंग भाषा प्रदान करता है जो उन्हें उनके टेक्नोलॉजी स्टैक को संचालित करने में मदद करता है।
+YAML, यानि "YAML Ain't Markup Language", एक नए स्ट्रक्चर कोडिंग लैंग्वेज है जो डेटा संरचना को सरल बनाने के लिए डिज़ाइन किया गया है। यह आसान समझने और उपयोग करने के लिए है और इसलिए वे जो लोग प्रोग्रामिंग से नए होते हैं, वे YAML के साथ प्रवेश द्वार खोल सकते हैं।
 
 ## कैसे करें
 
-```Go
+आप अपने Go प्रोजेक्ट में YAML फ़ाइल बनाने के लिए `go get` कमांड का इस्तेमाल कर सकते हैं। YAML को लोड करने के लिए आपको `gopkg.in/yaml.v2` को इम्पोर्ट करना होता है। यहां आपको YAML फ़ाइल से डेटा पढ़ने और लिखने के लिए कुछ उदाहरण ऐसे हैं:
+
+```go
 package main
 
 import (
     "fmt"
-    "log"
+    "io/ioutil"
 
     "gopkg.in/yaml.v2"
 )
 
-type Movie struct {
-    Name  string
-    Year  int  `yaml:"released"`
-    Color bool `yaml:"color,omitempty"`
-    Actors []string
-}
-
 func main() {
-    movie := Movie{
-        Name:  "Inception",
-        Year:  2010,
-        Color: true,
-        Actors: []string{"Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page", "Tom Hardy"},
+    // YAML फ़ाइल से डेटा पढ़ें
+    data, err := ioutil.ReadFile("config.yaml")
+    if err != nil {
+        panic(err)
     }
 
-    movieYaml, err := yaml.Marshal(movie)
+    // मानों को डेटा स्ट्रक्चर में डेकोड करें
+    config := make(map[string]string)
+    err = yaml.Unmarshal(data, &config)
     if err != nil {
-        log.Fatalf("error: %v", err)
+        panic(err)
     }
-    fmt.Println(string(movieYaml))
+
+    // मानों को डेटा स्ट्रक्चर से एक्सेस करें
+    fmt.Println(config["name"])
+
+    // YAML फ़ाइल में नए मानों को लिखें
+    config["company"] = "Acme Corporation"
+    // लिखें YAML फ़ाइल
+    data, err = yaml.Marshal(config)
+    if err != nil {
+        panic(err)
+    }
+    err = ioutil.WriteFile("config.yaml", data, 0644)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-उपरोक्त कोड उदाहरण में, हमने YAML आगमन संरचना का उपयोग करके एक फिल्म की जानकारी को YAML फॉर्मेट में एक स्ट्रिंग में रूपांतरित किया है। आपको पूर्ववेत्ता पैकेज को इन्स्टॉल करने की आवश्यकता हो सकती है। अतिरिक्त साधनों के साथ साथ, यह प्रत्येक गो प्रोग्रामिंग आगमन से संबंधित है।
+आप अपने प्रोजेक्ट में ये कोड एड करके YAML से आसानी से डेटा पढ़ सकते हैं और उसमें नए मान लिख सकते हैं।
 
-## गहराई धाव
+## गहराई में जाएँ
 
-YAML कस्टमाइजेशन की अनेक मुख्यताएं हैं जो इसे ईंधनतरूपी बनाती हैं, जिससे की आप अपने प्रोजेक्ट पर उल्लेखनीय प्रतिक्रिया मोडल को आसानी से विकसित कर सकें। यांग कोडिंग के समय, इसे जटिल वास्तविक जगह देने का प्रयास करना थोड़ा सक्रियदुपर्यास बनाता है, क्योंकि आप किशोरों के साथ खेलकर निखारते हैं आपकी प्रोजेक
+YAML प्रोग्रामिंग में बहुत ही उपयोगी है क्योंकि यह डेटा संरचना को दिखाने के लिए बहुत ही संवेदनशील है। आप इसमें कमेंट्स, माल्टीलाइन स्ट्रिंग

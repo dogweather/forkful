@@ -1,5 +1,6 @@
 ---
-title:                "Go: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Go: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Go"
 category:             "Go"
@@ -9,85 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å generere tilfeldige tall er en viktig del av mange programmer og applikasjoner. Tilfeldige tall kan brukes til å simulere utvikling, lage tilfeldige spill eller generere unike nøkler. I denne bloggposten vil vi se nærmere på hvordan du kan generere tilfeldige tall med Go-programmeringsspråket.
+Hvorfor ville noen ønske å generere tilfeldige tall? Det kan være nyttig for mange typer programmering, for eksempel simulasjon, tilfeldig utvelgelse av data eller for å legge til en tilfeldig faktor i et spill.
 
-# Hvordan
+## Hvordan
 
-For å generere tilfeldige tall i Go, kan vi bruke pakken "math/rand". Denne pakken har en funksjon kalt "Intn" som genererer et tilfeldig heltall mellom 0 og det spesifiserte tallet. Her er et enkelt eksempel på hvordan du kan bruke denne funksjonen:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"math/rand"
-)
-
-func main() {
-	// Generer et tilfeldig tall mellom 0 og 10
-	randomNumber := rand.Intn(10)
-	fmt.Println("Tilfeldig tall:", randomNumber)
-}
-```
-
-Dette vil gi følgende output:
-
-```
-Tilfeldig tall: 7
-```
-
-Vi kan også generere flere tilfeldige tall ved hjelp av en løkke. Her er et eksempel på hvordan du kan generere 5 tilfeldige tall mellom 0 og 100 og lagre dem i en liste:
+Det finnes flere måter å generere tilfeldige tall i Go. Her er to eksempler:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"math/rand"
-)
-
-func main() {
-	// Lager en tom liste for tilfeldige tall
-	var randomNumbers []int
-
-	// Genererer fem tilfeldige tall og legger dem til i listen
-	for i := 0; i < 5; i++ {
-		randomNumber := rand.Intn(100)
-		randomNumbers = append(randomNumbers, randomNumber)
-	}
-
-	// Skriver ut listen med tilfeldige tall
-	fmt.Println("Tilfeldige tall:", randomNumbers)
-}
-```
-
-Dette vil gi følgende output:
-
-```
-Tilfeldige tall: [44 82 10 16 27]
-```
-
-# Deep Dive
-
-Når vi bruker funksjonen "Intn" for å generere tilfeldige tall, vil tallene som blir generert være basert på en seed-verdi. Dette betyr at dersom vi kjører programmet vårt flere ganger, vil vi få de samme tilfeldige tallene hver gang. For å unngå dette kan vi endre seed-verdien til "rand" ved hjelp av funksjonen "Seend".
-
-```Go
-// Endrer seed-verdien til basert på tiden, slik at vi får forskjellige tilfeldige tall
+// Package "math/rand" må importeres for å bruke tilfeldige tall.
+import "math/rand"
+// For å få ulike tall hver gang programmet kjøres, kan man bruke funksjonen "Seed".
 rand.Seed(time.Now().UnixNano())
+// Deretter kan man bruke funksjonen "Intn" for å generere et heltall mellom 0 og et gitt tall.
+rand.Intn(100) // Dette vil returnere et tilfeldig tall mellom 0 og 99.
 ```
 
-Vi kan også begrense området til de tilfeldige tallene ved å bruke funksjonen "Intn"'s parameter. For eksempel, for å generere tilfeldige tall mellom 50 og 100, kan vi bruke følgende kode:
+En annen måte å generere tilfeldige tall på er ved å bruke pakken "crypto/rand". Denne pakken genererer cryptografisk sikre tilfeldige tall, noe som kan være viktig for sikkerhetsfølsomme programmer.
 
 ```Go
-rand.Intn(51) + 50
+// Package "crypto/rand" må importeres for å bruke tilfeldige tall.
+import "crypto/rand"
+// For å generere et heltall mellom 0 og et gitt tall, kan man bruke funksjonen "Int".
+// Denne funksjonen tar to argumenter: en Reader og et heltall som angir øvre grense for det tilfeldige tallet.
+rand.Int(rand.Reader, 100) // Dette vil returnere et tilfeldig heltall mellom 0 og 99.
 ```
 
-Dette vil generere et tilfeldig tall mellom 50 og 100.
+## Dypdykk
 
-# Se også
+Mens de to eksemplene ovenfor gir en enkel måte å generere tilfeldige tall på, er det viktig å forstå at disse tallene ikke er 100% tilfeldige. Tilfeldige tall som genereres av datamaskiner er faktisk pseudotilfeldige, noe som betyr at de følger en bestemt algoritme og kan forutsies. For å få tettere på ekte tilfeldighet, må man bruke eksterne faktorer som støkastiske prosesser eller fysiske fenomener.
 
-- Offisiell Go-dokumentasjon: https://golang.org/pkg/math/rand/
-- Tutorial om tilfeldige tall i Go: https://www.youtube.com/watch?v=u80i4k0jPac
-- Blogginnlegg om å generere tilfeldige tall i Go: https://blog.xmh.io/posts/go-seeding-math-rand-intn/
+For å lære mer om hvordan tilfeldige tall genereres i Go, kan du sjekke ut følgende ressurser:
+- [Offisiell dokumentasjon for tilfeldige tall i Go](https://golang.org/pkg/math/rand/)
+- [Artikkel om generering av tilfeldige tall i Go](https://medium.com/@sagarsawant/generating-random-numbers-most-proper-way-in-go-lang-9fbe6f5f2c3a)
+- [Stack Overflow-tråd om tilfeldige tall i Go](https://stackoverflow.com/questions/12321133/generating-random-numbers-in-go)
+- [Video-foredrag om tilfeldige tall i Go](https://www.youtube.com/watch?v=ezk6VYUl0F4)
+
+## Se også
+
+- [Offisiell dokumentasjon for Go](https://golang.org/doc/)
+- [Go-tutorial for nybegynnere](https://tour.golang.org/welcome/1)
+- [Lær Go gjennom interaktive oppgaver](https://gophercises.com/)

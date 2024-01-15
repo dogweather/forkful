@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Gleam: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,25 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kukaan haluaisi etsiä ja korvata tekstejä Gleam-ohjelmoinnilla? No, yksi hyvä syy voisi olla tekstien muokkaaminen ja parantaminen tehokkaammin.
+Oletko koskaan halunnut muuttaa tiettyjä tekstejä koodistasi? Gleamilla tämä onnistuu helposti ja nopeasti.
 
-## Kuinka
+## Kuinka tehdä
+
+Tarvitset vain `replace` toiminnon ja sen parametreiksi annetaan etsittävä teksti, korvaava teksti ja alkuperäinen teksti, jota haluat muokata. Katso alla Gleamilla kirjoitettu esimerkki:
 
 ```Gleam
-let teksti = "Tervetuloa Gleamiin!"
-let uusi_teksti = teksti |> String.replace("Tervetuloa", "Hello")
-IO.print("Uusi teksti: #{uusi_teksti}")
+replace("vanha", "uusi", "Tämä on vanha teksti.")
 ```
 
-Tulostus: "Uusi teksti: Hello Gleamiin!"
+Tämä koodi korvaa `Tämä on vanha teksti` tekstin `Tämä on uusi teksti` tekstiksi. Helppoa, eikö?
 
-Tässä esimerkissä käytetään Gleamin `String` -moduulia etsimään ja korvaamaan tekstiä. Voit vaihtaa tekstejä valitsemalla tekstiriviltä (ensimmäinen parametri) ja korvaamalla sen uudella tekstillä (toinen parametri). Lopuksi tulostetaan uusi teksti käyttämällä Gleamin `IO` -moduulia.
+## Syvemmälle
 
-## Syvällinen sukellus
+Jos haluat tehdä monimutkaisempia muutoksia tekstissä, voit käyttää `regex_replace` funktiota. Se mahdollistaa säännöllisten lausekkeiden käytön, jolloin voit etsiä ja korvata tekstejä tietyillä säännöillä.
 
-Ehkä olet jo käyttänyt etsimis- ja korvaamistoimintoja muilla ohjelmointikielillä ja haluat tietää enemmän Gleamin `String` -moduulista. Voit löytää lisätietoja virallisesta dokumentaatiosta, jossa kerrotaan tarkemmin `String.replace` -funktiosta ja sen muista toiminnoista.
+Tässä esimerkki, jossa haluamme vaihtaa kaikki numerot tekstin "numero" tekstiksi:
+
+```Gleam
+regex_replace("\\d", "numero", "123 - tämä sisältää numeroita.")
+```
+
+Tämä tuottaa seuraavan tuloksen: `numero - tämä sisältää numeroita.`
 
 ## Katso myös
-- [Gleamin virallinen dokumentaatio (englanniksi)](https://gleam.run/standard-library/string.html)
-- [Gleamin GitHub-sivu (englanniksi)](https://github.com/gleam-lang/gleam)
-- [Gleamin virallinen Twitter-tili (englanniksi)](https://twitter.com/gleamlanguage)
+
+* Gleamin dokumentaatio "String" moduulista: https://gleam.run/modules/std/string/
+* Regular expressions oppimateriaalit: https://regexone.com/ ja https://www.regular-expressions.info/

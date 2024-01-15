@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Trouver la longueur d'une chaîne"
-simple_title:         "Trouver la longueur d'une chaîne"
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "Elixir: Trouver la longueur d'une chaîne de caractères"
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,37 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il y a souvent des tâches simples en programmation qui peuvent sembler sans importance, mais qui peuvent avoir de grandes conséquences sur la qualité de notre code. Trouver la longueur d'une chaîne de caractères peut sembler être une tâche banale, mais cela peut nous aider à éviter des erreurs critiques dans notre code.
+Si vous êtes nouveau en Elixir, trouver la longueur d'une chaîne de caractères peut sembler intimidant. Cependant, une fois que vous avez compris comment le faire, cela deviendra un outil précieux pour traiter toute sorte de données.
 
-## Comment faire
+## Comment Faire
 
-Pour trouver la longueur d'une chaîne de caractères en Elixir, nous pouvons utiliser la fonction `String.length/1`. Cette fonction prend en paramètre une chaîne de caractères et renvoie le nombre total de caractères dans cette chaîne. Voyons un exemple concret :
-
-```Elixir
-string = "Bonjour"
-String.length(string)
-```
-La sortie de ce code sera `7`, car il y a 7 caractères dans la chaîne "Bonjour".
-
-Un autre moyen de trouver la longueur d'une chaîne de caractères est d'utiliser l'opérateur `|>`. Cet opérateur, appelé "pipe", prend le résultat d'une première opération et l'injecte comme premier argument d'une seconde opération. Dans notre cas, nous pouvons utiliser cet opérateur avec la fonction `String.length/1` de cette manière :
+La méthode la plus simple pour trouver la longueur d'une chaîne de caractères est d'utiliser la fonction `String.length()` en lui passant la chaîne de caractères en argument. Voici un exemple de code :
 
 ```Elixir
-string = "Bonjour"
-string |> String.length()
+chaine = "Bonjour le monde"
+longueur = String.length(chaine)
+IO.puts "La longueur de la chaîne est de : #{longueur}"
 ```
 
-La sortie sera la même que précédemment, `7`. N'oubliez pas que l'opérateur `|>` fonctionne de gauche à droite, donc nous pouvons également écrire `String.length(string) |> String.capitalize()` pour trouver la longueur de la chaîne et mettre la première lettre en majuscule.
+Dans cet exemple, nous définissons d'abord une variable contenant notre chaîne de caractères, puis nous utilisons la fonction `String.length()` pour trouver sa longueur. Enfin, nous affichons la longueur en utilisant la fonction `IO.puts`.
 
-## Plongée en profondeur
+La sortie de ce code sera : `La longueur de la chaîne est de : 17`.
 
-Maintenant que nous savons comment trouver la longueur d'une chaîne en Elixir, il est important de comprendre comment cela fonctionne réellement en coulisses. En réalité, la fonction `String.length/1` utilise une méthode optimisée pour accéder à la mémoire sous-jacente de la chaîne et renvoyer sa longueur. Cela signifie que cette fonction est très rapide et efficace, même pour les chaînes de caractères très longues.
+## Plongée en Profondeur
 
-De plus, la fonction `String.length/1` prend en compte la longueur réelle de la chaîne, et non seulement le nombre de caractères visibles. Cela signifie qu'elle est également utile pour trouver la longueur des chaînes contenant des caractères spéciaux ou des emoji.
+Il est important de noter que la fonction `String.length()` compte chaque caractère de la chaîne, y compris les espaces et les caractères spéciaux. Cela signifie que la longueur d'une chaîne peut être différente de ce que l'on peut s'attendre à voir. Par exemple, la chaîne `"Bonjour, le monde"` aura une longueur de 18, car elle contient un espace et une virgule en plus des 17 caractères de lettres.
 
-## Voir aussi
+De plus, en utilisant Elixir, il est possible d'utiliser des chaînes de caractères en UTF-8, ce qui peut augmenter la longueur de la chaîne. Dans ce cas, la fonction `String.length()` compte le nombre d'octets de la chaîne, pas le nombre de caractères affichés. Il existe une autre fonction, `String.graphemes()`, qui compte le nombre de caractères affichés, mais elle n'est pas encore disponible dans la version actuelle d'Elixir.
 
-Voici quelques liens supplémentaires pour en savoir plus sur la manipulation des chaînes de caractères en Elixir :
+## Voir Aussi
 
-- [La documentation officielle d'Elixir sur la manipulation des chaînes de caractères](https://elixir-lang.org/getting-started/string.html)
-- [Un article sur les opérateurs de pipe en Elixir](https://www.tutos.eu/blog/elixir-les-operateurs-pipe.html)
-- [Un cours sur les bases de la programmation en Elixir, y compris la manipulation de chaînes de caractères](https://openclassrooms.com/fr/courses/1894236-programmez-en-elixir/1894381-mes-premiers-pas-avec-elixir)
+Pour en savoir plus sur la manipulation des chaînes de caractères en Elixir, voici quelques liens utiles :
+
+- [Documentation officielle Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
+- [Tutoriel sur les chaînes de caractères en Elixir](https://medium.com/@joshuaforrest/how-to-work-with-strings-in-elixir-7a1fe6cafcce)
+- [Comparaison de performances de différentes méthodes pour trouver la longueur d'une chaîne de caractères en Elixir](http://andrealeopardi.com/posts/using-elixir-to-build-a-string-length-function-that-is-guaranteed-not-to-crash)

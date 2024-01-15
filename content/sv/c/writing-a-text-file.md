@@ -1,5 +1,6 @@
 ---
-title:                "C: Skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "C: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "C"
 category:             "C"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna skriva textfiler är en essentiell del av programmering. Det tillåter dig att spara data på ett enkelt och strukturerat sätt, och kan vara användbart i många scenarier. Till exempel kan du använda textfiler för att spara användardata, loggar eller konfigurationsfiler.
 
-## Hur man gör det
-För att skriva en textfil i C behöver du först öppna en "file stream" med hjälp av funktionen `fopen()`. Du behöver också ett filnamn och en "mode" för filen, som kan vara "r" för läsning, "w" för skrivning eller "a" för append (att lägga till data i slutet av filen). Om filen inte redan finns kommer `fopen()` att skapa den.
+Ibland behöver vi lagra data eller information på en enkel och läsbar sätt, och därför är att skriva en textfil ett viktigt verktyg inom programmering. En textfil är också användbar för att skapa enkla konfigurationsfiler eller för att spara användarinställningar.
 
-När filen har öppnats kan du använda funktionen `fprintf()` för att skriva data till filen. Den tar emot en "file stream", formatet för datan du vill skriva och själva datan som argument. Här är ett enkelt exempel som skriver texten "Hej världen!" till en fil som heter "hello.txt":
+## Hur man gör
+
+För att skriva en textfil behöver vi använda oss av standard C-funktioner för filhantering. Det första steget är att öppna en fil med funktionen `fopen()` och ange vilket mode filen ska öppnas i, exempelvis läge för att skriva (`"w"`). Sedan kan vi använda funktionen `fprintf()` för att skriva in önskad data i filen. När slutligen all data är skriven behöver vi stänga filen med funktionen `fclose()` för att undvika eventuella problem med filen i framtiden.
 
 ```C
-#include <stdio.h>
+// Öppna filen för skrivning
+FILE *fp = fopen("exempelfil.txt", "w");
 
-int main() {
-  FILE* fp = fopen("hello.txt", "w"); // Öppna filen för skrivning
-  fprintf(fp, "Hej världen!"); // Skriv data till filen
-  fclose(fp); // Stäng filen 
-  return 0;
-}
+// Skriv in data i filen
+fprintf(fp, "Detta är en textfil som skrivs med C-programmeringsspråket.\n");
+fprintf(fp, "Här är en rad till.\n");
+
+// Stäng filen
+fclose(fp);
 ```
 
-Om allt går som det ska, kommer en fil med namnet "hello.txt" att skapas och innehålla texten "Hej världen!".
-
 ## Djupdykning
-När du skriver en textfil med `fprintf()` kan du använda speciella "format specifiers" för att tillåta olika typer av data. Till exempel kan du använda `%d` för att skriva ut ett heltal, `%f` för flyttal och `%s` för en sträng. Du kan också använda `\n` för att skapa en ny rad i filen.
 
-Det är också viktigt att stänga filen efter att du är klar med att skriva, med hjälp av funktionen `fclose()`. Detta kommer att frigöra resurser och spara eventuella osparade ändringar i filen.
+När vi skriver en textfil måste vi också ha i åtanke att filen kommer att skapas i det nuvarande arbetsmappen. Om vi vill placera filen i en annan mapp kan vi ange sökväg till filen när vi öppnar den med `fopen()`. Det är också viktigt att nämna att vi endast kan skriva in text i en textfil, alla andra datatyper måste omvandlas till text först.
 
 ## Se även
-- [Dokumentation för fopen()](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Dokumentation för fprintf()](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Dokumentation för fclose()](https://www.tutorialspoint.com/c_standard_library/c_function_fclose.htm)
+
+- [Officiell dokumentation för fopen()](https://www.cplusplus.com/reference/cstdio/fopen/)
+- [Officiell dokumentation för fprintf()](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [Officiell dokumentation för fclose()](https://www.cplusplus.com/reference/cstdio/fclose/)

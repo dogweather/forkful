@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Inviare una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,69 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molte volte, quando si utilizza Arduino per progetti di automazione o di monitoraggio, si desidera che il nostro dispositivo sia in grado di comunicare con un server o un'API. In questi casi, potrebbe essere necessario inviare una richiesta HTTP con autenticazione di base per accedere ai dati o eseguire determinate operazioni. Vediamo come farlo utilizzando Arduino.
+Quando si utilizza una scheda Arduino per comunicare con il web, può essere necessario inviare richieste HTTP con l'autenticazione di base. Questo è particolarmente utile se si vuole accedere a risorse protette da password.
 
 ## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base, è necessario seguire alcuni passaggi fondamentali. Prima di tutto, dobbiamo includere la libreria "WiFi.h" e la libreria "HTTPClient.h" nel nostro codice. Inoltre, dobbiamo definire le nostre credenziali di autenticazione nella sezione "setup", utilizzando il metodo "setAuthorization" della libreria HTTPClient.
-
-Una volta fatto ciò, dobbiamo stabilire la connessione WiFi con la nostra rete e utilizzare il metodo "begin" della libreria HTTPClient per iniziare la richiesta. Inseriamo l'URL desiderato e il metodo HTTP che vogliamo utilizzare (GET, POST, PUT, DELETE). Se la richiesta viene eseguita correttamente, possiamo visualizzarne l'output con il metodo "readString".
-
-Ecco un esempio di codice che esegue una richiesta GET con autenticazione di base a un'API:
+Per inviare una richiesta HTTP con autenticazione di base utilizzando Arduino, è necessario utilizzare la libreria ESP8266WiFi (se si sta utilizzando un modulo WiFi) o la libreria Ethernet (se si sta utilizzando una scheda Ethernet). In entrambi i casi, si deve impostare la comunicazione con il server web utilizzando la classe WiFiClient (per ESP8266) o la classe EthernetClient (per Ethernet).
 
 ```Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
+#include <WiFiClient.h>   // o #include <EthernetClient.h> se si utilizza Ethernet
 
-void setup()
-{
-  Serial.begin(9600);
-  
-  WiFi.begin("nome_rete", "password_rete"); // sostituire con i tuoi dati di rete
-  
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(1000);
-    Serial.println("Connessione WiFi in corso...");
-  }
-  Serial.println("Connesso alla rete WiFi!");
+// Creare l'oggetto cliente
+WiFiClient client;   // o EthernetClient client; se si utilizza Ethernet
+
+// Connessione al server web
+if (client.connect(server, port)) {   // impostare server e porta del server web desiderato
+  // Generare una stringa di autenticazione di base
+  String authString = "Basic " + base64Encode(username + ":" + password);   // sostituire username e password con le proprie credenziali
+
+  // Invio della richiesta con l'intestazione di autenticazione di base
+  client.println("GET /protected-resource HTTP/1.1");   // sostituire "/protected-resource" con il percorso della risorsa desiderata
+  client.println("Host: www.example.com");   // sostituire "www.example.com" con l'indirizzo del server web
+  client.println("Authorization: " + authString);   // attenzione alle virgolette: la stringa deve iniziare con "Basic "
+  client.println();   // invia una riga vuota per indicare la fine dell'intestazione
 }
 
-void loop()
-{
-  HTTPClient http;
-  http.setAuthorization("username", "password"); // sostituire con le tue credenziali di autenticazione
-  http.begin("URL_desiderato");
-  int httpCode = http.GET();
-  
-  if (httpCode > 0)
-  {
-    String response = http.getString();
-    Serial.println(response);
-  }
-  
-  http.end();
-  delay(5000); // attendiamo 5 secondi prima di eseguire una nuova richiesta
+// Lettura della risposta
+while (client.available()) {
+  String response = client.readStringUntil('\r');   // legge la risposta del server fino alla fine della riga
+
+  // Fare qualcosa con la risposta ottenuta
+  Serial.println(response);   // stampa la risposta sulla seriale
 }
+
+// Disconnessione dal server web
+client.stop();
 ```
 
-L'output della richiesta verrà visualizzato sulla console seriale di Arduino. Ovviamente, è possibile personalizzare il codice per adattarlo alle nostre esigenze specifiche.
+Si noti che prima di inviare la richiesta, è necessario generare una stringa di autenticazione base64 utilizzando le proprie credenziali e inserirla nell'intestazione della richiesta. Inoltre, è importante controllare se la connessione al server è stata stabilita correttamente prima di inviare la richiesta.
 
-## Approfondimento
+È possibile utilizzare questo stesso metodo per inviare richieste HTTP con altri metodi (ad esempio POST o PUT), basta modificare la prima riga della richiesta (GET nel codice sopra) in base al metodo desiderato.
 
-Mentre il codice presentato sopra funziona bene per la maggior parte delle richieste HTTP, ci sono alcune situazioni in cui potrebbe essere necessario gestire manualmente alcune parti della richiesta. Ad esempio, se la risposta dell'API contiene dei cookie, dobbiamo essere in grado di leggerli e salvarli per eventuali richieste future.
+## Approfondimenti
 
-Per fare ciò, possiamo utilizzare il metodo "getHeaders" della libreria HTTPClient per ottenere tutti gli header della risposta e il metodo "find" per individuare i cookie specifici che ci interessano.
+L'autenticazione di base è solo uno dei vari modi per effettuare l'autenticazione in una richiesta HTTP. Altri metodi comuni includono OAuth e Token-based authentication. È importante utilizzare l'autenticazione adeguata in base alle esigenze specifiche del proprio progetto.
 
-Inoltre, se la nostra richiesta deve inviare dei parametri, dobbiamo utilizzare il metodo "addHeader" per aggiungere l'header "Content-Type" e il metodo "addParameter" per aggiungere i parametri necessari.
-
-Per ulteriori informazioni sulla gestione avanzata delle richieste HTTP con Arduino, è possibile consultare la documentazione ufficiale delle librerie WiFi e HTTPClient.
+Un'altra cosa da tenere a mente è che l'autenticazione di base non è sicura in quanto le credenziali vengono inviate in chiaro. È consigliato utilizzare una connessione HTTPS per garantire la sicurezza delle credenziali.
 
 ## Vedi anche
 
-Per saperne di più su come utilizzare Arduino per comunicare con il web, puoi leggere questi articoli:
+[Documentazione ufficiale di Arduino](https://www.arduino.cc/en/Reference/ClientConstructor)
 
-- [Tutorial: Utilizzare Arduino per inviare email](https://www.circuitlab.it/arduino-invio-email/)
-- [Come leggere dati da un server web con Arduino](https://www.circuitlab.it/arduino-leggere-dati-web/)
-- [Guida all'utilizzo delle librerie WiFi e HTTPClient su Arduino](https://www.arduino.cc/en/Reference/WiFi)
-- [Documentazione ufficiale delle librerie WiFi e HTTPClient](https://arduino-httpclient.readthedocs.io/en/latest/)
+[Tutorial su HTTP Requests con Arduino](https://lastminuteengineers.com/esp8266-http-get-post-arduino/)

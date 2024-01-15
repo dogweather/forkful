@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Sletting av tegn som samsvarer med et mønster"
-simple_title:         "Sletting av tegn som samsvarer med et mønster"
+title:                "Sletting av tegn som matcher et mønster"
+html_title:           "Ruby: Sletting av tegn som matcher et mønster"
+simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,52 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger når vi jobber med tekststrenger i Ruby, kan det være nyttig å kunne fjerne visse tegn som matcher et bestemt mønster. Dette kan være nyttig når vi ønsker å rense data eller formatere tekst på en spesifikk måte. Å kunne slette tegn som matcher et mønster er en viktig ferdighet for alle Ruby-programmerere å ha.
+Noen ganger vil du kanskje trenge å fjerne bestemte tegn eller bokstaver fra en tekststreng. Dette kan være nyttig hvis du for eksempel ønsker å rense data eller filtrere ut uønskede tegn.
 
 ## Hvordan gjøre det
 
-For å slette tegn som matcher et mønster i Ruby, kan vi bruke metoden `gsub` som står for "global substitution". Denne metoden tar to argumenter: mønsteret vi vil matche og hva vi vil erstatte det med. La oss si vi har en tekststreng som består av tall og vi vil fjerne alle tallmønstre fra strengen. Dette kan gjøres på følgende måte:
-
 ```Ruby
-string = "Det er 1 uke igjen til foreldremøtet"
+tekst = "Rubyyy"
 
-ny_string = string.gsub(/\d/, "")
+tekst.gsub!(/y/, "") 
 
-puts ny_string # Output: Det er uke igjen til foreldremøtet
+puts tekst
 ```
 
-Vi definerer et mønster ved hjelp av regulære uttrykk. I dette tilfellet brukte vi `\d` som representerer alle tall i strengen. Deretter erstatter vi alle forekomster av dette mønsteret med et tomt tegn. Dermed vil alle tall bli fjernet fra den opprinnelige strengen.
-
-Vi kan også endre på hvordan vi vil erstatte mønsteret med ved å bruke blokker i `gsub`-metoden. For eksempel, la oss si at vi vil erstatte alle tallmønstre med det samme tallet i motsatt rekkefølge. Dette kan gjøres som følgende:
-
-```Ruby
-string = "Jeg elsker å kode i Ruby"
-
-ny_string = string.gsub(/\w+/) { |match| match.reverse }
-
-puts ny_string # Output: geJ reksle å edok i ybuR
-```
-
-Her brukte vi en blokk og `reverse`-metoden for å bytte om på bokstavene i hvert matchende ord. Det er viktig å huske at i dette eksemplet, erstattet vi hvert matchende ord med resultatet av blokken.
+Dette vil resultere i at teksten blir "Rub".
 
 ## Dypdykk
 
-For å få en bedre forståelse av hvordan `gsub`-metoden fungerer, kan vi ta en titt på noen av de andre parameterene den tar. I tillegg til mønsteret og erstatningen, kan vi også inkludere en valgfri tredje parameter for å spesifisere hvor mange ganger vi vil erstatte mønsteret. For eksempel, la oss si at vi bare vil fjerne det første tallet i strengen vår, uavhengig av hvor mange tallet er i strengen. Dette kan gjøres som følgende:
+Ruby har en innebygd metode kalt `gsub` som står for "global substitution". Denne metoden tar to argumenter, et mønster som skal matches og hva det skal erstattes med. Når du bruker `gsub!` vil endringen skje i selve variabelen, mens `gsub` returnerer en ny kopi av teksten med endringen.
 
-```Ruby
-string = "123, 456, 789"
+Du kan også bruke regulære uttrykk i `gsub` for å slette flere tegn eller bokstaver basert på et mønster. For eksempel, hvis du vil fjerne alle tall fra en tekststreng, kan du bruke `tekst.gsub!(/\d/, "")`, hvor `\d` representerer et tall.
 
-ny_string = string.gsub(/\d/, "", 1)
+## Se også
 
-puts ny_string # Output: 23, 456, 789
-```
-
-Vi inkluderte tallet 1 som tredje parameter, noe som betyr at metoden bare vil fjerne det første matchende tallet i strengen.
-
-Vi kan også bruke `gsub!`-metoden for å endre den opprinnelige strengen i stedet for å lage en ny. Dette kan være nyttig når vi ønsker å endre på en streng uten å måtte lagre den i en variabel. Fordi `gsub!`-metoden endrer den opprinnelige strengen, må vi være forsiktige med å bruke den.
-
-## Se Også
-
-- [Ruby regex](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Ruby String documentation](https://ruby-doc.org/core-2.6/String.html#method-i-gsub)
-- [Regulære uttrykk i Ruby](https://www.ruby-lang.org/no/documentation/regexp/)
+- [RegExr](https://regexr.com/) - et nyttig verktøy for å teste og lage regulære uttrykk
+- [Ruby String dokumentasjon](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub) - mer informasjon om `gsub` metoden og andre nyttige metodene for strings i Ruby.

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 「HTTPリクエストを送信する」"
-simple_title:         "「HTTPリクエストを送信する」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -9,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストを送信するか
+## Why
+初めに、HTTPリクエストを送信することの利点は何でしょうか？HTTPリクエストを送信することによって、インターネット上の他のサイトやサービスとのデータのやりとりが可能になります。これは、ウェブサイトから情報を取得するだけでなく、APIを使用してリソースを作成したり更新したりするのにも役立ちます。
 
-プログラマーとして、HTTPリクエストを送信することは非常に重要です。HTTPリクエストを送信することにより、Webサーバーからデータやコンテンツを取得することができます。これは、ブラウザーでWebページを表示する際にも使用されるプロトコルです。また、APIやWebサービスを使用する場合にも必要不可欠な方法です。
+## How To
+まず、BashでHTTPリクエストを送信する方法を見てみましょう。下記の例を参考にしてください。
 
-## 送信方法
+```Bash
+#!/bin/bash
 
-Bashプログラミング言語を使用してHTTPリクエストを送信する方法をご紹介します。まず、以下のようにコマンドを入力し、必要なパッケージをインストールします。
+# curlコマンドを使用してGoogleのウェブページにHTTPリクエストを送信する
+curl https://www.google.com
 
-```
-Bash
-sudo apt-get install curl
-```
+# レスポンスヘッダーを含め、詳細な情報を表示するには-vオプションを使用
+curl -v https://www.google.com
 
-次に、以下のコマンドを使用してGETリクエストを送信します。
-
-```
-Bash
-curl http://www.example.com
-```
-
-このように、curlコマンドを使用することで、HTTPリクエストを送信することができます。また、POSTリクエストを送信する場合は、以下のようにコマンドを変更します。
-
-```
-Bash
-curl -X POST -d "param1=value1&param2=value2" http://www.example.com
+# POSTリクエストを送信するためには、-Xオプションを使用してメソッドを指定し、-dオプションを使用してデータを指定する
+curl -X POST -d "username=John&password=pass123" https://www.example.com/login
 ```
 
-その他のオプションや詳細な使い方は、公式ドキュメントを参照することができます。
+上記の例では、`curl`コマンドを使用してHTTPリクエストを送信しています。さまざまなオプションを使用して、リクエストの詳細をカスタマイズすることができます。
 
-## 深堀り
+```Bash
+# オプションの一覧を表示するには-hオプションを使用
+curl -h
 
-HTTPリクエストを送信する際には、以下の3つの主要な要素が必要です。
+# リクエスト先のURLを指定するには-Oオプションを使用
+curl -O https://www.example.com/file.zip
 
-- メソッド：GETやPOSTなど、リクエストの種類を指定します。
-- URL：リクエストを送信する先のサイトやAPIのURLを指定します。
-- ボディ：POSTリクエストを送信する場合には、リクエストに含まれるデータを指定します。
+# 新しいファイル名を指定するには-oオプションを使用
+curl -o new_filename.zip https://www.example.com/file.zip
+```
 
-これらの要素を正しく指定することで、HTTPリクエストを成功させることができます。
+## Deep Dive
+上記の例では`curl`コマンドを使用してHTTPリクエストを送信しましたが、実際にはBashだけでリクエストを送信することも可能です。Bashで使用できる`curl`コマンドは、Libcurlと呼ばれるC言語で書かれたライブラリを使用しています。
 
-## 参考リンク
+Libcurlは、HTTPやFTPなどの様々なプロトコルに対応しており、BashだけでHTTPリクエストを送信することができます。しかし、直接Libcurlを使用するよりも、`curl`コマンドを使用する方が簡単です。
 
-- [curlコマンド公式ドキュメント](https://curl.haxx.se/docs/manpage.html)
-- [curlコマンドの使い方](https://qiita.com/Mocacamo/items/226dede46b0c5b8f9b86)
+## See Also
+今回紹介した`curl`コマンドやLibcurl以外にも、HTTPリクエストを送信するためのさまざまなツールがあります。以下のリンクから詳細を確認してみてください。
+
+- [HTTPie](https://httpie.org/)
+- [wget](https://www.gnu.org/software/wget/)
+- [axel](http://axel.alioth.debian.org/)

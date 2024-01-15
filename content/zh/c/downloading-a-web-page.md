@@ -1,6 +1,7 @@
 ---
-title:                "C: 从网页下载"
-simple_title:         "从网页下载"
+title:                "下载网页"
+html_title:           "C: 下载网页"
+simple_title:         "下载网页"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,67 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要下载网页？
 
-当我们在浏览器上浏览网页时，我们可能会想要保存下来以便稍后再查看。通过学习如何编写代码来下载网页，我们可以轻松地保存网页，并在没有互联网连接的情况下查看它们。
+下载网页是获取信息的一种常见方式。通过下载网页，用户可以获取网页上的文本、图像和其他媒体，从而满足他们的需求。
 
-## 如何
+## 如何进行网页下载
 
-首先，我们需要引入 stdio.h 和 stdlib.h 头文件，以便在程序中使用标准输入输出函数和动态内存分配函数。然后，我们需要定义一个函数来下载网页，如下所示：
+网页下载可以通过使用C语言中的标准库中提供的功能来实现。首先，我们需要导入`<stdio.h>`和`<curl/curl.h>`头文件。然后，我们可以使用`CURL`结构体来创建一个可以执行下载任务的句柄。接下来，我们可以通过设置相应的选项，如`CURLOPT_URL`来指定要下载的网页地址。最后，使用`curl_easy_perform()`方法来执行下载任务，并将下载的内容保存到本地文件中。以下是一个简单的网页下载示例：
 
-```C
-void download_page(char* url) {
-	// 在此处编写代码来下载网页
+```
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void)
+{
+  CURL *curl;
+  FILE *fp;
+  CURLcode res;
+  char *url = "https://example.com"; // 要下载的网页地址
+  char outfilename[FILENAME_MAX] = "output.html"; // 保存下载内容的文件名
+
+  curl = curl_easy_init(); // 初始化curl句柄
+  if (curl)
+  {
+    fp = fopen(outfilename, "wb"); // 以二进制写入模式打开文件
+    if (fp == NULL)
+      return 0; // 打开文件失败，结束程序
+
+    // 设置要下载的网页地址
+    curl_easy_setopt(curl, CURLOPT_URL, url);
+
+    // 将下载的内容保存到指定的文件中
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+
+    // 执行下载任务
+    res = curl_easy_perform(curl);
+
+    // 检查下载结果
+    if (res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed:%s\n", curl_easy_strerror(res));
+
+    // 关闭文件
+    fclose(fp);
+
+    // 回收curl句柄
+    curl_easy_cleanup(curl);
+  }
+
+  return 0;
 }
 ```
 
-接着，我们将在主函数中调用这个函数，并传入我们想要下载的网页的网址，如下所示：
+运行上述代码后，会将指定网页的内容下载并保存为`output.html`文件，供用户随后查看和使用。
 
-```C
-int main() {
-	char* url = "https://www.example.com"; // 替换为你想要下载的网页的网址
-	download_page(url); // 调用下载函数
-}
-```
+## 深入了解网页下载
 
-现在，我们可以在下载函数中编写代码来实现网页下载的功能。一个简单的方法是使用标准C库中的 `system()` 函数来调用系统的 `wget` 命令来下载网页。代码如下所示：
+使用C语言进行网页下载需要了解一些更深层次的知识。比如，我们可以通过设置不同的选项，来实现不同的功能，如设置`CURLOPT_USERAGENT`来伪装浏览器，让服务器认为我们是使用浏览器进行访问，而不是使用程序下载内容。此外，我们还可以使用`CURLcode`类型来处理下载过程中可能出现的错误，以保证程序的稳定性。
 
-```C
-void download_page(char* url) {
-	char command[50]; // 存储wget命令的数组
-	sprintf(command, "wget %s", url); // 将网址插入wget命令中
-	system(command); // 执行wget命令
-}
-```
+# 参考链接
 
-当我们运行程序时，它将调用系统的 `wget` 命令来下载我们指定的网页。下载完成后，我们可以在程序所在的目录中找到名为 `index.html` 的文件，其中包含我们下载的网页的源代码和内容。
-
-## 深入探讨
-
-除了使用 `system()` 函数调用系统的 `wget` 命令，我们还可以使用标准C库中的 `fopen()` 和 `fputs()` 函数来直接从网址中读取并保存网页的内容。代码如下所示：
-
-```C
-void download_page(char* url) {
-
-	// 使用文件指针来打开一个新文件，名为 "index.html"
-	FILE* fp = fopen("index.html", "w");
-
-	// 使用标准C库中的"文件指针"来读取并保存网页内容
-	// 请注意，这将覆盖我们之前用系统的wget命令下载的同名文件
-	FILE* web = fopen(url, "r");
-	char c;
-	while ((c = fgetc(web)) != EOF) { // 从网页中逐个读取字符
-		fputc(c, fp); // 将每个字符写入名为 "index.html" 的文件中
-	}
-	fclose(web); // 关闭文件指针
-	fclose(fp); // 关闭文件指针
-}
-```
-
-使用这种方法，我们可以更精确地控制下载的网页内容，并在程序中进一步处理它们，例如提取特定信息或进行数据分析。
-
-## 另请参阅
-
+- [CURL官方文档](https://curl.se/libcurl/c)
+- [C语言标准库](https://www.cplusplus.com/reference/cstdlib/)
 - [C语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [C标准库教程](https://www.runoob.com/cprogramming/c-standard-library.html)
-- [用C语言做爬虫](https://zhuanlan.zhihu.com/p/382620065)
+
+# 查看也可以
+
+- [C语言中文网](https://c.biancheng.net/)
+- [CURL库使用教程](https://www.jianshu.com/p/c7c95cb57be7)
+- [CURL官方示例代码](https://curl.se/libcurl/c/example.html)

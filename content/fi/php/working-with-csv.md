@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Työskentely csv:n kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "PHP: Työskentely csv:n kanssa"
 simple_title:         "Työskentely csv:n kanssa"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,45 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi työskennellä CSV-tiedostojen kanssa
+## Miksi käyttää CSV-tiedostoja PHP:ssä?
 
-CSV-tiedostot (comma-separated values) ovat yksi yleisimmistä tiedostomuodoista PHP-ohjelmoijille. Ne mahdollistavat helpon ja tehokkaan tavan tallentaa ja käsitellä suuria määriä tietoa. Tässä blogipostissa käymme läpi, miksi ja miten kannattaa käyttää CSV-tiedostoja PHP-ohjelmoinnissa.
+CSV (Comma-Separated Values) on yleinen tapa tallentaa taulukkodataa tekstitiedostoihin. Se on yksinkertainen ja helppokäyttöinen formaatti, joka mahdollistaa tietojen tallentamisen ja jakamisen eri ohjelmistojen välillä. PHP:llä voit helposti lukea ja kirjoittaa CSV-tiedostoja, mikä tekee siitä kätevän valinnan tietojen käsittelyyn.
 
-## Kuinka käyttää CSV-tiedostoja PHP:n kanssa
+## Kuinka käyttää CSV-tiedostoja PHP:ssä?
 
-Käyttäminen CSV-tiedostojen kanssa PHP:ssa on yksinkertaista ja suoraviivaista. Ensimmäiseksi täytyy avata tiedosto käyttäen fopen-funktiota ja määrittää haluttu tilapäinen tiedostonimi. Esimerkiksi:
+PHP:ssä on sisäänrakennettu toiminto `fgetcsv()`, joka lukee yhden rivin CSV-tiedostosta ja palauttaa sen taulukkona. Voit käyttää tätä funktiota yhdessä `fopen()`-funktion kanssa avataksesi tiedoston ja lukeaksesi sen sisällön. Jos haluat luoda uuden CSV-tiedoston, voit käyttää `fputcsv()`-funktiota, joka kirjoittaa taulukon tiedostoon CSV-formaatissa.
 
-```PHP
-$csv = fopen('data.csv', 'r');
-```
-
-Tämän jälkeen voimme käyttää while-silmukkaa lukeaksemme tiedostosta rivejä. Jokainen rivi tallennetaan taulukkoon käyttäen fgetcsv-funktiota. Esimerkiksi, jos CSV-tiedostossamme on rivi "Tommi, 32, Helsinki", silmukka näyttäisi tältä:
+Esimerkiksi, jos haluat lukea ja tulostaa kaikki tiedoston sisältämät rivit, voit käyttää seuraavaa koodia:
 
 ```PHP
-while (($row = fgetcsv($csv)) !== FALSE) {
-    // Käsittele tiedoston riviä
-    $name = $row[0];
-    $age = $row[1];
-    $city = $row[2];
+$file = fopen("tiedosto.csv", "r"); // Avaa tiedosto lukutilaan
+while (($data = fgetcsv($file)) !== FALSE) { // Lukee yhden rivin kerrallaan
+    print_r($data); // Tulostaa rivin taulukkona
 }
+fclose($file); // Sulkee tiedoston
 ```
 
-Lopuksi, voimme sulkea tiedoston käyttäen fclose-funktiota:
+Tämä koodi tulostaa jokaisen rivin erillisenä taulukkona, jota voi käyttää haluamallaan tavalla.
 
-```PHP
-fclose($csv);
-```
+## Syvällä CSV-tiedostojen käsittelyssä
 
-Tämän jälkeen voimme käsitellä luettua tietoa tavallisilla PHP-kielen toiminnoilla taulukon muodossa.
+CSV-tiedostojen kanssa työskennellessä on tärkeää ottaa huomioon muutamia asioita. Ensinnäkin, varmista että tiedostossa käytetään oikeaa erotinta ja viittaajana toimii oikea merkkijono (``,` `,`|` jne.). Voit määrittää nämä asetukset käyttämällä `fgetcsv()`-funktion optiona `delimiter` ja `enclosure` parametreja.
 
-## Syväluotausta CSV-tiedostojen kanssa työskentelyyn
+Toiseksi, muista tarkistaa että tiedostossa ei ole virheitä ennen sen käsittelyä. Voit käyttää `fgetcsv()`-funktiota yhdessä `feof()`-funktion kanssa tarkistaaksesi, onko kaikki rivit luettu loppuun.
 
-CSV-tiedostojen kanssa työskentely vaatii tarkkuutta, sillä ne saattavat sisältää virheitä tai tyhjiä arvoja. On hyvä olla tarkistuksia, esimerkiksi tyhjyyden tarkistaminen ennen datan käyttämistä, jotta koodimme ei kaadu virheisiin.
-
-Lisäksi, CSV-tiedoston muokkaamiseen voidaan hyödyntää fgetcsv-funktion lisäparametreja, kuten määrittämällä erotinmerkki tai jättämällä otsikkorivin huomiotta. Näitä kannattaa tutkia, jos CSV-tiedostojen kanssa työskentely tulee olemaan säännöllistä.
+Lisäksi, jos haluat luoda uuden CSV-tiedoston, on tärkeää tarkistaa että taulukon jokainen rivi on sama pituus. Muussa tapauksessa tiedostoon tallennettaessa voi ilmetä virheitä.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio CSV-tiedoston käsittelystä](https://www.php.net/manual/en/function.fgetcsv.php)
-- [Ohjelmointiopas CSV-tiedostojen käsittelyyn PHP:ssa](https://www.codeofaninja.com/2013/02/php-csv-file.html)
-- [Lisätietoa CSV-tiedostojen syntaksista ja käytöstä](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [PHP fgetcsv() -funktio](https://www.php.net/manual/en/function.fgetcsv.php)
+- [PHP fputcsv() -funktio](https://www.php.net/manual/en/function.fputcsv.php)
+- [PHP fopen() -funktio](https://www.php.net/manual/en/function.fopen.php)
+- [PHP feof() -funktio](https://www.php.net/manual/en/function.feof.php)

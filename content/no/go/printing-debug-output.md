@@ -1,6 +1,7 @@
 ---
-title:                "Go: Utskrift av feilsøkingstekst"
-simple_title:         "Utskrift av feilsøkingstekst"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Go: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -11,63 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive ut feilsøkingsutdata er en viktig del av å skrive effektiv Go-kode. Det kan hjelpe deg med å identifisere og løse feil i koden din, og gjøre det enklere å forstå hva som skjer under kjøretiden. I denne bloggposten vil vi se på hvorfor det er viktig å skrive ut debug utdata, og hvordan du kan gjøre det på en enkel måte.
+Du har kanskje lurt på hvorfor man bør bruke debugging-utskrift når man koder i Go. Svaret er ganske enkelt - det kan hjelpe deg med å identifisere eventuelle feil eller problemer i koden din. Å ha god debugging-praksis kan gjøre det enklere å finne og fikse feil, spesielt når du jobber med større og mer komplekse kodeprosjekter.
 
 ## Hvordan
 
-For å skrive ut debug utdata i Go, kan du bruke funksjonen ```fmt.Println()```. Denne funksjonen tar inn hvilken som helst type data som argument og skriver den ut til standard utgang, som vanligvis er terminalvinduet. La oss se på et eksempel:
+For å printe debugging-utskrift i Go, kan du bruke funksjonen `fmt.Printf()`. Denne funksjonen tar inn en formateringsstreng og variabler som skal være med i utskriften, og printer dem ut i terminalen.
 
-```
+```Go
 package main
 
 import "fmt"
 
 func main() {
-  num := 42
-  txt := "Hello World!"
-  fmt.Println("Nummer:", num)
-  fmt.Println("Tekst:", txt)
+    x := 42
+    y := "Hello"
+
+    fmt.Printf("Denne variabelen har verdien %d, mens denne har verdien %s", x, y)
 }
 ```
 
-I dette eksemplet bruker vi ```fmt.Println()``` for å skrive ut verdien av to variabler, ```num``` og ```txt```. Output fra dette programmet vil være:
+Output av koden over vil være følgende:
 
 ```
-Nummer: 42
-Tekst: Hello World!
+Denne variabelen har verdien 42, mens denne har verdien Hello
 ```
 
-Som du kan se, skriver funksjonen ut en tekststreng fulgt av verdien av variabelen. Dette kan være nyttig for å verifisere at verdiene du forventer er riktig, eller for å få en oversikt over hvordan dataene dine endrer seg gjennom koden din.
+Du kan også bruke `fmt.Println()` hvis du bare ønsker å printe en enkel linje med tekst eller en variabel uten formatering.
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    z := true
+
+    fmt.Println("Denne variabelen er sann: ", z)
+}
+```
+
+Output av koden over vil være: 
+
+```
+Denne variabelen er sann: true
+```
+
+Når du printer ut i Go, kan du også bruke verbene `Sprintf()` og `Fprintf()` for å formatere strenger og printe dem til en variabel eller fil. Dette kan være nyttig hvis du vil logge utskrift til en fil i stedet for terminalen.
 
 ## Deep Dive
 
-For mer avansert debugging, kan du også bruke ```fmt.Printf()``` som lar deg formatere utdataen din. Denne funksjonen bruker vanligvis en formatteringsstreng, der forskjellige symboler brukes til å representere ulike typer data, som for eksempel tall, tekst eller boolske verdier. Her er et eksempel på hvordan du kan bruke det:
+Det finnes flere måter å bruke `fmt.Printf()` på, for eksempel å spesifisere antall desimaler ved å bruke `%f` for flyttall, eller å printe ut boolske verdier som Ja/Nei istedenfor true/false ved å bruke `%t`. Du kan også bruke `%v` for å printe en variabel uten å spesifisere datatypen.
 
-```
-package main
+I tillegg til `fmt`-pakken, kan du også forskjellige debugging-verktøy som Visual Studio Code debugger for å få ytterligere informasjon om koden din og feilsøke mer komplekse problemer.
 
-import "fmt"
+## Se også
 
-func main() {
-  fruit := "apple"
-  num1 := 20
-  num2 := 3
-  fmt.Printf("Jeg liker å spise %v(er), det gir meg %d energi hver dag og gjør meg %v\n", fruit, num1, (num1*num2 > 50))
-}
-```
-
-I dette eksemplet bruker vi forskjellige symboler som ```%v``` for å representere en generell verdi, ```%d``` for tall, og ```%v``` for å representere en boolsk verdi. Output fra dette programmet vil være:
-
-```
-Jeg liker å spise apple(r), det gir meg 20 energi hver dag og gjør meg true
-```
-
-Dette er bare et enkelt eksempel, men du kan bruke en rekke forskjellige symboler og formateringsalternativer for å få utdataen din akkurat slik du vil ha den.
-
-## Se Også
-
-- [Offisiell dokumentasjon for fmt pakken](https://golang.org/pkg/fmt/)
-- [En komplett guide til debugging i Go](https://medium.com/@kdnotes/debugging-in-go-complete-how-to-guide-9a522123f11)
-- [Bruk av fmt for å forbedre kodekvalitet i Go](https://levelup.gitconnected.com/using-fmt-to-improve-code-quality-in-go-90cbbf03522c)
-
-Alt i alt kan debugging og utskrift av debug utdata være en avgjørende del av å skrive effektiv og feilfri Go-kode. Ved å bruke ```fmt```-funksjonene riktig, kan du gjøre feilsøking enklere og mer effektivt. Lykke til med å implementere disse teknikkene i dine egne prosjekter!
+- [Offisiell Go-dokumentasjon om debugging](https://golang.org/doc/gdb)
+- [Visual Studio Code debugging i Go](https://code.visualstudio.com/docs/languages/go#_debugging)
+- [Debugging-tips for Go](https://blog.golang.org/debugging-techniques)

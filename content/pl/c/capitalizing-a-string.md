@@ -1,6 +1,7 @@
 ---
-title:                "C: Zmiana pierwszej litery na wielką w ciągu znaków."
-simple_title:         "Zmiana pierwszej litery na wielką w ciągu znaków."
+title:                "Udostępnianie wartości w ciągach znakowych"
+html_title:           "C: Udostępnianie wartości w ciągach znakowych"
+simple_title:         "Udostępnianie wartości w ciągach znakowych"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,62 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Witajcie programiści! Jeśli jesteście zainteresowani poznaniem sposobu na wielką literę w stringu w języku C, to dobrym miejscem jest ten blog post. Kapitalizacja stringów jest niezwykle przydatna w wielu sytuacjach, na przykład w tworzeniu użytkowników do systemu czy tworzeniu nazw plików. Jest to również ważna umiejętność do posiadania przy pisaniu kodów klienckich dla systemów operacyjnych lub aplikacji internetowych.
+Zastanawiałeś się kiedyś, jak zmieniać wielkość liter w ciągu znaków w języku C? Może masz aplikację, która wymaga wprowadzenia danych tylko w dużych literach lub chcesz, aby tekst w Twoim programie wyglądał estetycznie. Niezależnie od tego, jest wiele sytuacji, w których może być potrzebne dokonanie zmiany wielkości liter. W tym artykule dowiesz się, jak to zrobić w prosty sposób.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Zanim przejdziemy do kodów, powinniśmy wiedzieć, że istnieją dwa sposoby na wielką literę w stringu w języku C. Pierwszym sposobem jest użycie funkcji `toupper()` z biblioteki `ctype.h`, która zmienia wszystkie litery w stringu na ich odpowiednik w wielkich literach. Drugim sposobem jest ręczne zmienianie każdej litery na wielką literę, wykorzystując wiedzę o kodach ASCII. Oto przykładowy kod dla obu metod:
+Aby zmienić wielkość liter w ciągu znaków w języku C, musisz wykorzystać funkcję `toupper()` znajdującą się w bibliotece `ctype.h`. Ta funkcja jest odpowiedzialna za zamianę pojedynczego znaku na jego odpowiednik w dużych literach. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
 
-```C
+```
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
-    // przykładowy string do kapitalizacji
-    char str[] = "hej, to jest przykładowy string";
-    
-    // użycie funkcji toupper()
-    int i = 0;
-    while(str[i]) {
-        str[i] = toupper(str[i]);
-        i++;
+int main()
+{
+    char str[] = "hello world";
+    int i;
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        printf("%c", toupper(str[i])); // zamienia literę na dużą i wyświetla
     }
-    printf("Wielki liter: %s\n", str);
-    
-    // ręczna kapitalizacja
-    i = 0;
-    while(str[i]) {
-        // sprawdzenie czy litera jest mała, czyli w zakresie ASCII od 97 do 122
-        if(str[i] >= 'a' && str[i] <= 'z') {
-            // odejmowanie 32 od kodu ASCII dla zmiany na wielką literę
-            str[i] = str[i] - 32;
-        }
-        i++;
-    }
-    printf("Wielki liter: %s\n", str);
-    
+
     return 0;
 }
 ```
-**Output:**
 
-```
-Wielki liter: HEJ, TO JEST PRZYKLADOWY STRING
-Wielki liter: HEJ, TO JEST PRZYKLADOWY STRING
-```
-Jak widać, oba sposoby dają ten sam wynik. Możesz wybrać którąkolwiek z nich, w zależności od Twoich preferencji.
-
+Powyższy program wypisze na ekranie ciąg znaków "HELLO WORLD", zamieniając każdą literę na dużą. Aby zmienić wielkość liter w innym ciągu znaków, wystarczy zmienić wartość zmiennej `str`.
 
 ## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej o kapitalizacji stringów w języku C, istnieje kilka ważnych rzeczy, które należy wziąć pod uwagę. Po pierwsze, pamiętaj, że w języku C nie ma typu danych "string", więc musisz używać tablic znaków do przechowywania danych tekstowych. Aby uniknąć błędów, upewnij się, że rozmiar tablicy jest większy niż liczba znaków w stringu. Drugim ważnym aspektem jest fakt, że znaki specjalne, takie jak `?`, `&`, `%`, mogą wpłynąć na wynik kapitalizacji i należy z nimi uważać. Wreszcie, pamiętaj, aby zamknąć string znakiem null (`'\0'`) na końcu, aby oznaczyć jego koniec.
+W języku C istnieje również funkcja `tolower()`, która służy do zamiany liter na małe. Aby uzyskać pełen dostęp do wszystkich funkcji z biblioteki `ctype.h`, należy dołączyć stałą `__USE_MISC` na początku programu.
 
-## Zobacz też
+Zmiana wielkości liter w języku C może się również przydać podczas porównywania ciągów znaków. Ponieważ litery różnych wielkości są traktowane jako różne, jeśli chcesz dokonać porównania bez uwzględniania wielkości liter, musisz najpierw zmienić wszystkie litery na jedną wielkość.
 
-Jeśli chcesz pogłębić swoją wiedzę na temat języka C, oto kilka przydatnych linków:
+Możesz także napisać własną funkcję do zmiany wielkości liter, np. zamieniając małe litery na duże i odwrotnie. Takie podejście pozwala na większą kontrolę i dostosowanie do własnych potrzeb.
 
-- [Podstawy języka C](https://www.tutorialspoint.com/cprogramming/index.htm)
-- [Kurs języka C na Codecademy](https://www.codecademy.com/learn/learn-c)
-- [Oficjalna dokumentacja języka C](https://en.cppreference.com/w/c)
+## Zobacz także
 
-Dziękuję za przeczytanie mojego blog posta. Mam nadzieję, że był on dla Ciebie pomocny. Do zobaczenia w następnym wpis
+- Oficjalna dokumentacja funkcji `toupper()` i `tolower()`: https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm
+- Przykładowe kody do zmiany wielkości liter w języku C: https://www.programiz.com/c-programming/examples/change-case-string

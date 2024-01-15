@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Eliminando caracteres que coinciden con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elm: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué
 
-A veces, en la programación, nos encontramos con situaciones en las que necesitamos eliminar caracteres específicos de una cadena de texto. Esto puede ser útil en diversas situaciones, como limpiar datos o validar el formato de una entrada de usuario. En Elm, existe una manera sencilla de realizar esta tarea: eliminar caracteres que coincidan con un patrón.
+Eliminar ciertos caracteres en patrones puede ser útil cuando se trabaja con cadenas de texto, por ejemplo, para limpiar datos o para mejorar la precisión de la búsqueda.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para eliminar caracteres según un patrón determinado, utilizaremos la función `String.filter`. Esta función toma dos argumentos: una función de comparación y una cadena de texto. La función de comparación debe devolver `True` si el caracter debe ser mantenido, o `False` si debe ser eliminado.
+Para eliminar caracteres en Elm, se puede utilizar la función `List.filter`. Esta función toma dos argumentos: un predicado que determina si un elemento debe ser eliminado o no, y la lista en la que se realizará la eliminación. Por ejemplo, si queremos eliminar todos los caracteres que sean números en una cadena de texto, podemos hacer lo siguiente:
 
-```Elm
-import String
-
-texto = "¡H!ol#a, mun!d#o!"
-patrón = (\car -> car /= "#" && car /= "!")
-String.filter patrón texto
+```elm
+stringSinNumeros : String -> String
+stringSinNumeros texto =
+  texto
+    |> String.toList
+    |> List.filter (\caracter -> not (Char.isDigit caracter))
+    |> String.fromList
 ```
 
-El resultado de este código sería `"Hola, mundo"`, ya que hemos eliminado todos los caracteres que coinciden con el patrón de nuestro texto original.
+En este ejemplo, primero convertimos la cadena de texto en una lista con la función `String.toList`, luego usamos `List.filter` con la función anónima `\caracter -> not (Char.isDigit caracter)` como predicado para eliminar todos los caracteres que sean números. Finalmente, convertimos la lista resultante de nuevo en una cadena de texto con la función `String.fromList`.
 
-##Profundizando
+El siguiente es un ejemplo de entrada y salida utilizando la función `stringSinNumeros`:
 
-La función `String.filter` es muy útil para eliminar caracteres que no necesitamos en nuestra cadena de texto. Sin embargo, también podemos utilizarla para extraer caracteres que coinciden con un patrón específico. En lugar de utilizar `\car -> car /= "#" && car /= "!"` como función de comparación, podemos definir una función que devuelva `True` solo para los caracteres que queremos extraer.
-
-Por ejemplo, si queremos extraer solo las letras de una cadena de texto, podemos usar la función `Char.isAlpha` que verifica si un caracter es una letra del alfabeto:
-
-```Elm
-texto = "¡H!ol#a, mun!d#o!"
-patrón = Char.isAlpha
-String.filter patrón texto
+```elm
+stringSinNumeros "H0l4 m4nd02" --> "Hl mnd"
 ```
 
-El resultado de este código sería `"Hola mundo"`, ya que hemos extraído solo las letras de nuestro texto original.
+## Deep Dive
 
-En resumen, la función `String.filter` nos permite eliminar o extraer caracteres de una cadena de texto según un patrón determinado, lo que puede ser muy útil en diversas situaciones de programación.
+La función `List.filter` es muy útil para eliminar elementos de una lista que no cumplan con ciertas condiciones. Como se mencionó anteriormente, toma un predicado como primer argumento, que es una función que toma un elemento y devuelve un `Bool` indicando si ese elemento debe ser eliminado o no. Algunos otros ejemplos de uso de `List.filter` podrían ser:
 
-##Ver también
+- Eliminar todos los elementos de una lista que sean nulos (`Nothing`) en una operación de mapeo.
+- Eliminar todos los elementos iguales a un valor específico en una lista.
+- Eliminar elementos de una lista que no cumplan con ciertas condiciones (mayor a X, menor a Y, etc.).
 
-- Documentación oficial de Elm sobre la función `String.filter`: https://package.elm-lang.org/packages/elm/core/latest/String#filter
-- Artículo en español sobre la función `String.filter`: https://jaxtary.com/es/blog/2017/08/strin-filter-funcion-eliminar-caracteres-elm.html
+En resumen, la función `List.filter` es muy versátil y puede utilizarse de diferentes maneras para eliminar elementos de una lista en función de un criterio determinado.
+
+## Ver también
+
+- Documentación oficial de List.filter en Elm: https://package.elm-lang.org/packages/elm/core/latest/List#filter
+- Ejemplos de uso de List.filter en Elm: https://guide.elm-lang.org/reuse/removing_from_list.html

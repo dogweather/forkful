@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Swift: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,42 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego przekształcać string na małe litery?
+## Dlaczego
 
-Często w programowaniu spotykamy się z potrzebą manipulacji tekstami. Jedną z takich czynności może być zmiana wszystkich liter w tekście na małe. W tym artykule dowiesz się, dlaczego jest to przydatne oraz jak to zrobić w języku Swift.
+Jeśli pracujesz z tekstem w języku Swift, możesz chcieć przekonwertować wprowadzone dane na małe litery. To ważna część przetwarzania tekstu, ponieważ upraszcza porównywanie i analizowanie danych. W tym artykule pokażemy Ci, jak przekonwertować string na małe litery w Swift.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Przekształcenie wszystkich liter w tekście na małe w języku Swift jest bardzo łatwe i wymaga użycia jednej metody. Przykładowy kod wygląda następująco:
+Aby przekonwertować string na małe litery w Swift, użyjemy metody ".lowercased()". Oto prosty przykład kodu w języku Swift:
 
 ```Swift
-let text = "Cześć, to jest PRZYKŁADOWY TEKST"
+let text = "HEllo WoRLd"
 let lowercasedText = text.lowercased()
 print(lowercasedText)
 ```
-Wynik:
 
- `cześć, to jest przykładowy tekst`
+Ten kod spowoduje wydrukowanie "hello world" w konsoli.
 
-W powyższym przykładzie, deklarujemy zmienną `text` zawierającą nasz tekst do przekształcenia. Następnie, używając metody `lowercased()`, tworzymy nową zmienną `lowercasedText` zawierającą przekształcony tekst. Na końcu, wypisujemy uzyskany wynik za pomocą funkcji `print()`.
-
-Metryda `lowercased()` może być również wywołana na całym Stringu, dzięki czemu nie musimy tworzyć dodatkowej zmiennej. Przykład:
+Możesz również użyć metody ".lowercased()" do konwersji pojedynczego znaku na małą literę:
 
 ```Swift
-let text = "Cześć, to jest PRZYKŁADOWY TEKST"
-print(text.lowercased())
+let letter = "A"
+let lowercaseLetter = letter.lowercased()
+print(lowercaseLetter)
 ```
-Wynik:
 
-`cześć, to jest przykładowy tekst`
+Ten kod spowoduje wydrukowanie "a" w konsoli. Możesz także użyć tej metody na całych wyrażeniach:
 
-## Deep Dive
+```Swift
+let sentence = "I EnJoy ProgRaMmING"
+let lowercasedSentence = sentence.lowercased()
+print(lowercasedSentence)
+```
 
-Przekształcanie stringów na małe litery jest możliwe dzięki użyciu funkcji `lowercased()`, która jest dostępna dla typu `String` w języku Swift. Metryda ta wykorzystuje mechanizm zwany Unicode, który odpowiada za dokonywanie przekształceń znaków. Dzięki temu, nawet dla tekstów z literami z alfabetu nie-łacińskiego (np. japońskiego czy chińskiego), funkcja `lowercased()` zadziała poprawnie i przekształci wszystkie litery na małe.
+Ten kod spowoduje wydrukowanie "i enjoy programming" w konsoli.
 
-## Zobacz również
+## Głębsza Analiza
 
-Przekształcając string na małe litery, możemy znacznie ułatwić sobie pracę z tekstami w aplikacjach pisanych w języku Swift. Poniżej znajdują się linki do innych artykułów, które mogą Ci się przydać:
+Podczas wykorzystywania metody ".lowercased()" należy pamiętać o regionalnych ustawieniach urządzenia użytkownika. Dla przykładu, w niektórych językach, np. w języku łacińskim, wielkie litery są tylko pewnymi wariantami małych liter. W takich przypadkach, metoda ".lowercased()" nie zmieni wielkich na małe litery, ponieważ są one niezmienne w tym kontekście.
 
-- [Oficjalna dokumentacja języka Swift](https://developer.apple.com/documentation/swift)
-- [Jak używać stringów w języku Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) (angielski)
+W języku Swift istnieje również możliwość przekonwertowania tekstu na wielkie litery, korzystając z metody ".uppercased()". Możesz również skorzystać z metody ".capitalized()", która przekonwertuje pierwszą literę każdego wyrazu na wielką.
+
+## Zobacz Również
+
+Jeśli chcesz dowiedzieć się więcej o pracy z tekstem w języku Swift, zerknij na te linki:
+
+- [Oficjalna dokumentacja Swifta - String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Convert String to Lowercase in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-lowercase-in-swift)
+- [Working with Strings in Swift](https://www.swiftbysundell.com/articles/working-with-strings-in-swift/)
+
+Dziękujemy za przeczytanie tego artykułu i miej się dobrze!

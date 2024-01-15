@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Wyświetlanie informacji debugujących"
-simple_title:         "Wyświetlanie informacji debugujących"
+title:                "Wydrukowanie wyników debugowania"
+html_title:           "Rust: Wydrukowanie wyników debugowania"
+simple_title:         "Wydrukowanie wyników debugowania"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W programowaniu często jesteśmy zmuszeni do szukania błędów i debugowania kodu. W takich sytuacjach nieocenionym narzędziem jest wypisywanie informacji na temat działania programu w celu łatwiejszego zlokalizowania problemu. W języku Rust możemy to zrobić za pomocą funkcji `println!()` lub `eprintln!()`.
+Jeśli kiedykolwiek pisałeś kod w Rust, na pewno natknąłeś się na polecenie `println!`, które służy do drukowania wartości zmiennych na konsoli. To bardzo przydatne narzędzie do debugowania, więc warto poznać jego możliwości i skutecznie go wykorzystywać.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby wypisać debugowe informacje w języku Rust, używamy funkcji `println!()` lub `eprintln!()`. Pierwsza z nich wypisuje informacje na standardowe wyjście, natomiast druga na wyjście diagnostyczne, co jest szczególnie przydatne w przypadku testów. Poniżej przedstawiamy przykładowy kod wykorzystujący funkcję `println!()`:
+W Rust, można użyć polecenia `println!` do drukowania wszelkiego rodzaju wartości, w tym zmiennych, napisów, oraz nawet wyników złożonych wyrażeń:
 
 ```Rust
-fn main() {
-    let x = 5;
-    println!("Wartość zmiennej x: {}", x);
-}
+let age = 25;
+println!("Mam {} lat", age);
+let name = "Jan";
+println!("Cześć, jestem {}", name);
+let result = 10 * 5;
+println!("10 pomnożone przez 5 jest równe {}", result);
+```
+*Output:*
+```
+Mam 25 lat
+Cześć, jestem Jan
+10 pomnożone przez 5 jest równe 50
 ```
 
-W powyższym przykładzie widzimy, że w funkcji `println!()` możemy wykorzystać specjalne znaczniki, takie jak `{}` do wypisania wartości zmiennej `x`. Dzięki temu uzyskujemy czytelny output, który może nam pomóc w debugowaniu kodu.
+Można również używać formatowania, aby precyzyjnie kontrolować wygląd wydruku, na przykład określając liczbę miejsc po przecinku dla liczb zmiennoprzecinkowych:
+
+```Rust
+let pi = 3.14159265359;
+println!("Około wartość PI to {:.2}", pi);
+```
+*Output:*
+```
+Około wartość PI to 3.14
+```
+
+Polecenie `println!` można także wykorzystać do drukowania wielu wartości na raz. W tym przypadku, trzeba będzie użyć formatowania z symbolami `%`, aby określić kolejność wartości:
+
+```Rust
+let country = "Polska";
+let population = 38_000_000;
+println!("W {}, mieszka ponad {} ludzi", country, population);
+```
+*Output:*
+```
+W Polska, mieszka ponad 38000000 ludzi
+```
 
 ## Deep Dive
 
-W języku Rust mamy również możliwość użycia makr `dbg!()` i `dbg!()` do wypisywania debugowych informacji. Makra te działają podobnie jak funkcje `println!()` i `eprintln!()`, ale mają dodatkową funkcjonalność - wypisują również nazwę i typ zmiennej. Poniżej przykład kodu wykorzystującego makro `dbg!()`:
+Polecenie `println!` jest często wykorzystywane do debugowania kodu, ale można również z niego skorzystać w innych sytuacjach, takich jak wyświetlanie prostych komunikatów dla użytkownika lub generowanie raportów. Warto również wspomnieć o poleceniu `eprintln!`, które drukuje taki sam wynik jak `println!`, ale dodaje prefiks "[error]" do wyjścia. Jest to przydatne w przypadku łapania i wypisywania błędów.
 
-```Rust
-fn main() {
-    let name = "John";
-    let age = 28;
+## Zobacz także
 
-    dbg!(name, age);
-}
-```
-
-Powyższy przykład spowoduje wyświetlenie informacji o nazwie i typie zmiennych `name` i `age` na wyjściu diagnostycznym.
-
-## Zobacz Ewentualnie
-
-Jeśli chcesz dowiedzieć się więcej o drukowaniu debugowych informacji w języku Rust, polecamy zapoznać się z oficjalną dokumentacją lub z poniższymi artykułami:
-
-- [Printing to the terminal in Rust](https://dev.to/rogertorres/printing-to-the-terminal-in-rust-2pl)
-- [Debugging Rust with println!() and dbg!() macros](https://www.speedrun.com/blog/debugging-rust-with-println-and-dbg-macros)
-
-Mamy nadzieję, że dzięki wykorzystaniu funkcji `println!()` i `eprintln!()` wypisywanie debugowych informacji w języku Rust będzie dla Ciebie prostsze i skuteczniejsze. Powodzenia z debugowaniem!
+- [Rust - dokumentacja](https://www.rust-lang.org/pl)
+- [Debugowanie w Rust dla początkujących](https://danielkeep.github.io/tlborm/book/README.html)
+- [Kurs Rust - Drukuje na ekran ](https://programming-idioms.org/idiom/107/print-to-standard-output/1891/rust)

@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Imprimiendo salida de depuración"
-simple_title:         "Imprimiendo salida de depuración"
+title:                "Imprimiendo la salida de depuración"
+html_title:           "PHP: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -11,80 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-La impresión de datos de depuración es una técnica común en la programación PHP. Esta práctica permite a los desarrolladores revisar y solucionar problemas en su código de manera más eficiente. Además, imprimir datos de depuración es una excelente manera de entender el flujo de su programa y encontrar errores ocultos.
+¿Alguna vez te has encontrado con un error en tu código y no has sido capaz de averiguar qué está sucediendo? ¿Te gustaría tener una forma de imprimir información útil durante la ejecución de tu programa para poder depurarlo más fácilmente? ¡Pues imprimir output de debug en PHP es la solución perfecta para ti!
 
-## Cómo hacerlo
+## Cómo imprimir output de debug en PHP
 
-Para imprimir datos de depuración en PHP, podemos utilizar la función `print_r()` o `var_dump()` dependiendo de lo que queramos imprimir. Por ejemplo, supongamos que tenemos un arreglo llamado `$personas` con información sobre diferentes personas. Podemos imprimir este arreglo de la siguiente manera:
+¡Es muy sencillo! Solo tienes que usar la función `print_r()` o `var_dump()` para imprimir una representación legible de cualquier variable o expresión en PHP. Veamos un ejemplo:
 
 ```PHP
-<?php
-$personas = array(
-    array("nombre" => "Juan", "edad" => 25),
-    array("nombre" => "María", "edad" => 30),
-    array("nombre" => "Pedro", "edad" => 40)
-);
-
-print_r($personas);
+$array = [1, 2, 3, 4];
+print_r($array);
 ```
 
-Esto nos dará como resultado:
+Este código imprimirá lo siguiente en la pantalla:
 
 ```
 Array
 (
-    [0] => Array
-        (
-            [nombre] => Juan
-            [edad] => 25
-        )
-
-    [1] => Array
-        (
-            [nombre] => María
-            [edad] => 30
-        )
-
-    [2] => Array
-        (
-            [nombre] => Pedro
-            [edad] => 40
-        )
-
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
 )
 ```
 
-Si queremos ver más información sobre las variables, podemos usar `var_dump()` en su lugar. Por ejemplo, si tenemos la siguiente variable:
+También puedes imprimir directamente una cadena de texto o un número utilizando `echo`. Por ejemplo:
 
 ```PHP
-<?php
-$precio = 20.50;
+$nombre = "Juan";
+echo "Hola " . $nombre;
 ```
 
-Podemos imprimir su tipo de dato, su valor y su longitud de la siguiente manera:
+Esto imprimirá:
+
+```
+Hola Juan
+```
+
+Pero ¿qué pasa si quieres imprimir información específica de una variable? En lugar de imprimir todo el contenido de la variable con `print_r()` o `var_dump()`, puedes utilizar la función `printf()` y especificar un formato para la salida. Por ejemplo:
 
 ```PHP
-<?php
-var_dump($precio);
+$numero = 20;
+printf("El número es %d", $numero);
 ```
 
-Esto nos dará como resultado:
+Esto imprimirá:
 
 ```
-float(20.5)
+El número es 20
 ```
 
-## Profundizando en la impresión de datos de depuración
+Existen muchas otras funciones y técnicas para imprimir output de debug en PHP, así que te animo a que investigues un poco más para encontrar la opción que mejor se adapte a tus necesidades.
 
-Además de `print_r()` y `var_dump()`, también podemos utilizar otras técnicas para imprimir datos de depuración en PHP. Por ejemplo, podemos usar la función `debug_backtrace()` para obtener información sobre la ejecución de nuestro código. También podemos utilizar la extensión Xdebug para imprimir nuestros datos de manera más visual y detallada.
+## Deep Dive
 
-Otra técnica útil es el uso de etiquetas HTML para formatear la salida de nuestros datos de depuración, como `<pre>` para mostrarlos en una fuente de ancho fijo o `<table>` para mostrarlos en una tabla.
+Además de las funciones mencionadas anteriormente, PHP ofrece una gran variedad de herramientas para imprimir output de debug de una forma más avanzada. Puedes imprimir información sobre errores en el código utilizando `error_log()`, o escribir mensajes en el terminal con `cli_set_process_title()`. También es posible utilizar la extensión `Xdebug` para realizar depuración remota y obtener información detallada sobre el proceso de ejecución de tu programa.
 
-Recuerda que es importante realizar una limpieza de tu código antes de ponerlo en producción, eliminando todas las impresiones de datos de depuración que hayas añadido.
+Pero ten en cuenta que imprimir demasiado output de debug puede ralentizar la ejecución de tu código, así que es importante utilizarlo con moderación y eliminarlo una vez que hayas resuelto el problema.
 
-## Mira también
+## Ver también
 
-- [Documentación de PHP sobre print_r()](https://www.php.net/manual/es/function.print-r.php)
-- [Documentación de PHP sobre var_dump()](https://www.php.net/manual/es/function.var-dump.php)
-- [Documentación de PHP sobre debug_backtrace()](https://www.php.net/manual/es/function.debug-backtrace.php)
-- [Sitio oficial de Xdebug](https://xdebug.org/)
+- [Documentación oficial de PHP sobre debugging](https://www.php.net/manual/es/debugger.php)
+- [Artículo de Blog - Depurando en PHP: Técnicas y Herramientas](https://blog.uptodown.com/depurar-php-tecnicas-herramientas/)
+- [Curso de Depuración en PHP en línea - Udemy](https://www.udemy.com/course/depuracion-php/)

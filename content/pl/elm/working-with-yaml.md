@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Praca z formatem yaml"
-simple_title:         "Praca z formatem yaml"
+title:                "Praca z yaml"
+html_title:           "Elm: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Zostało udowodnione, że YAML jest skutecznym oraz czytelnym językiem do przechowywania danych. Pozwala na łatwe przechowywanie danych w plikach konfiguracyjnych oraz wykorzystanie ich w programowaniu. W tym artykule dowiecie się, dlaczego warto zacząć pracę z YAML w języku Elm.
 
-## Jak
-Aby rozpocząć pracę z YAML w Elm, należy skorzystać z biblioteki [elm-yaml](https://package.elm-lang.org/packages/gampleman/elm-yaml/latest/). Możemy w niej znaleźć funkcje, które pozwalają na odczytywanie danych z plików YAML oraz konwersję ich na formaty obiektów oraz wartości prostych.
+Jeśli chcesz pracować z plikami konfiguracyjnymi o prostym i zrozumiałym formacie, to YAML będzie świetnym wyborem. Jest to język znaczników, który jest popularny wśród programistów ze względu na swoją czytelność i elastyczność.
+
+## Jak to zrobić
 
 ```Elm
-import Yaml
+import Json.Decode as Decode
 
--- Odczytanie pliku YAML
-fileContents : Task.Task Task.Error Yaml.Value
-fileContents =
-    Yaml.parseFile Yaml.defaultValue "config.yml"
+data = """
+name: Elm
+type: language
+version: 0.19
+"""
 
--- Konwersja na obiekt
-toObject : Yaml.Value -> Maybe Yaml.Object
-toObject yaml =
-    case yaml of
-        Yaml.Object obj ->
-            Just obj
-        _ ->
-            Nothing
+yamlDecoder : Decode.Decoder (List ( String, String ))
+yamlDecoder = Decode.list (Decode.pair Decode.string Decode.string)
 
--- Uzyskanie wartości z obiektu
-getConfigValue : Maybe Yaml.Object -> String -> Maybe Yaml.Value
-getConfigValue maybeObj key =
-    case maybeObj of
-        Just obj ->
-            Dict.get key obj
-        _ ->
-            Nothing
+result : Result Decode.Error (List (String, String))
+result = Decode.decodeString yamlDecoder data
 
--- Wykorzystanie funkcji
-readConfig : String -> Task.Task Task.Error (Maybe String)
-readConfig key =
-    Task.perform (getConfigValue <|
-        toObject
-        |> andThen (maybe Just Yaml.toString)
-    ) fileContents key
+-- output: Ok [("name", "Elm"), ("type", "language"), ("version", "0.19")]
 ```
 
-Powyższy przykład pokazuje, jak można odczytać wartość z pliku YAML i przekonwertować ją na format tekstowy. Więcej informacji na temat możliwych funkcji można znaleźć w dokumentacji biblioteki.
+Aby rozpocząć pracę z YAML w Elm, musisz najpierw zaimportować bibliotekę `Json.Decode` i zdefiniować dekoder YAML, który w tym przykładzie konwertuje plik YAML na listę par klucz-wartość. Następnie wywołaj funkcję `decodeString` i podaj jej dekoder oraz wczytany plik YAML.
 
-## Dogłębne zagłębienie
-Praca z YAML w Elm może być bardziej skomplikowana, gdy zajdzie potrzeba przetwarzania złożonych struktur danych lub wykorzystania specjalnych funkcji, takich jak interpolacja ciągów tekstowych. Jednak dzięki bibliotece [elm-yaml](https://package.elm-lang.org/packages/gampleman/elm-yaml/latest/) możliwości tworzenia aplikacji z wykorzystaniem plików konfiguracyjnych w formacie YAML są praktycznie nieograniczone.
+## Głębsze zanurzenie
+
+Pliki YAML mogą zawierać wiele różnych danych, takich jak listy, mapy, liczby i ciągi znaków. W Elm możesz łatwo przekonwertować je na odpowiadające im typy danych, używając funkcji dekodujących z biblioteki `Json.Decode`. Jest również możliwe użycie zewnętrznych bibliotek, takich jak `avh4/elm-schema`, aby stworzyć bardziej szczegółowe dekodery, które pomogą w analizowaniu i walidacji plików YAML.
 
 ## Zobacz także
-- [Dokumentacja biblioteki elm-yaml](https://package.elm-lang.org/packages/gampleman/elm-yaml/latest/)
-- [Poradnik o przetwarzaniu danych z YAML w Elm](https://dev.to/manuarora/working-with-yaml-in-elm-1pa9)
+
+- [Oficjalna dokumentacja Elm](https://elm-lang.org/docs)
+- [Repozytorium biblioteki Json.Decode na GitHubie](https://github.com/elm/json)
+- [Strona YAML](https://yaml.org)

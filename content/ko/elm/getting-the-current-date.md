@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 현재 날짜 가져오기"
+title:                "현재 날짜 가져오기"
+html_title:           "Elm: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,50 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 Date를 얻는가?
+## 왜
 
-현재 날짜를 얻는 것은 Elm 프로그래머들에게 중요한 작업 중 하나입니다. Date는 사용자에게 현재 시간을 보여주는 데 필요한 정보를 제공합니다. 또한 날짜를 계산하거나 표시하는 데 사용될 수도 있습니다.
+잘봐, 우리가 하루 중 언제든 현재 날짜를 알아내는 것이 유용할 수 있다는 걸 빼놓으면 안 되겠다. 우리는 자주 날짜를 알아내야 할 경우가 있는데, 예를 들면 미팅이나 이벤트 날짜를 정할 때가 있다. Elm을 사용하면 쉽게 현재 날짜를 얻을 수 있다는 것을 알아두자.
 
-## 어떻게 Date를 얻을 수 있나요?
+## 하우 투
 
-Date는 Elm 시간 모듈에서 제공하는 함수들을 사용하여 얻을 수 있습니다. 첫 번째 단계는 Time 모듈을 가져오는 것입니다. 그런 다음 현재 날짜를 얻는 함수인 `now`를 사용하여 Date 데이터를 얻을 수 있습니다. 아래의 예시 코드를 참고해 주세요.
-
-```Elm
-import Time
-
-currentTime : Cmd Msg
-currentTime =
-    Time.now
-        |> Task.perform NewDateAndTime
-
-type Msg
-    = NewDateAndTime (Result String Time.Report)
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        NewDateAndTime (Ok date) ->
-            ( { model | currentDate = Just date }, Cmd.none )
-
-        NewDateAndTime (Err _) ->
-            ( model, Cmd.none )
-```
-
-위 코드는 `update` 함수에서 `currentTime`를 호출하고, 해당 함수를 수행하는 `Msg`를 업데이트합니다. 이제 `Model`에 `currentDate`가 추가되어 컴포넌트에서 이를 사용할 수 있게 됩니다. 아래는 샘플 출력입니다.
+우선, currentDate 변수를 선언하고 어떤 타입의 데이터를 넣을지 지정하자. 예를 들면 다음과 같다.
 
 ```Elm
-{ currentDate = Just (2019, 8, 27, 13, 45) }
+currentDate : Date
+currentDate = 
 ```
 
-이 출력에서 날짜와 시간을 구성하는 값들이 튜플 형태로 표시됩니다. 이 값들은 컴포넌트에서 그대로 사용할 수 있으며, 날짜와 시간을 원하는 형태로 표시하거나 계산할 수 있습니다.
+그리고 ```getCurrentTime``` 함수를 사용해 현재 날짜를 구해보자. 이 함수는 반환 타입으로 [Time](https://package.elm-lang.org/packages/elm/time/latest/Time) 패키지의 [Posix](https://package.elm-lang.org/packages/elm/time/latest/Time#Posix)를 사용한다. 그래서 우리는 기본적으로 Posix로 변환해야 한다. 여기서는 [Date 간단히 구현하기](https://package.elm-lang.org/packages/elm/core/latest/Date) 에서 제공하는 함수를 사용할 것이다.
+
+```Elm
+currentDate : Date
+currentDate = 
+    Time.toDate << Time.getCurrentTime
+```
+
+하지만, 만약 우리가 특정 지역의 시간대를 사용하는 것이 좋다고 생각한다면, [Time.Zone](https://package.elm-lang.org/packages/elm/time/latest/Time-Zone) 모듈을 사용할 수 있다. 예를 들면 다음과 같다.
+
+```Elm
+currentDate : Date
+currentDate = 
+    Time.toDate <|
+        Time.getCurrentTime Time.utc
+
+currentDateInSeoul : Date
+currentDateInSeoul = 
+    Time.toDate <|
+        Time.getCurrentTime Time.jst
+```
+
+그리고 이제 currentDate 변수를 사용해 정상적으로 현재 날짜를 출력할 수 있다.
+
+```Elm
+currentDate : Date
+currentDate = 
+    Time.toDate << Time.getCurrentTime
+
+main : Html msg
+main =
+    Html.text <| Date.toIsoString <| currentDate
+```
+
+출력 결과는 아마 ```2021-05-26T13:00:00.000Z```와 비슷할 것이다.
 
 ## 딥 다이브
 
-Date를 얻고 사용하는 데는 다양한 함수들이 있으며, 이를 조합하여 원하는 결과를 얻을 수 있습니다. Date의 연산은 `Time` 모듈의 `add` 함수를 사용하면 됩니다. 이 함수를 사용하면 날짜를 더하거나 빼는 등 다양한 연산을 수행할 수 있습니다.
+더 공부해볼 만한 주제로는 [Chrono](https://package.elm-lang.org/packages/noahzgordon/elm-chrono/latest/) 패키지를 사용해 다양한 날짜와 시간 포맷을 다루는 것이 있다. 또한, Elm 커뮤니티에서는 날짜와 시간을 다루는 더 많은 패키지를 제공하고 있으니 참조하면 도움이 될 것이다.
 
-## 더 알아보기
+## 참고
 
-- [Elm Time 모듈 공식 문서](https://package.elm-lang.org/packages/elm/time/latest)
-- [Elm 날짜 계산 예시 블로그 포스트](https://medium.com/@ashishchoyal999/elm-date-manipulation-e1c8e3b4c293)
-- [Elm 시간과 날짜 관련 라이브러리 모음](https://www.elm-plugins.com/)
-- [Elm 커뮤니티 Slack 채널](https://elmlang.herokuapp.com/)
+- [Time 패키지 문서](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Elm 커뮤니티에서 제공하는 날짜와 시간 관련 패키지 목록](https://package.elm-lang.org/search?q=time&platform=all&licenses=license)

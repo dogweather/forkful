@@ -1,5 +1,6 @@
 ---
-title:                "Java: Tekstitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Java: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Java"
 category:             "Java"
@@ -9,50 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Java on yksi maailman suosituimmista ohjelmointikielistä, ja sen avulla voidaan luoda monenlaisia sovelluksia. Yksi tärkeä osa ohjelmointia on tiedostonhallinta, esimerkiksi tekstitiedostojen kirjoittaminen. Tässä blogitekstissä opit, miksi on tärkeää osata kirjoittaa tekstitiedostoja ja kuinka se tapahtuu Javalla.
+Tekstitiedostojen kirjoittaminen on tärkeä osaohjelmointia, sillä se mahdollistaa tietojen tallentamisen ja jakamisen eri sovellusten välillä. Se on myös hyödyllistä silloin, kun halutaan tallentaa suuria datamääriä tai luoda mukautettuja käyttöliittymiä tiedostojen käsittelyyn.
 
-# Kuinka
+## Miten
 
-Tekstitiedoston kirjoittaminen Javalla on varsin yksinkertaista. Se voidaan tehdä muutamalla rivillä koodia. Alla on esimerkki, jossa luodaan uusi tekstitiedosto nimeltä "uusi_tiedosto.txt" ja kirjoitetaan siihen "Hei maailma!".
+Tekstitiedostojen kirjoittaminen Java-kielellä on yksinkertaista ja sisältää useita vaiheita. Ensinnäkin, luodaan File-objekti haluttua tiedostoa varten ja luodaan FileWriter- ja BufferedWriter-objektit, jotka mahdollistavat tiedon kirjoittamisen tiedostoon. Seuraavaksi avataan tiedosto, kirjoitetaan haluttu teksti ja suljetaan tiedosto. Alla on esimerkki koodista ja sen generoima tuloste.
 
 ```Java
-import java.io.File;
-import java.io.FileWriter;
-
-public class TekstitiedostonKirjoittaminen {
-
-    public static void main(String[] args) {
-
-        // Luodaan uusi tiedosto
-        File tiedosto = new File("uusi_tiedosto.txt");
-
-        try {
-            // Avataan tiedoston kirjoittaja
-            FileWriter kirjoittaja = new FileWriter(tiedosto);
-            // Kirjoitetaan haluttu teksti
-            kirjoittaja.write("Hei maailma!");
-            // Suljetaan kirjoittaja
-            kirjoittaja.close();
-            // Ilmoitetaan käyttäjälle, että tiedosto on kirjoitettu onnistuneesti
-            System.out.println("Tekstitiedostoon on kirjoitettu teksti.");
-        } catch (Exception e) {
-            System.out.println("Tiedoston kirjoittaminen epäonnistui.");
-            e.printStackTrace();
-        }
-    }
+// Luodaan File-objekti
+File file = new File("tekstitiedosto.txt");
+ 
+// Luodaan FileWriter ja BufferedWriter
+FileWriter fw = new FileWriter(file);
+BufferedWriter bw = new BufferedWriter(fw);
+ 
+// Avataan tiedosto
+bw.write("Tervetuloa tekstitiedostojen maailmaan!");
+bw.newLine();
+bw.write("Tämä on Java-ohjelmoinnilla luotu tiedosto.");
+bw.newLine();
+ 
+// Suljetaan tiedosto
+bw.close();
+ 
+// Tulostetaan tiedoston sisältö
+System.out.println("Tekstitiedoston sisältö:");
+Scanner input = new Scanner(file);
+while (input.hasNext()) {
+    String line = input.nextLine();
+    System.out.println(line);
 }
+input.close();
 ```
 
-Suoritaessa ohjelman, uusi_tiedosto.txt -niminen tiedosto luodaan automaattisesti samaan kansioon, missä koodi sijaitsee. Jos haluat kirjoittaa tiedostoon enemmän kuin yhden rivin tekstiä, voit käyttää metodia ```write```, joka ottaa parametrinaan String-tyyppisen muuttujan.
+Tuloste:
 
-# Syvemmälle
+```
+Tekstitiedoston sisältö:
+Tervetuloa tekstitiedostojen maailmaan!
+Tämä on Java-ohjelmoinnilla luotu tiedosto.
+```
 
-Tekstitiedostojen kirjoittamisen lisäksi Javalla on myös muita vaihtoehtoja tiedostonhallintaan, kuten tiedostojen lukeminen ja niiden sisällön muokkaaminen. Voit myös kirjoittaa tekstiä suoraan olemassa olevaan tiedostoon sen sijaan, että luot uuden tiedoston. Tiedostonhallintaa tutkiessa kannattaa tutustua myös tiedostonhallintaluokkiin, kuten ```FileReader``` ja ```BufferedReader```, jotka tarjoavat enemmän toiminnallisuutta tiedostojen käsittelyyn.
+## Syväsukellus
 
-# Katso myös
+Tekstitiedostojen luominen Java-kielellä vaihtelee jonkin verran käytettyjen kirjastojen, kuten FileWriter, BufferedWriter ja Scanner, mukaan. Kirjoittaessa on tärkeää ottaa huomioon myös tiedostojen sijainti ja oikeudet käyttöjärjestelmässä. Seuraavassa vaiheessa ResourceBundle-luokkaa voidaan käyttää muuttujien poimimiseen tiedostosta, jolloin tekstin ei tarvitse olla kirjoitettuna suoraan koodiin.
 
-- Java-tiedostonhallinta - dokumentaatio: https://docs.oracle.com/javase/tutorial/essential/io/file.html
-- Java-text - Esimerkkejä tiedostojen lukemisesta ja kirjoittamisesta: https://www.programiz.com/java-programming/examples/write-text-file
-- Tiedostonhallintaluokat Javassa: https://www.geeksforgeeks.org/file-handling-java-using-filewriter-filereader/
+## Katso myös
+
+- [Java – Streaming File Writing Example](https://www.baeldung.com/java-write-to-file)
+- [Java - FileWriter Class](https://www.tutorialspoint.com/java/io/filewriter_write_charsequence_start_offset_len-method.htm)
+- [Java – ResourceBundle Tutorial](https://www.codejava.net/java-core/java-util-resourcebundle-class-tutorial-and-examples)

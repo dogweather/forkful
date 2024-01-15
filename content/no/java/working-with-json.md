@@ -1,5 +1,6 @@
 ---
-title:                "Java: Å jobbe med json"
+title:                "Å jobbe med json"
+html_title:           "Java: Å jobbe med json"
 simple_title:         "Å jobbe med json"
 programming_language: "Java"
 category:             "Java"
@@ -10,98 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Har du noen gang ønsket å kommunisere data på en enkel og effektiv måte mellom klient og server? JSON (JavaScript Object Notation) er et populært format for å gjøre nettopp det. Det er enkelt å lese og skrive, og blir stadig mer brukt i moderne webutvikling.
 
-JSON (JavaScript Object Notation) er et populært format for å utveksle data på tvers av forskjellige plattformer og programmeringsspråk. Det er spesielt nyttig for webapplikasjoner som må håndtere store mengder data, som for eksempel sosiale medier og e-handelssider. Ved å lære å jobbe med JSON, kan du øke dine programmeringsferdigheter og bli en mer allsidig utvikler.
-
-## Slik gjør du det
-
-Å jobbe med JSON i Java er relativt enkelt takket være Java API-er som støtter JSON-formatet. Først må du importere pakken "org.json" i Java-filen din. Deretter kan du bruke JSONObject- og JSONArray-klassene til å lese og skrive JSON-data.
-
-La oss si at du har en JSON-fil som inneholder informasjon om en bokhandel med navn, adresse og en liste over bøker. For å lese denne filen og skrive ut informasjonen, kan du bruke følgende kode:
+## Hvordan
+For å arbeide med JSON i Java, trenger du et bibiliotek kalt "json.jar". Dette kan lastes ned fra nettet og må deretter legges til i prosjektet ditt som en ekstern JAR-fil. Etter dette kan du bruke følgende kode for å lese inn JSON-data fra en fil og skrive den ut på konsollen:
 
 ```Java
-import org.json.*;
-import java.io.*;
-
-public class JsonExample {
-
-    public static void main(String[] args) throws IOException, JSONException {
-
-        // Les inn JSON-filen
-        FileReader reader = new FileReader("bookstore.json");
-
-        // Lag en JSONObject for å lese dataene
-        JSONObject bookstore = new JSONObject(reader);
-
-        // Hent navn og adresse fra JSONObject og skriv dem ut
-        System.out.println("Bokhandelnavn: " + bookstore.getString("name"));
-        System.out.println("Adresse: " + bookstore.getString("address"));
-
-        // Hent listen over bøker fra JSONObject og skriv ut tittel og forfatter for hver bok
-        JSONArray books = bookstore.getJSONArray("books");
-        for(int i = 0; i < books.length(); i++) {
-            JSONObject book = books.getJSONObject(i);
-            System.out.println("Tittel: " + book.getString("title"));
-            System.out.println("Forfatter: " + book.getString("author"));
-        }
-
-        // Lukk leseren
-        reader.close();
-    }
+try {
+    // Leser inn JSON-data fra fil
+    FileReader file = new FileReader("data.json");
+    // Bruker JSON-biblioteket til å parse dataene
+    JSONParser parser = new JSONParser();
+    // Lagrer dataene i et objekt
+    Object obj = parser.parse(file);
+    // Konverterer objektet til en JSON-objekt
+    JSONObject jsonObject = (JSONObject) obj;
+    // Skriver ut dataene på konsollen
+    System.out.println(jsonObject);
+} catch (Exception e) {
+    e.printStackTrace();
 }
 ```
 
-Outputen for dette eksempelet vil være:
+Dette vil gi følgende utskrift:
 
-```
-Bokhandelnavn: ABC Bokhandel
-Adresse: Hovedgaten 1, Oslo
-Tittel: Programming in Java
-Forfatter: John Smith
-Tittel: The Complete Guide to Web Development
-Forfatter: Jane Doe
+``` 
+{"navn":"Per", "alder": 30, "hobbyer":["fotball", "musikk"]}
 ```
 
-Du kan også bruke JSONObject- og JSONArray-klassene til å opprette og skrive ut JSON-data. For eksempel kan du legge til en ny bok i listen og skrive ut den oppdaterte JSON-filen ved å bruke følgende kode:
+For å skrive til en JSON-fil, kan du bruke følgende kode:
 
 ```Java
-// Setter opp JSON-data for den nye boken
-JSONObject newBook = new JSONObject();
-newBook.put("title", "Data Structures in Java");
-newBook.put("author", "Bob Johnson");
-
-// Legger til den nye boken i listen over bøker
-books.put(newBook);
-
-// Skriver ut den oppdaterte JSON-filen
-System.out.println(bookstore.toString());
+// Oppretter et JSON-objekt
+JSONObject jsonObject = new JSONObject();
+// Legger til data
+jsonObject.put("navn", "Lisa");
+jsonObject.put("alder", 25);
+jsonObject.put("hobbyer", "matlaging");
+// Skriver ut til konsollen
+System.out.println(jsonObject);
+// Skriver til fil
+try (FileWriter file = new FileWriter("ny_data.json")) {
+    file.write(jsonObject.toJSONString());
+} catch (Exception e) {
+    e.printStackTrace();
+}
 ```
 
-Outputen vil være:
+Dette vil skrive følgende JSON-innhold til filen "ny_data.json":
 
-```JSON
-{
-    "name": "ABC Bokhandel",
-    "address": "Hovedgaten 1, Oslo",
-    "books": [
-        {
-            "title": "Programming in Java",
-            "author": "John Smith"
-        },
-        {
-            "title": "The Complete Guide to Web Development",
-            "author": "Jane Doe"
-        },
-        {
-            "title": "Data Structures in Java",
-            "author": "Bob Johnson"
-        }
-    ]
-}
+``` 
+{"navn":"Lisa", "alder": 25, "hobbyer":"matlaging"}
 ```
 
 ## Dypdykk
+Nå som du vet hvordan du kan lese og skrive JSON-data i Java, kan du også utforske mer avanserte funksjoner som å endre eller legge til data, eller å bruke forskjellige typer datastrukturer som arrays og nestede objekter. Du kan også lese mer om validering av JSON-data og håndtering av eventuelle feil og unntak.
 
-JSON tillater også å bygge komplekse datastrukturer som kan være nyttige i mer avanserte programmer. Det er viktig å forstå forskjellen mellom JSON-objekter (representert med { }) og JSON-arrays (representert med [ ]). Mens JSON-objekter består av nøkkel-verdi-par, kan JSON-arrays inneholde flere verdier av samme type. Det er også viktig å være oppmerksom på hvordan man henter ut data fra disse forskjellige strukturene ved å bruke riktig syntaks.
-
-En annen viktig egenskap ved JSON er dets evne til å representere nestede datastrukturer. Dette betyr at du kan ha JSON-objekter inni andre JSON-objekter eller JSON-arrays. Dette er spesi
+## Se også
+- [Java-bibliotek for JSON](https://code.google.com/archive/p/json-simple/downloads)
+- [Offisiell nettside for JSON](https://www.json.org/json-en.html)
+- [Tutorial: Working with JSON in Java](https://www.tutorialspoint.com/json/json_java_example.htm)

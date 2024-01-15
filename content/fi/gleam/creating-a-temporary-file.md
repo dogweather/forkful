@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+html_title:           "Gleam: Väliaikaistiedoston luominen"
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,50 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäinen tiedosto?
+## Miksi luoda väliaikainen tiedosto ja mitä sillä tehdä?
 
-Tilapäisten tiedostojen luominen on tärkeä osa ohjelmointia, sillä se mahdollistaa väliaikaisen tiedon tallennuksen ja käsittelyn. Tämä voi olla hyödyllistä esimerkiksi, kun halutaan luoda väliaikainen kopio datasta tai tallentaa tilapäisiä muuttujia, jotka eivät ole tarpeen ohjelman loppupuolella.
+Joskus ohjelmointitehtävä vaatii väliaikaisen tiedoston luomista, joka poistuu käytön jälkeen. Tämä voi olla esimerkiksi datan tallentamiseen tarvittava tiedosto lyhyellä aikavälillä tai prosessien välisen tiedonsiirron väline. Gleamin avulla voit luoda ja hallinnoida väliaikaisia tiedostoja helposti ja tehokkaasti.
 
-## Kuinka luoda tilapäinen tiedosto?
+## Kuinka luoda väliaikainen tiedosto Gleamilla?
 
-Tilapäisten tiedostojen luominen Gleam-ohjelmointikielellä on helppoa. Käytämme tähän tarkoitukseen osaa "std/path" ja sen funktiota "temp_file". Seuraava koodiesimerkki näyttää, miten luodaan tilapäinen tiedosto nimeltä "temp-file.txt":
-
-```Gleam
-import std/path
-
-// Luodaan tilapäinen tiedosto "temp-file.txt"
-let temp_file = std/path.temp_file("temp-file.txt")
-```
-
-Kun ohjelma suoritetaan, tiedosto "temp-file.txt" luodaan emohakemistoon ja sen polku tallennetaan muuttujaan "temp_file". Voimme nyt käyttää tätä muuttujaa luomaan väliaikaisen tiedoston sisältöä.
+Luodaksesi väliaikaisen tiedoston Gleamilla, käytä "temp_file" -funktiota, joka palauttaa tiedostollisen iteraattorin.
 
 ```Gleam
-import std/path
-import gleam/io
-
-// Luodaan tilapäinen tiedosto "temp-file.txt"
-let temp_file = std/path.temp_file("temp-file.txt")
-
-// Kirjoitetaan tiedostoon "Hello world!"
-gleam/io.write_file(temp_file, "Hello world!")
-
-// Luetaan tiedoston sisältö
-let file_contents = gleam/io.read_file(temp_file)
-
-// Tulostetaan sisältö konsoliin
-gleam/io.format("Tilapäinen tiedosto sisältää tekstiä: {}.", [file_contents])
+let temp_file = io.temp_file("temp_data.txt")
 ```
 
-Kun suoritamme tämän esimerkin, konsoliin tulostetaan "Tilapäinen tiedosto sisältää tekstiä: Hello world!" ja tiedoston sisältönä on "Hello world!".
+Voit myös määrittää parametrina tiedoston nimen tai annattaa Gleamin luoda satunnaisen nimen automaattisesti. Tiedostoa voi käyttää normaalisti tiedoston käsittelyyn ja lopuksi se poistetaan automaattisesti käytön jälkeen.
 
-## Syvällinen sukellus tilapäisten tiedostojen luomiseen
+```Gleam
+let temp_file = io.temp_file() // Luodaan satunnainen nimi
+let result = io.write(temp_file, "Tässä on väliaikaisen tiedoston sisältö!")
+let data = io.read(temp_file)
+io.close(temp_file) // Tiedosto suljetaan ja poistetaan automaattisesti
+```
 
-Tilapäisten tiedostojen luomisessa on useita hienouksia, joista kannattaa olla tietoinen. Ensinnäkin, useimmissa käyttöjärjestelmissä tilapäiset tiedostot nimetään uniikilla numeroiden ja kirjainten yhdistelmällä, joten on suositeltavaa käyttää myös tätä käytäntöä omassa koodissasi. Tämä varmistaa, että tilapäisten tiedostojen nimet ovat aina uniikkeja eivätkä aiheuta ongelmia käytössä.
+## Syvällinen sukellus: Väliaikaisten tiedostojen luominen Gleamilla
 
-Lisäksi on tärkeää muistaa poistaa tilapäiset tiedostot, kun niitä ei enää tarvita. Gleam-ohjelmissa tämä voidaan tehdä std/path-moduulin funktiolla "remove", joka poistaa annetun tiedoston. On hyvä tapa poistaa tilapäinen tiedosto, kun tiedostosta ei enää ole hyötyä, jotta se ei vie tarpeetonta tilaa järjestelmässä.
+Kun käytät "temp_file" -funktiota, Gleam luo tiedoston käyttäjän käyttöjärjestelmän väliaikaisten tiedostojen hakemistoon. Tämän lisäksi Gleam käyttää automaattisesti "defer" -lauseketta, joka poistaa tiedoston käytön jälkeen, vaikka prosessi päättyisi virheeseen.
+
+Yleensä väliaikaisia tiedostoja käytetään vain lyhyellä aikavälillä, joten Gleam tarjoaa helpon ja turvallisen vaihtoehdon niiden luomiseen ja hallinnoimiseen. Muista kuitenkin, että väliaikaiset tiedostot voivat myös olla haavoittuvia ja turvallisuusriski, jos niitä ei käsitellä oikein. Ole siis tarkkaavainen ja varmista, että poistat tiedoston aina käytön jälkeen.
 
 ## Katso myös
 
-- [Gleam-ohjelmointikielen virallinen sivusto](https://gleam.run/)
-- [std/path-moduulin dokumentaatio](https://gleam.run/docs/stdlib/path/)
-- [Gleam-ohjelmointikielen hello world -opas](https://gleam.run/tutorials/hello-world/)
+[Tiedostojen käsittely Gleamilla](https://gleam.run/articles/files/)

@@ -1,6 +1,7 @@
 ---
-title:                "C: Apagando caracteres que correspondem a um padrão"
-simple_title:         "Apagando caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres com correspondência de padrão"
+html_title:           "C: Excluindo caracteres com correspondência de padrão"
+simple_title:         "Excluindo caracteres com correspondência de padrão"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -9,48 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que deletar caracteres que correspondem a um padrão?
+## Por que
 
-Às vezes, em um programa de computador, precisamos lidar com cadeias de caracteres que podem incluir caracteres desnecessários ou indesejados. Em vez de percorrer manualmente cada caractere e excluí-los, podemos usar técnicas de programação para eliminar automaticamente caracteres que correspondem a um padrão específico.
+Há momentos em que precisamos limpar uma string, removendo determinados caracteres que não são necessários. Para isso, podemos usar a função `strpbrk()` em linguagem C para encontrar e remover caracteres que correspondam a um padrão específico.
 
-## Como fazer isso em C
+## Como Fazer
 
-Para deletar caracteres que correspondem a um determinado padrão em C, podemos usar a função "strchr" da biblioteca de strings. Esta função procura uma ocorrência de um caractere especificado em uma string e, se encontrada, retorna um ponteiro para essa posição na string. Combinando essa função com um loop, podemos percorrer a string e excluir cada caractere que corresponde ao padrão.
+Podemos usar a função `strpbrk()` de duas maneiras diferentes para remover caracteres com base em um padrão de correspondência. A primeira opção é fornecer uma string de caracteres que serão removidos da string original. Veja o exemplo abaixo:
 
-Um exemplo de código em C seria:
-
-```
+```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char text[] = "Isso é um exemplo de string com caracteres a mais";
-    char *ptr;
-
-    while ((ptr = strchr(text, 'a')) != NULL) {
-        memmove(ptr, ptr + 1, strlen(ptr));
-    }
-
-    printf("%s", text);
-
+    char original[] = "Hello123World";
+    char *pattern = "123";
+    char *result;
+    
+    result = strpbrk(original, pattern);
+    
+    do {
+        *result = ' ';
+        result = strpbrk(result + 1, pattern);
+    } while (result != NULL);
+    
+    printf("String limpa: %s", original);
+    
     return 0;
 }
 ```
 
-Neste exemplo, estamos percorrendo a string e excluindo todos os caracteres 'a'. Para visualizar o resultado, a saída do programa seria:
+Neste exemplo, usamos a função `strpbrk()` para encontrar a primeira ocorrência do padrão "123" na string `original`. Em seguida, usamos um loop `do while` para subsituir cada caractere encontrado pelo espaço em branco. O resultado final será a string "Hello World", onde os dígitos "123" foram removidos.
 
+A segunda opção é fornecer uma string de caracteres que serão mantidos na string original. Veja o exemplo abaixo:
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char original[] = "Hello123World";
+    char *pattern = "HeoW";
+    char *result;
+    
+    result = strpbrk(original, pattern);
+    
+    do {
+        result++;
+        *result = '\0';
+        result = strpbrk(result + 1, pattern);
+    } while (result != NULL);
+    
+    printf("String limpa: %s", original);
+    
+    return 0;
+}
 ```
-Isso é um exemplo de string com crters A mis
-```
 
-## Profundidade técnica
+Neste exemplo, usamos a função `strpbrk()` para encontrar o primeiro caractere que não está presente na string `pattern`, neste caso, o caractere "l". Em seguida, usamos um loop `do while` para substituir cada caractere após o caractere encontrado até o final da string por um caractere nulo. O resultado final será a string "HeWo", onde apenas os caracteres "HeoW" foram mantidos.
 
-A técnica usada no exemplo acima é conhecida como "exclusão por deslocamento". Isso envolve mover todos os caracteres à direita do caractere excluído um espaço para a esquerda, substituindo essencialmente o caractere indesejado.
+## Deep Dive
 
-No código, usamos a função "memmove" para fazer isso de forma eficiente. Esta função move um bloco de memória de uma posição para outra, garantindo que não haja sobreposição dos dados. Também usamos a função "strlen" para determinar o comprimento da parte da string que precisa ser movida.
+É importante mencionar que a função `strpbrk()` só remove ou mantém caracteres a partir da primeira ocorrência do padrão especificado. Além disso, ela também pode ser usada para pesquisar por uma única ocorrência de um conjunto de caracteres, substituindo apenas o primeiro caractere encontrado.
 
-## Veja também
+Podemos também usar a função `strrchr()` para procurar a última ocorrência do padrão em vez da primeira. E para substituir todos os caracteres correspondentes na string, podemos usar a função `strcspn()`. Ambas as funções funcionam de maneira semelhante à `strpbrk()`, porém uma busca de trás para frente em vez de frente para trás.
 
-- [Documentação da função strchr em C](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
-- [Mais sobre a função memmove em C](https://www.studytonight.com/c/function/standard-c-library-function-memmove) 
-- [Tutorial de Strings em C](https://www.geeksforgeeks.org/strings-in-c-2/)
+## Veja Também
+
+- [Referência da Função `strpbrk()` na Documentação do C](https://www.gnu.org/software/libc/manual/html_node/Finding-Tokens-in-a-String.html#index-strpbrk)
+- [Outras funções de manipulação de strings em C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

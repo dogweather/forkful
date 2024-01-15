@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Arduino: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,39 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Por qué trabajar con JSON en Arduino?
+## ¿Por qué trabajar con JSON en Arduino?
 
-Arduino es una plataforma de hardware y software de código abierto que permite a los usuarios crear proyectos electrónicos de todo tipo. La capacidad de trabajar con JSON en Arduino permite a los desarrolladores interactuar con datos estructurados de forma sencilla, lo que abre una gran cantidad de posibilidades para proyectos más avanzados.
+JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de entender, que ha ganado popularidad en los últimos años. Al utilizar JSON en los proyectos de Arduino, puedes integrar tu dispositivo con otros sistemas de forma sencilla y efectiva.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-Para trabajar con JSON en Arduino, lo primero que debemos hacer es importar la librería correspondiente. En la mayoría de los casos, la librería más utilizada es "ArduinoJson" que se puede descargar directamente desde el gestor de librerías de Arduino IDE. Una vez importada la librería, podemos comenzar a interactuar con datos en formato JSON.
+Para empezar a trabajar con JSON en Arduino, necesitas tener instalada la librería `ArduinoJson`. Puedes hacerlo descargándola desde el gestor de librerías o a través de la página de Arduino. Una vez instalada, puedes seguir estos pasos para utilizar JSON en tus proyectos:
 
-Un ejemplo simple de cómo leer datos JSON es el siguiente:
+1. Include la librería `ArduinoJson` en tu sketch.
 
 ```Arduino
-#include <ArduinoJson.h> // Importar la librería
-String datosJSON = "{\"nombre\":\"Juan\", \"edad\":25}"; // Definir el objeto JSON como una cadena de caracteres
-StaticJsonDocument<200> doc; // Crear un documento de tipo JSON para almacenar los datos
-DeserializationError error = deserializeJson(doc, datosJSON); // Deserializar los datos JSON en el documento
-if (!error) { // Verificar si no hubo errores
-    String nombre = doc["nombre"]; // Obtener el valor correspondiente a la propiedad "nombre"
-    int edad = doc["edad"]; // Obtener el valor correspondiente a la propiedad "edad"
-    Serial.println("Nombre: " + nombre); // Imprimir el nombre en el monitor serial
-    Serial.println("Edad: " + String(edad)); // Imprimir la edad en el monitor serial
+#include <ArduinoJson.h>
+```
+
+2. Define un objeto `DynamicJsonDocument` y especifica el tamaño máximo del documento.
+
+```Arduino
+DynamicJsonDocument jsonDocument(1024);
+```
+
+3. Ahora, ya puedes añadir los datos que deseas enviar en formato JSON al objeto. Por ejemplo, vamos a crear un objeto con un array que contenga algunas letras del abecedario.
+
+```Arduino
+char letters[] = {'a', 'b', 'c', 'd', 'e'};
+jsonDocument["abecedario"] = letters;
+```
+
+4. Una vez que tengas todos los datos que deseas enviar, puedes imprimir el objeto en formato JSON con `serializeJson()`.
+
+```Arduino
+serializeJson(jsonDocument, Serial);
+```
+
+5. Si deseas recibir datos en formato JSON, puedes hacerlo utilizando `DeserializationFeature`. Vamos a utilizar un ejemplo en el que recibimos un objeto con información meteorológica, que incluye la temperatura y la humedad.
+
+```Arduino
+StaticJsonDocument<200> jsonDocument;
+DeserializationError error = deserializeJson(jsonDocument, Serial);
+if (error) {
+  Serial.println("Error al recibir datos en formato JSON");
+} else {
+  float temperatura = jsonDocument["temperatura"];
+  float humedad = jsonDocument["humedad"];
+  Serial.print("Temperatura: ");
+  Serial.println(temperatura);
+  Serial.print("Humedad: ");
+  Serial.println(humedad);
 }
 ```
 
-Este es un ejemplo básico, pero se puede adaptar según las necesidades de cada proyecto. También se pueden realizar operaciones como escribir datos en formato JSON o enviarlos a través de una conexión de red como WiFi o Ethernet.
+¡Y eso es todo! Con estos pasos, ya puedes enviar y recibir datos en formato JSON en tus proyectos de Arduino.
 
-## Profundizando
+## Profundizando en JSON
 
-Trabajar con JSON en Arduino puede ser de gran utilidad para proyectos que involucren la lectura y escritura de datos estructurados. Además de la librería mencionada anteriormente, existen otras opciones que ofrecen diferentes funcionalidades y compatibilidades con distintas versiones de Arduino. También es importante recordar que los datos en formato JSON deben seguir una estructura específica para poder ser leídos correctamente.
-
-Para profundizar aún más en el tema, es recomendable revisar la documentación oficial de Arduino y explorar diferentes ejemplos y tutoriales en línea. Al dominar el trabajo con JSON, se pueden crear proyectos más complejos y dinámicos que abarquen más áreas de interés.
+Si deseas aprender más sobre JSON y cómo utilizarlo en tus proyectos de Arduino, puedes consultar la documentación de la librería `ArduinoJson` o explorar más ejemplos en la página oficial de Arduino.
 
 ## Ver también
 
-- [Documentación de Arduino sobre JSON](https://www.arduino.cc/en/Reference/ArduinoJson)
-- [Ejemplos de proyectos con JSON en Arduino](https://create.arduino.cc/projecthub/projects/tags/json)
-- [Otras librerías para trabajar con JSON en Arduino](https://www.arduino.cc/reference/en/libraries/category/data-processing/json/)
+- [Página oficial de Arduino](https://www.arduino.cc)
+- [Página oficial de ArduinoJson](https://arduinojson.org)
+- [Documentación de ArduinoJson](https://arduinojson.org/v6/api)

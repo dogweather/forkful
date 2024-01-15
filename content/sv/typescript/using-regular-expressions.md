@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "TypeScript: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Regex, eller reguljära uttryck, är ett kraftfullt verktyg inom programmering som hjälper till att söka och manipulera textsträngar. Detta kan vara särskilt användbart vid hantering av användarinput eller analys av stora datamängder.
+Reguljära uttryck är ett kraftfullt verktyg för att hantera textsträngar och söka efter mönster i en text. Genom att använda reguljära uttryck i TypeScript kan du enkelt hantera och manipulera stora mängder text på ett effektivt sätt.
 
-## Hur man använder det 
+## Hur du använder reguljära uttryck i TypeScript
+Reguljära uttryck är en uppräkning av tecken som beskriver ett mönster för att söka efter i en textsträng. De kan användas för att validera inmatning, extrahera data eller utföra sökningar i en textdokument. I TypeScript används de ofta tillsammans med strängmetoderna `match()`, `replace()` och `search()` för att manipulera textsträngar.
+
 ```TypeScript
-// Skapa ett reguljärt uttryck för att matcha en e-postadress
-let emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+// Validera en email-address
+let email = "example@mail.com";
+let pattern = /^\w+@[a-z]+\.[a-z]{2,3}$/;
+let valid = pattern.test(email); 
+console.log(valid); // output: true (om email-addressen är validerad)
 
-// Sök efter en matchning i en textsträng
-let result = emailRegex.exec("exempel@email.com");
-
-// Om det finns en matchning, skriv ut den
-if (result) {
-    console.log("Matchande e-postadress hittad: " + result[0]);
-} else {
-    console.log("Ingen matchande e-postadress hittades.");
-}
+// Byta ut en del av en textsträng
+let text = "Välkommen till min blogg!";
+let pattern = /blogg/;
+let newText = text.replace(pattern, "hemsida");
+console.log(newText); // output: Välkommen till min hemsida!
 ```
 
-Output:
-```
-Matchande e-postadress hittad: exempel@email.com
-```
+## Djupdykning i reguljära uttryck
+När du använder reguljära uttryck i TypeScript finns det några specialtecken att hålla koll på. Till exempel kan du använda `^` för att hitta mönster i början av en textsträng och `$` för att hitta mönster i slutet av en textsträng. Tecknet `+` används för att beskriva hur många gånger ett tecken eller uttryck kan förekomma i en text, medan `*` betyder att det kan förekomma flera gånger eller inte alls. Genom att använda `[]` kan du specifiera vilka tecken som är tillåtna i en textsträng och `{}` används för att ange ett visst antal upprepningar av ett tecken.
 
-## Djupdykning
-Reguljära uttryck kan tyckas komplicerade till en början, men en gång förstådda kan de vara mycket användbara. Här är några viktiga saker att tänka på när du använder regex i TypeScript:
-
-- ```/``` används för att starta och avsluta ett reguljärt uttryck
-- ```^``` matchar början av en sträng
-- ```$``` matchar slutet av en sträng
-- ```[...]``` matchar vilket tecken som helst inom klammerparenteserna
-- ```+``` matchar ett eller flera förekomster av föregående uttryck
-- ```*``` matchar noll eller flera förekomster av föregående uttryck
-- ```?``` matchar zero eller one förekomster av föregående uttryck
-- ```\``` används för att escape:a specialtecken som skulle tolkas som en del av ett reguljärt uttryck
-- ```i``` används för att ignorera skillnaden mellan versaler och gemener
-
-För att lära dig mer, kolla in Microsofts dokumentation om reguljära uttryck i TypeScript eller öva på regex101.com.
-
-## Se även
-- [Microsofts dokumentation om reguljära uttryck i TypeScript](https://docs.microsoft.com/sv-se/scripting/javascript/regular-expressions-javascript)
-- [Övning på regex101.com](https://regex101.com/)
+## Se också
+- [RegExp](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/RegExp) - Mozilla utvecklares dokumentsation om reguljära uttryck i JavaScript.
+- [MDN tutorial på RegExp](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Guide/Regular_Expressions) - En detaljerad guide om hur man använder reguljära uttryck i JavaScript.
+- [Regular Expressions 101](https://regex101.com/) - En online editor för att testa reguljära uttryck och få feedback om hur de fungerar.

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Obtention de la date actuelle"
-simple_title:         "Obtention de la date actuelle"
+title:                "Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,45 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous vous demandez peut-être pourquoi il est utile de connaître la date actuelle dans votre script Bash ? Eh bien, la réponse est simple : cela peut vous aider à automatiser certaines tâches en fonction du jour de la semaine, du mois ou de l'année.
+👉 Obtenir la date et l'heure actuelles est souvent utile lorsque l'on écrit un script Bash. Que ce soit pour afficher la date dans un fichier de sortie, pour enregistrer la date d'exécution d'un script, ou pour toute autre utilisation, il est important de savoir comment obtenir ces informations à partir de la ligne de commande.
 
 ## Comment faire
 
-Obtenir la date actuelle dans Bash peut sembler complexe, mais c'est en réalité assez simple. Voici quelques exemples de code pour vous aider à démarrer :
+Voici quelques exemples de code montrant comment obtenir la date et l'heure actuelles en utilisant Bash :
 
-```Bash
-# Obtenez la date actuelle au format "AAAA-MM-JJ"
-date +"%Y-%m-%d"
+```bash
+# Afficher la date et l'heure actuelles au format UTC
+date
+
+# Afficher la date et l'heure au format spécifié (ici, mois/jour/année)
+date +%m/%d/%Y
+
+# Stocker la date et l'heure dans une variable pour une utilisation ultérieure
+now=$(date)
+
+# Afficher uniquement l'heure actuelle
+date +%H:%M
 ```
 
-```Bash
-# Obtenez le jour de la semaine (en toutes lettres)
-date +"%A"
+Output :
+
+```
+sam. août 21 15:31:22 UTC 2021
+08/21/2021
+15:31
 ```
 
-```Bash
-# Obtenez le mois (en toutes lettres)
-date +"%B"
+## Approfondissement
+
+La commande `date` est utilisée pour afficher ou modifier la date et l'heure système. Elle permet également de formater la sortie selon nos besoins en utilisant des indicateurs spécifiques comme vu dans les exemples précédents.
+
+On peut également spécifier un fuseau horaire particulier en utilisant l'option `-d`, comme ceci :
+
+```bash
+date -d '3 hours ago'
 ```
 
-```Bash
-# Obtenez l'année (au format court)
-date +"%y"
+Output :
+
+```
+sam. août 21 12:31:22 UTC 2021
 ```
 
-Si vous exécutez ces commandes dans votre terminal, vous obtiendrez la date actuelle correspondante en sortie.
+De plus, la commande `date` peut également être utilisée pour définir la date et l'heure du système en utilisant l'option `-s`. Il est important de noter que cette commande nécessite des privilèges d'administrateur pour être exécutée.
 
-## Plongez plus profondément
-
-Maintenant que vous savez comment obtenir la date actuelle dans votre script Bash, voici quelques informations plus avancées pour vous aider à mieux comprendre :
-
-- La commande « date » utilise la variable d'environnement « TZ » pour déterminer le fuseau horaire. Vous pouvez le modifier si nécessaire.
-- La commande « date » utilise également la variable d'environnement « LANG » pour déterminer le format de la date. Si vous souhaitez utiliser un format différent, vous pouvez le spécifier en utilisant la commande « date + <format> ».
+Pour en savoir plus sur la commande `date`, vous pouvez consulter sa page de manuel en utilisant la commande `man date` ou en en savoir plus sur la [documentation officielle de Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Date-Manipulation.html).
 
 ## Voir aussi
 
-Pour plus d'informations sur l'utilisation de la commande « date » dans Bash, consultez les liens ci-dessous :
+📚 Si vous souhaitez en apprendre davantage sur la programmation en Bash, voici quelques ressources utiles :
 
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Guide de manipulation des dates dans Bash](https://www.geeksforgeeks.org/date-command-in-linux-with-examples/)
-- [Tutoriels pour débutants sur Bash](https://www.codecademy.com/learn/learn-bash)
+- [Guide de démarrage rapide de Bash](https://linux.die.net/Bash-Quick-Start)
+- [Cours interactif pour débuter avec Bash](https://learnxinyminutes.com/docs/bash/)
+- [Tutoriels et exemples de scripts Bash](https://bash.cyberciti.biz/guide/Main_Page)
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
+
+Maintenant que vous savez comment obtenir la date et l'heure actuelles en Bash, il ne vous reste plus qu'à expérimenter et à l'utiliser dans vos scripts ! 💻

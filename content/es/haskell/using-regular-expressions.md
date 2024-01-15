@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Utilizando expresiones regulares"
+title:                "Utilizando expresiones regulares"
+html_title:           "Haskell: Utilizando expresiones regulares"
 simple_title:         "Utilizando expresiones regulares"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Porqué
+Es posible que alguna vez hayas escuchado acerca de las expresiones regulares y te hayas preguntado para qué se usan. En resumen, las expresiones regulares son patrones que se utilizan para buscar y manipular cadenas de texto de manera eficiente. Son muy útiles en tareas de procesamiento de texto, como la validación de formularios, búsqueda de cadenas específicas o reemplazo de texto.
 
-Las expresiones regulares son una herramienta esencial en la programación moderna. Permiten hacer búsquedas y manipulaciones avanzadas en texto de manera eficiente y precisa. Además, su uso es muy versátil y se pueden aplicar en una amplia gama de lenguajes de programación, incluyendo Haskell.
-
-## Cómo usarlas en Haskell
-
-Primero, debemos importar el módulo `Text.Regex.Posix` utilizando el comando `import Text.Regex.Posix`.
-
-Luego, podemos usar la función `match` para buscar una expresión regular en una cadena de texto específica. Por ejemplo, si queremos encontrar todos los números de teléfono en una cadena, podríamos hacer lo siguiente:
+## Cómo Hacerlo
+Haskell tiene un módulo incorporado llamado `Text.Regex` que nos permite utilizar expresiones regulares. Para comenzar, primero debemos importar este módulo en nuestro código.
 
 ```Haskell
-import Text.Regex.Posix
-
-let text = "Mi número de teléfono es 555-123-4567. ¿Cuál es el tuyo?"
-let pattern = "([0-9]{3})-([0-9]{3})-([0-9]{4})"
-let phoneNumbers = text =~ pattern :: [[String]]
-
--- Output:
--- [["555-123-4567", "555", "123", "4567"]]
+import Text.Regex
 ```
 
-En este ejemplo, la función `match` nos devuelve una lista de listas de cadenas, donde cada sublista contiene las coincidencias encontradas en la cadena, siguiendo el orden especificado en el patrón.
-
-También podemos utilizar expresiones regulares para reemplazar texto en una cadena. Por ejemplo, si queremos ocultar los dígitos de un número de tarjeta de crédito en una cadena, podríamos hacer lo siguiente:
+Una vez importado el módulo, podemos utilizar la función `matchRegex` para buscar una cadena que coincida con nuestro patrón. Por ejemplo, si queremos verificar si una cadena contiene una dirección de correo electrónico válida, podemos usar el patrón `^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+$`.
 
 ```Haskell
-import Text.Regex.Posix
-
-let text = "Mi número de tarjeta de crédito es 1234 5678 9012 3456"
-let pattern = "(\\d{4})\\s?(\\d{4})\\s?(\\d{4})\\s(\\d{4})"
-let hiddenText = text =~ pattern :: String
-
--- Output:
--- "Mi número de tarjeta de crédito es **** **** **** 3456"
+let emailRegex = "^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+$"
+matchRegex emailRegex "ejemplo@ejemplo.com"
+-- Output: Just "ejemplo@ejemplo.com"
 ```
 
-Aquí, utilizamos `\\s` para indicar que podemos tener o no un espacio entre cada grupo de cuatro dígitos en el patrón.
+La función `matchRegex` devuelve una lista de todos los resultados que coinciden con el patrón, pero en caso de no encontrar coincidencias, devuelve `Nothing`.
 
-## Profundizando en el uso de expresiones regulares
+## Profundizando
+Hay muchos más patrones y funciones que podemos utilizar en expresiones regulares en Haskell. Por ejemplo, la función `subRegex` nos permite reemplazar una cadena específica en una cadena de texto utilizando un patrón. Podemos utilizarlo para "enmascarar" un número de tarjeta de crédito en un texto:
 
-Existen muchas más funciones disponibles en el módulo `Text.Regex.Posix` que nos permiten realizar operaciones más avanzadas con expresiones regulares. Además, existen diferentes tipos de expresiones, como las expresiones regulares básicas (POSIX) y las expresiones regulares POSIX extendidas.
+```Haskell
+let cardNumberRegex = "[0-9]{4}[- ][0-9]{4}[- ][0-9]{4}[- ][0-9]{4}"
+subRegex cardNumberRegex "La tarjeta de crédito es 1234-1234-1234-1234" "****-****-****-****"
+-- Output: "La tarjeta de crédito es ****-****-****-****"
+```
 
-Es importante leer la documentación oficial y explorar diferentes ejemplos para entender mejor cómo utilizar expresiones regulares en Haskell y aprovechar al máximo su potencial.
+Para aprender más sobre expresiones regulares en Haskell, puedes consultar la documentación oficial del módulo `Text.Regex` o explorar ejemplos en línea. ¡Practica y sigue aprendiendo!
 
-## Ver también
-
-- [Documentación oficial de `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
-- [Tutorial de expresiones regulares en Haskell](https://www.tutorialspoint.com/haskell/haskell_regular_expressions.htm)
-- [The Power of Regular Expressions in Haskell](https://dev.to/cmelgarejo/the-power-of-regular-expressions-in-haskell-41m)
+## Ver También
+- [Documentación de Text.Regex en Haskell](https://hackage.haskell.org/package/regex)
+- [Ejemplos de expresiones regulares en Haskell](https://wiki.haskell.org/Regular_expressions)

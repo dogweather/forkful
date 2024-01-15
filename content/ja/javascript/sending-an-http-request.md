@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 「HTTP リクエストを送信する」"
-simple_title:         "「HTTP リクエストを送信する」"
+title:                "HTTPリクエストの送信"
+html_title:           "Javascript: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,37 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+HTTPリクエストを送信する理由は、ウェブ開発において欠かせないものです。ウェブサイトやアプリケーションは、クライアントとサーバーがデータのやりとりをすることで機能します。HTTPリクエストは、そのデータのやりとりを可能にする重要な手段です。
 
-HTTPリクエストを送信することのメリットは何でしょうか？それを知るには、最初にHTTPを理解する必要があります。HTTPとは、ハイパーテキストトランスファープロトコルの略で、ウェブサーバーとクライアント間の通信を処理するために使用されます。つまり、HTTPリクエストを送信することで、ウェブサイトやアプリケーションでデータをやり取りすることができるのです。
-
-## 送信する方法
-
-HTTPリクエストを送信するためには、Javascriptの標準的な方法である`XMLHttpRequest`（XHR）オブジェクトを使用します。例えば、以下のようなコードを書くことで、GETリクエストを送信し、サーバーからのレスポンスを取得することができます。
+## 方法
+HTTPリクエストを送信する方法はいくつかありますが、ここではJavascriptを使用した方法を紹介します。まずは、`XMLHttpRequest`オブジェクトを使用してリクエストを作成します。次に、`open()`メソッドを使用してリクエストの種類や送信先のURLを指定し、`send()`メソッドでリクエストを送信します。例えば、以下のようになります。
 
 ```Javascript
-let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://example.com/api/users');
-xhr.send();
-
-xhr.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    console.log(xhr.responseText);
-  }
-};
+const request = new XMLHttpRequest();
+request.open('GET', 'https://example.com/api/users');
+request.send();
 ```
 
-上記の例では、`XMLHttpRequest`オブジェクトの`open`メソッドで、リクエストのタイプ（ここではGET）、URLを指定し、`send`メソッドでリクエストを送信します。そして、`onreadystatechange`イベントで、リクエストの状態が完了（`readyState == 4`）かつステータスが成功（`status == 200`）の場合に、サーバーからのレスポンスを取得します。
+上記の例では、`GET`メソッドを使用して`https://example.com/api/users`へのリクエストを送信しています。`GET`以外にも、`POST`や`PUT`などのメソッドを使用することもできます。また、応答を受け取るためには、`onload`イベントを使用したり、`send()`メソッドの引数としてコールバック関数を設定することもできます。
 
-## より詳細な情報
+## 深堀り
+HTTPリクエストには、さまざまな種類があります。例えば、単純なGETリクエストの他にも、認証付きのリクエストやフォームデータを含むPOSTリクエストなどがあります。また、リクエストのヘッダーには、要求内容やクライアントの情報などを含めることもできます。さらに、HTTPリクエストの内容を確認するために、開発者ツールやデバッガーを使用することもできます。
 
-HTTPリクエストを送信する際、さまざまなタイプのリクエストを使用することができます。ここでは、最も一般的なGETリクエストの例を紹介しましたが、PUT、POST、DELETEなどのリクエストも同じように送信できます。また、リクエストのパラメーターやヘッダーを指定することも可能です。
-
-また、リクエストを送信する際には、エラーハンドリングも重要です。必ずリクエストが成功したかどうかを確認し、エラーメッセージを処理するようにしましょう。
-
-## 参考リンク
-
-- [HTTPリクエストとは？基本から詳しく解説](https://www.sejuku.net/blog/26459)
-- [XMLHttpRequest - MDN](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
-- [コンテンツリクエストを行う - APIリファレンス](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1)
-
-## 関連リンクを見る
+See Also
+- [XMLHttpRequest - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
+- [HTTP リクエストを送信する方法 - MDN Web Docs](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)

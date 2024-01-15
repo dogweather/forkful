@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Gleam: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,52 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å generere tilfeldige tall er en viktig aspekt av dataanalyse og programmering. Det kan være nyttig for å lage pseudotilfeldige tall for testing og simuleringer, eller for å gi variasjon i et program.
+Vi har alle en fascinasjon for tilfeldigheter, og generering av tilfeldige tall er en enkel måte å få en smakebit av det på. Enten det er for å lage et spill, simulere en situasjon eller bare for å tilføre litt variasjon i en rutine, er generering av tilfeldige tall nyttig og interessant.
 
 ## Hvordan
-
-For å generere tilfeldige tall i Gleam kan vi bruke standardbiblioteket Random. Vi kan bruke følgende kode for å generere et tilfeldig tall mellom 1 og 10:
-
+Generering av tilfeldige tall i Gleam er veldig enkelt og krever bare en enkelt linje med kode:
 ```Gleam
-import Random
-
-let random_int = Random.int(1, 10)
-
-pub fn main() {
-  IO.print("Tilfeldig tall: {random_int}")
-}
+let random_number = Random.int()
 ```
-
-Kjøring av denne koden vil gi følgende output:
-
-```
-Tilfeldig tall: 7
-```
-
-Vi kan også generere tilfeldige desimaltall ved å bruke Random.float-funksjonen. For eksempel kan vi generere et desimaltall mellom 0 og 1 med en nøyaktighet på to desimaler ved å bruke følgende kode:
-
+Her genererer vi et tilfeldig heltall og lagrer det i en variabel kalt `random_number`. Vi kan også spesifisere et område for tallene ved å legge til to argumenter:
 ```Gleam
-import Random
-
-let random_float = Random.float(0, 1, 2)
-
-pub fn main() {
-  IO.print("Tilfeldig desimaltall: {random_float}")
-}
+let random_number = Random.int(1, 10)
 ```
-
-Output av denne koden kan for eksempel være:
-
+Dette vil generere et tilfeldig tall mellom 1 og 10. Vi kan også generere tilfeldige desimaler ved å bruke `Random.float()`. For å hente ut en tilfeldig verdi fra en liste, kan vi bruke `List.random()`:
+```Gleam
+let fruits = ["apple", "banana", "orange"]
+let random_fruit = List.random(fruits)
 ```
-Tilfeldig desimaltall: 0.78
-```
+Dette vil generere et tilfeldig element fra listen `fruits` og lagre det i variabelen `random_fruit`.
 
-## Deep Dive
+## Dykk dypere
+Bak kulissene bruker Gleam Pseudorandom Number Generators (PRNGs) for å generere tallene. En PRNG er en algoritme som genererer en sekvens av tall som kan fremstå som tilfeldige, men er egentlig basert på en startverdi. Dette betyr at hvis vi angir den samme startverdien, vil den generere den samme sekvensen av tall. For å unngå dette, kan vi bruke `Random.seed()` for å generere en tilfeldig startverdi basert på klokka og systemtilfeldigheter.
 
-For å forstå mer om hvordan tilfeldige tall blir generert i Gleam, kan vi se på implementasjonen av Random-modulen i standardbiblioteket. Random bruker en kryptografisk sikker verdigenerator for å produsere høyst tilfeldige tall. Denne verdigeneratoren blir initiert med et "seed", som er et tall som brukes som utgangspunkt for å generere andre tall. Seed-en kan bli satt manuelt, men blir som standard satt til å bruke systemtid. Dette sørger for at tallene som genereres er så tilfeldige som mulig.
-
-## Se Også
-
-- [Random-modulen i standardbiblioteket til Gleam](https://gleam.run/std/random.html)
-- [Tilfeldige tall på Wikipedia (Engelsk)](https://en.wikipedia.org/wiki/Random_number_generation)
+## Se også
+- [Gleam dokumentasjon om Random-modulen](https://gleam.run/modules/random/)
+- [Wikipedia om Pseudorandom Number Generators (PRNGs)](https//en.wikipedia.org/wiki/Pseudorandom_number_generator)

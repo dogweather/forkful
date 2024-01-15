@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Å finne lengden av en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "TypeScript: Å finne lengden av en streng"
 simple_title:         "Å finne lengden av en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,26 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Dette er en enkel oppgave som kan hjelpe deg med å håndtere og manipulere tekst på en mer effektiv måte. Hvis du for eksempel trenger å klippe av en del av en tekst, eller sammenligne to tekststrenger, så er det nyttig å kunne finne lengden på dem. Ved å lære dette vil du kunne skrive mer effektiv og pålitelig kode.
 
-Mange ganger når du jobber med programmering, spesielt i TypeScript, vil du bli bedt om å finne lengden av en streng eller tekst som er gitt til deg. Dette kan virke som en enkel oppgave, men det er viktig å forstå hvorfor og hvordan du gjør det riktig. I denne bloggposten vil jeg gå gjennom hvorfor det er viktig å kunne finne lengden av en streng og hvordan du kan gjøre det i TypeScript.
+## Hvordan
+For å finne lengden på en tekststreng i TypeScript, kan du bruke `.length` metoden. Her er et eksempel på hvordan du kan finne lengden på en tekststreng og skrive ut resultatet:
 
-## Hvordan 
-
-For å finne lengden av en streng i TypeScript, kan du bruke metoden .length. La oss si at vi har en streng som heter "Hei, verden!" og vi vil finne lengden av den. Vi kan gjøre dette ved å skrive følgende kode i TypeScript: 
-```TypeScript 
-let streng = "Hei, verden!"; 
-console.log(streng.length); 
+```TypeScript
+let navn: string = "Kari";
+console.log(navn.length); // output: 4
 ```
-Dette vil gi oss en output på 12, da det er 12 tegn i "Hei, verden!" strengen. Du kan også bruke .length metoden på en tom streng eller en streng med kun ett tegn, og det vil returnere henholdsvis 0 og 1. 
 
-## Deep Dive 
+Hvis du ønsker å finne lengden på en tekststreng som inneholder mellomrom eller spesialtegn, må du også ta hensyn til dem i lengden.
 
-Du lurer kanskje på hvordan .length metoden fungerer og hva som gjør den i stand til å finne lengden på en streng. Vel, det er ingen magi bak det, det er faktisk ganske enkelt. Når du bruker .length på en streng, teller den antall tegn i strengen og returnerer det til deg. Så hvis vi bruker det samme eksempelet som tidligere og legger til en mellomrom mellom "Hei" og "," vil vi få en output på 13, da det nå er 13 tegn i strengen. Det er viktig å merke seg at .length også kan brukes på andre datatyper som arrays og objekter for å finne lengden på dem.
+```TypeScript
+let setning: string = "Hei på deg!";
+console.log(setning.length); // output: 11
+```
 
-## Se Også
+Legg merke til at mellomrommet og utropstegnet også teller med i lengden. Dette gjelder også for spesialtegn som æ, ø og å.
 
-Her er noen nyttige ressurser for å lære mer om hvordan du finner lengden av en streng i TypeScript:
+## Dypdykk
+Når du bruker `.length` metoden på en tekststreng, vil du få tilbake lengden på strengen som et heltall (integer). Dette gjør det enkelt å sammenligne lengden på to tekststrenger ved hjelp av betingede uttrykk. For eksempel, hvis du ønsker å sjekke om en tekststreng er lengre enn en annen, kan du bruke følgende kode:
 
-- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [TypeScript Handbook - Strings](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [W3Schools: TypeScript String](https://www.w3schools.com/js/js_strings.asp)
+```TypeScript
+let tekst1: string = "heisann";
+let tekst2: string = "hallo";
+
+if (tekst1.length > tekst2.length) {
+  console.log("Tekst1 er lengre enn tekst2");
+} else {
+  console.log("Tekst1 er ikke lengre enn tekst2");
+}
+```
+
+Du kan også bruke `.length` metoden til å klippe av deler av en tekst, ved hjelp av `.slice()` metoden. Ved å angi start- og sluttpunktet for hvor du vil klippe teksten, kan du enkelt få tak i en del av strengen. Her er et eksempel på hvordan du kan klippe ut de to første bokstavene i en tekststreng og skrive dem ut:
+
+```TypeScript
+let tekst: string = "Hei på deg";
+console.log(tekst.slice(0,2)); // output: He
+```
+
+## Se også
+- [TypeScript dokumentasjon for strenger](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [W3Schools - String length property](https://www.w3schools.com/jsref/jsref_length_string.asp)

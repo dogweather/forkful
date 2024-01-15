@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Convirtiendo una cadena a minúsculas"
-simple_title:         "Convirtiendo una cadena a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas."
+html_title:           "Bash: Convirtiendo una cadena a minúsculas."
+simple_title:         "Convirtiendo una cadena a minúsculas."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas en Bash?
+## ¿Por qué?
 
-Si estás escribiendo un script en Bash que maneja cadenas de texto, es posible que en algún momento necesites convertir una cadena a minúsculas. Esto puede ser útil si quieres asegurarte de que tus datos estén en el mismo formato o si quieres hacer una comparación de cadenas sin importar las mayúsculas o minúsculas. A continuación te mostraremos cómo hacerlo.
+Converting a string to lower case is a common task in Bash programming. It allows you to manipulate text in a case-insensitive manner, making it easier to search, compare, and manipulate strings.
 
-## Cómo hacerlo en Bash
+## ¿Cómo hacerlo?
 
-Puedes usar el comando `tr` para convertir una cadena a minúsculas en Bash. Este comando se encarga de transformar o eliminar caracteres de un archivo o entrada de texto.
+La conversión de una cadena a minúsculas en Bash es muy sencilla. Puedes utilizar el comando `tr` o la utilidad de sustitución de Bash (`${VAR,,}`). Ambos métodos funcionan de manera similar, pero el comando `tr` es más versátil y funciona con una amplia gama de caracteres.
 
-```Bash
-# Definimos una variable con una cadena de texto
-cadena="Bash es divertido!"
-# Usamos el comando tr para convertirla a minúsculas
-cadena=$(echo "$cadena" | tr '[:upper:]' '[:lower:]')
-# Imprimimos el resultado
-echo "$cadena"
 ```
-La salida será la siguiente:
-```Bash
-bash es divertido!
+# Utilizando el comando 'tr'
+cadena="MUNDO EXITOSO"
+
+echo $cadena | tr '[:upper:]' '[:lower:]' # salida: mundo exitoso
+
+# Utilizando la utilidad de sustitución de Bash
+echo ${cadena,,} # salida: mundo exitoso
 ```
 
-Para entender mejor lo que está pasando en el código, vamos a desglosarlo.
+Ambos métodos convierten la cadena en minúsculas y retornan el resultado en un nuevo valor, sin modificar la cadena original. También puedes utilizar las opciones `-t` e `-d` para manejar caracteres especiales o eliminarlos en la conversión.
 
-- En la primera línea definimos una variable llamada `cadena` con una cadena de texto en mayúsculas.
-- En la segunda línea utilizamos el comando `tr` junto con la función `echo` para convertir la cadena a minúsculas.
-- La parte `[:upper:]` especifica los caracteres que queremos convertir, en este caso todas las mayúsculas.
-- Y la parte `[:lower:]` especifica a qué queremos convertirlos, en este caso a minúsculas.
-- Por último, en la tercera línea imprimimos el resultado en la consola.
+## Profundizando
 
-## Profundizando en la conversión de cadenas a minúsculas en Bash
+El comando `tr` funciona utilizando caracteres o patrones para indicar qué caracteres deben ser modificados en la cadena de entrada y cómo deben ser modificados. Puedes consultar la documentación para obtener una lista completa de opciones y cómo utilizarlas.
 
-El comando `tr` también puede ser utilizado para realizar otras transformaciones en cadenas de texto, como eliminar caracteres o reemplazarlos por otros. Además, también se puede usar en conjunto con otros comandos y herramientas en Bash para realizar tareas más complejas.
-
-Por ejemplo, se puede combinar `tr` con `sed` para hacer una búsqueda y reemplazo de una cadena en específico. O también se puede usar con `grep` para filtrar un archivo por un patrón de caracteres en minúsculas.
-
-En resumen, el comando `tr` nos permite manipular cadenas de texto de diferentes maneras y puede ser muy útil cuando se trabaja con scripts en Bash.
+La utilidad de sustitución de Bash, por otro lado, utiliza un patrón glob para indicar qué parte de la cadena debe ser modificada. Este patrón glob es muy similar a las expresiones regulares, pero con algunas diferencias clave. Puedes utilizar la opción `-C` para obtener más información sobre cómo funciona el patrón glob en la utilidad de sustitución.
 
 ## Ver también
 
-- [Guía de tr en la documentación de Bash](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#tr)
-- [Uso del comando tr en Linux](https://www.tecmint.com/linux-tr-commands/)
-- [Ejemplos de uso de tr en Bash](https://linuxconfig.org/bash-tr-command)
+- Documentación de `tr`: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+- Documentación de la utilidad de sustitución de Bash: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Scrivere su standard error"
+title:                "Scrivere su standard error"
+html_title:           "Haskell: Scrivere su standard error"
 simple_title:         "Scrivere su standard error"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,33 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere su standard error può essere utile quando si vuole comunicare informazioni importanti agli utenti durante l'esecuzione di un programma, come ad esempio messaggi di errore o di debug. Inoltre, scrivere su standard error è un buon modo per differenziare i messaggi importanti, da quelli che vengono scritti su standard output.
+Scrivere su standard error è un'operazione comune quando si sta scrivendo codice in Haskell. Questo articolo spiega perché è importante e come farlo correttamente.
 
-## Come Fare
+## Come fare
 
-Per scrivere su standard error in Haskell, è necessario importare il modulo "System.IO" e utilizzare la funzione "hPutStrLn" per scrivere una stringa su standard error. Ad esempio:
+Utilizzare la funzione `hPutStrLn` per scrivere su standard error. Ecco un esempio di codice:
 
 ```Haskell
 import System.IO
 
+hPutStrLn stderr "Questo messaggio verrà stampato su standard error"
+```
+
+Questo codice importa il modulo `System.IO` che fornisce le funzioni per interfacciarsi con i file di input/output. Poi utilizza `hPutStrLn` per scrivere il messaggio specificato su standard error.
+
+Se si desidera utilizzare una stringa di input fornita dall'utente, è possibile farlo in questo modo:
+
+```Haskell
+import System.IO
+import System.Console.GetOpt
+import System.Environment (getArgs)
+
 main = do
-  hPutStrLn stderr "Questo è un messaggio di errore."
+  args <- getArgs
+  case args of
+    [str] -> hPutStrLn stderr $ "Input dell'utente: " ++ str
+    _ -> usage
+
+usage = putStrLn "Utilizzo: mio_programma <input>"
+
 ```
 
-L'output del programma sarà:
-
-```
-Questo è un messaggio di errore.
-```
-
-In questo modo, la stringa viene scritta su standard error invece che su standard output.
+In questo codice, la funzione `getArgs` viene utilizzata per ottenere gli argomenti passati al programma da linea di comando. Poi viene utilizzata `case` per gestire il numero di argomenti e, nel caso ne sia passato solo uno, stampare una stringa che contiene l'input dell'utente su standard error utilizzando `hPutStrLn`.
 
 ## Approfondimento
 
-Scrivere su standard error è utile quando si vuole separare i messaggi importanti, come i messaggi di errore, dai messaggi generici che vengono scritti su standard output. Inoltre, si può utilizzare la funzione "hPutStrLn" per scrivere qualsiasi tipo di stringa su standard error, inclusi messaggi di debug o di avviso. È importante ricordare di importare il modulo "System.IO" ogni volta che si vuole scrivere su standard error.
+Esistono diversi modi per scrivere su standard error in Haskell. Ad esempio, è possibile utilizzare il pacchetto `monads-tf` che fornisce una sintassi più concisa per lavorare con monadi.
 
-## Vedi Anche
+Ecco un esempio di codice che utilizza questo pacchetto:
 
-- [Haskell Documentation](https://www.haskell.org/documentation/)
-- [System.IO Module](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
-- [Tutorial su Standard Output e Standard Error in Haskell](https://www.tutorialspoint.com/unix_commands/printf.htm)
+```Haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.TF
+import System.IO
+
+main :: IO ()
+main =
+    runTF $ do
+        putStrLnT "Questo messaggio verrà stampato su standard error"
+        liftIO $ hPutStrLn stderr "Questo messaggio verrà stampato utilizzando la monade TF"
+```
+
+In questo codice, viene utilizzata la funzione `runTF` per eseguire la monade `TF` che stampa il primo messaggio utilizzando `putStrLnT` e il secondo utilizzando `liftIO` per eseguire l'azione `hPutStrLn` su standard error.
+
+## Vedi anche
+
+- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
+- [Pacchetto monads-tf su Hackage](https://hackage.haskell.org/package/monads-tf)
+- [Tutorial su come lavorare con monadi in Haskell](https://mmhaskell.com/monads)

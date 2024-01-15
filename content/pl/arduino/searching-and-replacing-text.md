@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamienianie tekstu"
+html_title:           "Arduino: Wyszukiwanie i zamienianie tekstu"
+simple_title:         "Wyszukiwanie i zamienianie tekstu"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,59 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele razy w trakcie programowania na platformie Arduino może być konieczne zmienienie pewnego tekstu lub wyrażenia w kodzie. Może to być spowodowane potrzebą aktualizacji, debugowania lub modyfikacji programu. Dlatego znajomość sposobu wyszukiwania i wymiany tekstu jest istotna dla każdego Arduino programisty.
+Często podczas pisania kodu programistycznego, musimy zmieniać lub uaktualniać pewne fragmenty tekstu. Może to być zmiana nazwy zmiennej, poprawka literówki lub aktualizacja stałej. Dlatego warto poznać metodę wyszukiwania i zastępowania tekstu, aby szybko i skutecznie dokonywać zmian w naszym kodzie.
 
 ## Jak To Zrobić
 
-Wiele osób może zastanawiać się, jak skutecznie przeprowadzić operację wyszukiwania i wymiany tekstu w kodzie programu Arduino. Poniżej przedstawione są przykłady kodu wraz z odpowiednimi wyjściami, które pomogą w zrozumieniu oraz wykorzystaniu tej funkcjonalności.
-
-```Arduino
-// Przykładowy kod z wykorzystaniem funkcji replace()
-
-#include <String.h>
-
-String tekst = "Dzień dobry, Arduino!";
-
-void setup() {
-  // Drukowanie tekstu przed zmianą
-  Serial.println("Tekst przed zmianą:");
-  Serial.println(tekst);
-
-  // Wymiana tekstu "dobry" na "wieczór"
-  tekst.replace("dobry", "wieczór");
-
-  // Drukowanie tekstu po zmianie
-  Serial.println("Tekst po zmianie:");
-  Serial.println(tekst);
-}
-
-void loop() {
-  // pusta pętla
-}
-```
-
-Wyjście:
+Aby wykonać wyszukiwanie i zastępowanie tekstu w programie Arduino, możemy skorzystać z funkcji ```replace()```. Przyjmuje ona dwa argumenty - tekst do wyszukania i tekst do zastąpienia. Przykładowo, jeśli chcemy zmienić nazwę zmiennej "liczba" na "wartosc", możemy użyć poniższego kodu:
 
 ```
-Tekst przed zmianą:
-Dzień dobry, Arduino!
-Tekst po zmianie:
-Dzień wieczór, Arduino!
+Arduino
+String text = "Ta liczba jest równa pięciu.";
+text.replace("liczba", "wartosc");
+// tekst po zmianie: "Ta wartosc jest równa pięciu."
 ```
 
-## Zagłębienie
+Jeśli chcemy wielokrotnie dokonać zastąpienia tego samego tekstu, możemy wykorzystać funkcję ```replaceAll()```. Przyjmuje ona również dwa argumenty i zastępuje wszystkie wystąpienia danego tekstu w przekazanej zmiennej.
 
-Funkcja replace() użyta w powyższym przykładzie jest jednym z kilku sposobów na wyszukiwanie i wymianę tekstu w kodzie Arduino. Istnieje również wiele innych funkcji i bibliotek, które umożliwiają wykonanie tej operacji w inny sposób.
+```
+Arduino
+String text = "Ala ma kota, kot ma Alę.";
+text.replaceAll("Ala", "Jan");
+// tekst po zmianie: "Jan ma kota, kot ma Jana."
+```
 
-Na przykład, w bibliotece <string.h> dostępna jest funkcja strcpy() pozwalająca na kopiowanie tekstu do nowej zmiennej oraz funkcja strcat() służąca do "łączenia" tekstów. Można również wykorzystać instrukcje warunkowe, aby wykonywać różne czynności w zależności od znalezionego tekstu.
+Funkcje ```replace()``` i ```replaceAll()``` zawsze zwracają nowy ciąg tekstowy, dlatego musimy przypisać go do zmiennej, jeśli chcemy go wykorzystać w dalszej części kodu. 
 
-Znajomość tych różnych sposobów wyszukiwania i wymiany tekstu w kodzie Arduino może pomóc w rozwiązywaniu różnego rodzaju problemów i ułatwić modyfikację programu w przyszłości.
+## Deep Dive
 
-## Zobacz również
+Funkcje ```replace()``` i ```replaceAll()``` służą do podstawowej operacji zastępowania tekstu. Jeśli jednak potrzebujemy bardziej zaawansowanych funkcji, możemy skorzystać z biblioteki <string.h>. Zapewnia ona szereg innych funkcji do manipulacji tekstem, takich jak ```strcat()``` czy ```strncpy()```.
 
-- Funkcja replace() w bibliotece Arduino:
-https://www.arduino.cc/reference/en/language/functions/string-functions/replace/
-- Wyszukiwanie i wymiana tekstu w programie Arduino:
-https://www.instructables.com/id/Find-Replace-Arduino/
-- Instrukcje warunkowe w Arduino:
-https://www.arduino.cc/reference/en/language/structure/control-structure/if/
+Funkcje te wymagają przekazania wskaźnika na tablicę znaków, a nie obiekt typu String, dlatego musimy dokonać konwersji. Możemy to zrobić za pomocą funkcji ```String()```, która przyjmuje argument typu char i zwraca obiekt typu String. Przykładowo:
+
+```
+Arduino
+char myText[] = "Hello ";
+String name = "John";
+String result = String(myText) + name;
+Serial.println(result);
+// output: Hello John
+```
+
+W ten sposób możemy manipulować tekstem za pomocą funkcji z biblioteki <string.h>, a następnie skonwertować go z powrotem do obiektu typu String.
+
+## Zobacz Również
+
+- [Dokumentacja funkcji replace() i replaceAll()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Dokumentacja biblioteki <string.h>](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

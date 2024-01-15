@@ -1,6 +1,7 @@
 ---
-title:                "C#: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "C#: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,50 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Regular expressions (vanligtvis förkortat som "regex"), är ett kraftfullt verktyg för att söka och manipulera textsträngar i C#. Det är ett oumbärligt verktyg för utvecklare som behöver bearbeta och extrahera data från stora mängder text. Genom att lära sig hur man använder regex, kan du spara tid och förbättra effektiviteten i ditt program.
+Att använda reguljära uttryck är ett kraftfullt verktyg inom programmering som gör det möjligt att söka och manipulera textsträngar på ett flexibelt sätt. Genom att lära sig hur man använder reguljära uttryck kan man effektivisera sitt skriptande och skriva mer robusta program.
 
-## Hur man använder regex i C#
+## Så här gör du
 
-För att använda regex i C#, behöver du först importera `System.Text.RegularExpressions` namespace. Därefter kan du använda `Regex` klassen för att skapa ett regex-objekt och utföra sökningar på textsträngar. Här är ett exempel:
+För att använda reguljära uttryck i C# behöver du använda klassen `Regex` som finns i .NET Framework. Här är ett exempel på hur man kan använda reguljära uttryck för att hitta och ersätta alla förekomster av ett visst ord i en textsträng:
 
-```C#
-// Importera namespace
+```
+using System;
 using System.Text.RegularExpressions;
 
-string text = "Detta är en textsträng för att testa regex";
-string pattern = "en textsträng";
-// Skapa ett regex-objekt med hjälp av mönstret
-Regex regex = new Regex(pattern);
-// Utför en sökning på textsträngen
-Match match = regex.Match(text);
-// Skriv ut resultatet
-Console.WriteLine("Matchning funnen? " + match.Success);
-```
-
-Output:
+string text = "Det var en gång en katt som hette Nisse";
+string nyText = Regex.Replace(text, "katt", "hund");
 
 ```
-Matchning funnen? True
+
+I detta exempel använder vi `Regex.Replace()`-metoden för att ersätta alla förekomster av ordet "katt" med ordet "hund". Nu blir `nyText`-variabeln "Det var en gång en hund som hette Nisse". Här ser du ett annat exempel där vi använder reguljära uttryck för att hitta och extrahera ett visst mönster från en textsträng:
+
+```
+using System;
+using System.Text.RegularExpressions;
+
+string text = "Min e-postadress är example@example.com";
+string mönster = @"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}";
+var match = Regex.Match(text, mönster, RegexOptions.IgnoreCase);
+
+Console.WriteLine(match.Value); // Output: example@example.com
 ```
 
-I det här exemplet skapas ett regex-objekt med mönstret "en textsträng" och sedan används detta objekt för att söka igenom texten "Detta är en textsträng för att testa regex". Eftersom texten innehåller mönstret, returnerar `Match`-funktionen `true`.
+I detta exempel använder vi `Regex.Match()`-metoden för att hitta en e-postadress i texten och extrahera den. Det reguljära uttrycket som vi använder följer ett vanligt mönster för att hitta e-postadresser och `Ignorecase`-flaggan gör att det inte spelar någon roll om bokstäverna är stora eller små.
 
-## Djupdykning i regex
+## Djupdykning
 
-Regular expressions kan vara komplicerade, men de är otroligt användbara när man väl behärskar dem. Här är några tips när du arbetar med regex:
+Reguljära uttryck kan verka krångligt när man ser dem för första gången, men det finns många hjälpverktyg som kan underlätta användningen av dem. Till exempel finns det online-verktyg som kan hjälpa dig att bygga upp ditt reguljära uttryck steg för steg och testa det mot olika textsträngar för att se om det fungerar som det ska. Några populära verktyg är Regex101 och RegExr.
 
-- Metakaraktärer: Regex använder sig av specialtecken, så kallade metakaraktärer, för att söka efter mönster i texten. Till exempel representerar `.` vilket tecken som helst och `+` betyder "en eller flera". Det är viktigt att förstå hur metakaraktärer fungerar och hur man använder dem i regex.
+Ett annat användbart verktyg är Regex Cheat Sheet som ger dig en översikt över de vanligaste tecknen som används i reguljära uttryck och vad de betyder.
 
-- Matcha med intervall: Du kan definiera intervall av bokstäver eller siffror med hjälp av `[]`. Till exempel `[a-z]` matchar varje enskild bokstav från a till z och `[0-9]` matchar alla siffror från 0 till 9.
-
-- Gruppering: Du kan använda parenteser `()` för att gruppera mönster i regex. Det här är användbart när du vill matcha flera mönster och extrahera specifika delar av texten.
-
-- Användning av Regex Tester: Det finns många online-verktyg som hjälper dig att testa dina regex-uttryck. Ett exempel är [regex101.com](https://regex101.com/), där du kan skriva in ditt regex-uttryck och testa det mot olika textsträngar för att se om det matchar och vad det extraherar.
-
-Nu när du har en grundläggande förståelse för hur regex fungerar, börja experimentera med det och se hur det kan förbättra din kodningserfarenhet.
+Det kan även vara bra att veta att det finns några vanliga fallgropar när man använder reguljära uttryck. Till exempel om man glömmer att inkludera ett "escape"-tecken innan ett speciellt tecken som exempelvis en punkt, vilket kan leda till att man får oönskade resultat. Det kan också vara svårt att hitta balansen mellan att göra uttrycket tillräckligt flexibelt för att hitta olika mönster, samtidigt som det blir för komplext och tar för lång tid att utvärdera.
 
 ## Se även
 
-- [Regular Expressions 101: A Beginner's Guide](https://www.digitalocean.com/community/tutorials/regular-expressions-101-beginners-regular-expressions-guide)
-- [C# Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
+[Forskning om reguljära uttryck](https://arxiv.org/pdf/1208.1739.pdf)
+
+[.NET Framework dokumentation om Regex-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
+
+[Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/pcre)

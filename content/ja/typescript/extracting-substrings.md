@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: 部分文字列の抽出"
+title:                "部分文字列の抽出"
+html_title:           "TypeScript: 部分文字列の抽出"
 simple_title:         "部分文字列の抽出"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ抽出サブストリングを行うのか
+## なぜ
 
-抽出サブストリングを行うことには、テキストデータや文字列をより効率的に処理するためのメリットがあります。例えば、大規模な文字列から特定の部分だけを取り出したいときや、文字列内の特定のキーワードを抽出するといった場合に有用です。
+抽出文字列を行う理由は多々あります。一つの理由は、文字列から特定の部分を取り出して使用したい場合があるためです。例えば、電話番号を入力するフォームで、国番号を自動的に入力するためには、本文から国番号を抽出する必要があります。
 
-## 方法
+## 使い方
 
-抽出サブストリングを行うためには、TypeScriptの組み込みのメソッドである`substring()`を使用します。このメソッドは指定した範囲の文字列を抽出し、新しい文字列として返します。以下は、このメソッドを使用した抽出サブストリングのコード例です。
+抽出文字列を行う方法は簡単です。まずは、文字列を定義します。
 
 ```TypeScript
-// 文字列を宣言する
-let str: string = "今日はいい天気です。"
-
-// substring()メソッドを使用して文字列の一部を抽出する
-let subStr: string = str.substring(3, 6)
-
-// 抽出した文字列を出力する
-console.log(subStr)  // 出力結果: いい
-
+const str: string = "これは抽出文字列の例です。";
 ```
 
-## ディープダイブ
+次に、`substring()`メソッドを使用して、抽出したい部分を指定します。例えば、2文字目から5文字目までを抽出する場合は、以下のようになります。
 
-`substring()`メソッドは、指定した位置の文字から指定した範囲の文字列を抽出することができます。また、開始位置を省略することで、指定した位置から最後までの文字列を抽出することもできます。さらに、マイナス値を指定することで、後ろから数えた文字列を抽出することも可能です。詳細な使用方法については、公式ドキュメントを参照してください。
+```TypeScript
+const subStr: string = str.substring(1, 5);
+// 出力: 抽出
+```
 
-## See Also
+`substring()`メソッドは2つの引数を受け取ります。最初の引数は開始位置、2つ目の引数は終了位置を指定します。また、終了位置を省略すれば、文字列の最後まで抽出することができます。
 
-- [substring()メソッドの公式ドキュメント (英語)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [TypeScript 公式ドキュメント (日本語)](https://www.typescriptlang.org/ja/docs/home.html)
-- [抽出サブストリングの例を含むTypeScriptのチュートリアル (日本語)](https://www.w3schools.com/jsref/jsref_substring.asp)
+```TypeScript
+const subStr: string = str.substring(2);
+// 出力: 抽出文字列の例です。
+```
+
+## 詳細を掘り下げる
+
+`substring()`メソッドは、元の文字列を変更せずに抽出を行います。しかし、新しい文字列オブジェクトを返すため、変数に代入する必要があります。また、元の文字列の一部を取り出すため、元の文字列の変数が必要です。
+
+さらに、`substring()`メソッドでは部分文字列の切り出しに加え、反転や結合などの操作も行うことができます。また、正規表現を使用することで、複雑なパターンにも対応することができます。
+
+## 参考リンク
+
+- [MDN web docs - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [TypeScript Handbook - String Operations](https://www.typescriptlang.org/docs/handbook/strings.html#string-operations)
+- [正規表現入門](https://www.javadrive.jp/regexp/)

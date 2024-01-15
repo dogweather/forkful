@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: テスト作成"
-simple_title:         "テスト作成"
+title:                "「テストの書き方」"
+html_title:           "Arduino: 「テストの書き方」"
+simple_title:         "「テストの書き方」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -9,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜテストを書くのか？
 
-プログラミングを行う上で、最も重要なことの一つはテストを書くことです。テストを書くことにより、コードのバグやエラーを事前に発見し、プログラムのバグを最小限に抑えることができます。テストを書くことは、より安定したコードを作成するために必要不可欠です。
+あなたはArduinoを使って何かを作ろうと思ったことがありますか？もしもあなたがプロジェクトを通して理想的な動きを達成したいと思っているなら、テストを書くことは非常に重要です。テストは、コードの正しさを確認し、バグを見つけるのに役立ちます。そうすることで、プロジェクトの動きが期待通りになるように保証することができます。
 
 ## テストの書き方
 
-テストを書くためには、Arduinoの`~できる...()`メソッドを使用します。テストコードは通常、実際のコードファイルの下に置かれます。以下の例では、簡単なデジタル入力のテストを行うためのコードを示します。
+まず、テストのための新しいディレクトリを作成します。そこに、すべてのテストを含む「test.ino」ファイルを作成します。テストのコードは、実際のコードに依存していないことが重要です。そのため、別々の「test.(機能名).ino」ファイルを作成することをお勧めします。例えば、もしスイッチの機能をテストしたい場合、ファイル名を「test.switch.ino」とします。
 
 ```Arduino
-// テスト対象のファイルをインクルードする
-#include "DigitalInput.cpp"
+// ユニットテストの例
 
-// テスト対象のオブジェクトを作成する
-DigitalInput input;
+include <ArduinoUnit.h> // テスト用のライブラリ
 
-// setup()関数は一度実行されるが、テストの実行前に完了する必要がある
-void setup() {
-    input.~できるisEnabled()~ を 使う(); // isEnabled() メソッドのテスト
+testCase(SwitchTest) {
+  int pin = 2; // スイッチのピン番号
+  pinMode(pin, INPUT); // pinを設定
+  assertEqual(digitalRead(pin), LOW); // ピンの状態がLOWになることを確認
 }
 
-//テストの実行
-void loop() {
-    // テストの定義
-    if (input.~できるread()~ が true) {
-        // テストが成功した場合に表示されるボード上のLED
-        digitalWrite(LED_BUILTIN, HIGH);
-    }
-}
+// 出力例
+✅ TEST PASSED: SwitchTest
 ```
 
-この例では、DigitalInputクラスが正常に機能しているかをテストしています。Arduinoの`digitalRead()`メソッドを使用して、LEDが点灯するかどうかを確認します。テストは通常、テストコード内で必要なアサーション（assertion）を定義し、そのアサーションが満たされるかどうかを確認します。サンプルコード内の`isEnabled()`メソッドと`read()`メソッドがそれぞれ検証されています。
+## 詳しくテストの書き方を学ぶ
 
-## テストの深堀り
+もしもテストの書き方についてより詳しい情報を学びたい場合は、[ArduinoUnit公式サイト](https://github.com/mmurdoch/arduinounit)を参考にしてください。そこにはより多くのテストの例があり、ArduinoUnitについてより深く学ぶことができます。
 
-テスト駆動開発（TDD）では、テストを書くことが先行してプログラミングが行われます。最初にテストを書き、そのテストに満たすコードを実装することで、より高品質なコードを作成することができます。また、テストはコードをリファクタリングする際にも役立ちます。リファクタリングによってコードが壊れる可能性があるため、テストを実行することでコードの予期しない動作を検出することができます。
+## 他にも参考になる情報
 
-もう一つの重要なポイントは、プログラムの保守性です。新しい開発者がコードを引き継いだ場合、テストを確認することでコードの動作を理解しやすくなります。また、将来的にコードを拡張する場合も、テストがあることでコードが意図通りに機能することが保証されます。
-
-## 関連リンク
-
-- [Arduinoの公式ドキュメント](https://www.arduino.cc/reference/en/)
-- [簡単にArduinoボタンをテストする](https://create.arduino.cc/projecthub/daniss99/digital-input-test-for-arduino-2d7886)
+- [Arduinoの公式ドキュメント](https://www.arduino.cc/en/Guide/Introduction)
+- [Arduinoのチュートリアル](https://www.arduino.cc/en/Tutorial/HomePage)
+- [Arduinoユーザーフォーラム](https://forum.arduino.cc/)

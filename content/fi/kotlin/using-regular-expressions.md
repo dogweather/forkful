@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Kotlin: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+### Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat voimakas työkalu, joka auttaa sinua työskentelemään joukkojen merkkijonojen kanssa. Oli sitten kyseessä tiedon käsittely, tiedon louhinta tai salasanojen tarkistaminen, säännöllisillä lausekkeilla voit suorittaa monimutkaisia hakuja nopeasti ja tehokkaasti.
+Säännölliset lausekkeet ovat hyödyllisiä, jos haluat hakea ja muokata tekstiä tietyin kriteerein. Ne voivat säästää aikaa ja vaivaa, kun käsittelet suuria määriä tekstiä tai haluat tarkasti etsiä tiettyjä sanoja tai ilmauksia. Säännöllisiä lausekkeita voi myös käyttää monissa ohjelmointikielissä, joten niiden osaaminen on hyödyllistä monessa tilanteessa.
 
-## Kuinka käyttää säännöllisiä lausekkeita Kotlinissa?
+### Kuinka käyttää säännöllisiä lausekkeita Kotlinissa
 
-Kotlin tarjoaa sisäänrakennetun Regex-kirjaston, joka mahdollistaa säännöllisten lausekkeiden käytön. Voit luoda uuden Regex-olion antamalla sille haluamasi säännöllisen lausekkeen merkkijonona:
-
-```Kotlin
-val regex = Regex("a*b") // etsii sanaa "b" kaikista merkkijonon "a" esiintymistä
-```
-
-Voit sitten käyttää erilaisia Regex-metodeja, kuten `find()` ja `replace()`, suorittaaksesi erilaisia hakuja ja muokkauksia. Esimerkiksi voit käyttää `find()`-metodia löytääksesi kaikki säännöllisen lausekkeen osumat ja `replace()`-metodia korvataksesi ne toisella merkkijonolla:
+Säännöllisten lausekkeiden käyttäminen Kotlinissa on helppoa ja vaivatonta. Voit aloittaa käyttämällä Regex-luokkaa, joka tarjoaa valmiita toimintoja säännöllisiin lausekkeisiin. Voit luoda Regex-olion antamalla sille säännöllisen lausekkeen merkkijonona. Esimerkkinä voit etsiä kaikki sanat, jotka alkavat kirjaimella "a" ja päättyvät kirjaimeen "i", käyttämällä seuraavaa koodia:
 
 ```Kotlin
-val text = "Tervetuloa käyttämään säännöllisiä lausekkeita Kotlinissa!"
-val regex = Regex("käyttämään")
-val result = regex.replace(text, "käyttämiseen")
-println(result) // Tulostaa: "Tervetuloa käyttämään säännöllisiä lausekkeita Kotlinissa!"
+val pattern = Regex("a[a-zA-Z]*i")
+val text = "Tämä on esimerkki, jossa on sana abbai."
+val result = pattern.find(text)
+println(result?.value)
 ```
 
-## Syvä sukellus säännöllisten lausekkeiden käyttöön
+Tämä tulostaa "abbai", koska se on ainoa sana, joka vastaa säännöllistä lauseketta. Voit myös käyttää Regex-luokan muita metodeita, kuten esimerkiksi `matches()`, `replace()` ja `findAll()`, joiden avulla voit muokata ja hakea tekstiä haluamallasi tavalla.
 
-Säännölliset lausekkeet sisältävät laajan valikoiman erilaisia ilmaisuja ja toimintoja, jotka voivat vaikuttaa pelottavalta ensinäkemältä. On kuitenkin tärkeää huomata, että voit aloittaa yksinkertaisista säännöllisistä lausekkeista ja lisätä monimutkaisempia ilmaisuja tarpeen mukaan.
+### Syvempi sukellus säännöllisiin lausekkeisiin
 
-Esimerkiksi voit käyttää `[]`-merkkijonoja määrittämään kaikki vaihtoehdot, jotka haluat hakea. Voit myös käyttää `()`-merkintää ryhmittämään säännöllisiä lausekkeita ja `+`-merkintää ilmaisemaan, että edellisen ilmaisun tulisi toistua vähintään kerran.
+Säännöllisiä lausekkeita voi käyttää monella eri tavalla ja niiden mahdollisuudet ovat lähes rajattomat. Voit esimerkiksi käyttää ns. "capture groups" -toimintoa, joka mahdollistaa tietyn osan tekstin tallentamisen. Tämä on hyödyllistä esimerkiksi silloin, kun haluat muokata tekstin osaa ja palauttaa sen uudelleen muokattuna.
 
-Täältä voit löytää kattavan listan kaikista säännöllisistä lausekkeista ja niiden käytöstä Kotlinissa: [https://kotlinlang.org/docs/reference/regular\-expressions.html](https://kotlinlang.org/docs/reference/regular-expressions.html)
+Säännöllisiä lausekkeita käytettäessä on myös tärkeää huomioida suorituskyky. Monimutkaiset säännölliset lausekkeet voivat hidastaa ohjelman suoritusta, joten kannattaa tutkia erilaisia vaihtoehtoja ja valita yksinkertaisin mahdollinen ratkaisu.
 
-## Katso myös
+### Katso myös
 
-- [Kotlinin virallinen säännöllisten lausekkeiden dokumentaatio](https://kotlinlang.org/docs/reference/regular\-expressions.html)
-- [Regexstorm - Säännöllisten lausekkeiden testaustyökalu Kotlinille](https://regexstorm.net/tester)
+- [Kotlinin virallinen Regex-dokumentaatio](https://kotlinlang.org/docs/regular-expressions.html)
+- [Regex101 - Verkkosivusto, jossa voit testata ja kehittää säännöllisiä lausekkeita](https://regex101.com/)
+- [10 hyvää syytä käyttää säännöllisiä lausekkeita ohjelmoinnissa](https://www.codeindustry.net/10-good-reasons-to-use-regular-expressions/)

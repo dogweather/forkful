@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Geração de números aleatórios"
-simple_title:         "Geração de números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "PHP: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -9,37 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que gerar números aleatórios em programação PHP?
+##Por que
 
-Muitas vezes, em programação PHP, é necessário gerar números aleatórios para diversas finalidades. Seja para criar números de identificação ou para realizar sorteios, a geração de números aleatórios é uma funcionalidade importante que pode ser facilmente implementada em suas aplicações.
+Se você está pensando em criar um jogo, testar algoritmos ou até mesmo garantir apoio em decisões aleatórias, gerar números aleatórios pode ser uma ferramenta útil e divertida. A linguagem de programação PHP oferece uma maneira simples e eficaz de gerar números aleatórios, que podem ser usados para diversas finalidades.
 
-## Como gerar números aleatórios em PHP
+##Como Fazer
 
-Para gerar números aleatórios em PHP, utilizamos a função `rand()` juntamente com um intervalo de valores. Por exemplo, se quisermos gerar um número aleatório entre 1 e 10, utilizamos o seguinte código:
-
-```PHP
-$randomNumber = rand(1, 10);
-echo "Número aleatório gerado: " . $randomNumber;
-```
-
-A saída deste código pode ser, por exemplo, "Número aleatório gerado: 7". Podemos criar códigos mais complexos, como gerar uma senha aleatória com uma combinação de letras e números:
+Gerar números aleatórios em PHP é simples e pode ser feito utilizando a função "rand" que retorna um número inteiro aleatório entre dois valores pré-definidos. Abaixo, você pode ver um exemplo de como usar a função "rand" para gerar um número entre 1 e 10 e imprimi-lo na tela:
 
 ```PHP
-$alphabet = 'abcdefghijklmnopqrstuvwxyz';
-$randomPassword = substr(str_shuffle($alphabet), 0, rand(6, 12));
-echo "Senha aleatória gerada: " . $randomPassword;
+$num = rand(1, 10);
+echo $num; //saída: número aleatório entre 1 e 10
 ```
 
-A saída pode ser, por exemplo, "Senha aleatória gerada: c58op9". A combinação desses dois exemplos pode ser utilizada para criar diferentes tipos de códigos que envolvam números aleatórios.
+Além disso, você também pode utilizar a função "mt_rand" que gera números aleatórios utilizando o gerador Mersenne Twister. Essa função oferece uma gama maior de números aleatórios e é recomendada para uso em aplicações críticas ou altamente sensíveis. Veja um exemplo de como usar a função "mt_rand" abaixo:
 
-## Aprofundando-se na geração de números aleatórios em PHP
+```PHP
+$num = mt_rand(100, 1000);
+echo $num; //saída: número aleatório entre 100 e 1000
+```
 
-Ao utilizar a função `rand()`, é importante lembrar que ela depende de um gerador de números aleatórios (RNG) que é definido pelo sistema operacional ou ambiente de hospedagem. Em alguns casos, pode ocorrer de números não tão aleatórios serem gerados, o que pode comprometer a segurança de suas aplicações. Para garantir mais segurança, é possível utilizar a função `mt_rand()` que utiliza um gerador de números aleatórios melhorado.
+Você também pode gerar números aleatórios com ponto flutuante utilizando a função "mt_rand" em conjunto com a função "floatval". No exemplo abaixo, vamos gerar um número aleatório com até duas casas decimais:
 
-Também é importante mencionar que a função `rand()` e `mt_rand()` geram números pseudoaleatórios, ou seja, não são realmente aleatórios, mas sim uma sequência de números que parecem ser aleatórios. Para criar números verdadeiramente aleatórios, é necessário utilizar uma fonte externa de entropia, como arquivos ou dispositivos que fornecem valores aleatórios.
+```PHP
+$num = mt_rand(1, 100);
+$num = floatval($num) / 100;
+echo $num; //saída: número aleatório com duas casas decimais entre 0.01 e 1.00
+```
 
-# Veja também
+Agora que você aprendeu como gerar números aleatórios em PHP, vamos dar uma olhada mais aprofundada nessa função e como ela funciona.
 
-- [Documentação da função `rand()` em PHP](https://www.php.net/manual/pt_BR/function.rand.php)
-- [Documentação da função `mt_rand()` em PHP](https://www.php.net/manual/pt_BR/function.mt-rand.php)
-- [Artigo sobre segurança na geração de números aleatórios em PHP](https://www.php-fusion.co.uk/infusions/articles/documentation.php?cat_id=24&article_id=29)
+##Deep Dive
+
+As funções "rand" e "mt_rand" funcionam através da geração de números pseudoaleatórios. Isso significa que, apesar de parecerem aleatórios, esses números são calculados a partir de uma fórmula matemática e, portanto, são previsíveis. No entanto, a cada vez que a função é executada, a semente (seed) utilizada no cálculo é alterada, garantindo assim diferentes resultados.
+
+Para garantir uma maior variação entre os números gerados, é possível definir a semente manualmente, passando um valor como parâmetro para a função. Isso geralmente é feito utilizando o tempo atual em milissegundos ou o número PID do processo atual. Veja um exemplo de como definir a semente manualmente:
+
+```PHP
+mt_srand(time());
+$num = mt_rand(1, 1000);
+echo $num; //saída: número aleatório entre 1 e 1000 usando o tempo atual como semente
+```
+
+Você também pode usar a função "shuffle" para embaralhar um array em ordem aleatória. Veja um exemplo abaixo:
+
+```PHP
+$array = array(1, 2, 3, 4, 5);
+shuffle($array);
+print_r($array); //saída: array em ordem aleatória
+```
+
+Além disso, o PHP também possui uma função chamada "array_rand" que retorna uma ou mais chaves aleatórias de um array. Veja um exemplo de como usá-la:
+
+```PHP
+$array = array("a" => "maçã", "b" => "banana", "c" => "laranja", "d" => "morango");
+$key = array_rand($array);
+echo $key; //saída: uma chave aleatória do array, como por exemplo "b"
+echo $array[$key]; //saída: o elemento correspondente à chave escolhida, neste caso "banana"
+```
+
+Como mencionado anteriormente, a função "mt_rand" é recomendada para uso em aplicações críticas ou altamente sensíveis. Para garantir uma maior segurança na geração de números aleatórios, o PHP também possui uma extensão chamada "openssl" que oferece uma função chamada "openssl_random_pseudo_bytes". Essa função utiliza o gerador de números aleatórios do sistema operacional, garantindo assim uma maior aleatoriedade nos números gerados. Veja um exemplo de como usar a função

@@ -1,5 +1,6 @@
 ---
-title:                "Python: Sammenføyning av strenger"
+title:                "Sammenføyning av strenger"
+html_title:           "Python: Sammenføyning av strenger"
 simple_title:         "Sammenføyning av strenger"
 programming_language: "Python"
 category:             "Python"
@@ -10,73 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Sammenføyde strenger, eller å legge sammen to eller flere tekststrenger, er en viktig del av Python-programmering. Det lar deg kombinere ulike deler av tekst for å danne en komplett streng, som kan være nyttig i både skripting og applikasjonsutvikling.
 
-## Hvordan gjøre det
-Det er flere måter å legge sammen strenger på i Python. Den enkleste metoden er å bruke "+" operatøren mellom tekststrenger, som vist i eksempelet nedenfor:
+Noe av det mest grunnleggende og viktige i programmering er å kunne håndtere tekst eller strenger. En måte å gjøre dette på er å kombinere, eller "konkatenerere", flere strenger til en enkel streng. Dette kan være nyttig for å lage dynamisk tekst eller for å bygge kompliserte kommandoer.
 
-```python
-navn = "Lars"
-tillegg = " er en programmerer."
-print(navn + tillegg)
-```
-Dette vil gi følgende utskrift:
+## Slik gjør du det
+
+For å konkatenerere strenger i Python, kan du bruke operatøren "+" eller metoden "join()". Her er et eksempel:
 
 ```python
-Lars er en programmerer.
+# Eksempel på konkatenering ved å bruke "+"
+fornavn = "Lars"
+etternavn = "Johansen"
+fullt_navn = fornavn + " " + etternavn
+print(fullt_navn) # Output: Lars Johansen
+
+# Eksempel på konkatenering ved å bruke "join()"
+hobbyer = ["fotball", "musikk", "matlaging"]
+tekst = "Mine hobbyer er: " + ", ".join(hobbyer)
+print(tekst) # Output: Mine hobbyer er: fotball, musikk, matlaging
 ```
-Du kan også bruke "-=" operatøren for å legge sammen en eksisterende streng med en ny streng, som vist i eksempelet nedenfor:
+
+Merk at når du bruker operatøren "+", må alle operandene være strenger. Med metoden "join()", kan du konkatenerere både strenger og lister.
+
+## Dypdykk
+
+I tillegg til å bruke "+" og "join()", finnes det andre måter å konkatenerere strenger på i Python. For eksempel kan du bruke formateringsstrenger, som gir mer kontroll over hvordan strengene kombineres. Her er et eksempel:
 
 ```python
-tekst = "Python er et "
-tekst -= "kraftig programmeringsspråk."
-print(tekst)
-```
-Dette vil gi følgende utskrift:
-
-```python
-Python er et kraftig programmeringsspråk.
-```
-En annen metode for å sammenføye strenger er å bruke "%", som også er kjent som "string formatering". Dette lar deg sette inn variabler eller verdier i en streng på en strukturert måte. Se eksempelet nedenfor:
-
-```python
-navn = "Marie"
-alder = 25
-print("%s er %d år gammel." % (navn, alder))
-```
-Dette vil gi følgende utskrift:
-
-```python
-Marie er 25 år gammel.
+# Eksempel på formateringsstrenger for konkatenering
+fornavn = "Petter"
+etternavn = "Olsen"
+alder = 30
+tekst = "Jeg heter {0} {1} og jeg er {2} år gammel".format(fornavn, etternavn, alder)
+print(tekst) # Output: Jeg heter Petter Olsen og jeg er 30 år gammel
 ```
 
-## Dypt dykk 
-I tillegg til de grunnleggende metodene beskrevet ovenfor, finnes det også flere funksjoner og metoder i Python for å sammenføye strenger. En av dem er "join()" metoden, som lar deg kombinere en liste av strenger til en enkelt streng. Se eksempelet nedenfor:
-
-```python
-tekst = ["Python", "er", "et", "kraftig", "programmeringsspråk."]
-print(" ".join(tekst))
-```
-Dette vil gi følgende utskrift:
-
-```python
-Python er et kraftig programmeringsspråk.
-```
-En annen nyttig metode er "format()" som gir en mer strukturert måte å sette inn variabler eller verdier i en streng på. Se eksempelet nedenfor:
-
-```python
-navn = "Petter"
-alder = 20
-print("{} er {} år gammel.".format(navn, alder))
-```
-Dette vil gi følgende utskrift:
-
-```python
-Petter er 20 år gammel.
-```
+Formateringsstrenger gir også mulighet for å formatere verdier, som å legge til desimaler eller spesifisere lengden på en streng.
 
 ## Se også
-- [Offisiell Python dokumentasjon om strenger](https://docs.python.org/3/library/stdtypes.html#str)
-- [Enkel veiledning til strenger i Python](https://realpython.com/python-strings/)
 
-Forhåpentligvis har denne artikkelen hjulpet deg med å forstå hvorfor og hvordan man legger sammen strenger i Python. Lykke til med å implementere dette i dine egne prosjekter!
+- [Python string concatenation tutorial](https://www.programiz.com/python-programming/string-concatenation)
+- [Python string formatting](https://docs.python.org/3/library/string.html#format-string-syntax)
+- [Python string methods](https://www.w3schools.com/python/python_ref_string.asp)

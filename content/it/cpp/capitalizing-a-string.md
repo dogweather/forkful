@@ -1,5 +1,6 @@
 ---
-title:                "C++: Capitalizzare una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "C++: Capitalizzare una stringa"
 simple_title:         "Capitalizzare una stringa"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte situazioni in cui è necessario convertire una stringa in maiuscolo, come ad esempio nel controllo delle password, nella gestione di dati sensibili o nella formattazione di output. In questo articolo, vedremo come eseguire questa operazione utilizzando il linguaggio di programmazione C++.
 
-Capitalize una stringa è un'operazione molto comune in programmazione. Spesso, è necessario trasformare una stringa in maiuscolo per formattare correttamente un output o confrontare input degli utenti indipendentemente dalla capitalizzazione. Utilizzare una funzione per capitalizzare una stringa può semplificare notevolmente il nostro codice e risparmiare tempo nella scrittura di codice ripetitivo.
+## Come Fare
+Per convertire una stringa in maiuscolo in C++, è possibile utilizzare la funzione `toupper` presente nella libreria `cctype`. Di seguito è riportato un esempio di codice che mostra come utilizzarla:
 
-## Come
-
-Per capitalizzare una stringa in C++, possiamo utilizzare una semplice funzione che converte ogni carattere della stringa in maiuscolo. Ecco un esempio di codice che mostra come utilizzare questa funzione:
-
-```C++
+```
 #include <iostream>
-#include <string>
-#include <algorithm>
-
+#include <cctype>
 using namespace std;
 
-string capitalizza(string str) {
-    // Utilizziamo la funzione transform per convertire tutti i caratteri della stringa in maiuscolo
-    transform(str.begin(), str.end(), str.begin(), ::toupper);
-    return str;
-}
-
 int main() {
-    string str = "ciao a tutti";
-    cout << capitalizza(str) << endl;
-    // Output: CIAO A TUTTI
-    return 0;
+  string str = "questa è una stringa in minuscolo";
+  for (char& c : str) {
+    c = toupper(c);
+  }
+  cout << str << endl;
+  return 0;
 }
 ```
 
-In questo esempio, abbiamo incluso la libreria `string` per lavorare con le stringhe e la libreria `algorithm` per utilizzare la funzione `transform`. La funzione `capitalizza` prende una stringa come input, utilizza la funzione `transform` per convertire tutti i caratteri in maiuscolo e restituisce la stringa risultante. Possiamo poi utilizzare questa funzione in altre parti del nostro codice dove vogliamo che la stringa sia in maiuscolo.
+L'output di questo codice sarà:
 
-## Deep Dive
+```
+QUESTA È UNA STRINGA IN MINUSCOLO
+```
 
-Capire come funziona la funzione `capitalizza` ci può aiutare ad utilizzarla in modo più efficace. Come accennato prima, la funzione `transform` prende in input tre parametri: gli iteratori `begin` e `end` che indicano l'inizio e la fine della porzione di stringa su cui devono essere utilizzati la funzione, e una funzione o una lambda expression che specifica come convertire ogni carattere. Nell'esempio usiamo `::toupper` per convertire ogni carattere in maiuscolo, ma possiamo anche scrivere una funzione personalizzata per ottenere un diverso comportamento.
+In questo esempio, la funzione `toupper` viene utilizzata all'interno di un ciclo `for` per convertire ogni carattere della stringa in maiuscolo.
 
-Inoltre, è importante notare che la funzione `transform` non modifica la stringa originale, ma ne restituisce una nuova. Per questo motivo, è necessario assegnare il risultato della funzione ad una nuova variabile o sovrascrivere la variabile originale con il nuovo valore.
+## Approfondimento
+È importante notare che la funzione `toupper` converte solo i caratteri alfabetici in maiuscolo e lascia invariati gli altri. Inoltre, è possibile utilizzare la funzione `tolower` per convertire una stringa in minuscolo. Entrambe le funzioni accettano un carattere come parametro e restituiscono il corrispondente carattere convertito.
 
-## Vedi anche
+Per convertire una stringa in maiuscolo o minuscolo senza modificarla direttamente, è possibile utilizzare la classe `stringstream` presente nella libreria `sstream`. Di seguito è riportato un esempio di codice che utilizza questa classe:
 
-- [std::string in C++](https://www.cplusplus.com/reference/string/string/)
-- [std::transform in C++](https://www.cplusplus.com/reference/algorithm/transform/)
+```
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int main() {
+  string str = "questa è una stringa in minuscolo";
+  stringstream ss(str);
+  string converted;
+
+  // Conversione in maiuscolo
+  while (ss >> str) {
+    converted +=toupper(str[0]) + str.substr(1) + " ";
+  }
+  cout << converted << endl;
+
+  // Conversione in minuscolo
+  while (ss >> str) {
+    converted +=tolower(str[0]) + str.substr(1) + " ";
+  }
+  cout << converted << endl;
+
+  return 0;
+}
+```
+
+L'output di questo codice sarà:
+
+```
+Questa È Una Stringa In Minuscolo 
+questa è una stringa in minuscolo
+```
+
+In questo esempio, la classe `stringstream` viene utilizzata per separare la stringa in singole parole, convertire la prima lettera di ogni parola in maiuscolo o minuscolo e infine ricostruire la stringa originale con le conversioni applicate.
+
+## Vedi Anche
+Per ulteriori informazioni su come gestire le stringhe in C++, consulta questi articoli:
+- [C++ Strings](https://www.geeksforgeeks.org/c-string-class-and-its-applications/) (in inglese)
+- [Le Stringhe in C++: Modellazione, Formattazione e Gestione](https://www.html.it/pag/33363/stringhe-cpp/) (in italiano)

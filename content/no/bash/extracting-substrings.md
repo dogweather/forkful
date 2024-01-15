@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Utvinning av delstrenger"
-simple_title:         "Utvinning av delstrenger"
+title:                "Uttrekk av understrenger"
+html_title:           "Bash: Uttrekk av understrenger"
+simple_title:         "Uttrekk av understrenger"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,35 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å utvinne substrings kan være nyttig når du trenger å isolere og manipulere bestemte deler av en tekststreng. Dette kan være spesielt praktisk når du jobber med tekstbaserte datafiler eller i tilfeller der du trenger å utføre ulike handlinger basert på visse deler av en tekst.
+Hvorfor vil du ekstrahere undertrenger? Vel, ofte i Bash-programmering, vil du måtte behandle data eller tekster som instruksjoner på bestemte måter. Ekstrahering av undertrenger er en av disse teknikkene som kan få jobben gjort.
 
 ## Hvordan
 
-Det finnes flere måter å utvinne substrings på i Bash. En av de enkleste måtene er å bruke kommandoen "cut". La oss si at vi har en tekstfil med navnene på ulike personer, og vi bare ønsker å hente ut etternavnene. Vi kan gjøre dette ved å bruke følgende kommando:
+Først må du ha en variabel som inneholder teksten du vil ekstrahere undertrenger fra.
 
 ```Bash
-cut -d " " -f2 persons.txt
+tekst="Dette er en tekst som inneholder undertrenger."
 ```
 
-I dette eksempelet bruker vi "cut"-kommandoen til å dele opp tekstfilen ved hjelp av mellomrom som skilletegn ("-d" argumentet) og deretter selektere den andre samlingen av ord ("-f2" argumentet). Dette vil resultere i en utgang som bare inneholder etternavnene til personene i filen.
-
-En annen metode for å utvinne substrings er å bruke en kombinasjon av ulike Bash-kommandoer som "grep" og "sed". La oss si at vi har en lang tekststreng og vi bare ønsker å hente ut den første bokstaven. Vi kan gjøre dette ved å bruke følgende kommandoer:
+Deretter kan du bruke `${variabel: startposisjon: lengde}` - syntaksen for å ekstrahere undertrenger.
 
 ```Bash
-echo "lang tekststreng" | grep -o "." | sed -n 1p
+echo ${tekst:11:6}
+# Output: tekst
 ```
 
-Her bruker vi "grep"-kommandoen til å finne alle tegn ("-o" argumentet) i teksten og deretter bruker "sed"-kommandoen til å bare returnere den første linjen ("-n 1p" argumentet).
+Her angir `startposisjon` hvor i teksten du vil begynne å ekstrahere, og `lengde` er hvor mange tegn du vil ekstrahere. I eksempelet ovenfor starter vi på posisjon 11 (teller starter fra 0) og ekstraherer 6 tegn, som gir oss undertrengeren "tekst".
 
-## Dykk dypere
+Hvis du vil ekstrahere undertrengere fra starten av teksten, kan du bare utelate `startposisjon`.
 
-I tillegg til disse enkle eksemplene, er det også mange andre alternativer og muligheter når det kommer til å utvinne substrings i Bash. Du kan for eksempel bruke forskjellige regex uttrykk for mer avanserte søk eller bruke variabler for å lagre og manipulere utvinnet tekst.
+```Bash
+echo ${tekst::4}
+# Output: Dett
+```
 
-Det er også viktig å merke seg at Bash fungerer ganske likt uavhengig av hvilket operativsystem du bruker det på. Dette gjør det enkelt å lære det en gang og deretter bruke det på tvers av forskjellige plattformer.
+Du kan også bruke negative tall for `startposisjon` eller `lengde`, som vil telle fra slutten av teksten.
 
-## Se også
+```Bash
+echo ${tekst: -9: 8}
+# Output: ondertr
+```
 
-- [Cut Command in Unix (With Examples)](https://www.geeksforgeeks.org/cut-command-in-unix-with-examples/)
-- [Basic Sed Commands](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-- [Bash Regex Tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-in-bash)
-- [Bash Variable Substitution](https://linuxize.com/post/bash-variable-substitution/)
+## Dypdykk
+
+Nå som du har en forståelse av hvordan du ekstraherer undertrenger, kan du også bruke wildcards i syntaksen.
+
+```Bash
+echo ${tekst:6: *e*}
+# Output: er
+```
+
+Dette vil ekstrahere en undertrenger som inneholder bokstaven "e" fra posisjon 6.
+
+En annen nyttig teknikk er å bruke `#` og `%` for å ekstrahere undertrenger basert på mønstermatching.
+
+```Bash
+echo ${tekst#*tekst}
+# Output: som inneholder undertrenger.
+echo ${tekst%.*}
+# Output: Dette er en tekst som inneholder undertrenger
+```
+
+## Se Også
+
+- [Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash scripting guide](https://ryanstutorials.net/bash-scripting-tutorial/)

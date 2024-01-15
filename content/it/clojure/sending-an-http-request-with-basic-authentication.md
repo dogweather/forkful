@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Inviare una richiesta http con autenticazione di base"
-simple_title:         "Inviare una richiesta http con autenticazione di base"
+title:                "Invio di una richiesta http con autenticazione di base"
+html_title:           "Clojure: Invio di una richiesta http con autenticazione di base"
+simple_title:         "Invio di una richiesta http con autenticazione di base"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,40 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molti programmatori utilizzano le richieste HTTP con autenticazione di base per garantire la sicurezza delle comunicazioni tra un client e un server. Questo è particolarmente utile quando si tratta di scambiare dati sensibili come informazioni di login o pagamenti. In questo post, esploreremo come implementare una richiesta HTTP con autenticazione di base in Clojure.
+Molte volte, quando si sviluppano applicazioni Web, è necessario autenticare gli utenti per garantire che solo coloro con le credenziali corrette possano accedere a risorse protette. In questo articolo, vedremo come possiamo inviare una richiesta HTTP con autenticazione di base in Clojure.
 
 ## Come fare
 
-Per inviare una richiesta HTTP con autenticazione di base, abbiamo bisogno di tre elementi: l'URL del server, le credenziali (username e password) e i dati che desideriamo inviare. Utilizziamo la libreria "http-kit" che offre una semplice interfaccia per creare richieste HTTP in Clojure.
+Per inviare una richiesta HTTP con autenticazione di base in Clojure, possiamo utilizzare la libreria `clj-http`. Per prima cosa, dobbiamo importare la libreria nel nostro progetto:
 
-```
-(ns my-app.core
- (:require [org.httpkit.client :as http]))
-
-(def url "http://example.com/api")
-(def username "myusername")
-(def password "mypassword")
-(def data {:name "John Doe" :age 30})
-
-(defn send-request []
-  (let [response (http/post url
-                    {:basic-auth [username password]
-                     :body (json-encode data)})
-    (prn (http/status response))
-    (prn (http/headers response))
-    (prn (http/body response))
-    )
-  )
+```Clojure
+(ns tuo-progetto.core
+  (:require [clj-http.client :as client]))
 ```
 
-Nell'esempio sopra, stiamo inviando una richiesta POST all'URL specificato, con le credenziali fornite e i dati nella forma di un oggetto Clojure. Utilizzando la funzione "json-encode", convertiamo i dati in formato JSON prima di inviarli al server. La funzione "prn" ci permette di stampare il codice di stato, le intestazioni e il corpo della risposta ricevuta dal server.
+Successivamente, possiamo utilizzare la funzione `client/get` per inviare la richiesta con l'autenticazione di base. Dobbiamo passare l'URL della risorsa protetta, le credenziali dell'utente e l'header che indica l'utilizzo dell'autenticazione di base:
+
+```Clojure
+(client/get "https://www.example.com/restricted-resource"
+             {:basic-auth ["utente" "password"]
+              :headers {"Authorization" (str "Basic " (b64-encode (str "utente:password"))})})
+```
+
+L'output della richiesta sarà un hash con le informazioni della risposta, come ad esempio lo status code e il corpo della risorsa.
 
 ## Approfondimento
 
-Ora che sappiamo come inviare una richiesta HTTP con autenticazione di base in Clojure, potremmo voler capire meglio come funziona il meccanismo di autenticazione. Quando viene inviata una richiesta con autenticazione di base, il client codifica le credenziali (username e password) in base64 e le inserisce nell'intestazione "Authorization". Questo metodo di autenticazione non è considerato sicuro poiché le credenziali sono inviate in chiaro, quindi è consigliato utilizzarlo solo su connessioni HTTPS.
+L'autenticazione di base è uno dei metodi più semplici per autenticare gli utenti in una applicazione Web. Funziona inserendo le credenziali dell'utente all'interno dell'header "Authorization" della richiesta HTTP, codificate in base64.
+
+Un'altra opzione per implementare l'autenticazione di base in Clojure è utilizzare la libreria `ring` e il suo middleware `basic-auth`. Questo ci consente di proteggere rotte specifiche della nostra applicazione utilizzando l'autenticazione di base.
 
 ## Vedi anche
 
-- Documentazione di "http-kit": https://github.com/http-kit/http-kit
-- Guida di Clojure per la creazione di richieste HTTP: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/http-post
-- Spiegazione dell'autenticazione di base: https://tools.ietf.org/html/rfc2617
+- Documentazione di `clj-http`: https://github.com/dakrone/clj-http
+- Esempi di utilizzo di `basic-auth` con `ring`: https://github.com/ring-clojure/ring/wiki/Session-middleware#basic-authentication

@@ -1,6 +1,7 @@
 ---
-title:                "C++: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "yaml과 함께 작업하기"
+html_title:           "C++: yaml과 함께 작업하기"
+simple_title:         "yaml과 함께 작업하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -9,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-YAML은 데이터를 효율적이고 쉽게 관리하기 위한 파일 형식입니다. 그래서 C++ 프로그래머들은 YAML을 사용하여 더 나은 코드를 작성하기 위해 알아야 합니다.
+YAML은 간단한 문법을 사용하여 데이터를 인간과 컴퓨터가 이해하기 쉬운 형태로 저장할 수 있는 파일 형식입니다. 따라서 YAML을 사용하여 데이터를 처리하는 것은 개발자들에게 시간과 노력을 절약해줍니다.
 
-# 사용 방법
+## 어떻게
 
-YAML을 사용하는 것은 간단합니다. 먼저 YAML 라이브러리를 프로젝트에 추가해야 합니다. 그 다음, YAML 파일을 읽고 쓰기 위해 필요한 함수를 호출하면 됩니다. 예를 들어, 다음 코드는 YAML 파일을 읽어서 간단한 출력을 생성합니다.
+YAML을 사용하기 위해서는 다음과 같은 두 가지 라이브러리가 필요합니다. 
+
+1. YAML 헤더 파일을 포함시켜야 합니다.
+2. YAML 파일을 읽고 쓰기 위한 함수가 포함된 라이브러리를 설치해야 합니다.
 
 ```C++
-#include <iostream>
-#include "yaml.h"
+# include <yaml-cpp/yaml.h> // YAML 헤더 파일을 포함
+# include <iostream>
 
-int main()
-{
-    YAML::Node config = YAML::LoadFile("example.yaml");
+int main() {
+  // YAML 파일 읽기
+  YAML::Node node = YAML::LoadFile("data.yml");
 
-    std::cout << "Name: " << config["name"].as<std::string>() << "\n";
-    std::cout << "Age: " << config["age"].as<int>() << "\n";
-    std::cout << "Hobbies: \n";
-
-    for (auto hobby : config["hobbies"])
-    {
-        std::cout << "- " << hobby.as<std::string>() << "\n";
-    }
-
-    return 0;
+  // YAML 파일 쓰기
+  YAML::Emitter out;
+  out << YAML::BeginMap;
+  out << YAML::Key << "name";
+  out << YAML::Value << "John";
+  out << YAML::EndMap;
+  std::cout << "output: " <<std::endl << out.c_str();
+  return 0;
 }
 ```
-
-이 코드를 실행하면 다음과 같은 출력이 생성됩니다.
+코드 실행 결과:
 
 ```
-Name: Jane
-Age: 25
-Hobbies:
-- Reading
-- Cooking
-- Hiking
+output:
+name: John
 ```
 
-# 깊이 파고들기
+## 자세히 알아보기
 
-YAML을 다루는 데에는 몇 가지 중요한 개념이 있습니다. 첫째, 들여쓰기를 사용하여 계층적인 구조를 형성할 수 있습니다. 이를 통해 데이터를 구조적으로 정리하고 쉽게 파악할 수 있습니다. 둘째, YAML은 다양한 데이터 형식을 지원합니다. 문자열, 숫자, 불린 값 등 다양한 유형을 저장할 수 있습니다. 마지막으로, YAML은 주석을 지원하므로 코드의 의미를 설명하는 데 유용합니다.
+YAML 파일은 다양한 데이터 타입을 지원합니다. 정수, 실수, 불리언, 문자열, 리스트, 맵 등을 저장할 수 있습니다. 또한 YAML은 주석을 포함할 수 있기 때문에 다른 개발자들과 협업할 때 유용합니다. 또한 YAML 파일의 구조는 들여쓰기를 통해 시각적으로 파악할 수 있기 때문에 가독성이 뛰어납니다.
 
-# 이어보기
+## 더 알아보기
 
-[YAML 시작하기(영문)](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/) - YAML에 대한 더 자세한 설명과 예제를 제공합니다.
-
-[YAML 레퍼런스(영문)](https://yaml.org/spec/1.2/spec.html) - YAML 문법과 규칙에 대한 공식 문서입니다.
+- YAML 공식 사이트: https://yaml.org/
+- YAML-CPP 라이브러리: https://github.com/jbeder/yaml-cpp
+- YAML 문법 가이드: https://yaml.org/spec/1.2/spec.html
+- YAML 판독기: https://yaml.com/

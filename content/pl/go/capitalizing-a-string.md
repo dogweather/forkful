@@ -1,6 +1,7 @@
 ---
-title:                "Go: Zmiana formatowania ciągu znaków"
-simple_title:         "Zmiana formatowania ciągu znaków"
+title:                "Konwertowanie ciągu na wielkie litery"
+html_title:           "Go: Konwertowanie ciągu na wielkie litery"
+simple_title:         "Konwertowanie ciągu na wielkie litery"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,11 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Witajcie polscy programiści! Jeśli regularnie pracujecie z językiem Go, zapewne spotkaliście się z potrzebą zmiany wielkości liter w napisach. W tym wpisie opowiem Wam dlaczego to jest ważne i jak można to zrobić w prosty sposób.
+Czasem w naszym programie chcielibyśmy zmienić pierwszą literę każdego słowa w zdaniu na wielką. Możemy to osiągnąć przez użycie funkcji do zmiany wielkości liter, ale jeśli chcemy tylko zmienić pierwszą literę, ta metoda może być zaawansowana. Wtedy przydatne może się okazać użycie funkcji do kapitalizacji ciągów znaków w języku Go.
 
 ## Jak to zrobić
 
-W języku Go zmiana wielkości liter jest możliwa dzięki użyciu funkcji `strings.Title()` i `strings.ToUpper()`. Dzięki nim możemy zamienić pierwszą literę lub wszystkie litery w wybranym napisie na wielkie. Oto kilka przykładów:
+Możemy wykorzystać funkcję "Title" do kapitalizacji ciągów znaków w języku Go. W poniższym przykładzie wykorzystamy funkcję do kapitalizowania słowa "hello":
 
 ```Go
 package main
@@ -26,53 +27,37 @@ import (
 )
 
 func main() {
-    input := "witajcie polscy programiści"
-    fmt.Println(strings.Title(input))
-
-    input = "Go to jest super język"
-    fmt.Println(strings.ToUpper(input))
+    fmt.Println(strings.Title("hello"))
 }
+
+// Output: Hello
 ```
 
-Output:
-
-```
-Witajcie Polscy Programiści
-GO TO JEST SUPER JĘZYK
-```
-
-Jak widać, zmiana wielkości liter jest bardzo prosta i nie wymaga wielu linii kodu.
-
-## Deep Dive
-
-W języku Go możemy zmieniać wielkość liter nie tylko w całych napisach, ale także w pojedynczych literach. Możemy to zrobić dzięki użyciu typu `rune`, który reprezentuje pojedynczą literkę wewnętrznie jako liczbę. Dzięki temu możemy wykonywać różne operacje na literach, np. zmienić tylko pierwszą literę na wielką. Przykład:
+Możemy również wykorzystać funkcję "ToUpper" do zmiany pierwszej litery na wielką. Poniższy kod przedstawi to w kontekście całego zdania:
 
 ```Go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "strings"
+)
 
 func main() {
-    letter := 'a'
-    fmt.Printf("Pierwsza litera: %c\n", letter)
-
-    // zamiana na wielkie litery
-    letter -= 32
-    fmt.Printf("Pierwsza litera: %c", letter)
+    str := "hello world"
+    result := strings.ToUpper(str[0:1]) + str[1:]
+    fmt.Println(result)
 }
+
+// Output: Hello world
 ```
 
-Output:
+## Głębszy wgląd
 
-```
-Pierwsza litera: a
-Pierwsza litera: A
-```
+W języku Go istnieje wiele funkcji do manipulacji ciągami znaków. Funkcje "Title" i "ToUpper" to tylko kilka przykładów, ale istnieje wiele innych sposobów na kapitalizowanie ciągów znaków w języku Go. Możemy również zastosować inne operacje, takie jak "Split" i "Join", aby dostosować nasz ciąg znaków zgodnie z naszymi potrzebami.
 
-Warto także pamiętać, że w języku Go litery są reprezentowane przy użyciu kodu Unicode, dzięki czemu możemy pracować z różnymi alfabetami.
+## Zobacz również
 
-## Zobacz także
-
-- Dokumentacja języka Go: https://golang.org/doc/
-- Przewodnik po zmianie wielkości liter w Go: https://gobyexample.com/string-functions
-- Opis typu `rune`: https://golang.org/ref/spec#Rune_literals
+- [Funkcja "Title" w języku Go](https://golang.org/pkg/strings/#Title)
+- [Funkcja "ToUpper" w języku Go](https://golang.org/pkg/strings/#ToUpper)
+- [Manipulacja ciągami znaków w języku Go](https://golang.org/pkg/strings/)

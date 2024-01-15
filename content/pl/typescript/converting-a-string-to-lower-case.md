@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Konwertowanie ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "TypeScript: Konwertowanie ciągu znaków na małe litery"
 simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,26 +12,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery jest częstym zadaniem w programowaniu, szczególnie w tworzeniu aplikacji internetowych. Jest to ważne, ponieważ tablice znakowe są wrażliwe na wielkość liter, co może utrudnić porównywanie i sortowanie danych. Konwertowanie tekstu na małe litery pozwala na spójność i ułatwia pracę z tekstem w różnych językach.
+Konwersja stringów na małe litery może być przydatna, gdy potrzebujemy porównać dwa tekstu bez uwzględnienia wielkości liter lub gdy chcemy uporządkować dane alfabetycznie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
 ```TypeScript
-let text: string = "Hello World!";
-let lowerCase: string = text.toLowerCase();
-console.log(lowerCase); // output: hello world!
+let text = "PIĘKNY"; // deklarujemy zmienną z tekstem
+let lowercaseText = text.toLowerCase(); // przy użyciu funkcji toLowerCase() konwertujemy tekst na małe litery
+console.log(lowercaseText); // wyświetlamy wynik: piękny
 ```
 
-Możemy użyć wbudowanej metody `toLowerCase()` na zmiennej tekstowej, aby przekonwertować ją na małe litery. Ta metoda zwraca nowy łańcuch znaków z małymi literami, a oryginalny tekst pozostaje bez zmian.
+## Pod lupą
 
-## Głębsza analiza
+Podczas konwersji, znaki nieznane dla danego języka mogą pozostać bez zmian, np. litery z diakrysimi, znaki specjalne itp. W TypeScript istnieje również funkcja toLocaleLowerCase(), która uwzględnia ustawienia regionalne, co może być przydatne w niektórych przypadkach.
 
-Konwertowanie tekstu na małe litery zależy od używanego języka programowania. W przypadku TypeScript, wbudowana metoda `toLowerCase()` wymaga wykorzystania klasy `String`, która jest obiektem globalnym. Metoda ta jest często wykorzystywana wraz z innymi funkcjami, takimi jak `toUpperCase()` czy `trim()`, co umożliwia dokładniejszą manipulację tekstem.
+## Zobacz także
 
-Jednym z ważnych aspektów konwertowania tekstu na małe litery jest obsługa znaków nielatynowskich. Na przykład, w językach takich jak turecki, niektóre litery mają swoją "małą wersję", która jest inna niż zwykła litera o mniejszej wielkości. W takim przypadku użycie metody `toLowerCase()` może spowodować nieoczekiwane wyniki, dlatego ważne jest zapoznanie się z wyjątkami w danym języku.
-
-## Zobacz również
-
-- [Dokumentacja TypeScript - Klasy String](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [JavaScript.info - String Methods](https://javascript.info/string-methods)
-- [MDN Web Docs - String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+- [Mozilla Developer Network - toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [TypeScript Docs - String](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html#string)
+- [Stack Overflow - How to convert a string to lowercase in TypeScript?](https://stackoverflow.com/questions/69691897/how-to-convert-a-string-to-lowercase-in-typescript)

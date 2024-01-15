@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Bash: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -9,37 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna läsa och hantera textfiler är en viktig färdighet inom Bash-programmering. Genom att förstå hur man läser textfiler kan man manipulera och använda data på ett effektivt sätt.
+Why: V arför skulle du läsa en textfil? Att läsa textfiler är en grundläggande funktion inom Bash-programmering och är användbart för att hantera data och programkörning.
 
-## Hur man gör det
-Läsning av textfiler i Bash kan åstadkommas genom användning av kommandot "cat". Detta kommando läser innehållet på en textfil och skriver ut det till standardutdata. Ett enkelt exempel skulle vara:
+## Why
 
-```Bash
-cat min_textfil.txt
-```
+Att läsa en textfil är en viktig del av Bash-programmering eftersom det ger dig möjlighet att hantera data och interagera med ditt operativsystem. Med rätt kommandon kan du läsa och manipulera innehållet i en textfil på ett effektivt sätt.
 
-Detta skulle skriva ut allt innehåll i filen "min_textfil.txt" till skärmen. Om man istället vill spara resultatet från en läsning i en variabel, kan man använda följande kod:
+## How To
+
+För att läsa en textfil i Bash, används kommandot `cat`, som står för "concatenate" eller "slå samman". Detta kommando visar innehållet i en textfil direkt i terminalen. Det kan användas på följande sätt:
 
 ```Bash
-variabel=$(cat min_textfil.txt)
-echo "$variabel"
+cat minTextfil.txt
 ```
 
-Här läser vi in filens innehåll och lagrar det i variabeln "variabel", som sedan skrivs ut med hjälp av "echo"-kommandot. Detta är bara ett enkelt exempel på hur man kan läsa en textfil, men det finns många fler sätt att hantera data från en fil.
-
-## Djupdykning
-För att kunna läsa och hantera en textfil på ett mer detaljerat sätt, kan man använda sig av olika kommandon inom Bash. Ett användbart kommando är "grep", som används för att söka efter specifika rader eller ord i en fil. Till exempel kan man använda:
+Om du vill läsa en textfil rad för rad kan du använda kommandot `read` tillsammans med en while-loop. Här är ett enkelt exempel där vi läser innehållet i en textfil och skriver ut varje rad till terminalen:
 
 ```Bash
-grep "sökord" min_textfil.txt
+while read rad
+do
+    echo $rad
+done < minTextfil.txt
 ```
 
-Detta kommer att söka igenom filen "min_textfil.txt" och skriva ut alla rader som innehåller det angivna sökordet.
+Du kan även använda kommandot `grep` för att läsa en specifik del av en textfil baserat på ett sökord eller ett mönster. Till exempel, om du bara vill läsa rader som innehåller ordet "Bash", kan du använda följande kommando:
 
-Man kan också använda sig av "sed" för att manipulera innehållet i en textfil. Med hjälp av olika sed-uttryck kan man till exempel byta ut specifika ord eller ta bort rader från filen. Det finns många fler kommandon och tekniker man kan använda för att läsa och hantera textfiler i Bash, det viktigaste är att förstå grundläggande koncept och veta vilka kommandon som är tillgängliga.
+```Bash
+grep "Bash" minTextfil.txt
+```
 
-## Se även
-- [Bash Guide for Beginners](https://opensource.com/article/19/10/bash-scripting-guide)
-- [Bash Text Processing Commands](https://opensource.com/article/20/9/bash-text-processing)
-- [Unix Text Processing Commands](https://www.tutorialspoint.com/unix/unix-text-processing.htm)
+Resultatet kommer då endast att visa rader som innehåller ordet "Bash".
+
+## Deep Dive
+
+När du läser en textfil i Bash, finns det några saker du bör tänka på. För det första är det viktigt att känna till att `cat`-kommandot inte bara kan användas för att läsa textfiler, utan även för att skapa nya. Om du till exempel vill skapa en ny textfil kan du använda följande syntax:
+
+```Bash
+cat > nyTextfil.txt
+```
+
+Då kommer allt du skriver i terminalen att sparas i den nya textfilen tills du avslutar med tangentkombinationen `Ctrl + D`.
+
+För det andra är det också bra att känna till att du kan läsa flera textfiler på en gång genom att använda *wildcards* (jokertecken) i dina kommandon. Till exempel, om du vill läsa innehållet i alla textfiler som slutar med ".txt", kan du använda följande kommando:
+
+```Bash
+cat *.txt
+```
+
+Detta kommer att läsa innehållet i alla textfiler med ".txt" som filändelse som finns i den nuvarande mappen.
+
+## See Also
+
+Här är några andra resurser för att lära dig mer om Bash-programmering och att läsa textfiler i terminalen:
+
+- [Officiell Bash-dokumentation](https://www.gnu.org/software/bash/manual/)
+- [En guide till Bash-programmering för nybörjare](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Mer information om kommandot `cat`](https://www.computerhope.com/unix/ucat.htm)

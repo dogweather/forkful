@@ -1,5 +1,6 @@
 ---
-title:                "C#: Json से काम करना"
+title:                "Json से काम करना"
+html_title:           "C#: Json से काम करना"
 simple_title:         "Json से काम करना"
 programming_language: "C#"
 category:             "C#"
@@ -9,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्यों 
 
-जेसोन एक प्रसिद्ध डेटा प्रारूप है जो आपको अपने एप्लिकेशन या वेबसाइट में डेटा को आसानी से संग्रहीत करने की अनुमति देता है। इसका उपयोग करके, आप जावास्क्रिप्ट ऑब्जेक्ट नोटेशन (JSON) के माध्यम से डेटा को समर्थित डेटा संरचनाओं में बदल सकते हैं जिससे डेटा प्रसंस्करण और डेटा प्रबंधन को आसानी से किया जा सकता है।
+जावास्क्रिप्ट ऑब्जेक्ट नोटेशन (JSON) एक प्रसिद्ध डाटा इंटरचेंज फॉर्मेट है जो डेटा को स्टोर और एक्सचेंज करने के लिए इस्तेमाल किया जाता है। यह एक प्रभावी और आसान तरीका है डेटा को एक स्थिर स्ट्रक्चर में संग्रहीत करने का। इसलिए JSON को सीखने से आपको प्रोग्रामिंग और डेटा स्ट्रक्चर का अधिक ज्ञान होगा।
 
-## कैसे करें
+## कैसे करें 
 
 ```C#
-// एक साधारण JSON ऑब्जेक्ट बनाएं
-string json = @"{
-    ""name"": ""John Doe"",
-    ""age"": 28,
-    ""hobbies"": [""reading"", ""hiking"", ""cooking""]
-}";
+// एक डिक्शनरी को JSON स्ट्रिंग में कन्वर्ट करने का उदाहरण
+Dictionary<string, string> dictionary = new Dictionary<string, string>();
+dictionary.Add("Name", "John Doe");
+dictionary.Add("Age", "25");
 
-// JObject के रूप में ऑब्जेक्ट पढ़ें
-JObject jobj = JObject.Parse(json);
+string json = JsonConvert.SerializeObject(dictionary);
+Console.WriteLine(json);
 
-// प्रत्येक विशेषता के लिए विशेषता को पढ़ें
-string name = (string)jobj["name"];
-int age = (int)jobj["age"];
-JArray hobbies = (JArray)jobj["hobbies"];
+//output: {"Name": "John Doe", "Age": "25"}
 
-// समस्त शब्दों को कॉन्सोल में प्रिंट करें
-Console.WriteLine("नाम: " + name);
-Console.WriteLine("आयु: " + age);
-Console.Write("शौक: ");
-foreach (string h in hobbies)
-{
-    Console.Write(h + ", ");
-}
+// JSON स्ट्रिंग को डिक्शनरी में फिर से कन्वर्ट करने का उदाहरण
+string json = "{\"Name\": \"John Doe\", \"Age\": \"25\"}";
+Dictionary<string, string> dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+Console.WriteLine(dictionary["Name"]);
+Console.WriteLine(dictionary["Age"]);
+
+//output:John Doe
+//25
 ```
 
-आप इस उदाहरण का उपयोग करके जेसोन ऑब्जेक्ट डेटा को आसानी से पढ़ सकते हैं और विशेषताओं को प्रसंस्करण कर सकते हैं। इसके अलावा, आप जेसोन को अपनी बिंदु-सारणी में भी बदल सकते हैं जिससे डेटा को अधिक अनुकूलित बनाया जा सकता है।
+## गहराई में जायें 
 
-## गहराई में जाएं
+JSON अत्यंत उपयोगी हो सकता है जब आप अपने प्रोग्राम के साथ एक्सटर्नल API कॉल करते हैं और डाटा को प्राप्त करते हो। आप इसे अपने स्थानीय स्टोरेज से भी लोड कर सकते हैं। C# में JSON का उपयोग करना बहुत आसान है क्योंकि Newtonsoft.Json लाइब्रेरी हैंडलिंग परफेक्टमैंट के साथ JSON डेटा पर काम करती है। आशा है कि यह लेख आपको JSON के साथ काम करने में सहायता करेगा।
 
-JSON एक बहुत ही उपयोगी और गतिशील डेटा प्रारूप है जो डेटा संग्रहण और प्रसंस्करण को सीधा और आसान बनाता है। जबकि जेसोन प्रारूप अंतर्निहित रूप से सरल है, इसमें गहराई में जाने के साथ-साथ डेटा की सं
+## इसे भी देखें 
+
+- [JSON गाइड](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to)
+- [C# लाइब्रेरी उपयोग करने का तरीका](https://www.tutorialsteacher.com/csharp/csharp-json)
+- [JSON कन्वर्टर उपयोग करना](https://www.dotnetperls.com/serialize-dictionary)

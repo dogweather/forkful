@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "Rust: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,72 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué descargar una página web en Rust?
+## Por qué
 
-Existen muchas razones por las que puede ser útil descargar una página web en Rust. Puede ser para obtener datos de una página de forma automática, para crear una herramienta de raspado web o quizás simplemente por el aprendizaje sobre cómo funciona el proceso de descarga de una página. Sea cual sea la razón, descargar una página web en Rust es una tarea bastante sencilla y en este artículo te mostraré cómo hacerlo.
+Si estás interesado en el desarrollo web o simplemente quieres aprender un nuevo lenguaje de programación, descargar una página web puede ser una buena forma de tomar el primer paso. Puedes aprender cómo interactuar con una página web, extraer datos y utilizarlos en tus proyectos.
 
-## Cómo hacerlo en Rust?
+## Cómo hacerlo
 
-Para descargar una página web en Rust, primero debes tener instalado el lenguaje en tu sistema. Puedes seguir las instrucciones de la [página oficial de Rust](https://www.rust-lang.org/es/tools/install) para instalarlo.
+La mejor forma de descargar una página web en Rust es utilizando la biblioteca `reqwest`. Primero, debes agregar esta biblioteca a tu archivo `Cargo.toml`:
 
-Una vez que tengas Rust instalado, debes crear un nuevo proyecto en tu editor de código de preferencia. En este ejemplo, utilizaremos [VS Code](https://code.visualstudio.com/) con la extensión de Rust instalada.
-
-Ahora, en tu proyecto, crea un nuevo archivo llamado "main.rs" y dentro de él, importa las siguientes librerías:
-```Rust
-use std::io::Read;
-use std::fs::File;
-use std::io::Write;
 ```
-Estas librerías nos permitirán leer y escribir archivos en Rust.
-
-Luego, dentro de la función principal del archivo, declaramos una variable para almacenar la URL de la página que queremos descargar y una segunda variable para almacenar el nombre del archivo en el que queremos guardar la descarga.
-```Rust
-let url = "https://www.ejemplo.com/";
-let file_name = "index.html";
+[dependencies]
+reqwest = { version = "0.11.4", features = ["json"] }
 ```
 
-A continuación, creamos una nueva instancia de la estructura URL utilizando la URL que hemos declarado.
-```Rust
-let parsed_url = Url::parse(url).unwrap();
+Luego, en tu archivo `.rs`, importa la biblioteca y utiliza su función `get` para enviar una solicitud al servidor de la página que deseas descargar:
+
+```rust
+use reqwest::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let response = reqwest::get("https://example.com").await?;
+    println!("Status: {}", response.status());
+    println!("Headers:\n{}", response.headers());
+    println!("Body:\n{}", response.text().await?);
+    Ok(())
+}
 ```
 
-Después, creamos una nueva solicitud HTTP utilizando la librería `reqwest` y la función `get`, pasándole como parámetros la URL que hemos declarado. De esta forma, obtendremos una respuesta del servidor.
-```Rust
-let mut response = match reqwest::get(parsed_url) {
-    Ok(r) => r,
-    Err(e) => panic!("Error al conectar a la página: {}", e),
-};
-```
+La función `get` devuelve una estructura `Result`, así que es necesario manejar los posibles errores con `?` o `match`. En el ejemplo anterior, se imprime el estado de la respuesta, los encabezados y el cuerpo en formato de texto.
 
-A continuación, leemos el cuerpo de la respuesta utilizando el método `text` y almacenamos el resultado en una variable nueva.
-```Rust
-let mut content = String::new();
-match response.read_to_string(&mut content) {
-    Ok(_) => (),
-    Err(e) => panic!("Error al leer el contenido de la página: {}", e),
-};
-```
+## Deep Dive
 
-Por último, creamos un nuevo archivo utilizando el nombre que hemos declarado y escribimos el contenido descargado utilizando el método `write_all`.
-```Rust
-let mut file = match File::create(file_name) {
-    Ok(f) => f,
-    Err(e) => panic!("Error al crear archivo: {}",e),
-};
+`reqwest` es una biblioteca completa para realizar solicitudes HTTP en Rust. Además de la función `get`, también puedes utilizar otras funciones como `post` o `delete` según tus necesidades. Puedes consultar la documentación oficial para obtener más información sobre las opciones de configuración y los métodos de solicitud disponibles.
 
-match file.write_all(content.as_bytes()) {
-    Ok(_) => println!("Página web descargada con éxito"),
-    Err(e) => panic!("Error al escribir en el archivo: {}", e),
-};
-```
+Al utilizar `reqwest`, también puedes manejar cookies, autenticación, redirecciones y más. Además, usando la función `json` puedes analizar automáticamente la respuesta si está en formato JSON.
 
-Y eso es todo, ¡ya tienes una página web descargada en Rust! Puedes probarlo cambiando la URL y el nombre del archivo y ejecutando el código.
+## Ver también
 
-## Profundizando en la descarga de páginas web
-
-Si quieres profundizar más en el proceso de descarga de páginas web en Rust, te recomiendo investigar sobre las diferentes librerías que existen para manejar solicitudes HTTP y explorar otras formas de guardar el contenido descargado, como por ejemplo utilizando la librería `html5ever` para analizar el contenido HTML y extraer la información deseada.
-
-## Véase también
-
-- [Página oficial de Rust](https://www.rust-lang.org/es/)
-- [Documentación de reqwest](https://docs.rs/reqwest/)
+- [Documentación de `reqwest`](https://docs.rs/reqwest/0.11.4/reqwest/)
+- [Tutorial de Rust para principiantes](https://www.rust-lang.org/es-ES/learn/get-started)
+- [Proyectos de código abierto para contribuir en Rust](https://opensource.com/alternatives/rust-projects)

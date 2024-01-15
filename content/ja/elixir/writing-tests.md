@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "「テストの書き方」"
+html_title:           "Elixir: 「テストの書き方」"
+simple_title:         "「テストの書き方」"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -9,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Elixirでテストを書くことの重要性
+## なぜ
 
-## なぜテストを書くのか
+テストを書くことの重要性を説明する前に、テストについての一般的な見解についてお話ししましょう。テストは、コードが期待どおりに動作するかどうかを確認するために行われる手段です。テストを書くことにより、コードの信頼性や品質を向上することができます。
 
-プログラマーにとって、バグのない安定したコードを書くことは非常に重要です。テストを書くことによって、バグを早期に発見し、コードの信頼性を高めることができます。また、新しい機能を追加した際に既存のコードが壊れていないかを確認することもできます。
+## 動作させる
 
-## テストの書き方
-
-テストは `ExUnit` フレームワークを使って書きます。書き方はとても簡単です。まずはテストを実行したいモジュールをインポートします。
+テストを書く方法を学ぶには、Elixirのコーディング例を見るのが最も手軽です。以下のコードブロックをご覧ください。
 
 ```Elixir
-# test/test_module.exs
-defmodule TestModuleTest do
-  use ExUnit.Case
-
-  import TestModule
+# テストケースを定義する
+test "2つの数値を足し合わせる" do
+  assert Calculator.add(2, 3) == 5
 end
 ```
+このコードでは、2つの数値を足し合わせ、計算結果が正しいかどうかをテストしています。`assert`関数を使用することで、コードの出力結果が期待どおりであるかを確認することができます。
 
-次に、`ExUnit` のマクロを使ってテストケースを定義します。
+さらに、テストコードを実行する方法もあります。`mix test`コマンドを使用することで、プロジェクト内のすべてのテストを実行することができます。
 
-```Elixir
-# test/test_module.exs
-defmodule TestModuleTest do
-  use ExUnit.Case
+## 深堀りする
 
-  import TestModule
+テストを書くことは、信頼性や品質を向上させるだけでなく、コードをより柔軟に変更することも可能にします。また、テスト駆動開発（TDD）と呼ばれる開発手法では、テストを書くことを前提としてコードを書くことが推奨されています。
 
-  # テストケース名は "test_" で始める必要があります
-  test "test_function/2 が適切な結果を返すこと" do
-    assert test_function(2, 3) == 5
-  end
-end
-```
+さらに、Elixirでは`doctest`と呼ばれる機能を使用することで、関数の説明や使用例を書きながらテストを実行することができます。この機能を使用することで、ドキュメントとテストを同時に管理することができます。
 
-最後に、コンソールから `mix test` コマンドを実行することで、テストを実行することができます。
+## その他
 
-## テストの詳細
+テストについての詳細を学ぶには以下のリソースを参考にしてください。
 
-テストを書く際には、コードカバレッジを意識することも重要です。コードカバレッジとは、テストがどれだけコードを網羅しているかを表す指標です。また、ユニットテストだけでなく、統合テストも書くことで、システム全体の信頼性をより高めることができます。
+- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/introduction.html)
+- [Elixir School](https://elixirschool.com/jp/)
+- [プロジェクトのタスクごとにテストを書く方法](https://medium.com/@esuntag/making-a-todo-list-with-test-an-name-name-hero-elixir-a13ae81d3725)
 
-## 関連リンク
+See Also
 
-- [ExUnit ドキュメント](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir チュートリアル](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixir School](https://elixirschool.com/ja/)
+関連リソース：
+
+- [Elixirの基本文法についての記事](https://www.codingdojo.com/blog/elixir-basics-syntax/)
+- [プログラミングにおけるテストの重要性についての解説動画](https://www.youtube.com/watch?v=Fr2I4DvxRIo)

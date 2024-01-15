@@ -1,6 +1,7 @@
 ---
-title:                "Java: Å tolke html"
-simple_title:         "Å tolke html"
+title:                "Analysering av html"
+html_title:           "Java: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å parse HTML kan være en viktig del av utviklingen av en nettside eller applikasjon. Det kan hjelpe deg med å hente informasjon fra ulike nettsider og gjøre det enklere å presentere den på en oversiktlig måte.
+Hvis du ønsker å hente data fra en nettside eller analysere HTML-koden, må du parse (analysere og tolke) HTML. Dette kan være nyttig for å lage automatiserte web scraping-skript eller for å behandle data fra nettet i Java-applikasjoner.
 
-## Hvordan
+# Hvordan
 
-For å parsere HTML i Java, kan du bruke bibiloteket "jsoup". Følgende eksempel viser hvordan du kan bruke dette biblioteket for å hente ut en tittel fra en nettside:
+For å parse HTML i Java, kan du bruke et bibliotek som heter Jsoup. Dette biblioteket gjør det enkelt å hente ut data fra HTML-kilder.
+
+Først må du importere Jsoup-biblioteket i Java-koden din ved å legge til følgende linje øverst i filen:
 
 ```Java
-import org.jsoup.*;
-import org.jsoup.nodes.*;
-import org.jsoup.select.*;
-
-//Henter HTML fra en nettside
-Document doc = Jsoup.connect("https://www.example.com").get();
-
-//Bruker CSS-selektor for å finne tittelen
-String title = doc.select("h1").first().text();
-
-System.out.println(title);
-//Output: Dette er en tittel
+import org.jsoup.Jsoup;
 ```
 
-Som du kan se, bruker vi "jsoup" til å hente selve HTML-koden fra nettsiden, og deretter bruker vi CSS-selektorer for å finne den spesifikke informasjonen vi ønsker å hente ut. Du kan også bruke andre metoder, som å finne elementer basert på deres ID eller klasse.
+Deretter kan du bruke følgende kode for å koble til en nettside og hente ut innholdet fra en bestemt HTML-tag:
 
-## Dypdykk
+```Java
+String url = "https://www.nettside.no";
+Document doc = Jsoup.connect(url).get();
+String content = doc.select("h1").text();
 
-Å parse HTML kan være utfordrende på grunn av alt det forskjellige innholdet og formateringen som finnes på ulike nettsider. Derfor er det viktig å ha en god forståelse av HTML-strukturen og ulike teknikker for å finne og hente ut informasjonen du trenger.
+System.out.println(content);
+```
 
-En viktig del av parsing er å forstå DOM (Document Object Model) i HTML. Dette er en struktur som organiserer og gir tilgang til elementene i et HTML-dokument. Ved å bruke denne strukturen kan du navigere gjennom dokumentet og finne de ønskede elementene.
+I dette eksempelet vil du få utskrevet teksten fra alle h1-tagene på nettsiden.
 
-En annen teknikk som kan være nyttig er å bruke regulære uttrykk (regex) for å filtrere ut spesifikke data fra HTML-koden. Dette kan være spesielt nyttig når du vil hente ut informasjon fra mer komplekse strukturer eller ønsker å filtrere bort irrelevante data.
+# Dypdykk
 
-## Se også
+Jsoup-biblioteket gir mange ulike metoder for å hente og behandle data fra HTML. Du kan for eksempel filtrere ut spesifikke attributter eller klasser, eller kjøre en søkefunksjon for å finne en spesifikk del av HTML-koden.
 
-- [Offisiell "jsoup" dokumentasjon](https://jsoup.org/)
-- [Tutorial om å parse HTML i Java](https://www.baeldung.com/java-html-parsing-jsoup)
-- [Hvorfor er parsing av HTML viktig?](https://www.quora.com/Why-is-parsing-HTML-important)
+Det er også viktig å merke seg at Jsoup kan håndtere ugyldig eller ufullstendig HTML-kode, noe som gjør det enklere å parse komplekse nettsider.
+
+# Se Også
+
+- Jsoup-bibliotekets offisielle dokumentasjon: https://jsoup.org/
+- En grundig gjennomgang av hvordan Jsoup kan brukes for å hente data fra HTML: https://dzone.com/articles/using-jsoup-java-html-parser-to-get-html-page-content
+- En tutorial på norsk om hvordan du bruker Jsoup: https://javarush.ru/groups/posts/377-prekrashejshij-java-parser-jsoup-kogda-vse-prosto

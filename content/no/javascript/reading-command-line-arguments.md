@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Lesing av kommandolinje-argumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "Javascript: Lesing av kommandolinje-argumenter"
 simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,57 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Lesing av kommandolinje-argumenter er en viktig del av Javascript-programmering, spesielt når man ønsker å gi brukere muligheten til å tilpasse og kontrollere programmets oppførsel ved hjelp av argumenter. Det er også nyttig når man ønsker å kjøre visse funksjoner eller skrive ut spesifikk informasjon uten å måtte endre selve koden hver gang.
+Å lese kommandolinje-argumenter er en essensiell del av JavaScript-programmering. Dette gir utviklere muligheten til å interagere med brukeren og skrive dynamiske skript som kan kjøres i nettleseren eller på serveren.
 
 ## Hvordan
 
-Det er enkelt å lese kommandolinje-argumenter ved hjelp av Javascripts `process.argv`-funksjon. Her er et enkelt eksempel for å illustrere det:
+For å lese kommandolinje-argumenter må du bruke et innebygd objekt i JavaScript kalt "process". Dette objektet gir tilgang til informasjon om den nåværende prosessen, inkludert kommandolinje-argumenter. For å lese argumentene, kan du bruke "process.argv" -metoden som returnerer en matrise med alle argumentene gitt ved kjøring av skriptet.
 
-```Javascript
-// script.js
-console.log(process.argv);
+``` Javascript
+// Eksempel på å lese kommandolinje-argumenter
+
+// Skriv ut alle argumentene i terminalen
+for (let i = 0; i < process.argv.length; i++) {
+  console.log(process.argv[i]);
+}
+
+/* Output:
+path/to/node
+path/to/myScript.js
+Hello
+World 
+*/
 ```
 
-I terminalen kan du skrive inn følgende kommando:
-
-```
-node script.js arg1 arg2
-```
-
-Dette vil gi output som dette:
-
-```
-[ 'node',
-  '/path/to/script.js',
-  'arg1',
-  'arg2' ]
-```
-
-Som du kan se, er `process.argv` en array som inneholder kommando, filnavn og argumentene som ble gitt.
-
-For å få tilgang til de spesifikke argumentene, kan du bruke array-indeksene. For eksempel, for å få tilgang til `arg1`, må du bruke `process.argv[2]` siden kommando og filnavn teller som indeks 0 og 1.
-
-```Javascript
-// script.js
-console.log(`Argument 1: ${process.argv[2]}`);
-console.log(`Argument 2: ${process.argv[3]}`);
-```
-
-Dette vil gi følgende output:
-
-```
-Argument 1: arg1
-Argument 2: arg2
-```
+Hvis du vil ha et spesifikt argument, kan du bruke indeksering på matrisen. Det første argumentet (indeks 0) vil alltid være banen til Node.js-programmet som kjører skriptet, mens det andre argumentet (indeks 1) vil være banen til skriptet selv.
 
 ## Dypdykk
 
-Det finnes flere måter å lese og behandle kommandolinje-argumenter på, som for eksempel å bruke en pakke som `yargs` eller `commander` for å gi mer fleksibilitet og funksjonalitet. Det er også mulig å bruke flagger og flaggverdier for å gi alternativer som kan endre programmets oppførsel.
-
-Det er viktig å huske på at kommandolinje-argumenter kan være følsomme for trykkfeil og feil formatting, så det kan være lurt å ha noen form for validering på plass.
+Det er viktig å merke seg at kommandolinje-argumenter alltid returneres som strenger, uavhengig av om du skriver et tall eller en boolean-verdi som argument. Dette betyr at du må bruke konverteringsmetoder som "parseInt" eller "parseFloat" hvis du vil bruke argumentet som et tall i koden din. Det er også mulig å sende inn egendefinerte argumenter ved å bruke flagg i kommandolinjen, for eksempel "-f" for å angi en fil som skal åpnes.
 
 ## Se også
 
-- [Hvordan lage et enkelt kommandolinjeverktøy med Node.js](https://www.digitalocean.com/community/tutorials/how-to-build-a-command-line-application-with-node-js)
-- [Yargs dokumentasjon](https://www.npmjs.com/package/yargs)
-- [Commander dokumentasjon](https://www.npmjs.com/package/commander)
+- [Node.js process dokumentasjon] (https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
+- [Mozilla Developer Network - Command line arguments] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Command_line_arguments)

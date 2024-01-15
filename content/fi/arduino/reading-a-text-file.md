@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Lukeminen teksti-tiedostosta"
+html_title:           "Arduino: Lukeminen teksti-tiedostosta"
+simple_title:         "Lukeminen teksti-tiedostosta"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,132 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Tervetuloa lukemaan Arduino-ohjelmointi blogitekstiä, joka käsittelee tekstitiedoston lukemista! Tekstitiedostojen lukeminen voi olla hyödyllistä monista syistä, kuten tiedostojen tallentamisesta laitteeseen, datan keräämiseen tai jopa pelien tallentamiseen. Jatka lukemista, jos haluat oppia lisää.
+Arduino on suosittu alusta monien erilaisten projektien toteuttamiseen. Yksi hyödyllinen taito Arduino-ohjelmoinnissa on kyky lukea tekstitiedostoja. Tässä artikkelissa opit miten lukea tekstitiedostoja Arduino-koodilla.
 
-# Kuinka
+## Miten
 
-Tekstitiedoston lukeminen Arduinoilla on helppoa. Voit käyttää SD-korttia tai jopa ESP8266 WiFi-moduulia lukeaksesi tekstitiedostoja.
+```Arduino
+// Avataan tiedosto lukemista varten
+File tiedosto = SD.open("tiedosto.txt");
 
-#### SD-Kortti:
-```
-#include <SPI.h>
-#include <SD.h>
-
-File tiedosto;
-
-void setup() {
-  Serial.begin(9600);
-
-  // Asenna SD-kortti
-  if (!SD.begin(4)) {
-    Serial.println("SD-korttia ei löydetty");
-    while (1);
-  }
-  Serial.println("SD-kortti löydetty");
-  
-  // Avaa tiedosto
-  tiedosto = SD.open("tiedosto.txt");
-  
-  // Tulosta tiedoston sisältö sarjamonitorille
-  while (tiedosto.available()) {
-    Serial.write(tiedosto.read());
-  }
-  
-  // Sulje tiedosto
-  tiedosto.close();
-}
-
-void loop() {
-
-}
-```
-Tämän koodin avulla voit lukea ja tulostaa tekstitiedoston sisällön sarjamonitorille.
-
-#### ESP8266 WiFi-moduuli:
-```
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-
-void setup() {
-  Serial.begin(9600);
-  
-  // Yhdistä WiFi-verkkoon
-  WiFi.begin("verkon_nimi", "salasana");
-  
-  // Odota yhdistämistä
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
-  
-  Serial.println("Yhdistetty WiFi-verkkoon");
-  
-  // Luo WiFi-asiakas
-  WiFiClient asiakas;
-  
-  // Avaa yhteys palvelimeen
-  if (asiakas.connect("www.example.com", 80)) {
-    // Lähetä HTTP-pyyntö
-    asiakas.print("GET /tiedosto.txt HTTP/1.1\r\n");
-    asiakas.print("Host: www.example.com\r\n");
-    asiakas.print("Connection: close\r\n\r\n");
-    
-    // Lue vastaus
-    while (asiakas.available()) {
-      String rivi = asiakas.readStringUntil('\n');
-      Serial.println(rivi);
-    }
-  }
-  
-  // Sulje yhteys
-  asiakas.stop();
-}
-
-void loop() {
-
-}
-```
-Tämä koodi yhdistää WiFi-verkkoon ja lukee tekstitiedoston verkosta ja tulostaa sen sisällön sarjamonitorille.
-
-# Syväsukellus
-
-Tekstitiedoston lukeminen voi olla hieman monimutkaisempaa, jos siinä on erikoismerkkejä tai numerosarjoja. Voit kuitenkin käyttää esimerkiksi String-luokkaa tai strtok-funktiota selvittääksesi, miten käsitellä tiedoston sisältöä. Voit myös käyttää Serial.readStringUntil(f()-funktio päätymisen merkille.
-```
-#include <SPI.h>
-#include <SD.h>
-
-File tiedosto;
-
-void setup() {
-  Serial.begin(9600);
-
-  // Asenna SD-kortti
-  if (!SD.begin(4)) {
-    Serial.println("SD-korttia ei löydetty");
-    while (1);
-  }
-  Serial.println("SD-kortti löydetty");
-  
-  // Avaa tiedosto
-  tiedosto = SD.open("tiedosto.txt");
-  
-  // Lue tiedosto rivi kerrallaan ja tulosta sarjamonitorille.
-  while (tiedosto.available()) {
-    String rivi = tiedosto.readStringUntil('\n');
-    Serial.println(rivi);
-  }
-  
-  // Sulje tiedosto
-  tiedosto.close();
-}
-
-void loop() {
-
+// Luetaan tiedostosta rivi kerrallaan
+while(tiedosto.available()){
+  Serial.println(tiedosto.readStringUntil('\n'));
 }
 ```
 
-# Katso myös
+Seuraava Arduino-koodi esimerkki näyttää kuinka avata ja lukea tekstitiedosto SD-kortilta. Ensimmäisessä rivissä avataan tiedosto lukemista varten ja tallennetaan se muuttujaan `tiedosto`. Tämän jälkeen `while`-silmukan avulla käydään tiedosto läpi ja `readStringUntil()` -funktiolla luettaan rivi kerrallaan ja tulostetaan se sarjaporttiin `Serial.println()` avulla.
 
-- [Arduino SD Library](https://www.arduino.cc/en/reference/SD)
-- [ESP8266WiFi Library](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
+Jos haluat lukea vain tietyn kohdan tiedostosta, voit käyttää `seek()`-funktiota ja määrittää haluamasi aloituspaikan tiedostossa. Tämä on hyödyllistä esimerkiksi jos tekstitiedostossa on tietty otsikko ja haluat aloittaa lukemisen vasta sen jälkeen.
+
+```Arduino
+// Avataan tiedosto lukemista varten
+File tiedosto = SD.open("tiedosto.txt");
+
+// Siirrytään aloituspaikkaan
+tiedosto.seek(10);
+
+// Luetaan tiedostosta
+Serial.println(tiedosto.readString());
+```
+
+Tässä esimerkissä ensimmäinen rivi avaa tiedoston lukemista varten ja tallentaa sen muuttujaan `tiedosto`. Toisessa rivissä käytetään `seek()`-funktiota ja siirrytään 10 merkin päähän tiedoston alusta. Viimeisessä rivissä luetaan tiedostosta `readString()`-funktiolla.
+
+## Syvemmälle
+
+Tiedostojen lukeminen Arduino-koodilla vaatii yleensä SD-kortin lisäämistä ja ohjelman uudelleenkäynnistyksen jokaisen lisäyksen jälkeen. Tämä johtuu siitä, että ohjelma tarvitsee syklin uudelleenkäynnistävän `setup()`-funktion suorittamisen ennen kuin se pystyy lukemaan tiedostoja.
+
+Jos haluat lukea tekstitiedostoja ilman SD-korttia, voit käyttää `Serial`-tulostustoimintoa Arduino IDE:ssa. Tällöin voit ohjata tiedoston lukuprosessin suoraan sarjaportin kautta.
+
+```Arduino
+// Luetaan tiedostoa sarjaportin kautta
+while(Serial.available()) {
+  char data = Serial.read();
+  Serial.write(data);
+}
+```
+
+Tässä esimerkissä ohjelma lukee tiedostoa sarjaportin kautta ja kirjoittaa sen takaisin sarjaporttiin. Tätä menetelmää voi käyttää myös tiedoston lukemiseen muista laitteista, kuten tietokoneesta tai matkapuhelimesta.
+
+## Katso myös
+
+- https://www.arduino.cc/en/Reference/File
+- https://www.arduino.cc/reference/en/language/functions/files-io/open/
+- https://create.arduino.cc/projecthub/Arduino_Genuino/sd-card-module-with-arduino-how-to-read-write-with-i-o-4e9264

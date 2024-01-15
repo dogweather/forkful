@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Konwersja ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Arduino: Konwersja ciągu znaków na małe litery"
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,32 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami może zdarzyć się, że użytkownicy wprowadzają tekst z błędnie używanymi wielkimi literami lub znakami. W takiej sytuacji może być potrzeba zamiany tych znaków na małe litery, aby uniknąć pomyłek lub niepoprawnych wyników działania programu. W tym artykule dowiesz się, jak przekonwertować string na małe litery w Arduino.
+Konwersja łańcucha znaków na małe litery jest często niezbędna w programowaniu, szczególnie w przypadku pracy z tekstem. Pozwala to na ujednolicenie danych i ułatwia dalsze przetwarzanie. W ten sposób można również uniknąć problemów z błędnym rozpoznawaniem słów czy znaków.
 
 ## Jak to zrobić
 
-Aby przekonwertować string na małe litery w Arduino, należy zastosować funkcję "toLowerCase()", która jest dostępna w bibliotece "String". Poniżej przedstawiono przykładowy kod oraz wynik jego działania:
+Konwersja łańcucha znaków na małe litery jest możliwa przy użyciu funkcji `toLowerCase()`, która jest dostępna w języku Arduino. Poniżej przedstawiono przykładowy kod, który wprowadzi cię w temat.
 
 ```Arduino
-#include <String.h>
+String slowo = "KOT";
+String male_litery = slowo.toLowerCase();
 
-String str = "Hello World!";
-String newStr = str.toLowerCase();
-Serial.println(newStr);
-
+Serial.println(male_litery); // wyświetli "kot"
 ```
-Output: hello world!
 
-W powyższym przykładzie, wykorzystano funkcję "toLowerCase()" do przekonwertowania stringa "Hello World!" na małe litery i wyświetlono go za pomocą funkcji "Serial.println". W ten sposób można wprowadzić dane użytkownika i upewnić się, że są one w odpowiednim formacie.
+Funkcja `toLowerCase()` zamienia wszystkie litery w łańcuchu na ich odpowiedniki w małych literach. Jeśli potrzebujesz tylko pierwszą literę zmienić na małą, możesz skorzystać z funkcji `toLowercase[0]`.
 
-## Deep Dive
+## Dogłębna analiza
 
-Funkcja "toLowerCase()" jest wykorzystywana do zmiany każdego znaku w stringu na małą literę. Jeśli chcesz zachować pierwszą literę jako dużą, możesz wykorzystać funkcję "toUpperCase()" na pierwszym elemencie stringa. Warto również pamiętać, że funkcja ta nie zmienia oryginalnego stringa, ale zwraca nowy string z przekonwertowanymi literami.
+Zwróć uwagę, że funkcja `toLowerCase()` zwraca kopię otrzymanego łańcucha, a nie modyfikuje go bezpośrednio. Jeśli chcesz zmienić oryginalny łańcuch, musisz przypisać wartość zwróconą przez funkcję do zmiennej, tak jak w przykładzie powyżej.
 
-Inną przydatną funkcją związaną z konwersją liter jest "charAt()". Pozwala ona na dostęp do poszczególnych znaków w stringu i może być wykorzystana w połączeniu z funkcją "toLowerCase()", aby przekonwertować tylko wybrane znaki na małe litery.
+Ponadto, funkcja `toLowerCase()` nie działa tylko na pojedynczych znakach, ale również na całych łańcuchach. Możesz więc przekazać do niej zmienną typu `String` lub wprowadzić wartość bezpośrednio.
+
+Innym sposobem na konwersję łańcucha znaków na małe litery jest użycie pętli `for` i funkcji `isAlpha()`, która sprawdza, czy dany znak jest literą. Należy jednak pamiętać, że ta metoda wymaga więcej kodu i może być mniej wydajna.
 
 ## Zobacz również
 
-1. Dokumentacja funkcji toLowerCase() (https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-2. Przykłady zastosowania funkcji toLowerCase() (https://www.arduino.cc/en/Tutorial/StringCaseChanges)
-3. Przewodnik po konwersji danych w Arduino (https://blog.arduino.cc/2016/08/04/casting-and-converting-data-in-arduino/)
+- [Dokumentacja funkcji `toLowerCase()` w języku Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/tostring/)
+- [Tutorial o konwersji łańcuchów znaków na małe litery w języku C](https://www.programiz.com/c-programming/library-function/string/tolower)

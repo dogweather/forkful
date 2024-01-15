@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Työskentele jsonin kanssa"
-simple_title:         "Työskentele jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Elixir: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -9,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## MiksiElixir on moniparannettu ja puhtaan funktionaalinen ohjelmointikieli, joka on tullut yhä suositummaksi ohjelmoijien ja yritysten keskuudessa. JSON on yksi syy, miksi Elixir on niin voimakas työkalu kehittäjille. JSON-tiedostot ovat yleinen tapa siirtää tietoa ja Elixirin avulla voit helposti lukea, käsittellä ja luoda JSON-tiedostoja. Lisäksi Elixirin tehokkaat toiminnot tekevät siitä ihanteellisen kielen JSON-tietojen kanssa työskentelyyn.
+## Miksi
 
-## Kuinka tehdä sitä
+JSON on yksi yleisimmin käytetyistä tiedonsiirtomuodoista web-kehityksessä, ja Elixir-ohjelmointikielen avulla sen käsittely on nopeaa ja tehokasta.
 
-JSON-tietojen lukeminen Elixirillä on helppoa. Käytä ensin `HTTPoison` kirjastoa lähettääksesi GET-pyynnön API:lle ja tallentamalla vastauksen `HTTPoison.get` komennolla.
-
-```Elixir
-response = HTTPoison.get!("https://exampleapi.com/users")
-```
-
-Sitten voit käyttää `Jason` kirjastoa muuntaaksesi vastauksen JSON-muotoon.
+## Miten
 
 ```Elixir
-json = Jason.decode(response.body)
+# Esimerkki JSON-tiedon lukemisesta ja muuttamisesta
+
+# Avataan JSON-tiedosto ja tallennetaan sen sisältö muuttujaan
+{:ok, json_data} = File.read("data.json")
+
+# Muutetaan JSON-data Elixirin map-tietotyypiksi
+json_map = Jason.decode!(json_data)
+
+# Haetaan mapista tietty arvo käyttäen avain-arvo-paria
+value = json_map["key"]
+
+# Muutetaan Elixirin map takaisin JSON-muotoon
+new_json = Jason.encode!(json_map)
 ```
 
-Tämän jälkeen voit käyttää `Enum` toimintoja käsittelyssä ja suodattamisessa.
-
+### Tulostus:
 ```Elixir
-users = json
-  |> Enum.filter(fn user -> Map.get(user, "role") == "admin" end)
-  |> Enum.map(fn user -> %{name: user["name"], email: user["email"]} end)
+# json_map
+%{"key" => "value"}
 
-IO.inspect(users)
+# value
+"value"
+
+# new_json
+"{\"key\":\"value\"}"
 ```
 
-Tämä koodi suodattaa JSON-taulukosta vain käyttäjät, jotka ovat rooliltaan "admin" ja luo uuden listan käyttäjistä, jotka sisältävät vain nimen ja sähköpostiosoitteen. Lopuksi `IO.inspect` tulostaa lopputuloksen.
+## Syventävä tutustuminen
 
-## Syvempi sukellus
-
-Elixir tarjoaa myös sisäänrakennetun `Poison` kirjaston, joka tekee JSON-tiedoston luomisesta erittäin helppoa. Voit luoda JSON-tiedoston seuraavasti:
-
-```Elixir
-result = Poison.encode(%{name: "John", age: 30})
-```
-
-Tämä luo JSON-tiedoston, joka näyttää tältä: `{"name": "John", "age": 30}`. Voit myös käyttää `Poison` kirjastoa muuntamaan Elixir-tyyppisiä arvoja JSON-muotoon.
-
-```Elixir
-output = %{name: "Sara", age: 25} |> Poison.encode!
-```
-
-Tämä tuottaa seuraavanlaisen JSON-tiedoston: `{"name": "Sara", "age": 25}`.
+Elixir tarjoaa monipuolisia työkaluja JSON-datan käsittelyyn, kuten sisäänrakennetut moduulit Jason ja Poison. Jason on nopeampi mutta rajoitetumpi, kun taas Poison mahdollistaa monimutkaisemman JSON-rakenteen käsittelyn. Lisäksi Elixir tarjoaa mahdollisuuden luoda omia JSON-parsereita tarvittaessa.
 
 ## Katso myös
 
-- Elixirin viralliset verkkosivut: https://elixir-lang.org/
-- HTTPoison kirjaston dokumentaatio: https://hexdocs.pm/httpoison/
-- Jason kirjaston dokumentaatio: https://hexdocs.pm/jason/
-- Poison kirjaston dokumentaatio: https://hexdocs.pm/poison/
+- [Elixirin virallinen JSON-dokumentaatio](https://hexdocs.pm/jason/readme.html)
+- [Poisonin GitHub-sivu](https://github.com/devinus/poison)

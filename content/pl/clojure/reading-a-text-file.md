@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Odczytywanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Clojure: Odczytywanie pliku tekstowego"
 simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,46 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto przeczytać plik tekstowy?
+## Dlaczego
 
-Jeśli jesteś programistą Clojure i potrzebujesz przetworzyć plik tekstowy, to ten artykuł jest dla Ciebie! Dowiesz się, jak w prosty sposób dokonać odczytu pliku tekstowego w języku Clojure.
+Jeśli chcesz pracować jako programista w Clojure, czy to jako hobbysta czy zawodowiec, musisz umieć czytać i manipulować plikami tekstowymi. Pliki tekstowe są podstawowym sposobem przechowywania danych i konieczne jest zrozumienie, jak je odczytywać w Clojure.
 
-## Jak to zrobić?
-
-Pierwszym krokiem będzie użycie funkcji `slurp`, która wczyta całą zawartość pliku jako pojedynczy string. Przykład:
+## Jak to zrobić
 
 ```Clojure
-(def file-content (slurp "plik.txt"))
+; Otwarcie pliku tekstowego przez nazwę (zwraca strumień)
 
-;; Output: "To jest przykładowy plik tekstowy."
+(def file (clojure.java.io/reader "plik.txt"))
+
+; Otwarcie pliku przez ścieżkę (zwraca strumień)
+
+(def file (clojure.java.io/reader "ścieżka/do/pliku.txt"))
+
+; Odczytanie zawartości pliku w całości (zwraca ciąg)
+
+(slurp file)
+
+; Odczytanie zawartości pliku wiersz po wierszu (zwraca sekwencję wierszy)
+
+(line-seq file)
+
+; Zamykanie strumienia pliku
+
+(.close file)
+
 ```
 
-Jeśli chcesz przetworzyć zawartość pliku linia po linii, możesz skorzystać z funkcji `line-seq`, która zwraca sekwencję zawierającą kolejne linie z pliku. Przykład:
+Przykład:
+
+Jeśli mamy plik o nazwie "dane.txt" z następującą zawartością:
+
+```
+Imię: Anna
+Wiek: 30
+Miasto: Kraków
+```
+
+To możemy go odczytać i przypisać wartości do zmiennych w ten sposób:
 
 ```Clojure
-(def lines (line-seq (clojure.java.io/reader "plik.txt")))
+(def file (clojure.java.io/reader "dane.txt"))
+(def imie (nth (line-seq file) 0))
+(def wiek (nth (line-seq file) 1))
+(def miasto (nth (line-seq file) 2))
 
-;; Output: ("To jest przykładowy plik tekstowy.")
+; Wyświetlenie wyników
+
+(imie) ; "Imię: Anna"
+(wiek) ; "Wiek: 30"
+(miasto) ; "Miasto: Kraków"
+
+(.close file)
 ```
 
-Jeśli chcesz użyc different parser, możesz skorzystać z biblioteki `clojure.data.csv` oraz funkcji `csv/read-csv`, aby przetworzyć plik CSV. Przykład:
+## Głębsza analiza
 
-```Clojure
-(require '[clojure.data.csv :as csv])
-
-(csv/read-csv (clojure.java.io/reader "plik.csv"))
-
-;; Output: (["Imię" "Nazwisko" "Wiek"] ["Jan" "Kowalski" "30"] ["Anna" "Nowak" "25"] ["Tomasz" "Nowicki" "40"])
-```
-
-## Głębsze wgląd
-
-Funkcję `slurp` oraz `line-seq` możesz wykorzystać także z dodatkowymi opcjami, takimi jak ustawienie kodowania, trybu czytania pliku, czy wczytanie pliku z poziomu zasobów katalogu bieżącego. Więcej informacji na temat tych funkcji znajdziesz w dokumentacji języka Clojure.
+Funkcja `(clojure.java.io/reader)` zwraca strumień, który jest później wykorzystywany przez funkcje `slurp` i `line-seq`. Strumienie te są automatycznie zamykane, gdy funkcja `(.close)` jest wywołana. Pamiętaj, aby zawsze zamknąć strumień po zakończeniu pracy - jest to ważne dla wydajności i bezpieczeństwa.
 
 ## Zobacz również
 
-- [Dokumentacja języka Clojure](https://clojure.org/documentation)
-- [Biblioteka clojure.data.csv](https://clojure.github.io/data.csv/)
-- [Przykładowe pliki testowe](https://github.com/clojure/clojure/tree/master/test)
-
-Dzięki tym prostym przykładom i wskazówkom, bez problemu będziesz w stanie odczytać plik tekstowy w języku Clojure. W razie potrzeby, możesz także skorzystać z innych funkcji i bibliotek, które ułatwią przetwarzanie danych z plików tekstowych.
+- [Dokumentacja Clojure do funkcji `clojure.java.io/reader`](https://clojuredocs.org/clojure.java.io/reader)
+- [Poradnik do manipulacji plikami w Clojure](https://techbeacon.com/how-manipulate-files-clojure)

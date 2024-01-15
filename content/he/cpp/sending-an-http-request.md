@@ -1,5 +1,6 @@
 ---
-title:                "C++: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "C++: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "C++"
 category:             "C++"
@@ -9,63 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
+# למה
+HTTP בסיסיות טוענו מחדש ולמתקדמים הוא הערכה מחדש
 
-כשרוצים לשלוח בקשת HTTP בתכנות עם C++, ייתכן שנרצה לתקשר עם שרת או אפליקציה אחרת ולקבל מידע מעודכן מהם באופן דינמי.
-
-## איך לבצע:
-
-לפני שנתחיל לשלוח בקשת HTTP ב-C++, יש לוודא שכל הסביבה הנחוצה כמו ספריות ה-initiate ו-cookie מוכנות ומוכנות לשימוש. ניתן להשתמש בספריות כמו Libcurl עבור פעולות פשוטות ו-Boost.ASIO כדי לבצע פעולות מתקדמות יותר. להלן דוגמא לכתיבת פונקציה שתשלח בקשת GET לשרת ותהיה מקבלת ומדפיסה את התוצאה:
-
+## כיצד לעשות
+הינו:
 ```C++
 #include <iostream>
-#include <boost/asio.hpp>
+#include <curl/curl.h>
 
-using boost::asio::ip::tcp;
-
-// פונקציה לשלוח בקשת GET לשרת ולקבל ולהדפיס את התוצאה
-std::string send_http_request(std::string host) {
-    // יצירת רכיב הפעולה
-    boost::asio::io_context io_context;
-
-    // יצירת קליינט TCP
-    tcp::resolver resolver(io_context);
-    tcp::socket socket(io_context);
-
-    // מתודת החיבור, התאמת ההתחברות ושלוח GET בקבצי Socket בקליינט באמצעות כתובת הIP המישמש על ידי השרת
-    boost::asio::connect(socket, resolver.resolve(host, "http"));
-    boost::asio::streambuf request;
-    std::ostream request_stream(&request);
-    request_stream << "GET / HTTP/1.0\r\n";
-    request_stream << "Host: " << host << "\r\n";
-    request_stream << "Accept: */*\r\n";
-    request_stream << "Connection: close\r\n\r\n";
-
-    // כתיבת בקשה לשרת
-    boost::asio::write(socket, request);
-
-    // קריאה והדפסת תוצאה מחזרת מהשרת
-    boost::asio::streambuf response;
-    boost::asio::read_until(socket, response, "\r\n");
-    std::string result;
-    std::istream response_stream(&response);
-    while (!response_stream.eof()) {
-        std::getline(response_stream, result);
-    }
-
-    return result;
-}
-
-// פונקציה עיקרית להרצת הקוד ובדיקת פעולתו
 int main() {
-    std::cout << "Send HTTP request..." << std::endl;
-    std::string result = send_http_request("www.example.com");
-    std::cout << "Response from server: " << std::endl;
-    std::cout << result << std::endl;
-    return 0;
+  CURL *curl;
+  CURLcode res;
+  
+  // יצירת עצם CURL לבצע בקשה HTTP
+  curl = curl_easy_init();
+
+  // הצהרה על הכתובת
+  curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com/");
+
+  // ביצוע הפעולה ובדיקת התוצאה
+  res = curl_easy_perform(curl);
+  if(res != CURLE_OK)
+    fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            curl_easy_strerror(res));
+    
+  // השבתת עצם CURL
+  curl_easy_cleanup(curl);
+  
+  return 0;
 }
 ```
 
-## הכנסה למים בעומק:
+כפי שאתה רואה, השימוש בספריית libcurl יכול לסייע בשליחת בקשות HTTP פשוטות. בקוד זה, אנו יצרים עצם CURL ומגדירים את הכתובת לכתובת שלאתר הדוגמה. תוצאת הביצוע תודפס במסך והעצם CURL ישוחרר.
 
-שליחת בקשת HTTP ב-C++ נעשית על ידי יצירת חיבור TCP וש
+## טיפול עמוק
+כאשר אנו שולחים בקשת HTTP, אנו בעצם שולחים פנייה לשרת ומבקשים ממנו לעשות פעולה ספציפית. הפנייה מכילה את הכתובת של האתר, מתודת הפעולה (GET, POST, PUT וכו') ופרמטרים נוספים אופציונליים. בנוסף, עלינו לטפל בתצורת הפנייה (headers) ובגוף הבקשה (body), אם הינו זקוקים לכך. כמו כן, אנו יכולים לקבל תגובה מהשרת בצורת קוד תגובה (response code) ותוכן (response body).
+
+# ראה גם
+- [libcurl website](https://curl.se/libcurl/)
+- [HTTP Request in C++ using libcurl](https://dev.to/shahriyar/https-request-in-c-using-libcurl-421p)
+- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)

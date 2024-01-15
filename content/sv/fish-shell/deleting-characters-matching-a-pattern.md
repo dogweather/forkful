@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Radering av tecken som matchar ett mönster"
+title:                "Radering av tecken som matchar ett mönster"
+html_title:           "Fish Shell: Radering av tecken som matchar ett mönster"
 simple_title:         "Radering av tecken som matchar ett mönster"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,40 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster är en användbar funktion inom Fish Shell som kan hjälpa dig att effektivisera ditt program. Detta kan till exempel vara användbart om du behöver rensa bort oönskade tecken i ett dokument eller om du vill manipulera text på ett smidigt sätt.
+Att kunna ta bort tecken som matchar ett mönster kan vara en användbar funktion när man arbetar med textfiler eller kommandoradsverktyg. Det kan hjälpa till att effektivisera arbetsflödet och spara tid.
 
-## Så här gör du
+## Hur man gör det
 
-För att ta bort tecken som matchar ett visst mönster kan du använda kommandot `string replace`. Detta kommando tar tre argument: det första är mönstret som ska matchas, det andra är det tecken som ska ersättas och det tredje är den befintliga texten som du vill manipulera. Här är ett exempel på hur du kan använda det:
-
-```Fish Shell
-string replace hund katt "jag äger en hund"
-```
-
-I detta fall kommer kommandot att byta ut alla förekomster av ordet "hund" med ordet "katt" i textsträngen "jag äger en hund". Detta skulle ge följande output:
-
-```
-jag äger en katt
-```
-
-Du kan även använda reguljära uttryck för att matcha ett mer komplicerat mönster. Till exempel kan du använda `.*` för att matcha alla tecken före och efter ett visst ord. Här är ett exempel på hur du kan använda det:
+Fish Shell har en inbyggd funktion för att ta bort tecken som matchar ett visst mönster. För att använda det behöver du bara skriva "string nomatch -nm 'mönster'" i terminalen.
 
 ```Fish Shell
-string replace ".* äger en" "har en" "jag äger en hund"
+string "Hello World!" nomatch -nm "o"
 ```
 
-Detta skulle ge följande output:
+Detta kommer att resultera i "Hell Wrl".
 
-```
-har en hund
-```
+## Djupdykning
 
-## Utforska djupare
+Det finns flera olika flaggor som kan användas för att anpassa borttagningen av tecken. Förutom "-nm" som står för "nomatch" finns det också "-eq" för "equal" och "-ne" för "not equal". Det finns också ett antal andra flaggor som kan användas för att specificera ett mer exakt mönster eller påverka borttagningen på andra sätt.
 
-För mer komplexa användningar kan du använda `string sub` istället för `string replace`. Detta kommando har möjlighet att ta emot en lista av reguljära uttryck och ersättningssträngar, vilket ger dig ännu mer kontroll över vilka tecken som ska manipuleras och hur de ska ersättas. Du kan läsa mer om detta på Fish Shells dokumentationsida.
+Det är också möjligt att ange ett område av tecken som ska tas bort genom att använda "string nomatch -nm 'mönster[start-end]'" där "start" och "end" är index som anger vilken del av strängen som ska bort. Till exempel kan "string "Hello World!" nomatch -nm "3-7"" ge resultatet "Hel World!".
 
-## Se också
+## Se även
 
-1. Fish Shell - https://fishshell.com
-2. Fish Shell dokumentation - https://fishshell.com/docs/current/cmds.html#string-cmds
-3. Reguljära uttryck - https://en.wikipedia.org/wiki/Regular_expression
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
+- [En utförlig guide till Fish Shell](https://hackernoon.com/an-advanced-guide-to-fish-shell-57e14b7dd89f)

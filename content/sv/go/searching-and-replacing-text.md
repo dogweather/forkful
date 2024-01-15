@@ -1,5 +1,6 @@
 ---
-title:                "Go: Söka och ersätta text"
+title:                "Söka och ersätta text"
+html_title:           "Go: Söka och ersätta text"
 simple_title:         "Söka och ersätta text"
 programming_language: "Go"
 category:             "Go"
@@ -10,37 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en vanlig process inom programmering som kan effektivisera och underlätta arbetsflödet. I Go-språket finns det många inbyggda funktioner som gör det enkelt att utföra sökningar och ersättningar i text.
 
-## Hur man gör
-För att söka och ersätta text i Go använder man sig av funktionen "strings.Replace()". Denna funktion tar in tre argument: strängen som ska sökas igenom, strängen som ska ersättas och det antal gånger som ersättningen ska göras. Nedan finns ett exempel på hur man kan använda funktionen:
+I dagens digitala värld är det vanligt att behöva ändra eller ersätta text i stora mängder, och Go erbjuder ett effektivt sätt att göra det. Genom att använda Go för sökning och ersättning av text kan du automatisera dina uppgifter och spara både tid och ansträngning.
+
+## Så här gör du
+
+För att söka och ersätta text i ett dokument med Go använder du funktionen "ReplaceAllString" från paketet "regexp". Här är ett exempel på hur du kan ersätta alla förekomster av ordet "hund" med "katt" i en sträng:
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"strings"
+	"regexp"
 )
 
 func main() {
-	originalStr := "Välkommen till Golang!"
-	ersattStr := strings.Replace(originalStr, "Golang", "Go", 1)
-	fmt.Println(ersattStr)
+	text := "Min hund är den bästa hunden i världen"
+	ersattText := regexp.MustCompile("hund").ReplaceAllString(text, "katt")
+	fmt.Println(ersattText)
 }
 ```
 
-Output:
-```
-Välkommen till Go!
-```
-
-Detta exempel visar hur man enkelt kan ersätta en del av en sträng med en annan del.
+Detta skulle resultera i utmatningen: "Min katt är den bästa katten i världen". Som du kan se anropar vi "ReplaceAllString" metoden på en variabel från "regexp" paketet och anger sedan de sökta och ersätta termerna som parametrar.
 
 ## Djupdykning
-För den som vill veta mer om hur sökningar och ersättningar fungerar i Go-språket finns det flera olika metoder och tekniker som man kan använda sig av. En vanlig teknik är att använda reguljära uttryck för att söka efter mönster i en sträng. Go har inbyggda paket för reguljära uttryck, såsom "regexp", som gör det enkelt att söka och ersätta text baserat på ett givet mönster.
+
+Utöver grundläggande sökning och ersättning av text kan Go också erbjuda stöd för användning av metakaraktärer och regelbundna uttryck för mer avancerad textmanipulering. Dessutom kan Go hantera specialtecken som t.ex. emoticons eller emoji, vilket kan vara utmanande i andra programmeringsspråk.
 
 ## Se även
-- [Go-dokumentationen för strings.Replace()](https://golang.org/pkg/strings/#Replace)
-- [En guide till reguljära uttryck i Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
-- [Go:s inbyggda paket för reguljära uttryck](https://golang.org/pkg/regexp/)
+
+- Officiell Go-sida för sökning och ersättning av text: https://golang.org/pkg/regexp/
+- En tutorial om Go och regelbundna uttryck: https://www.linode.com/docs/guides/using-regular-expressions-with-golang/
+- Go-samhällets forum för diskussioner och hjälp med Go-programmering: https://forum.golangbridge.org/

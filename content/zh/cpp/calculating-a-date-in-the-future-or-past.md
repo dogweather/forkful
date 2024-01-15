@@ -1,6 +1,7 @@
 ---
-title:                "C++: 未来或历史日期的计算"
-simple_title:         "未来或历史日期的计算"
+title:                "计算未来或过去的日期."
+html_title:           "C++: 计算未来或过去的日期."
+simple_title:         "计算未来或过去的日期."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,58 +12,112 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编写程序时，我们经常需要计算未来或过去的日期。这有助于我们规划活动、跟踪时间，或者在需要时提醒我们重要的事件。使用C++编写代码可以帮助我们快速有效地计算日期，让我们更有效地管理时间。 
+在日常生活中，我们经常需要计算未来或过去的日期，例如计算下个月的生日是星期几，或者确认某个事件是几天前发生。编程可以帮助我们更快速和准确地进行这些计算，从而帮助我们更好地安排日常生活。
 
-## 如何做
+## 如何
 
-在C++中，我们可以使用time.h头文件中的函数来计算未来或过去的日期。首先，我们需要声明一个tm结构体，这个结构体包含了年、月、日、时、分、秒等日期和时间信息。然后，我们可以使用mktime()函数来将tm结构体转换为时间戳，并根据需要进行加减来计算未来或过去的日期。最后，我们可以使用strftime()函数来将得到的时间戳格式化为我们所需要的日期格式。下面是一个计算明天日期的示例代码：
+计算日期涉及到大量的数学计算，但是使用C++编程语言可以让这个过程更简单和高效。首先，我们需要定义一个结构体来存储日期的信息，包括年、月和日。然后，我们可以使用if语句和循环来判断输入的日期是否合法，并计算出未来或过去的日期。
 
 ```C++
-#include <iostream>
-#include <ctime>
+// 定义结构体存储日期信息
+struct Date {
+    int year;
+    int month;
+    int day;
+};
 
-using namespace std;
-
-int main() {
-    // 声明tm结构体
-    tm t;
-    
-    // 获取当前时间
-    time_t now = time(0);
-    
-    // 将当前时间转换为tm结构体
-    tm *ltm = localtime(&now);
-    
-    // 设置tm结构体中的日期为明天（今天日期加一）
-    t.tm_mday = ltm->tm_mday + 1;
-    
-    // 将tm结构体转换为时间戳
-    time_t tomorrow = mktime(&t);
-    
-    // 格式化输出明天的日期
-    cout << "明天的日期是：";
-    cout << strftime("%Y年%m月%d日", localtime(&tomorrow));
-    
-    return 0;
+// 判断是否是闰年
+bool isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
-```
 
-运行上述代码，输出结果如下：
+// 计算未来一天的日期
+void calculateFutureDate(Date currentDate) {
+    // 判断是否是2月
+    if (currentDate.month == 2) {
+        // 判断是否是闰年
+        if (isLeapYear(currentDate.year)) {
+            // 如果是闰年且日期为29号，则转跳到3月
+            if (currentDate.day == 29) {
+                currentDate.month++;
+                currentDate.day = 1;
+            } else {
+                // 否则日期加一
+                currentDate.day++;
+            }
+        } else {
+            // 不是闰年且日期为28号，则转跳到3月
+            if (currentDate.day == 28) {
+                currentDate.month++;
+                currentDate.day = 1;
+            } else {
+                // 否则日期加一
+                currentDate.day++;
+            }
+        }
+    } else {
+        // 判断是否是31天的大月份
+        if ((currentDate.month == 1 || currentDate.month == 3 || currentDate.month == 5 || currentDate.month == 7 || currentDate.month == 8 || currentDate.month == 10 || currentDate.month == 12) && currentDate.day == 31) {
+            // 转跳到下一个月
+            if (currentDate.month == 12) {
+                currentDate.year++;
+                currentDate.month = 1;
+            } else {
+                currentDate.month++;
+            }
+            currentDate.day = 1;
+        } else if (currentDate.day == 30) {
+            // 转跳到下一个月（4、6、9、11月）
+            currentDate.month++;
+            currentDate.day = 1;
+        } else {
+            // 日期加一
+            currentDate.day++;
+        }
+    }
+}
 
-```
-明天的日期是：2020年06月21日
-```
+// 计算过去一天的日期
+void calculatePastDate(Date currentDate) {
+    if (currentDate.day == 1) {
+        if (currentDate.month == 1) {
+            // 转跳到上一年
+            currentDate.year--;
+            currentDate.month = 12;
+            currentDate.day = 31;
+        } else {
+            // 转跳到上一个月
+            currentDate.month--;
+            // 判断是否是31天的大月份
+            if (currentDate.month == 1 || currentDate.month == 3 || currentDate.month == 5 || currentDate.month == 7 || currentDate.month == 8 || currentDate.month == 10 || currentDate.month == 12) {
+                currentDate.day = 31;
+            } else if (currentDate.month == 2) {
+                // 判断是否是闰年
+                if (isLeapYear(currentDate.year)) {
+                    currentDate.day = 29;
+                } else {
+                    currentDate.day = 28;
+                }
+            } else {
+                // 30天的小月份
+                currentDate.day = 30;
+            }
+        }
+    } else {
+        // 日期减一
+        currentDate.day--;
+    }
+}
 
-通过类似的方法，我们也可以计算过去的日期，只需将设置的日期加减改为减或加。同时，我们也可以根据需要设置tm结构体中的其他日期和时间信息来计算不同的日期。 
+// 示例输入日期为1月1日
+Date currentDate = {2019, 1, 1};
 
-## 深入探讨
+// 计算未来一天的日期
+calculateFutureDate(currentDate);
+cout << "未来一天的日期为：" << currentDate.year << "-" << currentDate.month << "-" << currentDate.day << endl;
 
-在深入探讨之前，我们需要了解一下时间戳的概念。时间戳是指从某个固定的时间（如1970年1月1日）开始所经过的秒数。通过时间戳，我们可以将日期和时间转换为一个整数，方便进行计算。在C++中，可以使用time(0)函数获取当前时间的时间戳。
-
-另外，时间戳也可以通过将tm结构体转换成time_t类型来获取。在示例代码中，我们通过mktime()函数将tm结构体转换为时间戳。
-
-## 参考链接
-
-- [C++中的时间和日期处理](https://www.geeksforgeeks.org/time-functions-in-c-c/)
-- [C++中的time.h头文件](http://www.cplusplus.com/reference/ctime/)
-- [时间戳的概念及应用](https://blog.csdn.net/wsssslgz/article/details/80497073)
+// 计算

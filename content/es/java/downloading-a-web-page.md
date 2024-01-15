@@ -1,6 +1,7 @@
 ---
-title:                "Java: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "Java: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,74 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué descargar una página web?
+## Por qué
 
-Descargar una página web puede ser útil para varios propósitos, como guardar una copia de seguridad de un sitio importante, acceder a contenido offline o analizar la estructura y el código de una página en particular.
+Descargar una página web usando Java es una habilidad valiosa para cualquier programador. Te permite acceder a contenido en línea y manipularlo según tus necesidades. Además, aprender cómo hacerlo puede mejorar tus habilidades en codificación y abrirte a nuevas posibilidades de proyectos.
 
 ## Cómo hacerlo
 
-Para descargar una página web en Java, podemos utilizar la clase URL y la clase URLConnection. Primero, debemos crear un objeto URL que represente la dirección de la página que queremos descargar:
+Para descargar una página web usando Java, primero debes importar la librería "java.net.*". Luego, sigue los siguientes pasos:
+
+1. Crea un objeto de URL usando la dirección de la página web que quieras descargar.
+2. Usa el método openConnection() para establecer una conexión con la página.
+3. Usa el método getInputStream() para obtener un flujo de entrada de la página.
+4. Usa un bucle para leer los datos del flujo de entrada y guardarlos en un String o escribirlos en un archivo.
+5. Cierra la conexión una vez que hayas terminado.
+
+A continuación, se muestra un ejemplo de código que descarga la página de inicio de Google y la imprime en la consola:
 
 ```Java
-URL url = new URL("https://www.ejemplo.com");
-```
+import java.net.*;
 
-Luego, podemos utilizar el método openConnection() para establecer una conexión con la página:
+public class DownloadPage {
 
-```Java
-URLConnection connection = url.openConnection();
-```
-
-Una vez que tenemos la conexión establecida, podemos utilizar la clase BufferedReader para leer los datos de la página:
-
-```Java
-BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-```
-
-Y finalmente, podemos guardar los datos en un archivo utilizando la clase FileWriter:
-
-```Java
-FileWriter fileWriter = new FileWriter("ejemplo.html");
-String input;
-while ((input = reader.readLine()) != null) {
-  fileWriter.write(input);
+  public static void main(String[] args) {
+    try {
+      URL url = new URL("https://www.google.com/");
+      URLConnection connection = url.openConnection();
+      BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      String inputLine;
+      while ((inputLine = reader.readLine()) != null) {
+        System.out.println(inputLine);
+      }
+      reader.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }
-fileWriter.close();
 ```
 
-Con estos pasos, hemos descargado la página web y guardado su contenido en un archivo llamado "ejemplo.html".
+La salida de este código será el código HTML de la página de inicio de Google. Puedes manipular este string según tus necesidades, como guardarla en un archivo o buscar ciertas etiquetas para extraer información específica.
 
 ## Profundizando
 
-Para descargar una página web de manera eficiente, también podemos utilizar la biblioteca Open Source Jsoup. Esta biblioteca nos permite parsear y manipular HTML de manera fácil y rápida.
+Si quieres profundizar en el tema, aquí tienes algunas cosas que puedes considerar:
 
-Para utilizar Jsoup, primero debemos agregar su dependencia en nuestro proyecto:
+1. Utilizar el método setRequestProperty() para añadir encabezados a la solicitud de conexión, por ejemplo, para establecer el agente de usuario.
+2. Usar una librería como Jsoup para analizar y manipular el HTML de la página descargada.
+3. Aprender sobre los diferentes tipos de solicitudes que se pueden hacer, como GET y POST, y cómo incluir parámetros.
+4. Aprender sobre manejo de errores y excepciones en caso de que la página no se pueda descargar correctamente.
 
-```Java
-dependencies {
-    implementation 'org.jsoup:jsoup:1.13.1'
-}
-```
-
-Luego, podemos utilizar su método connect() para obtener una conexión a la página y descargar su contenido:
-
-```Java
-Document document = Jsoup.connect("https://www.ejemplo.com").get();
-```
-
-También podemos usar select() para seleccionar elementos específicos de la página y obtener su contenido:
-
-```Java
-Elements elements = document.select("div.precio");
-String precio = elements.text();
-```
-
-Con Jsoup, podemos realizar tareas más complejas, como loguearnos en una página y descargar información exclusiva para usuarios registrados.
+¡Con estas herramientas y conocimientos, puedes descargar y manipular páginas web en Java como un profesional!
 
 ## Ver también
 
-Aquí hay algunos recursos adicionales en español que pueden ser útiles para descargar una página web en Java:
-
-- [Tutorial básico de descarga de páginas web en Java](https://jarroba.com/descargar-una-pagina-web-en-java/)
-- [Descargar una página web utilizando las clases URL y URLConnection](https://codigofacilito.com/articulos/descargar-na-pagina-web-java)
-- [Docs de la biblioteca Jsoup en español](https://jsoup.org/cookbook/extracting-data/working-with-urls)
+- Documentación oficial de la clase URL en Java: https://docs.oracle.com/javase/8/docs/api/java/net/URL.html
+- Tutorial sobre descarga de páginas web en Java: https://www.geeksforgeeks.org/downloading-web-page-using-java/

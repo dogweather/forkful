@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Kotlin: Odczytywanie argumentów wiersza poleceń"
 simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego 
 
-Czy kiedykolwiek słyszałeś o przekazaniu argumentów przez wiersz poleceń do swojego programu? Jeśli tak, być może zastanawiasz się, dlaczego jest to potrzebne lub przydatne. W tym artykule dowiesz się, dlaczego warto poznać tę funkcję w języku Kotlin.
+Jeśli jesteś programistą lub uczysz się programowania, prawdopodobnie słyszałeś już o języku Kotlin. Jest to język programowania, który zyskuje popularność ze względu na swoją prostotę i wydajność. W tym artykule dowiesz się, dlaczego jest ważne nauczyć się czytać argumenty z wiersza poleceń w języku Kotlin oraz jak to zrobić.
 
 ## Jak to zrobić
 
-Poznanie przekazywania argumentów przez wiersz poleceń w języku Kotlin jest bardzo proste. Wystarczy użyć wbudowanej funkcji "args" w głównym pliku programu. Poniżej przedstawiony jest przykładowy kod, który drukuje wszystkie przekazane argumenty w terminalu:
+Czytanie argumentów z wiersza poleceń jest ważną umiejętnością dla każdego programisty. Pozwala to na przekazywanie zewnętrznych danych do naszych programów. W języku Kotlin, aby odczytać argumenty z wiersza poleceń, należy użyć metody ```main```. Poniżej znajduje się kod przykładowy oraz jego wyjście:
 
 ```Kotlin
 fun main(args: Array<String>) {
+    println("Podane argumenty: ")
     for (arg in args) {
         println(arg)
     }
 }
 ```
 
-Jeśli uruchomisz ten program z argumentami "Hello", "world!", to w konsoli uzyskasz następujący wynik:
+**Wyjście:**
 
+Podane argumenty:
+argument1
+argument2
+argument3 
+
+Wyjaśnienie kodu: najpierw tworzymy funkcję ```main``` z jednym parametrem ```args```, który jest tablicą ciągów znaków. Następnie wypisujemy informację, że wyświetlamy podane argumenty. W pętli ```for``` iterujemy przez wszystkie argumenty i wypisujemy je na ekranie.
+
+## Deep Dive 
+
+W powyższym przykładzie użyliśmy metody ```Array<String>```, aby odczytać argumenty z wiersza poleceń. Jednak w Kotlinie istnieje również specjalna klasa ```args```, która jest zdefiniowana w pakiecie ```java.lang```. Dzięki temu nie musimy importować pakietu, aby jej używać. Możemy również przypisać argumenty z wiersza poleceń jako listę typu ```ArrayList```. Poniżej znajduje się kod pokazujący wykorzystanie tej klasy:
+
+```Kotlin
+fun main(args: Array<String>) {
+    val listOfArgs = ArrayList(args.asList())
+    println("Pierwszy argument: ${listOfArgs[0]}")
+}
 ```
-Hello
-world!
-```
 
-## Deep Dive
+**Wyjście:**
 
-W języku Kotlin możesz przekazywać argumenty wiersza poleceń nie tylko podczas uruchamiania programu, ale także w trakcie jego działania. Na przykład, jeśli użyjesz funkcji "readLine" w celu wprowadzenia argumentów przez użytkownika, zostaną one przekazane jako argumenty wiersza poleceń. Takie podejście może być bardzo przydatne, zwłaszcza w przypadku aplikacji konsolowych.
+Pierwszy argument: argument1
 
-Ponadto, możesz również określić typy danych argumentów wiersza poleceń, co ułatwia ich przetwarzanie. Na przykład, jeśli wiesz, że oczekiwane argumenty będą liczbami, możesz użyć funkcji "toInt" lub "toDouble" do ich przekonwertowania przed dalszym przetwarzaniem.
+Wyjaśnienie kodu: używamy metody ```asList()```, aby przekonwertować argumenty z wiersza poleceń na typ listy ```ArrayList```. Następnie wyświetlamy pierwszy argument z tej listy.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o przekazywaniu argumentów przez wiersz poleceń w języku Kotlin, polecam zapoznać się z dokumentacją języka oraz innych poradników dostępnych online:
-
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/command-line.html
-- Poradnik wideo na YouTube: https://www.youtube.com/watch?v=bw-cXwFWfWY
-- Artykuł na blogu Medium: https://medium.com/@thomasviana/kotlin-command-line-arguments-e7bd02f64ada
+1. Dokumentacja języka Kotlin na temat argumentów z wiersza poleceń - https://kotlinlang.org/docs/tutorials/command-line.html
+2. Temat odczytywania wejść z wiersza poleceń w języku Java - https://www.javatpoint.com/java-command-line-arguments
+3. Poradnik dla początkujących na temat języka Kotlin - https://kotlinlang.org/docs/tutorials/getting-started.html

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Unterstrings extrahieren"
+html_title:           "Ruby: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-Substring-Extraktion ist ein nützliches Konzept für Ruby-Programmierer, da es ermöglicht, eine Teilzeichenfolge aus einer größeren Zeichenfolge herauszufiltern. Dies kann hilfreich sein, um bestimmte Informationen aus einem längeren Text zu extrahieren oder um einen String in kleinere Abschnitte aufzuteilen.
+## Warum
 
-## Wie man es macht
-Um eine Substring-Extraktion in Ruby durchzuführen, verwenden wir die `slice` Methode. Hier ist ein Beispiel, in dem wir die Wörter "Hallo Welt" aus einem längeren Satz extrahieren:
+Wenn du schon eine Weile mit Ruby programmiert hast, hast du vielleicht schon mal die Notwendigkeit gehabt, einen Teil eines Strings zu extrahieren. Das Extrahieren von Substrings ist eine nützliche Technik, um Texte zu manipulieren und können dir dabei helfen, komplexe Aufgaben zu lösen.
 
-```Ruby 
-langer_satz = "Heute ist ein wunderschöner Tag und ich sage: Hallo Welt"
-puts langer_satz.slice(37..46)
-```
+## Wie geht das
 
-Die Ausgabe dieses Codes wäre "Hallo Welt", da wir den String von der 37. bis zur 46. Stelle schneiden.
-
-## Tiefere Einblicke
-Im obigen Beispiel haben wir den Substring explizit angegeben, indem wir die spezifischen Stellen angegeben haben, zwischen denen der String geschnitten werden soll. Aber es ist auch möglich, die Substring-Extraktion dynamischer zu gestalten, indem wir die `index` Methode verwenden, um die Stellen zu finden, an denen der Substring beginnen und enden soll. Hier ist ein Beispiel:
+Um einen Substring aus einem String zu extrahieren, kannst du die `[]`-Notation verwenden. Hier ist ein Beispiel, wie du den dritten bis fünften Buchstaben aus dem Wort "Ruby" extrahieren kannst:
 
 ```Ruby
-langer_satz = "Ich liebe Ruby-Programmierung"
-start = langer_satz.index("Ruby") # findet die Stelle, an der "Ruby" beginnt
-ende = langer_satz.index("rung") + 3 # findet die Stelle, an der "rung" endet
-puts langer_satz.slice(start..ende) # gibt den Substring "Ruby-Programmierung" aus
+"Ruby"[2..4]
 ```
 
-Wir können auch die `split` Methode verwenden, um einen String an bestimmten Trennzeichen aufzuteilen und dann den entsprechenden Index zu verwenden, um den gewünschten Substring auszuwählen. Hier ist ein Beispiel:
+Das Ergebnis wäre `"by"`, da die Zählung bei Strings in Ruby bei 0 beginnt. Du kannst auch negative Indizes verwenden, um die Zeichen von hinten auszuwählen. Zum Beispiel:
 
 ```Ruby
-langer_satz = "Ruby ist die beste Programmiersprache der Welt"
-worte = langer_satz.split(" ") # teilt den String an jedem Leerzeichen auf
-puts worte[3] # gibt den 3. Substring, also "beste", aus
+"Ruby"[-3..-1]
 ```
 
-# Siehe auch 
-- [Ruby-Dokumentation zu `slice`](https://ruby-doc.org/core-2.6.1/String.html#method-i-slice)
-- [Weitere Tipps zur Verwendung von Substrings in Ruby](https://www.rubyguides.com/2018/10/ruby-substring/)
+Dies würde auch in `"by"` resultieren, da `-1` das letzte Element im String ist.
+
+Du kannst auch die `slice`-Methode verwenden, um Substrings zu extrahieren. Hier ist ein Beispiel:
+
+```Ruby
+"Ruby".slice(1..3)
+```
+
+Das Ergebnis wäre wiederum `"uby"`.
+
+## Tiefentauchen
+
+Du kannst mit Substrings viel mehr machen, als nur Zeichen auszuwählen. Du kannst zum Beispiel nach bestimmten Mustern suchen und sie extrahieren. Dafür kannst du die `scan`-Methode verwenden. Hier ist ein Beispiel, um alle Zahlen aus einem String zu extrahieren:
+
+```Ruby
+"Ruby2021istgroßartig".scan(/\d+/)
+```
+
+Das Ergebnis wäre eine Array mit einem Element, nämlich `"2021"`.
+
+Du kannst auch mit regulären Ausdrücken `gsub` verwenden, um bestimmte Muster in einem String zu ersetzen. Hier ist ein Beispiel, um alle Leerzeichen in einem String durch ein Minus-Zeichen zu ersetzen:
+
+```Ruby
+"Ruby ist toll".gsub(" ", "-")
+```
+
+Das Ergebnis wäre `"Ruby-ist-toll"`.
+
+## Siehe auch
+
+- [String-Klasse in Ruby](https://ruby-doc.org/core-3.0.1/String.html)
+- [Reguläre Ausdrücke in Ruby](https://ruby-doc.org/core-3.0.1/Regexp.html)

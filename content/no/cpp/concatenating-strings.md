@@ -1,6 +1,7 @@
 ---
-title:                "C++: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenkobling av strenger"
+html_title:           "C++: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,73 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Hvis du noen gang har jobbet med å behandle tekst i et C++ program, har du sannsynligvis kommet over situasjoner der du trenger å kombinere flere strenger til en enkelt streng. Dette kan være for å lage en komplett setning eller for å bygge en kompleks datastruktur. Uansett årsak, er konkatenering av strenger en viktig del av programmering og en ferdighet som absolutt er verdt å mestre.
+## Hvorfor
 
-# Hvordan konkatenering av strenger fungerer
-For å begynne å konkatenere strenger i C++, trenger du først å inkludere standardbiblioteket <string>. Dette gir deg tilgang til funksjoner og objekter som er nødvendige for å jobbe med strenger. Deretter kan du bruke operatoren "+" for å kombinere to strenger. For eksempel:
+Å kombinere strenger er en viktig del av programmering, spesielt når man jobber med tekstbaserte applikasjoner. Det lar deg lage dynamiske og mer komplekse tekster ved å sette sammen flere mindre biter.
+
+## Hvordan
+
+For å kombinere strenger i C++, kan du bruke operatoren "+" eller funksjonen "concatenate()". La oss se på noen eksempler:
+
+### Eksempel 1: "+" operatør
 
 ```C++
-
-#include <string>
 #include <iostream>
+using namespace std;
 
 int main() {
-    string navn = "Per";
-    string etternavn = "Hansen";
-
-    string heltnavn = navn + etternavn;
-
-    std::cout << heltnavn << std::endl;
+  string navn = "Lars";
+  string etternavn = "Olsen";
+  string navn_etternavn = navn + " " + etternavn;
+  cout << navn_etternavn << endl;
+  return 0;
 }
 ```
 
-Dette vil gi følgende utskrift:
+**Output**: Lars Olsen
 
-```
-PerHansen
-```
+Her har vi satt sammen tre strenger ved hjelp av "+" operatøren. Den første stringen er navnet, deretter legger vi til et mellomrom og til slutt legger vi til etternavnet. Ved å bruke denne operatøren, kan du enkelt legge til hvilke som helst antall strenger.
 
-Operatoren "+" kan også brukes til å kombinere flere strenger på en gang, for eksempel:
+### Eksempel 2: concatenate() funksjon
 
 ```C++
-string ord1 = "Hei";
-string ord2 = "alle";
-string ord3 = "!";
+#include <iostream>
+#include <string>
+using namespace std;
 
-string setning = ord1 + " " + ord2 + ", " + ord3;
-
-std::cout << setning << std::endl;
+int main() {
+  string produktnavn = "Melk";
+  string merke = "Tine";
+  string produkt = concatenate("Jeg kjøpte ", produktnavn, " fra ", merke, " i dag.");
+  cout << produkt << endl;
+  return 0;
+}
 ```
 
-Dette vil gi utskriften:
+**Output**: Jeg kjøpte Melk fra Tine i dag.
 
-```
-Hei alle, !
-```
+I dette eksempelet bruker vi "concatenate()" funksjonen fra "string" biblioteket for å kombinere strenger. Den fungerer på samme måte som "+" operatøren, men gir også mer fleksibilitet til å formatere og legge til flere variabler.
 
-# Dypdykk i konkatenering av strenger
-Det er viktig å merke seg at når du konkatenerer strenger i C++, opprettes det faktisk en helt ny streng som inneholder en kopi av de opprinnelige strengene. Dette betyr at hvis du jobber med store strenger eller konkatenerer dem flere ganger, kan dette føre til dårlig ytelse og bruk av minne.
+## Deep Dive
 
-For å unngå dette, kan du bruke klassen <string> sin funksjon "append()" istedenfor "+" operatoren. Denne funksjonen legger til en streng til slutten av en annen streng uten å opprette en ny streng. For eksempel:
+Når man kombinerer to eller flere strenger, er det viktig å sørge for at det ikke blir noen uønskede mellomrom eller tegn mellom dem. En enkel måte å unngå dette på, er å bruke "trim()" funksjonen som fjerner ekstra mellomrom før og etter en streng.
 
-```C++
+Det er også viktig å merke seg at du bare kan kombinere strenger med samme datatype. For eksempel kan du ikke kombinere en "string" og en "int" variabel.
 
-string setning = "Dette er en test";
-setning.append(" av konkatenering.");
+## Se også
 
-std::cout << setning << std::endl;
-```
-
-Dette vil gi utskriften:
-
-```
-Dette er en test av konkatenering.
-```
-
-En annen viktig ting å merke seg er at konkatenering av strenger kan være en ressurskrevende prosess. Derfor er det lurt å unngå å gjøre det i store løkker, spesielt hvis du håndterer store strenger. Du kan også bruke funksjoner som "reserve()" for å forhåndsreservere plass i minnet for å redusere behovet for å øke størrelsen på strengen under konkateneringsprosessen.
-
-# Se også
-- [C++ String Concatenation Guide](https://www.guru99.com/cpp-string-class.html#10)
-- [C++ String Concatenation vs Append](https://www.tutorialandexample.com/c-plus-plus-string-concatenation-vs-append/)
-- [C++ String Class Reference](https://www.cplusplus.com/reference/string/string/)
+- [C++ String Operators](https://www.w3schools.com/cpp/cpp_strings_operators.asp)
+- [String Concatenation](https://www.cplusplus.com/reference/string/string/operators/)
+- [C++ Strings](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

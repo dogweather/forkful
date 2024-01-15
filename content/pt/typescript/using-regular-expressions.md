@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Usando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "TypeScript: Usando expressões regulares"
 simple_title:         "Usando expressões regulares"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,35 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que usar expressões regulares em TypeScript?
 
-As expressões regulares são ferramentas poderosas para fazer busca e manipulação de strings. Ao usá-las, é possível encontrar e substituir padrões específicos dentro de uma string, tornando o processo de manipulação de dados mais eficiente. Além disso, elas são amplamente utilizadas em diferentes linguagens de programação, incluindo TypeScript, o que as torna uma habilidade valiosa para os desenvolvedores.
+Expressões regulares são uma ferramenta poderosa para busca e manipulação de padrões de texto em strings. Elas podem ser úteis em várias situações, como validar formulários, filtrar conteúdo ou extrair informações específicas de um texto. Além disso, as expressões regulares são suportadas nativamente em TypeScript, tornando sua utilização ainda mais fácil e eficiente.
 
 ## Como usar expressões regulares em TypeScript?
 
-Usar expressões regulares em TypeScript é relativamente simples. Primeiro, é preciso definir a expressão regular usando a sintaxe `/padrão/` e, em seguida, usar o método `.test()` para verificar se o padrão é correspondido em uma determinada string. Por exemplo:
+```TypeScript
+const texto = "Este é um exemplo de texto com várias palavras";
 
+// Encontrando todas as ocorrências de "texto"
+const regex = /texto/g;
+const resultados = texto.match(regex);
+
+console.log(resultados);
+// Output: ["texto", "texto"]
+
+// Substituindo a primeira ocorrência de "texto" por "exemplo"
+const novoTexto = texto.replace(regex, "exemplo");
+
+console.log(novoTexto);
+// Output: "Este é um exemplo de texto com várias palavras"
+
+// Verificando se o texto contém alguma das palavras "exemplo" ou "teste"
+const regex2 = /exemplo|teste/;
+const resultado = regex2.test(texto);
+
+console.log(resultado);
+// Output: true
 ```
-TypeScript
-const regex = /abc/;
-console.log(regex.test("abcdefgh")); // retorna true
-console.log(regex.test("defghi")); // retorna false
-```
 
-Além disso, existem várias opções que podem ser adicionadas à expressão regular para torná-la mais flexível, como a flag `i` que torna a busca case-insensitive. É possível encontrar mais detalhes e exemplos de uso na documentação do TypeScript.
+## Aprofundando em expressões regulares
 
-## Aprofundando-se em expressões regulares
-
-Existem muitos conceitos e técnicas avançadas envolvidos no uso de expressões regulares, que podem torná-las um pouco assustadoras para iniciantes. No entanto, é importante lembrar que elas são uma habilidade que pode ser aprimorada com a prática. Alguns conceitos importantes a serem explorados incluem:
-
-- Metacaracteres: caracteres especiais que têm uma função específica em expressões regulares, como `.` para representar qualquer caractere e `+` para indicar um ou mais ocorrências do padrão anterior.
-- Grupos de captura: colchetes `()` podem ser usados para criar grupos de captura dentro da expressão regular, o que permite acessar os valores correspondentes posteriormente.
-- Operadores de quantificação: esses operadores, como `*` e `?`, definem a quantidade de ocorrências de um padrão que devem ser correspondidas.
-
-Compreender esses conceitos é fundamental para aproveitar ao máximo as expressões regulares em TypeScript. Recomenda-se explorar tutoriais e exemplos para se familiarizar com eles.
+As expressões regulares em TypeScript seguem a mesma sintaxe do JavaScript, o que pode ser um pouco confuso para quem não está familiarizado. Porém, uma vez que se compreende a estrutura básica, é possível criar padrões muito específicos e complexos. Além disso, também é possível utilizar o conceito de grupos e referências para substituir partes específicas do texto encontrado.
 
 ## Veja também
 
-Abaixo estão alguns links úteis para aprender mais sobre expressões regulares em TypeScript e aprofundar seus conhecimentos:
-
-- Documentação oficial do TypeScript sobre expressões regulares: https://www.typescriptlang.org/docs/handbook/regular-expressions.html
-- Tutorial sobre expressões regulares em TypeScript: https://www.tutorialsteacher.com/typescript/typescript-regular-expression
-- Vídeo explicando os fundamentos de expressões regulares em TypeScript: https://www.youtube.com/watch?v=baWGsdvFigM
+- [Documentação oficial do TypeScript sobre expressões regulares](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Ferramenta online para testar expressões regulares](https://regex101.com/)
+- [Tutorial em vídeo sobre expressões regulares em TypeScript](https://www.youtube.com/watch?v=7Vtl2WggqOg)

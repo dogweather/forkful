@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Pobranie bieżącej daty"
-simple_title:         "Pobranie bieżącej daty"
+title:                "Uzyskiwanie aktualnej daty"
+html_title:           "Fish Shell: Uzyskiwanie aktualnej daty"
+simple_title:         "Uzyskiwanie aktualnej daty"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W dzisiejszym wpisie omówimy jedną z podstawowych rzeczy, jaką każdy programista powinien znać: pobieranie bieżącej daty. Bez względu na to, czy piszesz skrypty w systemie Linux czy kodujesz aplikacje na platformie MacOS, dostęp do bieżącej daty jest ważnym elementem w wielu zastosowaniach. Sprawdźmy więc, jak w prosty sposób uzyskać bieżącą datę za pomocą języka Fish Shell.
+Dlaczego ktoś chciałby otrzymać aktualną datę? Jest to przydatne do wielu różnych zastosowań, takich jak tworzenie plików lub katalogów z datą jako ich nazwą, automatyczne tworzenie dziennych wpisów lub raportów, lub nawet prosty sposób na upewnienie się, że pliki są odpowiednio zaktualizowane.
 
 ## Jak To Zrobić
 
-```Fish Shell
-echo (date +"%d-%m-%Y")
-```
-
-Powyższa komenda pokaże nam bieżącą datę w formacie dzień-miesiąc-rok. Możemy też użyć innych opcji formatowania, np. ```%A``` dla wyświetlenia dnia tygodnia lub ```%H:%M:%S``` dla godziny, minuty i sekundy. Aby poznać wszystkie dostępne opcje, warto zajrzeć do dokumentacji języka Fish Shell.
-
-Możemy także zapisywać bieżącą datę do zmiennej i wykorzystywać ją w dalszej części skryptu:
+```Fish Shell``` posiadają wbudowane polecenie ```date```, które zwraca aktualną datę w formacie ```MM/DD/RRRR```. Możesz wpisać jedynie polecenie ```date``` i naciśnij Enter, aby wyświetlić bieżącą datę, lub możesz użyć opcji, aby dostosować wyjście.
 
 ```Fish Shell
-set current_date (date +"%d-%m-%Y")
-echo "Dziś mamy: $current_date!"
+date +%d/%m/%Y
 ```
 
-Powyższy kod zapisze bieżącą datę do zmiennej i wyświetli ją wraz z informacją "Dziś mamy: ".
+Powyższe polecenie zwróci datę w formacie ```DD/MM/RRRR```. Możesz zmienić format wyjścia, korzystając z różnych opcji, takich jak ```%H``` dla godziny, ```%M``` dla minuty lub ```%S``` dla sekundy. Aby uzyskać pełną listę opcji, wpisz ```man date``` w terminalu.
 
-## W Głąb Tematu
+## Głębsza Analiza
 
-Aby lepiej zrozumieć, jak działa pobieranie bieżącej daty w Fish Shell, warto wspomnieć o podstawowych pojęciach, które są zaangażowane w ten proces. Po pierwsze, wykorzystujemy komendę ```date```, która jest odpowiedzialna za wyświetlanie lub modyfikację daty. Następnie wykorzystujemy opcję ```+%d-%m-%Y```, która określa, w jakim formacie ma zostać wyświetlona data. Pozostałe opcje są równie proste do zrozumienia i można z łatwością dostosować je do swoich potrzeb.
+Polecenie ```date``` korzysta z ustawień lokalnych w celu określenia formatu wyjścia. Jeśli chcesz zmienić domyślny format daty, możesz zmienić ustawienia regionalne swojego systemu. W systemach Unix/Linux możesz to zrobić za pomocą polecenia ```locale```. W systemie MacOS możesz użyć narzędzia ```defaults```. Więcej informacji na temat zmiany ustawień regionalnych możesz znaleźć w dokumentacji systemu operacyjnego.
 
-## Zobacz Również
+## Zobacz też
 
-Jeśli chcesz dowiedzieć się więcej o języku Fish Shell i jego możliwościach, warto zajrzeć do oficjalnej dokumentacji https://fishshell.com/docs/current/index.html lub przetestować inne funkcje dostępne w tym języku, np. pobieranie informacji o czasie czy wykorzystanie zmiennych środowiskowych. Dodatkowo, jeśli chcesz poznać inne języki programowania, które również mają wbudowane funkcje do pobierania daty, zapraszamy do lektury naszych innych artykułów.
-
-Dzięki prostym komendom w języku Fish Shell możemy szybko i wygodnie uzyskać bieżącą datę w formacie, który najlepiej odpowiada naszym potrzebom. Mamy nadzieję, że ten wpis okazał się dla Ciebie przydatny i pomoże w dalszej pracy z Fish Shell. Do zobaczenia!
+- [Dokumentacja Polecenia Date](https://fishshell.com/docs/current/commands.html#date)
+- [Poradnik z użyciem polecenia "date" w bash](https://linuxize.com/post/bash-date-command/)
+- [Zmiana ustawień regionalnych w systemie MacOS](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html)

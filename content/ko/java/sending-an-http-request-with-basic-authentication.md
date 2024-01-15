@@ -1,6 +1,7 @@
 ---
-title:                "Java: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증과 함께 http 요청 보내기"
+html_title:           "Java: 기본 인증과 함께 http 요청 보내기"
+simple_title:         "기본 인증과 함께 http 요청 보내기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,70 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+HTTP 요청에 기본 인증을 사용하는 이유는 서버에 안전하게 사용자를 확인할 수 있기 때문입니다. 인증 정보가 제대로 포함된 요청만이 서버에서 처리되어야 하며, 그렇지 않은 경우에는 오류가 발생해야 합니다.
 
-HTTP 요청을 기본 인증과 함께 보내는 것에 대해 생각해보면, 보안적인 이유로 인해 서버에 접근할 필요가 있는 경우 일반적으로 이와 같은 인증 방식을 사용합니다.
-
-## 어떻게?
-
-아래 예시 코드를 참고하여 기본 인증과 함께 HTTP 요청을 보내는 방법을 살펴보겠습니다.
+## 하는 법
+우선, `HttpURLConnection` 클래스를 사용해 URL에 연결합니다. 다음으로, `setRequestProperty` 메서드를 사용해 `Authorization` 헤더에 인증 정보를 추가합니다. 예시 코드는 아래와 같습니다.
 
 ```Java
-// 필요한 라이브러리를 임포트합니다
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Base64;
+URL url = new URL("http://www.example.com/api/users");
+HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-// 서버 URL과 인증 정보를 설정합니다
-String urlString = "https://www.example.com";
-String username = "username";
-String password = "password";
+String auth = "username:password";
+String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
+String authHeaderValue = "Basic " + encodedAuth;
 
-// URL 객체를 생성합니다
-URL url = new URL(urlString);
+con.setRequestMethod("GET");
+con.setRequestProperty("Authorization", authHeaderValue);
 
-// HTTP 연결을 설정합니다
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+int responseCode = con.getResponseCode();
 
-// 기본 인증 헤더를 설정합니다
-String auth = username + ":" + password;
-String basicAuth = "Basic " + Base64.getEncoder().encodeToString(auth.getBytes());
-connection.setRequestProperty("Authorization", basicAuth);
-
-// HTTP 요청을 보냅니다
-connection.setRequestMethod("GET");
-
-// 응답 코드를 확인합니다
-int responseCode = connection.getResponseCode();
-
-// 응답 본문을 읽어옵니다
-BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = reader.readLine()) != null) {
-   response.append(inputLine);
+StringBuilder response = new StringBuilder();
+
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
 }
-reader.close();
+in.close();
 
-// 응답 코드와 본문을 확인합니다
-System.out.println("응답 코드: " + responseCode);
-System.out.println("응답 본문: " + response.toString());
+System.out.println(response.toString());
 ```
 
-### 결과
+위 코드에서는 `username`과 `password`를 `:`로 구분한 뒤, Base64로 인코딩하여 `Authorization` 헤더에 추가하고 있습니다. 이렇게 보내진 요청은 서버에서 인증 정보를 확인하고, 유효한 경우에만 요청을 처리하게 됩니다.
 
-```
-응답 코드: 200
-응답 본문: <html><body><h1>Hello World!</h1></body></html>
-```
+## 깊게 들어가기
+HTTP 요청에 기본 인증을 사용하면 인증 정보가 암호화되지 않은 채 전송되기 때문에 보안상 취약점을 가지고 있습니다. 따라서 HTTPS와 같은 보안 프로토콜을 사용하거나, 인증 정보를 HTTPS보다 안전한 암호화 알고리즘으로 인코딩하는 것이 좋습니다.
 
-## 더 깊게
-
-HTTP 요청에는 여러 가지 인증 방식이 있지만, 기본 인증은 가장 간단하고 일반적인 방식입니다. 이 방식에서는 클라이언트가 보내는 인증 정보를 URL에서 인코딩하여 헤더에 포함시킵니다. 그리고 서버는 받은 인증 정보를 디코딩하여 인증을 확인하고, 요청에 대한 응답을 보냅니다. 하지만 이 방식은 보안성이 낮은 편이기 때문에, 더 나은 보안이 요구되는 경우에는 다른 인증 방식을 사용하는 것을 권장합니다.
+또한, 위 예시 코드에서는 간단하게 인증 정보를 하드코딩하여 사용하고 있지만, 실제로는 각 사용자마다 별도의 인증 정보를 생성하고 관리해야 합니다. 사용자의 비밀번호를 안전하게 저장하고 관리하는 것이 중요합니다.
 
 ## 참고 자료
-
-- [Java URL 클래스](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Java HttpURLConnection 클래스](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Base64 인코딩](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [Java HTTP Request Example](https://www.baeldung.com/java-http-request)
+- [Java Basic Authentication Example](https://www.baeldung.com/java-http-request-basic-authentication)

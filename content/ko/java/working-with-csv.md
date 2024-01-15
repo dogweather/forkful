@@ -1,6 +1,7 @@
 ---
-title:                "Java: csv 작업하기"
-simple_title:         "csv 작업하기"
+title:                "csv 파일 작업하기"
+html_title:           "Java: csv 파일 작업하기"
+simple_title:         "csv 파일 작업하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -11,48 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-CSV는 Comma Separated Values의 약자로서 데이터를 쉼표로 구분하여 저장하는 파일 형식입니다. 고려해볼 만한 이유는 데이터 분석이나 데이터베이스 관리자가 아니더라도 손쉽게 데이터를 읽고 쓸 수 있다는 것입니다. 또한 CSV 파일은 다양한 소프트웨어에서 지원되므로 편리하게 사용할 수 있습니다.
+CSV 파일은 데이터를 저장하고 공유하기에 매우 간편한 형식입니다. 따라서 Java 프로그래밍을 하고 있는 개발자들은 이 파일 형식을 자주 만나게 됩니다. CSV 파일을 다루는 법을 배우면 데이터를 손쉽게 다룰 수 있고, 이는 프로그래밍 작업을 더욱 효율적으로 만들어 줍니다.
 
-## 사용 방법
+## 어떻게
 
-CSV 파일을 읽고 쓰기 위해서는 Java에서 제공하는 ```FileReader```와 ```FileWriter``` 클래스를 사용하면 됩니다. 먼저 파일을 읽어올 때는 다음과 같은 코드를 사용합니다.
+CSV 파일을 다루기 위해서는 FileReader와 BufferedReader 클래스를 사용하여 파일을 읽어와야 합니다. 이후에는 split() 메소드를 사용하여 데이터를 행 단위로 분리하고 각 열의 값을 추출할 수 있습니다. 아래의 예시를 참고하세요.
 
 ```Java
-FileReader reader = new FileReader("data.csv");
-BufferedReader bufferedReader = new BufferedReader(reader);
-String line = bufferedReader.readLine();
-while (line != null) {
-  // 데이터 처리 코드
-  line = bufferedReader.readLine();
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class CSVReader {
+
+  public static void main(String[] args) {
+
+    try {
+    
+      // CSV 파일을 읽기 위해 FileReader를 사용합니다.
+      FileReader fr = new FileReader("data.csv");
+      
+      // FileReader의 결과를 BufferedReader로 읽습니다.
+      BufferedReader br = new BufferedReader(fr);
+      
+      // 데이터를 읽어올 변수를 선언합니다.
+      String row;
+      
+      // while 루프를 사용하여 CSV 파일의 모든 데이터를 읽어옵니다.
+      while ((row = br.readline()) != null) {
+      
+        // 각 행을 콤마(,)로 분리하여 데이터를 배열로 저장합니다.
+        String[] data = row.split(",");
+        
+        // 각 열의 값을 출력합니다.
+        System.out.println("Name: " + data[0]);
+        System.out.println("Age: " + data[1]);
+        System.out.println("Grade: " + data[2]);
+        
+      }
+      
+      // 파일을 닫습니다.
+      br.close();
+    
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 }
-bufferedReader.close();
 ```
 
-위 코드에서 ```readLine()``` 메소드를 이용하여 한 줄씩 데이터를 읽어올 수 있습니다. 데이터 처리를 마치고 나서는 ```FileWriter```를 이용하여 파일에 쓰는 것도 비슷한 방식으로 해줄 수 있습니다.
+이 예시를 실행하면, 아래와 같은 출력을 얻게 됩니다.
 
-```Java
-FileWriter writer = new FileWriter("output.csv");
-BufferedWriter bufferedWriter = new BufferedWriter(writer);
-bufferedWriter.write("output data");
-bufferedWriter.newLine();
-bufferedWriter.close();
 ```
-
-추가적으로 데이터를 구분하는 쉼표나 다른 delimiter를 변경하고 싶다면 ```CSVParser``` 클래스를 사용하여 설정해줄 수 있습니다.
+Name: John
+Age: 25
+Grade: A
+Name: Emily
+Age: 22
+Grade: B
+Name: David
+Age: 27
+Grade: A+
+```
 
 ## 딥 다이브
 
-CSV 파일을 다루는 더 깊은 내용으로는 데이터 타입 변환, 불러오는 데이터의 오류 처리, CSV 파일의 헤더 정보 등이 있습니다. 데이터 타입 변환은 데이터를 읽어올 때 String으로 읽어오고, 필요한 경우 변환 작업을 해주어야 합니다. 예를 들어 숫자 데이터를 읽어올 때는 ```Integer.parseInt()``` 메소드를 사용하여 String을 정수로 변환할 수 있습니다.
+CSV 파일을 다루는 데에는 여러 방법이 있습니다. 예를 들어, CSV 파일에 새로운 데이터를 추가하는 방법, 특정 조건에 맞는 데이터를 검색하는 방법 등이 있습니다. 더 많은 기능을 알아보고 싶다면, Java에서 지원하는 CSV 라이브러리를 참조해보시기 바랍니다.
 
-반면, 데이터를 CSV 파일에 쓸 때도 데이터 타입에 맞게 변환하여 써주어야 합니다. 또한 오류 처리를 위해 ```try-catch``` 구문을 사용하여 예외 상황에 대비하는 것이 좋습니다. 또한 CSV 파일이 헤더 정보를 포함하고 있는 경우가 많은데, 이 정보를 이용하여 데이터를 읽어오거나 정렬하는 등의 작업을 할 수 있습니다.
+## 관련 링크
 
-## 알아보기
-
-더 많은 CSV 파일 다루는 방법과 관련한 자료는 아래 링크들을 참고해주세요.
-
-- [Java CSV 포맷으로 파일 쓰기](https://www.baeldung.com/java-csv-file-array)
-- [Java CSV 파일 다루기 예제](https://www.journaldev.com/12501/java-csv-file-reader-and-writer-example-csv-aggregator#java-read-csv-file)
-- [Apache CSV 라이브러리 예제](https://www.byteslounge.com/tutorials/apache-commons-csv-example)
-- [CSV 파일 작성 자바 코드 예제](https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/)
-
-참고 자료에서는 CSV 파일을 읽고 쓰는 방법뿐만 아니라 CSV 파일 형식에 대한 자세한 설명도 찾아볼 수 있습니다.
+- [Java CSV 라이브러리](https://zhishixiang.com/p/how-to-read-and-write-csv-file-in-java)
+- [CSV 파일 다루기 예제](https://www.codejava.net/java-se/file-io/parse-csv-files-in-java)
+- [Java에서 CSV 파일 쓰기](https://stackoverflow.com/questions/27331479/java-new-lines-not-being-generated-in-csv-file)
+- [Java FileReader와 BufferedReader에 대한 자세한 설명](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html)

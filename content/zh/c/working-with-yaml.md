@@ -1,6 +1,7 @@
 ---
-title:                "C: 使用yaml工作"
-simple_title:         "使用yaml工作"
+title:                "使用yaml进行编程"
+html_title:           "C: 使用yaml进行编程"
+simple_title:         "使用yaml进行编程"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,73 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么使用YAML?
+## 为什么
 
-如果您是一名C语言程序员，并且正在寻找一种灵活的数据格式来存储和传输数据，那么您应该考虑使用YAML。它是一种简单易懂的数据序列化语言，可以帮助您轻松地组织和读取数据。在这篇文章中，我将向您展示如何在C语言中使用YAML，并深入探讨一些相关的知识点。
+你可能会想知道，为什么人们要开始使用YAML。实际上，YAML给程序员提供了一种简洁、可读性强的方式来存储和共享数据，让编码更容易。
 
-## 如何使用YAML?
-
-首先，您需要在您的系统上安装YAML解析库。在Linux系统中，您可以使用以下命令进行安装：
-
-```
-sudo apt-get install libyaml-dev
-```
-
-在Windows系统中，您可以通过下载libyaml库的源代码进行安装。
-
-接下来，您需要在代码中引入YAML解析库的头文件：
+## 如何使用
 
 ```C
 #include <yaml.h>
-```
+#include <stdio.h>
 
-现在，让我们看一个简单的示例来说明如何使用YAML来存储和读取数据：
-
-```C
-// 定义一个结构体来存储书籍信息
-typedef struct {
-    char title[50];
-    char author[50];
-    int year_published;
-} Book;
-
-int main() {
-    // 初始化一个书籍对象并赋值
-    Book book = {"The Alchemist", "Paulo Coelho", 1988};
-
-    // 将书籍信息转换为YAML字符串
-    yaml_char_t *output = yaml_encode(&yaml, book);
-
-    // 输出YAML字符串
-    printf("YAML字符串：\n%s\n", output);
-
-    // 将YAML字符串转换为书籍对象
-    Book decodedBook = yaml_decode(&decodedBook, output);
-
-    // 输出解码后的书籍信息
-    printf("书籍标题：%s\n", decodedBook.title);
-    printf("书籍作者：%s\n", decodedBook.author);
-    printf("书籍出版年份：%d\n", decodedBook.year_published);
-
-    // 释放分配的内存
-    yaml_free(output);
-    yaml_free(decodedBook);
-
+int main(void) {
+    /* 创建一个yaml文档 */
+    yaml_document_t doc;
+    yaml_document_initialize(&doc, NULL, NULL, NULL, 0, 0);
+    /* 添加一个字符串到文档中 */
+    yaml_node_t *root = yaml_document_add_scalar(&doc, NULL, (yaml_char_t *)"Hello World", strlen("Hello World"), YAML_PLAIN_SCALAR_STYLE);
+    /* 获得字符串的内容和长度 */
+    const yaml_char_t *content = yaml_node_get_content(root);
+    size_t size = strlen(content);
+    /* 输出结果 */
+    printf("%.*s\n", (int)size, content);
+    /* 使用完后释放文档 */
+    yaml_document_delete(&doc);
     return 0;
 }
 ```
 
-这里，我们首先定义了一个Book结构体来存储书籍的信息。然后，我们利用YAML解析库中的函数来将结构体转换为YAML字符串，并输出到屏幕上。接下来，我们使用YAML解析库中的函数来将YAML字符串解码为Book结构体，并输出解码后的书籍信息。
+输出结果为 `Hello World`，你可以看到，使用YAML可以让我们用更少的代码来创建和输出数据，提高了可读性。
 
-## 深入探讨
+## 深入了解
 
-YAML的语法非常简单，并且易于阅读和编辑。它使用缩进来表示层次结构，而不是像JSON或XML那样使用大括号或标签。这使得YAML更加直观和易于理解。
+YAML是一种用于序列化数据的格式，它具有类似于JSON的层次结构，但更具可读性。在C语言中，我们可以使用libyaml来解析和构建YAML文档，它是一个快速且易于使用的库。你可以通过访问以下链接来了解更多关于libyaml的信息：
 
-除了基本的数据类型和结构体，YAML还支持复杂的数据类型，比如列表和映射。这使得它可以用来表示更复杂的数据结构。
+- [libyaml官方网站](https://pyyaml.org/wiki/LibYAML)
+- [libyaml GitHub仓库](https://github.com/yaml/libyaml)
+- [libyaml文档](https://pyyaml.org/wiki/LibYAMLDocumentation) 
 
-此外，YAML还具有注释的功能，您可以在YAML文件中添加注释来解释各种数据的含义，从而使得代码更加易于维护。
+## 参考链接
 
-## See Also
-
-- YAML官方网站：https://yaml.org
-- YAML解析库：https://github.com/yaml/libyaml
+- [YAML和libyaml介绍](https://medium.com/@4104085/yaml-4f33e722899b)
+- [YAML规范](https://yaml.org/spec/1.2/spec.html)

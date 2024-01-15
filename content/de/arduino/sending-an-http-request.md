@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Versenden einer HTTP-Anfrage"
-simple_title:         "Versenden einer HTTP-Anfrage"
+title:                "Senden einer http-Anfrage"
+html_title:           "Arduino: Senden einer http-Anfrage"
+simple_title:         "Senden einer http-Anfrage"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,64 +12,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Senden von HTTP-Anfragen kann für diejenigen, die Arduino programmieren, von großer Bedeutung sein, da es ermöglicht, Informationen von externen Servern abzurufen und Aktionen auszulösen. Dies kann zum Beispiel für die Abfrage von Wetterdaten oder das Aktualisieren von Sensordaten von externen Quellen nützlich sein.
+Du hast schon öfter von HTTP-Anfragen gehört, fragst dich aber, was genau sie sind und wie du sie nutzen kannst? In diesem Artikel erfährst du, warum du mit Arduino HTTP-Anfragen senden solltest und wie du es machen kannst.
 
-## Wie es geht
+## Wie geht's
 
-Um eine HTTP-Anfrage mit Arduino durchzuführen, müssen Sie zunächst die Bibliothek "WiFiClient" importieren. Dann können Sie mit der Funktion "connect" eine Verbindung zu einem externen Server herstellen, indem Sie die IP-Adresse und den Port angeben. Anschließend können Sie mit der Funktion "println" die gewünschte Anfrage an den Server senden. Hier ist ein einfaches Beispiel:
+Einfacher als du denkst! Hier ist ein Beispielcode, um eine HTTP-Anfrage an eine beliebige Website zu senden:
 
 ```Arduino
-#include <WiFiClient.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-WiFiClient client;
+// Einstellungen für deine WiFi-Verbindung
+const char *ssid = "DEIN_WIFI_NAME";
+const char *password = "DEIN_WIFI_PASSWORT";
 
 void setup() {
-  Serial.begin(9600);
-  WiFi.begin("WifiSSID", "WifiPassword");
+
+  Serial.begin(115200);
+
+  // Router-Verbindung aufbauen
+  WiFi.begin(ssid, password);
+
+  // Warten bis verbunden
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(".");
+    Serial.println("Verbunden...");
   }
-  Serial.println("\nWiFi connected");
-  client.connect("192.168.0.1", 80); // Beispiel IP-Adresse und Port
-  client.println("GET / HTTP/1.1"); // Beispielanfrage
-  client.println();
+
+  // Neue HTTPClient-Instanz erstellen
+  HTTPClient http;
+
+  // Ziel-URL und Anfrage definieren
+  http.begin("http://beispielwebsite.com");
+  int httpCode = http.GET();
+
+  // Antworte-Code prüfen
+  if (httpCode > 0) {
+    // Antwort ausgeben
+    Serial.print("Antwort-Code: ");
+    Serial.println(httpCode);
+    // Data ausgeben
+    String response = http.getString();
+    Serial.println(response);
+  } else {
+    Serial.println("Fehler beim Verbinden");
+  }
+
+  // Verbindung beenden
+  http.end();
 }
 
 void loop() {
-  if (client.available()) {
-    while (client.available()) {
-      char c = client.read();
-      Serial.print(c); // Ausgabe der Antwort des Servers
-    }
-  }
+
 }
 ```
 
-Die Ausgabe des obigen Beispiels könnte wie folgt aussehen: 
+Die Ausgabe des obigen Codes in der Serial Monitor sollte ähnlich aussehen:
 
 ```
-ƒHTTP/1.1 200 OK
-Content-Type: text/html
-Connection: Closed
-
-<html> 
-<head> 
-  <title>Arduino Blog</title> 
-</head> 
-<body>  
-  <h1>Willkommen auf dem Arduino Blog!</h1> 
-  <p>Hier finden Sie nützliche Tipps und Tutorials rund um die Programmierung von Arduino-Boards.</p> 
-</body> 
+Verbunden...
+Antwort-Code: 200
+<!doctype html>
+<html>
+<head>
+  <!-- Einige HTML-Daten ... -->
+</head>
+<body>
+  <!-- Einige HTML-Daten ... -->
+</body>
 </html>
 ```
 
-## Tiefer eintauchen
+Und voilà, du hast erfolgreich eine HTTP-Anfrage gesendet und die Antwort empfangen! Natürlich kannst du den Code anpassen, um unterschiedliche HTTP-Methoden (wie POST oder PUT) zu nutzen und die Anfrage an deine Bedürfnisse anzupassen.
 
-Um tiefer in das Thema HTTP-Anfragen mit Arduino einzusteigen, können Sie sich näher mit den verschiedenen Befehlen und Funktionen beschäftigen. Zum Beispiel können Sie mit "client.print" anstatt "client.println" die Anfrage als einzelne Bytes senden, was nützlich sein kann, wenn Sie genauer steuern möchten, was gesendet wird. Außerdem können Sie die Verbindung zum Server mit "client.connected" überprüfen und die Antwort des Servers mit "client.peek" vor dem Lesen der Daten überprüfen.
+## Deep Dive
+
+Eine HTTP-Anfrage zu senden bedeutet, eine Kommunikation mit einem Server herzustellen und eine Anfrage für Daten zu senden. Der Server antwortet dann mit einem Antworte-Code (z.B. 200 für OK oder 404 für Not Found) und den entsprechenden Daten. In unserem Beispiel haben wir den HTTPClient von Arduino verwendet, der es uns ermöglicht, eine Verbindung aufzubauen und eine GET-Anfrage zu senden.
+
+Es gibt jedoch auch andere Möglichkeiten, eine HTTP-Anfrage mit Arduino zu senden, wie die Verwendung von WiFiClient oder ESP8266HTTPClient. Sie alle haben ihre Besonderheiten, aber das Grundprinzip bleibt dasselbe - eine Verbindung herstellen, eine Anfrage senden und auf die Antwort warten. Es lohnt sich, ein wenig zu experimentieren und verschiedene Bibliotheken auszuprobieren, um die für dich am besten geeignete Lösung zu finden.
+
+In unserem Beispiel haben wir eine GET-Anfrage verwendet, aber je nachdem, welche Daten du senden oder abrufen möchtest, kannst du auch andere Methoden wie POST, PUT oder DELETE nutzen. HTTP-Anfragen ermöglichen es dir, eine Vielzahl von Aktionen auf Websites oder Webanwendungen auszuführen, wie z.B. Daten abrufen, Daten aktualisieren oder sogar eine Webseite zu erstellen.
 
 ## Siehe auch
 
-- [Offizielle WiFiClient-Dokumentation](https://www.arduino.cc/en/Reference/WiFiClient)
-- [Tutorial: ESP8266 mit dem Internet verbinden und HTTP-Anfragen senden](https://randomnerdtutorials.com/esp8266-web-server/) 
-- [Beispielprojekt: Wetterstation mit Arduino und Wetterdaten-API](https://www.instructables.com/id/How-to-Make-an-Arduino-Weather-Station-With-WiFi-E/)
+Um mehr über die verschiedenen Möglichkeiten der HTTP-Kommunikation mit Arduino zu erfahren, kannst du dir folgende Ressourcen ansehen:
+
+- [Arduino HTTPClient Library](https://www.arduino.cc/en/Reference/HTTPClient)
+- [ESP8266HTTPClient Library](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h)
+- [WiFiClient Library](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Interaktive Lektion zum Thema HTTP-Anfragen mit Arduino](https://create.arduino.cc/projecthub/arduino_yun/http-get-with-arduino-yun-7497f8)

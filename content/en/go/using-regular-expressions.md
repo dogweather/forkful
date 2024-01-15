@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "Go recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Go"
 category:             "Go"
@@ -9,56 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Regular Expressions Are a Powerful Tool in Go Programming
+## Why
 
-In the world of programming, there are many different tools and techniques that can be used to solve problems and manipulate data. One such tool is regular expressions, also known as regex. These are special sequences of characters that allow us to match patterns within strings of text. So why should you consider using regular expressions in your Go projects? Let's dive in and find out.
+So, you've heard about regular expressions but you're not exactly sure what they are or why you should use them? Well, let me break it down for you. Regular expressions, also known as regex, are a powerful tool used for string pattern matching and manipulation in programming languages. They allow you to search, replace and extract specific parts of a string, making tasks such as data validation, text parsing and data extraction much easier.
 
-## How To Use Regular Expressions in Go
+## How To
 
-Using regular expressions in Go is made easy thanks to the standard library `regexp` package. To get started, we first need to import the package:
+Using regular expressions in Go is fairly straightforward. First, we need to import the "regexp" package which contains all the necessary functions for working with regex. Now, let's see some examples of how to use regular expressions in Go.
 
-```Go
+### Matching a String Pattern
+
+To check if a string matches a specific pattern, we can use the `MatchString()` function. For example, if we want to check if a string contains only numbers, we can use the regular expression `\d+` which matches one or more digits.
+
+```
+// import regexp package
 import "regexp"
-```
 
-Next, we can use the `regexp.Compile` function to create a regular expression object from a string pattern:
+func main() {
+    // check if string contains only numbers
+    matched := regexp.MatchString(`\d+`, "12345")
 
-```Go
-re := regexp.MustCompile("foo")
-```
-
-This will create a regular expression that matches the string "foo". We can then use this object to perform various operations, such as matching a pattern within a string:
-
-```Go
-str := "The quick brown foo jumps over the lazy dog"
-if re.MatchString(str) {
-    fmt.Println("Found a match!")
+    if matched {
+        fmt.Println("String contains only numbers")
+    } else {
+        fmt.Println("String contains other characters")
+    }
 }
 ```
 
-This code will print "Found a match!" since the pattern "foo" is present within the string. Regular expressions also allow us to extract specific parts of a string using capturing groups:
+The output of this code will be `String contains only numbers`.
 
-```Go
-re := regexp.MustCompile(`(\w+)\s+(\w+)\s+(\w+)`)
-str := "John Smith is a programmer"
-matches := re.FindStringSubmatch(str)
-fmt.Println(matches[1]) // "John"
-fmt.Println(matches[2]) // "Smith"
-fmt.Println(matches[3]) // "is"
+### Extracting Substrings
+
+Using regex, we can also extract specific parts of a string. For example, if we have a string that follows the format `Name: Age` and we want to extract the name, we can use the `FindStringSubmatch()` function.
+
+```
+// import regexp package
+import "regexp"
+
+func main() {
+    // extract name from string
+    name := regexp.MustCompile(`Name: (.+)`).FindStringSubmatch("Name: John")[1]
+
+    fmt.Println("Name:", name)
+}
 ```
 
-Here, we are matching three words separated by spaces and extracting each individual word using capturing groups.
+The output of this code will be `Name: John`.
 
-## Deep Dive into Regular Expressions in Go
+## Deep Dive
 
-Regular expressions may seem daunting at first, but once you understand the syntax and various options available, they can become a powerful tool in your programming arsenal. Some advanced features include using anchors (such as `^` and `$`) to match the beginning and end of a string, using quantifiers (such as `+` and `*`) to match repetitions, and using character classes (such as `\d` and `\s`) to match specific types of characters.
+Regular expressions can seem intimidating at first, but once you understand the basics, they can greatly improve your coding skills. Here are some key points to keep in mind when working with regex in Go:
 
-One thing to keep in mind when using regular expressions is their performance. While they are great for simple matching tasks, more complex patterns or large strings can slow down your code. It's important to consider the tradeoff between using regular expressions and other techniques when optimization is a priority.
+- Use raw strings, denoted by backticks, when working with regular expressions in Go. This will prevent any issues with escape characters.
+- Go's built-in `regexp` package uses the POSIX standard for regular expressions, which may differ from the syntax used in other programming languages.
+- Regular expressions can greatly reduce the amount of code needed for tasks such as input validation and text manipulation.
 
 ## See Also
 
-- [The regexp package in Go](https://golang.org/pkg/regexp/)
-- [A Beginner's Guide to Regular Expressions in Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
-- [Mastering Regular Expressions Book](https://www.oreilly.com/library/view/mastering-regular-expressions/9780596528126/)
-
-Regular expressions may take some time to fully grasp, but with practice and experimentation, they can become a valuable tool in your programming toolkit. So next time you encounter a problem involving pattern-matching, remember to give regular expressions a try. Happy coding!
+- [Official Go regexp package documentation](https://golang.org/pkg/regexp/)
+- [Regex tutorial on DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
+- [Online regex tester for Go](https://regex-golang.appspot.com/)

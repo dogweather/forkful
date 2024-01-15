@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "「csvを使ったプログラミング」"
+html_title:           "Haskell: 「csvを使ったプログラミング」"
+simple_title:         "「csvを使ったプログラミング」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,87 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Why** 
+## なぜ
 
-CSVファイルはよく使われるデータフォーマットであり、Haskellで簡単に扱うことができます。Haskellの強力な型システムと多様なライブラリのおかげで、CSVファイルを処理することはとても便利です。 
+CSVファイルを扱うことが重要なのかを2つの文で説明します。
 
-**How To** 
+CSVファイルは一般的なデータ形式であり、 多くのプログラムやアプリケーションで使用されています。Haskellを通してCSVファイルの処理方法を学ぶことで、さまざまなデータ処理作業をより効率的に行うことができるようになります。
 
-まず、HaskellでCSVファイルを扱うためにData.Csvモジュールをインポートします。次に、パースするデータ型とCSVファイルのフォーマットを定義します。例えば、以下のようになります。 
+## 方法
 
-```Haskell 
-import Data.Csv 
+HaskellでCSVファイルを処理する方法を学ぶために、以下のコード例を参考にしてください。
 
-data Person = Person 
- { name :: !String 
- , age :: !Int 
- , city :: !String 
- } 
+```Haskell
+import Text.CSV -- CSVファイルを扱うためのモジュールをインポート
 
-instance FromNamedRecord Person where 
- parseNamedRecord m = Person 
-  <$> m .: "Name" 
-  <*> m .: "Age" 
-  <*> m .: "City" 
+-- CSVファイルの読み込みと表示
+main = do
+  csv <- parseCSVFromFile "sample.csv" -- sample.csvは読み込むファイルの名前
+  print csv
 
-personCsv :: ByteString 
-personCsv = "Name,Age,City\nJohn,24,New York\nJane,30,Tokyo" :: ByteString 
-``` 
+-- CSVファイルのデータを処理して表示
+main = do
+  csv <- parseCSVFromFile "sample.csv"
+  let processedData = processCSV csv -- csvデータを処理する関数
+  print processedData
+```
 
-この例では、Personというデータ型を定義し、FromNamedRecordクラスのインスタンスにすることでパースすることができるようになります。また、ファイルのフォーマットをpersonCsvというバイト文字列で定義しています。 
+出力例：
 
-次に、パースしたデータを取得するために、parseCsvメソッドを使用します。 
+```
+Right [["Name","Age","City"],["John","25","Tokyo"],["Emily","30","Osaka"],["Tom","28","Kyoto"]]
+```
 
-```Haskell 
-csvData :: Either String (Vector Person) 
-csvData = parseCsv personCsv
-``` 
+Haskellの```parseCSVFromFile```関数を使用することで、CSVファイルを直接読み込むことができます。
 
-このようにすることで、データを右辺のPersonのベクターとして取得することができます。また、エラーが発生した場合はエラーメッセージが返されます。 
+また、データ処理の例では、```processCSV```という自作の関数を使用してCSVデータを処理しています。Haskellでは、カスタム関数を作成することで、より複雑なデータ処理を行うことができます。
 
-**Deep Dive** 
+## ディープダイブ
 
-Haskellのデータ型の強力な機能を活用することで、さまざまなデータフォーマットを扱うことができます。例えば、以下のように定義することで、タイプセーフなCSVパーサーを作ることができます。 
+CSVファイルを扱う際の注意点やより深い情報を紹介します。
 
-```Haskell 
-import Data.Aeson 
-import Data.Csv 
-import Data.Time.Calendar 
+- CSVファイルはカンマ(,)やタブ(\t)などの区切り文字を使用してデータを区切るため、データ内にこれらの文字が含まれる場合にはエスケープする必要があります。
+- HaskellのCSV処理モジュールには、データ取得や書き込みなど、さまざまな機能が用意されています。より詳細な情報は[Haskellのドキュメント](https://hackage.haskell.org/package/csv)を参照してください。
 
-data Movie = Movie 
- { title :: String 
- , releaseDate :: Day 
- } 
+See Also:
 
-instance FromNamedRecord Movie where 
- parseNamedRecord m = 
-  Movie <$> m .: "Title" <*> m .: "Release Date" 
-
-instance ToNamedRecord Movie where 
- toNamedRecord (Movie title releaseDate) = 
-  namedRecord [ "Title" .= title, "Release Date" .= releaseDate ] 
-
-instance ToJSON Movie where 
- toJSON (Movie title releaseDate) = 
-  object [ "Title" .= title, "Release Date" .= releaseDate ] 
-
-instance FromJSON Movie where 
- parseJSON (Object v) = 
-  Movie <$> v .: "Title" <*> v .: "Release Date" 
-
-movieCsv :: ByteString 
-movieCsv = "Title,Release Date\nInterstellar,2014-11-07\nInception,2010-07-16" 
-
-movies :: Either String (Vector Movie) 
-movies = parseCsv movieCsv 
-
-movieJson :: Either String [Movie] 
-movieJson = eitherDecode movieCsv 
-``` 
-
-上の例では、Movieというデータ型を定義し、FromNamedRecordクラスとToNamedRecordクラスに定義されているメソッドを使用してCSVファイルのパースと作成を行います。また、ToJSONクラスとFromJSONクラスを使用してJSON形式のデータを取得することもできます。 
-
-**See Also** 
-
-- [HaskellでのCSVファイルの扱い方](https://qiita.com/h-yoshikawa/items/5c572232440ecc1d3d87) 
-- [HaskellのData.Csvモジュールのドキュメント](https://hackage.haskell.org/package/cassava-0.5.0.0/docs/Data-C
+- [HaskellでCSVファイルを操作する方法](https://qiita.com/suzuki-hoge/items/835d765a8eeca3a64f7a)
+- [Haskellによるファイル操作入門](https://qiita.com/7shi/items/145f12369137d8f0368f)

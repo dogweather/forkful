@@ -1,6 +1,7 @@
 ---
-title:                "Java: עובדים עם json"
-simple_title:         "עובדים עם json"
+title:                "לעבוד עם json"
+html_title:           "Java: לעבוד עם json"
+simple_title:         "לעבוד עם json"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## כולם יודעים שפייתון היא אחת השפות המועדפות בעולם התכנות. למה אז כדאי ללמוד על JSON בכלל?
+# למה:
+JSON היא שפת תכנות נפוצה כידוף צורות מידע במיקוד על מדינות ומיצרות, וכן על מציאות."
 
-JSON היא תקן פופולרי לפריסת מידע מבוסס כתב למכונה (machine-readable). בעזרת JSON ניתן לארגז מידע בצורה מדויקת ונוחה לשימוש. היא נמצאת בשימוש במגוון מקרים, כגון יצירת אפליקציות מובייל או אתרים תומכי API.
-
-## איך לעבוד עם JSON ב-Java?
-
-עבודה עם JSON ב-Java פשוטה ונוחה. התחלה טובה היא להתקין ספריית JSON המתאימה להיישום שלך. לדוגמה, אם אתה משתמש במערכת הניהול MySQL, תוכל להתשמש בספריית JSON-Simple המתאימה לתכנית היישום שלך.
-
-לחילופין, ניתן להשתמש בספרייה של Google, Gson. לאחר התקנה, ניתן לייצא את המידע לקובץ JSON עם פונקציות כמו "toJson" ולייבא אותו עם פונקציות כמו "fromJson". להלן דוגמה ליצירת מילון בעזרת Gson:
+## איך לעבוד עם JSON:
+ראשית, ניתן להתקין ספריית JSON לפרויקט שלנו כדי לאפשר עבודה עם פעולות JSON. לאחר מכן, אנו יכולים ליצור אובייקט JSON חדש ולהכניס לו מידע באמצעות שדות וערכים מתאימים. לבסוף, ניתן להשתמש בפקודת toString () כדי להמיר את האובייקט שנוצר למחרוזת JSON.
 
 ```Java
-Gson gson = new Gson();
-String json = "{ 'name' : 'John', 'age' : 30" }";
-Map<String, Object> dictionary = gson.fromJson(json, HashMap.class);
-System.out.println(dictionary);
+// התקנת ספריית JSON לפרויקט
+import org.json.JSONObject;
+
+// יצירת אובייקט JSON חדש
+JSONObject json = new JSONObject();
+
+// הוספת שדות וערכים לאובייקט
+json.put("name", "John");
+json.put("age", 30);
+json.put("isMarried", true);
+
+// המרת האובייקט למחרוזת JSON והדפסת התוצאה
+System.out.println(json.toString());
 ```
 
-פלט:
-```
-{name=John, age=30}
-```
-לדוגמה, ניתן לשנות את תוכן ה-JSON עד שסנכרון תעבור. כך, נוכל לעבוד עם מילונים בקלות, לשנות את הערכים ולייצא אותם חזרה לקובץ JSON.
+> פלט:
+> {"name":"John","age":30,"isMarried":true}
 
-## חקירה עמוקה: פורמט JSON והרצאה ל-String
+## Deep Dive:
+כאשר אנחנו מתכנתים בג'אווה, עבודה עם JSON יכולה להיות חלק חשוב מהתהליך. אם אנחנו משתמשים בקבצי הגדרות כדי לאחסן נתונים, שימוש בפורמט JSON יכול להקל עלינו מאד בטיפול בנתונים האלה. כמו כן, עם התקדמות התכנות ניתן למצוא שימושים רבים נוספים לפורמט הזה כמו לפתוח ולסגל נתונים מכמה מקומות שונים בזמן ריצת הקוד.
 
-JSON מרכיב לעומת התמונה בצורה דומה ל-Markdown. סוגי יסוד משתלבים בתקת הפורמט וניתן לעבור עליהם מתוך פונקציות כמו "getAsString" ו-"getAsInt". נמנע את היצירה של SQL למשתמשי C או התאמה על פי מקור המידע.
-
-ניתן לאתר למקלדת שבידינו
+# ראה גם:
+- [ספריית JSON בג'אווה](https://mvnrepository.com/artifact/org.json/json)
+- [מדריך לעבודה עם פורמט JSON](https://www.tutorialspoint.com/json/index.htm)
+- [מידע נוסף על JSON](https://www.json.org/json-he.html)

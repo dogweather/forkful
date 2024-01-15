@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग को जोड़ना"
+html_title:           "Ruby: स्ट्रिंग को जोड़ना"
+simple_title:         "स्ट्रिंग को जोड़ना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-जब आप प्रोग्रामिंग करते हैं, तो आपको कभी-कभी एक स्ट्रिंग को दूसरे स्ट्रिंग के साथ जोड़ने की जरूरत होती है। यह जोड़ने प्रक्रिया स्ट्रिंग को एक होने के लिए कॉन्केटेनेट करती है और आपको अपने कोड में प्रभावी तरीके से इस्तेमाल करने की अनुमति देती है।
+## Why
 
-## कैसे करें
-जब हम कई स्ट्रिंग को साथ जोड़ते हैं, तो हमें `+` ऑपरेटर का उपयोग करना पड़ता है। उदाहरण लिखते हैं:
+Agar aapne kabhi bhi Ruby programming language ke baare mein suna hai ya kisi experienced programmer se baat ki hai, toh aapko pata hoga ki isme "string concatenation" ek bahut important concept hai. Isse aap apne programs mein strings ko jod kar alag-alag words aur sentences bana sakte hain. Yeh ek bahut useful technique hai jo aapke coding skills ko improve karti hai.
+
+## How To
+
+Iske liye sabse pehle aapko Ruby language ko achi tarah se samajhna hoga. Uske baad aapke paas kuch options hain strings ko concatenate karne ke liye. Yeh options aapko "```+```" plus operator aur "```<<```" concatenation assignment operator ke through dikhenge. Ab dekhte hain kaise hum inka use karein:
 
 ```Ruby
-first_name = "जानकी"
-last_name = "लाल"
+# Plus operator ka use karke string concatenate karna:
 
-full_name = first_name + last_name
-puts full_name  # जानकीलाल
+puts "Hello" + " " + "World"  
+# Output: Hello World 
+
+# Concatenation assignment operator ka use karke string concatenate karna:
+
+name = "Hindi"
+name << " is a beautiful language."
+puts name
+# Output: Hindi is a beautiful language.
 ```
 
-## गहराई तक जाने
-स्ट्रिंग को कैसे जोड़ा जाता है विशेष रूप से आपके दिए गए भाषा और उपयोग की आवश्यकताओं पर निर्भर करता है। रुबी में, हम `+` ऑपरेटर का उपयोग स्ट्रिंग जोड़ने के लिए कर सकते हैं, लेकिन अन्य भाषाओं में अलग तरीकों का उपयोग किया जा सकता है। इसलिए, जब भी आप स्ट्रिंग को जोड़ते हैं, अपने दिए गए भाषा की भाषा विशेषताओं के बारे में ध्यान दें।
+Yeh coding examples mein aapne dekha ki hum "```+```" operator aur "```<<```" operator ka use karke strings ko concatenate kar sakte hain. Aapke paas aur bhi options hain jaise "```concat()```" method aur "```interpolation```" method, jo aap apni research kar sakte hain.
 
-## और भी देखें
-अगर आप रुबी प्रोग्रामिंग में स्ट्रिंग के साथ काम करना सीखना चाहते हैं, तो ये लिंक आपके लिए मददगार साबित हो सकते हैं:
+## Deep Dive
 
-- [Guru99 के रुबी स्ट्रिंग के बारे में जानकारी](https://www.guru99.com/ruby-strings.html)
-- [Ruby स्ट्रिंग कोडिंग के लिए कार्य गाइड](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Learn Ruby का स्ट्रिंग को जोड़न
+Yeh important hai ki aap Ruby language mein strings ko concatenate karte waqt kaise spaces ka use karte hain. Agar aapka program mein spaces nahi hain toh aapke output mein words aur sentences sahi se display nahi honge. Iske liye hum quotes ya phir interpolation method ka use kar sakte hain. Iske alawa, agar aap multiple variables ko concatenate karte hain, toh unmein se kisi bhi variable mein jitne bhi spaces honge, unhe output mein bhi include kiya jayega.
+
+## See Also
+[Official Ruby Language Documentation](https://ruby-lang.org)
+
+[Ruby Beginner's Guide](https://www.rubyguides.com)
+
+[Ruby String Methods](https://www.rubyguides.com/2018/04/ruby-string-methods/)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「HTMLのパース」"
-simple_title:         "「HTMLのパース」"
+title:                "HTMLの解析"
+html_title:           "Kotlin: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜパースを行うのか？
+## なぜ
+誰もがインターネットを使用することで、HTMLは非常に重要な役割を果たしています。HTMLをプログラムで動的に解析することにより、より高度なウェブアプリケーションを作成することができます。
 
-HTMLをパースすることは、ウェブサイトデータを解析し、必要な情報を抽出するために重要です。HTMLはウェブサイトの「言語」であり、パースはその内容を機械が理解できる形式に変換するプロセスです。例えば、特定のキーワードを含むウェブページを検索する際に、パースを使用してそのキーワードが含まれるかどうかを確認できます。また、スクレイピングやデータ収集などの用途でもパースが活用されます。
+## 作り方
+HTMLをKotlinで解析する方法は簡単です。まず、HTMLを読み込んで解析するためのライブラリをインストールします。次に、HTMLを解析するための適切なタグや属性を特定し、Kotlinのコードを使用してそのデータを取得します。以下は、実際のHTMLコードとその解析方法の例です。
 
-## パースの方法
+```kotlin
+// HTMLを読み込む
+val document = Jsoup.connect("https://example.com").get()
 
-パースを行うには、KotlinのHTMLパーサーライブラリを使用するのが最も簡単です。HTMLパーサーライブラリは、HTMLドキュメントを読み込み、ツリー構造を作成し、ドキュメント内の要素をアクセスするための便利な方法を提供します。以下は、KotlinでHTMLパーサーライブラリを使用したコードの例です。
+// <title>タグからテキストを取得する
+val title = document.select("title").text()
+println("ページのタイトル: $title")
 
-```Kotlin
-// 必要なライブラリをインポート
-import org.jsoup.Jsoup
-
-// HTMLドキュメントを読み込み
-val doc = Jsoup.connect("https://example.com").get()
-
-// 特定のタグを取得
-val elements = doc.select("a")
-
-// ドキュメント内のすべてのaタグのテキストを出力
-for (element in elements) {
-    println(element.text())
+// <img>タグから画像のURLを取得する
+val imageUrls = document.select("img").map { it.absUrl("src") }
+for (url in imageUrls) {
+    println("画像のURL: $url")
 }
 ```
 
-上記の例では、まずHTMLパーサーライブラリのインポートを行い、次に指定したURLのHTMLドキュメントを取得しています。その後、`select()`メソッドを使用して特定のタグを取得し、`text()`メソッドを使用してその要素のテキストを取得しています。このようにして、HTMLドキュメント内の特定の要素に簡単にアクセスすることができます。
+上記の例では、Jsoupというライブラリを使用してHTMLを読み込み、select()メソッドを使用して特定のタグや属性を指定し、それらの要素から必要なデータを抽出しています。
 
-## パースの詳細
-
-HTMLはタグで囲まれた要素の集まりであり、パーサーはこれらのタグを読み込んで要素ツリーを作成します。このツリーを使用することで、ドキュメント内の要素を検索、変更、追加することができます。また、HTMLパーサーライブラリは、自動的に不正なタグやフォーマットの修正も行ってくれるため、正しいデータを取得することができます。
+## ディープダイブ
+HTMLの解析に関するさらに詳細な情報を学ぶには、[Jsoup公式ドキュメント](https://jsoup.org/)や[HTMLパーサーの基礎](https://www.tutorialspoint.com/html/html_paser.html)のチュートリアルを参考にすることができます。また、XMLやJSONといった他の形式のデータを解析する方法も学ぶことで、より幅広いウェブアプリケーションの開発が可能になります。
 
 ## 参考リンク
-
-- HTMLパーサーライブラリ「Jsoup」公式サイト: https://jsoup.org/
-- KotlinのHTMLパーサーライブラリの使い方: https://qiita.com/kazuhirox/items/e13dc8f2a0493d401fd9
+- [Jsoup公式ドキュメント](https://jsoup.org/)
+- [HTMLパーサーの基礎](https://www.tutorialspoint.com/html/html_paser.html)

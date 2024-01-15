@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 「サブストリングを抽出する」"
-simple_title:         "「サブストリングを抽出する」"
+title:                "「サブストリングの抽出」"
+html_title:           "Fish Shell: 「サブストリングの抽出」"
+simple_title:         "「サブストリングの抽出」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,33 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ?
+## なぜ
 
-Substringの抽出に従事する理由は何でしょうか？Fish Shellプログラミングにおいて、特定の部分のみを抽出することはとても便利です。例えば、テキストから特定の単語を見つけ出したり、文字列を加工したりする際によく使われます。是非試してみてください！
+コマンドラインでファイルを操作する際、時には指定した文字列やパターンに一致する一部分を抽出したいことがあります。そのような場面で、フィッシュシェルのサブストリング抽出機能が役立ちます。この記事では、サブストリング抽出の方法を紹介します。
 
 ## 方法
 
-抽出する方法はとても簡単です。まずは文字列を変数に設定し、その後にsubstringコマンドを使用します。下記のコードを参考にしてみてください。
+ファイルの特定の行や文字列から、指定した部分を抽出する方法を以下のコード例で説明します。
 
-```Fish Shell
-set text "こんにちは、私はFish Shellプログラマーです！"
-substring な私はFish Shellプログラマーです！」
+```fish
+# 文字列から文字を抽出する
+set myString "こんにちは、フィッシュシェル"
+echo $myString[1-5] #出力: こんにち
+
+# 文字列から特定の文字列を抽出する
+set myString "こんにちは、フィッシュシェル"
+echo $myString["コ":] #出力: コマンドライン
+
+# ファイルから特定の行を抽出する
+set fileName "sample.txt"
+cat $fileName[1-2] # 出力: これはサンプルファイルです
+                    #      抽出された行です
+
+# ファイルから特定の文字列を含む行を抽出する
+set fileName "sample.txt"
+grep "フィッシュシェル" $fileName # 出力: この行はフィッシュシェルという言葉が含まれています
+                                    #      抽出された行です
 ```
 
-抽出した結果は次のようになります。
+## ディープダイブ
 
-```
-私はFish Shellプログラマーです！
-```
+フィッシュシェルでは、サブストリングを抽出する際に使用できる便利なオプションがいくつかあります。例えば、文字列の末尾から抽出する際には負のインデックスを使用することができます。また、文字列の長さがわからない場合でも、`[start-end]`の代わりに`[start-]`を使用して最後まで抽出することができます。さらに、正規表現を使用してマッチする部分を抽出することもできます。
 
-## 深堀り
+````fish
+# 負のインデックスを使用した場合
+set myString "今日は晴れです"
+echo $myString[-2-] # 出力: です
 
-substringコマンドには様々なオプションがあります。例えば、インデックス番号を指定して抽出する部分の範囲を指定することもできます。詳しくはFish Shellの公式ドキュメントを参考にしてください。
+# 最後まで抽出する場合
+set myString "こんにちは、フィッシュシェル"
+echo $myString[5-] # 出力: フィッシュシェル
 
-## その他のリンク
+# 正規表現を使用して抽出する場合
+set myString "今日は晴れです"
+echo $myString[pattern \w+] # 出力: 晴れ
 
-[Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
+````
 
-## 参考
+## 参考サイト
 
-[Substringの抽出方法について](https://fishshell.com/docs/current/cmds/substr.html)
+- [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Substrings in Bash](https://linuxize.com/post/bash-substring/)
+- [Regex tutorial](https://www.regular-expressions.info/tutorial.html)
+
+## 参考文献
+
+- [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Bashのサブストリング抽出](https://linuxize.com/post/bash-substring/)
+- [正規表現のチュートリアル](https://www.regular-expressions.info/tutorial.html)

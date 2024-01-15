@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Å arbeide med yaml"
+html_title:           "Javascript: Å arbeide med yaml"
+simple_title:         "Å arbeide med yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,54 +12,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-YAML er et populært filformat for konfigurasjonsfiler og metadata. Det er enkelt å lese og skrive for mennesker, noe som gjør det til et flott valg for å organisere og formatere data. Det gir også mulighet for å lage komplekse hierarkiske strukturer, noe som gjør det enkelt å håndtere store datasett.
+Hvorfor skal du bry deg om YAML? Det er en god måte å strukturere og organisere data på, spesielt for utviklere som jobber med store og komplekse prosjekter.
 
 ## Hvordan
 
-For å begynne å jobbe med YAML i JavaScript, må du først installere en parser som forstår formatet. Et godt alternativ er js-yaml, som kan installeres ved hjelp av npm-kommandoen ```npm install js-yaml```.
-
-Når pakken er installert, kan du begynne å bruke den i koden din ved å først importere den:
+YAML, eller "YAML Ain't Markup Language", er en måte å representere data på i lesbar og strukturert form. Det kan brukes til å konfigurere applikasjoner, definere datastrukturer og mye mer. La oss se på noen eksempler på hvordan man kan bruke YAML i Javascript.
 
 ```Javascript
-const yaml = require('js-yaml');
+// Opprette et enkelt YAML-dokument
+let person = `
+navn: John Doe
+alder: 30
+`
+
+// Konvertere YAML til et Javascript-objekt
+let personObj = YAML.parse(person);
+console.log(personObj.navn); // Output: John Doe
+
+// Opprette et YAML-dokument med en liste
+let katter = `
+- navn: Luna
+  rase: Siamesisk
+- navn: Milo
+  rase: Bengal
+`
+
+// Konvertere YAML til et Javascript-objekt
+let katterArr = YAML.parse(katter);
+console.log(katterArr[1].rase); // Output: Bengal
 ```
 
-Deretter kan du bruke ```load()```-funksjonen til å lese en YAML-fil og konvertere den til et JavaScript-objekt:
+Det er også mulig å generere YAML-filer ved hjelp av Javascript. La oss si at vi ønsker å opprette en konfigurasjonsfil for en app som heter "ToDo". Her er et eksempel på hvordan det kan gjøres:
 
 ```Javascript
-const data = yaml.load('data.yml');
-```
-
-Du kan også bruke ```dump()```-funksjonen for å konvertere et JavaScript-objekt til YAML-format og skrive det til en fil:
-
-```Javascript
-const data = {
-  name: 'John Doe',
-  age: 28
+// Opprette et objekt med dataen vi vil konvertere til YAML
+let appKonfig = {
+  navn: "ToDo",
+  farger: {
+    primær: "grønn",
+    sekundær: "blå"
+  },
+  ikon: "checkmark",
+  oppgaver: ["Handle mat", "Sende e-post", "Betale regninger"]
 };
 
-yaml.dump(data, 'data.yml');
+// Konvertere dataen til YAML og skrive til fil
+let yamlKonfig = YAML.stringify(appKonfig);
+fs.writeFileSync('todo.yml', yamlKonfig, 'utf8');
 ```
 
-## Dypdykk
+## Deep Dive
 
-En av de mest nyttige egenskapene ved YAML er at det støtter hierarkiske strukturer. Dette betyr at du kan organisere dataene dine på en logisk måte ved å bruke innrykk. For eksempel:
+Nå som vi har sett på hvordan man kan bruke YAML i Javascript, la oss ta en dypere titt på noen av de viktigste konseptene rundt YAML.
 
-```YAML
-name: John Doe
-age: 28
-address:
-  street: Main Street
-  city: Oslo
-  country: Norway
-```
+### Datastrukturer
 
-Det er også mulig å definere egendefinerte datatyper og referere til dem i YAML-filer ved hjelp av anker og alias. Dette gjør det enklere å gjenbruke og vedlikeholde kode.
+Som vi har sett i eksemplene ovenfor, kan YAML brukes til å representere forskjellige typer datastrukturer, som objekter, lister og nøster av disse. Dette gjør det enkelt å organisere og strukturere data på en lesbar måte.
 
-For en mer utfyllende og detaljert innføring i YAML, kan du sjekke ut dokumentasjonen på [YAMLs offisielle nettside](https://yaml.org/) eller [js-yaml's GitHub-repository](https://github.com/nodeca/js-yaml).
+### Indentering
+
+En av de viktigste aspektene ved YAML er indentering. Dette er hvordan YAML-bestanden er strukturert med innrykk for å vise relasjoner mellom ulike strukturer. Det er viktig å merke seg at indentering må være konsekvent for at YAML skal fungere som forventet.
+
+### Kommentarer
+
+YAML støtter også kommentarer, som er veldig nyttig for å forklare hva hver del av filen gjør og hvorfor det er der. Kommentarer kan legges til ved å bruke "#" tegnet.
+
+### Variabler og referanser
+
+YAML støtter også variabler og referanser, noe som gjør det enkelt å gjenbruke data i en YAML-fil. Dette er spesielt nyttig når man jobber med store og komplekse YAML-strukturer.
 
 ## Se også
 
-- [YAML offisiell nettside](https://yaml.org/)
-- [js-yaml GitHub-repository](https://github.com/nodeca/js-yaml)
-- [npm pakken for js-yaml](https://www.npmjs.com/package/js-yaml)
+* Offisiell YAML-dokumentasjon: https://yaml.org/
+* YAML-lint (verktøy for å sjekke og validere YAML-kode): https://yamllint.readthedocs.io/
+* YAML i 5 minutter (en rask innføring i YAML): https://learnxinyminutes.com/docs/no-no/yaml-no/

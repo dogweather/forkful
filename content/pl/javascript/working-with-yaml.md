@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Praca z YAML"
+title:                "Praca z YAML"
+html_title:           "Javascript: Praca z YAML"
 simple_title:         "Praca z YAML"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,53 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto uczyć się programowania w języku Javascript?
+## Dlaczego
 
-Język Javascript jest jednym z najpopularniejszych języków programowania na świecie – jest używany przez miliony osób każdego dnia. Jest bardzo wszechstronny, ponieważ może być wykorzystywany do tworzenia interaktywnych stron internetowych, aplikacji mobilnych, gier i wielu innych. Ale dziś skupimy się na jednym z jego najważniejszych zastosowań: pracy z YAML.
+Dlaczego warto pracować z YAML? Otóż jest to prosty i elastyczny format dla przesyłania danych, który jest bardzo popularny w świecie programowania. Pozwala na łatwe zapisywanie struktury danych w czytelnej dla człowieka formie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Programowanie w języku Javascript jest bardzo proste. Wystarczy mieć bazową wiedzę na temat składni i funkcji języka oraz umieć korzystać z narzędzi programistycznych. Aby zacząć pracę z YAML, wystarczy zainstalować odpowiednią bibliotekę lub użyć już istniejącej w swoim projekcie. Następnie możesz zacząć tworzyć i manipulować plikami YAML za pomocą prostych funkcji języka Javascript.
+Kodowanie w YAML jest bardzo proste i intuicyjne, a dzięki temu może być używane przez programistów o różnym poziomie zaawansowania. Poniżej znajdziesz kilka przykładów kodu i wyników, aby zapoznać się z podstawami:
 
-Poniżej znajdziesz przykładowy kod w języku Javascript, który tworzy obiekt z danymi w formacie YAML i wypisuje go w konsoli:
-
+### Tworzenie obiektu YAML
 ```Javascript
-const YAML = require('js-yaml');
-
-const data = {
-  name: 'John',
-  age: 30,
-  job: 'developer',
+const person = {
+  name: "Kasia",
+  age: 25,
+  city: "Warszawa"
 };
 
-const yamlData = YAML.safeDump(data);
-
-console.log(yamlData);
+const yamlString = YAML.stringify(person);
+console.log(yamlString);
+```
+### Wynik
+```
+name: Kasia
+age: 25
+city: Warszawa
 ```
 
-Ten mały kawałek kodu pokazuje, jak łatwo można tworzyć i manipulować danymi w formacie YAML przy użyciu języka Javascript. Dzięki temu możesz w prosty sposób przekazywać dane w swoich projektach lub tworzyć pliki konfiguracyjne dla swoich aplikacji.
-
-## Głębsze zanurzenie
-
-Pracując z YAML, warto poznać kilka bardziej zaawansowanych funkcji języka Javascript, które ułatwią manipulowanie i przetwarzanie danych w tym formacie. Na przykład można wykorzystać bibliotekę Lodash, aby wygodnie pracować z plikami YAML.
-
-Poniżej przykładowy kod, który wykorzystuje tę bibliotekę do odczytania pliku YAML i wyświetlenia jego zawartości w konsoli:
-
+### Tworzenie listy YAML
 ```Javascript
-const _ = require('lodash');
-const YAML = require('js-yaml');
-const fs = require('fs');
-
-const yamlFile = fs.readFileSync('data.yaml', 'utf8');
-const yamlData = YAML.safeLoad(yamlFile);
-
-console.log(_.get(yamlData, 'name'));
+const fruits = ["Jabłko", "Banan", "Truskawka", "Pomarańcza"];
+const yamlList = YAML.stringify(fruits);
+console.log(yamlList);
+```
+### Wynik
+```
+- Jabłko
+- Banan
+- Truskawka
+- Pomarańcza
 ```
 
-Dzięki wykorzystaniu funkcji "_.get" z biblioteki Lodash, możesz łatwo pobierać konkretne dane z pliku YAML, niezależnie od jego struktury.
+### Wczytywanie danych z pliku YAML
+```Javascript
+const fs = require('fs');
+const yamlData = fs.readFileSync('data.yml', 'utf8');
+const data = YAML.parse(yamlData);
+console.log(data);
+```
+### Wynik
+```
+{
+  name: "Adam",
+  age: 30,
+  city: "Kraków"
+}
+```
 
-# Zobacz również
+## Głębsza analiza
 
-- Dokumentacja języka Javascript: https://developer.mozilla.org/pl/docs/Web/JavaScript
-- Biblioteka js-yaml: https://www.npmjs.com/package/js-yaml
-- Biblioteka Lodash: https://lodash.com/
+Tworzenie obiektów i list w YAML jest bardzo intuicyjne, jednak warto pamiętać o kilku ważnych szczegółach:
+
+- Obiekty w YAML są tworzone przy użyciu par klucz-wartość, gdzie dwukropek oddziela klucz od wartości.
+- Listy w YAML są tworzone przy użyciu myślników, a każdy element jest zapisywany w nowej linii.
+- Plik YAML powinien być zapisany w formacie UTF-8, aby uniknąć problemów z kodowaniem.
+
+Możesz też wykorzystać zalety YAML w swoim projekcie, np. jako format konfiguracyjny dla swojej aplikacji.
+
+## Zobacz też
+
+- Dokumentacja YAML: https://yaml.org/
+- Biblioteka YAML dla Javascript: https://eemeli.org/yaml/#home
+- Artykuł "10 powodów dlaczego warto używać YAML": https://codeenigma.com.au/blog/10-reasons-why-yaml-rules

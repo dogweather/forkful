@@ -1,6 +1,7 @@
 ---
-title:                "Go: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Nedladdning av en webbsida"
+html_title:           "Go: Nedladdning av en webbsida"
+simple_title:         "Nedladdning av en webbsida"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,12 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Kanske har du stött på en intressant webbsida som du vill spara för senare, eller så vill du kanske automatisera en uppgift som involverar hämtning av webbinnehåll. Oavsett anledning finns det ett enkelt sätt att ladda ner en webbsida i Go.
 
-Att kunna ladda ned en webbsida är en viktig funktion i många program eller script. Det kan användas för att hämta informationen från en specifik webbsida, bearbeta den och sedan använda den för olika ändamål. Genom att lära sig hur man kan ladda ned en webbsida i Go programmeringsspråk, kan du öppna upp möjligheterna för en hel del nya applikationer och verktyg.
-
-## Hur man gör det
-
-För att ladda ned en webbsida i Go, behöver du först lägga till paketet "net/http" för att kunna skicka HTTP-förfrågningar. Sedan behöver du bestämma vilken webbsida du vill ladda ner och skapa en variabel för att lagra dess URL. Slutligen använder du "http.Get" funktionen för att hämta hela innehållet på webbsidan och skriva ut det till Terminalen.
+## Så här gör du
+Först måste vi importera "net/http" paketet för att kunna hämta webbsidans innehåll. Sedan använder vi funktionen "Get" från detta paket och anger den URL vi vill hämta som argument. Här är ett enkelt exempel: 
 
 ```Go
 package main
@@ -26,37 +25,53 @@ import (
 )
 
 func main() {
-    // URL för webbsida
-    url := "https://www.example.com"
-
-    // Hämta innehållet på webbsidan
-    response, err := http.Get(url)
+    response, err := http.Get("https://www.example.com")
     if err != nil {
-        fmt.Println("Kunde inte hämta webbsidan:", err)
+        // Om det uppstår ett fel, hantera det här
     }
-    defer response.Body.Close()
-
-    // Läs innehållet som en byte-array
-    content, err := ioutil.ReadAll(response.Body)
-    if err != nil {
-        fmt.Println("Kunde inte läsa webbsidans innehåll:", err)
-    }
-
-    // Skriv ut innehållet till Terminalen
-    fmt.Println(string(content))
+    defer response.Body.Close() // Säkerställ att vi stänger anslutningen när vi är klara
+    fmt.Println(response.StatusCode) // Skriv ut statuskoden från webbsvaret
 }
 ```
+Output: 200
 
-När du kör detta program kommer webbsidans innehåll att skrivas ut till Terminalen. Detta är det grundläggande sättet att ladda ned en webbsida i Go. Som du kan se är det ganska enkelt och det går att anpassa efter dina behov.
+I detta exempel använder vi variabeln "response" för att lagra det svar vi får tillbaka från "Get" funktionen. Sedan använder vi "defer" för att stänga anslutningen till webbsidan när vi är klara. Slutligen skriver vi ut statuskoden från svaret.
 
 ## Djupdykning
+Som du kan se i exemplet ovan så är det faktiskt ganska enkelt att hämta en webbsida i Go. Men det finns fler saker vi kan göra för att anpassa vår hämtning. Till exempel kan vi använda "Body" attributet från "response" variabeln för att få tillgång till själva webbinnehållet. Vi kan också använda paketet "io/ioutil" för att enkelt läsa innehållet som en sträng.
 
-För att ta det ett steg längre kan du också använda olika funktioner och metoder för att bearbeta och analysera webbsidans innehåll. Till exempel kan du använda "regexp" paketet för att hitta och extrahera specifik information från webbsidan baserat på ett mönster. Du kan också använda "io" paketet för att spara ner innehållet på webbsidan som en fil istället för att skriva ut det till Terminalen.
+```Go
+package main
 
-En annan viktig aspekt att tänka på är att hantera eventuella fel som kan uppstå under hämtningen av webbsidan. Det är viktigt att kontrollera och hantera dessa fel för att undvika att ditt program kraschar eller får oförväntade beteenden.
+import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+)
+
+func main() {
+    response, err := http.Get("https://www.example.com")
+    if err != nil {
+        // Om det uppstår ett fel, hantera det här
+    }
+    defer response.Body.Close()
+    body, err := ioutil.ReadAll(response.Body)
+    if err != nil {
+        // Om det uppstår ett fel, hantera det här
+    }
+    fmt.Println(string(body)) // Skriv ut webbinnehållet som en sträng
+}
+```
+Output: <!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+
+I detta exempel använder vi paketet "io/ioutil" för att läsa innehållet från "Body" attributet som en sträng och skriva ut det. Detta kan vara användbart om du vill bearbeta innehållet på något sätt, som att kanske parsea HTML eller spara det till en fil.
 
 ## Se även
-
-- Official documentation for go packages: https://golang.org/pkg/
-- A tutorial on how to download a webpage in Go: https://zetcode.com/all/#golang
-- An example of using "regexp" package to extract information from a webpage: https://golangbyexample.com/golang-regex/
+- [Officiell dokumentation för "net/http" paketet](https://golang.org/pkg/net/http/)
+- [Mer om "io/ioutil" paketet](https://golang.org/pkg/io/ioutil/)
+- [En praktiskt exempel på webb-scarping i Go](https://levelup.gitconnected.com/web-scraping-in-go-c40a76572b2e?gi=6f6f4754817)

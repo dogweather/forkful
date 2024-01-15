@@ -1,6 +1,7 @@
 ---
-title:                "Java: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Utskrift av felsökningstexter"
+html_title:           "Java: Utskrift av felsökningstexter"
+simple_title:         "Utskrift av felsökningstexter"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,47 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva ut felsökningsutdata är ett vanligt sätt för utvecklare att identifiera och åtgärda problem i deras kod. Genom att utskriftsprocessen kan man se exakt vad som händer vid varje steg i programmet och därmed enklare hitta fel och missar.
 
-## Hur man gör
-För att skriva ut felsökningsutdata i Java, kan man använda sig av metoden "System.out.println()" som skriver ut en given sträng eller variabel till konsolen. Här kommer ett exempel:
+Det finns många anledningar till varför man, som utvecklare, skulle vilja skriva ut debug-meddelanden i sin Java-kod. Det kan hjälpa till att förstå hur koden fungerar, hitta och åtgärda fel och ge en bättre överblick över programmets flöde.
 
-```java
-public class DebugPrinter {
+## Hur
 
-    public static void main(String[] args) {
+För att skriva ut debug-meddelanden i Java använder man en metod som heter "println()". Detta är en inbyggd metod i Java som tar emot en sträng som argument och skriver ut den till konsolen. Här är ett exempel på hur man skulle kunna använda den:
 
-        // Skapa en variabel att skriva ut
-        String message = "Hej, världen!";
-
-        // Skriv ut variabeln
-        System.out.println(message);
-
-        // Använd också felsökningsutdata för att kontrollera variabler
-        int number1 = 5;
-        int number2 = 10;
-        int sum = number1 + number2;
-        System.out.println("Summan av " + number1 + " och " + number2 + " är " + sum);
-    }
-
-}
+```Java
+int age = 25;
+System.out.println("Min ålder är " + age);
 ```
-Output:
+
+Detta kommer att skriva ut "Min ålder är 25" till konsolen. Man kan också använda "print()" metoden, som gör samma sak som "println()" utan att lägga till en radbrytning efter. Detta kan vara användbart om man vill skriva ut flera meddelanden på samma rad. Här är ett exempel:
+
+```Java
+System.out.print("Hej ");
+System.out.print("Världen!");
 ```
-Hej, världen!
-Summan av 5 och 10 är 15
-```
-Här ser vi hur vi kan skriva ut en enkel sträng samt använda felsökningsutdata för att kontrollera vad som händer med variabler i en beräkning.
+
+Detta kommer att skriva ut "Hej Världen!" på samma rad.
 
 ## Djupdykning
-Att skriva ut felsökningsutdata kan vara ett effektivt sätt att förstå vad som händer i ens program, men det är också viktigt att använda den rätt. Här kommer några tips för att få ut mesta möjliga av felsökningsutdata i Java:
 
-- Använd tydliga och beskrivande meddelanden för att förstå vad som skrivs ut.
-- Undvik att skriva ut stora mängder data som kan göra konsolen ogenomtränglig.
-- Kombinera felsökningsutdata med andra verktyg som loggar eller debugger för att få en mer omfattande bild av ditt program.
-- Kom ihåg att ta bort eller kommentera ut alla felsökningsutdata innan du släpper din kod till en produktionsmiljö.
+När det kommer till att skriva ut debug-meddelanden är det viktigt att hitta en balans mellan att ha tillräckligt med information för att förstå vad som händer i koden, samtidigt som det inte blir för mycket och rörigt. En bra strategi är att endast skriva ut viktiga variabler och steg i kodflödet. Man kan också använda olika nivåer av debuggning, som t.ex. "DEBUG", "INFO" och "ERROR", för att indikera vilken typ av meddelande det är. Detta kan hjälpa till att enklare hitta och sortera meddelandena.
 
 ## Se även
-- [Java API-dokumentation](https://docs.oracle.com/javase/8/docs/api/)
-- [Debugging in Java: A Short Introduction](https://www.baeldung.com/java-debugging)
-- [Java Debugging with Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2017/february/article2.php)
+
+- [Java: Using System.out for debugging](https://www.baeldung.com/java-debugging-system-out)
+- [Debugging in Java](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html#options)

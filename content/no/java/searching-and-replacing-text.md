@@ -1,6 +1,7 @@
 ---
-title:                "Java: Søk og erstatt tekst"
-simple_title:         "Søk og erstatt tekst"
+title:                "Søke og erstatte tekst"
+html_title:           "Java: Søke og erstatte tekst"
+simple_title:         "Søke og erstatte tekst"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -9,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Why: Hvorfor vil noen endre tekst?
 
-Å søke og erstatte tekst er en viktig del av programmering fordi det tillater oss å gjøre store endringer i koden vår på en effektiv måte. Ved å bruke søke- og erstatningsfunksjoner kan vi spare mye tid og unngå manuell feil når vi jobber med store mengder tekst. 
+Hvis du er en Java-utvikler, har du sannsynligvis støtt på situasjoner der du må søke og erstatte tekst i koden din. Dette kan være for å endre variabelnavn, rette opp skrivefeil eller gjøre større endringer. Uansett årsaken er det viktig å kunne beherske søke- og erstattingsfunksjonaliteten i Java for å effektivisere arbeidet ditt og sikre korrekt kode.
 
-## Hvordan 
+## How To: Slik søker og erstatter du tekst i Java
 
-For å søke og erstatte tekst i Java, kan vi bruke innebygde metoder som `replace()` og `replaceAll()`. Her er et eksempel på hvordan vi kan erstatte en del av en streng med en annen:
+For å søke og erstatte tekst i Java, kan du bruke metoden `String.replaceAll()` som tar inn to parameterstrenge: en regex (regulært uttrykk) som angir teksten du vil søke etter, og en tekst som skal erstatte den. Her er et eksempel på en regex som søker etter alle forekomster av ordet "hallo" og erstatter det med "hei":
 
-```java
-String originalTekst = "Hei, verden!";
-String nyTekst = originalTekst.replace("Hei", "Hallo");
-
-// output: Hallo, verden!
-System.out.println(nyTekst); 
+```Java
+String utgangstekst = "Hallo verden! Hallo alle sammen!";
+String erstattetTekst = utgangstekst.replaceAll("hallo", "hei");
+System.out.println(erstattetTekst);
 ```
 
-Her erstatter vi "Hei" med "Hallo" i strengen "Hei, verden!". Ved å bruke `replaceAll()` kan vi også bruke regulære uttrykk for å søke og erstatte tekst.
- 
-```java
-String originalTekst = "Jeg elsker å kode i Java!";
-String nyTekst = originalTekst.replaceAll("Java\\b", "Kotlin");
+Dette vil gi følgende output:
 
-// output: Jeg elsker å kode i Kotlin!
-System.out.println(nyTekst); 
+```
+Hei verden! Hei alle sammen!
 ```
 
-I dette tilfellet erstatter vi alle forekomster av "Java" med "Kotlin". Vi bruker `\\b` for å sikre at vi bare erstatter hele ordet "Java" og ikke deler av andre ord som inneholder bokstavkombinasjonen.
+Merk at `replaceAll()`-metoden tar inn regex som første parameter, så det kan være lurt å lese seg opp på hvordan regex fungerer for å få en bedre forståelse av hvordan du kan søke etter spesifikke tekststrenger.
 
-## Dypdykk 
+## Deep Dive: Dypere informasjon om søking og erstatting av tekst
 
-Å søke og erstatte tekst ved hjelp av regulære uttrykk kan være en svært kraftig måte å manipulere tekst på. Her er noen nyttige tips for å få mest mulig ut av dette verktøyet:
+I Java kan du bruke både `replace()` og `replaceAll()`-metodene for å søke og erstatte tekst, men det er noen forskjeller mellom dem. Mens `replace()` bare erstatter den første forekomsten av din angitte tekst, vil `replaceAll()` bytte ut alle forekomster som matcher din regex.
 
-- bruk `\\b` for å matche hele ord og unngå å erstatte deler av andre ord
-- bruk `+` for å matche en eller flere forekomster av en bokstav eller tall
-- bruk `*` for å matche null eller flere forekomster av en bokstav eller tall
-- bruk `^` for å matche starten av en streng
-- bruk `$` for å matche slutten av en streng
-- bruk `|` for å matche flere ord eller uttrykk samtidig
-- bruk `\s` for å matche mellomrom og linjeskift
-- bruk `\\d` for å matche tall
+Du kan også bruke `String.replaceFirst()` for å erstatte den første forekomsten av teksten, men det er viktig å bemerke at denne metoden også tar inn regex som parameter. Så hvis du vil erstatte en konkret tekststreng, må du enten bruke `replace()` eller sørge for å formatere teksten din som et regex-uttrykk.
 
-Et annet viktig poeng å merke seg er at `replaceAll()` og `replace()` returnerer en ny streng i stedet for å endre den originale strengen. Dette betyr at du må lagre den returnerte strengen i en variabel for å få tilgang til den endrede teksten.
+Når du bruker `replaceAll()`, vil metoden returnere en ny string med alle forekomster erstattet, mens den originale stringen forblir den samme. Hvis du ønsker å erstatte tekst i den eksisterende stringen, kan du bare tilordne den til en ny variabel eller bruke `String.replace()`.
 
-## Se også 
+See Also: Se også disse nyttige ressursene:
 
-- [Java regex tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-- [Oracle docs - String class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [W3Schools - Java String replace() method](https://www.w3schools.com/java/ref_string_replace.asp)
+- Dokumentasjon for `String.replaceAll()`: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)
+- Intro til regulære uttrykk: https://www.tutorialspoint.com/java/java_regular_expressions.htm
+- Eksempler på Java-regulære uttrykk: https://www.javatpoint.com/java-regex

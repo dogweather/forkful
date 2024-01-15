@@ -1,6 +1,7 @@
 ---
-title:                "Rust: עובדים עם yaml"
-simple_title:         "עובדים עם yaml"
+title:                "עבודה עם yaml"
+html_title:           "Rust: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,59 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hebrew translation:
+## מדוע
 
-# למה
+אתם יכולים להשתמש ב־YAML כדי לארגן ולשמור נתונים בקוד שלכם. הוא מתאים במיוחד לשימוש במערכות גדולות ורבות, והוא פשוט וקל לשימוש.
 
-הכתיבה בשפת ראסט היא חוויה מרתקת ומאתגרת, ואחד היתרונות שלה הוא היכולת לעבוד עם תבניות כמו YAML. השימוש בפורמט זה יכול להיות מועיל במיוחד כאשר אנו מנסים ליצור הגדרות מבוססות טקסט עבור אפליקציות שלנו. המאמר הזה יראה לכם איך ניתן לעבוד עם YAML בשפת ראסט.
+## איך לעשות
 
-# איך לעשות זאת
+הנה כמה דוגמאות שיכולות לעזור לכם להתחיל עם YAML בשפת ראסט:
 
-הראשון שאנו צריכים לעשות הוא להתקין את הספריות המתאימות על מנת לעבוד עם YAML. למרבה המזל, ישנן ספריות רבות זמינות לשימוש בראסט, כך שתהליך ההתקנה אינו יותר מכמה שורות קוד. כדי להתחיל, יש להוסיף את השורת הבאה לקובץ ה- `Cargo.toml` שלנו:
-
-```Rust
-yaml = "0.4"
-```
-
-לאחר ההתקנה, ניתן להתחיל לעבוד עם YAML בשפת ראסט. הכניסו את הרשימה שלכם או ההגדרה לתוך משנת טקסט עם מבנה YAML והשתמשו בספריית `serde_yaml` על מנת להמיר אותה למבנה נתונים שניתן לנהל ולעבד:
-
-```Rust
-use std::fs::File;
+```rust
+// ייבאו את ספריית "serde_yaml"
+extern crate serde_yaml;
 use serde_yaml::Value;
 
-let file = File::open("my_file.yaml").expect("Unable to open file");
-let data: Value = serde_yaml::from_reader(file).expect("Unable to parse YAML");
+// ייצוא נתונים לקובץ YAML
+fn export_to_yaml(data: &Value) -> serde_yaml::Result<String> {
+    // קבלו את הנתונים בתבנית YAML
+    let yaml = serde_yaml::to_string(&data)?;
+    
+    // הוסיפו את הנתונים לקובץ חדש
+    std::fs::write("data.yaml", &yaml)?;
+    
+    // תאפשרו למשתמש לדעת שהפעולה הושלמה בהצלחה
+    Ok(String::from("נתונים יוצאים במוצרים!"))
+}
 
-println!("{:#?}", data); 
+// ייבאו נתונים מקובץ YAML
+fn import_from_yaml() -> serde_yaml::Result<()> {
+    // קראו את קובץ ה־YAML והפוך אותו לנתוני Value
+    let data = &serde_yaml::from_str(std::fs::read_to_string("data.yaml")?.as_str())?;
+    
+    // תדפיסו את הנתונים שנמצאים בתוך ה־Value
+    for (key, value) in data.as_mapping().unwrap() {
+        println!("{}: {}", key.as_str().unwrap(), value.as_i64().unwrap());
+    }
+    
+    Ok(())
+}
 ```
 
-תוצאת ההדפסה תהיה בפורמט הבא:
+אם תרצו לתרגם נתונים מפורמט אחר ל־YAML, תוכלו להשתמש בספריית "serde", שמאפשרת לכם לסדר את הנתונים בפורמט של YAML. לפרטים נוספים, ניתן לקרוא את המדריך המפורט [כאן](https://serde.rs/).
 
-```Rust
-Value(
-    Mapping(
-        {
-            String(
-                "user"
-            ): Value(
-                String(
-                    "John"
-                )
-            ),
-            String(
-                "age"
-            ): Value(
-                Number(
-                    26
-                )
-            ),
-        }
-    )
-)
-```
+## חשיפה מעמיקה
 
-ניתן לעבור על הנתונים ולהשתמש בהם כרצוננו, ובנוסף ניתן להמיר חזרה למבנה YAML בעזרת פונקציות כמו `serde_yaml::to_string()`.
+כעת שאנחנו כבר מכירים את כמה סיבות לשימוש ב־YAML ואת האופן להעביר נתונים לקובץ YAML וממנו, ניתן לעיין בכמה נכונויות נוספות בשימוש בנתוני YAML עם ראסט.
 
-# גילוי נתונים מעמיק
-
-אם אתם מעוניינים להתקדם וללמוד עוד על עבודה עם YAML בשפת ראסט, נ
+במציאות, הרבה מפריטי התצורה נמצאים בפורמט YAML ואתם תמצאו שהעבודה עם נתונים בפור

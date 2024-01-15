@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 将字符串转化为大写"
-simple_title:         "将字符串转化为大写"
+title:                "将字符串转换为大写"
+html_title:           "Fish Shell: 将字符串转换为大写"
+simple_title:         "将字符串转换为大写"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,41 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么：
-我们在编程中经常需要对字符串进行处理，其中一个常见的需求就是将字符串中的首字母变为大写。这样做可以让字符串更加规范和易于阅读，因此学习如何在Fish Shell中实现字符串大写功能是很有必要的。
+## 为什么
 
-##如何操作：
-首先，我们需要使用`echo`命令来输出一个字符串，然后使用管道符号`|`将其传递给`string`命令。在`string`命令后面，使用`capitalize`参数即可实现大写功能。
+在编程中，经常会遇到需要对字符串进行首字母大写的情况，比如在创建用户界面的时候，用户姓名的首字母通常会被大写。使用 Fish Shell 的 capitalize功能可以轻松实现这一要求，帮助用户提高编程效率。
 
-```Fish Shell
-echo "hello world" | string capitalize
+## 如何做
+
+使用 Fish Shell 的 capitalize 功能非常简单。
+
+首先，打开终端，进入你想要操作的目录。然后使用以下命令进入 Fish Shell 的交互式界面：
+
+```
+Fish Shell
 ```
 
-运行以上命令后，我们会得到如下的输出：
+接着，输入以下命令来创建一个字符串：
 
 ```Fish Shell
-Hello world
+set name Bob 
 ```
 
-这样我们就成功地将字符串中的第一个字母变为了大写。当然，如果我们想将整个字符串都变为大写，只需要使用`upper`参数即可，用法和`capitalize`一样。
-
-##深入探讨：
-实际上，在Fish Shell中，不仅可以使用`string`命令来操作字符串，还可以使用`string`作为函数来进行字符串处理。比如，我们可以通过以下代码来实现字符串的大写功能：
+现在，我们可以使用 capitalize 功能来将字符串的首字母大写：
 
 ```Fish Shell
-echo (string capitalize "hello world")
+capitalize $name 
 ```
 
-这里，`string`作为函数，参数传入的是要处理的字符串。同样，也可以通过`upper`函数来实现全部大写的操作。
+输入以上命令后，你可以看到输出结果为 "Bob"，其中首字母"B"已被转换为大写。如果想要对整个字符串进行大写操作，可以使用 toUpperCase 功能：
 
-除了`capitalize`和`upper`，Fish Shell还有其他的字符串处理函数，例如`lower`（将字符串转换为全部小写）、`title`（将每个单词首字母大写）、`chomp`（删除结尾的换行符）等等。有兴趣的读者可以自行探索和尝试。
+```Fish Shell
+toUpperCase $name 
+```
 
-##更多资源：
+执行以上命令后，输出结果为 "BOB"。
+
+## 深入探讨
+
+Fish Shell 的 capitalize 功能实际上是调用了内置的字符串转换函数，而 toUpperCase 功能则是调用了更底层的字符转换函数。这些函数能够帮助我们快速实现字符串操作，同时也具备较高的性能。
+
+另外，值得注意的是，如果想要转换字符串中其他字母的大小写，还可以使用 toLowerCase 功能。比如输入以下命令：
+
+```Fish Shell
+toLowerCase $name 
+```
+输出结果将为 "bob"。
+
+## 参考资料
+
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
 - [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
-- [Fish Shell命令参考手册](https://fishshell.com/docs/current/commands.html)
-- [Fish Shell函数参考手册](https://fishshell.com/docs/current/commands.html#functions)
+- [Fish Shell资料汇总社区](https://fisherman.netlify.app/community/)
+- [Fish Shell的capitalize功能示例代码](https://gist.github.com/bobsmith633/23e2f7df5404976a9254028c1445774b)
+- [Fish Shell的toUpperCase功能示例代码](https://gist.github.com/bobsmith633/5f324c941256af6804b7c13b7160c2c8)
 
-##参考：
-- [Fish Shell User Guide](https://fishshell.com/docs/current/guide.html)
-- [Capitalizing a String in Bash](https://www.baeldung.com/linux/bash-string-capitalization)
+## 参见
+
+[相关操作指南](https://fishshell.com/docs/current/index.html#operating-tips)

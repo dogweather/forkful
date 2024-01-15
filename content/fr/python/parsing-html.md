@@ -1,6 +1,7 @@
 ---
-title:                "Python: Analyse du code html"
-simple_title:         "Analyse du code html"
+title:                "Analyse de l'html"
+html_title:           "Python: Analyse de l'html"
+simple_title:         "Analyse de l'html"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,38 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Vous vous demandez peut-être pourquoi il serait intéressant de s'engager dans l'analyse de HTML en Python. Eh bien, permettez-moi de vous donner quelques raisons. Tout d'abord, cela peut vous aider à extraire des données précises et structurées à partir de pages web. Cela peut également vous aider à automatiser certaines tâches, comme le remplissage de formulaires ou le scraping de données pour des projets de recherche.
+
+Si vous êtes un développeur débutant ou expérimenté, il est important de comprendre comment extraire des données à partir de fichiers HTML. Cela peut être utile pour diverses tâches telles que le web scraping, l'analyse de données, etc.
 
 ## Comment faire
-Voici un exemple de code Python pour parse un document HTML :
+
+La bibliothèque Python la plus populaire pour analyser HTML est Beautiful Soup. Commencez par installer la bibliothèque en utilisant la commande suivante :
+
 ```Python
-import requests
+pip install beautifulsoup4
+```
+
+Ensuite, importez Beautiful Soup dans votre code Python :
+
+```python
 from bs4 import BeautifulSoup
-
-# Obtenir le contenu HTML de la page cible
-url = "https://www.example.com"
-r = requests.get(url)
-
-# Utiliser BeautifulSoup pour analyser le HTML
-soup = BeautifulSoup(r.text, 'html.parser')
-
-# Trouver tous les éléments avec la balise <a> et afficher leur contenu
-for link in soup.find_all('a'):
-    print(link.get_text())
 ```
-Cela produirait une sortie similaire à ceci :
+
+Une fois que vous avez importé Beautiful Soup, vous pouvez utiliser ses méthodes pour extraire des données à partir d'un fichier HTML. Par exemple, si nous avons un fichier HTML contenant une liste de nourriture :
+
+```python
+liste_nourriture = """
+<html>
+<head>
+<title>Ma Liste de Nourriture</title>
+</head>
+<body>
+<h1>Mes Aliments Préférés</h1>
+<ul>
+<li>Pizza</li>
+<li>Cake</li>
+<li>Hamburger</li>
+</ul>
+</body>
+</html>
+"""
 ```
-Accueil
-Produits
-À propos de nous
-Contactez-nous
+
+Nous pouvons utiliser Beautiful Soup pour extraire la liste des aliments :
+
+```python
+soup = BeautifulSoup(liste_nourriture, 'html.parser')
+aliments = soup.find_all('li') # Renvoie une liste contenant tous les éléments 'li'
+```
+
+Maintenant, nous pouvons itérer à travers la liste et afficher chaque aliment :
+
+```python
+for aliment in aliments:
+    print(aliment.text)
+```
+
+Cela affichera :
+
+```
+Pizza
+Cake
+Hamburger
 ```
 
 ## Plongée profonde
-L'analyse de HTML en Python peut être compliquée car chaque page web est différente et la structure du HTML peut varier. Cependant, des modules tels que BeautifulSoup et Requests peuvent grandement faciliter le processus en offrant des outils pour naviguer et extraire des données des documents HTML. Il existe également des outils de visualisation tels que Beautiful Soup pour vous aider à comprendre la structure d'un document HTML spécifique.
+
+Beautiful Soup offre également plusieurs fonctionnalités avancées pour aider à extraire des données plus complexes à partir de fichiers HTML. Vous pouvez consulter la documentation officielle pour en savoir plus sur ces fonctionnalités et comment les utiliser.
+
+Un point important à noter est que Beautiful Soup n'est pas la seule bibliothèque Python disponible pour analyser HTML. Vous pouvez également consulter d'autres bibliothèques telles que lxml et requests-html.
 
 ## Voir aussi
-- [Documentation officielle de BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Documentation officielle de Requests](https://requests.readthedocs.io/en/master/)
-- [Documentation officielle de Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Tutorial en français pour l'analyse de HTML avec Python](https://python.developpez.com/cours/analyser-web-beau-soup/)
+
+- [Documentation officielle Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Documentation officielle lxml](https://lxml.de/)
+- [Documentation officielle requests-html](https://requests-html.kennethreitz.org/)

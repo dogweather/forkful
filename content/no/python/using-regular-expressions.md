@@ -1,5 +1,6 @@
 ---
-title:                "Python: Å bruke regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "Python: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Python"
 category:             "Python"
@@ -11,33 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er en Python-programmerer eller en som er interessert i å lære å kode, har du kanskje hørt om noe som heter "regular expressions". Dette er et kraftig verktøy som lar deg søke etter og manipulere tekststrenger på en svært effektiv måte. Enten du trenger å analysere store mengder tekst eller forenkle en komplisert oppgave, kan regular expressions være den perfekte løsningen.
+Å bruke regulære uttrykk i Python kan gjøre det enklere å håndtere tekst og søke gjennom store mengder data. Det er en nyttig ferdighet å ha for å automatisere repetetive oppgaver eller finne spesifikke mønstre i tekst.
 
-## Slik gjør du det
+## Hvordan
 
-For å bruke regular expressions i Python, må du først importere "re"-modulen. Deretter kan du bruke ulike funksjoner som denne modulen tilbyr for å utføre ulike søk og manipulasjoner på tekststrenger. La oss se på noen eksempler:
+For å bruke regulære uttrykk i Python, må du først importere "re" biblioteket. Dette gjør du ved å skrive følgende kode:
 
 ```Python
 import re
-
-# Søke etter en bestemt streng
-re.search(r'god', "God morgen!").group() # Output: god
-
-# Søke etter tall
-re.findall(r'\d+', "Det er 2020").group() # Output: 2020
-
-# Erstatte deler av en streng
-re.sub(r'hallo', 'hei', "Hallo, hvordan går det?") # Output: Hei, hvordan går det?
 ```
 
-Som du kan se, bruker vi en spesiell syntaks for å definere mønstre som vi vil søke etter. Dette kan være enkeltbokstaver, tall, spesielle karakterer eller en kombinasjon av disse. Ved å bruke ulike metodekall kan vi få tilbake ønsket resultat.
+Deretter kan du begynne å bruke funksjonene og metodene i "re" biblioteket. La oss si at vi har en tekststreng og ønsker å finne alle forekomster av ordet "Python" i teksten. Vi kan gjøre dette ved å bruke "re.findall()" -funksjonen:
 
-## Dykk dypere
+```Python
+tekst = "Python er et populært programmeringsspråk"
+resultat = re.findall("Python", tekst)
+print(resultat)
+```
 
-Regular expressions kan virke litt overveldende i begynnelsen, men når du blir vant til det, vil du sette pris på hvor nyttig det kan være. Det finnes et stort antall metoder som kan brukes for å søke og manipulere tekststrenger, samt ulike syntaksregler for å definere mønstre. Hvis du ønsker å lære mer om dette, anbefaler jeg å sjekke ut [Official Python Documentation](https://docs.python.org/3/library/re.html) eller [Regular-Expressions.info](https://www.regular-expressions.info/) for mer detaljert informasjon.
+Dette vil gi følgende output:
+
+```
+['Python']
+```
+
+Som du kan se, har vi funnet alle forekomster av ordet "Python" i teksten ved hjelp av regulære uttrykk. Du kan også bruke regulære uttrykk til å erstatte en del av en tekststreng med noe annet, eller til og med validere at et passord følger et spesifikt mønster. 
+
+## Dypdykk
+
+Regulære uttrykk kan virke forvirrende og komplekse ved første øyekast, men når du har forstått grunnleggende uttrykk og metoder, kan du enkelt utvikle mer avanserte uttrykk. Det finnes mange ulike metoder og funksjoner i "re" biblioteket, så det er viktig å lese dokumentasjonen for å bli mer komfortabel med å bruke regulære uttrykk i Python.
+
+Det er også viktig å være oppmerksom på at regulære uttrykk kan variere mellom forskjellige programmeringsspråk, så om du lærer å bruke det i Python, kan det være forskjeller dersom du bruker det i et annet språk.
 
 ## Se også
 
-- [Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) - En nyttig ressurs for å lære de grunnleggende syntaksreglene for regular expressions.
-- [Regex101](https://regex101.com/) - En online regex tester hvor du kan eksperimentere med ulike uttrykk og få matchende resultater.
-- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/2e/chapter7/) - En praktisk guide for å lære å bruke regular expressions i Python, med konkrete eksempler og prosjekter.
+- [Python Docs: Regular Expression Operations](https://docs.python.org/3/library/re.html)
+- [Real Python: Regular Expressions in Python](https://realpython.com/regex-python/)
+- [Tutorialspoint: Python RegEx](https://www.tutorialspoint.com/python/python_reg_expressions.htm)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: 웹 페이지 다운로드하기"
+title:                "웹 페이지 다운로드하기"
+html_title:           "Rust: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,60 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-웹 페이지를 다운로드하는 과정은 우리가 인터넷을 사용하는 일상 속에서 필수적인 동작입니다. Rust 프로그래밍을 통해 이 과정을 더욱 안정적이고 효율적으로 할 수 있습니다. 이 글에서는 Rust 언어를 사용하여 웹 페이지를 다운로드하는 방법에 대해 알아보겠습니다.
+웹 페이지를 다운로드하는 것은 온라인에서 정보를 검색하고 새로운 내용을 학습하는 모호한 것 중 하나입니다. 이것은 전문가나 완벽한 개발자일 필요도, 단순히 새로운 기술을 배우기를 원하는 누구나에게 도움이 될 수 있습니다.
 
-## 어떻게
+## 하면서
 
-Rust는 안전한 메모리 관리와 빠른 속도를 지원하기 때문에 웹 페이지를 다운로드하는 과정에 매우 적합합니다. 먼저 `reqwest`라이브러리를 다운로드해야 합니다. 그런 다음 `main` 함수 내에 다음 코드를 추가합니다:
+다음의 단계를 따라하면 Rust 언어로 웹 페이지를 다운로드할 수 있습니다.
 
 ```Rust
-use reqwest::Error;
-
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    let res = reqwest::get("https://www.example.com").await?;
-    println!("Status: {}", res.status());
-
-    let body = res.text().await?;
-    println!("Body:\n\n{}", body);
-
-    Ok(())
-}
+use std::io::prelude::*;
+use std::fs::File;
+use std::io;
+use reqwest::Url;
+// URL 생성
+let url = Url::parse("https://www.example.com").unwrap();
+// HTTP 요청 생성
+let request = reqwest::get(url);
+// 서버로부터 응답 받기
+let mut response = request.send().unwrap();
+// 응답에서 본문 가져오기
+let mut body = Vec::new();
+response.read_to_end(&mut body).unwrap();
+// 다운로드한 내용 파일에 저장
+let mut file = File::create("downloaded_page.html").expect("Failed to create file!");
+file.write_all(&body).expect("Failed to write to file!");
 ```
 
-이 예제 코드는 `reqwest` 라이브러리를 사용하여 `https://www.example.com`에서 웹 페이지를 다운로드하고, 다운로드 받은 페이지의 상태와 내용을 출력합니다. 출력 결과는 다음과 같습니다:
+위의 코드에서는 Rust를 이용하여 `reqwest`라이브러리를 사용하여 웹 페이지를 다운로드하고 저장하는 과정을 보여주고 있습니다.
 
-```
-Status: 200 OK
+## 자세히 살펴보기
 
-Body:
+웹 페이지를 다운로드하는 과정에서 이 코드에서 사용된 함수들의 역할을 살펴보면:
 
-<html>
-<head>
-  <title>Example Domain</title>
-  ...
-</head>
-<body>
-...
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-...
-</body>
-</html>
-```
+- `Url::parse()` 함수를 이용하여 다운로드할 페이지의 URL을 생성합니다. 이 함수는 입력된 URL의 유효성을 검사하므로 올바른 URL을 사용하는 것이 중요합니다.
+- `reqwest::get()` 함수를 이용하여 HTTP 요청을 생성합니다. 이 함수는 요청에 대한 응답을 받게 됩니다.
+- `request.send()` 함수를 이용하여 서버에 요청을 전송하고, 응답을 받습니다. 이 응답은 `Response` 타입으로써 처리할 수 있게 됩니다.
+- `response.read_to_end()` 함수를 이용하여 응답 내용을 `Vec` 타입으로 가져옵니다.
+- 다운로드한 내용을 `Vec`에서 파일에 저장하기 위해 `File::create()` 함수를 이용하여 파일을 생성하고, `write_all()` 함수를 이용하여 내용을 저장합니다.
 
-## 깊게 파고들기
+더 많은 정보 및 예제는 [Rust 공식 홈페이지](https://www.rust-lang.org/)와 [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html)에서 확인할 수 있습니다.
 
-더 복잡한 웹 페이지를 다운로드할 때 요청에 필요한 추가적인 설정이 필요할 수도 있습니다. 예를 들어, 인증이 필요한 경우 해당 페이지에 대한 로그인 정보를 포함한 요청이 필요합니다. `reqwest` 라이브러리는 이러한 설정을 관리하는 다양한 기능을 제공합니다. 자세한 내용은 [공식 문서](https://docs.rs/reqwest/latest/reqwest/)를 참조하시기 바랍니다.
+## 더 알아보기
 
-## 보기
+다운로드한 웹 페이지를 이용하여 추가적인 작업을 수행할 수 있습니다. 예를 들어 HTML 태그를 파싱하고 원하는 정보를 추출하는 등 다양한 활용 방법이 있습니다.
 
-다른 실제 예제들과 더 많은 정보를 원하신다면, [공식 Rust 웹사이트](https://www.rust-lang.org/learn/get-started)와 [Rust 프로그래밍 언어 책](https://doc.rust-lang.org/book/)을 살펴보시기 바랍니다.
+## 관련 링크
 
-## 참고
-
-- [Rust 언어 공식 웹사이트](https://www.rust-lang.org/)
-- [`reqwest` 라이브러리 공식 문서](https://docs.rs/reqwest/latest/reqwest/)
+- [Rust 공식 홈페이지](https://www.rust-lang.org/)
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html)
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Praca z formatem json"
+title:                "Praca z formatem json"
+html_title:           "Ruby: Praca z formatem json"
 simple_title:         "Praca z formatem json"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,100 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-JSON (JavaScript Object Notation) jest formatem danych często używanym w programowaniu. Jest to popularny wybór w przypadku wymiany danych między serwerem a klientem. W tym wpisie dowiesz się, dlaczego warto poznać JSON i jak zacząć pracę z tym formatem danych.
+JSON jest popularnym formatem danych w programowaniu i jest używany do przechowywania i wymiany danych. Wykorzystanie go w Twoich projektach może ułatwić komunikację między systemami, a także zwiększyć wydajność i elastyczność.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-### Tworzenie danych w formacie JSON
+### Parsowanie danych JSON
 
-Aby stworzyć obiekt JSON w Ruby, musimy użyć metody `to_json`. Przykład:
-
-```Ruby
-person = {
-  name: "Anna",
-  age: 30,
-  job: "Developer"
-}
-
-puts person.to_json
-```
-
-Output:
-
-```JSON
-{"name":"Anna","age":30,"job":"Developer"}
-```
-
-### Pobieranie danych z formatu JSON
-
-Aby odczytać dane w formacie JSON w Ruby, używamy metody `JSON.parse`. Przykład:
+Aby rozpocząć pracę z JSON w Ruby, możesz użyć wbudowanej klasy `JSON` i jej metod do parsowania danych. Przykładowo, jeśli masz plik `data.json` z danymi JSON, można je parsować w następujący sposób:
 
 ```Ruby
-json_string = '{"name":"Anna","age":30,"job":"Developer"}'
-person = JSON.parse(json_string)
+require 'json'
 
-puts person["name"]
+data = File.read('data.json')
+parsed_data = JSON.parse(data)
 ```
 
-Output:
+Pierwsza linia importuje moduł `json`, a druga linia wczytuje zawartość pliku do zmiennej `data`. Następnie, wykorzystując metodę `parse` klasy `JSON`, parsujemy dane, a wynikiem jest obiekt Ruby.
+
+### tworzenie i zapisywanie danych JSON
+
+Aby stworzyć dane JSON z obiektów Ruby, możesz wykorzystać metodę `to_json`. Przykładowo, dla tablicy `pets`:
 
 ```Ruby
-Anna
+pets = ["dog", "cat", "bird"]
+json_data = pets.to_json
 ```
 
-### Zapisywanie danych w formacie JSON
+Wynikiem jest ciąg znaków reprezentujący dane JSON: `["dog", "cat", "bird"]`.
 
-Możemy również zapisać dane w formacie JSON za pomocą metody `File.open` i `to_json`. Przykład:
+Aby zapisać dane JSON do pliku, możesz użyć metody `dump` z modułu `json`:
 
 ```Ruby
-person = {
-  name: "Anna",
-  age: 30,
-  job: "Developer"
-}
-
-File.open("person.json", "w") do |f|
-  f.write(person.to_json)
+File.open('pets.json', 'w') do |file|
+  JSON.dump(pets, file)
 end
 ```
 
-### Serializacja obiektów
+Wynikowy plik będzie zawierał dane w formacie JSON: `["dog", cat", "bird"]`.
 
-W Ruby możemy również użyć modułu `ActiveModel::Serialization` do serializacji obiektów do formatu JSON. Należy pamiętać, że do prawidłowej serializacji obiektu, musimy dodać `include ActiveModel::Serialization` do naszej klasy. Przykład:
+## Głębszy zanurzenie
 
-```Ruby
-class Person
-  include ActiveModel::Serialization
-  attr_accessor :name, :age, :job
+Istnieje wiele metod i opcji do pracy z JSON w Ruby, w tym możliwość zmiany sposobu parsowania danych poprzez ustawienie opcji w metodzie `json` lub definiowanie własnych klas do obsługi specyficznych typów danych. Sprawdź dokumentację Ruby dla więcej szczegółów.
 
-  def attributes
-    {
-      "name" => name,
-      "age" => age,
-      "job" => job
-    }
-  end
-end
+## Zobacz także
 
-person = Person.new
-person.name = "Anna"
-person.age = 30
-person.job = "Developer"
-
-puts person.to_json
-```
-
-Output:
-
-```JSON
-{"name":"Anna","age":30,"job":"Developer"}
-```
-
-## Wgląd Głęboki
-
-Aby uzyskać głębsze informacje na temat pracy z formatem JSON w Ruby, warto zapoznać się z dokumentacją biblioteki `json` oraz z dokumentacją modułu `ActiveModel::Serialization`.
-
-## Zobacz również
-
-- Dokumentacja biblioteki JSON: https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html
-- Dokumentacja modułu ActiveModel::Serialization: https://apidock.com/rails/ActiveModel/Serialization
+- Dokumentacja Ruby: https://www.ruby-lang.org/pl/
+- Dokumentacja klasy JSON: https://ruby-doc.org/stdlib-2.7.0/libdoc/json/rdoc/JSON.html
+- Przewodnik po parsowaniu danych JSON w Ruby: https://www.rubyguides.com/2019/05/ruby-json-tutorial/

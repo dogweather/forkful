@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Convertendo uma string em letras minúsculas."
-simple_title:         "Convertendo uma string em letras minúsculas."
+title:                "Convertendo uma string para caixa baixa"
+html_title:           "Swift: Convertendo uma string para caixa baixa"
+simple_title:         "Convertendo uma string para caixa baixa"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,54 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por que
-
-Quando estamos trabalhando com strings em Swift, muitas vezes precisamos convertê-las para letras minúsculas. Isso pode ser útil para garantir que nossa entrada de dados seja consistente, comparar strings de forma mais precisa ou simplesmente para deixar o texto mais legível.
+ Converter uma string para minúsculo é uma tarefa comum em programação e pode ser útil ao lidar com entradas de usuário, realizar comparações de strings e outras operações de processamento de texto.
 
 ## Como Fazer
-
-A conversão de uma string para letras minúsculas em Swift é muito simples e pode ser feita de várias maneiras. Aqui estão alguns exemplos:
-
-Para converter uma string para letras minúsculas usando o método `lowercased()`:
+O processo de conversão de uma string para minúsculo é bastante simples em Swift. Basta usar o método `lowercased()` em uma string existente para transformá-la em letras minúsculas. Por exemplo:
 
 ```Swift
-let texto = "Olá, MUNDO!"
-let textoMinúsculo = texto.lowercased()
-
-print(textoMinúsculo)
-
-// Saída: olá, mundo!
+var minhaString = "Olá MUNDO!"
+print(minhaString.lowercased())
 ```
+Isso imprimirá "olá mundo!" na saída do console.
 
-Para converter uma string para letras minúsculas usando as propriedades `capitalized` e `lowercase`:
+Outro método útil é o `localizedLowercase`, que permite converter uma string para minúsculo no idioma preferido do dispositivo do usuário. Por exemplo:
 
 ```Swift
-let texto = "ESTE TEXTO SERÁ CONVERTIDO"
-let textoMinúsculo = texto.capitalized.lowercase
-
-print(textoMinúsculo)
-
-// Saída: este texto será convertido
+var minhaString = "HELLO WORLD!"
+print(minhaString.localizedLowercase)
 ```
 
-Para converter uma string para letras minúsculas usando o método `map()`:
+## Deep Dive
+Ao converter uma string para minúsculo, é importante ser cuidadoso com as regras de capitalização específicas do idioma. Por exemplo, em turco, a letra "i" maiúscula se torna "İ" minúscula, em vez de "i". Isso pode afetar a precisão dos resultados ao realizar comparações de strings. Portanto, é importante conhecer as regras de capitalização do idioma das strings com que estamos lidando.
+
+Uma maneira de contornar esses problemas é usar o método `lowercased(with:)`, que leva em consideração as regras de capitalização do idioma especificado. Por exemplo:
 
 ```Swift
-let texto = "Eu Sou Uma String"
-let textoMinúsculo = texto.map { String($0).lowercased() }.joined()
-
-print(textoMinúsculo)
-
-// Saída: eu sou uma string
+var minhaString = "eĺ pelosotros👫"
+print(minhaString.lowercased(with: .latin))
 ```
 
-## Dive Profundo
-
-Ao converter uma string para letras minúsculas em Swift, é importante lembrar que o resultado será sempre uma nova string, pois as strings são imutáveis em Swift. Isso significa que, ao utilizar o método `lowercased()`, por exemplo, uma nova string será criada e retornada, enquanto a string original permanecerá inalterada.
-
-Além disso, é importante mencionar que a conversão para letras minúsculas em Swift depende do idioma e localização do dispositivo do usuário. Isso significa que, para idiomas diferentes do inglês, os caracteres podem ser convertidos de forma diferente.
+Este código produzirá "el pelosotros👫" como saída, mesmo se tentarmos convertê-lo para minúsculo usando o método `lowercased()`.
 
 ## Veja Também
-
-- [Documentação oficial Apple sobre strings](https://developer.apple.com/documentation/swift/string)
-- [Guia rápido de referência de strings em Swift](https://www.hackingwithswift.com/quick-start/swiftui/how-to-split-a-string-into-an-array)
-- [Exemplos práticos de strings em Swift](https://www.raywenderlich.com/792-swift-4-strings-cheat-sheet)
+* [Documentação Oficial - String](https://developer.apple.com/documentation/swift/string)
+* [Tutorial de Strings em Swift](https://www.hackingwithswift.com/quick-start/understanding-swift/whats-the-difference-between-a-string-and-a-string)
+* [Capitalize a String in Swift](https://medium.com/better-programming/string-manipulation-in-swift-2c21a0378b0a)

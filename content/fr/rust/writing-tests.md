@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Écriture de tests"
+html_title:           "Rust: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,10 +11,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Les tests sont un aspect essentiel de toute programmation. Ils permettent de vérifier que le code fonctionne correctement et de s'assurer qu'aucun bug n'est introduit lors de modifications ultérieures. En écrivant des tests pour votre code Rust, vous pouvez avoir plus de confiance dans sa qualité et sa stabilité.
+Écrire des tests est essentiel pour assurer la qualité de votre code en vous assurant que celui-ci fonctionne correctement et qu'il ne contient pas de bugs. Les tests vous permettent également de trouver des erreurs rapidement et de les corriger avant qu'elles ne deviennent de plus gros problèmes.
 
 ## Comment faire
-Pour écrire des tests en Rust, il faut utiliser le module `test`. Voici un exemple de fonction de test simple :
+Pour écrire des tests en Rust, vous devez utiliser le framework de test intégré, appelé `test`. Vous pouvez commencer par importer `test` dans votre code comme ceci:
+
+```Rust
+use test::test;
+```
+
+Ensuite, vous pouvez créer une fonction de test en utilisant l'attribut `#[test]` et en la plaçant avant la déclaration de votre fonction, comme ceci:
 
 ```Rust
 #[test]
@@ -22,21 +29,63 @@ fn test_addition() {
 }
 ```
 
-Ce code crée une fonction de test avec l'attribut `#[test]`, qui signifie que cette fonction sera exécutée lorsque vous lancez vos tests. La fonction utilise ensuite l'assertion `assert_eq!`, qui vérifie que l'expression `2 + 2` est égale à `4`. Si c'est le cas, le test passe, sinon il échoue.
+Dans cet exemple, nous avons créé une fonction de test appelée `test_addition` qui teste l'addition de deux nombres en utilisant l'assertion `assert_eq!` pour vérifier qu'ils sont égaux. Vous pouvez exécuter vos tests en exécutant `cargo test` dans votre terminal. Vous verrez une sortie similaire à celle-ci si vos tests réussissent:
 
-Vous pouvez également utiliser les macros `assert!` et `assert_ne!` pour vérifier si une expression est vraie ou fausse. De plus, vous pouvez également utiliser le module `should_panic` pour tester si une fonction lève une erreur lorsqu'elle est censée le faire.
+```
+running 1 test
+test test_addition ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+Si un test échoue, vous verrez un message d'erreur détaillé vous indiquant ce qui a mal tourné. Par exemple, si nous modifions notre assertion pour qu'elle ne soit pas valide, notre sortie ressemblera à ceci:
+
+```
+running 1 test
+test test_addition ... FAILED
+
+failures:
+
+---- test_addition stdout ----
+________
+          | 654321
+________|________
+         | 109876
+-------- | --------
+         | 109876
+ 0 	     | 0
+ [..]
+
+failures:
+    test_addition
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+Vous pouvez également ajouter des messages personnalisés à vos assertions pour rendre vos tests plus explicites. Par exemple:
+
+```Rust
+#[test]
+fn test_multiply() {
+    let result = 3 * 2;
+    assert_eq!(result, 6, "Expected result to be 6, but found {}", result);
+}
+```
+
+Dans cet exemple, nous avons ajouté un message qui s'affichera si notre assertion échoue. Si nous changeons la valeur attendue à 9, notre message s'affichera comme ceci:
+
+```
+Expected result to be 6, but found 9
+```
 
 ## Deep Dive
-Les tests en Rust peuvent être divisés en trois types : les tests unitaires, les tests d'intégration et les tests de performance.
+Il existe différents types d'assertions que vous pouvez utiliser dans vos tests en Rust. En plus de `assert_eq!`, qui vérifie si deux valeurs sont égales, vous pouvez également utiliser `assert_ne!` pour vérifier si deux valeurs sont différentes, `assert!(condition)` pour vérifier qu'une condition est vraie, et `assert!(condition, message)` pour vérifier qu'une condition est vraie et afficher un message personnalisé en cas d'échec.
 
-Les tests unitaires sont des petits tests qui vérifient une seule fonction ou un seul module spécifique. Ils sont écrits par les développeurs et sont exécutés automatiquement chaque fois que du code est modifié ou lors de la compilation.
+De plus, vous pouvez grouper vos tests en utilisant les macros `#[test]` et `#[test_case]` pour créer des suites de tests et exécuter différents scénarios avec des valeurs différentes.
 
-Les tests d'intégration, quant à eux, vérifient comment différentes parties de code fonctionnent ensemble. Ils sont souvent utilisés pour tester les interfaces entre différents modules ou pour vérifier le fonctionnement du code avec des dépendances externes.
-
-Enfin, les tests de performance vérifient si le code répond aux exigences de performances, tels que le temps d'exécution ou l'utilisation de la mémoire.
+Les tests en Rust sont également intégrés à la documentation, vous pouvez donc documenter vos tests en utilisant Rustdoc pour générer de la documentation claire pour votre code.
 
 ## Voir aussi
-- [The Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [Rustlings - Writing Tests](https://github.com/rust-lang/rustlings/blob/main/exercises/test1/README.md)
-- [Rust Reddit - Writing Tests](https://www.reddit.com/r/rust/comments/fxevy5/how_do_you_write_tests_in_rust/)
+- [Documentation Rust sur les tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Guide approfondi sur les tests en Rust](https://www.freecodecamp.org/news/everything-you-need-to-know-about-testing-in-rust-d5d4abf865b4/)
+- [Exemples de tests en Rust sur GitHub](https://github.com/rust-lang/rust/tree/master/src/test)

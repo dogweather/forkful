@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 使用yaml进行计算机编程"
-simple_title:         "使用yaml进行计算机编程"
+title:                "使用yaml进行编程"
+html_title:           "Rust: 使用yaml进行编程"
+simple_title:         "使用yaml进行编程"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,57 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么选择Rust来处理YAML数据？
+## 为什么 
+首先，YAML 是一种人类可读写的数据序列化格式。它非常便于使用，因为它使用缩进来表示层次结构，而不是使用括号或者标签。它也可以轻松地与各种编程语言集成，包括 Rust。
 
-Rust是一种功能强大且高效的编程语言，它在处理复杂数据格式时表现出色。YAML是一种常用的数据序列化格式，使用Rust来处理YAML数据可以提高代码的可读性和可维护性，同时也能获得更好的性能。
-
-## 如何使用Rust处理YAML数据？
-
-```Rust
-// 导入yaml-rust crate
-extern crate yaml_rust;
-
-use yaml_rust::{YamlLoader, Yaml};
+## 怎么做 
+下面是一个使用 Rust 和 serde_yaml 库解析 YAML 文件的简单示例：
+```Rust 
 use std::fs::File;
-use std::io::prelude::*;
+use serde_yaml::{from_reader, Value};
 
 fn main() {
-    // 从文件中读取YAML数据
-    let mut file = File::open("data.yml").expect("无法打开文件");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("无法读取文件");
-
-    // 转换为Yaml对象
-    let data = YamlLoader::load_from_str(&contents).expect("无法解析YAML");
-    let data = &data[0];
-
-    // 使用Yaml对象读取数据
-    let name = &data["name"];
-    println!("姓名：{}", name);
-
-    // 使用Yaml对象修改数据
-    data["age"] = 25.into();
-
-    // 将修改后的Yaml对象重新写入文件
-    let mut file = File::create("data.yml").expect("无法创建文件");
-    file.write_all(&data.dump().as_bytes()).expect("无法写入文件");
+    let file = File::open("my_config.yaml").expect("Failed to open file");
+    let value: Value = from_reader(file).expect("Failed to read file");
+    println!("{:?}", value);
 }
 ```
-
-输出：
-
+如果我们有一个名为 "my_config.yaml" 的文件，内容如下：
+```yaml 
+name: John Smith
+age: 30
+hobbies:
+  - reading
+  - hiking
+  - coding
 ```
-姓名：张三
+那么运行上面的代码会输出以下内容：
+```Rust 
+{
+  "name": String("John Smith"),
+  "age": Integer(30),
+  "hobbies": Array([
+    String("reading"),
+    String("hiking"),
+    String("coding")
+  ])
+}
 ```
+从上面的示例中，我们可以看到通过 serde_yaml 库，我们可以轻松地解析 YAML 文件并将其转换为 Rust 中的数据结构，方便我们在程序中使用。
 
-## 深入了解处理YAML数据的更多内容
+同时，我们也可以使用相同的方法将 Rust 的数据结构序列化为 YAML 文件：
+```Rust 
+use std::fs::File;
+use serde_yaml::{to_writer, Value};
 
-1. Rust官方文档：https://www.rust-lang.org/zh-CN/
-2. yaml-rust crate文档：https://crates.io/crates/yaml-rust
-3. YAML官方文档：https://yaml.org/
+fn main() {
+    let value = Value::Map(vec![
+        (Value::String("name".to_string()), Value::String("John Smith".to_string())),
+        (Value::String("age".to_string()), Value::Integer(30)),
+        (Value::String("hobbies".to_string()), Value::Array(vec![
+            Value::String("reading".to_string()),
+            Value::String("hiking".to_string()),
+            Value::String("coding".to_string()),
+        ])),
+    ]);
+    
+    let file = File::create("my_config.yaml").expect("Failed to create file");
+    to_writer(file, &value).expect("Failed to write to file");
+}
+```
+运行以上代码会在当前目录下生成一个名为 "my_config.yaml" 的文件，内容和我们上面的示例文件一样。
 
-## 参考链接
+## 深入了解 
+在使用 YAML 时可能会遇到的一些问题包括：如何处理多行文本、如何处理日期时间等等。如果想要深入了解这些问题的解决方案，可以查看 serde_yaml 库的文档，里面有更详细的说明和示例代码。
 
-- [使用Rust序列化和反序列化YAML文件](https://www.cnblogs.com/crazymakercircle/p/14039002.html)
-- [Rust之yaml-rust初探](https://www.jianshu.com/p/2e9d849e9f19)
-- [Rust学习笔记：使用yaml-rust处理YAML数据](https://www.cnblogs.com/Luv-GEM/p/14650298.html)
+## 参考链接 
+- [Rust 官方文档](https://www.rust-lang.org/zh-CN/)
+- [serde_yaml 库文档](https://docs.serde.rs/serde_yaml/index.html)

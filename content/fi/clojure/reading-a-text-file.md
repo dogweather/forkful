@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Tiedostotekstin lukeminen"
-simple_title:         "Tiedostotekstin lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Clojure: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,43 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein ohjelmointitehtävissä kohtaat tarpeen lukea tekstiä sisältävä tiedosto ohjelman käsittelyä varten. Tämä blogikirjoitus antaa sinulle tarvittavat tiedot käsitellä tekstiä Clojure-ohjelmointikielellä.
+Miksi joku haluaisi lukea tekstitiedostoa? Tekstitiedostot ovat perinteisiä ja yksinkertaisia tapoja tallentaa ja jakaa tietoa, joten voi olla hyödyllistä tietää, miten niitä voi lukea ja käyttää Clojuren avulla.
 
 ## Kuinka
 
-Käytä Clojuren standardikirjastosta löytyvää `clojure.java.io`-kirjastoa tekstitiedoston lukemiseen. Käytä `slurp`-funktiota ja anna polku tekstiä sisältävään tiedostoon parametrina.
+Tekstitiedostojen lukeminen Clojuren avulla on helppoa. Voit käyttää `slurp`-funktiota, joka lukee koko tiedoston sisällön ja palauttaa sen merkkijonona. Voit myös käyttää `line-seq`-funktiota, joka lukee tiedoston rivi kerrallaan ja palauttaa jokaisen rivin listana. Esimerkiksi:
 
 ```Clojure
-(require '[clojure.java.io :as io])
+(def text (slurp "tiedosto.txt"))
+(println text)
 
-(slurp "tiedostonimi.txt")
+(def lines (line-seq (clojure.java.io/reader "tiedosto.txt")))
+(doseq [line lines]
+  (println line))
 ```
 
-Tämä palauttaa tekstiä sisältävän tiedoston sisällön merkkijonona.
+Tämän esimerkin output voisi olla:
 
 ```
-Hello World!
-Tämä on esimerkki tekstiä sisältävästä tiedostosta.
+Tervetuloa lukemaan tekstiä!
+Tässä on ensimmäinen rivi.
+Tässä on toinen rivi.
 ```
 
-## Syventävä sukellus
+## Syväsukellus
 
-Voit myös käyttää `with-open`-lauseketta yhdessä `reader`-funktion kanssa lukeaksesi tiedoston rivi kerrallaan.
+Tekstitiedostojen lukeminen Clojuren avulla käyttää Java:n `java.io`-kirjastoa. Voit käyttää myös muita `clojure.java.io`-nimiavaruuden funktioita, kuten `reader`, `input-stream` ja `reader-seq`. Voit myös käyttää `with-open`-lauseketta, joka automaattisesti sulkee tiedoston käytön jälkeen. Esimerkiksi:
 
 ```Clojure
-(with-open [reader (io/reader "tiedostonimi.txt")]
-  (doseq [line (line-seq reader)]
+(with-open [rdr (clojure.java.io/reader "tiedosto.txt")]
+  (doseq [line (line-seq rdr)]
     (println line)))
 ```
 
-Tämä tulostaisi tekstin tiedoston sisällön rivit erikseen.
+See also (Katso myös)
 
-```
-Hello World!
-Tämä on esimerkki tekstiä sisältävästä tiedostosta.
-```
-
-## Katso myös
-
-- [clojure.java.io - ClojureDocs](https://clojuredocs.org/clojure.java.io)
-- [Text Files in Clojure - Clojure for the Brave and True](https://www.braveclojure.com/working-with-text-files/)
+- [Oficial Clojure -dokumentointi](https://clojure.org/api/cheatsheet)
+- [Clojure for the Brave and True](https://www.braveclojure.com/reading-files/)
+- [Videotutoriaali: "Reading and Writing Files with Clojure"](https://www.youtube.com/watch?v=4bI3p7CJkL0)

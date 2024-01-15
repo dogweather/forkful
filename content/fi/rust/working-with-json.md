@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Rust: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,62 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää JSON:ia Rustissa?
+## Miksi
 
-JSON (JavaScript Object Notation) on yksinkertainen ja selkeä tapa tallentaa ja vaihtaa tietoja ohjelmien välillä. Se on myös yleisesti käytetty formaatti web-kehityksessä. Rust-ohjelmoijina meillä on mahdollisuus käyttää JSON:ia tehokkaasti ja turvallisesti, kiitos Rustin omien kaltaisten ominaisuuksien.
+Miksi Rustin kanssa työskenneltäisiin JSONin kanssa? Koska JSON on yleisesti käytetty tiedonvaihtomuoto ja Rust tarjoaa tehokkaan ja turvallisen tavan käsitellä sitä.
 
-## Kuinka työskennellä JSON:in kanssa
+## Miten
 
-Käyttäessämme JSON:ia Rustissa, meidän täytyy ensin lisätä ulkopuolinen kirjasto, kuten serde_json. Tämä mahdollistaa JSON-tiedon parsinnan ja luomisen.
+JSON-tiedoston lukeminen ja kirjoittaminen on helppoa Rustilla. Käytä vain "serde_json" -kirjastoa ja "serde" -makroja.
 
 ```Rust
-extern crate serde;
-extern crate serde_json;
-// tuodaan tarvittavat moduulit
-use serde::{Deserialize, Serialize};
-use std::fs::File;
-use std::io::prelude::*;
+use serde_json::{Result, Value};
 
-// Määritellään struct, johon tallennetaan JSON-data
-#[derive(Serialize, Deserialize)]
-struct Henkilo {
-    nimi: String,
-    ikä: u8,
-    harrastukset: Vec<String>,
-    kotipaikka: String,
-}
+fn main() -> Result<()> {
+    // Luetaan JSON-tiedosto
+    let data = r#"
+        {
+            "eläin": "koira",
+            "ikä": 7,
+            "omistaja": "Matti"
+        }
+    "#;
 
-fn main() {
-    // Luetaan JSON-tiedosto ja tallennetaan se Henkilo-structiin
-    let tiedosto = File::open("henkilot.json").expect("Tiedoston avaaminen epäonnistui.");
-    let data: Henkilo = serde_json::from_reader(tiedosto).expect("JSON-data ei voitu parsia.");
-    println!("Nimi: {}", data.nimi);
-    println!("Ikä: {}", data.ikä);
-    println!("Harrastukset: {:?}", data.harrastukset);
-    println!("Kotipaikka: {}", data.kotipaikka);
-    
-    // Luo uusi JSON-tiedosto ja tallenna Henkilo-structin tiedot siihen
-    let data = Henkilo {
-        nimi: String::from("Matti Meikäläinen"),
-        ikä: 35,
-        harrastukset: vec![String::from("juokseminen"), String::from("kirjoittaminen")],
-        kotipaikka: String::from("Tampere"),
-    };
-    let tiedosto = File::create("uusi_henkilo.json").expect("Tiedoston luominen epäonnistui.");
-    serde_json::to_writer(tiedosto, &data).expect("JSON-dataa ei voitu kirjoittaa tiedostoon.");
+    // Muunna JSON-string Value-tyypiksi
+    let v: Value = serde_json::from_str(data)?;
+
+    // Hae arvot avaimilla
+    let eläin = v["eläin"].as_str().unwrap();
+    let ikä = v["ikä"].as_i64().unwrap();
+    let omistaja = v["omistaja"].as_str().unwrap();
+
+    // Tulosta tiedot
+    println!("{} on {}-vuotias ja sen omistaa {}", eläin, ikä, omistaja);
+
+    // Muodosta uusi JSON-tiedosto
+    let uusi_tiedosto = serde_json::json!({
+        "eläin": eläin,
+        "ikä": ikä,
+        "omistaja": omistaja
+    });
+
+    // Kirjoita tiedosto levylle
+    serde_json::to_writer_pretty(&File::create("uusi_tiedosto.json")?, &uusi_tiedosto)?;
+
+    Ok(())
 }
 ```
 
-Esimerkkikoodi käyttää serde_json-kirjastoa, joka tarjoaa tarvittavat työkalut JSON-tiedon käsittelyyn. Huomaa myös, että käytämme serde_derive-makroa structin annotointiin. Tämä mahdollistaa structin automaattisen muunnoksen JSON-dataksi ja päinvastoin.
+Esimerkkituloste:
 
-## Syventävä sukellus JSON:in käsittelyyn
+```
+koira on 7-vuotias ja sen omistaa Matti
+```
 
-JSON-objekteilla on avain-arvo -parit, ja nämä parit tallennetaan HashMap-rakenteeseen. Tämä mahdollistaa nopean ja tehokkaan tiedonhaun. JSON-datasta luettaessa HashMapin avaimet ja arvot tulee määritellä oikein, jotta tiedot tallentuvat oikein structiin.
+## Syventävä sukellus
 
-JSON:in käsittely Rustissa vaatii myös tarkkuutta tiedostojen käsittelyssä. On tärkeää huolehtia tiedoston luomisesta ja avaamisesta, sekä datan puskuroinnista. Tämä varmistaa, että ohjelma toimii odotetulla tavalla ja välttää mahdollisia virheitä.
+Rust tarjoaa monia erilaisia tapoja käsitellä JSON-tietoja "serde_json" kirjaston avulla. Tarkkaan ottaen, "serde" -makrot tekevät koodista helpommin luettavan ja vähentävät virheitä.
 
 ## Katso myös
 
-- [serde_json-kirjaston dokumentaatio](https://docs.rs/serde_json)
-- [Esimerkkiprojekti JSON-datasta lukuun ja kirjoittamiseen ](https://github.com/serde-rs/json/blob/master/examples/geojson.rs)
-- [vennari's blogi artikkelisarja "Creating a JSON Parser in Rust"](http://www.velocity-labs.com/blog/2017
+- [serde-json - GitHub](https://github.com/serde-rs/json)
+- [Rust, JSON ja serde - Medium](https://medium.com/swlh/working-with-json-in-rust-using-serde-3bdde100d513)
+- [Rust-json - Crates.io](https://crates.io/crates/rust-json)

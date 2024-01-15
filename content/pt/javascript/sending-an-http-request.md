@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição http"
+html_title:           "Javascript: Enviando uma requisição http"
+simple_title:         "Enviando uma requisição http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -9,43 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que enviar uma solicitação HTTP?
+##Por que enviar uma solicitação HTTP?
 
-Enviar uma solicitação HTTP é uma parte essencial da programação em JavaScript. Isso permite que os desenvolvedores obtenham informações de outros servidores, integrem APIs e criem aplicativos mais dinâmicos e interativos.
+Enviar uma solicitação HTTP é uma forma comum de interagir com servidores e obter informações deles. Isso permite que os sites se comuniquem com outras APIs, obtenham dados de um banco de dados ou executem outras operações no servidor.
 
-# Como enviar uma solicitação HTTP
+##Como fazer:
 
-Para enviar uma solicitação HTTP em JavaScript, primeiro é necessário criar um objeto XMLHttpRequest. Isso pode ser feito da seguinte forma:
-
-```Javascript
-var request = new XMLHttpRequest();
-```
-
-Em seguida, é preciso definir o método da solicitação, o URL de destino e se a solicitação deve ser assíncrona ou não:
+Para enviar uma solicitação HTTP em Javascript, usamos o objeto XMLHttpRequest. Aqui está um exemplo de como podemos enviar uma solicitação GET para uma API e obter sua resposta:
 
 ```Javascript
-request.open('GET', 'https://www.exemplo.com', true);
-```
-
-Para enviar a solicitação, é necessário chamar o método `send()` e, em seguida, tratar a resposta com o método `onreadystatechange`:
-
-```Javascript
-request.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    console.log(this.responseText);
-  }
-};
+const request = new XMLHTTPRequest();
+request.open('GET', 'https://api.exemplo.com/users');
 request.send();
+
+request.onload = () => {
+    console.log(request.response);
+}
 ```
 
-O código acima enviará uma solicitação GET para https://www.exemplo.com e, se for bem-sucedida, irá imprimir a resposta no console.
+No código acima, criamos uma nova instância do objeto XMLHttpRequest e abrimos uma solicitação GET para a URL fornecida. Em seguida, enviamos a solicitação e, quando a resposta estiver pronta, o método onload é acionado. Podemos então acessar a resposta usando o atributo 'response' do objeto.
 
-# Aprofundando-se no envio de solicitações HTTP
+##Aprofundando:
 
-Existem outras propriedades que podem ser definidas ao enviar uma solicitação HTTP, como os cabeçalhos (`setRequestHeader()`) e o corpo da solicitação (`send()`). Além disso, é possível enviar solicitações POST, PUT, DELETE e outras, dependendo da sua aplicação. É importante entender os diferentes códigos de status HTTP que podem ser retornados e como tratá-los adequadamente.
+Além de enviar solicitações simples, podemos especificar o tipo de solicitação (GET, POST, PUT, DELETE), adicionar cabeçalhos personalizados e enviar dados no corpo da solicitação. Também podemos lidar com erros usando os métodos onerror ou ontimeout do objeto. Para saber mais sobre o objeto XMLHttpRequest e todas as suas propriedades e métodos, você pode consultar a documentação da MDN.
 
-# Veja também
+##Veja também:
 
-- [Usando XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest/Usando_XMLHttpRequest)
-- [Introdução às solicitações http em JavaScript](https://www.digitalocean.com/community/tutorials/js-ajax-http-request)
-- [HTTP request methods](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods)
+- [Documentação MDN do objeto XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest)
+- [Artigo sobre métodos HTTP](https://www.treinaweb.com.br/blog/o-que-sao-os-metodos-http-e-para-que-servem/)
+- [Tutorial sobre como enviar solicitações HTTP em Javascript](https://www.digitalocean.com/community/tutorials/como-usar-a-api-web-http-com-javascript)

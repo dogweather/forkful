@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Skanowanie HTML"
-simple_title:         "Skanowanie HTML"
+title:                "Analiza html"
+html_title:           "Ruby: Analiza html"
+simple_title:         "Analiza html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -9,38 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto parsować HTML?
+## Dlaczego?
 
-Masz już pewnie dość ręcznego przeglądania i wycinania danych z tysięcy stron internetowych. W końcu nadeszła pora, aby nauczyć się parsować HTML za pomocą Ruby i sprawić, że życie będzie znacznie łatwiejsze. Nie tylko oszczędzisz czas, ale także unikniesz frustracji związanej z ręcznym ergo-wycinaniem kodu HTML.
+Parsing HTML może być bardzo przydatnym narzędziem dla programistów w wielu różnych sytuacjach. Może on pomóc w szybkim i skutecznym przetwarzaniu dużych ilości danych, takich jak strony internetowe czy dokumenty HTML. Dzięki temu łatwiej można wyłuskać potrzebne informacje lub przekonwertować je na inny format.
 
-# Jak to zrobić?
+## Jak to zrobić?
 
-Możesz użyć biblioteki Nokogiri, która umożliwia wygodne parsowanie HTML przy użyciu narzędzi Ruby. Aby zacząć, musisz zainstalować bibliotekę, np. w systemie operacyjnym Mac OS, używając narzędzia Homebrew możesz użyć polecenia `brew install libxml2 libxslt` a następnie zainstalować gem Nokogiri przy użyciu `gem install nokogiri`. Jeśli używasz Windowsa, możesz skorzystać z instrukcji zawartych na stronie biblioteki Nokogiri.
+Aby rozpocząć parsowanie HTML w Ruby, potrzebujemy jedynie kilku prostych kroków. Najpierw musimy zainstalować i zaimportować gem Nokogiri, który jest biblioteką do przetwarzania dokumentów HTML.
 
-Kiedy już zainstalujesz Nokogiri, możesz rozpocząć parsowanie HTML. Przykładowy kod wyglądałby następująco:
-
-```Ruby
+```ruby
 require 'nokogiri'
-require 'open-uri'
-
-url = "https://example.com"
-page = Nokogiri::HTML(open(url))
-
-page.css("h2").each do |heading|
-  puts heading.content
-end
 ```
 
-Ten kod pobiera stronę internetową z adresu "https://example.com", a następnie za pomocą biblioteki Nokogiri znajduje i wyświetla wszystkie nagłówki drugiego poziomu (h2). Kod wewnątrz pętli może zostać zmieniony w zależności od potrzeb, aby wyświetlać i przetwarzać wybrane elementy HTML.
+Następnie musimy pobrać dane HTML ze źródła, na przykład z adresu URL lub z lokalnego pliku. Możemy to zrobić przy użyciu modułu OpenURI.
 
-# Głębsze zagadnienia związane z parsowaniem HTML
+```ruby
+page = Nokogiri::HTML(URI.open("https://www.example.com"))
+```
 
-Parsowanie HTML może być trudne i czasochłonne, ponieważ nie zawsze strony internetowe są poprawnie sformatowane. W zależności od skomplikowania strony, może być konieczne użycie zaawansowanych narzędzi, aby uzyskać pożądane dane. Na szczęście Nokogiri oferuje szeroki wachlarz metod, które pomogą Ci radzić sobie z różnorodnymi przypadkami.
+Teraz możemy przystąpić do parsowania. Możemy użyć różnych metod w zależności od naszych potrzeb, na przykład ```css```, aby wybrać elementy za pomocą selektorów CSS, lub ```xpath```, aby wybrać elementy za pomocą wyrażeń xpath.
 
-Ponadto, warto pamiętać, że parsowanie HTML jest jedynie jednym ze sposobów na pobieranie i przetwarzanie danych ze stron internetowych. Możliwe jest również wykorzystanie API lub innych narzędzi, jednak parsowanie HTML może być potrzebne, jeśli brak innych dostępnych opcji.
+```ruby
+# wybieranie wszystkich linków z atrybutem "href"
+links = page.css("a[href]")
 
-# Zobacz również
+# wybieranie pojedynczego elementu po identyfikatorze
+element = page.xpath('//*[@id="element_id"]')
+```
 
-- [Dokumentacja biblioteki Nokogiri](https://rubydoc.info/github/sparklemotion/nokogiri)
-- [Poradnik w języku polskim o parsowaniu HTML przy użyciu Nokogiri](https://www.profesjonalne-kody.pl/nokogiri-poradnik-parsowanie-html-w-jezyku-ruby/)
-- [Przykłady użycia biblioteki Nokogiri](https://nokogiri.org/tutorials/searching_a_xml_html_document.html)
+W celu wyświetlenia wybranych danych, możemy użyć pętli lub metod zwracających tablice, takich jak ```map```.
+
+```ruby
+# wyświetlanie zawartości wszystkich linków
+links.each do |link|
+  puts link.content
+end
+
+# zapisywanie zawartości wszystkich linków do tablicy
+links_list = links.map { |link| link.content }
+```
+
+## Głębsza analiza
+
+Parsing HTML może być wyzwaniem ze względu na różnorodność i nieprzewidywalność stron internetowych. Istnieją jednak pewne sposoby na ułatwienie sobie zadania. Możemy na przykład użyć narzędzi do analizy HTML, takich jak Chrome DevTools, aby zobaczyć strukturę kodu i znaleźć odpowiednie selektory.
+
+Warto również pamiętać o korzystaniu z dobrej dokumentacji biblioteki Nokogiri oraz sprawdzania typów danych zwracanych przez poszczególne metody. Przede wszystkim, warto eksperymentować i testować różne metody, aby znaleźć najlepsze rozwiązanie dla swoich potrzeb.
+
+## Zobacz także
+
+* [Dokumentacja Nokogiri](https://www.rubydoc.info/github/sparklemotion/nokogiri/Nokogiri)
+* [Poradnik do korzystania z Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
+* [Przykładowe skrypty do parsowania HTML w Ruby](https://github.com/search?q=html+parsing+ruby)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrittura su errore standard"
+html_title:           "Clojure: Scrittura su errore standard"
+simple_title:         "Scrittura su errore standard"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,24 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere a standard error (stderr) è un'importante abilità nella programmazione di Clojure. Consente di mostrare messaggi di errore e informazioni di debug durante l'esecuzione del codice. 
+Scrivere su standard error è un'operazione comune in Clojure per gestire errori e debugging. Ciò consente agli sviluppatori di identificare rapidamente eventuali problemi nel codice e di fornire informazioni dettagliate sulle cause degli errori.
 
 ## Come fare
 
-Per scrivere a stderr in Clojure, è necessario utilizzare la funzione `println` con il parametro `System/err` come argomento. Ad esempio:
+Per scrivere su standard error in Clojure, usiamo la funzione `clojure.pprint/write-err` e passiamo ad essa il messaggio da stampare. Il suo output verrà quindi visualizzato sulla console di errore. Di seguito un esempio di codice:
 
 ```Clojure
-(println "Questo è un messaggio di errore" System/err)
+(require '[clojure.pprint :refer [write-err]])
+(write-err "Errore: valore non valido")
 ```
 
-L'output verrà stampato nel terminale, invece che sulla standard output (stdout).
+Il risultato dell'esempio sarà:
+
+`Errore: valore non valido`
 
 ## Approfondimento
 
-In Clojure, stderr è gestito dal sistema di Java. Questo significa che è possibile utilizzare anche altre funzioni Java per scrivere a stderr, ad esempio `eprint` e `eprintln` dalla classe `java.lang.System`. Inoltre, è possibile utilizzare la global var `*err*` per accedere all'oggetto PrintWriter per scrivere a stderr.
+Scrivere su standard error è molto utile per la gestione degli errori, ma è anche importante conoscere le differenze tra standard out e standard error. In Clojure, standard out è utilizzato per la stampa di output di natura generale, mentre standard error è riservato per la gestione degli errori. Inoltre, standard error ha una priorità maggiore e verrà sempre stampato prima di standard out.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Clojure sulle funzioni System](https://clojure.org/reference/java_interop#_stdio)
-- [Guida su come gestire gli errori in Clojure](https://www.clojure.org/guides/learn/exceptions)
-- [Articolo sull'utilizzo delle funzioni Java in Clojure](https://medium.com/@jimfawcett/using-java-in-clojure-1455cd706111)
+- Documentazione ufficiale di Clojure su `clojure.pprint/write-err`[https://clojuredocs.org/clojure.pprint/write-err]
+- Tutorial su error handling in Clojure[https://www.braveclojure.com/functional-error-handling/]

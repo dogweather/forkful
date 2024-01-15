@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Luenta komentorivin argumenteista"
+html_title:           "Javascript: Luenta komentorivin argumenteista"
+simple_title:         "Luenta komentorivin argumenteista"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,28 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi lukisit komentorivin argumentteja Javascript-ohjelmointikielellä? Komentorivin argumentit ovat hyödyllinen tapa lukea ja välittää tietoa ohjelmalle suoraan komentoriviltä. Tämä voi olla hyödyllistä, kun haluat mukauttaa ohjelmasi toimintaa tai suorittaa erilaisia tehtäviä komentoriviltä käsin.
 
-## Miten
-Komentorivin argumentit voidaan lukea ja käsitellä helposti Javascriptillä. Seuraavassa esimerkissä käymme läpi, kuinka voit lukea käyttäjän antaman komentorivin argumentin ja tulostaa sen konsoliin:
+Komentoriviparametrien lukeminen on tärkeä taito jokaiselle kehittäjälle, joka haluaa tehdä monipuolisia ja interaktiivisia ohjelmia käyttöjärjestelmän tasolla. Se antaa mahdollisuuden kommunikoida ohjelman kanssa käyttämällä syötteitä komentoriviltä työmme tehostamiseksi.
 
-```Javascript
-// Luodaan muuttuja, johon tallennetaan ensimmäinen komentorivin argumentti
-let argumentti = process.argv[2];
+## Kuinka
 
-// Tulostetaan vastaus konsoliin
-console.log("Käyttäjä antoi komentorivin argumentin: " + argumentti);
+Komentoriviparametrien lukeminen on helppoa Javascriptissä käyttämällä `process.argv` -muuttujaa. Tämä muuttuja sisältää taulukon kaikista käyttäjän antamista komentoriviparametreistä. Voit käyttää esimerkiksi for-silmukkaa tai `forEach` -metodia käydäksesi läpi kaikki parametrit ja työstääksesi niitä haluamallasi tavalla.
 
-// Komentorivillä syötetään esimerkiksi "node ohjelma.js Hello World"
-// Tulostus: "Käyttäjä antoi komentorivin argumentin: Hello World"
+```javascript
+process.argv.forEach((parametri) => {
+  console.log(parametri);
+});
 ```
 
-Käyttämällä `process.argv` -oliota voit lukea kaikki komentorivin argumentit ja käsitellä niitä haluamallasi tavalla. Argumentit luetaan aina taulukkona, joten voit käyttää esimerkiksi `for`-silmukkaa niiden läpikäymiseen.
+Tämän koodin suorittaminen komentoriviltä antaisi seuraavan tulosteen, mikäli siihen lisättäisiin kolme parametria: `node index.js ekaTuloste tokaTuloste kolmasTuloste`
 
-## Syvemmälle
-Komentorivin argumentteja voidaan käyttää monipuolisesti ohjelmissa. Voit esimerkiksi muuttaa ohjelman toimintaa eri argumenttien perusteella tai välittää tietoa eri moduuleille ohjelman sisällä. On tärkeää muistaa, että komentorivin argumentit ovat aina merkkijonoja, joten tarvittaessa ne pitää muuttaa muuhun muotoon, esimerkiksi numeroksi, ennen käyttöä.
+```
+ekaTuloste
+tokaTuloste
+kolmasTuloste
+```
 
-## Katso myös
-- [process.argv dokumentaatio (englanniksi)](https://nodejs.org/dist/latest-v12.x/docs/api/process.html#process_process_argv)
-- [Node.js ohjeet komentorivin argumenttien lukemiseen (englanniksi)](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)
-- [Komentorivin argumenttien hyödyntäminen Node.js:ssä (suomeksi)](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_arguments)
+Komentoriviparametreillä voi myös olla erilaisia ominaisuuksia, kuten esimerkiksi nimettyjä parametreja käytettäessä. Tällöin voit käyttää esimerkiksi `yargs` -pakettia auttamaan parametrien lukemisessa.
+
+```javascript
+// Asennetaan yargs-paketti ensin
+npm install yargs
+
+// Sitten voidaan käyttää sitä koodissa
+const yargs = require('yargs');
+
+// Määritellään parametrit
+yargs.command({
+  command: 'tervehdi',
+  describe: 'Tulostaa käyttäjälle tervehdyksen',
+  // Aliakset, joilla komento voidaan suorittaa
+  aliases: ['tervehdiyttävä', 'hei'],
+  builder: {
+    // Tallennetaan annettu arvo yhteiseen muuttujaan
+    nimi: {
+      describe: 'Käyttäjän nimi',
+      demandOption: true,
+      // Pakotetaan annetun arvon olevan vähintään 3 merkkiä pitkä
+      validate: (value) => {
+        if (value.length < 3) {
+          throw new Error('Nimen tulee olla vähintään 3 merkkiä pitkä.');
+        }
+      }
+    }
+  },
+  handler: (argv) => {
+    console.log('Hei ' + argv.nimi + '!');
+  }
+});
+
+// Parsitaan parametrit
+yargs.parse();
+```
+
+Suoritettaessa komento `node index.js tervehdi --nimi John` tulisi tulosteeksi `Hei John!`.
+
+## Deep Dive
+
+Komentoriviparametri voi myös olla tietynlainen lippu, joka ilmaisee tiettyä toiminnallisuutta. Tämän avulla voit tehdä ohjelmastasi interaktiivisemman ja antaa käyttäjän määrittää haluamansa toiminnot parametreilla.
+
+```javascript
+yargs.command({
+  command: 'nimet',
+  describe: 'Tulostaa käyttäjälle erilaisia nimiä',
+  builder: {
+    // Lisätään liput `-s` ja `-n`
+    lyhyet: {
+      describe: 'Haluatko lyhyitä nimiä?',
+      // Yksinkertaisuuden vuoksi ei pakoteta arvoa, joten se voi olla joko true tai false
+      default: false
+    },
+    numeroiden: {
+      describe: 'Haluatko nimiin lisätä numeroita?',
+      // Sama tässä, pakotetaan arvoksi true
+      default: true
+    }
+  },
+  handler: (argv) => {
+    let nimet = ['Maija', '

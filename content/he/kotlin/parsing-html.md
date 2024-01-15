@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: פריסת html"
-simple_title:         "פריסת html"
+title:                "This is the title of an article on computer programming: פיענוח HTML."
+html_title:           "Kotlin: This is the title of an article on computer programming: פיענוח HTML."
+simple_title:         "This is the title of an article on computer programming: פיענוח HTML."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## עבור מה 
 
-מגרעת HTML היא תהליך חיוני עבור מפתחי אתרים ויישומי רשת. זה כולל קריאה וניתוח של קוד HTML כדי לייצר מבנה נתונים ולהציגו בצורה ידידותית. בעזרת Kotlin, אתה יכול ליצור כלי חזק וקל לשימוש כדי לפענח מנתח HTML בצורה מהירה ויעילה.
+Parsing (פענוח) של קוד HTML הוא תהליך חשוב ביישומי אינטרנט, מחשב והחטיפה של נתונים מאתרים שונים. באמצעות פענוח HTML, ניתן לקרוא ולנתח את קוד הדף האינטרנטי, ולכן יכול לעזור לפיתוח מתקדם ויצירת יישומים מתקדמים.
 
-## כיצד לעשות זאת
+## איך לבצע פענוח HTML ב-Kotlin
 
-הנה דוגמאות של כיצד להשתמש בקוד Kotlin כדי לפענח ולנתח HTML:
+תחילה, יש ליצור פרויקט חדש ב-Kotlin ולהתקין את הספרייה הנחוצה עבור פענוח HTML. לדוגמה, ניתן להשתמש בספרייה הפופולרית Jsoup. לאחר מכן, ניתן להשתמש בפונקציות המובנות של Jsoup עבור החלפת תווים, חיפוש ואיחסון של מידע מוצא בקוד HTML. נהלך דוגמא קוד בקטע הבא שמדגים כיצד לחשב את מספר המילים בדף אינטרנט:
 
-```Kotlin
-// ייבוא המודולים הנדרשים
+```kotlin
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
 
-// URL של האתר שברצונך לפענח
-val url = "https://www.example.com"
-
-// יצירת חיבור לדף HTML של האתר
-val doc = Jsoup.connect(url).get()
-
-// קריאה והצגת כל הטקסט בתוך ה body של HTML
-println(doc.body().text())
-
-// ניתוח והצגת תגיות מסוימות על ידי השתמשות במזהה או מחרוזת תואמת
-println(doc.select("#title").text()) // הצגת תוכן של תגית עם המזהה "כותרת"
-println(doc.select("a[href]").attr("href")) // הצגת את הקישורים (href) בדף
-
-// גילוי אוטומטי והצגת תוכן התגית הראשית בדף
-println(doc.title())
+fun main() {
+    val url = "https://en.wikipedia.org/wiki/HTML"
+    val doc = Jsoup.connect(url).get()
+    val text = doc.text()
+    val words = text.split(" ")
+    println("Number of words in HTML webpage: ${words.size}")
+}
 ```
 
-פלט של מזהה התגית "כותרת" הצוהק: 
+בקוד זה, אנו משתמשים בספריית Jsoup כדי להתמקד בקוד HTML של הדף האינטרנטי שלנו. נשתמש בפונקציות כמו `connect` ו- `get` כדי ליצור חיבור לדף ולקבל את קוד הדף כטקסט. לאחר מכן, נשתמש בפונקציות כמו `text` ו- `split` כדי לפרוס את הטקסט למילים ולחשב את מספר המילים בדף. כמו שאתם רואים, פענוח HTML ב-Kotlin נעשה בצורה קלה ומהירה באמצעות היכולות המתקדמות של ספריית Jsoup.
 
-```
-זהו כותרת הדף
-```
+## צלילה עמוקה
 
-פלט של המידע שנמצא תחת קישורים ה- href: 
-
-```
-https://www.example.com קישור לראות את האתר
-```
-
-## חקירה מעמיקה
-
-על מנת להבין טוב יותר את מנגנוני פענוח HTML בעזרת Kotlin, ניתן להשתמש במבנה הדף Jsoup המקביל. ישנם מתודות שונות שניתן להשתמש בהן כדי לנתח את מבנה HTML בצורה יעילה וקלה לשימוש. שימוש במתודה `get()` תגרום ל-Jsoup להזמין את כל תוכן הדף הנוכחי באמצעות חיבור HTTP. ולאחר מכן, אתה תמונת את התוכן
+אם ברצונכם להצטייד ביכולות מתקדמות יותר במתן שירותים אינטרנטיים בסביבת Kotlin, כדאי ללמוד עוד על

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 文字列の結合"
-simple_title:         "文字列の結合"
+title:                "文字列の連結"
+html_title:           "Bash: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を連結することの理由について、たった1〜2文で説明します。
+## Why
 
-### 文字列を連結するとは
-文字列の連結とは、2つ以上の文字列を結合して1つの文字列にする処理のことです。文字列の連結は、多くのプログラミング言語で一般的に使われており、Bashでも同様です。例えば、あなたが友達に挨拶する際に「こんにちは、名前！」と言うとします。この場合、"こんにちは"という文と名前を結合して1つの文にすることができます。
+Concatenating strings is a fundamental skill in Bash programming that allows you to combine multiple strings into one. It is a useful technique for building complex commands and creating customized outputs.
 
-## 方法
-文字列を連結する方法について、以下のコードブロックを使ってコーディング例と出力のサンプルを示します。
+## How To
 
-```Bash
-# 文字列を連結する方法
-name="太郎"
-greeting="こんにちは、"
-echo "${greeting}${name}！"
-```
-出力結果: こんにちは、太郎！
-
-上記の例では、変数を使用して文字列を定義し、echoコマンドで変数を結合して出力しています。
-
-別の方法として、文字列を直接結合することもできます。
+To concatenate strings in Bash, you can use the `echo` command followed by the strings inside double quotes, separated by a space. For example:
 
 ```Bash
-# 文字列を直接連結する方法
-echo "おはよう、" "太郎！"
+echo "Hello" "World"
+``` 
+
+The output will be "Hello World" with a space in between the two strings. You can also use variables to concatenate strings. For example:
+
+```Bash
+name="John"
+echo "My name is" $name
 ```
-出力結果: おはよう、太郎！
 
-## 深堀り
-文字列の連結には、他の言語と比べてBashには独自の特徴があります。Bashでは、単純に文字列を結合するだけでなく、変数や数値などを含めた複雑な式の結果を文字列に結合することもできます。
+The output will be "My name is John" with a space in between. Another way to concatenate strings is by using the `+=` operator. For example:
 
-また、シングルクォートやダブルクォートなど、結合する文字列の外側に使用する引用符が出力結果に影響することもあります。そのため、注意して使用する必要があります。
+```Bash
+title="Bash"
+title+=" Programming"
+echo $title
+```
 
-## 関連記事
-Bashで文字列を連結することの重要性や様々なテクニックについて学ぶことができました。以下のリンクを参考にして、さらにBashのプログラミングスキルを向上させましょう！
+The output will be "Bash Programming" where the second string is appended to the first.
 
-# 関連記事
-- [Bash scripting 101](https://www.linode.com/docs/guides/bash-scripting-101/)
-- [How to concatenate string variables in Bash](https://linuxconfig.org/how-to-concatenate-string-variables-in-bash)
-- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
+## Deep Dive
+
+When concatenating strings, it is important to understand the difference between single and double quotes. Single quotes will preserve the literal value of all characters within the quotes while double quotes will allow for variable expansion and interpret certain characters, such as backslashes. This means that when using single quotes, the variables will not be evaluated and the literal text will be printed. For example:
+
+```Bash
+name="John"
+echo 'My name is' $name
+```
+
+The output will be "My name is $name" with no variable evaluation.
+
+Additionally, if you want to concatenate a string with a number, you can use the `printf` command. For example:
+
+```Bash
+num=5
+printf "The number is %d" $num
+```
+
+The output will be "The number is 5" where the `%d` is replaced by the value of the variable `num`.
+
+## See Also
+
+- [Bash documentation](https://www.gnu.org/software/bash/manual/)
+- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+- [String concatenation in Bash](https://www.baeldung.com/linux/bash-string-concatenation)

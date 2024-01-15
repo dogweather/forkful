@@ -1,5 +1,6 @@
 ---
-title:                "C: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "C: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "C"
 category:             "C"
@@ -11,48 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Manchmal müssen wir unseren C-Code ausführen und ihm zusätzliche Informationen geben, ohne diese direkt im Code festzulegen. Hier kommen die Befehlszeilenargumente ins Spiel. Sie ermöglichen es uns, Parameter an unser Programm zu übergeben, ohne den Code jedes Mal ändern zu müssen.
+Wer in der Programmierung mit C arbeitet, wird nicht umhin kommen, auch mit Kommandozeilen-Argumenten zu tun zu haben. Diese erlauben es, dem Programm bei jedem Aufruf unterschiedliche Werte zu übergeben. In diesem Artikel erfahrt ihr, wie ihr in C auf diese Argumente zugreift und sie im Programm nutzen könnt.
 
-## How To
+## So funktioniert's
 
-Befehlszeilenargumente können in der `main` Funktion als Argumente übergeben werden. Zum Beispiel:
+Um die Argumente aus der Kommandozeile auszulesen, wird die main-Funktion verwendet. Deren Argumente sind ein Integer, der die Anzahl der Argumente enthält, sowie ein Array von Strings mit den einzelnen Argumenten.
 
-```C
-int main(int argc, char *argv[]) {
-    // Code hier
-    return 0;
-}
-```
-
-`argc` ist eine Variable, die die Anzahl der Argumente, die an das Programm übergeben wurden, speichert. `argv[]` ist ein Array, das die eigentlichen Argumente enthält, die als Zeichenfolgen gespeichert sind.
-
-Lassen Sie uns ein Beispiel betrachten. Nehmen wir an, wir haben folgendes Programm:
+Ein Beispiel-Programm könnte so aussehen:
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Hallo %s!", argv[1]);
+    // Argumente ausgeben
+    printf("Anzahl der Argumente: %d\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
+    }
     return 0;
 }
 ```
 
-Wenn wir dieses Programm mit dem Befehl `./programm Max` ausführen, wird das Programm `Hallo Max!` ausgeben. Hier ist `Max` das erste Argument, das wir dem Programm übergeben haben.
+Wenn dieses Programm mit den Argumenten "Hallo Welt" aufgerufen wird, würde die Ausgabe folgendermaßen aussehen:
 
-## Deep Dive
-
-Neben einfachen Zeichenfolgen können Befehlszeilenargumente auch verwendet werden, um Zahlen zu übergeben. Wir müssen jedoch sicherstellen, dass wir die Zeichenfolgen in entsprechende Datentypen konvertieren, bevor wir sie verwenden.
-
-Zum Beispiel, wenn wir einen Integer als Befehlszeilenargument übergeben möchten, müssen wir es wie folgt konvertieren:
-
-```C
-int myArg = atoi(argv[1]);
+```
+Anzahl der Argumente: 3
+Argument 0: ./programm
+Argument 1: Hallo
+Argument 2: Welt
 ```
 
-Dies wäre nützlich, wenn wir bspw. eine Anzahl von wiederholten Durchgängen in einem Schleifenausdruck übergeben möchten.
+Bei der Ausführung eines Programms werden auch immer mindestens ein Argument übergeben, nämlich der Name des Programms selbst. Daher wird das erste Argument als "./programm" angezeigt.
+
+## Tiefergehende Informationen
+
+Die Argumente können nicht nur ausgelesen, sondern auch zur Verarbeitung im Programm genutzt werden. Dabei ist zu beachten, dass die Argumente immer als Strings übergeben werden und bei Bedarf noch in den jeweiligen Datentyp umgewandelt werden müssen.
+
+Ein weiteres wichtiges Konzept sind Optionen. Diese werden häufig bei Aufrufen von Befehlszeilenprogrammen verwendet, um bestimmte Verhaltensweisen festzulegen. Sie werden durch einen Bindestrich und einen Buchstaben angegeben, z.B. "-v" für die Ausgabe von Versioninformationen. Um diese Optionen zu verarbeiten, können Funktionen wie "strcmp" und "getopt" aus der Standardbibliothek verwendet werden.
 
 ## Siehe auch
 
-- [Argumente an C-Programme übergeben](https://www.dummies.com/programming/c/how-to-pass-command-line-arguments-to-your-c-program/)
-- [Die Anweisung 'main'](https://openbook.rheinwerk-verlag.de/c_von_a_bis_z/014_c_laboratorium_003.htm)
-- [Die Funktion 'atoi'](https://www.tutorialspoint.com/c_standard_library/c_function_atoi.htm)
+- Dokumentation des C Standard Library: https://en.cppreference.com/w/c
+- Einsteiger-Tutorial zur Programmierung mit C: https://www.learn-c.org/
+- Mehr über Befehlszeilenargumente in C: https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm

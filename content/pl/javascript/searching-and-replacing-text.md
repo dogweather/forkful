@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamienianie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zamienianie tekstu"
+simple_title:         "Wyszukiwanie i zamienianie tekstu"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,42 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie to dziedzina, która wymaga nie tylko wiedzy i umiejętności, ale także nieustannego poszukiwania i przetwarzania danych. W przypadku różnych projektów często zachodzi potrzeba dokonywania zmian w dużych zbiorach tekstu. W takich sytuacjach bardzo przydatne okazują się narzędzia do wyszukiwania i zamiany tekstu. W artykule tym przyjrzymy się temu zagadnieniu oraz omówimy jakie narzędzia są dostępne w języku Javascript.
+Zastępowanie tekstu jest kluczowym elementem programowania, ponieważ pozwala nam w łatwy sposób wprowadzać zmiany w naszym kodzie. Jest to szczególnie przydatne, gdy chcemy wprowadzić jednocześnie wiele podobnych modyfikacji lub gdy potrzebujemy zmienić pewne elementy w wielu plikach jednocześnie.
 
-## Jak To Zrobić
-
-Do wykonania operacji wyszukiwania i zamiany tekstu w języku Javascript możemy użyć kilku różnych metod. Jedną z najpopularniejszych jest metoda `replace()`, która pozwala na podmianę wyrażenia regularnego na inny ciąg znaków. Przykład użycia tej metody wygląda następująco:
+## Jak to zrobić
 
 ```Javascript
-let tekst = "Jestem programistą, zajmuję się tworzeniem aplikacji webowych.";
-let nowyTekst = tekst.replace(/programistą/g, "developerem");
+// Przykładowy string, w którym chcemy dokonać zmiany
+let string = "Cześć, jestem programistą w języku Javascript!"
+
+// Użycie metody replace() do zamiany słowa "programistą" na "developerem"
+let newString = string.replace("programistą", "developerem")
+
+console.log(newString) 
+// Output: Cześć, jestem developerem w języku Javascript!
 ```
-
-W powyższym przykładzie wykorzystaliśmy wyrażenie regularne `/programistą/g`, które wyszukuje wszystkie wystąpienia słowa "programistą". Następnie używając metody `replace()` zamieniliśmy to słowo na "developerem". Wynik tego działania zapisaliśmy do zmiennej `nowyTekst`, która będzie zawierała tekst "Jestem developerem, zajmuję się tworzeniem aplikacji webowych.".
-
-Inną przydatną metodą jest `split()`, która pozwala na rozdzielenie tekstu na tablicę znaków na podstawie określonego separatora. Przykład użycia tej metody wygląda następująco:
+W powyższym przykładzie użyliśmy metody `replace()` na stringu, aby zmienić jedno słowo na inne. Możemy w ten sam sposób wprowadzać zmiany w całych zdaniach lub wyrażeniach. Dodatkowo, możemy wykonać wielokrotne zastępowanie, używając wyrażenia regularnego oraz flagi globalnej `g`.
 
 ```Javascript
-let tekst = "Jestem programistą, zajmuję się tworzeniem aplikacji webowych.";
-let tekstTablica = tekst.split(",");
+// Przykładowy string z wieloma wystąpieniami słowa "programista"
+let string = "Jestem programistą zarówno w języku Javascript, jak i Python. Programista to bardzo ciekawy zawód."
+
+// Użycie wyrażenia regularnego oraz flagi globalnej dla zastąpienia wszystkich wystąpień słowa "programista"
+let newString = string.replace(/programista/g, "developer")
+
+console.log(newString)
+// Output: Jestem developerem zarówno w języku Javascript, jak i Python. Developer to bardzo ciekawy zawód.
 ```
 
-W powyższym przykładzie używając metody `split(",")` podzieliliśmy tekst na dwie części na podstawie przecinka, dzięki czemu w wyniku otrzymaliśmy tablicę z dwoma elementami: "Jestem programistą" oraz "zajmuję się tworzeniem aplikacji webowych.".
+## Głębszy przegląd
 
-## Wnikliwa Analiza
-
-Większość metod służących do wyszukiwania i zamiany tekstu w języku Javascript wykorzystuje wyrażenia regularne. Są to specjalne ciągi znaków, które pozwalają na precyzyjne określenie wzorów wyszukiwania. Podstawowymi elementami wyrażeń regularnych są tak zwane "metaznaki", czyli znaki o specjalnym znaczeniu. Przykładowe metaznaki to:
-
-- `.` - oznacza dowolny pojedynczy znak
-- `*` - oznacza dowolną ilość wystąpień danego znaku lub zestawu znaków
-- `+` - oznacza jeden lub więcej wystąpień danego znaku lub zestawu znaków
-- `?` - oznacza zero lub jeden wystąpienie danego znaku lub zestawu znaków
-
-Ponadto wyrażenia regularne w języku Javascript umożliwiają również wykorzystanie tzw. grup, czyli fragmentów wyrażenia, które można wyodrębnić za pomocą nawiasów. Przykład wykorzystania grupy wygląda następująco:
+Podczas korzystania z metody `replace()` mamy również możliwość dostosowania naszego zastępowania za pomocą funkcji zwrotnej (callback). Możemy też używać wyrażeń regularnych z grupami dopasowań, aby wykonywać bardziej zaawansowane operacje zastępowania.
 
 ```Javascript
-let tekst = "Witaj, nazywam się John";
-let imie = tekst.replace(/Witaj, nazywam się ([A-Z][a-z]+)/, "$1");
+// Przykładowy string zawierający wielokrotne wystąpienie słów oddzielonych przecinkami
+let string = "HTML, CSS, Javascript, Python, Java"
+
+// Użycie funkcji zwrotnej, aby zamienić każde słowo na wersję z dużymi literami
+let newString = string.replace(/\w+/g, function(match) {
+  return match.toUpperCase()
+})
+
+console.log(newString)
+// Output: HTML, CSS, JAVASCRIPT, PYTHON, JAVA
+
+// Użycie grupy dopasowań, aby zamienić kolejność słów
+let newString = string.replace(/(\w+),\s(\w+)/g, "$2, $1")
+
+console.log(newString)
+// Output: CSS, HTML, Python, Javascript, Java
 ```
 
-W powyższym przykładzie wykorzystaliśmy grupę `([A-Z][a-z]+)`, która odpowiada jednemu wyrazowi z
+## Zobacz też
+
+- [MDN - Metoda replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/Replace)
+- [W3Schools - Wyrażenia regularne w Javascript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [FreeCodeCamp - Przetwarzanie tekstu z Javascript](https://www.freecodecamp.org/news/how-to-process-text-with-javascript/)

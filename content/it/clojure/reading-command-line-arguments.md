@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Leggere gli argomenti della riga di comando"
-simple_title:         "Leggere gli argomenti della riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Clojure: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,67 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché leggere gli argomenti della riga di comando in Clojure?
+## Perché
 
-La lettura degli argomenti della riga di comando è fondamentale per l'interazione con il tuo programma Clojure da riga di comando. In questo articolo, impareremo come leggere e manipolare gli argomenti della riga di comando in modo semplice ed efficace.
+L'utilizzo degli argomenti della riga di comando è essenziale per rendere i nostri programmi più dinamici e versatili. Ci permettono di passare informazioni e opzioni al nostro codice senza doverlo modificare ogni volta che lo eseguiamo.
 
-## Come leggere gli argomenti della riga di comando
+## Come fare
 
-Per leggere gli argomenti della riga di comando in Clojure, utilizzeremo la funzione `command-line-args` che restituisce una lista di argomenti passati al programma nel momento dell'esecuzione. Vediamo un esempio di codice:
+Per leggere gli argomenti della riga di comando in Clojure, possiamo utilizzare la funzione *command-line-args* che restituisce una lista contenente gli argomenti forniti al momento dell'esecuzione del programma. Possiamo quindi utilizzare la funzione *nth* per accedere agli elementi specifici della lista. Ecco un esempio:
 
 ```Clojure
-(defn sum-args [args]
-  (reduce + (map #(Integer/parseInt %) args)))
-
 (def args (command-line-args))
-
-(println (format "La somma degli argomenti è: %d" (sum-args args)))
+(println "Il programma è stato eseguito con gli argomenti:" args)
+(println "Il primo argomento è:" (nth args 0))
+(println "Il secondo argomento è:" (nth args 1))
 ```
-
-Input dalla riga di comando:
-
-```
-$ clojure -M -m my.program 1 2 3 4 5
-```
-
 Output:
 
 ```
-La somma degli argomenti è: 15
+Il programma è stato eseguito con gli argomenti: ["arg1" "arg2"]
+Il primo argomento è: arg1
+Il secondo argomento è: arg2
 ```
-
-In questo esempio, abbiamo definito una funzione `sum-args` che prende una lista di stringhe (gli argomenti) e li converte in numeri interi per calcolare la loro somma utilizzando la funzione `reduce` di Clojure.
 
 ## Approfondimento
 
-Oltre alla funzione `command-line-args`, esistono altre librerie di terze parti che possono aiutarti a gestire gli argomenti della riga di comando in modo più avanzato, come ad esempio `tools.cli` e `clj-argparse`.
-
-Inoltre, è importante notare che gli argomenti della riga di comando possono anche essere passati come opzioni, come nel seguente esempio:
+Oltre alla funzione *command-line-args*, possiamo anche utilizzare la libreria *clap*, che ci offre maggiori opzioni per gestire gli argomenti della riga di comando in modo più strutturato. Ad esempio, possiamo definire opzioni con valori obbligatori o facoltativi, impostare delle descrizioni per ogni opzione e gestire gli errori in modo più efficiente. Ecco un esempio di codice utilizzando *clap*:
 
 ```Clojure
-(def opts
-  [["-n" "--name NAME" "Il tuo nome"]])
+(require '[clap.core :refer [arg opt parse]])
 
-(def settings
-  (parse-opts *command-line-args* opts))
+(def opts (arg &quot;file&quot; :optional true :description &quot;Il file da elaborare&quot;)
+          (arg &quot;arg1&quot; :required true :description &quot;Primo argomento&quot;)
+          (opt :verbose &quot;-v&quot; :description &quot;Abilita il flag verbose&quot;))
 
-(println (format "Ciao %s!" (:name settings)))
-```
-
-Input dalla riga di comando:
-
-```
-$ clojure -M -m my.program -n "Mario"
+(def arg-map (parse opts))
+(println arg-map)
 ```
 
 Output:
 
 ```
-Ciao Mario!
+{:file "nome_file" :arg1 "primo_argomento" :verbose true}
 ```
 
 ## Vedi anche
 
-- [Clojure CLI Tools](https://clojure.org/guides/deps_and_cli) - Guida ufficiale alle CLI tools di Clojure.
-- [tools.cli Library](https://github.com/clojure/tools.cli) - Libreria che semplifica la gestione degli argomenti della riga di comando.
-- [clj-argparse Library](https://github.com/macourtney/clj-argparse) - Libreria che fornisce un parser di argomenti ispirato da argparse di Python.
+- https://clojure.org/reference/miscellaneous_functions#command-line-args
+- https://github.com/clojure/clap

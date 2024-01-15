@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 新しいプロジェクトを始める"
-simple_title:         "新しいプロジェクトを始める"
+title:                "新しいプロジェクトを開始する"
+html_title:           "Fish Shell: 新しいプロジェクトを開始する"
+simple_title:         "新しいプロジェクトを開始する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -9,62 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ始めるのか
 
-新しいプロジェクトを始める理由はたくさんあります。新しい技術を学ぶため、興味のある分野にチャレンジするため、あるいは単に新しいアプリケーションを作りたいためなど、色々な理由があるでしょう。
+プログラミング言語の一つであるFish Shellを始めるのは、コマンドライン操作をより便利に、よりスマートに行うためです。あなたのシェル体験を大幅に改善するために、この新しいプロジェクトに取り組みましょう。
 
 ## やり方
 
-まずはFish Shellをインストールしましょう。次に、新しいプロジェクトのディレクトリを作成します。例えば、`my-project`という名前で作成します。
+まず、Fish Shellをインストールします。コードブロック内にコマンドを示します。
 
 ```
-Fish Shell> mkdir my-project
+Fish Shellをインストールする方法：
+
+brew install fish
 ```
 
-新しいプロジェクトのディレクトリに移動し、空のファイルを作ります。ここでは、`index.js`という名前のファイルを作成します。
+次に、Fish Shellに保存されたコマンドを単一の行で表示する方法を学びましょう。
 
 ```
-Fish Shell> cd my-project
-Fish Shell> touch index.js
+コマンドの表示方法：
+
+bind; funced; fish_mode; funcsave; key_bindings -L
 ```
 
-次に、作成したファイルを開き、好きなエディタでコードを書き始めます。
+最後に、独自の関数を作成して、あなたのプロジェクトを最適化します。
 
 ```
-Fish Shell> nano index.js
+独自の関数の作成方法：
+
+function project
+  # あなたのプロジェクトに実行するコマンドを記述します
+end
 ```
 
-例として、`Hello World`を出力するだけの簡単なプログラムを書いてみましょう。
+## 深ぼる
 
-```
-console.log("Hello World");
-```
-
-上記のコードを保存してから、実行してみましょう。
-
-```
-Fish Shell> node index.js
-```
-
-ターミナルに`Hello World`というメッセージが表示されれば、プログラムが正しく実行されています。
-
-## ディープダイブ
-
-新しいプロジェクトを始める時、最初の一歩が重要です。プロジェクトの目的や構成をよく考えることが、成功のカギです。また、チームでプロジェクトを進める場合は、コミュニケーションを密にすることも重要です。
-
-新しいプロジェクトを始める際、以下の点も意識しておきましょう。
-
-- プロジェクトの目的やゴールを明確にする
-- 使用する技術や言語を決める
-- コーディング規約を決める
-- バージョン管理システムを導入する
-
-これらのポイントを意識することで、プロジェクトの管理や進行がスムーズになります。
+新しいプロジェクトを始める際には、プロジェクト固有の関数やエイリアスを作成することで、より効率的な作業を行うことができます。また、Fish Shellは他のシェルよりも柔軟であり、より多くのカスタマイズが可能です。ぜひ、自分に合ったカスタマイズを探求してみてください。
 
 ## 参考リンク
 
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [Fish Shellチュートリアル](https://fishshell.com/docs/current/tutorial.html)
-- [Node.js公式サイト](https://nodejs.org/en/)
-- [Node.jsチュートリアル](https://www.tutorialspoint.com/nodejs/index.htm)
-- [GitHubの使い方](https://www.atlassian.com/git/tutorials/what-is-git)
+- [Fish Shellの公式サイト](https://fishshell.com/)
+- [Fish Shellのドキュメンテーション](https://fishshell.com/docs/current/)
+- [Fish Shellを使いこなすためのTips](https://dev.to/jonhoo/tips-for-fish-shell-2mmc)

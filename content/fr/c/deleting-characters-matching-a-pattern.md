@@ -1,5 +1,6 @@
 ---
-title:                "C: Suppression de caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "C: Suppression de caractères correspondant à un motif"
 simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "C"
 category:             "C"
@@ -10,78 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Supprimer des caractères correspondant à un motif peut être utile pour nettoyer et formater des données, ou pour filtrer des informations spécifiques dans une chaîne de texte.
+
+Supprimer des caractères correspondant à un motif peut être utile dans de nombreux cas. Par exemple, pour nettoyer des données en enlevant des espaces inutiles ou pour modifier un document en supprimant des lignes qui ne répondent pas à certaines exigences.
 
 ## Comment faire
-Voici un exemple de code en C qui illustre comment supprimer tous les caractères en majuscule d'une chaîne de texte :
 
-```C
-#include <stdio.h>
-#include <string.h>
+Il existe plusieurs façons de supprimer des caractères correspondant à un motif en C, voici deux exemples :
 
-int main(void) {
-    char str[] = "Bonjour MONDE!";
-    int i, j = 0;
+```
+char string[] = "Bonjour, comment ça va ?";
 
-    for (i = 0; str[i] != '\0'; i++) {
+// Exemple 1 : Suppression des virgules
+char *pattern = ",";
+char *result = remove_matching_chars(string, pattern); // Renvoie "Bonjour comment ça va ?"
 
-        // Vérifier si le caractère est en majuscule
-        if (str[i] >= 'A' && str[i] <= 'Z') {
-            // Décaler tous les caractères suivants vers la gauche
-            for (j = i; str[j] != '\0'; j++) {
-                str[j] = str[j + 1];
-            }
-            // Nous devons diminuer la valeur de j pour éviter une boucle infinie
-            j--;
-        }
-    }
-    printf("%s\n", str);
-
-    return 0;
-}
+// Exemple 2 : Suppression des voyelles
+char *pattern = "[aeiouAEIOU]";
+char *result = remove_matching_chars(string, pattern); // Renvoie "Bnjr, cmment ç v ?"
 ```
 
-**Sortie:**
-```
-onjour
-```
+## Un peu plus en détail
 
-Ce code parcourt chaque caractère de la chaîne et supprime ceux qui se trouvent entre 'A' et 'Z', en décalant les caractères suivants vers la gauche pour combler l'espace vide.
+Il existe plusieurs fonctions et bibliothèques en C qui peuvent vous aider à supprimer des caractères correspondant à un motif. Par exemple, la fonction `strchr()` de la bibliothèque standard C peut être utilisée pour rechercher un caractère spécifique dans une chaîne de caractères et `strtok()` peut être utilisée pour diviser une chaîne en sous-chaînes en utilisant un délimiteur.
 
-## Plongeon en profondeur
-Pour supprimer plusieurs caractères correspondant à un motif, on peut utiliser la fonction `strpbrk()` de la bibliothèque `string.h`. Cette fonction prend en paramètres deux chaînes de caractères et renvoie un pointeur vers la première occurrence du motif dans la chaîne. En utilisant une boucle, on peut donc supprimer tous les caractères correspondants en remplaçant les occurrences par des espaces.
-
-Par exemple, si nous voulons supprimer tous les nombres d'une chaîne de caractères, nous pouvons utiliser ce code :
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-    char str[] = "Bonjour 2021!";
-    char nums[] = "0123456789";
-    int i;
-
-    for (i = 0; i < strlen(nums); i++) {
-        char *ptr = strpbrk(str, nums + i);
-        while (ptr) {
-            *ptr = ' ';
-            ptr = strpbrk(ptr + 1, nums + i);
-        }
-    }
-
-    printf("%s\n", str);
-
-    return 0;
-}
-```
-
-**Sortie:**
-```
-Bonjour !
-```
-En utilisant des boucles et des fonctions utiles de la bibliothèque `string.h`, il est possible de supprimer rapidement et efficacement des caractères correspondant à un motif dans une chaîne de texte. C'est une technique utile à connaître lorsque vous travaillez avec des données non structurées.
+Il est également possible d'utiliser des expressions régulières pour définir un motif plus complexe à supprimer. La bibliothèque `regex.h` permet de définir et d'utiliser des expressions régulières en C.
 
 ## Voir aussi
-- [Fonctions de manipulation de chaînes de caractères en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Documentation officielle de la bibliothèque `string.h` en français](https://fr.cppreference.com/w/c/string)
+
+- [Documentation officielle de la fonction strchr()](https://www.man7.org/linux/man-pages/man3/strchr.3.html)
+- [Documentation officielle de la fonction strtok()](https://www.man7.org/linux/man-pages/man3/strtok.3.html)
+- [Documentation officielle de la bibliothèque regex.h](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)

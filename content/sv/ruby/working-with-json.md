@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "Ruby: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -9,39 +10,97 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att arbeta med JSON i Ruby kan vara en viktig färdighet för utvecklare, eftersom JSON är ett vanligt format som används för att utbyta data mellan program. Det är också ett lämpligt format för webbapplikationer och API:er. Genom att lära sig hur man arbetar med JSON i Ruby kan du effektivt hantera datautbytet mellan olika system. 
+Att arbeta med JSON (JavaScript Object Notation) är en vanlig uppgift för utvecklare som arbetar med webbapplikationer. JSON är ett kompakt format för att överföra data mellan klient och server, vilket gör det lätt att hantera och läsa data i dina program.
 
-## Hur man gör det 
+## Så här gör du
 
-För att hantera JSON i Ruby, behöver du först installera RubyGems-paketet för "JSON". Om du använder RubyGems kan du installera det genom att köra följande kommando från terminalen: 
+För att arbeta med JSON i Ruby, behöver du först installera JSON-paketet. Öppna din terminal och kör följande kommando:
 
-```Ruby 
-gem install json 
-``` 
+```ruby
+gem install json
+```
 
-När installationen är klar kan du använda biblioteket genom att använda kommandon som `parse` eller `load`, exempelvis: 
+När paketet är installerat kan du börja använda vårt JSON bibliotek. Låt oss först skapa ett simpelt JSON-objekt som innehåller information om en produkt:
 
-```Ruby 
-require 'json'
+```ruby
+require "json"
 
-json_str = '{"namn": "Alice", "ålder": 25}' 
-data = JSON.parse(json_str) 
+product = {
+    name: "iPhone X",
+    brand: "Apple",
+    price: 999
+}
+```
 
-puts data["namn"] #=> "Alice"
-puts data["ålder"] #=> 25
-``` 
+För att konvertera detta objekt till JSON, använder vi metoden `to_json`:
 
-Det finns också andra metoder som `generate` för att konvertera Ruby-objekt till JSON-strängar och `pretty_generate` för att få en läsbar utskrift av dina JSON-data. 
+```ruby
+json_product = product.to_json
 
-## Djupdykning 
+puts json_product
+=> {"name":"iPhone X","brand":"Apple","price":999}
+```
 
-För att förstå mer om hur man arbetar med JSON i Ruby är det viktigt att ha en grundläggande förståelse för JSON-formatet. JSON står för "JavaScript Object Notation" och är en sträng med data i key-value-format som är enkelt att läsa för både människor och datorer. Det består av samlingar av par av sinsemellan unika nycklar och värden. 
+För att konvertera en JSON-sträng till ett Ruby-objekt, använder vi metoden `parse`:
 
-Ruby har inbyggda metoder för att konvertera JSON-data till och från Ruby-objekt. Men för att göra detta måste JSON-strängen vara korrekt formaterad och giltig. Om du har problem med att hantera JSON i Ruby, är det alltid bra att kontrollera att din sträng är giltig enligt JSON-specifikationen. 
+```ruby
+ruby_product = JSON.parse(json_product)
 
-## Se också 
+puts ruby_product["name"]
+=> "iPhone X"
+```
 
-- [Officiell dokumentation för JSON Ruby biblioteket](https://ruby-doc.org/stdlib-2.6.1/libdoc/json/rdoc/JSON.html) 
-- [Introduktion till JSON av Mozilla](https://developer.mozilla.org/sv/docs/Learn/JavaScript/Objects/JSON)
+## Djupdykning
+
+En viktig del av att arbeta med JSON är att förstå dess struktur. JSON består av nyckel-värde-par som är avgränsade av en kolon och separerade av kommatecken. Det kan ha flera nivåer av inbäddade objekt och arrays.
+
+Här är ett exempel på ett mer komplex JSON-objekt:
+
+```ruby
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "age": 25,
+            "address": {
+                "street": "123 Main Street",
+                "city": "New York",
+                "state": "NY"
+            },
+            "hobbies": ["coding", "reading", "traveling"]
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "age": 30,
+            "address": {
+                "street": "456 Oak Street",
+                "city": "Los Angeles",
+                "state": "CA"
+            },
+            "hobbies": ["painting", "cooking", "hiking"]
+        }
+    ]
+}
+```
+
+För att få åtkomst till informationen i detta objekt, kan vi använda index eller nycklar. Till exempel, om vi vill få åtkomst till namnen på varje användare, kan vi använda en `each`-loop:
+
+```ruby
+users = JSON.parse(json_users)
+
+users["users"].each do |user|
+    puts user["name"]
+end
+=> "John Doe"
+=> "Jane Smith"
+```
+
+## Se även
+
+- [Ruby JSON bibliotekets dokumentation](https://ruby-doc.org/stdlib-2.7.3/libdoc/json/rdoc/JSON.html)
+- [En guide till JSON](https://www.json.org/json-sv.html)
+- [En komplett guide till Ruby för nybörjare](https://www.codecademy.com/learn/learn-ruby)

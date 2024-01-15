@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 문자열 연결하기"
-simple_title:         "문자열 연결하기"
+title:                "문자열 연결"
+html_title:           "Rust: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,38 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-사람들이 문자열을 연결하는 것에 참여하는 이유는 무엇일까요? Rust는 높은 속도와 안정성을 제공하는 언어로, 문자열을 빠르고 효율적으로 처리할 수 있기 때문입니다.
+문자열을 연결하는 것에 참여하는 이유는 단순하게 다른 문자열과 결합하여 보다 복잡한 문자열을 만들기 위해서일 수 있습니다. 이는 문자열을 조작하여 다양한 결과를 얻기 위한 중요한 기술입니다.
 
-## 어떻게 진행해야 할까?
+## 어떻게
 
-아래의 코드 예제를 참고하면 Rust에서 문자열을 연결하는 방법을 알 수 있습니다.
+문자열을 연결하는 것은 Rust 프로그래밍에서 매우 일반적인 작업입니다. 다음은 ```Rust``` 코드 블록 안에 예시와 결과를 포함한 코딩 예제입니다.
 
-```Rust
-fn main() {
-    let mut str1 = String::from("Hello");
-    let str2 = "world";
-    str1.push_str(str2);
-    println!("{}", str1);
-}
+```
+// 기본적인 문자열 연결
+let str1 = "Hello";
+let str2 = "world!";
+let combined = format!("{} {}", str1, str2);
+println!("{}", combined); // output: Hello world!
+
+// 변수에 저장된 문자열 연결
+let name = "John";
+let greeting = "Hello";
+let combined = format!("{} {}", greeting, name);
+println!("{}", combined); // output: Hello John
 ```
 
-출력은 `Helloworld`가 됩니다. `push_str()` 함수를 사용하여 첫 번째 문자열에 두 번째 문자열을 연결한 후 결과를 출력하는 간단한 예제입니다.
+## Deep Dive
 
-## 깊게 들어가기
+Rust에서는 문자열을 연결하는 다양한 방법이 있으며, 가장 일반적인 방법은 ```format!``` 매크로를 사용하는 것입니다. 이 매크로는 문자열로 변환되는 것을 허용하는 모든 타입을 인자로 사용할 수 있습니다. 또한, 문자열 리터럴뿐만 아니라 동적으로 생성된 문자열을 연결하는 것도 가능합니다.
 
-문자열을 연결하는 방법에 대해 더 깊이 알아보겠습니다. Rust의 `String` 타입은 UTF-8을 지원하며, `push_str()` 함수를 사용하여 문자열을 뒤에 연결할 수 있습니다. 또한 `format!()` 매크로를 사용하여 다수의 문자열을 연결하는 것도 가능합니다.
+또 다른 방법으로는 ```+``` 연산자를 사용하는 것이 있습니다. 하지만 이 방법은 많은 문자열이 연결되는 경우 매크로보다는 비효율적일 수 있으니 신중하게 사용해야 합니다.
 
-## 더 알아보기
+## 참고 자료
 
-이외에도 Rust에서는 문자열을 배열 형태로 다룰 수 있는 `Vec<char>` 타입을 제공하고 있으며, `chars()` 메서드를 사용하여 문자 하나씩 처리할 수 있습니다.
+관련된 더 많은 정보를 얻기 위해 다음 링크들을 참고하세요:
 
-## 동일한 주제를 다루는 다른 블로그 글들
-
-- [Rust에서 문자열 연결하는 방법](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/strings.html)
-- [Rust에서의 문자열 처리 최적화](https://blog.logrocket.com/optimizing-string-processing-in-rust/)
-- [Rust 웹 개발에서의 문자열 처리](https://medium.com/@iamoverrated/rust-web-development-part-2-express-yourself-string-processing-in-rust-a69874b3c5f2)
-
-# See Also
-
-- [Rust 공식 문서 (한국어)](https://www.rust-lang.org/ko/)
-- [Rust 커뮤니티 포럼](https://users.rust-lang.org/)
+- [Rust 공식 문서](https://doc.rust-lang.org/stable/std/fmt/#format)
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html)
+- [Rustlings](https://github.com/rust-lang/rustlings/)

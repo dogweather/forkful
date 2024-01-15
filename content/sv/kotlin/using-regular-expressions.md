@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Användning av reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Kotlin: Användning av reguljära uttryck"
 simple_title:         "Användning av reguljära uttryck"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,48 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att använda reguljära uttryck kan vara ett utmärkt sätt att hantera och manipulera text på ett effektivt sätt. Genom att använda reguljära uttryck kan du hitta och ersätta eller manipulera text på ett sätt som vanliga sök- och ersättningsfunktioner inte kan göra.
 
-## Hur man
+Reguljära uttryck (regex) är ett kraftfullt verktyg för att söka och manipulera text. Genom att lära sig använda regex kan du effektivisera ditt programmeringsarbete och lösa komplexa problem på ett enklare sätt.
 
-```Kotlin
-// Skapa en reguljär expression för att hitta email-adresser
-val regex = Regex("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}")
+## Hur man använder reguljära uttryck i Kotlin
 
-// Hitta och skriv ut email-adresser från en text
-val text = "Kontakta mig på john@example.com"
-regex.findAll(text).forEach { matchResult ->
-    println("Email: ${matchResult.value}")
-}
-// Output:
-// Email: john@example.com
-```
+För att använda reguljära uttryck i Kotlin behöver du importera paketet `kotlin.text.Regex` och skapa en instans av klassen `Regex` med hjälp av det mönster du vill matcha. Sedan kan du använda metoden `find()` för att hitta en matchning i en sträng och `replace()` för att ersätta matchningar.
 
 ```Kotlin
-// Ersätt alla emoticons med texten "emoji"
-val emoticons = listOf(":)", ":D", ":(")
-val text = "Jag är så glad idag! :)"
-var newText = text
+// Hitta alla förekomster av ordet "Kotlin"
+val input = "Kotlin är ett fantastiskt programmeringsspråk"
+val regex = Regex("Kotlin")
+val matchResult = regex.find(input)
 
-// Loopa genom alla emoticons och ersätt dem med texten "emoji"
-emoticons.forEach { emoticon ->
-    newText = newText.replace(emoticon, "emoji")
-}
-
-// Skriv ut den nya texten
-println(newText)
-// Output:
-// Jag är så glad idag! emoji
+// Ersätt alla förekomster av ordet "Kotlin" med "Swedish"
+val output = regex.replace(input, "Swedish")
 ```
 
-## Deep Dive
-När du använder reguljära uttryck i Kotlin bör du alltid använda Regex-klassen. Den erbjuder enkel syntax och många användbara metoder för att söka efter och manipulera text.
+Output:
+```Kotlin
+Match: Kotlin
+Ersatt: Swedish är ett fantastiskt programmeringsspråk
+```
 
-En viktig del av reguljära uttryck är specialtecken. Till exempel markerar ett punktum (.) vilken som helst enskilt tecken och en asterisk (*) markerar noll eller fler av det föregående mönstret. Det finns också möjlighet att använda [] för att specificera en mängd av tecken eller använda en rad kontrolltecken som \d för att matcha siffror och \w för att matcha bokstäver.
+## Djupdykning
 
-För att lära dig mer om syntax och alla tillgängliga metoder i Regex-klassen, rekommenderas det att läsa Kotlin dokumentationen för reguljära uttryck.
+Det finns många olika specialtecken och uttryckssätt som kan användas i reguljära uttryck för att skapa mer sofistikerade mönster. Här är några av de vanligaste:
 
-## Se också
-- [Kotlin dokumentation - Regular Expressions](https://kotlinlang.org/docs/regex.html)
-- [Mastering Regular Expressions - Book by Jeffrey E.F. Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
-- [Regex101 - Online Regular Expression Tester](https://regex101.com/)
+- `.` matchar vilket tecken som helst, utom radbrytningar
+- `+` matchar en eller flera förekomster av det föregående uttrycket
+- `*` matchar noll eller flera förekomster av det föregående uttrycket
+- `[A-Z]` matchar alla stora bokstäver mellan A och Z
+- `[a-z]` matchar alla små bokstäver mellan a och z
+- `[0-9]` matchar alla siffror mellan 0 och 9
+- `\d` matchar en siffra
+- `\w` matchar en alfanumerisk karaktär (bokstav eller siffra)
+- `\s` matchar ett blanksteg eller en radbrytning
+- `^` matchar början av en sträng
+- `$` matchar slutet av en sträng
+
+Det finns också möjlighet att gruppera uttryck och använda logiska operatorer som `|` (eller) och `()` (parenteser).
+
+## Se även
+
+https://kotlinlang.org/docs/regex.html
+https://www.regular-expressions.info/tutorial.html

@@ -1,6 +1,7 @@
 ---
-title:                "C++: Création de nombres aléatoires"
-simple_title:         "Création de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "C++: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -11,47 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Générer des nombres aléatoires peut sembler être un sujet banal en programmation, mais c'est en fait une compétence très utile à maîtriser. En utilisant des nombres aléatoires, vous pouvez créer des simulations, des jeux et même des tests de logiciels plus réalistes.
+Générer des nombres aléatoires peut sembler amusant et sans but précis, mais c'est en réalité une fonctionnalité très utile en programmation. Que ce soit pour simuler des données, créer des jeux ou effectuer des tests, les nombres aléatoires sont souvent indispensables dans le développement de logiciels.
 
 ## Comment faire
 
-La génération de nombres aléatoires en C++ peut sembler intimidante pour les débutants, mais ne vous inquiétez pas, c'est en fait assez simple! Tout d'abord, vous devez inclure la bibliothèque <random> dans votre code pour pouvoir utiliser les fonctions de génération aléatoire.
+Pour générer des nombres aléatoires en C++, il existe plusieurs méthodes. La plus simple consiste à utiliser la fonction `rand()` de la bibliothèque standard `cstdlib`. Voici un exemple de code :
 
 ```C++
+#include <cstdlib> // Inclusion de la bibliothèque standard
 #include <iostream>
-#include <random>
-using namespace std;
 
 int main() {
-
-    // Déclaration de la fonction de génération aléatoire
-    random_device rd;
-    // Choix de la plage de nombres aléatoires
-    uniform_int_distribution<int> dist(1, 10);
-    // Génération d'un nombre aléatoire
-    int random_number = dist(rd);
-    
-    // Affichage du résultat
-    cout << "Le nombre aléatoire est : " << random_number << endl;
-    
-    return 0;
+  // Génère un nombre aléatoire entre 0 et 99
+  int nombreAleatoire = rand() % 100; 
+  std::cout << nombreAleatoire << std::endl;
+  return 0;
 }
 ```
-Output:
-Le nombre aléatoire est : 8
 
-Dans cet exemple, nous avons utilisé la fonction random_device pour générer une graine aléatoire et la fonction de distribution uniforme pour choisir une plage de nombres aléatoires, puis nous avons généré un nombre aléatoire en utilisant la graine et la distribution. Vous pouvez également utiliser d'autres types de distributions en fonction de vos besoins.
+Le code ci-dessus utilise également la bibliothèque `iostream` pour afficher le nombre aléatoire généré. On utilise l'opérateur modulo (`%`) pour limiter la plage de nombres possibles. Dans cet exemple, il sera compris entre 0 et 99. Pour obtenir un nombre dans une plage différente, il suffit de modifier le deuxième paramètre de l'opérateur.
 
-## Deep Dive
+Une autre méthode consiste à utiliser la bibliothèque `random` introduite dans la norme C++11. Cette approche est plus recommandée car elle permet de générer des nombres de meilleure qualité et dans une plage ayant une plus grande étendue. Voici un exemple de code :
 
-La génération de nombres aléatoires en C++ est basée sur des algorithmes de génération pseudo-aléatoires. Cela signifie que les nombres générés ne sont pas vraiment aléatoires, mais ils sont suffisamment imprévisibles pour être considérés comme des nombres aléatoires pour la plupart des applications.
+```C++
+#include <random> // Inclusion de la bibliothèque random
+#include <iostream>
 
-La fonction random_device que nous avons utilisée dans notre exemple est en fait un générateur de nombres aléatoires semi-aléatoires basé sur le bruit du système. Cela signifie que le résultat sera différent à chaque fois que vous exécutez le programme.
+int main() {
+  // Crée un moteur de nombres aléatoires
+  std::random_device rd;
+  std::mt19937 gen(rd());
 
-Si vous avez besoin de résultats réellement aléatoires, vous pouvez utiliser des générateurs de nombres aléatoires véritablement aléatoires basés sur des phénomènes physiques tels que le bruit radioactif ou les températures atmosphériques.
+  // Définit une plage de nombres possibles
+  std::uniform_int_distribution<int> distrib(1, 100);
+
+  // Génère un nombre aléatoire
+  int nombreAleatoire = distrib(gen); 
+  std::cout << nombreAleatoire << std::endl;
+  return 0;
+}
+```
+
+Dans cet exemple, on utilise également la fonction `std::random_device` pour initialiser un générateur de nombres aléatoires et la classe `std::uniform_int_distribution` pour définir la plage de nombres possibles. Enfin, le nombre aléatoire est obtenu en appelant la fonction `distrib()`.
+
+## Plongée en profondeur
+
+Générer de vrais nombres aléatoires en informatique est en fait un défi complexe. La méthode la plus courante utilise des algorithmes mathématiques qui prennent en compte l'heure actuelle, les valeurs précédemment générées et d'autres variables pour produire une séquence de nombres qui semble aléatoire. Cependant, les ordinateurs étant des machines déterministes, ces nombres sont en fait pseudo-aléatoires, c'est-à-dire qu'ils suivent un modèle prévisible. Pour obtenir de "vrais" nombres aléatoires, les développeurs peuvent utiliser des générateurs matériels, tels que des capteurs de température ou de mouvement, qui peuvent fournir une source de données véritablement aléatoire pour alimenter les algorithmes.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque <random> en C++](https://en.cppreference.com/w/cpp/numeric/random)
-- [Génération de nombres aléatoires en C++ - Tutoriel vidéo](https://www.youtube.com/watch?v=ubOJ5n2PnP0)
-- [Générateur de nombres aléatoires basé sur le temps en C++](https://www.techiedelight.com/generate-random-numbers-cpp/)
+- [Guide de la bibliothèque random en C++](https://en.cppreference.com/w/cpp/numeric/random)
+- [Article sur la génération de nombres aléatoires en C++](https://geeksforgeeks.org/random-in-cpp/)
+- [Explications détaillées sur la nature des nombres aléatoires en informatique](https://medium.com/@eternalprojects/randomness-does-not-exist-in-computers-d428ea4f3a6b)

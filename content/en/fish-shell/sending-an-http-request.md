@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Fish Shell recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Sending HTTP requests is a crucial task for any web developer or programmer. It allows us to communicate with servers and retrieve data or perform actions on websites.
+## Why
 
-## How To 
-To send an HTTP request using Fish Shell, we can use the `curl` command. It stands for "client URL" and is a popular tool for sending and receiving data through URLs.
+Sending an HTTP request is a common task in today's world of web development. Whether you are building a web application, working with API's, or simply testing a website's functionality, knowing how to send HTTP requests using Fish Shell can greatly enhance your workflow.
 
-```
-curl -X GET https://www.example.com/
-```
+## How To
 
-This command sends a GET request to the website `www.example.com` and retrieves the data from its homepage. We can also specify different methods, such as POST or PUT, and add parameters to our request.
+To make an HTTP request using Fish Shell, you will need to use the `curl` command. This command allows you to specify the HTTP method, URL, and any additional parameters for your request.
 
 ```
-curl -X POST -d "name=John&age=30" https://www.example.com/api/users
-```
+Fish Shell
 
-Here, we are sending a POST request to the `/api/users` endpoint of the website, with parameters `name` and `age`. This can be useful for creating new records or submitting user input to a server.
-
-We can also add headers to our request using the `-H` flag. This is often necessary for authentication purposes or to pass additional information to the server.
+curl -X GET "https://www.example.com" 
 
 ```
-curl -H "Authorization: Bearer TOKEN" https://www.example.com/api/profile
+
+In the example above, we are sending a GET request to the URL specified. This is the most common type of request, used for retrieving data from a server. However, there are many other HTTP methods that you can use such as POST, PUT, PATCH, and DELETE.
+
+To include additional parameters in your request, you can use the `-d` flag and specify the data in the form of key-value pairs. For example:
+
+```
+Fish Shell
+
+curl -X POST -d "username=john&password=12345" "https://www.example.com/login" 
 ```
 
-This command adds the `Authorization` header with a token to our request, allowing us to access a protected endpoint on the website. 
+This will send a POST request to the specified URL with the data of a username and password. The server can then use this data for authentication or other purposes.
 
-## Deep Dive 
-Behind the scenes, sending an HTTP request involves creating a TCP connection to the server and sending a request in a specific format. The server then responds with a status code and possibly some data.
+You can also specify headers in your HTTP request using the `-H` flag. This is useful for providing necessary information to the server, such as the type of data you are sending. For example:
 
-Fish Shell's `curl` command handles this process for us and abstracts away the technical details. However, it's important for us to understand the different parts of an HTTP request (method, URL, headers, and body) to use it effectively.
+```
+Fish Shell
 
-We can also use `curl` to test and debug our own APIs or troubleshoot any issues with a website. It provides us with detailed information about our request and the server's response, including the status code, headers, and duration of the request.
+curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 25}' "https://www.example.com/user"
+```
 
-## See Also 
-- [cURL - Official Website](https://curl.se/)
-- [HTTP Requests - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- [cURL Tutorial - Codecademy](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-curl)
+In this example, we are sending a POST request with a JSON body to create a new user on the server.
+
+## Deep Dive
+
+There are many other options and flags that you can use with the `curl` command to customize your HTTP request. For example, you can include a user agent using the `-A` flag or set a timeout using the `-m` flag.
+
+You can also use the `-i` flag to include the response headers in the output, or the `-o` flag to save the response to a file.
+
+For more information on all the options and flags available for `curl`, you can refer to the official documentation.
+
+## See Also
+
+- Official `curl` documentation: https://curl.se/docs/manpage.html
+- Fish Shell documentation: https://fishshell.com/docs/current/index.html

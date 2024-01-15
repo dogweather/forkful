@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Kotlin: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,83 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wielu programistów często spotyka się z problemem połączenia ciągów znaków w swoim kodzie. Niezależnie od tego, czy tworzysz aplikację mobilną, czy stronę internetową, często będziesz musiał łączyć różne elementy tekstu, aby stworzyć pełne zdanie lub wyświetlić odpowiedni komunikat dla użytkownika. Właśnie dlatego poznaniu sposobu łączenia ciągów znaków w Kotlinie może być bardzo przydatne.
+Jeśli programujesz w Kotlinie, prawdopodobnie często musisz manipulować ciągami znaków. Łączenie (czyli łączenie) dwóch lub więcej ciągów jest częstym wyzwaniem w wielu projektach. W tym artykule dowiesz się, jak łatwo i skutecznie połączyć ciągi znaków w Kotlinie.
 
 ## Jak to zrobić
 
-Aby połączyć dwa ciągi znaków w Kotlinie, możesz skorzystać z operatora plus (+) lub metody `plus()`.
+Połączenie ciągów jest bardzo proste w Kotlinie. W celu połączenia dwóch ciągów, możesz użyć operatora `+` lub funkcji `plus()`.
 
 ```Kotlin
-var firstName = "Jan"
-var lastName = "Kowalski"
+val hello = "Cześć"
+val world = "świecie!"
 
-var fullName = firstName + lastName
-
-println(fullName) // wynik: JanKowalski
+println(hello + " " + world) // Output: Cześć świecie!
+println(hello.plus(" ").plus(world)) // Output: Cześć świecie!
 ```
 
-Operator plus (+) lub metoda `plus()` umożliwiają łączenie dowolnej liczby ciągów znaków. Możesz także połączyć ze sobą zmienne i stałe, na przykład:
+Jeśli potrzebujesz połączyć więcej niż dwa ciągi, możesz użyć metody `joinToString()`. Pozwala ona na wybranie separatora oraz ewentualnych prefiksu i sufiksu.
 
 ```Kotlin
-var name = "Maria"
-val age = 25
-
-var message = "Witaj, tu " + name + ". Masz już " + age + " lat."
-
-println(message) // wynik: Witaj, tu Maria. Masz już 25 lat.
+val fruit = listOf("jabłko", "banan", "pomarańcza")
+println(fruit.joinToString(separator = ", ", prefix = "Jemy: ", postfix = " dzisiaj!")) // Output: Jemy: jabłko, banan, pomarańcza dzisiaj!
 ```
 
-Jeśli potrzebujesz łączyć ciągi znaków w różnych miejscach w swoim kodzie, warto wykorzystać funkcję `StringBuilder`. Pozwala ona na wydajniejsze łączenie ciągów, ponieważ nie tworzy nowych obiektów przy każdej operacji.
+Jeśli potrzebujesz bardziej zaawansowanego łączenia ciągów, Kotlin oferuje również funkcję `buildString()`. Pozwala ona na wygodne budowanie ciągu znaków przy użyciu bloku lambda.
 
 ```Kotlin
-val size = 5
-val color = "czerwony"
+val numbers = mutableListOf("1", "2", "3")
 
-val carDescription = StringBuilder("Samochód o rozmiarze ")
-                    .append(size)
-                    .append(" metrów i kolorze ")
-                    .append(color)
-                    .append(".")
+val concatenated = buildString {
+    append("Liczby: ")
+    numbers.forEach { append(it) }
+}
 
-println(carDescription.toString()) // wynik: Samochód o rozmiarze 5 metrów i kolorze czerwony.
+println(concatenated) // Output: Liczby: 123
 ```
 
-Możesz także wykorzystać funkcję `format()` w celu sformatowania danych w ciągu znaków.
+## Deep Dive
 
-```Kotlin
-val height = 170
-val weight = 60.5
+Kotlin oferuje również szereg funkcji, które pozwalają na bardziej zaawansowane manipulacje ciągami, takie jak `replace()`, `substring()`, `split()` czy `contains()`. Funkcje te są często używane przy łączeniu ciągów i mogą ułatwić pracę z tekstem w Twoim kodzie.
 
-val bmiMessage = "Twoje BMI wynosi %.2f, a Twoja wysokość to %d cm".format(weight / (height / 100) * (height / 100), height)
+Warto także pamiętać o tym, że w Kotlinie ciągi znaków są niemodyfikowalne, co oznacza, że przy każdej operacji na ciągu, tworzony jest nowy obiekt. Dbaj więc o wydajność swojego kodu i używaj funkcji, które nie wymagają tworzenia nowych obiektów, jeśli jest to możliwe.
 
-println(bmiMessage) // wynik: Twoje BMI wynosi 20.91, a Twoja wysokość to 170 cm.
-```
+## Zobacz też
 
-## Głębsza analiza
-
-Podczas łączenia ciągów znaków w Kotlinie, ważne jest, aby pamiętać o wydajności kodu. Częste używanie operatora plus (+) lub metody `plus()` może znacznie obciążyć pamięć i spowolnić działanie aplikacji. Dlatego warto rozważyć użycie funkcji `StringBuilder` lub `format()` do łączenia ciągów w bardziej skomplikowanych aplikacjach.
-
-Możesz także użyć funkcji `joinToString()` w celu połączenia elementów kolekcji w jeden ciąg znaków z określonym separatorem.
-
-```Kotlin
-val colors = listOf("czerwony", "niebieski", "zielony")
-
-val colorsMessage = colors.joinToString(", ")
-
-println("Dostępne kolory: $colorsMessage.") // wynik: Dostępne kolory: czerwony, niebieski, zielony.
-```
-
-Inną przydatną techniką jest wykorzystanie złożonego ciągu znaków zamiast wykonywania wielu operacji konkatenacji.
-
-```Kotlin
-val firstName = "Anna"
-val lastName = "Nowak"
-
-val fullName = "$firstName $lastName" // wykorzystanie złożonego ciągu znaków
-
-println(fullName) // wynik: Anna Nowak
-```
-
-## Zobacz także
-
-- [Dokumentacja Kotlina o operacji konkatenacji](https://kotlin
+- [Oficjalna dokumentacja Kotlina](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Praca z ciągami znaków w Kotlinie - przykładowe zadania](https://www.programiz.com/kotlin-programming/strings) 
+- [Kurs Kotlina - łączenie ciągów znaków](https://try.kotlinlang.org/#/Examples/Problems/Concatenate%20Strings/Concatenate%20Strings.kt)

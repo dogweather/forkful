@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Working with yaml"
+title:                "Working with yaml"
+html_title:           "C recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "C"
 category:             "C"
@@ -11,69 +12,108 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-YAML, short for "YAML Ain't Markup Language", is a popular data serialization format that is human-readable and easy to understand. It is used for storing and transferring structured data, making it a useful tool for developers who need to work with data in different formats.
+So, you're interested in learning about YAML in C? Well, YAML (YAML Ain't Markup Language) is a human-readable data serialization format that is widely used for configuration files and storing structured data. It is a lightweight and flexible format, making it popular among developers.
 
 ## How To
 
-If you're new to YAML and want to use it in your C programming projects, here's a quick guide to get you started.
+To start using YAML in your C code, you will need a library that can parse and manipulate YAML documents. One popular library is LibYAML, which is a lightweight and fast C library for working with YAML.
 
-First, you'll need to include the YAML library in your code. This can be done by adding ``` #include <yaml.h> ``` at the beginning of your program.
+Here's an example of how to use LibYAML to load a YAML file and access its data:
 
-Next, you'll need to create a YAML document using the ```yaml_document_t``` structure. This structure represents the YAML document and contains the necessary information for parsing and manipulating it.
-
-Then, you can start adding data to your YAML document using the ```yaml_scalar_event_t``` structure. This structure allows you to specify the key and value for your data in the YAML document.
-
-Finally, once you have added all the necessary data, you can output the YAML document using the ```yaml_document_dump()``` function. This will generate a human-readable YAML document that you can use for storing or transferring data.
-
-Here's an example of how your code might look like:
-
-```
+```C
 #include <yaml.h>
+#include <stdlib.h>
 
-int main() {
-  yaml_document_t document;
-  yaml_scalar_event_t event;
+int main(void) {
+    // Open the YAML file
+    FILE *file = fopen("sample.yaml", "rb");
 
-  // initialize YAML document
-  yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0);
+    // Initialize the parser
+    yaml_parser_t parser;
+    if (!yaml_parser_initialize(&parser)) {
+        fputs("Failed to initialize parser!\n", stderr);
+        return EXIT_FAILURE;
+    }
 
-  // add key-value pair to YAML document
-  yaml_scalar_event_initialize(&event, NULL, (yaml_char_t *) "name", (yaml_char_t *) "John", 4, 1, 1, YAML_PLAIN_SCALAR_STYLE);
-  yaml_document_append_scalar(&document, NULL, &event);
+    // Set the input file
+    yaml_parser_set_input_file(&parser, file);
 
-  // output YAML document
-  yaml_document_dump(&document, stdout);
+    // Parse the file
+    yaml_event_t event;
+    do {
+        if (!yaml_parser_parse(&parser, &event)) {
+            fputs("Parser error %d\n", stderr);
+            return EXIT_FAILURE;
+        }
 
-  // cleanup
-  yaml_document_delete(&document);
-  yaml_document_delete(&event.document);
+        // Access the data
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Data: %s\n", event.data.scalar.value);
+        }
+    } while (event.type != YAML_STREAM_END_EVENT);
 
-  return 0;
+    // Cleanup
+    yaml_parser_delete(&parser);
+    fclose(file);
+
+    return EXIT_SUCCESS;
 }
 ```
 
-And here's the resulting output:
+Sample output for a YAML file containing the scalar value `Hello World`:
 
 ```
-name: John
+Data: Hello World
 ```
 
 ## Deep Dive
 
-If you want to dive deeper into working with YAML in C, there are a few more concepts you should be aware of. For example, the YAML library allows you to specify different data types for your values, such as strings, integers, and booleans. It also supports more complex data structures like arrays and mappings.
+LibYAML also allows you to create and modify YAML documents in your C code. Here's an example of how to create a YAML document and write it to a file:
 
-You can also customize the output of your YAML document by specifying different styles for your data, such as plain, single-quoted, or double-quoted.
+```C
+#include <yaml.h>
+#include <stdlib.h>
 
-Additionally, the YAML library offers error handling features to help you identify and handle any issues with your YAML document.
+int main(void) {
+    // Create a new YAML document
+    yaml_document_t document;
+    yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0);
 
-For more detailed information and examples, you can refer to the official documentation for the YAML library.
+    // Create a sequence
+    yaml_node_t *node = yaml_document_add_sequence(&document, NULL, YAML_FLOW_SEQUENCE_STYLE);
+
+    // Add scalar values to the sequence
+    yaml_node_t *item = yaml_document_add_scalar(&document, NULL, "Apple");
+    yaml_document_append_sequence_item(&document, node, item);
+    item = yaml_document_add_scalar(&document, NULL, "Orange");
+    yaml_document_append_sequence_item(&document, node, item);
+    item = yaml_document_add_scalar(&document, NULL, "Banana");
+    yaml_document_append_sequence_item(&document, node, item);
+
+    // Write the document to a file
+    FILE *file = fopen("fruits.yaml", "wb");
+    yaml_document_dump(&document, file);
+    fclose(file);
+
+    // Cleanup
+    yaml_document_delete(&document);
+
+    return EXIT_SUCCESS;
+}
+```
+
+This will create a YAML file containing a sequence of fruits:
+
+```yaml
+- Apple
+- Orange
+- Banana
+```
+
+For more in-depth information on using LibYAML, be sure to check out the official documentation and examples.
 
 ## See Also
 
-To further enhance your knowledge of working with YAML in C, you can check out these helpful resources:
-
-- [YAML Specification](https://yaml.org/spec/) - the official YAML specification.
-- [YAML C Library Documentation](https://github.com/yaml/libyaml) - the official documentation for the YAML C library.
-- [YAML Basics - Commented Example](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/) - a detailed tutorial on YAML with code examples in various languages, including C.
-
-Now that you have a basic understanding of how to use YAML in your C programs, go ahead and give it a try in your next project!
+- [LibYAML Documentation](https://pyyaml.org/wiki/LibYAML)
+- [Official YAML Website](https://yaml.org/)
+- [YAML Tutorial](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)

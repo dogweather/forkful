@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Utilisation des expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Rust: Utilisation des expressions régulières"
 simple_title:         "Utilisation des expressions régulières"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,40 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur débutant ou expérimenté, vous avez probablement entendu parler des expressions régulières (ou "regex"). Ces outils puissants sont utilisés pour rechercher et manipuler des chaînes de caractères dans de nombreux langages de programmation, y compris Rust. Alors, pourquoi devriez-vous vous intéresser à l'utilisation des regex en Rust ?
-
-Les expressions régulières peuvent être particulièrement utiles dans les situations suivantes :
-- Valider les entrées de l'utilisateur : les regex peuvent vous aider à vérifier si les mots de passe, adresses email ou autres données saisies par l'utilisateur correspondent au format attendu.
-- Rechercher et remplacer des chaînes de caractères : vous pouvez utiliser les regex pour trouver des mots ou des motifs spécifiques dans un texte et les remplacer par un autre contenu.
-- Extraire des informations d'un texte : si vous avez besoin de récupérer uniquement certaines parties d'une chaîne de caractères, les regex peuvent vous aider à extraire ces données.
-
-En résumé, utiliser les regex en Rust peut vous faire gagner du temps et améliorer l'efficacité de votre code.
+Si vous travaillez avec du texte dans vos projets de programmation, vous avez sûrement rencontré des situations où vous devez rechercher et manipuler des motifs de caractères spécifiques dans une chaîne de texte. Les expressions régulières peuvent vous aider à accomplir cette tâche de manière simple et efficace.
 
 ## Comment faire
 
-Maintenant que nous avons vu pourquoi utiliser les regex en Rust, passons à la partie pratique. Pour utiliser les regex dans votre code Rust, vous devrez importer le crate `regex`. Voici un exemple de code pour rechercher un schéma de numéro de téléphone dans une chaîne de caractères :
+Les expressions régulières sont supportées nativement par Rust grâce au crate "regex" qui peut être inclus dans votre projet en ajoutant la ligne suivante dans votre fichier "Cargo.toml":
 
+```Rust
+[dependencies]
+regex = "1.4"
 ```
+
+Dans l'exemple suivant, nous allons utiliser des expressions régulières pour valider et extraire une adresse email à partir d'une chaîne de texte:
+
+```Rust
 use regex::Regex;
 
 fn main() {
-    let text = "Mon numéro de téléphone est le 06 12 34 56 78.";
-    let re = Regex::new(r"(\d{2} ){4}\d{2}").unwrap();
-    let num_telephone = re.find(text).unwrap().as_str();
-    println!("{}", num_telephone);
+    // Définir le motif de l'adresse email recherché
+    let email_pattern = Regex::new(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}").unwrap();
+
+    // Déclarer la chaîne de texte à analyser
+    let text = "Mon adresse email est contact@exemple.com";
+
+    // Utiliser la méthode "find" pour rechercher le motif dans la chaîne de texte
+    if let Some(email) = email_pattern.find(text) {
+        println!("Email trouvé: {}", email.as_str()); // Obtenir la correspondance sous forme de texte
+    } else {
+        println!("Aucune adresse email trouvée.");
+    }
 }
 ```
 
-Dans cet exemple, nous avons importé `Regex` à la ligne 1, créé notre chaîne de caractères à la ligne 3 et défini notre regex à la ligne 4. Le schéma regex que nous recherchons correspond à quatre groupes de deux chiffres suivis de deux chiffres, séparés par un espace. Nous avons utilisé `unwrap()` pour nous assurer que notre regex est valide. Ensuite, à la ligne 5, nous avons utilisé la méthode `find()` pour trouver la première occurrence de ce schéma dans notre chaîne de caractères. Enfin, à la ligne 6, nous avons utilisé `as_str()` pour extraire la partie correspondant à notre schéma et l'afficher.
-
-Vous pouvez également utiliser les regex pour valider les entrées de l'utilisateur ou remplacer certains mots dans une chaîne de caractères. Le crate `regex` fournit une documentation complète avec de nombreux exemples pour vous aider à utiliser au mieux les expressions régulières en Rust.
+Sortie:
+```
+Email trouvé: contact@exemple.com
+```
 
 ## Plongée en profondeur
 
-Si vous souhaitez en savoir plus sur les regex en Rust, vous pouvez également consulter la RFC 2363 et l'article [Regular Expressions Cookbook](https://www.joyent.com/blog/regular-expressions-101) pour des informations détaillées sur la syntaxe et les fonctionnalités des regex en Rust.
+Les motifs de recherche dans les expressions régulières sont définis à l'aide de caractères spéciaux et de symboles qui ont des significations particulières. Voici quelques-uns des symboles les plus couramment utilisés:
+
+- `.` : correspond à n'importe quel caractère unique
+- `*` : correspond à zéro ou plusieurs occurrences du caractère précédent
+- `+` : correspond à une ou plusieurs occurrences du caractère précédent
+- `?` : correspond à zéro ou une occurrence du caractère précédent
+- `[]` : correspond à un ensemble de caractères possibles
+- `()` : permet de regrouper des caractères pour former un motif plus complexe
+- `|` : permet de définir des alternatives entre les motifs
+
+Il existe également des séquences d'échappement qui permettent d'utiliser des caractères spéciaux dans des motifs qui ont une signification différente. Par exemple, `\d` correspond à un chiffre et `\w` correspond à un caractère alphanumérique.
+
+Il est recommandé de tester et de valider vos expressions régulières à l'aide d'outils en ligne comme regex101.com avant de les utiliser dans votre code.
 
 ## Voir aussi
 
-- [Documentation du crate regex](https://docs.rs/regex/)
-- [RFC 2363](https://docs.rs/regex/)
-- [Regular Expressions Cookbook](https://www.joyent.com/blog/regular-expressions-101)
+- La documentation officielle du crate "regex" : https://docs.rs/regex/1.4.2/regex/
+- Un tutoriel complet sur les expressions régulières en Rust : https://docs.rs/regex/1.4.2/regex/#getting-started
+- Le crate "lazy_static" qui peut améliorer les performances lors de l'utilisation d'expressions régulières : https://docs.rs/lazy_static/1.4.0/lazy_static/

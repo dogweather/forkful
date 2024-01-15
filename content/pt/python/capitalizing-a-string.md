@@ -1,6 +1,7 @@
 ---
-title:                "Python: Maiúsculas em uma string"
-simple_title:         "Maiúsculas em uma string"
+title:                "Maiúsculas para uma string"
+html_title:           "Python: Maiúsculas para uma string"
+simple_title:         "Maiúsculas para uma string"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string?
+## Por que
 
-Em programação, frequentemente precisamos modificar o formato de uma string para atender às nossas necessidades. A função de capitalização de strings é uma ferramenta útil para padronizar a capitalização de caracteres em uma string.
+Algumas vezes, é necessário capitalizar uma string em um programa Python. Isso pode ser útil em várias situações, como alterar a formatação de nomes próprios ou palavras-chave.
 
-## Como capitalizar uma string
+## Como Fazer
 
-```Python
-string = "programação é divertido!"
-print(string.capitalize())
+Usando o método `.capitalize()` é possível capitalizar uma string. Veja um exemplo abaixo:
 
-# Saída: Programação é divertido!
+```python
+texto = "python é uma linguagem de programação"
+print(texto.capitalize())
 ```
 
-O método `capitalize()` irá transformar o primeiro caractere da string em maiúsculo e os demais caracteres em minúsculo. É importante notar que ele não modificará os caracteres especiais ou espaços em branco na string.
+O output desse código será `Python é uma linguagem de programação`, com a primeira letra maiúscula.
 
-Além disso, podemos usar o método `upper()` para transformar todos os caracteres da string em maiúsculos.
+### Outras formas de capitalizar uma string
 
-```Python
-string = "programação é divertido!"
-print(string.upper())
+Além do `.capitalize()`, existem outras formas de capitalizar uma string em Python, como:
 
-# Saída: PROGRAMAÇÃO É DIVERTIDO!
-```
+- `.title()`: este método irá capitalizar cada palavra na string;
+- `.upper()`: este método irá transformar a string em caixa alta;
+- E também é possível usar o módulo `string.capwords()` para capitalizar cada palavra em uma string.
 
-E para transformar todos os caracteres em minúsculos, usamos o método `lower()`.
+## Aprofundando-se
 
-```Python
-string = "PROGRAmAcãO é DIVertiDO!"
-print(string.lower())
-
-# Saída: programação é divertido!
-```
-
-## Mergulho Profundo
-
-Ao usar o método `capitalize()`, é importante ter em mente que ele só irá alterar o primeiro caractere da string. Se a string já estiver com a primeira letra maiúscula, o método não fará nenhuma alteração. Além disso, como mencionado anteriormente, ele não alterará os caracteres especiais ou espaços em branco.
-
-Por outro lado, o método `upper()` e `lower()` irão alterar todos os caracteres da string para maiúsculo ou minúsculo, independentemente do seu estado atual. É importante ter isso em mente ao escolher qual método usar para capitalizar uma string.
+Quando usamos o método `.capitalize()`, apenas a primeira letra da string é capitalizada. Porém, é importante lembrar que esse método apenas funciona para strings com letras minúsculas. Se a string já contém letras maiúsculas, o método não terá efeito.
 
 ## Veja também
 
-- [Documentação da função `capitalize()` em Python](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [Como usar strings em Python](https://realpython.com/python-strings/)
-- [Como formatar strings em Python](https://blog.finxter.com/python-string-formatting-the-definitive-guide/)
+- [Documentação oficial sobre o método `.capitalize()`](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Tutorial sobre formatação de strings em Python](https://www.tutorialspoint.com/python/string_capitalize.htm)

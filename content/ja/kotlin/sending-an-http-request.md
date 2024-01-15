@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: × これはコンピュータプログラミングの記事のタイトルです：「httpリクエストを送信する」"
-simple_title:         "× これはコンピュータプログラミングの記事のタイトルです：「httpリクエストを送信する」"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Kotlin: 「HTTPリクエストの送信」"
+simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,45 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストを送信するのか
+## Why
+HTTPリクエストを送信することの重要性を知るためには、その背後にある基本的な仕組みを理解することが重要です。HTTPリクエストは、ウェブ上で情報を取得したり共有したりするために欠かせないものです。
 
-HTTPリクエストを送信することで、インターネット上で情報をやりとりすることができます。これにより、ウェブアプリケーションなどを利用することが可能になります。
+## How To
+HTTPリクエストを送信するには、Kotlinの標準ライブラリである`java.net.HttpURLConnection`クラスを使用します。
 
-## 方法
+1. URLオブジェクトを作成する。
 
-まずは、KotlinでHTTPリクエストを送信する方法を紹介いたします。以下のコードを参考にしてください。
-
-```Kotlin
-// HTTPリクエストを送信するためのURLを指定します
-val url = URL("https://example.com/api")
-
-// URLオブジェクトから、URLConnectionオブジェクトを取得します
-val connection = url.openConnection() as HttpURLConnection
-
-// メソッドを指定し、リクエストを設定します
-connection.requestMethod = "GET"
-
-// レスポンスコードを取得します
-val responseCode = connection.responseCode
-
-// レスポンスの中身を取得します
-val response = connection.inputStream.bufferedReader().readText()
-
-// レスポンスコードとレスポンスを出力します
-println("レスポンスコード: $responseCode")
-println("レスポンス: $response")
+```
+val url = URL("https://example.com/api/users")
 ```
 
-上記のコードを実行すると、指定したURLにGETリクエストが送信され、レスポンスの情報が表示されます。
+2. `url.openConnection()`メソッドを使用して`HttpURLConnection`オブジェクトを取得する。
 
-## ディープダイブ
+```
+val connection = url.openConnection() as HttpURLConnection
+```
 
-さらに、HTTPリクエストを送信する際には、リクエストヘッダーやリクエストボディーを設定することもできます。また、POSTやPUTなどの異なるメソッドを使用することもできます。詳細については、JavaやKotlinの公式ドキュメントや、オンラインのチュートリアルを参考にすることをおすすめします。
+3. メソッド（GET、POSTなど）を設定する。
 
-## 参考
+```
+connection.requestMethod = "GET"
+```
 
-こちらのリンクを参考に、HTTPリクエストの送信についてもっと学んでみましょう。
+4. リクエストのヘッダーを設定する。
 
-- [Java公式ドキュメント](https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/URLConnection.html)
-- [Kotlin公式ドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l-connexion/index.html)
-- [プログラミング言語Kotlinの基本実行文法](https://wa3.i-3-i.info/word19889.html)
+```
+connection.setRequestProperty("Content-Type", "application/json")
+```
+
+5. 必要に応じてリクエストボディを設定する。
+
+```
+val body = "{ \"id\": 123, \"name\": \"John Smith\"}"
+val outputStream = connection.outputStream
+outputStream.write(body.toByteArray())
+```
+
+6. `connection.connect()`メソッドを使用してリクエストを送信する。
+
+7. 応答を取得する。ステータスコードやレスポンスボディなど、必要な情報を取得することができます。
+
+```
+val responseCode = connection.responseCode
+val inputStream = connection.inputStream
+val responseBody = inputStream.reader().use { it.readText() }
+```
+
+完全なコード例は[こちら](https://gist.github.com/example)。
+
+## Deep Dive
+HTTPリクエストのディープダイブには、様々なトピックがあります。例えば、認証やHTTPS接続、リクエストヘッダーのカスタマイズなどが挙げられます。これらについて詳しく学ぶことで、より複雑なリクエストを送信することが可能になります。さらに、外部ライブラリを使用することでより簡単にリクエストを処理することもできます。
+
+## See Also
+- [java.net.HttpURLConnectionのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/net/HttpURLConnection.html)
+- [OkHttp - HTTPクライアントの外部ライブラリ](https://square.github.io/okhttp/)

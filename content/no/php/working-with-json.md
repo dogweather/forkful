@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Å Jobbe med json"
-simple_title:         "Å Jobbe med json"
+title:                "Å jobbe med json"
+html_title:           "PHP: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -11,71 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-JSON, som står for JavaScript Object Notation, er et populært filformat for å utveksle data mellom forskjellige programmeringsspråk. Det er enkelt å lese og skrive, og har blitt standarden for å lagre og overføre data på nettet. Å kunne jobbe med JSON er derfor en viktig ferdighet for enhver utvikler som ønsker å utveksle data på en enkel og effektiv måte.
+JSON, eller JavaScript Object Notation, er et populært datautvekslingsformat for å lagre og overføre strukturerte data mellom nettapplikasjoner. Det er enklere å lese og skrive enn XML og er også støttet av de fleste programmeringsspråk. Derfor er det en viktig ferdighet for utviklere å kunne håndtere JSON-data i sine applikasjoner.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å kunne jobbe med JSON i PHP, må du først konvertere dataen din til en JSON-streng. Dette kan gjøres ved hjelp av funksjonen `json_encode()`, som tar inn et array eller et objekt som parameter og returnerer en JSON-streng. Du kan også bruke `json_decode()`-funksjonen for å konvertere en JSON-streng tilbake til et array eller et objekt.
-
-La oss si at vi har et array med informasjon om en person, og vi ønsker å konvertere det til en JSON-streng:
+For å jobbe med JSON i PHP, må du først hente dataene fra en ekstern kilde eller opprette et JSON-objekt i selve koden din. Dette kan gjøres ved å bruke funksjonen `file_get_contents()` for å hente data fra en URL eller ved å opprette et JSON-objekt ved å bruke funksjonen `json_encode()`.
 
 ```PHP
-$person = array(
-    'navn' => 'Jens',
-    'alder' => 30,
-    'hobbyer' => array('fotball', 'musikk', 'reise')
+// Hente data fra en URL
+$json_data = file_get_contents('https://example.com/data.json');
+
+// Opprette et JSON-objekt
+$data = array(
+  'navn' => 'John Doe',
+  'alder' => 30,
+  'hobbyer' => array('musikk', 'film', 'reise')
 );
 
-$jsonString = json_encode($person);
-
-echo $jsonString;
+$json_data = json_encode($data);
 ```
 
-Dette vil gi oss følgende output:
-
-```JSON
-{"navn":"Jens","alder":30,"hobbyer":["fotball","musikk","reise"]}
-```
-
-Som du kan se, blir arrayet konvertert til et JSON-format. Du kan også legge til en tredje parameter i `json_encode()`-funksjonen for å få en mer lesbar output ved å sette inn `JSON_PRETTY_PRINT` som parameter.
-
-Når du ønsker å konvertere en JSON-streng tilbake til et array, kan du bruke følgende kode:
+Når du har dataene i et JSON-objekt, kan du enkelt hente ut dem ved å bruke funksjonen `json_decode()`. Det er viktig å huske at JSON-data er  lagret som strenger, så du må dekode det for å få tilgang til de faktiske dataene.
 
 ```PHP
-$jsonString = '{"navn":"Jens","alder":30,"hobbyer":["fotball","musikk","reise"]}';
+// Hente ut navnet fra JSON-data
+$navn = $json_data->navn;
 
-$person = json_decode($jsonString, true);
-
-print_r($person);
+// Hente ut hobbyene fra JSON-data
+$hobbyer = $json_data->hobbyer;
+print_r($hobbyer); // Array ( [0] => musikk [1] => film [2] => reise )
 ```
 
-Dette vil gi oss følgende output:
+## Dypdykk
 
+JSON-data er lagret som en streng i UTF-8-format, som kan håndteres av PHP uten problemer. Men hvis JSON-innholdet inneholder spesielle tegn, må du sørge for å konvertere dem tilbake til UTF-8-format ved å bruke funksjonen `utf8_encode()`.
+
+En annen viktig ting å merke seg er at JSON-data kan ha ulike strukturer, som et array eller et objekt. Det er derfor viktig å sjekke JSON-strukturen før du prøver å hente ut dataene.
+
+```PHP
+// Sjekk om JSON-strukturen er et array
+if (is_array($json_data)) {
+  foreach ($json_data as $item) {
+    echo $item->navn;
+  }
+}
+
+// Sjekk om JSON-strukturen er et objekt
+if (is_object($json_data)) {
+  echo $json_data->navn;
+}
 ```
-Array
-(
-    [navn] => Jens
-    [alder] => 30
-    [hobbyer] => Array
-        (
-            [0] => fotball
-            [1] => musikk
-            [2] => reise
-        )
-
-)
-```
-
-## Deep Dive
-
-Når du jobber med JSON, er det viktig å være oppmerksom på forskjellige typer data som kan være inkludert i en JSON-streng. Dette inkluderer tall, strenger, bolleanvisninger (true eller false), null og objekter. Du kan også inkludere flere lag med array eller objekter i en JSON-streng.
-
-Det er også viktig å være oppmerksom på at JSON er et tekstbasert format, og derfor ikke er optimalt for å lagre store mengder data. I slike tilfeller kan det være bedre å bruke et annet filformat som er mer effektivt for å håndtere store datamengder.
-
-En annen viktig ting å merke seg er at JSON ikke støtter kommentarer. Dette betyr at du ikke kan inkludere kommentarer i en JSON-streng, da dette vil føre til en feil.
 
 ## Se også
 
-- [PHP: json_encode - Manual](https://www.php.net/manual/en/function.json-encode.php)
-- [PHP: json_decode - Manual](https://www.php.net/manual/en/function.json-decode.php)
-- [JSON.org](https://www.json.org/)
+- [PHP manual: JSON Functions](https://www.php.net/manual/en/book.json.php)
+- [Understanding JSON in PHP - Tutsplus](https://code.tutsplus.com/tutorials/understanding-json-in-php--cms-32457)
+- [JSON Formatter](https://jsonformatter.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Borrando caracteres que coincidan con un patrón"
-simple_title:         "Borrando caracteres que coincidan con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Haskell: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,57 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-Como programadores en Haskell, a menudo nos encontramos con el desafío de manipular cadenas de texto y realizar diversas operaciones en ellas. Una de estas operaciones puede ser la eliminación de caracteres que coinciden con un patrón específico. Aunque esto puede no ser una tarea común, puede ser útil en ciertas situaciones, especialmente cuando estamos trabajando con grandes cantidades de datos.
+Alguna vez te ha pasado que tienes un texto largo y quieres eliminar todas las letras mayúsculas o todas las comas? O quizás quieres eliminar todas las vocales de un párrafo? En Haskell, existe una forma sencilla de hacerlo utilizando patrones y funciones específicas.
 
 ## Cómo hacerlo
-
-Para eliminar caracteres que coinciden con un patrón en Haskell, podemos utilizar la función `filter` y la función `notElem`. Primero, debemos definir el patrón que queremos que cumplan los caracteres que deseamos eliminar. Por ejemplo, si queremos eliminar las vocales de una cadena, podemos definir el patrón como `["a", "e", "i", "o", "u"]`. Luego, podemos usar la función `filter` para filtrar todos los caracteres que no estén incluidos en nuestro patrón con la función `notElem`.
-
-```Haskell
--- Definimos el patrón de caracteres a eliminar
-patron = ["a", "e", "i", "o", "u"]
-
--- Definimos una función que elimina los caracteres que coinciden con el patrón
-eliminarCaracteres :: [Char] -> [Char]
-eliminarCaracteres cadena = filter (`notElem` patron) cadena
-
--- Ejemplo de uso
-> eliminarCaracteres "Hola Mundo"
-"Hl Mnd"
-```
-
-También podemos utilizar la función `delete` del módulo `Data.List` para eliminar caracteres específicos en una cadena. Esta función toma como argumentos un elemento y una lista, y devuelve la lista sin el elemento especificado.
+Para eliminar caracteres coincidentes con un patrón en Haskell, podemos utilizar la función `filter` junto con la función `not` y el operador `elem`, que verifica si un elemento se encuentra en una lista. Por ejemplo, si queremos eliminar todas las letras mayúsculas de un texto, podríamos hacer lo siguiente:
 
 ```Haskell
-import Data.List (delete)
-
--- Ejemplo de uso
-> delete 'a' "Hola Mundo"
-"Hol Mundo"
+let texto = "Hola, ESTO es un TEXTO"
+let letrasMinusculas = filter (\c -> not(elem c "ABCDEFGHIJKLMNOPQRSTUVWXYZ")) texto
 ```
+
+Esto nos devolverá el texto sin las letras mayúsculas: "ola, eso es un texto". Como puedes ver, utilizamos una función anónima con el operador `\` para pasar como argumento a `filter` cada letra del texto y luego comprobamos si esa letra se encuentra en la lista de letras mayúsculas. Si es así, la función `not` devolverá falso y esa letra no será incluida en la nueva lista.
+
+También podemos aplicar este método para eliminar otros caracteres, como por ejemplo, todas las comas de un texto:
+
+```Haskell
+let texto = "Hola, esto es un texto con muchas comas,,,,,,,,"
+let textoSinComas = filter (\c -> not(elem c ",")) texto
+```
+
+La nueva lista devolverá: "Hola esto es un texto con muchas comas". Es importante tener en cuenta que el orden de los caracteres en la lista que pasamos a la función `elem` no importa, ya que sólo comprobamos si el carácter está presente o no.
 
 ## Profundizando
-
-Si queremos eliminar caracteres específicos basados en un patrón más complejo, podemos utilizar la función `deleteBy` del módulo `Data.List` en lugar de `delete`. Esta función toma como argumentos una función de comparación y una lista, y elimina los elementos de la lista que cumplan con la condición de la función de comparación.
-
-Por ejemplo, si queremos eliminar todos los caracteres que sean números, podemos utilizar la función `isDigit` del módulo `Data.Char` en la función `deleteBy`. Esta función devuelve `True` si el carácter es un número y `False` en caso contrario.
+En Haskell, también podemos utilizar la función `map` para aplicar una función a cada elemento de una lista. Por ejemplo, si queremos eliminar todas las vocales de un texto, podemos hacerlo de la siguiente manera:
 
 ```Haskell
-import Data.Char (isDigit)
-import Data.List (deleteBy)
-
--- Definimos una función de comparación que retorna True si el carácter es un número
-esNumero :: Char -> Bool
-esNumero car = isDigit car
-
--- Ejemplo de uso
-> deleteBy esNumero "Hola 123 Mundo"
-"Hola Mundo"
+let texto = "Esta es una oración con muchas vocales"
+let textoSinVocales = map (\c -> if elem c "aeiouAEIOU" then "" else c) texto
 ```
 
-## Ver también
+Esto nos devolverá el texto sin las vocales: "St s n rcón cn mchs vcls". Usamos la misma lógica de `filter`, pero en este caso, en lugar de devolver un booleano en la función anónima, devolvemos el carácter vacío `""` si encontramos una vocal, de lo contrario, devolvemos el propio carácter.
 
+Otra forma de eliminar caracteres coincidentes con un patrón en Haskell es utilizando la función `delete` del módulo `Data.List`. Esta función recibe un elemento y una lista, y elimina la primera ocurrencia de ese elemento en la lista. Por ejemplo:
+
+```Haskell
+import Data.List
+
+let numeros = [1,2,3,4,3,2,1]
+let numerosSinTres = delete 3 numeros
+```
+
+Esto nos devolverá: [1,2,4,2,1]. Como puedes ver, la primera ocurrencia del número 3 fue eliminada de la lista.
+
+## Ver también
 - [Documentación de Haskell](https://www.haskell.org/documentation/)
-- [Módulo Data.List](https://hackage.haskell.org/package/base/docs/Data-List.html)
-- [Módulo Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Función filter en Haskell](https://www.haskell.org/hoogle/?hoogle=filter)
+- [Función map en Haskell](https://www.haskell.org/hoogle/?hoogle=map)
+- [Función delete en Haskell](https://www.haskell.org/hoogle/?hoogle=delete)

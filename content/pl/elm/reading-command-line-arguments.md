@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+html_title:           "Elm: Odczytywanie argumentów linii poleceń"
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,49 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie w języku Elm może być bardzo przyjemne i wygodne, ale czasami musimy mieć do czynienia z nieznajomymi zmiennymi i opcjami. Jednym z przykładów jest czytanie argumentów z wiersza poleceń. W tym artykule przedstawimy, dlaczego jest to ważna umiejętność i jak ją wykorzystać w języku Elm.
+Jeśli jesteś programistą szukającym efektywnych narzędzi do tworzenia interaktywnych aplikacji, to Elm z pewnością jest jednym z wyborów, który warto rozważyć. Poznajmy zatem, dlaczego warto poznać możliwości odczytywania argumentów wiersza poleceń przy użyciu tego języka.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby czytać argumenty z wiersza poleceń w Elm, musimy skorzystać z pakietu `core` i jego modułu `Platform.Cmd`. Poniżej znajduje się przykładowy kod:
+Odczytywanie argumentów wiersza poleceń w języku Elm jest bardzo proste. Wystarczy użyć funkcji `Elm.Platform.Args.flag`, która umożliwia dostęp do przekazanych argumentów jako listy wartości tekstowych.
 
-```Elm
-import Platform.Cmd exposing (args)
+Przykładowo, w przypadku podania argumentów ` --name John --age 30`, możemy odczytać je przy użyciu poniższego kodu:
 
-main : Program Never
-main =
-    Program.platform
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        }
-
-init : ( String, Cmd.Cmd msg )
-init =
-    ( "Hello, world!", Cmd.none )
-
-update : msg -> String -> ( String, Cmd.Cmd msg )
-update msg model =
-    ( args! model, Cmd.none )
-
-view : String -> Html.Html msg
-view text =
-    h1 [] [ text ]
-
-subscriptions : String -> Sub.Sub msg
-subscriptions _ =
-    Sub.none
+```
+Elm.Platform.Args.flag
+    (Elm.List.fromList [ "name", "age" ])
+    ( \name age -> Html.text ( "Witaj " ++ name ++ "! Masz " ++ age ++ " lat." ) )
 ```
 
-Kod ten używa funkcji `args`, która zwraca listę argumentów przekazanych do programu przez wiersz poleceń. Następnie funkcja `update` pobiera pierwszy argument z listy i wyświetla go w aplikacji. Prosta i wygodna metoda, prawda?
+Wynik powyższego przykładu będzie wyglądał następująco:
 
-## Głębsze zanurzenie
+> Witaj John! Masz 30 lat.
 
-W powyższym przykładzie użyliśmy tylko jednego argumentu, ale funkcja `args` zwraca całą listę argumentów. Możemy więc wykorzystać tę funkcjonalność do bardziej skomplikowanych zastosowań. Na przykład, możemy czytać argumenty z wiersza poleceń w celu ustawienia różnych ustawień lub opcji dla naszej aplikacji. Możemy również dostosowywać zachowanie naszej aplikacji w zależności od argumentów przekazanych do niej.
+## Głębszy zanurzenie
+
+Możliwość odczytu argumentów wiersza poleceń może być szczególnie przydatna w przypadku tworzenia aplikacji internetowych z wykorzystaniem języka Elm. Możliwość przekazywania wartości, takich jak język użytkownika czy tryb pracy, pozwala na dostosowanie części aplikacji do ich preferencji.
+
+Warto również wiedzieć, że `Elm.Platform.Args` udostępnia również funkcję `Elm.Platform.Args.map`, która pozwala na bardziej elastyczne mapowanie argumentów na inne typy wartości.
 
 ## Zobacz również
 
-- Dokumentacja pakietu `core` dotycząca funkcji `args`: <link>
-- Przykładowe aplikacje w Elm: <link>
-- Wideo tutorial na temat czytania argumentów z wiersza poleceń w Elm: <link>
+- [Dokumentacja Elm.Platform.Args](https://package.elm-lang.org/packages/elm-lang/core/latest/Platform-Args)
+- [Przykłady użycia argumentów wiersza poleceń w Elm](https://github.com/tizianoelemento/elm-flags)

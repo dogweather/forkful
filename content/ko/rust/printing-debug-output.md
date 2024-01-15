@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 디버그 출력하기"
-simple_title:         "디버그 출력하기"
+title:                "디버그 출력 출력하기"
+html_title:           "Rust: 디버그 출력 출력하기"
+simple_title:         "디버그 출력 출력하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,51 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-디버그 출력을 활용하는 이유는 무엇일까요? 디버깅을 위해 구성한 코드에 더 많은 정보를 확인하기 위해서입니다. 오류를 찾는데 도움을 주기 때문에 디버그 출력은 프로그래밍에서 매우 유용하고 반드시 필요합니다.
 
-## 하는 법
-아래 코드 블록에는 Rust 언어를 이용한 예시와 출력이 포함되어 있습니다. 해당 코드를 복사하고 컴파일해보세요!
+코딩 중 디버그 출력하는 것이 왜 중요한지 궁금하지 않으신가요? 디버깅은 코드를 디버그하는 과정에서 필수적인 역할을 합니다. 디버그 출력은 러스트를 사용하는 개발자를 위한 유용한 도구입니다.
+
+## 어떻게
+
+디버깅을 위한 디버그 출력은 러스트에서 매우 쉽게 할 수 있습니다. 코드에서 ```println!()``` 함수를 사용하면 됩니다. 또한 ```dbg!()``` 매크로를 사용하여 변수의 값을 쉽게 확인할 수 있습니다.
 
 ```Rust
-// 디버그 출력을 위한 println! 매크로 사용 예제
-fn main() {
-    let num1 = 10;
-    let num2 = 5;
-    let sum = num1 + num2;
+let var = 10;
+println!("변수의 값: {}", var); // 출력: 변수의 값: 10
+dbg!(var); // 출력: [src/main.rs:3] var = 10
+```
 
-    println!("{}와 {}의 합은 {}입니다.", num1, num2, sum);
-    // Output: 10와 5의 합은 15입니다.
+### 디버그 출력 제어하기
+
+디버그 출력은 기본적으로 활성화되어 있지만, 컴파일 시 debug 모드를 비활성화하여 제거할 수도 있습니다. 이렇게 하면 디버그 출력이 코드에 포함되지 않아 더 빠른 실행 속도를 얻을 수 있습니다.
+
+```
+$ cargo build --release
+```
+
+이 외에도 다양한 방식으로 디버그 출력을 제어할 수 있습니다. 자세한 내용은 러스트 공식 문서를 참고하세요.
+
+### 프로그램 실행 중 상태 감시하기
+
+디버깅용 디버그 출력 외에도, 프로그램 실행 중 상태를 감시해야 할 때도 디버그 출력이 유용합니다. 예를 들어 무한 반복문에서 중간 상황을 출력하여 프로그램의 진행 상황을 확인할 수 있습니다.
+
+```Rust
+let mut count: u32 = 0;
+
+loop {
+    dbg!(count);
+    count += 1;
 }
 ```
 
-출력 결과를 보면 디버그 출력을 활용할 때 어떤 정보를 얻을 수 있는지 알 수 있습니다. 이번에는 변수의 자료형도 함께 출력해보겠습니다.
+## 깊게 들어가기
 
-```Rust
-// 자료형을 포함한 디버그 출력을 위한 format! 매크로 사용 예제
-fn main() {
-    let num = 10;
-    let square = num * num;
+디버그 출력은 매우 유용하지만, 너무 많이 사용하면 코드가 지저분해질 수 있습니다. 따라서 변수나 상태를 출력할 때는 필요한 부분만 선택적으로 출력하는 것이 좋습니다.
 
-    println!("{}", format!("변수 num은 {}이고, num의 제곱값은 {}입니다.", num, square));
-    // Output: 변수 num은 10이고, num의 제곱값은 100입니다.
-}
-```
+또한 ```debug!()``` 매크로를 사용하여 사용자 정의 타입에서 디버그 출력을 구현할 수도 있습니다. 이를 통해 사용자 정의 타입의 내부 값을 쉽게 확인할 수 있습니다.
 
-보시다시피 format! 매크로를 사용하면 더 복잡한 형식의 디버그 출력도 가능합니다. 디버그 출력을 활용할 때는 매크로와 """rust로 시작해 """로 끝나는 코드 블록을 알아두시면 매우 유용하게 활용할 수 있습니다.
+## 이외에도
 
-## 딥 다이브
-디버그 출력은 프로그래밍에서 매우 중요한 역할을 합니다. 하지만 너무 많은 디버그 출력을 사용하면 코드의 가독성이 떨어질 수 있으니 주의해야 합니다. Rust에서는 샤딩(println! 매크로 사용 시 `#[cfg]*`를 사용해 컴파일할 때 디버그 출력을 제한할 수 있는 기능을 제공합니다. 이를 통해 필요한 부분에만 디버그 출력을 적절하게 활용할 수 있습니다.
-
-또한, Rust에서는 디버그 출력을 위해 `format!` 대신 `eprintln!` 매크로를 사용할 수도 있습니다. `eprintln!`은 오류가 발생했을 때 출력을 확인하는 것이 유용하기 때문에 실제 코드에서도 자주 사용됩니다.
-
-## 더 알아보기
-Rust에서 디버그 출력을 활용하는 방법을 자세히 알아보려면 아래 블로그 포스트를 참고해보세요!
-
-- [Rust 디버깅 팁](https://blog.rust-lang.org/2020/01/08/rust-debugging-tools.html)
-- [Rust로 디버깅하기](https://code.visualstudio.com/docs/rust/debugging)
-- [Rust 'format!' 매크로 문서](https://doc.rust-lang.org/std/macro.format.html)
-
-## 관련 링크
-- [Rust 공식 문서](https://www.rust-lang.org/ko)
-- [Rust 코딩 컨벤션](https://github.com/rust-lang/rfcs/blob/master/text/0259-conventions-galore.md)
-- [Rust 공식 블로그](https://blog.rust-lang.org/)
+- [러스트 공식 문서](https://doc.rust-lang.org/std/macro.dbg.html)
+- [디버그 출력을 활용한 디버깅](https://learnxinyminutes.com/docs/ko-kr/rust-ko/#%EB%94%94%EB%B2%84%EA%B9%85-debugging)
+- [러스트 디버그 출력 강의](https://www.youtube.com/watch?v=GA1ZMF5OyKc)

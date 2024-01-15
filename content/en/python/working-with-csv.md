@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Python recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Python"
 category:             "Python"
@@ -11,81 +12,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-CSV (Comma-Separated Values) is a common format for storing and exchanging data. It is used in various applications and industries, making it a valuable skill for any developer to have. Working with CSV files allows you to easily read, manipulate, and analyze large amounts of data in a structured format.
+Working with CSV (Comma Separated Values) files is a common task in many data analysis and manipulation projects. CSV files are widely used for storing and sharing tabular data, making them an essential skill for anyone working with data.
 
 ## How To
 
-To work with CSV in Python, we will be using the built-in `csv` module. First, we need to import the module in our code:
+To work with CSV files in Python, we first need to import the built-in **csv** module. This module provides functions for reading and writing to CSV files.
 
 ```Python
-# Import csv module
-import csv 
-```
+import csv
 
-Next, we will open our CSV file and use a `csv.reader()` object to read the data. The `delimiter` argument specifies the character used to separate the values in the file, which in most cases is a comma.
-
-```Python
-# Open CSV file
-with open('data.csv') as csv_file:
-    # Create csv.reader object
-    csv_reader = csv.reader(csv_file, delimiter=',')
-
-    # Loop through each row in the file
-    for row in csv_reader:
-        # Access the values in the current row
+# Open CSV file in read mode
+with open('data.csv', 'r') as csvfile:
+    # Create CSV reader object
+    reader = csv.reader(csvfile)
+    # Loop through each row in the CSV file
+    for row in reader:
+        # Do something with the row data
         print(row)
 ```
 
-Assuming our CSV file has the following data:
+In the code above, we open the CSV file named "data.csv" and use the `csv.reader()` function to create a reader object. Then, we loop through each row in the CSV file and print its data.
 
-```
-Name,Age,Country
-John,28,USA
-Emily,24,Canada
-```
-
-The output would be:
-
-```
-['Name', 'Age', 'Country']
-['John', '28', 'USA']
-['Emily', '24', 'Canada']
-```
-
-We can also use the `csv.writer()` object to write data to a CSV file. Let's say we want to create a new CSV file called `output.csv` and write some data to it:
+To write data to a CSV file, we use the `csv.writer()` function. 
 
 ```Python
-# Open output CSV file in write mode
-with open('output.csv', mode='w') as csv_file:
-    # Create csv.writer object
-    csv_writer = csv.writer(csv_file, delimiter=',')
+import csv
+
+# Open CSV file in write mode
+with open('data.csv', 'w') as csvfile:
+    # Create CSV writer object
+    writer = csv.writer(csvfile)
+
+    # Create a list of data
+    data = [
+        ['Name', 'Age', 'City'],
+        ['John', '25', 'New York'],
+        ['Jane', '30', 'London'],
+        ['Bob', '45', 'Tokyo']
+    ]
 
     # Write data to CSV file
-    csv_writer.writerow(['Name', 'Age'])
-    csv_writer.writerow(['Jane', 32])
-    csv_writer.writerow(['Mike', 36])
+    writer.writerows(data)
 ```
 
-This will result in a new CSV file with the following data:
-
-```
-Name,Age
-Jane,32
-Mike,36
-```
+In the code above, we open the CSV file in write mode and use the `csv.writer()` function to create a writer object. Then, we use the `writerows()` function to write multiple rows of data to the file.
 
 ## Deep Dive
 
-There are many other useful functions and options in the `csv` module for working with CSV files. Here are some examples:
+CSV files typically have a header row that contains the column names. To skip the header row when reading a CSV file, we can use the `next()` function.
 
-- `csv.DictReader()` and `csv.DictWriter()` can be used to read and write CSV files as dictionaries, which make it easier to access specific values in larger datasets.
-- The `quotechar` and `quoting` arguments in `csv.reader()` and `csv.writer()` allow us to handle special characters and formatting in our data.
-- We can also specify our own dialect for the CSV file, if it doesn't follow the standard conventions, using the `csv.register_dialect()` function.
+```Python
+import csv
 
-For a more comprehensive understanding of the `csv` module, check out the official documentation [here](https://docs.python.org/3/library/csv.html).
+# Open CSV file in read mode
+with open('data.csv', 'r') as csvfile:
+    # Create CSV reader object
+    reader = csv.reader(csvfile)
+    # Skip header row
+    next(reader)
+    # Loop through each row in the CSV file
+    for row in reader:
+        # Do something with the row data
+        print(row)
+```
+
+We can also specify the delimiter used in the CSV file by passing it as an argument to the `csv.reader()` or `csv.writer()` functions. By default, the delimiter is a comma, but it can be changed to suit the format of the CSV file.
+
+```Python
+# Reading a pipe-delimited CSV file
+reader = csv.reader(csvfile, delimiter='|')
+
+# Writing to a tab-delimited CSV file
+writer = csv.writer(csvfile, delimiter='\t')
+```
 
 ## See Also
 
-- [Working with CSV files in Python](https://realpython.com/python-csv/)
-- [Python Module of the Week - csv](https://pymotw.com/3/csv/index.html)
-- [Reading and Writing CSV Files in Python](https://www.geeksforgeeks.org/working-csv-files-python/)
+For more information on working with CSV files in Python, check out the following resources:
+
+- [Official Python 3 Documentation for CSV Module](https://docs.python.org/3/library/csv.html)
+- [Real Python Tutorial on Reading and Writing CSV Files](https://realpython.com/python-csv/)
+- [Tutorialspoint Guide to CSV in Python](https://www.tutorialspoint.com/python/python_csv_files.htm)

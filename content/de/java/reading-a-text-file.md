@@ -1,6 +1,7 @@
 ---
-title:                "Java: Lesen einer Textdatei"
-simple_title:         "Lesen einer Textdatei"
+title:                "Das Lesen einer Textdatei"
+html_title:           "Java: Das Lesen einer Textdatei"
+simple_title:         "Das Lesen einer Textdatei"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,66 +11,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Lesen von Textdateien ist ein häufiger Vorgang in der Programmierung. Es ermöglicht uns, Textdaten zu verarbeiten und zu analysieren, was in vielen Anwendungsfällen sehr nützlich ist. In diesem Blog-Beitrag werden wir uns damit befassen, wie wir Textdateien in Java lesen können und warum es wichtig ist, diese Fähigkeit zu beherrschen.
 
-## Wie
-Um eine Textdatei in Java zu lesen, müssen wir vier Schritte ausführen:
+Du fragst dich vielleicht, warum es wichtig ist, eine Textdatei mit Java zu lesen. Nun, es gibt viele Gründe dafür! Zum Beispiel kann das Lesen von Textdateien von entscheidender Bedeutung sein, wenn du mit großen Mengen von Daten arbeitest oder wenn du Daten von einem externen Quellsystem in dein Programm importieren möchtest. Durch das Lesen von Textdateien kannst du auch den Inhalt einer Datei analysieren und darauf basierend deine Entscheidungen im Code treffen.
 
-1. Wir müssen die Klasse `File` aus dem Package `java.io` importieren.
-2. Dann müssen wir eine Instanz der `File` Klasse erstellen, indem wir den Dateipfad als Argument an den Konstruktor übergeben.
-3. Als Nächstes müssen wir eine Instanz der `Scanner` Klasse aus dem Package `java.util` erstellen und die `File` Instanz als Argument an den Konstruktor übergeben.
-4. Schließlich können wir mit der `Scanner` Instanz die `readLine()` Methode verwenden, um die Textdatei Zeile für Zeile zu lesen.
+## Wie es funktioniert
 
-Schauen wir uns nun ein Beispiel an:
+Um eine Textdatei in Java zu lesen, müssen wir zuerst die Klasse "File" importieren und eine neue Instanz dieser Klasse erstellen, die die Datei repräsentiert, die wir lesen möchten. Dann müssen wir einen "FileReader" erstellen, der die Datei in ein lesbares Format umwandelt. Als nächstes verwenden wir einen "BufferedReader", um die Datei zeilenweise zu lesen. Hier ist ein Beispielcode:
 
 ```Java
-import java.io.File;
-import java.util.Scanner;
+import java.io.*;
 
 public class TextFileReader {
 
     public static void main(String[] args) {
-    
-        // Erstellt eine Instanz der File Klasse
-        File file = new File("textdatei.txt");
-        
-        try {
-            // Erstellt eine Instanz der Scanner Klasse
-            Scanner scanner = new Scanner(file);
-            
-            // Liest die Textdatei Zeile für Zeile und gibt sie aus
-            while (scanner.hasNextLine()) {
-                System.out.println(scanner.nextLine());
-            }
-            
-            // Schließt den Scanner
-            scanner.close();
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
-    }
+        // Datei "test.txt" öffnen
+        File file = new File("test.txt");
+  
+        // FileReader-Objekt erstellen
+        FileReader fr = new FileReader(file);
 
+        // BufferedReader-Objekt erstellen
+        BufferedReader br = new BufferedReader(fr);
+  
+        // Zeile für Zeile lesen und ausgeben
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+    }
 }
 ```
 
-Wenn wir diese Klasse ausführen, sehen wir die Ausgabe unserer Textdatei, die Zeile für Zeile gelesen wird:
+Die obige Codebeispiel verwendet die Methode ".readLine()", um jede Zeile aus der Datei auszulesen und sie dann mit der Methode ".println()" auf der Konsole auszugeben. Wenn du den Code ausführst, erhältst du die Ausgabedaten wie folgt:
 
 ```
-Dies ist Zeile 1
-Dies ist Zeile 2
-Dies ist Zeile 3
+Diese Datei wird mit Java gelesen.
+Hier ist ein Beispiel mit einigen Zeilen.
+Wir können diese Daten jetzt weiterverarbeiten.
 ```
 
-## Deep Dive
-Um tiefer in das Lesen von Textdateien in Java einzutauchen, gibt es einige wichtige Konzepte, die wir verstehen müssen. Erstens müssen wir sicherstellen, dass wir den richtigen Dateipfad angeben, wenn wir die `File` Klasse instanziieren. Andernfalls wird eine `FileNotFoundException` geworfen. Zweitens gibt es einige Methoden in der `Scanner` Klasse, die uns helfen können, die Textdatei zu analysieren, wie z.B. die `hasNextInt()` oder `hasNextDouble()` Methode, um zu überprüfen, ob der nächste Wert im Text eine ganze Zahl oder eine Fließkommazahl ist.
+In der obigen Ausgabe siehst du, dass jede Zeile aus der Textdatei einzeln ausgegeben wird.
 
-Es ist auch wichtig zu beachten, dass beim Lesen von Textdateien in Java Zeilenumbrüche als Trennzeichen verwendet werden. Dies bedeutet, dass sowohl `\n` als auch `\r\n` als Zeilenende interpretiert werden.
+## Tiefergehende Einblicke
 
-Es gibt noch viele weitere Nuancen beim Lesen von Textdateien in Java, aber mit den grundlegenden Konzepten und dem Wissen um die richtige Verwendung der `File` und `Scanner` Klassen sollten Sie in der Lage sein, die meisten Anforderungen an das Lesen von Textdateien zu erfüllen.
+Das Lesen von Textdateien in Java kann jedoch etwas komplexer sein, wenn du bestimmte Zeichen oder Muster in der Datei finden und verarbeiten musst. Hier kommt die Klasse "Scanner" ins Spiel. Der "Scanner" wird verwendet, um Textdateien effizient zu lesen und bestimmte Muster abzugleichen. Hier ist ein Beispielcode, der die Wörter "Java" in der Datei sucht und zählt, wie oft es vorkommt:
+
+```Java
+import java.io.*;
+import java.util.Scanner;
+
+public class SearchText {
+
+    public static void main(String[] args) {
+        // Datei "test.txt" öffnen
+        File file = new File("test.txt");
+  
+        // Scanner-Objekt erstellen
+        Scanner scanner = new Scanner(file);
+  
+        // Zähler für "Java" definieren
+        int count = 0;
+
+        // Textdatei zeilenweise durchsuchen
+        while (scanner.hasNextLine()) {
+            // Zeile auslesen
+            String line = scanner.nextLine();
+            // Muster "Java" in jeder Zeile suchen und Zähler erhöhen
+            if (line.contains("Java")) {
+                count++;
+            }
+        }
+  
+        // Anzahl der gefundenen "Java"-Wörter ausgeben
+        System.out.println("Das Wort \"Java\" kommt " + count + " mal vor.");
+    }
+}
+```
+
+Wenn du die obige Beispielcode ausführst, solltest du eine Ausgabe ähnlich dieser erhalten:
+
+```
+Das Wort "Java" kommt 1 mal vor.
+```
+
+Durch die Verwendung des "Scanner" können wir also effektiv bestimmte Muster in der Textdatei finden und dann entsprechend darauf reagieren.
 
 ## Siehe auch
-- [Java Dokumentation: File Klasse](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java Dokumentation: Scanner Klasse](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Tutorial: Datei einlesen in Java](https://www.tutorialspoint.com/java/io/java_io_file.htm)
+
+- Java File-Klasse: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
+- Java Scanner-Klasse: https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html

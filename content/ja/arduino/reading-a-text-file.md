@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: テキストファイルの読み込み"
+title:                "テキストファイルの読み込み"
+html_title:           "Arduino: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,63 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ読み込みを行うのか
+## Why
 
-テキストファイルを読み込むことは、Arduinoプログラミングの重要な部分です。例えば、データベースやネットワークからデータを読み込み、それを処理することができます。また、読み込んだデータを利用して、センサーの値の変更やLEDの点灯など、様々なアクションを起こすこともできます。この記事では、テキストファイルを読み込む方法を紹介します。
+Text files are a common way to store data and information, and being able to read them can be useful for a variety of projects. For example, you may want to retrieve data from a sensor or log data for analysis.
 
-## 使い方
-
-まずは、読み込みたいテキストファイルをArduinoのメモリに保存する必要があります。これは、SDカードやUSBドライブなどの外部ストレージから読み込むこともできますが、ここではArduinoのメモリ内にあるファイルを読み込む方法を説明します。まず、Arduinoのファイルシステムライブラリをインクルードします。
+## How To
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-```
+#include <SD.h> //include the SD library
+#include <SPI.h> //include the SPI library
 
-次に、ファイルを開くための変数を作成します。ここでは`file`という名前で宣言します。
+File dataFile; //create file object
 
-```Arduino
-File file;
-```
+void setup() {
+  Serial.begin(9600); //initialize serial communication at 9600 baud
 
-そして、`file`変数に読み込むファイルの名前を指定して`open()`メソッドを使用します。ここでは`data.txt`という名前のファイルを開きます。
+  //check if SD card is present
+  if (!SD.begin(4)) {
+    Serial.println("SD card not found.");
+    while (true); //halt program
+  }
 
-```Arduino
-file = SD.open("data.txt");
-```
+  //open the text file and store it in the file object
+  dataFile = SD.open("data.txt");
 
-ファイルが正しく開けたかどうかを確認するために、`file`変数の`available()`メソッドを使用します。これは、ファイル内のデータのサイズを返します。もしファイルが正しく開けていれば、値は0より大きくなります。
+  //read and print contents of file
+  while (dataFile.available()) {
+    Serial.write(dataFile.read());
+  }
+  dataFile.close(); //close the file
+}
 
-```Arduino
-if(file.available()){
-  // ファイルを読み込む処理
+void loop() {
+
 }
 ```
 
-それでは、テキストファイルを実際に読み込んでみましょう。`read()`メソッドを使用することで、ファイル内の文字を1文字ずつ読み込むことができます。例えば、ファイル内に`Hello, World!`という文字列があった場合、それを読み込んでシリアルモニタに表示するコードは以下のようになります。
+After uploading the code, open the serial monitor to see the contents of the text file. The Arduino will read the file line by line and print it out.
 
-```Arduino
-char c;
-
-while(file.available()){
-  c = file.read(); // ファイル内の1文字を読み込む
-  Serial.print(c); // シリアルモニタに表示する
-}
+Sample output:
 
 ```
-
-このコードを実行すると、シリアルモニタに`Hello, World!`という文字列が表示されるはずです。
-
-## 詳細を掘り下げる
-
-テキストファイルを読み込む際、上記の例では1文字ずつ読み込む方法を紹介しましたが、実際には文字列を読み込んで処理する場合が多いでしょう。その場合、`read()`メソッドに文字列を受け取るためのバッファを指定することで、複数の文字をまとめて読み込むことができます。
-
-```Arduino
-char buffer[255]; // 255個の文字まで受け取るバッファを宣言
-
-while(file.available()){
-  file.read(buffer, 255); // 255文字まで読み込む
-}
+Temperature: 25 C
+Humidity: 50%
+Pressure: 101.3 kPa
 ```
 
-また、読み込ん
+## Deep Dive
+
+The SD library has a built-in function, `open()`, which allows us to open a file and store it in a file object. We can then use the `read()` function to read individual characters from the file. The `while` loop continues until there are no more characters to read. Finally, the `close()` function is used to close the file when we are finished reading it.
+
+It's important to note that the `open()` function requires the name of the text file as an argument. This file must be located in the root directory of the SD card, and the file name must be in 8.3 format (i.e. 8 characters for the file name and 3 characters for the extension).
+
+## See Also
+
+- [SD Library Reference](https://www.arduino.cc/en/Reference/SD)
+- [Arduino SD Card Tutorial by Maker Pro](https://maker.pro/arduino/tutorial/how-to-interface-sd-card-with-arduino)
+- [How to Read and Write Files on an SD Card with an Arduino by Circuit Basics](https://www.circuitbasics.com/how-to-write-to-an-sd-card-with-an-arduino/)

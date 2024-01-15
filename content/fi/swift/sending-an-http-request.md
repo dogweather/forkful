@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Lähettäminen http-pyyntö"
-simple_title:         "Lähettäminen http-pyyntö"
+title:                "Lähettää http-pyyntö"
+html_title:           "Swift: Lähettää http-pyyntö"
+simple_title:         "Lähettää http-pyyntö"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,39 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit lähettää HTTP-pyynnön? Miksi tämä taito on tärkeä? HTTP-pyynnöt ovat olennainen osa modernia web-kehitystä, joten oppimalla niiden lähettämisen voit parantaa kykyjäsi rakentaa tehokkaita ja monipuolisia verkkosovelluksia.
+Miksi haluaisit lähettää HTTP-pyyntöjä? Usein haluamme noutaa tietoa verkkopalvelimelta, esimerkiksi hakemalla uusimmat tiedot sovellukseen, päivittämällä palvelimen tietokannan tai lähettämällä tietoa käyttäjän antamaa lomaketta varten.
 
 ## Kuinka
 
-Yleisin tapa lähettää HTTP-pyyntö on käyttää `URLSession`-luokkaa. Tämä luokka tarjoaa monia hyödyllisiä toimintoja, kuten verkon liikenteen hallinnan ja tietojen lähetyksen. Tässä esimerkissä lähetämme GET-pyynnön ja tulostamme vastauksen:
-
 ```Swift
-let url = URL(string: "https://example.com")!
+let url = URL(string: "https://example.com")
 
-URLSession.shared.dataTask(with: url) { data, response, error in
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+
+let task = URLSession.shared.dataTask(with: request) { (data, response, error)in
     if let error = error {
-        print("Virhe: \(error.localizedDescription)")
-    } else if let data = data, let response = response as? HTTPURLResponse {
-        print("Vastauskoodi: \(response.statusCode)")
-        print("Vastauksen sisältö: \(String(data: data, encoding: .utf8) ?? "Tyhjä")")
+        print("Virhe: \(error)")
+    } else if let responseData = data {
+        print("Vastaus: \(responseData)")
     }
-}.resume()
+}
+
+task.resume()
 ```
 
-Tässä koodissa luomme ensin `URL`-olion osoittamaan haluttuun verkkosivuun. Sitten käytämme `URLSession`-luokan `dataTask`-metodia lähettääksemme GET-pyynnön tälle osoitteelle. Sisällä `dataTask`-sulkeessa tarkistamme, onko pyynnössä tapahtunut virheitä ja jos ei, tulostamme vastauksen koodin ja sisällön terminaaliin.
+ *Keskimääräinen koodiesimerkki lähettää GET-pyynnön URL-osoitteeselle ja tulostaa vastauksen, jos pyyntö onnistuu.*
 
-On tärkeää muistaa, että verkkopyyntöjä tulee aina tehdä taustasäikeen kautta, jotta ne eivät häiritse käyttöliittymää. Siksi kutsuttaessa `dataTask`-metodia kutsutaan myös `resume()`-metodia, joka aloittaa pyynnön lähettämisen.
+```Swift
+let url = URL(string: "https://example.com")
 
-## Syvemmälle
+var request = URLRequest(url: url)
+request.httpMethod = "POST"
+request.httpBody = "data=exampleData".data(using: .utf8)
 
-HTTP-pyyntöjen lähettäminen voi tuntua yksinkertaiselta, mutta niiden syvempi ymmärtäminen ja hallitseminen on tärkeää kehittäjälle. Esimerkiksi voit lähettää erilaisia ​​pyyntöjä käyttämällä muita HTTP-metodeja, kuten POST, PUT ja DELETE. Voit myös asettaa haluamasi pyyntöotsakkeet ja lähettää dataa mukana pyynnössä.
+let task = URLSession.shared.dataTask(with: request) { (data, response, error)in
+    if let error = error {
+        print("Virhe: \(error)")
+    } else if let responseData = data {
+        print("Vastaus: \(responseData)")
+    }
+}
 
-On myös tärkeää ymmärtää vastauksen eri koodit, kuten 200 OK, 404 Not Found ja 500 Internal Server Error, ja hallita niitä tarvittaessa. Lisäksi on hyödyllistä tietää, miten käsitellä mahdollisia virheitä ja miten käsitellä vastauksen sisältämää dataa.
+task.resume()
+```
 
-HTTP-pyynnön lähettämisen syvällisempi ymmärtäminen auttaa sinua rakentamaan vakaampia ja tehokkaampia verkkosovelluksia.
+ *Toinen esimerkki lähettää POST-pyynnön URL-osoitteeseen ja liittää mukaan tiedon JSON-muodossa.*
+
+## Syväsukellus
+
+HTTP-pyyntöjä lähetettäessä on tärkeä ottaa huomioon muutamia asioita. Ensinnäkin, pyyntöjen lähettämiseen käytetään yleensä URL-luokkaa ja URLRequest-luokkaa. Lisäksi on hyvä tietää, että pyynnön tyyppi määritellään httpMethod -muuttujalla ja mahdollinen lisätieto lähetetään httpBody -muuttujalla. Lopuksi pyyntö lähetetään käyttämällä URLSession-luokkaa ja kutsutaan dataTask-metodia, joka käynnistää itse pyynnön.
 
 ## Katso myös
 
-- [URLSession Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
-- [HTTP Response Status Codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) (englanniksi)
-- [HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) (englanniksi)
+[HTTP-pyynnöt Swiftillä](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
+
+[Apple:n dokumentaatio HTTP-pyyntöjen lähettämiseen](https://developer.apple.com/documentation/foundation/urlloadingystem)

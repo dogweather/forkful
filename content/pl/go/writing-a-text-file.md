@@ -1,5 +1,6 @@
 ---
-title:                "Go: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Go: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Go"
 category:             "Go"
@@ -9,71 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Dlaczego
+## Dlaczego
 
-Pisanie pliku tekstowego jest nieodłączną częścią programowania w języku Go. Jest to łatwy i szybki sposób na zapisywanie danych w zrozumiałej dla człowieka formie.
+Ktoś może pomyśleć, że pisząc tekstowy plik w programie Go to nudna i monotonna czynność. Ale, jak się okazuje, jest to ważny element w procesie tworzenia aplikacji. Pisanie tekstowych plików pozwala na zapisywanie i odczytywanie danych w trwały sposób, co jest niezbędne w wielu projektach.
 
-### Jak to zrobić
+## Jak to zrobić
 
-W języku Go istnieje wiele sposobów na zapisanie tekstu do pliku. Jednym z najprostszych jest użycie funkcji `WriteFile` z pakietu `io/ioutil`. Oto przykładowy kod:
+W Go istnieje wiele sposobów na pisanie tekstowych plików. Poniżej przedstawione są dwa z nich, które są najbardziej popularne i proste w użyciu.
 
-```
-paczka glówna
+### Zastosowanie pakietu "os"
+
+```Go
+package main
 
 import (
-    "fmt"
-    "io/ioutil"
+	"fmt"
+	"os"
 )
 
 func main() {
-    tekst := "To jest przykładowy tekst, który zostanie zapisany do pliku."
-    err := ioutil.WriteFile("tekst.txt", []byte(tekst), 0644)
-    if err != nil {
-        fmt.Println("Błąd przy zapisywaniu pliku:", err)
-        return
-    }
-    
-    fmt.Println("Plik został zapisany.")
+	// otwarcie pliku do zapisu
+	file, err := os.Create("plik.txt")
+	if err != nil {
+		// w razie błędu wypisze go na ekranie
+		fmt.Println(err)
+	}
+	
+	fmt.Println("Plik został utworzony.")
+
+	// zamknięcie pliku po zapisie
+	defer file.Close()
+
+	// zapisanie tekstu do pliku
+	fmt.Fprintln(file, "To jest przykładowy tekst do zapisania w pliku.")
+	
+	// wypisanie informacji o sukcesie na ekranie
+	fmt.Println("Zapisano pomyślnie.")
 }
 ```
 
-Powyższy kod wykorzystuje funkcję `WriteFile` do zapisania tekstu do pliku o nazwie "tekst.txt". Kod 0644 oznacza, że plik będzie miał uprawnienia do odczytu i zapisu dla właściciela, a tylko do odczytu dla innych użytkowników.
+Po uruchomieniu tego programu, w folderze powinien pojawić się nowy plik o nazwie "plik.txt", w którym znajdzie się zapisany tekst. Pakiet "os" pozwala nam na otwarcie pliku (Create), zapis do niego (Fprintln) oraz zamknięcie po zakończeniu (Close). Używając słowa kluczowego "defer" przed wywołaniem funkcji Close, mamy pewność, że plik zostanie zamknięty po zakończeniu wszystkich operacji.
 
-### W głębi
+### Zastosowanie pakietu "io/ioutil"
 
-Aby zapisać dane w formacie innych niż tekst, można użyć funkcji `Write` z pakietu `os`. Ta funkcja przyjmuje jako parametry plik, do którego chcemy zapisać dane oraz slice bajtów reprezentujących dane. Oto przykładowy kod:
-
-```
-paczka główna
+```Go
+package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"io/ioutil"
 )
 
 func main() {
-    plik, err := os.Create("dane.bin")
-    if err != nil {
-        fmt.Println("Błąd przy tworzeniu pliku:", err)
-        return
-    }
-    defer plik.Close()
-    
-    dane := []byte{0x48, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x57, 0x6F, 0x72, 0x6C, 0x64}
-    _, err = plik.Write(dane)
-    if err != nil {
-        fmt.Println("Błąd przy zapisywaniu danych:", err)
-        return
-    }
-    
-    fmt.Println("Dane zostały zapisane.")
+	// zapisanie tekstu do zmiennej
+	text := []byte("To jest przykładowy tekst do zapisania w pliku.")
+
+	// zapisanie tej zmiennej do pliku
+	err := ioutil.WriteFile("plik.txt", text, 0644)
+	if err != nil {
+		// w razie błędu wypisze go na ekranie
+		fmt.Println(err)
+	}
+	
+	fmt.Println("Plik został utworzony i zapisany.")
 }
 ```
 
-Ten kod tworzy plik "dane.bin" i zapisuje w nim dane w postaci slice'a bajtów. Funkcja `Write` zwraca również ilość zapisanych bajtów, która w tym przypadku jest pomijana przy użyciu `_`.
+Pakiet "io/ioutil" jest bardzo użyteczny przy pisaniu krótszych i prostszych plików. W powyższym przykładzie zapisujemy tekst bezpośrednio do pliku przy użyciu funkcji WriteFile. Podanie parametru 0644 oznacza, że plik będzie dostępny dla użytkowników do odczytu i zapisu. Jest to jeden z wielu możliwych trybów dostępu do plików.
 
-### Zobacz również
+## Pogłębiona analiza
 
-- Dokumentacja pakietu `io/ioutil`: https://golang.org/pkg/io/ioutil/
-- Dokumentacja pakietu `os`: https://golang.org/pkg/os/
-- Przykładowe zadania związane z pisanie plików w języku Go: https://gobyexample.com/writing-files
+Pisanie plików jest jednym z podstawowych elementów w programowaniu i jest nieodłączną częścią wielu aplikacji. W Go dostępnych jest wiele pakietów do obsługi plików, ale te dwa przedstawione powyżej są najczęściej wykorzystywane. Ważne jest również pamiętanie o zamknięciu pliku po zakończeniu wszystkich operacji, aby nie blokować dostępu do niego dla innych procesów.
+
+## Zobacz też
+
+- [Dokumentacja pakietu "os"](https://golang.org/pkg/os/)
+- [Dokumentacja pakietu "io/ioutil"](https://golang.org/pkg/io/ioutil/)

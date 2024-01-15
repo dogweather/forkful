@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Travailler avec yaml"
+title:                "Travailler avec yaml"
+html_title:           "Bash: Travailler avec yaml"
 simple_title:         "Travailler avec yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,55 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Si vous êtes un programmeur Bash, vous avez probablement déjà entendu parler de YAML, mais vous vous demandez peut-être pourquoi vous devriez l'utiliser. Eh bien, YAML est un format de données facile à lire et à écrire qui est souvent utilisé pour stocker des configurations et des données structurées. Il est également très utile pour automatiser des tâches en utilisant des scripts Bash.
+
+Si vous travaillez souvent avec des données structurées, il y a de fortes chances que vous ayez entendu parler de YAML. C'est un format de sérialisation de données qui facilite la manipulation et l'échange de données entre différents programmes. Dans cet article, nous allons explorer les bases de YAML en utilisant Bash comme langage de programmation.
 
 ## Comment faire
-Il est facile de travailler avec YAML en utilisant Bash. Tout d'abord, vous devez installer un parseur YAML en utilisant la commande suivante :
+
+Pour commencer à utiliser YAML dans vos scripts Bash, vous devez tout d'abord vous assurer que vous avez la dernière version de Bash installée sur votre système. Ensuite, vous pouvez utiliser l'outil de ligne de commande `yq`, qui est disponible pour de nombreuses distributions Linux.
 
 ```Bash
-sudo apt-get install libyaml-dev python-yaml
+# Installation de yq sur Ubuntu
+sudo apt-get install yq
+
+# Installation de yq sur CentOS
+sudo yum install yq
 ```
 
-Ensuite, vous pouvez écrire vos données YAML dans un fichier tel que "config.yaml" en utilisant un éditeur de texte de votre choix. Voici un exemple de code YAML :
+Une fois que vous avez installé `yq`, vous pouvez commencer à manipuler des fichiers YAML en utilisant la commande `yq <commande> <fichier>` dans votre terminal. Par exemple, pour afficher le contenu d'un fichier YAML, vous pouvez utiliser la commande `yq read <fichier>`.
 
 ```Bash
-# Configuration pour un serveur web
-server:
-  port: 8080
-  name: Mon serveur web
-  ip: 192.168.1.1
-  log_level: debug
+# Afficher le contenu d'un fichier YAML
+yq read fichier.yml
 ```
 
-Pour lire ces données YAML dans votre script Bash, vous pouvez utiliser la commande suivante :
+Pour modifier des données dans un fichier YAML, vous pouvez utiliser la commande `yq write <fichier> <chemin> <valeur>` en spécifiant le chemin d'accès à l'élément que vous souhaitez modifier et la valeur à lui assigner.
 
 ```Bash
-#!/bin/bash
-server_port=$(python -c "import yaml; print(yaml.load(open('config.yaml'))['server']['port'])")
-echo "Le port du serveur est $server_port"
+# Modifier une valeur dans un fichier YAML
+yq write fichier.yml domaine.domaineTiers.env production
 ```
 
-Lorsque vous exécutez ce script, vous devriez voir la sortie suivante :
+Il est également possible d'utiliser la commande `yq delete <fichier> <chemin>` pour supprimer un élément du fichier YAML spécifié.
 
-```
-Le port du serveur est 8080
+```Bash
+# Supprimer un élément dans un fichier YAML
+yq delete fichier.yml domaine.domaineTiers.env
 ```
 
 ## Plongée en profondeur
-Maintenant que vous savez comment travailler avec YAML en Bash, voici quelques conseils pour rendre votre vie plus facile :
 
-- Utilisez des outils tels que "yq" ou "jq" pour manipuler facilement vos données YAML.
-- Utilisez un modèle de script pour éviter de copier-coller du code YAML dans chaque script.
-- Assurez-vous de valider vos fichiers YAML avant de les utiliser pour éviter les erreurs de syntaxe.
+Maintenant que vous avez une idée de base de l'utilisation de YAML avec Bash, voici quelques informations supplémentaires pour vous aider à mieux comprendre ce langage de sérialisation de données.
 
-Voici quelques ressources utiles pour en savoir plus sur YAML et Bash :
-
-- [Documentation YAML](https://yaml.org/)
-- [Documentation Bash](https://www.gnu.org/software/bash/)
-- [yq : un outil en ligne de commande pour manipuler des données YAML](https://mikefarah.gitbook.io/yq/)
-- [jq : un outil en ligne de commande pour manipuler des données JSON et YAML](https://stedolan.github.io/jq/)
-- [Un modèle de script Bash pour travailler avec YAML](https://gist.github.com/pkuczynski/8665367)
+- YAML signifie "YAML Ain't Markup Language" et est souvent utilisé pour créer des fichiers de configuration et de données.
+- Les données YAML sont formatées sous forme de liste clé-valeur, avec une indentation pour indiquer les relations entre les différentes données.
+- `yq` n'est pas seulement limité à l'édition de fichiers YAML, il peut également être utilisé pour convertir des fichiers au format JSON ou pour extraire des données à partir de fichiers XML.
 
 ## Voir aussi
-- [Utiliser YAML pour stocker des données de configuration en Bash](https://codereviewvideos.com/blog/how-to-use-yaml-to-store-your-bash-script-configuration/)
-- [Comment travailler avec YAML en Bash](https://blog.apcelent.com/yaml-bash.html)
+
+Vous pouvez en apprendre plus sur YAML en consultant ces ressources :
+
+- [Documentation officielle de YAML](https://yaml.org/)
+- [Documentation officielle de `yq`](https://mikefarah.github.io/yq/)
+- [Guide de démarrage rapide de YAML](https://learnxinyminutes.com/docs/fr-fr/yaml-fr/)

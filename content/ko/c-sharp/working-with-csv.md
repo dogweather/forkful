@@ -1,6 +1,7 @@
 ---
-title:                "C#: csv로 작업하기"
-simple_title:         "csv로 작업하기"
+title:                "CSV 파일과 함께 작업하기"
+html_title:           "C#: CSV 파일과 함께 작업하기"
+simple_title:         "CSV 파일과 함께 작업하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -9,54 +10,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+# 왜: CSV 파일을 다루는 것이 왜 중요한지 설명하는 2문장.
 
-CSV 파일과 함께 작업하는 이유는 데이터를 효율적으로 저장하고 관리하기 위해서 입니다.
+## 왜
 
-# 방법
+CSV 파일은 데이터를 편리하게 저장하고 공유할 수 있는 포맷으로 매우 유용합니다. C#을 사용하면 간단하게 CSV 파일을 다룰 수 있습니다.
 
-CSV 파일은 일반적으로 콤마로 구분된 데이터를 포맷한 파일입니다. 이러한 파일은 주로 엑셀 또는 데이터베이스에 쉽게 가져올 수 있으며, C#을 사용하여 CSV 파일을 쉽게 다룰 수 있습니다. 아래는 CSV 파일을 C#으로 읽고 쓰는 예제 코드입니다.
+## 사용 방법
+
+우선 CSV 파일을 읽어오기 위해 `System.IO` 네임스페이스를 사용해야 합니다. 다음 코드는 예시 CSV 파일을 읽어오는 예제입니다.
 
 ```C#
-// CSV 파일 읽기
-using (var reader = new StreamReader("file.csv"))
-{
-    while (!reader.EndOfStream)
-    {
-        var line = reader.ReadLine();
-        var data = line.Split(','); // 콤마를 기준으로 데이터를 나눠줍니다.
-        // 데이터 사용
-        Console.WriteLine(data[0]); // 첫번째 열 출력
-        Console.WriteLine(data[1]); // 두번째 열 출력
-    }
-}
+using System.IO;
 
-// CSV 파일 쓰기
-using (var writer = new StreamWriter("new_file.csv"))
+var path = @"C:\Users\User\Desktop\example.csv";
+
+StreamReader reader = new StreamReader(path);
+
+while (!reader.EndOfStream)
 {
-    var data = new List<string[]>();
-    data.Add(new string[] { "Name", "Age" }); // 열 이름 추가
-    data.Add(new string[] { "John", "25" }); // 데이터 추가
-    data.Add(new string[] { "Sarah", "30" }); // 데이터 추가
-    foreach (var row in data)
-        writer.WriteLine(string.Join(",", row)); // 콤마로 구분하여 CSV 파일에 데이터 쓰기
+    var line = reader.ReadLine();
+    var values = line.Split(',');
+
+    foreach(var value in values)
+    {
+        Console.Write(value + " ");
+    }
+    Console.WriteLine();
 }
 ```
 
-위의 예제 코드에서는 CSV 파일을 읽고 쓰는 간단한 방법을 알 수 있습니다. 이 외에도 C# 라이브러리를 사용하면 더 다양한 기능을 구현할 수 있습니다.
+위 코드를 실행하면, CSV 파일의 각 라인을 읽어와서 쉼표 단위로 분리하여 출력합니다. 예를 들어, "1, 2, 3"이라는 라인이 있으면 1 2 3이 출력됩니다. 이렇게 간단하게 CSV 파일의 데이터를 읽어올 수 있습니다.
 
-# 깊이있게 알아보기
+## 깊게 파헤치기
 
-CSV 파일을 다루는 라이브러리는 다양한 형태로 존재합니다. 가장 대표적인 것은 Microsoft가 제공하는 "CsvHelper" 라이브러리입니다. 이 라이브러리를 사용하면 CSV 파일을 쉽게 다룰 수 있을 뿐만 아니라 데이터 타입 변환 및 유효성 검사 등 다양한 기능을 제공합니다.
+CSV 파일을 다루는 더 깊은 정보를 알고 싶다면, `System.Data` 네임스페이스에 있는 `DataTable` 클래스를 사용해보세요. 이 클래스를 사용하면 CSV 파일 뿐만 아니라 다양한 데이터 소스에서도 데이터를 읽어올 수 있습니다. 아래 코드는 CSV 파일을 `DataTable` 객체로 읽어오는 예제입니다.
 
-또한, CSV 파일을 다룰 때 주의해야 할 점도 있습니다. CSV 파일은 데이터를 쉼표로 구분하기 때문에, 만약 데이터에 쉼표가 포함된 경우에는 적절한 처리가 필요합니다. 또한, 한글 인코딩 문제나 대용량 데이터 처리 문제 등에도 유의해야 합니다.
+```C#
+using System.Data;
 
-# 참고
+var path = @"C:\Users\User\Desktop\example.csv";
 
-[Microsoft Docs - File.ReadAllBytes 메서드](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.file.readallbytes?view=net-5.0)
+DataTable table = new DataTable();
 
-[CsvHelper 라이브러리](https://joshclose.github.io/CsvHelper/)
+using (StreamReader reader = new StreamReader(path))
+{
+    string[] headers = reader.ReadLine().Split(',');
 
-[CSV파일 한글 인코딩 문제 해결](https://xodud0414.tistory.com/231)
+    foreach (string header in headers)
+    {
+        table.Columns.Add(header);
+    }
 
-See Also: 데이터 파일 형식에 대한 이해
+    while (!reader.EndOfStream)
+    {
+        string[] rowValues = reader.ReadLine().Split(',');
+        if (rowValues.Length == table.Columns.Count)
+        {
+            DataRow row = table.NewRow();
+            row.ItemArray = rowValues;
+            table.Rows.Add(row);
+        }
+    }
+}
+
+// DataTable 객체를 이용해 데이터를 조작하거나 출력할 수 있습니다.
+table.Rows[0]["Name"] = "John";
+// ...
+
+// DataTable 객체를 CSV 파일로 내보내는 예제입니다.
+string csv = string.Join(Environment.NewLine, table.Rows
+            .Cast<DataRow>()
+            .Select(row => string.Join(",", row.ItemArray)));
+File.WriteAllText(@"C:\Users\User\Desktop\example_output.csv", csv);
+```
+
+`DataTable` 클래스를 사용하면 CSV 파일의 데이터를 자유롭게 다룰 수 있습니다. 더 많은 정보는 MSDN 문서를 참고하시면 됩니다.
+
+## 자세히 알아보기
+
+[Introduction to Reading and Writing CSV Files in C#](https://www.codeproject.com/Tips/1169109/Introduction-to-Reading-and-Writing-CSV-Files-in) - 간단한 CSV 파일 읽기/쓰기 예제
+
+[Working with CSV Files Using C# and .NET](https://blogs.msmvps.com/deborahk/working-with-csv-files-using-c-and-net/) - `DataTable` 클래스를 사용한 CSV 파일 다루기 예제
+
+## 다른 참고 자료
+
+- [C# Programming - A Beginner's Course](https://www.udemy.com/course/c-sharp-programming-for-beginners/) - C# 프로그래밍 초보자를 위한 강의
+- [C# and .NET Learning Resources](https://docs.microsoft.com/en-us/dotnet/csharp/learning-resources/) - C#과 .NET 관련 공식 학습 자료

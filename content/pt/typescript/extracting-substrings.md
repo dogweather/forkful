@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Extraindo subcadeias de caracteres"
-simple_title:         "Extraindo subcadeias de caracteres"
+title:                "Extraindo Substrings"
+html_title:           "TypeScript: Extraindo Substrings"
+simple_title:         "Extraindo Substrings"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que 
 
-Existem muitas situações em programação onde é necessário manipular e extrair partes específicas de uma string. Por exemplo, pode ser necessário obter apenas o primeiro nome de uma pessoa ou extrair uma data específica de um texto longo. Para isso, a extração de substrings é uma técnica poderosa e útil para qualquer programador TypeScript.
+Alguns cenários podem exigir que extraiamos substrings de uma string maior. Isso pode ser útil ao trabalhar com dados de entrada, como números de telefone ou endereços de email, ou ao manipular dados de texto em geral.
 
-## Como fazer
-
-Extrair substrings em TypeScript é bastante simples. Primeiro, precisamos de uma string de exemplo que iremos usar para demonstrar o processo:
+## Como Fazer 
 
 ```TypeScript
-let texto = "Olá, sou um programador TypeScript!"
+let phrase: string = "Olá mundo!";
+let substring1: string = phrase.substring(4); 
+
+console.log(substring1); // Saída: mundo!
 ```
 
-Agora, vamos supor que precisamos extrair apenas a palavra "programador" da string acima. Para fazer isso, podemos usar o método `substring` da classe `String` e fornecer os índices inicial e final da substring desejada. No nosso caso, a palavra "programador" começa no 13º caractere e termina no 22º caractere, então usaremos os índices 12 e 21:
+A função `substring` em TypeScript nos permite extrair uma parte de uma string a partir de um índice específico. O primeiro argumento é o índice de início da substring e o segundo (opcional) é o índice final.
+
+Podemos também usar a função `slice` de maneira semelhante:
 
 ```TypeScript
-let substring = texto.substring(12, 21);
+let phrase: string = "Hello World!";
+let substring2: string = phrase.slice(6, 11); 
 
-console.log(substring); // output: programador
+console.log(substring2); // Saída: World
 ```
 
-E se não soubermos os índices exatos da substring que queremos extrair? Não se preocupe, podemos usar outros métodos, como `indexOf` e `lastIndexOf`, para encontrar a posição dos caracteres que estamos procurando. Vamos supor que queremos extrair a palavra "programador" sem saber seus índices:
+A diferença é que `substring` não pode aceitar índices negativos, enquanto `slice` permite usar índices negativos para contar a partir do final da string.
 
-```TypeScript
-let start = texto.indexOf("programador");
-let end = texto.lastIndexOf("programador") + 10; // adicionamos 10 para incluir o último caractere da palavra
+## Deep Dive 
 
-let substring = texto.substring(start, end);
+Existem algumas coisas a serem consideradas ao extrair substrings em TypeScript. O primeiro é que ambas as funções vão retornar uma nova string e não modificam a string original.
 
-console.log(substring); // output: programador
-```
+Além disso, se passarmos apenas um argumento para `substring`, ele vai extrair a substring do índice fornecido até o final da string. Mas se passarmos apenas um argumento para `slice`, ele vai extrair do índice fornecido até um índice antes do final da string.
 
-## Deep Dive
+Outra diferença é quando os índices fornecidos estão fora do intervalo da string. Nesse caso, `substring` vai ajustar os índices para dentro do intervalo válido da string, enquanto `slice` vai retornar uma string vazia.
 
-Agora que entendemos como extrair substrings em TypeScript, é importante saber que existem muitas outras formas de fazer isso. Por exemplo, também podemos usar os métodos `slice`, `substr` e `match` para obter substrings de uma string. Cada um desses métodos tem suas próprias peculiaridades e é importante entender suas diferenças para escolher o mais adequado para cada situação.
+## Veja Também 
 
-Outro ponto importante a ser mencionado é que esses métodos podem ser usados ​​tanto em strings como em Arrays em TypeScript, oferecendo ainda mais flexibilidade e opções para manipulação de dados.
-
-## Veja também
-
-- [Documentação oficial do TypeScript sobre a classe String](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [Tutorial sobre extração de substrings em TypeScript](https://codeburst.io/javascript-how-to-get-a-part-of-string-using-substr-slice-and-substring-146ac41abf3a)
-- [Explicação profunda sobre os diferentes métodos de extração de substrings](https://humanwhocodes.com/blog/2019/07/extracting-substrings-javascript/)
+- Documentação oficial do TypeScript sobre `substring` e `slice`: https://www.typescriptlang.org/docs/handbook/intro.html
+- Tutorial sobre manipulação de strings: https://www.w3schools.com/js/js_strings.asp

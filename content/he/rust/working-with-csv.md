@@ -1,6 +1,7 @@
 ---
-title:                "Rust: עבודה עם CSV"
-simple_title:         "עבודה עם CSV"
+title:                "עובדים עם CSV"
+html_title:           "Rust: עובדים עם CSV"
+simple_title:         "עובדים עם CSV"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## למה 
 
-CSV הוא פורמט נפוץ וחשוב למידע מבני נתונים, ובעזרת Rust ניתן לעבוד איתו בצורה מהירה ויעילה. כתיבת קוד ב־Rust תאפשר לך להתמודד בקלות עם כמויות גדולות של נתונים ולעבוד באופן מקצועי עם קבצי CSV.
+ראשית ראשית, אנחנו רוצים לעבוד עם קבצי CSV כדי לאכתוב תכניות שמתמקדות בנתונים. קבצי CSV הם פורמט פשוט ונגיש שמאפשר לנו לשמור נתונים בצורה מכוונת ולהתמקד בעיבוד מידע.
 
-## איך לעבוד עם CSV ב־Rust
+## כיצד לא
 
-ברוב המקרים, טיפוס הנתונים המתאים לנתוני CSV הוא קובץ המכיל שורות ועמודות עם כותרות עמודות בשורה ראשונה. ניתן להשתמש בספריית סטנדרטית של Rust, `csv`, כדי לקרוא ולכתוב נתונים מקובץ CSV. לדוגמה, נגדיר קובץ CSV עם שם "employees.csv" ונשתמש בקוד הבא כדי להדפיס את נתוני הקובץ בצורה נכונה:
+תחילה, נצטרך להתקין את החבילה "csv" באמצעות פקודת "cargo install csv". כדי לעבוד עם קובץ CSV קיים, אנחנו נשתמש בפונקציית "from_reader". נמיר את הנתונים לסוג נתונים מתאים כדי להשתמש בהם כמו שנרצה. למשל, ניתן להדפיס את הנתונים בעזרת הפונקציה "println!" כדי לבדוק את הנתונים שנקראו.
 
 ```Rust
-// קריאת הספריה
+extern crate csv;
+
+use std::error::Error;
+use std::fs::File;
+use std::process;
+
 use csv::Reader;
 
-// קריאת קובץ CSV
-let mut reader = Reader::from_path("./employees.csv").unwrap();
-
-// הדפסת הנתונים
-for result in reader.records() {
-    let record = result.unwrap();
-    println!("{:?}", record);
+fn main() -> Result<(), Box<dyn Error>> {
+    let file = File::open("./data.csv")?;
+    let mut reader = Reader::from_reader(file);
+    for result in reader.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
 }
 ```
 
-כתוצאה מהקוד הזה, נקבל כפלט:
+פלט:
 
 ```Rust
-["Name", "Age", "Position"]
-["John Smith", "35", "Manager"]
-["Sarah Cohen", "28", "Developer"]
-["David Levy", "40", "Accountant"]
+["מנה", "מחיר", "תאריך"]
+["פיצה", "50", "01/01/2020"]
+["סנדוויץ׳", "25", "02/01/2020"]
+["סלט", "20", "03/01/2020"]
 ```
 
-## Deep Dive
+## במקום עמוק
 
-כעת נעבור לעומק ונדבר על אפשרויות נוספות לעבוד עם CSV ב־Rust. ראשית וראשונה, כדי למנוע בעיות כאשר נכתוב לקובץ CSV ונתונים הם מספרים עם נקודה עשרונית, נוכל להשתמש בספרייה `csv-core` המאפשרת לנו להגדיר את התצורה של הנתונים שנשתמש בהם במקרה זה. כמו כן, ניתן להשתמש בתכניות "משופרות" כמו `serde` על מנת לטעון נתונים ישירות מקבצי CSV למבנה מתאים למשתנים בקוד שלנו.
+כעת שאנחנו מכירים את היסודות, נוכל לעזור לעצמנו עם פונקציות נוספות כמו "trim", "retain", ו"to_string". ניתן גם להשתמש במודולים נוספים כמו "serde" כדי לקרוא קבצים CSV מהיר ויעיל יותר.
 
 ## ראה גם
 
-- [הדרך היעילה לעבוד
+- [מדריך מלא לעבוד עם חבילת CSV ב-Rust](https://docs.rs/csv/1.0.0/csv/)
+- [קוד מקור למימוש פונקציות נוספות עבור קבצי CSV](https://github.com/BurntSushi/rust-csv)
+- [מדריך מכיר ב-Rust](https://www.rust-lang.org/learn)

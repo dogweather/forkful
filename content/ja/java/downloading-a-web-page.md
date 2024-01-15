@@ -1,5 +1,6 @@
 ---
-title:                "Java: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Java: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Java"
 category:             "Java"
@@ -11,49 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-Webページをダウンロードすることの利点はたくさんあります。例えば、オフラインでの閲覧、情報を保存するため、あるいは情報の収集のためなどです。
+ウェブページをダウンロードする理由は、そのコンテンツを読んだり、取得したり、保存したりするためです。
 
-## 方法
+## ダウンロードする方法
 
-Webページをダウンロードするためには、Javaの「java.net.URL」クラスを使用することができます。以下のコードは、指定したURLのWebページをダウンロードする方法を示しています。
+ダウンロードするには、Javaの標準ライブラリであるjava.netパッケージのURLConnectionクラスを使用します。以下のコードを使用して、指定したURLからウェブページをダウンロードし、コンソールに出力することができます。
 
 ```Java
-import java.net.URL;
+import java.net.*;
 import java.io.*;
 
-public class WebPageDownloader {
-    public static void main(String[] args) throws Exception {
-        // URLを指定
-        URL url = new URL("https://www.example.com");
-        // 接続を開く
-        InputStream is = url.openStream();
-        // 出力ストリームを開く
-        OutputStream os = new FileOutputStream("saved-page.html");
-
-        // ソースをバイト単位で読み込み、ファイルに書き込む
-        byte[] b = new byte[2048];
-        int length;
-        while ((length = is.read(b)) != -1) {
-            os.write(b, 0, length);
-        }
-
-        // 接続を閉じる
-        is.close();
-        os.close();
-        
-        System.out.println("Webページをダウンロードしました。");
+public class DownloadWebPage{
+  public static void main (String[] args) {
+    try {
+      URL url = new URL("https://example.com"); // ダウンロードするウェブページのURL
+      URLConnection connection = url.openConnection();
+      BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      String inputLine;
+      while ((inputLine = in.readLine()) != null) {
+        System.out.println(inputLine); // ウェブページのコンテンツを一行ずつ出力
+      }
+      in.close();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 }
 ```
 
-上記のコードを実行すると、指定したURLのWebページが「saved-page.html」という名前のファイルとしてダウンロードされます。
+上記のコードを実行すると、例えば「Hello, world!」を含むウェブページの場合、コンソールには次のように出力されます。
 
-## 詳細
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello, world!</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<h1>Hello, world!</h1>
+</body>
+</html>
+```
 
-Webページをダウンロードする際には、HTTPプロトコルを使用して通信を行います。HTTPプロトコルには「GET」「POST」などのリクエストメソッドがあり、Webページをダウンロードする場合はGETメソッドが使用されます。また、WebページはHTML言語で記述されており、その構造を解析することで情報を抽出することができます。
+## 深堀り
+
+URLConnectionクラスは、URLからデータを取得するための機能を提供します。上記の例では、getInputStream()メソッドを使用してウェブページのコンテンツを取得しています。また、URLを使用して画像や動画などのメディアファイルをダウンロードすることも可能です。URLConnectionクラスは、HTTPやFTPなどのプロトコルをサポートしており、様々な種類のデータを取得することができます。
 
 ## 参考リンク
 
-- [Java URLクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/net/URL.html)
-- [HTTPプロトコルとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [HTML言語とは？](https://developer.mozilla.org/ja/docs/Web/HTML)
+- [URLConnectionクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html)
+- [Javaでwebページをダウンロードする方法](https://www.baeldung.com/java-download-webpage)

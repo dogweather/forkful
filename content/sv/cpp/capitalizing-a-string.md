@@ -1,6 +1,7 @@
 ---
-title:                "C++: Kapitalisera en sträng"
-simple_title:         "Kapitalisera en sträng"
+title:                "Stor bokstavsättning av en sträng"
+html_title:           "C++: Stor bokstavsättning av en sträng"
+simple_title:         "Stor bokstavsättning av en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,52 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I denna bloggpost kommer vi att titta på hur man kan förkapa en sträng i C ++. Det är en vanlig uppgift som utvecklare stöter på när de arbetar med textdata. Att förkapa en sträng innebär att göra det första bokstaven i varje ord i strängen till en stor bokstav. Detta kan vara användbart när man vill formatera data eller när man vill ha en enhetlig presentation av information.
+Är du trött på att ha ojämnt kapitaliserade strängar i ditt C++-program? Vill du ha en mer estetiskt tilltalande output? Då är det dags att lära dig hur man kapitaliserar strängar i C++.
 
 ## Hur man gör
 
-För att förkapa en sträng i C ++ måste vi först inkludera standardbiblioteket `string` som ger oss tillgång till funktioner för strängmanipulering. Sedan behöver vi en variabel som innehåller den sträng som vi vill förkapa. Vi kan använda funktionen `toupper()` för att göra om den första bokstaven i strängen till en stor bokstav. Sedan kan vi använda en lökloop för att gå igenom alla bokstäver i strängen och förkapa dem. 
-
-Här är en kodexempel som visar detta steg för steg:
+För att kapitalisera en sträng i C++ finns det olika metoder beroende på dina behov. Nedan följer några enkla exempel med kod och utskrifter.
 
 ```C++
-#include <iostream>
-#include <string>
+#include <iostream> 
+// inkluderar standardbiblioteket för data-input och output
 
-using namespace std;
+#include <algorithm> 
+// inkluderar biblioteket för att använda funktioner för textmanipulering
 
-int main() {
-  // Här skapar vi en variabel som innehåller den sträng som vi vill förkapa
-  string text = "hej på dig";
+using namespace std; 
+// definierar standard namespace för att slippa skriva "std::" före varje standardfunktion
 
-  // Använder toupper() för att göra första bokstaven stor
-  text[0] = toupper(text[0]);
-  
-  // Löploop som förkapar alla bokstäver i strängen
-  for (int i = 0; i < text.length(); i++) {
-    if (text[i] == ' ') {
-      text[i+1] = toupper(text[i+1]);
-    }
-  }
+int main() 
+{ 
+    string s = "en sträng"; // definierar en sträng med värde
+    
+    // Metod 1: Använda transform() funktionen från <algorithm> biblioteket
+    transform(s.begin(), s.end(), s.begin(), ::toupper);
+    // för att kapitalisera alla bokstäver i strängen
+        
+    cout << "Metod 1: " << s << endl;  // skriver ut kapitaliserad sträng
 
-  // Skriver ut den förkaptulerade strängen
-  cout << text;
+    // Metod 2: Använda toupper() funktionen från <ctype> biblioteket
+    for (int i = 0; i < s.length(); i++) 
+    { 
+        s[i] = toupper(s[i]); 
+        // går igenom varje bokstav och kapitaliserar den 
+    } 
+                
+    cout << "Metod 2: " << s << endl;  // skriver ut kapitaliserad sträng
 
-  return 0;
-}
+    // Metod 3: Använda islower() och toupper() funktionerna från <cctype> biblioteket
+    for (int i = 0; i < s.length(); i++) 
+    { 
+        if(islower(s[i]))
+        {
+            s[i] = toupper(s[i]);
+        }
+        // kollar om bokstaven är en gemener och om den är det, kapitaliserar den
+    } 
+            
+    cout << "Metod 3: " << s << endl;  // skriver ut kapitaliserad sträng
+
+    return 0; 
+} 
 ```
 
-Output: `Hej På Dig`
+**Output:** \
+Metod 1: EN STRÄNG \
+Metod 2: EN STRÄNG \
+Metod 3: EN STRÄNG
 
-## Deep Dive
+## Djupdykning
 
-För att förkapa en sträng i C ++ måste vi förstå hur strängar och tecken fungerar i programmering. En sträng är en sekvens av tecken som representerar en text. Varje tecken är egentligen en numerisk kod från ASCII-tabellen som berättar för datorn hur det ska tolkas. I vår kodexempel ovan använder vi funktionen `toupper()` för att ändra den numeriska koden för bokstaven till dess motsvarande stor bokstav.
-
-För att först skapa en sträng i C ++ använder vi datastrukturen `string` som är en del av standardbiblioteket. `string`-typen har en mängd olika funktioner som vi kan använda för att manipulera strängar, inklusive `toupper()`.
-
-En viktig sak att tänka på när vi arbetar med strängar i C ++ är att en sträng är en array av tecken. Detta betyder att varje tecken har en plats i minnet och vi kan komma åt enskilda tecken genom att ange deras position i strängen.
+Genom att inkludera <algorithm> och <ctype> biblioteken, får du tillgång till funktioner för textmanipulering. Transform() funktionen är speciellt användbar när man vill utföra ett åtgärder på alla element i en container, medan toupper() och islower() funktionerna är mer specifika för hantering av bokstäver. Genom att kombinera dessa funktioner med en loop kan du enkelt kapitalisera en hel sträng. Man kan också använda den inbyggda funktionen to_string() för att konvertera numeriska värden till strängar och därmed kapitalisera siffror i en sträng.
 
 ## Se även
 
-- [C ++ - strängdatastruktur](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [ASCII-teckenkoder](https://www.ascii-code.com/)
+- [C++ string manipulation](https://www.geeksforgeeks.org/string-manipulation-in-c/#:~:text=transform()%20function%20of%20algorithm,passed%20as%20an%20input%20in%20transform().)
+- [toupper() function in C++](https://www.geeksforgeeks.org/toupper-function-in-c/)
+- [islower() function in C++](https://www.geeksforgeeks.org/islower-function-in-c/)

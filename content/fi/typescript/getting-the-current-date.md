@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Nykyisen päivämäärän hakeminen."
-simple_title:         "Nykyisen päivämäärän hakeminen."
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "TypeScript: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,30 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Aloita päiväsi TypeScriptilla! Päivämäärän hakeminen on yksi yleisimmistä ohjelmointitehtävistä ja se on erityisen hyödyllinen, kun haluat tallentaa tai näyttää tämänhetkisen päivämäärän.
+On monia syitä, miksi joku voisi haluta saada nykyinen päivämäärä ohjelmassaan. Joissakin tapauksissa se voi auttaa tekemään päätöksiä tai laskelmia, kun tunnetaan tämänhetkinen päivämäärä. Toisinaan se voi myös olla osa suurempaa toimintoa, kuten kirjanpitoa tai aikaleimaa.
 
-## Miten
+## Miten tehdä se
+
+Voit helposti saada nykyisen päivämäärän TypeScriptissä käyttäen Date-objektia ja sen sisäänrakennettuja metodeja. Voit aloittaa luomalla uuden Date-objektin ja tallentamalla sen muuttujaan.
 
 ```TypeScript
-// Luodaan uusi Date-olio
-const tänään: Date = new Date();
-
-// Käytetään Date-olion metodeja saadaksemme haluttu muotoiltu päivämäärä
-console.log(tänään.getDate() + "." + (tänään.getMonth()+1) + "." + tänään.getFullYear());
-// Tulostaa esimerkiksi 22.4.2021
-
-// Käytetään toista metodia saadaksemme päivämäärän ja ajan
-console.log(tänään.toLocaleString());
-// Tulostaa esimerkiksi "22.4.2021, 11:30:12"
+let currentDate = new Date();
 ```
 
-## Syvällinen tarkastelu
+Tämän jälkeen voit käyttää erilaisia Date-objektin metodeja saadaksesi haluamasi päivämäärän tiedot. Näitä ovat esimerkiksi getFullYear(), getMonth(), getDate(), getDay(), jne.
 
-Päivämäärän hakeminen liittyy vahvasti Date-olion toimintaan TypeScriptissä. Date-olion avulla voit tarkastella ja muokata päivämääriä ja aikoja. Date-olion konstruktori voi ottaa parametreikseen päivämäärän, kuukauden, vuoden ja/tai ajan, mutta jos et anna sille mitään parametreja, se käyttää automaattisesti nykyhetkeä. Date-olion metodeilla voit tarkastella ja manipuloida päivämäärää ja aikaa haluamallasi tavalla. Lisätietoa Date-oliosta ja sen mahdollisuuksista voit lukea [virallisesta dokumentaatiosta.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+```TypeScript
+let year = currentDate.getFullYear();
+let month = currentDate.getMonth();
+let day = currentDate.getDate();
+let weekday = currentDate.getDay();
+```
+
+Voit myös muotoilla päivämäärän haluamallasi tavalla käyttämällä Date-objektin toMethod-metodia ja erilaisia formaattimerkkejä.
+
+```TypeScript
+let formattedDate = currentDate.toDateMethod("dd/mm/yyyy");
+console.log(formattedDate); // 04/09/2021
+```
+
+## Syväsukellus
+
+Vaikka JavaScript ja siten myös TypeScript käyttävät Date-objektia päivämäärän ja ajan hallintaan, se käyttää myös Unix Epoch -aikaleimaa, joka tarkoittaa aikaa, joka on kulunut 1. tammikuuta 1970 klo 00:00:00 UTC:sta. Päivämäärä ja aika tallennetaan millisekunneissa tästä ajankohdasta lähtien. Tätä aikaleimaa voidaan käyttää muuntamaan eri ajanjaksoja millisekunneiksi nykyhetkestä, ja päinvastoin.
+
+Date-objektin metodeilla on myös muita hyödyllisiä toimintoja, kuten asettaa päivämäärän tai ajan arvoja, muuntaa aikavyöhykkeitä ja tarkistaa päivämäärän validius.
 
 ## Katso myös
 
-- [Date-olion virallinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScriptin perusteet](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [Vinkkejä TypeScriptin käyttöön](https://www.freecodecamp.org/news/how-to-crush-it-in-typescript-a585cbd0437a/)
-- [JavaScriptin ajastinten käyttö Date-olion kanssa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Timers)
+- [Date-objekti TypeScriptin virallisessa dokumentaatiossa](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html)
+- [Unix Epoch-aikaleima Wikipediassa](https://en.wikipedia.org/wiki/Unix_time)

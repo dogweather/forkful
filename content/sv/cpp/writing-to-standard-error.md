@@ -1,6 +1,7 @@
 ---
-title:                "C++: Att skriva till standardfel"
-simple_title:         "Att skriva till standardfel"
+title:                "Skrivande till standardfel"
+html_title:           "C++: Skrivande till standardfel"
+simple_title:         "Skrivande till standardfel"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,36 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standard error i C++ är en viktig del av felsökning och hantering av fel i ditt program. Genom att skriva till standard error-kanalen kan du skilja mellan vanliga utmatningar och felmeddelanden, vilket gör det lättare att hitta och korrigera problem i din kod.
+Att skriva till standard error, även känd som stderr, är ett sätt för C++-programmerare att kommunicera felmeddelanden till användaren. Det är ett viktigt verktyg för felsökning och kan hjälpa till att förbättra användarupplevelsen.
 
-## Hur man gör
+## Hur man gör det
 
-För att skriva till standard error i C++, använder du en funktion som heter "cerr". Detta innebär att du först inkluderar "iostream" biblioteket i din kod och sedan använder "cerr << " följt av det meddelande du vill skriva till standard error, som i följande kodexempel:
+För att skriva till stderr behöver du först inkludera standardbiblioteket <iostream> i din kod. Sedan kan du använda funktionen std::cerr för att skriva ditt felmeddelande. Se nedan för ett exempel:
 
 ```C++
-#include <iostream>
+#include <iostream> // inkludera standardbiblioteket
 
 int main() {
-    // Skriver ett meddelande till standard error
-    std::cerr << "Detta är ett felmeddelande!" << std::endl;
-
-    // Resten av koden...
-    
-    return 0;
+  std::cerr << "Ett fel inträffade!" << std::endl; // skriv till stderr med felmeddelandet
+  return 0;
 }
 ```
 
-För att testa detta, kompilera och kör programmet ovan. Du bör se meddelandet "Detta är ett felmeddelande!" skrivet till standard error-kanalen, åtskilt från vanliga utmatningar.
+Detta kommer att skriva ut "Ett fel inträffade!" till stderr och avsluta programmet med en felkod.
 
 ## Djupdykning
 
-Det finns flera fördelar med att använda standard error i din kod när du arbetar med felsökning och felhantering. För det första, som nämnts tidigare, kan det hjälpa dig att särskilja mellan vanliga utmatningar och felmeddelanden och därmed göra det lättare att hitta och åtgärda problem. Dessutom är det en vanlig praxis att omdirigera standard error till en loggfil för att spåra fel som inträffar i produktionen.
+Det finns flera anledningar till varför det är viktigt att använda stderr för att kommunicera felmeddelanden. För det första är det en standardiserad metod som många andra språk och system använder. Det gör det enklare för användare att förstå och hantera felmeddelanden.
 
-En annan fördel är att standard error-kanalen är osynkroniserad, vilket betyder att flera trådar i ditt program kan skriva till den samtidigt utan att orsaka konflikter. Detta kan vara särskilt användbart i flertrådade applikationer.
+För det andra är det viktigt att använda stderr istället för stdout för att skilja mellan vanlig programoutput och felmeddelanden. Detta kan hjälpa till att undvika förvirring och förbättra läsbarheten för användaren.
 
-Slutligen är det värt att notera att det finns andra sätt att hantera fel i C++, såsom undantag och andra felhanteringsmekanismer. Användningen av standard error beror oftast på din personliga preferens och kodbasens struktur.
+För det tredje tillåter stderr dig att hantera olika typer av felmeddelanden separat. Till exempel kan du välja att skicka kritiska felmeddelanden till stderr och mindre allvarliga felmeddelanden till stdout.
 
-## Se även
+## Se också
 
-- [C++ Iostream bibliotek](https://en.cppreference.com/w/cpp/io)
-- [Felhantering i C++](https://www.learncpp.com/cpp-tutorial/exceptions-throwing-and-catching-exceptions/)
+* [C++ iostream referens](https://www.cplusplus.com/reference/iostream/)
+* [Felsökningsguide för C++](https://docs.microsoft.com/sv-se/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2019)

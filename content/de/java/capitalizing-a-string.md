@@ -1,6 +1,7 @@
 ---
-title:                "Java: Einen String in Großbuchstaben umwandeln."
-simple_title:         "Einen String in Großbuchstaben umwandeln."
+title:                "Ein String großschreiben"
+html_title:           "Java: Ein String großschreiben"
+simple_title:         "Ein String großschreiben"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,40 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Kapitalisieren von Strings ist ein grundlegendes Konzept in der Java-Programmierung, das oft verwendet wird, um die Darstellung von Texten zu ändern. Es ist wichtig zu verstehen, wie man Strings richtig in Java kapitalisiert, um das gewünschte Ergebnis zu erzielen.
+In Java geht es oft darum, Text auf verschiedene Weisen zu bearbeiten. Ein häufiger Fall ist das Großschreiben von Strings, um sie in einer bestimmten Form auszugeben. Hier erfährst du, wie du das in Java machen kannst.
 
-## Wie geht's?
+## Wie funktioniert das
 
-Das Kapitalisieren von Strings kann auf verschiedene Arten erfolgen, je nach den Anforderungen der Anwendung. Eine einfache Möglichkeit ist die Verwendung der `toUpperCase()` und `toLowerCase()` Methoden, um einen String vollständig in Groß- oder Kleinbuchstaben zu konvertieren. Hier ist ein Beispielcode, der einen String in Großbuchstaben umwandelt:
+Um einen String in Java in Großbuchstaben umzuwandeln, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist, die `toUpperCase()`-Methode zu verwenden, die in der String-Klasse verfügbar ist. Hier ist ein Beispiel:
 
-```Java
-String text = "Hallo, Welt!";
-String capitalized = text.toUpperCase();
+```java
+String name = "hallo welt";
+String nameUpperCase = name.toUpperCase();
 
-System.out.println(capitalized);
-// Output: HALLO, WELT!
+System.out.println(nameUpperCase);
 ```
 
-Wenn Sie nur den ersten Buchstaben eines Strings großschreiben möchten, können Sie die `substring()` Methode verwenden, um den Teil des Strings mit dem ersten Buchstaben zu extrahieren und dann `toUpperCase()` darauf anzuwenden. Hier ist ein Beispiel:
+Dieses Stück Code verwendet die `toUpperCase()`-Methode, um den String `name` in Großbuchstaben umzuwandeln und dann den neuen String in der Konsole auszugeben. Das Ergebnis ist `HALLO WELT`.
 
-```Java
-String text = "guten morgen, leute!";
-String firstLetter = text.substring(0, 1).toUpperCase();
-String restOfString = text.substring(1).toLowerCase();
-String capitalized = firstLetter + restOfString;
+Du kannst auch die `charAt()`- und `setCharAt()`-Methoden verwenden, um jeden Buchstaben im String manuell in einen Großbuchstaben zu ändern. Hier ist ein Beispiel:
 
-System.out.println(capitalized);
-// Output: Guten morgen, leute!
+```java
+String name = "hallo welt";
+StringBuilder nameBuilder = new StringBuilder(name);
+
+for (int i = 0; i < name.length(); i++) {
+    char currentChar = name.charAt(i);
+    char capitalizedChar = Character.toUpperCase(currentChar);
+    nameBuilder.setCharAt(i, capitalizedChar);
+}
+
+String nameUpperCase = nameBuilder.toString();
+System.out.println(nameUpperCase);
 ```
 
-## Tiefergehende Informationen
+In diesem Fall nutzen wir eine Schleife, um durch den String `name` zu iterieren und jeden Buchstaben in einen Großbuchstaben zu ändern. Wir erstellen auch einen `StringBuilder`, weil Strings in Java unveränderbar sind und wir daher eine neue Variable benötigen, um unsere Änderungen vorzunehmen.
 
-Das Kapitalisieren von Strings erfordert auch ein Verständnis von Unicode und der verschiedenen Sprachen und Zeichensätze, die von Java unterstützt werden. Zum Beispiel kann die Konvertierung eines Strings, der chinesische, kyrillische oder arabische Zeichen enthält, unterschiedliche Ergebnisse liefern, je nachdem welche Codierung verwendet wird.
+## Tiefer eintauchen
 
-Eine weitere wichtige Sache zu beachten ist, dass Strings in Java unveränderlich sind, was bedeutet, dass jede Operation, die an einem String vorgenommen wird, ein neues String-Objekt erzeugt. Dies hat Auswirkungen auf die Effizienz des Kapitalisierens von Strings und die Verwendung von Speicher.
+Wie du sehen kannst, gibt es verschiedene Möglichkeiten, Strings in Großbuchstaben umzuwandeln. Diese Entscheidung hängt oft von der Situation ab, in der du dich befindest. Die `toUpperCase()`-Methode ist eine einfache und schnelle Möglichkeit, den gesamten String auf einmal zu ändern. Die Verwendung von `charAt()` und `setCharAt()` erfordert etwas mehr Code, bietet dir aber auch mehr Kontrolle über jeden einzelnen Buchstaben.
+
+Eine wichtige Sache, die du beachten musst, ist, dass Java ein Mapping verwendet, um Buchstaben in Groß- und Kleinbuchstaben umzuwandeln. Dies bedeutet, dass nicht immer alle Zeichen automatisch in Großbuchstaben umgewandelt werden. Zum Beispiel wird das deutsche "ß" nicht automatisch in ein großes "SS" umgewandelt. Du musst daher möglicherweise manuelle Anpassungen vornehmen, um sicherzustellen, dass alle Zeichen in deinem String in der gewünschten Form sind.
+
+In Java gibt es auch die Möglichkeit, benutzerdefinierte Methoden zu erstellen, die Strings in Großbuchstaben umwandeln können. Dies erfordert etwas fortgeschrittenere Kenntnisse der Sprache, kann aber sehr nützlich sein, wenn du dies in deinem Code an mehreren Stellen tun musst.
 
 ## Siehe auch
 
-- [Java String Klasse Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Unicode-Tutorial](https://www.tutorialspoint.com/java/java_unicode_tutorial.htm)
-- [String immutability in Java](https://www.baeldung.com/java-immutable-strings)
+- [Java String Klasse](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Java StringBuilder Klasse](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html)

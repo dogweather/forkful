@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Ricerca e sostituzione del testo"
-simple_title:         "Ricerca e sostituzione del testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Gleam: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,39 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La ricerca e la sostituzione di testo sono fondamentali per mantenere il nostro codice organizzato e leggibile. Con Gleam, possiamo automatizzare questo processo e risparmiare tempo prezioso.
+Sei pronto a migliorare la tua produttività come programmatore? Oppure, sei semplicemente stanco di passare ore a cercare e sostituire del testo all'interno del tuo codice? Con Gleam, puoi semplificare questo compito e risparmiare tempo prezioso grazie alla funzione di ricerca e sostituzione di testo.
 
-## Come fare
+## Come Fare
 
-Per eseguire una ricerca e sostituire il testo in Gleam, possiamo utilizzare la funzione `String.replace` seguita da una stringa di testo da cercare e una stringa di testo da sostituire. Ad esempio:
+Per utilizzare la funzione di ricerca e sostituzione di testo in Gleam, segui questi semplici passaggi:
+
+1. Apri il tuo progetto o file contenente il testo da cercare e sostituire.
+2. Premi "Ctrl + F" sulla tastiera per aprire la finestra di ricerca.
+3. Immetti il testo che desideri cercare nella casella di ricerca.
+4. Nella casella "Sostituisci con", inserisci il testo con cui vuoi sostituire quello cercato.
+5. Utilizza i pulsanti "Precedente" e "Successivo" per spostarti tra le istanze del testo cercato e visualizzare l'anteprima dei cambiamenti.
+6. Una volta soddisfatto delle sostituzioni effettuate, premi il pulsante "Sostituisci" o "Sostituisci tutto".
+
+Ecco un esempio di codice in Gleam che mostra come utilizzare la funzione di ricerca e sostituzione:
 
 ```Gleam
-let testo_sostituito = string.replace("Ciao, mondo!", "mondo", "universo")
+let testo = "Questo è un esempio di testo da cercare e sostituire."
+let testo_modificato = testo.replace("cercare e", "ricercare e modificare")
+
+let output = testo_modificato
+|> print
 ```
 
-Questo comando sostituirà la parola "mondo" con "universo" e restituirà la stringa "Ciao, universo!".
-
-Se vogliamo sostituire tutte le occorrenze di una stringa, possiamo utilizzare il modificatore globale `g`.
-
-```Gleam
-let testo_sostituito = string.replace("ciao ciao ciao", "ciao", "hello", g)
-```
-
-Questo sostituirà tutte le occorrenze di "ciao" con "hello" e restituirà la stringa "hello hello hello".
+Output: "Questo è un esempio di testo da ricercare e modificare."
 
 ## Approfondimento
 
-Oltre alle semplici sostituzioni di base, Gleam ci offre anche la possibilità di utilizzare espressioni regolari nella nostra ricerca e sostituzione di testo. Possiamo utilizzare la funzione `Regex.replace` seguita da un'espressione regolare e una stringa di sostituzione.
+Oltre a semplicemente cercare e sostituire del testo all'interno del codice, Gleam offre anche funzionalità avanzate come la possibilità di utilizzare espressioni regolari nella ricerca e sostituzione. Ciò ti permette di effettuare modifiche in modo più preciso e veloce.
 
-```Gleam
-let regex = regex.compile("ciao+", nulo)
+Inoltre, Gleam ti permette di effettuare ricerche case-insensitive (senza differenza tra maiuscole e minuscole), riducendo ancora di più il tempo necessario per trovare e sostituire il testo desiderato.
 
-let testo_sostituito = regex.replace("ciao ciao ciao", "hello")
-```
+## Vedi Anche
 
-In questo esempio, la funzione `compile` ci permette di creare una regex per cercare una o più occorrenze della parola "ciao". Il risultato della funzione `replace` sarà "hello hello hello".
-
-## Vedi anche
-
-- Documentazione ufficiale di Gleam sulla ricerca e la sostituzione di testo: https://gleam.run/documentation/guides/strings#replace
-- Un tutorial su espressioni regolari in Gleam: https://medium.com/@gleamler/espressioni-regolari-in-gleam-4e2b5b98d5cb
+- [Documentazione su ricerca e sostituzione in Gleam](https://gleam.run/documentation)
+- [Tutorial su come utilizzare espressioni regolari in Gleam](https://gleam.run/tutorials/regular-expressions.html)
+- [Video tutorial su come utilizzare la funzione di ricerca e sostituzione in Gleam](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

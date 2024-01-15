@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Używanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "Clojure: Używanie wyrażeń regularnych"
 simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,33 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Regularne wyrażenia są bardzo przydatnym narzędziem w programowaniu, pozwalającym na wyraźne i precyzyjne określanie wzorców w tekście. Dzięki nim możemy szybko i skutecznie przeprowadzać operacje na naszych danych, co z kolei może zaoszczędzić nam dużo czasu i wysiłku.
+Każdy programista wie, że regularne wyrażenia są nieodłącznym elementem pracy z tekstem. Znajomość ich składni i użycie może znacznie ułatwić i przyspieszyć pracę, dlatego warto poznać podstawy ich działania.
 
 ## Jak to zrobić
 
-Używanie regularnych wyrażeń w języku Clojure jest bardzo proste i intuicyjne. Aby rozpocząć, musimy najpierw zaimportować bibliotekę `clojure.string`. Następnie możemy użyć funkcji `re-find` lub `re-matches` do znalezienia dopasowań do naszego wzorca. Przykładowy kod wyglądałby tak:
-
 ```Clojure
-(ns rozdzial-regularne-wyrazenia
-  (:require [clojure.string :as str]))
+;; Przykładowy ciąg znaków
+(def string "Alice ma 21 lat, Bob ma 29 lat, Chris ma 43 lata.")
 
-(str/re-find #"[a-z]+[0-9]+" "abc123")
-;; wynik: "abc123"
+;; Wyszukanie wszystkich liczb w tekście
+(re-seq #"\d+" string)
 
-(str/re-matches #"[a-z]+" "123")
-;; brak dopasowania
+;; Output: ("21" "29" "43")
 ```
 
-Jak widać, wystarczy podać wzorzec w postaci wyrażenia regularnego i ciąg znaków, na którym chcemy go przetestować. Dodatkowo, możemy również użyć funkcji `re-find-first` i `re-find-all` do znalezienia pierwszego dopasowania lub wszystkich dopasowań w ciągu znaków.
+```Clojure
+;; Zamiana daty z formatu MM/DD/RRRR na DD-MM-RRRR
+(def data "09/30/2021")
+(re-sub #"(\d{2})/(\d{2})/(\d{4})" data "$2-$1-$3")
 
-## Zagłębienie się w temat
+;; Output: "30-09-2021"
+```
 
-Możliwości wykorzystania regularnych wyrażeń są bardzo szerokie i zależą głównie od naszej kreatywności. Możemy użyć różnorodnych operatorów, takich jak `+` (dopasowanie jednego lub więcej wystąpień), `*` (dopasowanie zera lub więcej wystąpień) czy `?` (dopasowanie opcjonalne), aby precyzyjnie określić nasz wzorzec. Dodatkowo, możemy również wykorzystać grupowanie dopasowań i wyrażenia alternatywne, aby uwzględnić różne warianty naszego wzorca.
+```Clojure
+;; Sprawdzenie czy ciąg zawiera email
+(def email "johndoe@email.com")
+(re-match #"\w+@\w+\.\w+" email)
 
-W języku Clojure, regularne wyrażenia nie są zbyt skomplikowane i nie wymagają od nas specjalistycznej wiedzy matematycznej. Jednak w celu lepszego zrozumienia i poszerzenia swoich umiejętności, warto zapoznać się z podstawowymi pojęciami, takimi jak znak "?" (Ciąg znaków) czy "..." (Znaki specjalne).
+;; Output: "johndoe@email.com"
+```
+
+## Pogłębiona analiza
+
+Podstawowym elementem regularnych wyrażeń jest wzorzec, którym chcemy dopasować ciąg znaków. Najczęściej używanymi są:
+- Znaki literowe - reprezentujące konkretne litery lub ciągi znaków, np. `a` lub `abc`.
+- Metaznaki - służące do reprezentacji grup znaków, np. `.` dla jednego dowolnego znaku, `+` dla jednego lub więcej znaków, `*` dla zera lub więcej znaków.
+- Klasy znaków - pozwalające na określenie zakresu znaków, np. `[a-z]` dla liter od A do Z, `[0-9]` dla cyfr od 0 do 9.
+- Sekwencje specjalne - reprezentujące konkretne znaki, np. `\s` dla spacji, `\d` dla cyfr.
+
+Regularne wyrażenia mogą być również wykorzystywane do modyfikacji tekstu, dzięki użyciu grup i specjalnych ciągów zamieniających.
 
 ## Zobacz także
 
-- [Oficjalna dokumentacja Clojure dla wyrażeń regularnych](https://clojuredocs.org/clojure.string/re-find)
-- [Tutorial na YouTube o wyrażeniach regularnych w Clojure](https://www.youtube.com/watch?v=8IpaF8_uE4o)
-- [Blog post o wykorzystaniu regularnych wyrażeń w praktyce](https://purelyfunctional.tv/guide/regular-expression-overview/)
+- [Podstawowe wyrażenia regularne w Clojure](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
+- [Inne przydatne funkcje Clojure do pracy z tekstem](https://clojure.org/api/cheatsheet)

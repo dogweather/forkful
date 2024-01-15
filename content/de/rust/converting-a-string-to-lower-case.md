@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "String in Kleinbuchstaben umwandeln"
+html_title:           "Rust: String in Kleinbuchstaben umwandeln"
+simple_title:         "String in Kleinbuchstaben umwandeln"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,33 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn du dich für das Lernen von Rust entschieden hast, wirst du festgestellt haben, dass es eine mächtige und wachsende Sprache mit einer starken Typisierung ist. Eines der häufigen Aufgaben beim Programmieren ist das Konvertieren von Strings in Kleinbuchstaben. Aber warum sollte man das überhaupt tun? Im Folgenden werden wir uns genauer mit diesem Thema befassen.
 
-## So geht's
-Um einen String in Rust in Kleinbuchstaben zu konvertieren, gibt es einen einfachen Weg mit der Funktion `to_lowercase()`. Hier ist ein Beispielcode, der einen String in Kleinbuchstaben umwandelt:
+Wenn du schon einmal mit Texten in deinen Programmierprojekten gearbeitet hast, wirst du wahrscheinlich schon das Bedürfnis gehabt haben, alle Zeichen in einem String in Kleinbuchstaben zu konvertieren. Das kann aus verschiedenen Gründen nützlich sein, zum Beispiel um die Eingabe von Benutzern zu standardisieren oder um Texte für Vergleiche zu normalisieren.
+
+## Wie geht man vor?
+
+Um einen String in Rust in Kleinbuchstaben zu konvertieren, gibt es verschiedene Möglichkeiten. Die einfachste ist die Verwendung der Funktion `to_lowercase()` aus der Standard-Bibliothek. Hier ist ein Beispielcode, der diese Funktion verwendet:
 
 ```Rust
-let string = "Hallo, Rust!";
-let string_lower = string.to_lowercase();
-println!("{}", string_lower);
+let text = "HALLO WELT";
+let converted_text = text.to_lowercase();
+println!("{}", converted_text); // gibt "hallo welt" aus
 ```
-Die Ausgabe dieses Codes wird `hallo, rust!` sein.
 
-Es ist auch möglich, Strings in Unicode zu konvertieren, indem man die Funktion `to_lowercase()` auf den Typ `Chars` anwendet. Hier ist ein Beispielcode:
+Man kann auch die Methode `to_lowercase()` direkt auf einen String aufrufen, ohne die Funktion zu verwenden:
 
 ```Rust
-let string = "RUST 💻";
-let mut char_iter = string.chars().peekable();
-while let Some(char) = char_iter.next() {
-    print!("{}", char.to_lowercase());
+let text = "HALLO WELT";
+let converted_text = text.to_lowercase();
+println!("{}", converted_text); // gibt "hallo welt" aus
+```
+
+Eine weitere Möglichkeit ist die Verwendung der Methode `chars()` und der Funktion `collect()` aus der Standard-Bibliothek, um jedes Zeichen in einen Vektor zu konvertieren und dann mit Hilfe der `to_lowercase()`-Methode jedes Zeichen in Kleinbuchstaben umzuwandeln. Hier ist ein Beispiel:
+
+```Rust
+let text = "HALLO WELT";
+let mut chars: Vec<char> = text.chars().collect();
+for c in &mut chars {
+    *c = c.to_lowercase().next().unwrap();
 }
+let converted_text: String = chars.into_iter().collect();
+println!("{}", converted_text); // gibt "hallo welt" aus
 ```
-Die Ausgabe dieses Codes wird `rust 💻` sein.
 
-## Tiefergehende Einblicke
-Jetzt wo wir wissen, wie wir Strings in Kleinbuchstaben konvertieren, können wir einen tieferen Einblick in die Technik dahinter werfen. Die `to_lowercase()`-Funktion verwendet die Unicode-Standardisierung, um die Umwandlung korrekt durchzuführen. Es gibt jedoch mehrere Regeln und Ausnahmen bei der Umwandlung in Kleinbuchstaben, je nach Sprache und Alphabet. In Rust gibt es auch die Möglichkeit, spezifische Locale und Unicode-Methoden zu verwenden, um eine genauere Konvertierung durchzuführen.
+## Tiefere Einblicke
+
+Bei der Konvertierung von Strings in Kleinbuchstaben sind einige Dinge zu beachten. Zum einen kann es je nach Sprache und Schreibweise Unterschiede bei der Umwandlung von Groß- zu Kleinbuchstaben geben. In manchen Fällen können sogar mehrere Kleinbuchstaben aus einem Großbuchstaben entstehen.
+
+Wie in den Beispielen gezeigt, gibt es in Rust verschiedene Möglichkeiten, um Strings in Kleinbuchstaben zu konvertieren. Es ist jedoch wichtig zu beachten, dass diese Methoden nicht in allen Fällen das gleiche Resultat liefern. Es kann vorkommen, dass bestimmte Sonderzeichen oder diakritische Zeichen bei einer Methode anders behandelt werden als bei einer anderen.
 
 ## Siehe auch
-- [Rust Dokumentation - Strings](https://doc.rust-lang.org/std/string/index.html)
-- [Unicode-Standardisierung](https://unicode.org/standard/standard.html) 
-- [Rust The Book - "Common Collections"](https://doc.rust-lang.org/book/ch08-03-hash-maps.html)
+
+- [Rust-Dokumentation: `to_lowercase()` Funktion](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
+- [Rust-Dokumentation: `chars()` Methode](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)
+- [Rust-Dokumentation: `collect()` Funktion](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect)

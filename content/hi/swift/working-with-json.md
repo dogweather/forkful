@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Json के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Swift: Json के साथ काम करना"
 simple_title:         "Json के साथ काम करना"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,55 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-जेसन (JSON) के साथ काम करने में किसी को रुचि रखने के लिए केवल 1-2 वाक्यों में क्यूँ काम करना चाहिए।
-
-JSON (JavaScript Object Notation) एक प्रसिद्ध डेटा फॉर्मेट है जो कि web एप्लीकेशन्स में डेटा को आसानी से प्रसंस्करण करने के लिए उपयोग किया जाता है। यह स्थानीय फाइल के साथ काम करने के लिए कम्पैक्ट है और डेटा को network के बीच भेजने और प्राप्त करने में भी उपयोगी है।
+क्या आप Swift में काम करना चाहते हैं और आपको JSON के साथ काम करने के बारे में जानना चाहते हैं? यह आर्टिकल आपको क्यों JSON को समझना है और उसका उपयोग करना है आपके लिए जानकारी देगा।
 
 ## कैसे करें
 
+कभी-कभी हमारे Swift एप्लिकेशन को विभिन्न प्लेटफॉर्मों से डेटा जुड़ाने के लिए हमें JSON का उपयोग करना पड़ता है। स्विफ्ट 4 के साथ, हमें प्रोटोकॉल `Codable` के माध्यम से डेटा को JSON में सीरियलाइज और डिसीरियलाइज करने के लिए निर्देशित किया जाता है। यह हमें कई लाइनों के कोड के बजाय अधिक स्पष्ट तरीके से डेटा की प्रतिनिधि करता है। आइए यह जानते हैं कि हमें JSON को कैसे समझना है और इसका उपयोग करना है।
+
+इसके लिए, हमें पहले एक साधारण `struct` बनानी होगी और उसमें आवश्यक प्रॉपर्टी जोड़नी होगी, जोहुमें हम JSON से डेटा प्राप्त करना होगा।
+
 ```Swift
-let studentJSON = """
-{
-  "name": "अमित",
-  "age": 21,
-  "major": "कम्प्यूटर साइंस",
-  "courses": ["ऑपरेटिंग सिस्टम्स", "डेटाबेस", "वेब डेवलपमेंट"]
+struct Book: Codable {
+    let title: String
+    let author: String
 }
 ```
 
-जेसन के साथ काम करना शुरू करने के लिए, हमें जेसन फाइल को लोड और पार्स करना होगा। हम `JSONDecoder` का उपयोग कर सकते हैं जो हमें जेसन डेटा को Swift objects में डिकोड करने में मदद करेगा।
+अब हमें एक नया बुक बनाना होगा और उसे `JSONEncoder` का उपयोग करके एक JSON आइटम में सीरियलाइज करना होगा।
 
 ```Swift
-struct Student: Codable {
-  let name: String
-  let age: Int
-  let major: String
-  let courses: [String]
-}
-
-do {
-  let decoder = JSONDecoder()
-  let student = try decoder.decode(Student.self, from: studentJSON.data(using: .utf8)!)
-  print(student.name)
-  print(student.age)
-  print(student.major)
-  print(student.courses)
-} catch {
-  print(error)
-}
+let book = Book(title: "The Alchemist", author: "Paulo Coelho")
+let jsonEncoder = JSONEncoder()
+let jsonData = try! jsonEncoder.encode(book)
 ```
 
-उपरोक्त कोड के आउटपुट से हमें निम्न नतीजे मिलेंगे:
+यह हमें एक `Data` आइटम देगा, जिसे हम `print` करके देख सकते हैं।
 
-```Swift
-अमित
-21
-कम्प्यूटर साइंस
-["ऑपरेटिंग सिस्टम्स", "डेटाबेस", "वेब डेवलपमेंट"]
+```
+print(jsonData)
+
+// Output: 38 bytes
 ```
 
-## गहराई में जाएं
-
-हमने ऊपर दिखाए उदाहरण में जेसन डेटा को Swift object में पार्स किया है। अब जब भी हमें जेसन को डिकोड करने की जरूरत होगी, हमें सिर्फ `decode()` function का उपयोग करना होगा।
-
-और गहराई में जाने के लिए, हम जेसन के अन्य व
+अब हमें अपने JSON डेटा को `JSONDecoder` का उपयोग करके डिसीरियलाइज करना होगा। इसके लिए, हमें सिर्फ `Codable` टाइप के माध्यम से नया `struct` बनाना हो

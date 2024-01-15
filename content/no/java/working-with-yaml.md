@@ -1,6 +1,7 @@
 ---
-title:                "Java: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Java: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det kan virke skremmende å jobbe med YAML i begynnelsen, men det er en utrolig nyttig ferdighet å ha for alle som jobber med Java-programmering. YAML er en fleksibel og enkel måte å strukturere data på, og kan brukes til å konfigurere og lagre informasjon i en rekke ulike kontekster.
+## Hvorfor 
+Hvis du er en Java-utvikler og trenger å konfigurere applikasjoner eller håndtere datastrukturer, har du kanskje hørt om YAML. Dette er et enkelt og leselig filformat som kan være nyttig for å lagre og flytte data mellom forskjellige programmer.
 
-## Hvordan
-For å jobbe med YAML i Java, er det første du må gjøre å importere biblioteket "SnakeYAML" i prosjektet ditt. Dette gjøres ved å legge til følgende linje i prosjektets "pom.xml" fil:
+## Slik bruker du YAML i Java
+For å bruke YAML i Java, må du først inkludere en tredjepartsavhengighet i ditt prosjekt. Du kan gjøre dette ved å legge til følgende linje i pom.xml-filen din:
 
 ```Java
 <dependency>
-  <groupId>org.yaml</groupId>
-  <artifactId>snakeyaml</artifactId>
-  <version>1.25</version>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.24</version>
 </dependency>
 ```
 
-Deretter kan du begynne å lese og skrive YAML-filer i Java ved hjelp av følgende kodeeksempel:
+Etter å ha konfigurert avhengigheten, kan du nå begynne å bruke YAML i ditt Java-prosjekt. Først må du importere klassene for å lese og skrive YAML-filer:
 
 ```Java
-// Leser inn YAML-filen "exempel.yml"
-File yamlfile = new File("eksempel.yml");
-// Oppretter et YamlReader-objekt
-YamlReader reader = new YamlReader(new FileReader(yamlfile));
-// Leser inn objektet fra filen og lagrer det som en mappe
-Map map = (Map) reader.read();
-// Skriver ut informasjonen fra YAML-filen
-System.out.println(map.toString());
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.io.OutputStream;
 ```
 
-Dette eksemplet viser hvordan du kan lese en YAML-fil og lagre den som et Java Map-objekt. Du kan også skrive til YAML-filer ved hjelp av "YamlWriter" -klassen. Det er også mulig å konvertere Java-objekter til YAML-format ved hjelp av "Yaml" -klassen, og vice versa.
+For å lese fra en YAML-fil, kan du bruke følgende kode:
 
-## Dypdykk
-En av de største fordelene med å jobbe med YAML i Java er at det er enkelt å lese og skrive strukturerte data. YAML er også svært leselig for både mennesker og datamaskiner, og det er enkelt å navigere og finne informasjon i YAML-filer.
+```Java
+// Åpne en InputStream for YAML-filen
+InputStream input = new FileInputStream("minfil.yaml");
+// Opprett et Yaml-objekt
+Yaml yaml = new Yaml();
+// Bruk load-metoden for å lese YAML-filen og lagre det i et Java-objekt
+Object data = yaml.load(input);
+// Skriv ut dataene som er lagret i objektet
+System.out.println(data);
+```
 
-Det er også verdt å nevne at YAML er en plattformuavhengig løsning, noe som betyr at YAML-filer kan deles og brukes på tvers av ulike operativsystemer og programmeringsspråk.
+For å skrive til en YAML-fil, kan du bruke følgende kode:
+
+```Java
+// Åpne en OutputStream for å skrive til filen
+OutputStream output = new FileOutputStream("minfil.yaml");
+// Opprett et Yaml-objekt
+Yaml yaml = new Yaml();
+// Definer et Java-objekt som du vil lagre i YAML-filen
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+// Bruk dump-metoden for å skrive dataene til YAML-filen
+yaml.dump(map, output);
+```
+
+Etter å ha lest eller skrevet til en YAML-fil, kan du også arbeide med dataene i et Java-objekt ved hjelp av standardmetoder.
+
+## Dypdykk i YAML
+YAML støtter forskjellige datatyper, inkludert strenger, tall, lister og kart. Det er også mulig å inkludere kommentarer i dine YAML-filer. Du kan utforske disse funksjonene mer detaljert ved å lese dokumentasjonen for SnakeYAML-biblioteket.
 
 ## Se også
-- [YAML offisiell nettside](https://yaml.org/)
 - [SnakeYAML dokumentasjon](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
-- [Java YAML API-dokumentasjon](https://www.javatips.net/api/snakeyaml-master/src/main/java/org/yaml/snakeyaml/Yaml.java)
+- [YAML offisiell side](https://yaml.org/)
+- [Java-YAML bibliotek](https://github.com/FasterXML/jackson-dataformats-text)

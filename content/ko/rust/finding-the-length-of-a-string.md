@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 문자열의 길이를 찾기"
-simple_title:         "문자열의 길이를 찾기"
+title:                "스트링의 길이를 찾는 방법"
+html_title:           "Rust: 스트링의 길이를 찾는 방법"
+simple_title:         "스트링의 길이를 찾는 방법"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 문자열의 길이를 찾아야 할까요?
 
-문자열의 길이를 찾는 것에 대해 관심이 많으신가요? 라스트(Rust) 프로그래밍을 익혀서 다른 언어와 비교할 때 어떤 장점을 경험할 수 있는지 알아보세요!
+문자열의 길이를 알아내는 것은 프로그래밍에서 매우 중요한 일입니다. 예를 들어, 입력한 패스워드가 일정 길이를 초과하는지 확인할 때 문자열의 길이가 필요합니다. 따라서 프로그래밍을 하면서 문자열의 길이를 알아내는 기능은 꼭 필요한 일입니다.
 
-## 방법
+## 어떻게 하나요?
 
-문자열의 길이를 찾는 것은 Raste 프로그래밍에서 매우 간단합니다. 다음과 같은 코드를 사용할 수 있습니다.
+우선, Rust에서 문자열의 길이를 알아내려면 `len()` 함수를 사용해야 합니다. 이 함수는 해당 문자열의 길이를 반환합니다. 아래는 `len()` 함수를 사용하여 문자열 "안녕하세요"의 길이를 알아내는 예제 코드입니다.
 
-```Rust
-let string = "안녕하세요!";
-println!("{}", string.len()); // Output: 7
+```rust
+let string = "안녕하세요";
+let length = string.len(); // 문자열의 길이를 변수에 저장
+println!("길이: {}", length); // 출력 결과: "길이: 5"
 ```
+위 코드에서 볼 수 있듯이 `len()` 함수를 사용하기 위해선 문자열을 변수에 할당해야 합니다. 그리고 해당 변수를 이용하여 `len()` 함수를 호출하여 문자열의 길이를 알아낼 수 있습니다.
 
-이 코드는 문자열의 길이를 찾는 내용을 담고 있습니다. `len()` 메소드를 사용하여 문자열의 길이를 확인할 수 있습니다. 위의 경우, "안녕하세요!"라는 문자열은 총 7개의 문자로 이루어져 있으므로 `7`이 출력됩니다.
+## 깊게 파헤쳐 보기
 
-## 심층 탐구
+Rust에서 문자열의 길이를 알아내는 방법은 여러가지가 있습니다. 위 예제에서는 `len()` 함수를 사용하였지만 `chars()`를 사용해도 문자열의 길이를 알아낼 수 있습니다. `chars()`는 문자열의 길이를 문자 단위로 반환하므로 한글의 경우 모음이나 자음 개수를 알아낼 수 있습니다. 이 외에도 `bytes()` 함수를 사용하면 문자열의 길이를 바이트 단위로 반환하므로 문자열 내부의 다양한 문자를 분석하는 데에도 유용합니다.
 
-길이를 찾는 것이 얼마나 중요한 작업인지 아시나요? 문자열의 길이는 많은 프로그래밍 작업에서 필수적인 요소입니다. 예를 들어, 사용자로부터 입력받은 문자열의 길이를 확인하여 알맞은 메시지를 보여주거나, 데이터베이스에 저장할 때 문자열의 길이를 제한하기 위해서도 사용됩니다. 또한, 문자열을 처리하는 다양한 알고리즘에서도 문자열의 길이를 기준으로 수행되는 작업들이 많습니다.
+# 참고자료
 
-## See Also
+- [Rust 공식 문서 - String](https://doc.rust-lang.org/std/string/index.html)
+- [Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- [Rust Programming Language - String Length](https://www.tutorialspoint.com/rust/rust_string_length.htm)
 
-- [Rust 공식 문서](https://www.rust-lang.org/ko) 
-- [Rust 프로그래밍 강좌](https://velog.io/@pksung95/Rust-%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9A%A9-%EA%B0%95%EC%A2%8C)
-- [Rust 프로그래밍 예제](https://github.com/Eray0411/Rust-Programming-Examples)
+## 더 보기
+
+- [Rust퀴즈 - 문자열 길이 알아내기](https://rustquiz.com/ko/strings/length.html)
+- [Rust 커뮤니티 포럼](https://forum.rustkr.org/)

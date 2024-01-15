@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 文字列を小文字に変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "Elm: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-プログラマーの中には、文字列を小文字に変換する必要がある場合があります。例えば、データの検索や比較を行う際に、大文字と小文字を区別したくない場合などです。Elmでは、簡単に文字列を小文字に変換することができるので、この技術を学ぶことは重要です。
+## Why
 
-## 方法
-文字列を小文字に変換するには、StringモジュールのtoLower関数を使います。例えば、次のように使用します。
+文字列を小文字に変換する理由は様々です。例えば、ユーザーからの入力を一貫性のあるフォーマットに変換する必要がある場合や、ソートや比較のために文字列を正規化する必要がある場合には便利です。
+
+## How To
+
+まず、`String.toLower`関数を使用して文字列を小文字に変換します。
 
 ```Elm
 import String
 
-sampleString = "ELM PROGRAMMING"
-
-lowercaseString = String.toLower sampleString
-
+String.toLower "HELLO WORLD" 
 ```
 
-このコードを実行すると、"ELM PROGRAMMING"が"elm programming"に変換されます。
+出力は`"hello world"`になります。
 
-## 深堀り
-Elmでは、文字列を操作するための便利な関数が多数用意されています。しかし、StringモジュールのtoLower関数は単純で、特に深い解説を必要としません。ただ、文字列を小文字に変換することに加えて、toLower関数には文字列内のUniode文字をASCIIに変換する機能もあります。
+また、リスト内の全ての文字列を小文字に変換することもできます。
 
-## 詳しくは
-詳しい情報やElmの文字列を操作するための他の便利な関数については、次のリンクを参考にしてください。
+```Elm
+import String
 
-[Elm Strings - Elm Guide](https://guide.elm-lang.org/strings/)
+List.map String.toLower ["CAT", "DOG", "FISH"]
+```
 
-[Elm Stringモジュール - Elmドキュメント](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+出力は`["cat", "dog", "fish"]`になります。
 
-[The Power of Elm Strings - Charlie Koster](https://dev.to/charliekoster/gotchas-in-the-elm-string-modules-a-hitchhiker-s-guide-52df)
+## Deep Dive
 
-[Elm String Operations - TomaEasy](https://github.com/TomaEasy/elm-string-operations)
+`String.toLower`関数は、内部でUnicodeの`String.foldl`関数を使用しています。これにより、どんな言語でも正確に小文字に変換されます。ただし、アクセントや記号などは除外されるので注意が必要です。
 
-## 他のリソースを参照する
-[Learn Elm - 公式Elmドキュメント](https://elm-lang.org/docs)
+また、`String.toLower`関数はイミュータブルなので、元の文字列は変更されません。新しい文字列のコピーが作成されるため、パフォーマンスには影響します。
 
-[String toLowerCase - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## See Also
+
+- [Elm公式ドキュメント - String](https://elm-lang.org/docs/strings)
+- [Unicodeの小文字変換アルゴリズムについて](https://unicode.org/faq/casemap_charprop.html#28)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Lettura di un file di testo"
+title:                "Lettura di un file di testo"
+html_title:           "Clojure: Lettura di un file di testo"
 simple_title:         "Lettura di un file di testo"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,47 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Lettura di un file di testo può essere molto utile per gli sviluppatori Clojure. Ci permette di accedere alle informazioni memorizzate in un file e di utilizzarle nel nostro codice. In questo articolo, esploreremo come leggere un file di testo utilizzando Clojure.
+Se sei un programmatore che lavora con linguaggi di programmazione funzionali o sei semplicemente curioso di esplorare nuovi paradigmi di programmazione, la lettura di un file di testo potrebbe risultare interessante. Inoltre, è una skill fondamentale per chi vuole automatizzare alcune attività legate alla gestione dei dati.
 
 ## Come fare
 
-Per leggere un file di testo in Clojure, dobbiamo prima importare il modulo `clojure.java.io`. Questo modulo ci fornisce tutte le funzioni necessarie per lavorare con file di testo.
+Per leggere un file di testo in Clojure, puoi utilizzare la funzione `slurp` che prende come argomento il percorso del file e restituisce una stringa con tutto il contenuto del file. Ad esempio:
 
 ```clojure
-(require '[clojure.java.io :as io])
+(def testo (slurp "testo.txt"))
 ```
-
-Una volta importato il modulo, possiamo utilizzare la funzione `slurp` per leggere il contenuto di un file di testo. Definiamo una variabile `file` contenente il percorso del file che vogliamo leggere.
-
-```clojure
-(def file "file.txt")
-```
-
-Ora possiamo utilizzare la funzione `slurp` passando il percorso del file come parametro e assegnare il contenuto a una variabile `content`.
-
-```clojure
-(def content (slurp file))
-```
-
-Possiamo quindi stampare il contenuto del file utilizzando la funzione `println`.
-
-```clojure
-(println content)
-```
-
-Il risultato dovrebbe essere il seguente:
-
-```
-Questo è il contenuto del mio file di testo.
-```
+La variabile `testo` conterrà il contenuto del file "testo.txt". Ora puoi utilizzarla per eseguire qualsiasi operazione su di esso.
 
 ## Approfondimento
 
-Oltre alla funzione `slurp`, il modulo `clojure.java.io` ci fornisce anche altre funzioni utili per lavorare con file di testo. Ad esempio, possiamo utilizzare la funzione `file-seq` per ottenere un'elenco di tutti i file in una determinata directory e la funzione `file?` per verificare se un determinato percorso si riferisce a un file o a una directory.
+In Clojure, è anche possibile utilizzare la libreria `clojure.java.io` per lavorare con i file. In particolare, la funzione `with-open` ti permette di leggere un file e chiuderlo automaticamente una volta finito, garantendo una gestione sicura delle risorse.
 
-Inoltre, Clojure ci offre la possibilità di leggere e scrivere file in formato JSON utilizzando il modulo `clojure.data.json`.
+```clojure
+(defn leggi-file [nome-file]
+  (with-open [reader (clojure.java.io/reader nome-file)]
+    (doseq [line (.readLines reader)]
+      (println line))))
+```
+Il codice sopra utilizza la funzione `readLines` per leggere ogni riga del file e stamparla a schermo. Una volta terminato, il file viene chiuso automaticamente grazie alla funzione `with-open`.
 
 ## Vedi anche
 
-- [Documentazione di clojure.java.io](https://clojuredocs.org/clojure.java.io)
-- [Documentazione di clojure.data.json](https://github.com/clojure/data.json)
+- Clojure.io: https://clojure.org/reference/io
+- Documentazione di Clojure.java.io: https://clojure.github.io/clojure/clojure.java.io-api.html
+- Esempi di codice per leggere file in Clojure: https://gist.github.com/gregsexton/4445674

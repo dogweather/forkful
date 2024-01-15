@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Uuden projektin aloittaminen"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Bash: Uuden projektin aloittaminen"
 simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,68 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+On monia syitä, miksi haluat aloittaa uuden Bash-projektin. Se voi olla henkilökohtainen projekti, joka auttaa sinua hallitsemaan päivittäisiä tehtäviä tai se voi olla osa suurempaa projektiyhteisöä, jossa yhteistyöskentelet muiden kanssa.
 
-Miksi aloittaa uusi projekti? On monia syitä, miksi voit haluta aloittaa uuden ohjelmointiprojektin. Ehkä haluat parantaa taitojasi, luoda jotain uutta ja jännittävää tai ratkaista ongelman, joka on vaivannut sinua. Mitä ikinä syy onkaan, aloittaminen uudesta projektista on jännittävää ja palkitsevaa.
+## Kuinka
+### Aloitettavat asiat
+Ensinnäkin sinun täytyy tietää, että Bash on Linux-järjestelmien vakio käyttöliittymä. Bash-skriptit voivat automatisoida monia tehtäviä, kuten tiedostojen kopioinnin, hakemistorakenteiden luomisen ja palvelinten hallinnan. Aloittaaksesi uuden Bash-projektin, sinun täytyy ensin varmistaa, että Bash on asennettu järjestelmääsi.
 
-## Miten aloittaa
-
-Bash on loistava työkalu aloittamiseen uuden projektin kanssa, sillä se on helppokäyttöinen ja monipuolinen. Se tarjoaa paljon mahdollisuuksia, jotka auttavat sinua toteuttamaan projektisi nopeasti ja tehokkaasti. Alla on muutamia esimerkkejä Bash-koodista, jotka auttavat sinua aloittamaan uuden projektin.
-
-```Bash
-#!/bin/bash
-
-echo "Tervetuloa uuden projektin pariin!"
-echo "Anna projektisi nimi:"
-read nimi
-echo "Olet aloittamassa uutta projektia nimeltä $nimi."
-echo "Onnea matkaan!"
+```
+Bash -versio
+```
+```
+$ GNU Bash, Versio 5.0.16 (x86_64-pc-linux-gnu)
 ```
 
-Tämä Bash-koodi luo tervetuloviestin ja pyytää käyttäjää antamaan projektin nimen. Sitten se tulostaa projektin nimen ja toivottaa onnea matkaan.
+### Luodaan uusi tiedosto
+Seuraavaksi meidän täytyy luoda uusi tiedosto, joka sisältää Bash-skriptimme. Käytämme tähän ```touch``` komentoa.
 
-```Bash
-#!/bin/bash
-
-echo "Luo uusi kansio projektille:"
-read kansio
-mkdir $kansio
-echo "Uusi kansio nimeltä '$kansio' on luotu."
-echo "Siirrytään kansioon..."
-cd $kansio
-echo "Kansio vaihdettu, hyvää työskentelyä!"
+```
+Kosketa uusi_tiedosto.sh
 ```
 
-Tämä koodi pyytää käyttäjää luomaan uuden kansion projektia varten ja vaihtaa sitten siihen kansioon. Tämä on hyödyllistä, jos haluat pitää projektisi tiedostot järjestyksessä samassa paikassa.
+### Muokkaa tiedostoa
+Nyt voimme muokata uutta tiedostoa lisäämällä Bash-komentoja. Tässä esimerkissä käytämme ```echo``` komentoa tulostamaan yksinkertaisen viestin.
 
-```Bash
-#!/bin/bash
-
-# Asetetaan muuttuja "nimi" käyttäjän antamalla arvolla
-nimi=$1
-mkdir $nimi
-touch $nimi/index.html
-echo "<!DOCTYPE html>
-<html>
-<head>
-<title>$nimi</title>
-</head>
-<body>
-<h1>Tervetuloa uuteen projektiin $nimi!</h1>
-</body>
-</html>" >> $nimi/index.html
-echo "HTML-tiedosto luotu onnistuneesti."
+```
+Echo "Hei maailma!"
 ```
 
-Tämä koodi ottaa käyttäjältä nimen ja luo sen perusteella kansion ja HTML-tiedoston, joka tulostaa tervetuloviestin projektin nimen mukaan. Tämä on hyödyllistä, jos haluat aloittaa vähän isomman projektin, johon sisältyy myös verkkosivun luominen.
+### Suoritetaan skripti
+Voimme suorittaa skriptimme komennolla ```bash``` ja tiedoston nimi.
 
-## Syväkatsaus
+```
+Bash uusi_tiedosto.sh
+```
+Tämän tulisi tulostaa yksinkertainen viesti "Hei maailma!".
 
-Uuden projektin aloittaminen Bashilla on helppoa ja tehokasta. Bash tarjoaa paljon mahdollisuuksia projektisi alkuun pääsemiseen. Voit myös yhdistää Bashin muiden ohjelmointikielten kanssa, jolloin voit luoda monimutkaisempia projekteja.
-
-Seuraavaksi voit syventyä Bashin monipuolisiin ominaisuuksiin ja aloittaa suunnittelemaan omaa projektiasi. Muista myös tutustua Bashin dokumentaatioon ja yrittää löytää uusia tapoja hyödyntää sitä projektissasi.
+## Syvennys
+Aloittaessasi uuden Bash-projektin on hyödyllistä tietää myös muita komentoja kuten ```grep```, joka auttaa tietojen hakemisessa ja ```sed```, joka auttaa tiedostojen muokkaamisessa. Voit myös luoda muuttujia Bash-skripteihin käyttämällä syntaksia ```muuttuja="arvo"``` ja käyttää niitä myöhemmin koodissasi.
 
 ## Katso myös
-
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [BASH Programming - Introduction and Tutorial](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Bashin virallinen oppaita ja ohjeita](https://www.gnu.org/software/bash/manual/bash.html)
+- [10 Bash-komentoa aloittelijoille](https://www.hostinger.com/tutorials/bash-commands)
+- [Bash Scripting Tutorial - Tutorialspoint](https://www.tutorialspoint.com/unix/bash_scripting.htm)

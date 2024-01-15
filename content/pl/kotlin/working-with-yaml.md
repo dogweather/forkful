@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Kotlin: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,53 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pracować z YAML?
+## Dlaczego
 
-Już nie musisz być programistą, aby usłyszeć o YAML! Jest to język znaczników, który jest coraz popularniejszy w świecie IT. Pozwala on na przechowywanie i przesyłanie danych w sposób uporządkowany i czytelny dla ludzi. Jest szczególnie przydatny w przypadku konfiguracji aplikacji lub serwisów sieciowych. Dzięki temu wpisowi dowiesz się, dlaczego warto poznać YAML i jak zacząć z nim pracować.
+Jeśli zajmujesz się programowaniem w języku Kotlin i potrzebujesz wygodnego formatu do przechowywania i przesyłania danych, YAML może być idealnym wyborem. Ten format jest czytelny dla ludzi, łatwy do wprowadzania zmian i wspiera szeroki zakres typów danych. Czytaj dalej, aby dowiedzieć się, dlaczego warto zapoznać się z YAML w kontekście programowania Kotlin.
 
-## Jak zacząć pracę z YAML w języku Kotlin?
+## Jak to zrobić
 
-Pierwszym krokiem do pracy z YAML w języku Kotlin jest dodanie odpowiedniej biblioteki do swojego projektu. Możesz zrobić to za pomocą menedżera pakietów w swoim środowisku programistycznym lub ręcznie dodać ją do swojego pliku `build.gradle`.
-
-Następnie musisz utworzyć obiekt `Yaml` z tej biblioteki, aby móc wczytywać i zapisywać dane w formacie YAML. Oto przykładowy kod:
+Kotlin dostarcza nam wygodną bibliotekę o nazwie "kotlinx.serialization", która umożliwia nam pracę z YAML. Najpierw musimy zdefiniować model danych (klasę) do serializacji w formacie YAML. Następnie możemy wywołać funkcję "encode" i przekazać jej nasz model danych, aby otrzymać reprezentację YAML w postaci tekstu. Przykładowy kod wygląda następująco:
 
 ```Kotlin
-// Tworzymy obiekt Yaml
-val yaml = Yaml()
-// Definiujemy dane do zapisania w formacie YAML
-val data = mapOf(
-    "imie" to "Kamil",
-    "wiek" to 30,
-    "hobby" to listOf("programowanie", "sport")
-)
-// Zapisujemy dane do pliku `dane.yaml`
-File("dane.yaml").writeText(yaml.dump(data))
+// Definicja modelu danych
+@Serializable
+data class User(val name: String, val age: Int)
+
+val user = User("John", 25)
+
+// Serializacja do formatu YAML
+val yaml = Yaml.default.encodeToString(User.serializer(), user)
+println(yaml)
 ```
 
-Teraz możemy odczytać dane z pliku `dane.yaml` za pomocą poniższego kodu:
+W powyższym kodzie tworzymy prosty model danych "User", który jest oznaczony adnotacją "@Serializable", aby mogła być wykorzystana przez bibliotekę serialization. Następnie wywołujemy funkcję "encodeToString", przekazując nasz model danych oraz jego serializator. Otrzymana reprezentacja YAML zostaje wyświetlona na ekranie.
+
+Możemy również zmodyfikować pewne aspekty serializacji, na przykład wybrać wybrane pola do uwzględnienia lub wykluczenia, korzystając z adnotacji "@SerialName" oraz "@Transient". Pełną dokumentację biblioteki można znaleźć na oficjalnej stronie.
+
+## Deep Dive
+
+Biblioteka "kotlinx.serialization" oferuje także możliwość deserializacji danych z formatu YAML na obiekty Kotlin. Po prostu wywołujemy funkcję "decodeFromString" i podajemy jej odpowiedni serializator oraz tekst w formacie YAML, a otrzymane dane zostaną przypisane do instancji naszego modelu danych. Przykładowy kod wygląda następująco:
 
 ```Kotlin
-// Wczytujemy dane z pliku `dane.yaml`
-val dane: Map<*, *> = yaml.load(File("dane.yaml").inputStream()) as Map<*, *>
-// Wyświetlamy dane na konsoli
-println(dane)
+// Deserializacja z formatu YAML do modelu danych
+val yaml = """
+    name: Jane
+    age: 30
+""".trimIndent()
+
+val user = Yaml.default.decodeFromString(User.serializer(), yaml)
+println(user)
 ```
 
-**Output:**
-```
-{imie=Kamil, wiek=30, hobby=[programowanie, sport]}
-```
+W powyższym kodzie tworzymy tekst w formacie YAML i przekazujemy go do funkcji "decodeFromString", w której podajemy odpowiedni serializator. Otrzymujemy instancję naszego modelu danych, którą wyświetlamy na ekranie.
 
-## Zagłębiamy się w świat YAML
-
-Teraz, gdy już wiesz, jak zacząć pracę z YAML w języku Kotlin, czas poznać nieco więcej na jego temat. YAML jest językiem znaczników, więc możesz tworzyć struktury danych w sposób dużo bardziej czytelny dla ludzi niż w przypadku formatów takich jak XML czy JSON. Możesz również wykorzystywać różne typy danych, w tym częściowe i zagnieżdżone mapy oraz listy.
-
-Pamiętaj, że YAML jest językiem wrażliwym na wcięcia, więc dobrze jest trzymać się jednego standardu w swoim kodzie.
-
-Teraz już wiesz, dlaczego warto poznać YAML i jak zacząć z nim pracować w języku Kotlin. Powodzenia w dalszej nauce!
+Biblioteka ta obsługuje także różne typy kolekcji, walidację danych oraz dostarcza zaawansowanych funkcji, na przykład możliwość zmieniania nazw pól w trakcie serializacji lub deserializacji. Dzięki temu możemy dopasować format YAML do swoich potrzeb.
 
 ## Zobacz także
 
-- [Dokumentacja biblioteki SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Home)
-- [Przykłady wykorzystania YAML w języku Kotlin](https://github.com/ntfalls/kotlin-yaml-example)
-- [Tutorial o YAML i jego składni](https://www.tutorialspoint.com/yaml/index.htm)
+Jeśli chcesz dowiedzieć się więcej na temat YAML i jak go wykorzystać w języku Kotlin, polecam zapoznanie się z poniższymi linkami:
+
+- Oficjalna dokumentacja biblioteki "kotlinx.serialzation": https://github.com/Kotlin/kotlinx.serialization
+- Przykłady kodu i użycia biblioteki: https://github.com/Kotlin/kotlinx.serialization/tree/master/formats/yaml/yaml-tests
+- Poradnik na Medium o wykorzystaniu YAML w Kotlinie: https://medium.com/@pawelgorniak/yaml-serialization-in-kotlin-b9e5a7018eb

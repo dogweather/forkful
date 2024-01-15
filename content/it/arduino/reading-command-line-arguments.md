@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Leggere gli argomenti dalla linea di comando"
-simple_title:         "Leggere gli argomenti dalla linea di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Arduino: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,50 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché 
 
-Capita spesso che ci troviamo ad affrontare problemi di programmazione che richiedono l'utilizzo di input da parte dell'utente. Ciò può essere problematico in alcuni casi, specialmente se non siamo esperti di programmazione. Fortunatamente, esiste un modo semplice per gestire questo tipo di problemi: leggere gli argomenti dalla riga di comando. In questo articolo spiegheremo come fare usando Arduino.
+Ci sono molte situazioni in cui è indispensabile per un programmatore leggere e comprendere gli argomenti della riga di comando. Questo articolo ti spiegherà come farlo utilizzando la programmazione di Arduino.
 
-## Come fare
+## Come Fare
 
-Per prima cosa, è importante sapere come funzionano gli argomenti della riga di comando in Arduino. Fondamentalmente, la riga di comando è una forma di input che permette all'utente di inserire dei comandi o dei dati attraverso la tastiera. Su Arduino, è possibile leggere questi argomenti utilizzando la funzione "Serial.read()". 
+Per leggere gli argomenti della riga di comando in Arduino, è necessario utilizzare la funzione "Serial.readString()". Questa funzione legge e restituisce l'argomento come una stringa, che può essere successivamente elaborata dal programma. Ecco un esempio di codice che legge l'argomento e lo stampa sulla console seriale:
 
-Ecco un semplice esempio di codice che legge un argomento dalla riga di comando e lo stampa sulla console:
-
-```Arduino
-String input; // dichiarazione di una variabile di tipo stringa
-void setup() {
-  Serial.begin(9600); // inizializza la comunicazione seriale
+```
+Arduino.setup() {
+  Serial.begin(9600); //inizializza la comunicazione seriale
 }
+
 void loop() {
-  if (Serial.available()) { // controlla se ci sono dati disponibili sulla porta seriale
-    input = Serial.readStringUntil('\n'); // legge l'input fino a quando trova un "invio"
-    Serial.println(input); // stampa l'input sulla console
+  if (Serial.available()) { //controlla se sono disponibili dati sulla porta seriale
+    String arg = Serial.readString(); //legge l'argomento e lo salva nella variabile "arg"
+    Serial.println(arg); //stampa l'argomento sulla console seriale
   }
 }
 ```
 
-In questo esempio, la funzione "readStringUntil()" legge i dati provenienti dalla riga di comando fino a quando non trova il carattere "\n", che rappresenta un "invio". L'input viene quindi assegnato alla variabile "input" e stampato sulla console utilizzando la funzione "println()". 
+Se si desidera utilizzare l'argomento per eseguire un'operazione specifica, è possibile utilizzare la funzione "analogWrite()" di Arduino. Ad esempio, se vogliamo controllare la luminosità di un LED utilizzando l'argomento della riga di comando, possiamo fare così:
+
+```
+Arduino.setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available()) {
+    String arg = Serial.readString();
+    int brightness = arg.toInt(); //converte la stringa in un valore numerico intero
+    analogWrite(LED_PIN, brightness); //imposta la luminosità del LED sul valore letto dalla riga di comando
+  }
+}
+```
 
 ## Approfondimento
 
-Oltre alla funzione "readStringUntil()", esistono altri modi per leggere gli argomenti dalla riga di comando in Arduino. Una di queste è la funzione "parseInt()", che permette di leggere e convertire un intero dalla riga di comando. Ecco un semplice esempio di codice che utilizza questa funzione:
+La funzione "Serial.readString()" legge solo il primo argomento della riga di comando. Se ci sono più argomenti separati da spazi, è possibile utilizzare la funzione "Serial.parseInt()" per leggerli uno per uno. Ad esempio, se abbiamo una riga di comando del tipo "led 255 100" dove il primo argomento è il nome dell'operazione da eseguire e gli altri due sono valori numerici, possiamo utilizzare questo codice per estrarre tutti e tre gli argomenti:
 
-```Arduino
-int input; // dichiarazione di una variabile di tipo intero
-void setup() {
-  Serial.begin(9600); // inizializza la comunicazione seriale
+```
+Arduino.setup() {
+  Serial.begin(9600);
 }
+
 void loop() {
-  if (Serial.available()) { // controlla se ci sono dati disponibili sulla porta seriale
-    input = Serial.parseInt(); // legge l'input come intero
-    Serial.println(input); // stampa l'input sulla console
+  if (Serial.available()) {
+    String operation = Serial.readString(); //primo argomento: "led"
+    int value1 = Serial.parseInt(); //secondo argomento: 255
+    int value2 = Serial.parseInt(); //terzo argomento: 100
+    //qui è possibile eseguire un'operazione specifica in base al nome dell'operazione e ai valori numerici
   }
 }
 ```
 
-## Vedi anche
+## Vedi Anche
 
-Per maggiori informazioni su come leggere gli argomenti dalla riga di comando in Arduino, puoi consultare i seguenti link:
-
-- https://forum.arduino.cc/index.php?topic=485792.0
-- https://www.arduino.cc/en/serial/readstringuntil
-- https://www.arduino.cc/en/serial/parseint
+- [Reference della funzione Serial.readString()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
+- [Tutorial sul controllo dei LED con Arduino](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Fade)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Buscando e substituindo texto"
+html_title:           "TypeScript: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -9,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que fazer a substituição de texto em TypeScript?
+## Por que 
 
-A busca e substituição de texto é uma tarefa comum em muitas linguagens de programação, incluindo TypeScript. Ela pode ser usada para fazer correções em um grande volume de código, alterar uma determinada palavra ou expressão em vários arquivos ou até mesmo para automatizar tarefas repetitivas. Ao aprender como realizar essa tarefa em TypeScript, você pode economizar muito tempo e esforço no seu processo de desenvolvimento.
+Realizar a busca e substituição de textos é uma tarefa comum em programação. Essa prática permite que sejam feitas alterações em massa em um grande volume de dados de forma rápida e eficiente.
 
-## Como fazer a substituição de texto em TypeScript?
+## Como fazer 
 
-Para fazer a substituição de texto em TypeScript, você pode utilizar o método `replace()` da classe `String`. Ele aceita dois parâmetros: o padrão que você deseja substituir e o texto de substituição. Veja um exemplo prático:
-
-```TypeScript
-let texto = "Olá, sou um texto de exemplo."
-let novoTexto = texto.replace("Olá", "Hi");
-console.log(novoTexto);
-
-// Output: Hi, sou um texto de exemplo.
-```
-
-Neste exemplo, usamos o método `replace()` para substituir a palavra "Olá" por "Hi" no texto original.
-
-Também é possível usar expressões regulares para fazer substituições mais complexas. Veja outro exemplo:
+Para realizar a busca e substituição de texto em TypeScript, é necessário utilizar a função `replace()`. Essa função recebe dois parâmetros: o primeiro é o texto a ser buscado e o segundo é o novo texto que irá substituí-lo. Veja um exemplo prático abaixo:
 
 ```TypeScript
-let texto = "Esse código foi escrito em TypeScript.";
-let novoTexto = texto.replace(/TypeScript/g, "Python");
-console.log(novoTexto);
+let str: string = "Olá mundo!";
 
-// Output: Esse código foi escrito em Python.
+// Substituindo "mundo" por "Brasil"
+let novoStr = str.replace("mundo", "Brasil");
+
+console.log(novoStr); // Saída: Olá Brasil!
 ```
 
-Neste caso, usamos uma expressão regular para substituir todas as ocorrências da palavra "TypeScript" por "Python" no texto original.
+No exemplo acima, a função `replace()` é usada para substituir a palavra "mundo" por "Brasil" na string inicial. É importante ressaltar que a função `replace()` substitui apenas a primeira ocorrência do texto a ser buscado. Para substituir todas as ocorrências, é necessário utilizar uma expressão regular. Veja o exemplo abaixo:
 
-## Uma visita mais aprofundada à substituição de texto
+```TypeScript
+let str: string = "Ser ou não ser, eis a questão.";
 
-Existem diversas opções e possibilidades ao utilizar o método `replace()` em TypeScript. É possível fazer substituições sensíveis a maiúsculas e minúsculas, substituir apenas a primeira ocorrência de um padrão, utilizar funções de callback e muito mais. Recomendamos que você confira a documentação oficial da classe `String` para entender todas as opções disponíveis.
+// Substituindo todas as ocorrências de "ser" por "estar"
+let novoStr = str.replace(/ser/g, "estar");
 
-## Veja também
+console.log(novoStr); // Saída: Estar ou não estar, eis a questão.
+```
 
-- [Documentação oficial do método `replace()` em TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-replace)
-- [Outras dicas e truques em TypeScript](https://devblogs.microsoft.com/typescript/tag/tips-tricks/)
+## Mergulho Profundo 
+
+Além da função `replace()`, TypeScript também possui outras formas de realizar a busca e substituição de textos. Uma delas é utilizando a função `replaceAll()`, que substitui todas as ocorrências do texto a ser buscado. Dessa forma, não é necessário utilizar a expressão regular como no exemplo anterior.
+
+Outra opção é utilizar o método `split()` em conjunto com o método `join()`. O método `split()` separa a string em um array, utilizando o texto a ser buscado como delimitador. Já o método `join()` une os elementos do array utilizando o novo texto como separador. Veja o exemplo abaixo:
+
+```TypeScript
+let str: string = "Dia da árvore";
+
+// Substituindo "árvore" por "natureza"
+let novoStr = str.split("árvore").join("natureza");
+
+console.log(novoStr); // Saída: Dia da natureza
+```
+
+Esses são apenas alguns exemplos de como realizar a busca e substituição de texto em TypeScript. Existem diversas outras formas de fazer essa tarefa, e cabe ao programador escolher qual é a melhor opção para cada situação.
+
+## Veja também 
+
+- Documentação completa da função `replace()` no site oficial do TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html#replace
+- Mais informações sobre expressões regulares em TypeScript: https://www.sitepoint.com/regular-expressions-typescript/
+- Tutorial de busca e substituição de texto em TypeScript: https://codecraft.tv/courses/typescript/regular-expressions-and-string-methods/search-replace/

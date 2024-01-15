@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "TypeScript: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,45 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil är en viktig uppgift inom programmering eftersom det tillåter oss att hantera stora mängder information på ett strukturerat sätt. Det är särskilt användbart när vi behöver bearbeta data eller importera information från en extern källa.
+Att läsa en textfil är en grundläggande uppgift inom programmering, oavsett vilket språk man använder. Det är viktigt att förstå hur man läser en textfil för att kunna hämta och använda data från olika källor, som till exempel en databas eller en webbserver.
 
-## Hur man läser en textfil i TypeScript
+## Hur man gör det
 
-För att läsa en textfil i TypeScript behöver vi först använda det inbyggda Node.js biblioteket "fs" (filsystem). Vi skapar sedan en variabel som tilldelar den vägen till vår textfil. Sedan använder vi funktionen "readFile" för att läsa och behandla filen. Här är ett exempel på hur det skulle kunna se ut:
+För att läsa en textfil i TypeScript använder man funktionen readFile() från File System-modulen. Detta gör man genom att först importera modulen som "fs" och sedan anropa readFile() med sökvägen till den önskade filen och en kodningssträng som argument.
 
 ```TypeScript
-import * as fs from "fs";
+import fs from "fs";
 
-let textfil = "exempelfil.txt";
-
-fs.readFile(textfil, (fel, data) => {
-  if (fel) {
-    console.log("Kunde inte läsa filen: " + fel);
-  } else {
-    console.log(data);
-  }
+fs.readFile("exempelfil.txt", "utf-8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
 });
 ```
 
-Detta kommer att skriva ut hela innehållet i vår textfil i konsolen. Vi kan också använda metoden "readFileSync" för att synkront läsa filen utan att använda en callback-funktion. Det är dock viktigt att notera att detta kan göra vår applikation långsammare om filen är väldigt stor.
+I exemplet ovan läser vi filen "exempelfil.txt" och loggar ut dess innehåll till konsolen. Notera att readFile() är en asynkron funktion och tar emot en callback-funktion som argument. Detta gör att man måste hantera eventuella fel som kan uppstå vid läsning av filen.
 
-## Djupdykning
+## Fördjupning
 
-När vi läser en textfil i TypeScript, returneras datan som en "buffer" som behöver konverteras till rätt teckenkodning för att läsas korrekt. Detta görs genom att tillhandahålla det önskade teckensetet som en parameter till funktionen "readFile". Till exempel, om vi vill använda UTF-8, skulle det se ut så här:
+När man läser en textfil i TypeScript så skickas filens innehåll som en sträng tillbaka som resultat. För att kunna använda den datan i vår kod, kan vi behöva göra vissa manipulationer, som att dela upp strängen i mindre delar eller omvandla den till ett annat format som en array eller ett objekt.
 
-```TypeScript
-fs.readFile(textfil, "utf-8", (fel, data) => {
-  if (fel) {
-    console.log("Kunde inte läsa filen: " + fel);
-  } else {
-    console.log(data);
-  }
-});
-```
+Det finns också andra metoder för att läsa en textfil, som till exempel readFileSync() som returnerar filinnehållet som en sträng utan att behöva använda en callback-funktion. Det är också möjligt att ange andra sökvägar beroende på var filen befinner sig, som till exempel en relativ sökväg från vår projektmapp.
 
-Det är också viktigt att hantera eventuella fel som kan uppstå när vi läser en textfil, till exempel om filen inte finns eller om det finns problem med åtkomst.
+## Se även
 
-## Se också
-
-- [Filsystemsbiblioteket i Node.js](https://nodejs.org/api/fs.html)
-- [TypeScript: Utforskning av Node.js-webben](https://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html)
+- [Dokumentation för File System-modulen](https://nodejs.org/api/fs.html)
+- [Läs en textfil i JavaScript](https://www.programiz.com/javascript/examples/read-file)
+- [Manipulera textfiler i TypeScript](https://www.techiediaries.com/node-typescript-write-read-files/)

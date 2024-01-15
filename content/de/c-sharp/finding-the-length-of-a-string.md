@@ -1,5 +1,6 @@
 ---
-title:                "C#: Die Länge eines Strings finden"
+title:                "Die Länge eines Strings finden"
+html_title:           "C#: Die Länge eines Strings finden"
 simple_title:         "Die Länge eines Strings finden"
 programming_language: "C#"
 category:             "C#"
@@ -11,51 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Finden der Länge eines Strings ist eine grundlegende Funktion in der Programmierung. Es ermöglicht, die Anzahl der Zeichen in einem Text zu bestimmen und dient als Grundlage für viele weitere Operationen. Es ist also wichtig, die verschiedenen Methoden zur Längenberechnung zu verstehen.
+Das Ermitteln der Länge einer Zeichenfolge ist eine grundlegende und häufig verwendete Funktion in der Programmierung. Sie ermöglicht es uns, die genaue Größe einer Zeichenfolge zu kennen und diese Informationen in unserem Code verwenden zu können. 
 
-## So geht's
+## Wie geht's
 
-Um die Länge eines Strings in C# zu finden, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der `Length`-Methode. Diese gibt die Anzahl der Zeichen im String zurück.
-
-```C#
-string text = "Hallo Welt!";
-Console.WriteLine(text.Length);
-//Output: 11
-```
-
-Eine weitere Möglichkeit ist die Verwendung der `Count()`-Methode, die ebenfalls die Anzahl der Zeichen zurückgibt.
+Um die Länge einer Zeichenfolge in C# zu finden, können wir die Methode ".Length" verwenden. Zum Beispiel: 
 
 ```C#
-string text = "Hallo Welt!";
-Console.WriteLine(text.Count());
-//Output: 11
+string text = "Hallo Welt";
+int length = text.Length;
+Console.WriteLine("Die Länge der Zeichenfolge beträgt: " + length);
 ```
 
-Es ist wichtig zu beachten, dass die Länge eines Strings auch Sonderzeichen und Leerzeichen beinhaltet. Wenn beispielsweise ein Leerzeichen am Anfang oder Ende des Textes steht, wird dies auch als Zeichen gezählt.
+Dieser Code wird "Die Länge der Zeichenfolge beträgt: 11" ausgeben, da es insgesamt 11 Zeichen in der Zeichenfolge "Hallo Welt" gibt. Wenn die Zeichenfolge jedoch leer ist, wird der Wert 0 zurückgegeben.
 
-## Tiefere Einblicke
+Es ist wichtig zu beachten, dass die Methode ".Length" nur auf Zeichenfolgen oder Arrays verwendet werden kann und nicht auf anderen Datentypen.
 
-Hinter den Kulissen verwendet C# den Datentyp `System.String` für Strings. Dieser Datentyp enthält eine Eigenschaft namens `Length`, die die Länge des Strings speichert. Beim Aufrufen der `Length`-Methode wird diese Eigenschaft abgerufen und die Anzahl der Zeichen zurückgegeben.
+## Tiefergehende Information
 
-Es gibt auch die Möglichkeit, die Länge eines Strings mithilfe einer Schleife selbst zu berechnen. Hierzu können wir die `foreach`-Schleife nutzen und jede Iteration um 1 erhöhen, wie in folgendem Beispiel:
+In C# wird die Länge einer Zeichenfolge durch die Anzahl der Unicode-Zeichen in der Zeichenfolge bestimmt. In der veranschaulichten Beispielimplementierung der ".Length"-Methode wird dies durch die Eigenschaft "länge" des "CodePageDataLayer"-Objekts ausgeführt. Die Unicode-Zeichen werden in UTF-16-Codierung gespeichert, was bedeutet, dass die Länge einer Zeichenfolge in C# immer ein Vielfaches von 2 sein wird.
 
-```C#
-string text = "Hallo Welt!";
-int length = 0;
-
-foreach(char c in text)
-{
-    length++;
-}
-
-Console.WriteLine(length);
-//Output: 11
-```
-
-Eine weitere interessante Methode ist die Verwendung von `StringInfo`, um auch die Längen von Unicode-Zeichen zu berücksichtigen. Dies ist besonders wichtig, wenn wir mit mehrsprachigen Texten arbeiten.
+Ein weiterer wichtiger Punkt ist, dass die Methode ".Length" eine "read-only"-Eigenschaft ist, was bedeutet, dass sie nicht geändert werden kann. Wir können also die Länge einer Zeichenfolge nicht direkt modifizieren, sondern nur abfragen.
 
 ## Siehe auch
 
-- [Dokumentation zu String.Length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
-- [Dokumentation zu String.Count()](https://docs.microsoft.com/en-us/dotnet/api/system.string.count?view=net-5.0)
-- [Dokumentation zu StringInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.stringinfo?view=net-5.0)
+- [String.Length Eigenschaft (C#-Referenz)](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=netcore-3.1)
+- [UTF-16 (Wikipedia)](https://de.wikipedia.org/wiki/UTF-16)
+- [Unicode (Wikipedia)](https://de.wikipedia.org/wiki/Unicode)

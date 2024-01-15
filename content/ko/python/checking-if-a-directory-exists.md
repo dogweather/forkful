@@ -1,6 +1,7 @@
 ---
-title:                "Python: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉토리의 존재 여부 확인하기"
+html_title:           "Python: 디렉토리의 존재 여부 확인하기"
+simple_title:         "디렉토리의 존재 여부 확인하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+누군가 디렉토리가 존재하는지 확인하기 위해 코드를 작성하는 이유는, 프로그램이 특정 디렉토리에 접근해야 할 때 해당 디렉토리가 실제로 존재하는지 확인하기 위해서입니다.
 
-파이썬 프로그래밍을 하다보면 종종 특정한 디렉토리가 존재하는지 확인해야 할 때가 있습니다. 이번 글에서는 왜 디렉토리 존재 여부를 확인하는 것이 중요한지에 대해 알아보겠습니다.
-
-## 어떻게
-
-파이썬에서 디렉토리의 존재 여부를 확인하기 위해서는 `os.path` 모듈에 있는 `exists()` 함수를 사용할 수 있습니다. 이 함수는 해당 경로가 실제로 존재하는지 여부를 불리언 값으로 반환합니다. 예를 들어, 다음과 같은 코드를 실행해보세요.
-
+## 방법
 ```Python
 import os
 
-# 존재하는 디렉토리 경로
-my_dir = '/Users/my_username/Documents'
+# 디렉토리 경로 설정
+directory_path = '/Users/username/Documents/test'
 
-if os.path.exists(my_dir):
-    print('디렉토리가 존재합니다.')
+# 디렉토리가 존재하는지 확인하는 함수
+if os.path.exists(directory_path):
+  print("디렉토리가 존재합니다.")
 else:
-    print('디렉토리가 존재하지 않습니다.')
+  print("디렉토리가 존재하지 않습니다.")
 ```
 
-만약 해당 경로에 실제로 디렉토리가 존재한다면 `디렉토리가 존재합니다.`가 출력될 것입니다. 반대로, 디렉토리가 존재하지 않는다면 `디렉토리가 존재하지 않습니다.`가 출력될 것입니다.
+위의 코드는 `os` 모듈을 사용하여 디렉토리 경로를 설정하고, `os.path.exists()` 함수를 사용하여 디렉토리의 존재 여부를 확인하는 예시입니다. 만약 디렉토리가 존재하지 않으면 `디렉토리가 존재하지 않습니다.`라는 메세지가 출력됩니다.
 
-## 심층 분석
+## 깊이있는 설명
+파이썬에서 디렉토리가 존재하는지 확인하는 가장 간단한 방법은 `os.path.exists()` 함수를 사용하는 것입니다. 이 함수는 매개변수로 디렉토리 경로를 받아 해당 디렉토리가 실제로 존재하는지 여부를 불리언 값으로 반환합니다. 만약 디렉토리가 존재한다면 `True`를 반환하고, 존재하지 않는다면 `False`를 반환합니다.
 
-파이썬에서는 `os.path` 모듈을 사용하여 파일 또는 디렉토리의 존재 여부를 확인할 수 있습니다. 이 모듈에는 다양한 함수들이 있지만, 여기서는 디렉토리 존재 여부를 확인하는 `exists()` 함수에 집중하겠습니다.
+때때로 디렉토리가 존재하지 않는 경우에는 새로운 디렉토리를 만들어야 할 수도 있습니다. 이를 위해서는 `os.mkdir()` 함수를 사용할 수 있습니다. 이 함수는 매개변수로 디렉토리 경로를 받고, 해당 경로에 새로운 디렉토리를 생성합니다.
 
-`exists()` 함수는 해당 경로에 실제로 존재하는지 여부를 확인해서 불리언 값으로 반환합니다. 따라서 이 함수를 사용하면 파일 또는 디렉토리의 존재 여부를 간단하게 확인할 수 있습니다.
+그 밖에도 `os.path.isdir()` 함수를 사용하여 해당 경로가 디렉토리인지 확인하거나, `os.listdir()` 함수를 사용하여 디렉토리 내의 파일 목록을 확인할 수 있습니다.
 
-## 관련 자료
-
-- [Python 공식 문서: os.path 모듈](https://docs.python.org/3/library/os.path.html)
-- [파이썬 파일 및 디렉토리 관련 기능 알아보기](https://dobest.io/category/Programming/Languages/Python/file-io/)
-- [파이썬 파일과 디렉토리 조작하기](http://pythonstudy.xyz/python/article/207-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%AA%A8%EB%93%88%EA%B3%BC-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0)
+## 참고
+더 많은 파이썬 파일 및 디렉토리 작업을 알고 싶다면 아래 링크를 참고해보세요.
+- [파이썬 공식 문서: os 모듈](https://docs.python.org/ko/3/library/os.html)
+- [GeeksforGeeks: Python 파일 및 디렉토리 작업](https://www.geeksforgeeks.org/python-list-files-in-a-directory/)
+- [점프 투 파이썬: 파일 읽고 쓰기](https://wikidocs.net/26)

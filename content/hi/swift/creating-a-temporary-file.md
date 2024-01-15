@@ -1,6 +1,7 @@
 ---
-title:                "Swift: कॉम्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "कॉम्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: एक अस्थायी फ़ाइल बनाना"
+title:                "एक अस्थायी फाइल बनाना"
+html_title:           "Swift: एक अस्थायी फाइल बनाना"
+simple_title:         "एक अस्थायी फाइल बनाना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyu
-Temporary file bana kar log aksar apne Swift code mein use karte hai taki kisi temporary data ya temporary storage ko handle kar sake. Temporary file bana kar sath hi unhe delete bhi kar sakte hai.
+## Kyu: Ek temporary file banane se hume kya fayda hoga?
 
-## Kaise Karein
-Temporary file banana bahut hi aasan hai Swift mein. Aapko bas ek temporary file identifier create karna hai jise aap file ke through access kar sakte hai. Uske baad aap us identifier ka use karke file create kar sakte hai.
+Temporary files hume code ko organize karne aur temporary data ko store karne ke liye madad karte hai. Iss tarah se humare code mai clarity bani rehti hai aur hume memory management mai bhi asani hogi.
 
-```Swift
-let fileManager = FileManager.default
-let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-let tempFileURL = tempDirectoryURL.appendingPathComponent("mytempfile.txt") // temporary file name
-fileManager.createFile(atPath: tempFileURL.path, contents: nil)
-```
-
-Ab aap temporary file ko use kar sakte hai jaise normal file ko use karte hai. Aur jab aapko temporary file ko delete karna hota hai, tab aap identifier ka use karke file ko delete kar sakte hai.
+## Kaise Kare: Temporary File Kaise Banaye
 
 ```Swift
-let fileManager = FileManager.default
-let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-let tempFileURL = tempDirectoryURL.appendingPathComponent("mytempfile.txt")
-do {
-    try fileManager.removeItem(at: tempFileURL)
-} catch {
-    print("Error deleting temporary file: \(error)")
-}
+let temporaryDirectory = try FileManager.default
+    .url(for: .itemReplacementDirectory,
+    in: .userDomainMask,
+    appropriateFor: URL(fileURLWithPath: "/path/to/file"),
+    create: true)
+let temporaryFileURL = temporaryDirectory
+    .appendingPathComponent("temporaryFile.extension")
 ```
 
-## Deep Dive
-Swift mein temporary file create karna temp directory ki help se hota hai. Temp directory ko NSTemporaryDirectory() function se access kiya ja sakta hai. Ye function temporary file ko create karne ke liye recommended hai kyunki ye temporary file ko system cache se related data ko handle aur management karne mein help karta hai.
+Iss code mai, hum pehle temporary directory ka path bana kar usse user domain mai store karte hai. Fir uss temporary directory mai ek temporary file bana kar uska extension customize karke store karte hai.
 
-Temporary file ko delete karne ke liye bhi hum NSTemporaryDirectory() function ka use kar sakte hai jis se temporary file ko directly temporary directory se delete kiya ja sakta hai.
+**Output:**
 
-# See Also
-- [NSFileManager Class Reference](https://developer.apple.com/documentation/foundation/nsfilemanager)
-- [NSTemporaryDirectory Function Documentation](https://developer.apple.com/documentation/foundation/1409181-nstemporarydirectory)
+```Temporary file created at path: /Users/username/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/1C7D6B66-B50E-42D1-BDA8-AF98DDADC100/temporaryFile.extension```
+
+## Gehri Jaanch: Temporary File Banane ki Gehri Jaanch
+
+Code mai humne use kiye hai `try` aur `FileManager` ka `default` method. `URL` mai, humne `itemReplacementDirectory` ka option chuna hai, jo temporary files create karne ke liye ideal hai. Fir `userDomainMask` mai humne user ke root directory ko choose kiya hai. Isse temporary file user ke local system mai store hoga aur programmatically delete ho jayega. Ek baar temporary file create ho jane ke baad, hum uski path alag se customize kar sakte hai.
+
+## Dekhiye Bhi:
+
+- [Swift Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Using Temporary Files in Swift](https://www.raywenderlich.com/3687-creating-temporary-files-in-swift)
+- [Understanding FileManager in Swift](https://learnappmaking.com/filemanager-swift-how-to-code/)

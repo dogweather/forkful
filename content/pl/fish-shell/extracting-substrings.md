@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wyciąganie podciągów"
+html_title:           "Fish Shell: Wyciąganie podciągów"
+simple_title:         "Wyciąganie podciągów"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,46 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wydobycie podciągów jest często nieodłączną częścią programowania, szczególnie w językach programowania typu tekstowego. Jest to przydatna umiejętność, która pozwala na manipulowanie i przetwarzanie danych w bardziej precyzyjny sposób. W tym artykule pokażę Ci, jak wykorzystać funkcję wydobycia podciągów w Fish Shell.
+Jeśli jesteś programistą lub człowiekiem zajmującym się automatyzacją zadań w systemie Linux, prawdopodobnie zetknąłeś się z potrzebą wyodrębnienia części tekstu z większego ciągu znaków. Może to być konieczne, aby przeprowadzić wybrane działania na danym tekście lub po prostu wyciągnąć pewne informacje. W tym artykule dowiecie się, jak szybko i wygodnie wyodrębnić podciągi w powłoce Fish Shell.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby wydobyć podciągi w Fish Shell, użyj funkcji ```string sub``` wraz z parametrami określającymi początek, koniec oraz długość wydobywanego podciągu. Przykładowy kod wyglądałby następująco:
+Wyodrębnianie podciągów w powłoce Fish Shell jest bardzo proste i wygodne. Wystarczy użyć wbudowanej funkcji `string sub`. Przyjmując zmienną `text` zawierającą cały tekst, następująca komenda wyodrębni podciąg od piątego do dziewiątego znaku i zapisze go do zmiennej `substring`:
 
-```
-string sub $string $start $end $length
-```
-
-Gdzie ```$string``` jest zmienną przechowującą oryginalny ciąg znaków, ```$start``` określa pozycję rozpoczęcia wydobycia, ```$end``` określa pozycję zakończenia wydobycia (opcjonalnie można wykorzystać parametr ```$length``` zamiast ```$end``` do określenia długości podciągu). 
-
-Przykładowe użycie funkcji dla ciągu znaków "Kocham programowanie" wygląda następująco:
-```
-set string "Kocham programowanie"
-string sub $string 0 6
-```
-Output:
-```
-Kocham
+```Fish Shell
+set substring (string sub $text 5 9)
 ```
 
-Możesz również wykorzystać funkcję ```string match``` do wydobycia podciągu za pomocą wyrażenia regularnego. Przykładowy kod wyglądałby następująco:
-```
-set string "To jest ciekawy artykuł"
-string match -r "ciekawy (.*)" $string
-```
-Output:
-```
-ciekawy artykuł
+Możesz również wykorzystać tę funkcję wewnątrz pętli, aby wyodrębnić podciągi z wielu zmiennych. Na przykład, poniższy kod wyodrębni każdy podciąg z listy zmiennych `list` i wyświetli je w konsoli:
+
+```Fish Shell
+for var in $list
+  echo (string sub $var 2 5)
+end
 ```
 
-## Również
+Wyjście powyższego kodu będzie wyglądać mniej więcej tak:
 
-Jeśli chcesz dowiedzieć się więcej o wydobywaniu podciągów w Fish Shell, możesz przejrzeć dokumentację na stronie Fish Shell lub zobaczyć inne przydatne przykłady tutaj:
+```
+odci
+drie
+jmic
+```
 
-- https://fishshell.com/docs/current/cmds/string-sub.html
-- https://fishshell.com/docs/current/cmds/string-match.html
+Jednym z przydatnych parametrów funkcji `string sub` jest również możliwość wyodrębniania podciągów od końca. W przypadku, gdy chcemy wyodrębnić ostatnie 10 znaków z jakiegoś tekstu, możemy to zrobić przy użyciu ujemnych wartości indeksów. Na przykład:
 
-## Zobacz Również
+```Fish Shell
+set last_chars (string sub $text -10 -1)
+```
 
-Jeśli jesteś zainteresowany bardziej zaawansowanymi funkcjami obsługi ciągów znaków w Fish Shell, możesz również przeczytać mój wcześniejszy artykuł na temat formatowania znaków w tym języku.
-https://example.com/polish/fish-shell-formatowanie-znakow
+Wyjście powyższego kodu będzie stanowić ostatnie 10 znaków zmiennej `text`.
+
+## Deep Dive
+
+Funkcja `string sub` w powłoce Fish Shell przyjmuje trzy argumenty: zmienną zawierającą tekst, indeks początkowy i indeks końcowy wyodrębnianego podciągu. Indeks pierwszego znaku tekstu to 0. Dodatkowo, jeśli podamy ujemną wartość indeksu końcowego, zostanie wyodrębniony podciąg od tej pozycji do końca tekstu.
+
+Funkcja ta jest również bardzo przydatna, gdy chcemy wyciągnąć informacje z tekstu zawierającego wiele linii. W przypadku gdy każda linia zawiera inny format danych, możemy wyodrębnić odpowiednie wartości, np. z wcześniej wspomnianego wyjścia pętli.
+
+## Zobacz także
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Wprowadzenie do programowania w Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Podstawy przetwarzania tekstu w powłoce Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_text_processing)

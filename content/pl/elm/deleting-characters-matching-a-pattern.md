@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Usuwanie znaków pasujących do wzoru"
-simple_title:         "Usuwanie znaków pasujących do wzoru"
+title:                "Usuwanie znaków odpowiadających wzorcowi."
+html_title:           "Elm: Usuwanie znaków odpowiadających wzorcowi."
+simple_title:         "Usuwanie znaków odpowiadających wzorcowi."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,39 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Może się zdarzyć, że w trakcie kodowania będziemy musieli usunąć znaki pasujące do określonego wzorca. W tym wpisie opowiemy o tym, jak zrobić to w języku Elm.
+Czy kiedykolwiek znalazłeś się w sytuacji, gdzie potrzebowałeś usunąć wszystkie znaki pasujące do pewnego wzoru z tekstu? Może chciałeś usunąć wszystkie liczby lub  znaki interpunkcyjne? W tym artykule dowiesz się, dlaczego i jak możesz dokonać tego w Elm.
 
 ## Jak to zrobić
 
-Załóżmy, że mamy string "aaa123bbb" i chcemy usunąć wszystkie cyfry z tego ciągu znaków. W Elm możemy użyć funkcji `String.filter` połączonej z funkcją `Char.isDigit` w następujący sposób:
+Najpierw musimy zdefiniować nasz tekst wejściowy w Elm, w formie listy znaków:
 
 ```Elm
-import String exposing (filter)
-import Char exposing (isDigit)
-
-string = "aaa123bbb"
-result = string |> filter (\c -> not (isDigit c))
+inputText = "To jest przykładowy tekst, w którym wanto usunąć wszystkie spacje."
+inputList = String.toList inputText
 ```
 
-W powyższym kodzie używamy operatora `|>` do przesyłania stringa przez funkcję `filter`. Wewnątrz `filter` używamy lambdy, która sprawdza czy znak nie jest cyfrą i jeśli tak, to zostaje on usunięty. Wynikiem będzie string "aaabbb".
+Następnie możemy użyć wbudowanej funkcji `List.filter` do przefiltrowania listy znaków i usunięcia niepotrzebnych znaków. W tym przypadku chcemy usunąć spacje, więc musimy utworzyć funkcję, która zwraca `False` dla spacji:
 
-Aby bardziej zrozumieć działanie funkcji `String.filter`, poniżej przedstawiamy kolejne kroki w ich wykonaniu:
+```Elm
+removeSpaces : Char -> Bool
+removeSpaces char =
+    if char == ' ' then
+        False
+    else
+        True
+        
+filteredInput = List.filter removeSpaces inputList
+```
 
-1. Tworzymy string do przefiltrowania (w tym przypadku "aaa123bbb").
-2. Tworzymy funkcję lambdę, która przyjmuje pojedynczy znak i zwraca `True` lub `False` w zależności od tego, czy dany znak pasuje do wzorca do usunięcia (w tym przypadku cyfry).
-3. Przepuszczamy nasz string przez funkcję `filter`, która usunie wszystkie znaki, dla których funkcja lambda zwróciła `True`.
-4. Wynikiem jest nowy string bez znaków pasujących do wzorca.
+Ostatnim krokiem jest zmiana listy znaków z powrotem na tekst:
 
-Tak samo można usunąć inne rodzaje znaków, np. spacje, przecinki czy znaki specjalne. Wystarczy odpowiednio dostosować funkcję `Char.isDigit` do naszych potrzeb.
+```Elm
+outputText = String.fromList filteredInput
+```
+
+I to wszystko! Nasz outputText będzie teraz zawierał tekst bez spacji.
 
 ## Deep Dive
 
-Funkcja `String.filter` jest często używana do operowania na stringach w języku Elm. Jest nie tylko użyteczna do usuwania znaków pasujących do wzorca, ale także do filtrowania stringów na podstawie innych kryteriów, np. długości czy występowania określonych słów.
+W powyższym przykładzie skupiliśmy się tylko na usuwaniu spacji, ale funkcja `removeSpaces` może być zmodyfikowana, aby usunąć różne znaki pasujące do różnych wzorów. Na przykład, możemy zmienić funkcję tak, aby usuwała wszystkie liczby:
 
-Warto również wspomnieć o funkcji `String.explode`, która dzieli string na listę pojedynczych znaków. Może być przydatna w przypadku, gdy chcemy wykonać bardziej skomplikowane operacje na poszczególnych znakach i ponownie połączyć je w stringu końcowym.
+```Elm
+removeNumbers : Char -> Bool
+removeNumbers char =
+    if char >= '0' && char <= '9' then
+        False
+    else
+        True
+        
+filteredInput = List.filter removeNumbers inputList
+```
+
+Możemy również użyć wyrażeń regularnych, korzystając z paczki `elm/regex` i funkcji `Regex.replace` do dokładnego określenia wzoru, który chcemy usunąć.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
-- [Przykłady zastosowania funkcji String.filter](https://trenning.ghost.io/elm-string-filter/)
-- [Dokumentacja funkcji String.explode](https://package.elm-lang.org/packages/elm-lang/core/latest/Basics#String-explode)
+Jeśli chcesz dowiedzieć się więcej o funkcjach wbudowanych w Elm, można zapoznać się z dokumentacją na oficjalnej stronie: https://elm-lang.org/docs. Jeśli interesuje Cię również korzystanie z wyrażeń regularnych w Elm, zobacz tę paczkę: https://package.elm-lang.org/packages/elm/regex/latest/.

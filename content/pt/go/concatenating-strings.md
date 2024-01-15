@@ -1,6 +1,7 @@
 ---
-title:                "Go: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Unindo strings"
+html_title:           "Go: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings em Go?
+## Por que concatenar strings?
 
-Concatenar strings é uma tarefa comum na programação e pode ser especialmente útil em situações em que precisamos combinar diferentes partes de texto em uma única string. Em Go, essa operação é realizada através do operador de adição `+` ou do pacote `strings` da biblioteca padrão.
+Você já se deparou com a necessidade de juntar várias strings em uma única? Seja para formatar uma saída de dados ou para construir uma URL dinâmica, essa é uma tarefa comum durante o desenvolvimento de software. Felizmente, o Go possui uma solução simples e eficiente para esse problema, o que torna a concatenação de strings uma tarefa rápida e fácil de ser realizada.
 
-## Como fazer em Go
+## Como Fazer
 
-Para concatenar strings em Go, podemos usar o operador `+` como mostrado no exemplo abaixo:
+Para concatenar strings em Go, podemos usar o operador "+" ou a função "fmt.Sprintf()". Vamos ver alguns exemplos utilizando ambas as formas:
 
-```Go
-texto1 := "Olá"
-texto2 := "mundo!"
-resultado := texto1 + " " + texto2
-fmt.Println(resultado)
+```
+package main
 
-//Output: Olá mundo!
+import "fmt"
+
+func main() {
+	// Utilizando o operador "+"
+	firstName := "João"
+	lastName := "Silva"
+	fullName := firstName + " " + lastName
+	fmt.Println(fullName) // Imprime "João Silva"
+
+	// Utilizando a função "fmt.Sprintf()"
+	id := 1234
+	url := fmt.Sprintf("www.example.com/users/%d", id)
+	fmt.Println(url) // Imprime "www.example.com/users/1234"
+}
 ```
 
-Também podemos usar o pacote `strings` para realizar concatenação usando a função `Join`:
+Neste primeiro exemplo, criamos duas strings `firstName` e `lastName` e utilizamos o operador "+" para concatená-las e armazenar o resultado na variável `fullName`. Em seguida, imprimimos essa variável na tela. Note que podemos inserir o espaço em branco entre as strings diretamente dentro do operador.
 
-```Go
-textos := []string{"Olá", "mundo!"}
-resultado := strings.Join(textos, " ")
-fmt.Println(resultado)
+No segundo exemplo, criamos uma variável `id` do tipo inteiro e utilizamos a função "fmt.Sprintf()" para formatar uma URL dinâmica, inserindo o valor de `id` na string. O resultado é armazenado na variável `url` e posteriormente impresso na tela.
 
-//Output: Olá mundo!
-```
+## Mergulho Profundo
 
-## Mergulho profundo
+É importante lembrar que o operador "+" pode ser utilizado não apenas com strings, mas também com outros tipos de dados básicos, como inteiros e floats. No entanto, é necessário ter cuidado ao concatenar strings com valores de outros tipos, pois isso pode causar erros ou resultados inesperados.
 
-Ao concatenar strings usando o operador `+`, devemos ter cuidado com o desempenho do nosso código, pois essa operação cria uma nova string que contém as duas strings originais. Em situações em que precisamos concatenar muitas strings, isso pode levar a um aumento significativo no uso de memória e impactar o desempenho geral do programa.
+Além disso, é possível concatenar mais de duas strings utilizando o operador "+", por exemplo: `str1 + str2 + str3`. Porém, esse pode não ser o método mais eficiente, especialmente se precisarmos fazer várias concatenações. Isso porque, a cada operação, uma nova string é criada, sendo necessário alocar memória para armazená-la.
 
-Uma forma mais eficiente de concatenar strings é usando o pacote `strings.Builder` da biblioteca padrão. Este tipo armazena as strings em um buffer e as concatena de forma mais otimizada, sem a necessidade de criar uma nova string a cada vez.
-
-Outro ponto importante a ser observado é que a concatenação de strings em Go é imutável, ou seja, as strings originais não são alteradas, apenas uma nova string é criada com o resultado da concatenação. Por isso, é importante sempre armazenar o resultado em uma nova variável ou usar o valor de retorno da função `Join`.
+Uma opção mais eficiente é utilizar a função "fmt.Sprintf()" ou a função "strings.Join()" do pacote "strings". A função "fmt.Sprintf()" permite formatar uma string com placeholders, semelhante à função "printf()" da linguagem C. Já a função "strings.Join()" permite juntar múltiplas strings em uma única, especificando o separador entre elas.
 
 ## Veja também
-
-- [Documentação oficial do pacote strings em Go](https://golang.org/pkg/strings/)
-- [Tutorial de strings em Go](https://www.calhoun.io/concatenating-and-building-strings-in-go/)
-- [Código fonte dos exemplos apresentados neste artigo](https://github.com/example/example)
+- Documentação oficial do Go: https://golang.org/doc/
+- Tutorial de Strings em Go: https://www.tutorialspoint.com/go/go_string_concatenation.htm
+- Pacote "strings" do Go: https://golang.org/pkg/strings/

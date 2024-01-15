@@ -1,5 +1,6 @@
 ---
-title:                "Bash: 「HTMLの解析」"
+title:                "「HTMLの解析」"
+html_title:           "Bash: 「HTMLの解析」"
 simple_title:         "「HTMLの解析」"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,47 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-HTMLパースを行う理由は、インターネット上での情報収集やデータ解析に欠かせないものです。HTMLはウェブページの構造や内容を記述するためのマークアップ言語であり、そのデータを解析することで、自動的に情報を収集したり、特定の情報を抽出したりすることができます。
+HTMLをパースすることに関わる理由は、ウェブスクレイピングやデータ収集に役立つからです。HTMLは、ウェブサイトの情報を構造化した形式で提供しますので、パースすることで必要なデータを取得しやすくなります。
 
 ## 方法
 
-HTMLをパースする方法は様々ありますが、ここではBashプログラミング言語を使用した方法を紹介します。下記のコードブロック内のコードを入力し、サンプルの出力を確認することで、HTMLのパースがどのように行われるのかを理解することができます。
+### 1. curlコマンドを使用してHTMLを取得する
+
+HTMLを取得するためには、まずウェブサイトのURLを使用して`curl`コマンドを実行します。例えば、GoogleのホームページからHTMLを取得するには、以下のコマンドを実行します。
 
 ```Bash
-#!/bin/bash
-
-# ページのHTMLソースを取得
-html=$(curl -s https://example.com)
-
-# h1タグ内のテキストを取得
-title=$(echo $html | grep -oP '(?<=<h1>).*(?=<\/h1>)')
-
-# パラグラフのテキストを取得
-paragraph=$(echo $html | grep -oP '(?<=<p>).*(?=<\/p>)')
-
-# 結果を出力
-echo "タイトル： $title"
-echo "パラグラフ： $paragraph"
+curl https://www.google.com
 ```
 
-上記のコードでは、まずcurlコマンドを使用して指定したURLのHTMLソースを取得し、変数htmlに格納しています。その後、grepコマンドを使用し、正規表現を用いてh1タグやpタグ内のテキストを抽出しています。最後に、echoコマンドを使用して結果を表示しています。
+#### 出力例
 
-このように、Bashを使用してHTMLをパースすることで、特定の情報を抽出したり、自動的に情報を収集することができます。
+以下のようなHTMLが取得できます。
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+```
+
+### 2. grepコマンドを使用して特定の要素を抽出する
+
+`grep`コマンドを使用すると、特定の文字列やパターンを含む行を抽出することができます。例えば、`<h1>`タグの中身を抽出するには以下のようなコマンドを使用します。
+
+```Bash
+grep "<h1>" index.html
+```
+
+#### 出力例
+
+```
+<h1>Hello World!</h1>
+```
+
+### 3. sedコマンドを使用してHTMLを整形する
+
+`sed`コマンドを使用すると、テキストを検索・置換したり、特定の行を削除したりすることができます。例えば、不要な`<h1>`タグを削除してテキストのみを抽出するには以下のようなコマンドを使用します。
+
+```Bash
+sed "s/<[^>]*>//g" index.html
+```
+
+#### 出力例
+
+```
+Hello World!
+```
 
 ## 深堀り
 
-HTMLのパースには、Bashの他にも様々なプログラミング言語やツールが利用されています。例えば、PythonのBeautiful SoupやJavaScriptのCheerioなどがよく使われています。
+パースとは、テキストやデータを解析して構造化することを指します。HTMLをパースすることで、ウェブサイトのタグやテキストを分析し、必要な情報を取得することができます。また、パースしたデータをデータベースに保存することで、自動的にデータを更新したり処理を行ったりすることもできます。
 
-また、HTMLの構造やタグの種類によってパースの方法も異なります。より複雑なパースを行う際には、正規表現をマスターすることも重要です。さらに、HTMLの一部分を動的に変更したり、Webページのスクレイピングを行う際には、JavaScriptなどの知識も必要になります。
+## 参考リンク
 
-## 関連記事
-
-[HTMLパースのスクレイピングツールの比較](https://techacademy.jp/magazine/19151)
-
-[正規表現を使ったHTMLパースの基礎](https://qiita.com/hydrangeas/items/0275c13c43795a31c2b4)
-
-[JavaScriptを使用したHTMLパースの方法](https://techacademy.jp/magazine/18701)
-
-## おわりに
-
-Bashを使用したHTMLのパースは、Webサイト上の情報収集やデータ抽出に役立つ重要な技術です。今回紹介した方法を参考に、ぜひ実際に試してみてください。さらに、他のプログラミング言語やツールを使用して、より高度なパースを行ってみるのもおすすめです。HTMLパースをマスターすることで、さまざまな情報や知識を簡単に収集することができるようになります。
+- [curlコマンドの使用方法](https://curl.haxx.se/docs/manpage.html)
+- [grepコマンドの使用方法](https://www.gnu.org/software/grep/manual/grep.html)
+- [sedコマンドの使用方法](https://www.gnu.org/software/sed/manual/sed.html)

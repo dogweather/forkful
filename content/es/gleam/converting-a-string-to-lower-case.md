@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Convirtiendo una cadena a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "Gleam: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Por qué convertir una cadena a minúsculas?
 
-Convertir una cadena de texto a minúsculas puede ser una tarea común en la programación. Al hacerlo, podemos asegurarnos de que los datos de entrada estén en un formato consistente y facilitar su manipulación en nuestro código.
+La conversión de una cadena a minúsculas es una tarea común en la programación, ya sea para normalizar entradas de usuario o para comparar cadenas de manera insensible a mayúsculas y minúsculas. Gleam proporciona una función integrada para realizar esta tarea de forma rápida y sencilla.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-En Gleam, podemos usar la función `String.to_lower` para convertir una cadena de texto a minúsculas. Veamos un ejemplo:
-
-```Gleam
-let name = "JUAN"
-let name_lower = String.to_lower(name)
-```
-
-El resultado sería `name_lower = "juan"`. Como puedes ver, la función `String.to_lower` transforma todas las letras en minúsculas. También podemos usar esta función con cadenas de texto más largas:
+Utilizando la función `String.to_lowercase()` de Gleam, podemos convertir una cadena a minúsculas de la siguiente manera:
 
 ```Gleam
-let sentence = "HOLA, ESTE ES UN EJEMPLO"
-let sentence_lower = String.to_lower(sentence)
+let cadena = "HOLA MUNDO"
+let nueva_cadena = String.to_lowercase(cadena)
+
+assert nueva_cadena == "hola mundo"
 ```
 
-Y el resultado sería `sentence_lower = "hola, este es un ejemplo"`. Fácil, ¿verdad?
+El resultado de la función es una nueva cadena con todos los caracteres en minúsculas. Es importante tener en cuenta que esta función funciona con cualquier tipo de cadena, ya sea una variable o una literal.
 
-## ¡Profundicemos!
+También podemos encadenar esta función junto con otras operaciones en cadena para realizar varias transformaciones en una sola línea:
 
-Ahora que sabemos cómo convertir una cadena de texto a minúsculas en Gleam, podemos compartir algunos consejos útiles. Primero, es importante tener en cuenta que la función `String.to_lower` solo funciona con letras en inglés. Si estás trabajando con letras acentuadas u otros caracteres especiales, puede que necesites usar una función diferente o codificar tus propios métodos de conversión.
+```Gleam
+let nombre = "JUAN"
+let saludo = "¡Hola, {String.to_lowercase(nombre)}!"
 
-Además, si necesitas transformar las letras en mayúsculas, Gleam también tiene una función llamada `String.to_upper` que hace exactamente lo contrario. También puedes usar la función `String.to_title` para convertir la primera letra de cada palabra en mayúsculas.
+assert saludo == "¡Hola, juan!"
+```
 
-Finalmente, es importante mencionar que estas funciones son inmutables, lo que significa que no cambian el valor original de la cadena de texto. En su lugar, crean una nueva cadena de texto con los cambios aplicados. Así que asegúrate de asignar el resultado de estas funciones a una nueva variable.
+## Profundizando
 
-## Ver También
-- [Documentación de String.to_lower en Gleam](https://gleam.run/modules/text.html#to_lower)
-- [Ejemplos prácticos de cómo usar String.to_lower](https://gist.github.com/juan/example)
+Hay varias cosas importantes a tener en cuenta cuando se trabaja con la función `String.to_lowercase()` en Gleam. En primer lugar, esta función solo funciona con cadenas ASCII, lo que significa que solo puede convertir caracteres de la tabla ASCII a minúsculas. Si se intenta utilizar esta función en una cadena que contiene caracteres no ASCII, se producirá un error en tiempo de compilación.
 
-¡Esperamos que este artículo te haya ayudado a aprender cómo convertir una cadena de texto a minúsculas en Gleam! Recuerda siempre consultar la documentación oficial y buscar ejemplos en la comunidad para hacer tu experiencia de programación en Gleam más fácil y divertida. ¡Feliz código!
+Además, esta función no modifica la cadena original, sino que siempre devuelve una nueva cadena como resultado. Por lo tanto, si se desea modificar la cadena original, es importante asignar el resultado de la función a la misma variable.
+
+Otra cosa a tener en cuenta es que esta función no solo convierte letras mayúsculas a minúsculas, sino que también reemplaza caracteres especiales como Ñ y Ü por sus equivalentes en minúsculas, ñ y ü respectivamente.
+
+## Ver también
+
+- Documentación oficial de la función `String.to_lowercase()`: https://gleam.run/modules/gleam_std.String.html#to_lowercase
+- Ejemplos de uso de la función `String.to_lowercase()`: https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/String.gleam#L78-L83

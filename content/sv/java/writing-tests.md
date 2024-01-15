@@ -1,5 +1,6 @@
 ---
-title:                "Java: Att skriva tester"
+title:                "Att skriva tester"
+html_title:           "Java: Att skriva tester"
 simple_title:         "Att skriva tester"
 programming_language: "Java"
 category:             "Java"
@@ -11,44 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester som en del av programmets utveckling kan kännas som en tråkig och onödig uppgift. Men sanningen är att tester är mycket viktiga för att säkerställa att koden fungerar som den ska och för att upptäcka eventuella fel och buggar innan de når slutanvändaren. Det sparar tid och krångel i det långa loppet och ger en bättre produkt.
+När du skriver kod kan du ibland stöta på buggar eller ineffektivitet. Att skriva tester för din kod hjälper dig att hitta och lösa dessa problem tidigare, vilket sparar tid och frustration på lång sikt.
 
-## Hur du gör det
+## How To
 
-Att skriva tester i Java är inte svårt, speciellt om du redan är bekant med språket. Det finns ett inbyggt bibliotek kallat JUnit som gör det enkelt att skriva tester och köra dem. Här är ett enkelt exempel på hur du kan testa en metod som lägger ihop två tal:
-
-```Java
-public class Calculator {
-    public int add(int num1, int num2) {
-        return num1 + num2;
-    }
+```java
+// Skapa en enkel metod att testa
+public int addNumbers(int num1, int num2) {
+    return num1 + num2;
 }
-```
 
-```Java
+// Importera JUnit biblioteket
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-public class CalculatorTest {
-    @Test
-    public void testAdd() {
-        Calculator calculator = new Calculator();
-        assertEquals(4, calculator.add(2, 2));
-    }
+// Skapa ett testfall med hjälp av @Test annotationen
+@Test
+public void testAddNumbers() {
+    // Arrange (förbereda)
+    int num1 = 5;
+    int num2 = 10;
+
+    // Act (utföra)
+    int result = addNumbers(num1, num2);
+
+    // Assert (verifiera)
+    assertEquals(15, result);
 }
 ```
 
-I det här exemplet skapar vi en klass som har en metod för att addera två tal. Sedan skapar vi en testklass som använder JUnit för att köra ett test och kontrollera att resultatet av additionen är korrekt. Genom att skriva fler tester för olika scenarier kan vi ytterligare säkerställa att metoden fungerar som den ska.
+Output: Om testet lyckas kommer inget utskrift att visas. Men om det misslyckas kommer en feedback att visas med information om vilket test som misslyckades och vad det förväntade resultatet var.
 
-## Djupdykning
+## Deep Dive
 
-Att skriva bra tester handlar inte bara om att täcka alla delar av koden, utan också om att skriva lättlästa och strukturerade tester. Det är viktigt att ge testerna tydliga namn och att skriva dem så att de enkelt kan förstås av andra utvecklare. Det är också viktigt att testa både positiva och negativa scenarier för att säkerställa att koden hanterar felaktiga indata på rätt sätt.
+Att skriva tester är en viktig del av utvecklingsprocessen eftersom det hjälper till att säkerställa att din kod fungerar som den ska. Det finns olika typer av tester som kan skrivas, inklusive enhetstester och integrationstester. Det är också viktigt att skriva testbara kod som är löst kopplad och väl strukturerad för att underlätta skrivandet av tester.
 
-En annan viktig del av att skriva tester är att fortsätta att utöka dem när koden utvecklas och uppdateras. Tester ska inte bara skrivas en gång och sedan lämnas åt sitt öde. Genom att fortsätta att förbättra och lägga till tester kan vi undvika att introducera nya fel när vi gör ändringar i koden.
+## Se även
 
-## Se också
-
-Här är några användbara länkar för att lära dig mer om att skriva tester i Java:
-
-- [JUnit officiella hemsida](https://junit.org/junit5/)
-- [Baeldung's JUnit 5 tutorial](https://www.baeldung.com/junit-5)
-- [Effective Java av Joshua Bloch](https://www.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
+- [JUnit](https://github.com/junit-team/junit4) - det populära ramverket för att skriva Java-tester
+- [Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) - en metodik för att skriva kod där tester skrivs först och koden skrivs sedan för att passera testerna
+- [Best practices for writing maintainable and testable code](https://www.oracle.com/java/technologies/writing-maintainable-testable-code.html) - råd från Oracle om hur man skriver bättre och testbar kod

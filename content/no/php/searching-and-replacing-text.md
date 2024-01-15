@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og Erstating av Tekst"
+html_title:           "PHP: Søking og Erstating av Tekst"
+simple_title:         "Søking og Erstating av Tekst"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -9,49 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hvorfor:
 
-Å søke og erstatte tekst er en vanlig oppgave for PHP-programmerere. Det kan være nyttig for å raskt gjøre endringer i store mengder tekst, som for eksempel i en database. Det sparer deg også tid og arbeid ved å gjøre endringer manuelt.
+Å søke og erstatte tekst er en vanlig oppgave for både nybegynnere og erfarne PHP-programmerere. Det lar deg enkelt endre store mengder tekst på en rask og effektiv måte, noe som sparer deg for mye tid og frustrasjon. Enten du trenger å rette opp skrivefeil eller utføre en stor omformatering av kode, er søking og erstattning et viktig verktøy å ha på plass.
 
-## Hvordan
+Hvordan:
 
-For å søke og erstatte tekst i PHP, bruker vi innebygde funksjoner som `str_replace()` og `preg_replace()`. Disse funksjonene tar tre argumenter: teksten du ønsker å søke etter, teksten du ønsker å erstatte den med, og teksten du ønsker å søke i. Funksjonene kan også ta imot arrays av tekster for å søke etter flere uttrykk på en gang.
-
-```PHP
-// Søker og erstatter teksten "he" med "ha" i en string
-$string = "Hello world!";
-$ny_string = str_replace("he", "ha", $string);
-
-echo $ny_string; // Output: Hallo world!
-
-// Søker og erstatter teksten "a" og "e" med "X" i en string
-$string = "Hello world!";
-$sok = array("a", "e");
-$erstatter = "X";
-$ny_string = str_replace($sok, $erstatter, $string);
-
-echo $ny_string; // Output: HXllo world!
-```
-
-For mer avansert søk og erstatning, kan vi bruke `preg_replace()` som tillater bruk av regulære uttrykk. Dette lar deg søke etter tekst basert på mønstre og utføre mer komplekse erstatninger.
+Søking og erstattning i PHP er enkelt og innebærer bruk av både en søkestreng og en erstatningsstreng. Den grunnleggende syntaksen er som følger:
 
 ```PHP
-// Søker og erstatter alle tall i en string med "X"
-$string = "12345abcde";
-$ny_string = preg_replace("/[0-9]/", "X", $string);
-
-echo $ny_string; // Output: XXXXXabcde
+str_replace(søkestreng, erstatningsstreng, tekst);
 ```
 
-## Dypdykk
+La oss si at du har en variabel som heter "tekst" med følgende innhold:
 
-Det finnes også andre nyttige funksjoner for å søke og erstatte tekst i PHP, som for eksempel `str_ireplace()` som lar deg utføre en søk og erstatting uten å ta hensyn til store og små bokstaver, `strtr()` som gir deg muligheten til å erstatte flere tegn samtidig, og `substr_replace()` for å erstatte en del av en string basert på posisjon.
+```PHP
+$tekst = "Velkommen til min nettside!";
+```
 
-Det er også viktig å huske på at disse funksjonene kan være ganske ressurskrevende, spesielt hvis du bruker regulære uttrykk. Pass på å begrense søket ditt så mye som mulig for å øke hastigheten.
+Hvis du ønsker å endre "Velkommen" til "Hei", kan du gjøre dette ved å bruke følgende kode:
 
-## Se også
+```PHP
+$ny_tekst = str_replace("Velkommen", "Hei", $tekst);
+```
 
-- [PHP manual for str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP manual for preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [PHP manual for strtr()](https://www.php.net/manual/en/function.strtr.php)
-- [PHP manual for substr_replace()](https://www.php.net/manual/en/function.substr-replace.php)
+Den nye variabelen "ny_tekst" vil nå inneholde følgende:
+
+```PHP
+$ny_tekst = "Hei til min nettside!";
+```
+
+Som du kan se, har "Velkommen" nå blitt erstattet med "Hei" i variabelen "ny_tekst". Du kan også bruke søke- og erstatningsfunksjonen på vanlige tekststrenger, for eksempel:
+
+```PHP
+$ny_tekst = str_replace("Min", "Din", $tekst);
+```
+
+Denne koden vil erstatte "Min" med "Din", og den nye variabelen vil se slik ut:
+
+```PHP
+$ny_tekst = "Velkommen til din nettside!";
+```
+
+Hvis du ønsker å søke og erstatte i en hel liste med tekststrenger, kan du også bruke en foreach-løkke. For eksempel:
+
+```PHP
+$tekst_liste = array("Lorem", "Ipsum", "Dolor");
+
+foreach($tekst_liste as $tekst){
+    $ny_tekst = str_replace("o", "a", $tekst);
+    echo $ny_tekst . ",";
+}
+```
+
+Dette vil erstatte alle forekomster av bokstaven "o" med "a" i hvert element i listen, og vil resultere i følgende output:
+
+```
+Larem, Ipsam, Dalor
+```
+
+Dykk dypere:
+
+Det er også mulig å bruke regulære uttrykk i søke- og erstatningsfunksjonen for mer avansert søking og erstatning. Dette vil være nyttig hvis du for eksempel ønsker å erstatte alle tall med et annet tall, eller hvis du ønsker å søke etter et bestemt mønster i teksten din.
+
+For å bruke regulære uttrykk, må du legge til en "e" ved slutten av erstatningsstrengen. La oss si at du ønsker å erstatte alle tall i en tekststreng med 0, kan du gjøre dette ved å bruke følgende kode:
+
+```PHP
+$tekst = "123-456-789";
+$ny_tekst = preg_replace("/[0-9]+/", "0", $tekst);
+```
+
+Denne koden vil resultere i følgende output:
+
+```PHP
+$ny_tekst = "0-0-0";
+```
+
+Som du kan se, har alle tall blitt erstattet med 0 ved hjelp av dette regulære uttrykket.
+
+Se også:
+
+- Offisiell PHP-dokumentasjon for str_replace() funksjonen: https://www.php.net/manual/en/function.str-replace.php
+- Offisiell PHP-dokumentasjon for preg_replace() funksjonen: https://www.php.net/manual/en/function.preg-replace.php
+- En enkel guide til regulære uttrykk i PHP: https://www.php.net/manual/en/regexp.reference.php

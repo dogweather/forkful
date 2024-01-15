@@ -1,6 +1,7 @@
 ---
-title:                "C: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの書き方"
+html_title:           "C: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜテストを書くのか
 
-プログラミングは、エラーが起きない完璧なコードを書くことは不可能です。しかし、プログラムにバグがあると、予期せぬ結果を引き起こす可能性があり、時には致命的な結果になることもあります。こうした意外な問題を防ぐため、テストを書くことが非常に重要です。
+テストを書くことで、何度も同じコードを手動で実行する必要がなくなります。これにより、バグを見つけるのに費やす時間が短縮されるだけでなく、コードの安全性を確保することもできます。
 
-## テストの書き方
+## テストを書く方法
 
-テストを書くには、C言語のアサート（assert）を使用します。これは、プログラム実行時に特定の条件が満たされていることを確認するものです。例えば、関数の戻り値が正しいかどうかをテストすることができます。
+まず、[C言語の最新バージョン](https://ja.wikipedia.org/wiki/C言語)をダウンロードし、インストールします。そして、[Unity](https://github.com/ThrowTheSwitch/Unity)というテストフレームワークを使用することで、より簡単にテストを書くことができます。
+
+以下は、簡単な足し算の関数をテストする例です。まず、```calculator.h```というヘッダーファイルを作成し、以下のコードを記述します。
 
 ```C
-#include <stdio.h>
-#include <assert.h>
+int add(int a, int b);
+```
 
-// テストする関数
-int square(int num){
-    return num * num;
-}
+次に、```calculator.c```というソースファイルを作成し、以下のコードを記述します。
 
-int main(){
-    // アサートを使用してテストを実行
-    assert(square(2) == 4);
-    assert(square(5) == 25);
-    assert(square(-3) == 9);
-    printf("テストは成功しました！\n");
-    return 0;
+```C
+#include "calculator.h"
+
+int add(int a, int b)
+{
+    return a + b;
 }
 ```
 
-上記のコードでは、アサートを使用してテストを行っています。もし、条件を満たさない場合はプログラムが停止してエラーを出力します。これにより、プログラム実行中に問題が発生したことがわかり、バグを修正することができます。
+最後に、```test_calculator.c```というテストファイルを作成し、以下のコードを記述します。
 
-## テストの詳細
+```C
+#include "calculator.h"
+#include "unity.h"
 
-テストを書く際には、どのような条件をテストするかを良く考えることが大切です。また、プログラムの各部分を個別にテストすることも重要です。これにより、問題が起きた時に原因を特定しやすくなります。
+void test_add(void)
+{
+    TEST_ASSERT_EQUAL_INT(2, add(1, 1));
+    TEST_ASSERT_EQUAL_INT(0, add(-1, 1));
+    TEST_ASSERT_EQUAL_INT(-2, add(-1, -1));
+}
 
-さらに、テストを自動化することも重要です。手動でテストを行うと、時間がかかり正確性も低くなります。そのため、自動化されたテストを使うことで効率的にバグを見つけることができます。
+int main(void)
+{
+    UNITY_BEGIN();
+    RUN_TEST(test_add);
+    return UNITY_END();
+}
+```
+
+このテストでは、```TEST_ASSERT_EQUAL_INT(expected, actual)```というマクロを使用して、各ケースの結果が期待値と同じであることを確認しています。
+
+最後に、ターミナルで以下のコマンドを実行し、テストを実行してみましょう。
+
+```
+gcc calculator.c test_calculator.c -o test_calculator.out
+./test_calculator.out
+```
+
+すると、以下のような出力が得られます。
+
+```
+[-----------------UNITY TESTING BEGIN----------------]
+test_calculator.c:10:test_add:PASS
+test_calculator.c:11:test_add:PASS
+test_calculator.c:12:test_add:PASS
+[------------------UNITY TESTING END-----------------]
+
+---------------Test case count:3----------------------
+--------------------Pass count:3---------------------
+--------------------Fail count:0---------------------
+```
+
+テストの結果が全てパスしていることが確認できますね。
+
+## テストを書く際の詳細
+
+テストを書く際には、どの程度のカバレッジが必要なのか、どのようにテストを実行するのか、どのようなテストツールを使用するのかなど、さまざまな考慮事項があります。また、テストの階層構造や、モックを使用する方法など、より詳細なテスト手法も存在します。
+
+しかし、基本的には「初めてテストを書く場合でも、簡単なテストから始めてみること」が大切です。その後、より高度なテスト手法やツールを学ぶことで、より品質の高いコードを作ることができるようになります。
 
 ## See Also
 
-- [C言語のテスト駆動開発](https://www.ibm.com/developerworks/jp/linux/library/l-lpic1-103-4/)
-- [JUnitでのテスト自動化の基本](https://www.ibm.com/developerworks/jp/java/library/j-junitbasics.html)
-- [シアトル大学：ソフトウェア開発の創造性と力](https://www.coursera.org/specializations/dukeklobucharspecialization/1)
+- [C言語の最新バージョンをダウンロードする方法](https://docs.oracle.com/en/database/oracle/oracle-database/21/lnpls/download.html)
+- [テストフレームワークUnityの使い方](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md)
+-

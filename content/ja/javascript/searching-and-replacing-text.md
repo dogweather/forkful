@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: テキストの検索と置換"
+title:                "テキストの検索と置換"
+html_title:           "Javascript: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,51 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
+今日、私たちが使うほとんど全てのプログラムはテキストベースであり、その中には多くの文が含まれています。これらの文には間違いや古い情報があることがあり、それらを手動で変更するのは非常に時間と手間がかかります。そこで、テキストの検索と置換は、プログラミングでよく使われる機能の一つです。
 
-プログラムにおいて、文字列の検索と置換を行うことは非常に重要です。テキストの検索と置換を行うことで、複数のファイルの中から特定のパターンを探したり、大量のデータを一括で修正することができます。また、タイプミスや翻訳ミスを自動的に修正することもできます。
+## How To
+テキストの検索と置換を行うには、JavaScriptの組み込みメソッドである`replace()`を使用します。このメソッドは、検索する文字列と置換する文字列を引数として受け取り、検索された文字列が置換された新しい文字列を返します。
 
-## 方法
+例えば、「Hello World」の中の「Hello」を「こんにちは」に置換したい場合、以下のようにコードを書きます。
 
-今回は、Javascriptを使用してテキストの検索と置換を行う方法をご紹介します。まずは、検索と置換を行うための基本的な方法から始めましょう。
-
-まず、検索するテキストを指定します。例えば、"hello world"という文字列を検索する場合は、以下のように記述します。
-
-```Javascript
-var text = "hello world";
+```javascript
+let str = "Hello World";
+let newStr = str.replace("Hello", "こんにちは");
+console.log(newStr); // こんにちは World
 ```
 
-次に置換する文字列を指定します。例えば、"hello"を"こんにちは"に置換する場合は、以下のように記述します。
+もし、検索する文字列が複数ある場合は、正規表現を使うことができます。正規表現は、検索するパターンを指定するための特殊な文字列です。以下のようにコードを書くことで、文字列内のすべての「a」を「@」に置換することができます。
 
-```Javascript
-var newText = text.replace("hello", "こんにちは");
+```javascript
+let str = "apple, banana, orange";
+let newStr = str.replace(/a/g, "@");
+console.log(newStr); // @pple, b@n@n@, or@nge
 ```
 
-上記のコードを実行すると、元の文字列である"hello world"が"こんにちは world"に置換されます。
+## Deep Dive
+`replace()`メソッドは、デフォルトでは最初に見つかった文字列のみを置換します。しかし、`g`フラグを使うことで、すべてのマッチする文字列を置換することができます。また、正規表現では、パターンマッチングに加えて置換時により複雑な処理を行うこともできます。
 
-もちろん、複数の文字列を一括で置換することもできます。例えば、"hello"を"こんにちは"に、"world"を"世界"に置換する場合は、以下のように記述します。
+また、JavaScript以外にも多くのプログラミング言語やテキストエディタなどでも、同様にテキストの検索と置換を行うことができます。そのため、これらの機能を学ぶことは、プログラミングの基本的なスキルの一つとなります。
 
-```Javascript
-var newText = text.replace("hello", "こんにちは").replace("world", "世界");
-```
-
-上記のコードを実行すると、元の文字列である"hello world"が"こんにちは 世界"に一括で置換されます。
-
-さらに、正規表現を使用して置換することも可能です。例えば、特定のパターンに一致する文字列をすべて置換する場合には、以下のようなコードを記述します。
-
-```Javascript
-var newText = text.replace(/hello/g, "こんにちは");
-```
-
-上記のコードを実行すると、"hello"ではなく、文字列中のすべての"hello"が"こんにちは"に置換されます。
-
-## 深堀り
-
-以上のように、Javascriptを使用してテキストの検索と置換を行うことで、効率的に複数のファイルや大量のデータを修正することができます。また、正規表現を使用することで、さらに高度な置換を行うことができます。
-
-しかし、注意点としては、置換を行う際に元の文字列が変更されることはないということです。つまり、上記のコードを実行しても、元の変数"text"の値は変わらず、新しい文字列が返されるだけであるということです。そのため、置換を行う際には、新しい変数を使用することをおすすめします。
-
-## 参考記事
-
+## See Also
 - [String.prototype.replace() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [JavaScript で文字列を置換する方法 - Qiita](https://qiita.com/takeharu/items/ed70c1a449f38bdc7cbe)
+- [正規表現チュートリアル - Qiita](https://qiita.com/KentaYamamoto/items/d72c6a7f79d5fc91ef58)
+- [正規表現テスター - regex101](https://regex101.com/)

@@ -1,5 +1,6 @@
 ---
-title:                "Go: Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Go: Wyszukiwanie i zamiana tekstu"
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Go"
 category:             "Go"
@@ -11,56 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią codziennej pracy wielu osób. Często spotykamy się z koniecznością zmieniania dużych ilości tekstu w naszym kodzie. Dlatego warto poznać sposoby na efektywne wyszukiwanie i wymienianie tekstu w języku Go.
+Jeśli jesteś programistą pracującym w języku Go, możliwe że często musisz dokonywać zmian w kodzie. Zastanawiasz się może, czy istnieje szybszy sposób na wymianę znaków lub słów w kodzie? W tym artykule dowiesz się, że odpowiedź brzmi - tak! Wykorzystując wbudowane funkcje Go, możesz znacznie przyspieszyć i ułatwić swoją pracę.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest skupienie się na funkcji `strings.Replace()`, która jest wbudowana w język Go. Pozwala ona na wyszukiwanie i zamienianie określonych fragmentów tekstu w danej napisanej linii kodu. Poniżej znajduje się przykład kodu, który demonstrować będzie tę funkcję:
+Aby przeprowadzić szybką wymianę tekstu w swoim kodzie, możesz skorzystać z funkcji strings.Replace. Należy jednak pamiętać, że ta funkcja jest wrażliwa na wielkość liter, więc jeśli chcesz dokonać wymiany bez względu na wielkość liter, musisz użyć funkcji strings.ToLower lub strings.ToUpper. Przykładowy kod wyglądałby następująco:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-  text := "Witamy w świecie Go!"
-  newText := strings.Replace(text, "Go", "programowania", 1)
-  fmt.Println(newText)
-}
+	// Pierwszym parametrem jest tekst, w którym chcemy dokonać zmian
+	// Drugim parametrem jest tekst, który chcemy zamienić
+	// Trzeci parametr to nowy tekst, który ma zastąpić poprzedni
+	// Czwarty parametr określa ilość wystąpień, które chcemy zmienić, jeśli w tekście znajduje się więcej niż jedno wystąpienie
+	// W naszym przypadku ustawimy go na -1, co oznacza, że chcemy dokonać zmiany we wszystkich wystąpieniach
+	text := "Go jest świetnym językiem programowania"
+	newText := strings.Replace(text, "językiem", "języczkiem", -1)
 
-// output: Witamy w świecie programowania!
+	// Wynik: "Go jest świetnym języczkiem programowania"
+	fmt.Println(newText)
+}
 ```
 
-Jak widać, funkcja `strings.Replace()` przyjmuje trzy argumenty - oryginalny tekst, szukaną frazę oraz tekst, na który ma zostać zamieniona szukana fraza. Dodatkowo, dodaliśmy trzeci argument w postaci liczby `1`, co oznacza, że zamiana wykona się tylko raz dla pierwszego napotkanego wystąpienia frazy "Go". W ten sposób możemy precyzyjnie kontrolować zamienianie tekstu w naszym kodzie.
-
-## Głębsze zagadnienia
-
-W języku Go istnieje również funkcja `strings.ReplaceAll()`, która pozwala na globalne zastępowanie określonej frazy we wszystkich jej wystąpieniach w tekście. Poniżej przedstawiono jej prosty przykład:
+Możesz także określić dodatkowe parametry, takie jak wielkość liter, co pozwoli ci na jeszcze większą kontrolę nad wymianą tekstu w kodzie. Funkcja strings.ReplaceAll zastąpi wszystkie wystąpienia, niezależnie od wielkości liter. Przykładowy kod wyglądałby tak:
 
 ```Go
-package main
+text := "Golang jest językiem programowania"
+newText := strings.ReplaceAll(strings.ToLower(text), "językiem", "języczkiem")
 
-import (
-  "fmt"
-  "strings"
-)
-
-func main() {
-  text := "To jest przykładowy tekst, tekst, tekst!"
-  newText := strings.ReplaceAll(text, "tekst", "teksty")
-  fmt.Println(newText)
-}
-
-// output: To jest przykładowy teksty, teksty, teksty!
+// Wynik: "golang jest języczkiem programowania"
+fmt.Println(newText)
 ```
 
-Dodatkowo, w języku Go istnieje możliwość wykorzystania wyrażeń regularnych do jeszcze bardziej precyzyjnego wyszukiwania i zamiany tekstu. W tym przypadku, należy wykorzystać pakiet `regexp` oraz funkcję `ReplaceAllString()`.
+## Deep Dive
+
+Poza funkcją strings.Replace i strings.ReplaceAll, istnieją dodatkowe metody w języku Go, które pomogą ci w dokonywaniu szybkich zmian w tekście. Na przykład, jeśli chcesz dokonać wymiany tekstu tylko w pewnej części tekstu, możesz skorzystać z funkcji strings.ReplaceAllWithin. Kluczowym elementem tej funkcji jest parametr "start", który określa początkowy indeks, od którego chcesz zacząć dokonywać wymiany tekstu. Przykładowy kod wyglądałby tak:
+
+```Go
+text := "Dlatego lubię programować w Go"
+newText := strings.ReplaceAllWithin(strings.ToLower(text), "językiem", "języczkiem", 24)
+
+// Wynik: "Dlatego lubię programować w języczku Go"
+fmt.Println(newText)
+```
+
+Inną przydatną funkcją jest strings.ReplaceAllLiteral, która nie jest wrażliwa na znaki specjalne, więc jeśli chcesz dokonać wymiany tekstu zawierającego znaki specjalne, ta funkcja będzie lepszym wyborem. Przykładowy kod wyglądałby tak:
+
+```Go
+text := "Język Go jest wspaniały, czy nie?"
+newText := strings.ReplaceAllLiteral(text, "jest", "to")
+
+// Wynik: "Język Go to wspaniały, czy nie?"
+fmt.Println(newText)
+```
 
 ## Zobacz również
 
-- [Dokumentacja funkcji strings.Replace() w języku Go](https://golang.org/pkg/strings/#Replace)
-- [Dokumentacja funkcji strings.ReplaceAll() w języku Go](https://golang.org/pkg/strings/#ReplaceAll)
-- [Dokumentacja pakietu regexp w języku Go](https://golang.org/pkg/regexp/)
+- Funkcje zaawansowane

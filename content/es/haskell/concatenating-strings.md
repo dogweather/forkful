@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Uniendo cadenas de texto"
-simple_title:         "Uniendo cadenas de texto"
+title:                "Concatenación de cadenas"
+html_title:           "Haskell: Concatenación de cadenas"
+simple_title:         "Concatenación de cadenas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-Concatenar cadenas de texto es una operación común en programación. Puede ser útil cuando se desea combinar múltiples cadenas en una sola, ya sea para su impresión o manipulación posterior.
+¿Alguna vez has querido unir varias palabras o frases en un solo texto? La concatenación de cadenas es una herramienta útil en programación para combinar piezas de texto de manera eficiente, ya sea para mostrar información al usuario o para construir cadenas más complejas.
+
 
 ## Cómo hacerlo
 
-En Haskell, se puede utilizar la función `++` para concatenar dos cadenas de texto. Por ejemplo:
+Para unir cadenas en Haskell, utilizamos el operador `++`. Por ejemplo, si tenemos dos cadenas, "Hola" y "mundo", podemos unirlas de la siguiente manera:
 
 ```Haskell
-"¡Hola " ++ "mundo!"
+"Hola" ++ "mundo" -- resultado: "Hola mundo"
 ```
 
-El resultado de este código sería "¡Hola mundo!".
-
-También se puede concatenar más de dos cadenas utilizando el mismo operador. Por ejemplo:
+También podemos usar el operador varias veces para unir más de dos cadenas:
 
 ```Haskell
-"La " ++ "vida " ++ "es " ++ "una " ++ "carnaval"
+"Mi" ++ " " ++ "nombre" ++ " " ++ "es" ++ " " ++ "Juan" -- resultado: "Mi nombre es Juan"
 ```
 
-Esto produciría "La vida es una carnaval".
-
-Si se quisiera añadir un espacio entre las cadenas, se puede utilizar la función `concat` en conjunto con la lista de cadenas:
+Incluso podemos unir cadenas y caracteres:
 
 ```Haskell
-concat ["Hoy", " ", "es", " ", "un", " ", "buen", " ", "día"]
+"¡Hola," ++ ' ' ++ "bienvenido!" -- resultado: "¡Hola, bienvenido!"
 ```
 
-Esto daría como resultado "Hoy es un buen día".
+Otra forma de concatenar cadenas es utilizando la función `concat` en lugar del operador `++`:
+
+```Haskell
+concat ["Me", "gusta", "Haskell"] -- resultado: "Me gusta Haskell"
+```
 
 ## Profundizando
 
-La concatenación de strings en Haskell se basa en dos conceptos: la evaluación perezosa y los tipos de datos inmutables. Esto significa que la concatenación de cadenas no cambia los valores originales, sino que crea una nueva cadena como resultado.
+En Haskell, las cadenas son simplemente listas de caracteres. Por lo tanto, el operador `++` funciona de manera similar a la función `++` para unir listas.
 
-También es importante tener en cuenta que la concatenación de cadenas puede ser costosa en términos de rendimiento, especialmente cuando se están concatenando muchas cadenas. En ese caso, se puede utilizar la función `concat` para mejorar la eficiencia.
+Además, existen otras funciones útiles para la manipulación de cadenas en Haskell, como `length` para obtener la longitud de una cadena, `take` y `drop` para obtener subcadenas, y `reverse` para invertir una cadena.
+
+En resumen, la concatenación de cadenas es una herramienta importante en Haskell que nos permite construir cadenas de manera eficiente y flexible. ¡Experimenta con diferentes formas de unir cadenas y descubre todas las posibilidades que ofrece esta función!
 
 ## Ver también
 
-- [Documentación de la función `++`](https://hackage.haskell.org/package/base-4.15.1.0/docs/Prelude.html#v:-43--43-)
-- [Documentación de la función `concat`](https://hackage.haskell.org/package/base-4.15.1.0/docs/Prelude.html#v:concat)
+- [Documentación oficial de Haskell sobre cadenas](https://www.haskell.org/tutorial/strings.html)
+- [Tutorial de Haskell en español](https://github.com/Next-Lvl-Girls/pendientes-haskell-praga)
+- [Ejemplos de concatenación de cadenas en vivo en Haskell](https://repl.it/@NextLvlGirls/Concatenar-cadenas-en-Haskell)

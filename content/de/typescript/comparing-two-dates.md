@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Vergleich von zwei Daten"
-simple_title:         "Vergleich von zwei Daten"
+title:                "Zwei Daten vergleichen"
+html_title:           "TypeScript: Zwei Daten vergleichen"
+simple_title:         "Zwei Daten vergleichen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,31 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Vergleichen von zwei Daten ist in der Programmierung ein häufig angewandtes Verfahren. Es ermöglicht uns, festzustellen, ob ein Datum vor oder nach einem anderen Datum liegt, was besonders nützlich ist, wenn wir mit Zeitstempeln arbeiten. In diesem Blog-Beitrag werden wir uns ansehen, wie man in TypeScript zwei Daten vergleicht und welche Faktoren dabei beachtet werden sollten.
+Vergleichen von zwei Datumsangaben kann sehr nützlich sein, um beispielsweise zu überprüfen, ob ein bestimmter Zeitraum abgelaufen ist oder um zu bestimmen, welches Datum früher oder später ist.
 
-## Wie geht das?
+## Anleitung
 
-Um zwei Daten in TypeScript zu vergleichen, können wir die `Date`-Klasse verwenden, die Teil des Standardbibliothekspakets ist. Diese Klasse bietet Methoden, um verschiedene Aspekte von Datum und Uhrzeit zu vergleichen. Schauen wir uns ein Beispiel an, um besser zu verstehen, wie dies funktioniert:
+Um zwei Datumsangaben in TypeScript zu vergleichen, können wir die Methode `getTime()` verwenden. Diese Methode gibt die Anzahl der Millisekunden seit dem 1. Januar 1970 zurück. Wir können also einfach die beiden Datumsangaben in Millisekunden umwandeln und sie dann miteinander vergleichen.
 
-````TypeScript
+```typescript
 const date1 = new Date("2021-01-01");
-const date2 = new Date("2020-12-31");
+const date2 = new Date("2020-01-01");
 
-console.log(date1 > date2); // Ausgabe: true
-````
+// Vergleichen ob date1 früher ist als date2
+if (date1.getTime() < date2.getTime()) {
+  console.log("date1 ist früher als date2");
+}
 
-In diesem Beispiel erstellen wir zwei `Date`-Objekte und vergleichen sie mit dem größer-als-Operator (`>`). Da `date1` im Jahr 2021 liegt und damit nach  `date2` im Jahr 2020, wird `true` ausgegeben. Wir können auch andere Vergleichsoperatoren wie `>=`, `<` und `<=` verwenden, um weitere Vergleiche zwischen Daten durchzuführen.
+// Vergleichen ob date1 später ist als date2
+if (date1.getTime() > date2.getTime()) {
+  console.log("date1 ist später als date2");
+}
 
-## Tiefergehende Untersuchung
+// Vergleichen ob beide Datumsangaben gleich sind
+if (date1.getTime() === date2.getTime()) {
+  console.log("beide Datumsangaben sind gleich");
+}
+```
 
-Beim Vergleichen von Daten gibt es einige Dinge zu beachten. Zunächst einmal müssen beide Daten im gleichen Format vorliegen, da sonst unerwartete Ergebnisse auftreten können. Zum Beispiel würde `new Date("01-01-2021")` ein anderes Ergebnis liefern als `new Date("2021-01-01")`.
+Die Ausgabe dieses Beispiels ist:
 
-Außerdem können auch die Zeitzone und die Werte der Stunden, Minuten und Sekunden eine Rolle spielen. Wenn wir also zwei Daten miteinander vergleichen, ist es wichtig, dass wir auch diese Faktoren berücksichtigen.
+```
+date1 ist später als date2
+```
 
-Eine weitere Sache, die wir beachten sollten, ist, dass `Date`-Objekte inkrementierbar sind. Das bedeutet, dass wir, wenn wir beispielsweise `date1.setDate(date1.getDate() + 1)` ausführen, das Datum um einen Tag erhöhen. Beim Vergleichen von Daten kann dies zu unerwarteten Ergebnissen führen, da sich das ursprüngliche `Date`-Objekt verändert und damit der Vergleich möglicherweise nicht mehr aussagekräftig ist.
+## Tiefergehender Einblick
+
+Es ist wichtig zu beachten, dass die `getTime()`-Methode nicht das eigentliche Datum vergleicht, sondern nur die Anzahl der Millisekunden seit dem 1. Januar 1970. Das bedeutet, dass zwei unterschiedliche Datumsangaben, die eigentlich gleich sind, möglicherweise nicht gleich sein werden, wenn sie in Millisekunden umgewandelt werden. Zum Beispiel:
+
+```typescript
+const date1 = new Date("2021-01-01");
+const date2 = new Date("2021-01-01");
+
+// Beide Datumsangaben sind gleich, aber...
+if (date1.getTime() === date2.getTime()) {
+  console.log("beide Datumsangaben sind gleich");
+}
+
+// ...das hier wird nicht ausgeführt, weil die Millisekunden abweichen
+if (date1 === date2) {
+  console.log("beide Datumsangaben sind gleich");
+}
+```
+
+Die Ausgabe ist hier nur:
+
+```
+beide Datumsangaben sind gleich
+```
+
+Außerdem müssen wir auch berücksichtigen, dass die `getTime()`-Methode das Datum in Bezug auf die Zeitzone des Browsers zurückgibt. Wenn wir also auf verschiedenen Geräten mit unterschiedlichen Zeitzonen arbeiten, kann es zu unterschiedlichen Ergebnissen beim Vergleichen der Datumsangaben kommen. Um dies zu vermeiden, können wir die `getTimezoneOffset()`-Methode verwenden, um den Zeitunterschied zu berücksichtigen.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation zu `Date` in TypeScript](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
-- [Datum und Uhrzeit in TypeScript richtig manipulieren](https://dev.to/marknatividad/handling-dates-and-times-in-typescript-apps-24l7)
-- [Moment.js - eine beliebte Bibliothek für die Arbeit mit Datum und Uhrzeit in JavaScript und TypeScript](https://momentjs.com/)
+- [MDN Web Docs: Methode `getTime()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
+- [MDN Web Docs: Methode `getTimezoneOffset()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)
+- [W3Schools: Vergleichen von Datumsangaben in TypeScript](https://www.w3schools.com/js/js_date_methods.asp)

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: 编写测试"
+title:                "编写测试"
+html_title:           "TypeScript: 编写测试"
 simple_title:         "编写测试"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Why: 为什么要编写测试？
-测试是软件开发过程中至关重要的一步。它可以帮助您发现并修复潜在的错误，提高代码的质量和可靠性。编写测试可以让您的代码更加健壮，并且在未来的开发过程中节省更多的时间和精力。
+## 为什么
 
-How To: 如何编写测试 
+为什么我们要编写测试代码？对于很多人来说，编写测试代码似乎是一件繁琐的事情，毕竟我们已经编写了大量的源代码，为什么还要再写一次？但事实上，编写测试代码能够带来许多好处。首先，它可以帮助我们检测代码的错误，从而避免在生产环境中出现意外的bug。其次，它可以提高代码的质量和可维护性，使我们的代码更加健壮和可靠。
+
+## 如何进行
+
+编写测试用例的第一步是选择一个合适的测试框架。在TypeScript中，最流行的测试框架是Jest。我们可以使用npm来安装Jest，并通过命令行来运行测试。接下来，我们需要编写测试用例，确保它覆盖到我们的源代码的所有情况。最后，我们可以通过运行测试来检查代码的正确性和覆盖率。
 
 ```TypeScript
-// 让我们从一个简单的加法函数开始
-function add(num1: number, num2: number): number {
-  return num1 + num2;
+// 安装Jest
+npm install jest --save-dev
+
+// 示例代码
+// 源码
+export const sum = (a: number, b: number) => {
+  return a + b;
 }
 
-// 创建一个单元测试以验证函数的正确性
-test("add函数应该正确计算两个数字的和", () => {
-  // 准备测试所需的输入
-  const num1 = 10;
-  const num2 = 5;
-  // 调用函数，获取结果
-  const result = add(num1, num2);
-  // 断言，判断结果是否等于预期值
-  expect(result).toBe(15);
+// 测试用例
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
-
-// 运行测试，可以看到输出结果
-// add函数应该正确计算两个数字的和
-// ✓
 ```
 
-Deep Dive: 关于编写测试的更多信息
-1. 使用断言函数来验证结果的正确性，例如使用`expect`和`toBe`来比较预期值和实际值。
-2. 在编写测试时，应该考虑边界条件和特殊情况，以确保代码的完整性。
-3. 使用`beforeAll`和`afterAll`来在测试前后进行准备和清理工作，例如创建和销毁临时数据库。
-4. 结合使用测试覆盖率工具，可以帮助您找到未覆盖的代码，进一步提高测试的全面性。
-5. 不要滥用单元测试，识别出哪些函数或组件是最需要被测试的，以避免写出低价值的测试用例。
+## 深入了解
 
-See Also: 查看更多关于编写测试的资料和示例
-- [TypeScript手册：测试](https://www.typescriptlang.org/docs/handbook/testing.html)
-- [Jest官方文档](https://jestjs.io/docs/zh-Hans/getting-started)
-- [单元测试从入门到精通](https://juejin.im/post/5c0946a551882509ac2cb072)
+编写测试代码不仅仅是为了检查代码的正确性和覆盖率，它还可以帮助我们设计更好的代码结构。通过写测试用例，我们可以更加谨慎地思考我们的代码逻辑，并尽可能地分离出可复用的部分。此外，在做重构或修改代码时，有测试代码的存在也可以帮助我们更加安全地进行操作，降低出错的风险。
+
+## 参考资料
+
+- [Jest官方文档](https://jestjs.io/)
+- [如何编写好的测试用例](https://www.pluralsight.com/guides/unit-testing-react-components-jest)
+- [TypeScript中的单元测试入门指南](https://medium.com/javascript-in-plain-english/unit-testing-in-typescript-getting-started-cc1bc25625aa)
+
+## 参见
+
+- [如何使用TypeScript编写干净的代码](https://dev.to/reverentgeek/clean-code-in-typescript-3lej)
+- [搭建TypeScript项目的最佳实践](https://blog.logrocket.com/best-practices-for-building-modern-node-js-apps-in-typescript/)
+- [10个让你更好上手TypeScript的技巧](https://levelup.gitconnected.com/10-typescript-tips-to-make-you-a-more-efficient-developer-919c2a1cbdea)

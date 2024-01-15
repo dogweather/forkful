@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Zapisanie wielkich liter na ciągu znaków"
-simple_title:         "Zapisanie wielkich liter na ciągu znaków"
+title:                "Zmiana na wielką literę ciągu znaków"
+html_title:           "Elm: Zmiana na wielką literę ciągu znaków"
+simple_title:         "Zmiana na wielką literę ciągu znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#####
+## Dlaczego
 
-Po co: Dlaczego warto sprawiać, aby łańcuch znaków był napisany wielką literą?
+Czy kiedykolwiek zastanawiałeś się, dlaczego w niektórych sytuacjach potrzebujemy zmieniać wielkość liter w tekście? Może jesteśmy przyzwyczajeni do pisania wyrazów z dużych liter na początku zdania lub chcemy podkreślić ważne słowo? W programowaniu również często wykorzystuje się zmianę wielkości liter, na przykład przy tworzeniu nazw zmiennych lub funkcji. Dlatego warto poznać prosty sposób na wykonanie tej operacji w języku Elm.
 
- Elm jest językiem programowania, który wykorzystuje statyczne typy, co oznacza, że kod jest bardziej bezpieczny i łatwiejszy w utrzymaniu. Jedną z przydatnych funkcji języka jest możliwość konwertowania dowolnego łańcucha znaków na napis napisany wielką literą. Jest to szczególnie przydatne w przypadku tworzenia aplikacji, w których ważne jest zachowanie jednolitej konwencji pisania.
+## Jak to zrobić?
 
-## Jak to zrobić:
+W Elm istnieje funkcja o nazwie `String.toUpper`, która zamienia wszystkie litery w danym stringu na wielkie. Przykładowy kod wygląda następująco:
 
-```elm
-import String
-
-text = "to jest przykładowy tekst"
-capitalizedText = String.toUpper text
-
--- Output:
--- "TO JEST PRZYKŁADOWY TEKST"
 ```
-W powyższym przykładzie importujemy moduł String, który dostarcza nam funkcji do operacji na łańcuchach znaków. Następnie tworzymy zmienną "text" zawierającą nasz łańcuch znaków, a po tym używamy funkcji "toUpper", która zwraca ten sam tekst, ale zapisany wielkimi literami. Takie proste rozwiązanie pozwala uniknąć konieczności ręcznego zmieniania wszystkich liter na wielkie, co jest nie tylko czasochłonne, ale również podatne na błędy.
+Elm String.toUpper "witaj świecie"
+```
 
-## Deep Dive:
+Wynik działania powyższego kodu to `"WITAJ ŚWIECIE"`. Proste, prawda? Ale co z jednostkami diakrytycznymi, takimi jak polskie znaki, które również powinny być zamieniane na duże litery? W takim przypadku wykorzystamy funkcję `String.toUpperLocale`, która uwzględnia różnice między alfabetami. Oto przykład:
 
-Funkcja "toUpper" jest jedną z wielu funkcji dostępnych w module String, który obsługuje szeroki zakres operacji na łańcuchach znaków. Można również użyć funkcji "toLower" do zamiany wszystkich liter na małe, lub "trim" do usunięcia białych znaków z początku i końca tekstu. Istnieje również wiele innych pomocnych funkcji, takich jak "reverse", "padLeft" czy "slice", które pozwalają na bardziej zaawansowane manipulacje tekstami.
+```
+Elm String.toUpperLocale "zażółć gęślą jaźń"
+```
 
-## Zobacz także:
+Ten kod zwróci `"ZAŻÓŁĆ GĘŚLĄ JAŹŃ"`.
 
-- Dokumentacja Modułu String w Elm - https://package.elm-lang.org/packages/elm/core/latest/String
-- Inne przydatne funkcje w Elm - https://guide.elm-lang.org/appendix/functions.html
-- Przykładowy projekt w Elm - https://github.com/elm/projects
+Jednak zwykła zmiana wszystkich liter na duże nie zawsze jest wymagana. Może chcesz zamienić tylko pierwszą literę na wielką, jak w przypadku tytułów. Do tego celu użyjemy funkcji `String.capitalize`, przykładowo:
+
+```
+Elm String.capitalize "artykuł o zmianie wielkości liter w Elm"
+```
+
+Ten kod zwróci `"Artykuł o zmianie wielkości liter w Elm"`.
+
+## Głębsza analiza
+
+Funkcje `String.toUpper`, `String.toUpperLocale` i `String.capitalize` są dostępne w module `String` i są częścią standardowej biblioteki języka Elm. Są one bardzo proste w użyciu i mogą znacznie ułatwić pracę przy manipulacji tekstem.
+
+Warto też wspomnieć, że w Elm nie ma możliwości zmiany wielkości liter w istniejącym stringu; zawsze musisz zwrócić nowy string.
+
+## Zobacz także
+- Dokumentacja Elm: [String module](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Inne przykłady użycia funkcji w Module String: [Flipping letters](https://elmprogramming.com/flipping-letters-strings.html)
+- Teoria wielkich literek w języku polskim: [Wikipedia](https://pl.wikipedia.org/wiki/Wielkie_literki_w_języku_polskim)

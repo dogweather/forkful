@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,48 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisimme yhdistää merkkijonoja? Syy on yksinkertainen: se on tärkeä osa ohjelmointia ja se auttaa tekemään koodistamme tehokkaampaa.
+Stringien yhdistäminen on tärkeä osa ohjelmointia, sillä se mahdollistaa useiden tekstien yhdistämisen yhdeksi merkkijonoksi. Tämä on erityisen hyödyllistä esimerkiksi käyttäjän syötteen käsittelyssä ja tietojen tallentamisessa.
 
-## Miten
+## Kuinka Tehtävä
 
-Aloita luomalla kaksi muuttujaa, joissa on erilaiset merkkijonot. Voit käyttää esimerkkinä etunimiä ja sukunimiä.
+Stringien yhdistäminen on helppoa Gleam-ohjelmointikielessä. Voit käyttää stringien yhdistämiseen plus-merkkiä (+) tai käyttämällä string-moduulista löytyvää "concat" -funktiota.
 
-```
-Gleam
-```
+```Gleam
+let etunimi = "Mikko"
+let sukunimi = "Mäkinen"
 
-Voimme yhdistää nämä kaksi merkkijonoa yhteen käyttämällä `<>` -operaattoria.
+let kokonimi = etunimi + " " + sukunimi
+//tulostaa "Mikko Mäkinen"
 
-```
-Gleam <> Programming
-```
-
-Tämä tuottaa tuloksen "Gleam Programming".
-
-Voit myös yhdistää useampia merkkijonoja samassa lauseessa.
-
-```
-"Hello" <> " " <> "World"
+let kokonimi2 = string.concat(etunimi, " ", sukunimi)
+//tulostaa myös "Mikko Mäkinen"
 ```
 
-Tämä tuottaa tuloksen "Hello World".
+## Syvemmälle
 
-Voit myös käyttää `String.concat` -funktiota yhdistämään useampia merkkijonoja yhteen. Esimerkiksi:
+Stringien yhdistämisessä on hyvä muistaa, että Gleam-kielessä kaikki on immutablea eli muuttumatonta. Tämä tarkoittaa sitä, että alkuperäisiä stringejä ei muokata, vaan uusi stringi luodaan niiden pohjalta.
 
-```
-String.concat(["Gleam", " ", "Programming"])
-```
-
-Tämä tuottaa saman tuloksen kuin edellinen esimerkki.
-
-## Syväsukellus
-
-Miksi käyttäisimme `<>` -operaattoria tai `String.concat` -funktiota sen sijaan, että kirjoittaisimme yhteenketjuvan merkkijonon suoraan? Yksi syy on, että se helpottaa muuttujien käyttöä ja lisää koodimme luettavuutta. Lisäksi se sallii dynaamisen yhdistämisen, eli voimme käyttää muuttujia ja laskutoimituksia merkkijonojen yhdistämisessä.
-
-Merkkijonojen yhdistäminen on myös olennainen osa monimutkaisempia ohjelmia, kuten tietokantakyselyiden tai web-sovellusten tekemistä.
+Stringien yhdistäminen on myös suorituskyvyltään tehokasta Gleamissa, sillä se käyttää sisäisesti StringBuilder -rakennetta. Tämä tarkoittaa, että useiden stringien yhdistäminen ei aiheuta turhia muistiallokaatioita, mikä voi hidastaa ohjelman suoritusta.
 
 ## Katso myös
 
-- [Gleam-kielen dokumentaatio](https://gleam.run)
-- [Merkkijonojen yhdistäminen Ruby-kielessä](https://ruby-doc.org/core-2.7.1/String.html#method-i-2B)
-- [Merkkijonojen yhdistäminen JavaScript-kielessä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [Gleam-kielen dokumentaatio](https://gleam.run/)
+- [Opas Gleam-ohjelmointikieleen](https://github.com/gleam-lang/gleam/blob/master/getting-started.md)
+- [Tekstien käsittely Gleamissa](https://gleam.run/book/tutorials/strings.html)

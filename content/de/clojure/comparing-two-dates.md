@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Vergleich von zwei Datumsangaben"
+title:                "Vergleich von zwei Datumsangaben"
+html_title:           "Clojure: Vergleich von zwei Datumsangaben"
 simple_title:         "Vergleich von zwei Datumsangaben"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,54 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 # Warum
+Warum sollte man sich mit dem Vergleichen von zwei Daten beschäftigen? Ganz einfach: Wenn man in einem Programm zwei verschiedene Zeitpunkte oder Zeitintervalle vergleichen möchte, z.B. um festzustellen, welches Datum früher oder später ist.
 
-Das Vergleichen von zwei Daten ist ein wichtiger Aspekt in der Programmierung, da es uns ermöglicht zu überprüfen, ob ein bestimmtes Datum vor oder nach einem anderen Datum liegt. Dies kann hilfreich sein, um Daten zu sortieren oder um bestimmte Aktionen basierend auf dem Datum auszuführen.
-
-## Wie geht man vor
-
-Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `before?` oder `after?` verwenden. Diese Funktionen haben jeweils zwei Argumente, das erste Datum und das zweite Datum, und geben entweder `true` oder `false` zurück, je nachdem ob das erste Datum vor oder nach dem zweiten Datum liegt.
+# How To
+Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `compare` verwenden. Diese nimmt zwei Argumente entgegen und gibt einen Integer zurück, der angibt, ob das erste Argument kleiner, größer oder gleich dem zweiten Argument ist. Hier ein Beispiel:
 
 ```Clojure
-(before? (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
-
-; => true
-
-(after? (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
-
-; => false
+(compare 01.01.2021 01.02.2021) ;; gibt -1 zurück, da das erste Datum kleiner ist
 ```
-
-Wir können auch die Funktion `compare` verwenden, die uns eine Zahl zurückgibt, die angibt, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt.
+Leicht zu merken: -1 bedeutet kleiner, 1 bedeutet größer und 0 steht für gleich. Wenn wir also prüfen wollen, ob ein Datum später als ein anderes ist, können wir einfach die Funktion `>`, `<` oder `=` verwenden:
 
 ```Clojure
-(compare (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
-
-; => 1
-
-(compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/parse "2020-01-01"))
-
-; => 0
-
-(compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/now))
-
-; => -1
+(> 01.02.2021 01.01.2021) ;; gibt true zurück, da das erste Datum später ist
 ```
 
-## Tieferer Einblick
+# Deep Dive
+In Clojure ist ein Datum im Grunde nur ein spezielles Objekt, das wir mit `java.util.Date` oder `java.time.LocalDate` erstellen können. Es ist wichtig zu beachten, dass diese Objekte immutable sind, d.h. sie können nicht direkt verändert werden. Daher ist es auch nicht möglich, z.B. 2 Tage zu einem Datum dazu zu addieren, da dies ein neues Datum zurückgibt.
 
-Beim Vergleichen von Daten in Clojure ist es wichtig zu beachten, dass die Funktionen `before?`, `after?` und `compare` nur mit Java-Datentypen funktionieren. Wenn wir beispielsweise zwei Clojure-Datentypen wie `LocalDate` vergleichen möchten, müssen wir sie zunächst in Java-Datentypen umwandeln.
+Wenn wir jedoch mit `LocalDate` arbeiten, können wir die Funktion `plus` verwenden, um ein neues Datum mit einem bestimmten Zeitintervall zu erstellen. Zum Beispiel:
 
 ```Clojure
-(before? (clj-time.core/now) (clj-time.core/parse "2020-01-01"))
-
-; => ClassCastException java.lang.Long cannot be cast to java.time.LocalDate
-
-(before? (clj-time.coerce/to-java (clj-time.core/now)) (clj-time.coerce/to-java (clj-time.core/parse "2020-01-01")))
-
-; => true
+(plus 01.01.2021 (days 2)) ;; gibt 03.01.2021 zurück
 ```
 
-## Siehe auch
-
-- [Clojure Dokumentation über Datum und Zeit](https://clojure.org/reference/date_and_time)
-- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+# Siehe auch
+- [Offizielle Clojure Dokumentation über Datum und Zeit](https://clojuredocs.org/clojure.java-time)
+- [Eine umfangreiche Einführung in Clojure auf Deutsch](https://clojure.org/about/translations)

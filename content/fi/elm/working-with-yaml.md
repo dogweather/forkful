@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Yamlin kanssa työskentely"
-simple_title:         "Yamlin kanssa työskentely"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Elm: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Miksi henkilö haluaisi työskennellä YAML:n kanssa? YAML (Yet Another Markup Language) on ihanteellinen ratkaisu tietojen tallentamiseen ja luettavaksi muokkaustavaksi. Se on tehokas ja helppokäyttöinen formaatti, joka mahdollistaa rakenteellisesti jäsennetyn tiedon tallentamisen.
 
-Miksi työskentelisit YAML:n kanssa? YAML on tietojen tallennusmuoto, joka on erittäin suosittu ohjelmoinnissa ja erityisesti Elm-ohjelmoinnissa. Se on helppo luettava ja kirjoitettava ja sopii hyvin rakenteellisten tietojen tallentamiseen.
-
-## Kuinka tehdä
-
-YAML:n käyttö Elm-ohjelmoinnissa on helppoa ja yksinkertaista. Aloita asentamalla tarvittava kirjasto käyttämällä komentoa `elm install ahstro/elm-yaml` ja tuomalla se ohjelmaasi `import Yaml`. 
-
-Sitten voit lukea YAML-dataa käyttämällä `Yaml.parse` funktiota antamalla sille merkkijonoversion YAML-datasta. Tämän jälkeen voit käsitellä dataa normaalisti Elm:ssä käyttämällä funktioita ja kuvioita.
-
-Esimerkki:
+## Kuinka
+YAML:in käyttöön aloittamiseksi täytyy ensin asentaa Elmin pakkaus ELm/Yaml. Tämän jälkeen, aloittaaksesi koodaamisen YAML:n kanssa, sinun täytyy tuoda se moduuliin:
 
 ```Elm
-fileContent : String
-fileContent = """
-    name: Jane Doe
-    age: 30
-    occupation: Developer
-    hobbies:
-        - Coding
-        - Reading
+import Yaml exposing (..)
+```
+Tämän jälkeen voit käyttää muotoa ```decode```koodataksesi YAML:n datan 
+joko arvoiksi tai JSON-blokeiksi. Esimerkiksi, seuraava YAML-data:
+
+```Elm
+name: "John Doe"
+age: 30 
+```
+Muutetaan se Elm-tyyppiin:
+
+```Elm
+import Yaml.Decode as D
+
+type alias Person = { name: String, age: Int }
+let data = """
+name: "John Doe"
+age: 30 
 """
-
-yamlData : Result String Value
-yamlData = Yaml.parse fileContent
-
-case yamlData of
-    Err msg -> Debug.crash msg
-    Ok data ->
-        let
-            name = data |> Yaml.toList |> List.head |> Maybe.map .data |> Maybe.withDefault "" 
-        in
-        "Tervetuloa " ++ name
+case D.decodeString D.$$ (D.map2 Person (D.index 1 D.string) <= D.index 2 D.int) data of
+  Ok { name, age } -> -- do something with the decoded data
+  Err e -> -- handle the error
 ```
 
-Tulostus:
-```
-"Tervetuloa Jane Doe"
-```
+Tässä tapauksessa ```D.$$``` toiminto ottaa vaaditut muunnokset YAML:dataan ja palauttaa ```Either String a```, mikä tarkoittaa joko Ok tai Error riippuen siitä, onko muuntaminen onnistunut vai ei. Käytännössä, ansaitseminen noilla D.$$ jotta noita ```index 1``` ja ```index 2``` data muuntaa stringiksi ja intiksi, ja muunnat sitten nuo lopuksi Henkilöobjektiksi.
 
-## Syvällisempi sukellus
+## Syvemmälle
 
-Vaikka YAML on helppo käyttää, on myös tärkeää ymmärtää sen rakennetta ja ominaisuuksia paremmin. YAML käyttää järjestettyä hierarkkista rakennetta, jossa tiedot tallennetaan avain-arvo pareiksi ja sisentämällä eri tasoille. Tämä tekee siitä selvemmän ja luettavamman verrattuna muihin tietojen tallennusmuotoihin.
+Elm/Yaml pohjimmiltaan lukee läpi YAML-dataa ja muuntaa sen dataksi, jota Elm voi käsitellä. Se on kuitenkin tärkeää huomata, että Elm/Yaml ei voi käsitellä kaikkia YAML:n ominaisuuksia. Se tukee vain perustoimintoja, kuten scalaareja, luetteloita ja avaimen/arvon pareja. Lisäksi, Elm/Yaml ei tue kaikkia YAML:n dataformaatteja, kuten esimerkiksi binäärijoukkoja.
 
-YAML-tiedostoissa voit myös käyttää kommentteja `#` merkillä ja käyttää muuttujia `&` ja `*` merkeillä. Syvemmän ymmärryksen saavuttamiseksi suosittelemme tutustumaan YAML:n dokumentaatioon ja kokeilemaan erilaisia ​​rakenteita ja vaihtoehtoja koodiesimerkeissä.
+Jos haluat tehdä muuntamisen monimutkaisemmille tyypeille, voit käyttää ```map``` ja ```andThen``` funktioita muokkaamaan dataa ennen sen muuntamista Elm-tyyppyksi.
+
+Jotta pääset lisätietoihin muunnoksessa, suosittelemme tutkimaan Elm/Yaml dokumentaatiota ja koodiesimerkkejä GitHubista.
 
 ## Katso myös
 
-- [Elm-Yaml kirjasto](https://github.com/ahstro/elm-yaml)
-- [YAML dokumentaatio](https://yaml.org/)
-- [Aloita Elm-ohjelmointi](https://guide.elm-lang.org/)
+- Elm/Yaml dokumentaatio: https://package.elm-lang.org/packages/chiroptical/elm-yaml/latest/
+- Elm/Yaml esimerkit: https://github.com/chiroptical/elm-yaml/tree/master/example
+- YAML:n dokumentaatio: https://yaml.org/spec/1.2/spec.html

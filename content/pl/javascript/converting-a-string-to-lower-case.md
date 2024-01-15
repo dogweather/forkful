@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Javascript: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,26 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele sytuacji, w których konwersja tekstu na małe litery jest pożądana. Na przykład, gdy porównujemy dwa wyrazy, ważne jest, aby nie uwzględniać wielkości liter, aby uzyskać dokładne wyniki. Ponadto, konwersja na małe litery jest często stosowana w celu lepszej czytelności i spójności w kodzie.
+Konwertowanie tekstu na małe litery jest powszechnym zadaniem w programowaniu Javascript. Jest to przydatne, gdy chcesz porównać dwa teksty niezależnie od wielkości liter lub wyświetlić tekst w jednolitej formie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Konwersja tekstu na małe litery jest bardzo prosta w języku JavaScript. Wystarczy użyć wbudowanej funkcji ```toLowerCase()``` i przekazać jako argument tekst, który chcemy przekonwertować. Na przykład:
+Konwersja tekstu na małe litery jest bardzo prosta w Javascript. Możesz użyć metody ```toLowerCase()```, która jest wbudowana w obiekcie String. Poniżej jest przykładowy kod, który konwertuje napis "JAkiSz TEkSt" na "jakisz tekst" i wyświetla go w konsoli.
 
-```javascript
-let text = "TEKST";
-console.log(text.toLowerCase());
+```Javascript
+let tekst = "JAkiSz TEkSt";
+console.log(tekst.toLowerCase());
 ```
 
-Wynik wyświetlony w konsoli będzie brzmiał "tekst". Jest to efektywny i szybki sposób na przekonwertowanie tekstu na małe litery.
+Output:
+```
+jakisz tekst
+```
 
-## Głębszy wywód
+Jeśli chcesz zmienić wartość zmiennej tekstowej na zawsze, możesz przypisać nową wartość do zmiennej:
+```Javascript
+tekst = tekst.toLowerCase();
+console.log(tekst);
+```
 
-W języku JavaScript, wszystkie ciągi znaków są traktowane jako obiekty. To oznacza, że ​​posiadają one metody i właściwości, takie jak ```toLowerCase()```, które mogą być wywoływane na nich. Jest to ciągłe ulepszanie języka JavaScript, które pozwala na bardziej wydajne i zwięzłe programowanie.
+Output:
+```
+jakisz tekst
+```
 
-W przypadku konwersji tekstu na małe litery, funkcja ```toLowerCase()``` sprawdza każdy znak w ciągu i zamienia go na jego odpowiednik w postaci małej litery, zachowując przy tym inne znaki i znaki specjalne. Jest to bardzo przydatne narzędzie, które zapewnia dokładną konwersję bez uszkodzenia żadnych innych znaków.
+## Głębsze wgląd
 
-## Zobacz również
+Metoda ```toLowerCase()``` jest jedną z wielu wbudowanych funkcji, które pomagają w manipulowaniu tekstami w Javascript. Ta metoda po prostu przekształca wszystkie duże litery w napisie na małe litery.
 
-- [Dokumentacja funkcji toLowerCase() w języku JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Inne przydatne funkcje do zarządzania tekstami w języku Javascript](https://www.tutorialspoint.com/what-are-the-string-functions-in-javascript)
+W Javascript istnieją również inne sposoby na konwertowanie tekstu na małe litery, takie jak metoda ```replace()```, która może zastąpić określone fragmenty tekstu i ```concat()```, która łączy dwa lub więcej ciągów znakowych. Możesz również użyć funkcji pętli, aby iteracyjnie zmienić każdą literę w napisie na małe litery.
+
+## Zobacz także
+
+1. Dokumentacja metody ```toLowerCase()```: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/toLowerCase
+2. Wideo na YouTube o konwertowaniu tekstu na małe litery w Javascript: https://www.youtube.com/watch?v=InfpmdOt3ik
+3. Praktyczne zastosowania konwersji tekstu na małe litery: https://www.geeksforgeeks.org/javascript-program-to-convert-string-into-lower-case/

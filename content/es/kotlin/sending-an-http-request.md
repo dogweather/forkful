@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Enviando una solicitud http"
-simple_title:         "Enviando una solicitud http"
+title:                "Enviando una petición http"
+html_title:           "Kotlin: Enviando una petición http"
+simple_title:         "Enviando una petición http"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -9,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué utilizar solicitudes HTTP en Kotlin
+## Por qué
 
-Las solicitudes HTTP son una parte esencial de la programación en Kotlin, ya que permiten a los desarrolladores interactuar con servidores y obtener o enviar datos a través de la web. Ya sea para crear una aplicación web o una aplicación móvil que se conecta a una API, aprender a enviar solicitudes HTTP en Kotlin es esencial para cualquier programador. En este blog post, te explicaremos cómo hacerlo.
+¿Alguna vez te has preguntado cómo tu navegador web es capaz de mostrar una página web tan rápidamente? ¡La respuesta es enviar una petición HTTP! Al enviar una petición HTTP, podemos obtener información de un servidor web y mostrarla en nuestro navegador.
 
-## Cómo enviar una solicitud HTTP en Kotlin
+## Cómo hacerlo
 
-Para enviar una solicitud HTTP en Kotlin, primero debes importar la biblioteca necesaria con la instrucción ```import java.net.URL```. Luego, puedes utilizar el método ```.openStream()``` para establecer una conexión con la URL que deseas utilizar. A continuación, puedes leer la respuesta utilizando un ```BufferedReader``` y utilizar un bucle para imprimir la respuesta en la consola. A continuación se muestra un ejemplo de código:
+Para enviar una petición HTTP en Kotlin, primero necesitamos importar la biblioteca `java.net.URLConnection`. Luego, podemos usar la función `openConnection()` para crear una conexión URL y especificar la URL del servidor al que queremos enviar nuestra petición. A continuación, podemos usar los métodos `getInputStream()` y `readText()` para obtener la respuesta del servidor y mostrarla en nuestra aplicación.
 
+```Kotlin
+import java.net.URLConnection
+
+val connection = URL("https://www.ejemplo.com").openConnection()
+val input = connection.getInputStream().readText()
+println(input)
 ```
-val url = URL("https://ejemplo.com/api")
-val connection = url.openConnection() // abre la conexión con la URL
-val respuesta = connection.inputStream.bufferedReader().use { it.readText() } // lee la respuesta
-println(respuesta) // imprime la respuesta en la consola
+
+Este código abrirá una conexión a la URL especificada y obtendrá el texto de la respuesta del servidor. Podemos imprimirlo en la consola o usarlo en nuestra aplicación según sea necesario.
+
+## Profundizando
+
+Existen diferentes tipos de peticiones HTTP, como GET, POST, PUT y DELETE. En Kotlin, podemos especificar el tipo de petición que queremos enviar agregando un método `setRequestMethod()` y pasando como parámetro el tipo de petición que deseamos enviar.
+
+Además, también podemos agregar encabezados a nuestra petición HTTP utilizando el método `setRequestProperty()` y pasar como parámetros el nombre y el valor del encabezado que queremos agregar.
+
+```Kotlin
+import java.net.URLConnection
+
+val connection = URL("https://www.ejemplo.com").openConnection()
+connection.setRequestMethod("POST")
+connection.setRequestProperty("Content-Type", "application/json")
+val input = connection.getInputStream().readText()
+println(input)
 ```
 
-El resultado de este código sería la respuesta de la API que se encuentra en la URL especificada.
-
-## Profundizando en las solicitudes HTTP en Kotlin
-
-Además de enviar solicitudes básicas, también puedes utilizar varias bibliotecas en Kotlin para facilitar el proceso de enviar y recibir datos de una API. Algunas de estas bibliotecas incluyen Ktor, Fuel y Retrofit. También puedes utilizar la biblioteca JSON en Kotlin para trabajar con datos en formato JSON.
-
-Además, si deseas asegurarte de que tus solicitudes sean seguras, puedes utilizar el protocolo HTTPS en lugar de HTTP. También puedes agregar parámetros y encabezados a tus solicitudes para personalizarlas aún más.
+Con esta configuración, ahora estamos enviando una petición POST con el encabezado "Content-Type" especificado como "application/json". Esto es útil cuando estamos comunicándonos con una API que requiere un cierto tipo de formato para los datos.
 
 ## Ver también
-- [Documentación oficial de Kotlin sobre solicitudes HTTP] (https://kotlinlang.org/docs/reference/http-client.html)
-- [Tutorial de Ktor para realizar solicitudes HTTP en Kotlin] (https://medium.com/@rajutaalexcliente/cliente-http-de-ktor-como-hacer-peticiones-http-en-kotlin-ee6b08c0e11e)
-- [Tutorial sobre cómo utilizar la biblioteca Retrofit en Kotlin] (https://www.vogella.com/tutorials/Retrofit/article.html)
 
-Con estos recursos, estarás en camino de convertirte en un experto en enviar solicitudes HTTP en Kotlin. ¡Comienza a jugar con el código y experimenta con diferentes bibliotecas y opciones para descubrir lo que funciona mejor para ti!
+- [Documentación oficial de Kotlin sobre Java Networking](https://kotlinlang.org/docs/reference/java-interop.html#java-networking)
+- [Tutorial de Kotlin para HTTP Requests](https://www.tutorialspoint.com/kotlin/kotlin_http_requests.htm)
+- [Ejemplo de código de Kotlin para enviar una petición HTTP POST](https://gist.github.com/EkeIN/46698f1f52446d82b52a40554afdab3b)

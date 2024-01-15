@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Elixir: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,47 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Es gibt viele Gründe, warum man in der Elixir-Programmierung temporäre Dateien erstellen könnte. Zum Beispiel können temporäre Dateien verwendet werden, um Daten zwischen verschiedenen Funktionen oder Prozessen auszutauschen oder um temporäre Speicherung für bestimmte Dateioperationen bereitzustellen.
+Das Erstellen von temporären Dateien ist in der Programmierung oft nützlich, um Daten zwischenspeichern oder vorübergehend speichern zu können. Es ist besonders hilfreich in Elixir, da es eine funktionale Programmiersprache ist und das Erstellen von Dateien auf eine einfache und effiziente Art und Weise ermöglicht.
 
-# Wie man eine temporäre Datei erstellt
+## Wie geht das?
 
-Um eine temporäre Datei in Elixir zu erstellen, können wir die Funktion `:os.tmpname()` verwenden. Diese Funktion gibt uns einen zufälligen Dateinamen zurück, der nicht bereits in unserem Dateisystem existiert.
+Um eine temporäre Datei in Elixir zu erstellen, können wir die Funktion `File.Temp` verwenden. Sie erzeugt eine temporäre Datei mit automatisch generiertem Namen und gibt den Datei-Pfad als Ergebnis zurück. Wir können auch die Option `prefix` verwenden, um einen präfix vor dem Dateinamen anzuhängen.
 
-```
-Elixir
-{:ok, file_path} = :os.tmpname()
-IO.puts(file_path)
-# Output: "/var/folders/qw/9zs8s4dj73v8jt_rvmt5kjv94kc8ml/T/tempfile_73421"
-```
+```Elixir
+# Beispiel ohne Präfix
+file_path = File.Temp.temp_file()
+# Ergebnis: "/tmp/erlF419.temp"
 
-Wir können dann die Funktion `File.open/2` verwenden, um die temporäre Datei zu erstellen und von dort aus weiterzuarbeiten.
-
-```
-Elixir
-File.open(file_path, [:write], fn file ->
-  # Hier können wir Daten in die temporäre Datei schreiben
-  IO.write(file, "Hello World!")
-end)
+# Beispiel mit Präfix
+file_path = File.Temp.temp_file(prefix: "meine_datei_")
+# Ergebnis: "/tmp/meine_datei_erlF419.temp"
 ```
 
-# Tiefer Einblick
+Nachdem die temporäre Datei erstellt wurde, können wir sie nutzen, um Daten zu schreiben oder lesen. Anschließend sollten wir die Datei wieder löschen, um den Speicherplatz frei zu geben.
 
-Wenn wir uns genauer mit dem Erstellen von temporären Dateien beschäftigen, sollten wir beachten, dass die Datei möglicherweise nicht sofort gelöscht wird, wenn wir fertig damit sind. Das liegt daran, dass der Dateiname immer noch gespeichert wird und somit Platz in unserem Dateisystem beansprucht. Um dies zu vermeiden, können wir die Funktion `File.unlink/1` verwenden, um die temporäre Datei manuell zu löschen.
+```Elixir
+# Dateiinhalt schreiben
+file_path = File.Temp.temp_file()
+File.write(file_path, "Hallo Welt")
 
+# Dateiinhalt lesen
+File.read(file_path) 
+# Ergebnis: {:ok, "Hallo Welt"}
+
+# Datei löschen
+File.rm(file_path)
 ```
-Elixir
-File.open(file_path, [:write], fn file ->
-  # Hier können wir Daten in die temporäre Datei schreiben
-  IO.write(file, "Hello World!")
-end)
 
-# Löschen Sie die temporäre Datei
-File.unlink(file_path)
+## Tiefer tauchen
+
+Die Funktion `File.Temp` verwendet standardmäßig das Verzeichnis `"/tmp"` um die temporären Dateien zu erstellen. Dies kann jedoch mit der Option `dir` geändert werden, um ein anderes Verzeichnis zu verwenden. Außerdem gibt es noch die Option `path`, mit der wir selbst einen vollständigen Dateipfad angeben können.
+
+Eine weitere Möglichkeit, temporäre Dateien zu erstellen, ist die Funktion `File.open_temp/3`. Diese öffnet die Datei automatisch und gibt eine Datei-Deskriptor-Struktur zurück, die wir weiter nutzen können. Am Ende sollte diese Datei ebenfalls gelöscht werden.
+
+```Elixir
+# Beispiel mit angegebenem Verzeichnis
+file_path = File.Temp.temp_file(dir: "/home/benutzer/tmp/")
+
+# Beispiel mit angegebenem Pfad
+file_path = File.Temp.temp_file(path: "/home/benutzer/tmp/datei.txt")
 ```
 
-# Siehe auch
+## Siehe auch
 
-- [Offizielle Elixir Dokumentation](https://hexdocs.pm/elixir/File.html#open/2)
-- [Elixir Cookbook - Working with Temporary Files](https://elixircasts.io/working-with-temporary-files-in-elixir)
+- [Elixir File Dokumentation](https://hexdocs.pm/elixir/File.html)
+- [Offizielle Elixir Website](https://elixir-lang.org/)
+- [Einführung in Elixir](https://www.tutorialspoint.com/elixir/index.htm)

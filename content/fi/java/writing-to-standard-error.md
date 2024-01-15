@@ -1,6 +1,7 @@
 ---
-title:                "Java: Kirjoittaminen standardi virheeseen"
-simple_title:         "Kirjoittaminen standardi virheeseen"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "Java: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
+## Miksi kirjoittaa standardi virheeseen?
 
-Kirjoittaminen standardidatalle voi olla erittäin hyödyllistä ohjelmoijille useista eri syistä. Erityisesti silloin, kun halutaan havainnollistaa ja seurata ohjelman suoritusta tai vikasignaaleja, standardidatan kirjoittaminen voi olla erittäin hyödyllistä. Se myös auttaa tunnistamaan ja korjaamaan mahdollisia ohjelmointivirheitä.
+Kirjoittaminen standardi virheeseen on tärkeää, koska se auttaa kehittäjiä havaitsemaan ja korjaamaan virheitä ohjelmoinnin aikana. Kun ohjelma suoritetaan, virheet voivat ilmetä ja näkyvät tietokoneen konsolissa. Kirjoittaminen standardi virheeseen tarjoaa kehittäjille tärkeää tietoa virheistä ja auttaa heitä ymmärtämään, mitä osaa koodista tulee tarkastella ja korjata.
 
-## Miten
+# Miten
+## Miten kirjoittaa standardi virheeseen?
 
-**Esimerkkikoodi Java:**
-
-```java
-public static void main(String[] args) {
-    System.err.println("Tämä näyttää viestin standardidatalla"); 
-    System.out.println("Tämä näyttää viestin standardivirrassa");
-}
-```
-
-**Esimerkkilähtö:**
+Käytä Java-kielen _System.err_ -luokkaa kirjoittaaksesi standardi virheeseen koodisi sisällä seuraavalla tavalla:
 
 ```
-Tämä näyttää viestin standardidatalla
-Tämä näyttää viestin standardivirrassa
+Java System.err.println("Tämä on virheilmoitus");
 ```
 
-Kuten näkyy esimerkistä, ero standardidatan ja standardivirran välillä on pieni, mutta merkittävä. Käyttämällä syöttövirran sijaan virhevirran kirjoittamista, voit helposti seurata ohjelman suoritusta ja havaita mahdolliset ongelmat.
+Tämän jälkeen voit suorittaa ohjelman ja se tulostaa virheilmoituksen konsoliin.
 
-## Syvällinen tutkimus
+# Syvenny
+## Syvenny kirjoittamiseen standardi virheeseen
 
-Toinen tapa hyödyntää standardidataa ohjelmoinnissa on käyttää sitä väliaikaisena tallennustilana. Esimerkiksi jos sinun on tarkoitus käsitellä suuri määrä tietoa, voit ohjelmoida ohjelmasi kirjoittamaan tarvittavat tiedot standardidatalle ja lukea ne myöhemmin takaisin.
+Kirjoittaessa standardi virheeseen, on tärkeää käyttää _try-catch_ -lausekkeita virheiden käsittelyyn ja hallintaan. _System.err_ -luokka tarjoaa myös muita hyödyllisiä toimintoja, kuten _printStackTrace()_, joka auttaa selvittämään, missä kohdassa koodissa virhe on tapahtunut.
 
-Yksi tärkeä asia, jonka sinun tulee muistaa kirjoittaessasi standardidatalle on käsitellä kaikki mahdolliset poikkeukset (exceptions). Jos virhe ilmenee, ohjelma saattaa kaatua tai olla mahdoton palauttaa tiedot. Parhaan tuloksen saavuttamiseksi kannattaa hyödyntää poikkeusten käsittelyä käyttäen esimerkiksi try-catch -lohkoja.
+Kun käytät virheen ilmaisua _System.err_, on tärkeää myös muistaa koodin luettavuus ja käytettävyys. On hyvä idea määritellä oma luokka virheiden hallintaa varten, joka voi sisältää erilaisia virheen käsittelymetodeja riippuen ohjelmasta ja sen tarkoituksesta.
 
-## Katso myös
-
-Lisätietoa standardidatan käytöstä Java-ohjelmoinnissa löydät seuraavista lähteistä:
-
-- https://www.geeksforgeeks.org/standard-output-streams-in-java/
-- https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
-- https://www.baeldung.com/java-system-out-println-vs-system-err-println
+# Katso myös
+- [Java System.err Javadoc](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- [Java Exception handling tutorial](https://www.javatpoint.com/exception-handling-in-java)
+- [Good coding practices in Java](https://www.vogella.com/tutorials/JavaBestPractices/article.html)

@@ -1,6 +1,7 @@
 ---
-title:                "C: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना।"
+html_title:           "C: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना।"
+simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना।"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -9,46 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-शुरुआत में, हम यह जानना चाहते हैं कि क्यों हम HTTP अनुरोध भेजने में बेसिक प्रमाणीकरण का उपयोग करें। बेसिक प्रमाणीकरण का उपयोग करने से, हम सुरक्षित ढंग से डेटा को सर्वर के लिए भेज सकते हैं जो आमतौर पर उपयोगकर्ता नाम और पासवर्ड से सुरक्षित होता है।
+## क्यों
+
+HTTP अनुरोध को बेसिक प्रमाणीकरण के साथ भेजने का एक कारण यह हो सकता है कि आप सुरक्षित तरीके से दूरस्थ सर्वर से डेटा अनुरोध करना चाहते हैं।
 
 ## कैसे करें
-अब हम एक आसान उदाहरण के साथ सी में HTTP अनुरोध भेजने का प्रक्रिया देखेंगे। सबसे पहले, हम `curl` को इनस्टॉल करेंगे ताकि हम अपने टर्मिनल में HTTP रिक्वेस्ट भेज सकें। तो चलिए शुरुआत करते हैं!
 
-```C
+आप बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजने के लिए निम्न साधनों का उपयोग कर सकते हैं:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
-
-int main(void) {
+ 
+/*
+ * साइट से डेटा प्राप्त करना है और बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना है
+ */
+int main(void)
+{
   CURL *curl;
   CURLcode res;
-
-  // सर्वर के लिए URL और उपयोगकर्ता नाम
-  char *url = "https://www.example.com";
-  char *username = "username";
-
-  // पासवर्ड को आधार रूप में कॉन्टेंस 64बिट ASCII में लिखें
-  char *password = "password";
-
-  // कोंफ़िगर परमीटर्स
-  curl = curl_easy_init(); // स्थापना करें
+ 
+  // साइट का उड़ीकरण करें
+  curl = curl_easy_init();
   if(curl) {
-    // अपडेट URL
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    
-    // अपडेट HTTP प्रमाणीकरण प्रकोष्ठ
-    curl_easy_setopt(curl, CURLOPT_USERPWD, username, password);
-    
-    // नतीजे प्राप्त करें
+    // यूआरएल को सेट करें
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+ 
+    // स्टैटस कोड प्राप्त करने के लिए हैंडलर संबंधित भेजें
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+ 
+    // अपडेट मेमरी हैंडलर बनाएँ
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+ 
+    // डेटा प्राप्त करने के लिए कॉलबैक फंक्शन सेट करें
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &chunk);
+ 
+    /* एचटीटीपी अनुरोध भेजें */
     res = curl_easy_perform(curl);
-    
-    // स्थापित समाप्त करें
+ 
+    // हाशश बदलें पृष्ठ हटाएं
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+ 
+    /* हमेशा फ्री के लिए बदलें के लिए CURL ग्राहक हटाएं */
     curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
 
-जब आप यह कोड रन करेंगे, आपको `www.example.com` से संबंधित सामान्य पेज का उत्तर मिलेगा। आप अपने उपयोगकर्ता नाम और पासवर्ड को अपनी खुद की साइट पर अनुकूलित कर सकते हैं।
+## गहराई में जाएं
 
-## गहरी खुदाई
-अब हम गहराई से देखेंगे कि यह प्रक्रिया कैसे काम करती है। जब हम ऊपर दिए गए कोड का उपयोग करते हैं,
+यह कोड उदाहरण बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजने का एक सरल उदाहरण है। हालांकि, आप इसे समापन और प्रमाणीकरण के साथ अन्य प्रकार के HTTP अनुरोध भेजने के लिए संशोधित कर सकते हैं। आप भावना कर सकते हैं कि यह आपके एप्लिकेशन में अत्यधिक महत्वपूर्ण ह

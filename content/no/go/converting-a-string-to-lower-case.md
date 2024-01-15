@@ -1,5 +1,6 @@
 ---
-title:                "Go: Konvertere en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Go: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Go"
 category:             "Go"
@@ -10,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det å konvertere en streng til små bokstaver i Go kan være nyttig når du for eksempel trenger å sammenligne to strenger uavhengig av store eller små bokstaver. Det kan også gjøre koden din mer lesbar hvis du ønsker å bruke små bokstaver i hele koden.
 
-## Hvordan
-For å konvertere en streng til små bokstaver i Go, kan du bruke funksjonen `ToLower` fra `strings` pakken. Her er et eksempel på hvordan du kan gjøre det:
+Mange ganger i programmering må vi håndtere tekststrenger og det er viktig å kunne endre dem til en spesifikk form. Å konvertere en string til lower case er nyttig for å sikre at betingelsene eller søkene våre er mer nøyaktige og for å sikre en konsekvent standardisering av tekststrenger. Dette kan være spesielt nyttig når vi jobber med brukerinput eller når vi sammenligner strenger for å unngå feil.
+
+## Hvordan gjøre det
+
+For å konvertere en string til lower case i Go, kan vi bruke innebygde funksjoner som "ToLower" fra "strings" pakken. Her er et eksempel på hvordan vi gjør det:
 
 ```Go
-package main
+package main 
 
 import (
-    "fmt"
-    "strings"
+  "fmt"
+  "strings"
 )
 
 func main() {
-    str := "HEI, JEG ER EN STRENG"
-    fmt.Println(strings.ToLower(str))
+  str := "HELLO WORLD"
+  lowerCaseStr := strings.ToLower(str)
+  fmt.Println(lowerCaseStr)
 }
 ```
 
-Dette vil gi følgende output: `hei, jeg er en streng`.
+Output:
+
+hello world
+
+Som du kan se, bruker vi først "strings" pakken og deretter funksjonen "ToLower" på en string-variabel. Vi tilordner resultatet av denne funksjonen til en ny variabel og skriver ut den nye variabelen som inneholder den konverterte stringen i lower case.
 
 ## Dypdykk
-Det kan være nyttig å vite at `ToLower` funksjonen i Go tar hensyn til både ASCII og Unicode bokstaver. Det betyr at den vil konvertere alle store bokstaver til små uansett hvilket språk teksten er skrevet på. Det er også viktig å merke seg at funksjonen ikke vil endre på originalstrengen, men heller returnere en ny streng med de konverterte bokstavene.
+
+Det er verdt å merke seg at når vi bruker "strings.ToLower" funksjonen, blir den konverterte stringen en ny string-variabel, og den opprinnelige variabelen forblir uendret. Hvis vi ønsker å endre den opprinnelige variabelen, kan vi bruke "strings.ToLower" funksjonen og tilordne resultatet direkte til den opprinnelige variabelen.
+
+Vi kan også bruke "ToLowerSpecial" funksjonen fra "unicode" pakken hvis vi ønsker å ta hensyn til spesielle tegn og språkkoder i stringen vår. Denne funksjonen tar inn en "case mapping" funksjon som et argument og brukes til å konvertere stringen.
 
 ## Se også
-- [Go dokumentasjon om strings pakken](https://golang.org/pkg/strings/#ToLower)
-- [Gode programmeringsprinsipper på norsk](https://www.apress.com/gp/blog/all-blog-posts/all-posts/principles-of-good-programming-by-marian-pierzchala/15162878)
-- [Lær Go på norsk](https://github.com/kristianvalind/Norsk-Go)
 
-*Dette blogginnlegget ble skrevet på norsk av en Go-entusiast og er ment å gjøre det enklere for norske lesere å lære og forstå konseptet med å konvertere streng til små bokstaver i Go.*
+- [Go strings pakke dokumentasjon](https://golang.org/pkg/strings/)
+- [Go unicode pakke dokumentasjon](https://golang.org/pkg/unicode/)

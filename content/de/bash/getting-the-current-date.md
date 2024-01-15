@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Den aktuellen Datum erhalten"
+html_title:           "Bash: Den aktuellen Datum erhalten"
+simple_title:         "Den aktuellen Datum erhalten"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,52 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Abrufen des aktuellen Datums ist ein gemeinsames Szenario in der Bash-Programmierung. Es ermöglicht das Organisieren von Dateien basierend auf dem Datum und die Formatierung von Ausgaben. In diesem Blog-Beitrag erfahren Sie, wie Sie das aktuelle Datum in Ihrer Bash-Skripting-Umgebung erhalten.
+Wenn du wissen möchtest welches Datum heute ist, musst du nicht mehr den Kalender aufhängen oder auf deiner Uhr nachsehen. Mit Bash, der aktuellen Version des Bourne Again SHell, kannst du ganz einfach das aktuelle Datum und die aktuelle Zeit auf deinem Computer anzeigen lassen.
 
-## Wie geht das?
+## Wie geht's
 
-Um das aktuelle Datum in Bash zu erhalten, können wir das Befehlszeilenprogramm "date" verwenden. Wir können verschiedene Optionen verwenden, um das Datum in verschiedenen Formaten zu erhalten. Schauen wir uns einige Beispiele an.
-
-```Bash
-# Datum im Format "Monat Tag, Jahr"
-date +"%B %d, %Y" 
-# Ausgabe: Mai 25, 2021
-
-# Datum im Format "Tag/Monat/Jahr"
-date +"%d/%m/%Y" 
-# Ausgabe: 25/05/2021
-
-# Datum im Format "Wochentag, Monat Tag, Jahr"
-date +"%A, %B %d, %Y" 
-# Ausgabe: Dienstag, Mai 25, 2021
-```
-
-Wir können auch die Option "now" verwenden, um das aktuelle Datum und die aktuelle Uhrzeit zu erhalten.
+Um das aktuelle Datum und die Zeit in Bash zu bekommen, gibt es mehrere Möglichkeiten. Hier sind zwei Beispiele mit jeweils einer unterschiedlichen Ausgabe:
 
 ```Bash
-# Aktuelles Datum und Uhrzeit
-date +"%c" 
-# Ausgabe: Di 25 Mai 2021 10:30:45 CEST
+# Aktuelles Datum im Format "Tag. Monat Jahr"
+date +'%d. %m %Y' 
 ```
+Die Ausgabe wäre zum Beispiel "05. 10 2021".
 
-Weitere Optionen und Formate finden Sie in der Dokumentation zum "date" Befehl.
+```Bash
+# Aktuelles Datum und Zeit im Format Jahr-Monat-Tag-Stunde-Minute-Sekunde
+date +'%Y-%m-%d-%H-%M-%S'
+```
+Die Ausgabe wäre zum Beispiel "2021-10-05-12-30-45".
+
+Bei beiden Beispielen kannst du das Format anpassen, indem du die Zeichenfolge zwischen den einfachen Anführungszeichen änderst. Die Bedeutung der einzelnen Zeichen ist in der Bash-Dokumentation genau beschrieben.
 
 ## Tiefer Einblick
 
-Das "date" Befehlszeilenprogramm nutzt die Systemzeit, um das aktuelle Datum und die aktuelle Uhrzeit zu erhalten. Die Systemzeit wird in POSIX-Zeitstempel (Sekunden seit dem 01. Januar 1970) gemessen. Das "date" Programm wandelt diesen Zeitstempel in ein für uns lesbares Format um.
-
-Wir können auch die Systemzeit direkt mit dem Befehl "date +%s" abrufen.
+Die Befehle, die wir oben benutzt haben, basieren auf dem Datum und der Zeit, die im Betriebssystem deines Computers gespeichert sind. Sie werden normalerweise als "Unix-Time" bezeichnet und zählen die Sekunden seit dem 1. Januar 1970. Wenn du den Unix Time Stamp kennen möchtest, kannst du ihn direkt in Bash abrufen:
 
 ```Bash
-# Aktuelle Systemzeit in Sekunden seit 01.01.1970
-date +"%s" 
-# Ausgabe: 1621929027
+# Aktueller Unix-Time Stamp
+date +%s
 ```
+Die Ausgabe wäre zum Beispiel "1633461200".
 
-Es ist auch möglich, die Systemzeit zu ändern, indem man die Hardware-Uhr (RTC) anpasst. Dies sollte jedoch mit Vorsicht durchgeführt werden, da dies Auswirkungen auf andere Prozesse und Systemfunktionen haben kann.
+Außerdem kannst du mit Bash auch das Datum in der Zukunft oder Vergangenheit berechnen. Zum Beispiel kannst du das Datum von vor 10 Tagen mit folgendem Befehl bekommen:
+
+```Bash
+# Aktuelles Datum minus 10 Tage
+date -d "10 day ago" +'%d. %m %Y'
+```
+Die Ausgabe wäre zum Beispiel "25. 09 2021". Du kannst auch Wochentage und Monate hinzufügen oder subtrahieren und damit verschiedene Datumsberechnungen durchführen.
 
 ## Siehe auch
 
-- [GNU Coreutils - Teil 2: Datum und Zeit](https://wiki.ubuntuusers.de/GNU_Coreutils_-_Teil_2:_Datum_und_Zeit/)
-- [Bash-Dokumentation - Datum und Uhrzeit](https://www.gnu.org/software/bash/manual/html_node/Date-and-Time.html)
-- [Zeitmanipulation unter Linux mit "date"](https://www.linux-magazin.de/ausgaben/2007/06/zeitmanipulation/)
+- [Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [Unix-Time in Bash](https://www.cyberciti.biz/faq/linux-unix-get-current-unixtime-from-command-prompt-cli/)
+- [Datumsberechnungen mit Bash](https://www.tutorialspoint.com/unix_commands/date.htm)

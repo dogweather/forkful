@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Rust: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,46 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil kan virke som en enkel oppgave, men det er faktisk en viktig del av programmering. Tekstfiler kan brukes til å lagre og lese data, og er et nødvendig trinn i mange programmeringsprosjekter. I denne bloggposten vil vi se nærmere på hvordan du kan skrive en tekstfil i Rust.
+Hvorfor skulle du bry deg med å skrive en tekstfil i Rust? Svaret er enkelt: for å lagre og organisere data på en strukturert måte som kan brukes av datamaskinen din. Enten det er et enkelt notat eller et komplekst dataprogram, å kunne skrive til en tekstfil er en viktig ferdighet for enhver programmerer.
 
-## Hvordan
+## Slik
 
-For å skrive en tekstfil i Rust, må vi først importere "std::fs" biblioteket. Deretter kan vi bruke "File::create()" funksjonen for å opprette en ny fil, og deretter skrive data til den ved hjelp av "write_all()" funksjonen.
+Skrive til en tekstfil i Rust er enkelt og rett frem. Først må du inkludere "std" biblioteket ved å skrive `use std::fs::File;` øverst i koden din. Deretter kan du bruke `File::create` funksjonen til å opprette en ny tekstfil og få en `File`-objekt som representerer filen. Her er et eksempel på å skrive tekst inn i filen:
 
 ```Rust
-use std::fs::File; // Importerer "std::fs" biblioteket
-use std::io::Write; // Importerer "Write" traitet
+use std::fs::File;
 
-fn main() {
-    let mut fil = File::create("ny_fil.txt").expect("Kunne ikke opprette fil."); // Oppretter filen "ny_fil.txt"
-    fil.write_all(b"Hei, dette er en tekstfil skrevet ved hjelp av Rust!").expect("Kunne ikke skrive til filen."); // Skriver data til filen
-}
+let mut file = File::create("min_fil.txt")?; // Oppretter en fil med navnet "min_fil.txt"
+file.write_all(b"Hei, verden!")?; // Skriver til filen
 ```
 
-I koden over bruker vi "fil" variabelen til å holde styr på filen vår. Vi bruker også "mut" nøkkelordet for å gjøre den mutable, slik at vi kan skrive data til den. Deretter bruker vi "write_all()" funksjonen til å skrive en setning til filen. Vi legger også til "b" foran setningen for å indikere at den skal leses som bytes.
+Dette vil skrive teksten "Hei, verden!" til tekstfilen "min_fil.txt". Legg merke til `?` etter funksjonene. Dette er Rusts måte å håndtere eventuelle feil på. Du kan også bruke `writeln!` makroen for å skrive til filen og legge til linjeskift automatisk:
 
-Når koden er kjørt, vil "ny_fil.txt" bli opprettet og teksten vår vil bli skrevet til den. Du kan åpne filen i en tekstredigerer for å se resultatet.
+```Rust
+use std::fs::File;
+use std::io::Write; // Trenger for å bruke writeln! makroen
+
+let mut file = File::create("min_fil.txt")?;
+writeln!(file, "Dette er en linje")?; // Skriver "Dette er en linje" og legger til linjeskift
+```
 
 ## Dypdykk
 
-I "How To" delen viste vi hvordan du kan skrive en enkel tekstfil, men det er også mulig å skrive mer komplekse filer ved hjelp av Rust. Du kan for eksempel bruke "File::open()" funksjonen til å åpne en eksisterende fil og deretter bruke "read_to_string()" funksjonen for å lese data fra filen.
-
-```Rust
-use std::fs::File; // Importerer "std::fs" biblioteket
-use std::io::Read; // Importerer "Read" traitet
-
-fn main() {
-    let mut fil = File::open("ny_fil.txt").expect("Kunne ikke åpne fil."); // Åpner filen "ny_fil.txt"
-    let mut data = String::new(); // Oppretter en tom streng
-    fil.read_to_string(&mut data).expect("Kunne ikke lese filen."); // Leser data fra filen og legger til det til strengen
-    println!("{}", data); // Skriver ut data til konsollen
-}
-```
-
-I koden over bruker vi "File::open()" funksjonen til å åpne filen vår og lagre den i "fil" variabelen. Deretter oppretter vi en tom streng og bruker "read_to_string()" funksjonen til å lese data fra filen og legge den til i strengen. Til slutt skriver vi ut dataen til konsollen.
+Det er flere detaljer du kan lære for å utvide dine ferdigheter i å skrive til en tekstfil i Rust. En av dem er å åpne en eksisterende tekstfil og lese data fra den. Du kan også bruke forskjellige formateringsmakroer som `format!` og `println!` for å formatere data før du skriver dem til filen. Det er også nyttig å lære mer om håndtering av feil og unntak når du arbeider med filer.
 
 ## Se også
 
-- [Offisiell Rust dokumentasjon](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Rust By Example guide om filbehandling](https://doc.rust-lang.org/stable/rust-by-example/std_misc/file/read_lines.html)
-- [En tutorial om filbehandling i Rust](https://link.medium.com/1cNbWmv8N0)
+- [Rust Dokumentasjon om filer](https://doc.rust-lang.org/std/fs/index.html)
+- [Rust Tutorial: File I/O](https://www.tutorialspoint.com/rust/rust_file_io.htm)
+- [Rust Book - Kapittel 12: Anor de konsert](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)

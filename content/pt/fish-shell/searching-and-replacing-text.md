@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Buscando e substituindo texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Fish Shell: Buscando e substituindo texto"
 simple_title:         "Buscando e substituindo texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar busca e substituição de texto na Shell Fish?
+## Por que
 
-A busca e substituição de texto é uma ferramenta poderosa na programação que permite aos usuários localizar e alterar determinados trechos de texto em um arquivo ou diretório. Isso pode economizar muito tempo e esforço, especialmente em projetos grandes com muitos arquivos. A Shell Fish possui uma função integrada embutida que facilita a realização da busca e substituição de texto.
+Imagine que você está editando um arquivo de código longo e precisa mudar o nome de uma variável em todo o documento. Em vez de passar manualmente por cada linha, a busca e substituição automatizada pode economizar tempo e evitar erros.
 
-## Como fazer busca e substituição de texto na Shell Fish?
+## Como fazer
 
-Para utilizar a função de busca e substituição de texto na Shell Fish, primeiro você precisa abrir o terminal e navegar até o diretório onde está o arquivo que deseja alterar. Em seguida, digite o seguinte comando:
+Usando o Fish Shell, você pode facilmente realizar busca e substituição de texto usando o comando `sed`. Aqui está um exemplo:
 
-```Shell Fish
-sed 's/palavra_antiga/nova_palavra' arquivo.txt
+```
+Fish Shell - Busca e substituição de texto em um arquivo
+
+# Criar um arquivo com texto de amostra
+echo "Olá, mundo!" > texto.txt
+
+# Usar sed para substituir "mundo" por "universo" em texto.txt
+sed -i 's/mundo/universo/' texto.txt
+
+# Verificar se a substituição foi feita corretamente
+cat texto.txt
+
+# Saída: "Olá, universo!"
 ```
 
-Isso irá substituir a "palavra_antiga" pela "nova_palavra" no arquivo "arquivo.txt". Você também pode usar curingas para substituir todas as ocorrências da palavra antiga. Por exemplo, se quiser substituir todas as letras "a" por "e" no arquivo, você pode usar o seguinte comando:
+## Explorando mais a fundo
 
-```Shell Fish
-sed 's/a/e/g' arquivo.txt
+O comando `sed` usado no exemplo é uma ferramenta poderosa para substituir texto em um arquivo. Ele usa expressões regulares para encontrar e substituir padrões específicos. Além disso, você também pode usar a opção `-i` para fazer a substituição diretamente no arquivo, em vez de imprimir a saída na tela.
+
+Outra opção é usar o comando `grep` para procurar por um padrão específico em um arquivo e o `sed` para substituí-lo. Por exemplo:
+
 ```
+# Usar grep para encontrar linhas que contenham a palavra "mundo"
+grep -n "mundo" texto.txt
 
-## Explorando mais profundamente a busca e substituição de texto na Shell Fish
+# Saída: 1:Olá, mundo!
 
-Além do uso básico de substituição de texto que foi mostrado acima, a Shell Fish também oferece outras opções e comandos úteis. Por exemplo, você pode especificar qual linha ou intervalo de linhas deseja substituir usando números de linha. Você também pode salvar as alterações feitas em um novo arquivo, em vez de substituir o arquivo original.
+# Usar sed para substituir "mundo" por "universo" apenas na linha encontrada
+sed -i '1s/mundo/universo/' texto.txt
 
-Para saber mais sobre todas as opções disponíveis e a sintaxe correta para a busca e substituição de texto na Shell Fish, você pode consultar a documentação oficial ou pesquisar por tutoriais online.
+# Verificar se a substituição foi feita corretamente
+cat texto.txt
+
+# Saída: "Olá, universo!"
+```
 
 ## Veja também
 
-- Documentação oficial da Shell Fish: https://fishshell.com/docs/current/
-- Tutorial de busca e substituição de texto na Shell Fish: http://fishshell.net/docs/current/tutorial.html#substitution
+- [Fish Shell documentação oficial](https://fishshell.com/docs/current/index.html)
+- [Guia de expressões regulares do sed](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
+- [Guia de comandos do grep](https://www.gnu.org/software/grep/manual/grep.html)

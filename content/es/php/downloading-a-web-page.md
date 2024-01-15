@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Descargando una página web"
+title:                "Descargando una página web"
+html_title:           "PHP: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,45 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué descargar una página web es útil
+## ¿Por qué descargar una página web?
 
-Descargar páginas web puede ser útil por varias razones, como por ejemplo guardar una copia local de un sitio importante, acceder a contenido que no está disponible offline, o simplemente para realizar pruebas de desarrollo.
+Descargar una página web es una tarea común en el desarrollo web y puede ser útil por varias razones. Por ejemplo, puedes necesitar descargar el contenido de una página para realizar pruebas o extraer datos para análisis o procesamiento posterior.
 
-## Cómo descargar una página web en PHP
+## Cómo hacerlo
 
-Para descargar una página web en PHP, podemos utilizar la librería cURL. A continuación, se muestra un ejemplo de código que descarga una página y muestra su contenido en la consola:
+Para descargar una página web en PHP, puedes utilizar la función `file_get_contents()`. Esta función acepta una URL como argumento y devuelve el contenido de la página como una cadena de texto.
 
 ```PHP
 <?php
-// Creamos una instancia de cURL
-$ch = curl_init();
-
-// Especificamos la URL a descargar
-curl_setopt($ch, CURLOPT_URL, "https://www.ejemplo.com");
-
-// Indicamos que queremos guardar el resultado en una variable
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-// Ejecutamos la solicitud
-$page = curl_exec($ch);
-
-// Cerramos la conexión
-curl_close($ch);
-
-// Mostramos el resultado en la consola
-echo $page;
+// Descargar contenido de una página web
+$url = "https://www.example.com";
+$contenido = file_get_contents($url);
+echo $contenido;
 ?>
 ```
 
-El resultado de este código será el contenido HTML de la página descargada.
+Puedes utilizar esta función para descargar cualquier página web, siempre y cuando tengas los permisos necesarios para acceder a ella. También puedes especificar opciones adicionales, como un flujo de contexto para trabajar con autenticación y cabeceras personalizadas.
 
-## Profundizando en la descarga de páginas web
+```PHP
+<?php
+// Descargar página web con opciones adicionales
+$url = "https://www.example.com";
+$opciones = array(
+    'http' => array(
+        'method' => "GET",
+        'header' => "Authorization: Basic " . base64_encode("usuario:contraseña") // Autenticación básica
+     )
+);
+$contexto = stream_context_create($opciones);
+$contenido = file_get_contents($url, false, $contexto);
+echo $contenido;
+?>
+```
 
-La librería cURL ofrece una gran cantidad de opciones y configuraciones que nos permiten personalizar aún más nuestras solicitudes. Por ejemplo, podemos especificar una serie de cabeceras en la solicitud para simular un dispositivo móvil y obtener una versión de la página adaptada a dispositivos móviles. También podemos utilizar autenticación HTTP para acceder a contenido restringido.
+También puedes utilizar la biblioteca cURL en PHP para descargar páginas web de manera más avanzada. Esta biblioteca te permite configurar opciones como proxies, manejar conexiones SSL y más.
 
-Otro aspecto importante a considerar es la optimización de la descarga de páginas web, ya que una mala implementación puede llevar a un consumo excesivo de recursos del servidor y a un tiempo de respuesta lento. Es recomendable utilizar técnicas de caching y compresión para mejorar el rendimiento.
+## Inmersión profunda
+
+La función `file_get_contents()` es útil para descargar el contenido básico de una página web, pero hay muchas otras formas en que puedes personalizar y mejorar esta tarea.
+
+Por ejemplo, puedes utilizar la función `curl_init()` en conjunto con la biblioteca cURL para establecer opciones personalizadas y luego descargar el contenido utilizando la función `curl_exec()`. Esto te permitirá manejar errores de manera más eficiente y personalizar las opciones de descarga.
+
+También puedes utilizar otras funciones de PHP, como `stream_get_contents()` o `fopen()`, para leer el contenido de una página web de una manera más segura y eficiente.
+
+En resumen, descargar una página web en PHP es una tarea sencilla pero con muchas posibilidades de personalización y mejora. Experimenta con diferentes opciones y encuentra la mejor forma de descargar el contenido que necesites.
 
 ## Ver también
 
-- [Documentación de cURL en PHP](https://www.php.net/manual/es/book.curl.php)
-- [Ejemplos de cURL en PHP](https://github.com/curl/docs/blob/master/examples/php/example.php)
+- [Documentación de PHP sobre la función `file_get_contents()`](https://www.php.net/manual/es/function.file-get-contents.php)
+- [Documentación de PHP sobre la biblioteca cURL](https://www.php.net/manual/es/book.curl.php)
+- [Ejemplo de descarga de página web con cURL](https://www.php.net/manual/es/curl-examples.php)

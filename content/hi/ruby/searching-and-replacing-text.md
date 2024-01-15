@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: टेक्स्ट खोज और बदलना"
-simple_title:         "टेक्स्ट खोज और बदलना"
+title:                "टेक्स्ट को खोजना और बदलना"
+html_title:           "Ruby: टेक्स्ट को खोजना और बदलना"
+simple_title:         "टेक्स्ट को खोजना और बदलना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-कभी-कभी हमें परदेशी या गलत शब्दों को अपनी प्रोग्रामिंग में उपयोग करने की जरूरत पड़ती है। इससे हमारी कोडिंग संप्रभुता हो जाती है और हमें मेहनत के समय बचाने के लिए उन शब्दों को खोजने और बदलने की आवश्यकता होती है। यहाँ हम रूबी के माध्यम से टेक्स्ट को खोज, बदलें और बचाएंगे।
+Kisi bhi programmer ke liye text ko search aur replace karna bahut important hai. Isse aap code ko optimize aur maintain karne mein madad milti hai, jisse aapko code ko likhne ke liye kam samay lagta hai.
 
-## कैसे करें
+## Kaise Karein
 
-अगर हमारे पास एक स्ट्रिंग हो जिसमें गलत शब्द है, तो हम इसे `gsub()` मेथड का उपयोग करके आसानी से बदल सकते हैं। नीचे दिए गए उदाहरण में, हम नए शब्दों के साथ एक स्ट्रिंग को कैसे बदलते हैं:
-
-```Ruby
-string = "मैं रबी के साथ कोडिंग करता हूँ"
-new_string = string.gsub("रबी", "रूबी")
-
-puts new_string
-# आउटपुट: "मैं रूबी के साथ कोडिंग करता हूँ"
-```
-
-साथ ही, हम `gsub!()` मेथड का उपयोग करके इसमें से पात्र को सीधे बदल भी सकते हैं। नीचे दिए गए उदाहरण में, हम एक स्ट्रिंग के परदेशी शब्दों को कैसे बदलते हैं:
+Ruby mein text ko search aur replace karne ka sabse aasan tareeka `gsub` method hai. Isme aapko do arguments dena hota hai - pahla argument wo text jo aap search karna chahte hai aur dusra argument wo text jo aap replace karna chahte hai.
 
 ```Ruby
-string = "मैं रबी के साथ कोडिंग करता हूँ"
-string.gsub!("रबी", "रूबी")
-
-puts string
-# आउटपुट: "मैं रूबी के साथ कोडिंग करता हूँ"
+sentence = "Mai Ruby programming ka article likh raha hoon."
+replaced_sentence = sentence.gsub("programming", "karyakram")
+puts replaced_sentence
 ```
 
-## गहराई में जाएं
+Yeh code output ke roop mein "Mai Ruby karyakram ka article likh raha hoon." print karega.
 
-`gsub()` और `gsub!()` मेथड के अलावा भी कई तरीके हैं टेक्स्ट को खोजने और बदलने के लिए। अगर हमारे पास एक बड़ा प्रोजेक्ट है और हमें कई अलग-अलग स्ट्रिंग्स को बदलने हैं,
+Agar aapko search aur replace karne ke liye ek sentence mein se multiple words ko badalna hai, toh aap `gsub` method mein ek hash bhi de sakte hai. Ismein keys wo words honge jo aapko replace karna hai, aur values wo words honge jo aapko replace karna hai.
+
+```Ruby
+sentence = "Mai Ruby programming ka article likh raha hoon."
+replaced_sentence = sentence.gsub({"programming" => "karyakram", "likh" => "likhta"})
+puts replaced_sentence
+```
+
+Yeh code output ke roop mein "Mai Ruby karyakram ka article likhta raha hoon." print karega.
+
+## Gehraai Se Jhaankein
+
+`gsub` method ke alawa, dusre methods bhi hai Ruby mein jo text ko search aur replace karne mein madad karte hai. Kuch options hai jisse aap search ko case sensitive ya case insensitive bhi bana sakte hai. Text ko search karne ke liye regex bhi use kiya ja sakta hai.
+
+See Also:
+
+- [Ruby Docs on Gsub method](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Ruby Docs on Regex](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- [Ruby Monk's tutorial on replacing text](https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/45-replace)

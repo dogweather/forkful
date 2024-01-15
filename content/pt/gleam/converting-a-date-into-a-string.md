@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Convertendo uma data em uma cadeia de caracteres"
-simple_title:         "Convertendo uma data em uma cadeia de caracteres"
+title:                "Convertendo uma data em uma string"
+html_title:           "Gleam: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -9,37 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Converter uma Data em String?
+## Por que
 
-Converter uma data em string pode ser uma tarefa muito útil em programação, especialmente quando se trabalha com dados relacionados a datas. Isso permite que o programador tenha maior controle e flexibilidade sobre como a data será apresentada no código e em interfaces de usuário.
+Há muitos casos em que precisamos converter uma data em uma string, seja para exibição ao usuário ou para armazenamento em um banco de dados. Com a ajuda de Gleam, é possível realizar essa conversão de forma rápida e eficiente. Neste artigo, vamos descobrir como fazer isso!
 
-## Como Fazer
+## Como fazer
 
-Para converter uma data em string no Gleam, primeiro é necessário definir a data no formato desejado. Isso pode ser feito com a função `now()` para obter a data atual ou com a função `Date.from_gregorian(year, month, day)` para criar uma data específica.
-
-Uma vez que a data esteja definida, podemos usar a função `Date.to_string(date)` para convertê-la em uma string. Por exemplo:
+Em Gleam, o módulo "Date" fornece várias funções úteis para trabalhar com datas. Para converter uma data em uma string, usamos a função "to_string" deste módulo. Veja um exemplo:
 
 ```Gleam
-let data = Date.now()
-let data_string = Date.to_string(data)
+import Date
+import Gleam/Sequins.String as String
 
-// data_string será algo como "2021-05-20T13:45:24+00:00"
+let my_date = Date.from_calendar_date(2021, 8, 23)
+let my_string = Date.to_string(my_date)
+
+String.print(my_string) // "2021-08-23"
 ```
 
-O formato padrão para a função `Date.to_string()` é o [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), mas é possível especificar um formato personalizado, como mostrado abaixo:
+Neste exemplo, usamos a função "from_calendar_date" para criar uma data representando o dia 23 de agosto de 2021. Em seguida, usamos a função "to_string" para converter essa data em uma string no formato "yyyy-MM-dd". Você também pode fornecer um argumento opcional para especificar o formato da string desejada. Por exemplo:
 
 ```Gleam
-let data = Date.now()
-let data_string = Date.to_string(data, "%d/%m/%Y")
+import Date
+import Gleam/Sequins.String as String
 
-// data_string será algo como "20/05/2021"
+let my_date = Date.from_calendar_date(2021, 8, 23)
+let my_string = Date.to_string(my_date, "%d/%m/%Y")
+
+String.print(my_string) // "23/08/2021"
 ```
 
-## Mergulho Profundo
+Existem vários formatos disponíveis para serem usados com a função "to_string", o que torna essa conversão muito flexível e adapta-se às necessidades do seu projeto.
 
-Além de converter uma data em uma string em um formato específico, o Gleam também nos permite fazer operações com datas, como adicionar ou subtrair dias, semanas, meses ou anos. Isso é feito com a função `Date.add_time(date, time)` ou `Date.sub_time(date, time)`, onde `time` é uma struct do tipo `Time` que especifica a quantidade de tempo que deve ser adicionada ou subtraída.
+## Deep Dive
+
+Ao usar a função "to_string", é importante entender que ela retorna um tipo "FlexibleDateTime", que representa uma data e hora, e não apenas uma data. Portanto, se você passar para a função uma data com uma hora diferente de "meia-noite", a string resultante conterá essa informação. Por exemplo:
+
+```Gleam
+import Date
+import Gleam/Sequins.String as String
+
+let my_date = Date.from_calendar_date(2021, 8, 23)
+
+// data às 15:30
+let my_flex_date = Date.from_full_rfc3339("2021-08-23T15:30:00+00:00")
+
+let my_string = Date.to_string(my_flex_date)
+
+String.print(my_string) // "2021-08-23T15:30:00+00:00"
+```
+
+Se você quiser apenas a data em formato de string, sem a hora, você pode usar a função "from_date" para converter a data em um tipo "Date" antes de chamar a função "to_string". Por exemplo:
+
+```Gleam
+import Date
+import Gleam/Sequins.String as String
+
+let my_date = Date.from_calendar_date(2021, 8, 23)
+
+// data às 15:30
+let my_flex_date = Date.from_full_rfc3339("2021-08-23T15:30:00+00:00")
+
+let my_string = my_flex_date
+    |> Date.from_date
+    |> Date.to_string
+
+String.print(my_string) // "2021-08-23"
+```
+
+Com isso, podemos converter uma data em uma string e ainda ter controle sobre o formato e os detalhes incluídos na string resultante.
 
 ## Veja também
 
-- [Documentação Gleam sobre datas](https://gleam.run/documentation/stdlib/date.html)
-- [Tutorial sobre manipulação de datas com Gleam](https://dreamsimilia.com/gleam-date-manipulation/)
+- Documentação oficial sobre o módulo "Date" em Gleam: https://gleam.run/modules/date.html
+- Tutorial sobre uso do módulo "Date" em Gleam: https://gleam.run/tutorials/dates.html

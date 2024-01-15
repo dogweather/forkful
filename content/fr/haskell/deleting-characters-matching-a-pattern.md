@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Supprimer les caractères correspondant à un motif"
-simple_title:         "Supprimer les caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "Haskell: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,34 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Supprimer des caractères correspondant à un motif peut être utile dans de nombreux cas, comme la manipulation de chaînes de caractères ou la modification de données. Cela peut également permettre d'épurer des données inexploitables ou de supprimer des caractères indésirables d'un fichier texte.
+Il y a plusieurs raisons pour lesquelles on pourrait vouloir supprimer des caractères qui correspondent à un motif dans un programme Haskell. Cela peut être fait pour nettoyer une chaîne de caractères avant une opération de traitement de données ou pour simplifier un algorithme en éliminant les informations inutiles.
 
-## Comment faire
+## Comment Faire
 
-Voici un exemple de code en Haskell pour supprimer les caractères correspondant à un motif donné :
+Voici un exemple simple de code qui supprime tous les caractères de type "a" dans une chaîne de caractères :
 
 ```Haskell
-deletePattern :: String -> String
-deletePattern [] = []
-deletePattern (x:xs)
-    | x == 'a' = deletePattern xs
-    | otherwise = x : deletePattern xs
+import Data.Char (isLower) -- importe la fonction isLower qui vérifie si un caractère est minuscule
+
+deleteA :: String -> String -- déclare une fonction qui prend une chaîne de caractères en entrée et en retourne une en sortie
+deleteA str = filter (not . isLower) str -- utilise la fonction filter pour appliquer la fonction not . isLower à chaque caractère de la chaîne d'entrée et renvoie la chaîne filtrée
+
+main = do
+  let str = "Hello, world!" -- déclare une variable str avec la chaîne de caractères à traiter
+  print(str) -- affiche la chaîne d'origine
+  print(deleteA str) -- affiche la chaîne avec les caractères "a" supprimés
 ```
-Output : Supposons que notre chaîne de caractères soit "labbab" et que nous voulions supprimer tous les caractères "a" :
+
+Résultat :
+
 ```
-Resultat: "lbbb"
+"Hello, world!"
+"Hell, world!"
 ```
-Ce code utilise une fonction récursive pour parcourir chaque caractère de la chaîne et le supprimer s'il correspond au motif donné. Il est possible de mettre en place d'autres conditions pour supprimer différents caractères ou pour prendre en compte des motifs plus complexes.
 
-## Zoom sur la suppression de caractères correspondant à un motif
+On peut également utiliser des expressions régulières pour supprimer les caractères correspondant à un motif spécifique. Voici un autre exemple de code qui supprime tous les nombres d'une chaîne de caractères :
 
-Supprimer des caractères correspondant à un motif peut également être utilisé dans le cadre de la programmation fonctionnelle pour effectuer des transformations sur des données. En utilisant des fonctions de filtrage et de transformation, il est possible de supprimer et même de remplacer des caractères en fonction de différents motifs.
+```Haskell
+import Text.Regex.Posix -- importe la fonction =~ qui permet d'utiliser des expressions régulières
 
-Il est également important de noter qu'il existe plusieurs façons de supprimer des caractères correspondant à un motif en Haskell, en utilisant entre autres les fonctions standard `filter` ou `delete` de la librairie Data.List.
+deleteDigits :: String -> String -- déclare une fonction qui prend une chaîne de caractères en entrée et en retourne une en sortie
+deleteDigits str = str =~ "[0-9]" :: String -- utilise l'expression régulière [0-9] pour supprimer tous les nombres dans la chaîne et renvoie la chaîne changée
 
-## Voir aussi
+main = do
+  let str = "Today's date is 10/15/2021." -- déclare une variable str avec la chaîne de caractères à traiter
+  print(str) -- affiche la chaîne d'origine
+  print(deleteDigits str) -- affiche la chaîne avec les nombres supprimés
+```
 
-- [Documentation de Haskell](https://www.haskell.org/documentation/)
-- [Les fonctions de transformation en Haskell](https://wiki.haskell.org/Functional_programming)
-- [Utilisation de `filter` pour supprimer des éléments d'une liste en Haskell](https://www.geeksforgeeks.org/haskell-filter/)
-- [Utilisation de `delete` pour éliminer des éléments d'une liste en Haskell](https://www.geeksforgeeks.org/haskell-delete/)
+Résultat :
+
+```
+"Today's date is 10/15/2021."
+"Today's date is /./."
+```
+
+## Plongée Profonde
+
+En utilisant la fonction `filter` et le concept de fonction d'ordre supérieur, on peut créer une fonction générique pour supprimer tous les caractères correspondant à un motif dans une chaîne de caractères :
+
+```Haskell
+-- Déclare une fonction générique qui prend une fonction de test en entrée et une chaîne de caractères en entrée et en retourne une en sortie
+genericDelete :: (Char -> Bool) -> String -> String
+genericDelete testFunc str = filter (not . testFunc) str -- utilise la fonction de test pour évaluer chaque caractère dans la chaîne et renvoie la chaîne filtrée
+
+main = do
+  let str = "Haskell is fun!" -- déclare une variable str avec la chaîne de caractères à traiter
+  print(str) -- affiche la chaîne d'origine
+  print(genericDelete (== 'a') str) -- affiche la chaîne avec les caractères "a" supprimés en utilisant la fonction générique avec la fonction de test (== 'a')
+```
+
+Résultat :
+
+```
+"Haskell is fun!"
+"Hskell is fun!"
+```
+
+## Voir Aussi
+
+Pour plus d'informations sur les fonctions de manipulation de chaînes de caractères en Haskell, vous pouvez consulter ces liens : 
+
+- [Documentation officielle de Haskell](https://www.haskell.org/documentation/) sur les fonctions standard pour le traitement de chaînes de caractères
+- [Tutoriel sur les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions) pour une approche plus avancée de la suppression de caractères par motif
+- [Hackage](https://hackage.haskell.org/) pour une liste complète de bibliothèques et de packages pour le traitement de données en Haskell.

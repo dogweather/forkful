@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
+html_title:           "Ruby: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
+simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,63 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen standardivirheeseen voi tuntua turhalta askelta, sillä se ei näy lopullisessa ohjelmassa. Kuitenkin, jos haluat seurata tai havaita mahdollisia virheitä, niin kirjoittaminen standardivirheeseen on erittäin hyödyllinen tapa saada selville, mitä ohjelmassa tapahtuu.
+Kirjoittaminen standard erroriin on hyödyllinen tapa ilmoittaa virheistä ja varoituksista ohjelman suorituksen aikana. Tämä auttaa kehittäjiä tunnistamaan ja korjaamaan mahdollisia ongelmia nopeammin.
 
-## Miten
+## Kuinka
 
-Seuraavassa esimerkissä näytämme, miten kirjoitat standardivirheeseen Ruby-ohjelmassa. Voit käyttää `puts`-metodia kirjoittamaan tekstiä standardilähtöön, mutta jos haluat kirjoittaa virheilmoituksia, käytä `STDERR.puts`-metodia.
+Kirjoittaminen standard erroriin Rubyssa on helppoa. Se onnistuu käyttämällä `STDERR.puts` tai `STDERR.print` -komennon sijaan perinteisiä `puts` ja `print` -komentoja.
 
 ```Ruby
-begin
-  # Tätä koodia yritetään suorittaa
-  5 / 0
-rescue
-  # Jos virhe tapahtuu, kirjoitetaan virheilmoitus standardivirheeseen
-  STDERR.puts "Virhe: Et voi jakaa nollalla."
-end
+# Kirjoitetaan virheviesti standard erroriin
+STDERR.puts "Virhe: Ei löydy tiedostoa"
+
+# Kirjoitetaan varoitussanoma standard erroriin
+STDERR.print "Varoitus: Tiedosto saattaa olla korruptoitunut"
 ```
 
-Tämän ohjelman tulos näyttää seuraavalta:
+Tulostuksena saadaan:
 
 ```
-Virhe: Et voi jakaa nollalla.
+Virhe: Ei löydy tiedostoa
+Varoitus: Tiedosto saattaa olla korruptoitunut
 ```
 
 ## Syvemmälle
 
-Kun käytät `STDERR.puts`-metodia, voit myös antaa sille useita argumentteja. Tällöin ne tulostetaan standardivirheenä yksi kerrallaan.
+Kirjoittaminen standard erroriin on välttämätöntä silloin, kun halutaan erottaa virheviestit ja varoitukset normaalista tulosteesta. Jos esimerkiksi käytämme `puts`-komentoa, viesti tulostuu standard ulostuloon ja sekoittuu mahdollisiin muihin tulosteisiin.
+
+Lisäksi voi olla hyötyä muokata standard errorin ulkoasua. Tämä on mahdollista esimerkiksi värikoodien ja muotoilujen avulla. Alla olevassa esimerkissä käytämme `colorize` -kirjastoa, joka mahdollistaa tekstin muotoilun Rubyssa.
 
 ```Ruby
-# Kirjoitetaan standardivirheeseen useita viestejä
-STDERR.puts "Tämä on ensimmäinen virhe."
-STDERR.puts "Tämä on toinen virhe."
-STDERR.puts "Tämä on kolmas virhe."
+require 'colorize'
+
+# Kirjoitetaan virheviesti standard erroriin käyttäen punaista väriä ja lihavointia
+STDERR.puts "Virhe: Ei löydy tiedostoa".red.bold
+
+# Kirjoitetaan varoitussanoma standard erroriin käyttäen keltaista väriä ja alleviivausta
+STDERR.print "Varoitus: Tiedosto saattaa olla korruptoitunut".yellow.underline
 ```
 
-Tämän ohjelman tulos näyttää seuraavalta:
+Tulostuksena saadaan:
 
 ```
-Tämä on ensimmäinen virhe.
-Tämä on toinen virhe.
-Tämä on kolmas virhe.
-```
-
-Voit myös käyttää `STDERR.print`-metodia, jos haluat tulostaa kaiken samalle riville. Tässä esimerkissä käytämme `STDERR.print`-metodia tulostamaan kymmenen peräkkäistä numeroa.
-
-```Ruby
-# Tulostetaan numerot 1-10 standardivirheeseen ilman rivinvaihtoa
-(1..10).each do |i|
-  STDERR.print "#{i} "
-end
-```
-
-Tämän ohjelman tulos näyttää seuraavalta:
-
-```
-1 2 3 4 5 6 7 8 9 10
+Virhe: Ei löydy tiedostoa
+Varoitus: Tiedosto saattaa olla korruptoitunut
 ```
 
 ## Katso myös
 
-- [STDERR luokka Ruby-ohjelmointikielen virallisessa dokumentaatiossa](https://ruby-doc.org/core-3.0.1/STDERR.html)
-- [Ruby-tietokirja: Tulostaminen standardivirheeseen](http://rubylearning.com/satishtalim/writing-to-standard-error/)
+- [Ruby Dokumentaatio](https://ruby-doc.org/core-3.0.0/IO.html#class-IO-label-Printing+z+directly+to+the+tty)
+- [Ruby Colorize-kirjasto](https://github.com/fazibear/colorize)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Rust: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,33 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Rust on suosittu ohjelmointikieli sen nopeuden ja turvallisuuden vuoksi. Mutta miten voimme varmistaa, että kirjoitettu koodi toimii odotetusti? Tässä tulevat avuksi testit.
+Kirjoittaessa ohjelmia, testien kirjoittaminen voi tuntua ylimääräiseltä työltä ja hidastavan projektin etenemistä. Kuitenkin testien kirjoittamisella voi säästää aikaa ja vaivaa myöhemmin, kun ohjelmaa täytyy muokata tai korjata virheitä. Testien avulla voidaan myös varmistaa, että ohjelman eri osat toimivat oikein ja ennaltaehkäistä mahdollisia virheitä.
 
-## Miten
+## Näin tehdään
 
-Testien kirjoittaminen Rustissa on yksinkertaista ja suoraviivaista. Voit luoda uuden moduulin nimeltä "tests" ja kirjoittaa erilaisia testitapauksia käyttämällä sisäänrakennettua makroa "assert_eq!". Tämä varmistaa, että kunkin testin odotettu tulos on sama kuin todellinen tulos.
+Testien kirjoittaminen Rustissa on helppoa ja yksinkertaista. Ensimmäiseksi täytyy lisätä `#[cfg(test)]` merkintä moduulien yhteyteen, jotta testit voidaan suorittaa. Sen jälkeen testit voidaan kirjoittaa `#[test]` ja `assert!()` funktioiden avulla. Alla on esimerkki testin kirjoittamisesta `String` datatypea varten:
 
-```Rust
+```rust
 #[cfg(test)]
-mod tests {
+mod test_string {
     #[test]
-    fn test_sum() {
-        assert_eq!(2 + 2, 4); // Tämä testi läpäisee odotetusti
-        assert_eq!(2 + 2, 5); // Tämä testi ei läpäise, sillä odotettu tulos ja todellinen tulos eivät ole samat
+    fn test_string_contains() {
+        let my_string = String::from("Hello world");
+        assert!(my_string.contains("Hello"));
     }
 }
 ```
 
-Voit myös käyttää erilaisia muita makroja, kuten "assert_ne!" ja "assert!", testien kirjoittamiseen eri tilanteisiin. Voit myös luoda omia testi-struktuureja ja käyttää erilaisia asetteluja testien järjestämiseen.
+Jokainen `#[test]` merkinnällä varustettu funktio on yksi testi, ja `assert!()` funktio tarkistaa, että annettu lauseke on tosi. Tässä tapauksessa testi on totta, sillä "Hello world" sisältää sanan "Hello". Nyt voimme ajaa testin käyttämällä `cargo test` komentoa, joka tulostaa seuraavan:
 
-## Syvempi sukellus
+```
+running 1 test
+test test_string_contains ... ok
 
-Testien kirjoittaminen Rustissa on tärkeä osa koodin kehittämistä ja varmistaa, että ohjelma toimii odotetusti erilaisissa tilanteissa. On tärkeää testata myös virheiden hallintaa ja reunatapauksia. Voit myös suorittaa testit automaattisesti käyttämällä komentoa "cargo test", joka löytää ja suorittaa kaikki testitiedostot projektissasi.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out
+```
 
-On myös hyvä käytäntö kirjoittaa testejä ennen varsinaisen koodin kehittämistä. Tämä auttaa sinua selventämään odotettuja tuloksia ja varmistaa, että koodi toimii oikein.
+Voit myös käyttää `assert_eq!()` funktiota tarkistaaksesi, että kaksi arvoa ovat yhtäsuuret. Alla on esimerkki siitä, miten voit testata kahden numeron summan:
+
+```rust
+#[cfg(test)]
+mod test_sum {
+    #[test]
+    fn test_sum_result() {
+        let a = 2;
+        let b = 3;
+        let result = a + b;
+        assert_eq!(result, 5);
+    }
+}
+```
+
+Tässä tapauksessa testi on tosi, sillä 2 ja 3:n summa on 5. Voit nyt taas ajaa testin ja näet, että kaikki testit läpäisevät.
+
+## Syvemmälle aiheeseen
+
+Testien kirjoittaminen Rustissa voi olla erittäin hyödyllistä monilla eri tavoilla. Yksi tärkeimmistä eduista on se, että testien avulla voit olla varma, että kirjoittamasi koodi toimii oikein. Voit myös lisätä testejä jokaiseen muokattuun osaan koodia, jotta voit varmistaa, että uudet muutokset eivät riko toimivaa koodia.
+
+Testien avulla voit myös huomata mahdollisia virheitä ja ongelmakohtia koodissasi. Testien kirjoittaminen pakottaa sinut ajattelemaan ohjelmaasi eri näkökulmista ja löytämään mahdolliset virhetilanteet, joita käyttäjät saattavat kohdata.
+
+Lisäksi testien avulla voit helposti varmistaa, että ohjelmasi toimii oikein eri ympäristöissä ja platvormeilla. Rustin testauskehys tarjoaa mahdollisuuden suorittaa testeihin tarvittavat tapahtumat ja testata useita eri tilanteita.
 
 ## Katso myös
 
-- [Rustin testauksen viralliset dokumentit](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Blogini: Miksi testien kirjoittaminen on tärkeää ohjelmistokehityksessä](https://www.blogi123.com/miksi-testien-kirjoittaminen-on-tarkeaa-ohjelmistokehityksessa)
-- [Videotutoriaali: Kuinka kirjoittaa testejä Rustissa](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [Rustin testausdokumentaatio](https://doc.rust-lang.org/rust-by-example/testing.html)
+- [Testauksen merkitys ohjelmoinnissa (englanniksi)](https://medium.com/@

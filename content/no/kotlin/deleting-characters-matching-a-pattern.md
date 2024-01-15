@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Kotlin: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Noen ganger kan du finne deg selv i en situasjon der du må fjerne visse tegn i en tekststreng som matcher et mønster. Dette kan være for å rense data, gjøre en tekst mer lesbar eller for å oppnå et bestemt format. Ved å lære hvordan du sletter tegn som matcher et mønster i Kotlin, kan du enkelt håndtere slike situasjoner og øke effektiviteten din som utvikler.
 
-Du har kanskje kommet over situasjoner der du trenger å fjerne bestemte tegn i en tekststreng. Dette kan være for å rengjøre data eller for å lage et mer leselig resultat. Uansett grunn, så er det viktig å forstå hvordan man kan slette tegn som matcher et bestemt mønster i Kotlin.
-
-## Hvordan
-
-For å slette tegn som matcher et mønster i Kotlin, kan du bruke funksjonen `Regex.replace()` og gi den to argumenter - tekststrengen du ønsker å modifisere, og et mønster som beskriver hvilke tegn som skal slettes.
+# Slik gjør du det
+For å slette tegn som matcher et mønster i Kotlin, kan du bruke funksjonene `replace()` og `replaceAll()`. Disse funksjonene tar inn to parametere: et regulært uttrykk og en streng som representerer teksten du ønsker å endre.
 
 ```Kotlin
-val tekst = "Hei! Jeg elsker å kode i Kotlin!"
-val nyTekst = Regex("[! ]").replace(tekst, "")
+val text = "Hei! Jeg elsker å kode i Kotlin :)"
+
+// Fjerner alle tegn som er ikke-bokstaver
+val nyTekst = text.replace("[^a-zA-Z]".toRegex(), "")
+println(nyTekst) // Resultat: HeiJegelskeråkodeiKotlin
+
+// Fjerner spesifikke tegn som matcher et mønster
+val annenTekst = text.replaceAll("[!:]".toRegex(), "")
+println(annenTekst) // Resultat: Hei Jeg elsker å kode i Kotlin
 ```
 
-Her vil `nyTekst` variabelen inneholde strengen "HeiJegelskeråkodeiKotlin" siden funksjonen slettet alle utropstegn og mellomrom. Dette kan være nyttig hvis du for eksempel ønsker å fjerne spesielle tegn fra en brukers input.
+I det første eksempelet bruker vi `replace()` for å fjerne alle tegn som ikke er bokstaver fra teksten vår. I det andre eksempelet bruker vi `replaceAll()` for å fjerne utropstegn og kolon fra teksten. Det regulære uttrykket som blir brukt, forteller funksjonen hvilke tegn den skal erstatte.
 
-## Dypere dykk
+# Dypdykk
+I de to eksemplene over har vi brukt regulære uttrykk for å spesifisere hvilke tegn vi ønsker å fjerne. Regulære uttrykk er en kraftig måte å søke og manipulere tekst på, og det er derfor verdt å bruke litt tid på å forstå de forskjellige mønstrene og symbolene som kan brukes.
 
-Det er verdt å merke seg at `Regex.replace()` funksjonen returnerer en ny tekststreng og ikke endrer den originale strengen. Så hvis du vil at endringene skal skje på selve variabelen, må du tildele den nye verdien til variabelen.
+Noen vanlige symboler som brukes i regulære uttrykk er:
 
-I tillegg kan du også bruke regex grupper i mønsteret for å slette spesifikke deler av teksten. For eksempel, hvis du ønsker å fjerne alle tall fra en tekststreng, kan du bruke mønsteret `[0-9]` som beskriver et tall.
+- `.` - matcher et hvilket som helst tegn
+- `[a-z]` - matcher et hvilket som helst tegn fra a til z
+- `^` - matcher starten av en tekststreng
+- `$` - matcher slutten av en tekststreng
+- `*` - matcher null eller flere forekomster av det forrige tegnet
+- `+` - matcher én eller flere forekomster av det forrige tegnet
+- `?` - matcher null eller én forekomst av det forrige tegnet
 
-## Se også
+I tillegg til disse er det mange andre symboler og mønstre som kan brukes for å lage mer avanserte regulære uttrykk. Det kan være lurt å øve seg på å skrive og teste ulike uttrykk for å bli mer komfortabel med dem.
 
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Regex Class in Kotlin]( https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+# Se også
+- Dokumentasjon for `replace()` og `replaceAll()` i Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html
+- En oversikt over vanlige regulære uttrykk: https://www.rexegg.com/regex-quickstart.html

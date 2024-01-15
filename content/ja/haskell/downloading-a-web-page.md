@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Haskell: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,53 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## ダウンロードする理由
 
-ウェブページをダウンロードする理由は様々ですが、例えば情報を収集したいときや、特定のデータを入手したいときに必要となります。
+Webページをダウンロードすることで、ウェブコンテンツをオフラインで閲覧したり、ブログやニュースサイトの記事を保存したりすることができます。また、自分のプログラムやアプリケーションの一部としてウェブスクレイピングを用いることもできます。
 
-## 方法
+## ダウンロードの方法
 
-ウェブページをダウンロードするためには、最初にHTTPリクエストを送信し、レスポンスを受け取る必要があります。HaskellでHTTPリクエストを送信するには、`Network.HTTP.Simple`モジュールを使用します。
-
-まず、必要なモジュールをインポートします。
+まず、必要なライブラリをインポートします。
 
 ```Haskell
 import Network.HTTP.Simple
+import qualified Data.ByteString.Lazy.Char8 as L8
 ```
 
-次に、ダウンロードしたいウェブページのURLを指定し、`httpSimple`関数を使用してHTTPリクエストを送信します。
+次に、`httpSimpelRequest`を使ってウェブサイトのURLを与えてリクエストを作成します。
 
 ```Haskell
-let url = "https://example.com"
-response <- httpSimple url
+request <- parseRequest "https://example.com"
 ```
 
-このコードを実行すると、ウェブページからのレスポンスが`response`変数に格納されます。
-
-もし、ウェブページからのレスポンスがJSON形式であれば、`httpJSON`関数を使用してレスポンスをJSONオブジェクトとして取得することができます。
+リクエストを実行してレスポンスを得るには、`httpLBS`関数を使います。
 
 ```Haskell
-response <- httpJSON url
+response <- httpLBS request
 ```
 
-このコードを実行すると、ウェブページのJSONデータが`response`変数に格納されます。
-
-## 深堀り
-
-ウェブページをダウンロードする際には、通常はHTTPリクエストのヘッダーをカスタマイズする必要があります。Haskellでは、`Request`タイプを使用してHTTPリクエストの情報をカスタマイズすることができます。
-
-例えば、ユーザーエージェントをカスタマイズする場合は、`Request`の`requestHeaders`フィールドにカスタムヘッダーを追加することができます。
+レスポンスからコンテンツを抽出するためには、`getResponseBody`関数を使います。
 
 ```Haskell
-import Network.HTTP.Types.Header
-
-let userAgent = (hUserAgent, "My Custom User-Agent")
-let request = setRequestHeaders [userAgent] $ setRequestHeader hAccept ["text/html"] $ defaultRequest { host = "example.com" }
+body <- getResponseBody response
 ```
 
-このコードでは、`My Custom User-Agent`という値を持つ`User-Agent`ヘッダーを追加し、`text/html`という値を持つ`Accept`ヘッダーを指定したHTTPリクエストを作成しています。
+抽出したコンテンツはバイト文字列として返されるため、必要に応じて文字列に変換することができます。
 
-## 参考リンク
+```Haskell
+let content = L8.unpack body
+```
 
-- [Network.HTTP.Simpleモジュールのドキュメント](https://hackage.haskell.org/package/http-simple)
-- [HTTPリクエストのカスタマイズ方法についてのガイド](https://dev.to/kris/understand-networkhttp-and-make-basic-http-requests-with-this-tutorial-3afl)
+## 詳細を深く掘り下げる
+
+ウェブページをダウンロードするにはさまざまな方法があります。例えば、`httpSimpelRequest`の代わりに`httpSimpelRequestBS`を使うことで、レスポンスをバイト文字列ではなくテキストとして直接受け取ることができます。また、パラメータを追加することで、リクエストをカスタマイズすることもできます。詳細については、Haskellのドキュメントを参照してください。
+
+## 他にも参考になる記事
+
+- [Haskellで簡単なウェブスクレイピング](https://qiita.com/yuyakato/items/7c3f1f1693fb8e0df803)
+- [HaskellのHTTP Simpleパッケージのドキュメント](https://hackage.haskell.org/package/http-client)
+- [Haskellでウェブスクレイピングをする方法](https://qiita.com/emergent/items/9fd00405254468c09801)

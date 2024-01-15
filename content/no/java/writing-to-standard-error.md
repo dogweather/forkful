@@ -1,5 +1,6 @@
 ---
-title:                "Java: Skriving til standardfeil"
+title:                "Skriving til standardfeil"
+html_title:           "Java: Skriving til standardfeil"
 simple_title:         "Skriving til standardfeil"
 programming_language: "Java"
 category:             "Java"
@@ -9,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive til standard error i Java er en viktig del av feilhåndtering og debugging i applikasjoner. Dette lar deg få tilbakemelding og viktig informasjon om eventuelle problemer eller feil som oppstår under kjøring av programmet ditt. Det er også viktig for å sikre at brukeren får en god opplevelse når de bruker applikasjonen din.
+Hvis du noen gang har programmert i Java, har du sannsynligvis sett uttrykket "standard error print" eller "std err". Dette refererer til å sende ut feil- eller loggmeldinger til terminalen eller konsollen under kjøring av et Java-program. Det kan være nyttig å sende ut informasjon til standard error i stedet for standard output i visse scenarier, for eksempel når du trenger å feilsøke eller logge kritisk informasjon.
 
-# Hvordan du gjør det
+## Hvordan
 
-For å skrive til standard error i Java, bruker du System.err.println() -funksjonen. Dette vil skrive ut meldingen til standard error-strømmen i stedet for standard ut-strømmen. Det er viktig å merke seg at du må inkludere "System" -biblioteket for å bruke denne funksjonen i koden din.
+For å skrive til standard error i Java, kan du bruke print-metoder fra klassen `System.err`. Her er et eksempel på hvordan du kan bruke det i kombinasjon med et try-catch-blokk for å håndtere unntak:
 
-```Java
-System.err.println("Dette er en feilmelding.");
+```
+try {
+    // kode som kan kaste et unntak
+} catch (Exception e) {
+    System.err.println("En feil oppsto: " + e.getMessage());
+}
 ```
 
-Når du kjører dette eksempelet, vil du få følgende utskrift:
+I dette eksempelet vil eventuelle feilmeldinger bli sendt til standard error og skrevet ut på konsollen i stedet for standard output.
 
-```Java
-Dette er en feilmelding.
-```
+## Dypdykk
 
-I tillegg til å bruke System.err.println (), kan du også bruke System.err.print () -funksjonen for å skrive ut en melding uten en ny linje. Dette kan være nyttig når du vil skrive ut flere linjer til standard error-strømmen.
+Det finnes også andre metoder for å skrive til standard error i Java, som for eksempel `System.err.write()`, `System.err.printf()` og `System.err.format()`. Disse gir deg ulike muligheter for å formatere og skrive ut tekst til standard error. En annen nyttig funksjon er `System.err.println()`, som automatisk legger til et linjeskift etter meldingen.
 
-# Dypdykk
+Det er også verdt å merke seg at du kan videreutvikle standard error ved å lage din egen underklasse av `PrintStream` og bruke den til å skrive til standard error i stedet for `System.err`. Dette kan være nyttig hvis du ønsker mer kontroll og fleksibilitet over hvordan meldingene dine blir formatert og håndtert.
 
-Standard error-strømmen er en viktig del av Java-programmering for feilhåndtering. Det er spesielt nyttig når du utvikler større applikasjoner som krever feillogging og feilsøking. Ved å skrive til standard error kan du få detaljert informasjon om hvor og når feil oppstår, slik at du raskt kan identifisere og løse problemer.
+## Se Også
 
-Det er også viktig å merke seg at standard error-strømmen ikke påvirkes av eventuelle omdirigeringsoperasjoner i koden din. Dette betyr at du alltid vil se feilmeldinger utskrevet direkte til konsollen, selv om du har endret standard ut-strømmen til å skrive til en fil eller en annen destinasjon.
-
-# Se også
-
-- [Hvordan utvikle Java-programmer for feillogging og feilsøking](link til ressurs)
-- [Feilhåndtering og unntakshåndtering i Java](link til ressurs)
-- [Java System-biblioteket](link til ressurs)
+- [Java - Writing to Standard Error](https://www.baeldung.com/java-writing-to-standard-error)
+- [Writing to Standard Error in Java](https://www.geeksforgeeks.org/writing-to-standard-error-in-java/)
+- [System.err documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)

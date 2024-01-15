@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Comprobando si un directorio existe."
-simple_title:         "Comprobando si un directorio existe."
+title:                "Comprobando si existe un directorio"
+html_title:           "TypeScript: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Antes de comenzar a verificar la existencia de un directorio en TypeScript, es importante entender por qué necesitamos hacerlo. Comprobar si un directorio existe es una tarea común en la programación, ya que permite a los desarrolladores asegurarse de que un directorio necesario para su aplicación esté presente antes de continuar con el código.
+## ¿Por qué?
 
-## Cómo hacerlo
-Para verificar si un directorio existe en TypeScript, podemos usar la función `existsSync()` del módulo `fs`, que verifica la existencia de un archivo o directorio sincrónicamente. Primero, debemos importar el módulo `fs` en nuestro archivo de TypeScript:
+La verificación de si un directorio existe es una tarea importante en la programación. Nos permite asegurarnos de que un directorio está disponible antes de intentar acceder a él o realizar operaciones en él. También puede ayudar a evitar errores y problemas en nuestro código.
 
-```typescript
+## ¿Cómo?
+
+En TypeScript, podemos utilizar la función `existsSync` del módulo `fs` para verificar si un directorio existe. Aquí hay un ejemplo de código y su salida:
+
+```
+// Importamos el módulo fs
 import * as fs from 'fs';
-```
 
-Luego, podemos usar la función `existsSync()` pasando la ruta del directorio que queremos verificar como argumento. Esta función devolverá un valor booleano `true` si el directorio existe y `false` si no existe.
-
-```typescript
-const directoryExists = fs.existsSync('/ruta/del/directorio');
-
-console.log(directoryExists); // Output: true o false
-```
-
-## Profundizando
-La función `existsSync()` utiliza el método `statSync()` para determinar la existencia del directorio. Este método devuelve un objeto `fs.Stats` que contiene información sobre el archivo o directorio especificado, incluyendo un atributo `isDirectory()` que nos indica si se trata de un directorio o no.
-
-Si queremos realizar acciones específicas si un directorio existe o no, podemos usar una declaración `if` junto con el método `isDirectory()` para verificar eso.
-
-```typescript
-if (fs.existsSync('/ruta/del/directorio')) {
-    const directoryStats = fs.statSync('/ruta/del/directorio');
-    if (directoryStats.isDirectory()) {
-        // Hacer algo si es un directorio
-    } else {
-        // Hacer algo si no es un directorio
-    }
+// Verificamos si el directorio "ejemplo" existe
+if (fs.existsSync("ejemplo")) {
+    console.log("El directorio 'ejemplo' existe.");
+} else {
+    console.log("El directorio 'ejemplo' no existe.");
 }
 ```
 
-## Ver también
-- [Documentación de fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [Documentación de fs.statSync()](https://nodejs.org/api/fs.html#fs_fs_stats_path_options)
-- [Documentación de fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+Salida si el directorio existe: `El directorio 'ejemplo' existe.`
 
-¡Ahora estás listo para verificar la existencia de un directorio en TypeScript! Espero que este artículo te haya sido útil. ¡Hasta la próxima!
+Salida si el directorio no existe: `El directorio 'ejemplo' no existe.`
+
+## Inmersión profunda
+
+La función `existsSync` devuelve un valor booleano (`true` o `false`) dependiendo de si el directorio existe o no. Si el directorio existe, también podemos usar la función `readdirSync` del módulo `fs` para obtener una lista de archivos en el directorio.
+
+También es importante tener en cuenta que la verificación de si un directorio existe no garantiza que el directorio no cambie o sea eliminado antes de que podamos acceder a él. Por lo tanto, es importante considerar posibles errores y manejarlos apropiadamente en nuestro código.
+
+## Ver también
+
+- Documentación oficial de Node.js sobre la función `existsSync`: https://nodejs.org/docs/latest/api/fs.html#fs_fs_existssync_path
+- Ejemplos de uso de la función `existsSync`: https://www.educative.io/edpresso/how-to-use-the-existssync-function-in-nodejs
+- Artículo sobre la gestión de errores en TypeScript: https://blog.grossman.io/how-to-handle-errors-in-typescript/

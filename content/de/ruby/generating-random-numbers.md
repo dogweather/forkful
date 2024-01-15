@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Erzeugung von Zufallszahlen"
+title:                "Erzeugung von Zufallszahlen"
+html_title:           "Ruby: Erzeugung von Zufallszahlen"
 simple_title:         "Erzeugung von Zufallszahlen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+# Warum
 
-Möchtest du in deiner Ruby-Programmierung zufällige Zahlen generieren? Es gibt viele Anwendungen für die Verwendung von Zufallszahlen in deinem Code. Vielleicht möchtest du eine Lotterie- oder Quiz-Anwendung erstellen, oder einfach nur ein lustiges Spiel programmieren. Egal aus welchem ​​Grund, das Generieren von Zufallszahlen ist ein wichtiger Teil der Programmierung.
+Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Nun, es gibt viele Anwendungen in der Programmierung, bei denen die Verwendung von Zufallszahlen erforderlich ist, zum Beispiel für Spiele, Simulationen oder Kryptographie.
 
-## Wie man es macht 
+# Wie geht's?
 
-Um Zufallszahlen in Ruby zu erstellen, verwenden wir die `rand()`-Methode. Schau dir das Beispiel unten an, um zu sehen, wie es funktioniert:
+Um Zufallszahlen in Ruby zu generieren, können wir die `rand`-Methode verwenden. Diese Methode gibt eine zufällige Zahl zwischen 0 und 1 zurück. Schauen wir uns ein Beispiel an:
 
 ```Ruby
-# Generiert eine zufällige Ganzzahl zwischen 1 und 10 
-puts rand(1..10) 
-
-# Generiert eine zufällige Gleitkommazahl zwischen 0 und 1 
-puts rand() 
+rand #=> 0.5910470116766848
 ```
 
-Das Ergebnis dieser beiden `puts`-Anweisungen wird jedes Mal unterschiedlich sein, wenn du dein Programm ausführst. Dies ist der Grund, warum Zufallszahlen so nützlich sind - sie sind nicht vorhersehbar und können immer wieder neu generiert werden.
+Um eine zufällige Zahl in einem bestimmten Bereich zu erhalten, können wir die `rand`-Methode mit einem Bereichsoperator `..` verwenden. Zum Beispiel möchten wir eine zufällige Zahl zwischen 1 und 10 erhalten:
 
-## Eine tiefere Eintauchen 
-
-Die `rand()`-Methode verwendet einen Pseudozufallsgenerator, um Zufallszahlen zu erstellen. Dies bedeutet, dass die generierten Zahlen nicht wirklich zufällig sind, sondern auf einem Algorithmus basieren. Wenn du also dieselbe Anzahl von Zufallszahlen in der gleichen Reihenfolge benötigst, kannst du den Generator mit `srand()` und einer festen Zahl "initialisieren". Schau dir das Beispiel unten an:
-
-```Ruby 
-# Initialisiert den Pseudozufallsgenerator mit einer festen Zahl 
-srand(12345) 
-puts rand() # <-- Gleiche Zahl, da wir dieselbe Zahl für srand() verwenden 
-
-puts rand() # <-- Gleiche Zahl, da wir den Generator nicht neu initialisiert haben 
+```Ruby
+rand(1..10) #=> 9
 ```
 
-Wie du sehen kannst, werden die ersten beiden Zahlen in beiden Ausführungen desselben Programms identisch sein, aber die dritte Zahl wird unterschiedlich sein, da wir den Generator nicht wieder initialisiert haben.
+Wir können auch mehrere Zufallszahlen auf einmal generieren, indem wir die `rand`-Methode mit einem Array verwenden. Zum Beispiel möchten wir 3 zufällige Zahlen zwischen 1 und 6 erhalten:
 
-## Siehe auch 
+```Ruby
+rand(1..6, 3) #=> [2, 5, 1]
+```
 
-- [Ruby-Dokumentation: Kernel#rand](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-rand)
-- [Praktisches Beispiel für die Verwendung von Zufallszahlen in Ruby](https://www.rubyguides.com/2015/03/ruby-random/)
-- [Das Geheimnis hinter Zufallszahlen in der Programmierung](https://www.freecodecamp.org/news/how-computer-generate-random-numbers/)
+Es gibt viele weitere Möglichkeiten, Zufallszahlen in Ruby zu generieren, zum Beispiel mit den Methoden `randF` für Fließkommazahlen und `random_number` für Ganzzahlen.
+
+# Tiefer eintauchen
+
+Die `rand`-Methode in Ruby verwendet einen Algorithmus namens Mersenne Twister, um Zufallszahlen zu generieren. Dabei handelt es sich um einen der schnellsten und am besten untersuchten Zufallszahlengeneratoren. Dieser Algorithmus basiert auf mathematischen Berechnungen, um scheinbar zufällige Zahlen zu erzeugen.
+
+Eine wichtige Sache, die man bei der Verwendung von `rand` in Ruby beachten sollte, ist, dass die generierten Zahlen nicht wirklich zufällig sind, sondern vorhersagbar. Sie können nur eine Illusion von Zufälligkeit erzeugen, die für viele Anwendungen ausreichend ist, aber nicht für kryptographische Zwecke.
+
+# Siehe auch
+
+- Die offizielle Dokumentation zu `rand`: https://ruby-doc.org/core-3.0.0/Random.html
+- Ein Rückschritt zum Mersenne Twister-Zufallszahlengenerator: https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/Random/MersenneTwister.html
+- Ein Artikel über die Verwendung von Zufallszahlen in der Programmierung: https://www.thoughtco.com/what-are-random-numbers-958074

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Apagando caracteres que correspondem a um padrão."
+html_title:           "Clojure: Apagando caracteres que correspondem a um padrão."
+simple_title:         "Apagando caracteres que correspondem a um padrão."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que deletar caracteres que correspondem a um padrão?
+## Por que
 
-Existem algumas situações em que é necessário eliminar caracteres que correspondem a um determinado padrão em uma string. Isso pode ser útil, por exemplo, quando se deseja limpar uma string de caracteres indesejados antes de realizar alguma operação com ela.
+Algumas vezes, em nossos programas em Clojure, precisamos manipular strings de forma mais específica, removendo caracteres que correspondem a um determinado padrão. Isso pode ser útil em casos como filtrar dados ou formatar uma string de acordo com um determinado formato.
 
 ## Como fazer
 
-Em Clojure, podemos usar a função `replace` para substituir caracteres que correspondem a um padrão por uma string vazia. Vamos dar uma olhada em um exemplo de código:
+Podemos usar a função `clojure.string/replace` para substituir esses caracteres por uma string vazia, efetivamente removendo-os. Por exemplo, se quisermos remover todos os dígitos de uma string, podemos usar a expressão regular `#"[0-9]"` como padrão e passá-la como argumento para a função `replace`. Veja um exemplo:
 
-````Clojure
-(def string-a-limpar "Olá, (mundo)!")
+```Clojure
+(require '[clojure.string :as str])
 
-(replace #"[(),!]" "" string-a-limpar)
+(str/replace "abc123xyz" #"[0-9]" "")
+;; resultado: "abcxyz"
+```
 
-; Saída:
-; "Olá mundo"
-````
+Podemos combinar esse método com outras funções de manipulação de strings para obter resultados mais complexos. Por exemplo, se quisermos remover todos os caracteres não alfabéticos de uma string, podemos primeiro usar a função `str/replace` para substituir todos os dígitos por uma string vazia e depois combinar isso com a função `str/reduce` para remover todos os caracteres especiais. Veja um exemplo:
 
-Neste exemplo, estamos usando a expressão regular `#[(),!]` para representar o padrão que queremos deletar. Note que os caracteres dentro dos colchetes correspondem aos caracteres que queremos eliminar, e as aspas duplas representam a string vazia que será usada para substituí-los. O terceiro parâmetro da função `replace` é a string que queremos limpar.
+```Clojure
+(str/reduce (fn [acc x] (if (Character/isLetter x) (str acc x) acc)) (str/replace "abc123.xyz" #"[0-9]" ""))
+;; resultado: "abcxyz"
+```
 
-## Mergulho profundo
+## Profundando um pouco mais
 
-Além da função `replace`, também existem outras maneiras de deletar caracteres que correspondem a um padrão em Clojure. Podemos usar a função `clojure.string/replace` ou a função `subs`, que nos permite substituir uma parte de uma string por outra.
+A função `replace` utiliza expressões regulares para encontrar padrões em uma string e substituí-los por outra. Essa flexibilidade nos permite realizar operações mais complexas e específicas de acordo com nossas necessidades. Além disso, as expressões regulares são uma ferramenta poderosa para trabalhar com strings em Clojure e vale a pena aprender mais sobre elas e suas funcionalidades.
 
-Também é possível usar expressões regulares mais complexas, com grupos de captura, para deletar apenas partes específicas da string correspondentes a determinados padrões. Essas ferramentas podem ser úteis em situações mais avançadas em que é necessário um controle mais preciso sobre a remoção de caracteres.
+## Veja também
 
-# Veja também
-
-- [Documentação oficial de Clojure sobre expressões regulares](https://clojure.org/reference/regular_expressions) 
-- [Tutorial sobre expressões regulares em Clojure](https://tech.bigcartel.com/blog/regular-expressions-in-clojure) 
-- [Exemplos de uso de expressões regulares em Clojure](https://www.jayway.com/2014/06/14/clojure-regular-expressions/)
+- [Documentação oficial do Clojure](https://clojure.org/)
+- [Tutorial sobre expressões regulares em Clojure](https://www.braveclojure.com/regular-expressions/)
+- [Exemplos de uso da função `replace`](https://clojuredocs.org/clojure.string/replace)

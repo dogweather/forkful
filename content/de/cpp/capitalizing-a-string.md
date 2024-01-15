@@ -1,6 +1,7 @@
 ---
-title:                "C++: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Eine Zeichenfolge großschreiben"
+html_title:           "C++: Eine Zeichenfolge großschreiben"
+simple_title:         "Eine Zeichenfolge großschreiben"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum: 
+## Warum
 
-Das Kapitalisieren von Zeichenketten ist eine grundlegende Aufgabe in der C++ Programmierung und kann dabei helfen, den Code übersichtlicher zu gestalten. Durch die Verwendung von Großbuchstaben anstelle von Kleinbuchstaben kann auch die Lesbarkeit verbessert werden.
+Hast du jemals ein Programm geschrieben, das eine Benutzereingabe für einen Namen erhalten hat und diesen Namen dann in Großbuchstaben ausgegeben hat? In einem solchen Fall wäre es wichtig zu wissen, wie man in C++ eine Zeichenkette in Großbuchstaben konvertiert. Dieser Artikel wird dir zeigen, wie man das macht.
 
-Wie man es macht:
+## Wie
+
+Es gibt verschiedene Wege, um eine Zeichenkette in Großbuchstaben zu konvertieren, aber hier werden wir uns auf eine einfache Methode konzentrieren. Zuerst brauchen wir eine Zeichenkette, die wir in Großbuchstaben konvertieren möchten. Wir definieren also eine Variable vom Datentyp `string`, zum Beispiel `name` und weisen ihr einen Wert zu.
 
 ```C++
-#include <iostream> 
-#include <string> 
-
-using namespace std; 
-
-int main() 
-{ 
-    string name = "hallo welt"; 
-    string capitalized_name = ""; 
-
-    for (int i = 0; i < name.length(); i++) { 
-        capitalized_name += toupper(name[i]); 
-    } 
-
-    cout << capitalized_name << endl; // Ausgabe: HALLO WELT
-
-    return 0; 
-} 
+string name = "Max Mustermann";
 ```
 
-Tiefergehende Informationen:
+Jetzt kommen wir zum eigentlichen Konvertieren. Dafür verwenden wir die Funktion `toupper` aus der Standardbibliothek `<cctype>`. Diese Funktion wandelt einen einzelnen Buchstaben in einen Großbuchstaben um. Aber um die gesamte Zeichenkette zu konvertieren, müssen wir sie in einer Schleife durchlaufen und jeden Buchstaben einzeln konvertieren.
 
-Das Kapitalisieren von Zeichenketten erfolgt durch die Verwendung von Schleifen und der `toupper()` Funktion aus der Standardbibliothek `string`. Diese Funktion wandelt jeden Buchstaben in einen Großbuchstaben um und fügt ihn zur neuen Zeichenkette hinzu. Hierbei ist es wichtig zu beachten, dass die Variablen `name` und `capitalized_name` vom gleichen Datentyp `string` sein müssen.
+```C++
+for (int i = 0; i < name.length(); i++) {
+  name[i] = toupper(name[i]);
+}
+```
 
-Weitere Möglichkeiten zur Kapitalisierung von Zeichenketten sind die Verwendung von Funktionen wie `transform()` oder die Nutzung von booleschen Ausdrücken in einer Schleife, um spezielle Zeichen zu beachten und entsprechend umzuwandeln.
+Das ist so ziemlich alles. Wir haben jetzt die Zeichenkette `name` in Großbuchstaben konvertiert. Wir können das überprüfen, indem wir sie ausgeben:
 
-Siehe auch:
+```C++
+cout << name << endl;
+```
 
-- [C++ Strings](https://www.cplusplus.com/reference/string/string/)
-- [toupper() Funktion](https://www.cplusplus.com/reference/cctype/toupper/)
+Die Ausgabe wird folgendermaßen aussehen: `MAX MUSTERMANN`
+
+## Deep Dive
+
+Wie genau funktioniert die `toupper` Funktion? Sie basiert auf dem ASCII-Code (American Standard Code for Information Interchange), der jedem Zeichen einen numerischen Wert zuordnet. Die Großbuchstaben und Kleinbuchstaben haben dabei eine unterschiedliche numerische Reihenfolge. Zum Beispiel hat der Großbuchstabe "A" den Wert 65, während der Kleinbuchstabe "a" den Wert 97 hat.
+
+Die `toupper` Funktion prüft, ob der Wert eines Buchstabens im Bereich der Kleinbuchstaben liegt (97 bis 122). Wenn das der Fall ist, wird durch Subtraktion von 32 der entsprechende Großbuchstabenwert ermittelt (97 - 32 = 65). Andernfalls bleibt der Wert unverändert, sodass Großbuchstaben und Sonderzeichen nicht beeinflusst werden.
+
+## Siehe Auch
+
+- [TutorialsPoint - C++ - Konvertierung einer Zeichenkette in Großbuchstaben](https://www.tutorialspoint.com/cplusplus-program-to-convert-a-string-to-uppercase)
+- [cpluplus.com - Referenz zu cctype](http://www.cplusplus.com/reference/cctype/toupper/)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 使用正则表达式"
+title:                "使用正则表达式"
+html_title:           "Clojure: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要用正则表达式？
 
-在编程中，有时候我们需要对文本进行一些复杂的匹配和替换操作。正则表达式是一种强大的工具，可以帮助我们快速有效地处理文本数据。它可以用来检查字符串是否符合特定的模式，并且可以在字符串中查找和替换指定的内容。使用正则表达式不仅可以提高编程效率，也可以帮助我们更好地处理大量文本数据，因此学习并掌握正则表达式是非常有用的。
+正则表达式是一种强大的工具，可以帮助我们在文本中查找和匹配特定的模式。它们可以帮助我们更有效地处理数据，节省时间和精力。
 
-## 如何
-
-要在Clojure中使用正则表达式，首先需要导入`clojure.string`库。然后，我们可以使用`re-matches`函数来匹配字符串并提取特定的内容。下面是一个简单的例子：
+## 如何使用正则表达式
 
 ```Clojure
+;; 首先，导入clojure.string库
 (require '[clojure.string :as str])
 
-(def str1 "Hello, my name is John.")
+;; 创建一个字符串来进行匹配
+(def text "Hello World! Today is a beautiful day.")
 
-(str/matches str1 #"Hello, my name is (\w+)\.") ; ["Hello, my name is John.", "John"]
+;; 使用正则表达式查找特定模式
+(str/replace text #"beautiful" "wonderful")
+
+;; 以上代码的输出为：
+;; "Hello World! Today is a wonderful day."
 ```
 
-该例子中，我们使用正则表达式`#"Hello, my name is (\w+)\."`来匹配字符串，并用括号表示我们想要提取的内容。`re-matches`函数返回一个包含匹配结果的数组，第一个元素为整个匹配的文本，之后的元素为每个括号内的内容。
+在上面的例子中，我们使用`clojure.string`库的`replace`函数来替换文本中匹配正则表达式的部分。正则表达式`#"beautiful"`匹配了字符串中所有出现的"beautiful"，并用"wonderful"来替换它们。
 
-除了`re-matches`，还有许多其他函数可以帮助我们操作正则表达式，如`re-find`和`re-gsub`。我们可以通过查阅Clojure官方文档来了解更多关于正则表达式的函数和用法。
+## 深入了解正则表达式
 
-## 深入探讨
+正则表达式使用一些特殊的符号和语法来表示匹配模式。下面是一些常用的正则表达式符号和其作用：
 
-正则表达式是一个非常强大的工具，它的语法也相对复杂。如果想要更深入地学习和理解正则表达式，可以阅读一些相关的书籍或网上的教程。另外，也可以尝试使用一些在线的正则表达式工具来练习和调试自己的表达式。
+- `.`：匹配任何单个字符
+- `*`：匹配前一个字符的任意多次重复
+- `+`：匹配前一个字符的一次或多次重复
+- `?`：匹配前一个字符的零次或一次重复
+- `[]`：匹配其中任意一个字符
+- `^`：从字符串的开头开始匹配
+- `$`：从字符串的末尾开始匹配
+- `()`：用于分组匹配模式
 
-此外，正则表达式也有一些常用的缩写语法，如`\w`表示任意字母、数字或下划线，`\d`表示任意数字等。熟悉这些语法可以帮助我们更快地编写表达式。
+除了上面提到的传统符号外，Clojure还提供了一些特殊的关键词来表示更复杂的匹配模式，如：`\w`表示任何字母数字字符，`\s`表示任何空白字符，`\d`表示任何数字字符等等。
 
-## 参考资料
+当我们编写正则表达式时，要保证精确匹配我们想要的模式，避免匹配到不必要的部分。同时，也要注意正则表达式的效率，避免出现不必要的回溯，导致程序变得缓慢。
 
-- [Clojure官方文档](https://clojure.org/reference/strings)
-- [正则表达式入门教程](https://www.jb51.net/tools/regex.htm)
-- [在线正则表达式测试工具](https://regexr.com/)
+## 参考阅读
 
-## 看看这些
-
-- [Java爱好者的正则表达式介绍](https://www.zhyarna.com/archives/61)
-- [正则表达式入门教程（视频）](https://www.bilibili.com/video/BV1wt411c7RB)
+- [Clojure正则表达式教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

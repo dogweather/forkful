@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Elm: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -11,37 +12,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy, kto zainteresowany jest programowaniem, z pewnością słyszał o języku Elm. Jest to język, który wprowadza rewolucyjne zmiany w podejściu do tworzenia interaktywnych aplikacji internetowych. Jeśli szukasz nowego wyzwania lub chcesz rozwinąć swoje umiejętności programistyczne, rozpoczęcie nowego projektu w Elm może być świetnym wyborem.
+Jeśli planujesz rozpocząć nowy projekt w języku Elm, powinieneś wiedzieć, że jest to jeden z najnowszych i najbardziej nowoczesnych języków programowania. Zastosowanie Elm w swoim projekcie pozwoli Ci na tworzenie skalowalnych aplikacji internetowych, które są szybkie, bezpieczne i wydajne.  
 
-## Jak zacząć
+## Jak to zrobić 
 
-Pierwszym krokiem w projekcie Elm jest oczywiście pobranie i zainstalowanie języka. Można to zrobić poprzez oficjalną stronę Elm lub za pomocą menedżera pakietów dla swojego systemu operacyjnego.
+### Instalacja Elm
 
-Aby rozpocząć projekt, można użyć polecenia `elm init` w terminalu, które utworzy strukturę plików projektu. Następnie należy skorzystać z edytora kodu, który ma wtyczkę dla Elm, aby zyskać dostęp do sugerowania składni, odświeżania strony internetowej podczas kodowania i wielu innych funkcji ułatwiających pracę z językiem.
+Przed rozpoczęciem pracy z Elm, musisz go zainstalować. Najprostszym sposobem jest pobranie i zainstalowanie Elm Platform ze strony https://guide.elm-lang.org/install.html (obsługuje ona Windows, Mac oraz Linux).
 
-Zobacz poniżej przykładowy kod Elm, który wyświetla prosty tekst na stronie internetowej:
+### Podstawy Elm
+
+Po zainstalowaniu Elm możesz rozpocząć pracę nad swoim projektem. Ogólnie rzecz biorąc, Elm jest językiem funkcyjnym, co oznacza, że wszystko w nim jest funkcją. Jednaj musisz się przyzwyczaić do tego sposobu myślenia, aby pisać w nim efektywny i elegancki kod.
+
+Załóżmy, że chcesz napisać prostą aplikację, która przyjmuje od użytkownika imię i wyświetla powitanie. Poniżej znajduje się przykładowy kod:
 
 ```Elm
-import Html exposing (text)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+
+type alias Model = 
+    { name: String
+    }
+
+view model = 
+    div [] 
+        [ h1 [] [ text ("Witaj " ++ model.name ++ "!") ]
+        , input [ type_ "text", placeholder "Wpisz swoje imię", onInput ChangeName ] []
+        ]
+
+ChangeName userInput = 
+    { model | name <- userInput }
 
 main =
-    text "Witaj w języku Elm!"
+    beginnerProgram
+        { model = { name = "" }, view = view, update = update }
 ```
 
-Po uruchomieniu tego kodu w przeglądarce, powinno się pojawić "Witaj w języku Elm!" na stronie internetowej. Warto także zwrócić uwagę na sposób deklarowania zmiennych w Elm - nie ma tutaj słowa kluczowego "var" czy "let", a jedynie znak "=", który oznacza przypisanie wartości.
+Po uruchomieniu kodu, zobaczysz proste okienko z polem tekstowym i powitaniem. Wpisanie imienia w polu spowoduje zmianę powitania w nagłówku. 
 
-## Głębszy zanurzenie
+### Zdarzenia 
 
-Rozpoczęcie nowego projektu w Elm może być nieco wyzwaniem dla początkujących programistów ze względu na zupełnie inny sposób myślenia o interaktywnym programowaniu, jaki oferuje ten język. Jednak istnieje wiele zasobów i materiałów, które mogą pomóc w szybkim opanowaniu podstaw i przejściu do bardziej zaawansowanych technik.
+Elm obsługuje również zdarzenia, które pozwalają na interakcję użytkownika z aplikacją. W naszym przykładzie, kiedy użytkownik wpisze swoje imię i naciśnie enter, chcemy, aby aplikacja wyświetliła podziękowanie. Aby to osiągnąć, należy dodać funkcję obsługującą zdarzenie w naszym kodzie:
 
-Warto również zwrócić uwagę na dostępne narzędzia, takie jak Elm Live, które pozwala na natychmiastowe wyświetlenie zmian na stronie internetowej podczas kodowania oraz Elm Debugger, który ułatwia znalezienie błędów i debugowanie kodu.
+```Elm
+import Html.Events exposing (onEnter)
 
-Zobacz poniżej linki do przydatnych zasobów i narzędzi dla osób zaczynających przygodę z językiem Elm:
+view model = 
+    div [] 
+        [ h1 [] [ text ("Witaj " ++ model.name ++ "!") ]
+        , input [ type_ "text", placeholder "Wpisz swoje imię", onEnter EnterName ] []
+        ]
 
-## Zobacz także
+EnterName userInput = 
+    [ h2 [] [ text ("Dziękujemy za wpisanie imienia, " ++ userInput ++ "!") ]
+    , { model | name <- userInput }
+    ]
+```
 
-- [Oficjalna strona języka Elm](https://elm-lang.org/)
-- [Kurs Elm na Codecademy](https://www.codecademy.com/learn/learn-elm)
-- [Materiały i narzędzia dla początkujących w języku Elm](https://github.com/w0rm/awesome-elm)
-- [Elm Live - narzędzie do natychmiastowego wyświetlania zmian na stronie internetowej](https://github.com/wking-io/elm-live)
-- [Elm Debugger - narzędzie do debugowania w Elm](https://github.com/elm/debug)
+Po wpisaniu imienia i naciśnięciu enter, zobaczysz nowy nagłówek z podziękowaniem.
+
+## Głębsza analiza 
+
+Podczas tworzenia nowego projektu warto zapoznać się z dokumentacją Elm, gdzie znajdują się szczegóły na temat tego języka oraz wiele przydatnych przykładów. 
+
+Jeśli chcesz zwiększyć zakres swojej wiedzy na temat Elm, polecam także kursy online, takie jak "Elm for Beginners" czy "Advanced Elm". Są one bogate w praktyczne przykłady i w rzetelny sposób wprowadzą Cię w świat tego języka programowania.
+
+## Zobacz także 
+
+- [Oficjalna strona Elm](https://elm-lang.org/)
+- [Dokumentacja Elm](https://guide.elm-lang.org/)
+- [Kurs "Elm for Beginners"](https://courses.knowthen.com/p/elm-for-beginners)
+- [Kurs "Advanced Elm"](https://courses.knowthen.com/p/advanced-elm)

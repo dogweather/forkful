@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscòlare una stringa"
+html_title:           "Swift: Maiuscòlare una stringa"
+simple_title:         "Maiuscòlare una stringa"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,51 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Capire come capitalizzare una stringa è essenziale per la gestione dei dati in Swift. Questa operazione può essere utile per uniformare l'aspetto di una stringa o per confrontare correttamente due stringhe.
+Se stai lavorando con una stringa che contiene parole in minuscolo e vuoi che appaiano con la lettera maiuscola, allora la funzione di "capitalizzazione" è ciò che ti serve.
 
-## Come farlo
+## Come fare
 
-Utilizzando il metodo `uppercased()` possiamo ottenere una nuova stringa con tutti i caratteri convertiti in maiuscolo. Vediamo un esempio usando una variabile `name` e stampando l'output:
-
-```Swift
-let name = "maria"
-print(name.uppercased())
-
-// Output: MARIA
-```
-
-Possiamo anche utilizzare il metodo `capitalized()` per ottenere una nuova stringa con il primo carattere convertito in maiuscolo. Vediamo un altro esempio usando una variabile `city` e stampando l'output:
+Per capitalizzare una stringa in Swift, basta utilizzare il metodo `capitalized` su una variabile o costante di tipo stringa. Ecco un esempio:
 
 ```Swift
-let city = "roma"
-print(city.capitalized())
+let nome = "mario"
+let nomeCapitalizzato = nome.capitalized
+print(nomeCapitalizzato)
 
-// Output: Roma
+// Output: Mario
 ```
 
-È anche possibile capitalizzare una stringa specifica utilizzando il metodo `replacingOccurrences(of:with:)`:
+## Approfondimenti
 
-```Swift
-let phrase = "questa è una frase"
-print(phrase.replacingOccurrences(of: "f", with: "F"))
+Il metodo `capitalized` è uno dei tanti metodi disponibili nella classe `String` di Swift. Per capire meglio come funziona, è importante comprendere come Swift gestisce le stringhe. In Swift, le stringhe sono descritte come una serie di caratteri Unicode, il che significa che possono contenere caratteri di qualsiasi alfabeto o lingua. Quando viene utilizzato il metodo `capitalized`, Swift converte il primo carattere della stringa in maiuscolo e lascia invariato tutto il resto.
 
-// Output: questa è una frase
-```
-
-## Approfondimento
-
-Il metodo `uppercased()` utilizza il locale predefinito del dispositivo per la conversione in maiuscolo dei caratteri. Tuttavia, è possibile specificare manualmente il locale passandolo come argomento al metodo. Ad esempio, per garantire che i caratteri dell'alfabeto italiano vengano capitalizzati correttamente, possiamo utilizzare il locale `it_IT`:
-
-```Swift
-let phrase = "questa è una frase"
-print(phrase.uppercased(locale: Locale(identifier: "it_IT")))
-
-// Output: QUESTA È UNA FRASE
-```
-
-È importante notare che il metodo `capitalized()` non solo converte il primo carattere della stringa in maiuscolo, ma anche tutti i caratteri successivi che sono preceduti da uno spazio, un segno di punteggiatura o un simbolo di punteggiatura.
+Inoltre, esistono varianti del metodo `capitalized` che permettono di capitalizzare anche il secondo o l'ultimo carattere di una stringa, oppure di rimuovere i caratteri di spaziatura delle parole. Puoi trovare ulteriori informazioni su queste varianti nella documentazione ufficiale di Swift.
 
 ## Vedi anche
 
-- [Documentazione Apple su String](https://developer.apple.com/documentation/swift/string)
-- [Tutorial su String in Swift](https://www.raywenderlich.com/511-swift-string-cheat-sheet)
+- [Documentazione di Swift sul metodo `capitalized`](https://developer.apple.com/documentation/swift/string/3126643-capitalized)
+- [Tutti i metodi disponibili nella classe `String` di Swift](https://developer.apple.com/documentation/swift/string)
+- [Come gestire stringhe Unicode in Swift](https://www.hackingwithswift.com/articles/140/how-to-handle-unicode-code-points-in-swift-best-practices)

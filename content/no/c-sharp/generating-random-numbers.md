@@ -1,5 +1,6 @@
 ---
-title:                "C#: Generering av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "C#: Generering av tilfeldige tall"
 simple_title:         "Generering av tilfeldige tall"
 programming_language: "C#"
 category:             "C#"
@@ -10,62 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Generering av tilfeldige tall er en viktig del av programmering, spesielt innen spillutvikling og simulering. Ved å bruke tilfeldige tall kan man skape en mer dynamisk og variert opplevelse for brukeren.
+Å generere tilfeldige tall er en viktig del av mange programmeringsoppgaver. Enten det er for å lage spill med tilfeldige elementer, teste algoritmer eller sikre sensitiv informasjon, er tilfeldige tall avgjørende for å skape variasjon og tilfeldighet i koden din.
 
 ## Hvordan
-
-Det finnes flere måter å generere tilfeldige tall i C# på. En enkel metode er å bruke funksjonen `Random()` som returnerer et tilfeldig heltall. For å begrense størrelsen på tallet kan man bruke `Random(max)` hvor `max` er det største tallet som kan genereres.
-
-```C#
-// Eksempel på generering av et tilfeldig tall mellom 1 og 10
-Random random = new Random(); // Oppretter en instanse av Random-klassen
-int randomNumber = random.Next(1, 11); // Bruker Next() metoden med grenser 1 og 11
-Console.WriteLine(randomNumber); // Skriver ut det tilfeldige tallet
-// Konsollen vil kunne vise et tilfeldig tall mellom 1 og 10, f.eks. 7
-```
-
-For å generere flyttall kan man bruke `Random.NextDouble()` som returnerer et tilfeldig tall mellom 0 og 1.
+Generering av tilfeldige tall i C # er enkelt og kan gjøres på flere måter. Her er noen eksempler på hvordan du kan gjøre det:
 
 ```C#
-// Eksempel på generering av et tilfeldig flyttall mellom 0 og 1
-Random random = new Random();
-double randomDouble = random.NextDouble();
-Console.WriteLine(randomDouble);
-// Konsollen vil kunne vise et tilfeldig tall, f.eks. 0,5982261
+// Generer et tilfeldig heltall mellom 1 og 10
+Random rand = new Random();
+int number = rand.Next(1, 11);
+// Output: En tilfeldig verdi mellom 1 og 10
+
+// Generer et tilfeldig desimaltall mellom 0 og 1
+double decimalNumber = rand.NextDouble();
+// Output: En tilfeldig verdi mellom 0 og 1
+
+// Generer et tilfeldig heltall basert på en gitt liste av verdier
+int[] numbers = {2, 4, 6, 8, 10};
+int randomIndex = rand.Next(numbers.Length);
+int chosenNumber = numbers[randomIndex];
+// Output: En tilfeldig verdi fra listen av tall
+
 ```
 
-En annen måte å generere tilfeldige tall på er å bruke `Guid` klassen som genererer et unikt identifikasjonsnummer. Dette nummeret kan konverteres til et heltall eller flyttall ved hjelp av `Int32.Parse()` eller `Double.Parse()`.
+Det er også mulig å konfigurere Random-objektet for å generere tilfeldige tall basert på en bestemt "frøverdi". Dette kan være nyttig hvis du vil kunne gjenskape de samme tilfeldige tallene i fremtidige kjøringer av koden din.
 
-```C#
-// Eksempel på generering av et tilfeldig tall fra en Guid
-Guid guid = Guid.NewGuid();
-int randomNumber = Int32.Parse(guid.ToString().Substring(0, 8));
-Console.WriteLine(randomNumber);
-// Konsollen vil kunne vise et tilfeldig tall, f.eks. 89172973
-```
-
-
-## Dypdykk
-
-Det er viktig å være oppmerksom på at ingen av metodene over genererer helt tilfeldige tall, men heller pseudotilfeldige tall. Dette betyr at tallene følger et forutsigbart mønster og kan derfor ikke brukes til sikkerhetskritiske formål. For å øke tilfeldigheten kan man sette en såkalt "seed" når man oppretter en instanse av `Random` klassen. Seed'en kan være en hvilken som helst heltallsverdi og vil påvirke rekkefølgen på de tilfeldige tallene som genereres.
-
-```C#
-// Eksempel på bruk av seed
-Random random = new Random(1234);
-```
-
-Man kan også sette en seed basert på systemets klokke for å øke tilfeldigheten. Dette gjøres ved å bruke `Environment.TickCount` som returnerer antall millisekunder siden systemet startet.
-
-```C#
-// Eksempel på bruk av environment tick count som seed
-Random random = new Random(Environment.TickCount);
-```
-
-Ved å blande flere tilfeldighetsgeneratorer, som for eksempel `Random` og `Guid`, kan man få enda mer komplekse og tilfeldige tall.
+## Deep Dive
+I bakgrunnen genererer Random-klassen en sekvens av tall basert på en matematisk formel. Disse tallene blir deretter omgjort til et heltall eller et flyttall avhengig av metoden som brukes (Next eller NextDouble). Hvis du ønsker å kunne generere tilfeldige tall av høyere kvalitet, kan du se nærmere på Random-klassen i .NET-rammeverket og dens forskjellige metoder og egenskaper.
 
 ## Se også
-
-- [Microsoft Dokumentasjon om tilfeldige tall](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
-- [Generering av tilfeldige verdier i C#](https://www.c-sharpcorner.com/UploadFile/mahesh/generate-random-number/)
-- [Tilfeldige tall i spillutvikling](https://www.gamasutra.com/blogs/AndrewKirmse/20190822/348767/Game_Dev_Intro_to_Random_Numbers.php)
+- [Microsoft dokumentasjon for Random-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- [Tilfeldige tall i C#: En enkel guide](https://www.c-sharpcorner.com/article/random-number-generator-in-C-Sharp/)

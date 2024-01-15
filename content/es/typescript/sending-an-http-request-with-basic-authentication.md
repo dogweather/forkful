@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Enviando una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "TypeScript: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,52 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Enviar una solicitud HTTP con autenticación básica es una forma común y segura de comunicarse entre una aplicación y un servidor. Al incluir credenciales de autenticación en la solicitud, se puede garantizar que solo usuarios autorizados tengan acceso a la información protegida.
+Existen varias razones por las cuales uno podría necesitar enviar una solicitud HTTP con autenticación básica utilizando TypeScript. Una de las principales razones es para acceder a una API que requiere autenticación para proteger datos sensibles.
 
 ## Cómo hacerlo
 
-Para enviar una solicitud HTTP con autenticación básica en TypeScript, podemos utilizar el paquete `node-fetch` y la función `fetch` incorporada. Primero, importemos el paquete y definamos nuestra URL y credenciales de autenticación:
+Para enviar una solicitud HTTP con autenticación básica en TypeScript, utilizamos la clase `http` de Node.js y la función `request` para crear la solicitud. Primero, debemos importar estas clases en nuestro archivo.
 
 ```TypeScript
-import fetch from 'node-fetch';
-
-const url = 'https://example.com/api';
-const username = 'username';
-const password = 'password';
+import * as http from 'http';
 ```
 
-Luego, creamos nuestra solicitud HTTP con las opciones necesarias para la autenticación básica:
+Luego, creamos un objeto con las opciones de nuestra solicitud, incluyendo la URL, el método y los encabezados de autenticación.
 
 ```TypeScript
 const options = {
-  headers: {
-    Authorization: `Basic ${Buffer.from(`${username}:${password}`, 'utf8').toString('base64')}` 
-  }
+    hostname: 'www.ejemplo.com',
+    path: '/datos',
+    method: 'GET',
+    auth: 'usuario:contraseña'
 };
 ```
 
-`Buffer.from` se utiliza para crear una cadena codificada en base64 con nuestras credenciales de autenticación. Ahora, podemos enviar la solicitud utilizando la función `fetch` y obtener los datos JSON correspondientes:
+En este ejemplo, estamos utilizando el método GET y agregando nuestras credenciales en la propiedad `auth` en formato de usuario:contraseña. Luego, creamos nuestra solicitud HTTP utilizando la función `request` y pasando nuestras opciones como parámetros.
 
 ```TypeScript
-fetch(url, options)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-  });
+const solicitud = http.request(options, respuesta => {
+    // Aquí podemos manejar la respuesta de la solicitud
+});
+
+solicitud.end(); // Terminamos la solicitud
 ```
 
-La respuesta de esta solicitud será un objeto JSON con la información de la API solicitada.
+Finalmente, podemos enviar la solicitud utilizando el método `end()` y manejar la respuesta en la función de callback utilizando el objeto `respuesta`.
 
 ## Profundizando
 
-Al enviar una solicitud HTTP con autenticación básica, es importante tener en cuenta que las credenciales de autenticación se envían en texto plano, lo que puede ser un riesgo de seguridad. Por lo tanto, se recomienda utilizar HTTPS para cifrar la comunicación entre la aplicación y el servidor.
-
- Además, también se pueden utilizar otras opciones de autenticación, como OAuth, para aumentar la seguridad de la comunicación entre aplicaciones.
+Enviar una solicitud HTTP con autenticación básica es una forma común de proteger el acceso a una API. La autenticación básica utiliza un esquema de autenticación simple donde las credenciales se envían en texto plano a través de los encabezados de la solicitud. Sin embargo, debido a que las credenciales no están encriptadas, se considera una forma débil de autenticación y se debe utilizar en combinación con otras medidas de seguridad.
 
 ## Ver también
 
-Si estás buscando más información sobre cómo enviar y recibir solicitudes HTTP en TypeScript, aquí tienes algunos recursos útiles:
-
-- [Usando fetch en TypeScript](https://dev.to/harveyio/usando-fetch-en-typescript-1h2c)
-- [Node-fetch en GitHub](https://github.com/node-fetch/node-fetch)
-- [Documentación de TypeScript sobre tipos de datos](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [Manejo de solicitudes HTTP en TypeScript](https://www.ejemplo.com/manejo-solicitudes-http-typescript/)
+- [Documentación de la clase HTTP de Node.js](https://nodejs.org/api/http.html)
+- [Tutorial de autenticación básica con Node.js](https://www.ejemplo.com/autenticacion-basica-nodejs/)

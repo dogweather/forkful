@@ -1,6 +1,7 @@
 ---
-title:                "C#: CSV के साथ काम करना"
-simple_title:         "CSV के साथ काम करना"
+title:                "कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
+html_title:           "C#: कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में csv का उपयोग करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-CSV फ़ाइलें सामान्यतः तार के रूप में उपयोग की जाती हैं और डेटा को सही ढंग से फॉर्मैट करने के लिए उपयोगी होती हैं। इनका उपयोग डेटा विश्लेषण, रिपोर्टिंग और विभिन्न ऐप्स में डेटा को भेजने के लिए किया जाता है।
+CSV (Comma Separated Values) फ़ाइलें बड़ा साधन हैं जो डेटा संरचना को आसानी से परिभाषित करती हैं और कंप्यूटरों के बीच डेटा साझा करने में मदद करती हैं। यह संग्रहीत CSV फ़ाइलें अपनी संपत्ति, बिजनेस व्यवस्था और अन्य संग्रहण उपयोगों के लिए सबसे अधिक पसंद की जाती हैं।
 
 ## कैसे करें
 
+अगर आप CSV फ़ाइलों के साथ काम करना सीखना चाहते हैं, तो हमारे द्वारा दिए गए कुछ आसान स्टेप्स का अनुसरण करें:
+
 ```C#
-// सैम्पल CSV फ़ाइल खोलें 
-using (var reader = new StreamReader("sample.csv"))
+// CSV फ़ाइल कैसे पढ़ें
+var csvData = File.ReadAllLines("example.csv");
+foreach(var row in csvData)
 {
-    // CSV फ़ाइल को रो प्रकार में पढ़ें
-    while (!reader.EndOfStream)
-    {
-        var line = reader.ReadLine();
-        // यदि लाइन मैच करता है, तो उसे स्प्लिट करें
-        if (line.Contains("John"))
-        {
-            var values = line.Split(',');
-            // स्प्लिट किए गए वैल्यूज को कॉन्सोल पर प्रिंट करें
-            Console.WriteLine(values[0] + " " + values[1]);
-        }
-    }
+    // अलग-अलग स्ट्रिंगों को पार्स करें
+    string[] fields = row.Split(',');
+    // दुगने की पूर्ति करें और स्क्रीन पर अंक दर्शाएँ
+    Console.WriteLine(fields[0] * 2);
 }
+
+// CSV फ़ाइल में डेटा लिखें
+List<string> data = new List<string> { "Name, Age, Occupation", "John, 28, Engineer", "Emily, 24, Teacher" };
+File.WriteAllLines("example.csv", data);
 ```
-आउटपुट:
-```
-John Doe
-John Smith
-```
 
-## गहराई में
+## गहराई में जाएं
 
-CSV फ़ाइलों को प्रोग्रामिंग भाषाओं में खोलने के लिए, प्रक्रिया गणना के दौरान एक या अधिक कॉमा द्वारा अलग किए गए पदों को भी कॉमा डाटा के रूप में जाना जाता है। यह एक आसान तरीका है डेटा संरचना को सुधारने का और उसे अन्य ऐप्स में स्थानांतरित करने का।
+CSV फ़ाइलें बहुत सारे संरचनात्मक डेटा से बनाई जाती हैं जो कंप्यूटर अनुरूप होता है। इसलिए, ये मानक संरचना डेटा को दूसरे संग्रहीत सूचीबद्ध डेटा के साथ बहुत सुविधा से तुलना किया जा सकता है। C# के साथ CSV फ़ाइलों को पढ़ने और लिखने के लिए कई पुस्तकालय मौजूद हैं, जो आपको अपनी सुविधा से डेटा को पीछे से पढ़ने और स्वतंत्र डेटा को उत्कंठन करने की अनुमति देती हैं।
 
-## और भी देखें
+## देखें भी
 
-- [CSV फ़ाइलों को C# में खोलना](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
-- [C# संस्करण 7.3 के साथ CSVHelper पुस्तकालय का उपयोग करना](https://www.nuget.org/packages/CsvHelper/7.3.1)
-- [CSV फ़ाइल का विश्‍लेषण और पास्त्रावली करना](https://www.techonthenet.com/excel/formulas/csv.php)
+- [C# मैं CSV फ़ाइलें कैसे पढ़ें और लिखें](https://www.geeksforgeeks

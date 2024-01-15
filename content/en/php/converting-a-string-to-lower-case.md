@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "PHP recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting a string to lower case is a common task in PHP programming. It allows for better string comparison and manipulation, as well as conforming to certain coding standards. 
+Converting a string to lower case is a common task in any web development project. It helps ensure consistency and avoids errors when comparing strings or performing searches. Plus, it's a good practice for user input to always be converted to lower case before processing.
 
 ## How To
 
-To convert a string to lower case in PHP, we can use the built-in function `strtolower()`. This function takes in a string and returns a new string with all characters converted to lower case. 
+To convert a string to lower case in PHP, you can use the built-in function `strtolower()`. This function takes a string as an argument and returns a new string with all characters converted to lower case.
 
-```
-Example 1:
+```PHP
 $string = "Hello World!";
-echo strtolower($string);
-
-Output:
-hello world!
+echo strtolower($string); // outputs "hello world!"
 ```
 
-We can also convert a specific portion of a string to lower case by using the `substr()` function. This function allows us to specify the starting position and length of the portion we want to convert. 
+You can also use the `mb_strtolower()` function for multi-byte encodings, which is useful when dealing with languages such as Chinese or Japanese.
 
+```PHP
+$string = "こんにちは世界！";
+echo mb_strtolower($string); // outputs "こんにちは世界！"
 ```
-Example 2:
-$string = "PHP is a great language!";
-echo substr_replace($string, strtolower(substr($string, 0, 3)), 0, 3);
 
-Output:
-php is a great language!
-```
+It's important to note that these functions only work for ASCII characters. For non-ASCII characters, you may need to use a different method depending on your encoding.
 
 ## Deep Dive
 
-When converting a string to lower case, it is important to understand the different character encoding systems that may affect the output. The `strtolower()` function uses the current locale setting to determine how to convert characters. This means that the output may vary depending on the server's default system settings. 
+In PHP, strings are immutable, meaning they cannot be changed once they are created. So when converting a string to lower case, a new string is actually created with the lower case version of the original string. This is why we need to assign the result to a variable or use it directly in our code.
 
-In addition, it is important to note that the `strtolower()` function may not be effective for all languages or character sets. For example, in some languages such as Turkish, certain characters may not have a lower case equivalent. In these cases, it is recommended to use the `mb_strtolower()` function, which supports a wider range of character sets. 
+Additionally, when dealing with multi-byte encodings, it's important to make sure that both the string and the server encoding are set correctly. Otherwise, your conversion may not produce the desired results.
 
 ## See Also
 
-For more information on string manipulation in PHP, check out these resources:
+Here are some additional resources for working with strings in PHP:
 
 - [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)
-- [The mbstring extension in PHP](https://www.php.net/manual/en/mbstring.installation.php)
+- [Understanding Case Sensitivity in PHP](https://www.fullstackacademy.com/blog/case-sensitivity-in-php)
+- [UTF-8 and PHP: Handling Collation and Normalization](https://www.toptal.com/php/a-utf-8-primer-for-php-and-mysql)

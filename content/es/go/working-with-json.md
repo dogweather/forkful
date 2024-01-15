@@ -1,5 +1,6 @@
 ---
-title:                "Go: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Go: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Go"
 category:             "Go"
@@ -9,58 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Go?
-Existen varias razones por las que trabajar con JSON en Go puede ser beneficioso. En primer lugar, JSON es un formato de datos popular y ampliamente utilizado en aplicaciones web y móviles. Además, Go tiene una excelente biblioteca estándar para trabajar con JSON, lo que lo hace muy fácil y eficiente.
+## Por qué
 
-## Cómo hacerlo:
+Si estás empezando a programar en Go, probablemente te hayas encontrado con el formato JSON en algún momento. Es muy común en el desarrollo de aplicaciones web y es importante que sepas cómo manejarlo correctamente en tu código. En esta guía, te mostraré por qué trabajar con JSON es importante y cómo puedes hacerlo de manera eficiente en Go.
+
+## Cómo hacerlo
+
+Para trabajar con JSON en Go, primero debes importar el paquete `encoding/json`. Luego, puedes usar la función `json.Marshal()` para codificar una estructura de Go en un formato JSON. Por ejemplo:
+
 ```Go
-package main
-
-import (
-    "encoding/json"
-    "fmt"
-)
-
-type Person struct {
-    Name string `json:"name"`
-    Age  int    `json:"age"`
+type Persona struct {
+    Nombre string
+    Edad   int
 }
 
-func main() {
-    p := Person{"Juan", 25}
-    
-    // Codificar estructura en JSON
-    jsonPerson, _ := json.Marshal(p)
-    fmt.Println(string(jsonPerson))
-    
-    // Decodificar JSON en estructura
-    var decodedPerson Person
-    err := json.Unmarshal([]byte(jsonPerson), &decodedPerson)
-    if err != nil {
-        fmt.Println(err)
-    }
-    fmt.Println(decodedPerson)
-}
+p := Persona{"Juan", 27}
 
+json, _ := json.Marshal(p)
+fmt.Println(string(json))
+// Output: {"Nombre":"Juan","Edad":27}
 ```
 
-Este ejemplo muestra cómo codificar una estructura en JSON utilizando la etiqueta "json" para especificar el nombre de los campos en el JSON resultante. También se muestra cómo decodificar JSON en una estructura utilizando la función Unmarshal.
+De forma similar, puedes decodificar un objeto JSON en una estructura de Go utilizando la función `json.Unmarshal()`, como se muestra en el siguiente ejemplo:
 
-La salida de este código sería:
+```Go
+jsonString := `{"Nombre":"Maria","Edad":30}`
+var p Persona
 
-```json
-{"name":"Juan","age":25}
-{name:Juan age:25}
+json.Unmarshal([]byte(jsonString), &p)
+fmt.Println(p.Nombre, p.Edad)
+// Output: Maria 30
 ```
 
-## Deep Dive:
-Go cuenta con un paquete "encoding/json" que proporciona una API fácil de usar para trabajar con JSON. Este paquete incluye funciones para codificar y decodificar estructuras, así como para leer y escribir archivos JSON. También incluye opciones para trabajar con JSON anidado y datos no estructurados.
+## Profundizando
 
-Otra característica interesante de Go es que permite etiquetar los campos de una estructura con etiquetas "json", lo que le permite especificar cómo desea que se llamen los campos en el JSON resultante. Esto es útil si está trabajando con datos JSON que son sensibles al rendimiento y desea evitar la serialización y deserialización manual de los datos.
+Además de la función `Marshal()` y `Unmarshal()`, el paquete `encoding/json` también ofrece otras funciones útiles para trabajar con JSON en Go. Por ejemplo, la función `json.NewEncoder()` te permite crear un codificador que escribe directamente en un `io.Writer`, lo que puede ser útil cuando deseas escribir el resultado en un archivo en lugar de imprimirlo en la consola.
 
-En caso de que necesite trabajar con JSON en tiempo real, Go también cuenta con una función "Encoder" que le permite serializar datos en tiempo real sin tener que crear una estructura primero. Esto es útil en aplicaciones en las que los datos pueden cambiar dinámicamente y necesita una forma eficiente de procesarlos.
+También puedes utilizar etiquetas de estructura para especificar cómo quieres que se codifique o decodifique un campo en particular. Por ejemplo, puedes utilizar la etiqueta `json:"-"` para omitir un campo en la codificación JSON, o `json:",omitempty"` para omitir un campo vacío.
 
-## Ver también:
-- [Paquete encoding/json en la documentación oficial de Go](https://golang.org/pkg/encoding/json/)
-- [Go Cookbook: Manipulación de valores JSON](https://blog.golang.org/json-and-go)
-- [Gopher Academy: Trabajando con JSON en Go](https://blog.gopheracademy.com/advent-2015/working-with-json/)
+Otra característica interesante es la capacidad de utilizar `json.RawMessage` como tipo para un campo. Esto te permite acceder a la cadena JSON sin tener que decodificarla, lo que puede ser útil si solo necesitas leer o escribir un campo específico de un objeto JSON complejo.
+
+## Ver también
+
+- La documentación del paquete `encoding/json` de Go: https://golang.org/pkg/encoding/json/
+- Una introducción a JSON en Go: https://blog.golang.org/json and https://golang.org/doc/articles/json_and_go.html
+- Otras formas de trabajar con datos estructurados en Go: https://golang.org/pkg/encoding/

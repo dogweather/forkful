@@ -1,5 +1,6 @@
 ---
-title:                "Go: Arbeta med json"
+title:                "Arbeta med json"
+html_title:           "Go: Arbeta med json"
 simple_title:         "Arbeta med json"
 programming_language: "Go"
 category:             "Go"
@@ -10,47 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+ JSON (JavaScript Object Notation) är ett vanligt format för att lagra och överföra data. Det är lättläst för både människor och datorer, vilket gör det till ett populärt val för hantering av data i programmering. Att kunna hantera JSON-effektivt är en viktig färdighet för alla som arbetar med Go-programmering.
 
-JSON, eller JavaScript Object Notation, är en vanlig struktur för datautbyte mellan system och applikationer. Det är lätthanterligt och flexibelt, vilket gör det till en populär metod för att överföra och lagra data. Om du arbetar med Go-programmering, kan det vara användbart att veta hur man hanterar JSON för att kunna integrera med andra system och applikationer.
+## Hur man gör det
+Att arbeta med JSON i Go kan verka skrämmande vid första anblicken, men det är faktiskt ganska enkelt. Här är några exempel på hur man kan använda Go för att läsa och skriva JSON-data.
 
-## Så här gör du
-
-För att arbeta med JSON i Go kommer vi att använda ett inbyggt paket som heter "encoding/json". Detta paket ger oss funktioner för att enkelt konvertera data till och från JSON-formatet. Låt oss titta på ett enkelt exempel:
-
-```Go
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-)
-
-type Person struct {
-	Name  string
-	Age   int
-	Email string
-}
-
-func main() {
-
-	person := Person{
-		Name:  "Anna",
-		Age:   25,
-		Email: "anna@example.com",
-	}
-
-	jsonData, err := json.Marshal(person)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	fmt.Println(string(jsonData)) // output: {"Name":"Anna","Age":25,"Email":"anna@example.com"}
-}
-```
-
-Vi börjar med att definiera en "Person" struktur och skapar sedan ett objekt med namn, ålder och e-postadress. Sedan använder vi "json.Marshal()" funktionen för att konvertera vår "person" till ett JSON-format. Om allt går väl kommer vi att få en []byte-array som innehåller JSON-data. Genom att använda "string()" funktionen kan vi konvertera []byte till en sträng och skriva ut den på terminalen.
-
-Men vad händer om vi behöver hämta data från en JSON-fil? Inga problem, vi kan använda "json.Unmarshal()" funktionen för att konvertera JSON-data till vår struktur. Låt oss titta på ett exempel:
+### Läsning av JSON-data
+För att läsa in JSON-data från en fil i Go, kan vi använda paketet `encoding/json` och dess funktion `Unmarshal()`. Se det här exemplet:
 
 ```Go
 package main
@@ -61,34 +28,105 @@ import (
 	"io/ioutil"
 )
 
-type Book struct {
-	Title       string
-	Author      string
-	PublishedAt string `json:"published_at"`
+type User struct {
+	Name  string `json:"name"`
+	Email string `json:"email"`
 }
 
 func main() {
-
-	jsonData, _ := ioutil.ReadFile("book.json")
-
-	var book Book
-	err := json.Unmarshal(jsonData, &book)
+	// Läs in JSON-filen
+	raw, err := ioutil.ReadFile("user.json")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println(err.Error())
+		return
 	}
 
-	fmt.Println(book) // output: {The Alchemist Paulo Coelho 1988-01-01}
+	// Skapa en variabel för att lagra vår data
+	var user User
+
+	// Använd Unmarshal() för att avkoda JSON till user strukturen
+	err = json.Unmarshal(raw, &user)
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	// Accessa data med hjälp av vår "user" variabel
+	fmt.Println("Användarnamn:", user.Name)
+	fmt.Println("Email:", user.Email)
+}
+```
+För detta exempel, anta att vi har en fil som heter `user.json` med följande innehåll:
+```json
+{
+	"name": "Johan",
+	"email": "johan@go.com"
 }
 ```
 
-Vi börjar med att läsa innehållet från en JSON-fil till en []byte-array med hjälp av "ioutil.ReadFile()" funktionen. Sedan deklarerar vi vår "Book" struktur och använder "json.Unmarshal()" funktionen för att fylla vår struktur med data från JSON-filen. Observera att vi även har lagt till en "tag" för fältet "PublishedAt" för att berätta för Go att det matchar med "published_at" i JSON-filen.
+Kör programmet och du kommer att se utskriften:
+```
+Användarnamn: Johan
+Email: johan@go.com
+```
 
-## Fördjupning
+### Skrivning av JSON-data
+För att skriva ut data till en JSON-fil i Go, kan vi använda samma `encoding/json` paket och dess funktion `Marshal()`. Här är ett exempel:
 
-Genom att använda "encoding/json" paketet kan vi också hantera mer komplexa JSON-strukturer och hantera hantering av fel och ogiltig data. Det finns också möjlighet att använda "json.Decoder" och "json.Encoder" för att hantera streaming av stora JSON-datafiler. För mer information, läs dokumentationen för "encoding/json" paketet.
+```Go
+package main
 
-## Se också
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+)
 
-- [The JSON Website](https://www.json.org/)
-- [Go Language Specification - Encoding/json](https://golang.org/pkg/encoding/json/)
-- [Learn JSON in 10 Minutes](https://www.freecodecamp.org/news/learn-json-in-10-minutes/)
+type User struct {
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
+
+func main() {
+	// Skapa en användare
+	user := User{
+		Name:  "Sara",
+		Email: "sara@go.com",
+	}
+
+	// Använd Marshal() för att omvandla data till JSON-format
+	jsonData, err := json.Marshal(user)
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	// Skriv data till en fil
+	err = ioutil.WriteFile("output.json", jsonData, 0644)
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	fmt.Println("JSON-filen har skapats!")
+}
+```
+Här kommer en fil att skapas som heter `output.json` med följande innehåll:
+```json
+{
+	"name": "Sara",
+	"email": "sara@go.com"
+}
+```
+
+## Djupdykning
+Om du vill bli mer bekant med att arbeta med JSON i Go, kan du utforska ytterligare funktioner i paketet `encoding/json`. Du kan också kolla in följande resurser för mer information:
+
+- [Go Language specification on JSON](https://golang.org/ref/spec#JSON)
+- [Gophercises: Exercise for practicing Go](https://gophercises.com/exercises/json)
+- [Go by example: Working with JSON](https://gobyexample.com/json)
+
+## Se även
+- [Officiell dokumentation för encoding/json i Go](https://golang.org/pkg/encoding/json/)
+- [How to Encode and Decode JSON Data in Go](https://www.digitalocean.com/community/tutorials/how-to-encode-and-decode-json-data-in-go)
+- [Working with JSON in Go: Tips and Tricks](https://blog.alexellis.io/golang-json-api-client/)

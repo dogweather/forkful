@@ -1,6 +1,7 @@
 ---
-title:                "C++: Extrahering av substrängar"
-simple_title:         "Extrahering av substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "C++: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
+Att extrahera substrängar från en större sträng kan vara en användbar teknik för att manipulera data på ett effektivt sätt. Till exempel kan det vara till hjälp för att isolera vissa delar av en textsträng eller för att söka efter specifika mönster inom en sträng.
 
-Att extrahera substrängar är en vanlig uppgift för många programmerare, särskilt inom C++. Det är en användbar teknik för att manipulera strängar på ett effektivt sätt och kan hjälpa till att lösa många problem inom programutveckling.
-
-## Hur man gör
-
-För att extrahera en substring från en sträng i C++ kan du använda den inbyggda funktionen `substr()`. Detta används för att få ut en del av en sträng med hjälp av index och längd. Här är ett exempel på hur du kan extrahera en del av en sträng med hjälp av `substr()`:
+## Så här gör du 
+För att extrahera substrängar i C++ kan du använda funktionen `substr()` som finns inbyggd i `string` biblioteket. Funktionen tar två parametrar, en startposition och en längd, och returnerar en ny sträng som är en del av den ursprungliga strängen. Här är ett exempel på hur man kan använda funktionen för att extrahera en del av en sträng: 
 
 ```C++
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main()
-{
-    string str = "Hej, jag heter Anna!";
-    
-    // Extrahera "Anna" från strängen
-    string substring = str.substr(16, 4);
-
-    cout << "Substring: " << substring << endl;
-    
+int main() {
+    string str = "Hello World";
+    string sub = str.substr(6,5); // extrahera från position 6, 5 tecken
+    cout << sub << endl; // Skriver ut "World" 
     return 0;
 }
 ```
 
-Output: "Substring: Anna"
+För att extrahera en del av en sträng baserat på ett specifikt mönster kan du använda `find()` funktionen för att hitta positionen för det mönstret och sedan använda `substr()` för att extrahera en del av strängen baserat på den positionen. Här är ett exempel på hur man kan göra det: 
 
-## Djupdykning
+```C++
+#include <iostream>
+#include <string>
+using namespace std;
 
-När du extraherar substrängar är det viktigt att förstå hur index och längd fungerar. Indexet i `substr()` är den position där delsträngen börjar, medan längden är antalet tecken som ska extraheras från det positionen. Det är också viktigt att komma ihåg att den första positionen i en sträng är index 0.
+int main() {
+    string str = "Det var en gång en liten groda";
+    int pos = str.find("gång"); // Hitta positionen av "gång"
+    string sub = str.substr(pos, 8); // Extrahera "gång en"
+    cout << sub << endl; // Skriver ut "gång en"
+    return 0;
+}
+```
 
-Det finns också flera andra sätt att extrahera substrängar i C++, som att använda `find()` och `substr()` tillsammans eller använda `string::npos` för att extrahera en del av en sträng baserat på ett visst villkor.
+## Djupdykning 
+När man använder `substr()` funktionen är det viktigt att tänka på att den första positionen är 0, inte 1. Det betyder att om du vill extrahera de första fem tecknen av en sträng, så är startpositionen 0 och längden 5. Dessutom kan man också lägga till en tredje parameter till `substr()` funktionen för att bara extrahera en del av en sträng, till exempel bara de första tre tecknen.
 
-## Se även
-
-- [C++ Reference - substr()](https://www.cplusplus.com/reference/string/string/substr/)
-- [GeeksforGeeks - Different methods of extracting substrings in C++](https://www.geeksforgeeks.org/string-append-c/)
-- [C++ String Functions](https://www.programiz.com/cpp-programming/library-function/string)
+## Se även 
+- [C++ string documentation](https://www.cplusplus.com/reference/string/string/)
+- [Using substr() in C++ to manipulate strings](https://www.geeksforgeeks.org/using-substr-c-manipulate-strings/)

@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Searching and replacing text"
+title:                "Searching and replacing text"
+html_title:           "C recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C"
 category:             "C"
@@ -11,46 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Searching and replacing text is a common task in programming. It allows us to quickly make changes to our code or data without having to manually go through each line. This saves us time and ensures that the changes are consistent throughout the file.
+If you've ever found yourself faced with a large chunk of text that needs to be edited, you know how time-consuming and error-prone it can be to manually search and replace every instance of a specific word or phrase. That's where the power of searching and replacing text using C programming comes in.
 
-## How To
+## How To 
 
-To search and replace text in C programming, we can use the `strchr()` and `strncpy()` functions from the standard C library. Here's an example of how we can use these functions to replace all occurrences of a specific character with another character:
+To start, you'll need to define a string variable that will hold the text you want to search and replace. Let's say we have a sentence like "I love coding in C" and we want to replace "love" with "enjoy". We'll set up our string variable as follows:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello world!";
-    char *ptr = strchr(str, 'o'); // returns a pointer to the first occurrence of 'o'
-
-    while (ptr) {
-        strncpy(ptr, "x", 1); // replaces the character at the pointer's position with 'x'
-        ptr = strchr(ptr + 1, 'o'); // moves the pointer to the next occurrence of 'o'
-    }
-
-    printf("%s", str); // output: Hellx wxrld!
-    return 0;
-}
+char str[20] = "I love coding in C";
 ```
 
-In this example, we used `strchr()` to find the first occurrence of the character 'o' in the string and then used `strncpy()` to replace it with 'x'. We then continued to use `strchr()` to find and replace all other occurrences of 'o' until the end of the string.
+Next, we'll use the `strchr()` function to locate the first occurrence of the word we want to replace. This function takes in two arguments - the string to search and the character to find. In this case, we'll search for the letter "l" in our string variable.
 
-It's important to note that `strncpy()` includes the null terminator character in the replacement, so we can only replace one character at a time. If we want to replace a sequence of characters, we can use the `memcpy()` function instead.
+```C
+char *ptr = strchr(str, 'l');
+```
+
+Now, we can use the `strcpy()` function to replace the word "love" with "enjoy". This function takes in two arguments - the destination string and the source string. We'll set our destination string to the location of the "l" we just found and our source string to "enjoy".
+
+```C
+strcpy(ptr, "enjoy");
+```
+
+Finally, we can print our updated string variable to see the results:
+
+```C
+printf("%s", str);
+// Output: "I enjoy coding in C"
+```
 
 ## Deep Dive
 
-The `strchr()` function takes in two arguments: a string and a character to search for. It returns a pointer to the first occurrence of the character in the string, or a NULL pointer if the character is not found. We can then use this pointer in conjunction with other standard string functions like `strncpy()`, `strcpy()`, or `strcat()` to make changes to the string.
+There are a few things to keep in mind when using searching and replacing techniques in C programming. First, the `strchr()` function only searches for single-character matches. If you want to search for a whole word or phrase, you can use the `strstr()` function instead, which takes in two arguments - the string to search and the substring to find.
 
-On the other hand, the `strncpy()` function takes in three arguments: a pointer to the destination string, a pointer to the source string, and the number of characters to copy. It copies the specified number of characters from the source string to the destination string, including the null terminator character. This is why we used a length of 1 in our example when replacing a single character.
+Additionally, the `strcpy()` function only replaces the specified word or phrase with the same number of characters. In our example, "love" and "enjoy" are both four-letter words, so they can be easily replaced. However, if the replacement string is longer than the original string, it may result in overwriting important data in the memory.
 
-Additionally, the `strncpy()` function does not automatically add a null terminator character if the source string is shorter than the specified length. This is why we always need to make sure the destination string is large enough to hold the copied characters, and we manually add the null terminator at the end if necessary.
+To avoid these issues, consider using the `memmove()` function instead, which can handle copying and moving strings with different lengths.
 
 ## See Also
 
-- [strchr() function in C](https://www.geeksforgeeks.org/strchr-in-c/)
-
-- [strncpy() function in C](https://www.geeksforgeeks.org/strncpy-c-library-function/)
-
-- [String manipulation functions in C](https://www.geeksforgeeks.org/string-manipulation-in-c-with-examples/)
+- [strchr() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
+- [strstr() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [strcpy() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm)
+- [memmove() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Analisi dei tag html"
+html_title:           "Elm: Analisi dei tag html"
+simple_title:         "Analisi dei tag html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,50 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Hai mai sentito parlare del linguaggio di programmazione Elm? Se sei un programmatore alla ricerca di un linguaggio efficiente, sicuro e potente, allora dovresti dare un'occhiata a Elm. Una delle sue funzionalità più interessanti è la capacità di analizzare e parsare l'HTML in modo semplice e pulito. In questo articolo, ti mostrerò perché dovresti considerare di utilizzare Elm per il parsing di HTML.
+Sebbene non sembri la parte più eccitante della programmazione, essere in grado di parsare l'HTML è incredibilmente utile per gli sviluppatori. Questa abilità permette di ottenere informazioni strutturate da pagine web e di manipolarle per creare esperienze utente più dinamiche e personalizzate.
 
-## Come fare 
+## Come fare
 
-Il parsing HTML è un processo essenziale per qualsiasi sito web o applicazione web. Consiste nel prendere un documento HTML e scomporlo in una struttura dati che possa essere facilmente manipolata e visualizzata sul web. Con Elm, il processo è estremamente semplice e intuitivo grazie alla sua sintassi elegante e funzioni integrate per il parsing. Puoi usare la funzione `Html.parser` per creare un parser e utilizzarlo per ottenere i dati di cui hai bisogno da un documento HTML.
+L'Elm fornisce una libreria integrata chiamata "elm/html" che contiene funzioni per parsare l'HTML. Vediamo un esempio di come usarla per ottenere il testo all'interno dell'elemento <h1> di una pagina web:
 
 ```Elm
-let doc = """
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Il mio primo documento HTML</title>
-        </head>
-        <body>
-            <h1>Benvenuto in Elm!</h1>
-            <p>Questo è il mio primo documento HTML con Elm.</p>
-        </body>
-    </html>
-    """
+import Html exposing (..)
+import Html.Parser exposing (..)
+import Http
+import Json.Decode as Decode
 
-let title = Html.parser "title" (Html.attributeIs "text/html") doc
-let paragraph = Html.parser "p" (Html.attributeIs "text/html") doc
+type Msg
+    = ReceivedHtml (Result Http.Error String)
 
-title -- "Il mio primo documento HTML"
-paragraph -- "Questo è il mio primo documento HTML con Elm."
+type alias Model =
+    { title : String
+    , content : String
+    }
+
+init : ( Model, Cmd Msg )
+init =
+    ( { title = "", content = "" }, Http.get "http://sito.com" ReceivedHtml )
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        ReceivedHtml (Ok html) ->
+            let
+                parserResult =
+                    parse (all (chompUntil "<h1>") (map .content chompUntil "</h1>")) html
+            in
+                case parserResult of
+                    Ok result ->
+                        let
+                            (updatedModel, _) =
+                                model.title result [] { title = "", content = "" }
+                        in
+                            ( updatedModel, Cmd.none )
+
+                    Err err ->
+                        ( model, Cmd.none )
+
+        _ ->
+            ( model, Cmd.none )
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ h1 [] [ text model.title ]
+        , p [] [ text model.content ]
+        ]
+
+main : Program () Model Msg
+main =
+    Html.beginnerProgram
+        { model = init
+        , update = update
+        , view = view
+        , subscriptions = subscriptions
+        }
 ```
 
-Come puoi vedere nell'esempio sopra, con poche righe di codice è possibile estrarre facilmente il contenuto del tag `title` e `p` dal documento HTML. Inoltre, Elm ha una gestione degli errori molto solida che ti aiuta a individuare eventuali errori di parsing e li gestisce in modo sicuro e preciso.
+In questo codice, utilizziamo la funzione `Http.get` per effettuare una chiamata HTTP per ottenere il contenuto della pagina web. Una volta ricevuto il contenuto, utilizziamo la funzione `Html.Parser.parse` per crearne un risultato parsato utilizzando un parser definito da noi. Nel nostro esempio, abbiamo definito un parser che cerca il contenuto all'interno di un <h1> e lo inserisce nel campo `title` del nostro modello.
 
-## Deep Dive 
+## Approfondimento
 
-Ora che hai visto come è semplice e intuitivo il parsing di HTML con Elm, vediamo alcune delle funzionalità più avanzate di questo linguaggio. Una delle più interessanti è la capacità di gestire facilmente i dati estratti dal documento HTML tramite il pattern matching. Con il pattern matching, puoi elaborare in modo flessibile i dati estratti dal parser e trasformarli in una struttura dati desiderata.
+Oltre alla funzione `parse`, la libreria `elm/html` fornisce molte altre funzioni utili per parsare l'HTML. Ad esempio, ci sono funzioni per parsare elementi specifici, attributi, o anche per creare parser personalizzati. Inoltre, è possibile utilizzare la libreria `elm/parser` per creare parser ancora più avanzati.
 
-Un'altra caratteristica interessante è la compatibilità con CSS selectors. Ciò significa che puoi utilizzare i selettori CSS per accedere specificamente ai tag HTML all'interno del documento, semplificando ulteriormente il processo di parsing. Inoltre, Elm offre libererie di terze parti, come `elm-dom` e `elm-html-parser`, che ti consentono di estendere le funzionalità di parsing HTML.
+Un'altro modo per parsare l'HTML è utilizzare il modulo `built-in Html.Events` che fornisce funzioni come `on`, `targetValue` e `targetChecked`. Queste funzioni possono essere utilizzate per scegliere informazioni da input di form o pulsanti e poi manipolarle tramite funzioni di alto livello come `String.join`, `String.split`, `String.fromList`, etc.
 
-## Vedi anche 
+## Vedi anche
 
-Se sei interessato a utilizzare Elm per il parsing di HTML, ecco alcuni link utili che potrebbero esserti utili:
-
-- [Sito ufficiale di Elm](https://elm-lang.org/)
-- [Guida al parsing HTML con Elm](https://www.thesoftwaresimpleton.com/blog/2018/04/07/elm-html-parser-take-1.html)
-- [Libreria Elm per il parsing HTML](https://package.elm-lang.org/packages/elm/dom/latest/)
-- [Articolo su come utilizzare selettori CSS per il parsing HTML in Elm](https://javascriptwebscrapingguy.com/javascript-web-scraping-with-elm/)
-
-Con este artículo, solo ho voglia di averti ispirato ad utilizzare Elm per il parsing di HTML e mostrarti alcune delle sue capacità sorprendenti. Inizia a esplorare questo linguaggio e scopri come può semplificare il tuo processo di parsing HTML.
+- Documentazione ufficiale su `elm/html`: https://package.elm-lang.org/packages/elm/html/latest
+- Tutorial su come parsare l'HTML con Elm: https://dev.to/kalaluce/how-to-parse-html-with-elm-3fp2
+- Tutorial su come utilizzare il modulo `Html.Events`: https://medium.com/@lysergicordan/input-events-in-elm-686c610859ea

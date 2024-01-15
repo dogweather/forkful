@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Webseite herunterladen"
+html_title:           "Swift: Webseite herunterladen"
+simple_title:         "Webseite herunterladen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,52 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich überhaupt die Mühe machen, eine Webseite herunterzuladen? Nun, es gibt viele Gründe dafür! Zum Beispiel könnte man eine Kopie einer Webseite als Backup erstellen, um die Webseite offline zu betrachten oder um bestimmte Informationen zu extrahieren.
 
-## Wie
-Um eine Webseite in Swift herunterzuladen, gibt es einige Schritte zu beachten. Zunächst müssen Sie die URL der Webseite angeben, die Sie herunterladen möchten. Anschließend müssen Sie eine URLSession konfigurieren und eine URLRequest erstellen, die die URL enthält. Dann müssen Sie die Daten aus der Anfrage abrufen und sie in ein Data-Objekt speichern. Schließlich können Sie die Daten in einem beliebigen Format nutzen, z.B. um sie als String anzuzeigen oder sie in einer Datei zu speichern.
+Hast du schon mal eine Webseite heruntergeladen? Wenn nicht, wäre es eine tolle Möglichkeit, deine Fähigkeiten als Swift-Programmierer zu verbessern und gleichzeitig etwas Nützliches zu tun. Mit Swift können wir ganz einfach Webseiten herunterladen und sie lokal auf unseren Geräten speichern. In diesem Artikel zeige ich dir, wie das geht und gebe dir einen Einblick in die Funktionsweise.
+
+## Wie geht's?
+
+Um eine Webseite herunterzuladen, müssen wir zuerst die URL angeben, von der wir sie herunterladen möchten. Zum Beispiel:
 
 ```Swift
-// URL der Webseite
-let url = URL(string: "https://www.example.com")!
+let url = "https://www.example.com"
+```
 
-// URLSession konfigurieren
+Dann verwenden wir die URL-Klasse, um eine Instanz zu erstellen, die auf diese URL verweist:
+
+```Swift
+if let url = URL(string: url) {
+  // do something
+}
+```
+
+Als nächstes verwenden wir die URLSession-Klasse, um eine Verbindung zu öffnen und die Daten von der URL abzurufen. Dazu müssen wir auch eine URLSessionDataTask erstellen, die uns die heruntergeladenen Daten zurückgibt:
+
+```Swift
 let session = URLSession.shared
-
-// URLRequest erstellen
-let request = URLRequest(url: url)
-
-// Daten abrufen und in ein Data-Objekt speichern
-let task = session.dataTask(with: request) { data, response, error in
-    if let error = error {
-        print("Fehler: \(error)")
-        return
-    }
-    guard let httpResponse = response as? HTTPURLResponse,
-          (200...299).contains(httpResponse.statusCode) else {
-        print("Serverfehler!")
-        return
-    }
-    guard let mimeType = httpResponse.mimeType,
-          mimeType == "text/html" else {
-        print("Falscher MIME-Typ!")
-        return
-    }
-    guard let data = data else {
-        print("Keine Daten vorhanden!")
-        return
-    }
-    // Daten in gewünschtes Format konvertieren
-    let htmlString = String(data: data, encoding: .utf8)
-    print(htmlString)
+let task = session.dataTask(with: url) { (data, response, error) in
+  // handle response
 }
 task.resume()
 ```
 
-## Deep Dive
-Ein tieferer Einblick in das Herunterladen von Webseiten umfasst auch die Verwendung von Closures und das Arbeiten mit den verschiedenen Antwortstatuscodes. Außerdem gibt es viele Optionen, um die URLSession weiter anzupassen, wie zum Beispiel das Festlegen von Timeout-Zeiten oder das Hinzufügen von HTTP-Headern.
+Im completionHandler können wir nun die empfangenen Daten verarbeiten und auf unsere lokale Festplatte speichern:
 
-Siehe auch:
-- https://developer.apple.com/documentation/foundation/urlsession
-- https://www.hackingwithswift.com/articles/195/advanced-techniques-for-experienced-swift-developers
-- https://code.tutsplus.com/tutorials/working-with-scalajson-part-1--cms-30783
+```Swift
+if let data = data {
+  // save data to local file
+}
+```
+
+Das ist alles, was wir brauchen, um eine Webseite herunterzuladen und lokal zu speichern. Natürlich können wir auch zusätzliche Optionen und Einstellungen hinzufügen, je nachdem was wir mit den heruntergeladenen Daten machen möchten.
+
+## Deep Dive
+
+Wenn wir uns die Funktionen der URLSession und URLSessionDataTask genauer ansehen, können wir sehen, dass sie auf der unterliegenden Netzwerkschicht des Betriebssystems aufbauen. Dadurch können wir effizient und sicher Daten aus dem Internet herunterladen. Die URLSession-Klasse bietet auch verschiedene Konfigurationsoptionen, z.B. können wir den Timeout oder die Anzahl der gleichzeitigen Verbindungen angeben.
+
+## Siehe auch
+
+- [Apple Developer Documentation for URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Swift By Sundell: Downloading and caching images](https://www.swiftbysundell.com/posts/downloading-and-caching-images-in-swift)
+- [Hacking with Swift: How to download files with URLSession and downloadTask](https://www.hackingwithswift.com/example-code/networking/how-to-download-files-with-nsurlsession-datadownloadtask)

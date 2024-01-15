@@ -1,5 +1,6 @@
 ---
-title:                "Rust: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Rust: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,64 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מתי יש לשלוח בקשת HTTP עם אימות בסיסי וכמה נוח לכלול את התהליך הזה בתוך קוד ראסט.
+ איך ל
 
-## איך לעשות
+## להרחיב
 
-כאשר אנו משתמשים באתר מסוים, לעתים קרובות אנו נדרשים להתחבר כדי לגשת לחלקיו שאינם ציבוריים. כדי לעשות זאת, אנו נשלח בקשת HTTP עם כותרת אימות בסיסית. כאן נמצאת דוגמת קוד ראסט פשוטה המדגימה איך לשלוח בקשת HTTP עם אימות בסיסי:
+HTTP (פרוטוקול תעבורה משולת כמתשמש המאפשר לנו לתקשר עם שרתים באמצעות בקשות מקודדות. אחת מהבקשות הפופולריות ביותר היא בקשת GET, אשר מאפשרת לנו לקבל מידע משרת. אם אנו רוצים לאמת את הזהות שלנו בשרת, ניתן לעשות זאת באמצעות נתינת אישורים בסיסיים כחלק מהבקשה. למאמר זה יש כוונת ללמד אתכם כיצד לשלוח בקשת HTTP עם אימות בסיסי שיטות נפוצות שימוש בשפת ראסט.
+
+## איך ל
+
+ישנן כמה שיטות לבצע אימות בסיסי בתוך סביבת ראסט. בדוגמא זו, ננסה לשלוח בקשת GET עם אימות בשימוש בספריית hyper לצורך תרגול.
 
 ```Rust
-// מימוש פונקציה המקבלת את הכתובת והמידע על האימות
-fn send_basic_auth_request(url: &str, username: &str, password: &str) {
-    // ייבוא התלבושת הרלוונטית
-    use reqwest::{Client, Error};
-    use std::collections::HashMap;
+// ייבוא הספרייה הנחוצה
+𝜆𝜆𝜆𝜆 use hyper::Client;
 
-    // יצירת אובייקט המבוסס על שם המשתמש והסיסמה
-    let credentials = format!("{}:{}", username, password);
-    // יצירת טבלת חיפוש המכילה את האימות בסיסי
-    let mut headers = HashMap::new();
-    headers.insert("Authorization", format!("Basic {}", base64::encode(credentials)));
-
-    // שליחת הבקשה לכתובת הצויינת עם תווך האימות
-    let client = Client::new();
-    let res = client.get(url)
-        .headers(headers)
-        .send();
-
-    // הדפסת תוצאת הבקשה
-    match res {
-        // אם אין שגיאות, תוצאת הבקשה תיחזר כמו כן
-        Ok(response) => println!("{}", response.text().unwrap()),
-        // אחרת, יוכןס שגיאה המציינת את סיבת הכשלון
-        Err(err) => println!("אירעה שגיאה: {:?}", err),
-    }
-}
-
-// קריאה לפונקציה ופעולת השליחה
 fn main() {
-    let url = "http://www.example.com";
-    let username = "myusername";
-    let password = "mypassword";
-    send_basic_auth_request(url, username, password);
+    // הכנסת כתובת URL למשתנה
+    let url = "https://example.com";
+
+    // יצירת אובייקט Client ופניית בקשה GET עם אימות בסיסי
+    let client = Client::new();
+    let req = client.get(url).header(Authorization, "Basic dXNlcjpwYXNz").body(());
+
+    // שליחת הבקשה וקבלת התגובה
+    let mut res = req.send().unwrap();
+
+    // הדפסת הגוף של התגובה לצורך אימות
+    println!("{}", res.text().unwrap());
 }
 ```
 
 תוצאה:
-
 ```
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to Example</title>
-</head>
-<body>
-    <h1>Welcome to Example</h1>
-    <p>You have successfully logged in!</p>
-</body>
-</html>
+response body
 ```
 
-## בירור עמוק
+## להרחיב
 
-אימות בסיסי הוא תהליך אבטחתי שמשמש למתן גישה לחלקי האתר שאינם ציבוריים. תוכניות ה-HTTP מאפשר
+בדוגמא זו, אנו משתמשים בספריית hyper כדי להתחבר לשרת עם בקשת GET אשר מכילה אימות בסיסי. נוסף לכך, אנו גם משתמשים בפניית בקשה עם כתובת URL ישירות, ולא באמצעות יצירת אובייקט Request נפרד. כאשר אנו משתמשים בפונקציה `.header()` כדי להוסיף אימות בסיסי לבקשה, נפריד את הנתונים הרלוונטים עם נקודתייים

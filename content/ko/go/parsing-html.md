@@ -1,5 +1,6 @@
 ---
-title:                "Go: HTML 구문 분석"
+title:                "HTML 구문 분석"
+html_title:           "Go: HTML 구문 분석"
 simple_title:         "HTML 구문 분석"
 programming_language: "Go"
 category:             "Go"
@@ -9,55 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 HTML 파싱에 참여해야 할까요? 
+## 왜
+산업에서 유동적인 환경의 웹 페이지를 파싱하기 위한 최근 기술인 HTML 파싱에 대해 알아보고 싶다면 이 글을 참고하세요! 이 기술은 스크래핑, 웹 크롤링 등 다양한 분야에서 사용될 수 있습니다.
 
-HTML은 웹 페이지에서 사용되는 일반적인 마크업 언어입니다. 따라서 많은 웹 사이트와 애플리케이션에서는 HTML을 사용하고 있습니다. 이러한 HTML을 파싱하고 정보를 추출하는 것은 웹 스크랩핑, 데이터 마이닝, 머신 러닝 등 다양한 분야에 매우 유용합니다. 또한 웹 개발자로서 HTML의 구조와 작동 방식을 이해하는 데도 중요하며 이를 통해 더 나은 웹 프로그래밍을 할 수 있습니다.
-
-## 어떻게 HTML을 파싱할 수 있을까요? 
-
-Go 언어는 내장 패키지인 "html"을 통해 HTML을 파싱하는 기능을 제공합니다. 이를 사용하면 HTML을 구문 분석하고 필요한 데이터를 추출할 수 있습니다. 아래는 간단한 예제 코드입니다.
-
+## 어떻게
+우리는 Go 언어를 사용하여 HTML을 파싱하는 방법을 살펴볼 것입니다. 먼저, 필요한 라이브러리를 임포트합니다.
 ```Go
-package main
-
 import (
 	"fmt"
-	"log"
-	"net/http"
+	"strings"
+
 	"golang.org/x/net/html"
 )
+```
+그리고 우리는 다음과 같은 코드를 사용하여 HTML을 파싱합니다.
+```Go
+// HTML 문자열
+const htmlString = "<html><body><h1>Hello, World!</h1></body></html>"
 
-func main() {
-  // 파싱할 HTML 페이지의 URL 설정
-  url := "https://example.com"
+// HTML 파싱
+doc, err := html.Parse(strings.NewReader(htmlString))
 
-  // HTTP 요청 보내기
-  resp, err := http.Get(url)
-  if err != nil {
-    log.Fatal(err)
-  }
-  defer resp.Body.Close()
+if err != nil {
+	fmt.Println("파싱 에러:", err)
+}
 
-  // HTML 파싱하기
-  doc, err := html.Parse(resp.Body)
-  if err != nil {
-    log.Fatal(err)
-  }
+// 첫 번째 h1 태그를 찾습니다.
+h1 := findElement(doc, "h1")
 
-  // "title" 태그의 내용 출력하기
-  title := doc.FirstChild.FirstChild.NextSibling.FirstChild
-  fmt.Println(title.Data)
+// h1 태그 안의 텍스트를 출력합니다.
+fmt.Println("결과:", h1.FirstChild.Data)
+// 결과: Hello, World!
+```
+
+## 깊게 들어가기
+HTML 파싱에 대해 더 자세히 알아보겠습니다. HTML은 트리 구조로 이루어져 있기 때문에 우리는 트리에서 원하는 요소를 찾을 수 있습니다. 위의 예제에서 우리는 `findElement` 함수를 사용하여 첫 번째 h1 태그를 찾았는데, 이 함수는 다음과 같이 정의될 수 있습니다.
+```Go
+// 원하는 요소를 찾는 함수
+func findElement(n *html.Node, name string) *html.Node {
+	if n.Type == html.ElementNode && n.Data == name {
+		return n
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		if result := findElement(c, name); result != nil {
+			return result
+		}
+	}
+	return nil
+}
+```
+또 다른 예제로, 우리가 파싱하고자 하는 HTML에 여러 개의 태그가 있다고 가정해봅시다. 이 경우, `findElement` 함수를 다음과 같이 수정하여 모든 해당 태그를 찾을 수 있습니다.
+```Go
+// 모든 해당 태그를 찾는 함수
+func findAllElements(n *html.Node, name string) []*html.Node {
+	var result []*html.Node
+	if n.Type == html.ElementNode && n.Data == name {
+		result = append(result, n)
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		result = append(result, findAllElements(c, name)...)
+	}
+	return result
 }
 ```
 
-위의 예제 코드를 실행하면 해당 페이지의 타이틀을 출력할 수 있습니다. 이처럼 "html" 패키지를 사용하면 다양한 방법으로 HTML을 파싱할 수 있으며, 필요에 따라 원하는 데이터를 추출할 수도 있습니다.
+이 방법 외에도 Go 언어에는 다양한 라이브러리와 패키지가 있어서 HTML 파싱을 더 간편하게 할 수 있습니다. 또한, CSS 선택자와 같은 기능을 제공하는 라이브러리도 있어서 더욱 높은 유연성을 가질 수 있습니다.
 
-## HTML 파싱의 심층적인 탐구 
-
-HTML 파싱은 간단해 보이지만 실제로는 꽤 복잡한 과정입니다. HTML은 다양한 태그와 속성으로 이루어져 있으며, 이러한 구조를 정확하게 파악하는 것이 중요합니다. 또한 웹 사이트는 종종 동적으로 HTML을 생성하거나 수정하기 때문에 정적이지 않은 HTML 파싱을 해야 할 때도 있습니다. 따라서 실제 업무에서는 더 많은 공부와 경험이 필요하며, 기술적인 도움과 협업이 필요할 수도 있습니다. 결론적으로, HTML 파싱은 웹 개발과 데이터 분석 등 다양한 분야에서 중요하고 유용한 기술이며, 공부와 경험을 통해 더욱 능숙하게 사용할 수 있습니다.
-
-## 관련 자료 
-
-- [Go 언어 공식 문서 - html 패키지](https://golang.org/pkg/html/)
-- [Go 언어로 데이터 마이닝하기 - HTML 파싱](https://medium.com/wadl-go/golang-%EC%BD%94%EB%94%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A7%88%EC%9D%B4%EB%8B%9D-%EA%B8%B0%EC%88%A0-json-%ED%99%9C%EC%9A%A9-html-%EB%8C%80%EC%B2%B4-81bea078d3c1)
-- [웹 스크래핑
+## See Also
+- [Golang.org - HTML Package](https://golang.org/pkg/net/html/)
+- [Scraping HTML with Go](https://www.devdungeon.com/content/scraping-html-go)
+- [Parsing HTML with Go](https://blog.golang.org/pipelines)

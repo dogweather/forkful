@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Praca z yaml"
+title:                "Praca z yaml"
+html_title:           "Bash: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,41 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą pracującym w języku Bash, prawdopodobnie słyszałeś o plikach YAML. YAML, czyli "Yet Another Markup Language", jest językiem formatowania danych, który jest wykorzystywany do przechowywania i przesyłania danych w czytelnej dla człowieka formie. W tym artykule, dowiesz się dlaczego warto poznać ten język i jak zacząć pracować z plikami YAML.
+Jeśli jesteś programistą i często spotykasz się z koniecznością przetwarzania plików konfiguracyjnych lub danych, to jest szansa, że napotkałeś format YAML. Pozostawienie ją wygodnym formatem z formatowaniem, który można odczytywać przez ludzi i maszyny. W ten sposób Jest to przydatne narzędzie do automatyzacji procesów, a także do przechowywania i przesyłania danych w sposób, który jest zrozumiały dla każdego.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby zacząć pracę z YAML w języku Bash, musisz najpierw zainstalować odpowiednią bibliotekę o nazwie 'yq'. Możesz to zrobić za pomocą menedżera pakietów swojego systemu operacyjnego lub ręcznie pobrać i skompilować bibliotekę. Po zainstalowaniu, możesz zacząć korzystać z poleceń i funkcji zawartych w bibliotece 'yq'.
-
-Poniżej przedstawiamy przykłady kodu Bash wykorzystującego bibliotekę yq do pracy z plikiem YAML.
-
-Pobranie wartości ze struktury YAML:
+### Tworzenie pliku YAML
 ```Bash
-$ yq e '.info.version' config.yaml
-1.0.0
+touch plik.yaml
 ```
+W powyższym przykładzie tworzymy nowy plik YAML przy użyciu polecenia "touch". Można również używać innego edytora tekstowego, na przykład Sublime lub Atom, aby utworzyć lub edytować plik YAML.
 
-Dodanie lub zmiana wartości w pliku YAML:
+### Wpisywanie danych w pliku YAML
 ```Bash
-$ yq e '.database.username = "john"' config.yaml
+open plik.yaml
 ```
+Użyj wybranego edytora tekstowego, aby otworzyć plik YAML i wpisać dane. Pamiętaj, że format YAML jest zależny od wcięć, więc ważne jest, aby zachować odpowiednią strukturę dokładając spację lub tabulację.
 
-Odczytanie całej zawartości pliku YAML:
+### Przetwarzanie pliku YAML
 ```Bash
-$ yq e '.' config.yaml
+cat plik.yaml
 ```
+Polecenie "cat" wyświetla zawartość pliku YAML. Można również przekazać dane z pliku do innych komend za pomocą potoku "|" lub użyć ich jako argumentów dla innych poleceń.
 
-Dzięki bibliotece yq możesz również zmieniać i filtrować dane w pliku YAML w bardziej zaawansowany sposób. Dokumentacja i przykłady znajdują się na oficjalnej stronie projektu.
+## Wgląd w wykorzystywanie YAML
+YAML jest formatem danych zorientowanym na człowieka, co oznacza, że jest łatwiejszy w czytaniu niż formularz JSON. Można również umieszczać komentarze w plikach YAML, co czyni je jeszcze wygodniejszymi w użyciu. Wielu programistów wykorzystuje format YAML do przechowywania konfiguracji swoich aplikacji lub jako sposób na przechowywanie danych w plikach tekstowych.
 
-## Wnikliwe Zagłębienie
-
-Jedną z najważniejszych cech YAML jest jego czytelność dla człowieka. Struktura danych przypomina tę zapisywaną w języku JSON, jednak YAML jest znacznie bardziej czytelny i przejrzysty. Ponadto, dzięki funkcjom biblioteki yq, możesz w prosty sposób manipulować danymi w plikach YAML, co może być bardzo pomocne w automatyzacji procesów i zarządzaniu konfiguracją.
-
-Ponieważ YAML jest językiem formatowania danych, jest wykorzystywany w wielu różnych dziedzinach, takich jak tworzenie konfiguracji serwerów, przetwarzanie informacji w chmurze, czy tworzenie skryptów testowych. Dlatego warto poznać ten język i umiejętność pracy z nim może być przydatna w przyszłych projektach.
-
-## Zobacz Również
-- Dokumentacja biblioteki yq: https://kislyuk.github.io/yq/
-- Oficjalna strona języka YAML: https://yaml.org/
-- Przewodnik po języku YAML: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
-
-Dziękujemy za przeczytanie tego artykułu i życzymy sukcesów w pracy z YAML w języku Bash!
+## Zobacz także
+- https://yaml.org
+- https://www.linux.com/training-tutorials/beginners-guide-yaml/
+- https://www.tutorialspoint.com/yaml/index.htm

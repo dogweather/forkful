@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Analyse von HTML"
-simple_title:         "Analyse von HTML"
+title:                "HTML-Analyse"
+html_title:           "Clojure: HTML-Analyse"
+simple_title:         "HTML-Analyse"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Parsen von HTML ist ein wichtiger Schritt beim Web Scraping und bei der Extraktion von Daten aus Websites. Es ermöglicht es uns, den strukturierten Inhalt einer Seite zu analysieren und zu extrahieren.
+Ähnlich wie in anderen Programmiersprachen, ist das Analysieren von HTML in Clojure nützlich für die webbasierte Entwicklung. Es ermöglicht dem Benutzer, strukturierte Daten aus einer Webseite zu extrahieren und sie in ihrem Programmcode zu verwenden.
 
-## Wie
+## Wie du das machst
 
-```Clojure
-(ns html-parser.core
-  (:require [net.cgrand.enlive-html :refer [html-resource html-select]
-            [net.cgrand.regex :as regex])))
-
-(def url "https://www.example.com/")
-(def html (html-resource (java.net.URI. url) :selector "h1")) ;; Wählt alle Elemente mit dem H1-Tag aus
-
-(html-select html [:.header-text]) ;; Wählt alle Elemente mit der angegebenen CSS-Klasse aus
-```
-
-Das obige Beispiel zeigt, wie wir das `net.cgrand.enlive-html`-Paket verwenden können, um HTML von einer URL abzurufen und ausgewählte Elemente basierend auf CSS-Selektoren auszuwählen.
+Im Folgenden findest du einige Beispiele, wie du HTML in Clojure parsen kannst:
 
 ```Clojure
-(def data (regex/re-find #"Name: (.+)" "Name: John")) ;; Verwendet reguläre Ausdrücke, um den Namen aus dem String zu extrahieren
-(user/str data) ;; Gibt "John" aus
+(def input "<html><head><title>Meine Webseite</title></head><body><h1>Willkommen!</h1></body></html>")
+(def output (org.jsoup.Jsoup/parse input))
+(println (:text (get-in output [:head :title])))
 ```
 
-Wir können auch die `net.cgrand.regex`-Bibliothek verwenden, um reguläre Ausdrücke auf HTML-Code anzuwenden und spezifische Informationen zu extrahieren.
+Dieses Beispiel nutzt die Bibliothek "jsoup" und extrahiert den Titel aus dem HTML-Code, indem es das DOM-Datenmodell durchläuft. Die Ausgabe wird "Meine Webseite" sein.
 
-## Deep Dive
+```Clojure
+(def input "<div><span id="user">John</span></div>")
+(def output (org.jsoup.Jsoup/parse input))
+(println (:text (get-in output [:div :span])))
+```
 
-Beim Parsen von HTML müssen wir die Struktur des Codes verstehen, um die richtigen Selektoren zu verwenden. Wir müssen auch auf Variablen wie dynamisch generierte IDs und Klassen achten, die unsere Selektoren beeinflussen können.
+Hier wird der Benutzername "John" aus dem div-Element extrahiert und ausgegeben.
 
-Eine weitere Herausforderung beim Parsen von HTML ist die Handhabung von Komplexität, insbesondere wenn es um verschachtelte Elemente geht. Es erfordert oft mehrere Selektoren oder reguläre Ausdrücke, um die gewünschten Informationen aus dem Code zu extrahieren.
+## Tiefer ins Detail
+
+Das Parsen von HTML in Clojure kann auf verschiedene Arten erreicht werden, abhängig von den Anforderungen des Benutzers. Einige Entwickler verwenden möglicherweise die Bibliothek "clj-html-parser", während andere die Kombination von "jsoup" und "Enlive" bevorzugen.
+
+Enlive ist eine spezielle Bibliothek für die Manipulation und Extraktion von HTML in Clojure. Es bietet eine einfachere Syntax für die Navigation im DOM und unterstützt auch das Templating.
+
+Es ist auch möglich, mit regulären Ausdrücken durch den HTML-Code zu navigieren, aber dies wird im Allgemeinen nicht empfohlen, da HTML-Code sehr komplex und schwer zu verarbeiten sein kann.
 
 ## Siehe auch
 
-- [Clojure-Dokumentation von net.cgrand.enlive-html](https://github.com/cgrand/enlive/blob/master/doc/cheatsheet.md)
-- [Regex-Dokumentation von net.cgrand.regex](https://github.com/cgrand/enlive/blob/master/doc/cheatsheet.md)
+- [Offizielle Clojure-Dokumentation](https://clojuredocs.org/clojure.core/split)
+- [jsoup Bibliothek](https://jsoup.org/)
+- [Enlive Bibliothek](https://github.com/cgrand/enlive)

@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: HTML:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Clojure: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,39 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTML-purkaminen on tärkeä taito jokaiselle, joka työskentelee verkkokehityksen parissa. Jos haluat päästä käsiksi verkkosisältöön, kuten hakutuloksista tai verkkosivun tietoihin, sinun täytyy pystyä purkamaan HTML-koodia.
+Jos haluat analysoida verkkosivujen sisältöä ja hakea tiettyä tietoa tekstistä tai muotoiluista, HTML-parsiminen on välttämätöntä. Se mahdollistaa verkkosivujen tietojen keräämisen ja jatkoprosessoinnin helposti ja vaivattomasti.
 
-## Miten
-
-Purkaaksesi HTML-koodia Clojurella, tarvitset ensin työkalut, kuten [Clojure HTML-lukija-kirjaston] (https://github.com/rosejn/html-parse). Tämän jälkeen voit käyttää [parse-html] -funktiota purkaaksesi HTML-koodin ja tulostaa sen selkeään muotoon.
+## Kuinka tehdä
 
 ```Clojure
-(ns HTML-parser
-  (:require [net.cgrand.enlive-html :as html]))
+(require '[clojure.data.zip.xml :as xml])
+(require '[clojure.xml :as xml-parse])
 
-(def html-koodi "<p> Tämä on yksinkertainen HTML-esimerkki </p>")
+(def html (xml-parse "<html><body><h1>Otsikko</h1><p>Tekstiä</p></body></html>"))
 
-(def html-objekti (html/parse-html html-koodi))
+(defn get-text [node]
+  (when (xml/tag node)
+    (apply str (map #(get-text %) (xml/children node))))
+  (when (xml/text node)
+    (xml/text node)))
 
-(html/de-tpl html-objekti])
+(xml-> html :body :p get-text)
+;; Tuloste: "Tekstiä"
 ```
 
-### Tuloste:
+## Syventyminen
 
-```Clojure
-([":p" nil "Tämä on yksinkertainen HTML-esimerkki"])
-```
-
-## Syvällinen sukellus
-
-HTML-purkaminen Clojurella vaatii jonkin verran ymmärrystä HTML:n rakenteesta ja siitä, miten kirjasto käsittelee sitä. Kirjasto käyttää taulukkomuotoa, jossa ensimmäinen elementti on HTML-elementin nimi, toinen elementti sisältää ominaisuuksia ja kolmas elementti sisältää elementin sisällön.
-
-Voit myös tarkentaa purkamisperiaatteita käyttämällä [enlive] -bibliotektiä, joka antaa sinulle enemmän hallintaa purkamisprosessiin.
+HTML-parsiminen hyödyntää Clojuren sisäistä XML-paketointia, joka helpottaa HTML-elementtien käsittelyä. XML-sivutus toimii siten, että se navigoi XML-solmujen läpi ja tarjoaa pääsyn atribuutteihin ja teksteihin. Lisäksi Clojure tarjoaa monia hyödyllisiä kirjastoja, kuten clojure.data.zip.xml ja clojure.xml, jotka auttavat yksinkertaistamaan parsimista ja haunopeuttamista.
 
 ## Katso myös
-
-- [enlive] (https://github.com/cgrand/enlive)
-- [Clojure HTML-lukija] (https://github.com/rosejn/html-parse)
-- [Clojure HTML-kirjoittaja] (https://github.com/nathell/clj-html)
-
-Purkaessaan HTML-koodia Clojurella, voit helposti saada tarvitsemasi tiedot verkkosivuilta ja automatisoida datan keräämisen prosessin. Se on erinomainen taito, joka auttaa sinua kehittämään entistä monipuolisempia ja älykkäämpiä verkkosovelluksia.
+- [Clojure XML-pakkauksen dokumentaatio](https://clojure.github.io/clojure/clojure.data.zip-api.html#clojure.data.zip.xml)
+- [Clojure XML-pakkauksen lähdekoodi GitHubissa](https://github.com/clojure/clojure/blob/master/src/clj/clojure/data/zip/xml.clj)

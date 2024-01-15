@@ -1,6 +1,7 @@
 ---
-title:                "Swift: JSONを使用する方法"
-simple_title:         "JSONを使用する方法"
+title:                "「JSONを使う」"
+html_title:           "Swift: 「JSONを使う」"
+simple_title:         "「JSONを使う」"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -9,57 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは！今日はSwiftでJSONを扱う方法について書いていきたいと思います。プログラミングを始めたばかりの方やSwiftを初めて触る方にとって、JSONとは何かという疑問があるかもしれません。この記事では、なぜJSONを使うのか、どのようにJSONを扱えるのか、そしてもっと深くJSONを理解するために必要な情報をお伝えしていきます。
+# なぜJSONを使用するのか
 
-## なぜJSONを使うのか
+JSONは、ウェブ機能のほとんどで使用されるデータ形式であり、多くのアプリケーションやサービスで重要な役割を果たしています。Swiftを使用してJSONを扱うことで、ウェブサービスのデータを簡単に取得し、アプリケーションに組み込むことができます。
 
-JSONとは、JavaScript Object Notationの略称で、データを格納するためのフォーマットの一種です。主にウェブサイトやアプリ開発において、データを受け渡すための手段として使用されます。JSONを使うことで、様々なプログラミング言語間でデータを交換することができるようになります。
+## 使い方
 
-## どのようにJSONを扱えるのか
+JSONを扱うためには、まずはSwiftのCodableプロトコルについて理解する必要があります。Codableプロトコルを使用することにより、JSONをSwiftの構造体やクラスに変換し、簡単に取得することができます。
 
-Swiftでは、Foundationフレームワークの一部であるJSONSerializationクラスを使うことで、簡単にJSONを扱うことができます。まず、JSONを取得するためのURLを作成し、そのURLを使ってデータを取得します。次に、JSONSerializationクラスの`JSONObject(with:options:)`メソッドを使用して、データを解析し、必要な形式に変換します。
+以下の例では、コンピューターのスペックを含むJSONデータを取得し、コンソールに出力する方法を示します。
 
-```Swift
-if let url = URL(string: "https://example.com/json"){
-    URLSession.shared.dataTask(with: url) { data, response, error in
-        guard let data = data else { return }
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            print(json)
-        } catch {
-            print(error)
-        }
-    }.resume()
+```swift
+// Codableプロトコルを準拠した構造体を定義する
+struct ComputerSpec: Codable {
+    let processor: String
+    let memory: Int
+    let storage: Int
 }
+
+// JSONデータを取得するURLを作成する
+let url = URL(string: "https://api.computer-specs.com/specs.json")!
+
+// JSONデータを取得する
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    if let data = data {
+        // 取得したデータをComputerSpec構造体に変換する
+        let decoder = JSONDecoder()
+        let computerSpec = try? decoder.decode(ComputerSpec.self, from: data)
+        
+        // コンソールに出力する
+        print("Processor: \(computerSpec?.processor ?? "Unknown")")
+        print("Memory: \(computerSpec?.memory ?? 0)GB")
+        print("Storage: \(computerSpec?.storage ?? 0)GB")
+    }
+}
+
+// タスクを実行する
+task.resume()
 ```
 
-上記のコードでは、URLからデータを取得し、JSONSerializationクラスを使ってデータを解析しています。解析されたデータは、`Any`型で返されるので、必要に応じて型変換を行う必要があります。
+上記のコードを実行すると、以下のように出力されます。
 
-## JSONの深い掘り下げ
-
-JSONには、さまざまなデータ型があります。例えば、文字列や数値だけでなく、配列や辞書、さらには複雑な構造を持つオブジェクトなども含まれます。Swiftでは、JSONから取得したデータを型安全に扱うために、`Codable`プロトコルを使用することができます。
-
-```Swift
-struct User: Codable {
-    let name: String
-    let age: Int
-}
-
-let jsonString = """
-{
-    "name": "John",
-    "age": 25
-}
-"""
-
-let jsonData = jsonString.data(using: .utf8)!
-let decoder = JSONDecoder()
-let user = try decoder.decode(User.self, from: jsonData)
-print(user.name) // Output: John
+```
+Processor: Intel Core i7 3.0GHz
+Memory: 16GB
+Storage: 512GB
 ```
 
-上記の例では、`User`という構造体を定義し、`Codable`プロトコルを適用させています。そして、JSONをデコードする際に使用する`JSONDecoder`クラスを使って、`User`型に変換しています。これにより、`user`変数の`name`プロパティにアクセスすることができました。
+## ディープダイブ
 
-## まとめ
+JSONを扱う際に注意すべき点として、プロパティのデータ型をJSONと一致させる必要があります。また、オプショナル型を使用する場合には、データが存在しない可能性を考慮して、安全にアクセスする必要があります。
 
-今日は、SwiftでJSONを扱う方法についてご紹介しました。JSONは、データを交換する際に非常に便利なフォーマットであり、Swiftでは簡単に扱うことができます。深い掘り下げでは、より複雑なJSONデータを安全に扱うた
+さらに、JSONのネストされたデータを取得する場合には、ネストされた構造体を定義し、Codableプロトコルを準拠させる必要があります。これにより、データをより詳細に解析することができます。
+
+## この記事で紹介したリンク
+
+- [The Basics of JSON](https://www.taniarascia.com/json-the-basics/)
+- [Codable: JSON Encoder and Decoder](https://developer.apple.com/documentation/foundation/jsonencoder)
+- [Handling JSON With Swift](https://developer.apple.com/swift/blog/?id=37)

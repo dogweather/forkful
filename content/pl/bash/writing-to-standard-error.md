@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Pisanie do standardowego wyjścia błędów"
-simple_title:         "Pisanie do standardowego wyjścia błędów"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Bash: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,30 +12,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie do standardowego błędu jest nieodłączną częścią programowania w Bash. Jest to prosty, ale bardzo użyteczny sposób na wyświetlanie błędów i komunikatów diagnostycznych podczas wykonywania skryptów lub poleceń w terminalu.
+Pisanie do standardowego błędu jest nieodłączną częścią programowania w Bash. Pozwala to na wygodne i szybkie wykrywanie błędów i diagnostykę problemów. 
 
 ## Jak to zrobić
 
-Możesz pisać do standardowego błędu przy użyciu polecenia `echo` wraz z argumentem `>&2` lub wykorzystując operator `2>`, który przekierowuje wyjście do standardowego błędu. Przykładowo:
-
+Pisanie do standardowego błędu w Bash jest bardzo proste. Wystarczy użyć operatora `2>` po nazwie pliku, do którego chcemy przekierować błędy. Przykładowy kod wyglądałby tak:
+```Bash
+ls -l file_that_does_not_exist 2> errors.txt
 ```
-Bash
+W powyższym przykładzie, wynik polecenia `ls -l` zostanie przekierowany do standardowego wyjścia, a błędy zostaną zapisane w pliku `errors.txt`. Możemy również przekierować błędy na standardowe wyjście diagnostyczne używając operatora `2>&1`. Wtedy wszystkie informacje zostaną wyświetlone na ekranie.
 
-echo "Nie udało się odnaleźć pliku!" >&2
+## Głębszy wgląd
 
-ls nieistniejacy_plik 2> bledy.txt
-```
-
-W pierwszym przykładzie wyświetlamy komunikat o błędzie, a w drugim zapisujemy błędy do pliku `bledy.txt`. Możesz również użyć `2>&1` aby przekierować standardowy błąd do standardowego wyjścia.
-
-## Wszczepienie się głębiej
-
-Warto pamiętać, że domyślnie standardowy błąd jest przekierowywany do konsoli, dlatego warto używać przekierowania wyjścia do pliku lub potoku, aby móc później przejrzeć komunikaty błędów.
-
-Dodatkowo, warto również zwrócić uwagę na wykorzystanie zmiennych `$?`, które przechowuje kod zakończenia ostatnio wykonywanego polecenia. Możesz wykorzystać go w warunkach, aby obsłużyć odpowiednio wyjątki i błędy.
+W Bash występują dwa główne strumienie wyjściowe: standardowe wyjście (ang. standard output) i standardowy błąd (ang. standard error). Standardowe wyjście jest używane do wyświetlania bieżącego stanu programu lub wyników działania polecenia. Natomiast standardowy błąd jest używany do wyświetlania błędów i ostrzeżeń. Dzięki oddzieleniu tych dwóch strumieni, możemy łatwo przekierować informacje diagnostyczne dla programisty i niezawodnie wyświetlać wyniki na ekranie. 
 
 ## Zobacz również
 
-- [BashGuide - Standardowe wejście i wyjście](http://mywiki.wooledge.org/BashGuide/InputAndOutput)
-- [BashRef - Wymiana danych z procesami](https://ss64.com/bash/syntax-redirection.html)
-- [BashTutorial - Przekierowywanie wyjścia i wejścia](https://linuxconfig.org/bash-scripting-tutorial-for-beginners#h1-5-1-standard-output-and-error)
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Przekierowywanie wejścia/wyjścia w Bash](https://www.hostinger.pl/pomoc/linux/przekierowanie-wejscia-wyjscia-bash)
+- [Bash One-Liners Explained, Part III: All about redirections](https://catonmat.net/bash-one-liners-explained-part-three)

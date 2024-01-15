@@ -1,5 +1,6 @@
 ---
-title:                "C++: Extraindo Substrings"
+title:                "Extraindo Substrings"
+html_title:           "C++: Extraindo Substrings"
 simple_title:         "Extraindo Substrings"
 programming_language: "C++"
 category:             "C++"
@@ -9,60 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em C++?
+## Por que
+Você já precisou extrair uma parte específica de uma string em seu código? Talvez você precise pegar apenas alguns caracteres de um endereço de e-mail ou de um número de telefone. É aí que entra a extração de substrings! Neste artigo, vamos aprender como fazer isso utilizando a linguagem de programação C++.
 
-Ao trabalhar com strings em C++, muitas vezes precisamos extrair partes específicas dessas strings. Isso pode ser necessário para realizar operações específicas, como busca, comparação ou formatação de dados. Felizmente, a linguagem C++ possui um conjunto de ferramentas robustas para extrair substrings de maneira eficiente e flexível.
+## Como Fazer
+Para extrair substrings em C++, utilizamos a função "substr()", que faz parte da biblioteca padrão <string>. Veja o exemplo abaixo:
 
-## Como extrair substrings em C++
-
-Extrair substrings em C++ pode ser feito de diversas maneiras, dependendo da sua necessidade. A seguir, demonstraremos dois métodos comuns para realizar essa tarefa: utilizando a função `substr()` e utilizando índices de acesso direto.
-
-### Usando a função `substr()`
-
-Para extrair uma substring utilizando a função `substr()`, primeiro precisamos ter uma string original. Em seguida, utilizando a sintaxe `string.substr(posição, tamanho)`, podemos especificar a posição inicial e o tamanho da substring que queremos extrair. Veja o exemplo abaixo:
-
-```
+```C++
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-  string frase = "Isso é uma string";
-  string substring = frase.substr(5, 4);
-  cout << substring << endl;
-  // Saída: é uma
+
+    // Definindo uma string
+    string frase = "Este é um exemplo de frase.";
+
+    // Extraindo uma substring da posição 5 até a posição 11
+    string substring = frase.substr(5, 11);
+
+    // Imprimindo a substring
+    cout << substring << endl;
+
+    return 0;
 }
-
 ```
 
-Nesse caso, a posição inicial especificada foi `5` e o tamanho escolhido foi de `4` caracteres. Essa função retornará a substring a partir da posição `5` da string original, com `4` caracteres de tamanho.
+O resultado deste código será "é um exemplo", uma vez que o primeiro parâmetro da função substr() é a posição inicial da substring e o segundo é o tamanho que queremos que ela tenha. A partir disso, podemos trabalhar com a substring da mesma forma que trabalhamos com uma string normal.
 
-### Usando índices de acesso direto
+## Deep Dive
+Além de extrair substrings com posições e tamanhos específicos, também é possível utilizar a função substr() para extrair uma substring até o final da string original. Isso é feito deixando o segundo parâmetro em branco, como no exemplo a seguir:
 
-Outra maneira de extrair substrings em C++ é acessando diretamente os índices da string original. Cada caractere de uma string possui um índice correspondente, onde o primeiro caractere possui o índice `0`, o segundo o índice `1` e assim por diante. Para extrair uma substring a partir desses índices, basta determinar a posição inicial e final desejada e percorrer a string original a partir desses índices.
-
-```
+```C++
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-  string frase = "Isso é uma string";
-  string substring = "";
-  for (int i = 5; i < 9; i++) {
-    substring += frase[i];
-  }
-  cout << substring << endl;
-  // Saída: é uma
-}
 
+    // Definindo uma string
+    string frase = "Este é outro exemplo de frase.";
+
+    // Extraindo uma substring da posição 17 até o final
+    string substring = frase.substr(17);
+
+    // Imprimindo a substring
+    cout << substring << endl;
+
+    return 0;
+}
 ```
 
-Nesse exemplo, utilizamos um loop for para percorrer os índices da substring desejada, adicionando cada caractere encontrado à nossa substring final.
+O resultado deste código será "exemplo de frase.", já que a substring começa na posição 17 e vai até o final da string original.
 
-## Aprofundando-se na extração de substrings
-
-Além dos métodos mencionados acima, é importante mencionar que a linguagem C++ possui uma variedade de funções e algoritmos dedicados à manipulação de strings. É possível, por exemplo, utilizar expressões regulares para extrair substrings de acordo com um padrão pré-determinado, ou ainda utilizar células individuais de strings para criar novas substrings.
-
-## Veja também
-
-- [Documentação do substr na string C++](https://www.cplusplus.com/reference/string/string/substr/)
-- [Guia prático sobre manipulação de strings em C++](https://www.learncpp.com/cpp-tutorial/63-character-strings/)
+## Veja Também
+- [Documentação oficial da função substr() em C++](https://www.cplusplus.com/reference/string/string/substr/)
+- [Tutorial sobre strings em C++](https://www.geeksforgeeks.org/stdstring-class-in-c/)

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Tworzenie pliku tekstowego."
-simple_title:         "Tworzenie pliku tekstowego."
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Fish Shell: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisanie plików tekstowych jest ważne?
 
-Programowanie może wydawać się skomplikowane i trudne do opanowania, ale jest to umiejętność, która może przynieść wiele korzyści. Pisanie skryptów w języku Fish Shell może znacząco ułatwić codzienne zadania związane z zarządzaniem komputerem. Dzięki temu, możesz oszczędzić czas i poprawić swoją produktywność.
+Pisanie plików tekstowych jest często postrzegane jako podstawowa umiejętność programistyczna, ale w rzeczywistości jest bardzo przydatna dla każdego, kto pracuje z komputerem. To prosta i wydajna metoda przechowywania danych i informacji, a także sposobu organizacji pracy.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby zacząć pisać skrypty w języku Fish Shell, musisz najpierw otworzyć terminal na swoim komputerze i uruchomić program Fish Shell. Następnie, utwórz nowy plik tekstowy i nazwij go z rozszerzeniem ".fish". Przykładowa komenda może wyglądać tak:
+```Fish Shell``` jest jednym z najbardziej popularnych narzędzi do pisania skryptów w systemie operacyjnym Unix. Jest też wygodnym i prostym sposobem na tworzenie plików tekstowych. Aby utworzyć nowy plik tekstowy, wystarczy użyć komendy ```touch``` w terminalu, na przykład:
 
-```Fish Shell
-touch nowy_skrypt.fish
+```fish
+touch nowy_plik.txt
 ```
 
-Następnie możesz rozpocząć pisanie swojego skryptu w edytorze tekstu, wykorzystując składnię języka Fish Shell. Poniżej podajemy przykładowy kod, który wyświetla napis "Witaj użytkowniku!" na ekranie:
+Możesz również użyć polecenia ```nano``` lub ```vim``` do ręcznego edytowania pliku tekstowego. Następnie możesz wprowadzić dowolne informacje i zapisać plik za pomocą kombinacji klawiszy ```Ctrl + S```.
 
-```Fish Shell
-echo "Witaj użytkowniku!"
+Jeśli chcesz dodać lub edytować już istniejący plik tekstowy, możesz użyć polecenia ```echo``` wraz z przekierowaniem zapisu, na przykład:
+
+```fish
+echo "Nowy tekst" > nowy_plik.txt
 ```
 
-Po zapisaniu pliku, możesz uruchomić go w terminalu, wpisując nazwę pliku z odpowiednim rozszerzeniem. Na przykład, jeśli nazwa twojego pliku to "nowy_skrypt.fish", to wpisując "nowy_skrypt.fish" uruchomisz go i zobaczysz na ekranie wydrukowaną wiadomość.
+## Głębsza analiza
 
-## Deep Dive
+W przeciwieństwie do niektórych innych narzędzi, ```Fish Shell``` jest bardzo elastyczny i zawsze pomoże ci w tworzeniu plików tekstowych w sposób, który jest najbardziej wygodny dla ciebie. Możesz korzystać zarówno z komendy ```touch```, jak i ```nano```, w zależności od preferencji.
 
-Pisanie skryptów w języku Fish Shell daje więcej możliwości niż tylko wyświetlanie prostych wiadomości. Możesz również wykonywać różnego rodzaju operacje na plikach, łączyć komendy lub korzystać z warunków i pętli. W internecie jest dostępnych wiele tutoriali i dokumentacji, które pomogą Ci nauczyć się głębiej tego języka.
+Warto również zauważyć, że plik tekstowy może zawierać różne typy danych, takie jak tekst, liczby, a nawet polecenia systemowe. Dzięki temu jest to bardzo wszechstronny sposób na przechowywanie informacji i warto z niego korzystać przy każdej możliwej okazji.
 
 ## Zobacz też
 
-- [Oficjalna dokumentacja języka Fish Shell](https://fishshell.com/docs/current/)
-- [10 przykładów skryptów w języku Fish Shell](https://github.com/fish-shell/fish-shell/wiki/10-Functions-for-a-Fish-Script)
-- [Poradniki i artykuły na temat języka Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+* [Oficjalna strona ```Fish Shell```](https://fishshell.com/)
+* [Funkcje i skrypty ```Fish Shell```](https://fishshell.com/docs/current/tutorial.html)
+* [Przewodnik po podstawach ```Fish Shell```](https://dev.to/fhsinchy/fish-shell-mini-tutorial-59il)

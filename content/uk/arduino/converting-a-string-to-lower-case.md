@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Переведення рядка в нижній регістр"
-simple_title:         "Переведення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+html_title:           "Arduino: Перетворення рядка у нижній регістр"
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,46 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Чому
 
-Іноді при програмуванні на Arduino виникає потреба у конвертуванні рядка у нижньому регістрі. Це може стати корисним при порівнянні рядків або під час роботи зі змінними, які мають різний регістр.
+Конвертування рядка до нижнього регістру може бути корисно в програмах, які вимагають текст, який складається лише з нижніх літер, або для порівняння двох рядків, ігноруючи регістр літер.
 
-## Як це зробити
+# Як
 
-Конвертацію рядка у нижній регістр в Arduino можна виконати за допомогою вбудованих функцій `toLower()` та `toLowerCase()`.
-
-```Arduino
-String myString = "ТЕСТОВИЙ РЯДОК";
-Serial.println(myString); // виводимо оригінальний рядок
-myString.toLowerCase(); // конвертуємо у нижній регістр
-Serial.println(myString); // виводимо змінений рядок
-```
-
-Результатом виконання буде видно, що перший рядок виводиться з великої літери, а другий - з маленької. 
-
-## Глибше
-
-У деяких випадках, наприклад, при порівнянні рядків, може виникнути необхідність у використанні функції `toLower()`. Вона дозволяє не тільки конвертувати рядок у нижній регістр, але і перетворювати всі літери на мову ASCII.
-
-Простіший приклад використання функції `toLower()`:
+Для конвертування рядків до нижнього регістру можна використовувати функцію `toLowerCase()` в Arduino. Наприклад:
 
 ```Arduino
-String myString = "AbCdEfGhIjKlMnOpQrStUvWxYz";
-myString.toLower();
-Serial.println(myString); // виводимо змінений рядок
+String myString = "Привіт, Світе!";
+myString.toLowerCase(); // результау: "привіт, світе!"
+Serial.println(myString); // виводиться: "привіт, світе!"
 ```
 
-Результатом виконання буде "abcdefghijklmnopqrstuvwxyz".
+# Deep Dive
 
-Щоб бути впевненим у конвертації рядка належним чином, можна також використовувати функцію `toLowerCase()`. Ця функція може використовуватися зі спеціальними символами, такими як лапки або крапки, що не враховуються функцією `toLower()`.
+Окрім функції `toLowerCase()`, є ще кілька інших способів конвертування рядків до нижнього регістру в Arduino. Одним з них є використання бібліотеки `String` та методу `toLowerCase()`, який приймає як аргумент рядок. Наприклад:
 
 ```Arduino
-String myString = "Тестовий рядок";
-myString.toLowerCase();
-Serial.println(myString); // виводимо змінений рядок
+String myString = "Привіт, Світе!";
+myString.toLowerCase(myString); // результау: "привіт, світе!"
+Serial.println(myString); // виводиться: "привіт, світе!"
+```
+Іншим способом є використання циклу для проходження через кожен символ рядка та заміни його на відповідний символ в нижньому регістрі, використовуючи функцію `toLowerCase()` з бібліотеки `String`. Наприклад:
+
+```Arduino
+String myString = "Привіт, Світе!";
+String result = "";
+
+for (int i = 0; i < myString.length(); i++) {
+  char c = myString.charAt(i);
+  result += String(c).toLowerCase();
+}
+
+Serial.println(result); // виводиться: "привіт, світе!"
 ```
 
-Результатом буде "тестовий рядок", де усі літери зменшені, але спеціальні символи залишаються незмінними.
+# Дивись Також
 
-# Дивіться також
-
-- [Документація з функції toLower()](https://www.arduino.cc/reference/en/language/variables/string/functions/tolower/)
-- [Документація з функції toLowerCase()](https://www.arduino.cc/reference/en/language/variables/string/functions/tolowercase/)
+- [Документація Arduino про функцію `toLowerCase()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
+- [Документація Arduino про бібліотеку `String`](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Приклади використання функції `toLowerCase()` в Arduino](https://www.electronicshub.org/arduino-string-function/)

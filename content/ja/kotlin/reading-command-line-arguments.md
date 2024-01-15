@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
-simple_title:         "コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
+title:                "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+html_title:           "Kotlin: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ読書金コマンドライン引数に参加するのか
 
-コマンドライン引数を読むことについて学びたい方のために、この記事を書きました！コマンドライン引数を読むことによって、プログラムをより動的に制御することができます。
+コマンドライン引数を読み込むことは、プログラミングの世界では非常に一般的な作業です。プログラマーはコマンドライン引数を使用して、プログラムの動作を制御したり、プログラムにデータを渡したりすることができます。そのため、コマンドライン引数の読み込みは必須のスキルです。
 
-##やり方
+## 方法
 
-まず、コマンドライン引数を読むためには、 `main`関数の引数に`args`という名前の配列を追加します。
+まず、Kotlinの`args`配列でコマンドライン引数を受け取ります。例えば、以下のように書きます。
 
-```Kotlin 
+```Kotlin
 fun main(args: Array<String>) {
-    // コマンドライン引数の数を入力します
-    println(args.size) 
+    println("コマンドライン引数の数: ${args.size}")
+    println("コマンドライン引数:")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-コマンドラインでプログラムを実行するとき、引数をスペースで区切って入力します。例えば、`kotlin program.kt arg1 arg2`のように入力すると、`args`配列には`"arg1"`と`"arg2"`という値が含まれます。
+このプログラムを実行すると、コマンドライン引数の数と内容が表示されます。例えば、コマンドラインで「kotlin main.kt test1 test2 test3」と入力した場合、以下のように表示されます。
 
-もう少し複雑な例を見てみましょう。以下のようなプログラムを実行した場合、
-
-```Kotlin 
-fun main(args: Array<String>) {
-  // 第1引数を整数に変換して`num`変数に代入します
-  var num = args[0].toInt() 
-  println(num + 5) // 結果は11になります
-}
+```
+コマンドライン引数の数: 3
+コマンドライン引数:
+test1
+test2
+test3
 ```
 
-`kotlin program.kt 6`と入力すると、結果は11になります。コマンドライン引数は文字列として渡されるため、数値として使用するには`toInt()`関数を使用して変換する必要があります。
+また、コマンドライン引数は文字列として受け取るため、必要に応じて`toInt()`や`toDouble()`などのメソッドを使用して数値に変換することもできます。
 
-##ディープダイブ
+## ディープダイブ
 
-コマンドライン引数を読むときには、いくつかの注意点があります。まず、引数を指定しない場合、`args`配列は空になります。そのため、この場合はエラーハンドリングを行う必要があります。
+コマンドライン引数を受け取る時、`args`配列のインデックスを指定することで特定の引数を取得することもできます。例えば、`args[0]`は最初の引数、`args[1]`は2番目の引数というように取得することができます。また、`args[0]`は`args.get(0)`と同じ意味になります。
 
-また、引数が多すぎる場合も同様のエラーが発生します。そのため、`args`配列のサイズをチェックしてから使用するようにしましょう。
+さらに、Kotlinでは`args`配列以外にも`arg[0] to arg[1]`というような記法で引数を指定することもできます。ただし、`arg[0]`は最初の引数、`arg[1]`は2番目の引数というようにインデックスではなく位置で指定することに注意しましょう。
 
-さらに、コマンドライン引数にはオプションを指定することもできます。例えば、`-f`というオプションを指定して、ファイルを作成するプログラムを考えてみましょう。この場合、`args`配列には`-f`という文字列を特定の位置に指定する必要があります。そのため、`args`配列の中身を順番にチェックして、必要なオプションが指定されているかどうかを確認する必要があります。
+## また見てください
 
-##参考情報
-
-- [Kotlin公式ドキュメントのコマンドライン引数の使用例](https://kotlinlang.org/docs/command-line.html#using-command-line-arguments)
-- [Kotlinプログラミング入門ブログ](https://kotlinlang.org/blog/kotlin-programming-intro-blog.html)
-- [JavaとKotlinを使い分ける](https://techblog.zozo.com/entry/use-java-class-with-kotlin-in-android-project)
+- [コマンドライン引数の詳細](https://kotlinlang.org/docs/command-line.html)
+- [Kotlinの配列とリスト](https://kotlinlang.org/docs/basic-types.html#arrays)
+- [Kotlinの日本語リファレンス](https://kotlinlang.org/docs/reference/)

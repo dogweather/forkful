@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: HTMLの解析"
+title:                "HTMLの解析"
+html_title:           "Clojure: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,52 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜHTMLをパースするのか
+# なぜ
 
-Webアプリケーションを作成する際、HTMLは欠かせない要素の一つです。しかし、そのHTMLを処理する際、手作業で処理するのは非効率的です。そこで、HTMLを自動的に処理できるClojureのパーサーライブラリを使うことがお勧めです。
+HTMLをパースするのに役立つClojureプログラミングの記事をお読みいただきありがとうございます！Clojureはファンクショナルプログラミング言語であり、HTMLをパースするために非常に強力で直感的なツールを提供しています。HTMLをパースすることで、Webスクレイピングやデータ抽出を行うことができ、ネット上の情報を効率的に活用することができます。
 
-## 方法
+# 手順
 
-まず、HTMLをパースするには、Clojureで提供されているライブラリをインポートする必要があります。例えば、[Enlive](https://github.com/cgrand/enlive)や[clj-html](https://github.com/yogthos/clj-html)などがあります。
+Clojureを使用してHTMLをパースする方法を見ていきましょう！まず、````Clojure
+(ns html-parser.core
+  (:require [net.cgrand.enlive-html :as html]))
+````
+のように、``net.cgrand.enlive-html``ネームスペースをプログラムにインポートします。
 
-次に、HTMLファイルを用意し、そのファイルをClojureから読み込みます。例えば、"index.html"という名前のファイルを読み込む場合は以下のようになります。
+次に、パースするHTMLを``html``という変数に格納します。````Clojure
+(def html
+  "<div class='title'>Clojure Programming</div>")````
 
-```Clojure
-(def html (slurp "index.html"))
-```
+このように定義したHTML変数を````Clojure
+(html/html-snippet html [:div.title])````
+というコードでパースすることができます。その結果、``<div class="title">Clojure Programming</div>``という出力が得られます。
 
-その後、ライブラリを使用してHTMLをパースします。例えば、Enliveを使用すると以下のようになります。
+さらに、パースしたHTMLからテキストや属性を抽出することもできます。例えば、````Clojure
+(html/html-content html [:div.title])````を実行すると、``Clojure Programming``というテキストを抽出することができます。
 
-```Clojure
-(require '[net.cgrand.enlive-html :as html])
+これらのように、Clojureを使えば簡単にHTMLをパースして必要な情報を取得することができます。
 
-(html/deftemplate layout "index.html"
-  [:#content]
-  [:#main]
-  [:#sidebar]
-)
-```
+# 深堀り
 
-最後に、パースしたHTMLを出力することで結果を確認できます。
+Clojureを使ったHTMLのパースには、さらに便利なツールがあります。``css-selector``や``match``を使用して、パースする要素をより詳細に指定することができます。また、``do->``や``with-decoder``を使用して、さまざまな処理を組み合わせることでより複雑なHTMLのパースも可能です。
 
-```Clojure
-(println (layout html))
-```
+さらに、``html/http-resource``を使用することで、Webサイトから直接HTMLを取得してパースすることもできます。また、``html/parse``を使用することで、HTMLファイルから直接パースすることも可能です。
 
-## 深堀り
+些細なことかもしれませんが、``html``を省略することもできます。例えば、``(html/html-content html [:.title])``というコードは、``(.title html)``というコードと同じ意味を持ちます。
 
-パースしたHTMLを使って、WebアプリケーションのDOM操作やWebサイトのスクレイピングが可能になります。例えば、特定の要素を見つけて値を取得したり、要素を変更したりすることができます。また、パースした結果をさらに加工して出力することもできます。
+Clojureのドキュメントを読むことで、さらに多様なHTMLパースの方法を学ぶことができます。是非、自分で試してみてください！
 
-Clojureはパワフルな言語であり、パースしたHTMLを扱うためのライブラリも豊富にあります。さまざまなユースケースに合わせて適切なライブラリを選び、活用することでより効率的なHTMLの処理が可能になります。
+# 参考文献
 
-# いろいろ試してみよう
-
-- [Enlive](https://github.com/cgrand/enlive)
-- [clj-html](https://github.com/yogthos/clj-html)
-- [hiccup](https://github.com/weavejester/hiccup)
-
-# 参考リンク
-
-- [Clojure入門: HTMLのパース - Qiita](https://qiita.com/saku12/items/2c4ed3fe15dd9e6c381f)
-- [ClojureでHTMLをパースしてみる - Qiita](https://qiita.com/tanakh/items/103aee07c40b3ea4ccad)
-- [クロージャでHTMLをパースする - Qiita](https://qiita.com/tnoda_clover/items/716c5b0a98d1e8b59478)
+- Clojureドキュメント: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/html
+- クトゥラーさんによるブログ記事: http://ku-to.hateblo.jp/entry/20120528/1338200958
+- 「Clojure Programming」: https://www.manning.com/books/clojure-programming

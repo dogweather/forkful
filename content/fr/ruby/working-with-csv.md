@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Travailler avec des fichiers CSV"
+html_title:           "Ruby: Travailler avec des fichiers CSV"
+simple_title:         "Travailler avec des fichiers CSV"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,53 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Le format CSV (Comma-Separated Values) est couramment utilisé pour stocker des données tabulaires dans un fichier texte. En travaillant avec des données en bulle, que ce soit pour une analyse de données ou pour l'intégration avec d'autres logiciels, il peut être utile d'avoir une certaine connaissance de la façon de travailler avec des fichiers CSV en Ruby.
+Travailler avec des fichiers CSV peut être très utile dans de nombreux cas, notamment lorsqu'il s'agit de stocker et de manipuler de grandes quantités de données. Avec Ruby, vous pouvez facilement lire, écrire et manipuler des fichiers CSV, ce qui en fait un langage très populaire pour travailler avec ce type de fichiers.
 
 ## Comment faire
 
-La bibliothèque standard Ruby CSV fournit des méthodes pour lire et écrire des fichiers CSV. Voici un exemple de code pour lire un fichier CSV et afficher son contenu :
+Pour travailler avec des fichiers CSV en Ruby, vous devez tout d'abord importer la bibliothèque "csv". Voici un exemple de code pour lire un fichier CSV et afficher son contenu :
 
 ```Ruby
 require 'csv'
 
-CSV.foreach('donnees.csv') do |row|
-  puts row.inspect
+CSV.foreach("fichier.csv") do |row|
+    puts row
 end
 ```
 
-Cela va afficher chaque ligne du fichier CSV dans un tableau. Si vous souhaitez afficher les données d'une colonne spécifique, vous pouvez utiliser l'indice de colonne pour accéder à cette valeur. Par exemple :
+Ce code utilise la méthode `foreach` pour parcourir chaque ligne du fichier CSV et la méthode `puts` pour afficher cette ligne. Vous pouvez également utiliser la méthode `read` pour lire le contenu complet du fichier dans une variable et le manipuler comme bon vous semble.
+
+Si vous souhaitez créer un nouveau fichier CSV à partir de données existantes, vous pouvez utiliser la méthode `open` pour ouvrir un nouveau fichier et lui ajouter des lignes à l'aide de la méthode `<<`. Voici un exemple de code pour créer un nouveau fichier CSV contenant des données de fruits et de quantités associées :
 
 ```Ruby
 require 'csv'
 
-CSV.foreach('donnees.csv') do |row|
-  puts row[0] # affiche la valeur de la première colonne
-  puts row[1] # affiche la valeur de la deuxième colonne
+CSV.open("nouveau_fichier.csv", "w") do |csv|
+    csv << ["Fruit", "Quantité"]
+    csv << ["Pomme", 5]
+    csv << ["Banane", 10]
 end
 ```
 
-Pour écrire dans un fichier CSV, vous pouvez utiliser la méthode `CSV.open` :
+Cela créera un fichier CSV avec les en-têtes "Fruit" et "Quantité" et deux lignes de données. Bien sûr, vous pouvez ajouter autant de lignes que vous le souhaitez en utilisant la méthode `<<` autant de fois que nécessaire.
 
-```Ruby
-require 'csv'
+## Plongée en profondeur
 
-CSV.open('nouveaux_donnees.csv', 'w') do |csv|
-  csv << ['Nom', 'Prénom', 'Âge']
-  csv << ['Dupont', 'Jean', '35']
-  csv << ['Martin', 'Marie', '28']
-end
-```
+Travailler avec des fichiers CSV peut être plus complexe que simplement lire ou écrire des données. Par exemple, vous pouvez avoir besoin de formater des données spécifiques ou de trier des colonnes en fonction de certains critères. Heureusement, Ruby propose de nombreuses méthodes pour vous aider à gérer ces tâches.
 
-Cela va créer un nouveau fichier CSV avec les données fournies. Vous pouvez également utiliser d'autres options telles que `row_sep` pour spécifier le séparateur de ligne et `col_sep` pour spécifier le séparateur de colonne.
-
-## Plongée profonde
-
-Lorsque vous travaillez avec des fichiers CSV en Ruby, il est important de prendre en compte certaines caractéristiques telles que le support d'Unicode, la gestion des virgules et guillemets dans les données, et la possibilité de spécifier un délimiteur personnalisé. La bibliothèque standard CSV offre également des méthodes pour gérer ces aspects lors de la lecture ou de l'écriture de fichiers CSV.
-
-De plus, il peut être utile de savoir comment traiter les erreurs lors de la lecture ou de l'écriture de fichiers CSV, ainsi que de comprendre comment fonctionne le parsing avec la méthode `CSV.parse`. En explorant ces sujets plus en profondeur, vous serez en mesure de gérer des fichiers CSV de manière plus avancée dans vos projets Ruby.
+La méthode `sort_by` vous permet de trier les lignes d'un fichier CSV en utilisant une colonne spécifique comme clé de tri. Par exemple, si vous avez un fichier CSV contenant des données sur des employés et leur salaire, vous pouvez le trier par salaire décroissant en utilisant cette méthode. Vous pouvez également utiliser la méthode `find` pour rechercher des données spécifiques dans un fichier CSV en fonction de certains critères.
 
 ## Voir aussi
 
-- [Documentation officielle pour la bibliothèque standard CSV en Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html)
-- [Article détaillant les bonnes pratiques pour travailler avec des fichiers CSV en Ruby](https://www.sitepoint.com/guide-ruby-csv-library-part/)
-- [Gemme FasterCSV pour manipulation de données CSV plus rapide](https://github.com/JEG2/faster_csv)
+- La documentation officielle de Ruby sur la manipulation de fichiers CSV : https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html
+- Un tutoriel complet sur la manipulation de fichiers CSV en Ruby : https://www.sitepoint.com/guide-ruby-csv-library-part/
+- Une bibliothèque externe pour faciliter la manipulation de fichiers CSV en Ruby : https://github.com/tilo/simplecsv

@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Comparing two dates"
+title:                "Comparing two dates"
+html_title:           "Go recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Go"
 category:             "Go"
@@ -11,48 +12,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Comparing dates is a common task in programming, especially when dealing with time-sensitive data. Whether you need to check if a certain date is before or after another, or calculate the time difference between them, having the ability to compare dates is essential for any programmer. In this blog post, we will explore how to compare dates using the Go programming language.
+One common task in programming is comparing two dates. This can be useful for tasks such as sorting data, checking for scheduling conflicts, or determining the amount of time between two events. In this article, we will explore how to compare dates using Go, the current version of the popular programming language.
 
 ## How To
 
-To compare dates in Go, we will be using the built-in `time` package. This package provides functions for working with dates, times, and durations. To start, let's create two date objects using the `time.Date()` function and assign them to variables:
+To compare two dates in Go, we can use the `Equal()` and `Before()` methods from the `time` package. These methods take in two `time.Time` objects, which represent specific moments in time, and return `true` or `false` depending on the comparison result.
 
-```
-start := time.Date(2020, time.October, 1, 0, 0, 0, 0, time.UTC)
-end := time.Date(2020, time.October, 10, 0, 0, 0, 0, time.UTC)
+Let's look at an example of comparing two dates:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// creating two `time.Time` objects with different dates
+	date1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+	date2 := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
+
+	// using `Equal()` method to check if dates are equal
+	equal := date1.Equal(date2)
+	fmt.Println("Dates are equal:", equal)
+
+	// using `Before()` method to check if date1 comes before date2
+	before := date1.Before(date2)
+	fmt.Println("Date1 comes before date2:", before)
+}
 ```
 
-We have created two date objects for October 1st and October 10th of the year 2020. Now, we can use the `Before()` and `After()` methods to compare these dates. These methods return a boolean value indicating if the first date is before or after the second date, respectively.
-
+The output of this code will be:
 ```
-fmt.Println(start.Before(end)) // Output: true
-fmt.Println(end.Before(start)) // Output: false
-fmt.Println(start.After(end)) // Output: false
-fmt.Println(end.After(start)) // Output: true
+Dates are equal: false
+Date1 comes before date2: true
 ```
 
-As we can see, the `Before()` and `After()` methods work as expected. But what if we want to check if two dates are equal? For that, we can use the `Equal()` method:
+In this example, we first create two `time.Time` objects with different dates. Then, we use the `Equal()` method to check if the dates are equal, which returns `false` since they are not the same date. Next, we use the `Before()` method to check if date1 comes before date2, which returns `true` since date1 is January 1st and date2 is February 1st. 
 
-```
-fmt.Println(start.Equal(end)) // Output: false
-fmt.Println(end.Equal(end)) // Output: true
-```
-
-In addition to these methods, the `time` package also offers a `Sub()` method to calculate the duration between two dates. This method returns a `time.Duration` object, which represents the difference between the two dates in terms of hours, minutes, and seconds.
-
-```
-fmt.Println(start.Sub(end)) // Output: -216h
-```
+We can also use the `After()` method to check if date1 comes after date2, and the `Before()` and `After()` methods can also be used for `time.Date` objects that have different times as well.
 
 ## Deep Dive
 
-Behind the scenes, the `time` package stores dates as `time.Time` structs, which contain fields for the year, month, day, and so on. When comparing dates, these fields are compared to determine the relationship between the two dates. It's important to note that when creating a date object using the `time.Date()` function, we are providing values in the UTC timezone. This can cause unexpected results if the local timezone is different. To avoid this, we can use the `time.Now()` function, which returns the current local time.
+Internally, the `Equal()` and `Before()` methods compare the underlying `int64` values of the two `time.Time` objects. These values represent the number of nanoseconds since January 1, 1970 UTC. This means that when comparing dates, the time component is not taken into consideration.
 
-Another thing to keep in mind is that the `time` package allows us to work with dates in much more detail, such as comparing specific hours, minutes, or even nanoseconds. If you want to learn more about these features, I recommend checking out the official documentation for the `time` package.
+However, if we want to compare dates with the time component, we can use the `Before()` and `After()` methods on the `time.Time` objects after trimming them to the same time zone using the `Truncate()` method. For example:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// creating two `time.Time` objects with different dates and times
+	date1 := time.Date(2021, time.January, 1, 12, 0, 0, 0, time.UTC)
+	date2 := time.Date(2021, time.January, 1, 5, 0, 0, 0, time.UTC)
+
+	// trimming both dates to UTC 
+	date1 = date1.Truncate(time.Hour)
+	date2 = date2.Truncate(time.Hour)
+
+	// using `After()` method to check if date1 comes after date2
+	after := date1.After(date2)
+	fmt.Println("Date1 comes after date2:", after)
+}
+```
+
+The output of this code will be:
+```
+Date1 comes after date2: true
+```
+
+In this example, we first create two `time.Time` objects with different dates and times. Then, we truncate both of them to the hour level using the `Truncate()` method, effectively removing the time component. This allows us to compare just the dates using the `After()` method, which returns `true` since date1 is after date2.
 
 ## See Also
 
-- [Official `time` package documentation](https://pkg.go.dev/time)
-- [Date and Time in Go: A Comprehensive Guide](https://www.calhoun.io/date-and-time-in-go/)
-
-Happy coding!
+- Go `time` package documentation: https://golang.org/pkg/time/
+- Date and time formats in Go: https://yourbasic.org/golang/format-parse-string-time-date-example/

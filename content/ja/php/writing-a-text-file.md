@@ -1,6 +1,7 @@
 ---
-title:                "PHP: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き方"
+html_title:           "PHP: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -9,43 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-テキストファイルを書く理由は何でしょうか。 まず、テキストファイルは非常にシンプルで使いやすい形式です。 また、データベースやスプレッドシートなどのより複雑なファイル形式よりも、扱いやすい場合が多いです。
+テキストファイルを書く理由は様々ですが、主なものはデータの永続性です。データベースやプログラムではなく、簡単なテキストファイルを使用することで、より柔軟な方法でデータを保管することができます。
 
-## 方法
+## How To
 
-テキストファイルを書くには、PHPを使用することができます。 下のコードブロックを見てみましょう。
+テキストファイルを書くには、まずPHPのファイル操作関数を使用します。以下のコードを使用して、新しいテキストファイルを作成し、データを書き込むことができます。
 
 ```PHP
 <?php
-// テキストファイルの名前を指定する
-$file = 'sample.txt';
 
-// ファイルを書き込みモードで開く
-$handle = fopen($file, 'w');
+// ファイルを作成し、書き込み用に開く
+$myfile = fopen("textfile.txt", "w") or die("Unable to open file!");
 
-//書き込む内容を指定する
-$content = 'これはテストです。';
-
-// ファイルに内容を書き込む
-fwrite($handle, $content);
+// テキストファイルにデータを書き込む
+$txt = "This is a sample text.";
+fwrite($myfile, $txt);
 
 // ファイルを閉じる
-fclose($handle);
-?>
+fclose($myfile);
 ```
 
-上記のコードを実行すると、`sample.txt`という名前のテキストファイルに「これはテストです。」という内容が書き込まれます。
+上記のコードを実行すると、PHPファイルと同じディレクトリに "textfile.txt" という名前の新しいファイルが作成されます。テキストファイルを開くと、"This is a sample text." というテキストが書き込まれていることがわかります。
 
-## ディープダイブ
+また、既存のテキストファイルを編集することもできます。以下のコードを使用して、既存のテキストファイルに新しいデータを追記することができます。
 
-テキストファイルを書くときには、ファイルのエンコーディングにも注意を払う必要があります。 日本語のテキストファイルを書く場合には、UTF-8エンコーディングを指定することで、文字化けを防ぐことができます。
+```PHP
+<?php
 
-また、テキストファイルを読み込む際には、`fopen`関数の第二引数に`r`を指定することで、ファイルを読み込みモードで開くことができます。 さらに、`fread`関数を使用することで、ファイルの内容を読み込むことができます。
+// ファイルを開き、追記用に開く
+$myfile = fopen("textfile.txt", "a") or die("Unable to open file!");
 
-## 参考リンク
+// 既存のデータの後に新しいデータを追記
+$txt = "This is a new line.";
+fwrite($myfile, $txt);
 
-- [PHPの公式ドキュメント](https://www.php.net/manual/ja/function.fopen.php)
-- [文字コードとは何か](https://wa3.i-3-i.info/word12304.html)
-- [PHPでテキストファイルを読み込む方法](https://www.flatflag.nir87.com/file-text-read/)
+// ファイルを閉じる
+fclose($myfile);
+```
+
+上記のコードを実行すると、既存のテキストファイルの最後に "This is a new line." というテキストが追記されることがわかります。
+
+## Deep Dive
+
+ファイル操作関数の詳細については、PHPの公式ドキュメントを参照してください。また、テキストファイルを書く際には、文字エンコーディングにも注意が必要です。データを書き込む前に、適切な文字エンコーディングを指定することで、日本語や他の言語のテキストも正しく書き込むことができます。
+
+## See Also
+
+- PHPのファイル操作関数: https://www.php.net/manual/ja/ref.filesystem.php
+- 文字エンコーディングについて: https://www.php.net/manual/ja/function.mb-convert-encoding.php

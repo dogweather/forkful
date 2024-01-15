@@ -1,6 +1,7 @@
 ---
-title:                "C++: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con file csv"
+html_title:           "C++: Lavorare con file csv"
+simple_title:         "Lavorare con file csv"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +11,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Il CSV, o Comma Separated Values, è un formato di file ampiamente utilizzato per archiviare dati in modo tabellare. In questo articolo, esploreremo come lavorare con i file CSV utilizzando il linguaggio di programmazione C++ e perché potrebbe essere utile farlo.
 
-## Come fare
-Per iniziare a lavorare con i file CSV in C++, è necessario includere la libreria `ifstream` per gestire i file di input e `sstream` per analizzare i dati all'interno del file. Qui di seguito è riportato un esempio di codice che legge un file CSV di nomi e età e li stampa a schermo:
+Ci sono molte ragioni per cui potresti voler lavorare con file CSV in C++. Ad esempio, può essere necessario importare o esportare dati da un database o creare report da un foglio di calcolo. Inoltre, CSV è un formato di file molto comune e semplice da utilizzare, quindi è importante saper manipolarlo in modo efficace nel tuo codice.
+
+## Come Fare
+
+Per iniziare a lavorare con file CSV in C++, è necessario includere la libreria standard `<fstream>` e utilizzare gli oggetti `ifstream` e `ofstream` per leggere e scrivere rispettivamente. Ecco un esempio di codice che legge un file CSV e stampa il suo contenuto:
 
 ```C++
-#include <iostream>
 #include <fstream>
-#include <sstream>
+#include <iostream>
 
 using namespace std;
 
 int main() {
-  // apriamo il file in modalità di lettura
-  ifstream file("persone.csv");
-  // verifichiamo se il file è stato aperto correttamente
-  if (!file.is_open()) {
-      cout << "Errore nell'apertura del file";
-      return 0;
+  ifstream file("data.csv");
+  if (file.is_open()) {
+    string line;
+    // Cicla fino alla fine del file
+    while (getline(file, line)) {
+      // Stampa la riga corrente
+      cout << line << endl;
+    }
+    file.close();
+  } else {
+    // Gestione dell'errore se il file non può essere aperto
+    cout << "Errore nell'apertura del file" << endl;
   }
 
-  // leggiamo il file riga per riga e stampiamo i dati
-  string riga, nome;
-  int eta;
-  while (getline(file, riga)) {
-      // utilizziamo un stringstream per analizzare i dati all'interno della riga
-      stringstream ss(riga);
-      // leggiamo il nome e l'età dalla riga e li stampiamo
-      getline(ss, nome, ',');
-      ss >> eta;
-      cout << nome << " ha " << eta << " anni" << endl;
-  }
-
-  // chiudiamo il file
-  file.close();
   return 0;
 }
 ```
 
-Ora supponiamo che il nostro file CSV abbia il seguente contenuto:
-```
-Maria, 23
-Luigi, 34
-Sara, 27
-```
+Se il file CSV ha intestazioni di colonna, è possibile utilizzare la funzione `getline` e la classe `stringstream` per dividere ogni riga in base alle virgole (o al carattere delimitatore scelto) e manipolare i dati come si desidera. Ad esempio, il codice seguente legge un file CSV con tre colonne e stampa la prima colonna di ogni riga:
 
-L'output di questo codice sarebbe:
-```
-Maria ha 23 anni
-Luigi ha 34 anni
-Sara ha 27 anni
+```C++
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  ifstream file("data.csv");
+  if (file.is_open()) {
+    string line, col1, col2, col3;
+    // Cicla fino alla fine del file
+    while (getline(file, line)) {
+      // Utilizza un oggetto stringstream per dividere la riga in base alle virgole
+      stringstream ss(line);
+      // Assegna i valori alle variabili delle colonne
+      getline(ss, col1, ','); // Prima colonna
+      getline(ss, col2, ','); // Seconda colonna
+      getline(ss, col3, ','); // Terza colonna
+      // Stampa la prima colonna
+      cout << col1 << endl;
+    }
+    file.close();
+  } else {
+    // Gestione dell'errore se il file non può essere aperto
+    cout << "Errore nell'apertura del file" << endl;
+  }
+
+  return 0;
+}
 ```
 
 ## Approfondimento
-Oltre alla semplice lettura e stampa dei dati da un file CSV, è possibile utilizzare il linguaggio C++ per analizzare, manipolare e gestire i dati in modo più accurato. Ad esempio, si potrebbe utilizzare la libreria `ofstream` per scrivere nuovi dati in un file CSV, oppure la libreria `array` per gestire i dati in modo più efficiente.
-Inoltre, è importante notare che il formato CSV non è standardizzato, quindi è possibile che altri applicativi o librerie abbiano diverse implementazioni per la gestione dei file CSV.
 
-## Vedi anche
-- [Documentazione di C++](https://devdocs.io/cpp/)
-- [Tutorial su CSV in C++](https://www.youtube.com/watch?v=6A-XUSqyF2E)
-- [Libreria ofstream di C++](https://www.cplusplus.com/reference/fstream/ofstream/)
-- [Gestione dei file in C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
+CSV è un formato di file molto comune e facile da usare, ma ci sono alcune cose importanti da tenere a mente quando si lavora con esso in C++. In primo luogo, assicurati di gestire correttamente i casi in cui le celle contengono virgole o altri caratteri delimitatori. Inoltre, è possibile utilizzare la libreria esterna `csv.h` per semplificare il processo di lettura e scrittura dei file CSV.
+
+## Vedi Anche
+
+- [Documentazione ufficiale di C++](https://en.cppreference.com/)
+- [Esempi di uso delle classi `ifstream` e `ofstream`](https://www.geeksforgeeks.org/ifstream-ofstream-classes-c/)
+- [Libreria esterna `csv.h`](https://github.com/ben-strasser/fast-cpp-csv-parser)

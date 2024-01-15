@@ -1,6 +1,7 @@
 ---
-title:                "Python: Empezando un nuevo proyecto"
-simple_title:         "Empezando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Python: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -9,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué comenzar un nuevo proyecto
+¿Estás cansado de hacer lo mismo todos los días? ¿Buscas un nuevo desafío? ¡Entonces es hora de comenzar un nuevo proyecto! Ya sea para mejorar tus habilidades de programación o para crear algo útil para la comunidad, iniciar un proyecto puede ser una experiencia emocionante y enriquecedora.
 
-¿Te has preguntado alguna vez qué hace que la programación sea tan fascinante? Ya sea por curiosidad, pasión o simplemente para ampliar tus habilidades, iniciar un nuevo proyecto de programación puede ser una experiencia emocionante e interesante. ¡Sigue leyendo para descubrir cómo dar tus primeros pasos en la programación con Python!
+## Cómo empezar
+1. Primero, elige un lenguaje de programación que te guste y te sientas cómodo/a utilizando. Como estamos hablando de Python, ¡puedes saltar al siguiente paso!
+2. Instala Python en tu computadora. Puedes descargarlo desde su sitio web oficial y seguir las instrucciones de instalación.
+3. Abre un editor de código (como Visual Studio Code o Atom) y crea un nuevo archivo con la extensión ".py". Este será tu archivo de código donde escribirás tu proyecto.
+4. ¡Hora de empezar a codificar! Aquí hay un ejemplo de un programa básico que imprimirá un mensaje en la terminal.
+```python
+# Esto es un comentario. Puedes escribir notas útiles para entender tu código.
 
-## Cómo comenzar
-
-Para comenzar un nuevo proyecto de programación en Python, necesitas tener instalado Python en tu computadora. Puedes descargar la última versión de Python en su sitio web oficial. Una vez que lo tengas instalado, estás listo para comenzar a programar. Aquí hay un ejemplo de un programa simple en Python que imprime "Hola, mundo" en la pantalla:
-
-```Python
-print("¡Hola, mundo!")
+# Imprime el mensaje "Hola, mundo!" en la terminal
+print("Hola, mundo!")
 ```
+5. Una vez que hayas escrito todo tu código, ¡puedes ejecutarlo presionando el botón de "ejecutar" en tu editor de código o en la terminal utilizando el comando "python nombre_del_archivo.py"!
 
-El resultado de este programa será:
+## Profundizando
+Si quieres profundizar más en tu nuevo proyecto, aquí hay algunas ideas que podrías explorar:
 
-```
-¡Hola, mundo!
-```
+- Aprender nuevos módulos y librerías de Python para agregar funcionalidades interesantes a tu proyecto.
+- Utilizar una metodología de desarrollo ágil para planificar y organizar tu código.
+- Trabajar en equipo y utilizar sistemas de control de versiones como Git para colaborar con otros programadores.
+- Investigar sobre técnicas de diseño de software para hacer tu código más eficiente y escalable.
 
-Felicidades, ¡has creado tu primer programa en Python! A partir de aquí, puedes explorar y jugar con diferentes funciones y comandos en Python para crear programas más complejos e interesantes.
-
-## Profundizando en el tema
-
-Una vez que te sientas cómodo con la sintaxis básica de Python, puedes profundizar en temas más avanzados. Algunas áreas populares para explorar incluyen desarrollo web con Django, análisis de datos con Pandas y aprendizaje automático con TensorFlow. Hay una variedad de recursos en línea, como cursos en línea y tutoriales, que pueden ayudarte a aprender más sobre estos temas.
-
-¡No tengas miedo de experimentar y probar nuevas cosas! ¡La programación es un campo en constante evolución y siempre hay algo nuevo que aprender!
+Con todas estas herramientas y técnicas, ¡tu nuevo proyecto de Python seguramente será un éxito!
 
 ## Ver también
-
-- [Sitio web oficial de Python](https://www.python.org/)
-- [Curso de introducción a Python en Codecademy](https://www.codecademy.com/learn/learn-python)
-- [Tutorial de Django para principiantes de Mozilla](https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Tutorial_completo_de_Django_para_principiantes)
-- [Pandas DataFrame en 10 minutos](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)
-- [Aprendizaje automático con TensorFlow](https://www.tensorflow.org/learn)
+- [Sitio oficial de Python](https://www.python.org)
+- [Lista de proyectos de código abierto en Python](https://github.com/search?q=python+projects&type=repositories)
+- [Python para principiantes: cómo empezar](https://realpython.com/python-beginner-tips/)

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Kotlin: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -9,41 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-Javaでプログラミングをしているあなたに、Kotlinを使ったことはありますか？KotlinはJavaよりもシンプルで、保守しやすく、より簡単に学ぶことができるプログラミング言語です。今回は、Kotlinを使ってコードで部分文字列を抽出する方法を紹介します。
+文字列から部分文字列を抽出することに興味を持つ人は多いかもしれません。それは、与えられた文字列から必要な情報を取り出すためにとても便利だからです。
 
-## 抽出する方法
+## 使い方
 
-Kotlinで部分文字列を抽出するには、```substring()```メソッドを使用します。このメソッドには、2つのパラメーターが必要です。1つ目のパラメーターには、部分文字列の開始位置を示すインデックスを指定し、2つ目のパラメーターには、部分文字列の終了位置を示すインデックスを指定します。例えば、次のようにコードを書くことで、文字列の3文字目から5文字目までの部分文字列を抽出することができます。
-
-```Kotlin
-val fullString = "こんにちは、世界！"
-val substring = fullString.substring(2, 5)
-println(substring)
-```
-
-出力結果は「んにちは」となります。
-
-また、2つのパラメーターの代わりに、部分文字列の始まりの位置のみを指定することもできます。この場合、始まりの位置から文字列の最後までを抽出します。
+文字列から部分文字列を抽出するには、  ```Kotlin str.substring(startIndex, endIndex) ```というメソッドを使用します。例えば、文字列 ```Kotlin "Hello World" ```から、  ```Kotlin "World" ```を抽出する場合、次のようになります。
 
 ```Kotlin
-val fullString = "こんにちは、世界！"
-val substring = fullString.substring(4)
-println(substring)
+val str = "Hello World"
+val subStr = str.substring(6, 11)
+println(subStr)
 ```
 
-出力結果は「ちは、世界！」となります。
+出力結果：
+```
+World
+```
 
-## ディープダイブ
+## 詳細な説明
 
-実際には、```substring()```メソッドは、```substringAfter()```や```substringBefore()```などの関連メソッドと組み合わせて使うことができます。これらのメソッドは、文字列内の特定の文字の後または前にある部分文字列を抽出するために使用されます。また、```indexOf()```メソッドを使用することで、文字列内での特定の文字のインデックスを調べることができます。
+文字列から部分文字列を抽出する方法についてさらに詳しく説明します。
 
-このように、Kotlinには多様な文字列操作の方法が用意されているので、データ処理やテキスト処理の際に非常に便利です。
+### インデックス
 
-## See Also
+部分文字列を取得する際、2つのパラメーターを指定する必要があります。1つ目のパラメーターは「開始位置」、2つ目のパラメーターは「終了位置」です。この位置は文字列のインデックスによって表され、最初の文字のインデックスは0から始まります。
 
-Kotlinにおける文字列操作の詳細については、公式ドキュメントを参照してください。
-- https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html
-- https://www.geeksforgeeks.org/substring-method-in-kotlin/
-- https://www.baeldung.com/substring-kotlin
+例えば、文字列 ```Kotlin "Hello World" ```における、"H"のインデックスは0、"e"のインデックスは1となります。
+
+### インデックスの省略
+
+部分文字列を取得する際、2つ目のパラメーターである「終了位置」は省略することができます。省略した場合、開始位置から文字列の最後までを含む部分文字列が抽出されます。
+
+例えば、文字列 ```Kotlin "Hello World" ```から、最初の5つの文字列を抽出するには次のようになります。
+
+```Kotlin
+val str = "Hello World"
+val subStr = str.substring(0, 5)
+println(subStr)
+```
+
+出力結果：
+```
+Hello
+```
+
+### 負のインデックス
+
+部分文字列を取得する際、開始位置と終了位置に負のインデックスを指定することができます。負のインデックスとは、最後の文字から数えたインデックスのことを指します。例えば、最後の文字のインデックスは-1、最後から2番目の文字のインデックスは-2となります。
+
+例えば、文字列 ```Kotlin "Hello World" ```から、最後の5つの文字を抽出するには次のようになります。
+
+```Kotlin
+val str = "Hello World"
+val subStr = str.substring(-5)
+println(subStr)
+```
+
+出力結果：
+```
+World
+```
+
+## 参考リンク
+
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin String.substring() Method](https://www.javatpoint.com/kotlin-string-substring)

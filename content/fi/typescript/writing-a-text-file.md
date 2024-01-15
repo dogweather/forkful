@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Tiedostoon kirjoittaminen"
-simple_title:         "Tiedostoon kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "TypeScript: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,32 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstitiedostojen kirjoittaminen saattaa vaikuttaa yksinkertaiselta tehtävältä, mutta se on tärkeä osa ohjelmointia. Tekstitiedostoilla voidaan tallentaa tietoa, jota voidaan käyttää myöhemmin tai jakaa muiden ohjelmien kanssa.
+Miksi kirjoittaisit tekstitiedostoa TypeScriptillä? Yksinkertaisesti siksi, että TypeScript on yksi suosituimmista ohjelmointikielistä ja se tarjoaa helpon tavan käsitellä ja kirjoittaa tekstitiedostoja.
 
 ## Miten
 
-Käyttämällä TypeScriptia voi helposti kirjoittaa tekstitiedostoja. Ensimmäiseksi on luotava muuttuja, joka sisältää tiedoston nimen ja polun. Tämän jälkeen käytetään writeFile-funktiota, joka ottaa parametreinaan tiedoston nimen, sisällön ja mahdolliset asetukset. Katso esimerkkikoodi alla:
+Kirjoittaminen tekstitiedostoon TypeScriptillä on todella helppoa ja selkeää. Tässä on muutama esimerkki, jotta voit aloittaa:
 
-```TypeScript
-const tiedostoNimi = "esimerkki.txt";
-const sisalto = "Tämä on esimerkki tekstitiedostosta.";
+```typescript
+// Luodaan uusi tiedosto nimeltä "testi.txt"
+const fs = require('fs');
+fs.writeFileSync("testi.txt", "Tervetuloa lukemaan tämä teksti!");
 
-writeFile(tiedostoNimi, sisalto, (err) => {
-    if (err) {
-        console.log("Virhe tiedoston kirjoittamisessa: " + err);
-    } else {
-        console.log("Tiedosto kirjoitettu onnistuneesti!");
-    }
-});
+// Luetaan tiedostosta "testi.txt" ja tallennetaan sisältö muuttujaan
+const sisältö = fs.readFileSync("testi.txt", "utf8");
+console.log(sisältö); // tulostaa "Tervetuloa lukemaan tämä teksti!"
+
+// Lisätään olemassa olevaan tiedostoon uusi rivi
+fs.appendFileSync("testi.txt", "\nJa kiitos kun luit tekstini!");
 ```
 
-Tämän jälkeen ohjelma luo tiedoston nimeltä "esimerkki.txt" ja kirjoittaa siihen sisällöksi "Tämä on esimerkki tekstitiedostosta.". Voit tarkistaa tiedoston sisällön avaamalla sen esimerkiksi tekstieditorilla.
+Koodin tulostus:
 
-## Syventävä sukellus
+```
+Tervetuloa lukemaan tämä teksti!
+Ja kiitos kun luit tekstini!
+```
 
-Tiedoston kirjoittaminen sisältää muutakin kuin pelkän sisällön luomisen. writeFile-funktion parametreilla voi määrittää myös tiedostolle enkoodauksen tai käyttää writeFileSynch-funktiota, joka kirjoittaa tiedoston synkronisesti eikä tarvitse callback-funktiota. Jokaisella kielellä on omat ominaisuutensa tiedon tallentamisessa ja jakamisessa, joten on hyvä tutustua TypeScriptin dokumentaatioon lisätietojen saamiseksi.
+## Syvällinen sukellus
+
+Kirjoittaminen ja lukeminen tekstitiedostoon TypeScriptillä tapahtuu käyttämällä Node.js:n sisäänrakennettua fs-moduulia, joka tarjoaa metodit tiedostojen käsittelyyn. `writeFileSync()`-metodi luo uuden tiedoston ja kirjoittaa siihen annetun sisällön, `readFileSync()`-metodi lukee tiedostosta sisällön ja `appendFileSync()`-metodi lisää uuden rivin olemassa olevaan tiedostoon. Huomaa, että metodit käyttävät ensimmäisenä parametrina tiedoston nimeä ja toisena parametrina sisältöä, joka voi olla sekä tekstiä että muuta tietotyyppiä.
 
 ## Katso myös
 
-- [TypeScriptin dokumentaatio](https://www.typescriptlang.org/docs/)
-- [FS-moduuli Node.js:ssa](https://nodejs.org/api/fs.html)
+- [Node.js fs-moduuli](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Työskentely Yamlin kanssa"
-simple_title:         "Työskentely Yamlin kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "TypeScript: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -11,45 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-YAML-tiedostoja käytetään yleisesti konfiguraatiodataan tallentamiseen ohjelmistojen kehityksessä. Ne tarjoavat selkeän ja helposti luettavan tavan järjestää dataa. Lisäksi YAML-tiedostot on helppo muokata käsin, mikä helpottaa työskentelyä monimutkaisten ohjelmistojen kanssa.
+YAML on helppo ymmärtää ja kirjoittaa, mikä tekee siitä suositun vaihtoehdon tietojen tallentamiseen ja siirtämiseen. Se on myös tarkoitettu erityisesti ohjelmointikielille ja helpottaa tietojen käsittelyä näissä ympäristöissä.
 
 ## Kuinka
 
-YAML-tiedostojen käsittely TypeScriptillä on helppoa ja nopeaa. Seuraavassa on esimerkkejä koodista ja tulosteista:
-
-```
-// Luodaan YAML-tiedosto
-
+```TypeScript
 const yaml = require('js-yaml');
 const fs = require('fs');
 
+//Luodaan JSON objekti
 const data = {
-    nimi: 'John Doe',
-    ikä: 30,
-    harrastukset: ['luistelu', 'kalastus', 'kirjoittaminen']
+  customer: "John Smith",
+  order: {
+    id: "12345",
+    products: ["Shirt", "Jeans", "Shoes"],
+    total: 124.99
+  }
 }
 
+//Muutetaan YAML-muotoon
 const yamlData = yaml.safeDump(data);
 
-fs.writeFileSync('tiedosto.yaml', yamlData);
+//Kirjoitetaan tiedostoon
+fs.writeFileSync('order.yaml', yamlData);
 
-// Parsitaan ja tulostetaan YAML-tiedoston sisältö
+//Luetaan tiedostosta
+const loadedData = yaml.safeLoad(fs.readFileSync('order.yaml', 'utf8'));
 
-const parsedData = yaml.safeLoad(fs.readFileSync('tiedosto.yaml', 'utf8'));
-
-console.log(parsedData.nimi); // John Doe
-console.log(parsedData.ikä); // 30
-console.log(parsedData.harrastukset); // ['luistelu', 'kalastus', 'kirjoittaminen']
+//Tulostetaan pois JSON-muodossa
+console.log(loadedData);
 ```
 
-## Syvä Sukellus
+Tämän esimerkin avulla voit luoda JavaScript-objektin ja tallentaa sen YAML-tiedostoon. Voit myös lukea YAML-tiedoston ja muuttaa sen takaisin JSON-muotoon. Tämä helpottaa tietojen siirtämistä ja käsittelyä eri ohjelmointikielillä.
 
-Työskentely YAML-tiedostojen kanssa TypeScriptin avulla tarjoaa monia etuja. Sen avulla voi mm. helposti lukea ja muokata dataa, mikä tekee siitä suositun vaihtoehdon konfiguraatiodatan tallentamiseen. Lisäksi YAML on helppo ymmärtää ja sen avulla työskentely on nopeaa ja tehokasta.
+## Syvällinen sukellus
 
-Nämä ovat vain muutamia esimerkkejä siitä, mitä voit tehdä TypeScriptillä YAML-tiedostojen käsittelyssä. Ota aikaa tutustuaksesi lisää tähän hyödylliseen työkaluun ja löydä uusia tapoja tehostaa ohjelmistojesi kehitystä.
+YAML (YAML Ain't Markup Language) on kevyt ja ihmisen luettava tietokielijärjestelmä, joka perustuu avoimiin standardiarkistoihin. Sitä käytetään yleisesti konfiguraatiotiedostoina ja tiedon tallentamiseen. YAML-kieli erottuu muista merkintäkieleistä sen yksinkertaisuuden ja välitetyt tiedostojen selkeyden ja helposti luettavien muotoilujen avulla. Se on myös laajalti yhteensopiva monien ohjelmointikielien kanssa ja sitä käytetään laajasti sovellusten ja palvelinten konfiguroinnissa.
 
 ## Katso myös
 
-- [YAML-tiedostojen opas](https://yaml.org/)
-- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/)
-- [js-yaml dokumentaatio](https://github.com/nodeca/js-yaml)
+- [YAML.org](https://yaml.org/)
+- [js-yaml Kirjasto](https://www.npmjs.com/package/js-yaml)
+- [JSON vs. YAML vertailu](https://www.baeldung.com/java-json-vs-yaml)

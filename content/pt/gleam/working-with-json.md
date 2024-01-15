@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "Gleam: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,64 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar JSON em Gleam?
+## Por que trabalhar com JSON?
 
-JSON é uma forma popular de estruturar dados, e trabalhar com ele pode ser extremamente útil em projetos de programação. Com o Gleam, você pode facilmente manipular dados JSON em seus programas. Neste post, vamos explorar como trabalhar com JSON em Gleam.
+Se você é um desenvolvedor de software, provavelmente já se deparou com o formato JSON em seu trabalho. JSON (JavaScript Object Notation) é uma maneira simples e leve de armazenar e transmitir dados, tornando-o uma escolha popular para a comunicação entre aplicações web e servidores. Se você está trabalhando com dados estruturados ou está procurando uma maneira mais organizada de armazenar seus dados, aprender a trabalhar com JSON é uma habilidade valiosa a ter.
 
-## Como fazer:
+## Como fazer?
 
-Para começar, vamos importar o módulo "json" no início do nosso programa. Isso nos permitirá usar as funções da biblioteca para trabalhar com JSON.
-
-```Gleam
-import json
-```
-
-### Lendo dados JSON:
-
-Para ler dados JSON em Gleam, podemos usar a função `decode` do módulo json. Essa função vai transformar uma string JSON em uma estrutura de dados que podemos manipular em nosso programa.
+Agora que entendemos a importância de trabalhar com JSON, vamos ver como podemos usá-lo em nossos próprios projetos em Gleam. Primeiro, precisamos importar o módulo JSON em nosso código:
 
 ```Gleam
-let json_string = "{\"nome\": \"Maria\", \"idade\": 30}"
-let dados = json.decode(json_string)
+import gleam/json
 ```
 
-Neste exemplo, estamos lendo uma string JSON com o nome e a idade de uma pessoa. A função `decode` irá criar uma struct chamada `dados` com os respectivos campos e valores.
+Agora, podemos usar a função `from_string` para analisar uma string JSON e convertê-la em um objeto Gleam. Por exemplo, se tivermos a seguinte string JSON:
 
-### Escrevendo dados JSON:
+```json
+{
+  "nome": "Pedro",
+  "idade": 27,
+  "hobbies": ["viajar", "cozinhar", "jogar"]
+}
+```
 
-Agora, se quisermos criar uma string JSON a partir de uma estrutura de dados no nosso programa, podemos usar a função `encode` do módulo json.
+Podemos convertê-la em um objeto Gleam usando o seguinte código:
 
 ```Gleam
-let dados = {nome: "João", idade: 25}
-let json_string = json.encode(dados)
+let json_string = """
+  {
+    "nome": "Pedro",
+    "idade": 27,
+    "hobbies": ["viajar", "cozinhar", "jogar"]
+  }
+"""
+
+let parsed_json = json.from_string(json_string)
 ```
 
-Neste caso, a função `encode` irá transformar a struct `dados` em uma string JSON, que pode ser usado para salvar ou enviar dados.
-
-### Trabalhando com arrays:
-
-Além de trabalhar com estruturas de dados JSON, também podemos manipular arrays em nosso programa Gleam. Para isso, basta usar a função `decode_array` para ler uma string JSON contendo um array.
+Podemos acessar os valores do objeto Gleam usando a notação de ponto, por exemplo:
 
 ```Gleam
-let array_string = "[1, 2, 3, 4]"
-let array = json.decode_array(array_string)
+let nome = parsed_json.nome
+let idade = parsed_json.idade
+let primeiro_hobby = parsed_json.hobbies[0]
 ```
 
-E para criar uma string JSON a partir de um array em nosso programa, podemos usar a função `encode_array`.
+Também podemos usar a função `to_string` para converter um objeto Gleam em uma string JSON. Por exemplo, se tivermos um objeto Gleam com os mesmos valores que usamos acima, podemos convertê-lo em uma string JSON usando o seguinte código:
 
 ```Gleam
-let array = [5, 6, 7, 8]
-let array_string = json.encode_array(array)
+let gleam_obj = %{
+  nome: "Pedro",
+  idade: 27,
+  hobbies: ["viajar", "cozinhar", "jogar"]
+}
+
+let json_string = json.to_string(gleam_obj)
 ```
 
-## Profundando:
+Agora, `json_string` conterá a string JSON:
 
-É importante lembrar que o módulo json do Gleam é imutável, o que significa que todas as funções retornam cópias dos dados originais ao invés de modificá-los diretamente. Portanto, é importante atribuir o resultado das funções a uma variável para poder usá-los posteriormente.
+```json
+{
+  "nome": "Pedro",
+  "idade": 27,
+  "hobbies": ["viajar", "cozinhar", "jogar"]
+}
+```
 
-Outro detalhe importante é que, quando lidando com dados JSON, é necessário ter cuidado com os tipos de dados. Por exemplo, a função `decode` irá interpretar números como `int` ou `float`, dependendo do valor, mas também existe uma função `decode_number` que sempre retorna o tipo `Decimal` para números. Certifique-se de verificar a documentação para obter mais informações sobre os tipos de dados suportados.
+## Mergulhe profundo
 
-## Veja também:
+Embora esses sejam apenas alguns exemplos básicos de como trabalhar com JSON em Gleam, existem muitas outras funções e recursos disponíveis no módulo JSON. É importante entender a diferença entre `json.from_string` e `json.parse_string`, bem como a função `to_pretty_string` para formatar JSON de forma mais legível. Além disso, vale a pena explorar as opções disponíveis para trabalhar com JSON em projetos Gleam mais complexos.
 
-- Documentação oficial do Gleam sobre o módulo json: https://gleam.run/modules/json.html
-- Exemplos de uso do módulo json em projetos Gleam: https://github.com/search?q=gleam+json&type=Code
-- Tutoriais e dicas de Gleam para aprimorar suas habilidades na linguagem: http://www.fremingtonedge.com/gleam/
+## Veja também
+
+- [Documentação do módulo JSON do Gleam](https://gleam.run/modules/json.html)
+- [Tutorial do JSON no Gleam](https://pragmaticperl.com/issues/2017/11/pragmatic-parsley-16-gleam-goes-json/)
+- [Exemplos de código Gleam com JSON](https://github.com/gleam-lang/gleam/blob/master/examples/json_reader.gleam)

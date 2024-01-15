@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "PHP: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego piszemy testy w PHP?
+## Dlaczego
 
-Testy to nieodłączna część procesu tworzenia oprogramowania. Pomagają nam weryfikować poprawność kodu i uniknąć błędów w produkcie końcowym. W tym artykule dowiesz się, dlaczego warto pisać testy w PHP i jak to zrobić.
+Pisanie testów jest ważnym elementem procesu tworzenia oprogramowania, który pomaga w zapewnieniu jakości kodu. Zapewniamy w ten sposób, że nasze aplikacje działają zgodnie z oczekiwaniami i są mniej podatne na błędy.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W celu zaprezentowania procesu pisania testów w PHP, spójrzmy na prosty przykład. Załóżmy, że mamy klasę `Calculator` z metodami `add` i `subtract`. Chcemy napisać testy dla tych metod.
-
-Pierwszym krokiem jest zaimportowanie potrzebnych bibliotek PHPUnit. Następnie możemy zacząć pisać testy, używając składni PHP. Przykład kodu wyglądałby następująco:
+Pisanie testów w PHP jest proste i wymaga tylko kilku kroków. Pierwszym krokiem jest zainstalowanie biblioteki PHPUnit przy użyciu narzędzia Composer. Następnie, tworzymy plik z testami o rozszerzeniu .php i importujemy potrzebne klasy. Wewnątrz testów, używamy funkcji assert do sprawdzania czy otrzymane wyniki są zgodne z oczekiwaniami. Oto przykład prostego testu sprawdzającego czy 2+2 równa się 4:
 
 ```PHP
-use PHPUnit\Framework\TestCase;
-
-class CalculatorTest extends TestCase {
-
-    public function testAdd() {
-        $calculator = new Calculator();
-        $result = $calculator->add(2, 3);
-
-        $this->assertEquals(5, $result);
-    }
-
-    public function testSubtract() {
-        $calculator = new Calculator();
-        $result = $calculator->subtract(6, 2);
-
-        $this->assertEquals(4, $result);
-    }
+public function testDodawanie() 
+{
+    $wynik = 2 + 2;
+    $this->assertEquals(4, $wynik);
 }
 ```
 
-W powyższym przykładzie importujemy klasę `TestCase` z biblioteki PHPUnit, aby móc dziedziczyć jej funkcjonalności. Następnie tworzymy dwa testy, jeden dla metody `add` i drugi dla `subtract`. W obu przypadkach tworzymy instancję klasy `Calculator` i wywołujemy odpowiednie metody. Na końcu używamy asercji `assertEquals` w celu porównania oczekiwanego wyniku z rzeczywistym.
-
-Po ukończeniu testów możemy uruchomić je za pomocą narzędzia PHPUnit. W przypadku, gdy testy zostaną zakończone niepowodzeniem, otrzymamy dokładne informacje o błędzie, co pozwala nam szybko zlokalizować i naprawić ewentualne problemy w naszym kodzie.
+Jeśli wszystko przebiegnie pomyślnie, otrzymamy "OK" jako wynik. W przypadku błędnego wyniku, otrzymamy informację o niezgodności oczekiwanego wyniku z rzeczywistym.
 
 ## Deep Dive
 
-Pisanie testów w PHP ma wiele zalet. Po pierwsze, pomaga nam w zwiększeniu jakości naszego kodu. Testy pokrywają różne przypadki użycia, co pozwala nam wykryć błędy wcześniej i łatwiej je naprawić.
+Istnieje wiele technik i strategii pisania testów w PHP. Należy zawsze pamiętać o dobraniu odpowiednich danych testowych i sprawdzeniu wszelkich możliwych scenariuszy. Ważne jest również, aby pisać czytelne i zrozumiałe testy, aby ułatwić przyszłe modyfikacje i utrzymanie kodu. Istnieją również narzędzia, które mogą pomóc w automatyzacji procesu pisania testów, na przykład dbUnit czy Selenium.
 
-Po drugie, testy działają jako dokumentacja naszego kodu. Dzięki nim łatwiej zrozumieć, jakie funkcjonalności oferuje nasza aplikacja i jak z niej korzystać.
+## Zobacz także
 
-I wreszcie, testy umożliwiają nam bezpieczne wprowadzanie zmian w kodzie. Dzięki nim możemy mieć pewność, że nasze zmiany nie spowodują błędów w innych częściach aplikacji.
-
-# Zobacz także
-
-- [Dokumentacja PHPUnit](https://phpunit.de/documentation.html)
-- [Artykuł na temat testów w PHP](https://www.toptal.com/qa/how-to-test-php-code)
-- [Przykładowy projekt z testami w PHP](https://github.com/sebastianbergmann/phpunit-documentation-samples)
+- [Oficjalna dokumentacja PHPUnit](https://phpunit.de/documentation.html)
+- [Tutorial dla początkujących: Jak pisać testy w PHP](https://www.codeofaninja.com/2019/06/testing-php-code-with-phpunit.html)
+- [Wideo poradnik: Pisanie testów w PHP](https://www.youtube.com/watch?v=eW2h5kpcXtI)

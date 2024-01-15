@@ -1,6 +1,7 @@
 ---
-title:                "Java: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Java: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,44 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-現在の日付を取得する理由は、プログラム内で日付を使用する必要があるからです。例えば、日付をファイル名やログメッセージに含める必要がある場合があります。また、タイムスタンプやアプリケーションの動作状況をトラッキングする際にも、現在の日付を取得する必要があります。
+Javaの最新バージョンを使って現在の日付を取得することに興味があるかもしれません。その日付を利用して、プログラムの実行日時を記録したり、特定のタスクが実行された日付を記録したりすることができます。
 
 ## 方法
 
-Javaで現在の日付を取得するには、`Date`クラスを使用します。このクラスをインスタンス化すると、現在の日付と時間が自動的に格納されます。例えば、以下のようにコードを記述することで現在の日付を取得することができます。
+Javaでは、`LocalDate`クラスを使用して簡単に現在の日付を取得することができます。以下のコードを使用して、現在の日付を取得し、コンソールに表示することができます。
 
 ```Java
-Date date = new Date();
-System.out.println(date);
+LocalDate currentDate = LocalDate.now();
+System.out.println("今日の日付は：" + currentDate);
 ```
 
-上記のコードを実行すると、現在の日付と時間が以下のようにコンソールに出力されます。
+出力結果は、現在の日付が年-月-日の形式で表示されます。例えば、今天の日付が2021年9月12日ならば、出力結果は `今日の日付は：2021-09-12` となります。
 
-`Tue Dec 01 12:00:00 JST 2020`
-
-また、`SimpleDateFormat`クラスを使用することで、日付のフォーマットを指定することができます。例えば、以下のようにコードを記述することで、年月日のフォーマットで現在の日付を取得することができます。
+また、`LocalDate`クラスには、日付を指定したい場合に使用できる様々なメソッドがあります。例えば、`of`メソッドを使用すると、指定した年月日の日付を取得することができます。
 
 ```Java
-Date date = new Date();
-SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-System.out.println(format.format(date));
+LocalDate specificDate = LocalDate.of(2021, 12, 25);
+System.out.println("指定した日付は：" + specificDate);
 ```
 
-上記のコードを実行すると、現在の日付が`2020-12-01`のようにフォーマットされてコンソールに出力されます。
+出力結果は、 `指定した日付は：2021-12-25` となります。
 
 ## ディープダイブ
 
-`Date`クラスは、Javaの古いバージョンでは主に使用されていましたが、現在では推奨されている`LocalDate`クラスが存在します。`LocalDate`クラスは`Date`クラスよりも柔軟な操作が可能であり、さまざまなタイムゾーンに対応しています。また、`LocalDateTime`クラスを使用することで、日付と時間を同時に取得することもできます。
+`LocalDate.now()`メソッドでは、現在の日付を取得するだけでなく、時間やタイムゾーンの情報も取得することができます。また、`LocalDate`クラスの他にも、日付や時間を表すクラスとして、`LocalDateTime`や`ZonedDateTime`などもあります。
 
-## 参考リンク
+さらに、Java 8からは、`java.time`パッケージが導入され、より便利な日付処理を行うことができるようになりました。`LocalDate`クラスの他にも、`Period`や`ChronoUnit`などのクラスやメソッドを使用することで、より柔軟な日付計算を行うことができます。
 
-* [Dateクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Date.html)
-* [SimpleDateFormatクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/text/SimpleDateFormat.html)
-* [LocalDateクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDate.html)
-* [LocalDateTimeクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDateTime.html)
+## 関連情報
 
-## 参考文献
-
-[Javaで現在の日付を取得する方法](https://dev.classmethod.jp/articles/how-to-get-todays-date-in-java/)
-
-[Understanding Date vs. LocalDate vs. LocalDateTime](https://www.baeldung.com/java-date-localdate-localdatetime)
+- [Java 11 公式ドキュメント - 日時 API](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- [プログラミングの基礎知識 - 日付処理](https://www.javadrive.jp/start/date/index1.html)
+- [技術評論社 - Java入門 入門編 第3章 日付やファイル操作について学ぶ](https://gihyo.jp/dev/serial/01/java_basic)
+- [JDK公式サイト - 新しい日時APIの概要](https://openjdk.java.net/projects/jdk8/javadoc/java.time-summary.html#NewAPIsOverview)

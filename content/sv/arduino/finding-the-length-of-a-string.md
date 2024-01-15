@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Att hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Arduino: Att hitta längden på en sträng"
 simple_title:         "Att hitta längden på en sträng"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna hitta längden på en sträng är viktigt när man arbetar med att hantera textdata. Det kan till exempel vara användbart när man vill kontrollera inmatade värden eller bearbeta textsträngar på ett effektivt sätt. Genom att lära sig hur man hittar längden på en sträng kan du utöka dina programmeringsfärdigheter och göra din kod mer mångsidig.
 
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom programmering, och är särskilt användbar inom Arduino-programmering. Det låter dig hantera och manipulera textdata på ett effektivt sätt.
-
-## Så här gör du
-
-För att hitta längden på en sträng i Arduino, använder vi den inbyggda funktionen `strlen()`. Detta gör att vi kan räkna antalet tecken i en given sträng och returnera detta värde. Här är ett exempel på hur du kan använda `strlen()` i ditt program:
-
+## Hur man gör
+Att hitta längden på en sträng är en relativt enkel uppgift i Arduino-programmering. Först behöver vi inkludera biblioteket "String.h" i vår kod. Sedan kan vi använda metoden "length()" för att hitta längden på en specifik sträng. Nedan är ett exempel på hur vi kan göra detta:
 ```Arduino
-char mittNamn[] = "Sara";
-int langd = strlen(mittNamn); // Längden av "Sara" är 4
+#include <String.h>
 
-Serial.println(langd); // Skriver ut 4 i serieporten
+// Deklarera en strängvariabel
+String text = "Hej, världen!";
+
+// Använda metoden "length()" för att hitta längden på strängen
+int length = text.length();
+
+// Skriv ut längden på seriel monitor
+Serial.println(length);
 ```
+Detta kommer att resultera i outputen "13" eftersom det är antalet tecken i vår sträng, inklusive mellanslag.
 
-I det här exemplet har vi skapat en variabel `mittNamn` och gett den en sträng, "Sara". Sedan använder vi `strlen()` för att räkna längden på strängen och tilldelar det värdet till en annan variabel, `langd`. Slutligen skriver vi ut längden på strängen i serieporten.
+## Djupgående
+När vi använder metoden "length()" för att hitta längden på en sträng, räknas även mellanslag och specialtecken som en del av längden. Om du vill hitta längden utan mellanslag kan du istället använda metoden "trim().length()". Detta tar bort mellanslag och andra "whitespace" tecken innan den räknar längden.
 
-Det är viktigt att komma ihåg att `strlen()` endast fungerar på noll-terminerade strängar, vilket innebär att strängen måste avslutas med ett speciellt tecken, `'\0'`. Om strängen inte har detta tecken kommer `strlen()` att räkna fel längd på strängen.
-
-## Djupdykning
-
-När du använder `strlen()` finns det några viktiga saker att tänka på för att undvika buggar i ditt program. En av de vanligaste är att försäkra sig om att strängen är tillräckligt stor för den data som ska lagras i den. Om strängen är för liten kan det leda till en så kallad "buffer overflow", som kan orsaka allvarliga problem i ditt program.
-
-En annan viktig sak att tänka på är att `strlen()` returnerar ett `int`-värde, vilket innebär att den maximala längden på en sträng är 2 147 483 647 tecken. Om du försöker beräkna längden på en större sträng kan det leda till fel i ditt program.
+Det är också viktigt att notera att längden som returneras av "length()" är av typen "int", vilket innebär att den bara kan hantera max 32-bitars värden. Om du behöver hitta längden på en sträng som är längre än detta, kan du använda metoden "size()" istället, som hanterar 64-bitars värden.
 
 ## Se även
-
-* [Arduino Reference - strlen()](https://www.arduino.cc/reference/en/language/variables/data-types/strlen/)
-* [C++ Reference - strlen()](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Officiell dokumentation för String.h biblioteket på Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Tutorial för att hantera textsträngar i Arduino](https://maker.pro/arduino/tutorial/arduino-tutorial-how-to-work-with-strings-in-arduino)
+- [Exempelkod för att hitta längden på en sträng utan att använda metoden "length()"](https://www.arduino.cc/reference/en/language/string/functions/size/)

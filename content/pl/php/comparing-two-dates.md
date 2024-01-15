@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "PHP: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,50 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie danych jest ważnym elementem w programowaniu, szczególnie w PHP. Nie tylko pozwala ono na sprawdzenie czy dwa obiekty są identyczne, ale także może pomóc w określeniu, który z nich jest większy lub mniejszy. W tym artykule dowiesz się, jak porównywać dwie daty w PHP i dlaczego jest to istotne w codziennej pracy programisty.
+Porównywanie dat jest niezwykle przydatną umiejętnością w programowaniu, ponieważ pozwala nam na łatwe sprawdzanie, czy dwa wydarzenia miały miejsce w przeszłości, teraz lub w przyszłości. Jest to również często wykorzystywane przy filtrowaniu i sortowaniu danych w bazach danych.
 
 ## Jak to zrobić
 
-Mając do dyspozycji dwa obiekty daty, można wykorzystać funkcję `strtotime` do zamiany ich na wartości numeryczne, które można bezpośrednio porównać. Przykładowo:
+```PHP
+// Utwórz dwa obiekty daty
+$date1 = new DateTime('2020-01-01');
+$date2 = new DateTime('2021-01-01');
 
-```
-$date1 = '2021-01-01';
-$date2 = '2020-12-31';
+// Sprawdź, czy $date1 jest przed $date2
+if ($date1 < $date2) {
+    echo "Data 1 jest wcześniejsza niż data 2.";
+}
 
-if (strtotime($date1) > strtotime($date2)) {
-  echo '$date1 jest późniejsze niż $date2';
-} elseif (strtotime($date1) < strtotime($date2)) {
-  echo '$date1 jest wcześniejsze niż $date2';
-} else {
-  echo 'Obie daty są identyczne';
+// Sprawdź, czy $date2 jest po $date1
+if ($date2 > $date1) {
+    echo "Data 2 jest późniejsza niż data 1.";
 }
 ```
 
-W powyższym przykładzie, funkcja `strtotime` zamienia daty na liczby, które następnie są porównywane za pomocą operatorów większe lub mniejsze. Warto jednak zwrócić uwagę na to, że powyższy kod może nie działać poprawnie dla daty 29 lutego w latach przestępnych. W takim przypadku można zastosować funkcję `DateTime` oraz jej metodę `diff`, która zwraca różnicę między dwoma obiektami daty. Przykładowo:
-
+Przykładowy wynik:
 ```
-$date1 = new DateTime('2020-02-28');
-$date2 = new DateTime('2020-02-29');
-
-$diff = $date1->diff($date2);
-
-if ($diff->invert) {
-  echo '$date1 jest wcześniejsze niż $date2';
-} elseif ($diff->days == 0) {
-  echo 'Obie daty są identyczne';
-} else {
-  echo '$date1 jest późniejsze niż $date2';
-}
+Data 1 jest wcześniejsza niż data 2.
+Data 2 jest późniejsza niż data 1.
 ```
 
-W tym przypadku, metoda `diff` zwraca obiekt `DateInterval`, który zawiera informację o różnicy między datami oraz wskazuje, czy pierwsza data jest wcześniejsza czy późniejsza niż druga.
+## Głębsze zagadnienia
 
-## Wnikliwe spojrzenie
+Podczas porównywania dat istnieje kilka ważnych rzeczy do rozważenia. Po pierwsze, należy pamiętać o strefie czasowej. Jeśli np. porównujemy daty pochodzące z różnych krajów, powinniśmy najpierw skonwertować je do wspólnej strefy czasowej, aby uzyskać dokładne wyniki. Kolejną ważną kwestią jest uwzględnienie lat przestępnych. Aby uniknąć błędów, należy upewnić się, że obie daty znajdują się w poprawnym formacie, a także dokładnie określić, czy chodzi o porównywanie dat, a nie daty i czasu.
 
-Porównywanie dat jest często potrzebne w przypadku sortowania danych lub wybierania rekordów z bazy danych. Warto również pamiętać o stosowaniu odpowiednich funkcji do sprawdzania czy rok jest przestępny czy czy data jest poprawna. W przypadku bardziej zaawansowanych problemów z datami, warto skorzystać z bibliotek takich jak Carbon, które znacznie ułatwiają operacje na datach w PHP.
+## Zobacz również
 
-## Zobacz też
-
-- [Dokumentacja PHP - Porównywanie dat](https://www.php.net/manual/en/datetime.diff.php)
-- [Dokumentacja PHP - Przetwarzanie dat](https://www.php.net/manual/en/datetime.createfromformat.php)
-- [Oficjalna strona biblioteki Carbon](http://carbon.nesbot.com/)
+- [Dokumentacja PHP - klasa DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [Porównywanie dat w PHP](https://www.php.net/manual/en/datetime.diff.php)
+- [Porównywanie i sortowanie dat w bazie danych MySQL](https://www.w3schools.com/sql/sql_dates.asp)

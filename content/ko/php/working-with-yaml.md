@@ -1,6 +1,7 @@
 ---
-title:                "PHP: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "yaml로 작업하기"
+html_title:           "PHP: yaml로 작업하기"
+simple_title:         "yaml로 작업하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -9,50 +10,127 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 YAML을 사용하는가?
+## 왜 YAML과 함께 작업할까요?
 
-YAML은 사람과 컴퓨터 모두 이해하기 쉬운 구조로 데이터를 표현할 수 있는 경량 마크업 언어입니다. 따라서 PHP 개발자로서 YAML을 사용하면 코드를 더욱 간결하고 가독성 높게 작성할 수 있습니다.
+먼저, YAML은 PHP에서 설정 파일과 데이터를 쉽게 다룰 수 있는 형식입니다. 또한 YAML은 다른 형식보다 가독성이 좋고 사용하기도 간단하기 때문에 개발자들 사이에서 인기가 높습니다.
 
-## 어떻게 작성하는가?
+## 어떻게 YAML을 사용할까요?
+
+YAML을 PHP에서 사용하는 방법은 매우 간단합니다. 먼저, YAML 파일을 불러오기 위해 `yaml_parse_file()` 함수를 사용합니다.
 
 ```PHP
-// YAML 데이터 작성
-$data = array(
-  'name' => 'John Doe',
-  'age' => 30,
-  'hobbies' => ['reading', 'coding', 'hiking']
-);
+// YAML 파일 불러오기
+$data = yaml_parse_file('config.yml');
 
-// YAML 파일에 데이터 저장
-yaml_emit_file('data.yaml', $data);
-
-// YAML 파일 로드
-$loaded_data = yaml_parse_file('data.yaml');
-print_r($loaded_data);
+// 배열 구조로 변환
+var_dump($data);
 ```
 
-```
-Array
-(
-  [name] => John Doe
-  [age] => 30
-  [hobbies] => Array
-  (
-    [0] => reading
-    [1] => coding
-    [2] => hiking
-  )
-)
+출력 결과는 다음과 같습니다.
+
+```PHP
+array(3) {
+  ["name"]=>
+  string(6) "John"
+  ["age"]=>
+  int(25)
+  ["favorite_color"]=>
+  string(5) "blue"
+}
 ```
 
-위의 예시 코드에서는 YAML 데이터를 PHP 배열로 표현하고, `yaml_emit_file()` 함수를 사용하여 해당 배열을 YAML 파일로 저장한 후, `yaml_parse_file()` 함수를 사용하여 YAML 파일을 다시 로드하여 PHP 배열로 변환하는 과정을 보여줍니다.
+YAML 파일 내용은 PHP 배열 구조로 변환되어 반환됩니다. 이제 이 데이터를 `foreach` 루프를 이용해 출력할 수 있습니다.
+
+```PHP
+// 루프를 이용한 출력
+foreach ($data as $key => $value) {
+  echo "$key: $value \n";
+}
+```
+
+위 코드의 출력 결과는 다음과 같습니다.
+
+```
+name: John
+age: 25
+favorite_color: blue
+```
 
 ## 깊이 들어가기
 
-YAML은 들여쓰기에 아주 민감한 언어입니다. 이는 데이터의 구조를 명확하게 보여주고 가독성을 높이는 데 도움을 줍니다. 한 라인에 들어가는 들여쓰기는 공백 2칸, 3칸, 4칸 등 유연하게 지정할 수 있습니다. 또한, YAML은 PHP와 같은 다른 언어와 호환성이 좋기 때문에 데이터를 다양한 형식으로 변환할 수 있습니다.
+YAML은 다양한 데이터 타입을 지원하며, 배열과 마찬가지로 하위 요소로 다른 데이터 타입을 포함할 수 있습니다. 하지만 배열과 달리 키-값 쌍으로 구성되기 때문에 데이터를 보다 가독성 좋게 표현할 수 있습니다.
+
+예를 들어, 다음과 같은 YAML 파일이 있다고 가정해봅시다.
+
+```yaml
+name: John Smith
+age: 35
+address:
+  city: New York
+  state: NY
+  country: USA
+```
+
+이를 PHP에서 다루기 위해서는 `address`라는 키를 가지는 배열을 추가하고 해당 배열 내부에 `city`, `state`, `country`와 같은 키를 가진 요소를 추가해주면 됩니다. 이를 코드로 표현하면 다음과 같습니다.
+
+```PHP
+// YAML 파일 불러오기
+$data = yaml_parse_file('user.yml');
+
+// 배열 구조로 변환
+var_dump($data);
+```
+
+출력 결과는 다음과 같습니다.
+
+```PHP
+array(3) {
+  ["name"]=>
+  string(11) "John Smith"
+  ["age"]=>
+  int(35)
+  ["address"]=>
+  array(3) {
+    ["city"]=>
+    string(8) "New York"
+    ["state"]=>
+    string(2) "NY"
+    ["country"]=>
+    string(3) "USA"
+  }
+}
+```
+
+이제 `foreach` 루프를 이용해 데이터를 출력해보겠습니다.
+
+```PHP
+// 루프를 이용한 출력
+foreach ($data as $key => $value) {
+  if ($key == 'address') {
+    echo "Address: \n";
+    foreach ($value as $addressKey => $addressValue) {
+      echo "  $addressKey: $addressValue \n";
+    }
+    echo "\n";
+  } else {
+    echo "$key: $value \n";
+  }
+}
+```
+
+결과는 다음과 같습니다.
+
+```
+name: John Smith 
+age: 35 
+Address: 
+  city: New York 
+  state: NY 
+  country: USA
+```
 
 ## 더 알아보기
 
-- [PHP YAML 확장자 문서](https://www.php.net/manual/en/book.yaml.php)
-- [YAML 공식 사이트](https://yaml.org/)
-- [YAML 튜토리얼](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+현재 PHP 버전에서는 `yaml_parse()` 함수도 제공되지만, 이 함수는 PHP 7.2 이후로는 deprecated되었습니다. 따라서 새로 작업하시는 경우에는 `yaml_parse_file()`를 사용하는 것을 권장합니다.
+
+또한 YAML을 다루는 라이브러리인 "Symfony YAML"이 있으니 참고하

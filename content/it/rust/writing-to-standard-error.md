@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Scrivere su standard error"
+title:                "Scrivere su standard error"
+html_title:           "Rust: Scrivere su standard error"
 simple_title:         "Scrivere su standard error"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,29 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere su standard error può essere utile in situazioni in cui è necessario mostrare messaggi di errore o di debug durante l'esecuzione di un programma Rust. Invece di interrompere il programma o stampare i messaggi su standard output, si può scrivere su standard error per distinguere chiaramente i messaggi di errore dai dati di output.
+Scrivere su standard error è una pratica molto comune per tutti coloro che programmano in Rust. Questo perché è un modo efficace per visualizzare gli errori durante l'esecuzione del programma, consentendo agli sviluppatori di identificare e risolvere i problemi in modo più efficiente.
 
-## Come fare
+## Come Fare
 
-Per scrivere su standard error in Rust, si può utilizzare la funzione `eprintln!()` seguita da ciò che si desidera stampare su standard error all'interno delle parentesi graffe. Ad esempio:
+Per scrivere su standard error in Rust, è possibile utilizzare la funzione `eprint!()` o `eprintln!()` a seconda della necessità. Queste funzioni accettano gli stessi argomenti di `print!()` e `println!()`, ma invece di stampare nella console standard, stampa il contenuto su standard error.
 
-```Rust
+```rust
 fn main() {
-    let value = 10;
-    eprintln!("Il valore è: {}", value);
+    let name = "Mario";
+    eprintln!("Ciao, {}!", name);
 }
 ```
 
-Questo creerà una nuova riga su standard error contenente il messaggio `Il valore è: 10`. Si possono utilizzare anche formattazioni specifiche all'interno delle parentesi graffe, come `%d` per valori interi o `%f` per numeri decimali.
+Output:
 
-## Approfondimenti
+```shell
+Ciao, Mario!
+```
 
-Scrivere su standard error in Rust è importante quando si vogliono ottenere messaggi di errore chiari e facilmente distinguibili dal resto dell'output del programma. Inoltre, è utile per il debug del codice, in quanto i messaggi di errore verranno visualizzati anche in caso di crash del programma.
+## Approfondimento
 
-Si consiglia di utilizzare `eprintln!()` invece di `println!()` per stampare su standard error, in quanto l'ultimo può essere sovrascritto da altre librerie o framework utilizzati nel programma.
+Scrivere su standard error è utile in situazioni in cui si desidera mostrare un messaggio di errore al di fuori della console standard, ad esempio quando si sta lavorando con applicazioni multipiattaforma. Inoltre, è possibile specificare un colore diverso per i messaggi di errore su standard error utilizzando la crate `termcolor`.
 
 ## Vedi anche
 
-- [Guida ai formati di output in Rust](https://doc.rust-lang.org/std/fmt/)
-- [Documentazione ufficiale di Rust](https://www.rust-lang.org/it/learn)
-- [Rust Cookbook: Debugging e stampa su standard error](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/debugging/stderr.html)
+- [Documentazione ufficiale di Rust su scrivere su standard error](https://doc.rust-lang.org/std/macro.eprint.html)
+- [Guida alla crate `termcolor` per colorare il testo su standard error](https://docs.rs/termcolor/1.1.2/termcolor/)
+- [Articolo su come gestire gli errori in Rust](https://www.davideaversa.it/2019/06/rust-errore-and-handling/)

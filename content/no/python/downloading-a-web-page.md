@@ -1,6 +1,7 @@
 ---
-title:                "Python: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Python: Å laste ned en nettside"
+simple_title:         "Å laste ned en nettside"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -9,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor 
+## Hvorfor:
+Det å laste ned en nettside ved hjelp av Python kan være nyttig for å hente informasjon fra internett, som for eksempel tekst og bilder, til å utføre videre analyser eller bruke i et prosjekt.
 
-Å laste ned en nettside ved hjelp av Python kan være en nyttig ferdighet for å skrive skript, hente informasjon eller automatisere oppgaver på nettet.
-
-##Slik gjør du det
-
-For å laste ned en nettside med Python, må du først importere "urllib.request" biblioteket. Dette er standard biblioteket som brukes til å åpne og lese data fra URL-er. 
+## Hvordan:
+For å laste ned en nettside i Python kan du bruke biblioteket "requests". Først må du importere biblioteket ved å legge til følgende linje øverst i koden din:
 
 ```Python
-import urllib.request
+import requests
 ```
 
-Deretter definerer du nettadressen du vil laste ned ved å bruke "urllib.request.urlopen". For eksempel, hvis vi vil laste ned nettsiden "www.norwegian.com", vil koden se slik ut:
+Deretter kan du bruke funksjonen "get" for å hente nettsiden du ønsker. Du må spesifisere nettsidens URL som et argument til funksjonen. Her er et eksempel på hvordan koden kan se ut:
 
 ```Python
-html = urllib.request.urlopen("https://www.norwegian.com")
+# Importerer biblioteket
+import requests
+
+# Henter nettsiden
+response = requests.get("https://www.example.com")
+
+# Sjekker om nettsiden ble hentet suksessfullt
+if response.status_code == 200:
+  print("Nettsiden ble lastet ned!")
+else:
+  print("Noe gikk galt. Statuskode:", response.status_code)
 ```
 
-Nå har vi åpnet en tilkobling til nettsiden og lagret innholdet i en variabel som heter "html". For å lese innholdet, kan vi bruke "read()" funksjonen og lagre det i en annen variabel:
+Output vil være enten "Nettsiden ble lastet ned!" eller "Noe gikk galt. Statuskode: XX", hvor XX vil være en nummerisk verdi som angir eventuelle feilmeldinger.
+
+Du kan også bruke funksjonen "content" til å hente innholdet på nettsiden som en tekststreng:
 
 ```Python
-content = html.read()
+# Henter innholdet på nettsiden
+page_content = response.content
+
+# Skriver ut det første avsnittet på nettsiden
+print(page_content.split("<p>")[1].split("<")[0])
 ```
 
-Til slutt, for å lagre innholdet i en fil kan vi bruke "write()" funksjonen sammen med åpningen av en fil. Vi anbefaler å bruke "with" funksjonen, som automatisk lukker filen når den er ferdig. Koden vil se slik ut:
+Output vil være det første avsnittet på nettsiden du lastet ned.
 
-```Python
-with open("norwegian.html", "wb") as file:
-    file.write(content)
-```
+## Dypdykk:
+Requests-biblioteket har mange flere funksjoner og muligheter for å tilpasse og behandle nettverksforespørsler i Python. Du kan for eksempel bruke funksjonen "post" for å sende data til en nettside, eller bruke "headers" til å spesifisere ulike parametere som ønsket filformat eller språk. Det er også mulig å bruke denne metoden til å logge på en nettside ved å sende innloggingsinformasjon som data. Besøk dokumentasjonen til biblioteket for å lære mer om alle mulighetene det har å tilby.
 
-Nå vil dette skriptet laste ned nettsiden "www.norwegian.com" og lagre den som en fil kalt "norwegian.html".
-
-##Dypdykk
-
-Hvis du vil lære mer om å laste ned og behandle data fra nettsider, kan du utforske funksjonene i "urllib.request" biblioteket. Det finnes også flere tredjepartsbiblioteker som forenkler prosessen med å laste ned og analysere nettsider, som for eksempel "BeautifulSoup" og "Requests".
-
-## Se også
-
-- "Urllib.request" dokumentasjon (https://docs.python.org/3/library/urllib.request.html)
-- "BeautifulSoup" biblioteket (https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- "Requests" biblioteket (https://requests.readthedocs.io/en/master/)
+## Se også:
+- [Requests dokumentasjon](https://docs.python-requests.org/en/master/)
+- [W3Schools How to use the requests Library in Python](https://www.w3schools.com/python/module_requests.asp)
+- [RealPython Making HTTP Requests in Python using Requests](https://realpython.com/python-requests/)

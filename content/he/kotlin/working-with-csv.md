@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: עבודה עם קובץ CSV"
-simple_title:         "עבודה עם קובץ CSV"
+title:                "עבודה עם CSV"
+html_title:           "Kotlin: עבודה עם CSV"
+simple_title:         "עבודה עם CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,46 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-CSV היא פורמט נתונים פשוט ונפוץ ביותר שנמצא בשימוש רב בעולם התכנות. יתרונות השימוש ב-CSV כוללים קריאות, פרקטיות ויכולת לכלול נתונים מהירים להישאר מחוברים בכל מקום ולאורך זמן. אם אתה מחפש דרך קלה לאחסן ולנהל נתונים שלך בפורמט מאורגן וקריא, עבודה עם CSV יכולה להיות הפתרון המושלם עבורך.
+כי קובצי CSV הם דרך פשוטה לאחסן מידע בפורמט שניתן לקריאה על ידי מכנה משותף, מה שהופך אותם לכלי חשוב בפיתוח תוכניות ופרויקטים שונים.
 
-## כיצד לעבוד עם CSV ב-Kotlin
+## כיצד לעבוד עם CSV באמצעות קוטלין
 
+כדי להתחיל לעבוד עם קבצי CSV באמצעות קוטלין, כל הצריכה לעשות היא להתקין את ספריית CSV קליינט, המספקת פונקציות שימושיות לקריאה וכתיבה של נתונים מתוך קבצי CSV. לדוגמה:
 
-בכדי לעבוד עם CSV ב-Kotlin, נצטרך להתעסק עם שני מחלקות חשובות: "BufferedReader" ו-"CSVReader". באמצעות "BufferedReader" נקרא את הקובץ המכיל את הנתונים שלנו ונכין אותו לספרייה של "CSVReader". לאחר מכן, נוכל לעבוד עם הנתונים כמו בדוגמאות הבאות:
+```Kotlin
+// ייבוא ספריית CSV קליינט
+import io.github.donmocks.csveasy.Csv
 
-```kotlin
-// ייבוא חבילה שלתוך CSVReader
-import com.opencsv.CSVReader
+// קריאת קובץ CSV קיים והדפסת הנתונים
+val myData = Csv.read("my_csv_file.csv")
+println(myData)
 
-// main function
-fun main(args : Array<String>) {
-    // פתיחת קובץ CSV באמצעות BufferedReader
-    val reader = BufferedReader(FileReader("file.csv"))
-    // הכנת הנתונים לספריית CSVReader
-    val csvReader = CSVReader(reader)
-    // קריאת כל שורה בקובץ
-    var nextLine: Array<String>?;
-    while (csvReader.readNext() != null) {
-        nextLine = csvReader.readNext()
-        // הדפסת ערכי כל שורה בקובץ
-        for (i in 0..nextLine.size-1) {
-            print(nextLine.get(i) + "\t");
-        }
-        println(); 
-    } 
-    // סגירת ספריית CSVReader
-    csvReader.close()
-}
+// כתיבת נתונים לקובץ CSV חדש
+val newCsvFile = Csv.write("new_csv_file.csv", listOf("Name", "Email", "Age"), listOf("John Doe", "johndoe@email.com", "25"))
 ```
 
-תוצאת התקנת קוד זה היא לקבל נתונים מסודרים בפורמט קל לקריאה, כמו בדוגמאות ההדפסה הבאות:
+הנתונים שיוצגו בפלט בקוד המופיע לעיל באופן אוטומטי יתאימו לנתוני הקובץ CSV המצויים באותה התבנית.
 
-```
-Name				Age				Gender
-John Smith			25				Male
-Jane Doe			30				Female
-```
+## מעמקים
 
-## לחקור עומק עם CSV
+לעומת פורמטי קבצים אחרים, קבצי CSV אינם דורשים מודולים מיוחדים או תוכנות ייעודיות לקריאה וכתיבה. הם יכולים להיעבר ולהיפתח על ידי כל תוכנית המשתמשת בסיסמתנים. מכיוון שמרבית הנתונים נמצאים בצורה טבלאית, קבצי CSV מתאימים במיוחד להשתמש בקוד גנרי המאפשר לעבוד עם מכללת שיטים ותנאים בתוך לולאות.
 
-עבודה עם CSV יכולה להיות מאתגרת בכמה תחומים, כגון עבודה עם קבצים גדולים או עם נושאים רבים. כדי לקבל ניסי
+## ראה גם
+
+- [ספריית CSV קליינט](https://github.com/donmocks/csveasy)
+- [מדריך לעבוד עם קבצי CSV בקוטלין](https://www.javatpoint.com/kotlin-csv-file)

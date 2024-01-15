@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Å laste ned en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Swift: Å laste ned en nettside"
 simple_title:         "Å laste ned en nettside"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,30 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å laste ned en nettside er en viktig del av å programmere Swift, spesielt for de som ønsker å lage apper som kan hente informasjon fra internett. Dette lar deg hente data fra en nettside og bruke den i din egen app.
+Hvorfor ville noen ønske å laste ned en nettside? Vel, det kan være flere grunner til det. Kanskje du vil ha en sikkerhetskopi av en nettside, eller kanskje du ønsker å vise den offline. Uansett årsak, lar Swift deg enkelt laste ned en nettside med bare noen få linjer med kode.
 
 ## Hvordan
 
-For å laste ned en nettside i Swift, kan du bruke `URLSession` og `Data` klassene. Først må du konvertere URL-en til en `URL` objekt, deretter kan du bruke `URLSession.shared.dataTask(with:completionHandler:)` metoden for å starte en datahentingsoperasjon. Her er et eksempel på hvordan du kan laste ned en nettside og skrive ut innholdet i konsollen:
+For å laste ned en nettside i Swift, trenger vi bare å bruke URLSession-klassen og dens dataTask-metode. La oss se på et enkelt eksempel:
 
 ```Swift
-if let url = URL(string: "https://www.swiftblog.com") {
-    URLSession.shared.dataTask(with: url) { (data, response, error) in
-        if let data = data {
-            print(String(data: data, encoding: .utf8))
-        }
-    }.resume()
+let url = URL(string: "https://www.dinside.no")
+let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    guard let data = data else {
+        print("Ingen data funnet: \(String(describing: error))")
+        return
+    }
+    print("Nettside nedlastet!")
 }
-
+task.resume()
 ```
 
-Dette vil sende en forespørsel til nettstedet, hente dataene og skrive dem ut i konsollen. Du kan også bruke `URLSession` for å laste ned bilder eller andre filer fra en nettside.
+I dette eksempelet oppretter vi først en URL-objekt for nettsiden vi vil laste ned. Deretter bruker vi URLSession-klassen til å starte en dataTask. Når nedlastingen er fullført, vil "Nettside nedlastet!" bli skrevet ut.
 
-## Deep Dive
+Ettersom vi brukte en lukketuresyntaks med "dataTask" vil vi også få tilgang til den nedlastede nettsidenes data gjennom "data"-variablen. Dette lar deg gjøre mer avanserte operasjoner som å lagre nettsiden som en HTML-fil.
 
-Når du bruker `URLSession` for å laste ned en nettside, har du også kontroll over andre aspekter ved forespørselen, som for eksempel å legge til HTTP-headerfelt eller å sette en timeout-verdi. Du kan også bruke denne metoden for å laste ned data fra API-er eller internettbaserte tjenester til din app.
+## Dykk dypere
 
-## Se Også
+Hvis du ønsker å dykke dypere og få mer kontroll over nedlastingsprosessen, så kan du bruke URLSessionDelegate og dens metoder. Dette lar deg blant annet håndtere eventuelle feil som oppstår under nedlastingen og sjekke nedlastingsprogresjonen.
 
-* [Apple Developer - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-* [How to Use URLSession to Make Web Requests in Swift](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
+Det er også verdt å merke seg at URL-metoden vi brukte i eksempelet ovenfor bare støtter nedlastinger av HTTP- og HTTPS-nettsider. Hvis du ønsker å laste ned fra andre protokoller, må du bruke en annen metode, for eksempel en filURL.
+
+## Se også
+
+- [URLSession dokumentasjon](https://developer.apple.com/documentation/foundation/urlsession)
+- [Mer informasjon om nedlasting av nettsider i Swift](https://www.hackingwithswift.com/example-code/strings/how-to-download-data-from-a-url)

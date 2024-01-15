@@ -1,5 +1,6 @@
 ---
-title:                "Python: Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena"
+html_title:           "Python: Convirtiendo una fecha en una cadena"
 simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Python"
 category:             "Python"
@@ -9,55 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porqué
+## Por qué 
 
-Convertir una fecha en una cadena es un proceso común en la programación, ya sea para almacenarla en una base de datos, mostrarla en un formato específico o realizar operaciones matemáticas con ella. En este artículo, exploraremos cómo realizar esta conversión en Python, uno de los lenguajes de programación más populares en la actualidad.
+Convertir una fecha en una cadena de texto (string) es una habilidad importante en programación, ya que permite representar una fecha de manera legible para el usuario. Esto puede ser útil para mostrar fechas en interfaces de usuario, generar informes o trabajar con bases de datos.
 
 ## Cómo hacerlo
 
-Para convertir una fecha en una cadena en Python, podemos utilizar el método `strftime()` de la clase `datetime`. Este método nos permite especificar un formato de fecha y hora en el que queremos que se muestre la fecha. Por ejemplo, si queremos mostrar la fecha en formato "dd/mm/aaaa", podemos escribir el siguiente código:
+Para convertir una fecha en una cadena de texto en Python, se puede utilizar el método `strftime()` del objeto `datetime`. Veamos un ejemplo:
 
-```python
-from datetime import datetime
+```Python
+import datetime
 
-fecha = datetime(2021, 9, 1)
-fecha_string = fecha.strftime('%d/%m/%Y')
+# Creamos un objeto datetime con la fecha actual 
+hoy = datetime.datetime.now()
 
-print(fecha_string)
+# Utilizamos el método strftime() para convertir la fecha en una cadena de texto con el formato deseado
+fecha_str = hoy.strftime("%d/%m/%Y")
+
+# Imprimimos la fecha como una cadena de texto
+print(fecha_str)
+
+# Output: 06/04/2021
 ```
 
-El resultado de este código sería "01/09/2021", ya que hemos especificado el formato deseado en la función `strftime()`. Podemos personalizar el formato de la fecha y hora utilizando distintas combinaciones de letras, como %d para el día, %m para el mes y %Y para el año. También podemos agregar otros detalles como la hora, los minutos y los segundos.
+En el ejemplo anterior, utilizamos el formato `"dd/mm/aaaa"` en el método `strftime()` para obtener la fecha en formato día/mes/año. Sin embargo, existen otros códigos de formato que se pueden utilizar para representar la fecha de diferentes formas. Aquí hay algunos ejemplos:
 
-Es importante tener en cuenta que la función `strftime()` solo funciona en objetos `datetime`, por lo que debemos asegurarnos de crear uno antes de aplicar la conversión.
+- `%d`: día del mes (01-31)
+- `%m`: mes (01-12)
+- `%Y`: año (ej: 2021)
+- `%y`: año sin el siglo (ej: 21)
+- `%A`: día completo de la semana (ej: lunes)
+- `%B`: mes completo (ej: enero)
+- `%b`: abreviación del mes (ej: ene)
+- `%H`: hora en formato 24 horas (00-23)
+- `%I`: hora en formato 12 horas (01-12)
+- `%M`: minutos (00-59)
+- `%S`: segundos (00-59)
 
-## Profundizando
+Puedes combinar estos códigos de formato para obtener la representación de la fecha que necesites. Por ejemplo, si quieres mostrar la fecha con el nombre del mes abreviado y el año en formato de dos dígitos, puedes utilizar el siguiente código: `fecha.strftime("%d %b %y")`.
 
-Además de la función `strftime()`, también podemos usar la función `format()` para convertir una fecha en una cadena en Python. Esta función nos permite especificar el formato de la fecha y hora de forma similar a `strftime()`, pero en lugar de aplicarlo a un objeto `datetime`, lo aplicamos a una cadena directamente. Por ejemplo:
+## Detalles más técnicos
 
-```python
-fecha = '2021/9/1'
-fecha_string = fecha.format('%d/%m/%Y')
-
-print(fecha_string)
-```
-
-En este caso, hemos aplicado la función `format()` a una cadena, en lugar de a un objeto `datetime`. Esto puede ser útil si ya tenemos una cadena con una fecha y queremos aplicarle un formato específico.
-
-También podemos convertir una fecha en una cadena utilizando la biblioteca `arrow`, que nos ofrece métodos más sencillos y flexibles para manejar fechas y horas en Python. Por ejemplo:
-
-```python
-import arrow
-
-fecha = arrow.get(2021, 9, 1)
-fecha_string = fecha.format('DD/MM/YYYY')
-
-print(fecha_string)
-```
-
-Acá, hemos utilizado el método `get()` de la biblioteca `arrow` para crear un objeto de fecha y hora directamente. Luego, usamos el método `format()` para especificar el formato deseado.
+El método `strftime()` acepta otros argumentos además del código de formato, como `tzinfo` para especificar la zona horaria o `utc` para obtener la hora en formato UTC. Además, también se puede usar el método `strptime()` para convertir una cadena de texto en un objeto `datetime`. Este método acepta una cadena de texto y un código de formato, y devuelve un objeto `datetime` con la fecha representada en la cadena de texto.
 
 ## Ver también
 
-- [Documentación oficial de Python en español](https://docs.python.org/es/3/library/datetime.html)
-- [Tutorial de fechas y horas en Python](https://www.realpython.com/python-datetime/)
-- [Documentación oficial de la biblioteca arrow](https://arrow.readthedocs.io/en/latest/index.html)
+- [Documentación oficial de Python sobre el formato de fecha y hora](https://docs.python.org/es/3/library/datetime.html#strftime-and-strptime-behavior)
+- [Tutorial de Real Python sobre el formato de fecha y hora en Python](https://realpython.com/python-datetime/)
+- [Stack Overflow: Preguntas sobre cómo convertir una fecha en una cadena de texto en Python](https://stackoverflow.com/questions/tagged/python+datetime+string-conversion)

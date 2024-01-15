@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Hanki nykyinen päivämäärä"
-simple_title:         "Hanki nykyinen päivämäärä"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Kotlin: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,50 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit saada nykyisen päivämäärän ohjelmassa? Päivämäärää ja aikaa käytetään usein ohjelmoinnissa erilaisiin tarkoituksiin, kuten aikaleimojen tallentamiseen, tapahtumien seuraamiseen ja tapahtumien ajoittamiseen. On tärkeää pystyä hallitsemaan päivämäärää ja aikaa, jotta ohjelmat toimivat oikein.
+Koska päivämäärän saaminen on tärkeä osa lähes jokaisen ohjelman toimintaa. Se voi auttaa meitä esimerkiksi näyttämään päivämäärän käyttöliittymässä tai käyttämään sitä muissa laskelmissa.
 
-## Miten
+## Kuinka
 
-Kotlin tarjoaa helpon tavan saada nykyinen päivämäärä koodissa. Voit käyttää `LocalDate` -luokkaa saadaksesi nykyisen päivämäärän Java 8: n `java.time` -kirjastosta.
-
-```Kotlin
+```Kotlin 
 import java.time.LocalDate
 
-val today = LocalDate.now()
-println(today)
+// Päivämäärän saaminen nykyisestä ajasta
+val nykyinenPaivamaara = LocalDate.now() 
+
+// Päivämäärän saaminen tietystä aikaleimasta
+val haluttuPaivamaara = LocalDate.of(2020, 5, 15) 
+
+// Päivämäärän muotoilu halutunlaiseksi
+val muotoiltuPaivamaara = haluttuPaivamaara.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) 
+
+// Päivämäärän vertailu toiseen päivämäärään
+if (nykyinenPaivamaara.isAfter(haluttuPaivamaara)) {
+    println("Nykyinen päivämäärä on myöhemmin kuin haluttu päivämäärä.")
+} else {
+    println("Haluttu päivämäärä on myöhemmin kuin nykyinen päivämäärä.")
+}
 ```
 
-Tämä koodinpätkä tuottaa seuraavan tulosteen:
+**Tulostus:** Haluttu päivämäärä on myöhemmin kuin nykyinen päivämäärä.
 
-```text
-2021-10-05
-```
+## Syventävä sukellus
 
-Voit myös asettaa halutun aikavyöhykkeen käyttämällä `ZoneId` -luokkaa ja `ZonedDateTime` -luokkaa.
+Nykyisen päivämäärän saaminen kotlinissa on helppoa ja kätevää verrattuna vanhempiin ohjelmointikieliin. Tämä johtuu siitä, että Kotlin käyttää Java 8:ssa esiteltyä uutta aikapakkausta: java.time. Tämä pakkaus tarjoaa monia hyödyllisiä metodeja ja luokkia, joita voidaan käyttää päivämäärän käsittelyssä.
 
-```Kotlin
-import java.time.LocalDate
-import java.time.ZoneId
-import java.time.ZonedDateTime
-
-val zoneId = ZoneId.of("Europe/Helsinki")
-val today = ZonedDateTime.now(zoneId)
-println(today)
-```
-
-Tämä tuottaa seuraavan tulosteen:
-
-```text
-2021-10-05T09:45:00.953379300+03:00[Europe/Helsinki]
-```
-
-## Syväkatsaus
-
-Päivämäärän ja ajan käsittely on tärkeä osa ohjelmointia. Kotlinin `LocalDate` -luokka tarjoaa helpon tavan käsitellä ja hallita päivämääriä. Voit myös käyttää lisäkirjastoja, kuten `java.time.zone` tai `java.time.chrono`, saadaksesi lisätoimintoja ja tuen eri aikavyöhykkeille ja kalentereille.
+Kotlin tarjoaa myös mahdollisuuden käyttää haluttua päivämäärän muotoilua käyttämällä DateTimeFormatter-luokkaa, joka helpottaa päivämäärän esittämistä halutussa muodossa. Tämä voi olla erityisen hyödyllistä, jos päivämäärän esitysmuoto on tärkeä tietyssä ohjelmassa.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/)
-- [Java 8 `java.time` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java 8 `java.time.zone` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/zone/package-summary.html)
-- [Java 8 `java.time.chrono` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html)
+- [Kotlinin virallinen verkkosivusto] (https://kotlinlang.org/)
+- [Java Time API-opas] (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlinin päivämäärä- ja aikatoiminnot] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/index.html)

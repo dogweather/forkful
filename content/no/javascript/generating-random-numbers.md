@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Dannelse av tilfeldige tall"
-simple_title:         "Dannelse av tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+html_title:           "Javascript: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Generering av tilfeldige tall er en viktig del av mange programmeringsprosjekter. Det kan være nyttig for å skape variasjon i spill og simuleringer, lage unike brukernavn eller passord, og teste algoritmer og funksjoner som trenger tilfeldig input.
 
-## Slik gjør du det
-For å generere tilfeldige tall i Javascript kan vi bruke Math.random() funksjonen. Denne funksjonen returnerer et tilfeldig tall mellom 0 og 1. Vi kan bruke dette til å generere tall i et gitt område ved å multiplisere og legge til andre tall. For eksempel, hvis vi vil ha et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
+Å generere tilfeldige tall kan være nyttig i mange programmeringsscenarier. Det kan for eksempel brukes til å lage unike brukernavn, tilfeldige farger i et spill eller for å sikre at en funksjon blir utført tilfeldig.
 
-```Javascript
-let min = 1;
-let max = 10;
-let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randomNum);
-```
+## Hvordan
 
-Dette vil gi en utdata på et tilfeldig tall mellom 1 og 10, inkludert 1 og 10.
-
-Vi kan også generere tilfeldige tegn ved å bruke ASCII-koder. For eksempel, hvis vi vil generere et tilfeldig bokstav fra a til z, kan vi bruke følgende kode:
+For å generere tilfeldige tall i Javascript kan vi bruke Math.random() -funksjonen. Denne funksjonen returnerer et desimaltall mellom 0 og 1. For å få et heltall kan vi multiplisere dette tallet med et ønsket antall og bruke Math.floor() -funksjonen for å runde det ned til nærmeste heltall.
 
 ```Javascript
-let randomChar = String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1)) + 97);
-console.log(randomChar);
+// Eksempel på å generere et tilfeldig tall mellom 1 og 10
+let tilfeldigTall = Math.floor(Math.random() * 10) + 1;
+console.log(tilfeldigTall); // Output: et tilfeldig tall mellom 1 og 10
 ```
 
-Dette vil gi en tilfeldig bokstav fra a til z.
+Vi kan også bruke Math.ceil() -funksjonen for å runde tallet opp, eller Math.round() -funksjonen for å runde det til nærmeste heltall.
 
-## Dypdykk
-Det er viktig å merke seg at Math.random() ikke genererer ekte tilfeldige tall, men heller tall basert på en algoritme. Derfor kan det være lurt å bruke andre metoder for å generere tilfeldige tall hvis sikkerhet er et viktig faktor for programmet ditt.
+For å generere et tilfeldig tall innenfor et bestemt intervall, for eksempel mellom 20 og 50, kan vi bruke følgende kode:
 
-En annen viktig ting å merke seg er at når du genererer tilfeldige tall i en løkke, bør du ikke kalle Math.random() hver gang. Dette er fordi funksjonen kan generere samme tall flere ganger på rad, noe som ikke er ønskelig. I stedet bør du kalle Math.random() utenfor løkken og lagre resultatet i en variabel som du bruker inni løkken.
+```Javascript
+// Eksempel på å generere et tilfeldig tall mellom 20 og 50
+let tilfeldigTall = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
+console.log(tilfeldigTall); // Output: et tilfeldig tall mellom 20 og 50
+```
+
+## Dykk dypere
+
+Ved å bruke Math.random() -funksjonen, vil tallene vi genererer alltid være tilfeldige, men de vil ikke nødvendigvis være helt tilfeldige. Dette skyldes at funksjonen er basert på en algoritme og påvirkes av faktorer som datamaskinens klokke og kjørende prosesser.
+
+For å få enda mer tilfeldige tall kan vi bruke et såkalt "seed" eller utgangspunkt. Dette er et tall vi gir til Math.random() -funksjonen og som vil påvirke den genererte sekvensen av tall. For å gjøre dette, kan vi bruke en tredjepartsbibliotek som "random-seed" eller "seed-random", som gir oss muligheten til å bruke et seed i Math.random() -funksjonen.
 
 ## Se også
-- [MDN dokumentasjon om Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Generering av tilfeldige tall i Java](https://michael-jamesscott.com/blog/How-To-Generate-Random-Numbers-In-Java/)
-- [Security implications of using Math.random() for generating passwords](https://security.stackexchange.com/questions/219501/why-is-math-random-insecure-for-generating-passwords-and-tokens)
+
+- [MDN Web Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [The Modern Javascript Tutorial: Generating random numbers in a given range](https://javascript.info/task/random-int-min-max)

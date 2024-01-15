@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Omvandla ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "PHP: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför konvertera datum till strängar?
+## Varför
 
-Att konvertera ett datum till en sträng är en vanlig uppgift i PHP-programmering. Det kan behövas för att visa när ett visst evenemang eller datum äger rum, eller för att formatera datumet på ett visst sätt för en viss applikation. Att kunna konvertera datumet till en sträng ger också en mer läsbar och användarvänlig presentation av datumen.
+Att konvertera ett datum till en sträng är en vanlig uppgift inom webbutveckling. Det är viktigt att kunna göra det korrekt för att kunna visa datum i olika format på en webbsida eller i en applikation. 
 
-## Så här gör du det:
+## Hur man gör
+
+Det finns flera sätt att konvertera ett datum till en sträng i PHP. Ett enkelt sätt är att använda inbyggda funktionen `date()`. Detta är ett exempel på hur du kan använda den för att få dagens datum i formatet "YYYY-MM-DD":
 
 ```PHP
-$today = date('Y-m-d'); // Skapar en variabel som innehåller dagens datum (i det här fallet i formatet: ÅÅÅÅ-MM-DD)
-echo $today; // Ger utmatning: 2021-03-24
-
-$nextWeek = date('l, F jS, Y', strtotime('+1 week')); // Skapar en variabel som innehåller datumet för exakt en vecka framåt
-echo $nextWeek; // Ger utmatning: Wednesday, March 31st, 2021
+$date = date("Y-m-d");
+echo $date; // Outputs: 2021-09-27
 ```
 
-I det första exemplet använder vi funktionen `date()` för att skapa en sträng baserad på dagens datum. Vi använder `Y-m-d` för att få utformatet `ÅÅÅÅ-MM-DD`. I det andra exemplet använder vi även funktionen `strtotime()` för att lägga till en vecka på det nuvarande datumet och formaterar sedan strängen med dag, månad och år.
+Du kan också ange ett specifikt datum som ett argument till `date()` istället för att få dagens datum. Till exempel om du vill få datumet för din födelsedag i formatet "DD/MM/YYYY":
 
-## Utforska mer:
+```PHP
+$birthday = date("d/m/Y", strtotime("27 September 1995"));
+echo $birthday; // Outputs: 27/09/1995
+```
 
-Att konvertera datum till strängar kan vara mer komplicerat än dessa enkla exempel. Det finns flera olika formatvalssträngar som kan användas i funktionen `date()` och det går också att skapa egna format genom att använda delar av datumet och kombinera dem på olika sätt. Det finns också flera andra funktioner som kan användas för att manipulera datum och tider i PHP, som `strtotime()` och `mktime()`. Genom att lära sig mer om dessa funktioner kan du enkelt konvertera datum till önskad form och använda dem i din kod.
+Det finns också andra användbara formatflaggor som du kan använda med `date()`. Till exempel kan du få hela namnet på månaden istället för förkortningen genom att använda "F":
 
-## Se även:
+```PHP
+$date = date("F d, Y");
+echo $date; // Outputs: September 27, 2021
+```
 
-- [PHP date() funktionen](https://www.php.net/manual/en/function.date.php)
-- [PHP strtotime() funktionen](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP mktime() funktionen](https://www.php.net/manual/en/function.mktime.php)
+## Djupdykning
+
+När du använder `date()` måste du vara medveten om att den returnerar datum och tid baserat på din servers tidszoninställning. Om du vill använda en annan tidszon kan du använda `date_default_timezone_set()` för att ställa in en annan tidszon innan du använder `date()`.
+
+En annan viktig aspekt är att du måste förstå och följa formatet som anges i dokumentationen för `date()`. Till exempel är "m" för minuter och "M" för månader två helt olika formatflaggor.
+
+## Se även
+
+Här är några länkar till vidare läsning om hur man konverterar datum till strängar i PHP:
+
+- [Date and Time Functions - PHP Manual](https://www.php.net/manual/en/ref.datetime.php)
+- [How to Format a Date in PHP - W3Schools](https://www.w3schools.com/php/php_date.asp)
+- [Date Formats in PHP - GeeksforGeeks](https://www.geeksforgeeks.org/date-formats-in-php/)

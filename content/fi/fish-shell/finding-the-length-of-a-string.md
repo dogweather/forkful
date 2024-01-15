@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Fish Shell: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,29 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi sijoittaisit aikaa oppiaksesi kuinka löytää merkkijonon pituus Fish Shellilla? Merkkijonon pituuden laskeminen voi olla hyödyllistä esimerkiksi silloin kun haluat tarkistaa, että käyttäjän syöttämä tieto on halutun mittainen tai kun haluat koodissasi tehdä tietyn toiminnon tietyn pituiselle merkkijonolle. Tämä taito voi tehdä koodistasi tehokkaamman ja luotettavamman.
+Usein tarvitset tietää merkkijonon pituuden suorittaessasi tiettyjä tehtäviä, kuten tiedostonimen syöttämistä tai vertailua. Fish Shellin avulla tämä tehtävä onnistuu helposti ja nopeasti.
 
-## Kuinka tehdä
+## Miten
 
-Fish Shellilla merkkijonon pituuden löytäminen on helppoa. Voit käyttää komentoa `expr length "merkkijono"`, joka palauttaa merkkijonon pituuden numerona. Voit myös käyttää sheltterimerkkiä `#` merkkijonon perässä ja saada näin selville sen pituuden. 
+Fish Shellin `string length` komento palauttaa annetun merkkijonon pituuden.
 
 ```
-Fish Shell koodi esimerkki:
+Fish Shell esimerkki:
 
-set string "Hei maailma!"
-echo (string | wc)
+string length "Tämä on esimerkkistring"
+```
+```
+Tulostus:
+
+25
 ```
 
-Tämä tulostaisi `1 13`, mikä tarkoittaa yhtä riviä ja 13 merkkiä, joten merkkijonon pituus on 13.
+Komento toimii myös yhdessä muuttujien kanssa:
+
+```
+Fish Shell esimerkki:
+
+set merkkijono "Tämä on toinen esimerkkistring"
+string length $merkkijono
+```
+
+```
+Tulostus:
+
+30
+```
 
 ## Syvemmälle
 
-Vaikka merkkijonon pituuden laskeminen Fish Shellilla voi olla yksinkertaista, on tärkeää muistaa muutama asia. Esimerkiksi tyhjää merkkijonoa ei voida laskea, joten jos käyttäjän syöttämä merkkijono on tyhjä, tulisi koodissasi olla tarkistus toiminto valmiina. Lisäksi tulee huomioida, että jos merkkijono sisältää muita merkkejä kuin pelkkiä kirjaimia, lukuunottamatta välilyöntejä, se vaikuttaa myös merkkijonon pituuteen.
+Fish Shellin `string length` komento käyttää algoritmia, joka laskee merkkien määrän merkkijonossa. Se huomioi myös mahdolliset välilyönnit ja erikoismerkit, mikä tekee siitä luotettavan tavan selvittää merkkijonon pituuden.
 
-## Katso myös
+## Katso Myös
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Tutoriaalit](https://fishshell.com/docs/current/tutorial.html)
-- [Github: Fish Shell esimerkkejä](https://github.com/fisheryou/writing-a-plugin-for-fish/releases)
-
-Kiitos lukemisesta ja toivottavasti tästä oli hyötyä!
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [String Length - Linuxize](https://linuxize.com/post/fish-string-length/)

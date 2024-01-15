@@ -1,5 +1,6 @@
 ---
-title:                "PHP: שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "PHP: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,35 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-חשיבות הפניות HTTP עם אימות בסיסי
+## למה 
 
-כתבות הפניות HTTP עם אימות בסיסי הן חלק חשוב מתכנות ווב. כאשר אתם עובדים עם אתרים או אפליקציות, ייתכן ותצטרכו לשלוח בקשת HTTP עם אימות בסיסי כדי לקבל גישה למידע מוגן. זהו אופציה נפוצה גם כאשר אתם משתמשים ב-API או כאשר אתם מנסים לגשת לאתרים באמצעות תוכנות פתוחות. להלן נסביר את חשיבות השימוש באימות בסיסי בפניות HTTP ואיך לעשות זאת בפעולה.
+# אותנו אנשים שולחים בקשות HTTP עם אימות בסיסי 
 
-כיצד לשלוח פנייה עם אימות בסיסי ב-PHP
+שליחת HTTP בקשה עם אימות בסיסי היא פעולה נפוצה ביישומי התוכנה המבוססים על רשת. זהו תהליך שמאפשר למשתמשים להתחבר ולגשת למרבי התוכן הזמינים במקומות שונים של האינטרנט. האימות הבסיסי מספק שכבת אבטחה פשוטה כדי להבטיח כי רק משתמשים המורשים יכולים לגשת למידע.
 
-כדי לשלוח בקשת HTTP עם אימות בסיסי ב-PHP, תצטרכו לעבוד עם הפונקציה curl. הנה דוגמא של שליחת בקשה GET לאתר מוגן באמצעות אימות בסיסי:
+## איך לעשות 
 
-```PHP
+```
 <?php 
-// URL ופרטי התחברות
-$url = 'https://example.com/api/data';
-$username = 'my_username';
-$password = 'my_password';
+// ייבוא הספריה עבור הבקשות ה-HTTP
+require 'vendor/autoload.php'; 
 
-// הכנת המופע של curl והגדרת האופציות
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+// יצירת אובייקט עבור הפנייה 
+$request = new \GuzzleHttp\Psr7\Request('GET', 'https://www.example.com/api/users', [
+    'Auth' => ['username', 'password'] // שם משתמש וסיסמה לאימות בסיסי 
+]);
 
-// שליחת הבקשה
-$response = curl_exec($ch);
-curl_close($ch);
+// שליחת הבקשה והקבלת התגובה
+$response = \GuzzleHttp\Client->send($request);
 
-// הדפסת תוצאת הבקשה
-echo $response;
-?>
+// הדפסת תוכן התגובה 
+echo \GuzzleHttp\Stream\BufferStream(@$response->getBody()); 
 ```
 
-כרגע אנו משתמשים בפונקציות curl כדי לבצע את הפנייה עם אימות בסיסי. לפני שנשלח את הבקשה, אנו מגדירים את הפרמטרים הנחוצים לפונקציה, כולל ה-URL של האתר, שם המשתמש והסיסמה. על מנת לבצע אימות בסיסי, נקבע את אפשרות CURLAUTH_BASIC כפרמטר מתאים לפקודת ה-curl_setopt. בכתבת זו אנו מנתחים את המשתנים של התחברות, אך ייתכן שבבקשתכם למקבל תוצאות כלשהן אשר
+### תגובה:
+
+```
+{
+    "status": "success", 
+    "data": {
+        "id": 123, 
+        "name": "John Doe", 
+        "email": "john@example.com"
+    }
+}
+```
+
+## מעמיקים 
+
+שליחת בקשת HTTP עם אימות בסיסי מתבצעת על ידי הוספת כותרת ה- "Authenticate" בכותרת הבקשה. כותרת זו מכילה שתי כרטיסיות, אחת עבור השם המשתמש ואחת עבור הסיסמה של המשתמש. הערך של הכרטיסיות מודרת עם נקודת רישון (:), כמו "username:password". מומלץ להשתמש בכתבים 64-ביט ליצירת ערך אימות מוצפן בסיסי64.
+
+## ראה גם 
+
+[חבילת Guzzle HTTP](https://packagist.org/packages/guzzlehttp/guzzle) - ייבוא ספריית Guzzle כדי לאפשר שליחת בקשות HTTP בקלות ובאמינות.
+
+[מדריך Laravel Passport על אימות בסיסי](https://laravel.com/docs/6.x/passport#introduction) - מדריך של לעשות אימות בסיסי באמצעות חבילת Passport בלר

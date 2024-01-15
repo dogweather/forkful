@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "TypeScript: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,43 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det finns många olika skäl till varför någon skulle vilja ladda ner en webbsida. Det kan vara för att spara information, utveckla en egen webbapplikation eller bara för enkel åtkomst när du inte är uppkopplad.
+Om du är intresserad av webbutveckling och vill lära dig ett kraftfullt programmeringsspråk, kan det vara värt att ta en titt på TypeScript. Det är ett modernt objektorienterat språk som kompilerar till ren JavaScript-kod och ger utvecklare möjlighet att skriva kod på ett mer strukturerat och robust sätt.
 
-## Så här
+## Hur man gör
 
-För att ladda ner en webbsida med TypeScript använder du dig av biblioteket "node-fetch". Detta gör det möjligt att göra HTTP-förfrågningar från din TypeScript-kod. Börja med att installera biblioteket med kommandot:
+För att använda TypeScript för att ladda ner en webbsida behöver du först installera Node.js och NPM på din dator. När det väl är installerat kan du enkelt installera TypeScript genom kommandot `npm install -g typescript`. Sedan kan du följa dessa steg för att ladda ner en webbsida:
 
+1. Skapa en ny mapp och öppna den i din terminal eller kommandoprompt.
+2. Skapa en ny fil, till exempel `downloader.ts`, och öppna den i din favoritkodredigerare.
+3. Skriv följande kod i filen:
+
+```TypeScript
+import * as fs from 'fs';
+import * as https from 'https';
+
+// Ladda ner webbsida och spara den som en textfil
+https.get('https://www.example.com', (response) => {
+  response.setEncoding('utf8');
+
+  // Skapa en ström från responsen för att skriva till en fil
+  const writeStream = fs.createWriteStream('output.html');
+
+  // Skriv responsen till vår fil
+  response.on('data', (chunk) => {
+    writeStream.write(chunk);
+  });
+
+  // När all data har skrivits klart stänger vi strömmen och sparar filen
+  response.on('end', () => {
+    writeStream.end();
+    console.log('Webbsida laddad ner och sparad som "output.html"');
+  });
+}).on('error', (error) => {
+  console.error(`Fel vid nedladdning av webbsida: ${error.message}`);
+});
 ```
-npm install node-fetch
-```
 
-Sedan kan du använda följande kod för att ladda ner en webbsida och spara den som en textfil:
+4. Spara filen och gå tillbaka till din terminal eller kommandoprompt.
+5. Kör kommandot `tsc downloader.ts` för att kompilera filen till JavaScript.
+6. Kör sedan kommandot `node downloader.js` för att köra din kod.
 
-```
-import fetch from 'node-fetch';
-
-async function downloadWebpage(url: string, fileName: string) {
-  // hämta webbsidan
-  const response = await fetch(url);
-  // hämta innehållet som text
-  const text = await response.text();
-  // spara texten i en textfil
-  fs.writeFileSync(fileName, text);
-}
-
-// anropa funktionen och ange URL och filnamn
-downloadWebpage("https://www.example.com", "example.txt");
-```
-
-När koden har kört kommer det finnas en fil med namnet "example.txt" i samma mapp som din TypeScript-fil.
+Du borde nu ha en ny fil som heter "output.html" i din mapp, som innehåller den nedladdade webbsidan.
 
 ## Djupdykning
 
-När du laddar ner en webbsida med TypeScript är det viktigt att förstå hur HTTP-förfrågningar fungerar. En HTTP-förfrågan är en begäran som skickas från en klient (t.ex. en webbläsare eller ett program) till en server. För att ladda ner en webbsida behöver du skicka en GET-förfrågan till rätt URL och sedan hantera det svar som servern skickar tillbaka.
-
-När du använder "node-fetch" biblioteket skapas ett "Response" objekt som innehåller information om förfrågan och det svar som servern skickade. I det här fallet använder vi metoden "text()" för att hämta innehållet på webbsidan som en textsträng. Detta gör det möjligt att spara innehållet på webbsidan som en textfil.
+I exemplet ovan använde vi `https`-modulen för att skicka en HTTP-begäran till webbsidan och hämta responsen. Vi använde också `fs`-modulen för att skapa en ström och skriva responsen till en fil. Det finns många andra funktioner som kan användas för att anpassa din kod och lägga till funktioner som hantering av fel, parsning av HTML och mycket mer.
 
 ## Se även
 
-- [node-fetch dokumentation](https://www.npmjs.com/package/node-fetch)
-- [En guide till TypeScript](https://www.typescriptlang.org/docs/)
+- [Officiell TypeScript-dokumentation](https://www.typescriptlang.org/docs/)
+- [Node.js-dokumentation](https://nodejs.org/en/docs/)

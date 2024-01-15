@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Creación de un archivo temporal"
-simple_title:         "Creación de un archivo temporal"
+title:                "Creando un archivo temporal"
+html_title:           "Elm: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -9,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-En la programación, a veces es necesario crear archivos temporales para almacenar datos de forma eficiente o para realizar ciertas operaciones. En Elm, también hay una forma de hacerlo y en este artículo te voy a enseñar cómo.
+## ¿Por qué crear un archivo temporal?
 
-## Cómo hacerlo
-Para crear un archivo temporal en Elm, podemos utilizar la función "File.temp" que se encuentra en el módulo "File". Veamos un ejemplo de cómo crear un archivo temporal y escribir un texto en él:
+A veces, cuando estamos escribiendo y ejecutando programas, necesitamos crear archivos temporales para almacenar temporalmente datos o resultados. Esto puede ser útil en situaciones en las que queremos guardar información que solo es relevante temporalmente y no necesitamos conservarla permanentemente.
 
-``` Elm
-import File
+## Cómo crear un archivo temporal en Elm
 
-main =
-  File.temp "blog.txt"
-    |> Result.map .path
-    |> Result.andThen (File.write "¡Hola mundo!")
+En Elm, podemos crear un archivo temporal utilizando la función `File.tempFile`, que toma como argumentos el nombre y la extensión del archivo temporal que queremos crear. Por ejemplo:
+
+```
+Elm
+File.tempFile "miArchivo" ".txt"
 ```
 
-En este ejemplo, primero importamos el módulo "File" y luego llamamos a la función "File.temp" con el nombre que queremos darle a nuestro archivo temporal. Luego, utilizamos la función "Result.map" para obtener la ruta del archivo y la función "Result.andThen" para escribir el texto "¡Hola mundo!" dentro de él.
+Esto creará un archivo temporal llamado "miArchivo.txt" en la misma carpeta donde se está ejecutando el programa.
 
-## Deep Dive
-Ahora, profundicemos un poco más en la creación de archivos temporales en Elm. La función "File.temp" también nos permite especificar la ubicación y el tipo de archivo que queremos crear. Por ejemplo, podemos crear un archivo temporal en una carpeta específica y especificar que sea un archivo de texto.
+Ahora que hemos creado el archivo temporal, podemos escribir en él utilizando la función `File.write`, que toma como argumentos el nombre del archivo y los datos que queremos escribir en él. Por ejemplo:
 
-Otra cosa interesante que podemos hacer es utilizar el módulo "System.File" para obtener información sobre el archivo temporal que acabamos de crear, como su tamaño o la fecha en la que se creó. Esto puede ser útil si queremos realizar operaciones adicionales con el archivo temporal.
+```
+Elm
+File.write "miArchivo.txt" "¡Hola mundo!"
+```
+
+Luego podemos leer los datos del archivo utilizando la función `File.read` y mostrarlos en nuestra aplicación o realizar otras operaciones con ellos.
+
+## Profundizando en la creación de archivos temporales
+
+Es importante tener en cuenta que los archivos temporales se eliminan automáticamente una vez que se cierra la aplicación. Esto significa que no debemos almacenar datos importantes o permanentes en ellos, ya que corre el riesgo de perderlos.
+
+También podemos especificar una ruta de archivo específica utilizando la función `File.tempFileIn`, que toma como argumentos la ruta de archivo y el nombre y la extensión del archivo temporal. Esto puede ser útil si queremos crear el archivo en una ubicación específica.
+
+En general, es importante recordar que los archivos temporales deben utilizarse con cuidado y siempre deben eliminarse adecuadamente para evitar almacenar datos innecesarios o sensibles.
 
 ## Ver también
-- [Documentación oficial de Elm sobre la función "File.temp"](https://package.elm-lang.org/packages/elm/bytes/latest/File#temp)
-- [Módulo System.File](https://package.elm-lang.org/packages/elm/core/latest/System-File)
+
+- Documentación oficial de Elm sobre la función `File` (en inglés): https://package.elm-lang.org/packages/elm/file/latest/File
+- Ejemplo de uso de `File.tempFile` en Elm: https://gist.github.com/JoeyEremondi/0318c202436b607ce4181c61d95b6370

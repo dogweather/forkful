@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Recherche et remplacement de texte"
+title:                "Recherche et remplacement de texte"
+html_title:           "Haskell: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,44 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'une des tâches courantes en programmation est le remplacement de texte. Que vous soyez débutant ou expérimenté en Haskell, il est important de savoir comment effectuer cette tâche de manière efficace et en utilisant les bonnes méthodes.
+Il peut être très pratique de pouvoir effectuer des recherches et remplacements de texte dans un fichier ou une chaîne de caractères en utilisant un langage de programmation. Cela peut vous faire gagner un temps précieux lorsque vous avez besoin de modifier plusieurs éléments à la fois.
 
-## Comment faire
+## Comment Faire
 
-Haskell offre plusieurs façons d'effectuer la recherche et le remplacement de texte dans une chaîne de caractères. La méthode la plus simple consiste à utiliser la fonction `substitute` de la bibliothèque `Data.String.Utils`. Voici un exemple de code montrant comment utiliser cette fonction :
-
-```Haskell
-import Data.String.Utils (replace)
-
-main = do
-  let phrase = "Bonjour tout le monde!"
-  let nouvellePhrase = replace "Bonjour" "Salut" phrase
-  print nouvellePhrase
-```
-Cet exemple remplace le mot "Bonjour" par "Salut" dans la phrase "Bonjour tout le monde!". Le résultat affiché sera "Salut tout le monde!".
-
-Mais si vous voulez aller plus loin et remplacer toutes les occurrences d'un mot dans une phrase, vous pouvez utiliser les expressions régulières avec la bibliothèque `Text.Regex.Posix`. Voici un exemple de code montrant comment utiliser cette méthode :
+La langue de programmation Haskell offre une manière simple et efficace pour effectuer des recherches et remplacements de texte. Voici un exemple:
 
 ```Haskell
-import Text.Regex.Posix
+import Data.Text
 
-main = do
-  let phrase = "Bonjour tout le tout tout le monde!"
-  let nouvellePhrase = subRegex (mkRegex "le") phrase "la"
-  print nouvellePhrase
+-- Définir une chaîne de caractères
+let texte = "Bonjour, Je m'appelle Hugo et j'aime programmer en Haskell."
+
+-- Effectuer un remplacement
+let nouveauTexte = replace "Haskell" "Python" texte
+
+-- Afficher le nouveau texte
+print nouveauTexte
 ```
-Dans cet exemple, nous avons remplacé toutes les occurrences du mot "le" par "la" dans la phrase donnée. Le résultat sera "Bonjour tout la tout tout la monde!".
 
-## Plongée en profondeur
+Sortie:
 
-En Haskell, il existe plusieurs fonctions et bibliothèques dédiées à la recherche et au remplacement de texte, telles que `Data.Text`, `Data.ByteString`, etc. Chacune de ces bibliothèques a ses propres avantages et fonctionnalités, il est donc important de prendre le temps d'apprendre à les utiliser correctement.
+```
+Bonjour, Je m'appelle Hugo et j'aime programmer en Python.
+```
 
-De plus, il est également essentiel de comprendre le concept des expressions régulières et leur utilisation en Haskell. Les expressions régulières peuvent sembler complexes au début, mais une fois que vous les maîtriserez, elles deviendront un outil puissant pour le remplacement de texte.
+Cette méthode utilise la fonction `replace` de la bibliothèque `Data.Text` pour remplacer toutes les occurrences du mot "Haskell" par "Python" dans notre chaîne de caractères. Vous pouvez également utiliser cette méthode pour remplacer des caractères spécifiques ou des expressions régulières.
 
-## Voir aussi
+## Plongée Profonde
 
-Pour plus d'informations sur la recherche et le remplacement de texte en Haskell, vous pouvez consulter les liens suivants :
+En plus de la fonction `replace`, la bibliothèque `Data.Text` offre également d'autres fonctions utiles pour effectuer des recherches et remplacements de texte. Par exemple, la fonction `stripPrefix` permet de supprimer un préfixe de la chaîne de caractères, tandis que `stripSuffix` permet de supprimer un suffixe. La fonction `pack` permet de transformer une liste de caractères en une chaîne de caractères, et la fonction `unpack` fait le contraire.
 
-- [Documentation officielle de Haskell sur les expressions régulières](https://wiki.haskell.org/Regular_expressions)
-- [Tutoriel sur les expressions régulières en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/competition-winners/tobias-ostlund/parsing-a-simple-imperative-language)
-- [Documentation officielle de la bibliothèque `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regular-Posix.html)
+Il est également important de noter que la bibliothèque `Data.Text` utilise le type de données `Text` plutôt que `String` pour représenter les chaînes de caractères. Cela offre des performances supérieures pour les opérations de recherche et de remplacement.
+
+## Voir Aussi
+
+- [Documentation de la bibliothèque `Data.Text`](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Tutoriel sur la manipulation de chaînes de caractères en Haskell](https://wiki.haskell.org/Handling_strings_in_Haskell)

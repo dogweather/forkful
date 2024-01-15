@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증으로 http 요청 보내는 방법"
+html_title:           "Swift: 기본 인증으로 http 요청 보내는 방법"
+simple_title:         "기본 인증으로 http 요청 보내는 방법"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 HTTP 요청에 기본 인증을 사용하는가?
-HTTP 요청은 웹 서버에서 데이터를 가져오는 중요한 방법입니다. 기본 인증은 보안을 강화하기 위해 요청을 보내는 사용자를 인증하는 데 사용됩니다.
+## 왜
 
-## 어떻게 하면 HTTP 요청에 기본 인증을 보낼 수 있을까?
-기본 인증을 사용하여 HTTP 요청을 보내는 방법은 간단합니다. 먼저 URL을 생성하고 해당 URL을 `URL` 객체로 변환해야 합니다. 그런 다음 생성한 URL을 사용하여 `URLRequest` 객체를 만들고 메소드를 `GET`으로 설정합니다. 그 후, `HTTPBody`를 설정하여 요청에 필요한 데이터를 추가하고, `HTTPMethod`를 `POST`로 설정하여 요청을 보냅니다.
+HTTP 요청을 기본 인증과 함께 보내는 것이 중요한 이유는 서비스 또는 애플리케이션의 보안을 위해 사용자의 자격 증명을 확인해야 할 때입니다. 이를 통해 안전하지 않은 정보에 접근하는 것을 방지할 수 있습니다.
+
+## 진행 방법
+
+이제 본격적으로 Swift에서 HTTP 요청에 기본 인증을 추가하는 방법을 알아보겠습니다. 먼저 사용해야 할 라이브러리는 'Alamofire'입니다. Alamofire는 Swift에서 편리하게 HTTP 요청을 보낼 수 있도록 도와주는 라이브러리입니다.
 
 ```Swift
-// URL을 생성하고 이를 URL 객체로 변환합니다.
-let urlString = "http://www.example.com"
-let url = URL(string: urlString)
+import Alamofire
+```
 
-// URLRequest 객체를 생성하고 메소드를 GET으로 설정합니다.
-var request = URLRequest(url: url!)
-request.httpMethod = "GET"
+이제 'Alamofire.request'를 사용하여 HTTP 요청을 보냅니다. 이때, 인증에 필요한 매개변수를 추가해주어야 합니다.
 
-// Basic 인증 헤더를 생성하여 요청에 추가합니다.
-let username = "username"
-let password = "password"
-let loginString = String(format: "%@:%@", username, password)
-let loginData = loginString.data(using: .utf8)
-let base64LoginString = loginData?.base64EncodedString()
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-
-// HTTP 요청을 보냅니다.
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    // 요청이 성공하면 데이터를 받아옵니다.
-    if let data = data {
-        let dataString = String(data: data, encoding: .utf8)
-        print(dataString)
-    }
+```Swift
+Alamofire.request("https://example.com", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Basic username:password"]).responseJSON { response in
+    print(response)
 }
-task.resume()
 ```
 
-**출력 예시:**
+위의 코드에서 'headers' 매개변수에 'Basic' 인증을 사용하고, 인증할 사용자 아이디와 비밀번호를 입력하면 됩니다. 이제 서버로부터 받은 응답을 확인할 수 있습니다.
 
-```Swift
-Optional("This is the response from the server.")
-```
+## 더 깊게 파헤치기
 
-## 깊게 파보아보기
-기본 인증은 사용자를 인증하기 위해 사용자 이름과 비밀번호를 인코딩하는 방식으로 작동합니다. 요청을 보내기 전에 사용자 이름과 비밀번호를 Base64로 인코딩한 후 헤더에 추가하면 서버에서는 해당 헤더를 읽어서 사용자를 인증합니다. 이는 보안 위험성이 있기 때문에 HTTPS와 같은 보안 연결을 사용하는 것이 좋습니다.
+위의 예제에서는 HTTP GET 메소드를 사용했지만, POST, PUT, DELETE 등 다른 메소드를 사용하여 요청을 보낼 수도 있습니다. 그리고 인증 정보를 직접 입력하는 것 말고도 저장된 자격 증명 정보를 사용할 수도 있습니다. 이 외에도 Alamofire를 사용하지 않고 URLSession을 사용하여도 HTTP 요청에 인증을 추가할 수 있습니다.
 
-## 같이 보기
-- [URL - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/url)
-- [URLRequest - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlrequest)
-- [앱 개발을 위한 Swift 기초 강좌 - 프로그래머스](https://programmers.co.kr/learn/courses/4)
+## 더 알아보기
+
+- [Alamofire 공식 문서](https://github.com/Alamofire/Alamofire)
+- [iOS 네트워킹 실제](https://www.raywenderlich.com/102-afnetworking-tutorial-getting-started) (영어)
+
+## 같이 참고하기

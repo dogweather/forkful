@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Beräkning av ett datum i framtiden eller förflutna"
+title:                "Beräkning av ett datum i framtiden eller förflutna"
+html_title:           "Elm: Beräkning av ett datum i framtiden eller förflutna"
 simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Ibland behöver vi kunna räkna ut ett datum i framtiden eller i det förflutna inom Elm programmering. Det kan vara för att planera händelser eller skapa dynamiska tidslinjer. I detta blogginlägg kommer vi att utforska hur man gör detta.
+
+Att kunna beräkna datum i framtiden eller förflutna är en användbar funktion för många programmerare. Det kan hjälpa till att hantera schemaläggning eller för att skapa en dynamisk applikation som visar relevanta datum för användaren.
 
 ## Så här gör du
-För att räkna ut ett datum i Elm använder vi modulen `Time`. Vi kan behöva importera den med kommandot `import Time` i början av vår kod. Sedan kan vi använda funktionen `add` för att lägga till ett visst antal enheter (minuter, timmar, dagar, etc.) till ett befintligt datum. Här är ett exempel på hur man beräknar ett datum 3 dagar framåt:
+
+För att beräkna ett datum i framtiden eller förflutna i Elm, behöver du använda funktionen `Date` från Elm's inbyggda tidsmodul. Det finns två parametrar som måste anges för att få fram ett korrekt datum:
+
+1. Det aktuella datumet, representerat av en `Date`-typ.
+2. Antalet dagar som ska läggas till eller subtraheras från det aktuella datumet, representerat av ett heltal.
+
+Här är ett exempel på hur du skulle använda funktionen för att få dagens datum plus fem dagar framåt:
 
 ```Elm
-add Time.days 3 (Time.now)
-```
+import Date exposing (..)
 
-Detta skulle returnera ett datum som är 3 dagar efter detta aktuella datum. Vi kan även använda negativa värden för att beräkna ett datum i det förflutna. Här är ett exempel:
+today = Date.fromDate 2021 5 24
+
+futureDate = Date.addDays 5 today
+
+-- futureDate blir nu Date 2021 5 29
+```
+Det är också möjligt att använda en negativ siffra för att få ett datum i förflutna. Här är ett exempel på hur du skulle få datumet tre dagar bakåt i tiden:
 
 ```Elm
-add Time.months -2 (Time.now)
+import Date exposing (..)
+
+today = Date.fromDate 2021 5 24
+
+pastDate = Date.addDays -3 today
+
+-- pastDate blir nu Date 2021 5 21
 ```
 
-Detta skulle ge oss ett datum som är 2 månader före det aktuella datumet. Det finns också andra funktioner som `sub` och `addHours` som kan användas för mer specifika beräkningar.
+Du kan också använda funktionen `addWeeks`, `addMonths`, `addYears` för att få ett datum med en annan tidsperiod än dagar.
 
 ## Djupdykning
-När man beräknar datum i Elm är det viktigt att veta hur datatypen `Time` fungerar. Den representerar tiden som antalet millisekunder sedan 1 januari 1970. Detta är även känt som Unix-epoken. Genom att lägga till eller subtrahera ett visst antal enheter från detta nummer kan vi beräkna ett nytt datum.
 
-Det är också värt att notera att tiden som representeras av datatypen `Time` är oberoende av användarens tidszon. Detta är viktigt att tänka på när man arbetar med internationella applikationer.
+När du använder funktionerna för att beräkna ett datum i framtiden eller förflutna, är det viktigt att vara medveten om några saker. Först och främst måste du se till att det aktuella datumet är korrekt formaterat enligt `yyyy mm dd`-formatet. Om detta inte stämmer kan funktionen ge ett felaktigt datum.
+
+För det andra, om du försöker skapa ett datum som inte existerar, till exempel den 31 februari, kommer funktionen att anpassa det till ett giltigt datum såsom den 2 mars. Detta kan orsaka problem om du har specifika datumkrav i din applikation.
+
+Slutligen, om du behöver hantera tidszoner, måste du använda en extern tidsmodul från en tredjepartsleverantör, eftersom Elm's inbyggda tidsmodul inte har stöd för det.
 
 ## Se även
-- [Elm Time dokumentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Time Demo](https://elm-lang.org/examples/time)
-- [Beräkna datum i Elm för olika tidszoner](https://discourse.elm-lang.org/t/how-to-calculate-date-for-time-zone/1880)
+
+- [Officiell tidsmodul för Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Exempel på att använda funktionen `Date` i en Elm-applikation](https://gist.github.com/itsmewulf/7edac8fe31db9278452ffb3a0190f35c)

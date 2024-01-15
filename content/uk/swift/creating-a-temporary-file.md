@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Створення тимчасового файлу."
-simple_title:         "Створення тимчасового файлу."
+title:                "Створення тимчасового файлу"
+html_title:           "Swift: Створення тимчасового файлу"
+simple_title:         "Створення тимчасового файлу"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,53 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Чому
+## Чому
 
-Створення тимчасового файлу є важливою частиною програмування в Swift, оскільки воно дозволяє зберігати тимчасові дані, які можуть бути використані для обробки або передачі у більшій програмі. Це дуже зручно для тимчасової збереження результатів обчислень або для зберігання даних, які потрібні для подальшої обробки.
+Іноді в процесі програмування нам потрібно створити тимчасовий файл для збереження часом непотрібної інформації або для тестування певної частини коду. Це може бути корисно, оскільки тимчасові файли автоматично видаляються після завершення виконання програми.
 
-# Як створити тимчасовий файл
+## Як
 
-Існує кілька способів створення тимчасового файлу в Swift, але основний підхід полягає у використанні класу `FileManager`. Нижче подані приклади коду і його результату, які допоможуть вам зрозуміти, як це працює.
+Один зі способів створити тимчасовий файл у Swift - використати функцію `URL`, яка дозволяє нам генерувати URL-адреси для файлів в нашій системі.
 
 ```Swift
-// Імпортування модуля FileManager
-import Foundation
+// Створення шляху до тимчасового файлу
+let temporaryFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temporary_file.txt")
 
-// Створення об'єкту FileManager
-let fileManager = FileManager.default
+// Записуємо строку у тимчасовий файл
+let text = "Це текст, який буде записаний у тимчасовий файл."
+try text.write(to: temporaryFileURL, atomically: true, encoding: .utf8)
 
-// Створення шляху до тимчасової папки
-let temporaryDirectory = fileManager.temporaryDirectory
-
-// Створення імені тимчасового файлу
-let tempFileName = "file.txt"
-
-// Повна шляху до тимчасового файлу
-let tempFilePath = temporaryDirectory.appendingPathComponent(tempFileName)
-
-// Створення тимчасового файлу з текстовим вмістом
-try "Це тимчасовий файл".write(to: tempFilePath, atomically: true, encoding: .utf8)
+// Читаємо дані з тимчасового файлу та виводимо їх у консоль
+let data = try Data(contentsOf: temporaryFileURL)
+print(String(data: data, encoding: .utf8))
 ```
 
-Результат:
+В результаті, ми отримаємо вивід у консолі:
 
 ```
-/tmp/file.txt
+Це текст, який буде записаний у тимчасовий файл.
 ```
 
-Зверніть увагу, що тимчасовий файл буде збережений у папці `/tmp`, але це може відрізнятися залежно від операційної системи.
+## Глибше
 
-# Поглиблене дослідження
+Розглянемо кожен рядок коду ближче. У першому рядку ми використовуємо функцію `NSTemporaryDirectory()`, щоб отримати шлях до тимчасової директорії нашої системи, і потім додаємо до неї назву нашого тимчасового файлу. Далі, ми використовуємо метод `write(to:atomically:encoding:)`, щоб записати наш текстовий рядок у створений тимчасовий файл. У цьому методі, ми передаємо посилання на наш тимчасовий файл, аргумент `atomically` вказує, чи ми хочемо, щоб файл був збережений атомарно (тобто, якщо операція запису буде перервана, файл буде видалено), а `encoding` вказує, яке кодування ми хочемо використовувати для запису даних. У останньому рядку ми використовуємо метод `Data(contentsOf:)` для отримання даних з нашого тимчасового файлу та виводимо їх у консоль.
 
-Створення тимчасових файлів у Swift може бути більш складною задачею, особливо якщо необхідно зберігати більш складні дані. Для цього існує багато інших методів і класів, таких як `NSFileHandle` або `NSFileManagerDelegate`, які дозволяють більше контролю над процесом створення тимчасових файлів. Тому, якщо ви плануєте використовувати тимчасові файли у ваших проектах, рекомендуємо ретельно вивчити Swift документацію та практикуватися для кращого розуміння цієї теми.
+## Дивіться також
 
-# Додаткові ресурси
-
-- https://developer.apple.com/documentation/foundation/filemanager
-- https://www.londonappdeveloper.com/how-to-create-a-temporary-file-in-swift/
-- https://www.raywenderlich.com/950-sandboxing-and-the-file-system-in-swift
-- https://www.hackingwithswift.com/example-code/system/how-to-create-a-temporary-file-securely-using-filename-unique
-
-# Дивись також
-
-- https://www.programmersought.com/article/89623881730/
+- Офіційна документація Swift про роботу з файлами: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Стаття про функцію `NSTemporaryDirectory()`: https://www.hackingwithswift.com/example-code/foundation/how-to-create-a-temporary-file-and-directory-using-the-temporarydirectory-method
+- Туторіал про роботу з файлами у Swift: https://www.raywenderlich.com/9482-ios-file-management-tutorial-working-with-directories-in-swift

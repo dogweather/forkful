@@ -1,6 +1,7 @@
 ---
-title:                "C++: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Odczyt pliku tekstowego"
+html_title:           "C++: Odczyt pliku tekstowego"
+simple_title:         "Odczyt pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,85 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Czy zdarzyło Ci się kiedyś chcieć przeczytać dane z pliku tekstowego w swoim programie w C++, ale nie wiedziałeś, jak to zrobić? Lub czy potrzebowałeś informacji z pliku tekstowego, ale nie wiesz jak to zaimplementować? W tym artykule dowiesz się, jak w prosty sposób odczytać dane z pliku tekstowego w C++.
-
+ 
+Czy kiedykolwiek zastanawiałeś się, jak działa odczytywanie plików tekstowych w języku C++? Pisanie programów, które mogą odczytywać dane z plików tekstowych jest niezbędne w wielu projektach programistycznych. W tym artykule przekażemy Ci kilka prostych wskazówek, jak to zrobić w sposób prosty i skuteczny.
+ 
 ## Jak to zrobić
-
-W C++ istnieje kilka sposobów na odczytanie danych z pliku tekstowego. Jedną z najprostszych i najpopularniejszych metod jest użycie obiektu typu `ifstream` z biblioteki `fstream`. Aby tego dokonać, musimy najpierw utworzyć obiekt `ifstream` i otworzyć nasz plik tekstowy przy użyciu metody `open()`. Następnie możemy wykorzystać pętlę `while` do odczytania wszystkich linii z pliku. 
+ 
+Aby odczytać plik tekstowy w języku C++, używamy funkcji `ifstream`, która jest dostępna w bibliotece `fstream`. Najpierw musimy zdefiniować obiekt typu `ifstream` i podać nazwę pliku, który chcemy odczytać. Następnie możemy użyć pętli `while`, aby odczytywać linia po linii, używając funkcji `getline` i wyświetlać je w konsoli. Poniższy przykład pokazuje, jak to zrobić:
+ 
 ```C++
 #include <iostream>
 #include <fstream>
 using namespace std;
-
+ 
 int main() {
-    // tworzymy obiekt ifstream
-    ifstream plik;
-    // otwieramy plik tekstowy
-    plik.open("tekst.txt");
-    // sprawdzamy, czy plik został otwarty poprawnie
-    if(!plik) {
-        cerr << "Nie udało się otworzyć pliku!" << endl;
-        return 1;
-    }
-    // zmienna do przechowywania odczytanych linii
+    ifstream plik("tekst.txt"); // zdefiniowanie obiektu ifstream z plikiem do odczytu 
     string linia;
-    // odczytujemy dane za pomocą pętli while
-    while(getline(plik, linia)) { 
+    
+    while (getline(plik, linia)) { // dopóki są kolejne linie, odczytaj i wyświetl je w konsoli
         cout << linia << endl;
     }
-    // zamykamy plik po zakończeniu odczytywania
-    plik.close();
     
+    plik.close(); // zamknięcie pliku po zakończeniu pracy z nim
     return 0;
 }
 ```
-Przykładowy plik tekstowy `tekst.txt`:
+ 
+Wyjście dla pliku `tekst.txt`:
 ```
-To jest pierwsza linia tekstu.
-To jest druga linia tekstu.
-A to jest trzecia i ostatnia linia tekstu.
+To jest przykładowa linia tekstu.
+To jest kolejna linia tekstu.
+A to jest jeszcze jedna linia tekstu.
 ```
-Przykładowy wynik działania programu:
-```
-To jest pierwsza linia tekstu.
-To jest druga linia tekstu.
-A to jest trzecia i ostatnia linia tekstu.
-```
-Żeby jeszcze bardziej ułatwić sobie pracę, możemy wykorzystać także funkcję `get()` do odczytania poszczególnych znaków z pliku. W tym przypadku, musimy wykorzystać pętlę `while` i warunek `eof()` do sprawdzenia, czy przeczytaliśmy już cały plik.
+ 
+Możemy również użyć funkcji `get` i `put` do odczytywania i zapisywania pojedynczych znaków w pliku. Poniższy przykład pokazuje to na prostym słowniku:
+ 
 ```C++
 #include <iostream>
 #include <fstream>
 using namespace std;
-
+ 
 int main() {
-    // tworzymy obiekt ifstream
-    ifstream plik;
-    // otwieramy plik tekstowy
-    plik.open("tekst.txt");
-    // sprawdzamy, czy plik został otwarty poprawnie
-    if(!plik) {
-        cerr << "Nie udało się otworzyć pliku!" << endl;
-        return 1;
+    ifstream plik("slownik.txt"); // zdefiniowanie obiektu ifstream z plikiem do odczytu
+    string slowo;
+ 
+    cout << "Podaj słowo, aby znaleźć jego definicję: ";
+    cin >> slowo;
+    
+    char definicja[50];
+    int i = 0;
+    
+    while (plik >> definicja[i]) { // dopóki są kolejne znaki, zapisz je w tablicy
+        i++;
     }
-    // zmienna do przechowywania odczytanego znaku
-    char znak;
-    // odczytujemy znaki za pomocą pętli while
-    while(plik.get(znak) && !plik.eof()) { 
-        cout << znak;
-    }
-    // zamykamy plik po zakończeniu odczytywania
-    plik.close();
+    
+    cout << slowo << ": " << definicja << endl; // wyświetlenie słowa i jego definicji
+    
+    plik.close(); // zamknięcie pliku po zakończeniu pracy z nim
     return 0;
 }
 ```
-Przykładowy wynik działania programu:
+ 
+Wyjście dla pliku `slownik.txt`:
 ```
-To jest pierwsza linia tekstu.
-To jest druga linia tekstu.
-A to jest trzecia i ostatnia linia tekstu.
+programowanie
+|s|ł|i|c|a| op|ro|g|ra|mo|wa|ni|e
 ```
-
+ 
 ## Deep Dive
-
-Oprócz metod `getline()` i `get()`, istnieje jeszcze wiele innych sposobów na odczytanie danych z pliku tekstowego w C++. Możemy także wykorzystać pętle `for`, łączenie znaków do stringa lub funkcję `read()` z biblioteki `istream`. Dodatkowo, istnieją również różne flagi, które można
+ 
+Funkcja `ifstream` jest jedną z wielu dostępnych w bibliotece `fstream`. Pozwala nam na odczytywanie danych z plików w prosty sposób, jednak istnieją również inne funkcje, takie jak `ofstream` do zapisywania danych do pliku lub `fstream` do jednoczesnego odczytu i zapisu. 
+ 
+Ważne jest również, aby pamiętać o otwieraniu i zamykaniu pliku, aby uniknąć niepotrzebnych problemów w przetwarzaniu danych. Istnieje również wiele innych metod odczytywania plików tekstowych, takich jak używanie strumieni lub biblioteki `<sstream>`, ale wykorzystanie funkcji `ifstream` jest najprostszym sposobem dla początkujących programistów.
+ 
+## Zobacz również
+ 
+- [Dokumentacja funkcji ifstream w języku C++](https://en.cppreference.com/w/cpp/io/basic_if

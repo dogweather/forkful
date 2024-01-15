@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 사용하기."
+html_title:           "Javascript: 정규 표현식 사용하기."
+simple_title:         "정규 표현식 사용하기."
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜 정규 표현식을 사용해야 하나요?
 
-정규 표현식을 사용하는 이유는 다음과 같습니다. 일반적으로 코드에서 문자열과 패턴을 비교하거나 찾는 작업이 필요할 때 유용합니다. 예를 들어, 이메일 주소나 전화번호와 같은 패턴을 찾거나, 특정 문자열이 포함된 단어를 필터링할 때 정규 표현식을 사용할 수 있습니다.
+정규 표현식은 문자열을 다루는 강력한 도구입니다. 문자열에서 특정 패턴을 찾거나 변경할 수 있으며, 데이터 유효성 검사 및 언어 분석 등 다양한 용도로 활용할 수 있습니다.
+<br>
 
-# 방법
+## 사용 방법
 
-아래는 정규 표현식을 사용하는 간단한 예제 코드와 그 결과입니다. 코드는 Javascript 문법을 따르며, 입력된 문자열 중에서 "hello"라는 단어가 포함되어 있는 경우에만 결과를 출력하는 예제입니다.
+정규 표현식을 사용하는 방법을 알아보겠습니다. 아래 코드 블록에는 문자열을 다루는 기본적인 정규 표현식 예제가 포함되어 있습니다. 이를 통해 정규 표현식이 어떻게 동작하는지 살펴보세요.
+
+```Javascript 
+let str = "I love Javascript!";
+
+// 'javascript'라는 단어를 모두 대문자로 변경
+let newStr = str.replace(/javascript/gi, "JAVASCRIPT");
+console.log(newStr); // I love JAVASCRIPT!
+```
+
+위 코드에서 `replace()` 메소드의 첫 번째 매개변수에는 정규 표현식이 전달되고, 두 번째 매개변수에는 변경할 값이 전달됩니다. `gi`는 정규 표현식의 옵션을 나타내며, `g`는 전체 문자열에서 찾고, `i`는 대소문자를 구분하지 않고 찾는다는 의미입니다.
+
+또 다른 예제를 살펴보겠습니다.
 
 ```Javascript
-let str = "안녕하세요, hello, 잘가";
-let pattern = /hello/;
+let str = "Hello, world!";
+let vowels = str.match(/[aeiou]/gi); // 모음을 찾아 배열로 반환
+console.log(vowels); // ["e", "o", "o"]
+```
 
-if (pattern.test(str)) {
-  console.log("문자열 안에 hello가 포함되어 있습니다.");
+위 코드에서는 `match()` 메소드와 정규 표현식을 사용하여 문자열에서 모음을 찾아 배열로 반환합니다. `/[aeiou]/gi`는 `a, e, i, o, u` 중 하나의 문자를 찾으며, `g`와 `i`는 앞서 설명한 옵션과 동일한 역할을 합니다.
+
+또한, 정규 표현식을 사용하여 문자열에서 특정 패턴을 검사할 수도 있습니다. 예를 들어 이메일 주소의 유효성을 검사하는 코드는 다음과 같이 작성할 수 있습니다.
+
+```Javascript
+let email = "example@gmail.com";
+
+if(email.match(/^[a-z0-9_]{2,20}@[a-z0-9]{2,10}\.[a-z]{2,3}$/i)){
+    console.log("유효한 이메일 주소입니다.");
 } else {
-  console.log("문자열 안에 hello가 포함되어 있지 않습니다.");
+    console.log("유효하지 않은 이메일 주소입니다.");
 }
 ```
+위 코드에서 `match()` 메소드의 첫 번째 매개변수는 이메일 주소의 패턴을 나타내며, 정규 표현식에 대한 설명은 이 공간에서 다루지 않겠습니다. 하지만 만약 이메일 주소가 해당 패턴에 일치하지 않으면 `유효하지 않은 이메일 주소입니다.`가 출력됩니다.
 
-결과:
+## 깊이있게 알아보기
 
-```
-문자열 안에 hello가 포함되어 있습니다.
-```
+정규 표현식은 매우 복잡한 패턴을 나타낼 수 있으며, 이를 활용하면 문자열을 다루는 데 유용합니다. 하지만 정규 표현식을 배우고 이해하는 데는 시간이 걸릴 수 있으며, 실제로 익숙해지려면 연습이 필요합니다. 정규 표현식을 자유자재로 다루고 싶다면 많이 읽고 연습하는 것이 중요합니다. 자세한 내용은 아래의 링크를 참고하세요.
 
-위의 예제는 단순하지만, 정규 표현식은 더 복잡한 패턴과 조건을 적용할 수도 있습니다. 다양한 메타 문자와 특수 문자를 사용하여 패턴을 정의할 수 있으며, 문자열 대신 변수를 사용할 수도 있습니다.
-
-# 깊이 파고들기
-
-정규 표현식을 좀 더 자세히 알아보겠습니다. 정규 표현식은 문자열과 패턴을 매칭하는 과정에서 여러 가지 옵션과 플래그를 사용할 수 있습니다. 예를 들어, "i" 플래그를 사용하면 대소문자를 구분하지 않고 패턴을 검색할 수 있고, "g" 플래그를 사용하면 문자열 내에서 모든 패턴을 검색할 수 있습니다.
-
-또한 정규 표현식 내에서 여러 가지 메타 문자를 조합해서 사용할 수도 있습니다. 예를 들어, [ ]를 사용하면 여러 문자 중 하나를 선택할 수 있고, ^를 사용하면 해당 문자를 제외할 수 있습니다.
-
-더 자세한 내용은 다음의 링크를 참고해주세요:
-
-- [정규 표현식 입문자를 위한 기초 지식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규_표현식#특수_문자)
-- [JavaScript의 정규 표현식 문법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규_표현식)
-- [정규 표현식 실습 사이트](https://regexr.com/)
-
-# 또 다른 방법
-
-- [정규 표현식 연습 문제](https://regexone.com/)
-- [정규 표현식 연습 문제와 해답](https://www.tutorialspoint.com/execute_regular_expression_online.php)
-- [정규 표현식으로 주어진 문자열 가공하기](https://www.sitepoint.com/regular-expressions-javascript/)
-- [정규 표현식으로 문자열 검색하기](https://codeburst.io/javascript-regular-expressions-explained-by-examples-3d02e1112c56)
+##

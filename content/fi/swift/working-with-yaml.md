@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Työskentely yaml:n kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Swift: Työskentely yaml:n kanssa"
 simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,55 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-YAML on käytännöllinen tapa tallentaa tietoa tiedostoihin, jotka ovat helposti luettavissa sekä ihmisille että tietokoneille. Se on erityisen hyödyllinen esimerkiksi sovellusten konfiguraatiotiedostojen käsittelyssä. 
+Miksi sinun pitäisi käyttää YAML-formaattia ohjelmoinnissa? YAML (YAML Ain't Markup Language) on helppolukuinen ja selkeä formaatti, joka on suosittu varsinkin ohjelmistokehittäjien keskuudessa. Se säästää aikaa ja vaivaa tiedostojen käsittelyssä ja tekee koodista helpommin ylläpidettävää.
 
-## Miten
+## Kuinka
 
-YAML:in käyttäminen Swiftissä on helppoa ja nopeaa. Yksi tapa on käyttää YAMLSwift kirjastoa, joka on saatavilla Swift Package Managerin kautta. Seuraavassa on esimerkki, miten voit lukea ja tulostaa YAML-tiedoston sisältöä:
-
-```Swift
-let yamlString = """
-name: John Smith
-occupation: Developer
-languages:
-  - Swift
-  - JavaScript
-"""
-
-do {
-  let yamlValues = try YAMLDecoder().decode(YAML.self, from: yamlString)
-  print(yamlValues) // {name: John Smith, occupation: Developer, languages: [Swift, JavaScript]}
-} catch {
-  print(error)
-}
-```
-
-Voit myös luoda oman YAML-tiedoston ja tallentaa siihen tietoa seuraavasti:
+Jos haluat aloittaa käyttämään YAML-formaattia Swiftissä, seuraavassa on muutamia esimerkkejä siitä, kuinka voit tallentaa ja lukea tietoja YAML-muodossa:
 
 ```Swift
-struct Person: Codable {
-  var name: String
-  var occupation: String
-  var languages: [String]
-}
+// Esimerkki YAML-tiedoston tallentamisesta
+let dictionary = ["nimi": "Matti", "ikä": 25, "mieliharrastukset": ["lukeminen", "lenkkeily"]]
+let data = try YAMLSerialization.data(withYAMLObject: dictionary)
+try data.write(to: URL(fileURLWithPath: "tiedosto.yml"))
 
-let john = Person(name: "John Smith", occupation: "Developer", languages: ["Swift", "JavaScript"])
-
-do {
-  let yamlString = try YAMLEncoder().encode(john)
-  print(yamlString) // name: John Smith, occupation: Developer, languages: [Swift, JavaScript]
-  try yamlString.write(to: "person.yaml", atomically: true, encoding: .utf8)
-} catch {
-  print(error)
-}
+// Esimerkki YAML-tiedoston lukemisesta
+let filePath = Bundle.main.path(forResource: "tiedosto", ofType: "yml")
+let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
+let dictionary = try YAMLSerialization.yamlObject(with: data) as? [String: Any]
+print(dictionary["nimi"]) // Tulostaa "Matti"
 ```
 
-## Syväsukellus
+## Syvemmälle
 
-YAML tarjoaa monipuolisia mahdollisuuksia tietojen tallentamiseen. Voit esimerkiksi luoda monimutkaisempia rakenteita, kuten listoja ja karttoja, tai käyttää merkkejä ja kommentteja selkeyttämään tiedoston sisältöä. Lisäksi voit käyttää erilaisia tapoja käsitellä tiedostoja, kuten automaattinen muunnos JSON-muotoon ja muokattavissa olevat asetukset.
+YAML-formaatti koostuu avaimista ja arvoista, kuten monissa muissakin ohjelmointikielissä. Avaimet ja arvot erotetaan kaksoispisteellä ja jokainen avain-arvo pari alkaa omalla rivillään. Alla olevassa esimerkissä näet, kuinka YAML-muodossa voi tallentaa monimutkaisempia tietorakenteita, kuten listoja ja sisäkkäisiä tietorakenteita.
+
+```Swift
+kotieläimet: # Tämä on avain
+  - nimi: Haukku # Sisäkkäinen tietorakenne
+    ikä: 3
+  - nimi: Katti
+    ikä: 5
+    lempiruoka: kala
+```
+
+Lisätietoja YAML-formaatista ja sen syntaksista löytyy YAML-spesifikaatiosta. Voit myös käyttää monia erilaisia kirjastoja, kuten YAMLSerialization, SwiftyYAML tai Yams, helpottaaksesi YAML-tiedostojen käsittelyä Swiftissä.
 
 ## Katso myös
 
-- YAMLSwift kirjasto: https://github.com/jpsim/YAMLSwift
-- Virallinen YAML-sivusto: https://yaml.org/
-- Swift Package Manager: https://swift.org/package-manager/
+- [YAML-spesifikaatio](https://yaml.org/spec/)
+- [YAMLSerialization-dokumentaatio](https://developer.apple.com/documentation/foundation/yamlserialization)
+- [SwiftyYAML-repositorio](https://github.com/BeauNouvelle/SwiftyYAML)
+- [Yams-repositorio](https://github.com/jpsim/Yams)

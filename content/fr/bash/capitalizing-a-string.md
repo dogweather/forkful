@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Mise en majuscule d'une chaîne de caractères"
-simple_title:         "Mise en majuscule d'une chaîne de caractères"
+title:                "Majuscule d'une chaîne de caractères"
+html_title:           "Bash: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,36 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Lorsque vous programmez en Bash, il peut être utile de savoir comment capitaliser une chaîne de caractères. Cela peut être particulièrement pratique lorsque vous travaillez avec des noms de fichiers ou des chaînes de caractères qui doivent être formatés correctement.
+Tu as sûrement déjà eu besoin de capitaliser une chaîne de caractères dans tes scripts Bash. Peut-être pour rendre un texte plus lisible ou pour formater une sortie de commande. Dans cet article, je vais te montrer comment faire cela facilement en utilisant quelques astuces de programmation.
 
-# Comment Faire
+## Comment Faire
 
-Voici un exemple simple de code Bash pour capitaliser une chaîne de caractères :
+La première méthode pour capitaliser une chaîne de caractères consiste à utiliser la commande ```tr```. Voici un exemple de code Bash qui utilise cette méthode :
 
+```Bash
+# Déclarer la chaîne de caractères
+my_string="ceci est un exemple"
+
+# Utiliser la commande tr pour capitaliser
+capitalized_string=$(echo $my_string | tr '[:lower:]' '[:upper:]')
+
+# Afficher la chaîne capitalisée
+echo $capitalized_string 
+
+# Sortie : CECI EST UN EXEMPLE
 ```
-variable="bonjour les amis"
-echo "${variable^}"
+
+Comme tu peux le voir, nous utilisons ici la commande ```echo``` pour envoyer la chaîne de caractères dans le pipeline, puis la commande ```tr``` pour la capitaliser en remplaçant toutes les lettres minuscules par des lettres majuscules.
+
+Une autre méthode consiste à utiliser les paramètres de substitution de Bash. Voici un exemple :
+
+```Bash
+# Déclarer la chaîne de caractères
+my_string="ceci est un exemple"
+
+# Utiliser les paramètres de substitution pour capitaliser
+capitalized_string=${my_string^^}
+
+# Afficher la chaîne capitalisée
+echo $capitalized_string 
+
+# Sortie : CECI EST UN EXEMPLE
 ```
 
-Le résultat de cette commande sera "Bonjour les amis", où la première lettre de chaque mot est en majuscule. Vous pouvez également utiliser "${variable^^}" pour mettre en majuscule toutes les lettres de la chaîne. Voici un exemple de sortie pour cette commande :
+Comme tu peux le voir, cette méthode est plus concise car elle n'utilise qu'une seule ligne de code. Les paramètres de substitution ```^^``` signifient "capitaliser toutes les lettres".
 
-```
-variable="bonjour les amis"
-echo "${variable^^}"
-```
+## Deep Dive
 
-Ce qui donnera comme résultat "BONJOUR LES AMIS".
+Maintenant que tu sais comment capitaliser une chaîne de caractères, tu pourrais te demander comment fonctionne réellement la commande ```tr```. En fait, cette commande utilise le tableau de caractères ASCII pour effectuer le remplacement des lettres. Tu peux consulter ce tableau pour comprendre comment cela fonctionne en détail.
 
-# En Profondeur
+De plus, en utilisant les paramètres de substitution, tu peux également effectuer d'autres opérations sur une chaîne de caractères, comme la convertir en majuscules, en minuscules, ou même inverser l'ordre des lettres.
 
-Il est important de noter que la façon dont vous capitaliser une chaîne dépendra de la configuration de la variable locale. Si vous utilisez le paramètre "set -x", cette commande mettra temporairement votre script en mode de débogage où toutes les commandes sont imprimées sur la sortie standard, ce qui peut être utile pour comprendre votre code.
+## Voir Aussi
 
-Il existe également d'autres façons de capitaliser une chaîne en Bash, comme en utilisant la commande "tr", qui peut convertir des caractères d'une chaîne en d'autres caractères, en utilisant des "sed" ou "awk" ou encore en utilisant des expressions régulières.
-
-# Voir Aussi
-
-- [Apprendre le Shell - Expansions](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html)
-- [Apprendre le Shell - Sous chaînes](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html)
-- [Guide du Développeur GNU Bash - Manipulation de Variables](https://www.gnu.org/software/bash/manual/html_node/Manipulating-Variables.html)
+- [Manuel de la commande tr](https://www.man7.org/linux/man-pages/man1/tr.1.html)
+- [Guide de substitution de Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)

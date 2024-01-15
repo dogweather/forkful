@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med json"
+html_title:           "Kotlin: Arbeid med json"
+simple_title:         "Arbeid med json"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å jobbe med JSON er en viktig del av moderne programmering, da det tillater å utveksle data på en strukturert og effektiv måte mellom forskjellige programmer og plattformer. Dersom du er en Kotlin-utvikler som ønsker å integrere JSON-håndtering i dine prosjekter, er dette blogginnlegget for deg!
+Å jobbe med JSON kan være en viktig del av å utvikle programvare og nettsider. JSON er en enkel og effektiv måte å lagre og utveksle data på, og blir derfor mye brukt i moderne utvikling.
 
-## Hvordan
-
-For å håndtere JSON i Kotlin, er det flere forskjellige biblioteker tilgjengelig. Et av de mest populære er Gson, som er et rimelig lettvektsalternativ som tilbyr enkel bruk og høy ytelse. La oss se på et enkelt eksempel på hvordan du kan bruke Gson til å konvertere en JSON-streng til et Kotlin-objekt:
+## Slik gjør du det
 
 ```Kotlin
-// Opprett en Gson-instans
-val gson = Gson()
+// Henter JSON fra en URL og lagrer det som en String
+val jsonObject = URL("https://api.example.com/data").readText()
 
-// Opprett en JSON-streng
-val json = "{\"navn\":\"Nina\", \"alder\": 25}"
+// Konverterer Stringen til et JSON-objekt
+val data = JSONObject(jsonObject)
 
-// Konverter JSON-strengen til et Kotlin-objekt
-val person = gson.fromJson(json, Person::class.java)
+// Henter spesifikk informasjon fra JSON-objektet
+val name = data.getString("name")
+val age = data.getInt("age")
+val hobbies = data.getJSONArray("hobbies")
+
+// Skriver ut informasjonen i konsollen
+println("Navn: $name")
+println("Alder: $age")
+println("Hobbyer:")
+for(i in 0 until hobbies.length()) {
+    val hobby = hobbies.getString(i)
+    println("- $hobby")
+}
 ```
 
-Som du kan se, er det ganske enkelt å konvertere JSON til et Kotlin-objekt med Gson. Her har vi opprettet en Person-klasse med attributtene "navn" og "alder", og Gson har automatisk konvertert JSON-strengen til et objekt av denne klassen. Dette gir en enkel og effektiv måte å håndtere JSON på i Kotlin.
+Output:
 
-## Dypdykk
+```text
+Navn: Jane Doe
+Alder: 25
+Hobbyer:
+- Coding
+- Hiking
+- Reading
+```
 
-Når du jobber med JSON i Kotlin, er det viktig å forstå hvordan Kotlin-hierarkiet fungerer. Kotlin-objekter er basert på Java-biblioteket, og derfor er Gson-bygging gjort ved hjelp av Java Reflection. En dypere forståelse av hierarkiet og hvordan det fungerer kan være nyttig når du håndterer mer kompleks JSON-data.
+## For en dypere forståelse
 
-En annen ting å være oppmerksom på er at Gson ikke håndterer alle feil som kan oppstå ved konvertering av JSON. Det er viktig å sørge for at JSON-dataen er riktig strukturert og følger samme format som Kotlin-objektet for å unngå uventede feil.
+JSON er basert på nøkkel-verdi par, der nøklene er navn på data og verdiene er selve dataen. Dette gjør det enkelt å lagre og hente ut spesifikk informasjon. JSON-objekter kan også inneholde andre JSON-objekter og arrays, noe som gjør det fleksibelt og godt egnet for kompleks datastrukturering.
+
+Det er viktig å merke seg at JSON-objekter må følge et JSON-syntaks, ellers vil det resultere i en feil. Det er derfor viktig å validere JSON før du bruker det i koden din.
 
 ## Se også
 
-- [Gson dokumentasjon](https://github.com/google/gson/blob/master/UserGuide.md)
-- [Kotlin offisiell nettside](https://kotlinlang.org/)
-- [Guide til JSON i Kotlin](https://www.baeldung.com/kotlin-json)
-
-Takk for at du leste denne lille introduksjonen til å jobbe med JSON i Kotlin. Vi håper det var nyttig for deg og at du nå føler deg tryggere på hvordan du kan håndtere JSON-data i dine Kotlin-prosjekter. Lykke til videre med programmeringen!
+- [Hva er JSON?](https://www.json.org/json-en.html)
+- [Kotlin dokumentasjon](https://kotlinlang.org/docs/home.html)
+- [JSON Parser for Kotlin](https://github.com/MicroUtils/kotlin-logging/blob/master/doc/json.md)

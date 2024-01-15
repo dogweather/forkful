@@ -1,6 +1,7 @@
 ---
-title:                "C++: Imprimir salida de depuración"
-simple_title:         "Imprimir salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "C++: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,33 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir salida de depuración en C++?
+## Por qué
 
-A veces, cuando estamos programando en C++, nos encontramos con errores en nuestro código que no podemos detectar fácilmente. En estos casos, imprimir salida de depuración puede ser de gran ayuda para identificar y solucionar estos errores.
+Si eres un programador de C++, probablemente ya sepas que el proceso de depuración puede ser complicado y llevar mucho tiempo. Afortunadamente, imprimir información de depuración en la consola puede ser una herramienta útil para detectar y corregir errores en tu código. 
 
-## Cómo imprimir salida de depuración en C++
+## Cómo hacerlo
 
-Podemos imprimir salida de depuración en C++ utilizando la función `std::cout`, la cual enviará la salida a la consola. Para ello, simplemente debemos incluir la librería `iostream` en nuestro código y utilizar el operador de inserción `<<`. Por ejemplo:
+Para imprimir información de depuración en la consola, primero debes incluir la biblioteca de entrada / salida estándar de C++, `iostream`. Luego, puedes utilizar la función `cout` para imprimir la información deseada. Aquí hay un ejemplo básico:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main(){
-    int num = 10;
-    cout << "El valor de num es " << num << endl;
+    std::cout << "Información de depuración: " << 5 << std::endl;
     return 0;
 }
 ```
 
-La salida de este código sería "El valor de num es 10". Podemos utilizar este método para imprimir cualquier tipo de dato.
+Este código imprimirá "Información de depuración: 5" en la consola.
 
-## Detalles sobre la impresión de salida de depuración
+Puedes imprimir cualquier tipo de dato con `cout`, incluyendo variables y expresiones matemáticas. También puedes combinar varias impresiones en una sola línea utilizando el operador `<<`. A continuación se muestra un ejemplo más complejo:
 
-Es importante tener en cuenta que para imprimir variables, necesitamos conocer su tipo de datos. Además, es recomendable agregar mensajes descriptivos para entender mejor el flujo de nuestro programa. Podemos imprimir la salida de depuración en diferentes partes de nuestro código para hacer un seguimiento del mismo.
+```C++
+#include <iostream>
 
-## Consulta también
+int main(){
+    int x = 10;
+    int y = 7;
+    std::cout << "La suma de " << x << " y " << y << " es " << x+y << std::endl;
+    return 0;
+}
+```
 
-- [Uso de la función std::cout en C++](https://www.cplusplus.com/reference/iostream/cout/)
-- [Cómo imprimir distintos tipos de datos en C++](https://www.geeksforgeeks.org/input-output-in-c-cpp/)
-- [Cómo mejorar tus habilidades de depuración en C++](https://www.studytonight.com/cpp/debugging-cpp-programs.php)
+Este código imprimirá "La suma de 10 y 7 es 17" en la consola.
+
+## Profundizando
+
+Además de imprimir información de depuración en la consola, también puedes utilizar la función `cerr` para imprimir mensajes de error en la consola. Esto puede ser útil cuando estás depurando tu programa y necesitas hacer un seguimiento de los errores.
+
+Otra técnica útil es utilizar macros para imprimir información de depuración. Esto te permite activar o desactivar fácilmente la impresión de información de depuración en función de una variable de entorno o una configuración específica.
+
+## Ver también
+
+- [Depuración de programas en C++](https://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas_en_C%2B%2B)
+- [Cómo utilizar la biblioteca de entrada / salida estándar en C++](https://www.programiz.com/cpp-programming/library-function/cout)
+- [Debugging C++ code with Macros](https://www.geeksforgeeks.org/debugging-techniques-in-cpp-macros/)

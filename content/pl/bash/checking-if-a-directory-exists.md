@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Sprawdzanie czy istnieje katalog"
-simple_title:         "Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "Bash: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,29 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu zdarza się, że musimy sprawdzić, czy dany katalog istnieje. Może to być konieczne, gdy chcemy upewnić się, że nasz program będzie działał poprawnie lub gdy potrzebujemy określonej ścieżki do pliku. W tym artykule przedstawimy sposób, w jaki można to zrobić w języku Bash.
+Sprawdzanie czy dany katalog istnieje jest ważnym aspektem w programowaniu i skrypcie Bash. Wiele zadań wymaga dostępu do określonych katalogów, a niektóre operacje mogą nawet wywołać błędy, jeśli dany katalog nie istnieje. Dlatego ważne jest, aby wykonywać sprawdzenie istnienia katalogu przed wykonaniem dalszych poleceń.
 
 ## Jak to zrobić
 
-Do sprawdzenia istnienia katalogu w Bash możemy wykorzystać komendę `test`. Przyjmie ona dwa argumenty: opcję `-d` oznaczającą, że chcemy sprawdzić czy dany element jest katalogiem oraz ścieżkę do danego elementu. Przykładowy kod wyglądałby następująco:
+Aby sprawdzić czy katalog istnieje w skrypcie Bash, użyjemy polecenia `test` w połączeniu z flagą `-d`, która oznacza "czy istnieje katalog". Przykładowy kod wyglądałby następująco:
 
 ```Bash
-if test -d /ścieżka/do/katalogu
-then
-  echo "Katalog istnieje."
+if test -d moj_katalog; then
+  echo "Katalog istnieje!"
 else
-  echo "Katalog nie istnieje."
+  echo "Katalog nie istnieje!"
 fi
 ```
 
-W powyższym przykładzie wykorzystujemy polecenie `echo`, które służy do wypisywania tekstu na ekranie. Możemy także wykorzystać instrukcję `if`, która sprawdzi, czy komenda `test` zwróciła wartość prawdy, czyli czy katalog istnieje. Wówczas wypiszemy odpowiedni komunikat.
+Powyższy kod sprawdzi, czy katalog o nazwie "moj_katalog" istnieje w bieżącym miejscu, w którym znajduje się nasz skrypt. Jeśli tak, wyświetli odpowiedni komunikat, jeśli nie - wyświetli inny.
 
-## Zagłębienie się
+Możemy także użyć polecenia `test` w połączeniu z flagą `-e`, która sprawdza istnienie dowolnego pliku lub katalogu. Na przykład:
 
-Jeśli chcemy zagłębić się bardziej w temat sprawdzania istnienia katalogu w Bash, warto wspomnieć o innych możliwych opcjach dla komendy `test`. Oprócz `-d` możemy także użyć między innymi `-e`, sprawdzającej istnienie elementu niezależnie od jego typu, czy `-s`, która sprawdzi, czy element jest niepusty. Komenda `test` może też przyjąć więcej niż jeden argument, co pozwala na sprawdzenie istnienia kilku katalogów naraz.
+```Bash
+if test -e /usr/bin/bash; then
+  echo "Bash jest zainstalowany!"
+else
+  echo "Bash nie jest zainstalowany!"
+fi
+```
 
-## Zobacz także
+W naszym przykładzie sprawdzamy, czy plik wykonywalny Bash znajduje się w katalogu /usr/bin. Jeśli tak, wyświetlimy odpowiedni komunikat, jeśli nie - wyświetlimy inny.
 
-- [Dokumentacja dla komendy test w Bash (ang.)](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
-- [Poradnik GeekStuff o sprawdzaniu istnienia plików i katalogów w Bash (ang.)](https://www.geeksforgeeks.org/bash-test-whether-directory-exists/)
-- [Komenda test na stronie Linux.com (ang.)](https://www.linux.com/training-tutorials/painless-bash-testing-checking-file-and-directory-statistics-with-test/)
+## Dogłębna analiza
+
+W rzeczywistości, polecenie `test` jest tylko aliasem dla innego polecenia - `[`. Wywołanie `test -d moj_katalog` jest równoznaczne z wywołaniem `[ -d moj_katalog ]`. `test` jest poleceniem wbudowanym w Bash, ale `[` jest zewnętrznym programem znajdującym się w katalogu /bin.
+
+`test` lub `[` przyjmuje wiele flag i opcji, które pozwalają na różne rodzaje testów, nie tylko sprawdzanie istnienia plików i katalogów. Możemy na przykład sprawdzić czy plik jest pusty, czy czytelnik lub wykonywalny, czy jego rozmiar jest większy/mniejszy od określonej wartości, itp. Aby poznać pełną listę wszystkich opcji `test`, wpisz w terminalu `man test`.
+
+## Zobacz również
+
+- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_07.html)
+- [Sekwencje ucieczki w skrypcie Bash](https://linux.die.net/abs-guide/escape-characters.html)
+- [Podstawowe instrukcje warunkowe w skrypcie Bash](https://linux.die.net/abs-guide/testconstructs.html)

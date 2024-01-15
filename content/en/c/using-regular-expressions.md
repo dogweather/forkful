@@ -1,5 +1,6 @@
 ---
-title:                "C recipe: Using regular expressions"
+title:                "Using regular expressions"
+html_title:           "C recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "C"
 category:             "C"
@@ -11,56 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Regular expressions, also known as regex, are an essential tool for any programmer. They allow for efficient and flexible searching, matching and manipulating of text. Whether you're a beginner or an experienced developer, understanding how to use regular expressions can greatly enhance your coding skills.
+Regular expressions, also known as regex, are a powerful tool for pattern matching in text. They can help programmers search, validate, and manipulate data efficiently, making it a valuable skill to learn in the world of coding.
 
 ## How To
 
-Before diving into any coding examples, it's important to understand the basic syntax of regular expressions. A regex consists of a pattern or sequence of characters, which is then used for matching or replacing strings of text. In C programming, regular expressions are used through the `<regex.h>` library.
+To use regular expressions in C, you must include the `<regex.h>` header file in your code. Then, you can use the `regex` functions to perform operations like matching, searching, replacing, and splitting strings. Here's an example of code that checks if a string matches a specific pattern:
 
-Let's take a look at a simple example of using regular expressions to match a phone number. The code snippet below shows how to initialize a regex variable, compile the pattern, and check if it matches a given string.
-
-```
+```C
 #include <stdio.h>
 #include <regex.h>
 
-int main() {
+int main(){
+    char *pattern = "[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]";
+    char *string = "123-4567";
     regex_t regex;
-    int status;
-    char phone_number[] = "555-123-4567";
 
-    status = regcomp(&regex, "^\\d{3}-\\d{3}-\\d{4}$", 0); //compile the pattern
-
-    if (status == 0) {
-        if (regexec(&regex, phone_number, 0, NULL, 0) == 0) { //check if the string matches the pattern
-            printf("Valid phone number!");
-        } else {
-            printf("Invalid phone number!");
-        }
+    if (regcomp(&regex, pattern, 0) != 0) {
+        printf("Error compiling regex pattern\n");
+        return 1;
     }
 
-    regfree(&regex); //free memory after finishing with regex
+    if (regexec(&regex, string, 0, NULL, 0) == 0) {
+        printf("Valid phone number format\n");
+    } else {
+        printf("Invalid phone number format\n");
+    }
 
+    regfree(&regex);
     return 0;
 }
 ```
 
-In the code above, we use the `regcomp()` and `regexec()` functions to compile and execute the regex. The `^\\d{3}-\\d{3}-\\d{4}$` pattern will match strings in the format of `xxx-xxx-xxxx`, where `x` represents any digit between 0-9. The `regfree()` function is used to free up any memory used by the regex after it's no longer needed.
+Output:
 
-Let's take a closer look at the regular expression pattern we used in the code above. The `^` symbol indicates the beginning of the string, while the `$` symbol marks the end of the string. The `\\d` represents any digit and the `{3}` indicates that the previous character should appear exactly three times. The `-` is a special character that matches itself, and is used to separate the three groups of digits.
+```
+Valid phone number format
+```
+
+In this example, we use the `regcomp()` function to compile the regex pattern, and the `regexec()` function to match the pattern against the given string. If the string matches the pattern, the output will be "Valid phone number format". Otherwise, it will print "Invalid phone number format".
 
 ## Deep Dive
 
-Regular expressions can be much more complex than the example we saw above. Here are some features and concepts that are important to understand when working with regular expressions:
+Regular expressions can be as simple or as complex as needed, depending on the task at hand. They consist of characters and special metacharacters that act as anchors, modifiers, or quantifiers. Here are some commonly used metacharacters and their corresponding functions:
 
-- Character classes: These are defined within square brackets `[ ]` and allow for matching multiple characters. For example, `[a-z]` matches any lowercase letter from a to z.
-- Quantifiers: These symbols specify how many times a character or pattern should appear. For example, `*` means zero or more, `+` means one or more, and `?` means zero or one.
-- Escaping characters: Certain characters such as `^`, `$`, and `()` have a special meaning in regular expressions. To match them literally, we need to use the backslash `\` character before them. For example, `\\` matches a backslash.
-- Options: Regular expressions have options that can be used to narrow down the matches or make them case-insensitive. These options are placed at the end of the regex pattern, between forward slashes `/` and can include `g` (global) or `i` (case-insensitive).
+- `.` - matches any single character.
+- `^` - matches the beginning of a line.
+- `$` - matches the end of a line.
+- `*` - matches the preceding character 0 or more times.
+- `+` - matches the preceding character 1 or more times.
+- `?` - matches the preceding character 0 or 1 time.
+- `()` - grouping characters.
 
-For a more in-depth guide on regular expressions, check out this [tutorial](https://www.guru99.com/regular-expressions.html).
+There are also special sequences that represent common patterns, such as `\d` for a digit, `\w` for a word character, and `\s` for a whitespace character. You can also use quantifiers to specify how many times a character or group should be repeated, for example, `{3}` for exactly 3 times, or `{2,4}` for 2 to 4 times.
+
+Regular expressions can be tested and experimented with using online tools like Regex101 or Regexr, where you can see the explanation and breakdown of your pattern as you type it.
 
 ## See Also
 
-- [The Power of Regular Expressions in C](https://www.geeksforgeeks.org/the-power-of-regular-expressions-in-c/) by GeeksforGeeks
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html) by RexEgg
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html) by regular-expressions.info
+- [C Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [GNU C Library - Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Regex101](https://regex101.com/)

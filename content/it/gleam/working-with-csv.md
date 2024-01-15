@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Lavorare con i file csv"
+title:                "Lavorare con i file csv"
+html_title:           "Gleam: Lavorare con i file csv"
 simple_title:         "Lavorare con i file csv"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,29 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore o uno sviluppatore di software, lavorare con file CSV può sembrare una noiosa attività. Tuttavia, ci sono molte ragioni per cui dovresti considerare di utilizzare il linguaggio di programmazione Gleam per lavorare con i file CSV. In primo luogo, Gleam è un linguaggio di programmazione funzionale che rende facile e intuitivo lavorare con i dati. Inoltre, ha una sintassi pulita e concisa che lo rende perfetto per la manipolazione dei file CSV.
+Se vuoi manipolare e analizzare dati tabulari, come nel caso di fogli di calcolo CSV, allora Gleam è il linguaggio di programmazione perfetto per te. Con la sua sintassi semplice e tipizzazione statica, è estremamente efficace nel gestire grandi quantità di dati.
 
 ## Come fare
 
-Per lavorare con i file CSV in Gleam, tutto ciò che devi fare è importare il modulo CSV tramite la dichiarazione "import csv" all'inizio del tuo codice. Una volta fatto ciò, puoi utilizzare le funzioni fornite dal modulo per leggere, scrivere e manipolare i dati CSV. Di seguito è riportato un esempio di codice per leggere un file CSV e stampare le righe su console:
+Per iniziare a utilizzare Gleam per lavorare con file CSV, devi prima importare la libreria `csv` e creare un nuovo modulo.
 
 ```Gleam
 import csv
 
-file := csv.open("dati.csv")
-rows := csv.get_rows(file)
+pub mod main {
+  // In questo esempio, il nostro file CSV ha colonne "nome" e "età"
+  let csv_path = "persone.csv"
 
-for row in rows {
-  csv.print(row)
+  // Carica il file CSV e assegna il risultato a una variabile
+  let result = csv.load(csv_path)
+
+  // Stampa la lista di record nel file
+  io.println(result.records)
+
+  // Puoi anche filtrare i record in base a un valore specifico nella colonna "età"
+  let filtered = result.records
+    |> filter (\(record) -> record.età == 25)
+
+  // Stampa la lista filtrata
+  io.println(filtered)
 }
 ```
 
-L'output di questo codice sarà l'elenco delle righe del file CSV sulla console.
+Ecco cosa otterrai come output:
+
+```
+Record {
+  nome = "Maria",
+  età = 23,
+},
+Record {
+  nome = "Luca",
+  età = 25,
+},
+Record {
+  nome = "Anna",
+  età = 25,
+}
+
+Record {
+  nome = "Luca",
+  età = 25,
+},
+Record {
+  nome = "Anna",
+  età = 25,
+}
+```
 
 ## Approfondimento
 
-Se vuoi saperne di più su come lavorare con i file CSV in Gleam, puoi consultare la documentazione ufficiale sul modulo CSV o leggere gli esempi di codice presenti nella libreria standard di Gleam. Inoltre, puoi esplorare le numerose funzioni fornite dal modulo CSV, come "filter", "map" e "reduce", per manipolare i dati in modo più avanzato.
+La libreria `csv` offre più di 10 funzioni per gestire i file CSV in Gleam. Puoi anche specificare un delimitatore diverso dal valore predefinito (virgola) quando carichi il file, utilizzare il modulo `file` per creare, scrivere e leggere file CSV, e molto altro ancora. Inoltre, la documentazione ufficiale di Gleam fornisce ulteriori esempi e spiegazioni per aiutarti a padroneggiare il lavoro con CSV.
 
 ## Vedi anche
-- Documentazione ufficiale del modulo CSV di Gleam: https://gleam.run/modules/csv/
-- Esempi di codice nella libreria standard di Gleam: https://github.com/gleam-lang/gleam_stdlib/blob/master/csv/csv.gleam
+
+- Documentazione ufficiale di Gleam per la libreria `csv`: https://gleam.run/modules/csv.html
+- Tutorial su come lavorare con dati CSV in Gleam: https://www.data-to-viz.com/story/MakeItGleam.html

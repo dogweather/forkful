@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "Työskentely json-tiedostojen kanssa"
+html_title:           "Fish Shell: Työskentely json-tiedostojen kanssa"
+simple_title:         "Työskentely json-tiedostojen kanssa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää JSONia ohjelmoinnissa?
+## Miksi
 
-JSON (JavaScript Object Notation) on suosittu tapa tallentaa ja siirtää tietoa verkkosovellusten välillä. Se on yksinkertainen, helppolukuinen ja helposti käsiteltävä tietomuoto, joka tekee siitä erinomaisen vaihtoehdon monimutkaisemman XML:n sijaan. Jos haluat oppia käyttämään JSONia Fish Shellin avulla, jatka lukemista.
+Miksi haluaisit työskennellä JSON:in kanssa? No, JSON (JavaScript Object Notation) on yksi suosituimmista tiedonvaihtoformaateista, jota käytetään nykyaikaisissa ohjelmistoissa ja verkkosivustoissa. Se on rakenteellinen, universaali ja helppokäyttöinen tapa tallentaa ja jakaa tietoja eri järjestelmien välillä.
 
-## Kuinka käyttää JSONia Fish Shellillä?
+## Miten
 
-Ensinnäkin, sinun täytyy varmistaa, että Fish Shell on asennettu tietokoneellesi. Voit tarkistaa tämän kirjoittamalla `fish --version` komentoriville ja näetkö jonkinlaisen vastauksen. Jos ei, voit asentaa Fish Shellin seuraavasti:
+Fish Shell tarjoaa hyödyllisiä työkaluja ja toimintoja JSON-tiedostojen käsittelyyn. Esimerkiksi voit helposti muuntaa JSON-tiedoston tavallisesta tekstitiedostosta käyttämällä "json" komentoa:
 
-```
-sudo apt-get install fish
-```
-
-Kun olet varmistanut, että Fish Shell on käytössäsi, voit aloittaa JSONin käsittelyn. Ensinnäkin, sinun täytyy ladata JSON-tiedosto. Voit tehdä tämän kirjoittamalla `curl` komennon ja sen perään URL-osoitteen, josta haluat ladata tiedoston. Esimerkiksi:
-
-```
-curl https://example.com/data.json
+```Fish Shell
+json -o output.json input.txt
 ```
 
-Tämän jälkeen voit käyttää Fish Shellin `jq`-työkalua käsittelemään JSONia. `jq` on suorakäyttöinen JSON-parsija ja -manipulaattori, joka on helppo asentaa käyttöjärjestelmästä riippumatta.
+Tämä muuntaa "input.txt" tiedoston "output.json" JSON-tiedostoksi. Voit myös käyttää "cat" komentoa lukeaksesi ja tarkastellaksesi JSON-tiedoston sisältöä:
 
+```Fish Shell
+cat input.json
 ```
-jq '.key' data.json
+
+Voit myös luoda ja muokata JSON-objekteja käyttämällä Fish Shellin sisäänrakennettuja muuttujia. Esimerkiksi voit luoda objektin nimellä "person" ja lisätä siihen nimi- ja ikätiedot seuraavasti:
+
+```Fish Shell
+set -q person; json -o person.json ${person}
+set person.name "John"
+set person.age 25
 ```
 
-Tämä komento etsii `data.json` tiedostosta kaikki `key` arvot ja tulostaa ne näytölle. Voit myös käyttää `jq`-työkalua lisätäksesi, muokataksesi tai poistaaksesi tietoja JSON-tiedostosta.
+Deep Dive
 
-## Syventävä tieto JSONin käsittelystä
+Fish Shell tarjoaa myös laajan valikoiman komentoja, jotka helpottavat JSON-datan käsittelyä. Esimerkiksi "jq" komennolla voit suodattaa ja käsitellä JSON-tietoja eri tavoin.
 
-Fish Shellissä on muitakin tapoja käsitellä JSONia kuin `jq`-työkalun avulla. Voit myös käyttää `sed`-työkalua tai `cat`-komentoa parsimaan ja muokkaamaan JSONia. Voit myös käyttää `jq`-työkalua yhdessä muiden komentojen, kuten `grep` tai `awk`, kanssa monimutkaisempien tieotojen käsittelyyn.
-
-Jotta voit ottaa täyden hyödyn irti JSONin käytöstä Fish Shellillä, on suositeltavaa tutustua myös muihin tietomuodon ominaisuuksiin ja käyttötapoihin. Voit löytää hyödyllistä tietoa JSONista ja sen käytöstä monista eri lähteistä, kuten Fish Shellin dokumentaatiosta, internetistä ja kirjoista.
+Voit myös hyödyntää Fish Shellin sisäänrakennettua "string" komentoa, jolla voit muokata ja manipuloida merkkijonoja, jotka usein esiintyvät JSON-muodossa. Voit esimerkiksi käyttää "string" komentoa yhdessä "jq" kanssa hakemaan tiettyjä arvoja JSON-tiedostosta.
 
 ## Katso myös
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/)
-- [jq dokumentaatio](https://stedolan.github.io/jq/)
-- [JSONin käyttö Fish Shellin kanssa](https://medium.com/@aaron_kaminsky/json-tricks-for-busy-unix-people-435d9332696f)
-- [JSON-parsimisen perusteet](https://www.json.org/json-fi.html)
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Muutaman minuutin opas JSON:iin](https://www.json.org/json-fi.html)
+- [JQ:n dokumentointi](https://stedolan.github.io/jq/)

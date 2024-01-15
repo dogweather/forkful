@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Capitalizando una cadena"
+title:                "Capitalizando una cadena"
+html_title:           "Clojure: Capitalizando una cadena"
 simple_title:         "Capitalizando una cadena"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué
 
-Capitalizar una cadena es una operación común en la programación que permite cambiar el formato de un texto para que la primera letra de cada palabra esté en mayúscula. Esto puede ser útil para presentar un título o un encabezado de manera más legible para el usuario.
+Si alguna vez te has encontrado en la situación de tener una cadena de texto en minúsculas y necesitas capitalizarla, entonces esta guía es para ti. Saber cómo capitalizar una cadena en Clojure es una habilidad básica que te ayudará a manejar tus datos de manera más eficiente.
 
-## Cómo hacerlo
+## Cómo
 
-En Clojure, podemos capitalizar una cadena utilizando la función `capitalize`. Esta función toma como argumento una cadena y devuelve una nueva cadena con la primera letra en mayúscula y el resto en minúscula.
+La función `clojure.string/capitalize` es la encargada de capitalizar una cadena de texto en Clojure. Funciona de la siguiente manera:
 
-```Clojure
-(capitalize "hola mundo")  ; devuelve "Hola mundo"
-(capitalize "123abc") ; devuelve "123abc"
+```
+(clojure.string/capitalize "hola mundo")
+;; output: "Hola mundo"
 ```
 
-Si queremos capitalizar solo la primera letra de una cadena, podemos usar la función `capitalize-first`.
+Esta función también puede recibir un segundo argumento opcional, que indica cuántas letras iniciales se deben capitalizar. Por defecto, sólo se capitaliza la primera letra de la cadena:
 
-```Clojure
-(capitalize-first "abc") ; devuelve "Abc"
 ```
-
-También podemos capitalizar todas las palabras de una cadena utilizando la función `clojure.string/capitalize`, que se encuentra en la biblioteca `clojure.string`.
-
-```Clojure
-(require '[clojure.string :as str])
-(str/capitalize "hola mundo") ; devuelve "Hola Mundo"
+(clojure.string/capitalize "hola mundo" 4)
+;; output: "HOLA mundo"
 ```
 
 ## Profundizando
 
-Hay varios enfoques para capitalizar una cadena en Clojure. Además de las funciones mencionadas anteriormente, también podemos usar la función `clojure.string/replace` para buscar y reemplazar cada palabra por sí misma capitalizada.
+Internamente, la función `capitalize` utiliza la función `freq` para obtener la frecuencia de cada letra en la cadena. Luego, utiliza la función `apply` con la función `str` para concatenar la cadena capitalizada.
 
-```Clojure
-(str/replace "hola mundo" #"\w+" #(clojure.string/capitalize %)) ; devuelve "Hola Mundo"
 ```
-
-Otra opción es utilizar el módulo `clojure.string.capitalize` de la biblioteca `clojure.string` para capitalizar una cadena a través de una macro que envuelve todas las palabras en una expresión `capitalize`.
-
-```Clojure
-(use 'clojure.string.capitalize)
-(hoja "hola mundo") ; devuelve "Hola Mundo"
+(defn capitalize
+  "A version of str that applies to the first character of each word in
+  the supplied string."
+  {:added "1.1"}
+  ([s]
+   (apply str (conj (map (fn [word]
+                           (apply str (map (fn [[idx char]] (if (zero? idx)
+                                                                (Character/toTitleCase char)
+                                                                (Character/toLowerCase char)))
+                                           (frequencies word)))))
+                     s)))
+  ([s n] (clojure.string/join " " (percent-remainders/percent [1]
+                         (re-seq #"[^ ]+" s) n))))
 ```
-
-En resumen, hay varias formas de capitalizar una cadena en Clojure, cada una con sus propias ventajas y desventajas en términos de eficiencia y legibilidad del código.
 
 ## Ver también
 
-- [Documentación oficial de Clojure sobre la función `capitalize`](https://clojuredocs.org/clojure.string/capitalize)
-- [Ejemplos de capitalización de cadenas en Clojure](https://gist.github.com/gphilipp/3510392)
-- [Otras funciones útiles de la biblioteca `clojure.string`](https://www.braveclojure.com/core-functions-in-depth/#string)
+* Documentación oficial de `clojure.string/capitalize`: https://clojuredocs.org/clojure.string/capitalize
+* Más funciones útiles para trabajar con cadenas de texto en Clojure: https://clojuredocs.org/clojure.string

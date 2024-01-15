@@ -1,5 +1,6 @@
 ---
-title:                "Elixir recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "Elixir recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,45 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Generate Random Numbers in Elixir
+## Why
 
-In programming, generating random numbers can be useful for a variety of tasks such as generating test data, creating randomized elements in a game, or creating unique identifiers. In Elixir, there are built-in functions that make generating random numbers simple and efficient.
+Generating random numbers is a fundamental skill in many programming applications. It allows for randomness and unpredictability, which is crucial in a wide range of scenarios, such as creating unique IDs, simulating data, and generating game elements.
 
 ## How To
 
-To generate a random number in Elixir, we can use the `random.uniform/2` function, which takes in a range and returns a random number within that range.
+To generate random numbers in Elixir, we can use the `:rand.uniform/1` function, which takes in a range and returns a random number within that range. Here's an example of generating a random integer between 1 to 10:
 
+```Elixir
+num = :rand.uniform(1..10)
+IO.puts(num)
 ```
-Elixir
-Random.uniform(1..10)
-# output: 7
-```
+Output: 
+`7` (this number will vary as it is randomly generated each time)
 
-We can also generate a list of random numbers using the `Enum.map/2` function and the `random.uniform/2` function. The `Enum.map/2` function allows us to apply a function to each element in a list, in this case, generating a random number for each element.
+If we want to generate a random floating-point number, we can use the `:rand.uniform/0` function, which returns a number between 0.0 and 1.0. For example:
 
+```Elixir
+fnum = :rand.uniform()
+IO.puts(fnum)
 ```
-Elixir
-Enum.map([1,2,3,4,5], fn _ -> Random.uniform(1..10) end)
-# output: [6, 3, 9, 2, 8]
-```
+Output:
+`0.6323350907338301`
 
-We can also use `random.seed/1` to set a specific seed for our random number generation, making it easier to reproduce results in testing or debugging.
+To generate a random number within a specific range of floating-point numbers, we can use `:rand.uniform/1` with a float range instead. For instance:
 
+```Elixir
+frand = :rand.uniform(0.5..1.5)
+IO.puts(frand)
 ```
-Elixir
-random.seed(123)
-Random.uniform(1..10)
-# output: 2
+Output:
+`0.9345606871590925`
+
+We can also generate a random boolean value using the `:rand.uniform/1` function, which returns either `true` or `false`:
+
+```Elixir
+bool = :rand.uniform([true, false])
+IO.puts(bool)
 ```
+Output:
+`true` or `false` (this will randomly vary between the two options)
 
 ## Deep Dive
 
-Elixir uses the Mersenne Twister algorithm for generating random numbers. This algorithm is known for its fast generation speed and high-quality randomness. It also supports parallelization, allowing for efficient generation of multiple random numbers at once.
+Elixir uses a modified version of the Mersenne-Twister algorithm, known as the "Mersenne-Twister MT19937", to generate random numbers. This algorithm is a highly efficient and reliable pseudorandom number generator (PRNG) that is widely used in many programming languages.
 
-In addition to `random.uniform/2`, Elixir also provides functions for generating random binary data and random list permutations. The `random.seed/1` function also accepts an optional `:secure` option, which uses the system's cryptographic random number generator for even more secure random number generation.
+One thing to note is that when using the `:rand.uniform/1` function with a specific range, the upper bound is not inclusive. For instance:
+
+```Elixir
+:rand.uniform(1..3)
+```
+This will only return a random number between 1 and 2, as 3 is not included in the range.
+
+If we need to generate a random number with a specific number of digits, we can use `:rand.uniform/2` with `Kernel.trunc/2` to limit the number of decimal places. For example, to generate a random 3-digit number:
+
+```Elixir
+:rand.uniform(100..999) |> Kernel.trunc(0)
+```
+This will return a random integer between 100 and 999 with no decimal places.
 
 ## See Also
-
-- [Elixir Documentation for Random module](https://hexdocs.pm/elixir/Random.html)
-- [Mersenne Twister algorithm](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Elixir School - Random](https://elixirschool.com/en/lessons/basics/random/)
+- Official Elixir Documentation on `:rand` module: https://hexdocs.pm/elixir/Kernel.html#rand/0
+- Mersenne-Twister PRNG Algorithm: https://en.wikipedia.org/wiki/Mersenne_Twister

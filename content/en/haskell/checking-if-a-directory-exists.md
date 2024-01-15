@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Haskell recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,47 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you've ever worked with file and directory manipulation in Haskell, you may have come across the need to check if a directory exists. This is an important step in ensuring your program runs smoothly and efficiently, as it allows you to handle any errors or exceptions that may arise if the directory does not exist.
+Have you ever encountered an error in your code because a specific directory did not exist? Checking if a directory exists is a helpful step in ensuring your code runs smoothly, and it can save you from unexpected errors.
 
 ## How To
 
-To check if a directory exists in Haskell, we can use the `doesDirectoryExist` function from the `System.Directory` module. This function takes in a `FilePath` argument and returns a `Bool` value indicating whether the directory exists or not.
-
-Let's take a look at a simple example. Say we have a directory named "haskell-blog" in the current working directory. We can check if this directory exists by using the `doesDirectoryExist` function as follows:
+To check if a directory exists in Haskell, we can use the `doesDirectoryExist` function from the `System.Directory` module. Here's an example of how we can use it:
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+import System.Directory
 
-main :: IO ()
-main = do
-  exists <- doesDirectoryExist "haskell-blog"
-  if exists
-    then putStrLn "The directory exists!"
-    else putStrLn "The directory does not exist."
+checkDir :: FilePath -> IO Bool
+checkDir dir = doesDirectoryExist dir
 ```
 
-Running this program will output "The directory exists!" since our directory does indeed exist. Now let's see what happens if we try to check for a directory that doesn't exist:
+The `doesDirectoryExist` function takes in a `FilePath` as its argument and returns an `IO Bool`. The `FilePath` represents the path to the directory we want to check. Let's test it out with a few different directories:
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+checkDir "existing-directory"
+-- Output: True
 
-main :: IO ()
-main = do
-  exists <- doesDirectoryExist "non-existent-directory"
-  if exists
-    then putStrLn "The directory exists!"
-    else putStrLn "The directory does not exist."
+checkDir "non-existing-directory"
+-- Output: False
 ```
 
-Running this program will output "The directory does not exist." since we are checking for a non-existent directory.
+As we can see, the function correctly returns `True` if the directory exists and `False` if it doesn't. 
 
 ## Deep Dive
 
-Behind the scenes, the `doesDirectoryExist` function uses the underlying `stat` system call to check if the given directory exists. This is a low-level system call that is used to get information about files and directories, including their existence.
+Under the hood, the `doesDirectoryExist` function uses the `Dose.Directory.Internal.doesDirectoryExist` function from the `directory` package. This function makes use of system-specific calls to determine if a directory exists. For example, on Windows, it uses the Windows API while on Unix systems, it uses the `stat()` system call.
 
-It's important to note that `doesDirectoryExist` only checks for the existence of a directory, not if it is a valid directory or if you have permissions to access it. For that, you would need to use other functions such as `doesFileExist` and `getPermissions`.
+It's also worth noting that the `doesDirectoryExist` function only checks for the existence of directories and not files. We would need to use the `doesFileExist` function for that.
 
 ## See Also
 
-- [Haskell documentation for `System.Directory`](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell wikibook on File IO](https://en.wikibooks.org/wiki/Haskell/File_IO)
+- `System.Directory.doesFileExist` function: to check for the existence of a file
+- `System.Directory.createDirectory` function: to create a new directory
+- `System.Directory.removeDirectory` function: to remove an empty directory
+- `System.Directory.removeDirectoryRecursive` function: to remove a directory and its contents

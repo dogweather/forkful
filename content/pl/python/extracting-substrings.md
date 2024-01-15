@@ -1,6 +1,7 @@
 ---
-title:                "Python: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,100 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wydobycie podciągów jest ważnym aspektem w wielu projektach programistycznych. Pozwala na wyodrębnienie określonych części tekstu z dłuższej linii, co ułatwia przeprowadzanie analiz i przetwarzanie danych. W tym artykule dowiecie się, dlaczego wydobycie podciągów jest przydatne w programowaniu i jak to zrobić przy użyciu języka Python.
+W dzisiejszych czasach, coraz więcej danych jest dostępnych w formie tekstowej. Dzięki wydobyciu podciągów tekstu, jesteśmy w stanie łatwiej i szybciej przetwarzać i analizować te dane, co może być niezbędne w różnych zastosowaniach, od analizy danych po automatyzację procesów biznesowych.
 
 ## Jak to zrobić
 
-W celu wydobycia podciągów z tekstu w języku Python, należy użyć metody `substring()`. Przedstawimy teraz kilka przykładów, aby pokazać jak wykorzystać tę metodę w praktyce.
+W Pythonie istnieją różne metody i funkcje pozwalające na wydobycie podciągów tekstu z ciągów znaków. Przykładowym sposobem jest użycie metody `slice()`, która pozwala na wybranie wybranego fragmentu tekstu, korzystając z indeksów.
 
-### Przykład 1:
+```python
+text = "To jest przykładowy tekst."
+substring = text[8:19]
 
-```
-text = "Witaj w świecie programowania"
-print(text.substring(6,14))
-```
+print(substring)
 
-**Output:**
-
-```
-w świecie
+# Output: przykładowy
 ```
 
-W tym przykładzie użyliśmy metody `substring()` aby wyodrębnić podciąg z tekstu od 6 do 14 znaku. W ten sposób otrzymujemy wyraz "świecie" bez pierwszej litery "W".
+Można również użyć funkcji `find()`, aby zlokalizować indeks pierwszego wystąpienia danego podciągu w tekście, a następnie wykorzystać indeksy, aby wybrać odpowiedni fragment tekstu.
 
-### Przykład 2:
+```python
+text = "To jest przykładowy tekst."
+substring = text[text.find("przykładowy"):text.find("tekst")]
 
-```
-text = "Kocham Pythona"
-print(text.substring(7))
-```
+print(substring)
 
-**Output:**
-
-```
-Pythona
+# Output: przykładowy
 ```
 
-W drugim przykładzie pominięliśmy drugi parametr metody `substring()`, co oznacza, że zostanie ona użyta do wydobycia podciągu od 7 znaku do końca tekstu.
+Inną przydatną funkcją jest metoda `split()`, która dzieli dany tekst na podciągi, korzystając z określonego separatora. Może to być przydatne np. przy przetwarzaniu danych z plików CSV.
 
-### Przykład 3:
+```python
+text = "Jan,Alicja,Mateusz,Kasia"
+names = text.split(",")
 
-```
-text = "Hello World"
-print(text.substring(-3))
-```
+print(names)
 
-**Output:**
-
-```
-World
+# Output: ['Jan', 'Alicja', 'Mateusz', 'Kasia']
 ```
 
-W ostatnim przykładzie wykorzystaliśmy także wartość ujemną jako drugi parametr metody `substring()`. W takim przypadku liczba ujemna jest traktowana jako odległość od końca tekstu, co oznacza, że wyciągany jest podciąg od ostatniej litery zgodnie z podaną wartością.
+## W czym tkwi sedno
 
-## Połączenie podciągów
+Podczas wydobywania podciągów, ważne jest, aby wiedzieć jaką metodę i jakie parametry wybrać w zależności od danego zastosowania. Możliwość precyzyjnego określenia indeksów czy wykorzystania funkcji `find()` czy `split()` może znacznie ułatwić przetwarzanie tekstów.
 
-Kolejną przydatną techniką jest połączenie kilku podciągów w jeden dłuższy. Możemy to zrobić za pomocą operatora plus `+` lub metody `join()`.
+## Zobacz też
 
-### Przykład 1:
-
-```
-name = "Michał"
-surname = "Kowalski"
-print(name + " " + surname)
-```
-
-**Output:**
-
-```
-Michał Kowalski
-```
-
-W tym przypadku połączyliśmy dwa podciągi (zmienne `name` i `surname`) za pomocą operatora plus `+`.
-
-### Przykład 2:
-
-```
-word_list = ["Lorem", "ipsum", "dolor"]
-sentence = " ".join(word_list)
-print(sentence)
-```
-
-**Output:**
-
-```
-Lorem ipsum dolor
-```
-
-W drugim przykładzie użyliśmy metody `join()` do połączenia listy słów w jedno zdanie, oddzielone spacją.
-
-## Głębszy zanurzenie
-
-Metoda `substring()` w Pythonie jest często wykorzystywana przy przetwarzaniu tekstu, np. przy wycinaniu niepotrzebnych części tekstu lub tworzeniu unikalnych nazw plików. Jest to również przydatna umiejętność podczas manipulacji napisami w różnych kontekstach programistycznych.
-
-## Zobacz także
-
-- [Dokumentacja Python](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Tutorial: Python 3 - Podstawy](https://www.learnpython.org/pl/Welcome)
-
-Dziękujemy za przeczytanie tego artykułu! Mamy nadzieję, że przydał się wam w praktyce programistycznej. Zapraszamy do eksperymentowania z metodą `substring()` i wykorzystywania jej w swoich projektach. Do zobaczenia w kolejnych artykułach! 🙂
+- [Oficjalna dokumentacja Pythona](https://docs.python.org/pl/3/library/stdtypes.html#common-sequence-operations)
+- [Tutorial wideo o wydobyciu podciągów w Pythonie](https://www.youtube.com/watch?v=JaUJzj7Gids)
+- [Pytania i odpowiedzi na Stack Overflow dotyczące wydobycia podciągów](https://stackoverflow.com/questions/tagged/python+substring)

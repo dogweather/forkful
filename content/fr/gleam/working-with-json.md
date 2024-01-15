@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Travailler avec json"
+title:                "Travailler avec json"
+html_title:           "Gleam: Travailler avec json"
 simple_title:         "Travailler avec json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,70 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+##Pourquoi
 
-Si vous êtes développeur et que vous travaillez avec des données structurées, vous avez probablement entendu parler du format JSON. Il est largement utilisé pour stocker et échanger des données sur le web. Dans cet article, nous allons vous montrer pourquoi il vaut la peine de travailler avec JSON en utilisant le langage de programmation Gleam.
+Tu te demandes pourquoi tu dois t'aventurer dans le monde du JSON? Eh bien, mon cher, il s'agit d'un format de données largement utilisé dans le développement web et les applications. Donc, si tu veux être un développeur ou une développeuse incontournable, alors tu dois maîtriser JSON.
 
-## Comment faire 
+##Comment faire
 
-Pour commencer, nous allons créer un exemple simple de traitement de données JSON avec Gleam. Tout d'abord, nous avons besoin de déclarer un type de données pour représenter notre structure JSON :
+Tout d'abord, tu dois savoir que le JSON est un format léger et facile à lire pour les humains, mais il est également simple à utiliser en programmation. Voici comment tu peux travailler avec JSON en utilisant Gleam:
 
-```Gleam
-type User {
-    name : String,
-    email : String,
-    age : Int
-}
+```
+// Définir une variable avec du JSON
+let json = { "nom": "Marie", "âge": 26, "ville": "Paris" }
+
+// Convertir du JSON en un tableau de clés/valeurs
+let tableau = Json.to_pairs(json)
+// Maintenant tu peux traiter les données plus facilement
+
+// Ajouter une nouvelle clé/valeur au JSON
+let nouveau_json = Json.set(json, "profession", "développeur")
 ```
 
-Ensuite, nous pouvons utiliser la fonction `decode_json` pour transformer notre JSON en un type Gleam :
+Et voilà! C'est tout ce dont tu as besoin pour commencer à travailler avec JSON en utilisant Gleam. Maintenant, passons à une plongée plus profonde dans le sujet.
 
-```Gleam
-user_result : Decode.Result(User, Json.Decode.Error) =
-    Json.decode_json(input)
-```
+##Plongée en profondeur
 
-Une fois le JSON transformé, nous pouvons accéder à ses propriétés en utilisant des fonctions de navigation :
+En travaillant avec du JSON en Gleam, il y a quelques points importants à garder à l'esprit.
 
-```Gleam
-case user_result {
-    Ok(user) -> "User name: ${user.name}, email: ${user.email}, age: ${user.age} years old"
-    Err(error) -> "Error decoding JSON: ${error}"
-}
-```
+Tout d'abord, Gleam utilise le type `json::Value` pour représenter les données JSON. Ce type peut prendre plusieurs formes, telles que `Null`, `String`, `Number`, `Array` et `Object`. Tu peux utiliser la fonction `json::decode` pour convertir une chaîne de caractères en `json::Value`.
 
-Enfin, voici un exemple de notre structure JSON et sa sortie correspondante :
+Deuxièmement, Gleam offre plusieurs fonctions utiles pour travailler avec le JSON, comme `json::get` pour obtenir la valeur d'une clé spécifique, `Json.delete` pour supprimer une clé et sa valeur du JSON, et `json::merge` pour fusionner deux JSON en un seul.
 
-Input (JSON) :
+De plus, Gleam possède une validation compile-time pour t'assurer que ton code respecte la structure JSON. Cela signifie que tu éviteras les erreurs à l'exécution et que ton code sera plus robuste.
 
-```Gleam
-{
-    "name": "John",
-    "email": "john@example.com",
-    "age": 30
-}
-```
+Et enfin, si tu as affaire à un grand volume de données JSON, Gleam est également capable de les traiter de manière efficace grâce à son multi-processing et sa gestion de la mémoire sans utilisateur.
 
-Output :
+##Voir aussi
 
-```Gleam
-"User name: John, email: john@example.com, age: 30 years old"
-```
-
-## Plongée en profondeur 
-
-Maintenant que nous savons comment utiliser Gleam pour traiter des données JSON, jetons un coup d'œil à quelques fonctionnalités avancées.
-
-### Validation de données JSON 
-
-La validation des données est importante pour s'assurer que nous recevons les bonnes données et qu'elles sont dans le bon format. En utilisant les types de données et les fonctions de navigation de Gleam, nous pouvons facilement valider notre JSON et gérer les erreurs en cas de données manquantes ou incorrectes.
-
-### Transformation de données JSON 
-
-Il peut arriver que nous ayons besoin de transformer notre JSON en un autre format ou en modifier certaines parties. Avec Gleam, cela peut être fait en utilisant des fonctions de manipulation de données telles que `map` et `filter`.
-
-## Voir aussi
-
-- Documentation officielle de Gleam sur le traitement des données JSON : https://gleam.run/documentation/json
-- Tutoriel pour débutants sur le traitement de données JSON avec Gleam : https://www.freecodecamp.org/news/how-to-work-with-json-in-gleam-programming-language/
-- Exemples de projets utilisant Gleam pour traiter des données JSON : https://github.com/gleam-lang/awesome-gleam#json-processing
+- La documentation officielle de Gleam sur le JSON: https://gleam.run/documentation/stdlib/json
+- Un tutoriel sur comment utiliser Gleam et le JSON: https://gleam.run/tutorials/working-with-json
+- Un article sur les meilleures pratiques pour travailler avec du JSON en Gleam: https://blog.christopher-ogden.co.uk/posts/working-with-json-in-gleam

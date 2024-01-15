@@ -1,6 +1,7 @@
 ---
-title:                "Python: Analisando html"
-simple_title:         "Analisando html"
+title:                "Análise de HTML"
+html_title:           "Python: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,49 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Para usuários do Python, o parsing HTML (análise de HTML) pode ser uma habilidade útil para extrair dados de páginas da web. Isso pode ser usado para fins de scraping ou para automatizar tarefas como a coleta de informações de múltiplas páginas.
+Você provavelmente já encontrou situações em que precisou extrair informações específicas de uma página da web. Talvez você quisesse encontrar o preço de um produto em um site de compras ou obter dados de uma tabela em um site de notícias. Para isso, é necessário "analisar" o HTML da página, ou seja, extrair informações específicas do código fonte da página.
 
 ## Como Fazer
 
-O Python possui duas bibliotecas populares para analisar HTML: Beautiful Soup e lxml. Aqui está um exemplo de como usar o Beautiful Soup para extrair todos os links de uma página:
+A seguir, mostraremos um exemplo de como fazer isso usando a linguagem de programação Python.
 
-```Python
+Primeiro, precisamos importar o módulo "Beautiful Soup", que é uma biblioteca de Python que ajuda a analisar documentos HTML. Para fazer isso, basta digitar o seguinte código:
+
+``` Python
 from bs4 import BeautifulSoup
-import requests
-
-# Obtém o conteúdo da página
-url = "https://www.example.com"
-page = requests.get(url)
-content = page.content
-
-# Analisa o conteúdo usando o Beautiful Soup
-soup = BeautifulSoup(content, "html.parser")
-
-# Encontra todos os links no conteúdo
-links = soup.find_all("a")
-
-# Imprime todos os links encontrados
-for link in links:
-    print(link.get("href"))
 ```
 
-**Saída de Exemplo:**
+Em seguida, vamos criar uma variável com o conteúdo HTML que queremos analisar. Neste exemplo, vamos usar o código fonte de um artigo em um site de notícias:
 
+``` Python
+html = """
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de página da web</title>
+</head>
+<body>
+	<h1>Este é um título</h1>
+	<p>Este é um parágrafo de exemplo</p>
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+</body>
+</html>
+"""
 ```
-https://www.example.com
-https://www.example.com/about
-https://www.example.com/contact
+
+Agora, vamos usar o BeautifulSoup para analisar o conteúdo HTML e extrair a informação que desejamos. Por exemplo, se quisermos obter o título da página, podemos usar o seguinte código:
+
+``` Python
+soup = BeautifulSoup(html, 'html.parser')
+titulo = soup.title.string
+print(titulo) # output: Exemplo de página da web
 ```
+
+Da mesma forma, se quisermos pegar todos os itens da lista, podemos usar o seguinte código:
+
+``` Python
+lista = soup.find_all('li') # find_all encontra todos os elementos com a tag "li"
+for item in lista:
+  print(item.text) # output: Item 1 Item 2 Item 3
+```
+
+Esses são apenas exemplos simples, mas existem muitas outras maneiras de extrair informações específicas de páginas da web usando a biblioteca BeautifulSoup em Python.
 
 ## Deep Dive
 
-O Beautiful Soup usa uma técnica de parsing chamada de árvore DOM (Document Object Model) para encontrar e manipular elementos HTML. A biblioteca também trata automaticamente coisas como encoding e manipulação de dados mal formados.
+A biblioteca BeautifulSoup é muito poderosa e oferece várias maneiras de analisar e extrair informações do HTML. Alguns dos métodos mais usados são:
 
-Além disso, há muitos métodos e atributos disponíveis no Beautiful Soup para ajudar na navegação e extração de dados de páginas complexas. É útil ler a documentação e explorar diferentes formas de usar a biblioteca para tarefas específicas.
+- `find()`: encontra o primeiro elemento correspondente à tag especificada;
+- `find_all()`: encontra todos os elementos correspondentes à tag especificada;
+- `select()`: encontra os elementos usando seletores CSS;
+- `get_text()`: retorna o texto contido dentro de um elemento.
 
-## Veja Também
+Para saber mais sobre a biblioteca BeautifulSoup, você pode consultar a documentação oficial [aqui](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
-- [Documentação do Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Tutorial do Beautiful Soup](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
-- [Documentação do lxml](https://lxml.de/)
-- [Introdução ao parsing HTML com Python](https://realpython.com/python-web-scraping-practical-introduction/)
+## Veja também
+
+- [Documentação oficial da biblioteca BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Tutorial completo de como usar a biblioteca BeautifulSoup](https://www.dataquest.io/blog/web-scraping-tutorial-python/)

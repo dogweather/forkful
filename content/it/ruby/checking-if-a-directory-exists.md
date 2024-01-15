@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Verifica se una directory esiste"
-simple_title:         "Verifica se una directory esiste"
+title:                "Controllare se una directory esiste"
+html_title:           "Ruby: Controllare se una directory esiste"
+simple_title:         "Controllare se una directory esiste"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,31 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché fare un controllo se una directory esiste in Ruby
+# Perché
 
-Controllare se una directory esiste è un'operazione comune nei programmi Ruby, soprattutto quando si lavora con file e cartelle. Questo controllo è importante perché permette di evitare errori durante l'esecuzione del codice, come ad esempio cercare di accedere ad una directory inesistente.
+Controllare se una directory esiste può essere utile quando si sta sviluppando un programma che ha bisogno di accedere o creare nuove directories. In questo modo si evita di incorrere in errori durante l'esecuzione del codice.
 
-## Come fare un controllo se una directory esiste in Ruby
+## Come fare
 
-Per verificare se una directory esiste in Ruby, possiamo utilizzare il metodo `Dir.exist?` seguito dal percorso della directory che vogliamo controllare. Vediamo un esempio di codice:
+Per controllare se una directory esiste, si può utilizzare il metodo `Dir.exists?` che restituisce un valore booleano. Se la directory esiste, il valore sarà `true`, se non esiste il valore sarà `false`.
+
+Ecco un esempio di codice che controlla se la directory "documents" esiste all'interno della directory corrente:
 
 ```Ruby
-if Dir.exist?("/path/to/directory")
-    puts "La directory esiste!"
+if Dir.exist?("documents")
+  puts "La directory documents esiste!"
 else
-    puts "La directory non esiste."
+  puts "La directory documents non esiste!"
 end
 ```
 
-In questo esempio, stiamo utilizzando un semplice condizionale per verificare se la directory specificata esiste o meno. Se il risultato del metodo `Dir.exist?` è `true`, stamperemo il messaggio "La directory esiste!", altrimenti stamperemo "La directory non esiste.".
+Output:
 
-## Approfondimento sul controllo di esistenza di una directory
+```
+La directory documents esiste!
+```
 
-Il metodo `Dir.exist?` restituisce un valore booleano, quindi può essere utilizzato anche all'interno di espressioni booleane. Possiamo inoltre utilizzare il metodo `File.directory?` per effettuare lo stesso controllo sulla presenza di una directory, ma in questo caso dobbiamo passare la stringa del percorso completo al metodo.
+## Deep Dive
 
-E' importante notare che il metodo `Dir.exist?` restituirà `false` anche se la directory specificata è vuota o non contiene nessun file, quindi è importante verificare anche la presenza di file al suo interno se necessario.
+Il metodo `Dir.exists?` è presente nella classe `Dir` che è una sottoclasse della classe `File`. Questo significa che è possibile utilizzare anche altri metodi della classe `File` per controllare la presenza di una directory, come ad esempio `File.directory?` che restituisce lo stesso valore booleano.
+
+Inoltre, è possibile specificare il percorso completo della directory da controllare o utilizzare una variabile che contiene il percorso. Esempio:
+
+```Ruby
+path = "/home/utente/Scrivania/"
+if Dir.exists?(path)
+  puts "#{path} esiste!"
+else
+  puts "#{path} non esiste!"
+end
+```
+
+Se la directory esiste, il codice stamperà `"#{path} esiste!"`. In caso contrario, verrà stampato `"#{path} non esiste!"`.
 
 ## Vedi anche
-- [Ruby Docs - Dir Class](https://ruby-doc.org/core/Dir.html)
-- [Ruby Docs - File Class](https://ruby-doc.org/core/File.html)
-- [Come leggere, scrivere e creare file in Ruby](https://www.linode.com/docs/development/ruby/how-to-read-write-and-create-files-in-ruby/)
+
+- Documentazione ufficiale di Ruby: https://www.ruby-lang.org/it/documentation/
+- Guida interattiva di Ruby: https://www.codecademy.com/learn/learn-ruby
+- Esercitazioni pratiche di Ruby: https://www.rubyguides.com/

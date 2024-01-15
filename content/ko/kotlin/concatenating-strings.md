@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 문자열 연결하기"
+title:                "문자열 연결하기"
+html_title:           "Kotlin: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 이유
-스트링을 연결하는 것에 대해 관심이 있는 사람들이 읽는 블로그입니다.
+## 왜
+이번 글에서는 Kotlin에서 문자열을 연결하는 것에 대해 알아보겠습니다. 문자열 연결은 우리가 프로그래밍을 할 때 빈번하게 사용되는 기능이며, 이를 알고 있으면 더 효율적인 코드를 작성할 수 있습니다.
 
 ## 방법
-스트링을 연결하는 간단한 예제를 아래 코드 블록에서 볼 수 있습니다.
-
+먼저, 우리는 ```+``` 연산자를 이용하여 두 문자열을 연결할 수 있습니다. 예를 들어, 아래의 코드는 "Hello"와 "Kotlin"이라는 두 문자열을 연결하여 "Hello Kotlin"이라는 하나의 문자열을 생성합니다.
 ```Kotlin
 val str1 = "Hello"
-val str2 = "world"
-val result = str1 + " " + str2
-println(result) // Output: Hello world
+val str2 = "Kotlin"
+val result = str1 + str2
+println(result) // 출력 결과: Hello Kotlin
 ```
-
-위 예제에서 우리는 `+` 연산자를 사용하여 두 개의 스트링을 연결할 수 있습니다. 또한, 코틀린에서는 문자열 보간(string interpolation)을 사용하여 더 간결하게 스트링을 연결할 수 있습니다.
-
+또는 우리는 ```StringBuilder``` 클래스를 사용하여 여러 개의 문자열을 연결할 수도 있습니다. 이 클래스는 불변성(immutable)의 문제를 해결하기 위해, 새로운 문자열을 생성하는 대신 기존의 문자열에 문자를 계속 추가하는 방식으로 작동합니다. 아래의 예시 코드를 보면 더욱 명확해집니다.
 ```Kotlin
-val name = "Jane"
-val age = 25
-val result = "My name is ${name} and I am ${age} years old."
-println(result) // Output: My name is Jane and I am 25 years old.
+val str1 = "Hello"
+val str2 = "Kotlin"
+val sb = StringBuilder()
+sb.append(str1)
+sb.append(str2)
+println(sb.toString()) // 출력 결과: Hello Kotlin
 ```
 
-## 깊게 들어가기
-스트링 연결은 프로그래밍에서 매우 일반적으로 사용되는 작업입니다. 그 이유는 스트링이나 다른 타입의 값을 출력할 때 읽기 쉽고 이해하기 쉬운 결과를 만들어내기 때문입니다. 또한, 스트링 연결은 문자열 템플릿이나 형식 문자열을 생성하는 데에도 사용될 수 있습니다.
+## 깊이 파고들기
+Kotlin에서 문자열 연결은 또 다른 흥미로운 점이 있습니다. 이미 ```String``` 클래스는 불변성을 가지기 때문에, 새로운 문자열이 생성될 때마다 새로운 인스턴스가 할당됩니다. 이는 성능 측면에서 비효율적일 수 있습니다. 하지만 ```StringBuilder```는 문자열을 수정하면서도 동일한 인스턴스를 사용하기 때문에 성능이 향상됩니다. 이를 통해 문자열 연결을 할 때 메모리와 성능 면에서 효율적인 코드를 작성할 수 있습니다.
 
-코틀린에서는 `StringBuilder` 클래스를 사용하여 더 빠르고 효율적으로 스트링을 연결할 수 있습니다. 이 클래스는 가변성을 제공하며, 여러 개의 스트링을 하나의 스트링으로 합칠 때 효율적으로 작동합니다.
-
-## 또 보기
-- [Kotlin 문자열 연결 가이드](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [코틀린에서 문자열 보간 사용하기](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation)
-- [StringBuilder 클래스에 대한 자세한 정보](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html)
+## 살펴보기
+Kotlin 공식 문서에서 문자열 연결에 대한 더 많은 정보를 얻을 수 있습니다.
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [StringBuilder Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)

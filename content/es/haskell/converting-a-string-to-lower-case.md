@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Convirtiendo una cadena a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "Haskell: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,37 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas en Haskell?
+## Por qué
 
-Si estás trabajando con manipulación de cadenas en Haskell, es posible que te hayas preguntado cómo convertir una cadena a minúsculas. Esto puede ser útil para estandarizar el formato de las cadenas o para realizar comparaciones de manera más precisa. A continuación, te mostraremos cómo hacerlo de forma sencilla y eficaz.
+Si estás trabajando con Haskell, es muy probable que en algún momento necesites convertir una cadena de texto a minúsculas. Esto puede ser útil para muchas tareas, como validar entradas de usuario o comparar cadenas de manera más eficiente.
 
 ## Cómo hacerlo
 
-La forma más sencilla de convertir una cadena a minúsculas en Haskell es utilizando la función `toLower` de la biblioteca `Data.Char`. Esta función toma un solo carácter y devuelve su equivalente en minúsculas. Sin embargo, para aplicarla a una cadena completa, es necesario hacer uso de otras funciones y técnicas.
-
-Primero, necesitamos convertir la cadena en una lista de caracteres utilizando la función `words`. Luego, aplicamos la función `toLower` a cada carácter utilizando `map`, y finalmente, juntamos la lista de caracteres nuevamente en una cadena utilizando la función `unwords`. Veamos un ejemplo:
+La forma más sencilla de convertir una cadena a minúsculas en Haskell es usando la función `toLower` del módulo `Data.Char`. Aquí tienes un ejemplo de cómo usarla en una función:
 
 ```Haskell
 import Data.Char (toLower)
 
-convertirMinusculas :: String -> String
-convertirMinusculas cadena = unwords (map toLower (words cadena))
+toLowerString :: String -> String
+toLowerString = map toLower
 ```
 
-Ahora, si aplicamos la función `convertirMinusculas` a una cadena, obtendremos su versión en minúsculas. Por ejemplo, si aplicamos la función a la cadena "Haskell es un lenguaje de programación funcional", obtendremos como resultado "haskell es un lenguaje de programación funcional".
+La función `toLowerString` usa la función `map` para aplicar `toLower` a cada elemento de la cadena, convirtiendo toda la cadena a minúsculas. Veamos cómo funciona con algunos ejemplos:
 
-Es importante tener en cuenta que la función `toLower` sólo funciona con caracteres latinos estándar. Si tu cadena contiene caracteres acentuados u otros símbolos, es posible que necesites utilizar una biblioteca externa para una conversión más precisa.
+```Haskell
+toLowerString "Hola Mundo!" -- devuelve "hola mundo!"
+toLowerString "123 ABC" -- devuelve "123 abc"
+toLowerString "Haskell" -- devuelve "haskell"
+```
+
+Otra forma de convertir una cadena a minúsculas es usando la función `map toLower` directamente en la cadena, en lugar de definir una función separada:
+
+```Haskell
+map toLower "Hola Mundo!" -- devuelve "hola mundo!"
+```
+
+Ambos métodos son válidos, pero es importante tener en cuenta que `toLower` solo funciona con letras del alfabeto, ignorando cualquier otro tipo de caracteres. Si necesitas convertir una cadena completamente a minúsculas, incluyendo caracteres especiales y números, puedes usar la función `map toLower` junto con `toCaseFold` del módulo `Data.Text`:
+
+```Haskell
+import Data.Char (toLower)
+import Data.Text (toCaseFold)
+
+toLowerString :: String -> String
+toLowerString = unpack . toCaseFold . pack
+```
+
+Aquí hemos utilizado las funciones `pack` y `unpack` para convertir entre `String` y `Text`, ya que `toCaseFold` solo funciona con `Text`. Ahora, la función `toLowerString` funcionará con cualquier tipo de caracteres:
+
+```Haskell
+toLowerString "123 ABC" -- devuelve "123 abc"
+toLowerString "HOLA#$Mundo" -- devuelve "hola#$mundo"
+toLowerString "ĂȘȚĒ" -- devuelve "ășțē"
+```
 
 ## Profundizando
 
-Si queremos entender mejor cómo funciona la conversión de cadenas a minúsculas en Haskell, podemos dar un vistazo a la implementación de la función `toLower` en la biblioteca `Data.Char`. Esta función utiliza tablas de búsqueda y patrones de coincidencia para determinar el equivalente en minúsculas de un carácter.
+En términos más técnicos, `toLower` y `toCaseFold` funcionan mediante el uso de la tabla de Unicode (un estándar que asigna un número a cada carácter utilizado en la mayoría de los sistemas de escritura). Esta tabla contiene información sobre cada carácter, incluyendo si es mayúscula, minúscula o una letra especial. Al usar estas funciones, Haskell busca en la tabla de Unicode para determinar si un carácter tiene una versión en minúsculas y, de ser así, la devuelve.
 
-Otra forma de convertir una cadena a minúsculas es utilizando la técnica de recursión en Haskell. Esta técnica utiliza patrones de coincidencia para determinar si un carácter es mayúscula, y en ese caso, lo convierte a minúscula y sigue recursivamente con el resto de la cadena. Este enfoque es más eficiente en términos de memoria, pero puede ser más difícil de entender para principiantes.
-
-En resumen, hay varias formas de convertir una cadena a minúsculas en Haskell y cada una tiene sus pros y contras. La mejor opción dependerá del contexto y de los requisitos del código en el que se esté trabajando.
+Por otro lado, si quieres convertir una cadena a mayúsculas, puedes usar la función `toUpper` del módulo `Data.Char`, que funciona de la misma manera que `toLower`, pero convirtiendo los caracteres a su versión en mayúsculas en lugar de minúsculas.
 
 ## Ver también
 
-- [Documentación de la biblioteca `Data.Char`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
-- [Tutorial de Haskell en español](https://wiki.uclm.es/index.php?title=P._36-_%C2%ABHaskell_en_espa%C3%B1ol%C2%BB)
-- [Ejemplos prácticos de manipulación de cadenas en Haskell](https://github.com/mulder21c/haskell-cadenas)
+- [Documentación oficial de `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Documentación oficial de `Data.Text`](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Unicode](https://www.unicode.org/)

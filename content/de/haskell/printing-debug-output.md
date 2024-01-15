@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Druck des Debug-Ausgangs"
-simple_title:         "Druck des Debug-Ausgangs"
+title:                "Ausgabe von Debugging-Informationen"
+html_title:           "Haskell: Ausgabe von Debugging-Informationen"
+simple_title:         "Ausgabe von Debugging-Informationen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -11,35 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Debuggen ist ein wichtiger Teil des Entwicklungsprozesses für jeden Programmierer. Das Drucken von Debug-Ausgaben kann dabei helfen, Fehler und Probleme im Code zu finden und zu beheben. Es erlaubt uns auch, den Programmablauf zu verstehen und zu überprüfen, ob unsere Annahmen über die Daten und Variablen im Code korrekt sind. In Haskell gibt es verschiedene Möglichkeiten, Debug-Ausgaben zu drucken, und in diesem Blog-Post werden wir uns damit befassen, wie man dies effektiv tun kann.
+Du bist gerade dabei, dein Haskell-Programm zu entwickeln und stößt auf unerklärliche Fehler? Das Drucken von Debug-Ausgaben kann dir dabei helfen, deine Code zu verstehen und Probleme zu lösen. In diesem Artikel werden wir dir zeigen, wie du Debug-Ausgaben in Haskell nutzen kannst.
 
-## Wie geht das
+## Wie funktioniert es
 
-Um Debug-Ausgaben in Haskell zu drucken, können wir die Funktion "putStrLn" aus dem "Prelude" Modul verwenden. Diese Funktion nimmt einen String als Argument und gibt ihn auf der Konsole aus. Zum Beispiel:
-
-```Haskell
-main = do
-  putStrLn "Debug-Ausgabe"
-```
-
-Dieser Code würde einfach den String "Debug-Ausgabe" auf der Konsole ausgeben. Wir können auch Variablen oder andere Ausdrücke in den String einbinden, indem wir sie innerhalb von geschweiften Klammern platzieren und ein Dollarzeichen davor setzen, um sie auszuwerten. Zum Beispiel:
+Um Debug-Ausgaben in Haskell zu drucken, verwenden wir die Funktion `print`, die einen Wert auf die Standardausgabe ausgibt. Hier ist ein Beispiel, wie wir eine Debug-Ausgabe in unserem Code platzieren können:
 
 ```Haskell
+foo :: Int -> Int -> Int
+foo x y = x + y
+
 main = do
-  let x = 10
-  putStrLn $"Der Wert von x ist: {x}"
+    let result = foo 2 3
+    print result
 ```
 
-Dies würde den String "Der Wert von x ist: 10" ausgeben. Indem wir Variablenwerte oder Ausdrücke in diese Debug-Ausgaben einbinden, können wir sie effektiver nutzen, um den Programmablauf zu verfolgen und mögliche Fehler zu finden.
+In diesem Beispiel haben wir die Funktion `foo` definiert, die zwei Integers addiert. In der `main` Funktion haben wir `foo` mit den Argumenten 2 und 3 aufgerufen und das Ergebnis daraus in der Variable `result` gespeichert. Anschließend drucken wir `result` mit der `print` Funktion aus. Wenn wir nun unser Programm ausführen, sollten wir `5` in unserer Konsole sehen.
 
-## Tiefergehende Informationen
+Dies ist nur ein einfaches Beispiel, aber du kannst Debug-Ausgaben in jedem Teil deines Codes platzieren, um den Wert von Variablen oder Ausdrücken zu überprüfen.
 
-Es gibt auch andere Funktionen und Techniken, um Debug-Ausgaben in Haskell zu drucken. Zum Beispiel können wir die Funktion "trace" aus dem Modul "Debug.Trace" verwenden. Diese Funktion funktioniert ähnlich wie "putStrLn", jedoch gibt sie den ausgewerteten Wert des Ausdrucks zurück, den wir angeben, anstatt ihn nur auszudrucken. Das kann uns dabei helfen, die Ausgabe von Debug-Anweisungen in unsere Programmlogik zu integrieren und Fehler zu finden, die möglicherweise nicht durch reine Ausgabe auf der Konsole gefunden werden können.
+## Der tiefe Tauchgang
+
+Es gibt eine weitere nützliche Funktion namens `trace`, die es uns ermöglicht, Debug-Ausgaben mit zusätzlichen Informationen zu versehen. Hier ist ein Beispiel:
+
+```Haskell
+import Debug.Trace (trace)
+
+foo :: Int -> Int -> Int
+foo x y = x + y
+
+main = do
+    let result = foo 2 3
+    trace ("Das Ergebnis von foo ist " ++ (show result)) result
+```
+
+Wenn wir nun unser Programm ausführen, sehen wir nicht nur `5`, sondern auch unsere zusätzliche Information in der Konsole: "Das Ergebnis von foo ist 5". Dies kann besonders hilfreich sein, wenn du versuchst, die Reihenfolge oder den Wert verschiedener Ausdrücke in deinem Code zu überprüfen.
 
 ## Siehe auch
 
-- [Die offizielle Dokumentation zu Debug-Ausgaben in Haskell](https://www.haskell.org/documentation.html)
-- [Ein Tutorial zum Debuggen in Haskell](https://mmhaskell.com/debugging-in-haskell)
-- [Ein Artikel über die Verwendung von "Debug.Trace" in Haskell](https://www.fpcomplete.com/blog/haskell/debugging-haskell-trace/)
-
-Vielen Dank fürs Lesen und viel Erfolg beim Debuggen in Haskell!
+- [Haskell Debugging](https://wiki.haskell.org/Debugging)
+- [Learn You a Haskell - Debugging](http://learnyouahaskell.com/starting-out#debugging) 
+- [Haskell Documentation - Debugging Tools](https://www.haskell.org/documentation/#debugging-tools)

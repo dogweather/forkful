@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Töitä tehdessä jsonin kanssa"
-simple_title:         "Töitä tehdessä jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "TypeScript: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -9,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Finlandin TypeScript ohjelmoijat, oletteko valmiita sukeltamaan JSONin maailmaan? JSON (JavaScript Object Notation) on yksi yleisimmin käytetyistä tiedostomuodoista web-kehityksessä. Tässä blogipostissa kerron teille, miksi ja miten voitte käyttää TypeScriptiä JSONin kanssa ja tarjoan myös syvällisempää tietoa aiheesta.
-
 ## Miksi
 
-JSON on tullut erittäin suosituksi tiedostomuodoksi web-kehittäjien keskuudessa sen yksinkertaisuuden ja ihmisläheisyyden vuoksi. Se on myös helppo lukea ja ymmärtää sekä suorituskykyinen. JSONia käytetään yleisesti tietojen tallentamiseen ja siirtämiseen web-sovellusten ja palvelimien välillä.
+JSON (JavaScript Object Notation) on yleisesti käytetty tapa tallentaa ja vaihtaa tietoa.selvityssivu mikä sisältää, työtä ja sen tus ihmiset kuin ei työskentelevät PHP:n? Sitä käytetään usein web-sovelluksissa ja sen avulla voi lähettää tietoa esimerkiksi API-kutsujen välillä. JSON on myös helppo ymmärtää ja kirjoittaa, joten se on suosittu vaihtoehto tietojen tallentamiseen ja siirtämiseen.
 
 ## Miten
 
-TypeScript on erinomainen valinta JSONin käsittelyyn sen vahvan tyyppisyyden vuoksi. Voit helposti parsia JSON-tiedoston TypeScript-olioksi käyttämällä sisäänrakennettua `JSON.parse()`-funktiota. Seuraavassa esimerkissä luodaan TypeScript-olio ja muutetaan se JSON-muotoon konsolin tulosteessa.
-
-```TypeScript
-const henkilö: { nimi: string, ikä: number } = {
-  nimi: "Matti",
-  ikä: 25
+```typescript
+const user = {
+  name: "Matti",
+  age: 28,
+  hobbies: ["lukeminen", "lenkkeily", "valokuvaus"]
 };
 
-console.log(JSON.stringify(henkilö));
-// tulostaa: {"nimi":"Matti","ikä":25}
+console.log(JSON.stringify(user));
+// Output: {"name": "Matti", "age": 28, "hobbies": ["lukeminen", "lenkkeily", "valokuvaus"]}
 ```
 
-Toisin kuin JavaScript, TypeScript voi auttaa tunnistamaan virheitä ennen ohjelman suorittamista, mikä tekee siitä luotettavamman vaihtoehdon JSONin käsittelyyn.
+Kuten näet, JSON-objektin luominen TypeScriptissä on helppoa. Voit käyttää erilaisia tietotyyppejä, kuten merkkijonoja, numeroita ja jopa taulukoita. Kun käytät JSON.stringify() -funktiota, voit muuntaa objektin helposti merkkijonoksi, joka on helppo siirtää ja tallentaa.
 
-## Syväsukellus
+```typescript
+const json = '{"name": "Anna", "age": 32, "hobbies": ["kirjoittaminen", "piirtäminen", "retkeily"]}';
 
-JSON-muoto on melko yksinkertainen, mutta siinä on muutamia tärkeitä asioita, jotka on hyvä pitää mielessä. Ensinnäkin, JSON-tiedosto koostuu objekteista ja arvoista, jotka ovat joko merkkijonoja, numeroita, boolean-arvoja, taulukoita tai muita objekteja. Toiseksi, JSON-tiedostoissa käytetään usein `null`-arvoa, joka tarkoittaa "tyhjää".
+const user = JSON.parse(json);
 
-JSON-tiedostot voi myös sisältää monenlaisia tietotyyppejä, mikä voi joskus aiheuttaa ongelmia jos ei ole tietoinen siitä, mitä tyyppiä odottaa. Esimerkiksi jos objektin arvo on arvo, joka voi olla joko merkkijono tai numero, TypeScript vaatii sinua määrittelemään sen `string | number` -tyypiksi. Tässä on hyvä käyttää TypeScriptin union-tyyppiä.
+console.log(user.name);
+// Output: Anna
+```
 
-Näiden perustietojen lisäksi on hyödyllistä tutustua JSON-skeemaan, joka auttaa määrittelemään ja validoimaan JSON-tiedoston rakenteen. On myös olemassa erilaisia TypeScript-kirjastoja, jotka voivat auttaa käsittelemään JSONia, kuten `jsonschema`, `json2typescript` ja `typescript-json-schema`, joista jokaisella on omat ominaisuutensa ja tarkoituksensa.
+JSON-tiedon purkaminen merkkijonosta takaisin objektiksi on myös yksinkertaista. Voit käyttää JSON.parse() -funktiota ja antaa sille merkkijonon muuttujana. Tämän jälkeen voit käyttää objektia kuten mitä tahansa muuta objektia.
+
+## Syvällinen sukellus
+
+JSON-tiedostojen käyttäminen TypeScriptissä on helppoa, mutta on tärkeää muistaa muutamia asioita. JSON-tiedostoissa käytetään aina kaksoislainausmerkkejä merkkijonojen ympärillä. Tästä syystä on tärkeää käyttää yksinkertaisia lainausmerkkejä objektin luomisessa, jotta vältytään virheiltä.
+
+JSON-tiedostot koostuvat avain-arvo pareista, joissa käytetään kaksoispistettä erotin. Muista myös, että JSON-tietoja ei voi kommentoida, joten pidä koodi siistinä ja yksinkertaisena.
 
 ## Katso myös
 
-Jos haluat oppia lisää JSONin käsittelystä TypeScriptillä, tutustu seuraaviin resursseihin:
-
-- [TypeScriptin virallinen dokumentaatio JSON-tyyppi](https://www.typescriptlang.org/docs/handbook/basic-types.html#json)
-- [JSON-tyypit ja validointi TypeScriptissä](https://github.com/ajv-validator/ajv/blob/master/docs/typescript.md)
-- [Erittäin yksityiskohtaiset TypeScript - JSON -vinkit](https://stijndewitt.com/2019/08/02/json-in-typescript-with-parameter-decorators)
-- [Jokin ed
+- [JSON:n viralliset sivut] (https://www.json.org/json-fi.html)
+- [TypeScriptin viralliset sivut] (https://www.typescriptlang.org/)

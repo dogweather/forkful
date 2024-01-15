@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Comparando dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "Clojure: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,52 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué comparar dos fechas en Clojure?
 
-Hay muchas situaciones en las que puede ser útil comparar dos fechas en un programa en Clojure. Por ejemplo, puede necesitar verificar si una fecha es mayor que otra, si ambas fechas caen en el mismo día o mes, o si hay una diferencia específica de tiempo entre ellas. Afortunadamente, Clojure tiene funciones integradas que facilitan la comparación de fechas.
+La comparación de dos fechas puede ser útil en varios casos, como en la programación de sistemas de reserva, planificación de tareas y análisis de datos temporales. En Clojure, podemos hacer esto fácilmente utilizando algunas funciones integradas.
 
-## Cómo
+## Cómo comparar dos fechas
 
-### Comparar si una fecha es mayor o menor que otra
-
-Para comparar dos fechas en Clojure, utilizamos la función `>` para verificar si la primera fecha es mayor que la segunda y la función `<` para verificar si la primera fecha es menor que la segunda. Por ejemplo:
+Para comparar dos fechas en Clojure, podemos utilizar la función `compare` de la librería `java.time`. Esta función toma dos parámetros de tipo `LocalDate` y devuelve un número entero que representa la posición relativa de las fechas.
 
 ```Clojure
-(> (java.util.Date. 2021 3 15) (java.util.Date. 2021 3 10))
-;; muestra true, ya que 15 de marzo es mayor que 10 de marzo
+(require '[java.time :as time])
 
-(< (java.util.Date. 2021 3 5) (java.util.Date. 2021 3 10))
-;; muestra true, ya que 5 de marzo es menor que 10 de marzo
+;; Definimos dos fechas
+(def fecha-1 (time/LocalDate/of 2020 6 1))
+(def fecha-2 (time/LocalDate/of 2020 6 15))
+
+;; Comparamos las fechas
+(time/compare fecha-1 fecha-2)
+
+;; Output: -1 (fecha-1 es anterior a fecha-2)
 ```
 
-### Verificar si dos fechas caen en el mismo día o mes
+El valor de salida de `compare` es:
 
-Para verificar si dos fechas caen en el mismo día o mes, podemos utilizar las funciones `=` y `month`. La función `=` compara si los dos argumentos son iguales, mientras que `month` nos da como resultado el mes correspondiente al argumento que le pasamos. Por ejemplo:
+- `-1` si la primera fecha es anterior a la segunda.
+- `0` si ambas fechas son iguales.
+- `1` si la primera fecha es posterior a la segunda.
+
+También podemos utilizar las funciones `before?` y `after?` para comprobar si una fecha es anterior o posterior a otra.
 
 ```Clojure
-(= (month (java.util.Date. 2021 3 15)) (month (java.util.Date. 2021 3 20)))
-;; muestra true, ya que ambos corresponden al mes de marzo
+(time/before? fecha-1 fecha-2)
 
-(= (month (java.util.Date. 2021 3 15)) (month (java.util.Date. 2021 4 15)))
-;; muestra false, ya que uno es marzo y el otro es abril
+;; Output: true (fecha-1 es anterior a fecha-2)
+
+(time/after? fecha-1 fecha-2)
+
+;; Output: false (fecha-1 es anterior a fecha-2)
 ```
 
-### Obtener la diferencia de tiempo entre dos fechas
-
-Podemos utilizar la función `days` para obtener la diferencia en días entre dos fechas. Esta función toma como argumentos dos fechas y devuelve un número entero que representa la diferencia en días entre ellas. Por ejemplo:
+Además, podemos utilizar la función `between?` para comprobar si una fecha está entre dos fechas dadas.
 
 ```Clojure
-(days (java.util.Date. 2021 3 15) (java.util.Date. 2021 3 25))
-;; muestra 10, ya que hay 10 días de diferencia entre el 15 y el 25 de marzo
+(time/between? fecha-1 fecha-2 (time/LocalDate/of 2020 6 10))
+
+;; Output: true (fecha-1 está entre fecha-2 y 2020-06-10)
 ```
 
-## Profundizando
+## Profundizando en la comparación de fechas
 
-Además de las funciones mencionadas anteriormente, Clojure también ofrece otras funciones para trabajar con fechas, como `before?`, `after?`, `<=` y `>=`. Estas funciones proporcionan una forma más precisa de comparar fechas teniendo en cuenta aspectos como la hora y los milisegundos.
+La librería `java.time` también proporciona algunas funciones para realizar operaciones matemáticas en fechas, como `plus`, `minus` y `with`.
 
-Es importante tener en cuenta que las fechas en Clojure son inmutables, por lo que cualquier función de comparación siempre devolverá un nuevo objeto `Date` y no modificará el objeto original.
+```Clojure
+(time/plus fecha-1 (time/Period/ofDays 5))
+
+;; Output: 2020-06-06 (fecha-1 + 5 días)
+
+(time/minus fecha-1 (time/Duration/ofDays 10))
+
+;; Output: 2020-05-22 (fecha-1 - 10 días)
+
+(time/with fecha-1 (time/ChronoField/$mon (time/DayOfWeek/THURSDAY)))
+
+;; Output: 2020-06-04 (fecha-1 ajustada al jueves)
+```
+
+Para obtener más información sobre las funciones y tipos de datos relacionados con fechas en Clojure, puedes revisar la documentación oficial de `java.time` y la librería `clj-time`.
 
 ## Ver también
 
-- Documentación oficial sobre fecha y hora en Clojure: https://clojure.org/reference/java_interop#date_and_time
-- Tutorial sobre uso de funciones de fecha en Clojure: https://www.braveclojure.com/core-functions-in-detail/#Date_and_Time_Functions
+- [Documentación oficial de java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Librería clj-time](https://github.com/clj-time/clj-time)

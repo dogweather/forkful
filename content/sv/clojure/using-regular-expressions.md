@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Att använda reguljära uttryck"
+html_title:           "Clojure: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför använda sig av reguljära uttryck?
+## Varför
 
-När man arbetar med textsträngar i Clojure är det ofta användbart att kunna söka och manipulera dem med hjälp av reguljära uttryck. Detta är ett kraftfullt verktyg som kan användas för att matcha och hitta mönster i texten, vilket sparar både tid och ansträngning.
+Det finns många anledningar till varför man skulle vilja använda reguljära uttryck (regular expressions). De kan användas för att söka, extrahera och manipulera text på ett kraftfullt sätt. De är också användbara för att hantera validering av inmatning och hantering av data.
 
-## Hur man använder reguljära uttryck i Clojure
+## Så här använder du reguljära uttryck i Clojure
 
-För att använda reguljära uttryck i Clojure behöver man först importera biblioteket "java.util.regex". Sedan kan man använda funktionen "re-seq" för att söka efter mönster i en textsträng.
-
-```Clojure
-(import 'java.util.regex.Pattern)
-
-(re-seq #"hej" "Hej, hur mår du?") ; => ("hej")
-(re-seq #"c.l" "cool, coal, cul, cup") ; => ("col" "cul")
-```
-
-I dessa exempel använder vi "#" före vårt reguljära uttryck för att indikera att vi vill söka efter exakt det mönster vi har specificerat. Om vi vill söka efter ett mönster som kan förekomma flera gånger i en textsträng kan vi använda "*" istället.
+Det första du behöver göra är att importera Clojure's regex-bibliotek. Detta gör du genom att lägga till följande kod längst upp i ditt program:
 
 ```Clojure
-(re-seq #"hej*" "Hej, hur mår du?") ; => ("hej")
-(re-seq #"c*l" "cool, coal, cul, cup") ; => ("cool" "coal" "cul")
+(use 'clojure.string)
 ```
 
-Man kan också använda reguljära uttryck för att ersätta delar av en textsträng med annan text. Detta görs med funktionen "re-substitutions".
+För att sedan söka efter ett mönster i en sträng kan du använda funktionen `re-find`. Till exempel, om du vill hitta alla ord som börjar med bokstaven "a" i en sträng, skulle koden se ut så här:
 
 ```Clojure
-(re-substitution #"k[aä]tt" "hund" "Min katt heter Misse") ; => "Min hund heter Misse"
+(re-find #"a\w+" "Hej alla a-böcker")
 ```
 
-## Djupdykning i reguljära uttryck
+Resultatet skulle bli en lista med alla matchande ord ("alla" och "a-böcker" i vårt exempel). Notera att vi använder `#"a\w+"` för att definiera vårt sökmönster. Den första delen, `#`, visar att vi använder ett reguljärt uttryck. Sedan följer mönstret som vi vill matcha, i detta fall "a" följt av ett eller flera bokstäver `\w+`.
 
-Reguljära uttryck är mycket kraftfulla och komplexa, så det finns många fler mönster och funktioner att utforska. Man kan till exempel använda "grupper" i sina reguljära uttryck för att hitta, extrahera och ersätta specifika delar av en textsträng. Man kan också använda "kvantifikatorer" för att specificera hur många gånger ett mönster ska matcha.
+Du kan också använda reguljära uttryck för att extrahera information från en sträng. Till exempel, om du har en sträng med olika format för telefonnummer kan du använda följande kod för att extrahera endast siffrorna:
 
-Det finns mycket information och resurser tillgängliga på internet för att lära sig mer om reguljära uttryck i Clojure. Det är också en bra idé att experimentera med olika mönster och funktioner för att bli mer bekväm med dem.
+```Clojure
+(re-find #"\d+" "(123) 456-7890")
+```
 
-## Se även
+Resultatet skulle bli 1234567890.
 
-- [Officiell Clojure Regex-dokumentation](https://clojure.github.io/clojure/clojure.java-time-api.html#clojure.java-time.instant)
-- [Regex Cheat Sheet for Clojure](https://medium.com/@wisecobbler/regex-cheatsheet-for-clojure-1d31e4b6f840)
-- [Clojure för Nybörjare: Reguljära Uttryck](https://clojure.org/guides/learn/regular_expressions)
+## Djupdykning
+
+Det finns många andra funktioner för reguljära uttryck i Clojure som du kan utforska. Här är några att börja med:
+
+- `re-seq`: används för att hitta alla matchningar i en sträng och returnerar dem som en sekvens.
+- `re-matches`: används för att hitta en exakt matchning, till skillnad från `re-find` som kan hitta delmönster.
+- `re-first`: returnerar den första matchningen, användbart om du bara är intresserad av den första matchningen.
+- `re-pattern`: används för att konvertera en sträng till en reguljär uttrycks-mall.
+
+Se till att läsa dokumentationen för Clojure regex-bibliotek (länk nedan) för att lära dig mer om alla tillgängliga funktioner.
+
+## Se också
+
+- [Clojure Regex Biblioteket Dokumentation](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-find)
+- [Reguljära uttryck Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

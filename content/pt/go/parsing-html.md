@@ -1,6 +1,7 @@
 ---
-title:                "Go: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Analisando html"
+html_title:           "Go: Analisando html"
+simple_title:         "Analisando html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -9,71 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que fazer parsing em HTML?
+## Por que
 
-Se você já trabalhou com programação web, com certeza já se deparou com a necessidade de extrair informações específicas de uma página HTML. Fazer isso manualmente pode ser um processo tedioso e demorado. É aí que entra o parsing de HTML! Com o uso de uma linguagem de programação como Go, é possível automatizar esse processo e economizar tempo e esforço.
+Você já precisou extrair informações de uma página da web? Se sim, você sabe o quão cansativo e demorado pode ser fazer isso manualmente. É aí que entra a análise HTML. Com o Go, é possível criar um programa que faça isso de forma eficiente e rápida.
 
-## Como fazer parsing em HTML com Go
+## Como Fazer
 
-Para começar, é importante entender que o processo de parsing envolve analisar uma string de texto e extrair informações de acordo com um padrão específico. No caso de HTML, isso significa localizar e extrair dados de tags e atributos.
-
-Em Go, podemos utilizar a biblioteca "html" para realizar o parsing de HTML. Veja um exemplo simples:
+Para começar a analisar o HTML com Go, é preciso importar a biblioteca "html" do pacote padrão. Em seguida, basta usar a função "Parse" passando o HTML como argumento. Veja um exemplo:
 
 ```Go
 package main
-
 import (
-	"fmt"
-	"strings"
-	"golang.org/x/net/html"
+  "fmt"
+  "html"
 )
 
 func main() {
-	// Definindo a string HTML a ser analisada
-	htmlString := "<html><body><h1>Título</h1><p>Parágrafo</p></body></html>"
+  // HTML de exemplo
+  const htmlString = "<h1>Título</h1><p>Parágrafo</p>" 
 
-	// Criando um reader a partir da string
-	reader := strings.NewReader(htmlString)
+  // Analisa o HTML e armazena em uma variável
+  parsedHTML := html.Parse(htmlString)
 
-	// Utilizando a função Parse do pacote "html" para analisar o HTML
-	doc, err := html.Parse(reader)
-	if err != nil {
-		fmt.Println("Erro ao analisar HTML:", err)
-	}
-
-	// Função recursiva para percorrer o documento e encontrar tags específicas
-	var findTag func(*html.Node)
-	findTag = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "p" {
-			// Extraindo o conteúdo do parágrafo
-			fmt.Println(n.FirstChild.Data)
-		} else {
-			// Chamando a função recursiva para continuar percorrendo o documento
-			for c := n.FirstChild; c != nil; c = c.NextSibling {
-				findTag(c)
-			}
-		}
-	}
-	findTag(doc)
+  // Imprime o resultado
+  fmt.Println(parsedHTML)
 }
 ```
 
-Neste exemplo, estamos apenas extraindo o conteúdo de todos os parágrafos da página HTML. Você pode modificar o código para atender às suas necessidades específicas, como extrair dados de tags específicas ou atributos de tags.
+O resultado será a estrutura do HTML analisada e pronta para ser utilizada em outras operações.
 
-O output deste código será:
+## Deep Dive
 
-```
-Parágrafo
-```
+A biblioteca "html" do pacote padrão do Go oferece uma variedade de funções e métodos para facilitar a análise de HTML. Algumas delas incluem:
 
-## Mergulho profundo em parsing de HTML
+- `Parse`: como visto anteriormente, esta função analisa o HTML e retorna uma estrutura de dados.
+- `NewTokenizer`: esta função cria um analisador HTML que pode ser usado para percorrer o HTML de forma mais granular.
+- `Token`: a estrutura que representa um elemento do HTML. Possui métodos úteis para acessar seus atributos e conteúdo.
+- `Render`: esta função renderiza o HTML analisado em um formato de string, permitindo a manipulação e edição antes de ser exportado.
 
-O código de exemplo acima é apenas um começo para explorar o potencial do parsing de HTML em Go. Com a biblioteca "html", é possível realizar a análise de documentos complexos e manipular tags e atributos de forma eficiente. Além disso, a linguagem Go é conhecida por sua alta performance e concorrência, o que pode ser muito útil em processos de parsing mais complexos.
+A análise HTML com Go também permite o uso de seletores CSS, permitindo uma forma mais eficiente de encontrar e extrair informações específicas de uma página da web.
 
-Se você quer se aprofundar ainda mais no assunto, recomendamos a leitura da documentação oficial do pacote "html" (https://godoc.org/golang.org/x/net/html) e a exploração de outras bibliotecas e frameworks para parsing em Go, como "goquery" e "colly".
+## Veja Também
 
-## Veja também
-
-- Documentação oficial do pacote "html": https://godoc.org/golang.org/x/net/html
-- Biblioteca "goquery": https://github.com/PuerkitoBio/goquery
-- Framework "colly": https://github.com/gocolly/colly
+- [Documentação Oficial do Pacote HTML do Go](https://golang.org/pkg/html/)
+- [Tutorial de Análise de HTML com Go da Sitepoint (em inglês)](https://www.sitepoint.com/parsing-html-using-go/)

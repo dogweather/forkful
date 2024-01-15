@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Elm: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+# Hvorfor
 
-I denne bloggposten skal vi se nærmere på hvordan man kan sjekke om en mappe eksisterer i Elm-programmeringsspråket, og hvorfor dette kan være nyttig.
+Det kan være viktig å sjekke om en mappe eksisterer i en Elm applikasjon for å sikre at programmet fungerer som forventet og unngå unødvendige feil. Dette er spesielt relevant når man håndterer store mengder data eller når man trenger å koble sammen forskjellige filsystemer.
 
-## Hvordan Gjøre Det 
+# Hvordan
 
-Det første vi må gjøre er å importere den nødvendige pakken ved hjelp av følgende kode:
+For å sjekke om en mappe eksisterer i Elm trenger man først å importere nødvendige pakker. Deretter kan man bruke funksjonen `folderExists` fra pakken `elm/file` for å sjekke om mappen finnes. Her følger et eksempel på hvordan dette kan gjøres:
 
 ```Elm
 import File
-```
+import System.Directory
 
-Deretter kan vi bruke funksjonen `File.exists` for å sjekke om en mappe eksisterer. For eksempel, hvis vi ønsker å sjekke om mappen "bilder" finnes, kan koden se slik ut:
+folderExists : String -> Cmd msg
+folderExists folder =
+    File.folderExists folder
+        |> Task.perform FolderExists
 
-```Elm
-File.exists "bilder"
-```
+type Msg
+    = FolderExists Bool
 
-Denne funksjonen returnerer en `Task Bool`, som betyr at den enten vil returnere `True` hvis mappen eksisterer, eller `False` hvis den ikke gjør det. Vi kan håndtere denne tasken ved hjelp av funksjonen `Task.andThen`, som lar oss fortsette å kjøre koden vår basert på resultatet av tasken.
-
-```Elm
-File.exists "bilder"
-    |> Task.andThen 
-        (\exists ->
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        FolderExists exists ->
             if exists then
-                -- Fyll inn koden du ønsker å kjøre dersom mappen eksisterer
+                -- Do something if the folder exists
             else
-                -- Fyll inn koden du ønsker å kjøre dersom mappen ikke eksisterer
-        )
+                -- Do something if the folder doesn't exist
 ```
 
-## Dypdykk 
+Denne koden vil returnere en `Bool` (sant eller falskt) basert på om mappen eksisterer eller ikke. Man kan også bruke `File.fileExist` for å sjekke om en bestemt fil eksisterer i en mappe.
 
-Når vi bruker funksjonen `File.exists`, blir ikke mappen faktisk sjekket på nåværende tidspunkt. Dette gjøres først når tasken blir kjørt senere i koden. Dette kan være nyttig å være klar over, spesielt hvis du forventer at mappen skal eksistere når du kjører koden din.
+# Dypdykk
 
-Det er også verdt å nevne at denne funksjonen bare sjekker etter mapper i samme directory som din Elm-fil. Dersom du vil sjekke om en mappe eksisterer i et annet directory, kan du bruke funksjonen `File.exactlyExists` i stedet.
+Det er viktig å være klar over at funksjonen `folderExists` bare sjekker om en mappe er tilgjengelig i det nåværende filsystemet. Dette betyr at hvis man jobber med et virtuelt filsystem, for eksempel i en webapplikasjon, vil funksjonen returnere `True` selv om mappen ikke eksisterer i det virkelige filsystemet. Det kan derfor være lurt å inkludere ekstra betingelser i koden for å sikre at mappen faktisk eksisterer der man ønsker.
 
-## Se Også 
+# Se Også
 
-- [Elm Dokumentasjon - File](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm Programmeringspråket](https://elm-lang.org/)
-- [Elm Norsk Brukernettverk](https://www.meetup.com/Elm_Norge/)
+- [Offisiell dokumentasjon for elm/file pakken](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm tutorial på elmprogramming.com](https://elmprogramming.com/) (på engelsk)
+- [Gjør Elm koden din raskere med perfekt optimeringstips](https://medium.com/@slashdotdash/elm-perfekt-optimeringstips-872aecf6d889) (på engelsk)

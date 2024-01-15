@@ -1,5 +1,6 @@
 ---
-title:                "Java recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Java recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Java"
 category:             "Java"
@@ -9,58 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-When working with files and directories in Java, it is important to check if a directory exists before performing any operations on it. This can prevent errors and ensure that the program runs smoothly without any unexpected interruptions.
+Checking if a directory exists is a crucial task for every Java developer. It allows them to ensure that their code can handle all possible scenarios, even if the directory may not exist.
 
-## How To
+##How To
 
-To check if a directory exists in Java, we can use the `exists()` method from the `File` class. Here's an example code:
+To check if a directory exists in Java, you can use the `File` class. Simply create an instance of the `File` class with the directory path as the argument. Then, use the `exist()` method to check if the directory exists.
 
 ```Java
-import java.io.File;
-
-public class DirectoryCheckExample {
-
-    public static void main(String[] args) {
-        // Specify the path of the directory to be checked
-        String dirPath = "C:/Users/User/Documents/JavaProject";
-
-        // Create a File object
-        File directory = new File(dirPath);
-
-        // Check if the directory exists
-        if (directory.exists()) {
-            // If exists, print a success message
-            System.out.println("Directory exists!");
-        } else {
-            // If doesn't exist, print an error message
-            System.out.println("Directory does not exist.");
-        }
-    }
+File directory = new File("C:\\Users\\mydirectory");
+if(directory.exists()) {
+  System.out.println("The directory exists.");
 }
 ```
+Output: The directory exists.
 
-Running this code will give the following output:
-
-```Java
-Directory exists!
-```
-
-In case the directory does not exist, the output will be:
+You can also use the `isDirectory()` method to ensure that the given path is a directory and not a file. This method returns a boolean value of `true` or `false`.
 
 ```Java
-Directory does not exist.
+File directory = new File("C:\\Users\\myfile.txt");
+if(directory.isDirectory()) {
+  System.out.println("The given path is a directory.");
+}
 ```
+Output: The given path is not a directory.
 
-## Deep Dive
+##Deep Dive
 
-Under the hood, the `exists()` method checks if the specified `File` object exists in the file system. It returns a boolean value, `true` if the file exists and `false` if it doesn't.
+When using the `File` class, it is essential to handle exceptions that may occur when performing operations like checking if a directory exists. These exceptions include `IOException`, `SecurityException`, and `NullPointerException`. It is recommended to use a `try-catch` block to handle these exceptions and prevent any unexpected behavior in your code.
 
-It is important to note that just because a directory exists, it doesn't necessarily mean that we have access to it. The `exists()` method only checks for the existence of the file, not its permissions. To check for permissions, we can use the `canRead()` and `canWrite()` methods.
+Another aspect to consider is that the `exists()` method may return `true` even if the directory is not accessible or readable. Therefore, it is essential to also check the directory's permissions using the `canRead()` and `canWrite()` methods.
 
-## See Also
+##See Also
 
-- [Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [How to Create and Delete Directories in Java](https://www.baeldung.com/java-create-delete-directory)
-- [Working with Files and Directories in Java](https://www.geeksforgeeks.org/working-with-files-in-java/)
+- [Oracle File class documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java File Handling tutorial](https://www.baeldung.com/java-file-handle)

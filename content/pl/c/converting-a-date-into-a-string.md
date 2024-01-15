@@ -1,6 +1,7 @@
 ---
-title:                "C: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków."
+html_title:           "C: Konwertowanie daty na ciąg znaków."
+simple_title:         "Konwertowanie daty na ciąg znaków."
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Konwersja daty na napis jest powszechną potrzebą w wielu programach. Często musimy wyświetlić datę w czytelnej formie dla użytkowników aplikacji lub zapisywać ją do pliku w odpowiednim formacie. W tej krótkiej instrukcji dowiesz się, jak w prosty sposób przekonwertować datę na napis w języku C.
+Konwersja daty na ciąg znaków jest częstym i ważnym zadaniem w programowaniu. Dzięki temu można wyświetlić datę w czytelnej i zrozumiałej formie dla użytkownika, a także dokonywać porównań i obliczeń z jej wykorzystaniem.
 
-# Jak to zrobić
+## Jak to zrobić?
 
-```c
+Aby przekonwertować datę na ciąg znaków w języku C, należy użyć funkcji `strftime()` z biblioteki `<time.h>`. Przyjmuje ona trzy argumenty: bufor, do którego zapisywany będzie wynik, maksymalny rozmiar bufora i format daty. Przykładowy kod wygląda następująco:
+
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // deklarujemy zmienną typu time_t zawierającą aktualną datę i czas
-    time_t now = time(NULL);
-    // tworzymy napis przechowujący przekonwertowaną datę i czas
-    char date[20];
-    // wykorzystujemy funkcję strftime do przekonwertowania daty na napis w podanym formacie
-    strftime(date, 20, "%d-%m-%Y %H:%M:%S", localtime(&now));
-    // wyświetlamy przekonwertowaną datę
-    printf("Aktualna data i godzina: %s", date);
+int main() {
+  char date_str[50];  // Bufor do zapisu wyniku
+  time_t now = time(NULL);  // Pobranie aktualnej daty i czasu
+  struct tm *time_info = localtime(&now);  // Konwersja do struktury tm
 
-    return 0;
+  // Ustawienie formatu daty (np. dzień-miesiąc-rok godzina:minuta)
+  char *format = "%d-%m-%Y %H:%M"; 
+
+  // Wywołanie funkcji strftime() z odpowiednimi argumentami
+  strftime(date_str, sizeof(date_str), format, time_info); 
+
+  // Wyświetlenie wyniku
+  printf("Data i czas: %s\n", date_str); 
+
+  return 0;
 }
 ```
-Teraz, po uruchomieniu programu, zobaczymy w konsoli napis w formacie "DD-MM-RRRR GG:MM:SS", na przykład "01-03-2021 12:01:30".
 
-# Głębsza analiza
+Możliwe formaty daty można znaleźć w dokumentacji funkcji `strftime()`. Pamiętajmy także, aby do konwersji używać struktur `time_t` i `struct tm` oraz uwzględnić odpowiednie nagłówki.
 
-W języku C istnieje kilka funkcji, które umożliwiają przekonwertowanie daty na napis. Jedną z najpopularniejszych jest funkcja `strftime`, która pozwala formatować datę według własnych potrzeb. Pierwszym argumentem funkcji jest tablica przechowująca napis, drugim argumentem jest maksymalna długość napisu, a trzecim argumentem jest format daty. W przykładzie wykorzystaliśmy format "%d-%m-%Y %H:%M:%S", który oznacza dzień-miesiąc-rok godzina:minuta:sekunda.
+## Deep Dive
 
-# Zobacz też
+Bardziej zaawansowane operacje związane z konwersją daty mogą wymagać wykorzystania biblioteki `libdatetime`, która dostarcza funkcje do parsowania i formatowania daty i czasu w różnych językach i regionach. W przypadku pracy z wieloma strefami czasowymi można także skorzystać z funkcji `gmtime()` do zmiany daty i czasu na czas UTC.
 
-* Dokumentacja funkcji `strftime`: https://www.cplusplus.com/reference/ctime/strftime/
-* Przykładowe formaty daty w funkcji `strftime`: https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm
-* Inne sposoby na konwersję daty na napis w języku C: https://en.wikibooks.org/wiki/C_Programming/DateTime_functions
+Podczas konwersji daty należy także pamiętać o obsłudze ewentualnych błędów, takich jak nieprawidłowy format daty lub przepełnienie bufora.
+
+## Zobacz też
+
+- Dokumentacja funkcji `strftime()`: https://en.cppreference.com/w/c/chrono/strftime
+- Dokumentacja biblioteki `libdatetime`: https://man7.org/linux/man-pages/man7/datetime.7.html
+- Poradnik wyjaśniający różnice między struktuami `time_t` i `struct tm`: https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm

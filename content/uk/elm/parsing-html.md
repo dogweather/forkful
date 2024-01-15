@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Розбір html"
-simple_title:         "Розбір html"
+title:                "Аналізування html"
+html_title:           "Elm: Аналізування html"
+simple_title:         "Аналізування html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -9,33 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Чому
+## Чому
 
-Html-парсінг - це важлива навичка для будь-якого програміста Elm. Вона дозволяє нам ефективно отримувати дані з веб-сайтів та використовувати їх у нашому коді.
+Хочете вивчити парсинг HTML у Elm? Ну, очевидно, щоб знаходити інформацію на веб-сторінках і забезпечувати її обробку у вашому додатку.
 
-##Як
+## Як це зробити
 
-```Elm
-import Html exposing (text)
-import Html.Parser exposing (..)
+```elm
+import Html.Parser as Parser
+import Html exposing (text, div, h1)
+import Http
+
+url = "https://www.example.com"
+response =
+  Http.get url text
+    |> Task.attempt handleResponse
+
+type Msg
+  = ParsingResult (Result Http.Error (List (Html, a)))
+
+parseHtml : String -> List (Html, a)
+parseHtml html =
+  case Parser.parseHtml html of
+    Ok result ->
+      result
+
+render : List (Html, a) -> Html
+render parsedHtml =
+  h1 [] [ text "Парсинг HTML" ]
+    :: List.map (\(html, _) -> div [] [ html ]) parsedHtml
+
+subscriptions : model -> Sub Msg
+subscriptions _ =
+  Sub.none
+
+model : model -> Msg -> (model, Cmd Msg)
+model _ _ =
+  ( (), Cmd.none )
 
 main =
-    let
-        html = "<div>Hello <em>world</em></div>"
-        parsed = parse html
-    in
-        text parsed
-```
-Вивід: ``` "Hello world" ```
+  Html.beginnerProgram
+    { model = model
+    , update = update
+    , view = view
+    , subscriptions = subscriptions
+    }
 
-У цьому прикладі ми імпортуємо необхідні модулі, створюємо рядок з HTML та застосовуємо функцію parse, щоб отримати рядок з об'єднаним текстом з усіх елементів.
+By the way, це єдиний зручний спосіб парсити HTML у Elm, оскільки є платформа для виконання і може бути доступна лише після побудови вже на мобільних пристроях, прикладаються HTML-кодування чи підходиць.
 
-##Глибина аналізу
 
-Розбір HTML полягає в тому, щоб отримати дані з HTML документа та зробити їх доступними для подальшого використання в нашому Elm-коді. Elm має вбудовану бібліотеку для розбору HTML, яка дуже проста та легка у використанні. Ми можемо використовувати функції, такі як parse і extract, щоб отримати необхідні дані з тегів.
 
-##Дивись також
+## Deep Dive
 
-- [Офіційна документація Elm для розбирання HTML](https://package.elm-lang.org/packages/elm/parser/latest/Html-Parser)
-- [Стаття на тему розбирання HTML у Elm](https://dev.to/rvjuly/parsing-html-in-elm-3p63)
-- [Демо Elm додаток для розбирання HTML](https://ellie-app.com/4xKKH3t84hSa1/)
+У Elm парсер вибирає деяку специфікаційну групу, яка описує те, як цей парсер працює. Її можуть бути і менш особливі, тому що даний інструментарій для создания парсеров за допомогою цих функцій.
+
+Найбільш універсальна картина доступна на веб-сторінці Elm Parsing library, яка дозволяє створювати програми з русскими нумеративными буквами. Але, за допомогою цієї мови, ми можемо створювати не лише такі парсери, чи ситуцій, яким для реальних робіт дуже складно створювати класи або функції на CSS, а й парера, для обробки HTML.
+
+## See Also
+
+- [Elm парсер](http://package.elm-lang.org/packages/elm-lang/elm-parser/latest) - офіційний пакет Elm для створення парсерів.
+- [Elm HTML бібліотека](http://package.elm-lang.org/packages/elm-lang/html/latest) - офіційна бібліотека Elm для створення HTML-сторінок.
+- [HTML мова для початківців](https://www.w3schools.com/html/) - безкоштовне веб-сайт для вивчення HTML для початківців.

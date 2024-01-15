@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Fish Shell: Berechnung eines Datums in der Zukunft oder Vergangenheit"
 simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,38 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Im Alltag kann es immer wieder vorkommen, dass man ein bestimmtes Datum in der Zukunft oder Vergangenheit berechnen muss. Zum Beispiel, um einen Geburtstag zu planen oder eine Reise zu organisieren. Mit der Fish Shell kann dies schnell und einfach erledigt werden.
+Du denkst vielleicht, warum sollte ich überhaupt ein Datum in der Zukunft oder Vergangenheit berechnen? Nun, es gibt viele Gründe dafür! Man könnte zum Beispiel eine Erinnerung einrichten, um einen wichtigen Termin nicht zu vergessen, oder einen Countdown bis zum nächsten Urlaub berechnen. Die Möglichkeiten sind endlos!
 
-## How To
+## Wie geht das?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, muss zuerst das aktuelle Datum ermittelt werden. Dies kann mit dem Befehl `date` erledigt werden. Der Befehl `date +%s` gibt den aktuellen Zeitstempel in Sekunden seit dem 1. Januar 1970 zurück.
-
-```Fish Shell
-set current_date (date +%s)
-```
-
-Um das gewünschte Datum zu berechnen, können nun verschiedene mathematische Operationen durchgeführt werden. Zum Beispiel, um das Datum für den nächsten Monat zu berechnen, kann 2.592.000 Sekunden (30 Tage) zum aktuellen Zeitstempel addiert werden.
+Zum Glück ist es ganz einfach, ein Datum in der Zukunft oder Vergangenheit in der Fish Shell zu berechnen. Alles was du brauchst ist das `date` Kommando und etwas Grundverständnis von Datumsformaten. Hier ist ein Beispiel, um das Datum von heute vor einer Woche zu berechnen:
 
 ```Fish Shell
-set future_date (math $current_date + 2592000)
+date -v-1w
 ```
 
-Das Ergebnis wird wieder als Zeitstempel ausgegeben. Um es in ein lesbares Datum umzuwandeln, kann der Befehl `date -d @<time stamp>` verwendet werden. Der Befehl `-d` gibt das Datum im ISO-Format aus. Um es in einem anderen Format auszugeben, kann die Option `+<format>` verwendet werden. Zum Beispiel `date -d @<time stamp> +%D` für das US-amerikanische Datumsformat (MM/DD/YY). Das Endergebnis könnte dann so aussehen:
+Die Option `-v` ermöglicht es uns, den Wert zu ändern, und `w` steht für eine Woche. Das Ergebnis wird in der Form "Wochentag Monat Tag Zeit Zone Jahr" ausgegeben, zum Beispiel "Thu Aug 5 13:45:00 PDT 2021".
 
-```Fish Shell
-date -d @$future_date +%D
+## Tief eintauchen
 
-04/05/21
-```
+Wenn du ein besseres Verständnis davon bekommen möchtest, wie genau die Berechnung eines Datums in der Fish Shell funktioniert, dann kannst du einen Blick in die offizielle Dokumentation von `date` werfen. Dort findest du eine detaillierte Beschreibung der verschiedenen Optionen und Formate, die du verwenden kannst.
 
-## Deep Dive
-
-Um ein Datum in der Zukunft oder Vergangenheit genauer zu berechnen, kann man sich mit den verschiedenen Datumsangaben und Rechenoperationen befassen. Zum Beispiel können neben Sekunden auch Minuten (`m`), Stunden (`h`) oder Tage (`d`) verwendet werden. Außerdem gibt es die Möglichkeit, eine bestimmte Anzahl von Jahren, Monaten oder Tagen zum aktuellen Datum hinzuzufügen oder davon abzuziehen.
-
-Weitere Informationen und Beispiele zur Verwendung der Befehle `date` und `math` finden Sie in der offiziellen Dokumentation der Fish Shell.
+Eine wichtige Sache zu beachten ist, dass die `date` Syntax zwischen verschiedenen Betriebssystemen variieren kann. Wenn du also auf einem Mac oder Linux-System arbeitest, kannst du möglicherweise mehr Optionen verwenden als auf einem Windows-System.
 
 ## Siehe auch
 
-- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [BashBlog - So schreiben Sie einen Blog-Parser für die Fish Shell](https://dev.to/clivern/how-to-write-blog-parser-for-fish-shell-using-bashblog-5f0m)
-- [Unix Date Befehl verwenden](https://www.linuxjourney.com/lesson/date)
+Weitere nützliche Informationen zur Arbeit mit Datumsangaben in der Fish Shell findest du hier:
+
+- [Offizielle `date` Dokumentation](https://fishshell.com/docs/current/cmds/date.html)
+- [Codewand: How to Use the date Command in Linux](https://codewand.net/how-to-use-date-in-linux/) (Englisch)
+- [Devhints: Fish Shell Guide](https://devhints.io/fish-shell) (Englisch)

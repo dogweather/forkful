@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Jobbe med yaml"
-simple_title:         "Jobbe med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Arduino: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Har du prøvd å programmere med Arduino, men slitt med å håndtere store datamengder? Da kan YAML være løsningen for deg! Med YAML kan du enkelt lagre og håndtere data i et leservennlig format. Les videre for å lære mer om hvordan du kan bruke YAML i dine Arduino prosjekter.
+
+YAML (YAML Ain't Markup Language) er et enkelt og intuitivt tekstformat som brukes til å konfigurere og organisere data. For Arduino-programmering, kan YAML veies som et alternativ til JSON-formatet for å lagre og strukturere data. Dette kan være nyttig for å skrive mer lesbar og vedlikeholdbar kode.
 
 ## Hvordan
-For å komme i gang med YAML i Arduino, må du først installere biblioteket "ArduinoYaml". Dette kan gjøres ved å åpne Arduino IDE, gå til "Verktøy" og deretter "Administrer biblioteker". Søk etter "Yaml" og velg "ArduinoYaml" fra listen. Trykk på "Installer" for å legge til biblioteket i din Arduino IDE.
 
-Etter å ha installert biblioteket, er det på tide å begynne å kode! Først må du importere biblioteket ved å legge til ```#include <Yaml.h>``` på toppen av koden din.
+For å bruke YAML i din Arduino-kode, må du først inkludere en YAML-parser biblioteket i ditt prosjekt. Dette gjøres ved å velge "Library Manager" i verktøy-menyen i Arduino-programmet, og søke etter "YAML". Installer det tilgjengelige biblioteket og inkluder det i koden din ved å skrive `#include <YAML.h>` øverst.
 
-La oss lage et enkelt eksempel hvor vi lagrer informasjon om en person i YAML-format. Vi vil lagre navn, alder og favorittfarge. Kodeeksempelet vil se slik ut:
+For å arbeide med YAML data, må du først initialisere et `YAML::Node` objekt. Dette vil være rot-noden for dine data, og du kan legge til undernoder og nøkkel-verdi-par under den. For eksempel:
 
-```
-#include <Yaml.h>
+```arduino
+YAML::Node minNode; // Initialiserer en tom YAML-node
 
-void setup() {
-  Serial.begin(9600);
-  
-  YamlObject person; // Oppretter et YamlObject med navnet "person"
-  person["Navn"] = "Ole Olsen"; // Legger til en nøkkel "Navn" og en verdi "Ole Olsen"
-  person["Alder"] = 35; // Legger til en nøkkel "Alder" og en verdi 35
-  person["Favorittfarge"] = "Blå"; // Legger til en nøkkel "Favorittfarge" og en verdi "Blå"
-  
-  Serial.println(person); // Skriver ut person-objektet
-}
+minNode["navn"] = "Arduino"; // Legger til en nøkkel-verdi-par
+minNode["pin"] = 13;
 
-void loop() {
-  
-}
-
+YAML::Node subNode; // Initialiserer en undernode
+subNode["verdi"] = 100;
+minNode["data"] = subNode; // Legger til undernoden i hovednoden
 ```
 
-Når vi kjører koden og åpner Serial Monitor, vil vi få følgende output:
+For å skrive ut innholdet av YAML-noden, kan du bruke `Serial.println()` -funksjonen og sende noden som en streng:
 
-```
-Navn: Ole Olsen
-Alder: 35
-Favorittfarge: Blå
+```arduino
+Serial.println(minNode ? YAML::Dump(minNode).c_str()); // Skriver ut YAML-noden som en streng
 ```
 
-Vi kan også lagre YAML-data i en fil ved hjelp av funksjonen "saveFile()":
+Dette vil produsere følgende output i serieovervåkingsvinduet: 
 
 ```
-person.saveFile("person.yml"); // Lager en fil kalt "person.yml" og lagrer dataen her
+navn: Arduino
+pin: 13
+data:
+    verdi: 100
 ```
 
-## Dykk Dypere
-Det er mange flere funksjoner og muligheter med ArduinoYaml biblioteket. For å lære mer, anbefales det å se på dokumentasjonen som følger med biblioteket, samt å eksperimentere og prøve ut forskjellige funksjoner.
+For å lese og behandle YAML-data som er mottatt fra en annen enhet, kan du bruke `YAML::Load()` -funksjonen. Denne funksjonen tar en streng av YAML-data og konverterer den til en `YAML::Node` som du kan jobbe med.
 
-## Se Også
-- [ArduinoYaml Biblioteket](https://github.com/arduino/ArduinoYaml)
-- [ArduinoYaml Dokumentasjon](https://arduino.github.io/ArduinoYaml/index.html)
+```arduino
+String mottattData = "navn: Arduino\npin: 13\ndata:\n    verdi: 100"; // Simulerer mottatt YAML-data
+YAML::Node lesNode = YAML::Load(mottattData); // Konverterer dataen til en YAML-node
+
+// Hente ut og bruke data fra noden
+String enhetsnavn = lesNode["navn"].as<String>();
+int pinNummer = lesNode["pin"].as<int>();
+int sensorVerdi = lesNode["data"]["verdi"].as<int>();
+```
+
+## Dykk dypere
+
+Det er verdt å merke seg at YAML, i motsetning til JSON, støtter å inkludere kommentarer og har en mer naturlig og lesbar syntax. Dette gjør det til et godt valg for å konfigurere og organisere komplekse datastrukturer for Arduino-prosjekter.
+
+En annen interessant funksjon ved YAML er muligheten til å referere til og gjenbruke data fra andre deler av YAML-filen. Dette kan være nyttig hvis du har noen nøkkel-verdi-par som blir gjentatt flere ganger. For å gjøre dette, kan du bruke et ampersand-tegn (`&`) etterfulgt av en unik etikett, og et stjerne-tegn (`*`) etterfulgt av samme etikett når du vil referere til dataen.
+
+```yaml
+tilbehor: &utstyr # Referer til denne listen med data
+    navn: Fotball
+    farge: Hvit og svart
+    pris: 200
+gerilja_markering:
+    farge: Grønn
+    pris: *utstyr.pris # Refererer til prisen på fotball for denne typen utstyr
+arv_markering:
+    farge: Blå
+    pris: *utstyr.pris # Refererer til prisen på fotball for denne typen utstyr
+```
+
+Denne funksjonen kan hjelpe til med å unngå duplisert kode

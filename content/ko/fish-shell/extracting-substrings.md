@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 문자열 추출하기"
-simple_title:         "문자열 추출하기"
+title:                "서브스트링 추출 방법"
+html_title:           "Fish Shell: 서브스트링 추출 방법"
+simple_title:         "서브스트링 추출 방법"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-문자열에서 일부 문자열을 추출하는 과정은 프로그래밍에서 자주 필요한 작업입니다. 예를 들어, 특정 패턴을 따르는 파일 이름을 필터링하는 경우, 일부 문자열을 추출하고 그것을 비교하는 것이 효과적일 수 있습니다. 또한, 추출한 문자열을 변수로 사용하여 자동화된 작업을 수행할 수도 있습니다.
+Substring 추출을 사용하는 이유는 변수 또는 문자열의 일부를 쉽게 추출하기 위해서입니다. 이를 통해 변수 또는 문자열을 더 용이하게 다룰 수 있고, 원하는 정보를 더 빠르고 정확하게 찾을 수 있습니다.
 
-## 어떻게?
+## 사용 방법
 
-Fish Shell은 문자열 추출을 간단하고 쉽게 처리하는 기능을 제공합니다. 다음은 간단한 예제 코드와 함께 추출 방법을 보여줍니다.
+Fish Shell에서 substring을 추출하는 방법은 간단합니다. 예를 들어, 다음과 같은 문자열이 있다고 가정해 봅시다.
 
-```Fish Shell
-# First, define a string variable
-set my_string "Hello World"
-
-# Use the `string sub` command to extract a substring
-string sub -s 6 $my_string    # This will output "World"
+```
+set food "sushi rolls"
 ```
 
-파일 이름을 필터링하는 예제에서, `string sub` 명령어를 사용하여 파일의 확장자를 추출하고 그것을 비교할 수 있습니다.
+이 문자열에서 "sushi"라는 부분만 추출하고 싶은 경우, 다음과 같이 입력해 줍니다.
 
-```Fish Shell
-# Define a variable for the file name
-set file_name "my_document.txt"
-
-# Extract the file extension using `string sub`
-string sub -bse 5 $file_name   # This will output "txt"
+```
+set sushi (string match -r "sushi" $food)
 ```
 
-## 딥 다이브
+이제 $sushi 변수에는 "sushi"라는 부분이 저장되어 있습니다. 즉, 변수를 이용해 부분문자열을 추출할 수 있습니다.
 
-추출한 문자열을 사용할 때 유용한 옵션과 플래그가 있습니다. 다음은 몇 가지 예시입니다.
+또 다른 예로, 다음과 같은 문자열이 있다고 가정해 봅시다.
 
-- `-s` 옵션: 추출할 부분의 시작 위치를 지정합니다.
-- `-e` 옵션: 추출할 부분의 끝 위치를 지정합니다.
-- `-b` 옵션: 추출할 부분의 시작 위치를 역순으로 지정합니다.
-- `-w` 옵션: 추출할 부분의 문자 수를 지정합니다.
+```
+set sentence "Hello, my name is John."
+```
 
-또한, 상황에 따라 정규식을 사용하여 문자열을 추출할 수도 있습니다. 이 기능을 사용하면 더 많은 유연성을 가지고 추출 작업을 수행할 수 있습니다.
+이 문자열에서 "John"이라는 이름만 추출하고 싶은 경우, 다음과 같이 입력해 줍니다.
+
+```
+set name (string replace "Hello, my name is " "" $sentence)
+```
+
+이제 $name 변수에는 "John"이라는 부분이 저장되어 있습니다. 즉, 문자열을 특정 패턴에 따라 치환하여 원하는 부분만 추출할 수 있습니다.
+
+## 깊이 파고들기
+
+Fish Shell에서 문자열 추출에 사용되는 명령어는 string match와 string replace 뿐만 아니라 string sub, string contains 등 다양합니다. 각각의 명령어는 자세한 옵션을 통해 다양한 방식으로 문자열을 추출하고 처리할 수 있도록 제공됩니다. 또한, 정규표현식을 사용하여 더 유연하게 문자열을 추출할 수도 있습니다.
+
+이외에도 Fish Shell의 공식 문서나 온라인 커뮤니티에서 다양한 예제와 팁을 찾아보실 수 있습니다.
 
 ## 더 알아보기
 
-더 자세한 내용을 알고 싶다면 공식 Fish Shell 문서를 참조하세요. https://fishshell.com/docs/current/cmds/string.html
-
-## 관련 링크
-
-- Fish Shell 사용 방법: https://medium.com/home-decor-hacks/the-power-of-fish-shell-e942a5fac4b7
-- 문자열 처리를 위한 정규식 튜토리얼: https://regexone.com/
+- [Fish Shell 공식 페이지](https://fishshell.com/)
+- [Fish Shell GitHub 레퍼지토리](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 커뮤니티 포럼](https://www.reddit.com/r/fishshell/)

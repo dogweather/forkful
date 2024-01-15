@@ -1,5 +1,6 @@
 ---
-title:                "C: 解析HTML"
+title:                "解析HTML"
+html_title:           "C: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "C"
 category:             "C"
@@ -9,110 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-HTML是一种标记语言，用于创建网页和应用程序的结构。解析HTML是一个重要的技能，因为它允许程序员从网页中提取有用的信息，例如文本，图像和超链接。通过解析HTML，您可以轻松地从网页中提取数据，并在您的程序中使用它们。接下来，我们将通过本文的指导，了解如何在C编程语言中解析HTML。
+如果你是一位Web开发人员，那么你肯定知道HTML是构建网站的基本语言。但是，在大多数情况下，网站上的HTML代码并不完美。面对复杂的HTML结构，我们需要一个方法来从中提取出我们需要的信息。这就是为什么解析HTML是重要的，它可以让我们更轻松地从网页中提取出所需的数据。
 
-## 如何做
-
-要解析HTML，您需要首先了解HTML的结构。在HTML文件中，标签是构成网页骨架的基本组成部分。这些标签在尖括号内，如```<html>```。它们通常是成对出现的，一个开标签和一个闭标签，例如```<p>```和```</p>```。在C程序中，我们可以通过使用指针和循环来解析HTML。
-
-下面是一个简单的例子，展示了如何使用C语言来解析HTML文件中的所有标签：
+## 如何解析HTML
 
 ```C
 #include <stdio.h>
-#include <string.h>  //用于处理字符串函数
-#include <ctype.h>  //用于检查字符类型
+#include <stdlib.h>
+#include <string.h>
 
-int main()
-{
-    //打开HTML文件为只读模式
-    FILE* html_file = fopen("index.html", "r");
+int main() {
+    // 我们要解析的HTML字符串
+    char html[] = "<h1>欢迎来到我的网站！</h1>";
 
-    if (html_file == NULL)
-    {
-        printf("文件打开失败\n");
-        return 1;
-    }
+    // 创建一个指向HTML字符串的指针
+    char *p;
 
-    char tag_name[20];
-    char ch;  //用于存储当前读取的字符
-    int i = 0;
-
-    //循环读取文件中的每个字符
-    while ((ch = fgetc(html_file)) != EOF)
-    {
-        //检查是否遇到了一个开始标签
-        if (ch == '<')
-        {
-            //开始标签后面的字符一般是标签的名称
-            ch = fgetc(html_file);
-            while (ch != '>')
-            {
-                //将字符存储到标签名称数组中
-                tag_name[i] = ch;
-                i++;
-                ch = fgetc(html_file);
-            }
-
-            //将数组的最后一位改为'\0'来结束字符串
-            tag_name[i] = '\0';
-            i = 0;
-
-            //打印标签名称
-            printf("标签名称：%s\n", tag_name);
+    // 使用strtok函数按照特定的标签来切分字符串
+    p = strtok(html, "<>");
+    while (p != NULL) {
+        // 如果字符串以"h1"开头，我们就找到了标题
+        if (strncmp(p, "h1", 2) == 0) {
+            // 使用strtok再次切分字符串，这次按照">"来切分
+            p = strtok(NULL, ">");
+            printf("%s\n", p);
         }
+        p = strtok(NULL, "<>");
     }
-
-    //关闭文件
-    fclose(html_file);
-    
     return 0;
 }
 ```
 
-假设我们的HTML文件内容如下：
-
-```HTML
-<!DOCTYPE html>
-<html>
-<head>
-    <title>我的网站</title>
-</head>
-<body>
-    <h1>欢迎来到我的网站！</h1>
-    <p>这是一个简单的网站，但我会努力让它变得更好。</p>
-</body>
-</html>
-```
-
-上面的代码将输出：
+输出结果为：
 
 ```
-标签名称：html
-标签名称：head
-标签名称：title
-标签名称：/title
-标签名称：/head
-标签名称：body
-标签名称：h1
-标签名称：/h1
-标签名称：p
-标签名称：/p
-标签名称：/body
-标签名称：/html
+欢迎来到我的网站！
 ```
 
-现在我们可以根据需要来使用解析出来的标签名称。
+上面的代码展示了如何使用C语言中的标准库函数来解析HTML字符串。首先，我们使用strtok函数按照特定的标签来切分字符串，然后再利用基于字符串比较的方法来获取所需的数据。通过这种简单的方法，我们就能够从HTML代码中提取出我们需要的信息。
 
-## 深入了解
+## 深入解析HTML
 
-除了标签名称，您还可以使用类似的方法来解析出标签的属性和内容。通过检查标签内的内容，您可以提取出重要的信息并将其用于您的程序中，例如网页标题，段落文本和图片链接。
+如果你想要更深入地了解如何解析HTML，你可以研究一下HTML文档树（Document Object Model，简称DOM）。DOM是一种用来表示文档结构的对象模型，它可以让我们更方便地获取并操作HTML文档中的数据。C语言中也有一些库可以帮助我们操作DOM，比如libxml2和expat。
 
-另外，您也可以使用一些C语言的标准库函数来进行更复杂的解析，例如```strtok()```和```strstr()```。
+## 更多学习资源
 
-## 另请参阅
+- [使用C语言解析HTML（美文译文）](https://www.ibm.com/developerworks/cn/xml/x-doxygen/comment/#Mr5)
+- [C语言解析HTML（英文原文）](https://dmitryfrank.com/articles/parsing_html_with_c)
+- [libxml2官方文档](http://xmlsoft.org/html/index.html)
+- [expat官方文档](https://libexpat.github.io/)
 
-- [C语言解析HTML教程（英文）](https://www.cprogramming.com/tutorial/c/lesson18.html)
-- [C语言字符串教程（英文）](https://www.cprogramming.com/tutorial/c/lesson9.html)
-- [C标准库参考（英
+## 参考资料
+
+- [如何使用C语言解析HTML（知乎问答）](https://www.zhihu.com/question/24380523/answer/54410926)
+- [使用C语言处理HTML标签（博客文章）](https://blog.csdn.net/renfufei/article/details/78543135)

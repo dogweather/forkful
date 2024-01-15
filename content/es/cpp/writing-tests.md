@@ -1,6 +1,7 @@
 ---
-title:                "C++: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Creando pruebas"
+html_title:           "C++: Creando pruebas"
+simple_title:         "Creando pruebas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,40 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir pruebas en C++ es importante?
+## Por qué escribir pruebas en C++
 
-Escribir pruebas para su código en C++ puede parecer una tarea tediosa y redundante, pero en realidad es una parte crucial del proceso de desarrollo. Al implementar pruebas en su código, puede detectar y solucionar errores antes de que se conviertan en problemas más grandes en su aplicación. En resumen, escribir pruebas es una forma eficaz de garantizar que su código funcione correctamente y de forma consistente.
+Escribir pruebas en el código es una práctica común entre los programadores para asegurar la calidad y funcionalidad del código. Al escribir pruebas, podemos identificar y corregir errores en nuestro código antes de que se conviertan en un problema para el usuario final. Además, tener pruebas también facilita el proceso de depuración y mejora la eficiencia en el desarrollo.
 
 ## Cómo escribir pruebas en C++
 
-Para escribir pruebas en C++, hay varios marcos de trabajo disponibles, como Google Test y Boost Test. A continuación, se presenta un ejemplo de cómo escribir una simple prueba en C++ utilizando la biblioteca Google Test:
+Para escribir pruebas en C++, podemos utilizar la biblioteca de pruebas integrada en el framework de Google Test. Esta biblioteca nos permite crear pruebas unitarias para diferentes funciones y clases en nuestro código. Veamos un ejemplo de cómo escribir y ejecutar una prueba en C++:
 
-```C++
-TEST(AdditionTest, SimpleAddition) {
-  // Arrange - se preparan los datos necesarios para la prueba
-  int num1 = 5;
-  int num2 = 10;
+```
+#include <iostream>
+#include "gtest/gtest.h"
 
-  // Act - se llama a la función que se quiere probar
-  int result = AddNumbers(num1, num2);
+// Función a probar
+int sum(int a, int b) {
+    return a + b;
+}
 
-  // Assert - se verifican los resultados esperados
-  EXPECT_EQ(result, 15);
+// Definiendo una prueba
+TEST(SumTest, PositiveNumbers) {
+    // Arrange - Se preparan los datos necesarios para la prueba
+    int a = 5;
+    int b = 3;
+
+    // Act - Se llama a la función que se quiere probar
+    int result = sum(a, b);
+
+    // Assert - Se comprueba si el resultado es el esperado
+    ASSERT_EQ(result, 8);
+}
+
+int main() {
+    // Inicializar Google Test
+    testing::InitGoogleTest();
+
+    // Ejecutar todas las pruebas
+    return RUN_ALL_TESTS();
 }
 ```
 
-En el ejemplo anterior, primero se preparan los datos necesarios para la prueba en la sección "Arrange". Luego, en la sección "Act", se llama a la función que se quiere probar. Finalmente, en la sección "Assert", se verifica si el resultado de la función es el esperado utilizando la macro EXPECT_EQ de Google Test.
+El código anterior define una función `sum` que suma dos números enteros y una prueba que verifica si la función funciona correctamente para números positivos. Al ejecutar la prueba, deberíamos obtener una salida como la siguiente:
 
-Una vez que se han escrito todas las pruebas necesarias, se pueden ejecutar utilizando la herramienta de prueba proporcionada por el marco de trabajo elegido. Esto mostrará los resultados de cada prueba y si han pasado o fallado.
+```
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SumTest
+[ RUN      ] SumTest.PositiveNumbers
+[       OK ] SumTest.PositiveNumbers (0 ms)
+[----------] 1 test from SumTest (0 ms total)
 
-## Profundizando en la escritura de pruebas
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+```
 
-Además de las pruebas unitarias, hay otros tipos de pruebas que se pueden implementar en su código en C++. Algunos ejemplos incluyen pruebas de integración, pruebas de carga y pruebas de aceptación. Cada tipo de prueba tiene su propósito y pueden ser utilizadas en conjunto para garantizar que su código funcione correctamente en todas las situaciones.
+Este es sólo un ejemplo simple de cómo escribir una prueba en C++. Con la biblioteca de Google Test, también podemos realizar pruebas más complejas e incluso pruebas de integración.
 
-También es importante tener en cuenta que las pruebas deben escribirse de forma independiente y no deben depender de otras pruebas. Esto asegura que cada prueba sea autónoma y no afecte los resultados de otras pruebas.
+## Profundizando en la escritura de pruebas en C++
 
-# Ver también
+Hay varios conceptos importantes que debemos tener en cuenta al escribir pruebas en C++. A continuación, mencionaremos algunos de ellos:
 
-- [Introducción a las pruebas de software en C++](https://www.techopedia.com/2/29653/software/programming/introduction-to-software-testing-in-c)
-- [Guía de Google Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
-- [Introducción a las pruebas de software](https://www.pluralsight.com/blog/software-development/software-testing-basics)
+- **Cobertura de código:** esto se refiere a la cantidad de código que está siendo probado por nuestras pruebas. El objetivo es tener una cobertura de código cercana al 100% para asegurar que todas las partes de nuestro código estén siendo probadas.
+- **Mocking:** es una técnica para simular comportamientos en nuestras pruebas. Esto puede ser útil cuando tenemos dependencias externas en nuestro código, como llamadas a una base de datos o servicios web.
+- **Refactorización de pruebas:** al igual que en el código, también es importante mantener nuestras pruebas limpias y bien organizadas. Utilizar buenas prácticas de refactorización de código para nuestras pruebas nos ayudará a mantener un conjunto de pruebas legible y fácil de mantener.
+
+Para profundizar más en la escritura de pruebas en C++, se recomienda explorar documentación adicional y tutoriales en línea.
+
+## Ver también
+
+- [Google Test](https://github.com/google/googletest)
+- [Introducción a las pruebas unitarias en C++](https://www.inf.utfsm.cl/~rvalenzu/TDD/UnitTestingInCPP.pdf)
+- [Tutorial de Google Test en C++](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)

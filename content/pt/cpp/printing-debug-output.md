@@ -1,6 +1,7 @@
 ---
-title:                "C++: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Impressão de saída de depuração"
+html_title:           "C++: Impressão de saída de depuração"
+simple_title:         "Impressão de saída de depuração"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -11,33 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Há muitas maneiras de acompanhar e depurar o seu código em C++, mas a impressão de saída de depuração é uma das mais populares. Isso permite que os desenvolvedores vejam informações sobre como o programa está executando e identifiquem possíveis problemas.
+Às vezes, ao desenvolver um programa em C++, pode ser útil imprimir saídas de depuração para entender melhor como o código está funcionando e encontrar possíveis erros.
 
 ## Como fazer
 
-Para imprimir saída de depuração em seu código C++, você pode usar a função "cout" da biblioteca "iostream". Basta incluir a linha "#include <iostream>" no início do seu código e, em seguida, usar o operador de inserção "<<" para imprimir as informações desejadas. Aqui está um exemplo simples:
+Para imprimir saídas de depuração em C++, usamos a função `cout` da biblioteca padrão `iostream`. Veja um exemplo:
 
-```
+```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-    int a = 5;
-    int b = 10;
-    cout << "A soma de " << a << " e " << b << " é " << (a+b) << endl;
+    std::cout << "Imprimindo saída de depuração" << std::endl;
     return 0;
 }
 ```
 
-Este código imprimirá a frase "A soma de 5 e 10 é 15" na saída do console. Você também pode imprimir informações de variáveis ​​e usar formatação de saída, como o número de casas decimais a serem mostradas. Para obter mais detalhes sobre como imprimir saída de depuração em C++, consulte este [artigo](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm) ou este [guia](http://www.cplusplus.com/reference/iostream/cout/).
+Este código irá imprimir a frase "Imprimindo saída de depuração" na tela. Podemos também imprimir o valor de variáveis usando a mesma função, utilizando o operador de inserção `<<`. Por exemplo:
+
+```C++
+int x = 5;
+std::cout << "O valor de x é: " << x << std::endl;
+```
+
+Este código irá imprimir o valor da variável `x`, que é 5, na tela. Assim, podemos imprimir qualquer tipo de dado que desejamos, incluindo strings, inteiros, floats, entre outros.
 
 ## Mergulho profundo
 
-Além de simplesmente imprimir informações durante a depuração, a saída do console também pode ser útil para rastrear o fluxo de um programa e identificar possíveis erros. Por exemplo, você pode imprimir mensagens em diferentes partes do código para ver onde o programa está executando e verificar os valores das variáveis ​​em cada etapa.
+Além da função `cout`, também existem outras formas de imprimir saídas de depuração em C++. Uma delas é a função `cerr`, que é utilizada para imprimir mensagens de erro. Por exemplo:
 
-Outra vantagem da impressão de saída de depuração é poder deixar o código "comentado" sem realmente usar comentários. Isso pode ser especialmente útil para identificar linhas específicas de código que podem estar causando problemas.
+```C++
+#include <iostream>
+
+int main() {
+    std::cerr << "Mensagem de erro!" << std::endl;
+    return 0;
+}
+```
+
+Outra opção é utilizar a função `printf` da biblioteca `cstdio`. Esta função é muito semelhante à linguagem C e pode ser útil para quem está migrando de C para C++. Veja um exemplo:
+
+```C++
+#include <cstdio>
+
+int main() {
+    printf("Imprimindo saída com a função printf\n");
+    return 0;
+}
+```
+
+Por último, podemos também utilizar a função `assert` da biblioteca `cassert` para imprimir saídas de depuração e verificar se uma condição é verdadeira ou falsa. Por exemplo:
+
+```C++
+#include <cassert>
+
+int main() {
+    int x = 5;
+    assert(x > 10);
+    return 0;
+}
+```
+
+Este código irá gerar uma saída de depuração caso a condição `x > 10` seja falsa.
 
 ## Veja também
 
-- [Tutorial de Impressão de Saída de Depuração em C++](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
-- [Referência da função "cout" em C++](http://www.cplusplus.com/reference/iostream/cout/)
+- [Documentação do C++](https://www.cplusplus.com/)
+- [Curso básico de C++](https://www.youtube.com/watch?v=8g6YkJqX1Iw)
+- [10 maneiras de melhorar sua programação em C++](https://www.freecodecamp.org/news/ten-ways-to-improve-your-programming-in-c/)

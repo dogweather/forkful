@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Swift: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -9,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今回は、Swiftプログラミングにおいて「スタンダードエラー」を書き込む理由について説明していきます。
+## なぜ
 
-## Why
+標準エラーに書き込むことは、バグやエラーのデバッグに非常に有用です。プログラムを実行した際に、標準出力では見つけられないエラーを標準エラーでキャッチすることができます。
 
-スタンダードエラーを書き込むことには、デバッグやエラー処理を行う際に役立ちます。エラーメッセージをスタンダードエラーに書き込むことで、プログラムの実行中に発生したエラーを確認することができます。
+## 方法
 
-## How To
+まず、`print()` 関数を使用して標準出力にテキストを出力します。しかし、標準エラーにテキストを出力する場合は、`print()` 関数ではなく`FileHandle.standardError`を使用します。下記のコードを試してみてください。
 
-スタンダードエラーに書き込むには、```stderr```を使用します。以下のようにコードを記述することで、任意のメッセージをスタンダードエラーに書き込むことができます。
+```
+Swift guard let fileHandle = FileHandle.standardError else { exit(EXIT_FAILURE) }
 
-```Swift
-import Darwin
+let errorMessage = "エラーが発生しました。"
 
-let message = "エラーが発生しました。"
+fileHandle.write(errorMessage.data(using: .utf8)!)
 
-fputs(message, stderr)
 ```
 
-実行すると、コンソールには何も表示されませんが、スタンダードエラーにはメッセージが書き込まれます。
+上記のコードを実行すると、`エラーが発生しました。`というメッセージが標準エラーに出力されます。
 
-## Deep Dive
+## ディープダイブ
 
-スタンダードエラーに書き込むことで、エラー処理をより細かく行うことができます。例えば、特定のエラーが発生した時にはプログラムを停止させたい場合には、```exit(EXIT_FAILURE)```を使用することでプログラムを終了させることができます。
+Swiftでは、バグやエラーを検出するために使用するさまざまな方法があります。標準エラーへの書き込みはその1つです。しかし、標準エラーに出力されるメッセージを読み取ることは、プログラマーにとっては簡単ではありません。そのため、標準エラーに出力されるエラーメッセージをより詳細にカスタマイズすることができるように、`FileManager`オブジェクトの`FileHandle`を使用することができます。また、`FileManager`を使用して標準エラーをファイルにリダイレクトすることもできます。
 
-また、```stderr```はエラーメッセージ以外にも、警告やログなどのメッセージを書き込むのにも使用することができます。
+## さらに参考になるリンク
 
-See Also
-- [Swift 公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html#ID494)
-- [Stanford オンラインコース「Developing iOS 9 Apps with Swift」](https://itunes.apple.com/app/id1089643302?mt=8)
+- [Swift公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [標準エラーと標準出力の違いについて](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/rub.html)
+- [標準出力と標準エラーの読み取り方法](https://qiita.com/hosiawase_tyan/items/70f8b6b857b784decacd)

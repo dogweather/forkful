@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: HTML-analysointi"
-simple_title:         "HTML-analysointi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Fish Shell: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,46 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+On monia syitä, miksi voit haluta analysoida HTML-tiedostoja Fish Shellissä. Ehkä haluat kerätä tietoa verkkosivuilta automatisoidaksesi tietyt tehtävät, kuten tiedon louhinta tai sisällön tarkistaminen tiettyyn sivupäivitykseen liittyen.
 
-Monissa web-kehitysprojekteissa on tarve käsitellä HTML-tiedostoja ja saada siitä tarvittavat tiedot esimerkiksi sivujen sisällön, linkkien tai kuvien osalta. Fish Shellin avulla tämä voidaan tehdä helposti ja nopeasti ilman erillistä web-kehitystyökaluja.
-
-## Miten
-
-Fish Shell tarjoaa useita käteviä toimintoja HTML-tiedostojen lukemiseen ja parsimiseen. Aloittaaksesi, sinun on asennettava Fish Shell ja lisättävä HTML-parsing-kirjasto kuten "html-xml-utils" käyttöösi.
-
-```Fish Shell 
-# Asenna Fish Shell
-sudo apt-get install fish 
-
-# Asenna html-xml-utils-kirjasto
-sudo apt-get install html-xml-utils 
+## Kuinka tehdä
+Fish Shellillä on mahdollista analysoida HTML-tiedostoja helposti käyttäen "htmlgrep" komentoa. Tämä komento etsii ja tulostaa tietyn HTML-elementin perusteella. Esimerkiksi, jos haluat tulostaa kaikki otsikot sivustolta nimeltä "example.com", voit käyttää seuraavaa komentoa:
+ 
+```Fish Shell
+htmlgrep -P example.com h1
 ```
 
-Nyt voit käyttää Fish Shellin komentoja kuten "hxselect" ja "hxpipe" HTML-tiedostojen käsittelyyn ja tiedon eristämiseen. Esimerkiksi jos haluat hakea tietyn tyylin sisältävät elementit HTML-tiedostosta ja tulostaa ne, käytä seuraavaa komentoa:
+Tämä tulostaa kaikki "h1" otsikkotiedostot sivustolta "example.com" ja näyttää ne terminaalissa.
 
-```Fish Shell 
-# Hae kaikki <p> tagit HTML-tiedostosta ja tulosta ne
-hxselect p testi.html 
-```
+## Syvällinen tutkimus
+Fish Shellin mukana tuleva "htmlgrep" komento pohjautuu "grep" komentoon, joka on tarkoitettu erilaisten tiedostojen analysointiin ja tietojen etsimiseen. "htmlgrep" toimii samalla tavoin kuin "grep", mutta se analysoi HTML-tiedoston ja etsii sieltä tiettyjä HTML-elementtejä.
 
-Tulosteena näet kaikki <p> tagien sisällöt testi.html-tiedostossa. Voit myös yhdistää useita komentoja käyttämällä "hxpipe" komentoa. Esimerkiksi, jos haluat käsitellä tiettyjä linkkejä ja tulostaa niiden URL-osoitteet, voit käyttää seuraavaa komentoa:
-
-```Fish Shell 
-# Hae kaikki <a> tagit sivulta ja tulosta niiden "href" attribuutit
-hxselect a | hxpipe -c 'xml:attr(href)' testi.html 
-```
-
-Tämä käsky haastaa kaikki "a" tagit testi.html-tiedostosta ja käyttää sitten "hxpipe" komentoa eristääksesi jokaisen linkin "href" attribuutin ja tulostaa ne.
-
-## Syvempi sukellus
-
-Fish Shell mahdollistaa myös HTML-tiedostojen käsittelyn yhdistämällä sen muihin komentorivin työkaluihin, kuten grep ja sed. Voit myös käyttää awk- ja perl-komentoja suurempien ja monimutkaisempien tiedostojen käsittelyyn.
-
-Lisäksi Fish Shellin daten virtaamispohjainen luonne tekee tiedostojen käsittelystä nopeampaa ja tehokkaampaa. Voit käyttää "jq" komentoa JSON-tiedostojen parsimiseen ja "curl" komentoa tiedostojen lataamiseen suoraan verkosta.
+Voit myös käyttää muita komentoja, kuten "curl" ja "sed", Fish Shellissä HTML-tiedoston analysointiin ja datan kaivamiseen.
 
 ## Katso myös
-
-- [Fish Shell opas (suomeksi)](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell virallinen dokumentaatio (englanniksi)](https://fishshell.com/docs/current/index.html)
-- [html-xml-utils-kirjaston dokumentaatio (englanniksi)](https://neilb.me/2005/04/26/html-xml-utils/)
-- [Onnistuneen Fish Shell työnkulun rakentaminen HTMListen-kirjaston avulla (englanniksi)](https://melanie-richards.com/blog/how-to-build-a-useful-fish-shell-workflow-with-html-xml-utils/)
+- [Fish Shell: HTML Parsing](https://fishshell.com/docs/current/cmds/htmlgrep.html)
+- [Curl Manual](https://curl.haxx.se/docs/manpage.html)
+- [Sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
+- [HTML Tutorial](https://www.w3schools.com/html/)

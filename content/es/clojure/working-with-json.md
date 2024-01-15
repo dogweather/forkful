@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Clojure: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,55 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué trabajar con JSON en Clojure?
 
-Trabajar con JSON en Clojure es una tarea común en muchas aplicaciones web y de backend. JSON, o JavaScript Object Notation, es un formato de intercambio de datos ligero y fácil de leer que se utiliza para transmitir información entre diferentes sistemas. Usar Clojure para trabajar con JSON es una excelente opción debido a su capacidad para manejar estructuras de datos complejas y su sintaxis simple y funcional.
+Si estás buscando una forma sencilla y eficiente de manejar datos en tu aplicación Clojure, JSON es una excelente opción. Al ser un formato de datos ampliamente utilizado, trabajar con JSON te permitirá intercambiar información con otras aplicaciones y servicios de manera fluida.
 
-## Cómo trabajar con JSON en Clojure
+## Cómo hacerlo
 
-Para trabajar con JSON en Clojure, primero debemos tener una comprensión básica de cómo se estructuran los datos en formato JSON. Un objeto JSON consiste en pares de clave-valor, con la clave siendo una cadena y el valor puede ser cualquier tipo de dato válido en JSON (contenedor de objetos, matriz, número, cadena, valor booleano, etc.). En Clojure, podemos representar un objeto JSON como una estructura de datos de mapas utilizando la función `json/read-str` de la biblioteca clojure.data.json.
-
-```Clojure
-(ns ejemplo-json.core
-  (:require [clojure.data.json :as json]))
-
-(def obj-json (json/read-str "{\"nombre\": \"Juan\", \"edad\": 30 }"))
-(print obj-json)
-
-;; Output:
-{ :nombre "Juan"
-  :edad 30 }
-```
-
-Para acceder a los valores de un objeto JSON, podemos usar la función `get` o la sintaxis de acceso a claves de un mapa. En este ejemplo, accederemos al nombre y la edad de nuestro objeto JSON.
+Para trabajar con JSON en Clojure, primero necesitas importar la biblioteca `clojure.data.json`. Luego, puedes usar la función `json/read-str` para convertir una cadena JSON en una estructura de datos Clojure. Por ejemplo:
 
 ```Clojure
-(get obj-json :nombre)
-;; Output: "Juan"
-
-(:edad obj-json)
-;; Output: 30
+(require '[clojure.data.json :as json])
+(def json-data "{\"nombre\": \"Juan\", \"edad\": 30}")
+(def datos (json/read-str json-data))
 ```
 
-Para trabajar con matrices JSON, podemos usar la función `json/read-str` de la misma manera. En el siguiente ejemplo, nuestra matriz JSON contiene dos objetos que representan personas. Para acceder a la información de cada persona, usaremos la función `each` de la biblioteca `clojure.walk`.
+En este ejemplo, estamos convirtiendo una cadena JSON con un objeto que contiene un nombre y una edad en un mapa de Clojure. Puedes acceder a los valores del mapa usando las claves correspondientes:
 
 ```Clojure
-(def arr-json (json/read-str "[{\"nombre\": \"Maria\", \"edad\": 25 }, {\"nombre\" : \"Pedro\", \"edad\": 35 }]"))
-(clojure.walk/each print arr-json)
-
-;; Output:
-{ :nombre "Maria"
-  :edad 25 }
-{ :nombre "Pedro"
-  :edad 35 }
+(def nombre (get datos "nombre"))
+(def edad (get datos "edad"))
 ```
 
-## Deep Dive: Trabajando con JSON en Clojure
+También puedes usar la función `json/str` para convertir una estructura de datos Clojure en una cadena JSON:
 
-Cuando trabajamos con JSON en Clojure, es importante asegurarnos de que los datos están correctamente estructurados antes de intentar acceder a ellos. Podemos utilizar la función `json/validate` para validar la sintaxis de un objeto JSON y asegurarnos de que cumple con nuestras expectativas de datos.
+```Clojure
+(def datos-2 {"nombre": "María", "edad": 28})
+(println (json/str datos-2))
+;; La salida será: {"nombre": "María", "edad": 28}
+```
 
-También es importante tener en cuenta que Clojure es un lenguaje funcional y, por lo tanto, trabajaremos más eficientemente con JSON utilizando funciones de orden superior como `map` y `filter` en lugar de estructuras de control imperativas.
+## Profundizando
 
-## Ver También
+Además de las funciones básicas `json/read-str` y `json/str`, la biblioteca `clojure.data.json` ofrece una amplia gama de opciones para trabajar con JSON en Clojure. Por ejemplo, puedes usar las funciones `json/read` y `json/write` para leer y escribir archivos JSON, o la función `json/parse-string` para convertir cadenas JSON con contenido válido en estructuras de datos Clojure.
 
-- [Documentación de la biblioteca `clojure.data.json`](https://github.com/clojure/data.json)
-- [Guía de referencia rápida de JSON en Clojure](https://gist.github.com/jenkstom/4244547)
-- [Tutorial de Clojure con ejemplos de JSON](https://practicalli.github.io/clojure/working-with-json/)
+También puedes manipular y transformar datos JSON utilizando las funciones `json/select-keys` y `json/merge`, entre otras.
+
+## Ver también
+
+- [Documentación de la biblioteca clojure.data.json](https://github.com/clojure/data.json)
+- [Tutorial de Clojure para principiantes](https://clojure.org/guides/getting_started)
+- [Introducción a JSON en Clojure](https://www.programming-books.io/essential/clojure-json-c8ea2f62cbce439cb443665469c78394)

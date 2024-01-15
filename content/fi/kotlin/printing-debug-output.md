@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Virheenkorjaustulosteiden tulostaminen"
-simple_title:         "Virheenkorjaustulosteiden tulostaminen"
+title:                "Tulostaminen virheenkorjaustulosteista"
+html_title:           "Kotlin: Tulostaminen virheenkorjaustulosteista"
+simple_title:         "Tulostaminen virheenkorjaustulosteista"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,29 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä miksi joku saattaisi haluta tulostaa debuggaustietoja ohjelmassa. Yksi yleisimmistä ongelmanratkaisutarkoituksessa on löytää virheitä tai vikoja koodista. Tulostamalla debuggaustietoja, voidaan seurata koodin suoritusta ja selvittää missä vaiheessa virheilmoitus tulee.
+Joskus kehittäjän on tärkeää nähdä ohjelmansa sisäisiä tapahtumia ja muuttujien arvoja, jotta voi havaita ja ratkaista mahdolliset ongelmat. Tulostamalla debug-tietoa ohjelman suorituksen aikana, voidaan helpommin havaita virheitä ja parantaa koodin suorituskykyä.
 
-## Miten
+## Miten tehdä niin
 
-Kotlinilla on helppo tulostaa debuggaustietoja ohjelmassa. Tähän käytetään `print()` tai `println()` funktiota, jotka tulostavat halutun arvon konsoliin. Alla on esimerkkejä erilaisista tulostusmahdollisuuksista Kotlinilla:
+Debug-tietojen tulostaminen Kotlinissa on helppoa ja nopeaa. Voit käyttää standardia println-funktiota, kuten: 
 
 ```Kotlin
-val nimi = "Matti"
-val ikä = 35
-
-print(nimi) // Tulostaa "Matti"
-println(nimi + ikä) // Tulostaa "Matti35"
-println("Nimi: $nimi, Ikä: $ikä") // Tulostaa "Nimi: Matti, Ikä: 35"
+fun main() {
+    val name = "Maija"
+    val age = 25
+    println("Tervetuloa, $name!")
+    println("Olet $age-vuotias.")
+}
 ```
 
-Kuten nähdään esimerkeissä, `println()` tulostaa halutun arvon ja siirtyy seuraavalle riville, kun taas `print()` vain tulostaa arvon ilman rivinvaihtoa. Lisäksi voidaan käyttää `'` merkkejä tulostettavan arvon ympärillä, jolloin arvo tulostetaan sellaisenaan ilman tarvetta `+` merkille.
+Tämä tulostaa seuraavanlaisen viestin:
 
-## Syväsyvennys
+```
+Tervetuloa, Maija!
+Olet 25-vuotias.
+```
 
-Debuggaustietoja tulostetaan myös usein tutkittaessa ohjelman suorituskykyä ja sen aikana tapahtuvia muutoksia muuttujissa. Tämä helpottaa ohjelman optimointia ja parantaa sen suorituskykyä. Lisäksi tulostetut tiedot voivat olla hyödyllisiä myös ohjelman dokumentoinnissa ja ongelmanratkaisussa.
+Voit myös tulostaa monimutkaisempia tietoja käyttämällä String-litereleitä ja muuttujien nimiä. Esimerkiksi:
+
+```Kotlin
+fun main() {
+    val num1 = 10
+    val num2 = 5
+    println("Ensimmäinen luku on $num1 ja toinen luku on ${num2 * 2}.")
+}
+```
+
+Tämä tulostaa seuraavanlaisen viestin:
+
+```
+Ensimmäinen luku on 10 ja toinen luku on 10.
+```
+
+## Syvällisempi tarkastelu
+
+Voi olla hyödyllistä tietää, että voit myös tulostaa debug-tietoja suoraan debug-luokan avulla. Tämä luokka tarjoaa erilaisia metodeja tietojen tarkasteluun ja formaattaukseen. Esimerkiksi voit käyttää "debug" -funktiota, kuten:
+
+```Kotlin
+fun main() {
+    val name = "Markku"
+    val age = 30
+    val height = 175.5
+    val weight = 80.6
+    debug("Nimi: $name, Ikä: $age, Pituus: $height cm, Paino: $weight kg")
+}
+```
+
+Tulostus näyttäisi tältä:
+
+```
+Debug: Nimi: Markku, Ikä: 30, Pituus: 175.5 cm, Paino: 80.6 kg
+```
+
+Voit myös käyttää muita debug-luokan metodeja, kuten "debugToString", "debugColors" ja "debugIndent". Lisätietoja löydät [Kotlinin virallisesta dokumentaatiosta](https://kotlinlang.org/docs/reference/using-gradle.html).
 
 ## Katso myös
 
-- https://kotlinlang.org/docs/tutorials/command-line.html
-- https://kotlinlang.org/docs/reference/basic-syntax.html#using-string-templates
-- https://www.jetbrains.com/help/idea/debugging-with-variables.html
+- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
+- [Kotlinin dokumentaatio](https://kotlinlang.org/docs/home.html)
+- [Ohjelmoinnin perusteet Kotlinilla](https://developer-tech.com/learn-kotlin-beginners/)

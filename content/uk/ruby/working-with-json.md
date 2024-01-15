@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Робота з json"
+title:                "Робота з json"
+html_title:           "Ruby: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,49 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Зачем
+## Для чого
 
-Робота з JSON дозволяє зберігати та обмінюватися даними за допомогою простого та зручного формату. Використовуючи Ruby для обробки JSON, ви можете ефективно робити запити до API, обробляти дані веб-серверів та багато іншого.
+Програмування з використанням JSON може бути корисним для зберігання та передавання даних у веб-додатках, а також для взаємодії з API інших сервісів.
 
-## Як використати
+## Як
 
-Щоб почати роботу з JSON, ви можете скористатися бібліотекою `json` в Ruby. Нижче знаходяться кілька прикладів коду та вихідний результат.
+Кодування та декодування даних JSON у Ruby є простим завданням за допомогою методів з модуля `JSON`.
 
 ```Ruby
 require 'json'
 
-# Створення JSON об'єкта
-json_data = '{"name": "Maria", "age": 25, "country": "Ukraine"}'
+# Кодування об'єкта у JSON рядок
+user = {name: 'John', age: 25, city: 'Kyiv'}
+user_json = JSON.generate(user)
 
-# Розбір JSON даних та вивід на екран
-parsed_data = JSON.parse(json_data)
-puts parsed_data["name"] # "Maria"
-puts parsed_data["age"] # 25
+# Виведення результату
+puts user_json
+# {"name":"John","age":25,"city":"Kyiv"}
+
+# Декодування JSON рядка у хеш
+product_json = '{"name":"Phone", "price": 500, "in_stock": true}'
+product = JSON.parse(product_json)
+
+# Виведення значень хеша
+puts product["name"]
+# Phone
+puts product["price"]
+# 500
+puts product["in_stock"]
+# true
 ```
 
-```Ruby
-# Створення хеша з даними
-ruby_hash = { name: "John", age: 30, country: "Italy" }
+## Глибоке занурення
 
-# Конвертація хеша в JSON об'єкт та збереження в файл
-json_object = JSON.dump(ruby_hash)
-File.write("data.json", json_object)
-```
+Більш складні операції з JSON можуть включати роботу з масивами та вкладеними структурами даних, а також обробку помилок та валідацію даних. Для детальної інформації варто ознайомитися з [офіційною документацією Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html).
 
-Вихідний файл `data.json` буде містити наступний JSON об'єкт:
+## Дивись також
 
-```Json
-{"name": "John", "age": 30, "country": "Italy"}
-```
-
-## Покроковий детальний аналіз
-
-JSON, що означає JavaScript Object Notation, є текстовим форматом обміну даними. Він широко використовується для обміну даними веб-серверів та реалізації API. JSON має просту структуру і легкий для використання. Він складається з пари ключ-значення, де ключ є рядком, а значення може бути рядком, числом, булевим значенням, масивом, об'єктом або нульовим значенням.
-
-Для створення та обробки JSON даних в Ruby, вам потрібно скористатися бібліотекою `json`. Ця бібліотека містить класи та методи, які дозволяють легко створювати, читати та зберігати дані в форматі JSON. За допомогою класу `JSON`, ви можете створювати JSON об'єкти, виконувати розбір та серіалізацію даних, а також працювати з HTTP запитами до веб-серверів.
-
-## Детальніше про роботу з JSON
-
-- [Офіційна документація по бібліотеці `json` у Ruby](https://ruby-doc.org/stdlib-2.7.0/libdoc/json/rdoc/JSON.html)
-- [Стаття про роботу з JSON в Ruby на сайті Medium](https://medium.com/swlh/json-in-ruby-parsing-serializing-and-working-with-json-data-in-ruby-3bc62f7cba1c)
-- [Приклади використання бібліотеки `json` для роботи з API у Ruby](https://www.twilio.com/blog/working
+- [Основи JSON для початківців](https://www.codecademy.com/learn/learn-json)
+- [Робота з JSON в Ruby on Rails](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-ruby-on-rails-ru)
+- [Пакети для роботи з JSON в Ruby](https://rubygarage.org/blog/best-json-gems-for-ruby-on-rails)

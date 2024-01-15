@@ -1,6 +1,7 @@
 ---
-title:                "Python: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analysering av HTML"
+html_title:           "Python: Analysering av HTML"
+simple_title:         "Analysering av HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -9,61 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor parse HTML i Python?
+## Hvorfor
 
-Som en programmerer, kan du komme over en situasjon hvor du trenger å få informasjon fra en nettside. Dette kan være for å lage en nettleser eller for å samle data til analyse. I slike tilfeller er det nyttig å kunne parse HTML-koden til nettsiden for å få den nødvendige informasjonen.
+Hva er HTML parsing, og hvorfor er det relevant for en Python programhopper? HTML parsing er prosessen med å analysere og hente ut informasjon fra HTML-kode for å manipulere og bruke i våre programmer. Dette er spesielt nyttig når vi ønsker å hente ut spesifikke data fra nettsider, for eksempel priser, produktbeskrivelser, og annen informasjon som vi kan bruke til å bygge våre egne applikasjoner.
 
-## Slik gjør du det med Python
+## Hvordan
 
-Python er et kraftig programmeringsspråk som gjør det enkelt å parse HTML. Det finnes flere programmeringsbiblioteker som du kan bruke til dette formålet, men vi vil fokusere på "BeautifulSoup" som er en populær løsning blant utviklere.
-
-Først må du installere BeautifulSoup ved å skrive følgende kommando i terminalen:
-
-```Python
-pip install beautifulsoup4
-```
-
-Etter at du har installert Beautifulsoup, kan du komme i gang med å parse HTML. Først må du importere biblioteket ved å legge til følgende linje i toppen av filen din:
+For å kunne parse HTML med Python, trenger vi et modul som hjelper oss med å håndtere HTML-koden og hente ut data etter ønske. Et populært modul for dette formålet er `BeautifulSoup`, som kan installeres ved å kjøre `pip install beautifulsoup4` i terminalen. La oss se på et eksempel der vi ønsker å hente ut tittel og pris for et produkt fra en nettbutikk:
 
 ```Python
 from bs4 import BeautifulSoup
-```
-
-Deretter kan du bruke BeautifulSoup til å hente informasjon fra en nettside. La oss si at du vil hente informasjon om været fra nettstedet "yr.no". Først må du importere "requests" biblioteket som gjør det mulig å hente innhold fra en nettside:
-
-```Python
 import requests
+
+url = 'https://www.nettbutikk.no/produkt/12345'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+title = soup.find('h1').text # henter ut tittelen fra <h1> taggen
+price = soup.find('div', {'class': 'product-price'}).text # henter ut prisen fra <div class="product-price">
+
+print('Produkt: ' + title)
+print('Pris: ' + price)
 ```
 
-Nå kan du bruke "get" metoden i "requests" for å hente innholdet på nettsiden og lagre det i en variabel:
+Dette eksempelet viser noen grunnleggende funksjoner i BeautifulSoup, som `find()` og `text`, som vi bruker for å finne og hente ut elementer og tekst fra HTML-koden. Vi kan også bruke `find_all()` for å finne alle forekomster av et bestemt element i HTML-koden.
 
-```Python
-page = requests.get("https://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/")
-```
+## Dypdykk
 
-Deretter kan du bruke BeautifulSoup til å parse HTML-en og lagre det i en variabel:
+HTML parsing kan være en kompleks prosess, spesielt når vi må håndtere store og komplekse nettsider. En viktig del av å lykkes med HTML parsing er å forstå hvordan HTML-koden er strukturert og hvordan vi kan identifisere og hente ut de dataene vi ønsker. Dette kan ta litt tid og krever ofte at vi må prøve og feile for å finne den beste måten å håndtere den spesifikke nettstedet på.
 
-```Python
-soup = BeautifulSoup(page.content, 'html.parser')
-```
-Til slutt kan du bruke BeautifulSoup-funksjoner og CSS-selektorer for å finne og hente ut den nødvendige informasjonen fra nettsiden. For eksempel, hvis du vil hente ut værvarselet for de neste tre dagene, kan du bruke følgende kode:
+En annen viktig ting å huske på er at HTML-koden på nettsider kan endre seg ofte, og dette kan påvirke vår parsing. Derfor er det viktig å regelmessig sjekke om koden har endret seg, og eventuelt justere koden vår for å fortsatt kunne hente ut dataene vi trenger.
 
-```Python
-forecast = soup.find(class_="daily-weather-list")
-days = forecast.find_all(class_="daily-weather-list__item-time")
-weather = forecast.find_all(class_="daily-weather-list__item-temperature")
-```
-
-Dette vil gi deg dagene og været for hver dag i en liste. Du kan deretter bruke en løkke for å skrive ut denne informasjonen på en ryddig måte.
-
-## Dypdykk i parsing av HTML
-
-Som du kan se, kan Beautifulsoup gjøre det enkelt å hente informasjon fra nettsider ved hjelp av HTML-parsing. Det er også mulig å bruke BeautifulSoup til å finne og hente ut informasjon basert på spesifikke kriterier, for eksempel bestemte tagger eller attributter. Dette gjør det til et veldig allsidig verktøy for parsing av HTML.
-
-Det er også verdt å nevne at Beautifulsoup også støtter å jobbe med både HTML og XML, noe som gjør det til et enda mer kraftig verktøy for å arbeide med nettinnhold.
-
-# Se også
+## Se også
 
 - [BeautifulSoup dokumentasjon](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Requests dokumentasjon](https://requests.readthedocs.io/en/master/)
-- [HTML og CSS tutorial på W3Schools](https://www.w3schools.com/html/default.asp)
+- [Lær mer om HTML-koding](https://www.w3schools.com/html/)
+- [Les om web scraping og etiske retningslinjer](https://www.knightlab.northwestern.edu/2014/03/13/a-beginners-guide-to-collecting-and-mapping-twitter-data-using-python-and-apis/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: שליחת בקשת http"
+title:                "שליחת בקשת http"
+html_title:           "Elixir: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,46 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כדי לשלוט בתקשורת עם שרתים אחרים, נשתמש בפעולת HTTP כדי לשלוח בקשות ולקבל תגובות. זה נפוץ מאוד ומאפשר לנו ליצור תוכניות חכמות יותר שיוכלו לתקשםר עם סביבתם.
+בעזרת שליחת בקשת HTTP ניתן לתקשר עם שרתים רחוקים ולקבל מידע ונתונים מהאינטרנט. פעולה זו חיונית ליצירת תקשורת בין אתרים ואפליקציות.
 
-## איך לעשות זאת
+## איך לבצע
 
-ב- Elixir, ניתן לשלוח בקשת HTTP באמצעות חבילת `HTTPoison`. נתחיל עם ההתקנה:
+```Elixir
+# אימפורטים נחוצים
+iex> require HTTPoison
+iex> require Jason
 
+# שליחת קשיחה עם HTTP GET
+iex> HTTPoison.get("https://example.com")
+{:ok,
+ %HTTPoison.Response{
+   body: "<!DOCTYPE html>\n<html>\n<head>\n<title>Example Domain</title>\n<style ......",
+   headers: [
+     {"Content-Type", "text/html; charset=UTF-8"}, {"Pragma", "no-cache"},
+     {"Date", "Thu, 30 Sep 2021 00:00:00 GMT"}, {"Server", "gws"},
+     {"Cache-Control", "private"},
+     {"Set-Cookie",
+      "test_cookie=CookieValue; expires=Thu, 30-Sep-2021 01:00:00 GMT; Max-Age=3600; path=/; domain=example.com"}
+   ],
+   request_url: "https://example.com",
+   status_code: 200
+ }}
+
+# שליחת קשיחה עם HTTP POST
+iex> HTTPoison.post("https://example.com", Jason.encode!(%{name: "John", age: 30}))
+{:ok,
+ %HTTPoison.Response{
+   body: "<!DOCTYPE html>\n<html>\n<head>\n<title>Example Domain</title>\n<style ......",
+   headers: [
+     {"Content-Type", "text/html; charset=UTF-8"}, {"Pragma", "no-cache"},
+     {"Date", "Thu, 30 Sep 2021 00:00:00 GMT"}, {"Server", "gws"},
+     {"Cache-Control", "private"},
+     {"Set-Cookie",
+      "test_cookie=CookieValue; expires=Thu, 30-Sep-2021 01:00:00 GMT; Max-Age=3600; path=/; domain=example.com"}
+   ],
+   request_body: "%7B%22name%22%3A%22John%22%2C%22age%22%3A30%7D",
+   request_headers: [["content-type", "application/x-www-form-urlencoded"]],
+   request_method: :post,
+   request_url: "https://example.com",
+   status_code: 200
+ }}
 ```
-def deps do
-  [{:httpoison, "~> 1.7"}]
-end
-```
 
-לאחר מכן נטען את החבילה בתוך הקובץ המחלקה שלנו:
+## תהליך מעמיק
 
-```
-[alex@localhost ~]$ iex -S mix
-iex> {:ok, pid} = HTTPoison.start
-{:ok, #PID<0.70.0>}
-iex> {:ok, status, headers, body} = HTTPoison.get("https://google.com")
-{:ok, 200,
-[
-  {"date", "Thu, 31 May 2012 20:27:50 GMT"},
-  {"server", "Apache/2.2.14 (Ubuntu)"},
-  {"last-modified", "Tue, 29 May 2012 18:37:16 GMT"},
-  {"content-length", "656"},
-  {"content-type", "text/html"}
-],
-"<!DOCTYPE html><html>...</html>"}
-```
-
-כאן אנו משתמשים בפונקציה `HTTPoison.get/2` כדי לשלוח בקשה GET לאתר של גוגל. נשים לב שאנו מקבלים מחזר ערך המכיל את הקוד המצב, הכותרות, והתוכן של התגובה.
-
-תוכלו ליצור גם בקשות POST, PUT, ו-DELETE ע"י החיבור לאתרים בעזרת הפונקציות המתאימות של `HTTPoison`.
-
-## חפירה עמוקה
-
-נתאר כמה דברים שחשוב לדעת על שליחת בקשות HTTP:
-
-- בקשות GET דורשות בעיקר לקרוא תוכן מהשרת, בעוד שבקשות POST, PUT ו-DELETE דורשות גם לעדכן את התוכן.
-- בכל בקשה, אנו יכולים לצפות לקבלת תוכן לא מלא בגלל בעיות בקישוריות אינטרנט או בתשובה של השרת.
-- כדי למנוע חסימה של בקשות מהשרת, נוכל לכיתוב על חיבורים קבועים ולשחרר אותם בסיום התיעוד.
+כאשר אנו שולחים בקשת HTTP, אנחנו בעצם מבקשים מהשרת לשלוח לנו תוכן חזרה. זה מאפשר לנו לקבל מידע ונתונים בקלות מהאינטרנט ולהשתמש בהם לביצוע פעולות נוספות. ניתן להשתמש בפונקציות כמו `get/2` ו-`post/3` של הספרייה HTTPoison על מנת לשלוח בקשות באינטרנט. על מנת להפעיל יישום זה, עלינו להתקין את הספרייה ולהוסיף את החבילות הנחוצות לפעולת שליחת בקשות HTTP.
 
 ## ראה גם
+
+- [HexDocs: HTTPoison](https://

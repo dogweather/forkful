@@ -1,6 +1,7 @@
 ---
-title:                "Swift: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת Http עם אימות בסיסי"
+html_title:           "Swift: שליחת בקשת Http עם אימות בסיסי"
+simple_title:         "שליחת בקשת Http עם אימות בסיסי"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -9,58 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+<h2>למה:</h2>
+נשתמש יותר מתוך שתי משפטים כדי להסביר <b>למה</b> מישהו ירצה לשלוח בקשת HTTP עם אימות בסיסי.
 
-בדרך כלל, אתה משתמש בפרוטוקול HTTP כדי לקבל מידע מאתרים או שירותים באינטרנט. אם אתה רוצה להגביל את הגישה למידע רק למשתמשים מסוימים, או אם יש לך נתונים רגישים שאתה רוצה להגן עליהם, אתה יכול לשלוח HTTP בקשה עם אימות בסיסי.
+<h2>איך לעשות:</h2>
+לדוגמאות של קוד ופלט תוצאה נשתמש בבלוקים של "```Swift … ```".
 
-# איך לעשות זאת
-
-בקשת HTTP עם אימות בסיסי דורשת שתשלח שם משתמש וסיסמה כחלק מהבקשה. אתה יכול לעשות זאת בפונקציית ```URLRequest``` באמצעות יצירת אובייקט של ```URLCredential``` והוספתו לכותרת ה-Authorization של הבקשה.
-
-כדי להבין את זה בצורה יותר טובה, נראה דוגמאות של בקשות HTTP עם ובלי אימות בסיסי:
-
+קוד לשליחת בקשה HTTP עם אימות בסיסי:
 ```Swift
-// בקשת HTTP רגילה ללא אימות
-guard let url = URL(string: "https://example.com") else {
-    return
-}
-let request = URLRequest(url: url)
-let session = URLSession(configuration: .default)
-let dataTask = session.dataTask(with: request) { data, response, error in
-    // עיבוד התגובה של השרת
-}
-dataTask.resume()
-
-// בקשת HTTP עם אימות בסיסי
-guard let url = URL(string: "https://example.com") else {
-    return
-}
-let username = "username" // השלמה בשם המשתמש האמיתי
-let password = "password" // השלמה בסיסמה האמיתית
+let url = URL(string: "https://example.com/api")
+let username = "user"
+let password = "password"
 let loginString = "\(username):\(password)"
-guard let loginData = loginString.data(using: .utf8) else {
-    return
-}
-let base64LoginString = loginData.base64EncodedString()
-var request = URLRequest(url: url)
+let loginData = loginString.data(using: .utf8)
+guard let base64LoginString = loginData?.base64EncodedString() else { return }
+let request = URLRequest(url: url)
 request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-let session = URLSession(configuration: .default)
-let dataTask = session.dataTask(with: request) { data, response, error in
-    // עיבוד התגובה של השרת
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    if let error = error {
+        print("Error: \(error.localizedDescription)")
+        return
+    }
+    if let data = data {
+        // התגובה מבוצעת כאן
+        print("Response: \(String(describing: data))")
+    }
 }
-dataTask.resume()
+task.resume()
 ```
 
-כדי להראות את ההבדל בין הבקשות השניות, ננסה להדפיס את התגובה מהשרת:
+תוצאת הפלט של שאילתת ה-HTTP תכיל את החבילה מהשרת תחת `data` משתנה.
 
-```Swift
-// בקשת HTTP רגילה ללא אימות
-// Output: "unauthorized"
+<h2>עיון עמוק:</h2>
+עכשיו שיש לנו קצת יותר מידע אודות שליחת בקשה HTTP עם אימות בסיסי, נעמיק קצת יותר.
 
-// בקשת HTTP עם אימות בסיסי
-// Output: "success"
-```
+מהי בקשת HTTP?
+בקשת HTTP היא צורת יצירת קשר בין הלקוח (הפלטפורמה הישבתת) לבין השרת (השרת המארח את האפליקציה). זהו דרך מקובלת לקבל נתונים מהשרת או לשלוח נתונים אליו.
 
-# צלילה עמוקה
+מהו אימות בסיסי?
+אימות בסיסי הוא תהליך שבו משתמש נדרש להזין שם משתמש וסיסמה כדי לקבל גישה לשירות או משאב מסוים בשרת. זהו דרך נפוצה לבצע אימות על מנת להבטיח שרק משתמשים מורשים יוכלו לגשת למרחב המוגן.
 
-בנוסף לאימות בסיסי, ישנם עוד המון אפרוטסים בנושא של שליחת בקשות HTTP. תהליך האימות ע
+<h2>ראה גם:</h2>
+- [תיעוד למחלקת URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [מאמר בנושא אימות בסיסי ב-Swift](https://medium.com/@abhimuralidharan/http-basic-authentication-in-swift-c0976ea92f91)

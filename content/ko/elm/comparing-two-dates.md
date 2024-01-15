@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 두 날짜를 비교하는 방법"
-simple_title:         "두 날짜를 비교하는 방법"
+title:                "두 날짜 비교하기"
+html_title:           "Elm: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,44 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-두 날짜를 비교하는 것에 대한 이유는 무엇일까요? 이 글에서는 Elm 프로그래밍 언어를 사용해 두 날짜를 비교하는 방법에 대해 알아보겠습니다.
 
-## 어떻게
-Elm 프로그래밍 언어에서 두 날짜를 비교하는 방법은 간단합니다. 먼저, 비교하고 싶은 날짜를 `Date` 타입으로 변환합니다. 그리고 두 날짜를 `compare` 함수를 사용해 비교하면 됩니다. 아래는 예시 코드와 결과입니다.
+두 개의 날짜를 비교하는 활동은 우리 일상에서 매우 흔하게 발생합니다. 이러한 비교를 통해 우리는 날짜를 파악하고, 일정을 조정하며, 어떤 일이 언제 시작하고 끝나는지를 쉽게 알 수 있습니다. Elm을 사용하여 날짜를 비교하는 방법을 배우면 일상 생활에서 매우 편리하게 사용할 수 있을 뿐만 아니라, 프로그래밍 실력도 향상시킬 수 있습니다.
+
+## 방법
+
+비교하는 날짜를 나타내는 두 변수 `firstDate`와 `secondDate`을 선언합니다.
+그리고 `max` 함수를 사용하여 두 변수를 비교하고 더 큰 값을 반환할 수 있도록 코드를 작성합니다.
+이후 `if-then-else` 구문을 사용하여 두 날짜가 같은지를 확인하고, 같을 경우 "두 날짜가 같습니다!"라는 메시지를 출력하도록 합니다. 아래의 예시 코드를 참고하세요.
 
 ```Elm
--- 두 날짜 비교하기
+firstDate = 2021-10-07
+secondDate = 2021-09-14
 
--- 비교하고 싶은 날짜
-date1 : Date
-date1 =
-    fromCalendarDate 2020 9 5
+max firstDate secondDate
 
-date2 : Date
-date2 = 
-    fromCalendarDate 2021 5 20
-
--- 두 날짜를 비교
-comparison : Ordering
-comparison =
-    compare date1 date2
-
--- 출력
-comparison == LT  -- date1 < date2
+if firstDate == secondDate then
+    "두 날짜가 같습니다!"
+else
+    "두 날짜가 다릅니다!"
 ```
 
-### 출력
-출력 결과로는 `date1`이 `date2`보다 먼저 일어난 날짜이기 때문에 `LT`가 나오게 됩니다.
+예시 코드를 실행해보면 `firstDate`가 `2021-10-07`이고 `secondDate`가 `2021-09-14`이기 때문에 "두 날짜가 다릅니다!"라는 메시지가 출력됩니다.
 
-## 깊게 파보기
-`compare` 함수를 사용해 두 날짜를 비교할 때, 어떤 일이 일어나는지 조금 더 자세히 알아보겠습니다. 우선, `compare` 함수는 `Ordering` 타입을 리턴합니다. 이는 `LT`, `EQ`, `GT` 중 하나가 될 수 있습니다. `LT`는 첫 번째 인자가 두 번째 인자보다 작은 경우를, `EQ`는 두 인자가 같은 경우를, `GT`는 첫 번째 인자가 두 번째 인자보다 큰 경우를 나타냅니다.
+## 깊게 들어가기
 
-`Ordering`은 `comparable`이라는 타입 클래스의 인스턴스입니다. 이는 비교 가능한 타입을 위한 용도로 사용됩니다. 우리는 `Ordering` 타입을 `compare` 함수의 결과로 사용해서 비교하고 싶은 객체의 크기를 비교할 수 있습니다.
+Elm에서 두 날짜를 비교할 때에는 `comparison` 모듈을 사용하면 편리합니다. 이 모듈에는 날짜를 비교하는 여러 함수들이 포함되어 있으며, 이를 사용하여 더 복잡한 날짜 비교를 할 수 있습니다. 또한 `Date.fromString` 함수를 사용하여 문자열로 표현된 날짜를 날짜 값으로 변환하는 것도 가능합니다. 아래의 코드를 참고해보세요.
 
-## 관련 글
-- [Elm 공식 문서 - Date 모듈](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm 공식 문서 - Date 모듈의 compare 함수](https://package.elm-lang.org/packages/elm/time/latest/Time#compare) 
-- [JavaScript에서의 날짜 비교 방법](https://www.geeksforgeeks.org/how-to-compare-date-in-javascript/) 
+```Elm
+import Date
+import Comparison exposing (..)
+
+stringDate = "2021-08-27"
+
+dateValue = Date.fromString stringDate
+
+let
+  result = compare dateValue Date.today
+
+if result == LT then
+    "이번주에 생일파티를 열 예정인가요?"
+elsif result == GT then
+    "아직 생일까지 시간이 남았군요!"
+else
+    "생일 축하드립니다!"
+```
+
+위의 코드에서는 문자열로 된 날짜를 `Date.fromString`을 사용하여 날짜 값으로 변환하고, `compare` 함수를 사용하여 현재 날짜와 비교하고 있습니다. 그리고 `if-then-else` 구문을 사용하여 비교 결과에 따라 다른 메시지를 출력하고 있습니다.
 
 ## 참고
-이번 글에서는 Elm 프로그래밍 언어를 사용해 두 날짜를 비교하는 방법에 대해 알아보았습니다. `compare` 함수를 사용해 두 날짜를 비교하고, `Ordering` 타입을 통해 비교 결과를 확인할 수 있습니다. 비교 가능한 타입에 대해 더 알고 싶다면 `comparable` 타입 클래스를 참고하시기 바랍니다.
+
+- [Official Elm Guide](https://guide.elm-lang.org/)
+- [Comparison 모듈](https://package.elm-lang.org/packages/mgold/elm-date-format/1.0.0/Comparison)
+- [Date.fromString 함수](https://package.elm-lang.org/packages/elm-lang/core/latest/Date#fromString)
+
+----
+# 참고 자료
+
+앞서 포함된 모든 링크를 참고하시면서 예제 코드를 따라해보세요. 그리고 더 복잡한 날짜 비교에 도전해보세요!

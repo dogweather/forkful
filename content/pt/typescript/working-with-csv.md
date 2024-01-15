@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com arquivos csv"
+html_title:           "TypeScript: Trabalhando com arquivos csv"
+simple_title:         "Trabalhando com arquivos csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -9,52 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV em TypeScript?
+## Por que trabalhar com arquivos CSV?
 
-CSV, ou "Comma-Separated Values" (Valores Separados por Vírgula), é um formato de arquivo amplamente utilizado para armazenar dados tabulares. É uma opção popular para armazenar grandes quantidades de dados, pois é fácil de ler e interpretar. Além disso, praticamente todos os programas de planilha e banco de dados suportam esse formato. Neste post, discutiremos por que trabalhar com CSV em TypeScript e como fazê-lo de forma eficiente.
+Trabalhar com arquivos CSV pode ser extremamente útil para aqueles que desejam manipular grandes conjuntos de dados de forma eficiente. CSV (Comma-Separated Values) é um formato de arquivo simples e amplamente utilizado para armazenar dados tabulares, o que o torna uma opção popular para importação e exportação de dados em várias aplicações.
 
 ## Como fazer
 
-Para trabalhar com CSV em TypeScript, precisamos usar a biblioteca "fast-csv", que pode ser instalada através do gerenciador de pacotes NPM. Com o "fast-csv", podemos ler e escrever em arquivos CSV usando apenas algumas linhas de código.
+Para começar a trabalhar com arquivos CSV em TypeScript, é necessário primeiro instalar o pacote "csv-parser" utilizando o gerenciador de pacotes npm. Depois disso, podemos usar o código abaixo para ler um arquivo CSV e imprimir seu conteúdo no console:
 
-Primeiro, vamos importar a biblioteca "fast-csv" no nosso arquivo TypeScript:
+```typescript
+import * as fs from 'fs';
+import * as csv from 'csv-parser';
 
-```TypeScript
-import * as csv from 'fast-csv';
+fs.createReadStream('arquivo.csv')
+  .pipe(csv())
+  .on('data', (data) => console.log(data));
 ```
 
-Em seguida, podemos usar o método "fromPath" para ler um arquivo CSV existente e convertê-lo em um array de objetos TypeScript.
+O CSV é convertido em objetos JavaScript, facilitando assim a manipulação dos dados. Por exemplo, podemos adicionar filtros utilizando a função "filter" do JavaScript, ou então mapear os dados para formatos diferentes.
 
-```TypeScript
-csv.fromPath("arquivo.csv")  
-.on("data", (data) => console.log(data))  
-.on("end", () => console.log("Leitura do arquivo CSV concluída."));
-```
+## Deep Dive
 
-No exemplo acima, usamos o evento "data" para imprimir as linhas do arquivo CSV e o evento "end" para indicar que a leitura do arquivo foi concluída.
+Além de simplesmente ler e imprimir os dados de um arquivo CSV, podemos realizar diversas operações mais complexas com ele. Por exemplo, podemos utilizar o pacote "fast-csv" para criar, atualizar e até mesmo excluir linhas em um arquivo CSV. Também podemos usar o "csv-writer" para escrever novos dados em um arquivo CSV de forma eficiente, sem sobrecarregar a memória com grandes conjuntos de dados.
 
-Para escrever em um arquivo CSV, podemos usar o método "writeToPath" e passar um array de objetos como parâmetro. Por exemplo:
-
-```TypeScript
-const dados = [
-    { nome: 'Pedro', sobrenome: 'Silva', idade: 25 },
-    { nome: 'Maria', sobrenome: 'Souza', idade: 30 }
-];
-
-csv.writeToPath("novo-arquivo.csv", dados)
-.on("finish", () => console.log("Dados salvos em CSV com sucesso."));
-```
-
-O código acima criará um novo arquivo CSV com os dados fornecidos pelo array "dados".
-
-## Mergulho profundo
-
-Além das funções básicas de leitura e escrita, o "fast-csv" possui muitos recursos úteis para trabalhar com arquivos CSV em TypeScript. Por exemplo, ele suporta a leitura de arquivos grandes, bem como a inserção de dados diretamente em um banco de dados.
-
-Também é possível personalizar a leitura e escrita de CSV especificando opções como delimitadores, aspas e campos vazios. Isso permite que a biblioteca atenda às suas necessidades específicas ao trabalhar com diferentes formatos de CSV.
+Outra funcionalidade interessante é o uso de cabeçalhos personalizados no arquivo CSV. Podemos especificar manualmente os nomes das colunas e seus respectivos dados, tornando os arquivos mais legíveis e fáceis de serem manipulados.
 
 ## Veja também
 
-- [Documentação do "fast-csv"](https://www.npmjs.com/package/fast-csv)
-- [Tutorial de CSV em TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-csv-files-in-typescript)
-- [Exemplo prático de leitura e escrita de CSV em TypeScript](https://gist.github.com/samuelcampos/e5d0345a79369c61e26047b7505a9a2a)
+- Documentação oficial do pacote "csv-parser" - https://www.npmjs.com/package/csv-parser
+- Documentação oficial do pacote "fast-csv" - https://www.npmjs.com/package/fast-csv
+- Documentação oficial do pacote "csv-writer" - https://www.npmjs.com/package/csv-writer

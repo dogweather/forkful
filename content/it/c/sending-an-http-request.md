@@ -1,5 +1,6 @@
 ---
-title:                "C: Inviare una richiesta http"
+title:                "Inviare una richiesta http"
+html_title:           "C: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "C"
 category:             "C"
@@ -11,60 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-In questo articolo scopriremo come inviare richieste HTTP utilizzando il linguaggio di programmazione C. Le richieste HTTP sono una parte fondamentale delle applicazioni web moderne e capire come inviarle è essenziale per qualsiasi programmatore.
+Mandare una richiesta HTTP è un'attività fondamentale per comunicare tra client e server quando si sviluppano applicazioni web. Può essere utilizzato per richiedere dati, inviare informazioni o eseguire azioni su un server remoto.
 
 ## Come fare
 
-Per inviare una richiesta HTTP in C, è necessario utilizzare la libreria standard "curl". Prima di tutto, è necessario includere l'intestazione e impostare le opzioni di configurazione di base:
+Per inviare una richiesta HTTP in C, è necessario utilizzare la libreria standard ```<curl.h>```. Una volta inclusa la libreria nel codice, è possibile utilizzare le funzioni messe a disposizione per creare e inviare una richiesta HTTP. Di seguito un esempio di codice che invia una richiesta POST con dei parametri alla URL specificata:
 
-```C
+```
+#include <stdio.h>
 #include <curl/curl.h>
 
-// Opzioni di configurazione per la richiesta
-CURL *curl;
-CURLcode res;
-curl = curl_easy_init();
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+    
+    // inizializza la libreria libcurl
+    curl = curl_easy_init();
+    
+    if(curl) {
+        // imposta la URL di destinazione
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+        
+        // specifica che si desidera inviare una richiesta POST
+        curl_easy_setopt(curl, CURLOPT_POST, 1L);
+
+        // imposta i parametri da inviare
+        // in questo caso, nome e cognome
+        // utilizzati come esempio
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "name=John&surname=Smith");
+
+        // invia la richiesta e salva il risultato nella variabile "res"
+        res = curl_easy_perform(curl);
+
+        // pulisci la struttura CURL
+        curl_easy_cleanup(curl);
+        
+        // stampa il codice di ritorno della richiesta
+        printf("Codice di ritorno: %d\n", res);
+    }
+
+    return 0;
+}
 ```
 
-Successivamente, specificare l'URL di destinazione e il metodo HTTP utilizzato nella richiesta. In questo esempio, utilizzeremo una richiesta GET semplice all'URL "https://www.example.com":
-
-```C
-curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-curl_easy_setopt(curl, CURLOPT_HTTPGET, 1L);
-```
-
-Infine, eseguire la richiesta e gestire la risposta ricevuta. Ad esempio, per stampare il codice di stato della risposta, è possibile utilizzare il seguente codice:
-
-```C
-// Eseguire la richiesta
-res = curl_easy_perform(curl);
-
-// Controllare il codice di stato della risposta
-long http_code = 0;
-curl_easy_getinfo (curl, CURLINFO_RESPONSE_CODE, &http_code);
-printf("Codice di stato HTTP: %ld\n", http_code);
-```
+L'esempio sopra invia una richiesta POST alla URL https://www.example.com inviando i parametri "name=John" e "surname=Smith". Il codice di ritorno della richiesta viene stampato a schermo.
 
 ## Approfondimento
 
-Oltre all'utilizzo delle funzioni descritte sopra, è anche possibile impostare un'opzione "write function" per gestire la risposta in modo più dettagliato:
+Come detto in precedenza, per inviare una richiesta HTTP in C è necessario utilizzare la libreria ```<curl.h>```. All'interno di questa libreria ci sono numerose funzioni disponibili per creare, inviare e gestire le richieste HTTP. È possibile specificare vari parametri che controllano il comportamento della richiesta, come ad esempio il tipo (GET, POST, PUT, etc.), i parametri da inviare, gli header della richiesta e molto altro.
 
-```C
-// Funzione di scrittura per la risposta
-size_t write_function(void *buffer, size_t size, size_t nmemb, void *userp) {
-  // Il buffer contiene i dati ottenuti dalla risposta
-  // Size indica la lunghezza di ogni "chunk" di dati
-  size_t byte_size = size * nmemb;
-
-  // Fai qualcosa con i dati qui
-  return byte_size;
-}
-
-// Imposta l'opzione per utilizzare la funzione di scrittura
-curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_function);
-curl_easy_setopt(curl, CURLOPT_WRITEDATA, your_data_ptr);
-```
+Un'altra caratteristica importante di libcurl è che supporta un'ampia gamma di protocolli, tra cui HTTP, HTTPS, FTP, SMTP, POP3 e molti altri.
 
 ## Vedi anche
-- [Documentazione CURL su invio di richieste](https://curl.se/libcurl/c/example.html)
-- [Guida introduttiva alle richieste HTTP in C](https://www.codingame.com/playgrounds/14213/how-to-play-with-strings-in-c/richieste-http-con-curl)
+
+- Documentazione ufficiale di libcurl: https://curl.haxx.se/libcurl/
+- Altri esempi di codice per inviare richieste HTTP in C: https://www.programmingalgorithms.com/algorithm/http-client/c/

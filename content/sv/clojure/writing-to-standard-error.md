@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Skriva till standardfel"
-simple_title:         "Skriva till standardfel"
+title:                "Att skriva till standard error"
+html_title:           "Clojure: Att skriva till standard error"
+simple_title:         "Att skriva till standard error"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,38 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standard error är en viktig del av programmering i Clojure. Det tillåter utvecklare att skriva felmeddelanden som enkelt kan hittas och åtgärdas för att förbättra kodens hållbarhet och förståelse.
+Att skriva till standardfelutmatning (standard error) är en användbar funktion för felsökning och debugging i Clojure. Genom att skriva felmeddelanden till standard error istället för standardutmatningen kan man enklare skilja mellan utmatning av information och felmeddelanden.
 
-## Hur man gör det
+## Hur man gör
 
-Det finns flera sätt att skriva till standard error i Clojure. Det enklaste sättet är att använda funktionen `println` tillsammans med `System/err`:
+För att skriva till standard error i Clojure, använder man funktionen `print-err`. Denna funktion tar emot en eller flera argument och skriver dem till standard error. 
 
-```
-Clojure (println "Detta är ett felmeddelande" (System/err))
-```
-
-Detta kommer att skriva ut felmeddelandet till standard error och lämna en tom rad efter.
-
-Det finns också andra alternativ, som att använda `eprintln` eller `err-str` tillsammans med `with-out-str` för att få en sträng med felmeddelandet istället för att skriva ut det direkt. Här är ett exempel på hur man använder dessa:
-
-```
-Clojure (with-out-str (eprintln "Detta är ett felmeddelande") (flush (System/err)))
+```Clojure
+(print-err "Detta är ett felmeddelande")
 ```
 
-Detta kommer att spara strängen med felmeddelandet i en variabel och sedan skriva ut den till standard error med `flush`.
+Detta kommer att skriva ut strängen "Detta är ett felmeddelande" till standard error. Om vi skulle använda funktionen `print` istället, skulle strängen skrivas ut till standardutmatningen. 
+
+Man kan även använda `print-err` med flera argument, precis som `print`. Detta är användbart om man vill skriva ut flera värden eller variabler i samma felmeddelande. 
+
+```Clojure
+(def name "Lisa")
+(def age 25)
+(print-err "Användare" name "är" age "år gammal.")
+```
+
+Detta skulle skriva ut "Användare Lisa är 25 år gammal." till standard error. 
 
 ## Djupdykning
 
-Det finns också flera funktioner som kan användas för att hantera skrivning till standard error på ett mer avancerat sätt. Till exempel kan `binding` användas för att ändra standard error-miljön temporärt, vilket kan vara användbart för feldelning och debugging. Här är ett exempel på hur `binding` kan användas för att temporärt ändra standard error-miljön:
+När man skriver till standard error i Clojure, skriver man faktiskt till en Java-stream som heter `System.err`. Därför anropar funktionen `print-err` i själva verket `System.err.print`. Detta betyder att man också kan använda Java-metoder för att skriva till standarderror. En vanlig metod är att använda `println`, som automatiskt lägger till ett radbryt efter värdena som skrivs ut. 
 
-```
-Clojure (binding [*err* (java.io.PrintWriter. *out*)] (println "Detta kommer att skriva till standard error istället för standard output"))
+```Clojure
+(System/err/println "Detta är ett felmeddelande")
 ```
 
-Det finns också andra funktioner som `pr-str` och `pprint-str` som kan användas för att formatera utdata som ska skrivas till standard error.
+Man kan också formatera utskriften genom att använda `System.err/format`, som fungerar på samma sätt som `clojure.core/format`. 
 
 ## Se även
 
-- [Officiell dokumentation för standard error](https://clojure.org/reference/lisp-features#error-handling)
-- [Clojure Error Handling](https://github.com/clojure/spec-alpha/wiki/Error-Handling)
-- [Skriva till standard error i Clojure](https://www.tutorialspoint.com/clojure/clojure_standard_io.htm)
+- [Java I/O streams](https://www.javatpoint.com/file-output-stream)
+- [Clojure Standard Library](https://clojuredocs.org/clojure.core/print-err)

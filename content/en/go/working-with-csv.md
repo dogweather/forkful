@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Working with csv"
+title:                "Working with csv"
+html_title:           "Go recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Go"
 category:             "Go"
@@ -11,107 +12,113 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-CSV (Comma Separated Values) files are a popular way to store and exchange data in a tabular format. They are widely used in data analysis, data transfer between different systems, and in many other applications. If you are a Go developer, it is essential to know how to work with CSV files to efficiently handle data in your programs.
+CSV (Comma Separated Values) files are commonly used for storing and exchanging tabular data. This makes them essential for many data-related tasks, such as data analysis, data manipulation, and data migration. As such, learning how to work with CSV files is a valuable skill for anyone working with data in the digital age.
 
 ## How To
 
-To start working with CSV files in Go, you will need to import the `encoding/csv` package. This package has functions that allow you to read and write CSV files.
+To start working with CSV files in Go, you first need to import the built-in "encoding/csv" package. This package provides functions for reading and writing CSV files.
 
-To read a CSV file, you can use the `csv.NewReader()` function. It takes as input a `io.Reader` interface, which can be a file, a network connection or any other source of data. Once you have the reader, you can use the `Read()` method to read the file line by line. Each line of the file will be returned as an array of strings representing the columns of that line.
+To read data from a CSV file, you can use the `ReadFile()` function, passing in the name of the file and a `File` struct. Here's an example:
 
 ```Go
-package main
-
 import (
 	"encoding/csv"
-	"fmt"
+	"log"
 	"os"
 )
 
+// read data from a CSV file
 func main() {
-	// Open the CSV file
-	file, err := os.Open("data.csv")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+    // open the CSV file
+    file, err := os.Open("data.csv")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
 
-	// Create a new CSV reader
-	reader := csv.NewReader(file)
+    // read file as a CSV
+    reader := csv.NewReader(file)
+    records, err := reader.ReadAll()
+    if err != nil {
+        log.Fatal(err)
+    }
 
-	// Read the file line by line
-	for {
-		record, err := reader.Read()
-		if err != nil {
-			fmt.Println("Error reading line:", err)
-			break
-		}
-		// Print the columns of each line
-		fmt.Println(record)
-	}
+    // print out the records
+    for _, r := range records {
+        fmt.Println(r)
+    }
 }
 ```
 
-The output of this example will look like this:
+This code uses the `ReadAll()` function to read all the records in the CSV file and prints them out. You can also access individual fields by using the `Read()` function, which reads one record at a time.
 
-```
-[Name Age Email]
-[John 25 john@example.com]
-[Amy 30 amy@example.com]
-[David 40 david@example.com]
-```
-
-To write to a CSV file, you can use the `csv.NewWriter()` function. It takes as input a `io.Writer` interface, which can be a file, a network connection or any other destination for the data. You can then use the `Write()` method to write each line of the file, passing in an array of strings representing the columns of that line.
+To write data to a CSV file, you can use the `Write()` function, passing in a `File` struct and a slice of strings (representing the values for each field). Here's an example:
 
 ```Go
-package main
-
 import (
 	"encoding/csv"
-	"fmt"
+	"log"
 	"os"
 )
 
+// write data to a CSV file
 func main() {
-	// Create a new CSV file
-	file, err := os.Create("output.csv")
-	if err != nil {
-		fmt.Println("Error creating file:", err)
-		return
-	}
-	defer file.Close()
+    // open the CSV file
+    file, err := os.Create("output.csv")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
 
-	// Create a new CSV writer
-	writer := csv.NewWriter(file)
+    // create a CSV writer
+    writer := csv.NewWriter(file)
 
-	// Write data to the file
-	writer.Write([]string{"Name", "Age", "Email"})
-	writer.Write([]string{"John", "25", "john@example.com"})
-	writer.Write([]string{"Amy", "30", "amy@example.com"})
-	writer.Write([]string{"David", "40", "david@example.com"})
+    // set headers
+    writer.Write([]string{"Name", "Age", "Occupation"})
 
-	// Flush the writer to write the data to the file
-	writer.Flush()
+    // write data
+    writer.Write([]string{"John Doe", "35", "Software Engineer"})
+    writer.Write([]string{"Jane Smith", "28", "Data Analyst"})
+
+    // flush the writer to write the changes to the file
+    writer.Flush()
 }
 ```
 
-This code will create a CSV file named `output.csv` with the following content:
-
-```
-Name,Age,Email
-John,25,john@example.com
-Amy,30,amy@example.com
-David,40,david@example.com
-```
+This code creates a new CSV file called "output.csv" and writes data to it in a format that can be easily read by other applications.
 
 ## Deep Dive
 
-While working with CSV files, one point to keep in mind is the potential presence of a header row. Some CSV files have a header row as the first line, which contains the names of the columns. You can use the `ReadAll()` method to read the entire file at once, and it will return a slice of all the records. You can then access the header row using `records[0]` and use it to map the columns to the respective data in the records.
+Besides reading and writing, the "encoding/csv" package also provides functions for parsing and formatting CSV data. For example, the `ParseCSV()` function can be used to parse CSV data from a string. Here's an example:
 
-It is also essential to handle errors while reading and writing CSV files, as any issues with the file format or the data can result in unexpected behavior in your program.
+```Go
+import (
+	"encoding/csv"
+	"log"
+)
+
+// parse CSV data from a string
+func main() {
+    // dummy CSV data
+    csvData := "Name,Age,Occupation\nJohn Doe,35,Software Engineer\nJane Smith,28,Data Analyst"
+
+    // parse the CSV data into a slice of slices
+    records, err := csv.ParseCSV(csvData)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // print out the records
+    for _, r := range records {
+        fmt.Println(r)
+    }
+}
+```
+
+This code uses the `ParseCSV()` function to parse the CSV data from `csvData` and prints out the records.
 
 ## See Also
 
-- [The `encoding/csv` package documentation](https://golang.org/pkg/encoding/csv/)
-- [A tutorial on working with CSV files in Go](https://www.thepolyglotdeveloper.com/2017/03/parse-csv-string-go-programming-language/)
+- Official Go documentation for "encoding/csv" package: https://golang.org/pkg/encoding/csv/
+- Tutorial on working with CSV files in Go: https://rshipp.com/go-csv-parse/#parsing-csv-in-go
+- GitHub repository with examples of working with CSV files in Go: https://github.com/gocarina/gocsv

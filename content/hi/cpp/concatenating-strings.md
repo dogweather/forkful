@@ -1,6 +1,7 @@
 ---
-title:                "C++: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग संयोजन करना"
+html_title:           "C++: स्ट्रिंग संयोजन करना"
+simple_title:         "स्ट्रिंग संयोजन करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
+Kya aapne kabhi strings ko concatenate kiya hai? Yadi haan, to aapko shayad pata hoga ki yeh ek bahut hi upyogi aur zaruri kaam hai. Concatenating strings ke madhyam se hum ek lamba string bana sakte hai jo dusre strings ko jodkar banta hai. Isse hume alag-alag strings par alag-alag operations karne ki zarurat nahi padti hai.
 
-कॉनकैटनेटिंग स्ट्रिंग्स में लिखने का सबसे आसान और सबसे प्रभावी तरीका है अपने दिए गए पाठ को जोड़ना और संयोजन करना। यह आपके कोड को अन्य प्रोग्रामों से अलग और स्पष्ट बनाता है।
-
-## कैसे करें
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    // दो स्ट्रिंग्स बनाएं
-    string str1 = "नमस्ते";
-    string str2 = "दुनिया";
-
-    // स्ट्रिंग्स को कॉनकैटनेट करें
-    string concatenation = str1 + " " + str2;
-
-    // कंसोल पर प्रिंट करें
-    cout << concatenation << endl;
-
-    // आउटपुट: नमस्ते दुनिया
-
-    return 0;
-}
+## Kaise Kare
+```
+#include<iostream> 
+using namespace std; 
+  
+int main() 
+{ 
+    // Sabse pehle hum do strings define karenge 
+    string s1 = "Hello"; 
+    string s2 = "World"; 
+  
+    // Ab hum inhe jodkar ek naya string banayenge 
+    string result = s1 + s2; 
+  
+    // Ab hum result string ko print karenge 
+    cout << result; 
+    // Output: HelloWorld
+  
+    return 0; 
+} 
 ```
 
-## गहराई में जाएं
+Is code mein, humne pehle do strings ko define kiya hai. Fir humne inhe concatenation ke operator '+' ka istemaal karke joda hai. Isse ek naya string ban gaya hai jo "HelloWorld" hai. Isse hume result string mein dono strings ko jodkar ek hi statement mei likhna padta hai.
 
-कॉनकैटनेटिंग स्ट्रिंग्स एक बहुत ही साधारण लेकिन उपयोगी काम है। इसके अतिरिक्त, आप अपने पाठ के साथ स्थिर लगाने के लिए स्वरूपण विकल्प का भी उपयोग कर सकते हैं। साथ ही, आप अपनी स्ट्रिंग्स को अलग-अलग स्थानों पर संकलित करने के लिए `stringstream` का भी उपयोग कर सकते हैं। इसलिए, कॉनकैटनेटिंग स्ट्रिंग्स सी ++ में अपने पाठ को प्रबंधित करने का एक महत्वपूर्ण तरीका है।
+## Gehri Jhanjhod
+Strings ko concatenate karne ke liye C++ mein do tarike hai - '+' operator ka istemaal karna ya phir 'append()' function ka istemaal karna. Dono tarike ka output same hoga lekin unke piche ka process thoda alag hai.
 
-## देखें भी
+### '+' operator
+Yeh operator strings ko jodta hai aur ek naya string bana deta hai. Isse hum multiple strings ko bhi jod sakte hai. Yadi humne string variables ko concatenate kiya hai to hume naye variable mein result store karna padega kyunki isse pehle variable mei koi change nahi hoga.
 
-- [C++ Strings](https://www.geeksforgeeks.org/cpp-strings/)
-- [C++ stringstream](https://www.geeksforgeeks.org/stringstream-c-applications/)
-- [Codecademy's Introduction to Strings in C++](https://www.codecademy.com/courses/learn-c-plus-plus/lessons/cpp-strings/exercises/intro-to-strings)
+### append() function
+Yeh function strings ko jodkar original string mei changes karta hai. Matlab ki isse humme naye variable mei store karne ki zarurat nahi padti hai. Iska syntax is prakar hota hai - ```string_variable.append(another_string)```.
+
+## Dekhein bhi
+- [C++ Strings](https://www.programiz.com/cpp-programming/string)
+- [C++ Operators](https://www.programiz.com/cpp-programming/operators)

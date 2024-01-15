@@ -1,6 +1,7 @@
 ---
-title:                "Bash: HTML-Analyse"
-simple_title:         "HTML-Analyse"
+title:                "HTML analysieren"
+html_title:           "Bash: HTML analysieren"
+simple_title:         "HTML analysieren"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,34 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Parsen von HTML ist eine wichtige Fähigkeit für jeden, der sich mit Webentwicklung beschäftigt. Es ermöglicht uns, die strukturierten Daten aus einer Webseite zu extrahieren und sie weiterzuverwenden. So können wir beispielsweise Informationen von einer Webseite automatisiert abrufen und in unserer eigenen Anwendung verwenden.
+Sich mit der Analyse von HTML auseinanderzusetzen, kann für viele Gründe relevant sein. Hier sind einige Beispiele:
 
-## Wie geht das?
+- Du möchtest automatisiert Daten von einer Webseite extrahieren.
+- Du möchtest eine eigene Webseite erstellen und die Grundlage dafür verstehen.
 
-Um HTML zu parsen, müssen wir auf Werkzeuge aus der Bash-Umgebung zurückgreifen. Zu diesen Werkzeugen gehört unter anderem das Programm `sed`, das uns hilft, Textmanipulationen durchzuführen.
+## Wie geht man vor?
 
-Angenommen, wir möchten den Titel einer Webseite auslesen und in einer Variablen speichern. Dazu können wir mit `curl` die Webseite herunterladen und dann `sed` verwenden, um den HTML-Code nach dem Titel-Tag zu durchsuchen und den Text zwischen den `<title>` und `</title>` Tags auszugeben:
+Um HTML mit Bash zu parsen, gibt es verschiedene Möglichkeiten. Eine davon ist mithilfe von Regular Expressions (RegEx). Hier ein Beispiel, wie man den Titel einer Webseite auslesen kann:
 
 ```Bash
-webseite=$(curl https://www.beispielwebseite.de)
-titel=$(echo "$webseite" | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/ p')
-echo $titel
+# speichere die Webseiteninhalte in einer Variable
+content=$(curl -s https://www.example.com)
+
+# suche nach dem Titel-Tag und extrahiere den Inhalt
+title=$(echo "$content" | grep -o '<title>.*</title>' | sed -e 's/<title>//g' -e 's/<\/title>//g')
+
+# gib den Titel aus
+echo "Der Titel dieser Webseite lautet: $title"
 ```
 
-Die Ausgabe wird der Titel der Webseite sein. Wir können auch andere HTML-Elemente auf diese Weise auslesen, indem wir die Regulären Ausdrücke in `sed` entsprechend anpassen. Weitere Möglichkeiten bieten auch Werkzeuge wie `grep` oder `awk`, die zusätzliche Funktionen für die Textmanipulation bereitstellen.
+Die Ausgabe sieht dann etwa so aus:
 
-## Tiefer Einblick
+```Bash
+Der Titel dieser Webseite lautet: Beispiel Webseite
+```
 
-HTML-Parsing kann komplexer werden, wenn wir mit verschachtelten HTML-Strukturen oder CSS-Styling-Elementen arbeiten. Hier müssen wir möglicherweise auf weitere Werkzeuge oder Programmiersprachen wie Python oder JavaScript zurückgreifen. Es gibt auch spezielle Bibliotheken wie `BeautifulSoup` für Python, die das Parsen von HTML vereinfachen können.
+## Tiefentauchen
 
-Es ist wichtig zu beachten, dass beim Parsen von HTML immer die Struktur der Webseite berücksichtigt werden muss und mögliche Änderungen an der Webseite die Funktionalität unseres Codes beeinflussen können. Es ist daher ratsam, regelmäßig zu überprüfen, ob der Code immer noch wie gewünscht funktioniert.
+Um sich tiefer mit der Analyse von HTML auseinanderzusetzen, empfiehlt es sich, die Grundlagen von HTML zu verstehen. HTML steht für Hypertext Markup Language und ist eine Auszeichnungssprache, die für die Strukturierung von Webinhalten verwendet wird.
+
+Um eine Webseite vollständig zu analysieren, kann es sinnvoll sein, sich mit den verschiedenen Elementen von HTML vertraut zu machen und z.B. auch CSS- und JavaScript-Dateien einzubeziehen.
 
 ## Siehe auch
 
-Hier sind einige weitere Ressourcen zum Thema HTML-Parsing:
-
-- Einfache HTML-Parsing Beispiele mit Bash: [https://ostechnix.com/parsing-html-using-sed-awk/](https://ostechnix.com/parsing-html-using-sed-awk/)
-- Eine Einführung in die Verwendung von `BeautifulSoup` für Python: [https://www.freecodecamp.org/news/html-parsing-python-beautiful-soup-example-tutorial/](https://www.freecodecamp.org/news/html-parsing-python-beautiful-soup-example-tutorial/)
-- Offizielle Dokumentation für `sed`: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)
-
-Happy Coding!
+- [Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html)
+- [HTML Grundlagen](https://www.w3schools.com/html/default.asp)
+- [RegEx Tutorial](https://www.regular-expressions.info/tutorial.html)

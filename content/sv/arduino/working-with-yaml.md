@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Arbeta med YAML"
-simple_title:         "Arbeta med YAML"
+title:                "Att arbeta med yaml"
+html_title:           "Arduino: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -9,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Vad är YAML och varför borde du använda det med Arduino?
+
+YAML står för "YAML Ain't Markup Language" och det är ett format för att strukturera data som är lätt att läsa och skriva för människor. Det är också lätt att läsa för datorer och används ofta för konfigurationsfiler inom mjukvaruutveckling. Med YAML kan du skapa och ändra datastrukturer på ett enkelt sätt, vilket är särskilt användbart när du arbetar med Arduino.
+
 ## Varför
-Arduino programmering är ett roligt och utmanande sätt att utforska den digitala världen. Genom att lära sig att arbeta med YAML (Yaml Ain't Markup Language) kan du utöka dina programmeringsförmågor och skapa mer komplexa och intressanta projekt med Arduino.
 
-## Hur man gör
-För att börja arbeta med YAML, behöver du installera biblioteket "ArduinoJson" i din Arduino IDE. Sedan kan du använda följande kod för att skapa ett JSON-objekt med YAML-syntax:
+Det finns många anledningar till varför du skulle vilja använda YAML med Arduino. Ett av de främsta skälen är att det gör det möjligt att skriva och läsa datastrukturer på ett enkelt sätt, vilket är perfekt för att hantera konfigurationsfiler som styr din Arduino-kod.
+
+Med YAML kan du också enkelt göra ändringar i dina datastrukturer utan att behöva ändra koden i din Arduino-sketch. Detta gör det mycket lättare att hantera och uppdatera dina projekt.
+
+## Så här gör du
+
+För att använda YAML inom Arduino behöver du lägga till ett bibliotek som heter "YamlDuino" i din uppsättning av Arduino-bibliotek.
 
 ```Arduino
-#include <ArduinoJson.h>
-
-StaticJsonDocument<200> doc;
-
-doc["namn"] = "Arduino";
-doc["verktyg"] = "YAML";
-doc["plats"] = "Sweden";
+#include <YamlDuino.h>
+YAML.begin();
 ```
 
-Detta kommer att skapa ett objekt med tre nycklar: namn, verktyg och plats. Nu kan du skriva ut detta JSON-objekt genom att använda följande kod:
+Sedan kan du skapa dina datastrukturer i YAML-format genom att använda funktionen `YAML.load()` och ge den en sträng som innehåller din YAML-kod.
 
 ```Arduino
-serializeJsonPretty(doc, Serial);
+String myData = "name: John\nage: 30";
+YAMLObject dataObj = YAML.load(myData);
 ```
 
-Detta kommer att ge följande utmatning på serieporten:
+Nu kan du enkelt hämta och ändra värdena i din datastruktur med hjälp av punktnotation.
 
 ```Arduino
-{
-    "namn": "Arduino",
-    "verktyg": "YAML",
-    "plats": "Sweden"
-}
+String name = dataObj.name;
+int age = dataObj.age;
+
+dataObj.age = 31;
+```
+
+Du kan också skapa och spara nya YAML-filer direkt på ditt Arduino-kort med hjälp av funktionen `YAML.save()`.
+
+```Arduino
+String newFile = "newData.yaml";
+YAML.save(newFile, dataObj);
 ```
 
 ## Djupdykning
-YAML är en utmärkt syntax för att strukturera data på ett lättläst sätt. Genom att använda YAML-notation kan du enkelt skapa JSON-objekt som kan användas för att lagra eller skicka data i dina Arduino-projekt. Du kan också använda YAML för att skapa dynamiska och modulära kodstrukturer, vilket gör det enkelt att bygga vidare på dina projekt och göra ändringar på ett ställe istället för att behöva ändra koden på flera platser.
+
+En av de största fördelarna med YAML är dess enkelhet och läsbarhet för människor. Detta gör det mycket lätt att ändra och uppdatera datastrukturer efter behov.
+
+En annan fördel är att YAML stöder olika typer av data, inklusive strängar, heltal, flyttal och listor. Detta gör det möjligt att skapa komplexa datastrukturer som är lättare att hantera och bearbeta.
+
+För att lära dig mer om YAML och dess olika funktioner, se till att läsa dokumentationen för YamlDuino-biblioteket samt YAMLs officiella hemsida.
 
 ## Se även
-- [ArduinoJson biblioteket](https://arduinojson.org/)
-- [YAML officiella hemsida](https://yaml.org/)
-- [YAML-introduktion på svenska](https://www.skuggadis.se/blogg/2011/08/en-introduktion-till-yaml/)
+
+- [YamlDuino biblioteket](https://github.com/gmag11/YamlDuino)
+- [YAML officiella hemsida](https://yaml.org)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Schreiben in die Standardfehlerausgabe"
-simple_title:         "Schreiben in die Standardfehlerausgabe"
+title:                "Schreiben auf Standardfehler"
+html_title:           "TypeScript: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,45 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In vielen Programmiersprachen gibt es die Möglichkeit, Fehler und andere Informationen auf der Konsole auszugeben. Dies kann für Entwickler:innen sehr nützlich sein, um Fehler zu finden und zu beheben. Doch warum sollte man speziell in TypeScript auf die Standardfehlerausgabe zurückgreifen?
+Es gibt verschiedene Gründe, warum man sich dazu entscheiden könnte, in das Standardfehlerausgabefenster zu schreiben. Einer der häufigsten Gründe ist, dass diese Methode dabei hilft, Fehler in der Codeausführung zu identifizieren und zu debuggen. Außerdem ist es eine effektive Möglichkeit, um Fehlermeldungen und Warnungen anzuzeigen, die dem Benutzer wichtige Informationen über die Funktionalität des Programms geben.
 
-Die Antwort liegt in der Typensicherheit von TypeScript. Da TypeScript statisch typisiert ist, können viele Fehler bereits während des Schreibens des Codes erkannt werden. Jedoch gibt es auch Fälle, in denen der Code trotz Typenüberprüfung eine Fehlermeldung ausgibt. In diesen Fällen kann das Schreiben auf die Standardfehlerausgabe helfen, um die Ursache des Fehlers zu finden.
+## Wie man es macht
 
-## Wie geht das?
+Das Schreiben in das Standardfehlerausgabefenster kann in TypeScript auf zwei Arten erreicht werden.
 
-Um in TypeScript auf die Standardfehlerausgabe zu schreiben, gibt es die Funktion `console.error()`. Diese kann mit einer beliebigen Nachricht als Parameter aufgerufen werden. Hier ein Beispiel:
-
-```TypeScript
-const name = "Max";
-console.error("Hello " + name + ", there is a problem with your code.")
-```
-
-Das obige Beispiel würde folgende Ausgabe erzeugen:
-
-```
-Hello Max, there is a problem with your code.
-```
-
-Wenn der Code jedoch ausführlich ist und das Finden des Fehlers erschwert, kann es hilfreich sein, zusätzliche Informationen in die Meldung einzufügen. Dafür bietet TypeScript die Template-Strings-Syntax an, bei der Variablen direkt in einen String eingefügt werden können. Hier ein Beispiel:
+Die erste Methode ist, die `console.error()` Funktion zu nutzen. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und gibt diese als Fehlermeldung im Standardfehlerausgabefenster aus.
 
 ```TypeScript
-const name = "Max";
-const lineNumber = 10;
-console.error(`Hello ${name}, there is a problem with your code on line ${lineNumber}.`)
+console.error("Dies ist ein Beispiel für einen Fehler");
+// Ausgabe: Dies ist ein Beispiel für einen Fehler
 ```
 
-Die Ausgabe sieht dann so aus:
+Die zweite Methode ist, die globale Variable `process.stderr` zu verwenden. Diese Variable ist ein Objekt, das den Standardfehlerausgabestrom darstellt. Um in diesen Strom zu schreiben, verwenden wir die `write()` Methode.
 
+```TypeScript
+process.stderr.write("Dies ist ein Beispiel für einen Fehler");
+// Ausgabe: Dies ist ein Beispiel für einen Fehler
 ```
-Hello Max, there is a problem with your code on line 10.
-```
 
-## Deep Dive
+## Tiefergehende Informationen
 
-Wenn man tiefer in das Thema eintaucht, wird man feststellen, dass die Standardfehlerausgabe in TypeScript noch weitaus mehr Möglichkeiten bietet. Mit den sogenannten Decorators können bestimmte Funktionen oder Klassen direkt mit einer Error-Handler-Funktion versehen werden. Diese wird bei einem auftretenden Fehler automatisch aufgerufen und kann so zur Fehlerbehandlung genutzt werden. Eine ausführliche Anleitung dazu kann man in der [offiziellen TypeScript Dokumentation](https://www.typescriptlang.org/docs/handbook/decorators.html#adding-an-error-handler) finden.
+Ein wichtiger Unterschied zwischen `console.error()` und `process.stderr.write()` ist ihre Ausgabemethode. Die `console.error()` Funktion gibt standardmäßig eine rote Fehlermeldung aus, während `process.stderr.write()` die Ausgabe im Standardformat ausgibt.
+
+Eine weitere wichtige Tatsache ist, dass `console.error()` primär für den Einsatz in der Entwicklungsumgebung gedacht ist, während `process.stderr.write()` für Produktionssysteme besser geeignet ist. Das liegt daran, dass die `console` Funktionen für Entwicklungs- und Testzwecke oft von anderen Modulen überschrieben werden.
 
 ## Siehe auch
 
-- [Offizielle TypeScript Dokumentation](https://www.typescriptlang.org/docs)
-- [Beispiel für die Verwendung von `console.error()` in TypeScript](https://www.codegrepper.com/code-examples/typescript/typescript+console.error)
-- [Einführung in Decorators in TypeScript](https://www.sitepoint.com/javascript-decorators-what-they-are/)
+- [Node.js-Dokumentation zu `process.stderr.write()`](https://nodejs.org/api/process.html#process_process_stderr)
+- [Node.js-Dokumentation zu `console.error()`](https://nodejs.org/api/console.html#console_console_error_data_args)

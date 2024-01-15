@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Rust: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Cześć czytelnicy! Witamy w kolejnym wpisie z serii programowania w języku Rust. Dzisiaj przyjrzymy się tematowi pobierania stron internetowych. Możesz zapytać: dlaczego chciałbym pobrać stronę internetową? Jedną z najczęstszych przyczyn jest zbieranie danych do analizy lub wykorzystania ich w aplikacjach. Ale niezależnie od powodu, jest to przydatna umiejętność do posiadania w swoim zestawie narzędzi. Zatem zaczynajmy!
+Cześć czytelnicy! W dzisiejszym artykule rzucimy okiem na to, dlaczego warto pobierać strony internetowe przy użyciu języka programowania Rust. Jeśli lubisz szybkie i wydajne rozwiązania, a także chcesz poznać nowe narzędzia, to ten artykuł jest dla Ciebie!
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby pobrać stronę internetową w języku Rust, musimy użyć biblioteki `reqwest`. Najpierw zdeklarujmy zależność w pliku `Cargo.toml`:
+Język programowania Rust jest wykorzystywany do tworzenia oprogramowania wysokiej jakości i wydajnych aplikacji. Dzięki swojemu systemowi typów oraz bezpieczeństwu pamięci, jest idealnym narzędziem do pobierania stron internetowych. Najpierw musimy jednak zainstalować odpowiednie biblioteki, aby móc przeprowadzić operację pobrania. W tym celu użyjemy kreatora Cargo, który jest dostępny wraz ze standardową instalacją Rust.
 
-```
-[dependencies]
-reqwest = { version = "0.11.5", features = ["blocking", "json"] }
-```
+```Rust
+use reqwest::Client;
+use std::fs::File;
+use std::io::prelude::*;
 
-Następnie w pliku `main.rs` zaimportujmy bibliotekę i użyjmy funkcji `get` do pobrania adresu URL:
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let mut response = Client::new()
+        .get("https://example.com/") // Wstaw link do strony internetowej
+        .send()?
+        .text()?;
 
-```
-use reqwest;
-use std::io::Read;
+    let mut file = File::create("example.html")?; // Wstaw nazwę pliku
 
-fn main() -> Result<(), reqwest::Error> {
-    let mut response = reqwest::get("https://example.com")?; // pobierz URL
-    let mut buff = String::new();
-    // odczytaj dane do zmiennej buff
-    response.read_to_string(&mut buff)?;
-    println!("Otrzymano: {}", buff); // wyświetl pobraną stronę
+    file.write_all(response.as_bytes())?; // Wypisz odpowiedź do pliku .html
+
     Ok(())
 }
 ```
 
-Po uruchomieniu powyższego kodu, powinieneś zobaczyć w konsoli cały kod HTML ze strony internetowej. To już wszystko! Pozwala to na podstawowe pobieranie stron internetowych, ale możesz też użyć biblioteki `scraper` do parsowania i wybierania konkretnych danych z pobranej strony.
+Po uruchomieniu powyższego kodu, w folderze projektu zostanie utworzony nowy plik o nazwie "example.html" zawierający pobraną stronę internetową. Zauważ, że korzystamy tu z biblioteki "reqwest", która jest jednym z najpopularniejszych narzędzi do pobierania stron w języku Rust. Jeśli chcesz dowiedzieć się więcej o tej bibliotece, kliknij poniższy link w sekcji "Zobacz także".
 
-## Głębokie zanurzenie
+## Głębszy wgląd
 
-Jeśli chcesz pogłębić swoją wiedzę na temat pobierania stron internetowych w języku Rust, możesz zacząć od zrozumienia jak działa HTTP i jakie są różnice między bibliotekami `reqwest` i `hyper`. Możesz też przeczytać dokumentację biblioteki `scraper` i spróbować wybrać konkretne elementy z pobranej strony.
+Teraz gdy wiesz jak pobierać strony internetowe w Rust, możesz pójść krok dalej i poznać inne funkcje, które oferuje ten język. Na przykład, możesz skorzystać z asynchronicznej wersji biblioteki "reqwest" lub użyć wbudowanego modułu "std::process" do uruchomienia poleceń systemowych. Istnieje wiele sposobów na pobieranie stron internetowych w Rust, więc nie ma jednej "poprawnej" metody. Wypróbuj różne rozwiązania i wybierz to, które najlepiej odpowiada Twoim potrzebom.
 
 ## Zobacz także
 
-- [dokumentacja reqwest](https://docs.rs/reqwest/)
-- [dokumentacja scraper](https://docs.rs/scraper/)
-- [Poradnik Rust: pobieranie i przetwarzanie HTML](https://dev.to/taliamax/parsing-html-in-rust-4k42)
-- [Jak pobrać stronę internetową z użyciem Rust](https://www.onwebsecurity.com/securing-personal-data/rust-download-page-with-https/)
-
-Dziękujemy za przeczytanie naszego wpisu. Mam nadzieję, że zdobyłeś trochę wiedzy na temat pobierania stron internetowych w języku Rust. Do zobaczenia w kolejnym wpisie!
+- [Dokumentacja biblioteki reqwest](https://docs.rs/reqwest/latest/reqwest/)
+- [Kurs programowania w Rust](https://www.rust-lang.org/learn)
+- [Dokumentacja standardowej biblioteki Rust - std](https://doc.rust-lang.org/std/)

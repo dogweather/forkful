@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Swift: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,47 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dwóch dat może być bardzo przydatne w programowaniu. Może to pomóc nam w ustalaniu, które zdarzenia wystąpiły wcześniej, porównaniu czasu trwania zdarzeń oraz w wielu innych sytuacjach. W tym artykule dowiesz się, jak porównywać dwie daty w języku Swift.
+Porównywanie dwóch dat jest częstą czynnością w programowaniu. Pozwala na ustalenie, która z dwóch dat jest wcześniejsza lub późniejsza, co jest przydatne w przypadku tworzenia aplikacji, które wymagają obsługi dat.
 
-## Jak
+## Jak To Zrobić
 
-Poniżej znajdują się przykładowe kody, które pomogą ci w porównywaniu dwóch dat w języku Swift.
+Aby porównać dwie daty w języku Swift, możesz skorzystać z metody `compare` dostępnej na typie `Date`. Poniżej znajduje się przykład kodu, który porównuje dwie daty i wypisuje wynik w konsoli:
 
 ```Swift
-// Porównanie dwóch dat z użyciem funkcji ">", "<", ">=", "<="
-let firstDate = Date("2020-01-01")
-let secondDate = Date("2021-01-01")
-if firstDate > secondDate {
-    print("\(firstDate) jest późniejszą datą niż \(secondDate)")
-} else {
-    print("\(secondDate) jest późniejszą datą niż \(firstDate)")
-}
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 3600) // tworzy datę późniejszą o 3600 sekund
+let result = date1.compare(date2)
 
-// Porównanie dwóch dat z użyciem funkcji "compare"
-let result = firstDate.compare(secondDate)
-if result == .orderedAscending {
-    print("\(firstDate) jest wcześniejszą datą niż \(secondDate)")
-} else if result == .orderedDescending {
-    print("\(firstDate) jest późniejszą datą niż \(secondDate)")
-} else {
-    print("\(firstDate) i \(secondDate) są takie same")
+switch result {
+case .orderedAscending:
+    print("Data 1 jest wcześniejsza niż data 2")
+case .orderedDescending:
+    print("Data 2 jest wcześniejsza niż data 1")
+case .orderedSame:
+    print("Obie daty są takie same")
 }
 ```
 
-W powyższych przykładach użyliśmy funkcji `Date` do utworzenia daty oraz funkcji `compare` do porównania dwóch dat. Funkcja `compare` zwraca wartość `orderedAscending`, `orderedDescending` lub `orderedSame`, w zależności od wyniku porównania dat.
+W powyższym przykładzie wykorzystano enum `ComparisonResult`, który może przyjmować jedną z trzech wartości: `.orderedAscending`, `.orderedDescending` lub `.orderedSame`. W zależności od wyniku porównania, wypisuje się odpowiedni komunikat w konsoli.
 
-Możemy również wykorzystać dodatkowe metody do porównywania dat, takie jak `isDate(_:equalTo:)`, `isDate(_:inSameDayAs:)` czy `isDate(_:inSameYearAs:)`. Wszystkie one są dostępne w klasie `Calendar`.
+## Głębszy Wgląd
 
-## Deep Dive
+W języku Swift istnieją również inne sposoby porównywania dat, takie jak wykorzystanie operatorów większości lub mniejszości (`<`, `>`), lub skorzystanie z metody `compare(_:toGranularity:)`, która pozwala na porównanie dat z określoną dokładnością. W przypadku wykorzystania operatorów, typ `Date` zostanie automatycznie przekonwertowany na typ `Timeinterval`, co może dać nieoczekiwane wyniki.
 
-Dowiedzieliśmy się już, jak porównywać dwie daty w języku Swift, ale warto również poznać nieco więcej o samych datach.
+Należy także pamiętać o uwzględnieniu strefy czasowej oraz obsłudze dat rozmiarów takich jak rok przestępny, ponieważ może to mieć wpływ na wynik porównania dwóch dat.
 
-W języku Swift, daty są reprezentowane przez strukturę `Date`, która przechowuje informacje o liczbach sekund od stałej daty punktu odniesienia (1 stycznia 2001 roku). Możemy również korzystać z klasy `Calendar`, która pomaga nam w manipulowaniu datami i czasami, jak również wyznaczaniu odpowiedniego punktu odniesienia.
+## Zobacz także
 
-Kluczowym punktem w porównywaniu dat jest punkt odniesienia, który wyznacza początek liczenia czasu. W języku Swift, domyślnie jest to rok 2001, ale możemy zmienić ten punkt odniesienia, korzystając z klasy `Calendar`.
-
-## Zobacz również
-
-- Dokumentacja do klasy `Date` w języku Swift: https://developer.apple.com/documentation/foundation/date
-- Dokumentacja do klasy `Calendar` w języku Swift: https://developer.apple.com/documentation/foundation/calendar
-- Wprowadzenie do dat i czasów w języku Swift: https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html
+- [Dokumentacja Swift - Porównywanie dat](https://developer.apple.com/documentation/foundation/date)
+- [Porównywanie dat w języku Swift](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)
+- [Sposoby porównania dat w Swiftie](https://medium.com/@terence89/how-to-compare-dates-in-swift-4-6427222276f6)

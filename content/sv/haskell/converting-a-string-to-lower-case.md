@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till gemener."
+html_title:           "Haskell: Omvandla en sträng till gemener."
+simple_title:         "Omvandla en sträng till gemener."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,30 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att konvertera en sträng till små bokstäver är en vanlig uppgift inom programmering. Detta kan vara användbart för att jämföra strängar på ett enhetligt sätt eller för att skapa en sökfunktion som ignorerar bokstavskapital.
+Att konvertera en sträng till gemener (lower case) är en användbar funktion när man behöver göra jämförelser av texter eller när man vill formatera text på ett enhetligt sätt.
 
-##Så här gör du
+## Så här gör du
 
-För att konvertera en sträng till små bokstäver i Haskell, använder vi den inbyggda funktionen `map` tillsammans med funktionen `toLower` från modulen `Data.Char`. Kodexemplet nedan visar hur detta kan göras:
+Det enklaste sättet att konvertera en sträng till gemener i Haskell är genom att använda standardfunktionen `map` tillsammans med `toLower` från paketet `Data.Char`. Här är ett exempel där vi konverterar en sträng till gemener:
 
 ```Haskell
 import Data.Char (toLower)
 
-strToLower :: String -> String
-strToLower = map toLower
+lowerCaseString :: String -> String
+lowerCaseString str = map toLower str
+
+main = do
+  let str = "Hej, HASKELL är KUL!"
+  putStrLn $ lowerCaseString str
+  -- hej, haskell är kul!
 ```
 
-I detta exempel definierar vi en funktion `strToLower` som tar en sträng som argument och använder `map` för att applicera `toLower` på varje tecken i strängen. För att använda denna funktion i vår kod, kan vi sedan helt enkelt skriva `strToLower "EXEMPELSTRÄNG"` och få ut resultatet `"exempelsträng"`.
+Vi kan också använda en rekursiv funktion för att konvertera strängen stegvis. Det här är ett lite mer avancerat exempel, men det ger oss också möjlighet att klara av speciella tecken som åäö:
 
-##Djupdykning
+```Haskell
+import Data.Char (toLower)
 
-För att förstå hur funktionen `map` fungerar i samband med `toLower`, måste vi först förstå datatypen `String` i Haskell. I Haskell är `String` en samling av `Char`-värden, vilket betyder att varje element eller bokstav i en sträng är representerad av en `Char`.
+lowerChar :: Char -> Char
+lowerChar c
+  | c `elem` ['A'..'Z'] = toLower c
+  | otherwise = c
 
-Funktionen `map` tar en funktion som första argument och en lista som andra argument. Den applicerar sedan funktionen på varje element i listan och returnerar en ny lista med de nya värdena. I vårt fall är funktionen som vi vill applicera `toLower` och listan är vår `String`. Detta innebär att `map toLower "EXEMPELSTRÄNG"` resulterar i en ny lista med bokstäverna i strängen konverterade till små bokstäver.
+lowerCaseString :: String -> String
+lowerCaseString [] = []
+lowerCaseString (c:str) = lowerChar c : lowerCaseString str
 
-##Se även
+main = do
+  let str = "Hej, HASKELL är KUL!"
+  putStrLn $ lowerCaseString str
+  -- hej, haskell är kul!
+```
 
-- [Haskell Data.Char dokumentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toLower)
-- [Haskell map dokumentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#v:map)
+## Djupdykning
+
+För att förstå hur dessa funktioner fungerar i bakgrunden behöver vi först titta på paradigmen "funktionell programmering". Till skillnad från imperativ programmering där man utför stegvisa instruktioner, använder sig funktionell programmering av funktioner som matar in värden och returnerar resultat. Genom att använda funktioner som `map` och `toLower` kan vi konvertera en hel sträng till gemener på ett enkelt sätt.
+
+För att gå djupare in på "funktionell programmering" kan du kika på dessa länkar:
+
+- [Funktionell programmering på svenska](https://sv.wikipedia.org/wiki/Funktionell_programmering)
+- [Funktionella språk till skillnad från imperativa språk](https://www.bitbybitcoding.com/blog/5-functional-languages)
+- [Varför välja funktionell programmering?](https://felixt.se/blog/2015/11/24/why-i-like-functional-programming/)
+
+## Se även
+
+Här är några användbara länkar för att utforska mer om att konvertera strängar till gemener i Haskell:
+
+- [Dokumentation för standardfunktionen `map`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:map)
+- [Dokumentation för funktionen `toLower`](http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toLower)
+- [Haskell Tutorial: Functions and Recursion](http://learnyouahaskell.com/higher-order-functions)
+- [Allt om funktionell programmering](https://www.smashingmagazine.com/2014/07/dont-be-scared-of-functional-programming/)

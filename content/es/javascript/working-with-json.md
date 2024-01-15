@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "Javascript: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,56 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON
+## ¿Por qué trabajar con JSON?
 
-El formato de Notación de Objetos Javascript, mejor conocido como JSON, se ha vuelto cada vez más popular en el mundo del desarrollo web. Es una forma fácil y eficiente de almacenar y transmitir datos entre un servidor y una aplicación web. Si quieres aprender a utilizar JSON en tus proyectos, sigue leyendo.
+Trabajar con JSON en JavaScript es una práctica común en el desarrollo web moderno. JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y legible para los humanos, que se ha vuelto muy popular gracias a su fácil sintaxis y su compatibilidad con múltiples lenguajes de programación.
 
-## Cómo utilizar JSON en Javascript
+## Cómo hacerlo
 
-Para empezar a trabajar con JSON, lo primero que debes hacer es declarar una variable y asignarle los datos en formato JSON. Puedes hacerlo de la siguiente manera:
+Para trabajar con JSON en JavaScript, hay algunos pasos que debes seguir:
 
+1. Primero, asegúrate de tener un objeto JavaScript que quieras convertir a JSON.
+
+Ejemplo de objeto JavaScript:
 ```Javascript
-var datos = { 
-  "nombre": "Juan",
-  "edad": 25,
-  "ciudad": "Madrid"
-};
-```
-
-En este ejemplo, la variable "datos" contiene tres pares de clave-valor en formato JSON. La clave es el nombre del dato y el valor es el contenido del mismo. Ahora, para acceder a un dato específico, puedes utilizar la sintaxis punto o corchetes:
-
-```Javascript
-console.log(datos.nombre); // output: Juan
-console.log(datos["edad"]); // output: 25
-```
-
-También puedes utilizar bucles y condicionales para recorrer y manipular los datos en formato JSON. Por ejemplo, puedes recorrer un arreglo de objetos JSON y mostrar su contenido en una lista en tu página web:
-
-```Javascript
-var list = document.getElementById("lista");
-
-for (var i = 0; i < datos.length; i++) {
-  var li = document.createElement("li");
-  li.innerHTML = datos[i].nombre + " - " + datos[i].ciudad;
-  list.appendChild(li); 
+let persona = {
+  nombre: "María",
+  edad: 30,
+  ciudad: "Madrid"
 }
-
-/* Output:
-- Juan - Madrid
-- Elena - Barcelona 
-- Carlos - Valencia
-*/
 ```
+
+2. Utiliza el método `JSON.stringify()` para convertir el objeto a una cadena de texto en formato JSON.
+
+Ejemplo de código:
+```Javascript
+let personaJson = JSON.stringify(persona);
+```
+
+3. Ahora puedes enviar la cadena de texto a través de una solicitud HTTP o almacenarla en un archivo.
+
+Ejemplo de código:
+```Javascript
+axios.post("https://ejemplo.com/api/persona", personaJson)
+```
+
+4. Si quieres trabajar con un JSON recibido de alguna fuente externa, utiliza el método `JSON.parse()` para convertir la cadena de texto a un objeto JavaScript.
+
+Ejemplo de código:
+```Javascript
+axios.get("https://ejemplo.com/api/persona").then(response => {
+  let personaRecibida = JSON.parse(response.data);
+});
+```
+
+### Más información sobre JSON
+
+Aunque JSON es ampliamente utilizado y su sintaxis es bastante intuitiva, hay algunas cosas a tener en cuenta al trabajar con él en JavaScript:
+
+- JSON solo puede contener datos primitivos (cadenas de texto, números, booleanos) y objetos anidados. No puedes incluir funciones o comentarios en un JSON.
+- JSON es muy similar a la sintaxis de un objeto JavaScript, pero con algunas diferencias clave. Por ejemplo, las propiedades en un objeto JSON deben estar entre comillas dobles, mientras que en JavaScript pueden estar sin comillas.
+- Puedes validar la sintaxis de un JSON utilizando herramientas en línea como [JSONLint](https://jsonlint.com/) o [JSON Formatter](https://jsonformatter.curiousconcept.com/).
 
 ## Profundizando en JSON
 
-JSON ofrece una gran variedad de funcionalidades para trabajar con datos en formato de objetos. Puedes utilizar métodos como "JSON.stringify()" para convertir un objeto Javascript en formato JSON y viceversa con "JSON.parse()". También puedes utilizar la función "JSON.parse()" para validar si un string está en formato JSON válido.
+Si estás interesado en aprender más sobre JSON, aquí hay algunos temas que podrían ser de tu interés:
 
-Otra ventaja de utilizar JSON en tus proyectos es que es fácil de leer para los seres humanos y también para las máquinas. Esto hace que sea un formato versátil y ampliamente utilizado en aplicaciones web y móviles.
+- [JSON en la documentación de Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON): Aquí encontrarás una guía completa sobre cómo trabajar con JSON en JavaScript, incluyendo métodos y ejemplos.
+- [AJAX y JSON](https://www.w3schools.com/js/js_json_intro.asp): Si quieres saber cómo utilizar JSON para hacer solicitudes AJAX, esta guía de W3Schools es un buen lugar para empezar.
+- [Validación de JSON con JavaScript](https://www.digitalocean.com/community/tutorials/how-to-parse-json-in-javascript): Este tutorial de DigitalOcean te enseña cómo validar y manejar errores al trabajar con JSON en tu código JavaScript.
 
-## Ver también
+## Véase también
 
-- [Documentación oficial de JSON en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [Tutorial de W3Schools sobre JSON en Javascript](https://www.w3schools.com/js/js_json_intro.asp)
-- [Introducción a JSON en el blog de Platzi](https://platzi.com/blog/introduccion-json/)
-- [Curso de Javascript en Platzi para aprender más sobre este y otros temas](https://platzi.com/cursos/javascript/)
+- [Introducción a JSON en JavaScript](https://www.youtube.com/watch?v=uU1YUq557Mo)
+- [Tutorial de JSON en Codecademy](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-json): Aprende los fundamentos de JSON con este curso interactivo de Codecademy.
+- [Documentación oficial de JSON](https://www.json.org/json-es.html): Aquí encontrarás la especificación completa de JSON, así como enlaces a otras herramientas y recursos relacionados.

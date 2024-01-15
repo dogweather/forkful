@@ -1,5 +1,6 @@
 ---
-title:                "Python: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Python: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Python"
 category:             "Python"
@@ -9,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa testeja Pythonilla?
+## Miksi
 
-On monia syitä, miksi kirjoittaa testeja Pythonilla. Yksi tärkeimmistä on varmistaa, että koodi toimii odotetusti ja pysyy virheettömänä jopa muutosten ja päivitysten jälkeen. Lisäksi testien avulla voidaan nopeasti havaita ja korjata mahdolliset bugsit tai ongelmat koodissa.
+Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää mahdollisten virheiden riskiä. Käyttäjiltä saadun palautteen mukaan, testien kirjoittaminen myös helpottaa koodin ylläpitoa ja parantaa sen luettavuutta.
 
-## Kuinka kirjoittaa testeja Pythonilla
+## Kuinka
 
-Pythonilla testien kirjoittaminen on helppoa ja suoraviivaista. Yksi yleisesti käytetty kirjasto testeihin on unittest, joka tarjoaa monipuoliset ominaisuudet testejen kirjoittamiseen ja suorittamiseen.
-
-Seuraavassa on esimerkki yksinkertaisesta testistä, joka tarkistaa, onko kahden luvun summa oikein:
+Testien kirjoittamisessa noudatetaan yleensä yksinkertaista kaavaa: määritellään funktio tai luokka, jota halutaan testata ja kirjoitetaan sen toimintoja vastaava testi. Tässä esimerkissä käytämme yksinkertaista funktiota, joka laskee kahden luvun summan:
 
 ```Python
-import unittest
+def laske_summa(luku1, luku2):
+    return luku1 + luku2
 
-def summa(x, y):
-    return x + y
-
-class TestSumma(unittest.TestCase):
-
-    def test_summa(self):
-        tulos = summa(3, 5)
-        self.assertEqual(tulos, 8)
-
-if __name__ == '__main__':
-    unittest.main()
+# Testataan funktiota
+print(laske_summa(5, 10))
 ```
 
-Koodin suorittamisen jälkeen näemme, että testi on läpäisty, koska kahden luvun summa oli odotetusti 8. Jos koodiin tehdään muutoksia ja testi epäonnistuu, voimme nopeasti havaita virheen ja korjata sen ennen kuin se aiheuttaa ongelmia.
+Tulostus: 15
 
-## Syvennys testeihin kirjoittamiseen
+Testin avulla voimme varmistaa, että funktio toimii halutulla tavalla. Voimme myös antaa testille syötteitä, jotka olisi hyvä käydä läpi, kuten esimerkiksi negatiivisia ja nolla-syötteitä:
 
-Testien kirjoittaminen voi tuntua aikaa vievältä, mutta se säästää paljon vaivaa ja aikaa pitkällä aikavälillä. On myös hyvä noudattaa testien kirjoittamista ensin -periaatetta, eli kirjoittaa testit ennen varsinaista koodia. Tämä auttaa varmistamaan, että koodi suorittaa halutun toiminnon ja että kaikki reunaehtojen ja virhetilanteiden käsittely on huomioitu.
+```Python
+print(laske_summa(-8, 6))
+```
 
-Lisäksi testejä kannattaa kirjoittaa mahdollisimman laajasti erilaisille syötteille ja reunaehtoihin, jotta kattavuus olisi mahdollisimman korkea. Testien suorittaminen säännöllisesti myös varmistaa, että koodi pysyy virheettömänä muutosten ja päivitysten jälkeen.
+Tulostus: -2
 
-# Katso myös
+## Syvempi sukellus
 
-- [UnitTest-dokumentaatio](https://docs.python.org/3/library/unittest.html)
-- [Python-testin kirjoittaminen 60 sekunnissa](https://www.freecodecamp.org/news/unit-testing-python-tutorial/)
-- [Test-Driven Development (TDD)](https://codeburst.io/understanding-test-driven-development-behavior-driven-development-using-unit-tests-f6e82441099b)
+Testeissä on myös mahdollista käyttää erilaisia tapoja, kuten yksikkötestauksessa käytettäviä testikehyksiä, kuten `pytest` tai `unittest`. Näillä työkaluilla voidaan tehdä monipuolisempia testejä ja saada parempia raportteja. Lisäksi testien kirjoittamisessa on hyvä noudattaa hyviä käytäntöjä, kuten esimerkiksi yksinkertaisuuden periaatetta ja testien nimeämistapojen standardointia.
+
+## Katso myös
+
+- [Pythonin virallinen dokumentaatio testaamisesta](https://docs.python.org/fi/3/library/unittest.html)
+- [Hyvät käytännöt testeissä](https://codeinstitute.net/blog/python-unit-testing-best-practices/)
+- [Pytest-dokumentaatio](https://docs.pytest.org/en/stable/)

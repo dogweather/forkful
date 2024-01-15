@@ -1,5 +1,6 @@
 ---
-title:                "C#: Порівняння двох дат"
+title:                "Порівняння двох дат"
+html_title:           "C#: Порівняння двох дат"
 simple_title:         "Порівняння двох дат"
 programming_language: "C#"
 category:             "C#"
@@ -11,72 +12,105 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Порівняння дат - це важлива задача в багатьох програмах, особливо тих, що працюють зі специфічною інформацією, яка пов'язана зі строками. Такі програми можуть бути, наприклад, календарі, особисті органайзери, системи бронювання та інші. Порівнюючи дати, ми можемо перевірити, чи вони співпадають або одна дата наступає раніше за іншу.
+Порівняння двох дат - це важлива задача у багатьох програмах. Наприклад, це може знадобитися для перевірки терміну дії товару або для обліку вікових категорій користувачів. Але чому саме у C# потрібно порівнювати дати? Давайте докладніше розберемося.
 
-## Як
+## Як це зробити
 
-Для порівняння двох дат в C# ми можемо використати вбудований клас `DateTime` та його методи `Compare`, `Equals` та `CompareTo`. Нижче наведено приклад коду з використанням цих методів:
+Кодування порівняння двох дат в C# - це досить просте завдання. Для цього використовується клас **DateTime** і його методи. Давайте розглянемо кілька прикладів коду та відповідні виходи.
 
 ```C#
-// Створюємо дві дати для порівняння
-DateTime date1 = new DateTime(2020, 10, 5); 
-DateTime date2 = new DateTime(2020, 8, 30);
-
-// Порівнюємо дати за допомогою методу Compare
-int result = DateTime.Compare(date1, date2);
-
-if (result < 0)
+// Порівняння дати з поточною датою
+DateTime date = new DateTime(2021, 01, 01);
+if (date > DateTime.Today)
 {
-    Console.WriteLine("Дата 1 передує Даті 2");
+    Console.WriteLine("Дата ще не наставала.");
 }
-else if (result == 0)
+else if (date == DateTime.Today)
 {
-    Console.WriteLine("Обидві дати співпадають");
+    Console.WriteLine("Сьогодні точно ця дата!");
 }
 else
 {
-    Console.WriteLine("Дата 2 передує Даті 1");
+    Console.WriteLine("Ця дата вже минула.");
 }
+```
 
-// Використовуємо метод Equals для перевірки чи дати співпадають
-if (date1.Equals(date2))
+Виходи:
+
+```
+Дата ще не наставала.
+```
+
+```C#
+// Порівняння двох дат
+DateTime firstDate = new DateTime(2021, 01, 01);
+DateTime secondDate = new DateTime(2021, 02, 01);
+if (firstDate < secondDate)
 {
-    Console.WriteLine("Дата 1 і Дата 2 співпадають");
+    Console.WriteLine("Перша дата раніше другої.");
+}
+else if (firstDate > secondDate)
+{
+    Console.WriteLine("Перша дата пізніше другої.");
 }
 else
 {
-    Console.WriteLine("Дата 1 і Дата 2 НЕ співпадають");
+    Console.WriteLine("Ці дати однакові.");
 }
-
-// Використовуємо метод CompareTo для порівняння дат за допомогою оператора <, > та ==
-if (date1.CompareTo(date2) < 0)
-{
-    Console.WriteLine("Дата 1 передує Даті 2");
-}
-else if (date1.CompareTo(date2) == 0)
-{
-    Console.WriteLine("Дати співпадають");
-}
-else
-{
-    Console.WriteLine("Дата 2 передує Даті 1");
-}
-
 ```
 
-Результат виконання програми буде наступним:
+Виходи:
 
 ```
-Дата 2 передує Даті 1
-Дата 1 і Дата 2 НЕ співпадають
-Дата 2 передує Даті 1
+Перша дата раніше другої.
 ```
 
-## Глибокий погляд
+```C#
+// Порівняння дат по частинам (рік, місяць, день)
+DateTime firstDate = new DateTime(2021, 01, 01);
+DateTime secondDate = new DateTime(2021, 02, 01);
+if (firstDate.Year == secondDate.Year)
+{
+    Console.WriteLine("Роки однакові.");
+    if (firstDate.Month == secondDate.Month)
+    {
+        Console.WriteLine("Місяці однакові.");
+        if (firstDate.Day == secondDate.Day)
+        {
+            Console.WriteLine("Дні однакові.");
+        }
+    }
+}
+```
 
-Крім методів порівняння, клас DateTime має також інші корисні методи для роботи з датами, такі як `Add`, `Subtract`, `ToString` та інші. Клас також містить властивості для доступу до окремих компонентів дати, наприклад, рік, місяць, день та інші. Більш детальну інформацію про клас DateTime та його методи можна знайти на офіційній документації Microsoft.
+Виходи:
+
+```
+Роки однакові.
+Місяці однакові.
+```
+
+## Вдавайся глибше
+
+Клас **DateTime** застосовується для збереження інформації про дату і час. Також існує клас **TimeSpan**, який використовується для роботи з періодами часу. Для порівняння періодів часу, наприклад, днів, можна використовувати метод **Difference**:
+
+```C#
+// Порівняння періоду часу з поточним
+DateTime date = new DateTime(2021, 01, 01);
+TimeSpan difference = DateTime.Now - date;
+if (difference.Days > 30)
+{
+    Console.WriteLine("Дату вже більше місяця тому.");
+}
+```
+
+Вихід:
+
+```
+Дату вже більше місяця тому.
+```
 
 ## Дивись також
 
-- [Офіційна документація Microsoft про клас DateTime](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime?view=netcore-3.1)
-- [Порівняння дат в C#](https://www.tutorialspoint.com/csharp/csharp
+- [Клас DateTime в C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Клас TimeSpan в

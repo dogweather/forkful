@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Päivämäärän haku"
-simple_title:         "Päivämäärän haku"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Elixir: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,40 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tervetuloa lukemaan blogipostausta Elixir-ohjelmoinnista! Tässä artikkelissa käsittelemme sitä, miksi olisi hyödyllistä hakea nykyinen päivämäärä ohjelmointikielellä.
+Jos haluat lukea tämän artikkelin, olet ehkä kiinnostunut selvittämään nykyisen päivämäärän Elixir-ohjelmointikielellä. Tämä voi olla hyödyllistä esimerkiksi päivää laskiessa tai tiettyjen aikapohjaisten toimintojen suorittamiseen ohjelmassa.
 
-Tärkein syy tähän on, että useissa ohjelmointiprojekteissa on tarpeen saada tietoa nykyisestä päivästä. Tämä voi liittyä esimerkiksi tiettyihin aikapohjaisiin suorituksiin tai raporttien luomiseen.
+## Kuinka
 
-## Miten
-
-Elixir-ohjelmointikielellä nykyisen päivämäärän saaminen on helppoa. Käytämme tähän tarkoitukseen `Date.utc_today()` -funktiota, joka palauttaa nykyisen päivän tiedot UTC-aikavyöhykkeellä.
-
-```Elixir
-date = Date.utc_today()
-IO.inspect date
-
-# Tulostus:
-# ~D[2021-01-01]
+```elixir
+current_date = Date.utc_today()
+IO.inspect(current_date)
 ```
 
-Voit myös tallentaa päivämäärän muuttujaan ja käyttää sitä muissa toiminnoissa. Voit esimerkiksi saada päivän numeron ja viikonpäivän nimen käyttämällä `Date.day` ja `Date.day_of_week` -funktioita.
+Koodinpätkä hakee nykyisen päivämäärän UTC-aikavyöhykkeellä ja tulostaa sen konsoliin. Voit myös tallentaa päivämäärän muuttujaan ja käyttää sitä myöhemmin muissa ohjelman osissa.
 
-```Elixir
-day = Date.day(date)
-day_name = Date.day_of_week(date)
-
-IO.puts "Tänään on #{day_name}, #{day}"
-# Tulostus: Tänään on perjantai, 1
+```elixir
+{year, month, day} = Date.utc_today()
 ```
+
+Tämä esimerkki näyttää, kuinka voit eritellä päivämäärän osiin ja tallentaa ne omiin muuttujiin. Näin voit esimerkiksi luoda oman formaatin päivämäärälle.
 
 ## Syvempi sukellus
 
-On tärkeää huomata, että `Date.utc_today()` -funktio palauttaa päivämäärän UTC-aikavyöhykkeellä. Jos haluat saada päivämäärän paikallisessa aikavyöhykkeessä, voit käyttää `Date.today()` -funktiota ja antaa parametrina oman aikavyöhykkeesi.
+Elixirissä on sisäänrakennettu Date-moduuli, joka tarjoaa useita funktioita ja metodeja päivämäärien käsittelyyn. Voit esimerkiksi käyttää `Date.add/2` -funktiota lisätäksesi tai vähentääksesi tietyn ajanjakson nykyisestä päivämäärästä.
 
-Lisäksi, jos haluat käsitellä tietoa nykyajassa, voit käyttää `DateTime.utc_now()` -funktiota. Tämä palauttaa tietueen, joka sisältää nykyisen päivämäärän ja kellonajan UTC-aikavyöhykkeellä.
+```elixir
+next_week = Date.add(current_date, 7, :day)
+```
+
+Tämä koodi lisää 7 päivää nykyiseen päivämäärään ja tallentaa sen `next_week` -muuttujaan.
+
+Voit myös käyttää `Date.compare/2` -funktiota vertaamaan kahta päivämäärää keskenään.
+
+```elixir
+{:ok, comparison} = Date.compare(next_week, current_date)
+IO.puts "Next week is #{comparison} than today."
+```
+
+Tässä koodissa vertaillaan `next_week`-muuttujan ja `current_date`-muuttujan välisiä päivämääriä ja tulostetaan ero konsoliin.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio päivämäärien käsittelystä](https://hexdocs.pm/elixir/DateTime.html)
-- [Aikavyöhykkeet Elixirissä](https://elixirschool.com/blog/time-and-date-in-elixir/)
-- [Elixirin sisäänrakennetut `Date` ja `DateTime` -moduulit](https://elixir-lang.org/docs/stable/elixir/Date.html)
+- [Elixirin virallinen dokumentaatio Date-moduulista](https://hexdocs.pm/elixir/Date.html)
+- [Elixir School -oppimissivusto](https://elixirschool.com/fi/) tarjoaa kattavan oppaan Elixir-ohjelmointikieleen
+- [Jaaen Matsdotterin blogipostaus aiheesta](https://medium.com/@jannematthias/fun-with-exirls-date-module-4fdd39b3c470), jossa hän käy läpi erilaisia päivämääräfunktioita Elixirissä.

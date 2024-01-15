@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Elixir: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,35 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-標準エラーに書き込むことについてエルクサーのプログラミングブログをお読みいただきありがとうございます。慣れないうちは、標準出力に書き込むことが一般的ですが、標準エラーへの書き込みは、デバッグ作業やエラーの表示など、プログラムの機能度を向上させるために重要な役割を果たします。
+標準エラー出力に書き込むことは、プログラムのデバッグやログを取るために非常に有用です。エラー出力を利用することで、プログラムの実行中に発生した問題を確認し、改善することができます。
 
-## 使い方
+## 書き込み方
 
-```elixir
-IO.puts("Standard output message")
+標準エラー出力に書き込むには、Elixirの`IO.write/2`関数を使用します。例えば、以下のように書き込むことができます。
+
+```Elixir
+IO.write(:stderr, "エラーメッセージ")
 ```
 
-標準出力に書き込むには、上記のように`IO.puts`関数を使用します。しかし、標準エラーに書き込む場合は、`IO.puts/1`関数を`IO.stderr`に渡します。
-
-```elixir
-IO.puts(IO.stderr, "Standard error message")
-```
-
-これにより、標準エラーへのメッセージが出力されます。また、`IO.inspect/2`関数を使用することで、標準エラーに変数の内容を表示させることもできます。
-
-```elixir
-num = 10
-IO.inspect(IO.stderr, num) # => 標準エラーに 10というメッセージが出力される
-```
+これにより、"エラーメッセージ"が標準エラー出力に出力されます。
 
 ## 深堀り
 
-標準エラーへの書き込みは、主にエラーハンドリングやデバッグ作業で使用されます。プログラムで発生したエラーを即時に表示させることで、解決されるべき問題箇所を特定することができます。
+標準エラー出力とは、プログラム実行時に発生したエラーや警告、デバッグ情報などを表示するための出力ストリームです。`IO.write/2`関数は、第1引数で指定したストリームに第2引数で与えたデータを書き込むことができます。標準エラー出力はデフォルトでは画面に出力されますが、リダイレクトなどを使用することで、出力先を変更することができます。
 
-また、`IO.inspect/2`関数による標準エラーへの出力は、プログラムの実行速度にほとんど影響を与えません。これは、エラーが発生したときにのみ出力されるためです。
+## 参考リンク
 
-## 併せて読みたい
-
-- [Elixir公式ドキュメント - IOモジュール](https://hexdocs.pm/elixir/IO.html)
-- [Elixir公式ドキュメント - Kernelモジュール](https://hexdocs.pm/elixir/Kernel.html#puts/1)
-- [Elixir School - IOモジュール](https://elixirschool.com/ja/lessons/basics/io/)
+- [Elixir公式ドキュメント](https://hexdocs.pm/elixir/IO.html#write/2)
+- [標準エラー出力を利用したデバッグ方法の解説](https://matsu-blog.netlify.app/posts/20100831_stderror)

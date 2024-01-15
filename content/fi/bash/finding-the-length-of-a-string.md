@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Bash: Merkkijonon pituuden löytäminen"
 simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi haluaisit selvittää merkkijonon pituuden? Yksi syy voisi olla, että haluat tietää kuinka monta merkkiä merkkijonossa on tai haluat suorittaa tarkistuksia tiettyjen merkkien määrään perustuen.
 
-## Kuinka tehdä se
-Voit helposti löytää merkkijonon pituuden Bash-skriptillä käyttämällä `expr length` -komentoa. Katso esimerkki alla:
+Oletko koskaan tarvinnut selvittää merkkijonon pituutta Bash-ohjelmoinnissa? Ehkä haluat tulostaa vain enintään tietyn määrän merkkejä tai tehdä tarkistuksen, jos merkkijono on tarpeeksi lyhyt tai pitkä. Tässä artikkelissa opit, kuinka löydät merkkijonon pituuden Bashin avulla.
 
-```Bash
-#!/bin/bash
-merkkijono="Tämä on esimerkki merkkijonosta."
-merkkijonon_pituus=`expr length "$merkkijono"`
-echo "Merkkijonon \"$merkkijono\" pituus on $merkkijonon_pituus merkkiä."
-```
+## Kuinka tehdä
 
-Tämän skriptin suoritus antaa seuraavan tulosteen:
+Ensinnäkin, haluat varmistaa, että merkkijono, jonka pituuden haluat selvittää, on tallennettu muuttujaan. Voit tehdä tämän käyttämällä seuraavaa syntaksia:
 
 ```Bash
-Merkkijonon "Tämä on esimerkki merkkijonosta." pituus on 30 merkkiä.
+string="Tämä on esimerkki merkkijono"
 ```
 
-## Syvällisempi sukellus
-`expr length` -komennolla voit myös laskea suoraan minkä tahansa muuttujan pituuden. Voit myös käyttää muita argumentteja, kuten `substr`, jolla voit erottaa tietyn alueen merkkijonosta ja laskea sen pituuden. Tarkempia tietoja saat Bashin dokumentaatiosta.
+Sitten voit käyttää `expr`-komennolla saadaksesi merkkijonon pituuden:
 
-See also
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/)
-- [Tietoja Rope String -ratkaisuohjelmasta](https://ropestring.com/)
-- [Merkkijonon pituuden laskeminen Pythonissa -blogikirjoitus](https://djangocentral.com/find-the-length-of-a-string-in-python/)
+```Bash
+length=$(expr length $string)
+```
+
+Viimeisessä komennossa luodaan uusi muuttuja, `length`, joka tallentaa merkkijonon pituuden. Tämän muuttujan voit sitten tulostaa komennolla `echo`:
+
+```Bash
+echo "Merkkijonon pituus on $length merkkiä."
+```
+
+Tässä on esimerkkituloste:
+
+```Bash
+Merkkijonon pituus on 27 merkkiä.
+```
+
+## Syvempi sukellus
+
+Bashissa on myös muita tapoja löytää merkkijonon pituus, kuten käyttämällä `length`-ominaisuutta tai `wc`-komennolla. Voit myös käyttää `cut`-komennolla saadaksesi halutun määrän merkkejä merkkijonosta. Lisätietoja näistä vaihtoehdoista löydät Bashin dokumentaatiosta.
+
+Lisäksi voit saada merkkijonon pituuden ilman ulkoista komentoa käyttämällä Bashin sisäänrakennettuja ominaisuuksia. Esimerkiksi voit käyttää `${#muuttuja}` syntaksia saadaksesi muuttujan pituuden suoraan ilman lisäkomentoja.
+
+## Katso myös
+
+- [Bashin viralliset dokumentaatiot](https://www.gnu.org/software/bash/manual/)
+- [Bashin muuttujien käsittely](https://www.tutorialspoint.com/unix/unix-shell-variable.htm)
+- [Bash-komentojen käyttö](https://www.shellscript.sh/variables1.html)

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Praca z formatem json"
+title:                "Praca z formatem json"
+html_title:           "C++: Praca z formatem json"
 simple_title:         "Praca z formatem json"
 programming_language: "C++"
 category:             "C++"
@@ -11,82 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z formatem JSON jest niezbędna podczas programowania w języku C++. Jest to popularny sposób przechowywania i przesyłania danych w aplikacjach webowych oraz mobilnych. W tym wpisie dowiesz się, jak w prosty sposób pracować z JSON w C++, co z pewnością ułatwi Ci pracę w programowaniu.
+JSON (JavaScript Object Notation) jest jednym z najpopularniejszych formatów do przechowywania i przesyłania danych w języku C++. Jest on łatwy do czytania, tworzenia i przetwarzania przez programy, co czyni go idealnym wyborem do pracy z danymi w aplikacjach.
 
-## Jak
+## Jak to zrobić
 
-Aby rozpocząć pracę z formatem JSON w C++, musisz najpierw dodać bibliotekę JsonCpp do swojego projektu. Możesz to zrobić za pomocą menedżera pakietów lub ręcznie, poprzez pobranie plików źródłowych. Następnie należy dodać nagłówek "json/json.h" do swojego pliku źródłowego.
-
-Teraz przyjrzyjmy się przykładowemu kodowi, który tworzy obiekt JSON i zapisuje go do pliku:
+Aby rozpocząć pracę z JSON w języku C++, musimy najpierw zaimportować bibliotekę "json.hpp". Możemy to zrobić za pomocą dyrektywy `#include`:
 
 ```C++
-#include <iostream>
-#include "json/json.h"
-
-int main() {
-    Json::Value myObj;
-    myObj["name"] = "Jan Kowalski";
-    myObj["age"] = 30;
-    myObj["hobbies"].append("programowanie");
-    myObj["hobbies"].append("jazda na rowerze");
-
-    std::ofstream file("myObject.json");
-    file << myObj;
-    file.close();
-}
+#include "json.hpp"
 ```
 
-Kod ten najpierw importuje potrzebne nagłówki, a następnie tworzy obiekt JSON o nazwie "myObj". W kolejnych liniach dodaje do niego klucze i wartości za pomocą operatora "[]". W końcu obiekt ten jest zapisywany do pliku "myObject.json" dzięki wykorzystaniu strumienia plikowego.
-
-Po uruchomieniu tego kodu, utworzony zostanie plik JSON o następującej strukturze:
-
-```JSON
-{
-    "name": "Jan Kowalski",
-    "age": 30,
-    "hobbies": [
-        "programowanie",
-        "jazda na rowerze"
-    ]
-}
-```
-
-Możesz także łatwo odczytać dane z pliku JSON i wyświetlić je na ekranie. Oto przykład kodu z tym zadaniem:
+Następnie, aby utworzyć obiekt JSON, możemy skorzystać z konstruktora `json::object()`. Przykładowo, możemy utworzyć obiekt JSON zawierający imię, nazwisko i wiek osoby:
 
 ```C++
-#include <iostream>
-#include "json/json.h"
-
-int main() {
-    Json::Value myObj;
-    std::ifstream file("myObject.json");
-    file >> myObj;
-
-    std::cout << "Imię: " << myObj["name"].asString() << std::endl;
-    std::cout << "Wiek: " << myObj["age"].asInt() << std::endl;
-
-    std::cout << "Hobby: ";
-    for (int i = 0; i < myObj["hobbies"].size(); i++) {
-        std::cout << myObj["hobbies"][i].asString();
-        if (i != myObj["hobbies"].size() - 1) {
-            std::cout << ", ";
-        }
-    }
-    std::cout << std::endl;
-
-    file.close();
-}
+nlohmann::json person = nlohmann::json::object({
+  {"name", "Kasia"},
+  {"surname", "Nowak"},
+  {"age", 25}
+});
 ```
 
-W tym przypadku najpierw importujemy plik JSON, a następnie odczytujemy z niego dane i wyświetlamy je na ekranie.
+Możemy również utworzyć tablicę JSON za pomocą konstruktora `json::array()`:
+
+```C++
+nlohmann::json fruits = nlohmann::json::array({"apple", "orange", "banana"});
+```
+
+Aby dodać nowe wartości do obiektu lub tablicy JSON, możemy użyć metody `push_back()`:
+
+```C++
+fruits.push_back("grape");
+person.push_back({"address", "ul. Długa 25"});
+```
+
+Możemy także pobierać dane z obiektu lub tablicy JSON za pomocą operatora `[]` i przypisać je do zmiennych:
+
+```C++
+std::string name = person["name"];
+int age = person["age"];
+```
+
+Aby zobaczyć pełny przykład działania na obiekcie i tablicy JSON, zapraszamy do zapoznania się z dokumentacją biblioteki [json.hpp](https://github.com/nlohmann/json).
 
 ## Deep Dive
 
-Powyższe przykłady pokazują podstawowe operacje związane z pracą z formatem JSON w C++. Jednakże, istnieje wiele innych funkcji i metod, które mogą okazać się przydatne w bardziej złożonych projektach. Na przykład, możesz wykorzystać pętlę "for" do iterowania po elementach obiektu JSON, lub wyświetlić wszystkie klucze i wartości za pomocą metody "getMemberNames()".
+Powyższe przykłady przedstawiają podstawowe funkcjonalności związane z pracą z JSON w języku C++. Jednakże, użytkownicy mogą również skorzystać z wielu innych metod dostępnych w bibliotece "json.hpp", takich jak `erase()`, `find()` czy `clear()`, aby jeszcze bardziej dostosować swoje operacje z JSON-em.
 
-Warto także zauważyć, że biblioteka JsonCpp jest bardzo dobrze udokumentowana, więc jeśli masz jakieś pytania lub wątpliwości, możesz łatwo znaleźć odpowiedź w dokumentacji.
+Warto również wspomnieć, że biblioteka "json.hpp" umożliwia konwersję danych pomiędzy JSON-em a formatami takimi jak JSON Pointer, JSON Merge Patch czy CBOR (Concise Binary Object Representation). Dzięki temu, możliwe jest jeszcze łatwiejsze włączanie danych JSON w aplikacji.
 
-## Zobacz też
+## Zobacz także
 
-- Oficjalna dokumentacja biblioteki JsonCpp: https://github.com/open-source-parsers/jsoncpp/wiki
-- Przykładowe projekty wykorzystujące
+Jeśli jesteś zainteresowany/a nauką więcej o pracy z JSON w języku C++, polecamy zapoznać się z poniższymi źródłami:
+
+- [Oficjalna dokumentacja biblioteki "json.hpp"](https://github.com/nlohmann/json#documentation)
+- [Poradnik na temat pracy z JSON-em w języku C++](https://www.plazywaczka.pl/blog/programowanie/c-jak-pracowac-z-jsonem/)
+- [Darmowy kurs "JSON w C++" na platformie edukacyjnej Udemy](https://www.udemy.com/course/json-w-c-plus-plus/)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+html_title:           "Ruby: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,48 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein ohjelmointityössä tarvitaan kykyä laskea päivämääriä tulevaisuuteen tai menneisyyteen. Tämä voi olla hyödyllistä esimerkiksi tapahtumien aikataulutuksessa tai laskuissa. Onneksi Rubyn avulla tämä on tehty helpoksi!
+Joskus on tarpeen laskea tietty päivämäärä menneisyydessä tai tulevaisuudessa. Tämä voi olla esimerkiksi laskutusohjelmassa tai tapahtumakalenterissa.
 
-## Miten
+## Kuinka
 
-Ehdotan seuraavaa lähestymistapaa päivämäärien laskemiseen tulevaisuuteen tai menneisyyteen:
-
-```Ruby
-# Laske päivämäärä kahden viikon päähän
-päivä = Date.today + 2.weeks
-```
-Tulostettaisi tämä koodin osa näyttäisi tältä: "2020-09-16". 
-
-Tässä esimerkissä käytämme Date.luokkaa ja sen ominaisuuksia lisätäksemme kaksi viikkoa tämänhetkiseen päivämäärään. Voit myös lisätä tai vähentää yksittäisiä päiviä, kuukausia tai vuosia halutun päivämäärän perusteella.
+Määritä Rubyyn päivä, kuukausi ja vuosi `Date.new()` -menetelmällä ja tallenna se muuttujaan. Voit myös käyttää `Time.now` -metodia, jos haluat nykyisen päivämäärän. Sitten lisää haluamasi aika päälle käyttämällä `days` tai `months` -parametreja `+` -operaattorilla. Lopuksi, tulosta uusi päivämäärä `puts` -metodilla.
 
 ```Ruby
-# Laske päivämäärä seitsemän päivää menneisyyteen
-päivä = Date.today - 1.weeks
+# luo uusi päivä ja tallenna se muuttujaan
+paiva = Date.new(2020, 10, 1)
+
+# lisää 30 päivää päälle
+uusi_paiva = paiva + 30
+
+# tulosta uusi päivä
+puts uusi_paiva
 ```
-Tulostettaisi tämä koodin osa näyttäisi tältä: "2020-09-02".
 
-Voit myös luoda tarkempia päivämääriä käyttämällä Time.luokkaa. Seuraavassa esimerkissä lisäämme 5 päivää vuoden 2021 toukokuun ensimmäiselle päivälle:
+Tuloste: 2020-10-31
 
-```ruby
-# Luodaan päivämäärä ensi vuodeksi, toukokuun ensimmäinen päivä
-päivä = Time.local(2021, 5, 1) + 5.days
+Voit myös käyttää samankaltaista lähestymistapaa kahden päivämäärän välillä laskemiseen. Voit käyttää `Date` -luokan `>>` -operaattoria, joka antaa tuloksen päivien määrässä.
+
+```Ruby
+# luo kaksi päivää
+paiva1 = Date.new(2020, 10, 1)
+paiva2 = Date.new(2020, 11, 1)
+
+# laske päivien määrä paiva1:sta paiva2:een
+p = (paiva1 >> paiva2).to_i
+
+# tulosta tulos
+puts p
 ```
-Tulostettaisi tämä koodin osa näyttäisi tältä: "2021-05-06 00:00:00 +0300".
 
-## Syvä Sukellus
+Tuloste: 31
 
-Nyt kun tiedämme, kuinka päivämääriä lasketaan Rubylla, voimme tarkastella hieman lisätietoja. Rubyn Date.luokalla on monia sisäänrakennettuja metodeja, joiden avulla voit muuttaa ja manipuloida päivämääriä. Näitä ovat muun muassa .next_day, .prev_day, .next_month ja .prev_month.
+## Deep Dive
 
-Voit myös tarkastella tietyn päivän viikonpäivää käyttämällä .wday -metodia. Esimerkiksi jos haluat tietää, mikä päivä viikon ensi kuussa on sunnuntai, voit tehdä seuraavaa:
-
-```ruby
-# Tarkista ensi kuukauden sunnuntait
-date = Date.today.next_month
-p date.sunday?
-```
-Tulostettaisi tämä koodin osa näyttäisi tältä: "2020-10-11 00:00:00 +0300". Olemme siis tulleet tulokseen, että ensi kuukauden ensimmäinen sunnuntai on 11. päivä.
+Ruby tarjoaa useita erilaisia tapoja laskea päivämääriä tulevaisuudessa tai menneisyydessä. Voit käyttää myös `Date` -luokan muita metodeja, kuten `yesterday` tai `next_year`, saadaksesi halutun päivämäärän. Lisäksi, Rubyssä on myös mahdollista laskea eri aikavyöhykkeillä käyttämällä `DateTime` -luokkaa.
 
 ## Katso myös
 
-- [Rubyn dokumentaatio Date.luokasta](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Vuorovaikutteinen Rubyn oppimispeli päivämäärien laskemisesta](https://rubyinside.com/days-elapsed-1097.html)
+- Date-luokan dokumentaatio: https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html
+- Time-luokan dokumentaatio: https://ruby-doc.org/core-2.7.1/Time.html

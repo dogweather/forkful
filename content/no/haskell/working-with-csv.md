@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeide med csv"
+html_title:           "Haskell: Arbeide med csv"
+simple_title:         "Arbeide med csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-CSV (Comma Separated Values) er en svært vanlig filformat brukt for å lagre og utveksle tabelløs data. Det kan være data som kommer fra en database eller et regneark, og CSV-filer kan enkelt åpnes og redigeres med tekstbehandlingsprogrammer som Excel eller Google Sheets. Å kunne arbeide med CSV-filer er en viktig ferdighet for enhver utvikler eller dataanalytiker, da det kan hjelpe med å manipulere, bearbeide og analysere store mengder data på en effektiv måte.
+Hvis du er interessert i dataanalyse eller behandling av store mengder data, kan arbeid med CSV-filer være nyttig for deg. CSV står for "Comma-Separated Values" og er et vanlig format for å lagre og organisere data.
 
 ## Hvordan
 
-For å jobbe med CSV-filer i Haskell, trenger du å importere "cassava" biblioteket ved å skrive følgende i toppen av filen din:
+For å kunne jobbe med CSV-filer i Haskell, må vi først importere et modul som håndterer lesing og skriving av CSV-filer. Vi kan gjøre dette ved å legge til følgende linje øverst i koden vår:
 
 ```Haskell
-import Cassava
+import Text.CSV
 ```
-Deretter kan du lese inn en CSV-fil ved hjelp av "Cassava.parseFile" funksjonen, og spesifisere typen til dataene du vil lese inn. For eksempel:
+
+For å lese en CSV-fil og lagre dataene i en liste av lister, kan vi bruke funksjonen `parseCSVFromFile`. Denne tar inn en filbane og returnerer en `IO` handling som kan utføres for å få tilgang til dataene. Her er et eksempel på hvordan dette kan se ut:
 
 ```Haskell
-import Cassava
 main = do
-  records <- Cassava.parseFile "data.csv" :: IO (Cassava.Vector (T.Text, Int))
-  print records
+  result <- parseCSVFromFile "sample.csv"
+  case result of
+    Left err -> putStrLn "Feil ved lesing av fil."
+    Right csv -> print csv
 ```
 
-I dette eksempelet vil CSV-filen inneholde data i formatet "Tekst, Heltall". Ved å bruke "parseFile" funksjonen, vil dataene bli lest inn som en "Cassava.Vector" type som kan bli skrevet ut ved hjelp av "print" funksjonen.
+Output vil være en liste av lister hvor hver indre liste representerer en rad med data fra CSV-filen. Et eksempel på CSV-filen `sample.csv` kan se slik ut:
 
-## Deep Dive
+```
+Navn,Alder,Kjønn
+Maria,28,Kvinne
+Marius,34,Mann
+Julie,22,Kvinne
+```
 
-Når du leser inn en CSV-fil, vil hver rad bli representert som en rekord i "Cassava.Vector". For å få tilgang til spesifikke data fra en rad, kan du bruke indeksering. For eksempel, for å få tilgang til tredje element i første rad, kan du skrive:
+Og outputen fra eksempelet over vil da være:
+
+```
+[["Navn","Alder","Kjønn"],["Maria","28","Kvinne"],["Marius","34","Mann"],["Julie","22","Kvinne"]]
+```
+
+For å skrive data til en CSV-fil kan vi bruke funksjonen `writeFile`. Denne tar inn en filbane og en liste av lister med data, og skriver denne dataen til filen i CSV-format. Her er et eksempel på hvordan dette kan se ut:
 
 ```Haskell
-thirdelement = records !! 0 !! 2 
+main = do
+  let csv = [["Frukt", "Antall"], ["Eple", "5"], ["Banan", "10"], ["Appelsin", "3"]]
+  writeFile "fruktliste.csv" (printCSV csv)
 ```
 
-I tillegg til å lese inn en CSV-fil, kan du også skrive data til en CSV-fil ved hjelp av "Cassava.encodeFile" funksjonen. Dette vil tillate deg å formatere dataene dine og skrive dem til en ny CSV-fil.
+Output vil da bli en fil med navn `fruktliste.csv` som inneholder følgende data:
 
-For mer detaljert informasjon om hvordan du arbeider med CSV-filer i Haskell, kan du sjekke ut "Cassava" bibliotekets dokumentasjon.
+```
+Frukt,Antall
+Eple,5
+Banan,10
+Appelsin,3
+```
+
+## Dypdykk
+
+Når du jobber med CSV-filer i Haskell, kan det være lurt å kjenne til noen nyttige funksjoner som hjelper deg med å manipulere og analysere dataene. Her er noen av de mest nyttige funksjonene fra `Text.CSV`-modulen:
+
+- `csvRecord`: Denne funksjonen tar inn en liste med verdier og returnerer en `Record`, som er en type definert i `Text.CSV`-modulen. Dette kan være nyttig når du skal legge til en ny rad i en CSV-fil.
+- `readCSV`: Denne funksjonen tar inn en `String` og returnerer en `Either` type som enten inneholder en feilmelding eller en `Record` som er blitt parsert fra `String`-en. Dette kan være nyttig hvis du trenger å parse data som kommer fra et inputfelt i et brukergrensesnitt.
+- `encodeBy` og `decodeBy`: Disse funksjonene lar deg definere dine egne regler for hvordan data skal bli kodet og dekodet fra og til CSV-format. Dette kan være nyttig hvis du trenger å håndtere spesielle tegn eller formater i dataene dine.
 
 ## Se også
 
-- "Cassava" dokumentasjon: https://hackage.haskell.org/package/cassava/docs/Data-Csv.html
-- Guide til å jobbe med CSV-filer i Haskell: https://www.snoyman.com/blog/2017/05/beware-the-high-cost-of-default-strings 
-- Eksempler på å arbeide med CSV-filer i Haskell: https://github.com/haskell-art/awesome-haskell/blob/master/csv/readme.md
-
-Takk for at du tok deg tid til å lese denne artikkelen om å arbeide med CSV-filer i Haskell. Vi håper det vil hjelpe deg med å lære denne viktige ferdigheten og gjøre deg til en bedre utvikler eller dataanalytiker. Lykke til med kodingen!
+- Offisiell dokumentasjon for `Text.CSV`-modulen: https://hackage.haskell.org/package/csv
+- En guide til å jobbe med CSV-filer i Haskell: https://www.datacamp.com/community/tutorials/haskell-working-with-csv-files

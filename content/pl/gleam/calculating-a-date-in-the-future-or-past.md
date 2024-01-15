@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Obliczanie daty w przyszłości lub przeszłości."
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
+title:                "Obliczanie daty w przyszłości lub w przeszłości"
+html_title:           "Gleam: Obliczanie daty w przyszłości lub w przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub w przeszłości"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,46 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami potrzebujemy obliczyć datę w przyszłości lub w przeszłości, na przykład w celu ustalenia daty ważności produktu lub wydarzenia, lub także dla celów planowania. W tym wpisie pokażemy, jak możesz to zrobić za pomocą języka programowania Gleam.
+Planowanie przyszłości jest ważne dla większości ludzi. Czasami musimy wyznaczyć datę w przyszłości lub w przeszłości dla różnych celów, takich jak rezerwowanie wakacji lub rejestracja na wydarzenia. W tym artykule dowiesz się, jak za pomocą języka programowania Gleam możesz łatwo obliczać daty w przyszłości lub w przeszłości.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub w przeszłości w Gleam, wykorzystujemy funkcję ```Date.add/2```, która przyjmuje dwa argumenty: datę, do której chcemy dodać lub odjąć okres czasu, oraz okres czasu, który chcemy dodać lub odjąć. Na przykład, jeśli chcemy obliczyć datę 30 dni w przód od dzisiaj, użyjemy kodu:
+Aby obliczyć datę w przyszłości lub w przeszłości w języku Gleam, musisz użyć biblioteki `time` dostępnej w standardowej bibliotece. Najpierw musisz zaimportować bibliotekę za pomocą `import time`.
 
+### Obliczanie daty w przyszłości
+
+Aby obliczyć datę w przyszłości, musisz podać datę początkową oraz ilość wybranych jednostek czasu, jakie chcesz dodać do tej daty. Na przykład, jeśli chcesz dodać 10 dni do dzisiejszej daty, możesz użyć następującego kodu:
+
+```Gleam
+let dzisiaj = Time.now()
+let dzien = Time.days(10)
+let przyszla_data = Time.add(dzisiaj, dzien)
 ```
-import Gleam.Date
 
-let dzisiejsza_data = Date.now()
-let przyszla_data = Date.add(dzisiejsza_data, {days: 30})
+W powyższym przykładzie używamy funkcji `Time.days()` do określenia liczby dni oraz funkcji `Time.add()` do dodania tych dni do dzisiejszej daty. Wynik zostanie zapisany w zmiennej `przyszla_data`.
 
-IO.inspect(przyszla_data)  // {year: 2021, month: 10, day: 6}
+### Obliczanie daty w przeszłości
+
+Podobnie jak w przypadku obliczania daty w przyszłości, musisz podać datę początkową oraz ilość wybranych jednostek czasu, jakie chcesz odjąć od tej daty. Na przykład, jeśli chcesz odjąć 5 tygodni od dzisiejszej daty, możesz użyć następującego kodu:
+
+```Gleam
+let dzisiaj = Time.now()
+let tydzien = Time.weeks(5)
+let przeszla_data = Time.sub(dzisiaj, tydzien)
 ```
 
-Zauważ, że okres czasu musi być przekazany jako mapka z kluczami ```days```, ```months``` lub ```years```, a wartości odpowiadające tym kluczom są liczbami całkowitymi. Możemy także dodać lub odjąć więcej niż jeden rodzaj okresu, np. 2 lata i 6 miesięcy:
-
-```
-let przyszla_data = Date.add(dzisiejsza_data, {years: 2, months: 6})
-
-IO.inspect(przyszla_data)  // {year: 2023, month: 4, day: 1}
-```
+W powyższym przykładzie używamy funkcji `Time.weeks()` do określenia liczby tygodni oraz funkcji `Time.sub()` do odjęcia tych tygodni od dzisiejszej daty. Wynik zostanie zapisany w zmiennej `przeszla_data`.
 
 ## Deep Dive
 
-W języku Gleam istnieje także funkcja ```Date.diff/2```, która pozwala obliczyć różnicę pomiędzy dwiema datami. Zwraca ona liczbę dni pomiędzy datami lub nil w przypadku, gdy jedna z dat jest wcześniejsza niż druga. Przykładowe użycie tej funkcji:
+Biblioteka `time` oferuje również inne przydatne funkcje, takie jak obliczanie różnicy między dwoma datami, formatowanie daty w wybranym formacie oraz przekształcanie daty do innej strefy czasowej. Więcej informacji na ten temat znajdziesz w [dokumentacji biblioteki](https://gleam.run/libraries/time).
 
-```
-import Gleam.Date
+## See Also
 
-let data1 = {year: 2021, month: 5, day: 20}
-let data2 = {year: 2020, month: 12, day: 30}
-
-let roznica = Date.diff(data1, data2)
-
-IO.inspect(roznica)  // 141
-```
-
-## Zobacz także
-
-- Dokumentacja języka Gleam: https://gleam.run/
-- Wspomniana funkcja ```Date.add/2```: https://gleam.run/modules/Date.html#add
-- Funkcja ```Date.diff/2```: https://gleam.run/modules/Date.html#diff
+- [Oficjalna strona języka Gleam](https://gleam.run/)
+- [Dokumentacja języka Gleam](https://gleam.run/docs/)
+- [Repozytorium Github biblioteki time](https://github.com/gleam-lang/time)

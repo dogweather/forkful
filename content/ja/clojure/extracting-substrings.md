@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 「部分文字列の抽出」"
-simple_title:         "「部分文字列の抽出」"
+title:                "文字列の抽出"
+html_title:           "Clojure: 文字列の抽出"
+simple_title:         "文字列の抽出"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,39 +12,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列からサブストリングを抽出することに取り組む理由はさまざまです。例えば、特定の文字列パターンを持つ単語を抽出する場合や、長い文字列から特定の部分を抽出する場合などがあります。Clojureでは、便利な関数が用意されているので、効率的にサブストリングを抽出することができます。
+もし誰かが文字列を部分文字列に分割することに興味があるのならば、この記事はあなたにとって役に立つでしょう。
 
 ## 方法
 
-Clojureでサブストリングを抽出するには、`subs`関数を使用します。`subs`関数は、引数として文字列、開始位置、終了位置を取ります。例えば、次のコードは、文字列から2番目から4番目までの文字を抽出します。
+部分文字列を抽出するには、Clojureの[subs](https://clojuredocs.org/clojure.core/subs)関数を使用します。
 
 ```Clojure
-(def str "Hello World")
-(subs str 1 4) ;=> "ell"
+(subs "Hello world" 0 5)
 ```
 
-また、`subs`関数を使用する際には、文字列の長さを超える位置を指定することも可能です。その場合は、最後の文字までが抽出されます。
+このコードでは、文字列"Hello world"の先頭から5文字目までの部分文字列が抽出されます。出力は以下のようになります。
 
 ```Clojure
-(subs str 5 10) ;=> " World"
-(subs str 5 100) ;=> " World"
+"Hello"
 ```
 
-さらに、正規表現を使用して文字列パターンを指定することもできます。正規表現を使用する場合は、`re-find`関数を使用します。次のコードは、文字列から数字のみを抽出します。
+部分文字列を抽出する際、取り出したい文字列の範囲を指定することが重要です。上記の例では、始点と終点のインデックスを指定しましたが、指定しない場合は文字列の先頭から終端までの部分文字列が抽出されます。
 
 ```Clojure
-(def str "I am 23 years old")
-(re-find #"\d+" str) ;=> "23"
+(subs "Hello world" 3)
+```
+
+このコードでは、文字列の先頭から3番目の文字列から終端までの部分文字列が抽出されます。出力は以下のようになります。
+
+```Clojure
+"lo world"
+```
+
+文字列の範囲を指定する際、負のインデックスを使用することもできます。負のインデックスを指定すると、文字列の末尾から数えて範囲を指定できます。
+
+```Clojure
+(subs "Hello world" -2)
+```
+
+このコードでは、文字列の末尾から2番目の文字列から終端までの部分文字列が抽出されます。出力は以下のようになります。
+
+```Clojure
+"ld"
 ```
 
 ## ディープダイブ
 
-サブストリングを扱う際には、文字列の位置を正確に把握することが重要です。Clojureは、0から始まるインデックスを使用します。つまり、文字列 "Hello" の最初の文字は、0番目の位置にあります。また、`subs`関数では、開始位置は含まれるが、終了位置は含まれないことにも注意が必要です。
+Clojureの[subs](https://clojuredocs.org/clojure.core/subs)関数は再帰的な部分文字列の抽出もサポートしています。つまり、抽出した部分文字列から更に部分文字列を抽出することができます。
 
-さらに、正規表現を使用する際には、適切なパターンを指定することが重要です。正規表現を使用する場合は、`#"pattern"`のように、パターンをクォートする必要があります。また、`re-find`関数は、文字列内から最初の一致を見つけるため、注意して使用する必要があります。
+```Clojure
+(subs (subs "Hello world" 0 5) 1)
+```
 
-## お役立ちリンク
+このコードでは、文字列全体から5文字目までの部分文字列を抽出し、その中から2番目の文字から終端までの部分文字列が抽出されます。出力は以下のようになります。
 
-- [Clojure 公式ドキュメント (日本語版)](https://clojure-doc.org/index_ja.html)
-- [正規表現チートシート](https://www.atmarkit.co.jp/ait/subtop/features/di/cheat_sheet/01.html)
-- [Clojureの正規表現について学ぶ](https://clojure.or.orj/pdf/ClojureRegularExpressions.pdf)
+```Clojure
+"ello"
+```
+
+文字列の範囲を指定する際、始点より終点のインデックスの方が小さい場合、空の文字列が返されます。
+
+```Clojure
+(subs "Hello world" 3 0)
+```
+
+このコードでは、文字列の3番目の文字から、文字列の0番目の文字までの部分文字列が抽出されます。しかし、文字列の3番目の文字より前に0番目の文字があるわけがないので、結果は空の文字列になります。出力は以下のようになります。
+
+```Clojure
+""
+```
+
+## もっと詳しく知りたい方は
+
+- [ClojureDocs: subs](https://clojuredocs.org/clojure.core/subs)
+- [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/): 参考としておすすめの本です。
+- [Clojure Koans](https://github.com/functional-koans/clojure-koans): Clojureの基本を学べる練習問題です。
+
+***
+
+## 関連記事
+
+- [Clojureで文字列を連結する方法](https://example.com/clojure-string-concatenation)

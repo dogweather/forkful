@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Wysyłanie żądania http z podstawową uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawową uwierzytelnieniem"
+title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
+html_title:           "PHP: Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
+simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,41 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele aplikacji internetowych wymaga uwierzytelniania użytkowników, aby zapewnić bezpieczeństwo i prywatność danych. Wysyłanie zabezpieczonych żądań HTTP z podstawową autoryzacją jest jednym ze sposobów na weryfikację tożsamości użytkownika i uzyskanie dostępu do chronionych zasobów.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem jest często wykorzystywane w aplikacjach internetowych do uwierzytelniania użytkowników. Dzięki temu możliwe jest dostarczenie bezpiecznego dostępu do chronionych zasobów.
 
 ## Jak to zrobić
 
-Aby wysłać żądanie HTTP z podstawową autoryzacją w PHP, należy najpierw użyć funkcji `curl_init ()`, która tworzy nową sesję cURL. Następnie ustalamy adres URL, do którego chcemy wysłać żądanie, za pomocą funkcji `curl_setopt ()`. Ustawiamy również opcje uwierzytelniania, używając `CURLOPT_HTTPAUTH` i `CURLOPT_USERPWD`.
-
-Następnie tworzymy nagłówek z danymi uwierzytelniającymi, przy użyciu funkcji `curl_setopt` i ustawiamy go jako `CURLOPT_HTTPHEADER`. Następnie możemy wykonać żądanie, używając funkcji `curl_exec ()` i otrzymać odpowiedź w zmiennej.
-
-Oto przykładowy kod:
-
 ```PHP
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://www.example.com/api/users');
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "username:password");
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  'Content-Type: application/json',
-  'Accept: application/json'
-));
-$output = curl_exec($ch);
+<?php
+    // Przykład wysyłania żądania HTTP z podstawowym uwierzytelnianiem
+    $username = "admin";
+    $password = "password";
+
+    // Utworzenie nagłówka z danymi uwierzytelniającymi
+    $auth = base64_encode($username . ":" . $password);
+    $headers = array('Authorization: Basic ' . $auth);
+
+    // Wywołanie żądania HTTP
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://example.com/protected-resource');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($ch);
+    curl_close($ch);
+
+    // Wyświetlenie odpowiedzi serwera
+    echo $output;
+?>
 ```
 
-W powyższym przykładzie wysyłamy żądanie GET do endpointa `/api/users`, używając danych uwierzytelniających `username:password`. Ustawiamy również nagłówki `Content-Type` i `Accept`, aby umożliwić komunikację w formacie JSON.
+Przykładowy wynik:
 
-Po wykonaniu żądania możemy wyświetlić odpowiedź, używając zmiennej `$output`.
+```
+<HTTP 200 OK>
+```
 
-## Głębsza analiza
+## Gleboki zanurzenia
 
-Dokumentacja PHP zawiera szczegółową informację na temat wysyłania żądań HTTP i obsługi uwierzytelniania. Możesz dowiedzieć się więcej o funkcji `curl_setopt` oraz opcjach `CURLOPT_HTTPAUTH` i `CURLOPT_USERPWD`. Ponadto, można przeczytać o innych rodzajach autoryzacji, takich jak żetony OAuth, które są bardziej bezpieczne niż podstawowa autoryzacja.
+Podstawowe uwierzytelnianie jest metodą uwierzytelniania, w której dane uwierzytelniające są przesyłane w postaci nieszyfrowanej w nagłówku żądania HTTP. Jest to metoda bezpieczeństwa, którą należy stosować z ostrożnością, ponieważ dane uwierzytelniające są przechowywane w formie zdekodowanej na serwerze i mogą być łatwo przechwycone przez nieuprawnionych użytkowników.
 
 ## Zobacz także
 
-Sprawdź poniższe linki, aby dowiedzieć się więcej o wysyłaniu żądań HTTP z podstawową autoryzacją w PHP:
-
-- [Dokumentacja PHP: Funkcja curl_setopt](https://www.php.net/manual/en/function.curl-setopt.php)
-- [Dokumentacja PHP: Opcja CURLOPT_HTTPAUTH](https://www.php.net/manual/en/function.curl-setopt.php)
-- [Dokumentacja PHP: Opcja CURLOPT_USERPWD](https://www.php.net/manual/en/function.curl-setopt.php)
-- [Dokumentacja PHP: Wysyłanie zabezpieczonych żądań HTTP](https://www.php.net/manual/en/features.http-auth.php)
+- [Dokumentacja PHP o funkcji curl_setopt()](https://www.php.net/manual/en/function.curl-setopt.php)
+- [Poradnik dla początkujących: Wysyłanie żądania HTTP przy użyciu PHP i cURL](https://code.tutsplus.com/tutorials/php-getting-started-with-curl--net-1431)
+- [RFC 2617: HTTP Basic Authentication](https://tools.ietf.org/html/rfc2617)

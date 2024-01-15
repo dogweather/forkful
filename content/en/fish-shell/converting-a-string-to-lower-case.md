@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Converting a string to lower case"
+title:                "Converting a string to lower case"
+html_title:           "Fish Shell recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,53 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Converting a string to lower case may seem like a simple task, but it can make a big difference in your Fish Shell programming. It allows for more consistency in data and can also make comparing and sorting strings easier.
+
+Have you ever encountered a situation where you need to convert a string to lower case in your Fish Shell script? This is a common task for many developers who want to manipulate and compare strings without worrying about case sensitivity. In this article, we will explore how to easily convert a string to lower case in Fish Shell.
 
 ## How To
-To convert a string to lower case in Fish Shell, you can use the `lowercase` command. Let's take a look at an example:
+
+To convert a string to lower case in Fish Shell, we can use the `string tolower` command. This command takes in a string as an argument and returns the same string with all characters converted to lower case. Let's take a look at an example:
 
 ```Fish Shell
-# Assign a string to a variable
-set my_string "HELLO WORLD"
-
-# Use the lowercase command to convert to lower case
-lowercase $my_string
-
-# Output:
-hello world
+set my_string "HELLO World"
+string tolower $my_string
 ```
 
-You can also use the `string` command with the `to-lower` subcommand to achieve the same result:
+The output of this code would be `hello world`, as all the characters in the original string have been converted to lower case. You can also use the `tolower` shorthand, which achieves the same result:
 
 ```Fish Shell
-# Assign a string to a variable
-set my_string "HeLlO WoRlD"
-
-# Use the string command with to-lower subcommand
-string to-lower $my_string
-
-# Output:
-hello world
+set my_string "HELLO World"
+tolower $my_string
 ```
 
-Both of these methods will convert the string to all lowercase letters. However, if you only want to convert the first letter of the string to lowercase, you can use the `string` command with the `to-lower` subcommand and the `--capitalize` option:
-
-```Fish Shell
-# Assign a string to a variable
-set my_string "HELLO WORLD"
-
-# Use the string command with to-lower and capitalize options
-string to-lower --capitalize $my_string
-
-# Output:
-Hello world
-```
+In both cases, the variable `my_string` remains unchanged, and the converted string is displayed as output. This allows you to both manipulate the string and access the converted version whenever needed.
 
 ## Deep Dive
-Now, let's take a deeper look at why and how these commands work. The `lowercase` and `string to-lower` commands both use a built-in function called `to-lower`. This function takes in a string as an argument and returns a new string with all lowercase letters. It uses the `tolower()` function from the C standard library to achieve this.
 
-Additionally, the `string` command has the ability to perform string manipulations and transformations, including converting strings to lower or upper case. The `to-lower` and `to-upper` subcommands use the `to-lower` and `to-upper` functions respectively to convert strings.
+The `string tolower` command in Fish Shell utilizes the `tolower` function, which is a part of the standard library. This function converts a single character or an entire string to lower case, depending on the input. It uses the current locale and encoding to determine the appropriate lower case mapping for each character.
+
+It is worth noting that the `tolower` function does not just convert ASCII characters, but also handles Unicode characters and special cases such as ligatures. This makes it a reliable and robust method for converting strings to lower case in any language.
+
+Furthermore, if you need to convert a string to upper case, you can use the `string toupper` command, which uses the `toupper` function in a similar manner.
 
 ## See Also
-- Fish Shell documentation on the `lowercase` command: https://fishshell.com/docs/current/cmds/lowercase.html
-- Fish Shell documentation on the `string` command: https://fishshell.com/docs/current/cmds/string.html
+
+For more information about string manipulation in Fish Shell, check out the official documentation and these helpful resources:
+
+- [Fish Shell official website](https://fishshell.com)
+- [Fish Shell on GitHub](https://github.com/fish-shell/fish-shell)
+- [Fish Shell string manipulation tutorial](https://medium.com/@alex_barnsley/fish-shell-string-manipulation-d8d9b5c60a03)

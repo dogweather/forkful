@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Eine http-Anfrage senden."
-simple_title:         "Eine http-Anfrage senden."
+title:                "Versenden einer HTTP Anfrage"
+html_title:           "Haskell: Versenden einer HTTP Anfrage"
+simple_title:         "Versenden einer HTTP Anfrage"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
+Warum sollte jemand eine HTTP-Anfrage senden wollen? Es gibt viele Gründe, aber einer der häufigsten ist die Interaktion mit Web-APIs. Durch das Senden von HTTP-Anfragen können wir Daten von anderen Servern abrufen und mit ihnen interagieren, was für viele Anwendungen unerlässlich ist.
 
-Das Senden von HTTP-Anfragen ist eine grundlegende Fähigkeit, die für jede Webanwendung benötigt wird. Es ermöglicht die Kommunikation zwischen einem Client und einem Server und ermöglicht somit den Austausch von Daten und Informationen. In diesem Blogbeitrag werden wir lernen, wie man in Haskell eine HTTP-Anfrage sendet.
-
-## Wie geht das?
-
-Um eine HTTP-Anfrage zu senden, benötigen wir die Bibliothek "http-client" in Haskell. Diese Bibliothek bietet Funktionen und Datentypen, die uns bei der Erstellung und dem Senden von HTTP-Anfragen helfen. Schauen wir uns ein einfaches Beispiel an:
-
+## Wie geht es
+Um eine HTTP-Anfrage in Haskell zu senden, können wir das "http-client" Paket verwenden. Zuerst müssen wir das Paket importieren: 
 ```Haskell
 import Network.HTTP.Client
-
-main = do
-    request <- parseRequest "GET https://www.example.com"
-    manager <- newManager defaultManagerSettings
-    response <- httpLbs request manager
-    putStrLn $ responseBody response
 ```
+Als nächstes definieren wir eine `Request` variable, die die URL enthält, an die wir die Anfrage senden möchten:
+```Haskell
+request <- parseRequest "https://www.beispiel.com"
+```
+Dann können wir die Anfrage mit der `httpLbs` Funktion ausführen. Diese Funktion führt die Anfrage aus und gibt die Antwort als `Response` zurück:
+```Haskell
+response <- httpLbs request
+```
+Schließlich können wir auf die verschiedenen Informationen in der Antwort zugreifen, z.B. den Statuscode, die Header und den Body:
+```Haskell
+putStrLn $ "Status Code: " ++ show (responseStatusCode response)
+putStrLn $ "Header: " ++ show (responseHeaders response)
+putStrLn $ "Body: " ++ show (responseBody response)
+```
+Wenn wir diese Beispiele ausführen, sollten wir eine Antwort von der Beispiel-URL erhalten. 
 
-Dieser Code zeigt, wie wir eine einfache GET-Anfrage an die Website www.example.com senden können. Zuerst wird die Funktion "parseRequest" verwendet, um eine Anfrage zu erstellen. Dann wird ein Manager erstellt und die Funktion "httpLbs" verwendet, um die Anfrage zu senden und die Antwort zu erhalten. Schließlich wird die Antwort mit "responseBody" ausgegeben. Dies ist nur ein grundlegendes Beispiel, aber die Bibliothek bietet viele weitere Funktionen, die es uns ermöglichen, komplexere Anfragen zu senden.
-
-## Tiefer eintauchen
-
-Um eine bessere Vorstellung davon zu bekommen, wie HTTP-Anfragen funktionieren, ist es hilfreich, sich mit den verschiedenen Komponenten einer Anfrage vertraut zu machen. Eine HTTP-Anfrage besteht aus einem Befehl (wie GET oder POST), einer URL, optionalen Headern und einem Body. Mit der Bibliothek "http-client" können wir diese Komponenten einzeln manipulieren, um eine maßgeschneiderte Anfrage zu erstellen.
-
-Zusätzlich zur "http-client" Bibliothek gibt es auch andere nützliche Tools wie "http-conduit" und "wreq", die beim Senden von HTTP-Anfragen in Haskell helfen können. Es ist wichtig, sich mit diesen Tools vertraut zu machen, um das Beste aus Ihrer Anwendung herauszuholen.
+## Tiefer Tauchen
+Wenn Sie sich noch näher mit HTTP-Anfragen in Haskell befassen möchten, können Sie die Dokumentation des "http-client" Pakets durchlesen oder sich mit anderen Paketen und Bibliotheken auseinandersetzen, die das Senden von HTTP-Anfragen erleichtern, wie z.B. "wreq" oder "webcrank". Sie können auch mehr über die verschiedenen HTTP-Methoden und -Codes erfahren, um ein besseres Verständnis dafür zu bekommen, wie HTTP-Anfragen und -Antworten funktionieren.
 
 ## Siehe auch
-
-- [http-client Dokumentation](https://hackage.haskell.org/package/http-client)
-- [http-conduit Dokumentation](https://hackage.haskell.org/package/http-conduit)
-- [wreq Dokumentation](https://hackage.haskell.org/package/wreq)
+- Dokumentation des "http-client" Pakets: https://hackage.haskell.org/package/http-client
+- Dokumentation des "wreq" Pakets: https://hackage.haskell.org/package/wreq
+- Dokumentation des "webcrank" Pakets: https://hackage.haskell.org/package/webcrank

@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête http avec une authentification de base"
+html_title:           "Fish Shell: Envoi d'une requête http avec une authentification de base"
+simple_title:         "Envoi d'une requête http avec une authentification de base"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -9,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes un développeur ou un administrateur système, il y a de fortes chances que vous ayez déjà eu besoin d'envoyer une requête HTTP avec une authentification de base. Peut-être que vous travaillez avec des APIs ou que vous avez besoin d'accéder à un site protégé par un nom d'utilisateur et un mot de passe. Dans cet article, nous allons explorer comment le faire en utilisant Fish Shell.
+Si vous êtes un développeur ou un administrateur système, vous avez probablement rencontré des situations où vous devez interagir avec des API ou des services Web qui nécessitent une authentification de base. Dans ces cas, il est essentiel de comprendre comment envoyer une requête HTTP avec une authentification de base dans votre script ou dans votre terminal. Cet article vous expliquera comment le faire en utilisant le Shell Fish.
 
 ## Comment faire
-
-Tout d'abord, nous allons installer le package HTTPie, qui est un outil de ligne de commande pour envoyer des requêtes HTTP.
-
-```
-Fish Shell> apt install httpie
-```
-
-Ensuite, nous allons créer une requête HTTP avec une authentification de base en utilisant l'option `-a` suivie du nom d'utilisateur et du mot de passe :
+Pour envoyer une requête HTTP avec une authentification de base en utilisant Fish Shell, nous allons utiliser la commande `curl` avec le paramètre `-u` pour spécifier le nom d'utilisateur et le mot de passe. Voici un exemple de code qui envoie une requête GET à l'API de GitHub avec un nom d'utilisateur et un mot de passe :
 
 ```
-Fish Shell> http -a username:password https://example.com/api
+curl -u username:password https://api.github.com/user
 ```
 
-Vous allez recevoir une réponse contenant les informations demandées à partir de l'API ou du site protégé.
+Vous pouvez également utiliser des variables pour stocker le nom d'utilisateur et le mot de passe afin de rendre le code plus lisible et facilement modifiable. Voici un exemple :
+
+```
+set username "username"
+set password "password"
+curl -u $username:$password https://api.github.com/user
+```
+
+Lorsque vous exécutez ce code, vous devriez voir une sortie JSON contenant les informations de l'utilisateur connecté.
 
 ## Plongée en profondeur
+Pour ceux qui veulent en savoir plus sur l'envoi de requêtes HTTP avec une authentification de base en utilisant Fish Shell, voici quelques informations supplémentaires :
 
-Maintenant, voyons comment fonctionne réellement l'authentification de base dans une requête HTTP. Lorsque vous envoyez une requête avec une authentification de base, le nom d'utilisateur et le mot de passe sont encodés en utilisant Base64 et inclus dans l'en-tête de la requête comme ceci :
+- Le paramètre `-u` de la commande `curl` correspond à `--user` et peut également être utilisé avec une valeur sous forme de chaîne au lieu d'utiliser des variables.
+- Si vous avez besoin d'envoyer une requête POST avec une authentification de base, vous pouvez utiliser le paramètre `-d` pour spécifier les données à envoyer dans la requête.
+- Si l'API ou le service que vous utilisez nécessite une authentification de base avec un système de chiffrement différent de Basic, vous devrez utiliser l'option `--anyauth` de `curl` et spécifier le type d'authentification dans le paramètre `-u`.
 
-```
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-```
-
-Le serveur vérifie ensuite les informations d'identification en décodant l'en-tête et en les comparant à celles stockées dans son système. Si elles correspondent, la requête est autorisée et vous recevez une réponse.
+Vous pouvez en savoir plus sur ces fonctionnalités en consultant la documentation officielle de Fish Shell et de la commande `curl`.
 
 ## Voir aussi
-
-- [Documentation HTTPie](https://httpie.org/doc)
-- [Explication de Base64](https://fr.wikipedia.org/wiki/Base64)
-- [Tutoriel sur les requêtes HTTP avec Fish Shell](https://www.gouminapp.com/articles/tutorial-how-to-make-http-requests-with-fish-shell)
+- [Documentation de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Documentation de la commande curl](https://curl.se/docs/manpage.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Arduino: स्ट्रिंग्स को जोड़ना"
 simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Aksar hume ek se adhik strings ko ek hi string me jodne ki zarurat hoti hai, jaise ki sensor ke readings ko display me dikhana ya messages ko bhejna. Iss liye hum concatenate strings ka use karte hain.
 
-Arduino प्रोग्रामिंग का एक महत्वपूर्ण तत्व तारों को जोड़ने का है। यह विधि आपको दो या अधिक तर्कों को एक ही स्ट्रिंग में जोड़ने की अनुमति देती है, जो कि आपके स्केच को अधिक बढ़िया बनाता है।
-
-## कैसे करें
-
-Arduino में तारों को जोड़ने के लिए, हम `concat()` फ़ंक्शन का उपयोग करते हैं। इस फंक्शन को दो स्ट्रिंग्स के साथ कॉल किया जा सकता है और यह उन्हें एक ही स्ट्रिंग में जोड़ देगा। नीचे दिए गए उदाहरण में हम `firstString` और `secondString` नामक दो स्ट्रिंग्स को जोड़ रहे हैं।
-
+## Kaise Karein
 ```Arduino
-String firstString = "Hello";
-String secondString = "World";
-String finalString = firstString.concat(secondString);
-Serial.println(finalString);
-// Output: HelloWorld
+String string1 = "Hello";
+String string2 = "World!";
+String result = string1 + " " + string2;
+Serial.println(result);
+```
+Output:
+```
+Hello World!
 ```
 
-## गहराई में जाएं
+Is code example me, humne do strings, "Hello" aur "World!" ko ek hi string me joda hai, jiska result "Hello World!" hua hai. Iss tarah se hum apni zaroorat ke hisab se strings ko jod sakte hain.
 
-Arduino में तारों को जोड़ने के लिए `concat()` फ़ंक्शन का उपयोग करना एक बहुत ही सरल और सटीक तरीका है। लेकिन, यदि आप एक अधिक उत्कृष्ट विकासक हैं, तो आप अपने स्केच में अन्य तरीकों से भी तारों को जोड़ सकते हैं। आप `+` ऑपरेटर का उपयोग करके भी स्ट्रिंग तारों को जोड़ सकते हैं।
+## Deep Dive
+Concatenate strings ka use karne se pehle, humein `String` data type ka use karna hoga, jo ki ek string ko represent karta hai. Hum bhi `+` operator ka use karte hain, jo ki strings ko jod kar ek naya string bana deta hai.
 
-```Arduino
-String firstString = "Hello";
-String secondString = "World";
-String finalString = firstString + secondString;
-Serial.println(finalString);
-// Output: HelloWorld
-```
+Ek important point hai ki strings ko jodne se pehle, humein unhe convert karna padta hai `String` data type me. Iss tarah se hum strings aur variables ko bhi jod sakte hain.
 
-## देखें भी
+## Dekhein Bhi
+Humne iss article me strings ko concatenate karna sikh liya hai, lekin agar aapko aur complex operations aur functions ke bare me jaanna hai, toh humare listed resources check karein.
 
-- [आर्दुइनो के साथ बच्चों को कोडिंग सिखाने के लिए 5 आसान तरीके](https://hindi.arduino.cc/blog/teaching-kids-coding-with-arduino/)
-- [आर्दुइनो के साथ स्मार्ट होम बनाने के लिए सरल उपकरण](https://hindi.arduino.cc/blog/building-a-smart-home-with-arduino/)
+"See Also" 
+- [Arduino String Concatenation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
+- [Tutorial: String Operations in Arduino](https://howtomechatronics.com/tutorials/arduino/arduino-string-operations/)

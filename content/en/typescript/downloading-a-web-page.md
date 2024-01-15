@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "TypeScript recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,80 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## Why
+Web scraping, or the act of downloading information from a web page, has become more and more prominent in today's digital age. Whether it's for data analysis, market research, or automating repetitive tasks, downloading a web page in TypeScript can provide valuable information and save time.
 
-Downloading a web page is a fundamental task for any web developer. It allows you to retrieve data and information from the internet, which can be used to create dynamic and interactive websites. In this blog post, we will discuss the process of downloading a web page using TypeScript, and why it is an essential skill for web development.
-
-# How To
-
-To download a web page using TypeScript, we will be using the `http` module from the Node.js runtime environment. This module provides functionality for making HTTP requests and handling responses. We will use the `get` method to make a GET request to the desired web page.
+## How To
+Downloading a web page in TypeScript is a relatively simple process. First, we need to import the `https` module from the Node.js standard library. Then, we can use the `get` method to send a request to the desired URL and receive a response. Let's take a look at an example:
 
 ```TypeScript
-import * as http from 'http';
+import * as https from 'https';
 
-// Define the URL of the web page to be downloaded
-const url = 'https://www.example.com';
-
-// Make a GET request to the URL
-http.get(url, (response) => {
-  // Handle the response data
-  let data = '';
-
-  // Concatenate the response data into a string
-  response.on('data', (chunk) => {
-    data += chunk;
+https.get("https://www.example.com", (response) => {
+  console.log(`Status Code: ${response.statusCode}`);
+  
+  // Print the HTML body of the web page
+  response.on('data', (data) => {
+    console.log(data.toString());
   });
-
-  // Handle the end of the response
-  response.on('end', () => {
-    // Print the downloaded web page
-    console.log(data);
+  
+  // Handle any errors
+  response.on('error', (error) => {
+    console.error(error);
   });
-})
+});
 ```
 
-Running this code will log the HTML content of the web page to the console. However, we can also use the response data for other purposes, such as parsing and extracting specific information from it. For example, we can use a library like Cheerio to parse the HTML and extract data from specific elements.
+In this example, we are using the `get` method to send a GET request to the `example.com` web page. Once we receive a response, we can access the response object's `statusCode` property to check the status of the request. Then, we use the `response.on` method to handle the data and any errors that may occur. Finally, we convert the data to a string and print it to the console.
 
-```TypeScript
-import * as http from 'http';
-import * as cheerio from 'cheerio';
+## Deep Dive
+The `https` module provides various methods for making different kinds of requests, such as GET, POST, PUT, and DELETE. We can also pass additional options, headers, and data in our requests. Additionally, we can use third-party libraries like `cheerio` or `puppeteer` to parse and manipulate the HTML data we download.
 
-// Define the URL of the web page to be downloaded
-const url = 'https://www.example.com';
+It's important to note that web scraping may not always be allowed by website owners, so it's essential to follow best practices and adhere to their terms of use. It's also crucial to handle errors and to be mindful of any potential legal implications.
 
-// Make a GET request to the URL
-http.get(url, (response) => {
-  // Handle the response data
-  let data = '';
-
-  // Concatenate the response data into a string
-  response.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  // Handle the end of the response
-  response.on('end', () => {
-    // Use Cheerio to load the HTML
-    const $ = cheerio.load(data);
-
-    // Get the title of the web page
-    const pageTitle = $('h1').text();
-
-    // Print the title to the console
-    console.log(pageTitle);
-  });
-})
-```
-
-This code will log the title of the web page to the console. With this approach, we can manipulate and use the downloaded web page data in various ways, depending on our specific needs and goals.
-
-# Deep Dive
-
-Downloading a web page in TypeScript is a straightforward process, thanks to the `http` module and other libraries like Cheerio. However, it is essential to note that there may be differences in the response data format, depending on the content-type header of the web page. For example, if the web page contains JSON data, we can use the `response.json()` method instead of the `response.on('data', ...)` method to handle the response data.
-
-Furthermore, we can also set options and headers for our HTTP request using the `http.get` method. This allows us to customize our request and handle authentication and other types of requests.
-
-# See Also
-
-- Node.js `http` module documentation: https://nodejs.org/api/http.html
-- Cheerio documentation: https://cheerio.js.org/
+## See Also
+- [Node.js `https` module documentation](https://nodejs.org/api/https.html)
+- [Cheerio documentation](https://cheerio.js.org/)
+- [Puppeteer documentation](https://pptr.dev/)

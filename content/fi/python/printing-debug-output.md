@@ -1,6 +1,7 @@
 ---
-title:                "Python: Tulostetaan virheenkorjaustulos"
-simple_title:         "Tulostetaan virheenkorjaustulos"
+title:                "Tulostetaan vianmääritystulosteita"
+html_title:           "Python: Tulostetaan vianmääritystulosteita"
+simple_title:         "Tulostetaan vianmääritystulosteita"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -11,58 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Debug-tulostus on tärkeä osa ohjelmointiprosessia, ja se auttaa löytämään virheitä ja ongelmia koodissasi. Se on myös hyvä tapa seurata koodin suorituskykyä ja muokata sitä tarpeen mukaan.
+Tiedämme kaikki, että koodin debuggaaminen voi olla haastavaa ja aikaa vievää. Siksi on tärkeää käyttää kaikkia käytettävissä olevia työkaluja ja tekniikoita helpottamaan tätä prosessia. Yksi hyödyllinen tapa on tulostaa debug-lähtöä.
 
-## Miten tehdä
-
-Debug-tulostus on helppoa Pythonissa. Voit käyttää `print()`-funktiota tulostamaan haluamasi tiedot. Esimerkiksi:
+## Miten!
 
 ```python
-name = "Hannu"
-age = 25
+def laske_pinta_ala(pituus, leveys):
+  pinta_ala = pituus * leveys
+  print("Pinta-ala on: ", pinta_ala)
 
-print("Nimeni on", name)
-print("Olen", age, "vuotta vanha")
+laske_pinta_ala(5, 10)
 ```
 
-Tämä tuottaa seuraavanlaisen tulostuksen:
+Kun suoritamme tätä koodinpätkää, saamme seuraavan tulosteen:
 
-```
-Nimeni on Hannu
-Olen 25 vuotta vanha
-```
+`Pinta-ala on: 50`
 
-Voit myös käyttää `f`-merkkiä merkkijonon alussa ja sijoittaa haluamasi muuttujan sulkeiden sisään kirjoittaaksesi sen arvon suoraan tulostukseen:
+Tulostamalla debug-lähtöä pystymme seuraamaan koodin suoritusta ja löytämään mahdollisia virheitä tai epäloogisuuksia. Näin voimme helposti paikantaa ja korjata ongelmia koodissamme.
 
-```python
-print(f"Olen {age} vuotta vanha ja minun nimeni on {name}")
-```
+## Syvemmälle
 
-Tämä tuottaa saman tulostuksen kuin edellinen esimerkki.
+Tulostettavan debug-lähdön määrä ja tarkkuus voivat vaihdella riippuen tilanteesta ja tarpeista. Yleensä paras tapa on tulostaa tiettyjä muuttujia tai arvoja, kun haluamme tarkistaa niiden arvoja koodissamme. Tämä voi auttaa meitä selvittämään, onko arvo oikea ja missä kohtaa koodia se on asetettu.
 
-Voit myös tulostaa muuttujien tyypit käyttämällä `type()`-funktiota:
-
-```python
-print(type(name))
-print(type(age))
-```
-
-Tämä tuottaa seuraavanlaisen tulostuksen:
-
-```
-<class 'str'>
-<class 'int'>
-```
-
-## Syväsukellus
-
-Debug-tulostusta voi käyttää monilla tavoilla, kuten algoritmien optimointiin ja virheiden etsimiseen. Voit myös tulostaa muiden muuttujien lisäksi esimerkiksi silmukkien suorituskertojen lukumäärää tai ehtolauseiden totuusarvoja.
-
-Debug-tulostusta voidaan myös käyttää hyödyllisten tietojen tulostamiseen ohjelman suorituksen aikana. Esimerkiksi voit tulostaa tietyissä kohdissa ohjelmassa merkkijonon, joka kertoo missä kohtaa ohjelma on menossa ja mitä sillä hetkellä tapahtuu.
-
-Vaikka debug-tulostuksen käyttö voi joskus tuntua kiusalliselta ja turhalta, se voi todella auttaa sinua saamaan syvemmän käsityksen koodistasi ja ongelmien ratkaisemiseen.
+On myös hyödyllistä lisätä tietoa tulostettuihin rivinumeroihin tai muihin tunnisteisiin, jotta voimme helposti löytää kyseisen kohdan koodista. Tämä voi säästää paljon aikaa, kun etsimme tiettyä koodiriviä suuresta tiedostosta.
 
 ## Katso myös
-- [Pythonin virallinen dokumentaatio tulostamisesta](https://docs.python.org/fi/3/tutorial/inputoutput.html#more-on-printing)
-- [Debug-tulostuksen hyödyntäminen ohjelmoinnissa](https://realpython.com/python-debugging-pdb/)
-- [Hyviä käytäntöjä debug-tulostuksen käyttöön](https://stackify.com/python-debugging-tips/)
+
+[Pythonin virallinen dokumentaatio debug-lähtöön](https://docs.python.org/3.9/library/builtins.html#print)
+
+[Tutorialspoint: Python Debugging](https://www.tutorialspoint.com/python/python_debugging.htm)
+
+[RealPython: How to Debug Python Like a Pro](https://realpython.com/python-debugging-pdb/)

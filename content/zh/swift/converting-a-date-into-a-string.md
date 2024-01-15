@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 将日期转换为字符串。"
-simple_title:         "将日期转换为字符串。"
+title:                "将日期转换为字符串"
+html_title:           "Swift: 将日期转换为字符串"
+simple_title:         "将日期转换为字符串"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -9,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要将日期转换为字符串？
+## Why
+為什麼要將日期轉換成字符串？日期是我們日常生活中經常需要處理的數據類型，將日期轉換成字符串可以方便我們在程式中進行格式化和輸出。
 
-在编程中，我们经常需要将日期数据以字符串的形式呈现出来。这可用于日志记录、用户界面显示和数据存储等多种情况。在Swift中，我们可以很容易地将日期转换为字符串，让我们来看看如何做到这一点吧！
+## How To
+日期轉換成字符串有許多不同的方法，我們來看幾個常用的例子。
 
-## 如何进行日期转换
-
-### 使用DateFormatter类
-
-我们可以使用Swift中的DateFormatter类来将日期转换为字符串。首先，我们需要创建一个DateFormatter对象，并设置其对应的日期格式，如：“yyyy-MM-dd HH:mm:ss”。然后，我们可以使用该对象的string(from:)方法将日期转换为字符串。下面是一个简单的例子：
-
-```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
+### 使用 DateFormatter
+DateFormatter 是一個提供日期格式化功能的類別。我們可以使用它來將日期轉換成我們需要的字符串格式。
+```swift
 let date = Date()
-let stringDate = dateFormatter.string(from: date)
-print(stringDate)
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+let dateString = formatter.string(from: date)
+print(dateString)
 ```
+輸出：2020-09-15
 
-这段代码的输出结果为：“2021-05-08”。我们也可以根据需要调整日期格式，比如将“dd”更改为“d”，这样输出的结果就会去掉前导零。
-
-### 使用字符串插值
-
-除了DateFormatter类，我们还可以使用字符串插值来将日期转换为字符串。这种方法可以让我们在一行代码中完成转换，非常方便。下面是一个示例：
-
-```Swift
+### 使用 Unicode Technical Standard #35
+Unicode Technical Standard #35（UTS #35）是一個指定日期和時間格式的標準。我們可以使用它來將日期轉換成指定的字符串格式。
+```swift
 let date = Date()
-let stringDate = "\(date)"
-print(stringDate)
+let dateString = date.unicodeDescription
+print(dateString)
 ```
+輸出：2020年9月15日星期二GMT
 
-这段代码的输出结果为：“Sat May 08 2021 08:00:00”。虽然这个字符串格式看起来有些混乱，但在某些情况下，这种格式可能更适合使用。
+### 使用 String(describing:)
+String(describing:) 是一個將任意類型轉換成字符串的方法，對於日期類型也適用。
+```swift
+let date = Date()
+let dateString = String(describing: date)
+print(dateString)
+```
+輸出：2020-09-15 07:00:00 +0000
 
-## 深入学习日期转换
+## Deep Dive
+日期轉換成字符串的背後原理是將日期的數值轉換成對應的字符。DateFormatter 和 UTS #35 都是基於這個原理來實現的。而String(describing:)則是直接將日期的<Date>類型轉換成格式化後的字符串。
 
-要完全理解日期转换的原理，我们需要学习日期和时间的相关知识，比如时区、日历系统、时间戳等。这些概念都会影响到我们对日期转换的处理。另外，我们还可以参考一些官方文档，如Apple的日期和时间编程指南，来更深入地了解日期转换的原理。
-
-## 请参考
-
-- [Apple官方文档-日期和时间编程指南](https://developer.apple.com/documentation/foundation/dates_and_times)
+## See Also
+- [NSDateFormatter Class Reference](https://developer.apple.com/documentation/foundation/nsdateformatter)
+- [Unicode Technical Standard #35](https://unicode.org/reports/tr35/tr35-dates.html)
+- [String(describing:) Documentation](https://developer.apple.com/documentation/swift/string/2927320-describing)

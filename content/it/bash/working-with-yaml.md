@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lavorare con yaml"
+title:                "Lavorare con yaml"
+html_title:           "Bash: Lavorare con yaml"
 simple_title:         "Lavorare con yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,40 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Hai mai sentito parlare di YAML e ti chiedi perché dovresti iniziare a lavorarci? Ti spiegherò in poche parole perché YAML può essere un'ottima scelta per i tuoi progetti di programmazione in Bash.
+Se stai lavorando con file di configurazione o dati strutturati, è probabile che prima o poi ti troverai a dover utilizzare il formato YAML. Grazie alla sua sintassi semplice e intuitiva, YAML è diventato uno standard nel mondo della programmazione e può essere utilizzato in una varietà di contesti, come ad esempio per creare script Bash più efficienti.
 
 ## Come fare
 
-Iniziamo con il più importante: come si lavora con YAML in Bash? La prima cosa da fare è installare il pacchetto "yq" utilizzando il gestore dei pacchetti di Bash. Una volta installato, puoi aprire un file YAML utilizzando il comando "yq e". All'interno del tuo script Bash, puoi leggere i file YAML utilizzando la funzione "yq r" e modificare i dati utilizzando "yq w".
+Per utilizzare YAML in Bash, basta seguire alcuni semplici passaggi.
+
+1. Assicurati di avere il pacchetto `yq` installato sul tuo sistema.
+2. Crea un file di configurazione o dati in formato YAML, assicurandoti di rispettare la sintassi corretta.
+3. Utilizza il comando `yq` per leggere, scrivere o modificare i tuoi file YAML.
+4. Utilizza la gestione degli errori per gestire eventuali problemi di conversione o accesso ai dati YAML.
+
+Un esempio pratico di utilizzo di YAML in Bash potrebbe essere la creazione di un file di configurazione per un'applicazione. Utilizzando i comandi `yq` all'interno di uno script Bash, puoi facilmente modificare o aggiornare il file di configurazione senza doverlo modificare manualmente.
 
 ```Bash
-# Esempio di lettura di un file YAML e stampa dei dati
-yq r file.yaml
+#!/bin/bash
 
-# Esempio di scrittura su un file YAML
-yq w -i file.yaml nome "Marco"
+FILE="config.yaml" # nome del file di configurazione
+APP_NAME="MyApp" # nome dell'applicazione
 
-# Esempio di eliminazione di un elemento dal file
-yq w -i file.yaml – ripeti "[remuovi() | . età > 18]"
+# scrivi i dati in YAML nel file di configurazione
+yq -Y "$FILE" "app:
+  name: $APP_NAME" 
+
+# ottieni il nome dell'applicazione dal file di configurazione
+APP_NAME=$(yq -r .app.name "$FILE") 
+echo "Il nome dell'applicazione è $APP_NAME"
 ```
 
 ## Approfondimento
 
-Ora che sai come utilizzare YAML in Bash, vediamo alcune funzionalità più avanzate. Per accedere ai dati all'interno di documenti YAML nidificati, puoi utilizzare la funzione "yq r --printMode v path/to/key file.yaml". Puoi anche utilizzare le funzioni "select()" e "map()" per filtrare e mappare i dati in modo più efficiente.
+Se vuoi saperne di più su YAML, ci sono alcuni aspetti importanti da tenere a mente.
 
-```Bash
-# Esempio di accesso ai dati nidificati
-yq r --printMode v .nome.yq file.yaml
-
-# Esempio di filtraggio dei dati
-yq r --printMode v .[] | select(.età > 18) file.yaml
-
-# Esempio di mappatura dei dati
-yq r --printMode v .[] | map({nome, età}) file.yaml
-```
+- YAML è un formato basato su testo, il che significa che i file YAML possono essere letti e modificati con semplicità da un essere umano.
+- La sintassi di YAML è basata su indentazioni e l'uso di punti e due punti per definire le strutture dei dati.
+- YAML supporta una vasta gamma di tipi di dati, inclusi numeri, stringhe, array e oggetti.
+- Esistono molte librerie e strumenti disponibili per lavorare con YAML in una varietà di linguaggi di programmazione, compreso Bash.
 
 ## Vedi anche
-
-- [Documentazione ufficiale yq](https://github.com/kislyuk/yq)
-- [Esempi di utilizzo di yq in Bash](https://www.baeldung.com/linux/yq-command-bash)
-- [Tutorial sull'uso di YAML in Bash](https://linuxize.com/post/how-to-use-yaml-in-bash-scripts-with-yq/)
+- [Documentazione ufficiale di YAML](https://yaml.org/)
+- [Tutorial su YAML di Techopedia](https://www.techopedia.com/definition/30575/yaml-yet-another-markup-language)
+- [Guida su YAML di DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml)

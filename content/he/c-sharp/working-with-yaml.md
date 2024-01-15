@@ -1,6 +1,7 @@
 ---
-title:                "C#: עבודה עם יאמל"
-simple_title:         "עבודה עם יאמל"
+title:                "עבודה עם yaml"
+html_title:           "C#: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -11,72 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-העבודה עם קבצי YAML היא נפוצה בכתיבת קוד בשפת C#, ובמאמר זה נפתח על סיבותיה.
+אנו תמיד מחפשים דרכים חדשות ויעילות לנהל את הנתונים שלנו בקוד המחשב. עם שפת תכנות כמו C#, ניתן לעבד נתונים בקלות ופשטות. נפתח את העולם של YAML, שפת תוויות סימולטנית פשוטה ויעילה לשימוש עם C#. הרי שימוש ב-YAML עשוי להיות טוב באופן משמעותי כאשר אנו נחקור דרכים חדשות לעבוד עם נתונים בקוד המחשב.
 
-## כיצד
+## איך לעבוד עם YAML ב-C#
 
-הקוד הבא מציג דוגמאות לעיבוד והדפסת נתוני YAML בשפת C#:
+אם תרצו להתחיל לעבוד עם YAML ב-C#, הראשון דבר שצריך לעשות הוא להתקין את החבילה "YamlDotNet" בהתאם. לאחר התקנת החבילה, ניתן ליצור מבנה נתונים חדש בעזרת הגדרות YAML וניתן לקרוא אותו באמצעות קוד C# כפי שמוצג להלן:
 
 ```C#
-// ייבוא חבילות נחוצות
-using System;
-using YamlDotNet.Serialization;
-using YamlDotNet.RepresentationModel;
-
-// יצירת מחלקה לנתונים
-public class Student
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public string Major { get; set; }
-}
-
-// יצירת נתוני YAML כוללי שני סטודנטים
-string yamlData = @"-
-  name: רויטל
-  age: 22
-  major: תוכנה
--
-  name: דני
-  age: 23
-  major: מדעי המחשב";
-
-// יצירת מחלקת מאיץ להמרת YAML לאובייקטים
+// התחברות ל-YAML
+Stream input = new FileStream("data.yaml", FileMode.Open);
 var deserializer = new DeserializerBuilder().Build();
-var students = deserializer.Deserialize<List<Student>>(yamlData);
+// טעינת הנתונים המכילים ב-YAML למבנה נתונים ב-C#
+var data = deserializer.Deserialize<MyData>(input);
+```
 
-// הדפסת נתוני הסטודנט הראשון
-Console.WriteLine("שם: " + students[0].Name +
-                  ", גיל: " + students[0].Age +
-                  ", מגמה: " + students[0].Major);
+בגבולי הקוד הנ"ל, אנו משתמשים בכלי נוסף להגדיר את קבצי ה-YAML למבנה נתונים ב-C#, ולהתחבר עם קובץ ה-YAML. ניתן להשתמש בתכונות ה-C# השונות לצורך התאמת הנתונים שלנו בקוד.
 
-// יצירת מחלקת מטמל להמרת אובייקטים ל-YAML
-var serializer = new SerializerBuilder().Build();
-var newStudent = new Student
+בנוסף, ניתן להשתמש בספריית "YamlDotNet" כדי להפיק, לעדכן וליצור קבצי YAML בקלות וביעילות בקוד C#. לדוגמה:
+
+```C#
+// יצירת יבוא הנתונים ל-YAML
+var myData = new MyData()
 {
-    Name = "שרה",
-    Age = 21,
-    Major = "מתמטיקה"
+    Name = "John Doe",
+    Age = 30,
+    Address = new Address
+    {
+        City = "Tel Aviv",
+        Street = "Main Street",
+        ZipCode = 12345
+    }
 };
-var newYamlData = serializer.Serialize(newStudent);
-
-// הדפסת הנתונים החדשים בפורמט YAML
-Console.WriteLine("\nסטודנט חדש:\n" + newYamlData);
-```
-
-התוכנית תעלול את הנתונים כדפולט בהתאם לפורמט YAML, ותדפיס את הפלט הבא:
-
-```
-שם: רויטל, גיל: 22, מגמה: תוכנה
-
-סטודנט חדש:
-name: שרה
-age: 21
-major: מתמטיקה
-```
-
-כפי שניתן לראות, עבודה עם קבצי YAML בשפת C# היא פשוטה ומאפשרת לנו לבצע עיבוד והמרת נתונים בפורמט נוח לקריאה וכתיבה.
-
-## טיול עמוק
-
-קבצי YAML הם פורמט נתונים נפוץ נעשה שימוש בו בעיקר בשפות תכנות ובתחום התפעול עם נתונים. ניתן למצוא מידע מפורט יות
+// יצירת המסמך YAML
+var serializer = new SerializerBuilder().Build();
+var yaml = serializer.Serialize(myData);
+// יצירת קובץ YAML חדש
+var outputFile = File.CreateText("output.yaml");
+outputFile.Write(yaml);
+// סגירת קובץ יצירת הפלט

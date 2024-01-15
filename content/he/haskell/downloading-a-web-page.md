@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: הורדת עמוד אינטרנט"
+title:                "הורדת עמוד אינטרנט"
+html_title:           "Haskell: הורדת עמוד אינטרנט"
 simple_title:         "הורדת עמוד אינטרנט"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,35 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-למה צריך להוריד עמוד אינטרנט? ייתכן שתרצו לעבוד עם מידע שנמצא על עמוד אינטרנט כדי ליצור אפליקציה, לבנות אתר או סתם לבדוק משהו מסוים.
+להזרים אתרי אינטרנט ולשכפל את המידע המופיע בהם נחשב כפעילות חשובה בתחום התכנות. ניתן לעשות זאת למטרות שונות, כגון סקירת נתונים או בניית אפליקציות ווב.
 
-## איך מבצעים
+## איך לעשות זאת
 
-הנה דוגמא לקוד בשפת האסקל בכדי להוריד עמוד אינטרנט ולהציג את התוצאות:
+אם אתם מעוניינים להזרים את אתר האינטרנט שלכם ולשכפל את המידע ממנו, אתם יכולים לעשות זאת באמצעות שפת התכנות Haskell. כדי לבצע פעולה זו, נצטרך להשתמש בספריית חיצונית בשם "HTTP-conduit", שתעזור לנו להתחבר לאתר האינטרנט ולזרום את המידע.
+
+נתחיל עם היבוא של הספרייה המתאימה:
 
 ```Haskell
-import Network.HTTP
-import Text.HTML.TagSoup
-
-downloadWebPage :: String -> IO ()
-downloadWebPage url = do
-    response <- simpleHTTP (getRequest url)
-    body <- getResponseBody response
-    print $ parseTags body
+import Network.HTTP.Simple
 ```
 
-תוצאה:
+כעת נשתמש בפונקציה "httpSource", שתקבל כפרמטר את הכתובת של האתר המטרה. נשתמש גם בפונקציה "getResponseBody" כדי לקבל את המידע הרלוונטי מהאתר.
 
+```Haskell
+res <- httpSource "https://www.example.com"
+let body = getResponseBody res
 ```
-[TagOpen "html" [], TagOpen "head" [], TagOpen "title" [], TagText "Example Website", TagClose "title", TagOpen "body" [], TagOpen "header" [], TagOpen "h1" [], TagText "Welcome!", TagClose "h1", TagClose "header", ...]
-```
 
-## מעמקים
+נכון לעכשיו, כל המידע מהאתר נמצא במשתנה שמכיל את השורה "getResponseBody res". אפשר להדפיס אותו באמצעות "putStrLn" כדי לראות את התוצאה המלאה.
 
-כדי להבין איך להוריד עמוד אינטרנט, ישנם מספר שלבים שחשוב לקחת בחשבון. למשל, יש לשלוט על מנגנוני צפייה של העמוד, וכן לזהות ולהפריד את התוכן שזכינו במערכת תגים. בנוסף, לנתח את הקוד של העמוד כדי להבין אילו אינפורמציות רלוונטיות ישנן ואיך הן מצויות בתוך הקוד.
+## טיפול עמוק
+
+כדי לשכפל את המידע מהאתר כמו שצריך, נוכל להשתמש בפונקציות נוספות כמו "parseRequest", "executeRequest" ו-"getResponseBody". עם כל אחת מהן נוכל לעבוד עם תכולת האתר ולעשות את הטיפולים הדרושים לנו. כמו כן, ניתן לכתוב תכניות שיכולות להזרים אתרי אינטרנט באופן אוטומטי על בסיס יומי, שבועי או חודשי.
 
 ## ראו גם
 
-- [וידאו של הסבר ראשון להורדת עמוד אינטרנט בשפת האסקל](https://www.youtube.com/watch?v=vyTpmJ-yaJU)
-- [כתבה עם דוגמאות לפרסום עמוד אינטרנט בעזרת אסקל](https://medium.com/@yehudkatz/building-a-simple-web-scraper-in-haskell-9bd4c593c989)
-- [המשאבים המלאים לספריית HTTP בשפת אסקל](https://hackage.haskell.org/package/HTTP)
+- [דוגמת קוד ב-Haskell להזרמת אתר אינטרנט](https://gist.github.com/ChemiHat/a479df611921063ff6c

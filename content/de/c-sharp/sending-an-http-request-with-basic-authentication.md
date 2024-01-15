@@ -1,6 +1,7 @@
 ---
-title:                "C#: Eine http-Anfrage mit grundlegender Authentifizierung senden"
-simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "C#: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -9,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Warum
+## Warum
 
-In der heutigen Welt der vernetzten Systeme ist es oft notwendig, eine Verbindung zu einer externen Ressource herzustellen und dabei sicherzustellen, dass nur autorisierte Benutzer Zugriff darauf haben. Eine Möglichkeit, dies zu tun, ist durch den Einsatz einer HTTP-Anfrage mit grundlegender Authentifizierung. In diesem Blogbeitrag werden wir uns ansehen, wie man dies in C# programmieren kann.
+Warum sollte man sich überhaupt die Mühe machen, eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden? Nun, in der heutigen digitalen Welt, in der sensible Informationen ständig online übertragen werden, ist es wichtig, dass diese Informationen geschützt werden. Mit der grundlegenden Authentifizierung können wir sicherstellen, dass nur autorisierte Benutzer auf bestimmte Ressourcen zugreifen können.
 
-### Wie
+## How To
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in C# zu senden, müssen wir zunächst eine Instanz der "HttpClient" Klasse erstellen. Dann können wir die Methode "DefaultRequestHeaders" verwenden, um die notwendigen Authentifizierungsheader hinzuzufügen. Hier ist ein Beispielcode, der eine Anfrage an eine externe Ressource mit grundlegender Authentifizierung sendet:
+Um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden, müssen wir zunächst die entsprechenden Bibliotheken importieren. Anschließend können wir die Anfrage mit Hilfe von Code durchführen.
 
 ```C#
-// Erstelle eine Instanz der HttpClient Klasse
-HttpClient client = new HttpClient();
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
-// Füge den Authentifizierungsheader hinzu
-string username = "Benutzername";
-string password = "Passwort";
-string authInfo = username + ":" + password;
-authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authInfo);
+var client = new HttpClient(); // erstellt eine neue HTTP-Client-Instanz
 
-// Sende die HTTP-Anfrage
-string url = "http://www.externeressource.com";
-HttpResponseMessage response = await client.GetAsync(url);
+var credentials = Encoding.ASCII.GetBytes("Benutzername:Passwort"); // konvertiert Benutzername und Passwort in den erforderlichen Base64-String
 
-// Lese die Antwort aus
-string responseData = await response.Content.ReadAsStringAsync();
-Console.WriteLine(responseData);
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(credentials)); // fügt die Basic-Authentifizierung zur Anfrage hinzu
+
+var response = await client.GetAsync("https://beispiel.com/api/resource"); // sendet die Anfrage an die angegebene URL
+
+Console.WriteLine(await response.Content.ReadAsStringAsync()); // gibt die Antwort der Anfrage aus
 ```
 
-Dieser Code fügt den benötigten Basis-Autorisierungsheader hinzu und sendet dann die Anfrage an die externe Ressource. Die Antwort wird in der Variablen "responseData" gespeichert und kann dann weiterverarbeitet werden.
+Die Ausgabe sollte eine erfolgreiche Anfrage mit dem Inhalt der Ressource enthalten.
 
-### Deep Dive
+## Deep Dive
 
-Das Hinzufügen einer grundlegenden Authentifizierung zu einer HTTP-Anfrage ermöglicht es uns, Benutzername und Passwort für die Authentifizierung in die Anfrageheader einzuschließen. Bevor die Anfrage an die externe Ressource gesendet wird, wird der Passwortwert in Base64 kodiert, um die Sicherheit zu erhöhen.
+Die grundlegende Authentifizierung ist eine der ältesten und am häufigsten verwendeten Methoden für die Authentifizierung in HTTP-Anfragen. Sie basiert auf dem Base64-String, der aus dem Benutzernamen und Passwort erstellt wird. Es ist wichtig zu beachten, dass es sich bei der grundlegenden Authentifizierung nicht um eine sichere Methode handelt, da der Base64-String leicht entschlüsselt werden kann. Aus diesem Grund sollte bei der Verwendung von HTTP-Anforderungen mit grundlegender Authentifizierung immer eine sichere Verbindung (HTTPS) verwendet werden, um die Sicherheit der übertragenen Informationen zu gewährleisten.
 
-Es ist jedoch wichtig zu beachten, dass die grundlegende Authentifizierung nicht als sichere Möglichkeit der Authentifizierung gilt, da die Codierung des Passworts nicht verschlüsselt ist und daher möglicherweise abgefangen und entschlüsselt werden kann.
+## Siehe auch
 
-Es gibt auch Alternativen zur grundlegenden Authentifizierung, wie z.B. OAuth oder Token-basierte Authentifizierung, die als sicherere Optionen angesehen werden. Es ist wichtig, sich bewusst zu sein, dass die Wahl des richtigen Authentifizierungsschemas von der spezifischen Anwendung und den Sicherheitsanforderungen abhängt.
+Hier sind einige hilfreiche Ressourcen, die Ihnen eine tiefere Einsicht in das Thema HTTP-Anfragen und grundlegende Authentifizierung geben können:
 
-### Siehe auch
-
-- [HTTP-Anfragen mit C# senden](https://www.w3schools.com/cs/cs_http.asp)
-- [Grundlegende HTTP-Authentifizierung](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [Sichere Verbindungen mit OAuth in C#](https://www.codeproject.com/Articles/875058/Create-and-Consume-Secure-RESTful-Service-in-NET-F)
+- [MSDN-Dokumentation von HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Grundlegende Authentifizierung in der HTTP-Produktion](https://www.rfc-editor.org/rfc/rfc7617.txt)
+- [Reaktion des Webservers auf HTTP-Anfragen](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

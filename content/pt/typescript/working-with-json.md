@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Lidando com json."
+html_title:           "TypeScript: Lidando com json."
+simple_title:         "Lidando com json."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -9,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON em TypeScript
+##Por que
 
-JSON (JavaScript Object Notations) é um formato de dados que tem se tornado cada vez mais popular na programação. Ele é usado para estruturar e armazenar informações de forma simples e legível. Em TypeScript, trabalhar com JSON pode facilitar muito o processo de manipulação e envio de dados em sua aplicação.
+O JavaScript Object Notation (JSON) é uma formato de dados leve, que oferece uma maneira rápida e fácil de trocar informações entre diferentes sistemas. Ao trabalhar com JSON, é possível armazenar e transmitir dados de forma mais eficiente, otimizando o desempenho do seu código.
 
-## Como fazer isso em TypeScript
+## Como Fazer
 
-Para trabalhar com JSON em TypeScript, é necessário usar a biblioteca `json()` do pacote `@types/node`, que inclui as definições de tipo para o formato JSON. Aqui está um exemplo de como realizar isso em seu código:
+Para trabalhar com JSON em TypeScript, é necessário importar o módulo 'JSON' e utilizar seus métodos para realizar operações como parse e stringifiy (transformar um objeto em uma string e vice-versa). Veja um exemplo de como isso pode ser feito:
 
-```typescript
-import * as fs from "fs";
-import { parse as jsonParse, stringify } from "json-bigint";
+```TypeScript
+import * as JSON from 'JSON';
 
-const jsonString = fs.readFileSync("arquivo.json", "utf-8"); //lê o arquivo.json
+//Objeto que será transformado em uma string JSON
+const person = {
+  nome: "João",
+  idade: 30,
+  cidade: "São Paulo"
+}
 
-const jsonData = jsonParse(jsonString); //converte a string para um objeto JSON
+//Transformando o objeto em uma string JSON
+const personString = JSON.stringify(person);
+console.log(personString); //{"nome":"João","idade":30,"cidade":"São Paulo"}
 
-jsonData["nome"] = "João"; //modifica o valor da propriedade "nome"
-
-console.log(stringify(jsonData)); //converte o objeto JSON de volta para uma string e imprime no console
+//Convertendo a string JSON de volta para um objeto
+const personObject = JSON.parse(personString);
+console.log(personObject); //{nome: "João", idade: 30, cidade: "São Paulo"}
 ```
 
-O código acima irá ler um arquivo JSON, converter os dados para um objeto JSON, fazer uma modificação e imprimir o resultado no console. Você pode também usar a função `stringify` para converter um objeto JavaScript em uma string JSON.
+## Profundidade
 
-## Profundidade na manipulação de JSON
+Uma das maiores vantagens de se trabalhar com JSON é sua compatibilidade com diferentes linguagens de programação. Isso permite que um sistema desenvolvido em TypeScript, por exemplo, possa se comunicar facilmente com um sistema em Java ou Python, compartilhando dados no formato JSON.
 
-Ao trabalhar com JSON, é importante entender como ele é estruturado. Ele consiste em pares de "chave-valor", onde a chave é uma string que identifica o valor correspondente. A partir disso, é possível acessar e modificar propriedades específicas usando a notação de ponto ou colchetes.
+Além disso, o JSON também é compatível com a maioria dos bancos de dados, facilitando o armazenamento e recuperação de informações no formato JSON.
 
-Além disso, é possível usar a função `jsonParse()` para converter uma string JSON em um objeto JavaScript. Isso pode facilitar a manipulação dos dados e a utilização de métodos e propriedades do objeto.
+Outra característica interessante é a possibilidade de se trabalhar com JSON direto no navegador, sem a necessidade de um servidor. Isso é possível graças à presença do objeto "JSON" na especificação do ECMAScript desde o ES5.
 
-## Veja também
+## Veja Também
 
-- [Documentação do pacote @types/node (em inglês)](https://www.npmjs.com/package/@types/node)
-- [Documentação do formato JSON (em português)](https://www.json.org/json-pt.html)
-- [Outra forma de trabalhar com JSON em TypeScript (em inglês)](https://www.freecodecamp.org/news/working-with-json-in-typescript-3e0f80f4b427/)
+- [Documentação oficial do JSON](https://www.json.org/json-pt.html)
+- [Guia de syntax para JSON em TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#json)
+- [Carregando arquivos JSON em um projeto TypeScript](https://medium.com/@kevinkreuzer/storing-and-loading-simple-data-on-a-typescript-project-9bdbfbeed3ce)

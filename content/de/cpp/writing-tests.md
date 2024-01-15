@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tests schreiben"
-simple_title:         "Tests schreiben"
+title:                "Testen schreiben"
+html_title:           "C++: Testen schreiben"
+simple_title:         "Testen schreiben"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -9,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum Tests schreiben?
+## Warum
 
-Tests sind ein wichtiger Bestandteil des Softwareentwicklungsprozesses und haben viele Vorteile. Durch das Schreiben von Tests kann man sicherstellen, dass der Code korrekt funktioniert und Bugs frühzeitig erkannt werden. Außerdem ermöglichen Tests Entwicklern, Änderungen am Code vorzunehmen, ohne die Funktionalität der Software zu beeinträchtigen. Das spart Zeit und Ressourcen und sorgt für eine höhere Qualität des Codes. In diesem Blogbeitrag werden wir uns genauer mit dem Schreiben von Tests in C++ befassen.
+Tests sind ein wichtiger Bestandteil der Softwareentwicklung. Sie sind ein effektives Werkzeug, um sicherzustellen, dass der Code funktioniert, wie er sollte und um mögliche Fehler frühzeitig zu erkennen. In diesem Artikel werde ich erklären, warum es wichtig ist, Tests zu schreiben und wie man Tests in C++ schreibt.
 
-## Wie man Tests in C++ schreibt
+## So geht's
 
-Um Tests in C++ zu schreiben, benötigt man eine Test-Framework-Software wie zum Beispiel Google Test oder Catch2. Diese bieten Möglichkeiten, Tests zu erstellen und auszuführen. Hier ist ein einfaches Beispiel für einen Test mit Google Test:
+Um Tests in C++ zu schreiben, verwenden wir die Bibliothek "gtest". Diese Bibliothek bietet eine einfache und effektive Möglichkeit, Unit-Tests zu schreiben. Zunächst müssen wir die Bibliothek in unserem Projekt einbinden. Dafür müssen wir das "gtest" Repository auf Github herunterladen und die Dateien in unserem Projektordner speichern.
+
+Anschließend erstellen wir eine Testklasse, die von der Klasse "testing::Test" erbt. In dieser Klasse können wir dann unsere Tests schreiben, indem wir die Funktionen "TEST" und "EXPECT_EQ" verwenden. Beispielcode sieht folgendermaßen aus:
 
 ```C++
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"  // Einbinden der Bibliothek
 
-TEST(Math, Addition) {
-  EXPECT_EQ(2+2, 4);
+// Erstellen einer Testklasse
+class TestClass : public testing::Test {
+  // Hier können weitere Funktionen oder Variablen erstellt werden
+};
+
+// Schreiben eines Tests
+TEST(TestClass, AddTest) {
+  int result = 2 + 2;
+  // Überprüfung des erwarteten Ergebnisses mit EXPECT_EQ
+  EXPECT_EQ(result, 4);
 }
+```
 
-int main(int argc, char** argv) {
-  testing::InitGoogleTest(&argc, argv);
+Nachdem wir alle unsere Tests geschrieben haben, können wir sie ausführen und das Ergebnis überprüfen. Dafür müssen wir in unserer "main" Funktion die Funktion "RUN_ALL_TESTS()" aufrufen. Wenn alle Tests erfolgreich durchlaufen wurden, wird "OK" ausgegeben. Ansonsten wird das fehlgeschlagene Testergebnis angezeigt. Beispielcode für die "main" Funktion:
+
+```C++
+#include "gtest/gtest.h"
+
+int main(int argc, char **argv) {
+  // Initialisierung und Ausführung der Tests
+  ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
 ```
 
-In diesem Beispiel testen wir die Addition von zwei Zahlen und erwarten, dass das Ergebnis 4 ist. Wenn der Test erfolgreich ist, wird "OK" ausgegeben, andernfalls wird eine Fehlermeldung angezeigt.
+Das Ergebnis unserer Tests wird dann in der Konsole ausgegeben. Bei einem erfolgreichen Test wird "OK" angezeigt, ansonsten werden Details über den fehlgeschlagenen Test ausgegeben.
 
-## Tieferer Einblick ins Schreiben von Tests
+## Tiefergehende Informationen
 
-Beim Schreiben von Tests ist es wichtig, verschiedene Testfälle zu berücksichtigen und sicherzustellen, dass alle möglichen Szenarien getestet werden. Außerdem sollten die Tests einfach verständlich und wartbar sein, damit sie von anderen Entwicklern leicht überprüft und aktualisiert werden können. Es ist auch ratsam, Tests automatisiert auszuführen, um sicherzustellen, dass sie bei jeder Änderung am Code durchgeführt werden und die Software immer korrekt bleibt.
-
-Eine wichtige Strategie beim Schreiben von Tests ist die "Red-Green-Refactor"-Methode. Zuerst schreibt man einen Test, der fehlschlägt (rot), dann schreibt man den Code, der den Test bestehen lässt (grün) und anschließend optimiert man den Code, um sicherzustellen, dass er effizient und gut strukturiert ist (Refaktor).
+In diesem Artikel haben wir gezeigt, wie man Tests in C++ mit der "gtest" Bibliothek schreibt. Es gibt jedoch noch viele weitere Möglichkeiten und Funktionen, die "gtest" bietet, um unsere Tests noch effektiver zu gestalten. Es lohnt sich also, sich etwas tiefer in die Bibliothek einzuarbeiten und ihre verschiedenen Funktionen zu nutzen.
 
 ## Siehe auch
 
-* [Google Test Dokumentation](https://github.com/google/googletest/blob/master/googletest/docs/)
-* [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-* [Effektive Tests schreiben in C++](https://accu.org/index.php/journals/2566)
+- [Offizielle Dokumentation von "gtest"](https://github.com/google/googletest/)
+- [Tutorial für "gtest"](https://www.tutorialspoint.com/googletest/index.htm)
+- [Weitere Tipps für das Schreiben von effektiven Tests](https://www.codeproject.com/Articles/15985/Introduction-to-Google-Test-GTest-for-Cplusplus)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Transformando uma string em maiúsculas"
-simple_title:         "Transformando uma string em maiúsculas"
+title:                "Convertendo Uma String em Maiúsculas"
+html_title:           "Haskell: Convertendo Uma String em Maiúsculas"
+simple_title:         "Convertendo Uma String em Maiúsculas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,50 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que capitalizar uma string?
+## Por que
 
-Muitos desenvolvedores podem se perguntar por que eles precisariam capitalizar uma string em seu código. A resposta é simples - às vezes, é necessário formatar as strings de maneira consistente, seja para apresentação visual ou para processamento de dados.
+Você já se deparou com uma situação em que precisou capitalizar uma string em seu código Haskell? Talvez você esteja lidando com dados de entrada de usuários ou precisa formatar uma saída de texto. Independentemente do motivo, neste artigo, vamos mostrar como capitalizar uma string em Haskell de maneira simples e eficiente.
 
-# Como fazer isso em Haskell?
+## Como Fazer
 
-Não se preocupe, capitalizar uma string em Haskell é fácil! Basta seguir os seguintes passos:
+A função básica para capitalizar uma string em Haskell é `toUpper`, que pertence ao módulo `Data.Char`. Vamos ver um exemplo de como usá-la:
 
-### Passo 1: Importar o módulo "Data.Char"
-Primeiro, você precisa importar o módulo "Data.Char" para ter acesso às funções de manipulação de caracteres.
-
-```Haskell
+```
+-- Importe o módulo Data.Char
 import Data.Char
+
+-- Defina uma string
+texto = "hello world"
+
+-- Capitalize a string usando a função toUpper
+capitalizado = map toUpper texto
 ```
 
-### Passo 2: Usando a função "toUpper"
-Agora, você pode usar a função "toUpper" para capitalizar uma string. Esta função leva um caractere como parâmetro e retorna o mesmo caractere, mas em maiúsculo.
+No código acima, importamos o módulo `Data.Char` para ter acesso à função `toUpper` e depois definimos uma string com a palavra "hello world". Em seguida, usamos a função `map` para aplicar a função `toUpper` a cada caractere da string, resultando em uma string com todas as letras em maiúsculo.
 
-```Haskell
-toUpper 'a' -- retorna 'A'
+### Outros métodos
+
+Além da função `toUpper`, existem outros métodos que podem ser usados para capitalizar uma string em Haskell:
+
+- `toLower`: converte todos os caracteres para letras minúsculas.
+- `toTitle`: converte o primeiro caractere de cada palavra para maiúscula.
+- `toUpperFirst`: converte apenas o primeiro caractere para maiúscula.
+
+Todas essas funções também pertencem ao módulo `Data.Char` e podem ser usadas da mesma maneira que a função `toUpper`.
+
+## Deep Dive
+
+Se olharmos para a documentação do módulo `Data.Char`, veremos que a função `toUpper` é definida da seguinte forma:
+
 ```
-
-### Passo 3: Usando a função "map"
-Para capitalizar uma string inteira, você pode usar a função "map" em conjunto com a função "toUpper". A função "map" aplicará a função "toUpper" em cada caractere da string.
-
-```Haskell
-map toUpper "hello" -- retorna "HELLO"
-```
-
-E voilà, você acabou de capitalizar uma string em Haskell!
-
-# Aprofundando na capitalização de strings
-
-Se você quiser entender melhor a função "toUpper", pode dar uma olhada na sua implementação em Haskell:
-
-```Haskell
 toUpper :: Char -> Char
-toUpper c
-    | ord c >= 97 && ord c <= 122 = chr (ord c - 32)
-    | otherwise = c
 ```
 
-Esta função primeiro verifica se o caractere fornecido está dentro dos limites ASCII de letras minúsculas (97 a 122). Se estiver, ele converte o caractere para seu equivalente em maiúsculo (subtraindo 32 do seu código ASCII). Caso contrário, retorna o caractere original.
+Isso significa que a função recebe um caractere como entrada e retorna outro caractere como saída. Portanto, quando usamos `map toUpper` em uma string, na verdade estamos mapeando a função `toUpper` para cada caractere da string e, assim, obtendo uma string com os caracteres capitalizados.
 
-# Veja também
-- [Documentação do módulo "Data.Char"](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
-- [Tutorial de Haskell em português](https://haskell.tailorfontela.com.br/)
+No entanto, é importante ressaltar que a função `toUpper` não suporta caracteres especiais ou acentuados. Se você precisar capitalizar esse tipo de caractere, pode ser necessário usar uma biblioteca externa ou implementar sua própria função personalizada.
+
+## Veja Também
+
+- [Documentação do módulo `Data.Char`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [Haskell para Iniciantes: Funções de Alta Ordem](https://blog.prettify.design/haskell-para-iniciantes-funcoes-de-alta-ordem/)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: Wyświetlanie danych debugowania"
-simple_title:         "Wyświetlanie danych debugowania"
+title:                "Drukowanie wyjścia debugowania"
+html_title:           "C#: Drukowanie wyjścia debugowania"
+simple_title:         "Drukowanie wyjścia debugowania"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -9,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego warto drukować informacje debugujące w programowaniu?
+## Dlaczego
 
-Wiele osób może zastanawiać się, po co w ogóle drukować informacje debugujące w swoim kodzie. Jednakże, jest to bardzo przydatne narzędzie, które może ułatwić nam znalezienie i naprawienie błędów w programie. Dzięki temu, możemy oszczędzić sobie dużo czasu i stresu związanego z debugowaniem naszych projektów.
+Drukowanie wyjścia debugowania jest nieodłączną częścią programowania w języku C#, ponieważ pozwala na łatwiejsze znalezienie błędów i rozwiązywanie problemów w kodzie. Jest to niezbędne dla każdego programisty, niezależnie od poziomu doświadczenia.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby wypisać informacje debugujące w C#, musimy skorzystać z metody `Console.WriteLine()` lub `Debug.WriteLine()`. Przykładowy kod wyglądałby następująco:
+W celu drukowania wyjścia debugowania w języku C#, możemy użyć funkcji ```Console.WriteLine()``` lub ```Debug.WriteLine()```. Oba metody działają podobnie, ale ```Debug.WriteLine()``` jest zalecane, ponieważ jest szybsze i ma większe możliwości formatowania wyjścia.
+
+Przykładowy kod drukujący wyjście debugowania:
 
 ```C#
-Console.WriteLine("Debug output"); //wypisuje informację na konsoli
-Debug.WriteLine("Debug output"); //wypisuje informację w oknie Output w środowisku programistycznym
+int number = 10;
+string name = "Poland";
+
+Console.WriteLine("Liczba: " + number);
+Debug.WriteLine("Kraj: " + name);
 ```
 
-Po użyciu tych metod, otrzymamy informację debugującą w formie tekstu, która pomoże nam zrozumieć działanie naszego kodu.
+*Wynik:*
 
-## Głębsza analiza drukowania informacji debugujących
+```bash
+Liczba: 10
+Kraj: Poland
+```
 
-Ponieważ metody `Console.WriteLine()` i `Debug.WriteLine()` są tak popularne i powszechnie stosowane, warto poznać ich dodatkowe funkcjonalności. Na przykład, możemy użyć specjalnych znaków specjalnych, takich jak `\n` aby dodawać odstępy czy też `\t` aby wypisać tekst wraz z wcięciem. Możemy również użyć warunków `if` do kontroli wyświetlania informacji debugujących tylko w określonych sytuacjach.
+Dodatkowo, możemy także ustawić poziom wyjścia debugowania, korzystając z ```Debug.Listeners``` i ```Debug.Listeners.Clear()```. Jest to przydatne w przypadku, gdy chcemy kontrolować wyjścia debugowania w zależności od poziomu naszego programu.
 
-## Zobacz również
+## Głębszy wgląd
 
-[Oficjalna dokumentacja C# o debugowaniu](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/debugging/)
+Drukowanie wyjścia debugowania może również być używane do monitorowania działania aplikacji i wychwytywania wyjątków. Korzystając z wyrażeń warunkowych, możemy ustawić warunek, który będzie drukował wyjście debugowania tylko wtedy, gdy warunek zostanie spełniony.
 
-[Poradnik od Microsoft na temat wykorzystania informacji debugujących](https://docs.microsoft.com/pl-pl/dotnet/framework/debug-trace-profile/writing-to-the-output-window)
+Możemy także korzystać z różnych poziomów wyjścia debugowania, takich jak ```Trace```, ```Info```, ```Warning``` i ```Error```, które pomagają nam w wyświetlaniu różnych rodzajów informacji w zależności od potrzeb.
 
-[Przykładowe użycie informacji debugujących w C#](https://www.tutorialsteacher.com/csharp/csharp-debugging)
+## Zobacz także
 
-[Artykuł o korzyściach z wykorzystania informacji debugujących w programowaniu](https://blog.devteam.space/the-importance-of-debugging-in-software-development-1ccd3c8f7526)
+- [Dokumentacja Microsoft na temat drukowania wyjścia debugowania w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debug?view=net-5.0)
+- [Przewodnik dla początkujących w języku C#](https://www.tutorialspoint.com/csharp/index.htm)
+- [Przydatne narzędzia do debugowania w języku C#](https://www.c-sharpcorner.com/article/the-top-10-debugging-tools-in-c-sharp/)

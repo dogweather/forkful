@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 打印调试输出"
+title:                "打印调试输出"
+html_title:           "Elixir: 打印调试输出"
 simple_title:         "打印调试输出"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,48 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要打印调试输出？
+## 为什么
 
-打印调试输出是在开发过程中常用的有效工具。它可以帮助我们理解代码的执行流程、发现潜在的错误，并且更容易进行调试和修复。
+在编写代码时，调试输出是一个重要的工具。它可以帮助我们在程序中找到错误并进行修复，提高代码的可读性和调试效率。
 
-## 如何实现
+## 如何做
 
-```Elixir
-IO.inspect("Hello, World!") 
-```
+### Elixir中输出调试信息
 
-以上代码将在控制台上打印出 `"Hello, World!"`，这样我们就可以看到程序在运行时的实际结果。我们还可以使用 `IO.inspect/2` 来打印出变量的值、对象的属性等，以便更好地理解代码的执行过程。
+要在Elixir中输出调试信息，我们可以使用 `IO.inspect/2` 函数。让我们来看一个例子：
 
 ```Elixir
-iex> x = [1, 2, 3]
-[1, 2, 3]
-iex> IO.inspect(x, label: "My list") 
-My list: [1, 2, 3] 
-[1, 2, 3]
+iex> IO.inspect("Hello World", label: "My Message")
+My Message: "Hello World"
+"Hello World"
 ```
 
-在以上示例中，我们使用 `IO.inspect/2` 来打印出变量 `x` 的值，并在输出前加上了标签 `"My list"`。
+在上面的例子中，我们使用了 `IO.inspect/2` 函数来输出字符串 "Hello World"。我们还可以使用 `label` 选项来为我们的调试信息添加标签，让它们更容易被识别。
+
+### 调试当前代码
+
+有时，我们想要查看当前代码执行的结果，以便更好地理解程序的执行流程。这时，我们可以使用 `IO.inspect/1` 函数。让我们来看一个示例：
+
+```Elixir
+iex> IO.inspect("Elixir")
+"Elixir"
+"Elixir"
+```
+
+在上面的例子中，我们没有使用 `label` 选项，因此只是简单地输出了 "Elixir"。
+
+### 添加条件语句
+
+有时候，我们只想在特定的条件下输出调试信息。在这种情况下，我们可以使用 `IO.inspect/4` 函数，并传递一个条件语句作为第四个参数。让我们来看一个例子：
+
+```Elixir
+iex> x = 10
+10
+
+iex> IO.inspect(x, label: "Value of x", unless: x < 5)
+Value of x: 10
+10
+
+iex> IO.inspect(x, label: "Value of x", only: x < 5)
+:ok
+```
+
+在上面的例子中，我们使用了 `unless` 和 `only` 选项来控制调试信息的输出。如果条件为假，`unless` 选项将会导致信息被输出，而 `only` 选项则会导致信息不被输出。
 
 ## 深入了解
 
-实际上，Elixir 中的调试输出还有更多的用法。我们可以通过 `IO.inspect/3` 来设置选项，如 `color: [background: :red]` 来更改输出的颜色，或者使用 `inspect()` 宏来自定义对象的输出格式。此外，我们还可以使用 `:erlang.trace/3` 来跟踪程序的执行过程，更深入地了解代码的运行情况。
+`IO.inspect/2` 函数在Elixir中是如何工作的呢？它的内部实现其实是调用了 `IO.puts/2` 函数，在打印信息的同时，也会将该信息返回作为函数的结果。这就是为什么我们在调用 `IO.inspect/2` 的时候，同时也会输出结果的原因。
 
-## 查看相关文章
+除了 `IO.inspect/2` 函数之外，Elixir还提供了一些其他的调试工具，比如 `Logger` 模块和 `IO.warn/2` 函数。它们都可以帮助我们更有效地调试我们的程序。
 
-[《Elixir入门指南》](https://zhuanlan.zhihu.com/p/27237143)
+## 参考链接
 
-[《Elixir开发常用工具》](https://zhuanlan.zhihu.com/p/47753509)
+- [Elixir官方文档](https://elixir-lang.org/getting-started/debugging.html)
+- [Elixir论坛讨论](https://elixirforum.com/t/console-io-inspect-inspect-expressions-pipable-inspect-custom-exception-data-inspect-and-access-macro-inspect-docs/808/5)
 
-[官方文档：IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
+## 参见
 
-[官方文档：inspect() 宏](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#inspect/2)
-
-[官方文档：:erlang.trace/3](https://erlang.org/doc/man/erlang.html#trace-3)
-
-# 查看更多链接
-
-[《Elixir中的调试技巧和陷阱》](https://www.barbarianmeetscoding.com/blog/elixir-debugging-tips-and-tricks-and-the-pitfalls-you-could-encounter-along-the-way/)
-
-[《Elixir中有用的调试技巧》](https://blog.appsignal.com/2018/08/28/useful-elixir-debugging-tips.html)
-
-[《如何使用IO.inspect加快Elixir代码的开发与调试》](https://www.jianshu.com/p/893466b4cced)
+- [使用Debug模块调试Elixir应用](https://bluepenguin.yupoo.com/albums/36544818?uid=1)
+- [Elixir语言特性简介](https://www.zhihu.com/question/432201138/answer/1643055604)

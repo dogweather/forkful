@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Haskell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que converter uma string para letras minúsculas?
 
-Conversão de strings para letras minúsculas é uma ação comum necessária em muitos projetos Haskell. Ao converter uma string para letras minúsculas, podemos garantir que os dados inseridos pelo usuário sejam uniformes e padronizados. Também facilita a comparação de strings, já que letras maiúsculas e minúsculas podem afetar o resultado.
+Existem várias situações em que pode ser necessário converter uma string para letras minúsculas no código Haskell. Por exemplo, pode ser útil para manipulação de texto, validação de entrada do usuário ou para comparação de strings sem levar em conta as letras maiúsculas/minúsculas.
 
-## Como fazer:
+## Como fazer
 
-Para converter uma string para letras minúsculas em Haskell, podemos usar a função `map` combinada com a função `toLower` do módulo `Data.Char`. A função `map` aplica uma função a cada elemento de uma lista, enquanto `toLower` converte um caractere para sua contraparte minúscula. Por exemplo:
+A conversão de uma string para letras minúsculas em Haskell é bastante simples. Você pode utilizar a função `map` juntamente com a função `toLower` do módulo `Data.Char` para aplicar a conversão em cada caractere da string. Veja o exemplo abaixo:
 
 ```Haskell
 import Data.Char
-string = "Olá, MUNDO!"
-lowercase = map tolower string
-putStrLn lowercase
+
+-- Função que converte uma string para letras minúsculas
+toLowerString :: String -> String
+toLowerString s = map toLower s
 ```
 
-A saída deste código seria "olá, mundo!". O caractere 'O' foi convertido para 'o' e todo o restante da string permaneceu inalterado.
-
-## Profundidade:
-
-Ao olhar para a implementação da função `map`, podemos ver que ela funciona recursivamente, o que significa que podemos criar nossa própria função de conversão de strings para letras minúsculas usando recursão. Abaixo está uma possível implementação:
+Para testar a nossa função, podemos executá-la no console do GHCi, da seguinte forma:
 
 ```Haskell
-toLowerString :: String -> String
-toLowerString [] = []
-toLowerString (x:xs) = toLower x : toLowerString xs
+> toLowerString "OLA, MUNDO!"
+"ola, mundo!"
 ```
 
-Nesta função, o primeiro padrão de correspondência (o primeiro elemento é uma lista vazia) é usado como caso base, o que significa que uma lista vazia é retornada. O segundo padrão de correspondência (x:xs) é utilizado para "quebrar" a lista em sua cabeça (primeiro elemento) e a cauda (restante da lista). O caractere da cabeça é convertido para letras minúsculas e a função é aplicada recursivamente à cauda. Esta função nos permite entender melhor como a função `map` funciona e podemos adaptá-la para outras necessidades específicas.
+## Mais informações
 
-## Veja também:
+Ao usar a função `map` para aplicar a conversão em cada caractere, estamos aproveitando o conceito de função de ordem superior em Haskell. Isso significa que a função `map` toma uma função como um de seus argumentos. E a função `toLower` também é um exemplo de função de ordem superior, pois ela toma um caractere como argumento e retorna outro caractere após a conversão para minúsculas.
 
-- [Funções do módulo Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Recursão na documentação Haskell](https://wiki.haskell.org/Recursion)
+Além disso, o módulo `Data.Char` contém outras funções úteis para manipulação de caracteres, como `toUpper` (para conversão para letras maiúsculas) e `isSpace` (para verificar se um caractere é um espaço em branco). Você pode explorá-lo mais para aprofundar seus conhecimentos em Haskell.
+
+## Veja também
+
+- [Documentação oficial do GHC Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/)
+- [Tutorial de Haskell em português](https://haskell.tailorfontela.com.br/)

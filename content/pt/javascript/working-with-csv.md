@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Trabalhando com csv"
+title:                "Trabalhando com csv"
+html_title:           "Javascript: Trabalhando com csv"
 simple_title:         "Trabalhando com csv"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,59 +12,94 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que trabalhar com CSV?
 
-CSV (Comma Separated Values) é um formato de arquivo amplamente utilizado para armazenar dados tabulares, como planilhas e bancos de dados. Se você trabalha com análise de dados ou desenvolvimento web, provavelmente já precisou lidar com arquivos CSV. É uma forma popular de compartilhar e migrar dados entre diferentes sistemas, e aprender a trabalhar com ele pode ser uma habilidade valiosa na sua carreira de programação.
+Se você trabalha com dados estruturados, provavelmente já encontrou ou precisou trabalhar com arquivos CSV (comma-separated values). CSV é um formato amplamente utilizado para armazenar e transferir dados tabulares, como planilhas ou tabelas de banco de dados. Portanto, é importante para qualquer desenvolvedor de JavaScript estar familiarizado com a manipulação de CSV.
 
-## Como fazer isso em Javascript
+## Como fazer:
 
-Felizmente, trabalhar com CSV em Javascript é bastante simples. Existem pacotes e bibliotecas disponíveis que tornam o processo de leitura e escrita de arquivos CSV muito mais fácil.
+Para começar a trabalhar com CSV em JavaScript, é necessário ter uma compreensão básica do formato CSV.
+Veja abaixo um exemplo de como ler um arquivo CSV e exibir cada linha de dados em um console:
 
-### Lendo arquivos CSV
+```Javascript
+const fs = require('fs');
+const csv = require('csv-parser');
 
-Para ler um arquivo CSV em Javascript, você pode usar a biblioteca PapaParse. Ela oferece uma função `parse()` que converte um arquivo CSV em um objeto Javascript. Veja um exemplo de código usando essa biblioteca:
-
-```javascript
-const csvFile = "coluna1,coluna2,coluna3\nvalor1,valor2,valor3\nvalor4,valor5,valor6\n";
-const csvData = Papa.parse(csvFile).data;
-console.log(csvData);
-
-// Output:
-// [ [ 'coluna1', 'coluna2', 'coluna3' ],
-//   [ 'valor1', 'valor2', 'valor3' ],
-//   [ 'valor4', 'valor5', 'valor6' ] ]
+fs.createReadStream('arquivo.csv')
+  .pipe(csv())
+  .on('data', (data) => console.log(data));
 ```
 
-### Escrevendo arquivos CSV
+O código acima utiliza o módulo `csv-parser` para analisar o arquivo CSV e exibir cada linha de dados no console. É importante notar que o módulo `fs` também é necessário para ler o arquivo CSV. Para fins de praticidade, o código assume que o arquivo CSV está no mesmo diretório do arquivo JavaScript.
 
-Para escrever um arquivo CSV em Javascript, podemos usar o pacote csv-writer. Ele fornece uma função `writeRecords()` que nos permite criar um arquivo CSV a partir de um array de objetos. Veja um exemplo de código usando esse pacote:
-
-```javascript
-const createCsvWriter = require('csv-writer').createArrayCsvWriter;
+Para adicionar e manipular dados em um arquivo CSV, utilize o módulo `csv-writer`:
+```Javascript
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const csvWriter = createCsvWriter({
-  header: ['nome', 'idade', 'cidade'],
-  path: 'output.csv'
+  path: 'output.csv',
+  header: [
+    {id: 'name', title: 'Nome'},
+    {id: 'email', title: 'E-mail'},
+  ]
 });
 
 const data = [
-  ['João', 25, 'São Paulo'],
-  ['Maria', 30, 'Rio de Janeiro'],
-  ['Pedro', 20, 'Belo Horizonte'],
+  {
+    name: 'João',
+    email: 'joao@email.com'
+  },
+  {
+    name: 'Maria',
+    email: 'maria@email.com'
+  }
 ];
 
-csvWriter.writeRecords(data)
-    .then(() => console.log('Arquivo CSV criado com sucesso!'));
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('Dados adicionados ao arquivo CSV com sucesso!'));
 ```
 
-Esse código irá criar um arquivo CSV chamado `output.csv` com os dados fornecidos.
+Esse código adicionará os dados no formato especificado ao arquivo CSV chamado "output.csv". É importante notar que o módulo `csv-writer` utiliza o conceito de cabeçalho (header) para especificar os campos de dados a serem adicionados.
 
-## Deep Dive
+Para um guia mais detalhado sobre como trabalhar com CSV em JavaScript, consulte a documentação dos módulos `csv-parser` e `csv-writer`.
 
-Além das bibliotecas mencionadas, é possível trabalhar com CSV em Javascript utilizando algumas funções nativas da linguagem, como `split()` e `join()`. Também é importante estar atento às especificações do formato CSV, como o uso de aspas e delimitadores, para garantir a correta leitura e escrita dos arquivos.
+## Mergulho profundo:
 
-Outra dica é utilizar a função `fs.readFile()` para ler arquivos CSV assincronamente, o que pode ser mais eficiente para arquivos grandes.
+Trabalhar com CSV em JavaScript pode ser ainda mais simples utilizando a sintaxe de desestruturação e o método de array `map()`. Veja abaixo um exemplo de como adicionar dados em um arquivo CSV utilizando essa abordagem:
 
-## Veja também
+```Javascript
+const fs = require('fs');
+const csv = require('csv-parser');
 
-- [PapaParse](https://www.papaparse.com/)
-- [csv-writer](https://www.npmjs.com/package/csv-writer)
-- [Documentação do Node.js para manipulação de arquivos](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_readfile_path_options_callback)
+let users = []; // array que armazenará os dados a serem adicionados ao arquivo CSV
+
+fs.createReadStream('arquivo.csv')
+  .pipe(csv())
+  .on('data', (data) => {
+    // utiliza a desestruturação para pegar somente os dados necessários
+    const { name, email } = data;
+    // adiciona um objeto com os dados a serem adicionados ao array users
+    users.push({ name, email });
+  })
+  .on('end', () => {
+    // utiliza o método map() para formatar os dados no formato necessário para o módulo csv-writer
+    users = users.map(user => ({
+      name: user.name.toUpperCase(), // transforma o nome em letras maiúsculas
+      email: user.email.toLowerCase() // transforma o e-mail em letras minúsculas
+    }));
+
+    // adiciona os dados formatados ao arquivo CSV
+    fs.appendFile('arquivo.csv', users, (err) => {
+      if (err) throw err;
+      console.log('Dados adicionados ao arquivo CSV com sucesso!');
+    });
+  });
+```
+
+Nesse exemplo, utilizamos o módulo `csv-parser` para ler o arquivo CSV e formatamos os dados antes de adicioná-los ao arquivo com o método `map()`. Essa abordagem é especialmente útil para manipular grandes quantidades de dados em arquivos CSV.
+
+## Veja também:
+
+- [Documentação do módulo csv-parser](https://www.npmjs.com/package/csv-parser)
+- [Documentação do módulo csv-writer](https://www.npmjs.com/package/csv-writer)
+- [Sintaxe de desestruturação em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Método map() em JavaScript](https://developer.mozilla.org/pt-BR

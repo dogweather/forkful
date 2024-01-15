@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Bash: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Monet ihmiset haluavat ladata verkkosivuja eri tarkoituksia varten, kuten offline-lukemista tai tietojen tallentamista. Bash-skripti on hyvä työkalu tämän tehtävän suorittamiseen, koska se tarjoaa helpon ja nopean tavan ladata verkkosivuja komentoriviltä.
+Joskus haluat ehkä tallentaa tai ladata verkkosivun tietokoneellesi, jotta voit tarkastella sitä myöhemmin ilman verkkoyhteyttä tai käyttää sitä materiaalina johonkin projektiin. Tässä artikkelissa opit kuinka tehdä tämä Bashilla!
 
-## Miten tehdä?
+## Kuinka
 
-Ladataksesi verkkosivun käyttäen Bashia, sinun täytyy tietää muutamia tärkeitä Bash-komentoja ja niiden käyttötarkoituksia. Alla on esimerkki miten voit ladata tyhjän sivun ja tulostaa sen sisällön terminaaliin:
-
-```Bash
-#!/bin/bash
-# Lataa sivu ja tulosta sen sisältö
-curl http://www.example.com
-```
-
-Tämä yksinkertainen Bash-skripti käyttää `curl` -komentoa ladatakseen verkkosivun URL:sta, joka annetaan komentorivillä. Voit myös tallentaa sivun tiedostoon tai jopa lähettää sen eteenpäin toiseen URL:een. Esimerkiksi:
+Bashilla on erittäin helppo tapa ladata verkkosivu. Sinun tarvitsee vain käyttää `curl` -komentoa ja antaa sille haluamasi URL-osoite. Tässä on yksinkertainen esimerkki:
 
 ```Bash
-#!/bin/bash
-# Lataa sivu ja tallenna se tiedostoon
-curl http://www.example.com -o example.html
-
-# Lähetä ladattu sivu toiseen URL:een
-curl -T example.html http://www.example2.com
+curl https://www.example.com > sivu.html
 ```
 
-Voit myös käyttää `wget` -komentoa lataamaan sivuja Bash-skriptistä. Se toimii hyvin samalla tavalla kuin `curl`, mutta siinä on hieman erilaiset vaihtoehdot ja ominaisuudet. Esimerkiksi voit käyttää `wget`-komentoa ladataksesi sivun ja tallentaaksesi sen tiedostoon:
+Tässä komennossa `curl` lataa verkkosivun ja tallentaa sen `sivu.html` -nimiseen tiedostoon. Voit käyttää mitä tahansa tiedostonimeä halutessasi. Huomaa, että jos haluat ladata vain verkkosivun tekstisisältöä, voit lisätä `-o` -lipun ja antaa sen jälkeen tiedostonimen sijasta vain `-` -merkin. Esimerkiksi:
 
 ```Bash
-#!/bin/bash
-# Lataa sivu ja tallenna se tiedostoon
-wget http://www.example.com -O example.html
+curl -o - https://www.example.com
 ```
 
-Kuten huomaat, Bash-skriptit tarjoavat helpon ja tehokkaan tavan ladata verkkosivuja.
+Tämä tulostaa verkkosivun tekstisisällön suoraan komentoriville.
 
-## Syvemmälle aiheeseen
+## Syväsyöksy
 
-On olemassa monia tapoja ladata verkkosivuja Bash-skriptien avulla, ja edellä mainittujen `curl` ja `wget` -komentojen lisäksi on olemassa myös muita vaihtoehtoja, kuten `lynx` ja `links`. Voit myös käyttää `awk`, `grep` ja muita Bash-työkaluja käsitelläksesi ja jalostaa ladattua sivua.
+Bashin `curl` komennolla on paljon enemmän mahdollisuuksia kuin pelkkä verkkosivujen lataaminen. Voit esimerkiksi käyttää erilaisia parametreja, kuten `--user` ja `--header`, autentikoitumiseen ja HTTP-otsikkoihin liittyviin tarkistuksiin. Voit myös käyttää `curl` -komennon yhdessä muiden komentojen kanssa, kuten `grep` ja `sed`, jotta voit suodattaa ja muokata lataamasi verkkosivun sisältöä.
 
-Lisäksi voit käyttää `cron`-työkalua ajastamaan sivujen lataamista haluamallasi tavalla. Esimerkiksi voit luoda Bash-skriptin, joka lataa päivittäin sivun ja tallentaa sen tiedostoon käyttäen `cron`ia.
+Jos haluat oppia lisää `curl` -komenton toiminnoista, voit tarkastella sen manuaalisivua komennolla `man curl` tai tutustua verkossa löytyviin opetusohjelmiin.
 
 ## Katso myös
 
-- [Bash-opas (suomeksi)](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [`curl` dokumentaatio](https://curl.haxx.se/docs/)
-- [`wget` dokumentaatio](https://www.gnu.org/software/wget/manual/wget.html)
+- [CURL Manpage](https://curl.haxx.se/docs/manpage.html)
+- [Bashin opetusohjelmat](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

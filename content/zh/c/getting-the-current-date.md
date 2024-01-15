@@ -1,5 +1,6 @@
 ---
-title:                "C: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "C: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "C"
 category:             "C"
@@ -9,57 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+## 为什么
 
-计算机编程是一个充满创造性的过程，在现代社会中有着广泛的应用。作为一种主流编程语言，C语言广泛运用于系统开发、网络编程和嵌入式设备中。获取当前日期是一个常见的需求，它可以帮助我们记录和跟踪系统运行的日期，也可以用来实现各种不同的功能。在本文中，我将介绍如何在C语言中获取当前日期，并深入解析其实现原理。
+当我们写程序时，经常需要使用当前的日期作为标记，记录数据或作为条件来执行特定的代码。因此，了解如何获取当前日期在编程中是非常重要的。
 
-##如何做到
+## 如何去做
 
-以下示例代码将演示如何在C语言中使用time.h头文件中的函数来获取当前日期。
+要获取当前日期，我们可以使用C语言的`time.h`头文件中的`time()`函数。让我们来看一个简单的例子：
 
 ```C
-include <stdio.h>
-include <time.h>
+#include <stdio.h>
+#include <time.h>
 
 int main() {
-    // 调用time函数，获取当前时间的秒数
-    time_t now = time(NULL);
-    // 将秒数转换为日期结构体
-    struct tm *current_time = localtime(&now);
-    // 使用结构体中的成员变量，分别获取年、月、日
-    int year = current_time->tm_year + 1900;
-    int month = current_time->tm_mon + 1;
-    int day = current_time->tm_mday;
-    // 打印输出当前日期
-    printf("当前日期是：%d年%d月%d日\n", year, month, day);
-    return 0;
+  time_t now = time(NULL);
+  printf("当前日期为：%s\n", ctime(&now));
+  return 0;
 }
 ```
 
-该代码的输出如下所示：
+输出：
 
 ```
-当前日期是：2020年8月12日
+当前日期为：Fri Sep 24 20:28:36 2021
 ```
 
-可以看到，我们成功获取到了当前的日期，并打印输出了相应的信息。下面我们来深入了解一下这段代码的实现原理。
+在这个例子中，我们首先引入`stdio.h`和`time.h`头文件，然后使用`time()`函数获取当前日期并存储在`now`变量中。接着，我们使用`ctime()`函数将`now`变量转换为字符串格式并打印出来。就是这么简单！
 
-##深入解析
+除了`ctime()`函数外，我们还可以使用`localtime()`和`strftime()`函数来获取和格式化当前日期。让我们看看下面这个例子：
 
-在C语言中，获取当前日期的功能是由time.h头文件中的函数来实现的。主要使用的函数有time和localtime。time函数是标准库函数，它会返回当前时间的秒数。而localtime函数则会将这个秒数转换为一个日期结构体，结构体中包含了年、月、日等信息。需要注意的是，结构体中的年变量是从1900年开始计算，月份是从0开始计算，因此需要进行对应的调整。最后，我们使用printf函数将获取到的日期信息打印输出。
+```C
+#include <stdio.h>
+#include <time.h>
 
-除了time和localtime函数外，time.h头文件中还有其他一些函数可以帮助我们获取更详细的日期信息，比如获取小时、分钟、秒等。感兴趣的读者可以自行探索。
+int main() {
+  time_t now = time(NULL);
+  struct tm *time_info = localtime(&now);
+  char time_string[50];
+  strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", time_info);
+  printf("当前日期为：%s\n", time_string);
+  return 0;
+}
+```
 
-##参考阅读
+输出：
 
-如果你想进一步了解关于日期和时间的函数，可以参考以下链接：
+```
+当前日期为：2021-09-24 20:42:55
+```
 
-- [C语言中日期和时间的函数](https://www.runoob.com/cprogramming/c-date-time.html)
-- [关于time.h头文件的详细解释](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/time.htm)
-- [深入了解C语言的时间和日期处理](https://github.com/iamslash/C/blob/master/B%c3%a1sic/Time/README.md)
+在这个例子中，我们通过`localtime()`函数将当前日期存储在`time_info`结构体中，然后使用`strftime()`函数按照指定的格式，将日期转换为字符串并存储在`time_string`变量中，最后打印出来。
 
-##请参见
+## 深入了解
 
-- [Markdown语法指南](https://markdown.cn/)
-- [C语言基础教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [学习C语言的好处](https://zhuanlan.zhihu.com/p/38662595)
+在C语言中，当前日期是通过从1970年1月1日起经过的秒数来表示的，这个日期称为“Unix时间戳”。因此，当我们使用`time()`函数获取当前日期时，实际上是获取的当前时刻与1970年1月1日0时0分0秒的时间差。
+
+另外，需要注意的是，`ctime()`、`localtime()`和`gmtime()`等函数都有一个局限性，它们在处理日期时只能精确到秒，无法获取更细粒度的时间信息。如果我们需要毫秒级别的时间戳，可以使用`gettimeofday()`函数来替代。
+
+## 参考资料
+
+- [《C语言程序设计》（第4版）](https://book.douban.com/subject/1244636/)
+- [《C语言程序设计专题讲解》](https://book.douban.com/subject/3808197/)
+- [C语言教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1252599548343744/1255882234450080)

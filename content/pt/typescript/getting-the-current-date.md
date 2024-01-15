@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Obtendo a data atual"
+title:                "Obtendo a data atual"
+html_title:           "TypeScript: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,43 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+## Por que
 
-Alguns projetos de programação exigem que a data atual seja obtida. Isso pode ser útil para acompanhar o tempo entre transações, rastreamento de dados históricos e muito mais. Felizmente, com TypeScript, obter a data atual é simples e direto!
+Não importa qual é o seu projeto, em algum momento você precisará trabalhar com datas. Seja para realizar uma ação programada ou para exibi-la em formato legível para o usuário, obter a data atual é uma tarefa frequente na programação. Felizmente, o TypeScript oferece uma maneira fácil e eficiente de fazer isso.
 
-## Como fazer
+## Como Fazer
 
-Para obter a data atual em TypeScript, podemos usar a classe `Date`. Esta classe fornece métodos para recuperar a data atual, bem como para manipular datas e horários.
+Para obter a data atual em TypeScript, basta utilizar a classe Date, que é nativa da linguagem. Veja um exemplo de código:
 
 ```TypeScript
-// Criando uma nova instância da classe Date
-const dataAtual = new Date();
+const date = new Date(); // cria uma instância da classe Date para a data atual 
+console.log(date); // exibe a data no formato padrão YYYY-MM-DDTHH:mm:ss.sssZ
 
-// Obtendo a data atual em formato de string
-const data = dataAtual.toDateString();
-console.log(data); //Output: Sat Aug 14 2021
-
-// Obtendo o dia atual
-const dia = dataAtual.getDay();
-console.log(dia); //Output: 6 (representando sábado)
-
-// Obtendo o mês atual
-const mes = dataAtual.getMonth();
-console.log(mes); //Output: 7 (representando agosto)
-
-// Obtendo o ano atual
-const ano = dataAtual.getFullYear();
-console.log(ano); //Output: 2021
+// Saída: 2021-09-08T14:24:37.594Z
 ```
-Podemos ver que, ao chamar os métodos correspondentes, podemos obter facilmente diferentes informações sobre a data atual.
 
-## Mais detalhes
+Você também pode formatar a data de acordo com as suas necessidades, utilizando os métodos disponíveis na classe Date. Por exemplo, para exibir a data no formato "DD/MM/YYYY", você pode utilizar os métodos getDate(), getMonth() e getFullYear():
 
-Além dos métodos mencionados acima, a classe `Date` em TypeScript oferece várias outras opções para obter informações sobre a data atual e para manipular datas e horários de forma mais avançada. Por exemplo, podemos verificar se um ano é bissexto ou obter um horário específico em um dia específico.
+```TypeScript
+const date = new Date();
+const day = date.getDate(); // obtém o dia atual
+const month = date.getMonth() + 1; // o retorno do getMonth() inicia em 0, por isso é necessário adicionar 1
+const year = date.getFullYear(); // obtém o ano atual
 
-É importante lembrar que a classe `Date` trabalha com o horário local, portanto, os resultados podem variar dependendo do fuso horário definido no sistema operacional.
+console.log(`${day}/${month}/${year}`); // exibe a data no formato desejado
 
-## Veja também
+// Saída: 08/09/2021
+```
 
-- Documentação oficial do TypeScript para a classe `Date`: https://www.typescriptlang.org/docs/handbook/utility-types.html#date
-- Tutorial de data e hora em TypeScript: https://www.tutorialspoint.com/typescript/typescript_date.htm
+Também é possível adicionar ou subtrair dias, meses e anos a partir da data atual, utilizando os métodos setDate(), setMonth() e setFullYear(). Veja um exemplo:
+
+```TypeScript
+const date = new Date();
+date.setFullYear(date.getFullYear() + 1); // adiciona 1 ano à data atual 
+console.log(date); // exibe a data com o novo ano adicionado
+
+// Saída: 2022-09-08T14:24:37.594Z
+```
+
+## Deep Dive
+
+A classe Date do TypeScript é baseada na classe Date do JavaScript. Diferente de outras linguagens de programação, como o Java, que possuem classes específicas para trabalhar com datas, o TypeScript utiliza a classe Date nativa do JavaScript. Isso significa que muitos dos métodos e propriedades disponíveis na classe Date do JavaScript também estão disponíveis no TypeScript.
+
+Uma das propriedades mais úteis da classe Date é o getTime(), que retorna o número de milissegundos desde 1º de janeiro de 1970. Com isso, é possível comparar datas e calcular a diferença entre elas. Veja um exemplo:
+
+```TypeScript
+const date1 = new Date("2021-09-09");
+const date2 = new Date("2021-09-08");
+
+const difference = date1.getTime() - date2.getTime(); // calcula a diferença em milissegundos entre as duas datas
+console.log(difference); 
+
+// Saída: 86400000 (diferença de 1 dia em milissegundos)
+```
+
+Outro método útil é o toLocaleString(), que permite exibir a data em formato localizado, de acordo com a linguagem do dispositivo em que o código está sendo executado. Por exemplo:
+
+```TypeScript
+const date = new Date();
+console.log(date.toLocaleString("pt-BR")); // exibe a data no formato padrão brasileiro
+
+// Saída: 08/09/2021 11:24:37
+```
+## Veja Também
+
+Para saber mais sobre a classe Date do TypeScript, você pode consultar a documentação oficial da linguagem e também aprender sobre outras formas de trabalhar com datas em TypeScript. Aqui estão alguns recursos úteis:
+
+- Documentação Oficial do TypeScript: https://www.typescriptlang.org/docs/handbook/classes.html#classes
+- Manipulando datas com Moment.js em TypeScript: https://blog.logrocket.com/dates-typescript-know-to-solve-problems-native-js/
+- Diferenças entre Date do JavaScript e do TypeScript: https://stackoverflow.com/questions/51721844/how-is-the-typescript-date-class-different-from-javascripts#51721996

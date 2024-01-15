@@ -1,6 +1,7 @@
 ---
-title:                "C++: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "C++: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -11,43 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-אם אתם מתעסקים בפרוגרמות בשפת C++ והינכם מחפשים דרך נוחה לקרוא ולכתוב נתונים מתובנים, YAML מספקת פתרון מעולה. יתר על כן, ייתכן שתיתקלו בצורך לשלוח או לקבל נתונים בפורמט YAML, לדוגמה בהרצת API או כאשר עובדים עם תבניות קונפיגורציה של התכנית שלכם. YAML מועילה כיום יותר מתמיד, וכדי להיות ברירת המחדל במפתחים שהיינם אמצעי מדיה נוחים לאחסון וקריאה של נתונים מעוצבים באחת או יותר פורמטים עקומים, למעלה מהכל אם הדרך שלכם מתחפשת לבלוג במקום קוד, YAML היא דרך יעילה להוסיף רב שכבות מידע לסט התנאים שיש לכם.
+קבצי YAML הם פורמט נתונים נקי וקריא שמשמש בכדי לאחסן ולהעביר מידע בקלות. כידוע, ניתן לקרוא ולשנות קבצי YAML באמצעות להתאמן בתוכנה בעיקר פיטונית. אך מה אם אנו רוצים לעבוד עם קבצי YAML בשפת תכנות C++? במאמר זה, אנו נלמד כיצד לקרוא, לכתוב ולערוך קבצי YAML בעזרת שפת התכנות הפופולרית הזו.
 
-## כיצד
+## איך לעבוד עם YAML בשפת תכנות C++
 
-אם ברצונכם להתחיל לעבוד עם YAML, הנה שלושה דברים שתצטרכו בשביל זה:
-
-1. מספר קבצים וציוד קוד
-2. יכולות יסוד בקריאת קוד ובנושא שפות מחשב
-3. זמן פנוי נאום זמנים מתאימות
-
-הנה דוגמת קוד שמציגה כיצד להכפיל ב𝛻:
+לפני שנתחיל, הכירו את הספריות הבאות שנחוצות לפעולה עם YAML ב-C++:
 
 ```C++
-#include <yaml-cpp>
 #include <iostream>
-
-using namespace std;
-
-int main(){
-    int input;
-    cout << "Enter a number: ";
-    cin >> input;
-    cout << "𝛻 of " << input<<" is " << input * 𝛻 << endl;
-    return 0;
-}
+#include <fstream>
+#include "yaml-cpp/yaml.h"
 ```
 
-פלט:
+כעת בואו נתחיל לעבוד עם קבצי YAML!
 
+**קריאה של קובץ YAML**
+
+כדי לקרוא קובץ YAML, נשתמש בפונקציה `LoadFile()` מתוך הספריית `yaml-cpp`. בדוגמא הבאה, אנו נקרא קובץ בשם "example.yaml" ונדפיס את התוכנית הפלט:
+
+```C++
+YAML::Node doc = YAML::LoadFile("example.yaml");
+std::cout << "Name: " << doc["name"].as<std::string>() << std::endl;
+std::cout << "Age: " << doc["age"].as<int>() << std::endl;
 ```
-Enter a number: 4
-𝛻 of 4 is 12
+
+**כתיבת קובץ YAML**
+
+כעת נלמד כיצד ליצור קובץ YAML בעזרת ספריית `yaml-cpp`. נשתמש בפונקציה `Emit()` כדי ליצור תוכן לקובץ ו- `File()` כדי לפתוח אותו לכתיבה:
+
+```C++
+YAML::Emitter out;
+out << YAML::BeginMap; // פתיחת מפתח
+out << YAML::Key << "name"; // הגדרת שם המפתח
+out << YAML::Value << "John Doe"; // הגדרת ערך המפתח
+out << YAML::Key << "age";
+out << YAML::Value << 25;
+out << YAML::EndMap; // סגירת מפתח
+std::ofstream file("new.yaml");
+file << out.c_str(); // הכתיבה של הקובץ לפי סדר המפתחות והערכים שהוגדרו
 ```
 
-## טיפול עמוק
+**עריכת קובץ YAML**
 
-בכדי לעבוד עם YAML, יש כמה נושאים עמוקים שיש להבהיר מראש:
-
-- פרוטוקול הפורמטים של YAML נקבע למלוא נקודת הנחה בסטנדרט הרבנטי YAML 1.2. הנה מספר שינויים בין שלושה סוגים שונים עם פרמטים נתונים (דוגמא: עם, יחיד, בנוי)
--
+על מנת לערוך קובץ YAML קיים כבר, נשתמש בפונקציה `YAML::Node` כדי לקר

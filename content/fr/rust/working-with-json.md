@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Travailler avec json"
+title:                "Travailler avec json"
+html_title:           "Rust: Travailler avec json"
 simple_title:         "Travailler avec json"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,98 +12,132 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-JSON est un format de données populaire en informatique, utilisé pour échanger des informations entre différents systèmes. Il est donc important pour tout programmeur de savoir comment travailler avec JSON, en utilisant un langage de programmation moderne comme Rust.
+Vous vous demandez peut-être pourquoi travailler avec JSON en Rust ? Eh bien, il s'agit d'un format de données universellement pris en charge, ce qui en fait un choix populaire pour les échanges de données entre différentes applications et systèmes. En utilisant Rust, vous bénéficierez également de sa sécurité et de sa performance, ce qui rend le traitement de fichiers JSON plus rapide et moins sujet aux erreurs.
 
-## Comment faire
+## Comment Faire
 
-Pour travailler avec JSON en Rust, vous aurez besoin d'importer la bibliothèque `serde_json`. Voici un exemple de code pour sérialiser un objet JSON et l'imprimer en tant que chaîne de caractères:
+Pour commencer à travailler avec JSON en Rust, vous avez besoin d'un crate (package) appelé `serde_json`. Vous pouvez l'ajouter à votre projet en ajoutant la dépendance suivante dans votre `Cargo.toml` :
 
-```
-Rust
-use serde_json::{Result, Value};
-
-fn main() -> Result<()> {
-    // Création d'un objet JSON
-    let data = r#"{
-        "nom": "Marie",
-        "âge": 30,
-        "études": ["Informatique", "Mathématiques"],
-        "mariée": false
-    }"#;
-
-    // Sérialisation de l'objet en chaîne de caractères
-    let v: Value = serde_json::from_str(data)?;
-
-    // Impression de la chaîne de caractères
-    println!("{}", serde_json::to_string_pretty(&v)?);
-
-    Ok(())
-}
+```rust
+[dependencies]
+serde_json = "0.11.2"
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez l'objet JSON imprimé en tant que chaîne de caractères avec un formatage facile à lire:
+Ensuite, vous pouvez importer le crate dans votre code :
 
-```
-{
-    "nom": "Marie",
-    "âge": 30,
-    "études": [
-        "Informatique",
-        "Mathématiques"
-    ],
-    "mariée": false
-}
+```rust
+extern crate serde_json;
+use serde_json::json;
 ```
 
-Mais comment pouvons-nous travailler avec des données JSON plus complexes, comme des tableaux d'objets? Voici un exemple pour vous montrer comment accéder à ces données en utilisant des méthodes de l'objet `Value`:
+Maintenant, vous êtes prêt à travailler avec JSON ! Voici un exemple simple de création d'un objet JSON et de l'écriture dans un fichier :
 
-```
-Rust
-use serde_json::{from_str, Value};
+```rust
+use std::fs::File;
+use std::io::prelude::*;
 
 fn main() {
-    // Une chaîne de caractères JSON avec un tableau d'objets
-    let data = r#"
-        [
-            {
-                "nom": "Paul",
-                "âge": 25
-            },
-            {
-                "nom": "Marie",
-                "âge": 30
-            },
-            {
-                "nom": "Luc",
-                "âge": 35
-            }
-        ]
-    "#;
+    let name = "John";
+    let age = 30;
+    let hobbies = vec!["reading", "cooking", "hiking"];
 
-    // Utilisation de la méthode `from_str` pour sérialiser les données en `Value`
-    let v: Value = from_str(data).unwrap();
+    let person = json!({
+        "name": name,
+        "age": age,
+        "hobbies": hobbies,
+    });
 
-    // Accès aux données en utilisant des index
-    println!("Le nom du premier élément est: {}", v[0]["nom"]);
-    println!("L'âge du troisième élément est: {}", v[2]["âge"]);
+    let mut file = File::create("person.json").expect("Unable to create file");
+    file.write_all(person.to_string().as_bytes())
+        .expect("Unable to write data to file");
 }
 ```
 
-Lorsque vous exécutez ce code, vous verrez que nous pouvons facilement accéder aux données JSON en utilisant des index comme si nous travaillions avec un tableau.
+Le résultat sera un fichier `person.json` contenant :
 
-## Deep Dive
+```json
+{
+    "name": "John",
+    "age": 30,
+    "hobbies": [
+        "reading",
+        "cooking",
+        "hiking"
+    ]
+}
+```
 
-Maintenant que vous avez une idée de base de la façon de travailler avec JSON en Rust, vous pouvez approfondir encore plus en apprenant sur `serde`, la bibliothèque sous-jacente utilisée par `serde_json`. `serde` est une bibliothèque puissante pour la sérialisation et la désérialisation de données, et elle est utilisée dans de nombreux projets Rust.
+Vous pouvez également utiliser `serde_json` pour lire des fichiers JSON et les convertir en structures de données en Rust. Voici un exemple de lecture du fichier `person.json` créé précédemment :
 
-De plus, vous pouvez également expérimenter avec les différentes méthodes et outils offerts par la bibliothèque `serde_json` pour une utilisation plus avancée, comme la validation de données JSON et la manipulation avancée de données.
+```rust
+let file = File::open("person.json").expect("Unable to open file");
+let person: Person = serde_json::from_reader(file).expect("Unable to parse data from file");
 
-## Voir aussi
+println!("Name: {}", person.name);
+println!("Age: {}", person.age);
+println!("Hobbies: {:?}", person.hobbies);
+```
 
-Pour en savoir plus sur la manipulation de données JSON en Rust, voici quelques liens utiles:
+## Plongée en Profondeur
 
-- [Documentation de `serde_json`](https://docs.serde.rs/serde_json/) - la documentation officielle de la bibliothèque `serde_json`.
-- [Guide JSON avec `serde`](https://github.com/serde-rs/json/blob/master/README.md) - un guide complet de utilisation de `serde` pour travailler avec JSON en Rust.
-- [Projet GitHub de `serde`](https://github.com/serde-rs/serde) - le code source et la documentation officiels de la bibliothèque `serde`.
-- [Projet GitHub de `serde_json`](https://github.com/serde-rs/json) - le code source et la documentation officiels de la bibliothèque `serde_json`.
+`serde_json` offre également une grande flexibilité dans la manipulation de données JSON. Par exemple, vous pouvez utiliser des traits pour définir comment les champs d'une structure doivent être sérialisés ou désérialisés :
 
-Maintenant que vous avez les bases pour travailler avec JSON en Rust, vous pouvez commencer à créer des applications puissantes et fiables
+```rust
+use serde_json::{Deserializer, ser::Serializer, value::RawValue};
+
+struct Post {
+    title: String,
+    body: String,
+    date: String,
+}
+
+impl Serialize for Post {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let mut state = serializer.serialize_struct("Post", 3)?;
+        state.serialize_field("title", self.title)?;
+        state.serialize_field("body", self.body)?;
+        state.serialize_field("date", self.date)?;
+        state.end()
+    }
+}
+
+impl<'de> Deserialize<'de> for Post {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        #[derive(Deserialize)]
+        #[serde(field_identifier, rename_all = "lowercase")]
+        enum Field { Title, Body, Date }
+
+        struct PostVisitor;
+
+        impl<'de> Visitor<'de> for PostVisitor {
+            type Value = Post;
+
+            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                formatter.write_str("struct Post")
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<Self::Value, V::Error>
+            where
+                V: seq::SeqAccess<'de>,
+            {
+                Ok(Post {
+                    title: seq.next_element()?
+                        .ok_or_else(|| de::Error::invalid_length(0, &self))?,
+                    body: seq.next_element()?
+                        .ok_or_else(|| de::Error::invalid_length(1, &self))?,
+                    date: seq.next_element()?
+                        .ok_or_else(|| de::Error::invalid_length(2, &self))?,
+                })
+            }
+
+            fn visit_map<V>(self, mut map: V) -> Result<Self::Value, V::Error>
+            where
+                V: MapAccess<'de>,
+            {
+                let mut

@@ -1,5 +1,6 @@
 ---
-title:                "Java: Capitalizando una cadena"
+title:                "Capitalizando una cadena"
+html_title:           "Java: Capitalizando una cadena"
 simple_title:         "Capitalizando una cadena"
 programming_language: "Java"
 category:             "Java"
@@ -9,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué capitalizar una cadena
+## ¿Por qué?
 
-En la programación Java, a menudo nos encontramos con la necesidad de capitalizar una cadena de texto para que la primera letra de cada palabra esté en mayúscula. Esto es especialmente útil cuando se trabaja con entradas de usuarios que pueden estar en minúsculas o cuando se desea seguir una convención de nomenclatura específica.
+Si eres un programador Java, probablemente te has encontrado con la tarea de capitalizar una cadena de texto. La razón más común para hacer esto es formatear una cadena de nombres o títulos en un formato más legible.
 
-## Cómo hacerlo
+## ¿Cómo?
 
-Para capitalizar una cadena en Java, se puede utilizar el método `toUpperCase()` de la clase `String`. Este método convierte todas las letras de una cadena en mayúsculas. Sin embargo, para capitalizar solo la primera letra de cada palabra, podemos usar el siguiente código:
+Para capitalizar una cadena de texto en Java, podemos utilizar el método `toUpperCase()` o `toTitleCase()` de la clase `String`. Ambos métodos convierten la primera letra de cada palabra en mayúscula.
 
 ```Java
-String input = "hola mundo";
-StringBuilder output = new StringBuilder();
+String cadena = "hola, soy un programador Java";
+System.out.println(cadena.toUpperCase()); // Salida: HOLA, SOY UN PROGRAMADOR JAVA
 
-// Divide la cadena en palabras
-String[] words = input.split(" ");
-for (String word : words) {
-    // Convierte la primera letra en mayúscula y concatena con el resto de la palabra en minúscula
-    String capitalizedWord = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
-    // Agrega la palabra capitalizada al string de salida
-    output.append(capitalizedWord).append(" ");
-}
-
-// Imprime el resultado final
-System.out.println(output); // Salida: Hola Mundo
+System.out.println(cadena.toTitleCase()); // Salida: Hola, Soy Un Programador Java
 ```
 
-Este código divide la cadena en palabras utilizando el espacio como separador, y luego itera sobre cada palabra para capitalizar la primera letra y convertir el resto en minúsculas. Finalmente, se imprime el resultado en la consola.
+Otra alternativa es utilizar la clase `Character` y su método `toUpperCase()` para convertir únicamente la primera letra de la cadena a mayúscula.
+
+```Java
+String cadena = "hola, soy un programador Java";
+String primeraLetra = Character.toUpperCase(cadena.charAt(0)) + cadena.substring(1);
+System.out.println(primeraLetra); // Salida: Hola, soy un programador Java
+```
 
 ## Profundizando
 
-En el código anterior, utilizamos el método `split()` de la clase `String` para dividir la cadena en palabras. Este método también acepta un patrón regular como argumento, lo que lo hace más flexible para casos en los que los separadores pueden variar. Por ejemplo, si las palabras estuvieran separadas por espacios, comas y guiones, podríamos usarlo de la siguiente manera:
+Es importante tener en cuenta que estos métodos solo convierten la primera letra de cada palabra, por lo que si tenemos nombres o títulos con apóstrofes, estos no serán capitalizados. Además, si la cadena ya contiene letras en mayúscula, estas no serán afectadas por los métodos mencionados anteriormente.
+
+Para resolver estos problemas, podemos utilizar la clase `WordUtils` de la biblioteca Apache Commons Lang, que tiene el método `capitalizeFully()` que capitaliza todas las palabras de una cadena, incluyendo aquellas con apóstrofes y deja intactas las letras que ya están en mayúscula.
 
 ```Java
-String input = "hola, java-mundo";
-String[] words = input.split("[ ,\\-]");
+String cadena = "McDonald's es una cadena de restaurantes";
+System.out.println(WordUtils.capitalizeFully(cadena); // Salida: McDonald's Es Una Cadena De Restaurantes
 ```
-
-Además, podemos agregar una validación para manejar casos en los que la cadena esté vacía o no contenga ninguna palabra.
 
 ## Ver también
 
-- [Java String class API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Regular Expressions in Java](https://www.baeldung.com/java-regexp)
-- [Validación de entradas de usuarios en Java](https://www.geeksforgeeks.org/how-to-validate-an-input-using-javafx/)
+- [Método `toUpperCase()` de la clase `String` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Método `toTitleCase()` de la clase `String` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toTitleCase-int-) 
+- [Método `toUpperCase()` de la clase `Character` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toUpperCase-char-) 
+- [Clase `WordUtils` de Apache Commons Lang](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html)

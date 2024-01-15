@@ -1,6 +1,7 @@
 ---
-title:                "Python: 用基本身份验证发送http请求"
-simple_title:         "用基本身份验证发送http请求"
+title:                "发送HTTP请求与基本身份验证"
+html_title:           "Python: 发送HTTP请求与基本身份验证"
+simple_title:         "发送HTTP请求与基本身份验证"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -9,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为什么有人会使用基本身份验证发送HTTP请求。
+## 为什么
 
-## Why (为什么)
+发送HTTP请求是Web开发中最基本的步骤之一。使用基本认证可以对请求进行安全保护，确保只有授权的用户可以访问相关的数据或资源。
 
-通常，在发送HTTP请求时，服务器会要求用户提供身份验证信息以验证其身份。通过使用基本身份验证，用户可以以编程方式将其凭据发送给服务器，从而允许他们访问需要身份验证的资源。
-
-## How To (如何做)
-
-下面是使用基本身份验证发送HTTP请求的示例：
+## 如何
 
 ```Python
 import requests
 
-# 设置凭证
-username = "用户名"
-password = "密码"
+url = "https://example.com/api"
+username = "user123"
+password = "password123"
 
-# 构建认证头部
-auth_header = requests.auth.HTTPBasicAuth(username, password)
+# 创建Basic Auth认证对象
+auth = requests.auth.HTTPBasicAuth(username, password)
 
-# 发送GET请求到URL
-response = requests.get("http://example.com/protected-resource", auth=auth_header)
+# 发送HTTP请求并传入auth参数
+response = requests.get(url, auth=auth)
 
-# 打印响应
+# 打印响应内容
 print(response.text)
+
+# 输出：请求成功返回数据
 ```
 
-输出：
+## 深入讨论
 
-```
-这里是受保护的资源的内容。
-```
+发送HTTP请求时，通过添加特定的header或参数可以实现不同类型的认证。基本认证是最简单也是最常用的一种认证方式。它需要在每次请求时，在HTTP头部中添加一个包含用户名和密码的Authorization字段，用于对服务器进行身份验证。同时，建议在使用基本认证时，通过HTTPS协议进行数据传输，以保证安全性。
 
-## Deep Dive (深入探讨)
+## 参考链接
 
-在上面的示例中，我们使用了Python的requests库来发送带有基本身份验证的HTTP请求。requests库提供了一个方便的方法来构建认证头部，只需提供用户名和密码即可。此外，我们还可以使用requests库发送其他类型的HTTP请求，如POST或DELETE。
-
-基本身份验证使用Base64编码来发送凭据，因此它不是最安全的身份验证方法。建议在需要更高级别的安全性时，使用其他类型的身份验证，如OAuth或JWT。
-
-## See Also (参考资料)
-
-- [Python requests文档](https://docs.python-requests.org/en/latest/)
-- [了解基本身份验证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
-- [使用requests库发送HTTP请求的其他方法](https://realpython.com/python-requests/#more-complicated-post-requests)
+- [Python requests库官方文档](https://2.python-requests.org//zh_CN/latest/user/authentication.html)
+- [Web开发常用的请求认证方式介绍](https://www.cnblogs.com/cff210167/p/5618659.html)
+- [使用Python发送基本认证请求的示例代码](https://www.geeksforgeeks.org/basic-authentication-in-python/)

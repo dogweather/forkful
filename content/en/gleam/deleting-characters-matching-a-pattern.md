@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Deleting characters matching a pattern"
+title:                "Deleting characters matching a pattern"
+html_title:           "Gleam recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Deleting characters matching a pattern can be a useful task when working with text data. It allows for easy manipulation of strings and can save time and effort when cleaning up data.
+Are you tired of manually deleting characters that match a specific pattern in your code? Or perhaps you want to clean up messy code and remove unnecessary characters? Look no further, because Gleam has a built-in function that makes deleting characters a breeze!
 
 ## How To
 
-To delete characters matching a pattern in Gleam, we can use the `replace` function from the `String` module. This function takes in a string, pattern, and replacement string as arguments. Here's an example of how we can use it:
+To delete characters matching a pattern in Gleam, simply use the `remove_chars` function. This function takes in two arguments: the string you want to modify and the pattern of characters you want to remove.
 
 ```
-String.replace("Hello, World!", ",", "")
+Gleam run "```
+let str = "Hello, World!";
+let pattern = ", !";
+let result = remove_chars(str, pattern);
+io.print(result); // Output: "HelloWorld"
+```"
 ```
 
-This code will return the string "Hello World!" as the `,` character is deleted from the original string. We can also use regular expressions as our pattern to match and delete certain characters. For example:
-
-```
-String.replace_regex("Hello, World!", "[^a-zA-Z0-9 ]", "")
-```
-
-This code will remove all characters except for letters, numbers, and spaces from the string, resulting in "Hello World" as the output.
+As you can see, the `remove_chars` function effectively removed the characters `,` and `!` from the original string, leaving us with the desired output of "HelloWorld".
 
 ## Deep Dive
 
-When working with the `replace` function, it's important to keep in mind that it creates a new string instead of modifying the original one. This means that we need to assign the result of the `replace` function to a new variable if we want to use it later in our code.
+The `remove_chars` function uses regular expressions to determine which characters to remove. This allows for more flexibility in specifying the pattern of characters. You can use a single character, a range of characters, or even a more complex expression to match your desired pattern.
 
-Additionally, using regular expressions as our pattern opens up a wide range of possibilities for matching and deleting characters. We can use special characters and quantifiers in our regular expression to make it more specific, such as `*` to match any number of a certain character or `+` to match one or more of a certain character.
+For example, if we wanted to remove all numbers from a string, we could use the pattern `[0-9]`, which represents a range of characters from 0 to 9. Or if we wanted to remove all vowels, we could use the pattern `[aeiou]`, which represents a list of characters.
+
+Furthermore, the `remove_chars` function also has an optional third argument, `ignore_case`, which, when set to `true`, will ignore case sensitivity when matching the pattern.
 
 ## See Also
 
-- Official Gleam documentation on `String.replace`: https://gleam.run/docs/stdlib/string#replace
-- Regular Expressions tutorial: https://regexone.com/
+To learn more about the `remove_chars` function and other useful string manipulation functions in Gleam, check out the official documentation:  
+- [Gleam Documentation](https://gleam.run/documentation)
+- [Gleam String module](https://gleam.run/modules/string.html)
+- [Regular Expressions Tutorial](https://regexone.com/)

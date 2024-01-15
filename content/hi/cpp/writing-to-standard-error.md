@@ -1,6 +1,7 @@
 ---
-title:                "C++: मानक त्रुटि पर लिखना"
-simple_title:         "मानक त्रुटि पर लिखना"
+title:                "``प्रोग्रामिंग में नमूने  पर लिखना``"
+html_title:           "C++: ``प्रोग्रामिंग में नमूने  पर लिखना``"
+simple_title:         "``प्रोग्रामिंग में नमूने  पर लिखना``"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -9,27 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-आपने सैकड़ों बार C++ प्रोग्रामिंग की है. आपने हर बार अपने कोड में कोई न कोई गड़बड़ी को सुधारने के लिए दोबारा कॉम्पाइल करना पड़ा होगा. ऐसे में, यह सुधारों के समय को कम कर सकता है अगर आप अपने कोड में किसी भी तरह की गड़बड़ी को सुधारने के लिए सी++ प्रोग्राम लिखते समय अलग-अलग भंडारण ढंग का उपयोग करते हैं.
+Aksar hum programming mein kaam karte huye errors aur bugs se rubaru hote hain. Lekin kya aapko pata hai ki hum kisi bhi error ya warning ko catch kar sakte hain aur usse behtar code likh sakte hain? Isliye, standard error mein likhna humare liye kaafi faydemand ho sakta hai.
 
-## कैसे करें
+## Kaise
+
+Humein apne code mein "cerr" function ka use karna hota hai taki hum kisi bhi error ya warning ko standard error output stream mein likh sakein. Neeche diye gaye C++ code block mein ek example diya gaya hai:
 
 ```C++
 #include <iostream>
-#include <cstdio>
 
-int main() {
-    // कॉम्पाइल को बंद करने के साथ गड़बड़ी को सुधारने के लिए "cerr" का प्रयोग करें
-    cerr << "कुछ गड़बड़ी हुई है!" << endl;
-    return 0;
+using namespace std;
+
+int main()
+{
+  int num1 = 10, num2 = 0;
+  float result;
+
+  // Divide by zero error
+  if(num2 == 0)
+  {
+    cerr << "Error: Cannot divide by zero!" << endl;
+    return 1;
+  }
+
+  // Calculate result and output
+  result = num1 / num2;
+  cout << "Result: " << result << endl;
+
+  return 0;
 }
 ```
 
-आप ऊपर दिए गए कोड ब्लॉक में देख सकते हैं, हमने `cerr` का उपयोग करके प्रिंट किया है "कुछ गड़बड़ी हुई है!". अब जब आप कोई गड़बड़ी करेंगे, तो आपका कोड प्रिंट करेगा `cerr` के माध्यम से होगा और `cout` के माध्यम से नहीं. यह आपको अपने कोड में किसी भी गड़बड़ी को सुधारने के लिए अधिक असरदार तरीका है.
+Output:
 
-## गहराई में जाएं
+Error: Cannot divide by zero!
 
-यह `cerr` और `cout` दोनों भंडारण उपकरण हैं, हालांकि दोनों का उपयोग अलग-अलग है. जबकि `cout` साधारणतः स्क्रीन पर देखे जाने वाले प्रकाश पूर्ववर्ती परिणाम दिखाता है, जहां `cerr` अप्रिंटिंग नहीं होता.
+Is code mein humne "cerr" function ka use kiya hai takki error message standard error output stream mein aaye aur humein pata chal sake ki code kahan par error de raha hai. Is tarah se hum apne code ko troubleshoot kar sakte hain aur behtar code likh sakte hain.
 
-यह गंभीर त्रुटि सुधार के लिए एक शक्तिशाली उपकरण है, विशेष रूप से जब आप प
+## Gehri Jhaank
+
+Standard error output stream, jiske liye "cerr" function ka use kiya jata hai, humare liye kaafi mahatvapurna hai. Iske through hum apne errors ko handle kar sakte hain aur apne code ko debug kar sakte hain. Iske alawa, hum standard error output stream ko redirect bhi kar sakte hain aur apne errors ko log file mein save kar sakte hain.
+
+Isliye, jab bhi hum code likhein, humein standard error output stream ka use karna chahiye taki humare code mein koi bhi error ho, hum use asani se troubleshoot kar sakein.
+
+## Dekhein Bhi
+
+- [C++ Language Tutorial - Standard Error](https://www.cplusplus.com/doc/tutorial/files/)
+- [Tutorialspoint - C++ Input/Output Streams](https://www.tutorialspoint.com/cplusplus/cpp_input_output.htm)
+- [Guru99 - C++ Error Handling](https://www.guru99.com/c-plus-plus-exception-handling.html)

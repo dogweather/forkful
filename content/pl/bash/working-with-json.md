@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "Bash: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -9,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego zostać programistą Bash?
+## Dlaczego
 
-Praca z JSON może być bardzo ciekawym wyzwaniem dla każdego programisty Bash. Oprogramowanie to jest szeroko stosowane w dzisiejszym świecie, szczególnie w kontekście przesyłu danych między aplikacjami internetowymi. Dzięki zdolności Bash do przetwarzania tekstu, praca z JSON jest prosta i skuteczna. Jest to również przydatne dla początkujących programistów, którzy chcą rozwijać swoje umiejętności w Bash.
+Praca z formatem JSON jest nieodłączną częścią wielu zadań programistycznych w Bashu. Wiedza na temat tego formatu jest niezbędna do skutecznego przetwarzania danych w różnych projektach.
 
-## Jak pracować z JSON w Bash?
+## Jak to zrobić
 
-Aby rozpocząć pracę z JSON w Bash, należy najpierw pobrać odpowiedni pakiet, tak jak w przykładzie poniżej:
-
-```Bash
-$ sudo apt-get install jq
-```
-
-Gdy już będziemy mieć jq, możemy zacząć przetwarzać dane JSON. Najprostszym sposobem na to jest użycie poleceń ```jq```. Na przykład, jeśli mamy plik JSON z danymi użytkowników, możemy wypisać na ekran ich imiona oraz adresy IP, używając następującej komendy:
+Podstawowym narzędziem w celu pracy z JSON w Bashu jest polecona komenda `jq`. Przykładowe użycie wygląda następująco:
 
 ```Bash
-$ cat users.json | jq '.users[] | .name, .ip_address'
-```
-
-Output będzie wyglądał mniej więcej tak:
+response='{"name": "John", "age": 26}'
+echo "$response" | jq '.name'
 
 ```
-"John"
-"192.168.0.1"
-"Maria"
-"192.168.0.2"
+
+Powyższy przykład zwróci wartość `"John"` dla klucza `"name"`. Inne przydatne funkcje `jq` to `select` i `map`, które pozwalają filtrować odpowiedzi w bardziej zaawansowany sposób. Przykładowe wykorzystanie:
+
+```Bash
+response='[{"name": "John", "age": 26}, {"name": "Mary", "age": 30}]'
+echo "$response" | jq 'map(select(.age >= 30))'
+
 ```
 
-## Zanurzenie się w pracę z JSON
+Wynikiem będzie tablica z jednym elementem o wartości `{ "name": "Mary", "age": 30 }`.
 
-Chociaż powyższy przykład jest prosty, można wykonywać bardziej zaawansowane operacje na danych JSON w Bash. Dzięki funkcjom takim jak ```jq```, można filtrować, łączyć i przetwarzać dane w różny sposób. Można również używać zmiennych w celu dynamicznego tworzenia zapytań do danych JSON. Istnieje wiele zasobów i tutoriali online, które mogą pomóc w opanowaniu tych umiejętności.
+## Deep Dive
 
-## Zobacz także
+Format JSON jest powszechnie stosowany do przechowywania i przesyłania danych w aplikacjach webowych i mobilnych. Jest to zapisywany w postaci tekstu, co czyni go łatwym do odczytania przez ludzi i łatwym do przetwarzania przez komputery.
 
-- [Oficjalna dokumentacja jq](https://stedolan.github.io/jq/)
-- [Przewodnik po pracy z JSON w Bash](https://shapeshed.com/jq-json/)
-- [Poradnik dla początkujących w Bash i pracy z JSON](https://blog.cloudflare.com/bash-json/)
-- [Pytania i odpowiedzi dotyczące Bash i JSON na Stack Overflow](https://stackoverflow.com/questions/tagged/bash+json)
+Komenda `jq` jest również wykorzystywana do wstępnie przetwarzania danych zanim są przekazane do innych narzędzi. Dzięki temu można szybko i łatwo wyodrębnić potrzebne informacje z dużych i złożonych struktur danych.
+
+## Zobacz również
+
+- Dokumentacja oficjalna `jq`: https://stedolan.github.io/jq/
+- Przetwarzanie JSON w Bashu z użyciem `jq`: https://www.baeldung.com/linux/jq-json-processing-bash
+- Inne narzędzia pomocne w pracy z JSON w Bashu: https://www.computerhope.com/unix/jq.htm

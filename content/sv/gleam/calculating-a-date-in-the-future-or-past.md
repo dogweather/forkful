@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Beräkning av ett datum i framtiden eller det förflutna"
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "Gleam: Beräkning av ett datum i framtiden eller det förflutna"
 simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,39 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Enkelte gånger behöver vi kunna beräkna datum i framtiden eller i det förflutna i vår programkod. Detta kan vara för att schemalägga händelser eller för att jämföra tidsintervall. Med hjälp av Gleam kan vi enkelt utföra dessa beräkningar.
+Vi har alla varit där - du behöver ett program som beräknar ett datum i framtiden eller förflutet, men det verkar alltid vara en massa knepiga matematik eller långsamma loops. Men med hjälp av Gleam, kan du göra dessa beräkningar enkelt och snabbt.
 
 ## Hur man gör
 
-För att beräkna ett datum i framtiden eller förflutna i Gleam, behöver vi använda funktionen `Date.add` i standardbiblioteket `gleam/time`.
-
-För att beräkna ett datum i framtiden, behöver vi ange ett initialt datum och ett antal dagar som vi vill lägga till. Till exempel, om vi vill beräkna datumet fyra dagar efter 1:a januari 2020, kan vi använda följande kod:
+För att beräkna en datum i framtiden eller förflutet med Gleam, behöver du bara använda Date-modulen och dess `add` och `subtract` funktioner. Till exempel, för att få en dag som är 10 dagar senare än idag, kan du använda följande kod:
 
 ```Gleam
-import gleam/time.{Date}
+import gleam/date
 
-let starting_date = Date.from_iso8601("2020-01-01")
-let future_date = Date.add(starting_date, 4)
+let future_date =
+  date.now()
+  |> date.add(10, "days")
 ```
 
-Detsamma gäller om vi vill beräkna ett datum i förflutna, men istället för att lägga till dagar så subtraherar vi dem. Till exempel, om vi vill beräkna datumet tre dagar innan 1:a januari 2020:
+Du kan också beräkna en datum i förflutet genom att använda `subtract` funktionen. Till exempel, om du vill ha ett datum som är 5 år tidigare än idag, kan du använda följande kod:
 
 ```Gleam
-import gleam/time.{Date}
+import gleam/date
 
-let starting_date = Date.from_iso8601("2020-01-01")
-let past_date = Date.add(starting_date, -3)
+let past_date =
+  date.now()
+  |> date.subtract(5, "years")
 ```
 
-Funktionen `Date.add` returnerar ett nytt `Date`-objekt med det beräknade datumet. Detta gör att vi enkelt kan använda det för att jämföra med andra datum eller utföra andra operationer.
+Det är också möjligt att använda andra tidsenheter såsom månader, veckor, timmar eller minuter i `add` och `subtract` funktionerna.
 
-## Djupdykning
+## Deep Dive
 
-För att förstå hur Gleam beräknar datum i förflutna eller framtiden, behöver vi veta hur `Date`-objektet representerar datum. Varje `Date` har en årtal, månad och dag attribut, som sedan omvandlas till det mest använda formatet ISO 8601. När vi använder `Date.add` funktionen, så adderar eller subtraherar vi bara det angivna antalet dagar från det givna datumet.
-
-Det viktigaste att komma ihåg är att Gleam inte hanterar skottår eller andra komplexa kalenderregler. Om det är nödvändigt, så kan vi implementera vår egen logik för att hantera dessa speciella fall.
+Om du vill gå djupare in i hur beräkningar av datum fungerar i Gleam, kan du utforska Date-modulen i Gleams dokumentation. Du kan också läsa mer om olika tidsenheter och hur de påverkar beräkningarna.
 
 ## Se även
 
-- [Dokumentation för gleam/time](https://gleam.run/modules/gleam/time/latest/)
-- [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html) för datum och tid representation
+- Gleam Date-Modulen: https://gleam.run/modules/date.html
+- Gleam Dokumentation: https://gleam.run/
+- Gleam Community Forum: https://forum.gleam.run/

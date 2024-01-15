@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 文字列の結合"
-simple_title:         "文字列の結合"
+title:                "文字列の連結"
+html_title:           "TypeScript: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,58 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の連結を行う理由は、文字列をより複雑な形に整形するためです。例えば、データベースから取得した情報を使ってメッセージを作成したり、ユーザーからの入力と固定のテキストを組み合わせたりすることができます。
+文字列を結合するのに文を最大2文で説明する。
 
-## 方法
+文字列の結合は、プログラムで異なる文字列を組み合わせる必要がある時に非常に便利です。例えば、フルネームを作るためには、名前と姓を結合することができます。また、メッセージを作成する際には、固定のテキストと動的に変わる変数を一緒に表示することができます。これにより、コードを簡潔に保ち、読みやすくすることができます。
 
-文字列の連結を行うには、`+`演算子を使用します。例えば、以下のようなコードを使って、2つの文字列を繋げることができます。
-
-```TypeScript
-let name = "山田"
-let message = "こんにちは、" + name + "さん！";
-console.log(message);
-```
-
-このコードの出力は、`こんにちは、山田さん！`となります。
-
-また、`${}`を使って複数の値を繋げることもできます。例えば、以下のように書くことで、複数の変数や定数を簡単に組み合わせることができます。
+## 作法
 
 ```TypeScript
-let firstName = "太郎";
-let lastName = "田中";
-let age = 30;
-let message = `私の名前は${lastName}${firstName}です。年齢は${age}歳です。`;
-console.log(message);
+// 単純な文字列の結合
+let firstName: string = "太郎";
+let lastName: string = "山田";
+let fullName: string = firstName + lastName;
+
+console.log(fullName); // 出力: 太郎山田
+
+// 文字列と数字の結合
+let age: number = 25;
+let message: string = "私は" + age + "歳です。";
+
+console.log(message); // 出力: 私は25歳です。
+
+// テンプレート文字列を使用した結合
+let fruit: string = "りんご";
+let quantity: number = 3;
+
+let order: string = `私は${fruit}を${quantity}個注文したいです。`;
+
+console.log(order); // 出力: 私はりんごを3個注文したいです。
 ```
 
-このコードの出力は、`私の名前は田中太郎です。年齢は30歳です。`となります。
+## 深掘り
 
-## 深堀り
+文字列の結合には、2つの主要な方法があります。最初は、`+`演算子を使用する方法です。この方法では、異なる型の値を自動的に文字列に変換して結合します。もう一つは、テンプレート文字列を使用する方法です。これは、文字列をより簡単に結合し、可読性を高める方法です。また、テンプレート文字列を使用すると、文字列内にJavaScriptの式を挿入することもできます。
 
-文字列の連結を行う時には、文字列として扱うことができることに注意しましょう。例えば、以下のように数字の10と文字列の"10"を結合すると、"1010"という文字列になります。
-
-```TypeScript
-let num1 = 10;
-let num2 = "10";
-let result = num1 + num2;
-console.log(result);
-```
-
-このコードの出力は、`1010`となります。
-
-また、`+=`演算子を使って文字列を追加することもできます。例えば、以下のように書くことで、前の値に新しい値を追加していきます。
-
-```TypeScript
-let message = "今日は";
-message += "いい天気ですね。";
-message += "外に出かけましょう！";
-console.log(message);
-```
-
-このコードの出力は、`今日はいい天気ですね。外に出かけましょう！`となります。
+さらに、TypeScriptでは、文字列を結合する際に型安全性を考慮することができます。例えば、`+`演算子を使用すると、異なる型の値を結合してもエラーが発生しません。しかし、文字列と数値を結合する際には、意図しない結果になる可能性があり、バグの原因になることがあります。そのため、文字列と数値を結合する際には、テンプレート文字列を使用するか、明示的に文字列に変換するようにすることが推奨されます。
 
 ## 参考
 
-- [TypeScriptの公式ドキュメント - 文字列](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN web docs - 文字列の連結](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Udemy - TypeScriptの基本](https://www.udemy.com/course/typescript-lesson-for-javascript-developers-template-literals/)
+- [TypeScript Handbook - String Concatenation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-concatenation)
+- [MDN web Docs - Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: עובדים עם CSV"
-simple_title:         "עובדים עם CSV"
+title:                "עבודה עם קובץ csv"
+html_title:           "Arduino: עבודה עם קובץ csv"
+simple_title:         "עבודה עם קובץ csv"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## למה
-
-CSV הוא פורמט קובץ נפוץ שמשמש לאחסון ושיתוף נתונים בין מכשירים שונים. באמצעות פלטפורמת ארדוינו ניתן לכתוב קוד המאפשר קריאה וכתיבה של נתונים בפורמט CSV, מה שיכול להיות שימושי ביישומים שונים כגון איסוף נתונים מחיישנים או יצירת נתוני מעקב בזמן אמת.
+תעבוד עם קבצי CSV? קבצי CSV הם פורמט עבור מידע מבנה-טקסט, שימושי כאשר נרצה לשמור נתונים מורכבים בצורה מיוחדת וקלה לקריאה וכתיבה. השימוש בקבצי CSV נפוץ מאוד בתחום התכונה המוצרית ובעולם העסקי.
 
 ## איך לעשות זאת
+כדי לעבוד עם קבצי CSV בארדואינו, נצטרך להשתמש בספריה נוספת בשם "SD.h". נתחיל על ידי איתור ופיתוח קובץ CSV עם הנתונים שנרצה לשמור. לדוגמה, הנה קובץ CSV שמכיל נתונים של טמפרטורות בעיר ניו יורק במהלך שבוע נתון:
 
-כדי לכתוב קוד שיאפשר עבודה עם קבצי CSV בארדוינו, נדרשת פעולה פשוטה בעזרת ספריית סריאל טאטו. הנה דוגמא של קוד פשוט המקרא ומכתב נתונים מקובץ CSV ומדפיס אותם במסך:
+```
+28.67, 29.34, 32.18, 33.75, 36.82, 39.47, 40.12
+```
 
-```Arduino
-#include <SoftwareSerial.h>
+כעת, ניצור קוד בארדואינו שיקרא וישמור את הנתונים מהקובץ CSV למשתנה מערך. נוכל לעשות זאת בעזרת הפקודות הבאות:
 
-SoftwareSerial mySerial(10, 11); // RX, TX pins
+```arduino
+#include <SD.h>
+
+File csvFile;
 
 void setup() {
-  Serial.begin(9600); // initialize serial communication
-  mySerial.begin(9600); // initialize SoftwareSerial communication
-}
+  // פתיחת קובץ מ SD כרטיס
+  SD.begin(10);
+  // פתיחת קובץ CSV לקריאה
+  csvFile = SD.open("temps.csv");
 
-void loop() {
-  if (mySerial.available()) {
-    String data = mySerial.readStringUntil('\n'); // read data until newline character
-    Serial.println(data); // print data to serial monitor
+  // יצירת מערך ריק לשמירת הנתונים
+  float temps[7];
+  // קריאת הנתונים מהקובץ ושמירתם למערך
+  for(int i=0; i<7; i++) {
+    temps[i] = csvFile.parseFloat();
   }
+
+  // סגירת הקובץ
+  csvFile.close();
 }
 ```
 
-בכדי לראות את התוכן של הקובץ CSV, ניתן להשתמש בפקודה Serial.print() כדי להדפיס את הנתונים במסך ולעקוב אחריהם בזמן אמת.
+ניתן להשתמש כעת במערך של הטמפרטורות לצורך עיבוד והצגה באופן מתאים בארדואינו.
 
-## כיוון עמוק
-
-טכניקות נוספות ניתן להשתמש בכדי לעבוד עם נתונים בפורמט CSV בארדוינו. לדוגמא, ניתן להשתמש בספרייה ArduinoCSV לניתוח נתונים מקובץ CSV בצורה מבנית יותר ובספריית TinyCSV מאפשרת ייעודית למכשירים קטנים יותר. כמו כן, ניתן להשתמש בנתונים המצורפים ב-CSV עבור אינטגרציה עם פלטפורמות חיצוניות כגון Excel או Google Sheets.
-
-## ראה גם
-
-- [ArduinoCSV ספרייה](https://github.com/arduino-libraries/ArduinoCSV)
-- [TinyCSV ספרייה](https://github.com/adafruit/TinyCSV)
-- [פרויקט ארדוינו ריקוז נת
+## חקירה מעמיקה
+יכול להיות מורכב לכתוב קוד שיכול לטפל בקבצי CSV מגוונים וקשים לטיפול כמו קבצים שמכילים מידע מבנה-טקסט מסוגים שונים. אחת הדרכים לטיפול בזה היא באמצעות פקודת "indexOf()",

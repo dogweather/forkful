@@ -1,6 +1,7 @@
 ---
-title:                "C#: डायरेक्टरी का अस्तित्व जांच करना"
-simple_title:         "डायरेक्टरी का अस्तित्व जांच करना"
+title:                "डायरेक्टरी मौजूद है या नहीं जांच करना"
+html_title:           "C#: डायरेक्टरी मौजूद है या नहीं जांच करना"
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जांच करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-डायरेक्टरी मौजूद है की जांच कर न सिर्फ अपने कोड को सुरक्षित बनाने में मदद करता है, बल्कि यह भी जानने में मदद करता है कि आपके प्रोग्राम के साथ कौनसी फ़ोल्डर तक पहुंच सकते हैं।
+Kya aapne kabhi directory ki maujoodgi ko check karne ka anubhav kiya hai? Agar haan, to aap jaante honge ki directory ki maujoodgi ko check karna kyon mahatvapurna hai. Yeh humare code mein error aur bugs ko avoid karne mein madad karta hai aur sahi functionality ka assurance deta hai.
 
-## कैसे
-
-एक डायरेक्टरी की उपस्थिति को जांचने के लिए, आपको `Directory.Exists()` मेथड को उपयोग करना होगा। नीचे दिए गए कोड ब्लॉक में आप इसका उदाहरण देख सकते हैं:
+## Kaise
 
 ```C#
-if (Directory.Exists(@"C:\Users\John\Documents"))
+if(Directory.Exists(@"C:\Users\Username\Documents"))
 {
-    Console.WriteLine("The directory exists!");
+    Console.WriteLine("Directory exists!");
+}
+else
+{
+    Console.WriteLine("Directory does not exist.");
 }
 ```
 
-जब आप इस कोड ब्लॉक को अपने कंप्यूटर पर चलाएंगे, तो यदि फ़ोल्डर मौजूद होगा, तो आपको निम्न आउटपुट मिलेगा:
+Jab hum `Directory.Exists` function ko use karte hain, humein path provide karna hota hai jiske baare mein hume jaanna hai ki wah maujood hai ya nahi. Agar directory maujood hai, function `true` return karega aur hume "Directory exists!" ka message milega. Agar directory nahi maujood hai, function `false` return karega aur hume "Directory does not exist." ka message milega. 
 
-`The directory exists!`
+## Deep Dive
 
-## गहराई में प्रवेश करें
+Directory ki maujoodgi ko check karne ka process bahut hi simple hai. Yeh `Directory` class mein ek built-in function hai jo `bool` data type return karta hai. Is function ko use karne se pehle humein `using System.IO;` namespace ko include kar lena chahiye. 
 
-डायरेक्टरी की उपस्थिति की जांच के पीछे के हरे भाग में, कई विभिन्न प्रकार के कारण हो सकते हैं। ये कारण अनेक तरह के हो सकते हैं, जैसे कि फ़ाइल पाठ में त्रुटि या फ़ोल्डर की सेवा के लिए अनुमति न होना। आप `Directory.Exists()` मेथड को उपयोग करने से पहले इन सभी कारणों को ध्यान में रख सकते हैं। इसके अलावा, आप फ़ोल्डर की शक्ति को दोबारा हासिल करने के लिए `Directory.GetAccessControl()` मेथड को उपयोग कर सकते हैं।
+Is process mein hum `Path` class se bhi madad le sakte hain, jiske through hum directory ka path validate kar sakte hain. Humein sirf `Directory.Exists` function use karna hota hai aur wah path ko check karta hai. Agar aapko aur zyada flexiblity chahiye, to aap `DirectoryInfo` class ka use kar sakte hain jo hume directory ki details provide karta hai.
 
-## देखें भी
+## Dekhiye Bhi
 
-- [C# में फ़ाइलें और डायरेक्टरियों को पढ़ें](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-iterate-through-a-directory-tree)
-- [C# में डायरेक्टरी बनाएं और हटाएं](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-and-delete-a-directory)
-- [C# में फ़ाइलों और फ़ोल्डरों को कै
+- [Microsoft Docs: Directory.Exists Method (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netcore-3.1)
+- [C# Corner: How To Check If Directory Exists in C#](https://www.c-sharpcorner.com/article/how-to-check-if-directory-exists-in-C-Sharp/)

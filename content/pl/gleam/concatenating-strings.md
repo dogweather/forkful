@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Łączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Gleam: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,43 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego programiści często muszą łączyć ze sobą różne ciągi znaków? Na przykład, gdy tworzymy aplikację, która musi wyświetlać imię i nazwisko użytkownika, musimy skleić te dwa ciągi znaków, aby uzyskać pełne imię i nazwisko. W tym artykule dowiesz się, dlaczego concatenation jest tak ważne w programowaniu i jak możesz tego użyć w języku Gleam.
+Czy kiedykolwiek zastanawiałeś się, dlaczego powinieneś używać konkatenacji (łączenia) strings w programowaniu? W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak jej użyć w języku Gleam.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby skleić dwa ciągi znaków w języku Gleam, musimy użyć funkcji `++` (znanej również jako operacja konkatenacji). Działa ona, łącząc dwa ciągi znaków i zwracając nowy, połączony ciąg. Oto przykładowe użycie funkcji `++`:
-
-```Gleam
-let imie = "Jan "
-let nazwisko = "Kowalski"
-let pelne_imie = imie ++ nazwisko
-```
-
-W tym przykładzie, `pelne_imie` jest zmienną, która zawiera połączony ciąg ze zmiennych `imie` i `nazwisko`, czyli "Jan Kowalski". Możemy również użyć funkcji `++` w celu połączenia więcej niż dwóch ciągów znaków. Na przykład:
+Aby połączyć dwa lub więcej stringów w Gleam, użyj funkcji `string.concat/2`. Oto przykładowy kod, który zobrazuje to w praktyce:
 
 ```Gleam
-let zdanie = "Dzisiaj "
-let pogoda = "jest piękna"
-let miejsce = "w Polsce"
-let pelne_zdanie = zdanie ++ pogoda ++ miejsce
+let string1 = "Programowanie"
+let string2 = "jest"
+let string3 = "super!"
+
+let concat_strings = string.concat(string1, string2, string3)
+
+io.println(concat_strings)  // Wypisze "Programowanie jest super!"
 ```
 
-Teraz zmienna `pelne_zdanie` będzie zawierać ciąg "Dzisiaj jest piękna w Polsce".
-
-## Głębsza analiza
-
-W języku Gleam możemy także użyć funkcji `++` do konkatenacji innych typów danych, takich jak liczby lub listy. Na przykład, możemy połączyć liczbę i ciąg znaków:
+Możesz również użyć tej samej funkcji, aby połączyć tablicę stringów w jeden:
 
 ```Gleam
-let liczba = 2020
-let tekst = " rok"
-let rok = liczba ++ tekst
+let strings = ["Gleam", "to", "język", "programowania"]
+
+let concat_strings = string.concat(strings)
+
+io.println(concat_strings)  // Wypisze "Gleam to język programowania"
 ```
 
-Teraz zmienna `rok` będzie zawierać ciąg "2020 rok". Język Gleam jest również silnie typowany, co oznacza, że musimy używać funkcji `++` z odpowiednimi typami danych. Jeśli spróbujemy połączyć ciąg znaków z innym typem danych, takim jak liczba, otrzymamy błąd kompilacji.
+## Ciekawostki
 
-## Zobacz również
+Pamiętaj, że funkcja `string.concat/2` jest dostępna tylko w module `string`, więc musisz importować moduł przed jej użyciem.
 
-- Dokumentacja Gleam dotycząca funkcji concatenation: [https://gleam.run/documentation/std/string#concat](https://gleam.run/documentation/std/string#concat)
-- Inne operatory w języku Gleam: [https://gleam.run/documentation/index#operators](https://gleam.run/documentation/index#operators)
-- Tutorial języka Gleam: [https://gleam.run/documentation/tutorials/](https://gleam.run/documentation/tutorials/)
+Możesz również użyć operatora `++` do konkatenacji dwóch stringów lub dwóch tablic stringów. Jednakże, dla bardziej czytelnego kodu, zaleca się używanie funkcji `string.concat/2`.
+
+## Zobacz Również
+
+- Dokumentacja Gleam o funkcji `string.concat/2`: https://gleam.run/modules/string#concat
+- Inny artykuł o konkatenacji stringów w Gleam: https://medium.com/gleam-lang/concatenating-strings-in-gleam-c2ec27a5c119
+- Przykłady zastosowania konkatenacji stringów w projektach w języku Gleam: https://github.com/search?q=language%3Agleam+string+concat&type=Code

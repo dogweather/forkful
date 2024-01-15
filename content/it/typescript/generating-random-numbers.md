@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Generazione di numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "TypeScript: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è un'operazione comune nella programmazione, soprattutto quando si sviluppano giochi o applicazioni in cui è necessaria una dose di casualità. Anche nella creazione di test di unità è spesso utile generare input casuali per coprire diversi casi di utilizzo.
+
+Generare numeri casuali può essere utile in diversi contesti, come giochi, simulazioni o test di algoritmi. Con TypeScript, è possibile generare facilmente numeri casuali utilizzando alcune delle funzioni già incluse nel linguaggio.
 
 ## Come fare
-Per generare numeri casuali in TypeScript, possiamo utilizzare la funzione ```Math.random()```. Questa funzione restituisce un numero casuale compreso tra 0 (incluso) e 1 (escluso).
 
-```
-let randomNumber = Math.random();
-console.log(randomNumber);
+Per generare numeri casuali in TypeScript, è possibile utilizzare la funzione `Math.random()`. Questa funzione restituisce un numero decimale casuale compreso tra 0 e 1, escludendo però il valore 1 stesso.
 
-// Output: 0.7485123654
-```
+Per generare un numero intero casuale compreso tra due valori specificati, possiamo utilizzare la seguente formula:
 
-Per ottenere un numero compreso in un intervallo specifico, possiamo moltiplicare il risultato di ```Math.random()``` per la differenza tra il massimo e il minimo desiderato e sommare il minimo:
-
-```
-let min = 10;
-let max = 20;
-let randomNumber = Math.random() * (max - min) + min;
-console.log(randomNumber);
-
-// Output: 17.3854236797
+```TypeScript
+Math.floor(Math.random() * (max - min + 1)) + min;
 ```
 
-Possiamo anche utilizzare la funzione ```Math.floor()``` per ottenere un numero intero anziché un numero decimale:
+Dove `max` e `min` sono rispettivamente il valore massimo e minimo del range di numeri che vogliamo generare.
 
-```
-let min = 10;
-let max = 20;
-let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randomNumber);
+Ad esempio, se volessimo generare un numero intero casuale compreso tra 1 e 10, il codice sarebbe il seguente:
 
-// Output: 17
+```TypeScript
+let randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+console.log(randomNumber); // Output: 8
 ```
 
-## Deep Dive
-Nel linguaggio TypeScript, la funzione ```Math.random()``` utilizza l'algoritmo di generazione di numeri casuali di Park-Miller. Questo algoritmo è basato su un generatore lineare congruenziale (LCG), che utilizza una particolare formula matematica per generare sequenze di numeri pseudo-casuali.
+In questo esempio, la funzione `Math.floor()` viene utilizzata per arrotondare il valore decimale restituito da `Math.random()` alla cifra intera inferiore.
 
-Anche se la funzione ```Math.random()``` restituisce numeri pseudo-casuali, cioè numeri che sembrano casuali ma in realtà seguono una sequenza prevedibile, è possibile migliorare la casualità del risultato utilizzando altre tecniche, come l'utilizzo di timestamp o di altri parametri per inizializzare il generatore di numeri casuali.
+Per generare un numero casuale compreso tra 0 e un valore specificato, possiamo utilizzare la formula seguente:
+
+```TypeScript
+Math.floor(Math.random() * max);
+```
+
+Dove `max` è il valore massimo (escluso) del range di numeri che vogliamo generare.
+
+## Approfondimento
+
+La funzione `Math.random()` utilizza un algoritmo pseudo-casuale per generare i numeri, che significa che i numeri generati non sono veramente casuali, ma seguono un preciso schema definito dall'algoritmo. Questo perché le macchine non sono in grado di generare numeri veramente casuali, ma solo numeri che sembrano casuali.
+
+Se vogliamo ottenere numeri più casuali possiamo utilizzare librerie esterne come `crypto` o `random-js`, che utilizzano metodi di generazione basati su sorgenti di dati esterne come l'orario di sistema o l'input dell'utente.
 
 ## Vedi anche
-- Documentazione ufficiale di TypeScript: https://www.typescriptlang.org/docs
-- Tutorial su come generare numeri casuali in TypeScript: https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-typescript
-- Esempi di utilizzo di numeri casuali in giochi sviluppati in TypeScript: https://github.com/photonstorm/phaser3-examples/blob/master/src/games/random%20number.js
+
+- Documentazione ufficiale di `Math.random()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- Libreria `crypto`: https://www.npmjs.com/package/crypto
+- Libreria `random-js`: https://www.npmjs.com/package/random-js

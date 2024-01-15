@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Zmiana wielkości liter w ciągu znaków"
-simple_title:         "Zmiana wielkości liter w ciągu znaków"
+title:                "Zmiana wielkości litery w ciągu znaków"
+html_title:           "Bash: Zmiana wielkości litery w ciągu znaków"
+simple_title:         "Zmiana wielkości litery w ciągu znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,29 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek próbowałeś zmienić styl tekstu w swoim skrypcie Bash? Może chcesz, aby wszystkie litery w zdaniu były pisane wielkimi literami lub tylko pierwsza litera? W tym artykule dowiesz się, jak prosto zmienić styl tekstu w Bash, aby dopasować go do swoich potrzeb.
+Czasami w programowaniu musimy skonwertować tekst w taki sposób, żeby pierwsza litera każdego słowa była duża. Na przykład, gdy chcemy wyświetlić nazwę użytkownika w formie właściwej wielkości liter, a nie wszystkie małymi literami. Wtedy przydaje się poniższa metoda, która w prosty sposób zadba o odpowiednią kapitalizację tekstu.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby zmienić styl tekstu w Bash, musisz użyć polecenia "tr". Polecenie to służy do zmiany lub usuwania znaków w tekście. Aby zmienić styl tekstu, musimy wybrać odpowiednie opcje polecenia "tr".
-
-```Bash
-echo "witaj w świecie Bash" | tr '[:lower:]' '[:upper:]'
-```
-W powyższym przykładzie, polecenie "echo" służy do wyświetlenia tekstowego wyjścia, a następnie przesyła je do polecenia "tr". Opcja '[:lower:]' informuje "tr", aby zmienił wszystkie litery w tekście na małe litery, a opcja '[:upper:]' zmienia litery na wielkie. Wynik tego polecenia będzie wyglądał następująco:
-"WITAJ W ŚWIECIE BASH"
-
-Możesz również użyć opcji "[:upper:]" bezpośrednio w poleceniu "echo", aby uniknąć przesyłania tekstu do polecenia "tr".
+Możemy użyć wbudowanej funkcji `tr` w Bashu, która służy do translacji tekstu. Kombinując z kilkoma prostymi polecaniami, możemy łatwo uzyskać efekt zamiany wszystkich małych liter na duże, z wyjątkiem pierwszej litery każdego słowa. 
 
 ```Bash
-echo "witaj w świecie Bash" | tr '[:lower:]' '[:upper:]'
+# Wykorzystujemy polecenia 'tr' do zamiany znaków
+# Pierwsze polecenie zamienia wszystkie małe litery na duże
+# Drugie polecenie zamienia pierwszą literę na dużą
+echo "dowiedz się więcej o bashu i jego poleceniach" | tr '[:lower:]' '[:upper:]' | sed -E 's/(^| )[[:alpha:]]/\U&/g'
 ```
 
-## Deep Dive
+Wynik powyższego polecenia będzie wyglądał następująco:
 
-Aby lepiej zrozumieć jak działa polecenie "tr", musimy poznać jego strukturę. Polecenie składa się z dwóch części, pierwszą jest lista znaków do zmiany, a drugą lista odpowiadających im znaków lub opcji. Możesz również użyć opcji "-d" w drugiej części, aby usunąć wybrane znaki z tekstu zamiast je zmieniać. Opcje mogą być również kompilowane, co oznacza, że można użyć kilku opcji jednocześnie.
+```Bash
+Dowiedz Się Więcej O Bashu I Jego Poleceniach
+```
 
-## Zobacz też
-- Oficjalna dokumentacja polecenia "tr": [https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- Tutorial o poleceniu "tr" w Bash: [https://www.linux.com/learn/using-tr-translate-or-delete-characters-bash](https://www.linux.com/learn/using-tr-translate-or-delete-characters-bash)
-- Przydatne komendy Bash: [https://www.linux.com/topic/desktop/useful-bash-commands/](https://www.linux.com/topic/desktop/useful-bash-commands/)
+## Dogłębnie o kapitalizacji tekstu
+
+Metoda opisana w sekcji "Jak to zrobić" wykorzystuje kombinację poleceń `tr` i `sed`. W krótkim opisie, pierwsze polecenie zamienia wszystkie małe litery na duże, a drugie polecenie znajduje pierwszą literę każdego słowa i zmienia ją na dużą. Jeśli chcemy dowiedzieć się więcej o tych poleceniach, możemy poszukać w dokumentacji lub różnych przykładach dostępnych online. 
+
+Inna opcja to użycie funkcji `ucfirst`, która jest wbudowana w Bash. Ta funkcja pozwala na zmianę pierwszej litery na dużą w wybranym ciągu znaków. Możemy użyć jej w połączeniu z pętlą `for`, aby zamienić każde słowo z osobna. Jednak w przypadku dłuższych tekstów, ta metoda może być mniej efektywna i potrzebować więcej kodu.
+
+## Zobacz także
+
+- [Dokumentacja do funkcji `tr`](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Przykładowe użycie funkcji `tr` w Bashu](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)
+- [Dokumentacja do funkcji `sed`](https://www.gnu.org/software/sed/manual/html_node/sed-invocation.html)
+- [Tutorial o podstawach Bashu](https://www.shellscript.sh/)

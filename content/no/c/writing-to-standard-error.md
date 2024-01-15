@@ -1,6 +1,7 @@
 ---
-title:                "C: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skriving til standard feil"
+html_title:           "C: Skriving til standard feil"
+simple_title:         "Skriving til standard feil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,52 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er en essensiell del av programmering å kunne skrive til standard error. Dette gjør det mulig å feilsøke og identifisere problemer under kjøring av programmet ditt. Det er også en måte å kommunisere til brukeren at noe ikke gikk som forventet.
+Det er mange grunner til å skrive til standardfeil i C-programmering. Det er en nyttig måte å få informasjon om feil og problemer i programmet ditt, som kan hjelpe deg med å finne og rette feil. Det kan også være nyttig når du tester og debugger koden din.
 
-## Hvordan
+## Hvordan gjøre det
 
-Å skrive til standard error i C er enkelt og kan gjøres ved å bruke funksjonen `fprintf()` med `stderr`-parameteren. La oss se på et eksempel:
+For å skrive til standardfeil i C, kan du bruke funksjonen "fprintf". Dette er en inkludert funksjon i C som lar deg skrive til en filstrøm, inkludert standardfeil. Du må inkludere headerfilen "stdio.h" for å bruke denne funksjonen.
+
+For å bruke "fprintf" funksjonen, må du først åpne filstrømmen ved hjelp av "stderr" som argument, som er standardfeilstrømmen. Deretter kan du bruke vanlig formatering som i "printf" funksjonen for å skrive ut dataene du ønsker å feilstrømmen. For eksempel:
 
 ```C
-#include <stdio.h>
-
-int main() {
-  int num1, num2;
-
-  printf("Skriv inn to tall: ");
-  scanf("%d %d", &num1, &num2);
-
-  if (num2 == 0) {
-    fprintf(stderr, "Error: Kan ikke dele på null!\n");
-    return 1;
-  }
-
-  printf("%d / %d = %d\n", num1, num2, num1 / num2);
-
-  return 0;
-}
+fprintf(stderr, "Dette er en feilmelding: %s\n", "Feil ved åpning av fil.");
 ```
 
-Her bruker vi `fprintf()` til å skrive en feilmelding til standard error hvis brukeren prøver å dele på 0. Vi har også brukt `\n` for å legge til en linjeskift i meldingen. Kjøringen av dette programmet kan se slik ut:
+Dette vil skrive ut en feilmelding til standardfeilstrømmen og inkludere den angitte teksten i formateringen, som i dette tilfellet er "Feil ved åpning av fil.".
 
-```bash
-$ ./divider
-Skriv inn to tall: 10 2
-10 / 2 = 5
-$ ./divider
-Skriv inn to tall: 10 0
-Error: Kan ikke dele på null!
+Du kan også bruke "stderr" direkte i stedet for "fprintf" funksjonen, men dette begrenser deg til å kun skrive ut en streng uten formatering. For eksempel:
+
+```C
+fprintf(stderr, "Dette er en feilmelding.");
 ```
-
-Som du ser blir feilmeldingen skrevet til standard error og ikke standard output.
 
 ## Dypdykk
 
-Det er viktig å merke seg at standard error har en annen buffer enn standard output. Dette betyr at meldingene kan komme i en annen rekkefølge enn du forventer. Det er også mulig å omdirigere standard error til en fil hvis du ønsker å lagre feilmeldingene for senere bruk.
+Når du bruker "fprintf" funksjonen for å skrive til standardfeil, er det viktig å huske på å inkludere "\n" for å få en nylinje etter meldingen. Dette vil gjøre feilmeldingene dine lettere å lese og skille fra hverandre.
 
-Du kan også bruke `fprintf()` til å skrive til standard output, men da må du bruke `stdout`-parameteren istedenfor `stderr`.
+Det kan også være nyttig å inkludere feilkode i feilmeldingene dine for å identifisere og håndtere forskjellige feil. Du kan gjøre dette ved å bruke "errno" variabelen, som inneholder feilkoden for siste funksjonskall.
+
+En viktig ting å huske på er at når du skriver til standardfeil, vil meldingen vises på skjermen selv om programmet ditt kjøres som en daemon eller i bakgrunnen. Dette kan være forvirrende for brukeren og kan føre til sikkerhetsrisikoer, så det er viktig å håndtere feilmeldingene dine på en sikker og effektiv måte.
 
 ## Se også
 
-- [Funksjonen `fprintf()` i C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Feilsøking i C-programmer](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+- [The Standard Error Stream](https://www.linuxjournal.com/article/6589)
+- [How to Redirect Standard Error in C](https://www.geeksforgeeks.org/how-to-redirect-stderr-to-a-file-in-c/)
+- [Error Handling in C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)

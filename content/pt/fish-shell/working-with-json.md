@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Trabalhando com json"
+title:                "Trabalhando com json"
+html_title:           "Fish Shell: Trabalhando com json"
 simple_title:         "Trabalhando com json"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,48 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar JSON na programação com o Fish Shell?
+## Por quê
 
-JSON, sigla para JavaScript Object Notation, é um formato de dados leve e versátil amplamente utilizado na comunicação entre sistemas e no armazenamento de informações. Ao trabalhar com o Fish Shell, o uso de JSON pode facilitar a manipulação e processamento de dados, tornando o processo de programação mais eficiente e eficaz.
+Se você está trabalhando com dados em formato JSON, é importante saber como lidar com eles de maneira eficiente. A Fish Shell possui diversas ferramentas que facilitam o trabalho com JSON, tornando o processo de manipulação de dados mais rápido e fácil.
 
-## Como usar JSON no Fish Shell
+## Como fazer
 
-Para utilizar JSON no Fish Shell, primeiro é necessário ter o pacote `jq` instalado. Esse pacote permite a manipulação de dados em JSON diretamente no terminal. Em seguida, basta seguir os seguintes passos:
+Abaixo estão alguns exemplos de como utilizar a Fish Shell para trabalhar com JSON em seus projetos:
 
-1. Defina uma variável com uma estrutura de dados em JSON:
-
-```Fish Shell
-set dados '{"nome": "Maria", "idade": 30, "cidade": "São Paulo"}'
-```
-
-2. Utilize o comando `jq` para extrair informações específicas do JSON utilizando a sintaxe `.[chave]`:
+#### Criando um arquivo JSON
 
 ```Fish Shell
-echo $dados | jq '.nome'
+set -l data '{"nome": "João", "idade": 25}'
+echo $data > arquivo.json
 ```
 
-Isso irá retornar apenas o valor da chave "nome", no caso, "Maria". Além disso, é possível utilizar o operador de atribuição `=` para armazenar esse valor em uma nova variável, como por exemplo:
+O comando acima cria um arquivo chamado "arquivo.json" que contém os dados que definimos na variável `data`. Você pode adicionar mais campos ao JSON, contanto que estejam entre chaves e separados por vírgula.
+
+#### Obtendo dados de um arquivo JSON
 
 ```Fish Shell
-set nome (echo $dados | jq '.nome')
+set -l nome (jq -r '.nome' arquivo.json)
+echo "O nome é $nome"
 ```
 
-3. O `jq` também permite filtrar e manipular dados mais complexos, como por exemplo:
+O comando acima utiliza o utilitário `jq` para extrair o valor do campo "nome" do arquivo JSON e armazená-lo na variável `nome`. Isso nos permite utilizar os dados do arquivo em outras partes do código.
+
+#### Convertendo JSON para CSV
 
 ```Fish Shell
-echo $dados | jq '.idade | .+5'
+jq -r '(.[0] | keys_unsorted) as $keys | $keys, map([.[ $keys[] ]]) | @csv' arquivo.json > resultado.csv
 ```
 
-Isso irá retornar o valor da idade (30) somado a 5, resultando em 35.
+Com essa linha de comando, podemos converter um arquivo JSON para um arquivo CSV. É importante ressaltar que dependendo da estrutura do JSON, pode ser necessário ajustar o código acima para obter o resultado desejado.
 
-## Detalhes sobre o uso de JSON no Fish Shell
+## Profundidade
 
-Além das funcionalidades mencionadas acima, é possível também utilizar loops e condicionais para trabalhar com dados em JSON no Fish Shell. Outro recurso interessante é a possibilidade de converter dados de JSON para CSV, tornando mais fácil a manipulação de grandes conjuntos de dados.
-
-É importante ressaltar que, assim como em qualquer outro formato de dados, é necessário ter cuidado e garantir que o JSON esteja bem formatado e válido para evitar erros no processamento. Além disso, é recomendado estar familiarizado com a sintaxe de JSON para aproveitar ao máximo todas as suas funcionalidades no Fish Shell.
+A Fish Shell possui um módulo integrado chamado `fish-json` que oferece funções e variáveis para ajudar a trabalhar com JSON. Você pode ver a documentação completa deste módulo utilizando o comando `man fish_json`. Além disso, é possível instalar módulos adicionais como o `robdennis/fish-jsonpath`, que permite utilizar o formato JSONPath para selecionar dados em um arquivo JSON.
 
 ## Veja também
 
-- <https://fishshell.com/>
-- <https://stedolan.github.io/jq/>
-- <https://www.json.org/>
+- [Documentação do módulo "fish-json"](https://fishshell.com/docs/current/cmds/fish_json.html)
+- [GitHub do módulo "fish-jsonpath"](https://github.com/robdennis/fish-jsonpath)
+- [Documentação do JSONPath](https://goessner.net/articles/JsonPath/)

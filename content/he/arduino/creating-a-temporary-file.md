@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "Arduino: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,52 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע:
+## למה
+על מה שאדם יאתגר ליצור קובץ זמני?
 
-ישנם מקרים בהם מספר תהליכים עוברים על דאטה והוא צריך להישמר לפני שניתן להשתמש בו לצורךים אחרים. כתיבת קוד זמני הוא כלי שימושי במיוחד כאשר אתה משתמש במכשיר Arduino, שומר את המידע שלך לפני שהוא מתעדכן לתהליך או מגיע לצורך יישום אחר.
+ישנם כמה סיבות שאדם עשוי לבחור ליצור קובץ זמני בארדוינו. עשיריית השנות ואמונת נהנים מגרסה ישנה של בשנים רבות ואת ארבעת הטבעות המדוברים על ידי השמה לטווח קצוב יותר. כשאתה ממתין למידע שאתה מופץ באותה דרך כמו כול גרסה כוללת.
 
-## כיצד לעשות:
+## איך לה
+בכדי ליצור קובץ זמני בארדוינו, תצטרכו רק כמה שורות קוד פשוטות. הנה דוגמה לכתיבת קובץ זמני והדפסת הודעה:
 
-דוגמאות קוד ופלט המתבצעות רשאים יהיו הדרך האידיאלית להדגים את כיצד ליצור קובץ זמני בארדואינו. כאשר דרך זו עובדת היטב, הטכניקה המתקדמת יותר או שוספרים נוספים על ידי שטיפת נפש היא קלה יותר להבין.
-
-```arduino
+```Arduino
+#include <SPI.h>
 #include <SD.h>
-File myFile;
+
+File dataFile;
 
 void setup() {
+  // התחבר למתאם SD
   Serial.begin(9600);
-  while (!Serial) {}
-  pinMode(10, OUTPUT);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB
+  }
 
-  Serial.print("Initializing SD card...");
+  // התחבר לכרטיס SD
   if (!SD.begin(4)) {
-    Serial.println("Initialization failed!");
-    return;
+    Serial.println("לא הצליח לטעון כרטיס SD");
+    while (1);
   }
-  Serial.println("Initialization done.");
-  
-  // create a temporary file on the SD
-  File myFile = SD.open("temp.txt", FILE_WRITE);
-  if (myFile) {
-    Serial.println("Writing to temporary file...");
-    myFile.println("Hello from Arduino!");
-    myFile.close();
-    Serial.println("Temporary file created.");
+
+  // פתח קובץ זמני עם השם מזימון
+  dataFile = SD.open("מזימון.txt", FILE_WRITE);
+
+  // אם הקובץ נפתח בהצלחה, יוסף הודעה
+  if (dataFile) {
+    dataFile.println("היי, זהו קובץ זמני!");
+    dataFile.close();
+    Serial.println("קובץ זמני נוצר בהצלחה.");
   } else {
-    Serial.println("Error opening temporary file.");
+    // אם הקובץ לא נפתח, הדפס הודעה שגיאה
+    Serial.println("שגיאה בפתיחת קובץ זמני.");
   }
-}
-
-void loop() {
-
 }
 ```
 
-## חפוש עמוק:
+פלט:
 
-ישנם מספר דברים נוספים שאפשר לעזור אתכם ליצור קובץ זמני בארדואינו. למשל, ניתן להשתמש בספרייה SD כדי להתחבר לכרטיס SD ולממש כל פעולת קובץ שאתם נדרשים. ישנם גם טיפים נוספים על כיצד לנהל קבצים בארדואינו ולהשתמש בהם בצורה כמו קבצי פתח פתח ובסופה בבניית קובץ ידנית. אל תתאבדו אם ישנם עוד תלותם בפעולות על קובץ זמני בארדואינו.
+```
+קובץ זמני נוצר בהצלחה.
+```
 
-## ראו גם:
+כפי שאתה רואה, כתיבת קובץ זמני בארדוינו היא תהליך פשוט וקל.
 
-- [ספריית SD של ארדואינו](https://www.arduino.cc/reference/en/libraries/sd/)
-- [כתבו וקראו קבצים עם Arduino](https://www.instructables.com/
+## "לשוט"
+
+ליצור קובץ זמני הוא פעולה שניתן לבצע באמצעות כמה שורות קוד בלבד, אבל כדאי להבין את העקרונות בסיסיים של יצירת קובץ זמני. הקובץ זמני הוא קובץ שנוצר בזמן הרצת הקוד ונמחק בסיומו, ו

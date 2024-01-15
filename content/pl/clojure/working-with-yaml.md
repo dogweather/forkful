@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Praca z formatem yaml"
-simple_title:         "Praca z formatem yaml"
+title:                "Praca z yaml"
+html_title:           "Clojure: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,59 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego warto pracować z YAML w programowaniu w języku Clojure? Ponieważ YAML jest językiem znanym przez wielu programistów jako intuicyjny sposób kodowania struktury danych. Pozwala on na czytelność, prostotę i elastyczność w naszym kodzie.
+Jeśli jesteś programistą bądź osobą pracującą w branży IT, na pewno spotkałeś się z formatem pliku YAML. Jest to popularna składnia używana do przechowywania i przesyłania danych. W tym artykule dowiesz się, dlaczego warto poznać YAML oraz jak możesz go wykorzystać w swoich projektach w języku Clojure.
 
-## Jak
+## Jak to zrobić
 
-### 1. Tworzenie pliku YAML
-
-Aby rozpocząć pracę z YAML, musimy najpierw utworzyć plik YAML. W tym celu będziemy korzystać z biblioteki YAML dla Clojure - `clj-yaml`. Następnie wykonujemy polecenie `require` aby zaimportować bibliotekę:
+Przedstawię teraz kod w języku Clojure, który pokaże Ci, jak wykorzystać YAML w swoich projektach. Poniżej znajdziesz przykład wykorzystania biblioteki "clj-yaml" do parsowania pliku YAML:
 
 ```Clojure
-(require '[clj-yaml.core :as yaml])
+(ns my-project.core
+  (:require [clj-yaml.core :as yaml]))
+
+(defn read-yaml [file]
+  (yaml/parse-file file))
+
+;; Przykładowy plik YAML
+;; country:
+;;  - Poland
+;;  - Germany
+;;  - France
+(def data (read-yaml "countries.yml"))
+
+(println (:country data)) ;; Wynik: ["Poland" "Germany" "France"]
 ```
 
-Teraz możemy utworzyć prosty plik YAML zawierający listę pięciu elementów:
+Kod ten pierwotnie odczytuje plik YAML, a następnie zwraca wynik w postaci mapy Clojure. Dzięki temu możesz wykorzystać tę mapę do dalszej pracy w swoim projekcie.
 
-```Clojure
-(def sample-yaml
-  "colors:
-    - red
-    - blue
-    - green
-    - yellow
-    - purple")
-```
+## Wszczegóły
 
-### 2. Przetwarzanie pliku YAML
+Jeśli chcesz wiedzieć więcej o pracy z YAML w języku Clojure, warto zwrócić uwagę na kilka kluczowych aspektów:
 
-Aby przetworzyć nasz plik YAML, użyjemy funkcji `load`, która załaduje zawartość pliku i przekonwertuje ją na odpowiednią strukturę danych w Clojure:
+- Jeśli chcesz dokonać zmian w pliku YAML, musisz wczytać go do mapy i następnie przekształcić z powrotem do formatu YAML.
+- Jeśli potrzebujesz obsłużyć specjalne znaki, takie jak znak tabulacji lub nowa linia, możesz skorzystać z funkcji clojure.string/escape lub clojure.string/unescape.
+- Możesz również wykorzystać bibliotekę "yamlclj" do obsługi plików YAML w języku Clojure. Ta biblioteka oferuje wiele przydatnych funkcji i metod do pracy z YAML, takich jak parsowanie stringów lub sprawdzanie poprawności składni.
 
-```Clojure
-(def yaml-data (yaml/load sample-yaml))
-```
+Teraz, gdy już wiesz, jak wykorzystać YAML w języku Clojure, możesz spróbować użyć go w swoich własnych projektach!
 
-Wynikiem będzie mapa Clojure zawierająca klucz `colors` oraz listę pięciu kolorów.
+## Zobacz również
 
-### 3. Dostęp do danych
-
-Możemy uzyskać dostęp do danych w naszym pliku YAML poprzez odwołanie się do kluczy i indeksów w mapie Clojure:
-
-```Clojure
-(:colors yaml-data) ; zwróci listę kolorów
-(:colors yaml-data 0) ; zwróci pierwszy kolor (czerwony)
-```
-
-## Deep Dive
-
-Warto zauważyć, że używając biblioteki `clj-yaml`, możemy również wykorzystać wszystkie funkcje Clojure przy przetwarzaniu danych. Na przykład, jeśli chcemy dodać nowy kolor do naszego pliku YAML, możemy użyć funkcji `conj`:
-
-```Clojure
-(update yaml-data :colors conj "orange") ; doda 'orange' na koniec listy kolorów
-```
-
-## Zobacz także
-
-- [Dokumentacja biblioteki YAML dla Clojure](https://github.com/clj-yaml/clj-yaml)
-- [Tutorial dotyczący pracy z YAML w Clojure](https://practicalli.github.io/clojure-data/read/yaml.html)
-- [Przykładowy projekt wykorzystujący YAML i Clojure](https://github.com/bbatsov/clojure-style-guide/blob/master/guide_pl_PL.md)
+- Oficjalna dokumentacja języka Clojure - https://clojure.org/
+- Biblioteka "yamlclj" - https://github.com/alexanderkiel/yaml-clj
+- Biblioteka "clj-yaml" - https://github.com/lance-p/nippy

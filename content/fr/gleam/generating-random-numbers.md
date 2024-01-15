@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Génération de nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+html_title:           "Gleam: Génération de nombres aléatoires"
 simple_title:         "Génération de nombres aléatoires"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,53 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Se lancer dans la génération de nombres aléatoires peut sembler une tâche futile en apparence, mais en réalité, c'est une compétence très utile pour tout programmeur. Que ce soit pour générer des données de test, simuler des scénarios aléatoires ou simplement ajouter un élément de surprise dans votre code, la génération de nombres aléatoires est un outil nécessaire pour de nombreuses tâches de programmation.
+La génération de nombres aléatoires est une fonctionnalité essentielle pour de nombreux programmes informatiques, en particulier lorsqu'il s'agit de jeux, de simulations ou de tests. Elle permet d'introduire une certaine variabilité dans le comportement du programme, ce qui le rend plus intéressant et plus réaliste pour les utilisateurs.
 
-# Comment faire
+## Comment faire
 
-Pour générer des nombres aléatoires en Gleam, vous pouvez utiliser la fonction `random.int` qui prend comme arguments le nombre minimum et maximum que vous souhaitez inclure dans la plage.
+Pour générer des nombres aléatoires en utilisant le langage de programmation Gleam, vous pouvez utiliser la bibliothèque standard `random` en l'important avec `import random`.
 
-```
-Gleam>
-import gleam/random
-
-random.int(1,100)
-
-// Exemple de sortie: 57
-```
-
-Vous pouvez également générer des nombres réels aléatoires en utilisant la fonction `random.float` et spécifier un nombre de décimales à inclure.
+Ensuite, vous pouvez utiliser la fonction `random.int` pour générer un nombre aléatoire entre deux valeurs spécifiées. Par exemple, pour générer un nombre aléatoire entre 1 et 10, vous pouvez utiliser le code suivant :
 
 ```
-Gleam>
-import gleam/random
+Gleam import random
 
-random.float(0.0,1.0, 2)
-
-// Exemple de sortie: 0.89
+let random_number = random.int(1, 10)
 ```
 
-Vous pouvez également utiliser la fonction `random.bool` pour générer des valeurs booléennes aléatoires, utiles pour simuler des conditions aléatoires dans vos tests.
+Vous pouvez également générer des nombres aléatoires à virgule flottante en utilisant la fonction `random.float`, qui prend en compte une limite supérieure (exclue) en plus de la limite inférieure (incluse). Par exemple :
 
 ```
-Gleam>
-import gleam/random
+Gleam import random
 
-random.bool()
-
-// Exemple de sortie: true
+let random_float = random.float(0.0, 1.0)
 ```
 
-# Plongée en profondeur
+Le code ci-dessus générera un nombre aléatoire compris entre 0.0 inclus et 1.0 exclu.
 
-Maintenant que vous avez une idée de comment générer des nombres aléatoires en Gleam, il est important de comprendre comment ces nombres sont générés. En interne, Gleam utilise l'algorithme Mersenne Twister pour générer des nombres pseudo-aléatoires. Cet algorithme est très efficace et produit des résultats de haute qualité.
+## Plongée profonde
 
-Il est également important de noter que les nombres aléatoires générés par ordinateur ne sont jamais réellement aléatoires. Ils sont basés sur une séquence de valeurs prédictibles, mais en apparence, ils semblent aléatoires. Cela peut avoir un impact sur la sécurité si vous utilisez des nombres générés aléatoirement pour des opérations cryptographiques.
+La génération de nombres aléatoires utilise des algorithmes et des techniques mathématiques complexes pour garantir que les nombres générés sont vraiment aléatoires. Cependant, il est important de noter que les nombres générés par les ordinateurs ne sont jamais complètement aléatoires, mais plutôt pseudo-aléatoires.
 
-# Voir aussi
+Pour en savoir plus sur les différents types de génération de nombres aléatoires et sur la façon dont Gleam les implémente, vous pouvez consulter la documentation de la bibliothèque standard sur `random` ainsi que d'autres ressources en ligne telles que des tutoriels et des articles.
 
-- [Documentation Gleam pour la génération de nombres aléatoires](https://gleam.run/modules/gleam/random/latest/)
-- [Article sur l'algorithme Mersenne Twister](https://prng.di.unimi.it/)
-- [Exemples de génération de nombres aléatoires en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/random_numbers.gleam)
+## Voir aussi
+
+- Documentation sur la bibliothèque standard `random` : [lien vers la documentation]
+- Tutoriel sur la génération de nombres aléatoires en Gleam : [lien vers le tutoriel]
+- Article sur les différents types de génération de nombres aléatoires : [lien vers l'article]

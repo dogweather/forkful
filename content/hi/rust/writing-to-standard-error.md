@@ -1,5 +1,6 @@
 ---
-title:                "Rust: स्टैंडर्ड त्रुटि पर लिखना"
+title:                "स्टैंडर्ड त्रुटि पर लिखना"
+html_title:           "Rust: स्टैंडर्ड त्रुटि पर लिखना"
 simple_title:         "स्टैंडर्ड त्रुटि पर लिखना"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyu Likhein Standard Error mei
+## क्यों
 
-## Kyu
+रुस्त कोरेदर से लोग लाइरेक्ट सिस्टम कन्सोल में लोगों को डिबगिंग और विभिन्न त्रुटियों को सुधारने में मदद के लिए स्टैंडर्ड एरर में संदेश लिखते हैं। 
 
-Standard error ek aise programming concept hai jo bahut kam logon ke dimaag mein aata hai, lekin yeh bahut important hai. Jab hum kisi Rust program ko run karte hain, toh usme kuch errors ya bugs aa sakte hain. Jab yeh errors humare console screen par show hote hain, toh hume pata chalta hai ki kahaan kuch problem hai. Standard error mein likhne se hum apne program ke errors ko asaani se identify aur fix kar sakte hain.
+## कैसे करें
 
-## Kaise Karein
+आप स्टैंडर्ड एरर में संदेश लिखने के लिए रस्ता कोरेदर के `eprint!` मैक्रो का उपयोग कर सकते हैं। उदाहरण के लिए, आप निम्न उदाहरण को अपने कोड में शामिल करके स्टैंडर्ड एरर में संदेश लिख सकते हैं:
 
-Standard error mein likhna bahut asaan hai. Sirf ek `println!()` statement ko `eprintln!()` mein change kar dena hai. Example ke liye, agar hum ye code likhte hain:
+```rust
+use std::io::Write;
 
-```Rust
-println!("Hello world!");
+fn main() {
+    if let Err(e) = do_something() {
+        let stderr = std::io::stderr();
+        let mut handle = stderr.lock();
+        writeln!(handle, "समस्या हुई: {}", e).expect("संदेश लिखने में असफल");
+    }
+}
 ```
 
-Toh iska output console screen par print hoga. Lekin agar hum kuch error message ko standard error mein print karna chahte hain, toh hum ye code likhenge:
+जहाँ `do_something()` आपके कोड में किसी त्रुटि को हैंडल कर रहा हो, और `e` उस त्रुटि को दिखाता है। रस्त कोरेदर आपके कोड को पार्स करता है और उसके साथ सामान्य एरर प्रस्तुत करता है।
 
-```Rust
-eprintln!("Error: Value out of range!");
-```
+## गहराई में जाएं
 
-Is tarah se hum apne errors ko standard error mein print kar sakte hain.
+स्टैंडर्ड एरर में संदेश लिखना सिस्टम के बाहर के संसाधनों का उपयोग करता है, जो फाइल और नेटवर्क कनेक्शन जैसे उपकरणों को शामिल कर सकती हैं। यह सुनिश्चित करने के लिए कि स्टैंडर्ड एरर में संदेश लिखने के दौरान कोई त्रुटि न हो, आपको इसे हैंडल करना होगा। रस्त कोरेदर का उपयोग करके, आप स्पष्ट त्रुटि संदेश देख सकते हैं जो आपके कोड में हो रही है। 
 
-## Gehri Jankari
+## अभी देखें
 
-Standard error ka use errors ko identify karne ke alawa hum debug karte samay bhi kar sakte hain. Jab hum apna program debug karte hain, toh hume step by step progress report ki jarurat hoti hai. Standard error mein likhne se hum apne program ke intermediate values ko dekh sakte hain aur sahi output tak pahunchne mein madad mil sakti hai.
+[रस्त कोरेदर दस्तावेज़ीकरण](https://doc.rust-lang.org/std/macro.eprint.html)
 
-Ek aur important baat hai ki standard error mein likhne se hum apne program ko user-friendly bana sakte hain. Jab hum errors ko console screen par print karte hain, toh wo bahut messy aur difficult to read ho sakta hai. Lekin standard error mein likhne se errors clear aur organised tarike se show hote hain.
-
-# See Also
-
-Agar aapko aur jyada jankari chahiye standard error ke baare mein, toh aap in links par click kar sakte hain:
-
-- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/io/fn.eprintln.html)
-- [Understanding Standard Output, Error, and Redirection](https://www.geeksforgeeks.org/understanding-standard-output-error-redirection/)
-- [Debugging Rust Programs with VS Code](https://code.visualstudio.com/docs/rust/rust-debugging)
+[स्टैंडर्ड

@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Lesing av kommandolinjeargumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "Haskell: Lesing av kommandolinjeargumenter"
 simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,41 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvorfor bry seg med å lese kommandolinjeargumenter? Det kan være nyttig når du ønsker å gi programmene dine forskjellige input uten å endre koden hver gang.
+Av og til kan vi ønske at programmet vårt kan utføre forskjellige handlinger basert på informasjon som er gitt når programmet kjører. Et eksempel på dette kan være å la brukeren angi ulike filnavn, parametere eller andre innstillinger via kommandolinjen. For å lære hvordan man kan gjøre dette i Haskell, les videre.
 
-## Slik gjør du det
+# Hvordan
 
-Å lese kommandolinjeargumenter i Haskell er enkelt. Først må du importere System.Environment-modulen. Deretter kan du bruke funksjonen getArgs for å hente argumentene som ble gitt til programmet ditt. Her er et eksempel:
+Det første vi må gjøre er å importere funksjonen `getArgs` fra modulet `System.Environment`. Denne funksjonen tar ingen parametere, men gir tilbake en liste med strenger som representerer kommandolinje argumentene som er gitt når programmet kjøres.
+
+```Haskell 
+import System.Environment
+
+main = do
+    args <- getArgs
+    putStrLn (head args)
+```
+Dette enkle programmet vil få tak i det første kommandolinje argumentet og skrive det ut til konsollen.
+
+Eksempel på kjøring: 
+```
+$ runhaskell args.hs argument1
+argument1
+```
+
+Det er også mulig å behandle flere argumenter ved hjelp av funksjoner som `map` eller `foldr`.
 
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn ("Første argument: " ++ head args)
-    putStrLn ("Andre argument: " ++ args !! 1)
+    putStrLn (unwords (map show args))
 ```
 
-`getArgs` returnerer en liste av strenger, der hvert element i listen er et argument gitt fra kommandolinjen. I eksempelet over bruker vi `head` og `!!`-operatorene for å få tak i de første to argumentene og skrive dem ut til konsollen.
+I dette tilfellet vil alle argumentene skrives ut, konvertert til strenger.
 
-Så når du kjører dette programmet fra kommandolinjen, for eksempel med argumentene "Hei" og "Haskell", vil outputen være:
-
+Eksempel på kjøring: 
 ```
-Første argument: Hei
-Andre argument: Haskell
+$ runhaskell args.hs argument1 argument2 argument3
+"argument1 argument2 argument3"
 ```
 
-Du kan også bruke funksjonen `length` for å få totalt antall argumenter gitt til programmet ditt, og deretter bruke en løkke for å få tak i alle argumentene.
+# Dykk dypere
 
-## Dykk dypere
+Kommandolinje argumenter er lett å hente ut, men det finnes også noen ting å være oppmerksom på. For det første vil programmet alltid motta minst ett argument - nemlig navnet på programmet som kjører. For det andre vil alle argumentene være av typen `String`, noe som betyr at eventuelle tall eller andre datatyper må konverteres til riktig type før de kan brukes i programmet.
 
-Nå som du vet hvordan du kan lese kommandolinjeargumenter, kan du begynne å bruke dette i mer komplekse programmer. For eksempel kan du ta inn brukerinput og bruke det som argumenter til funksjoner eller algoritmer.
+Et eksempel på dette kan være å lese inn et tall som et kommandolinje argument og deretter behandle det som et tall i koden:
 
-Det er også viktig å være oppmerksom på at rekkefølgen på argumentene i `getArgs`-listen vil være den samme som rekkefølgen de ble gitt fra kommandolinjen. Dette kan være viktig hvis du skal lese inn forskjellige typer data, som for eksempel tall eller tekst.
+```Haskell
+import System.Environment
 
-## Se også
+main = do
+    args <- getArgs
+    let num = read (head args) :: Int
+    print (num * 2)
+```
 
-- [Haskell.org sin guide til kommandolinjeargumenter](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html)
-- [Haskell Wikibooks sin guide til system IO](https://en.wikibooks.org/wiki/Haskell/Input_and_output)
+Eksempel på kjøring: 
+```
+$ runhaskell args.hs 5
+10
+```
+
+Det finnes også ulike biblioteker som kan hjelpe deg med å behandle kommandolinje argumenter på en enklere måte, som for eksempel `optparse-applicative` eller `cmdargs`.
+
+# Se også
+
+- [Haskell dokumentasjon - System.Environment](https://www.haskell.org/cabal/users-guide/developing-packages.html)
+- [Haskell dokumentasjon - optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
+- [Haskell dokumentasjon - cmdargs](https://hackage.haskell.org/package/cmdargs)

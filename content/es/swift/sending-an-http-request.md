@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "Swift: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,50 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué enviar una solicitud HTTP es importante
+## ¿Por qué enviar una solicitud HTTP?
 
-Enviar una solicitud HTTP es una parte esencial de la programación Swift y permite a los desarrolladores interactuar con servidores y realizar diversas acciones en línea, como obtener datos, enviar formularios o crear usuarios.
+Enviar una solicitud HTTP puede ser útil para comunicarse con servidores externos y obtener información en tiempo real. También permite a las aplicaciones interactuar con APIs y servicios web para realizar acciones como enviar o recibir datos.
 
 ## Cómo hacerlo
 
-Para enviar una solicitud HTTP en Swift, primero debemos importar la biblioteca `Foundation` y crear una instancia de `URLSession` para manejar la comunicación con el servidor. Luego, podemos utilizar la función `dataTask` para enviar la solicitud y recibir la respuesta:
+Para enviar una solicitud HTTP en Swift, se puede utilizar la clase `URLSession` y su método `dataTask(with:completionHandler:)`. A continuación, se muestra un ejemplo de cómo enviar una solicitud GET a una URL y obtener la respuesta en formato JSON:
 
-```Swift
-import Foundation
+```swift
+// Crear la URL de la solicitud
+let url = URL(string: "https://ejemplo.com/api/usuarios")
 
-let session = URLSession.shared
+// Crear la solicitud con el método GET
+var solicitud = URLRequest(url: url!)
+solicitud.httpMethod = "GET"
 
-if let url = URL(string: "https://ejemplo.com/api/usuarios") {
-    // Crear solicitud POST con un cuerpo de datos
-    var request = URLRequest(url: url)
-    request.httpMethod = "POST"
-    request.httpBody = "nombre=Juan&apellido=Pérez".data(using: .utf8)
-    
-    // Enviar la solicitud y manejar la respuesta
-    let task = session.dataTask(with: request) { data, response, error in
-        if let data = data {
-            // Convertir la respuesta en una cadena JSON
-            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            if let datos = json?["datos"] as? [String: Any] {
-                // Imprimir el ID del usuario creado
-                print("ID del usuario: \(datos["id"])")
-            }
-        }
+// Crear una sesión y una tarea de datos
+let sesion = URLSession.shared
+let tarea = sesion.dataTask(with: solicitud) { datos, respuesta, error in
+    // Manejar la respuesta del servidor
+    guard let datos = datos else { return }
+    do {
+        // Convertir los datos en formato JSON
+        let respuestaJSON = try JSONSerialization.jsonObject(with: datos, options: [])
+        print(respuestaJSON)
+    } catch {
+        print("Error al convertir los datos en formato JSON")
     }
-    // Iniciar la tarea
-    task.resume()
 }
+// Iniciar la tarea
+tarea.resume()
 ```
 
-La respuesta del servidor nos llegará en forma de datos, que podemos convertir en una cadena JSON y extraer la información que necesitamos.
+La respuesta obtenida será un diccionario con la información en formato JSON. Por ejemplo:
+
+```swift
+["nombre": "Juan", "apellido": "Pérez"]
+```
+
+Para enviar una solicitud con un método diferente a GET, se debe cambiar el `httpMethod` en la solicitud y añadir los datos a enviar en el cuerpo de la misma.
 
 ## Profundizando
 
-Al enviar una solicitud HTTP, debemos tener en cuenta algunos aspectos importantes. Primero, debemos asegurarnos de utilizar el método HTTP correcto para la acción deseada, como GET para obtener datos, POST para enviar información o DELETE para eliminar recursos. Además, es importante incluir las cabeceras adecuadas en la solicitud, ya que pueden afectar la forma en que el servidor maneja nuestros datos.
+Las solicitudes HTTP pueden incluir distintos tipos de encabezados, como `Content-Type` o `Authorization`, que permiten enviar información adicional al servidor. Además, se pueden enviar datos en formato JSON en el cuerpo de la solicitud para realizar acciones como crear o actualizar recursos en un servidor.
 
-También es importante manejar los posibles errores que puedan surgir al enviar la solicitud, como problemas de conexión a internet o respuestas de servidor inesperadas.
+Otras clases útiles para trabajar con solicitudes HTTP en Swift son `URLComponents` para manejar la URL de forma sencilla y `URLRequest` para personalizar la solicitud con encabezados, métodos, entre otros.
 
-# Ver también
+## Ver también
 
 - [Documentación de URLSession en Swift](https://developer.apple.com/documentation/foundation/urlsession)
-- [Guía para enviar solicitudes HTTP en Swift](https://www.hackingwithswift.com/example-code/networking/how-to-send-a-simple-request-to-a-url)
+- [Tutorial de Request HTTP en Swift](https://www.hackingwithswift.com/articles/118/urlsession-tutorial-using-nsurlsession)
+- [Ejemplo de uso de URLSession en una aplicación iOS](https://www.iosapptemplates.com/blog/swift-programming/urlsession-ios-swift)

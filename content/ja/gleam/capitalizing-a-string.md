@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 文字列を大文字化する"
+title:                "文字列を大文字化する"
+html_title:           "Gleam: 文字列を大文字化する"
 simple_title:         "文字列を大文字化する"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,60 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列を大文字に変換する理由は多々あります。例えば、データベースから取得したデータを正規化するためや、入力された文字列を一貫性のある形式に変換するためなどが挙げられます。Gleamを使えば、簡単に文字列を大文字に変換することができます。
+文字列を大文字に変換することの利点は何でしょうか？それを理解するためには、Gleamの標準ライブラリで提供されるString.capitalize関数をご紹介します。
 
-## 方法
+## 使い方
 
-まずは```String.capitalize()```を使用してみましょう。以下のコードを実行すると、指定した文字列が大文字に変換されます。
-
-```Gleam
-let string = "my string"
-let capitalized = String.capitalize(string)
-
-IO.println(capitalized)
-```
-
-出力:
+Gleamでは、String.capitalize関数を使って文字列を大文字に変換することができます。下記のコード例をご覧ください。
 
 ```
-My string
+
+Gleam
+
+let name = "gleam"
+name
+|> String.capitalize // "Gleam"
 ```
 
-また、文字列の先頭以外の文字を大文字に変換することもできます。例えば、以下のコードを実行すると、「my string」の2番目の文字以降が大文字に変換されます。
+上記のように、文字列を変数に定義し、それに対してString.capitalize関数を適用することで、最初の文字を大文字に変換することができます。
 
-```Gleam
-let string = "my string"
-let capitalized = String.capitalize(string, 1)
-
-IO.println(capitalized)
-```
-
-出力:
+また、他の言語と同様に、文字列を直接引数として渡すこともできます。下記のコード例をご覧ください。
 
 ```
-mY STRING
+
+Gleam
+
+String.capitalize("gleam") // "Gleam"
 ```
 
-さらに、特定の文字を基準にして大文字に変換することも可能です。例えば、以下のコードを実行すると、「my string」の「s」以降の文字が大文字に変換されます。
-
-```Gleam
-let string = "my string"
-let capitalized = String.capitalize(string, 4)
-
-IO.println(capitalized)
-```
-
-出力:
+さらに、文字列の中に大文字が含まれている場合は、そのまま返されることに注意してください。大文字に変換するのは最初の文字だけです。下記のコード例をご覧ください。
 
 ```
-my STRing
+
+Gleam
+
+let name = "GLEAM"
+name // "GLEAM"
+|> String.capitalize // "GLEAM"
 ```
 
-## 深堀り
+## ディープダイブ
 
-実際の文字列の大文字化の仕組みを見てみましょう。```String.capitalize()```関数は、与えられた文字列を新たに作成し、大文字に変換した後に返します。その際に、Unicode文字列を処理するための機能が使用されます。これにより、特殊な文字や絵文字なども正しく大文字化することができます。
+String.capitalize関数は、文字列を大文字に変換する際の内部処理を深く理解するのに役立ちます。例えば、文字列を最初の文字だけ大文字に変換するということは、文字列をリストに変換し、最初の文字を大文字にし、再び文字列に変換するという処理になります。
 
-## 参考リンク
+また、Gleamには他にも便利な文字列操作関数が提供されています。例えば、String.slice関数を使うと文字列の一部分を抜き出すことができます。
 
-- Gleamドキュメント: https://gleam.run/documentation/string#capitalize
-- Unicode文字列についての詳細: https://unicode.org/
+## 他にもチェックしてみてください
+
+[公式ドキュメント](https://gleam.run/)からGleamについてもっと詳しく学ぶことができます。
+
+See Also:
+見てみてね
+- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam) - 最新情報やソースコードをチェックしよう
+- [GleamのSlackチャンネル](https://join.slack.com/t/gleam-lang/shared_invite/zt-gkw45z6o-vmB50FOITDoUn9P_ff~JzQ) - コミュニティに参加してみんなと交流しよう
+- [GleamのTwitterアカウント](https://twitter.com/gleamlang) - ツイートをフォローして新しいアップデートをゲットしよう

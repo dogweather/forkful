@@ -1,6 +1,7 @@
 ---
-title:                "C++: Trabajando con JSON"
-simple_title:         "Trabajando con JSON"
+title:                "Trabajando con json"
+html_title:           "C++: Trabajando con json"
+simple_title:         "Trabajando con json"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -9,65 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON en C++
+## ¿Por qué trabajar con JSON?
 
-JSON (JavaScript Object Notation) se ha vuelto cada vez más popular en el desarrollo de aplicaciones web y móviles. Es un formato de intercambio de datos simple, ligero y fácil de entender, lo que lo convierte en una excelente opción para almacenar y transmitir datos entre aplicaciones. Al utilizar JSON en C++, puedes leer y escribir datos de forma rápida y eficiente en tus programas. ¡Sigue leyendo para aprender cómo trabajar con JSON en C++!
+JSON es un formato de intercambio de datos ampliamente utilizado en el desarrollo de software. Al ser ligero y fácil de entender, es una excelente opción para enviar y recibir datos en aplicaciones web y móviles. Además, su popularidad ha aumentado con el auge de las API REST, lo que lo convierte en una habilidad muy valiosa para los desarrolladores.
 
-## Cómo hacerlo
+## Cómo trabajar con JSON
 
-Antes de poder trabajar con JSON en C++, necesitas incluir la librería <iostream> y <jsoncpp/json.h> en tu código. Luego, puedes utilizar la función `Json::Value` para crear un objeto de tipo JSON. A continuación, puedes agregar datos a tu objeto utilizando la función `Json::Value::append ()`, especificando la clave y el valor correspondiente. Por ejemplo:
-
-```C++
-Json::Value empleado;
-empleado.append("Nombre", "Juan");
-empleado.append("Apellido", "Pérez");
-empleado.append("Edad", 25);
-```
-
-También puedes leer datos de un objeto JSON utilizando la función `Json::Value::get ()`, pasando la clave del valor que deseas obtener. Por ejemplo:
+Hay varias librerías de C++ disponibles para trabajar con JSON, pero en este artículo nos enfocaremos en la librería jsoncpp. Para utilizarla, primero debemos descargarla e incluirla en nuestro proyecto. Luego, debemos importar el header correspondiente y usar el namespace "Json". Veamos un ejemplo de cómo leer y escribir datos en formato JSON.
 
 ```C++
-std::cout << "Nombre: " << empleado.get("Nombre", "default").asString() << std::endl;
+// Incluimos el header de la librería
+#include "json/json.h"
+// Usamos el namespace
+using namespace Json;
+
+// Creamos un objeto para almacenar nuestros datos
+Value datos;
+
+// Agregamos valores al objeto
+datos["nombre"] = "Maria";
+datos["edad"] = 25;
+
+// Convertimos el objeto a una cadena JSON
+std::string json = datos.toStyledString();
+
+// Imprimimos el resultado
+std::cout << json << std::endl;
+
+// Resultado:
+// {"nombre":"Maria","edad":25}
 ```
 
-Este código imprimiría "Nombre: Juan" en la pantalla. Puedes realizar operaciones similares para obtener y manipular datos en un objeto JSON. Una vez que hayas terminado de trabajar con tu objeto JSON, puedes convertirlo en una cadena utilizando la función `Json::FastWriter().write()`, lo que te permitirá guardarla en un archivo o enviarla a través de una red.
-
-A continuación, se muestra un ejemplo completo de cómo trabajar con JSON en C++:
+También podemos leer datos en formato JSON y acceder a ellos de la siguiente manera:
 
 ```C++
-#include <iostream>
-#include <jsoncpp/json.h>
+// Creamos una cadena JSON de ejemplo
+std::string json = "{\"nombre\":\"Juan\",\"edad\":30}";
 
-int main() {
-    Json::Value empleado;
-    empleado.append("Nombre", "Juan");
-    empleado.append("Apellido", "Pérez");
-    empleado.append("Edad", 25);
-    
-    std::cout << "Nombre completo: " << empleado.get("Nombre", "default").asString() << " " << empleado.get("Apellido", "default").asString() << std::endl;
-    std::cout << "Edad: " << empleado.get("Edad", "default").asInt() << std::endl;
-    
-    std::string cadena_empleado = Json::FastWriter().write(empleado);
-    std::cout << "Cadena JSON: " << cadena_empleado << std::endl;
-    
-    return 0;
-}
+// Convertimos la cadena a un objeto
+Value persona;
+Reader reader;
+reader.parse(json, persona);
+
+// Accedemos a los valores del objeto
+std::string nombre = persona["nombre"].asString();
+int edad = persona["edad"].asInt();
+
+// Imprimimos los resultados
+std::cout << "Nombre: " << nombre << std::endl;
+std::cout << "Edad: " << edad << std::endl;
+
+// Resultado:
+// Nombre: Juan
+// Edad: 30
 ```
 
-La salida de este programa sería:
+## Detalles sobre trabajar con JSON
 
-```
-Nombre completo: Juan Pérez
-Edad: 25
-Cadena JSON: {"Nombre" : "Sofía", "Apellido" : "García", "Edad" : 30}
-```
-
-## Deep Dive
-
-Si deseas profundizar en el trabajo con JSON en C++, puedes explorar la documentación y ejemplos ofrecidos por la librería JsonCpp en http://open-source-parsers.github.io/jsoncpp/. Además, hay muchas bibliotecas externas que facilitan aún más la manipulación de datos en formato JSON en C++, como RapidJSON y nlohmann/json. Al aprender a trabajar con estas herramientas, podrás experimentar con técnicas avanzadas, como la serialización de objetos C++ en JSON y viceversa.
+La librería jsoncpp ofrece muchas funciones útiles para trabajar con JSON, como la validación de sintaxis, la modificación de datos y la conversión a otros formatos. Además, es compatible con varios estándares de C++ y cuenta con una documentación completa para ayudarte en tu desarrollo. Recuerda siempre usar nombres descriptivos para tus claves y valores en formato JSON para mantener una estructura clara y fácil de entender.
 
 ## Ver también
 
-- http://open-source-parsers.github.io/jsoncpp/
-- http://rapidjson.org/
-- https://github.com/nlohmann/json
+- [Documentación de jsoncpp](https://github.com/open-source-parsers/jsoncpp)
+- [Más información sobre el formato JSON](https://www.json.org/)

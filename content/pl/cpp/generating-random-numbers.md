@@ -1,6 +1,7 @@
 ---
-title:                "C++: Generowanie losowych liczb."
-simple_title:         "Generowanie losowych liczb."
+title:                "Generowanie losowych liczb"
+html_title:           "C++: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -9,54 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego generowanie losowych liczb jest ważne?
+## Dlaczego
+Losowe liczby są często używane w programowaniu do symulowania różnych sytuacji lub do generowania unikalnych danych. Dzięki nim można również utworzyć gry lub aplikacje, które są mniej przewidywalne, co może sprawić, że użytkownicy poczują się bardziej zainteresowani.
 
-Generowanie losowych liczb jest ważne w wielu przypadkach programowania. Często potrzebujemy wybrać losowo elementy z listy lub stworzyć symulację losowego zdarzenia. Z tego powodu, umiejętność generowania losowych liczb jest bardzo przydatna w codziennych zastosowaniach programowania.
-
-## Jak to zrobić?
-
-Aby wygenerować losową liczbę w C++, używamy funkcji `rand()`. Przykładowy kod wyglądałby następująco:
+## Jak to zrobić
+Pierwszym krokiem do generowania losowych liczb w C++ jest zaimportowanie biblioteki "cstdlib", która zawiera funkcję "rand". Przykładowy kod wyglądałby w ten sposób:
 
 ```C++
-#include <iostream>
 #include <cstdlib>
-#include <ctime>
 
-int main(){
-    // ustawianie ziarna dla generatora liczb pseudolosowych
-    // w C++11 można użyć std::random_device jako ziarna
+int main() {
+    // ustawienie ziarna dla funkcji rand
     srand(time(0));
     
-    // wybieranie losowej liczby od 1 do 100
-    int random = rand() % 100 + 1;
-    // wybieranie losowej liczby typu double
-    double random_double = static_cast<double>(rand()) / RAND_MAX;
+    // wygenerowanie liczby całkowitej z przedziału 0-10
+    int random_number = rand() % 11;
     
-    // wypisywanie wygenerowanych liczb na ekran
-    std::cout << "Wylosowana liczba to: " << random << std::endl;
-    std::cout << "Wylosowana liczba typu double to: " << random_double << std::endl;
+    // wyświetlenie wyniku
+    std::cout << "Wylosowana liczba to: " << random_number << std::endl;
     
     return 0;
 }
 ```
 
-Przykładowy wynik wygenerowanego kodu może wyglądać następująco:
+Ten kod najpierw ustawia ziarno dla funkcji "rand" na podstawie aktualnego czasu, aby uzyskać bardziej losowe wyniki. Następnie generuje liczbę całkowitą z przedziału 0-10 za pomocą funkcji "rand" oraz operatora modulo. Na końcu wynik jest wyświetlany za pomocą strumienia "cout".
 
-```
-Wylosowana liczba to: 42
-Wylosowana liczba typu double to: 0.84252
-```
+Jedną z zalet korzystania z biblioteki "cstdlib" jest możliwość generowania również liczb zmiennoprzecinkowych za pomocą funkcji "double rand ()". Jest to przydatne, jeśli potrzebujemy bardziej precyzyjnych wyników, na przykład w przypadku symulacji finansowych lub statystyk.
 
-W powyższym kodzie użyliśmy funkcji `srand()` w celu ustawienia ziarna dla generatora liczb pseudolosowych. Dzięki temu za każdym razem, gdy uruchamiamy program, otrzymujemy nowe wartości. Aby uniknąć wygenerowania tych samych liczb przy każdym uruchomieniu programu, warto użyć aktualnego czasu jako ziarna, jak pokazano w powyższym przykładzie.
+## Deep Dive
+Proces generowania losowych liczb w C++ jest oparty na algorytmie Linear Congruential Generator. Polega on na wykonywaniu operacji matematycznych na bieżącym ziarnie, aby wygenerować kolejne liczby. Dlatego ważne jest, aby ziarno było jak najbardziej losowe, co jest zapewnione poprzez ustawienie go na podstawie aktualnego czasu. W przeciwnym razie, jeśli ziarno będzie stałe, wyniki mogą być powtarzalne.
 
-## Głębszy przegląd
-
-Warto zauważyć, że funkcja `rand()` zwraca liczbę całkowitą z przedziału od 0 do wartości `RAND_MAX` zdefiniowanej w bibliotece standardowej. W powyższym przykładzie użyliśmy tej wartości do wygenerowania losowej liczby typu `double`, poprzez podzielenie wyniku przez `RAND_MAX` oraz przy użyciu rzutowania na typ double.
-
-Ponadto, warto pamiętać, że generowanie liczb pseudolosowych nie jest całkowicie losowym procesem, a raczej wykorzystuje specjalne algorytmy do wygenerowania ciągu liczb, który wydaje się być losowy. Dlatego też, jeśli potrzebujemy większej losowości, możemy rozważyć użycie zewnętrznych bibliotek lub funkcji dostępnych w danym języku programowania.
+W przypadku potrzeby wygenerowania dużej liczby losowych liczb, można również zastosować bardziej zaawansowane algorytmy, takie jak Mersenne Twister lub Xorshift. Jednak w większości przypadków funkcja "rand" z biblioteki "cstdlib" jest wystarczająca.
 
 ## Zobacz również
-
-- [Przykładowy kod generujący losowe liczby w C++](https://www.tutorialspoint.com/generate-random-numbers-in-cplusplus)
-- [Dokumentacja funkcji rand() w standardzie C++](https://en.cppreference.com/w/cpp/numeric/random/rand)
-- [Losowe liczby w programowaniu: czy zawsze są one naprawdę losowe?](https://medium.com/@Zaccc123/pseudo-random-numbers-vs-true-random-numbers-d75d18248a7a)
+- [Dokumentacja "cstdlib" w języku C++](https://www.cplusplus.com/reference/cstdlib/)
+- [Wykorzystanie losowych liczb w symulacjach komputerowych](https://en.wikipedia.org/wiki/Random_number_generation#Simulation)
+- [Wydajność różnych algorytmów generowania losowych liczb](https://cs.stackexchange.com/questions/1846/time-complexity-for-random-number-generation)

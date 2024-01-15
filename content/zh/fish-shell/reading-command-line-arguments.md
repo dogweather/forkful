@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 阅读命令行参数"
-simple_title:         "阅读命令行参数"
+title:                "读取命令行参数"
+html_title:           "Fish Shell: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,61 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要阅读命令行参数
-阅读命令行参数是学习Fish Shell编程的重要一步。在命令行下，我们可以通过读取和解析不同的参数，来实现更高效和灵活的脚本编写。
+## 为什么
 
-# Fish Shell 如何读取命令行参数
-在Fish Shell中，读取命令行参数非常简单。我们可以通过使用 `$argv` 表示命令行参数。例如，如果我们运行以下命令：
-```
-fish script.fish hello world
-```
-那么，`$argv[1]` 将会是 `hello`，`$argv[2]` 将会是 `world`。如果我们需要读取所有的参数，可以使用 `$argv[1..-1]` 来表示所有的命令行参数。让我们来看一个示例代码：
-```Fish Shell
-#!/usr/bin/fish
+如果你对命令行界面有兴趣，那么学习如何读取命令行参数将会成为一项有用的技能。它可以帮助你更高效地使用命令行工具，提升你的工作效率。
 
-echo "我收到了这些命令行参数：$argv[1..-1]"
+## 如何做
+
+要在Fish Shell中读取命令行参数，你可以使用内置的`argv`函数。它会返回一个包含所有命令行参数的列表，包括命令本身。下面是一个示例代码：
+
 ```
+Fish Shell Code:
+
+for arg in (argv)
+  echo $arg
+```
+
+假设你输入以下命令：
+
+```
+fish myscript.fish hello world
+```
+
+那么输出将会是：
+
+```
+hello
+world
+```
+
+你也可以通过`count`函数来获取命令行参数的数量：
+
+```
+Fish Shell Code:
+
+echo "Number of arguments: " (count (argv))
+```
+
 输出将会是：
+
 ```
-我收到了这些命令行参数：hello world
+Number of arguments: 3
 ```
 
-# 深入探讨命令行参数的读取
-除了简单地读取命令行参数之外，我们还可以使用一些特殊的标记来控制命令行参数的读取。例如，在参数前面加上两个减号 `--`，将会使它变成一个命令行选项。我们可以通过使用 `-s` 来表示 `--silent`。让我们来看一个完整的示例代码：
-```Fish Shell
-#!/usr/bin/fish
+## 深入探讨
 
-# 定义一些选项的默认值
-set silent false
-set name "Anonymous"
+当我们输入命令行命令时，除了命令本身，还可以在命令之后添加一些参数。这些参数可以让我们更灵活地使用命令，比如指定操作的文件或者设定一些选项。通过读取命令行参数，我们可以在脚本中根据不同的参数执行不同的逻辑。
 
-# 检查命令行参数并设置选项的值
-for arg in $argv
-    switch $arg
-        case "-s" or "--silent"
-            set silent true
-        case "-n" or "--name"
-            set name $argv[(math $argv | grep -n $arg | cut -d ":" -f 1) + 1]
-end
+除了`argv`函数，Fish Shell还提供了其他一些内置函数来帮助我们读取命令行参数。比如`begin`和`end`函数，它们分别返回第一个和最后一个参数。同时，我们还可以使用`argparse`库来处理命令行参数，它可以帮助我们验证参数格式和值。
 
-# 执行相应的操作
-if $silent
-    echo "欢迎，$name。我是一个安静的脚本。"
-else
-    echo "欢迎，$name。我是一个有声音的脚本。"
-end
-```
-如果我们运行以下命令：
-```
-fish script.fish --silent --name Lucy
-```
-输出将会是：
-```
-欢迎，Lucy。我是一个安静的脚本。
-```
+## 参考资料
 
-# 参考链接
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 文档翻译项目](https://github.com/oh-my-fish/docs)
-- [Linux命令行基础教程](https://www.linuxcommand.org/lc3_learning_the_shell.php)
+- [Argparse库文档](https://fishshell.com/docs/current/cmds/argparse.html)
+- [Fish Shell命令行参数教程](https://bhami.com/rosetta.html)

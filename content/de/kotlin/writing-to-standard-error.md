@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Schreiben auf die Standardfehler"
-simple_title:         "Schreiben auf die Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Kotlin: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,48 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben auf die Standard error Konsole ist ein wichtiger Aspekt der Programmierung. Es ermöglicht es uns, Fehler und Warnungen in unserem Code zu identifizieren und zu beheben. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man in Kotlin effektiv auf die Standard error Konsole schreibt und warum dies so wichtig ist.
+Das Schreiben von Standardfehlermeldungen ist eine häufige Praxis in der Entwicklung mit Kotlin, um Fehler und Ausnahmen zu identifizieren. Oftmals werden diese Fehlermeldungen an den Benutzer zurückgegeben, um ihm hilfreiche Informationen bei der Fehlerbehebung zu bieten.
 
-## Wie man auf die Standard error Konsole schreibt:
+## Wie geht das?
 
-Um in Kotlin auf die Standard error Konsole zu schreiben, verwenden wir die Funktion "System.err.println()". Diese Funktion akzeptiert einen beliebigen String als Argument und gibt ihn dann auf der Standard error Konsole aus. Schauen wir uns ein Beispiel an:
-
-```Kotlin
-fun main() {
-    System.err.println("Dies ist ein Beispiel")
-}
-```
-
-Die Ausgabe dieses Codes wird auf der Standard error Konsole erscheinen:
-
-`Dies ist ein Beispiel`
-
-Dies hilft uns dabei, unsere Probleme im Code zu identifizieren und zu beheben. Wir können auch Variablen innerhalb der Print-Anweisung verwenden, um detailliertere Informationen zu erhalten. Schauen wir uns ein weiteres Beispiel an:
+Um eine Fehlermeldung oder Ausnahme an die Standardfehlerausgabe zu schreiben, kann die Funktion `System.err.println()` verwendet werden. Hier ist ein Beispiel, wie man dies in Kotlin machen kann:
 
 ```Kotlin
 fun main() {
-    val a = 10
-    val b = 5
-    System.err.println("Die Summe von $a und $b ist ${a + b}")
+    try {
+        val result = 10 / 0 // Division durch 0 auslösen
+        println("Ergebnis: $result")
+    } catch (e: ArithmeticException) {
+        System.err.println("Fehler: " + e.message)
+    }
 }
 ```
 
-Dieses Beispiel gibt die folgende Ausgabe auf der Standard error Konsole aus:
+Die Ausgabe des obigen Beispiels wäre:
 
-`Die Summe von 10 und 5 ist 15`
+```
+Fehler: / by zero
+```
 
-Wir können also sehen, dass das Schreiben auf die Standard error Konsole uns hilft, unsere Probleme effektiv und schnell zu finden.
+Durch die Verwendung von `System.err.println()` wird sichergestellt, dass die Fehlermeldung an die Standardfehlerausgabe geschrieben wird und nicht an die Standardausgabe.
 
-## Tiefergehende Informationen:
+## Tiefere Einblicke
 
-Es gibt auch andere Funktionen, die wir verwenden können, um auf die Standard error Konsole in Kotlin zu schreiben, wie z.B. "System.err.print()", "System.err.printf()" oder "System.err.format()". Diese Funktionen ermöglichen es uns, unsere Ausgabe zu formatieren und verschiedene Datentypen zu verarbeiten. Sie bieten auch die Möglichkeit, die Ausgabe in eine Datei umzuleiten, um sie später zu überprüfen.
+Wenn ein Programm Fehler oder Ausnahmen hat, ist es wichtig, diese Informationen an den Benutzer weiterzugeben, damit er die Möglichkeit hat, den Fehler zu verstehen und zu beheben. Das Schreiben von Informationen an die Standardfehlerausgabe ist eine effektive Methode, um dies zu erreichen. Es ist auch wichtig zu beachten, dass das Schreiben von zu vielen Informationen an die Standardfehlerausgabe zu unübersichtlichen Ausgaben führen kann, daher sollte dies mit Bedacht verwendet werden.
 
-Es ist auch wichtig zu beachten, dass die Standard error Konsole für die Ausgabe von Fehlern und Warnungen gedacht ist und nicht für die normale Programmausgabe. Für die normale Ausgabe sollten wir die Funktion "System.out.println()" verwenden.
+## Siehe auch
 
-Insgesamt ist das Schreiben auf die Standard error Konsole eine wichtige Fähigkeit, die uns dabei hilft, unseren Code effizient und effektiv zu debuggen und zu verbessern.
-
-## Siehe auch:
-
-- [Offizielle Kotlin Dokumentation](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Tutorial zu Standard error in Kotlin auf YouTube](https://www.youtube.com/watch?v=H063mgVKrDk)
-- [Tutorial zu Standard error in Kotlin auf Open Source Learning](https://learnbyexample.github.io/Kotlin-Snippets/error_output.html)
+- [Kotlin Dokumentation zur Standardfehlerausgabe](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/write-error.html)
+- [Artikel über Fehlerbehandlung in Kotlin](https://www.baeldung.com/kotlin/try-catch)
+- [Vergleich von Standard- und Fehlerausgabe in Kotlin](https://www.techiedelight.com/differences-standard-error-output-kotlin/)

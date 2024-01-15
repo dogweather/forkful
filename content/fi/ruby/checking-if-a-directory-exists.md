@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Tarkistetaan tiedoston olemassaolo"
-simple_title:         "Tarkistetaan tiedoston olemassaolo"
+title:                "Tarkistetaan, onko hakemistoa olemassa"
+html_title:           "Ruby: Tarkistetaan, onko hakemistoa olemassa"
+simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi tarkistaa, jos hakemistoa on olemassa
+## Miksi
 
-On hyvä tapa tarkistaa, onko hakemisto olemassa ennen kuin yrität suorittaa toimia sen kanssa. Tämä auttaa välttämään virheitä ja mahdollistaa sujuvamman suorituksen.
+On monia tilanteita, joissa ohjelmoija tarvitsee tarkistaa, onko tietokoneen tiedostojärjestelmästä löytyy tietty hakemisto. Se voi olla tarpeen esimerkiksi tarkistettaessa, löytyykö tiedostoja ennen niiden käsittelyä tai luotaessa uusia tiedostoja.
 
-## Miten tarkistaa, jos hakemisto on olemassa
+## Kuinka tehdä
 
-```Ruby
-if File.directory?("/hakemisto") # Tarkistaa, onko hakemisto olemassa
- puts "Hakemisto on olemassa"
-else
- puts "Hakemistoa ei ole olemassa"
-end
-```
-Tämä yksinkertainen koodinpätkä käyttää Ruby-metodia nimeltä `directory?` tarkistaakseen, onko hakemisto olemassa. Metodi palauttaa totuusarvon (true/false) ja sen avulla voit suorittaa halutut toimet sen mukaan. Jos hakemisto on olemassa, koodi tulostaa `Hakemisto on olemassa`, muuten se tulostaa `Hakemistoa ei ole olemassa`.
+Ruby tarjoaa useita tapoja tarkistaa, löytyykö hakemisto tietokoneelta. Tässä esimerkkejä kahdesta erilaisesta tavasta, joilla voit toteuttaa tämän.
 
-## Syvällinen katsaus hakemiston tarkistamiseen
+```ruby
+# Käytä Dir.exist?() -metodia
+Dir.exist?("polku/hakemistoon") #=> true tai false
 
-Hakemiston olemassaolon tarkistaminen on tärkeä osa ohjelmointia, etenkin tiedostojen ja hakemistojen käsittelyssä. Ruby-metodi `directory?` on luotettava keino tarkistaa hakemiston olemassaolo ja sillä on myös muita hyödyllisiä sovelluksia.
-
-Voit myös käyttää `File.exist?` -metodia tarkistaaksesi yleisesti tiedostojen ja hakemistojen olemassaolon Rubyssä.
-
-```Ruby
-if File.exist?("/tiedosto.txt") # Tarkistaa, onko tiedosto olemassa
- puts "Tiedosto on olemassa"
-else
- puts "Tiedostoa ei ole olemassa"
-end
-```
-Lisäksi voit tarkistaa, onko hakemiston sisällä tiettyä tiedostoa tai hakemistoa käyttämällä `File.exist?`- ja `File.join` -metodeja yhdessä. `join`-metodi yhdistää tiedoston / hakemiston nimen ja hakemistopolun luodaksesi kokonaisen polun.
-
-```Ruby
-if File.exist?(File.join("/documents", "raportti.pdf")) # Tarkistaa, onko tiedosto "raportti.pdf" olemassa "documents"-hakemistossa
- puts "Raportti on olemassa"
-else
- puts "Raporttia ei ole olemassa"
-end
+# Käytä File.directory?() -metodia
+File.directory?("polku/hakemistoon") #=> true tai false
 ```
 
-# Katso myös
+Edellä mainitut esimerkit palauttavat joko totuusarvon "true", jos hakemisto löytyy, tai "false", jos hakemistoa ei löydy. Voit myös vaihtaa hakemiston polun mihin tahansa haluamaasi polkuun ja koodi toimii samalla tavalla.
 
-- [ruby-doc.org/core-2.6/File.html](https://ruby-doc.org/core-2.6/File.html)
-- [ruby-doc.org/core-2.6/FileTest.html#method-c-directory-3F](https://ruby-doc.org/core-2.6/FileTest.html#method-c-directory-3F)
-- [ruby-doc.org/core-2.6/FileTest.html#method-c-exist-3F](https://ruby-doc.org/core-2.6/FileTest.html#method-c-exist-3F)
+## Syvempi sukellus
+
+Kun tarkistat hakemiston olemassaoloa, on tärkeää huomata, että et välttämättä tarvitse tarkistaa koko tiedostojärjestelmää. Voit antaa parametrina tietyssä hakemistossa olevan polun ja Ruby tarkistaa vain tuon hakemiston.
+
+Voit myös käyttää "Dir.glob()" -metodia, joka palauttaa taulukon tiedostoista ja hakemistoista, jotka vastaavat parametrina annettua hakemistoa.
+
+```ruby
+# Tarkista tiedostojen ja hakemistojen lukumäärä valitussa hakemistossa
+Dir.glob("polku/hakemistoon/**/*").length #=> lukumäärä
+
+# Hae tiettyä tiedostopäätettä käyttävät tiedostot
+Dir.glob("polku/hakemistoon/*.rb")
+```
+
+## Katso myös
+
+- [Ruby'n virallinen dokumentaatio hakemistojen tarkistamisesta](https://ruby-doc.org/core-2.7.2/File.html#method-c-directory-3F)
+- [Ruby'n virallinen dokumentaatio hakemistojen selaamisesta](https://ruby-doc.org/core-2.7.2/Dir.html)
+- [Käytännön esimerkki: Ruby-ohjelma, joka tarkistaa hakemiston olemassaolon](https://www.codingame.com/playgrounds/35462/ruby-ohjelmointikieli-harjoittelua/tehtava-7)

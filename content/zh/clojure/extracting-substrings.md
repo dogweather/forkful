@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: 提取子字符串"
+title:                "提取子字符串"
+html_title:           "Clojure: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,75 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-提取字符串是编程中经常用到的操作，它可以让我们从一个字符串中获取我们需要的部分内容。在Clojure中，提取子字符串的方法也很简单，让我们来看看如何实现！
+Clojure是一种高效的编程语言，它采用了函数式编程的思想，让程序员能够以一种简洁而强大的方式来处理字符串。提取子字符串是一种常见的字符串操作，它可以帮助程序员快速地获取所需的信息，节省时间和精力。
 
 ## 如何操作
 
-首先，我们需要使用`subseq`函数来提取子字符串，它的语法如下：
+你可以使用`subs`函数来提取子字符串，它接受三个参数：字符串、开始索引和结束索引。例如，如果我们想要提取字符串`Clojure`的子字符串`oj`，我们可以这样编写代码：
 
-```
-(subseq string start-pos end-pos?)
-```
-
-其中，`string`表示原始字符串，`start-pos`表示子字符串的起始位置，`end-pos?`表示子字符串的结束位置。需要注意的是，`end-pos?`是可选参数，如果不指定，默认为原始字符串的末尾。下面是一个使用示例：
-
-```
-(def s "Hello, world!")
-(subseq s 2 5)
+```Clojure
+(subs "Clojure" 2 4)
 ```
 
-以上代码将会提取`"llo"`作为输出结果。此外，Clojure也提供了更简便的方式来提取子字符串，比如使用`subs`函数：
+运行以上代码，会得到输出`oj`。
 
-```
-(subs string start-pos?)
-```
+你还可以使用`clojure.string`命名空间中的函数来操作字符串。例如，如果我们想要提取一个字符串中的某一个单词，我们可以使用`split`函数来拆分字符串并选择相应的元素，如下所示：
 
-在这种情况下，我们只需要指定起始位置即可，`end-pos?`会被自动设置为原始字符串的末尾。下面是同样的例子，使用`subs`函数：
-
-```
-(def s "Hello, world!")
-(subs s 2)
+```Clojure
+(require '[clojure.string :as str])
+(str/split "Hello world" #" ")[1]
 ```
 
-输出结果仍然是`"llo"`。除了使用数字来指定位置，我们也可以使用关键字来提取子字符串，比如使用`start`和`end`关键字：
-
-```
-(def s "Hello, world!")
-(subs s :start 2 :end 5)
-```
-
-同样，输出结果也是`"llo"`。此外，我们还可以使用负数来表示位置，比如`-1`表示倒数第一个字符，`-2`表示倒数第二个字符，依此类推。
+运行以上代码，会得到输出`world`。
 
 ## 深入了解
 
-除了上述的方法外，我们还可以使用`re-find`函数来从一个字符串中匹配正则表达式，并提取匹配的部分作为子字符串。例如，以下代码可以从原始字符串中提取所有的数字：
+除了以上提到的方法，Clojure还提供了更多操作字符串的函数，例如`take`、`drop`等。此外，考虑到字符串中可能存在中文、日语等多字节字符，Clojure也提供了相应的函数来处理这些情况，如`subs-updated`、`split-lines`等。
 
-```
-(def s "1a2b3c4d5e")
-(re-find #"\d+" s)
-```
+了解更多关于Clojure中字符串操作的函数，请参考官方文档：https://clojure.org/reference/strings。
 
-输出结果是`1`，`2`，`3`，`4`，`5`，每个数字占一行。如果我们想要将这些数字放在一个列表中，可以使用`re-seq`函数：
+## 参考链接
 
-```
-(def s "1a2b3c4d5e")
-(re-seq #"\d+" s)
-```
-
-输出结果是一个包含所有数字的列表：`(1 2 3 4 5)`。
-
-## 查看更多
-
-如果你想要了解更多有关提取子字符串的信息，你可以参考下面这些链接：
-
-- [Clojure字符串操作文档](https://clojure.org/reference/java_interop#_string_operations)
-- [Clojure正则表达式文档](https://clojuredocs.org/clojure.core/re-find)
-- [Java String类文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-
-## 看看其他文章
-
-如果你对Clojure编程有兴趣，可以阅读下列文章了解更多：
-
-- [Clojure数据结构简介](https://www.importnew.com/11963.html)
-- [Clojure多线程编程指南](https://www.ibm.com/developerworks/cn/java/j-clojure-parallel-function/index.html)
-- [Clojure编程入门指南](https://clojure.org/guides/getting_started)
+- https://clojure.org/reference/strings
+- https://www.learn-clojure.com/strings/
+- https://repl.it/@learn_clojure/BriefTenseInductives
+- https://github.com/jafingerhut/clojure-string-cheatsheet
+- https://clojuredocs.org/clojure.core/subs

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Java: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,28 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często podczas pisania programów w Javie, musisz manipulować tekstem w różne sposoby. Jedną z czynności, które możesz wykonać, jest konwersja tekstu na małe litery. W tym artykule dowiesz się, dlaczego taki zabieg może być przydatny w Twoim kodzie.
+Konwersja ciągu znaków na małe litery jest ważnym aspektem programowania w języku Java. Pozwala ona na porównywanie i analizowanie tekstu bez uwzględniania wielkości liter, co jest niezbędne w wielu przypadkach.
 
 ## Jak to zrobić
 
-Konwersja tekstu na małe litery w Javie jest bardzo prosta dzięki metodzie `toLowerCase()`. Wystarczy przekazać do niej jako argument funkcji ciąg znaków, którego chcesz dokonać konwersji. Poniżej znajduje się przykładowy kod:
+Przede wszystkim musimy zapewnić, że nasz kod będzie miał dostęp do klasy String, która zawiera metody do manipulowania tekstem. Następnie, możemy użyć metody `toLowerCase()` na naszym ciągu znaków, aby dokonać konwersji. Przykładowy kod poniżej:
 
 ```java
-String text = "PRZYKŁADOWY TEKST";
-String convertedText = text.toLowerCase();
-
-System.out.println(convertedText);
+String text = "HELLO WORLD";
+System.out.println(text.toLowerCase());
 ```
 
-W wyniku wykonania powyższego kodu otrzymamy następujący output: `przykładowy tekst`.
+To spowoduje, że na ekranie zostanie wyświetlony ciąg znaków "hello world". 
 
-## Deep Dive
+Jeśli chcemy przeprowadzić konwersję na obiekcie typu String, możemy użyć metody `toLowerCase()` na zmiennej tego typu:
 
-Głównym powodem konwersji tekstu na małe litery jest ujednolicenie danych. W przypadku porównywania tekstu, nie jest istotne, czy literki są wielkie czy małe, ale to, czy dokładnie odpowiadają sobie w kolejności. Dzięki konwersji tekstu na małe litery, mamy pewność, że porównując dwa wyrazy, nie zostanie pominięty żaden z nich ze względu na wielkość liter.
+```java
+String text = "HELLO WORLD";
+String lowercaseText = text.toLowerCase();
+```
 
-Warto również zauważyć, że metoda `toLowerCase()` będzie działać prawidłowo tylko dla standardowych znaków alfabetu angielskiego. Jeśli będziemy chcieli skonwertować tekst zawierający znaki specjalne lub litery z innych języków, musimy użyć innych metod lub rozszerzyć nasz kod.
+W powyższym przykładzie, zmienna `lowercaseText` będzie zawierać ciąg znaków "hello world". 
 
-## Zobacz również
+## Głębsze wyjaśnienie
 
-- [Java String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java String toLowerCase() method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+W języku Java istnieją dwa sposoby na konwersję ciągu znaków na małe litery. Możemy użyć metody `toLowerCase()`, która zwraca nowy obiekt typu String zawierający wynik konwersji. Lub, możemy użyć metody `toCharArray()`, która zwraca tablicę typu char zawierającą wynik konwersji. Przykładowy kod poniżej:
+
+```java
+String text = "HELLO WORLD";
+
+// metoda toLowerCase()
+String lowercaseText = text.toLowerCase();
+System.out.println(lowercaseText);
+
+// metoda toCharArray()
+char[] charArray = text.toCharArray();
+for (char c : charArray) {
+    if (c >= 'A' && c <= 'Z') {
+        c += 32; // dodajemy 32 do kodu ASCII znaku, aby zmienić go na właściwą małą literę
+    }
+    System.out.print(c);
+}
+```
+
+W powyższym przykładzie, wykorzystaliśmy fakt, że w ASCII, duże litery mają wyższe kody niż małe litery. Dlatego, dodając 32 do kodu ASCII znaku, zmieniamy go na odpowiednią małą literę. 
+
+## Zobacz też
+
+- [Dokumentacja Java String](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
+- [Ciągi znaków w języku Java](https://www.geeksforgeeks.org/java-string/)

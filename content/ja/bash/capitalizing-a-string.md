@@ -1,6 +1,7 @@
 ---
-title:                "Bash: 文字列の先頭を大文字に変換する"
-simple_title:         "文字列の先頭を大文字に変換する"
+title:                "文字列の大文字化"
+html_title:           "Bash: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -9,45 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
+## やめよう
+文字列の大文字化を行う理由を最大2文で説明します。
 
-「Bash」プログラミングを学習する理由はたくさんありますが、今回は「文字列の大文字化」を取り上げます。文字列の大文字化は、プログラミングの世界で非常に役立つスキルであり、テキスト処理やデータ操作など多くの場面で必要になるからです。
+## どうやるか
+`` `Bash
+str = "hello world"
+echo -e "大文字化前：$ str"
+capitalized_str = '$str' | tr '[a-z]' '[A-Z]'
+echo -e "大文字化後：$ capitalized_str"
+`` `
+上記のようなコマンドを使用して、文字列を大文字化することができます。上記の例では、"hello world"を"HELLO WORLD"に変換します。
 
-##やり方
+## 深堀り
+Bashでは、単純なコマンドでも柔軟性があります。大文字化を行うためには、`tr`コマンドを使用します。このコマンドは、指定された文字を別の文字で置換することができます。具体的には、文字列の小文字を大文字に置換することができます。
 
-「文字列の大文字化」を実現する方法はいくつかありますが、ここでは「tr」コマンドを使用した方法を紹介します。
-
-まず、任意の文字列を定義します。
-
-```Bash
-str="hello world"
-```
-
-次に、`tr`コマンドを使用して大文字化します。
-
-```Bash
-echo $str | tr '[:lower:]' '[:upper:]'
-```
-
-実行すると、出力結果は`HELLO WORLD`となります。
-
-また、変数などの値を大文字化する場合は、以下のように`tr`コマンドと組み合わせて使用します。
-
-```Bash
-value="apple"
-echo $value | tr '[:lower:]' '[:upper:]'
-```
-
-出力結果は`APPLE`となります。
-
-##詳細な説明
-
-「文字列の大文字化」を実現するために使用する`tr`コマンドは、テキスト変換ユーティリティの1つであり、文字の置換や削除、変換などを行うことができます。引数として受け取った文字列の文字コードを示すオプションを使用することで、大文字や小文字などの変換を行うことができます。
-
-詳細な使用方法やオプションについては、公式ドキュメントを参考にしてください。
-
-##参考リンク
-
-- [Bash 公式ドキュメント](https://www.gnu.org/software/bash/)
-- [tr コマンドのチュートリアル](https://linux.die.net/man/1/tr)
-- [文字列の大文字化について](https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%96%87%E5%AD%97)
+## それでは見てみましょう
+**### 参考リンク：**
+- [Bashの公式ドキュメント](https://www.gnu.org/software/bash/manual/bash.html)
+- [trコマンドの使用方法](https://www.computerhope.com/unix/utr.htm)
+- [文字列の大文字化についていくつかの例を紹介するブログ記事](https://www.thegeekstuff.com/2010/07/bash-uppercase-lowercase-and-capitalize-casing-conversion/)

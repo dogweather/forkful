@@ -1,6 +1,7 @@
 ---
-title:                "C#: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Utskrift av felhantering"
+html_title:           "C#: Utskrift av felhantering"
+simple_title:         "Utskrift av felhantering"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,52 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva ut debuggning-utgångar kan vara ett värdefullt verktyg för att felsöka och förbättra din kod. Det kan hjälpa dig att förstå var ditt program går fel och hur olika delar av koden samverkar.
 
-Att skriva kod är en process fylld av utmaningar och ibland kan det uppstå fel och buggar som behöver åtgärdas. En användbar teknik för att identifiera och lösa dessa problem är att använda utskrift av debug-utdata. Detta ger en möjlighet att se vad som händer i koden och varför det händer, vilket sparar tid och gör det lättare att felsöka.
+## Hur man gör
+Det finns flera sätt att skriva ut debuggning-utgångar i C#, men det vanligaste är att använda metoden `Console.Write()` eller `Console.WriteLine()`. Dessa metoder tar en eller flera argument och skriver ut dem till konsolen. Här är ett enkelt exempel:
 
-## Så här gör du
+```C#
+Console.WriteLine("Hello World!");
+```
 
-För att skriva ut debug-utdata i C#, används metoden `Debug.WriteLine()`. Det här är ett exempel på hur man kan använda denna metod:
+Detta kommer att skriva ut "Hello World!" till konsolen när du kör ditt program. Du kan också skriva ut variabler eller andra uttryck, till exempel:
+
+```C#
+int age = 27;
+Console.WriteLine("Min ålder är " + age + " år.");
+```
+
+Detta kommer att skriva ut "Min ålder är 27 år." när du kör programmet.
+
+Att använda `Console.Write()` kommer att skriva ut en rad och hålla kvar markören vid slutet av raden. Om du vill fortsätta på samma rad kan du använda `Console.Write()` istället och skriva in en separat rad senare i koden.
+
+Det finns också andra metoder och verktyg som kan hjälpa dig att skriva ut debuggning-utgångar, till exempel `Debug.WriteLine()` och Visual Studio Debugging Tools.
+
+## Deep Dive
+Vid felsökning kan det vara användbart att skriva ut mer än bara en sträng eller variabel. Du kan använda formateringssträngar för att skriva ut mer komplexa utgångar, till exempel:
 
 ```C#
 int num1 = 5;
 int num2 = 10;
-Debug.WriteLine("Resultatet av num1 + num2 är: " + (num1 + num2));
+Console.WriteLine($"Summan av {num1} och {num2} är {num1+num2}.");
 ```
 
-Det här kommer att skriva ut följande i debug-fönstret:
+Detta kommer att skriva ut "Summan av 5 och 10 är 15." Formateringssträngar kan vara särskilt användbara när du arbetar med flera variabler och vill ha en mer strukturerad utgång. Du kan läsa mer om formateringssträngar [här](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
 
-```
-Resultatet av num1 + num2 är: 15
-```
-
-Det går också att använda "placeholders" i strängen för att skriva ut variabler. Till exempel:
-
-```C#
-string name = "John";
-int age = 25;
-Debug.WriteLine("{0} är {1} år gammal.", name, age);
-```
-
-Det här kommer att skriva ut följande:
-
-```
-John är 25 år gammal.
-```
-
-Det finns också andra användbara metoder som `Debug.Print()` och `Console.WriteLine()` för att skriva ut debug-utdata. Skillnaden är att `Debug.Print()` endast skriver ut när debugläget är aktivt, medan `Console.WriteLine()` alltid skriver ut data.
-
-## Fördjupning
-
-Att skriva ut debug-utdata ger en möjlighet att se vad som händer i koden i realtid. Detta är särskilt användbart när du arbetar med stora och komplicerade program. Genom att placera utskrift av debug-utdata vid olika steg i koden kan du enklare upptäcka var problem uppstår och varför de uppstår.
-
-Det finns också andra tekniker som kan förbättra användbarheten för utskrift av debug-utdata. Till exempel kan du använda `#define` för att ställa in ett visst debugläge och bara skriva ut data när detta läge är aktivt. Detta sparar resurser och undviker att skriva ut onödig information när programmet körs i produktionsläge.
-
-En annan fördel med att använda utskrift av debug-utdata är att det även kan fungera som en form av dokumentation. Genom att läsa igenom utskriven debug-utdata kan du få en bättre förståelse för hur koden fungerar och vad olika variabler innehåller.
+Det är också möjligt att skriva ut debuggning-utgångar till en fil istället för till konsolen. Detta kan vara användbart om du vill spara utgångarna för senare analys. Du kan göra detta med `Console.SetOut()` metoden och ange en filväg som argument.
 
 ## Se även
-
-- [Microsofts dokumentation för Debug-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
-- ["Introducing Debug Output in C#" av Shawn Wildermuth](https://wildermuth.com/2016/11/15/Introducing-Debug-Output-in-C-)
-
-Hoppas detta har gett dig en bättre förståelse för hur man kan använda utskrift av debug-utdata i C#. Fortsätt utforska och använda denna teknik för att bli en mer effektiv programmerare!
+- [C# Dokumentation om Debuggning](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/debugging/)
+- [Visual Studio Debugging Tools](https://docs.microsoft.com/sv-se/visualstudio/debugger/?view=vs-2019)

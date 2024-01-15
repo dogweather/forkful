@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "TypeScript: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Pisanie plików tekstowych jest nieodłączną częścią programowania, występuje w wielu różnych językach programowania, w tym również w TypeScript. Pisanie plików tekstowych jest ważne dla twórców oprogramowania, ponieważ dają one możliwość przechowywania i przetwarzania informacji w trwałej i czytelnej formie.
+Pisanie plików tekstowych jest nieodłączną częścią procesu programowania. Niezależnie od tego, czy jesteś doświadczonym programistą czy dopiero zaczynasz swoją przygodę z językiem TypeScript, znajomość pisania plików tekstowych jest niezbędnym umiejętnością.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pisanie plików tekstowych w TypeScript jest proste i zastosowanie kilku prostych kroków pozwoli nie tylko utworzyć plik tekstowy, ale również manipulować jego zawartością. Aby rozpocząć, należy wykonać następujące czynności:
-
-1. Importowanie modułu "fs", który zapewnia dostęp do funkcji związanych z systemem plików.
-2. Utworzenie zmiennej, która będzie odpowiadać za nazwę pliku.
-3. Użycie funkcji "writeFileSync" do utworzenia nowego pliku tekstowego i zapisania w nim zawartości.
-4. Manipulacja zawartością pliku przy użyciu funkcji "appendFileSync" lub "writeFileSync".
-
-Oto przykładowy kod w TypeScript:
+W celu napisania pliku tekstowego przy użyciu języka TypeScript, skorzystaj z funkcji `writeFile` z biblioteki `fs`. Poniżej znajduje się przykładowy kod, który wyjaśni krok po kroku, jak napisać plik tekstowy:
 
 ```TypeScript
+// Importowanie biblioteki fs
 import * as fs from 'fs';
 
-// nazwa pliku
-let nazwaPliku = "moj_plik.txt";
+// Utworzenie funkcji, która będzie zapisywać plik
+function writeToFile(filename: string, data: string) {
+    // Wywołanie funkcji writeFile z podaniem nazwy pliku oraz danych do zapisania
+    fs.writeFile(filename, data, (err: Error) => {
+        // W przypadku błędu, wyświetl komunikat
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Plik został zapisany.');
+        }
+    });
+}
 
-// tworzenie i zapisywanie pliku
-fs.writeFileSync(nazwaPliku, "Przykładowa zawartość pliku.");
+// Wywołanie funkcji z podaniem nazwy pliku oraz danych do zapisania
+writeToFile('moj_plik.txt', 'To jest moj pierwszy plik tekstowy!');
 
-// dodawanie treści do pliku
-fs.appendFileSync(nazwaPliku, " Kolejna linia tekstu.");
 ```
 
-Po wykonaniu tych czynności, plik "moj_plik.txt" powinien zostać utworzony w bieżącym katalogu i będzie zawierał następującą zawartość:
+Running the above code will write the specified data to a text file named "moj_plik.txt". To verify that the file was written successfully, you can navigate to the file location and open it to see the text inside.
 
-Przykładowa zawartość pliku. Kolejna linia tekstu.
+## Zagłębienie się w temat
 
-## Deep Dive
+Tworzenie plików tekstowych jest jedną z podstawowych form komunikacji w programowaniu. Może być używane do przechowywania danych, jak również wyświetlania informacji dla użytkownika. Oprócz funkcji `writeFile`, biblioteka `fs` udostępnia również inne metody, takie jak `readFile` i `appendFile`, które pozwalają na odczytywanie i dopisywanie treści do istniejących plików tekstowych. Pozwala to na jeszcze większą kontrolę nad danymi przechowywanymi w plikach.
 
-Pisząc plik tekstowy w TypeScript, istnieje wiele funkcji, które można wykorzystać do manipulowania zawartością pliku. Poniżej przedstawiono kilka przydatnych przykładów:
+## Zobacz także
 
-1. Funkcja "readFileSync" pozwala na odczytanie zawartości istniejącego pliku tekstowego.
-2. Funkcja "renameSync" służy do zmiany nazwy lub przeniesienia pliku do innego katalogu.
-3. Funkcja "unlinkSync" usuwa istniejący plik tekstowy.
-
-Warto również zwrócić uwagę na dodatkowe opcje, które można wykorzystać przy tworzeniu lub edycji pliku, takie jak kodowanie znaków, tryb dostępu czy flagi.
-
-## Zobacz również
-
-1. Dokumentacja TypeScript dotycząca funkcji związanych z systemem plików: https://www.typescriptlang.org/docs/handbook/file-system-functions.html
-2. Przykłady wykorzystania funkcji systemu plików w TypeScript: https://www.tutorialspoint.com/typescript/typescript_file_system.htm
-3. Tutorial "Pisanie plików w TypeScript": https://www.digitalocean.com/community/tutorials/how-to-use-the-readfile-function-of-node-js-to-read-the-content-of-a-file#reading-files-with-javascript
+Jeśli chcesz dowiedzieć się więcej o pisaniu plików tekstowych w języku TypeScript, możesz zapoznać się z dokumentacją oficjalnej biblioteki `fs` na stronie [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html). Możesz również zobaczyć przykładowy projekt na GitHubie, który wykorzystuje funkcje `fs` do tworzenia pliku tekstowego [https://github.com/username/repo](https://github.com/username/repo).

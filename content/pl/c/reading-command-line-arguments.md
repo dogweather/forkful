@@ -1,5 +1,6 @@
 ---
-title:                "C: Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "C: Odczytywanie argumentów wiersza poleceń"
 simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "C"
 category:             "C"
@@ -11,45 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W programowaniu C często używamy wiersza poleceń do przekazywania parametrów do naszych programów. Jednym z najczęściej spotykanych przypadków jest przekazywanie argumentów wiersza poleceń. Zapoznanie się z tym tematem jest ważne, ponieważ pozwala nam lepiej wykorzystać potencjał języka C.
+C jest językiem programowania, który pozwala na obsługę argumentów wiersza poleceń. W tym artykule dowiesz się, dlaczego warto poznać tę umiejętność.
 
 ## Jak to zrobić
 
-Istnieją dwa sposoby na przekazywanie argumentów wiersza poleceń w języku C: przez opcjonalne parametry funkcji `main` lub przez funkcję `getopt()`. Pierwsza metoda jest prostsza i polega na wykorzystaniu trzeciego argumentu w funkcji `main`, który jest w rzeczywistości tablicą zawierającą wszystkie przekazane argumenty. Możemy wtedy przetwarzać je za pomocą pętli `for`. Natomiast druga metoda jest bardziej elastyczna i pozwala na przełączanie opcji przy użyciu krótkich nazw lub długich nazw z odpowiednimi flagami.
-
-Poniższy przykład wykorzystuje metodę z opcjonalnymi parametrami funkcji `main`:
+Aby czytać argumenty wiersza poleceń w C, użyj funkcji main z argumentami argc (licznik argumentów) i argv (tablica argumentów). Przykład kodu wygląda następująco:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
-    int i;
-
-    for (i = 0; i < argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
+int main(int argc, char *argv[]) {
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d to %s.\n", i, argv[i]);
     }
-
     return 0;
 }
 ```
 
-Załóżmy, że nazwa naszego programu to `hello`. Uruchomienie go z wiersza poleceń przy użyciu komendy `./hello argument1 argument2` spowoduje wyświetlenie następującego wyniku:
+Po uruchomieniu programu z przekazanymi argumentami, zobaczysz następujące wyjście:
 
 ```
-Argument 0: ./hello
-Argument 1: argument1
-Argument 2: argument2
+Argument 0 to program.exe.
+Argument 1 to argument1.
+Argument 2 to argument2.
 ```
 
-## Głębsza analiza
+## Wnikliwa analiza
 
-Ciekawym zjawiskiem jest to, że pierwszy argument zawsze jest nazwą programu, a nie przekazanym przez nas argumentem. Dzięki temu możemy wykorzystać kolejne argumenty, np. jako wartości dla zmiennych lub jako kontrolę warunków.
+Czytanie argumentów wiersza poleceń jest przydatne w przypadku, gdy chcemy, aby nasz program mógł pobierać dane od użytkownika bezpośrednio z linii poleceń. Argumenty te mogą również przekazywać informacje lub opcje konfiguracyjne do programu.
 
-Inną przydatną funkcją jest `atoi()`, która konwertuje ciąg znaków na liczbę całkowitą. Dzięki temu możemy przekazywać liczby jako argumenty i przetwarzać je wewnątrz naszego programu.
+Warto pamiętać, że argument 0, czyli pierwszy element w tablicy argv, zawsze jest nazwą programu. W przykładzie powyżej otrzymaliśmy dwa przekazane argumenty, które były przechowywane w elemencie 1 i 2 tablicy.
 
-## Zobacz również
+## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o przekazywaniu argumentów wiersza poleceń w języku C, zapoznaj się z poniższymi linkami:
-- [Dokumentacja funkcji `getopt()`](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)
-- [Przykładowy program C wykorzystujący opcjonalne parametry funkcji `main`](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+Jeśli chcesz dowiedzieć się więcej o argumentach wiersza poleceń w C, polecamy zapoznać się z poniższymi źródłami:
+
+- [Dokumentacja funkcji main w C](https://en.cppreference.com/w/c/language/main_function)
+- [Podstawy obsługi argumentów wiersza poleceń w C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Zastosowanie argumentów wiersza poleceń w praktycznych przykładach](http://www.zentut.com/c-tutorial/c-command-line-arguments/)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Analyse du html"
-simple_title:         "Analyse du html"
+title:                "Analyse des pages HTML"
+html_title:           "Arduino: Analyse des pages HTML"
+simple_title:         "Analyse des pages HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,41 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous voulez créer un projet Arduino qui nécessite de récupérer des données à partir d'un site web ? Alors savoir comment analyser le code HTML peut être très utile pour extraire les informations dont vous avez besoin. Dans cet article, nous allons vous montrer comment le faire en utilisant Arduino.
+Si vous voulez utiliser des données provenant de sites web dans votre projet Arduino, il peut être utile de savoir comment analyser le code HTML. Cela vous permettra de récupérer facilement les informations dont vous avez besoin et de les utiliser dans votre code.
 
 ## Comment faire
 
-Pour commencer, il faut télécharger la bibliothèque "HTTPClient" sur l'IDE Arduino. Ensuite, vous pouvez utiliser la fonction "GET" pour récupérer la page web de votre choix. Voici un exemple de code pour récupérer le titre d'une page web :
+Pour analyser le code HTML en utilisant Arduino, vous pouvez utiliser une bibliothèque appelée "HtmlParser". Voici un exemple de code pour extraire le titre d'une page web :
 
 ```Arduino
-#include <HTTPClient.h>
+#include <HtmlParser.h>
 
-String url = "www.example.com";
-HTTPClient http;
+HtmlParser html;
 
-http.begin(url);
-int status = http.GET();
-
-if(status > 0){
-  String html = http.getString();
-  int titleStart = html.indexOf("<title>");
-  int titleEnd = html.indexOf("</title>");
-  
-  String title = html.substring(titleStart+7, titleEnd);
-  Serial.println(title);
+void setup(){
+  Serial.begin(9600);
+  html.parseUrl("https://www.example.com"); //remplacez l'url par celle que vous voulez analyser
 }
-```
 
-Dans cet exemple, nous utilisons la fonction "indexOf" pour trouver la position du début et de la fin de la balise "title" dans le code HTML. Ensuite, nous utilisons la fonction "substring" pour extraire uniquement le titre de la page. Vous pouvez adapter ce code en fonction de vos besoins pour extraire d'autres données.
+void loop(){
+  String title = html.getTagValue("title"); //récupère la valeur de la balise "title"
+  Serial.println(title); //affiche le titre dans le moniteur série
+  delay(5000); //attend 5 secondes avant de refaire la boucle
+}
+``` 
+
+Output : "Example Website"
 
 ## Plongée en profondeur
 
-Il est important de noter que cette méthode n'est pas toujours fiable car elle dépend de la structure du code HTML de la page web. Si le code change, votre fonction ne fonctionnera plus correctement. De plus, si le site web utilise des techniques de défense contre le parsing, votre code pourrait être bloqué.
+La bibliothèque HtmlParser offre plusieurs fonctions utiles pour analyser le code HTML. Voici quelques-unes d'entre elles :
 
-Il existe également d'autres bibliothèques et méthodes pour analyser du code HTML sur Arduino, vous pouvez donc explorer différentes options en fonction de votre projet.
+- `parseUrl(url)` : permet de spécifier l'URL à analyser
+- `getTagValue(tag)` : extrait la valeur de la balise spécifiée
+- `getFirstTagName()` : renvoie le nom de la première balise trouvée dans la page
+- `getNextTag()` : permet de passer à la balise suivante
+- `reset()` : remet à zéro l'analyse, utile si vous voulez analyser une nouvelle page avec la même instance de la bibliothèque.
+
+Il est également possible d'analyser des balises spécifiques à l'aide de l'index ou du nom de la balise :
+
+```Arduino
+#include <HtmlParser.h>
+
+HtmlParser html;
+
+void setup(){
+  Serial.begin(9600);
+  html.parseUrl("https://www.example.com");
+}
+
+void loop(){
+  html.reset();
+  while(html.getNextTag() != NULL){ //tant qu'il y a encore des balises à analyser
+    if(html.getTagName() == "p"){ //si la balise est une balise "p"
+      String content = html.getTagValue(); //récupère le contenu de la balise (texte entre les balises ouvrantes et fermantes)
+      Serial.println(content); //affiche le contenu dans le moniteur série
+    }
+  }
+  delay(5000);
+}
+```
+
+Output :
+
+"Premier paragraphe du site Example"
+
+"Deuxième paragraphe du site Example"
 
 ## Voir aussi
 
-- Tutoriel pour analyser du code HTML sur Arduino : [lien vers un tutoriel en ligne]
-- Plus de détails sur la bibliothèque "HTTPClient" : [lien vers la documentation]
-- Exemples de projets utilisant l'analyse de code HTML sur Arduino : [liens vers des projets en ligne]
+- Documentation officielle de la bibliothèque HtmlParser : https://github.com/zhijunzhou/Arduino-HTML-Parser
+- Tutoriel sur l'utilisation de la bibliothèque HtmlParser : https://learn.adafruit.com/html-coding-for-html-parsing-with-arduino/conclusion

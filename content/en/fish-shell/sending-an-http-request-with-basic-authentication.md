@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-HTTP requests are a crucial part of modern web development. Whether you're building a website or creating an API, being able to send HTTP requests is an essential skill to have. One common type of HTTP request is a request with basic authentication. It involves providing a username and password along with the request, allowing the server to verify the identity of the user. In this blog post, we will explore how to send an HTTP request with basic authentication using Fish Shell.
+Sending HTTP requests with basic authentication is a common practice in modern web development. It allows for secure communication between a client and server through the use of a username and password.
 
 ## How To
-Sending an HTTP request with basic authentication is a simple process in Fish Shell. First, we need to install the `curl` package, which allows us to make HTTP requests from the command line. We can do this using the built-in package manager in Fish Shell:
+To send an HTTP request with basic authentication in Fish Shell, we first need to install the "httpie" command line tool. This can be done using the following command:
 
 ```Fish Shell
-$ fisher install curl
+brew install httpie
 ```
 
-Next, we can use the `curl` command to send our request. We need to specify the URL we want to send the request to, along with the `-u` flag followed by the username and password separated by a colon. For example:
+Once installed, we can use the "http" command to send a request with basic authentication. Here's an example using the "get" method to request information from a server:
 
 ```Fish Shell
-$ curl -u username:password https://example.com
+http --auth username:password GET https://example.com
 ```
 
-This will send a GET request to the specified URL with the provided credentials. We can also specify the type of request using the `-X` flag, and include any necessary data using the `-d` flag. For example, if we wanted to send a POST request with data, we could use the following command:
-
-```Fish Shell
-$ curl -u username:password -X POST -d '{"name": "John", "age": 25}' https://example.com
-```
+The "--auth" flag is used to specify the credentials for basic authentication in the format of "username:password". The above command will return the response from the server in JSON format.
 
 ## Deep Dive
-Underneath the surface, sending an HTTP request with basic authentication involves encoding the username and password in the request header using the Base64 algorithm. This ensures that the credentials are not sent in plain text, improving security. Additionally, many APIs require basic authentication as a means of verifying the identity of the user before allowing access to certain resources.
+While the above example is a simple way to send an HTTP request with basic authentication, it's important to note some additional details. The username and password provided in the credentials can be encoded using base64 before being transmitted, which adds an extra layer of security. Also, keep in mind that basic authentication is not the most secure method of authentication and should be used with caution.
 
 ## See Also
-- Official Fish Shell documentation on sending HTTP requests with basic authentication: https://fishshell.com/docs/current/cmds/curl.html
-- Tutorial on using cURL for making HTTP requests: https://www.digitalocean.com/community/tutorials/how-to-use-curl-to-make-http-requests
-- Guide on HTTP authentication types: https://www.httpwatch.com/authentication/types/
+- [Official Fish Shell Documentation for HTTPie](https://fishshell.com/docs/current/cmds/httpie.html)
+- [HTTPie GitHub Repository](https://github.com/jakubroztocil/httpie)
+- [Understanding Basic and Digest Authentication](https://www.httpwatch.com/httpgallery/authentication/)

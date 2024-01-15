@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかの確認。"
+html_title:           "Kotlin: ディレクトリが存在するかどうかの確認。"
+simple_title:         "ディレクトリが存在するかどうかの確認。"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、みなさん！今日はKotlinでディレクトリの存在をチェックする方法についてお話しします。ディレクトリの存在をチェックすることで、プログラマーはアプリケーションの安全性や効率性を向上させることができます。
-
 ## なぜ
-ディレクトリの存在をチェックすることは、プログラマーにとって非常に重要なスキルです。例えば、ファイルをダウンロードする前にディレクトリの存在をチェックすることで、ファイルがダウンロードされる前に問題を修正することができます。また、既存のファイルを上書きする前にディレクトリの存在をチェックすることで、誤ったファイルが上書きされることを防ぐことができます。
+
+ディレクトリが存在するかどうかを確認することの利点は、アプリケーションが必要なファイルやリソースを正しく読み込むために重要です。ディレクトリが存在しない場合、プログラムは予期しないエラーを引き起こし、アプリケーションの動作に影響を及ぼす可能性があります。
 
 ## 方法
-ディレクトリの存在をチェックするには、Kotlinの`File`クラスの`exists()`メソッドを使用します。次のコードを使って、確認したいディレクトリのパスを指定し、ディレクトリが存在するかどうかを確認できます。
 
 ```Kotlin
-val directory = File("directory/path")
-val exists = directory.exists()
-println("ディレクトリの存在: $exists")
+fun checkDirectory(path: String): Boolean {
+    val directory = File(path)
+    return directory.exists()
+}
+
+fun main() {
+    val path = "data/images"
+    val directoryExists = checkDirectory(path)
+    println("Does $path exist? $directoryExists")
+}
+```
+実行結果:
+```
+Does data/images exist? true
 ```
 
-出力結果は、ディレクトリの存在の真偽値に応じて、`true`または`false`になります。
+## ディープダイブ
 
-## 深堀り
-ディレクトリの存在をチェックするとき、`File`クラスの他のメソッドも使えます。例えば、`isDirectory`メソッドを使うと、指定したパスがディレクトリであるかどうかを確認できます。また、`listFiles()`メソッドを使うと、指定したディレクトリ内のファイルやサブディレクトリの一覧を取得できます。
-
-さらに、Kotlinの`File`クラスには`mkdirs()`メソッドもあります。これを使うと、指定したパスにディレクトリを作成することができます。しかし、ディレクトリを作成する前に、`exists()`メソッドでディレクトリの存在をチェックすることで、重複したディレクトリを作成してしまうことを防ぐことができます。
-
-## おわりに
-今回はKotlinでディレクトリの存在をチェックする方法について見てきました。ディレクトリをチェックすることで、アプリケーションの安全性や効率性を向上させることができます。ぜひ今後のプログラミングに役立ててください！
+Kotlinの標準ライブラリには、ファイルやディレクトリのようなオペレーティングシステムの特定のリソースにアクセスするための便利なメソッドが用意されています。その中には、ディレクトリの存在を確認するための `exists()` メソッドも含まれています。このメソッドは、該当するファイルやディレクトリが存在する場合に `true` を返し、存在しない場合には `false` を返します。また、`exists()` メソッドの他にも、ディレクトリを作成するための `mkdir()` メソッドや削除するための `delete()` メソッドなど、便利なメソッドが数多くあります。
 
 ## 関連リンク
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/java-interop.html#file-handling)
-- [Kotlinでファイルを操作する方法](https://www.tutorialkart.com/kotlin/kotlin-file-handling-create-read-write-copy-files/)
-- [Kotlinでフォルダを作成する方法](https://attacomsian.com/blog/kotlin-create-directory)
-- [ディレクトリの存在をチェックする方法をマスターする](https://www.javatpoint.com/kotlin-directory-exists)
+
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/)
+- [Kotlinでディレクトリを作成する方法](https://www.developer.com/lang/how-to-create-directory-in-kotlin.html)
+- [Kotlinでファイルやディレクトリを削除する方法](https://www.tutorialkart.com/kotlin/kotlin-delete-file-and-directory/)

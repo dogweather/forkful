@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando"
+html_title:           "PHP: Lendo argumentos da linha de comando"
 simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,45 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos de linha de comando em PHP?
+## Por que
 
-Se você é um desenvolvedor PHP e ainda não está familiarizado com a leitura de argumentos de linha de comando em seus scripts, este post é para você. Aprender a ler argumentos de linha de comando é uma habilidade muito útil que pode melhorar o seu fluxo de trabalho e tornar seu código mais dinâmico.
+Você pode estar se perguntando: "Por que eu deveria ler sobre argumentos de linha de comando em PHP?".Bem, os argumentos de linha de comando são uma forma útil e eficiente de interagir com um programa em PHP sem ter que acessá-lo por meio de uma interface gráfica. Isso pode ser especialmente útil para scripts automatizados e projetos em desenvolvimento.
 
-## Como ler argumentos de linha de comando em PHP
+## Como Fazer
 
-Para ler argumentos de linha de comando em PHP, usamos a função `getopt()`. Ela recebe dois parâmetros: uma string com as opções possíveis e um array com as opções de comando fornecidas pelo usuário. Vamos ver um exemplo:
+Para ler argumentos de linha de comando em PHP, vamos usar a função `getopt()`. Esta função é responsável por analisar os argumentos e retornar um array com as opções definidas. Veja abaixo um exemplo simples:
 
 ```PHP
-$options = getopt('a:b:c:d:');
-var_dump($options);
+<?php
+// Definindo as opções
+$opts = "hvf:";
+
+// Obtendo as opções e argumentos
+$options = getopt($opts);
+
+// Imprimindo a saída
+print_r($options);
+?>
 ```
 
-Se executarmos o script acima com o comando `php meu_script.php -a 1 -b 2 -c 3`, obteremos a seguinte saída:
+Este código define três opções: `h`, `v` e `f`. A opção `h` é uma opção simples, ou seja, não precisa de um argumento vinculado a ela. A opção `v` é similar, mas será utilizada para imprimir informações adicionais. Por fim, a opção `f` precisa de um argumento, indicando um arquivo para ser manipulado. Agora, vamos verificar a saída quando executamos este script da seguinte forma: `php meu_script.php -h -vf arquivo.txt`.
+
+A saída será um array contendo as opções e os argumentos fornecidos para cada uma delas:
 
 ```
-array(3) {
-  ["a"]=>
-  string(1) "1"
-  ["b"]=>
-  string(1) "2"
-  ["c"]=>
-  string(1) "3"
-}
+Array
+(
+    [h] => 1
+    [v] => 1
+    [f] => arquivo.txt
+)
 ```
 
-Neste exemplo, usamos a opção `getopt()` para definir quatro opções possíveis: `a`, `b`, `c` e `d`. Quando executamos o script, fornecemos três argumentos `-a`, `-b` e `-c`, que são armazenados em um array associativo.
+Como você pode ver, a função `getopt()` automaticamente converte as opções simples em 1 e atribui o argumento fornecido para as opções que precisam de um.
 
-Você também pode usar a opção `getopt()` para ler argumentos mais complexos, como argumentos com valores obrigatórios ou opcionais. Para isso, basta adicionar `:` após a letra da opção. Por exemplo, `getopt('a:b:')` espera que as opções `a` e `b` tenham valores obrigatórios.
+## Mergulho Profundo
 
-## Aprofundando na leitura de argumentos de linha de comando em PHP
+A função `getopt()` também oferece a opção de especificar opções de forma mais específica, como indicar se a opção precisa de um argumento ou não, o tipo de argumento esperado e mais. Você pode aprender mais sobre isso na [documentação oficial do PHP](https://www.php.net/manual/pt_BR/function.getopt.php).
 
-Além da função `getopt()`, existem outras maneiras de ler argumentos de linha de comando em PHP, como a variável superglobal `$_SERVER['argv']`. Além disso, a extensão do PHP `cli` oferece funcionalidades adicionais para trabalhar com argumentos de linha de comando.
+Outra forma de ler argumentos de linha de comando em PHP é através da variável global `argv`, que retorna um array com todos os argumentos fornecidos ao script. O primeiro item do array será o nome do script em si, então basta percorrer os itens seguintes para acessar os argumentos. Veja um exemplo abaixo:
 
-Ao ler argumentos de linha de comando, é importante lembrar de validar os dados inseridos pelo usuário para garantir a segurança do seu script. Além disso, é uma boa prática fornecer mensagens de ajuda para o usuário, explicando como usar corretamente seus argumentos de linha de comando.
+```PHP
+<?php
+// Imprimindo a saída
+print_r($argv);
+?>
+```
 
-Aprender a ler argumentos de linha de comando em PHP pode ajudá-lo a criar scripts mais poderosos e flexíveis, tornando seu trabalho mais eficiente.
+Ao executar este script com os mesmos argumentos do exemplo anterior, a saída será a seguinte:
 
-## Veja também
-- [Documentação oficial do PHP para a função getopt()](https://www.php.net/manual/pt_BR/function.getenv.php)
-- [Artigo sobre como ler argumentos de linha de comando em PHP](https://www.devmedia.com.br/como-ler-argumentos-de-linha-de-comando-em-php/29361)
-- [Tutorial sobre a extensão cli do PHP](https://jorge-ferrer.com.br/usando-a-extensao-cli-do-php-para-criar-scripts-em-php/)
+```
+Array
+(
+    [0] => meu_script.php
+    [1] => -h
+    [2] => -vf
+    [3] => arquivo.txt
+)
+```
+
+Você pode ler mais sobre o uso da variável `argv` [aqui](https://www.php.net/manual/pt_BR/reserved.variables.argv.php).
+
+## Veja Também
+
+Aqui estão alguns links úteis para você aprender mais sobre leitura de argumentos de linha de comando em PHP:
+
+- [Documentação oficial do PHP: getopt()](https://www.php.net/manual/pt_BR/function.getopt.php)
+- [Documentação oficial do PHP: Variável global argv](https://www.php.net/manual/pt_BR/reserved.variables.argv.php)
+- [Exemplo prático de leitura de argumentos de linha de comando com getopt()](https://www.php.net/manual/pt_BR/function.getopt.php#example-4137)

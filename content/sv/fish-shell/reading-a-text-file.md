@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Att läsa en textfil"
-simple_title:         "Att läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Fish Shell: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,50 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa och använda en textfil är ett vanligt scenario när man programmerar. Det kan användas för att lagra data, spara inställningar eller hantera kommandoradsargument. Det är viktigt att veta hur man läser och manipulerar en textfil för att kunna effektivisera sitt programmeringsarbete.
+Att läsa en textfil är en grundläggande uppgift inom programmering. Det kan vara användbart för att bearbeta data eller för att ta reda på information som finns lagrad i en fil.
 
-## Så här gör man
-För att läsa en textfil i Fish Shell, kan följande kod användas:
+## Hur man gör
+För att läsa en textfil i Fish Shell kan du använda kommandot "read". Här är ett exempel på hur du läser en textfil med namnet "example.txt":
 
-```Fish Shell
-$ cat file.txt
+```
+read example.txt
 ```
 
-Denna kod läser innehållet i filen "file.txt" och skriver ut det på skärmen. Om man vill spara innehållet i en variabel, kan man använda följande kod:
+Detta kommando kommer att skriva ut innehållet i filen på din terminal. Om du vill använda detta innehåll i din kod, kan du tilldela det till en variabel genom att använda ett likhetstecken:
 
-```Fish Shell
-$ set content (cat file.txt)
+```
+file_contents = (read example.txt)
 ```
 
-Genom att nu skriva ut variabeln "content" kommer innehållet i filen att visas på skärmen. Om man vill läsa innehållet rad för rad, kan man använda en "while loop" i följande kod:
-
-```Fish Shell
-while read -r line
-    echo $line
-end < file.txt
-```
-
-Detta kommer att läsa innehållet i filen "file.txt" och skriva ut en rad i taget tills hela filen har lästs.
+Nu kan du använda variabeln "file_contents" för att manipulera innehållet i filen.
 
 ## Djupdykning
-När man läser en textfil, läses innehållet rad för rad. Det finns också möjlighet att läsa en specifik rad eller ett visst antal rader från en fil. Detta kan göras med hjälp av kommandot "head" och "tail".
+Det finns flera användbara flaggor som du kan använda tillsammans med "read" kommandot. Till exempel kan du läsa in filen rad för rad genom att använda flaggan "-l":
 
-Om man vill läsa den första raden i en fil, kan man använda följande kod:
-
-```Fish Shell
-$ cat file.txt | head -n 1
+```
+read -l example.txt
 ```
 
-Detta kommer att läsa den första raden i filen "file.txt" och skriva ut den på skärmen. Om man vill läsa de fem första raderna i filen, kan man använda:
+Du kan också använda "-n" flaggan för att ange hur många rader du vill läsa in. Till exempel, om du bara vill läsa in de första 10 raderna:
 
-```Fish Shell
-$ cat file.txt | head -n 5
+```
+read -n 10 example.txt
 ```
 
-På samma sätt kan man använda kommandot "tail" för att läsa de sista raderna i filen.
+Om du vill läsa in en specifik del av filen, kan du använda "-s" för att ange var läsandet ska börja. Till exempel, om du vill börja läsa från den tredje raden:
 
-## Se även
-- [Fish Shell's officiella dokumentation för att läsa en textfil](https://fishshell.com/docs/current/cmds/cat.html)
-- [En guide för att läsa en fil rad för rad i Fish Shell](https://www.cyberciti.biz/faq/bash-loop-over-file/)
-- [Kommandot "head" i Fish Shell](https://fishshell.com/docs/current/cmds/head.html)
-- [Kommandot "tail" i Fish Shell](https://fishshell.com/docs/current/cmds/tail.html)
+```
+read -s 3 example.txt
+```
+
+Du kan läsa mer om de olika flaggorna och deras funktioner genom att använda Fish Shell's inbyggda hjälpprogram:
+
+```
+read -h
+```
+
+## Se också
+Här är några användbara länkar för att lära dig mer om att läsa textfiler i Fish Shell:
+
+- [Det officiella Fish Shell dokumentationen](http://fishshell.com/docs/current/cmds/read.html)
+- [En tutorial om att läsa och skriva filer i Fish Shell](https://dev.to/patrickhulce/reading-and-writing-files-in-fish-shell-39lk)
+- [En guide till att läsa filer rad för rad i Fish Shell](https://jamesmckay.net/2018/12/how-to-process-lines-in-a-file-in-fish-shell-like-in-bash/)

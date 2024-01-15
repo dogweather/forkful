@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 大写字符串"
-simple_title:         "大写字符串"
+title:                "字符串转换为大写"
+html_title:           "Clojure: 字符串转换为大写"
+simple_title:         "字符串转换为大写"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,69 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要将字符串大写化
+## 为什么
+你可能会想知道，在进行字符串大写处理时存在哪些优势。其实，字符串大写处理是一种常见的格式化操作，它可以让你的代码更易读，并遵循编程规范。
 
-在编程中，有时需要将字符串的一部分或全部字符转换为大写。这对于格式化输出、比较字符串、或者是避免大小写敏感的问题都非常有用。Clojure提供了简单的方法来实现这一功能，让我们来深入了解一下如何实现吧！
-
-## 如何进行字符串大写化
-
-首先，我们需要使用Clojure内置的函数`clojure.string/upper-case`来将字符串转换为全部大写。这个函数需要一个字符串作为参数，并返回大写化后的字符串。下面是一个简单的例子代码：
+## 如何进行字符串大写处理
+如果你使用的是Clojure语言，进行字符串大写处理非常简单。你可以使用内置函数 `clojure.string/upper-case`来实现，它可以接收一个字符串参数并返回其大写形式。
 
 ```Clojure
-(def str "hello world!")
-(clojure.string/upper-case str)
+(clojure.string/upper-case "hello world") ; 输出 "HELLO WORLD"
 ```
 
-输出结果将会是`"HELLO WORLD!"`。
-
-如果我们想要将字符串的一部分转换为大写，可以使用`subs`函数来先截取需要转换的部分，再使用`upper-case`函数来进行转换。例如，将字符串的前三个字符转换为大写：
+如果你想对多个字符串进行大写处理，可以使用 `map` 函数来遍历一个字符串列表，并应用 `clojure.string/upper-case` 函数。下面的例子演示了如何将一个字符串列表中的所有元素转换为大写形式。
 
 ```Clojure
-(def str "hello world!")
-(clojure.string/upper-case (subs str 0 3))
+(map clojure.string/upper-case ["foo" "bar" "baz"]) ; 输出 ("FOO" "BAR" "BAZ")
 ```
 
-输出结果将会是`"HEL"`。
-
-另外，我们还可以使用`map`函数来对字符串中的每个字符进行转换，从而实现将整个字符串转换为大写的效果。例如，我们可以定义一个自定义函数来实现这个功能：
+## 深入了解字符串大写处理
+除了使用内置函数 `clojure.string/upper-case`，你也可以使用 `String/toUpperCase` 方法来实现字符串的大写处理。这个方法是Java提供的，Clojure可以无缝地使用它。下面的代码展示了如何使用 `String/toUpperCase` 方法来将一个字符串转换为大写形式。
 
 ```Clojure
-(defn custom-upper-case [s]
-  (apply str (map clojure.string/upper-case s)))
-(custom-upper-case "hello world!")
+(.toUpperCase "hello world") ; 输出 "HELLO WORLD"
 ```
 
-输出结果将会是`"HELLO WORLD!"`。
-
-## 深入探究字符串大写化
-
-在Clojure中，字符串是不可变的数据类型，这意味着我们无法直接更改字符串中的字符。所以，如果我们想要修改字符串中的某个字符为大写，需要先将字符串转换为可变的数据类型，比如列表，然后再修改其中的字符并转换回字符串。例如：
+此外，你也可以使用正则表达式来进行字符串的大写处理。通过使用 `re-seq` 函数，你可以将字符串拆分为一个个字符，然后使用 `Character/toUpperCase` 方法来将每个字符转换为大写形式。下面的例子展示了如何通过正则表达式来实现字符串的大写处理。
 
 ```Clojure
-(def str "hello world!")
-(apply str (assoc (into [] str) 0 (clojure.string/upper-case (subs str 0 1))))
+(map (fn [char] (Character/toUpperCase (str char))) (re-seq #".*" "hello world")) ; 输出 ("H" "E" "L" "L" "O" " " "W" "O" "R" "L" "D")
 ```
 
-输出结果将会是`"Hello world!"`。
+## 更多相关资源
+- [Clojure语言官方网站](https://clojure.org/)
+- [Clojure从零开始学习指南](https://github.com/StrangeAptos/clojure-from-zero)
+- [Clojure字符串处理库](https://github.com/clojure/data.string) 
 
-此外，如果我们想要在字符串中的特定位置插入大写的字符，可以先使用`clojure.string/replace`函数来实现。例如，在字符串的第三个字符后插入大写的“X”：
-
-```Clojure
-(def str "hello world!")
-(clojure.string/replace str #"(.{3})" "$1X")
-```
-
-输出结果将会是`"helXlo world!"`。
-
-## 参考资料
-
-- [Clojure Docs: clojure.string/upper-case](https://clojuredocs.org/clojure.string/upper-case)
-- [Clojure Docs: clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
-- [Clojurists Together: How to capitalize and hash a string in Clojure](https://www.clojuriststogether.org/news/blog/2018/08/10/how-to-capitalize-and-hash-a-string-in-clojure/)
-- [Clojure for the Brave and True: Strings](https://www.braveclojure.com/core-functions-in-depth/#Strings)
-
-## 查看也许感兴趣
-
-- [Clojure Docs: clojure.string/substr](https://clojuredocs.org/clojure.string/substr)
-- [Clojure Docs: clojure.string/join](https://clojuredocs.org/clojure.string/join)
-- [Clojurists Together: Parsing CSV in Clojure with clojure-csv](https://www.clojuriststogether.org/news/blog/2018/07/02/parsing-csv-in-clojure-with-clojure-csv/)
+# 参考链接
+- [Clojure String 大写处理](https://weishan.me/clojure-string-upper-2/)

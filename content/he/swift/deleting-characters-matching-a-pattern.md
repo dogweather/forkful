@@ -1,5 +1,6 @@
 ---
-title:                "Swift: מחיקת תווים התואמים לתבנית"
+title:                "מחיקת תווים התואמים לתבנית"
+html_title:           "Swift: מחיקת תווים התואמים לתבנית"
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,40 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-ברוב המקרים, נמלטים למחיקת תווים תואמים לעצמם כדי לטפל בתווים תואמים שאינם מתאימים לצרכים שלנו. ככל שהמספר של התווים המתאימים הוא גדול יותר, כך נוכל להימלט ממספר גדול של אלו שאינם מתאימים.
+אנשים משתמשים במחיקת תווים התואמים לפעולות כמו ניקוי טקסטים או סינון תיבות מילון.
 
 ## איך לעשות זאת
 
-למצוא ולמחוק תווים תואמים ניתן לעשות בקלות בשפת סוויפט. להלן כמה דוגמאות של קוד ופלט נבנו בתבנית " ```רבב סוויפט ...```":
-
+עבור מחרוזות מסוימות, ניתן להשתמש בפקודת `replacingOccurrences(of:with:)` למחיקת התווים המתאימים לתבנית כלשהי. לדוגמה, נתון הטקסט הבא:
 ```Swift
-let words = ["abc", "bcd", "cde", "def"]
-
-for word in words {
-    if word.contains("c") {
-        print("המילה \(word) מכילה את האות 'c'")
-    }
-}
+let text = "היום הוא שישי"
 ```
 
-פלט: המילה bcd מכילה את האות 'c'
-המילה cde מכילה את האות 'c'
-
+נרצה להסיר את האות "ה" מתוך הטקסט. כדי לעשות זאת, נשתמש בפקודה הבאה:
 ```Swift
-let numbers = [1, 2, 3, 4, 5]
-
-let filteredNumbers = numbers.filter { $0 % 2 == 0 }
-
-print(filteredNumbers)
+let newText = text.replacingOccurrences(of: "ה", with: "")
 ```
 
-פלט: [2, 4]
+כתוצאה מכך, `newText` יהיה "יום ושישי".
 
-## חקירה מעמיקה
+## מעומקים
 
-מחיקת תווים תואמים הנמצאים במחרוזת ניתן לעשות באמצעות פקודת `filter` שבשפת סוויפט. פקודה זו מקבלת לפרמטר נוסף פונקציה שמציינת את התנאי למחיקת התווים המתאימים. לכן, ניתן להשתמש בפקודה זו למחיקת כל תווים שאינם מתאימים לצרכים שלנו.
+פקודת `replacingOccurrences(of:with:)` באמת מספקת את כל האפשרויות הנדרשות כדי למחוק תווים ממחרוזות, כולל תמיכה בתבניות רגולריות. לדוגמה, ניתן למחוק את כל התווים בכתובת המייל שמתחילים באות "h" עם הפקודה הבאה:
+```Swift
+let email = "example@domain.com"
+let newEmail = email.replacingOccurrences(of: "h.+@", with: "", options: .regularExpression)
+```
 
-## ראו גם
+כאן, הפקודה מתאם לאתר תבנית כל תו המגיע אחרי האות "h" עד לתו ה"@", ומחליף את כל התווים האלה ברק מלחציות של מחרוזת ריקה. כתוצאה מכך, `newEmail` יהיה "@domain.com".
 
-- [מדריך קצר על פקודת filter בסוויפט](https://www.hackingwithswift.com/example-code/language/whats-the-difference-between-map-filter-and-reduce)
-- [מדריך מפורט על פקודת filter ותוספות שניתן לעשות עמה](https://www.swiftbysundell.com/basics/filter/)
+## ראה גם
+
+- [המדריך הרשמי של Swift על פקודת `replacingOccurrences(of:with:)`](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
+- [הדרכות מתקדמות לאימון על תבניות רגולריות ב-Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)

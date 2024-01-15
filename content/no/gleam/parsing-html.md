@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "Gleam: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -9,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvorfor skal du bry deg om å analysere HTML? Vel, HTML er språket som brukes til å bygge nettsider, og det er det første som brukes til å strukturere informasjonen på en nettside. Å kunne analysere og trekke ut data fra HTML er derfor en viktig ferdighet for enhver programmerer.
+Hvorfor bry seg om å analysere HTML? Vel, hvis du for eksempel ønsker å ekstrahere spesifikk data fra en nettside, kan parsing av HTML være svært nyttig. Det kan også hjelpe deg med å lage automatiserte oppgaver, for eksempel å generere rapporter eller analysere data.
 
-# Hvordan gjøre det
+## Hvordan
 
-Å analysere HTML i Gleam er ganske enkelt. Du kan bruke biblioteker som Gleam Scraper eller Gleam Soup for å hjelpe deg med å analysere og trekke ut data fra HTML. La oss se på et eksempel:
-
-```Gleam
-import gleam/soup
-
-html = """
-<html>
-<head>
-  <title>Gleam Blog</title>
-</head>
-<body>
-  <h1>Velkommen til Gleam Blog</h1>
-  <p>Her finner du informasjon om Gleam programmeringsspråk.</p>
-</body>
-</html>
-"""
-
-doc = soup.parse(html)
-
-title = doc.text("title")
-h1 = doc.text("h1")
-p = doc.text("p")
-
-log("Title: " ++ title)
-log("H1: " ++ h1)
-log("P: " ++ p)
-```
-
-I dette eksempelet bruker vi Gleam Soup for å parse HTML og trekke ut data fra tittelen, overskriften og avsnittet. Ved å kjøre dette eksempelet, vil vi få følgende utdata:
+For å analysere HTML i Gleam, kan du bruke biblioteket "html_beautify". Her er et eksempel på hvordan du kan bruke dette biblioteket:
 
 ```Gleam
-Title: Gleam Blog
-H1: Velkommen til Gleam Blog
-P: Her finner du informasjon om Gleam programmeringsspråk.
+import html_beautify.{parse, select}
+
+//parse HTML from a URL
+let html = parse("https://www.example.com")
+
+//select specific elements using CSS selectors
+let links = select(html, "a")
+
+//print out the links
+for link in links {
+  io.println(link)
+}
 ```
+Dette vil gi deg en liste over alle lenkene på nettsiden som er hentet fra URLen.
 
-Som du kan se, gjør Gleam Soup det enkelt å parse og hente informasjon fra HTML.
+## Dypdykk
 
-# Dyp dykk
+For å gå enda dypere i parsing av HTML, kan du også bruke funksjonen "parse_sanitize" som fjerner all HTML formatering fra teksten og returnerer en ren tekststreng. Dette kan være nyttig hvis du kun er interessert i å analysere teksten på en nettside og ikke det visuelle innholdet.
 
-Når du bruker Gleam for å parse HTML, er det noen ting du bør være oppmerksom på. For det første kan det være vanskelig å håndtere komplisert HTML-struktur. Dette kan føre til feil og ufullstendig datautvinning. Derfor er det viktig å forstå HTML-strukturen før du begynner å analysere den.
+Det er også mulig å bruke CSS-selektorer til å hente ut spesifikke elementer fra en HTML-side. Dette gjør det enklere å ekstrahere data fra en nettside uten å måtte gå gjennom alt manuelt.
 
-En annen ting å huske på er at HTML kan bli utfordrende å analysere hvis det er syntaksfeil eller avvik fra standarden. Det kan føre til uforutsigbare resultater eller feil under analyseprosessen.
+## Se også
 
-# Se også
-
-- [Gleam Scraper biblioteket](https://github.com/gleam-lang/scraper)
-- [Gleam Soup biblioteket](https://github.com/gleam-lang/soup)
-- [Gleam dokumentasjon](https://gleam.run)
+- [html_beautify dokumentasjon](https://hexdocs.pm/gleam/0.13.0/Html.Beautify.html)
+- [Gleam offisiell nettside](https://gleam.run/)
+- [CSS-selektorer for mer informasjon om CSS-selektorer](https://www.w3schools.com/cssref/css_selectors.asp)

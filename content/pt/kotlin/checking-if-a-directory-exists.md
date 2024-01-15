@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Verificando se um diretório existe"
+title:                "Verificando se um diretório existe"
+html_title:           "Kotlin: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,48 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Você já se deparou com a situação de precisar verificar se um diretório existe em seu código Kotlin? Isso pode ser útil para garantir que o diretório necessário para a execução do programa esteja presente ou para evitar erros ao tentar acessar um diretório inexistente. Neste post, vamos explicar como fazer isso de forma simples e eficiente com alguns exemplos de código.
+Sempre que precisamos trabalhar com arquivos em um programa, é importante verificar se o diretório necessário existe ou não. Isso evita possíveis erros e garante que o código funcione corretamente.
 
-## Como Fazer
+## Como fazer
 
-Para verificar se um diretório existe em Kotlin, podemos utilizar a classe `File` e seu método `isDirectory()`. Veja um exemplo de código abaixo:
+Para verificar se um diretório existe em Kotlin, podemos utilizar a função `exists()` da classe `File`. Veja um exemplo:
 
 ```Kotlin
-val directory = File("caminho/do/diretorio")
-if (directory.isDirectory()) {
+val diretorio = File("caminho/do/diretorio")
+if (diretorio.exists()) {
     println("O diretório existe!")
-} else {
-	println("O diretório não existe.")
-}
-```
-
-Caso o diretório exista, o código acima irá imprimir "O diretório existe!". Caso contrário, será impresso "O diretório não existe.". É importante ressaltar que o método `isDirectory()` também só retorna `true` se o diretório existir, pois se ele não existir, a classe `File` irá criar um novo arquivo com o nome informado.
-
-Outra opção é utilizar o método `exists()` da classe `File`, que irá retornar `true` se o arquivo ou diretório existir ou `false` caso contrário. Veja um exemplo:
-
-```Kotlin
-val directory = File("caminho/do/diretorio")
-if (directory.exists()) {
-    if (directory.isDirectory()) {
-        println("O diretório existe!")
-    } else {
-        println("O caminho informado é um arquivo, não um diretório.")
-    }
 } else {
     println("O diretório não existe.")
 }
 ```
 
-Como podemos observar, além de verificar se o diretório existe, esse código também nos dá a opção de checar se o caminho informado corresponde a um arquivo ou a um diretório.
+Se o diretório existir, o código imprimirá "O diretório existe!". Caso contrário, será impresso "O diretório não existe."
 
-## Deep Dive
+## Mergulho Profundo
 
-Agora que já sabemos como verificar se um diretório existe em Kotlin, é importante entendermos como os métodos `isDirectory()` e `exists()` funcionam. Ambos utilizam os métodos nativos do sistema operacional para realizar a verificação, ou seja, eles se baseiam no sistema de arquivos do dispositivo onde o programa está sendo executado.
+A função `exists()` retorna um valor booleano indicando se o diretório existe ou não. É importante lembrar que essa função verifica apenas o diretório, não o conteúdo dentro dele. Além disso, ela também pode retornar `false` se o diretório não for acessível devido a permissões de leitura ou escrita.
 
-Dessa forma, se o programa estiver sendo executado em diferentes dispositivos, é possível que os resultados da verificação sejam diferentes. Por exemplo, em um dispositivo móvel, pode ser que o diretório exista, mas em um computador ele não exista. Por isso, é importante levar em consideração o contexto e o sistema de arquivos do dispositivo ao realizar essas verificações.
+Outra forma de verificar se um diretório existe é utilizando a função `isDirectory()` da classe `File`. Essa função retorna `true` se o objeto `File` se refere a um diretório existente.
 
-## Veja Também
+## Veja também
 
-- [Documentação oficial do método `isDirectory()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/is-directory.html)
-- [Documentação oficial do método `exists()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
-- [Exemplo de uso da classe `File`](https://www.journaldev.com/10776/kotlin-file-io-operations-examples)
+- [Documentação oficial da classe `File`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
+- [Como verificar se um arquivo existe em Kotlin](https://www.baeldung.com/kotlin/check-file-exists)

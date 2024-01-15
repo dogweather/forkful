@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Завантаження веб-сторінки"
+title:                "Завантаження веб-сторінки"
+html_title:           "Elm: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,58 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
+Не всі розуміють, чому потрібно завантажувати веб-сторінки, але це дуже корисна навичка для працівників IT і просто людей, які хочуть зберігати вміст сайтів для майбутнього використання. 
 
-Можливо, ви стикнулись з проблемою, коли потрібно було отримати вміст веб-сторінки не використовуючи браузер, але не знали як це зробити. Мабуть, ви також хочете науково вивчати HTML код сторінки або перевіряти її наявність. У цьому випадку, вам може знадобитися Elm для завантаження змісту веб-сторінки.
-
-## Як це зробити
-
-Використовуючи Elm, можна легко зробити запит на веб-сторінку та отримати її вміст. Нижче наведено приклад коду, який використовує модуль `Http` для цього:
-
+## Як використовувати
+Завантаження веб-сторінок здійснюється у Elm за допомогою вбудованої бібліотеки `Http`. Спочатку потрібно імпортувати цю бібліотеку у ваш проєкт:
 ```Elm
-import Http exposing (..)
-import String exposing (..)
-
-type Msg = 
-    Success String 
-    | Failure Http.Error
-
-url : String 
+import Http
+```
+Потім можна використати функцію `get` для отримання вмісту сторінки за заданим URL:
+```Elm
 url = "https://example.com"
 
-fetchPage : Cmd Msg 
-fetchPage = 
-    send Success Failure <| getString url
-
-view : String -> Html Msg
-view content = 
-    text content
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model = 
-    case msg of 
-        Success content -> (model, Cmd.none)
-        Failure error -> (model, Cmd.none)
-
-main : Program Never Model Msg 
-main = 
-    program 
-        { init = (Model, fetchPage)
-        , view = view 
-        , update = update 
-        , subscriptions = always Sub.none
-        }
+Http.get url
+    |> Http.send MyMsg
 ```
+Результатом буде `MyMsg`, який містить усю інформацію про сторінку, включаючи заголовки, код статусу та вміст.
 
-Після запуску цього коду, зміст веб-сторінки буде виведено на екран у вигляді звичайного тексту. Ви також можете додати функціональність для обробки результатів запиту та додаткових дій за допомогою типу `Msg` та функції `update`.
+## Детальний огляд
+У Elm є кілька функцій для завантаження веб-сторінок, включаючи `get`, `post` та `request` (яка дозволяє налаштувати різні параметри запиту, наприклад, заголовки або тіло запиту). Також можна використовувати функції `send` або `task` для обробки отриманої відповіді. Більш детальна інформація про ці функції доступна у [документації Elm](https://package.elm-lang.org/packages/elm/http/latest/Http). 
 
-## Глибше вдивимося
-
-Звертаючись до веб-сторінки за допомогою Elm, всі запити відбуваються асинхронно, тому не блокується виконання решти програми. Крім того, модуль `Http` надає багато різноманітних функцій для роботи з веб-сторінками, таких як `post`, `put` та `delete`. Для більш детальної інформації про цей модуль та інші можливості Elm, вам може стати корисним офіційний сайт та спільнота користувачів.
-
-## Дивіться також
-
-Вашім наступним кроком може бути вивчення інших можливостей Elm та Task Сhannel для взаємодії з веб-сторінками за допомогою команд та платформи Node.js. Ось кілька посилань, які можуть вам пригодитися:
-
-- Офіційний сайт Elm: https://elm-lang.org/
-- Аналіз HTML в Elm: https://package.elm-lang.org/packages/elm/html/latest/
-- Створення web app за допомогою Elm та Node.js: https://elm-lang.org/0.19.0/init
+## Дивись також
+- [Документація Elm по `Http`](https://package.elm-lang.org/packages/elm/http/latest/Http)
+- [Приклади коду з використанням `Http`](https://elmprogramming.com/fetching-data-from-apis-in-elm-using-json-decoding.html)
+- [Стаття про використання Elm для веб-розробки](https://medium.com/@robertkidder/why-i-like-elm-a-technical-review-of-elm-from-an-experienced-programmer-409a7d6dcdfa)

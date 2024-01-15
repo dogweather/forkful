@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Ruby: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,64 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ladda ner en webbsida är en användbar funktion för både webbutvecklare och hobbyprogrammerare. Det gör det möjligt att hämta data från en webbsida och sedan manipulera eller använda den på olika sätt.
+Att hämta en webbsida är en vanlig uppgift för utvecklare, oavsett om de vill använda data från sidan eller bara utforska dess innehåll. Ruby erbjuder ett enkelt och kraftfullt sätt att hämta en webbsida med bara några få rader kod.
 
-## Så här
+## Så här gör du
 
-För att ladda ner en webbsida i Ruby, behöver vi använda oss av ett bibliotek som heter "Net::HTTP". Detta bibliotek gör det möjligt för oss att få åtkomst till webbplatser och hämta data från dem.
-
-Först bör vi initialisera en ny instans av "Net::HTTP" och sedan ange den URL vi vill hämta med hjälp av "uri" metod.
-
-```Ruby
-require 'net/http'
-
-url = URI('https://www.examplewebsite.com')
-
-Net::HTTP.get(url)
-```
-
-Med dessa två rader kod har vi ställt in och fått åtkomst till vår valda webbplats. Nu kan vi bara "putsa" eller skriva ut resultatet för att se den hämtade webbsidan.
-
-```Ruby
-require 'net/http'
-
-url = URI('https://www.examplewebsite.com')
-
-puts Net::HTTP.get(url)
-```
-
-## Djupt nedsänkning
-
-Det finns många aspekter av att hämta en webbsida som vi kan utforska djupare. Vi kan t.ex. specifiera vilken typ av metod som ska användas (t.ex. GET eller POST) eller ange olika headeralternativ.
-
-Vi kan också använda "OpenURI" biblioteket för att göra processen lite enklare och mer läsbar:
-
-```Ruby
+```ruby
 require 'open-uri'
 
-url = 'https://www.examplewebsite.com'
+# Hämta en webbsida
+page = open('https://www.example.com')
 
-page = open(url)
+# Läs in innehållet som en sträng
+content = page.read
 
-puts page.read
+# Skriv ut strängen
+puts content
 ```
 
-Vi kan också använda Nokogiri biblioteket för att göra webbsidans data mer lättläst och manipulera den för att få ut specifik information:
+Koden ovan visar hur man använder Ruby's inbyggda `open-uri` bibliotek för att hämta en webbsida och läsa in dess innehåll. Det är viktigt att använda `require 'open-uri'` för att få tillgång till bibliotekets funktioner.
 
-```Ruby
-require 'open-uri'
-require 'nokogiri'
+Om man vill spara innehållet på en webbsida till en fil istället för att bara skriva ut det kan man använda följande kod:
 
-url = 'https://www.examplewebsite.com'
+```ruby
+# Öppna filen för skrivning
+file = open('min_fil.txt', 'w')
 
-page = Nokogiri::HTML(open(url))
+# Hämta och skriv innehållet från webbsidan till filen
+file.write(page.read)
 
-# Här kan vi använda CSS-selektorer för att navigera i webbsidans kod
-puts page.css('h1').text # kommer att skriva ut huvudrubriken på sidan
+# Stäng filen
+file.close
 ```
+
+Nu kommer innehållet på webbsidan att sparas i en textfil med namnet "min_fil.txt". Om man vill lägga till mer kod efter `file.write(page.read)`, till exempel att manipulera innehållet på något sätt, måste man stänga filen och öppna den igen med `file = open('min_fil.txt', 'a')` innan man kan fortsätta skriva till den.
+
+## Fördjupning
+
+Förutom de grundläggande kodexemplen ovan finns det många fler möjligheter med webbhämtningar i Ruby. Till exempel kan man använda olika metoder för HTTP-anrop, som `open-uri` som vi redan har sett, eller `net/http` biblioteket för mer avancerade funktioner.
+
+Man kan också använda inbyggda parser-funktioner, som `Nokogiri`, för att bearbeta och extrahera data från webbsidorna man hämtar. Detta kan vara särskilt användbart för webbsidor med komplexa strukturer eller HTML-kod.
+
+För mer information om alla möjligheter med att hämta webbsidor i Ruby, kolla in dokumentationen för `open-uri` och `net/http`, samt olika tillgängliga parser-bibliotek.
 
 ## Se även
 
-- [Ruby Net::HTTP library documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [OpenURI documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
-- [Nokogiri documentation](https://nokogiri.org/)
+- [OpenURI dokumentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
+- [Net/HTTP dokumentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Nokogiri dokumentation](https://nokogiri.org/)

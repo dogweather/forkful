@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자로 바꾸기"
+html_title:           "Fish Shell: 문자열 대문자로 바꾸기"
+simple_title:         "문자열 대문자로 바꾸기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜: 문자열의 첫 글자를 대문자로 바꾸는 것에 관심이 있는 이유
+## 왜
 
-문자열을 대문자로 바꾸는 것은 작업하는 언어에 따라 다른 이유가 있을 수 있지만, 일반적으로 사용자가 원하는 형식에 맞춰서 출력할 때 사용됩니다. 예를 들어, 사용자가 입력한 이름을 출력할 때는 첫 글자를 대문자로 바꾸는 것이 보다 예쁜 출력을 만들 수 있는 방법입니다.
+문자열을 대문자로 바꾸는 것이 왜 유용한지 궁금하신가요? 문자열을 대문자로 바꾸는 것은 사용자 입력을 통일된 형식으로 처리할 때나, 대소문자 구분 없이 일치하는 문자열을 검색할 때 등에 유용합니다.
 
-## 사용 방법: "```Fish Shell...```" 코드 블록을 이용한 코딩 예시와 출력 결과
+## 코딩 방법
 
-자 이제 여러분도 문자열의 첫 글자를 대문자로 바꾸는 방법을 배우실 차례입니다. 먼저 Fish Shell에서 사용되는 문자열 함수 중 하나인 ```strcap```을 이용하여 첫 글자를 대문자로 바꾸는 방법을 알아보겠습니다.
-
-```
-set name "john"
-echo (string match -r '[a-z]+' $name ? (string match -r '[a-z]+' $name | string sub -s 1)"cmatch $name | string sub -s 1)
-```
-
-위의 코드 블록을 실행하면 출력 결과는 "John"이 될 것입니다.
-
-## 깊이 들어가보기: 문자열 중간에 있는 글자를 대문자로 바꾸기
-
-지금까지 우리는 문자열의 첫 글자를 대문자로 바꾸는 방법만을 알아보았습니다. 하지만 만약 문자열 중간에 있는 특정 글자를 대문자로 바꾸고 싶다면 어떻게 해야 할까요? 이 때 사용할 수 있는 기능이 있습니다. 바로 ```strupper``` 함수입니다. 이 함수는 문자열의 모든 글자를 대문자로 바꾸어주는 기능을 합니다. 따라서, 원하는 위치의 글자만 대문자로 바꾸어주기 위해서는 해당 위치의 문자를 대문자로 바꾼 다음, 나머지 글자는 다시 소문자로 바꿔주면 됩니다.
-
-예를 들어, 문자열 "johnSmith"에서 6번째 위치에 있는 "S"를 대문자로 바꾸고 싶다면 다음과 같이 코드를 작성할 수 있습니다.
+우선, Fish Shell을 설치해야 합니다. 그런 다음, 아래에 제시된 코드를 사용하여 문자열을 대문자로 바꿀 수 있습니다.
 
 ```
-set name "johnSmith"
-set upper (string -s 6 $name | string upcase)
-set result (string sub -s 6 $name)
-echo $result$upper
+Fish Shell에서 대문자로 바꾸기:
+
+echo "hello world" | tr a-z A-Z
+
+Fish Shell에서 모든 글자 소문자로 바꾸기:
+
+set -L mystring "HELLO WORLD"
+echo $mystring | tr A-Z a-z
 ```
 
-위의 코드를 실행하면 출력 결과는 "johnSmitH"가 될 것입니다.
+위의 코드를 실행하면 "HELLO WORLD"라는 문자열이 "hello world"로 변환됩니다. 또한, 마지막 예제에서는 모두 소문자로 변환된 문자열이 "mystring"이라는 변수에 저장되어 출력됩니다.
 
-## 참고 자료
+## 더 깊이 생각해보기
 
-- [Fish Shell 문서](https://fishshell.com/docs/current/commands.html)
-- [유용한 Fish Shell 스크립트 코드](https://github.com/jorgebucaran/fish-shell-cookbook)
-- [자바스크립트에서 문자열의 첫 글자를 대문자로 바꾸는 방법](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+위의 예시는 간단한 문자열을 대/소문자로 변환하는 방법을 보여주기 위한 것입니다. 하지만, 실제로 Fish Shell에서 문자열을 다루는 데에는 더 많은 기능들이 있습니다. 예를 들어, 다음 명령어를 사용하면 문자열의 특정 부분만 대문자로 바꿀 수 있습니다.
 
-## 참고하기
+```
+tr '[:lower:]' '[:upper:]' <<< "hello world" | sed 's/O/o/g'
+```
 
-[비쥬얼 스튜디오 코드에서 Fish Shell 설정하기](https://marketplace.visualstudio.com/items?itemName=mcneelco.Fish)
+위의 코드를 실행하면 "hellO wOrld"라는 결과를 얻을 수 있습니다. 즉, 문자열을 특정 규칙에 따라 변환하거나 추출하는 방법을 배울 수 있습니다.
+
+## 관련 링크
+
+- [Fish Shell 공식 홈페이지](https://fishshell.com/)
+- [Fish Shell 설치하기](https://fishshell.com/docs/current/setup.html)
+- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)

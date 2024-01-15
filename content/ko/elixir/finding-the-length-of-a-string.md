@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: 문자열의 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Elixir: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,38 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열의 길이를 구하는 것은 프로그램을 작성할 때 매우 중요합니다. 예를 들어 사용자의 입력을 검증하거나 특정 문자열을 처리할 때 길이를 확인해야 할 수 있습니다. 이러한 상황에서 문자열의 길이를 구하는 방법에 대해 알아보겠습니다.
+문자열의 길이를 찾는 것을 왜 해야 할까요? 그것은 간단합니다. 우리는 때때로 문자열의 길이를 알고 싶을 때가 있습니다. 예를 들어, 사용자의 입력을 검증하거나 특정한 조건을 만족하는지 확인할 때 문자열의 길이가 중요합니다.
 
-## 어떻게 하나요
+## 어떻게
 
-문자열의 길이를 구하는 가장 간단한 방법은 `String.length/1` 함수를 사용하는 것입니다. 이 함수는 문자열의 길이를 정수 형태로 반환합니다.
-
-```Elixir
-string = "Hello World"
-String.length(string) #=> 11
-```
-
-이 외에도 `length/1` 함수는 모든 유니코드 문자를 지원하므로 다국어 문자열에 대해서도 올바르게 동작합니다.
-
-또 다른 방법은 문자열을 리스트로 변환한 후 `length/1` 함수를 사용하는 것입니다. 이 방법은 문자열 내에 있는 모든 문자를 카운트할 수 있으며, 유니코드 문자도 제대로 처리할 수 있습니다.
-
-```Elixir
+ ```elixir
 string = "안녕하세요"
-string |> String.codepoints() |> length() #=> 5
+IO.inspect String.length(string)
 ```
+
+위 코드를 실행하면 다음과 같은 출력이 나옵니다.
+
+```
+7
+```
+
+문자열의 길이를 찾는 가장 간단한 방법은 `String.length/1` 함수를 사용하는 것입니다. 이 함수는 주어진 문자열의 길이를 반환합니다. 또한, 문자열의 길이를 알아내기 위해 내장 함수를 사용하지 않고도 직접 구현할 수도 있습니다. 예를 들어, 문자열을 리스트로 변환한 후 `Enum.count/2` 함수를 사용하여 길이를 계산할 수 있습니다. 하지만 내장 함수를 사용하는 것이 더 쉽고 효율적입니다.
 
 ## 깊이 파고들기
 
-문자열의 길이를 구하는 방법은 간단하지만, 이와 관련하여 몇 가지 유용한 함수를 알아봅시다.
+문자열의 길이를 알아내는 것은 Elixir의 내장 함수 중 일부입니다. 이 함수들은 문자열을 다루는 데 도움이 되는 다양한 기능을 제공합니다. 예를 들어 `String.split/3` 함수는 문자열을 주어진 구분자를 기준으로 나누어 리스트로 반환해줍니다. 또한, `String.upcase/1` 함수를 사용하면 문자열을 모두 대문자로 변환할 수 있습니다.
 
-- `String.trim/1` 함수는 문자열 앞뒤에 있는 공백을 제거한 후 문자열의 길이를 반환합니다.
-- `String.graphemes/1` 함수는 유니코드 그래프로 이루어진 리스트를 반환하므로, 이를 조합하여 정확한 문자열의 길이를 구할 수 있습니다.
-- `String.codepoints/1` 함수는 문자열을 유니코드 코드 포인트로 이루어진 리스트로 변환하므로, 이를 이용해 문자열의 길이를 구할 수 있습니다.
+## 더 많은 정보
 
-이러한 함수들을 응용하면 문자열의 길이를 유연하게 다룰 수 있습니다.
+Elixir의 문자열 함수에 대해 더 자세한 정보가 궁금하다면 공식 문서를 참고하세요. 또한, `String` 모듈의 소스 코드를 살펴보면 내부적으로 어떻게 작동하는지 알 수 있습니다.
 
-## 참고하기
+## 더 알아보기
 
-- Elixir 문서: https://hexdocs.pm/elixir/String.html#length/1
-- ElixirSchool: https://elixirschool.com/lessons/basics/built-in-types/#strings
-- Learn X in Y minutes: https://learnxinyminutes.com/docs/kr/elixir-kr/
+- [Elixir 공식 문서](https://hexdocs.pm/elixir/String.html) 
+- [Elixir 문자열 함수 실습](https://elixirschool.com/kr/lessons/basics/string-functions/)
+- [Elixir 문자열 처리 팁](https://medium.com/@anildigital/elixir-supercharge-your-string-processing-tips-31ce30033986)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: CSV 작업하기"
+title:                "CSV 작업하기"
+html_title:           "Bash: CSV 작업하기"
 simple_title:         "CSV 작업하기"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,47 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-CSV는 데이터를 저장하고 공유하는 데 매우 유용한 파일 형식입니다. Bash 프로그래밍을 사용하면 CSV 파일을 쉽게 작업할 수 있습니다. CSV 파일을 효율적으로 다루기 위해 Bash를 사용하는 이유를 알아보겠습니다.
+CSV 파일을 다루는 작업을 하는 이유는 데이터를 관리하고 분석하기 위해서입니다. CSV 파일은 일반적으로 엑셀과 같은 프로그램에서 열어 볼 수 있기 때문에 많은 사람들이 사용하고 있습니다.
 
-# 어떻게
+## 어떻게
 
-CSV 파일을 작성하려면 여러 가지 방법이 있지만 Bash 프로그래밍은 가장 간단하고 빠른 방법 중 하나입니다. 다음은 Bash를 사용하여 CSV 파일을 작성하는 예시입니다.
+CSV 파일을 다루기 위해서는 Bash의 다양한 기능을 이용할 수 있습니다. 먼저, 파일을 읽어오고 필요한 정보를 추출하는 방법을 살펴보겠습니다. 
 
 ```Bash
-# CSV 파일 작성하기
-echo "name, age, country" > data.csv
-echo "John, 25, USA" >> data.csv
-echo "Jane, 30, Canada" >> data.csv
+# 파일 읽어오기
+file="sample.csv"
+while read line; do
+  echo "$line"
+done < "$file"
 
-# CSV 파일 내용 출력하기
-cat data.csv
+# 필요한 정보 추출하기
+file="sample.csv"
+while IFS="," read col1 col2 col3; do
+  echo "$col1"
+  echo "$col2"
+  echo "$col3"
+done < "$file"
+
 ```
 
-위 코드를 실행하면 총 3줄의 데이터가 있는 CSV 파일이 작성되며, `cat data.csv`를 사용하면 다음과 같은 결과를 볼 수 있습니다.
+위의 예시 코드에서는 CSV 파일을 한 줄씩 읽어오며, 필요한 정보를 변수에 저장합니다. 따라서 필요에 따라 읽어온 정보를 활용할 수 있습니다. 이외에도 Bash에서는 다양한 기능을 이용해 CSV 파일을 다룰 수 있습니다. 
 
-```
-name, age, country
-John, 25, USA
-Jane, 30, Canada
-```
+## 딥 다이브
 
-CSV 파일을 작성하는 이외에도 Bash를 사용하여 CSV 파일에서 데이터를 추출하거나 수정하는 등 다양한 작업을 할 수 있습니다.
+Bash에서는 CSV 파일을 다루기 위해 다음과 같은 기능을 제공합니다.
 
-# 깊이 있는 내용
+- 파일 읽기 및 쓰기: `read`, `echo`, `printf` 등의 기능을 이용해 파일을 읽고 쓸 수 있습니다.
+- 데이터 추출: `cut`, `awk` 등의 기능을 이용해 필요한 정보만 추출할 수 있습니다.
+- 대체값 지정: `sed`, `tr` 등의 기능을 이용해 파일 내의 요소를 대체하거나 삭제할 수 있습니다.
+- 조건문 처리: `if`, `case` 등의 기능을 이용해 조건에 따른 처리가 가능합니다.
 
-Bash는 다음과 같은 명령어를 사용하여 CSV 파일에서 작업할 수 있도록 지원합니다.
+이외에도 Bash에서는 더 다양한 기능을 제공하고 있으며, 적절한 사용법을 숙지하면 유연하게 CSV 파일을 다룰 수 있습니다.
 
-- `awk`: CSV 파일에서 원하는 열이나 특정 조건을 가진 행을 추출합니다.
-- `sed`: CSV 파일에서 데이터를 수정합니다.
-- `cut`: CSV 파일에서 원하는 열만 추출합니다.
-- `grep`: 특정 패턴을 가진 데이터를 찾습니다.
+## 참고자료
 
-또한 Bash 프로그래밍을 할 때 변수 사용, 조건문, 반복문 등의 기본적인 개념을 활용하여 보다 복잡한 작업도 가능합니다.
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Script를 이용한 CSV 파일 다루기](https://www.computerhope.com/unix/bash/read.htm)
+- [Bash에서 CSV 파일 다루기](https://unix.stackexchange.com/questions/159950/how-to-use-bash-to-extract-data-from-a-csv-file/159954#159954)
 
-# 참고 자료
+-----
 
-- [Bash 팁: CSV 파일 다루기](https://www.cyberciti.biz/faq/bash-scripting-using-csv-file/)
-- [BASH: Working With CSV Files](https://www.linuxjournal.com/content/bash-working-csv-files)
-- [Manipulating CSV files with bash](https://opensource.com/article/19/10/bash-magic-csv)
+
+## 참고
+
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Script를 이용한 CSV 파일 다루기](https://www.computerhope.com/unix/bash/read.htm)
+- [Bash에서 CSV 파일 다루기](https://unix.stackexchange.com/questions/159950/how-to-use-bash-to-extract-data-from-a-csv-file/159954#159954)

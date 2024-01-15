@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: 读取命令行参数"
+title:                "读取命令行参数"
+html_title:           "Javascript: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,69 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么需要阅读命令行参数
-在编写Javascript程序时，经常会遇到需要从命令行获取用户输入的情况。通过阅读命令行参数，我们可以轻松地获取用户输入并将其应用到我们的程序中，从而实现更加灵活和个性化的功能。
+为什么： 为什么要阅读命令行参数 - 最多2句话
+--------------------------------------
+命令行参数是一种非常有用的技术，它允许我们在运行程序时传递一些额外的信息。这样，我们可以在不改变程序本身的情况下，根据不同的需求来调整程序的行为。 如果你想要探索这个技术，就让我们一起来看看吧！
 
-## 如何读取命令行参数
-要读取命令行参数，我们需要使用process对象提供的属性和方法。首先，我们需要在程序中引入`process`模块，然后调用`process.argv`来获取用户输入的所有命令行参数。例如，假设我们要编写一个简单的程序来输出用户输入的所有参数，代码如下：
+### 如何实现
+
+在Javascript中，我们可以使用process对象来读取命令行参数。我们可以通过process.argv来获取所有的参数，它是一个字符串数组。第一个参数是node的路径，第二个参数是我们执行的文件的路径。之后的元素都是我们传递的参数。
 
 ```Javascript
-// 引入process模块
-const process = require('process');
-
-// 获取命令行参数
+// 获取所有命令行参数
 const args = process.argv;
 
-// 遍历并输出所有参数
-for (let i = 0; i < args.length; i++) {
-    console.log(args[i]);
-}
+// 获取特定位置的参数
+const paramOne = args[2];
+const paramTwo = args[3];
+
+console.log(paramOne, paramTwo);
 ```
 
-使用命令行运行我们的程序，输入以下命令：
+假设我们执行 `node app.js hello world`， 那么控制台会打印出 `hello world`。如果我们传递更多的参数，它们也会被打印出来。
 
-```
-node program.js arg1 arg2 arg3
-```
+### 深入了解
 
-则程序将会输出以下内容：
-
-```
-/Users/username/.nvm/versions/node/v10.16.0/bin/node // 我的本地路径可能不同
-/Users/username/Desktop/program.js
-arg1
-arg2
-arg3
-```
-
-我们可以看到，前两个参数是执行node程序的路径，接着才是我们输入的参数。这也是为什么我们在程序中需要用`for`循环来遍历参数的原因。
-
-另外，我们可以通过指定`process.argv`的第三个参数来获取真正的命令行参数，即不包括执行node程序的路径和程序本身的路径。我们只需要修改上面的代码，如下所示：
+除了使用process.argv来读取命令行参数，还有一些工具可以帮助我们处理更复杂的情况。比如，第三方库yargs可以帮助我们解析命令行参数并将其转换为对象，方便我们使用。
 
 ```Javascript
-// 获取命令行参数，从第三个参数开始
-const args = process.argv.slice(2);
+// 使用yargs来解析命令行参数
+const argv = require('yargs').argv;
+
+// 使用 -- 前缀来传递参数
+// 如 --name 和 --age
+console.log(argv.name, argv.age);
 ```
 
-然后重新运行程序，结果就会变成：
+但要注意，这些工具都是基于process.argv来实现的。因此，了解如何在原生的Javascript中读取命令行参数还是很重要的。
 
-```
-arg1
-arg2
-arg3
-```
+### 查看更多
 
-## 深入了解命令行参数
-除了通过`process.argv`来读取命令行参数外，我们还可以使用第三方模块`commander.js`来更加简单和灵活地处理参数。该模块不仅可以读取用户输入的参数，还可以自动生成帮助文档和对参数进行验证。
+如果你想要深入学习命令行参数的使用，可以查看以下文档和教程：
 
-安装`commander.js`模块非常简单，只需在命令行运行以下命令即可：
+- [Node.js process.argv 文档](https://nodejs.org/api/process.html#process_process_argv)
+- [yargs 官方文档](https://www.npmjs.com/package/yargs)
+- [The Net Ninja 的命令行参数教程 (视频)](https://www.youtube.com/watch?v=XdIWmGFAW5w)
 
-```
-npm install commander
-```
+### 参考链接：
 
-然后，就可以在程序中引入该模块并开始使用了。具体使用方法，请参考官方文档。
-
-## 查看更多
-* [Node.js官方文档](https://nodejs.org/dist/latest-v12.x/docs/api/process.html#process_process_argv)
-* [commander.js文档](https://github.com/tj/commander.js)
+- [Node.js process.argv documentation](https://nodejs.org/api/process.html#process_process_argv)
+- [Official yargs documentation](https://www.npmjs.com/package/yargs)
+- [The Net Ninja's command line arguments tutorial (video)](https://www.youtube.com/watch?v=XdIWmGFAW5w)

@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
-simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
+title:                "Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
+html_title:           "Gleam: Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
+simple_title:         "Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -9,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Miksi joku haluaisi kirjoittaa standardi virheeseen (standard error)?
+Kirjoittaminen virheet standardiin antaa sinulle mahdollisuuden nähdä tärkeitä virheilmoituksia, jotka voivat auttaa sinua korjaamaan ohjelmasi ja varmistamaan sen sujuvan toiminnan.
 
-Vastaus on yksinkertainen - standardi virhe on tärkeä osa koodin suorittamista ja virheilmoitukset on tärkeää havaita mahdollisimman nopeasti. Kirjoittamalla standardi virheeseen, voit nähdä mahdolliset virheet ja havaita mahdolliset ongelmat koodissasi, mikä auttaa sinua korjaamaan ne nopeasti.
+## Kuinka tehdä
 
-# Miten
-
-Standardi virheeseen kirjoittaminen Gleam-ohjelmointikielessä on yksinkertaista. Voit käyttää standardi biblioteekin funktiota ```io:error/1``` ja antaa sille parametriksi merkkijonon, joka sisältää haluamasi virheilmoituksen. Tämä funktio kirjoittaa merkkijonon standardi virheeseen ja aiheuttaa virheen ohjelman suorituksessa. Alla on esimerkki koodista ja sen tulosteesta:
+Jos haluat kirjoittaa virheet standardiin Gleamissa, voit käyttää `Logger` moduulia. Seuraava esimerkki näyttää, kuinka voit käyttää sitä:
 
 ```Gleam
-let virhe = "Tässä on virheilmoitus!"
-let _ = io:error(virhe)
+
+import gleam /logger
+
+fn main() {
+  let message = "Tämä on virheilmoitus"
+  logger.error(message)
+}
 ```
 
-Tuloste:
+Tulostuu lopputulos:
 
-```
-Tässä on virheilmoitus!
-```
+`Tämä on virheilmoitus`
 
-# Syväluotaus
+## Syvällinen sukellus
 
-Vaikka standardi virheeseen kirjoittaminen voi tuntua yksinkertaiselta, se on tärkeä osa koodin suunnittelua ja debuggausta. On tärkeää, että käytät hyviä käytäntöjä ja huolellisesti harkitset mitä ja milloin kirjoitat standardi virheeseen. Huolellinen suunnittelu voi auttaa sinua välttämään tarpeettomia virheitä ja selkiyttää koodisi rakennetta.
+Kun kirjoitat virheitä standardiin, sinun tulisi muistaa muutama asia. Ensinnäkin, varmista, että käytät oikeaa moduulia (`logger` moduulia). Lisäksi varmista, että virheilmoituksesi on selkeä ja informatiivinen. Lopuksi, muista, että standardivirheet ovat hyödyllinen työkalu ohjelmiesi virheiden käsittelyssä.
 
-# Katso myös
+## Katso myös
 
-- [Gleam standard bibliteekki](https://gleam.run/stdlib/io.html#io:error/1)
-- [Standardi virheen merkitys ohjelmoinnissa](https://www.lifewire.com/standard-error-definition-4587090)
-- [Vinkkejä virheilmoitusten käsittelyyn](https://www.codinghorror.com/blog/2009/05/should-error-messages-be-humorous.html)
+- [Virheet standardivirheille Gleamissa](https://example.com/virheet-standardivirheille-gleamissa)
+- [Gleam Dokumentaatio](https://gleam.run/documentation/)

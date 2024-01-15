@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Yhteistyössä yaml:n kanssa"
-simple_title:         "Yhteistyössä yaml:n kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Haskell: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -9,47 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Kirjoittaessasi Haskell-ohjelmia, saatat törmätä YAML-tiedostojen käsittelyyn. YAML on käyttäjäystävällinen tietojen esitysmuoto, joka on suosittu erilaisten tietojen tallentamiseen ja siirtämiseen ohjelmoinnissa. Tässä artikkelissa kerromme, miksi YAML on hyödyllinen ja miten sitä käytetään Haskellissa.
+Jos olet kiinnostunut ohjelmoinnista, luultavasti olet törmännyt YAML:iin. YAML (Yet Another Markup Language) on formaatti, jota käytetään tiedostojen tallentamiseen ja siirtämiseen tietokoneiden välillä. Se on erityisen hyödyllinen, kun halutaan tallentaa tai vaihtaa tietoa rakenteisessa muodossa, kuten taulukkoina tai joukkoina. Jos olet kiinnostunut datan hallinnasta ja manipuloinnista, YAML on loistava väline tähän tarkoitukseen.
 
-## Miten?
+## Näin aloitat
 
-Haskellilla on jo olemassa oleva paketti nimeltä "yaml", joka tarjoaa hyvän rajapinnan YAML-tiedostojen käsittelyyn. Voimme aloittaa käyttämällä sitä asentamalla sen Stack-komennon avulla:
+Aloittaaksesi YAML:n käytön Haskellissa, sinun tulee ensin asentaa paketti nimeltä "yaml". Voit tehdä tämän suorittamalla seuraavan komennon GHCi-konsolissa:
 
-```Haskell
-stack install yaml
+```
+cabal install yaml
 ```
 
-Kun se on asennettu, voimme tuoda sen projektiimme käyttämällä seuraavaa koodia:
+Tämän jälkeen sinun tulee tuoda YAML-paketti moduuliesi joukkoon:
 
-```Haskell
-import qualified Data.Yaml as Yaml
-import Data.ByteString (readFile)
+```
+import Data.YAML
 ```
 
-Nyt voimme lukea YAML-tiedostoja käyttämällä `Yaml.decodeEither` -funktiota ja antamalla sille tiedoston polun sekä halutun datatyypin:
+Nyt voit käyttää YAML:ia koodissasi. Annetaan esimerkiksi olemassa oleva YAML-tiedosto nimeltä "mydata.yaml" jo sisältää seuraavanlaista dataa:
 
-```Haskell
-main :: IO ()
-main = do
-  res <- Yaml.decodeEither <$> readFile "esimerkki.yaml"
-  case res of
-    Left e -> putStrLn $ "Virhe: " ++ e
-    Right arvot -> print (arvot :: [String])
+```
+- title: "Esimerkki"
+  author: "Maija Meikäläinen"
+  year: 2020
+- title: "Toinen esimerkki"
+  author: "Matti Mallikas"
+  year: 2019
 ```
 
-Tässä esimerkissä luemme YAML-tiedoston, joka sisältää listan stringejä, ja tulostamme ne konsoliin. Voimme myös muuttaa datatyypin esimerkiksi `Map String Int` tai `Maybe Bool`, jos tiedostossa on vastaavat arvot. Kokeile vaikka itse!
+Voimme käyttää YAML-paketin funktiota "decodeFileThrow" lukeaksemme tämän tiedoston sisällön ja tallentaaksemme sen muuttujaan koodissamme:
 
-## Syvemmälle
+```
+mydata <- decodeFileThrow "mydata.yaml" :: IO [YAML]
+```
 
-YAML-tiedostot ovat hierarkkisia, mikä tarkoittaa että ne voivat sisältää manyyym mutation tasoisia objekteja ja arvoja. Tämän takia `Yaml.decodeEither`-funktion palauttama tyyppi on `Either String Value`, missä `Value` sisältää `ValueScalar`, `ValueSequence` ja `ValueMapping` -tyyppejä erilaisia arvoja varten. Yksityiskohtaisemman dokumentaation löydät `yaml`-paketista.
+Tämän jälkeen voimme käyttää muuttujaa "mydata" saadaksemme tiedoston sisällön koodissa. Esimerkiksi voimme tulostaa tiedoston sisällön näytölle seuraavalla tavalla:
 
-Seuraavana haasteena on muuntaa `Value` erilaisiin datatyyppeihin. Tätä varten voit käyttää esimerkiksi `Control.Lens`-nimitystä tai `Data.Aeson`-pakettia, jotka tarjoavat työkaluja tämän tekemiseen. On myös hyödyllistä lukea ja tutkia erilaisia esimerkkejä `yaml`-paketista ja muista lähteistä, jotka auttavat ymmärtämään YAML-tiedostojen käsittelyä Haskellilla paremmin.
+```
+print $ show mydata
+```
+
+Ja tuloste olisi:
+
+```
+[Node (Mapping [Scalar (Str "title"),Scalar (Str "Esimerkki"),Scalar (Str "author"),Scalar (Str "Maija Meikäläinen"),Scalar (Str "year"),Scalar (Int 2020)]),Node (Mapping [Scalar (Str "title"),Scalar (Str "Toinen esimerkki"),Scalar (Str "author"),Scalar (Str "Matti Mallikas"),Scalar (Str "year"),Scalar (Int 2019)])]
+```
+
+## Syväsukellus
+
+Kun olet perehtynyt YAML:n perusominaisuuksiin ja haluat syventää tietämystäsi, voit tutkia erilaisia tapoja käyttää sitä kanssa Haskellissa. Voit esimerkiksi luoda omaa dataa ja tallentaa sen YAML-tiedostoon käyttämällä "encodeFile" funktiota. Voit myös käyttää YAML:ia yhdessä muiden pakettien kanssa, kuten "aeson", joka mahdollistaa JSON-tiedostojen käsittelyn sekä JSON:sta YAML:ksi muuntamisen.
 
 ## Katso myös
 
-- `yaml`-paketti Hackagesta: <https://hackage.haskell.org/package/yaml>
-- Hyvä esimerkki YAML-tiedoston käsittelystä Haskellilla: <https://markkarpov.com/tutorial/yaml.html>
-- Manipulointi YAML-tiedostoilla käyttäen `Control.Lens`-paketin apufunktioita: <https://www.snoyman.com/blog/2016/10/conduit-sorted-yaml-parser>
-- Omahyvä esimerkkiprojekti, joka käyttää YAML-tiedostoja pienoissääsovellukseen: <https://github.com/andorp/meteo-hs>
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [YAML-haskell paketin dokumentaatio](https://hackage.haskell.org/package/yaml)
+- [Haskellin peruskurssi](https://www.cis.upenn.edu/~cis194/spring13/)

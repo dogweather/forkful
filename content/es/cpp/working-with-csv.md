@@ -1,5 +1,6 @@
 ---
-title:                "C++: Trabajando con archivos csv"
+title:                "Trabajando con archivos csv"
+html_title:           "C++: Trabajando con archivos csv"
 simple_title:         "Trabajando con archivos csv"
 programming_language: "C++"
 category:             "C++"
@@ -9,74 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué trabajar con archivos CSV es esencial en programación
+## ¿Por qué?
 
-Trabajar con archivos CSV, o Comma Separated Values, es esencial en programación debido a su formato simple y eficiente para almacenar y manipular datos. Los archivos CSV son ampliamente utilizados en diferentes industrias, desde finanzas hasta ciencia de datos, lo que los convierte en una herramienta imprescindible para cualquier desarrollador.
+El trabajo con archivos CSV es una habilidad esencial para cualquier programador de C++. CSV (Comma Separated Values) es un formato de archivo comúnmente utilizado para almacenar y manejar grandes cantidades de datos tabulares. Aprender a trabajar con archivos CSV es una manera eficiente de manejar y analizar datos para diversas aplicaciones.
 
-## Cómo trabajar con archivos CSV en C++
+## Cómo hacerlo
 
-Para trabajar con archivos CSV en C++, necesitas seguir estos sencillos pasos:
-
-1. Incluir la biblioteca \<fstream> para manejar archivos.
-2. Abrir el archivo CSV utilizando la función `open()` y proporcionando el nombre del archivo y el modo de apertura.
-3. Leer el contenido del archivo línea por línea utilizando la función `getline()`, separando cada valor utilizando la coma como delimitador.
-4. Manipular los datos según sea necesario.
-5. Cerrar el archivo después de terminar de trabajar con él.
-
-A continuación se muestra un ejemplo de código que lee un archivo CSV con información de estudiantes y muestra sus nombres y calificaciones:
+Aquí hay una demostración sencilla de cómo trabajar con archivos CSV en C++:
 
 ```C++
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
 
 using namespace std;
 
-int main()
-{
-    ifstream file("estudiantes.csv"); // abriendo el archivo
+int main() {
+  // Abrir el archivo CSV
+  ifstream archivo("datos.csv");
+  
+  // Vector para almacenar los datos del archivo
+  vector<vector<string>> datos;
 
-    if (file.is_open()) // comprobando si el archivo se abrió correctamente
-    {
-        string nombre, calificacion;
+  // Leer los datos del archivo línea por línea
+  while (archivo.good()) {
+    string linea;
+    getline(archivo, linea);
 
-        while (getline(file, nombre, ',')) // leyendo el nombre separado por comas
-        {
-            getline(file, calificacion); // leyendo la calificación en la misma línea
-            cout << "Nombre: " << nombre << " - Calificación: " << calificacion << endl;
-        }
+    // Utilizar un stringstream para dividir la línea en columnas usando la coma como delimitador
+    stringstream ss(linea);
+    string columna;
+    vector<string> fila;
 
-        file.close(); // cerrando el archivo
+    while (getline(ss, columna, ',')) {
+      // Agregar cada columna al vector de filas
+      fila.push_back(columna);
     }
-    else
-    {
-        cout << "No se pudo abrir el archivo." << endl;
-    }
 
-    return 0;
+    // Agregar la fila al vector de datos
+    datos.push_back(fila);
+  }
+
+  // Imprimir los datos leídos del archivo
+  for (int i = 0; i < datos.size(); i++) {
+    for (int j = 0; j < datos[i].size(); j++) {
+      cout << datos[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  return 0;
 }
 ```
-**Output:**
+
+Este código abrirá un archivo CSV llamado "datos.csv" y guardará los datos en un vector de filas y columnas. Luego, los datos se imprimirán en la consola. 
+
+### Ejemplo de datos
+
+Supongamos que el archivo "datos.csv" contiene los siguientes datos:
 
 ```
-Nombre: Ana - Calificación: 95
-Nombre: Carlos - Calificación: 82
-Nombre: Maria - Calificación: 89
+Nombre, Edad, Ciudad
+Ana, 25, Madrid
+Juan, 30, Barcelona
+María, 27, Valencia
 ```
 
+El programa imprimirá lo siguiente:
 
-## Profundizando en el trabajo con archivos CSV
+```
+Nombre Edad Ciudad
+Ana 25 Madrid
+Juan 30 Barcelona
+María 27 Valencia
+```
 
-Existen varias consideraciones importantes al trabajar con archivos CSV en C++. En primer lugar, debes asegurarte de que los datos estén correctamente formateados y que no haya errores al separarlos por comas. También es importante tener en cuenta que los valores numéricos pueden ser leídos como cadenas de texto y necesitarán ser convertidos a su tipo de dato correspondiente.
+## Profundizando en el tema
 
-Además, no olvides cerrar el archivo después de terminar de trabajar con él. Esto es especialmente importante si trabajas con grandes cantidades de datos, ya que mantener el archivo abierto puede consumir memoria y afectar el rendimiento de tu programa.
-
-Otra consideración importante es que los archivos CSV pueden tener encabezados de columna. Esto significa que la primera fila del archivo puede contener los nombres de cada columna en lugar de datos. En este caso, debes tener en cuenta esta fila y omitirla al leer los datos.
-
-En resumen, trabajar con archivos CSV en C++ es una habilidad esencial para cualquier programador. Con un formato simple y versátil, los archivos CSV son una herramienta poderosa para almacenar y manipular datos. Siguiendo los pasos mencionados anteriormente y teniendo en cuenta ciertas consideraciones importantes, podrás aprovechar al máximo su uso en tus proyectos.
+Trabajar con archivos CSV puede ser mucho más complejo dependiendo de la cantidad de datos y su estructura. Por ejemplo, si hay datos faltantes en el archivo o si se requiere realizar cálculos o filtrar los datos. En estos casos, puede ser útil utilizar librerías específicas de C++ como "Easy CSV Parser" o "Libcsv" para facilitar el manejo de archivos CSV. También es importante aprender sobre los diferentes delimitadores y formatos de texto que pueden presentarse en los archivos CSV.
 
 ## Ver también
 
-- [Tutorial de archivos CSV en C++ (en inglés)](https://www.programiz.com/cpp-programming/library-function/fstream/open)
-- [Manipulación de archivos en C++ (en inglés)](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [Ejemplo de trabajo con archivos CSV en C++ (en inglés)](https://www.geeksforgeeks.org/csv-file-management-using-c/)
-- [Documentación de la biblioteca \<fstream> en C++ (en inglés)](https://www.cplusplus.com/reference/fstream/fstream/)
+- [Easy CSV Parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
+- [Libcsv](hhttps://github.com/ben-strasser/libcsv)

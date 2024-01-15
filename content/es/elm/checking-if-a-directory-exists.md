@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Comprobando si existe un directorio"
+title:                "Comprobando si existe un directorio"
+html_title:           "Elm: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,45 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-A medida que avanzamos en nuestro camino de aprendizaje de Elm, es importante tener en cuenta una funcionalidad básica como la comprobación de si un directorio existe. Esta es una habilidad importante, ya que nos permite crear un código más robusto y preparado para cualquier situación. En esta publicación, exploraremos por qué es importante verificar si un directorio existe y cómo podemos hacerlo en Elm.
+Hay varias razones por las cuales querríamos comprobar si un directorio existe en nuestro código de Elm. Por ejemplo, podemos querer asegurarnos de que una ruta de archivo específica es válida antes de intentar leer o escribir en ella, o tal vez necesitamos verificar si un directorio creado por el usuario ya existe antes de crear uno nuevo.
 
 ## Cómo hacerlo
+Comprobar si un directorio existe en Elm es bastante sencillo. Utilizaremos la función `directoryExists` de la biblioteca `elm/file` para realizar la verificación.
 
-Antes de comenzar a escribir código, es importante comprender cómo funciona la comprobación de directorios en Elm. Podemos hacerlo utilizando la función `directoryExists` del módulo `File.System`. Esta función devuelve un valor `Bool` que indica si el directorio especificado existe o no.
-
-Veamos un ejemplo de código para verificar si el directorio "mi_directorio" existe en la raíz del archivo:
-
-```Elm
-import File.System exposing (directoryExists)
-
-myDirectoryExists : Bool
-myDirectoryExists =
-  directoryExists "mi_directorio"
-```
-
-El valor devuelto por `myDirectoryExists` será `True` si el directorio existe y `False` si no existe. Podemos utilizar este valor en nuestro código para tomar decisiones o realizar otras acciones.
-
-Ahora, supongamos que queremos imprimir un mensaje diferente dependiendo de si el directorio existe o no. Podemos hacerlo utilizando una expresión `if-then-else`:
+Primero, debemos importar la biblioteca y la función en nuestro código:
 
 ```Elm
-if myDirectoryExists then
-  "El directorio existe"
-else
-  "El directorio no existe"
+import File
+import File.Directory exposing (directoryExists)
 ```
 
-Con esto, podemos escribir todo lo necesario para verificar si un directorio existe en nuestro código.
+Luego, podemos llamar a la función `directoryExists` pasándole como argumento la ruta del directorio que queremos comprobar:
+
+```Elm
+directoryExists "ruta/del/directorio"
+```
+
+Esta función devolverá un valor `Task Bool`, que indica si el directorio existe o no. Podemos manejar este resultado utilizando la función `Task.map` y proporcionando una función para lidiar con el resultado de la tarea.
+
+Por ejemplo, si queremos imprimir un mensaje indicando si el directorio existe o no, podemos hacerlo de la siguiente manera:
+
+```Elm
+let
+    verificarDirectorio path =
+        Task.map
+            (\exists -> if exists then
+                Debug.log "El directorio existe"
+            else
+                Debug.log "El directorio no existe"
+            )
+            (directoryExists path)
+```
+
+Y luego podemos llamar a esta función pasándole nuestra ruta de directorio:
+
+```Elm
+verificarDirectorio "ruta/del/directorio"
+```
+
+Si el directorio existe, veremos el mensaje "El directorio existe" en la consola. Si no existe, veremos el mensaje "El directorio no existe". Podemos utilizar la función `Debug.todo` en lugar de `Debug.log` para generar un error si el directorio no existe, en lugar de simplemente imprimir un mensaje informativo.
 
 ## Profundizando
+La función `directoryExists` utiliza la API de FileSystem de JavaScript para determinar si un directorio existe en el sistema de archivos. Funciona en navegadores y en Node.js, pero no en entornos de servidor de Elm por motivos de seguridad.
 
-Ahora que sabemos cómo utilizar la función `directoryExists`, es importante tener en cuenta algunas cosas a tener en cuenta al usarla.
+Si necesitamos realizar esta comprobación en un entorno de servidor, podemos crear una API en JavaScript que realice la verificación por nosotros y luego llamar a esa función desde nuestro código de Elm.
 
-En primer lugar, es importante tener en cuenta que esta función solo comprueba la existencia de directorios, no de archivos. Si queremos comprobar si un archivo existe, debemos utilizar la función `fileExists` del mismo módulo.
-
-También es importante recordar que esta función solo comprueba la existencia de directorios en la raíz del archivo. Si queremos verificar si un directorio existe en una ubicación diferente, debemos incluir la ruta completa del directorio en la función.
+Otra cosa a tener en cuenta es que esta función solo comprueba si el directorio existe en la ubicación especificada, no comprueba si el directorio está vacío o si tiene permisos de lectura o escritura. Si necesitamos realizar estas verificaciones, debemos hacerlo por separado utilizando otras funciones y bibliotecas.
 
 ## Ver también
-
-- [Documentación oficial de Elm para la función `directoryExists`](https://package.elm-lang.org/packages/elm/file/latest/File-System#directoryExists)
-- [Artículo de programación en español sobre la comprobación de directorios en Elm](https://programacion.net/articulo/comprobante_existencia_directorio_elm_1917)
+- [Documentación oficial de Elm: biblioteca elm/file](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Página de GitHub de elm/file](https://github.com/elm/file)
+- [Repositorio de ejemplo en GitHub que utiliza elm/file](https://github.com/billstclair/elm-file/blob/master/examples/full-dirs-demo/src/Main.elm)

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: ウェブページのダウンロード"
+title:                "ウェブページのダウンロード"
+html_title:           "Ruby: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,31 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ウェブページをダウンロードすることの魅力とは？そもそもなぜウェブページをダウンロードする必要があるのでしょうか？この記事では、その理由をお伝えします。
+## Why
+いろいろな理由で人々はウェブページをダウンロードする必要があります。例えば、ウェブサイトのデータをスクレイピングするため、オフラインでの閲覧のため、またはバックアップのためです。
 
-## ダウンロードの方法
-Rubyを使ってウェブページをダウンロードする方法をご紹介します。以下のコードブロックに例と実際の出力を記載します。
+## How To
+ウェブページをダウンロードするためのRubyのコードは非常に簡単です。まずは`open-uri`ライブラリを`require`し、`open()`メソッドを使用してダウンロードしたいウェブページのURLを指定します。
 
 ```Ruby
-# ウェブページのURLを指定してダウンロードする
 require 'open-uri'
 
-url = "http://www.example.com"
-response = open(url)
-puts response.read
+url = "https://www.example.com"
+page = open(url)
 ```
 
-上記の例では、open-uriというライブラリを使ってウェブページのURLを指定し、そのページをダウンロードして出力しています。詳しい使い方は公式ドキュメントを参考にしてください。
+このコードを実行すると、変数`page`にウェブページのデータが保存されます。その後、`read()`メソッドを使用してデータを読み込み、変数`html`に格納します。
 
-## 深堀り
-ウェブページをダウンロードする際に気をつけるべきポイントや、より詳しい情報について解説します。
+```Ruby
+html = page.read()
+```
 
-ウェブページはHTMLという言語で書かれていますが、実はそのHTMLはブラウザによって解釈されて表示されているだけなのです。そのため、ウェブページをプログラムでダウンロードする際には、ブラウザと同じようにHTMLを解釈して取得する必要があります。また、日本語などのマルチバイト文字の扱いにも注意が必要です。詳しくは公式ドキュメントを参考にしてください。
+これでウェブページのデータを取得することができました。もちろん、ページを閲覧するのではなく、データを取得するだけであれば、`open()`メソッドの代わりに`open-uri`ライブラリの`URI()`メソッドを使用することもできます。
 
-## その他参考リンク
-ウェブページをダウンロードするにあたり、以下のリンクを参考にしてみてください。
+```Ruby
+require 'open-uri'
 
-- Rubyの公式ドキュメント: https://ruby-doc.org/stdlib-2.6/libdoc/open-uri/rdoc/OpenURI.html
-- Stack Overflowの関連質問: https://stackoverflow.com/questions/28428811/using-ruby-to-download-a-pdf
-- Qiitaの記事: https://qiita.com/h3poteto/items/baf1c9d4d5a1a9b21e3f
+url = "https://www.example.com"
+html = URI(url).read()
+```
+
+### サンプルコード
+
+```Ruby
+require 'open-uri'
+
+url = "https://www.example.com"
+page = open(url)
+html = page.read()
+
+puts html
+```
+
+### 出力例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+</head>
+<body>
+  <h1>Example Domain</h1>
+  <p>This domain is for use in illustrative examples in documents. You may use this
+  domain in literature without prior coordination or asking for permission.</p>
+  <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</body>
+</html>
+```
+
+## Deep Dive
+`open()`メソッドのみを使用すると、ウェブページのデータを文字列として取得することができます。しかし、`open-uri`ライブラリには便利なメソッドが多数用意されています。例えば、`open()`メソッドの代わりに`open-uri`ライブラリの`open()`メソッドを使用することで、画像や動画などのファイルを直接ダウンロードすることができます。
+
+また、`Nokogiri`ライブラリを使用することで、取得したウェブページのデータを解析し、特定の要素を取得することもできます。
+
+さらに、`open-uri`ライブラリを使用する際には、例外処理をしっかりと行うことが重要です。ウェブページが存在しないURLを指定した場合や、ネットワークエラーが発生した場合にはプログラムが正しく動作するように、適切なエラーハンドリングを行うようにしましょう。
+
+## See Also
+- [Ruby Documentation](https://docs.ruby-lang.org/en/)
+- [Nokogiri Documentation](https://nokogiri.org/)
+- [OpenURI Documentation](https://docs.ruby-lang.org/en/2.7.0/OpenURI.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 텍스트 파일 작성하기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Swift: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
+텍스트 파일을 작성하는 이유에 대해 최대 2 문장으로 설명합니다.
 
-텍스트 파일을 작성하는 이유는 다양합니다. 예를 들어, 데이터를 저장하고 관리하는데 사용하거나, 프로그램이 실행될 때 설정 파일을 로드하고 읽는데 사용할 수 있습니다. 또는 간단한 메모나 노트를 저장하는 용도로도 사용할 수 있습니다.
+텍스트 파일을 작성하는 것은 빠르고 쉽게 정보를 저장하고 공유할 수 있는 방법입니다. 특히, Swift를 사용하면 읽기 쉽고 유지 보수하기 쉬운 코드를 작성할 수 있습니다.
 
-## 작성 방법
-
-우선 ```write(to: String, atomically: Bool, encoding: String.Encoding)``` 메서드를 사용하여 텍스트 파일을 작성할 수 있습니다. 이 메서드는 세 가지 매개 변수를 가지고 있습니다. 첫 번째는 파일이 저장될 경로이고, 두 번째는 원자적으로 쓸 것인지를 나타내는 부울 값이고, 마지막으로 파일의 인코딩 방식을 나타내는 ```String.Encoding``` 열거형입니다.
-
-예를 들어, 아래의 코드는 "sample.txt"라는 파일을 생성하고, "Hello, World!"라는 문자열을 저장하며, 파일의 인코딩 방식을 UTF-8로 설정합니다.
+## 작성하는 방법
+아래의 코드 블록에 나오는 예제들을 참고하여 텍스트 파일을 작성하는 방법을 알아보세요.
 
 ```Swift
-let filePath = "sample.txt"
+// 파일 경로 설정
+let filePath = "Desktop/example.txt"
+
+// 새로운 텍스트 파일 생성
 let text = "Hello, World!"
-do {
-    try text.write(to: filePath, atomically: true, encoding: .utf8)
-    print("파일이 성공적으로 작성되었습니다.")
-} catch {
-    print("파일 작성에 실패하였습니다.")
+FileManager.default.createFile(atPath: filePath, contents: text.data(using: .utf8), attributes: nil)
+
+// 기존 파일에 새로운 내용 추가
+let fileURL = URL(fileURLWithPath: filePath)
+if let fileHandle = try? FileHandle(forWritingTo: fileURL) {
+    fileHandle.seekToEndOfFile()
+    fileHandle.write(text.data(using: .utf8)!)
+    fileHandle.closeFile()
+}
+
+// 파일 내용 읽기
+if let fileContents = try? String(contentsOfFile: filePath) {
+    print(fileContents)
 }
 ```
 
-파일을 성공적으로 작성하면 콘솔에 "파일이 성공적으로 작성되었습니다."라는 메시지가 출력될 것입니다. 터미널에서 파일을 확인해보면 "Hello, World!" 라는 문자열이 저장된 것을 볼 수 있습니다.
+위의 코드는 먼저 파일 경로를 설정하고, 해당 경로에 새로운 텍스트 파일을 생성하고 내용을 추가한 후, 파일 내용을 읽어오는 예제입니다.
 
-## 깊게 들어가기
+## 강좌
+더 자세한 내용을 알아보려면 아래의 링크들을 참고해보세요.
 
-위의 예제에서는 원자성 옵션을 ```true```로 설정하였습니다. 이 옵션은 파일을 원자적으로 쓸 것인지를 나타내는데, 즉 파일이 전부 쓰여진 후에 디스크에 저장되도록 하는 옵션입니다. 이를 사용하면 파일이 중간에 손상되는 경우를 방지할 수 있습니다.
+- [Swift Documentation](https://developer.apple.com/documentation/swift)
+- [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [Writing Files in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-write-data-to-a-file)
+- [How to Read and Write Text Files in Swift](https://medium.com/@dushyant_db/read-write-text-files-in-swift-abe93f9aac53)
 
-또한 파일의 인코딩 방식을 설정하여 다양한 언어나 문자를 저장할 수 있습니다. UTF-8은 가장 많이 사용되는 인코딩 방식 중 하나이며, 다른 인코딩 방식들도 있으니 필요에 따라 선택하면 됩니다.
+## 참고
+이외에도 Swift를 사용하여 다양한 파일 작성 및 관리를 할 수 있습니다. 자세한 내용은 Swift 공식 문서와 다른 온라인 자료들을 참고해서 연습해보시기 바랍니다.
 
-## 관련 문서들
-
-- [String - Apple 개발자 문서](https://developer.apple.com/documentation/swift/string)
-- [String.Encoding - Apple 개발자 문서](https://developer.apple.com/documentation/swift/string/encoding)
+## 관련 링크
+- [Swift 공식 문서](https://developer.apple.com/documentation/swift)
+- [Swift tutorials 커뮤니티](https://www.hackingwithswift.com/)
+- [Swift 커리큘럼과 튜토리얼](https://www.raywenderlich.com/category/swift)
+- [Swift 블로그](https://www.swiftbysundell.com/)

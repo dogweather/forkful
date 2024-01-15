@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 랜덤 숫자 생성"
-simple_title:         "랜덤 숫자 생성"
+title:                "랜덤 숫자 생성하기"
+html_title:           "Clojure: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -9,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-랜덤 숫자를 생성하는 것에 대해 관심을 가질 이유는 다양합니다. 일반적으로 프로그래밍에서 랜덤 숫자를 사용하는 경우는 데이터를 무작위로 분석하거나, 게임에서 새로운 요소를 생성하는 등에 활용하기 때문입니다.
+왜이 아픠 때문에 난수를 생성하는 것에 놀라게 될 수 있습니다. 그냥 새로운 코딩 기술을 배우는 것보다 더 나은 이유는 이기쁜 일이 없어요!
 
-# 어떻게
+## 하는 법
 
-랜덤 숫자를 생성하는 방법에는 다양한 방법이 있지만, Clojure에서 가장 흔한 방법은 ```rand``` 함수를 사용하는 것입니다. 이 함수는 기본적으로 0과 1 사이의 랜덤한 부동소수점 숫자를 생성합니다.
+Here's an easy way to generate random numbers in Clojure:
 
-```Clojure
-(rand) ;; 0.453976359654876
-```
+ ``` Clojure
+ (rand) 
+ ;; 0.6875913269905133
 
-만약 원하는 범위를 지정하고 싶다면, ```rand``` 함수에 인자를 추가해주면 됩니다.
+(random 1 10) 
+;; 4 
+ ```
 
-```Clojure
-(rand 10) ;; 6.908134537584917
-```
+These functions can take in arguments to specify the range and type of random number to be generated. For example, `rand` generates a random floating-point number between 0 (inclusive) and 1 (exclusive), while `random` takes in the start and end numbers of the range and returns a random integer within that range.
 
-이렇게 하면 0에서 10 사이의 랜덤한 숫자가 생성됩니다. 또한, 반복적으로 랜덤 숫자를 생성하고 싶을 때는 ```repeatedly``` 함수를 사용할 수 있습니다.
+## 깊이 들어가기
 
-```clojure
-(repeatedly 5 rand) ;; (0.78291393967237 0.31426788080114737 0.656375878183015 0.15081684175763522 0.6871242286722354)
-```
+Clojure에서 난수를 생성하는 더욱 자세한 정보를 알고 싶다면 [Clojure 공식 문서](https://clojuredocs.org)에서 `rand`와 `random` 함수를 찾아보세요. 이 함수들은 어떤 서수열을 기반으로 난수를 생성하는지와 그 로직에 대해서도 자세히 설명하고 있습니다. 또한 Clojure의 랜덤 함수는 입력값에 대한 캐싱(cache) 및 동시성 이슈에 대한 자세한 내용도 참고할 수 있습니다. 
 
-이 방법으로 5개의 랜덤 숫자를 생성할 수 있습니다. 만약 정수형 숫자가 필요하다면, ```rand-int``` 함수를 사용하면 됩니다.
+## 참고 자료
 
-```Clojure
-(rand-int 10) ;; 8
-```
-
-이렇게 하면 0에서 10 사이의 정수형 랜덤 숫자가 생성됩니다.
-
-# 심층 분석
-
-Clojure에서 랜덤 숫자를 생성하는 함수들은 사실 의사난수(Pseudorandom Number)를 생성합니다. 이는 시드값(seed value)을 이용해서 순서대로 나열하는 숫자로, 완전한 무작위 숫자는 아닙니다. 하지만 일반적인 용도에서는 큰 문제가 되지 않으며, 필요하다면 직접 시드값을 지정해서 더 복잡한 의사난수를 생성할 수도 있습니다.
-
-# 관련 자료
-
-- [Clojure 공식 문서: 랜덤 숫자 생성](https://clojuredocs.org/clojure.core/rand)
-- [Clojure 빌트인 함수: rand vs. rand-int 속도 비교](https://github.com/functional-koans/clojure-koans/wiki/Clojure-built-in,-rand-vs.-rand-int-comparison)
-- [Clojure 랜덤 숫자 생성 과정 분석](https://medium.com/@hkaid/random-number-generation-in-clojure-and-how-a-psuedorandom-number-generator-works-82f7e7a2e5f1)
+* [Clojure 공식 문서](https://clojuredocs.org)
+* [Clojure 코드의 난수 생성](https://clojure.org/guides/random_numbers)

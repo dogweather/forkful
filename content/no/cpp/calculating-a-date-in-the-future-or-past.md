@@ -1,5 +1,6 @@
 ---
-title:                "C++: Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "C++: Beregning av en dato i fremtiden eller fortiden"
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "C++"
 category:             "C++"
@@ -9,55 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Det kan være nyttig å kunne beregne en dato i fremtiden eller fortiden for å planlegge avtaler, organisere tidsfrister eller for skreddersydd rapportering.
 
-Hvorfor skulle noen ønske å beregne en dato i fremtiden eller fortiden? Vel, det er flere grunner til det. Kanskje du trenger å planlegge en viktig hendelse, som en bursdagsfest eller et bryllup. Eller kanskje du jobber med et prosjekt som har en bestemt tidsramme, og du trenger å vite når en bestemt dato faller på. Uansett grunn, å kunne beregne datoer er en viktig ferdighet som kan komme til nytte i mange ulike situasjoner.
+## Hvordan
+Det er enkelt å beregne en dato i fremtiden eller fortiden ved hjelp av C++ programvare. Følg disse trinnene:
 
-# Hvordan
+### Steg 1: Inkluder tidsløsningen
 
-Å beregne en dato i fortiden eller fremtiden er ganske enkelt hvis du bruker riktig kode. Her er et eksempel på hvordan du kan gjøre det i C++:
-```C++
-#include <iostream> 
-#include <ctime> 
-
-int main() 
-{ 
-    // Sett opp dagens dato
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-
-    // Beregn en dato 30 dager frem i tid
-    ltm->tm_mday += 30; 
-
-    // Bruk mktime for å konvertere datoen tilbake til time_t format 
-    now = mktime(ltm); 
-
-    // Skriv ut den beregnede datoen
-    std::cout << "30 dager fra nå vil det være " << ctime(&now); 
-
-    return 0; 
-}
+For å utføre beregninger på datoer, må du inkludere tidsløsningsbiblioteket i C++. Dette kan gjøres ved å legge til følgende kode i toppen av filen din:
+```
+#include <chrono>
 ```
 
-Output:
+### Steg 2: Definer en variabel for den nåværende datoen
+
+Du kan definere en variabel for den nåværende datoen ved hjelp av tidsløsningsklassen ```std::chrono::system_clock```. Dette kan gjøres ved å legge til følgende kode:
 ```
-30 dager fra nå vil det være <dato i fremtiden>
+auto nå = std::chrono::system_clock::now();
 ```
 
-# Dypdykk
+### Steg 3: Bruk tidsenheten for å legge til eller trekke fra dager, uker, måneder eller år fra den nåværende datoen
 
-Å beregne datoer kan virke enkelt, men det er faktisk noen nøkkelaspekter du bør være oppmerksom på for å sikre nøyaktige resultater. For det første må du passe på at du bruker riktig tidsformat for datoen du ønsker å beregne. Det kan være forskjellige tidsformater og kalendere som brukes i ulike land, så det er viktig å dobbeltsjekke dette for å unngå feil.
+Tidsløsningsklassen inkluderer ulike tidsenheter som kan brukes til å legge til eller trekke fra tid fra den nåværende datoen. Her er noen eksempler:
+```
+// legg til 10 dager til den nåværende datoen
+nå += std::chrono::duration<int, std::ratio<86400>>(10); 
+// trekke fra 2 uker fra den nåværende datoen
+nå -= std::chrono::duration<int, std::ratio<604800>>(2); 
+// legg til 5 måneder til den nåværende datoen
+nå += std::chrono::duration<int, std::ratio<2629743>>(5); 
+// trekke fra 1 år fra den nåværende datoen
+nå -= std::chrono::duration<int, std::ratio<31556926>>(1); 
+```
 
-Videre kan det være nyttig å bruke innebygde funksjoner i C++ biblioteket som ```mktime``` og ```localtime```, som gjør det enklere å konvertere datoen til riktig format.
+### Steg 4: Konverter datoen til ønsket format og skriv ut resultatet
 
-Det er også viktig å huske på at beregning av datoer kan bli mer komplekst når man tar hensyn til årskifter, skuddår og ulike tidssoner. Det kan derfor være lurt å dobbeltsjekke beregningene dine, spesielt når du jobber med historiske datoer.
+Til slutt kan du konvertere den beregnede datoen til ønsket format og skrive ut resultatet. Det kan se noe slik ut:
+```
+// konverter datoen til en lesbar string og skriv ut
+auto beregnet_dato = std::chrono::system_clock::to_time_t(nå);
+std::cout << "Beregnet dato: " << std::put_time(std::localtime(&beregnet_dato), "%F") << std::endl;
+```
 
-# Se også
+## Deep Dive
+Tidsløsningsbiblioteket i C++ bruker et 64-bit antall sekunder siden 1. januar 1970 som basis for tidsenheter. Det er viktig å ta hensyn til ulike tidsenhetskonverteringer for å unngå unøyaktigheter i de beregnede datoene.
 
-Her er noen nyttige ressurser hvis du ønsker å utforske mer om beregning av datoer i C++:
-
-- [C++ tid og dato bibliotek](https://www.cplusplus.com/reference/ctime/)
-- [Stack Overflow spørsmål om å beregne datoer i C++](https://stackoverflow.com/questions/7932506/how-to-calculate-time-difference-in-c)
-- [C++ referanser for datering og tidsformatering](https://en.cppreference.com/w/c/chrono)
-
-Lykke til med å beregne datoer i C++!
+## Se Også
+- [C++ std::chrono bibliotek-dokumentasjon] (https://www.cplusplus.com/reference/chrono/) 
+- [C++ tutorial om å beregne datoer] (https://www.cplusplus.com/forum/articles/12317/)

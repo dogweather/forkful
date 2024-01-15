@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 텍스트 검색과 바꾸기"
-simple_title:         "텍스트 검색과 바꾸기"
+title:                "텍스트 검색과 대체"
+html_title:           "Clojure: 텍스트 검색과 대체"
+simple_title:         "텍스트 검색과 대체"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -9,63 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 교체를 검색해야 하는가?
+## 왜
 
-교체는 프로그래밍에서 매우 일반적인 작업입니다. 텍스트를 교체함으로써 코드의 일부를 다른 코드로 간단하게 변경할 수 있습니다. 또는 오타를 찾아서 수정하는 데 유용할 수 있습니다. 이번 블로그 포스트에서는 Clojure에서 텍스트를 검색하고 교체하는 방법에 대해 살펴보겠습니다.
+텍스트를 검색하고 대체하는 작업은 일상적으로 우리가 많이 하는 일입니다. 예를 들어, 오타를 고치거나 특정한 패턴의 문자열을 한번에 바꾸기 위해서 등 다양한 이유가 있을 수 있습니다. Clojure를 사용하면 텍스트를 쉽고 빠르게 검색하고 대체할 수 있으며, 더 나은 코드를 쓰는 방법을 배울 수 있습니다.
 
-## 어떻게 하나요?
+## 어떻게
 
-Clojure에서 텍스트를 교체하는 가장 간단한 방법은 `str/replace` 함수를 사용하는 것입니다. 예를 들어, 다음과 같이 문자열에서 모든 공백을 제거할 수 있습니다.
-
-```Clojure
-(str/replace "Hello world" #" " "")
-```
-
-이 코드를 실행하면 결과로 `Helloworld`를 얻을 수 있습니다. `"` 사이의 첫 번째 인자는 교체할 문자열이고, `#" "` 사이의 두 번째 인자는 교체할 패턴입니다. 마지막 `" "`은 `""`으로 교체되므로 공백이 제거됩니다.
-
-만약 모든 숫자를 `x`로 바꾸고 싶다면 이것을 어떻게 할 수 있을까요? `str/replace` 함수를 다음과 같이 변경하면 됩니다.
+코딩 예제와 함께 설명하는 방식으로 진행하겠습니다. Clojure REPL에 다음과 같은 코드를 입력하면, 텍스트를 검색하고 대체하는 방법을 쉽게 이해할 수 있습니다.
 
 ```Clojure
-(str/replace "A1B2C3" #"\d" "x")
+(def text "Hello world, I love Clojure!")
+(clojure.string/replace text "love" "like")
 ```
 
-이를 실행하면 `AxBxCx`라는 결과가 나오게 됩니다. `\d`는 숫자에 해당하는 정규식 표현이며, `x`로 대체됩니다.
+위 코드는 `clojure.string/replace` 함수를 사용하여 "Hello world, I like Clojure!"라는 결과를 출력합니다. 이 코드에서 `clojure.string/replace` 함수는 첫 번째 인자로 전체 텍스트를, 두 번째 인자로 검색할 문자열을, 세 번째 인자로 대체할 문자열을 받습니다. 위 예제에서는 "love"라는 문자열을 "like"로 바꾸는 것을 볼 수 있습니다.
 
-또한 `str/replace` 함수는 대소문자를 무시하도록 `:ignore-case` 옵션을 제공합니다. 예를 들어, `"hello"`를 `"HELLO"`로 바꾸고 싶다면 다음과 같이 작성할 수 있습니다.
+## 깊게 들어가기
 
-```Clojure
-(str/replace "hello" #"hello" "HELLO" {:ignore-case true})
-```
+검색과 대체를 하기 전에, 텍스트를 조작하기 전에는 항상 유니코드 문자열로 변환하는 것이 좋습니다. 그렇지 않으면 예상치 못한 결과가 발생할 수 있습니다. Clojure에서는 `clojure.string/unicode` 함수를 사용하여 문자열을 유니코드로 변환할 수 있습니다.
 
-위 코드를 실행하면 `"HELLO"`를 얻게 됩니다.
+또한, `clojure.string/replace` 함수는 정규식을 사용하여 문자열을 검색할 수도 있습니다. 정규식은 복잡한 패턴을 사용하여 텍스트를 검색하고 대체하는 방법을 제공합니다. 예를 들어, `clojure.string/replace` 함수의 세 번째 인자로 정규식을 사용할 수 있으며, 이를 통해 더 많은 옵션을 설정할 수 있습니다.
 
-## 심층 분석
+## 연관된 내용
 
-좀 더 깊은 수준에서 텍스트 교체에 대해 이해하기 위해, Clojure의 `clojure.string` 네임스페이스에 있는 몇 가지 함수를 살펴보겠습니다.
-
-### `split` 함수
-
-`split` 함수는 문자열을 분리하는 데 유용합니다. 첫 번째 인자로는 분리할 문자열을, 두 번째 인자로는 활용할 패턴을 전달합니다. 예를 들어, `clojure.string` 네임스페이스를 로드하고 `split` 함수를 사용해보겠습니다.
-
-```Clojure
-(ns example.core
-  (:require [clojure.string :as str]))
-
-(str/split "Hello world" #"\s")
-```
-
-위 코드를 실행하면 결과로 `["Hello", "world"]`를 얻게 됩니다. `\s`는 공백을 나타내는 정규식 표현입니다.
-
-### `join` 함수
-
-`join` 함수는 리스트를 결합하여 문자열을 만드는 데 사용합니다. 예를 들어, 다음과 같이 `join` 함수를 사용해보겠습니다.
-
-```Clojure
-(str/join "-" ["a" "b" "c"])
-```
-
-위 코드를 실행하면 결과로 `"a-b-c"`를 얻게 됩니다. 첫 번째 인자는 결합할 구분자를, 두 번째 인자는 결합할 리스트를 전달합니다.
-
-## 더 알아보기
-
-위에서 살펴본 것 이외에도 Clojure에서는 다양한 방법으로 텍스트를 검색하고 교체할 수 있습니다.
+마지막으로 "연관된 내용"이라는 마크다운 글자로 된 부분이 있습니다. 여기에는 Clojure 공식 사이트 또는 다른 유용한 자료들을 링크로 추가할 수 있습니다. 예를 들어, Clojure의 자세한 문법과 함수들을 배우고 싶다면 [Clojure 공식 문서](https://clojure.org/guides/learn/syntax)를 참고할 수 있습니다. 또는 다른 라이브러리를 사용하여 더 복잡한 검색과 대체를 수행하고 싶다면, [Regex 정규식 라이브러리](https://github.com/clojure/clojure-contrib/blob/master/modules/regex/src/main/clojure/clojure/contrib/regex.clj)를 살펴볼 수 있습니다.

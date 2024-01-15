@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Travailler avec des fichiers csv"
+title:                "Travailler avec des fichiers csv"
+html_title:           "Arduino: Travailler avec des fichiers csv"
 simple_title:         "Travailler avec des fichiers csv"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,79 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes passionné par la programmation et les projets électroniques, travailler avec des fichiers CSV peut être un excellent moyen d'améliorer vos compétences. Les fichiers CSV sont un moyen pratique de stocker et de manipuler des données tabulaires, ce qui peut être particulièrement utile pour les projets impliquant des capteurs et des actionneurs.
+Si vous êtes un programmeur Arduino, vous avez probablement déjà entendu parler du format de données CSV. Mais pourquoi travailler avec des fichiers CSV en premier lieu ? Eh bien, CSV est un format populaire pour stocker des données tabulaires simples telles que des tableaux ou des feuilles de calcul. Cela peut être très utile si vous souhaitez utiliser des données externes dans vos projets Arduino.
 
 ## Comment faire
 
-Pour travailler avec des fichiers CSV sur Arduino, vous aurez besoin d'une carte compatible avec une mémoire suffisamment grande pour stocker le fichier. Vous devrez également inclure la bibliothèque SD pour accéder à la carte SD.
+Pour commencer à travailler avec des fichiers CSV dans votre code Arduino, vous aurez besoin d'une librairie externe appelée "ArduinoCSV". Vous pouvez l'installer en ouvrant l'IDE Arduino, en allant dans "Outils > Gérer les bibliothèques" et en recherchant "ArduinoCSV".
 
-Une fois que vous avez ces éléments en place, le processus général pour travailler avec des fichiers CSV sur Arduino est le suivant:
+Une fois la librairie installée, vous pouvez l'utiliser dans votre code en l'important avec la ligne suivante :
 
-1. Ouvrez le fichier CSV en utilisant la méthode `file.open()` et spécifiez le mode "lecture" (`FILE_READ`).
-2. Parcourez le fichier en utilisant la méthode `file.available()` pour vérifier qu'il y a des données à lire, puis utilisez `file.parseInt()` pour lire chaque valeur entière.
-3. Stockez les valeurs lues dans des variables ou effectuez des actions en fonction des valeurs.
-
-Voici un exemple de code qui lit et imprime les données d'un fichier CSV avec une colonne de température et une colonne d'humidité:
-
+```Arduino
+#include <ArduinoCSV.h>
 ```
-#include <SPI.h>
-#include <SD.h>
 
-// Spécifie le nombre de lignes à sauter avant de commencer à lire les données réelles
-#define HEADER_ROWS 1
-// Spécifie les pins à utiliser pour la carte SD
-#define SD_CS_PIN 4
-#define SD_MOSI_PIN 11
-#define SD_MISO_PIN 12
-#define SD_SCK_PIN 13
+Ensuite, vous pouvez créer un objet CSV en spécifiant le numéro de la broche sur lequel se trouve votre fichier CSV :
 
-// Initialise la variable pour le fichier
-File dataFile;
+```Arduino
+CSV csv;
+csv = CSV(10); // Utiliser la broche numéro 10
+```
 
-void setup() {
-  // Initialise la communication avec la carte SD
-  SD.begin(SD_CS_PIN, SD_MOSI_PIN, SD_MISO_PIN, SD_SCK_PIN);
-  
-  // Ouvre le fichier CSV en mode lecture
-  dataFile = SD.open("data.csv", FILE_READ);
+Vous pouvez ensuite charger votre fichier CSV à partir d'un serveur en utilisant la méthode "readFromURL" :
 
-  // Saute les lignes d'en-tête à partir du fichier
-  for (int i = 0; i < HEADER_ROWS; i++) {
-    dataFile.readStringUntil('\n');
-  }
-}
+```Arduino
+csv.readFromURL("https://exemple.com/monfichier.csv");
+```
 
-void loop() {
-  // Vérifie qu'il y a des données à lire dans le fichier
-  if (dataFile.available()) {
-    // Lit la température en tant que nombre entier et stocke dans la variable "temp"
-    int temp = dataFile.parseInt();
-    // Lit l'humidité en tant que nombre entier et stocke dans la variable "hum"
-    int hum = dataFile.parseInt();
+Enfin, vous pouvez parcourir et accéder aux données de votre fichier CSV en utilisant des boucles et des indices :
 
-    // Imprime les valeurs lues
-    Serial.print("Température: ");
-    Serial.print(temp);
-    Serial.print("°C, Humidité: ");
-    Serial.print(hum);
-    Serial.println("%");
-
-    // Passe à la ligne suivante du fichier
-    dataFile.readStringUntil('\n');
-  }
+```Arduino
+for (int i = 0; i < csv.rows(); i++) {
+  // Accéder à la donnée de la ligne i et de la colonne 2
+  String donnée = csv.getField(i, 2);
 }
 ```
 
-En utilisant ce code comme point de départ, vous pouvez également utiliser d'autres méthodes de la bibliothèque SD pour lire et écrire des données dans des fichiers CSV en fonction de vos besoins.
+Le tableau suivant résume les méthodes les plus utiles de la librairie ArduinoCSV :
 
-## Plongée profonde
+Méthode | Description
+--------|------------
+readFromURL(String url) | Charge un fichier CSV à partir d'un serveur.
+rows() | Renvoie le nombre de lignes dans le fichier CSV.
+fields() | Renvoie le nombre de colonnes dans le fichier CSV.
+getField(int row, int col) | Renvoie la donnée d'une cellule spécifique dans le fichier CSV.
 
-Si vous souhaitez aller plus loin avec les fichiers CSV sur Arduino, vous pouvez également explorer d'autres bibliothèques tierces qui offrent des fonctionnalités plus avancées telles que la création de nouveaux fichiers CSV, la modification de données existantes ou même l'utilisation de fichiers CSV pour stocker des paramètres pour votre projet.
+## Plongée en profondeur
 
-De plus, il peut être utile de comprendre le format de fichiers CSV et les contraintes telles que les limites de taille des fichiers que votre carte Arduino peut supporter.
+Maintenant que vous avez une idée générale de comment travailler avec des fichiers CSV dans Arduino, voici quelques informations supplémentaires pour vous aider à mieux comprendre le format de données.
+
+CSV signifie Comma-Separated Values, ce qui signifie que les données sont séparées par des virgules (ou par d'autres délimiteurs tels que des points-virgules). Les cellules sont représentées comme des chaînes de caractères, et les lignes sont séparées par des retours à la ligne.
+
+Il est important de noter que les numéros de ligne et de colonne dans la librairie ArduinoCSV commencent à 0, alors que dans la plupart des feuilles de calcul, ils commencent à 1.
+
+Enfin, vous pouvez également écrire des fichiers CSV à partir de Arduino en utilisant la méthode "writeToFile" :
+
+```Arduino
+csv.writeToFile("monfichier.csv");
+```
 
 ## Voir aussi
 
-- [Guide ultime pour travailler avec des fichiers CSV sur Arduino (en anglais)](https://learn.sparkfun.com/tutorials/using-the-arduino-pro-mini-33v?_ga=2.211830815.502129788.1622354909-1034997019.1622354909#hf-CodingYourCircuit)
-- [Documentation officielle sur la bibliothèque SD pour Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Tutoriel sur l'utilisation de fichiers CSV pour stocker des paramètres sur Arduino (en anglais)](https://makezine.com/2011/03/15/arduino-basics-saving-data-to-a-sd/)
+- [Documentation de la librairie ArduinoCSV](https://github.com/arduino-libraries/ArduinoCSV)
+- [Tutoriel vidéo sur l'utilisation de la librairie ArduinoCSV](https://www.youtube.com/watch?v=sk1eTmQbJyc)
+- [Exemple de projet Arduino utilisant des données CSV](https://www.hackster.io/arduino/libraries-arduino-csv-f655e5)

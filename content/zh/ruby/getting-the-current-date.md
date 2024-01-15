@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Ruby: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,61 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么会想要获取当前日期？
 
-在编程中，获取当前日期和时间是很常见的需求。当我们想要在程序中记录特定事件发生的时间，或者想要展示当前的日期和时间给用户时，我们都需要获取当前的日期。因此，学习如何在Ruby中获取当前日期是很有用的。
+获取当前日期是非常常见的需求，无论是在编程中还是日常生活中。它可以帮助我们记录事件发生的时间，或者作为程序中的条件控制，使程序更加智能化。在 Ruby 中，获取当前日期也是很容易的。让我们来看看如何做到这一点。
 
-# 如何
+## 如何操作
 
-在Ruby中，我们可以使用内置的`Time`类来获取当前日期和时间。这个类提供了很多方法来获取不同格式的日期和时间，比如`now`方法可以返回一个当前的`Time`对象。
-
-```Ruby
-# 获取当前日期和时间
-current_time = Time.now
-# 输出结果： 2021-10-15 15:30:45 +0800
-puts current_time
-
-# 获取当前日期和时间的不同格式
-# 年-月-日
-current_date = current_time.strftime("%Y-%m-%d")
-puts current_date
-# 输出结果：2021-10-15
-
-# 月/日/年 小时:分钟AM/PM
-current_datetime = current_time.strftime("%m/%d/%Y %I:%M%p")
-puts current_datetime
-# 输出结果：10/15/2021 03:30PM
-```
-
-要注意的是，`strftime`方法可以让我们自定义日期和时间的输出格式。具体的格式转换字符串可以在[Ruby官方文档](https://ruby-doc.org/core-3.0.2/Time.html#method-i-strftime)中找到。
-
-# 深入了解
-
-除了使用`Time`类，我们也可以使用`Date`类来获取只包含日期的当前日期对象。同样地，`Date`类也提供了很多方法来获取不同格式的日期。
+Ruby 提供了一个名为 `Time` 的类来处理时间和日期。要获取当前日期，可以使用 `Time.now` 方法。让我们在 `irb` 中试一试：
 
 ```Ruby
-# 获取当前日期
-current_date = Date.today
-# 输出结果： #<Date: 2021-10-15 ((2459517j,0s,0n),+0s,2299161j)>
-
-# 获取当前日期的不同格式
-# 年-月-日
-current_date_format = current_date.strftime("%Y-%m-%d")
-puts current_date_format
-# 输出结果：2021-10-15
-
-# 只获取年份
-current_year = current_date.year
-puts current_year
-# 输出结果：2021
-
-# 获取指定日期对应的星期几（1-7分别对应周一至周日）
-day_of_week = current_date.cwday
-puts day_of_week
-# 输出结果：5 （表示今天是星期五）
+Time.now
 ```
 
-# 参考
+这会返回一个包含当前日期和时间的 `Time` 对象。如果你只想要当前日期，可以使用 `strftime` 方法来格式化日期的输出。例如，要只获取当前日期的年月日，可以使用 `"%Y-%m-%d"` 格式。让我们来试一试：
 
-- [Ruby官方文档](https://ruby-doc.org/core-3.0.2/Time.html)
-- [Ruby中的Date类](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
+```Ruby
+Time.now.strftime("%Y-%m-%d")
+```
+
+这会返回一个字符串，如 "2021-08-01"。你也可以使用其他格式来获取不同的日期信息，如小时、分钟、秒等。更多的日期格式可以在 [Ruby文档](https://ruby-doc.org/core-2.7.1/Time.html#method-i-strftime) 中找到。
+
+## 深入了解
+
+在 Ruby 中，日期和时间是以格式化的字符串的形式存储的。当我们使用 `Time.now` 方法时，实际上是在获取一个包含当前日期和时间信息的字符串。当我们使用 `strftime` 方法时，我们可以根据自己的需要从字符串中提取特定的日期信息。此外，Ruby 还提供了许多其他有用的方法来处理日期和时间，如 `Date`、`DateTime`、`zone` 等。你可以查阅 [Ruby文档](https://ruby-doc.org/core-2.7.1/Time.html) 来了解更多关于日期和时间操作的信息。
+
+## 参考
+
+- [Ruby文档 - Time类](https://ruby-doc.org/core-2.7.1/Time.html)
+- [Ruby文档 - Date类](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Ruby文档 - DateTime类](https://ruby-doc.org/stdlib-2.7.1/libdoc/datetime/rdoc/DateTime.html)

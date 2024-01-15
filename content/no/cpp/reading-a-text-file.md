@@ -1,6 +1,7 @@
 ---
-title:                "C++: Å lese en tekstfil."
-simple_title:         "Å lese en tekstfil."
+title:                "Lesing av tekstfil"
+html_title:           "C++: Lesing av tekstfil"
+simple_title:         "Lesing av tekstfil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,54 +12,111 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du skriver kode i C++, vil du før eller senere måtte lese en tekstfil. Det kan være for å behandle store mengder data, holde informasjon lagret utenfor selve programmet, eller for å lese konfigurasjonsfiler. Uansett årsak, er kunnskap om hvordan man leser en tekstfil en viktig del av programmeringsverden.
+Hvorfor skulle man engasjere seg i å lese en tekstfil? Vel, det er mange situasjoner hvor man kan dra nytte av å kunne lese en tekstfil med hjelp av C++ kode. Det kan være å hente ut data fra en ekstern fil, eller å analysere teksten i en fil for å trekke ut viktig informasjon.
 
-## Hvordan å lese en tekstfil i C++
+## Hvordan
 
-Det finnes flere måter å lese en tekstfil i C++, men den enkleste metoden er å bruke filbehandleren `ifstream`. Først må du inkludere `fstream` biblioteket i koden din. Deretter må du opprette en `ifstream`-objekt ved å passere navnet på filen du ønsker å lese som en parameter.
+La oss se på et enkelt eksempel på hvordan man kan lese en tekstfil ved hjelp av C++. Først må vi inkludere "iostream" biblioteket for å håndtere IO-operasjoner. Deretter må vi åpne filen som vi ønsker å lese ved å bruke "ifstream" funksjonen:
 
 ```C++
+#include <iostream>
 #include <fstream>
 
-ifstream fil ("tekstfil.txt");
+int main() {
+
+    std::ifstream file("minTekstfil.txt");
+    // HER KAN VI UTFØRE OPERASJONER PÅ FILINNHOLD
+
+    file.close(); // lukker filen etterpå
+
+    return 0;
+}
 ```
 
-Nå kan du bruke forskjellige funksjoner for å lese data fra tekstfilen. For eksempel kan du lese en linje ved hjelp av `getline`-funksjonen og deretter skrive ut den leste linjen til konsollen.
+Nå som vi har åpnet filen, har vi tilgang til å lese den. La oss si at teksten i filen er "Hei verden!". Vi kan bruke "getline" funksjonen for å lese en linje av teksten fra filen og lagre den i en variabel:
 
 ```C++
-string linje;
+#include <iostream>
+#include <fstream>
 
-// Leser en linje fra tekstfilen og lagrer den i "linje"-variabelen
-getline(fil, linje);
+int main() {
 
-// Skriver ut den leste linjen til konsollen
-cout << linje << endl;
+    std::ifstream file("minTekstfil.txt");
+
+    std::string line;
+    getline(file, line); // leser første linje av teksten og lagrer i variabelen "line"
+
+    std::cout << line << std::endl; // skriver ut teksten i konsollen
+
+    file.close();
+
+    return 0;
+}
 ```
 
-Du kan også lese data fra tekstfilen ved hjelp av en `while`-løkke og `eof`-funksjonen. `eof` returnerer `true` når slutten av filen er nådd.
+Dette vil gi følgende utskrift:
+
+```
+Hei verden!
+```
+
+Vi kan også bruke en "while" loop for å lese gjennom hele filen linje for linje:
 
 ```C++
-string linje;
+#include <iostream>
+#include <fstream>
 
-// Utfører en løkke så lenge "fil" ikke har nådd slutten av filen
-while (!fil.eof()) {
-    // Leser en linje fra tekstfilen og lagrer den i "linje"-variabelen
-    getline(fil, linje);
+int main() {
 
-    // Skriver ut den leste linjen til konsollen
-    cout << linje << endl;
+    std::ifstream file("minTekstfil.txt");
+
+    std::string line;
+    while (getline(file, line)) { // så lenge det er flere linjer å lese
+        std::cout << line << std::endl; // skriv ut linjen i konsollen
+    }
+
+    file.close();
+
+    return 0;
+}
+```
+
+Dette vil gi følgende utskrift:
+
+```
+Hei verden!
+Dette er et annet linje.
+Og enda en linje.
+```
+
+Vi kan også bruke ">>" operator for å lese enkle verdier fra filen, for eksempel tall eller bokstaver:
+
+```C++
+#include <iostream>
+#include <fstream>
+
+int main() {
+
+    std::ifstream file("minTekstfil.txt");
+
+    int tall;
+    file >> tall; // leser tallet fra filen og lagrer i variabelen "tall"
+
+    file.close();
+
+    return 0;
 }
 ```
 
 ## Dypdykk
 
-Når du skal lese en tekstfil i C++, er det viktig å være oppmerksom på forskjellige faktorer som kan påvirke resultatet. For eksempel kan tegnsettet til tekstfilen være forskjellig fra det som er støttet av C++. I så fall må du kanskje konvertere tegnene ved hjelp av `setlocale`-funksjonen.
+Nå som vi har sett på noen grunnleggende eksempler på hvordan man kan lese en tekstfil, la oss se på noen dypere informasjon og muligheter.
 
-Det er også viktig å sørge for at tekstfilen faktisk finnes før du prøver å lese den. Du kan gjøre dette ved hjelp av `fail`-funksjonen, som returnerer `true` hvis filen ikke ble åpnet riktig.
+C++ har flere måter å lese og skrive til tekstfiler på, inkludert "fstream", "ifstream" og "ofstream". "fstream" er den generelle klassen for å håndtere både lesing og skriving av tekstfiler, og er nyttig for å endre eller oppdatere eksisterende filer. "ifstream" er spesialisert for lesing av tekstfiler, mens "ofstream" er spesialisert for skriving til tekstfiler.
 
-Sørg også for å lukke filbehandleren ved å kalle `fil.close()` etter at du er ferdig med å lese tekstfilen.
+Det er også viktig å håndtere eventuelle feil som kan oppstå under lesing av en fil. Dette kan gjøres ved hjelp av "file.eof()" funksjonen, som sjekker om man har kommet til slutten av filen. Det er også viktig å sjekke om filen ble åpnet riktig før man begynner å lese fra den.
 
 ## Se også
 
-- [C++ Filbehandling - Tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [C++ Filbehandling - cplusplus.com](http://www.cplusplus.com/doc/tutorial/files/)
+- [C++ Filbehandling - w3schools](https://www.w3schools.com/cpp/cpp_files.asp)
+- [C++ Filbehandling - Programiz](https://www.programiz.com/cpp-programming/file-handling)

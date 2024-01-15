@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Ta bort tecken som matchar ett mönster"
-simple_title:         "Ta bort tecken som matchar ett mönster"
+title:                "Radera tecken som matchar ett mönster"
+html_title:           "Clojure: Radera tecken som matchar ett mönster"
+simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,33 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara användbart för att rensa upp data eller filtrera bort oönskade tecken i en sträng.
+Att ta bort tecken som matchar ett mönster är en vanlig uppgift när man arbetar med textbehandling och regelbundna uttryck. Det kan användas för att rensa data, formatera text eller manipulera strängar på olika sätt. Med hjälp av Clojure och dess kraftfulla mönstermatchningsfunktioner kan du enkelt utföra detta och automatisera repetitiva uppgifter.
 
-## Hur man gör det
+## Så här gör du
 
-För att ta bort tecken som matchar ett visst mönster använder man en kombination av funktionerna `str` och `re-seq`.
+För att ta bort tecken som matchar ett visst mönster finns det flera olika funktioner som kan användas beroende på ditt specifika scenario. Här är några exempel på hur man kan gå tillväga:
 
-```Clojure
-(str (re-seq #"[*]" "Det här är en *provsats* med *tecken* att ta bort."))
-```
+- Om du vill ta bort alla förekomster av ett specifikt tecken i en sträng kan du använda funktionen ```clojure (clojure.string/replace "hej hej hej" #"h" "")```, vilket ger dig resultatet "eje eje eje".
 
-Detta kommer att skapa en ny sträng utan några asterisker (`*`).
+- För att ta bort alla icke-numeriska tecken från en sträng kan du använda ```clojure (clojure.string/replace "abc123def456" #"\D" "")```, vilket ger dig resultatet "123456".
 
-Output: "Det här är en provsats med tecken att ta bort."
+- Om du behöver ta bort alla tecken som matchar ett mer komplicerat mönster, till exempel alla ord som börjar på en viss bokstav, kan du använda ```clojure (clojure.string/replace "hello world and hi there" #"\<h[a-z]+\>" "")```, vilket ger dig resultatet "world and there".
+
+Som du kan se använder alla dessa exempel funktionen ```clojure.string/replace```, där det första argumentet är den sträng som ska manipuleras, det andra argumentet är regelbundet uttryck (regex) för det mönster du vill matcha och det tredje argumentet är ersättningstecknet som ska användas.
 
 ## Djupdykning
 
-För att förstå hur detta fungerar djupare, låt oss bryta ner koden:
+I Clojure används regelbundna uttryck (regex) för att matcha mönster i strängar. I exempel #2 användes uttrycket #"\D" för att matcha alla icke-numeriska tecken. Detta uttryck består av två delar: en backslash (\) som talar om att följande tecken ska tolkas bokstavligt, och D som representerar alla icke-numeriska tecken. Genom att använda dessa två delar tillsammans kan vi enkelt ta bort alla tecken som inte är siffror.
 
-- `re-seq` används för att matcha regelbundna uttryck i en sträng.
-- `#"[*]"` är det mönster som vi vill matcha, i detta fall en asterisk.
-- `"Det här är en *provsats* med *tecken* att ta bort."` är den sträng som vi vill filtrera.
-- `str` används för att kombinera resultaten från `re-seq` till en enda sträng.
+Det finns många fler sätt att använda regex för att matcha mönster och det finns också flera inbyggda funktioner i Clojure som kan användas för att manipulera strängar. Genom att lära dig mer om regex och dessa funktioner kan du upptäcka ännu fler möjligheter för att hantera och manipulera text i Clojure.
 
-Genom att använda `re-seq` för att matcha ett visst mönster och sedan använda `str` för att kombinera resultatet kan vi enkelt ta bort oönskade tecken från en sträng.
+## Se även
 
-## Se också
-
-- [Clojure Dokumentation](https://clojure.org/)
-- [RegEx Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Clojure Cookbook](https://www.clojure-cookbook.com/)
+- [Clojure Docs - String Functions](https://clojure.org/api/cheatsheet)
+- [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-matches)
+- [Mastering Clojure Strings with Regular Expressions](https://purelyfunctional.tv/guide/mastering-clojure-strings-with-regex/)

@@ -1,6 +1,7 @@
 ---
-title:                "C++: html 파싱"
-simple_title:         "html 파싱"
+title:                "HTML 파싱"
+html_title:           "C++: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -9,57 +10,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 파싱 HTML을 하나요? 
+## 왜
 
-파싱 HTML은 웹 개발에서 매우 유용합니다. 보통 웹 페이지는 HTML 형식으로 작성되는데, 이를 웹 애플리케이션에서 활용하기 위해서는 HTML 내용을 파싱하여 필요한 정보를 추출해야 합니다. 예를 들어, 웹 스크레이핑, 웹 크롤링 등을 할 때에도 HTML 파싱이 필요합니다. 
+HTML 파싱을 수행하는 이유는 웹에서 정보를 추출하기 위해서 입니다. 예를 들어, 크롤링을 할 때 HTML 파싱을 통해 원하는 데이터를 가져올 수 있습니다.
 
-## 어떻게 파싱 HTML을 할 수 있나요? 
-
-C++에서는 HTML 파싱을 하기 위해 다양한 라이브러리를 제공합니다. 여기서는 기본적으로 C++ 표준 라이브러리에 포함된 "regex" 라이브러리를 활용하는 방법을 소개하겠습니다. 아래 코드는 "test.html" 파일에서 "p" 태그에 포함된 내용을 파싱하여 출력하는 예제입니다. 
+## 하는 방법
 
 ```C++
 #include <iostream>
-#include <fstream>
-#include <regex>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-int main() {
-    // HTML 파일을 읽어옵니다. 
-    ifstream fin("test.html");
-    string html((istreambuf_iterator<char>(fin)), istreambuf_iterator<char>());
-    fin.close();
+// HTML 파싱 함수
+void parseHTML(string html) {
+    vector<string> tags; // 태그들을 저장할 벡터
+    string tag = ""; // 현재 읽고 있는 태그
+    int start = -1; // 태그 시작 위치
+    int end = -1; // 태그 끝 위치
+    bool insideTag = false; // 태그 안에 있는지 여부
 
-    // "p" 태그에 해당하는 문자열을 추출합니다. 
-    regex pattern("<p.*?>(.*?)</p>");
-    smatch matches;
-    while (regex_search (html, matches, pattern)) {
-        // 첫번째 그룹에 해당하는 부분만 출력합니다. 
-        cout << matches[1] << endl;
-
-        // 다음 매치를 위해 검색 범위를 업데이트 합니다. 
-        html = matches.suffix().str();
+    // HTML 문자열을 한 글자씩 읽음
+    for (int i = 0; i < html.length(); i++) {
+        if (html[i] == '<') { // 열리는 태그를 만나면
+            insideTag = true; // 태그 내부로 진입
+            start = i + 1; // 태그 시작 위치 설정
+        }
+        else if (html[i] == '>') { // 닫히는 태그를 만나면
+            insideTag = false; // 태그 외부로 이동
+            end = i; // 태그 끝 위치 설정
+            // 생성한 태그를 벡터에 추가
+            tags.push_back(html.substr(start, end - start));
+            tag = ""; // 태그 초기화
+        }
+        else if (insideTag) { // 태그 내부에서 문자를 읽으면
+            tag += html[i]; // 현재 태그 변수에 이어붙임
+        }
     }
+
+    // 파싱 결과 출력
+    cout << "Parsed tags:" << endl;
+    for (int i = 0; i < tags.size(); i++) {
+        cout << tags[i] << endl;
+    }
+}
+
+int main() {
+    string html = "<html><body><h1>Hello, world!</h1><p>This is a paragraph.</p></body></html>";
+
+    // 함수 호출
+    parseHTML(html);
+
     return 0;
 }
 ```
 
-### 샘플 출력 
-파싱 결과, "test.html" 파일에서는 두 개의 "p" 태그가 존재하며, 각각의 내용을 정상적으로 출력하고 있습니다. 
+실행 결과:
 
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+Parsed tags:
+html
+body
+h1
+Hello, world!
+/h1
+p
+This is a paragraph.
+/p
+/body
+/html
 ```
 
-## 딥 다이브 
-"regex" 라이브러리를 활용하여 간단한 HTML 파싱을 할 수 있다는 것을 알아보았습니다. 그러나 더 복잡한 HTML을 다룰 때에는 좀 더 고급 기술이 필요합니다. 예를 들어, HTML의 구조를 분석하여 트리 형태로 만들어주는 "libxml" 라이브러리 등을 사용할 수 있습니다. 또한, 웹 크롤러를 구현할 때는 웹 서버에서 HTML 파일을 다운로드 받아 파싱하는 방법보다는 웹 브라우저를 자동 조작하는 "Selenium" 라이브러리 등을 활용하는 것이 더 효율적일 수 있습니다. 
+## 심화 학습
 
-## 더 많은 정보 알아보기 
-- [C++ regex 라이브러리 문서](https://en.cppreference.com/w/cpp/regex) 
-- [libxml 라이브러리 공식 홈페이지](http://xmlsoft.org/) 
-- [Selenium 라이브러리 공식 홈페이지](https://www.seleniumhq.org/) 
+위 코드에서는 간단하게 HTML 파싱을 수행했지만, 실제로는 복잡한 문서를 다루기 위해 라이브러리를 사용하거나 복잡한 알고리즘을 사용합니다. 또한, 웹 문서를 파싱할 때 주의할 점으로 HTML을 표준에 맞게 작성해야만 정확한 파싱 결과를 얻을 수 있다는 점도 있습니다.
 
-## 참고 자료 
-- [Codecademy - Learn C++](https://www.codecademy.com/learn/learn-c-plus-plus) 
-- [TutorialsPoint - C++ Regex](https://www.tutorialspoint.com/cpp_standard_library/cpp_regex.htm)
+## 관련 글
+
+- [HTML parsing in C++](https://www.geeksforgeeks.org/html-parsing-in-c-set-1/)
+- [Parsing HTML using the HTML Agility Pack](https://www.codeproject.com/Articles/659019/HTML-Agility-Pack-article)
+- [C++ HTML Parser](https://github.com/azadkuh/htmlcxx)

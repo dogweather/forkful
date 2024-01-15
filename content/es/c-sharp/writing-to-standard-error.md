@@ -1,5 +1,6 @@
 ---
-title:                "C#: Escribiendo en el error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "C#: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "C#"
 category:             "C#"
@@ -9,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías escribir en el estándar de error?
+## Por qué
 
-Escribir en el estándar de error es una técnica importante en la programación de C#, ya que permite mostrar información importante o mensajes de error al usuario durante la ejecución de un programa. Además, ayuda en la depuración de código y a identificar posibles problemas en el mismo.
+¿Alguna vez te has encontrado con algún error en tu código y no sabes por dónde empezar a solucionarlo? Es ahí donde escribir a la salida estándar de error (stderr) puede ser una gran herramienta para el desarrollo de tu programa en C#.
 
-## Cómo escribir en el estándar de error
+## Cómo hacerlo
 
-Para escribir en el estándar de error en C#, se utiliza el objeto `Console` y su método `Error.WriteLine()`. Este método recibe como parámetro una cadena de texto que se imprimirá en la salida de error.
-
-```C#
-//Ejemplo de escritura en el estándar de error
-Console.Error.WriteLine("¡Ha ocurrido un error! Por favor, revisa tu código.");
-```
-
-El resultado de este código sería:
-
-```
-¡Ha ocurrido un error! Por favor, revisa tu código.
-```
-
-## Profundizando en la escritura en el estándar de error
-
-Además de simplemente imprimir un mensaje de error, se pueden realizar otras acciones con el estándar de error en C#. Por ejemplo, se puede utilizar el objeto `TextWriter` y su método `StandardError`, que permite redirigir la salida de error a un archivo de texto.
+Para escribir a la salida estándar de error en C#, puedes hacer uso de la clase `Console` y su método `Error.WriteLine()`. Este método acepta como parámetro una cadena de texto que será mostrada en la pantalla de error.
 
 ```C#
-//Ejemplo de redirección del estándar de error a un archivo
-var file = new StreamWriter("error.txt"); //crea un archivo error.txt
-Console.SetError(file); //seleciona el archivo como salida de error
-Console.Error.WriteLine("Este mensaje estará en el archivo error.txt");
+Console.Error.WriteLine("¡Ups! Ha ocurrido un error en tu código.");
 ```
 
-Además, también se pueden utilizar diferentes métodos de formato para mostrar información más específica en la salida de error, como el método `Error.Write()` que no agrega un salto de línea al final de la cadena de texto.
-
-```C#
-//Ejemplo de escritura en el estándar de error sin salto de línea
-Console.Error.Write("Número de error: ");
-Console.Error.WriteLine(404);
-```
-
-El resultado sería:
+El resultado de este código sería un mensaje de error que se mostrará en la consola, junto con cualquier otra información del error que se haya programado.
 
 ```
-Número de error: 404
+¡Ups! Ha ocurrido un error en tu código.
 ```
+
+## Profundizando
+
+Escribir a la salida estándar de error en C# puede ser muy útil para depurar y encontrar errores en tu código. Sin embargo, es importante tener en cuenta que esta salida no está diseñada para ser utilizada regularmente en la ejecución de tu programa, ya que puede afectar su rendimiento.
+
+Es importante también mencionar que, a diferencia de la salida estándar (stdout), la salida estándar de error (stderr) no se puede redirigir. Esto significa que no puedes enviar la salida de error a un archivo o a otra aplicación, sino que siempre se mostrará en la consola.
 
 ## Ver también
-- [Documentación de Microsoft sobre el objeto Console en C#](https://docs.microsoft.com/es-es/dotnet/api/system.console?view=netcore-3.1)
-- [Tutorial de programación de C# en español](https://www.tutorialesprogramacionya.com/csharpya/index.php?inicio=0)
-- [Blog de programación en C# en español](http://csharplearning.blogspot.com/)
 
-¡Espero que este artículo te haya sido útil para aprender sobre la escritura en el estándar de error en C#! ¡Sigue investigando y mejorando tus habilidades de programación!
+- [Documentación de Microsoft sobre la clase Console](https://docs.microsoft.com/es-es/dotnet/api/system.console?view=net-5.0)
+- [Artículo sobre cómo manejar errores en C#](https://platzi.com/tutoriales/1378-control-de-errores-en-c-net-por-que-y-como-hacerlo/)

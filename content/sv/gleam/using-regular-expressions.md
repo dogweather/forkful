@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Gleam: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-I denna artikel kommer vi att utforska användningen av reguljära uttryck inom Gleam programmering. Reguljära uttryck är ett kraftfullt verktyg för att söka och manipulera textsträngar och kan användas för att lösa olika problem inom programmering. Låt oss ta en titt på hur de fungerar och hur de kan hjälpa dig i dina Gleam-projekt.
 
-## Så här gör du
-För att använda reguljära uttryck inom Gleam behöver du först importera det relevanta biblioteket "re" med hjälp av följande kod:
-```Gleam
-import re
-```
-Du kan sedan använda funktionen "match" för att hitta en matchning av ett reguljärt uttryck i en textsträng. Till exempel kan du använda följande kod för att hitta en matchning av ett telefonnummer i en textsträng:
-```Gleam
-let str = "Ring mig på 070-12345678"
-re.match("^07[0-9]{8}", str) 
-```
-Detta skulle ge utskrift:
-```Gleam
-Ok[ {Match.begin: 12, Match.end: 23} ]
-```
-Du kan också använda reguljära uttryck för att söka och ersätta delar av en sträng. Till exempel kan du använda följande kod för att byta ut ett telefonnummer i en sträng med ett annat:
-```Gleam
-let str = "Mitt telefonnummer är 070-12345678"
-re.replace("^07([0-9]{8})", "08$1", str) 
-```
-Detta skulle ge utskrift:
-```Gleam
-Ok "Mitt telefonnummer är 08-12345678"
-```
-Det finns många fler funktioner och användningsområden för reguljära uttryck inom Gleam, så tveka inte att utforska och experimentera med dem i dina egna projekt.
+Regular expressions är ett kraftfullt verktyg som gör det möjligt att söka och manipulera textmönster i dina program. Om du vill göra avancerade sökningar eller ersätta textsträngar effektivt är det ett verktyg du bör ha i din programmeringsverktygslåda.
 
-## Djupdykning
-Reguljära uttryck följer ett speciellt syntax, vilket kan verka förvirrande i början. Men när du väl förstår hur de fungerar kan de vara mycket användbara. Ett vanligt användningsområde för reguljära uttryck är att validera inmatningsdata, till exempel för att kontrollera att ett lösenord har en viss längd eller innehåller en viss typ av tecken. Det finns också många olika specialtecken och operatorer som du kan använda för att bygga mer komplexa reguljära uttryck.
+## Hur man använder
 
-## Se också
-- [Gleam dokumentation för reguljära uttryck](https://gleam.run/modules/re.html)
-- [Gleam reguljära uttryck exempelkod](https://github.com/gleam-lang/gleam_stdlib/blob/main/test/re_test.gleam)
+Först och främst måste du importera RegularExpressions biblioteket i ditt Gleam-projekt. Sedan kan du använda dess funktioner i dina kodblock.
+
+``` Gleam
+import RegularExpressions
+```
+
+### Sökning efter ett mönster
+
+För att söka efter ett specifikt mönster i en textsträng kan du använda funktionen `Regex.find`. Den tar in två argument - mönstret du vill söka efter och textsträngen som ska sökas igenom. Till exempel, om du vill hitta alla förekomster av ordet "Gleam" i en textsträng kan du använda följande kod:
+
+``` Gleam
+let text = "Gleam är ett fantastiskt programmeringsspråk."
+
+let mönster = "Gleam"
+
+let resultat = Regex.find(mönster, text)
+
+IO.print(resultat) // Utskrift: Success("Gleam")
+```
+
+### Manipulera textsträngar
+
+Förutom att söka efter mönster, kan du också använda regular expressions för att manipulera textsträngar. Funktionen `Regex.replace` kan användas för att ersätta en del av en textsträng med en annan. Den tar in tre argument - mönstret som ska ersättas, ersättningstexten och textsträngen som ska manipuleras.
+
+``` Gleam
+let text = "Gleam är ett fantastiskt programmeringsspråk."
+
+let mönster = "programmeringsspråk"
+
+let ersättning = "språk"
+
+let resultat = Regex.replace(mönster, ersättning, text)
+
+IO.print(resultat) // Utskrift: Success("Gleam är ett fantastiskt språk.")
+```
+
+## Deep Dive
+
+Regular expressions består av olika specialtecken och metakaraktärer som används för att skapa sökmönster. Till exempel, `.` matchar vilken tecken som helst, `*` matchar noll eller flera förekomster av det föregående tecknet och `+` matchar en eller flera förekomster av det föregående tecknet. Det är viktigt att ha en bra förståelse för dessa specialtecken för att kunna skapa effektiva sökmönster.
+
+En annan viktig del av regular expressions är gruppdramläggning, vilket gör det möjligt att söka efter delar av ett mönster och använda dessa delar i ersättningssträngen. Detta är särskilt användbart om du vill manipulera textsträngar på olika sätt baserat på ett visst mönster.
+
+## Se även
+
+- [Gleams officiella dokumentation för RegularExpressions](https://gleam.run/libraries/regular_expressions.html)
+- [Mer praktiska exempel på hur man använder RegularExpressions](https://github.com/gleam-lang/gleam/blob/master/lib/std/regex/regex_test.gleam)

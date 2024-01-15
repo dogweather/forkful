@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Escrevendo um arquivo de texto"
+title:                "Escrevendo um arquivo de texto"
+html_title:           "Javascript: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,30 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever um arquivo de texto?
 
-Se você é um desenvolvedor iniciante ou experiente, escrever um arquivo de texto pode ser uma habilidade muito útil a se ter. Isso permite que você armazene informações importantes em um formato simples e fácil de ler. Além disso, pode ser usado para criar scripts que automatizam tarefas ou para armazenar dados em um formato legível por humanos.
+Existem diversas razões pelas quais alguém pode querer escrever um arquivo de texto usando Javascript. Uma delas é a necessidade de armazenar dados que podem ser acessados e modificados posteriormente, como informações de usuário ou configurações de aplicativos.
 
-## Como escrever um arquivo de texto em Javascript
+## Como fazer
 
-Escrever um arquivo de texto usando Javascript é muito simples. Primeiro, precisamos importar o módulo "fs", que nos permite acessar as funcionalidades de sistema de arquivos do Node.js. Em seguida, usamos o método "writeFile()" para criar nosso arquivo de texto e escrever algum conteúdo nele. Veja um exemplo abaixo:
+Para escrever um arquivo de texto utilizando Javascript, podemos utilizar o objeto File System (Sistema de Arquivos) disponível através do módulo "fs" do Node.js. Para isso, podemos seguir os seguintes passos:
 
-```javascript
-const fs = require('fs');
+1. Importar o módulo "fs" utilizando a função `require`.
+2. Utilizar o método `writeFile` do objeto File System para escrever o conteúdo do arquivo.
+3. Passar como parâmetros o nome do arquivo, o conteúdo e uma função de callback para lidar com possíveis erros.
 
-// criando um arquivo de texto
-fs.writeFile('meuarquivo.txt', 'Olá, mundo!', (err) => {
-  if (err) throw err;
-  console.log('Arquivo de texto criado com sucesso!');
-});
+Um exemplo de código seria:
+
+```Javascript
+ const fs = require('fs');
+
+ fs.writeFile('meu_arquivo.txt', 'Olá, mundo!', (err) => {
+   if (err) throw err;
+   console.log('Arquivo foi escrito com sucesso!');
+ });
 ```
 
-Após executar esse código, você verá um novo arquivo chamado "meuarquivo.txt" na mesma pasta onde o seu código está sendo executado. Ao abri-lo, você verá o conteúdo que escrevemos nele, neste caso, "Olá, mundo!".
+Isso irá criar um arquivo chamado "meu_arquivo.txt" com o conteúdo "Olá, mundo!". Caso o arquivo já exista, ele será sobrescrito.
 
-## Mergulho profundo
+## Aprofundando
 
-A função "writeFile()" pode aceitar vários parâmetros além do nome do arquivo e do conteúdo a ser escrito. Por exemplo, podemos especificar o formato do arquivo e a codificação do texto. Além disso, também é possível adicionar um parâmetro opcional para tratar possíveis erros durante o processo de escrita. Para mais informações sobre todos os parâmetros disponíveis e suas funcionalidades, consulte a documentação oficial do Node.js.
+Se desejarmos escrever conteúdo em um arquivo de forma assíncrona, podemos utilizar o método `write` do objeto File System ao invés do `writeFile`. Isso nos permite escrever em pedaços menores, o que pode ser útil para lidar com arquivos grandes.
+
+Além disso, podemos utilizar opções como `flag` para especificar o modo de escrita (por exemplo, adicionar novos dados no final do arquivo ao invés de sobrescrever) e `encoding` para especificar a codificação dos caracteres.
 
 ## Veja também
 
-- [Documentação do Node.js - Escrevendo em arquivos](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Tutorial sobre como escrever em arquivos com Javascript](https://www.digitalocean.com/community/tutorials/nodejs-creating-your-own-node-js-module)
-- [Exemplos práticos de escrita em arquivos com Javascript](https://stackabuse.com/writing-to-files-in-node-js/)
+- [Documentação do módulo "fs" do Node.js](https://nodejs.org/api/fs.html)
+- [Tutorial de escrita de arquivos com Node.js](https://www.digitalocean.com/community/tutorials/how-to-write-files-in-node-js)

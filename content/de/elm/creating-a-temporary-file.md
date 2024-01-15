@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Elm: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,50 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Ever wonder how to create a temporary file in Elm? This blog post will guide you through the process and show you why it can be useful.
 
-## Wie
-Um eine temporäre Datei in Elm zu erstellen, müssen wir zuerst das Built-In Modul `Platform` importieren. Dann können wir die Funktion `File.Temporary.temp` aufrufen, um eine temporäre Datei zu erstellen und deren Pfad als String zu erhalten. Hier ist ein Beispielcode:
+Warum sollte man sich mit der Erstellung einer temporären Datei beschäftigen? Nun, temporäre Dateien sind nützlich, wenn man Daten speichern oder verarbeiten möchte, die nur vorübergehend gebraucht werden. Sie sind besonders hilfreich bei der Verarbeitung von großen Mengen an Daten oder wenn man bestimmte Prozesse automatisieren möchte.
+
+## So geht's
+
+Um eine temporäre Datei in Elm zu erstellen, kann man die `Temporary`-Bibliothek verwenden. Zunächst müssen wir diese Bibliothek zu unserem Projekt hinzufügen, indem wir folgenden Befehl in der Elm REPL eingeben:
 
 ```Elm
-import Platform
-import File.Temporary
-import File
-
-main =
-  Platform.worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-
-type Msg = CreateTempFile (Result File.Error String)
-
-init : () -> (Model, Cmd Msg)
-init _ =
-  (Model, Cmd.batch
-    [ File.Temporary.temp CreateTempFile
-    ])
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    CreateTempFile (Result.Ok path) ->
-      (model, File.write path "Hello World!")
-    CreateTempFile (Result.Err err) ->
-      (model, Cmd.none)
-
-subscriptions : Model -> Sub Msg
-subscriptions _ = Sub.none
+elm install elm-lang/temporary
 ```
 
-Der obige Code erstellt eine temporäre Datei und schreibt den String "Hello World!" in diese Datei. Wenn die Datei erfolgreich erstellt wird, sollte das Ergebnis `Result.Ok` sein und der Pfad zu dem temporären Ordner wird in der `CreateTempFile` Nachricht zurückgegeben.
+Sobald die Bibliothek installiert ist, können wir sie in unserem Code importieren:
 
-## Deep Dive
-Die Funktion `File.Temporary.temp` nimmt einen optionalen Präfix für die temporäre Datei als Argument. Wenn kein Präfix angegeben wird, wird standardmäßig "tmp" verwendet. Darüber hinaus gibt es auch die Möglichkeit, den temporären Ordner zu ändern. Wir können dies erreichen, indem wir den Argument `Just "custom/temp/path"` an die Funktion übergeben.
+```Elm
+import Temporary
+```
 
-Die Funktion `File.Temporary.temp` nutzt das Dateisystem des Betriebssystems, um temporäre Dateien zu erstellen. Dies hat den Vorteil, dass die Dateien automatisch gelöscht werden, sobald das Programm beendet wird. Wir sollten diese Funktion daher verwenden, um temporäre Dateien zu erstellen, anstatt manuell Dateien zu erstellen und später zu löschen.
+Als nächstes müssen wir die Funktion `Temporary.file` aufrufen, um eine temporäre Datei zu erstellen. Diese Funktion erwartet zwei Argumente: den Dateinamen und den Inhalt der Datei.
+
+```Elm
+Temporary.file "meine_datei.txt" "Dies ist der Inhalt meiner temporären Datei."
+```
+
+Dieser Aufruf erstellt eine temporäre Datei mit dem Namen "meine_datei.txt" und dem angegebenen Inhalt. Die Datei wird im Standard-Temporärordner des Betriebssystems erstellt.
+
+Um den Pfad zur erstellten Datei zu erhalten, können wir die Funktion `Temporary.path` verwenden:
+
+```Elm
+let
+    datei = Temporary.file "meine_datei.txt" "Dies ist der Inhalt meiner temporären Datei."
+in
+    Temporary.path datei
+```
+
+## Tiefere Einblicke
+
+Die `Temporary`-Bibliothek verwendet interne Plattform-Tools, um temporäre Dateien zu erstellen. Sie bietet auch einige erweiterte Funktionen, wie die Möglichkeit, einen bestimmten Ordner für die Erstellung der temporären Datei anzugeben.
+
+Es ist wichtig zu beachten, dass temporäre Dateien nicht für die langfristige Speicherung von Daten gedacht sind. Sie werden in der Regel automatisch gelöscht, wenn das Programm beendet wird. Wenn man also Daten langfristig speichern möchte, sollte man besser andere Techniken verwenden, wie zum Beispiel das Speichern von Daten in einer Datenbank.
 
 ## Siehe auch
-- [Offizielle Elm Dokumentation zu temporären Dateien](https://package.elm-lang.org/packages/elm/file/latest/File-Temporary#temp)
-- [Blog-Beitrag über das Arbeiten mit Dateien in Elm](https://dev.to/criesbeck/working-with-files-in-elm-3a7g)
+
+- [Elm Dokumentation über die Temporary-Bibliothek](https://package.elm-lang.org/packages/elm-lang/temporary/latest/)
+- [Ein Artikel über Dateiverwaltung in Elm](https://www.elm-tutorial.org/de/05-deine-erste-elm-app/03-datei-verarbeiten.html)
+- [Weitere Informationen über das Speichern von Daten in Elm](https://guide.elm-lang.org/effects/file_system.html)

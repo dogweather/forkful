@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: 텍스트 파일 작성하기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Gleam: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜
 
-텍스트 파일을 작성하는 것에 참여하는 이유는 무엇일까요? 그것은 우리의 코드 및 정보를 저장하고 유지하기 위한 가장 기본적인 방법 중 하나입니다. 따라서 당신이 프로그래머라면, 텍스트 파일 작성을 배우는 것은 굉장히 중요합니다.
+텍스트 파일을 쓰는 것의 이점은 데이터를 잘 구분하기 위한 복잡한 파일 형식보다는 단순한 텍스트 형식으로 정보를 저장할 수 있기 때문입니다.
 
 ## 하우 투
 
-Gleam에서 텍스트 파일을 작성하기 위해서는 `File.write` 함수를 사용합니다. 예를 들어, 다음의 코드를 참고하세요.
-
 ```Gleam
-import gleam/file
+/*
+ 모듈을 포함하고 파일을 연다.
+ 어떤 파일이든 열 수 있습니다.
+*/
+use gleam/file
 
-let data = "Hello world!"
-let result = File.write("./test.txt", data)
+file.open("test.txt")
+
+/*
+ write_line 함수를 사용하여 파일에 텍스트를 추가합니다.
+*/
+file.write_line("|- 안녕하세요")
+file.append_line("|- Gleam으로 작성한 파일입니다.")
+file.close()
+
+/*
+ 파일을 읽어서 콘솔에 출력합니다.
+*/
+let text = file.read_line("test.txt")
+IO.println(text)
 ```
 
-위의 예시에서, `data` 변수에는 "Hello world!"라는 문자열이 저장되어 있으며, 이를 `File.write` 함수를 사용하여 "test.txt"라는 파일에 쓰게 됩니다. 만약 파일이 성공적으로 작성되었다면, `result` 변수에는 `{:ok, ()}`라는 값을 갖게 됩니다. 이제 "test.txt" 파일을 열어보면 "Hello world!"라는 내용이 쓰여져 있는 것을 확인할 수 있습니다.
+```
+안녕하세요
+Gleam으로 작성한 파일입니다.
+```
 
 ## 딥 다이브
 
-텍스트 파일을 작성하는 데에는 더 많은 것들이 있습니다. 예를 들어, `File.open` 함수를 사용하면 이미 존재하는 파일에 데이터를 추가할 수 있습니다. 또한, `File.delete` 함수를 사용하여 파일을 삭제할 수도 있습니다.
+텍스트 파일을 작성하고 읽는 것은 Gleam에서 매우 간단합니다. 파일 모듈은 다양한 파일 작업을 지원하고있어 파일 생성, 수정, 삭제 등 다양한 작업을 할 수 있습니다. 또한 파일 내용을 이용하여 데이터 처리를 할 수도 있습니다.
 
-또한 텍스트 파일을 읽고 쓰는 데에는 다양한 형식이 있을 수 있습니다. 예를 들어 CSV 파일을 읽고 쓰는 방법을 배우는 것도 중요합니다. 따라서 더 깊게 알아보고 싶다면 Gleam 공식 문서를 참고하는 것을 추천합니다.
+# 참고 자료
 
-## 참고 자료
-
-- [Gleam 공식 문서](https://gleam.run/documentation/)
-- [Gleam 텍스트 파일 관련 문서](https://gleam.run/documentation/syntax/text_files)
-- [파일 작업 함수 예제](https://github.com/gleam-lang/gleam_stdlib/blob/master/gleam-file/test/file.test.gleam)
+* [Gleam 공식 문서](https://github.com/gleam-lang/gleam/tree/master/docs)
+* [Gleam 예제 코드](https://github.com/gleam-lang/gleam/tree/master/examples)

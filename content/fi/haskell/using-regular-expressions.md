@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Säännöllisten lausekkeiden käyttäminen"
-simple_title:         "Säännöllisten lausekkeiden käyttäminen"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -9,66 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttää regulaaarisia lausekkeita?
+## Miksi
 
-Jos olet koskaan joutunut etsimään tiettyä merkkijonoa tekstistä tai halunnut korvata kaikki esiintymät jollakin toisella merkkijonolla, olet todennäköisesti törmännyt käsitteeseen "regulaariset lausekkeet". Nämä ovat erittäin hyödyllisiä työkaluja, joita voit käyttää helpottamaan tiettyjen merkkijonojen käsittelyä ohjelmoinnissa.
+Haluatko muokata tekstejäsi tavalla, joka säästää aikaa ja vaivaa? Sisällöntuottajat, ohjelmoijat ja tietojenkäsittelijät voivat hyödyntää säännöllisiä lausekkeita (regular expressions) kaikenlaisiin tekstikäsittelytehtäviin.
 
-## Miten käyttää regulaaarisia lausekkeita Haskellissa?
+## Miten
 
-Haskellissa regulaaarisia lausekkeita käsitellään `Text.Regex.Posix` -kirjaston avulla. Voit aloittaa käyttämällä `=~` -funktiota, joka tarkistaa, vastaako merkkijono sille annettua säännöllistä lauseketta.
-
-`example.hs`
+Säännölliset lausekkeet ovat joukko merkkijonoja, jotka mahdollistavat tarkkojen hakuehtojen määrittämisen. Käytä yleistä RegExp-kirjastoa lisätäksesi säännöllisiä lausekkeita Haskell-koodiisi. Katso esimerkiksi seuraavaa koodinpätkää ja sen tuottamaa tulostetta.
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.PCRE
 
-main = do
-  let str = "Tämä on esimerkki"
-  let regex = "esimerkki"
-  if str =~ regex :: Bool
-    then putStrLn "Löytyi!"
-    else putStrLn "Ei löytynyt."
+-- Valitaan regex-yhteensopiva merkkijono
+s = "Tämä on esimerkkilause 123"
+
+-- Etsitään kaikkia numeroyhdistelmiä merkkijonosta
+tulokset = s =~ "[0-9]+"
+
+-- Tulostetaan löydetyt numerot
+print tulokset
 ```
+Tulostaa: ["123"]
 
-```Haskell
-Löytyi!
-```
+## Syventymistä
 
-Voit myös käyttää regulaarisia lausekkeita korvaamaan tiettyjä merkkijonoja `subRegex` -funktiolla.
+Nyt kun tiedät, kuinka luoda säännöllisiä lausekkeita Haskellilla, voit tutustua erilaisiin ominaisuuksiin ja toimintoihin, kuten tiettyjen merkkien korvaamiseen, usean haun suorittamiseen samanaikaisesti ja paljon muuhun. Voit lukea lisää säännöllisistä lausekkeista ja niiden käytöstä esimerkiksi seuraavilta sivuilta:
 
-```Haskell
-import Text.Regex.Posix
-
-main = do
-  let str = "Tämä on esimerkki"
-  let regex = "esimerkki"
-  let replacement = "esimerkkilause"
-  let newStr = subRegex (makeRegex regex) str replacement
-  putStrLn newStr
-```
-
-```Haskell
-Tämä on esimerkkilause
-```
-
-## Syvempi sukellus regulaaaristen lausekkeiden käyttöön
-
-Regulaaaristen lausekkeiden kanssa on monia erilaisia symboleja ja merkityksiä, joten niiden oppiminen voi tuntua aluksi hämmentävältä. On hyödyllistä tutkia esimerkkejä ja kokeilla erilaisia säännöllisiä lausekkeita, jotta ymmärtäisit paremmin niiden toimintaa.
-
-Voit myös hyödyntää `=~` -funktion tarjoamaa syntaksin muotoilua, jossa voit käyttää `::` -operaattoria asettaaksesi muuttujalle tietyn tyyppisen arvon. Tämä auttaa varmistamaan, että säännöllinen lauseke vastaa oikeaa tyyppiä.
-
-```Haskell
-let str = "12345"
-if str =~ "^[0-9]+$" :: Bool
-  then putStrLn "Sisältää vain numeroita!"
-  else putStrLn "Sisältää muita merkkejä."
-```
-
-```Haskell
-Sisältää vain numeroita!
-```
+- [WikiBooks](https://en.wikibooks.org/wiki/Haskell/Regular_expressions)
+- [Haskell.org](https://www.haskell.org/hoogle/?hoogle=regex)
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio regulaaarisista lausekkeista](https://www.haskell.org/onlinereport/stdprelude.html#l:Rld-260420103302)
-- [Regulaaristen lausekkeiden opas (englanniksi)](https://www.regular-expressions.info/)
+[Säännölliset lausekkeet Cheat Sheet (englanniksi)](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

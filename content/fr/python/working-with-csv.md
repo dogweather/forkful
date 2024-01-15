@@ -1,6 +1,7 @@
 ---
-title:                "Python: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Python: Travailler avec les fichiers csv"
+simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -9,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Pourquoi
-Les fichiers CSV (comma-separated values) sont couramment utilisés pour stocker et échanger des données, en particulier dans le domaine de la science des données. Savoir travailler avec des fichiers CSV est donc une compétence précieuse à maîtriser pour tout développeur en Python.
+## Pourquoi
+CSV (Comma-Separated Values) est un format de fichier couramment utilisé pour stocker des données tabulaires. Que vous soyez un étudiant en sciences de données, un développeur de logiciels ou un journaliste d'investigation, comprendre comment travailler avec des fichiers CSV peut être un outil extrêmement utile dans votre boîte à outils de compétences en informatique. Dans cet article, nous allons jeter un coup d'œil rapide à pourquoi et comment travailler avec des fichiers CSV en utilisant Python.
 
-##Comment faire
-Pour commencer à travailler avec des fichiers CSV en Python, nous avons besoin d'importer le module `csv`. Voici un exemple de code qui lit un fichier CSV et affiche son contenu :
+## Comment faire
+Pour commencer, vous aurez besoin d'importer le module CSV dans votre script Python. Voici un exemple de code pour lire un fichier CSV et afficher son contenu :
 
-```python
+```Python
 import csv
 
-with open('donnees.csv', 'r') as f:
-    lecteur_csv = csv.reader(f)
-    for ligne in lecteur_csv:
+with open('mon_fichier.csv', 'r') as fichier:
+    lecteur = csv.reader(fichier)
+    for ligne in lecteur:
         print(ligne)
 ```
 
-La sortie de ce code sera un ensemble de listes, chaque liste représentant une ligne du fichier CSV. Par exemple, si notre fichier CSV contient les données suivantes :
-```
-nom,prenom,age
-Dupont,Jean,25
-Martin,Lucie,34
-```
-La sortie du code ci-dessus sera :
-```
-['nom', 'prenom', 'age']
-['Dupont', 'Jean', '25']
-['Martin', 'Lucie', '34']
-```
-Il est important de noter que les valeurs dans les fichiers CSV sont toujours des chaînes de caractères, même si elles représentent des nombres. Pour convertir les valeurs en nombres, nous pouvons utiliser la fonction `int()` ou `float()`.
+Vous remarquerez que nous avons utilisé la boucle "for" pour parcourir chaque ligne du fichier et afficher son contenu. Vous pouvez également utiliser la méthode "next()" pour accéder à la première ligne du fichier si vous avez des en-têtes de colonne.
 
-##Plongée profonde
-Si vous souhaitez en savoir plus sur la façon de travailler avec des fichiers CSV en Python, vous pouvez également utiliser le module `csv.DictReader` qui vous permet de lire le fichier CSV en tant que dictionnaires plutôt que des listes. Cela facilite l'accès à des valeurs spécifiques dans le fichier.
+Si vous souhaitez écrire dans un fichier CSV, vous pouvez utiliser le module "csv.writer" et la méthode "writerow()" pour écrire chaque ligne dans le fichier. Voici un exemple de code :
 
-De plus, vous pouvez également utiliser le module `csv.writer` pour écrire des données dans un fichier CSV. Voici un exemple de code qui écrit une liste de listes dans un fichier CSV :
-
-```python
+```Python
 import csv
 
-donnees = [
-    ['nom', 'prenom', 'age'],
-    ['Dupont', 'Jean', 25],
-    ['Martin', 'Lucie', 34]
-]
-
-with open('donnees.csv', 'w', newline='') as f:
-    ecrivain_csv = csv.writer(f)
-    for ligne in donnees:
-        ecrivain_csv.writerow(ligne)
+with open('nouveau_fichier.csv', 'w') as nouveau_fichier:
+    ecrivain = csv.writer(nouveau_fichier)
+    ecrivain.writerow(['Prénom', 'Nom', 'Âge'])
+    ecrivain.writerow(['Jean', 'Dupont', '25'])
+    ecrivain.writerow(['Marie', 'Dubois', '30'])
 ```
 
-##Voir aussi
-- [Documentation officielle de Python sur le module csv](https://docs.python.org/fr/3/library/csv.html)
-- [Tutoriel sur les fichiers CSV en Python](https://www.datacamp.com/community/tutorials/working-with-csv-files-in-python)
-- [Vidéo YouTube sur la manipulation de fichiers CSV en Python](https://www.youtube.com/watch?v=q5uM4VKywbA)
+Ceci créera un nouveau fichier CSV avec trois colonnes et deux lignes de données.
+
+## Plongée en profondeur
+Il est important de noter que les fichiers CSV peuvent avoir différents délimiteurs de champ, pas seulement des virgules. Vous pouvez spécifier le délimiteur en utilisant l'argument "delimiter" dans les fonctions "csv.reader()" et "csv.writer()".
+
+De plus, Python a un module intégré appelé "csv.DictReader" qui vous permet de lire un fichier CSV et d'accéder aux données en utilisant des noms de colonnes plutôt que des indices. Ceci est très utile si vous avez un grand nombre de colonnes dans votre fichier CSV.
+
+Enfin, n'oubliez pas de fermer votre fichier après avoir fini de le manipuler en utilisant la méthode "close()". Vous pouvez également utiliser la clause "with" pour vous assurer que le fichier est automatiquement fermé une fois que vous avez terminé de travailler avec lui.
+
+## Voir aussi
+- Documentation officielle pour le module CSV de Python : https://docs.python.org/3/library/csv.html
+- Des instructions supplémentaires pour travailler avec des fichiers CSV en Python : https://realpython.com/python-csv/

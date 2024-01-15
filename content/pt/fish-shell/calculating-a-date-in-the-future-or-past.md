@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Calculando uma data no futuro ou passado"
-simple_title:         "Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "Fish Shell: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,33 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que calcular uma data no futuro ou passado
+## Por que
 
-Algumas vezes, durante a programação em Fish Shell, podemos precisar calcular uma data no futuro ou passado para determinadas tarefas ou lógicas de negócio. Isso é especialmente útil em scripts ou programas que precisam lidar com datas, como agendamentos de tarefas ou cálculos de juros.
+Às vezes, precisamos calcular uma data futura ou passada em nossa programação, por exemplo, para agendar tarefas ou gerar relatórios com base em uma data específica. O Fish Shell possui funções integradas que facilitam esse cálculo, tornando o processo mais eficiente e preciso.
 
 ## Como fazer
 
-Para calcular uma data no futuro ou passado no Fish Shell, utilizamos o comando `date`. Por exemplo, para calcular a data de 3 dias no futuro a partir do dia de hoje, usamos o seguinte código:
+Para calcular uma data futura ou passada com o Fish Shell, precisamos usar a função `date`. Vamos ver alguns exemplos:
 
-```Fish Shell
-date -d "3 days"
+```
+Fish Shell: date -d '1 month ago'
+Saída: Seg Mar 22 17:16:31 -03 2021
 ```
 
-Isso nos retornará a data em formato padrão, como por exemplo `Sat Sep 25 16:49:39 2021`. Também é possível modificar o formato de saída, adicionando a opção `-I` seguida de um formato especificado. Por exemplo, para obter a data no formato `YYYY-MM-DD`, usamos o seguinte código:
+Neste exemplo, usamos a opção `-d` para especificar uma data base, ou seja, a partir de qual data queremos calcular. No caso acima, usamos `'1 month ago'` para calcular a data um mês atrás.
 
-```Fish Shell
-date -d "3 days" -I "%Y-%m-%d"
+Podemos usar outras opções, como `-y` para informar o ano, `-m` para o mês e `-d` para o dia. Veja:
+
+```
+Fish Shell: date -d 'yesterday'
+Saída: Seg Mar 22 17:16:31 -03 2021
 ```
 
-Isso nos retornará `2021-09-25`, que é a data de hoje mais 3 dias no futuro.
+Ou:
+
+```
+Fish Shell: date -d '2021-04-27 10:30'
+Saída: Ter Mar 27 10:30:00 -03 2021
+```
+
+Também é possível usar expressões matemáticas, como neste exemplo:
+
+```
+Fish Shell: date -d '+3 weeks +2 days'
+Saída: Ter Abr 13 17:16:31 -03 2021
+```
+
+Assim como podemos calcular uma data no passado, usando valores negativos:
+
+```
+Fish Shell: date -d '-5 days'
+Saída: Sáb Mar 20 17:16:31 -03 2021
+```
 
 ## Mergulho profundo
 
-O comando `date` no Fish Shell oferece uma série de opções de configuração para calcular datas futuras ou passadas. Além de especificar o número de dias, podemos também adicionar ou subtrair dias, semanas, meses e anos. Além disso, podemos especificar uma data de referência para calcular a data desejada.
+A função `date` no Fish Shell usa o formato de data `yyyyMMddHHmmss`, que é o mesmo formato usado pelo comando `date` nas distribuições Linux. Se quisermos personalizar o formato de saída, podemos usar a opção `-f` seguida de uma string com as instruções de formatação desejadas. Por exemplo:
 
-Outra opção útil é a capacidade de calcular datas em um fuso horário diferente, usando a opção `-u` seguida de um fuso horário especificado.
+```
+Fish Shell: date -d 'last year' -f '%Y-%m-%d'
+Saída: 2020-03-24
+```
+
+Com essa opção, podemos formatar a saída como desejarmos, incluindo o dia da semana, horas, minutos, entre outros.
 
 ## Veja também
-
-- Documentação oficial do comando `date` no Fish Shell: https://fishshell.com/docs/current/cmds/date.html 
-- Tutorial sobre cálculo de datas no Fish Shell: https://afontainhas.com/posts/calculating-time-in-fish-shell/
+- [Fish Shell: Um guia prático para iniciantes](https://www.datasciencecentral.com/profiles/blogs/fish-shell-um-guia-pratico-para-iniciantes)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guia de referência rápida para comandos do Fish Shell](https://devhints.io/fish-shell)

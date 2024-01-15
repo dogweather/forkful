@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: שליחת בקשת HTTP עם אימות בסיסי"
-simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "Haskell: שליחת בקשת http עם אימות בסיסי"
+simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-למה: רק 1-2 משפטים שמסבירים *למה* מישהו עשוי לבחור לשלוח בקשת HTTP עם אימות בסיסי.
+## למה
 
-### למה
+כשמדובר בפיתוח פרויקטים שכולם יכולים להיכנס אליהם, כמו אתרי אינטרנט או ממשקי API, יש צורך למנות בפני ישראל במנגנון אימות משתמש. אחד המנגנונים הכי פשוטים ונפוצים הוא האימות הבסיסי באמצעות שליחת בקשת HTTP עם פרטי הכניסה בשדות ההפעלה.
 
-HTTP עובד על פרוטוקול מכירות וכדי לקבל גישה למאגרי מידע, יש צורך להתחבר לשרת. כאן נכנסת לתמונה האימות הבסיסי, המאפשר למשתמש ולספק את הכניסה לשרת מהירה ופשוטה. כדי לכיפل בקשת HTTP עם אימות בסיסי, ניצור כותרת מסויימת בשורות הכותרת ונשתמש בפרמטרים מתאימים כדי ליצור את הכותרת הנכונה.
+## איך לעשות
 
-### איך לעשות
-
-כאן ניתן לראות דוגמאות של קוד עבור בקשת HTTP עם אימות בסיסי בשפת הפנקס הקושרת המתאימה, Haskell.
+התחל על ידי התקנת החבילה "http-request" באמצעות הפקודה הבאה בטרמינל:
 
 ```Haskell
-import Network.HTTP.Client
-import Network.HTTP.Types.Status
-import Data.ByteString.UTF8 as BU
-import qualified Data.ByteString as B
-import qualified Data.ByteString.Lazy as BL
+cabal install http-request
+```
 
--- ליצור כותרת עם משתמש וסיסמה
--- יש לשנות את הערך למשתמש והסיסמה המתאימים
-authHeader :: BU.ByteString
-authHeader = "Basic " `B.append` (toBase64 "user:password")
+לאחר מכן, ייבא את המודול "Network.HTTP.Simple" בעזרת הפקודה הבאה:
 
--- לבצע בקשת GET עם אימות בסיסי לכתובת ספציפית
-main :: IO()
-main = do
-    -- ליצור חיבור חדש לשרת
-    manager <- newManager defaultManagerSettings
-    -- להגדיר את הכתובת לבקשה
-    request <- parseRequest "http://example.com"
-    -- להוסיף את הכותרת הנחוצה לבקשה
-    let request' = request { requestHeaders = [(hAuthorization, authHeader)] }
-    -- לשלוח את הבקשה ולהתקבל את התשובה
-    response <- httpLbs request' manager
-    -- להדפיס את קוד התשובה כדי לוודא שהבקשה בוצעה בהצלחה
-    putStrLn $ "Response code: " ++ (show $ statusCode $ responseStatus response)
-    -- להציג את גוף התשובה
-    BL.putStr $ responseBody response
+```Haskell
+import Network.HTTP.Simple
+```
 
--- פונקציה עזר להמרת מחרוזת לבייס חשוב
-toBase64 :: [Char] -> B.ByteString
-toBase64 = BU.fromString . base64 where
-    base64 = map (toEnum . (+ 48) . (`mod` 64)) . toIndexes
+כעת, ניתן ליצור את הבקשה הרלוונטית ולשלוחה כפי שמפורט בקוד הבא. אנא ודא שהכנסת את הפרטים הנכונים בתוך הפונקציה "setRequestBasicAuth":
 
--- פונקציה עזר למיפוי התוו
+```Haskell
+exampleRequest :: IO ()
+exampleRequest = do
+  request <- parseRequest "https://example.com/"
+  let request' = setRequestBasicAuth "username" "password" request
+  response <- httpLBS request'
+  print $ getResponseBody response
+```
+
+תוצאת פלט היא גוף התגובה של הבקשה המכיל את כל התוכן של האתר המבוקש.
+
+## מעמיקים
+
+כאשר אתה שולח בקשת HTTP עם אימות בסיסי, הבקשה מכילה שדות הפעלה שמכילים את שם המשתמש והסיסמה בפורמט "שם משתמש:סיסמה". יש מספר תקנים ונושאים נוספים שכדאי לדעת בעת שליחת בקשת HTTP עם אימות בסיסי, כגון בצורת הסיסמה או כותרת "Authorization" בפרוטוקול ה-HTTP.
+
+## ראה גם
+
+- [מדריך לשליחת בקשות HTTP באמצעות Haskell](https://haskell-lang.org/tutorial/http-requests)
+- [מסמך רשמי על פרוטוקול HTTP](https://tools.ietf.org/html/rfc7235)

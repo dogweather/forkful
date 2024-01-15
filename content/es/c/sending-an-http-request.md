@@ -1,5 +1,6 @@
 ---
-title:                "C: Enviando una solicitud http"
+title:                "Enviando una solicitud http"
+html_title:           "C: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "C"
 category:             "C"
@@ -10,41 +11,114 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-En la programación, enviar solicitudes HTTP es una habilidad esencial para desarrollar aplicaciones web dinámicas y conectarse con servidores externos. Esto permite enviar y recibir datos, tales como formularios en línea o consultas de bases de datos, de manera rápida y eficiente.
+Enviar solicitudes HTTP es una parte fundamental de la programación en C, ya que te permite comunicarte con servidores y obtener información de diversas fuentes. Además, es necesario para desarrollar aplicaciones web y servicios en línea.
 
 ## Cómo hacerlo
+Enviar una solicitud HTTP en C es un proceso sencillo que requiere seguir algunos pasos básicos.
 
-Primero, necesitamos un URL válido para enviar la solicitud. Luego, usamos la función `http_get()` para enviar una solicitud GET y `http_post()` para una solicitud POST. A continuación, mostramos un ejemplo de cómo enviar una solicitud GET utilizando la biblioteca `curl`.
+### Codificación
+Primero, debes incluir la biblioteca estándar `stdio.h` y la biblioteca de entrada y salida de red `netdb.h` en tu programa.
 
 ```C
 #include <stdio.h>
-#include <curl/curl.h>
+#include <netdb.h>
+```
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
- 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://ejemplo.com/");
-    res = curl_easy_perform(curl);
-    /* Manejar el código de respuesta aquí */
-    curl_easy_cleanup(curl);
-  }
+Luego, debes establecer una variable de tipo `int` para almacenar el descriptor de archivo de la conexión al servidor y una struct llamada `addrinfo` para almacenar información sobre la conexión.
+
+```C
+int sockfd;
+struct addrinfo hints, *servinfo;
+```
+
+A continuación, debes inicializar la struct `hints` con cero y establecer valores para el miembro `ai_family` que indica la familia de protocolos que se utilizará y el miembro `ai_socktype` que especifica el tipo de socket que se utilizará para la conexión.
+
+```C
+memset(&hints, 0, sizeof(hints));
+hints.ai_family = AF_UNSPEC;
+hints.ai_socktype = SOCK_STREAM;
+```
+
+Después, debes llamar a la función `getaddrinfo()` para obtener información sobre la conexión al servidor. Esta función acepta cuatro argumentos: el nombre del host, el número de puerto, un puntero a la struct `hints` y un puntero a la struct `servinfo`.
+
+```C
+getaddrinfo("www.example.com", "80", &hints, &servinfo);
+```
+
+A continuación, debes crear un socket utilizando la información obtenida por `getaddrinfo()` y almacenar su descriptor de archivo en la variable `sockfd`.
+
+```C
+sockfd = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
+```
+
+Finalmente, debes utilizar la función `connect()` para establecer una conexión al servidor utilizando el descriptor de archivo del socket y la información obtenida por `getaddrinfo()`.
+
+```C
+connect(sockfd, servinfo->ai_addr, servinfo->ai_addrlen);
+```
+
+### Ejemplo completo
+Aquí está un ejemplo completo de un programa en C que envía una solicitud HTTP GET a un servidor y muestra la respuesta en la consola.
+
+```C
+#include <stdio.h>
+#include <netdb.h>
+
+int main() {
+  // Variables para almacenar el descriptor de archivo y la información de conexión
+  int sockfd;
+  struct addrinfo hints, *servinfo;
+
+  // Inicializar la struct hints con cero
+  memset(&hints, 0, sizeof(hints));
+
+  // Establecer valores para ai_family y ai_socktype
+  hints.ai_family = AF_UNSPEC;
+  hints.ai_socktype = SOCK_STREAM;
+
+  // Obtener información de conexión utilizando getaddrinfo()
+  getaddrinfo("www.example.com", "80", &hints, &servinfo);
+
+  // Crear un socket y almacenar su descriptor de archivo
+  sockfd = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
+
+  // Establecer una conexión utilizando connect()
+  connect(sockfd, servinfo->ai_addr, servinfo->ai_addrlen);
+
+  // Enviar una solicitud GET al servidor
+  char request[] = "GET / HTTP/1.1\r\n\r\n";
+  send(sockfd, request, strlen(request), 0);
+
+  // Almacenar la respuesta en un búfer
+  char response[1024];
+  recv(sockfd, response, sizeof(response), 0);
+
+  // Imprimir la respuesta en la consola
+  printf("%s", response);
+
+  // Cerrar la conexión y liberar la memoria
+  close(sockfd);
+  freeaddrinfo(servinfo);
+
   return 0;
 }
 ```
 
-La salida de este código sería el contenido HTML de la página solicitada.
+### Resultado
+Si ejecutas el programa anterior, deberías obtener una respuesta similar a esta:
 
-## Profundizando
+```
+HTTP/1.1 200 OK
+Date: Sun, 16 May 2021 16:45:24 GMT
+Server: Apache/2.4.23 (Unix)
+Last-Modified: Tue, 29 Nov 2016 21:35:54 GMT
+ETag: "2f-5427e1e1c9f56"
+Accept-Ranges: bytes
+Content-Length: 47
+Content-Type: text/html
 
-Hay muchas opciones que se pueden configurar al enviar una solicitud HTTP, como agregar encabezados específicos o autenticación. También es importante manejar los posibles códigos de respuesta, como errores o redirecciones. Afortunadamente, la biblioteca `curl` tiene una amplia documentación y ejemplos para guiar a los programadores en el manejo de estas situaciones.
+<html><body><h1>It works!</h1></body></html>
+```
 
-## Ver también
-
-- Tutorial de cURL de Codecademy (https://www.codecademy.com/learn/curl)
-- Documentación oficial de cURL (https://curl.haxx.se/libcurl/c/)
-- Ejemplos de código de cURL en GitHub (https://github.com/curl/curl/tree/master/docs/examples)
+## Deep Dive
+Para enviar una solicitud HTTP en C, neces

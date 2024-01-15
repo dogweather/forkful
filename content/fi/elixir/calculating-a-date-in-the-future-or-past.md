@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä."
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä."
+title:                "Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
+html_title:           "Elixir: Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
+simple_title:         "Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,31 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On useita syitä, miksi haluat laskea tulevan tai menneen päivämäärän Elixir-ohjelmoidessa. Esimerkiksi voit käyttää tätä ominaisuutta laskemaan tulevaisuuden tapahtumia, kuten syntymäpäiviä tai laskemaan menneitä tapahtumia, kuten vuosipäiviä.
+On monia tilanteita, joissa ohjelman täytyy laskea tuleva tai menneellä ajanhetkellä. Se voi olla esimerkiksi tapahtumien ajanvarausta varten tai laskemassa eräpäivää laskuja varten. Tämän artikkelin avulla opit, kuinka voit tehdä tämän Elixirilla.
 
-## Miten
+## Kuinka
 
-Voit laskea tulevan tai menneen päivämäärän käyttämällä Elixirin `Date`-moduulia. Tämä moduuli tarjoaa useita käteviä toimintoja päivämäärien käsittelyyn. Alla on esimerkki siitä, kuinka voit laskea päivämäärän kaksi viikkoa tulevaisuuteen:
-
-```Elixir
-iex> Date.add(Date.today, 14)
-{:ok, ~D[2021-04-16]}
-```
-
-Voit myös antaa negatiivisen luvun, jos haluat laskea menneen päivämäärän. Alla on esimerkki siitä, kuinka voit laskea päivämäärän yksi kuukausi taaksepäin:
+Voit laskea tulevan tai menneen päivämäärän Elixirilla käyttämällä `DateTime`-moduulia. Alla on yksinkertainen esimerkki, jossa laskemme seuraavan päivän päivämäärän käyttämällä `DateTime.shift_naive` -funktiota:
 
 ```Elixir
-iex> Date.add(Date.today, -1, :months)
-{:ok, ~D[2021-02-16]}
+date = DateTime.shift_naive(DateTime.utc_now(), days: 1)
+IO.inspect(date)
 ```
 
-## Syvempi sukellus
+Tämän koodin tulosteena pitäisi olla seuraavan päivän päivämäärä ISO 8601 -muodossa (esimerkiksi "2021-10-10T00:00:00.000000Z").
 
-Laskeminen tulevien tai menneiden päivämäärien kanssa voi olla hieman monimutkaista, koska on otettava huomioon esimerkiksi karkausvuodet ja kuukausien eri pituudet. Onneksi Elixirin `Date`-moduuli huolehtii näistä asioista puolestasi. Voit myös käyttää muita toimintoja, kuten `Date.start_of_week` tai `Date.end_of_month` tarvittaessa.
+Jos haluat laskea menneen päivän päivämäärän, voit käyttää `DateTime.shift_naive` -funktiota samalla tavalla, mutta negatiivisella luvulla päivissä. Voit myös laskettavan päivän lisäksi määrittää muita aikayksiköitä, kuten tunteja, minuutteja tai sekunteja.
 
-Jos haluat syvällisempää tietoa päivämäärien käsittelystä Elixirissä, suosittelemme lukemaan virallisen dokumentaation `Date`-moduulista: https://hexdocs.pm/elixir/Date.html
+```Elixir
+date = DateTime.shift_naive(DateTime.utc_now(), days: -7, hours: -3)
+IO.inspect(date)
+```
+
+Tässä esimerkissä laskemme 7 päivää ja 3 tuntia takaisin. 
+
+## Syvällisempi perehtyminen
+
+`DateTime`-moduulin lisäksi Elixirilla on myös `Calendar`-moduuli, joka tarjoaa lisää toimintoja päivämäärän käsittelyyn. Voit esimerkiksi tarkistaa, onko tietty päivämäärä viikonloppu, käyttäen `Calendar.weekdays`-funktiota:
+
+```Elixir
+weekend_day = DateTime.from_date({2021, 10, 9})
+Calendar.weekday(weekend_day) # :saturday
+Calendar.weekend?(weekend_day) # true
+```
+
+Voit myös suorittaa päivämäärälaskelmia käyttäen `Calendar`-moduulin funktioita, kuten `Calendar.add/3` tai `Calendar.diff/2`. Näillä funktioilla voit lisätä tai vähentää aikayksiköitä tietystä päivämäärästä.
+
+Lisätietoja `DateTime`- ja `Calendar`-moduuleista voit löytää [Elixirin virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/DateTime.html) .
 
 ## Katso myös
 
-- https://hexdocs.pm/elixir/Date.html - Virallinen dokumentaatio Elixirin `Date`-moduulista
-- https://elixirschool.com/en/lessons/basics/dates/ - Elixir-koulun opetusmateriaali päivämääristä Elixirissä
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+- [Video opetusohjelma: Kuinka laskea päivämääriä Elixirilla](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

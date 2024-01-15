@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "使用Yaml编程"
+html_title:           "Gleam: 使用Yaml编程"
+simple_title:         "使用Yaml编程"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -9,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为什么有人会使用YAML进行编程工作。
+# 为什么？
+假设你有一个复杂的程序，需要从不同的环境中读取不同的配置。这时候，YAML文件就可以帮助你轻松处理这些各不相同的设置。它易于阅读和编写，是许多团队和项目中常用的配置格式。
 
-使用YAML可以方便地管理和存储数据，特别是在Web开发和配置文件中。同时，它也是一种简洁易读的数据格式，使得代码更易于理解和维护。
+## 如何使用 YAML
+```Gleam
+import gleam/yaml
 
-如何使用：下面是一些Gleam中使用YAML的示例代码和输出结果。
+// 从 YAML 文件中读取配置数据
+let config = gleam/yaml.from_file("config.yml")
 
-```
-Gleam.yaml.from_string("name: John, age: 25, gender: male")
-```
-
-输出结果：
-
-```
-{name: "John", age: 25, gender: "male"}
+// 通过键名获取设置值
+let port = gleam/yaml.get(config, "server.port")
 ```
 
-```
-Gleam.yaml.from_file("config.yaml")
-```
+使用 `from_file` 函数可以从 YAML 文件中读取配置数据。然后，我们可以通过 `get` 函数来获取特定键的值。如果你想要修改配置文件，可以使用 `set` 函数来更新键值。更多用法可以查看官方文档。
 
-输出结果：
-
-```
-{server: "localhost", port: 8080, database: "users"}
-```
-
-深入了解：在Gleam中，我们可以使用内置的YAML模块来处理YAML数据。它提供了快速、灵活的方法来解析和生成YAML文件。通过使用不同的选项，我们还可以控制输出的格式和结构。
-
-另外，Gleam也支持将YAML数据转换为其他数据类型，例如JSON或Erlang记录。这使得在不同的编程环境中共享和使用数据更加方便。
-
-```
-Gleam.json.from_yaml(yaml_data)
+```yaml
+# config.yml
+server:
+  port: 8000
+database:
+  host: "localhost"
+  port: 5432
 ```
 
-输出结果：
+假设我们有一个以上的 YAML 文件，每个文件都有自己特定的键值对。我们可以使用 `merge` 函数将它们合并成一个配置文件，这样就可以轻松地管理多个环境的配置了。
 
+```Gleam
+// 合并两个 YAML 文件
+let common_config = gleam/yaml.from_file("common.yml")
+let env_config = gleam/yaml.from_file("production.yml")
+let config = gleam/yaml.merge(common_config, env_config)
 ```
-{name: "John", age: 25, gender: "male"}
-```
 
-参考链接：
+## 深入了解 YAML
+YAML 是一种结构化数据格式，它在存储和表示不同类型的数据时非常方便。它支持整数、浮点数、字符串、布尔值、列表和映射等基本数据类型。有时候，我们可能需要对配置文件进行验证，避免类型错误。这时候，你可以使用 `map_and_validate` 函数。此外，还有许多其他的函数可以在 Gleam 的 YAML 模块中找到。
 
-- [Gleam官方文档](https://gleam.run/documentation/standard_library.html#YAML)
-- [YAML官方网站](https://yaml.org/)
-- [YAML教程-菜鸟教程](https://www.runoob.com/w3cnote/yaml-intro.html)
-
-相关链接：
-
-请参考下面的链接来了解更多有关Gleam和YAML的信息：
-
-`参考链接`
-
-- [Gleam的使用指南-掘金](https://juejin.cn/post/6844903933130926605)
-- [使用YAML进行配置管理-知乎](https://www.zhihu.com/question/27689502)
-- [比较YAML和JSON-知乎](https://www.zhihu.com/question/21635445)
+# 参考链接
+- [官方网站](https://gleam.run/lib/yaml)
+- [YAML 文档](https://yaml.org/)

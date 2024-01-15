@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Wypisywanie wyników debugowania"
-simple_title:         "Wypisywanie wyników debugowania"
+title:                "Wyświetlanie wyników debugowania"
+html_title:           "Elm: Wyświetlanie wyników debugowania"
+simple_title:         "Wyświetlanie wyników debugowania"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -11,49 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Rozwiązywanie problemów w kodzie może być frustrującym i czasochłonnym zadaniem. Dlatego warto nauczyć się korzystać z funkcji drukowania debugowego, aby lepiej zrozumieć, co dzieje się w naszym programie. Wykorzystanie drukowania debugowego jest niezwykle przydatne, zwłaszcza gdy pracujemy z językiem Elm.
+Czasem podczas pisania kodu trzeba dokonać pewnych zmian lub zrozumieć dlaczego program działa w taki, a nie inny sposób. W takich sytuacjach pomocne może być wypisywanie wyników debugowania.  
 
 ## Jak to zrobić
 
-Korzystanie z funkcji drukowania debugowego w języku Elm jest bardzo proste. Wystarczy napisać funkcję `Debug.log`, a następnie podać jej dwa argumenty: nazwę i wartość.
+Aby wypisać wyniki debugowania w Elm, możemy skorzystać z funkcji `Debug.log`. Ta metoda przyjmuje dwa parametry: string, który będzie mówił nam co chcemy wypisać oraz wartość, którą chcemy zobaczyć. 
+
+```Elm 
+Debug.log "Debugowanie" "Wartość zmiennej to:"
+```
+
+W powyższym przykładzie, po wykonaniu kodu, w konsoli zobaczymy napis "Debugowanie: Wartość zmiennej to:". Możemy także wyświetlać wartości zmiennych, np. `model`:
 
 ```Elm
-Debug.log "Nazwa" wartosc
+Debug.log "Model" model
 ```
 
-Bardzo ważne jest, aby wewnątrz funkcji `Debug.log` podać wyrażenie lub wartość, którą chcemy sprawdzić. W przeciwnym razie funkcja nie zadziała prawidłowo.
+W przypadku bardziej skomplikowanych wartości, możemy wykorzystać funkcję `toString`, aby przekonwertować je na string przed wypisaniem.
 
-Aby zobaczyć działanie drukowania debugowego w akcji, przyjrzyjmy się poniższemu przykładowi:
+## Deep Dive
 
-```Elm
-main =
-  Debug.log "Nazwa" "Hello, World!"
-  "Hello, World!"
-```
+Podczas debugowania, dobrze jest uważać, aby nie zostawić funkcji `Debug.log` po zakończeniu pracy nad kodem. Wypisywanie informacji debugowania może znacznie spowolnić działanie programu. Aby temu zapobiec, warto skorzystać z flagi `--optimize`, która będzie pomijać funkcje `Debug.log` w kodzie produkcyjnym, czyli tym wykonywanym po zbudowaniu aplikacji.
 
-Po uruchomieniu tego przykładu w przeglądarce, w konsoli deweloperskiej zobaczymy następujący wynik:
+## Zobacz także
 
-```
-Nazwa :
-  "Hello, World!"
-Hello, World!
-```
-
-W pierwszej linijce zobaczymy nazwę, którą podaliśmy jako argument w funkcji `Debug.log`, a pod nią znajduje się wartość, którą chcieliśmy sprawdzić. W drugiej linijce zobaczymy zwracaną wartość przez funkcję `main`.
-
-## Głębszy wgląd
-
-Funkcja drukowania debugowego może być również użyta do drukowania informacji o typach zmiennych. Aby to zrobić, należy użyć funkcji `Debug.toString` wewnątrz funkcji `Debug.log`.
-
-Na przykład, jeśli chcielibyśmy sprawdzić typ zmiennej liczbowej, napisalibyśmy:
-
-```Elm
-Debug.log "Typ zmiennej" (Debug.toString liczba)
-```
-
-W ten sposób w konsoli deweloperskiej zobaczymy typ zmiennej, który w tym przykładzie powinien być `number`.
-
-## Zobacz również
-
-- Elm debugowanie (https://elmprogramming.com/debugging-in-elm.html)
-- Dokumentacja `Debug` w języku Elm (https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Oficjalna dokumentacja Elm - Debug](https://guide.elm-lang.org/debugging/debug.html)
+- [Debugowanie w Elm - blog post](https://medium.com/@pavelbogomolenko/using-debug-in-elm-d5e0fe254012)

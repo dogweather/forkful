@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "TypeScript recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Writing tests is an essential part of the software development process. It allows developers to ensure that their code is functioning as intended and catches any potential bugs before they reach production. By writing tests, developers can have more confidence in their code and spend less time debugging in the long run.
+## Why
+
+Writing tests is an essential aspect of software development that ensures the quality and reliability of your code. It allows you to catch bugs and errors early on, saving you time and effort in the long run. Writing tests also promotes a more systematic approach to coding, resulting in cleaner and more maintainable code.
 
 ## How To
-To write tests in TypeScript, we first need to set up a testing framework. One popular choice is Jest, which can be installed through npm. Once Jest is installed, we can create a separate folder for our tests and use the `describe` and `it` functions to structure our tests. Here is an example of a simple test in TypeScript using Jest:
+
+To get started with writing tests in TypeScript, you will need to set up a test framework like Jest or Jasmine. Once you have your framework installed, you can write your tests using the `describe` and `it` functions. Here's a basic example:
 
 ```TypeScript
-// app.test.ts
+// import necessary functions or classes 
+import { add } from './mathFunctions';
 
-describe('Calculator', () => {
-  it('should add two numbers correctly', () => {
-    const calc = new Calculator();
-    expect(calc.add(1, 2)).toEqual(3);
+// describe block for the "add" function 
+describe('add function', () => {
+  // it block for testing the addition of two numbers 
+  it('adds 2 + 3 to equal 5', () => {
+    // call the add function with 2 and 3 as arguments 
+    const result = add(2, 3);
+    // use the expect function to check if the result is equal to 5 
+    expect(result).toEqual(5);
   });
 });
 ```
 
-In this example, we are testing a `Calculator` class and its `add` method, expecting it to correctly add two numbers. If the test passes, Jest will output a green checkmark, indicating that the test was successful.
+In the example above, we first imported the `add` function from a separate file called `mathFunctions`. Then, we used the `describe` function to group our tests for the `add` function. Within the `describe` block, we used the `it` function to specify what we expect our `add` function to do. Finally, we used the `expect` function to check if the result of our `add` function is equal to the expected value of 5.
 
 ## Deep Dive
-When writing tests, it is important to consider different types of tests such as unit tests, integration tests, and end-to-end tests. Unit tests focus on testing small units of code in isolation, while integration tests check how different units work together. End-to-end tests, on the other hand, simulate the entire user flow and test the application as a whole. It is important to have a good balance of these different types of tests to ensure code coverage and catch any potential bugs.
 
-In TypeScript, we can also take advantage of its type system to write more robust tests. By defining types for our variables, we can catch errors at compile time instead of during runtime. This can save us a lot of time and effort in the long run and ensure that our tests are comprehensive and reliable.
+When writing tests, it's important to consider different scenarios and edge cases. For example, what happens if we pass in non-numeric values to our `add` function? We can add another `it` block to test this scenario and make sure our function can handle it. Additionally, you can use tools like code coverage to ensure that all of your code is being tested.
+
+Another important aspect of writing tests is using descriptive and precise names for your `describe` and `it` blocks. This makes it easier for others to understand the purpose of your tests and for you to identify any failed tests.
 
 ## See Also
-- [Jest](https://jestjs.io/)
-- [Typescript Official Documentation](https://www.typescriptlang.org/)
-- [Testing in TypeScript with Jest](https://medium.com/@rosswintle/testing-in-typescript-with-jest-8eee56e1edfc)
+
+- [Jest - Getting Started](https://jestjs.io/docs/en/getting-started)
+- [Jasmine - Introduction](https://jasmine.github.io/tutorials/your_first_suite)
+- [Code Coverage in TypeScript with Istanbul and Jest](https://medium.com/@jonaskay/code-coverage-in-typescript-with-istanbul-and-jest-e158c3aec6cd)

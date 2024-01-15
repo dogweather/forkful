@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
+html_title:           "Javascript: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Agar aap ek Javascript developer hain aur command line arguments ke bare mein nahi jaante hain, toh aap koi kaam hone se pehle upar se hi script likhna ya keval debugging ke liye command line arguments ka istemaal karte hain. Par agar aap command line arguments ko jaante hain aur unhe sahi tarah se padh paate hain, toh aapki coding skills aur productivity dono mein improvement hoga. Iss article mein hum aapko Javascript mein command line arguments ko padhna sikhayenge aur aapko iska kya fayda ho sakta hai.
 
-जब आप एक विशेषता को समझने या अपने कोड को स्वचालित बनाने की आवश्यकता होती है, तो आमतौर पर आप अपने काम में कई तरह के डेटा तक पहुंचने को संभव बनाते हैं। यहां हमें बताने की आवश्यकता है कि यह कुछ आसान है और आपको कुछ ज्ञान होना चाहिए हम एक प्रूफ ऑफ कॉन्सेप्ट का आधार बना सकते हैं जो हमें सही दिशा में ले जाता है या हमें समस्याओं को हल करने के लिए प्रोग्रामिंग करता है।
-
-## कैसे
+## Kaise Krein
+Command line arguments padhna bahut hi aasaan hai Javascript mein. Sabse pehle, aapko `process.argv` object ka use karna hoga. Iss object mein humare program ke command line arguments stored hote hain. Yahaan jo `process` hai wo global object hai jo ki node.js mein available hota hai aur `argv` humare arguments ka array hai. Hum iska use `for` loop ya `forEach` method ki madad se kar sakte hain.
 
 ```Javascript
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
+// Example:
+for (var i = 0; i < process.argv.length; i++) {
+  console.log(`Argument ${i}: ${process.argv[i]}`);
+}
+
+// Output:
+Argument 0: node
+Argument 1: example.js
+Argument 2: hello
+Argument 3: world
+```
+
+Aap dekh sakte hain ki `process.argv` ka pehla element hamesha `node` hota hai, dusra element humare code file ka naam hota hai aur baki ke elements humare command line arguments hote hain. Hum `slice()` method ka bhi use karke `process.argv` mein se unhe extract kar sakte hain.
+
+```Javascript
+// Example:
+var arguments = process.argv.slice(2); // Ye pehle do elements ko chhodkar array ke baaki elements ko humare arguments mein store karta hai
+
+// Output:
+Arguments: ['hello', 'world']
+```
+
+## Deep Dive
+`process.argv` object ko padhna ek acchi practice hai, lekin aapko pata hona chahiye ki ye sirf command line arguments ko read kar sakta hai jo aapne program ke saath saath pass kiye hain. Agar aapko kisi user se input lena hai, toh aapko `process.argv` ka use nahi karna chahiye. Iske liye aapko `process.stdin` object ka use karna hoga. Aur agar aap user ko specific type ka input lena chahte hain, jaise number ya character, toh aapko usse pehle `parseInt()` ya `parseFloat()` ka use karna hoga.
+
+```Javascript
+// Example:
+process.stdin.resume(); // Input lene ke liye ye function call karna zaruri hai
+process.stdin.setEncoding('utf8'); // Agar aap character input lena chahte hain, toh ye line likhna zaruri hai
+
+process.stdin.on('data', function (chunk) { // Jab stdin se data aayega toh ye function call hoga
+  console.log(`Input: ${chunk}`); // chunk variable mein input string stored hoga
 });
 ```
 
-ऊपर दिखाए गए कोडब्लॉक में, हमने process.argv का उपयोग करके अपने स्क्रिप्ट को कमांड लाइन में पास गुणा किया है। इस संगठन से, हमें प्रत्येक गुणा को एक एरे रूप में मिलता है, जिसमें पहला स्थान हमारा नेम, दूसरा जानकारी है जो हमारे मामले में हमारे पूरे पैरामीटर्स को अभिव्यक्त करता है। इसे हम अनंद ले सकते हैं यह परिणाम आएगा
+Aap iss tarah se `process.stdin` ka use karke bhi user se input le sakte hain. Agar aapko iss baare mein aur jaankari chahiye, toh aap [Node.js official dokumentation](https://nodejs.org/api/process.html#process_process_stdin) padh sakte hain.
 
-```bash
-node script.js hello world 
-```
-
-```bash
-0: /usr/local/bin/node
-1: /path/to/script.js
-2: hello
-3: world
-```
-
-ऊपर दिखाए गए कैसे उदाहरण में, हमें पास किए गए स्क्रिप्ट के नाम और फिर उससे पहले वर्गीकरण को अनन्य रूप से पता करने में मदद मिल सकती है।
-
-## गहराई में
-
-पूर्ण स्थानांतरण योजना परियोजना का मूल्यांकन करने के लिए। 
-
-- [स्टैक ओवरफ्लो (अंग्रेजी)](https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program)
-- [नोड डॉक (अंग्रेजी)](https://
+## Dekhen Bhi
+- [Node.js official dokumentation](https://nodejs.org/api/process.html#process_process_stdin)
+- [Command line arguments in Javascript: process.argv](https://www.tutsmake.com/javascript-command-line-arguments/)
+- [Command line arguments in Node.js](https://www.geeksforgeeks.org/node-js-process-argv-property/)

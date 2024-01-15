@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "C++ recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "C++"
 category:             "C++"
@@ -10,68 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Sending an HTTP request with basic authentication can be necessary when accessing a secure server or API that requires authentication. It allows for secure communication between the client and server, ensuring that only authorized users can access sensitive information.
+Sending an HTTP request with basic authentication is necessary for accessing resources that require user authentication, such as a website or API. This ensures a secure connection and allows for proper identification of the user.
 
 ## How To
+To send an HTTP request with basic authentication in C++, we will be using the [CURL library](https://curl.haxx.se/libcurl/). This library allows us to make requests to URLs and supports different authentication methods including basic authentication.
 
-To send an HTTP request with basic authentication in C++, we will use the cURL library. First, we need to initialize the cURL session and set the URL we want to send the request to:
-
+First, we need to include the CURL library in our code:
 ```C++
-CURL* curl;
+#include <curl/curl.h>
+```
+
+Next, we will set up our CURL object and specify the URL we want to make a request to:
+```C++
+// Initialize CURL object
+CURL *curl;
 curl = curl_easy_init();
-curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
+
+// Specify URL
+char url[] = "https://www.example.com";
 ```
 
-Next, we need to set the HTTP request type as `GET` or `POST` and specify that we want to use basic authentication:
-
+Now, we need to specify the credentials for basic authentication. This includes the username and password encoded in Base64 format. We can do this by creating a string with the following format: username:password, and then using the [Base64 encoding function](https://www.base64encode.org/) to encode the string.
 ```C++
-curl_easy_setopt(curl, CURLOPT_HTTPGET, 1); // set request type as GET
-curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); // use basic authentication
+// Set credentials
+char credentials[] = "username:password"; // replace with actual credentials
+char encoded_credentials[] = "encoded_credentials_here"; // replace with encoded credentials
 ```
 
-Then, we need to set the username and password for the authentication:
-
+Next, we need to set the appropriate HTTP headers for basic authentication:
 ```C++
-curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+// Set HTTP headers
+struct curl_slist *headers = NULL;
+headers = curl_slist_append(headers, "Content-Type: application/json");
+headers = curl_slist_append(headers, "Authorization: Basic " + std::string(encoded_credentials));
 ```
 
-Finally, we can execute the request and retrieve the response from the server:
-
+Now, we can make the actual HTTP request using the `curl_easy_setopt()` function:
 ```C++
-CURLcode res;
-res = curl_easy_perform(curl); // execute the request
+// Make HTTP request
+curl_easy_setopt(curl, CURLOPT_URL, url);
+curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
+curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+```
 
-// check for errors
-if (res != CURLE_OK) {
-    fprintf(stderr, "curl_easy_perform() failed: %s\n",
-    curl_easy_strerror(res));
+Finally, we can execute the request and print the response:
+```C++
+// Execute request
+CURLcode res = curl_easy_perform(curl);
+
+// Check for errors
+if(res != CURLE_OK) {
+    fprintf(stderr, "Curl error: %s\n", curl_easy_strerror(res));
 }
 
-// retrieve response
-long response_code;
-double total_time;
-curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code); // get response code
-curl_easy_getinfo(curl, CURLINFO_TOTAL_TIME, &total_time); // get total time of request
+// Print response
+printf("%s\n", response.c_str());
 ```
 
-Sample output for a successful request would be:
-
-```C++
-Response code: 200
-Total time taken: 0.1234 seconds
-```
+That's it! You have successfully sent an HTTP request with basic authentication in C++.
 
 ## Deep Dive
+In the above example, we used the `CURLOPT_CUSTOMREQUEST` option with the value of "GET". This tells CURL to make a GET request to the specified URL. However, depending on the API or website you are accessing, you may need to use a different HTTP method such as POST or PUT. You can change the value of `CURLOPT_CUSTOMREQUEST` accordingly.
 
-HTTP basic authentication works by sending the username and password in plain text in the `Authorization` header of the request. This means that the authentication is not secure and can be easily intercepted.
+Additionally, you may need to include other HTTP headers in your request, depending on the requirements of the API or website. You can add these headers using the `curl_slist_append()` function, as shown in the example.
 
-To overcome this security issue, it is recommended to use HTTPS instead of HTTP when sending an HTTP request with basic authentication. This ensures that the communication between the client and server is encrypted and cannot be intercepted.
-
-Additionally, in some cases, the server may require a different format for the `Authorization` header. In these cases, you will need to use the `curl_easy_setopt()` function to set the `CURLOPT_HTTPHEADER` option and provide the custom `Authorization` header.
+Also, remember that for basic authentication, your credentials need to be encoded in Base64 format. You can use any online tool or function to encode your credentials before setting them in the `Authorization` header.
 
 ## See Also
-
-- cURL documentation: https://curl.se/docs/
-- HTTP basic authentication: https://www.httpwatch.com/httpgallery/authentication/#basic
+- [CURL library documentation](https://curl.haxx.se/docs/)
+- [Base64 encoding function](https://www.base64encode.org/)

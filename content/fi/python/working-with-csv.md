@@ -1,5 +1,6 @@
 ---
-title:                "Python: Työskentely csv-tiedostojen kanssa"
+title:                "Työskentely csv-tiedostojen kanssa"
+html_title:           "Python: Työskentely csv-tiedostojen kanssa"
 simple_title:         "Työskentely csv-tiedostojen kanssa"
 programming_language: "Python"
 category:             "Python"
@@ -9,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttää CSV-tiedostoja Python-ohjelmoinnissa?
+## Miksi
 
-CSV (comma-separated values) on yleinen tiedostomuoto taulukoiden tallentamiseen ja jakamiseen. Se on hyödyllinen työkalu, kun työskentelet suurten tietomäärien kanssa, kuten liiketoimintatietojen tai tieteellisten tutkimusten parissa. Python tarjoaa helpon tavan käsitellä CSV-tiedostoja ja hyödyntää niiden sisältämää dataa.
+CSV-tiedostot ovat erittäin yleisiä tietokannoissa ja taulukoissa, joten on tärkeää osata työskennellä niiden kanssa. Pythonilla tämä on helppoa ja nopeaa!
 
-## Kuinka käsitellä CSV-tiedostoja Pythonilla?
+## Miten
 
-CSV-tiedostojen lukeminen ja kirjoittaminen Pythonilla onnistuu helposti `csv` -kirjaston avulla. Tämä kirjasto tarjoaa toimintoja, jotka helpottavat tiedon käsittelyä CSV-muodossa.
+CSV-tiedostojen lukeminen ja kirjoittaminen Pythonissa on hyvin suoraviivaista. Käytämme siihen built-in csv -kirjastoa ja sen avulla voimme käsitellä taulukoita helposti.
 
 ```Python
 import csv
 
-# Avataan CSV-tiedosto lukemista varten
-with open("esimerkki.csv") as tiedosto:
-  # Käytetään DictReaderia, joka lukee tiedoston ensimmäisen rivin otsikoiksi
-  lukija = csv.DictReader(tiedosto)
-  # Tulostetaan tiedoston sisältö
-  for rivi in lukija:
-    print(rivi)
+# Luemme CSV-tiedoston ja tallennamme sen muuttujaan
+with open('data.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
+    # Käymme läpi jokaisen rivin tiedostossa
+    for row in csv_reader:
+        # Tulostamme rivin sisällön
+        print(row)
 ```
 
-Tämä koodi lukee CSV-tiedoston ja tulostaa sen sisällön yhden rivin kerrallaan. Voit myös käyttää `csv.writer` -funktiota CSV-tiedoston kirjoittamiseen.
+```Python
+import csv
 
-## Syvällisempi tieto CSV-tiedostoista Pythonilla
+# Luomme uuden CSV-tiedoston ja tallennamme siihen tietoja
+with open('uusi_tiedosto.csv', 'w', newline='') as csv_file:
+    csv_writer = csv.writer(csv_file)
 
-CSV-tiedostojen käsittelyyn Pythonissa liittyy muutamia tärkeitä huomioitavia asioita. Ensinnäkin, muista aina määrittää tiedoston merkistö, jotta varmistat, että tiedoston sisältö tulkitaan oikein. Voit tehdä tämän määrittämällä `encoding` -parametrin käyttäessäsi `open` -funktiota.
+    # Lisäämme rivejä tiedostoon
+    csv_writer.writerow(['Otsikko 1', 'Otsikko 2', 'Otsikko 3'])
+    csv_writer.writerow(['Data 1', 'Data 2', 'Data 3'])
+```
 
-Toiseksi, muista käsitellä tekstin lisäksi myös numeroita oikein. CSV-tiedostoissa kaikki arvot ovat tekstiä, joten sinun täytyy muuntaa ne halutessasi numeroiksi.
+### Deep Dive
 
-Lopuksi, ole varovainen käsitellessäsi suuria CSV-tiedostoja Pythonilla, sillä muistin ja suorituskyvyn optimointi voi olla haasteellista.
+CSV-tiedostoissa on toisinaan haasteita, kuten erilaisten desimaalipisteiden käyttäminen. Tätä ongelmaa ratkaistaan usein käyttämällä `decimal`-kirjastoa ja määrittämällä `delimiter` parametriksi haluttu desimaalierotin.
+
+Voimme myös käyttää `csv.DictReader` ja `csv.DictWriter` -funktioita, jotka antavat meille mahdollisuuden käsitellä CSV-tiedostoja sanakirjojen avulla.
 
 ## Katso myös
 
-- `csv` -kirjaston dokumentaatio: https://docs.python.org/3/library/csv.html
-- "CSV-tiedostojen käsittely Pythonilla" -artikkeli: https://realpython.com/python-csv/
-- "Understanding and Working With CSV Files Using Python" -opetusvideo: https://www.youtube.com/watch?v=q5uM4VKywbA
-
-Hyödynnä näitä resursseja, kun tarvitset lisätietoa CSV-tiedostojen käsittelystä Pythonissa. Onnea ja tervetuloa CSV-maailmaan!
+- [Python built-in csv dokumentaatio](https://docs.python.org/3/library/csv.html)
+- [Python decimal dokumentaatio](https://docs.python.org/3/library/decimal.html)
+- [Django's CSV käyttöohje](https://docs.djangoproject.com/en/3.0/howto/outputting-csv/)

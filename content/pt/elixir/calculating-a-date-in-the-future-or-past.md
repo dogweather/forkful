@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Calculando uma data no futuro ou passado"
-simple_title:         "Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou no passado."
+html_title:           "Elixir: Calculando uma data no futuro ou no passado."
+simple_title:         "Calculando uma data no futuro ou no passado."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -9,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que calcular uma data no futuro ou no passado?
+## Por que
 
-Calcular datas pode ser uma tarefa essencial em muitos projetos de programação. Elixir tem algumas ferramentas úteis que podem ajudar a fazer esse cálculo de forma rápida e eficiente.
+Calcular datas no futuro ou no passado pode ser útil em diversas situações, como por exemplo para agendar eventos, programar tarefas ou manipular datas em sistemas de reserva.
 
-## Como fazer
+## Como Fazer
 
-A maneira mais simples de calcular uma data no futuro ou no passado em Elixir é usando as funções `Date.add/2` e `Date.subtract/2`. Essas funções aceitam dois argumentos: a data a ser alterada e o número de dias que devem ser adicionados ou subtraídos.
+Para realizar cálculos de datas em Elixir, utilizamos a função `Date.add/2`, passando como argumentos a data original e o número de dias que queremos adicionar ou subtrair. Se quisermos calcular uma data no futuro, usamos um valor positivo para o número de dias, e se quisermos calcular uma data no passado, usamos um valor negativo. Vejamos um exemplo:
 
-Vamos dar um exemplo simples de como usar essas funções para calcular uma data no futuro:
+```elixir
+iex> Date.utc_today()
+{:ok, ~U[2022-01-25]}
 
-```Elixir
-iex> hoje = Date.utc_today()
-~D[2020-11-12]
-iex> Date.add(hoje, 7)
-~D[2020-11-19]
+iex> Date.add(~U[2022-01-25], 30)
+~U[2022-02-24]
 ```
 
-Podemos ver que a função `Date.add/2` adiciona 7 dias à data atual e retorna a nova data. Da mesma forma, podemos usar a função `Date.subtract/2` para calcular uma data no passado:
+No exemplo acima, utilizamos a função `Date.utc_today/0` para obter a data de hoje e depois adicionamos 30 dias, resultando em uma data no futuro.
 
-```Elixir
-iex> hoje = Date.utc_today()
-~D[2020-11-12]
-iex> Date.subtract(hoje, 14)
-~D[2020-10-29]
+Podemos também fazer cálculos com datas em diferentes formatos, como no exemplo a seguir:
+
+```elixir
+iex> Date.add(~D[2022-03-10], -15)
+~D[2022-02-23]
 ```
 
-Uma coisa importante a notar é que essas funções retornam uma nova data e não alteram a data original. Para alterar a data original, podemos usar as funções `Date.add!/2` e `Date.subtract!/2`.
+## Mergulho Profundo
 
-## Mergulho profundo
+Existem diversas outras funções disponíveis em Elixir para trabalhar com datas, como `Date.diff/2` para calcular a diferença entre duas datas, `Date.day_of_week/1` para obter o dia da semana de uma data específica e `Date.parse/1` para converter uma string em data. Além disso, é possível realizar operações mais complexas, como adicionar meses ou anos utilizando `Date.add/3`, especificando a unidade de tempo desejada.
 
-Além das funções `Date.add/2` e `Date.subtract/2`, Elixir também tem a função `Date.shift/2` que nos permite calcular datas futuras ou passadas com unidades de tempo mais precisas, como anos, meses, horas, minutos e segundos.
+## Veja Também
 
-Além disso, o módulo `DateTime` é uma ótima ferramenta para trabalhar com datas e horários em Elixir. Ele fornece funções como `DateTime.add/4` e `DateTime.diff/3` que podem ser úteis ao realizar cálculos complexos com datas.
-
-## Veja também
-
-- [Documentação oficial do Elixir Date](https://hexdocs.pm/elixir/Date.html)
-- [Documentação oficial do Elixir DateTime](https://hexdocs.pm/elixir/DateTime.html)
-- [Post sobre cálculos de datas em Elixir no blog do AdopteUnDev](https://blog.adopteundev.com/calculation-de-dates-et-dheure-en-elixir-facilement/)
+- [Documentação oficial de Elixir sobre manipulação de datas](https://hexdocs.pm/elixir/Date.html)
+- [Tutorial sobre como trabalhar com datas em Elixir](https://ifelse.io/2016/02/10/working-with-dates-and-times-in-elixir/)

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Alimerkkien erottaminen"
-simple_title:         "Alimerkkien erottaminen"
+title:                "Alaotsikko: Alimerkkijonojen erottaminen"
+html_title:           "Javascript: Alaotsikko: Alimerkkijonojen erottaminen"
+simple_title:         "Alaotsikko: Alimerkkijonojen erottaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluaisin poimia alimerkkejä (substring)?
+## Miksi käyttää substringien etsimistä?
 
-Kun työskentelet tekstin käsittelyssä, saatat törmätä tilanteeseen, jossa haluat tarkistaa tai muokata tietyn osan tekstistä. Tässä tilanteessa alimerkkien (substring) poimiminen on hyödyllinen ominaisuus, joka säästää aikaa ja vaivaa.
+Substringien etsiminen on hyödyllinen työkalu, jolla voidaan käsitellä merkkijonoja ja saada tarkkaa dataa halutusta kohdasta. Se on erityisen hyödyllinen silloin, kun käsiteltäviä merkkijonoja on paljon ja halutaan tehdä tarkkoja hakuja ja muokkauksia.
 
-Esimerkiksi haluat ehkä tarkistaa, onko tietyssä sanassa tietty kirjain tai haluatko jakaa tekstin eri osiin. Alimerkkien poimiminen antaa sinulle mahdollisuuden työskennellä tarkasti halutun tekstin kanssa helposti ja tehokkaasti.
-
-## Kuinka: Näin poimit alimerkkiä käyttäen JavasScriptiä
-
-Alimerkkien poimiminen JavaScriptillä on melko helppoa. Voit käyttää String-olioon sisäänrakennettua "substring" -toimintoa. Se ottaa parametreikseen aloitus- ja lopetusindeksit ja palauttaa halutun osan tekstin alimerkkinä.
+## Kuinka tehdä substringien etsiminen?
 
 ```Javascript
-let teksti = "Tämä on esimerkki tekstistä."
-let osa = teksti.substring(5, 17)
-console.log(osa) // "on esimerkki"
+// Määritellään merkkijono
+let teksti = "Tämä on esimerkkilause";
+
+// Etsitään alkuindeksin 5 jälkeen olevista merkeistä 10 substrin pituista osaa
+let osa = teksti.substring(5, 15);
+console.log(osa);
+// Output: on esimerk
+
+// Haku alkaen alusta ilman lopetusindeksiä
+let osa2 = teksti.substring(5);
+console.log(osa2);
+// Output: on esimerkkilause
 ```
 
-Tässä esimerkissä "substring" -toiminto poimii tekstin osan, joka alkaa indeksistä 5 ja päättyy indeksiin 17. On tärkeää huomata, että aloitusindeksi on mukana, mutta lopetusindeksi ei.
+Tässä esimerkissä määritellään ensin merkkijono ja sen jälkeen käytetään ```substring()```-funktiota hakuun. Funktio ottaa kaksi parametria: alkuindeksin ja lopetusindeksin. Voit myös jättää lopetusindeksin pois, jolloin haku alkaa alusta ja jatkuu loppuun asti.
 
-Voit myös asettaa vain yhden parametrin, jolloin "substring" -toiminto palauttaa kaiken tekstin aloittaen halutusta indeksistä.
+## Syvempi sukellus substringien etsimiseen
 
-```Javascript
-let teksti = "Tämä on esimerkki tekstistä."
-let osa = teksti.substring(10)
-console.log(osa) // "esimerkki tekstistä."
-```
+Funktion sisällä tapahtuu muutama asia ennen kuin se palauttaa halutun substringin. Ensinnäkin, merkkijonon indeksit alkavat aina 0:sta, joten ensimmäinen merkki on indeksissä 0. Toiseksi, lopetusindeksi määrittää millä merkillä haku päättyy, mutta tätä merkkiä ei oteta mukaan osaksi palautettua substringia.
 
-## Syvällinen sukellus
-
-Alimerkkien poimimiseen liittyy muutamia tärkeitä seikkoja, jotka on hyvä pitää mielessä.
-
-Ensinnäkin, kun poimit alimerkkiä, muista, että tekstin indeksointi alkaa aina 0: sta. Toiseksi, "substring" -toiminto ei muuta alkuperäistä tekstiä, vaan palauttaa uuden tekstinäyttövastauksen. Kolmanneksi, alimerkin pituuden on oltava suurempi tai yhtä suuri kuin alkuperäisen tekstin. Muuten palautetaan tyhjä vastaus.
-
-Lisäksi, jos haluat puuttua tekstistä merkkeihin, voit käyttää "charCodeAt" -toimintoa, mikä antaa sinulle merkin UTF-16 Unicode -arvon. Tämä mahdollistaa tarkemman tekstin käsittelyn.
+Toinen tärkeä huomioitava asia on, että ```substring()```-funktio ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon. Tämä yhdessä ```let```-avainsanan kanssa mahdollistaa merkkijonon muokkauksen ilman että alkuperäistä dataa menetetään.
 
 ## Katso myös
 
-- [MDN Web Docs - substring](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [W3Schools - JavaScript substring() Method](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [Ultimate Guide to JavaScript Substrings](https://www.javascripttutorial.net/javascript-substring/)
+- [String.substring() - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Substring in JavaScript: Four Solutions to Find and Remove Substrings Inside a String](https://codeburst.io/substring-in-javascript-four-solutions-to-find-and-remove-substrings-b69c799f03b8)
+- [10 Common String Operations in JavaScript](https://dmitripavlutin.com/10-common-string-operations-in-javascript/)

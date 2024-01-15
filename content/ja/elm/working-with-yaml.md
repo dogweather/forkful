@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 「Yamlを使う」"
-simple_title:         "「Yamlを使う」"
+title:                "yamlを使ったプログラミング"
+html_title:           "Elm: yamlを使ったプログラミング"
+simple_title:         "yamlを使ったプログラミング"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,72 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜYAMLを使うのか
 
-YAMLは、人間にとって読みやすく書けるテキスト形式のデータフォーマットです。プログラミング言語の一つであるElmでは、YAMLを使ってデータを読み込んだり、書き出したりすることができます。また、YAMLはJsonやXMLよりもシンプルな構造を持っているため、データの管理や保存にも便利です。
+YAMLは、データベースや設定ファイルなどの構造化されたデータを表現するための人間にも読みやすい形式です。 Elmに組み込まれたYAMLパーサーを使うことで、データを簡単に読み込み、操作することができます。
 
 ## 使い方
 
-まずは、YAMLを読み込むために必要なライブラリをインストールします。
+まず、YAMLパーサーをインストールします。Elmの依存パッケージを管理する `elm.json` ファイルに、以下のような行を追加します。
 
 ```Elm
-elm install elm-community/yaml
+"dependencies": {
+   "elm-explorations/yaml": "1.0.0 <= v < 2.0.0"
+}
 ```
 
-次に、コードの中でYAMLを使うためのパッケージをインポートします。
+次に、`Yaml.Document`モジュールをインポートし、 `decodeString`関数を使ってYAMLデータをデコードします。
 
 ```Elm
-import Yaml
+import Yaml.Document
+
+yamlString = "{ key1: value1, key2: value2 }"
+
+decodedData = Yaml.Document.decodeString yamlString
 ```
 
-YAMLを読み込んでJsonデータに変換するには、次のようにコードを書きます。
+YAMLデータは、`Result.Waitfor`型で返ってきます。 `Result.Waitfor`は値を一つだけ持ち、成功した場合はその値を、失敗した場合はエラーメッセージを保持します。 `case`式を使って結果を処理します。
 
 ```Elm
-yamlString = toString """
-name: John
-age: 25
-"""
-result = Yaml.decodeString yamlString
+case decodedData of
+    Ok result -> 
+        -- 成功した場合の処理
+        result
+    Err err ->
+        -- エラーが発生した場合の処理
+        err
 ```
-
-YAMLからJsonデータへの変換が成功した場合、`Result`型の値としてデータが返されます。
-
-```Elm
-case result of
-  Ok jsonData -> -- 変換に成功した場合の処理を書く
-  Err error -> -- エラーが発生した場合の処理を書く
-```
-
-また、JsonデータからYAMLに変換することもできます。
-
-```Elm
-jsonData = Json.Encode.object [ ( "name", Json.Encode.string "John" ), ( "age", Json.Encode.int 25 ) ]
-yamlString = Yaml.encode 0 jsonData
-```
-
-`encode`関数の第一引数は、YAMLのインデント数を指定するものです。ここでは0を指定しています。
 
 ## ディープダイブ
 
-YAMLは、プログラムの設定ファイルやデータのシリアライズにも使うことができます。また、YAMLはコメントを記述することも可能です。例えば、次のように書くことでデータに対する説明をコメントとして追加することができます。
+`Yaml.Document`モジュールには、`decodeFile`関数があります。これを使うことで、外部のYAMLファイルを読み込むことができます。また、オプションのパラメータを指定することで、デコードされたデータを具体的な型に変換することもできます。
 
-```Elm
---- 追加したコメントはこのように書きます
-title: Elmプログラミング入門
-author: John
-```
+詳細な情報については、公式ドキュメントを参照してください。
 
-YAMLは、複数行にわたる文字列の表記方法もあります。これを使うことで、長い文章や複数の行にわたるデータを簡単に記述することができます。
+## 参考リンク
 
-```Elm
-longText: |-
-  ここには長い文章や
-  複数の行にわたるデータを
-  簡単に記述することができます。
-```
-
-さらにYAMLには、リストやマップといったデータ構造を表現するための機能もあります。詳細は公式ドキュメントを参照してください。
-
-## 関連リンク
-
-- [Elm Community/YAML](https://github.com/elm-community/yaml)
-- [YAML 公式ドキュメント](https://yaml.org/)
-- [YAMLの基本構文](https://www.geeksforgeeks.org/dummies-guide-to-yaml-basics/) (英語)
+- [公式ドキュメント](https://package.elm-lang.org/packages/elm-explorations/yaml/latest/)
+- [YAML言語の公式サイト](https://yaml.org/)

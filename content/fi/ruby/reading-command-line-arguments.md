@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Komentoriviparametrien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Ruby: Komentoriviparametrien lukeminen"
 simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Miksi lukisi komentokehoteen argumentit Ruby-ohjelmoinnin yhteydessä? Komentokehotteen argumentit ovat käytännöllisiä ja tehokkaita tapoja antaa ohjelmalle tietoa suorituksen aikana.
+Jos olet Ruby-ohjelmoija, saatat joutua käsittelemään komentoriviparametreja. Tämä artikkeli auttaa sinua ymmärtämään, miten voit lukea ja käyttää niitä ohjelmissasi.
 
-## Miten
+## Miten tehdä se?
 
-Kommentokehotteessa käyttämistäsi argumenteista voit antaa ohjelmalle tietoa suorituksen aikana käyttämällä Rubyn ARGV-muuttujaa. Se sisältää taulukon kaikista annetuista argumenteista. Alla on esimerkki kodista ja tulosteesta:
+Komentoriviparametrit voidaan lukea Ruby-ohjelmassa "ARGV" muuttujan avulla. Tämä muuttuja sisältää taulukon kaikista annetuista parametreista.
 
 ```Ruby
-# Koodiesimerkki
-ARGV.each do |argument|
-  puts "Antamasi argumentti oli: #{argument}"
-end
+# Luetaan parametrit 
+puts ARGV
 
-# Komentokehotteen syöttö
-ruby ohjelma.rb ensimmäinen toinen kolmas
-
-# Tuloste
-Antamasi argumentti oli: ensimmäinen
-Antamasi argumentti oli: toinen
-Antamasi argumentti oli: kolmas
+# Ajaesessa: ruby testi.rb hello world
+# Tulostaa: ["hello", "world"]
 ```
 
-## Syväsukellus
+Voit myös käyttää "each" metodia käsitelläksesi jokaisen parametrin erikseen:
 
-Komentokehotteen argumenttien lukeminen voi tuntua yksinkertaiselta, mutta se voi todella parantaa ohjelmasi toimivuutta ja joustavuutta. Voit myös käyttää ARGV-muuttujaa ohjelmasi sisään lataamien tiedostojen lukemiseen ja muihin monipuolisiin tarkoituksiin.
+```Ruby
+# Tulostetaan jokainen parametri omalle riville
+ARGV.each do |parametri| 
+  puts parametri
+end
+```
+
+## Syvällistä tietoa
+
+Voit lisätä joustavuutta säätämällä komentoriviparametreja, kuten "required" parametreja tai argumentteja, joilla on oletusarvoja. Voit myös käyttää erilaisia kirjastoja, kuten "optparse" tai "thor", auttaaksesi käsittelyssä ja validoinnissa.
 
 ## Katso myös
 
-- [Ruby ARGV-dokumentaatio](https://ruby-doc.org/core-2.7.1/ARGF.html)
-- [Ohjeita Ruby-ohjelmoinnin aloittamiseen](https://www.codecademy.com/learn/learn-ruby) 
-- [Ruby syntaksin perusteet](https://www.rubyguides.com/2018/03/ruby-syntax-cheat-sheet/)
+- [Ruby ARGV dokumentaatio](https://ruby-doc.org/core-2.7.1/ARGV.html)
+- [Optparse kirjasto](https://rubygems.org/gems/optparse)
+- [Thor kirjasto](https://rubygems.org/gems/thor)

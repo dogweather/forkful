@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Analizowanie html."
-simple_title:         "Analizowanie html."
+title:                "Analiza html"
+html_title:           "Elixir: Analiza html"
+simple_title:         "Analiza html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,54 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą Elixira, na pewno wiesz, że jedną z najważniejszych rzeczy jest analizowanie danych. A co jeśli część tych danych jest ukryta w HTML? Na szczęście, dzięki Elixirowi, możemy łatwo parsować HTML i wyciągać potrzebne nam informacje. Dlaczego więc warto poznać podstawy parsowania HTML? Dowiesz się tego w tym artykule.
+Parsing HTML jest niezbędnym narzędziem dla każdego programisty, który pracuje z danymi ze stron internetowych. Dzięki temu procesowi możliwe jest wyodrębnienie potrzebnych informacji i przetworzenie ich w bardziej czytelną i użyteczną formę.
 
 ## Jak to zrobić
 
-Aby móc analizować HTML w Elixirze, potrzebna jest nam biblioteka Floki. Możesz ją zainstalować, wykonując poniższą komendę w terminalu:
+Aby rozpocząć analizowanie HTML w języku Elixir, będziemy potrzebować jednego narzędzia - biblioteki Floki. Możemy ją zainstalować poprzez wykonanie poniższej komendy w terminalu:
 
 ```Elixir
-mix deps.get floki
+mix escript.install hex floki
 ```
 
-Następnie, musimy pobrać dane z witryny internetowej, którą chcemy przeanalizować. W tym przykładzie, pobierzemy stronę główną Google i wyświetlimy tytuł strony:
+Następnie musimy zaimportować bibliotekę w naszym projekcie:
 
 ```Elixir
-url = "https://www.google.com/"
-html = HTTPoison.get!(url).body
-Floki.find(html, "title") |> Floki.text
+require Floki
 ```
 
-Powyższy kod pobiera dane z witryny i przekazuje je do funkcji "find" z biblioteki Floki. W argumencie funkcji podajemy nazwę tagu, który chcemy znaleźć. Następnie, używamy funkcji "text" aby pobrać tekst znajdujący się wewnątrz tagu. W tym przypadku jest to tytuł strony Google.
-
-Możemy również wyświetlić linki z danej strony przy użyciu funkcji "to_string" oraz "attrs":
+Aby pobrać i analizować kod HTML, użyjemy funkcji `Floki.parse/1`:
 
 ```Elixir
-Floki.find(html, "a") |> Floki.enum_map(fn(el) -> Floki.to_string(el |> Floki.attrs).href end)
+html = """
+<html>
+  <head>
+    <title>Przykładowa Strona</title>
+  </head>
+  <body>
+    <h1>Witaj!</h1>
+    <p>To jest przykładowa strona internetowa.</p>
+    <ul>
+      <li>Pierwszy element</li>
+      <li>Drugi element</li>
+      <li>Trzeci element</li>
+    </ul>
+  </body>
+</html>
+"""
+
+Floki.parse(html)
 ```
-Powyższy kod zwróci listę wszystkich linków z głównej strony Google.
 
-## Głębsza analiza
-
-Podstawowe przykłady pokazały nam jak wykorzystać bibliotekę Floki do prostego parsowania HTML. Jednak, ta biblioteka oferuje wiele innych funkcji, które mogą uprościć naszą pracę. Możemy na przykład użyć funkcji "first" aby znaleźć pierwszy element pasujący do danego warunku:
+Wykonanie powyższego kodu spowoduje zwrócenie reprezentacji drzewa DOM (Document Object Model). Teraz możemy wykorzystać różne funkcje z biblioteki Floki, aby wyodrębnić potrzebne nam informacje. Na przykład, aby pobrać tytuł strony, użyjemy funkcji `Floki.find/2`:
 
 ```Elixir
-Floki.find(html, "div", [class: "result"]) |> Floki.first |> Floki.children
+title = Floki.find(html, "title")
+# zwraca element <title>Przykładowa Strona</title>
 ```
 
-Powyższy kod zwróci dzieci pierwszego elementu div z klasą "result", czyli wszystkie elementy znajdujące się wewnątrz tego diva.
-
-Inną przydatną funkcją jest "match?" która pozwala nam sprawdzić, czy dany element pasuje do danego wzorca:
+Aby wyodrębnić wszystkie elementy listy, użyjemy funkcji `Floki.find_all/2`:
 
 ```Elixir
-Floki.find(html, "input", [id: "username"]) |> Floki.match?({:attrs, [{"type", "text"}]})
+list_items = Floki.find_all(html, "li")
+# zwraca listę elementów <li>
 ```
 
-Ten przykład zwróci true jeśli element input z id "username" ma atrybut "type" ustawiony na "text".
+## Pogłębiona analiza
 
-Podsumowując, biblioteka Floki daje nam wiele możliwości analizowania i wykorzystywania danych z HTML. Wystarczy tylko poznać jej funkcje i wykorzystać je w odpowiedni sposób.
+Parsing HTML jest zdecydowanie szczegółowym i zaawansowanym procesem, a biblioteka Floki oferuje wiele funkcji, które pomagają w jego dokładnym przetwarzaniu. Na przykład, możemy wykorzystać selektory CSS do precyzyjnego wyodrębniania potrzebnych nam elementów:
 
-## Zobacz też
+```Elixir
+Floki.find(html, "body h1")
+# zwraca element <h1>Witaj!</h1>
+```
 
-- [Dokumentacja biblioteki Floki](https://hexdocs.pm/floki/readme.html)
-- [Przykładowe aplikacje wykorzystujące parsing HTML w Elixirze](https://github.com/topics/elixir-html-parsing)
+Istnieją również funkcje do zmiany drzewa DOM i porównywania go z innymi drzewami. Warto zapoznać się z dokumentacją biblioteki Floki oraz eksperymentować z różnymi funkcjami, aby lepiej zrozumieć proces parsingu HTML.
+
+## Zobacz także
+
+- Dokumentacja biblioteki Floki: https://hexdocs.pm/floki/readme.html
+- Przewodnik po analizowaniu HTML w Elixir: https://dev.to/iansinnott/parsing-html-in-elixir-with-floki-23p4

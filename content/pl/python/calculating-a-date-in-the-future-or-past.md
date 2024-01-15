@@ -1,5 +1,6 @@
 ---
-title:                "Python: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Python: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Python"
 category:             "Python"
@@ -9,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Kalkulacja daty w przeszłości lub przyszłości może być przydatna w wielu sytuacjach, na przykład w planowaniu wydarzeń lub terminów ważnych zadań.
+Liczenie daty w przyszłości lub przeszłości może być przydatne w różnych sytuacjach, na przykład w planowaniu wydarzeń, określaniu ważnych dni czy w obliczaniu wieku.
 
 ## Jak to zrobić?
 
-Aby obliczyć datę w przeszłości lub przyszłości, musimy użyć modułu `datetime` w Pythonie. Najpierw musimy zaimportować ten moduł używając `import datetime`. Następnie możemy użyć funkcji `date()` by utworzyć obiekt daty z podanego roku, miesiąca i dnia. Przykładowo, `datetime.date(2021,7,10)` utworzy obiekt daty dla 10 lipca 2021 roku.
+W celu obliczenia daty w przyszłości lub przeszłości w języku Python, można skorzystać z modułu `datetime`. Najpierw należy zaimportować ten moduł, a następnie użyć funkcji `timedelta`, która pozwala na ustawienie dowolnej liczby dni, tygodni, miesięcy lub lat.
 
-Teraz, aby dodać lub odjąć dni lub lata do tej daty, możemy użyć `timedelta` wraz z funkcją `date()`. Przykładowo, aby dodać 30 dni do daty, możemy użyć `datetime.date(2021,7,10) + datetime.timedelta(days=30)`. Funkcja ta zwróci datę 10 sierpnia 2021 roku.
-
-Poniżej znajdują się przykładowe kodowe bloki w Pythonie oraz odpowiadające im wyniki:
-
-```Python
-import datetime
-
-# Utworzenie obiektu daty dla 10 stycznia 2021 roku
-date = datetime.date(2021,1,10)
-
-# Dodanie 30 dni do daty
-new_date = date + datetime.timedelta(days=30)
-
-# Wyświetlenie obu dat
-print("Stara data:", date)
-print("Nowa data:", new_date)
-```
+Przykłady:
 
 ```
-Stara data: 2021-01-10
-Nowa data: 2021-02-09
+from datetime import datetime, timedelta
+
+# Obliczanie daty 30 dni od teraz
+now = datetime.now()
+future = now + timedelta(days=30)
+print(future)
+
+# Obliczanie daty 2 tygodnie w przeszłości
+past = now - timedelta(weeks=2)
+print(past)
 ```
 
-## Głębsze zanurzenie
+Wynik:
 
-W powyższym przykładzie, użyliśmy funkcji `timedelta` do dodania dni do naszej daty. Jednak, możemy również użyć tej funkcji do dodawania lub odejmowania lat, godzin, minut oraz sekund. Aby zapoznać się z pełnymi możliwościami tej funkcji, możesz zajrzeć do dokumentacji Pythona na temat modułu `datetime` i funkcji `timedelta`.
+```
+2021-11-19 14:00:00.399843
+2021-10-05 14:00:00.399843
+```
 
-## Zobacz też
+## Warto wiedzieć!
 
-- Dokumentacja Pythona dotycząca modułu datetime: https://docs.python.org/3/library/datetime.html
-- Inne przykłady wykorzystania dat w Pythonie: https://www.programiz.com/python-programming/datetime
+Funkcja `datetime.now()` zwraca aktualną datę i czas, a `timedelta()` pozwala na ustawienie dowolnych wartości w celu zwiększenia lub zmniejszenia daty. Jest to przydatne w przypadku potrzeby obliczenia daty w przyszłości lub przeszłości na podstawie innych, już istniejących dat.
+
+Można również użyć operatora arytmetycznego `-` w przypadku odejmowania dat, co pozwala na określenie różnicy między datami.
+
+## Zobacz również
+
+- Dokumentacja modułu datetime: https://docs.python.org/3/library/datetime.html
+- Poradnik programowania w Pythonie: https://pythonguide.pl/

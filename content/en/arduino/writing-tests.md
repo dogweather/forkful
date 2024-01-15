@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,65 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-When it comes to programming, testing is a crucial aspect that is often overlooked. Writing tests allows you to catch bugs and errors in your code before they become larger problems. It also helps to ensure that your code is functioning as intended, making it easier to make any necessary changes or updates in the future.
+Writing tests for your Arduino code is a crucial step in ensuring the reliability and functionality of your projects. By following a test-driven development approach, you can catch bugs and errors early on and save yourself from headaches down the line.
 
 ## How To
-
-Writing tests for your Arduino programs is a simple process that can save you a lot of time and frustration in the long run. Here is an example of how you can write tests for an LED blink program:
-
+First, we need to set up our testing environment. We will be using the Arduino Uno board for our examples, but this approach can be applied to other Arduino boards as well. 
 ```Arduino
-// Include the necessary libraries
-#include <Arduino.h>
-#include "unity.h"
-
-// Set up variables for testing
-const int ledPin = 13;
-
-// Set up the test function
-void test_ledBlink() {
-  digitalWrite(ledPin, HIGH);    // Turn on the LED
-  delay(1000);                   // Wait for 1 second
-  digitalWrite(ledPin, LOW);     // Turn off the LED
-  delay(1000);                   // Wait for 1 second
+void setup() {
+  //initialize code for testing here
 }
 
-// Set up the setup function
-void setUp() {
-  pinMode(ledPin, OUTPUT);       // Set the LED pin as an output
-}
-
-// Set up the teardown function
-void tearDown() {
-  pinMode(ledPin, INPUT);       // Reset the LED pin back to an input
-}
-
-// Set up the main function
-int main() {
-  UNITY_BEGIN();       // Start the unit testing framework
-  RUN_TEST(test_ledBlink);      // Run the test function
-  UNITY_END();         // Finish the unit testing framework
+void loop() {
+  //main program code
 }
 ```
+Next, we need a testing framework. One popular option is the Arduino Unit Testing Library (https://github.com/mmurdoch/arduinounit). This library allows us to write and run automated tests for our code. 
+```Arduino
+#include <ArduinoUnit.h> //include the testing library
 
-The above code will turn an LED connected to pin 13 on for 1 second, then off for 1 second, and continue to repeat. This is a simple test to ensure that the LED is functioning properly.
+//sample test case
+unittest(myTestCase) {
+  assertTrue(1 < 2); //test for a condition to be true
+}
 
-To run this test, you will need to install the Unity testing framework on your Arduino IDE. You can find instructions on how to do this here: [https://github.com/ThrowTheSwitch/Unity/wiki/Using-Unity-with-Arduino](https://github.com/ThrowTheSwitch/Unity/wiki/Using-Unity-with-Arduino).
+void setup() {
+  Test::run(); //runs all the defined test cases
+}
 
-Once you have installed Unity, you can simply click on the "Verify" button in your IDE to run the test. If everything is working properly, you should see a "Test Passed" message in the output window.
+void loop() {
+  //main program code
+}
+```
+After writing our tests, we need to upload our code to the Arduino board and open the serial monitor to view the test results. The output should look like this:
+```
+OK (1 test, 1 ran, 1 assertions, 0 failures, 0 errors, 0 skipped, 0 todo)
+```
+If all of our tests pass, we will see a green "OK" and the number of tests that ran. Otherwise, our failing tests will be highlighted in red.
 
 ## Deep Dive
+One key aspect of writing tests is knowing what to test. So how do we determine what to test in our Arduino code? Here are some tips to keep in mind:
+- Test all inputs and outputs: This includes testing sensor readings, button presses, and servo movements.
+- Test edge cases: These are situations where input values could potentially cause errors in our code.
+- Test for expected behavior: Make sure your code is producing the desired output.
+- Test for failure: Don't just test for successful outcomes, also test for potential failures and how your code handles them.
 
-Writing tests for your Arduino programs is not only about checking if your code works, but it's also about making sure that it remains functional as you make changes to it. This is where unit testing comes into play.
-
-Unit testing involves breaking your code down into smaller, testable units, and checking each unit individually. This allows you to identify and fix any problems with the code before they spread to other parts of your program.
-
-Another important aspect of testing is using code coverage. This is a metric that measures how much of your code is actually being tested. The higher the code coverage, the more confident you can be that your code is functioning properly.
-
-There are various libraries and frameworks available for Arduino that can help you with unit testing and code coverage, such as Unity, ArduinoUnit, and PlatformIO. It's important to do some research and find the one that best fits your needs.
+Another important factor in writing tests is organization. Keeping our test cases organized not only makes our code easier to read but also helps us pinpoint the source of errors when they occur. This can be achieved by using descriptive test case names and grouping related tests together.
 
 ## See Also
-
-- [https://www.arduino.cc/en/Guide/Environment](https://www.arduino.cc/en/Guide/Environment)
-- [https://learn.adafruit.com/testing-and-maintaining-your-arduino-sketch/code-coverage](https://learn.adafruit.com/testing-and-maintaining-your-arduino-sketch/code-coverage)
-- [https://www.hackster.io/arrisary/tdd-in-arduino-f70f0e](https://www.hackster.io/arrisary/tdd-in-arduino-f70f0e)
+- Arduino Unit Testing Library: https://github.com/mmurdoch/arduinounit
+- Test-Driven Development for Arduino: https://www.arduino.cc/en/Guide/PaperTest
+- Writing High-Quality Tests for Arduino: https://www.programmableweb.com/news/writing-high-quality-tests-arduino/how-to/2016/10/12

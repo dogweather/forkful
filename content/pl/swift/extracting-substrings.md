@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wyciąganie podciągów"
+html_title:           "Swift: Wyciąganie podciągów"
+simple_title:         "Wyciąganie podciągów"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,52 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyodrębnianie podciągów to ważne narzędzie w każdym języku programowania, a w Swift jest równie przydatne. Pozwala na wyodrębnienie części tekstu z danego ciągu znaków. Jest to szczególnie przydatne w manipulacji i analizie tekstów, takich jak analiza danych lub tworzenie złożonych wyrażeń.
+Często w programowaniu musimy odwołać się tylko do części tekstu z całego ciągu znaków. Na przykład, możemy chcieć wyodrębnić imię z adresu e-mail lub numer telefonu z tekstu. W takich sytuacjach wykorzystujemy funkcję wyodrębniania podciągów w języku Swift.
 
 ## Jak to zrobić
 
-Aby wyodrębnić podciąg w Swift, należy użyć metody "substring (from:)" dla typu String. W nawiasie należy podać indeks początkowy, od którego chcemy wyodrębnić podciąg.
+Aby wyodrębnić podciągi w języku Swift, możemy skorzystać z metody ```substring```, która jest dostępna dla typu ```String```. Przykładowo, jeśli mamy ciąg znaków "Hello World!", możemy wyodrębnić tylko słowo "World" w następujący sposób:
 
 ```Swift
-let text = "Witaj w świecie Swift!"
-
-let substring = text.substring(from: 12)
-
-print(substring)
+let text = "Hello World!"
+let extractedSubstring = text.substring(from: 6, to: 10)
+print(extractedSubstring) // wydrukuje "World"
 ```
 
-Output: "świecie Swift!"
+Funkcja ```substring``` przyjmuje dwa parametry: początkowy indeks i końcowy indeks podciągu. Indeksy liczymy od 0, więc w przykładzie powyżej, zaczynamy od indeksu 6, który odpowiada literze "W" w wyrazie "World", a kończymy na indeksie 10, który odpowiada ostatniej literze "d". Wykorzystując tę samą metodę, możemy także wyodrębnić podciągi z tylu ciągów znaków jak np. numerów telefonów czy adresów e-mail.
 
-Możemy również wybrać tylko określoną ilość znaków z podciągu, używając metody "substring (to:)".
+## Głębszy zanurzenie
 
-```Swift
-let text = "Dzisiaj jest piękny dzień"
+Podczas wyodrębniania podciągów w języku Swift, musimy pamiętać o kilku ważnych rzeczach. Po pierwsze, metoda ```substring``` nie modyfikuje oryginalnego ciągu znaków, a jedynie zwraca nowy podciąg jako wynik. Po drugie, indeksy podciągu muszą być zawsze w zakresie od 0 do długości oryginalnego ciągu znaków.
 
-let substring = text.substring(to: 15)
+Istnieją również inne metody do ekstrakcji podciągów w języku Swift, takie jak ```prefix``` i ```suffix```, które pozwalają nam na wyodrębnienie podciągów od początku i końca ciągu znaków. Możemy także wykorzystać opcjonalne parametry, takie jak np. ```lowercased``` lub ```uppercased```, aby zwrócić podciąg w określonym formacie (małych lub wielkich liter).
 
-print(substring)
-```
+## Zobacz również
 
-Output: "Dzisiaj jest pię"
+Jeśli chcesz dowiedzieć się więcej o wyodrębnianiu podciągów w języku Swift, zapoznaj się z oficjalną dokumentacją języka: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID297
 
-## Deep Dive
-
-W przypadku wyodrębniania podciągów w Swift, istnieje kilka ważnych szczegółów, które warto wziąć pod uwagę. Po pierwsze, indeksy podciągów są liczone od zera, co oznacza, że pierwszy znak będzie miał indeks 0. Po drugie, można również użyć metody "substring (with:)" i podać zakres indeksów, zamiast pojedynczego indeksu początkowego lub końcowego.
-
-```Swift
-let text = "To jest przykładowy tekst"
-
-let substring = text.substring(with: 8...15)
-
-print(substring)
-```
-
-Output: "przykładowy "
-
-Warto również zauważyć, że wyodrębniony podciąg będzie miał ten sam typ danych co oryginalny ciąg, co oznacza, że można na nim wykonywać inne operacje, takie jak sprawdzanie długości lub wykorzystywanie w innych funkcjach.
-
-## Zobacz także:
-
-- Dokumentacja Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Wykorzystywanie metod "substring" w praktyce: https://medium.com/@oscarjbarnes/writing-natural-conversations-with-swift-part-2-hello-and-goodbye-e88ecc4b074
-- Często zadawane pytania dotyczące wyodrębniania podciągów w Swift: https://stackoverflow.com/questions/35110752/substring-in-swift-not-working
+Jeśli natomiast jesteś początkującym programistą w języku Swift, zobacz nasz artykuł o podstawach tego języka: [Wprowadzenie do programowania w języku Swift](https://example.com)

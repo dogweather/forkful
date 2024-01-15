@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Zamiana daty na ciąg znaków"
+html_title:           "Gleam: Zamiana daty na ciąg znaków"
+simple_title:         "Zamiana daty na ciąg znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,30 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu musimy przekształcić datę na napis, na przykład, aby wyświetlić ją w czytelniejszy sposób lub przechowywać w bazie danych. W tym artykule dowiesz się, jak w języku Gleam wykonać tę operację.
+Czemu w ogóle miałbyś chcieć przekonwertować datę na ciąg znaków? Oto kilka powodów!
+
+- Często w aplikacjach internetowych czy mobilnych używamy dat, a niekiedy konieczne jest prezentowanie ich w formie tekstowej.
+- Przekonwertowanie daty na string pozwala na dopasowanie jej do lokalnych ustawień, takich jak format wyświetlania daty czy język.
 
 ## Jak to zrobić
 
-W języku Gleam istnieje wiele narzędzi do obsługi dat, ale dla naszego celu będziemy korzystać z modułu `Date`. Najpierw musimy zaimportować ten moduł za pomocą słowa kluczowego `import`:
+Oto przykładowy kod w języku Gleam, który pokazuje, jak przekonwertować datę na string:
 
 ```Gleam
-import Date
+// Importowanie modułu `Date` z biblioteki standardowej
+import gleam/datetime/Date
+
+// Tworzenie daty za pomocą funkcji `new`
+let my_date = Date.new(2020, 12, 31)
+
+// Przekonwertowanie daty na string w formacie `YYYY-MM-DD`
+let my_string = Date.to_string(my_date, "%Y-%m-%d")
+
+// Wyświetlenie wyniku na konsoli
+println(my_string)
 ```
 
-Następnie możemy użyć funkcji `to_string`, która przyjmuje dwa argumenty: `date` - obiekt daty, którą chcemy przekształcić oraz `options` - ustawienia formatowania. Na przykład, aby przekształcić bieżącą datę w formacie yyyy-mm-dd, można użyć następującego kodu:
+Ten prosty kod wyświetli "2020-12-31" na konsoli.
 
-```Gleam
-let current_date = Date.now()
-let date_string = Date.to_string(current_date, Date.Options.default)
-```
+## Pogląd w głąb
 
-Wynik powinien być w formacie `2021-08-15`. Możemy również użyć opcji `Date.Option.day_of_week` aby dodać do napisu dzień tygodnia. Wtedy wynik będzie wyglądał tak: `Sun, 15 Aug 2021`.
+W języku Gleam istnieje kilka różnych funkcji, które pozwalają na przekonwertowanie daty na string w różnych formatach. W powyższym przykładzie użyliśmy funkcji `to_string`, ale warto również zapoznać się z funkcją `to_rfc3339`, która zwraca string w formacie RFC3339, czyli standardowym formacie używanym w komunikacji między systemami.
 
-## Głębsza analiza
+Ponadto, przy przekonwertowaniu daty na string, można zastosować maskę (`mask`), która pozwala na ustawienie własnego formatowania daty, np. poprzez dodanie nazw miesięcy czy dni tygodnia w języku lokalnym.
 
-Jeśli chcesz dowiedzieć się więcej o funkcjach `Date`, możesz zajrzeć do dokumentacji języka Gleam lub przejrzeć kod źródłowy modułu `Date` na GitHubie.
+## Zobacz też
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o pracy z datami w języku Gleam, polecamy zapoznanie się z oficjalną dokumentacją:
 
-- [Dokumentacja języka Gleam](https://gleam.run/documentation)
-- [Kod źródłowy modułu Date na GitHubie](https://github.com/gleam-lang/gleam/blob/master/lib/date/src/date.gleam)
+- [Oficjalna dokumentacja Date w języku Gleam](https://gleam.run/documentation#date)
+- [Oficjalna dokumentacja mask w języku Gleam](https://gleam.run/documentation#mask)
+- [Oficjalna dokumentacja modułu `Datetime` w języku Gleam](https://gleam.run/documentation#datetime)

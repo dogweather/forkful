@@ -1,5 +1,6 @@
 ---
-title:                "Go: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Go: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Go"
 category:             "Go"
@@ -9,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego porównywać daty?
+## Dlaczego
 
-Porównywanie dat jest częstym wyzwaniem dla programistów, szczególnie dla tych, którzy pracują w języku Go. Dzięki temu krótkiemu przewodnikowi nauczysz się, jak porównywać daty w Go i uniknąć frustracji przy próbie rozwiązania tego problemu.
+Porównywanie dat jest niezwykle przydatną umiejętnością, szczególnie w przypadku skomplikowanych aplikacji, które wymagają obsługi różnych zdarzeń w różnych chwilach. Dzięki umiejętności porównywania dat możesz łatwo określić, które wydarzenia już się wydarzyły, a które dopiero nadejdą. W tym artykule dowiesz się, jak porównywać daty w języku Go i jak to może ułatwić Twoją pracę.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-By porównać dwie daty w Go, musisz najpierw skonwertować je na typ ```time.Time```. Następnie wykorzystaj operator `>` lub ` <` aby porównać daty i sprawdzić, która jest wcześniejsza lub późniejsza.
+Aby porównać dwie daty w języku Go, możesz użyć funkcji `Equal` z pakietu `time`. Przykładowy kod wyglądałby następująco:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // Utwórz przykładowe daty
-    date1 := time.Date(2021, 3, 15, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2021, 6, 1, 0, 0, 0, 0, time.UTC)
-
-    // Porównaj daty
-    if date1 > date2 {
-        fmt.Println(date1, "jest późniejsza niż", date2)
-    } else if date2 > date1 {
-        fmt.Println(date2, "jest późniejsza niż", date1)
-    } else {
-        fmt.Println(date1, "i", date2, "są takie same")
-    }
+	dateOne := time.Date(2021, 9, 15, 0, 0, 0, 0, time.UTC)
+	dateTwo := time.Date(2021, 9, 16, 0, 0, 0, 0, time.UTC)
+	
+	if dateOne.Equal(dateTwo) {
+		fmt.Println("Podane daty są takie same!")
+	} else {
+		fmt.Println("Podane daty są różne.")
+	}
 }
 ```
 
-Output:
-```Go
-2021-06-01 00:00:00 +0000 UTC jest późniejsza niż 2021-03-15 00:00:00 +0000 UTC
-```
+Oczekiwanym wynikiem tego kodu jest wypisanie na ekranie napisu "Podane daty są różne.", ponieważ wcześniej zdefiniowane daty są właśnie różne. Korzystając z funkcji `Equal`, możesz więc prosto i szybko porównać dwie daty w języku Go.
 
 ## Deep Dive
 
-Porównywanie dat w Go może być nieco skomplikowane ze względu na różnice w sposobie obsługi czasu w różnych strefach czasowych. Dlatego najlepiej pracować z datami w jednej jednostce czasu, na przykład w UTC lub w lokalnej strefie czasowej. Możesz użyć metody `UTC()` lub `Local()` by skonwertować datę na wybraną strefę czasową.
-
-Ponadto, jeśli chcesz porównywać również godziny i minuty, musisz wykorzystać metody `Truncate()` lub `Round()` by wyeliminować różnice w czasie z uwagi na precyzję.
+Funkcja `Equal` porównuje dwie daty do sekundy, dlatego jeśli chcesz również uwzględnić milisekundy, musisz użyć funkcji `Equal` na typie `time.Time`. Ponadto, warto wspomnieć, że w języku Go daty są reprezentowane przez typ `time.Time`, który przechowuje informacje o dacie, czasie oraz strefie czasowej. Dzięki temu możesz porównywać nie tylko daty w jednej strefie czasowej, ale również w różnych, co jest przydatne w przypadku globalnych aplikacji.
 
 ## Zobacz także
-- [Pakiet time w języku Go](https://pkg.go.dev/time)
-- [Porównywanie dat w języku Go](https://golang.org/src/time/example_test.go)
+
+Jeśli chcesz dowiedzieć się więcej na temat porównywania dat w języku Go, możesz zapoznać się z następującymi artykułami:
+
+- [Porównywanie dat w języku Go](https://golangbyexample.com/time-comparison-in-golang/)
+- [Dokumentacja języka Go - pakiet time](https://golang.org/pkg/time/)
+
+Dzięki umiejętności porównywania dat w języku Go, możesz ułatwić sobie pracę i uniknąć błędów związanych z obsługą różnych zdarzeń czasowych w swoich aplikacjach.

@@ -1,5 +1,6 @@
 ---
-title:                "C++: Baixando uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "C++: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "C++"
 category:             "C++"
@@ -11,69 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Baixar uma página da web pode ser uma tarefa útil para acessar informações específicas ou para fins de análise de dados. Além disso, entender como fazer isso pode ajudar a melhorar suas habilidades de programação em C++.
+Você já se perguntou como é possível baixar uma página da web e visualizá-la em seu navegador? Se você está interessado em aprender mais sobre como a internet funciona e como sites são carregados, então este artigo é para você! Vamos dar uma olhada em como podemos usar a linguagem de programação C++ para fazer o download de uma página da web.
 
 ## Como fazer
 
-Aqui está um exemplo de como baixar uma página da web usando C++:
+Para fazer o download de uma página da web usando C++, vamos precisar de um pacote de biblioteca chamado cURL (em inglês, "Client URL Request Library"). Esta biblioteca nos permitirá fazer solicitações HTTP para um determinado URL e receber o conteúdo da página como resposta.
 
-```C++
-#include <iostream>
-#include <curl/curl.h>
+Primeiro, devemos incluir a biblioteca cURL em nosso código C++. Podemos fazer isso usando o comando `#include <curl/curl.h>`. Em seguida, precisamos inicializar uma "sessão" cURL usando a função `curl_easy_init()`. Isso nos permitirá realizar nossa solicitação HTTP.
 
-using namespace std;
+Agora, podemos definir a URL que desejamos baixar usando a função `curl_easy_setopt()`. Também devemos definir uma função de retorno (callback) para receber o conteúdo da página em um buffer de memória. Por exemplo:
 
-// Esta função será usada para armazenar o conteúdo da página da web em uma string
-size_t write_callback(char *ptr, size_t size, size_t nmemb, string *data)
-{
-    data->append(ptr, size * nmemb);
-    return size * nmemb;
-}
+```
+CURL *curl;
+CURLcode res;
+std::string buffer;
 
-int main()
-{
-    CURL *curl;
-    CURLcode res;
-    // URL da página que queremos baixar
-    string url = "https://www.example.com/";
+// Inicializar a sessão cURL
+curl = curl_easy_init();
+if (curl) {
+  // Definir a URL que desejamos baixar
+  curl_easy_setopt(curl, CURLOPT_URL, "https://exemplo.com");
 
-    // Inicializa a biblioteca curl
-    curl = curl_easy_init();
-    // Verifica se houve algum erro na inicialização
-    if (curl)
-    {
-        // Define a URL a ser baixada
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        // Define a função de callback para armazenar o conteúdo
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-        // Passa o endereço da string onde o conteúdo será armazenado
-        string data;
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &data);
-        // Executa a ação de download
-        res = curl_easy_perform(curl);
-        // Verifica se houve algum erro
-        if (res != CURLE_OK)
-            cerr << "Erro ao baixar a página: " << curl_easy_strerror(res) << endl;
-        else
-        {
-            // Imprime o conteúdo armazenado na string
-            cout << data << endl;
-        }
-        // Encerra a biblioteca curl
-        curl_easy_cleanup(curl);
-    }
-    return 0;
+  // Definir a função de retorno (callback)
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
+
+  // Passar nosso buffer de memória como argumento para a função de retorno
+  // Isso permitirá que a biblioteca cURL armazene o conteúdo da página no buffer
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
+
+  // Executar a solicitação HTTP
+  res = curl_easy_perform(curl);
+
+  // Verificar se ocorreu algum erro
+  if (res != CURLE_OK) {
+    // Ocorreu um erro. Podemos imprimir uma mensagem de erro ou realizar outra ação.
+  } else {
+    // A solicitação foi bem sucedida. O conteúdo da página está armazenado em nosso buffer.
+    // Podemos imprimi-lo na tela ou realizar outras ações com ele.
+    std::cout << buffer << std::endl; 
+  }
+
+  // Encerrar a sessão cURL
+  curl_easy_cleanup(curl);
 }
 ```
 
-A saída do código acima irá imprimir todo o conteúdo da página da web especificada. Você também pode modificar o código para realizar outras ações, como salvar o conteúdo em um arquivo.
+O código acima é apenas um exemplo básico de como podemos fazer o download de uma página da web usando a biblioteca cURL. Existem muitas outras opções e configurações disponíveis que podemos explorar. Para obter mais informações e exemplos de código, você pode consultar a documentação oficial da biblioteca cURL.
 
-## Profundidade Técnica
+## Deep Dive
 
-Para baixar uma página da web em C++, utilizamos a biblioteca libcurl. Primeiro, inicializamos a biblioteca com a função `curl_easy_init()` e, em seguida, podemos definir as opções de download usando a função `curl_easy_setopt()`. A opção `CURLOPT_URL` especifica a URL que queremos baixar, a opção `CURLOPT_WRITEFUNCTION` define a função de callback que será usada para armazenar o conteúdo e a opção `CURLOPT_WRITEDATA` passa o endereço da string onde o conteúdo será armazenado. Por fim, executamos a ação de download com `curl_easy_perform()` e encerramos a biblioteca com `curl_easy_cleanup()`.
+Para entender como a biblioteca cURL funciona em detalhes, é necessário ter um conhecimento básico de como as solicitações HTTP funcionam. Em resumo, uma solicitação HTTP é composta por um método (por exemplo, GET, POST, PUT) e um URL. Quando fazemos uma solicitação para uma página da web, o servidor recebe a solicitação e envia de volta uma resposta contendo o conteúdo da página. Neste processo, também ocorrem verificações de segurança, autenticação e outras etapas. A biblioteca cURL nos permite controlar e personalizar essas etapas de maneira eficiente.
+
+Outro aspecto importante da biblioteca cURL é sua capacidade de lidar com diferentes tipos de protocolos e conexões, como HTTP, HTTPS, FTP e até mesmo conexões criptografadas. Tudo isso é possível graças à sua compatibilidade com vários módulos e bibliotecas de criptografia.
+
+No geral, o cURL é uma ferramenta poderosa e versátil para fazer solicitações HTTP em nosso código C++. Se você estiver interessado em aprender mais sobre como fazer o download de páginas da web e realizar outras operações HTTP, certifique-se de dar uma olhada mais de perto na documentação e nos diversos recursos disponíveis online.
 
 ## Veja também
 
-- [Documentação da biblioteca libcurl](https://curl.se/libcurl/)
-- [Exemplos de uso da biblioteca libcurl em C++](https://curl.se/libcurl/cplusplus/) 
-- [Tutorial sobre como utilizar a biblioteca libcurl](https://codingislove.com/download-url-content-curl/)
+- [Documentação oficial do cURL](https://curl.se/docs/)
+- [Exemplo de código para fazer o download de uma página usando cURL em C++](https://stackoverflow.com/questions/978061/http-get-using-curl-in-c)
+- [Tutorial detalhado sobre o uso do cURL em C++](

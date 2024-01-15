@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Työskentely jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Kotlin: Työskentely jsonin kanssa"
 simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,70 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi JSON:in kanssa kannattaa työskennellä?
 
-Monet modernit sovellukset käyttävät JSON-muotoa tietojen tallentamisessa ja siirtämisessä. JSON on myös erittäin suosittu käytännön ohjelmointikielessä, kuten Kotlin. Tästä syystä on tärkeää ymmärtää, kuinka JSON toimii ja kuinka sitä käytetään Kotlinissa.
+Koska JSON on yksi yleisimmistä tiedonsiirtomuodoista, joka mahdollistaa tiedon siirtämisen ja tallentamisen eri sovellusten välillä. Sen yksinkertainen syntaksi ja helppo luettavuus tekevät siitä suositun vaihtoehdon monille ohjelmoijille. 
 
-## Kuinka
+## Kuinka: Esimerkkejä koodista ja tulostuksesta
 
-JSON-tietojen käsittely Kotlinissa on melko yksinkertaista, ja tässä on joitain käytännön esimerkkejä siitä, kuinka voit käyttää sitä omassa koodissasi. Kaikki esimerkit on kirjoitettu käyttäen Kotlinin virallista Google Gson-kirjastoa JSON-muunnokseen.
-
-### JSON-muunnosten tekeminen
+Kotlinilla on valmiita työkaluja JSON:in käsittelyyn, mikä tekee siitä helpon ja vaivattoman työkalun työskennellä JSON:in kanssa. Alla on esimerkkejä siitä, kuinka voit lukea ja kirjoittaa JSON:ia Kotlinilla.
 
 ```Kotlin
-// Luo yksinkertainen JSON-objekti
-val jsonObject = JsonObject()
-// Lisää arvoja objektiin
-jsonObject.add("nimi", "Matti")
-jsonObject.add("ika", 25)
-jsonObject.add("tyopaikka", "Ohjelmoija")
+// Luodaan JSON objekti käyttäen Kotlinin HashMapia
+val user = hashMapOf(
+    "name" to "Matti",
+    "age" to 25
+)
 
-// Muunna JSON-objekti merkkijonoksi ja tulosta se
-println(jsonObject.toString())
+// Muunnetaan HashMap JSON:iksi
+val jsonUser = JSONObject(user)
 
-// Output: {"nimi":"Matti","ika":25,"tyopaikka":"Ohjelmoija"}
+// Tulostetaan JSON
+println(jsonUser)
+
 ```
 
-### JSON-tietojen haku
+Tässä esimerkissä luodaan Kotlinin HashMap, johon lisätään kaksi avainta ja arvoa. Sitten muunnetaan tämä HashMap JSON-muotoon käyttäen JSONObject-luokkaa ja lopuksi tulostetaan JSON. Tulostus näyttää seuraavalta:
+
+```
+{ "name": "Matti", "age": 25 }
+```
 
 ```Kotlin
-// Luo JSON-muoto dataa
-val jsonString = "{\"nimi\":\"Matti\",\"ika\":25,\"tyopaikka\":\"Ohjelmoija\"}"
+// Luetaan JSON:ia tiedostosta
+val jsonString = File("users.json").readText()
 
-// Muunna merkkijono JSON-objektiksi
-val jsonObject = JsonParser().parse(jsonString).asJsonObject
+// Muunnetaan JSON Kotlinin HashMapiksi
+val usersMap = JSON.parseObject(jsonString, object : TypeReference<HashMap<String, Any>>(){})
 
-// Hae nimi ja tulosta se
-val nimi = jsonObject.get("nimi").asString
-println(nimi)
+// Tulostetaan kaikki käyttäjät
+for ((name, age) in usersMap) {
+    println("Name: $name, Age: $age")
+}
 
-// Output: Matti
 ```
 
-### JSON-taulukoiden käsittely
+Toisessa esimerkissä luetaan JSON-tiedosto ja muunnetaan se HashMapiksi käyttäen Kotlinin JSON-kirjastoa. Sitten tulostetaan kaikki käyttäjät käyttäen for-silmukkaa. Tulostus näyttää tältä:
 
-```Kotlin
-// Luo JSON-muotoinen taulukko
-val jsonArray = JsonArray()
-// Lisää tietueita taulukkoon
-jsonArray.add("Ensimmäinen")
-jsonArray.add("Toinen")
-jsonArray.add("Kolmas")
-
-// Muunna taulukko merkkijonoksi ja tulosta se
-println(jsonArray.toString())
-
-// Output: ["Ensimmäinen","Toinen","Kolmas"]
+```
+Name: Matti, Age: 25
+Name: Liisa, Age: 30
 ```
 
-## Syvempää tietoa
+## Syvemmälle: Lisää tietoa JSON:in käsittelystä
 
-JSON-muoto on rakenteeltaan hyvin yksinkertainen, ja sen avulla voidaan tallentaa monenlaisia tietoja. JSON-puu koostuu avaimista ja niiden arvoista. Kotlinin Gson-kirjasto tarjoaa kätevän tavan muuntaa JSON-dataa merkkijonoista olioiksi ja päinvastoin.
+JSON koostuu avaimista ja arvoista, jotka ovat tallennettuina tekstiin. Avaimet ja arvot erotetaan kaksoispisteellä ja parit pilkulla. JSON tukee myös erilaisia tietotyyppejä, kuten numeroita, merkkijonoja, totuusarvoja ja listoja.
 
-On myös tärkeää huomata, että JSON on erittäin suosittu dataformaatti modernien sovellusten rajapinnoissa. Tämä tarkoittaa, että ymmärtämällä JSON-muotoa ja sen käsittelyä Kotlinissa, voit helposti integroida sovelluksesi muiden palveluiden kanssa.
+JSON:in suosio johtuu sen yksinkertaisesta syntaksista ja se sopii hyvin siirtämiseen internetin kautta. Suurin osa modernista web-sovelluskehityksestä käyttää JSON:ia, joten sen hyväksikäyttö on erittäin hyödyllistä.
 
-## Katso myös
+# Katso myös
 
-- [Kotlinin virallinen Gson-kirjasto](https://github.com/google/gson)
-- [JSON-muoto ja sen käyttökohteet](https://datatracker.ietf.org/doc/html/rfc8259)
-- [JSON-dokumentaatio Kotlinissa](https://kotlinlang.org/docs/working-with-json.html)
+- [Kotlinin virallinen JSON-kirjasto: Gson](https://github.com/google/gson)
+- [Esimerkkejä JSON:in käsittelystä Kotlinilla](https://www.baeldung.com/kotlin-json)

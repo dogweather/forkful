@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "C# recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "C#"
 category:             "C#"
@@ -9,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to combine different strings into one cohesive sentence or phrase? Maybe you're creating a dynamic greeting for a user, or building a complex sentence from different variables. Whatever the case may be, concatenating strings is a useful and essential skill to have in your C# programming arsenal.
+## Why 
+
+Concatenating strings is an essential skill for any C# programmer. It allows you to dynamically create new strings by combining existing ones, making your code more flexible and efficient. Whether you're creating a program or working on a web application, knowing how to concatenate strings will greatly improve your coding experience. 
 
 ## How To
-Concatenating strings in C# is a fairly simple process. Here's an example of how to do it:
+
+Concatenating strings in C# is a simple process. First, you need to declare two or more strings that you want to combine. Then, you can use the "+" operator to concatenate them together.
+
+Let's see how this works with a simple example:
 
 ```C#
 string firstName = "John";
-string lastName = "Smith";
-string greeting = "Hello, " + firstName + " " + lastName + "!";
-Console.WriteLine(greeting);
+string lastName = "Doe";
+string fullName = firstName + " " + lastName;
+Console.WriteLine(fullName);
 ```
 
-The output of this code would be: `Hello, John Smith!` 
+In this example, we declare two strings, "firstName" and "lastName". Then, we use the "+" operator to concatenate them together and store the result in the "fullName" variable. Finally, we print out the variable to see the concatenated result: "John Doe".
 
-As you can see, we used the `+` operator to combine the different strings together. This is known as string concatenation. You can also use the `+=` operator to add onto an existing string. 
+You can also use the "string.Concat()" method to concatenate multiple strings at once. Here's an example:
 
 ```C#
-string username = "jsmith";
-string website = "www.example.com";
-website += "/"+ username;
-Console.WriteLine(website);
+string message = string.Concat("Hello", " ", "world!");
+Console.WriteLine(message);
 ```
 
-The output of this code would be: `www.example.com/jsmith`
+This will produce the same result as our previous example, "Hello world!".
 
-You can also use the `string.Concat()` method to concatenate multiple strings together. Here's an example:
+## Deep Dive 
 
-```C#
-string firstWord = "Hello";
-string secondWord = "World";
-string thirdWord = "!";
-string phrase = string.Concat(firstWord, " ", secondWord, thirdWord);
-Console.WriteLine(phrase);
-```
+When it comes to concatenating strings, it's important to keep in mind that the "string" data type in C# is immutable. This means that once a string is created, it cannot be changed. So, when we use the "+" operator or the "string.Concat()" method to concatenate strings, we are actually creating a new string object in memory.
 
-The output of this code would be: `Hello World!`
+To avoid creating unnecessary objects and saving memory, it's recommended to use the "StringBuilder" class when working with a large number of string concatenations. The "StringBuilder" class allows you to modify strings without creating new objects, making it more efficient.
 
-## Deep Dive
-Behind the scenes, when we use the `+` operator to concatenate strings, C# is using the `String.Concat()` method. This method takes in an array of strings and combines them together. So when we use the `+` operator, we are essentially creating an array of strings and passing it into the `String.Concat()` method.
-
-Another important concept to note is that strings are immutable, meaning they cannot be changed. So when we use the `+` operator or the `String.Concat()` method to concatenate strings, a new string is created in memory instead of modifying the existing one. This can have implications on the performance of your code, especially when dealing with large strings. One way to improve performance is by using the `StringBuilder` class, which allows for efficient string manipulation.
+Another thing to note is that when using the "+" operator, strings are concatenated from left to right. So, if the first string is large, it can cause performance issues. To avoid this, it's better to use "string.Format()" or "string.Concat()" methods, which allow you to specify the order of the strings.
 
 ## See Also
-- [String Concatenation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/addition-operator)
-- [String.Concat() Method Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat)
-- [StringBuilder Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
+
+If you want to learn more about string concatenation in C#, here are some helpful resources:
+
+- [Microsoft Docs - String Concatenation](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
+- [C# Corner - Working with Strings in C#](https://www.c-sharpcorner.com/article/working-with-strings-in-C-Sharp/)
+- [C# String Concatenation Tips and Tricks](https://www.codeguru.com/csharp-dotnet/csharp/strings-stringbuilder/string-concatenation-tips-and-tricks/)

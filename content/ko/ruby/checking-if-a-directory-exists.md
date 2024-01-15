@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 경로가 존재하는지 확인하는 방법"
-simple_title:         "경로가 존재하는지 확인하는 방법"
+title:                "디렉토리 존재 여부 확인하기"
+html_title:           "Ruby: 디렉토리 존재 여부 확인하기"
+simple_title:         "디렉토리 존재 여부 확인하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -9,24 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-Ruby 는 디렉토리가 존재하는지 확인하는 기능을 제공하며, 이를 통해 코드 안전성을 높일 수 있습니다.
+파일 또는 디렉토리가 존재하는지 확인하는 것은 프로그래밍에서 매우 유용합니다. 파일 미리 확인은 에러를 방지하고, 코드의 안정성을 높이며, 원하는 파일을 찾는 것을 보장합니다.
 
-## 하는 방법
+## 어떻게
 
 ```Ruby
-Dir.exist?('경로/디렉토리') #=> true or false
+if File.directory?("/Users/username/Documents")
+  puts "디렉토리가 존재합니다."
+else
+  puts "디렉토리가 존재하지 않습니다."
+end
 ```
 
-위의 예제 코드는 주어진 경로에 디렉토리가 존재하는지 확인하는 방법을 보여줍니다. 디렉토리가 존재하면 `true` 를 반환하고, 존재하지 않으면 `false` 를 반환합니다.
+위의 코드는 해당 디렉토리가 존재하는지 확인하는 간단한 예제입니다. 디렉토리 경로를 수정하고 실행하면 디렉토리가 존재하는지 여부가 출력됩니다.
 
-## 깊이 파고들기
+## 깊이 파헤치기
 
-디렉토리가 존재하는지 확인하기 위해서는 운영체제에게 `Dir.exist?` 메소드를 통해 해당 디렉토리 경로를 전달해줘야 합니다. 또한 디렉토리의 이름이나 경로가 정확하게 입력되어야 하며, 디렉토리가 존재하지 않는 경우 올바른 오류 처리를 해주어야 합니다.
+디렉토리 존재 여부를 확인하는 방법에는 몇 가지 다른 방법이 있지만, 대부분의 경우 `File.directory?` 메소드가 가장 효율적입니다. 이 메소드는 해당 경로가 디렉토리인지를 불리언 값으로 반환합니다. `File.exist?` 메소드는 파일 뿐만 아니라 디렉토리 또한 존재하는지 확인합니다. 
 
-## 또 다른 방법 알아보기
+## 또 다른 링크 더 보기
 
-- [Ruby 표준 라이브러리 문서 - Dir](https://ruby-doc.org/core-2.6.3/Dir.html)
-- [Ruby 가이드 - 디렉토리 다루기](https://www.rubyguides.com/2018/10/ruby-dir-glob/)
-- [rubyDir.exist?의 장단점](https://luizaugustomm.me/blog/rubydir-exist)
+* Ruby 공식 문서: https://ruby-doc.org/core-3.0.0/File.html#method-c-directory-3F
+* 파일 및 디렉토리 다루기 강좌: https://www.rubyguides.com/2015/05/working-with-files-ruby/

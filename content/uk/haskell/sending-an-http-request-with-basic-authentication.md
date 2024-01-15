@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Надсилання http-запиту з базовою аутентифікацією"
+title:                "Надсилання http-запиту з базовою аутентифікацією"
+html_title:           "Haskell: Надсилання http-запиту з базовою аутентифікацією"
 simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,53 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Звернення HTTP-запиту з базовою автентифікацією корисно для отримання доступу до захищених ресурсів, таких як приватні веб-сторінки або API-інтерфейси.
+Базова аутентифікація в HTTP - це простий і широко використовуваний спосіб автентифікації в Інтернеті. Це може бути корисно для веб-розробників, які хочуть захистити свої веб-додатки від несанкціонованого доступу.
 
 ## Як це зробити
 
 ```Haskell
-import Network.HTTP
-import Network.URI
-import Network.HTTP.Base (urlEncode)
-import Data.ByteString.Base64 (encode)
-import qualified Data.ByteString.Char8 as C (pack, unpack)
+-- Імпортуємо необхідні бібліотеки
+import Network.HTTP.Req
+import Data.Aeson
 
-main :: IO ()
-main = do
-    -- Задаємо URL для запиту
-    let url = "https://example.com/api/users"
+-- Створюємо функцію для створення запиту з базовою аутентифікацією
+basicAuthRequest :: IO (JsonResponse Value)
+basicAuthRequest = runReq defaultHttpConfig $ do
+  -- Встановлюємо налаштування для запиту
+  let options = defaults & auth ?~ basicAuth "username" "password"
+  -- Виконуємо запит з використанням налаштувань
+  req GET (https "www.example.com" /: "endpoint") NoReqBody jsonResponse options
 
-    -- Перетворюємо URL у тип URI
-    let uri = parseURI url
-
-    -- Створюємо об\'єкт HTTP-запиту з методом GET
-    let request = Request {rqURI = fromJust uri, rqMethod = GET, rqHeaders = [], rqBody = ""}
-
-    -- Додаємо заголовки автентифікації
-    let username = "my_username"
-    let password = "my_password"
-    let authString = C.unpack $ encode $ C.pack $ username ++ ":" ++ password
-    let Authorization = C.pack $ "Basic " ++ authString
-    let request' = request {rqHeaders = [("Authorization", Authorization)]}
-
-    -- Виконуємо запит і друкуємо вивід
-    response <- simpleHTTP request'
-    body <- getResponseBody response
-    putStrLn body
+-- Виклик функції та отримання результату
+response :: JsonResponse Value <- basicAuthRequest
+print (responseBody response)
 ```
 
-Приклад виводу запиту з базовою автентифікацією може виглядати так:
+Вивід:
 
 ```
-{"id": 1234, "name": "John Doe", "email": "johndoe@example.com"}
+Success (fromList [("id", Number 1)])
 ```
 
-## Детальний огляд
+## Глибше занурення
 
-Базова автентифікація передбачає включення заголовка "Authorization" у запиті, який містить базову64-кодовану комбінацію імені користувача та пароля, розділену двокрапкою. Цей заголовок потрібен для перевірки автентичності користувача. Детальну інформацію про базову автентифікацію можна знайти у [специфікації HTTP-протоколу](https://tools.ietf.org/html/rfc2617).
+Для відправки HTTP-запиту з базовою аутентифікацією, необхідно використати бібліотеку `http-conduit`. Вона надає функцію `withManager`, яка дозволяє обробляти налаштування підключень і передавати їх у всі запити.
 
-See Also:
+Також, потрібно визначити параметр `auth`, який приймає значення `BasicAuth` із 2 аргументами: ім'я користувача та пароль.
 
-- [Haskell HTTP бібліотека](https://hackage.haskell.org/package/HTTP)
-- [HTTP-протокол специфікація](https://tools.ietf.org/html/rfc2616)
-- [Як використовувати автентифікацію у Haskell](https://guide.aelve.com/haskell/use-http-client-authentication-663f9c48.html)
+## Дивись також
+
+- [Документація з бібліотеки Network.HTTP.Req](https://hackage.haskell.org/package/req)
+- [Приклад з базовою аутентифікацією в HTTP на сайті StackOverflow](https://stackoverflow.com/questions/13831501/haskell-get-request-with-http-conduit)

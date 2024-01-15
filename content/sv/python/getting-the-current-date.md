@@ -1,6 +1,7 @@
 ---
-title:                "Python: Hämta nuvarande datum"
-simple_title:         "Hämta nuvarande datum"
+title:                "Att få den nuvarande datumen"
+html_title:           "Python: Att få den nuvarande datumen"
+simple_title:         "Att få den nuvarande datumen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -9,74 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att kunna få tag på den aktuella datum och tiden är en viktig aspekt av programmering. Det kan hjälpa dig i många situationer, till exempel när du vill hålla koll på när en viss händelse inträffade eller när du vill generera dynamiskt innehåll baserat på den aktuella tiden. I denna bloggartikel kommer vi att gå igenom hur man får tag på den aktuella datumet och tiden i Python-programmeringsspråket.
+Att få den aktuella datumet är en vanlig uppgift när man jobbar med Python-programmering. Det kan vara användbart för att spåra datumet för en händelse, göra tidstämplar för loggning eller helt enkelt visa den aktuella tiden i ditt program.
 
-## Så här gör man
+## Så här gör du
 
-För att få den aktuella tiden i Python kan du använda funktionen datetime.now() från modulen datetime. För att använda denna funktion måste du först importera modulen genom att skriva ```Python import datetime``` i början av ditt program. Sedan kan du använda funktionen genom att skriva ```Python datetime.now()```. Om du bara vill ha datumet och inte tiden kan du använda funktionen date() istället för now(). Här är ett exempel på hur du kan använda dessa funktioner och vilken typ av utmatning du kan förvänta dig:
+För att få den aktuella datumet i Python använder vi modulen `datetime`. Här är ett enkelt exempel på hur du kan få den aktuella datumet och skriva ut det i konsolen:
+
+```Python 
+import datetime
+
+aktuell_datum = datetime.date.today()
+
+print("Idag är det", aktuell_datum)
+```
+
+Output: `Idag är det 2020-08-20`
+
+Du kan också anpassa hur datumet visas genom att använda metoder som `strftime()` och ange det önskade formatet. Här är ett exempel på hur du kan få datumet att visas som en sträng med formatet DD/MM/ÅÅÅÅ:
 
 ```Python
 import datetime
 
-nu = datetime.now()
-datum = datetime.date()
+aktuell_datum = datetime.date.today()
 
-print(nu)
-print(datum)
+formaterat_datum = aktuell_datum.strftime("%d/%m/%Y")
+
+print("Idag är det", formaterat_datum)
 ```
 
-Output:
-```
-2021-01-26 12:15:30.135473
-2021-01-26
-```
+Output: `Idag är det 20/08/2020`
 
-Som du kan se ger funktionen now() både datum och tid medan funktionen date() endast ger datumet. Om du vill ange ett specifikt datum eller tid istället för den aktuella tiden kan du använda funktionen datetime() och ange år, månad, dag, timme osv. som argument. Här är ett exempel på hur du kan använda det:
+Det finns många andra metoder och funktioner i `datetime`-modulen som du kan utforska för att få den aktuella datumet på olika sätt.
 
-```Python
-import datetime
+## Djupdykning
 
-datum = datetime.datetime(2020, 12, 31, 23, 59)
+När vi använder `datetime`-modulen för att få den aktuella datumet, använder vi faktiskt en klass som kallas `date`. En klass är ett blåtryck eller en mall för att skapa objekt. Med andra ord skapar vi ett objekt av klassen `date` när vi använder `datetime.date.today()`.
 
-print(datum)
-```
+Klassen date har attribut som `year`, `month` och `day` som ger specifik information om datumet. Det finns också metoder som `weekday()` som ger vilken veckodag datumet faller på.
 
-Output:
-```
-2020-12-31 23:59:00
-```
-
-Du kan också formatera utmatningen genom att använda formateringssträngar med funktionen strftime(). Här är ett exempel på hur en formateringssträng kan se ut och hur du använder den:
-
-```Python
-import datetime
-
-datum = datetime.datetime.now()
-
-print(datum.strftime("%d/%m/%y"))
-```
-
-Output:
-```
-26/01/21
-```
-
-## Djupgående
-
-Nu när du vet hur du kan få tag på den aktuella tiden i Python, låt oss titta lite närmare på modulen datetime och dess funktioner.
-
-DateTime-modulen innehåller flera andra användbara funktioner för datum och tidshantering. Här är några av dem:
-
-- datetime.combine(): Kombinerar datum och tid till ett datetime-objekt.
-- datetime.strptime(): Konverterar en sträng till ett datetime-objekt enligt ett visst datum- och tidsformat.
-- date.weekday(): Ger veckodagen för ett visst datum (0 för måndag, 6 för söndag).
-
-Du kan läsa mer om dessa och andra funktioner i det officiella Python-dokumentationen för datetime-modulen.
+Om du vill utforska mer om hur `datetime`-modulen fungerar och vilka andra möjligheter och funktioner det finns, kan du läsa mer i den officiella dokumentationen: https://docs.python.org/3/library/datetime.html
 
 ## Se även
 
-- [Python's officiella klockdokumentation](https://docs.python.org/3/library/datetime.html)
-- [En guide till datetime-modulen i Python](https://realpython.com/python-datetime/)
-- [Allt du behöver veta om datum och tidshantering i Python](https://www.programiz.com/python-programming/datetime)
+- https://www.geeksforgeeks.org/python-datetime-module-with-examples/
+- https://realpython.com/python-datetime/
+- https://www.programiz.com/python-programming/datetime

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Analisando o html"
-simple_title:         "Analisando o html"
+title:                "Analise de HTML"
+html_title:           "Arduino: Analise de HTML"
+simple_title:         "Analise de HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,61 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar o Arduino para analisar HTML?
+## Por que?
 
-A programação com Arduino é uma excelente forma de utilizar a tecnologia para automatizar tarefas e criar projetos interativos. Uma das possibilidades que o Arduino oferece é a capacidade de analisar e manipular dados em formato HTML. Quando se trata de trabalhar com informações da internet ou de sites, a análise de HTML se torna uma habilidade valiosa para conseguir extrair dados importantes e utilizá-los em seus projetos.
+Você pode estar se perguntando por que alguém se envolveria em analisar HTML usando um dispositivo Arduino. Bem, existem várias razões possíveis. Uma delas é que o Arduino é uma plataforma acessível e flexível, permitindo que desenvolvedores e entusiastas criem projetos criativos e úteis. Além disso, a análise de HTML pode ser útil em diversas aplicações, como em dispositivos IoT, sensores e até mesmo robôs.
 
-## Como fazer a análise de HTML com o Arduino?
+## Como fazer
 
-A primeira etapa é garantir que você tenha um microcontrolador Arduino e uma conexão com a internet. Você também precisará de um módulo Ethernet ou WiFi para se conectar à internet. Para ler um documento HTML, você precisará de uma biblioteca chamada `HTTPClient`, que irá permitir que você faça solicitações HTTP. Veja o código abaixo para um exemplo de como coletar informações de um site e exibir o HTML no monitor serial:
+Para começar a analisar HTML com o Arduino, você precisará de alguns componentes básicos, como um Arduino board, uma placa de prototipagem, cabos jumper e um display LCD (opcional). Além disso, é importante ter algum conhecimento básico de programação em Arduino. Com isso em mãos, vamos para o código!
 
 ```Arduino
 #include <SPI.h>
-#include <Ethernet.h>
+#include <WiFi.h>
 #include <HTTPClient.h>
+#include <ArduinoJson.h>
 
-EthernetClient client;
+String url = "https://exemplo.com";
 
 void setup() {
-  Serial.begin(9600);
+  //Inicializa o display LCD, se estiver usando
+  Serial.begin(115200);
+  delay(10);
 
-  // Conecta-se à internet usando o protocolo Ethernet
-  Ethernet.begin(mac);
+  // Conecta ao Wi-Fi
+  Serial.print("Conectando ao Wi-Fi...");
+  WiFi.begin("nome_da_rede", "senha_da_rede");
 
-  // O endereço IP do site que você deseja analisar
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Conectado com sucesso!");
+
+  //Realiza a requisição HTTP
   HTTPClient http;
-  http.begin("http://www.example.com");
-
-  // Faz uma solicitação GET para o endereço especificado
+  http.begin(url);
   int httpCode = http.GET();
 
-  // Verifica o status da solicitação
   if (httpCode > 0) {
-    // Lê todos os dados para o objeto
-    String html = http.getString();
-    // Exibe o HTML no monitor serial
-    Serial.println(html);
+    String payload = http.getString();
+
+    // Analisa o JSON com o ArduinoJSON
+    DynamicJsonDocument doc(1024);
+    deserializeJson(doc, payload);
+
+    String title = doc["title"];
+    String author = doc["author"];
+
+    Serial.println("Título: " + title);
+    Serial.println("Autor: " + author);
+  }
+  else {
+    Serial.println("Falha na conexão!");
   }
 
-  // Fecha a conexão com o site
   http.end();
 }
 
 void loop() {
-  // Nada acontece no loop neste exemplo
+  // Coloque aqui qualquer código que precise ser executado repetidamente
 }
 ```
 
-Ao executar este código, você poderá ver o HTML completo do site `www.example.com` no seu monitor serial. A partir daí, você pode utilizar diferentes funções e métodos para analisar e manipular esses dados de acordo com suas necessidades.
+Executando esse código, você poderá ver os dados do HTML na porta serial do Arduino. Isso pode ser útil para extrair informações específicas de uma página, como previsão do tempo, cotação de moedas, entre outros.
 
-## Abordagem mais aprofundada para analisar HTML
+## Mergulho profundo
 
-Existem várias maneiras de analisar o HTML em um site usando o Arduino. Uma delas é utilizar a biblioteca `ArduinoJson`, que permite a manipulação de dados em formato JSON, muito comum em sites modernos. Outra abordagem é utilizar a técnica de web scraping, que consiste em extrair informações específicas de um site de forma automatizada.
+Para entender melhor o processo de análise de HTML com o Arduino, é importante conhecer algumas bibliotecas utilizadas no exemplo acima. A biblioteca WiFi permite a conexão com a internet, enquanto a HTTPClient é responsável por realizar as requisições HTTP. Já a ArduinoJSON é utilizada para analisar dados em formato JSON, muito comum em páginas da web.
 
-É importante lembrar que a análise de HTML pode ser útil em várias situações, desde a criação de sistemas de automação doméstica até a coleta de dados para pesquisas ou análises. Além disso, com o aumento da conectividade e da internet das coisas, essa habilidade se tornará cada vez mais importante para a criação de projetos Arduino inovadores e úteis.
+Além disso, existem outras maneiras de analisar HTML com o Arduino, como utilizando a biblioteca ESP8266WebServer, por exemplo. É importante explorar e experimentar diferentes métodos para encontrar o mais adequado para o seu projeto.
 
 ## Veja também
 
-- [ArduinoJson Library](https://arduinojson.org)
-- [Artigo sobre web scraping com Arduino](https://medium.com/@saumitrajoshi/scrape-website-data-using-arduino-and-raspberry-pi-7f60c47420f9)
-- [Tutorial de análise de HTML com Arduino](https://create.arduino.cc/projecthub/hcrobotic/a-simple-way-to-parse-html-on-an-arduino-0afbd0)
+- [Guia do iniciante do Arduino](https://www.arduino.cc/en/Guide/HomePage)
+- [Documentação da biblioteca HTTPClient](https://github.com/espressif/arduino-esp32/tree/master/libraries)
+- [Tutorial de análise de JSON com o Arduino](https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/)
+- [Projeto prático de análise de HTML com o Arduino](https://create.arduino.cc/projecthub/Ujwal_Bhattacharya/arduino-based-web-page-reader-eaf1ca)

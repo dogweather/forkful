@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Å arbeide med yaml"
-simple_title:         "Å arbeide med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Kotlin: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,60 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-YAML er et svært nyttig format for å lagre og håndtere data i programmering. Det er enkelt å lese og skrive, og kan brukes til å representere komplekse data på en lesbar måte. Hvis du ønsker å arbeide med data i dine Kotlin-prosjekter, er det vel verdt å lære å bruke YAML.
+Å jobbe med YAML kan være en nyttig ferdighet å lære for å jobbe med konfigurasjonsfiler, spesielt i web- og mobilapplikasjoner. Det er et enkelt og leselig format som gjør det enkelt å organisere og strukturere data.
 
-# Slik gjør du det
+## Hvordan
 
-For å arbeide med YAML i Kotlin, kan du bruke et bibliotek som Kalidasa. Først må du legge til avhengigheten i din byggefil:
-
-```Kotlin
-dependencies {
-    implementation("com.eclipsesource.kalidasa:kalidasa:3.0.0")
-}
-```
-
-For å lese en YAML-fil og konvertere den til en mappe i Kotlin, kan du bruke følgende kode:
+For å begynne å jobbe med YAML i Kotlin, må du først importere "kaml" biblioteket i ditt prosjekt. Deretter kan du begynne å lage og behandle YAML-filer.
 
 ```Kotlin
-val yamlString = """
-    navn: John Doe
-    alder: 30
-    favorittfarge: rød
+// Importere Yaml-klassen fra kaml-biblioteket
+import kaml.Yaml
+
+// Opprette en YAML-fil
+val yaml = """
+    navn: John Smith
+    alder: 25
+    favorittfarge: blå
 """.trimIndent()
 
-val mapper = YamlParser().load(yamlString)
+// Endre en verdi og lagre filen
+yaml.put("favorittfarge", "rød")
 ```
 
-Du kan deretter få tilgang til verdiene i mappen som vanlige Kotlin-variabler:
+#### Resultat:
 
 ```Kotlin
-val navn = mapper["navn"] as String
-val alder = mapper["alder"] as Int
-val favorittfarge = mapper["favorittfarge"] as String
+navn: John Smith
+alder: 25
+favorittfarge: rød
 ```
 
-Du kan også opprette en YAML-fil fra en eksisterende mappe i Kotlin ved å bruke følgende kode:
+## Dypdykk
+
+I tillegg til å lage og endre YAML-filer, kan du også bruke kaml biblioteket til å konvertere YAML til Kotlin dataklasser og vice versa. Dette er nyttig når du arbeider med større og mer komplekse datastrukturer.
 
 ```Kotlin
-val mappe = mapOf(
-    "navn" to "Jane Doe",
-    "alder" to 25,
-    "favorittfarge" to "blå"
-)
+// Opprette en dataklasse
+data class Person(val navn: String, val alder: Int, val favorittfarge: String)
 
-val yamlString = YamlProducer().dump(mappe)
+// Konvertere YAML til Kotlin dataklasse
+val person = Yaml.default.decodeFromString(Person.serializer(), yaml)
+
+// Endre favorittfargen
+person.favorittfarge = "grønn"
+
+// Konvertere tilbake til YAML-fil
+val nyttYaml = Yaml.default.encodeToString(Person.serializer(), person)
 ```
 
-# Dypdykk
+#### Resultat:
 
-Når du arbeider med YAML i Kotlin, må du være klar over noen viktige konsepter. Først og fremst er det viktig å skille mellom en YAML-tekststreng og en mappe i Kotlin. En YAML-tekststreng er bare strengrepresentasjonen av et YAML-dokument, mens en mappe i Kotlin er en strukturert samling av data.
+```Kotlin
+navn: John Smith
+alder: 25
+favorittfarge: grønn
+```
 
-Det kan også være lurt å lære om hvordan du konfigurerer Kalidasa-biblioteket for å behandle spesielle YAML-funksjoner, for eksempel tilpassede konverteringer og valideringer.
+## Se Også
 
-# Se også
-
-- [Kotlin hjemmeside](https://kotlinlang.org/)
-- [YAML spesifikasjon](https://yaml.org/)
-- [Kalidasa dokumentasjon](https://github.com/kalidasa-kt/kalidasa/blob/master/docs/overview.md)
+- [Offisiell Kotlin Dokumentasjon om YAML](https://kotlinlang.org/docs/yaml.html)
+- [Kaml Biblioteket Dokumentasjon](https://github.com/MicroUtils/kotlin-logging#configuration)
+- [En Gjennomgang av YAML Syntaks](https://www.baeldung.com/yaml-syntax-kotlin)

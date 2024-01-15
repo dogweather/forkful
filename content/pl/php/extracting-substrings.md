@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Wyodrębnianie podciągów"
-simple_title:         "Wyodrębnianie podciągów"
+title:                "Wydobywanie podłańcuchów"
+html_title:           "PHP: Wydobywanie podłańcuchów"
+simple_title:         "Wydobywanie podłańcuchów"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,37 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często, podczas pisania kodu PHP, możemy natknąć się na potrzebę wyodrębnienia części tekstu z większego ciągu znaków. Jest to niezbędne, gdy chcemy wyciągnąć informacje ze złożonych danych lub zmodyfikować tekst na określony sposób. W tym artykule dowiesz się, jak wykorzystać funkcję substr() do ekstrakcji podciągów i jak może Ci to ułatwić programowanie w PHP.
+Często podczas tworzenia skryptów w PHP, jesteśmy zmuszeni do manipulacji ciągami znaków. Jednym z powszechnych zadań jest wyciąganie fragmentów (substring) z istniejącego ciągu znaków. W tym artykule dowiesz się, dlaczego i jak to zrobić w PHP.
 
 ## Jak to zrobić
 
-Funkcja substr() jest wbudowana w PHP i służy do wyodrębniania podciągów ze stringów. Aby jej użyć, musimy podać dwa argumenty - pierwszym jest string, z którego chcemy wyciągnąć podciąg, a drugim jest pozycja początkowa oraz (opcjonalnie) długość podciągu. Zapoznajmy się z przykładem:
+Aby wyciągnąć fragment ciągu znaków w PHP, musimy użyć funkcji `substr()`. Jej składnia jest następująca: `substr($string, $start, $length)`, gdzie `$string` to ciąg znaków, z którego chcemy wyciągnąć fragment, `$start` to indeks początkowy, a `$length` to długość wyciąganego fragmentu. Na przykład:
 
 ```PHP
-$tekst = "Witaj w świecie PHP!";
-echo substr($tekst, 0, 5);
+<?php
+$string = "Hello World";
+echo substr($string, 0, 5); // wypisze "Hello"
 ```
 
-W wyniku otrzymamy wyświetlony fragment tekstu "Witaj". Pierwszy argument wskazuje na zmienną $text, drugi określa, że chcemy wyciąć fragment od pierwszego znaku (o indeksie 0) i na długość 5 znaków. Jeśli nie podamy trzeciego argumentu, zostanie wyświetlony podciąg od podanej pozycji do końca stringa. Spróbujmy teraz wyodrębnić inny fragment:
+Jeśli chcemy wyciągnąć fragment od końca ciągu, możemy użyć ujemnego indeksu. Na przykład `$start = -5` oznacza, że będziemy zaczynać od piątego znaku od końca. Możemy również pominąć parametr `$length`, wtedy zostanie wyciągnięty cały dostępny fragment od wybranego indeksu. Przykład:
 
 ```PHP
-$tekst = "Lubisz programować w PHP?";
-echo substr($tekst, 15);
-```
-
-Wynikiem będzie wyświetlenie zapytania "PHP?". W tym przypadku pominięliśmy trzeci argument, więc zostanie wyświetlony podciąg o długości od 15 znaku do końca stringa. Możemy również wykorzystać liczbę ujemną jako drugi argument, co oznacza liczenie od końca stringa - np. -5 oznacza, że podciąg będzie składał się z ostatnich 5 znaków. Poniższy przykład wyświetli podciąg "lować":
-
-```PHP
-$tekst = "Programowanie w PHP jest fajne!";
-echo substr($tekst, -6);
+<?php
+$string = "Hello World";
+echo substr($string, -5); // wypisze "World"
 ```
 
 ## Deep Dive
 
-Funkcja substr() pozwala także na dokładniejsze określenie pozycji rozpoczęcia podciągu oraz jego długości. Możemy również wykorzystać ją w pętlach lub innych warunkach, aby dynamicznie wyodrębniać różne fragmenty tekstu. Warto zapoznać się ze wszystkimi możliwościami tej funkcji, ponieważ może ona być bardzo pomocna w pracy z tekstem w PHP.
+Funkcja `substr()` może również służyć do podstawiania znaków w ciągu. W tym celu możemy podać trzeci parametr, który będzie traktowany jako znaki, które chcemy wstawić w wybranym miejscu. Przykład:
 
-## Zobacz także
+```PHP
+<?php
+$string = "Hello World";
+echo substr($string, 6, 0, "to the "); // wypisze "Hello to the World"
+```
 
-- Dokumentacja PHP dla funkcji substr() - (https://www.php.net/manual/en/function.substr.php)
-- Przykłady użycia substr() na stronie W3Schools - (https://www.w3schools.com/php/func_string_substr.asp)
-- Współpracujące z substr() funkcje do pracy z tekstem w PHP - (https://www.php.net/manual/en/ref.strings.php)
+Dodatkowo, możemy użyć funkcji `strpos()` do znalezienia indeksu danego słowa lub znaku w ciągu, a następnie użyć tej wartości jako parametr `$start`. Przykład:
+
+```PHP
+<?php
+$string = "Hello World";
+$start = strpos($string, "World"); // zwraca 6
+echo substr($string, $start, 5); // wypisze "World"
+```
+
+## Zobacz również
+
+Jeśli interesuje Cię więcej o ciągach znaków w PHP, zajrzyj do dokumentacji na oficjalnej stronie PHP lub przeczytaj artykuł o wyrażeniach regularnych w PHP.

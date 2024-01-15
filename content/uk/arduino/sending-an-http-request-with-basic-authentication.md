@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Надсилання запиту http з основною автентифікацією"
-simple_title:         "Надсилання запиту http з основною автентифікацією"
+title:                "Надсилання http-запиту з основною автентифікацією"
+html_title:           "Arduino: Надсилання http-запиту з основною автентифікацією"
+simple_title:         "Надсилання http-запиту з основною автентифікацією"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -9,72 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Почему: Передаючи HTTP-запит з базовою аутентифікацією, ви можете забезпечити безпеку передаваних даних. Це важливо, якщо ви використовуєте вашу Arduino для зберігання чутливих даних або для комунікації з веб-сервером.
 
-Надсилання HTTP запиту з базовою аутентифікацією є важливим кроком у забезпеченні безпеки вашого проекту. Це дає можливість обмінюватися даними з іншими серверами та апаратною частиною.
+Як це зробити: Для початку, вам потрібно підключити вашу Arduino до Інтернету за допомогою Ethernet-шилда чи Wi-Fi модуля. Після цього, вам знадобиться налаштувати HTTP-запит і вказати параметри аутентифікації. Нижче подані приклади та результати для платформи Arduino UNO з Ethernet-шилдом.
 
-## Як
+```Arduino
+// Підключення бібліотеки Ethernet
+#include <Ethernet.h>
 
-Для того, щоб надіслати HTTP запит з базовою аутентифікацією, вам спочатку необхідно налаштувати необхідні бібліотеки на вашому пристрої. Прикладами таких бібліотек є "WiFiClient.h", "ESP8266WiFi.h" та "HTTPClient.h". Далі, вам потрібно підключитися до вашої Wi-Fi мережі і налаштувати основну аутентифікацію, використовуючи ваші облікові дані. Потім виконайте запит за допомогою функцій "begin" і "GET", та отримайте відповідь з сервера. Нижче ми приведені приклад відправки HTTP запиту з базовою аутентифікацією до сервера "example.com" і отримання відповіді на запит.
+// Опір з'єднання
+byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
-```arduino
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <HTTPClient.h>
+// Адреса сервера з базовою аутентифікацією
+char server[] = "your.server.com";
 
-const char* ssid = "YourNetworkName";
-const char* password = "YourNetworkPassword";
+// Адреса HTTP-запиту та параметри аутентифікації
+char path[] = "/api/data";
+char auth[] = "username:password";
 
 void setup() {
-  Serial.begin(115200);
-  delay(100);
+  // Ініціалізація Ethernet-контролера
+  Ethernet.begin(mac);
 
-  WiFi.begin(ssid, password);
+  // Передача HTTP-запиту з авторизацією
+  client.println("GET " + String(path) + " HTTP/1.1");
+  client.println("Authorization: Basic " +base64.b64encode(String(auth)));
+  client.println();
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
+  // Отримання результатів
+  while (client.available()) {
+    char c = client.read();
+    Serial.write(c);
   }
-  Serial.println("Connected to the WiFi network");
 }
 
 void loop() {
-  // Make HTTP request
-  HTTPClient http;
 
-  http.begin("http://example.com");
-  http.setAuthorization("username", "password");
-  int httpCode = http.GET();
-
-  if (httpCode > 0) { // Check for the returning code
-    String payload = http.getString();
-    Serial.println(httpCode);
-    Serial.println(payload);
-  }
-
-  http.end(); //Free the resources
-  delay(5000); // Make request every 5 seconds
 }
 ```
 
-Виведення що отримується від сервера:
+Результат виводу на моніторі портів виглядатиме приблизно так:
 
 ```
-200
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
+HTTP/1.1 200 OK
+Date: Mon, 01 Nov 2021 00:00:00 GMT
+Server: Apache
 ...
-</html>
 ```
 
-## Глибоке поринання
+Розшифровування блоку коду:
+- Підключаємо бібліотеку Ethernet та створюємо змінну для інтерфейсу з мак-адресою контролера.
+- Вказуємо адресу сервера, який очікує базову аутентифікацію.
+- Встановлюємо шлях до HTTP-запиту та параметри аутентифікації.
+- Ініціалізуємо Ethernet-контролер та відправляємо HTTP-запит з логіном та паролем, закодованими у форматі [Base64](https://en.wikipedia.org/wiki/Base64).
+- Очікуємо на результати та виводимо їх на монітор портів.
 
-Основна аутентифікація (Basic Authentication) є простою та широко використовуваною технологією для забезпечення безпеки у мережевих протоколах. Вона використовує відомі нам заголовки "Authorization" та "Realm", які дозволяють серверу перевіряти облікові дані користувачів та надавати доступ до ресурсів. Ця технологія використовує хеш-функції та базову кодування для забезпечення безпеки даних під час обміну.
-
-## Дивіться також
-
-- [ESP8266 WiFiClient Офіційна документація](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/src/WiFiClient.h)
-- [HTTPClient Офіційна документація](https://github.com/arduino-libraries/HTTPClient)
-- [Простий приклад використання HTTPClient бібліотеки](https://randomnerdt
+Глибоке занурення: Базова аутентифікація застосовує механізм передавання логіна та пароля у вигляді закодованого рядка у заголовку `Authorization` HTTP-запиту. При цьому, передавані дані не є криптографічно захищеними, тому не рекомендується використовувати їх для передачі чутливої інформації. К

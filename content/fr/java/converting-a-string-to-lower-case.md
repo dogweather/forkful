@@ -1,5 +1,6 @@
 ---
-title:                "Java: Convertir une chaîne en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Java: Convertir une chaîne en minuscules"
 simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Java"
 category:             "Java"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+Les développeurs utilisent souvent la conversion de chaîne en minuscules pour faciliter la manipulation de données et améliorer les performances du code. Par exemple, il peut être utile de comparer des chaînes de caractères sans tenir compte de la casse, ou de trier une liste de mots dans l'ordre alphabétique sans se soucier des majuscules.
 
-La conversion d'une chaîne de caractères en minuscules peut être utile pour de nombreuses raisons en programmation, notamment pour faciliter la comparaison de chaînes, pour l'analyse de données ou pour afficher du texte en minuscules dans l'interface utilisateur.
+## Comment faire
+La conversion d'une chaîne en minuscules en Java est assez simple. Tout d'abord, il faut utiliser la méthode `toLowerCase()` de la classe `String` sur la chaîne à convertir. Par exemple :
+```java
+String phrase = "Bonjour le MONDE !";
+String phraseEnMinuscules = phrase.toLowerCase();
 
-## Comment Faire
+System.out.println(phraseEnMinuscules); // affiche "bonjour le monde !"
+```
+Comme on peut le voir dans l'exemple ci-dessus, la méthode `toLowerCase()` renvoie une nouvelle chaîne de caractères avec tous les caractères en minuscules.
 
-Pour convertir une chaîne en minuscules en utilisant Java, vous pouvez utiliser la méthode `toLowerCase()` de la classe `String`. Voici un exemple de code et son résultat :
+Il est également possible de passer un paramètre `Locale` à la méthode, pour prendre en compte les spécificités de la langue. Par exemple, pour la langue française, on peut utiliser `Locale.FRENCH` pour gérer les accents et les caractères spéciaux. Voici un exemple :
+```java
+String phrase = "Élémentaire, mon cher Watson !";
+String phraseEnMinuscules = phrase.toLowerCase(Locale.FRENCH);
 
-```Java
-String str = "Bonjour Tout Le Monde!";
-System.out.println(str.toLowerCase());
-// Output : bonjour tout le monde!
+System.out.println(phraseEnMinuscules); // affiche "élémentaire, mon cher watson !"
 ```
 
-Vous pouvez également utiliser la classe `Character` pour convertir des caractères individuels en minuscules. Voici un exemple :
+## Plongée en profondeur
+Sous le capot, la méthode `toLowerCase()` utilise la table de correspondance des caractères ASCII pour convertir les caractères en minuscules. Cependant, cette méthode n'est pas adaptée pour toutes les langues, car certaines ont des règles de conversion plus complexes. Par exemple, en turc, la conversion de la lettre "I" en minuscule donne un caractère différent ("ı") alors que la table ASCII donne "i". Dans ces cas-là, il est préférable d'utiliser la méthode `toUpperCase()` avec le paramètre `Locale` adapté.
 
-```Java
-char c = 'A';
-System.out.println(Character.toLowerCase(c));
-// Output : a
-```
+Il est également important de noter que la méthode `toLowerCase()` renvoie toujours une nouvelle chaîne de caractères, même si la chaîne originale était déjà en minuscules. Ainsi, si vous utilisez cette méthode plusieurs fois dans un même code, cela peut entraîner une perte de performance. Dans ce cas, il peut être judicieux de d'abord vérifier si la chaîne est déjà en minuscules avant d'appeler la méthode.
 
-## Plongée Profonde
-
-En Java, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Ainsi, lors de la conversion d'une chaîne en minuscules, une nouvelle chaîne est créée et renvoyée par la méthode `toLowerCase()`, avec toutes les lettres en minuscules.
-
-Il est également important de noter que la conversion en minuscules dépend de la locale de l'ordinateur, car certaines langues n'ont pas de notion de majuscules et de minuscules. Vous pouvez spécifier une locale lors de la conversion en utilisant une surcharge de la méthode `toLowerCase()`, par exemple :
-
-```Java
-String str = "HÉLLO";
-System.out.println(str.toLowerCase(Locale.FRENCH));
-// Output : héllö
-```
-
-## Voir Aussi
-
-- [Documentation officielle de la méthode toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Tutoriel sur les chaînes de caractères en Java](https://www.w3schools.com/java/java_strings.asp)
-- [Article sur les locales en Java](https://www.tutorialspoint.com/java/java_locale.htm)
+## Voir aussi
+- [Java String toLowerCase() method documentation](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toLowerCase())
+- [Java Locale class documentation](https://docs.oracle.com/javase/10/docs/api/java/util/Locale.html)

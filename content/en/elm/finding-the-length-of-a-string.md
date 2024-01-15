@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Elm recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,53 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-When working with strings in Elm, one common task is finding the length of a string. This can be useful for a variety of reasons, such as checking the validity of user input or manipulating strings in different ways.
+Finding the length of a string may seem like a simple task, but it can prove to be quite useful in programming. One reason someone may want to find the length of a string is to validate input data and ensure it meets a specific length requirement.
 
 ## How To
-
-To find the length of a string in Elm, we can use the `String.length` function. Let's take a look at an example:
-
-```Elm
-import String
-
-myString = "Hello, world!"
-
-String.length myString
-
--- Output: 13
-```
-
-In this example, we first import the `String` module which contains the `length` function. We then assign a string to the variable `myString` and pass it as an argument to the `String.length` function. The output is the length of the string, which in this case is 13.
-
-We can also directly use the `length` function without importing the `String` module, as it is a part of the Elm core library:
+To find the length of a string in Elm, we can use the `String.length` function. Here's an example:
 
 ```Elm
-length "Hello, world!"
-
--- Output: 13
+stringLength : String -> Int
+stringLength str =
+    String.length str
 ```
+
+In the above code, we define a function called `stringLength` that takes in a string as an argument and returns an integer representing the length of that string. The `String.length` function is then used to find the length of the given string.
+
+Let's try it out with a sample string:
+
+```Elm
+stringLength "Hello World" --> 11
+```
+
+As we can see, the string "Hello World" has a length of 11 characters, including the space between "Hello" and "World".
 
 ## Deep Dive
+Under the hood, the `String.length` function simply iterates through the characters in the string and counts them. However, there are a few things to keep in mind when finding the length of a string in Elm.
 
-While the `String.length` function may seem straightforward, there are some intricacies to be aware of. For example, it counts each character in the string, including spaces, punctuation, and special characters. In the first example, the length of the string "Hello, world!" was 13, but if we were to add a space at the end, the length would become 14.
+Firstly, it's important to remember that in Elm, strings are represented as a list of characters (i.e. `List Char`). This means that finding the length of a string in Elm is essentially the same as finding the length of a list.
 
-Additionally, the `length` function works with any type of string, whether it be letters, numbers, or even emojis.
-
-```Elm
-length "12345"
-
--- Output: 5
-
-length "😊😊😊"
-
--- Output: 3
-```
-
-It's also important to note that the `length` function is O(n), meaning that the time it takes to find the length of a string increases linearly as the string length increases. This is something to keep in mind when working with longer strings and considering performance.
+Secondly, the `String.length` function is Unicode-aware, meaning it takes into account multi-byte characters when counting the length of a string. This is important to keep in mind for internationalization and handling special characters.
 
 ## See Also
-
-- Official Elm Documentation on `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
-- Examples of working with strings in Elm: https://dev.to/jfuentes/working-with-strings-in-elm-1l4d
-- A comprehensive guide to becoming an Elm master: https://medium.com/javascript-scene/the-elm-architecture-b4999d07b1d7
+- [Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Basics](https://elmprogramming.com/elmbasics/introduction.html)

@@ -1,5 +1,6 @@
 ---
-title:                "Arduino recipe: Checking if a directory exists"
+title:                "Checking if a directory exists"
+html_title:           "Arduino recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,50 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-When programming an Arduino, it is important to know if a certain directory or folder exists. This is useful for managing file paths and preventing the program from crashing if it encounters a non-existent directory.
+Checking if a directory exists is an important aspect of programming, especially on the Arduino platform. It allows you to ensure that the program is accessing the correct directory and prevents errors from occurring.
 
 ## How To
-
-To check if a directory exists in Arduino, we can use the `SD.exists()` function. Let's take a look at an example:
-
-```
+```Arduino
+#include <SPI.h>
 #include <SD.h>
 
 void setup() {
-  Serial.begin(9600);
   // initialize SD card
-  if(!SD.begin(4)) {
-    Serial.println("SD card initialization failed.");
-    while(true);
+  if(!SD.begin(10)) {
+    // if directory does not exist, create it
+    SD.mkdir("myDirectory");
   }
 }
 
 void loop() {
-  // check if directory "data" exists
-  if(SD.exists("/data")) {
-    Serial.println("Directory exists!");
-  } else {
-    Serial.println("Directory does not exist.");
-  }
-  delay(1000);
+  // do something with directory
 }
 ```
 
-In this example, we first initialize the SD card in the `setup()` function. Then in the `loop()` function, we use the `SD.exists()` function to check if the directory named "data" exists. If it does, we print out "Directory exists!" to the serial monitor. If it doesn't, we print out "Directory does not exist."
+The above code block shows how to use the `SD.mkdir()` function to check if a directory exists and create it if it doesn't. This function is part of the SD library which needs to be included in order to access the SD card on the Arduino.
 
-You can modify this code to check for any directory on your SD card. The `SD.exists()` function takes in a string as its parameter, which is the path to the directory you want to check. You can also use this function to check if a specific file exists in a directory.
+Sample output:
+```
+Creating directory: myDirectory
+```
 
 ## Deep Dive
+Behind the scenes, the `SD.mkdir()` function uses the standard Arduino `mkdir()` function which is part of the `SPI.h` library. This function takes in a string as its argument, representing the name of the directory to be created.
 
-Under the hood, the `SD.exists()` function uses the `SD.open()` function to check for the directory. If the directory exists, it returns a `File` object and then closes it. If the directory doesn't exist, it returns a null `File` object. This is why we can use the `if` statement to check for its existence.
+One important thing to note is that the `mkdir()` function can only create one directory at a time. So, if you want to create multiple directories, you will need to use a loop or call the function multiple times.
 
-It is important to note that the `SD.exists()` function only works if the SD card is properly initialized and mounted. If not, it will always return false even if the directory does exist.
+If the directory already exists, the `SD.mkdir()` function will not create a new directory and will instead return a false value. This can be useful in case you need to check if a specific directory exists before trying to create it.
 
 ## See Also
-
-- [SD Library Reference for Arduino](https://www.arduino.cc/en/Reference/SD)
-
-- [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-
-- [Introduction to SD card modules for Arduino](https://www.instructables.com/id/Introduction-to-SD-Card-Modules-for-Arduino/)
+- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
+- [SPI Library Reference](https://www.arduino.cc/en/Reference/SPI)
+- [Creating and Removing Directories on an SD card](https://create.arduino.cc/projecthub/SurtrTech/creating-and-removing-directories-on-sd-card-3664c1)

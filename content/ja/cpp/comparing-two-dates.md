@@ -1,5 +1,6 @@
 ---
-title:                "C++: 2つの日付の比較"
+title:                "2つの日付の比較"
+html_title:           "C++: 2つの日付の比較"
 simple_title:         "2つの日付の比較"
 programming_language: "C++"
 category:             "C++"
@@ -10,54 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-
-C++で日付を比較することが重要なのでしょうか？その答えは、日付がプログラムにとって重要な情報であり、正確な比較が必要な場合があるからです。例えば、予定されたイベントの日付を比較する場合や、期限切れのアイテムを自動的に削除する場合などです。
+日付を比較することは、日付データを操作するために必要な重要なスキルです。例えば、ある日付が別の日付よりも前なのか後なのかを判断する必要がある場合や、日付をソートする場合などに役立ちます。
 
 ## 方法
-
-日付を比較するためには、まずは日付をデータ型として扱えるようにする必要があります。C++では、`time.h`ヘッダーファイルに含まれる`struct time`を使用することができます。次に、二つの日付をそれぞれ`struct time`の変数に代入し、`difftime()`関数を使用して比較します。以下のコード例を参考にしてください。
-
+以下のようなコードを使って、2つの日付を比較する方法を説明します。
 ```C++
-// 日付を比較するプログラム
-
 #include <iostream>
-#include <time.h>
-
-using namespace std;
+#include <ctime>
 
 int main() {
-  // 二つの日付を設定
-  struct time date1 = {01, 05, 2021}; // 1月5日, 2021年
-  struct time date2 = {13, 02, 2021}; // 2月13日, 2021年
+    // 日付を表すtm構造体の作成
+    std::tm day1 = { 0, 0, 12, 3, 5, 121}; // 12:00:00 March 3, 2021
+    std::tm day2 = { 0, 0, 10, 3, 5, 121}; // 12:00:00 March 10, 2021
+    
+    // std::mktime関数を使ってtm構造体をtime_t型に変換
+    std::time_t time1 = std::mktime(&day1);
+    std::time_t time2 = std::mktime(&day2);
 
-  // 日付を比較
-  double difference = difftime(mktime(&date1), mktime(&date2));
-
-  // 結果を出力
-  if(difference > 0) {
-    cout << "date1はdate2よりも後の日付です。" << endl;
-  } else if(difference < 0) {
-    cout << "date1はdate2よりも前の日付です。" << endl;
-  } else {
-    cout << "date1とdate2は同じ日付です。" << endl;
-  }
-
-  return 0;
+    if (time1 < time2)
+        std::cout << "day1 is before day2";
+    else if (time1 > time2)
+        std::cout << "day2 is before day1";
+    else
+        std::cout << "day1 and day2 are the same";
+    
+    return 0;
 }
 ```
+上記のコードでは、2つの日付を別々のtm構造体に作成し、std::mktime関数を使ってtime_t型に変換してから比較しています。
 
-上記のコードを実行すると、`date1`が`date2`よりも後の日付であるという結果が出力されます。
+以下は、コードの実行結果です。
+```
+day2 is before day1
+```
 
 ## ディープダイブ
+日付を比較する際に留意するべき点があります。大きく分けて以下の2つが挙げられます。
 
-日付を比較する際には以下のポイントに注意することが重要です。
+- 日付の表現方法: C++では日付を様々な形式で表現することができますが、それぞれの表現方法によって比較の仕方が異なります。上のコードでは、標準的なtm構造体を使って日付を表現しましたが、別の方法を使う場合は比較の方法も変える必要があります。
+- タイムゾーンの考慮: タイムゾーンによって日付や時刻が異なるため、比較をする際にはタイムゾーンを考慮する必要があります。例えば、同じ日付でも日本とアメリカではタイムゾーンが異なるため、比較の結果が異なる可能性があります。
 
-- `struct time`の内部変数である`tm_hour`や`tm_mday`などを適切に設定すること。これらはそれぞれ、時刻や日付の値を表します。
-- `difftime()`関数を使用する際は、引数に渡す日付データを`struct time`型のポインターであることに注意すること。
-
-また、C++では`<chrono>`ライブラリーを使用することで、より多くの日付比較機能を提供しています。詳細は公式ドキュメンテーションを参照してください。
-
-## 参考リンク
-
-- [C++ time.hライブラリーのドキュメンテーション](https://www.geeksforgeeks.org/c-time-h-library-a-c-library-functions/) 
-- [C++ <chrono>ライブラリーのドキュメンテーション](https://en.cppreference.com/w/cpp/chrono)
+## 参考
+- [C++で日付を扱うときに最適な方法](https://www.techscore.com/blog/2018/06/20/cpp-date/)
+- [time_t型とtm構造体の使い方](https://www.geeksforgeeks.org/time-t-tm-structure-time-h-in-cpp/)
+- [日付の比較を行うstd::mktime関数の使い方](https://cubix2433.hatenablog.com/entry/2019/02/02/114743)

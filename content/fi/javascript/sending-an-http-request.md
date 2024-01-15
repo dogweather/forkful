@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Http-pyyntöjen lähettäminen"
-simple_title:         "Http-pyyntöjen lähettäminen"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Javascript: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,43 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen on olennainen osa verkkosivujen ja sovellusten kehittämistä. Se mahdollistaa tietojen hakemisen ja lähettämisen palvelimelle ja takaisin käyttäjälle. Ilman HTTP-pyyntöjä sivut jäisivät staattisiksi ja rajoittuneiksi.
+Jos haluat saada tietoa tai tehdä tietokyselyn joltakin verkkosivustolta, tarvitset HTTP-pyynnön lähettämisen.
 
 ## Miten
 
-HTTP-pyyntöjen lähettäminen tapahtuu yksinkertaisesti käyttämällä ``fetch``-komentoa ja antamalla tarvittavat tiedot, kuten URL-osoite ja pyynnön tyyppi. Esimerkiksi, jos haluaisimme lähettää GET-pyynnön, voisimme käyttää seuraavaa koodia:
-
 ```Javascript
-fetch('https://example.com/users')
+fetch('https://www.examplewebsite.com/data')
   .then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
 ```
 
-Tämä koodi lähettää pyynnön osoitteeseen "https://example.com/users" ja odottaa vastausta. Kun vastaus saapuu, se muunnetaan JSON-muotoon ja tulostetaan konsoliin. On tärkeää varmistaa, että pyyntöä seuraava ``then``-komento käsittelee vastauksen oikeassa muodossa, jotta voimme hyödyntää palvelimen lähettämiä tietoja.
+Tässä esimerkissä luomme HTTP-pyynnön käyttäjän antamaan URL-osoitteeseen ja odotamme vastauksen JSON-muodossa. Sitten tulostamme vastauksen konsoliin tai käsittelemme mahdollisen virheen.
 
-## Syvällisempi sukellus
+## Syvempi sukellus
 
-HTTP-pyyntöjen lähettäminen sisältää useita erilaisia tietoja ja vaihtoehtoja, kuten otsikot ja parametrit. Näitä voidaan käyttää lisäämään tietoturvatasoa ja hallitsemaan pyynnön tarkoitusta ja sisältöä. Esimerkiksi, jos haluamme lähettää POST-pyynnön, voimme lisätä parametreja, jotka sisältävät lähettämämme tiedot:
+HTTP-pyynnön tekemiseen on olemassa erilaisia kirjastoja ja metodeja, kuten `fetch`, `XMLHttpRequest`, ja `axios`. Näiden avulla voit lähettää pyyntöjä eri muodoissa, kuten GET, POST, PUT ja DELETE.
 
-```Javascript
-fetch('https://example.com/users', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: 'John',
-    age: 30
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data));
-```
-
-Tässä käytämme parametreja määrittämään pyynnön tyyppi, otsikot ja lähettävät tiedot JSON-muodossa.
+Lisäksi voit asettaa erilaisia parametreja pyyntöösi, kuten otsakkeita ja sisältötyyppejä. Näiden avulla voit hallita, millaista dataa haluat lähettää tai vastaanottaa palvelimelta.
 
 ## Katso myös
 
-- [MDN - Fetch API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API)
-- [W3Schools - HTTP Request methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
-- [Stack Overflow - Fetch vs XMLHttpRequest](https://stackoverflow.com/questions/35901481/what-is-the-difference-between-fetch-and-xmlhttprequest)
+- [MDN: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [HTTP Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [Axios Github-sivu](https://github.com/axios/axios)

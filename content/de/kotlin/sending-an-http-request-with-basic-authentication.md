@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Versenden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Kotlin: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,53 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie eine App oder eine Website erstellen, die mit einem Server kommunizieren muss, ist es oft notwendig, eine HTTP-Anfrage zu senden. Mit der Basisauthentifizierung können Sie diese Anfragen sicherer gestalten, indem Sie Benutzernamen und Passwörter verwenden, um den Zugriff auf Ihre Ressourcen zu kontrollieren.
 
-## Wie es geht
-Um eine HTTP-Anfrage mit Basisauthentifizierung in Kotlin zu senden, müssen Sie zuerst die benötigten Bibliotheken importieren:
+Warum sollte man sich überhaupt mit dem Senden von HTTP-Anfragen mit Basic Authentication beschäftigen? Nun, in der heutigen Zeit ist der Austausch von Daten zwischen verschiedenen Systemen und Anwendungen unerlässlich. Oftmals ist diese Kommunikation jedoch nicht öffentlich zugänglich und erfordert daher eine Authentifizierung, um sicherzustellen, dass nur autorisierte Benutzer auf die Daten zugreifen können. Das Senden von HTTP-Anfragen mit Basic Authentication ist eine der einfachsten Methoden, um dies zu erreichen.
+
+## How To
+
+Um eine HTTP-Anfrage mit Basic Authentication zu senden, benötigen wir zunächst ein HTTP-Client in Kotlin. Zum Glück gibt es in der Standardbibliothek von Kotlin eine klasse HTTPClient, die dies für uns erledigen kann. Wir müssen nur noch die erforderlichen Importe hinzufügen und eine Instanz des Clients erstellen.
+
 ```
-Kotlin import java.net.HttpURLConnection
+import java.net.HttpURLConnection
 import java.net.URL
-import java.util.Base64
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
+fun main() {
+
+    // URL der Anfrage
+    val url = URL("https://example.com/api")
+
+    // Erstellen einer Instanz des HTTP-Clients
+    val http = url.openConnection() as HttpURLConnection
+
+    // Festlegen des Authentifizierungs-Headers mit Benutzername und Passwort
+    val user = "username"
+    val password = "password"
+    val credentials = "$user:$password"
+    val authHeaderValue = "Basic " + Base64.getEncoder().encodeToString(credentials.toByteArray())
+    http.setRequestProperty("Authorization", authHeaderValue)
+
+    // Durchführen der Anfrage und Auslesen der Antwort
+    val inputStream = http.getInputStream()
+    val bufferedReader = BufferedReader(InputStreamReader(inputStream))
+    val response = bufferedReader.readLine()
+
+    // Ausgabe der Antwort
+    println(response)
+
+    // Schließen der Verbindung
+    http.disconnect()
+}
 ```
 
-Als nächstes müssen Sie eine URL-Verbindung zu Ihrem Server herstellen und die Basisauthentifizierung konfigurieren:
-```
-Kotlin val url = URL("https://example.com/api/resource")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
+Das obige Beispiel zeigt, wie man eine HTTP-Anfrage mit Basic Authentication in Kotlin senden kann. Zunächst erstellen wir eine Instanz des HTTP-Clients mithilfe der `openConnection()`-Methode. Dann legen wir den Authentifizierungs-Header mit Benutzername und Passwort fest, indem wir die Base64-Codierung verwenden. Schließlich führen wir die Anfrage durch und lesen die Antwort aus.
 
-val username = "your_username"
-val password = "your_password"
-val authString = "$username:$password"
-val encodedAuth = Base64.getEncoder().encodeToString(authString.toByteArray())
-val authHeaderValue = "Basic $encodedAuth"
+## Deep Dive
 
-connection.setRequestProperty("Authorization", authHeaderValue)
-```
-
-Dann können Sie die Anfrage senden und die Antwort abrufen:
-```
-Kotlin val responseCode = connection.responseCode
-val responseMessage = connection.responseMessage
-println("Response Code: $responseCode")
-println("Response Message: $responseMessage")
-```
-
-Wenn alles erfolgreich war, erhalten Sie eine Antwort wie diese:
-```
-Output Response Code: 200
-Response Message: OK
-```
-
-## Tief eintauchen
-Ein paar Dinge zu beachten, wenn Sie eine HTTP-Anfrage mit Basisauthentifizierung senden:
-
-- Stellen Sie sicher, dass Sie eine sichere Verbindung verwenden (HTTPS), um Ihre Anfrage und die übertragenen Anmeldeinformationen zu schützen.
-- Verwenden Sie starke und eindeutige Anmeldeinformationen, um die Sicherheit Ihrer Ressourcen zu gewährleisten.
-- Eine gute Praxis ist es, die Anmeldeinformationen in einem sicheren Speicher zu speichern und sie nur zur Laufzeit abzurufen.
+Bei der Verwendung von Basic Authentification in einer HTTP-Anfrage müssen wir darauf achten, dass unsere Benutzerdaten im Header nicht unverschlüsselt übertragen werden. Aus diesem Grund verwenden wir hier die Base64-Codierung, um unsere Daten zu verschlüsseln. Es ist wichtig zu beachten, dass Base64 keine sichere Verschlüsselung ist und daher sollte diese Methode nicht für sensible Daten verwendet werden. Es ist ratsam, die Verwendung von HTTPS zu empfehlen, um sicherzustellen, dass die Daten sicher übertragen werden.
 
 ## Siehe auch
-- [Offizielle Kotlin-Dokumentation zu HTTP-Anfragen](https://kotlinlang.org/docs/reference/networking.html)
-- [Tutorial zu HTTP-Anfragen in Kotlin von Baeldung](https://www.baeldung.com/kotlin/http-request)
-- [Codebeispiele für HTTP-Anfragen mit Kotlin von Code Examples](https://www.code-examples.com/http-request-kotlin/)
+
+Um mehr über HTTP-Anfragen mit Basic Authentication in Kotlin zu erfahren, schauen Sie sich diese Links an:
+
+- [Offizielle Dokumentation von Kotlin](https://kotlinlang.org/docs/reference/http-client.html)
+- [Einführung in die HTTP-Authentifizierung](https://www.keycdn.com/support/http-basic-authentication)
+- [Tutorial über HTTP-Anfragen mit Basic Authentication in Java](https://www.baeldung.com/java-http-request)

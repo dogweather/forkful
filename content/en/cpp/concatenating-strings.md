@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Concatenating strings"
+title:                "Concatenating strings"
+html_title:           "C++ recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "C++"
 category:             "C++"
@@ -11,45 +12,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to combine multiple strings into one? Maybe you wanted to display a full name or create a sentence from different words. Whatever the reason, concatenating strings is a common task in programming and can be easily achieved in C++.
+Have you ever needed to combine multiple strings together to create a new string in your C++ program? Maybe you wanted to create a dynamic message or manipulate user input. Whatever the reason, concatenating strings is a useful skill to have in your programming arsenal.
 
 ## How To
 
-First, let's define what concatenating strings means. It simply refers to joining multiple strings together to create a new string. In C++, this can be done using the "<<" operator or the "append" function.
-
-Let's look at some examples using C++ code blocks:
-
-### Using the "<<" Operator
+To concatenate strings in C++, you can use the `+` operator or the `append()` function. Let's take a look at both methods with some examples:
 
 ```C++
-string firstName = "John";
-string lastName = "Smith";
-string fullName = firstName + " " + lastName;
-cout << fullName << endl;
+// Using the + operator
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string greeting = "Hello ";
+  string name = "John";
+  string message = greeting + name;
+
+  cout << message << endl; // Output: Hello John
+  return 0;
+}
+
+// Using the append() function
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string sentence = "I love ";
+  string fruit = "apples";
+  sentence.append(fruit);
+
+  cout << sentence << endl; // Output: I love apples
+  return 0;
+}
 ```
 
-The output of this code would be "John Smith". Here, we are using the "<<" operator to combine the strings "firstName", "lastName" and a space character to create a new string called "fullName".
+As you can see, both methods result in the same output. The `+` operator is used to directly add two strings together, while the `append()` function adds the second string to the end of the first string.
 
-### Using the "append" Function
+But what if you want to concatenate more than two strings together? In that case, you can either string together multiple `+` operators or use the `append()` function multiple times.
 
 ```C++
-string word1 = "Programming";
-string word2 = "is";
-string word3 = "fun!";
-string sentence = word1.append(" ").append(word2).append(" ").append(word3);
-cout << sentence << endl;
-```
+// Using multiple + operators
+#include <iostream>
+#include <string>
+using namespace std;
 
-This code would produce the output "Programming is fun!". Here, we are using the "append" function to add spaces between the different words and create a sentence.
+int main() {
+  string first_name = "John";
+  string last_name = "Doe";
+  string full_name = first_name + " " + last_name;
+
+  cout << full_name << endl; // Output: John Doe
+  return 0;
+}
+
+// Using the append() function multiple times
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string sentence = "I love ";
+  string fruit = "apples";
+  string more = " and oranges";
+  sentence.append(fruit).append(more);
+
+  cout << sentence << endl; // Output: I love apples and oranges
+  return 0;
+}
+```
 
 ## Deep Dive
 
-In C++, strings are considered objects and have their own functions and properties. When using the "append" function, we are actually modifying the calling string object itself by adding the specified string to the end of it. This is different from using the "<<" operator, which creates a new string object.
+When you use the `+` operator to concatenate strings, the compiler actually translates it into a call to the `append()` function. This function takes in a string as its argument and adds it to the end of the original string.
 
-It is also worth mentioning that concatenating strings can be resource intensive, especially when dealing with large strings or a large number of strings. In those cases, it is recommended to use the "stringstream" class for better performance.
+It is also important to note that the `+` operator and `append()` function only work with strings. If you want to concatenate other data types, you will need to use the `stringstream` class. This class allows you to combine different data types into a string.
 
 ## See Also
 
-- [C++ string concatenation - Tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_string_concatenation.htm)
-- [C++ stringstream - GeeksforGeeks](https://www.geeksforgeeks.org/c-stringstream-class-applications/)
-- [C++ String Class Reference - CppReference](https://en.cppreference.com/w/cpp/string/basic_string)
+- [C++ String Operators](https://www.programiz.com/cpp-programming/operators)
+- [C++ String Class](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+- [C++ StringStream](http://www.cplusplus.com/reference/sstream/stringstream/)

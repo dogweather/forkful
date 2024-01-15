@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin recipe: Writing tests"
+title:                "Writing tests"
+html_title:           "Kotlin recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,40 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a developer, writing tests may seem like an extra step in the coding process and it can be tempting to skip them. However, writing tests is an important practice that can save time and prevent bugs from causing major issues in your code. In this blog post, we will delve into the importance of writing tests and how to do so effectively in Kotlin.
+Writing tests is an important aspect of software development. It allows developers to ensure that their code works as intended and catches potential bugs or errors before they become larger issues. By writing tests, developers can have more confidence in the reliability and functionality of their code.
 
 ## How To
 
-Writing tests in Kotlin is fairly straightforward and follows a similar structure to other programming languages. Let's take a look at an example of a simple function that adds two numbers and how we can write a test for it:
+To write tests in Kotlin, you will need to use a testing framework such as JUnit. Here is an example of a simple test in Kotlin:
 
-```kotlin
-fun addNumbers(a: Int, b: Int): Int {
-    return a + b
+```Kotlin
+import org.junit.Test
+import kotlin.test.assertEquals
+
+class CalculatorTest {
+
+    @Test
+    fun testAddition() {
+        assertEquals(4, Calculator.add(2, 2))
+        assertEquals(10, Calculator.add(5, 5))
+    }
+}
+
+object Calculator {
+
+    fun add(num1: Int, num2: Int): Int {
+        return num1 + num2
+    }
 }
 ```
 
-To test this function, we first need to create a test case using the `@Test` annotation. Within the test case, we can use the `assertEquals()` function to check if the output of our `addNumbers` function matches the expected result.
-
-```kotlin
-@Test
-fun testAddNumbers() {
-    val result = addNumbers(5, 10)
-    assertEquals(15, result)
-}
-```
-
-Now, when we run our test, we will get a passing result since the output of our `addNumbers` function matches the expected result. Writing tests like this not only ensures that our code is functioning correctly but also serves as a form of documentation for future reference.
+In this example, we are testing the `add` function of a `Calculator` object. We use the `@Test` annotation to mark this function as a test, and the `assertEquals` function to compare the expected result with the actual result. Running this test will show us that both assertions are true, meaning that our `add` function is working correctly.
 
 ## Deep Dive
 
-Writing tests also allows us to catch bugs early on in the development process. By writing tests for each function, we can easily pinpoint any errors and fix them before they cause bigger issues in our code.
+In addition to using a testing framework, there are some key practices to keep in mind when writing tests in Kotlin. First, it's important to have good test coverage, meaning that all aspects of your code should be tested. This includes testing edge cases and handling unexpected input, as well as the expected functionality.
 
-Additionally, tests can help with the overall structure and design of our code. By writing tests, we are forced to think about different scenarios and edge cases, resulting in cleaner and more robust code.
+Another important aspect of testing in Kotlin is to keep your tests organized and readable. This can be achieved by using descriptive test names and separating your tests into different classes or packages based on their functionality. This makes it easier to identify and fix any errors that may arise.
 
-It's also worth noting that writing tests is not a one-time task. As our code evolves and new features are added, we should also update and add tests accordingly to ensure that everything continues to function as expected.
+Lastly, using tools such as mock objects and dependency injection can aid in writing effective tests. Mock objects simulate real objects and help isolate the code being tested. Dependency injection allows for easier testing by allowing different implementations of dependencies to be used in tests.
 
 ## See Also
 
-- [Unit Testing in Kotlin](https://kotlinlang.org/docs/tutorials/https://kotlinlang.org/docs/tutorials/unittests.html)
-- [The Art of Writing Testable Code](https://medium.com/@victorsavkin/testability-4230e4abc3c5)
-- [Test-Driven Development in Kotlin](https://www.raywenderlich.com/5493-test-driven-development-in-kotlin)
+- [JUnit](https://junit.org/junit5/)
+- [Kotlin Test](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.test/)

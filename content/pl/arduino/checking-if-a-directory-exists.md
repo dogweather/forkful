@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "Arduino: Sprawdzanie istnienia katalogu"
 simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego sprawdzamy istnienie katalogu w programowaniu dla Arduino?
+## Nadrzędnym celem jest sprawdzenie, czy dany katalog istnieje w celu uniknięcia błędów podczas operacji z plikami.
 
-Sprawdzanie istnienia katalogu jest ważną częścią programowania dla Arduino, ponieważ daje nam możliwość sprawdzenia, czy dany katalog istnieje przed wykonywaniem kolejnych operacji. Jest to szczególnie przydatne przy korzystaniu z kart SD lub innych pamięci masowych, gdzie bez uprzedniego sprawdzenia można narazić się na błędy.
+## Jak to zrobić:
 
-# Jak to zrobić?
-
-Do sprawdzenia istnienia katalogu możemy wykorzystać funkcję `exists()` z biblioteki `SD` dla kart SD lub `SPIFFS.exists()` dla pamięci SPIFFS. Poniżej znajduje się przykładowy kod, który sprawdzi, czy istnieje katalog o nazwie "moj_katalog" i wypisze odpowiedni komunikat w zależności od wyniku:
-
-```
-
-#include <SD.h>
-
-File myDir;
+```Arduino
+#include <SD.h>  // Dołączenie biblioteki obsługującej moduł SD
 
 void setup() {
-
-  Serial.begin(9600);
-  
-  // Inicjalizacja karty SD
-  if (!SD.begin()) {
-    Serial.println("Nie można zainicjalizować karty SD!");
-    while (1);
+  Serial.begin(9600); // Inicjalizacja portu szeregowego
+  if (SD.begin(10)) { // Inicjalizacja modułu SD z przypisaniem pinu do obsługi
+    // Sprawdzenie czy katalog istnieje
+    if (SD.exists("/test")) { 
+      Serial.println("Katalog istnieje!");
+    }
+    else {
+      Serial.println("Katalog nie istnieje!");
+    }
   }
-
-  // Przypisanie uchwytu do katalogu
-  myDir = SD.open("moj_katalog");
-
-  // Sprawdzenie istnienia katalogu i wypisanie odpowiedniego komunikatu
-  if (myDir) {
-    Serial.println("Katalog istnieje!");
-  } else {
-    Serial.println("Katalog nie istnieje!");
+  else {
+    Serial.println("Błąd inicjalizacji modułu SD!");
   }
 }
 
 void loop() {
-  // Nic nie robimy w pętli
+  // Pusta pętla
 }
 ```
 
-Po wgraniu tego kodu na nasze Arduino i podłączeniu karty SD, w monitorze szeregowym powinniśmy zobaczyć odpowiedni komunikat.
+Output:
+```
+Katalog istnieje!
+```
 
-# Deep Dive
+## Deep Dive:
 
-Sprawdzenie istnienia katalogu nie jest skomplikowaną operacją, ale może okazać się niezbędne do uniknięcia błędów podczas korzystania z pamięci masowych. Warto jednak zwrócić uwagę, że funkcja `exists()` zwraca wartość logiczną `true` lub `false` w zależności od wyniku, więc może być również wykorzystywana w warunkach do podjęcia odpowiednich działań.
+Aby sprawdzić czy dany katalog istnieje, musimy najpierw zainicjalizować moduł obsługujący karty SD za pomocą funkcji SD.begin(). Następnie, używając funkcji SD.exists(), możemy sprawdzić czy dany katalog istnieje w strukturze katalogów. Funkcja ta zwraca wartość true lub false, w zależności od wyniku. Jest to ważne, ponieważ unikamy błędów podczas próby operacji na plikach znajdujących się w nieistniejącym katalogu.
 
-# Zobacz też
+## Zobacz też:
 
-- [Dokumentacja funkcji exists() dla Biblioteki SD](https://www.arduino.cc/en/Reference/SDexists)
-- [Dokumentacja funkcji exists() dla Biblioteki SPIFFS](https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html#exists)
-- [Przykład korzystania z kart SD z Arduino](https://www.arduino.cc/en/tutorial/cardinfo)
-- [Przykład korzystania z pamięci SPIFFS z Arduino](https://randomnerdtutorials.com/esp8266-nodemcu-vs-code-platformio-mockup-mern-stack/)
+- [Dokumentacja funkcji SD.exists()](https://www.arduino.cc/en/Reference/SDexists)
+- [Tutorial o obsłudze kart SD z Arduino](https://www.arduino.cc/en/Tutorial/ArduinoSD)

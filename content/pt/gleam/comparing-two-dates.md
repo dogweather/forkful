@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Comparando duas datas"
+title:                "Comparando duas datas"
+html_title:           "Gleam: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -9,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que Comparar Duas Datas em Gleam?
+## Por que comparar duas datas?
 
-Ao escrever programas em Gleam, às vezes é necessário comparar duas datas. Isso pode ser útil para verificar qual data é mais recente ou para saber se uma data está no passado ou no futuro. Felizmente, Gleam oferece uma maneira simples e eficiente de realizar essa tarefa.
+Se você já se encontrou em uma situação em que precisou comparar duas datas e teve dificuldades em fazer isso de forma eficiente, esse artigo é para você. A comparação de datas é uma tarefa comum na programação e entender como fazer isso pode economizar tempo e evitar bugs no seu código.
 
-# Como Comparar Duas Datas
+## Como fazer essa comparação no Gleam
 
-Para comparar duas datas em Gleam, usamos o módulo `Time` e a função `compare_dates`. Nós fornecemos as duas datas que queremos comparar como parâmetros e a função nos retorna um dos seguintes resultados:
-
-- `Order.GreaterThan`: se a primeira data for posterior à segunda data.
-- `Order.LessThan`: se a primeira data for anterior à segunda data.
-- `Order.EqualTo`: se as duas datas forem iguais.
-
-Veja um exemplo de como usar a função `compare_dates`:
+Para comparar duas datas no Gleam, primeiro precisamos converter essas datas para o tipo de dados `DateTime`. Em seguida, podemos usar os operadores de comparação nativos do Gleam (`<`, `<=`, `>`, `>=`, `==`, `!=`) para comparar as datas. Veja o exemplo abaixo:
 
 ```Gleam
-import Time
+import gleam/datetime
 
-let date1 = Time.parse("2021-05-10", "yyyy-MM-dd")
-let date2 = Time.parse("2021-04-15", "yyyy-MM-dd")
-let result = Time.compare_dates(date1, date2)
+let data1 = datetime.from_timestamp(1629028800)
+let data2 = datetime.from_timestamp(1634361600)
+
+if data1 < data2 {
+  "A data 1 é anterior à data 2" |> io.print
+} else if data1 == data2 {
+  "As datas são iguais" |> io.print
+} else {
+  "A data 2 é anterior à data 1" |> io.print
+}
 ```
 
-Neste exemplo, a data `date1` é maior que a data `date2`, então o valor de `result` será `Order.GreaterThan`.
+Esse código irá imprimir "A data 1 é anterior à data 2", pois 1629028800 é uma data anterior a 1634361600. Mas e se precisarmos comparar apenas o dia, mês ou ano das datas? É possível fazer isso usando a função `datetime.equal/2`. Veja o exemplo abaixo:
 
-# Profundidade da Comparação de Datas
+```Gleam
+import gleam/datetime
 
-Embora a função `compare_dates` seja útil para a maioria das comparações de datas, é importante entender como ela funciona por dentro. O módulo `Time` usa o padrão ISO-8601 para representar datas e horas em Gleam, o que facilita a comparação entre elas. No entanto, é importante ter cuidado ao usar datas de outros formatos, pois isso pode levar a resultados inesperados.
+let data1 = datetime.from_date(2021, 8, 15)
+let data2 = datetime.from_date(2021, 10, 31)
 
-Além disso, é importante observar que a função `compare_dates` compara as datas em relação à sua representação numérica, sem levar em consideração outros fatores, como horário ou fuso horário. Portanto, é sempre uma boa prática converter as datas para o mesmo formato antes de compará-las.
+if datetime.equal(data1, data2, "day") {
+  "As datas têm o mesmo dia" |> io.print
+} else {
+  "As datas não têm o mesmo dia" |> io.print
+}
+```
 
-# Veja Também
+Esse código irá imprimir "As datas têm o mesmo dia", pois ambas as datas são 15 de agosto. Mas e se quisermos comparar o horário também? Podemos usar a função `datetime.equal_hour/2` ou `datetime.equal_minute/2` para isso.
 
-Aqui estão alguns links úteis para continuar aprendendo sobre como trabalhar com datas em Gleam:
+## Aprofundando na comparação de datas
 
-- Documentação oficial do módulo `Time`: https://gleam.run/modules/time.html
-- Tutorial sobre como usar datas em Gleam: https://gleam.run/book/times.html
-- Repositório oficial Gleam no GitHub: https://github.com/gleam-lang/gleam
+Além dos operadores de comparação e das funções `equal`, o módulo `gleam/datetime` também oferece funções para obter a diferença entre duas datas, converter timestamps para datas e vice-versa, e muito mais. Se você precisar de mais informações sobre como trabalhar com datas no Gleam, confira a documentação oficial [aqui](https://gleam.run/documentation/stdlib/datetime).
+
+## Veja também
+
+- [Documentação oficial do módulo gleam/datetime](https://gleam.run/documentation/stdlib/datetime)
+- [Artigo sobre o tipo de dados datetime no Gleam](https://medium.com/linkapi-technology/working-with-datetime-in-gleam-3f5b6067e7d8)
+- [Exemplo de código usando o módulo gleam/datetime](https://github.com/gleam-lang/gleam_stdlib/blob/master/time/examples/date_is_great/DateIsGreat.gleam)

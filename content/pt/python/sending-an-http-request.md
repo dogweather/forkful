@@ -1,5 +1,6 @@
 ---
-title:                "Python: Enviando uma solicitação http"
+title:                "Enviando uma solicitação http"
+html_title:           "Python: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Python"
 category:             "Python"
@@ -9,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP é importante?
+## Por que 
+Então você está curioso sobre como enviar uma solicitação HTTP? Talvez você esteja tentando automatizar um processo ou acessar dados de um servidor remoto. Independentemente do motivo, enviar uma solicitação HTTP é uma habilidade valiosa para ter em sua caixa de ferramentas de programação. 
 
-Enviar uma solicitação HTTP pode ser útil para acessar dados de uma página da web ou interagir com um servidor. É uma maneira eficaz de se comunicar com recursos externos e obter informações relevantes para o seu código.
+## Como fazer
+Para enviar uma solicitação HTTP em Python, você precisará da biblioteca padrão `urllib.request`. Aqui está um exemplo básico de como enviar uma solicitação GET e imprimir a resposta:
 
-## Como enviar uma solicitação HTTP em Python
-
-Para enviar uma solicitação HTTP em Python, você pode usar a biblioteca "requests". Antes de enviar a solicitação, certifique-se de importar a biblioteca em seu código.
-
+```python
+import urllib.request
+response = urllib.request.urlopen("https://www.google.com")
+print(response.read())
 ```
-# Importe a biblioteca requests
-import requests
 
-# Faça uma solicitação GET para uma página da web
-resposta = requests.get("https://exemplo.com")
-
-# Imprima o status code da resposta
-print(resposta.status_code)
-
-# Imprima o conteúdo da resposta
-print(resposta.text)
+Saída:
 ```
-A saída do código acima seria algo parecido com isso:
+b'<!doctype html> <html itemscope="" itemtype="http://schema.org/WebPage" lang="en-US"> ...</html>'
 ```
-200
-<html>
-    <head>
-        <title>Exemplo</title>
-    </head>
-    <body>
-        <h1>Bem-vindo ao exemplo.com!</h1>
-    </body>
-</html>
+
+Se você quiser personalizar sua solicitação, pode adicionar parâmetros adicionais no método `urlopen`. Por exemplo, para enviar uma solicitação POST, você pode fornecer dados no formato de dicionário e especificar o tipo de conteúdo. 
+
+```python
+import urllib.request
+import urllib.parse
+data = urllib.parse.urlencode({"username":"joao", "password":"1234"}).encode()
+req = urllib.request.Request("https://www.exemplo.com/login", data=data, method="POST")
+resp = urllib.request.urlopen(req)
+print(resp.read())
 ```
-Neste exemplo, enviamos uma solicitação GET para a página "exemplo.com" e imprimimos o status code da resposta (200, que significa que a solicitação foi bem-sucedida) e o conteúdo da resposta (a página HTML).
 
-## Uma visão mais aprofundada sobre o envio de solicitações HTTP
+Saída:
+```
+b'<!doctype html> <html itemscope="" itemtype="http://schema.org/WebPage" lang="en-US"> ...</html>'
+```
 
-Enquanto o exemplo acima mostra como enviar uma solicitação HTTP básica, existem muitos outros parâmetros que podem ser utilizados para personalizar sua solicitação. Por exemplo, você pode adicionar cabeçalhos, parâmetros, autenticação e muito mais à sua solicitação HTTP.
-
-Além disso, é importante entender os diferentes métodos de solicitação HTTP, como GET, POST, PUT e DELETE, e quando usá-los corretamente. Isso pode afetar o resultado da sua solicitação e a interação com o servidor.
-
-No entanto, antes de enviar qualquer solicitação HTTP, é essencial ter uma boa compreensão dos padrões e regras de cada servidor e ter cuidado para não enviar muitas solicitações em um curto período de tempo, evitando sobrecarregar o servidor.
+## Mais detalhes
+Para obter mais informações sobre o envio de solicitações HTTP em Python, dê uma olhada nas documentações oficiais do `urllib` e do `urllib.request`. Além disso, você pode explorar outras bibliotecas como `requests` e `http.client` para realizar solicitações HTTP de maneira ainda mais eficiente. Não tenha medo de experimentar e descobrir qual abordagem funciona melhor para o seu projeto.
 
 ## Veja também
-
-- [Documentação do requests](https://requests.readthedocs.io/en/latest/)
-- [W3Schools - HTTP Requests](https://www.w3schools.com/python/module_requests.asp)
-- [Tutoriais Point - HTTP Requests](https://www.tutorialspoint.com/python_network_programming/python_http.htm)
+- Documentação oficial do módulo `urllib`: https://docs.python.org/3/library/urllib.html
+- Documentação oficial do módulo `urllib.request`: https://docs.python.org/3/library/urllib.request.html
+- Documentação oficial do módulo `requests`: https://docs.python-requests.org/en/latest/
+- Documentação oficial do módulo `http.client`: https://docs.python.org/3/library/http.client.html

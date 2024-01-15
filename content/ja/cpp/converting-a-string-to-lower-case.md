@@ -1,5 +1,6 @@
 ---
-title:                "C++: 文字列を小文字に変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "C++: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "C++"
 category:             "C++"
@@ -9,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「なぜ」という疑問：なぜC++プログラマーは文字列を小文字に変換する必要があるのか、その理由をご紹介します。
+## なぜ
+  文字列を小文字に変換する作業について学ぶ必要性について説明します。
 
-##なぜ
+コンピューターで文字列を扱う際、大文字と小文字は区別されています。そのため、大小文字を無視して文字列を扱いたい場合、文字列をすべて小文字に変換する必要があります。
 
-文字列を小文字に変換することには、いくつかの利点があります。例えば、文字列を比較する場合には大文字と小文字を区別しない方が便利です。また、文書を整形する際や、特定の文字列を検索する際にも、小文字に変換することでより効率的な処理が可能になります。
+## 方法
+  ```C++
+  #include <iostream>
+  #include <string>
+  #include <algorithm> // std::transform
 
-##やり方
+  using namespace std;
 
-文字列を小文字に変換するには、C++の標準ライブラリである「<algorithm>」を使用します。具体的なコードは以下の通りです。
+  // 大文字を小文字に変換する関数
+  string toLowerCase(string str) {
 
-```C++
-#include <iostream>
-#include <algorithm>
-#include <string>
-using namespace std;
+    // 文字列の一文字ずつ小文字に変換する
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
 
-int main() {
-  string str = "Hello, WORLD!";
-  transform(str.begin(), str.end(), str.begin(), ::tolower);
-  cout << str << endl;
+    return str;
+  }
 
-  return 0;
-}
-```
+  int main() {
+    string text = "Hello, WORLD!";
 
-上記のコードを実行すると、以下のような出力が得られます。
+    // 出力: hello, world!
+    cout << toLowerCase(text) << endl;
 
-```
-hello, world!
-```
+    return 0;
+  }
+  ```
+  上記のコードは、C++で文字列を小文字に変換する方法の一例です。ここでは、文字列を小文字に変換するために `transform()` 関数を使用しています。この関数は、文字列の各文字に対して指定した関数を適用することができます。
 
-##詳細
+  また、C++標準ライブラリには `toupper()` や `tolower()` といった大文字と小文字を変換する関数も用意されています。これらの関数を使用することでも文字列を小文字に変換することができます。
 
-C++の ```transform``` 関数は、```<algorithm>``` ヘッダーファイルで定義されており、文字列やコンテナなどのシーケンスを変換する際に非常に便利です。第3引数には変換したい文字列の開始位置を、第4引数には変換後の文字列の開始位置を、第5引数には変換関数を指定することができます。上記の例では、```::tolower``` という変換関数を使用し、開始位置を ```str.begin()``` と指定しています。
+## 深堀り
+  文字列を小文字に変換する際、英語以外の言語を扱う場合には注意が必要です。C++の標準ライブラリは、UTF-8エンコーディングに対応しており、英語のアルファベットのみを扱う場合には問題ありません。しかし、他の言語のアルファベットや記号を含む場合、 `tolower()` や `toupper()` 関数では期待した結果が得られない可能性があります。
 
-また、文字列を小文字に変換する方法はほかにもあります。例えば、ループを使用する方法や、一文字ずつ処理する方法などがあります。性能や使用するメモリ量などの観点から、最適な方法を選択することが大切です。
+  そのため、多言語に対応したライブラリを使用するか、独自にアルファベットや記号を変換する関数を実装する必要があります。
 
-##詳細はこちら
-
-- C++のtransform関数について詳しくは[こちら](https://en.cppreference.com/w/cpp/algorithm/transform)
-- C++のアルゴリズムについては[こちら](http://www.cplusplus.com/reference/algorithm/)
-- 文字列を変換する他の方法については[こちら](https://www.tutorialspoint.com/how-to-convert-string-to-lowercase-or-uppercase-in-c-cplusplus)
-
-##関連リンク
-
-- [C++の標準ライブラリについて深く探求する](https://www.ibm.com/developerworks/jp/views/linux/libraryview.jsp?search_by=c%2B%2B+stl)
-- [効率的にC++を学ぶ方法](https://devlights.hatenablog.com/entry/2015/01/31/011448)
-- [プログラミング初心者へのアドバイス](https://programmer-start.com/study/c-plus-plus/about-c-plus-plus/)
+## See Also
+  - [ctype.h ヘッダー - cppreference.com](https://ja.cppreference.com/w/cpp/header/cctype)
+  - [std::transform - cppreference.com](https://ja.cppreference.com/w/cpp/algorithm/transform)

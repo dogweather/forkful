@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Hämta en webbsida"
-simple_title:         "Hämta en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,30 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ladda ner en webbsida är en vanlig uppgift för många programmerare. Det kan användas för att skapa en lokal kopia av en webbplats, eller för att extrahera information från webbplatser för olika ändamål. Oavsett orsaken så är det en användbar färdighet att ha inom Bash-programmering.
+Att ladda ner en webbsida kan vara användbart av flera anledningar. Du kanske vill spara en sida för senare läsning eller använda dess innehåll i ditt eget projekt.
 
-## Hur man gör det
+## Så här gör du
 
-Att ladda ner en webbsida med Bash är en relativt enkel process som kan utföras med hjälp av verktyget "curl". Curl används för att hämta data från webbsidor via terminalen. Först behöver man hämta URL:en för den webbsida man vill ladda ner. Sedan kan man använda följande Bash-kod för att ladda ner webbsidan och spara den som en fil:
+Ladda ner en webbsida med hjälp av Bash är enkelt. Först behöver du välja en lämplig URL som du vill ladda ner. Sedan kan du använda kommandot `wget` följt av URL-en i ett terminalfönster.
 
 ```Bash
-curl <URL> -o <filnamn>
+wget https://www.example.com
 ```
 
-Detta kommer att ladda ner webbsidan och spara den med det angivna filnamnet. Om man inte anger ett filnamn så kommer webbsidan att sparas som en HTML-fil i den sökväg där koden körs.
+Detta kommando kommer att ladda ner hela webbsidan till din nuvarande arbetskatalog. Om du vill ladda ner en specifik fil från webbsidan, kan du använda flaggan `-O` efter URL-en och ange önskat filnamn.
 
-## Deep Dive
+```Bash
+wget https://www.example.com/image.jpg -O image.jpg
+```
 
-En intressant aspekt av att ladda ner webbsidor med Bash är att man kan använda olika flaggor med "curl" för att ändra hur data hämtas. Till exempel kan man använda flaggan "-s" för att tysta utskrifter från curl, vilket kan vara användbart om man vill skapa en automatisk process för att regelbundet ladda ner en webbsida.
+Du kan också använda flaggan `-P` för att ange en specifik sökväg för var du vill spara filen.
 
-En annan användbar flagga är "-L" som gör att curl följer eventuella omdirigeringar, vilket kan hända om man laddar ner från en länk som leder till en annan sida.
+```Bash
+wget https://www.example.com/image.jpg -P /hem/din_användare/bilder/
+```
 
-Det finns också möjlighet att använda sed för att bearbeta den nedladdade webbsidan, till exempel för att extrahera specifika delar av information. Detta kan vara användbart för automatiserad data mining eller webbskrapning.
+## Djupdykning
+
+Bash kommandot `wget` används för att hämta filer från webben. Det fungerar genom att skicka en begäran till den angivna URL-en och hämta innehållet till din lokala enhet. Detta gör det möjligt att ladda ner filer, bilder och hela webbsidor.
+
+En av de mest användbara funktionerna i `wget` är dess möjlighet att återuppta avbrutna nedladdningar. Om din nedladdning blir avbruten av någon anledning, till exempel dålig internetanslutning, kan du använda flaggan `-c` för att fortsätta nedladdningen från där den slutade.
+
+Du kan också använda kommandot `curl` för att ladda ner webbsidor i Bash. Det fungerar på ett liknande sätt som `wget` och ger dig möjlighet att hämta innehållet från en URL.
 
 ## Se även
 
-För mer information och djupare förklaringar av olika curl-flaggor och användningsområden, se följande länkar:
-
-- [Curl man-sidan](https://linux.die.net/man/1/curl) för detaljerade beskrivningar av flaggorna och deras användning.
-- [Vad är curl och hur man använder det](https://www.hostinger.se/tutorials/curl-guide/) för en enkel guide om curl och hur man använder det för olika uppgifter.
-- [Sed manualen](https://linux.die.net/man/1/sed) för information om hur man använder sed för att bearbeta textfiler.
+- [wget man page](https://www.gnu.org/software/wget/manual/wget.html)
+- [curl man page](https://curl.se/docs/manpage.html)

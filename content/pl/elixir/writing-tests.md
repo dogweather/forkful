@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Elixir: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,46 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w Elixirze?
+## Dlaczego
 
- Testy są nieodłączną częścią procesu programowania. Pozwalają nam upewnić się, że nasz kod nie tylko działa poprawnie, ale także jest przygotowany na zmiany i refaktoring w przyszłości. W Elixirze pisane są w sposób wyjątkowo intuicyjny i łatwy do zrozumienia, dlatego warto poznać podstawy, aby w przyszłości móc z niego korzystać.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki nim możemy upewnić się, że nasz kod działa poprawnie i nie wprowadza kolejnych błędów. Ponadto, testy pomagają w szybszym znajdowaniu i naprawianiu błędów oraz ułatwiają wprowadzanie zmian w kodzie.
 
-## Jak pisać testy w Elixirze?
+## Jak to zrobić?
 
-Poniżej przedstawione są przykładowe kody z funkcjami oraz odpowiedziami jakie można uzyskać po uruchomieniu testów:
-
-```Elixir
+```elixir
 defmodule Calculator do
-  def add(x, y) do
-    x + y
+  def add(a, b) do
+    a + b
+  end
+end
+
+defmodule CalculatorTest do
+  use ExUnit.Case
+
+  test "should add two numbers" do
+    assert Calculator.add(2, 3) == 5
   end
 end
 ```
 
-```Elixir
-# Test
-test "dodawanie dwoch liczb" do
-  assert Calculator.add(2, 3) == 5
-end
-```
+W powyższym przykładzie tworzymy test jednostkowy dla prostej funkcji dodawania. Korzystając z modułu `ExUnit.Case`, definiujemy testy dla naszej aplikacji. Następnie w bloku `test` sprawdzamy czy wynik wywołania funkcji `Calculator.add` jest równy oczekiwanemu wynikowi - w tym przypadku `5`.
 
-```Elixir
-# Output
-Compiling 1 file (.ex)
-..
+## Deep Dive
 
-Finished in 0.03 seconds
-1 test, 0 failures
-```
+Pisanie dobrych testów to sztuka, która wymaga nie tylko znajomości składni języka, ale również umiejętności analizowania kodu i przewidywania możliwych błędów. Wymaga to także zrozumienia działania testów jednostkowych oraz innych narzędzi takich jak `ExUnit.Case` czy `mix test`. Warto również pamiętać o zasadzie "Test-Driven Development", czyli zasadzie pisania testów przed kodem, co pozwala zachować przejrzystość i poprawność naszego kodu.
 
-Używając funkcji `test` możemy jednoznacznie określić, co chcemy przetestować. W parametrze podajemy nazwę testu, a w ciele funkcji można wykorzystać funkcję `assert`, która sprawdza, czy wynik zwrócony przez naszą funkcję jest taki sam jak oczekiwany.
+## Zobacz też
 
-## Deep Dive: Co więcej warto wiedzieć o pisaniu testów w Elixirze?
-
-Poza standardowymi testami jednostkowymi, Elixir oferuje również narzędzie do tworzenia testów integracyjnych - `ExUnit.CaseIntegration`. Pozwala ono na testowanie zależności między modułami oraz komunikację między procesami. Warto także wspomnieć o asercjach dynksyjnych, które pozwalają na sprawdzanie kodu obsługującego błędy oraz tzw. "flaky tests", czyli testów, które nie zawsze zwracają ten sam wynik, a jednak są prawidłowe.
-
-## Zobacz także
-
-- [Dokumentacja Elixir](https://elixir-lang.org/docs.html)
-- [Blog programistyczny](https://blogprogramistyczny.pl/pisanie-testow-w-elixirze/)
-- [Testy w Elixirze w praktyce](https://solidsoft.wordpress.com/2013/08/21/testy-w-elixirze-w-praktyce/)
+- Oficjalna dokumentacja Elixir: https://hexdocs.pm/elixir
+- Poradnik "Elixir School": https://elixirschool.com/pl/
+- Kurs "Test Driven Development w Elixir": https://pragmaticstudio.com/courses/elixir

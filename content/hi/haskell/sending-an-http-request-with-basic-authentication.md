@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "Haskell: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -9,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-HTTP अनुरोध भेजने में आमतौर पर प्रयुक्तियों को बेसिक प्रमाणीकरण के साथ अभिगमित किया जाता है। यह सुरक्षा स्तरों को संभावित अनुरोधकर्ताओं से संभालने के विषय में थोड़ा प्रभावकारी होता है और उन्हें सेंट्रल जनरेशन मेथड के आदेशों और उत्पादों को अनुप्रयोगित करने से बचाता है।
+एचटीटीपी अनुरोध भेजने के कारण में सबसे महत्वपूर्ण कारण है कि आप एक अन्य सर्वर से डेटा या संसाधनों को प्राप्त करना चाहते हैं जिसे basic authentication के साथ सुरक्षित होना चाहिए। इसके अलावा, आप एचटीटीपी क्योंकि वह प्रत्येक वेब एप्लिकेशन में उपयोग किया जाता है और यह आपको अन्य संबंधित कॉडिंग भाषाओं की ओर से अन्यान्य है।
 
-# कैसे करें
+## कैसे करें
 
-कुछ भीनताहूं हेकेल कोडिंग का एक उदाहरण दिया जाएगा, जो त्रुटि निम्न होगी:
+इस कार्य में, हम दो भागों में विस्तार से सीखेंगे: पहले, एचटीटीपी कोड के साथ एक बेसिक ऑथेंटिकेशन अनुरोध भेजने का तरीका और दूसरा, उस अनुरोध का जवाब प्राप्त करने का तरीका। यह आपको एक अच्छा समझाने में मदद करेगा कि कैसे एचटीटीपी के साथ basic authentication का उपयोग करें।
 
-```Haskell
-import Network.HTTP.Simple
-import qualified Data.ByteString.Char8 as BS
-import Network.HTTP.Client (defaultManagerSettings)
+### पहला भाग: अनुरोध भेजना
 
-main :: IO ()
-main =
-    do
-        request <- parseRequest "GET http://httpbin.org/basic-auth/user/passwd"
-        response <- httpBS request `digest` "user" "password"
-        let code = statusCode $ getResponseStatusCode response
-        BS.putStrLn $ BS.pack ("Response status: " ++ show code)
+पहले, आपको हैस्केल कोड के साथ एक अन्य सर्वर से डेटा प्राप्त करने के लिए एचटीटीपी अनुरोध भेजने की आवश्यकता होती है। हम बेसिकएथेंटिकेशन नामक चरण प्रमाणीकरण उपयोग करके एक उपयोगकर्ता नाम और पासवर्ड के साथ अनुरोध भेजने का तरीका जानेंगे।
+
+```
+import Network.HTTP
+import qualified Data.ByteString as BS
+
+sendRequest :: IO BS.ByteString
+sendRequest = do
+  let username = "myusername"
+  let password = "mypassword"
+  let request = getRequest "http://www.example.com"
+        `applyBasicAuth` username password
+  simpleHTTP request >>= getResponseBody
 ```
 
-इस उदाहरण का आउटपुट निम्न होगा:
-
-`Response status: 200`
-
-
-# गहराई में सम्झे
-
-HTTP अनुरोध भेजने के लिए बेसिक प्रमाणीकरण का उपयोग करने के लिए, हमें सिद्धांत को समझना होगा। बेसिक प्रमाणीकरण के साथ, उपयोगकर्ता नाम और पासवर्ड को सर्वर तक इन अनुरोधों में एन्कोड किया जाता है। फिर, सर्वर अनुरोधकर्ता के पास उपयोगकर्ता नाम और पासवर्ड को सत्यापित कर रहा है, और यदि सफल होता है, तो वह अनुरोध को संक्रिय रूप से प्रचालित करता है। हमने भी `Network.HTTP.Simple` मॉड्यूल के साथ कैसे काम करने की जानकारी दी, जो अनुरोध भेजने के लिए सरल साधन प्रदान करता है।
-
-# देखें भी
-
-- [Haskell Documentation on HTTP Requests](https://www.haskell.org/documentation/)
-- [HTTP Client Library](https://www.stackage.org/package/http-client)
-- [Simple Authentication with HTTP](https://en.wikipedia.org/wiki/Basic_access_authentication)
+ऊपर दिए गए कोड में, हमने Network.HTTP और Data.ByteString मॉड्यूल को इम्पोर्ट किया है जो प्रत्येक होता है कि हमें इस प्रोग्राम में आवश्यक है ह

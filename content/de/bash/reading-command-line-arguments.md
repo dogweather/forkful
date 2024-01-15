@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Bash: Lesen von Befehlszeilenargumenten"
 simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,44 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+## Warum
+Du fragst dich vielleicht, warum du überhaupt command line arguments lesen solltest. Nun, es gibt einige Vorteile, wenn du lerst, wie du sie richtig nutzt. Zum Beispiel kannst du damit dein Skript interaktiver gestalten und es flexibler machen, da du verschiedene Optionen und Parameter eingeben kannst.
 
-Das Lesen und Verstehen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der sich mit der Bash-Programmierung beschäftigt. Es ermöglicht die Verwendung von Befehlszeilenoptionen, die Programmabläufe steuern und die Effizienz des Codes verbessern können.
-
-## How To 
-
-Befehlszeilenargumente werden durch die Verwendung von speziellen Variablen in der Bash-Skriptdatei aufgenommen. Die gebräuchlichste Variable ist "$1", die das erste Argument nach dem Skriptnamen repräsentiert. Weitere Argumente können durch die Verwendung von "$2", "$3" usw. abgerufen werden. 
-
-Das folgende Beispiel zeigt, wie ein Skript mithilfe von Befehlszeilenargumenten aufgerufen werden kann: 
-
-```Bash
-#!/bin/bash 
-echo "Das Skript wurde mit folgenden Argumenten aufgerufen:" 
-echo "Das erste Argument ist: $1" 
-echo "Das zweite Argument ist: $2" 
-echo "Das dritte Argument ist: $3" 
+## Wie man command line arguments liest
+Die Syntax zum Lesen von command line arguments ist recht einfach, du musst nur folgendes beachten:
 ```
-
-Wenn dieses Skript als "argumente.sh" gespeichert und mit den Argumenten "Hallo Welt" aufgerufen wird, lautet die Ausgabe: 
+Bash
+$1 $2 $3
+```
+Diese Variablen repräsentieren die ersten, zweiten und dritten Argumente, die du beim Aufruf des Skripts eingibst. Zum Beispiel:
+```
+Bash
+$ ./script.sh argument1 argument2 argument3
 
 ```
-$ ./argumente.sh Hallo Welt 
-Das Skript wurde mit folgenden Argumenten aufgerufen: 
-Das erste Argument ist: Hallo 
-Das zweite Argument ist: Welt 
-Das dritte Argument ist: 
-```
+In diesem Beispiel würde `$1` "argument1", `$2` "argument2" und `$3` "argument3" sein. Du kannst beliebig viele Argumente eingeben und sie mit ` $4`, `$5`, usw. ansprechen.
 
-Beachten Sie, dass das Leerzeichen als Trennzeichen zwischen den Argumenten verwendet wird. Wenn ein Argument Leerzeichen enthält, muss es in Anführungszeichen gesetzt werden, um als einzelnes Argument erkannt zu werden. 
+## Vertiefung
+Wenn du mehr über command line arguments erfahren möchtest, solltest du dich mit der `getopts` Funktion vertraut machen. Damit kannst du Optionen mit dazugehörigen Argumenten angeben, die dein Skript dann auslesen kann. Du kannst auch Flags definieren, die du einfach nur mit `Skriptname -f` eingeben musst. Es gibt viele Möglichkeiten, command line arguments zu lesen und sie zu nutzen, deshalb ist es eine wichtige Fähigkeit für jeden Bash-Programmierer.
 
-## Deep Dive 
-
-Es gibt viele nützliche Funktionen und Techniken, die verwendet werden können, um Befehlszeilenargumente in Bash-Skripten zu lesen. Zum Beispiel können die in "$@" gespeicherten Argumente verwendet werden, um alle Argumente als Liste abzurufen. Auch können Bedingungen und Schleifen verwendet werden, um bestimmte Argumente zu überprüfen oder zu durchlaufen.
-
-Es gibt jedoch auch einige Dinge zu beachten beim Lesen von Befehlszeilenargumenten in Bash. Zum Beispiel können leere Argumente oder Sonderzeichen wie "*" Probleme verursachen. Es ist daher wichtig, immer auf eine sichere Eingabebehandlung zu achten und sicherzustellen, dass das Skript nicht anfällig für Sicherheitsrisiken ist.
-
-## Siehe auch 
-
-- [Bash-Referenzhandbuch: Lesen und Verwenden von Befehlszeilenargumenten](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
-- [Bash-Skripte schreiben: Verwendung von Befehlszeilenargumenten](https://www.shellscript.sh/command-line.html)
-- [10 praktische Beispiele für die Verwendung von Befehlszeilenargumenten in Bash-Skripten](https://linuxhint.com/argument_handling_bash/)
+## Siehe auch
+- [Bash Command Line Arguments Tutorial](https://dev.to/eevajonnapanula/read-command-line-arguments-in-bash-scripts-1615/)
+- [Bash scripting cheatsheet](http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/)
+- [getopts documentation](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-getopts)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "Haskell: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,35 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Haskell, vous savez déjà à quel point il peut être utile de calculer une date dans le futur ou le passé. Que ce soit pour effectuer des tâches planifiées ou pour créer des fonctions de gestion du temps, cette compétence est essentielle pour tout projet Haskell. Dans cet article, nous allons voir comment le faire efficacement grâce à des exemples concrets en Haskell.
+La programmation en Haskell est très utile pour effectuer des calculs sur les dates futures ou passées. Par exemple, vous pourriez avoir besoin de calculer le jour de la semaine où vous allez fêter votre anniversaire dans 10 ans, ou de savoir quel jour de la semaine vous êtes né il y a 20 ans. Ces calculs peuvent être fastidieux à faire à la main, mais grâce à Haskell, nous pouvons les automatiser et les rendre beaucoup plus faciles.
 
 ## Comment faire
 
-Nous allons utiliser la fonction `addDays` de la librairie `Data.Time` pour réaliser nos calculs. Cette fonction prend en argument un nombre de jours à ajouter ou à soustraire et une date de référence. Ensuite, elle nous retourne la date correspondant à ce calcul.
+Pour effectuer des calculs de dates en Haskell, nous utiliserons le module "Data.Time", qui fournit des fonctions utiles pour manipuler des dates et des heures. Pour commencer, nous devons importer le module en haut de notre fichier :
 
+```Haskell
+import Data.Time
 ```
+
+### Calculer une date dans le futur
+
+Pour calculer une date dans le futur, nous utiliserons la fonction "addDays" qui prend comme arguments une durée en jours et une date de référence.
+
+```Haskell
+addDays :: Integer -> Day -> Day
+```
+
+Par exemple, si nous voulons calculer la date qui se trouve dans 100 jours à partir d'aujourd'hui, nous pouvons utiliser la fonction de cette manière :
+
+```Haskell
+addDays 100 today
+```
+
+La fonction "today" renvoie la date d'aujourd'hui, donc le résultat de cette expression sera la date qui se trouve dans 100 jours à partir d'aujourd'hui.
+
+### Calculer une date dans le passé
+
+Pour calculer une date dans le passé, nous utiliserons la fonction "addDays", mais cette fois avec une valeur négative pour la durée. Par exemple, si nous voulons calculer la date d'il y a 500 jours à partir d'aujourd'hui, nous pouvons utiliser cette expression :
+
+```Haskell
+addDays (-500) today
+```
+
+### Exemple complet
+
+Essayons un exemple complet pour calculer une date dans le futur et dans le passé. Supposons que nous voulons calculer la date dans 10 ans à partir de la date d'aujourd'hui, ainsi que la date il y a 10 ans à partir de la date d'aujourd'hui.
+
+```Haskell
 import Data.Time
 
--- Calculer une date dans le passé
-let datePassee = addDays (-30) (fromGregorian 2020 1 1) -- résulat: 1er décembre 2019
-
--- Calculer une date dans le futur
-let dateFutur = addDays 15 (fromGregorian 2021 5 6) -- résulat: 21 mai 2021
-
--- Calculer une date à partir d'une date de référence inhabituelle
-let dateParticuliere = addDays (3*2+7) (fromGregorian 1999 12 31) -- résultat: 13 février 2000
+main = do
+  let futureDate = addDays (10 * 365) today
+      pastDate = addDays (-10 * 365) today
+  putStrLn "Date dans 10 ans :"
+  print futureDate
+  putStrLn "Date il y a 10 ans :"
+  print pastDate
 ```
 
-Dans ces exemples, nous avons utilisé la fonction `fromGregorian` pour créer nos dates de référence. Mais vous pouvez également utiliser `fromGregorianValid` qui renvoie `Maybe UTCTime` si la date est valide, ou `Nothing` si elle ne l'est pas. De plus, la fonction `addDays` peut être utilisée avec n'importe quelle instance de `Day` ou `UniversalTime`.
+Le résultat de ce programme sera :
+
+```
+Date dans 10 ans :
+2029-02-05
+Date il y a 10 ans :
+2009-02-05
+```
+
+Nous avons utilisé la fonction "putStrLn" pour afficher un message suivi de la fonction "print" pour afficher la date calculée.
 
 ## Plongée en profondeur
 
-Si vous souhaitez aller plus loin, vous pouvez également utiliser la fonction `addDays` pour réaliser des calculs plus complexes en utilisant des `Int` ou des `Integer` avec des `Day` ou des `NominalDiffTime`. De plus, il est possible de créer vos propres instances pour les types de données qui n'ont pas encore de fonctions `addDays` prédéfinies en utilisant `instance (Num a) => Num (Day)` ou `instance (Num a) => Num (UTCTime)`.
-
-Enfin, vous pouvez également utiliser la librairie `Data.Time.Calendar` pour accéder à d'autres fonctions utiles pour le calcul de dates, telles que `gregorianMonthLength` pour vérifier le nombre de jours dans un mois.
+Le module "Data.Time" fournit également des fonctions pour travailler avec des heures, des minutes, des secondes et des fuseaux horaires. Vous pouvez explorer ces fonctions plus en profondeur en lisant la documentation officielle de Haskell ou en cherchant des tutoriels en ligne sur la manipulation de dates en Haskell.
 
 ## Voir aussi
 
-- [Documentation de la librairie Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Documentation de la librairie Data.Time.Calendar](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
-- [Tutoriel sur la gestion du temps en Haskell](https://wiki.haskell.org/Learning_Haskell/Time_Libraries)
+- [Documentation officielle de Haskell sur le module "Data.Time"](https://www.haskell.org/hoogle/?hoogle=Data.Time)
+- [Tutoriel sur la manipulation de dates en Haskell](https://mmhaskell.com/blog/2017-01-09-tutorial-haskell-dates)

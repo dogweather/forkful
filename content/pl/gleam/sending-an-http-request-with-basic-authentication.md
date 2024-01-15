@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Wysyłanie żądania http z podstawowym uwierzytelnianiem"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnianiem"
+html_title:           "Gleam: Wysyłanie żądania http z podstawowym uwierzytelnianiem"
 simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnianiem"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,34 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym jest kluczowym elementem tworzenia aplikacji internetowych. Pozwala ono na bezpieczną i poufną wymianę informacji z serwerem, co jest niezwykle ważne w dzisiejszych czasach. Dzięki temu, że żądania są uwierzytelnione, możemy mieć pewność, że tylko uprawnieni użytkownicy mają dostęp do naszych danych lub usług.
+Jeśli chcesz wysłać zapytanie HTTP z uwierzytelnieniem podstawowym, jesteś we właściwym miejscu! W tym artykule dowieasz się, dlaczego ta funkcjonalność może być przydatna i jak jej używać w języku programowania Gleam.
 
 ## Jak to zrobić
 
-Aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym w języku Gleam, musimy najpierw zaimportować bibliotekę `httpc`, która pozwala nam na wysyłanie żądań HTTP. Następnie, korzystając z funkcji `httpc.send`, możemy utworzyć żądanie z odpowiednimi nagłówkami uwierzytelniającymi.
+Gleam oferuje prosty sposób na wysyłanie zapytań HTTP z uwierzytelnieniem podstawowym. Wystarczy użyć funkcji `http.request_with_basic_auth()` i podać do niej adres URL, nazwę użytkownika oraz hasło w odpowiednich argumentach.
 
-```
-Gleam import httpc
-
-let request = httpc.send(
-  method: "GET",
-  url: "https://exampleapi.com/users/123",
-  headers: [
-    "Authorization" => "Basic dXNlcm5hbWU6cGFzc3dvcmRz"
-  ]
-)
+```Gleam
+let response = http.request_with_basic_auth("https://example.com", "username", "password")
 ```
 
-W powyższym przykładzie, wysyłamy żądanie `GET` na adres URL https://exampleapi.com/users/123 z nagłówkiem uwierzytelniającym, zawierającym zakodowane dane logowania. W odpowiedzi, otrzymamy dane użytkownika o identyfikatorze 123.
+Jeśli chcesz zobaczyć odpowiedź z serwera, możesz wyświetlić ją na ekranie lub zapisać do zmiennej i przetworzyć jej zawartość. Przykładowy kod można znaleźć poniżej:
 
-Bardziej rozbudowany przykład możemy znaleźć w [dokumentacji biblioteki httpc](https://hexdocs.pm/gleam/Httpc.html).
+```Gleam
+let response = http.request_with_basic_auth("https://example.com", "username", "password")
+let body = case response {
+  Ok(resp) -> resp.body,
+  Error(_) -> "Wystąpił błąd!",
+}
 
-## Głębsza analiza
+io.println(body)
+```
 
-Wysyłając żądania HTTP z uwierzytelnieniem podstawowym, należy pamiętać o kilku ważnych aspektach. Po pierwsze, dane uwierzytelniające powinny być zawsze wysyłane w formie zakodowanej, przy użyciu np. funkcji `base64.encode` w języku Gleam. Po drugie, wybrane metody uwierzytelniania (np. Basic lub Digest) muszą być zgodne z wymaganiami serwera. Warto również sprawdzić, czy żądanie zostało pomyślnie uwierzytelnione, analizując odpowiedni kod odpowiedzi HTTP.
+W powyższym przykładzie wykorzystaliśmy funkcję `io.println()` by wyświetlić zawartość odpowiedzi z serwera na ekranie. Możesz również przetworzyć tę zawartość na inne sposoby, na przykład parsując ją jako JSON lub zapisując do pliku.
 
-## Zobacz również
+## Głębsze spojrzenie
 
-- [Dokumentacja biblioteki httpc](https://hexdocs.pm/gleam/Httpc.html)
-- [Dokumentacja funkcji base64.encode](https://hexdocs.pm/gleam/Base64.html#encode/1)
-- [Przykładowa implementacja uwierzytelniania Basic w języku Gleam](https://gist.github.com/examplebasicauth)
+Wysyłanie zapytań HTTP z uwierzytelnieniem podstawowym jest przydatne w przypadkach, gdy chcesz uzyskać dostęp do zabezpieczonych zasobów, na przykład danych użytkownika lub prywatnych API. Dzięki Gleam możesz szybko i łatwo zaimplementować tę funkcjonalność w swoim kodzie.
+
+Podczas wysyłania zapytania z uwierzytelnieniem podstawowym, Twój kod musi dostarczyć do serwera odpowiednie dane uwierzytelniające w nagłówku `Authorization`. Jeśli serwer wymaga informacji o nazwie użytkownika i haśle, nagłówek będzie wyglądać następująco:
+
+```
+Authorization: Basic <base64_encoded_username_and_password>
+```
+
+Możesz wygenerować odpowiedni base64 za pomocą modułu `base64` dostępnego w Gleam. Przykładowy kod:
+
+```Gleam
+import base64
+
+let encoded = base64.encode("username:password")
+io.println("Basic " <> encoded)
+```
+
+Teraz wiesz, dlaczego i jak wysyłać zapytania HTTP z uwierzytelnieniem podstawowym w Gleam. Nie zapomnij poeksperymentować z różnymi funkcjonalnościami Gleam, aby jeszcze lepiej poznać ten język!
+
+## Zobacz też
+
+- Dokumentacja Gleam: [https://gleam.run/](https://gleam.run/)
+- Biblioteka standardowa Gleam: [https://gleam.run/modules/standard-library.html](https://gleam.run/modules/standard-library.html)
+- Moduł `http`: [https://gleam.run/modules/http.html](https://gleam.run/modules/http.html)

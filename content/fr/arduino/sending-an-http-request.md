@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Envoyer une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Arduino: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,69 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Pourquoi
 
-Si vous souhaitez envoyer des données à un serveur distant ou recevoir des informations à partir d'une API en ligne, vous aurez besoin d'envoyer une requête HTTP. Cela peut sembler intimidant au début, mais grâce à la puissance de l'Arduino et à quelques lignes de code, vous pourrez facilement communiquer avec des serveurs externes.
+## Pourquoi utiliser une requête HTTP sur Arduino ?
 
-# Comment Faire
+Si vous voulez que votre projet Arduino soit connecté à Internet, vous aurez besoin d'envoyer des requêtes HTTP. Cela peut vous permettre d'obtenir des informations à partir d'un serveur ou de contrôler des dispositifs à distance.
 
-Pour envoyer une requête HTTP avec l'Arduino, vous aurez besoin d'une bibliothèque appelée "Ethernet". Vous pouvez l'installer en allant dans le menu "Sketch", puis en sélectionnant "Inclure une bibliothèque" et enfin "Gérer les bibliothèques". Recherchez "Ethernet" et cliquez sur "Installer".
+# Comment faire
 
-Une fois la bibliothèque installée, vous pouvez commencer à écrire votre code. Tout d'abord, vous devrez inclure la bibliothèque Ethernet en ajoutant la ligne suivante au début de votre code :
+## Comment envoyer une requête HTTP avec Arduino ?
 
-```Arduino
-#include <Ethernet.h>
-```
+Pour envoyer une requête HTTP avec Arduino, vous aurez besoin d'une connexion Internet et d'un bouclier Ethernet ou WiFi. Voici un exemple de code pour envoyer une requête GET à un serveur et afficher la réponse dans le moniteur série :
 
-Ensuite, vous devrez définir certaines variables telles que l'adresse IP de votre Arduino, l'adresse IP du serveur distant et le port de communication. Vous devrez également définir un objet de type "EthernetClient" pour établir la connexion.
+```Arduino 
+#include <SPI.h> // Inclure la bibliothèque SPI
+#include <Ethernet.h> // Inclure la bibliothèque Ethernet
 
-Une fois que toutes ces variables sont définies, vous pouvez utiliser la fonction "client.connect()". Cette fonction prendra en paramètres l'adresse IP et le port du serveur et établira une connexion avec celui-ci. Ensuite, vous pourrez envoyer votre requête à l'aide de la fonction "client.println()". N'oubliez pas de terminer votre requête avec la ligne vide "client.println()".
-
-Voici un exemple de code complet pour envoyer une requête HTTP à un serveur :
-
-```Arduino
-#include <Ethernet.h>
-
-IPAddress serverIP(192, 168, 1, 1); // Adresse IP du serveur
-int serverPort = 80; // Port de communication
-EthernetClient client; // Objet de connexion
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // Définir l'adresse MAC
+IPAddress server(192,168,1,1); // Définir l'adresse IP du serveur
+EthernetClient client; // Créer un objet client
 
 void setup() {
-  Ethernet.begin(mac); // Définit l'adresse MAC de votre Arduino
-  Serial.begin(9600); // Initialise la communication série
-  delay(1000); // Attendez une seconde que l'Ethernet se connecte
+  Serial.begin(9600); // Initialiser le moniteur série
+  Ethernet.begin(mac); // Initialiser la connexion Ethernet
+  delay(1000); // Attendre 1 seconde
 }
 
 void loop() {
-  if (client.connect(serverIP, serverPort)) { // Connectez-vous au serveur
-    // Envoyez votre requête
-    client.println("GET /api/data HTTP/1.1");
-    client.println("Host: 192.168.1.1");
-    client.println("Connection: close");
-    client.println();
+  if (client.connect(server, 80)) { // Si la connexion au serveur réussit
+    Serial.println("Connexion établie."); // Afficher un message
+    client.println("GET / HTTP/1.1"); // Envoyer la requête GET
+    client.println("Host: 192.168.1.1"); // Ajouter l'en-tête Host
+    client.println("Connection: close"); // Ajouter l'en-tête Connection pour fermer la connexion après la réponse
+    client.println(); // Terminer la requête avec une ligne vide
+  } else {
+    Serial.println("Échec de la connexion."); // Afficher un message en cas d'échec
+  }
+ 
+  while (client.available()) { // Tant qu'il y a des données à lire
+    char c = client.read(); // Lire un caractère
+    Serial.print(c); // Afficher le caractère dans le moniteur série
   }
 
-  while (client.available()) { // Attendez une réponse du serveur
-    char c = client.read(); // Lire chaque caractère de la réponse
-    Serial.print(c); // Imprimez-le sur le moniteur série
+  if (!client.connected()) { // Si la connexion est fermée
+    client.stop(); // Fermer la connexion
+    Serial.println("\nConnexion terminée."); // Afficher un message
+    while(true); // Attendre en boucle jusqu'à la prochaine connexion
   }
-  
-  delay(5000); // Attendez 5 secondes avant d'envoyer une autre requête
 }
 ```
 
-Lorsque vous téléversez ce code sur votre Arduino, assurez-vous que votre ordinateur est connecté au même réseau que votre Arduino. Vous devriez voir une réponse du serveur dans le moniteur série.
+Lorsque vous téléverserez ce code sur votre carte Arduino, vous devriez voir la réponse du serveur dans le moniteur série.
 
-# Plongée Profonde
+# Deep Dive
 
-Lorsque vous envoyez une requête HTTP, vous pouvez également inclure des en-têtes qui fournissent des informations supplémentaires au serveur. Par exemple, vous pourriez inclure un en-tête "Authorization" pour vous authentifier auprès du serveur.
+## En savoir plus sur l'envoi de requêtes HTTP avec Arduino
 
-De plus, vous pouvez également envoyer des données sous forme de paramètres dans votre requête, tels que des valeurs de capteurs ou des données d'utilisateurs.
+Voici quelques éléments à prendre en compte lorsque vous utilisez des requêtes HTTP sur Arduino :
 
-Il existe également différentes méthodes de requête que vous pouvez utiliser, telles que "GET", "POST", "PUT" ou "DELETE", en fonction de ce que vous souhaitez faire avec le serveur.
+- Vous pouvez également envoyer des requêtes POST pour envoyer des données au serveur.
+- Vous pouvez ajouter des en-têtes supplémentaires à la requête en utilisant la fonction `client.println()`, comme dans l'exemple ci-dessus.
+- Vous pouvez utiliser un shield ou un module WiFi pour connecter votre Arduino à Internet.
+- Certaines bibliothèques peuvent faciliter l'envoi de requêtes HTTP sur Arduino, comme `HTTPClient.h` ou `WiFiClientSecure.h` pour utiliser une connexion sécurisée.
 
-N'hésitez pas à explorer les différentes possibilités pour envoyer des requêtes HTTP avec votre Arduino.
+En utilisant les requêtes HTTP, vous pouvez accéder à une multitude de services en ligne et contrôler votre Arduino à distance. Cela peut être très utile pour les projets de domotique, de surveillance ou de suivi de données en temps réel. N'hésitez pas à explorer davantage cette fonctionnalité et à l'implémenter dans vos projets !
 
-# Voir Aussi
+# Voir aussi
 
-- Tutoriel officiel sur l'utilisation de la bibliothèque Ethernet : https://www.arduino.cc/en/Reference/Ethernet
-- Exemples de projets utilisant l'envoi de requêtes HTTP avec l'Arduino : https://create.arduino.cc/projecthub/projects/tags/http
-- Documentation sur les méthodes de requête et les en-têtes HTTP : https://developer.mozilla.org/fr/docs/Web/HTTP/Methods et https://developer.mozilla.org/fr/docs/Web/HTTP/Headers
+- [Tutoriel sur l'utilisation de requêtes HTTP avec Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/HTTPClient)
+- [Documentation Ethernet.h](https://www.arduino.cc/en/Reference/Ethernet)
+- [Documentation WiFiClient.h](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Autre exemple de requête HTTP avec WiFiClientSecure.h](https://randomnerdtutorials.com/esp32-http-get-parameters-arduino-ide/)

@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 一時的なファイルの作成"
-simple_title:         "一時的なファイルの作成"
+title:                "一時ファイルを作成する"
+html_title:           "Arduino: 一時ファイルを作成する"
+simple_title:         "一時ファイルを作成する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,62 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Arduinoで一時ファイルを作成する理由
+##なぜ作るの？
 
-一時ファイルは、一時的なデータを一時的に保存するのに役立ちます。例えば、センサーからのデータを一時的に保存したり、プログラム実行中の一時的な値を保持したりできます。そうすることで、より効率的にプログラムを実行することができます。
+一時ファイルを作ることは、Arduinoプログラミングで非常に重要なことです。一時ファイルには、センサーからのデータや一時的な変数など、様々なデータを一時的に保存したり、処理したりすることができます。
 
-Arduinoで一時ファイルを作成する方法
-
-```Arduino
+##作り方
+一時ファイルを作るためには、`File`ライブラリを使います。まずは、ライブラリをインクルードします。
+```
+Arduino Bluetooth = millis();
 #include <SPI.h>
-#include <SD.h>
-
-File myFile; //一時ファイルを指定する変数を宣言
-
-void setup() {
-  //SDカードを初期化
-  if (!SD.begin(4)) {
-    Serial.println("SDカードを初期化できませんでした");
-    while (1);
-  }
-  Serial.print(F("SDカードの容量: "));
-  Serial.println(SD.card()->capacity());
-  //一時ファイルをSDカードに作成
-  myFile = SD.open("temp.txt", FILE_WRITE); 
-  if (myFile) {
-    Serial.println("一時ファイルを作成しました");
-    //データを書き込む
-    myFile.println("データを書き込む");
-    myFile.close();
-  }
-}
-
-void loop() {
-  //一時ファイルからデータを読み込む
-  myFile = SD.open("temp.txt");
-  if (myFile) {
-    while (myFile.available()) {
-      Serial.write(myFile.read());
-    }
-    myFile.close();
-  }
-}
-
+```
+次に、一時ファイルを保存するための変数を定義します。
+```
+File tempFile;
+```
+一時ファイルを作成し、保存するための場所とファイル名を指定します。
+```
+tempFile = SPI.open("センサーデータ.txt", FILE_WRITE);
+```
+データを一時ファイルに保存したい場合は、`print()`関数を使います。
+```
+tempFile.print("センサーデータ：");
+```
+最後に、一時ファイルを閉じて保存を完了させます。
+```
+tempFile.close();
 ```
 
-一時ファイルを作成する際には、まずSDカードを初期化します。その後、```SD.open()```を使用して一時ファイルを作成し、必要なデータを書き込むことができます。一時ファイルを使用する際は、```SD.open()```に``FILE_WRITE``を指定し、ファイルを書き込みモードにする必要があります。また、一時ファイルの読み込みには```SD.open()```のみでよく、```available()```と```read()```を使用してデータを読み込むことができます。
+##深く掘り下げる
+一時ファイルを作成する際に、一時ファイルを保存するデバイスの種類を指定することができます。例えば、SDカードや内蔵メモリなど様々な場所に保存することができます。また、ファイルを開いたり閉じたりするときには、`File`ライブラリの関数を使うことで、ファイルの操作をより細かく制御することができます。
 
-一時ファイルの詳細
-
-一時ファイルを作成する際には、SDカードの初期化やファイルのオープンなど、いくつかの手順が必要です。また、一時ファイルを使用する際には、ファイルを書き込みモードや読み込みモードにすることが重要です。一時ファイルをうまく活用することで、よりスマートなプログラムを作成することができます。
-
-## その他の参考リンク
-
-- [Arduino SDライブラリー](https://www.arduino.cc/en/Reference/SD)
-- [SDカードの使い方](http://www.musashinodenpa.com/arduino/ref/index.php?f=9#9_95)
-- [ファイルデータの読み書き](https://analog-tyo.com/tips/1741)
-
-## 参考文献
-
-- [Arduino SD library](https://www.arduino.cc/en/Reference/SD)
-- [Using the SD library](https://www.arduino.cc/en/Tutorial/ReadWrite)]
+##参考リンク
+- [Arduino File Library](https://www.arduino.cc/en/Reference/SD)
+- [Arduinoの一時ファイルを作成する方法](https://www.arduino.co.jp/wordpress/%E4%B8%80%E6%99%82%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)

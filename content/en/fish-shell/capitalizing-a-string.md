@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Fish Shell recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,72 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a programmer, you may come across situations where you need to manipulate strings, such as capitalizing them. This can be useful for various purposes, such as displaying names or titles in a proper format. In this blog post, we will explore how to capitalize a string using Fish Shell.
+Do you want to make your code a little more user-friendly? Or maybe you just want to add a touch of professionalism? Either way, capitalizing a string can make a big difference in how your output looks. Plus, with Fish Shell, it's quick and easy to do.
 
 ## How To
 
-To begin, let's create a variable called "name" and assign it a string value:
+Capitalizing a string in Fish Shell is simple. Just follow these steps:
 
-```
-set name "john doe"
-```
+1. Open up your Fish Shell terminal.
+2. Use the `string capitalize` command, followed by the string you want to capitalize, within Fish Shell's "```" code block.
+3. Hit enter, and voila! Your string will now be capitalized.
 
-Next, we can use the `string capitalize` command in Fish Shell to convert the first letter of each word in the string to uppercase. Let's see how it works by using the `echo` command to print the value of our "name" variable:
+Here's an example:
 
-```
-echo (string capitalize $name)
-```
-
-The output will be:
-
-```
-John Doe
+```Fish Shell
+string capitalize "fish shell"
 ```
 
-As we can see, "john doe" has been converted to "John Doe" with the first letter of each word capitalized.
+Output:
+```
+Fish Shell
+```
 
 ## Deep Dive
 
-Now, let's take a deeper look at how the `string capitalize` command works. By default, it only capitalizes the first letter of each word. However, it also has an optional argument that allows us to specify which letters to capitalize. For example, if we only want to capitalize the first letter of the string, we can use the argument "1":
+While the `string capitalize` command is the easiest way to capitalize a string in Fish Shell, it's not the only way. You can also use the `tr` command to capitalize a string, although it requires a bit more code. Here's an example:
 
-```
-echo (string capitalize -1 $name)
-```
-
-The output will be:
-
-```
-John doe
+```Fish Shell
+echo "fish shell" | tr '[a-z]' '[A-Z]'
 ```
 
-Similarly, we can use other numbers as arguments to capitalize the first few letters of the string. For example, if we use "2", the first two letters will be capitalized:
-
+Output:
 ```
-echo (string capitalize -2 $name)
-```
-
-The output will be:
-
-```
-JOhn doe
+FISH SHELL
 ```
 
-We can also use the `string -r` command to reverse the order of the letters before capitalizing them. For example:
+You can also use the `sed` command to capitalize a string, but again, it requires more code. Here's an example:
 
-```
-echo (string capitalize -r $name)
-```
-
-The output will be:
-
-```
-Doe john
+```Fish Shell
+echo "fish shell" | sed -e 's/^./\u&/' -e 's/.*/\L&/'
 ```
 
-This can be useful if we want to capitalize the last letter of a string instead of the first.
+Output:
+```
+Fish Shell
+```
+
+Ultimately, the `string capitalize` command is the most efficient way to capitalize a string in Fish Shell.
 
 ## See Also
 
-- [Fish Shell string manipulation documentation](https://fishshell.com/docs/current/cmds/string.html)
-- [Other useful Fish Shell commands](https://fishshell.com/docs/current/cmds.html)
-- [Fish Shell tutorials and tips](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell documentation](https://fishshell.com/docs/current/)
+- [Learn Fish Shell in Y minutes](https://learnxinyminutes.com/docs/fish/)

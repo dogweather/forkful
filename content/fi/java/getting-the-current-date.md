@@ -1,6 +1,7 @@
 ---
-title:                "Java: Saada nykyinen päivämäärä"
-simple_title:         "Saada nykyinen päivämäärä"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Java: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,60 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monet Java-ohjelmat vaativat tietoa tämänhetkisestä päivämäärästä, ja tämän saamiseen on useita tapoja. Käyttämällä Java-ohjelmointia voit helposti hakea tämänhetkisen päivämäärän ja käyttää sitä tarkoituksesi mukaisesti.
+Miksi joku haluaisi käyttää Java-ohjelmointikieltä nykyisessä versiossaan datumin saamiseen?
 
-## Kuinka
+Nykyään päivämäärän ja ajan seuraaminen on tärkeää monissa sovelluksissa ja ohjelmistoissa. Java tarjoaa helpon ja tehokkaan tavan hakea tämänhetkinen päivämäärä ja aika, jota voidaan käyttää esimerkiksi ajan leimaamiseen tai tietokantakyselyihin.
 
-Voit saada tämänhetkisen päivämäärän käyttämällä Date-luokkaa. Alla on yksinkertainen koodiesimerkki, joka tulostaa tämänhetkisen päivämäärän terminaaliin:
+## Miten
 
-```Java
-import java.util.Date;
-
-public class DateExample{
-    public static void main (String[] args){
-        Date currentDate = new Date();
-        System.out.println("Tänään on: " + currentDate);
-    }
-}
-```
-
-**Tuloste:**
-
-```
-Tänään on: Sat Apr 17 15:36:53 EEST 2021
-```
-Tässä esimerkissä luomme uuden Date-olion, joka sisältää tämänhetkisen päivämäärän ja ajan. Tulostamalla tämän olion sisällön voimme nähdä tämänhetkisen päivämäärän ja ajan tarkkoine tiedostoineen.
-
-Voit myös käyttää SimpleDateFormat-luokkaa mukauttamaan päivämäärän ja ajan esitysmuotoa. Alla esimerkki, jossa käytämme päivämäärän esitysmuotona "dd/MM/yyyy":
+Seuraavassa on esimerkkejä Java-koodista, joka osoittaa, miten voit hakea nykyisen päivämäärän ja ajan.
 
 ```Java
-import java.util.Date;
-import java.text.SimpleDateFormat;
+// Importoidaan java.util-paketti, jota tarvitaan nykyisen päivämäärän ja ajan saamiseen
+import java.util.*;
 
-public class DateExample{
-    public static void main (String[] args){
-        Date currentDate = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        String date = format.format(currentDate);
-        System.out.println("Tänään on: " + date);
-    }
-}
+// Luo Date-olio, joka sisältää nykyisen päivämäärän ja ajan
+Date tänään = new Date();
+// Tulostaa päivämäärän ja ajan muodossa "Elokuu 27 2021 13:30:00"
+System.out.println(tänään);
+
+// Luo Calendar-olio, joka sisältää nykyisen päivämäärän ja ajan
+Calendar kalenteri = Calendar.getInstance();
+// Hakee nykyisen vuoden, kuukauden, päivän ja ajan
+int vuosi = kalenteri.get(Calendar.YEAR);
+int kuukausi = kalenteri.get(Calendar.MONTH) + 1; // Huomaa, että kuukaudet alkavat 0:sta
+int päivä = kalenteri.get(Calendar.DAY_OF_MONTH);
+int tunti = kalenteri.get(Calendar.HOUR_OF_DAY);
+int minuutti = kalenteri.get(Calendar.MINUTE);
+int sekunti = kalenteri.get(Calendar.SECOND);
+// Tulostaa päivämäärän ja ajan muodossa "08/27/2021 13:30:00"
+System.out.printf("%02d/%02d/%d %02d:%02d:%02d", kuukausi, päivä, vuosi, tunti, minuutti, sekunti);
 ```
 
-**Tuloste:**
+Esimerkkien suoritustulokset ovat seuraavat:
 
 ```
-Tänään on: 17/04/2021
+Fri Aug 27 13:30:00 EEST 2021
+08/27/2021 13:30:00
 ```
 
-## Syvällisempi tarkastelu
+## Syväsukellus
 
-Java tarjoaa myös muita vaihtoehtoja tämänhetkisen päivämäärän hankkimiseen, kuten Calendar- ja LocalDateTime-luokat. Näissä luokissa on enemmän toiminnallisuutta päivämäärän ja ajan käsittelyyn, joten voit valita sopivimman vaihtoehdon tarpeidesi mukaan.
-
-Voit myös asettaa halutun aikavyöhykkeen ja kieliasetuksen päivämäärälle käyttämällä Locale- ja TimeZone-luokkia. Tästä on hyötyä, jos haluat hakea päivämäärän ja ajan sijainnin mukaan.
+Java tarjoaa useita tapoja hakea nykyinen päivämäärä ja aika. Edellä esitetyt esimerkit käyttävät Date- ja Calendar-luokkia, mutta on myös muita vaihtoehtoja, kuten DateTimeFormatter-luokka ja LocalTime-luokka. Jokaisella näistä on omat etunsa, joten on tärkeää tutustua kuhunkin tarkemmin ja valita tarpeisiisi sopiva vaihtoehto.
 
 ## Katso myös
 
-- [Java Date and Time - Oracle Documentation](https://docs.oracle.com/javase/tutorial/datetime/overview/iso.html)
-- [Understanding Java's Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
-- [Date and Time in Java](https://www.javatpoint.com/java-date)
+- [Oracle Java -dokumentaatio: Date](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Date.html)
+- [Oracle Java -dokumentaatio: Calendar](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Calendar.html)
+- [Oracle Java -dokumentaatio: DateTimeFormatter](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/format/DateTimeFormatter.html)
+- [Oracle Java -dokumentaatio: LocalTime](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/LocalTime.html)

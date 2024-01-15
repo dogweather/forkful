@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 写入标准错误"
-simple_title:         "写入标准错误"
+title:                "输出标准错误"
+html_title:           "Arduino: 输出标准错误"
+simple_title:         "输出标准错误"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,50 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写入标准错误
+## 为什么
+为什么写入标准错误编程是重要的？因为当我们在编程过程中，难免会遇到各种问题，写入标准错误可以让我们及时发现并修复程序中的错误，提高编程效率。
 
-在Arduino编程中，我们经常需要进行调试和错误排查。而将信息写入标准错误输出可以帮助我们更容易地发现程序中的问题，从而提高我们的代码质量。
-
-## 如何写入标准错误
-
-要在Arduino中写入标准错误，您需要使用`Serial.print()`函数，并将所需信息作为参数传递给它。例如，`Serial.print("Error occurred");`将会输出"Error occurred"到标准错误输出。
-
+## 如何操作
 ```Arduino
-void setup(){
-  Serial.begin(9600); // 初始化序列通信
-}
-
-void loop(){
-  // 代码的其他部分
-  if (error occurred){
-    Serial.print("Error occurred"); // 写入标准错误输出
-  }
-}
+//编程示例
+//将错误信息写入标准错误
+Serial1.print("Error: Sensor not calibrated");
 ```
+编程示例输出：
+Error: Sensor not calibrated
 
-在Arduino中，标准错误输出默认被重定向到串行监视器，因此您可以通过打开串行监视器来查看输出结果。
-
-## 深入了解写入标准错误
-
-通过使用`Serial.print()`函数写入标准错误，我们可以将各种信息输出到调试窗口。除了文本信息外，我们还可以输出变量值、数组元素等。此外，Arduino还提供了`Serial.println()`函数，它会在每次输出文本后自动换行，更方便我们阅读输出结果。
-
-```Arduino
-int sensorValue = 100; // 传感器值
-Serial.print("Sensor value:"); // 输出文本
-Serial.println(sensorValue); // 输出变量值并换行
-```
-
-请注意，当您想要在程序中保留标准输出时，应避免使用`Serial.print()`函数。相反，您可以使用`Serial.write()`函数来将信息写入标准输出。
+## 深入了解
+写入标准错误是一种调试技术，可以让我们实时监测程序中的错误信息，帮助我们更快地发现和修复代码中的问题。在Arduino中，我们可以使用Serial.print()来将错误信息输出到串口，也可以使用Serial1.print()来输出到Serial1串口。需要注意的是，写入标准错误只能在串口监视器或串口终端中查看，无法在程序中直接访问。
 
 ## 参考链接
+- [使用Serial Monitor调试Arduino项目](https://www.arduino.cn/thread-87963-1-1.html)
+- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [理解编程中的标准输出和标准错误](https://www.itread01.com/content/1500866225.html)
+- [Arduino论坛](https://www.arduino.cn/forum.php)
 
-- [Arduino官方文档：使用Serial对象](https://www.arduino.cc/reference/zh/serial/)
-- [收集Arduino错误的技巧](https://www.arduino.cc/en/Main/CollectErrorLogs/)
-- [在Arduino代码中使用标准错误](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [使用Arduino进行调试](https://www.arduino.cc/en/Tutorial/Debugger/)
+**参考链接仅供进一步学习和参考，建议结合实际场景进行编程。**
 
-# 查看更多
-
-- [如何使用Serial Monitor进行调试](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialCallResponse/)
-- [Arduino调试技巧：使用断言来定位错误](https://www.arduino.cc/en/Reference/Assertion/)
-- [调试您的Arduino代码：通过重新定义new和delete函数](https://www.arduino.cc/en/Tutorial/Assert/)
+## 相关链接

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Escrevendo em erro padrão"
-simple_title:         "Escrevendo em erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Java: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que escrever para o erro padrão em Java?
+## Por que escrever para o erro padrão?
 
-Escrever para o erro padrão, ou standard error, é uma prática comum em Java e outras linguagens de programação. Isso permite que o programador registre e rastreie erros e exceções que ocorrem durante a execução do código. É uma ferramenta valiosa para solucionar problemas e aprimorar a qualidade do código.
+Muitas vezes, durante o processo de desenvolvimento de um programa em Java, podem ocorrer erros que precisam ser identificados e corrigidos. Ao escrever mensagens de erro para o erro padrão, podemos ter uma noção mais clara da origem do problema e, assim, facilitar a resolução do mesmo.
 
-##Como fazer?
+## Como fazer isso?
 
-Existem várias maneiras de escrever para o erro padrão em Java. Um método simples é usar o método `System.err.println()` para imprimir uma mensagem de erro. Por exemplo, se você quiser mostrar uma mensagem de erro quando uma exceção `NullPointerException` ocorrer, o código ficaria assim:
+Para escrever para o erro padrão em Java, usamos o objeto "System.err". Podemos usar os métodos "println()" e "print()" para imprimir uma mensagem no erro padrão, seguido pelo sinal de exclamação (!) para garantir que a mensagem seja exibida.
 
-```java
-try {
-    //código que pode gerar um NullPointerException
-} catch (NullPointerException e) {
-    System.err.println("Ocorreu um erro: " + e.getMessage());
-}
+```
+Java System.err.println("Mensagem de erro!"); 
 ```
 
-Isso imprimirá a mensagem de erro no console, indicando onde exatamente ocorreu a exceção.
+Ao rodar esse código, teremos a mensagem de erro impressa no console do usuário.
 
-Você também pode usar o objeto `System.err` para escrever diretamente no erro padrão. Por exemplo, se você quiser exibir um erro com uma cor vermelha no console, pode usar o código a seguir:
+## Mergulho Profundo
 
-```java
-System.err.print("\033[31m"); //cor vermelha
-System.err.println("Isto é um erro!"); //mensagem de erro
+Além de imprimir mensagens de erro simples, podemos utilizar a classe "PrintWriter" para escrever log de erros em um arquivo para posterior análise. Isso pode ser útil quando precisamos rastrear e corrigir erros em aplicações mais complexas.
+
+```
+Java PrintWriter pw = new PrintWriter(new FileWriter("log.txt"));
+pw.println("Erro encontrado!");
+pw.close();
 ```
 
-##Aprofundando mais
+Aqui, criamos um objeto PrintWriter que irá escrever em um arquivo de texto chamado "log.txt". Em seguida, utilizamos o método "println()" para escrever a mensagem de erro no arquivo e, por fim, fechamos o objeto PrintWriter. O resultado será um arquivo de log com uma lista de erros encontrados durante a execução do programa.
 
-Além de simplesmente imprimir mensagens de erro, é possível personalizar completamente o tratamento de erros em Java. Você pode criar suas próprias classes de exceção personalizadas para lidar com diferentes tipos de erros e usar a instrução `throw` para lançar essas exceções. Também é possível criar classes de tratamento de exceções para lidar com exceções específicas ou gerais.
+## Veja também
 
-Outra dica importante é sempre monitorar o registro de erros e exceções em seu código. Isso permite que você identifique e corrija problemas rapidamente, melhorando a eficiência e a qualidade do seu código. Além disso, é importante também documentar os erros e exceções encontrados e quais as soluções adotadas para resolvê-los, facilitando o trabalho futuro e o entendimento do código por outros programadores.
-
-##Veja também
-
-- [Documentação oficial do Java sobre Tratamento de Exceções](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
-- [Tutorial de como usar o erro padrão em Java](https://www.baeldung.com/java-system-err-println)
-- [Guia completo de Tratamento de Exceções em Java](https://www.guru99.com/java-exception-handling.html)
+- [Documentação Oficial do Java](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Artigo sobre tratamento de erros em Java](https://www.devmedia.com.br/tratamento-de-erros-em-java/22101)

@@ -1,6 +1,7 @@
 ---
-title:                "Python: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現を使う"
+html_title:           "Python: 正規表現を使う"
+simple_title:         "正規表現を使う"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -9,34 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使用するのか
+＃＃　なぜ
+正規表現を使う理由を最大２文で説明します。
 
-正規表現は、特定のパターンを持つ文字列を簡単に検索や操作することができる便利なPythonツールです。例えば、メールアドレスや電話番号などを簡単に抽出することができます。
+正規表現は、特定のパターンを検索や抽出するための強力なツールです。例えば、長いテキストの中からメールアドレスや電話番号を見つける、あるいは特定の単語を含む文章をすべて置換するなどの作業が簡単にできます。正規表現を使うことで、よりスマートかつ効率的なコーディングが可能になります。
 
-## 正規表現の使用方法
+＃＃　使い方
+正規表現を使うための具体的なコーディング例と、出力サンプルを示します。コードはすべてPythonの```...```コードブロックで示しています。
 
-正規表現を使用するには、Pythonのreモジュールをインポートする必要があります。次に、re.search()関数を使用して、検索したいパターンと文字列を指定します。
+### テキスト中からメールアドレスを抽出する例
 
 ```Python
 import re
 
-text = "私の電話番号は123-456-7890です。"
-pattern = r"\d{3}-\d{3}-\d{4}"
+text = "私のメールアドレスはtest@gmail.comです。お問い合わせはこちらにお願いします。"
+pattern = r"\w+@\w+\.com"
+matches = re.findall(pattern, text)
+print(matches)
 
-match = re.search(pattern, text)
-
-print(match.group()) # 出力結果は"123-456-7890"
+# Output: ['test@gmail.com']
 ```
 
-この例では、\dは数字を表し、{3}は3回繰り返すことを意味します。そのため、\d{3}は3桁の数字を表すことになります。また、search()関数では最初に見つかったパターンのみを返すため、メールアドレスなど複数のパターンを検索する場合はfindall()関数を使用します。
+### 文章内の単語を置換する例
 
-## 正規表現の詳細
+```Python
+import re
 
-正規表現には様々な特殊文字やメタ文字があり、それぞれの意味や使い方については深く学ぶことができます。また、正規表現を使用することで文字列の分割や置換など多くのことが行えるため、より高度なプログラミングテクニックとしても活用することができます。
+text = "私はとても楽しいです。私は本当に嬉しいです。"
+pattern = r"楽しい"
+new_text = re.sub(pattern, "素敵", text)
+print(new_text)
 
-## もっと詳しく学ぶ
+# Output: 私はとても素敵です。私は本当に嬉しいです。
+```
 
-- [Python reモジュールのドキュメント](https://docs.python.org/ja/3/library/re.html)
-- [正規表現チュートリアル](https://docs.python.org/ja/3/howto/regex.html)
-- [Pythonで正規表現を使用する方法](https://www.geeksforgeeks.org/how-to-use-regular-expression-in-python/)
-- [正規表現の正しい使い方](https://www.programiz.com/python-programming/regex)
+### 正規表現の基本パターン
+
+Pythonでよく使われる正規表現の基本パターンを以下にまとめます。
+
+| パターン | 説明 |
+| ------ | ------ |
+| \w | 数字やアルファベット、アンダースコアにマッチ |
+| \d | 数字にマッチ |
+| \s | 空白文字にマッチ |
+| ^ | 文字列の先頭にマッチ |
+| $ | 文字列の末尾にマッチ |
+| [...] | 指定した文字列のいずれかにマッチ |
+| [^...] | 指定した文字列以外のいずれかにマッチ |
+
+＃＃　詳細情報
+正規表現にはさまざまなオプションや特殊文字があり、さらに高度なパターンマッチングが可能です。詳しい情報は公式ドキュメントを参照するか、オンライン上で利用可能なチュートリアルを参考にしてください。
+
+例えば、正規表現では「グループ化」と呼ばれる機能を使うことで、マッチした部分だけを取り出すことができます。また、```re.compile()```を使うことで、複数のパターンを一度に検索することもできます。
+
+＃＃　参考情報
+「See Also」
+- Python公式ドキュメント: https://docs.python.org/ja/3/library/re.html
+- 正規表現チュートリアル: https://www.programiz.com/python-programming/regex

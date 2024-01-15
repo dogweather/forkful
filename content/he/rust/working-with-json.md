@@ -1,6 +1,7 @@
 ---
-title:                "Rust: עובדים עם json"
-simple_title:         "עובדים עם json"
+title:                "עבודה עם JSON"
+html_title:           "Rust: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -9,51 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## Why
+למה אתה בעל עניין לעבוד עם JSON בשפת ראסט?
 
-כאשר מתחילים ללמוד פיתוח בשפת ראסט, ייתכן שירצו להתחיל לעבוד עם JSON. כפי שיודעים, ישנם המון צורות שונות להתקשר עם נתונים ואחת מהן היא JSON. שפת ראסט מציעה כלים נהדרים לטיפול ועיבוד בנתונים מסוג זה ולכן כדאי ללמוד את הטכניקות הנכונות כדי להשתמש בהם בצורה יעילה.
+ראסט היא שפת תכנות מודרנית ויעילה הנהוגה בעולם תוכנה. אחת היכולות החזקות שלה היא יכולת לעבוד בקלות עם פורמטים תקשורת מקבילים כמו JSON. שימוש בפורמט הזה נמצא בכל מקום בעולם התכנות כעת, ולכן היא מיועדת לספק לך כלי יעיל לעבוד עם נתוני JSON.
 
-## איך לעשות זאת
+## How To
 
-כדי לעבוד עם JSON בשפת ראסט, נצטרך להשתמש בספריית מתאימה. הספרייה הנפוצה והנמצאת בצמוד לשפת ראסט היא `serde_json`. בקצרה, ספריית זו מאפשרת לנו לקרוא ולכתוב נתונים בתבנית JSON. ניתן להתקין את הספרייה על ידי הרצת הפקודה `cargo install serde_json` בטרמינל.
+עכשיו שאתה מבין למה חשוב לעבוד עם JSON, בוא נלמד איך לעבוד עם זה בראסט.
 
-כדי להשתמש בספרייה זו, נצטרך ליבנות עבורה טיפוסים מתאימים. לדוגמה, ניתן ליצור מבנה `User` המכיל שדות כגון `name` ו-`age`:
+נתחיל עם ייבוא המודול של JSON:
 
-```rust
-use serde::{Serialize, Deserialize};
-
-#[derive(Serialize, Deserialize)]
-struct User {
-    name: String,
-    age: u32,
-}
+```Rust
+// ייבוא המודול
+use serde_json::{Value, json};
 ```
 
-כעת, ניתן ליצור משתמש חדש ולהמיר אותו לתבנית JSON באמצעות פעולת `serde_json::to_string()`:
+עכשיו, ניצור משתנה נתמך של סוג JSON:
 
-```rust
-let user = User { 
-    name: String::from("John"), 
-    age: 25 
-};
-
-let json_string = serde_json::to_string(&user).unwrap();
-println!("{}", json_string);
+```Rust
+let json_data = r#"{
+    "name": "John",
+    "age": 30,
+    "address": {
+        "country": "USA",
+        "city": "New York"
+    },
+    "hobbies": [
+        "hiking",
+        "reading",
+        "cooking"
+    ]
+}"#;
 ```
 
-פלט של קוד זה יהיה:
+עם עזרת פונקציית ייבוא מובנית מטיפוס שלנו לסוג JSON, נפעיל את הנתמך ונשלב אותו למשתנה נתמך:
 
-```console
-{"name":"John","age":25}
+```Rust
+let parsed_json: Value = json::from_str(json_data).unwrap();
 ```
 
-ניתן להמיר גם מחרוזת JSON למבנה מתאים באמצעות פעולת `serde_json::from_str()`:
+לבסוף, נוכל להשתמש בסוג JSON המתאים כדי לגשת לנתונים:
 
-```rust
-let json_string = r#"{"name": "Jane", "age": 30}"#;
-let user: User = serde_json::from_str(json_string).unwrap();
+```Rust
+// גישה לשדה name
+let name = parsed_json["name"].as_str().unwrap();
+// גישה לשדה country בתת סוג JSON של כתובת
+let country = parsed_json["address"]["country"].as_str().unwrap();
+// גישה לרשימת התחביבים
+let hobbies = parsed_json["hobbies"].as_array().unwrap();
+// גישה לתחביב מספר 2 ברשימה
+let hobby2 = hobbies[1].as_str().unwrap();
 ```
 
-פלט של קוד זה יהיה ערך של משתנה `user` המכיל את השדות `name` ו-`age` בהתאמה.
+לבסוף, נדפיס בתצוגה יפה את הנתונים שלנו:
 
-כמובן, ישנם עוד המון פעולות ואפשרויות לעבוד עם JSON בש
+```Rust
+println!("Name: {}", name);
+println!("Country: {}", country);
+println!("Hobbies: {}", hobbies);
+println!("Second Hobby: {}", hobby2);
+```
+
+הפלט יראה כך:
+
+```
+Name: John
+Country: USA
+Hobbies: ["hiking", "reading", "cooking"]
+Second Hobby: reading
+```
+
+## Deep Dive
+
+עם יכולות העיבוד של ספריית `serde_json`, ניתן לקבל נקודת יציאה מצוינת לט

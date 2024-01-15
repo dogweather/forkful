@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Å finne lengden til en streng"
-simple_title:         "Å finne lengden til en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "Haskell: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Haskell er et funksjonelt programmeringsspråk som er kjent for å være elegant, effektivt og robust. En av de grunnleggende funksjonene i Haskell er evnen til å finne lengden på en streng - en handling som kan være nyttig i mange tilfeller. Enten du er en nybegynner eller en erfaren Haskell-programmerer, kan du lære hvordan du finner lengden på en streng og ta dine programmeringsferdigheter til neste nivå.
+Å finne lengden til en streng er en vanlig oppgave i mange programmeringsspråk, inkludert Haskell. Det er nyttig å kunne gjøre dette for å kunne behandle og manipulere strenger på en effektiv måte.
 
 ## Hvordan
-
-Haskell tilbyr en rask og enkel måte å finne lengden på en streng gjennom bruk av funksjonen `length`. La oss se på et eksempel på hvordan dette kan gjøres i Haskell:
-
-```Haskell
-Prelude> length "Hei, verden!"
-
-13
-```
-
-I dette eksemplet bruker vi funksjonen `length` sammen med en streng "Hei, verden!" og får som resultat lengden på 13. Denne funksjonen kan også brukes på lister, og vil returnere antall elementer i listen.
-
-## Dykk ned
-
-For de som er interessert i å lære mer om hvordan Haskell beregner lengden på en streng, kan vi se på implementeringen av `length`-funksjonen i Haskell. Denne funksjonen er skrevet på en rekursiv måte, som betyr at den gjentas til den når en base case hvor den returnerer lengden på strengen.
+For å finne lengden til en streng i Haskell, kan vi bruke den innebygde funksjonen `length`. Denne funksjonen tar inn en streng som argument og returnerer antall tegn i strengen. La oss se på et eksempel:
 
 ```Haskell
-length :: [a] -> Int
-length [] = 0
-length (x:xs) = 1 + length xs 
+length "Hei, verden!"
+
+-- output: 12
 ```
 
-I denne implementeringen, skiller vi mellom to tilfeller: når den tomme listen blir passert inn, returnerer den 0 siden tomme lister har en lengde på 0. I det andre tilfellet, hvor det er en ikke-tom liste, fjerner vi først det første elementet og regner én ekstra lengde for resten av listen.
+Vi kan også bruke denne funksjonen på variabler som inneholder strenger. La oss si at vi har en variabel `navn` som inneholder navnet vårt. Da kan vi finne lengden til denne strengen ved å skrive:
+
+```Haskell
+length navn
+
+-- output: 5 (hvis navnet er "Hans")
+```
+
+Vi kan også bruke `length` på symboliske strenger, som for eksempel tall. La oss si at vi vil finne antall sifre i tallet 123456. Da kan vi skrive:
+
+```Haskell
+length (show 123456)
+
+-- output: 6
+```
+
+## Dykk dypere
+
+Hvis du vil forstå hvordan `length` funksjonen egentlig fungerer, kan du dykke dypere inn i Haskell sine strengmanipuleringsfunksjoner. En streng i Haskell er egentlig bare en liste med tegn. Dette betyr at lengden til en streng egentlig er lengden til denne listen. Derfor fungerer `length` ved å telle antall elementer i listen som representerer strengen.
 
 ## Se også
 
-For å lære mer om Haskell og dets funksjoner, sjekk ut disse nyttige ressursene:
-
-- [Haskell for nybegynnere](https://learnxinyminutes.com/docs/no-no/haskell-no/)
-- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell-læringssamfunn](https://www.reddit.com/r/haskell/)
+- [Haskell dokumentasjon for `length`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:length)
+- [Haskell lærebøker på norsk](https://wiki.haskell.org/Norsk)
+- [Enkle intro til Haskell på norsk](https://martinlearnsruby.github.io/examples/haskell-sanity-check-0.6.3.pdf)

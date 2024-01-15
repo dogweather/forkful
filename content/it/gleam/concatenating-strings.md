@@ -1,5 +1,6 @@
 ---
-title:                "Gleam: Concatenazione di stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Gleam: Concatenazione di stringhe"
 simple_title:         "Concatenazione di stringhe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,54 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Hai mai incontrato una situazione in cui hai bisogno di unire due o più stringhe in un'unica stringa? Forse stai creando un sistema di gestione delle scorte e devi unire il nome del prodotto con la quantità disponibile per visualizzarlo come un'unica stringa. O forse stai creando un gioco e devi unire il nome del personaggio con il suo livello per mostrare al giocatore. Indipendentemente dal motivo, concatenare le stringhe è un'operazione molto comune nella programmazione e con questo post imparerai come farlo in Gleam.
+Se sei nuovo a programmazione, potresti chiederti perché dovresti interessarti alla concatenazione di stringhe. In poche parole, la concatenazione di stringhe è un concetto fondamentale nella creazione di programmi per manipolare e visualizzare testo.
 
 ## Come fare
 
-In Gleam, per concatenare le stringhe, possiamo utilizzare l'operatore `++`. Questo operatore ci consente di unire due o più stringhe in una sola stringa. Ecco un esempio:
-
-```Gleam
-let nome_prodotto = "Maglietta"
-let disponibilita = 10
-IO.println("Ci sono " ++ disponibilita ++ " " ++ nome_prodotto ++" disponibili")
-```
-
-Questo darà come output:
-
-> Ci sono 10 Magliette disponibili
-
-Possiamo anche concatenare più di due stringhe, semplicemente aggiungendo più operatori `++`. Ad esempio:
-
-```Gleam
-let nome = "Giovanni"
-let cognome = "Bianchi"
-let saluto = "Ciao, mi chiamo " ++ nome ++ " " ++ cognome
-IO.println(saluto)
-```
-
-Questo darà come output:
-
-> Ciao, mi chiamo Giovanni Bianchi
-
-## Approfondimento
-
-Grazie all'operatore `++` possiamo anche concatenare le stringhe con altri tipi di dato come numeri o booleani. Tuttavia, dobbiamo prestare attenzione al tipo di dati che stiamo unendo, poiché Gleam è fortemente tipizzato e richiede che i tipi siano compatibili. Ad esempio, non possiamo unire una stringa con un numero direttamente, ma possiamo convertire il numero in una stringa utilizzando il modulo `String` e poi concatenarlo.
-
-Ecco un esempio di concatenazione di una stringa con un numero:
+Per concatenare due stringhe usando Gleam, puoi utilizzare l'operatore ```++```, che unisce due stringhe in una sola. Ad esempio:
 
 ```Gleam
 let nome = "Maria"
-let eta = 25
-let presentazione = "Ciao, mi chiamo " ++ nome ++ " e ho " ++ String.from_int(age) ++ " anni"
-IO.println(presentazione)
+let cognome = "Rossi"
+let nome_completo = nome ++ " " ++ cognome
+
+io.println(nome_completo)
+
+// Output: Maria Rossi
 ```
 
-Questo darà come output:
+Se vuoi concatenare più di due stringhe, puoi utilizzare l'operatore all'interno di un'espressione, come nell'esempio seguente:
 
-> Ciao, mi chiamo Maria e ho 25 anni
+```Gleam
+let nome = "Maria"
+let cognome = "Rossi"
+let saluto = "Ciao, "
+let nome_completo = saluto ++ nome ++ " " ++ cognome ++ "!"
+
+io.println(nome_completo)
+
+// Output: Ciao, Maria Rossi!
+```
+
+## Approfondimento
+
+La concatenazione di stringhe è una delle operazioni più comuni nella programmazione e viene utilizzata per costruire nuove stringhe combinando parti di testo esistente. Questo può essere utile, ad esempio, per creare messaggi personalizzati, per l'elaborazione di dati o per generare output.
+
+Oltre all'operatore ```++```, Gleam offre anche altre funzioni utili per la manipolazione delle stringhe, come ```length```, che restituisce la lunghezza di una stringa, e ```slice```, che permette di estrarre una sottostringa da una stringa più grande.
+
+Inoltre, è importante notare che la concatenazione di stringhe può avere un impatto sulle prestazioni del tuo programma, poiché ogni volta che si crea una nuova stringa, il sistema deve allocare nuova memoria per essa. Perciò, è importante utilizzare le funzioni stringa in modo accurato e ottimizzare il tuo codice quando possibile.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Gleam sulle stringhe](https://gleam.run/book/core-stdlib#Strings)
-- [Come utilizzare gli operatori in Gleam](https://gleam.run/blog/operator-precedence)
-- [Tutorial su come utilizzare stringhe in Gleam](https://www.tutorialspoint.com/gleam/gleam_strings.htm)
+- [Documentazione di Gleam su stringhe](https://gleam.run/documentation/std-lib-string/)
+- [Tutorial di Gleam per principianti](https://gleam.run/getting-started/basic-tutorial/)

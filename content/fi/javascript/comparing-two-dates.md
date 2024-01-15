@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertailu"
+html_title:           "Javascript: Kahden päivämäärän vertailu"
 simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,37 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmoinnin tilanteissa, kuten varausjärjestelmissä tai aikataulutussivustoissa, on tarpeen verrata kahta eri päivämäärää. Tämä mahdollistaa esimerkiksi tiettyjen päivämäärien välisen erotuksen laskemisen tai tarkistamisen, onko jokin tietty päivämäärä jo mennyt.
+Aloitetaan kysymyksestä, miksi joku haluaisi verrata kahta päivämäärää Javascriptillä. Yksinkertaisesti sanottuna, päivämäärien vertailu on tärkeää, kun halutaan tarkistaa onko jokin tapahtuma tapahtunut ennen toista tai onko kaksi tapahtumaa tapahtunut samana päivänä.
 
-## Miten
+## Miten tehdä
 
-Vertaileminen kahden päivämäärän välillä on mahdollista JavaScriptillä käyttämällä Date-objekteja ja niiden metodeja. Esimerkiksi voimme luoda kaksi eri päivämäärämuuttujaa ja käyttää niiden välillä metodia "getTime()", joka palauttaa päivämäärän millisekunteina.
+Ensimmäinen askel on luoda kaksi Date-objektia, jotka sisältävät vertailtavat päivämäärät. Tämän jälkeen voimme käyttää Date-objektien sisäänrakennettuja vertailumetodeja, kuten `getTime()` tai `valueOf()`, joiden avulla voimme vertailla päivämääriä millisekunneiksi tai millisekuntitimanteiksi.
 
-```Javascript
-let date1 = new Date("2020-01-01");
-let date2 = new Date("2020-02-01");
-let difference = date2.getTime() - date1.getTime();
-console.log(difference); // tulostaa 2678400000, eli 31 päivän pituisen eron millisekunteina
-```
-
-Toinen tapa verrata päivämääriä on käyttää niiden vertailuoperaattoreita, kuten ">" ja "<". Näin voimme esimerkiksi tarkistaa, onko jokin päivämäärä jo mennyt tai onko se tulevaisuudessa.
+Esimerkiksi, haluamme tarkistaa onko ensimmäinen päivämäärä ennen toista. Voimme tehdä tämän seuraavasti:
 
 ```Javascript
-let now = new Date();
-let futureDate = new Date("2023-01-01");
-if (futureDate > now) {
-  console.log("Tämä päivämäärä on tulevaisuudessa!");
+let date1 = new Date('2020-10-01'); // luodaan ensimmäinen Date-objekti
+let date2 = new Date('2021-10-01'); // luodaan toinen Date-objekti
+
+if(date1.getTime() < date2.getTime()) { // vertaillaan millisekunneiksi
+  console.log(date1 + ' on ennen ' + date2);
 } else {
-  console.log("Tämä päivämäärä on jo mennyt.");
+  console.log(date1 + ' ei ole ennen ' + date2);
 }
 ```
 
-## Syvällinen tarkastelu
+Tässä tapauksessa tulostamme päivämäärän `date1`, koska sen aikaleima on pienempi kuin `date2`:n aikaleima.
 
-Päivämäärien vertailu voi joskus olla hieman hankalaa, sillä ne eivät ole vain pelkkiä lukuarvoja, vaan sisältävät myös aikavyöhykkeeseen liittyvää tietoa. Tämä voi vaikuttaa päivämäärien välisten erojen laskemiseen tai vertailuun. Lisäksi on hyvä huomata, että kaikki selaimet eivät välttämättä tue samoja päivämäärämuotoja, joten tarkista aina, että käytössäsi oleva muoto toimii kaikilla haluamillasi selaimilla.
+Voimme myös tarkistaa ovatko kaksi päivämäärää yhtä suuria käyttämällä `valueOf()`-metodia:
+
+```Javascript
+let date1 = new Date('2020-10-01'); // luodaan ensimmäinen Date-objekti
+let date2 = new Date('2020-10-01'); // luodaan toinen Date-objekti
+
+if(date1.valueOf() === date2.valueOf()) { // vertaillaan millisekuntitimanteiksi
+  console.log(date1 + ' ja ' + date2 + ' ovat samat päivämäärät.');
+} else {
+  console.log(date1 + ' ja ' + date2 + ' eivät ole samat päivämäärät.');
+}
+```
+
+Tässä tapauksessa tulostamme, että molemmat päivämäärät ovat samat.
+
+## Syvemmälle tarkasteluun
+
+Kun vertaillaan päivämääriä Javascriptillä, on tärkeää huomioida, että Date-objekteilla on tarkkuus vain millisekunteihin asti. Tämä tarkoittaa sitä, että kaksi päivämäärää, jotka ovat samassa minuutissa ja sekunnissa mutta eri millisekunnissa, katsotaan eri päivämääriksi.
+
+Lisäksi, Date-objektit käyttävät UTC-aikaa, joten tuloksissa saattaa olla eroja, jos käyttäjän tai selaimen aikavyöhyke vaihtelee.
+
+On myös hyvä huomata, että Javascriptia käytettäessä on suositeltavaa käyttää vertailussa millisekuntitimantteja `valueOf()`-metodin sijaan, sillä tämä antaa tarkemman ja luotettavamman tuloksen.
 
 ## Katso myös
 
-- [MDN: Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: JavaScript Dates](https://www.w3schools.com/js/js_dates.asp)
-- [Stack Overflow: Comparing two dates in JavaScript](https://stackoverflow.com/questions/497790/how-do-you-write-a-javascript-function-that-compare-dates)
+- [MDN: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [Date-fns](https://date-fns.org/)

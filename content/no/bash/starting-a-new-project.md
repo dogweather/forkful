@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "Bash: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,40 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Vi har alle ønsket å starte et nytt prosjekt på et eller annet tidspunkt. Kanskje du har en idé som du vil bringe til livet, eller kanskje du bare er nysgjerrig på å lære mer om Bash-programmering. Uansett årsak, å starte et nytt prosjekt kan være en spennende og givende opplevelse.
 
-Å starte et nytt Bash-programmeringsprosjekt kan være en spennende og givende opplevelse for både nybegynnere og erfarne programmører. Det gir deg mulighet til å sette dine kreative ideer ut i live og bygge noe fra bunnen av. Det er også en flott måte å lære og forbedre dine ferdigheter innen Bash-programmering.
+## Slik gjør du det
+For å starte et nytt prosjekt i Bash må du først ha et tekstredigeringsprogram som støtter Bash syntaks, for eksempel GNU Nano eller Vim. Du kan deretter følge disse enkle stegene for å sette i gang:
 
-## Hvordan starte et Bash-prosjekt
-
-Før du begynner å skrive kode, er det viktig å ha en klar idé om hva prosjektet skal være og hva målene dine er. Når du har denne grunnsteinen på plass, kan du følge disse trinnene for å starte ditt eget Bash-prosjekt:
-
-1. Åpne en Terminal eller Kommandovindu.
-2. Velg en passende plassering for prosjektet ditt og lag en ny mappe for det ved hjelp av `mkdir` kommandoen.
-3. Naviger til mappen du nettopp har opprettet ved hjelp av `cd` kommandoen.
-4. Lag en ny fil ved å bruke `touch` kommandoen, for eksempel `touch main.sh`.
-5. Åpne filen du nettopp har laget i en tekstredigerer og begynn å skrive din Bash-kode.
-
-Her er et eksempel på hvordan en `hello world` kode kan se ut:
-
-```bash
-#!/bin/bash
-echo "Hei verden!"
+1. Opprett en ny fil ved å skrive `nano nyttProsjekt.sh` (erstatte "nyttProsjekt" med det du ønsker å kalle prosjektet ditt).
+2. Skriv inn følgende kode i filen:
 ```
+#!/bin/bash
 
-La oss gå gjennom denne koden linje for linje:
+# Her kan du skrive din Bash-kode
 
-- Første linje `#!/bin/bash` er en shebang, som forteller datamaskinen hvilket programmeringsspråk som skal brukes.
-- Andre linje bruker `echo` kommandoen til å skrive ut teksten "Hei verden!" på skjermen.
+```
+3. Lagre filen ved å trykke `Ctrl + x`, og deretter `y` for å bekrefte.
+4. Gi filen kjøretillatelse ved å skrive `chmod +x nyttProsjekt.sh`.
+5. Du kan nå kjøre filen ved å skrive `./nyttProsjekt.sh` i terminalen.
 
-Når du har skrevet koden din, kan du kjøre den ved å skrive `bash main.sh` i Terminalen. Du bør se "Hei verden!" blir skrevet ut på skjermen.
+For å legge til mer funksjonalitet og logikk i prosjektet ditt, kan du bruke Bash-kommandoer og variabler som du lærer mer om gjennom prøving og feiling.
 
-## Dypdykk
+## Dykk dypere
+For å få en enda dypere forståelse av hvordan du kan starte et nytt prosjekt i Bash, kan du se på følgende ressurser:
 
-Når du har fått en grunnleggende forståelse av hvordan du starter et Bash-prosjekt, kan du dykke dypere inn i ulike aspekter av programmeringsspråket. Dette kan inkludere å lære om ulike Bash-kommandoer, hvordan du bruker variabler, og hvordan du bygger komplekse skript.
+- [GNU Nano-brukerhåndbok](https://www.nano-editor.org/dist/v2.8/nano.html)
+- [Vim brukerveiledning](https://vim.sexy)
+- [Offisiell Bash-dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Bash Cheatsheet](https://devhints.io/bash)
 
-Du kan også se på andre eksisterende Bash-prosjekter og lære av koden deres. Dette vil hjelpe deg med å forbedre dine ferdigheter og gi deg nye ideer for ditt eget prosjekt.
+Husk, den beste måten å lære Bash på er å bare begynne å kode og å eksperimentere med ulike kommandoer og metoder. Lykke til med ditt nye prosjekt!
 
 ## Se også
-
-- [Bash Guide for Nybegynnere](https://tilnari.github.io/post/bash-guide-for-nybegynnere/)
-- [Bash Scripting på Codecademy](https://www.codecademy.com/learn/learn-bash)
+- [Bash Scripting for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Learn Shell](https://learnshell.org)
+- [Bash for Loop](https://linuxize.com/post/bash-for-loop/)

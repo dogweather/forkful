@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: Slette tegn som matcher et mønster"
-simple_title:         "Slette tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster."
+html_title:           "Gleam: Slette tegn som matcher et mønster."
+simple_title:         "Slette tegn som matcher et mønster."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,51 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger kan det være nødvendig å slette bestemte tegn fra en streng i Gleam-programmeringsspråket. Dette kan være for å fjerne unødvendige mellomrom, spesielle tegn eller annen uønsket tekst. I denne artikkelen vil vi utforske hvordan man kan gjøre dette, og hvorfor det kan være nyttig.
+Å slette tegn som matcher et mønster kan være nyttig når du ønsker å rense eller formatere tekstfiler, eller når du jobber med sensitiv informasjon som trenger å bli maskert. I denne artikkelen skal vi se på hvordan dette kan gjøres ved hjelp av Gleam-programmeringsspråket.
 
-## Hvordan
+## Slik gjør du det
 
-Det første trinnet for å slette tegn som matcher et mønster i Gleam er å importere biblioteket `gleam/glob` ved å legge til følgende linje øverst i filen:
+For å slette tegn som matcher et mønster trenger du å bruke standardbiblioteket til Gleam, spesielt funksjonen `String.replace` og `Regex.regex`. Først må du importere disse modulene:
 
-```Gleam
-import gleam/glob
+```
+import string
+import regex
 ```
 
-Deretter kan vi bruke funksjonen `delete_chars` for å slette tegn som matcher et mønster fra en gitt streng. Vi kan også bruke `match`-operatøren for å spesifisere et mønster å slette. Her er et eksempel på hvordan det kan se ut:
+Så kan du bruke `String.replace` til å erstatte alle tegn som matcher det gitte mønsteret med en tom streng:
 
-```Gleam
-let str = "Dette er en test"
-let slettet_str = glob.delete_chars(str, match {"er"})
+```
+let tekst = "Dette er en hemmelig tekst123"
+let mønster = regex.compile("[a-z]")
+let renset_tekst = string.replace(tekst, mønster, "")
 ```
 
-Output vil være: "Dtt e n tst"
+I dette eksempelet vil `renset_tekst` bli "123", siden alle små bokstaver fra a-z (inkludert æøå) er slettet fra teksten.
 
-I dette tilfellet ble alle forekomster av "er" i strengen slettet.
+## Grav litt dypere
 
-Vi kan også bruke `match`-operatøren for å spesifisere et bredere mønster. For eksempel, hvis vi vil fjerne alle mellomrom i en streng, kan vi bruke følgende kode:
+La oss ta en nærmere titt på hvordan `Regex.regex` fungerer. Den tar to argumenter: et mønster og eventuelle flagg som du kan bruke for å spesifisere søkekriterier. I eksemplet over brukte vi `[a-z]` som mønster, men her er noen andre eksempler:
 
-```Gleam
-let str = "Dette er en test"
-let slettet_str = glob.delete_chars(str, match {" "})
-```
+- `"[0-9]"` vil matche alle tall
+- `"[^a-z0-9]"` vil matche alt som ikke er i alfabetet eller tall
+- `"[A-Z]{3}"` vil matche tre store bokstaver på rad
 
-Output vil være: "Detteerentest"
-
-## Dypdykk
-
-`delete_chars`-funksjonen tar også et tredje argument som er et dodra-meningsverdi, det vil si en verdi som bare er en referanse til seg selv og ikke kan endres. Dette gjør det mulig å lage mer avanserte mønstre å slette. For eksempel, hvis vi ønsker å slette alle tall fra en streng, kan vi bruke følgende kode:
-
-```Gleam
-let numbers = "123456789"
-let slettet_numbers = glob.delete_chars(numbers, match {glob.dodra{"0".."9"}})
-```
-
-Output vil være en tom streng, siden alle tallene er slettet.
-
-Vær oppmerksom på at denne metoden bare sletter tegnene fra den opprinnelige strengen og returnerer en kopi. Den opprinnelige strengen vil ikke bli endret.
+Du kan også bruke flagg for å gjøre søket ditt mer spesifikt, som for eksempel `i` for å ignorere store/små bokstaver eller `g` for å matche flere ganger i teksten.
 
 ## Se også
 
-- Offisiell Gleam dokumentasjon for `gleam/glob`: https://gleam.run/libraries/glob
-- Gleam glob bibliotekets GitHub-side: https://github.com/gleam-lang/glob
-- Andre nyttige Gleam biblioteker: https://github.com/gleam-lang/awesome-gleam#libraries
+- Gleam sin offisielle dokumentasjon for mer informasjon om `String.replace` og `Regex.regex`: [https://gleam.run/stdlib/regex](https://gleam.run/stdlib/regex)
+- En annen Gleam-artikkel om å manipulere tekstfiler: [https://gleam.run/articles/text-manipulation-revisited](https://gleam.run/articles/text-manipulation-revisited)
+- En tutorial om hvordan du maskerer sensitiv informasjon ved hjelp av Gleam: [https://gleam.run/articles/encryption-in-gleam](https://gleam.run/articles/encryption-in-gleam)

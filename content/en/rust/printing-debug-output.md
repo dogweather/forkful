@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "Rust recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,41 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Debugging is an essential part of programming, and one of the most common methods for debugging is printing out debug output. This can help you understand and track the flow of your code, as well as identify any potential errors or bugs. In Rust, printing debug output is particularly useful due to its strong type system and error handling, making it a valuable tool for any Rust programmer.
+Debugging is an essential part of the coding process, and one of the most commonly used techniques is printing debug output. It allows programmers to see the values of variables, function outputs, and other important information at a specific point in their program's execution. This can help identify bugs and errors more quickly, making the debugging process more efficient.
 
 ## How To
 
-Printing debug output in Rust is simple and straightforward. All you need to do is use the `println!()` macro, which allows you to print out a string along with any variables or values you want to see. Here's an example:
+There are a few different ways to print debug output in Rust, depending on what you want to see and where you want to see it. Here are some examples using the `println!` macro:
 
 ```Rust
+// Print a string
 let name = "John";
-let age = 25;
-println!("My name is {} and I am {} years old.", name, age);
+println!("Hello, {}!", name);
 ```
-
-This will output: `My name is John and I am 25 years old.`
-
-You can also use the `format!()` macro to store the output in a string and use it later. This can be useful when debugging specific functions or methods. Here's an example:
 
 ```Rust
-let name = "Jane";
-let address = "123 Main St.";
-let details = format!("Name: {}, Address: {}", name, address);
-println!("{}", details);
+// Print an integer
+let num = 42;
+println!("The answer to everything is {}.", num);
 ```
 
-This will output: `Name: Jane, Address: 123 Main St.`
+```Rust
+// Print a boolean
+let is_rust_fun = true;
+println!("Is Rust fun? {}", is_rust_fun);
+```
+
+You can also use the `dbg!` macro to print the value of an expression along with its location in the code:
+
+```Rust
+// Print the length of a vector
+let num_list = vec![1, 2, 3];
+dbg!(num_list.len());
+```
+
+The `eprintln!` and `eprint!` macros can be used to print debug output to the standard error stream, which can be useful for logging errors and messages during the debugging process.
 
 ## Deep Dive
 
-While printing debug output is simple in Rust, there are some additional features that can make it even more powerful. One of these features is the ability to define your own formatting for types by implementing the `Debug` trait for structs or enums. This allows you to customize how these types are printed when using `println!()` or `format!()`.
+Rust also offers the `format!` macro, which works similarly to `println!` but returns a `String` instead of printing directly to the console. This can be useful if you want to save the debug output for later use.
 
-Another useful feature is the `dbg!()` macro, which prints out the value of an expression along with its source location. This can be particularly helpful when debugging complex code or identifying the source of an error.
+Additionally, Rust has a powerful logging crate called `log` that allows for more advanced debugging and logging capabilities. It provides macros for different logging levels, allowing you to customize the output based on the severity of the message.
 
-You can also use `eprintln!()` and `eprint!()` macros to print debug output to `stderr` instead of `stdout`. This can be helpful when you want to differentiate between regular output and debug output, or when stdout is being redirected.
+Overall, printing debug output in Rust is an important tool for debugging and error tracking, and there are multiple ways to achieve it, depending on your specific needs.
 
 ## See Also
 
-- Official Rust documentation on printing: https://doc.rust-lang.org/std/macro.println.html
-- Blog post on debugging techniques in Rust: https://blog.logrocket.com/debugging-rust-programs/
-- Video tutorial on printing debug output in Rust: https://www.youtube.com/watch?v=KlU-FnhD0ME
+- [Rust Book: Handling Errors](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+- [Rust Reference: Debugging in Rust](https://doc.rust-lang.org/edition-guide/rusti/debugging.html)
+- [Rust Pub: log crate](https://crates.io/crates/log)

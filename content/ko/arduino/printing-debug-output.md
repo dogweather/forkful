@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 디버그 출력 출력"
-simple_title:         "디버그 출력 출력"
+title:                "디버그 출력 출력하기"
+html_title:           "Arduino: 디버그 출력 출력하기"
+simple_title:         "디버그 출력 출력하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,42 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-Arduino 프로그래밍에서 디버그 출력을 하는 이유는 코드의 동작을 이해하고 문제를 해결하기 위해서입니다.
 
-## 사용 방법
-Arduino에 내장된 Serial 라이브러리를 이용하여 디버그 출력을 할 수 있습니다. 아래의 코드는 analogRead() 함수를 이용하여 A0 핀에서 읽어온 값과 그에 해당하는 전압 값을 출력하는 예시입니다.
+이해하기 쉬운 디버그 정보를 출력할 수 있어서 개발자들은 더 쉽게 코드를 디버깅할 수 있고, 문제를 해결할 수 있습니다.
+
+## 방법
+
+디버그 출력을 한 줄에 출력하는 방법:
 
 ```Arduino
-void setup() {
-  // 시리얼 통신 시작
-  Serial.begin(9600);
-}
-
-void loop() {
-  // A0 핀에서 값을 읽어옴
-  int value = analogRead(A0);
-
-  // Serial.print()를 이용하여 디버그 출력을 함
-  Serial.print("A0 핀에서 읽은 값: ");
-  Serial.print(value);
-  Serial.print(", 해당하는 전압 값: ");
-  Serial.print(value * (5.0 / 1023.0));
-  Serial.println(" V");
-
-  delay(1000);
-}
+Serial.println("Hello World!"); 
 ```
 
-위의 코드를 실행하면 아래와 같은 결과가 시리얼 모니터에 출력됩니다.
+여러 개의 변수를 출력하는 방법:
 
+```Arduino 
+int num = 5; 
+float decimal = 3.14; 
+String text = "Arduino";
+
+Serial.print("Number: "); 
+Serial.println(num); 
+Serial.print("Decimal: "); 
+Serial.println(decimal); 
+Serial.print("Text: "); 
+Serial.println(text); 
 ```
-A0 핀에서 읽은 값: 768, 해당하는 전압 값: 1.49 V
+
+센서 값을 출력하는 방법:
+
+```Arduino
+int sensorValue = analogRead(A0); 
+Serial.print("Sensor Value: "); 
+Serial.println(sensorValue);
 ```
 
-## 깊이 파고들기
-디버그 출력을 이용해 코드의 동작을 확인하는 것은 디버깅을 위해 꼭 필요한 과정입니다. 디버그 출력을 잘 활용하면 코드의 어떤 부분에서 오류가 발생하는지 쉽게 파악할 수 있습니다. 또한, 디버그 출력을 통해 변수의 값이 어떻게 변하는지를 확인할 수 있어 코드 분석에도 도움이 됩니다.
+## 깊은 고민
 
-## See Also
-- [Arduino Serial 라이브러리 공식 문서 (영어)](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Serial.print() 함수를 이용한 디버그 출력 예제 (영어)](https://www.arduino.cc/en/Tutorial/LibraryExamples/SerialOutput)
-- [Serial.println() 함수를 이용한 디버그 출력 예제 (영어)](https://howtomechatronics.com/examples/arduino-serial-print-function-tutorial/)
+디버그 출력을 위해서는 `Serial` 라이브러리를 사용해야 합니다. 이 라이브러리는 USB 시리얼 포트를 통해 컴퓨터와 통신하게 해줍니다. 디버그 정보를 출력하고 싶은 함수 내부에서 `Serial.begin()`을 사용해야 합니다. 또한 `Serial`에서는 `println()`과 `print()` 함수를 사용하여 디버그 정보를 출력할 수 있습니다. 디버그 정보를 출력한 후에는 `Serial.end()` 함수를 사용하여 시리얼 통신을 끝내야 합니다.
+
+## 관련 정보
+
+📚 [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+
+📚 [How to Use Serial Print in Arduino](https://www.makerspaces.com/how-to-use-serial-print-in-arduino/)

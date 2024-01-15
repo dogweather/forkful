@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Arbeiten mit CSV"
+title:                "Arbeiten mit CSV"
+html_title:           "Elm: Arbeiten mit CSV"
 simple_title:         "Arbeiten mit CSV"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,80 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-CSV-Dateien sind ein wesentlicher Bestandteil der Datenverarbeitung und -analyse. Sie ermöglichen es uns, große Datenmengen in einem strukturierten Format zu speichern und zu verarbeiten. Mit Elm können wir effektiv mit CSV-Dateien arbeiten, indem wir sie in unsere Anwendungen einbinden und manipulieren. In diesem Artikel erfahren Sie, wie Sie CSV-Dateien in Elm verwenden können.
+Es gibt viele Gründe, warum man sich mit CSV beschäftigen möchte. Zum Beispiel kann man damit Daten in einem einfachen und strukturierten Format speichern und austauschen. Oder man möchte CSV-Dateien nutzen, um Daten in einer offline Umgebung zu bearbeiten und später wieder zu importieren. In jedem Fall bietet Elm eine benutzerfreundliche und effiziente Möglichkeit, mit CSV umzugehen.
 
-## Wie man CSV in Elm verwendet
+## Wie
 
-Der erste Schritt ist, die nötigen Pakete zu installieren. Öffnen Sie dazu Ihr Terminal und geben Sie den folgenden Befehl ein:
+Um mit CSV in Elm zu arbeiten, können wir die Module [elm-csv](https://package.elm-lang.org/packages/elm-tools/csv/latest/) und [elm-csv-decode](https://package.elm-lang.org/packages/elm-explorations/csv/latest/) verwenden. Zuerst müssen wir diese Module in unserem Code importieren:
 
-```
-Elm install elm-csv
-```
-
-Als nächstes müssen wir die Datei mit den Daten einbinden. Dazu können wir die `load`-Funktion verwenden, die in `elm-csv` enthalten ist. Wir geben die Datei als `Text` ein und verwenden die Funktion `split` um die Daten in ein Array aufzuteilen. Unser Code sieht wie folgt aus:
-
-```
-module Main exposing (main)
-
+```Elm
 import Csv
-import Html exposing (text)
-
-type alias Model =
-    { data : List Csv.Row
-    }
-
-init : Model
-init =
-    { data = [] }
-
-type Msg
-    = LoadingCsv
-    | CsvLoaded (Result Csv.Error (List Csv.Row))
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        LoadingCsv ->
-            ( model, Csv.load "data.csv" |> Task.perform CsvLoaded )
-
-        CsvLoaded result ->
-            case result of
-                Ok rows ->
-                    ( { model | data = rows }, Cmd.none )
-
-                Err error ->
-                    ( model, Cmd.none )
-
-view : Model -> Html.Html Msg
-view model =
-    div [] [ text (List.toString model.data) ]
-
-main : Program Never Model Msg
-main =
-    Html.program
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
+import Csv.Decode
 ```
 
-Sobald wir diesen Code ausführen, haben wir Zugriff auf die Daten aus unserer CSV-Datei und können sie in unserer Anwendung verwenden.
+Dann können wir eine CSV-Datei laden und die Daten entschlüsseln. Nehmen wir zum Beispiel an, dass wir eine Datei mit den Informationen unserer Kunden haben, in der jeder Kunde in einer Zeile gespeichert ist, mit Name, Alter und Adresse, getrennt durch ein Komma. Wir können die Daten dann wie folgt entschlüsseln:
 
-## Tiefer Eintauchen
+```Elm
+csvContent : Csv.FieldsDecoder Customer
+csvContent =
+    Decode.map4 Customer
+        (Decode.field Csv.string)
+        (Decode.field Csv.int)
+        (Decode.field Csv.string)
+        (Decode.field Csv.string)
 
-Wenn Sie tiefer in die Arbeit mit CSV-Dateien in Elm eintauchen möchten, gibt es einige wichtige Dinge zu beachten:
+customers : List Customer
+customers =
+    Csv.Decode.fromString customerscsv csvContent
+```
 
-- Verwenden Sie die `decode`-Funktion, um die Daten in einer CSV-Datei in ein spezifisches Datenmodell zu konvertieren.
-- Nutzen Sie die `generate`-Funktion, um neue CSV-Dateien zu erstellen oder bestehende zu aktualisieren.
-- Verwenden Sie die `Csv.Encode`-Module, um bestimmte Datentypen in CSV-kompatible Strings zu konvertieren.
+Die Funktion `Decode.map4` erwartet eine Funktion, die mit vier Werten als Argument aufgerufen wird und einen neuen Wert zurückgibt. In unserem Fall haben wir die Funktion `Customer`, die wir selbst definieren müssen, um aus den decodierten CSV-Daten ein benutzerdefiniertes Datentyp zu erstellen.
 
-Sie können auch die offizielle Elm-Dokumentation zu CSV für weitere Informationen und Beispiele besuchen.
+## Deep Dive
+
+Es gibt noch viel mehr Möglichkeiten, CSV in Elm zu nutzen. Zum Beispiel können wir die Daten aus einer CSV-Datei in ein Modell umwandeln, um sie in einer komplexeren Anwendung zu verwenden. Oder wir können die enthaltene Funktion `Decode.log` verwenden, um Fehler beim Entschlüsseln von CSV-Daten zu finden und zu beheben. Mit Elm können wir CSV-Daten sogar in einem Browser rendern, um sie anzuzeigen oder zu bearbeiten.
 
 ## Siehe auch
 
-- [Offizielle Elm-Dokumentation zu CSV](https://guide.elm-lang.org/effects/http.html)
-- [elm-csv Paket](https://package.elm-lang.org/packages/elm-tooling/csv/latest/)
-- [Eine einfache Anleitung zur Arbeit mit CSV-Dateien in Elm](https://dev.to/feldmanbrett/how-to-work-with-csv-files-in-elm-1mk1)
-
-Vielen Dank fürs Lesen und viel Spaß beim Arbeiten mit CSV-Dateien in Elm!
+- Offizielle Elm-Dokumentation zu [elm-csv](https://package.elm-lang.org/packages/elm-tools/csv/latest/)
+- Offizielle Elm-Dokumentation zu [elm-csv-decode](https://package.elm-lang.org/packages/elm-explorations/csv/latest/)
+- [elm-live](https://github.com/wking-io/elm-live) - Eine bequeme Möglichkeit, Elm-Code in Echtzeit zu testen und anzuzeigen

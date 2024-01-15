@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Estrazione di sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "Elm: Estrazione di sottostringhe"
 simple_title:         "Estrazione di sottostringhe"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,29 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se stai scrivendo codice in Elm, potresti trovarti nella situazione in cui devi estrarre una sottostringa da una stringa più grande. Questa operazione è comune quando si lavora con dati di input utente o si deve manipolare una stringa prima di elaborarla ulteriormente. In questo caso, conoscere come estrarre una sottostringa è utile per semplificare il tuo codice e ottenere il risultato desiderato.
+Molti di noi hanno avuto l'esperienza di dover estrarre una parte di una stringa di testo, come ad esempio un nome da un'indirizzo email o un'etichetta di un prodotto da un codice a barre. In Elm, esistono diverse funzioni utili per estrarre sottostringhe da una stringa più grande. In questo articolo, vedremo come utilizzare queste funzioni e perché potrebbero esserci utili nel tuo codice.
 
-## Come fare
+## Come Fare
 
-Per estrarre una sottostringa in Elm, utilizzeremo una funzione chiamata `slice` che accetta tre parametri: la stringa di input, l'indice iniziale e l'indice finale della sottostringa che desideri estrarre. Ad esempio, se volessi estrarre il secondo, terzo e quarto carattere dalla parola "ciao", dovresti scrivere il seguente codice:
+Per estrarre una sottostringa in Elm, abbiamo due funzioni principali: `String.left` e `String.right`. Entrambe accettano due argomenti: la stringa di partenza e il numero di caratteri da estrarre.
+
+Prendiamo per esempio una stringa contenente un indirizzo email:
 
 ```Elm
-slice "ciao" 1 4
+email: String
+email = "mario.rossi@email.com"
 ```
 
-Questo ci restituirebbe "iao" come output. Vale la pena notare che l'indice finale è esclusivo, quindi dobbiamo includere l'indice successivo all'ultimo carattere che vogliamo estrarre.
+Se vogliamo estrarre solo il nome utente, possiamo utilizzare la funzione `String.left` specificando il numero di caratteri da estrarre (nel nostro caso, 11):
+
+```Elm
+username: String
+username = String.left email 11
+
+-- Output: "mario.rossi"
+```
+
+Possiamo anche utilizzare la funzione `String.right` per estrarre la parte dell'email dopo il simbolo '@':
+
+```Elm
+domain: String
+domain = String.right email 12
+
+-- Output: "email.com"
+```
+
+Invece, se volessimo estrarre solo il nome della persona dalla stringa completa, possiamo utilizzare la funzione `String.slice`, che prende come argomenti la stringa di partenza, l'indice di inizio e l'indice di fine della sottostringa desiderata:
+
+```Elm
+name: String
+name = String.slice email 6 11
+
+-- Output: "rossi"
+```
 
 ## Approfondimento
 
-La funzione `slice` può essere utilizzata anche per estrarre le sottostringhe in base alla loro lunghezza invece che agli indici. Ciò significa che possiamo specificare quanti caratteri vogliamo estrarre dalla stringa: il secondo parametro diventa la posizione iniziale e il terzo parametro diventa la lunghezza della sottostringa. Ad esempio:
+Oltre a queste tre funzioni, esistono altre opzioni per estrarre sottostringhe in Elm. Ad esempio, si può utilizzare la funzione `String.trim` per rimuovere eventuali spazi bianchi all'inizio e alla fine della stringa. Oppure si può utilizzare il metodo `String.split` per dividere una stringa in una lista di sottostringhe, utilizzando un carattere specificato come separatore.
 
-```Elm
-slice "ciao" 1 2
-```
+È importante anche considerare la gestione degli errori quando si utilizzano queste funzioni. Se il numero di caratteri specificato è maggiore della lunghezza della stringa di partenza, si otterrà un errore di indice fuori range. Per evitare questo, è possibile utilizzare la funzione `String.length` per ottenere la lunghezza della stringa e fare un controllo prima di estrarre la sottostringa desiderata.
 
-Questo ci restituirebbe "ci" come output, poiché stiamo iniziando dalla seconda posizione e stiamo estraendo 2 caratteri. Questo è utile quando non conosciamo gli indici esatti della sottostringa che vogliamo estrarre.
+## Vedi Anche
 
-## Vedi anche
-
-- La documentazione ufficiale di Elm sulla funzione `slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
-- Un articolo di Medium che esplora altre funzioni utili per lavorare con le stringhe in Elm: https://medium.com/swlh/manipulating-strings-in-elm-486b683e4a42
+- Documentazione ufficiale di Elm sulle funzioni di estrazione delle sottostringhe: https://package.elm-lang.org/packages/elm/core/latest/String
+- Articolo su come utilizzare le funzioni di manipolazione delle stringhe in Elm: https://elmprogramming.com/string-manipulation-elm.html 
+- Esempio di utilizzo delle funzioni di estrazione delle sottostringhe in un'applicazione Elm: https://github.com/elm-tutorial/example-substring-extraction

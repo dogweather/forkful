@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Obliczanie daty w przyszłości lub przeszłości."
+title:                "Obliczanie daty w przyszłości lub przeszłości."
+html_title:           "TypeScript: Obliczanie daty w przyszłości lub przeszłości."
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,53 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jedną z najważniejszych umiejętności programowania jest manipulacja datami. Często musimy obliczyć datę w przyszłości lub przeszłości, na przykład w celu wyświetlenia terminu ważności karty kredytowej lub obliczenia wieku użytkownika. W tym artykule dowiesz się, jak w prosty sposób obliczać daty w przyszłości lub przeszłości za pomocą języka TypeScript. 
+Kalkulacja daty w przyszłości lub przeszłości może być niezbędna w przypadku wielu aplikacji, takich jak planowanie spotkań, rezerwacja biletów lub wyświetlanie okresów wypożyczeń. W przypadku języka TypeScript istnieje wiele prostych i wydajnych sposobów na to, aby łatwo przeliczać daty.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości w TypeScript, musimy użyć obiektu Date, który jest wbudowany w język JavaScript. Ten obiekt zawiera różne metody, dzięki którym możemy manipulować datami.
-
-Przykładowo, jeśli chcemy obliczyć datę 7 dni od dzisiaj lub dzisiaj 7 dni temu, możemy użyć metody `getDate()` w połączeniu z metodą `setDate()`.
+Obliczanie daty w przyszłości lub przeszłości w języku TypeScript jest bardzo proste i wymaga użycia jednej z wbudowanych metod obiektu `Date`. W poniższym przykładzie obliczamy datę, która jest 7 dni w przyszłości i wypisujemy ją w postaci dd-mm-yyyy.
 
 ```TypeScript
-// Obliczenie daty 7 dni w przód
-let today = new Date();
-today.setDate(today.getDate() + 7);
-console.log(today); // Output: Tue Dec 08 2021
-
-// Obliczenie daty 7 dni wstecz
-let today = new Date();
-today.setDate(today.getDate() - 7);
-console.log(today); // Output: Tue Nov 24 2021
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 7);
+let futureDate = currentDate.getDate() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getFullYear();
+console.log(futureDate);
 ```
 
-Podobnie, możemy również dostosować daty w przyszłości lub przeszłości poprzez ustawienie odpowiednich wartości dla roku, miesiąca i dnia za pomocą metod `setFullYear()`, `setMonth()` i `setDate()`.
+Output: 15-10-2021
 
-```TypeScript
-// Ustawienie daty za pomocą metod setDate(), setMonth() i setFullYear()
-let date = new Date();
-date.setDate(15);
-date.setMonth(11);
-date.setFullYear(2022);
-console.log(date); // Output: Tue Dec 15 2022
-```
+W powyższym kodzie używamy `setDate()` do ustawienia daty na 7 dni w przód, a następnie wykorzystujemy wbudowane metody `getDate()`, `getMonth()` i `getFullYear()` do pobrania odpowiednich wartości i wyświetlenia daty w oczekiwanym formacie.
 
-## Deep Dive
+## Głębszy zanurzenie
 
-Obliczanie daty w przyszłości lub przeszłości może być nieco bardziej skomplikowane w przypadku dat, które znajdują się na przecięciu dwóch różnych miesięcy lub lat. W takich przypadkach zalecamy skorzystanie z biblioteki moment.js, która udostępnia wiele wygodnych funkcji do pracy z datami.
-
-Na przykład, aby obliczyć datę 45 dni od daty 28 listopada, musielibyśmy najpierw utworzyć obiekt date z tą datą, a następnie użyć metody `add()` z biblioteki moment.js.
-
-```TypeScript
-// Użycie biblioteki moment.js do obliczenia daty 45 dni w przód
-let date = moment("2021-11-28");
-date.add(45, 'days');
-console.log(date); // Output: Sat Jan 11 2022
-```
-
-W ten sposób możemy wygodnie manipulować datami w różnych formatach i przeprowadzać bardziej złożone obliczenia.
+Obiekt `Date` w TypeScript oferuje wiele innych metod do manipulacji datami, takich jak `setMonth()`, `setFullYear()` czy `setHours()`, które pozwalają dostosować datę do własnych potrzeb. Dodatkowo, warto zapoznać się z bibliotekami, takimi jak `moment.js`, które są przeznaczone specjalnie do manipulacji datami i mogą ułatwić pracę z datami w projekcie.
 
 ## Zobacz również
 
-- Dokumentacja TypeScript dotycząca obiektu Date: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-widen-the-types-of-the-year-parameter-in-date-setfullyear
-- Biblioteka moment.js: https://momentjs.com/
+- https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date
+- https://momentjs.com/
+- https://www.npmjs.com/package/date-fns

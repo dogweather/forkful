@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Kotlin: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Dlaczego
-Znalezienie długości ciągu znaków jest niezbędnym narzędziem w każdym języku programowania, a w Kotlinie jest to szczególnie proste i intuicyjne. Dowiedz się, dlaczego warto poznać tę funkcjonalność i jak z niej korzystać.
+
+Dlaczego i dlaczego powinniśmy się zająć znajdowaniem długości ciągu w Kotlinie? Odpowiedź jest prosta - jest to jedna z podstawowych operacji, które są wykonywane w wielu aplikacjach. Znajdowanie długości ciągu jest niezbędne do wyświetlania danych tekstowych na ekranie oraz do przetwarzania danych w programowaniu.
 
 ## Jak to zrobić
-Aby znaleźć długość ciągu znaków w Kotlinie, należy użyć metody "length". Przykładowy kod wyglądałby następująco:
+
+Aby uzyskać długość ciągu w Kotlinie, możemy wykorzystać funkcję `length` obiektu `String`. Przykładowy kod wyglądałby następująco:
 
 ```Kotlin
-val name = "Kotlin"
-println(name.length)
+val name = "Adam"
+println(name.length) // 4
 ```
-W powyższym przykładzie za pomocą metody "length" wyświetlamy długość zmiennej "name", czyli 6. Możemy także wyświetlić długość ciągu znaków bez użycia zmiennej, np.:
+
+Powyższy kod stworzy zmienną `name` zawierającą ciąg "Adam" i następnie wyświetli jego długość na ekranie. Zamknięcie ciągu wewnątrz nawiasów pozwala na wykorzystanie funkcji `length` do zwrócenia długości tej zmiennej.
+
+Aby uzyskać długość ciągu bezpośrednio z wprowadzonego przez użytkownika tekstu, możemy wykorzystać funkcję `readLine`, która pozwala na odczytanie danych wprowadzonych przez użytkownika. Przykładowy kod wyglądałby następująco:
 
 ```Kotlin
-println("Programowanie w Kotlinie".length)
+println("Podaj dowolne zdanie:")
+val input = readLine()
+println("Długość podanego zdania to ${input.length}")
 ```
 
-Wynik tego kodu również wynosi 6, ponieważ liczone są tu znaki, a nie słowa.
+Powyższy kod najpierw wyświetli użytkownikowi informację o wprowadzeniu zdania, a następnie wykorzysta funkcję `readLine` do odczytania wprowadzonych danych do zmiennej `input`. Następnie wyświetli długość podanego zdania, wykorzystując funkcję `length`.
 
-## Głębszy wgląd
-Chociaż funkcja "length" jest prostym i niezwykle przydatnym sposobem na znalezienie długości ciągu znaków, warto zwrócić uwagę na kilka rzeczy. Po pierwsze, metoda ta jest wywoływana na zmiennej typu String, czyli tekstu. Jeśli spróbujemy użyć jej na zmiennej innego typu, otrzymamy błąd.
+## Wnikliwa analiza
 
-Po drugie, zauważyliśmy, że w przykładowym kodzie użyliśmy funkcji "println" do wyświetlenia wyniku. Możemy również przypisać długość ciągu znaków do innej zmiennej lub wykorzystać ją w dalszych operacjach.
+Podczas pobierania długości ciągu, Kotlin używa funkcji `length` do zwrócenia ilości znaków w ciągu. Jednak w przypadku niestandardowych znaków, czy wartości puste, wynik może być inny niż oczekiwany. Dlatego ważne jest, aby w kodzie uwzględnić te możliwe scenariusze i odpowiednio z nimi sobie radzić.
 
-## Zobacz także
-Jeśli chcesz pogłębić swoją wiedzę o Kotlinie, koniecznie zajrzyj na stronę dokumentacji języka oraz wypróbuj inne funkcje i metody. Możesz także zapoznać się z innymi językami programowania i porównać różnice. Poniżej kilka przydatnych linków:
+Inną ciekawą funkcją jest `isEmpty`, która pozwala na sprawdzenie, czy ciąg jest pusty czy nie. Może to być przydatne, gdy potrzebujemy wykonać jakieś działania tylko w przypadku, gdy użytkownik faktycznie wprowadził dane.
 
-- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
-- [Kurs programowania w Kotlinie na Codecademy](https://www.codecademy.com/learn/learn-kotlin)
-- [Porównanie języka Kotlin z innymi popularnymi językami programowania](https://www.raywenderlich.com/4738-kotlin-vs-java-comparison-of-top-features)
+## Zobacz też
+
+- [Dokumentacja Kotlin o typie String](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Funkcje standardowe Kotlin dla typu String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html)

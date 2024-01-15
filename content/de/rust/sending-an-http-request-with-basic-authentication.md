@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Senden eines http-Anforderung mit grundlegender Authentifizierung"
-simple_title:         "Senden eines http-Anforderung mit grundlegender Authentifizierung"
+title:                "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Rust: Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,62 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich mit dem Senden von HTTP-Anfragen mit grundlegender Authentifizierung befassen? Nun, in der heutigen digitalen Welt sind HTTP-Anfragen eine häufige Methode, um mit Webdiensten zu kommunizieren. Oftmals erfordern diese Dienste eine Authentifizierung, um sicherzustellen, dass nur berechtigte Benutzer Zugriff auf sensible Informationen haben. Deshalb ist es wichtig zu verstehen, wie man solche HTTP-Anfragen mit grundlegender Authentifizierung sendet.
+Warum sollte man eine HTTP-Anfrage mit basic authentication senden? Nun, die Antwort ist einfach: Basic Authentication ist eine gängige Methode, um die Sicherheit von HTTP-Anfragen zu erhöhen. Indem man Benutzername und Passwort bei jeder Anfrage mitsendet, kann der Server prüfen, ob der Zugriff berechtigt ist.
 
-## Wie man es macht
+## Wie geht's
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Rust zu senden, müssen wir zunächst die notwendigen Abhängigkeiten importieren. Das können wir im `Cargo.toml`-File unseres Projekts tun.
+Um eine HTTP-Anfrage mit basic authentication in Rust zu senden, verwenden wir die crate `reqwest`. Lass uns zunächst diese Crate importieren:
 
 ```Rust
-[dependencies]
-reqwest = "0.11.4"
-base64 = "0.11.0"
+use reqwest;
 ```
 
-Dann können wir die `reqwest`-Library verwenden, um unsere Anfrage zu erstellen und zu senden. Wir werden auch die `base64`-Library benötigen, um unser Benutzername und Passwort in base64 zu kodieren.
+Jetzt können wir eine HTTP-Anfrage mit basic authentication senden, indem wir ein `Client`-Objekt erstellen und ihm die entsprechenden Zugangsdaten mitgeben:
 
 ```Rust
-use reqwest::{Client, Response};
-use base64::encode;
+let client = reqwest::Client::builder()
+    .basic_auth("username", Some("password"))
+    .build()
+    .unwrap();
 ```
 
-Als nächstes müssen wir unsere Anfrage-URL und unsere Zugangsdaten festlegen, die wir in base64 kodieren werden.
+Anschließend können wir die Anfrage an eine beliebige URL senden, zum Beispiel an `"https://www.example.com"`:
 
 ```Rust
-let url = "https://example.com/api/users";
-let username = "meinname";
-let password = "meinpasswort";
-let auth = format!("{}:{}", username, password);
-let basic_auth = encode(auth.as_bytes());
-```
-
-Dann können wir unsere Anfrage erstellen und die HTTP-Authentifizierung hinzufügen.
-
-```Rust
-let client = Client::new();
 let response = client
-    .get(url)
-    .header("Authorization", format!("Basic {}", basic_auth))
+    .get("https://www.example.com")
     .send()
-    .await?;
+    .await
+    .unwrap();
 ```
 
-Schließlich können wir die Antwort ausgeben, um sicherzustellen, dass unsere Anfrage erfolgreich gesendet wurde.
+Dies wird eine `Response` zurückgeben, die wir nutzen können, um den Inhalt der Antwort auszugeben oder weiter zu verarbeiten:
 
 ```Rust
-println!("{:?}", response.text().await?);
+let body = response.text().await.unwrap();
+println!("Antwort von www.example.com: {}", body);
 ```
 
-Wenn wir diesen Code ausführen, sollten wir eine Antwort mit den gewünschten Daten erhalten.
+Die Ausgabe würde in diesem Fall den HTML-Inhalt von `www.example.com` enthalten.
 
-## Tiefgehende Analyse
+## Deep Dive
 
-Wie Sie sehen können, ist es ziemlich einfach, in Rust eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden. Es mag zwar etwas komplexer erscheinen als in anderen Programmiersprachen, aber es bietet auch einige Vorteile. Zum Beispiel ist Rust eine schnellere und sicherere Sprache, die dafür sorgt, dass unsere Anfragen zuverlässig und effizient gesendet werden.
+Wusstest du, dass basic authentication Teil des HTTP-Protokolls ist? Beim Senden einer Anfrage muss der `Authorization`-Header mit folgendem Format mitgesendet werden:
 
-Es ist auch wichtig zu beachten, dass es verschiedene Arten der Authentifizierung gibt, die bei HTTP-Anfragen verwendet werden können, und dass die grundlegende Authentifizierung nicht immer die sicherste ist. Es ist ratsam, sich mit anderen Methoden wie OAuth oder Token-Authentifizierung vertraut zu machen, je nach den Anforderungen und Sicherheitsbedenken Ihres Projekts.
+```
+Authorization: Basic base64(username:password)
+```
+
+Dabei wird der Benutzername und das Passwort in klarer Textform aneinander gehängt und anschließend mit Base64 kodiert. Diese Methode ist zwar effektiv, um die Sicherheit von HTTP-Anfragen zu erhöhen, aber auch anfällig für Man-in-the-middle-Angriffe. Deshalb wird empfohlen, für eine höhere Sicherheit auf HTTPS zu setzen.
 
 ## Siehe auch
 
-- [Rust Dokumentation](https://www.rust-lang.org/learn)
-- [Offizielle reqwest Dokumentation](https://docs.rs/reqwest/0.11.4/reqwest/)
-- [Weitere Beispiele für HTTP-Anfragen mit Rust](https://blog.logrocket.com/how-to-send-http-requests-in-rust/)
+- Offizielle Dokumentation zu `reqwest`: https://docs.rs/reqwest/
+- Informationen zu Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+- RFC zu Basic Authentication: https://tools.ietf.org/html/rfc7617

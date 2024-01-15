@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Pisanie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "Arduino: Pisanie pliku tekstowego"
 simple_title:         "Pisanie pliku tekstowego"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,48 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać pliki tekstowe na Arduino?
+## Dlaczego
 
-Pisanie plików tekstowych na Arduino może okazać się przydatne w wielu różnych projektach. Pliki tekstowe pozwalają na łatwą i czytelną organizację danych, co jest szczególnie przydatne przy przechowywaniu i przetwarzaniu dużych ilości informacji. W ten sposób można również przechowywać i modyfikować ustawienia lub wyniki działania programu.
+Pisanie pliku tekstowego jest bardzo przydatną umiejętnością w programowaniu Arduino. Dzięki temu możemy przechowywać dane i informacje w sposób uporządkowany, co ułatwia nam pracę z naszym projektem. Dodatkowo, korzystanie z plików tekstowych jest niezbędne przy pracy z bardziej zaawansowanymi funkcjonalnościami takimi jak komunikacja przez sieć, czy zapis i odczyt danych z pamięci zewnętrznej.
 
-# Jak to zrobić?
+## Jak napisać plik tekstowy w Arduino
 
-Aby napisać plik tekstowy na Arduino, musisz użyć funkcji `write()` i `print()` w połączeniu z obiektem `File`. Najpierw musisz otworzyć plik za pomocą funkcji `SD.open()`, a następnie użyć funkcji `write()` lub `print()` do zapisania danych w pliku. Na przykład:
+Aby napisać plik tekstowy w Arduino, musimy najpierw skorzystać z biblioteki "SD". Następnie należy utworzyć obiekt dla karty SD i otworzyć plik, którego chcemy użyć za pomocą funkcji "open()". Wewnątrz funkcji "open()" musimy podać nazwę pliku oraz tryb, w jakim będziemy z niego korzystać, na przykład "FILE_WRITE" dla zapisu lub "FILE_READ" dla odczytu. Po utworzeniu pliku możemy go modyfikować za pomocą funkcji "print()", "println()" lub "write()". Na koniec musimy zapisać zmiany w pliku przy użyciu funkcji "close()".
 
-```arduino
-#include <SPI.h>
-#include <SD.h>
+```Arduino
+#include <SD.h> //importowanie biblioteki
 
-File plik;
+File myfile; //deklaracja obiektu pliku
 
 void setup() {
-  SD.begin(10); // ustaw pin podłączenia karty SD
-  plik = SD.open("dane.txt", FILE_WRITE); // otwórz plik o nazwie "dane.txt" w trybie zapisu
+  Serial.begin(9600);
 
-  if (plik) {
-    plik.print("Dane do zapisania"); // zapisz dane do pliku
-    plik.close(); // zamknij plik
-  } else {
-    Serial.println("Błąd otwarcia pliku"); // w przypadku błędu wyświetl informację na monitorze szeregowym
+  //inicjalizacja karty SD
+  if (!SD.begin(4)) {
+    Serial.println("Błąd przy inicjalizacji karty SD");
+    return;
   }
+
+  //otwarcie pliku tekstowego o nazwie "dane.txt" w trybie zapisu
+  myfile = SD.open("dane.txt", FILE_WRITE);
+  
+  //dodanie tekstu do pliku
+  myfile.print("Dane: ");
+  myfile.println("12345");
+  myfile.write("Liczba: ");
+  myfile.println(67890);
+
+  //zapisanie zmian i zamknięcie pliku
+  myfile.close();
 }
 
 void loop() {
-
+  
 }
 ```
 
-Po zapisaniu danych, możesz odczytać je z pliku używając funkcji `read()`, `readString()` lub `readBytes()`. Aby dowiedzieć się więcej o funkcjach i metodach używanych do pisania i odczytywania plików tekstowych na Arduino, zapoznaj się z dokumentacją biblioteki SD (https://www.arduino.cc/en/Reference/SD).
+Po wykonaniu tego kodu, na karcie SD pojawi się plik "dane.txt" z zawartością:
 
-# Głębsza analiza
+Dane: 12345
+Liczba: 67890
 
-Podczas pisania plików tekstowych na Arduino warto pamiętać o kilku ważnych rzeczach. Po pierwsze, należy uważać na ilość dostępnej pamięci, ponieważ Arduino zwykle ma ograniczone możliwości przechowywania danych. W sytuacji, gdy musisz przechowywać dużą ilość informacji, rozważ użycie karty SD lub innego zewnętrznego nośnika danych.
 
-Należy również pamiętać o sposobie formatowania danych w pliku. Niektóre urządzenia lub programy mogą mieć problem z odczytaniem pliku, jeśli nie jest on odpowiednio sformatowany. Na przykład, często należy używać separatorów lub odpowiedniego kodowania znaków, aby dane były czytelne dla innych urządzeń.
+## Deep Dive
 
-# Zobacz też
+W przypadku bardziej zaawansowanych scenariuszy, możemy również używać specjalnych znaków, takich jak "\n" (nowa linia), "\t" (tabulator) czy "\r" (powrót karetki) w celu formatowania tekstu w pliku. Dodatkowo, możemy też tworzyć i korzystać z folderów na karcie SD.
 
-- Biblioteka SD na stronie Arduino: https://www.arduino.cc/en/Reference/SD
-- Przykładowe projekty z wykorzystaniem pisania plików tekstowych:
-  - Zapisywanie danych do pliku na karcie SD: https://create.arduino.cc/projecthub/SURYATEJA/log-data-and-send-to-sd-card-d39454
-  - Odczytywanie danych z czujnika i zapisywanie ich do pliku tekstowego: https://howtomechatronics.com/tutorials/arduino/sd-card-module-data-logging-with-the-arduino/
+Istnieje również możliwość zapisania i odczytania danych w formacie CSV (Comma-Separated Values), który jest powszechnie stosowany do przechowywania i wymiany danych między różnymi aplikacjami. Aby zapisać dane w tym formacie, musimy przed każdym elementem oddzielić go przecinkiem, na przykład:
+
+```Arduino
+//zapisanie danych w formacie CSV
+myfile.print("Dane:"); //tutaj można również użyć funkcji println()
+myfile.print(","); //oddzielenie elementów przecinkiem
+myfile.println("12345"); 
+```
+
+Aby odczytać te dane, możemy skorzystać z funkcji "readStringUntil()" w pętli "while":
+
+```Arduino
+void setup() {
+  //pierwsza część kodu pozostaje niezmieniona
+
+  //otwarcie pliku tekstowego o nazwie "dane.txt" w trybie odczytu
+  //uwaga, że jest to inny tryb niż w poprzednim przykładzie
+  myfile = SD.open("dane.txt", FILE_READ);
+
+  String data = ""; //utworzenie zmiennej tekstowej do przechowywania danych odczytanych z pliku
+  while (myfile.available()) {
+    data = myfile.readStringUntil(','); //odczytanie danych do znaku przecinka
+    Serial

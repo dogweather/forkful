@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 文字列の連結"
+title:                "文字列の連結"
+html_title:           "Swift: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+##なぜ
+文字列を連結することの利点について2文で説明する。
 
-文字列を連結することの利点は、データをより効率的に扱えることです。例えば、フォーマットされたメッセージの作成や、複数の変数を結合してテキストを生成する際に便利です。
+文字列の連結は、プログラミングにおいて重要なスキルであり、効率的でスマートなコードを書く上で不可欠です。特に、長い文を制作する場合や、複数の変数を組み合わせたい場合には、文字列の連結が必要になります。また、見やすいコードを書くことができるため、プロジェクトのメンテナンス性も向上させることができます。
 
-## 使い方
+##やり方
+文字列を連結する方法を ```Swift ... ``` コードブロックを使用して示し、その動作例を記載する。
 
-文字列を連結するには、以下のように`+`演算子を使います。
-
-```Swift
-let firstName = "Taro"
-let lastName = "Yamada"
-let fullName = firstName + lastName
-
-print(fullName) // 出力結果：TaroYamada
+```
+let firstName = "太郎"
+let lastName = "山田"
+let fullName = firstName + " " + lastName
+print(fullName)
+// 出力結果：太郎 山田
 ```
 
-文字列の連結には、データ型を揃える必要があります。例えば、`Int`型と`String`型を連結しようとすると、エラーが発生します。その場合は、`String()`を使ってデータ型を変換する必要があります。
+文字列を連結する方法は複数あります。上の例では、```+```演算子を使用し、変数と文字列を連結しています。他にも、```String```クラスのメソッドを使用する方法や、```StringBuilder```クラスを使う方法もあります。それぞれの方法の違いを理解し、適切な方法を選択することが重要です。
 
-```Swift
-let age = 25
-let message = "私の年齢は" + String(age) + "歳です。"
+##深堀り
+文字列の連結には、パフォーマンスやメモリの使用量の面で注意する必要があります。大量の文字列を連結する場合、毎回新しい文字列を作成するとメモリを大量に消費し、パフォーマンスにも影響を与える可能性があります。そのため、文字列を連結する際には、メモリ効率の良い方法を選択することが重要です。
 
-print(message) // 出力結果：私の年齢は25歳です。
-```
+また、文字列の連結には```String```クラスの```append(_:)```メソッドや、```StringBuilder```クラスの```append(_:)```メソッドを使用することで、パフォーマンスを向上させることができます。これらのメソッドは、文字列を連結した際に新しいメモリ領域を確保するのではなく、既存のメモリ領域を再利用するため、パフォーマンスを向上させることができます。
 
-## ディープダイブ
-
-文字列の連結方法は複数あり、それぞれに長所や短所があります。例えば、`String()`を使用する代わりに、`\()`を使って文字列内に変数を埋め込むこともできます。また、文字列補間を使うことで、より簡潔かつ読みやすいコードを書くことができます。さらに、長い文字列を連結する際は、`join()`メソッドを使用することでパフォーマンスを向上させることができます。
-
-## 参考リンク
-
-- [公式ドキュメント: String Concatenation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID297)
-- [Swift Strings and Characters](https://www.raywenderlich.com/165660/how-to-work-with-strings-in-swift)
-- [Swift String Concatenation - Stack Overflow](https://stackoverflow.com/questions/26590056/swift-string-concatenation)
+##参考リンク
+- [Swift公式ドキュメント - 文字列と文字の操作](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift Tutorial - 3 Ways to Concatenate Strings](https://www.swifttutorialspoint.com/how-to-concatenate-strings-in-swift)
+- [Swift by Sundell - The power of string interpolation in Swift](https://www.swiftbysundell.com/articles/the-power-of-string-interpolation-in-swift/)

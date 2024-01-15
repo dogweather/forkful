@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "TypeScript: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w TypeScript?
+## Dlaczego
 
-Pisanie testów może wydawać się dodatkowym i niepotrzebnym krokiem w procesie tworzenia oprogramowania. Jednak, nie ma wątpliwości, że jest to niezbędna część pisania jakościowego i niezawodnego kodu. Poniżej przedstawione są powody, dla których warto zainwestować czas i wysiłek w pisanie testów w TypeScript.
+Czy kiedykolwiek zdarzyło Ci się napisać kod, który później przestał działać? Albo przeprowadzić zmiany w swoim projekcie, a następnie odkryć, że coś zupełnie nieprzewidywalnego przestało działać? Właśnie po to służą testy w TypeScript - aby uniknąć takich sytuacji i mieć pewność, że nasz kod działa zgodnie z oczekiwaniami.
 
-- **Zapewnienie niezawodności aplikacji:** Testy pomagają wykryć błędy w kodzie, co przekłada się na większą niezawodność i stabilność aplikacji. Dzięki nim możesz uniknąć problemów i błędów w produkcji, co przekłada się na lepsze wrażenia użytkownika.
-- **Łatwiejsze utrzymanie:** Pisanie testów jest również korzystne w dłuższej perspektywie. Gdy aplikacja rośnie w skali, łatwiej będzie wprowadzać zmiany i modyfikacje w kodzie, jeśli posiadasz solidną bazę testową.
+## Jak to zrobić
 
-Teraz, gdy już wiemy, dlaczego warto pisać testy w TypeScript, przejdźmy do praktycznego przewodnika.
-
-## Jak pisać testy w TypeScript?
-
-Testy można pisać w różny sposób w zależności od tego, co chcesz przetestować. Jedną z popularnych bibliotek do testowania w TypeScript jest [Jest](https://jestjs.io/). Jest to prosta i wydajna biblioteka, która oferuje wiele funkcji, takich jak asercje, mockowanie i grupowanie testów.
-
-Aby zainstalować bibliotekę Jest, wystarczy uruchomić polecenie `npm install jest --save-dev` w konsoli lub terminalu. Następnie możesz utworzyć plik testowy z rozszerzeniem `.test.ts` i rozpocząć pisanie testów.
-
-Poniższy przykład pokazuje, jak przetestować funkcję `increaseNumberByOne`:
+Jako pierwsze powinniśmy zainstalować narzędzie `ts-test` za pomocą polecenia `npm install ts-test --save-dev`. Następnie należy utworzyć katalog `tests` w naszym projekcie, a w nim plik `example.spec.ts`. W tym pliku możemy napisać nasz test używając biblioteki `assert`:
 
 ```TypeScript
-// plik z kodem do przetestowania
+import assert from 'assert';
 
-export function increaseNumberByOne(num): number {
-  return num + 1;
-}
-```
+const sum = (a: number, b: number) => a + b;
 
-```TypeScript
-// plik z testami
+describe("Testujemy funkcję sum", () => {
+  it("Powinna zwracać wynik 5 dla wartości 2 i 3", () => {
+    assert.strictEqual(sum(2, 3), 5);
+  });
 
-import { increaseNumberByOne } from "./kod-do-przetestowania";
-
-test("Powinien zwrócić zwiększoną liczbę o jeden", () => {
-  expect(increaseNumberByOne(5)).toBe(6);
+  it("Powinna zwracać wynik -10 dla wartości -7 i -3", () => {
+    assert.strictEqual(sum(-7, -3), -10);
+  });
 });
 ```
+Po uruchomieniu testów za pomocą `npm test`, powinniśmy otrzymać informację o sukcesie lub błędzie naszych testów.
 
-W powyższym przykładzie użyliśmy asercji `toBe`, aby sprawdzić, czy funkcja zwraca poprawny wynik. Jest to tylko jedna z wielu funkcji dostępnych w bibliotece Jest. Warto także zaznaczyć, że wartość zwrócona przez funkcję `increaseNumberByOne` musi być typu `number`, co możemy określić w deklaracji typów.
+## Głębszy zanurzenie
 
-## Deep Dive (Głębszy przegląd)
+Testy w TypeScript pozwalają nam na przetestowanie prawie każdej części kodu - funkcji, metod, obiektów, a nawet interfejsów. Możemy wykorzystać różne biblioteki do asercji, takie jak `expect` lub `chai`, aby pisać bardziej czytelne i zrozumiałe testy.
 
-Pisanie testów może być skomplikowanym procesem, ale dzięki praktyce i odpowiednim narzędziom możesz szybko stać się ekspertem w tej dziedzinie. Poniżej znajdują się kilka wskazówek, które mogą pomóc Ci w pisaniu lepszych testów:
+Warto również pamiętać o odpowiednich nazwach naszych testów, aby łatwiej było zidentyfikować błędne części kodu. Dzięki testom możemy także tworzyć bardziej odporne aplikacje, gdyż w razie zmian lub dodania nowego kodu, testy pomogą nam szybko wykryć ewentualne problemy.
 
-- **Zajmij się testowaniem zanim zaczniesz kodować:** Zanim napiszesz nawet pierwszą linię kodu, warto zaplanować, jakie testy będą potrzebne do pokrycia funkcjonalności aplikacji. W ten sposób możesz uniknąć zbędnych testów lub pomyśleć o przypadkach, których nie uwzględniłeś wcześniej.
-- **Użyj innych narzędzi do testowania:** Oprócz biblioteki Jest, istnieje wiele innych narzędzi do testowania w TypeScript, takich jak [Mocha](https://mochajs.org/) czy [Chai](https://www.chaijs.com/). Sprawdź różne opcje i wy
+## Zobacz również
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+- [Film "TypeScript Testing with Mocha and Chai"](https://www.youtube.com/watch?v=CFyNx70MYrE)
+- [Artykuł "10 Reasons Why You Should be Using TypeScript in your Next Project"](https://www.sitepen.com/blog/2013/12/31/10-reasons-why-you-should-be-using-typescript/)

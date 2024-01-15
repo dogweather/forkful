@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Envoi d'une requête http avec une authentication de base"
-simple_title:         "Envoi d'une requête http avec une authentication de base"
+title:                "Envoyer une demande http avec une authentification de base"
+html_title:           "Clojure: Envoyer une demande http avec une authentification de base"
+simple_title:         "Envoyer une demande http avec une authentification de base"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,38 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Le langage de programmation Clojure offre une façon élégante de manipuler des données et de créer des applications. Dans cet article, nous allons explorer comment envoyer une requête HTTP avec une authentification de base en utilisant Clojure. Cette compétence peut être utile pour interagir avec des API ou pour sécuriser les données lors de l'utilisation de services web.
+Envoyer des requêtes HTTP avec une authentification basique peut être utile lorsqu'on souhaite protéger l'accès à une ressource ou à un service en ligne. Cela permet de s'assurer que seuls les utilisateurs authentifiés peuvent accéder à ces ressources.
 
-## Comment faire
+## Comment Faire
 
-Tout d'abord, il est important d'importer la bibliothèque ```clj-http``` en ajoutant la ligne suivante à notre fichier Clojure:
-
+```Clojure
+(require '[clj-http.client :as client])
+;; Importer la bibliothèque clj-http.client pour pouvoir utiliser les fonctions HTTP
 ```
-(:require [clj-http.client :as client])
+
+```Clojure
+(def login "nom_utilisateur")
+(def password "mot_de_passe")
+(def url "https://exemple.com/ressource")
+
+(client/get url {:basic-auth [login password]})
+;; Cette requête utilise la fonction "get" pour récupérer une ressource, en fournissant les informations de connexion via l'option "basic-auth"
 ```
-Cela nous permet de faire appel à la fonction ```client```, qui sera utilisée pour envoyer notre requête.
 
-Pour envoyer une requête HTTP avec une authentification de base, nous devons fournir le nom d'utilisateur et le mot de passe dans l'en-tête de notre requête. Voici un exemple de code pour une requête GET avec une authentification de base:
+Output:
 
+```Clojure
+(def logged-in-response {:status 200, 
+                         :headers {"content-type" "text/plain"}, 
+                         :body "Vous êtes maintenant connecté !"})
+
+;; Ceci est la réponse obtenue après une requête réussie avec authentification basique.
 ```
-(client/get "https://exemple.com/api/" {:basic-auth ["utilisateur" "motdepasse"]})
-```
-Le premier argument est l'URL de l'API que nous voulons interroger, et le deuxième argument est un map contenant les informations de base d'authentification. Ici, nous avons inclus l'identifiant de l'utilisateur et le mot de passe dans un vecteur sous la clé ```:basic-auth```.
 
-Maintenant, si nous exécutons ce code, nous devrions recevoir une réponse de l'API en utilisant les informations d'authentification fournies. L'exemple ci-dessus utilise une méthode GET, mais la même approche peut être utilisée pour d'autres types de requêtes HTTP.
+## Deep Dive
 
-## Plongée en profondeur
+L'authentification basique utilise une méthode d'authentification simple basée sur l'envoi d'un nom d'utilisateur et d'un mot de passe en clair. Cela pose des problèmes de sécurité car ces informations peuvent être interceptées. Pour une meilleure sécurité, il est recommandé d'utiliser des méthodes d'authentification plus avancées telles que l'authentification par jeton.
 
-Maintenant que nous savons comment envoyer une requête HTTP avec une authentification de base en utilisant Clojure, il est également important de comprendre comment cela fonctionne en profondeur. Dans notre exemple, nous utilisons le protocole HTTPS, ce qui signifie que la connexion sera sécurisée grâce à un échange de clés lors de l'authentification. Cela garantit que seules les personnes ayant les informations d'authentification correctes peuvent accéder aux données protégées.
+Néanmoins, l'authentification basique reste utile dans certains cas où la sécurité n'est pas une préoccupation majeure, par exemple lorsqu'on souhaite protéger l'accès à des ressources internes dans une entreprise.
 
-De plus, en utilisant Clojure pour envoyer des requêtes HTTP, nous pouvons facilement automatiser des tâches en intégrant notre code dans des scripts ou des applications.
+## Voir Aussi
 
-## Voir aussi
-
-Pour en savoir plus sur l'utilisation de Clojure pour envoyer des requêtes HTTP avec une authentification de base, voici quelques liens utiles:
-
-- Documentation officielle de ```clj-http```: https://github.com/dakrone/clj-http
-- Tutoriel sur l'envoi de requêtes HTTP en utilisant Clojure: https://luminusweb.com/docs/http-client.html
-- Exemple de projet utilisant Clojure pour interagir avec des API: https://github.com/clojure-cookbook/clojure-cookbook/tree/master/04_web/4-11_calling-apis
-
-Merci d'avoir lu cet article sur l'envoi de requêtes HTTP avec une authentification de base en utilisant Clojure. Nous espérons que cela a été instructif et utile pour votre apprentissage de ce langage de programmation passionnant. N'hésitez pas à explorer davantage et à essayer différentes méthodes pour intégrer les requêtes HTTP dans vos projets en utilisant Clojure. Bon codage !
+- [Documentation officielle de clj-http](https://github.com/dakrone/clj-http)
+- [Tutoriel sur l'authentification basique avec clj-http](https://www.cloudbees.com/blog/using-basic-authentication-clojure)
+- [Article sur la sécurité en HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/securite)

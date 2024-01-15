@@ -1,6 +1,7 @@
 ---
-title:                "Go: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Go: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -9,51 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäisiä tiedostoja?
+"# Miksi luoda väliaikainen tiedosto?
 
-Luodaanpa tilapäinen tiedosto Go-ohjelmoinnin kautta. Usein ohjelmia kehitettäessä, tarvitaan väliaikainen tiedosto johon tallentaa tietoja. Tämä on hyödyllistä esimerkiksi testauksessa, kun tarvitaan väliaikaista tallennustilaa eri vaiheiden suorittamiseen.
+Joskus ohjelmoinnissa on tarpeen luoda väliaikaisia tiedostoja, joita ei tarvita lopullisessa sovelluksessa. Tällaisia tiedostoja voidaan käyttää esimerkiksi väliaikaisina tallennuspaikkoina suurille tiedostoille tai väliaikaisina muuttujina erilaisissa algoritmeissa. Go:n avulla näiden väliaikaisten tiedostojen luominen on helppoa ja nopeaa.
 
-## Kuinka luoda tilapäinen tiedosto
+## Miten tehdä
 
-Loikataan suoraan esimerkin pariin. Alla oleva esimerkki luo väliaikaisen tiedoston nimeltä "testi.txt" ja tallentaa siihen tekstin "Tämä on tilapäinen tiedosto." Sen jälkeen tiedosto suljetaan ja poistetaan:
+Väliaikaisen tiedoston luominen Go:n avulla onnistuu kätevästi "ioutil" -kirjaston avulla. Seuraavassa koodiesimerkissä näytetään, kuinka luodaan väliaikainen tiedosto ja kirjoitetaan siihen tekstiä:
 
-```Go
+```
 package main
 
 import (
     "fmt"
     "io/ioutil"
-    "os"
 )
 
 func main() {
-    // Luodaan tilapäinen tiedosto
-    f, err := ioutil.TempFile("", "testi.txt")
+    // Luodaan väliaikainen tiedosto
+    tempFile, err := ioutil.TempFile("", "example")
 
     if err != nil {
-        fmt.Println(err)
-        return
+        panic(err)
     }
 
     // Kirjoitetaan teksti tiedostoon
-    text := "Tämä on tilapäinen tiedosto."
-    f.Write([]byte(text))
+    _, err = tempFile.WriteString("Tämä on väliaikainen tiedosto")
 
-    // Suljetaan ja poistetaan tiedosto
-    f.Close()
-    os.Remove(f.Name())
+    if err != nil {
+        panic(err)
+    }
+
+    // Tulostetaan tiedoston nimi
+    fmt.Println("Luotu väliaikainen tiedosto:", tempFile.Name())
 }
 ```
 
-Yllä olevan esimerkin suorittamisen jälkeen, koodin pitäisi luoda ja poistaa tilapäinen tiedosto nimeltä "testi.txt". Voit tarkistaa tämän esimerkiksi avaamalla tiedostonhallinnan ja etsimällä tiedoston nimellä "testi.txt".
+Kun yllä oleva koodi suoritetaan, tulostetaan "Luotu väliaikainen tiedosto: /tmp/example342352234". Tässä nimi koostuu ensinmäisestä parametrista (tyhjästä merkkijonosta) ja toisesta parametrista (prefix asetettuna "example"). Tämä nimi on uniikki ja sitä voidaan käyttää tiedoston löytämiseen.
 
-## Syväsukellus tilapäisten tiedostojen luomiseen
+## Syvemmälle
 
-Tilapäisten tiedostojen luominen voi olla hyödyllistä myös silloin kun halutaan tallentaa väliaikaista tietoa tai piilottaa tietoja muilta käyttäjiltä. Esimerkiksi Go-ohjelma voi luoda tilapäisen tiedoston, tallentaa siihen arkaluonteista tietoa ja poistaa sen lopuksi, jolloin tieto ei jää muiden nähtäväksi.
+Väliaikaisen tiedoston luomisessa on muutamia asioita, joita on hyvä tietää. Ensinnäkin, muistettavaa on että tiedosto pysyy niin kauan kuin ohjelma on käynnissä. Toiseksi, jos annat tyhjän merkkijonon ensimmäisenä parametrina, Go luo tiedoston oletushakemistoon (esim. Windows: C:\Users\nimi\AppData\Local\Temp/ ja Linux: /tmp/).
 
-Tilapäisten tiedostojen luomiseen on myös olemassa erilaisia vaihtoehtoja ja parametreja, jotka voivat vaikuttaa tiedoston luontiin ja poistamiseen. Lisätietoa näistä vaihtoehdoista löytyy Go-kielen virallisesta dokumentaatiosta.
+Väliaikainen tiedosto kannattaa myös aina poistaa, kun sitä ei enää tarvita, jotta se ei jää roskaksi järjestelmään. Tämä onnistuu "Clean" -metodilla, joka ottaa parametrinaan tiedoston nimen ja poistaa sen. Kannattaa myös huomioida, että Clean-metodia kutsutaan automaattisesti, kun ohjelma suljetaan.
 
 ## Katso myös
 
-- [Go-kielen virallinen dokumentaatio](https://golang.org/doc/)
-- [Syvä sukellus asiakkaiden luomiseen Go:lla](https://blog.suzannechurchill.com/golang-file-server/)
+- Dokumentaatio: https://golang.org/pkg/io/ioutil/#TempFile
+- Esimerkkejä: https://gobyexample.com/temporary-files

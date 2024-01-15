@@ -1,5 +1,6 @@
 ---
-title:                "C: Envoi d'une requête http avec une authentification de base"
+title:                "Envoi d'une requête http avec une authentification de base"
+html_title:           "C: Envoi d'une requête http avec une authentification de base"
 simple_title:         "Envoi d'une requête http avec une authentification de base"
 programming_language: "C"
 category:             "C"
@@ -9,61 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Une des raisons les plus courantes pour envoyer une requête HTTP avec une authentification de base est pour accéder à une API protégée par mot de passe. Cela permet de restreindre l'accès à cette API à des utilisateurs authentifiés.
 
-L'envoi d'une requête HTTP avec une authentification de base est une méthode couramment utilisée pour accéder à des ressources en ligne protégées par un mot de passe. Cela peut être utile pour sécuriser les informations confidentielles telles que les données de connexion ou les transactions bancaires.
+## Comment Faire
+Pour envoyer une requête HTTP avec une authentification de base en utilisant la version actuelle du langage C, nous avons besoin de suivre ces étapes :
 
-# Comment faire
+- Tout d'abord, nous devons importer la bibliothèque `curl` en utilisant la directive `#include <curl/curl.h>`.
 
-Pour commencer, il est important d'avoir des connaissances de base en langage C et en protocole HTTP. Pour envoyer une requête avec une authentification de base, vous aurez besoin de la bibliothèque "curl" qui peut être installée facilement à l'aide de gestionnaires de paquets comme apt ou yum.
+- Ensuite, nous devons initialiser le gestionnaire CURL en utilisant la fonction `curl_easy_init()`. Nous stockons le résultat de cette fonction dans une variable de type `CURL*`.
 
-Voici un exemple de code pour envoyer une requête GET avec une authentification de base en utilisant curl :
+- Ensuite, nous devons spécifier l'URL vers laquelle nous voulons envoyer notre requête en utilisant la fonction `curl_easy_setopt()` avec l'option `CURLOPT_URL` et l'URL en tant que argument.
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
+- Maintenant, nous déclarons notre nom d'utilisateur et mot de passe à l'aide de la fonction `curl_easy_setopt()` avec les options `CURLOPT_USERNAME` et `CURLOPT_PASSWORD` respectivement.
+
+- Enfin, nous sommes prêts à envoyer notre requête en utilisant la fonction `curl_easy_perform()`. Si tout se passe bien, cette fonction renvoie la valeur `CURLE_OK`.
+
+Le code ressemblera à ceci :
+
+```
 #include <curl/curl.h>
 
 int main(void) {
+  CURL* curl = curl_easy_init();
+  curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
+  curl_easy_setopt(curl, CURLOPT_USERNAME, "utilisateur");
+  curl_easy_setopt(curl, CURLOPT_PASSWORD, "motdepasse");
+  CURLcode result = curl_easy_perform(curl);
 
-    // Initialise la structure de requête curl
-    CURL *curl = curl_easy_init();
-    
-    // Définit l'URL cible et les informations d'authentification
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
-    
-    // Exécute la requête et stocke la réponse dans une variable
-    CURLcode res = curl_easy_perform(curl);
-    
-    // Affiche le code de réponse HTTP et la réponse
-    long response_code;
-    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
-    if (res != CURLE_OK)
-        fprintf(stderr, "curl_easy_perform() failed : %s\n", curl_easy_strerror(res));
-    else
-        printf("Réponse : %ld\n", response_code);
-    
-    // Nettoie et libère la mémoire
-    curl_easy_cleanup(curl);
-    
-    return 0;
+  if(result != CURLE_OK) {
+    printf("Erreur lors de l'envoi de la requête : %s\n",
+           curl_easy_strerror(result));
+  }
+
+  curl_easy_cleanup(curl);
+  return 0;
 }
 ```
 
-Lors de l'exécution de ce code, vous devriez recevoir une réponse avec le code HTTP 200, indiquant que la requête a réussi.
+Si la requête est envoyée avec succès, la réponse sera stockée dans le gestionnaire CURL et nous pourrons l'utiliser pour afficher le résultat ou effectuer d'autres opérations.
 
-# Plongée en profondeur
+## Plongée Profonde
+La requête HTTP avec une authentification de base est envoyée avec l'en-tête `Authorization` qui contient les informations d'authentification encodées en base64. Voici comment l'en-tête peut être construit en utilisant la bibliothèque `curl` :
 
-Maintenant que nous avons vu un exemple de code simple, il est important de comprendre comment cela fonctionne réellement. Lorsque vous définit une URL cible avec `curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com")`, curl crée un objet de requête. Avec `curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC)`, nous spécifions que cette requête nécessite une authentification de base. Ensuite, avec les options `CURLOPT_USERNAME` et `CURLOPT_PASSWORD`, nous fournissons les informations d'identification nécessaires pour nous connecter.
+```
+#include <curl/curl.h>
 
-Lorsque la requête est exécutée avec `curl_easy_perform(curl)`, curl envoie la requête à l'URL cible et attend une réponse. Une fois la réponse reçue, elle est stockée dans une variable et nous pouvons la récupérer en utilisant `curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code)`.
+int construct_header_function(void *ptr, size_t size, size_t nmemb, void *stream) {
+  strcpy(ptr, base64_encode("utilisateur:motdepasse"));
+  return strlen(ptr);
+}
 
-N'oubliez pas de nettoyer et de libérer la mémoire avec `curl_easy_cleanup(curl)` après avoir terminé d'utiliser la bibliothèque curl.
+int main(void) {
+  CURL* curl = curl_easy_init();
+  curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
+  curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, &construct_header_function);
+  CURLcode result = curl_easy_perform(curl);
 
-# Voir aussi
+  // Gestion des erreurs ici
+}
+```
 
-- [Documentation de la bibliothèque curl](https://curl.se/libcurl/)
-- [Guide de référence HTTP](https://tools.ietf.org/html/rfc7231)
+Dans cet exemple, nous avons utilisé une fonction personnalisée, `construct_header_function`, pour construire l'en-tête. Dans cette fonction, nous appelons la fonction `base64_encode()` pour encoder le nom d'utilisateur et le mot de passe en base64 avant de les copier dans le pointeur `ptr` fourni par CURL.
+
+## Voir aussi
+- [Documentation sur la bibliothèque CURL](https://curl.haxx.se/libcurl/)
+- [Base64 encode et decode en C](https://stackoverflow.com/questions/342409/how-do-i-base64-encode-decode-in-c)

@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: 「標準エラーへの書き込み」"
+title:                "「標準エラーへの書き込み」"
+html_title:           "Kotlin: 「標準エラーへの書き込み」"
 simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜコンソールのエラー表示をするのか
+## なぜ
 
-プログラミングをする際には、誤ったコードを書いたり、想定外のエラーが起きたりすることがあります。その際に、コンソールのエラー表示をすることで、どの部分が間違っているのか、どのようなエラーが起きているのかを確認することができます。そのため、エラー表示をすることはデバッグをする上でとても重要な役割を果たします。
+プログラミングをする際、標準エラー（standard error）に書き込むことは非常に重要です。エラーが発生した際に、標準エラーに書き込むことで、エラーの原因やその詳細を把握することができます。これにより、バグを見つける際に役立ちます。
 
-## 書き方
+## 方法
 
-Kotlinでは、`System.err`を使用して、コンソールにエラーを表示することができます。また、Kotlinの例外処理の中でも、例外をキャッチした際にエラーをコンソールに表示することができます。
+ここでは、Kotlinを使用して標準エラーに書き込む方法を紹介します。まず、次のように`System.err`を使用して標準エラーに書き込みます。
 
 ```Kotlin
-fun main() {
-    try {
-        // ここに起こりうるエラーを含むコードを書く
-    } catch (e: Exception) {
-        System.err.println("エラーが発生しました。: $e")
-    }
-}
+System.err.println("エラーメッセージ");
 ```
 
-上記の例では、`try-catch`ブロックを使用し、エラーが発生した場合に`System.err.println()`でエラーをコンソールに表示しています。
+上記のコードを実行すると、コンソールにエラーメッセージが表示されます。また、`System.err`の代わりに`System.out`を使用することで、エラーではなく通常のメッセージを標準出力（standard output）に書き込むこともできます。
 
 ## 深堀り
 
-Kotlinでは、標準ライブラリである`kotlin.io`を使用することで、さまざまな方法でエラーをコンソールに表示することができます。例えば、`println()`メソッドを使用することで、エラーを通常のテキストとして表示することができます。
+標準エラーに書き込むことで、エラーの詳細を把握できます。例えば、以下のように例外（exception）のスタックトレース（stack trace）を標準エラーに書き込むことができます。
 
 ```Kotlin
-import kotlin.io.*
-
-fun main() {
-    println("エラーが発生しました。")
+try {
+  // 例外が発生する可能性のあるコード
+} catch (e: Exception) {
+  // 例外が発生した場合、スタックトレースを標準エラーに書き込む
+  e.printStackTrace(System.err)
 }
 ```
 
-また、`e.printStackTrace()`を使用することで、エラーの詳細情報をコンソールに表示することもできます。
+このようにすることで、エラーが発生した箇所を特定し、バグを見つけることができます。
 
-```Kotlin
-fun main() {
-    try {
-        // ここに起こりうるエラーを含むコードを書く
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-}
-```
+## 参考リンク
 
-このように、Kotlinではさまざまな方法でエラーをコンソールに表示することができます。これらをうまく活用することで、より効率的なデバッグを行うことができます。
-
-## 下記リンクも参考にしてみてください。
-
-- [Kotlin公式ドキュメント：標準ライブラリの使用](https://kotlinlang.org/docs/reference/basic-types.html#using-kotlin-standard-library)
-- [Kotlin公式ドキュメント：例外処理](https://kotlinlang.org/docs/reference/exceptions.html)
-- [Kotlin入門編：例外処理の基本](https://www.tohoho-web.com/kotlin/basic/exception.html)
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/)
+- [JavaプログラマーのためのKotlin入門](https://www.tohoho-web.com/ex/kotlin.html)
+- [Kotlinで例外処理を作成する方法](https://www.afternerd.com/blog/kotlin-exceptions/)

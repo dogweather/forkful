@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Haskell: Skicka en http-begäran med grundläggande autentisering"
 simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,42 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I den här bloggposten kommer vi att gå igenom hur man skickar en HTTP-begäran med grundläggande autentisering i Haskell. Detta är en användbar färdighet för dig som vill skapa säkra och autentiserade nätverksanrop i dina Haskell-program.
+Att skicka en HTTP-förfrågan med grundläggande autentisering är ett viktigt verktyg för att kommunicera med API:er och andra webbtjänster. Genom att använda grundläggande autentisering kan du säkerställa att bara auktoriserade användare kan få åtkomst till dina resurser och skydda din data från obehörig åtkomst.
 
 ## Så här gör du
 
-För att skicka en HTTP-begäran med grundläggande autentisering behöver vi först importera "Network.HTTP.Simple" biblioteket i Haskell. Detta bibliotek innehåller funktioner för att hantera HTTP-anrop på ett enkelt sätt.
-
-Efter att ha importerat biblioteket, behöver vi skapa en "Request" med den URL som vi vill skicka begäran till. Vi behöver också lägga till en "Authorization" header med vårt användarnamn och lösenord i bas64-encoderad form. Därefter kan vi använda "httpLBS" funktionen för att skicka begäran och få svar som en "Response" variabel.
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Haskell, behöver du först importera Network.HTTP.Simple-biblioteket. Sedan kan du använda funktionen `setRequestBasicAuth` för att skapa en anpassad förfrågan med autentiseringsuppgifter.
 
 ```Haskell
 import Network.HTTP.Simple
 
-main = do
-  let url = "https://example.com/api" -- Lägg till den faktiska URL:en här
-      user = "användarnamn"
-      password = "lösenord"
-  
-  request <- parseRequest url
-  let auth = "Basic " ++ (encodeBase64 (user ++ ":" ++ password))
-  let request' = addRequestHeader "Authorization" auth request
-  
-  response <- httpLBS request'
-  print $ getResponseBody response
+request <- setRequestBasicAuth "användarnamn" "lösenord" "http://www.example.com"
 ```
+
+I detta exempel har vi skapat en förfrågan till URL:en http://www.example.com och använt autentiseringsuppgifterna "användarnamn" och "lösenord". Nu behöver vi bara skicka förfrågan med hjälp av `httpLBS`-funktionen och få ett svar tillbaka.
+
+```Haskell
+response <- httpLBS request
+print $ getResponseBody response
+```
+
+Outputen kommer att ge oss det önskade svar svaret från webbtjänsten. Om autentiseringen misslyckas, kommer vi att få ett felmeddelande i stället.
 
 ## Djupdykning
 
-Nu när vi har en grundläggande förståelse för hur man skickar en HTTP-begäran med grundläggande autentisering i Haskell, låt oss titta närmare på koden.
+Grundläggande autentisering fungerar genom att inkludera autentiseringsuppgifter i HTTP-förfrågan i form av användarnamn och lösenord. Detta gör att webbtjänsten kan verifiera att användaren har rättigheterna för att få åtkomst till resursen. Detta sker genom att autentiseringsuppgifterna kodas i Base64-format och inkluderas i en HTTP-header.
 
-Först ser vi att vi använder "Network.HTTP.Simple" biblioteket för att importera funktionerna vi behöver. Huvudfunktionen, "httpLBS", hanterar både anropet och svar från servern.
-
-Sedan skapar vi en "Request" variabel med hjälp av "parseRequest" funktionen. Vi lägger också till en "Authorization" header genom att använda "addRequestHeader" funktionen och konkatenera bas64-kodad användarnamn och lösenord.
-
-Efter att ha fått tillbaka den berikade "Request" variabeln, använder vi "httpLBS" igen för att skicka begäran och spara svaret i en "Response" variabel. Slutligen använder vi "getResponseBody" funktionen för att få tillbaka data från servern och skriver ut det.
+Det finns flera andra autentiseringsmetoder som kan användas för att skydda HTTP-förfrågningar, men grundläggande autentisering är den enklaste och mest grundläggande metoden. Det är dock viktigt att notera att grundläggande autentisering endast krypterar autentiseringsuppgifterna, inte hela förfrågan, vilket innebär att den fortfarande kan vara sårbar för avlyssning.
 
 ## Se även
 
-- [Haskell.org - HTTP-request dokumentation](https://www.haskell.org/haskellwiki/HTTP)
-- [GitHub - Network.HTTP.Simple](https://github.com/snoyberg/http-client/blob/master/http-client-tls/src/Network/HTTP/Simple.hs)
-- [Bas64-enkodning av användarnamn och lösenord](https://www.base64encode.org/)
+- [Haskell Network.HTTP.Simple dokumentation](https://hackage.haskell.org/package/http-client-0.5.14/docs/Network-HTTP-Simple.html)
+- [HTTP grundläggande autentisering (Wikipedia)](https://sv.wikipedia.org/wiki/HTTP-grundläggande_autentisering)

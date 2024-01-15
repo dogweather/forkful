@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Analizowanie html"
+title:                "Analizowanie html"
+html_title:           "Kotlin: Analizowanie html"
 simple_title:         "Analizowanie html"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,46 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Przetwarzanie HTML jest nieodłącznym elementem programowania internetowego. Pozwala ono na analizowanie struktur strony internetowej, pobieranie określonych informacji oraz dynamiczne tworzenie zawartości. W rezultacie jest to niezbędne narzędzie dla każdego, kto zamierza tworzyć efektywne i interaktywne strony internetowe.
+Parsowanie HTML jest nieodzownym elementem programowania w dzisiejszych czasach. Przez to, że większość zawartości w internecie jest tworzona w formie HTML, umiejętność parsowania tego języka jest niezwykle przydatna dla programistów. Pozwala ona na pozyskiwanie, przetwarzanie i wyświetlanie informacji ze stron internetowych.
 
 ## Jak to zrobić
 
-Przetwarzanie HTML przy użyciu języka Kotlin jest niezwykle proste i wygodne. Wystarczy wykorzystać bibliotekę Jsoup, która jest dostępna dla tego języka. Dzięki temu narzędziu można łatwo przeszukiwać, selekcjonować i modyfikować elementy HTML, a także pobierać dane z serwisów internetowych.
-
-```Kotlin
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-
-val url = "https://www.example.com"
-val document: Document = Jsoup.connect(url).get()
-val title: String = document.title()
-println(title) // Output: "Przykładowa strona"
-```
-
-W powyższym przykładzie użyto metody `connect()` z biblioteki Jsoup, aby połączyć się z wybranym adresem URL i pobrać całą zawartość strony. Następnie za pomocą metody `title()` odczytano tytuł strony i wyświetlono go w konsoli.
-
-Dodatkowo, biblioteka Jsoup umożliwia także wyszukiwanie konkretnych elementów HTML na stronie, dzięki czemu można w łatwy sposób wyodrębnić interesujące nas informacje.
+Przede wszystkim, należy zaimportować bibliotekę Jsoup, która jest bardzo popularnym narzędziem do parsowania HTML w języku Kotlin. Następnie, można użyć gotowej funkcji "connect" aby pobrać zawartość strony internetowej. Przykład kodu:
 
 ```Kotlin
 val url = "https://www.example.com"
-val document: Document = Jsoup.connect(url).get()
-val links = document.select("a[href]")
-for (link in links) {
-    println(link.attr("href"))
-}
-// Output: "/link1", "/link2", "/link3", ...
+val doc = Jsoup.connect(url).get()
 ```
 
-W tym przykładzie wykorzystano metodę `select()` w połączeniu z selektorem CSS, aby znaleźć wszystkie linki na stronie oznaczone tagiem `<a>`. Następnie w pętli `for` wyświetlono atrybut `href` dla każdego z odnalezionych elementów.
+Korzystając z funkcji "get", możemy pobrać zawartość HTML i przypisać ją do zmiennej "doc". Następnie, wykorzystując wyrażenie CssSelector, możemy wyciągnąć interesujące nas elementy ze strony. Przykład kodu:
+
+```Kotlin
+val title = doc.select("h1").text()
+val desc = doc.select("p").text()
+println("Tytuł: $title")
+println("Opis: $desc")
+```
+
+W tym przykładzie, wykorzystujemy funkcję "select" aby wybrać odpowiednie elementy. W przypadku powyżej, wybieramy pierwsze wystąpienie elementów "h1" i "p". Następnie, wykorzystując funkcję "text", pobieramy tekst z wybranych elementów i przypisujemy go do odpowiednich zmiennych. W końcowej części kodu, używamy funkcji "println" aby wyświetlić tekst w konsoli.
 
 ## Dogłębna analiza
 
-Przetwarzanie HTML jest procesem złożonym i posiada wiele zaawansowanych funkcjonalności, takich jak wykorzystywanie zapytań XPath, parsowanie plików CSS i wiele innych. Wymaga ono również solidnej znajomości struktury języka HTML, aby efektywnie wykorzystać jego potencjał.
+Parsowanie HTML może być nieco skomplikowane, ponieważ każda strona internetowa może mieć inny układ i strukturę. Dlatego, przydatne może być wykorzystanie narzędzi jak DevTools, które pozwalają na podgląd i inspekcję kodu strony. Używanie wyrażeń CssSelector również może wymagać nieco wprawy, ale z czasem staje się to łatwiejsze.
 
-Dlatego też, jeśli zamierzasz tworzyć zaawansowane projekty internetowe, warto poświęcić nieco czasu na zgłębienie wiedzy związanej z przetwarzaniem HTML.
+Warto również pamiętać o odpowiednim formatowaniu kodu, aby był czytelny i łatwy do zrozumienia. Przestrzeganie najlepszych praktyk programowania jest niezwykle ważne, szczególnie w przypadku takiego zadania jak parsowanie HTML.
 
-## Zobacz także
+## Zobacz również
 
-* Dokumentacja biblioteki Jsoup: https://jsoup.org/
-* Wprowadzenie do przetwarzania HTML w Kotlinie: https://kotlinlang.org/docs/tutorials/parsing-html.html
-* Przykładowe projekty wykorzystujące bibliotekę Jsoup: https://www.baeldung.com/java-jsoup
+- [Dokumentacja Jsoup](https://jsoup.org/)
+- [Poradnik: Jak przygotować się do parsowania HTML w Jsoup](https://www.baeldung.com/java-jsoup)

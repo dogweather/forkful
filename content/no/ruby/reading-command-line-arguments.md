@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Lese kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Ruby: Lese kommandolinjeargumenter"
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,44 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Kommandolinjeargumenter er en viktig del av Ruby-programmering, da de lar deg ta input fra brukeren direkte fra kommandolinjen. Dette gjør det mulig å lage programvare som er mer interaktiv og brukervennlig.
+Å lese kommandolinjeargumenter er en viktig del av Ruby-programmering, spesielt når du ønsker å lage interaktive programmer som krever innspill fra brukeren. Det kan også være nyttig for å gi spesifikk funksjonalitet basert på argumentene som er passert inn i programmet.
 
 ## Hvordan
 
- For å lese kommandolinjeargumenter i Ruby, kan du bruke ARGV-objektet som inneholder alle argumentene som ble gitt ved kjøring av programmet. Her er et eksempel på hvordan du kan lese og skrive ut disse argumentene:
+Det er enkelt å lese kommandolinjeargumenter i Ruby ved å bruke standardbiblioteket `ARGV`. Her er et eksempel på hvordan du kan ta inn to tall som argumenter og utføre en enkel matematisk operasjon:
 
-```ruby
-# Les argumentene og lagre dem i en variabel
-argumenter = ARGV
+```Ruby
+number1 = ARGV[0].to_i
+number2 = ARGV[1].to_i
 
-# Skriv ut hver av argumentene
-argumenter.each do |argument|
-  puts argument
-end
+puts "Summen av #{number1} og #{number2} er #{number1 + number2}"
 ```
 
-Når du kjører dette programmet og gir det noen argumenter, vil du se følgende output:
+Når du kjører dette programmet med følgende kommandolinje: `ruby program.rb 3 5`, vil du få følgende output:
 
 ```
-ruby lese_argumenter.rb argument1 argument2 argument3
+Summen av 3 og 5 er 8
 ```
 
-```
-argument1
-argument2
-argument3
-```
-
-Du kan også bruke ARGV-objektet til å lese et spesifikt argument basert på index, for eksempel `ARGV[0]` for det første argumentet.
+Som du ser, bruker vi `ARGV` for å få tak i argumentene som er passert inn ved bruk av indeksering. Vi konverterer også argumentene til heltall ved hjelp av `.to_i`-metoden for å kunne utføre matematiske operasjoner.
 
 ## Dypdykk
 
-Det er også mulig å håndtere ulike situasjoner som kan oppstå når man leser kommandolinjeargumenter. For eksempel kan du sjekke om et argument er gitt ved å bruke `.include?` metoden eller sjekke antall argumenter som er gitt med `.length` metoden. Du kan også konvertere argumentene til forskjellige typer, som for eksempel tall eller symboler.
+Ved å dykke dypere inn i `ARGV` kan du også legge merke til at den tar inn alle argumentene som en array, uansett hvor mange det er. Det betyr at du kan ta inn en variabel mengde av argumenter og behandle dem som du ønsker. Her er et eksempel på hvordan du kan skrive ut alle argumentene som blir passert inn som strenger:
 
-En annen nyttig funksjon å vite om er `OptionParser` som lar deg definere og behandle argumenter på en mer strukturert måte. Dette kan være nyttig når du jobber med større og mer komplekse programmer.
+```Ruby
+ARGV.each do |argument|
+  puts "Argument: #{argument}"
+end
+```
 
-## Se Også
+Når du kjører dette programmet med følgende kommandolinje: `ruby program.rb hello world`, vil du få følgende output:
 
-- [Ruby Dokumentasjon om ARGV](https://ruby-doc.org/core-3.0.0/ARGF.html)
-- [Ruby Dokumentasjon om OptionParser](https://ruby-doc.org/stdlib-2.7.3/libdoc/optparse/rdoc/OptionParser.html)
-- [Kommandolinjeargumenter i Ruby av ThoughtBot](https://thoughtbot.com/blog/ruby-command-line-arguments)
+```
+Argument: hello
+Argument: world
+```
+
+Dette gir deg muligheten til å lage programmer som kan tilpasses basert på brukerens input.
+
+## Se også
+
+- [Ruby Standardbiblioteket](https://ruby-doc.org/stdlib-2.7.0/libdoc/)
+- [Kommandolinje argumenter i Ruby](https://www.rubyguides.com/2019/05/ruby-command-line-arguments/)

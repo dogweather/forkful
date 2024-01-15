@@ -1,5 +1,6 @@
 ---
-title:                "Bash: З'єднання рядків"
+title:                "З'єднання рядків"
+html_title:           "Bash: З'єднання рядків"
 simple_title:         "З'єднання рядків"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому 
-Перш ніж навчитися з'єднувати рядки в Bash, важливо зрозуміти, що це може бути корисно для вашої програми. Це допоможе вам створювати більш гнучкі та змінні скрипти.
+## Зачем
 
-## Як з'єднувати рядки в Bash
-З'єднання рядків в Bash дуже просте. Використовуйте оператор "concatenation" "." та зазначте рядки, які ви хочете з'єднати. Наприклад:
+Конкатенування строк є важливою частиною програмування в bash. Воно дозволяє комбінувати різні значення та створювати більш складні та функціональніші рядки.
 
-```Bash
-myName="Sophie"
-greeting="Привіт, моє ім'я -"
-echo $greeting$myName
+## Як це робити
+
+```Bash 
+# Приклад 1: З'єднати дві прості строки
+name="John"
+echo "Hello, $name!" 
+# Вивід: Hello, John!
+
+# Приклад 2: З'єднати дві змінні
+message="Hello,"
+name="John"
+echo "$message $name!" 
+# Вивід: Hello, John!
+
+# Приклад 3: З'єднати строку та результат функції
+uppercase_name=$(echo $name | tr '[:lower:]' '[:upper:]')
+echo "Hello, $uppercase_name!" 
+# Вивід: Hello, JOHN!
 ```
 
-При виконанні цього скрипту у терміналі буде виведено: "Привіт, моє ім'я - Sophie"
+## Підробиці
 
-Але якщо ви хочете з'єднати більше двох рядків, ви можете використовувати цикли для ефективнішого коду. Наприклад:
+Конкатенування строк можна розглядати як з'єднання різних частин для створення більш повноцінного рядка. У bash є кілька способів це зробити, включаючи використання подвоєних лапок для заміщення змінних та спеціальних символів, а також команди `printf`, яка дозволяє використовувати форматування. Додаткову інформацію про конкатенування строк можна знайти в [офіційній документації](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion) для bash.
 
-```Bash
-names=("Ліза" "Максим" "Олег")
-greeting="Привіт, мої імена -"
-for name in ${names[@]}
-do
-    greeting=$greeting$name", "
-done
-echo $greeting
-```
+## Подивіться також
 
-При виконанні цього скрипту у терміналі буде виведено: "Привіт, мої імена - Ліза, Максим, Олег"
-
-Ви також можете використати спеціальний оператор "+=" для з'єднання рядків. Наприклад:
-
-```Bash
-greeting="Привіт, мої імена -"
-greeting+="Ліза "
-greeting+="Максим "
-greeting+="Олег"
-echo $greeting
-```
-
-При виконанні цього скрипту у терміналі буде виведено: "Привіт, мої імена - Ліза Максим Олег"
-
-## Глибший аналіз з'єднання рядків
-Важливо пам'ятати, щоб з'єднуючи рядки, ви завжди вставляєте символ між ними, тому додавайте пробіл або будь-який інший символ за потребою.
-
-З'єднання рядків також може бути корисне, якщо вам потрібно створити динамічні повідомлення для користувачів або форматувати дані для виведення.
-
-## Дивіться також
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Getting Started Guide](https://www.unixlinux.org/ubuntu-linux-command-list-reference-guide/)
-- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/)
-- [Ukrainian translation of the Bash Reference Manual](https://gnu.org.ua/software/bash/manual/bash.uk.html) (Український переклад Руководства з баша)
+- [Посібник Шелла по конкатенуванню строк](https://www.shell-tips.com/bash/string-concatenation-in-bash/)
+- [Використання подвоєних лапок в bash](https://www.shell-tips.com/bash/double-quotes-vs-single-quotes-in-bash/)
+- [Приклади використання команди `printf`](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)

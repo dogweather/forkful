@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Arbetar med json"
-simple_title:         "Arbetar med json"
+title:                "Arbeta med json"
+html_title:           "Clojure: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,54 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-JSON är en vanligt använd dataformat i webbutveckling och samlar in data från andra system och API:er. Att lära sig hur man arbetar med JSON i Clojure kommer att öppna upp en hel värld av möjligheter för att skapa dynamiska och interaktiva webbapplikationer.
+JSON (JavaScript Object Notation) är en vanlig format för datautbyte och används ofta i webbutveckling och api design. Att lära sig hur man arbetar med JSON i Clojure kan hjälpa dig att bygga robusta och skalbara applikationer som kommunicerar med andra system.
 
 ## Hur man gör
 
-För att arbeta med JSON i Clojure behöver du först importera biblioteket för JSON-parsing. Detta kan göras genom att lägga till följande kod i din projekt.clj fil:
+Det finns flera sätt att arbeta med JSON i Clojure, men vi kommer att fokusera på de två mest vanliga metoderna: använda inbyggda funktioner eller använda ett bibliotek som heter Cheshire.
 
-```Clojure
-:dependencies [[org.clojure/data.json "1.0.0"]]
+Först och främst, om du arbetar med små och enkla JSON-strängar kan du använda Clojure:s inbyggda ```read-string``` funktion för att konvertera JSON till Clojure datastrukturer:
+
+```Clojure 
+(def my-json-str "{\"name\":\"Kalle\",\"age\":31,\"hobbies\":[\"coding\",\"reading\"]}")
+
+(read-string my-json-str)
+
+;; Output
+;; {:name "Kalle", :age 31, :hobbies ["coding" "reading"]}
 ```
 
-När biblioteket har laddats in kan du använda funktionen `read-str` för att läsa in en JSON-sträng och konvertera den till Clojure datastrukturer. Till exempel:
+Om du arbetar med större och mer komplexa JSON-strängar kan det vara bättre att använda en JSON-bibliotek som Cheshire. För att använda detta bibliotek behöver du först lägga till den som en beroende i din ```project.clj``` fil:
 
 ```Clojure
-(require '[clojure.data.json :as json])
-
-(def json-str "{\"name\":\"Johan\",\"age\":28}")
-(def data (json/read-str json-str))
+[org.clojure/data.json "1.0.2"]
 ```
 
-Om vi sedan skriver ut värdet av `data` ser vi att det är en Clojure-map med nycklarna `name` och `age` och deras motsvarande värden.
+Sedan kan du använda ```parse``` -metoden för att konvertera JSON till Clojure datastrukturer:
 
 ```Clojure
-(user=> data)
-{"name" "Johan", "age" 28}
+(require '[cheshire.core :as json])
+
+(def my-json-str "{\"name\":\"Kalle\",\"age\":31,\"hobbies\":[\"coding\",\"reading\"]}")
+
+(json/parse-string my-json-str)
+ 
+;; Output
+;; {:name "Kalle", :age 31, :hobbies ["coding" "reading"]}
 ```
 
-För att skapa en JSON-sträng från Clojure datastrukturer kan vi använda funktionen `json/write-str`. Till exempel:
+Om du vill konvertera Clojure datastrukturer till JSON kan du använda ```generate-string``` -metoden:
 
 ```Clojure
-(def data {:name "Maria", :age 32})
-(def json-str (json/write-str data))
+(def my-clojure-map {:name "Kalle", :age 31, :hobbies ["coding" "reading"]})
+
+(json/generate-string my-clojure-map)
+
+;; Output
+;; "{\"name\":\"Kalle\",\"age\":31,\"hobbies\":[\"coding\",\"reading\"]}"
 ```
 
-Nu är `json-str` en textsträng som representerar vår data i JSON-format.
+## Djupdykning
 
-```Clojure
-(user=> json-str)
-"{\"name\":\"Maria\",\"age\":32}"
-```
+För mer komplexa operationer som att hämta och hantera data från JSON API:er, kan det vara värt att titta djupare på Cheshire-biblioteket. Det finns många funktioner som underlättar arbetet med JSON, såsom ```select-keys``` för att välja specifika nycklar från en JSON-sträng och ```diff``` för att jämföra två JSON-strängar.
 
-## Utforska djupare
-
-JSON i Clojure är mycket mer än bara att läsa och skriva data. Det finns också funktioner för att konvertera datastrukturer mellan JSON och EDN (Extensible Data Notation), som är ett annat dataformat som används i Clojure. Dessutom finns det hjälpfunktioner för att manipulera och söka genom JSON-datastrukturer.
-
-Om du vill lära dig mer om JSON i Clojure kan du läsa dokumentationen för biblioteket `clojure.data.json` eller utforska andra bibliotek som erbjuder mer avancerade funktioner för JSON-hantering.
+Det är också viktigt att ha i åtanke att vissa operationer på Clojure datastrukturer, som att lägga till eller ta bort nycklar, inte nödvändigtvis påverkar JSON-strängen. I dessa fall måste du använda ```generate-string``` -metoden för att konvertera tillbaka till JSON-strängen efter att ha utfört operationerna.
 
 ## Se även
 
-- [Clojure Data JSON biblioteket](https://github.com/clojure/data.json)
-- [EDN dokumentation](https://github.com/edn-format/edn)
-- [JSON formatterare](https://jsonformatter.curiousconcept.com/)
+- [Clojure officiella dokumentation om JSON](https://clojure.org/reference/data_structures#_json)
+- [Cheshire dokumentation](https://github.com/dakrone/cheshire)

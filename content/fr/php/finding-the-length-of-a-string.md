@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne de caractères"
+html_title:           "PHP: Trouver la longueur d'une chaîne de caractères"
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,34 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous pouvez vous demander pourquoi trouver la longueur d'une chaîne de caractères est important en programmation PHP. La longueur d'une chaîne peut être utile pour de nombreuses tâches, comme la validation de données, la manipulation de texte et la génération de rapports.
+La recherche de la longueur d'une chaîne de caractères est une opération courante en programmation, car cela permet de manipuler des données spécifiques à chaque caractère d'une chaîne. Cela peut également être utile pour vérifier si une chaîne dépasse une certaine limite de longueur.
 
 ## Comment faire
 
-Pour trouver la longueur d'une chaîne en PHP, vous pouvez utiliser la fonction `strlen()`. Cette fonction prend en paramètre une chaîne de caractères et renvoie le nombre de caractères qu'elle contient. Voici un exemple de code :
+Pour trouver la longueur d'une chaîne en PHP, vous pouvez utiliser la fonction prédéfinie `strlen()`. Cette fonction prend une chaîne en tant que paramètre et renvoie le nombre de caractères présents dans cette chaîne.
 
+Exemple de code :
 ```PHP
-$string = "Bonjour le monde!";
-echo strlen($string);
+$str = "Bonjour tout le monde!";
+echo "La longueur de la chaîne est : " . strlen($str) . " caractères.";
+```
+Résultat :
+```
+La longueur de la chaîne est : 21 caractères.
 ```
 
-Lorsque vous exécutez ce code, vous verrez `18` s'afficher, car la chaîne contient 18 caractères. Vous pouvez également utiliser cette fonction pour vérifier si une chaîne a une longueur spécifique, en la comparant à une valeur donnée. Par exemple :
+Il est également possible d'utiliser la méthode `mb_strlen()` pour calculer la longueur d'une chaîne prenant en compte les caractères multibytes.
 
-```PHP
-if (strlen($string) > 10) {
-  echo "Cette chaîne est plus longue que 10 caractères!";
-} else {
-  echo "Cette chaîne est plus courte que 10 caractères!";
-}
-```
+## Plongeon en profondeur
 
-Lorsque vous exécutez ce code, vous verrez `Cette chaîne est plus longue que 10 caractères!` s'afficher, car la chaîne a une longueur de 18 caractères.
+La fonction `strlen()` utilise en fait l'encodage des chaînes de caractères pour compter le nombre de caractères. Cela signifie que, pour les chaînes avec des caractères multibytes, la longueur peut être différente selon l'encodage choisi.
 
-## Plongée en profondeur
-
-Il est important de comprendre que la fonction `strlen()` compte le nombre de caractères dans une chaîne, et non le nombre de mots. Ainsi, si votre chaîne contient des espaces, ceux-ci seront également pris en compte dans la longueur totale. De plus, il est important de noter que cette fonction ne prend pas en compte les accents ou les caractères spéciaux, donc si vous avez besoin de compter ces caractères, il faudra utiliser une autre méthode.
+De plus, la fonction `strlen()` ne comptera pas les espaces ou les autres caractères spéciaux comme des caractères. Pour prendre en compte ces caractères dans le calcul de la longueur d'une chaîne, vous pouvez utiliser `mb_strlen()` avec l'option `mb_strlen($str, 'UTF-8')`.
 
 ## Voir aussi
 
-- [Documentation de la fonction `strlen()` en PHP](https://www.php.net/manual/fr/function.strlen.php)
-- [Exemples de manipulation de chaînes en PHP](https://www.developpez.net/forums/d1867283/php/langage/php/manipuler-chaine-caracteres-exemples/)
+- [Documentation officielle de la fonction `strlen()` en PHP](https://www.php.net/manual/fr/function.strlen.php)
+- [Documentation officielle de la fonction `mb_strlen()` en PHP](https://www.php.net/manual/fr/function.mb-strlen.php)
+- [Un guide complet sur la manipulation de chaînes en PHP](https://www.phptherightway.com/#strings)

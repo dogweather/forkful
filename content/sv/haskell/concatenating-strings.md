@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Konkatenering av strängar"
-simple_title:         "Konkatenering av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Haskell: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,61 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du någonsin har arbetat med textbaserade data, som användardata eller loggar, har du förmodligen stött på behovet av att kombinera eller sammanfoga flera strängar till en enda. I Haskell är det möjligt att göra detta genom en process som kallas förkättring. I denna bloggpost kommer vi att utforska detta koncept och se hur det kan användas i dina program.
+Att konkaternera strängar är en viktig del av programmering eftersom det tillåter oss att kombinera flera textsträngar och skapa mer komplexa uttryck. Det är särskilt användbart när vi behöver bygga dynamiska textsträngar som inkluderar variabler eller användarinmatning.
 
-## Så här gör du
+## Hur man gör
 
-För att sammanfoga strängar i Haskell använder vi operatorn `++`. Detta tar två strängar och sammanfogar dem till en enda sträng. Här är ett exempel på hur det kan se ut:
-
-```Haskell
--- definiera två strängar
-let str1 = "Hej "
-let str2 = "världen!"
-
--- använda ++ operatorn för att sammanfoga strängarna
-let str3 = str1 ++ str2
-
--- skriv ut resultatet
-print(str3)
-```
-
-Output:
+För att konkaternera strängar i Haskell använder vi operatorn "++", vilket betyder att vi helt enkelt lägger till en sträng på slutet av en annan. Vi kan också använda funktionen "concat" för att konkaternera en lista av strängar. Här är ett exempel:
 
 ```Haskell
-Hej världen!
+sträng1 ++ sträng2
 ```
 
-Det är också möjligt att sammanfoga flera strängar på en gång genom att använda funktionsmetoden `concat`. Den tar en lista av strängar som argument och sammanfogar dem till en enda sträng. Här är ett exempel på hur det kan se ut:
+I detta exempel kommer sträng2 att läggas till slutet av sträng1. Om vi vill konkaternera flera strängar i en lista kan vi använda "concat" funktionen:
 
 ```Haskell
--- definiera en lista av strängar
-let strList = ["Haskell", "är", "kul", "!"]
-
--- använd concat för att sammanfoga strängarna i listan
-let str = concat strList
-
--- skriv ut resultatet
-print(str)
+concat [sträng1, sträng2, sträng3]
 ```
 
-Output:
-
-```Haskell
-Haskell är kul!
-```
+Detta kommer att ge oss en sammanfogad sträng av sträng1, sträng2 och sträng3.
 
 ## Djupdykning
 
-Förkättring är en operation som kan utföras på alla typer av data som är instanser av klassen `Show`. Det innebär att inte bara strängar utan även andra typer av data kan sammanfogas. Detta gör det möjligt att skapa mer komplexa utskrifter eller loggar som kombinerar flera värden.
+Att konkaternera strängar i Haskell är inte bara användbart för att skapa dynamiska textsträngar, det är också en effektiv och snabb metod. Det är också en flexibel metod eftersom vi kan konkaternera en obegränsad mängd strängar med hjälp av operatorn "++" eller funktionen "concat".
 
-En annan användbar funktion för sammanfogning som är värd att nämna är `intercalate`. Detta tar en sträng och en lista av strängar som argument och sammanfogar strängarna i listan med den första strängen som ett mellanrum. Detta är särskilt användbart för att producera snyggare och lättläsliga utskrifter eller loggar.
+En viktig sak att notera är att när vi konkaternerar strängar, skapas en helt ny sträng istället för att ändra på de ursprungliga strängarna. Detta är viktigt att komma ihåg eftersom det är ett grundläggande koncept i de flesta funktionella programmeringsspråk som Haskell.
 
 ## Se också
 
-För mer information och exempel om hur man förkatar strängar, se följande länkar:
-
-- [Haskell Strings](https://wiki.haskell.org/Strings)
-- [Learn You a Haskell - Strings](http://learnyouahaskell.com/starting-out#strings)
-  - [concat](http://learnyouahaskell.com/starting-out#string-functions)
-  - [intercalate](http://learnyouahaskell.com/modules#intercalate)
-- [Real World Haskell - Working with text](http://book.realworldhaskell.org/read/working-with-strings.html)
+- [Haskell String-merging](https://www.tutorialspoint.com/haskell/haskell_string_merging.htm)
+- [Haskell String Functions](https://www.programiz.com/haskell-programming/string-functions)
+- [Haskell Concatenation](https://hackr.io/tutorials/learn-haskell/concatenation)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Haskell: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -9,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-コンピュータープログラミングをするために、標準エラーに書き込むことが必要な場合があります。たとえば、バグが発生した際にエラーメッセージを表示するために使われることがあります。
+なぜ標準エラー出力を行うのか、短く説明します。Haskellのプログラムで発生したエラーを追跡し、バグを見つける時には、標準エラー出力が役に立ちます。 そうすることで、より効率的に問題を解決することができます。
 
-## 方法
+## How To
 
 ```Haskell
-printToStdErr :: IO ()
-printToStdErr = do
-    hPutStrLn stderr "エラーメッセージ"
-    hFlush stderr
+import System.IO (hPutStrLn, stderr)
+
+-- 標準エラー出力へのメッセージの書き込み
+hPutStrLn stderr "エラーメッセージを書き込みます。"
+
+-- 数値のエラーを示すために、 "error" を使用することもできます
+hPutStrLn stderr $ "エラーが発生しました。数値: " ++ show 500
+
+-- リストのエラーを示すために、 "error" と "unwords" を使用することもできます
+hPutStrLn stderr $ error $ "エラーが発生しました。リスト: " ++ unwords ["A", "B", "C"]
 ```
 
-このように、Haskellでは `stderr` を使って標準エラーに書き込むことができます。また、上記のコードでは `hFlush` を使ってエラーメッセージを即座に出力するようにしています。
+上記のように、Haskellでは、`System.IO`モジュールの`hPutStrLn`関数を使用して、標準エラー出力へのメッセージの書き込みができます。一般的なエラーメッセージを手動で書き込むこともできますが、`error`関数を使用することで、より明確なエラーメッセージを生成することができます。また、文字列操作に便利な`show`関数や`unwords`関数を組み合わせて使用することで、さまざまな種類のエラーを示すメッセージを生成することができます。
 
-## 深堀り
+## Deep Dive
 
-標準エラーに書き込むことで、プログラムの実行中に起こるエラーをユーザーに伝えることができます。`stderr` は常にエラーメッセージを表示するために使われるわけではありませんが、必要となる場面で役立つ重要な機能です。
+上記の例では、`error`関数を使用してエラーメッセージを生成しましたが、実際には、`Control.Monad`モジュールの`MonadFail`クラスのインスタンスである`fail`関数を使用することでさらに柔軟なエラーハンドリングができます。また、標準エラー出力を使用するだけでなく、`System.IO`モジュールの他の関数を使用することで、エラーメッセージをファイルやターミナル以外の場所にも書き込むことができます。
 
-## 参考リンク
+## See Also
 
-- [Haskell入門](https://qiita.com/nosix/items/101378cc2bd1539aec3c)
-- [標準入出力とファイル入出力](http://mmatsubara.hatenablog.com/entry/2016/03/17/111921)
-- [Haskellでデバッグする方法](http://ai-ya-no.diary.jp/posts/2015/06/12/haskell%E3%81%A7%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
+- [System.IOモジュールのドキュメント](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [Control.Monadモジュールのドキュメント](https://hackage.haskell.org/package/base-4.15.0.0/docs/Control-Monad.html)
+- [Haskellのエラーハンドリングの詳細](https://en.wikibooks.org/wiki/Haskell/Error_handling)

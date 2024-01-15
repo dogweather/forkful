@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Javascript: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,35 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sende en HTTP-request er en viktig del av webutvikling. Ved å bruke Javascript for å sende disse forespørslene, kan du lage dynamiske og responsive nettsider som kommuniserer med ulike servere og databaser. Dette gjør det mulig å hente og sende informasjon i sanntid, noe som er avgjørende for online interaktivitet.
+Hvis du vil hente data fra en webside, eller sende data til en annen server, må du gjøre en HTTP-request. Dette er en grunnleggende handling i moderne webutvikling.
 
 ## Hvordan
 
-For å sende en HTTP-request i Javascript, kan du bruke den innebygde `XMLHttpRequest`-objektet. Først må du opprette et nytt objekt ved å kalle på `XMLHttpRequest()`-funksjonen. Deretter kan du konfigurere forespørselen ved å angi en metode (f.eks. GET eller POST) og en URL.
+For å sende en HTTP-request i Javascript, kan vi bruke et innebygd objekt kalt XMLHttpRequest. Her er et eksempel som sender en GET-request til API-et til Github:
 
-```javascript
-let request = new XMLHttpRequest(); // Oppretter et nytt objekt
-request.open("GET", "https://api.example.com/users"); // Konfigurerer forespørselen
+``` Javascript
+var xhr = new XMLHttpRequest(); // Opprett en ny XMLHttpRequest-instans
+xhr.open('GET', 'https://api.github.com/users/username'); // Angi URL-en og HTTP-metoden
+xhr.send(); // Send requesten
+
+// Venter på respons fra serveren
+xhr.onload = function() {
+  if (xhr.status == 200) { // Sjekker at requesten var vellykket
+    console.log(xhr.response); // Logger responsen (i dette tilfellet data om brukeren med brukernavnet 'username')
+  }
+};
 ```
 
-Neste steg er å sende forespørselen ved å kalle `send()`-metoden på objektet. Hvis forespørselen er vellykket, vil du få en respons fra serveren som inneholder informasjonen du har bedt om.
+Output:
 
-```javascript
-request.send(); // Sender forespørselen
-console.log(request.responseText); // Skriver ut responsen fra serveren
+``` 
+{
+    "login": "username",
+    "id": 123456,
+    "avatar_url": "https://avatars.githubusercontent.com/u/123456?v=4",
+    "name": "John Smith",
+    "company": null,
+    "blog": "https://example.com",
+    "location": "Norway",
+    "email": null,
+    ...
+}
 ```
 
-Outputen vil avhenge av hvilken informasjon du har bedt om fra serveren. I dette tilfellet vil `console.log` vise dataene fra brukerlisten på API-et.
+Dette er et enkelt eksempel på hvordan man kan sende en HTTP-request ved hjelp av JavaScript. Det finnes også andre måter å gjøre dette på, for eksempel ved bruk av jQuery eller fetch API-et.
 
 ## Dypdykk
 
-Hvis du vil sende mer komplekse HTTP-forespørsler, kan du også bruke biblioteker som Axios eller jQuery. Disse gir deg flere metoder og funksjoner for å konfigurere og håndtere forespørsler, og gjør det ofte enklere å håndtere ulike dataformater som JSON.
-
-Det er også viktig å være klar over sikkerhetsrisikoer når du sender en HTTP-request, spesielt hvis det inneholder sensitiv informasjon. Det er derfor viktig å alltid bruke HTTPS hvis mulig og å beskytte din kode mot angrep som Cross-Site Request Forgery (CSRF).
+Det finnes ulike typer HTTP-requests, som GET, POST, PUT, DELETE, etc. Disse representerer ulike handlinger man kan utføre mot en server. Det finnes også forskjellige HTTP-statuskoder som kan returneres av en server, som 200 (OK), 404 (Not Found), 500 (Internal Server Error), etc. Det er viktig å forstå disse konseptene når man jobber med HTTP-requests i JavaScript for å sikre at requestene våre er pålitelige og håndterer eventuelle feil som kan oppstå.
 
 ## Se også
 
-- [Axios](https://github.com/axios/axios)
-- [jQuery.ajax()](https://api.jquery.com/jquery.ajax/)
-- [Sikkerhetsrisikoer ved HTTP-requests](https://portswigger.net/web-security/csrf)
-- [Guide til HTTP og nettverksforespørsler](https://developer.mozilla.org/nb/docs/Web/HTTP)
+- MDN webdocs: [Making HTTP requests using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- W3Schools: [XMLHttpRequest Object](https://www.w3schools.com/js/js_ajax_http.asp)
+- jQuery documentation: [jQuery.get()](https://api.jquery.com/jquery.get/)
+- Fetch API: [Introduction to fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)

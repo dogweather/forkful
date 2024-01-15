@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Convertire una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Clojure: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,24 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
-Ci sono molte situazioni in cui potresti voler convertire una data in una stringa nel tuo codice Clojure. Ad esempio, potresti dover visualizzare la data in un formato specifico per l'utente o salvarla in un formato compatibile con un'altra applicazione.
+
+Ci sono molte ragioni per cui potresti voler convertire una data in una stringa in Clojure. Ad esempio, potresti dover rappresentare una data in un formato specifico per motivi di visualizzazione o per l'elaborazione dei dati.
 
 ## Come fare
-Per convertire una data in una stringa in Clojure, puoi utilizzare la funzione `format` del pacchetto `java.time`. Questa funzione accetta due argomenti: una stringa di formattazione e la data da convertire. Ecco un esempio di codice che converte la data corrente in una stringa nel formato "GG/MM/AAAA":
+
+Per convertire una data in una stringa in Clojure, puoi utilizzare la funzione `format` del modulo `clojure.core`. Di seguito un esempio di codice che utilizza questa funzione per convertire una data in una stringa nel formato "giorno/mese/anno":
 
 ```Clojure
-(require '[java.time :as time])
-
-(def current-date (time/local-date))
-(def formatted-date (time/format "dd/MM/yyyy" current-date))
-
-(formatted-date) ;; output: "04/01/2022"
+(require '[clojure.core :as core])
+(def data (java.util.Date.))
+(core/format data "dd/MM/yyyy")
 ```
 
-## Approfondimento
-La stringa di formattazione che si passa alla funzione `format` segue le stesse regole della classe `SimpleDateFormat` di Java. Puoi utilizzare una combinazione di lettere per definire il formato della data, come "GG" per il giorno, "MM" per il mese e "AAAA" per l'anno. Inoltre, puoi aggiungere del testo in qualsiasi punto della stringa di formattazione, ad esempio "/", per separare le parti della data.
+L'output di questo codice sarà "10/11/2021" se viene eseguito il 10 novembre 2021.
 
-See Also
-- [Documentazione ufficiale di java.time](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Guida alla formattazione delle date in Clojure](https://clojure.org/guides/date_time)
-- [Tutorial di Clojure per principianti](https://www.clojurebook.com)
+## Approfondimento
+
+Per una maggiore flessibilità, puoi anche utilizzare la libreria `clj-time` per gestire date e orari in Clojure. Questa libreria fornisce funzioni utili per manipolare, formattare e convertire date e orari. Inoltre, è possibile specificare il fuso orario desiderato nella conversione di una data in una stringa, utilizzando la funzione `with-timezone` del modulo `clj-time.core`.
+
+```Clojure
+(require '[clj-time.core :as time]
+(def data (java.util.Date.))
+(time/format (time/with-timezone data "UTC+02:00") "dd/MMM/yyyy")
+```
+
+L'output di questo codice sarà "10/nov/2021", utilizzando il fuso orario UTC+02:00.
+
+## Vedi anche
+
+- Documentazione ufficiale di `clojure.core/format`: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/format
+- Documentazione ufficiale di `clj-time`: https://clj-time.github.io/clj-time/

@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: コマンドライン引数の読み取り"
-simple_title:         "コマンドライン引数の読み取り"
+title:                "コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
+html_title:           "Javascript: コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
+simple_title:         "コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,38 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-コマンドライン引数を読み取ることは、プログラムをより柔軟にするために非常に重要です。特定のパラメーターを指定することで、プログラムの挙動を変更することができます。例えば、ユーザーがプログラムに与える入力の形式を変更することができます。
+コマンドライン引数を読み取ることについて学ぶことは、JavaScriptの開発において非常に有用です。コマンドライン引数を利用することで、プログラムの実行時に外部から値を受け取ることができ、柔軟なプログラミングが可能になります。
 
-## 使い方
+## 方法
 
-コマンドライン引数は、プログラムの起動時に与えられるパラメーターです。コマンドライン引数を読み取るには、`process.argv`という特殊なオブジェクトを使用します。以下のコードは、コマンドライン引数を出力する簡単なプログラムの例です。
-
-```Javascript
-// process.argvの中身を出力する
-console.log(process.argv);
-```
-
-実際にプログラムを実行してみると、以下のように出力されるでしょう。
-
-```
-$ node index.js hello world
-[ '/usr/local/bin/node', '/Users/user/Desktop/index.js', 'hello', 'world' ]
-```
-
-この例では、`node`コマンドを使用して`index.js`ファイルを実行し、`hello`と`world`という2つの引数を与えています。`process.argv`には、最初に`node`コマンドのパス、次に実行しているファイルのパス、そして与えた引数が順番に格納されています。
-
-## 深堀り
-
-もっと詳しく説明すると、`process.argv`は実は配列であることがわかります。なので、配列のメソッドを使用することでコマンドライン引数をより柔軟に扱うことができます。例えば、次のコードは与えられた引数の数を出力するプログラムです。
+下記のようなコードを使用して、コマンドライン引数を読み取ることができます。
 
 ```Javascript
-// process.argvの要素数を出力する
-console.log(process.argv.length - 2);
+// コマンドライン引数を配列として取得
+const args = process.argv.slice(2);
+
+// 配列argsの要素を順に取り出し、コンソールに出力
+args.forEach(arg => console.log(arg));
 ```
 
-実際に実行してみると、引数の数に応じて出力結果が変化します。また、`process.argv`の要素をループ処理することで、より高度なプログラムを作ることも可能です。
+実行例：
 
-## See Also
+```
+node app.js hello world
 
-- [Node.jsのドキュメント - process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [コマンドライン引数を扱う方法（Qiita）](https://qiita.com/babie/items/db718a6d241b3966110c)
+// 出力結果
+hello
+world
+```
+
+コマンドライン引数は、プログラムの実行時に与えられる値を取得するためのものです。上記の例では、`hello`と`world`という値がコンソールに出力されます。また、`process.argv`を使用することで、引数以外の情報も取得することができます。
+
+## ディープダイブ
+
+コマンドライン引数は、主にコマンドラインから実行されるツールやプログラムの設定やオプションを指定するために使用されます。例えば、ブラウザで動作するJavaScriptを開発する際に、コマンドライン引数を利用してポート番号やホスト名を指定することができます。
+
+また、Node.jsを使用してサーバーサイドのJavaScriptを実行する場合にも、コマンドライン引数を利用してプログラムの実行時の動作を制御することができます。
+
+## 関連リンク
+
+- [Node.jsドキュメント](https://nodejs.org/dist/latest-v14.x/docs/api/process.html#process_process_argv)
+- [コマンドライン引数を読み取る方法](https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/)
+- [コマンドライン引数について | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Infinity)

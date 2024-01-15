@@ -1,6 +1,7 @@
 ---
-title:                "C#: Escrevendo para o erro padrão."
-simple_title:         "Escrevendo para o erro padrão."
+title:                "Escrevendo para o erro padrão"
+html_title:           "C#: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -9,71 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em C#?
+## Por que
 
-Escrever para o erro padrão, ou *standard error* em inglês, pode ser uma tarefa útil ao desenvolver programas em C#. Ao escrever para o erro padrão, é possível receber mensagens de erro e depurar o código de forma mais eficiente. Além disso, escrever para o erro padrão também pode ajudar a melhorar a qualidade do código e a identificar possíveis problemas antes mesmo deles ocorrerem.
+Escrever para o erro padrão é uma prática útil para testar e depurar seu código. Ao escrever para o erro padrão, você pode visualizar informações importantes sobre erros e exceções que ocorrem durante a execução do seu programa.
 
-## Como fazer?
+## Como Fazer
 
-Para escrever para o erro padrão em C#, é possível utilizar o método `Console.Error.WriteLine()` seguido da mensagem que deseja exibir. Veja um exemplo abaixo:
+Primeiro, você precisa entender o que é o erro padrão. Em C#, o erro padrão é um fluxo de saída que é usado para exibir mensagens de erro e informações de depuração. Para gravar mensagens para o erro padrão, você pode usar o método `Console.Error.WriteLine`.
 
-```
-Código C#:
-
-Console.Error.WriteLine("Erro: Valor inválido inserido!");
-```
-```
-Saída:
-
-Erro: Valor inválido inserido!
-```
-
-Caso deseje incluir variáveis na mensagem de erro, basta utilizar o caractere `{}` para indicar o local da variável na string e depois adicionar os valores desejados separados por vírgula. Por exemplo:
+Veja um exemplo simples de como escrever para o erro padrão em C#:
 
 ```
-Código C#:
-
-string nome = "Ana";
-int idade = 25;
-Console.Error.WriteLine("O nome e a idade inseridos foram: {0}, {1}", nome, idade);
-```
-```
-Saída:
-
-O nome e a idade inseridos foram: Ana, 25
+C# Console.Error.WriteLine("Este é um exemplo de mensagem de erro.");
 ```
 
-## Mergulho profundo
-
-Além de utilizar o método `Console.Error.WriteLine()`, também é possível escrever para o erro padrão utilizando o fluxo `Console.Error`. Este fluxo funciona de forma semelhante ao `Console.Out`, mas é utilizado especificamente para mensagens de erro. Veja um exemplo abaixo:
+O resultado deste código será a impressão da mensagem "Este é um exemplo de mensagem de erro." no console. Você também pode utilizar formatação de string para adicionar informações adicionais:
 
 ```
-Código C#:
-
-using System;
-using System.IO;
-
-public class Program 
-{
-    public static void Main() 
-    {
-        Console.SetError(new StreamWriter("erros.txt"));
-        Console.Error.WriteLine("Erro: O arquivo não foi encontrado!");
-        Console.Error.WriteLine("Hora do erro: {0}", DateTime.Now);
-    }
-}
-```
-```
-Saída:
-
-O arquivo "erros.txt" será criado e terá o seguinte conteúdo:
-
-Erro: O arquivo não foi encontrado!
-Hora do erro: 2021-04-27 11:00:00 AM
+C# string nome = "João";
+Console.Error.WriteLine("Olá, {0}. Seu nome possui {1} letras.", nome, nome.Length);
 ```
 
-## Veja também
+O resultado deste código será a impressão da mensagem "Olá, João. Seu nome possui 4 letras." no console.
 
-- Documentação oficial da Microsoft sobre `Console.Error` (em inglês): <https://docs.microsoft.com/en-us/dotnet/api/system.console.error>
-- Tutoriais C# - Escrevendo para o erro padrão: <https://www.tutorialspoint.com/csharp/csharp_standard_error.htm>
-- Artigo sobre tratamento de erros em C#: <https://www.devmedia.com.br/tratamento-de-excecoes-em-c-sharp/23349>
+## Aprofundando
+
+Além do método `Console.Error.WriteLine`, existem outras formas de escrever para o erro padrão em C#. Você também pode utilizar a classe `StreamWriter` para gravar informações para o erro padrão.
+
+Outro ponto importante é que, ao usar o erro padrão, as mensagens serão imediatamente impressas no console, independentemente de onde o código está sendo executado. Isso pode ser útil para rastrear erros em aplicações multithread ou serviços.
+
+Se você estiver trabalhando em um projeto maior, uma boa prática é criar uma classe de registro de erros personalizada. Desta forma, você pode organizar melhor suas mensagens de erro e adicionar informações adicionais, como data e hora, número de linha ou nome do método.
+
+## Veja Também
+
+- Documentação oficial da Microsoft: https://docs.microsoft.com/pt-br/dotnet/api/system.console.error
+- Diferença entre erro padrão e erro de rede: https://stackoverflow.com/questions/183202/difference-between-standard-error-and-error-from-dos-command-line
+- Tutorial de como criar uma classe de registro de erro: https://exceptionnotfound.net/basics-csharp-custom-exception-classes/#creating-a-custom-exception-class-in-c

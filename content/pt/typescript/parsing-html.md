@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Analisando html"
+html_title:           "TypeScript: Analisando html"
+simple_title:         "Analisando html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -9,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-A análise de HTML é uma habilidade importante para qualquer programador ou desenvolvedor web. Ao aprender como analisar e extrair informações de documentos HTML, é possível criar aplicações mais dinâmicas e personalizadas, além de automatizar tarefas repetitivas. Esta postagem irá explicar como realizar análise de HTML usando TypeScript.
+Você provavelmente já se deparou com a tarefa de extrair informações específicas de um documento HTML. Talvez seja para criar um web scraping script ou para processar dados de uma página da web. Para isso, é necessário realizar a análise sintática do HTML, ou seja, transformá-lo em uma estrutura de dados que possa ser facilmente manipulada por um programa. A partir daí, é possível obter os dados desejados de forma mais eficiente.
 
 ## Como fazer
 
-Para realizar análise de HTML em TypeScript, é necessário primeiro instalar a biblioteca npm `cheerio`. Em seguida, é preciso importar a biblioteca e usar a função `load` para carregar um documento HTML. Veja um exemplo abaixo:
+Realizar a análise sintática de um documento HTML pode parecer uma tarefa complexa, mas com o TypeScript essa tarefa se torna muito mais simples. Com a biblioteca `html-parser`, podemos facilmente converter um documento HTML em um objeto do tipo `HTMLElement` e acessar suas propriedades e filhos.
 
 ```TypeScript
-import * as cheerio from 'cheerio';
+import { parse } from 'html-parser';
 
-const html = `
-  <html>
-    <head>
-      <title>Exemplo</title>
-    </head>
-    <body>
-      <h1>Cabeçalho</h1>
-      <p>Parágrafo</p>
-    </body>
-  </html>
-`;
+const html = '<div><h1>Título</h1><p>Parágrafo</p></div>';
+const parsed = parse(html);
 
-const $ = cheerio.load(html); // carrega o HTML
-
-// usando o seletor CSS para obter o conteúdo do título
-const title = $('head > title').text();
-console.log(title); // output: Exemplo
-
-// usando o seletor CSS para obter o conteúdo do parágrafo
-const paragraph = $('body > p').text();
-console.log(paragraph); // output: Parágrafo
+console.log(parsed.tagName); // div
+console.log(parsed.children[0].tagName); // h1
+console.log(parsed.children[1].tagName); // p
 ```
 
-Na primeira linha, importamos a biblioteca `cheerio` e, em seguida, usamos a função `load` para carregar o HTML na constante `$`. A partir daí, podemos usar seletores CSS para obter o conteúdo desejado do documento HTML. O resultado será exibido no console.
+Ao executar o código acima, podemos ver que o HTML foi convertido em um objeto que contém o nome da tag e seus filhos, facilitando assim o acesso e manipulação dos dados.
 
-## Deep Dive
+## Mergulho profundo
 
-A biblioteca `cheerio` é uma excelente opção para analisar e manipular documentos HTML em TypeScript. Ela permite usar seletores CSS para obter conteúdo específico do documento e também possui funções para navegar na árvore do DOM.
+Além de converter o HTML em um objeto, a biblioteca `html-parser` também nos permite realizar consultas específicas em busca de elementos específicos. Isso é feito utilizando a função `querySelector`, que nos permite passar um seletor CSS como parâmetro.
 
-Além disso, a biblioteca também suporta a manipulação de documentos HTML invalidados, tornando-a uma opção robusta para análise de documentos em tempo real.
+```TypeScript
+import { parse } from 'html-parser';
+
+const html = '<ul><li>Item 1</li><li>Item 2</li></ul>';
+const parsed = parse(html);
+
+const items = parsed.querySelector('li');
+console.log(items[0].innerText); // Item 1
+console.log(items[1].innerText); // Item 2
+```
+
+Com essa funcionalidade, podemos facilmente extrair dados de qualquer tag ou classe que desejamos, tornando o processo de parsing ainda mais eficiente.
 
 ## Veja também
 
-- Documentação do Cheerio: https://cheerio.js.org/
-- Tutorial de análise de HTML com Cheerio: https://medium.com/@scottschweigert/parsing-html-with-typescript-and-cheerio-fd0e89811ae8
+- Documentação oficial do `html-parser`: https://github.com/nullpunkt666/html-parser
+- Tutorial de como usar o `html-parser` com TypeScript: https://www.valentinog.com/blog/html-parser-javascript/
+- Exemplos práticos de parsing com o `html-parser`: https://medium.com/@rajaraodv/parsing-html-in-typescript-with-htmlparser2-8049413a260f

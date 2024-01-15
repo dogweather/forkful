@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Przetwarzanie daty na ciąg znaków"
-simple_title:         "Przetwarzanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków."
+html_title:           "Ruby: Konwersja daty na ciąg znaków."
+simple_title:         "Konwersja daty na ciąg znaków."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -9,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Dlaczego
+## Dlaczego
 
-Jeśli programujesz w Ruby, prawdopodobnie już zetknąłeś się z koniecznością konwertowania daty na ciąg znaków. Jest to bardzo częste zadanie, które może być wykonywane z różnych powodów, na przykład do wyświetlenia daty w czytelnej formie dla użytkownika lub do zapisania jej w bazie danych.
+Konwersja daty na ciąg znaków jest często niezbędnym krokiem w programowaniu. Umożliwia to wyświetlenie daty w czytelnej formie lub jej wykorzystanie w innych operacjach.
 
-##Jak to zrobić
+## Jak to zrobić
 
-Istnieje kilka sposobów na dokonanie konwersji daty na ciąg znaków w Ruby. Jedną z najprostszych metod jest użycie metody `strftime`, która jest dostępna dla obiektów typu `Date` i `Time`. Poniżej przedstawiam przykładowy kod wykorzystujący tę metodę:
+Aby skonwertować datę na ciąg znaków w Ruby, możesz skorzystać z metody `strftime()`. Przyjmuje ona formatowanie daty w postaci łańcucha znaków i zwraca ciąg znaków zawierający datę w wybranej formie. Na przykład:
 
 ```Ruby
-require 'date'
-
-current_date = Date.today
-string_date = current_date.strftime("%d/%m/%Y")
-
-puts string_date # Wyświetli "29/03/2021" 
+date = Time.new(2021, 12, 1)
+date_str = date.strftime("%d/%m/%Y")
+puts date_str # wyświetli 01/12/2021
 ```
 
-Jak widać, używając parametrów `%d`, `%m` i `%Y`, możemy określić format, w jakim chcemy wyświetlić datę. Istnieje wiele innych opcji formatowania, możemy na przykład dodać nazwę dnia tygodnia lub skrócony format miesiąca. Wszystkie dostępne parametry można znaleźć w dokumentacji języka Ruby.
+Możesz także wykorzystać gotowe formaty dostępne w języku Ruby, jak na przykład `iso8601` lub `rfc2822`.
 
-##Głębszy wgląd
+```Ruby
+date = Time.new(2021, 12, 1)
+date_str = date.iso8601
+puts date_str # wyświetli 2021-12-01T00:00:00+00:00
+```
 
-Podczas konwertowania daty na ciąg znaków ważne jest, aby pamiętać o strefie czasowej. W Ruby domyślnie używana jest strefa czasowa systemu operacyjnego, jednak możemy ją zmienić za pomocą metody `Time.zone=`. Warto również zwrócić uwagę na format daty, ponieważ w różnych krajach stosowane są różne konwencje. 
+## Głębszy wgląd
 
-Warto również wspomnieć, że w nowszych wersjach Ruby istnieje również metoda `to_s` dla obiektów typu `Date` i `Time`, która również pozwala na konwersję daty na ciąg znaków.
+W Ruby daty są przechowywane jako obiekty klasy `Time`. W przypadku metody `strftime()` możesz wykorzystać wiele różnych znaków, aby sformatować datę według swoich potrzeb.
 
-##Zobacz również
+Na przykład, `%a` zwróci skrócony dzień tygodnia (np. "Mon"), a `%b` skrócony miesiąc (np. "Jan"). Możesz także wykorzystać `%d` do wyświetlenia dnia miesiąca w formacie z zerem wiodącym (np. "01") lub `%Y` do wyświetlenia roku w formacie czterocyfrowym (np. "2021").
 
-- [Dokumentacja Ruby o metodzie `strftime`](https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime)
-- [Dokumentacja Ruby o strefach czasowych](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
-- [Poradnik o konwersji daty na ciąg znaków w Ruby](https://www.rubyguides.com/2015/09/ruby-date-format/)
+Możesz również wykorzystać `%H` do wyświetlenia godziny w formacie 24-godzinnym lub `%M` do wyświetlenia minuty. Pełną listę możliwych znaków formatujących znajdziesz w dokumentacji języka Ruby.
+
+## Zobacz także
+
+- Dokumentacja języka Ruby: https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime
+- Jak sformatować datę i czas w Ruby: https://www.rubyguides.com/2015/09/ruby-time-format/
+- Poradnik dla początkujących: https://rubyguides.com/learn/ruby-string-formatting/

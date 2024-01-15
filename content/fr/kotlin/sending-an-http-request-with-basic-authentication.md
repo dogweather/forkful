@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Envoi d'une requête http avec une authentification de base"
-simple_title:         "Envoi d'une requête http avec une authentification de base"
+title:                "Envoi d'une demande http avec une authentification de base"
+html_title:           "Kotlin: Envoi d'une demande http avec une authentification de base"
+simple_title:         "Envoi d'une demande http avec une authentification de base"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,63 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-L'envoi de requêtes HTTP avec une authentification de base est essentiel pour sécuriser les connexions et limiter l'accès à une API ou un serveur. Cela garantit que seuls les utilisateurs autorisés peuvent accéder à des données sensibles et empêche les intrus de voler des informations confidentielles.
+
+Les requêtes HTTP sont un moyen couramment utilisé pour communiquer avec des serveurs à travers le web. L’utilisation d’une authentification basique permet de sécuriser ces requêtes en vérifiant l’identité de l’utilisateur. 
 
 ## Comment faire
-Il existe plusieurs façons d'envoyer une requête HTTP avec une authentification de base en utilisant Kotlin. Voici un exemple de code qui utilise la bibliothèque Retrofit pour effectuer une requête avec une authentification de base:
 
-```Kotlin
-// Importer les dépendances nécessaires
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.Credentials
+Pour envoyer une requête HTTP avec une authentification basique en utilisant Kotlin, vous pouvez suivre les étapes suivantes :
 
-// Définir l'URL de l'API
-val BASE_URL = "https://myapi.com"
+1. Importer la librairie HTTP dans votre code en utilisant `import com.android.volley.toolbox.HttpClient`
+2. Créer une instance d’HttpClient  pour effectuer la requête 
+3. Utiliser la méthode `setCredentials()` pour ajouter les informations d’authentification de base dans l’en-tête de la requête
 
-// Instancier un objet Retrofit avec le convertisseur Gson et l'URL de l'API
-val retrofit = Retrofit.Builder()
-    .addConverterFactory(GsonConverterFactory.create())
-    .baseUrl(BASE_URL)
-    .build()
-
-// Définir l'interface pour les appels à l'API
-interface ApiService {
-    // Définir la méthode pour l'appel à l'API avec l'authentification de base
-    @GET("endpoint")
-    fun getData(@Header("Authorization") auth: String): Call<MyData>
-}
-
-// Créer une instance de l'interface ApiService en utilisant Retrofit
-val service = retrofit.create(ApiService::class.java)
-
-// Générer les informations d'authentification de base à partir du nom d'utilisateur et du mot de passe
-val credentials = Credentials.basic("username", "password")
-
-// Effectuer l'appel à l'API pour récupérer les données
-service.getData(credentials).enqueue(object: Callback<MyData> {
-    override fun onResponse(call: Call<MyData>, response: Response<MyData>) {
-        if (response.isSuccessful) {
-            // Récupérer les données à partir de la réponse
-            val data = response.body()
-            // Faire quelque chose avec les données
-        }
-    }
-
-    override fun onFailure(call: Call<MyData>, t: Throwable) {
-        // Gérer les erreurs
-    }
-})
+```
+import com.android.volley.toolbox.HttpClient
+val httpClient = HttpClient()
+httpClient.setCredentials(username, password)
 ```
 
-En utilisant cette méthode, nous pouvons facilement envoyer une requête HTTP avec une authentification de base et recevoir une réponse contenant les données demandées.
+4. Définir l’URL de la requête à l’aide de la méthode `setUrl()`
+5. Utiliser la méthode `setMethod()` pour spécifier le type de requête (GET, POST, etc.)
+6. Enfin, utiliser la méthode `executeRequest()` pour envoyer la requête et récupérer la réponse.
+
+```
+httpClient.setUrl("https://monsite.com/api")
+httpClient.setMethod("GET")
+val response = httpClient.executeRequest()
+println(response)
+```
+
+Les informations d’authentification fournies seront incluses dans l’en-tête de la requête envoyée.
 
 ## Plongée en profondeur
-L'utilisation de l'authentification de base pour les requêtes HTTP est considérée comme sécurisée et courante. Cependant, elle peut être quelque peu vulnérable si les informations d'authentification sont interceptées par un intrus. C'est pourquoi il est recommandé d'utiliser également une connexion sécurisée (HTTPS) pour renforcer la sécurité de l'API.
 
-La bibliothèque Retrofit propose également la possibilité de chiffrer les informations d'authentification avec la méthode Digest, qui est plus sécurisée que l'authentification de base standard. Cela peut être fait en utilisant la méthode `Credentials.digest()` à la place de `Credentials.basic()`. Il est également recommandé d'utiliser une connexion sécurisée pour cette méthode d'authentification.
+L’authentification basique est un moyen simple mais efficace de sécuriser les requêtes HTTP. Elle utilise un en-tête d’autorisation pour inclure le nom d’utilisateur et le mot de passe de l’utilisateur dans la requête. Le serveur vérifie ensuite ces informations pour valider ou refuser la demande.
+
+Il est important de garder à l’esprit que l’authentification basique n’est pas sécurisée par rapport à d’autres méthodes. Les informations d’identification sont envoyées en texte clair, donc elles peuvent être facilement interceptées si elles sont envoyées sur un réseau non sécurisé. Il est également recommandé d’utiliser l’authentification à deux facteurs pour une sécurité accrue.
 
 ## Voir aussi
-- Documentation officielle de Retrofit: https://square.github.io/retrofit/
-- Article sur les meilleures pratiques de sécurité pour les API: https://nordicapis.com/best-practices-in-api-security/
-- Exemple de mise en œuvre de l'authentification de base avec OkHttp: https://futurestud.io/tutorials/basic-authentication-with-retrofit
+
+- [Documentation officielle pour l’utilisation de HttpClient en Kotlin](https://developer.android.com/training/volley/request-custom#kotlin)
+- [Guide complet pour l’authentification basique en utilisant Kotlin](https://www.novoda.com/blog/https-authentication-with-android-volley/)

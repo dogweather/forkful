@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: テキストファイルの作成"
+title:                "テキストファイルの作成"
+html_title:           "Elixir: テキストファイルの作成"
 simple_title:         "テキストファイルの作成"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテキストファイルを書くのか
+##なぜ
 
-テキストファイルを書くことは、プログラミングにとって非常に重要なスキルです。テキストファイルには、プログラムのコード、設定ファイル、ドキュメント、メモなど、さまざまな情報を保存することができます。それでは、Elixirでテキストファイルをどのように書くのか見ていきましょう。
+テキストファイルを書くことのメリットは、様々な形式のデータを一つのファイルで管理できることです。データの構造が分かりやすく、修正や追加も簡単に行えます。
 
-## 書き方
+##やり方
 
-まずは、Elixirでテキストファイルを書く方法を見ていきましょう。下のコードブロックに例を示します。
+以下の例は、ElixirのFileモジュールを使用してテキストファイルを作成する方法を示しています。
 
 ```Elixir
-# テキストファイルを書き込む関数を定義する
-def write_to_file(file_name, content) do
-  File.write(file_name, content)
-end
+# テキストファイルを書き込む
+File.write("sample.txt", "これはテキストファイルです。")
 
-# テキストファイルに書き込む内容を定義する
-content = "これはテキストファイルに書き込む内容です。"
-
-# ファイル名と内容を渡してテキストファイルを書き込む
-write_to_file("my_file.txt", content)
-
-# テキストファイルから内容を読み取り、出力する
-File.read("my_file.txt")
+# テキストファイルに追記する
+File.append("sample.txt", "新しい行を追加します。")
 ```
 
-上の例では、`write_to_file`という関数を定義し、その中で`File.write`を使用してテキストファイルを書き込んでいます。また、`content`という変数に書き込む内容を定義し、`write_to_file`関数に渡しています。最後に、`my_file.txt`というファイル名でテキストファイルを書き込み、`File.read`を使用して内容を読み取り出力しています。
+テキストファイルを読み込む場合は、以下のように`File.read/1`関数を使用します。
 
-## 深堀り
+```Elixir
+# テキストファイルを読み込む
+content = File.read("sample.txt")
+IO.puts(content) # "これはテキストファイルです。新しい行を追加します。"
+```
 
-Elixirでテキストファイルを書くには、`File.write`以外にも`IO.binwrite`や`IO.write`などの関数があります。これらの関数を使用する際には、エンコーディングやフォーマットなどのオプションを指定することで、より詳細な設定が可能です。また、`File.read`や`IO.read`を使用することで、ファイルから内容を読み取ることもできます。
+##ディープダイブ
 
-さらに、Elixirでは`File`モジュールの他にも、`:file`や`IO`などのモジュールを使用してファイル操作を行うことができます。各モジュールにはそれぞれ異なる関数やオプションが用意されており、使用目的や状況に応じて使い分けることができます。
+テキストファイルの作成には、パフォーマンス上の考慮が必要です。Elixirでは、`File`モジュールの代わりに`IO`モジュールを使用することでより高速にテキストファイルを読み書きすることができます。
 
-## 関連リンク
+また、テキストファイルを操作する際には、エラーハンドリングが重要です。ファイルが存在しない場合やパーミッションがない場合など、想定外のエラーが発生する可能性があります。そのため、`File`モジュールの関数を実行する際には、`with`ブロックを使用してエラーハンドリングを行うことが推奨されています。
 
-- [Elixir 公式ドキュメント](https://elixir-lang.org/docs.html)
-- [Elixir School](https://elixirschool.com/ja/)
-- [Elixir Forum](https://elixirforum.com/)
-- [Elixir入門書「プログラミングElixir」](https://booth.pm/ja/items/990593)
-- [Elixirクックブック](https://booth.pm/ja/items/915729)
-- [Elixir 入門記事まとめ](https://qiita.com/tags/elixir)
-- [Elixir Advent Calendar](https://qiita.com/advent-calendar/2019/elixir)
+##参考リンク
+
+- [Elixir公式ドキュメント - Fileモジュール](https://hexdocs.pm/elixir/File.html)
+- [Elixir公式ドキュメント - IOモジュール](https://hexdocs.pm/elixir/IO.html)
+- [Elixir In Action](https://www.manning.com/books/elixir-in-action-second-edition)

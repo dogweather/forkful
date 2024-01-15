@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Написання тестів"
+title:                "Написання тестів"
+html_title:           "Fish Shell: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Зачем
+## Чому 
 
-Написання тестів є важливим етапом у процесі розробки програмного забезпечення, оскільки вони допомагають перевірити правильність роботи коду та запобігти появі помилок в майбутньому. Також вони дозволяють полегшити процес тестування та зберегти час у подальшій розробці.
+Тести допомагають убезпечувати ваш код від помилок, зберігають його працездатним і знижують ризик збою програми.
 
-## Як це зробити
+## Як 
 
-```Fish Shell``` є потужним інструментом для написання тестів у вашому програмному коді. Він дозволяє перевірити правильність виконання окремих функцій та методів у вашій програмі. Нижче наведено приклад тесту з використанням Fish Shell:
+Існує багато різних типів тестів, але ми будемо фокусуватися на модульних тестах. Це тести, що перевіряють окремі функції або блоки коду. Давайте подивимося на приклад тесту для функції, яка перевіряє, чи є деяка змінна позитивним числом:
 
-```Fish Shell
-function add(number1, number2)
-    echo $number1 + $number2
+```
+Fish Shell test -s source_code scope_name
+function is_positive(number)
+    if test $number -gt 0
+        echo "This number is positive"
+    else
+        echo "This number is negative"
+    end
 end
 
-test_add
-    add 2 3; and status 0
-    add 5 7; and status 12
+source_code='function is_positive(number)
+    if test $number -gt 0
+        echo "This number is positive"
+    else
+        echo "This number is negative"
+    end
+end'
+
+scope_name="Positive Number Test"
+
+result="$(echo $source_code | fish -c "$scope_name")"
+if test "$result" = "This number is positive"
+    echo "Test passed"
+else
+    echo "Test failed"
 end
 ```
 
-Вище вказані тести перевірятимуть, чи функція ```add()``` правильно обраховує суму двох чисел. Перший тест повинен повернути статус 0, оскільки сума 2 і 3 дорівнює 5. Другий тест видасть статус 12, оскільки сума 5 і 7 не дорівнює 12.
+Як бачите, ми створили тест, який перевіряє наш код на предмет правильності виводу для позитивного числа. Запускаємо його командою `fish -c` за допомогою параметру `-s` для передачі нашого коду і параметру `-s` для назви тесту.
 
-## Розглянемо поглибше
+## Глибоке погруження 
 
-Написання тестів у Fish Shell дозволяє не тільки перевірити правильність роботи вашого коду, але й зберігти його як документацію. Наприклад, якщо ви зміните свою функцію та тести написані у Fish Shell не пройдуть, це позначить, що ваша зміна несправнила код, який працював раніше. Також це полегшить процес роботи з вашим кодом, оскільки ви можете перевірити правильність його роботи у будь-який час, навіть якщо ви змінили його частину.
+При написанні тестів, важливо враховувати як можливо більшу кількість сценаріїв для перевірки вашого коду. Також слід пам'ятати, що тести повинні бути коректно іменовані і організовані для зручності використання.
 
-## Дивись також
+## Дивись також 
 
-- [Fish Shell документація: тести](https://fishshell.com/docs/current/cmds/test.html)
-- [Туторіал з написання тестів у Fish Shell](https://dev.to/jonhiggs/writing-tests-in-fish-shell-2c65)
-- [Стаття про переваги написання тестів](https://blog.usejournal.com/learn-the-advantages-of-writing-tests-c8a439a9ae9f?gi=b8b4ac8f06c7)
+- The Fish Shell [official documentation](https://fishshell.com/docs/current/).
+- A [tutorial](https://hackernoon.com/learning-fish-the-famous-command-line-shell-newbies-will-love-e146eaaf8262) on how to use Fish Shell.

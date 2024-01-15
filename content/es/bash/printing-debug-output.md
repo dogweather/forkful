@@ -1,5 +1,6 @@
 ---
-title:                "Bash: Imprimiendo salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Bash: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué imprimir la salida de depuración?
 
-En la programación, una de las habilidades más importantes es la capacidad de solucionar problemas y encontrar errores en el código. Y una herramienta clave para lograr esto es la impresión de salida de depuración. Al imprimir información en la consola, podemos comprender mejor el flujo del programa y detectar posibles errores. En esta publicación, aprenderemos cómo imprimir salida de depuración en Bash.
+Imprimir la salida de depuración puede ser una herramienta útil para solucionar problemas en nuestro código de Bash. Al imprimir información adicional, podemos analizar qué está sucediendo en nuestro programa y encontrar posibles errores o fallos en la lógica.
 
 ## Cómo hacerlo
 
-Para imprimir salida de depuración en Bash, podemos utilizar el comando `echo`. Este comando imprime el texto que le pasamos como argumento. Veamos un ejemplo simple:
+Imprimir la salida de depuración es muy sencillo en Bash. Simplemente necesitamos utilizar el comando `echo` y agregar el texto que queremos imprimir dentro de las comillas. Por ejemplo:
 
 ```Bash
-echo "Hola, mundo"
+echo "Imprimiendo salida de depuración"
 ```
 
-Este comando imprimirá "Hola, mundo" en la consola. Sin embargo, cuando se trata de imprimir datos de depuración, generalmente queremos imprimir el valor de variables o datos relacionados con el programa. Para hacer esto, podemos utilizar el operador de concatenación `+` dentro del comando `echo`:
+Al ejecutar este comando, veremos el texto impreso en la consola. Sin embargo, también podemos utilizar el parámetro `-e` para imprimir variables o caracteres especiales. Por ejemplo:
 
 ```Bash
-nombre="Juan"
-echo "El nombre es: " + $nombre
+numero=10
+echo -e "El número es: $numero \nFin de la salida de depuración"
 ```
 
-En este ejemplo, el valor de la variable `nombre` se imprimirá junto al texto "El nombre es: ".
+Este comando imprimirá el valor de la variable `numero` y también añadirá una nueva línea al final del texto. Esto puede ser útil para una salida más organizada y legible.
 
-También podemos imprimir el contenido de un archivo utilizando el comando `cat` y redirigir su salida a la consola con el operador `>`:
+## Profundizando en la impresión de salida de depuración
 
-```Bash
-cat archivo.txt > echo
-```
+Además de utilizar `echo`, también podemos utilizar otros comandos como `printf`, `print`, o `logger` para imprimir la salida de depuración en Bash. Cada uno de estos comandos tiene sus propias características y opciones adicionales que podemos utilizar según nuestras necesidades.
 
-## Profundizando
-
-Además del comando `echo`, también podemos utilizar el comando `printf` para imprimir salida de depuración en Bash. La ventaja de `printf` es que nos permite formatear la salida utilizando especificadores de formato. Por ejemplo, podemos imprimir valores numéricos con un cierto número de decimales específico o utilizar colores en la salida.
-
-Otra técnica útil para la impresión de salida de depuración es el uso de la variable `PS4`. Esta variable contiene una cadena que se imprimirá antes de cada línea de un script de Bash en modo depuración. Por ejemplo, si establecemos `PS4="+ "`, cada línea de nuestro script comenzará con un signo más. Esto puede ser de gran ayuda para seguir el flujo del programa.
+También es importante tener en cuenta que, al imprimir la salida de depuración, debemos tener cuidado de no incluir información confidencial o sensible. Una buena práctica es utilizar una variable especial como `DEBUG` que podamos activar o desactivar fácilmente en nuestro código, para no imprimir información innecesaria en producción.
 
 ## Ver también
 
-- [Guía de Bash para principiantes](https://www.lifewire.com/example-uses-of-echo-command-2201078)
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
-- [Tutorial de printf en Bash](https://www.expertiseon.com/blog/bash-scripting-tutorial-6-using-echo-and-printf-commands-for-output)
-
-¡Ahora que sabemos cómo imprimir salida de depuración en Bash, podemos mejorar nuestras habilidades de solución de problemas y encontrar errores en nuestro código de manera más efectiva!
+- [Guía de usuario de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Documentación de comandos en GNU/Linux](https://www.tldp.org/LDP/abs/html/index.html)

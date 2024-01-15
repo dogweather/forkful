@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Omvandla ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Arduino: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -9,42 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att konvertera ett datum till en sträng är en praktisk funktion som kan hjälpa dig att visa datuminformation på en skärm eller använda det i en annan del av din kod. Till exempel kan du använda denna funktion för att visa arbetsordrar eller deadlines på en LCD-skärm.
+Det finns många gånger när du behöver konvertera ett datum till en sträng för att kunna använda den i dina projekt. Det kan vara för att visa datumet på en LCD-skärm eller för att spara det i en fil. Oavsett anledningen är det bra att veta hur man gör denna konvertering för att kunna utnyttja datumen på bästa sätt.
 
-## Så här gör du
+# Hur man gör det
 
-För att konvertera ett datum till en sträng måste du först inkludera biblioteket "Time.h" och deklarera en instans av klassen "tmElements_t". Sedan kan du använda funktionen "makeTime" för att skapa en tid-stämpel med hjälp av år, månad, dag och tid. Slutligen kommer "strftime" att konvertera tid-stämpeln till en sträng enligt ett angivet format.
+## Arduino-kodexempel
 
-```arduino
-#include <Time.h>
+Först måste vi inkludera biblioteket som innehåller funktioner för datumkonvertering:
+```Arduino
+#include <RTClib.h>
+```
+Sedan behöver vi skapa ett objekt av typen `RTC_DS1307` för att kunna använda de inbyggda funktionerna:
+```Arduino
+RTC_DS1307 rtc;
+```
+Nu kan vi använda funktionen `now()` för att hämta det aktuella datumet och spara det i en `DateTime`-variabel:
+```Arduino
+DateTime currentDateTime = rtc.now();
+```
+För att konvertera datumet till en sträng använder vi funktionen `toString()`. Om vi vill ha datumet i formatet DD.MM.YYYY använder vi följande kod:
+```Arduino
+String dateString = currentDateTime.toString("DD.MM.YYYY");
+```
+Vi kan även välja att inkludera tiden i strängen genom att ändra formatet till "DD.MM.YYYY HH:MM:SS".
 
-tmElements_t time; //deklarera instans av klassen
-int year = 2021;
-int month = 6;
-int day = 15;
-int hour = 14;
-int minute = 30;
-time_t timestamp = makeTime(0, minute, hour, day, month, year); //skapa tidstämpel
-char dateString[20]; //skapa en array för strängen
-strftime(dateString, 20, "%d-%m-%Y kl. %H:%M", timestamp); //konvertera till sträng
-Serial.println(dateString); //skriv ut strängen på seriella monitorn
+## Exempeloutput
+
+Om vi nu skriver ut strängen på seriell monitor genom att använda funktionen `println()` får vi följande output:
+```
+24.08.2021
+```
+eller om vi inkluderar tiden:
+```
+24.08.2021 15:23:10
 ```
 
-Output:
-```
-15-06-2021 kl. 14:30
-```
+# Fördjupning
 
-## Deep Dive
+Det finns många olika format som du kan använda för att konvertera ett datum till en sträng. I exemplet ovan använde vi formatet "DD.MM.YYYY", men det finns andra tillgängliga format som kan vara mer lämpliga för ditt projekt. Du kan läsa mer om olika format i dokumentationen för RTClib.
 
-När du använder funktionen "makeTime" är det viktigt att komma ihåg att det krävs en tidszonjustering. Du kan använda funktionen "setTime" för att justera tidszonen för att matcha din lokala tid. Dessutom kan du välja vilket format din sträng ska ha genom att ändra parametrarna i "strftime" funktionen.
+En annan sak att tänka på är att om du vill använda strängen för att jämföra datum behöver du konvertera den till ett annat format, exempelvis Unix-tiden eller ett antal millisekunder. Detta görs enkelt med funktionen `unixtime()`, som finns tillgänglig i RTClib.
 
-Se till att kolla in dokumentationen för mer information och fler alternativ för att anpassa dina datumsträngar.
+# Se även
 
-## Se även
-
-- Dokumentation för Time.h biblioteket: https://www.arduino.cc/en/Reference/Time
-- Guide för att ansluta en LCD-skärm till Arduino: https://www.circuitbasics.com/how-to-set-up-an-lcd-display-on-an-arduino/
-- "strftime" dokumentation: https://www.cplusplus.com/reference/ctime/strftime/
+- [RTClib dokumentation](https://github.com/adafruit/RTClib)
+- [Översikt över olika format för konvertering av datum](https://en.cppreference.com/w/cpp/chrono/c/time_point/time_point_cast)
+- [Funktionslista för DateTime-klassen](https://github.com/adafruit/RTClib/blob/master/RTClib.h#L112)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Java: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -11,66 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-JSON - це один з найпоширеніших форматів даних, які використовуються для обміну інформацією між різними системами. Робота з JSON є важливою в галузі програмування, оскільки це дозволяє ефективно обробляти та передавати дані.
+Чому варто працювати з JSON в Java? JSON (JavaScript Object Notation) - це популярний формат даних, який використовується для обміну інформацією між сервером та клієнтом. Використання JSON дозволяє ефективно передавати та обробляти дані, що робить його незамінним інструментом для розробників.
 
-## Як працювати з JSON у Java
+## Як
 
-Найпростіший спосіб створити об'єкт JSON в Java - використовуючи бібліотеку Gson:
-
-```Java
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-// створюємо об'єкт Gson
-Gson gson = new Gson();
-
-// створюємо об'єкт JsonObject
-JsonObject json = new JsonObject();
-
-// додаємо дані у об'єкт
-json.addProperty("name", "John");
-json.addProperty("age", 25);
-
-// перетворюємо у рядок
-String jsonString = gson.toJson(json);
-
-// виводимо результат
-System.out.println(jsonString);
-```
-
-**Вихід:** `{"name":"John","age":25}`
-
-Для роботи з JSON-файлами у Java, можна використовувати клас `JsonReader` з бібліотеки Gson:
+Щоб почати роботу з JSON в Java, спочатку потрібно підключити бібліотеку *org.json* до своєї програми. Потім можна створити об'єкт *JSONObject*, передавши йому рядок з даними у форматі JSON, або за допомогою методу *put()* додати дані до об'єкту. Наприклад:
 
 ```Java
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
-
-// створюємо об'єкт Gson
-Gson gson = new Gson();
-
-// читаємо з файлу
-JsonReader reader = new JsonReader(new FileReader("users.json"));
-
-// створюємо масив користувачів
-User[] users = gson.fromJson(reader, User[].class);
-
-// виводимо результат
-System.out.println(users[0].getName() + " " + users[0].getAge());
+import org.json.*;
+// створення об'єкта з даними
+JSONObject obj = new JSONObject("{\"name\":\"John\",\"age\":30}");
+// отримання значень за ключем
+String name = obj.getString("name"); // поверне "John"
+int age = obj.getInt("age"); // поверне 30
+// додавання нових значень до об'єкту
+obj.put("job", "developer");
 ```
 
-**Вихід:** `John 25`
+В результаті отримаємо об'єкт *JSONObject* з інформацією про людину та її роботу:
 
-## Глибокий занурення у роботу з JSON
+```Java
+{"name":"John","age":30,"job":"developer"}
+```
 
-JSON має багато корисних можливостей, наприклад, управління об'єктами засобами Javascript, ефективну обробку даних через вкладені об'єкти та масиви, зручне читання та ін. Крім того, можна використовувати анотації для зручного мапінгу даних з JSON-файлу на об'єкти у Java.
+Також можливо створити об'єкт *JSONArray*, який міститиме кілька об'єктів *JSONObject*. Для цього слід передати до конструктора масив рядків з даними у форматі JSON. Наприклад:
 
-Для докладнішої інформації щодо використання Gson та роботи з JSON у Java, рекомендую ознайомитися з [офіційною документацією](https://sites.google.com/site/gson/gson-user-guide) та [цією статтею](https://medium.com/@javatech/json-serialization-deserialization-in-java-using-google-gson-be08256c8447).
+```Java
+// створення масиву об'єктів
+JSONArray arr = new JSONArray("[{\"name\":\"John\",\"age\":30}, {\"name\":\"Jane\",\"age\":25}]");
+```
 
-## Дивись також
+Іншою корисною функцією є метод *toString()* для перетворення об'єкту у рядок для подальшого збереження або передачі. Наприклад:
 
-Ознайомитися з іншими корисними інструментами для роботи з JSON у Java можна за посиланнями нижче:
+```Java
+String json = obj.toString();
+```
 
-- [Jackson](https://github.com/FasterXML/jackson)
-- [JSON Simple](https://github.com/fangyidong/json-simple)
-- [JSON-io](https://github.com/jdereg/json-io)
+## Глибоке занурення
+
+У реальних проектах, часто потрібно не тільки створювати дані в форматі JSON, але і розбирати та обробляти вхідні дані. Для цього можна використовувати різні методи з об'єктом *JSONObject*, такі як *getJSONObject()* для отримання вкладеного об'єкту, *getJSONArray()* для отримання вкладеного масиву, чи *opt()* для отримання значення за ключем з можливістю повернення значення за замовчуванням у разі відсутності ключа.
+
+Також важливо враховувати, що порядок ключів та значень у форматі JSON не має значення, тому використання методів *getJSONObject()* і *getJSONArray()* для отримання об'єкту чи масиву може викликати помилку у випадку різної послідовності у вхідних даних.
+
+## Дивіть

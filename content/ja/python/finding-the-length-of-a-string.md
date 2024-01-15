@@ -1,6 +1,7 @@
 ---
-title:                "Python: 「文字列の長さを求める方法」"
-simple_title:         "「文字列の長さを求める方法」"
+title:                "文字列の長さを見つける"
+html_title:           "Python: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,25 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
-文字列の長さを見つけることに興味があるのか、その理由を簡単に説明します。
+文字列の長さを求めることの目的としては、プログラミングにおいて文字列を処理する上で重要な情報を得ることができるからです。例えば、文字列の一部のみを抽出する際にはその長さを知る必要があります。
 
 ## 方法
-「```Python ... ```」のコードブロック内に、コーディングの例やサンプルの出力を記載しました。
-
-例えば、`len()`関数を使用して文字列の長さを取得することができます。以下のようにコードを記述します。
+文字列の長さを求める方法は簡単です。Pythonでは、組み込み関数の`len()`を使用します。例えば、以下のコードを実行すると、文字列`Hello World`の長さが求められます。
 
 ```Python
-string = "こんにちは、世界！"
-print(len(string))
+length = len("Hello World")
+print(length)
 ```
 
-出力結果は、`12`になります。つまり、「こんにちは、世界！」という文字列は12文字で構成されていることがわかります。
+上記のコードの出力は`11`となります。また、文字列変数に対しても同じように`len()`を使用することができます。
+
+```Python
+message = "こんにちは"
+length = len(message)
+print(length)
+```
+
+上記のコードの出力は`5`となります。
 
 ## ディープダイブ
-文字列の長さを取得する方法について、もう少し詳しく見てみましょう。
+Pythonでは、文字列の長さを求める際にどのような処理が行われているのかを知ることができます。文字列は実際には文字のリストとして扱われており、`len()`関数はこのリストの要素数を返しています。そのため、文字列がどのように構成されているかを知ることで、`len()`関数の動きも理解することができます。
 
-`len()`関数は、文字列の長さを返すだけでなく、リストやタプルなど他のデータ型の長さも取得することができます。また、日本語の文字列の場合、文字コードによっては文字数が2文字分とカウントされることに注意が必要です。
-
-## 参考リンク
-- [Python公式ドキュメント: len()関数](https://docs.python.org/ja/3/library/functions.html#len)
-- [Programiz: Pythonで文字列の長さを取得する](https://www.programiz.com/python-programming/methods/string/len)
+## See Also
+- [Python 公式ドキュメント](https://docs.python.org/3/library/functions.html#len)
+- [Codecademy: Strings](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-strings)

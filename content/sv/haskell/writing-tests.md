@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Att skriva tester"
+title:                "Att skriva tester"
+html_title:           "Haskell: Att skriva tester"
 simple_title:         "Att skriva tester"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,41 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av att utveckla Haskell-kod. Det ger dig möjlighet att hitta och åtgärda buggar tidigt i utvecklingsprocessen och ger en extra säkerhetsnivå för din kod.
+Det finns flera anledningar till varför det är viktigt att skriva tester när du programmerar i Haskell. För det första hjälper det till att säkerställa att koden fungerar som den ska och minimerar risken för buggar. Det ger också en bättre förståelse för hur koden fungerar och hur den påverkar andra delar av programmet.
 
 ## Hur man gör
 
-För att skriva tester i Haskell behöver du använda ett testbibliotek, som till exempel HUnit eller QuickCheck. Låt oss titta på ett exempel på hur man kan skriva och köra tester med HUnit.
+För att börja skriva tester i Haskell behöver du ett testbibliotek som heter Hspec. Detta bibliotek gör det möjligt att skapa enhetstester för din kod. 
+
+För att använda Hspec behöver du först importera det i din kod genom att skriva `import Test.Hspec` i början av filen. Sedan kan du använda `describe` för att beskriva en specifik funktion som du vill testa och `it` för att specificera vad du förväntar dig att funktionen ska göra. Här är ett exempel på en test som kontrollerar om funktionen `square` beräknar korrekt:
 
 ```Haskell
--- Importera HUnit biblioteket
-import Test.HUnit
-
--- En funktion som vi vill testa
-add :: Int -> Int -> Int
-add x y = x + y
-
--- Testfall för funktionen add
-testAdd :: Test
-testAdd = TestCase $ assertEqual "Should be 10" (add 5 5) 10
-
--- En grupp av testfall
-addTests :: Test
-addTests = TestList [testAdd]
-
--- Köra testerna
-main :: IO Counts
-main = runTestTT addTests
+describe "Square function" $ do
+  it "Should return the square of a number" $ do
+    square 4 `shouldBe` 16
 ```
 
-Överstående koddefinierar en funktion "add" och ett testfall som kontrollerar om funktionen ger önskat resultat. Testet körs sedan i huvudfunktionen.
+För att köra testerna använder du kommandot `runhaskell <filnamn>`. Om alla tester passerar kommer du att se följande output:
+
+```
+Square function
+   Should return the square of a number
+```
 
 ## Djupdykning
 
-Haskell har ett starkt typsystem, vilket gör att kod som kompilerar oftast fungerar som förväntat. Men tester hjälper till att upptäcka fel som kanske inte syns vid en första anblick. Det är också bra att skriva tester för gränssnittet av din kod, eftersom dessa kan förändras i framtiden och det är viktigt att se till att allt fortfarande fungerar som det ska.
+När du skriver tester är det viktigt att täcka både positiva och negativa fall. Det betyder att du behöver testa både förväntade och oväntade input för att säkerställa att din kod kan hantera alla möjliga scenarion. Det är också viktigt att skriva testerna så tidigt som möjligt i utvecklingsprocessen för att minska risken för buggar.
+
+En annan viktig del av att skriva tester är att hålla dem uppdaterade när du gör ändringar i koden. Om du lägger till ny funktionalitet eller ändrar befintlig kod behöver du också uppdatera dina tester för att säkerställa att allt fortfarande fungerar som det ska.
 
 ## Se även
 
-- [HUnit](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
-- [Haskell Testing Best Practices](https://wiki.haskell.org/Testing_guidelines)
+- [Hspec Hackage](https://hackage.haskell.org/package/hspec)
+- [Hspec GitHub](https://github.com/hspec/hspec)
+- [Haskell Testing for Beginners](https://medium.com/dev-genius/haskell-testing-for-beginners-e10eabebf2f1)

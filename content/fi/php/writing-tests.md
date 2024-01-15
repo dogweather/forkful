@@ -1,5 +1,6 @@
 ---
-title:                "PHP: Testien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "PHP: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,37 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-Kirjoittamalla testejä varmistetaan, että koodi toimii tarkoitetulla tavalla ja että mahdolliset virheet voidaan löytää ja korjata jo ennen kuin koodi on käyttöönotossa. Tämä säästää aikaa ja vaivaa ja varmistaa paremman lopputuloksen.
 
-## Miten
+Miksi testejä kannattaa kirjoittaa? Yksinkertaisesti siksi, että ne takaavat koodin toiminnan ja estävät mahdollisten virheiden syntymisen tuotantoympäristössä. Testien avulla voit myös tehdä muutoksia ja parannuksia koodiin luottavaisin mielin, sillä tiedät että kaikki tärkeimmät toiminnallisuudet on testattu ja toimiviksi todettu.
+
+## Kuinka
+
+Testien kirjoittaminen PHP:ssa voi vaikuttaa haastavalta, mutta se on oikeasti varsin helppoa. Alla on yksinkertainen esimerkki koodista ja sen tuottamasta tuloksesta. Kopioi koodilohkot ja kokeile itse!
+
 ```PHP
 <?php
-function laskeKolmionPintaAla($kanta, $korkeus) { 
-  $pintaAla = ($kanta * $korkeus) / 2; 
-  return $pintaAla;
+require "laskin.php"; // Lataa laskimen toiminnallisuuden
+
+class LaskinTesti extends PHPUnit_Framework_TestCase { // Luo uusi testiluokka
+    public function testSummaus() { // Testifunktio summaukselle
+        $laskin = new Laskin(); // Luodaan uusi Laskin-olio
+        $tulos = $laskin->summaa(5, 3); // Kutsutaan summaa-funktiota
+        $this->assertEquals(8, $tulos); // Tarkistetaan, että tulos on oikea
+    }
 }
-?>
-
-Testaa funktiota laskemalla kolmion pinta-ala annetulla kannalla ja korkeudella:
-
-```PHP
-<?php
-$kanta = 5;
-$korkeus = 10;
-
-$pintaAla = laskeKolmionPintaAla($kanta, $korkeus);
-
-echo "Kolmion pinta-ala on: " . $pintaAla;
-?>
-
-Tulos:
-Kolmion pinta-ala on: 25
 ```
 
-## Syvällinen sukellus
-Testien kirjoittaminen auttaa myös koodin skaalautuvuudessa ja ylläpidettävyydessä. Hyvin kirjoitetut testit toimivat myös dokumentaationa koodille ja auttavat uusia kehittäjiä ymmärtämään koodin toimintaa ja rakennetta.
+Tulostus:
+
+```
+PHPUnit 5.7.21 by Sebastian Bergmann and contributors.
+
+.
+
+Time: 34 ms, Memory: 4.00MB
+
+OK (1 test, 1 assertion)
+```
+
+Testissä käytetään yksinkertaista laskinta, joka on kirjoitettu "laskin.php"-tiedostoon. Testiluokka perii PHPUnit_Framework_TestCase-luokan ja metodi testSummaus suoritetaan testinä. Testissä luodaan uusi Laskin-olio, kutsutaan sen summaa-funktiota ja tarkistetaan, että tulos on odotetunlainen.
+
+## Syvältä
+
+Testien kirjoittaminen on tärkeää, mutta vaatii hieman panostusta. Hyvien testien avulla voit varmistaa koodin toiminnallisuuden, mutta myös helpottaa sen ylläpitoa ja muokkaamista tulevaisuudessa. Joitakin hyviä käytäntöjä testien kirjoittamiseen ovat esimerkiksi:
+
+- Testaa vain yhtä asiaa kerrallaan: pidä testifunktiot mahdollisimman pieninä ja keskity testaamaan vain yhtä asiaa kerrallaan.
+- Käytä kuvaavia nimiä: testifunktioiden nimien tulee kertoa selkeästi, mitä ne testaavat.
+- Testaa reunatapaukset: varmista, että testit kattavat myös ääritapaukset ja testaavat esimerkiksi virheelliset syötteet.
+- Älä pelkää refaktorointia: hyvät testit mahdollistavat koodin jatkokehityksen ja parantamisen ilman pelkoa rikkovansa jotakin. Muista siis päivittää myös testit tarvittaessa.
 
 ## Katso myös
-- [SimpleTest:n opas testien kirjoittamiseen PHP:lla](http://www.simpletest.org/en/start-testing.html)
-- [PHPUnit:n opas testien kirjoittamiseen PHP:lla](https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html)
-- [PHP:n sisäänrakennetut testausmahdollisuudet](https://www.php.net/manual/en/function.assert.php)
+
+- [PHPUnit-dokumentaatio](https://phpunit.de/documentation.html)
+- [PHP-virhetestaus PHP Unitillä](https://www.sitepoint.com/getting-started-phpunit/)
+- [TDD PHP:ssa - käytännön esimerkkejä](https://www.sitepoint.com/test-driven-development-phpunit/)

@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Swift: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,37 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obliczanie daty w przyszłości lub w przeszłości jest niezbędnym elementem wielu aplikacji. Może być wykorzystywane do wyświetlania planów, przeliczania czasu lub ustalania terminów płatności. Dzięki temu możemy zapewnić użytkownikom bardziej dopasowaną i personalizowaną obsługę.
+Często zdarza się, że musimy obliczyć datę w przeszłości lub przyszłości, na przykład w celu wyświetlenia terminu ważności produktu lub wydarzenia. W tym artykule zaprezentuję prosty sposób na wykonanie tej operacji w języku Swift.
 
 ## Jak to zrobić
 
+Aby obliczyć datę w przyszłości lub przeszłości w języku Swift, możemy użyć klasy `Date`. Przykłady kodu znajdują się poniżej:
+
 ```Swift
-// Ustawienie aktualnej daty
-let currentDate = Date()
+// Obliczenie daty 7 dni w przyszłości
+let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: Date())
 
-// Ustawienie liczby dni, miesięcy lub lat do dodania lub odjęcia od aktualnej daty
-let future = 3
+// Obliczenie daty 2 miesiące w przeszłości
+let pastDate = Calendar.current.date(byAdding: .month, value: -2, to: Date())
 
-// Utworzenie instancji obiektu wyliczającego datę w przyszłości na podstawie aktualnej daty i liczby dni
-let futureDate = Calendar.current.date(byAdding: .day, value: future, to: currentDate)
-
-// Ustawienie formatu daty i konwersja wyniku na string
+// Formatowanie daty za pomocą DateFormatter
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd-MM-yyyy"
-let futureDateString = dateFormatter.string(from: futureDate!)
+dateFormatter.dateFormat = "dd.MM.yyyy"
+let formattedDate = dateFormatter.string(from: futureDate!)
 
-// Wyświetlenie wyniku
-print("Data za \(future) dni to: \(futureDateString)")
+print(formattedDate)
+// Output: 25.05.2021
 ```
 
-Przykładowy wynik: Data za 3 dni to: 26-05-2021
+Możemy także wyświetlić datę w innych formatach, takich jak rok, miesiąc, dzień, godzina lub minuta. Aby poznać więcej możliwości manipulacji datą w języku Swift, warto zapoznać się z dokumentacją klasy `Date`.
 
-## Głębsza analiza
+## Wnikliwa analiza
 
-Aby obliczyć datę w przyszłości lub w przeszłości, należy utworzyć obiekt typu Date, który odpowiada za przechowywanie daty. Następnie, przy użyciu metody `date(byAdding:value:to:)` możemy dodać lub odjąć od niej odpowiednią ilość dni, miesięcy lub lat. Ważnym elementem jest również właściwe ustawienie formatu daty za pomocą obiektu DateFormatter.
+Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki temu, że klasa `Date` jest oparta na liczbach całkowitych. Dzięki temu możemy dodawać lub odejmować odpowiednią wartość od bieżącej daty w celu uzyskania oczekiwanej daty. Dodatkowo, formatowanie daty za pomocą klasy `DateFormatter` pozwala nam dostosować wyświetlanie daty według naszych preferencji.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja Apple Developer dotycząca obliczania daty: https://developer.apple.com/documentation/foundation/calendar/2293543-date
-- Tutoriale Swift dla początkujących: https://www.raywenderlich.com/493-brainwash-tutorial-first-steps-with-the-swift-language
-- Przegląd funkcji kalendarza w języku Swift: https://www.twilio.com/blog/a-swift-look-at-the-calendar-api
+- [Dokumentacja klasy Date w języku Swift](https://developer.apple.com/documentation/foundation/date)
+- [Dokumentacja klasy DateFormatter w języku Swift](https://developer.apple.com/documentation/foundation/dateformatter)

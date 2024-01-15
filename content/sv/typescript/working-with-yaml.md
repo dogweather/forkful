@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "TypeScript: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -11,45 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att arbeta med YAML kan vara en stor fördel för alla som programmerar i TypeScript. Det hjälper till att organisera och strukturera data och gör det enklare att läsa och hantera.
+För att börja arbeta med YAML, kan hjälpa dig att skapa välstrukturerade filer för att konfigurera och organisera ditt projekt. Det är också användbart för att utbyta data mellan olika plattformar.
 
-## Hur man gör det
+## Hur du gör det
 
-För att använda YAML i dina TypeScript-projekt måste du först installera en YAML-parser, som till exempel "js-yaml". Efter installationen kan du importera modulen i ditt projekt och börja använda YAML-kod.
+För att arbeta med YAML i din TypeScript-kod, måste du först installera "js-yaml" paketet. Därefter kan du använda "load" metoden för att läsa in YAML-filer och "dump" metoden för att skapa YAML-strängar. Se nedan för ett exempel på hur du läser in en YAML-fil:
 
 ```TypeScript
-import * as Yaml from 'js-yaml';
+import * as YAML from 'js-yaml';
 
-// Skapa ett YAML-objekt
-let yamlObject = {
-    name: "John Doe",
-    age: 30,
-    occupation: "Developer"
-}
+// Läser in YAML-fil
+const data = YAML.load('exempel.yaml');
 
-// Konvertera YAML-objektet till en sträng
-let yamlString = Yaml.safeDump(yamlObject);
-
-// Skriv ut strängen
-console.log(yamlString);
-
-/*
-    Resultat:
-    name: John Doe
-    age: 30
-    occupation: Developer
-*/
+// Skriver ut innehållet till konsolen
+console.log(data);
 ```
 
-## Djupdykning
+YAML-filer består av nyckel-värde-par, separerade med kolon. De kan också inkludera listor av värden, som visas nedan:
 
-En av de största fördelarna med att använda YAML i TypeScript är dess läsbarhet och enkelhet. YAML använder ett enkelt och intuitivt syntax som är lätt att förstå. Det är också mycket flexibelt och kan hantera olika datatyper som objekt, arrayer, booleska värden och mer.
+```yaml
+namn: John Doe
+ålder: 30
+intressen:
+  - Programmering
+  - Resor
+  - Musik
+```
 
-En annan fördel är att YAML stöder kommentarer, vilket gör det enkelt att lägga till förklaringar och anmärkningar i koden. Detta är speciellt användbart när du jobbar med större och mer komplexa projekt.
+Det finns också möjlighet att använda kommentarer i YAML-filer, genom att börja raden med ett "#"-tecken. Se till att hålla koll på indentation när du skapar din YAML-fil, då det är viktigt för att få korrekt formatering.
 
-Slutligen är YAML också portabelt, vilket betyder att det kan läsas och hanteras av flera olika programmeringsspråk och ramverk. Det gör det till ett användbart verktyg för att dela data mellan olika delar av ett projekt.
+## Deep Dive
+
+En av fördelarna med att arbeta med YAML jämfört med andra konfigurationsfiler, är att det är mycket lättare att läsa och förstå. Det är även flexibelt och tillåter kommentarer, vilket är användbart för dokumentation. Du kan även inkludera JSON-format i din YAML-fil för att ytterligare strukturera dina data.
+
+YAML har också inbyggd stöd för att inkludera så kallade "ankare" och "referenser", vilket gör det möjligt att återanvända samma data på flera ställen i filen. Detta är särskilt användbart för större och mer komplexa konfigurationsfiler.
 
 ## Se också
 
-- [YAML Official Website](https://yaml.org/)
-- [js-yaml GitHub Repository](https://github.com/nodeca/js-yaml)
+För mer information om hur du använder YAML i din TypeScript-kod, se följande länkar:
+
+- [YAML officiell hemsida](https://yaml.org/)
+- [js-yaml dokumentation](https://github.com/nodeca/js-yaml)
+- [YAML Cheat Sheet](https://yaml.org/start.html)

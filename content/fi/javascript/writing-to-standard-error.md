@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Tietokoneohjelmoinnin artikkeli: Standardivirheen kirjoittaminen"
-simple_title:         "Tietokoneohjelmoinnin artikkeli: Standardivirheen kirjoittaminen"
+title:                "Tavalliselle virheelle kirjoittaminen"
+html_title:           "Javascript: Tavalliselle virheelle kirjoittaminen"
+simple_title:         "Tavalliselle virheelle kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,30 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
+Kirjoittaminen standardivirheeseen on tärkeä osa Javascriptin ohjelmointia, koska se mahdollistaa virheiden hallinnan ja korjaamisen tehokkaammin. Se auttaa myös ohjelmoijaa ymmärtämään, mitä ohjelmassa tapahtuu ja mikä aiheuttaa mahdollisia ongelmia.
 
-On monia syitä, miksi ohjelmoijat päätyvät kirjoittamaan standard error -virheviestejä. Yksi tärkeimmistä on löytää ja korjata mahdollisia virheitä koodissa, mikä auttaa varmistamaan ohjelman toiminnan ja tehokkuuden.
-
-## Miten
-
-Voit kirjoittaa standard error -virheviestejä käyttämällä ```console.error()``` -funktiota. Tämä ottaa vastaan ​​yksi parametrin, joka on viesti, jonka haluat näyttää. Voit myös käyttää ```console.debug()``` -funktiota, joka on tarkoitettu ohjelmoijille näyttämään tarkempia virheviestejä.
-
-Esimerkiksi, jos haluat näyttää virheviestin käyttäjälle, voit käyttää seuraavaa koodia: 
-
-```Javascript 
-console.error("Valitettavasti jotain meni pieleen. Yritä uudelleen myöhemmin.");
+## Miten tehdä se
+Koodiesimerkki alla näyttää, miten voi kirjoittaa standardivirheeseen `console.error()` komennolla.
+```Javascript
+try {
+    // Tarkistetaan, onko käyttäjä täysi-ikäinen
+    if (age < 18) {
+        throw new Error("Käyttäjän tulee olla vähintään 18-vuotias.");
+    }
+    // Jos kaikki on kunnossa, jatketaan koodin suorittamista
+    console.log("Tervetuloa sisään!");
+} catch(error) {
+    // Jos ikä ei ole oikea, kirjoitetaan virheilmoitus standardivirheeseen
+    console.error("Virhe: " + error.message);
+}
+```
+Tulostus:
+```
+Virhe: Käyttäjän tulee olla vähintään 18-vuotias.
 ```
 
-Tämä koodi näyttäisi seuraavan virheviestin: "Valitettavasti jotain meni pieleen. Yritä uudelleen myöhemmin." 
-
-Voit myös lisätä muuttujien arvoja virheviestiin käyttämällä merkintöjä, kuten ```${variableName}```. Tämä auttaa sinua tarkemmin selvittämään, mikä aiheutti virheen.
-
-## Syvällisempi tarkastelu
-
-Kirjoittaminen standard error -virheviestejä on tärkeä osa ohjelmointia ja auttaa sinua kehittämään parempia ohjelmia. Virheviestit auttavat sinua tunnistamaan ja korjaamaan koodin ongelmakohtia, mikä tekee ohjelmistostasi tehokkaamman ja luotettavamman. On myös tärkeää ottaa huomioon kohdeyleisösi ja käyttää selkeitä ja informatiivisia viestejä, jotta käyttäjät ymmärtävät helposti, mitä on tapahtunut ja miten virhe voidaan korjata.
+## Syvempää tietoa
+Kirjoittaminen standardivirheeseen auttaa ohjelmoijaa löytämään ja korjaamaan virheitä. Se on myös tärkeä osa testausta ja debuggausta. Standardivirheen lisäksi on myös mahdollista kirjoittaa tietoa muuhun konsoliin esimerkiksi `console.log()` komennolla.
 
 ## Katso myös
-
-- [Mozilla Developer Network - Selaimen konsoli](https://developer.mozilla.org/fi/docs/Web/API/Console)
-- [W3Schools - Console.error()](https://www.w3schools.com/jsref/met_console_error.asp)
-- [JavaScript.info - The console object](https://javascript.info/browser-console)
-- [Stack Overflow - How to write errors to standard error in JavaScript?](https://stackoverflow.com/questions/51813820/how-to-write-errors-to-standard-error-in-javascript)
+- [MDN Web Docs: console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [W3Schools: JavaScript Error Messages](https://www.w3schools.com/js/js_errors.asp)
+- [ESLint: The Popular Code Quality Tool for JavaScript](https://eslint.org/)

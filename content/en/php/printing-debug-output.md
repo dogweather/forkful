@@ -1,5 +1,6 @@
 ---
-title:                "PHP recipe: Printing debug output"
+title:                "Printing debug output"
+html_title:           "PHP recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "PHP"
 category:             "PHP"
@@ -9,66 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why Print Debug Output?
+## Why
 
-Debugging is an essential part of any programming process. It allows developers to identify and fix errors in their code, leading to more efficient and reliable applications. One useful tool for debugging is printing debug output, which allows developers to see the values of specific variables and functions at different stages of the code execution. This can help pinpoint the source of a bug and aid in troubleshooting.
+Debugging is an essential part of the development process. It involves identifying and fixing errors in code, which can be a frustrating and time-consuming task. One way to make debugging more efficient is by utilizing print-debugging, which involves printing out specific values and messages to help identify where the issue lies in the code.
 
-##How To Print Debug Output in PHP
+## How To
 
-To print debug output in PHP, we can use the `print_r()` function. This function takes in an argument and displays its value, including any nested arrays or objects.
+Printing debug output in PHP is a straightforward process. All you need is the `echo` or `print` statement, followed by the variable or message you want to display. Let's look at a simple example:
 
-```
-<?php
-//create a variable with a value
-$name = "John";
-
-//print out the value of the variable
-print_r($name);
-
-//output: John
-?>
+```PHP
+$number = 10;
+echo "The value of the variable is: " . $number;
 ```
 
-We can also use this function to print out the values of arrays and objects. 
+In this code, we create a variable called `$number` and assign it a value of `10`. Then, using the `echo` statement, we print out a message along with the value of the variable. The output of this code will be:
 
 ```
-<?php
-//create an array with key-value pairs
-$fruits = ["apple" => "red", "banana" => "yellow", "orange" => "orange"];
+The value of the variable is: 10
+```
 
-//print out the values of the array
+This can be helpful in understanding the flow of the code and identifying which variables are holding which values.
+
+You can also print out the contents of an array or object using the `print_r()` function:
+
+```PHP
+$fruits = array("apple", "banana", "orange");
 print_r($fruits);
-
-//output: Array ( [apple] => red [banana] => yellow [orange] => orange )
-?>
 ```
 
-Lastly, we can use `var_dump()` function to print out the data type and values of a variable. This can be helpful when debugging a complex code. 
+The output will be:
 
 ```
-<?php
-//create a variable with a Boolean value
-$language = true;
-
-//print out the datatype and value
-var_dump($language);
-
-//output: bool(true)
-?>
+Array
+(
+    [0] => apple
+    [1] => banana
+    [2] => orange
+)
 ```
 
-##Deep Dive into Printing Debug Output
+This allows you to see the structure and contents of complex data types, which can be useful when debugging.
 
-While the `print_r()` and `var_dump()` functions are helpful for basic debugging, there are other ways to enhance your debugging process. For example, you can use the `error_log()` function to print out debug information to a log file instead of displaying it on the screen. This can be useful when working on a live server or when debugging long scripts.
+## Deep Dive
 
-Additionally, you can add conditional statements around your debug output code to control when it is displayed. This can prevent excessive output in large projects and make your debugging process more efficient.
+In addition to the basic `echo` and `print` statements, there are various ways to print debug output in PHP. One method is by using the `var_dump()` function, which displays the data type, value, and length of a variable. This can be especially helpful for troubleshooting issues related to data types.
 
-##See Also
+Another useful function is `debug_print_backtrace()`, which prints a backtrace of the function calls that lead to the current point in the code. This can help in understanding the flow of the program and identifying where the issue may have originated.
 
-For more information on debugging in PHP, check out these helpful resources:
+It's important to note that while print-debugging can be helpful, it should not be used as a permanent solution. It's best to remove any print statements once the issue has been identified and resolved to ensure clean and efficient code.
 
-- PHP Manual: [Debugging in PHP](https://www.php.net/manual/en/debugger.php)
-- SitePoint: [Debugging PHP with xdebug](https://www.sitepoint.com/debugging-php-xdebug/)
-- PHP Academy: [Debugging PHP - Print and Error Log](https://www.youtube.com/watch?v=_X_vCncQaf0)
+## See Also
 
-Happy debugging!
+- [PHP Manual: Debugging](https://www.php.net/manual/en/book.debug.php)
+- [Debugging in PHP: A Beginner's Guide](https://www.cloudways.com/blog/php-debugging/)
+- [5 Tips for Effective Debugging in PHP](https://www.telerik.com/blogs/5-tips-for-effective-debugging-in-php)

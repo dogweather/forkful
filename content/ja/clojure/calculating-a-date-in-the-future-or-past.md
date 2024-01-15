@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: 将来や過去の日付を計算する"
-simple_title:         "将来や過去の日付を計算する"
+title:                "未来または過去の日付の計算"
+html_title:           "Clojure: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,39 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日常生活では、将来や過去の日付を計算する必要がある時があります。例えば、誕生日や年末に次の年のカレンダーを見るときなどです。Clojureを使うと、簡単に日付の計算ができるので便利です。
+日付を未来や過去に計算する必要性はさまざまです。例えば、イベントの日程を決めたり、期限を設定するために必要になることがあります。
 
 ## 方法
 
-まずは、`clj-time`というライブラリをインストールする必要があります。このライブラリを使うと、Clojureで日付を扱うことができます。
+日付を計算するには、 `(java.util.Calendar.)` 関数を使用します。未来の日付を計算する場合は、 `(.add calendar java.util.Calendar/DAY_OF_MONTH days)` を使うことができます。過去の日付を計算する場合は、 `(.add calendar java.util.Calendar/DAY_OF_MONTH (- days))` を使用します。
 
 ```Clojure
-(require '[clj-time.core :as time])
+(def now (java.util.Calendar.)) ; 今日の日付を取得
 
-(time/plus (time/today) (time/days 10))
+; 10日後の日付を計算
+(def future-date (.add now java.util.Calendar/DAY_OF_MONTH 10))
+
+; 5日前の日付を計算
+(def past-date (.add now java.util.Calendar/DAY_OF_MONTH (- 5)))
+
 ```
-このコードを実行すると、今日から10日後の日付が表示されます。ここでは、`today`関数と`plus`関数を使っています。`days`関数は、日付を表す単位を指定することができます。
 
-```Clojure
-(time/minus (time/today) (time/months 6))
-```
-これは、今日から6か月前の日付を表示します。
+### 出力例
 
-## 深堀り
+今日の日付: 2021/06/14
 
-日付の計算では、`days`や`months`以外にも、`hours`や`minutes`などの単位を使うことができます。また、`plus`や`minus`以外にも、`from-now`や`from-now`関数を利用することで、特定の日付からの経過時間を計算することもできます。
+10日後の日付: 2021/06/24
+5日前の日付: 2021/06/09
 
-また、`clj-time`ライブラリでは、時間帯や曜日などの情報も取得することができます。さまざまな日付の計算に役立つ関数が多数用意されているので、ぜひ試してみてください。
+## ディープダイブ
 
-## 関連リンク
+日付を計算する際には、 `(java.util.Calendar.)` 関数が返すオブジェクトに注意する必要があります。このオブジェクトには、`java.util.Calendar/ERA`、`java.util.Calendar/YEAR`、`java.util.Calendar/MONTH`、`java.util.Calendar/DAY_OF_MONTH`など、日付の各要素を取得するためのメソッドが用意されています。これらを組み合わせることで、さまざまな日付計算を行うことができます。
 
-- [clj-time library](https://github.com/clj-time/clj-time)
-- [Clojure docs on date calculations](https://clojuredocs.org/clojure.core/today)
-- [TutorialsPoint on date calculations in Clojure](https://www.tutorialspoint.com/clojure/clojure_working_with_date.htm)
+また、バグや意図しない結果を避けるために、日付のフォーマットやタイムゾーンにも注意が必要です。
 
-## 参考リンク
+## さらに見る
 
-さまざまな日付計算の例や、より詳しい説明については、以下のリンクを参考にしてください。
-
-- [Clojure Date and Time Manipulation](https://clojuredocs.org/clojure.java-time)
-- [Clojure for Data Science: Dates and Timestamps](https://clojureforsyntax.wordpress.com/2014/10/08/clojure-for-data-science-dates-and-timestamps/)
+- [The Joy of Clojure](https://www.amazon.co.jp/Joy-Clojure-Michael-Fogus/dp/1617291412/)
+- [Clojureの日付操作ライブラリ - clj-time](https://github.com/clj-time/clj-time)

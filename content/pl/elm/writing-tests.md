@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Pisanie testów"
-simple_title:         "Pisanie testów"
+title:                "Pisanie testów."
+html_title:           "Elm: Pisanie testów."
+simple_title:         "Pisanie testów."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -9,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy do kodu w Elm
+## Dlaczego
 
-Testy są niezbędnym elementem w procesie tworzenia oprogramowania. Pozwalają one zweryfikować poprawność działania naszego kodu i uniknąć błędów w przyszłości. W Elm, pisanie testów jest łatwe i przyjemne, dzięki czemu możemy mieć pewność, że nasza aplikacja działa zgodnie z oczekiwaniami.
+Jeśli jesteś programistą, prawdopodobnie słyszałeś o pisaniu testów jednostkowych. Możesz się zastanawiać, czy warto poświęcić swój czas na ich tworzenie. Krótko mówiąc - tak, warto! Testy jednostkowe są nieodzownym elementem wytwarzania solidnego i niezawodnego kodu.
 
-## Jak pisać testy w Elm
-
-Pisanie testów w Elm opiera się na wykorzystaniu biblioteki "elm-test". W pierwszej kolejności musimy zainstalować ją w naszym projekcie przy użyciu komendy `elm install elm-test`. Następnie w pliku testowym możemy zacząć definiować testy za pomocą funkcji `test`, podając opis testu oraz funkcję, która przeprowadzi próbę. Poniżej znajduje się przykładowy kod testu:
+## Jak to zrobić
 
 ```elm
-module Tests exposing (..)
-
-import Expect
-import ElmTest
-
-test : ElmTest.Test
-test =
-    ElmTest.test "2 + 2 jest równe 4" <| 
-        \() -> 
-            Expect.equal 4 (2 + 2)
-
+testAddition : Test
+testAddition =
+    describe "Addition" (
+        test "1 + 1 should equal 2" (
+            Expect.equal 2 (1 + 1)
+        )
+    )
 ```
 
-W powyższym przykładzie testujemy, czy wynik dodawania dwóch liczb jest równy 4. Po zdefiniowaniu testu, możemy go uruchomić przy użyciu komendy `elm-test` w terminalu. Jeśli wszystkie testy zostaną zaliczone, ujrzymy informację o sukcesie, w przeciwnym wypadku zostaną wyświetlone błędy.
+Wykorzystując wbudowaną bibliotekę `Test`, możemy łatwo tworzyć testy dla naszego kodu. Przykładowy test pokazuje, jak możemy sprawdzić, czy nasza funkcja dodawania działa poprawnie. Testy pojawią się w okienku wyników jako zielone lub czerwone, informując nas o tym, czy testy zostały wykonane pomyślnie.
 
-## Głębsze zagadnienia
+```elm
+-- 1 
+1 + 1
+-- 2
+2
+```
 
-Pisanie testów w Elm może być również pomocne przy projektowaniu aplikacji. Dzięki zastosowaniu techniki "TDD" (Test-Driven Development) możemy definiować testy przed napisaniem właściwego kodu, co pozwala na lepsze zrozumienie potrzeb naszej aplikacji. Dodatkowo, testy pomagają nam wychwycić błędy zanim trafią one do użytkowników.
+Jeśli wszystko zostało zaimplementowane prawidłowo, testy powinny zwrócić zielony wynik. Jednak jeśli coś zostało zrobione nieprawidłowo, testy poinformują nas w jaki sposób i gdzie wystąpił błąd.
 
-## Zobacz również
+## Głębszy zanurzenie
 
-- Dokumentacja biblioteki "elm-test": https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- Wprowadzenie do pisanie testów w Elm: https://guide.elm-lang.org/testing/
-- Poradnik "TDD" w Elm: https://thoughtbot.com/blog/elm-and-test-driven-development
+Pisanie testów jednostkowych może początkowo wydawać się czasochłonne, ale w dłuższej perspektywie może ułatwić nam pracę i oszczędzić dużo czasu. Dzięki testom możemy szybciej wychwycić błędy w naszym kodzie i szybciej je naprawić. Dodatkowo, gdy rozwijamy nasz projekt i wprowadzamy zmiany, testy zapewniają nam pewność, że nic nie zostało przypadkowo uszkodzone.
+
+Przy pisaniu testów warto pamiętać o kilku zasadach:
+- Testy powinny być niezależne od siebie - żaden test nie powinien zależeć od wyników innego testu.
+- Testy powinny być odzwierciedleniem oczekiwań dla funkcjonalności naszego kodu.
+- Dzięki testom możemy zapewnić sobie bezpieczeństwo nawet przy wprowadzaniu większych zmian w naszym kodzie.
+
+Spróbuj przyzwyczaić się do pisania testów jako części swojego procesu programowania, a z czasem zauważysz, że stają się one nieodłącznym elementem wytwarzania wysokiej jakości oprogramowania.
+
+## Zobacz także
+
+- [Oficjalna strona dokumentacji Elm](https://guide.elm-lang.org/)
+- [The Coding Train - Elm tutorial dla początkujących](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH)
+- [Cassandra Salisbury - Tworzenie testowalnego kodu w Elm](https://www.youtube.com/watch?v=exjOjW5WgMc)
+
+Teraz, gdy już wiesz jak pisać testy jednostkowe w Elm, czas nauczyć się ich użycia w praktyce. Życzę Ci powodzenia w tworzeniu niezawodnego i solidnego kodu!

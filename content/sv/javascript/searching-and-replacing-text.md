@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och ersätta text"
+html_title:           "Javascript: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en vanlig uppgift inom programmering och kan vara användbart för att effektivisera arbetsflödet. Genom att använda rätt metoder och verktyg kan du enkelt byta ut ord eller fraser i en längre text.
+Att söka och ersätta text är en viktig del av programmering eftersom det gör det möjligt för oss att göra snabba och effektiva förändringar i stora mängder kod. Det kan hjälpa till att spara tid och extrahera specifika delar av text på ett enkelt sätt.
 
-## Hur man gör Det
-För att söka och ersätta text i Javascript behöver du använda dig av två metoder: `search()` och `replace()`. Båda metoderna används på en sträng och tar emot argument för sökordet och ersättningen.
-
-För att använda `search()` metoden, börja med att definiera en sträng som du vill söka igenom. Sedan kan du ange vilket ord eller fras du vill söka efter inom parenteserna efter metoden. T.ex. `stringToSearch.search("sökord")`. Metoden returnerar indexet för det första förekomsten av sökordet i strängen eller `-1` om sökordet inte finns.
-
-För att använda `replace()` metoden, gör på samma sätt med att definiera en sträng och ange då sökordet och ersättningen inom parenteserna efter metoden. T.ex. `stringToReplace.replace("sökord", "ersättning")`. Metoden returnerar en ny sträng med sökordet ersatt av den angivna ersättningen.
+## Hur man gör det
+För att söka och ersätta text i Javascript kan du använda metoden "replace()". Här är ett exempel på hur du skulle kunna använda den för att ersätta alla förekomster av ordet "hej" med "hello":
 
 ```Javascript
-let myString = "Jag älskar att programmera, det är som en gåta som jag älskar att lösa.";
-console.log(myString.search("älskar")); // output: 4
-console.log(myString.replace("älskar", "avskyr")); // output: Jag avskyr att programmera, det är som en gåta som jag älskar att lösa.
+let text = "Hej, välkommen! Hej, hur mår du?";
+let ersattText = text.replace(/hej/g, "hello");
+console.log(ersattText);
+
+// Output: "Hello, välkommen! Hello, hur mår du?"
 ```
 
-## Deep Dive
-När du använder `replace()` metoden kan du också använda en regular expression som sökord. Detta är användbart om du vill byta ut flera olika varianter av ett ord eller om du vill vara mer flexibel med vad sökordet kan vara. För att göra detta måste du använda dig av en `g` modifier efter regular expressionen, vilket står för "global" och kommer att leta efter alla förekomster istället för bara den första.
+För att förstå koden ovan behöver vi bryta ner den i mindre bitar:
 
-Du kan också använda `replace()` metoden med en callback funktion, som kommer att köras för varje matchning som hittas i strängen. I callback funktionen kan du definiera den specifika träff du vill byta ut samt hur den ska bytas ut.
+- *text* är en variabel som innehåller den ursprungliga texten.
+- *replace()* är en inbyggd funktion i Javascript som används för att ersätta text.
+- "/hej/g" är ett uttryck som söker efter alla förekomster av ordet "hej" i texten och "/g" innebär att alla förekomster i hela texten ska ersättas, inte bara den första.
+- "hello" är den text som vi vill ersätta "hej" med.
+- *ersattText* är en variabel som innehåller den uppdaterade texten med de nya ersättningarna.
+- *console.log()* används för att skriva ut resultatet av vår kod i konsolen.
+
+Du kan också använda denna metod för att ersätta delar av en sträng istället för hela ord. Till exempel om du vill ersätta de första tre bokstäverna i ett ord med en annan text:
 
 ```Javascript
-let myString = "Det finns många olika sätt att skriva ett blogginlägg. Och vissa är bättre än andra.";
-console.log(myString.replace(/blogginlägg/g, function(match){return match.toUpperCase()})); // output: Det finns många olika sätt att skriva ett BLOGGINLÄGG. Och vissa är bättre än andra.
+let text = "apple, orange, banana";
+let ersattText = text.replace(/app/g, "straw");
+console.log(ersattText);
+
+// Output: "strawle, orange, banana"
+```
+
+Det finns många olika sätt att använda sök- och ersättningsmetoden i Javascript, så det är viktigt att experimentera och hitta den som passar bäst för dina behov.
+
+## Djupdykning
+En annan användbar metod för att söka och ersätta text i Javascript är "replaceAll()". Denna funktion fungerar på samma sätt som "replace()" men ersätter alla förekomster av ett mönster, inte bara det första. Detta är särskilt användbart när du arbetar med längre och mer komplexa strängar.
+
+En annan viktig aspekt att notera är att sök- och ersättningsmetoderna är fallkänsliga, vilket betyder att de skiljer mellan små och stora bokstäver. Om du vill att sökningen ska vara oberoende av bokstäver, kan du lägga till "i" efter det sista "/". Till exempel:
+
+```Javascript
+let text = "Hello, World!";
+let ersattText = text.replace(/ELLO/i, "ello");
+console.log(ersattText);
+
+// Output: "hello, World!"
 ```
 
 ## Se även
-- [Javascript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [Javascript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
+- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [JavaScript.info: ReplaceAll](https://javascript.info/regexp-methods#replacement)

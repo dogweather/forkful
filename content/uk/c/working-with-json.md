@@ -1,5 +1,6 @@
 ---
-title:                "C: Робота з json"
+title:                "Робота з json"
+html_title:           "C: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "C"
 category:             "C"
@@ -9,58 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+"## Чому"
 
-JSON є одним з найпопулярніших форматів обміну даними в програмуванні, особливо веброзробки. Він є простим для розуміння і використання, а також підтримується більшістю мов програмування. Знання роботи з JSON дозволить вам легко обмінюватися даними між різними додатками і платформами.
+Робота з JSON є важливою для програмістів C, оскільки цей формат даних є одним з найпоширеніших для обміну даними між різними системами. Використовуючи C для роботи з JSON, ви можете ефективно обробляти ці дані та зберігати їх у своїх програмах.
 
-## Як
+"## Як"
 
-Використання JSON в мові програмування C досить просте, оскільки існує кілька бібліотек, які допоможуть зробити роботу з ним ще простішою. Нижче наведені декілька прикладів коду, які розкриють основні операції з JSON.
+Нижче показано, як працювати з JSON в C за допомогою бібліотеки JSON-C:
 
- ```C
+```C
+#include <json-c/json.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <jansson.h>
 
 int main() {
-    // Створення об'єкта JSON
-    json_t *root = json_object();
-    
-    // Додавання полів
-    json_object_set_new(root, "name", json_string("John"));
-    json_object_set_new(root, "age", json_integer(25));
-    
-    // Конвертація в рядок
-    char *json_str = json_dumps(root, JSON_INDENT(2));
-    
-    // Виведення результату
-    printf("%s\n", json_str);
-    
-    // Звільнення пам'яті
-    free(json_str);
-    json_decref(root);
-    
-    return 0;
+
+  //Створення об'єкту JSON
+  json_object *object = json_object_new_object();
+
+  //Додавання значення до об'єкту
+  json_object_object_add(object, "name", json_object_new_string("John"));
+  json_object_object_add(object, "age", json_object_new_int(25));
+
+  //Отримання рядкового представлення об'єкту JSON
+  const char *json_string = json_object_to_json_string(object);
+  printf("JSON string: %s\n", json_string);
+  
+  //Отримання значення з об'єкту по ключу
+  struct json_object *name;
+  json_object_object_get_ex(object, "name", &name);
+  printf("Name: %s\n", json_object_get_string(name));
+
+  //Виведення значення об'єкту в форматі ключ: значення
+  json_object_object_foreach(object, key, val) {
+    printf("%s: %s\n", key, json_object_get_string(val));
+  }
+
+  //Звільнення пам'яті об'єкта JSON
+  json_object_put(object);
+
+  return 0;
 }
 ```
-
-Вивід:
-
-```json
-{
-  "name": "John",
-  "age": 25
-}
+Вихідні дані:
+```
+JSON string: {"name": "John", "age": 25}
+Name: John
+name: John
+age: 25
 ```
 
-## Deep Dive
+"## Глибокий занурення"
 
-Всі дані в JSON представлені у вигляді об'єктів, масивів, рядків, чисел, булевих значень та значення null. Щоб отримати доступ до конкретного поля, можна використовувати функцію `json_object_get()`, а для зчитування значення - відповідні функції, наприклад, `json_string_value()` або `json_integer_value()`. Для отримання усіх ключів або індексів з об'єкта чи масиву можна використовувати функцію `json_object_iter()`, яка поверне ітератор на елементи.
+Щоб працювати з більш складними структурами даних, такими як вкладені об'єкти або масиви, використовуйте функції json_object_object_get та json_object_array_get для доступу до певних значень. Також можна використовувати інші функції для перевірки наявності ключа чи індексу в об'єкті або масиві, а також для додавання чи видалення елементів.
 
-Крім того, JSON має простий формат, що дозволяє легко читати і створювати дані вручну, якщо потрібно. Це робить його корисним інструментом для збереження і передачі даних в різних сценаріях.
+Більш детальну інформацію про функції та їх використання можна знайти в офіційній документації бібліотеки JSON-C. 
 
-## Дивіться також
+"## Див. також"
 
-- [Офіційна документація бібліотеки jansson](https://jansson.readthedocs.io)
-- [Вступ до роботи з JSON в мові програмування C](https://www.cprogramming.com/tutorial/cjson.html)
-- [Приклади коду з використанням бібліотеки jansson](https://github.com/akheron/jansson/tree/master/example)
+- Офіційна документація бібліотеки JSON-C: http://json-c.github.io/json-c/
+- Розширена робота з JSON в C за допомогою бібліотеки jsmn: https://spin.atomicobject.com/2014/06/24/advanced-c-libraries-json-c/
+- Нативна робота з JSON в C за допомогою стандартної бібліотеки string.h: https://stackoverflow.com/questions/8303755/json-parsing-in-c-without-a-library

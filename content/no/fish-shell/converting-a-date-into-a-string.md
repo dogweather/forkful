@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Fra dato til streng"
-simple_title:         "Fra dato til streng"
+title:                "Å konvertere en dato til en streng"
+html_title:           "Fish Shell: Å konvertere en dato til en streng"
+simple_title:         "Å konvertere en dato til en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,30 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hva ville du gjort hvis du trengte å vise en dato i en lettleselig måte? Kanskje du ønsker å presentere den på en nettside eller i et dokument. Å konvertere en dato til en tekststreng er en enkel måte å gjøre dette på. Med Fish Shell får du tilgang til en rekke funksjoner for å konvertere datoer til ønsket format.
+Noen ganger må man kanskje konvertere en dato til en streng i et programmeringsprosjekt. Dette kan være for å vise datoen i et bestemt format eller å sammenligne med en annen streng. I denne artikkelen vil vi se på hvordan man gjør dette i Fish Shell.
 
-## Slik gjør du det
+## Hvordan gjøre det
 
-For å konvertere en dato til en streng i Fish Shell, kan du bruke `date` kommandoen. La oss si at vi vil konvertere dagens dato til en streng i formatet "DD.MM.YYYY". I terminalen skriver vi følgende kommando:
+For å konvertere en dato til en streng i Fish Shell, kan man bruke kommandoen `date`. Denne kommandoen kan ta ulike parametere for å formatere datoen på ønsket måte. La oss se på noen eksempler:
 
-    ```Fish Shell
-    set today (date +%d.%m.%Y)
-    echo $today
-    ```
+```
+Fish Shell 2020-09-01
+date +"%Y-%m-%d"
+```
+Her vil output være `2020-09-01` siden vi har bedt om å få datoen i formatet år-måned-dag.
 
-Kommandoen `date +%d.%m.%Y` tar dagens dato og konverterer den til formatet etterspurt. Ved å bruke `set`, lagres resultatet i variabelen `today`. Deretter bruker vi `echo` for å skrive ut denne variabelen, som i dette tilfellet vil være dagens dato i ønsket format.
+```
+Fish Shell 01/09/2020
+date +"%d/%m/%Y"
+```
+Her vil output være `01/09/2020` siden vi har bedt om å få datoen i formatet dag/måned/år.
+
+Man kan også legge til andre parametere som for eksempel klokkeslett eller tidsone i datoen. Dette kan være nyttig hvis man for eksempel ønsker å få datoen og tiden i et bestemt tidssone.
+
+Det er også mulig å bruke variabler når man konverterer datoer. La oss si at vi har variablene `day`, `month` og `year` som inneholder dagens dato. Da kan man bruke disse i `date` kommandoen slik:
+
+```
+Fish Shell 1. september 2020
+day=$(date +"%d")
+month=$(date +"%B")
+year=$(date +"%Y")
+echo $day. $month $year
+```
 
 ## Dypdykk
 
-Fish Shell gir flere alternativer for å konvertere datoer til strenger. Du kan også spesifisere en annen dato enn dagens ved å bruke `date -d`, etterfulgt av datoen du vil konvertere til en streng. Her er noen eksempler:
-
-- `date +%A` vil gi oss dagens navn
-- `date +%B` vil gi oss månedens navn
-- `date +%j` vil gi oss dagens nummer i året
-
-Du kan også bruke `strftime` funksjonen for å tilpasse datoformatet enda mer. For mer informasjon om ulike formateringsalternativer, kan du sjekke ut man-siden for `date` kommandoen ved å skrive `man date` i terminalen.
+For de som er interessert i å dykke dypere inn i konvertering av datoer i Fish Shell, kan man også sjekke ut Fish Shell sin dokumentasjon. Der er det mulig å finne mer detaljert informasjon om de ulike parametere som kan brukes med `date` kommandoen.
 
 ## Se også
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [How-To Geek: How to Customize Date and Time Formats in the Linux Terminal](https://www.howtogeek.com/howto/17022/customize-date-and-time-formats-in-the-linux-terminal/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/date.html)

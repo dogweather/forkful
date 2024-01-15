@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: 문자열 대문자로 변경하기"
-simple_title:         "문자열 대문자로 변경하기"
+title:                "스트링 대문자화"
+html_title:           "Ruby: 스트링 대문자화"
+simple_title:         "스트링 대문자화"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,32 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
+우리는 때때로 입력된 문자열을 대문자로 바꿀 필요가 있습니다. 누군가의 이름을 대문자로 표기해야 할 때, 또는 특정 키워드를 찾기 위해 대문자로 변환해야 할 때 등 다양한 경우가 있을 수 있습니다. 이러한 요구를 충족하기 위해 루비는 간단한 방법을 제공합니다.
 
-문자열의 첫 글자를 대문자로 바꾸는 것이 왜 필요한지 궁금하신가요? 여러분들이 흔히 사용하는 그 로그인 버튼 혹은 회원가입 버튼을 예로 들어볼까요? 모두 첫 글자가 대문자로 시작하는데, 이는 사용자들이 더 쉽게 식별할 수 있도록 하기 위함입니다. 이러한 작은 디테일이 사용자 경험에 큰 영향을 줄 수 있습니다.
-
-## 어떻게
-
-Ruby는 이를 손쉽게 처리할 수 있는 다양한 방법을 제공합니다. 우선, `capitalize` 메소드를 사용하는 방법이 있습니다. 아래 코드를 통해 확인해보세요.
-
+## 방법
 ```Ruby
-name = "john"
-puts name.capitalize # John
+string = "hello world"
+puts string.upcase
 ```
 
-그런데, 한 번에 모든 단어의 첫 글자를 대문자로 바꾸고 싶다면 `titleize` 메소드를 사용하면 됩니다. 예를 들어, `john smith`를 `John Smith`로 만들고 싶다면 아래와 같이 작성하면 됩니다.
+위 예제에서는 문자열 `"hello world"`를 대문자로 변환한 후 출력하는 코드를 보여줍니다. `upcase` 메소드를 사용하여 문자열을 대문자로 바꿀 수 있습니다. 또한 `capitalize` 메소드를 사용하면 첫 번째 문자만 대문자로 바꿀 수 있습니다.
 
 ```Ruby
-name = "john smith"
-puts name.titleize # John Smith
+string = "hello world"
+puts string.capitalize
 ```
 
-## 깊이 있는 정보
+출력 결과는 다음과 같습니다:
 
-단순히 첫 글자를 대문자로 바꾼다는 것만이 `capitalize`의 역할은 아닙니다. 이 메소드는 알파벳이 아닌 언어의 첫 글자도 올바르게 변환할 수 있습니다. 또한, `capitalize`의 경우 두 번째 인자를 추가하여 특정 언어나 문화권에 맞는 대문자 변환을 할 수도 있습니다.
+```
+Hello world
+```
 
-## 참고자료
+위 예제에서는 문자열의 첫 번째 문자인 "h" 만 대문자로 변환되어 출력되었습니다.
 
-- Ruby 공식 문서 (한국어): https://ruby-doc.org/core-2.7.1/doc/syntax/methods_rdoc.html#label-String+and+Symbol+Methods
-- 루비 도서관: https://ruby-library.com/
-- 깃허브 리포지토리: https://github.com/ruby/ruby/tree/ruby_2_7
+## 깊이있는 탐구
+루비에서 `upcase`와 `capitalize` 메소드는 `String` 클래스의 일부분입니다. 따라서 `String` 클래스의 소스 코드를 살펴보면 이해가 더욱 쉽습니다.
+
+`upcase` 메소드는 `String` 클래스 내부에 다음과 같이 구현되어 있습니다:
+
+```Ruby
+def upcase
+  self.tr(lowercase, uppercase)
+end
+```
+
+여기서 `tr`은 주어진 문자열을 다른 문자열로 변환하는 메소드입니다. 즉, `upcase`는 문자열을 전부 대문자로 변환하는 것과 같은 기능을 합니다.
+
+`capitalize` 메소드는 다음과 같이 구현되어 있습니다:
+
+```Ruby
+def capitalize
+  self[0, 1].upcase + self[1..-1].downcase
+end
+```
+
+여기서 `[0, 1]`은 문자열의 첫 번째 문자를 나타냅니다. 따라서 첫 번째 문자는 `upcase` 메소드를 사용하여 대문자로 변환됩니다. 그리고 `downcase` 메소드를 사용하여 두 번째 문자부터 문자열의 끝까지는 소문자로 변환됩니다.
+
+이처럼 `upcase`와 `capitalize` 메소드는 간단한 방식으로 문자열을 대문자로 변환할 수 있게 해줍니다.
+
+## 더 알아보기
+여러분은 이제 문자열을 대문자로 변환하는 간단한 방법을 배웠습니다. 하지만 `String` 클래스에는 더 다양한 메소드가 있으니 궁금하다면 루비 공식 문서를 참고해보세요.
+
+## 더 알아보기
+- [루비 공식 문서](https://ruby-doc.org/)
+- [위키백과 루비 페이지](https://ko.wikipedia.org/wiki/루비_(프로그래밍_언어))

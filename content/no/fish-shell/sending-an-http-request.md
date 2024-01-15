@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Å sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Fish Shell: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,40 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-I dagens digitale verden er det en vanlig utfordring å kommunisere med eksterne tjenester og API-er. Dette kan være alt fra å hente data fra et nettsted til å integrere tjenester i en app. For å gjøre dette trenger man ofte å sende en forespørsel over HTTP-protokollen. Med Fish Shell kan du enkelt sende HTTP-forespørsler direkte fra terminalen uten å måtte åpne en nettleser eller installere ekstra programmer. Det er også et godt verktøy for å teste eksisterende API-er.
+Hvorfor ville noen ønske å sende en HTTP forespørsel? Vel, det er mange grunner! Det kan være for å hente data fra en ekstern API, sende data til en annen server, eller til og med lage ditt eget HTTP baserte program. Uansett hva din grunn måtte være, er det viktig å ha en pålitelig og enkel måte å sende HTTP forespørsler på. Det er her Fish Shell kommer inn i bildet.
 
-##Slik gjør du det
+## Hvordan gjøre det
 
-For å sende en HTTP-forespørsel med Fish Shell, kan du bruke kommandoen `curl` etterfulgt av nettadressen du ønsker å sende forespørselen til. For eksempel:
-
-```Fish Shell
-curl https://www.example.com/
-```
-
-Dette vil sende en GET-forespørsel og du vil få tilbake HTML-koden fra nettsiden som respons. Du kan også legge til flere parametere som for eksempel brukernavn og passord hvis du må autentisere deg for å få tilgang til tjenesten.
+Å sende en HTTP forespørsel er faktisk ganske enkelt med Fish Shell. Alt du trenger å gjøre er å bruke kommandoen `curl` etterfulgt av nettadressen du ønsker å sende forespørselen til. La oss for eksempel si at vi ønsker å få dataene fra Github sitt API. Da kan vi skrive følgende i terminalen:
 
 ```Fish Shell
-curl -u brukernavn:passord https://www.example.com/
+curl https://api.github.com/users/github
 ```
 
-Ønsker du å sende en POST-forespørsel kan du bruke flagget `-X` etterfulgt av `POST` og legge til eventuelle data som skal sendes med forespørselen.
+Dette vil sende en GET forespørsel til Github sitt API og returnere informasjon om brukeren "github". Hvis du ønsker å sende med noen data, for eksempel som del av en POST forespørsel, kan du bruke flagget `-d` etterfulgt av dataene du vil sende.
 
 ```Fish Shell
-curl -X POST -d 'navn=John&alder=30' https://www.example.com/api
+curl -d "navn=John&alder=30" http://www.example.com
 ```
 
-Du kan også sende forespørsler med andre metoder som PUT, DELETE og HEAD ved å bruke samme syntaks og bare endre `POST` til den ønskede metoden.
+Dette vil sende en POST forespørsel til http://www.example.com med dataene "navn=John&alder=30" i kroppen.
 
-##Dypdykk
+Det er også mulig å legge til ekstra header informasjon ved å bruke flagget `-H` og spesifisere hvilken header du ønsker å legge til.
 
-Det finnes også andre måter å sende HTTP-forespørsler på med Fish Shell, som for eksempel ved hjelp av kommandoen `wget` eller ved å bruke Fish Shell-modulen `httpie`. Det er også mulig å sette tilpassede HTTP-headerfelt eller utføre flertrådede forespørsler.
+```Fish Shell
+curl -H "Content-Type: application/json" http://www.example.com
+```
 
-Hvis du ønsker å utforske mer avanserte måter å håndtere HTTP-forespørsler på, kan du sjekke ut dokumentasjonen til Fish Shell eller søke etter ekstra moduler som kan gjøre denne prosessen enklere og mer fleksibel.
+Dette vil legge til en "Content-Type" header med verdien "application/json" i forespørselen.
 
-##Se også
+## Dypdykk
 
-- Offisiell Fish Shell dokumentasjon for HTTP-forespørsler (https://fishshell.com/docs/current/cmds/curl.html)
-- Fish Shell-modulen httpie (https://github.com/xxh3x/httpie-fish)
-- En guide for å bruke HTTP-forespørsler med Fish Shell (https://www.linux.com/topic/networking/using-http-requests-fish-shell/)
+For de som er mer erfarne med HTTP forespørsler, vil du være glad for å vite at Fish Shell støtter mange av de vanlige metodeene, som GET, POST, PUT, PATCH og DELETE. Du kan også angi egendefinerte headers og data, som nevnt tidligere.
+
+En annen nyttig funksjon i Fish Shell er evnen til å utføre scripting mens du sender en HTTP forespørsel. Dette betyr at du kan bruke variabler eller skrive logikk inne i kommandoen `curl`.
+
+```Fish Shell
+set token (echo $GIT_TOKEN) # Henter et access token fra miljøvariabler
+curl -H "Authorization: token $token" https://api.github.com/user/repos # Legger til token som en Authorization header
+```
+
+Dette er bare noen få eksempler på hvordan du kan bruke Fish Shell for å sende HTTP forespørsler. Det er mange flere funksjoner og muligheter, så det er bare å eksperimentere og finne ut hva som fungerer best for deg!
+
+## Se også
+
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Curl dokumentasjon](https://curl.se/docs/manpage.html)

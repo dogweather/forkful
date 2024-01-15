@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Rust: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,44 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Rust on suosittu ohjelmointikieli monipuolisen ja luotettavan tyyppijärjestelmänsä ansiosta. Yksi sen voimista on myös sen kyky käsitellä aikaa ja päivämääriä tehokkaasti. Tässä blogikirjoituksessa tutustumme siihen, miten voimme laskea tulevan tai menneen päivämäärän Rustin avulla.
+Usein tarvitsemme laskelmia tulevaisuuden tai menneisyyden päivämääristä esimerkiksi sovelluksissa tai projekteissa. Rust-ohjelmoinnissa on helppo ja vaivaton tapa tehdä laskelmia tällaisista päivämääristä.
 
-## Kuinka tehdä
+## Miten
 
-Laskeminen tulevan tai menneen päivämäärän Rustilla on helppoa käyttämällä "chrono" kirjastoa. Ensiksi, tuo kirjasto projektiisi riippuvuuksien luetteloon ja käytä sen Date-pakkausta määrittämään haluttu päivämäärä:
+Laskelmat tulevaisuuden ja menneisyyden päivämääristä onnistuvat Rust-ohjelmoinnissa DateTime-kirjaston avulla. Voit asentaa paketin käyttämällä komentoa `cargo install chrono`.
 
-```Rust
-use chrono::{Date, Duration, Local, NaiveDate};
-let current_date: Date<Local> = Local::today();
-let future_date = current_date + Duration::days(7);
-let past_date = current_date - Duration::weeks(2);
-```
-
-Ensimmäinen rivi tuo "chrono" kirjaston projektiin ja luo uuden päivämäärän tyyppiä "Local". Tällä hetkellä olevan päivämäärän saa käyttämällä "today()" metodia.
-
-Seuraavat kaksi riviä laskevat tulevan ja menneen päivämäärän käyttämällä "+" ja "-" operaattoreita sekä "Duration" tyyppiä. Tässä esimerkissä lisätään 7 päivää ja vähennetään 2 viikkoa nykyisestä päivämäärästä.
-
-Lopuksi, voit tulostaa päivämäärät käyttämällä "println!" makroa:
+Sitten voit aloittaa laskelmat luomalla DateTime-olion haluamallesi päivämäärälle käyttämällä `UTC` aikavyöhykkeellä ja `chrono::DateTime` rakennetta:
 
 ```Rust
-println!("Tuleva päivämäärä: {}", future_date);
-println!("Menneet päivämäärät: {}", past_date);
+extern crate chrono; // Käyttää chrono-kirjastoa
+
+use chrono::{DateTime, Duration, Utc}; // Ottaa käyttöön tarvittavat kirjastot
+
+let nyt = Utc::now(); // Hakee nykyisen päivämäärän ja ajan UTC-aikavyöhykkeellä
+let tulevaisuudessa = nyt + Duration::weeks(2); // Lisää kaksi viikkoa nykyiseen päivämäärään
+let menneisyydessä = nyt - Duration::days(5); // Vähentää viisi päivää nykyisestä päivämäärästä
+
+println!("Päivämäärä kaksi viikkoa tulevaisuudessa on: {}", tulevaisuudessa); // Tulostaa tulevaisuuden päivämäärän
+println!("Päivämäärä viisi päivää menneisyydessä oli: {}", menneisyydessä); // Tulostaa menneisyyden päivämäärän
 ```
 
-Kun ajat koodin, saat seuraavan tulosteen:
+Tulostus:
 
 ```
-Tuleva päivämäärä: 2021-04-20
-Menneet päivämäärät: 2021-04-06
+Päivämäärä kaksi viikkoa tulevaisuudessa on: 2021-09-17T22:25:49.220076800 UTC
+Päivämäärä viisi päivää menneisyydessä oli: 2021-08-13T22:25:49.220076800 UTC
 ```
 
-## Syväsukellus
+## Syväluotaus
 
-"chrono" kirjasto tarjoaa laajan valikoiman toimintoja ja metodeja päivämäärien käsittelyyn. Voit esimerkiksi laskea päivien, viikkojen ja kuukausien määrän kahden päivämäärän välillä, muuntaa päivämäärän eri aikavyöhykkeelle tai formatoida päivämäärän halutunlaiseksi.
+DateTime-rakenteella on monia hyödyllisiä metodeita, joita voi käyttää päivämäärien manipulointiin. Esimerkiksi `checked_add` ja `checked_sub` metodit mahdollistavat päivämäärän lisäämisen tai vähentämisen haluamalla aikavälillä, mutta tarkistavat samalla, ettei päivämäärä ylitä vuoden tai kuukauden rajaa.
 
-Lisäksi, "chrono" kirjaston avulla voit myös laskea aikaleimoja ja kellonaikoja. Se tarjoaa myös tuki tuleville aikavyöhykkeiden muutoksille, mikä tekee siitä erittäin luotettavan.
+Lisäksi DateTime-rakenteella on muun muassa `format` metodi, joka mahdollistaa päivämäärän muotoilun halutun kuvion mukaan. Esimerkiksi `format("%d.%m.%Y")` tuottaa päivämäärän muodossa "13.08.2021".
+
+Nämä ja muut DateTime-rakenteen metodit löydät [Rustin virallisesta dokumentaatiosta](https://docs.rs/chrono/0.4.19/chrono/) ja voit käyttää niitä haluamallasi tavalla päivämäärien laskemiseen tulevaisuudessa ja menneisyydessä.
 
 ## Katso myös
-- Chrono dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/ 
-- Rust dokumentaatio: https://doc.rust-lang.org/std/time/index.html 
-- "Date and Time Handling in Rust" Medium-artikkeli: https://medium.com/@rickyattds/date-and-time-handling-in-rust-be263f819b96
+
+- Rustin virallinen dokumentaatio: https://www.rust-lang.org/
+- DateTime-kirjaston dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/

@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: パターンに一致する文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Javascript: パターンに一致する文字を削除する"
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -9,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜキャラクターをパターンにマッチするものを削除するのか
+## なぜ
 
-プログラマーにとって、データ処理は非常に重要です。時には、特定のパターンにマッチするキャラクターを削除することが必要になります。その理由は何でしょうか？例えば、不要なスペースや特定の文字を削除してデータを整形したい場合や、古いデータから不要な情報を取り除いて新しいデータを作成したい場合などが挙げられます。今回は、そんな時に役立つJavascriptのプログラミングテクニックを紹介します。
+文字パターンにマッチする文字を削除することに関わる *なぜ* を最大2文で説明します。
 
-## 方法
+## 使い方
 
-まずは、削除したいキャラクターを表す正規表現を用意します。正規表現とは、文字列をパターンに合致するかどうかをチェックするための特殊な表記方法です。例えば、```/[aeiou]/```という正規表現は、文字列の中に含まれる母音をマッチさせます。
+文字パターンにマッチする文字を削除する方法をコーディングの例と共に、「```Javascript ... ```」のコードブロックで示します。以下にサンプルの入力と出力を示します。
 
-次に、削除するためのメソッドを使用します。Javascriptには、文字列から特定の文字を削除するためのメソッドがあります。例えば、```replace()```メソッドを使用すると、指定した正規表現にマッチする文字を別の文字列に置き換えることができます。
+例: 
 
-では、実際にコードを見てみましょう。
+入力: "Hello World! This is a test."
 
-```Javascript
-let str = "Welcome to our blog! ようこそ！";
-
-// パターンにマッチする文字を空白に置き換える
-let newStr = str.replace(/[\u3040-\u30FF]/g, "");
-
-console.log(newStr); // Welcome to our blog!
+コード: 
+```Javascript 
+const str = "Hello World! This is a test.";
+const pattern = /[ \w\s]/g;
+const result = str.replace(pattern, "");
+console.log(result);
 ```
 
-この場合、```/[\u3040-\u30FF]/g```という正規表現は、日本語の全角文字を表すパターンです。そして、マッチした文字を空白に置き換えることで、日本語文字を削除することができます。
+出力: "!."
 
 ## 深堀り
 
-文字を削除するための正規表現パターンは様々あります。例えば、```/[0-9]/```という正規表現は、数字を表します。このパターンにマッチする文字を空白に置き換えることで、文字列から数字を削除することができます。
+文字パターンにマッチする文字を削除することのより詳細な情報を提供します。文字列の操作をより細かく制御し、必要な文字だけを残す方法を学びましょう。
 
-また、```/[a-z]/```という正規表現は英字を表します。英字以外の文字を削除したい場合は、このパターン以外にも```/[!@#$%^&*()-=_+]/```や```/[\u0083-\u9FFF]/```などを使うこともできます。
+例えば、文字列から特定の文字や数字以外のすべての文字を削除することができます。また、正規表現を使用することでより複雑な文字パターンにマッチする文字を削除することができます。
 
-そして、マッチした文字を削除するだけでなく、新しい文字列を挿入することも可能です。例えば、```/[a-z]/```にマッチする文字を数字に置き換えることで、文字列の中の英字を数字に変換することができます。
+## 参考リンク
 
-## それでは、実際に試してみましょう！
-
-ここまで紹介した方法を使って、自分なりのプログラムを組んでみてください。このテクニックを使用することで、データ処理がより簡単に行えるようになるでしょう。
-
-## 関連リンク
-
-- [正規表現入門](https://developer.mozilla.org/ja/docs/Web/JavaScript
+- [MDN Web Docs: RegExp](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Codecademy: Regular Expressions Cheat Sheet](https://www.codecademy.com/learn/introduction-to-regular-expressions/modules/learn-regular-expressions/cheatsheet)
+- [RegexOne: Regular Expressions Tutorial](https://regexone.com/)

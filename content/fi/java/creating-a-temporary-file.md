@@ -1,6 +1,7 @@
 ---
-title:                "Java: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Java: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,53 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Miksi: Miksi luoda väliaikainen tiedosto Java-ohjelmoinnissa?
+# Miksi
 
-Väliaikaiset tiedostot ovat hyödyllisiä monissa ohjelmoinnin tilanteissa. Niitä käytetään yleensä silloin, kun tarvitaan väliaikaista tallennuspaikkaa tiedoille, kuten väliaikaiselle käyttäjäsessionille tai väliaikaiselle tietokannalle.
+Luodessasi ohjelmia Java-ohjelmointikielellä, saatat joutua työskentelemään väliaikaisten tiedostojen kanssa. Näiden väliaikaisten tiedostojen luominen voi olla hyödyllistä, esimerkiksi kun haluat tallentaa väliaikaisia tietoja järjestelmän suorituksen aikana. Tässä artikkelissa kerromme, miksi ja miten luodaan väliaikainen tiedosto käyttäen Javaa.
 
-### Kuinka tehdä se: Esimerkkejä ja tulosteita Java-koodilohkoissa
+# Miten
+
+Java tarjoaa sisäänrakennetun TempFile-luokan, joka mahdollistaa väliaikaisen tiedoston luomisen helposti. Seuraavassa esimerkissä näet, miten se toimii:
 
 ```Java
-try {
-    // Luodaan väliaikainen tiedosto käyttäen Javan valmista luokkaa
-    File tempFile = File.createTempFile("temporary", ".txt");
-    System.out.println("Luotu väliaikainen tiedosto: " + tempFile.getAbsolutePath());
-    
-    // Kirjoitetaan tiedostoon tekstiä
-    PrintWriter writer = new PrintWriter(tempFile);
-    writer.println("Tämä on väliaikainen tiedosto");
-    writer.close();
-    
-    // Luetaan tiedoston sisältö ja tulostetaan se
-    Scanner scanner = new Scanner(tempFile);
-    System.out.println("Tiedoston sisältö: " + scanner.nextLine());
-    scanner.close();
-    
-    // Poistetaan väliaikainen tiedosto
-    tempFile.delete();
-    System.out.println("Väliaikainen tiedosto poistettu.");
-} catch (IOException e) {
-    e.printStackTrace();
+import java.io.File;
+import java.io.IOException;
+
+public class TempFileExample {
+
+    public static void main(String[] args) throws IOException {
+
+        File myTempFile = File.createTempFile("myTempFile", ".txt"); // Luodaan väliaikainen tiedosto nimeltä "myTempFile.txt"
+        System.out.println("Luotiin väliaikainen tiedosto: " + myTempFile.getName());
+        myTempFile.deleteOnExit(); // Tiedosto poistetaan automaattisesti, kun ohjelma suljetaan
+    }
 }
 ```
 
-**Tuloste:**
+Tulostus näyttää seuraavalta:
 
 ```
-Luotu väliaikainen tiedosto: /tmp/temporary6814996582689941970.txt
-Tiedoston sisältö: Tämä on väliaikainen tiedosto
-Väliaikainen tiedosto poistettu.
+Luotiin väliaikainen tiedosto: myTempFile6427500394267177990.txt
 ```
 
-### Syvällinen tarkastelu: Tietoa väliaikaisten tiedostojen luomisesta
+Kuten näet, väliaikainen tiedosto nimetään automaattisesti ja se poistetaan automaattisesti ohjelman sulkiessa.
 
-Java tarjoaa valmiin luokan File.createTempFile() väliaikaisen tiedoston luomiseen. Tämä metodi luo tiedoston, jonka nimi alkaa annetulla etuliitteellä ja päättyy haluttuun tiedostopäätteeseen. Tiedosto tallennetaan oletusarvoisesti väliaikaiseen hakemistoon, mutta sen sijaintia voidaan myös muuttaa antamalla toinen polku parametrina.
+# Syventävä tarkastelu
 
-On tärkeää muistaa, että väliaikainen tiedosto ei ole sama asia kuin väliaikainen tiedostojärjestelmä. Tiedosto ei häviä automaattisesti, vaan se on poistettava manuaalisesti. Tämä voidaan tehdä käyttämällä File-luokan delete() -metodia.
+TempFile-luokka perustuu Javan sisäänrakennettuun File-luokkaan, joten sillä on samanlaiset ominaisuudet ja toiminnot. Voit myös määrittää haluamasi hakemiston, jonne väliaikainen tiedosto luodaan. Lisäksi voit määrittää, haluatko tiedoston poistuvan automaattisesti ohjelman sulkiessa tai haluatko poistaa sen manuaalisesti.
 
-### Katso myös:
+# Katso myös
 
-- [Oracle Java-tiedostonhallintaopas](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Java-tiedostonhallintaluokat](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java-Scanner-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Java-koodin esimerkkitiedosto](https://github.com/arikaha/java-example-file)
+- [Java TempFile-luokan virallinen dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [Java File-luokan virallinen dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java-ohjelmoinnin opiskelu aloittelijoille](https://java.com/fi/download/help/whatis_java.html)

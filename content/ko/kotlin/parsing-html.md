@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: HTML 분석하기"
-simple_title:         "HTML 분석하기"
+title:                "HTML 구문 분석"
+html_title:           "Kotlin: HTML 구문 분석"
+simple_title:         "HTML 구문 분석"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,39 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTML을 파싱하는 것에 참여해야 하는 이유는 어떤 웹 페이지든 HTML로 작성되기 때문입니다. 프로그래밍을 하려면 웹 페이지의 데이터를 추출하고 처리하는 것이 필수적입니다.
+웹 개발자라면 HTML 파싱이 필수적인 작업입니다. HTML을 파싱하면 웹사이트에서 데이터를 추출하고 가공할 수 있습니다.
 
-## 코드로 Kortlin에서 HTML을 파싱하기
+## 방법
 
-HTML을 파싱하는 가장 간단한 방법은 Jsoup 라이브러리를 사용하는 것입니다. 먼저 Gradle 또는 Maven에서 라이브러리를 설정해야 합니다.
-
-```Kotlin
-dependencies {
-    implementation 'org.jsoup:jsoup:1.13.1'
-}
-```
-
-다음은 예시 코드와 결과입니다.
+HTML 파서는 HTML 코드를 읽고 이를 구문 분석합니다. Kotlin에서는 `Jsoup` 라이브러리를 사용하여 HTML 파싱을 할 수 있습니다. 다음은 Kotlin으로 HTML을 파싱하는 예시 코드입니다.
 
 ```Kotlin
-val doc: Document = Jsoup.connect("http://www.google.com").get()
-val title: String = doc.title()
-println("제목: $title")
+val doc : Document = Jsoup.parse("<html><head><title>Sample HTML</title></head><body><h1>Hello, World!</h1></body></html>")
+
+// 태그 선택 예시
+val title : Element = doc.select("title").first()
+
+// 태그 내부의 텍스트 추출 예시
+val text : String = title.text()
+
+// 결과 출력
+println(text)
 ```
 
-결과는 다음과 같을 것입니다.
+결과는 `Sample HTML`이 출력됩니다.
 
-```
-제목: Google
-```
+## 깊은 탐구
 
-## HTML 파싱의 깊은 곳
+HTML 파싱을 더 깊게 이해하기 위해서는 HTML의 구조와 각 태그의 의미를 알아야 합니다. 또한, `Jsoup` 라이브러리의 다양한 기능과 메소드를 익히면 웹 스크래핑과 데이터 추출 작업을 효율적으로 수행할 수 있습니다.
 
-HTML 파싱에 대해 더 알아볼 때 유용한 정보를 공유합니다. HTML 문서는 트리 구조를 가지고 있으며, 이를 이해하면 파싱하는 과정을 쉽게 이해할 수 있습니다. 또한 Jsoup 외에도 다른 라이브러리를 사용하여 더 효율적이고 정교한 파싱을 할 수 있습니다.
+## 관련 링크
 
-## 더 알아보기
-
-더 많은 정보를 찾고 싶다면 다음 링크를 확인해보세요.
-
-- [Kotlin 공식 사이트](https://kotlinlang.org/)
-- [HTML 파싱 가이드](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+- [Kotlin 공식 홈페이지](https://kotlinlang.org/)
+- [Jsoup 라이브러리 공식 문서](https://jsoup.org/)
+- [HTML 기본 구조](https://developer.mozilla.org/ko/docs/Web/HTML)
+- [HTML 태그 참고서](https://www.w3schools.com/tags/)

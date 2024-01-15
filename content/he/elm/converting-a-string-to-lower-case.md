@@ -1,5 +1,6 @@
 ---
-title:                "Elm: המרת מחרוזת לאותיות קטנות"
+title:                "המרת מחרוזת לאותיות קטנות"
+html_title:           "Elm: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-רבים מתכנתי Elm קוראים לפונקציה שממירה מחרוזת לאותיות קטנות "את חשובה מאוד" - פשוט וסופר שימושי!
+## למה?
 
-## כיצד לעשות זאת
-בעזרת הפונקציה `String.toLower` נוכל להמיר את המחרוזת שנמצאת בתוך הקלט שלנו לאותיות קטנות. לדוגמה:
+למה להתעסק בהמרת מחרוזת לאותיות קטנות? כי לעיתים קרובות ישנן מצבים שבהם אנחנו צריכים להתמודד עם כתיבת מחרוזת באותיות גדולות או משתנות הכוללות כתיבה באותיות גדולות. להמיר את המחרוזת לאותיות קטנות יכול לעזור לנו להפסיק את הפעולה המתבצעת באנווכדות ולהבטיח שהתוצאה המוחזרת תהיה תואמת לכתיב הרגיל שלנו.
 
-```Elm
-String.toLower "HELLO" -- "hello"
+## איך לעשות?
+
+השתמשו בפונקציה `String.toLower` כדי להמיר מחרוזת לאותיות קטנות בספרייה של ה-Elm. הנה דוגמה של קוד המשתמש בפונקציה זו והתוצאה המוחזרת:
+
+``` Elm
+import String
+
+String.toLower "ELM" -- תוצאה: "elm"
 ```
 
-בנוסף, ניתן להשתמש גם בחיבור של פונקציות, לדוגמה:
+כמו כן, תוכלו להשתמש בפונקציה `String.map` כדי להמיר יחידות בתוך המחרוזת לאותיות קטנות. הנה דוגמה נוספת:
 
-```Elm
-String.toLower (String.concat [ "h", "e", "l", "l", "o" ]) -- "hello"
+``` Elm
+import String
+
+String.map (\char ->
+    if Char.isUpper char then
+        Char.toLower char
+    else
+        char
+) "Elm" -- תוצאה: "elm"
 ```
 
-## מעמקים
-המרת מחרוזת לאותיות קטנות נעשית על ידי החלפת כל אות גדולה במחרוזת לאות קטנה בעזרת פונקציית `Char.toLower`. בנוסף, אם המחרוזת מכילה תווים לא אלפאביתיים, הם יישארו ללא שינויים.
+## חפירה עמוקה
+
+המרת מחרוזת לאותיות קטנות היא פעולה פשוטה ונפוצה בתכנות. באמצעות השתמשות בפונקציות `String.toLower` ו-`String.map` ניתן לנהל את הטיפול ביחידות ומחרוזות בצורה נקייה ויעילה.
 
 ## ראו גם
-- [מדריך התחשבות בהעצמת נסיעת כביש](https://ohanhi.github.io/writing/2017-03-15-Elm-type-uplifting/)
-- [המרת רשימת מחרוזות למחרוזת אחת](https://vsavkin.com/modifying-a-list-of-strings-into-a-single-string-in-elm-a9dcae082f20)
-- [פונקציה `String.map`](https://package.elm-lang.org/packages/elm/core/latest/String#map)
+
+- תיעוד רשמי לפונקציות `String.toLower` ו-`String.map` באתר המפתחים של ה-Elm: https://package.elm-lang.org/packages/elm/core/1.0.5/String
+- מאמר נוסף על פונקציות תחילת מחרוזת ותוצאתן ב־Elm: https://-programmingbasics.org/en/line-spacing/elm-of-string-functions

@@ -1,6 +1,7 @@
 ---
-title:                "C: ＜.csvファイルの扱い＞"
-simple_title:         "＜.csvファイルの扱い＞"
+title:                "「CSVの操作」"
+html_title:           "C: 「CSVの操作」"
+simple_title:         "「CSVの操作」"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -9,54 +10,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを使用するのか
+## なぜCSVを使うのか
+CSVは、データを表形式で保存するための一般的なフォーマットです。多くのプログラミング言語でサポートされており、データ処理やデータ分析などの用途に利用されています。
 
-CSV（Comma-Separated Values）は、データを表形式で格納するためのファイル形式です。これは、データベースやスプレッドシートなどの多様なアプリケーションで利用されています。C言語を使用してCSVを処理することで、データの読み書きや編集が容易になります。
-
-## 使い方
-
-CSVファイルをC言語で処理する方法は簡単です。まず、```fopen()```関数を使用してCSVファイルを開きます。次に、```fscanf()```を使用してファイルからデータを読み取り、必要に応じて変数に格納します。最後に、```fclose()```を使用してファイルを閉じます。以下に例を示します。
+## 方法
+CSVをC言語で処理する方法を説明します。まずは、CSVファイルを読み込んでデータを保存する方法を見てみましょう。
 
 ```C
-FILE *fp;
-char name[20];
-int age;
+#include <stdio.h>
+#include <stdlib.h>
 
-fp = fopen("data.csv", "r");
+int main()
+{
+    // CSVファイルを開く
+    FILE *fp = fopen("sample.csv", "r");
 
-if(fp == NULL){
-    printf("ファイルが見つかりません\n");
+    // ファイルが正しく開けたかをチェック
+    if (fp == NULL)
+    {
+        printf("ファイルが見つかりません。\n");
+        return 1;
+    }
+
+    // ファイルから1行ずつ読み込む
+    char line[256];
+    while (fgets(line, sizeof(line), fp) != NULL)
+    {
+        // カンマで区切られたデータを分割する
+        char *token = strtok(line, ",");
+        while (token != NULL)
+        {
+            // データを処理する
+            printf("%s\n", token);
+
+            // 次のデータへ移動
+            token = strtok(NULL, ",");
+        }
+    }
+
+    // ファイルを閉じる
+    fclose(fp);
+
+    return 0;
 }
-
-while(fscanf(fp, "%s,%d", name, &age) != EOF){
-    printf("名前: %s, 年齢: %d\n", name, age);
-}
-
-fclose(fp);
 ```
 
-上記の例では、```data.csv```という名前のCSVファイルから名前と年齢のデータを読み取り、出力します。
+このコードを実行すると、CSVファイルのデータを1つずつ取得して表示することができます。
 
-## 深堀り
+次に、CSVファイルにデータを書き込む方法を見てみましょう。
 
-CSVファイルをより詳しく処理するためには、C言語のポインタや構造体を活用することができます。また、CSVファイルが大きい場合には、メモリ管理にも注意する必要があります。さらに、文字コードの変換やエラーハンドリングも重要なポイントです。これらをマスターすることで、より複雑なCSVファイルの処理が可能になります。
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // CSVファイルを開く
+    FILE *fp = fopen("output.csv", "w");
+
+    // ファイルが正しく開けたかをチェック
+    if (fp == NULL)
+    {
+        printf("ファイルを作成できません。\n");
+        return 1;
+    }
+
+    // 書き込むデータを準備する
+    char *data = "1,2,3,4,5";
+
+    // ファイルに書き込む
+    fputs(data, fp);
+
+    // ファイルを閉じる
+    fclose(fp);
+
+    return 0;
+}
+```
+
+このコードを実行すると、指定したデータがCSVファイルに書き込まれます。
+
+## 詳細を掘り下げる
+CSVファイルには、文字列や数値だけでなく、日付や時刻などのデータを含むこともあります。そのような場合は、データを適切に処理するために、データ型の変換を行う必要があります。また、CSVファイルにはヘッダー行が含まれる場合もありますが、これを無視する方法も学ぶことができます。
+
+さらに、CSVファイルを処理する際には、ファイルのエンコーディングやセパレーターなどの設定を行う必要があります。これらの設定を間違えると、データの読み込みや書き込みがうまく行われず、エラーが発生する場合もあります。
 
 ## さらに見る
-
-もしあなたがまだC言語を始めたばかりであれば、基本的な文法や構造体の理解が必要です。そのためには、次のリンクを参考にしてください。
-
-- [C言語 公式ドキュメント](https://www.cprogramming.com/)
-- [C言語 チュートリアル](https://www.tutorialspoint.com/cprogramming/index.htm)
-- [構造体の使い方](https://www.cprogramming.com/tutorial/c/lesson7.html)
-
-また、もしCSVファイルを操作する上で便利なライブラリを探しているのであれば、次のリンクが役立つかもしれません。
-
-- [CSVファイルを処理するためのC言語ライブラリ](https://sourceforge.net/projects/libcsv/)
-- [C言語でCSVファイルを扱う方法](https://www.makeuseof.com/tag/process-csv-files-c/)
-- [C言語でのファイル操作のチュートリアル](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-
-## 関連リンク
-
-- [C言語でのファイル操作に関するチュートリアル](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C言語でのメモリ管理について学ぶ方法](https://www.cprogramming.com/tutorial/memory-management.html)
-- [C言語でのエラーハンドリングの方法](https://www.cprogramming.com/tutorial/error_handling.html)
+- [C言語でCSVを扱う方法](https://programming.org.ua/jp/how-to-handle-csv-files-in-c/)
+- [C言語のファイル操作 - ファイルの読み書き](https://programming.org.ua/jp/c-file-operations

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: 一時ファイルを作成する。"
-simple_title:         "一時ファイルを作成する。"
+title:                "一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -9,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-なぜ：一時ファイルを作成する理由
-
-一時ファイルを作成する理由は、一時的にデータを保存するためです。例えば、プログラムの実行中に作成されたデータを一時的に保存したい場合や、一時的なファイルを使用してプログラムの実行中に他のアクションを続行したい場合などが挙げられます。
+## なぜ
+一時ファイルを作成する理由は、一時的にデータを保存したり、一時的なデータ処理を行ったりするためです。
 
 ## 作り方
+一時ファイルを作成するには、Elixirの標準ライブラリであるFileモジュールを使用します。まず、一時ファイルの保存先となるディレクトリを指定する必要があります。次に、File.tempfile/2関数を使用して、一時ファイルを作成します。以下のコードは、一時ファイルを作成し、その内容を書き込む例です。
 
-一時ファイルを作成するためには、`Tempfile`モジュールを使用します。
+```Elixir
+File.tempfile("/tmp", "temp-") do |file|
+  IO.write(file, "This is a temporary file.")
+end
 
-```
-Elixir
-# Tempfileモジュールを使用
-{:ok, file} = Tempfile.open()
-
-# ファイルにデータを書き込む
-IO.write(file, "Hello, World!")
-
-# ファイルを閉じる
-File.close(file)
-
-# ファイルパスを取得
-IO.puts(file.path)
-# => "/tmp/elixirtempfile20190415-1"
+# 出力:
+# {:ok, #File<"/tmp/temp-123456.txt">}
 ```
 
-上記の例では、`Tempfile.open()`メソッドを使用して一時ファイルを作成し、`IO.write()`メソッドを使用してファイルにデータを書き込み、最後に`File.close()`メソッドを使用してファイルを閉じています。最後に、`file.path`を使用してファイルのパスを取得しています。
+## 深掘り
+一時ファイルを作成する際には、注意すべき点がいくつかあります。まず、一時ファイルはプログラムが終了すると自動的に削除されるため、データの永続的な保存には向きません。また、同名の一時ファイルがすでに存在する場合は、新しい一時ファイルが作成されず、既存のファイルが返される点にも注意してください。さらに、一時ファイルを作成する際は、標準ライブラリのFileモジュールの他にも、Elixirで標準的に使用されるExUnitやGenServerなどのライブラリが一時ファイルを作成するために使用されることがあります。
 
-## ディープダイブ
+## 参考リンク
+- [ElixirのFileモジュールのドキュメント](https://hexdocs.pm/elixir/File.html#tempfile/2)
+- [ExUnitによる一時ファイルの作成の例](https://hexdocs.pm/ex_unit/1.11.0/ExUnit.Case.html#using-setup/2)
+- [GenServerによる一時ファイルの作成の例](https://hexdocs.pm/elixir/GenServer.html#handle_continue/2)
 
-一時ファイルを作成する際に使用する`Tempfile`モジュールは、様々なオプションを提供しています。例えば、ファイルの作成場所を指定したり、ファイルの名前をカスタマイズしたりすることができます。また、一時ファイルを作成する際に使用されるテンプレートのフォーマットをカスタマイズすることもできます。詳細については、[Elixir公式ドキュメント](https://hexdocs.pm/elixir/Tempfile.html)を参照してください。
-
-## See Also
-
-- [Elixir 公式ドキュメント](https://hexdocs.pm/elixir/Tempfile.html)
-- [TempfileモジュールのGitHubリポジトリ](https://github.com/elixir-lang/elixir/blob/master/lib/tempfile.ex)
-- [一時ファイルを使用する場合のセキュリティについて](https://www.schneier.com/blog/archives/2006/11/safely_using_te.html)
+## 参考になる情報
+- [manページ: mktempコマンド](https://linuxjm.osdn.jp/html/GNU_coreutils/man1/mktemp.1.html)
+- [manページ: tempfileコマンド](https://linuxjm.osdn.jp/html/GNU_coreutils/man1/tempfile.1.html)

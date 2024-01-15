@@ -1,6 +1,7 @@
 ---
-title:                "Gleam: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
+html_title:           "Gleam: コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
+simple_title:         "コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -9,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書く必要があるのか
+## なぜテストを書く必要があるのか 
 
-テストを書くことは、プログラムのバグを見つけやすくし、安心してコードを変更することができるようにします。また、より効率的なコードを書くためにも役立ちます。
+テストを書くことは、コードが正しく動作し、新しい機能を追加したり、リファクタリングしたりする際に自信を持って続けることができるようにするためです。
 
-## テストの書き方
+## 方法 
 
-テストを書くためには、まず最初に`gleam test`コマンドを使ってテストファイルを作成します。その後、`assert`を使用してテストケースを作成し、テストしたい関数を呼び出します。最後に、期待される結果を`=`で指定します。
+テストを書くには、まずテストするコードの関数やモジュールを作成します。その後、作成した関数やモジュールを呼び出して、正しい出力が得られるかどうかをテストします。具体的なコーディング例を見てみましょう。
 
-例えば、以下のように`add`関数をテストすることができます。
-
-```Gleam
-test "adds two numbers" {
-  assert add(2, 3) = 5 
+``` Gleam
+import string
+test suite "String Library Tests" {
+  test "split" {
+    assert.equal(string.split("Hello World", ""), ["Hello", "World"])
+  }
+  test "trim" {
+    assert.equal(string.trim("   Hello World   "), "Hello World")
+  }
 }
 ```
 
-## テストの詳細
+ここでは、`import` ローカルで `test suite` が作成され、2 つの単体テストが実行されています。 `string.split` が正しい出力を返し、 `string.trim` が余分なスペースを削除していることを確認しています。
 
-テストをより複雑にすることで、さまざまな状況をテストすることができます。例えば、異なる入力値に対する結果をテストすることもできます。また、`gleam check`コマンドを使用してコードカバレッジをチェックすることもできます。
+## 深堀り 
 
-テストを書くことで、より信頼性の高いコードを作成することができます。また、継続的なテストを行うことで、コードの品質を保つことができます。
+テストを書く際には、さまざまな機能を使用して、コードの異なる部分をテストすることができます。例えば、 `assert.equal` を使用して値が等しいかどうかをテストしたり、 `assert.is_error` を使用してエラーが発生するかどうかをテストしたりすることができます。また、 `setup` 関数を使用して、テストの前に実行する前処理を定義することもできます。
 
-## See Also
+## See Also 
 
-- [Gleamの公式ドキュメント](https://gleam.run/documentation/)
-- [GleamのGithubリポジトリ](https://github.com/gleam-lang/gleam)
+- 公式のGleamドキュメント：https://gleam.run/
+- テストの例：https://github.com/gleam-lang/gleam/blob/main/stdlib/string/gleam
+- テスト自体のコード：https://github.com/gleam-lang/gleam/blob/main/test/string.gleam

@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Working with json"
+title:                "Working with json"
+html_title:           "TypeScript recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,57 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're new to programming or just starting to explore TypeScript, you may have heard the term "JSON" being thrown around. JSON stands for JavaScript Object Notation, and it's a popular format for storing and exchanging data. In this blog post, we'll discuss why you might want to work with JSON and how to do so in TypeScript.
+JSON (JavaScript Object Notation) is a popular data-interchange format used for storing and transmitting data. It is widely used in web development and is essential for creating flexible and dynamic applications. By learning how to work with JSON in TypeScript, you can effectively manipulate and manage data in your projects.
 
 ## How To
 
-To work with JSON in TypeScript, we first need to understand the basic structure of JSON. JSON data is organized in key-value pairs, similar to a dictionary or object in TypeScript. A key is always a string, followed by a colon, and then the corresponding value. Values can be strings, numbers, booleans, arrays, or even other objects.
+To work with JSON in TypeScript, follow these simple steps:
 
-Let's look at an example of JSON data:
+### 1. Import the JSON library
 
-```TypeScript
-{
-    "name": "John",
-    "age": 25,
-    "hobbies": ["reading", "hiking"],
-    "isDogOwner": true
-}
+To start working with JSON, you need to first import the `JSON` library into your project. This library provides useful methods for parsing and stringifying data in JSON format.
+
+```
+import { JSON } from 'typescript';
 ```
 
-In this example, the key "name" has the value "John", "age" has the value 25, "hobbies" has an array of strings, and "isDogOwner" has the boolean value of true.
+### 2. Parsing JSON data
 
-To access and manipulate JSON data in TypeScript, we can use the built-in `JSON` object. This object provides methods for parsing and stringifying JSON data. Here's how we can parse the JSON data from our example:
+To parse JSON data from a string, use the `parse()` method. This will take in a string containing JSON data and convert it into a TypeScript object.
 
-```TypeScript
-const jsonData = '{"name": "John", "age":25, "hobbies":["reading", "hiking"], "isDogOwner":true}';
-const parsedData = JSON.parse(jsonData);
+```
+let jsonString = '{"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}';
+let person = JSON.parse(jsonString);
 
-console.log(parsedData.name); // Output: John
-console.log(parsedData.hobbies[0]); // Output: reading
+console.log(person.name); // Output: John
+console.log(person.hobbies[0]); // Output: gaming
 ```
 
-We can also convert a TypeScript object into JSON using the `JSON.stringify()` method. For example:
+### 3. Stringifying JSON data
 
-```Typescript
-const person = {
-    name: "Jane",
-    age: 30,
-    hobbies: ["painting", "yoga"],
-    isDogOwner: false
-};
+To convert a TypeScript object into a JSON string, use the `stringify()` method. This will take in an object and convert it into a JSON string.
 
-console.log(JSON.stringify(person)); // Output: {"name":"Jane","age":30,"hobbies":["painting","yoga"],"isDogOwner":false}
+```
+let person = { name: "John", age: 30, hobbies: ["gaming", "reading"] };
+let jsonString = JSON.stringify(person);
+
+console.log(jsonString); // Output: {"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}
+```
+
+### 4. Manipulating JSON data
+
+You can also manipulate JSON data in TypeScript by accessing and modifying the properties of the converted object.
+
+```
+let jsonString = '{"language": "TypeScript", "version": "4.4.3"}';
+let info = JSON.parse(jsonString);
+info.version = "4.4.4"
+
+console.log(info); //Output: {"language": "TypeScript", "version": "4.4.4"}
 ```
 
 ## Deep Dive
 
-One of the main benefits of working with JSON is its flexibility. It's a lightweight and easily readable format, making it ideal for storing and exchanging data between different systems. Additionally, many programming languages, including TypeScript, have built-in support for working with JSON.
+When working with larger and complex JSON data, you can use interfaces to define the structure of the data and assign proper types to the properties. This will ensure that your data remains consistent and error-free when accessing or modifying it.
 
-In TypeScript, we can also define interfaces to represent the structure of JSON data. This allows us to type-check our code and ensure that the data we are receiving or sending is in the correct format.
+```
+interface User {
+    name: string;
+    age: number;
+    hobbies: string[];
+}
 
-Another handy feature of JSON is that it can be easily converted into other formats, such as CSV or XML, making it a powerful tool for data manipulation and analysis.
+let jsonString = '{"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}';
+let user: User = JSON.parse(jsonString);
+
+console.log(user.name); // Output: John
+console.log(user.age); // Output: 30
+user.hobbies.push("coding");
+
+console.log(user); // Output: {"name": "John", "age": 30, "hobbies": ["gaming", "reading", "coding"]}
+```
 
 ## See Also
 
-- [Introduction to TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Understanding JSON](https://www.json.org/json-en.html)
+- [Introduction to JSON](https://www.json.org/json-en.html)
+- [TypeScript official documentation on JSON](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#support-for-json-ts)
+- [Working with JSON in Node.js](https://www.sitepoint.com/python-json-serialize-decode-python/)

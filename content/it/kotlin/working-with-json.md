@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Operare con json"
-simple_title:         "Operare con json"
+title:                "Lavorare con json"
+html_title:           "Kotlin: Lavorare con json"
+simple_title:         "Lavorare con json"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Perché
+In un'era in cui i dati sono il fulcro di molte applicazioni, lavorare con JSON è diventato fondamentale. JSON (JavaScript Object Notation) è un formato leggero, flessibile e facilmente leggibile dai computer e dagli esseri umani, rendendolo uno dei formati più popolari per lo scambio di dati.
 
-Se sei un programmatore che lavora con applicazioni mobili o sviluppa per il web, molto probabilmente hai a che fare con il formato JSON. Questo formato è molto comune per lo scambio di dati tra server e client e può essere utile anche per archiviare dati in modo leggibile. Per questo motivo, è importante per i programmatori avere una buona comprensione di come lavorare con JSON utilizzando il linguaggio di programmazione Kotlin.
-
-## Come
-
-Per cominciare a lavorare con JSON in Kotlin, è necessario importare la libreria kotlinx.serialization. Questa libreria fornisce le funzionalità necessarie per convertire oggetti Kotlin in formato JSON e viceversa. Ecco un esempio di come convertire un oggetto Kotlin in JSON utilizzando questa libreria:
-
-```
-Kotlin
+## Come Fare
+Per iniziare a lavorare con JSON in Kotlin, è necessario importare la libreria "kotlinx-serialization-json" e creare una classe di dati che rappresenti la struttura del nostro JSON.
+```Kotlin
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
-val user = User("Mario", 25, "mario@example.com")
-val json = Json.stringify(User.serializer(), user)
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    // Serializza un oggetto User
+    val user = User("John", 30)
+    val json = Json.encodeToString(user)
+    println(json) // Output: {"name": "John", "age": 30}
+    
+    // Deserializza una stringa JSON in un oggetto User
+    val jsonString = """{"name": "Jane", "age": 25}"""
+    val parsedUser = Json.decodeFromString<User>(jsonString)
+    println(parsedUser.name) // Output: Jane
+}
 ```
-Nell'esempio sopra, abbiamo importato la libreria e creato un oggetto `user` di tipo `User` con alcuni valori. Successivamente, utilizziamo la funzione `Json.stringify` per convertire l'oggetto in formato JSON utilizzando il serializer di default per il tipo `User`.
+È anche possibile lavorare con oggetti JSON annidati, come nel seguente esempio:
+```Kotlin
+@Serializable
+data class Book(val title: String, val author: String)
 
-Ecco l'output ottenuto:
+@Serializable
+data class Library(val name: String, val books: List<Book>)
+
+fun main() {
+    // Serializza un oggetto Library
+    val library = Library("Biblioteca Nazionale", listOf(Book("Opere Complete", "William Shakespeare"), Book("I Malavoglia", "Giovanni Verga")))
+    val json = Json.encodeToString(library)
+    println(json) // Output: {"name": "Biblioteca Nazionale", "books": [{"title": "Opere Complete", "author": "William Shakespeare"}, {"title": "I Malavoglia", "author": "Giovanni Verga"}]}
+    
+    // Deserializza una stringa JSON in un oggetto Library
+    val jsonString = """{"name": "Biblioteca Nazionale", "books": [{"title": "Il Processo", "author": "Franz Kafka"}, {"title": "1984", "author": "George Orwell"}]}"""
+    val parsedLibrary = Json.decodeFromString<Library>(jsonString)
+    println(parsedLibrary.books[1].title) // Output: 1984
+}
 
 ```
-{"name":"Mario","age":25,"email":"mario@example.com"}
-```
 
-È anche possibile convertire un oggetto JSON in un oggetto Kotlin. Ecco un esempio:
+## Approfondimento
+Kotlin fornisce molte funzioni utili per lavorare con JSON, come ad esempio la possibilità di definire nomi di proprietà personalizzati o di ignorare alcune proprietà durante la deserializzazione. È inoltre importante tenere conto del fatto che JSON può rappresentare solo un certo numero di tipi di dati, come stringhe, numeri, booleani, null, array e oggetti, quindi la conversione può comportare la perdita di alcune informazioni.
 
-```
-Kotlin
-val jsonString = """{"name":"Mario","age":25,"email":"mario@example.com"}"""
-val user = Json.parse(User.serializer(), jsonString)
-``` 
-
-Nell'esempio sopra, abbiamo creato una stringa che rappresenta un oggetto JSON e utilizzato la funzione `Json.parse` per convertirla in un oggetto di tipo `User` utilizzando lo stesso serializer del precedente esempio.
-
-Oltre alla conversione degli oggetti, la libreria kotlinx.serialization offre anche funzioni per lavorare con stream di dati JSON e supporta la conversione di tipi di dati comuni come Int, Double e Boolean.
-
-## Deep Dive
-
-Se desideri approfondire ulteriormente il tuo sapere su JSON in Kotlin, puoi esplorare la documentazione ufficiale della libreria kotlinx.serialization. Lì troverai maggiori informazioni sugli schemi di serializzazione personalizzati, sui tipi di dati supportati e su come gestire casi più complessi come le liste e le classi con ereditarietà.
-
-Non dimenticare di utilizzare debug e test per assicurarti che le tue conversioni da e verso JSON siano corrette. Un semplice errore può causare problemi difficili da individuare in un secondo momento.
-
-## Vedi anche
-
-- [Documentazione ufficiale kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
-- [Gson: Libreria JSON per Kotlin](https://github.com/google/gson)
-- [Corso gratuito su Kotlin su Udacity](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011)
+## Vedi Anche
+- [Documentazione ufficiale di Kotlin per lavorare con JSON](https://kotlinlang.org/docs/serialization.html)
+- [Libreria kotlinx-serialization-json](https://github.com/Kotlin/kotlinx.serialization)
+- [Tutorial: Lavorare con JSON in Kotlin](https://www.raywenderlich.com/5485-kotlin-and-json-parsing)

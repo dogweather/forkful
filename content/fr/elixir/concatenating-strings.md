@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Assembler des chaînes de caractères"
-simple_title:         "Assembler des chaînes de caractères"
+title:                "Concaténer des chaînes de caractères"
+html_title:           "Elixir: Concaténer des chaînes de caractères"
+simple_title:         "Concaténer des chaînes de caractères"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
+Parfois en programmation, nous avons besoin de combiner plusieurs chaînes de caractères en une seule. Cela peut être utile pour créer des messages d'erreur dynamiques, des journaux de débogage ou simplement pour afficher du texte à l'utilisateur. Dans cet article, nous allons explorer comment concaténer des chaînes de caractères en utilisant Elixir.
 
-La concaténation de chaînes de caractères est une tâche courante en programmation et peut être utile dans de nombreux cas, tels que la création de messages personnalisés, la manipulation de données ou la construction de requêtes HTTP. Cela permet également de rendre votre code plus lisible en évitant les lignes excessivement longues.
-
-## Comment
-
-Voici quelques exemples de code en Elixir pour concaténer des chaînes de caractères :
+## Comment faire
+La méthode la plus simple pour concaténer des chaînes de caractères est d'utiliser l'opérateur `<>` entre les deux chaînes que vous souhaitez combiner. Par exemple:
 
 ```Elixir
-"Bonjour" <> " " <> "tout le monde" #=> "Bonjour tout le monde"
-"J'ai " <> "2" <> " pommes" #=> "J'ai 2 pommes"
-[1, 2, 3] |> Enum.join("-") #=> "1-2-3"
+"Il fait " <> "beau aujourd'hui!"
 ```
 
-Les opérateurs `<>` et `|>` peuvent être utilisés pour concaténer des chaînes de caractères de manière simple et efficace. Il est également possible d'utiliser la fonction `String.concat/2` en passant une liste de chaînes de caractères à concaténer.
+Cela retournera la chaîne "Il fait beau aujourd'hui!".
+
+Si vous avez plus de deux chaînes à concaténer, vous pouvez utiliser la fonction `String.join/2`. Elle prend en premier argument une liste de chaînes et en deuxième argument une chaîne de séparation. Par exemple:
 
 ```Elixir
-String.concat(["Bonjour", " ", "tout le monde"]) #=> "Bonjour tout le monde"
+String.join(["Bonjour", "le", "monde"], " ")
 ```
+
+Cela retournera la chaîne "Bonjour le monde".
 
 ## Plongée en profondeur
-
-Lorsque vous concaténez des chaînes de caractères, gardez à l'esprit que cela peut être une opération coûteuse en termes de performances, surtout si vous concaténez de grandes quantités de données. En effet, à chaque fois que vous concaténez une chaîne, une nouvelle chaîne est créée en mémoire, ce qui peut être gênant si vous répétez l'opération plusieurs fois.
-
-Pour éviter cela, il est recommandé d'utiliser des listes de chaînes de caractères plutôt que des chaînes à concaténer. Ensuite, vous pouvez utiliser la fonction `Enum.join/2` pour les fusionner en une seule chaîne. Par exemple :
+En arrière-plan, l'opérateur `<>` et la fonction `String.join/2` utilisent la fonction `String.concat/2`. Elle prend également une liste de chaînes en premier argument, mais au lieu de spécifier une chaîne de séparation, elle les concatène toutes ensemble. Par exemple:
 
 ```Elixir
-"My " <> "real" <> " " <> "name" #=> "My real name"
-["My", "real", "name"] |> Enum.join(" ") #=> "My real name"
+String.concat(["Le", "beau", "temps"])
 ```
 
-## Voir aussi
+Cela retournera la chaîne "Lebeautemps". Il est important de noter que cette fonction n'insère pas d'espace entre les chaînes.
 
-- [Documentation Elixir sur la concaténation de chaînes](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#string-interpolation)
-- [Article sur les bonnes pratiques de performance en Elixir](https://codeburst.io/performance-tips-in-elixir-6f52b748ff35)
-- [Vidéo explicative sur la concaténation en Elixir](https://www.youtube.com/watch?v=I7Yd2ROufQo&t=304s)
+De plus, toutes les méthodes mentionnées dans cet article ne modifient pas les chaînes d'origine, mais retournent une nouvelle chaîne. Si vous souhaitez modifier une chaîne existante, vous pouvez utiliser la fonction `String.replace/4` en utilisant une expression régulière pour déterminer l'emplacement où vous voulez insérer une nouvelle chaîne.
+
+## Voir aussi
+- [La documentation sur les chaînes de caractères en Elixir](https://hexdocs.pm/elixir/String.html)
+- [Un guide pratique pour les opérateurs en Elixir](https://elixir-lang.org/getting-started/operators.html)
+- [Une introduction à l'utilisation des expressions régulières en Elixir](https://medium.com/elixirlabs/introduction-to-regular-expressions-in-elixir-eca121f08487)

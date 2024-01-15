@@ -1,5 +1,6 @@
 ---
-title:                "Haskell recipe: Sending an http request with basic authentication"
+title:                "Sending an http request with basic authentication"
+html_title:           "Haskell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,74 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Sending HTTP requests with basic authentication is an essential skill for any Haskell programmer who wants to interact with web APIs and services that require user authentication. It allows you to securely access protected resources and perform operations on behalf of a user.
+
+Sending an HTTP request with basic authentication allows you to securely access protected resources on a server. It is commonly used in applications that require user authentication, such as web services or APIs.
 
 ## How To
-To send an HTTP request with basic authentication in Haskell, we will be using the popular HTTP client library called `http-conduit`. First, we need to import the necessary modules:
+
+To send an HTTP request with basic authentication in Haskell, you will need to use the `http-client` and `http-client-tls` packages. First, import them in your code:
 
 ```Haskell
-import Network.HTTP.Conduit
-import Network.HTTP.Types
+import Network.HTTP.Client 
 import Network.HTTP.Client.TLS
 ```
 
-Next, we need to create a `Request` object with the URL of the resource we want to access:
+Next, create a `Manager` object to handle the HTTP connections:
 
 ```Haskell
-req <- parseRequest "https://api.example.com/user"
+manager :: IO Manager 
+manager = newManager tlsManagerSettings
 ```
 
-We also need to specify the HTTP method, headers, and body of the request. In this case, we will be using the `GET` method and setting the `Authorization` header with the username and password in the format `username:password`. We will use the `setHeaders` function to add the `Authorization` header and the `setQueryString` function to add any query parameters:
+Then, construct a `Request` object with the URL of the resource you want to access:
 
 ```Haskell
-let req' = setRequestMethod "GET" req
-         & setHeaders [("Authorization", "john:secret")]
-         & setQueryString [("sort", Just "date"), ("limit", Just "10")]
+req :: Request 
+req = parseRequest_ "https://example.com/protected/resource"
 ```
 
-Now, we need to make the request using the `httpLbs` function which takes the `Request` object as an argument and returns a `Response` object:
+Now, add the basic authentication credentials to the request:
 
 ```Haskell
-res <- httpLbs req' manager
+let username = "myusername"
+let password = "mypassword"
+let req' = applyBasicAuth username password req
 ```
 
-Note that we are using a `manager` object which manages the connection pool for multiple HTTP requests.
-
-Finally, we can get the response body using the `responseBody` function and use it as needed:
+Finally, use the `httpLbs` function to send the request and get the response:
 
 ```Haskell
-let resBody = responseBody res
--- do something with the response body
+response <- httpLbs req' manager
 ```
 
-Here's a complete example of sending an HTTP request with basic authentication using `http-conduit`:
+You can access the response body and status code using the `responseBody` and `responseStatus` functions respectively.
 
-```Haskell
-{-# LANGUAGE OverloadedStrings #-}
-import Network.HTTP.Conduit
-import Network.HTTP.Types
-import Network.HTTP.Client.TLS
+Sample output:
 
-main :: IO ()
-main = do
-    manager <- newManager tlsManagerSettings
-    req <- parseRequest "https://api.example.com/user"
-    let req' = setRequestMethod "GET" req
-             & setHeaders [("Authorization", "john:secret")]
-             & setQueryString [("sort", Just "date"), ("limit", Just "10")]
-    res <- httpLbs req' manager
-    let resBody = responseBody res
-    putStrLn $ show resBody
 ```
-
-The output of this code would be the JSON response from the API endpoint.
+"Hello, you have successfully accessed the protected resource!"
+200
+```
 
 ## Deep Dive
-Now that we've seen how to send an HTTP request with basic authentication in Haskell, let's take a deeper look at the `setHeaders` function. It takes a list of tuples in the format `(headerName, headerValue)` and adds these headers to the request. In our example, we set the `Authorization` header with the username and password in the format `username:password`, as required by basic authentication.
 
-While sending sensitive information like passwords over insecure HTTP connections is not recommended, basic authentication can be used with HTTPS to ensure secure transmission of credentials.
+Under the hood, the `applyBasicAuth` function adds an `Authorization` header to the request with the format `Basic <encoded_credentials>`. The credentials are encoded using the Base64 encoding scheme, which provides a simple form of encryption.
+
+It is important to note that basic authentication is considered to be one of the least secure methods of authentication, as the credentials are sent in plain text. Therefore, it is recommended to use HTTPS along with basic authentication to ensure secure transmission of the credentials.
 
 ## See Also
-- [Guide to HTTP authentication in Haskell](https://haskell-lang.org/library/http-client#a-simple-http-client)
-- [Documentation for http-conduit library](http://hackage.haskell.org/package/http-conduit)
-- [HTTP client tutorial for Haskell](https://github.com/snoyberg/http-client-tutorial)
+
+- [HTTP-Client Package Documentation](https://hackage.haskell.org/package/http-client)
+- [HTTP-Client-TLS Package Documentation](https://hackage.haskell.org/package/http-client-tls)
+- [HTTP Authentication Protocols](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

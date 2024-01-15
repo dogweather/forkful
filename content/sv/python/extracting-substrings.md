@@ -1,5 +1,6 @@
 ---
-title:                "Python: Extrahera substrängar"
+title:                "Extrahera substrängar"
+html_title:           "Python: Extrahera substrängar"
 simple_title:         "Extrahera substrängar"
 programming_language: "Python"
 category:             "Python"
@@ -11,37 +12,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Är du nyfiken på hur man kan hämta ut delsträngar från en sträng i Python? Då har du kommit rätt! Läs vidare för att lära dig mer om denna användbara kodteknik.
+Att extrahera substrängar (delsträngar) är en användbar teknik inom programmering för att få ut specifika delar av en längre sträng eller text. Det gör det möjligt att bearbeta och hantera data på ett mer effektivt sätt.
 
-## Hur man gör det
+## Så här
 
-För att hämta ut delsträngar från en sträng i Python kan vi använda funktionen `substring()`. Se exemplet nedan för att se hur den kan användas i praktiken:
+För att extrahera en substräng i Python, används en kombination av inbyggda funktioner och indexering. Här är ett exempel på hur man kan extrahera den tredje och fjärde bokstaven i en sträng:
 
 ```Python
-# Skapa en sträng
-str = "Detta är en sträng"
+my_string = "Hej, jag heter Python"
+substr = my_string[2:4]
+print(substr)
+```
+Output: "j, "
 
-# Hämta en del av strängen från index 8 till slutet av strängen
-delstr = str[8:]
+Notera att indexering i Python startar på noll, så det andra argumentet i `my_string[2:4]` är egentligen den fjärde bokstaven i strängen.
 
-# Skriv ut delsträngen
-print(delstr)
+Det är också möjligt att extrahera en substräng med hjälp av negativ indexering. Till exempel, om vi bara vill ha de två sista bokstäverna i `my_string`:
 
-# Output: en sträng
+```Python
+substr = my_string[-2:]
+print(substr)
 ```
 
-Som du kan se är det enkelt och smidigt att hämta delsträngar från en sträng i Python. Genom att använda index kan du välja vilka delar av strängen du vill hämta ut.
+Output: "on"
+
+För att extrahera en del av en sträng baserat på ett visst villkor, som till exempel att extrahera alla siffror från en sträng, kan man använda sig av en loop tillsammans med inbyggda metoden `isdigit()`, som returnerar True om tecknet är en siffra. Här är ett exempel på hur man kan genomföra detta:
+
+```Python
+my_string = "1 hem, 2 barn, 3 äpplen, 4 bananer"
+numbers = ""
+for char in my_string:
+    if char.isdigit():
+        numbers += char
+print(numbers)
+```
+
+Output: "1234"
 
 ## Djupdykning
 
-För att förstå hur `substring()`-funktionen fungerar i Python, behöver vi först förstå konceptet med index. I Python börjar index alltid på 0, vilket betyder att den första karaktären i en sträng har index 0, den andra har index 1 och så vidare.
+En viktig sak att komma ihåg när man extraherar substrängar är att de returneras som nya strängar och originalsträngen förblir oförändrad. Om man vill ändra på en sträng, måste man använda metoden `replace()`.
 
-När vi använder `str[start:end]` i en sträng, hämtar vi en delsträng från den givna startpositionen till slutet av strängen eller till den givna slutpositionen. Om end inte är specificerat kommer delsträngen att inkludera alla karaktärer från och med startpositionen till slutet av strängen.
+En annan användbar funktion för att extrahera substrängar är `find()`, som hittar positionen för en viss delsträng i en given sträng. Om substrängen inte finns, returnerar funktionen -1. Här är ett exempel:
 
-Vi kan också använda negativa index för att hämta delsträngar. Om vi använder `str[start:-end]` kommer delsträngen att inkludera alla karaktärer från startpositionen till slutet av strängen minus de sista n karaktärerna, där n är värdet av end.
+```Python
+my_string = "Hej, jag heter Python"
+index = my_string.find("heter")
+print(index)
+```
+
+Output: 12
+
+Man kan också använda `find()` för att hitta alla förekomster av en delsträng och returnera en lista över deras indexpositioner:
+
+```Python
+my_string = "1 hem, 2 barn, 3 äpplen, 4 bananer"
+positions = []
+index = 0
+while index < len(my_string):
+    index = my_string.find("en", index)
+    if index == -1:
+        break
+    positions.append(index)
+    index += 1
+
+print(positions)
+```
+
+Output: [2, 11, 16, 31]
 
 ## Se även
 
-- [String Methods in Python](https://www.programiz.com/python-programming/methods/string)
-- [How to Extract Substrings in Python](https://www.datacamp.com/community/tutorials/python-string-methods)
-- [Python String Methods Cheat Sheet](https://www.pythonforbeginners.com/cheatsheet/python-string-methods-cheat-sheet)
+- [String Methods in Python (official documentation)](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Python String Slicing (GeeksforGeeks article)](https://www.geeksforgeeks.org/python-string-slicing/)
+- [Python String manipulation – replace, join, reverse, find, lower, upper (RealPython article)](https://realpython.com/python-string-manipulation/)

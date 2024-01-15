@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 현재 날짜 받아오기"
-simple_title:         "현재 날짜 받아오기"
+title:                "현재 날짜 가져오기"
+html_title:           "Kotlin: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -9,46 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜: 현재 날짜를 구하는 것에 참여할 이유
+## 왜
 
-현재 날짜를 구하는 것은 많은 프로그래밍 과제에서 필수적인 요소입니다. 예를 들어, 프로그램이 지정된 일정 날짜에 실행되도록하는 기능이 필요할 수 있습니다. 또는 현재 날짜를 표시하는 기능이 필요한 경우도 있습니다. 따라서 Kotlin에서 현재 날짜를 가져오는 방법을 배우는 것은 중요합니다.
+현재 날짜를 얻는 과정에 참여하는 이유는 매우 간단합니다. 날짜는 우리 일상 생활에서 매우 중요한 역할을 하며, 많은 프로그래밍 작업에서도 필수적으로 사용됩니다. 따라서 개발자들은 현재 날짜를 얻는 방법을 알고 있어야 합니다.
 
-## Kotlin에서 현재 날짜 가져오기
+## 어떻게
+
+현재 날짜를 얻는 방법은 Kotlin에서 매우 간단합니다. 다음 예제 코드를 참고해보세요.
 
 ```Kotlin
-import java.time.LocalDate
-
-// 현재 날짜 가져오기
 val date = LocalDate.now()
-
-// YYYY-MM-DD 형식으로 날짜 출력
-println("오늘의 날짜: $date")
-
-// 날짜를 요일과 함께 출력하기
-println("오늘의 날짜와 요일: ${date.dayOfWeek}, $date")
+println(date)
+```
+출력 결과:
+```
+2019-10-10
 ```
 
-위의 코드는 Kotlin에서 현재 날짜를 가져오는 방법을 보여줍니다. `LocalDate` 클래스는 Kotlin 1.8 이상에서 사용할 수 있는 Java 8의 새로운 날짜 및 시간 API입니다. `now()` 메소드를 사용하여 현재 날짜를 가져올 수 있습니다. 그리고 `println()` 함수를 사용하여 날짜를 출력할 수 있습니다.
+위의 코드를 보면 `LocalDate` 클래스의 `now()` 메서드를 호출하여 현재 날짜를 얻어서 변수에 저장한 뒤, `println` 함수를 사용하여 출력하고 있습니다. 즉, `LocalDate` 클래스를 사용하면 현재 날짜를 쉽게 얻을 수 있습니다.
 
-출력 예시:
+## 딥 다이브
 
+Kotlin에서 현재 날짜를 다루는 `LocalDate` 클래스는 `java.time` 패키지에서 제공하는 표준 라이브러리입니다. 이 클래스는 오늘 날짜를 쉽게 얻을 수는 있지만, 다른 날짜나 시간 정보를 다루는 것도 가능합니다. 예를 들어, 다음과 같은 코드를 이용하면 현재 시간 정보도 얻을 수 있습니다.
+
+```Kotlin
+val dateTime = LocalDateTime.now()
+println(dateTime)
 ```
-오늘의 날짜: 2021-05-26
-오늘의 날짜와 요일: WEDNESDAY, 2021-05-26
+
+출력 결과:
+```
+2019-10-10T16:22:20.056
 ```
 
-## 깊이 파고들기
+또한 여러 가지 날짜/시간 포맷으로 출력하는 것도 가능합니다. `DateTimeFormatter` 클래스를 사용하여 원하는 포맷의 문자열로 변환할 수 있습니다. 예를 들어, 다음 코드는 현재 날짜를 `yyyy년 MM월 dd일` 포맷으로 출력합니다.
 
-Kotlin에서 현재 날짜를 가져오는 방법은 Java 8의 새로운 날짜 및 시간 API를 사용하여 단순하게 처리할 수 있습니다. 하지만 더 깊이 파고들어보면 `LocalDate` 클래스에는 날짜를 다루는 다양한 메소드들이 있습니다. 예를 들어, `plusDays()` 메소드를 사용하여 일 수를 더하거나 빼는 등의 연산이 가능합니다. 또한 `isBefore()` 나 `isAfter()`와 같은 메소드를 사용하여 날짜를 비교할 수도 있습니다.
+```Kotlin
+val formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일")
+val formattedDate = formatter.format(date)
+println(formattedDate)
+```
 
-## 관련 정보
+출력 결과:
+```
+2019년 10월 10일
+```
 
-마지막으로, Kotlin에서 현재 날짜를 가져오는 방법에 대해 학습하기 위해 더 많은 정보를 원하시는 분들을 위해 관련 링크를 제공합니다.
+이외에도 `LocalDate` 클래스는 날짜의 연산이나 비교도 가능하며, 더 많은 기능을 제공합니다. 자세한 내용은 [공식 문서](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)를 참고하시기 바랍니다.
 
-* [Kotlin Java 8에서 날짜 및 시간 다루기](https://kotlinlang.org/docs/java-interop.html#java-8-date-time-handling)
-* [Java 8 날짜 및 시간 API 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-* [Kotlin LocalDate 클래스 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
+## 관련 링크
+
+- [Kotlin 문서 - LocalDate Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
+- [Java 문서 - LocalDate Class](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Kotlin Tutorial - Date and Time](https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm)
 
 ## 참고
 
-이 글은 Kotlin 패스트캠퍼스에서 진행한 [Kotlin 101](https://fastcampus.co.kr/dev_online_kot/) 강의를 참고하여 작성되었습니다.
+이제 Kotlin에서 현재 날짜를 얻는 방법을 알게 되었으니, 여러분의 프로그램에 적용해보세요!

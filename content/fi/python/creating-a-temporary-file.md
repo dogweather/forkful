@@ -1,6 +1,7 @@
 ---
-title:                "Python: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Python: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi luoda väliaikainen tiedosto?
+## Miksi
 
-Väliaikaisia tiedostoja käytetään useisiin tarkoituksiin Python-ohjelmoinnissa. Ne voivat auttaa tallentamaan väliaikaisia tietoja, jotka eivät ole tarpeen pitkäaikaiseen tallennukseen tai ne voivat auttaa suorittamaan tiettyjä tehtäviä, kuten tiedostojen jakamista tai päivittämistä, ohjelman suorituksen aikana.
+Temporary-tiedostojen luominen on hyödyllinen tapa käsitellä tiedostoja väliaikaisesti ilman, että niitä tarvitsee tallentaa pysyvästi tietokoneelle. Tämä on erityisen hyödyllistä silloin, kun työskentelet tiedostojen kanssa, jotka eivät tarvitse pysyvää tallennusta tai jotka eivät ole tärkeitä pitkäaikaisessa käytössä.
 
-# Kuinka tehdä se?
-
-Väliaikaisen tiedoston luominen Pythonissa on helppoa ja nopeaa. Käytämme 'tempfile' moduulia tämän tarkoitukseen. Voit aloittaa tuomalla tämän moduulin käyttäen seuraavaa koodia:
+## Miten
 
 ```Python
 import tempfile
+
+# Luodaan väliaikainen tiedosto
+with tempfile.TemporaryFile() as temp:
+    # Kirjoitetaan tiedostoon tietoa
+    temp.write(b"Tervetuloa lukemaan Python-ohjelmoijan artikkelia.")
+
+    # Siirrytään tiedoston alkuun
+    temp.seek(0)
+
+    # Luetaan tiedoston sisältö ja tulostetaan se
+    print(temp.read().decode('UTF-8'))
+
+# Tiedosto on poistettu automaattisesti, kun with-lauseke päättyy
 ```
 
-Arvailun välttämiseksi voimme määrittää väliaikaisen tiedoston nimen ja sijainnin käyttäen ```tempfile.NamedTemporaryFile()``` -funktiota. Tämä luo väliaikaisen tiedoston ja palauttaa sen tiedostokahvan, jota voimme käyttää työskennellessämme tiedoston kanssa.
+Tulostus: Tervetuloa lukemaan Python-ohjelmoijan artikkelia.
 
-```Python
-temp_file = tempfile.NamedTemporaryFile()
-print(temp_file.name)
-```
+## Syventyvä tarkastelu
 
-Tämän koodin tulostuksena pitäisi näkyä väliaikaisen tiedoston nimi, esimerkiksi "/tmp/tmpxyz45tw".
+Pythonin `tempfile`-moduulissa on useita erilaisia toimintoja väliaikaisten tiedostojen luomiseen ja hallintaan. `TemporaryFile`-funktion lisäksi voit käyttää myös `NamedTemporaryFile`, joka antaa tiedostolle haluamasi nimen, tai `SpooledTemporaryFile`, joka säilyttää tiedoston sisällön muistissa ennen kuin se tallennetaan. Voit myös määrittää, haluatko tiedoston luotavan teksti- tai tavumerkkijonona. Lisätietoja löytyy Pythonin virallisesta dokumentaatiosta.
 
-# Syventävä tarkastelu
+## Katso myös
 
-Tempfile-moduuli tarjoaa myös muita vaihtoehtoja väliaikaisten tiedostojen luomiseen. Voimme esimerkiksi määrittää tiedoston nimen ja sijainnin itse käyttäen ```tempfile.TemporaryDirectory()``` -funktiota.
-
-```Python
-temp_dir = tempfile.TemporaryDirectory()
-print(temp_dir.name)
-```
-
-Tämä koodi tulostaa hakemiston nimen, joka on luotu väliaikaisia tiedostoja varten, esimerkiksi "/tmp/tmpxyz45tw".
-
-Voimme myös asettaa väliaikaisen tiedoston poistettavaksi automaattisesti ohjelman suorituksen päätyttyä käyttämällä ```with``` -lauseketta.
-
-```Python
-with tempfile.TemporaryDirectory() as temp_dir:
-    print(temp_dir.name)
-```
-
-Tämä varmistaa, että väliaikainen tiedosto poistetaan ohjelman suorituksen päätyttyä, vähentäen tarvetta huolehtia tiedoston poistamisesta itse.
-
-# Katso myös
-
-- [Tempfile-moduulin dokumentaatio](https://docs.python.org/3/library/tempfile.html)
-- [Python-tiedostojen hallinta](https://realpython.com/python-file-management/)
-- [Tietoa Pythonista](https://www.python.org/)
+- [Pythonin `tempfile`-moduulin virallinen dokumentaatio](https://docs.python.org/3/library/tempfile.html)
+- [Pythonin `with`-lauseke](https://docs.python.org/3/reference/compound_stmts.html#with)

@@ -1,6 +1,7 @@
 ---
-title:                "Elm: עבודה עם קבצי csv"
-simple_title:         "עבודה עם קבצי csv"
+title:                "עבודה עם קובץ csv"
+html_title:           "Elm: עבודה עם קובץ csv"
+simple_title:         "עבודה עם קובץ csv"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,52 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-למה לעסוק בכתיבת קוד עם CSV? קבצי CSV הם דרך נפלאה לאחסון נתונים טבלאיים בפורמט פשוט וקריא. המרת הנתונים ל-CSV והחזרתם ממנה היא חלק חשוב ביישומי ניתוח נתונים ותכנות סטטיסטיים, ובכתיבת קוד בכלל. באמצעות כתיבת קוד עם אלם, המפתחים מושכים עבור הקלות שחברות נתונים מאגרי נתונים כמו SQL ורירית פילד, והשתמשו בדטה פריים של האלם להגנה מבעיות של מבני נתונים אלה הניתנות לשינוי בזמן.
+CSV הוא פורמט תיק מידע נפוץ שמשמש לאחסון והעברת נתונים בין יישומים שונים. בעזרת האפשרויות החדשות של Elm לעזור לנו לעבוד עם קבצי CSV בקלות ויעילות רבה, ולכן ניתן להסיק כי עבודה עם CSV עם Elm היא עוד פרויקט מאוד מועיל עבור מתכנתים.
 
-## איך לעשות
+## איך לעשות זאת
 
-תחילה, נדרש להתקין את חבילת CSV של אלם באמצעות פקד log וקומנדת התקנה. לאחר מכן, ניתן ליצור מבנה לנתונים ולהמיר אותו לפורמט CSV על ידי שימוש בפונקציה encode.
+כדי להתחיל לעבוד עם CSV ב Elm, נצטרך כמה דברים כמו חבילת csv וחבילת http אך אחרי הטעינה נוכל להתחיל לקרוא קבצי CSV ולייצא אותם למבני נתונים שונים כגון רשימות או רשימות משונות.
 
 ```Elm
-import Csv.Encode as Encode
+import Html
+import Csv
+import Http
 
--- מבנה לנתונים
-type alias Person =
-  { name : String
-  , age : Int
-  , city : String
-  }
+type alias User = { name : String, age : Int }  -- יצירת מבנה הנתונים למשתמש
 
--- רשימת אנשים
-people : List Person
-people =
-  [ { name = "דניאל", age = 32, city = "תל אביב" }
-  , { name = "נעמה", age = 25, city = "ירושלים" }
-  , { name = "משה", age = 42, city = "חיפה" }
-  ]
+readUsersResponse : Http.Response (List Csv.Decoded.Csv) -> Html.Html msg
+readUsersResponse response =  -- קבלת נתונים משרת HTTP והמרתם למבנה נתונים מתאים
+    case response of
+        Http.BadUrl err ->
+            Html.text err
+        Http.Timeout ->
+            Html.text "Request timed out"
+        Http.NetworkError ->
+            Html.text "Connection error"
+        Http.BadStatus err firstHeaders ->
+            Html.p [] [Html.text "Got bad response: ", Html.text <| toString err]
+        Http.GoodStatus _ _ ->
+            case responseHeaders of
+                Nothing ->
+                    Html.text "No content-length specified"
+                Just csvHeaders ->
+                    case Http.stringHeader "content-type" csvHeaders of
+                        Nothing ->
+                            Html.text "No content-type specified"
+                        Just maybeCsv ->
+                            decodeUsers (Csv.decode (List.head maybeCsv)) -- המרה של נתוני csv לעזרת התכנית הבאה
+                                |> renderUsers
 
--- ממיר מבנה לנתונים לפורמט CSV
-peopleCsv : Encode.Value
-peopleCsv =
-  Encode.list
-    [ Encode.object
-        [ ("Name", Encode.string << .name)
-        , ("Age", Encode.int << .age)
-        , ("City", Encode.string << .city)
-        ]
-    ]
-    people
+decodeUsers : Csv.Decoded.Decoder List Csv.Deserialize.Errors -> List User
+decodeUsers csvDecoder =
+    List.map (\csvResult -> -- עבור כל שורת שיכון, הפעל את Csv.Decode.decode כדי לבדוק את הנתונים של המשתמש
+        case Csv.Decode.decode <| CsvDecode.list Csc.Decode.string csvResult of
+            Ok [name, age] ->
+                { name = name, age = String.toInt age }
+                    |> Maybe.map User
+                    |> Maybe.withDefault { name = "", age = Nothing }
+            _ ->
+                { name = "", age = Nothing }
+        )
+        <| Maybe.withDefault []
 
--- פלט מרומז של המבונה
-"[\"Name\", \"Age\", \"City\"],[\"דניאל\", 32, \"תל אביב\"], [\"נעמה\", 25, \"ירושלים\"], [\"משה\", 42, \"חיפה\"]"
+renderUsers : List User -> List Html.Html msg
+renderUsers users = -- יצירת רשימת להציג את נתוני המשתמש לעזרת HTML
+    List.map
+        (\user ->
+            Html.ul []
+                [Html.li [] [Html.text <| "Name: " ++ user.name]
+                ,Html.li [] [Html.text <| "Age: " ++ Maybe.withDefault "N/A" (Maybe.map toString user.age)]
+                ]
+        )
+        users
 ```
 
-כעת, ניתן להשתמש בפונקציות של חבילת CSV כדי לקרוא קובץ CSV ולהמיר אותו למבנה נתונים מתאים.
+## חפירה עמוקה
 
-```Elm
-import Csv.Decode as Decode
-
--- חישוב גיל ממוצע עבור קובץ CSV של אנשים
-averageAge : Result String Float
-averageAge =
-  Decode.at [0] Decode.string -- הפעולה ת
+בעזרת חבילת Csv

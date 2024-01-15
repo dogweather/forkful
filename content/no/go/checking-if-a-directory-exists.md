@@ -1,5 +1,6 @@
 ---
-title:                "Go: Sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Go: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Go"
 category:             "Go"
@@ -9,69 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Når vi utvikler programmer i Go, er det viktig å sørge for at koden vår er pålitelig og feilfri. En vanlig feil som kan oppstå er å prøve å aksessere en mappe som ikke eksisterer. Derfor er det viktig å kunne sjekke om en mappe faktisk eksisterer før man prøver å aksessere den.
+Å sjekke om en mappe eksisterer er en viktig del av programmering. Dette lar deg sikre at koden din fungerer som forventet og at du unngår feil når du prøver å få tilgang til ikke-eksisterende mapper.
 
-# Hvordan
+## Hvordan
 
-For å sjekke om en mappe eksisterer, bruker vi funksjonen `os.Stat()` og sjekker om den returnerer en feil eller ikke. Hvis det ikke er noen feil, betyr det at mappen eksisterer.
-
-```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    // Sjekker om mappen "test" eksisterer
-    _, err := os.Stat("test")
-
-    if err == nil {
-        fmt.Println("Mappen eksisterer")
-    } else {
-        fmt.Println("Mappen eksisterer ikke")
-    }
-}
-```
-
-Output:
-```
-Mappen eksisterer ikke 
-```
-
-# Dypdykk
-
-Vi kan også bruke `os.IsExist()` og `os.IsNotExist()` funksjonene for å sjekke nærmere på resultatet av `os.Stat()`. Disse funksjonene returnerer henholdsvis `true` og `false` basert på mappens eksistensstatus.
+Sjekke om en mappe eksisterer i Go er en enkel prosess. Du kan bruke funksjonen *os.Stat()* som returnerer informasjon om en gitt fil eller mappe. Hvis mappen ikke eksisterer, vil denne funksjonen returnere en feil.
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"os"
+	"fmt"
 )
 
 func main() {
-    // Sjekker om mappen "test" eksisterer
-    info, err := os.Stat("test")
+	fmt.Println("Sjekker eksistensen av en mappe...")
 
-    if os.IsExist(err) {
-        fmt.Printf("Filinformasjon: %+v", info)
-    } else if os.IsNotExist(err) {
-        fmt.Println("Mappen eksisterer ikke")
-    }
+	// Bytt ut "navn_på_mappen" med navnet på mappen du vil sjekke
+	if _, err := os.Stat("navn_på_mappen"); err != nil {
+		if os.IsNotExist(err) {
+			fmt.Println("Mappen finnes ikke.")
+		} else {
+			fmt.Println("En annen feil oppstod.")
+		}
+	} else {
+		fmt.Println("Mappen eksisterer.")
+	}
 }
 ```
 
-Output:
-```
-Mappen eksisterer ikke
-```
+For eksempel, hvis vi kjører dette programmet og mapper eksisterer, vil output bli: "Mappen eksisterer." Hvis mappen ikke eksisterer, vil output bli: "Mappen finnes ikke." Hvis en annen feil oppstår, vil output bli: "En annen feil oppstod."
 
-# Se også
+## Dypdykk
 
-- [Offisiell dokumentasjon for `os.Stat()`](https://golang.org/pkg/os/#Stat)
-- [Golang tutorial: Sjekke om en fil eller mappe eksisterer](https://www.golangprograms.com/golang-program-to-check-if-a-file-exists-in-a-location.html)
+I tillegg til *os.Stat()* funksjonen, kan du også bruke *os.IsNotExist()* og *os.IsExist()* for å sjekke spesifikke typer feil. Disse funksjonene tar inn en feil som parameter og returnerer en bool-verdi som indikerer om feilen er relatert til mappen som ikke eksisterer eller allerede eksisterer.
+
+Det er også verdt å merke seg at *os.Stat()* vil også returnere informasjon om alle typer filer, ikke bare mapper. Derfor kan det være lurt å inkludere en ekstra sjekk for å sikre at filen du sjekker er en mappe. Dette kan gjøres ved å bruke *os.IsDir()* som vil returnere en bool-verdi basert på om den gitt banen er en mappe eller ikke.
+
+## Se også
+
+- [Dokumentasjon for os-pakken i Go](https://golang.org/pkg/os/)
+- [Go Tutorial - Working with files and directories](https://www.callicoder.com/golang-work-with-files/)
+- [Managing Files and Directories in Go](https://blog.learngoprogramming.com/how-to-manage-files-and-directories-in-go-bfe7dd89a4f7)

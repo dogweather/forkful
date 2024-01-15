@@ -1,5 +1,6 @@
 ---
-title:                "Python: 基本認証を使用したhttpリクエストの送信"
+title:                "基本認証を使用したhttpリクエストの送信"
+html_title:           "Python: 基本認証を使用したhttpリクエストの送信"
 simple_title:         "基本認証を使用したhttpリクエストの送信"
 programming_language: "Python"
 category:             "Python"
@@ -9,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストを送信する必要があるのか
+## Why
 
-HTTPリクエストを送信することで、インターネット上のさまざまな情報やAPIにアクセスすることができます。これにより、ウェブサイトやアプリケーションの機能を拡張することができるだけでなく、データの取得や更新など、さまざまなタスクを実行することができます。
+HTTP requests with basic authentication allow for secure communication between a client (such as a web browser) and a server. This is especially important when sensitive information, such as login credentials, needs to be transmitted.
 
-## 方法
+## How To
 
-Pythonを使用して、HTTPリクエストを送信する方法をご紹介します。まず、requestsライブラリをインポートします。
+To send an HTTP request with basic authentication in Python, we first need to import the `requests` library. Then, we can use the `requests.get` method with the `auth` parameter set to a tuple containing the username and password.
 
 ```Python
 import requests
-```
 
-次に、リクエストのURLと認証情報を設定します。基本認証を行う場合は、usernameとpasswordを設定する必要があります。
-
-```Python
-url = "https://example.com/api"
+url = "https://www.example.com"
 username = "user123"
-password = "password123"
-```
+password = "secret"
 
-そして、requestsライブラリのgetメソッドを使用して、リクエストを送信します。
-
-```Python
 response = requests.get(url, auth=(username, password))
+print(response)
 ```
 
-最後に、响应を確認し、必要な処理を行います。
+This will return a `Response` object, which contains information about the request and response, including the status code and any headers.
 
-```Python
-print(response.text)
-```
+## Deep Dive
 
-上記の例では、APIから返されたデータをコンソールに表示していますが、実際にはそれに応じた処理を行うことができます。
+When using basic authentication, the username and password are encoded in the request header. This encoding is called "Basic authentication" and is not considered secure, as the credentials can be easily decoded. Therefore, it is recommended to use more advanced authentication methods, such as OAuth, for sensitive information.
 
-## ディープダイブ
-
-基本認証を使用したHTTPリクエストを送信する場合、サーバーとのセッションを確立する際に、ユーザーが指定したユーザー名とパスワードが必要になります。この時、ユーザー名とパスワードはBase64エンコードされた形式でリクエストヘッダーに含まれるため、セキュリティ上の理由からHTTPSを使用することが推奨されています。
-
-また、基本認証以外にも、トークンを使用した認証やOAuth認証など、さまざまな認証方法がありますので、必要に応じて適切な方法を選択する必要があります。
-
-## さらに読む
-
-- [Requestsライブラリ公式ドキュメント](https://requests.readthedocs.io/en/latest/)
-- [Base64エンコードについて](https://ja.wikipedia.org/wiki/Base64)
-- [HTTP Basic認証について](https://tools.ietf.org/html/rfc7617)
+## See Also
+- [Requests library documentation](https://requests.readthedocs.io/en/master/)
+- [HTTP Basic authentication explanation](https://www.httpwatch.com/httpgallery/authentication/#basicauth)
+- [OAuth authentication in Python](https://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html)

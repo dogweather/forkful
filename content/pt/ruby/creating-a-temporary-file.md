@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Criando um arquivo temporário"
+title:                "Criando um arquivo temporário"
+html_title:           "Ruby: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,48 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que criamos arquivos temporários no Ruby
+## Por que
 
-Criar arquivos temporários pode ser uma tarefa muito útil quando estamos trabalhando com dados temporários que não são necessários por muito tempo. Alguns cenários podem incluir a geração de arquivos de log, armazenamento de dados temporários durante a execução de um programa ou testes unitários.
+Criar arquivos temporários é uma prática comum em muitas linguagens de programação, incluindo Ruby. Isso permite que os programadores criem arquivos temporários durante a execução do programa, que serão automaticamente excluídos quando o programa terminar. Isso pode ser útil para armazenar dados temporários, realizar operações de forma mais eficiente ou garantir que o sistema não seja sobrecarregado com arquivos desnecessários.
 
-##Como fazer
+## Como fazer
 
-Existem várias maneiras de criar arquivos temporários em Ruby, mas a maneira mais comum é usando a classe Tempfile. Vamos dar uma olhada em um exemplo simples de como criar um arquivo temporário e escrever algumas linhas de texto nele:
+Criar um arquivo temporário em Ruby é bastante simples. Primeiramente, precisamos importar a biblioteca `tempfile`:
 
-```Ruby
+```ruby
 require 'tempfile'
-tempfile = Tempfile.new('temp_file')
-tempfile.write('Esse é um arquivo temporário.')
-tempfile.close
 ```
 
-Aqui, usamos o método `require` para carregar a biblioteca Tempfile, em seguida, usamos o método `new` para criar um objeto Tempfile com o prefixo "temp_file". Em seguida, escrevemos uma string no arquivo temporário usando o método `write` e finalmente fechamos o arquivo usando o método `close`.
+Em seguida, podemos criar o arquivo temporário com o método `Tempfile.new`:
 
-Para ler o conteúdo do arquivo temporário, podemos usar o método `read`:
-
-```Ruby
-puts File.read(tempfile)
+```ruby
+temp_file = Tempfile.new('meu_arquivo_temporario')
 ```
 
-O output seria:
+O primeiro parâmetro do método é o prefixo do nome do arquivo, que neste caso será "meu_arquivo_temporario". O arquivo temporário será criado no diretório temporário padrão do sistema operacional.
 
-```
-Esse é um arquivo temporário.
-```
+Para escrever no arquivo, podemos usar o método `write`:
 
-##Mergulho profundo
-
-A classe Tempfile oferece várias opções para criar e manipular arquivos temporários. Por exemplo, podemos especificar a pasta onde o arquivo temporário será criado, o modo de acesso e as permissões do arquivo. Além disso, podemos usar os métodos `unlink` ou `close!` para excluir o arquivo temporário quando não precisamos mais dele.
-
-Também é possível criar arquivos temporários com uma extensão específica usando o método `make_tmpname`:
-
-```Ruby
-tempfile = Tempfile.make_tmpname(["temp", ".txt"], "/tmp")
+```ruby
+temp_file.write('Este é um texto de exemplo')
 ```
 
-Podemos encontrar mais informações sobre a classe Tempfile e suas opções na documentação oficial do Ruby.
+Podemos ler o conteúdo do arquivo usando o método `read`:
 
-##Veja também
+```ruby
+puts temp_file.read # Saída: Este é um texto de exemplo
+```
 
-- [Documentação oficial do Ruby sobre a classe Tempfile](https://ruby-doc.org/stdlib-2.6.5/libdoc/tempfile/rdoc/Tempfile.html)
-- [Tutorial sobre como criar arquivos temporários em Ruby](https://blog.appsignal.com/2019/09/30/how-to-create-temporary-files-in-ruby.html)
+Após o uso, é importante fechar e deletar o arquivo temporário usando os métodos `close` e `unlink`:
+
+```ruby
+temp_file.close
+temp_file.unlink
+```
+
+Isso garantirá que o arquivo seja excluído corretamente do sistema.
+
+## Profundidade
+
+Uma das vantagens de criar arquivos temporários é que eles são automáticamente excluídos quando o programa termina, o que pode economizar espaço em disco e evitar conflitos com outros programas que usam o mesmo arquivo.
+
+Também é possível especificar o diretório onde o arquivo temporário será criado, ao invés do diretório padrão, usando o parâmetro `dir` do método `Tempfile.new`. Além disso, é possível criar o arquivo em modo de leitura e escrita usando o parâmetro `mode`.
+
+É importante lembrar que os arquivos temporários não são indicados para armazenar dados sensíveis ou importantes, uma vez que eles podem ser facilmente acessados ou excluídos.
+
+## Veja também
+
+- [Documentação da classe Tempfile](https://ruby-doc.org/stdlib-2.7.0/libdoc/tempfile/rdoc/Tempfile.html)
+- [Exemplo de uso de arquivo temporário em Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Vantagens e desvantagens de usar arquivos temporários em programas Ruby](https://railsautoscale.com/blog/working-with-temporary-files-in-ruby/)

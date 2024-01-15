@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Bash: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,54 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Si vous êtes un programmeur débutant en Bash, vous pourriez vous demander pourquoi il est utile de trouver la longueur d'une chaîne de caractères. Eh bien, trouver la longueur d'une chaîne peut être très utile lors de la manipulation de données texte. Cela vous permettra de vérifier si une entrée utilisateur dépasse la limite de caractères autorisée ou de compter le nombre de caractères dans une certaine zone d'un texte.
+De temps en temps, dans votre programme Bash, vous pourriez avoir besoin de savoir la longueur d'une chaîne, c'est-à-dire le nombre de caractères qu'elle contient. Cela peut être utile pour vérifier la validité d'une entrée utilisateur ou manipuler certaines données avant de les utiliser.
 
 ## Comment faire
+Pour trouver la longueur d'une chaîne en Bash, vous pouvez utiliser la commande `expr length`. Il suffit de lui passer la chaîne en question entre guillemets et elle vous retournera le nombre de caractères.
 
-Trouver la longueur d'une chaîne en Bash est une tâche assez simple et peut être réalisée en quelques étapes.
-
-D'abord, déclarez une variable contenant la chaîne que vous souhaitez vérifier. Par exemple :
-
-```Bash
-ma_variable="Bonjour le monde"
+```
+Bash: expr length "Bonjour"
+6
 ```
 
-Ensuite, utilisez la commande `expr length` suivie de votre variable et entourez le tout de deux points d'exclamation. Par exemple :
+Vous pouvez également utiliser la commande `wc` (compteur de mots) avec l'option `-m` (pour spécifier le nombre de caractères) et lui passer comme argument la chaîne à mesurer.
 
-```Bash
-longueur=!!ma_variable
-echo $longueur
+```
+Bash: echo "Bonjour" | wc -m
+7
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez la sortie suivante :
+Notez que `wc` compte également le caractère de retour à la ligne, ce qui explique pourquoi l'output est différent de celui de `expr length`.
 
-```Bash
-17
-```
+## Plongée plus profonde
+Il y a une chose importante à garder à l'esprit lors de la mesure de la longueur d'une chaîne en Bash : la gestion des espaces. Si votre chaîne contient des espaces, ils seront également comptés dans la longueur.
 
-Cela indique que la chaîne contenue dans la variable `ma_variable` est composée de 17 caractères.
+Par exemple, si vous utilisez la commande `expr length` sur la chaîne `"Bonjour le monde"`, vous obtiendrez une valeur de 15 (y compris l'espace entre "Bonjour" et "le"). De même pour la commande `wc -m`, qui vous retournera 16 pour cette chaîne.
 
-## Plongée en profondeur
-
-Il est également possible de trouver la longueur d'une chaîne en utilisant la syntaxe du slicing en Bash. Cela peut être utile si vous souhaitez compter le nombre de caractères dans une certaine zone d'un texte.
-
-Par exemple, si vous voulez trouver le nombre de caractères dans les 10 premiers caractères d'une chaîne, vous pouvez utiliser la syntaxe suivante :
-
-```Bash
-ma_variable="Bonjour le monde"
-echo ${#ma_variable:0:10}
-```
-
-Cela vous donnera la sortie suivante :
-
-```Bash
-10
-```
-
-Cela signifie qu'il y a 10 caractères dans les 10 premiers caractères de la variable `ma_variable`.
+Cela peut être problématique si vous avez besoin de mesurer une chaîne sans tenir compte des espaces. Dans ce cas, vous devrez utiliser des expressions régulières ou des fonctions plus avancées pour traiter la chaîne et enlever les espaces avant de la mesurer.
 
 ## Voir aussi
-
-- [La syntaxe des chaînes en Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [La commande `expr` en Bash](https://www.gnu.org/software/gcc/bash/manual/html_node/Shell-Arithmetic.html)
+- [Manipulation de chaînes en Bash](https://www.linuxjournal.com/content/bash-string-manipulation)
+- [Guide rapide Bash](https://devhints.io/bash)

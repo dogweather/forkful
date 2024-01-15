@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi."
+html_title:           "Ruby: Päivämäärän muuttaminen merkkijonoksi."
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,31 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluat muuttaa päivämäärän merkkijonoksi? On monia syitä, miksi tämä voi olla hyödyllistä. Esimerkiksi päivämäärän muuttaminen merkkijonoksi voi olla tarpeen tietojen tallentamisessa tietokantaan tai sen näyttämisessä käyttäjille.
+Sinun kannattaa oppia, kuinka muuntaa päivämäärä merkkijonoksi, koska se on tärkeä osa ohjelmointia ja voi auttaa sinua tehostamaan päivämäärätietojen käsittelyä.
 
-## Kuinka
+## Kuinka tehdä
 
 ```Ruby
-# Luo Date-olio
 date = Date.today
-
-# Muuta päivämäärä merkkijonoksi käyttämällä to_s-metodia 
-puts date.to_s 
-
-#Output: "2021-06-23"
-
-# Voit myös muuttaa merkkijonon muotoa käyttämällä strftime-metodia ja antamalla haluamasi muotoilun mukaisen merkkijonon
-puts date.strftime("%d/%m/%Y")
-
-#Output: "23/06/2021"
+puts date.to_s
 ```
 
-## Syvällisempi tarkastelu 
+Tämä yksinkertainen koodiesimerkki näyttää, miten voit muuntaa nykyisen päivämäärän merkkijonoksi Rubyssa. Tämä helpottaa päivämäärätietojen tallentamista ja käyttämistä eri ohjelmissa ja algoritmeissa. Tulosteena saadaan nykyinen päivä muodossa "yyyy-mm-dd".
 
-Rubyssa on Date-luokka, jota voit käyttää päivämäärän käsittelyyn. To_s-metodi muuttaa Date-olion merkkijonoksi, jos haluat pitää oletusmuodon. Voit myös käyttää strftime-metodia, joka antaa sinulle enemmän vaihtoehtoja määrittää päivämäärän muotoa merkkijonoksi. Les meilleures recommandations pour Ruby on Rails
+```Ruby
+date = Date.new(2020, 12, 31)
+puts date.strftime("%d/%m/%Y")
+```
+
+Toinen esimerkki käyttää strftime-metodia muokkaamaan päivämäärää eri muotoon. Tässä tapauksessa tulosteena saadaan päivämäärä muodossa "31/12/2020". Voit käyttää erilaisia merkkiyhdistelmiä määrittääksesi haluamasi muodon.
+
+```Ruby
+date = Time.new(2021, 1, 1, 12, 30, 0)
+puts date.to_s
+```
+
+Voit myös muuntaa ajan merkkijonoksi käyttämällä Time-luokan to_s-metodia. Tämä toimii samalla tavalla kuin Date-luokan to_s-metodi ja tulosteena saadaan aika muodossa "hh:mm:ss".
+
+## Syventävä tieto
+
+Päivämäärän muuntaminen merkkijonoksi on tärkeä taito, jota tarvitaan usein ohjelmoinnissa. Se helpottaa päivämäärätietojen käsittelyä ja varmistaa, että ne ovat yhteensopivia käytettyjen algoritmien ja ohjelmien kanssa.
+
+Muuntamisen lisäksi Rubyssa on myös mahdollista luoda uusia päivämääriä käyttäen Date-luokan parse-metodia. Tämä mahdollistaa päivämäärän lukemisen merkkijonosta ja sen muuntamisen Date-objektiksi.
 
 ## Katso myös
 
-- [Ruby Date-luokka](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Ruby String-luokka](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby strftime-metodi](http://ruby-doc.org/core-2.7.1/Time.html#method-i-strftime)
+- [Ruby Date-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
+- [strftime-merkkiyhteenvedot](https://www.techotopia.com/index.php/Ruby_Date_and_Time_-_strftime_Format_Code_Y=%26_g)

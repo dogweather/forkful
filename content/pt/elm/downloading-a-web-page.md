@@ -1,6 +1,7 @@
 ---
-title:                "Elm: Baixando uma página da web."
-simple_title:         "Baixando uma página da web."
+title:                "Fazendo o download de uma página da web"
+html_title:           "Elm: Fazendo o download de uma página da web"
+simple_title:         "Fazendo o download de uma página da web"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,70 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Você já se perguntou como os navegadores podem exibir páginas complexas e dinâmicas? Baixar uma página da web é uma tarefa importante na programação de qualquer navegador. Nesta postagem do blog, vamos dar uma olhada em como fazer isso usando a linguagem de programação Elm.
+Se você está interessado em desenvolver páginas da web eficazes e eficientes, saber como fazer o download de uma página da web é essencial. Com a linguagem de programação Elm, você pode aprender a fazer isso de maneira simples e eficiente.
 
 ## Como Fazer
 
-Para baixar uma página da web em Elm, primeiro precisamos importar o módulo `Http`. Em seguida, usamos a função `get` fornecida por esse módulo, passando como argumento a URL da página que queremos baixar.
+Para começar, é importante ter o Elm instalado no seu computador. Em seguida, você pode seguir os seguintes passos:
 
-```
+1. Importe o módulo `Http` para acessar as funções necessárias para fazer o download de uma página da web.
+2. Crie uma função que utilize a função `send` do módulo `Http`. Esta função é responsável por fazer a requisição HTTP para o URL da página que você deseja fazer o download.
+3. Atribua a função `send` a uma tarefa e utilize a função `Http.expectString` para especificar o tipo de resposta que você espera receber.
+4. Use a função `Task.attempt` para lidar com a resposta da tarefa e convertê-la em um `Cmd Msg` que possa ser processado pela sua aplicação. Lembre-se de incluir esta `Cmd Msg` na função de atualização do seu modelo.
+5. Para fazer o download da página, utilize a função `Http.send` na função `init` do seu programa.
+
+
+```Elm
 import Http
+import String
 
-Http.get "https://exemplo.com" 
+type Msg = DownloadPage | ReceiveResponse (Result Http.Error String)
+
+init : (Model, Cmd Msg)
+init =
+    ( initialModel, Http.send ReceiveResponse (Http.get "https://example.com") )
+    
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        DownloadPage ->
+            ( model, Http.send ReceiveResponse (Http.get "https://example.com") )
+        
+        ReceiveResponse (Result.Ok response) ->
+            let
+                pageContent =
+                    response
+                        |> String.lines
+                        |> String.join " "
+            in
+                ( { model | page = pageContent }, Cmd.none )
+                
+        ReceiveResponse (Result.Err error) ->
+            ( model, Cmd.none )
 ```
 
-Essa função retorna uma `Task` que representa a tarefa de baixar a página. Podemos usar funções auxiliares no módulo `Task` para lidar com o resultado desse `Task` e obter o conteúdo da página.
+Com estes passos, sua aplicação será capaz de fazer o download de uma página da web e manipular seus dados como desejar.
 
-```
-handleResponse : Http.Response -> String
-handleResponse response =
-    case response of
-        Http.BadUrl url ->
-            "URL inválida: " ++ url
-        Http.Timeout ->
-            "Tempo limite expirado"
-        Http.NetworkError ->
-            "Erro de rede"
-        Http.BadStatus status ->
-            "Status HTTP inválido: " ++ (toString status)
-        Http.GoodStatus ->
-            response.body
+## Profundidade
 
+O módulo `Http` em Elm oferece várias funções e tipos de dados para lidar com requisições e respostas HTTP. Para uma maior compreensão sobre como essas funções e tipos trabalham juntos, é importante ler a documentação oficial do Elm sobre o módulo `Http` e experimentar com diferentes códigos e respostas.
 
-task : Task Http.Error String
-task =
-    Http.get "https://exemplo.com"
-        |> Task.andThen handleResponse
-```
-
-A função `handleResponse` pega a resposta HTTP e verifica se houve algum erro. Se não houver nenhum erro, ela retorna o corpo da resposta como uma `String`.
-
-Depois de criar o `Task`, podemos executá-lo usando a função `Task.perform` e fornecendo uma função de retorno de chamada.
-
-```
-result : Effects.Effects String
-result =
-    task
-        |> Task.perform Task.fail Task.succeed
-```
-
-A função `Task.perform` recebe duas funções como argumentos: uma para lidar com erros e outra para lidar com o sucesso. Na nossa função `handleResponse`, usamos a função `Task.succeed` para retornar o conteúdo da página como um valor de sucesso.
-
-Por fim, podemos executar nosso programa e ver o conteúdo da página sendo impresso no console.
-
-```
-main =
-    result
-        |> Effects.map Debug.log "Resultado: "
-```
-
-## Aprofundando
-
-Baixar uma página da web usando o módulo `Http` em Elm é apenas o primeiro passo. Existem muitas outras funções e métodos disponíveis neste módulo para trabalhar com solicitações HTTP. Por exemplo, podemos usar a função `Json.fromString` para converter o conteúdo da página em um valor JSON e manipulá-lo em nosso programa.
-
-Além disso, podemos usar o módulo `Task` para lidar com tarefas assíncronas em Elm. Isso pode ser útil ao trabalhar com solicitações HTTP para páginas dinâmicas que precisam ser atualizadas regularmente.
+Vale ressaltar que é importante ter conhecimento prévio sobre os conceitos básicos de requisições e respostas HTTP antes de tentar fazer o download de uma página da web em Elm.
 
 ## Veja Também
 
-- [Documentação do módulo Http em Elm](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Tutorial sobre como usar o módulo Http em Elm](https://www.elm-tutorial.org/en/07-fetching-resources/01-fetching.html)
+- Documentação oficial do módulo `Http` em Elm: https://package.elm-lang.org/packages/elm/http/latest/
+- Um exemplo de aplicação que faz o download de uma página da web em Elm: https://github.com/elm/http/blob/0.19.1/examples/src/Characters.elm

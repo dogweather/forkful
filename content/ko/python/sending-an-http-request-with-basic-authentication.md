@@ -1,5 +1,6 @@
 ---
-title:                "Python: 기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증을 사용하여 http 요청 보내기"
+html_title:           "Python: 기본 인증을 사용하여 http 요청 보내기"
 simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "Python"
 category:             "Python"
@@ -11,33 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-HTTP 요청을 기본 인증과 함께 보내는 일에 대해서는 왜 그것이 중요한지 궁금할 수 있습니다. 이는 웹 서버와의 상호작용에서 보안을 강화하고 사용자 인증을 통해 더 많은 기능을 활용할 수 있기 때문입니다.
+누군가가 HTTP 요청을 기본 인증과 함께 보내려고 할 때 *왜* 이를 해야하는지에 대해 최대 2 문장으로 설명합니다.
 
-## 하려면
+## 어떻게
 
-Python에서 HTTP 요청을 기본 인증과 함께 보내는 방법은 간단합니다. 먼저 `requests` 라이브러리를 임포트하고 `auth` 파라미터를 사용하여 인증 정보를 전달합니다.
+Python을 사용하여 HTTP 요청을 기본 인증과 함께 보내는 방법에 대한 코딩 예제와 출력을 포함한 "```Python ... ```" 코드 블록을 제공합니다.
 
-```python
+```Python
 import requests
-
-auth = requests.auth.HTTPBasicAuth('username', 'password')
-r = requests.get('https://example.com', auth=auth)
-print(r.status_code)
+url = 'https://example.com'
+headers = {'Authorization': 'Basic c29tZV9hc2RmOnNvbWVfcGFzc3dvcmQ='} #base64 encoded username:password
+response = requests.get(url, headers=headers)
+print(response.status_code)
+print(response.text)
 ```
 
-위의 예제에서는 인증 정보를 변수 `auth`에 저장하고, 이를 `auth` 파라미터로 전달하여 `get` 요청을 보냅니다. 이제 해당 URL에 대한 응답을 확인할 수 있습니다.
+이 코드는 "https://example.com"에 대해 기본 인증을 사용하여 GET 요청을 보냅니다. 요청에 대한 응답 상태 코드와 텍스트를 출력합니다.
 
-```
-200
-```
+## 딥 다이브
 
-## 깊이 파보면
+기본 인증은 HTTP 요청에서 사용자 인증을 처리하는 방법 중 하나입니다. 일반적으로 사용자 이름과 비밀번호를 Base64로 인코딩하고 "Authorization" 헤더에 추가하여 요청을 보냅니다. 이는 요청을 보내는 동안 사용자의 개인정보를 보호하는 데 도움이 됩니다. 그러나 이러한 인증 방식은 암호화되지 않으므로 보안 측면에서는 안전하지 않습니다. 따라서 중요한 정보를 전송하는 경우에는 다른 인증 방식을 사용하는 것이 좋습니다.
 
-HTTP 요청에서 기본 인증은 해당 요청의 특정 도메인 또는 엔드포인트에서만 유효합니다. 즉, 동일한 인증 정보를 사용하여 다른 도메인의 서버에 요청하더라도 인증이 된 상태로 요청을 보낼 수 없습니다.
+## 관련 링크
 
-더 많은 정보를 얻으려면 `requests` 라이브러리의 공식 문서를 참조할 수 있습니다.
-
-## 또 보기
-
-- [Requests: 인터넷 요청을 파이썬 방식으로](https://docs.python-requests.org/en/latest/)
-- [HTTP 인증 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/HTTP_%EC%9D%B8%EC%A6%9D)
+- [Python requests 라이브러리 공식 문서](https://docs.python-requests.org/en/latest/)
+- [HTTP 통신에 대한 초보자 가이드](https://developer.mozilla.org/ko/docs/Web/HTTP/Access_control_CORS)
+- [Base64 인코딩에 대한 튜토리얼](https://www.base64decode.org/)

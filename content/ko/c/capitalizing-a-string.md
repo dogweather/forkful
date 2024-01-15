@@ -1,6 +1,7 @@
 ---
-title:                "C: 문자열 대문자화하기"
-simple_title:         "문자열 대문자화하기"
+title:                "문자열 대문자로 변환하기"
+html_title:           "C: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,41 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 대문자로 변환하는 것에 대해 이야기해보겠습니다. 
+요즘 대부분의 프로그래밍 언어에서는 문자열을 제어하는 데 많은 기능을 제공합니다. 이 중 하나는 문자열의 첫 글자를 대문자로 변환하는 것입니다. 이 기능을 사용하면 문자열을 더 다양한 방식으로 표현할 수 있고 유용한 기능을 구현할 수 있습니다.
 
-## How To
-문자열을 대문자로 변환하는 방법은 매우 간단합니다. `strcpry()` 함수를 사용하면 됩니다. 다음은 간단한 예제 코드와 출력 결과입니다.
-
-```
+## 하는 방법
+```C
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-  char str[] = "hello world";
-  printf("%s\n", str);
+int main()
+{
+    char str[20] = "hello, world!";
 
-  // 문자열을 대문자로 변환
-  strupr(str);
-  printf("%s\n", str);
+    // 첫 글자를 대문자로 변환하는 함수
+    str[0] = toupper(str[0]);
 
-  return 0;
+    printf("변환된 문자열: %s", str);
+
+    return 0;
 }
-
-/* 출력 결과
-hello world
-HELLO WORLD
-*/
 ```
 
-위의 코드에서 `strupr()` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 이 함수는 `string.h` 라이브러리에 포함되어 있으며, 문자열을 대문자로 변환하는 기능을 합니다.
+위 코드를 실행하면 "Hello, world!"라는 출력 결과를 볼 수 있습니다.
 
-## Deep Dive
-문자열을 대문자로 변환하기 위해 `strupr()` 함수가 어떻게 작동하는지 깊이 알아보겠습니다. 이 함수는 주어진 문자열을 순회하면서, 각 문자를 `toupper()` 함수를 사용하여 대문자로 변환합니다. 그 후, 변환된 문자열을 반환합니다.
+## 깊게 파고들기
+대문자로 변환하는 기능은 문자열을 처리하는 프로그램에서 매우 유용합니다. 예를 들어, 사용자가 입력한 이름을 받은 후, 이를 대문자로 변환하여 데이터베이스와 비교하거나 직접 파일 이름을 적을 때 유용합니다. 또한, 소문자와 대문자가 혼용된 큰 데이터셋을 다룰 때 특정 문자열만 뽑아내기 위해 사용할 수 있습니다.
 
-또한, 이 함수를 사용하여 변환되는 문자가 알파벳이 아닌 경우에는 변환하지 않습니다. 즉, 스페이스, 숫자, 특수 문자 등은 변환되지 않는 것을 확인할 수 있습니다.
-
-결과적으로, `strupr()` 함수는 주어진 문자열을 대문자로 변환하는 역할을 하며, 각 문자를 일일이 변환하는 과정을 거치게 됩니다.
-
-## See Also
-- [C string 함수 - strupr()](https://www.tutorialspoint.com/c_standard_library/c_function_strupr.htm)
-- [C 언어 - 문자열(str) 함수](https://dojang.io/mod/page/view.php?id=311)
+## 더 알아보기
+- [C 언어 공식 문서](https://www.iso.org/standard/74528.html)
+- [문자열 함수에 대한 자세한 설명](https://www.geeksforgeeks.org/string-functions-in-c-with-examples/) 
+- [문자열 변환 예제 코드](https://www.programiz.com/c-programming/examples/uppercase-string)

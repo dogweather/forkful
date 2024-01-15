@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Json के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Arduino: Json के साथ काम करना"
 simple_title:         "Json के साथ काम करना"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,45 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # क्यों
 
-Arduino पर JSON काम करना बहुत महत्वपूर्ण है क्योंकि यह डाटा इनकोडिंग और ट्रांसफर के लिए एक मानक बना देता है। यह आसानी से डेटा को संग्रहीत करने और प्रोसेस करने में मदद करता है।
+JSON (JavaScript Object Notation) एक सरल, आसानी से पढ़ने और लिखने के लिए होने का कारण, संरचनात्मक एक डेटा फॉर्मेट है। यह आर्डुइनो कोडिंग के लिए भी एक बेहतर विकल्प है, क्योंकि यह कंपैक्ट और उचित में से ज़्यादा परिवर्तनशील है। इसलिए, इस लेख में हम जानने वाले हैं कि Arduino में JSON कैसे लिखा और पढ़ा जाता है।
 
-# कैसे करें
+## कैसे करे
 
-जेसॉन डेटा को आर्डुइनो में काम करने के लिए, हमें आर्डुइनो लाइब्रेरी को इन्स्टॉल करने की जरूरत होती है। इसके बाद, हमें ऑब्जेक्ट को बनाने के लिए JSON बाइट को इस्तेमाल करना होता है। नीचे दिए गए उदाहरण में, हमें साधारण JSON अर्रेंजमेंट को आर्डुइनो स्केच में कैसे इनिशियलाइज़ करें दिखाया गया है।
+आर्डुइनो बोर्ड पर JSON एलागोरिथम को सभी विशेषताओं के साथ कॉम्पाइल करने के लिए हमें [ArduinoJson](https://github.com/bblanchon/ArduinoJson) पुस्तकालय को डाउनलोड करने की आवश्यकता होगी। जब आप इसे इनस्टाल कर लेते हैं, ```ArduinoJSON.h``` शामिल करना दर्शता है।
 
-```Arduino
-#include<ArduinoJson.h>
+## गहराई में जाएँ
+
+JSON को इलाकों में संग्रहीत करने के लिए, हमेंउसे ```JSONDocument``` डेटा प्रकार में बचाना चाहिए। आर्डुइनो में, हम हमेशा कंप्यूटर मेमरी में "JSONBuffer" का इंस्टेंस डालने की आवश्यकता होती है, यह हमें एक जल्दी विकल्प, जो डेटा कॉरपोरेट करता है, देता है, कोड देने के लिए आवश्यक है ताकि इसमें अतिरिक्त रूप से अवशोषण की आवश्यकता न हो।
+
+आर्डुइनो बोर्ड पर जावास्क्रिप्ट के उपयोग का उदाहरण कुछ इस तरह का हो सकता है: 
+
+  ```Arduino
+//#include <ArduinoJson.h>
 
 void setup() {
-  // Initialize JSON object
-  StaticJsonDocument<200> doc;
-  // Add key-value pair to the object
-  doc["name"] = "John";
-  doc["age"] = 30;
-  // Print the JSON object
-  serializeJson(doc, Serial);
+  Serial.begin(9600);
+
+  StaticJsonBuffer<200> JSONBuffer; //मैमोरी में "ंग्रेसिव" का उपयोग करके स्तरीय प्रवाह दे
+  JsonObject& JsonObject = JSONBuffer.decodeObject("{\"name\":\"John\", \"age\":30}");
+
+  String name = JsonObject["name"];
+  int age = JsonObject["age"];
+
+  Serial.println(name);
+  Serial.println(age);
 }
 
-void loop() {
-
-}
-```
-
-जब हम सीरियल मॉनिटर पर अपने आर्डुइनो से जुड़े हुए होते हैं, हमें निम्नलिखित आउटपुट मिलेगा। आप अपने अंतःस्थापित डेटा को डेटा विकसित करने से पहले देख सकते हैं।
-
-```
-{"name":"John", "age":30}
-```
-
-# गहराई में जाएं
-
-जेसॉन प्रोटोकॉल को अध्ययन करने के लिए, आप डेटा संगतता और सार्वजनिकता की पूर्णता के साथ प्रभावी रूप से काम करने की ज़रूरत जान सकते हैं। हमारे आर्डुइनो बोर्ड के संग जेसॉन ओवर सेरियल प्रोटोकॉल को प्रयास करने के लिए आप निम्नलिखित पंक्तियों को प्रयोग कर सकते हैं।
-
-```Arduino
-#include<ArduinoJson.h>
-#include<WiFiClientsSecure.h>
-
-WiFiClientsSecure client;
-StaticJsonDocument<250> doc;
-
-doc["
+void loop()

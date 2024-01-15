@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 컴퓨터 프로그래밍으로 엔터키를 통해 읽는 명령줄 인수 (Command Line Arguments에 대한)"
-simple_title:         "컴퓨터 프로그래밍으로 엔터키를 통해 읽는 명령줄 인수 (Command Line Arguments에 대한)"
+title:                "컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
+html_title:           "Rust: 컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -9,58 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-커맨드 라인 인자를 읽는 것은 프로그램을 만드는 과정에서 중요한 부분입니다. 커맨드 라인 인자를 활용하면 프로그램의 실행 시 인자들을 설정하거나 추가적인 기능을 제공할 수 있습니다.
+## 왜
 
-## How To
-커맨드 라인 인자를 읽는 방법은 Rust에서는 매우 간단합니다. 우선 std::env 모듈을 import 해야합니다. 그리고 다음과 같이 `args` 함수를 호출하면 모든 커맨드 라인 인자를 Vec<String> 타입으로 받아올 수 있습니다.
+커맨드 라인 인수를 읽는 방법에 대해 배우는 것은 프로그래밍에서 중요한 기술입니다. 이를 통해 유지보수가 용이하고 유연한 프로그램을 만들 수 있으며, 사용자와의 상호작용을 쉽게 구현할 수 있습니다.
 
-```
-Rust
+## 어떻게
+
+커맨드 라인 인수는 프로그램을 실행할 때 전달되는 정보를 담고 있습니다. Rust에서는 `std::env` 모듈을 사용하여 이 정보에 접근할 수 있습니다. 아래는 간단한 예제 코드입니다.
+
+```rust
 use std::env;
 
 fn main() {
-  let args: Vec<String> = env::args().collect();
+    // 커맨드 라인 인수를 Vec<String> 형식으로 가져옵니다.
+    let args: Vec<String> = env::args().collect();
 
-  println!("Command line arguments: {:?}", args);
+    // 프로그램 이름은 항상 첫 번째 인수로 전달됩니다.
+    let program_name = &args[0];
+
+    // 다른 인수들은 1부터 시작되는 인덱스로 접근합니다.
+    let first_arg = &args[1];
+
+    println!("프로그램 이름: {}", program_name);
+    println!("첫 번째 인수: {}", first_arg);
 }
 ```
 
-위와 같이 프로그램에서 받은 인자들을 `args` 변수에 저장하고, 원하는 대로 활용하면 됩니다. 실행해보면 다음과 같은 결과가 나옵니다.
+위 코드를 컴파일하고 다음과 같이 실행하면,
 
-```
-> myprogram arg1 arg2
-Command line arguments: ["myprogram", "arg1", "arg2"]
-```
-
-커맨드 라인 인자가 없을 경우, `args` 변수에는 프로그램의 이름만 저장되니 유의해야 합니다. 또한 인자의 개수에 따라서 다양한 처리를 할 수도 있습니다. 예를 들어, 프로그램 이름과 인자 2개를 받는 상황에서 다음과 같이 처리할 수 있습니다.
-
-```
-Rust
-fn main() {
-  let args: Vec<String> = env::args().collect();
-  let program_name = &args[0];
-  let arg1 = &args[1];
-  let arg2 = &args[2];
-
-  println!("Program: {}", program_name);
-  println!("Argument 1: {}", arg1);
-  println!("Argument 2: {}", arg2);
-}
+```bash
+$ ./program arg1 arg2
 ```
 
-실행해보면 다음과 같은 결과가 나옵니다.
+다음과 같은 결과가 나옵니다.
 
 ```
-> myprogram arg1 arg2
-Program: myprogram
-Argument 1: arg1
-Argument 2: arg2
+프로그램 이름: ./program
+첫 번째 인수: arg1
 ```
 
-## Deep Dive
-커맨드 라인 인자를 좀 더 깊이 이해하기 위해서는 Rust에서 커맨드 라인 인자를 어떻게 처리하는지 살펴보는 것도 도움이 될 수 있습니다. Rust에서는 `Opts` trait를 이용하여 커맨드 라인 인자를 처리하는 방식을 지정할 수 있습니다. 또한, `clap` crate를 이용하면 보다 쉽게 커맨드 라인 인자를 처리할 수 있습니다.
+## 더 깊이 들어가기
 
-## See Also
-- [Rust Documentation - std::env 모듈](https://doc.rust-lang.org/std/env/index.html)
-- [Rust Documentation - clap crate](https://docs.rs/clap/2.33.3/clap/)
+커맨드 라인 인수는 문자열(`String`)의 벡터(`Vec`) 형태로 전달됩니다. 따라서 여러 개의 인수를 전달받을 수 있으며, 이를 활용하여 프로그램의 동작을 다양하게 설정할 수 있습니다. 또한, Rust에서는 패턴 매칭을 통해 더 효율적으로 인수에 접근할 수 있습니다.
+
+## 참고 자료
+
+- [Rust 공식 문서 - 커맨드 라인 인수 읽기](https://doc.rust-lang.org/std/env/index.html)
+- [The Rust Programming Language - Reading Program Arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- [Rust by Example - Command Line Arguments](https://doc.rust-lang.org/stable/rust-by-example/std_misc/arg.html)
+
+## 참고로
+
+커맨드 라인 인수는 주로 터미널 환경에서 프로그램을 실행할 때 사용됩니다. 따라서 터미널을 사용해 보면서 위 코드를 직접 실행하고 다양한 인수를 전달해보는 것을 추천합니다. 이를 통해 더욱 익숙해진다면 프로그래밍의 다양한 분야에서 유용하게 활용할 수 있을 것입니다.

@@ -1,5 +1,6 @@
 ---
-title:                "C++ recipe: Generating random numbers"
+title:                "Generating random numbers"
+html_title:           "C++ recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "C++"
 category:             "C++"
@@ -11,59 +12,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever played a game or used an app where the outcome seemed completely random? Chances are, the developers used computer-generated random numbers to add an element of unpredictability to their program. In this blog post, we'll explore the world of generating random numbers with C++.
+Need to add some randomness to your program? Want to simulate real-world scenarios? Generating random numbers can add a touch of unpredictability and help you create more dynamic and realistic applications.
 
 ## How To
 
-Creating random numbers in C++ is relatively simple. First, we need to include the `<cstdlib>` library, which contains the necessary functions for generating random numbers. Then, we can use the `rand()` function to generate a random number between 0 and `RAND_MAX`, which is a constant defined in the library. However, this will result in the same sequence of numbers each time the program is run.
+Generating random numbers in C++ is fairly straightforward. All you need is the `rand()` function from the standard library and some basic understanding of data types.
 
-To create a more truly random sequence, we can use the `srand()` function to seed the random number generator with a changing value, such as the system clock time. This will produce a different sequence of numbers each time the program is run.
+To get a random integer between 0 and a specific number, say 10, you can use the following code:
 
-Let's see an example of generating and printing 10 random numbers between 1 and 100:
-
+```C++
+int random_number = rand() % 11; // will generate a number between 0 and 10
 ```
+
+To generate a random float between 0 and 1, you can divide the output of `rand()` by `RAND_MAX` (a constant defined in the `cstdlib` library):
+
+```C++
+float random_float = static_cast<float>(rand()) / RAND_MAX;
+```
+
+You can also use the `srand()` function to set a seed for your random numbers. This can be useful if you want to produce the same sequence of random numbers each time you run your program. All you need to do is pass a specific value to `srand()` before calling `rand()`, like this:
+
+```C++
+srand(1234); // sets the seed to 1234
+int random_number = rand(); // will always generate the same output
+```
+
+You can also use the `time()` function to set a seed based on the current time, making your random numbers truly unpredictable:
+
+```C++
+srand(time(0)); // sets the seed based on the current time
+int random_number = rand(); // will produce different output every time you run the program
+```
+
+Here's a sample program to generate 10 random integers between 1 and 100 and print them out:
+
+```C++
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
-int main() {
-  // seed the random number generator
-  srand(time(0));
+using namespace std;
 
-  // generate and print 10 random numbers
-  for (int i = 0; i < 10; i++) {
-    int randomNumber = rand() % 100 + 1; // generate random number between 0 and 100
-    std::cout << randomNumber << std::endl;
-  }
+int main()
+{
+    // set a seed based on the current time
+    srand(time(0));
 
-  return 0;
+    // generate 10 random numbers and print them out
+    for (int i = 0; i < 10; i++)
+    {
+        int random_number = rand() % 100 + 1; // generate a number between 1 and 100
+        cout << random_number << " ";
+    }
+
+    return 0;
 }
 ```
 
 Output:
-
 ```
-72
-13
-56
-92
-31
-24
-17
-41
-88
-9
+37 89 5 72 12 44 61 33 15 97
 ```
 
 ## Deep Dive
 
-Generating truly random numbers is a complex task that relies on mathematical algorithms called random number generators (RNGs). These algorithms use a starting value, called a seed, to generate a sequence of numbers that appear to be random.
+Behind the scenes, the `rand()` function uses a pseudo-random number generator to generate random numbers. This means that the sequence of numbers it produces is actually deterministic and not truly random. It uses a mathematical algorithm to generate the numbers, starting with a specific initial value called a seed.
 
-C++ has two types of RNGs: the linear congruential generator (LCG) and the Mersenne Twister. The `rand()` function we used earlier is based on LCG, which is a simple and fast algorithm but has some limitations in terms of randomness. The Mersenne Twister, on the other hand, is a more sophisticated algorithm that produces more evenly distributed and unpredictable numbers.
+When you use `srand()` to set a seed, you are essentially setting the starting point for the sequence of numbers. Different values for the seed will result in different sequences of numbers, but the same seed will always produce the same sequence.
 
-It's essential to understand that computer-generated random numbers are actually pseudo-random, meaning they are not truly random but appear to be. This is because computers operate on a set of instructions and cannot truly generate random numbers without an external input.
+It's important to note that the `rand()` function is not suitable for cryptography or security-related purposes, as its pseudo-random nature can make it predictable. For such use cases, it's best to use a dedicated cryptographic library.
 
 ## See Also
 
-- [Random number generation in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [C++ random number generators](http://www.cplusplus.com/reference/random/)
-- [The science of random](https://www.random.org/randomness/)
+- [C++ documentation on random numbers](https://en.cppreference.com/w/cpp/numeric/random)
+- [Generating pseudo-random numbers in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Advanced random number generation in C++](https://www.martinbroadhurst.com/generating-random-numbers-in-c.html)

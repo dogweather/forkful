@@ -1,6 +1,7 @@
 ---
-title:                "Go: Sända en HTTP-förfrågan med grundläggande autentisering"
-simple_title:         "Sända en HTTP-förfrågan med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Go: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,61 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I den här bloggposten kommer vi att titta på hur man kan skicka HTTP-förfrågningar med grundläggande autentisering i Go-programmering. Detta är en viktig del av att bygga webbapplikationer och API:er, och med hjälp av basic authentication kan du säkerställa att endast auktoriserade användare har tillgång till dina resurser.
+Om du vill skicka en säker HTTP-förfrågan till en webbtjänst, behöver du använda en autentiseringsmetod för att verifiera din identitet. En av de enklaste metoderna är Basic Authentication, som kräver användarnamn och lösenord för att godkänna åtkomst. Genom att lära dig hur man skickar en HTTP-förfrågan med Basic Authentication i Go, kan du bygga säkra och pålitliga webbapplikationer.
 
-## Så här gör du
+## Hur man gör
 
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Go, behöver du först bygga en `http.Client` med hjälp av `http.NewRequest()`-funktionen:
+För att skicka en HTTP-förfrågan med Basic Authentication i Go, behöver du bara följa några enkla steg.
+
+Först behöver du importera paketet "net/http" och "encoding/base64".
 
 ```Go
-// Skapa en http.Client
+import (
+    "net/http"
+    "encoding/base64"
+)
+```
+
+Sedan måste du skapa en instans av typen "http.Client" och ange autentiseringsuppgifterna i en "http.Header" med hjälp av "SetBasicAuth" funktionen. Dessa autentiseringsuppgifter krypteras sedan med bas64-kodning.
+
+```Go
 client := &http.Client{}
-// Skapa en HTTP-förfrågan
-req, err := http.NewRequest("GET", "https://www.example.com", nil)
+req, _ := http.NewRequest("GET", "https://www.example.com/api", nil)
+req.Header.Set("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte("användarnamn:lösenord")))
 ```
 
-För att lägga till autentiseringsuppgifter i HTTP-förfrågan kan vi använda `SetBasicAuth()`-funktionen:
+Slutligen kan du genomföra din HTTP-förfrågan med hjälp av "Do" funktionen på din Client instans och utföra eventuella åtgärder med responsen.
 
 ```Go
-// Lägg till autentiseringsuppgifter
-req.SetBasicAuth("användarnamn", "lösenord")
-```
-
-Sedan kan vi skicka förfrågan och hämta resultatet:
-
-```Go
-// Skicka HTTP-förfrågan
 resp, err := client.Do(req)
 if err != nil {
-    panic(err)
+    // Hantera fel
 }
-// Hämta resultatet
 defer resp.Body.Close()
-body, err := ioutil.ReadAll(resp.Body)
 
-fmt.Println(string(body)) // Skriver ut resultatet av förfrågan
+// Gör något med responsen, som att skriva ut den till konsolen
+fmt.Println(resp.Status)
 ```
 
-Om autentiseringen lyckades kommer du att få ett 200-status (OK). Om inte, kommer du att få ett 401-status (Obehörig). Detta beror på vilken typ av autentisering som ditt API eller webbplats kräver.
+Output:
+
+```
+200 OK
+```
 
 ## Deep Dive
 
-Det finns många olika typer av autentisering, men vi har valt att fokusera på grundläggande autentisering i den här bloggposten. Det är enkelt att implementera och fungerar bra för de flesta användningsfall.
+En HTTP-förfrågan med Basic Authentication består av två delar - användarnamn och lösenord - som krypteras med bas64-kodning och skickas som en "Authorization" header. Detta gör att servern kan verifiera användarens identitet och ge åtkomst till resurser på ett säkert sätt.
 
-För att skicka en HTTP-förfrågan med grundläggande autentisering, behöver vi bara lägga till en HTTP-header med namnet "Authorization" i vår förfrågan. Dess värde är baserat på användarnamn och lösenord, och kodas vanligtvis i Base64-format.
+När autentiseringsuppgifterna mottas på servern, dekrypteras de med hjälp av bas64-dekoder och jämförs med de som finns sparade på servern. Om de matchar så godkänns åtkomsten, annars returneras ett felmeddelande.
 
-Det är också viktigt att notera att grundläggande autentisering endast krypterar användarnamn och lösenord i en Base64-kodad sträng och inte är en säker form av autentisering. För att se till att dina användare och dina resurser är skyddade bör du överväga att använda en mer robust autentisering, som OAuth eller API-nycklar.
-
-Det är också möjligt att skicka HTTP-förfrågningar med grundläggande autentisering i andra programmeringsspråk, som Java eller Python. Det viktigaste är att förstå grundläggande autentiseringens koncept och hur man implementerar det i ditt specifika program.
+Det är viktigt att komma ihåg att Basic Authentication inte är den mest säkra autentiseringsmetoden och bör endast användas om det är nödvändigt och resurserna inte är känsliga. Annars är det bättre att använda mer robusta metoder som OAuth eller JWT.
 
 ## Se även
 
-Här är några resurser som kan vara till hjälp för dig när du arbetar med HTTP-förfrågningar med grundläggande autentisering i Go:
-
-- [Officiell dokumentation för Go HTTP-paketet](https://golang.org/pkg/net/http/)
-- [Base64-kodning i Go](https://golang.org/pkg/encoding/base64/)
-- [En guide för att lära sig mer om HTTP-förfrågningar](https://www.digitalocean.com/community/tutorials/an-introduction-to-http)
-
-Det är också en bra idé att titta på dokumentationen och exempelkod från de API:er eller webbplatser som du planerar att använda grundläggande autentisering med. Var noga med att förstå deras specifika implementation och krav för autentisering.
-
-Tack för att du läste! Förhoppningsvis har du nu en bättre förståelse för hur man skickar HTTP-förfrågningar med grundläggande autentisering i Go. Lycka till
+- [Go Documentation - Package http](https://golang.org/pkg/net/http/)
+- [Go Documentation - Package encoding/base64](https://golang.org/pkg/encoding/base64/)
+- [Basic Authentication RFC](https://tools.ietf.org/html/rfc7617)

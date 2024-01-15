@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: デバッグ出力のプリント"
-simple_title:         "デバッグ出力のプリント"
+title:                "デバッグ出力を印刷する"
+html_title:           "Javascript: デバッグ出力を印刷する"
+simple_title:         "デバッグ出力を印刷する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -9,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力を出力するのか
+## なぜ
 
-Javascriptプログラムを実行する際、コンソールを通じてエラーやデバッグ情報を出力することができます。このデバッグ出力は開発者にとって非常に重要であり、プログラムのバグを発見し、修正するのに役立ちます。
+デバッグ出力を表示するのにはどのような意義があるのか？個人的には、コードの実行過程を理解し、問題箇所を特定するためにとても便利です。また、デバッグ出力を活用することで、コードの挙動を視覚的に確認することも可能です。
 
 ## 方法
 
-デバッグ出力を出力するには、console.log()関数を使用します。以下のようなコードを書くことで、任意のデータをコンソールに出力することができます。
+```Javascript
+console.log('Hello, World!');
+```
+
+デバッグ出力を表示するには、`console.log()`を使用します。この関数は、引数として与えられた値をコンソールに出力します。上の例では、`'Hello, World!'`という文字列を出力します。
 
 ```Javascript
-var name = "John";
-var age = 25;
-
-console.log("Name: " + name);
-console.log("Age: " + age);
+let num1 = 5;
+let num2 = 10;
+let sum = num1 + num2;
+console.log(sum);
 ```
 
-上記のコードを実行すると、コンソールには以下のような出力が表示されます。
-
-```
-Name: John
-Age: 25
-```
+変数を使用することも可能です。上の例では、`num1`と`num2`という2つの数値を足した結果を、`sum`という変数に代入し、`console.log()`を使用して出力しています。
 
 ## 深堀り
 
-デバッグ出力を使用することで、開発者はプログラムの実行中に何が起きているのかを把握することができます。これは、コードのデバッグやバグの発見に役立ちます。また、デバッグ出力を使用することで、プログラムのパフォーマンスや実行時間などの重要な情報を収集することもできます。
+デバッグ出力は、コードを実行する過程での値や変数の状態を確認するのに役立ちます。また、`console.log()`には、複数の引数を渡すことができ、それらをカンマで区切って出力できるようになっています。
 
-## さらに見る
+```Javascript
+let name = 'John';
+let age = 30;
+console.log('Name:', name, 'Age:', age);
+```
 
-- [Console APIドキュメント](https://developer.mozilla.org/ja/docs/Web/API/console)
-- [デバッグ出力のベストプラクティス](https://www.javascript.com/blog/debugging-javascript-tips-and-tools)
-- [コンソールを使ったデバッグの方法](https://www.freecodecamp.org/news/a-guide-to-javascript-console-commands/)
+上の例では、`name`と`age`という2つの変数を出力し、それぞれの前にラベルを付けています。これにより、より分かりやすいデバッグ出力が可能になります。
+
+## 関連リンクを参照
+
+- [MDN Web Docs - console](https://developer.mozilla.org/ja/docs/Web/API/Console) 
+- [JavaScript.info - console, alert, prompt](https://javascript.info/alert-prompt-confirm)

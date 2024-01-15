@@ -1,5 +1,6 @@
 ---
-title:                "C++: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "C++: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "C++"
 category:             "C++"
@@ -9,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w programowaniu?
+## Dlaczego
 
-Testy są nieodłączną częścią procesu tworzenia oprogramowania. Pomagają nam weryfikować poprawność naszego kodu i zapobiegać błędom, a także ułatwiają późniejsze prace związane z modyfikacją lub rozszerzaniem aplikacji. W tym artykule dowiesz się, dlaczego warto pisać testy w C++ i jak to zrobić.
+Sprawdzanie kodu jest nieodłączną częścią procesu programowania. Pomaga zapewnić, że nasz kod działa prawidłowo i jest odporny na błędy. Pisząc testy, możemy również szybko wykryć i naprawić potencjalne problemy w kodzie.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Jedną z metod tworzenia testów w C++ jest wykorzystanie biblioteki do testowania np. Google Test lub Boost.Test. Poniżej przedstawione są przykładowe funkcje testujące z wykorzystaniem biblioteki Google Test.
+Aby napisać testy w C++, musimy skorzystać z biblioteki do testowania. Jednym z najpopularniejszych wyborów jest biblioteka Google Test. Zobaczmy przykładowy test sprawdzający poprawność dodawania dwóch liczb całkowitych:
 
 ```C++
-TEST(DodawanieTest, SprawdzPoprawnoscWyniku) {
-    ASSERT_EQ(4, 2+2); // asercja sprawdzająca równość oczekiwanego wyniku z rzeczywistym
+#include <gtest/gtest.h> // dołączanie biblioteki do projektu
+
+// definicja testu
+TEST(AddTest, Positive) {
+  // przygotowanie testowych danych
+  int x = 5;
+  int y = 10;
+
+  // wywołanie funkcji do przetestowania
+  int result = x + y;
+
+  // sprawdzenie poprawności wyniku
+  ASSERT_EQ(result, 15);
 }
 
-TEST(SortowanieTest, SprawdzSortowanieRosnace) {
-    int tablica[] = {4, 2, 6, 1, 8, 5};
-    std::sort(tablica, tablica+6); // sortowanie tablicy rosnąco
-    ASSERT_TRUE(std::is_sorted(tablica, tablica+6)); // asercja sprawdzająca, czy tablica jest posortowana
+// uruchomienie testów
+int main(int argc, char** argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
 ```
 
-By uruchomić testy, należy utworzyć nowy projekt z wykorzystaniem wybranej biblioteki, a następnie wkleić powyższe funkcje do odpowiedniego pliku i uruchomić.
+W powyższym przykładzie tworzymy test o nazwie "AddTest", który sprawdza poprawność dodawania dwóch liczb. Korzystając z funkcji "ASSERT_EQ", porównujemy wynik działania naszej funkcji z oczekiwanym rezultatem. Jeśli wyniki się nie zgadzają, test zostanie zakończony niepowodzeniem.
 
-## Głębokie zanurzenie
+## Deep Dive
 
-Warto pamiętać, że testy powinny być równie starannie pisane, co kod produkcyjny. Muszą być czytelne, przejrzyste i dobrze nazwane. Należy również zadbać o pokrycie testami różnych przypadków, aby uniknąć błędów w różnych scenariuszach działania aplikacji. Ważne jest również regularne wykonywanie testów w trakcie rozwoju projektu, aby szybko wykrywać ewentualne błędy.
+Pisanie testów jest częścią podejścia zwinnego do programowania, ponieważ pomaga nam w szybkim wykrywaniu i naprawianiu błędów. Gdy testy są napisane i działają poprawnie, mamy większą pewność, że zmiany wprowadzane w kodzie nie powodują nieoczekiwanych efektów ubocznych. Dzięki temu nasz kod jest bardziej niezawodny i łatwiej go rozwijać.
 
 ## Zobacz także
 
-- [Przykład wykorzystania Google Test](https://github.com/google/googletest/blob/master/googletest/samples/sample1_unittest.cc)
-- [Dokumentacja biblioteki Boost.Test](https://www.boost.org/doc/libs/1_69_0/libs/test/doc/html/boost_test/getting_started/for_more_experienced.html)
-- [24 grudnia – testowanie w programowaniu](https://agatagorska.com/advent-of-code-24-grudnia-testowanie-w-programowaniu/)
+- [Dokumentacja biblioteki Google Test](https://github.com/google/googletest)
+- [Tutorial o pisaniu testów w C++](https://www.youtube.com/watch?v=zYK6pJJipno)
+- [Książka "Test Driven Development for Embedded C"](https://pragprog.com/book/jgade/test-driven-development-for-embedded-c)

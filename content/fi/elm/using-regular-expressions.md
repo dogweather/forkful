@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Säännöllisten lausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Elm: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi käyttää reguläärisiä lausekkeita?
 
-Säännölliset lausekkeet ovat erittäin kätevä työkalu löytää ja muokata tiettyjä merkkijonoja tai tekstejä. Ne ovat hyödyllisiä esimerkiksi tietokantojen kyselyissä, lomakkeiden validoinnissa tai tiedostojen käsittelyssä. Säännölliset lausekkeet voivat säästää paljon aikaa ja vaivaa, sillä ne mahdollistavat tehokkaan ja joustavan tekstinmuokkauksen.
+Reguläärisiä lausekkeita käytetään usein ketterissä ohjelmointikielissä, kuten Elm, joiden avulla voimme käsitellä ja manipuloida tekstidataa. Ne ovat hyödyllisiä esimerkiksi tekstin etsimisessä, korvaamisessa ja validoinnissa. Niiden avulla voimme käsitellä monimutkaisia hakuehtoja ja säästää paljon aikaa ja vaivaa.
 
-## Kuinka käyttää säännöllisiä lausekkeita Elm-ohjelmoinnissa?
+## Näin käytät reguläärisiä lausekkeita Elmissä
+```elm
+-- Etsitään sana "kissaeläin" tekstistä
+Regex.find (Regex.regex "kissaeläin") "Tässä on muutama kissaeläin: kissa, koira, hamsteri"
 
-Säännölliset lausekkeet ovat osa Elm:n yleistä `Regex`-kirjastoa, joten niiden käyttöönotto on hyvin yksinkertaista. Alla on esimerkkejä koodinpätkiä, jotka näyttävät kuinka säännöllisiä lausekkeita voi käyttää eri tilanteissa. 
-
-### Tekstin löytäminen
-
-```
---etsi sana "tervetuloa" annetusta merkkijonosta
-let tervetuloa = Regex.fromString "tervetuloa"
-
---tarkista, löytyykö tekstistä sana "tervetuloa"
-Regex.find tervetuloa "Tervetuloa uuteen kotiin!" == Just { matched = "tervetuloa"
-, index = 0
-, submatches = [] }
+-- Tulostaa: Just (Ok (Regex.Match { match = "kissaeläin", submatches = [], index = 27, number = 1, namedSubmatches = Dict.empty }))
 ```
 
-### Tekstin muokkaaminen
+```elm
+-- Korvataan sana "maailma" "universumi"
+Regex.replace (Regex.regex "maailma") "universumi" "Tervetuloa uuteen maailmaan"
 
-```
---muuta kaikki numerot tekstissä "*2" -merkkijonoksi
-let muokkaus = Regex.fromString "[0-9]+"
-
---palauttaa tekstin "2*2*3"
-Regex.replace muokkaus (\match -> "*2") "1*2*3" == "*2*2*3"
+-- Tulostaa: Just (Ok "Tervetuloa uuteen universumiin")
 ```
 
-### Säännöllisten lausekkeiden yhdistäminen
+Regulääriset lausekkeet ovat myös käteviä tarkistamaan esimerkiksi sähköpostiosoitteen tai puhelinnumeron muotoa.
 
-```
---yhdistä sana "tervetuloa" ja "uusi koti"
-let yhdistetty = Regex.fromString "(tervetuloa).*(uusi koti)"
+```elm
+-- Tarkistetaan, onko annettu merkkijono kelvollinen sähköpostiosoite
+Regex.contains (Regex.regex "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}") "esimerkki@domain.com"
 
---tarkista, löytyykö tekstistä molemmat sanat ja missä järjestyksessä
-Regex.find yhdistetty "Tervetuloa uuteen kotiin!" == Just { matched = "Tervetuloa uuteen kotiin"
-, index = 0
-, submatches = [{ matched = "Tervetuloa"
-                , index = 0 }
-              , { matched = "uuteen kotiin"
-                , index = 11 }]
+-- Tulostaa: Just (Ok True)
 ```
 
-## Syvempää tietoa säännöllisten lausekkeiden käytöstä
+## Syvemmälle reguläärisiin lausekkeisiin
 
-Säännöllisten lausekkeiden käyttö vaatii hieman tutustumista RegExp-määrittelyyn ja sen eri elementteihin. Tarkempaa tietoa löytyy esimerkiksi [MDN:n sivuilta](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions) sekä [Elm:n virallisesta dokumentaatiosta](https://package.elm-lang.org/packages/elm/regex/latest/).
+Regulääriset lausekkeet perustuvat useisiin erikoismerkkeihin ja symboleihin, jotka määrittelevät tietyt haku- ja korvausmallit. Esimerkiksi symbolit ".", "+", "?" ja "*" tarkoittavat erilaisia sääntöjä merkkijonon osien sijoittamisessa.
+
+Monet ohjelmointikielillä toimivat regulääriset lausekkeet perustuvat POSIX-määrityksiin, jotka määrittelevät tarkat hakuehdot ja säännönsiirtymät.
+
+Jos haluat oppia lisää reguläärisistä lausekkeista ja niiden käytöstä Elmissä, voit tarkistaa virallisen dokumentaation osoitteesta https://package.elm-lang.org/packages/elm/regex/latest.
 
 ## Katso myös
 
-- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [MDN:n sivut säännöllisistä lausekkeista](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Elm - virallinen verkkosivusto](https://elm-lang.org/)
+- [Elm - suomenkielinen dokumentaatio](https://guide.elm-lang.org/)

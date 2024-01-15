@@ -1,6 +1,7 @@
 ---
-title:                "Java: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना"
+html_title:           "Java: बेसिक प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-HTTP request bhejna bahut ahem hai kyunki yeh server se information receive karne ka ek asaan tareeka hai. Isko basic authentication ke saath bhejna security ki guarantee deta hai.
+## क्यों
 
-## Kaise Karein
-Coding dwaara HTTP request bhejne ka sabse asaan aur reliable tareeka hai. Yeh basic authentication ko include karta hai jiske saath username aur password ki authentication hoti hai. Neeche di gayi Java code blocks examples aur output aapko iss process ko samajhne mein madad karegi.
+बेसिक ऑथेंटिकेशन के साथ HTTP अनुरोध भेजने में क्यों लगें? स्वरप्रधान नेटवर्किंग और सुरक्षा उदाहरणों के रूप में यह प्रयुक्ति एक सरल तरीके से सुरक्षित डेटा संचार को सुनिश्चित करती है।
+
+## कैसे करें
+
+कोडिंग उदाहरणों और "```Java ...```" कोड ब्लॉक के भीतर उदाहरण आउटपुट। नीचे दिए गए कोड ब्लॉक में प्रदर्शित उदाहरण में, हम एक HTTP कनेक्शन के साथ बेसिक ऑथेंटिकेशन का उपयोग करते हुए सर्वर से डेटा प्राप्त करते हैं। 
 
 ```Java
-// HTTP request object create karein
-HttpClient httpClient = HttpClient.newHttpClient();
-HttpRequest request = HttpRequest.newBuilder()
-    // URL set karein
-    .uri(URI.create("https://example.com"))
-    // Request method set karein
-    .method("GET", HttpRequest.BodyPublishers.noBody())
-    // Authentication header set karein
-    .header("Authorization", "Basic " + Base64.getEncoder().encodeToString("username:password".getBytes()))
-    .build();
-// Response object receive karein
-HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-// Response code aur body print karein
-System.out.println(response.statusCode());
-System.out.println(response.body());
+// यूआरएल 
+String url = "https://example.com/api/data";
+// बेसिक ऑथेंटिकेशन की सामान्य जानकारी
+String username = "username";
+String password = "password";
+// ऑथेंटिकेशन स्ट्रिंग बनाना
+String authString = username + ":" + password;
+// अनुरोध हेडर में ऑथेंटिकेशन जोड़ना
+con.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString(authString.getBytes()));
+// अनुरोध भेजना 
+int responseCode = con.getResponseCode();
 ```
 
-### Output:
+उपरोक्त उदाहरण में, हम एक यूआरएल सेट करते हैं जिससे हम डेटा प्राप्त करना चाहते हैं। फिर, हम एक सामान्य उपयोगकर्ता नाम और पासवर्ड सेट करते हैं और उससे एक ऑथेंटिकेशन स्ट्रिंग बनाते हैं। अंत में, हम उपरोक्त मेथड को कॉल करते हैं और सर्वर से सफलतापूर्वक डेटा को प्राप्त करते हैं। इसके अलावा, हम अपने कोड में ऑथेंटिकेशन को जोड़ने के लिए `con.setRequestProperty()` मेथड का उपयोग करते हैं।
 
-200
-Hello World!
+## डीप डाइव
 
-## Gehri Jhaank
-HTTP request bhejne ke liye basic authentication ka istemaal karke, aap server ko validate karte ho ki aap ek authorized user hai. Headers mein "Authorization" field mein username aur password encode kar ke bhejne se server aapka identity verify kar sakta hai. Ismein security risk kam ho jaata hai kyunki data encrypted rehta hai.
-
-## See Also
-- [Java HTTP request tutorial](https://www.geeksforgeeks.org/sending-http-request-using-java/)
-- [Basic authentication in Java](https://www.baeldung.com/java-http-request-basic-authentication)
+HTTP अनुरोध भेजने की तकनीक के साथ बेसिक ऑथेंट

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Capitalizzazione di una stringa"
-simple_title:         "Capitalizzazione di una stringa"
+title:                "Maiuscolare una stringa"
+html_title:           "Kotlin: Maiuscolare una stringa"
+simple_title:         "Maiuscolare una stringa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,65 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molte volte ci troviamo a dover manipolare delle stringhe nel nostro codice, e una delle operazioni più comuni è la capitalizzazione di una stringa. Questo ci permette di modificare facilmente il formato della stringa senza dover scrivere codice aggiuntivo.
+Ci sono molte situazioni in cui potresti voler convertire una stringa in maiuscolo, per esempio per stampare un titolo in grassetto o per confrontare due stringhe tutte in maiuscolo. In questo articolo, vedremo come farlo utilizzando il linguaggio di programmazione Kotlin.
 
 ## Come fare
 
-Per capitalizzare una stringa in Kotlin, possiamo utilizzare il metodo `capitalize()` che di default converte la prima lettera della stringa in maiuscolo.
+Per convertire una stringa in maiuscolo, possiamo utilizzare il metodo `toUpperCase()` della classe `String` di Kotlin. Vediamo un esempio:
 
 ```Kotlin
-val stringa = "kotlin programming"
-println(stringa.capitalize())
-
-// Output: "Kotlin programming"
+val stringa = "ciao mondo"
+val stringaInMaiuscolo = stringa.toUpperCase()
 ```
 
-Inoltre, abbiamo la possibilità di specificare una regione e una codifica opzionale nel caso in cui la stringa contenga caratteri speciali.
+Nell'esempio sopra, abbiamo prima definito una variabile `stringa` con il valore "ciao mondo". Poi, abbiamo utilizzato il metodo `toUpperCase()` per convertire la stringa in maiuscolo e abbiamo salvato il risultato nella variabile `stringaInMaiuscolo`.
+
+Possiamo anche utilizzare il metodo `toUpperCase()` direttamente su una variabile di tipo stringa, senza dover prima definire una nuova variabile. Ad esempio:
 
 ```Kotlin
-val stringa = "è facile iniziare con Kotlin"
-println(stringa.capitalize(locale = Locale.ITALIAN))
-
-// Output: "È facile iniziare con Kotlin"
+val stringa = "saluti!"
+println(stringa.toUpperCase()) // stampa "SALUTI!"
 ```
 
-Se invece vogliamo capitalizzare l'intera stringa, invece di solo la prima lettera, possiamo utilizzare il metodo `toUpperCase()`.
+Se vogliamo convertire una stringa in minuscolo, possiamo utilizzare il metodo `toLowerCase()` della stessa classe `String`, come mostrato nell'esempio seguente:
 
 ```Kotlin
-val stringa = "kotlin programming"
-println(stringa.toUpperCase())
+val stringa = "HELLO WORLD"
+println(stringa.toLowerCase()) // stampa "hello world"
+```
 
-// Output: "KOTLIN PROGRAMMING"
+Un altro metodo utile è `capitalize()`, che converte la prima lettera della stringa in maiuscolo e lascia le altre in minuscolo. Ad esempio:
+
+```Kotlin
+val stringa = "kotlin è un linguaggio di programmazione"
+println(stringa.capitalize()) // stampa "Kotlin è un linguaggio di programmazione"
 ```
 
 ## Approfondimento
 
-Se vogliamo ottenere un controllo più preciso sulla capitalizzazione delle stringhe, possiamo utilizzare la classe `StringBuilder` per manipolare la stringa direttamente.
+I metodi `toUpperCase()` e `toLowerCase()` utilizzano l'alfabeto predefinito del sistema operativo per determinare la conversione in maiuscolo o minuscolo dei caratteri. Questo può essere un problema se stiamo lavorando con stringhe in una lingua diversa dall'inglese. 
 
-Per esempio, possiamo utilizzare il metodo `setCharAt()` per impostare manualmente la lettera maiuscola nella posizione desiderata.
-
-```Kotlin
-val stringa = "kotlin programming"
-val stringBuilder = StringBuilder(stringa)
-stringBuilder.setCharAt(0, 'K')
-println(stringBuilder)
-
-// Output: "Kotlin programming"
-```
-
-Inoltre, possiamo utilizzare il metodo `replace()` per sostituire una porzione di stringa specificando gli indici inizio e fine.
+Per evitare questo problema, possiamo utilizzare il metodo `toUpperCase(Locale)` e `toLowerCase(Locale)` specificando la lingua corretta come parametro. Ad esempio:
 
 ```Kotlin
-val stringa = "kotlin programming"
-val stringBuilder = StringBuilder(stringa)
-stringBuilder.replace(0, 6, "Java")
-println(stringBuilder)
-
-// Output: "Java programming"
+val stringa = "ciao mondo"
+val stringaInMaiuscolo = stringa.toUpperCase(Locale.ITALIAN) 
+println(stringaInMaiuscolo) // stampa "CIAO MONDO"
 ```
+
+Come puoi vedere, utilizzando `Locale.ITALIAN` come parametro, il risultato è diverso rispetto all'esempio precedente, dove veniva utilizzato l'alfabeto inglese predefinito.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Kotlin su `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Documentazione ufficiale di Kotlin su `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-- [Documentazione ufficiale di Kotlin su `StringBuilder`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html)
+- Documentazione ufficiale dei metodi `toUpperCase()`, `toLowerCase()` e `capitalize()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html
+- Altri metodi utili per lavorare con le stringhe in Kotlin: https://kotlinlang.org/docs/reference/strings-overview.html

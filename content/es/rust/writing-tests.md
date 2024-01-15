@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Escribiendo pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Rust: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Rust
-Escribir pruebas es una práctica clave en el desarrollo de software. Nos permite verificar que nuestro código funciona correctamente, detectar errores y mantener un alto nivel de calidad en nuestras aplicaciones. En Rust, escribir pruebas también nos ayudará a garantizar la seguridad y robustez de nuestro código.
+## ¿Por qué escribir pruebas en Rust?
+
+Escribir pruebas en Rust es esencial para garantizar que nuestro código funcione correctamente y para prevenir futuros errores. Además, es una buena práctica de programación que puede ahorrarnos tiempo y esfuerzo a largo plazo.
 
 ## Cómo escribir pruebas en Rust
-Para escribir pruebas en Rust, utilizamos el módulo `#[test]` y la macro `assert!()`. Veamos un ejemplo sencillo que prueba una función que suma dos números:
+
+Para empezar, debemos asegurarnos de que nuestro proyecto tenga la estructura adecuada para incluir pruebas. En la raíz del proyecto, deberíamos tener un directorio llamado "tests" donde colocaremos nuestros archivos de pruebas.
+
+Para crear una función de prueba en Rust, simplemente agregamos el atributo `test` encima de la función. Por ejemplo:
 
 ```Rust
-#[test] // indica que esta es una prueba
-fn test_suma() {
-  let resultado = suma(2, 2); // llamamos a la función que queremos probar
-  assert!(resultado == 4); // comprobamos que el resultado es igual a 4
+#[test]
+fn test_sum() {
+  let result = sum(2, 3);
+  assert_eq!(result, 5);
 }
 ```
 
-Este es un ejemplo básico, pero podemos escribir pruebas más complejas y con diversos casos de prueba. También podemos utilizar la macro `assert_eq!()` para verificar que el resultado sea exactamente igual al esperado, y `assert_ne!()` para comprobar que sean diferentes.
+En el código anterior, hemos creado una función de prueba llamada `test_sum` y hemos utilizado la macro `assert_eq` para verificar que el resultado de nuestra función `sum` sea igual a 5. Si el resultado es diferente, la prueba fallará y obtendremos un mensaje de error.
 
-## Profundizando en la escritura de pruebas
-En Rust, además de las pruebas unitarias con el módulo `#[test]`, también podemos escribir pruebas de integración con el módulo `#[cfg(test)]`. Estas pruebas nos permiten probar nuestra aplicación como un todo, incluyendo la interacción entre los distintos módulos.
+Podemos ejecutar nuestras pruebas escribiendo `cargo test` en la terminal de nuestro proyecto. Esto ejecutará todas las pruebas en nuestro directorio "tests" y nos mostrará un resumen de los resultados.
 
-También es importante mencionar que podemos utilizar la herramienta `cargo test` para ejecutar todas las pruebas de nuestro proyecto de una sola vez. Además, en Rust tenemos la posibilidad de escribir pruebas para código concurrente y para manejo de errores de forma segura.
+## Profundizando en la escritura de pruebas en Rust
+
+Además de la macro `assert_eq`, Rust también tiene otras macros de aserción como `assert!` y `assert_ne!`, que nos permiten verificar diferentes condiciones en nuestras pruebas. También podemos agrupar nuestras pruebas en módulos para una organización más clara y utilizar la macro `#[ignore]` para omitir pruebas específicas.
+
+Es importante recordar que nuestras pruebas también son parte del código y deben seguir las mismas convenciones de estilo y buenas prácticas. Además, es recomendable escribir pruebas para todos los casos de borde y escenarios posibles para garantizar la robustez de nuestro código.
 
 ## Ver también
-- [Documentación de pruebas en Rust](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Tutorial de pruebas en Rust en español](https://dev.to/jdev6/como-escribir-pruebas-en-rust-4f8f)
-- [Ejemplos de pruebas en Rust](https://github.com/jonhkr/rust-testing)
+
+- [Documentación de Rust sobre pruebas y aserciones](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Tutorial de testing en Rust](https://rust-cli.github.io/book/tutorial/testing.html)
+- [Ejemplos de pruebas en Rust](https://github.com/rust-lang/rust/blob/master/src/test/run-pass)

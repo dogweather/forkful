@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Clojure: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué?
 
-En programación, a menudo necesitamos saber la longitud de una cadena de texto. Ya sea para realizar una validación o para manipular la información, conocer la longitud de una cadena es una habilidad esencial en cualquier lenguaje de programación. En este artículo, exploraremos cómo podemos encontrar la longitud de una cadena en Clojure.
+Si te estás iniciando en la programación con Clojure, es posible que te preguntes por qué es importante saber cómo encontrar la longitud de una cadena de texto. La realidad es que esta es una habilidad fundamental en cualquier lenguaje de programación, ya que te permite manipular y trabajar con datos de texto de manera efectiva.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-En Clojure, podemos usar la función `count` para obtener la longitud de una cadena. Esta función toma cualquier secuencia, incluyendo cadenas, y devuelve su longitud. Veamos un ejemplo:
-
-```Clojure
-(count "Hola") ; Devuelve 4
-```
-
-En este caso, la cadena "Hola" tiene una longitud de 4 caracteres, por lo que la función `count` devuelve 4. Podemos almacenar este valor en una variable para usarlo más tarde:
+En Clojure, podemos encontrar la longitud de una cadena de texto utilizando la función `count`. Esta función toma una cadena de texto como argumento y devuelve su longitud como un número entero.
 
 ```Clojure
-(def longitud (count "Hola")) ; Almacenamos el valor 4 en la variable longitud
+(count "Hola mundo") ; Salida: 10
+(count "") ; Salida: 0
 ```
 
-También podemos usar la función `count` en combinación con la función `str`, que nos permite convertir cualquier valor en una cadena de texto. Veamos un ejemplo:
+En el primer ejemplo, se cuenta la longitud de la cadena "Hola mundo", que consta de 10 caracteres (incluyendo el espacio en blanco). En el segundo ejemplo, se cuenta la longitud de una cadena vacía, que obviamente es 0.
+
+Otra forma de encontrar la longitud de una cadena de texto es convirtiéndola en una secuencia y luego utilizando la función `count` como se muestra a continuación:
 
 ```Clojure
-(count (str 123)) ; Devuelve 3
+(count (seq "Hola mundo")) ; Salida: 10
 ```
 
-En este caso, la función `str` convierte el número entero 123 en una cadena de texto, y luego la función `count` devuelve su longitud, que en este caso es 3.
+Esta segunda opción puede ser útil si necesitas trabajar con caracteres específicos de la cadena.
 
-## Profundizando
+## Buceando más profundo
 
-Ahora que sabemos cómo encontrar la longitud de una cadena en Clojure, profundicemos un poco más en la función `count`. Esta función no solo funciona con cadenas, sino también con otros tipos de secuencias, como listas o vectores. Veamos un ejemplo con listas:
+¿Sabías que la función `count` también se puede utilizar en otros tipos de datos? En Clojure, se puede aplicar en listas, vectores, conjuntos y mapas para obtener su tamaño.
 
 ```Clojure
-(count '(1 2 3 4 5)) ; Devuelve 5
+(count [1 2 3]) ; Salida: 3
+(count #{:a :b :c}) ; Salida: 3
 ```
 
-También podemos usar la función `count` en una secuencia vacía, en cuyo caso devuelve 0:
-
-```Clojure
-(count []) ; Devuelve 0
-```
-
-Como ves, la función `count` es muy versátil y nos permite obtener la longitud de cualquier secuencia en Clojure de manera sencilla.
+También es importante tener en cuenta que la función `count` es muy eficiente y no realiza un recorrido completo de la secuencia. En lugar de eso, utiliza la información de longitud ya almacenada en los datos para devolver el resultado, lo que la hace muy útil cuando se trabaja con grandes conjuntos de datos.
 
 ## Ver también
 
-- [Documentación oficial de la función `count`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count)
-- [Tutorial de Clojure en español](https://clojuredocs.org/)
-
-¡Espero que este artículo te haya sido útil para aprender cómo encontrar la longitud de una cadena en Clojure! Si deseas aprender más sobre este lenguaje de programación funcional, te recomiendo consultar la documentación oficial y el tutorial en español que te dejé en la sección de "Ver también". ¡Feliz programación!
+- Documentación oficial de la función `count`: https://clojuredocs.org/clojure.core/count
+- Tutoriales gratuitos de Clojure en línea: https://www.braveclojure.com/
+- Comunidad de programadores en español de Clojure: https://clojured.es/

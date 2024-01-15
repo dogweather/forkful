@@ -1,5 +1,6 @@
 ---
-title:                "Elm: 日付を文字列に変換する"
+title:                "日付を文字列に変換する"
+html_title:           "Elm: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,42 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を文字列に変換することの重要性を説明するための1-2文。
-
-日付を文字列に変換する理由は、エルム（Elm）で日付と時刻を扱う際に非常に便利な方法です。例えば、JavaScriptでは、日付を表示するために複雑な処理が必要ですが、エルムでは日付を簡単に文字列に変換することができます。これにより、コードの見通しが良くなり、バグの可能性も低くなります。
+日付を文字列に変換する必要性は多々あります。例えば、ユーザーが入力した日付を表示する場合やデータベースに格納する前に文字列に変換する必要がある場合などが考えられます。今回は、Elmを使用して日付を文字列に変換する方法について紹介します。
 
 ## 方法
 
-日付を文字列に変換するには、いくつかの方法があります。その中でも、エルムの標準モジュールである `Time` モジュールを使用する方法が最も簡単です。
+まずはDateパッケージをインポートしましょう。
 
-まずは日付を表す値である `Posix` タイプを作成します。次に、`Time.format` 関数を使用して、指定したフォーマットに従って日付を文字列に変換します。以下のコードブロックを見ると、より具体的な例が分かりやすくなるでしょう。
-
-```Elm
--- 日付を表すPosix型を作成
-let date = Time.millisToPosix 1555555555
-
--- 指定したフォーマットに従って、日付を文字列に変換
-let dateString = Time.format "%Y年%m月%d日" date
+```elm
+import Date
 ```
 
-上記のコードでは、`Posix`型を作成する際に `Time.millisToPosix` 関数を使用しています。この関数には、ミリ秒単位で表された日時の数値を渡すことで、`Posix`型を作成することができます。
+次に、Dateパッケージの「fromTime」関数を使用して日付を作成します。ここでは、今日の日付を使用しましょう。
 
-そして、`Time.format` 関数には、フォーマットを指定するためのパラメーターとして `%Y`（年）、`%m`（月）、`%d`（日）を使用し、その後に`Posix`型を渡すことで、指定したフォーマットに従って日付を文字列に変換することができます。
+```elm
+let currentDate = Date.fromTime 0
+```
 
-上記のコードを実行すると、`"2019年04月18日"`という文字列が得られます。
+次に、DateTime.Languageパッケージをインポートし、言語を定義します。ここでは、デフォルトの「ja」を使用します。
 
-## 深堀り
+```elm
+import DateTime.Language
+let language = DateTime.Language.fromLanguageCode "ja"
+```
 
-もし、上記の方法で日付を文字列に変換する際にフォーマットのカスタマイズを行いたい場合は、`Time.format` 関数の中で使用できるフォーマット文字列について学ぶ必要があります。
+最後に、「format」関数を使用して日付を文字列に変換します。
 
-たとえば、年や月などの単位を表す文字列には、`%Y` や `%m` の他に `%D` や `%h` といったものがあり、それぞれ月の日数や24時間制の時間の表記を提供します。
+```elm
+let stringDate = Date.format language "%Y/%m/%d" currentDate
+```
 
-詳しい情報は[公式ドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Time#Format)を参照してください。
+上記の例では、日付が「2021年3月23日」となります。
 
-このように、エルムでは日付を文字列に変換する際に非常に便利な方法が用意されています。ぜひ、自分のプロジェクトで使用してみてください。
+## ディープダイブ
 
-## 関連リンク
+Dateパッケージには多くのフォーマットオプションがあり、日付をより細かく指定することができます。例えば、月や曜日の言語を変更することも可能です。また、「parse」関数を使用することで文字列を日付に変換することもできます。
 
-- [エルム公式ドキュメント - Date](https://guide.elm-lang.org/architecture/effects/time.html)
-- [エルム公式ドキュメント - Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Formatプロジェクト](https://package.elm-lang.org/packages/justinmimbs/date-format/latest/)
+## はじめてのElm
+
+今回紹介したように、Elmを使用することで日付を簡単に文字列に変換することができます。ぜひ、実際にコードを書いてみて、様々なフォーマットを試してみてください。
+
+## 参考リンク
+
+- [Dateパッケージ - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/Date)
+- [DateTime.Languageパッケージ - Elm Documentation](https://package.elm-lang.org/packages/elm-community/date-time/latest/DateTime-Language)

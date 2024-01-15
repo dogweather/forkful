@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Rust: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum Regular Expressions in Rust verwenden?
+## Warum
 
-Wenn Sie eine effiziente Methode zur Mustererkennung in Texten benötigen, können Regular Expressions in Rust eine sehr nützliche Funktion sein. Durch ihre Kombination aus Algorithmen und Syntax können Sie Textmuster präzise definieren und so die Verarbeitung von Daten erleichtern.
+Du fragst dich vielleicht, warum du dir die Mühe machen solltest, dich mit regulären Ausdrücken in Rust auseinanderzusetzen. Nun, wenn du jemals eine Aufgabe hattest, bei der du Texte durchsuchen, filtern oder manipulieren musstest, dann sind reguläre Ausdrücke das perfekte Werkzeug dafür. Sie ermöglichen es dir, bestimmte Muster in Texten zu definieren und dann gezielt danach zu suchen oder sie zu ersetzen. Mit regulären Ausdrücken kannst du deine Textverarbeitung in Rust auf die nächste Ebene bringen und Aufgaben, die sonst viel manuellen Aufwand erfordern würden, automatisieren.
 
-## So funktionieren Regular Expressions in Rust
+## Wie funktioniert es?
 
-Um Regular Expressions in Rust zu verwenden, müssen Sie zunächst die Bibliothek "regex" in Ihrem Projekt importieren. Mit der Methode "regex::Regex::new()" können Sie dann ein Regex-Objekt erstellen, dem Sie anschließend mithilfe der Methode "is_match()" einen Text zur Analyse übergeben können. In folgendem Beispiel wird eine E-Mail-Adresse auf ihre Gültigkeit überprüft:
+Um reguläre Ausdrücke in Rust zu verwenden, müssen wir das Modul `regex` importieren. Wenn wir zum Beispiel einen Text auf das Vorhandensein eines bestimmten Worts überprüfen wollen, könnten wir folgenden Code verwenden:
 
-```rust
-extern crate regex;
+```Rust
 use regex::Regex;
 
-fn main() {
-    let email_regex = Regex::new(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$").unwrap();
-    let email = "example@mail.com";
-    if email_regex.is_match(email) {
-        println!("Die E-Mail-Adresse ist gültig!");
-    } else {
-        println!("Die E-Mail-Adresse ist ungültig!");
-    }
-}
+let text = "Das ist ein Beispieltext zum Testen von regulären Ausdrücken.";
+let re = Regex::new(r"Beispiel").unwrap();
+let result = re.is_match(text);
+println!("{}", result); // Ausgabe: true
 ```
 
-Die Ausgabe in diesem Fall wäre: "Die E-Mail-Adresse ist gültig!". Das Regex-Muster enthält alle gängigen Regeln für E-Mail-Adressen und kann somit die Gültigkeit überprüfen.
+In diesem Codebeispiel definieren wir ein `Regex`-Objekt mit dem Muster, nach dem wir suchen möchten (hier das Wort "Beispiel"). Dann überprüfen wir mit `is_match()` ob das Muster im Text enthalten ist und geben das Ergebnis aus. Dies ist nur ein einfaches Beispiel, es gibt jedoch eine Vielzahl von Funktionen und Möglichkeiten, die reguläre Ausdrücke in Rust bieten.
 
-## Tiefergehende Informationen zu Regular Expressions in Rust
+## Tieferes Eintauchen
 
-Neben der einfachen Überprüfung von Texten können Sie mit Regular Expressions in Rust auch komplexere Aufgaben wie das Extrahieren von bestimmten Informationen aus einem Text lösen. Dazu können Sie mithilfe von Capture Groups bestimmte Teile eines Textes markieren und später darauf zugreifen. Mehr Informationen über Capture Groups und weitere fortgeschrittene Funktionen von Regular Expressions in Rust finden Sie in der offiziellen Dokumentation unter [https://docs.rs/regex/](https://docs.rs/regex/).
+Reguläre Ausdrücke können beliebig komplex werden und es gibt eine große Auswahl an verschiedenen Syntaxen und Funktionen, die verwendet werden können. Wenn du tiefer in die Welt der regulären Ausdrücke in Rust eintauchen möchtest, gibt es einige nützliche Ressourcen, die du nutzen kannst:
 
-# Siehe auch
+- Die offizielle Dokumentation des `regex`-Moduls: https://docs.rs/regex/1.4.2/regex/
+- Das Rust RegExp Cookbook: https://rust-lang-nursery.github.io/rust-cookbook/text/regular_expressions.html
+- Ein interaktives Tutorial für reguläre Ausdrücke in Rust: https://fasterthanli.me/articles/easy-text-adventure#regexes
 
-- Offizielle Dokumentation zu Regular Expressions in Rust: [https://docs.rs/regex/](https://docs.rs/regex/)
-- Einführung in Regular Expressions in Rust von der offiziellen Rust-Website: [https://www.rust-lang.org/learn/regular-expressions](https://www.rust-lang.org/learn/regular-expressions)
-- Weitere Beispiele für die Verwendung von Regular Expressions in Rust: [https://github.com/rust-lang/regex/tree/master/examples](https://github.com/rust-lang/regex/tree/master/examples)
+Verwende diese Ressourcen, um dein Verständnis für reguläre Ausdrücke in Rust zu vertiefen und noch mehr über ihre Funktionsweise und Anwendungsmöglichkeiten zu lernen.
+
+## Siehe auch
+
+- `regex`-Modul Dokumentation: https://docs.rs/regex/1.4.2/regex/
+- Rust RegExp Cookbook: https://rust-lang-nursery.github.io/rust-cookbook/text/regular_expressions.html
+- Interaktives Tutorial für reguläre Ausdrücke: https://fasterthanli.me/articles/easy-text-adventure#regexes

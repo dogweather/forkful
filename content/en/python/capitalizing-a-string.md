@@ -1,5 +1,6 @@
 ---
-title:                "Python recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Python recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Python"
 category:             "Python"
@@ -10,51 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever needed to change the case of a string in your Python code? Whether it's for formatting purposes or to compare user input, capitalizing a string can be a common task for many programmers. In this blog post, we'll explore how to easily capitalize a string in Python and dive deeper into the underlying concepts.
+Capitalizing a string might seem like a simple task, but it is a common scenario in data analysis, content formatting, and user input validation. Whether you need to ensure consistency in your data or improve the appearance of your user interface, capitalizing a string can be a handy tool in your coding arsenal.
 
 ## How To
+Capitalizing a string in Python is straightforward. You can use the built-in `capitalize()` method to capitalize the first letter of a string, or the `title()` method to capitalize the first letter of each word in a string.
 
-To capitalize a string in Python, we can simply use the `upper()` method, which will convert all characters in the string to uppercase. Let's take a look at an example:
+```
+```Python
+name = "john doe"
+print(name.capitalize())
+# Output: John doe
 
-```python
-# Assign a string to a variable
-my_string = "hello world"
-
-# Use the upper() method and assign the result to a new variable
-capitalized_string = my_string.upper()
-
-# Print the result
-print(capitalized_string)
+title_case = "this is a sample string"
+print(title_case.title())
+# Output: This Is A Sample String
 ```
 
-The output will be `HELLO WORLD`. As you can see, the `upper()` method has converted all characters in the string to uppercase.
-
-But what if we only want to capitalize the first letter of the string? We can use the `capitalize()` method, which will capitalize only the first character and convert the rest to lowercase. Let's see it in action:
-
-```python
-# Assign a string to a variable
-my_string = "hello world"
-
-# Use the capitalize() method and assign the result to a new variable
-capitalized_string = my_string.capitalize()
-
-# Print the result
-print(capitalized_string)
 ```
 
-The output will be `Hello world`, with the first letter capitalized and the rest in lowercase.
+You can also use the `upper()` method to convert the entire string to uppercase or `lower()` method to convert it to lowercase.
 
-These methods are simple yet effective in capitalizing strings in Python. However, it's important to note that they only work with alphabetic characters. Special characters, numbers, and spaces will remain unchanged.
+```
+```Python
+text = "hello world"
+print(text.upper())
+# Output: HELLO WORLD
+
+print(text.lower())
+# Output: hello world```
+
+```
 
 ## Deep Dive
+The `title()` method and `capitalize()` method only capitalize the first letter of each word or the first letter of the string, respectively. However, they do not account for names or proper nouns that should always be capitalized. In situations where you want to ensure proper capitalization of names, you can use the `title()` method in combination with the `split()` method and a simple `for` loop.
 
-Now that we've seen how to capitalize strings in Python, let's dive deeper into the underlying concepts. The `upper()` and `capitalize()` methods are part of the `str` data type, which stands for "string". These methods are known as built-in methods, which means they are already available for use in Python without the need for importing any libraries.
+```
+```Python
+name = "jane doe"
+cap_name = []
 
-It's also useful to know that strings are immutable in Python, which means they cannot be changed after they are created. This is why the `upper()` and `capitalize()` methods return a new string object instead of modifying the original one. This might seem counterintuitive at first, but it actually helps with data integrity and avoids unwanted side effects.
+for word in name.split():
+    cap_name.append(word.capitalize())
+
+print(' '.join(cap_name))
+# Output: Jane Doe
+```
+
+Another useful tip is to use the `isalpha()` method to check if a string contains only letters. This can be helpful in scenarios where you want to capitalize only the first letter of words and not any numbers or special characters.
+
+```
+```Python
+user_input = input("Enter a string: ")
+
+if user_input.isalpha():
+    print(user_input.title())
+else:
+    print("Invalid input, try again.")
+```
 
 ## See Also
-
-- [Official Python Documentation on Strings](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Real Python Article on String Methods](https://realpython.com/python-strings/#string-methods)
-- [GeeksforGeeks Tutorial on String Methods](https://www.geeksforgeeks.org/python-string-methods-set-1-find-replace-split-length-compare/)
+- [Python String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Stack Overflow: How to capitalize first letter of a string in Python](https://stackoverflow.com/questions/1549641/how-to-capitalize-the-first-letter-of-a-string-in-python)

@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Fish Shell: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么：获取当前日期的理由
+## 为什么
 
-获取当前日期对程序员来说是一项非常基本的任务，因为它可以帮助我们记录和跟踪程序运行的时间，也可以作为程序中的重要参考点。使用Fish Shell可以轻松地获取当前日期，并且操作简单高效，让我们一起来看看怎么做吧！
+我们常常需要知道当前的日期，例如在编写日记或者记录某些事件的时候。使用Fish Shell可以轻松获取当前日期，让我们来学习如何做到这一点。
 
-## 如何操作：Fish Shell代码示例
+## 如何做到
+
+首先，在Fish Shell中打开一个终端窗口。然后，输入以下命令来获取当前日期：
 
 ```Fish Shell
-# 使用"date"命令来获取当前日期
 date
-# 获取带有年月日时分秒的详细日期
-date +"%Y-%m-%d %H:%M:%S"
-# 获取带有星期的日期
-date +"%A, %d %b %Y"
 ```
 
-以上代码将会输出以下结果：
+你会看到类似于这样的输出：
 
-```
-Mon Oct 11 17:24:25 CST 2021
-2021-10-11 17:24:25
-Monday, 11 Oct 2021
+```Fish Shell
+Tue Mar 23 21:24:55 CST 2021
 ```
 
-通过使用不同的格式可以获取不同类型的日期，比如只需要年份或者月份等，可以根据自己的需求来自定义表达式。
+这是当前时间的标准格式，但是如果你想要以不同的格式显示，可以使用一些额外的参数。例如，如果你只想显示日期，可以添加`+"%d"`：
 
-## 深入了解：获取当前日期的更多信息
+```Fish Shell
+date +"%d"
+```
 
-Fish Shell 中，默认使用系统的 date 命令来获取日期，也可以使用其它 Linux / Unix 系统提供的同名命令，比如 FreeBSD 上有个 coreutils 家族软件中的 date 命令，可以使用  coreutils-date 来调用。另外，文档建议不要使用 isodate 来格式化 日期，因为它会不易倒置，建议使用 Fish Shell 内置的 datef 命令来格式化输出，比如：```datef %02m-%02d``` ，即日月分，缺乏年份和连字符，当然，你也可以根据自己的习惯来调整筛选和调整日期格式。
+这将输出当前日期的数字格式，例如`23`。你也可以添加其他参数来显示月份、年份、甚至自定义格式。有关更多详细信息，请参考Fish Shell的文档。
 
-## 参考资料
+## 深入探讨
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [Linux / Unix 系统命令文档](https://www.freebsd.org/man.cgi?query=date&sektion=1&arch=default&manpath=FreeBSD+12.2-RELEASE+and+Ports)
-- [Fish Shell格式化输出指导](https://fishshell.com/docs/current/cmds/date.html)
-- [Linux不同发行版的常用命令对比](https://www.tecmint.com/linux-date-command-examples/)
+实际上，Fish Shell使用的`date`命令实际上是从UNIX操作系统中继承而来的。它是一个非常有用的工具，在工作中使用时可以帮助我们轻松获取当前日期，而不用担心繁琐的格式转换。
+
+另外，你还可以在Fish Shell中使用`cal`命令来显示当前的日历。例如，输入`cal 3 2021`可以显示2021年3月的日历。这也是一个很实用的技巧，可以帮助我们更好地计划我们的日程安排。
+
+## 参考链接
+
+- Fish Shell官方文档：https://fishshell.com/docs/current/index.html
+- UNIX操作系统：https://en.wikipedia.org/wiki/Unix
+- `date`命令的详细参数文档：https://man7.org/linux/man-pages/man1/date.1.html

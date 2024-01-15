@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: 未来または過去の日付の計算"
-simple_title:         "未来または過去の日付の計算"
+title:                "未来あるいは過去の日付を計算する"
+html_title:           "Fish Shell: 未来あるいは過去の日付を計算する"
+simple_title:         "未来あるいは過去の日付を計算する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -9,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-どのような日付を過去や未来に計算する必要があるのか、簡単に説明します。
+##なぜ
+未来や過去の日付を計算することに興味がある場合、あなたのコマンドラインでそれを行うことができます。例えば、誕生日や記念日を計算したり、派手なリマインダーを設定したりすることができます。それでは、Fish Shellでどのように日付を計算するかを見ていきましょう。
 
-## 方法
-```Fish Shell```を使用して、日付を計算するためのコーディング例とサンプル出力を以下に示します。
-
-### 過去の日付を計算する
-たとえば、10日前の日付を計算したい場合、以下のように入力します。
+##方法
+Fish Shellで日付を計算するには、次のようにコマンドを入力します。
 
 ```
-set today (date -u +"%m%d")
-set ten_days_ago (math $today - 10)
-set date (date -ud "$ten_days_ago" +"%Y-%m-%d")
-echo $date
+date -d "1 day"
 ```
 
-出力は、現在の日付から10日前の日付がYYYY-MM-DDの形式で表示されます。
-
-### 未来の日付を計算する
-同様に、10日後の日付を計算するには、以下のコードを使用します。
+これは、明日の日付を表示するコマンドです。他の日付や時間の計算方法もあります。たとえば、次のように一週間後の日付を表示することもできます。
 
 ```
-set today (date -u +"%m%d")
-set ten_days_later (math $today + 10)
-set date (date -ud "$ten_days_later" +"%Y-%m-%d")
-echo $date
+date -d "1 week"
 ```
 
-出力は、同じく現在の日付から10日後の日付がYYYY-MM-DDの形式で表示されます。
+また、過去の日付を計算することもできます。次のように、一ヶ月前の日付を表示することができます。
 
-## 詳細
-日付を計算する際に使われる```date```コマンドは様々なオプションがあり、特定の日付や時刻のフォーマットや、タイムゾーンの設定も可能です。また、```math```コマンドを使用することで、日付の計算を簡単に行うことができます。
+```
+date -d "1 month ago"
+```
 
-## 参考リンク
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [日付と時刻を操作する方法](https://qiita.com/nishina555/items/7ea9587c2c2a42a9aa1f)
+詳細な日付の計算方法については、公式のドキュメントをチェックすることができます。また、高度な日付の計算については、`man`コマンドを使用してマニュアルを確認することもできます。
+
+##ディープダイブ
+日付を計算するためのディープダイブ（深い掘り下げ）をする前に、一般的なシェルコマンドの基礎を理解しておく必要があります。Fish Shellの公式サイトや他のリソースから簡単に見つけることができるので、それらをチェックするのも良いでしょう。また、コマンドラインの日付計算以外にも、Fish Shellには便利なコマンドや機能がたくさんあるので、ぜひ探索してみてください。
+
+##参考リンク
+
+- [Fish Shell公式サイト](https://fishshell.com/)
+- [Fish Shellのドキュメント](https://fishshell.com/docs/current/index.html)
+- `man`コマンドを使用してターミナル内でマニュアルを確認する方法を学ぶこともできます。

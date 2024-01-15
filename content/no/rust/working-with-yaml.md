@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Jobbe med yaml"
-simple_title:         "Jobbe med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Rust: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -11,73 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er en utvikler som jobber med dataintensive applikasjoner, har du mest sannsynlig støtt på YAML filer. YAML (YAML Ain't Markup Language) er et tekstformat som brukes til å representere datastrukturer på en lesbar og menneskelig måte. Det er spesielt nyttig for å beskrive konfigurasjoner og metadata for applikasjoner. Rust er et stadig mer populært programmeringsspråk som er kjent for sin ytelse og sikkerhet, og også støtter bearbeiding av YAML filer. La oss utforske hvordan du kan bruke Rust for å jobbe med YAML filer.
+I dagens verden av programvareutvikling, hvor kompleksiteten og datamengden stadig øker, har behovet for fleksible og leservennlige formater for datautveksling blitt viktigere enn noensinne. YAML er et av disse formatene, og ved å bruke Rust, et moderne og effektivt programmeringsspråk, kan du enkelt håndtere og manipulere YAML-data på en trygg og effektiv måte.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å kunne håndtere YAML filer i Rust, trenger vi et bibliotek som kan hjelpe oss med å tolke og manipulere dataene. Et av de beste bibliotekene for dette formålet er serde_yaml. For å bruke dette biblioteket i prosjektet ditt, må du legge til følgende linje i Rusts manifestfil (Cargo.toml):
+For å komme i gang med å jobbe med YAML i Rust, følg disse trinnene:
 
-```
-serde_yaml = "0.8.16"
-```
+1. Installer Rust ved å følge instruksjonene på [Rust sin offisielle nettside](https://www.rust-lang.org/). Dette vil også installere Rust sin pakkebehandler, Cargo.
+2. Opprett et nytt Rust-prosjekt ved å kjøre kommandoen `cargo new <prosjektnavn>`.
+3. Legg til følgende avhengighet i `Cargo.toml`-filen i ditt nyopprettede prosjekt: `yaml_rs = "0.4.0"`.
+4. Utforsk dokumentasjonen til [YAML-rs biblioteket](https://docs.rs/yaml-rs/0.4.0/yaml_rs/) for å lære mer om dets funksjoner og hvordan de kan brukes.
+5. Bruk kommandoene `cargo build` og `cargo run` for å bygge og kjøre ditt nye prosjekt.
 
-Det neste trinnet er å importere biblioteket i koden din ved å legge til følgende linje i toppen av filen din:
+La oss nå se på et enkelt eksempel på hvordan du kan bruke YAML-rs biblioteket i et Rust-program:
 
-```
-use serde_yaml;
-```
-
-Nå kan vi begynne å jobbe med YAML filen ved å åpne den med Rusts standard bibliotekfs-funksjonen. La oss se på et eksempel på hvordan vi kan lese innholdet i en YAML fil:
-
-```
+```Rust
+extern crate yaml_rs;
 use std::fs::File;
-use std::io::prelude::*;
 
 fn main() {
-    let mut yaml_file = File::open("example.yaml").unwrap();
-    let mut contents = String::new();
-    yaml_file.read_to_string(&mut contents).unwrap();
-    let data: serde_yaml::Value = serde_yaml::from_str(&contents).unwrap();
-    println!("{:?}", data);
+    // Opprett en ny fil som skal inneholde YAML-data
+    let mut file = File::create("data.yaml").expect("Kunne ikke opprette fil");
+
+    // Opprett en ny YAML Data struktur
+    let data = yaml_rs::Data::new()
+        .add("navn", "Ola Nordmann")
+        .add("alder", 35)
+        .add("jobb", "Utvikler");
+
+    // Skriv YAML-dataen til filen
+    data.write_to(&mut file).expect("Kunne ikke skrive til fil");
+
+    // Les YAML-dataen fra filen og konverter den til et hashmap
+    let data_leser = yaml_rs::Reader::from_file("data.yaml").expect("Kunne ikke åpne fil");
+    let leste_data = data_leser.deserialize().expect("Kunne ikke konvertere til hashmap");
+
+    // Skriv ut dataen
+    println!("{:?}", leste_data);
 }
 ```
 
-Når du kjører dette eksempelet, vil du se at den YAML filen du har åpnet, blir konvertert til en serde_yaml::Value struktur som du kan jobbe med. Fra nå av er det bare fantasien som setter grenser, og du kan begynne å manipulere dataene slik du vil.
-
-## Dypdykk
-
-Serde_yaml-biblioteket gir oss også muligheten til å serialisere og deserialisere Rust strukturer direkte til og fra YAML filer. Dette betyr at du kan bruke YAML som en konfigurasjonsfil for din Rust-applikasjon og enkelt endre verdier uten å måtte endre koden din. La oss se på et eksempel på hvordan dette kan gjøres:
+Dette programmet vil skrive ut følgende:
 
 ```
-use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-
-#[derive(Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u8,
-    hobbies: Vec<String>,
-    contact_info: HashMap<String, String>,
-}
-
-fn main() {
-    let person = Person {
-        name: "Nils".to_string(),
-        age: 30,
-        hobbies: vec!["programming".to_string(), "hiking".to_string()],
-        contact_info: [("email".to_string(), "nils@eksempel.com".to_string()),
-                       ("phone".to_string(), "12345678".to_string())]
-            .iter().cloned().collect(),
-    };
-    let yaml_string = serde_yaml::to_string(&person).unwrap();
-    println!("{}", yaml_string);
-}
+{"alder": 35, "navn": "Ola Nordmann", "jobb": "Utvikler"}
 ```
 
-Dette eksempelet viser hvordan du kan bruke serde_yaml-biblioteket til å serialisere en Rust-struktur til en YAML tekststreng som du kan bruke som en konfigurasjonsfil for din applikasjon.
+## Dykk dypere
+
+La oss nå ta en nærmere titt på noen av de viktigste funksjonene i YAML-rs biblioteket:
+
+### Data struktur
+
+Som vist i eksempelet ovenfor, er `Data` strukturen hovedkomponenten i YAML-rs biblioteket. Denne strukturen kan holde alle typer data, inkludert strenger, tall og komplekse datastrukturer som hashmap.
+
+### Reader og Writer
+
+YAML-rs biblioteket tilbyr også en `Reader` og `Writer` klasse, som gjør det enkelt å lese og skrive YAML-data mellom filer og datastrukturer.
+
+### Feilhåndtering
+
+For å sikre at applikasjonen din håndterer feil på en effektiv måte, tilbyr YAML-rs biblioteket også en `YamlError` enum som kan brukes til å fange og håndtere eventuelle feil som oppstår under kjøring.
 
 ## Se også
 
-- [https://github.com/serde-rs/yaml](https://github.com/serde-rs/yaml) - Serde_yaml bibliotekets GitHub-side
-- [https://docs.rs/serde_yaml/](https://docs.rs/serde_yaml/) - Serde_yaml dokumentasjon
-- [https://doc.rust-lang.org/std/fs/index.html](https://doc.rust-lang.org/std/fs/index.html) - Rust standard bibliotekfs-dokumentasjon
+- [Rust sin offisielle nettside](https://www.rust-lang.org/)
+- [YAML-rs dokumentasjon](https://docs.rs/yaml-rs/0.4.0/yaml_rs/)

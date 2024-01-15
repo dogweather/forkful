@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Fish Shell: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -9,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porque
-Se você está procurando uma maneira eficiente e poderosa de manipular e filtrar dados em seu terminal, o uso de expressões regulares é a solução ideal. Com o Fish Shell, você pode facilmente integrar expressões regulares em seu fluxo de trabalho para automatizar tarefas e tornar o seu trabalho mais eficiente.
+## Por que utilizar expressões regulares?
 
-## Como Fazer
-Para começar a usar expressões regulares no Fish Shell, tudo o que você precisa fazer é usar o comando `grep`. Este comando permite que você procure por padrões em arquivos ou saídas de comando. Você também pode usar o `sed` para substituir ou manipular dados com base em seus padrões.
+Expressões regulares são uma ferramenta poderosa e útil para manipular e analisar dados em qualquer tipo de programação. Elas permitem que você procure por padrões específicos em uma string de texto, facilitando a extração de informações importantes e o tratamento de dados de forma eficaz.
 
-Veja um exemplo simples de como encontrar todas as linhas que contêm a palavra "hello" em um arquivo de texto:
+Em suma, usar expressões regulares pode economizar muito tempo e esforço ao lidar com grandes quantidades de dados ou necessidades complexas de manipulação de texto.
 
-```Fish Shell
-grep hello arquivo.txt
-```
+## Como utilizar expressões regulares no Fish Shell
 
-Isso irá imprimir todas as linhas que contêm a palavra "hello" no arquivo "arquivo.txt". Agora, vamos supor que queremos substituir todas as ocorrências de "hello" por "olá". Podemos usar o `sed` da seguinte maneira:
+Para utilizar expressões regulares no seu código Fish Shell, há algumas coisas importantes para lembrar. Primeiro, você precisará do comando `grep` para fazer a busca e manipulação de texto. Você pode usá-lo dessa maneira:
 
 ```Fish Shell
-sed -i 's/hello/olá/g' arquivo.txt
+grep "padrão" arquivo.txt
 ```
 
-O `sed -i` irá substituir o texto diretamente no arquivo e o `s/padrão/substituição/g` indica que queremos substituir todas as ocorrências do padrão pelo texto de substituição.
+Isso irá procurar por todas as ocorrências do "padrão" no arquivo.txt e imprimi-las no seu terminal.
 
-## Mergulho Profundo
-Além dos comandos `grep` e `sed`, o Fish Shell também suporta outros utilitários úteis para trabalhar com expressões regulares, incluindo `awk` e `perl`. Além disso, você também pode usar meta-caracteres e classes para tornar suas expressões regulares ainda mais poderosas.
+Você também pode usar expressões regulares em estruturas de loop e comandos de substituição de texto. Por exemplo, se você quiser substituir todas as letras maiúsculas por minúsculas em um arquivo, pode usar o seguinte comando:
 
-Por exemplo, o caractere `.` pode ser usado para representar qualquer caractere, e `[]` pode ser usado para combinar qualquer caractere dentro dos colchetes. Você também pode usar `|` para delimitar opções dentro de uma expressão regular.
+```Fish Shell
+sed -e 's/[A-Z]/\L&/g' arquivo.txt
+```
 
-## Veja Também
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Guia Interativo do Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Introdução ao Expressões Regulares](https://fishshell.com/docs/current/tutorial.html#other-topics)
+Este comando usa `[A-Z]` como o padrão de busca e `\L&` como a expressão de substituição, que irá converter qualquer letra maiúscula encontrada em sua correspondente minúscula.
+
+## Aprofundando-se em expressões regulares
+
+As expressões regulares podem ser usadas para uma variedade de tarefas de manipulação de texto, incluindo a busca de padrões específicos, filtragem de dados, validação de entradas e muito mais. Elas possuem uma sintaxe lógica e flexível que permite a criação de padrões complexos para atender às suas necessidades.
+
+Alguns conceitos importantes a se lembrar são os caracteres de escape, que permitem que certos caracteres sejam interpretados literalmente, e os metacaracteres, que fornecem funcionalidades especiais, como delimitar grupos de pesquisa ou especificar a quantidade de ocorrências de um padrão.
+
+Existem também diferentes tipos de expressões regulares, como as greedy e non-greedy, que diferem na forma como lidam com padrões repetidos. É importante explorar e praticar diferentes padrões e expressões para se tornar mais proficiente no seu uso.
+
+## Veja também
+
+- [Referência Fish Shell para expressões regulares](https://fishshell.com/docs/current/index.html#regular-expressions)
+- [Tutorial de expressões regulares do RegexOne](https://regexone.com/)
+- [Guia de expressões regulares do Unix](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)

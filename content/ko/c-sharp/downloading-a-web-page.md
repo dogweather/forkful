@@ -1,6 +1,7 @@
 ---
-title:                "C#: 웹페이지 다운로드하기"
-simple_title:         "웹페이지 다운로드하기"
+title:                "웹 페이지 다운로드"
+html_title:           "C#: 웹 페이지 다운로드"
+simple_title:         "웹 페이지 다운로드"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,40 +11,105 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-웹 페이지를 다운로드 받는 이유는 다양합니다. 가장 일반적인 이유는 웹 스크래핑이나 데이터 마이닝과 같은 작업을 할 때 필요하기 때문입니다. 또한 인터넷 연결이 없는 환경에서 웹 페이지를 오프라인으로 볼 수도 있습니다. 다른 이유로는 웹 페이지의 소스 코드를 분석하거나 특정 이미지나 파일을 다운로드하는 경우 등이 있습니다.
 
-## 사이트 다운로드 하는 방법
-```C#
-using System;
-using System.Net;
+웹 페이지를 다운로드하는 행동을 하게 되는 이유는 여러 가지가 있을 수 있습니다. 일부 사람들은 오프라인 상태에서도 웹 페이지를 볼 수 있게 하기 위해서이고, 다른 사람들은 웹 페이지를 분석하거나 데이터를 수집하기 위해서일 수도 있습니다.
 
-string url = "https://www.example.com"; // 다운로드할 웹 사이트의 URL
+## 다운로드 방법
 
-using (WebClient client = new WebClient())
-{
-    client.DownloadFile(url, "myfile.html"); // 웹 페이지를 myfile.html로 다운로드
-    Console.WriteLine("다운로드가 완료되었습니다.");
-}
-```
-위의 코드는 C#을 사용하여 웹 페이지를 다운로드하는 간단한 예제입니다. 우선, 사용할 WebClient 클래스를 선언합니다. 그리고 다운로드할 웹 사이트의 URL을 지정합니다. 마지막으로 DownloadFile 메서드를 호출하여 웹 페이지를 다운로드하고, 콘솔 창에 다운로드 완료 메시지를 출력합니다.
+### 기본적인 다운로드
+
+먼저 필요한 네임스페이스를 다음과 같이 추가합니다. ```using System.Net;```
+
+그리고 다음의 코드를 사용하여 웹 페이지를 다운로드합니다.
 
 ```C#
-using System;
-using System.Net;
+WebClient client = new WebClient();
+string downloadedPage = client.DownloadString("https://example.com");
+Console.WriteLine(downloadedPage);
+```
 
-string url = "https://www.example.com"; // 다운로드할 웹 사이트의 URL
+위 코드의 실행 결과는 다음과 같습니다.
 
-using (WebClient client = new WebClient())
+```
+<html>
+  <head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+        ...
+
+      </style>    
+  </head>
+
+  <body>
+    <div>
+      <h1>Example Domain</h1>
+      <p>This domain is for use in illustrative examples in documents. You may use this
+        domain in literature without prior coordination or asking for permission.</p>
+      <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+    </div>
+  </body>
+</html>
+```
+
+### 로그인이 필요한 페이지 다운로드
+
+만약 로그인이 필요한 웹 페이지를 다운로드하려면 어떻게 해야 할까요? 이 경우에는 다른 방법을 사용해야 합니다.
+
+먼저 로그인할 때 사용하는 양식의 데이터를 가져와야 합니다. 그리고 다음과 같이 코드를 작성합니다.
+
+```C#
+WebClient client = new WebClient();
+string loginFormUrl = "https://example.com/login";
+LoginFormData formData = new LoginFormData();
+formData.Username = "username";
+formData.Password = "password";
+
+// 로그인에 대한 POST 요청을 생성합니다.
+string postData = "Username=" + formData.Username + "&Password=" + formData.Password;
+
+// 로그인에 대한 응답 결과를 가져옵니다.
+string loginResult = client.UploadString(loginFormUrl, "POST", postData);
+
+// 로그인이 성공하면 페이지를 다운로드합니다.
+string downloadedPage = client.DownloadString("https://example.com/members_only");
+Console.WriteLine(downloadedPage);
+```
+
+위 코드에서는 ```LoginFormData```라는 별도의 클래스를 사용하였는데, 이 클래스는 다음과 같이 정의될 수 있습니다.
+
+```C#
+public class LoginFormData
 {
-    string html = client.DownloadString(url); // 웹 페이지의 내용을 string 변수에 저장
-    Console.WriteLine(html); // 웹 페이지의 내용을 콘솔 창에 출력
+    public string Username { get; set; }
+    public string Password { get; set; }
 }
 ```
-만약 다운로드한 웹 페이지의 내용을 string 변수에 저장하여 원하는 작업을 하고 싶다면, DownloadString 메서드를 사용하면 됩니다. 위의 코드는 웹 페이지의 내용을 콘솔 창에 출력하는 예제입니다.
 
-## 깊게 파보기
-웹 페이지를 다운로드하는 것은 간단해 보이지만, 실제로는 여러 가지 작업이 필요합니다. 먼저, 웹 사이트의 URL을 알아야 하고, 해당 사이트에 접근할 수 있는 인증 정보가 있어야 합니다. 또한 서버에서 오는 응답 코드를 확인하고, 다운로드할 파일의 경로를 지정해야 합니다. 예를 들어, 웹 사이트의 HTML 코드만을 다운로드하는 것도 가능하지만, CSS, JavaScript 등의 파일도 함께 다운로드하여 웹 페이지를 완벽하게 표현할 수 있도록 해야 합니다.
+## 깊이 들어가기
 
-## 참고 자료
-- [WebClient Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
-- [How to download a file from a website in C# (Code Maze)](https://code-maze.com/download-file-from-website/)
+여러분은 아마도 다운로드한 웹 페이지의 내용을 분석하거나 다른 데이터를 추출하고 싶을 것입니다. 이를 위해서는 다운로드한 페이지의 내용을 원하는 방식으로 파싱해야 합니다. 이를 위해 C#에서는 강력한 HTML 파싱 라이브러리인 HtmlAgilityPack을 사용할 수 있습니다.
+
+예를 들어, 웹 페이지에서 모든 제목을 추출한다고 가정해 봅시다. 다음과 같이 코드를 작성할 수 있습니다.
+
+```C#
+// 다운로드한 페이지를 파싱합니다.
+HtmlDocument doc = new HtmlDocument();
+doc.LoadHtml(downloadedPage);
+
+// 모든 h1 태그를 찾습니다.
+HtmlNodeCollection allHeaders = doc.DocumentNode.SelectNode("//h1");
+
+foreach (HtmlNode header in allHeaders)
+{
+    // 제목을 출력합니다.
+    Console

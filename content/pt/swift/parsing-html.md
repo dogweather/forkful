@@ -1,5 +1,6 @@
 ---
-title:                "Swift: Parsing html"
+title:                "Parsing html"
+html_title:           "Swift: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,49 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Parser HTML é Importante para Programadores Swift?
+## Por que
 
-O parser HTML é uma ferramenta vital para programadores que trabalham com Swift. Ele permite que você extraia dados específicos de páginas web, facilitando o processo de coleta e manipulação de informações. Além disso, o parser HTML é essencial para a criação de aplicativos que se conectam à web.
+A análise de HTML é um processo importante na programação, pois permite que os desenvolvedores extraiam informações específicas de páginas da web. Isso pode ser útil para criar webscrapers, criar aplicativos que interagem com a web ou analisar dados de páginas da web.
 
-## Como Utilizar o Parser HTML em Swift
+## Como fazer
 
-Para começar a usar o parser HTML em Swift, você precisa importar o framework HTMLKit no seu projeto. Em seguida, você pode usar o código abaixo para extrair dados de uma página HTML:
+Para analisar HTML em Swift, podemos usar a biblioteca SwiftSoup. Comece instalando-a em seu projeto através do Cocoapods ou adicionando-a manualmente como um framework. Em seguida, importe a biblioteca em seu arquivo de código:
 
 ```Swift
-let urlString = "https://www.example.com"
-guard let url = URL(string: urlString) else {
-    print("URL inválida")
-    return
-}
+import SwiftSoup
+```
 
+Para iniciar a análise, primeiro precisamos recuperar o conteúdo HTML usando uma URL ou um arquivo local:
+
+```Swift
+let html = "<html><body><p>Hello, world!</p></body></html>"
 do {
-    let html = try String(contentsOf: url, encoding: .utf8)
-    let parser = HTMLParser.init(string: html)
-    let body = parser.wait { $0.tagName == "body" }
-    let paragraphs = body?.findElements(withTag: "p")
-    paragraphs?.forEach {
-        print($0.textContent)
-    }
-} catch let error {
-    print("Erro: \(error)")
+    let doc: Document = try SwiftSoup.parse(html)
+} catch {
+    print("Error parsing HTML.")
 }
 ```
 
-Com este código, você pode extrair todo o conteúdo do parágrafo da página e imprimi-lo no console. Ou seja, agora você pode manipular esses dados como quiser no seu aplicativo.
+Agora podemos usar o objeto "doc" para selecionar e manipular elementos HTML. Por exemplo, para obter o conteúdo do elemento "p":
 
-## Mergulho Profundo no Parser HTML
+```Swift
+do {
+    let p: Element = try doc.select("p").first()!
+    let text: String = try p.text()
+    print(text) // Output: Hello, world!
+} catch {
+    print("Error parsing HTML.")
+}
+```
 
-Além de extrair dados de uma página HTML, você também pode usá-lo para validar e corrigir a estrutura do documento. O HTMLKit possui várias ferramentas que permitem verificar a estrutura da página e realizar ajustes necessários. Isso pode ser útil quando você está lidando com páginas HTML que não são bem estruturadas.
+## Deep Dive
 
-Além disso, o parser também suporta a análise de documentos XML, o que torna possível extrair informações de feeds RSS ou de documentos XML.
+Para selecionar elementos HTML específicos, podemos usar o seletor CSS. Isso nos permite recuperar elementos com base em suas tags, classes, IDs ou hierarquia. Por exemplo, para obter todos os links em uma página:
 
-## Veja Também
+```Swift
+do {
+    let links: [Element] = try doc.select("a").array()
+} catch {
+    print("Error parsing HTML.")
+}
+```
 
-- [Documentação do HTMLKit](https://github.com/vapor-community/html-kit#getting-started)
-- [Tutorial de parser HTML com Swift](https://theswiftdev.com/parsing-html-in-swift/)
-- [Exemplos de uso do parser HTML em Swift](https://github.com/vapor-community/html-kit/tree/master/Examples)
+Também é possível modificar o conteúdo HTML, adicionando novos elementos ou modificando os existentes. Por exemplo, para adicionar um novo parágrafo ao final do documento:
 
-***
-*Este artigo é uma tradução do original em inglês, escrito por [John Smith](https://example.com) e pode ser encontrado [aqui](https://example.com/article).*
+```Swift
+do {
+    try doc.select("body").first()!.append("<p>This is a new paragraph.</p>")
+    let newHtml: String = try doc.html()
+    print(newHtml) // Output: <html><body><p>Hello, world!</p><p>This is a new paragraph.</p></body></html>
+} catch {
+    print("Error modifying HTML.")
+}
+```
 
-*Tradução realizada por [Lucas Oliveira](https://linkedin.com/in/lucasoliveira), com base no conteúdo original.*
+## Veja também
+
+- Documentação oficial do SwiftSoup: https://github.com/scinfu/SwiftSoup
+- Artigo sobre análise de HTML usando Swift: https://medium.com/@jaredjsidwell/parsing-html-in-swift-using-third-party-library-swiftsoup-5d865893df89
+- Exemplos práticos de análise de HTML em Swift: https://github.com/Jakelin568/Swift-HTML-Parsing-Example

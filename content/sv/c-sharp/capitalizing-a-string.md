@@ -1,6 +1,7 @@
 ---
-title:                "C#: Bokstavera en sträng"
-simple_title:         "Bokstavera en sträng"
+title:                "Att Göra En Sträng Stor Begynnelsebokstav"
+html_title:           "C#: Att Göra En Sträng Stor Begynnelsebokstav"
+simple_title:         "Att Göra En Sträng Stor Begynnelsebokstav"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,27 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
-Varför skulle du vilja lära dig hur man stora bokstäver en sträng i C#? Ibland vill man kanske ha en sträng som är lättare att läsa, eller så behöver man anpassa en sträng för ett specifikt syfte. Oavsett anledning, är det alltid bra att ha den här färdigheten i din programmeringsverktygslåda.
+
+Att kapitalisera en sträng är en vanligt förekommande uppgift inom programmering, eftersom det kan göra din kod mer läsbar och förbättra användarupplevelsen i till exempel textbaserade applikationer.
 
 ## Hur man gör
+
+För att kapitalisera en sträng i C# kan man använda sig av den inbyggda funktionen "ToUpper", som omvandlar alla bokstäver i en sträng till versaler. Här är ett exempel på hur man kan använda det i en enkel konsolapplikation:
+
 ```C#
-// Skapa en sträng
-string minSträng = "detta är en sträng som behöver stora bokstäver";
-
-// Använd funktionen ToUpper() för att stora bokstäver strängen
-string storaBokstäver = minSträng.ToUpper();
-
-// Skriv ut resultatet
-Console.WriteLine(storaBokstäver);
-
-// Output: DETTA ÄR EN STRÄNG SOM BEHÖVER STORA BOKSTÄVER
+string input = "hej och välkommen";
+Console.WriteLine(input.ToUpper());
 ```
 
-## Djupdykning
-Det finns egentligen två sätt att stora bokstäver en sträng i C#. Det första sättet är att använda funktionen ToUpper(), som beskrivs i föregående exempel. Det andra sättet är att använda funktionen ToUpperInvariant(), vilket ger samma resultat men med ett annat tillvägagångssätt. Skillnaden mellan de två är att ToUpperInvariant() använder de inbyggda inställningarna för ditt operativsystem, medan ToUpper() tar hänsyn till de specifika kulturinställningarna för din applikation.
+Detta kommer att producera följande utmatning:
 
-Ibland kanske du också behöver göra om en sträng till små bokstäver istället för stora. I så fall kan du använda funktionen ToLower() eller ToLowerInvariant() för samma resultat fast med små bokstäver istället.
+```
+HEJ OCH VÄLKOMMEN
+```
 
-## Se även
-- Microsofts dokumentation om ToUpper() function: https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8
-- En guide för C# strängar: https://www.c-sharpcorner.com/UploadFile/a8e6df/string-in-C-Sharp-programming-language/
+Om du bara vill kapitalisera första bokstaven i en sträng kan du använda "ToUpper" i kombination med "Substring" för att ta bort resten av strängen efter den första bokstaven. Här är ett exempel:
+
+```C#
+string input = "god morgon";
+Console.WriteLine(input.Substring(0, 1).ToUpper() + input.Substring(1));
+```
+
+Detta kommer att producera utmatningen "God morgon".
+
+## Fördjupning
+
+En viktig sak att notera är att "ToUpper" bara konverterar bokstäver baserat på deras ASCII-värden, vilket innebär att vissa bokstäver i icke-latinska språk kanske inte konverteras till versaler på rätt sätt. Om du behöver hantera detta kan du använda dig av "ToUpperInvariant", som använder en mer generell algoritm för att omvandla versaler.
+
+Det är också viktigt att komma ihåg att "ToUpper" och "ToUpperInvariant" endast skapar en ny sträng med den kapitaliserade versionen, och inte ändrar den ursprungliga strängen. Om du vill uppdatera den befintliga strängen måste du tilldela resultatet av funktionen tillbaka till strängen.
+
+## Se också
+
+- [MSDN Documentation for ToUpper (C# Reference)](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [MSDN Documentation for Substring (C# Reference)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)

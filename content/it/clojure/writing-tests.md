@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Scrivere test"
+title:                "Scrivere test"
+html_title:           "Clojure: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere test è un'attività fondamentale nella programmazione che aiuta a verificare il corretto funzionamento del codice. Non solo garantisce un comportamento affidabile dell'applicazione, ma inoltre semplifica il processo di debugging.
+Scrivere test è un'abitudine cruciale per qualsiasi sviluppatore di Clojure che desideri produrre codice di alta qualità. I test forniscono una maggiore sicurezza, aiutano a individuare bug in modo tempestivo e agevolano la manutenzione del codice nel lungo termine. Inoltre, scrivere test ti aiuta a comprendere meglio la tua logica e a migliorare le tue abilità di programmazione.
 
 ## Come fare
 
-Per scrivere test in Clojure sono necessari due strumenti fondamentali: `clojure.test` e `clojure.spec`. Il primo è una libreria standard di Clojure che offre un'interfaccia intuitiva per la creazione di test, mentre il secondo viene usato per definire le specifiche di ogni funzione.
-
-Per utilizzare `clojure.test`, è necessario definire una funzione che contiene tutti i test, utilizzando il marcatore `deftest`. All'interno di questa funzione, è possibile utilizzare il marcatore `is` per verificare i valori restituiti dalle funzioni testate.
+Per scrivere test in Clojure, è necessario utilizzare il framework di test integrato chiamato "clojure.test". Inizia definendo una funzione di test, utilizzando la sintassi ```(deftest)```, fornendo un nome descrittivo e il blocco di codice da testare. Ad esempio:
 
 ```Clojure
-(deftest test-somma
-  (is (= 4 (+ 2 2)))
-  (is-not (= 5 (+ 2 2))))
+(deftest add-test
+  (is (= 5 (+ 2 3))))
 ```
 
-Per quanto riguarda `clojure.spec`, invece, è possibile definire le specifiche delle funzioni utilizzando il marcatore `s/fdef` e specificando il nome, gli argomenti e il valore di ritorno della funzione. Questo permette di verificare automaticamente che la funzione rispetti le specifiche in fase di test.
+Questo codice definisce un test che controlla se la somma di 2 e 3 è uguale a 5. Per eseguire il test, utilizza la funzione ```(run-tests)``` e passa il nome della funzione di test come parametro:
 
 ```Clojure
-(s/fdef somma :args int? int? :ret int?)
-(defn somma [a b]
-  (+ a b))
+(run-tests 'add-test)
 ```
 
-Una volta definite le specifiche, è possibile utilizzare la funzione `s/check` per controllare se una data funzione ne rispetta i requisiti.
+Il risultato dovrebbe essere una stampa a schermo che indica se il test è passato o fallito.
 
 ## Approfondimento
 
-Scrivere test è un processo importante e bisogna considerare alcune best practices per ottenere i migliori risultati. È importante scrivere test che siano indipendenti e riproducibili, in modo da poterli eseguire più volte senza influire sul risultato. Inoltre, è consigliato scrivere test per ogni possibile scenario, in modo da coprire tutti i casi.
+Oltre al semplice esempio di test mostrato sopra, ci sono molte altre funzionalità che puoi utilizzare per scrivere test più completi e robusti. Ad esempio, puoi definire più asserzioni all'interno di un singolo test utilizzando la funzione ```(are)```, che prende come argomenti una serie di espressioni e controlla se tutte sono vere. Puoi anche utilizzare le funzioni di "setup" e "teardown" per impostare le condizioni precedentemente o successivamente all'esecuzione dei test.
 
-È anche fondamentale capire quale parte del codice va testata e quale no. Non tutte le parti del nostro programma necessitano di un test specifico e quindi è importante effettuare una scelta consapevole per evitare test ridondanti o poco utili.
+Puoi approfondire ulteriormente le tue conoscenze su clojure.test consultando la documentazione ufficiale e studiando esempi di codice di test su progetti open source.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Documentazione ufficiale di clojure.spec](https://clojure.org/guides/spec)
+- Documentazione ufficiale su clojure.test: https://clojure.github.io/clojure/clojure.test-api.html
+- Esempi di test su GitHub: https://github.com/clojure/clojure/blob/master/test/clojure/test/test_clojure/test_test.clj

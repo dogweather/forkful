@@ -1,5 +1,6 @@
 ---
-title:                "C#: Wysyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "C#: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "C#"
 category:             "C#"
@@ -11,41 +12,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach komunikacja między aplikacjami i systemami jest nieodzowna, dlatego istotnym elementem programowania jest możliwość wysyłania zapytań HTTP. Pozwala to na wymianę danych oraz integrację różnych aplikacji. W tym artykule, dalej przedstawimy jak w prosty sposób skorzystać z mechanizmu wysyłania HTTP request w języku C#.
+Wysyłanie żądań HTTP jest nieodłączną częścią programowania aplikacji internetowych. Dzięki nim możemy pobierać i wysyłać dane, dzieląc się informacjami z innymi serwerami.
 
 ## Jak to zrobić
 
-Podstawowym sposobem na wysłanie zapytania HTTP jest użycie klasy `HttpClient`, która jest dostępna w przestrzeni nazw `System.Net.Http`. Obejmuje ona wiele metod, które mogą być wykorzystane do różnych rodzajów zapytań, takich jak GET, POST, PUT, DELETE. Poniżej znajduje się przykładowa implementacja wysłania GET request do strony https://google.com.
+### Przygotowanie
+
+Aby móc wysłać żądanie HTTP w C#, musimy najpierw zaimportować przestrzeń nazw ```System.Net.Http```. Możesz to zrobić, dodając na początku swojego pliku ```using System.Net.Http;```
+
+### Wysyłanie żądania GET
+
+Aby wysłać żądanie GET do określonego adresu URL, możemy skorzystać z klasy ```HttpClient``` oraz metody ```GetAsync```. Poniżej znajduje się przykładowy kod, który wyśle żądanie GET do strony "https://example.com" oraz wyświetli jego zawartość w konsoli.
 
 ```C#
-using System;
-using System.Net.Http;
+var httpClient = new HttpClient();
+var response = await httpClient.GetAsync("https://example.com");
+var content = await response.Content.ReadAsStringAsync();
 
-class Program
+Console.WriteLine(content);
+```
+
+Przykładowy output:
+
+```
+<!doctype html>
+<html>
+<head>
+<title>Example Domain</title>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style type="text/css">
+body {
+background-color: #f0f0f2;
+margin: 0;
+padding: 0;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+...
+
+</body>
+</html>
+```
+
+### Wysyłanie żądania POST
+
+Aby wysłać żądanie POST, musimy najpierw utworzyć obiekt typu ```HttpRequestMessage```, a następnie przekazać go jako parametr do metody ```PostAsync```. Przykładowy kod poniżej przedstawia wysłanie żądania z danymi w formacie JSON do strony "https://example.com".
+
+```C#
+var httpClient = new HttpClient();
+
+var data = new { name = "John", age = 30 };
+var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+
+var response = await httpClient.PostAsync("https://example.com", content);
+var result = await response.Content.ReadAsStringAsync();
+
+Console.WriteLine(result);
+```
+
+### Obsługa wyjątków
+
+Podczas wysyłania żądań HTTP, możemy napotkać różne problemy, na przykład brak połączenia z serwerem. W takich przypadkach, warto zapewnić obsługę wyjątków, aby odpowiednio reagować na błędy lub je zignorować.
+
+```C#
+try
 {
-	static async Main()
-	{
-		HttpClient client = new HttpClient();
-		var response = await client.GetAsync("https://google.com");
-		if(response.IsSuccessStatusCode)
-		{
-			var result = await response.Content.ReadAsStringAsync();
-			Console.WriteLine(result); //wypisanie odpowiedzi
-		}
-	}
+    // try sending the request
+    var response = await httpClient.GetAsync("https://example.com");
+	var content = await response.Content.ReadAsStringAsync();
+
+	Console.WriteLine(content);
+}
+catch(Exception ex)
+{
+    Console.WriteLine("There was an error: " + ex.Message);
 }
 ```
 
-W powyższym przykładzie utworzona została instancja klasy `HttpClient`, a następnie wywołana metoda `GetAsync` z podanym adresem url. Jeśli zapytanie zakończy się sukcesem, pobierana jest zawartość odpowiedzi i wyświetlana na ekranie.
-
 ## Deep Dive
 
-Dodatkowo, `HttpClient` oferuje możliwość spersonalizowania zapytań poprzez dodanie nagłówków, lub znacznie bardziej rozbudowanymi parametrami. Możliwe jest również używanie wyższego poziomu abstrakcji, takiego jak klasa `HttpWebRequest`, która udostępnia jeszcze więcej kontroli nad zapytaniami.
-
-Podczas wysyłania zapytania, bardzo ważne jest również obsłużenie ewentualnych błędów. W przypadku niepowodzenia wysłania zapytania, zostaną rzucone odpowiednie wyjątki, które należy obsłużyć w odpowiedni sposób.
+Głębsze zanurzenie w temat wysyłania żądań HTTP wymaga wiedzy na temat różnych metod, nagłówków oraz statusów odpowiedzi HTTP. Warto również zapoznać się ze specyfikacją protokołu HTTP/1.1, aby lepiej zrozumieć proces przesyłania danych w sieci.
 
 ## Zobacz również
 
-- [Microsoft Docs - HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
-- [Microsoft Docs - HttpWebRequest Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=net-5.0)
-- [W3Schools - HTTP Requests in C#](https://www.w3schools.com/cs/cs_http.asp)
+- [Dokumentacja klasy HttpClient](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Lista HTTP statusów odpowiedzi](https://developer.mozilla.org/pl/docs/Web/HTTP/Status)

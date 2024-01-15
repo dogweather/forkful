@@ -1,6 +1,7 @@
 ---
-title:                "Go: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Removendo caracteres que correspondem a um padrão"
+html_title:           "Go: Removendo caracteres que correspondem a um padrão"
+simple_title:         "Removendo caracteres que correspondem a um padrão"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -9,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Existe um recurso em linguagens de programação que permite que você exclua caracteres que correspondem a um determinado padrão. Isso pode ser útil em várias situações, como limpar dados, filtrar informações ou simplificar o código. Neste artigo, vamos explorar como fazer isso em Go, uma linguagem de programação que vem ganhando cada vez mais popularidade.
+# Por que
 
-## Como fazer
-Para excluir caracteres que correspondem a um padrão em Go, podemos usar a função `Delete` da biblioteca `strings`. Essa função recebe duas strings como parâmetros - a primeira é a string original e a segunda é o padrão que deve ser excluído. Por exemplo:
+Já se deparou com a necessidade de deletar caracteres de uma string que seguem um padrão específico? Isso pode ser útil em várias situações, como remoção de espaços em branco ou caracteres especiais. Neste artigo, vamos explorar como fazer isso em Go de forma simples e eficiente.
+
+# Como fazer
+
+A função `strings.ReplaceAll()` é a nossa aliada nessa tarefa. Ela recebe três argumentos: a string original, o padrão a ser encontrado e o padrão a ser substituído. Veja um exemplo:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	str := "Hello, world!"
-	newStr := strings.Delete(str, "l")
-	fmt.Println(newStr)
-}
+nome := "João, Maria, Pedro"
+nome = strings.ReplaceAll(nome, ", ", " e ")
+fmt.Println(nome)
 ```
 
-A saída desse código será "Heo, word!" - o caractere "l" foi excluído da string original. Também é possível passar um padrão mais complexo para a função, por exemplo, "ab" excluirá todas as ocorrências das letras "a" e "b" na string.
+O resultado será `João e Maria e Pedro`, onde os caracteres ", " foram substituídos por " e ". É importante destacar que essa função substitui todas as ocorrências do padrão, não apenas a primeira.
 
-## Deep Dive
-Essa função faz parte da biblioteca `strings` que possui muitas outras funções úteis para manipulação de strings. A função `Delete` é bastante simples, mas pode economizar muito tempo e esforço em tarefas de limpeza e filtragem de dados. Além disso, é interessante notar que ela não modifica a string original, ao invés disso, retorna uma nova string com as alterações feitas.
+Caso você queira remover um determinado padrão da string, basta passar uma string vazia `""` como segundo argumento. Por exemplo, se quisermos remover todos os hífens de um CEP, podemos usar:
 
-## Veja também
-- [Documentação oficial do pacote strings em Go](https://golang.org/pkg/strings/)
-- [Tutorial sobre a biblioteca strings em Go](https://www.geeksforgeeks.org/golang-strings-package/)
-- [Exemplo prático de uso da função Delete em Go](https://www.calhoun.io/strategies-for-efficient-string-concatenation-in-go/)
+```Go
+cep := "12345-678"
+cep = strings.ReplaceAll(cep, "-", "")
+fmt.Println(cep)
+```
+
+O resultado será `12345678`, onde todos os hífens foram removidos da string original.
+
+# Deep Dive
+
+Agora, vamos mergulhar um pouco mais fundo e entender como a função `strings.ReplaceAll()` funciona. Primeiramente, ela utiliza o pacote `strings` da biblioteca padrão do Go. Esse pacote possui várias funções úteis para o tratamento de strings.
+
+Ao receber as três strings como argumento, a função `strings.ReplaceAll()` converte todas elas em slices de bytes, o que permite uma manipulação mais eficiente. Em seguida, ela procura pelo padrão dentro da string original e, quando encontra, substitui pelo padrão desejado.
+
+Uma alternativa para substituir os caracteres dentro de uma string é utilizar a função `strings.Map()`. Ela recebe uma função como argumento que será aplicada a cada caractere da string. No entanto, a função `strings.ReplaceAll()` tende a ser mais rápida e eficiente, principalmente em casos onde o padrão é conhecido.
+
+# Veja também
+
+- [Documentação oficial da função strings.ReplaceAll](https://golang.org/pkg/strings/#ReplaceAll)
+- [Artigo sobre o pacote strings](https://golang.org/pkg/strings/)

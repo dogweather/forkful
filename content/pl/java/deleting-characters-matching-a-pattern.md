@@ -1,6 +1,7 @@
 ---
-title:                "Java: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Java: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,43 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia, szczególnie w świecie technologii. Czasami zdarza się, że musimy zmodyfikować nasz tekst, usuwając pewne znaki lub wzorce. W tym artykule dowiesz się, dlaczego od czasu do czasu jest to potrzebne w Twoim kodzie.
+Czasami, podczas pisania kodu w języku Java, może zdarzyć się, że będziemy musieli usunąć pewne znaki z naszych zmiennych lub stringów. Może to być konieczne, na przykład, do usunięcia znaków niedrukowalnych lub zastąpienia niechcianych znaków innymi.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Jeśli chcesz usunąć znaki lub wzorce ze swojego tekstu w języku Java, istnieje kilka sposobów, w zależności od Twoich potrzeb. Oto przykładowy kod w języku Java, pokazujący dwa sposoby usuwania znaków z tekstu:
+Usunięcie znaków pasujących do określonego wzorca w języku Java jest możliwe za pomocą metody `replaceAll()` i wyrażenia regularnego. Przykład kodu poniżej pokazuje jak usunąć wszystkie znaki spoza przedziału od A do Z i od 0 do 9 z ciągu znaków:
 
-```java
-// Tworzenie tekstu do modyfikacji
-String text = "To jest przykładowy tekst do usunięcia znaków.";
-
-// Usuwanie wszystkich znaków niewidocznych (np. spacji)
-String newText = text.replaceAll("\\s+", "");
-
-// Usuwanie wszystkich wystąpień wybranego znaku
-String newText2 = text.replace("k", "");
-
-// Wypisanie wyników
-System.out.println(newText);
-System.out.println(newText2);
+```Java
+String sentence = "T3st0wy t3xt z z@naki #sp3?cjalne.";
+String cleanSentence = sentence.replaceAll("[^A-Za-z0-9 ]", "");
+System.out.println(cleanSentence);
 ```
 
-Powyższy kod wyświetli następujące wyniki:
+Output: `T3st0wy t3xt z znaki spcjalne`
 
-```
-Tojestprzykładowytekstdousunięciznaków.
-To jest pryadowy tekst do usunięcia znów.
-```
+Jak widzimy, metoda `replaceAll()` zastępuje wszystkie znaki pasujące do podanego wzorca (w tym przypadku wszystkie znaki spoza przedziału od A do Z i od 0 do 9) pustym ciągiem znaków, czyli usuwa je.
 
-Jak widać, używając metody `replaceAll()` lub `replace()`, możemy z łatwością usunąć wybrane znaki lub wzorce z tekstu.
+Możemy również określić inne wzorce, np. aby usunąć wszystkie cyfry z tekstu, możemy użyć wyrażenia regularnego `[0-9]`, lub aby pozostawić tylko litery i spacje, możemy użyć `[A-Za-z ]`.
 
-## Deep Dive
+## Głębsze Zagłębianie Się
 
-Aby lepiej zrozumieć działanie powyższych metod, warto wiedzieć, że metoda `replace()` zastępuje tylko pierwsze wystąpienie danego znaku lub wzorca, natomiast `replaceAll()` jest w stanie zastąpić wszystkie wystąpienia w tekście. W obu przypadkach, kiedy nie zostanie podany drugi argument zastępowania, znak lub wzorzec będzie po prostu usuwany z tekstu.
+Podczas korzystania z metody `replaceAll()` ważne jest, aby pamiętać, że przyjmuje ona wyrażenie regularne jako pierwszy argument, a nie pojedynczy znak. Oznacza to, że jeśli chcemy usunąć wszystkie wystąpienia konkretnej litery lub znaku, musimy użyć znaku `\\` przed tym znakiem w wyrażeniu regularnym. Na przykład, aby usunąć wszystkie wystąpienia litery "a" z tekstu, musimy użyć `sentence.replaceAll("a", "")`, ale aby usunąć wszystkie znaki "a", musimy użyć `sentence.replaceAll("\\\\", "")`.
 
-Ważne jest również, aby zwrócić uwagę na użyty znak `\` przed znakiem `\s+` w metodzie `replaceAll()`. Ten dodatkowy znak jest niezbędny, ponieważ `\` jest używany do specjalnych znaków i musi zostać zabezpieczony przed użyciem. Podając `\\s+` informujemy program, że chcemy usunąć wszystkie znaki niewidoczne, takie jak spacje, tabulacje czy entery.
+Dodatkowo, metoda `replaceAll()` jest wrażliwa na wielkość liter, więc trzeba uważać na to, jakie znaki i litery są zawarte w wyrażeniu regularnym. Jeśli chcemy, aby metoda zignorowała wielkość liter, musimy dodać `(?i)` na początku wyrażenia regularnego. Na przykład, aby usunąć wszystkie litery "a" niezależnie od wielkości, możemy użyć `sentence.replaceAll("(?i)a", "")`.
 
 ## Zobacz również
 
-- Dokumentacja Java: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
-- Poradnik na temat usuwania znaków z tekstu w języku Java: https://www.baeldung.com/java-string-remove-character
+- [Java - Strings and Regular Expressions](https://www.programiz.com/java-programming/strings-regular-expressions)
+- [Regular Expressions in Java](https://www.baeldung.com/java-regular-expressions)
+- [RegExr - Online tool for testing regular expressions](https://regexr.com/)

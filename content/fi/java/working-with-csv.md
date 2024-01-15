@@ -1,6 +1,7 @@
 ---
-title:                "Java: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "Java: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -9,77 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää CSV-tiedostoja Java-ohjelmoinnissa?
+Miksi: Miksi työskennellä CSV: n kanssa?
 
-CSV-tiedostot eli comma-separated values -tiedostot ovat yleinen ja helppokäyttöinen tapa tallentaa tietoa taulukkomuodossa. Ne ovat erityisen käteviä silloin, kun haluamme tallentaa ja käsitellä suuria määriä tietoa, esimerkiksi liiketoimintatarkoituksiin. Java-ohjelmoijana CSV-tiedostot voivat olla hyvin hyödyllisiä, sillä Java tarjoaa valmiita kirjastoja ja toimintoja CSV-tiedostojen käsittelyyn.
+CSV (Comma-Separated Values) on yleisesti käytetty tiedostomuoto tietojen tallentamiseen ja jakamiseen. Se on helppo lukea ja kirjoittaa, mikä tekee siitä houkuttelevan vaihtoehdon tietojen hallintaan. Joten, jos olet kehittäjä, joka käsittelee paljon tietoa, CSV voi olla erinomainen työkalu työssäsi.
 
-## Näin käytät CSV-tiedostoja Javalla
+Miten: Esimerkkejä koodista ja tulosteista
 
-Jotta voimme käsitellä CSV-tiedostoja Javalla, tarvitsemme ensin jonkin kirjaston, joka lukee ja kirjoittaa CSV-tiedostoja. Yksi suosittu vaihtoehto on Apache Commons CSV -kirjasto. Otetaan esimerkiksi seuraava CSV-tiedosto:
+CSV-tiedostojen käsittely Java-ohjelmoinnissa on yksinkertaista ja suoraviivaista. Käytämme esimerkkinä yksinkertaista CSV-tiedostoa, joka sisältää käyttäjien tietoja, kuten nimi, ikä ja sähköposti.
 
-```Java
-Nimi, Ikä, Kaupunki
-Matti, 25, Helsinki
-Anna, 30, Tampere
-Timo, 35, Turku
-```
-Voimme lukea tämän tiedoston seuraavalla koodilla:
+Ensinnäkin, tuodaan tarvittavat luokat "csv- ja io" Java-paketista:
 
 ```Java
-try {
-    // Luodaan lukija ja avataan tiedosto
-    Reader reader = Files.newBufferedReader(Paths.get("tiedosto.csv"));
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-    // Luodaan CSVParser, joka käyttää ensimmäistä riviä taulukon otsikkorivinä
-    CSVParser parser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader());
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+```
 
-    // Käydään läpi rivejä ja tulostetaan tiedot
-    for (CSVRecord record : parser) {
-        String nimi = record.get("Nimi");
-        int ika = Integer.parseInt(record.get("Ikä"));
-        String kaupunki = record.get("Kaupunki");
-        System.out.println(nimi + " on " + ika + " vuotta vanha ja asuu kaupungissa " + kaupunki);
-    }
-} catch (IOException e) {
-    e.printStackTrace();
-}
-```
-Koodin tuloste on seuraava:
-
-```
-Matti on 25 vuotta vanha ja asuu kaupungissa Helsinki
-Anna on 30 vuotta vanha ja asuu kaupungissa Tampere
-Timo on 35 vuotta vanha ja asuu kaupungissa Turku
-```
-Voimme myös kirjoittaa uuden CSV-tiedoston käyttämällä samoja kirjastoja. Tässä esimerkissä luomme uuden listan henkilöistä ja kirjoitamme sen CSV-tiedostoksi:
+Seuraavaksi luodaan "writeCSV" -metodi, joka luo uuden CSV-tiedoston ja lisää siihen käyttäjien tiedot:
 
 ```Java
-try {
-    // Alustetaan lista henkilöistä
-    List<Person> persons = new ArrayList<>();
-    persons.add(new Person("Lea", 45, "Oulu"));
-    persons.add(new Person("Jussi", 40, "Jyväskylä"));
-    persons.add(new Person("Katri", 35, "Kuopio"));
-
-    // Luodaan kirjoittaja ja avataan tiedosto
-    Writer writer = Files.newBufferedWriter(Paths.get("uusi_tiedosto.csv"));
-
-    // Kirjoitetaan otsikkorivi
-    String[] header = {"Nimi", "Ikä", "Kaupunki"};
-    CSVPrinter printer = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader(header));
-
-    // Käydään läpi lista ja kirjoitetaan tiedot jokaiselle riville
-    for (Person person : persons) {
-        printer.printRecord(person.getName(), person.getAge(), person.getCity());
-    }
-
-    // Suljetaan kirjoittaja
-    writer.close();
-} catch (IOException e) {
-    e.printStackTrace();
+public static void writeCSV() {
+   try {
+       FileWriter fw = new FileWriter("users.csv");
+       CSVPrinter csvPrinter = new CSVPrinter(fw, CSVFormat.DEFAULT);
+       
+       //Luodaan lista käyttäjien tiedoista
+       List<String> usersData = new ArrayList<>();
+       usersData.add("Matti, 30, matti@matti.com");
+       usersData.add("Katri, 25, katri@katri.com");
+       usersData.add("Juha, 35, juha@juha.com");
+       
+       //Lisätään lista CSV-tiedostoon
+       for(String userData : usersData) {
+           csvPrinter.printRecord(userData);
+       }
+       
+       //Suljetaan CSV-tiedosto
+       csvPrinter.close();
+       
+       //Tulostetaan onnistunut viesti
+       System.out.println("CSV-tiedosto luotu ja käyttäjien tiedot lisätty.");
+   } catch (IOException e) {
+       e.printStackTrace();
+   }
 }
 ```
 
-## CSV-tiedostojen syvällisempi tarkastelu
+Tämän jälkeen voimme kutsua "writeCSV" -metodia ja nähdä tulosteen, että CSV-tiedosto on luotu ja käyttäjien tiedot on lisätty siihen:
 
-CSV-tiedostojen käsittely Javalla voi olla hieman monimutkaista, sillä tiedostoja ei aina pysty lukemaan tai kirjoittamaan suoraan käyttäen Javan valmiita toimintoja. Tiedostojen muoto
+```Java
+public static void main(String[] args) {
+   writeCSV();
+}
+```
+
+Tuloste:
+
+```Java
+CSV-tiedosto luotu ja käyttäjien tiedot lisätty.
+```
+
+Voit myös lukea tiedot CSV-tiedostosta käyttämällä "readAll" -metodia ja tulostaa ne konsoliin:
+
+```Java
+public static void readCSV() {
+   try {
+       File csvFile = new File("users.csv");
+       CSVParser csvParser = CSVParser.parse(csvFile, Charset.defaultCharset(), CSVFormat.DEFAULT);
+       
+       //Käydään läpi kaikki CSV-tiedoston rivit ja tulostetaan ne konsoliin
+       for (CSVRecord csvRecord : csvParser) {
+           System.out.println("Nimi: " + csvRecord.get(0));
+           System.out.println("Ikä: " + csvRecord.get(1));
+           System.out.println("Sähköposti: " + csvRecord.get(2));
+       }
+   } catch (IOException e) {
+       e.printStackTrace();
+   }
+}
+```
+
+Deep Dive: CSV-tiedostojen käsittelyssä on tärkeää huolehtia tiedostojen muodostuksesta ja tietojen sijoittamisesta oikeisiin kenttiin. Voit myös käyttää erilaisia ​​CSVFormaatteja tarpeidesi mukaan, kuten CSVFormat.TDF (Tab-delimited format) tai CSVFormat.RFC4180 (RFC 4180 standard format). Huomaa myös, että CSV-tiedostojen lukemisessa tulokset palautetaan CSVRecord-olioina, joid

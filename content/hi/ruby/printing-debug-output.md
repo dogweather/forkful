@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: डीबग आउटपुट प्रिंट करना"
-simple_title:         "डीबग आउटपुट प्रिंट करना"
+title:                "डीबग आउटपुट छापना"
+html_title:           "Ruby: डीबग आउटपुट छापना"
+simple_title:         "डीबग आउटपुट छापना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -9,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-हम सभी कोडर्स खासकरों को हमेशा अपने कोड में उभरती समस्याओं का सामना करना पड़ता है। अगर हमें किसी भी कोड में गलतियों का पता लगाना है तो डीबगआउटपुट उत्पन्न करना एक अपूर्व तरीका हो सकता है। इस ब्लॉग पोस्ट में हम डीबगआउटपुट क्या होता है और इसे कैसे प्रिंट किया जा सकता है, इसके बारे में चर्चा करेंगे।
+## Kyun
+Kisi ko debugging output pritnt karne mein kyun interest hai?
 
-## क्यों
-
-डीबगआउटपुट उत्पन्न करने की सबसे बड़ी वजह कोड में समस्याओं का पता लगाना होता है। अक्सर हम कोड लिखते समय गलतियों से बच नहीं पाते और बाद में समस्याओं का समाधान करते समय बहुत समय और श्रम बर्बाद हो जाता है। डीबगआउटपुट उत्पन्न करने से हमें स्पष्ट और सटीक जानकारी मिलती है जो हमें समस्या का हल निकालने में मदद करती है।
-
-## कैसे करें
-
-अगर आपको कोड में समस्याओं का पता लगाना है तो सबसे पहले आपको ```puts``` कमांड का उपयोग करके अपने कोड में डीबगआउटपुट प्रिंट करना होगा। नीचे दिए गए कोड ब्लॉक में आप एक सरल उदाहरण देख सकते हैं:
-
+## Kaise Kare
 ```Ruby
-puts "यह एक डीबगआउटपुट है।"
+# Example code to print debug output in Ruby
+def square(x)
+  puts "Calculating square of #{x}"
+  result = x ** 2
+  puts "Result: #{result}"
+  return result
+end
+
+square(5)
+```
+Output:
+```
+Calculating square of 5
+Result: 25
 ```
 
-जब आप इस कोड को रन करेंगे तो आपको इस तरह का आउटपुट मिलेगा:
+## Deep Dive
+Debugging output ek useful tool hai jo humein code ke sahi chalne ki monitoring aur potential errors ko identify karne mein madad karta hai. Isse hum apne code ko better understand aur improve kar sakte hain. Iske alawa, kisi bhi user ka program ke functioning ko samajhne mein help milti hai.
 
-```
-यह एक डीबगआउटपुट है।
-```
+Is tool ko use karne ke liye, hum `puts` ya `p` command ka use kar sakte hain jo humein apne code ki certain variables, functions ya errors ko detect karne mein help karta hai.
 
-आप अपने कोड में और भी ज्यादा जानकारी देने के लिए ```p``` कमांड का उपयो
+## See Also
+* [Debugging in Ruby](https://www.honeybadger.io/blog/debugging-ruby/)
+* [5 Tips for Effective Debugging in Ruby](https://medium.com/@annalauraschott/5-tips-for-effective-debugging-in-ruby-b8e47710a1a5)
+* [How to Print Debug Output in Ruby](https://www.oreilly.com/library/view/ruby-cookbook-2nd/0596523696/ch05s03.html)

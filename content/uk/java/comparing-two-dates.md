@@ -1,5 +1,6 @@
 ---
-title:                "Java: Порівняння двох дат"
+title:                "Порівняння двох дат"
+html_title:           "Java: Порівняння двох дат"
 simple_title:         "Порівняння двох дат"
 programming_language: "Java"
 category:             "Java"
@@ -9,55 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Дати є важливою концепцією в більшості програмування, і іноді ми можемо зіткнутися з потребою порівнювати дві дати. Наприклад, ми можемо потребувати перевірити, чи є одна дата після іншої або чи вони однакові. У цьому блозі ми поговоримо про те, як порівнювати дві дати в Java та чому це може бути корисно для вашого програмування.
+## Зчому
 
-## Як це робити
-Розглянемо найпоширеніші методи порівняння дат в Java.
+Компарування двох дат - важливий аспект програмування в Java, оскільки це дозволяє визначити, яка з дат є більшою або меншою. Це корисно для сортування даних, роботи з різними форматами дат і багатьох інших завдань.
 
-### Порівняння за допомогою методу compare()
-Метод compare() в класі LocalDate дозволяє порівняти дві дати. Він повертає значення 0, якщо дати однакові, значення більше 0, якщо перша дата пізніша за другу, і значення менше 0, якщо перша дата раніше за другу. Наприклад:
+## Як це зробити
 
-```Java
-LocalDate date1 = LocalDate.of(2020, 5, 15);
-LocalDate date2 = LocalDate.of(2020, 5, 20);
-
-int result = date1.compare(date2);
-
-if (result == 0) {
-    System.out.println("Both dates are equal");
-} else if (result < 0) {
-    System.out.println("Date 1 is before date 2");
-} else {
-    System.out.println("Date 1 is after date 2");
-}
-
-// Output: Date 1 is before date 2
-```
-
-### Порівняння за допомогою методів isAfter() та isBefore()
-Крім методу compare(), клас LocalDate також має методи isAfter() та isBefore(), які дозволяють перевірити, чи є одна дата пізнішою або ранішою за іншу. Наприклад:
+Для порівняння двох дат використовується метод "compareTo()", який повертає ціле число. Додатнє число означає, що перша дата більша за другу, від'ємне - що друга дата більша за першу і 0 - що дати рівні.
 
 ```Java
-LocalDate date1 = LocalDate.of(2020, 5, 15);
-LocalDate date2 = LocalDate.of(2020, 5, 20);
+import java.time.LocalDate;
 
-if (date1.isBefore(date2)) {
-    System.out.println("Date 1 is before date 2");
+public class CompareDates {
+
+    public static void main(String[] args) {
+
+        // створення першої дати
+        LocalDate date1 = LocalDate.of(2020, 1, 1);
+
+        // створення другої дати
+        LocalDate date2 = LocalDate.of(2021, 1, 1);
+
+        // порівняння дат
+        int result = date1.compareTo(date2);
+
+        // відображення результатів
+        System.out.println("Дати з базового року: " + result);
+    }
 }
-
-if (date2.isAfter(date1)) {
-    System.out.println("Date 2 is after date 1");
-}
-
-// Output: Date 1 is before date 2
-// Date 2 is after date 1
 ```
 
-## Занурення в тему
-Існує багато методів порівняння дат в Java, і ви можете вибрати той, який найкраще підходить для вашої програми. Наприклад, клас LocalDateTime має методи isAfter(), isBefore() та isEqual(), які дозволяють порівняти не тільки дати, але і час. Також можна використовувати клас Duration для порівняння часових проміжків між датами.
+Результат виконання програми:
+
+```
+Дати з базового року: -365
+```
+
+## Profundum
+
+Окрім "compareTo()", для порівняння дат також можна використовувати методи "isBefore()" і "isAfter()", які повертають логічну значення (true або false). Також, для зручного порівняння дат, можна перетворити їх в числові значення за допомогою методу "toEpochDay()", а потім працювати з отриманими числами.
 
 ## Дивись також
-- [Документація Java для порівняння дат](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#method.summary)
-- [Відео про порівняння дат в Java](https://www.youtube.com/watch?v=Puz4Nx0zyAs)
-- [Стаття про роботу з датами та часом в Java](https://www.baeldung.com/java-dates)
+
+- [Офіційна документація Java](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Date.html)
+- [Стаття на Medium про порівняння дат в Java](https://medium.com/@erikdkennedy/comparing-dates-in-java-88068db433b1)

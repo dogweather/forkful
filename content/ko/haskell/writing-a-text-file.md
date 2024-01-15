@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: 텍스트 파일 작성하기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Haskell: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-텍스트 파일을 작성하는 것에 참여하는 이유는 프로그래밍 언어를 배우고 더 많은 연습을 할 수 있기 때문입니다. 또한, 텍스트 파일을 작성하는 것은 개인 프로젝트를 관리하거나 다른 사람과 협업하는 데 유용합니다.
+문자 파일을 쓰기는 우리에게 무엇을 할 수 있는지 나열하고 들어보기 없고 오버스펙하지 않게 할 수 있게 합니다. 이것은 또한 우리가 데이터를 저장하고 공유하는데 유용합니다.
 
-## 방법
+## 사용 방법
 
-텍스트 파일을 작성하는 가장 간단한 방법은 "```Haskell ... ```" 코드 블록 안에 단순히 `print` 함수를 사용하는 것입니다. 예를 들어, 다음과 같이 작성할 수 있습니다:
-
-```Haskell
-main = do
-    print "안녕하세요, 세상!"
-```
-
-이 코드를 실행하면 터미널창에서 "안녕하세요, 세상!"이라는 메시지가 출력됩니다.
-
-다양한 방법으로 텍스트 파일을 작성할 수도 있습니다. 예를 들어, `writeFile` 함수를 사용하면 새로운 텍스트 파일을 만들고 내용을 작성할 수 있습니다. 다음과 같이 작성할 수 있습니다:
+문자 파일을 쓰는 가장 간단한 방법은 내장된 `writeFile` 함수를 사용하는 것입니다. 이 함수는 `FilePath` (파일의 경로)와 `String` (쓰고자 하는 내용)을 인자로 받습니다. 예를 들어, 다음과 같이 파일에 "Hello World!"를 쓸 수 있습니다.
 
 ```Haskell
-main = do
-    writeFile "new_file.txt" "이것은 새로운 텍스트 파일입니다."
+writeFile "hello.txt" "Hello World!"
 ```
 
-이 코드를 실행하면 "new_file.txt"라는 이름의 텍스트 파일이 생성되고 내용으로 "이것은 새로운 텍스트 파일입니다."가 작성됩니다.
+이렇게 쓴 파일은 현재 작업 디렉토리에 생성됩니다. 만약 다른 디렉토리에 파일을 쓰고 싶다면 파일 경로를 변경해주면 됩니다.
 
-## 딥 다이브
+문자 파일을 읽어올 때는 내장된 `readFile` 함수를 사용할 수 있습니다. 이 함수는 `FilePath`를 인자로 받아 해당 파일의 내용을 문자열로 반환합니다. 이를 통해 파일에 쓴 내용을 다시 읽어올 수 있습니다.
 
-텍스트 파일을 작성하는 데는 더 많은 방법이 있습니다. 예를 들어, `appendFile` 함수를 사용하면 이미 존재하는 파일에 내용을 추가할 수 있습니다. 또한, `putStrLn` 함수를 사용하면 터미널창에 내용을 출력할 수 있습니다.
+## 깊이 파고들기
 
-텍스트 파일을 작성할 때 주의해야 할 점도 있습니다. 예를 들어, 문자 인코딩 문제로 인해 파일을 읽거나 쓸 때 오류가 발생할 수 있습니다. 따라서 코드의 인코딩을 명시적으로 지정하는 것이 좋습니다.
+Haskell은 문자 파일을 쓰는 데에 있어서 유용한 다양한 함수들을 제공합니다. `appendFile` 함수는 파일에 내용을 이어쓸 수 있게 해줍니다. `openFile` 함수를 사용하면 파일을 열고 여러가지 작업을 할 수 있습니다. 또한 `hClose` 함수를 사용하여 파일을 닫아줘야 합니다.
 
-## 더 읽어보기
+또한 `writeFile` 함수는 `IO ()` 타입을 반환하는데, 이는 모나드로 IO 작업이라는 것을 나타내줍니다. IO 작업은 순차적으로 실행되어야만 하는 작업이기 때문에 순서에 주의해야 합니다. 또한 파일을 쓴 후에는 꼭 파일을 닫아줘야 합니다.
 
-- [Haskell 기본 문서](https://www.haskell.org/documentation/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Haskell 함수와 자료형](https://en.wikibooks.org/wiki/Haskell/Functions_and_types)
-- [Haskell문자 인코딩 변경하기](https://stackoverflow.com/questions/1835986/how-to-change-the-encoding-of-a-file-in-haskell)
-- [Haskell 입출력 함수](https://www.devdungeon.com/content/use-haskell-io-functions)
+## 연관 링크
+
+[Haskell 입문](https://ko.wikibooks.org/wiki/Haskell/%EA%B0%95%EC%A2%8C), [Haskell 문서](https://www.haskell.org/documentation/), [Haskell 공식 홈페이지](https://www.haskell.org/)

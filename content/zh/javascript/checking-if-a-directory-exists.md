@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: 检查文件夹是否存在"
-simple_title:         "检查文件夹是否存在"
+title:                "检查目录是否存在"
+html_title:           "Javascript: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -9,55 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要检查文件夹是否存在？
+# 为什么
 
-当编写Javascript代码时，有时候需要检测某个文件夹是否存在。这样可以避免在程序运行过程中出现错误。如果文件夹不存在，我们可以提前处理，而不是运行到错误的代码而导致程序崩溃。
+在编写Javascript程序时，我们经常需要检查某个目录是否存在。这可以帮助我们确定文件是否已经存在，以便我们可以做出相应的处理。所以，检查目录存在性在编写JavaScript程序时非常有用。
 
-## 如何进行检查？
+## 如何
 
-首先，我们需要使用内置的fs模块来操作文件和文件夹。然后，我们可以使用 `fs.exists()` 方法来检测文件夹是否存在。下面是一个例子：
+假设我们有一个目录路径的变量，我们可以使用 node.js 内置的 `fs` 模块来检查它是否存在。下面是一个简单的例子：
 
-```Javascript
-// 引入fs模块
+```javascript
 const fs = require('fs');
 
-// 检查文件夹是否存在
-fs.exists('my_directory', (exists) => {
-  if (exists) {
-    console.log('文件夹已存在');
-  } else {
-    console.log('文件夹不存在');
-  }
-});
+// 假设我们有一个目录路径的变量
+const directoryPath = './myDirectory';
+
+// 使用 `fs.existsSync()` 方法来检查目录是否存在
+if (fs.existsSync(directoryPath)) {
+  console.log('目录已存在');
+} else {
+  console.log('目录不存在');
+}
 ```
 
-运行上面的代码，如果 `my_directory` 文件夹存在，那么输出会是 `文件夹已存在`，否则会是 `文件夹不存在`。另外，我们也可以使用 `fs.existsSync()` 同步方法来进行检查。语法如下：
+当我们运行这段代码时，如果 `myDirectory` 目录已经存在，那么控制台将输出 `目录已存在`。如果该目录不存在，则会输出 `目录不存在`。
 
-```Javascript
-fs.existsSync(path)
-```
+## 深入探讨
 
-其中，`path` 是要检查的文件夹路径。如果文件夹存在，该方法会返回 `true`，否则返回 `false`。
+在上面的例子中，我们使用了 `fs.existsSync()` 方法来检查目录的存在性。该方法将会返回一个布尔值，如果目录存在则为 `true`，否则为 `false`。我们也可以使用 `fs.stat()` 方法来检查目录的存在性。下面是一个使用该方法的例子：
 
-## 深入了解
+```javascript
+const fs = require('fs');
 
-在 Javascript 中，检查文件夹是否存在的方法主要有两种，即异步方法 `fs.exists()` 和同步方法 `fs.existsSync()`。这两种方法都接受一个回调函数作为参数，以在检查完成后进行响应。值得注意的是，在使用同步方法时，程序会堵塞在该行代码，直到检查完成才会继续执行。因此，如果不想影响程序的运行效率，建议使用异步方法。
+// 假设我们有一个目录路径的变量
+const directoryPath = './myDirectory';
 
-此外，有时候我们还需要检查文件夹的权限，以便在程序中做相应的处理。可以使用 `fs.access()` 方法来检查文件夹是否有指定权限。语法如下：
-
-```Javascript
-fs.access(path, mode, (err) => {
+// 使用 `fs.stat()` 方法来检查目录是否存在
+fs.stat(directoryPath, (err, stats) => {
   if (err) {
-    console.log('文件夹没有指定权限');
-  } else {
-    console.log('文件夹有指定权限');
+    console.error(err);
+    return;
   }
+
+  // 如果目录存在，则 `stats` 对象中会有相关的信息
+  console.log(stats.isDirectory()); // true
+  console.log(stats.size); // 0 (目录大小为 0)
 });
 ```
 
-在以上代码中，`mode` 参数可以指定所需的权限，如 `fs.W_OK` 表示可写权限。更多的权限参考可以查看 [Node.js官方文档](https://nodejs.org/api/fs.html#fs_file_system_flags)。
+`fs.stat()` 方法将会返回一个 `stats` 对象，它包含了该目录的相关信息，比如大小、创建时间等。我们通过调用返回的 `isDirectory()` 方法，可以判断目录是否为一个目录。
 
 # 参考链接
 
-- [Node.js官方文档：fs模块](https://nodejs.org/api/fs.html)
-- [Node.js官方文档：fs.access()方法](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback)
+- [Node.js Docs: `fs` 模块](https://nodejs.org/api/fs.html)
+- [Node.js Docs: `fs.existsSync()` 方法](https://nodejs.org/api/fs.html#fs_fs_existssync_pathoptions)
+- [Node.js Docs: `fs.stat()` 方法](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
+
+# 查看更多
+
+- [如何使用Node.js创建和管理文件](https://www.freecodecamp.org/news/nodejs-create-file-in-readable-writable-mode/)
+- [使用Node.js实现文件系统操作](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)

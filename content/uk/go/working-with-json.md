@@ -1,5 +1,6 @@
 ---
-title:                "Go: Робота з json"
+title:                "Робота з json"
+html_title:           "Go: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Go"
 category:             "Go"
@@ -9,75 +10,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+##Чому
 
-JSON, або JavaScript Object Notation, є одним з найпопулярніших форматів обміну даними у світі програмування. Робота з JSON є важливою навичкою для розробників, оскільки цей формат використовується у багатьох сучасних додатках і веб-сайтах. Крім того, використання Go для роботи з JSON дозволяє зробити процес ще більш ефективним та швидким.
+Робота з JSON є невід'ємною частиною розробки веб-додатків і додатків для мобільних пристроїв. Використання мови програмування Go для роботи з цим форматом данних дозволяє легко та ефективно обробляти та обмінюватись даними між різними додатками та системами.
 
-## Як
+##Як
 
-Для початку, необхідно імпортувати пакет encoding/json у свій проект Go. Далі, використовуючи функцію `json.Marshal ()`, можна перетворити дані у формат JSON. Нижче наведений приклад коду, який демонструє цей процес:
-
-```Go
-type User struct {
-    Name     string `json:"name"`
-    Age      int    `json:"age"`
-    Location string `json:"location"`
-}
-
-user := User{
-    Name:     "Іван",
-    Age:      25,
-    Location: "Київ",
-}
-
-jsonData, err := json.Marshal(user)
-
-if err != nil {
-    fmt.Println("Помилка при перетворенні у формат JSON:", err)
-} else {
-    fmt.Println(string(jsonData))
-}
-
-// Результат: {"name": "Іван", "age": 25, "location": "Київ"}
-```
-
-Крім цього, використовуючи функцію `json.Unmarshal ()`, можна перетворити дані у форматі JSON назад у звичайну структуру даних. Нижче наведено приклад коду, який це демонструє:
+Найпростіший спосіб працювати з JSON в Go - використання пакету "encoding/json" для преобразування даних в форматі JSON в об'єкти типу struct та навпаки. Нижче наведений приклад коду, який демонструє цей підхід:
 
 ```Go
-type Car struct {
-    Brand  string `json:"brand"`
-    Model  string `json:"model"`
-    Year   int    `json:"year"`
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Person struct {
+	Name    string `json:"name"`
+	Age     int    `json:"age"`
+	Hobbies []string `json:"hobbies"`
 }
 
-carJSON := `{"brand":"Audi", "model":"A6", "year":2018}`
+func main() {
+	jsonData := `{"name": "John", "age": 30, "hobbies": ["reading", "running"]}`
 
-var car Car
+	var person Person
 
-err := json.Unmarshal([]byte(carJSON), &car)
+	err := json.Unmarshal([]byte(jsonData), &person)
+	if err != nil {
+		fmt.Println("Error parsing JSON:", err)
+	}
 
-if err != nil {
-    fmt.Println("Помилка при перетворенні з формату JSON:", err)
-} else {
-    fmt.Println("Марка:", car.Brand)
-    fmt.Println("Модель:", car.Model)
-    fmt.Println("Рік:", car.Year)
+	fmt.Println("Name:", person.Name)
+	fmt.Println("Age:", person.Age)
+	fmt.Println("Hobbies:", person.Hobbies)
 }
-
-// Результат:
-// Марка: Audi
-// Модель: A6
-// Рік: 2018
 ```
 
-## Глибока здивовані
+При запуску цього коду буде виведено наступний результат:
 
-Хоча робота з JSON може здатися простим процесом, вона може бути досить складною, особливо коли мова йде про більш складні дані. Наприклад, виправляння помилок під час парсингу може бути важким завданням. Також, важливо розуміти структуру та будову цього формату.
+```bash
+Name: John
+Age: 30
+Hobbies: [reading running]
+```
 
-Щоб дізнатися більше про роботу з JSON у Go, варто детальніше ознайомитися з офіційною документацією та навчальними ресурсами.
+Щоб згенерувати JSON з об'єктів типу struct, можна використовувати метод "Marshal" пакету "encoding/json". Наступний приклад коду демонструє цей підхід:
 
-## Дивись також
+```Go
+package main
 
-- [Офіційна документація по роботі з JSON в Go](https://golang.org/pkg/encoding/json/)
-- [Відеоуроки по роботі з JSON у Go](https://www.youtube.com/watch?v=8SWXQf0r1EY)
-- [Стаття про
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Person struct {
+	Name    string `json:"name"`
+	Age     int    `json:"age"`
+	Hobbies []string `json:"hobbies"`
+}
+
+func main() {
+	person := Person{Name: "Mary", Age: 25, Hobbies: []string{"painting", "hiking"}}
+
+	result, err := json.Marshal(person)
+	if err != nil {
+		fmt.Println("Error encoding JSON:", err)
+	}
+
+	fmt.Println(string(result))
+}
+```
+
+Після запуску цього коду буде виведений наступний результат:
+
+```bash
+{"name":"Mary","age":25,"hobbies":["painting","hiking"]}
+```
+
+##Глибокий занурення
+
+У мові програмування Go є багато інших способів роботи з JSON. Наприклад, пакет "encoding/json" дозволяє задавати налаштування для кодування та декодування JSON з використанням тегів структури. Також є можливість використовувати інші пакети, такі як "jsoniter", для більш швидкої та ефективної роботи з JSON.
+
+##Дивіться також
+
+- [Офіційна документація Go для пакету "encoding/json"](https://golang.org/pkg/encoding/json/)
+- [Довідкова стаття про роботу з JSON в Go на сайті Medium](https://medium.com/@arslando/json-processing-in-go-part-i-3b3fc32a8600)
+- [Стаття про роботу з JSON у мові програмування Go на сайті dev.to](https://dev.to/wagslane/working-with-json-in-go-is-a-breeze-4j4e)

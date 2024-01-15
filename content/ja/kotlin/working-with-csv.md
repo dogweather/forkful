@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 「CSVを扱う方法」"
-simple_title:         "「CSVを扱う方法」"
+title:                "「csvを扱う」"
+html_title:           "Kotlin: 「csvを扱う」"
+simple_title:         "「csvを扱う」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -9,53 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを使用するのか？
+## なぜCSVを使用するのか
 
-CSV（Comma Separated Values）は、データをより簡単に取り扱うためのファイル形式です。多くのアプリケーションやプログラミング言語でサポートされており、データの表形式での取り込みや出力に適しています。KotlinではCSVを扱うための多くのライブラリがあり、便利に使用することができます。
+CSVはコンマで区切られたデータを表すためのファイル形式です。多くのアプリケーションやプログラムで使用されており、データのやりとりや処理に役立ちます。Kotlinを使用してCSVを処理することで、より効率的にデータを扱うことができます。
 
-## 使い方
+## 方法
 
-CSVファイルを読み込むには、まずはライブラリをインポートします。
+KotlinでCSVを処理するためには、最初に**kotlin-csv**ライブラリをインストールする必要があります。
 
-```Kotlin
-import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
+```
+// Gradle
+implementation 'com.github.doyaaaaaken:kotlin-csv:1.0.4'
+
+// Maven
+<dependency>
+    <groupId>com.github.doyaaaaaken</groupId>
+    <artifactId>kotlin-csv</artifactId>
+    <version>1.0.4</version>
+</dependency>
 ```
 
-そして、以下のようにファイルのパスを指定してcsvReaderを呼び出します。
+次に、CSVファイルを読み込みたい場合は、`FileReader`クラスを使用します。
 
-```Kotlin
-csvReader().readAll("/path/to/file.csv")
+```kotlin
+val reader: FileReader<File> = FileReader("data.csv")
+val csvParser: CsvReader = CsvReader()
+val rows: List<CsvRow> = csvParser.parseAll(reader)
 ```
 
-もしヘッダーがあるファイルの場合は、次のようにheaderというオプションを指定することでヘッダーを取得することもできます。
+データを処理する方法は多数ありますが、例として`for`ループを使用して各行のデータを出力する方法を紹介します。
 
-```Kotlin
-csvReader().readAllWithHeader("/path/to/file.csv")
+```kotlin
+for (row in rows) {
+    println(row[0] + "さんは" + row[1] + "歳です。")
+}
 ```
 
-CSVファイルを作成するには、以下のようにデータをリストとして渡し、ファイル名を指定します。
+出力結果は以下のようになります。
 
-```Kotlin
-val data = listOf(
-  listOf("Name", "Age", "Gender"),
-  listOf("John", "25", "Male"),
-  listOf("Lisa", "30", "Female")
-)
-
-csvWriter().writeAll(data, "/path/to/new_file.csv")
+```
+山田さんは30歳です。
+田中さんは25歳です。
+佐藤さんは28歳です。
 ```
 
-作成されたCSVファイルは、テキストエディタやスプレッドシートソフトで開いて編集することも可能です。
+## ディープダイブ
 
-## 詳細を深める
+CSVファイルを処理する際に注意すべきことは、各セルのデータ型です。全てが文字列として扱われるため、数値や日付のような特定の形式を持つデータを正しく処理するためには、適切なデータ型に変換する必要があります。また、CSVファイルが大きなサイズを持つ場合は、メモリ不足の可能性がありますので、`CsvReader`の代わりに`CsvReaderIterator`クラスを使用することで、メモリの消費量を抑えることができます。
 
-CSVファイルの取り扱い方についてさらに深く知りたい方は、以下のリンクを参考にしてください。
+## 参考リンク
 
-- [Kotlin CSVライブラリドキュメント](https://github.com/doyaaaaaken/kotlincsv)
-- [CSVの仕様詳細](https://tools.ietf.org/html/rfc4180)
-- [CSVを扱う際の注意点](https://www.e-typing.ne.jp/word/civ/knowledge-about-csv/)
+[kotlin-csvライブラリ](https://github.com/doyaaaaaken/kotlin-csv)
 
-## その他の参考リンク
+[FileReaderクラスのドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file-reader/index.html)
 
-- [Markdown記法の使い方](https://qiita.com/tbpgr/items/989c6badefff69377da7)
-- [Kotlin公式サイト](https://kotlinlang.org/)
+[CsvReaderクラスのドキュメント](https://kotlin.github.io/kotlinx-datetime/java-time-to-kotlin-times/#csv-io)

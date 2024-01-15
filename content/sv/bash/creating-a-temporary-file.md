@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Skapa en temporär fil"
+html_title:           "Bash: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,40 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Skapandet av temporära filer är en viktig del av Bash-programmering eftersom det tillåter oss att enkelt lagra och manipulera data under körningen av ett skript utan att permanent påverka filsystemet.
 
-Skapandet av temporära filer är ett vanligt förekommande problem som kan uppstå inom Bash-programmering. Det kan användas för att temporärt lagra data som endast behövs under en kort stund eller för att hantera flera processer som behöver åtkomst till samma fil. Att förstå hur man skapar och hanterar temporära filer är därför en viktig färdighet för alla som arbetar med Bash.
-
-## Hur man gör
-
-Skapandet av en temporär fil i Bash är en ganska enkel process. Det finns flera metoder att välja mellan, men en av de vanligaste är att använda kommandot `mktemp`. Denna kommando skapar en temporär fil på ett unikt genererat namn och möjliggör åtkomst till filen via en variabel.
-
-En grundläggande kod för att skapa en temporär fil i Bash skulle se ut så här:
+## Så här gör du
+För att skapa en temporär fil i Bash använder vi kommandot "mktemp" tillsammans med flaggan "-p" för att specificera en mapp där filen ska skapas. Här är ett exempel på hur det skulle kunna se ut i ett skript:
 
 ```Bash
-temp=$(mktemp)
-echo "Min temporära fil är $temp"
+#!/bin/bash
+
+TEMP_FILE=$(mktemp -p ~/temp)
+
+echo "Det här är en temporär fil" >> $TEMP_FILE
+
+cat $TEMP_FILE
 ```
 
-Den första raden använder `mktemp` för att skapa en temporär fil och tilldelar den till en variabel som heter `temp`. I den andra raden skriver vi ut sökvägen till den skapade filen. Om vi kör denna kod skulle vi få en utmatning som ser ut så här:
+Det första steget är att definiera variabeln "TEMP_FILE" och tilldela den resultatet av "mktemp" kommandot som använder "-p" flaggan för att skapa filen i mappen "temp" i användarens hemkatalog. Sedan använder vi "echo" kommandot för att skriva en rad till filen och slutligen använder vi "cat" kommandot för att skriva ut innehållet i filen. Resultatet skulle vara:
 
 ```
-Min temporära fil är /tmp/tmp.aPHZyK
+Det här är en temporär fil
 ```
 
-Som du kan se så har en unik sökväg för den temporära filen genererats av `mktemp` och tilldelats till variabeln `temp`.
+Vi kan också använda kommandon som "mktemp -u" för att skapa en unik temporär fil och "mktemp -t" för att inkludera ett prefix i filnamnet.
 
-## Djupdykning
-
-I djupdykningsdelen ska vi titta närmare på kommandot `mktemp` och hur det fungerar för att skapa temporära filer.
-
-För det första så finns det flera mönster som kan användas när man skapar en temporär fil med `mktemp`. Det vanligaste mönstret är `XXX` som ersätts med ett slumpmässigt numeriskt eller alfanumeriskt värde. Men det finns också andra mönster som kan användas för att skapa mer specifika filer.
-
-Det finns också en rad olika flaggor som kan användas med `mktemp`. En av de vanligaste är `-d` som används för att skapa en temporär katalog istället för en fil.
-
-Det är också värt att notera att `mktemp` har inbyggd säkerhet för att förhindra att flera processer skapar en fil med samma namn. Detta gör det till ett säkert sätt att skapa temporära filer inom Bash.
+## Vertikal dyk
+Skapandet av temporära filer är en viktig del av Bash-programmering eftersom vi ibland behöver lagra och hantera data som inte kan sparas permanent i filsystemet. Men det är också värt att nämna att det även finns andra sätt att skapa temporära filer, som att använda ">>" operatorn för att lägga till innehållet i en befintlig fil eller att använda "trap" kommandot för att rensa bort temporära filer när skriptet avslutas.
 
 ## Se även
-
-- [`mktemp` man-sida](https://www.commandlinux.com/man-page/man1/mktemp.1.html)
-- [Bash-hemsida](https://www.gnu.org/software/bash/)
-- [Bash-guide för nybörjare](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+[Filhantering i Bash](https://www.tecmint.com/file-management-in-linux/)  
+[Mktemp command in Bash](https://www.geeksforgeeks.org/mktemp-command-in-linux-with-examples/)

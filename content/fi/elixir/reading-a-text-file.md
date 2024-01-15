@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Tekstitiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Elixir: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,30 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstitiedostojen lukeminen on tärkeä taito Elixir-ohjelmointikielessä, sillä se antaa mahdollisuuden käsittellä suuria määriä dataa ja tehdä monimutkaisia operaatioita tekstin avulla. Se on myös olennainen osa tiedonsiirtoa ja tiedostojen käsittelyä Elixir-sovelluksissa.
+Monissa ohjelmointiprojekteissa on tarve lukea tekstitiedostoja. Tämä voi olla esimerkiksi datan käsittelyä tai tiedostojen kopiointia varten. Elixirin avulla tämä on helppoa ja tehokasta.
 
-## Kuinka tehdä
+## Miten
 
-Tekstitiedostojen lukeminen Elixirillä on yksinkertaista ja tehokasta. Voit käyttää sisäänrakennettua `File`-moduulia ja sen `read`-funktiota lukeaksesi tiedostoja. Yksinkertainen esimerkki olisi seuraava:
+Lueessa tekstitiedostoja Elixirillä, käytetään File moduulia. Ensiksi, avataan haluttu tiedosto `File.open()` funktion avulla. Tämän jälkeen voidaan käyttää `IO.stream()` funktiota luomaan datavirta tiedostolle. Lopuksi tiedosto suljetaan `File.close()` avulla.
 
+```Elixir
+file = File.open("tiedosto.txt", [:read])    # Avaa tiedosto
+stream = IO.stream(file)                    # Luo datavirta
+IO.read(stream, :all)                       # Tulostaa koko tekstin
+File.close(file)                            # Sulje tiedosto
 ```
-Elixir
 
-file = File.read("tiedosto.txt")
-
-IO.puts(file)
-```
-
-Tämä koodi lukee tekstitiedoston nimeltä "tiedosto.txt" ja tulostaa sen sisällön konsoliin. Voit myös antaa erilaisia parametreja `File.read`-funktiolle, esimerkiksi `{:line, 2, 5}` joka palauttaa 2 riviltä 5 riviä. Voit myös käyttää `File.stream!`-funktiota lukeaksesi ja käsitelläksesi suuria tiedostoja tehokkaasti.
+Output: `"Tämä on esimerkki tekstiä."`
 
 ## Syvemmälle
 
-Tekstitiedostojen lukeminen ei rajoitu pelkästään `File`-moduulin käyttämiseen. Voit myös käyttää `Erlang`-moduulia `:file` lukemaan tiedostoja. Tämä antaa sinulle suuremman hallinnan tiedostojen lukemisessa ja antaa mahdollisuuden käyttää erilaisia algoritmeja ja käsittelyjä.
-
-Lisäksi voit käyttää `Stream` ja `Enum`-moduuleja lukeaksesi tiedostojen sisältöä ja suorittamaan monimutkaisempia operaatioita, kuten suodattamista tai järjestämistä. Tämä antaa sinulle mahdollisuuden tehdä edistyneitä tekstinkäsittelytoimintoja Elixirillä.
+Reading files in Elixir is actually done synchronously, meaning that the entire file is read into memory at once. This may not be ideal for very large files, as it could potentially cause memory issues. To overcome this, Elixir also offers the option to read files asynchronously using `File.read()` and `Stream.resource()`.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/File.html#read/1)
-- [How to Read Files in Elixir](https://www.tutorialspoint.com/elixir/elixir_file_io.htm)
-- [Reading text files with Elixir - A Simple Guide](https://gist.github.com/edykim/83c6a12eab048b04346f)
+- [File moduuli](https://hexdocs.pm/elixir/File.html)
+- [IO moduuli](https://hexdocs.pm/elixir/IO.html)
+- [Stream moduuli](https://hexdocs.pm/elixir/Stream.html)

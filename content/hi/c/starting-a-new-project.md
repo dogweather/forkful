@@ -1,6 +1,7 @@
 ---
-title:                "C: नया परियोजना आरंभ करना"
-simple_title:         "नया परियोजना आरंभ करना"
+title:                "एक नया प्रोजेक्ट शुरू करना"
+html_title:           "C: एक नया प्रोजेक्ट शुरू करना"
+simple_title:         "एक नया प्रोजेक्ट शुरू करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -9,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों:
+## Kyun
 
-एक नए प्रोजेक्ट की शुरुआत क्यों करना होता है, उसका मुख्य कारण है कि हम दुनिया में नए और रोमांचक कोडिंग प्रोजेक्ट्स बनाने के लिए उकसाते हैं। यह हमारे रिक्त समय में भी हमारा हितग्राही होता है और स्किल्स को विकसित करता है।
+Agar aap naye project ko shuru karne ka faisla kar rahe hai, toh aapko kuch important kaaran ho sakte hai. Shayad aap apne coding skills ko improve karna chahte hai ya fir kisi naye concept ko explore karna chahte hai. Shuruwat ek naye project ka ek challenging aur exciting experience ho sakta hai.
 
-## कैसे:
+## Kaise
 
-```c
+Yadi aap ek naye project ko shuru karna chahte hai C language mein, toh aapko kuch basic steps follow karne honge. Sabse pehle, aapko apne system mein C compiler install karna hoga. Phir aapko kisi text editor ya Integrated Development Environment (IDE) ka use karke apne code ko likhna hoga. Yeh code blocks, variables, loops, functions jaise concepts ka upyog karte hue hoga. Ek baar code likhne ke baad, use compile karke output ko check kare. Is tarah se aap apne project ko gradually develop kar sakte hai.
+
+```C
 #include <stdio.h>
-int main()
-{
-  printf("एक नए प्रोजेक्ट की शुरुआत कैसे करें।");
-  return 0;
+
+int main() {
+   // Yeh ek hello world program hai.
+   printf("Hello World!");
+   return 0;
 }
 ```
+Output:
+```
+Hello World!
+```
 
-उपर्युक्त कोड में, हम पहले से ही समझते हैं कि यह कथन क्या कर रहा है - “एक नए प्रोजेक्ट की शुरुआत कैसे करें।” इसके अलावा, हम अपनी कॉडिंग ज्ञान को अपने प्रोजेक्ट के साथ प्रयोग करते हुए अपनी स्किल्स को भी अभिवृद्धि कर सकते हैं।
+## Gahraai tak jaane
 
-## गहराई तक:
+Ek naye project ko shuru karna kisi bhi programming language ke liye challenging ho sakta hai. Is liye, aapko sahi mindset aur skills rakhna bahut zaruri hai. C language mein shuruwat karne ke liye, aapko syntax aur programming structure ko acche se samajhna hoga. Iske alawa, aapko kisi experienced developer se guidance lena bhi ho sakta hai. Ek baar aap apne project mein deep dive karne lagenge, aapko naye tarike aur techniques explore karne ka mauka milega.
 
-नए प्रोजेक्ट शुरू करने से पहले, हमे अपने उद्देश्य और उसे पूरा करने के लिए आवश्यकता पर ध्यान देना चाहिए। हमें समय, संसाधन और अनुभव के बारे में सोचना चाहिए ताकि हम अपने प्रोजेक्ट को सफलतापूर्वक पूर्ण कर सकें। इसके साथ ही, हमें एक अच्छी परियोजना प्रबंधन की आवश्यकता होती है जो हमें हमारे प्रोजेक्ट को नियंत्रित और संगठित रखने में मदद करती है।
+## Dekhe Bhi
 
-## देखें भी:
-
-[सी प्रोग्रामिंग के कुछ महत्वपूर्ण बेसिक्स](https://www.geeksforgeeks.org/c-programming-language/)
-[एक सफल प्रोजेक्ट का निर्माण कैसे करें](https://www.codingdojo.com/blog/7-tips-to-successful-software-project-management)
-[एक प्रोजेक्ट के लिए योजना बनाने का तरीका
+- [Introduction to C programming](https://www.programiz.com/c-programming)
+- [A Beginner's Guide to C - GeeksforGeeks](https://www.geeksforgeeks.org/c-language-set-1-introduction/)
+- [Top 10 Tips for Coding in C - DZone](https://dzone.com/articles/top-10-tips-for-coding-in-c)

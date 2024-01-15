@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Hahmonpoisto vastaavaa kuvioita vasten"
+html_title:           "Ruby: Hahmonpoisto vastaavaa kuvioita vasten"
+simple_title:         "Hahmonpoisto vastaavaa kuvioita vasten"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,33 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Voit poistaa merkkejä jotka vastaavat tiettyä kaavaa kun haluat muokata tai siistiä tekstiä.
+Miksi haluat poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä, kun käsittelet tekstimuotoisia tietoja, kuten CSV- tai JSON-tiedostoja, ja haluat jättää pois tietyt merkit, jotka eivät ole tarpeellisia.
 
 ## Kuinka tehdä
 
-```ruby
-# Luo uusi merkkijono
-string = "Tämä on esimerkki tekstistä, jossa on turhia välilyöntejä"
+Poistaaksesi merkit, jotka vastaavat tiettyä kaavaa, voit käyttää `.gsub` -menetelmää. Tämä menetelmä korvaa kaikki merkit, jotka vastaavat määritettyä kaavaa, tyhjällä merkillä. Tässä on esimerkki:
 
-# Käytä regular expression (säännöllinen lauseke) löytääksesi välilyönnit ja korvaa ne tyhjillä merkeillä
-new_string = string.gsub(/\s+/, "")
+```Ruby
+text = "Tämä on esimerkkiteksti (123)."
 
-# Tulostaa uuden merkkijonon ilman välilyöntejä
-puts new_string
+puts text.gsub(/[()]/, '')
 ```
-Tulos:
-"Tämäonesimerkkitekstistä,jossaturhiaäälyöntejä"
 
-## Syvempi sukellus
+Tämä tuottaa seuraavan tulosteen:
 
-> Regular expressions (myös nimellä regex) ovat erityinen merkkijonojen käsittelytyökalu, jota käytetään löytämään ja korvaamaan merkkejä tai sanoja tiettyjen kaavojen mukaisesti.
+`Tämä on esimerkkiteksti 123.`
 
-Regular expressions voivat olla hyödyllisiä tekstinkäsittelyssä, kun haluat suorittaa tarkkoja muokkauksia. Voit esimerkiksi käyttää niitä poistaaksesi ylimääräisiä välilyöntejä, kuten yllä olevassa esimerkissä, tai löytää ja korvata tiettyjä sanoja tai merkkijonoja.
+Kuten näet, sulkumerkit on korvattu tyhjällä merkillä ja tekstissä oleva kaikki muu on säilytetty.
 
-Regular expressionsin avulla voit myös määrittää monimutkaisempia kaavoja, kuten etsiä merkkijonoja, jotka alkavat tai päättyvät tietyillä kirjaimilla, tai joilla on tietty määrä merkkejä välissä.
+## Syvemmälle
+
+Voit käyttää erilaisia RegExp-kaavoja poistaaksesi erilaisia merkkejä. Esimerkiksi voit käyttää `\d` vastaamaan numeroita tai `\w` vastaamaan kirjaimia ja numeroita. Voit myös käyttää `+` -merkkiä vastaamaan useita toistuvia merkkejä. Esimerkiksi kaava `/[()]+/` poistaisi kaikki sulkumerkit, mutta myös välilyönnit, mikäli niitä olisi. Voit kokeilla erilaisia RegExp-kaavoja ja nähdä, miten ne vaikuttavat tekstiin.
 
 ## Katso myös
 
-- ["The Ruby Regular Expression Cheat Sheet" (Ruby säännöllisten lausekkeiden huijausarkki)](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
-- ["Ruby Regex: The Ultimate Beginner's Guide" (Ruby säännölliset lausekkeet: lopullinen aloittelijan opas)](https://yukimasano.medium.com/ruby-regex-the-ultimate-beginners-guide-228a5674d0e4)
-- ["Ruby Regular Expressions Tutorial: How to Get Started" (Ruby säännöllisten lausekkeiden opas: miten aloittaa)](https://www.rubyguides.com/2015/06/ruby-regular-expression/)
+- Ruby String -dokumentaatio: https://ruby-doc.org/core-3.0.2/String.html
+- Säännölliset lausekkeet Rubyn String -esimerkkejä: https://www.rubyguides.com/2019/02/ruby-regex/
+- Ruby String `gsub` -menetelmästä: https://www.rubyguides.com/ruby-tutorial/ruby-string-gsub-method/

@@ -1,5 +1,6 @@
 ---
-title:                "Swift recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Swift recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to know the current date in your Swift programming? Whether it's for displaying the date in a user interface or for calculating time intervals, getting the current date is a valuable skill to have as a Swift programmer.
+Have you ever needed to display the current date in your Swift program, whether it be for a calendar app or a reminder system? Knowing how to retrieve the current date and time is an essential skill for any Swift developer.
 
 ## How To
-To get the current date in Swift, we can use the `Date()` function. This returns the current date and time in our code. Let's take a look at a simple example:
+Getting the current date in Swift is a simple process. First, we need to import the Foundation framework, which contains the Date class.
+
+```
+import Foundation
+```
+
+Then, we can create an instance of the Date class and assign it to a variable.
+
 ```
 let currentDate = Date()
-print(currentDate)
 ```
-The output of this code would be the current date and time in your console. But what if you want to format the date in a specific way? We can use `DateFormatter` to do this. Let's say we want to display the date in the format: "Monday, September 13, 2021". Here's how we can do that:
+
+To display the date in a specific format, we can use the DateFormatter class. For example, to display the date in "MMMM dd, yyyy" format (e.g. January 1, 2022), we would use the following code:
+
 ```
-let formatter = DateFormatter()
-formatter.dateFormat = "EEEE, MMMM d, yyyy"
-let formattedDate = formatter.string(from: Date())
-print(formattedDate)
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "MMMM dd, yyyy"
+let formattedDate = dateFormatter.string(from: currentDate)
+
+print(formattedDate) // Output: January 1, 2022
 ```
-The output of this code would be the current date in the format we specified. You can also change the format to suit your needs, such as displaying just the day or just the month. Play around with the `dateFormat` property to see what works best for your project.
+
+We can also get the current time by specifying the time format in the DateFormatter class.
+
+```
+let timeFormatter = DateFormatter()
+timeFormatter.dateFormat = "hh:mm a"
+let formattedTime = timeFormatter.string(from: currentDate)
+
+print(formattedTime) // Output: 05:30 PM
+```
 
 ## Deep Dive
-`Date()` may seem simple on the surface, but there's actually a lot more going on under the hood. Swift uses a data type called `TimeInterval` to represent dates and times, which is the number of seconds since January 1, 2001 at 00:00:00 UTC. This is commonly referred to as the Unix timestamp. The `Date()` function converts this timestamp into a human-readable date and time.
+Behind the scenes, the Date class actually stores the number of seconds since January 1st, 2001 at 12:00 AM UTC. So, when we create an instance of the Date class without any parameters, we are essentially getting the current date and time in seconds.
 
-Another important thing to note is that the date and time returned by `Date()` is based on the current timezone of the device running the code. This means that the date and time could be different for someone in a different timezone.
+The DateFormatter class allows us to format the date and time according to our preferences. We can specify the formatting using various characters, such as "M" for the month, "d" for the day, "y" for the year, "h" for the hour, "m" for the minute, and "a" for am/pm. It's important to note that these characters are case-sensitive.
 
 ## See Also
-Here are some links for more information about working with dates in Swift:
-
-- [Apple's documentation on `Date`](https://developer.apple.com/documentation/foundation/date)
-- [Working with Dates and Times in Swift - NSHipster](https://nshipster.com/date/)
-- [Formatting Dates in Swift using DateFormatter - Hacking with Swift](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-inside-text-views)
+- [Apple's Documentation on the Date Class](https://developer.apple.com/documentation/foundation/date)
+- [DateFormatter Formatting Guide](https://www.nsdateformatter.com/)
+- [Swift Date Formatting Tutorial](https://www.hackingwithswift.com/articles/153/how-to-use-dateformatter-to-format-dates-and-times)

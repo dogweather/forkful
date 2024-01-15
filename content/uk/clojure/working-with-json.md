@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Робота з json"
+title:                "Робота з json"
+html_title:           "Clojure: Робота з json"
 simple_title:         "Робота з json"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Чому
+## Чому
 
-JSON є популярним форматом даних для обміну із сучасними веб-додатками, тому те що розуміти та уміти працювати з ним - важливий навик для будь-якого програміста, який хоче створювати веб-сайти та додатки.
+JSON є одним з найпопулярніших форматів обміну даними в сучасному програмуванні. Розуміння того, як працювати з JSON, дозволить вам ефективно обробляти і обмінювати дані з іншими додатками та сервісами.
 
-# Як
+## Як
 
 ```Clojure
-;; Імпортуємо бібліотеку для роботи з JSON
 (require '[clojure.data.json :as json])
-
-;; Створюємо звичайний Clojure хеш-мап, який містить дані
-(def data {"name" "John" "age" 25 "hobbies" ["reading" "traveling" "cooking"]})
-
-;; Конвертуємо дані у формат JSON
-(def json-data (json/write-str data))
-
-;; Виводимо результат у консоль
-(clojure.pprint/pprint json-data) 
+(def sample-json "{:name \"John\", :age 25, :hobbies [\"reading\", \"hiking\", \"cooking\"]}")
+(json/read-str sample-json)
 ```
 
-Вивід:
-``` Clojure
-"{\"name\":\"John\",\"age\":25,\"hobbies\":[\"reading\",\"traveling\",\"cooking\"]}"
+В результаті ви отримаєте наступний вихід:
+
+```
+{"name" "John", "age" 25, "hobbies" ["reading" "hiking" "cooking"]}
 ```
 
-# Глибокий занурення
+На початку ми використовуємо функцію `(require ...)` для підключення модуля `clojure.data.json`. Потім ми створюємо змінну `sample-json` з рядком у форматі Clojure. Нарешті, ми використовуємо функцію `json/read-str` для перетворення рядка у структуру даних Clojure.
 
-JSON - це структурований формат даних, який легко інтерпретується людиною та комп'ютером. У Clojure є багато бібліотек для роботи з JSON, які допоможуть вам зчитувати та створювати дані у цьому форматі.
+## Глибше вдивимось
 
-Одна з найпопулярніших бібліотек - **cheshire**, яка пропонує зручні функції для роботи з JSON. За допомогою функцій `parse-string` і `generate-string` ви можете зчитувати та створювати дані з JSON, а також ви можете використовувати функцію `generate-stream` для збереження об'єктів у файл.
+Хоча в розглянутому прикладі ми просто перетворили рядок JSON у структуру даних Clojure, є інші корисні функції для роботи з JSON. Наприклад, `json/read` дозволяє читати дані з файлу, а `json/write` - записувати дані у файл у форматі JSON.
 
-# Запитайте
+Також є можливість обробляти дані з більш складною структурою, такою як вкладені об'єкти та масиви. Наприклад:
 
-- [Офіційна документація по бібліотеці cheshire](https://github.com/dakrone/cheshire)
-- [Робота з JSON у Clojure](https://cemerick.com/2011/07/11/json-io/)
-- [Пакет обробки JSON даних - jsonista](https://github.com/metosin/jsonista)
+```clojure
+(def sample-json "{:employees [{:name \"John\", :salary 50000}, {:name \"Mary\", :salary 60000}]}")
+(json/read-str sample-json)
+```
 
-# Дивіться також
+В результаті ми отримаємо структуру даних з двома елементами, кожен з яких містить ім'я працівника та його зарплату. Також, ви можете використовувати функцію `json/write-str` для перетворення структури даних у рядок JSON для подальшого обміну з іншими додатками.
 
-- [Як працювати з XML у Clojure](https://example.com) (soon to come)
+## Дивись також
+
+Для отримання додаткової інформації про роботу з JSON у Clojure, рекомендуємо переглянути наступні ресурси:
+
+- [Clojure JSON бібліотека](https://github.com/clojure/data.json)
+- [Офіційна документація по Clojure](https://clojure.org/)
+- [Онлайн курс "Clojure for the Brave and True"](https://www.braveclojure.com/)

@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Parsing HTML"
-simple_title:         "Parsing HTML"
+title:                "Análise de HTML"
+html_title:           "Elixir: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -9,67 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que usar parsing HTML?
 
-Neste post, vamos explorar como usar a linguagem de programação Elixir para analisar HTML. Esta habilidade é útil quando você precisa extrair dados de uma página da web ou criar um web crawler para coletar informações.
+Se você já trabalhou com conteúdo da web, provavelmente já se deparou com a necessidade de extrair informações específicas de páginas HTML. Isso pode ser um processo tedioso e propenso a erros se feito manualmente. Felizmente, a linguagem de programação Elixir oferece uma solução elegante e eficiente para lidar com essa tarefa: o parsing HTML.
 
-## Como Fazer
+# Como fazer:
 
-Antes de começar, certifique-se de ter instalado o Elixir em seu sistema. Em seguida, vamos precisar de um pacote de terceiros chamado "Floki" para facilitar a análise HTML. Você pode instalá-lo usando o gerenciador de pacotes do Elixir, o Hex. No terminal, execute o seguinte comando:
+Para iniciar o parsing HTML em Elixir, primeiro precisamos instalar uma biblioteca que nos permitirá trabalhar com HTML. Uma das opções mais populares é o package `Floki`. 
 
-```
-mix deps.get floki
-```
+Aqui está um exemplo de como fazer o parsing de uma página HTML usando `Floki`:
 
-Agora que temos o Floki instalado, vamos começar com um exemplo simples de como analisar um HTML básico. Usando o módulo `Floki`, podemos usar a função `parse/1` e passar o HTML como uma string. Em seguida, usamos a função `Floki.find/2` para encontrar os elementos desejados.
+```Elixir
+# Primeiro, devemos importar o módulo `Floki`
+iex> import Floki 
 
-```
-# Usando o módulo Floki
-html = "<div id="content"><h1>Título<h1><p>Este é um exemplo de parágrafo</p></div>"
-parsed = Floki.parse(html)
+# Em seguida, vamos acessar a página desejada e armazenar seu conteúdo em uma variável
+iex> html = Floki.parse_file!("caminho/para/arquivo.html") 
 
-# Encontrando o título
-title = Floki.find(parsed, "h1")
-IO.puts(title)
-
-# Encontrando o parágrafo
-paragraph = Floki.find(parsed, "p")
-IO.puts(paragraph)
+# Podemos agora usar o módulo `Floki` para selecionar elementos específicos da página. 
+# Neste exemplo, estamos buscando todos os elementos `h1` da página e imprimindo seu conteúdo.
+iex> Floki.find(html, "h1") |> Floki.text() |> IO.puts()
 ```
 
-A saída será:
+O código acima irá imprimir todos os títulos `h1` do arquivo HTML em questão. Este é apenas um exemplo simples, mas com o Elixir e o `Floki` é possível realizar parsing em páginas HTML complexas de uma maneira clara e eficaz.
 
-```elixir
-[Título]
-[Este é um exemplo de parágrafo]
-```
+# Mais informações:
 
-## Aprofundando-se
+Se você estiver interessado em aprender mais sobre parsing HTML com Elixir, recomendo a leitura da documentação oficial do `Floki` (https://hexdocs.pm/floki/api-reference.html). Além disso, você pode explorar outras bibliotecas disponíveis para parsing em Elixir, como `htmlparser` e `MochiWeb`.
 
-O pacote Floki oferece várias funções úteis para análise e manipulação de HTML. Podemos usar a função `Floki.attribute/2` para encontrar o valor de um atributo específico em um elemento. Também podemos usar a função `Floki.html_to_text/1` para converter o HTML em texto simples. Aqui está um exemplo:
+# Veja também:
 
-```
-# Encontrando o href do link
-link = Floki.find("#link")
-href = Floki.attribute(link, "href")
-
-# Convertendo o HTML em texto
-text = Floki.html_to_text(html)
-IO.puts(text)
-```
-
-Outra função útil é `Floki.matches?/2`, que verifica se um elemento corresponde a um seletor específico. Por exemplo, podemos verificar se o elemento é um h1 com a classe "title" da seguinte forma:
-
-```
-# Verificando se o elemento é um h1 com a classe "title"
-Floki.matches?(title, "h1.title")
-# Output: true
-```
-
-Com o pacote Floki, temos muitas ferramentas à nossa disposição para analisar e manipular HTML em nossos projetos Elixir.
-
-## Veja Também
-
-- Documentação do pacote Floki: [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html)
-- Tutorial Elixir: [https://elixir-lang.org/getting-started/introduction.html](https://elixir-lang.org/getting-started/introduction.html)
-- Mais recursos sobre Elixir: [https://elixir-lang.org/resources.html](https://elixir-lang.org/resources.html)
+- Documentação do `Floki`: (https://hexdocs.pm/floki/api-reference.html)
+- Biblioteca `htmlparser`: (https://hex.pm/packages/htmlparser)
+- Biblioteca `MochiWeb`: (https://hex.pm/packages/mochiweb)

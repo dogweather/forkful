@@ -1,5 +1,6 @@
 ---
-title:                "C# recipe: Reading a text file"
+title:                "Reading a text file"
+html_title:           "C# recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "C#"
 category:             "C#"
@@ -11,49 +12,98 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever encountered the need to read a large text file in your C# program? Perhaps you need to extract important information from a log file or parse a CSV file for data analysis. Reading a text file is a common task in programming, and knowing how to do it efficiently can save you time and frustration.
+Reading a text file is a fundamental task in programming. Whether you need to process user input, parse a configuration file, or analyze large amounts of data, understanding how to read a text file using C# can greatly enhance your coding skills and make your programs more robust.
 
 ## How To
 
-Reading a text file in C# is a simple process that can be accomplished using the built-in File class. First, we need to import the System.IO namespace:
+To read a text file in C#, you will need to use the `System.IO` namespace. This namespace contains the necessary classes and methods for handling files. Specifically, the `File` class provides static methods for reading and writing files, and the `StreamReader` class allows you to read from a file stream.
+
+To begin, you'll need to create a `StreamReader` object and pass in the path to your text file as a parameter. In the following example, we'll read a text file named "sample.txt" from the desktop:
 
 ```C#
+using System;
 using System.IO;
+
+StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt");
 ```
 
-Next, we can use the static method ReadAllText() from the File class to read the contents of a text file into a string variable:
+Next, you can use the `ReadLine()` method on the `StreamReader` object to read one line of the text file at a time. This method returns a string, so you can store it in a variable and use it in your code. The `ReadLine()` method will return `null` when it reaches the end of the file, so be sure to include a condition to check for this.
 
 ```C#
-string text = File.ReadAllText("sample.txt");
-```
+using System;
+using System.IO;
 
-This will read the entire file and store its contents in the "text" variable. However, if you have a large file, it may not be efficient to read the entire file at once. In that case, we can use the StreamReader class to read the file line by line:
+StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt");
 
-```C#
-using (StreamReader sr = File.OpenText("sample.txt"))
+string line;
+while ((line = reader.ReadLine()) != null)
 {
-    string line;
-    while ((line = sr.ReadLine()) != null)
-    {
-        // Do something with each line
-        Console.WriteLine(line);
-    }
+    // Do something with each line of the text file
+    Console.WriteLine(line);
 }
 ```
 
-Using the "using" statement ensures that the file is closed correctly after we finish reading it.
+You can also use the `ReadToEnd()` method to read the entire content of the file as a single string:
+
+```C#
+using System;
+using System.IO;
+
+StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt");
+
+string content = reader.ReadToEnd();
+```
+
+Once you've finished reading the file, it's important to close the `StreamReader` object to release any resources it was using. You can do this by calling the `Close()` method on the object.
+
+```C#
+using System;
+using System.IO;
+
+StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt");
+
+// Read file content
+
+reader.Close(); // Make sure to close the StreamReader object
+```
 
 ## Deep Dive
 
-There are a few things to keep in mind when reading a text file in C#. By default, the ReadAllText() method will use the UTF-8 encoding, but you can specify a different encoding if needed. You can also use the StreamReader class to specify the encoding and other options.
+There are several options available for reading text files in C#, including the `File` and `StreamReader` classes that we covered above. It's important to consider factors such as performance, error handling, and memory management when choosing which option to use.
 
-Additionally, when reading a large file, it is better to use the ReadLine() method instead of ReadAllText(), as it will not consume as much memory.
+One useful feature of the `StreamReader` class is the ability to specify the character encoding of the file you're reading. This is particularly helpful when working with international text files that may use different character sets. To specify an encoding, you can pass in a `System.Text.Encoding` object as a second parameter when creating the `StreamReader` object.
 
-It is also important to handle exceptions when reading a file, as it may not always be available or in the correct format. You can use try-catch blocks to handle these potential errors.
+```C#
+using System;
+using System.IO;
+using System.Text;
+
+StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt", Encoding.UTF8);
+```
+
+Another important aspect to consider when reading text files is error handling. It's important to handle any exceptions that may occur, such as a file not being found or being unable to open the file for some reason. You can use a `try...catch` block to handle these exceptions and prevent your program from crashing.
+
+```C#
+using System;
+using System.IO;
+using System.Text;
+
+try
+{
+    StreamReader reader = new StreamReader(@"C:\Users\Username\Desktop\sample.txt", Encoding.UTF8);
+
+    // Read file content
+
+    reader.Close();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+```
 
 ## See Also
 
-- [File.ReadAllText Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)
-- [StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
-- [Encoding Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding)
-- [Exceptions in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
+- Microsoft Docs - Read Text from a File in C#: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
+- C# Text File Handling: https://www.tutorialspoint.com/csharp/csharp_text_file_handling.htm
+- C# File class: https://www.geeksforgeeks.org/file-class-in-c-sharp/

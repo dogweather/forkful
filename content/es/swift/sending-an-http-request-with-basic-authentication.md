@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Enviando una petición http con autenticación básica"
-simple_title:         "Enviando una petición http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Swift: Enviando una solicitud http con autenticación básica"
+simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,47 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-En el mundo de la programación, es común necesitar comunicarse con servidores para obtener información o realizar acciones. En estos casos, enviar una solicitud HTTP con autenticación básica es una manera segura y confiable de hacerlo. Aprender cómo hacerlo es una habilidad valiosa para cualquier programador.
+¿Por qué alguien querría enviar una solicitud HTTP con autenticación básica? La autenticación básica agrega una capa adicional de seguridad a los sitios web y aplicaciones al requerir un nombre de usuario y contraseña para acceder a ciertas funciones o datos sensibles.
 
 ## Cómo hacerlo
-
-En Swift, podemos enviar una solicitud HTTP con autenticación básica utilizando la clase `URLRequest` y su método `addValue` para añadir encabezados de autenticación. A continuación, podemos utilizar la clase `URLSession` para ejecutar la solicitud y obtener una respuesta. Veamos un ejemplo:
+La autenticación básica en Swift se puede lograr fácilmente al enviar un encabezado de autorización en la solicitud HTTP. Aquí hay un ejemplo de cómo hacerlo utilizando URLSession:
 
 ```Swift
-let urlString = "https://www.example.com/api/users"
-let url = URL(string: urlString)
 let username = "usuario"
 let password = "contraseña"
-
-if let requestUrl = url {
-    var request = URLRequest(url: requestUrl)
-    request.httpMethod = "GET"
-    let loginString = "\(username):\(password)"
-    let loginData = loginString.data(using: .utf8)
-    let base64LoginString = loginData?.base64EncodedString()
-    request.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-
-    let session = URLSession.shared
-    let task = session.dataTask(with: request) { (data, response, error) in
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+if let base64EncodedString = loginData?.base64EncodedString() {
+    let request = URLRequest(url: URL(string: "https://ejemplo.com/login")!)
+    request.setValue("Basic \(base64EncodedString)", forHTTPHeaderField: "Authorization")
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
         if let error = error {
             print("Error: \(error)")
-        } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-            print("Respuesta del servidor: \(data)")
+        } else if let data = data, let string = String(data: data, encoding: .utf8) {
+            print("Respuesta: \(string)")
         }
     }
     task.resume()
 }
 ```
 
-Este código envía una solicitud GET al servidor utilizando la autenticación básica. En la línea 9, creamos un encabezado de autenticación utilizando el nombre de usuario y contraseña proporcionados, y lo añadimos a la solicitud en la línea 10. Después de ejecutar la solicitud, podemos obtener la respuesta y manejarla en el bloque de finalización del `dataTask` en las líneas 14-19. Aquí, simplemente imprimimos la respuesta del servidor si la solicitud es exitosa.
+El código anterior mostrará cómo enviar una solicitud HTTP con autenticación básica utilizando una combinación de un nombre de usuario y una contraseña. La respuesta será la respuesta de la solicitud, que puede ser una confirmación de inicio de sesión exitoso o un mensaje de error.
 
 ## Profundizando
-
-Cuando utilizamos la autenticación básica, los datos de inicio de sesión se envían en formato de texto simple, lo que hace que sea fácil para un atacante interceptar y leer la información. Por lo tanto, si estamos enviando información sensible, es importante asegurarse de que la conexión sea segura mediante la utilización de HTTPS. También es recomendable utilizar otros métodos de autenticación más seguros, como OAuth.
+Al utilizar la autenticación básica, se recomienda utilizar HTTPS en lugar de HTTP para una mayor seguridad. Además, la autenticación básica transfiere la información de inicio de sesión en texto sin formato, por lo que no se recomienda para aplicaciones que manejan datos muy sensibles. En su lugar, se pueden utilizar métodos de autenticación más seguros, como OAuth.
 
 ## Vea también
-
-- [Documentación oficial de Apple para URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
-- [Tutorial sobre cómo enviar solicitudes HTTP en Swift](https://medium.com/swift-programming/basics-of-http-request-in-swift-c07f5f72903)
-- [Información sobre seguridad en conexiones HTTP](https://www.w3.org/Security/wiki/SecureConnections)
+- [Documentación oficial de Apple sobre URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Artículo en Medium sobre autenticación básica en Swift](https://medium.com/@YogevSitton/use-basic-authentication-in-swift-3-0-e9079d99384a)
+- [Guía sobre OAuth en Swift](https://www.raywenderlich.com/9272-how-to-implement-oauth-2-0-in-swift)

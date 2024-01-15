@@ -1,5 +1,6 @@
 ---
-title:                "Elm recipe: Reading command line arguments"
+title:                "Reading command line arguments"
+html_title:           "Elm recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,85 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## Why
 
-If you've ever worked with command line interfaces, you know that reading command line arguments is an important skill to have. Whether you're automating tasks or building command line tools, understanding how to read and use command line arguments can greatly enhance your programming capabilities.
+Command line arguments are a powerful tool for interacting with applications. They allow users to pass in information when executing a program, giving developers the ability to create more dynamic and customizable software.
 
-# How To
+## How To
 
-To read command line arguments in Elm, we use the Elm Platform library [`elm/core`](https://package.elm-lang.org/packages/elm/core/latest/). Within this library, we use the `Platform.worker` function to create a program that will handle command line inputs. Here's an example of how the code might look:
+Reading command line arguments in Elm is a simple and straightforward process. First, we need to import the `Cmd` and `Platform` modules. Then, we can use the `Platform.worker` function to create a program that accepts command line arguments.
 
-```
--- Import the necessary libraries
+```Elm
+import Cmd exposing (Cmd)
 import Platform exposing (worker)
-import Task
-import String
-import Json.Decode as Decode
 
+main : Program () Model Msg
+main =
+  worker
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
+    }
+```
 
--- Define a new type to represent command line arguments
-type alias CommandLineArgs =
-    { command : String
-    , arguments : List String
+Next, we can use the `Platform.workerArgs` function to handle the command line arguments. This function takes a function as an argument, which will receive a list of strings representing the command line arguments.
+
+```Elm
+import Cmd exposing (Cmd)
+import Platform exposing (worker, workerArgs)
+
+main : Program String Model Msg
+main =
+  workerArgs
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
     }
 
+init : String -> (Model, Cmd Msg)
+init args =
+  ( Model args, Cmd.none )
+```
 
--- Create a task that will handle the command line arguments
-parseCommandLineArgs : Task.Task x CommandLineArgs
-parseCommandLineArgs =
-    Task.perform Decode.decodeValue (Platform.worker windowDecode)
+Now, we can access the command line arguments within our `init` function and use them however we need to in our program. For example, we can print them out to the console.
 
-
--- Define the decoder for command line arguments
-windowDecode : Decode.Decoder CommandLineArgs
-windowDecode =
-    Decode.map2 CommandLineArgs
-        (Decode.field "command" Decode.string)
-        (Decode.field "arguments" (Decode.list Decode.string))
-
-
--- Finally, extract the command line arguments and print the output
-main : Program Never
-main =
-    Platform.worker Init
-        Noop
-
-
--- Define the init function
-type alias Model =
-    {}
-
+```Elm
+init : String -> (Model, Cmd Msg)
+init args =
+  ( Model args, Cmd.none )
 
 type Msg
-    = Init
+  = PrintArguments
 
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    PrintArguments ->
+      ( model, Cmd.none )
 
-init : ( Model, Cmd Msg )
-init =
-    ( Model
-    , Cmd.map parseCommandLineArgs Task.perform
-    )
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
 ```
 
-You can test this code by compiling it and running the following command in your terminal:
+Now, when we run our program with command line arguments, they will be printed to the console.
 
 ```
-elm make Main.elm --output=elm-bin
-./elm-bin --command=build --arguments=src/Main.elm
+$ elm make Main.elm --output=main.js
+$ node main.js arg1 arg2
+["arg1", "arg2"]
 ```
 
-The output should be `CommandLineArgs { command = "build", arguments = ["src/Main.elm"] }`.
+## Deep Dive
 
-# Deep Dive
+In Elm, command line arguments are handled by the `Platform` module. By using the `workerArgs` function, we are creating a program that can receive command line arguments as its initial state. These arguments are then passed to our `init` function, allowing us to access and use them in our program.
 
-Now, let's take a closer look at what's happening in this code. First, we define a custom type called `CommandLineArgs` to represent the command and its arguments. Then, we create a task called `parseCommandLineArgs` using `Task.perform` and a decoder to extract the data from the command line.
+It's also worth noting that the `Platform.workerArgs` function will automatically parse command line arguments into a list of strings, breaking at spaces. This is different from other languages, where command line arguments are usually separated by commas or other delimiters.
 
-Next, in the `main` function, we use `Platform.worker` to call the `Init` message, which in turn triggers the `parseCommandLineArgs` task. Finally, the `init` function uses `Task.map` to convert the result of the task into a `Msg`. This allows us to handle the data and print it as desired.
+## See Also
 
-Overall, reading command line arguments in Elm is a simple and straightforward process. By using the `elm/core` library and understanding how to create and handle tasks, you can easily incorporate this feature into your projects.
-
-# See Also
-
-- [Elm Platform Library](https://package.elm-lang.org/packages/elm/core/latest/)
-- [Elm Guide - Commands](https://guide.elm-lang.org/effects/cmd.html)
-- [Working with Command Line Arguments in Elm](https://thoughtbot.com/blog/working-with-command-line-arguments-in-elm)
+- [Elm Documentation on Platform Module](https://package.elm-lang.org/packages/elm-lang/core/6.0.0/Platform)
+- [Elm Documentation on Cmd Module](https://package.elm-lang.org/packages/elm-lang/core/6.0.0/Cmd)

@@ -1,6 +1,7 @@
 ---
-title:                "Haskell: Lączenie ciągów znaków"
-simple_title:         "Lączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Haskell: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,36 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego warto stosować łączenie stringów w języku Haskell? Jedną z najważniejszych zalet jest to, że pozwala na skuteczne budowanie tekstów w trakcie działania programu. To niezwykle przydatna funkcjonalność, szczególnie gdy mamy do czynienia z aplikacjami obsługującymi wprowadzane przez użytkownika dane.
+Wielu programistów, zarówno początkujących jak i doświadczonych, często używa funkcji łączenia stringów w swoim kodzie. Dzięki temu możliwe jest tworzenie czytelnych i spójnych ciągów znaków, co jest niezbędne w wielu aplikacjach. W tym artykule dowiecie się, jak wykorzystać tę funkcjonalność w języku Haskell.
 
 ## Jak to zrobić
 
-Aby skorzystać z możliwości łączenia stringów w Haskellu, musimy korzystać z funkcji `++`. Przykład prostej konkatenacji dwóch stringów wygląda następująco:
+Aby połączyć dwa stringi w Haskellu, możemy użyć funkcji `++` lub `concat`. Spójrzmy na przykładowy kod:
 
 ```Haskell
-"Hello, " ++ "World!" = "Hello, World!"
+let name = "John"
+let lastName = "Smith"
+let fullName = name ++ " " ++ lastName
 ```
 
-Warto zauważyć, że nie jest to operacja mutacyjna, a więc nie modyfikuje istniejących zmiennych, tylko tworzy nowy tekst. Możemy również łączyć większą liczbę stringów jednocześnie, na przykład:
+W powyższym przykładzie najpierw tworzymy dwie zmienne przechowujące imię i nazwisko. Następnie, za pomocą funkcji `++`, łączymy je w jedną zmienną `fullName`, która będzie przechowywać pełne imię i nazwisko. 
+
+Możemy również użyć funkcji `concat`, aby połączyć wiele stringów na raz:
 
 ```Haskell
-"Hello " ++ "to " ++ "all " ++ "Polish " ++ "readers!" = "Hello to all Polish readers!"
+let str1 = "Haskell"
+let str2 = "jest"
+let str3 = "niezwykłym"
+let str4 = "językiem"
+let sentence = concat [str1, " ", str2, " ", str3, " ", str4]
 ```
 
-Kolejnym ciekawym sposobem wykorzystania operatora `++` jest tworzenie list poprzez łączenie elementów za pomocą tego operatora. Przykład:
+W powyższym przykładzie używamy funkcji `concat`, która przyjmuje jako argument listę stringów, które chcemy połączyć. Z powyższego kodu otrzymamy zmienną `sentence`, która będzie zawierać pełne zdanie: "Haskell jest niezwykłym językiem".
+
+## Rzućmy okiem głębiej
+
+W języku Haskell istnieje również funkcja `<>`, która jest skróconą wersją funkcji `++`. Oba operatory działają w podobny sposób, jednakże różnią się one nieco w działaniu. Funkcja `++` jest bardziej wydajna gdy mamy do czynienia ze sklejaniem większej liczby stringów, a funkcja `<>` jest bardziej wydajna w przypadku łączenia dwóch stringów lub gdy jednym z argumentów jest pusty string.
+
+Ponadto, w języku Haskell możemy wykorzystać również operator `:` w celu sklejenia pojedynczego znaku do istniejącego stringa. Na przykład:
 
 ```Haskell
-["Good", "morning"] ++ ["Polish", "readers!"] = ["Good", "morning", "Polish", "readers!"]
+let str = "Haskell"
+let newStr = 'i' : str
 ```
 
-## Głębszy zanurzenie
-
-Istnieje wiele różnych sposobów wykorzystania łączenia stringów w Haskellu. Możemy na przykład stosować funkcję `++` do łączenia stringów wewnątrz innych funkcji. Możemy również wykorzystywać wzorce do łączenia stringów, co pozwala na większą elastyczność i możliwość dynamicznego tworzenia tekstu. 
-
-Ważne jest również pamiętanie o tym, że operator `++` do łączenia stringów działa również na liście znaków, więc nie musimy zamieniać tekstu na listę przed użyciem tej funkcji.
+W powyższym przykładzie tworzymy nowy string `newStr`, dodając literę "i" na początku już istniejącego stringa "Haskell". W efekcie otrzymamy "iHaskell".
 
 ## Zobacz także
 
-- Dokumentacja języka Haskell: https://www.haskell.org/documentation/
-- Wzorce w Haskellu: https://wiki.haskell.org/Pattern_matching
-- Learn You a Haskell: http://learnyouahaskell.com/
+- [Oficjalna dokumentacja Haskell](https://www.haskell.org/documentation/)
+- [Tutorial dla początkujących w Haskellu](https://wiki.haskell.org/Tutorials)
+- [Inne przykłady zastosowania funkcji `++` i `concat`](https://stackoverflow.com/questions/9613909/how-can-i-concatenate-two-lists-in-haskell)

@@ -1,6 +1,7 @@
 ---
-title:                "C++: स्ट्रिंग को निचे केस में रूपांतरित करना"
-simple_title:         "स्ट्रिंग को निचे केस में रूपांतरित करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+html_title:           "C++: स्ट्रिंग को लोअर केस में रूपांतरण करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-हेलो दोस्तों! आज हम बात करेंगे C++ प्रोग्रामिंग के एक बहुत ही उपयोगी विषय के बारे में - जो हैं एक स्ट्रिंग को लोअर केस में बदलना। अक्सर हमारे कोड में स्ट्रिंग इंपुट को लोअर केस में लाने की जरूरत पड़ती है। इससे हम अलग-अलग स्ट्रिंग्स को सरलता से तुलनात्मक कर सकते हैं। आइए जानते हैं कि स्ट्रिंग को लोअर केस में बदलने का कोड कैसे लिखा जाता है।
+## Kyun
+Mool roop se, yaani ke original form mein likhe to excel, programming languages, aur databases mein bhi uske istemaal ke kai takiye hai. Dhyan rakhna chahiye ki capital aur small letters mein farak hota hai. Kuch cases mein, humein string ko lower case mein convert karna padta hai taaki sahi se compare ya search kar sakein.
 
-## क्यों
-
-स्ट्रिंग को लोअर केस में बदलने का मुख्य कारण है उस स्ट्रिंग को सरलता से तुलनात्मक बनाना। स्ट्रिंग को समान केस में रखने से हम उसे आसानी से तुलना कर सकते हैं जैसे कि मैं बात करता हूं की क्यों SVG और png फाइल होती है।
-
-## कैसे
-
-आप सरलता से [स्ट्रिंग](https://www.geeksforgeeks.org/converting-uppercase-lower-case-string/#string-functions-in-cpp) को लोअर केस में बदल सकते हैं, C++ में यह तरीका जानते हैं।
-
+## Kaise Karein
 ```C++
-//आपने यह स्क्रिप्ट jockey.cpp नाम से सेव कर लिया।
 #include <iostream>
 #include <string>
-#include <algorithm>
+#include <locale>
+
 using namespace std;
- 
-int main()
-{
-    string name = "HINDI BLOG POST";
-    cout << "पहले नाम:" << name << endl;
- 
-    //प्रत्येक चर लोअर केस में बदलने के लिए इस्तेमाल किया गया है 
-    transform(name.begin(), name.end(), name.begin(), ::tolower);
-    cout << "नया नाम:" << name << endl;
- 
+
+int main(){
+    string input;
+    cout << "Kripya string enter karein: ";
+    getline (cin, input); // input lein
+    for(int i = 0; i < input.length(); i++) {
+        // Har character ko lower case mein convert karein
+        input[i] = tolower(input[i], locale());
+    }
+    cout << "Converted string: " << input << endl;
     return 0;
 }
-
 ```
-आउटपुट:
+### Output:
 ```
-पहले नाम: HINDI BLOG POST
-नया नाम: hindi blog post
+Kripya string enter karein: HELLO WoRlD
+Converted string: hello world
 ```
 
-## घुमाने के लिए
+## Gehri Jhaank
+Jab bhi hum string ko lower case mein convert karte hai, hum ek loop ke through har character ko check karte hai aur use `tolower()` function se convert karte hai. Iske baad, hum converted string ko output karte hai. Ek important baat hai ki `tolower()` function `locale` object ka argument leta hai jis se hum character ko sahi language mein convert kar sakein. Agar hum `locale()` nahi use karein, to character ko `char` type mein convert kar di jayegi. Isse humare code mein kuch characters jaise ki 'ç' ya 'ß' ko theeek tarah se convert nahi kar payega.
 
-अब हमें एक नज़र डीप डाइव में उस कोड के ऊपर डालने की जरूरत है जो मूरनिंग च्यूटोरीयल आउटपुट [.Flow](https://stackoverflow.com/questions/735204/convert-a-string-in
+## See Also
+- [String Functions in C++](https://www.geeksforgeeks.org/string-class-in-c/) 
+- [Locale Object in C++](https://www.geeksforgeeks.org/locale-class-in-c-with-examples/)

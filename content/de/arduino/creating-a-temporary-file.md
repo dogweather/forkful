@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Erstellen einer temporären Datei"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Arduino: Erstellen einer temporären Datei"
 simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,51 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man temporäre Dateien in einem Arduino-Programm erstellen möchte. Zum Beispiel kann es sein, dass man Daten zwischen verschiedenen Funktionen oder Schleifen speichern muss, oder dass man bestimmte Dateien nur vorübergehend benötigt. Egal aus welchem Grund, das Erstellen und Nutzen von temporären Dateien kann sehr nützlich sein.
+Die Erstellung von temporären Dateien kann in vielen Situationen nützlich sein. Zum Beispiel kann es erforderlich sein, Daten temporär zu speichern, während ein größeres Projekt ausgeführt wird, oder es kann eine Möglichkeit bieten, auf kurzfristige Daten zuzugreifen, ohne bleibende Spuren zu hinterlassen.
 
-## Wie
+## Wie geht das?
 
-Es gibt einige Schritte, die man befolgen muss, um erfolgreich temporäre Dateien in einem Arduino-Programm zu erstellen. Zuerst muss man eine Variable erstellen, die den Speicherort der temporären Datei speichert. Dann muss man Funktionen nutzen, um die temporäre Datei zu erstellen, zu schreiben und zu löschen.
+Die Verwendung von temporären Dateien in Arduino ist relativ einfach. Zunächst muss die Standardbibliothek für Dateiverwaltung mit `#include <SD.h>` importiert werden. Dann kann eine temporäre Datei mit den folgenden Schritten erstellt werden:
 
+- Ein Objekt der Klasse `SDFile` erstellen und einer vorhandenen Datei zuweisen:
+`SDFile tempFile = SD.open("temp.log", FILE_WRITE);`
+
+- Daten in die temporäre Datei schreiben:
 ```Arduino
-File tempFile; // erstelle eine Variable für die temporäre Datei
-
-void setup() {
-  // initialisiere serielle Kommunikation
-  Serial.begin(9600);
-
-  // erstelle eine neue temporäre Datei mit dem Namen "temp.txt"
-  tempFile = SD.open("temp.txt", FILE_WRITE);
-
-  // überprüfe, ob die Datei erfolgreich erstellt wurde
-  if (!tempFile) {
-    Serial.println("Fehler beim Erstellen der temporären Datei!");
-  }
-}
-
-void loop() {
-  // schreibe Daten in die temporäre Datei
-  tempFile.println("Dies ist ein Beispieltext.");
-
-  // schließe die Datei
-  tempFile.close();
-
-  // lösche die temporäre Datei
-  SD.remove("temp.txt");
-
-  // warte eine Sekunde
-  delay(1000);
-}
+tempFile.println("Messwerte:");
+tempFile.println(value);
 ```
 
-## Deep Dive
+- Die Datei schließen, wenn sie nicht mehr benötigt wird:
+`tempFile.close();`
 
-Beim Erstellen einer temporären Datei gibt es einige wichtige Dinge zu beachten. Zunächst muss man sicherstellen, dass man ausreichend Speicherplatz auf dem Arduino verfügbar hat, um die temporäre Datei zu erstellen. Außerdem muss man darauf achten, dass man die Datei am Ende wieder löscht, um Speicherplatz frei zu machen.
+Die erstellte temporäre Datei kann wie jede andere Datei im SD-Kartenlaufwerk behandelt werden.
 
-Eine weitere wichtige Überlegung ist die Benennung der temporären Datei. Es ist wichtig, einen eindeutigen und aussagekräftigen Namen zu wählen, um Verwechslungen mit anderen Dateien zu vermeiden.
+## Tiefere Einblicke
+
+Es ist wichtig zu beachten, dass temporäre Dateien nicht automatisch gelöscht werden, sobald der Arduino ausgeschaltet wird. Um sie zu löschen, muss die Datei manuell geöffnet und dann gelöscht werden. Zum Beispiel:
+```Arduino
+SD.remove("temp.log");
+```
+
+Es gibt auch Möglichkeiten, eine temporäre Datei zu erstellen, ohne sie direkt auf der SD-Karte zu speichern. Dies kann durch die Verwendung von dynamischem Speicher erreicht werden, um einen Zwischenspeicher zu erstellen, in den die Daten geschrieben werden. Dieser Speicher wird dann verwendet, um die Daten später auf die SD-Karte zu schreiben.
 
 ## Siehe auch
 
-- [Documentation Arduino - Creating and Deleting Temporary Files](https://www.arduino.cc/en/Tutorial/Files)
-- [Tutorialspoint - Arduino SD Library](https://www.tutorialspoint.com/arduino/arduino_sd_library.htm)
-- [Instructables - How to Use the Arduino SD Card Library](https://www.instructables.com/How-to-Use-The-Arduino-SD-Card-Library/)
+- [Offizielle Arduino SD library Documentation](https://www.arduino.cc/en/Reference/SD)
+- [Tutorial: How to Use SD Card with Arduino](https://www.circuitspecialists.com/blog/using-an-sd-card-with-the-arduino/)

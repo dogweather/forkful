@@ -1,6 +1,7 @@
 ---
-title:                "Swift: 小文字に文字列を変換する"
-simple_title:         "小文字に文字列を変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "Swift: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -9,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
+文字列を小文字に変換することに取り組む理由は主に2つあります。まず第一に、データの整合性を保つために、すべての文字列を同じ形式で処理する必要があります。また、データの検索や比較を行う際に、大文字と小文字を区別する必要がある場合があります。
 
-文字列を小文字に変換することに関心があるかもしれません。例えば、ユーザーからの入力を標準化したい場合や、文字列の比較を行う必要がある場合などが考えられます。
-
-# 方法
-
-文字列を小文字に変換する方法は簡単です。 `lowercased()` メソッドを使用するだけです。以下のように ```Swift ... ``` コードブロック内で例を示します。
+## 使い方
+下記のように、文字列を小文字に変換するには `lowercased()` メソッドを使用します。
 
 ```Swift
 let str = "Hello, World!"
 let lowercasedStr = str.lowercased()
-print(lowercasedStr) // 出力: hello, world!
+print(lowercasedStr) // hello, world!
 ```
 
-# 深堀り
-
-文字列は Swift で不変なので、`lowercased()` メソッドを使用すると新しい文字列が作成されます。また、ロケールに応じて文字を正しく小文字に変換するためには、`lowercased()` メソッドの引数として `Locale` オブジェクトを渡すこともできます。
+また、Unicode文字列にも適用することができます。
 
 ```Swift
-let str = "Äpfel"
-let germanLocale = Locale(identifier: "de_DE")
-let lowercasedStr = str.lowercased(with: germanLocale)
-print(lowercasedStr) // 出力: äpfel
+let unicodeStr = "こんにちは、世界！"
+let lowercaseUnicode = unicodeStr.lowercased()
+print(lowercaseUnicode) // こんにちは、世界！
 ```
 
-しかし、文字列を小文字に変換するだけでなく、使用できるメソッドはさらにたくさんあります。例えば、`uppercased()` メソッドを使用すると文字列を大文字に変換できます。詳細は[ドキュメント](https://developer.apple.com/documentation/foundation/nslocalizedstring/1408241-lowercased)を参照してください。
+## 深堀り
+Swiftでは、文字列を小文字に変換するために `UnicodeScalar`という型が使用されます。 `UnicodeScalar` は、ASCII文字列やUnicode文字列の一部を表すために使用される2バイトの整数です。 `lowercased()` メソッドは、この `UnicodeScalar` を使用して文字列を小文字に変換します。これにより、大文字と小文字の区別を考慮して、文字列を安全かつ簡潔に変換することができます。
 
-# 参考
+## はじめよう
+Swiftで文字列を小文字に変換する方法について学びました。あなたのプロジェクトで文字列を処理する際は、常に文字列を同じ形式に変換することを忘れないようにしてください。
 
-- [Strings and Characters - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [String - Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
+## 参考
+- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Apple Developer Documentation](https://developer.apple.com/documentation/swift)
+- [Stack Overflow](https://stackoverflow.com/questions/3214565/how-do-i-convert-a-string-to-lower-case-in-swift)

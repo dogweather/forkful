@@ -1,6 +1,7 @@
 ---
-title:                "Go: Odczytywanie kodu html"
-simple_title:         "Odczytywanie kodu html"
+title:                "Analiza składni HTML"
+html_title:           "Go: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,43 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą, który zaczyna przygodę z językiem programowania Go, prawdopodobnie słyszałeś już o parsowaniu HTML. Jest to niezwykle ważna umiejętność, która pozwala na ekstrakcję danych z kodu HTML, używając prostych i wydajnych narzędzi dostępnych w języku Go. W tym wpisie dowiesz się dlaczego warto nauczyć się parsowania HTML oraz jak możesz to zrobić w prosty sposób.
+Czy kiedykolwiek chciałeś wyciągnąć konkretną informację lub zestaw danych z witryny internetowej? Czy zastanawiałeś się, jak wiele informacji można uzyskać z kodu źródłowego strony internetowej? Właśnie dlatego parsowanie HTML jest tak ważnym narzędziem w programowaniu - umożliwia nam pobieranie i przetwarzanie informacji z witryn internetowych.
 
 ## Jak to zrobić
 
-Aby zacząć parsować HTML w języku Go, musisz najpierw skonfigurować odpowiednie narzędzia. W tym celu możesz wykorzystać popularną bibliotekę [goquery](https://github.com/PuerkitoBio/goquery), która udostępnia intuicyjne API do przeszukiwania i manipulowania kodem HTML. Poniżej przedstawiamy przykładowy kod wykorzystujący bibliotekę goquery.
-
-```Go
+```go
 package main
 
 import (
-    "fmt"
-    "log"
-    "strings"
-
-    "github.com/PuerkitoBio/goquery"
+  "fmt"
+  "net/http"
+  "io/ioutil"
 )
 
 func main() {
-    // Pobranie kodu HTML strony
-    doc, err := goquery.NewDocument("https://www.example.com")
-    if err != nil {
-        log.Fatal(err)
-    }
+  // Pobierz kod źródłowy strony internetowej
+  resp, err := http.Get("https://www.example.com")
 
-    // Wyszukanie i wyświetlenie tytułu strony
-    title := doc.Find("title").Text()
-    fmt.Println("Tytuł strony: ", strings.TrimSpace(title))
+  if err != nil {
+    panic(err)
+  }
+
+  defer resp.Body.Close()
+
+  // Odczytaj dane HTML
+  htmlData, err := ioutil.ReadAll(resp.Body)
+
+  if err != nil {
+    panic(err)
+  }
+
+  fmt.Println(htmlData)
 }
 ```
 
-Powyższy kod pobiera kod HTML ze strony internetowej i wyszukuje w nim tytuł, który jest następnie wyświetlany w konsoli. Dzięki prostemu interfejsowi biblioteki goquery, możesz łatwo wyszukiwać i manipulować kodem HTML, aby wyodrębnić potrzebne dane.
+Przykładowy output:
 
-## Głębsza analiza
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Przykładowa strona internetowa</title>
+</head>
+<body>
+  <h1>Witaj świecie!</h1>
+</body>
+</html>
+```
 
-Parsowanie HTML w języku Go nie jest tylko ograniczone do wyszukiwania i manipulacji elementami na stronie internetowej. Możesz również wykorzystać dodatkowe narzędzia, takie jak [net/html](https://github.com/golang/net/tree/master/html) do analizowania struktury drzewa DOM i wyodrębniania danych z konkretnych tagów lub atrybutów HTML. Pozwala to na bardziej precyzyjne i zaawansowane przetwarzanie kodu HTML w Twoich aplikacjach.
+## Głębszy zanurzanie się
+
+Podczas parsowania HTML w Go, istnieje wiele narzędzi i bibliotek do wyboru. Najpopularniejszym z nich jest "goquery", który pozwala na łatwe odwzorowywanie elementów HTML i przeszukiwanie dokumentu za pomocą selektorów CSS. Dzięki temu możesz wybrać określone elementy i odczytać ich wartości w kodzie. Istnieją również inne narzędzia, takie jak "Golang.org/x/net/html" lub "html/template", które mogą być użyteczne w zależności od potrzeb. Nauka parsowania HTML w Go może również przydać się w innych dziedzinach, takich jak automatyczne testowanie stron internetowych lub tworzenie własnych narzędzi do analizowania stron internetowych.
 
 ## Zobacz również
 
-- Oficjalny podręcznik języka Go do parsowania HTML: https://golang.org/pkg/html
-- Poradnik poświęcony parsowaniu HTML w języku Go: https://dev.to/dlsniper/parsing-html-in-go-1jnn
+- [Pakiet goquery](https://github.com/go-xmlpath/xmlpath)
+- [Golang.org/x/net/html](https://golang.org/x/net/html)
+- [Pakiet html/template](https://pkg.go.dev/html/template)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Überprüfen, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Bash: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,37 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiges Konzept in der Bash-Programmierung. Es ermöglicht uns, Bedingungen zu setzen und verschiedenen Codepfaden zu folgen, je nachdem, ob ein Verzeichnis vorhanden ist oder nicht. In diesem Blog-Beitrag werden wir uns ansehen, warum und wie wir diese Überprüfung durchführen können.
+Es gibt verschiedene Gründe, warum jemand prüfen möchte, ob ein Verzeichnis in Bash existiert. Möglicherweise müssen Sie sicherstellen, dass Ihr Skript nur in vorhandenen Verzeichnissen ausgeführt wird, oder Sie möchten eine spezifische Aktion ausführen, wenn ein Verzeichnis nicht existiert.
 
-## Wie
+## Wie funktioniert es?
 
-Wir können ganz einfach überprüfen, ob ein Verzeichnis existiert, indem wir den Befehl `test -d` verwenden, gefolgt vom Pfad des Verzeichnisses, das wir überprüfen möchten. Hier ist ein Beispiel:
-
-```Bash
-test -d /home/username/Documents
-```
-
-Dieser Code überprüft, ob das Verzeichnis "Documents" im Home-Verzeichnis des Benutzers "username" existiert. Wenn das Verzeichnis vorhanden ist, gibt es keinen Output. Wenn das Verzeichnis nicht vorhanden ist, erhalten wir eine Fehlermeldung.
-
-Eine andere Möglichkeit, um ein Verzeichnis zu überprüfen, ist die Verwendung des Befehls `if` zusammen mit `test -d`. Hier ist ein Beispiel:
+Um zu überprüfen, ob ein bestimmtes Verzeichnis existiert, können Sie den Befehl "test" oder dessen übliche Kurzform "-d" verwenden, gefolgt von dem gewünschten Verzeichnisnamen. Zum Beispiel:
 
 ```Bash
-if test -d /home/username/Documents; then
+if [ -d "mein_verzeichnis" ]; then
   echo "Das Verzeichnis existiert."
 else
   echo "Das Verzeichnis existiert nicht."
 fi
 ```
 
-Dieser Code überprüft ebenfalls, ob das Verzeichnis "Documents" vorhanden ist, gibt uns jedoch eine aussagekräftigere Ausgabe, je nachdem, ob das Verzeichnis existiert oder nicht.
+In diesem Beispiel wird der Befehl "test -d" verwendet, um das Verzeichnis "mein_verzeichnis" zu überprüfen. Wenn es existiert, wird die erste Meldung ausgegeben, andernfalls die zweite.
 
-## Deep Dive
+Ein weiterer nützlicher Befehl ist "mkdir -p", der ein Verzeichnis erstellt, wenn es noch nicht existiert. Sie können also zuerst überprüfen, ob ein Verzeichnis existiert, und falls nicht, es mit "mkdir -p" erstellen.
 
-Die Überprüfung, ob ein Verzeichnis existiert, basiert auf dem Befehl `test`, der verschiedene Tests auf Dateien und Verzeichnisse durchführen kann. `-d` ist einer der Tests, die überprüfen, ob ein Verzeichnis vorhanden ist. Wir können auch andere Tests verwenden, um z.B. zu überprüfen, ob eine Datei existiert (`-f`), ob eine Datei lesbar (`-r`) oder beschreibbar (`-w`) ist usw.
+## Tiefgehende Informationen
 
-Es ist auch wichtig zu beachten, dass die Überprüfung, ob ein Verzeichnis existiert, nur funktioniert, wenn der Benutzer, der den Befehl ausführt, auch Zugriff auf das Verzeichnis hat. Andernfalls wird die Überprüfung immer als nicht vorhanden zurückgegeben.
+Es gibt verschiedene andere Methoden, um zu überprüfen, ob ein Verzeichnis existiert, wie z.B. die Verwendung von "ls" in Kombination mit "grep" oder das Erstellen eigener Funktionen. Es ist jedoch zu beachten, dass "test -d" die effizienteste und standardmäßige Art ist, dies in Bash zu tun.
 
 ## Siehe auch
 
-- [Bash-Testkommando](https://linux.die.net/man/1/test)
-- [Überprüfung von Dateien und Verzeichnissen in Bash](https://opensource.com/article/19/7/checking-files-and-directories-bash)
+- [Dokumentation zu "test" and "-d" von Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Weitere nützliche Befehle in Bash](https://www.tldp.org/LDP/abs/html/)

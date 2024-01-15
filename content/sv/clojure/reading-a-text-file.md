@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Läsning av en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Clojure: Läsning av en textfil"
 simple_title:         "Läsning av en textfil"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,33 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa textfiler är en grundläggande färdighet inom programmering och kan vara användbart för att hantera eller manipulera stora mängder data. I denna bloggpost kommer vi att ta en titt på hur man läser en textfil i Clojure och hur man kan använda detta för att lösa olika programmeringsproblem.
+Att kunna läsa och bearbeta textfiler är en viktig färdighet inom programmering, särskilt när det gäller att hantera stora datamängder eller samverka med andra program. I detta artikel kommer du lära dig hur du på ett enkelt sätt kan läsa en textfil i Clojure och sedan använda den data som finns i filen för att lösa olika förhandsproblem.
 
-## Hur man gör det
+## Hur man gör
 
-För att läsa en textfil i Clojure använder vi funktionen `slurp`, som läser in hela filinnehållet som en sträng. Vi kan sedan använda olika inbyggda funktioner för att bearbeta denna sträng, till exempel `split`, `filter`, `map` och `reduce`. Låt oss ta en titt på ett enkelt exempel på hur man läser en fil och räknar antalet ord i den:
+Att läsa en textfil i Clojure är en relativt enkel process. Först behöver vi definiera en filväg där vår textfil finns lagrad. Detta kan göras med hjälp av funktionen "file" som tar filvägen som ett argument.
 
 ```Clojure
-(def filinnehall (slurp "testfil.txt"))
-(def ord (split filinnehall #" "))
-(def antal-ord (count ord))
-(println "Antal ord i filen: " antal-ord)
+(def filväg (file "minkod.txt"))
 ```
 
-Om vår textfil `testfil.txt` innehåller "Hej, jag heter Lisa och jag älskar att programmera.", kommer konsoloutputen att vara:
+Vi kan nu använda funktionen "with-open" för att öppna filen och läsa dess innehåll. Detta garanterar att filen stängs automatiskt efter att vi har använt den. Sedan använder vi funktionen "read-line" för att läsa en rad i taget och "println" för att skriva ut resultatet till terminalen.
 
+```Clojure
+(with-open [fil (reader filväg)]
+  (doseq [rad (line-seq fil)]
+    (println rad)))
 ```
-Antal ord i filen: 10
+
+Sample Output:
+```
+Hej!
+Det här är en textfil.
+Den innehåller några rader text.
+```
+
+För att lagra datan från filen i en variabel kan vi använda funktionen "slurp" som läser hela filen som en sträng.
+
+```Clojure
+(def innehåll (slurp filväg))
+```
+
+Sample Output:
+```
+"Hej!\nDet här är en textfil.\nDen innehåller några rader text."
 ```
 
 ## Djupdykning
 
-Det finns många användbara funktioner i Clojure för att läsa och manipulera textfiler. En annan användbar funktion är `line-seq`, som läser en fil rad för rad och returnerar dessa som en sekvens. Detta kan vara användbart när man arbetar med stora textfiler och inte vill läsa in allt på en gång. En annan funktion är `spit`, som skriver en sträng till en fil.
+När du läser en textfil i Clojure är det viktigt att vara medveten om att funktionerna "read-line" och "slurp" tolkar filinnehållet som en sekvens av tecken snarare än rader. Detta betyder att om filen innehåller text med flera rader, kommer funktionerna att läsa in hela texten som en enda rad. För att undvika detta kan du använda funktionen "line-seq" som delar upp strängen vid varje radbrytning och returnerar en sekvens av rader. Det är också viktigt att filen är kodad enligt rätt teckenuppsättning för att undvika problem med specialtecken och icke-standardtecken.
 
-Det är också värt att notera att Clojure har inbyggd stöd för första-klassens funktioner, vilket innebär att vi kan skicka funktioner som argument till andra funktioner. Detta kan vara användbart vid bearbetning av filinnehåll, till exempel om vi vill filtrera ut vissa rader eller mappa över varje rad med en viss funktion.
+Om du vill läsa en textfil som finns på en annan plats än din lokala dator kan du använda funktionen "slurp-url" som tar URL-adressen som argument.
+
+```Clojure
+(def remote-innehåll (slurp-url "https://dinadress.com/textfil.txt"))
+```
 
 ## Se även
 
-- [Clojure dokumentation - Input and Output](https://clojure.org/guides/io)
-- [Clojure Cookbook - Working with Files](https://clojure-cookbook.com/division-14.html)
-- [Clojure för programmerare - Läs från och skriv till filer](https://clojure-for-rubyists.readthedocs.io/en/latest/file_io.html)
+- [Officiell Clojure dokumentation](https://clojuredocs.org/)
+- [Official Clojure YouTube channel](https://www.youtube.com/user/clojuretv/videos)
+- [Clojure Subreddit](https://www.reddit.com/r/Clojure/)

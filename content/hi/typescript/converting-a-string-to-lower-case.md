@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: स्ट्रिंग को लोअर केस में रूपांतरण करना"
-simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरित करना"
+html_title:           "TypeScript: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,26 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कभी-कभी हमें एक स्ट्रिंग को लोअर केस में कनवर्ट करने की ज़रूरत होती है, जैसे की उपयोगकर्ता से लेन-देन के समय या इस्टीमेटिंग में। इससे स्ट्रिंग को समझने और साथ ही प्रोग्रामिंग लैंग्वेज में काम करने में भी आसानी होती है।
+कोई इससे लाभान्वित हो सकता है क्योंकि lower case में रूपांतरण किया जाना स्ट्रिंग को जोड़ने द्वारा, पठनीयता बढ़ाई जा सकती है और प्रोग्राम को अधिक पढ़ने और समझने में सुविधा प्रदान की जा सकती है।
 
 ## कैसे करें
 
-```TypeScript
-let str = "HELLO WORLD";
-console.log(str.toLowerCase());
+कोड उदाहरण:
+
+ ```TypeScript 
+ let inputString: string = "Hello World";
+ let outputString: string = inputString.toLowerCase();
+
+ console.log(outputString);
+ ```
+आउटपुट:
+
 ```
+hello world
+```
+## डीप डाइव
 
-Output: "hello world"
-
-यहां हमने "HELLO WORLD" नामक स्ट्रिंग को लोअर केस में कनवर्ट किया है और उसका आउटपुट प्रिंट किया है। हम इसके लिए TypeScript के inbuilt `toLowerCase()` फ़ंक्शन का इस्तेमाल किा है। इससे स्ट्रिंग के हर एक अक्षर को लोअर केस में बदल जाता है।
-
-## गहराई से जानें
-
-स्ट्रिंग को लोअर केस में कनवर्ट करने के लिए कई तरीके हो सकते हैं। यहां हमने TypeScipt के inbuilt फंक्शन का उपयोग किया है, लेकिन अन्य प्रोग्रामिंग लैंग्वेज में भी ऐसे फंक्शन मौजूद होते हैं। इसके अलावा हम `for` लूप या `map` फंक्शन के साथ भी कई तरीकों से स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं।
+lower case में रूपांतरण करने के नियम हैं जो स्ट्रिंग के प्रत्येक चरित्र को निर्दिष्ट छोटे चरित्र में परिवर्तित करता है। यह प्रक्रिया शून्य स्थान, संख्यात्मक चरित्र और अन्य अनपेक्षित चरित्रों को स्वचालित रूप से नज़रअंदाज करती है। lower case में रूपांतरण करने के लिए, TypeScript स्ट्रिंग के लिए विशिष्ट फ़ंक्शन `toLowerCase()` प्रदान करता है। 
 
 ## देखें
 
-यदि आप और भी TypeScipt सीखना चाहते हैं तो निम्न लिंकों को ज़रूर देखें:
+इस लेख के अलावा आप और भी अधिक जानकारी प्राप्त कर सकते हैं:
 
-- https://www.typescriptlang.org/
-- https://www.typescriptlang.org/docs/home.html
+- [TypeScript डॉक्यूमेंटेशन](https://www.typescriptlang.org/docs/)
+- [MDN lower case में रूपांतरण](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Tests schreiben"
-simple_title:         "Tests schreiben"
+title:                "Testen schreiben"
+html_title:           "Bash: Testen schreiben"
+simple_title:         "Testen schreiben"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -11,39 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Verwendung von Tests in der Bash-Programmierung kann eine wichtige Rolle bei der Entwicklung von robusten und zuverlässigen Skripten spielen. Durch das Schreiben von Tests können potenzielle Fehler und Probleme frühzeitig erkannt werden, was Zeit und Aufwand bei der Fehlerbehebung sparen kann.
+Tests schreiben ist eine wichtige Praxis in der Bash Programmierung. Durch das Schreiben von Tests können Programmierer sicherstellen, dass ihr Code wie erwartet funktioniert und unerwartete Fehler zu vermeiden.
 
-## Wie man Tests schreibt
+## Wie geht man vor
 
-Das Schreiben von Tests in Bash ist relativ einfach und folgt einem ähnlichen Ansatz wie in anderen Programmiersprachen. Zunächst müssen Sie eine Funktion erstellen, die den Test enthält, und dann die erwartete Ausgabe mit der tatsächlichen Ausgabe vergleichen.
+Um mit dem Schreiben von Tests in Bash zu beginnen, ist es wichtig, die Syntax und Struktur der Tests zu verstehen. Ein einfaches Beispiel könnte so aussehen:
 
-Ein Beispiel dafür könnte sein:
+```Bash
+#!/bin/bash
 
-``` Bash
-# Funktion, die die Ausgabe des Befehls "ls" testet
-test_ls() {
-  # Erwartete Ausgabe definieren
-  expected="testfile1.txt testfile2.txt testfile3.txt"
-
-  # Tatsächliche Ausgabe des Befehls "ls" abrufen
-  actual=$(ls)
-
-  # Vergleichen der erwarteten Ausgabe mit der tatsächlichen Ausgabe
-  if [ "$actual" == "$expected" ]; then
-    echo "Test erfolgreich! Die Ausgabe von 'ls' ist korrekt."
+# Testfunktion
+test_function() {
+  actual_result=$(bash_script.sh)
+  expected_result="Hello World"
+  if [ "$actual_result" == "$expected_result" ]; then
+    echo "Test erfolgreich!"
   else
-    echo "Test fehlgeschlagen! Die Ausgabe von 'ls' entspricht nicht den Erwartungen."
+    echo "Test fehlgeschlagen!"
   fi
 }
+
+# Aufruf der Testfunktion
+test_function
 ```
+
+In diesem Beispiel wird eine Testfunktion definiert, die den Befehl `bash_script.sh` ausführt und das Ergebnis mit der erwarteten Ausgabe vergleicht. Wenn die Ausgaben übereinstimmen, wird der Test als erfolgreich angesehen.
+
+Es ist auch wichtig, aussagekräftige Testfälle zu erstellen, die verschiedene mögliche Eingaben und Szenarien abdecken. Auf diese Weise können Entwickler sicherstellen, dass ihr Code in verschiedenen Situationen richtig funktioniert.
 
 ## Deep Dive
 
-Das Schreiben von Tests in Bash bietet die Möglichkeit, Funktionen und Skripte auf Herz und Nieren zu prüfen, indem verschiedene Eingaben und Situationen getestet werden. Die Verwendung von bedingten Anweisungen innerhalb der Testfunktion ermöglicht auch die Überprüfung spezifischer Bedingungen und erleichtert die Diagnose von Fehlern.
+Beim Schreiben von Tests in Bash gibt es einige wichtige Dinge zu beachten. Erstens ist es wichtig, ein gutes Verständnis für die conditional statements wie `if` und `else` zu haben, da sie häufig in Tests verwendet werden.
 
-Es ist auch wichtig zu beachten, dass es verschiedene Tools und Frameworks gibt, die das Schreiben und Ausführen von Tests in der Bash-Umgebung erleichtern, wie z.B. die Bash Automated Testing System (BATS). Diese Tools bieten zusätzliche Funktionen und Flexibilität, um umfangreiche Tests zu erstellen und auszuführen.
+Zweitens sollten Programmierer auch die verschiedenen Test Frameworks für Bash kennen, wie z.B. `shunit2` oder `bats`, die hilfreiche Funktionen und Möglichkeiten für das Schreiben von Tests bieten.
+
+Schließlich ist es wichtig, zu verstehen, wie man die Ergebnisse von Tests interpretiert und wie man aufgetretene Fehler effektiv debuggen kann.
 
 ## Siehe auch
 
-- [Bash Automated Testing System (BATS)](https://github.com/bats-core/bats-core)
-- [Shellcheck - Best Practices für Bash-Scripts](https://github.com/koalaman/shellcheck)
+- [Ein einfaches Bash-Testskript erstellen](https://linuxhint.com/bash_test_scripts/)
+- [Test Driven Development in Bash](https://medium.com/@jkostolansky/test-driven-development-in-bash-unit-testing-689d37bfc97f)
+- [Bash Testing mit `bats`](https://github.com/sstephenson/bats)

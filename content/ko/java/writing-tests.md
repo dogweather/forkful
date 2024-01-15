@@ -1,6 +1,7 @@
 ---
-title:                "Java: 테스트 작성하기"
-simple_title:         "테스트 작성하기"
+title:                "테스트 쓰기"
+html_title:           "Java: 테스트 쓰기"
+simple_title:         "테스트 쓰기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -9,41 +10,94 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 테스트를 작성해야 할까요?
+## 왜
 
-테스트는 코드의 안정성과 신뢰성을 검증하는 데에 필수적입니다. 테스트를 작성하면 코드에서 발생할 수 있는 버그들을 미리 발견하여 실제 작동 시 문제가 되지 않도록 예방할 수 있습니다.
+코딩을 할 때 가장 중요한 것은 소프트웨어의 신뢰성을 확보하는 것입니다. 따라서 테스트 작성은 개발 프로세스에서 꼭 필요한 단계입니다. 테스트를 작성하지 않으면 버그를 발견하고 수정하는데 더 많은 시간과 비용이 소요될 수 있습니다.
 
-## 어떻게 작성하나요?
+## 작성 방법
 
-```Java
-// 예시 코드
-public class Calculator{
-    public int add(int a, int b){
-        return a + b;
-    }
-}
+일반적으로 테스트는 단위 테스트, 통합 테스트, 기능 테스트로 구분됩니다. 단위 테스트는 작은 코드 조각을 테스트하며, 통합 테스트는 여러 모듈 간 상호 작용을 테스트하고, 기능 테스트는 소프트웨어의 전체 기능을 테스트합니다.
 
-// 테스트 코드
-@Test
-public void testAdd(){
+### 단위 테스트
+
+```java
+class CalculatorTest {
+
+  @Test
+  public void testAddition() {
     Calculator calculator = new Calculator();
-    int result = calculator.add(3,5);
-    assertEquals(8, result);
+    int result = calculator.add(3, 4);
+    assertEquals(7, result);
+  }
+
+  @Test
+  public void testDivision() {
+    Calculator calculator = new Calculator();
+    double result = calculator.divide(10, 2);
+    assertEquals(5, result);
+  }
+
 }
 ```
 
-위의 예시 코드와 테스트 코드를 보면, `Calculator` 클래스의 `add()` 메소드를 테스트하는 코드를 작성하고 있습니다. `add()` 메소드가 제대로 작동하는지를 확인하기 위해 `assertEquals()` 메소드를 사용하여 예상 값과 실제 값을 비교하고 있습니다.
+### 통합 테스트
 
-이처럼 간단한 예시 코드를 기반으로 테스트 코드를 작성하면 됩니다. 테스트 코드를 작성하는 것이 귀찮거나 시간이 많이 걸릴 수도 있지만, 이렇게 작성한 테스트 코드는 나중에 버그를 찾거나 코드를 수정할 때 큰 도움이 될 것입니다.
+```java
+class UserTest {
 
-## 더 깊게 알아보기
+  @Test
+  public void testSave() {
+    User user = new User("John", "Doe");
+    User savedUser = UserRepository.save(user);
+    assertNotNull(savedUser.getId());
+  }
 
-테스트 코드를 작성할 때, `assert` 메소드들을 이해하고 사용하는 것이 중요합니다. `assertEquals()` 외에도 `assertNotEquals()`, `assertTrue()`, `assertFalse()` 등 다양한 메소드가 있으며, 어떤 상황에 어떤 메소드를 사용해야 하는지를 잘 파악해야 합니다.
+  @Test
+  public void testUpdate() {
+    User user = new User("Jane", "Smith");
+    user.setLastName("Doe");
+    User updatedUser = UserRepository.update(user);
+    assertEquals("Doe", updatedUser.getLastName());
+  }
 
-또한, 테스트를 작성할 때는 모든 가능한 경우를 고려해야 합니다. 예를 들어, 위의 예시에서는 양의 정수를 더하는 경우만을 테스트하고 있기 때문에 음의 정수나 0을 더하는 경우에 대한 테스트도 추가로 작성하는 것이 좋습니다.
+}
+```
 
-## 관련 자료
+### 기능 테스트
 
-- [JUnit5 공식 문서](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
-- [마크다운(Markdown) 정리](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-- [Java 예외 처리하기](https://brunch.co.kr/@alden/1)
+```java
+class ShoppingCartTest {
+
+  @Test
+  public void testAddItem() {
+    ShoppingCart cart = new ShoppingCart();
+    Item item = new Item("Shoes", 50);
+    cart.addItem(item);
+    assertTrue(cart.contains(item));
+  }
+
+  @Test
+  public void testCheckout() {
+    ShoppingCart cart = new ShoppingCart();
+    Item item1 = new Item("Shoes", 50);
+    Item item2 = new Item("Shirt", 20);
+    cart.addItem(item1);
+    cart.addItem(item2);
+    double totalPrice = cart.checkout();
+    assertEquals(70, totalPrice);
+  }
+
+}
+```
+
+## 깊이 있는 언급
+
+테스트를 작성할 때는 모든 가능한 시나리오를 고려해야 합니다. 또한 테스트 코드는 실제 코드와 동일한 수준의 품질을 유지해야 합니다. 테스트 코드는 가독성이 좋아야 하며, 의도를 명확하게 나타내야 합니다.
+
+또한 테스트를 작성할 때는 다양한 입력 값과 예외 상황에 대한 처리도 고려해야 합니다. 이를 통해 코드의 로직을 더욱 강력하게 만들 수 있습니다. 또한 테스트 코드를 지속적으로 유지보수하며 품질을 높이는 것이 중요합니다.
+
+## 관련 링크
+
+- [JUnit Official Website](https://junit.org/junit5/)
+- [Test-Driven Development Tutorial](https://www.tutorialspoint.com/software_testing/software_testing_tdd.htm)
+- [The Art of Unit Testing](https://www.amazon.com/Art-Unit-Testing-examples/dp/1617290890)

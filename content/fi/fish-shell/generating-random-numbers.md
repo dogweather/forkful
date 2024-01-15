@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Fish Shell: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -9,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Onko sinulla koskaan tarvetta luoda satunnaislukuja ohjelmoinnissa? Ehkäpä simulaation tekeminen, testitietojen generointi tai vaikkapa pienimuotoinen peli vaatii satunnaisia numeroita? Jatka lukemista, sillä tässä blogikirjoituksessa jaamme vinkkejä ja esimerkkejä siitä, miten voit käyttää Fish Shellia satunnaislukujen generoimiseen!
+## Miksi käyttää satunnaislukujen generointia?
 
-## Kuinka tehdä
-Fish Shellilla on helppo ja kätevä tapa generoida satunnaislukuja. Voit käyttää komentoa ```random``` ja siihen liittyviä parametreja saadaksesi haluamasi tuloksen. Tässä on muutamia esimerkkejä:
+Satunnaislukuja tarvitaan usein ohjelmoinnissa esimerkiksi testaamiseen tai satunnaisen käyttäjätoiminnan simuloimiseen. Satunnaislukujen generointi on myös hauska tapa lisätä arvaamattomuutta esimerkiksi peliohjelmiin.
 
-* Generoi kokonaisluku väliltä 0-100: ```random -l 0 100```
-* Generoi desimaaliluku väliltä 0-1: ```random -f 0 1```
-* Generoi merkkijono, jossa on 10 satunnaista merkkiä: ```random -s 10```
+## Näin käytät Fish Shellin satunnaislukujen generointia
 
-Voit myös yhdistellä eri parametreja tai käyttää niitä omien tarpeidesi mukaan. Esimerkiksi ```random -l 1 10 -s 10``` generoi kokonaisluvun väliltä 1-10, joka koostuu 10 satunnaisesta merkistä.
+```Fish Shell
+# Generoidaan yksi kokonaisluku väliltä 1-100
+set random_number (random 1 100)
+echo "Satunnainen numero 1-100 väliltä: $random_number"
 
-## Syväsukellus
-Jos haluat tietää enemmän satunnaislukujen generoimisesta Fish Shellilla, tässä muutama huomioitava asia:
+# Generoidaan 10 desimaalilukua väliltä 0-1
+for i in (seq 1 10)
+  set random_decimal (math random)
+  echo "Satunnainen desimaaliluku 0-1 väliltä: $random_decimal"
+end
+```
 
-* Komennolla ```random``` ei ole todellista satunnaisuutta, vaan se perustuu tietokoneen kelloaikoihin. Tämä tarkoittaa, että jos komentoa ajetaan useita kertoja samassa sekunnissa, se tuottaa saman tuloksen.
-* Voit myös antaa omia siemenarvoja, jolloin saat aina saman tuloksen. Tämä voi olla hyödyllistä testauksessa.
-* Jos haluat antaa minimi- ja maksimiarvot parametreina, muista että minimiarvon on oltava ensin ja maksimiarvon toisena. Esimerkiksi ```random -l 10 1``` ei toimi oikein.
+**Lähtö:**
+```
+Satunnainen numero 1-100 väliltä: 47
+Satunnainen desimaaliluku 0-1 väliltä: 0.72341991
+Satunnainen desimaaliluku 0-1 väliltä: 0.22654887
+Satunnainen desimaaliluku 0-1 väliltä: 0.56914746
+Satunnainen desimaaliluku 0-1 väliltä: 0.94776117
+Satunnainen desimaaliluku 0-1 väliltä: 0.34783025
+Satunnainen desimaaliluku 0-1 väliltä: 0.90273647
+Satunnainen desimaaliluku 0-1 väliltä: 0.44382513
+Satunnainen desimaaliluku 0-1 väliltä: 0.65391913
+Satunnainen desimaaliluku 0-1 väliltä: 0.82163593
+Satunnainen desimaaliluku 0-1 väliltä: 0.99463275
+```
+
+## Syvällistä tietoa satunnaislukujen generoinnista
+
+Fish Shell käyttää satunnaislukujen generoimiseen **rand**-funktiota, joka palauttaa desimaaliluvun väliltä 0-1. Voimme muuttaa tätä lukua kertomalla halutulla tulon välillä, esimerkiksi saatavista lukuja väliltä 100-200 kertomalla rand luvulla 100-200.
 
 ## Katso myös
-* [Fish Shell User Manual](https://fishshell.com/docs/current/index.html)
-* [Virallinen Fish Shell GitHub-sivu](https://github.com/fish-shell/fish-shell)
-* [Random.org - satunnaislukugeneraattori verkossa](https://www.random.org/)
+
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Satunnaislukujen generointi Pythonilla](https://realpython.com/python-random/)
+- [Lisää vinkkejä ohjelmointiin](https://www.freecodecamp.org/news/)

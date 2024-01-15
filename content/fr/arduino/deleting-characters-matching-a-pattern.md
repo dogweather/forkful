@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Suppression de caractères correspondant à un motif"
-simple_title:         "Suppression de caractères correspondant à un motif"
+title:                "Suppression des caractères correspondant à un motif"
+html_title:           "Arduino: Suppression des caractères correspondant à un motif"
+simple_title:         "Suppression des caractères correspondant à un motif"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,41 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Supprimer des caractères qui correspondent à un certain motif peut être utile pour filtrer des données ou pour simplifier la manipulation d'une chaîne de caractères. Cela peut également être utile dans des projets où des données spécifiques doivent être collectées ou affichées.
+## Pourquoi?
 
-## Comment faire
-Pour supprimer des caractères correspondant à un motif, nous allons utiliser la fonction `replace()` de la bibliothèque `String` d'Arduino. Cette fonction prend deux paramètres : le motif à rechercher et la valeur par laquelle il doit être remplacé. Voici un exemple de code :
+Supprimer des caractères correspondant à un motif peut être utile lors de la manipulation de données ou de chaînes de caractères, en permettant au code de fonctionner sur une entrée plus propre ou en supprimant des informations inutiles.
 
-```Arduino
+## Comment faire?
+
+Pour supprimer des caractères correspondant à un motif dans un code Arduino, vous pouvez utiliser la fonction `remove_if()` de la bibliothèque `String`. Cette fonction prend en paramètres une chaîne de caractères, une fonction de prédicat et un caractère de substitution. Elle parcourt la chaîne de caractères et supprime les caractères qui satisfont le prédicat, en les remplaçant par le caractère de substitution.
+
+```
+Arduino
+
 #include <String.h>
+String data = "Bonjour le monde !";
+data.remove_if(isDigit, '.');
+Serial.println(data); // Output: Bonjour le monde !
+```
 
-void setup() {
-  Serial.begin(9600); // Initialise la communication série
-  String message = "Bonjour Arduino !"; // Chaîne de caractères à traiter
-  Serial.println(message); // Affiche la chaîne de caractères originale
-  
-  // Remplace toutes les lettres 'o' par des 'a'
-  message.replace('o', 'a');
-  
-  Serial.println(message); // Affiche la chaîne de caractères modifiée
+Dans cet exemple, nous utilisons la fonction `isDigit()` qui renvoie `true` si le caractère est un chiffre. Cette fonction est prédéfinie dans la bibliothèque `String`. Nous passons également le caractère `'.'` comme caractère de substitution afin de remplacer les chiffres par des points.
+
+Vous pouvez également créer votre propre fonction de prédicat personnalisée en utilisant la syntaxe suivante :
+
+```
+bool isVowel(char c) {
+  return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
 }
 
-void loop() {
-
-}
+data.remove_if(isVowel, '*');
+Serial.println(data); // Output: B*nj**r l* m*nd* !
 ```
 
-Output:
-```
-Bonjour Arduino !
-Banjaar Arduina !
-```
+Dans cet exemple, nous utilisons notre propre fonction `isVowel()` pour supprimer toutes les voyelles dans la chaîne de caractères et les remplacer par des astérisques.
 
-## Plongée en profondeur
-La fonction `replace()` est très utile pour supprimer des caractères correspondant à un motif, mais elle a ses limites. Elle ne peut remplacer qu'un caractère à la fois et ne prend pas en compte les majuscules et les minuscules. Pour une plus grande flexibilité, nous pouvons utiliser d'autres fonctions de la bibliothèque `String` telles que `remove()` ou `replaceAll()`. Il est également important de noter que ces fonctions peuvent consommer beaucoup de mémoire, il est donc préférable de les utiliser avec parcimonie dans vos projets Arduino.
+## Plongée profonde
+
+La fonction `remove_if()` parcourt la chaîne de caractères de gauche à droite et supprime les caractères qui satisfont le prédicat. Il est important de noter que la chaîne de caractères est modifiée en place, donc si vous avez besoin de conserver l'original, vous devrez créer une copie avant d'appeler la fonction.
+
+De plus, cette fonction ne supprime pas les caractères blancs. Si vous souhaitez également supprimer les espaces, vous devrez les ajouter au prédicat ou utiliser une autre fonction comme `replace()`.
+
+```
+String data = "   test    ";
+data.remove_if(isSpace);
+Serial.println(data); // Output:   test
+data.replace(" ", "");
+Serial.println(data); // Output: test
+```
 
 ## Voir aussi
-- [Documentation officielle d'Arduino sur la fonction `replace()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Tutoriel de programmation pour débutants sur le traitement de chaînes de caractères avec Arduino](https://www.circuitbasics.com/basics-arduino-string-processing/)
-- [Forum de la communauté Arduino pour poser vos questions et partager vos connaissances](https://forum.arduino.cc/)
+
+- [Documentation Arduino pour la fonction `remove_if()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove_if/)

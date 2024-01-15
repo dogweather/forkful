@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Inviare una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Elixir: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Perché
 
-Se sei un programmatore Elixir e stai lavorando su un'applicazione web, è probabile che prima o poi ti troverai a dover inviare una richiesta HTTP con autenticazione di base. Ma perché dovresti farlo? In breve, l'autenticazione di base è un meccanismo di sicurezza che consente di accedere a risorse protette tramite l'inserimento di credenziali (username e password). In questo articolo, esploreremo come inviare una richiesta HTTP con autenticazione di base utilizzando Elixir.
+Molti servizi web richiedono una forma di autenticazione per accedere alle loro risorse. L'utilizzo di basic authentication con le richieste HTTP è un modo semplice ed efficace per fornire credenziali di accesso e garantire la sicurezza delle comunicazioni.
 
 ## Come
 
-Per inviare una richiesta HTTP con autenticazione di base in Elixir, abbiamo bisogno di utilizzare il modulo HTTPoison (disponibile su hex.pm). Iniziamo dalla creazione di un'istanza di HTTPoison, passando l'URL di destinazione e le credenziali di accesso come parametri:
+Per inviare una richiesta HTTP con basic authentication in Elixir, dobbiamo prima importare il modulo HTTPoison e creare una mappa con le nostre credenziali:
 
 ```Elixir
-http = HTTPoison.BasicAuth.init("https://www.example.com", "username", "password")
+params = %{username: "username", password: "password"}
 ```
 
-Successivamente, possiamo creare una richiesta GET utilizzando la funzione `get/2` e passando l'istanza di HTTPoison come primo parametro:
+Successivamente, possiamo utilizzare la funzione `get/3` per effettuare una richiesta GET a un determinato URL, passando la mappa come terzo argomento:
 
 ```Elixir
-response = HTTPoison.get(http, "/api/some_endpoint")
+response = HTTPoison.get("https://www.example.com", params, [basic_auth: params])
 ```
 
-Infine, possiamo controllare lo stato della richiesta e stampare il contenuto della risposta utilizzando la funzione `status/1` e `body/1`:
-
-```Elixir
-response.status # 200 OK
-response.body # {"data": "Lorem ipsum"}
-```
+Il risultato sarà un oggetto `{:ok, response}` contenente la risposta HTTP ricevuta dal server. Possiamo quindi accedere al corpo della risposta utilizzando la funzione `response.body`.
 
 ## Deep Dive
 
-Il modulo HTTPoison facilita l'invio di richieste HTTP con autenticazione di base in Elixir. Oltre alla funzione `get/2` utilizzata nell'esempio precedente, possiamo anche utilizzare le funzioni `post/3`, `put/3` e `delete/3` per le richieste POST, PUT e DELETE rispettivamente. Inoltre, possiamo specificare opzioni aggiuntive come l'intestazione della richiesta e il corpo della richiesta utilizzando i parametri opzionali `headers` e `body`. Puoi trovare maggiori informazioni sulla sintassi e le opzioni di HTTPoison nella [documentazione ufficiale](https://hexdocs.pm/httpoison/HTTPoison.Base.html).
+Per inviare una richiesta con basic authentication, è necessario che il server supporti questo tipo di autenticazione. Inoltre, è importante notare che le credenziali vengono inviate in chiaro, quindi è consigliabile utilizzare sempre connessioni HTTPS per garantire la sicurezza delle comunicazioni.
 
-## Vedi Anche
+Inoltre, è possibile specificare il tipo di autenticazione utilizzando l'opzione `mode` nella chiamata alla funzione `get/3`, ad esempio:
 
-Se vuoi saperne di più sull'autenticazione di base e sulle richieste HTTP in Elixir, puoi consultare questi siti:
+```Elixir
+HTTPoison.get("https://www.example.com", params, [basic_auth: params, mode: :digest])
+```
 
-- [Documentazione ufficiale di Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Documentazione ufficiale di HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Articolo su HTTP requests in Elixir](https://gomex.me/2016/08/09/elixir-web-requests/)
+## See Also
+
+- [Documentazione HTTPoison](https://hexdocs.pm/httpoison/)
+- [Specifiche basic authentication HTTP](https://www.rfc-editor.org/rfc/rfc2617)

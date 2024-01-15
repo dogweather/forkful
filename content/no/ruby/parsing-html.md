@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Analysering av html"
+title:                "Analysering av html"
+html_title:           "Ruby: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,44 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Har du noen gang trengt å skrape informasjon fra et nettsted for å få dataene du ønsker? Da kan du kanskje få bruk for å parse HTML. Ved å bruke Ruby, kan du enkelt hente ut spesifikke data fra en nettside og bruke det til å lage dine egne applikasjoner eller automatisere oppgaver.
 
-Hvorfor skulle noen ønske å analysere HTML? Vel, her er noen gode grunner:
-- Åpner opp for nyttige data: Ved å parse HTML kan man hente ut spesifikke data som mangler i den opprinnelige kilden.
-- Automatiserer prosesser: Ved hjelp av HTML-parsing kan man automatisere oppgaver som å finne og sortere informasjon fra flere nettsider.
-- Lettere å navigere: Ved å organisere og analysere HTML-koden, kan man enkelt navigere gjennom komplekse nettsider.
+## Slik gjør du det
+Det første du trenger er å installere et bibliotek som heter "Nokogiri" ved å kjøre følgende kommando i terminalen: 
 
-## Hvordan
-
-Det finnes flere måter å parse HTML på i Ruby, men her skal vi se på et enkelt eksempel ved hjelp av biblioteket Nokogiri.
-
-Først må vi inkludere Nokogiri i koden vår ved å skrive ```require 'nokogiri'```. Deretter kan vi opprette et Nokogiri-objekt ved å bruke metoden ```parse``` og gi den HTML-koden vi ønsker å analysere som argument. Et eksempel på dette kan være:
 ```Ruby
+gem install nokogiri
+```
+
+Når biblioteket er installert, kan du begynne å bruke det i ditt Ruby-program. Først importerer du biblioteket ved å legge til følgende linje øverst i programmet ditt:
+
+```Ruby 
 require 'nokogiri'
-
-html = "<h1>Hei, verden!</h1>"
-doc = Nokogiri::HTML.parse(html)
-
-puts doc.css("h1").text
 ```
-Dette vil gi følgende output:
+
+Deretter må du angi nettsiden du ønsker å parse, for eksempel:
+
+```Ruby 
+html = open("https://www.example.com")
 ```
-Hei, verden!
+
+Nå kan du begynne å finne og hente ut ønskede data fra nettsiden. La oss si at du ønsker å få tak i overskriften på siden. Da kan du bruke følgende kode:
+
+```Ruby 
+doc = Nokogiri::HTML(html)
+title = doc.css("h1").text
+puts title
 ```
-Her bruker vi CSS-selector ```h1``` for å finne alle elementene med taggen ```<h1>``` og deretter henter vi ut teksten ved hjelp av metoden ```text```.
 
-Det finnes selvfølgelig mange flere muligheter og metoder når man jobber med Nokogiri og HTML-parsing, men dette eksempelet viser grunnleggende funksjonalitet.
+I dette tilfellet bruker vi Nokogiri's "css" metode til å finne elementet med taggen "h1" og så henter vi ut teksten fra dette elementet og lagrer det i en variabel. Deretter skriver vi ut variabelen til konsollen og vil få utskrift av overskriften på nettsiden.
 
-## Deep Dive
-
-For de som ønsker å lære mer om HTML-parsing i Ruby, kan det være nyttig å dykke dypere ned i Nokogiri-dokumentasjonen. Her vil man finne detaljert informasjon om alle muligheter og funksjoner biblioteket tilbyr, samt eksempler og tips.
-
-En viktig ting å huske på når man jobber med HTML-parsing er å ha god forståelse for både HTML og Ruby. Jo mer kunnskap man har om disse språkene, jo enklere vil det være å parse HTML effektivt.
+## Fordypning
+Nokogiri er et kraftig bibliotek som gir mange verktøy for å manipulere HTML og XML. Du kan bruke ulike søkekriterier og filtre for å finne spesifikke elementer på en nettside. I tillegg kan du også hente ut attributter og data fra ulike tags. Det finnes mange gode ressurser på nettet som kan hjelpe deg med å lære mer om hvordan du bruker Nokogiri og parser HTML med Ruby.
 
 ## Se også
-
-Her er noen nyttige ressurser for å lære mer om HTML-parsing i Ruby:
-- [Nokogiri dokumentasjon](https://nokogiri.org/)
-- [Ruby HTML-parsing: En guide for nybegynnere](https://rubygarage.org/blog/beginners-guide-to-ruby-html-parsing)
-- [HTML-parsing i Ruby med Nokogiri](https://devblast.com/b/html-parsing-ruby-nokogiri)
-
-Lykke til med HTML-parsing i Ruby! 🙂
+- [Nokogiri dokumentasjon](https://nokogiri.org)
+- [Ruby sin offisielle nettside](https://www.ruby-lang.org/en/)
+- [En enkel guide til å parse HTML med Ruby](https://medium.com/swiftly-swift/a-simple-guide-to-scraping-html-with-ruby-9b51f5cc6a14)

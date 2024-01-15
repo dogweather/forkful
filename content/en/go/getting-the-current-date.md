@@ -1,5 +1,6 @@
 ---
-title:                "Go recipe: Getting the current date"
+title:                "Getting the current date"
+html_title:           "Go recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Go"
 category:             "Go"
@@ -11,65 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In any programming language, handling dates and times is an essential aspect of developing applications. In Go, getting the current date is a basic operation that is often needed in order to track events, schedule tasks, or display information. Understanding how to get the current date is crucial for any programmer looking to build robust and reliable applications.
+Have you ever needed to know the current date and time in your Go program? Maybe you want to keep track of when a certain event occurred or display the current date on a website. Getting the current date is a common task in programming and luckily, Go makes it easy to do.
 
 ## How To
 
-Getting the current date in Go is a fairly straightforward process. We will first import the time package, which provides functions for manipulating and displaying time-related data. Then, we will use the Now() function from the time package to get the current time.
+To get the current date in Go, we can use the time package. First, we will import the package at the top of our file:
 
-```
+```Go
 import "time"
-
-currentDate := time.Now()
-fmt.Println(currentDate)
 ```
 
-In the above code, we have used the time.Now() function to get the current date and time. The returned value is in the form of a Time data type, which can be further manipulated or formatted according to our needs. We can also use the Format() function to display the current date and time in a specific format.
+Next, we can use the `Now()` function from the time package to get the current date and time. This function returns a `time.Time` object, which contains all the information about the current date and time. 
 
-```
+```Go
 currentTime := time.Now()
-formattedDate := currentTime.Format("01-02-2006")
-fmt.Println(formattedDate)
-// Output: 07-26-2021
 ```
 
-We can also get more specific information, such as the current year, month, or day, by using the various methods available in the time package.
+We can then use a variety of methods on the `currentTime` object to retrieve different components of the current date, such as the year, month, day, hour, minute, and second. Here is an example of how we can get the current month and day and print it out to the console:
 
+```Go
+month := currentTime.Month()
+day := currentTime.Day()
+
+fmt.Printf("The current date is %s %d.", month, day)
+// Output: The current date is July 10.
 ```
-currentYear := currentTime.Year()
-currentMonth := currentTime.Month()
-currentDay := currentTime.Day()
 
-fmt.Printf("Current year: %d\nCurrent month: %d\nCurrent day: %d\n", currentYear, currentMonth, currentDay)
-// Output: Current year: 2021
-// Current month: 7
-// Current day: 26
+We can also format the date and time in a specific way using the `Format()` method. This method takes in a layout string and returns a string with the desired format. Here is an example of how we can get the current date in the format of "YYYY-MM-DD":
+
+```Go
+currentDate := currentTime.Format("2006-01-02")
+fmt.Println("Today's date is " + currentDate)
+// Output: Today's date is 2021-07-10.
 ```
 
 ## Deep Dive
 
-Understanding how the time package works in Go is crucial for getting the current date accurately. The time package provides a wide range of functions and methods for manipulating and displaying time-related data. One important thing to note is that the time returned by using the Now() function is based on the system's local time zone. If we want to get the time in a specific time zone, we can use the LoadLocation() function.
+Behind the scenes, Go uses the `time.Now()` function to get the current date and time from the system clock. This means that the current date and time will depend on the local time zone of the computer where the code is being run. 
 
-```
-timeZone, _ := time.LoadLocation("Europe/Amsterdam")
-currentTime := time.Now().In(timeZone)
-fmt.Println(currentTime)
-// Output: 2021-07-26 14:55:10.116 +0200 CEST
+We can also change the time zone of the `time.Time` object by using the `In()` method. This method takes in a `*Location` object, which can be retrieved from the `time` package. Here's an example of how we can get the current date and time in a different time zone:
+
+```Go
+// Get the current date and time in UTC time zone
+utcTime := time.Now().UTC()
+
+// Get the current date and time in PST time zone
+pstTime := utcTime.In(time.Location("America/Los_Angeles"))
+
+fmt.Println(utcTime)
+fmt.Println(pstTime)
+// Output: 2021-07-10 08:30:00 +0000 UTC
+// 2021-07-10 01:30:00 -0700 PST
 ```
 
-We can also use the Parse() function to convert a string to a Time data type, which can then be further manipulated.
+We can also perform calculations on the `time.Time` object, such as adding or subtracting a certain amount of time. This can be useful for tasks such as scheduling or creating countdown timers. Here's an example of how we can add 1 hour to the current time:
 
-```
-dateString := "2021-07-26"
-formattedDate, err := time.Parse("2006-01-02", dateString)
-fmt.Println(formattedDate)
-// Output: 2021-07-26 00:00:00 +0000 UTC
+```Go
+newTime := currentTime.Add(time.Hour)
+fmt.Println("Time in one hour will be " + newTime.Format("15:04:05"))
+// Output: Time in one hour will be 20:30:00
 ```
 
 ## See Also
 
-Now that you have learned how to get the current date in Go, here are some additional resources that you may find helpful:
-
-- [The official Go documentation on the time package](https://golang.org/pkg/time/)
-- [A tutorial on working with dates and times in Go](https://flaviocopes.com/go-date-time/)
-- [A cheat sheet for time formatting in Go](https://programming.guide/go/format-parse-string-time-date-example.html)
+- [Official Go documentation for time package](https://golang.org/pkg/time/)
+- [Tutorial on working with dates and times in Go](https://www.calhoun.io/working-with-dates-and-times-in-go/) 
+- [Go playground example of getting and formatting current date and time](https://play.golang.org/p/jWMM6tSafEh)

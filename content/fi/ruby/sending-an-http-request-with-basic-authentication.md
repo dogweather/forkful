@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Lähettäminen http-pyyntö perusautentikoinnilla."
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnilla."
+title:                "Lähettäminen http-pyyntö perusautentikoinnilla"
+html_title:           "Ruby: Lähettäminen http-pyyntö perusautentikoinnilla"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnilla"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,39 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeää, koska se antaa käyttäjille mahdollisuuden turvallisesti kommunikoida ja kirjautua sisään verkkosivustoille ja sovelluksiin. Tämä autentikointimenetelmä auttaa varmistamaan, että vain oikeat käyttäjät pääsevät tarkoitetuille sivuille ja että arkaluontoiset tiedot pysyvät suojattuina.
+HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla on tärkeää, jos haluat suojata tietokannat ja resurssit salasanoilla. Tämä auttaa myös varmistamaan, että vain valtuutetut käyttäjät pääsevät tiettyihin sivustoihin tai sovelluksiin.
 
-## Kuinka tehdä
-
-Perusautentikoinnin käyttö HTTP-pyynnöissä Rubyssa on helppoa. Sinun täytyy vain lisätä "Authorization" -otsakkeeseen Base64-koodattu käyttäjätunnus ja salasana. Käytetään esimerkiksi Net::HTTP-kirjastoa lähettämään GET-pyynnön GitHubin API:in:
+## Miten
 
 ```Ruby
 require 'net/http'
-require 'base64'
+require 'uri'
 
-uri = URI('https://api.github.com/users/octocat')
+uri = URI.parse("example.com")
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
 
-user = 'käyttäjätunnus'
-password = 'salasana'
+# Asenna käyttäjänimi ja salasana
+request.basic_auth("käyttäjänimi", "salasana")
 
-request = Net::HTTP::Get.new(uri)
-request['Authorization'] = "Basic #{Base64.strict_encode64("#{user}:#{password}")}"
-
-response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-  http.request(request)
-end
+response = http.request(request)
 
 puts response.body
 ```
 
-Tuloksena oleva vastaus tulostuu konsoliin ja sisältää käyttäjän octocat tietoja GitHubista.
+Tämä on esimerkki siitä, miten voit lähettää HTTP GET-pyynnön perusautentikoinnilla Ruby-kielellä. Käyttämällä `basic_auth`-metodia voit asettaa käyttäjänimen ja salasanan, jotka välitetään pyynnön mukana. Tämän jälkeen voit käyttää vastauksen `body` -attribuuttia nähdäksesi pyynnön vastauksen sisällön.
 
-## Syvempi sukellus
+## Syventävä sukellus
 
-Perusautentikoinnin toimintaperiaate on hyvin yksinkertainen. Käyttäjätunnus ja salasana koodataan Base64-muotoon ja lähetetään "Authorization" -otsakkeessa HTTP-pyynnössä. Tämä autentikointitapa on turvallisempi kuin selkeä teksti, mutta siitä huolimatta se ei ole täysin suojaamaton. On aina tärkeää varmistaa, että salasana on vahva ja käyttäjätunnus ei ole helposti arvattavissa.
+Perusautentikointi on yksi monista autentikointimenetelmistä, joita voit käyttää lähettämällä HTTP-pyyntöjä Ruby-kielellä. Se toimii lähettämällä käyttäjänimen ja salasanan tietokoneen tai palvelimen kanssa varmistaen, että vain oikeilla tunnistetiedoilla varustetut käyttäjät voivat käyttää resursseja.
+
+Voit myös käyttää muita autentikointimenetelmiä, kuten Digest-autentikointia tai OAuthia, joiden avulla voit lähettää pyyntöjä ja saada vastauksia turvallisesti. On tärkeää harkita, mikä autentikointimenetelmä sopii parhaiten käyttötarkoitukseesi ennen kuin aloitat ohjelmoinnin.
 
 ## Katso myös
 
-- [Ruby-kirjasto Net::HTTP](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
-- [Base64 Encoding](https://www.base64encode.org/)
+- [Ruby Net::HTTP -dokumentaatio](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTP-vastauksen tutkiminen Ruby-kielellä](https://www.rubyguides.com/2018/07/ruby-http-request/#How_to_Inspect_HTTP_Responses)

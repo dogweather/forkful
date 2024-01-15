@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "Elm: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual en Elm?
+## Por Qué
+Si alguna vez has necesitado obtener la fecha actual en un programa en Elm, es muy probable que hayas buscado en internet cómo hacerlo. Obtener la fecha actual es una tarea común en la programación y en este artículo te enseñaremos cómo hacerlo de manera sencilla y eficiente.
 
-Obtener la fecha actual es una tarea común en la programación, ya sea para mostrarla al usuario o para realizar cálculos basados en la fecha. En Elm, existen diferentes formas y métodos para obtener la fecha actual, así que ¡vamos a explorarlas juntos!
-
-## Cómo obtener la fecha actual en Elm
-
-La forma más sencilla de obtener la fecha actual en Elm es utilizando la función `Time.now` del paquete `elm/time`. Esta función devuelve un `Time` que representa el momento actual en el formato Unix. A continuación, un ejemplo de cómo usarla:
-
-```
-import Time exposing (..)
-
-getCurrentDate : Time
-getCurrentDate =
-    Time.now
-```
-
-Podemos utilizar esta función en nuestro código para mostrar la fecha actual al usuario o para realizar cálculos basados en ella.
-
-Otra opción es utilizar las funciones `toTime` y `fromTime` del módulo `Date` del paquete `elm/time`. Estas funciones nos permiten convertir el formato Unix de la fecha actual en un objeto de tipo `Date`, que podemos manipular según nuestras necesidades. A continuación, un ejemplo de cómo usarlas:
-
-```
+## ¿Cómo Hacerlo?
+```Elm
 import Time
-import Date exposing (..)
 
-getCurrentDate : Date
-getCurrentDate =
+currentDate : Time.Posix
+currentDate =
     Time.now
-        |> Time.toTime
-        |> fromTime
 ```
 
-Este objeto `Date` nos da acceso a diferentes funciones para obtener los componentes de la fecha, como el día, el mes, el año, etc.
+Con solo importar el módulo Time, podemos acceder a la función `now` que nos devuelve la fecha y hora actuales en formato `Time.Posix`. Esta función utiliza el sistema de reloj interno de la máquina para obtener la fecha actual. Podemos convertir este formato a una representación más legible utilizando otras funciones del módulo Time, como `toDate` o `toTime`.
 
-## Profundizando en la obtención de la fecha actual en Elm
+```Elm
+import Time exposing (Date, Time)
+import Time.Format as Format
 
-Para poder utilizar la función `Time.now`, es necesario tener en cuenta que el resultado depende del momento en que se ejecuta la función. Esto significa que si llamamos a la función en diferentes momentos, obtendremos resultados diferentes.
+currentDate : Date
+currentDate =
+    Time.now
+        |> Time.toTime -- Convertimos a Time
+        |> Format.date Format.short -- Convertimos a formato de fecha
 
-Además, el formato Unix de la fecha actual varía según la zona horaria en la que nos encontremos. Por lo tanto, es importante tener en cuenta esta diferencia al realizar cálculos o comparar fechas.
+```
 
-Otro detalle a tener en cuenta es que las funciones `toTime` y `fromTime` pueden ser costosas en términos de rendimiento, por lo que es importante utilizarlas con cautela y optimizar su uso en nuestro código.
+En el ejemplo anterior, utilizamos las funciones `toTime` y `Format.date` para convertir la fecha actual a un formato corto legible, como por ejemplo "11/05/2021".
 
-## Ver también
+## Deep Dive
+Obtener la fecha actual puede parecer una tarea sencilla, pero en realidad hay mucho más detrás de ello. Como mencionamos anteriormente, la función `now` utiliza el sistema de reloj interno de la máquina, pero ¿cómo funciona esto?
 
-- [Documentación de elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Cheat sheet de Elm](https://elm-lang.org/docs/elm-docs)
-- [Tutorial de Elm en español](https://desarrolloweb.com/articulos/tutorial-elm-basico.html)
+El sistema de reloj interno es una parte importante del sistema operativo que se encarga de hacer un seguimiento del tiempo transcurrido desde que se inició la máquina. Esta información es utilizada por el sistema para muchas tareas, como por ejemplo la gestión de procesos o la sincronización de tareas.
+
+Además, la representación de la fecha y hora en formato `Time.Posix` es una convención común en programación, ya que nos permite manipular estos valores de manera sencilla y realizar diversas operaciones matemáticas con ellos.
+
+## Ver También
+- [Documentación oficial de Elm sobre el módulo Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Artículo sobre cómo trabajar con fechas en Elm](https://dev.to/tmattio/manipulate-date-and-time-in-elm-3epf)
+- [Explicación detallada de cómo funciona el sistema de reloj interno en los sistemas operativos](https://medium.com/@kpc700/como-funciona-el-reloj-interno-de-un-sistema-operativo-7b0994e95b66)

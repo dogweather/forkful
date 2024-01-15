@@ -1,6 +1,7 @@
 ---
-title:                "C++: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+html_title:           "C++: Extracción de subcadenas"
+simple_title:         "Extracción de subcadenas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -9,25 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué extraer subcadenas en C++?
+## ¿Por qué?
 
-Extraer subcadenas (también conocidas como subcadenas o cadenas secundarias) es una técnica útil en programación para obtener una sección específica de una cadena de texto. Esto puede ser importante en situaciones donde solo se necesita una parte de una cadena más grande, como buscar una palabra clave o procesar datos en un formato específico. Aprender a extraer subcadenas en C++ puede ayudar a mejorar la eficiencia y la precisión de su código.
+Extraer subcadenas es una tarea muy común en la programación, especialmente cuando trabajamos con cadenas de texto. Nos permite obtener parte de una cadena más grande y utilizarla de manera independiente, lo que puede ser muy útil en diversos escenarios.
 
-## Cómo extraer subcadenas en C++
-
-Para extraer una subcadena en C++, utilizamos la función `substr()` de la biblioteca `string`. Esta función toma dos argumentos: la posición inicial de la subcadena y la longitud deseada. Por ejemplo, si queremos extraer la subcadena "hola" de la cadena "¡Hola mundo!", la función se vería así:
+## Cómo
 
 ```C++
-string texto = "¡Hola mundo!";
-string subcadena = texto.substr(1, 4);
-cout << subcadena; // Salida: "hola"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  // Definimos una cadena de texto
+  string frase = "Este es un ejemplo de frase";
+
+  // Extraer una subcadena desde la posición 8 hasta el final
+  string subcadena1 = frase.substr(8);
+  cout << subcadena1 << endl;
+  // Output: un ejemplo de frase
+
+  // Extraer una subcadena de 10 caracteres desde la posición 5
+  string subcadena2 = frase.substr(5, 10);
+  cout << subcadena2 << endl;
+  // Output: es un ejemplo
+
+  // Extraer una subcadena delimitada por un caracter específico
+  string subcadena3 = frase.substr(5, frase.find("de") - 1);
+  cout << subcadena3 << endl;
+  // Output: es un ejemplo
+
+  return 0;
+}
 ```
-Tenga en cuenta que la posición inicial comienza en 0 y la longitud incluye el último carácter de la subcadena. También podemos usar variables en lugar de valores fijos para los argumentos, lo que nos permite extraer subcadenas de manera más dinámica.
 
-## Profundizando en la extracción de subcadenas
+## Profundizando
 
-Además de la función `substr()`, también podemos utilizar la función `find()` para encontrar la posición de una subcadena dentro de otra cadena de texto. Y si necesitamos extraer múltiples subcadenas, podemos utilizar un bucle y la función `find()` para iterar a través de la cadena y extraerlas una por una. También existen otras técnicas para la extracción de subcadenas, como el uso de expresiones regulares.
+La función `substr()` en C++ acepta dos argumentos: la posición inicial y la longitud de la subcadena que deseamos extraer. También podemos utilizar la función `find()` para encontrar la posición de un carácter específico en una cadena y utilizarla como argumento en `substr()`.
+
+Además, es importante destacar que las cadenas de texto en C++ son inmutables, es decir, no se pueden modificar una vez creadas. Por lo tanto, cuando extraemos una subcadena, se crea una nueva cadena en lugar de modificar la original.
 
 ## Ver también
-- [Documentación de `substr()` en cplusplus.com](https://www.cplusplus.com/reference/string/string/substr/)
-- [Tutorial de extracción de subcadenas en C++ en hackr.io](https://hackr.io/tutorials/learn-c-plus-plus/substring-in-c)
+
+- [Función substr() en C++](https://www.cplusplus.com/reference/string/string/substr/)
+- [Split y join en cadenas de texto en C++](https://www.geeksforgeeks.org/split-a-string-in-cpp/)
+- [Documentación de cadenas de texto en C++](https://www.cplusplus.com/reference/string/)

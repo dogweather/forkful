@@ -1,5 +1,6 @@
 ---
-title:                "Gleam recipe: Sending an http request"
+title:                "Sending an http request"
+html_title:           "Gleam recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,61 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sending HTTP requests is a fundamental aspect of web development. It allows you to retrieve data from other servers and integrate it into your own application. Whether you are building a website, a mobile app, or an API, understanding how to send HTTP requests is essential for creating dynamic and interactive experiences for your users. In this blog post, we will explore how to send HTTP requests using Gleam and how it can benefit your programming projects.
+If you're working on a web application or backend system, chances are you will need to communicate with other services through HTTP requests. This can be anything from retrieving data from an API to sending data to another server. Thankfully, Gleam makes it easy to handle HTTP requests with its built-in functions. In this article, we'll go over the basics of sending an HTTP request in Gleam.
 
 ## How To
 
-To send an HTTP request in Gleam, we can use the `httpc` package. First, we need to import it into our module:
+To send an HTTP request in Gleam, we first need to import the `gleam/http` module. Inside this module, we have the `send` function which allows us to make a basic HTTP request. Let's take a look at an example:
 
-```
-import httpc
-```
-
-Next, we can use the `Request` record type from the `httpc` package to create an HTTP request. Let's say we want to send a GET request to the GitHub API to retrieve information about a specific user. We can define our request like this:
-
-```
-let request =
-  Request.get("https://api.github.com/users/github")
+```Gleam
+let result = http.send(
+  method: "GET",
+  url: "https://api.example.com/users",
+  headers: [("Content-Type", "application/json")],
+  body: None
+)
 ```
 
-Notice how we specify the URL for the request as an argument to the `get()` function. Next, we can use the `send()` function to actually send the request:
+In the above code, we are sending a `GET` request to the given URL which returns a list of users in JSON format. We also specify the `Content-Type` header to let the server know what type of data we are expecting. Finally, we set the request body to `None` as we are not sending any data. The `http.send` function returns a `Result` type, and we can pattern match to handle any potential errors.
 
-```
-let response = httpc.send(request)
-```
+Once we have successfully made the HTTP request, we can access the response data by using the `Body` module from the `gleam/http` package. Let's see an example:
 
-The `send()` function returns a `Response` record type, which contains information about the server's response to our request. We can access the response body by using the `body()` function:
-
-```
-let body = response.body
-```
-
-Finally, we can print the response body to see the data we have received from the GitHub API:
-
-```
-IO.print(body)
+```Gleam
+case result {
+  Ok(response) -> {
+    let body = http.Body.String(response.body)
+    // do something with the response body
+  }
+  Error(error) -> {
+    // handle the error
+  }
+}
 ```
 
-If we run our code, we should see the following output in our terminal:
-
-```
-{"login":"github","id":9919,"node_id":"MDQ6VXNlcjI2MjM3MQ==","avatar_url":"https://avatars0.githubusercontent.com/u/9919?v=4","gravatar_id":"","url":"https://api.github.com/users/github","html_url":"https://github.com/github","followers_url":"https://api.github.com/users/github/followers","following_url":"https://api.github.com/users/github/following{/other_user}","gists_url":"https://api.github.com/users/github/gists{/gist_id}","starred_url":"https://api.github.com/users/github/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/github/subscriptions","organizations_url":"https://api.github.com/users/github/orgs","repos_url":"https://api.github.com/users/github/repos","events_url":"https://api.github.com/users/github/events{/privacy}","received_events_url":"https://api.github.com/users/github/received_events","type":"Organization","site_admin":false,"name":"GitHub","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":334,"public_gists":0,"followers":0,"following":0,"created_at":"2008-05-11T04:37:31Z","updated_at":"2020-08-16T09:01:44Z"}
-```
-
-And that's how we can send an HTTP request in Gleam and retrieve data from a server. You can use this same method to make any type of HTTP request, such as POST, PUT, or DELETE, and receive a response from the server.
+In this code, we are pattern matching on the `result` variable and accessing the `response` object. We can then use the `String` function from the `Body` module to convert the response body into a string which we can then manipulate as needed.
 
 ## Deep Dive
 
-Under the hood, Gleam uses the `hackney` library to handle HTTP requests and responses. `hackney` is a robust HTTP client built for Erlang and provides functionality for handling redirects, authentication, and SSL certificates. By using `httpc` in Gleam, we can take advantage of all the features `hackney` has to offer without having to write low-level Erlang code.
-
-Additionally, `httpc` handles IO operations asynchronously, which means it will not block the execution of other code while waiting for a response from the server. This allows for faster and more efficient communication with external services.
+If you need to make more advanced HTTP requests such as adding custom headers, setting specific request timeout durations, or handling different HTTP methods, the `gleam/http` module has you covered. It provides functions such as `send_with` and `send_timeout` which allow you to specify these parameters. Additionally, you can also use the `decode` function to handle the response data and parse it into a desired data type.
 
 ## See Also
-
-If you want to learn more about sending HTTP requests in Gleam, check out these useful resources:
-
-- [The `httpc` package documentation](https://gleam.run/packages/httpc/)
-- [The `hackney` library documentation](https://hackney.readme.io/docs)
-- [An introduction to web development with Gleam](https://dev.to/gleam_lantern/introduction-to-web-development-with-gleam-3on6)
-
-Now that you have a better understanding of how to send HTTP requests in Gleam, you can start building powerful and dynamic applications with ease. Happy coding!
+- [Gleam HTTP Module Documentation](https://gleam.run/modules/http.html)
+- [Gleam Tutorial on HTTP Requests](https://gleam.run/articles/62)
+- [HTTP Requests in JavaScript vs. in Gleam](https://medium.com/@jduhamel/http-requests-in-javascript-vs-in-gleam-2ad410f2ff6e)

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Luo väliaikainen tiedosto"
+html_title:           "Clojure: Luo väliaikainen tiedosto"
+simple_title:         "Luo väliaikainen tiedosto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -9,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi luoda tilapäistiedosto
+## Miksi
 
-Monissa ohjelmointiprojekteissa on tarvetta luoda tilapäisiä tiedostoja, esimerkiksi väliaikaisesti tallentamaan tietoa tai suoritettavien toimintojen välivarastointiin. Tässä blogikirjoituksessa tarkastelemme, miten luoda tilapäistiedostoja Clojure-kielellä.
+Sattuu joskus, että haluat luoda tilapäisiä tiedostoja ohjelmaasi varten (esim. väliaikaisia tietokantatiedostoja tai väliaikaisia kuvatiedostoja). Clojure tarjoaa helpon tavan tehdä tämä luomalla tilapäinen tiedosto ja varmistamalla sen poistamisen käytön jälkeen.
 
-## Miten luoda tilapäistiedosto
-
-Tilapäistiedostoja voi luoda käyttämällä Clojuren standardikirjaston `java.io.File` -kirjastoa. Tässä esimerkissä luomme tilapäistiedoston nimeltä "temp.txt" ja kirjoitamme siihen "Hello world!" -tekstin.
+## Kuinka
 
 ```Clojure
-(import [java.io File])
+(import '[java.io File])
 
-(def f (File/createTempFile "temp" ".txt"))
-(.write f "Hello world!")
+;; Luo uusi tilapäinen tiedosto
+(def temp-file (File/createTempFile "temp" ".txt"))
+
+;; Kirjoita jotain tiedostoon
+(spit temp-file "Hei maailma!")
+
+;; Lue tiedostosta
+(println (slurp temp-file))
+;; Tulostaa: Hei maailma!
+
+;; Poista tiedosto käytön jälkeen
+(.delete temp-file)
 ```
 
-Tämän jälkeen voimme lukea tiedoston sisällön ja tulostaa sen konsoliin.
+## Syväsukellus
 
-```Clojure
-(def contents (slurp (.getAbsolutePath f)))
-(println contents)
-```
-
-Tämän koodin tulosteena pitäisi olla "Hello world!".
-
-## Syvällisempi sukellus
-
-Tähän asti olemme käyttäneet `java.io.File` -kirjastoa luomaan tilapäistiedostoja. Tämä kirjasto tarjoaa kuitenkin vain rajallisen määrän toimintoja tilapäistiedostojen käsittelyyn. Jos haluamme enemmän joustavuutta, voimme käyttää esimerkiksi `clojure.java.io` -kirjastoa.
-
-```Clojure
-(import [clojure.java.io FileFilter])
-
-(defn my-file-filter [^File file]
-  (.getName file)    ; Palauttaa tiedoston nimen
-)
-
-(def f (with-temporary-file "test.txt" #(println %)))    ; Luo temp-tiedoston ja suorittaa annetun funktion
-
-(def temp-files (temp-files         ; Palauttaa listan sijainneista, joissa tilapäistiedostot on tallennettu tiedostojärjestelmään
-                  (re-find #"test.*" (into-array File (temp-files)))))
-```
-
-`clojure.java.io` -kirjasto tarjoaa monipuolisemmat toiminnot tilapäistiedostojen luomiseen ja käsittelyyn, joten suosittelemme tutustumaan siihen lisää.
+Clojuren `createTempFile` -funktio hyödyntää Javan `java.io.File` -luokkaa. Tämä luokka tarjoaa useita hyödyllisiä funktioita tiedostojen käsittelyyn, kuten tiedoston luomiseen, lukemiseen ja poistamiseen. Lisätietoja tästä luokasta löytyy Javan dokumentaatiosta.
 
 ## Katso myös
 
-- [Clojuren virallinen dokumentaatio](https://clojure.github.io/java.io-api/clojure.java.io.html#var-with-open)
-- [Java:n virallinen dokumentaatio](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- Java `File` -luokan dokumentaatio: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html
+- Clojuren `createTempFile` -funktion dokumentaatio: https://clojuredocs.org/clojure.java.io/create-temp-file

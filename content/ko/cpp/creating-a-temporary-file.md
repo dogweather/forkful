@@ -1,5 +1,6 @@
 ---
-title:                "C++: 임시 파일 만들기"
+title:                "임시 파일 만들기"
+html_title:           "C++: 임시 파일 만들기"
 simple_title:         "임시 파일 만들기"
 programming_language: "C++"
 category:             "C++"
@@ -9,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-한국어로 쓰여진 포스팅을 읽어주셔서 감사합니다! 오늘은 여러분이 C++ 프로그래밍에서 임시 파일을 생성하는 방법에 대해 알아보려고 합니다. 임시 파일은 일시적으로 저장할 파일 또는 작업을 수행하는 데 사용되며 프로그램을 실행함에 따라 동적으로 생성됩니다.
+## 왜
 
-## 왜?
-임시 파일을 생성하는 이유는 다양합니다. 예를 들어 프로그램이 사용자의 입력을 받고 해당 입력을 임시 파일에 저장한 다음 필요한 경우에만 그 내용을 사용하는 경우가 있습니다. 또는 프로그램이 특정 작업을 수행하고 그 결과를 별도의 파일에 저장할 필요가 있는 경우에도 임시 파일을 사용할 수 있습니다.
+C++ 프로그램을 사용하다보면 때때로 임시 파일(temporary file)의 생성이 필요한 순간이 있습니다. 임시 파일은 일시적인 데이터를 저장하고 관리하는 데 유용합니다. 이럴 때, 어떻게 임시 파일을 생성할 수 있는지 알아보겠습니다.
 
-## 만드는 방법
-임시 파일을 생성하는 방법은 간단합니다. 먼저 `fstream` 라이브러리를 `include` 하는 것으로 시작합니다. 그 다음 `ofstream` 함수를 사용하여 파일을 생성하고 해당 파일에 작업할 수 있습니다. 다음 예제를 보시죠.
+## 어떻게
 
 ```C++
+#include <iostream>
 #include <fstream>
 
 int main() {
+    // 임시 파일을 생성할 디렉토리 설정
+    std::string directory = "./temp/";
+    // 임시 파일의 이름 설정
+    std::string filename = "tempfile.txt";
+
     // 임시 파일 생성
-    ofstream temp_file("my_temp_file.txt");
-    
-    // 파일에 내용 작성
-    temp_file << "Hello, world!";
-    
-    // 파일 작업 후 저장
-    temp_file.close();
-    
+    std::ofstream tempFile;
+    // 디렉토리와 파일 이름을 조합하여 완전한 경로 설정
+    tempFile.open(directory + filename);
+    if (tempFile.is_open()) {
+        // 임시 파일이 열렸는지 확인
+        std::cout << "임시 파일이 생성되었습니다";
+        // 임시 파일 작업 수행
+        // ...
+
+        // 임시 파일 삭제
+        tempFile.close();
+        remove((directory + filename).c_str());
+        std::cout << "임시 파일이 삭제되었습니다.";
+    } else {
+        std::cout << "임시 파일 생성 실패";
+    }
+
     return 0;
 }
 ```
 
-위의 예제에서는 `my_temp_file.txt`이라는 임시 파일을 생성하고 내용을 작성한 후에는 파일을 닫아야합니다. 프로그램이 실행되는 동안 임시 파일은 메모리에 저장되므로 작업이 끝나면 닫아주는 것이 좋습니다. 또한 프로그램이 종료될 때 자동으로 임시 파일이 삭제되므로 보안상 문제가 될 수 있는 정보를 임시 파일에 저장하는 것은 좋지 않습니다.
+**출력:**
+임시 파일이 생성되었습니다.
+임시 파일이 삭제되었습니다.
 
-## 깊게 들어가보기
-임시 파일을 생성하는 방법에 대해서 알아보았지만 실제로는 보다 복잡해질 수 있습니다. 예를 들어, 여러분이 사용자로부터 입력을 받고 그 내용을 임시 파일에 저장하는 프로그램을 작성한다고 가정해봅시다. 이때 여러분이 입력 받을 수 있는 양은 다양한 길이일 수 있으며 그만큼 임시 파일의 용량도 다양할 수 있습니다. 이런 경우에는 동적으로 임시 파일의 용량을 조절해주는 것이 좋습니다. 이를 위해 `seekp()` 함수를 사용할 수 있습니다. `seekp()` 함수는 파일의 포인터를 임의의 위치로 이동시키는 기능을 합니다. 이를 이용하여 여러분이 원하는 위치로 포인터를 이동시킨 다음, 그 위치부터 임시 파일을 작성할 수 있습니다. 예를 들어, `seekp(0, ios::end)`를 사용하면 파일의 끝 부분으로 포인터를 이동시킬 수 있습니다.
+## Deep Dive
 
-## 참고 자료
-- [C++ Reference - ofstream](http://www.cplusplus.com/reference/fstream/ofstream/)
-- [Guru99 - C++ File Handling](https://www.guru99.com/cpp-file-handling.html)
-- [Tutorials Point - C++ I/O File Operations](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+C++에서 임시 파일을 생성하기 위해서는 `<fstream>` 헤더 파일을 사용해야 합니다. `std::ofstream` 클래스를 이용하여 파일을 생성하고 작업을 수행한 후 `close()`를 통해 파일 작업을 마무리 할 수 있습니다. 임시 파일을 삭제하기 위해서는 `remove()` 함수를 사용해야 합니다. 다만, 이 함수는 C 표준 라이브러리에 포함된 함수이기 때문에 C++17 버전부터는 `<cstdio>` 헤더 파일을 이용해야 합니다.
 
-## 더 알아보기
-임시 파일 생성에 대해 더 궁금한 점이 있다면 위의 참고 자료를 더 참고하시기 바랍니다. 또한 부가적으로 C++에서 파일 입출력을 다루는 방법에 대해서
+## See Also / 관련 링크들
+
+- [C++ Reference: std::ofstream](https://en.cppreference.com/w/cpp/io/basic_ofstream)
+- [C++ Reference: remove()](https://en.cppreference.com/w/cpp/io/c/remove)
+- [C++ 표준 라이브러리 레퍼런스](https://cppreference.com)

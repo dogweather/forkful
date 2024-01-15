@@ -1,5 +1,6 @@
 ---
-title:                "C++: Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "C++: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "C++"
 category:             "C++"
@@ -11,39 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie jemals versucht haben, bestimmte Muster in einem Text zu suchen oder zu ersetzen, haben Sie wahrscheinlich schon von regulären Ausdrücken (oder Regex) gehört. Mit regulären Ausdrücken können Sie Text in einem Dokument effizient durchsuchen und bearbeiten, ohne dass Sie jede Zeile manuell überprüfen müssen. Sie sind unglaublich nützlich für Entwickler, die mit großen Mengen an Daten arbeiten, und können Zeit und Mühe sparen. Lassen Sie uns einen Blick darauf werfen, wie man reguläre Ausdrücke in C++ verwenden kann.
+Reguläre Ausdrücke sind ein leistungsfähiges Werkzeug in der Welt der Programmierung. Mit ihnen können Sie Texte auf einfache und effiziente Weise durchsuchen und bearbeiten. Reguläre Ausdrücke sparen Zeit und Aufwand und sind deshalb ein unverzichtbares Instrument für jeden Programmierer.
 
-## Wie geht das
+## So geht's
 
-Es gibt einige grundlegende Schritte, die Sie befolgen können, um reguläre Ausdrücke in C++ zu nutzen. Zunächst müssen Sie die Bibliothek "regex" in Ihr Programm einbinden. Dann können Sie einen regulären Ausdruck als String erstellen und ihn mit der Funktion "std::regex_match" auf Übereinstimmungen prüfen. Alternativ können Sie auch die Funktion "std::regex_search" verwenden, um alle Übereinstimmungen in einem Text zu finden.
+Um reguläre Ausdrücke in C++ zu verwenden, müssen Sie die Header-Datei "regex" einbinden. Dann können Sie mit den integrierten Funktionen "regex_match" und "regex_search" einen regulären Ausdruck auf einen Text anwenden.
 
-Lassen Sie uns ein Beispiel betrachten, in dem wir nach einer bestimmten Telefonnummer in einem Text suchen. Zuerst müssen wir die Bibliothek einbinden:
-
-```
+Ein Beispiel:
+```C++
+#include <iostream>
+#include <string>
 #include <regex>
-```
 
-Dann erstellen wir unseren regulären Ausdruck und prüfen, ob er in unserem Text vorkommt:
+int main()
+{
+    std::string text = "Das ist ein Beispieltext.";
+    std::regex pattern("Beispiel");
 
-```
-std::regex reg("\\d{3}-\\d{3}-\\d{4}");
-std::string text = "Meine Telefonnummer ist 123-456-7890";
-if (std::regex_search(text, reg)){
-  std::cout << "Eine Telefonnummer wurde gefunden!" << std::endl;
+    if (std::regex_search(text, pattern))
+    {
+        std::cout << "Der Text enthält das Wort 'Beispiel'." << std::endl;
+    }
+    else
+    {
+        std::cout << "Der Text enthält NICHT das Wort 'Beispiel'." << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-In diesem Beispiel verwenden wir den regulären Ausdruck "\d{3}-\d{3}-\d{4}", um nach der typischen amerikanischen Telefonnummer-Formatierung zu suchen. Die Ausgabe wird "Eine Telefonnummer wurde gefunden!" sein.
+Der ausführliche Output dieses Codes lautet:
 
-## Tiefergehende Informationen
+```
+Der Text enthält das Wort 'Beispiel'.
+```
 
-Es gibt eine Vielzahl von Möglichkeiten und Funktionen, die man beim Arbeiten mit regulären Ausdrücken in C++ verwenden kann. Hier sind einige nützliche Ressourcen, die Ihnen helfen können, tiefer in dieses Thema einzutauchen:
+In diesem Beispiel haben wir einen regulären Ausdruck auf einen Text angewendet und mithilfe von "regex_search" überprüft, ob der Text das angegebene Muster enthält. Wenn Sie das nächste Mal einen Text analysieren oder bearbeiten müssen, denken Sie daran, dass reguläre Ausdrücke eine große Hilfe sein können.
 
-- [C++ Referenz zu regulären Ausdrücken](https://en.cppreference.com/w/cpp/regex)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Tutorial zu regulären Ausdrücken in C++](https://www.tutorialspoint.com/cpp_standard_library/cpp_regex_library.htm)
+## Tiefer tauchen
+
+Reguläre Ausdrücke können nicht nur zur einfachen Suche nach Wörtern oder Mustern verwendet werden, sondern auch zur komplexen Mustererkennung und -manipulation. Sie können Metazeichen verwenden, um Ausdrücke wie "alle Zahlen" oder "alle Großbuchstaben" zu definieren. Wenn Sie mehr über reguläre Ausdrücke erfahren möchten, gibt es im Internet viele Ressourcen und Tutorials, die Ihnen weiterhelfen können.
 
 ## Siehe auch
 
-- [Wie man reguläre Ausdrücke in Python verwendet](https://www.example.com/article/py-regex)
-- [Einführung in die Verwendung von regulären Ausdrücken in Java](https://www.example.com/article/java-regex)
+- [C++ regex - cppreference.com](https://en.cppreference.com/w/cpp/regex)
+- [Regular Expressions in C++11 - GeeksforGeeks](https://www.geeksforgeeks.org/regular-expressions-in-c/)
+- [Mastering Regular Expressions - O'Reilly](http://regex.info/book.html)

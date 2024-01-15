@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: 임시 파일 만들기"
-simple_title:         "임시 파일 만들기"
+title:                "임시 파일 생성"
+html_title:           "Kotlin: 임시 파일 생성"
+simple_title:         "임시 파일 생성"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -9,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
+임시 파일을 생성하면서 얻을 수 있는 이점은 매우 다양합니다. 다양한 프로그래밍 작업에서 임시 파일은 중요한 역할을 하며, 코드를 테스트하거나 데이터를 보관하는 등 많은 용도로 사용될 수 있습니다.
 
-왜 임시 파일을 생성하는 것에 참여해야 하는지 궁금하지 않으신가요? 임시 파일이란 메모리에 저장된 데이터를 디스크에 저장하기 위한 임시적인 파일을 의미합니다. 임시 파일은 우리의 작업에 도움이 되는 중요한 역할을 합니다.
+## 만드는 법
+임시 파일을 생성하는 것은 코틀린에서 아주 간단합니다. `createTempFile()` 함수를 사용하면 됩니다. 예제 코드를 살펴보겠습니다.
 
-## 방법
-
-```Kotlin 
-val tempFile = File.createTempFile("prefix", "suffix")
-println("임시 파일의 경로: " + tempFile.absolutePath)
+```Kotlin
+val tempFile = createTempFile("example", ".txt")
+println("임시 파일 경로: ${tempFile.path}")
 ```
 
-위 코드는 우리가 임시 파일을 생성하는 가장 간단한 방법입니다. `createTempFile` 함수는 `prefix`와 `suffix`로 설정된 파일 이름을 갖는 임시 파일을 생성합니다. `prefix`는 파일 이름의 앞에 붙는 문자열이며 `suffix`는 파일 이름의 뒤에 붙는 문자열입니다. 그리고 `absolutePath`는 파일의 절대 경로를 반환합니다.
+위 코드에서 `createTempFile()` 함수를 사용하여 "example"이라는 이름의 임시 파일을 생성하고 확장자로 ".txt"를 지정합니다. 그리고 생성된 파일의 경로를 출력하는 부분을 확인할 수 있습니다. 결과는 다음과 같이 나옵니다.
 
-## 딥 다이브
+```
+임시 파일 경로: C:\Users\username\AppData\Local\Temp\example12345678.txt
+```
 
-임시 파일을 생성하는 과정은 약간 복잡합니다. 먼저, 우리는 `File.createTempFile` 함수를 호출하여 `File` 객체를 얻습니다. 그 다음, 우리는 `createTempFile` 함수를 호출할 때 우리가 원하는 파일 이름을 지정해야 합니다. 이는 우리가 원하는 모든 파일 이름을 사용할 수 있는 임시 파일을 생성하는 것을 가능하게 합니다. 
+이처럼 `createTempFile()` 함수를 사용하면 매우 간단하게 임시 파일을 생성할 수 있습니다. 또한 생성된 파일의 경로나 이름 등을 알아서 관리해주기 때문에 편리하게 사용할 수 있습니다.
 
-임시 파일은 우리의 작업에 도움을 주는데, 때로는 우리가 특정 작업을 수행하기 위해 반복적으로 임시 파일을 생성해야 할 수도 있습니다. 이런 경우, 우리는 `File.deleteOnExit` 함수를 사용하여 프로그램이 종료될 때 임시 파일을 자동으로 삭제할 수 있도록 할 수 있습니다.
+## 더 알아보기
+임시 파일을 생성하면서 옵션을 더욱 자세히 지정하고 싶다면 `createTempFile()` 함수의 매개변수를 살펴보면 됩니다. `prefix` 매개변수를 사용하여 파일 이름에 접두사를 붙이거나 `directory` 매개변수를 사용하여 파일이 생성될 폴더를 지정할 수 있습니다. 또한 `suffix` 매개변수를 사용하여 확장자를 지정할 수도 있습니다.
 
-## 더보기
-
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/)
-- [나동빈님의 코틀린 강좌](https://ndb796.tistory.com/358)
-- [백기선님의 코틀린 스프링 부트 강의](https://www.inflearn.com/course/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8#description)
+## 관련 링크
+- 코틀린 공식 문서: [임시 파일 생성하기](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/create-temp-file.html)
+- 블로그 포스트: [코틀린 사용법: 임시 파일 생성하기](https://www.exampleblog.com/how-to-create-temp-file-in-kotlin)

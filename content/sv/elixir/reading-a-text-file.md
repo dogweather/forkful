@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Elixir: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,44 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil kan vara en viktig uppgift i en Elixir-applikation. Genom att kunna läsa data från en fil kan vi få tillgång till information som är viktigt för vår applikation. Det kan vara allt från användardata till konfigurationsinställningar.
+Att läsa en textfil är en viktig del av många Elixir-program. Det kan användas för att läsa in data, konfigurationsfiler eller för att manipulera stora mängder data. Genom att läsa en textfil kan du enkelt få åtkomst till strukturerad data för att bearbeta den på ett effektivt sätt.
 
-## Hur
+## Hur du gör det
 
-För att läsa en textfil i Elixir, används funktionen File.read/1. Den tar en filväg som argument och returnerar en tuple med resultatet. Här är ett exempel på hur vi skulle kunna läsa en textfil som innehåller namn på användare och deras ålder:
+För att läsa en textfil i Elixir använder du funktionen `File.stream!` tillsammans med `Enum.each`. Detta kommer att läsa in filen rad för rad och låter dig utföra olika åtgärder på varje rad. Använd `IO.puts` för att skriva ut varje rad till terminalen.
 
 ```Elixir
-contents = File.read("anvandare.txt")
-
-IO.puts("Användare:")
-io.puts(contents)
+File.stream!("mina_fil.txt") 
+|> Enum.each(&IO.puts/1)
 ```
 
-Detta kodexempel öppnar filen "anvandare.txt" och tilldelar innehållet i filen till en variabel. Sedan printar det ut innehållet i filen i terminalen. Om vi antar att innehållet i "anvandare.txt" är:
+Resultatet blir att varje rad i filen skrivs ut på skärmen.
 
-```
-Lisa, 25
-Pelle, 30
-```
+## Utökad förklaring
 
-Skulle outputen bli:
+För att läsa en textfil på ett mer detaljerat sätt, kan du använda funktionerna `File.open!/2` och `IO.read/2`. `File.open!/2` öppnar en fil för läsning och `IO.read/2` läser data från filen. Det är viktigt att nämna att `File.open!/2` returnerar en "fil" struktur vilket betyder att den måste stängas med `File.close/1` när den är klar.
 
-```
-Användare:
-Lisa, 25
-Pelle, 30
+```Elixir
+file = File.open!("mina_fil.txt")
+IO.read(file, :line) # läser filen rad för rad
 ```
 
-Det finns också andra funktioner som kan användas för att läsa en textfil, som File.read!/1 som kastar ett error om filen inte hittas och File.stream!/1 som skapar en ström av data från filen. Genom att läsa på om olika filrelaterade funktioner i Elixir, kan vi hitta den som passar bäst för våra specifika behov.
+Denna metod ger dig mer kontroll över hur filinnehållet hanteras och kan vara användbart för mer avancerade användningsfall.
 
-## Djupdykning
+## Se också
 
-När vi läser en textfil i Elixir, är filen inte direkt läsbar för vår applikation. Istället blir filens innehåll en binärsträng, vilket kräver att vi hanterar datan på rätt sätt för att kunna använda den. Ofta måste vi omvandla binärsträngen till en lista av strängar för att få utdata i rätt format.
-
-Det är också viktigt att hantera eventuella fel som kan uppstå vid läsning av filen, som till exempel att filen inte finns eller att den har felaktigt formaterade data. Genom att använda funktioner som File.read!/1 eller att inkludera felhanteringslogik i vår kod, kan vi säkerställa att vår applikation hanterar dessa fall på ett bra sätt.
-
-## Se även
-
-- [Filhantering i Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
-- [Dokumentation för File-modulen](https://hexdocs.pm/elixir/File.html)
-- [Elixir för nybörjare](https://www.youtube.com/watch?v=u0lboLNVDNk) (på svenska)
+- [Elixir File modul](https://hexdocs.pm/elixir/File.html)
+- [Läsa filinnehåll rad för rad](https://stackoverflow.com/questions/21042082/read-a-file-line-by-line-in-elixir)
+- [IO modulen i Elixir](https://hexdocs.pm/elixir/IO.html)

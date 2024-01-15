@@ -1,6 +1,7 @@
 ---
-title:                "Rust: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "http リクエストの送信"
+html_title:           "Rust: http リクエストの送信"
+simple_title:         "http リクエストの送信"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -9,71 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-Rustは高速で安全性の高いプログラミング言語ですが、最近多くのWeb開発者がRustを使ってHTTPリクエストを送信する方法を学び始めました。なぜそうするのでしょうか？それについて説明していきましょう。
+ネットワーク通信をするとき、多くのアプリやサイトはHTTPリクエストを使います。これにより、サーバーから情報を取得したり、データを送信したりすることができます。
 
 ## 使い方
 
-まず始めに、RustでHTTPリクエストを送信するためには、[reqwest](https://github.com/seanmonstar/reqwest)というライブラリを使う必要があります。そのためには、Cargo.tomlファイルに以下のように追加します。
-
 ```Rust
-[dependencies]
-reqwest = "0.11.1"
-```
+use reqwest::blocking::Client;
 
-次に、以下のようにサンプルコードを書きます。
-
-```Rust
-use reqwest::Error;
-use std::collections::HashMap;
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Deserialize, Serialize)]
-struct User {
-    name: String,
-    age: u32,
-    email: String,
-}
-
-async fn send_request() -> Result<(), Error> {
-    let client = reqwest::Client::new();
-    let mut map = HashMap::new();
-    map.insert("name", "John");
-    map.insert("age", "25");
-    map.insert("email", "john@example.com");
-    let request = client.post("https://example.com/users")
-        .json(&map)
+fn main() {
+    let client = Client::new();
+    let res = client.get("https://example.com")
         .send()
-        .await?;
-    let response = request.json::<User>().await?;
-    println!("{:#?}", response);
-    Ok(())
-}
-
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    send_request().await?;
-    Ok(())
+        .expect("Failed to send request");
+        
+    println!("Response status: {}", res.status());
+    println!("Response body: {}", res.text().unwrap());
 }
 ```
 
-コードを実行すると、以下のような出力が得られるでしょう。
+上のコードでは、 `reqwest` ライブラリを使用してHTTPリクエストを送信しています。まず、`Client` を作成し、`get()` メソッドを使用してリクエスト先のURLを指定します。そして、`send()` メソッドを呼び出して実際にリクエストを送信します。レスポンス情報を取得するには、`status()` メソッドや`text()` メソッドを使用します。 
 
-```Rust
-User {
-    name: "John",
-    age: 25,
-    email: "email@example.com",
-}
-```
+## 深堀り
 
-## ディープダイブ
+HTTPリクエストを送信するとき、リクエストメソッドとしてGETやPOSTなどを指定することができます。また、ヘッダー情報を追加したり、リクエストボディを設定したりすることも可能です。詳細な使い方やパラメーターの設定方法については、[公式ドキュメント](https://docs.rs/reqwest/0.11.4/reqwest/)を参照してください。
 
-深く掘り下げてみましょう。reqwestライブラリは、async/awaitパターンに対応したノンブロッキングIOを使用しており、効率的にHTTPリクエストを送信することができます。また、HTTPリクエストの設定や、ヘッダーの追加など、さまざまなオプションをカスタマイズすることもできます。詳細なドキュメントは[公式ドキュメント](https://docs.rs/reqwest/0.11.1/reqwest/)を参照してください。
+## 関連リンク
 
-## 参考リンク
-
-- [RustでHTTPリクエストを送信する方法 | Ja.me Rust](https://ja.me/rust-send-http-request)
-- [reqwest library - Github](https://github.com/seanmonstar/reqwest)
-- [async/await in Rust - Rust-Lang Learning](https://learning-rust.github.io/docs/e6.async-await/)
+- [RustでHTTPリクエストを送信する方法](https://qiita.com/hnakamur/items/bc6e4685854bee2ba040)
+- [reqwestライブラリの使い方](https://qiita.com/haltafin/items/042237fe6e318ea3190e)
+- [Rustを使ってREST APIを叩いてみる](https://qiita.com/laqiiz/items/96f96b91d0f8175355d6)

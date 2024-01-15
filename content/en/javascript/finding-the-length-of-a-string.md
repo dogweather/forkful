@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Finding the length of a string"
+title:                "Finding the length of a string"
+html_title:           "Javascript recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,36 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever wanted to know how many characters are in a word or sentence? Maybe you're trying to set a character limit for a tweet or limit the number of characters in a username. Whatever the reason may be, finding the length of a string in Javascript can be a useful tool in your programming arsenal.
+Finding the length of a string is a common task in web development. It allows developers to manipulate strings in various ways, such as validating input fields or formatting data for display. Plus, who doesn't love a good challenge?
 
 ## How To
-
-To find the length of a string in Javascript, you can use the built-in method `length()`. This method returns the number of characters in a string, including spaces and punctuation.
-
-Let's take a look at an example:
-
 ```Javascript
-let myString = "Hello World!";
-console.log(myString.length()); // Output: 12
+// Method 1: .length property
+const myString = "Hello World";
+console.log(myString.length); // Output: 11
+
+// Method 2: for loop
+let count = 0;
+for (let i = 0; i < myString.length; i++) {
+  count++;
+}
+console.log(count); // Output: 11
 ```
 
-In this example, we have declared a variable called `myString` and assigned it the value of "Hello World!". Then, by using the `length()` method, we are able to determine that the string contains 12 characters.
-
-Keep in mind that the index of a string starts at 0, so the last character in our string would be at index position `myString.length() - 1`.
+Finding the length of a string can be achieved in a few different ways. The first method is by using the `.length` property, which is built-in to every string in JavaScript. This method is simple and straightforward, making it a popular choice. The second method involves using a for loop to iterate through each character of the string and counting the number of iterations. This method may be useful for more advanced string manipulation.
 
 ## Deep Dive
+Behind the scenes, JavaScript strings are objects with their own properties and methods. This includes the `.length` property, which returns the number of characters in a string. This property is read-only, meaning it cannot be modified. It is also worth noting that the `.length` property not only counts alphabetical letters, but also other characters (like spaces and punctuation) and symbols (like emojis) within the string.
 
-When using the `length()` method, it is important to note that it only applies to strings. If you try to use it on any other type of data, such as a number or boolean, it will return undefined. This is because `length()` is a string method and cannot be applied to other types of data.
-
-Another thing to keep in mind is that the `length()` method gives the total number of characters, including any escape characters. For example, if you have a string with a `"\n"` for a line break, it will count as one character in the length of the string.
-
-Additionally, `length()` will also include any empty spaces at the beginning or end of a string. If you want to exclude these spaces, you can use the `trim()` method first and then apply `length()` to the trimmed string.
+Additionally, it is important to keep in mind that the `.length` property counts the number of elements in a string, not the number of bytes or characters. This means that the length may be different for strings containing non-ASCII characters, as these may be represented by multiple bytes or characters.
 
 ## See Also
-
-For more information on the `length()` method and other string methods in Javascript, check out the following resources:
-
-- [MDN Web Docs - String.prototype.length()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools - JavaScript String Length](https://www.w3schools.com/js/js_string_length.asp)
-- [JavaScript String Methods Tutorial](https://www.javascripttutorial.net/javascript-string-methods/)
+- [MDN Web Docs: String.length](https://developer.mozilla.org/en-US/docs/Web/Javascript/Reference/Global_Objects/String/length)
+- [W3Schools: JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)

@@ -1,5 +1,6 @@
 ---
-title:                "C: Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "C: Tworzenie pliku tekstowego"
 simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "C"
 category:             "C"
@@ -11,37 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie jest coraz bardziej popularne i rozwijające się dziedziną. Jednym z najważniejszych zadań programisty jest umiejętne manipulowanie tekstem, niezależnie od tego, czy jest to prosta gra czy też ogromna baza danych. Właśnie dlatego pisanie plików tekstowych jest niezwykle ważne w programowaniu.
+Pisanie pliku tekstowego jest jedną z podstawowych operacji w programowaniu w języku C. Jest to niezbędne, jeśli chcemy móc zapisywać trwałe dane, takie jak konfiguracje, wyniki działania programu czy informacje o użytkownikach.
 
 ## Jak to zrobić
 
-Aby napisać plik tekstowy w języku C, musimy skorzystać z funkcji "fprintf". Najpierw należy otworzyć plik za pomocą funkcji "fopen", podając nazwę pliku oraz tryb, w jakim chcemy go otworzyć (np. do odczytu lub zapisu). Następnie, używamy funkcji "fprintf" do zapisywania tekstu w pliku, podając jako argumenty uchwyt pliku oraz tekst, który chcemy zapisać. Poniżej znajduje się przykładowy kod:
+Aby zapisać plik tekstowy w języku C, należy wykonać kilka kroków. Najpierw musimy otworzyć plik za pomocą funkcji `fopen()`, która przyjmuje dwa argumenty - nazwę pliku oraz tryb otwarcia. Następnie możemy użyć funkcji `fprintf()` do zapisania danych do pliku. Na koniec musimy pamiętać o zamknięciu pliku za pomocą funkcji `fclose()`.
 
-```C
+````C
 #include <stdio.h>
 
-int main () {
-   // otwarcie pliku do zapisu
-   FILE *plik = fopen("plik.txt", "w");
-    
-   // zapisanie tekstu do pliku
-   fprintf(plik, "To jest przykładowy tekst.");
-   
-   // zamknięcie pliku
-   fclose(plik);
-      
-   return 0;
+int main() {
+    // otwieramy plik w trybie do zapisu
+    FILE *fp = fopen("plik.txt", "w");
+
+    // zapisujemy tekst do pliku
+    fprintf(fp, "Witaj, to jest przykładowy tekst!");
+
+    // zamykamy plik
+    fclose(fp);
+
+    return 0;
 }
-```
+````
 
-Po uruchomieniu tego kodu, w folderze projektu pojawi się plik "plik.txt" zawierający nasz tekst.
+Po uruchomieniu tego programu, w bieżącym folderze powinien pojawić się plik o nazwie "plik.txt" zawierający nasz tekst.
 
-## Głębszy zanurzenie
+## Gleboki zanurkowanie
 
-Istnieje wiele zaawansowanych metod pisania plików tekstowych w języku C, takich jak dynamiczne alokacje pamięci, przetwarzanie wielu linii tekstu oraz wykorzystanie struktur danych. Wymaga to jednak zaawansowanej wiedzy programistycznej i doświadczenia. Warto również pamiętać o poprawnym obsługiwaniu błędów podczas pisania i odczytywania plików.
+Pisząc plik tekstowy w języku C, możemy również wykorzystać funkcję `fputc()` do zapisywania pojedynczego znaku oraz funkcję `fputs()` do zapisywania całych łańcuchów znaków. Ważne jest również pamiętanie o prawidłowym obsługiwaniu błędów, wykonując sprawdzenie czy funkcja `fopen()` zwróciła wartość różną od `NULL` - w przeciwnym razie oznacza to, że plik nie został otwarty prawidłowo.
 
 ## Zobacz również
 
-- [Dokumentacja funkcji fprintf w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Przykładowe kody pisania plików tekstowych w języku C](https://www.geeksforgeeks.org/file-handling-c-classes/)
-- [Artykuł o podstawach pisania i odczytywania plików w języku C](https://www.codingunit.com/c-tutorial-file-io-using-text-files)
+- [Dokumentacja funkcji fopen()](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Kurs języka C na Codecademy](https://www.codecademy.com/learn/learn-c) 
+- [Inne artykuły na temat programowania w języku C](https://pl.wikibooks.org/wiki/Programowanie_w_j%C4%99zyku_C)

@@ -1,6 +1,7 @@
 ---
-title:                "Java: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Skicka en http förfrågan"
+html_title:           "Java: Skicka en http förfrågan"
+simple_title:         "Skicka en http förfrågan"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -9,58 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att skicka HTTP-förfrågningar är en väsentlig del av många moderna programmeringsapplikationer. Det används för att hämta data från en server och göra det möjligt att utbyta information mellan en klient och en server. Det är också ett vanligt sätt att integrera olika system och applikationer. Att förstå hur man skickar HTTP-förfrågningar är därför mycket viktigt för programmerare i dagens digitala värld.
+Att skicka en HTTP-begäran är en viktig del av att skapa webbapplikationer och andra digitala tjänster. Det låter din programvara kommunicera med servern som håller din applikation igång och göra åtgärder såsom att hämta och lagra data.
 
-# Så här
+## Hur man gör det 
 
-För att kunna skicka en HTTP-förfrågan från din Java-applikation behöver du använda klassen HttpURLConnection från Java.net-paketet. Först måste du skapa en URL-objekt som innehåller adressen för servern du vill skicka förfrågan till. Sedan kan du öppna en anslutning genom att anropa funktionen openConnection() på URL-objektet.
-
-Nästa steg är att konfigurera förfrågan genom att sätta metoden, egenskaperna och eventuella parametrar som behövs. Sedan kan du skicka förfrågan genom att anropa funktionen getOutputStream() och skicka med eventuella data som behövs. För att läsa svar från servern kan du använda funktionen getInputStream(). Till sist måste du avsluta anslutningen genom att kalla på funktionen disconnect().
-
-Här är ett enkelt exempel på hur man skickar en GET-förfrågan till en server och läser svaret:
-
-```Java 
+```Java
+// skapa en URL-objekt med målet för din begäran
 URL url = new URL("https://example.com/api/data");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
 
-int status = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
+// skapa en HTTP-begäran med vald metod (t.ex. GET, POST, PUT)
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+connection.setRequestMethod("GET");
+
+// läs in svaret från servern
+BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 String inputLine;
-StringBuffer content = new StringBuffer();
+StringBuilder response = new StringBuilder();
 while ((inputLine = in.readLine()) != null) {
-    content.append(inputLine);
+    response.append(inputLine);
 }
 in.close();
-con.disconnect();
 
-System.out.println("Statuskod: " + status);
-System.out.println("Svar: " + content.toString());
+// skriv ut svaret
+System.out.println(response.toString());
 ```
 
-Output från detta exempel kan vara något liknande:
+Det här exemplet visar hur man skapar en grundläggande HTTP-begäran med Java. Beroende på dina behov och användningsfall, kan du också behöva lägga till andra parametrar till din begäran, till exempel HTTP-headerns innehåll eller URL-parametrar.
 
-```
-Statuskod: 200
-Svar: {"name": "John", "age": 25}
-```
+## Djupdykning
 
-# Deep Dive
+HTTP-begäran är uppbyggd av flera delar som är nödvändiga för att skapa en framgångsrik förfrågan och få tillbaka ett svar från servern. Några av dessa delar inkluderar URL, metod (GET, POST, PUT, DELETE), HTTP-header och eventuella data som behövs för att utföra åtgärden. Det är också viktigt att förstå HTTP-statuskoderna som returneras från servern för att kunna hantera eventuella fel eller problem som kan uppstå.
 
-Det finns olika typer av HTTP-förfrågningar, så som GET, POST, PUT och DELETE. GET används vanligtvis för att hämta data från servern, medan POST används för att skicka data till servern. PUT används för att uppdatera befintliga data och DELETE för att ta bort data.
+## Se även
 
-Det finns också olika metoder för att sätta egenskaper och parametrar i en förfrågan, såsom setDoOutput(), setRequestProperty() och setChunked(). Det är viktigt att förstå hur dessa metoder fungerar och när de bör användas för att skicka en korrekt formaterad förfrågan.
-
-När man arbetar med HTTP-förfrågningar är det också viktigt att ha god säkerhet i åtanke. Det är viktigt att skydda användardata och undvika att skicka förfrågningar som kan utgöra en säkerhetsrisk. Det finns olika sätt att implementera säkerhet vid HTTP-förfrågningar, såsom att använda tokens eller kryptering.
-
-# Se även
-
-Här är några användbara länkar för att lära dig mer om att skicka HTTP-förfrågningar i Java:
-
-- Java.net paketets dokumentation: https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html
-- Java Docs tutorial om HttpURLConnection: https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html
-- Tutorial på Baeldung: https://www.baeldung.com/java-http-request
-- Säkerhetsguide för HTTP-förfrågningar: https://dzone.com/articles/sending-http-requests-with-java
+- [Java - Skapa en HTTP-begäran](https://www.w3schools.com/java/java_http_request.asp)
+- [HTTP Request med Java](https://www.baeldung.com/java-http-request)
+- [Vad är HTTP?](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Overview)

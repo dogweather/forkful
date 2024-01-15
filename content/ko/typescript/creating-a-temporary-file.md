@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: 임시 파일 만들기"
-simple_title:         "임시 파일 만들기"
+title:                "임시 파일 생성하기"
+html_title:           "TypeScript: 임시 파일 생성하기"
+simple_title:         "임시 파일 생성하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,64 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 temporary 파일을 만들까요?
 
-임시 파일을 만들어야 하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 프로그램이 실행될 때 임시적으로 필요한 데이터를 저장하거나 사용자의 입력 정보를 임시로 보관할 때 사용할 수 있습니다. 임시 파일은 프로그램의 용량을 줄이고 시스템 자원을 효율적으로 관리하는 데 도움이 됩니다.
+temporary 파일은 프로그래밍 프로세스에서 매우 중요한 역할을 합니다. 이 파일은 우리가 다른 작업을 수행하는 동안 일시적으로 데이터를 저장하기 위해 사용됩니다. 따라서 이 파일을 만드는 것은 우리가 하고 있는 작업에 대한 안정성과 성능을 향상시키는 데 도움이 됩니다.
 
 ## 만드는 방법
 
-TypeScript에서 임시 파일을 만드는 방법은 간단합니다. 우선, `fs` 모듈과 `tmp` 모듈을 import 합니다. 그리고 `tmp.file()` 메소드를 사용하여 임시 파일을 생성할 수 있습니다.
-
 ```TypeScript
+// temporary 파일을 만드는 예제 코드
 import fs from 'fs';
-import tmp from 'tmp';
 
-tmp.file((err, path, fd) => {
-  if (err) throw err;
-  // 임시 파일 생성
-  fs.writeFileSync(path, 'Hello World');
-  console.log('임시 파일 경로: ', path);
-  // 파일 내용 출력
-  console.log('파일 내용: ', fs.readFileSync(path, 'utf8'));
-  // 파일 삭제
-  fs.unlinkSync(path);
+const data = '이것은 temporary 파일에 저장될 데이터입니다.';
+const filePath = './temp/tempFile.txt';
+
+// temporary 파일 생성
+fs.writeFile(filePath, data, (err) => { 
+    if (err) throw err; 
+    console.log('temporary 파일이 생성되었습니다.');
 });
 ```
 
-위 예제 코드에서 `tmp.file()` 메소드는 임시 파일의 경로와 파일 디스크립터를 포함하는 콜백 함수를 반환합니다. 그리고 `fs` 모듈을 사용하여 파일 생성과 삭제를 할 수 있습니다.
+위의 예제 코드를 실행하면 `tempFile.txt`라는 이름의 temporary 파일이 생성됩니다. 파일이 생성되면 해당 파일의 경로에 지정된 데이터가 저장됩니다. 이렇듯 temporary 파일을 생성하면 우리는 다른 파일이나 프로세스를 변경하지 않고도 필요한 데이터를 일시적으로 저장할 수 있습니다.
 
-## 깊이 파보기
+## 더 깊이 들어가보기
 
-`tmp` 모듈은 임시 파일을 생성하는 데 필요한 다양한 옵션을 제공합니다. 예를 들어, 파일 이름의 접두사와 접미사를 지정하거나 생성한 파일의 유지 기간을 설정할 수 있습니다. 또한 `withFileTypes` 옵션을 사용하여 파일의 속성과 권한 정보를 가져올 수도 있습니다.
+temporary 파일을 만들 때의 세부 사항 중 하나는 사용할 파일의 경로와 파일 이름을 결정하는 것입니다. 대부분의 경우 이 파일들은 운영 체제의 임시 디렉토리에 저장됩니다. 이는 운영 체제와 하드웨어의 차이로 인해 프로그래밍 프로세스 중에 파일 경로에 문제가 발생할 수 있기 때문입니다. 따라서 우리는 운영 체제의 임시 디렉토리를 참조하는 함수를 사용해 파일의 경로를 결정해야 합니다. 
 
-```TypeScript
-// 파일 이름에 접두사와 접미사 추가
-tmp.file({ prefix: 'temp-', postfix: '.txt' }, (err, path, fd) => {
-  if (err) throw err;
-  console.log('임시 파일 경로: ', path);
-});
+또한 temporary 파일을 제대로 처리하려면 파일을 생성한 후에 해당 파일을 삭제해주어야 합니다. 이렇게 삭제되지 않은 파일은 우리의 시스템의 디스크 공간을 차지하고 있을 수 있기 때문입니다. 따라서 우리는 temporary 파일이 생성된 후 작업이 완료되고 필요가 없어진 시점에 해당 파일을 자동으로 삭제해주는 함수를 사용하는 것이 좋습니다.
 
-// 5분 후에 파일 삭제
-tmp.file({ keep: true, expires: 5 * 60 }, (err, path, fd) => {
-  if (err) throw err;
-  setTimeout(() => {
-    // 파일 삭제
-    fs.unlinkSync(path);
-    console.log('파일이 삭제되었습니다.');
-  }, 5 * 60 * 1000); // 5분 후에 삭제
-});
+## 더 알아보기
 
-// 파일 속성과 권한 정보 가져오기
-tmp.file({ withFileTypes: true }, (err, path, fd) => {
-  if (err) throw err;
-  const stats = fs.statSync(path);
-  console.log('파일 이름: ', stats.name);
-  console.log('파일 권한: ', stats.mode);
-});
-```
+아래 링크들을 참고해 TypeScript에서 temporary 파일을 만드는 더 많은 방법에 대해 알아볼 수 있습니다.
 
-위 코드에서는 다양한 옵션을 사용하여 임시 파일을 생성하고 관리하는 방법을 살펴보았습니다. `tmp` 모듈의 다른 메소드들도 비슷한 방식으로 사용할 수 있으며, 필요한 경우 공식 문서를 참조하시면 됩니다.
+- https://typescript.kr/docs/handbook/advanced-types.html#tempFiles
+- https://react-etc.vlpt.us/01.typescript-intro.html
+- https://perfectacle.github.io/2019/11/24/typescript-temporary-file/ 
 
-## See Also
-- [Node.js - File System 모듈](https://nodejs.org/api/fs.html)
-- [tmp 모듈 공식 문서](https://github.com/raszi/node-tmp#tmpfileoptions-callback)
+## 관련 링크
+
+- [fs.writeFile 공식 문서](https://nodejs.org/api/fs.html#fs_filesystem) 
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/home.html)
+- [임시 파일 관련 블로그 포스트](https://medium.com/@mhagemann/tempfiles-tmpfiles-and-temporary-files-in-typescript-are-possible-765f15c9d1c2)

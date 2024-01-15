@@ -1,5 +1,6 @@
 ---
-title:                "Haskell: Extraindo subtrings"
+title:                "Extraindo subtrings"
+html_title:           "Haskell: Extraindo subtrings"
 simple_title:         "Extraindo subtrings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -9,56 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que extrair substrings em Haskell?
+## Por que
 
-Extrair substrings é uma tarefa bastante comum em programação, especialmente quando lidamos com manipulação de texto ou análise de dados. Em Haskell, existem diversas ferramentas e funções para nos auxiliar nessa tarefa, tornando o processo mais fácil e eficiente. Neste artigo, vamos explorar o porquê de se extrair substrings e como fazer isso em Haskell.
+Se você é um programador e está familiarizado com Haskell, provavelmente já ouviu falar sobre a função `substring` e como ela pode ser útil para extrair partes específicas de uma string. Mas por que alguém se interessaria em fazer isso? Bem, há várias razões pelas quais você pode querer extrair substrings, como manipular dados, formatar saídas de texto ou até mesmo realizar análises de dados.
 
-## Como fazer
+## Como Fazer
 
-Para extrair substrings em Haskell, podemos utilizar a função `take` e `drop`. A função `take` recebe como argumentos a quantidade de elementos que queremos extrair e a lista de origem. Já a função `drop` recebe como argumentos a quantidade de elementos que queremos pular e a lista de origem. Em seguida, utilizamos a função `length` para determinar o tamanho da substring que queremos extrair.
+Extrair substrings em Haskell é bastante simples. Primeiro, precisamos importar o módulo `Data.List` para ter acesso à função `substring`. Então, podemos usar a seguinte sintaxe:
 
-Um exemplo prático seria o seguinte:
-
+```Haskell
+substring startIndex length string
 ```
--- código Haskell
-str = "Olá, mundo!"
-take (length "Olá") str
-drop (length "Olá, ") str
-```
+O parâmetro `startIndex` indica onde a substring deve começar, `length` indica o comprimento da substring e `string` é a string original da qual queremos extrair a substring. Vamos ver um exemplo prático:
 
-O output seria o seguinte:
+```Haskell
+import Data.List
 
-```
--- output
-"Olá"
-"mundo!"
+substring 3 5 "Olá mundo" -- retorna "a mun"
 ```
 
-Podemos também utilizar a função `substring` do pacote `Data.Text` para extrair substrings. Ela recebe como argumentos o índice inicial e o índice final da substring que queremos extrair. Veja um exemplo:
+Também podemos usar números negativos para `startIndex` e `length` para extrair substrings a partir do fim da string. Por exemplo:
 
-```
--- código Haskell
-import Data.Text (substring)
-
-str = "Hello World"
-substring 0 4 str
-substring 6 10 str
+```Haskell
+substring (-3) 2 "Olá mundo" -- retorna "nd"
 ```
 
-O output seria o seguinte:
+E se quisermos extrair todo o resto da string a partir de um determinado ponto, podemos usar `undefined` para `length`, indicando que não há um limite de comprimento. Veja:
+
+```Haskell
+substring 3 undefined "Olá mundo" -- retorna "a mundo"
 ```
--- output
-"Hello"
-"World"
+
+## Profundidade
+
+Agora que você entende como usar a função `substring` em Haskell, vamos dar uma olhada mais profunda em como ela funciona. Internamente, essa função podemos ver um cabeçalho como este:
+
+```Haskell
+substring :: Int -> Int -> [a] -> [a]
 ```
 
-## Mergulho profundo
+Onde `a` é um tipo de dados qualquer. Isso significa que podemos usar `substring` não apenas com strings, mas com qualquer lista de tipos de dados. Além disso, a definição real da função usa a função `drop` do módulo `Data.List` para remover os elementos antes do `startIndex` e a função `take` para obter o número de elementos especificado por `length`.
 
-Extrair substrings pode ser uma tarefa simples, mas é importante entender alguns detalhes por trás disso. Em Haskell, as strings são tratadas como listas de caracteres, portanto, podemos utilizar as mesmas funções e conceitos utilizados para manipulação de listas. Além disso, ao utilizar a função `take` e `drop`, é importante lembrar que elas retornam novas listas, portanto, é necessário atribuí-las a uma variável para podermos utilizá-las posteriormente.
+Outro detalhe interessante é que, se o `startIndex` informado for maior do que o tamanho da string, a função retornará uma lista vazia. E se o `length` for maior do que o número de elementos restantes após `startIndex`, a função retornará uma substring com todos esses elementos restantes.
 
-Outro ponto importante é o uso do pacote `Data.Text`, que é mais eficiente para manipulação de textos em comparação com a função `take` e `drop`, que são mais adequadas para manipular listas em geral. Portanto, é importante entender qual ferramenta é mais adequada para cada situação.
+## Veja Também
 
-## Veja também
+Aqui estão alguns links úteis para saber mais sobre a função `substring` em Haskell:
 
-- [Documentação da função `take` e `drop`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#g:14)
-- [Documentação da função `substring`](https://hackage.haskell.org/package/text-1.2.3.2/docs/Data-Text.html#v:substring)
+- [Documentação oficial do `Data.List`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:take)
+- [Tutorial sobre strings em Haskell](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
+- [Outras funções úteis para trabalhar com strings em Haskell](https://wiki.haskell.org/String)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Att hitta längden på en sträng."
+html_title:           "Ruby: Att hitta längden på en sträng."
+simple_title:         "Att hitta längden på en sträng."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -9,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför?
+## Varför
+Att kunna beräkna längden på en sträng är en grundläggande färdighet inom programmering, oavsett vilket språk man använder. Det är en viktig kunskap att ha när man arbetar med textbaserade data eller behöver manipulera strängar på olika sätt.
 
-Att hitta längden på en sträng är en vanlig och användbar uppgift i Ruby-programmering. Det kan hjälpa dig att hantera data och manipulera text på ett effektivt sätt. Dessutom kan det vara en grundläggande färdighet som kan hjälpa dig att förstå mer komplexa koncept inom programmering.
-
-## Så här gör man
-
-För att hitta längden på en sträng kan du använda dig av metoden `length`, som finns tillgänglig för alla strängar i Ruby. Detta ger dig antalet tecken i strängen, inklusive mellanslag och specialtecken. Se nedan för ett exempel:
+## Hur Man Gör
+Beräkna längden på en sträng i Ruby är väldigt enkelt. Du kan använda metoden "length" på en sträng-variabel för att få fram antalet tecken i strängen. Här är ett exempel:
 
 ```Ruby
-sträng = "Hej, detta är en sträng!"
-puts sträng.length
+my_string = "Hej världen!"
+puts my_string.length
 ```
 
-Output:
+Det här koden kommer att skriva ut 13, eftersom det är antalet tecken i strängen "Hej världen!". Du kan också använda metoden "count" för att räkna ett specifikt tecken i en sträng. Till exempel:
+
 ```Ruby
-24
+my_string = "Peter Pan"
+puts my_string.count("a") # skriver ut 1, eftersom det bara finns en "a" i strängen
 ```
 
-## Deep Dive
+## Djupdykning
+I Ruby är en sträng egentligen bara en samling av tecken, vilket är anledningen till att vi kan använda metoden "length". När en sträng skapas, tilldelas varje tecken en position eller index. Därför kan vi också använda metoden "[]", tillsammans med ett tal, för att få fram ett specifikt tecken i en sträng. Till exempel:
 
-Det finns flera sätt att hitta längden på en sträng i Ruby. En annan metod är `size`, som fungerar på samma sätt som `length`. Det finns också metoden `bytesize`, som ger dig längden på strängen i bytes istället för tecken.
+```Ruby
+my_string = "abcde"
+puts my_string[1] # skriver ut "b" eftersom det är tecknet på position 1 i strängen
+```
 
-För att hitta längden på en sträng utan att räkna med mellanslag och specialtecken, kan du använda metoden `strip` först, som tar bort mellanslag från början och slutet av strängen. Sedan kan du använda `length` för att räkna antalet tecken.
+En annan intressant egenskap hos strängar i Ruby är att de är "mutable", vilket betyder att de kan ändras. Det här kan vara användbart när man behöver ändra en del av en sträng, till exempel genom att byta ut ett tecken eller ta bort en del av strängen. Här är några exempel på hur man kan ändra en sträng:
 
-Det är också viktigt att vara medveten om att teckenkodning (encoding) kan påverka längden på en sträng. Om du arbetar med icke-latiniska tecken eller specialtecken, se till att din sträng är korrekt kodad för att få en korrekt längd.
+```Ruby
+my_string = "Hej världen!"
+my_string[0] = "S" # bytar ut "H" mot "S", strängen är nu "Sej världen!"
+puts my_string[0..3] # skriver ut "Sej ", eftersom vi hämtar tecknen på position 0 till 3
+```
 
-## Se även
-
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby String Methods](https://www.rubyguides.com/2019/02/ruby-string-methods/)
-- [Understanding Strings in Ruby](https://hackhands.com/ruby-string-exercises/)
+## Se Också
+- [Ruby String Dokumentation](https://ruby-doc.org/core-3.0.0/String.html)
+- [Grundläggande Programmeringstermer](https://www.codingbrains.com/basic-programming-terminologies-glossary)

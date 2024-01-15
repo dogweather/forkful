@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Tulostaminen debuggaustulosteita"
-simple_title:         "Tulostaminen debuggaustulosteita"
+title:                "Tulostusvirheiden palauttaminen"
+html_title:           "TypeScript: Tulostusvirheiden palauttaminen"
+simple_title:         "Tulostusvirheiden palauttaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -9,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi tulostaa debug-asteikkoja TypeScriptillä?
+## Miksi
 
-Tulostus debug-asteikkoja on tärkeä osa kehittäjien työkaluja, jotka auttavat tunnistamaan ja korjaamaan ohjelmointivirheitä. Tulostus debug-asteikkoja voi parantaa ohjelman lopullista laatua ja auttaa kehittäjiä ymmärtämään ohjelmakoodin toimintaa paremmin.
+Joskus koodatessa voi tulla tarve selvittää tarkemmin, mitä ohjelma tekee ja miten se käsittelee eri tilanteita. Tässä tilanteessa voi olla hyödyllistä tulostaa debug-tietoa, joka auttaa hahmottamaan ohjelman suoritusta.
 
-## Miten: Esimerkkejä koodilohkojen ja tulostusvuodotyyppien käytöstä TypeScriptissä
-
-Tulostuksen debug-lauselausuntojen käyttö TypeScriptissä on yksinkertaista. Ensimmäinen vaihe on asettaa debug-asteikon seurantatapa halutulle tulostusvuodon tyypille, kuten konsolille tai tiedostoon.
+## Miten
 
 ```TypeScript
-// Asettaa debug-asteikkojen seurantatavan konsolille
-console.log("Debug-asteikon seurantatapa: konsoli");
-// Tulostusarvojen tyyppi debug-asteikolle on merkkijono
-console.log(`Debug-asteikon seurantatyyppi: merkkijono`);
+// Esimerkki debug-tekstin tulostamisesta
+console.log("Tämä on debug-teksti.");
 ```
 
-Voit myös tulostaa muuttujia ja niiden arvoja, jotka auttavat sinua ymmärtämään ohjelmakoodin suoritusta ja poimimaan ongelman esiin. Tässä esimerkissä tulostamme muuttujan "i" arvon sisältäneen for-silmukan tulostamisen lopussa.
+Debug-tekstiä voidaan tulostaa koodissa käyttämällä `console`-objektia ja sen `log`-metodia. Tämän avulla voidaan tulostaa haluttuja viestejä tai muuttujien arvoja ohjelman suorituksen aikana.
 
 ```TypeScript
-// Tulostaa "i" -muuttujan arvon sisällä olevan for-silmukan lopussa
-for (let i = 0; i < 10; i++) {
-  console.log(`Silmukka on nyt loopattu kerran ja "i" -arvo on: ${i}`);
-}
+// Tulostetaan muuttujan arvo
+let i = 5;
+console.log(`Muuttujan i arvo on ${i}`);
 ```
 
-## Syvempi sukellus: Tietoa debug-asteikoista
+Debug-tekstin tulostaminen voi auttaa havaitsemaan mahdollisia virheitä koodissa ja helpottaa virheiden selvittämistä. Se voi myös olla hyödyllistä, kun halutaan seurata koodin suoritusta ja varmistaa, että ohjelma käsittelee eri tapauksia oikein.
 
-Tulostus debug-asteikoilla voi olla erilaisia tarkoituksia. Se voi auttaa tekemään ohjelmakoodin kehittämisestä ja testaamisesta helpompaa ja tehokkaampaa, erityisesti suurten ohjelmakoodien tapauksessa. Se auttaa myös identifioimaan ja korjaamaan ongelmia ohjelman suorituskyvyssä ja käytettävyydessä.
+## Syvemmälle
 
-On myös tärkeää hallita ja järjestää tulostus debug-asteikkoja asianmukaisesti, jotta ohjelmoijat eivät törmäisi niiden kanssa liikaa tietoa kerralla. Tässä tapauksessa vähemmän on enemmän, ja on tärkeää valita huolellisesti, mitä ja miten paljon haluat tulostaa.
+`console`-objektin lisäksi TypeScriptissä on myös `Debugger`-luokka, jonka avulla voidaan tulostaa tietoa vaihtehtisen debuggerin, kuten Chrome-kehittäjätyökalujen, kautta.
+
+```TypeScript
+// Tulostetaan numeroiden taulukko debuggerin kautta
+let numbers = [1, 2, 3];
+debugger;
+```
+
+Tämä avaa debuggerin, jossa voi tarkastella muuttujien arvoja ja suorittaa koodia vaiheittain. Tämä on hyödyllistä monimutkaisemman koodin debuggaamisessa ja mahdollisten bugin löytämisessä.
 
 ## Katso myös
 
-- [TypeScript virallinen verkkosivusto](https://www.typescriptlang.org/)
-- [Debug-asteikkojen tulostaminen Node.js:ssa](https://nodejs.org/api/console.html#console_console_log_data_args) 
-- [Tulostus debug-asteikoja Visual Studio Code -ohjelmointiympäristössä](https://code.visualstudio.com/docs/editor/debugging)
+- [TypeScriptin viralliset ohjeet debuggaamiseen](https://www.typescriptlang.org/docs/handbook/debugging.html)
+- [Chrome DevToolsin käyttö TypeScriptin debuggaamiseen](https://www.hanselman.com/blog/TypeScript-and-Debugging-JavaScript-In-Chrome-DevTools-in-Eclipse-And-ASPNET-5).

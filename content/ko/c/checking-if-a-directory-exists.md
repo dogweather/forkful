@@ -1,6 +1,7 @@
 ---
-title:                "C: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉터리가 존재하는지 확인하는 방법"
+html_title:           "C: 디렉터리가 존재하는지 확인하는 방법"
+simple_title:         "디렉터리가 존재하는지 확인하는 방법"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 왜
-파일이나 디렉토리가 존재하는지 확인하는 것은 프로그래밍에서 매우 중요한 일입니다. 만약 어떤 파일이 존재하지 않는다면, 그 파일을 다루기 위해 추가적인 작업이 필요할 수 있기 때문입니다.
+디렉토리가 존재하는지 확인하는 것에 참여하는 이유는 환경 설정이나 파일 관리와 같은 애플리케이션 개발 프로세스에서 중요한 역할을 합니다.
 
-## 하는 방법
-```C
+## 방법
+C 프로그래밍에서 디렉토리가 존재하는지 확인하는 가장 간단한 방법은 `opendir()` 함수를 사용하는 것입니다. 만약 디렉토리가 존재하지 않으면 해당 함수는 `NULL` 값을 반환합니다. 다음은 이를 코드로 표현한 예시입니다.
+
+```
 #include <stdio.h>
 #include <dirent.h>
 
 int main() {
-    DIR *dir = opendir("./my_directory"); // my_directory라는 디렉토리를 연다
-    if (dir) {
-        printf("my_directory 디렉토리가 존재합니다.");
-        closedir(dir); // 디렉토리를 닫는다
+    DIR *dir;
+
+    // 존재하는 디렉토리 경로
+    dir = opendir("test_dir");
+    
+    // 디렉토리가 존재하지 않는 경우
+    if (dir == NULL) {
+        printf("디렉토리가 존재하지 않습니다.\n");
     } else {
-        printf("my_directory 디렉토리가 존재하지 않습니다.");
+        printf("디렉토리가 존재합니다.\n");
+        closedir(dir);
     }
+    
     return 0;
 }
 ```
 
-위 예제는 `opendir()` 함수를 사용하여 디렉토리를 열고, 그 디렉토리가 열어졌는지 확인하는 방법을 보여줍니다. 만약 디렉토리가 존재한다면, `opendir()` 함수는 해당 디렉토리의 포인터를 반환하고, 그렇지 않으면 `NULL`을 반환합니다. 따라서 디렉토리가 존재하는지 여부를 확인할 수 있습니다.
+위 코드의 출력은 다음과 같습니다.
 
-## 깊게 들어가기
-`dirent.h`라는 헤더 파일에는 디렉토리를 다루기 위한 다양한 함수들이 선언되어 있습니다. 위에서 사용한 `opendir()` 함수 외에도 `readdir()` 함수를 사용하여 디렉토리 내의 파일과 디렉토리 목록을 얻을 수 있습니다. 또한 `closedir()` 함수를 사용하여 디렉토리를 닫을 수 있습니다.
+```
+디렉토리가 존재합니다.
+```
 
-디렉토리가 존재하는지 확인하는 것은 절대적으로 필요한 작업은 아닙니다. 그러나 파일을 다룰 때 디렉토리가 존재하는지 먼저 확인하면 실행 중 오류가 발생할 가능성이 줄어듭니다.
+## 깊게 파헤치기
+위의 예시에서 사용한 `opendir()` 함수는 `<dirent.h>` 라이브러리에서 제공합니다. 이 함수는 디렉토리가 존재하지 않는 경우에도 에러를 반환하지 않기 때문에 조금 더 안정적으로 디렉토리를 확인할 수 있습니다. 또한 `mkdir()` 함수를 사용하여 디렉토리를 생성하거나 `stat()` 함수를 사용하여 디렉토리와 관련된 정보를 확인할 수도 있습니다.
 
-## 참고자료
-- [C언어로 배우는 리눅스 프로그래밍 3장 디렉토리 액세스](http://www.ktword.co.kr/abbr_view.php?m_temp1=4582)
-- [C programming language - Dirent.h header](https://www.programiz.com/c-programming/library-function/dirent.h)
-- [How to check if a folder exists in C?](https://stackoverflow.com/questions/7430248/how-to-check-if-a-folder-exists-in-c)
+## 참고
+- [C - Directory Operations](https://www.tutorialspoint.com/cprogramming/c_directory_handling.htm)
+- [C opendir() function](https://www.programiz.com/c-programming/library-function/dirent/opendir)

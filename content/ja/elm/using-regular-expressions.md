@@ -1,6 +1,7 @@
 ---
-title:                "Elm: 正規表現の使用"
-simple_title:         "正規表現の使用"
+title:                "正規表現を利用する"
+html_title:           "Elm: 正規表現を利用する"
+simple_title:         "正規表現を利用する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -9,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ正規表現を使うのか
 
-正規表現を使用するのは、テキストの検索や置換を行うために非常に便利です。また、特定のパターンを持つ文字列を検出する場合や、バリデーションを行う場合にも役立ちます。
+正規表現を使うと、文字列のパターンを簡単にマッチングしたり置換したりすることができます。例えば、特定の文字列を含むすべての文章を検索したり、メールアドレスの形式が正しいかどうかを確認したりするのに便利です。
 
 ## 使い方
 
 ```elm
-import Regex exposing (..)
+-- 文字列のマッチング
+Regex.contains (Regex.regex "Hello") "Hello, world!" -- True
 
--- 文字列の検索
-Regex.contains (regex "elm") "I love Elm!" -- True
+-- パターンを使った文字列の置換
+Regex.replace (Regex.regex "[a-zA-Z]") (\_ -> "x") "Hello, world!" -- "xxxxx, xxxxx!"
 
--- 文字列の置換
-Regex.replace (regex "Elm") (\_ -> "JavaScript") "I love Elm!" -- "I love JavaScript!"
-
--- 文字列の分割
-Regex.split (regex "[, ;]") "apple, banana; orange" -- ["apple","banana","orange"]
+-- パターンを使ったグループ化と抽出
+Regex.find (Regex.regex "([0-9]+)月([0-9]+)日") "今日は12月25日です。" -- Just ["12月25日","12","25"]
 ```
 
-## 深堀り
+## ディープダイブ
 
-正規表現を使用する際に覚えておくべきポイントはいくつかあります。まず、文字クラスを使用することで、文字列の範囲を指定することができます。例えば、[a-z]と指定することで、小文字のアルファベットを表すことができます。また、正規表現内で使用される特殊な文字を文字として扱いたい場合は、バックスラッシュを使用することでエスケープすることができます。
+正規表現は強力なツールですが、パターンを正しく記述することが重要です。間違ったパターンを使うと、意図しない結果になることがあります。また、正規表現を使うときには、パフォーマンスのことを考える必要もあります。
 
-## 参考
+## 関連情報
 
-- [Elm公式ドキュメント](https://guide.elm-lang.jp/)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-- [regexパッケージのドキュメント](https://package.elm-lang.org/packages/elm/regex/latest/)
+* [Elmの正規表現ドキュメント](https://package.elm-lang.org/packages/elm/regex/latest/)
+* [正規表現の基礎 (W3C)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+* [正規表現の威力 (Qiita)](https://qiita.com/jesus_isao/items/e2dc1b0842148b3f00a7)

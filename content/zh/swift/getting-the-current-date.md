@@ -1,5 +1,6 @@
 ---
-title:                "Swift: 获取当前日期"
+title:                "获取当前日期"
+html_title:           "Swift: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,50 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编写Swift程序时，经常会需要获取当前日期。这对于许多应用和功能都非常重要，例如日历、倒计时、提醒事项等等。因此，了解如何在Swift中获取当前日期是十分有用的。
+获取当前日期是编写各种类型的应用程序或网站时必不可少的组成部分。它可以显示用户最新的活动记录，创建排行榜或计算过去的时间差等。
 
 ## 如何
 
-首先，我们需要使用Swift内置的Date类来获取当前日期。下面是一个简单的示例代码：
+### 使用Date(日期)类
 
-```Swift
-let currentDate = Date()
-print(currentDate)
-```
-
-运行这段代码，你将会得到如下的输出：
+要获取当前日期，我们可以使用Swift内置的Date(日期)类。这个类可以表示一个日期和时间的值，并可以与其他日期和时间值一起进行比较和操作。
 
 ```
-2019-09-01 12:00:00 +0000
+// 导入Date(日期)类
+import Foundation
+
+// 创建一个名为now的Date(日期)对象
+let now = Date()
+
+// 打印当前日期和时间
+print(now)
+
+// 输出示例：2021-09-01 16:00:00 +0000
 ```
 
-通过使用Date类，我们可以获取当前日期和时间的信息。不过通常情况下，我们只需要日期，不需要时间。因此，我们可以使用Swift中的Calendar类来实现这一点。下面是一个具体的例子：
+### 格式化输出
 
-```Swift
-let currentDate = Date()
-let calendar = Calendar.current
-let dateComponents = calendar.dateComponents([.year, .month, .day], from: currentDate)
-print(dateComponents)
-```
-
-运行上述代码，你将会得到以下输出：
+有时，我们需要以特定的格式显示日期。这时，我们可以使用Swift的DateFormatter(日期格式化)类来帮助我们格式化输出。
 
 ```
-year: 2019
-month: 9
-day: 1
+// 创建一个NSDate对象
+let date = NSDate()
+
+// 创建一个名为dateFormatter的DateFormatter(日期格式化)对象
+let dateFormatter = DateFormatter()
+
+// 设置输出格式
+dateFormatter.dateFormat = "yyyy.MM.dd"
+
+// 使用DateFormatter(日期格式化)对象来格式化输出
+let output = dateFormatter.string(from: date as Date)
+
+// 打印格式化后的输出
+print(output)
+
+// 输出示例：2021.09.01
 ```
 
-通过使用Calendar类和dateComponents方法，我们可以只获取当前日期的年、月、日信息。
+## 深入探讨
 
-## 深入学习
+获取当前日期可能看起来简单，但在背后，Swift做了很多工作来获取准确的当前日期。它会考虑到时区、夏令时和其他因素来确保返回最准确的日期和时间值。
 
-如果你想更深入地了解如何在Swift中获取当前日期，可以学习一下Date和Calendar类的更多属性和方法。例如，你可以使用DateFormatter类来自定义日期的格式，如将日期输出为"yyyy-MM-dd"的形式。此外，你还可以使用Date和Calendar类来进行日期之间的计算，如计算两个日期之间的天数差。
+## 参考链接
 
-## 参考资料
+- [Swift官方文档 - Date(日期)类](https://developer.apple.com/documentation/foundation/date)
+- [Swift官方文档 - DateFormatter(日期格式化)类](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift编程语言 - 日期和时间](https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html)
 
-- [Swift官方文档](https://developer.apple.com/documentation/swift)
-- [Swift之旅](https://www.cnswift.org/)
-- [使用Date来计算日期之间的差值](https://www.hackingwithswift.com/example-code/system/how-to-calculate-the-difference-between-two-dates)
-
-## 相关阅读
+## 参见

@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Juntando strings"
+html_title:           "Kotlin: Juntando strings"
+simple_title:         "Juntando strings"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,54 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Você já se perguntou como funciona a junção de duas ou mais strings em um programa? A concatenação de strings é uma operação essencial em muitos programas, permitindo que você una várias partes de texto para formar uma única string. Neste artigo, vamos explorar como realizar essa operação em Kotlin e por que ela é importante em suas criações de software.
+Concatenar strings é uma técnica muito útil e comum na programação Kotlin. Ao unir diferentes strings, é possível criar mensagens personalizadas, gerar relatórios e formatar dados para exibição. Além disso, é uma habilidade importante para quem deseja se tornar um programador Kotlin completo.
 
-## Como Fazer
+## Como fazer
 
-Em Kotlin, a concatenação de strings é feita usando o operador "+". Vejamos um exemplo simples:
+Para concatenar strings em Kotlin, podemos utilizar o operador "+". Veja o exemplo abaixo:
 
 ```Kotlin
 val nome = "João"
 val sobrenome = "Silva"
 val nomeCompleto = nome + sobrenome
 println(nomeCompleto)
-
-// Output: João Silva
 ```
 
-No exemplo acima, criamos três variáveis: "nome", "sobrenome" e "nomeCompleto". A variável "nomeCompleto" é a junção das duas primeiras variáveis usando o operador "+". A seguir, usamos a função "println()" para imprimir o valor dessa variável, e o resultado é "João Silva".
+A saída desse código será "JoãoSilva". No entanto, se desejamos adicionar um espaço entre o primeiro e sobrenome, podemos utilizar o método "plus()" ao invés do operador "+":
 
-Também é possível fazer a concatenação de strings com variáveis de outros tipos de dado, como números. Porém, nesse caso, é necessário converter os valores para string antes de realizar a operação. Vejamos um exemplo:
+```Kotlin
+val nomeCompleto = nome.plus(" ").plus(sobrenome)
+```
+
+Dessa forma, a saída será "João Silva". Além disso, podemos utilizar o operador "+=" para adicionar um valor à própria variável em vez de criar uma nova. Veja o exemplo:
+
+```Kotlin
+var nome = "Maria"
+nome += " Souza"
+println(nome)
+```
+
+A saída será "Maria Souza". Outra forma interessante de concatenar strings é utilizando interpolação, que permite adicionar valores de variáveis diretamente em uma string. Veja o exemplo:
 
 ```Kotlin
 val idade = 25
-val mensagem = "Eu tenho " + idade.toString() + " anos"
-println(mensagem)
-
-// Output: Eu tenho 25 anos
+println("Eu tenho $idade anos.")
 ```
 
-## Mergulho Profundo
-
-A concatenação de strings pode ser uma tarefa simples, mas é importante entender como ela funciona em nível mais profundo. Quando usamos o operador "+", o Kotlin cria um novo objeto da classe "String" contendo os valores das duas variáveis. Isso significa que a concatenação de strings pode levar a um aumento no uso de memória, principalmente quando usada repetidamente em um loop.
-
-Uma maneira de otimizar esse processo é usar a classe "StringBuilder". Essa classe possui um método "append()" que permite adicionar strings sem precisar criar um novo objeto a cada operação. Vejamos o mesmo exemplo anterior, mas agora utilizando o StringBuilder:
+A saída será "Eu tenho 25 anos." Além disso, podemos utilizar o caractere especial "$" para adicionar expressões ou cálculos dentro da string, como no exemplo abaixo:
 
 ```Kotlin
-val nome = "João"
-val sobrenome = "Silva"
-val nomeCompleto = StringBuilder(nome).append(sobrenome).toString()
-println(nomeCompleto)
-
-// Output: João Silva
+val preco = 5
+println("O valor total é ${preco * 3} reais.")
 ```
 
-Dessa forma, evitamos a criação de objetos desnecessários e melhoramos o desempenho da concatenação de strings.
+A saída será "O valor total é 15 reais."
 
-Agora que você entende como fazer a concatenação de strings em Kotlin e sabe um pouco mais sobre o funcionamento dessa operação, pode usar esse recurso em seus projetos de forma mais eficiente.
+## Aprofundando
 
-## Veja Também
+Existem algumas coisas importantes a serem consideradas ao concatenar strings em Kotlin. Primeiramente, é importante saber que strings são imutáveis, ou seja, não podem ser modificadas diretamente. Quando utilizamos o operador "+", na verdade estamos criando uma nova string. Por isso, é importante utilizar o método "plus()" ou o operador "+=" quando desejamos adicionar valores à própria variável.
 
-- [Documentação oficial do Kotlin sobre a concatenação de strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Exemplos de concatenação de strings em Kotlin](https://www.programiz.com/kotlin-programming/concatenate-string)
-- [Mais informações sobre a classe StringBuilder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+Além disso, é importante ter em mente que a concatenação de strings em loops ou em grandes quantidades pode impactar a performance do código, já que está sendo criada uma nova string a cada iteração. Nesse caso, é recomendado utilizar a classe StringBuilder, que permite modificar a string diretamente sem a necessidade de criar uma nova a cada vez.
+
+## Veja também
+
+- Documentação oficial sobre strings em Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
+- Artigo sobre concatenação de strings em Kotlin: https://blog.kotlin-academy.com/string-concatenation-in-kotlin-1d870093ed5a
+- Vídeo tutorial sobre manipulação de strings em Kotlin: https://www.youtube.com/watch?v=_nMcfNWSeTM

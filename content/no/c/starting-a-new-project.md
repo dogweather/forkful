@@ -1,5 +1,6 @@
 ---
-title:                "C: Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C"
 category:             "C"
@@ -10,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å starte et nytt programmeringsprosjekt kan virke skremmende, men det kan også være utrolig givende. Å designe og utvikle noe fra bunnen av gir deg en mulighet til å utforske nye ideer og utvide dine programmeringsferdigheter.
 
-Å starte et nytt programmeringsprosjekt kan virke skremmende, men det er også en spennende og givende opplevelse. Gjennom å skape noe fra bunnen av, kan du utvikle dine programmeringsferdigheter og løse utfordringer på en kreativ måte. Ikke nøl med å starte et nytt prosjekt - du vil lære mye underveis!
+## Hvordan
+Så du har bestemt deg for å starte et nytt C-prosjekt, men hvor skal du begynne?
 
-## Slik gjør du det
+Først må du sørge for at du har en pålitelig C-kompilator installert på datamaskinen din. Deretter kan du følge disse enkle trinnene:
 
-Først og fremst må du ha en ide for ditt prosjekt. Dette kan være alt fra å utvikle et spill til å lage et program som automatiserer daglige oppgaver. Deretter må du velge et programmeringsspråk som passer for ditt prosjekt, og laste ned et egnet utviklingsmiljø. La oss se på et enkelt eksempel på hvordan du kan skrive et program i C som skriver ut "Hei verden!" til konsollen:
+1. Åpne en tekstbehandler og start et nytt dokument.
+2. Skriv inn "```C" for å starte en ny kodeblokk.
+3. Skriv deretter inn koden din mellom "```C" og "```" for å indikere at det er C-kode.
+4. Når du er ferdig, lagre filen din med ".c" utvidelse.
+5. Åpne terminalen og naviger til mappen der du lagret filen din.
+6. Skriv inn "gcc filnavn.c" for å kompilere koden din.
+7. Endelig kan du kjøre programmet ditt ved å skrive inn "./a.out" i terminalen.
+
+Her er et enkelt eksempel på et "Hello World" program i C:
 
 ```C
 #include <stdio.h>
 
-int main() {
+int main()
+{
     printf("Hei verden!");
     return 0;
 }
 ```
-Dette programmet vil skrive ut teksten "Hei verden!" når det kjøres. Merk at vi bruker printf-funksjonen fra standardbiblioteket <stdio.h> for å skrive ut teksten på konsollen. Dette er bare et enkelt eksempel, men det viser hvordan du kan skrive og kjøre et grunnleggende program i C.
 
-## Dypdykk
+Når du har kompilert og kjørt koden din, bør du se "Hei verden!" utskrevet i terminalen din.
 
-Når du starter et nytt prosjekt, er det viktig å ha en god struktur og organisasjon. Dette vil gjøre det enklere for deg å utvide og vedlikeholde koden senere. Det er også viktig å bruke kommentarer gjennom koden for å forklare hva hver del gjør, slik at det blir enklere å forstå for deg selv og eventuelle andre som skal jobbe med prosjektet i fremtiden.
+## Dykk ned
+Nå som du har fått en enkel forståelse av hvordan du starter et C-prosjekt, kan du lære mer ved å dykke dypere ned i språket. Utforsk forskjellige konsepter som variabler, løkker, funksjoner og betingede uttrykk. Lær hvordan du bruker disse til å lage mer komplekse programmer.
 
-Videre er det viktig å teste koden din jevnlig for å sikre at den fungerer som den skal. Dette kan spare deg for mye tid og frustrasjon senere. Det er også en god idé å bruke versjonskontroll som for eksempel Git, slik at du kan holde oversikt over endringer og enkelt gå tilbake til tidligere versjoner om nødvendig.
-
-En annen viktig del av å starte et nytt prosjekt er å lære nye konsepter og teknikker. Dette kan være gjennom å lese dokumentasjon, følge tutorials eller delta på hackathons og kodekonkurranser. Ikke vær redd for å utforske og prøve nye ting - det er slik du utvikler deg som programmerer!
+Det finnes mange ressurser der ute for å hjelpe deg med å lære C, inkludert online tutorials, bøker og fellesskap av andre programmere. Ikke vær redd for å prøve og feile, det er gjennom feil at vi lærer.
 
 ## Se også
-
-- [Hvordan velge riktig programmeringsspråk til ditt prosjekt](https://www.dagensit.no/2019/04/12/hvordan-velge-riktig-programmeringsspraak-til-ditt-prosjekt/)
-- [7 tips for å kickstarte et nytt programmeringsprosjekt](https://www.modernprogrammering.no/7-tips-for-a-kickstart-fet-nytt-programmeringprosjekt/)
-- [Git Tutorial for nybegynnere](https://www.git-tutorial.no/)
+- [C Tutorial på W3Schools](https://www.w3schools.in/c-tutorial/)
+- [The C Programming Language av Brian Kernighan og Dennis Ritchie](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
+- [C programming subreddit](https://www.reddit.com/r/c_programming/)

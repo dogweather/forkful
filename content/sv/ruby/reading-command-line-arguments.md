@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Läsning av kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Ruby: Läsning av kommandoradsargument"
 simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Varför
+Rubeshestayelsenues läser kommandoradsargument kan vara en hjälpsam färdighet att ha vid utveckling av Ruby-program. Det tillåter programmet att interagera med användaren genom att acceptera input från terminalen och utföra önskade åtgärder. 
 
-Kommandoradsargument är en viktig aspekt av programmering som kan hjälpa dig att skräddarsy och kontrollera ditt program utan att ständigt behöva ändra koden. Genom att läsa på om kommandoradsargument kan du göra dina program mer dynamiska och anpassningsbara.
+## Så här gör du
+Att läsa kommandoradsargument i Ruby är en relativt enkel process. Det första steget är att definiera variabler som kommer att hålla argumenten som programmet tar emot. Detta kan göras genom att använda ARGV-variabeln, vilket ger en array av argument som skickas från terminalen till programmet.
 
-## Hur man gör
+```Ruby
+arguments = ARGV
+```
 
-För att läsa kommandoradsargument i ett Ruby-program, börjar du med att skriva in "ARGV" i din kod. Detta är en array som innehåller argumenten som skickas till ditt program från kommandoraden. Du kan sedan iterera genom arrayen eller använda specifika index för att hämta specifika argument.
+Efter att ha definierat variabeln kan vi sedan använda ruby-metoden `each` för att iterera genom argumenten och utföra önskade åtgärder.
 
-``` ruby
-ARGV.each do |arg|
-  puts "Argument: #{arg}"
+```Ruby
+arguments.each do |arg|
+  # utför önskad åtgärd med varje argument
 end
 ```
 
-Om du till exempel kör ditt program med kommandot "ruby program.rb hello world", kommer output att bli:
+Om programmet förväntar sig en viss typ av argument, till exempel en sträng eller ett heltal, kan vi använda `to_s` eller `to_i` för att omvandla argumentet till rätt typ innan vi utför åtgärden.
 
+```Ruby
+arguments.each do |arg|
+  num = arg.to_i
+  # utför önskad åtgärd som kräver ett heltal
+end
 ```
-Argument: hello
-Argument: world
-```
 
-Du kan också använda index för att hämta specifika argument. Om du vill hämta det andra argumentet (i det här fallet "world") kan du använda ARGV[1].
+Om användaren inte skickar med några argument i terminalen kommer ARGV-variabeln att vara en tom array. Detta kan utnyttjas för att kontrollera om användaren har gett nödvändig input.
 
-``` ruby
-puts "Andra argumentet: #{ARGV[1]}"
+```Ruby
+if arguments.empty?
+  puts "Inga argument skickades med."
+else
+  arguments.each do |arg|
+    # utför önskad åtgärd
+  end
+end
 ```
 
 ## Djupdykning
+När vi läser kommandoradsargument i Ruby är det viktigt att känna till hur argumenten är strukturerade. Argumenten delas upp vid mellanslag och sparas sedan som strängar. Om ett argument innehåller mellanslag måste det omges av citat-tecken för att behålla sin integritet som ett enda argument.
 
-Det finns många olika sätt att använda och hantera kommandoradsargument i Ruby. Du kan till exempel använda flaggor för att lägga till specifika funktioner till ditt program eller använda gem för att underlätta läsning och hantering av argumenten.
+En annan användbar metod för att hantera kommandoradsargument är `getoptlong`. Denna metod möjliggör för användaren att skicka med flaggor och värden som sedan kan läsas genom att använda methodName- och optName-variabler.
 
-Det är också viktigt att notera att ARGV inte bara kan användas för att läsa kommandoradsargument från en terminal. Det kan också läsas från andra filer eller inputströmmar. Det är en kraftfull och allsidig funktion i Ruby-programmering.
+```Ruby
+require 'getoptlong'
 
-## Se även
+opts = GetoptLong.new(
+  ["--input", "-i", GetoptLong::OPTIONAL_ARGUMENT],
+  ["--output", "-o", GetoptLong::OPTIONAL_ARGUMENT]
+)
 
-- [Ruby Dokumentation: Kommandoradsargument](https://ruby-doc.org/docs/ProgrammingRuby/html/tut_stdtutorial.html)
-- [Ruby CLI Gem](https://github.com/cldwalker/hirb-unicode)
-- [Användning av ARGV i Ruby-program](https://dev.to/iriskosari/argv-in-ruby-20j7)
+optName = ""
+methodName = ""
+
+opts.each do |option, arg|
+  case option
+  when "--input"
+    optName = "input"
+    methodName = "input_method"
+  when "--output"
+    optName = "output"
+    methodName = "output_method"
+  end
+end
+
+puts "Värdet för #{optName} är #{methodName}."
+```
+
+Det finns också många andra användbara metoder som kan användas för att hantera kommandoradsargument, som exempelvis `OptionParser` och `ARGV.shift`. Det är en bra idé att undersöka alla tillgängliga alternativ och välja den metod som passar bäst för det specifika projektet.
+
+## Se också
+* [Ruby ARGV](https://ruby-doc.org/core-2.7.0/ARGV.html)
+* [Ruby getoptlong](https://ruby-doc.org/stdlib-2.7.0/libdoc/getoptlong/rdoc/GetoptLong.html)
+* [Ruby OptionParser](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html)
+* [Ruby ARGV.shift](https://ruby-doc.org/core-2.7.0/ARGF.html#method-c-shift)

@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "TypeScript: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -9,23 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardi virheen lähteenä?
+## Miksi
 
-Kirjoittaminen standardi virheen lähteenä on tärkeää ohjelmoijille, jotka haluavat parantaa ohjelmansa virheenhallintaa. Se mahdollistaa ohjelman suorittamisen aikana ilmenevien virheiden jäljittämisen ja korjaamisen. Ilman tätä toimintoa, olisi vaikeaa löytää ja korjata kyseisiä virheitä, mikä johtaisi ohjelman laadun huononemiseen.
+Kirjoittaminen standardivirheelle on tärkeä taito jokaiselle TypeScript-ohjelmoijalle. Se mahdollistaa virheiden tunnistamisen ja korjaamisen ohjelmoinnin aikana, mikä voi säästää paljon aikaa ja vaivaa virheiden etsimiseltä jälkikäteen.
 
-## Miten kirjoittaa standardi virheen lähteenä?
+## Mitä ja Miten
+
+Kirjoittaminen standardivirheelle tapahtuu käyttämällä `console.error()` -funktiota, joka ottaa parametrinaan virheilmoituksen tai muun halutun tekstin. Tämä funktio tulostaa tekstin konsolille punaisella värillä, mikä helpottaa sen erottamista muusta koodista.
 
 ```TypeScript
-console.error("Tämä on virheilmoitus standardi virheen lähteestä")
+console.error("Tämä on virheilmoitus.");
 ```
 
-Tämä yksinkertainen koodiesimerkki näyttää, miten kirjoitat standardi virheen lähteenä TypeScript-ohjelmassa. Kun ohjelma suoritetaan, virheen ilmoitus näkyy terminaalissa, joka auttaa ohjelmoijaa paikantamaan virheen ja korjaamaan sen.
+Tämän esimerkin tulostus näyttäisi tältä:
 
-## Syväsukellus standardi virheen lähteeseen
+```
+Tämä on virheilmoitus.
+```
 
-Kirjoittaminen standardi virheen lähteenä käyttäen console.error()-funktiota on erittäin hyödyllistä virheenhallinnassa. Tämä toiminto tulostaa virheen viestin ja lisää sen virhelokiksi, joka helpottaa virheen jäljittämistä myöhemmin. Tämän lisäksi voidaan myös lisätä virheen tiettyjä tietoja, kuten aikaleima tai virhekoodi, jotta virheen syy voidaan selvittää nopeammin.
+Voit myös käyttää muuttujia ja string templating -ominaisuutta lisätäksesi tarkempaa tietoa virheestä. Esimerkiksi:
+
+```TypeScript
+const virheKoodi = 404;
+console.error(`Sivua ei löytynyt. Virhe: ${virheKoodi}`);
+```
+
+Tämän tulostus näyttäisi tältä:
+
+```
+Sivua ei löytynyt. Virhe: 404
+```
+
+## Syvempi Sukellus
+
+Kirjoittaminen standardivirheelle on erityisen hyödyllistä silloin, kun haluat tarkkailla tiettyjä osia koodistasi tai saada lisätietoa tapahtuneesta virheestä. Voit myös käyttää `console.trace()` -funktiota, joka tulostaa koko koodin suoritusjonon, mikä auttaa hahmottamaan, missä kohtaa virhe on tapahtunut.
+
+Toinen hyödyllinen tapa käyttää `console.error()` on luoda omia virheilmoituksia ja kustomoituja virhekoodit, jotka auttavat tunnistamaan tietyn tyyppisiä virheitä ohjelmassa. Esimerkiksi:
+
+```TypeScript
+const virheKoodit = {
+  404: "Sivua ei löytynyt.",
+  500: "Palvelinvirhe."
+}
+
+console.error(virheKoodit[404]);
+```
+
+Tämän tulostus näyttäisi tältä:
+
+```
+Sivua ei löytynyt.
+```
 
 ## Katso myös
 
-- [Console API TypeScriptissä] (https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#console-assert)
-- [Debuggauksen perusteet TypeScript:ssä] (https://www.pluralsight.com/guides/getting-started-with-typescript-debugging)
+- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/home.html)
+- [Kirjoittaminen standardivirheelle MDN:ssä](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)

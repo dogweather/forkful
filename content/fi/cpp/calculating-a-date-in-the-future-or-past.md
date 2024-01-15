@@ -1,6 +1,7 @@
 ---
-title:                "C++: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Laskeminen tulevaan tai menneeseen päivämäärään"
+html_title:           "C++: Laskeminen tulevaan tai menneeseen päivämäärään"
+simple_title:         "Laskeminen tulevaan tai menneeseen päivämäärään"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -9,73 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi laskelmointi päivämäärästä on hyödyllistä
+## Miksi
 
-Laskelmointi päivämäärästä voi olla hyödyllistä esimerkiksi sovelluksissa, jotka seuraavat tulevia tapahtumia tai päivämääriä, kuten varausjärjestelmissä tai kalenteriohjelmissa. Se voi myös auttaa käyttäjiä suunnittelemaan etukäteen tulevia tapahtumia, kuten matkoja tai lomia.
+Olet varmasti joutunut tilanteeseen, jossa sinun täytyy laskea päivämäärä tulevaisuudessa tai menneisyydessä. Ehkä suunnittelet tapahtumaa tai haluat tietää tarkalleen milloin tiettyä tapahtumaa tapahtuu. C++:lla voit helposti laskea haluamasi päivämäärän tulevaisuudessa tai menneisyydessä käyttäen muutamia käteviä funktioita, jotka esittelemme tässä artikkelissa.
 
-## Kuinka laskea päivämäärä tulevaisuudessa tai menneisyydessä
+## Miten
 
-Kun haluat laskea päivämäärän tulevaisuudessa tai menneisyydessä, sinun tulee ensin määrittää lähtöpäivä ja sen jälkeen lisätä tai vähentää haluttu määrä päiviä haluttuun suuntaan. Tämä voidaan tehdä käyttämällä C++:n standardikirjaston Date and Time -luokkia.
+Laskettaessa päivämäärää tulevaisuudessa tai menneisyydessä, on tärkeää ymmärtää, miten päivämäärä tallennetaan tietokoneelle. C++:ssa päivämäärä tallennetaan yleensä kokonaislukuna, jossa käytetään tiettyä formaattia. Tämän kokonaisluvun avulla voimme käyttää erilaisia funktioita, jotka auttavat meitä laskemaan haluamamme päivämäärän.
 
-```
-#include <iostream>
-#include <chrono>
-#include <iomanip>
+Esimerkiksi voimme käyttää `time.h` kirjastoa ja sen `time_t` tietotyyppiä laskeaksemme tämän päivän päivämäärän sekunteina tammikuun 1. 1970:stä lähtien. Tämän jälkeen voimme lisätä tai vähentää haluamamme määrän sekunteja saadaksemme tulevaisuuden tai menneisyyden päivämäärän.
 
-int main() {
+Esimerkiksi, jos haluamme laskea päivämäärän 10 päivää tulevaisuudessa, voimme käyttää seuraavaa koodia:
 
-// Määritetään lähtöpäivä (31.12.2020)
-std::chrono::system_clock::time_point departureDate = 
-    std::chrono::system_clock::from_time_t(std::time(nullptr));
-
-// Lisätään 10 päivää
-departureDate += std::chrono::hours(10 * 24);
-
-// Vaihdetaan lähtöpäivän muoto DD.MM.YYYY
-std::time_t t = std::chrono::system_clock::to_time_t(departureDate);
-std::cout << std::put_time(std::localtime(&t), "%d.%m.%Y") << std::endl;
-
-return 0;
-}
-
+```C++
+time_t t = time(NULL);
+t += (10*24*60*60); // 10 päivää * 24 tuntia * 60 minuuttia * 60 sekuntia
 ```
 
-**Tulostus:**
-10.01.2021 
+Tämän jälkeen voimme käyttää `localtime` funktiota muuntamaan `time_t` päivämääräksi ja tulostaa sen haluamassamme formaatissa. Esimerkiksi:
 
-## Syvempi sukellus päivämäärän laskemiseen
-
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä voi vaatia hieman enemmän laskutoimituksia, jos halutaan ottaa huomioon myös kuukausien ja vuosien vaihtelut. Tämä voidaan tehdä käyttämällä C++:n standardikirjaston Date and Time -luokkien lisäksi myös DateTime-tietotyyppiä.
-
-```
-#include <iostream>
-#include <chrono>
-#include <iomanip>
-
-int main() {
-
-// Määritetään lähtöpäivä (31.12.2020)
-std::chrono::system_clock::time_point departureDate = 
-    std::chrono::system_clock::from_time_t(std::time(nullptr));
-
-// Lisätään 10 kuukautta ja 10 päivää
-departureDate += std::chrono::hours(10 * 365 * 24) + std::chrono::hours(10 * 24);
-
-// Muutetaan DateTime-tietotyypiksi
-std::chrono::time_point<DateTime > dateTime = departureDate;
-
-// Vaihdetaan lähtöpäivän muoto DD.MM.YYYY
-std::cout << std::put_time(std::localtime(&dateTime), "%d.%m.%Y") << std::endl;
-
-return 0;
-}
-
+```C++
+struct tm *p = localtime(&t);
+cout << "Päivämäärä 10 päivän päästä: " << p->tm_mday << "." << p->tm_mon + 1 << "." << p->tm_year + 1900 << endl;
 ```
 
-**Tulostus:**
-11.11.2021
+Tämä tulostaisi esimerkiksi "Päivämäärä 10 päivän päästä: 19.8.2020" (olettaen, että tämän artikkelin kirjoitushetkellä on elokuu 2020).
 
-## Katso myös
+## Syventyvä tieto
 
-- [C++ Date and Time -luokat](https://en.cppreference.com/w/cpp/chrono)
-- [DateTime-tietotyyppi](https://en.cppreference.com/w/cpp/chrono/time_point)
+Kuten edellä mainittiin, päivämäärän tallennuksessa tietokoneelle käytetään yleensä tiettyä formaattia. Tämän formaatin ymmärtäminen auttaa välttämään virheitä laskiessa päivämäärää tulevaisuudessa tai menneisyydessä.
+
+Yleisin päivämäärän tallennusformaatti on POSIX-aikaleima, joka esittää päivämäärän sekunteina tammikuun 1. 1970:stä lähtien. Tämä formaatti on kätevä, sillä se tekee päivämäärän laskemisesta helpompaa. Tiettyjen muotoilujen tulostamiseksi voidaan käyttää `strftime` funktiota.
+
+On myös huomattava, että erilaisissa aikavyöhykkeissä käytetään erilaisia päivämäärän alkuarvoja. Esimerkiksi Yhdysvalloissa käytetään tammikuun 1. 1601 päivämääränä, kun taas Japanissa käytetään tammikuun 1.

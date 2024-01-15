@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Descargando una página web."
+title:                "Descargando una página web."
+html_title:           "Fish Shell: Descargando una página web."
 simple_title:         "Descargando una página web."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,37 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué descargar una página web?
+## ¿Por qué usar Fish Shell?
 
-Descargar una página web puede ser útil para guardar una copia local de un sitio o para realizar análisis de datos. También puede ser útil para acceder a una página específica que está fuera de línea o para tener acceso a información durante una pérdida de conexión a Internet.
+Fish Shell es una herramienta de línea de comandos que se basa en el Shell Bash, pero con una sintaxis más sencilla e intuitiva. Esto la hace ideal para programadores que desean una experiencia de codificación más fluida y eficiente.
 
-## Cómo hacerlo
+## Cómo usar Fish Shell para descargar una página web
 
-Para descargar una página web en Fish Shell, podemos utilizar el comando `curl`. Este comando nos permite especificar la URL que queremos descargar y dónde queremos guardar el archivo.
+Para descargar una página web utilizando Fish Shell, puedes seguir estos pasos:
 
+1. Abre Fish Shell en tu terminal.
+2. Utiliza el comando `curl` seguido de la URL de la página web que deseas descargar. Por ejemplo:
 ```Fish Shell
-curl -o destino.html https://www.ejemplo.com
+curl https://www.example.com
 ```
+3. Este comando descargará la página web y mostrará el código HTML en tu terminal como resultado.
 
-Este comando guardará el archivo en un archivo llamado "destino.html" en el directorio actual. Si queremos guardar el archivo en un directorio específico, podemos especificar la ruta completa en lugar de solo el nombre del archivo.
+## Inmersión Profunda
 
-También podemos usar `wget` para descargar una página web en Fish Shell, que funciona de manera similar a `curl`. Sin embargo, `wget` nos permite descargar páginas web recursivamente, lo que significa que también descargará todos los enlaces y recursos contenidos en la página.
+Además de simplemente descargar una página web, Fish Shell ofrece varias funciones avanzadas para manejar la salida. Por ejemplo, puedes guardar el resultado en un archivo utilizando el parámetro `-o` o seguir enlaces utilizando el parámetro `-L`.
 
-```Fish Shell
-wget -r -p destino https://www.ejemplo.com
-```
-
-Este comando descargará la página web y todos sus enlaces y recursos en un directorio llamado "destino" en el directorio actual.
-
-## Profundizando
-
-Además de especificar la URL y la ubicación del archivo, podemos utilizar otras opciones con `curl` y `wget` para personalizar nuestra descarga de la página web. Por ejemplo, podemos utilizar diferentes opciones de autenticación, descargar solo ciertos tipos de archivos o limitar la velocidad de descarga.
-
-También podemos utilizar herramientas externas como `pup` para extraer información específica de la página web descargada o `grep` para buscar ciertos patrones de texto en el archivo descargado.
+Además, Fish Shell te permite trabajar con variables, lo que significa que puedes almacenar la salida de `curl` en una variable y utilizarla en otros comandos.
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell para `curl`](https://fishshell.com/docs/current/commands.html#curl)
-- [Cómo utilizar `wget` en Fish Shell](https://www.cyberciti.biz/howto/question/linux/wget-silent-download-script-examples.php)
-- [Tutorial sobre cómo utilizar `pup` para realizar extracciones en HTML](https://github.com/EricChiang/pup)
-- [Documentación de Fish Shell para `grep`](https://fishshell.com/docs/current/commands.html#grep)
+Si quieres seguir aprendiendo sobre las funcionalidades de Fish Shell, puedes consultar estos enlaces:
+
+- [Página oficial de Fish Shell](https://fishshell.com/)
+- [Guía de comandos de Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Documentación de código de Fish Shell](https://fishshell.com/docs/current/index.html)

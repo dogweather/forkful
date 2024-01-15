@@ -1,6 +1,7 @@
 ---
-title:                "C++: Відправлення http-запиту з базовою автентифікацією."
-simple_title:         "Відправлення http-запиту з базовою автентифікацією."
+title:                "Надсилання http запиту з базовою аутентифікацією"
+html_title:           "C++: Надсилання http запиту з базовою аутентифікацією"
+simple_title:         "Надсилання http запиту з базовою аутентифікацією"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,37 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-Запит HTTP з базовою аутентифікацією є важливою технікою у веб-програмуванні, яка забезпечує безпеку обміну даними з сервером.
+
+Відправка запиту HTTP з базовою аутентифікацією є необхідною для доступу до захищених ресурсів, які вимагають авторизації. Це забезпечує безпеку передачі даних та забезпечує, що тільки визначені користувачі мають доступ до захищених ресурсів.
 
 ## Як
+
 ```C++
-// Створення об'єкта запиту
-QNetworkRequest request(url);
+// Приклад коду для відправки HTTP запиту з базовою аутентифікацією
+#include <iostream>
+#include <curl/curl.h>
 
-// Додавання заголовка з даними для аутентифікації
-QString auth = "Basic " + QByteArray(QString("%1:%2").arg(username).arg(password).toUtf8()).toBase64();
-request.setRawHeader("Authorization", auth.toUtf8());
+int main()
+{
+    // Ініціалізація CURL змінної
+    CURL *curl;
+    curl = curl_easy_init();
 
-// Виконання запиту та отримання відповіді
-QNetworkAccessManager manager;
-QNetworkReply *reply = manager.get(request);
-reply->waitForReadyRead();
-QByteArray responseData = reply->readAll();
+    // Вказівка URL
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/protected_resource");
 
-// Виведення результату
-qDebug() << responseData;
+    // Додавання заголовку для базової аутентифікації
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "Authorization: Basic <base64 encoded credentials>");
+
+    // Надіслати запит
+    CURLcode res = curl_easy_perform(curl);
+
+    // Перевірка успішності відправки та виведення результату
+    if (res == CURLE_OK)
+    {
+        std::cout << "Запит успішно відправлено";
+    }
+    else
+    {
+        std::cout << "Помилка у відправці запиту: " << curl_easy_strerror(res);
+    }
+
+    // Закриття CURL змінної
+    curl_easy_cleanup(curl);
+
+    return 0;
+}
+```
+Вивід:
+```
+Запит успішно відправлено.
 ```
 
-Приклад виходу:
-```
-<HTTP/1.1 200 OK
-<Data from server>
-```
+## Глибокий Занурення
 
-## Глибоке дослідження
-Аутентифікація - процес перевірки ідентифікаційних даних користувача для доступу до обмеженої функціональності або ресурсів. Базова аутентифікація є одним з найпростіших методів аутентифікації, який передбачає передачу користувачем свого імені користувача та пароля через HTTP заголовок Authorization. Це дозволяє серверу перевірити дійсність ідентифікаційних даних і надати доступ до потрібних ресурсів.
+HTTP базова аутентифікація використовує заголовок "Authorization", який містить ідентифікатор користувача та пароль, закодований у форматі Base64. За замовчуванням браузери видаляють авторизаційні дані з цього заголовка, тому що він не є надійним механізмом безпеки. До того ж, базова аутентифікація не зашифровує дані при передачі, тому є потенційно небезпечною для важливої інформації.
 
-## Дивіться також
-- [Документація Qt для класу QNetworkRequest](https://doc.qt.io/qt-5/qnetworkrequest.html)
-- [Поради по безпечності з аутентифікації](https://developer.mozilla.org/uk/docs/Web/Security/Authentication)
-- [Стаття про базову аутентифікацію в HTTP](https://www.httpwatch.com/http-gallery/authentication/)
+## Дивись також
+
+- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [C++ Libcurl](https://curl.se/libcurl/c/CURLOPT_HTTPHEADER.html)

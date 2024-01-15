@@ -1,6 +1,7 @@
 ---
-title:                "C: Å sjekke om en mappe eksisterer."
-simple_title:         "Å sjekke om en mappe eksisterer."
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "C: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,65 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å sjekke om en mappe eksisterer kan være nyttig for å sikre at programmet vårt kjører som forventet. Dette gjør det mulig å håndtere situasjoner der en mappe ikke er tilgjengelig, og dermed unngå feil eller krasj i programmet vårt.
+Du lurer kanskje på hvorfor det er viktig å sjekke om en mappe eksisterer i et C-program. Det er fordi det kan hjelpe deg med å sikre at programmet ditt kjører riktig og forhindrer eventuelle feil eller krasj.
 
 ## Hvordan gjøre det
 
-For å sjekke om en mappe eksisterer, kan vi bruke `opendir()` funksjonen fra `dirent.h` biblioteket i C. Dette vil åpne mappen vi ønsker å sjekke og returnere en peker til denne mappen. Om mappen ikke finnes, vil `opendir()` returnere `NULL`.
+Det første trinnet er å inkludere "dirent.h" biblioteket i programmet ditt ved å bruke "```#include <dirent.h>```" kommandoen. Dette biblioteket inneholder funksjoner som lar deg jobbe med mapper og filer.
+
+Deretter bruker du "opendir()" funksjonen for å åpne mappen du vil sjekke. Denne funksjonen tar imot navnet på mappen som en streng og returnerer en peker til denne mappen hvis den eksisterer. Hvis mappen ikke eksisterer, vil den returnere NULL.
 
 ```C
 #include <stdio.h>
 #include <dirent.h>
 
 int main() {
-    // Sjekker om mappen "test" eksisterer
-    DIR *dir = opendir("test"); 
-    if (dir == NULL) {
-        printf("Mappen finnes ikke.\n");
+    // Sjekk om mappen "test" eksisterer
+    DIR *folder = opendir("test");
+
+    // Sjekk om mappen ble åpnet
+    if (folder != NULL) {
+        printf("Mappen eksisterer!\n");
+        // Gjør andre handlinger her
     } else {
-        printf("Mappen finnes.\n");
-        closedir(dir); // Husk å lukke mappen etter at vi er ferdig med den
+        printf("Mappen eksisterer ikke!\n");
     }
+
+    // Lukk mappen
+    closedir(folder);
+
     return 0;
 }
 ```
-
-### Output:
+Eksempelutgang:
 
 ```
-Mappen finnes ikke.
+Mappen eksisterer ikke!
 ```
 
 ## Dypdykk
 
-En ting å merke seg når vi sjekker om en mappe eksisterer er at dette ikke nødvendigvis betyr at vi har tilgang til den. For å sjekke om vi har tilgang til en mappe, kan vi bruke `access()` funksjonen fra `unistd.h` biblioteket. Denne funksjonen tar inn et filnavn og en liste av tillatelser vi ønsker å sjekke for, og returnerer 0 om vi har tilgang til mappen og -1 om vi ikke har det.
+"opendir()" funksjonen er en del av POSIX-standardene, noe som betyr at den vil fungere på de fleste Unix-like systemer, som Linux og Mac OS. Denne funksjonen tar også imot en absolutt eller relativ filsti som argument, så du kan sjekke mapper uavhengig av hvor programmet ditt er plassert.
 
-```C
-#include <stdio.h>
-#include <unistd.h>
-
-int main() {
-    // Sjekker om vi har skriverettigheter til mappen "test"
-    if (access("test", W_OK) == 0) {
-        printf("Vi har skriverettigheter til mappen.\n");
-    } else {
-        printf("Vi har ikke skriverettigheter til mappen.\n");
-    }
-    return 0;
-}
-```
-
-### Output:
-
-```
-Vi har skriverettigheter til mappen.
-```
-
-Vi kan også gå et steg videre og sjekke om en fil eksisterer innenfor en mappe ved å kombinere `opendir()` og `access()` funksjonene. Dette kan være nyttig når vi ønsker å sjekke om en konfigurasjonsfil eller en databasefil eksisterer før vi prøver å åpne den.
-
-For å lære mer om andre måter å håndtere mapper og filer i C, anbefales det å lese dokumentasjonen for `dirent.h` og `unistd.h` bibliotekene.
+En annen nyttig funksjon er "stat()" som lar deg hente informasjon om en fil eller mappe. Du kan da bruke denne informasjonen til å bekrefte at en angitt fil eller mappe faktisk eksisterer. For mer informasjon om denne funksjonen, kan du lese dokumentasjonen her: [https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html)
 
 ## Se også
 
-- [dirent.h dokumentasjon](https://www.ibm.com/docs/en/ad/v12r1?topic=functions-direnth)
-- [unistd.h dokumentasjon](https://www.gnu.org/software/libc/manual/html_node/Searching-Directory-Tree.html)
+- [https://www.tutorialspoint.com/c_standard_library/index.htm](https://www.tutorialspoint.com/c_standard_library/index.htm)
+- [https://www.programiz.com/c-programming/c-dirent-h](https://www.programiz.com/c-programming/c-dirent-h)
+- [https://www.ibm.com/docs/en/aix/7.1?topic=g-makedev-testing-pathname-existing](https://www.ibm.com/docs/en/aix/7.1?topic=g-makedev-testing-pathname-existing)

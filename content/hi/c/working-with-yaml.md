@@ -1,5 +1,6 @@
 ---
-title:                "C: यामल के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C: यामल के साथ काम करना"
 simple_title:         "यामल के साथ काम करना"
 programming_language: "C"
 category:             "C"
@@ -9,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-यम्ल क्या है और क्यों आपको इसमें काम करना चाहिए?
+## Kyon
+YAML ek bahut prachalit file format hai jise data ko store aur transmit karne ke liye istemal kiya jata hai. YAML samajhne aur likhne mein bahut asaan hai, isliye bahut se developers iska istemal karte hain.
 
-यम्ल (YAML) एक पाठ के डेटा फॉर्मेट है जो पेशेवरों के लिए एक बहुत ही उपयोगी और अव्यवस्थित स्ट्रक्चर है। इसका उपयोग डेटा को संग्रहीत करने, पार्सिंग करने और समायोजित करने के लिए किया जाता है। यम्ल में डेटा को प्रस्तुत करने का नियंत्रण आसान होता है और इसे हमेशा मानचित्रों और टेबल में प्रस्तुत करना सरल होता है। यम्ल फाइल्स को बनाना और संपादित करना भी बहुत आसान होता है। इसलिए, यम्ल को समझने और सी प्रोग्रामिंग में उसका उपयोग करने के लिए बहुत ही लाभदायक हो सकता है।
+## Kaise Kare
+Agar aap C programming language mein YAML ka istemal karna chahte hain, toh aapko ek library install karni hogi jise YAML parser kehte hain. Iss library ko istemal karke aap ek YAML file read aur write kar sakte hain.
 
-कैसे करें: यम्ल के साथ कैसे काम करें?
+Ek basic YAML file kuch iss tarah dikhta hai:
+
+```C
+names:
+  - John
+  - Jane
+  - Bob
+
+ages:
+  John: 25
+  Jane: 30
+  Bob: 35
+```
+
+Iss file mein `names` aur `ages` dono keys hain jinki values lists aur dictionaries hain. Iss tarah ke structured data ko YAML mein store karke access karna bahut asaan hai.
+
+YAML parser library ka istemal karne ke liye, aapko sabse pehle isse include karna hoga:
 
 ```C
 #include <yaml.h>
-
-int main() {
-
-  // एक नया यम्ल डॉक्यूमेंट बनाएं
-  yaml_document_t document;
-  yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0);
-
-  // नया स्केलर नोड संयोजित करें
-  yaml_node_t *node = yaml_document_add_scalar(&document, NULL, (yaml_char_t *)"नमस्ते दुनिया", 10, YAML_PLAIN_SCALAR_STYLE);
-
-  // यम्ल डॉक्यूमेंट को फाइल में लिखें
-  FILE *outfile = fopen("hello_world.yaml", "w");
-  yaml_document_dump(outfile, &document);
-
-  // यम्ल डॉक्यूमेंट को मुक्त करें
-  yaml_document_delete(&document);
-  fclose(outfile);
-
-  return 0;
-}
 ```
 
-यहां आप एक नए यम्ल डॉक्यूमेंट को कैसे बनाएंगे, स्केलर नोड को कैसे संयोजित करेंगे और फाइल में उन्हें लिखेंगे। यहां हमने "नमस्ते दुनिया" शब्द को स्केलर नोड के माध्यम से जोड़ा है। आप इसी तरह से अन्य डेटा टाइप्स भी जोड़ सकते ह
+Iss ke baad, aapko `yaml_parser_t` aur `yaml_document_t` structures ko initialize karna hoga. Phir aapko `yaml_parser_initialize()` aur `yaml_parser_load()` functions ka istemal karke YAML file ko parse karna hoga. Iss process ke baad, aap YAML file ke saare data ko access kar sakte hain.
+
+## Deep Dive
+Agar aap YAML file ko padh karke usme se specific data ko extract karna chahte hain, toh aap `yaml_mapping_t` aur `yaml_scalar_t` structures ka istemal kar sakte hain. `yaml_mapping_t` structure se aap keys aur values ko access kar sakte hain, jabki `yaml_scalar_t` structure se aap particular values ko access kar sakte hain.
+
+Iss tarah se aap C programming language mein YAML ka istemal kar sakte hain aur apne code ko organized aur readable bana sakte hain.
+
+## Dekhein Bhi
+- [YAML Official Website](https://yaml.org/)
+- [YAML Parser Library for C](https://pyyaml.org/wiki/LibYAML)
+- [YAML Tutorials for Beginners](https://www.tutorialspoint.com/yaml/)

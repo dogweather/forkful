@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricare una pagina web."
+html_title:           "PHP: Scaricare una pagina web."
+simple_title:         "Scaricare una pagina web."
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,67 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
 
-Scaricare una pagina web è una delle attività più comuni nello sviluppo di un sito o di un'applicazione. È essenziale per ottenere dati e informazioni utili da altre fonti online e incorporarle nel nostro progetto.
+Scaricare una pagina web è un'attività comune per molte persone coinvolte nello sviluppo di siti web o nella creazione di script automatizzati. È utile per controllare come appare una pagina web su diversi dispositivi o per estrarre informazioni da essa. In questo articolo, vedremo come fare con PHP.
 
-## Come fare
+## Come Fare
 
-Per scaricare una pagina web utilizzando PHP, abbiamo bisogno di una libreria chiamata cURL. Possiamo installarla facilmente utilizzando il gestore di pacchetti composer.
-
-```PHP
-// Aggiungiamo la dipendenza al nostro file composer.json
-"require": {
-    "php": "^7.4",
-    "guzzlehttp/guzzle": "^7.0"
-}
-
-// Eseguiamo il comando composer install per installare la libreria
-composer install
-```
-
-Una volta installata la libreria, possiamo codificare la nostra richiesta HTTP utilizzando il metodo GET e ottenere la pagina web che vogliamo scaricare.
+Per scaricare una pagina web in PHP, è necessario utilizzare la funzione `file_get_contents()` insieme all'URL della pagina che si desidera scaricare. Ecco un esempio di codice:
 
 ```PHP
-// Importiamo la libreria cURL e creiamo una nuova istanza
-use GuzzleHttp\Client;
-$client = new Client();
+<?php
+// URL della pagina web da scaricare
+$url = "https://www.example.com";
 
-// Eseguiamo una richiesta GET all'URL della pagina web che vogliamo scaricare
-$response = $client->get('https://www.miosito.it');
+// Utilizzo della funzione file_get_contents() per scaricare la pagina
+$html = file_get_contents($url);
 
-// Otteniamo il contenuto della pagina
-$body = $response->getBody()->getContents();
-
-// Stampiamo il contenuto nella nostra pagina
-echo $body;
+// Stampa del contenuto della pagina web
+echo $html;
+?>
 ```
 
-Se vogliamo specificare dei parametri nella nostra richiesta, possiamo farlo utilizzando il metodo `get()` e passando un array con i parametri desiderati.
-
-```PHP
-// Eseguiamo una richiesta GET con parametri
-$response = $client->get('https://api.miosito.it/users', [
-    'query' => [
-        'id' => 123,
-        'name' => 'Mario'
-    ]
-]);
-
-// Otteniamo il contenuto della risposta
-$body = $response->getBody()->getContents();
-```
+L'output di questo esempio sarà il codice HTML della pagina web. È possibile utilizzare questo codice per visualizzare il contenuto della pagina o per estrarre informazioni specifiche utilizzando funzioni di parsing o regolari espressioni.
 
 ## Approfondimento
 
-Oltre alle richieste HTTP GET, ci sono altri metodi che possiamo utilizzare per scaricare una pagina web. Ad esempio, possiamo utilizzare una richiesta POST per inviare dati ad una form o una richiesta PUT per aggiornare informazioni su un server.
+Oltre alla semplice funzione `file_get_contents()`, PHP offre una vasta gamma di funzioni che possono essere utilizzate per scaricare una pagina web e gestire la risposta del server. Ad esempio, la funzione `curl_exec()` offre più opzioni di configurazione e la possibilità di gestire eventuali errori durante la richiesta. Inoltre, è possibile passare anche parametri nel caso in cui la pagina richiesta richieda una richiesta POST.
 
-Possiamo anche utilizzare la libreria cURL per gestire le risposte ottenute, come ad esempio verificare lo stato di una richiesta o ottenere gli header della risposta.
+Un'altra opzione per scaricare una pagina web è utilizzare la libreria PHP Simple HTML DOM, che facilita l'estrazione di informazioni specifiche dalla pagina web utilizzando selezionatori CSS o XPath.
 
-Per ulteriori informazioni e dettagli su come utilizzare la libreria cURL per scaricare una pagina web, si consiglia di consultare la documentazione ufficiale.
+## Vedi Anche
 
-## Vedi anche
+Ecco alcuni link utili per saperne di più su come scaricare una pagina web con PHP:
 
-- [Documentazione ufficiale della libreria cURL](https://www.php.net/manual/en/book.curl.php)
-- [Esempi di utilizzo della libreria cURL](https://www.php.net/manual/en/ref.curl.php)
-- [Composer - Gestore di pacchetti per PHP](https://getcomposer.org/)
+- Documentazione ufficiale di PHP: https://www.php.net/manual/en/function.file-get-contents.php
+- Tutorial di W3Schools: https://www.w3schools.com/php/func_filesystem_file_get_contents.asp
+- Guida di PHP Simple HTML DOM: http://simplehtmldom.sourceforge.net/

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "「テストを書く」"
+html_title:           "Ruby: 「テストを書く」"
+simple_title:         "「テストを書く」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -9,54 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ
 
-プログラミングにおいて、バグを見つけることは常に難しい作業です。しかし、テストを書くことでその不可能性を可能なものにすることができます。テストを書くことで、コードが期待通りに動作するかどうかを自動的に確認することができ、バグを迅速かつ効率的に見つけることができます。
+テストを書くことの最大のメリットは、ソフトウェアの品質を向上させることです。テストを書くことで、バグを早期に発見し、保守性を高めることができます。
 
-## どのようにテストを書くか
+## 使い方
 
-テストを書くための基本的な方法を以下のコードブロックを用いて説明します。
+テストを書くには、Rubyで標準的に使用されるMinitestやRSpecなどのテスティングフレームワークを使用することができます。以下の例では、Minitestを使用してテストを書く方法を説明します。
 
-```Ruby
-# テストを行うクラスの作成
-class Test
-  # テストを実行するメソッド
-  def execute_test
-    # テスト結果が期待通りの場合、成功と表示する
-    if 1 + 1 == 2
-      puts "テスト成功！"
-    else
-      puts "テスト失敗..."
-    end
+```
+# テストを実行するために必要なライブラリを読み込む
+require 'minitest/autorun' 
+
+# テスト対象のクラスを読み込む
+require './calculator'
+
+# テストクラスを定義する
+class TestCalculator < Minitest::Test 
+  # テストメソッドを定義する
+  def test_addition
+    # テストケースを作成する
+    result = Calculator.new.add(3, 5)
+
+    # 比較を行う
+    assert_equal 8, result 
   end
 end
-
-# テストクラスのインスタンスを作成
-test = Test.new
-
-# execute_testメソッドを実行
-test.execute_test
-
-# 実行結果は以下のように表示される
-# テスト成功！
 ```
 
-## テストを書くにあたっての詳細
+テストを実行すると、以下のような出力が得られます。
 
-テストを書く際には、以下のポイントに注意することが重要です。
+```
+Run options: --seed 59516                                                                                                                                                 
+                                                                                                                                                                         
+# Running:                                                                                                                                                               
+                                                                                                                                                                         
+.                                                                                                                                                                        
+                                                                                                                                                                         
+Finished in 0.001208s, 826.4463 runs/s, 826.4463 assertions/s.                                                                                                                                                                                                     
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips                                                                                                                                                                                                                                                                                                                        
 
-- バグが発生しないようにすることが目的であるため、テストはきちんと動作する正しいコードをテストすることが重要です。
-- テストを書く際には、予想されるすべてのケースをカバーすることが重要です。可能な限り多くのケースを想定してテストを実行することが重要です。
-- テストを書くことで、コードの修正やリファクタリングを行った際にも安心して変更を行うことができます。テストが通過すれば、コードの変更によってバグが発生していないことが保証されるためです。
+```
 
-## 詳しくは以下を参考にしてください
+## 詳細
 
-- [Rubyのテストを書く方法](https://www.sejuku.net/blog/56963)
-- [RSpecによるRailsのテスト](https://railstutorial.jp/chapters/modeling_users?version=5.1#sec-i_want_to_test_my_models)
-- [Test Driven Development(TDD)とは](https://www.ogis-ri.co.jp/otc/hiroba/technical/tdd/)
-- [テストに関するRubyコーディング規約](https://rubocop.readthedocs.io/en/stable/cops_testing/)
+テストを書くことは、開発者がコードを追加または修正する際に自信を持って変更を行えるようにするために重要です。テストを書くことで、コードが期待通りに動作することを保証することができます。また、テストを書くことは、コードを見直しやすくし、リファクタリングを行いやすくすることもできます。さらに、テストを書くことで、チーム全体でコードの品質を維持することもできます。
 
-## 関連リンク
+## もっと詳しく知りたい方へ
 
-- [Rubyでのテスト自動化について学ぶ](https://railstutorial.jp/chapters/modeling_users?version=5.1#top)
-- [プロフェッショナルRails開発者のためのRSpec入門](http://gihyo.jp/book/2016/978-4-7741-8086-1)
+- [Minitestのドキュメント](https://github.com/seattlerb/minitest#cets-hope)
+- [RSpec公式サイト](https://rspec.info/)
+- [テスト駆動開発実践ガイド](https://www.amazon.co.jp/dp/B002IF65GO)

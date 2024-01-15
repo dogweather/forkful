@@ -1,6 +1,7 @@
 ---
-title:                "Java: Pisanie pliku tekstowego"
-simple_title:         "Pisanie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Java: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -9,77 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać plik tekstowy?
+## Dlaczego?
 
-Pisanie plików tekstowych jest nieodłączną częścią tworzenia oprogramowania przy użyciu języka Java. Pliki te są wykorzystywane do przechowywania i przesyłania danych w formie tekstowej, w celu ułatwienia komunikacji między różnymi aplikacjami. Oprócz tego, pisanie plików tekstowych jest często wykorzystywane do debugowania i analizy danych.
+Pisanie plików tekstowych jest często niezbędnym elementem programowania w języku Java. Pozwala ono na zapisywanie i odczytywanie danych z plików, co jest przydatne w wielu aplikacjach. Jest to także ważny krok w nauce programowania.
 
 ## Jak to zrobić?
 
-Aby utworzyć plik tekstowy przy użyciu języka Java, należy wykonać kilka prostych kroków.
+Aby zapisać tekst do pliku, należy użyć klasy `FileWriter` oraz `BufferedWriter`. Najpierw należy utworzyć obiekt klasy `FileWriter` z adresem pliku jako parametrem. Następnie należy utworzyć obiekt klasy `BufferedWriter`, który będzie zawierał metody do zapisu tekstu. Wreszcie, używając metody `write()` należy przekazać tekst, który chcemy zapisać do pliku. Przykładowy kod wygląda następująco:
 
-### 1. Importowanie pakietu
-
-Pierwszym krokiem jest zaimportowanie pakietu java.io, który zawiera klasy i metody do obsługi plików.
-
-```java
-import java.io.*;
+```Java
+FileWriter writer = new FileWriter("sciezka/do/pliku.txt");
+BufferedWriter bWriter = new BufferedWriter(writer);
+bWriter.write("To jest przykładowy tekst do zapisania.");
+bWriter.close();
 ```
 
-### 2. Utworzenie obiektu File
+Jeśli chcemy odczytać tekst z pliku, należy wykorzystać klasę `FileReader` oraz `BufferedReader`. W tym przypadku, najpierw musimy otworzyć plik przy użyciu obiektu `FileReader`, a następnie przekazać go do obiektu `BufferedReader`. Aby odczytać tekst, możemy użyć metody `readLine()`, która odczytuje jeden wiersz tekstu z pliku. Przykładowy kod może wyglądać tak:
 
-Następnie należy utworzyć obiekt klasy File, który będzie reprezentował nowo utworzony plik. W nawiasach konstruktora podajemy ścieżkę i nazwę pliku.
-
-```java
-File file = new File("sciezka/do/pliku/nowy_plik.txt");
+```Java
+FileReader reader = new FileReader("sciezka/do/pliku.txt");
+BufferedReader bReader = new BufferedReader(reader);
+String line = bReader.readLine();
+System.out.println(line); // wypisze: To jest przykładowy tekst do zapisania.
+bReader.close();
 ```
 
-### 3. Utworzenie obiektu FileWriter
+## Przeanalizujmy dokładniej
 
-Kolejnym krokiem jest utworzenie obiektu klasy FileWriter, który będzie służył do zapisywania danych do pliku.
-
-```java
-FileWriter writer = new FileWriter(file);
-```
-
-### 4. Zapisywanie danych
-
-Teraz możemy przystąpić do zapisywania danych do pliku. Do tego celu wykorzystujemy metodę write, podając jako argumenty tekst do zapisania.
-
-```java
-writer.write("To jest przykładowy tekst, który zostanie zapisany do pliku.");
-```
-
-### 5. Zamknięcie pliku
-
-Na koniec musimy zamknąć plik, wywołując metodę close na obiekcie FileWriter.
-
-```java
-writer.close();
-```
-
-Cały kod wyglądałby w ten sposób:
-
-```java
-import java.io.*;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        File file = new File("sciezka/do/pliku/nowy_plik.txt");
-        FileWriter writer = new FileWriter(file);
-        writer.write("To jest przykładowy tekst, który zostanie zapisany do pliku.");
-        writer.close();
-    }
-}
-```
-
-## Głębszy zanurzenie
-
-Pliki tekstowe można także odczytywać i przetwarzać z wykorzystaniem innych klas, takich jak FileInputStream, BufferedReader czy Scanner. Warto także zapoznać się z klasą PrintWriter, która umożliwia łatwe formatowanie tekstu i zapisywanie go do plików.
-
-Ponadto, istnieje wiele zaawansowanych technik manipulacji plikami tekstowymi, takich jak parsowanie XML czy wykorzystywanie bibliotek do obsługi formatów CSV. Więcej informacji na ten temat można znaleźć w dokumentacji Java lub na różnych forach i blogach poświęconych programowaniu.
+Podczas pisania plików tekstowych, warto pamiętać o kilku ważnych zagadnieniach. Po pierwsze, należy uważać na używany encoding. Domyślnie, pliki zapisywane są z użyciem encodingu systemowego, ale można to zmienić w konstruktorze klasy `FileWriter` lub `FileReader`.
+Kolejną ważną kwestią jest prawidłowe zamykanie strumieni, w naszych przykładach zastosowaliśmy to przy użyciu metody `close()`. Można także użyć bloku `try-finally`, w celu zapewnienia, że nie pozostaną otwarte strumienie nawet w przypadku wystąpienia błędu.
 
 ## Zobacz także
 
-- [Writing Files in Java](https://www.baeldung.com/java-write-to-file)
-- [Java File Handling](https://www.geeksforgeeks.org/file-handling-java/)
-- [Commons IO Library](https://commons.apache.org/proper/commons-io/)
+1. [Oficjalna dokumentacja Javy](https://docs.oracle.com/javase/10/)
+2. [Poradnik dla początkujących w programowaniu w Javie](https://javastart.pl/kurs/java-podstawy/)
+3. [Tutorial na temat operacji na plikach w Javie](https://www.baeldung.com/java-write-to-file)

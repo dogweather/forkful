@@ -1,5 +1,6 @@
 ---
-title:                "Kotlin: Pisanie testów"
+title:                "Pisanie testów"
+html_title:           "Kotlin: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -9,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Testowanie jest nieodłączną częścią procesu programowania, która pozwala na sprawdzenie poprawności działania kodu oraz minimalizację błędów. Jest to szczególnie ważne w języku Kotlin, ponieważ jest on silnym językiem typowym, co oznacza, że większość błędów będzie wykrywana dopiero podczas wykonania aplikacji. Pisanie testów pozwala na szybsze znajdowanie i naprawianie błędów, co przekłada się na lepszą jakość ostatecznego kodu.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Testy pozwalają nam na sprawdzenie działania naszego kodu i zapewniają, że nasza aplikacja działa zgodnie z oczekiwaniami. Dzięki nim możemy uniknąć błędów i zapewnić jakość naszego oprogramowania.
 
-## Jak To Zrobić?
+## Jak zacząć
 
-Aby napisać testy w języku Kotlin, możemy skorzystać z jednego z wielu frameworków testowych, takich jak JUnit czy TestNG. W tej sekcji omówimy przykładowy kod testowy oraz wynik jego wykonania.
+Pisanie testów w języku Kotlin jest bardzo proste i intuicyjne. Wystarczy użyć wbudowanych w frameworku JUnit adnotacji `@Test` oraz `@Before` i `@After` do przygotowania testów i uruchamiania ich sekcji `setUp()` oraz `tearDown()`. Poniższy przykład pokazuje jak stworzyć test jednostkowy dla metody `calculateSum()`:
 
-```
-Kotlin fun add(x: Int, y: Int): Int {
-  return x + y
+```Kotlin
+@Test
+fun testCalculateSum() {
+    // Given
+    val calculator = Calculator()
+    val a = 5
+    val b = 10
+
+    // When
+    val result = calculator.calculateSum(a, b)
+
+    // Then
+    assertEquals(15, result)
 }
-
-Kotlin fun testAdd() {
-  val result = add(2, 3)
-  
-  if (result == 5) {
-    println("Test passed!")
-  } else {
-    println("Test failed!")
-  }
-}
 ```
 
-W powyższym przykładzie tworzymy funkcję `add`, która przyjmuje dwa argumenty typu `Int` i zwraca ich sumę. Następnie w funkcji `testAdd` wywołujemy naszą funkcję `add` z argumentami `2` i `3`. Jeśli wynik jest równy `5`, to test zostanie uznany za zaliczony, w przeciwnym wypadku zostanie oznaczony jako niepowodzenie. Przykładowy wynik po wykonaniu testu wyglądałby tak: `Test passed!`
+W powyższym przykładzie tworzymy instancję klasy `Calculator` i przekazujemy do niej dwie liczby, a następnie sprawdzamy czy wynik sumy jest zgodny z oczekiwaniami. Dzięki wbudowanym asercjom takim jak `assertEquals()` możemy szybko i łatwo porównać wartości i udokumentować oczekiwane rezultaty.
 
-## Głębsza Analiza
+## Deep Dive
 
-Pisanie testów nie tylko pomaga w znajdowaniu i naprawianiu błędów, ale także pozwala na lepsze zrozumienie działania kodu. Dzięki testom możemy zdefiniować oczekiwane wyniki dla różnych przypadków i sprawdzać, czy nasze funkcje działają zgodnie z założeniami. Ponadto, testowanie pomaga w utrzymaniu modułowości i niezależności poszczególnych części aplikacji.
+Kotlin oferuje również wiele innych funkcjonalności, które ułatwiają pisanie testów. Na przykład możemy wykorzystać adnotację `@TestInstance` do zmiany sposobu tworzenia instancji testów, aby uniknąć wielokrotnego uruchamiania metody `setUp()`. Możemy także użyć `assertThrows()` do sprawdzania czy nasz kod wywołuje oczekiwany wyjątek.
 
-Inną zaletą pisania testów jest to, że pozwala ono na łatwiejsze wprowadzanie zmian w kodzie. Jeśli modyfikujemy funkcję, możemy szybko uruchomić powiązane z nią testy, aby upewnić się, że zmiana nie wpłynęła negatywnie na inne części aplikacji.
+Warto również wspomnieć o integracji z narzędziami do pokrycia kodu, takimi jak JaCoCo, który pozwala nam mierzyć, które części naszego kodu są pokryte przez testy. Dzięki temu możemy łatwo zidentyfikować luki w testowaniu i poprawić jakość naszych testów.
 
-## Zobacz Również
+## Zobacz również
 
-* [Kotlin - Dlaczego warto używać](https://kotlinlang.org/)
-* [Testowanie w języku Kotlin - dokumentacja](https://kotlinlang.org/docs/tutorials/testing.html)
-* [TestNG - framework testowy dla języka Kotlin](https://testng.org/doc/documentation-main.html)
-* [JUnit - framework testowy dla języka Kotlin](https://junit.org/junit5/docs/current/user-guide/)
+- [Dokumentacja JUnit dla Kotlin](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
+- [Why Test Code Should Be Clean](https://medium.com/quality-coding/why-test-code-should-be-clean-e28c2eaead
+) (ang.)

@@ -1,6 +1,7 @@
 ---
-title:                "Ruby: Ekstrahering av delstrenger"
-simple_title:         "Ekstrahering av delstrenger"
+title:                "Uthenting av delstrenger"
+html_title:           "Ruby: Uthenting av delstrenger"
+simple_title:         "Uthenting av delstrenger"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,30 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvis du noen gang har jobbet med tekstbehandling i Ruby, har du sannsynligvis kommet over behovet for å hente ut deler av en tekststreng. Dette kan være for å formatere data, lage variabler eller behandle informasjon på en mer effektiv måte. Uansett årsak, er det nyttig å vite hvordan man skal trekke ut substrings i Ruby. 
+
+Noen ganger når vi jobber med tekst i Ruby, trenger vi å trekke ut deler av en streng for å bruke den i vårt program. Dette kan være nyttig når vi ønsker å manipulere data eller få spesifikke deler av teksten.
 
 ## Hvordan
-Det er flere måter å ekstrahere substrings i Ruby, men de mest vanlige metodene er `slice`, `substring` og `scan`. La oss se på noen eksempler på hvordan disse metodene fungerer og hva slags utgang de produserer. 
+
+Vi kan trekke ut substrings fra en streng ved hjelp av Ruby's `slice` eller `[]` metode. La oss se på et enkelt eksempel:
 
 ```Ruby
-sentence = "Å programmere i Ruby er gøy!"
-puts sentence.slice(2, 9) # Output: # "programmere"
-puts sentence.substring(3, 5) # Output: "program"
-puts sentence.scan(/^[^\s]+/) # Output: ["Å"]
-``` 
+text = "Dette er en tekststreng"
+substring = text.slice(6, 12)
 
-For å bruke `slice`-metoden trenger vi å kjenne posisjonen til start- og sluttsymbolet for substringsen vi vil hente ut. I eksempelet ovenfor bruker vi `2` som startposisjon og `9` som sluttposisjon for å hente ut ordet "programmere". 
+puts substring
+# Output: er en tekst
+```
 
-For `substring`-metoden må vi også spesifisere start- og sluttposisjoner, men i dette tilfellet må vi også angi hvor mange tegn vi vil hente ut. I eksempelet ovenfor angir vi at vi vil ha ut 5 tegn fra og med tredje posisjon, som gir oss substringen "program". 
+Vi bruker `slice` for å trekke ut tekst fra posisjon 6 til 12, og lagrer den i variabelen `substring`. Vi kan også bruke `[]` notasjon for å oppnå det samme resultatet:
 
-Til slutt har vi metoden `scan`, som lar oss hente ut substrings basert på et mønster. I dette tilfellet ønsker vi å hente ut ordet som kommer før det første mellomrommet i setningen. Ved å bruke et regulært uttrykk, som i eksempelet ovenfor, kan vi lett hente ut "Å" som første ord i setningen. 
+```Ruby
+text = "Dette er en tekststreng"
+substring = text[6..17]
 
-## Deep Dive
-Det er viktig å merke seg at de ulike metodene for å ekstrahere substrings i Ruby kan ha forskjellige utgangspunkt for start- og sluttposisjoner. For eksempel bruker `substring`-metoden tegnnummer som utgangspunkt, mens `slice`-metoden bruker indekser fra `0`. Dette kan føre til uventede utganger hvis man ikke er klar over forskjellene. 
+puts substring
+# Output: er en tekst
+```
 
-Et annet viktig punkt å merke seg er at begge metodene kan utvides ved å bruke åpne intervall, for eksempel `y..-1`, som betyr "fra og med y til slutten av strengen". Dette gjør disse metodene svært fleksible og nyttige for å håndtere variabel data. 
+Denne gangen bruker vi `[]` notasjon og spesifiserer start- og sluttposisjonen for substringen. Du kan også bruke et enkelt tall som posisjon, og da vil det hente ut enkelt karakter fra strengen.
 
-## Se Også
-- [Ruby String class documentation](https://ruby-doc.org/core-2.7.2/String.html)
-- [Ruby String#slice method documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-slice)
-- [Ruby String#substring method documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-substring)
+## Dypdykk
+
+Vi kan også bruke `slice` og `[]` metoden med et negativt tall som et argument. Dette vil trekke ut tekst fra slutten av strengen. La oss se på et eksempel:
+
+```Ruby
+text = "Dette er en tekststreng"
+substring = text.slice(-9..-1)
+
+puts substring
+# Output: tekststreng
+```
+
+Her bruker vi et negativt tall for å velge de siste 9 tegnene fra strengen.
+
+Vi kan også bruke `slice` og `[]` sammen med andre metoder som `gsub` (erstatte deler av en streng) og `split` (splitte strengen inn i en array). Her er et eksempel som kombinerer disse metodene:
+
+```Ruby
+text = "Dette er en tekststreng"
+substring = text.gsub("tekststreng", "viktig tekst")
+puts substring.split(" ")[-2]
+# Output: viktig
+```
+
+Vi bruker `gsub` for å erstatte "tekststreng" med "viktig tekst", og deretter bruker vi `split` for å dele den resulterende strengen inn i en array. Her bruker vi så `-2` som posisjon for å få det nest siste elementet i arrayen, som er "viktig".
+
+## Se også
+
+- [Ruby dokumentasjon for `slice` metoden](https://ruby-doc.org/core-3.0.1/String.html#method-i-slice)
+- [Ruby dokumentasjon for `[]` notasjon](https://ruby-doc.org/core-3.0.1/String.html#method-i-5B-26-5D)

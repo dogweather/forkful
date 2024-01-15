@@ -1,6 +1,7 @@
 ---
-title:                "TypeScript: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "TypeScript: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,68 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La comunicazione tra un client e un server tramite il protocollo HTTP è fondamentale per lo sviluppo di applicazioni web moderne. Tuttavia, è importante garantire che gli accessi ai dati siano sicuri e protetti da eventuali attacchi esterni. Ecco perché l'autenticazione di base (basic authentication) viene utilizzata per autorizzare l'accesso ai dati da parte del client al server.
+C'è molta attenzione sui sistemi di autenticazione avanzati come OAuth, ma a volte ci sono situazioni in cui l'utilizzo di un semplice sistema di autenticazione di base è sufficiente. Ad esempio, quando si lavora con API che richiedono solo credenziali di base o quando si utilizzano applicazioni legacy che non supportano altri metodi di autenticazione.
 
-## Come fare
+## Come Fare
 
-Per inviare una richiesta HTTP con autenticazione di base in TypeScript, è necessario importare il modulo "http" e utilizzare la funzione "request" per creare una nuova richiesta. Passiamo i parametri del metodo "request" come oggetto, specificando il metodo HTTP desiderato, l'URL e le informazioni di autenticazione.
+```TypeScript
+import axios from 'axios';
 
-```
-TypeScript
-import * as http from 'http';
+const username = 'myusername';
+const password = 'mypassword';
 
-http.request({
-  method: 'GET',
-  url: 'http://www.example.com',
-  auth: 'username:password'
-}, (response) => {
-  let data = '';
-
-  response.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  response.on('end', () => {
-    console.log(data);
-  });
-}).end();
+axios.get('https://api.example.com/data', {
+    auth: {
+        username: username,
+        password: password
+    }
+})
+.then(response => {
+    console.log(response.data);
+})
+.catch(error => {
+    console.log(error);
+})
 ```
 
-L'output di questa richiesta sarà il contenuto della pagina all'URL specificato.
-
-## Approfondimento
-
-Di solito, il valore dell'autenticazione di base viene convertito in una stringa codificata in Base64 prima di essere trasmessa sulla rete. Possiamo fare lo stesso utilizzando il metodo "Buffer" di Node.js e specificando il tipo di codifica come parametro.
+Output:
 
 ```
-TypeScript
-import * as http from 'http';
-import * as Buffer from 'buffer';
-
-let credentials = Buffer.Buffer.from('username:password').toString('base64');
-
-http.request({
-  method: 'GET',
-  url: 'http://www.example.com',
-  headers: {
-    'Authorization': `Basic ${credentials}`
-  }
-}, (response) => {
-  let data = '';
-
-  response.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  response.on('end', () => {
-    console.log(data);
-  });
-}).end();
+{
+   "id": 12345,
+   "name": "John Doe"
+}
 ```
 
-Inoltre, ricordarsi di gestire gli errori e le eccezioni durante l'invio e la ricezione delle richieste HTTP, per garantire un'applicazione robusta e stabile.
+## Deep Dive
 
-## Vedi anche
+Quando si invia una richiesta HTTP con autenticazione di base, è importante comprendere il processo di codifica delle credenziali. La specifica di autenticazione di base richiede che il nome utente e la password siano combinati in un'unica stringa separata da ":" e quindi codificati in base64. Questa stringa verrà poi inserita nell'header "Authorization" della richiesta HTTP.
 
-- [Documentazione ufficiale su HTTP in Node.js](https://nodejs.org/api/http.html)
-- [Esempi di codice TypeScript per l'utilizzo di HTTP con autenticazione](https://github.com/request/request/tree/master/examples)
+## Vedi Anche
+
+- [Specifiche di autenticazione di base HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Documentazione di Axios](https://github.com/axios/axios)

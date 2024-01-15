@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript: Sända en http-begäran"
+title:                "Sända en http-begäran"
+html_title:           "TypeScript: Sända en http-begäran"
 simple_title:         "Sända en http-begäran"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,46 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skicka HTTP-förfrågningar är en viktig del av webbutveckling. Det är ett sätt att kommunicera med servrar och få tillgång till data och resurser. Utan HTTP-förfrågningar skulle det vara nästintill omöjligt att skapa dynamiska och interaktiva webbsidor.
+För att skicka en förfrågan över HTTP använder vi vanligtvis ett programmeringsspråk som heter TypeScript. Genom att skicka en HTTP-förfrågan kan vi få information från en server, till exempel om en webbsida eller ett API.
 
 ## Hur man gör det
 
-För att skicka en HTTP-förfrågan i TypeScript behöver vi använda oss av ett inbyggt bibliotek som heter "http". Låt oss titta på hur vi kan göra en GET-förfrågan till en webbadress och logga svaret i konsolen:
+För att skicka en HTTP-förfrågan i TypeScript behöver vi först importera biblioteket "http" som är en del av Node.js. Sedan använder vi funktionen "http.request()" för att skicka vår förfrågan. Nedan är ett exempel som skickar en GET-förfrågan till en API-adress och loggar svaret till konsolen:
 
-```
-import * as http from 'http';
+```TypeScript
+import http from 'http'
 
-http.get('www.example.com', (response) => {
-  console.log(`Statuskod: ${response.statusCode}`); // Detta kommer att logga statuskoden, t.ex. "200" om förfrågan lyckades.
+const options = {
+  hostname: 'api.example.com',
+  path: '/users',
+  method: 'GET'
+}
+
+const request = http.request(options, (response) => {
+  let data = ''
+
   response.on('data', (chunk) => {
-    console.log(`Data mottagen: ${chunk}`); // Detta kommer att logga den data som returnerades från webbadressen.
-  });
-}).on('error', (error) => {
-  console.error(`Får en error: ${error.message}`); // Detta kommer att logga eventuella fel som kan uppstå.
-});
+    data += chunk
+  })
+
+  response.on('end', () => {
+    console.log(data)
+  })
+})
+
+request.end()
 ```
 
-Output:
-
-```
-Statuskod: 200
-Data mottagen: <h1>Hej!</h1>
-```
-
-Som vi kan se måste vi först importera http-biblioteket och sedan använda dess `get()`-funktion för att göra en GET-förfrågan till den önskade webbadressen. Vi behöver också ange en callback-funktion som kommer att hantera svaret från servern. I vårt exempel använder vi `console.log()` för att logga både statuskoden och den returnerade datan.
-
-I vårt `get()`-anrop kan vi också specificera eventuella parameterar, t.ex. query strings eller headerns. Vi kan även använda liknande funktioner för andra typer av HTTP-förfrågningar som POST och PUT.
+Detta kodblock skapar en förfrågan med metoden GET till adressen "api.example.com/users" och lyssnar sedan på svaret. När svaret är klart skriver vi ut det med hjälp av console.log(). På detta sätt kan vi enkelt få tillgång till data från en annan server.
 
 ## Djupdykning
 
-Det finns många olika anledningar till varför vi kan behöva skicka HTTP-förfrågningar i TypeScript. Det kan vara för att hämta data från en API, skicka och ta emot webbformulär eller kommunicera med en server i realtid med hjälp av websockets. Oavsett vad det är så är HTTP-förfrågningar ett oumbärligt verktyg inom webbutveckling.
+När vi skickar en HTTP-förfrågan är det viktigt att vi förstår vad det är vi skickar. En HTTP-förfrågan består vanligtvis av en metod (som GET eller POST), en väg (som "/users"), samt eventuella parametrar och en headers. Det är också viktigt att vi får rätt typ av svar tillbaka, till exempel i JSON-format om vi förväntar oss data.
 
-När vi skickar en HTTP-förfrågan skickar vi också med en header som innehåller relevant information som t.ex. vilken typ av data vi förväntar oss tillbaka och vilken metod vi använder. Detta är viktigt för att servern ska kunna behandla förfrågan på rätt sätt.
-
-Det finns också flera olika statuskoder som kan returneras från servern efter en förfrågan. Dessa koder ger oss information om hur förfrågan har hanterats, t.ex. om den lyckades eller om det har uppstått ett fel.
+För att skicka förfrågningar till servern behöver vi också lära oss mer om asynkron programmering, vilket innebär att vi skickar flera förfrågningar samtidigt och tar emot svaren när de är klara. Det kan också vara användbart att använda sig av ett paket som heter "axios" som underlättar hanteringen av HTTP-förfrågningar och ger oss enklare kod.
 
 ## Se även
 
-- [HTTP-standarden](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
 - [Axios](https://github.com/axios/axios)
-- [Superagent](https://github.com/visionmedia/superagent)
+- [Understanding Asynchronous Programming in TypeScript](https://www.digitalocean.com/community/tutorials/understanding-asynchronous-programming-in-typescript-sv)
+- [Node.js - HTTP modulen](https://nodejs.org/api/http.html#http_http_request_options_callback)

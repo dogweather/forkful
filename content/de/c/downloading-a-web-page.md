@@ -1,5 +1,6 @@
 ---
-title:                "C: Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "C: Herunterladen einer Webseite"
 simple_title:         "Herunterladen einer Webseite"
 programming_language: "C"
 category:             "C"
@@ -9,58 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Herunterladen von Webseiten ist ein grundlegender Vorgang in der Welt des Programmierens. Es ermöglicht es uns, Daten aus dem Internet abzurufen und weiterzuverarbeiten. Dies kann für verschiedene Anwendungen nützlich sein, wie z.B. Web-Crawling oder die Erstellung von Datenbanken.
+Du möchtest eine Webseite herunterladen? Das kann viele Gründe haben. Vielleicht möchtest du sie offline lesen, sie in einem Projekt verwenden oder einfach nur speichern, um später darauf zurückzugreifen. Egal aus welchem Grund, es ist gar nicht so schwer, eine Webseite herunterzuladen, wie du vielleicht denkst.
 
-# Wie man eine Webseite herunterlädt
+## Wie geht das?
 
-Um eine Webseite herunterzuladen, müssen wir zuerst eine URL angeben, von der wir die Daten erhalten möchten. Wir verwenden die Funktion `curl` aus der Standardbibliothek von C, um die Verbindung zur Webseite herzustellen und die Daten abzurufen. Ein Beispielcode kann wie folgt aussehen:
+Um eine Webseite mit C herunterzuladen, brauchst du die richtigen Werkzeuge und ein bisschen Code. Zuerst musst du eine Bibliothek wie cURL herunterladen, die es dir ermöglicht, auf Webseiten zuzugreifen. Dann kannst du mit ein paar einfachen Befehlen eine Seite herunterladen und den HTML-Code anzeigen lassen.
 
-```
+```C
+// Beispieldatei laden
 #include <stdio.h>
 #include <curl/curl.h>
 
 int main(void)
 {
-  // URL der Webseite
   CURL *curl;
-  CURLcode res;
-
-  // Verbindung herstellen
+  FILE *fp;
+  // Datei erstellen, in die die Webseite gespeichert wird
+  fp = fopen("beispiel.html", "w");
+  // Webseite von URL herunterladen
   curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-    // Daten speichern
-    res = curl_easy_perform(curl);
-
-    // Erfolg oder Fehler ausgeben
-    if(res == CURLE_OK)
-      printf("Webseite erfolgreich heruntergeladen!");
-    else
-      printf("Fehler beim Herunterladen der Webseite: %s\n",
-             curl_easy_strerror(res));
-
-    // Verbindung schließen
-    curl_easy_cleanup(curl);
-  }
-
+  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+  // Webseiteninhalt in Datei schreiben
+  curl_easy_perform(curl);
+  // Los geht's!
+  fclose(fp);
+  // Inhalt der heruntergeladenen Datei anzeigen
+  system("cat beispiel.html");
   return 0;
 }
 ```
 
-# Tiefer Einblick
+Das Ergebnis wird so aussehen:
 
-Beim Herunterladen einer Webseite gibt es mehrere Faktoren zu beachten. Zum Beispiel kann es sein, dass die Webseite weitergeleitet wird, bevor die Daten tatsächlich abgerufen werden. Hier kommt die Option `CURLOPT_FOLLOWLOCATION` ins Spiel, die eingestellt wird, um automatisch den Weiterleitungen zu folgen und die Daten von der endgültigen URL abzurufen.
+```
+<!doctype html>
+<html>
 
-Außerdem können wir mit der Funktion `curl_easy_setopt` verschiedene Optionen wie User-Agent, Cookies oder Proxy-Einstellungen festlegen, um die Verbindung genauer zu steuern.
+<head>
+  <title>Beispiel Domain</title>
 
-In der Standardbibliothek von C gibt es auch andere Funktionen wie `fgets` und `fopen`, mit denen wir Daten von einer Webseite abrufen und speichern können. Jeder Ansatz hat seine Vor- und Nachteile, daher ist es wichtig, die verschiedenen Möglichkeiten zu untersuchen und die Methode zu wählen, die am besten zu unserem Projekt passt.
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-# Siehe auch
+    body>div {
+      ...
 
-- Offizielle Dokumentation zu `curl`: https://curl.se/libcurl/
-- Eine einfache Einführung in das Herunterladen von Webseiten mit C: https://code.tutsplus.com/tutorials/networking-and-socket-programming-tutorial-in-c--cms-25643
-- Eine Erklärung der verschiedenen Möglichkeiten, Daten von Webseiten mit C abzurufen: https://computing.tanenbaumbooks.com/Downloads/68_Curtis.pdf
+```
+
+## Tieferer Einblick
+
+Um eine Webseiten zu verstehen, musst du wissen, wie sie aufgebaut ist. Der HTML-Code, den wir erhalten haben, enthält alle Informationen, die für die Anzeige der Webseite im Browser benötigt werden. Wenn du mehr über HTML, CSS oder JavaScript lernen möchtest, gibt es viele Ressourcen online, die dir dabei helfen können.
+
+## Siehe auch
+
+- https://curl.haxx.se/
+- https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm
+- https://www.w3schools.com/html/default.asp

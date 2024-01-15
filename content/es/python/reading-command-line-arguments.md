@@ -1,6 +1,7 @@
 ---
-title:                "Python: Leyendo argumentos de línea de comando."
-simple_title:         "Leyendo argumentos de línea de comando."
+title:                "Leyendo argumentos de línea de comando"
+html_title:           "Python: Leyendo argumentos de línea de comando"
+simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -9,60 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías leer argumentos de línea de comandos?
+## Por qué
 
-Siempre que escribimos un programa en Python, podemos correrlo desde la línea de comandos. Esta es una forma eficiente de ejecutar nuestro código y nos permite pasarle información adicional al programa. Leer y entender los argumentos de línea de comandos es fundamental para cualquier programador.
+¿Te has preguntado alguna vez cómo los programas y scripts en Python pueden recibir información directamente desde la línea de comandos? ¡Eso es gracias a los argumentos de línea de comandos! En este artículo, aprenderás por qué es importante saber cómo leer y usar estos argumentos en tus proyectos de Python.
 
-## Cómo leer argumentos de línea de comandos en Python
+## Cómo
 
-Para leer los argumentos de línea de comandos en Python, usamos el módulo `sys`. Lo importamos al principio del programa:
+Es súper fácil leer los argumentos de línea de comandos en Python. Todo lo que necesitas es utilizar el módulo `sys` y la función `argv`. ¡Echemos un vistazo a un ejemplo!
 
 ```Python
 import sys
+
+# Imprime los argumentos de línea de comandos
+print(sys.argv)
 ```
 
-Luego, podemos acceder a los argumentos usando la lista `sys.argv`. Esta lista contendrá todos los argumentos pasados al programa, incluyendo el nombre del archivo Python que estamos ejecutando. Por ejemplo, si ejecutamos el siguiente comando en la línea de comandos:
-
-```
-python programa.py arg1 arg2 arg3
-```
-
-La lista `sys.argv` tendrá el siguiente contenido:
-
-``` 
-['programa.py', 'arg1', 'arg2', 'arg3']
-```
-
-Podemos acceder a cada argumento individualmente como si fuera un elemento de la lista. Por ejemplo, para imprimir el segundo argumento, usaríamos `print(sys.argv[1])`.
-
-## Deep Dive en la lectura de argumentos de línea de comandos
-
-Aparte de la lista `sys.argv`, también podemos usar el módulo `argparse` para leer argumentos de línea de comandos en Python. Este módulo nos permite crear argumentos con valores predeterminados, mensajes de ayuda y opciones adicionales. Aquí hay un ejemplo de cómo usar `argparse` para leer un argumento único:
+Si ejecutamos este código usando `python script.py argumento1 argumento2`, obtendremos la siguiente salida:
 
 ```Python
-import argparse
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--nombre', help='Especifica un nombre para saludar')
-
-args = parser.parse_args()
-print('¡Hola ' + args.nombre + '!')
+['script.py', 'argumento1', 'argumento2']
 ```
 
-Si ejecutamos este programa desde la línea de comandos de la siguiente manera:
+Genial, ¿verdad? Así es como puedes acceder a los argumentos de línea de comandos en tu script. Pero, ¿qué pasa si solo quieres uno de los argumentos? ¡Sigue leyendo para descubrirlo!
+
+## Deep Dive
+
+Además de la función `argv`, el módulo `sys` también nos proporciona la función `arg`, que nos permite acceder a los argumentos individuales de manera más fácil. También podemos utilizar el operador de indexación `[]` para acceder a un argumento específico por su posición en la lista.
+
+Veamos un ejemplo de cómo podemos utilizar esto:
+
+```Python
+import sys
+
+# Acceder al tercer argumento de línea de comandos
+print(sys.argv[2])
+
+# Utilizar la función arg para acceder al segundo argumento
+print(sys.arg[1])
+```
+
+En este caso, si ejecutamos el código usando `python script.py argumento1 argumento2 argumento3`, obtendremos la siguiente salida:
 
 ```
-python programa.py --nombre Carlos
+argumento2
+argumento2
 ```
 
-Obtendremos la siguiente salida:
+Ahora ya sabes cómo leer y acceder a los argumentos de línea de comandos en tus proyectos de Python. Puedes utilizar esta información para crear scripts más dinámicos y versátiles que puedan recibir diferentes entradas cada vez que se ejecutan.
 
-```
-¡Hola Carlos!
-```
+## Ver También
 
-## Ver también
-
-- [Documentación oficial de Python para el módulo `sys`](https://docs.python.org/es/3/library/sys.html)
-- [Documentación oficial de Python para el módulo `argparse`](https://docs.python.org/es/3/library/argparse.html)
-- [Cómo usar el módulo `argparse` en Python](https://realpython.com/command-line-interfaces-python-argparse/)
+- [Documentación oficial de Python sobre módulo `sys`](https://docs.python.org/es/3/library/sys.html)
+- [Tutorial de Programiz sobre argumentos de línea de comandos en Python](https://www.programiz.com/python-programming/command-line-arguments)

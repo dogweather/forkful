@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Pobieranie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Elixir: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pobrać stronę internetową przy użyciu Elixir?
+## Dlaczego
 
-Pobieranie stron internetowych jest nieodłączną częścią dzisiejszego świata internetu. Często potrzebujemy danych z różnych witryn, takich jak informacje o produktach, aktualności czy też ciekawostki. W tym celu można użyć języka programowania Elixir, który zapewnia wydajną i prostą w użyciu bibliotekę do pobierania stron internetowych.
+Jeśli chcesz pobrać stronę internetową, istnieje kilka możliwych powodów. Może chcesz przeglądać ją offline, odświeżić ją w celu uzyskania najnowszych informacji, albo po prostu nie masz dostępu do Internetu w danym momencie. Bez względu na powód, Elixir jest idealnym wyborem do tego zadania.
 
-# Jak tego dokonać?
+## Jak to zrobić
 
-Wykorzystując bibliotekę `HTTPoison` wraz z modułem `Floki`, możemy w prosty sposób pobrać stronę internetową. Poniżej znajduje się przykładowy kod, który pobiera stronę internetową i zwraca jej tytuł:
+Aby pobrać stronę internetową w Elixir, musimy użyć modułu `HTTPoison` i funkcji `get`:
 
 ```Elixir
-# Importowanie niezbędnych bibliotek
-import HTTPoison
-import Floki
-
-# Pobranie strony internetowej
-{:ok, response} = HTTPoison.get("https://www.example.com")
-
-# Parsowanie strony przy użyciu Floki
-parsed_page = Floki.parse(response.body)
-# Pobranie tytułu strony
-title = parsed_page |> Floki.find("title") |> Floki.text()
-
-# Wypisanie tytułu
-IO.puts("Tytuł strony to: #{title}")
+response = HTTPoison.get("https://example.com")
 ```
 
-Po uruchomieniu powyższego kodu, powinniśmy zobaczyć w konsoli następujący wynik:
+W tym przykładzie używamy `example.com` jako przykładu, ale możesz podać dowolny adres URL. Gdy wywołasz tę funkcję, otrzymasz odpowiedź HTTP do wykorzystania. Możesz wyświetlić jej kod odpowiedzi i treść, używając:
 
+```Elixir
+IO.puts(response.status_code)
+IO.puts(response.body)
 ```
-Tytuł strony to: Example Domain
+
+Gdy wklejasz ten kod do swojej aplikacji Elixir i uruchamiasz ją, powinieneś zobaczyć status 200 oraz treść strony internetowej `example.com` w konsoli.
+
+## Deep Dive
+
+Jeśli chcesz pobrać stronę internetową w formie tekstu, możesz wykorzystać funkcję `get_text` z modułu `HTTPoison`:
+
+```Elixir
+response = HTTPoison.get_text("https://example.com")
 ```
 
-# Pogłębione informacje
+Ta funkcja zwraca tylko zawartość strony bez kodu HTML. Możesz również ustawić nagłówki, dane wysyłane, czas oczekiwania na odpowiedź i wiele innych opcji przy pomocy parametrów funkcji `get` i `get_text` oraz funkcji pomocniczych związanych z `HTTPoison`.
 
-Nie zawsze jednak pobieranie strony internetowej jest tak proste. Często witryny mają zabezpieczenia przeciwko botom i nie pozwalają na pobranie danych w prosty sposób. W takim przypadku musimy zastosować bardziej zaawansowane techniki, takie jak zmiana nagłówków żądań czy też użycie mechanizmu przekierowań.
+## Zobacz też
 
-Ponadto, możemy również wykorzystać Elixir do pobierania danych z witryn internetowych w tle, przy użyciu narzędzia `Task`. Dzięki temu nasz program będzie mógł wykonywać inne zadania, podczas gdy pobieranie strony jest w trakcie.
-
-# Zobacz również
-
-- [Dokumentacja biblioteki HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Dokumentacja modułu Floki](https://hexdocs.pm/floki/Floki.html)
-- [Przykładowy projekt pobierający dane z Twittera przy użyciu Elixir](https://medium.com/@codedgeekery/web-scraping-with-elixir-examples-using-floki-and-hackney-c17df682b44b)
+- Dokumentacja dla modułu `HTTPoison` - https://hexdocs.pm/httpoison/HTTPoison.html
+- Instrukcja użycia dla Elixir - https://hexdocs.pm/elixir/getting-started.html

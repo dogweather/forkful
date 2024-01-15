@@ -1,5 +1,6 @@
 ---
-title:                "Javascript recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "Javascript recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,48 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Capitalizing a string may seem like a simple task, but it can be incredibly useful in improving the readability of our code and presenting data in a more organized manner. Additionally, some programming languages require specific formatting for strings, making it necessary to know how to capitalize a string properly.
+Capitalizing a string may seem like a trivial task in programming, but it can actually have a big impact on the user experience. By capitalizing the first letter of a string, we can improve the readability and professionalism of our application, making it easier for users to understand and navigate.
 
 ## How To
 
-In Javascript, there are different methods we can use to capitalize a string, each with its own advantages and use cases. Let's take a look at some coding examples using the ```toUpperCase()``` and ```charAt()``` methods:
+To capitalize a string in Javascript, we can use the `toUpperCase()` method. This method takes in a string as a parameter and returns the same string with all uppercase letters. Let's take a look at an example:
 
 ```Javascript
-
-// Using the toUpperCase() method
-
-let name = "john smith";
-let capitalized = name.toUpperCase();
-
-console.log(capitalized); // Output: JOHN SMITH
-
-// Using the charAt() method
-
-let name = "jane doe";
-let firstLetter = name.charAt(0).toUpperCase() + name.slice(1);
-
-console.log(firstLetter); // Output: Jane doe
+let string = "hello world";
+let capitalizedString = string.toUpperCase();
+console.log(capitalizedString); // Output: HELLO WORLD
 ```
 
-In the first example, we use the ```toUpperCase()``` method to convert all letters in the string to uppercase. This method is simple and effective, but it has a limitation - it makes all letters in the string uppercase, which may not be ideal in certain situations.
+We can also use the `charAt()` method to specifically target the first letter of the string and capitalize it:
 
-To overcome this limitation, we can use the ```charAt()``` method to target specific letters and capitalize only those letters. In the second example, we use the ```charAt(0)``` to select the first letter of the string and then use ```toUpperCase()``` to capitalize it. We then use ```slice(1)``` to select the rest of the string and concatenate it with the capitalized letter.
+```Javascript
+let string = "hello world";
+let capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);
+console.log(capitalizedString); // Output: Hello world
+```
 
-There are other methods and techniques for capitalizing strings in Javascript, each with its own nuances and applications. It is important to understand these methods and choose the one that best suits our specific needs.
+Notice how we used the `slice()` method to extract the remaining letters of the string after capitalizing the first letter.
 
 ## Deep Dive
 
-The ```toUpperCase()``` method is a built-in function in Javascript that converts a string to uppercase letters. This method does not modify the original string, but instead returns a new string with all uppercase letters.
+In Javascript, strings are immutable, meaning they cannot be changed. That's why when using the `toUpperCase()` method, a new string is created instead of modifying the original one. Additionally, the `toUpperCase()` method only capitalizes single characters, not whole words.
 
-The ```charAt()``` method returns the character at a specified index in a string. In our example, we used ```charAt(0)``` to select the first letter of the string. We can also use it to target other letters, such as ```charAt(1)``` for the second letter or ```charAt(4)``` for the fifth letter.
+One way to capitalize whole words is by converting the string to an array, capitalizing each word, and then joining them back together. Let's take a look:
 
-It is important to note that the ```charAt()``` method returns an empty string if the specified index is out of range. So, if we try to select a letter that is not present in the string, like ```charAt(10)```, it will return an empty string.
+```Javascript
+let string = "hello world";
+let wordsArray = string.split(" ");
+for (let i = 0; i < wordsArray.length; i++) {
+  wordsArray[i] = wordsArray[i].charAt(0).toUpperCase() + wordsArray[i].slice(1);
+}
+let capitalizedString = wordsArray.join(" ");
+console.log(capitalizedString); // Output: Hello World
+```
 
-In addition to these methods, we can also use regular expressions to capitalize strings in Javascript. Regular expressions are powerful tools for pattern matching and manipulating strings, but they require a deeper understanding of the language.
+By using this method, we can also capitalize multiple words in the string, not just the first one.
 
 ## See Also
 
-- [MDN Web Docs - String.prototype.toUpperCase method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Web Docs - String.prototype.charAt method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [MDN Web Docs - RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [W3Schools - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+- [MDN Web Docs: String toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [MDN Web Docs: String charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [MDN Web Docs: String split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [MDN Web Docs: String join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

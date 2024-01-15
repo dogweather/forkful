@@ -1,5 +1,6 @@
 ---
-title:                "Elm: Uniendo cadenas"
+title:                "Uniendo cadenas"
+html_title:           "Elm: Uniendo cadenas"
 simple_title:         "Uniendo cadenas"
 programming_language: "Elm"
 category:             "Elm"
@@ -9,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola, programadores de Elm! Hoy hablaremos sobre cómo concatenar cadenas de texto en Elm y por qué es una habilidad importante para tener.
+## ¿Por qué usar concatenación de cadenas en Elm?
 
-## ¿Por qué?
+La concatenación de cadenas en Elm es una forma eficiente y sencilla de combinar diferentes cadenas en una sola. Esto es especialmente útil cuando se trabaja con datos dinámicos y se necesita generar texto en función de esa información. La concatenación de cadenas permite crear mensajes personalizados y flexibles para los usuarios de tu aplicación.
 
-Concatenar cadenas de texto es una práctica común en la programación, especialmente cuando se trabaja con datos dinámicos. En lugar de tener una cadena de texto estática, la concatenación nos permite unir varias cadenas para crear una más larga y compleja. Esto puede ser útil en situaciones como mostrar mensajes personalizados en una aplicación, crear URLs dinámicas o construir código HTML.
+## Cómo hacerlo en Elm
 
-## Cómo hacerlo
-
-Para concatenar cadenas de texto en Elm, utilizamos el operador `++`. Veamos un ejemplo simple de cómo se ve esto:
+La sintaxis para concatenar cadenas en Elm es muy sencilla. Primero, declaras las cadenas que deseas combinar y luego utilizas el operador `++` para unirlos. Por ejemplo:
 
 ```Elm
-saludo = "¡Hola "
-nombre = "Pedro"
-mensaje = saludo ++ nombre ++ "!"
+nombre = "Juan"
+apellido = "Pérez"
+nombreCompleto = nombre ++ " " ++ apellido
 ```
+El resultado de esto sería `"Juan Pérez"`, donde las dos cadenas se han combinado en una sola. También puedes concatenar más de dos cadenas a la vez utilizando el mismo operador.
 
-En este caso, `mensaje` será igual a "¡Hola Pedro!", ya que hemos unido las cadenas de texto con el operador `++`. Notarás que hemos incluido un espacio después de "Hola" para que el resultado final no quede pegado. Si no lo hiciéramos, obtendríamos "¡HolaPedro!".
+## El detalle de la concatenación de cadenas
 
-## Profundizando
+Cuando concatenas cadenas en Elm, es importante tener en cuenta que la operación se realiza de izquierda a derecha. Esto significa que si quieres añadir un prefijo o sufijo a una cadena, debes asegurarte de que esté en el lado correcto de la expresión `++`. Veamos un ejemplo:
 
-Mientras que el uso básico del operador `++` es bastante simple, hay algunas cosas interesantes a tener en cuenta. Por ejemplo, si una de las cadenas es una lista de caracteres (`List Char`), no podremos unirla directamente con otra cadena de texto. En su lugar, debemos usar la función `List.map` para convertirla en una lista de cadenas. Esto puede ser confuso al principio, pero es una buena oportunidad para aprender sobre tipos en Elm.
+```Elm
+prefijo = "¡Hola "
+mensaje = prefijo ++ "mundo!"
+```
+El valor de `mensaje` sería `"¡Hola mundo!"` ya que el prefijo se coloca delante de la cadena "mundo". Sin embargo, si escribimos la expresión inversa `mensaje = "mundo" ++ prefijo`, el resultado sería `"mundo¡Hola "`.
 
-Además, es importante tener en cuenta que la concatenación consume memoria. Con cadenas de texto pequeñas no es un problema, pero si estamos manejando grandes cantidades de datos, es posible que necesitemos encontrar una solución más eficiente.
+Otra cosa importante a tener en cuenta es que la concatenación de cadenas en Elm sólo funciona con cadenas de texto. Si intentas combinar una cadena con otro tipo de dato, como un número, obtendrás un error.
 
 ## Ver también
 
-- Documentación oficial de Elm sobre la concatenación de cadenas: https://guide.elm-lang.org/appendix/strings.html
-- Ejemplos de cómo utilizar el operador `++` en la vida real: https://legacy.gitbook.com/book/elm-tutorial/string-concatenation-in-action/details
-- Artículo sobre cómo optimizar el rendimiento al concatenar cadenas: https://dev.to/benshope/elm-string-concatenation-performance-tips-33fl
+- Documentación oficial de Elm sobre concatenación de cadenas: https://guide.elm-lang.org/core_language.html#string-operations
+- Explicación de cómo funciona el operador `++` en Elm: https://elixir-lang.org/getting-started/basic-types.html#string-interpolation-concatenation-and-replication

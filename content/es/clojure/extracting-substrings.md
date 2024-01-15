@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Extrayendo subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "Clojure: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,49 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Por qué
-
-Extraer subcadenas de texto es una habilidad esencial para trabajar con cadenas de caracteres en Clojure. Ya sea para manipular datos o para realizar operaciones de búsqueda, conocer cómo extraer subcadenas puede ser muy útil en la programación.
+Extraer subcadenas es una habilidad fundamental en la programación, especialmente en Clojure. Es importante saber cómo hacerlo para poder manipular y analizar cadenas de texto de manera eficiente.
 
 ## Cómo hacerlo
-
-Para extraer una subcadena de una cadena de texto en Clojure, puedes utilizar la función `subs`. Por ejemplo:
+En Clojure, hay algunas formas diferentes de extraer subcadenas, dependiendo de lo que necesite en su programa. A continuación presentamos algunos ejemplos utilizando la función `subs`:
 
 ```Clojure
-(def texto "Hola mundo")
-(subs texto 1 4)
+;; Extraer los primeros 5 caracteres de una cadena
+(subs "Hola mundo" 0 5)
+;; Salida: "Hola "
+
+;; Extraer los últimos 3 caracteres de una cadena
+(subs "Esta es una cadena" (- (count "Esta es una cadena") 3))
+;; Salida: "na"
+
+;; Extraer una subcadena entre dos índices específicos
+(subs "¡Hola a todos!" 1 8)
+;; Salida: "Hola a "
 ```
 
-Este código devolverá la subcadena "ola" al especificar un índice de inicio de 1 (iniciando desde el segundo carácter) y un índice de fin de 4 (no incluyendo el cuarto carácter).
-
-También puedes utilizar la función `substring` para lograr el mismo resultado:
+También puede utilizar la función `subseq`, que toma una secuencia como primer argumento en lugar de una cadena. Esto le permite extraer subcadenas de secuencias más complejas, como vectores o listas.
 
 ```Clojure
-(substring texto 1 4)
-```
+;; Extraer una subcadena de un vector
+(subseq ["Esta" "es" "una" "prueba"] 0 2)
+;; Salida: ["Esta" "es"]
 
-Sin embargo, `substring` es más eficiente que `subs` ya que no realiza ninguna copia de la cadena original, sino que comparte la misma cadena en memoria.
-
-Si deseas extraer una subcadena desde un índice específico hasta el final de la cadena, puedes omitir el segundo parámetro en ambas funciones:
-
-```Clojure
-(subs texto 5) ; devolverá "mundo"
-(substring texto 5) ; también devolverá "mundo"
+;; Extraer una subcadena de una lista
+(subseq (list 1 2 3 4 5 6) 2 5)
+;; Salida: (3 4 5)
 ```
 
 ## Profundizando
+La función `subs` en realidad utiliza `reduce` para manejar la extracción de subcadenas de manera más eficiente. Por ejemplo, si desea extraer una subcadena larga de una cadena, la función `reduce` dividirá la cadena en trozos más pequeños y después los concatenará para obtener la subcadena deseada.
 
-Cuando se trata de extraer subcadenas, es importante tener en cuenta que los índices en Clojure comienzan desde 0. Esto puede ser confuso para aquellos que están acostumbrados a otros lenguajes de programación en los que los índices comienzan desde 1.
-
-Además, si el índice de fin es mayor que la longitud de la cadena, se devolverá una subcadena que va desde el índice de inicio hasta el final de la cadena. Por ejemplo:
+También puede utilizar `subs` para realizar operaciones de filtrado en sus datos. Por ejemplo, si desea seleccionar solo las vocales de una cadena, puede utilizar `subs` junto con la función `filter` de la siguiente manera:
 
 ```Clojure
-(subs texto 0 500) ; devolverá la cadena completa "Hola mundo"
+(filter #{\a\e\i\o\u} (subs "Este es un ejemplo de filtrado de vocales"))
+;; Salida: (\e \e u \i o \a u a o \i o)
 ```
 
-Por último, también puedes utilizar números negativos como índices en `substring` para contar desde el final de la cadena. Un índice de -1 indicaría el último carácter de la cadena.
-
 ## Ver también
-
-- [Documentación de Clojure: Función subs](https://clojuredocs.org/clojure.core/subs)
-- [Documentación de Clojure: Función substring](https://clojuredocs.org/clojure.core/substring)
-- [Tutorial de Clojure: Manipulación de cadenas](https://clojure.org/guides/strings)
+- [Documentación oficial de Clojure para la función `subs`](https://clojuredocs.org/clojure.core/subs)
+- [Tutorial de Clojure para extracción de subcadenas](https://www.clojure-doc.org/articles/tutorials/strings.html)
+- [Ejemplos prácticos de extracción de subcadenas en Clojure](http://thegeez.github.io/misc/clojure/strings/2013/06/04/clojure-string-magic.html)

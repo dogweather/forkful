@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Skicka en http-förfrågan"
-simple_title:         "Skicka en http-förfrågan"
+title:                "Skicka en http-begäran"
+html_title:           "Fish Shell: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,38 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I Fish Shell finns det många inbyggda funktioner som kan underlätta ditt programmeringsarbete. En av dem är möjligheten att skicka HTTP-förfrågningar direkt från skallet. Här berättar vi varför du skulle vilja använda denna funktion och hur du kan göra det.
+Att skicka HTTP-förfrågningar är nödvändigt för att kommunicera med servrar och hämta data från internet. Genom att använda Fish Shell kan du enkelt automatisera detta och integrera det med andra kommandon och skript.
 
-## Hur man gör
+## Hur du gör det
 
-För att skicka en HTTP-förfrågning i Fish Shell, behöver du använda kommandot `eval` tillsammans med `curl`. Här är ett exempel på hur man skickar en GET-förfrågning till Google:
-
-```Fish Shell
-eval echo (curl -X GET "http://www.google.com")
-```
-
-Detta kommer att ge dig ett utmatat svar från Google, i det här fallet dess hemsida. Notera att `eval` behövs för att få utmatningen från `curl`-kommandot. Du kan också lägga till flaggor för att anpassa förfrågningen, till exempel:
+Skicka en HTTP-förfrågan med Fish Shell är enkelt. Först behöver du installera cURL, ett vanligt verktyg för att utföra HTTP-kommunikationer. Detta kan du göra genom att köra följande kommando i terminalen:
 
 ```Fish Shell
-eval echo (curl -H "Content-Type: application/json" -d '{"username": "john", "password": "1234"}' -X POST "http://www.example.com/login")
+sudo apt-get install curl
 ```
 
-Det här skulle skicka en POST-förfrågning med en JSON-body till en inloggningssida på www.example.com. Du kan lägga till fler flaggor enligt behov för att skräddarsy din förfrågning.
+När cURL är installerat kan du skicka en GET-förfrågan med hjälp av följande kommando:
+
+```Fish Shell
+curl www.example.com
+```
+
+Detta kommer att skicka en förfrågan till www.example.com och returnera resultatet i terminalen. Du kan också lägga till olika flaggor för att anpassa din förfrågan, såsom att specificera ett annat HTTP-metod, ange headers eller skicka data.
 
 ## Djupdykning
 
-Genom att använda `curl`-kommandot inuti `eval` i Fish Shell kan du skicka HTTP-förfrågningar till alla webbadresser som stödjer det. Det kan vara användbart för att testa API-funktioner, ladda ner data från en server eller helt enkelt hämta en webbplats.
-
-En annan användbar funktion är möjligheten att lagra utmatningen från förfrågningen i en variabel. Detta kan göras genom att tilldela outputen från `curl` till en variabel efter `eval`, till exempel:
+Fish Shell har också stöd för att skicka HTTP-förfrågningar med API:et "HTTPie". Detta är ett alternativ till cURL som erbjuder ett mer lättläst gränssnitt. För att installera HTTPie, kör följande kommando:
 
 ```Fish Shell
-set output (eval echo (curl -X GET "http://www.google.com"))
+sudo apt-get install httpie
 ```
 
-Nu kan du använda variabeln `output` för att bearbeta och använda datan som returnerades från förfrågningen.
+Sedan kan du skicka en GET-förfrågan med hjälp av följande kommando:
+
+```Fish Shell
+http GET www.example.com
+```
+
+Detta kommer att ge samma resultat som cURL, men med en annorlunda syntax.
+
+Du kan också skicka POST-förfrågningar med både cURL och HTTPie genom att ange en body med data som ska skickas. Detta är användbart när du vill skicka formulärdata eller JSON till en server. Detta kan göras genom att använda flaggan "-d" i cURL eller "data=" i HTTPie.
 
 ## Se även
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/cmds/eval.html)
-- [Användbara Fish Shell-kommandon för programmerare](https://blog.faraday.io/10-fish-shell-commands/)
-- [Tutorial: Skicka HTTP-förfrågningar med cURL](https://www.youtube.com/watch?v=5pv0IKnS03I)
+- Fish Shell documentation: https://fishshell.com/docs/current/
+- cURL manual: https://curl.haxx.se/docs/manpage.html
+- HTTPie documentation: https://httpie.org/docs

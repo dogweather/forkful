@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: 패턴에 일치하는 문자 제거"
-simple_title:         "패턴에 일치하는 문자 제거"
+title:                "패턴과 일치하는 문자를 삭제하는 방법"
+html_title:           "Arduino: 패턴과 일치하는 문자를 삭제하는 방법"
+simple_title:         "패턴과 일치하는 문자를 삭제하는 방법"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -9,103 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
-Arduino 프로그래밍에서 패턴과 일치하는 문자를 삭제하는 작업은 불필요한 문자를 정리하거나 정확한 데이터를 추출하기 위해 필요합니다.
+## 왜
 
-## 방법
-Arduino에서 패턴과 일치하는 문자를 삭제하는 방법은 아래와 같습니다. 먼저 Serial Monitor 또는 다른 입력 방법을 통해 문자열을 입력받습니다.
+문자열에서 특정 패턴과 일치하는 문자를 삭제하는 프로그램을 만들어야 하는 이유는 무엇일까요?
 
-```
-Arduino
-```
+String 형식의 데이터를 다루는 일은 프로그래밍에서 매우 흔한 작업입니다. 이때 문자열 안에는 원하는 정보가 포함되어 있을 수도 있지만, 필요 없는 정보도 함께 포함되어 있을 수 있습니다. 이럴 때 필요한 것이 바로 문자열에서 특정 패턴과 일치하는 문자를 삭제하는 것입니다. 예를 들어, 특정 단어를 찾아서 삭제하면서 원하는 정보만 남게 만들거나, 특정 문자를 일괄적으로 삭제해서 문자열을 깔끔하게 정리하는 등의 작업에 활용할 수 있습니다.
 
-그런 다음 `indexOf()` 함수를 사용하여 입력된 문자열에서 패턴의 첫 번째 문자의 인덱스를 찾습니다.
+## 사용 방법
 
-```
-int index = inputString.indexOf("do");
-```
+이제 Arduino를 사용하여 문자열에서 특정 패턴과 일치하는 문자를 삭제하는 방법을 알아보겠습니다. 아래 코드를 참고하여 실제로 실행해보세요.
 
-인덱스를 찾은 후, `substring()` 함수를 사용하여 해당 인덱스부터 패턴의 길이만큼의 문자를 삭제합니다. 마지막으로 남은 문자열을 출력합니다.
+```Arduino
+String input = "Hello, world!";
+String pattern = "l";
 
-```
-String output = inputString.substring(0, index) + inputString.substring(index + pattern.length());
-
-Serial.println(output);
-```
-
-다음은 전체 코드와 실행 결과입니다.
-
-```
-String inputString = "Arduino";
-String pattern = "do";
-
-void setup() {
-  Serial.begin(9600);
-
-  String output = "";
-
-  Serial.print("Input String: ");
-  Serial.println(inputString);
-
-  int index = inputString.indexOf(pattern);
-  output = inputString.substring(0, index) + inputString.substring(index + pattern.length());
-
-  Serial.print("Output String: ");
-  Serial.println(output);
-}
-
-void loop() {
-
-}
-
-```
-
-```
-Input String: Arduino
-Output String: Aruin
-```
-
-## 깊게 들어가기
-더 복잡한 패턴을 가진 문자열을 삭제하려면 `replace()` 함수를 사용할 수 있습니다. 이 함수는 입력된 문자열에서 주어진 패턴을 가진 모든 부분을 다른 문자열로 대체합니다. 아래는 `replace()` 함수를 사용하여 입력된 문자열에서 모음을 삭제하는 예제 코드입니다.
-
-```
-String inputString = "Arduino";
-String vowels = "aeiou";
-
-void setup() {
-  Serial.begin(9600);
-
-  String output = "";
-
-  Serial.print("Input String: ");
-  Serial.println(inputString);
-
-  for (int i = 0; i < vowels.length(); i++) {
-    output = inputString.replace(vowels.substring(i, i+1), "");
-    inputString = output;
+for (int i = 0; i < input.length(); i++) {
+  if (input.substring(i, i+1) == pattern) {
+    input.remove(i, 1);
   }
-
-  Serial.print("Output String: ");
-  Serial.println(output);
 }
 
-void loop() {
-
-}
-
+Serial.println(input);
 ```
 
-```
-Input String: Arduino
-Output String: Ardn
+이 코드는 "Hello, world!"라는 문자열에서 "l"이라는 문자를 일괄적으로 삭제하고, 결과인 "Heo, word!"를 출력합니다. 이 코드를 보면 문자열을 순서대로 검사하면서 일치하는 문자를 발견하면 `input.remove()` 함수를 사용해서 해당 문자를 삭제하고, 이후의 문자들을 앞으로 한 자리씩 앞당기는 방식을 사용하고 있습니다.
+
+혹은, 더 간단한 방법으로는 `replace()` 함수를 사용하는 것입니다. 아래 코드를 참고해주세요.
+
+```Arduino
+String input = "Hello, world!";
+String pattern = "l";
+
+input.replace(pattern, "");
+
+Serial.println(input);
 ```
 
-## 참고 자료
-- [String.indexOf() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
-- [String.substring() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [String.replace() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+`replace()` 함수는 첫 번째 매개변수로 전달한 값을 두 번째 매개변수로 전달한 값으로 바꾸는 역할을 합니다. 위의 코드에서는 "l"을 빈 문자열로 바꿔서 삭제하는 효과를 낼 수 있습니다.
 
-## 참고 자료
-- [String.indexOf() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
-- [String.substring() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [String.replace() - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+## 디테일
+
+더 깊이 들어가서 이제 문자열에서 특정 패턴에 해당하는 문자를 삭제하는 방법에 대해 더 자세히 알아보겠습니다.
+
+먼저, `substring()` 함수를 사용해서 문자열을 자를 수 있습니다. 이 함수는 첫 번째 매개변수로 시작 인덱스를, 두 번째 매개변수로 종료 인덱스를 전달받습니다. 만약 두 번째 매개변수를 생략하면 시작 인덱스부터 문자열의 끝까지 추출합니다. 이 함수를 사용하면 문자열 중간에서 원하는 부분을 남기고 나머지 부분을 삭제할 수 있습니다. 또는 `charAt()` 함수를 사용해서 특정 인덱스의 문자를 추출할 수도 있습니다.
+
+또한, `indexOf()` 함수를 사용하면 문자열에서 특정 패턴이 처음 등장하는 인덱스를 알아낼 수 있습니다. 이 함수는 첫 번째 매개변수로 검색할 패턴을, 두 번째 매개변수로 시작 인덱스를 전달받습니다. 이 함수를 사용하면 첫 번째 등장하는 패턴의 인덱스를 알 수 있고, 그 인덱스를 기준으로 문자열을 자르는 등의 작업을 할 수 있습니다.
+
+이외

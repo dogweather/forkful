@@ -1,6 +1,7 @@
 ---
-title:                "Go: Att få nuvarande datum."
-simple_title:         "Att få nuvarande datum."
+title:                "Att få den aktuella datumen"
+html_title:           "Go: Att få den aktuella datumen"
+simple_title:         "Att få den aktuella datumen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -11,31 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hämta och använda den aktuella datumet i sina Go-program kan vara väldigt användbart för många utvecklare. Det kan till exempel användas för att ange sökfilter, skapa loggfiler eller för att visa datumet till användare.
+Att få den aktuella datumet är en vanlig funktion inom programmering, eftersom den ger programmet möjlighet att visa eller använda den aktuella tiden. Det kan vara användbart för att hålla koll på olika aktiviteter eller för att skapa tidsstämplar.
 
-## Hur Man Gör
+## Hur man gör det
 
-För att hämta den aktuella datumet i Go kan du använda funktionen `time.Now()` och sedan använda metoden `Format()` för att formatera det på önskat sätt.
+För att få den aktuella datumet använder man Go:s inbyggda paket "time", som ger tillgång till olika funktioner för att hantera datum och tid.
 
+Först måste vi importera paketet "time" i vår kod:
+
+```Go
+import "time"
 ```
-Go
+
+Sedan kan vi använda funktionen "Now" för att få den aktuella tiden i form av ett "Time" objekt:
+
+```Go
 currentDate := time.Now()
-formattedDate := currentDate.Format("2006-01-02")
-fmt.Println("Idag är det", formattedDate)
 ```
 
-Output: `Idag är det 2021-08-19`
+Om vi vill ha datumet i ett specifikt format, till exempel "dd-mm-yyyy", kan vi använda "Format" funktionen:
 
-I kodexemplet används layouten `2006-01-02`, vilket är ett speciellt format som används i Go för att representera datum. Den första siffran är året, den andra är månaden och den tredje är dagen. Det finns många olika möjliga layouter som kan användas, beroende på vilket format som passar bäst för ditt specifika projekt.
+```Go
+formattedDate := currentDate.Format("02-01-2006")
+```
+
+Här använde vi ett speciellt datumlayout som Go:s "Format" funktion följer, där "02-01-2006" motsvarar "dd-mm-yyyy". Du kan använda olika kombinationer av siffror och bokstäver för att få det datumformat du föredrar.
 
 ## Djupdykning
 
-När vi använder funktionen `time.Now()` hämtas den aktuella tiden från systemets klocka och konverteras till en `time.Time`-strukt i Go. Den här strukturen innehåller information om årtal, månad, dag, timme, minut, sekund och nanosekund. Genom att använda metoder som `Format()` eller `AddDate()` kan vi sedan hämta och manipulera denna information på olika sätt.
+Go:s "time" paket använder sig av tidszoner för att hantera datum och tid. Standardtidszonen är UTC, men man kan också definiera en specifik tidszon med hjälp av "LoadLocation" funktionen:
 
-Det finns också andra paket som kan vara hjälpsamma när det gäller att hantera datum och tid i Go, t.ex. `timeparse` för att parsaa datum från textsträngar eller `timezones` för att hantera tidszoner.
+```Go
+specificTimezone, err := time.LoadLocation("Europe/Stockholm")
+```
 
-## Se Även
+Man kan sedan använda "In" funktionen för att konvertera den aktuella tiden till den specifika tidszonen:
 
-- [Go Dokumentation - Time Paketet](https://golang.org/pkg/time/)
-- [Go Dokumentation - Timeparse Paketet](https://golang.org/pkg/timeparse/)
-- [Go Dokumentation - Timezones Paketet](https://golang.org/pkg/timezones/)
+```Go
+specificTime := time.Now().In(specificTimezone)
+```
+
+Genom att använda "Now" funktionen med en specifik tidszon kan man också få den aktuella tiden för olika delar av världen.
+
+## Se även
+
+- [Go time paket](https://golang.org/pkg/time/)
+- [Go tidlayout referens](https://golang.org/src/time/format.go?s=10064:10105#L340)
+- [Dokumentation för time.Now() funktionen](https://golang.org/pkg/time/#Now)

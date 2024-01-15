@@ -1,5 +1,6 @@
 ---
-title:                "C#: Convirtiendo una cadena a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "C#: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "C#"
 category:             "C#"
@@ -9,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas?
+## Por qué
 
-La conversión de un string a su forma en minúsculas puede ser útil en diferentes situaciones, como por ejemplo cuando se quiere comparar cadenas de manera insensible a mayúsculas y minúsculas, o cuando se desea mostrar una cadena en un formato uniforme, sin importar cómo fue ingresada por el usuario.
+La conversión de una cadena de texto a minúsculas es una tarea común en la programación. Al convertir una cadena a minúsculas, podemos asegurar que nuestro programa sea más preciso y consistente al manejar entrada de usuarios.
 
 ## Cómo hacerlo
 
-```C#
-//Ejemplo 1: Convertir una cadena a minúsculas
-
-string cadena = "Mi Cadena en Mayúsculas";
-string cadenaEnMinusculas = cadena.ToLower();
-
-Console.WriteLine(cadenaEnMinusculas);
-
-//Salida: mi cadena en mayúsculas
-```
+ Para convertir una cadena de texto a minúsculas en C#, podemos utilizar el método `ToLower()` de la clase `string`. Veamos un ejemplo de cómo podemos aplicar este método en nuestro código:
 
 ```C#
-//Ejemplo 2: Comparar cadenas de manera insensible a mayúsculas y minúsculas
-
-string cadena1 = "Casa";
-string cadena2 = "casa";
-
-console.WriteLine(cadena1.Equals(cadena2, StringComparison.OrdinalIgnoreCase));
-
-//Salida: True
+string texto = "Esto ES un Ejemplo";
+Console.WriteLine(texto.ToLower());
 ```
 
-## Analizando en profundidad
+El resultado de este código sería `esto es un ejemplo`, ya que hemos convertido todas las letras a minúsculas.
 
-La conversión de una cadena a minúsculas se realiza a través del método `ToLower()` de la clase `String`. Este método utiliza las reglas de localización del sistema operativo para determinar cómo convertir las letras mayúsculas a minúsculas. Por ejemplo, en español la letra "Ñ" se convertirá a "ñ" mientras que en inglés se seguirá utilizando la misma letra "N".
+Si queremos convertir una cadena a minúsculas sin modificar la original, podemos usar el método `ToLowerInvariant()`. Este método es más recomendable ya que usa reglas de idioma neutras, evitando problemas con diferentes idiomas.
 
-Además, es importante tener en cuenta que la conversión a minúsculas de una cadena puede afectar su longitud, ya que algunos caracteres mayúsculas tienen su equivalente en minúsculas con más de un byte.
+```C#
+string texto = "ThIs iS a NoTher ExaMPle";
+Console.WriteLine(texto.ToLowerInvariant());
+```
+
+El resultado de este código sería `this is a nother example`.
+
+## Profundizando
+
+La razón por la que usamos `ToLower()` o `ToLowerInvariant()` en lugar de simplemente cambiar manualmente todas las letras a minúsculas es porque estos métodos tienen en cuenta los caracteres acentuados y otros especiales. De esta manera, nuestro programa será más preciso al tratar diferentes idiomas.
+
+Además, existe un tercer método llamado `ToLower(CultureInfo)`, el cual nos permite especificar un idioma específico para realizar la conversión.
 
 ## Ver también
 
-- [Método `ToLower()` en la documentación de Microsoft](https://docs.microsoft.com/es-es/dotnet/api/system.string.tolower)
-- [Método `Equals()` en la documentación de Microsoft](https://docs.microsoft.com/es-es/dotnet/api/system.string.equals)
-- [Cadenas en C#](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/strings/)
+- [Método ToLower en la documentación de Microsoft](https://docs.microsoft.com/es-es/dotnet/api/system.string.tolower?view=net-5.0)
+- [Video tutorial sobre convertir cadenas a minúsculas en C#](https://www.youtube.com/watch?v=tKj5wJXFZPY)
+- [Cómo convertir cadenas a mayúsculas en C#](https://www.geeksforgeeks.org/c-sharp-stringtolower-method/)

@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Uttrekking av delstrenger"
+title:                "Uttrekking av delstrenger"
+html_title:           "Elixir: Uttrekking av delstrenger"
 simple_title:         "Uttrekking av delstrenger"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,46 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Hvis du jobber med tekstbehandling eller bearbeiding av data, er det sannsynlig at du på et eller annet tidspunkt vil trenge å trekke ut deler av en tekststreng. Å kunne ekstrahere substrings kan hjelpe deg med å manipulere data mer effektivt og gjøre komplekse oppgaver enklere å håndtere.
 
-Hvorfor skulle man ønske å trekke ut substringer i Elixir? Det kan være flere grunner til dette, men det mest vanlige er å håndtere tekst- og dataanalyse. Substrings er deler av en streng som består av en sekvens av tegn, og ved å ekstrahere disse kan man få tilgang til spesifikke deler av en tekst.
-
-# Hvordan
-
-For å trekke ut substringer i Elixir, kan vi bruke funksjonen `String.slice/3`, som tar tre argumenter: strengen vi ønsker å trekke ut fra, startindeksen og slutindeksen til den ønskede substringsen. La oss se på et eksempel for å illustrere dette:
+## Hvordan gjøre det
+Å ekstrahere substrings i Elixir er enkelt og intuitivt. Du kan bruke funksjonen `String.slice/2` og øke substringsens posisjon og lengde. Enkelt sagt, du gir `String.slice/2` to argumenter -- en tekststreng og et utvalgspunkt, og funksjonen vil returnere en ny streng som inneholder en del av den opprinnelige strengen basert på utvalgsparameterene du ga. La oss se et eksempel:
 
 ```Elixir
-str = "Elixir er et fantastisk programmeringsspråk!"
-
-# Eksempel 1: Trekke ut første del av strengen
-String.slice(str, 0, 6)
-
-# Output: "Elixir"
-
-# Eksempel 2: Trekke ut en del av strengen ved å bruke negative indekser
-String.slice(str, -14, -8)
-
-# Output: "språk!"
+original_streng = "Hei, verden!"
+substring = String.slice(original_streng, 3, 5)
+IO.puts(substing)
 ```
 
-Vi kan også bruke funksjonen `String.split/3` for å dele en streng basert på et visst separator-tegn og deretter få tilgang til en bestemt substring. La oss se på et annet eksempel:
+Dette vil returnere "i, ve", som er substringsen som starter på posisjon 3 og har en lengde på 5 tegn.
 
-```Elixir
-str = "Elixir er et fantastisk programmeringsspråk!"
+Du kan også bruke utfall fra andre funksjoner som inndata for `String.slice/2`. For eksempel, hvis du bruker `String.split/2` for å dele en streng opp i en liste av substrings, kan du bruke en av disse substringsene som inndata for `String.slice/2` for å få en del av den opprinnelige strengen.
 
-# Eksempel 3: Dele strengen på mellomrom og trekke ut den siste delen
-[String.split(str, " ") |> List.last]
+## Dypere dykk
+Elixir har også andre funksjoner for å ekstrahere substrings som `String.substring/2` og `String.slice/3`. Disse lar deg sette en startposisjon og sluttposisjon for substringsen du vil ekstrahere. Du kan også bruke regulære uttrykk sammen med `Regex.run/3` og `Regex.scan/3` for å filtrere og ekstrahere spesifikke substrings fra en tekststreng.
 
-# Output: "programmeringsspråk!"
-```
-
-# Dypdykk
-
-Nå som vi har lært hvordan vi kan trekke ut substringer, la oss ta en titt på noen dypere konsepter. En viktig ting å merke seg er at indeksering i Elixir starter fra 0, noe som betyr at den første delen av en streng har indeks 0, den andre har indeks 1, og så videre.
-
-I tillegg er det viktig å være klar over at Elixir har unicode-støtte, så det er viktig å ta hensyn til dette når man arbeider med tekst og trekk ut substringer.
-
-# Se også
-
-- [Elixir dokumentasjon om strenger](https://hexdocs.pm/elixir/String.html)
-- [Unicode i Elixir](https://elixir-lang.org/getting-started/unicode-and-strings.html)
+## Se også
+- [Elixir dokumentasjon for String-modulen](https://hexdocs.pm/elixir/String.html)
+- [Nettstedet for Elixir programmeringsspråket](https://elixir-lang.org/)

@@ -1,6 +1,7 @@
 ---
-title:                "C#: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "「文字列を大文字化する」"
+html_title:           "C#: 「文字列を大文字化する」"
+simple_title:         "「文字列を大文字化する」"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,26 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## なぜ
+文字列の大文字変換を行う理由を楽しく説明する。多くのプログラマーにとって、文字列の大文字変換は基本的なタスクであり、これを行う方法を知っておくと便利です。
 
-文字列を大文字にすることについて、なぜ誰かがそれに取り組みたがるのかを説明します。
+## 使い方
+文字列の大文字変換は、C＃のStringクラスのメソッドを使用して行うことができます。例えば、次のように記述します。
 
-## 方法
+```C#
+string str = "こんにちは、世界！";
+str = str.ToUpper();
+Console.WriteLine(str);
+```
 
-"```C#
-// 入力文字列
-string input = "hello world";
-// 文字列を大文字に変換
-string output = input.ToUpper();
-// 出力
-Console.WriteLine(output); // HELLO WORLD
-```"
+上記のコードでは、元の文字列が大文字に変換され、"こんにちは、世界！" は "こんにちは、世界！" に変わります。また、特定の文字列を大文字に変換するには、 `ToUpper()` メソッドの代わりに `ToUpperInvariant()` メソッドを使用することもできます。これは、文化や言語に依存せず、常に同じ結果を返します。
 
 ## ディープダイブ
+文字列を大文字に変換するメソッドは、プログラミング言語によって異なる場合があります。C＃では、文字列の一部を大文字に変換する `ToUpper()` メソッドが使用されますが、他の言語では `Uppercase()` メソッドや `Upper()` メソッドが使用される場合があります。さらに、文字列の大文字変換には、Unicodeに基づく変換や独自のアルゴリズムに基づく変換など、さまざまな方法があります。
 
-文字列を大文字にする機能は、プログラムで非常に便利です。例えば、ユーザーの入力を確実に大文字に変換することで、入力ミスを防ぐことができます。また、大文字と小文字を区別しない検索やソートを行う際にも、大文字に統一することで正確な結果を得ることができます。
-
-## 参考
-
-[.NET フレームワーク ドキュメント - string.ToUpper メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.toupper?view=net-5.0)
-
-[C# リファレンス - 文字列操作](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/strings/)
+## 参考リンク
+- C＃のStringクラス: https://docs.microsoft.com/ja-jp/dotnet/api/system.string?view=net-5.0
+- 全角・半角文字の変換について: https://qiita.com/gabapple/items/9ec753b47e11e8a58876
+- Unicodeのオフィシャルサイト: https://www.unicode.org/

@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Comparando dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "Ruby: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,44 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué comparar dos fechas en Ruby?
 
-Comparar fechas en un programa es una tarea común que puede ayudar a determinar la duración de un evento o calcular el tiempo transcurrido entre dos fechas específicas.
+Comparar dos fechas en Ruby es una tarea común en la programación, especialmente cuando se trabaja con datos temporales. Al comparar dos fechas, puedes determinar si una fecha es anterior, posterior o igual a otra, lo que te permite realizar diferentes acciones en tu código según la comparación.
 
-## Cómo hacerlo
-
-Usando Ruby, podemos utilizar el método `compare` para comparar dos fechas y obtener un resultado numérico basado en la diferencia entre ellas. Veamos un ejemplo de cómo hacerlo:
+## Cómo comparar dos fechas en Ruby
 
 ```Ruby
-fecha_1 = Time.new(2021, 9, 1)
-fecha_2 = Time.new(2021, 8, 1)
+# Crear dos objetos de fecha
+date_1 = Date.new(2021, 5, 20)
+date_2 = Date.new(2021, 6, 15)
 
-resultado = fecha_1.compare(fecha_2)
-puts resultado
-```
+# Comparar si date_1 es anterior a date_2
+if date_1 < date_2
+  puts "date_1 es anterior a date_2"
+end
 
-Este código imprimirá "1" ya que la fecha 1 es más reciente que la fecha 2. Además, también podemos utilizar el método `between?` para determinar si una fecha se encuentra entre otras dos fechas. Veamos otro ejemplo:
+# Comparar si date_1 es posterior a date_2
+if date_1 > date_2
+  puts "date_1 es posterior a date_2"
+end
 
-```Ruby
-fecha = Time.now
-fecha_inicio = Time.new(2021, 1, 1)
-fecha_fin = Time.new(2021, 12, 31)
-
-if fecha.between?(fecha_inicio, fecha_fin)
-  puts "La fecha actual se encuentra entre las fechas elegidas"
+# Comparar si date_1 es igual a date_2
+if date_1 == date_2
+  puts "date_1 es igual a date_2"
 end
 ```
 
-Este código imprimirá el mensaje si la fecha actual está entre el 1 de enero y el 31 de diciembre del año actual.
+**Output:**
+```
+date_1 es anterior a date_2
+```
 
-## Profundizando
+En el código de ejemplo, hemos creado dos objetos de fecha utilizando el método `Date.new` y luego los comparamos utilizando los operadores de comparación `<` (menor que), `>` (mayor que) y `==` (igual a). Puedes utilizar estos operadores para comparar fechas tanto en formato de texto como en objetos de fecha.
 
-Al comparar fechas en Ruby, es importante tener en cuenta que los resultados se basan en la diferencia de tiempo en segundos. Por lo tanto, es importante estar atentos a las zonas horarias y ajustarlas adecuadamente para obtener resultados precisos. Además, Ruby también ofrece otros métodos para comparar fechas, como `eql?` y `==` que pueden ser útiles en diferentes situaciones.
+## Profundizando en la comparación de dos fechas
 
-Por otro lado, es importante tener en cuenta que Ruby también nos permite comparar fechas en formato string utilizando el método `Date.parse`. Esto puede ser útil para comparar fechas ingresadas por el usuario o desde un archivo externo.
+Al comparar dos fechas en Ruby, es importante tener en cuenta algunos detalles. Primero, el método `Date#==` solo compara la fecha en sí, no la hora. Si necesitas comparar también la hora, puedes utilizar el método `Time#==` en su lugar. Además, también hay métodos predefinidos en Ruby para comparar si una fecha es anterior o posterior a otra basándose en diferentes unidades de tiempo, como días, meses o años. Por ejemplo, el método `Date#next_day` devuelve una nueva fecha que es el siguiente día del objeto de fecha.
+
+Para obtener más información sobre cómo comparar fechas en Ruby, puedes consultar la documentación oficial [Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html) y [Time](https://ruby-doc.org/stdlib-2.7.1/libdoc/time/rdoc/Time.html).
 
 ## Ver también
 
-- [Documentación de Ruby para el método "compare"](https://ruby-doc.org/core-3.0.1/Time.html#method-i-compare)
-- [Documentación de Ruby para el método "between?"](https://ruby-doc.org/core-3.0.1/Time.html#method-i-between-3F)
-- [Artículo sobre cómo comparar fechas en Ruby](https://www.geeksforgeeks.org/how-to-compare-dates-in-ruby/)
+- [Cómo trabajar con fechas y tiempos en Ruby](https://www.rubyguides.com/2015/05/working-with-dates-ruby/)
+- [Documentación oficial de Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Documentación oficial de Time](https://ruby-doc.org/stdlib-2.7.1/libdoc/time/rdoc/Time.html)

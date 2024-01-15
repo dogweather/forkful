@@ -1,6 +1,7 @@
 ---
-title:                "Elixir: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Elixir: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,54 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande del av programmering och kan vara användbart för att hantera och manipulera textdata. I denna bloggpost kommer vi att titta på hur man enkelt kan göra detta med hjälp av Elixir.
+Att hitta längden på en sträng kan vara en viktig del av programutveckling för att kunna manipulera och hantera data på ett effektivt sätt. Det kan också vara en grundläggande färdighet som behövs för att lösa komplexa problem och skapa mer sofistikerade algoritmer.
 
-## Så här gör du
+## Såhär gör du
 
-För att hitta längden på en sträng i Elixir, kan du använda funktionen `String.length()`. Den tar en sträng som inmatning och returnerar antalet tecken i strängen.
+För att hitta längden på en sträng i Elixir kan vi använda funktionen `String.length()`, som returnerar antalet tecken i en sträng. Vi kan också använda `String.codepoints()` som returnerar en lista av kodpoängen för varje tecken i en sträng.
 
 ```Elixir
 iex> String.length("Hej!")
-3
-iex> String.length("32b karaktärer")
-14
+4
+iex> String.codepoints("Hej!")
+[72, 101, 106, 33]
 ```
 
-Som du kan se från exemplet ovan, tar funktionen hänsyn till alla tecken i strängen, inklusive mellanslag och specialtecken.
-
-För att inkludera mellanslag och specialtecken som en faktor i längden, kan du använda `byte_size()` funktionen istället.
+För att kontrollera hur många bytes en sträng tar upp i minnet kan vi använda funktionen `byte_size()`, som returnerar antalet bytes som en sträng innehåller.
 
 ```Elixir
 iex> byte_size("Hej!")
 4
-iex> byte_size("32b karaktärer")
-16
 ```
 
-Den här funktionen returnerar antalet byte som används för strängens koder. För de flesta skriftsystem, kommer byte_size() att returnera samma värde som String.length(). Men om du arbetar med unicode eller olika språk, kan det vara viktigt att använda `byte_size()` för att få en exakt längd.
+Vi kan också använda `String.length()` för att hitta längden på en sträng som använder multibyte-tecken, som t.ex. i det japanska alfabetet.
+
+```Elixir
+iex> String.length("こんにちは")
+5
+```
 
 ## Djupdykning
 
-Det kan vara intressant att veta hur Elixir hanterar strängar under huven för att förstå varför vi använder `String.length()` och `byte_size()`. Elixir strängar representeras som en lista av heltal som motsvarar koder för varje tecken. Detta innebär att längden på en sträng är lika med antalet element i listan.
+Det finns en viktig skillnad mellan `String.length()` och `byte_size()` - den första mäter längden på en sträng i antal tecken, medan den senare mäter längden på en sträng i antal bytes. Detta beror på att vissa tecken kan ta upp mer än en byte i minnet, särskilt om de tillhör ett skriftspråk som använder multibyte-tecken.
 
-```Elixir
-iex> "Hej!" |> String.to_charlist
-[72, 101, 106, 33]
-```
-
-Funktionen `String.to_charlist` konverterar vår sträng till en lista av heltal, där varje heltal representerar ett teckens kod.
-
-För att räkna antalet element i en lista kan du använda `Enum.count()` funktionen.
-
-```Elixir
-iex> [72, 101, 106, 33] |> Enum.count()
-4
-```
-
-Nu vet du hur Elixir räknar längden på en sträng och hur du kan använda funktionerna `String.length()` och `byte_size()` för att få längden baserat på ditt användningsfall.
+Det är också viktigt att vara medveten om att olika encoding-system kan påverka hur många bytes en sträng tar upp i minnet. Om du arbetar med strängar som innehåller specialtecken, är det en god idé att använda utf-8 encoding, som stöds av de flesta moderna verktyg och språk.
 
 ## Se även
 
-- [Elixir dokumentation för String module](https://hexdocs.pm/elixir/String.html)
-- [Elixir dokumentation för Enum module](https://hexdocs.pm/elixir/Enum.html)
-- [Elixir skolan: Data typer](https://elixirschool.com/en/lessons/basics/basics/data-types/)
+- [Elixir String Modul](https://hexdocs.pm/elixir/String.html#content)
+- [Utf-8 Encoding](https://en.wikipedia.org/wiki/UTF-8)

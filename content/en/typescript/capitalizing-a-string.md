@@ -1,5 +1,6 @@
 ---
-title:                "TypeScript recipe: Capitalizing a string"
+title:                "Capitalizing a string"
+html_title:           "TypeScript recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -9,52 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why: 
+## Why
 
-Capitalizing a string may seem like a simple task, but it can actually be quite useful in certain scenarios. For example, if you are creating a program that requires proper capitalization for names or titles, having a built-in function to do so can save time and improve the overall quality of your code. Plus, it can make your output look more professional and polished.
+You may find yourself needing to capitalize a string in your TypeScript code for various reasons - whether it's for proper formatting or for user readability. Luckily, there are easy ways to do so using built-in methods in TypeScript.
 
-## How To:
+## How To
 
-To capitalize a string in TypeScript, we can use the built-in `toUpperCase()` method. This method converts all lowercase letters in a string to uppercase. Let's take a look at an example:
-
-```TypeScript
-let name: string = 'jennifer';
-
-console.log(name.toUpperCase()); // outputs "JENNIFER"
-```
-
-In this example, we have declared a string variable `name` with the value of "jennifer". Then, we use the `toUpperCase()` method to convert all the lowercase letters in the string to uppercase, and finally, we use `console.log()` to print the new capitalized string to the console.
-
-We can also use this method with user input. For example, if a user enters their name in all lowercase letters, we can use the `toUpperCase()` method to properly capitalize their name before displaying it.
+To capitalize a string, you can use the `toUpperCase()` method. This will convert all characters in a string to uppercase letters. Let's take a look at an example:
 
 ```TypeScript
-let userInput: string = prompt('Please enter your name.');
-
-console.log(userInput.toUpperCase());
+let myString = "hello world";
+console.log(myString.toUpperCase());
 ```
 
-You can try this code out in the TypeScript playground [here](https://www.typescriptlang.org/play/index.html).
+The output of this code will be `HELLO WORLD`. We used the `toUpperCase()` method on the `myString` variable, which converted all characters in the string to uppercase letters.
 
-## Deep Dive:
-
-The `toUpperCase()` method can also be used with strings that already have some uppercase letters. In this case, only the lowercase letters will be converted to uppercase, leaving the uppercase letters unchanged. For example:
+If you need to capitalize only the first letter of a string, you can use the `charAt()` and `toUpperCase()` methods in conjunction. Here's an example:
 
 ```TypeScript
-let title: string = 'tHe lOrd Of The rIngS';
-
-console.log(title.toUpperCase()); // outputs "THE LORD OF THE RINGS"
+let myString = "hello world";
+let firstLetter = myString.charAt(0).toUpperCase();
+let remainingLetters = myString.slice(1);
+console.log(firstLetter + remainingLetters);
 ```
 
-Additionally, the `toUpperCase()` method does not alter the original string, but rather returns a new string with the changes applied. This can be useful if you need to keep the original string as it is.
+The output of this code will be `Hello world`. We used the `charAt()` method to get the first letter of the string, then used the `toUpperCase()` method to convert it to uppercase. Then, we used the `slice()` method to get the remaining letters in the string and combined them with the first letter to get the desired output.
 
-It's also important to note that the `toUpperCase()` method only works on strings and will throw an error if used on any other data type. 
+## Deep Dive
 
-## See Also:
+There are also other methods and techniques you can use to capitalize a string in TypeScript. For example, you can use regular expressions to replace the first letter of a string with its uppercase equivalent:
 
-For more information on the `toUpperCase()` method and other useful string methods in TypeScript, check out the official TypeScript documentation [here](https://www.typescriptlang.org/docs/handbook/strings.html).
+```TypeScript
+let myString = "hello world";
+let capitalizedString = myString.replace(/\b[a-z]/g, (x) => x.toUpperCase());
+console.log(capitalizedString);
+```
 
-Other helpful resources for learning TypeScript:
+The output of this code will also be `Hello world`. We used the `replace()` method along with a regular expression to find the first letter of the string and replace it with its uppercase version.
 
-- [TypeScript for Beginners: The Missing Cheat Sheet](https://www.freecodecamp.org/news/typescript-cheat-sheet/)
-- [TypeScript Tutorial for Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [TypeScript Crash Course](https://www.youtube.com/watch?v=rAy_3SIqT-E) on YouTube
+You can also use the `charAt()` method to get the first letter of a string, convert it to its uppercase equivalent, and then use the `substr()` method to get the remaining letters in the string and concatenate them together:
+
+```TypeScript
+let myString = "hello world";
+let capitalizedString = myString.charAt(0).toUpperCase() + myString.substr(1);
+console.log(capitalizedString);
+```
+
+The output of this code will also be `Hello world`. We used the `charAt()` method to get the first letter of the string, converted it to uppercase, and then used the `substr()` method to get the remaining letters and combine them with the first letter to get the desired output.
+
+## See Also
+
+* [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+* [MDN Web Docs - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+* [MDN Web Docs - String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+* [MDN Web Docs - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+* [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+* [MDN Web Docs - String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)

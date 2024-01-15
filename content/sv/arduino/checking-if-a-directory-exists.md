@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Att kontrollera om en Mapp existerar"
+html_title:           "Arduino: Att kontrollera om en Mapp existerar"
+simple_title:         "Att kontrollera om en Mapp existerar"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -9,49 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Varför"
+## Varför
 
-Att kontrollera om en mapp existerar är ett viktigt steg i programmeringen av Arduino. Genom att vara säker på att en mapp finns kan du undvika felaktiga instruktioner och upprätthålla en smidig och effektiv kod.
+Att kontrollera om en katalog finns kan vara användbart för att undvika fel och effektivisera kod. Om du till exempel vill spara data till en viss katalog måste du först kontrollera att katalogen verkligen existerar innan du kan spara data till den. Detta säkerställer att din kod fungerar korrekt och undviker att skapa nya kataloger i onödan.
 
-"## Hur man gör det"
+## Så här gör du
 
-Kontrollera om en mapp existerar på Arduino är enkelt och kan göras med hjälp av funktionen "exists()" i File-klassen. Här är ett exempel på kod som visar hur man gör det:
+För att kontrollera om en katalog finns på din Arduino kan du använda funktionen "exists" från File-klassen. Detta gör det möjligt att söka efter en specifik katalog och få ett booleskt svar på om den finns eller inte.
 
 ```Arduino
 #include <SPI.h>
-#include <FS.h>
-  
+#include <SD.h>
+
 void setup() {
-  Serial.begin(9600); // Öppna en kommunikationslinje med datorn
-  while (!Serial) { } // Vänta tills kommunikationslinjen är öppen
-  // Börja berätta för användaren vad som händer
-  Serial.println("Kontrollera om mappen 'data' existerar...");
-  // Anropa "exists()" metoden för att kontrollera om mappen existerar
-  if(SPIFFS.exists("/data")){
-    // Om mappen existerar, skriv ut ett meddelande
-    Serial.println("Mappen 'data' existerar!");
+  // Initialiserar SD-kortet
+  if(!SD.begin(10)) {
+    Serial.println("Kunde inte hitta SD-kort.");
+    return;
   }
-  else{
-    // Om mappen inte existerar, skriv ut ett meddelande
-    Serial.println("Kunde inte hitta mappen 'data'...");
+  
+  // Kontrollerar om katalogen "data" finns
+  if(SD.exists("data")) {
+    // Katalogen finns, fortsätt med kod
+  } else {
+    // Katalogen finns inte, gör något annat
   }
+
 }
 
 void loop() {
-  // Inget behöver göras här, all kod körs i setup() funktionen
+
 }
 ```
 
-För att kunna köra denna kod behöver du installera SPIFFS-biblioteket på din Arduino. Mer information om hur du gör det hittar du här: [https://www.arduino.cc/en/Reference/FS](https://www.arduino.cc/en/Reference/FS)
+Om katalogen "data" finns kommer funktionen att returnera "true" och därmed kommer den första if-satsen att köras. Om katalogen inte finns kommer funktionen att returnera "false" och därmed kommer den andra if-satsen att köras. Det är också möjligt att använda "exists" för att kontrollera om en fil finns på samma sätt.
 
-## Djupdykning
+## Deep Dive
 
-När du använder "exists()" funktionen för att kontrollera om en mapp existerar, behöver du inkludera "/"-tecknet i början av mappens namn. Detta beror på att det är den fullständiga sökvägen som funktionen kontrollerar, inte enbart mappens namn.
+För att kunna använda funktionen "exists" måste du ha inkluderat File-biblioteket. Detta gör att du kan använda alla funktioner som finns tillgängliga för att hantera filer och kataloger på ditt SD-kort.
 
-En annan viktig aspekt att tänka på är att "exists()" funktionen bara kontrollerar om en mapp existerar och inte om den är tillgänglig för skrivning. Om du behöver kontrollera det senare, kan du använda "open()" funktionen som också ingår i File-klassen.
+Det finns också möjlighet att använda mer avancerade metoder för att kontrollera om en katalog finns, som till exempel att utföra en sökning på hela SD-kortet för att hitta en specifik katalog. Detta kan vara användbart om du inte vet exakt vad katalogen heter eller om den kan placeras på olika platser på SD-kortet.
 
 ## Se även
 
-För mer information om File-klassen och dess olika funktioner, rekommenderar vi att du tittar på Arduino officiella referensguide: [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)
+Här är några användbara resurser för att lära dig mer om att hantera filer och kataloger på din Arduino:
 
-Om du vill lära dig mer om hur du använder SPIFFS på Arduino, kan du hitta mer resurser och guider här: [https://www.arduino.cc/en/Reference/FS#installation](https://www.arduino.cc/en/Reference/FS#installation)
+- [File-klassen på Arduino referenssida](https://www.arduino.cc/en/Reference/FileExists)
+- [SD-biblioteket på Arduino referenssida](https://www.arduino.cc/en/Reference/SD)
+- [Guide för att använda SD-kort med Arduino](https://www.arduino.cc/en/Guide/ArduinoSD)

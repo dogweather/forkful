@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Wyświetlanie wyników debugowania"
+html_title:           "Javascript: Wyświetlanie wyników debugowania"
+simple_title:         "Wyświetlanie wyników debugowania"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -11,58 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Na co dzień programiści wykonują wiele zadań, a jednym z nich jest debugowanie kodu. Wiele osób uważa to za frustrujące, ale jest to nieunikniony proces, aby upewnić się, że nasz program działa zgodnie z oczekiwaniami. Jednym z narzędzi, które pomagają w tym procesie, jest drukowanie komunikatów debugowania. Pozwala ono programiście zobaczyć, co dokładnie dzieje się w kodzie i gdzie może być występujący problem. Dlatego warto poznać, jak to zrobić i jak może to ułatwić debugowanie.
+Debugowanie to nieodłączna część pisania kodu, a w niektórych sytuacjach często musimy zrozumieć, co dzieje się w trakcie jego wykonania. Właśnie wtedy przydatne mogą okazać się komendy do drukowania zawartości zmiennych i innych informacji o naszym kodzie. W tym artykule dowiesz się, dlaczego drukowanie debugu jest przydatne i jak możesz to zrobić w JavaScript.
 
 ## Jak to zrobić
 
-Aby wyświetlić komunikaty debugowania w swoim kodzie, wystarczy użyć funkcji `console.log()`. Jest to wbudowana funkcja dostępna we wszystkich przeglądarkach internetowych i środowiskach programistycznych opartych na JavaScript. Poniżej znajduje się przykładowy kod z użyciem funkcji `console.log()` oraz jego wynik w konsoli.
+Aby wydrukować debug output w JavaScript, możesz skorzystać z funkcji `console.log()`. Przykładowo, jeśli chcesz wydrukować wartości zmiennej `x`, wykonaj następujący kod:
 
 ```Javascript
-let number = 7
-console.log("Wartość zmiennej number wynosi: " + number);
-```
-Wynik w konsoli:
-```
-Wartość zmiennej number wynosi: 7
+let x = 5;
+console.log(x);
 ```
 
-Możemy również drukować wartości zmiennych wewnątrz pętli lub warunków, aby śledzić, jak zmieniają się podczas wykonywania kodu. Przykładowy kod z użyciem pętli `for` i funkcji `console.log()`:
+W wyniku otrzymasz `5` w konsoli przeglądarki. Oprócz zmiennych, możesz także wydrukować dowolny tekst, korzystając z interpolacji stringów, jak pokazano w poniższym przykładzie:
 
 ```Javascript
-for (let i = 0; i <= 5; i++) {
-  console.log("Aktualna wartość pętli wynosi: " + i);
-}
-```
-Wynik w konsoli:
-```
-Aktualna wartość pętli wynosi: 0
-Aktualna wartość pętli wynosi: 1
-Aktualna wartość pętli wynosi: 2
-Aktualna wartość pętli wynosi: 3
-Aktualna wartość pętli wynosi: 4
-Aktualna wartość pętli wynosi: 5
+let name = 'Adam';
+console.log(`Witaj, ${name}!`);
 ```
 
-Dodatkowo, funkcja `console.log()` może przyjmować więcej niż jedną wartość, dzięki czemu możemy drukować kilka wartości jednocześnie. Przykładowy kod:
+W konsoli pojawi się `Witaj, Adam!`. Dzięki temu, możesz wyświetlić informacje o błędach, wartościach zmiennych, czy też po prostu potwierdzić, że dany kod został wykonany.
 
-```Javascript
-let name = "Anna";
-let age = 25;
-let job = "programistka";
+## Deep Dive
 
-console.log("Cześć, jestem " + name + ", mam " + age + " lat i pracuję jako " + job + ".");
-```
-Wynik w konsoli:
-```
-Cześć, jestem Anna, mam 25 lat i pracuję jako programistka.
-```
+Funkcja `console.log()` jest bardzo pomocna, ale w niektórych sytuacjach możesz potrzebować bardziej zaawansowanych narzędzi do debugowania. Wtedy warto zapoznać się z innymi funkcjami dostępnymi w JavaScript, takimi jak `console.error()`, `console.warn()` czy `console.time()`. Dzięki nim możesz łatwiej zlokalizować i naprawić ewentualne błędy w swoim kodzie.
 
-## Zapoznaj się z szczegółami
+Oprócz tego, warto także poznać narzędzia do debugowania w przeglądarkach, takie jak konsola deweloperska czy debugger, które oferują dodatkowe funkcje, takie jak wyświetlanie wartości zmiennych w trakcie działania aplikacji.
 
-Istnieje wiele narzędzi i technik, które mogą ułatwić drukowanie komunikatów debugowania. Na przykład, możemy użyć `console.error()` do wyświetlenia błędów lub `console.table()` do wyświetlenia danych w postaci tabeli. Możemy również zamiast funkcji `console.log()` użyć bardziej zaawansowanych narzędzi, takich jak debugger dostępny w większości przeglądarek. Warto również pamiętać o śledzeniu wydajności naszego kodu i wyświetlaniu odpowiednich komunikatów w celu zidentyfikowania potencjalnych problemów.
+## Zobacz także
 
-## Zobacz również
-
-- [Console API](https://developer.mozilla.org/pl/docs/Web/API/Console)
-- [Debugowanie w przeglądarkach](https://developer.mozilla.org/pl/docs/Tools)
-- [Techniki debugowania w JavaScript](https://javascript.pl/tutorial/debugowanie)
+- [Dokumentacja funkcji `console` w JavaScript](https://developer.mozilla.org/pl/docs/Web/API/Console)
+- [Podstawy debugowania w JavaScript](https://codeburst.io/javascript-debugging-for-beginners-a4b6f0d76fad)
+- [Narzędzia debugowania w przeglądarkach](https://blog.logrocket.com/debugging-javascript-in-chrome-like-a-pro/)

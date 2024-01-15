@@ -1,5 +1,6 @@
 ---
-title:                "Ruby: Convertendo uma string para minúsculas."
+title:                "Convertendo uma string para minúsculas."
+html_title:           "Ruby: Convertendo uma string para minúsculas."
 simple_title:         "Convertendo uma string para minúsculas."
 programming_language: "Ruby"
 category:             "Ruby"
@@ -9,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Converter uma string para letras minúsculas é uma tarefa comum em programação, especialmente quando se trata de processar entrada de usuário. Ao converter uma string para minúsculas, podemos garantir que qualquer entrada seja comparada de forma consistente e facilitar a manipulação de dados.
+Conversão de string para minúscula é uma operação comum em programação, especialmente quando se lida com entrada de dados do usuário ou comparação de strings. É importante saber como realizar essa conversão de forma eficiente e poderosa com Ruby.
 
 ## Como fazer
 
-Existem várias maneiras de converter uma string para letras minúsculas em Ruby, dependendo da situação e preferência pessoal. Vamos dar uma olhada em algumas das formas mais comuns:
+``` Ruby
+# Usando o método downcase:
+string = "OLA MUNDO"
+puts string.downcase
+#Output: ola mundo
 
-```Ruby
-# Usando o método .downcase
-string = "Olá, MUNDO!"
-puts string.downcase # saída: olá, mundo!
+# Usando o método map:
+string = "OLA MUNDO"
+puts string.chars.map(&:downcase).join
+# Output: ola mundo
 
-# Usando o método .downcase!
-string = "Olá, MUNDO!"
-puts string.downcase! # saída: olá, mundo!
-puts string # saída: olá, mundo! (string foi alterada permanentemente)
-
-# Usando a função String#downcase
-string = "Olá, MUNDO!"
-puts string.send(:downcase) # saída: olá, mundo!
+# Usando o método gsub:
+string = "OLA MUNDO"
+puts string.gsub(/[A-Z]/) {|match| match.downcase}
+# Output: ola mundo
 ```
 
-Como podemos ver, existem três maneiras diferentes de converter uma string para minúsculas em Ruby. Os métodos `.downcase` e `.downcase!` são fornecidos pelo Ruby de forma nativa, enquanto a função `String#downcase` é chamada usando o método `send`, que pode ser útil em situações mais complexas.
+## Profundidade
 
-## Mergulho profundo
-
-Por trás do funcionamento desses métodos e funções está o fato de que todas as strings em Ruby são objetos. Isso significa que eles possuem métodos e atributos que podem ser chamados para manipulá-los. Ao usar o método `.downcase`, estamos essencialmente chamando o método `downcase` no objeto string e obtendo o resultado de volta.
-
-Além disso, é importante notar que o Ruby é uma linguagem sensível a maiúsculas e minúsculas. Isso significa que o resultado da conversão para minúsculas dependerá do idioma usado no seu sistema operacional ou da versão do Ruby sendo executada.
+Ao converter uma string para minúscula com o método downcase, todas as letras serão convertidas para minúsculas, incluindo letras acentuadas e caracteres especiais. Isso é importante ao lidar com diferentes idiomas e conjuntos de caracteres. Além disso, o método downcase também possui a variante downcase!, que modifica a string original, em vez de retornar uma nova. Isso pode ser útil para economizar memória ao lidar com strings grandes. Outra opção para converter para minúsculas é utilizar o método map, que funciona transformando cada caractere da string em um array, aplicando o downcase em cada um e, por fim, unindo-os novamente em uma string. O método gsub também é uma opção viável, substituindo caracteres em uma string que correspondam a uma determinada expressão regular por outro valor, neste caso, uma versão em minúsculas do próprio caractere. 
 
 ## Veja também
 
-- [Documentação do Ruby: String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- [Livro de Receitas do Ruby: Métodos de string do Ruby](https://www.rubyguides.com/2019/05/ruby-string-methods/) 
-- [Convertendo strings para minúsculas em Ruby](https://medium.com/swlh/convert-strings-to-upcase-or-downcase-with-ruby-fac109971f)
+- Documentação da Classe "String": https://ruby-doc.org/core-3.0.1/String.html 
+- Ruby Guides - Manipulação de Strings: https://www.rubyguides.com/ruby-tutorial/string-methods/ 
+- Downcase vs lowercase in Ruby: https://stackoverflow.com/questions/9452031/downcase-vs-lowercase-in-ruby

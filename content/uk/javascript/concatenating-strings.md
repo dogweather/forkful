@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Об'єднання рядків"
-simple_title:         "Об'єднання рядків"
+title:                "З'єднання рядків"
+html_title:           "Javascript: З'єднання рядків"
+simple_title:         "З'єднання рядків"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -9,50 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Чому 
 
-При програмуванні на Javascript необхідно часто з'єднувати різні рядки, щоб створити більш складні дані. Це може бути корисно, наприклад, при створенні повідомлень для користувачів або URLs для передачі даних.
+У логічному виразі потрібно об'єднувати значення зі стрічками. Це є одним з інструментів, який дозволяє створювати динамічний вміст на веб-сторінках та полегшує роботу зі змінними даними. 
 
-## Як це зробити
-
-```Javascript
-// Створюємо два рядки
-let firstName = "Василь";
-let lastName = "Петренко";
-
-// З'єднуємо їх за допомогою "+" оператора
-let fullName = firstName + " " + lastName;
-
-// Виводимо результат у консоль
-console.log(fullName); // Василь Петренко
-```
+## Як
+Існує кілька способів здійснити об'єднання стрічок у Javascript. Найпростіший спосіб - використання "+" оператора. Нижче наведено приклад коду та його вивід: 
 
 ```Javascript
-// Також можна використовувати метод concat()
-let age = 25;
-let message = "Я " + fullName.concat(", мені ") + age + " років.";
+let str1 = "Hello";
+let str2 = "world";
 
-// Виводимо повідомлення у консоль
-console.log(message); // Я Василь Петренко, мені 25 років.
+let result = str1 + str2;
+console.log(result);
+
+// Output: HelloWorld
 ```
 
-## Глибоке погруження
+Також можна скористатися методом `concat()`, який дозволяє об'єднувати більше ніж дві стрічки. Приклад використання та вивід: 
 
-При з'єднанні рядків, Javascript перетворює всі дані в рядковий тип даних. Тому, якщо потрібно з'єднати числа та рядки, необхідно перетворити числа на рядки за допомогою методу toString().
-
-Наприклад:
 ```Javascript
-// Створюємо змінну з числовим значенням
-let num = 10;
+let str1 = "Hello";
+let str2 = "world";
+let str3 = "!";
 
-// Перетворюємо на рядковий тип даних і з'єднуємо з рядком
-let result = "Загальна кількість: " + num.toString();
+let result = str1.concat(str2, str3);
+console.log(result);
 
-// Результат: "Загальна кількість: 10"
+// Output: HelloWorld!
 ```
 
-## Ви можете також поцікавитись
+Окрім цього, у JavaScript є можливість використовувати динамічне об'єднання за допомогою шаблонних літералів. Приклад та вивід: 
 
-- [Javascript string concatenation](https://www.w3schools.com/jsref/jsref_concat_string.asp)
-- [MDN Docs: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Типи даних у Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Data_structures)
+```Javascript
+let str1 = "Hello";
+let str2 = "world";
+
+let result = `${str1} ${str2}`;
+console.log(result);
+
+// Output: Hello world
+```
+
+## Глибше
+Під час об'єднання стрічок у Javascript, важливо пам'ятати про типи даних. Якщо хоча б одне зі значень є числовим, воно буде перетворено у стрічку під час об'єднання. Наприклад:
+
+```Javascript
+let str = "Hello";
+
+let result = str + 5;
+console.log(result);
+
+// Output: Hello5
+```
+
+Крім того, зверніть увагу, що оператор "+" можна використовувати для об'єднання не тільки стрічок, але й масивів. Наприклад: 
+
+```Javascript
+let str1 = "Hello";
+let str2 = "world";
+let arr1 = [1, 2, 3];
+
+let result = str1 + str2 + arr1;
+console.log(result);
+
+// Output: Helloworld1,2,3
+```
+
+## Дивіться також
+- [MDN документація щодо об'єднання стрічок у Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [W3Schools Tutorial: Concatenating Strings in JavaScript](https://www.w3schools.com/js/js_string_concat.asp)
+- [JavaScript.info: Strings](https://javascript.info/types#strings)

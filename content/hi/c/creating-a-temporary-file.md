@@ -1,6 +1,7 @@
 ---
-title:                "C: एक अस्थायी फाइल बनाना"
-simple_title:         "एक अस्थायी फाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "C: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -9,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-यह लेख में हम सीखेंगे कि C प्रोग्रामिंग में टेम्पोररी फाइल क्यूं और कैसे बनाया जाता है।
+## Kyun
+Temporary file banana ke peeche koi khaas wajah hai. Kabhi kabhi hamare program mein temporary data store karna zaroori hota hai, jaise ki temporary results ko save karna ya temporary input data ko read karna. Temporary file banane se hum apne program ko flexible aur efficient banate hai.
 
-## कैसे करें
-टेम्पोररी फाइल बनाने के लिए, हम `tempnam()` और `tmpnam()` फंक्शन का उपयोग कर सकते हैं। ये फंक्शन एक अस्थायी फ़ाइल का नाम और पथ बनाते हैं। नीचे दिये गए उदाहरण में हम एक टेम्पोररी फाइल बनाते हैं और उसका नाम और थोड़ा सा डेटा लिखते हैं।
+## Kaise Karein
+Temporary file banane ke liye, hume sabse pehle "stdio.h" header file ko include karna hoga. Uske baad, hum `fopen` function ka use karke temporary file ko create kar sakte hai. Iske badle hume ek unique file name generate karna hoga, jise `tmpnam()` function ke zariye kar sakte hai. Finally, hume temporary file ko delete karna zaroori hai, iske liye hum `remove()` function ka use kar sakte hai. Niche diye gaye code snippet mein ek example hai:
 
 ```C
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    // टेम्पोररी फाइल बनाना
-    FILE *temp_file = tmpfile();
-    
-    // डेटा लिखना
-    if (temp_file != NULL) {
-        fprintf(temp_file, "यह एक टेम्पोररी फाइल है।");
-        fclose(temp_file);
-    }
-    
-    // टेम्पोररी फाइल का नाम प्रिंट करना
-    char *temp_file_name = tempnam(NULL, "tmp");
-    printf("टेम्पोररी फाइल का नाम है: %s\n", temp_file_name);
-    free(temp_file_name);
-    
-    return 0;
+  FILE *pFile;
+  char tempFile[50];
+
+  // Temporary file create karna
+  pFile = fopen("temp.txt", "w+");
+
+  // Unique file name generate karna
+  tmpnam(tempFile);
+
+  // Temporary file ko delete karna
+  remove(tempFile);
+
+  return 0;
 }
 ```
 
-आउटपुट:
-```
-टेम्पोररी फाइल का नाम है: tmp\fileXXXXXX
-```
+## Deep Dive
+Temporary files, ya temp files, humare program mein temporary data storage ke liye bahut zaroori hote hai. In files ko create karne ka sabse aasan tarika `fopen()` function ka use karna hai. Jab hum temporary file create karte hai, toh hume ek unique file name assign karna zaroori hai, taaki humari existing files ke saath conflict na ho. Iske liye `tmpnam()` function zariye hum unique file names generate kar sakte hai. Temporary file delete karne ke liye, hume `remove()` function ka use karna hai. Isse humari temporary file system se remove ho jayegi.
 
-## गहराई में जाएं
-टेम्पोररी फाइलें सीधे `C` सिस्टम कॉल के द्वारा बनायीं जातीं हैं। `tempnam` और `tmpnam` फंक्शन से, हम `POSIX` कॉल `mkstemp` का उपयोग कर सकते हैं। यह अस्थायी फाइल को एक अनुसूचीत अमान्य स्थान पर बनाता है जिसे कुछ समय बाद `unlink()` फंक्शन से हटा दिया जाता है। यह उस स्थान पर किसी भी चल रहे प्रबंधक को प्रवेश करने की अनुमति नहीं देता है।
-
-इसके अतिरिक्त, हम `mktemp()` फंक्शन का उपयोग करके भी टेम्पोररी फाइल बना सकते हैं। यह उसी स्थान पर फ़ाइल बनाता है जो
+## Dekhiye Bhi
+- [C Programming Tutorials Series by Programiz](https://www.programiz.com/c-programming)
+- [Temporary Files in C by GeeksforGeeks](https://www.geeksforgeeks.org/tmpnam-example-c/)
+- [The Importance of Temporary Files in Programming by Javatpoint](https://www.javatpoint.com/temporary-files-in-programming)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "C#: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C#"
 category:             "C#"
@@ -11,45 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jokaiselle koodaajalle tulee vastaan tilanne, jossa haluat muuttaa saman tekstin esiintymän kaikkien paikkojen tietynlaiseksi. Se voi olla kirjoitusvirheen korjaus, tekstin muokkaaminen tai koodin refaktorointi. Tässä tapauksessa tarvitset tekstinsyötön hakutoiminnallisuuden, joka pystyy muuttamaan vain tietyn tekstikuvion esiintymät.
+Kaikki C#-ohjelmoijat kohtaavat ajoittain tarpeen etsiä ja korvata tekstiä omassa koodissaan. Tämä artikkeli auttaa sinua ymmärtämään, miten tämä tehdään kätevästi ja tehokkaasti.
 
-## Kuinka
+## Kuinka tehdä
 
-C#:n Replace-metodi on täydellinen työkalu tämän tekemiseen. Se on osa string-tyyppiä ja se tarjoaa kätevän tavan korvata teksti tietyn kuvion kanssa. Voit käyttää sitä seuraavasti:
+Usein haluamme etsiä ja korvata tiettyjä sanoja tai merkkejä tekstistä, kuten muuttaa tietyn muuttujan nimeä tai korvata tietyt tiedostopolut toisilla. Tähän tarkoitukseen C# tarjoaa hyödyllisiä toimintoja. Katso alla olevia esimerkkejä ja niiden tulos, jotka auttavat sinua ymmärtämään, miten etsimistä ja korvaamista voidaan soveltaa omassa koodissasi.
 
-```
-string teksti = "Tämä on esimerkki.";
-string uusiTeksti = teksti.Replace("esimerkki", "malli");
-```
+```C#
+// Etsi ja korvaa sana hello-sanalla hi
+string teksti = "Tervetuloa maailma! Tässä on hello!";
+string uusiTeksti = teksti.Replace("hello", "hi");
+Console.WriteLine(uusiTeksti); // Tulostaa: "Tervetuloa maailma! Tässä on hi!"
 
-Tämä koodi korvaa kaikki "esimerkki" -tekstin esiintymät "malli" -tekstillä ja uusiTeksti-muuttujassa on lopputulos, joka on "Tämä on malli." 
-
-Voit myös käyttää Replace-metodia yhdessä IndexOf-metodin kanssa, jos haluat korvata vain tietyn esiintymän. Voit tehdä sen näin:
-
-```
-string teksti = "Olen menossa lomalle tänään.";
-int indeksi = teksti.IndexOf("lomalle");
-string uusiTeksti = teksti.Replace(teksti.Substring(indeksi, 7), "matkalle");
+// Etsi ja korvaa tietty merkkijono toisella merkkijonolla
+string lause = "Tämä on ensimmäinen lause. Ja tämä on toinen lause.";
+lause = lause.Replace("ensimmäinen", "kolmas").Replace("toinen", "neljäs")
+Console.WriteLine(lause); // Tulostaa: "Tämä on kolmas lause. Ja tämä on neljäs lause."
 ```
 
-Tässä koodissa haetaan ensin "lomalle" -tekstin indeksi ja sen jälkeen Replace-metodilla korvataan tämä teksti "matkalle" -tekstillä.
+Etsimistä ja korvaamista voidaan soveltaa myös monimutkaisempiin tekstin hallintatehtäviin, kuten tietokantayhteyksiin tai tiedostojen käsittelyyn. Alla olevassa esimerkissä etsitään ja korvataan tietyn tiedoston polkua uudella polulla.
 
-## Syvällinen sukellus
-
-Replace-metodi pystyy myös muotoilemaan tekstiä eri tavoin. Voit esimerkiksi käyttää sitä muuttamaan kirjaimien kokoa tai vaihtamaan isot ja pienet kirjaimet paikkaa. Seuraavassa on joitain esimerkkejä:
-
-```
-string teksti = "TÄMÄ on TEXTIä";
-string pienetKirjaimet = teksti.ToLower();
-string isotKirjaimet = teksti.ToUpper();
+```C#
+// Etsi ja korvaa tiedoston polku
+string vanhaPolku = @"C:\Kansio1\Tiedosto.txt";
+string uusiPolku = vanhaPolku.Replace("Kansio1", "Kansio2");
+Console.WriteLine(uusiPolku); // Tulostaa: "C:\Kansio2\Tiedosto.txt"
 ```
 
-Tässä koodissa pienetKirjaimet-muuttujaan tallennetaan teksti pienin kirjaimin ja isotKirjaimet-muuttujaan tallennetaan teksti isoilla kirjaimilla.
+## Syvempää tutustumista
 
-Lisäksi Replace-metodi tukee myös regular expressioneita, joka avaa vielä enemmän mahdollisuuksia tekstien muokkaamiseen.
+Etsiminen ja korvaaminen voidaan suorittaa myös säännöllisiin lausekkeisiin perustuen, mikä mahdollistaa monipuolisemman ja tarkemman tulosten hakemisen. Voit myös hyödyntää erilaisia ​​valmiita toimintoja, kuten IndexOf ja Substring, jotka ovat tehokkaita etsimistä ja korvaamista tehtäessä.
 
-## Katso myös
+See Also
 
-- [C# Replace-metodi (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [C# IndexOf-metodi (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.indexof?view=net-5.0)
-- [C# Regular expressionit (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [C# dokumentaatio - String.Replace-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.replace?view=net-5.0)
+- [C# dokumentaatio - Regular expressions](https://docs.microsoft.com/fi-fi/dotnet/standard/base-types/regular-expression-language-quick-reference)

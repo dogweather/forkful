@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Elixir: Löschen von Zeichen, die einem Muster entsprechen"
 simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Technik in der Programmierung, da es uns ermöglicht, bestimmte Teile von Strings zu entfernen, die wir nicht benötigen. Dies kann hilfreich sein, wenn wir beispielsweise unerwünschte Zeichen aus Benutzereingaben entfernen oder Texte formatieren möchten.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in verschiedenen Situationen nützlich sein. Beispielsweise kann es helfen, unerwünschte Zeichen aus einer Zeichenfolge zu entfernen oder die Formatierung von Daten zu bereinigen. 
 
-## Wie geht man vor?
+## Wie geht das?
 
-Um Zeichen basierend auf einem Muster zu löschen, können wir die `String.replace/3` Funktion in Elixir verwenden. Diese Funktion nimmt einen String, ein reguläres Ausdrucksmuster und eine Ersatzzeichenkette als Argumente entgegen.
+Um in Elixir Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die `String.replace/4`-Funktion verwenden. Diese Funktion akzeptiert ein Muster, eine Substitution und eine Zeichenfolge als Argumente. Hier ist ein Beispiel, das alle Leerzeichen aus einer Zeichenfolge entfernt:
 
-Ein Beispiel könnte so aussehen:
-
-```Elixir
-original_string = "H3ll0 W0rld!" 
-modified_string = String.replace(original_string, ~r/[0-9]/, "")
-IO.puts modified_string # Output: Hll Wrld!
+```elixir
+iex> String.replace("Dies ist ein Beispiel", ~r/\s+/, "")
+"DiesisteinBeispiel"
 ```
 
-In diesem Beispiel haben wir alle Zahlen im ursprünglichen String durch eine leere Zeichenkette ersetzt, was zur Folge hatte, dass diese Zeichen im modifizierten String nicht mehr vorhanden sind.
+Die `String.replace/4`-Funktion gibt eine neue Zeichenfolge zurück, in der das angegebene Muster durch die Substitution ersetzt wurde. Dies ermöglicht es uns, unerwünschte Zeichen einfach zu entfernen.
 
-Es ist auch möglich, den regulären Ausdruck im zweiten Argument durch eine Liste von Zeichen zu ersetzen, die gelöscht werden sollen. Zum Beispiel würden `String.replace(original_string, [?" "] , "")` alle Leerzeichen aus dem String entfernen.
+## Tiefentauchen
 
-## Tiefergehende Informationen
+Um besser zu verstehen, wie die `String.replace/4`-Funktion arbeitet, können wir uns ansehen, wie reguläre Ausdrücke in Elixir funktionieren. Reguläre Ausdrücke sind ein mächtiges Konzept, das es uns ermöglicht, Zeichenfolgen basierend auf einem bestimmten Muster zu manipulieren.
 
-Es ist wichtig zu beachten, dass `String.replace/3` eine neue Kopie des ursprünglichen Strings zurückgibt und den ursprünglichen String nicht ändert. Wenn wir also sicherstellen wollen, dass der ursprüngliche String verändert wird, können wir die `String.replace!/3` Funktion verwenden, die den String direkt verändert.
+In Elixir können reguläre Ausdrücke entweder direkt als regulärer Ausdruck oder als regulärer Ausdruck zusammen mit Flaggen angegeben werden. Hier ist ein Beispiel, das alle Buchstaben in einer Zeichenfolge in Großbuchstaben umwandelt:
 
-Außerdem bietet Elixir viele weitere Funktionen zum Bearbeiten von Strings, wie zum Beispiel `String.split`, `String.trim`, `String.upcase` und viele mehr. Es lohnt sich, sich mit diesen Funktionen vertraut zu machen, um die Textmanipulation in Elixir optimal nutzen zu können.
+```elixir
+iex> String.replace("Hallo Welt", ~r/\w+/, &String.upcase/1)
+"HALLO WELT"
+```
+
+In diesem Beispiel verwenden wir die `&String.upcase/1`-Funktion als Substitution, um jeden gefundenen Buchstaben in Großbuchstaben umzuwandeln. Dies zeigt die Flexibilität von regulären Ausdrücken und wie sie in Kombination mit der `String.replace/4`-Funktion verwendet werden können.
 
 ## Siehe auch
 
-- [Elixir String-Modul Dokumentation](https://hexdocs.pm/elixir/String.html)
-- [Reguläre Ausdrücke in Elixir](https://elixirschool.com/de/lessons/advanced/regex/)
-- [Einführung in die Textmanipulation mit Elixir](https://medium.com/@bnabach/elixir-text-manipulation-bcd68798b2e7)
+- [Elixir Dokumentation zu regulären Ausdrücken](https://hexdocs.pm/elixir/Regex.html)
+- [Weitere Beispiele zur Verwendung von regulären Ausdrücken in Elixir](https://www.codedrome.com/regular-expressions-in-elixir/)

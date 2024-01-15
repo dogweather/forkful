@@ -1,6 +1,7 @@
 ---
-title:                "C++: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עובדים עם JSON"
+html_title:           "C++: עובדים עם JSON"
+simple_title:         "עובדים עם JSON"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -9,76 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-ניצולי תכנות בסיסיים: עבודה עם JSON
+מדוע: עדכנו על גם- יעיל בגישה עם נתונים בפורמט קומפקטי ונקי. אם אתה עובד עם אפליקציות מתוכנתות או פרויקטים שמנוהלים ע"י מכבי ההגנת נתונים כמו Ajax או Fetch API, סירת הנתונים שלך לחוצן ה-Microsoft JSON יהיה פרקטי לחלוטין וכמצטבר לתרומתך כשפת תכנות המודרנית של לכתתור לעובדים.
 
-## למה?
-
-JSON הוא פורמט פתוח וקל לקריאה שמיועד לביצוע ייעודים שונים בתכנות. העבודה עם JSON נחשבת לחיונית בעבודה עם נתונים מבוססי אינטרנט וגם כחלק מיסודי של פיתוח יישומים ותוכניות מחשב.
-
-## כיצד לעבוד עם JSON ב-C++?
-
-ניתן לפנות לפונקציות המיועדות לעבודה עם JSON כמו `parse()` ו- `stringify()` על מנת לייצר או לקרוא נתונים מתוך פורמט JSON. ניצולי תכנות דומו לטיפול ב-Object ואילו תכנות כיווניים דומות לפעולות בתוך קבצי תבניות.
-
-לדוגמה, אם נרצה ליצור משתנה מסוג JSON נוכל להשתמש בקוד הבא:
-
+כיצד לעבוד עם JSON:
 ```C++
 #include <iostream>
 #include <json/json.h>
 
-using namespace std;
+int main() {
+   //יצירת אובייקט JSON ריק
+   Json::Value json_obj;
+   //הגדרת ערך בשם המפתח "name"
+   json_obj["name"] = "John";
+   //הגדרת ערך בשם המפתח "age"
+   json_obj["age"] = 30;
+   //הדפסת האובייקט בפורמט כתב
+   std::cout << json_obj.toStyledString() << std::endl;
 
-// יצירת משתנה מתוך פורמט JSON
-Json::Value myVariable;
-
-// הגדרת ערכים בתוך המשתנה
-myVariable["name"] = "John";
-myVariable["age"] = 25;
-myVariable["city"] = "Tel Aviv";
-
-// הדפסת נתוני המשתנה
-cout << "Name: " << myVariable["name"].asString() << endl;
-cout << "Age: " << myVariable["age"].asInt() << endl;
-cout << "City: " << myVariable["city"].asString() << endl;
-```
-
-תוצאה:
-
-```
-Name: John
-Age: 25
-City: Tel Aviv
-```
-
-ניתן גם לקרוא נתונים מתוך פורמט JSON באמצעות פעולה דומה, כפי שניתן לראות מן הקוד הבא:
-
-```C++
-#include <iostream>
-#include <json/json.h>
-
-using namespace std;
-
-// התחברות לשרת JSON
-Json::Value server = "http://www.example.com/json";
-
-// יצירת משתנה כדי לאחסן את הנתונים שיוחזרו
-Json::Value results;
-
-// קריאת הנתונים מהשרת
-Json::Reader reader;
-bool parsingSucceeded = reader.parse(server, results);
-
-// בדיקה האם קריאת הנתונים הצליחה
-if (parsingSucceeded) {
-  // הדפסת התוצאות
-  cout << "First Name: " << results["firstName"].asString() << endl;
-  cout << "Last Name: " << results["lastName"].asString() << endl;
-  cout << "Age: " << results["age"].asInt() << endl;
+   //שליפת נתונים מקובץ קיים של JSON
+   Json::Value json_data;
+   //פתיחת הקובץ במצב קריאה
+   std::ifstream json_file("data.json", std::ifstream::binary);
+   json_file >> json_data;
+   //הדפסת הערך של המפתח "name"
+   std::cout << json_data["name"] << std::endl;
+   //הדפסת הערך של המפתח "age"
+   std::cout << json_data["age"] << std::endl;
 }
 ```
 
-תוצאה:
+ריבית עולה:
 
-```
-First Name: David
-Last Name: Cohen
-Age:
+עבור עורכי גריפ או कי ynton ניתן לעדכן או לטטיח רשת נתונים כלשהו עם נתונים הטכנולוגיים בפורמט JSON. רק לבחור את המתאם שנכנס למכביות ולפתוח EAuth כך שעם פעולה דיגיטלית או תיבת רכישה .הדמיה של הנתונים המשתתפים תהיה אפשרית לכתב כדי לשרוד כמות בגורם גבוליה החשוב
+
+תהליכי עזרי אריחים:
+
+כאשר אנחנו עובדים עם נתונים בפורמט JSON, חשוב לציין שהנתונים מתכתבים לתיאורי פונקציות השולט במערכות. V דרך בלוי כ

@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Å beregne en dato i fremtiden eller fortiden"
-simple_title:         "Å beregne en dato i fremtiden eller fortiden"
+title:                "Kalkulere en dato i fremtiden eller fortiden"
+html_title:           "Clojure: Kalkulere en dato i fremtiden eller fortiden"
+simple_title:         "Kalkulere en dato i fremtiden eller fortiden"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -9,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-\# Hvorfor
+"## Hvorfor"
 
-Noen ganger er det nødvendig å beregne en dato i fremtiden eller fortiden for å løse programmeringsoppgaver. Dette kan være ved å finne ut når et produkt vil bli levert, når et abonnement utløper, eller når et arrangement vil finne sted. Clojure har flere funksjoner som gjør det enkelt å håndtere datoutregninger.
+Hvorfor vil noen ønske å regne ut en dato i fremtiden eller fortiden? Det kan være nyttig for å planlegge fremtidige hendelser eller for å spore tidligere hendelser.
 
-\# How To
+## Hvordan
 
-For å beregne en dato i fremtiden eller fortiden i Clojure, kan du bruke funksjonen `clj-time.core/plus`. Den tar to argumenter: en dato og en duration. Datoen kan være en `java.util.Date`, `clj-time.core/now` (dagens dato), eller `clj-time.core/today` (dagens dato uten klokkeslett). Duration kan være et `clj-time.core/period`-objekt, som består av et antall år, måneder, uker, dager, timer, minutter og sekunder. Du kan også bruke bare et av disse feltene hvis du ikke trenger hele tidsperioden. For eksempel, hvis du vil beregne datoen to uker fra nå bruker du følgende kode:
-
-```Clojure
-(ns my-project.example
-  (:require [clj-time.core :as time]))
-
-(time/plus (clj-time.core/today) (clj-time.core/period :weeks 2)) ;; => #inst "2020-05-28T00:00:00.000+00:00"
-```
-
-Hvis du vil ha ut datoen uten tidsstempel, kan du bruke funksjonen `clj-time.core/date-parts`:
+Hvis du vil beregne en dato i fremtiden eller fortiden i Clojure, kan du bruke funksjonen `plus`, `minus` og `date-time` fra biblioteket `clojure.java-time`. Her er et eksempel på hvordan du kan bruke disse funksjonene:
 
 ```Clojure
-(time/date-parts (clj-time.core/plus (clj-time.core/now) (clj-time.core/period :years 1))) ;; => [2021 5 14]
+(require '[java-time :as time])
+
+(time/plus (time/date-time 2020 11 11)
+           (time/duration (time/period 1 :years)
+                          (time/period 2 :months)
+                          (time/period 3 :days) ))
 ```
 
-\# Deep Dive
+Dette vil gi oss en ny dato som er ett år, to måneder og tre dager etter 11. november 2020. Output vil se slik ut: `#object[java.time.LocalDateTime 0xe79f32a2 "2021-01-14T00:00"]`.
 
-Funksjonen `clj-time.core/plus` støtter også "relative durations", som betyr at du kan bruke ord som "tomorrow" eller "next month" istedenfor å spesifisere en bestemt dato. Dette gjør det lettere å håndtere dynamiske beregninger. For eksempel, hvis du er på utkikk etter å beregne datoen for første søndag i neste måned kan du bruke følgende kode:
+For å beregne en dato i fortiden, kan du bruke `time/minus` funksjonen og spesifisere negative perioder.
 
-```Clojure
-(time/plus (clj-time.core/date-parts (clj-time.core/now))
-           (clj-time.core/period :months 1 :string "first :sunday"))
-;; => #inst "2020-06-07T00:00:00.000+00:00"
-```
+## Dykk dypere
 
-\# Se Også
+Funksjonene `plus`, `minus` og `date-time` gjør det enkelt å beregne datoer i fremtiden eller fortiden i Clojure. Men det er også mulig å bruke andre funksjoner fra `clojure.java-time` biblioteket for å manipulere datoer.
 
-- [clj-time dokumentasjon](https://github.com/clj-time/clj-time "clj-time dokumentasjon")
-- [Clojure.org](https://clojure.org/ "Clojure.org")
-- [Clojure Programmering: bli kjent med Clojure](https://clojure.org/guides/getting_started "Clojure Programmering: bli kjent med Clojure")
+Du kan for eksempel bruke `time/day-of-week` for å få ut hvilken ukedag en bestemt dato faller på, eller `time/format` for å formatere datoen på en spesifikk måte.
+
+## Se også
+
+- [`clojure.java-time` dokumentasjon](https://github.com/dm3/clojure.java-time)
+- [Offisiell Clojure dokumentasjon](https://clojure.org/)
+- [En guide til å lære Clojure](https://clojure.org/guides/learn/syntax)

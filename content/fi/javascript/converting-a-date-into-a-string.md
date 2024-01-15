@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Javascript: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Miksi
-
-Joskus JavaScript-ohjelmoinnissa halutaan muuttaa päivämäärä merkkijonoksi. Tämä voi johtua esimerkiksi tarpeesta tallentaa päivämäärä tietokantaan tai näyttää se käyttäjälle.
+Halutessasi tulostaa päivämäärän tekstiksi sinun täytyy ensin muuntaa se asianmukaiseen muotoon, jotta voit näyttää sen haluamallasi tavalla.
 
 ## Kuinka
+Javascriptissä on useita tapoja muuntaa päivämäärä merkkijonoksi. Alla on esimerkkikoodia siitä, kuinka tämä voidaan tehdä käyttämällä Moment.js-kirjastoa:
 
-Päivämäärän muuttaminen merkkijonoksi JavaScriptissä on yksinkertaisimmillaan helposti ymmärrettävän `toString()` -funktion avulla. Tämä muuntaa päivämäärän haluttuun merkkijonoesitykseen.
-
-```JavaScript
-const date = new Date();
-const dateString = date.toString();
+````Javascript
+// Määritä päivämäärä
+let date = new Date();
+// Muuta päivämäärä merkkijonoksi
+let dateString = moment(date).format("DD/MM/YYYY");
+// Tulosta muunnettu päivämäärä
 console.log(dateString);
-// Tulostaa esimerkiksi "Fri May 28 2021 17:30:23 GMT+0300 (Eastern European Summer Time)"
-```
+````
 
-Voit myös muokata merkkijonoesitystä oman halusi mukaan käyttämällä Date-objektin tarjoamia metodeja. Esimerkiksi `toLocaleDateString()` tai `toLocaleTimeString()` voivat olla hyödyllisiä haluttaessa esittää päivämäärä tai aika tiettyyn paikalliseen aikaan.
+Tämä tuottaa tulosteen "12/05/2021".
 
-```JavaScript
-const date = new Date();
-const dateString = date.toLocaleDateString("fi-FI"); // Suomalainen päivämäärämuoto
-const timeString = date.toLocaleTimeString("fi-FI"); // Suomalainen aikamuoto
-console.log(`${dateString} klo ${timeString}`);
-// Tulostaa esimerkiksi "28.5.2021 klo 17:30:23"
-```
+Toinen tapa muuntaa päivämäärä merkkijonoksi on käyttää Date-objectin sisäänrakennettua `toLocaleDateString()`-metodia:
 
-## Syvempi sukellus
+````Javascript
+// Määritä päivämäärä
+let date = new Date();
+// Muuta päivämäärä merkkijonoksi
+let dateString = date.toLocaleDateString("fi-FI");
+// Tulosta muunnettu päivämäärä
+console.log(dateString);
+````
 
-Tarkemmin määriteltynä `toString()`-funktio palauttaa päivämäärän merkkijonoesityksen RFC 1123 -standardin mukaisesti. Tämä tarkoittaa sitä, että päivämäärä muutetaan Greenwichin keskimääräiseen aikaan (GMT) ja näytetään tiettyyn aikavyöhykkeeseen lisätyn tai poistetun aikamäärän kera.
+Tämä tuottaa tulosteen "12.5.2021".
 
-Jos haluat hallita päivämäärän esitystapaa tarkemmin, voit käyttää `Date`-objektin tarjoamia muita metodeja, kuten `toUTCString()` tai `toISOString()`. Näiden avulla voit muuntaa päivämäärän haluamaasi muotoon tai jopa luoda oman mukautetun merkkijonoesityksen.
+## Syvällinen sukellus
+Date-objectissa on myös muita hyödyllisiä metodeita, joilla voit muuntaa päivämäärän haluamaasi muotoon. Esimerkiksi `getDay()`-metodi palauttaa päivän viikonpäivän numerona, `getMonth()`-metodi kuukauden numerona ja `getFullYear()`-metodi vuoden numerona. Näitä voit käyttää yhdessä esimerkiksi taulukon avulla, josta voit tarkastaa, mikä päivämäärä vastaa tiettyä numeroa.
 
 ## Katso myös
-
-- [MDN Web Docs - Date-objekti](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Modernin JavaScriptin opas: Date](https://javascript.info/date)
-- [W3Schools - JavaScript Date-objekti](https://www.w3schools.com/js/js_dates.asp)
+- [Moment.js-dokumentaatio](https://momentjs.com/docs/)
+- [Date Object - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

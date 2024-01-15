@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Konvertere en streng til små bokstaver."
-simple_title:         "Konvertere en streng til små bokstaver."
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Bash: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,58 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Mange ganger i Bash-programmering kan det hende du trenger å konvertere en streng til små bokstaver. Dette kan være for å sammenligne input fra brukeren med forventede verdier, eller for å sikre at dataen din er i en ensartet form.
+Har du noen gang lurt på hvordan du kan konvertere en streng til små bokstaver i Bash-programmering? Her vil vi vise deg hvorfor det er nyttig og hvordan du kan gjøre det.
 
-## Hvordan
+## Slik gjør du det
 
-Det er flere måter å konvertere en streng til små bokstaver i Bash. En måte er å bruke `tr` kommandoen, som står for "translate". Denne kommandoen lar deg erstatte en sekvens av karakterer med en annen sekvens. For å konvertere en streng til små bokstaver med `tr`, kan du gjøre følgende:
+Så, hvordan kan du enkelt konvertere en streng til små bokstaver i Bash? Heldigvis har Bash en innebygd funksjon som heter "tr" som står for "translate" og den gjør akkurat det vi trenger. Se på eksempelet nedenfor:
 
-```
-Bash
-# Lag en variabel med tekst
-original_tekst="HEI, JEG ER EN STRENG"
-
-# Bruk 'tr' kommandoen for å konvertere til små bokstaver
-konvertert_tekst=$(echo $original_tekst | tr '[:upper:]' '[:lower:]')
-
-# Skriv ut den konverterte teksten
-echo $konvertert_tekst
+```Bash
+string="HELLO WORLD"
+echo "Original streng: $string" # Original streng: HELLO WORLD
+string=$(echo $string | tr '[:upper:]' '[:lower:]')
+echo "Konvertert streng: $string" # Konvertert streng: hello world
 ```
 
-Output:
+La oss bryte ned koden. Først definerer vi en variabel "string" som inneholder en streng i store bokstaver. Deretter bruker vi "echo" for å skrive ut den originale strengen. Deretter tilordner vi variabelen "string" på nytt ved å kjøre et subshell med "echo" og rører resultatet til "tr" kommandoen. "tr" kommandoen spesifiserer at vi vil oversette alle store bokstaver til små bokstaver ved å bruke "[upper:]" og "[lower:]" uttrykkene. Til slutt skriver vi ut den konverterte strengen.
 
-```
-hei, jeg er en streng
-```
+Du kan også konvertere en streng til små bokstaver ved hjelp av "sed" kommandoen på følgende måte:
 
-Det er også mulig å konvertere en streng til små bokstaver ved å bruke `awk` kommandoen og dens innebygde `tolower` funksjon. Dette kan se slik ut:
-
-```
-Bash
-# Lag en variabel med tekst
-original_tekst="HEI, JEG ER EN STRENG"
-
-# Bruk 'awk' kommandoen for å konvertere til små bokstaver
-konvertert_tekst=$(echo $original_tekst | awk '{print tolower($0)}')
-
-# Skriv ut den konverterte teksten
-echo $konvertert_tekst
+```Bash
+string="HELLO WORLD"
+echo "Konvertert streng: $(echo $string | sed 's/./\L&/g')" # Konvertert streng: hello world
 ```
 
-Output:
-
-```
-hei, jeg er en streng
-```
+"sed" kommandoen tar nytte av "&" tegnet som representerer den første bokstaven i en streng og "\L" for å gjøre om det til små bokstaver.
 
 ## Dypdykk
 
-Både `tr` og `awk` kommandoene kan også brukes til å konvertere en streng til store bokstaver ved å erstatte `[:lower:]` med `[:upper:]`. Du kan også bruke flere forskjellige sett med spesialtegn i `tr` kommandoen for å konvertere andre typer bokstaver. For eksempel, `tr '[åæÅÆ]' '[aaAA]'` vil konvertere alle norske bokstaver til engelsk form.
+Denne metoden for å konvertere en streng til små bokstaver i Bash er nyttig når du arbeider med tekst og ønsker å konvertere den til en ensartet form. Det kan også være nyttig når du skal sammenligne strenger fordi det eliminerer forskjellene mellom store og små bokstaver.
 
-Det er også mulig å bruke regulære uttrykk i `awk` kommandoen for mer avansert tekstbehandling. Det kan du lese mer om i `man` siden for `awk`.
+Det er viktig å merke seg at "tr" kommandoen bare fungerer med ASCII-tegnsett. Hvis du trenger å arbeide med ikke-ASCII-tegn, kan du bruke "sed" kommandoen som støtter multibyte-tegn. Du kan også bruke andre kommandoer og metoder for å konvertere en streng til små bokstaver i Bash, men "tr" og "sed" er de mest effektive og enkle å forstå.
 
-## Se Også
+## Se også
 
-- [Bash `tr` kommandoen](https://linux.die.net/man/1/tr)
-- [Bash `awk` kommandoen](https://www.gnu.org/software/gawk/manual/gawk.html)
-- [Bash regulære uttrykk](https://www.gnu.org/software/gawk/manual/html_node/Regexp.html#Regexp)
+- [Bash dokumentasjon](https://www.gnu.org/software/bash/)
+- [tr kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [sed kommandoen](https://www.gnu.org/software/sed/)

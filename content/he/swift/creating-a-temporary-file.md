@@ -1,5 +1,6 @@
 ---
-title:                "Swift: יצירת קובץ זמני"
+title:                "יצירת קובץ זמני"
+html_title:           "Swift: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Swift"
 category:             "Swift"
@@ -9,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## למה?
 
-יצירת קובץ זמני היא כלי חשוב בתוך תהליך פיתוח התוכנה על מנת לספק סביבת עבודה בטוחה יותר ולמנוע כשלונות במקרים מסוימים.
+למה מישהו היה רוצה ליצור קובץ זמני בקוד סוויפט? ייתכן שיהיה צורך לבדיקה מהירה של פונקציונליות חדשה או לאחסון נתונים זמניים לפני שמעבירים אותם לקובץ קבוע.
 
-## איך לעשות
+## כיצד לעשות זאת
 
-כדי ליצור קובץ זמני בשפת Swift, ניתן להשתמש בפונקציית `NSTemporaryDirectory()` ולהשתמש בנתיב זמני זה כקו יצירה עבור הקובץ. לדוגמה:
+כדי ליצור קובץ זמני בשפת סוויפט, ניתן להשתמש במחלקת "FileManager" ובפונקציה "url(for:in:appropriateFor:create:)". לדוגמה, ניתן להשתמש בקוד הבא:
 
 ```Swift
-let tempDirectory = NSTemporaryDirectory()
-let tempFilePath = tempDirectory + "example.txt"
+let temporaryDirectoryURL = FileManager.default.temporaryDirectory
+let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent("myTempFile").appendingPathExtension("txt")
 ```
 
-לאחר מכן, יש להשתמש בפונקציית `FileManager.default.createFile(atPath:)` כדי ליצור את הקובץ הזמני. כעת, ניתן לבצע כל פעולות הרצויות על הקובץ הזמני ולשמור אותו בנתיב הזמני כדי להבטיח שהקובץ יימחק מהמערכת לאחר השימוש.
+בקוד זה, אנחנו יוצרים נתיב לתיקייה זמנית באמצעות פונקציית "temporaryDirectory" ונוסיף לו שם וסיומת לקובץ זמני. לאחר מכן, ניתן להשתמש בנתיב זה כדי ליצור את הקובץ הזמני בפונקציית "url(for:in:appropriateFor:create:)" על ידי ספציפית את התיקייה הזמנית ואת השם של הקובץ. ניתן לראות את כתובת הנתיב המלא של הקובץ בתוצאת הפלט של פונקציית "size" כדי לוודא שהוא נוצר בהצלחה:
 
-## Deep Dive
+```Swift
+print("Temporary file created at: \(temporaryFileURL.path)")
+```
 
-יצירת קובץ זמני יכולה להיות חיונית במספר מקרים כגון כאשר נדרשת סביבת עבודה זמנית עבור בדיקות או פעולות מיוחדות. בנוסף, יצירת קובץ זמני יכולה לשמש ככלי מניעה במקרים שבהם מערכת הפעלה אינה מאפשרת גישה ישירה לקבצים רגילים.
+תוצאה: Temporary file created at: /private/var/folders/nz/t7_yjdwn_wb2jl95089c8bbw0000gn/T/myTempFile.txt
 
-בנוסף ליצירת קובץ זמני, חשוב גם לבצע תהליך של השמת תווים שונים בכדי לבטל אותו לאחר שימוש. כך ניתן להבטיח שהקובץ לא יימחק על ידי תוכניות ניקוי או שדיפולטרים שמחפשים קפיצות תווים.
+## עיון מעמיק
 
-## ראה גם
-
-- [כתבות נוספות בנושא פיתוח תוכנה עם Swift](https://www.iosacademy.io/tag/swift/)
-- [מדריך חדשני לשפת תכנות Swift](https://www.udemy.com/course/learn-swift-programming-language/?referralCode=6E74DF3679103A1C9098)
-- [פלנגוייסט - השקעות ונכסים
+כאשר יוצרים קובץ זמני בשפת סוויפט, הוא נשמר באיזור הזמן הזמני של המכשיר ולא באיזור הזיכרון הקבוע. זה יכול להיות שימושי לאפליקציות שדורשות זיכרון זמני לפעולות כמו עריכת תמונות או טעינת נתונים מאינטרנט. חשוב לזכור שקבצים זמניים נמחקים באופן אוטומטי במערכת ההפעלה, לכן חשוב לשמור על הנתונים החשוב

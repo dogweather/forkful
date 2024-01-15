@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Створення тимчасового файлу."
-simple_title:         "Створення тимчасового файлу."
+title:                "Cтворення тимчасового файлу"
+html_title:           "Arduino: Cтворення тимчасового файлу"
+simple_title:         "Cтворення тимчасового файлу"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,63 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Хартия - це важлива частина програмування на Arduino, тому що вона дозволяє зберігати тимчасові дані під час виконання коду. Це особливо корисно, коли вам потрібно зберегти дані для подальшої обробки або виводу на екран.
+Чому б хтось хотів створювати тимчасовий файл у програмі Arduino? Існує багато сценаріїв, коли це може бути полезно, наприклад, для збереження тимчасових даних з сенсорів або для забезпечення місця для тимчасового зберігання результатів обчислень.
 
-## Як створити тимчасовий файл
+## Як зробити
 
-Для створення тимчасового файлу в Arduino, вам потрібно використовувати клас "File" з бібліотеки SD. Ось приклад коду, де ми створюємо тимчасовий файл з ім'ям "temp.txt":
+Створення тимчасового файлу у програмі Arduino є простим завданням. Ви можете використовувати функцію `File::createTemp()` для створення тимчасового файлу у кореневій директорії файлової системи.
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
+#include <SD.h> // підключення бібліотеки SD
 
-File dataFile;
+File tempFile = SD.open("temp.txt", FILE_WRITE); // створення тимчасового файлу з назвою "temp.txt"
 
-void setup() {
-  Serial.begin(9600);
-  
-  if (!SD.begin(10)) {
-    Serial.println("Unable to initialize SD card.");
-    while (1);
-  }
-  
-  dataFile = SD.open("temp.txt", FILE_WRITE);
-  if (dataFile) {
-    Serial.println("Temp file created.");
-  } else {
-    Serial.println("Error creating temp file.");
-  }
-
+if (tempFile) { // перевірка на успішне створення файлу
+  tempFile.println("Це тимчасовий файл з Arduino!"); // запис даних у файл
+  tempFile.close(); // закривання файлу
 }
 
-void loop() {
-  // Write data to temp file
-  dataFile.println("This is a temporary file");
-  dataFile.println("Created with Arduino");
-  dataFile.close();
-  
-  // Print temp file contents to serial monitor
-  dataFile = SD.open("temp.txt", FILE_READ);
-  if (dataFile) {
-    while (dataFile.available()) {
-      Serial.write(dataFile.read());
-    }
-    dataFile.close();
-  } else {
-    Serial.println("Error opening temp file.");
-  }
-  
-  delay(1000);
-}
 ```
 
-У цьому прикладі ми використовуємо функцію "open" для створення тимчасового файлу з ім'ям "temp.txt" і потім записуємо дані в нього за допомогою функції "println". Щоб закрити файл, використовується функція "close". Після цього, ми знову відкриваємо файл для зчитування і виводимо його вміст на монітор серійного порту. Ви можете змінити дані в тимчасовому файлі або створити новий кожного разу, коли запускається цикл "loop".
+Також важливо пам'ятати, що тимчасові файли автоматично не видаляються. Ви можете використати функцію `File::remove()` для видалення тимчасового файлу після того, як ви його використовуєте.
 
-## Глибокий поринання
+```Arduino
+SD.remove("temp.txt"); // видалення тимчасового файлу після його використання
+```
 
-Надійна робота з тимчасовими файлами - це важлива частина програмування на Arduino. Однак, важливо пам'ятати, що мікроконтролери, такі як Arduino Uno, мають обмежену кількість оперативної пам'яті. Тому, коли ви працюєте з тимчасовими файлами, важливо враховувати розмір і кількість файлів. Також, не забувайте закривати файл після використання, щоб зберегти пам'ять.
+## Глибоке освоєння
+
+Крім створення тимчасового файлу у кореневій директорії, ви можете також створити його у певній папці або навіть на внутрішній пам'яті Arduino. Це можна зробити, вказавши шлях до потрібної папки у функції `SD.open()`.
+
+```Arduino
+File tempFile = SD.open("/folder/temp.txt", FILE_WRITE); // створення тимчасового файлу у папці "folder"
+```
+
+Deeper info about creating a temporary fileUNDERSCORE
+
+## Детальніше про створення тимчасового файлу
+
+Функція `File::createTemp()` повертає об'єкт типу `File`, що дозволяє вам зчитувати і записувати дані у файл. Вона автоматично генерує унікальну назву для вашого тимчасового файлу, щоб уникнути конфліктів з іншими файлами. 
+Також, ви можете використовувати функцію `File::name()` для отримання назви створеного тимчасового файлу.
 
 ## Дивіться також
 
-- [Oficyna do programowania Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Створення тимчасового файлу в Arduino](https://create.arduino.cc/projecthub/ivsevolodov/creating-a-temporary-file-with-arduino-0ea68b)
+- [Офіційна документація програми Arduino SD](https://www.arduino.cc/en/Reference/SD)
+- [Туторіал по роботі з SD карткою у програмі Arduino](https://www.instructables.com/id/How-to-Use-an-SD-Card-With-an-Arduino/)
+- [Стаття про тимчасові файли у програмі C++](https://www.geeksforgeeks.org/tmpnam-function-in-c/)
+
+## Дивіться так

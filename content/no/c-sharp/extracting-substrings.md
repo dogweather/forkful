@@ -1,6 +1,7 @@
 ---
-title:                "C#: Ekstrahering av substringer"
-simple_title:         "Ekstrahering av substringer"
+title:                "Ekstrahering av understrenger"
+html_title:           "C#: Ekstrahering av understrenger"
+simple_title:         "Ekstrahering av understrenger"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -9,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Mange ganger i programmering må vi jobbe med tekst og data, og det kan være nyttig å kunne hente ut deler av en tekststreng. Dette kalles å ekstrahere substrings, og det kan være svært nyttig i ulike situasjoner. I denne artikkelen vil vi se nærmere på hvordan man kan gjøre dette i C#.
+Hvorfor ville man ønske å utvinne substrings i C#? En av grunnene kan være for å manipulere tekststrenger på en mer presis og effektiv måte.
 
-# Hvordan ekstrahere substrings i C#
+## Hvordan
 
-For å ekstrahere en substring i C#, bruker vi funksjonen `Substring()`. Denne funksjonen tar inn to parametere: startindeks og lengden på substringen du vil ekstrahere. La oss se på et praktisk eksempel:
+Det er flere måter å utvinne substrings i C# på, avhengig av hva du ønsker å oppnå.
 
-```C#
-string tekst = "Denne teksten er svært lang";
-string substring = tekst.Substring(6, 6);
+### Utvinne en enkelt del av en tekststreng 
 
-Console.WriteLine(substring);
-```
-
-I dette eksempelet henter vi ut en substring som starter på indeks 6 og har en lengde på 6, altså ordet "teksten". Output vil være "teksten" som forventet.
-
-Vi kan også bruke `Substring()` til å hente ut en del av en tekststreng basert på en gitt tilstand. For eksempel, hvis vi ønsker å hente ut alt etter et bestemt tegn, kan vi bruke `IndexOf()` og `Substring()` sammen. La oss se på et eksempel:
+Hvis du for eksempel ønsker å utvinne "world" fra "Hello world!", kan du bruke metoden `Substring` på følgende måte:
 
 ```C#
-string navn = "John Doe";
-string etternavn = navn.Substring(navn.IndexOf(" ") + 1);
-
-Console.WriteLine(etternavn);
+string text = "Hello world!";
+string substring = text.Substring(6, 5); // starter på index 6 og henter 5 tegn
+Console.WriteLine(substring); // output: world
 ```
 
-Her bruker vi `IndexOf()` til å finne posisjonen til mellomrommet i teksten, og deretter bruker vi `Substring()` for å hente ut alt etter dette mellomrommet, altså "Doe".
+### Utvinne flere deler av en tekststreng
 
-# Dypdykk i substring-ekstrahering
+Hvis du ønsker å utvinne flere deler av en tekststreng, som for eksempel "Hello" og "!". kan du bruke metoden `Split` på følgende måte:
 
-Det finnes flere nyttige metoder for å ekstrahere substrings i C#, som for eksempel `Substring()` i kombinasjon med `LastIndexOf()` for å hente ut en del av tekststrengen basert på det siste forekomsten av et tegn. Det er også verdt å nevne at vi kan bruke `Substring()` sammen med både positive og negative tall for å indikere posisjonen til substringen vi ønsker å ekstrahere.
+```C#
+string text = "Hello world!";
+string[] substrings = text.Split(" "); // separerer på mellomrom
+Console.WriteLine(substrings[0]); // output: Hello
+Console.WriteLine(substrings[2]); // output: !
+```
 
-Et annet tips er å bruke `Remove()` og `RemoveAt()` for å fjerne deler av en tekststreng, og deretter bruke `Substring()` for å få tilbake den biten av teksten du ønsker å beholde.
+### Endre tekststreng basert på en substring
 
-# Se også
+Du kan også enkelt bytte ut en del av en tekststreng ved å bruke metoden `Replace`:
 
-- Microsoft sin dokumentasjon om `Substring()` i C#: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring
-- En guide til string manipulation i C#: https://www.guru99.com/c-sharp-strings.html
-- Forslag til ulike metoder for å løse substring-problemer: https://www.geeksforgeeks.org/string-manipulations-in-c-sharp-set-1/
+```C#
+string text = "Hello world!";
+text = text.Replace("world", "everyone"); // bytter ut "world" med "everyone"
+Console.WriteLine(text); // output: Hello everyone!
+```
+
+## Dypdykk
+
+Det finnes flere ulike metoder og teknikker for å utvinne substrings i C#. Hvis du ønsker å lære mer om detaljene og hvordan du kan bruke dem til å løse mer avanserte oppgaver, kan du utforske følgende ressurser:
+
+- [Microsoft sin dokumentasjon om `Substring` og `Split` metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [W3Schools sin gjennomgang av utvinning av substrings i C#](https://www.w3schools.com/cs/cs_strings_substrings.asp)
+- [En guide til manipulering av tekst i C# av TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-string)
+- [Et nettsted med ulike eksempler og øvelser for å lære om substrings i C#](https://www.interviewbit.com/csharp-tutorial/string-manipulation/)
+
+## Se også
+
+Her er noen relevante artikler og ressurser for å lære mer om tekstmanipulering i C#:
+
+- [C# String Manipulation Tutorial av TechBeamers](https://www.techbeamers.com/csharp-string-tutorial/)
+- [10 Useful C# String Functions You Should Know av The Crazy Programmer](https://www.thecrazyprogrammer.com/2019/02/c-sharp-string-functions.html)
+- [An introduction to working with strings in C# av FreeCodeCamp](https://www.freecodecamp.org/news/csharp-string-tutorial-how-to-work-with-strings-in-csharp/)

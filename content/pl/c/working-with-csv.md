@@ -1,6 +1,7 @@
 ---
-title:                "C: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "C: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,41 +12,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-CSV (ang. Comma-Separated Values) to popularny format pliku używany do przechowywania i przesyłania danych tabelarycznych. W przeciwieństwie do tradycyjnych arkuszy kalkulacyjnych, pliki CSV są łatwe w obsłudze i nie wymagają specjalnego oprogramowania do ich odczytu. Dlatego też, jeśli pracujesz z dużymi ilościami danych, lub potrzebujesz szybko przesłać informacje do innych systemów, z pewnością warto znać podstawy programowania w języku C, aby w pełni wykorzystać możliwości formatu CSV.
+Dlaczego powinieneś rozważyć pracę z plikami CSV w języku C? Pliki CSV są powszechnie używane w celu przechowywania i udostępniania danych, więc umiejętność pracy z nimi jest niezbędna dla programisty.
 
 ## Jak to zrobić
 
-Zanim zaczniemy pisać kod, jako pierwsze musimy zaimportować standardową bibliotekę "stdio.h". Następnie, aby móc działać z plikami, musimy zadeklarować strumień plikowy - to jest po prostu zmienna, która wskazuje na plik. W naszym przypadku będzie to plik CSV, więc musimy użyć funkcji "fopen" z parametrami "nazwa pliku" oraz "tryb", w jakim chcemy otworzyć plik (np. "r", czyli tylko odczyt). Poniżej znajduje się przykład:
+Jeśli chcesz pracować z plikami CSV w języku C, potrzebujesz odpowiednich narzędzi i technik. W tym przykładowym kodzie będziesz miał okazję nauczyć się składni C i sposobów na manipulację danymi w plikach CSV.
 
-```C
-#include <stdio.h> 
-int main() { 
-    FILE *plik = fopen("dane.csv", "r"); 
+```
+/* Przykładowy kod w języku C do pracy z plikami CSV */
 
-    // reszta kodu 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-    return 0; 
+int main()
+{
+    // Utworzenie wskaźnika pliku
+    FILE *fp;
+
+    // Otwarcie pliku w trybie "read"
+    fp = fopen("dane.csv", "r");
+
+    // Zmienne do przechowywania danych z pliku
+    char imie[100], nazwisko[100], stanowisko[100];
+
+    // Pętla odczytująca dane z pliku i wyświetlająca je na ekranie
+    while (fscanf(fp, "%[^,],%[^,],%[^\n]\n", imie, nazwisko, stanowisko) != EOF)
+    {
+        printf("Imię: %s\n", imie);
+        printf("Nazwisko: %s\n", nazwisko);
+        printf("Stanowisko: %s\n", stanowisko);
+
+        printf("-------------------------\n");
+    }
+
+    // Zamknięcie pliku
+    fclose(fp);
+
+    return 0;
 }
 ```
 
-Kiedy już mamy otwarty plik CSV, możemy odczytać jego zawartość za pomocą funkcji "fscanf". Pierwszym parametrem jest strumień plikowy, kolejnymi są format danych, które chcemy odczytać, a następnie po przecinku umieszczamy zmienne, do których chcemy przypisać odczytane wartości. Przykładowo, jeśli nasz plik CSV wygląda następująco: "Imię,Nazwisko,Wiek", a my chcemy odczytać imię i wiek, to nasz kod może wyglądać tak:
-
-```C
-char imie[20]; // zmienna przechowująca imię
-int wiek; // zmienna przechowująca wiek
-
-fscanf(plik, "%s,%*s,%d", imie, &wiek); 
-// %s oznacza odczytanie ciągu znaków, %*s oznacza pominiecie kolejnego ciągu, a %d oznacza odczytanie liczby całkowitej
-
-printf("Witaj %s, masz %d lat!", imie, wiek);
+Przykładowy plik "dane.csv" może wyglądać następująco:
+```
+Imię,Nazwisko,Stanowisko
+Jan,Kowalski,Programista
+Anna,Nowak,Analityk
+Marcin,Piotrowski,Designer
 ```
 
-## Głębsza analiza
+Przykładowy output:
+```
+Imię: Jan
+Nazwisko: Kowalski
+Stanowisko: Programista
+-------------------------
+Imię: Anna
+Nazwisko: Nowak
+Stanowisko: Analityk
+-------------------------
+Imię: Marcin
+Nazwisko: Piotrowski
+Stanowisko: Designer
+-------------------------
+```
 
-Powyższy kod jest tylko przykładem bardzo prostego odczytu danych z pliku CSV. W rzeczywistości, przetwarzanie i analiza danych może być znacznie bardziej skomplikowane. Jedną z ważniejszych rzeczy jest obsługa błędów, takich jak brak pliku, nieodpowiedni format lub niekompletne dane. Warto również zapoznać się z innymi formatami plików tabelarycznych, takimi jak JSON, które są coraz bardziej popularne w dzisiejszych czasach.
+## Deep Dive
 
-## Zobacz również
+Programowanie w języku C pozwala na wykorzystanie wielu funkcji i bibliotek do pracy z plikami CSV. Oprócz funkcji `fopen()` i `fclose()`, możesz także używać `fprintf()` i `fscanf()` do zapisywania i odczytywania danych w formacie CSV.
+
+Jednym z ważnych elementów pracy z plikami CSV jest również umiejętność obsługi błędów. Gdy wykorzystujesz funkcję `scanf()` do odczytu danych z pliku, musisz zadbać o to, aby dane były zgodne z formatem określonym w funkcji. W przeciwnym razie może wystąpić błąd i program nie będzie w stanie poprawnie odczytać danych.
+
+## Zobacz też
 
 - Dokumentacja języka C: https://en.cppreference.com/w/c
-- Poradnik dla początkujących w programowaniu w C: https://www.tutorialspoint.com/cprogramming/index.htm
-- Przykładowy kod wykorzystujący pliki CSV w języku C: https://www.sanfoundry.com/c-program-implement-csv-file-parser-using-structure/
+- Wprowadzenie do pracy z plikami w języku C: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
+- Biblioteka `stdio.h` w języku C: https://www.tutorialspoint.com/c_standard_library/stdio_h.htm

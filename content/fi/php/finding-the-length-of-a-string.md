@@ -1,6 +1,7 @@
 ---
-title:                "PHP: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "PHP: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,36 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia tilanteita, joissa ohjelmoinnissa on tarpeen selvittää merkkijonon pituus. Esimerkiksi tietokannan tiedon tallentamisessa, tekstikenttien validoinnissa tai yksinkertaisesti merkkijonon muotoilun yhteydessä. Siksi on tärkeää ymmärtää miten PHP:ssä löydetään merkkijonon pituus.
+Miksi kukaan haluaisi löytää merkkijonon pituuden? Yksinkertaisesti siksi, että verkkokehityksessä ja ohjelmoinnissa on usein tarpeen työskennellä tekstipohjaisten tietojen kanssa, ja niiden pituuden tunteminen on olennainen osa tätä prosessia.
 
 ## Kuinka
-Merkkijonon pituuden löytäminen PHP:ssä on hyvin yksinkertaista, sillä siihen on valmiiksi sisäänrakennettu funktio `strlen()`. Tämä funktio saa parametrinaan halutun merkkijonon ja palauttaa sen pituuden. 
+
+Käyttämällä PHP:n `strlen()` -funktiota voit helposti löytää merkkijonon pituuden. Katso seuraava esimerkki:
 
 ```PHP
-$merkkijono = "Tämä on esimerkki";
+$merkkijono = "Tämä on testi";
 echo strlen($merkkijono);
 ```
 
-Tämä koodi tulostaa näytölle luvun 18, sillä merkkijonossa on 18 merkkiä. On kuitenkin tärkeää huomata, että merkkijonon pituus lasketaan myös välilyönnit ja välimerkit mukaan lukien. 
+Tulostus: `13`
+
+`strlen()`-funktio ottaa argumenttina merkkijonon ja palauttaa sen pituuden kokonaislukuna. Tämä on yksinkertainen, mutta hyödyllinen tapa löytää merkkijonon pituus.
+
+## Syväyhteensä
+
+On tärkeää huomata, että `strlen()` laskee myös tyhjät välilyönnit merkkijonon pituuteen. Esimerkiksi seuraavassa tapauksessa:
 
 ```PHP
-$merkkijono = "Tämä on esimerkki!";
+$merkkijono = "Tämä on testi";
 echo strlen($merkkijono);
 ```
-Tässä tapauksessa tulostuksena on 19.
 
-## Sukella syvemmälle
-Merkkijonon pituuden laskeminen ei aina ole yksiselitteistä, sillä se riippuu käytetystä merkistöstä. Esimerkiksi erikoismerkit, kuten ääkköset, voivat vaikuttaa pituuteen eri tavalla. Siksi on hyvä tarkistaa, että käytetty merkistö sopii tarkoitukseen.
+Tulostus: `14`
 
-On myös mahdollista muuntaa merkkijono eri muotoon ennen sen pituuden laskemista. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan poistaa välilyönnit merkkijonosta ennen sen pituuden tarkistamista. Tämä onnistuu `trim()`-funktiolla.
+Tämä johtuu siitä, että välilyönti on myös merkki ja siten se lasketaan mukaan pituuteen. Tämä saattaa aiheuttaa sekaannusta, mutta on tärkeää muistaa tämä ominaisuus merkkijonon pituutta laskettaessa.
 
-```PHP
-$merkkijono = " Tämä on esimerkki ";
-echo strlen($merkkijono); // Tulostaa 21
-echo strlen(trim($merkkijono)); // Tulostaa 18
-```
+Toinen hyödyllinen funktio merkkijonon pituuteen liittyen on `mb_strlen()`, joka ottaa huomioon myös monikieliset merkit ja palauttaa oikean pituuden myös näissä tapauksissa.
 
 ## Katso myös
-- PHP:n virallinen dokumentaatio `strlen()`-funktiosta: https://www.php.net/manual/en/function.strlen.php
-- Tietoa merkistöistä PHP:ssä: https://www.php.net/manual/en/function.mb-internal-encoding.php
-- `trim()`-funktion dokumentaatio: https://www.php.net/manual/en/function.trim.php
+
+- [PHP Manual – strlen()](https://www.php.net/manual/en/function.strlen.php)
+- [PHP Manual – mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)

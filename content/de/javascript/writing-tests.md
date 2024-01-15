@@ -1,5 +1,6 @@
 ---
-title:                "Javascript: Tests schreiben"
+title:                "Tests schreiben"
+html_title:           "Javascript: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,36 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Tests gehört zu den grundlegenden Aufgaben eines jeden Programmierers. Tests helfen dabei, Fehler in Code frühzeitig zu erkennen und somit die Qualität und Stabilität von Anwendungen zu verbessern. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, warum es wichtig ist, Tests zu schreiben und wie man sie effektiv nutzen kann.
+Tests sind ein wichtiger Bestandteil einer guten JavaScript Codebase. Sie helfen nicht nur dabei, Fehler zu identifizieren und zu beheben, sondern tragen auch zur Verbesserung der Codequalität und des Entwicklungsprozesses bei. Durch das Schreiben von Tests können Entwickler sicherstellen, dass ihr Code zuverlässig und robust ist, während sie gleichzeitig Zeit und Geld sparen, indem sie mögliche Probleme frühzeitig erkennen.
 
 ## Wie man Tests schreibt
 
-Um Tests zu schreiben, gibt es verschiedene Frameworks und Bibliotheken, die man verwenden kann. In diesem Beispiel werden wir das weit verbreitete Testing-Framework Jest verwenden. Um loszulegen, müssen wir zuerst Jest über den Paketmanager unserer Wahl installieren.
+Tests sollten Teil des Entwicklungsprozesses sein. Sie werden üblicherweise mit Hilfe von Test-Driven Development (TDD) geschrieben, bei dem zuerst der Testcode geschrieben wird und dann der eigentliche Code. Hier ist ein Beispiel für eine einfache Funktion "add", die zwei Zahlen addiert:
 
 ```Javascript
-npm install jest --save-dev
-```
-
-Nach der Installation können wir unsere Tests im `__test__` Verzeichnis unseres Projekts erstellen. Jedem Test muss eine Funktion mit dem Namen `test` zugewiesen werden und wir können Assertions verwenden, um zu überprüfen, ob das erwartete Ergebnis erreicht wurde.
-
-```Javascript
-// Addition.test.js
-test('Adds 1 + 2 to equal 3', () => {
-  expect(1 + 2).toBe(3);
+// Test:
+test('Summe von 2 und 3 sollte 5 ergeben', () => {
+  expect(add(2, 3)).toBe(5);
 });
+
+// Code:
+function add(a, b) {
+  return a + b;
+}
+
+// Ausgabe:
+> Summe von 2 und 3 sollte 5 ergeben
+Test 1 erfolgreich bestanden
 ```
-Um unsere Tests auszuführen, können wir das Kommando `npm test` verwenden. Jest wird dann alle Dateien im `__test__` Verzeichnis ausführen und uns mitteilen, ob die Tests erfolgreich waren oder nicht.
 
-## Eine tiefergehende Untersuchung
+In diesem Beispiel wird mithilfe der "test" Funktion ein Test erstellt, der erwartet, dass die Funktion "add" die korrekte Summe ausgibt. Die "expect" Funktion wird verwendet, um das erwartete Ergebnis anzugeben und die "toBe" Funktion überprüft, ob das Ergebnis der Funktion tatsächlich dem Erwarteten entspricht.
 
-Tests sind nicht nur hilfreich, um Fehler zu erkennen, sondern sie sind auch nützlich für die Dokumentation von Code. Indem man Tests schreibt, erfasst man automatisch die erwarteten Ergebnisse und kann somit auch in Zukunft schnell überprüfen, ob der Code noch immer die gewünschten Ergebnisse liefert.
+Mit dem Ergebnis "Test 1 erfolgreich bestanden" kann der Entwickler sicher sein, dass die "add" Funktion wie erwartet funktioniert. Auf diese Weise können weitere Funktionen und Szenarien getestet werden, um sicherzustellen, dass sie wie gewünscht funktionieren.
 
-Zusätzlich bieten Tests auch eine Form der Sicherheit bei der Entwicklung von neuen Features oder Refactoring von Code. Wenn die Tests fehlschlagen, ist dies ein Hinweis darauf, dass etwas im Code geändert wurde, das dazu führt, dass das erwartete Ergebnis nicht mehr erreicht wird.
+## Deep Dive
 
-Ein weiterer Vorteil von Tests ist, dass sie helfen können, Bugs zu vermeiden und somit die allgemeine Qualität des Codes zu verbessern. Durch das Schreiben von Tests werden verschiedene Teile des Codes automatisch durchlaufen, was dazu beiträgt, mögliche Fehler aufzudecken.
+Tests sind oft Teil des Continuous Integration und Continuous Delivery Prozesses, bei dem Änderungen an Code automatisch getestet werden, bevor sie in die Produktion gelangen. Dadurch wird sichergestellt, dass keine fehlerhaften Änderungen ausgeliefert werden und die Anwendung stabil bleibt.
+
+Es gibt verschiedene Arten von Tests, die in einer JavaScript-Codebase verwendet werden können, wie z.B. Unit Tests, Integration Tests und End-to-End Tests. Jede Art hat ihre eigenen Vorteile und trägt zur Fehlerfreiheit des Codes bei.
+
+Es ist auch wichtig zu beachten, dass Tests niemals die Notwendigkeit von manueller Überprüfung oder Benutzertests ersetzen können. Sie dienen vielmehr als zusätzliche Sicherheit und ermöglichen es Entwicklern, Änderungen schneller und zuverlässiger durchzuführen.
 
 ## Siehe auch
 
-- [Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
-- [Einführung in das Testen von JavaScript mit Jest](https://opensource.com/article/20/3/javascript-testing-jest)
-- [Warum Tests schreiben?](https://medium.com/@js_tutorthewhy/why-test-your-code-dc86ab78b9da)
+- [Einführung in das Testen mit JavaScript](https://www.javascript.com/resources/testing-with-javascript)
+- [Test Driven Development erklärt auf Deutsch](https://agile.de/testing/test-driven-development/)
+- [Eine Anleitung zur Verwendung von Jest zum Testen von JavaScript Code](https://blog.logrocket.com/a-quick-guide-to-using-jest-for-testing-in-javascript/)

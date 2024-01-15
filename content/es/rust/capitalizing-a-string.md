@@ -1,6 +1,7 @@
 ---
-title:                "Rust: Cambiando a mayúsculas una cadena"
-simple_title:         "Cambiando a mayúsculas una cadena"
+title:                "Capitalizar una secuencia de caracteres"
+html_title:           "Rust: Capitalizar una secuencia de caracteres"
+simple_title:         "Capitalizar una secuencia de caracteres"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -9,51 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué usar Rust para capitalizar cadenas de texto?
+## Por qué
 
-Rust es un lenguaje de programación moderno y de código abierto que se ha vuelto popular por ser rápido, seguro y confiable. Una de sus características más útiles es su sistema de tipos de datos que previene errores de memoria y asegura un código robusto. En este artículo, exploraremos cómo se puede utilizar Rust para capitalizar una cadena de texto y por qué es una opción inteligente para cualquier proyecto de programación.
+Si estás programando en Rust, es importante saber cómo capitalizar cadenas de texto ya que puede ser útil en diversas aplicaciones, como en la creación de nombres de usuario o en el formateo de datos para impresión.
 
 ## Cómo hacerlo
 
-Hay varias formas de capitalizar una cadena de texto en Rust, cada una con su propia sintaxis y beneficios. Aquí presentamos dos opciones con código de ejemplo y su salida correspondiente en la consola.
-
-### Uso de la función `to_uppercase`
-
-La forma más sencilla de capitalizar una cadena de texto en Rust es usando la función `to_uppercase`. Esta función tomará una cadena de texto y devolverá una nueva cadena de texto con todas las letras en mayúscula.
+Para capitalizar una cadena de texto en Rust, primero debemos importar la biblioteca `std::string::String`. Luego, podemos utilizar el método `.make_ascii_uppercase()` para convertir la cadena a letras mayúsculas. Por ejemplo:
 
 ```Rust
-let texto = "hola mundo";
-let texto_capitalizado = texto.to_uppercase();
+use std::string::String;
 
-println!("{}", texto_capitalizado);
-```
-Salida:
-```
-HOLA MUNDO
+fn main() {
+    let texto = "hola mundo";
+    let texto_mayus = String::from(texto).make_ascii_uppercase();
+    println!("{}", texto_mayus); // Output: HOLA MUNDO
+}
 ```
 
-### Uso de la macro `println!` y el operador `..`
-
-También podemos capitalizar una cadena de texto utilizando la macro `println!` y el operador `..`. Este método toma la cadena de texto original y la coloca dentro de un nuevo string con mayúsculas.
+También podemos utilizar el método `.to_uppercase()` para capitalizar la primera letra de cada palabra en la cadena, en lugar de todas las letras. Por ejemplo:
 
 ```Rust
-let texto = "hola mundo";
+use std::string::String;
 
-println!("{}!", texto[..].to_uppercase());
-```
-Salida:
-```
-HOLA MUNDO!
+fn main() {
+    let texto = "hola mundo";
+    let texto_mayus = String::from(texto).to_uppercase();
+    println!("{}", texto_mayus); // Output: Hola Mundo
+}
 ```
 
 ## Profundizando
 
-Además de las dos opciones mencionadas anteriormente, existen otras formas de capitalizar cadenas de texto en Rust. Algunos desarrolladores prefieren utilizar la función `chars` para recorrer y modificar cada uno de los caracteres de la cadena. También se pueden utilizar bibliotecas externas como `rust-string-case` para tener más opciones y personalizar el formato de capitalización.
+Cuando utilizamos el método `.make_ascii_uppercase()`, todas las letras de la cadena se convierten a mayúsculas, incluso las que tengan acentos o caracteres especiales. Esto se debe a que el método utiliza el conjunto de caracteres ASCII para realizar la conversión.
 
-Una de las principales ventajas de utilizar Rust para capitalizar cadenas de texto es su seguridad y velocidad. Al ser un lenguaje compilado, permite una ejecución más rápida y eficiente en comparación con lenguajes interpretados como JavaScript o Python. Además, su sistema de tipos de datos asegura que el código sea robusto y evita errores a la hora de manipular cadenas de texto.
+En cambio, al utilizar el método `.to_uppercase()`, se respeta la estructura de la cadena y solo se convierten las letras a mayúsculas según las reglas del idioma. Por ejemplo, en español la letra "ñ" se convierte a "Ñ" y no a "Ñ".
 
 ## Ver también
 
-- [Cómo utilizar las cadenas de texto en Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Documentación de la función `to_uppercase` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [Rust-String-Case: biblioteca para manipulación de cadenas de texto en Rust](https://github.com/whitfin/rust-string-case)
+- Documentación oficial de Rust sobre cadenas de texto: https://doc.rust-lang.org/std/string/struct.String.html
+- Tutorial de Rust en español: https://www.freecodecamp.org/news/como-aprender-rust-y-por-que-deberias-hacerlo/

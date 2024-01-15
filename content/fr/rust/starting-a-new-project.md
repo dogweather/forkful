@@ -1,5 +1,6 @@
 ---
-title:                "Rust: Commencer un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Rust: Commencer un nouveau projet"
 simple_title:         "Commencer un nouveau projet"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,38 +12,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous avez peut-être entendu parler de Rust, ce langage de programmation rapide et sûr qui gagne en popularité. Si vous envisagez de lancer un nouveau projet en utilisant Rust, voici quelques raisons de le faire. Avec sa syntaxe élégante et ses caractéristiques telles que la gestion de la mémoire sans prise de tête, Rust peut vous aider à créer des applications robustes et performantes dès le départ.
+Si vous êtes un développeur en quête d'une nouvelle aventure, ou si vous cherchez simplement à améliorer vos compétences en programmation, commencer un nouveau projet en Rust peut être une excellente option. Que ce soit pour sa sécurité, son efficacité ou sa syntaxe élégante, Rust offre de nombreuses raisons convaincantes pour se lancer dans cette aventure.
 
 ## Comment faire
 
-Pour commencer à coder en Rust, vous devez d'abord installer le compilateur Rust et ses outils associés en suivant les instructions de son site officiel. Une fois cela fait, vous pouvez ouvrir un éditeur de texte de votre choix et commencer à écrire votre premier programme Rust !
-
-Pour vous donner un aperçu, voici un exemple de code Rust qui imprime simplement "Bonjour !" dans la console :
-
-```Rust
-fn main() {
-    println!("Bonjour !");
-}
-```
-
-Voici ce que vous devriez voir en output :
-
-```
-Bonjour !
-```
-
-Vous remarquerez peut-être une légère différence avec d'autres langages de programmation que vous avez l'habitude d'utiliser. Rust utilise la macro `println!` au lieu d'une fonction `print` pour imprimer une ligne de texte. Cela permet au compilateur d'optimiser la performance en vérifiant si vous utilisez des variables ou non.
+Pour commencer un nouveau projet en Rust, vous devez d'abord installer le compilateur Rust et le gestionnaire de paquets Cargo sur votre ordinateur. Une fois installés, vous pouvez créer un nouveau projet en utilisant la commande ```Rust new nom_du_projet```. Vous trouverez un fichier ```Cargo.toml```, où vous pouvez spécifier vos dépendances et les options de compilation pour votre projet. Ensuite, vous pouvez commencer à écrire votre code en utilisant la syntaxe élégante de Rust et tester en utilisant ```Rust run```. Pour un exemple complet, vous pouvez consulter le dépôt GitHub du projet "Exemple de projet en Rust" (lien dans la section "Voir aussi").
 
 ## Plongée en profondeur
 
-En plus de sa performance et de sa sécurité, Rust offre également un système de types solide pour vous aider à éviter les bogues courants tels que les fuites de mémoire ou les accès non autorisés. Lorsque vous définissez une variable en Rust, vous devez spécifier son type. Cela peut sembler fastidieux au début, mais cela garantit que votre code est plus prévisible et sans erreurs.
-
-De plus, Rust dispose également du concept de propriété, qui est unique à ce langage. Il permet de gérer la mémoire de manière efficace en s'assurant qu'une variable n'a qu'un seul propriétaire à la fois. Cela peut sembler déroutant au début, mais cela permet d'éviter les problèmes de concurrence et les erreurs de mémoire.
-
-Si vous souhaitez en savoir plus sur la façon de démarrer un nouveau projet en utilisant Rust, vous pouvez consulter la documentation officielle en ligne ou rejoindre une communauté de développeurs de Rust pour obtenir de l'aide et des conseils.
+La création d'un nouveau projet en Rust peut sembler intimidante au début, mais une fois que vous avez compris les bases, il existe de nombreuses ressources en ligne pour vous aider à progresser dans votre apprentissage. Ne soyez pas découragé par les concepts avancés, comme les types de données et la gestion de la mémoire, car ils sont essentiels pour créer des projets solides en Rust. Vous pouvez également rejoindre des communautés en ligne pour apprendre des autres et poser des questions si vous rencontrez des difficultés.
 
 ## Voir aussi
 
-- Documentation officielle de Rust : https://www.rust-lang.org/fr/documentation.html
-- Communauté des développeurs de Rust : https://stackoverflow.com/questions/tagged/rust
-- Livre "The Rust Programming Language" : https://doc.rust-lang.org/book/
+- [Site officiel de Rust](https://www.rust-lang.org/fr)
+- [Guide de démarrage rapide en Rust](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
+- [Projet "Exemple de projet en Rust" sur GitHub](https://github.com/example-project/rust)

@@ -1,5 +1,6 @@
 ---
-title:                "C#: Trabajando con json"
+title:                "Trabajando con json"
+html_title:           "C#: Trabajando con json"
 simple_title:         "Trabajando con json"
 programming_language: "C#"
 category:             "C#"
@@ -9,78 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con JSON?
+## ¿Por qué trabajar con JSON?
 
-En la actualidad, el uso de JSON en el desarrollo de aplicaciones es indispensable ya que permite transmitir y almacenar datos de manera eficiente. Además, su sintaxis simple y legible lo hace fácil de entender y manipular, lo que lo convierte en una herramienta muy útil en el mundo de la programación.
+Si eres un programador de C#, es muy probable que en algún momento te encuentres trabajando con JSON. Este formato de datos se ha vuelto muy popular debido a su simplicidad y flexibilidad, lo que lo convierte en una herramienta poderosa para el intercambio de información en aplicaciones web y móviles.
 
-## Cómo trabajar con JSON
+## Cómo trabajar con JSON en C#
 
-Para trabajar con JSON en C#, se recomienda utilizar la biblioteca Newtonsoft.Json, la cual proporciona una serie de métodos y funciones que facilitan la manipulación de datos en formato JSON.
+La librería *Newtonsoft.Json* es la opción más común para trabajar con JSON en C#. Puedes agregarla a tu proyecto a través del administrador de paquetes NuGet. Una vez agregada, puedes utilizar la clase `JObject` para leer y manipular objetos JSON. A continuación, se muestra un ejemplo de cómo leer y acceder a los datos de un archivo JSON:
 
-Primero, es necesario importar la biblioteca en nuestro proyecto utilizando el gestor de paquetes NuGet:
-
-```C#
-Install-Package Newtonsoft.Json
 ```
+using Newtonsoft.Json;
 
-Una vez importada la biblioteca, podemos empezar a trabajar con JSON. Por ejemplo, si queremos convertir un objeto en formato JSON a una cadena de texto, utilizamos el método SerializeObject:
-
-```C#
-//Objeto en formato JSON
-string jsonString = JsonConvert.SerializeObject(objeto);
-
-//Imprimir la cadena de texto resultante
-Console.WriteLine(jsonString);
-
-/* Output:
-"{"nombre":"Juan", "edad": 25}"
-*/
-```
-
-De igual manera, si queremos convertir una cadena de texto en formato JSON a un objeto, utilizamos el método DeserializeObject:
-
-```C#
-//Cadena de texto en formato JSON
-string jsonString = "{\"nombre\":\"Juan\", \"edad\": 25}";
-
-//Convertir a objeto
-var objeto = JsonConvert.DeserializeObject(jsonString);
-
-//Acceder a los datos del objeto
-Console.WriteLine(objeto.nombre); //Juan
-Console.WriteLine(objeto.edad); //25
-```
-
-También es posible trabajar con archivos JSON. Para ello, podemos utilizar los métodos Load y Save de la clase File de Newtonsoft.Json:
-
-```C#
-//Cargar archivo JSON
+// Lectura del archivo JSON
 string jsonString = File.ReadAllText("datos.json");
 
-//Convertir a objeto
-var objeto = JsonConvert.DeserializeObject(jsonString);
+// Convertir el JSON en un objeto
+JObject jsonObj = JObject.Parse(jsonString);
 
-//Modificar datos del objeto
-objeto.edad = 26;
-
-//Guardar cambios en el archivo
-File.WriteAllText("datos.json", JsonConvert.SerializeObject(objeto));
+// Acceder a la propiedad "nombre"
+string nombre = (string)jsonObj["nombre"];
 ```
 
-## Profundizando en JSON
+También puedes utilizar la clase `JArray` para trabajar con arrays JSON y la clase `JValue` para acceder y convertir valores individuales. Puedes encontrar más detalles sobre cómo trabajar con JSON en la documentación oficial de *Newtonsoft.Json*.
 
-Como se mencionó anteriormente, la sintaxis de JSON es muy simple y legible, lo que lo hace fácil de entender y manipular. A continuación, se presentan algunos conceptos clave que son importantes conocer al trabajar con JSON en C#.
+## Profundizando en el trabajo con JSON
 
-- JSON tiene una estructura de datos basada en pares clave-valor, es decir, cada dato está asociado a una clave única que lo identifica.
-- Los valores en JSON pueden ser de diferentes tipos de datos como cadenas de texto, números, objetos, arreglos, entre otros.
-- Los datos en JSON se encuentran entre llaves { } y se separan por comas.
-- En C#, los objetos en formato JSON se convierten en instancias de la clase JObject, mientras que los arreglos se convierten en instancias de la clase JArray.
-- Para acceder a los datos en un objeto o arreglo JSON, se utiliza la sintaxis de punto (.) y corchetes ([ ]).
-
-Estos son solo algunos conceptos básicos de JSON, pero existen muchos más que se pueden explorar para sacarle el máximo provecho a esta útil herramienta en tus proyectos de programación en C#.
+Además de leer y escribir objetos y arrays JSON, también puedes ser más específico en tu manipulación de datos utilizando consultas LINQ y métodos como `SelectToken()` y `ToObject()`. También puedes personalizar la deserialización de objetos utilizando atributos de la librería *Newtonsoft.Json*. Ten en cuenta que, aunque JSON es una forma popular de intercambiar datos, aún debes tomar precauciones para validar y asegurar los datos recibidos antes de utilizarlos en tu aplicación.
 
 ## Ver también
 
-- [Documentación oficial de Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/Introduction.htm)
-- [Tutorial de JSON en C#](https://www.c-sharpcorner.com/article/working-with-json-in-C-Sharp/)
-- [Conversión de objetos en C# a formato JSON y viceversa](https://www.c-sharpcorner.com/article/json-serialization-deserialization-in-net/)
+- Documentación oficial de *Newtonsoft.Json*:  https://www.newtonsoft.com/json/help/html/Introduction.htm
+- Tutorial de C# y JSON en C# Corner: https://www.c-sharpcorner.com/article/c-sharp-amd-json-web-service-communication/

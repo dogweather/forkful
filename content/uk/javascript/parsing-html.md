@@ -1,6 +1,7 @@
 ---
-title:                "Javascript: Аналіз HTML"
-simple_title:         "Аналіз HTML"
+title:                "Розбір html"
+html_title:           "Javascript: Розбір html"
+simple_title:         "Розбір html"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,59 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Кожен, хто працює з веб-розробкою, будь-яким чином пов'язаному з обробкою HTML-коду, повинен легко розбиратися в аналізі цього типу даних. Здатність до парсингу HTML дозволяє отримувати необхідну інформацію з веб-сторінок, що дуже корисно, коли потрібно отримати цілісну картину про цільову аудиторію або виконувати аналіз конкурентів.
+Розбір HTML є важливою частиною розробки веб-додатків. Він дозволяє нам отримувати структуру інформації з HTML документу для подальшого використання в наших програмах.
 
-## Як це зробити
+## Як
 
-Для початку потрібно завантажити документ HTML у вигляді рядка. Для цього можна використовувати бібліотеку `axios`:
+### Використання розбору ланцюжків за допомогою `querySelectorAll`
 
-```javascript
-const axios = require('axios');
-
-axios.get('https://example.com')
-    .then((response) => {
-        const htmlString = response.data;
-        // Використовуємо htmlString для подальшого парсингу HTML-коду
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+```Javascript
+const elements = document.querySelectorAll('tag-name');
+console.log(elements);
 ```
-Тепер, коли ми маємо HTML у вигляді рядка, можемо починати його аналіз. Для цього можна використовувати бібліотеку `cheerio`, яка дозволяє використовувати синтаксис селекторів CSS для отримання необхідних елементів на сторінці:
 
-```javascript
+Вихідний код міститиме масив об'єктів, які відповідають тегам з потрібним ім'ям.
+
+### Використання бібліотеки Cheerio для серверного розбору HTML
+
+```Javascript
 const cheerio = require('cheerio');
-
-const $ = cheerio.load(htmlString);
-// Парсимо заголовок з тегом <h1>
-const heading = $('h1').text();
-console.log(heading); // Output: Example Domain
+const html = '<div><h1>Hello world</h1></div>';
+const $ = cheerio.load(html);
+console.log($('h1').text());
 ```
 
-## Profundo in HTML
+Вихідний результат буде містити текст "Hello world", який знаходиться всередині тега `<h1>`.
 
-Існує багато інших способів отримати необхідну інформацію з HTML-коду. Наприклад, для отримання вмісту з тегів `<meta>` можна використовувати бібліотеку `metascraper`:
+### Використання вбудованих методів DOM для розбору HTML
 
-```javascript
-const metascraper = require('metascraper')([
-    require('metascraper-description')()
-]);
-
-// Парсимо заголовок з тегом <meta name="description">
-metascraper({ html: htmlString })
-    .then((metadata) => {
-        const description = metadata.description;
-        console.log(description); // Output: Example Domain
-    });
+```Javascript
+const element = document.getElementById('element-id');
+console.log(element.innerHTML);
 ```
 
-Є також можливість використовувати бібліотеки для парсингу конкретних типів даних, наприклад `rss-parser` для отримання оновлень з RSS-стрічок.
+Вихідний результат буде містити HTML код, який належить елементу з вказаним ID.
 
-## Дивись також
+## Глибока занурення
 
-Детальніше про парсинг HTML можна дізнатися у документації бібліотек, зазначених у цій статті:
+Розбір HTML може бути більш складним завданням, коли маємо справу зі складною структурою документу. У таких випадках, корисно ознайомитись з більш складними методами, такими як `XMLHttpRequest` або `fetch`, для отримання HTML коду із зовнішніх документів.
 
-- [axios](https://github.com/axios/axios)
-- [cheerio](https://github.com/cheeriojs/cheerio)
-- [metascraper](https://github.com/microlinkhq/metascraper)
-- [rss-parser](https://github.com/rbren/rss-parser)
+## Дивіться також
+
+- MDN розділ про DOM: https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model
+- Офіційна документація Cheerio: https://github.com/cheeriojs/cheerio
+- Застосування розбору HTML у реальному веб-додатку: https://medium.com/@magnetikonline/responding-to-dynamic-dom-changes-when-scraping-ca3b20ad12d4

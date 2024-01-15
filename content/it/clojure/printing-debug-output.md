@@ -1,6 +1,7 @@
 ---
-title:                "Clojure: Stampa dell'output di debug"
-simple_title:         "Stampa dell'output di debug"
+title:                "Stampa output di debug"
+html_title:           "Clojure: Stampa output di debug"
+simple_title:         "Stampa output di debug"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -9,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Perchè
 
-Stampare output di debug è una pratica comune per risolvere problemi e ottenere una migliore comprensione del codice. Con il linguaggio di programmazione Clojure, è possibile utilizzare vari strumenti per generare output di debug utili e informativi.
+Impressionare il proprio codice debug è una tattica utile per identificare problemi e risolverli rapidamente. È un modo semplice ma efficace per comprendere il flusso di esecuzione del proprio programma e individuare eventuali errori.
 
 ## Come
 
-Per stampare output di debug in Clojure, puoi utilizzare la funzione `println` e passare come argomento la variabile o l'espressione che vuoi stampare. Ad esempio:
+L'uso più comune di println in Clojure è per stampare il valore di una variabile durante l'esecuzione del codice. Ecco un esempio:
 
 ```Clojure
-(def nome "Mario")
-(println nome)
+(def num 5)
+(println "Il valore di num è:" num)
 ```
 
-Questo stamperebbe "Mario" nella console come output di debug.
-
-Puoi anche utilizzare la macro `prn` per stampare una rappresentazione pratica di un'intera struttura di dati. Ad esempio:
+Questo codice stamperà: "Il valore di num è: 5" nell'output della console. Puoi anche utilizzare println per stampare più variabili, come nel seguente esempio:
 
 ```Clojure
-(def numeri [1 2 3])
-(prn numeri)
+(def str "ciao")
+(def num 10)
+(println "La stringa è:" str ", il numero è:" num)
 ```
 
-Questo stamperebbe il vettore [1 2 3] nella console come output di debug.
+Questo stamperà: "La stringa è: ciao, il numero è: 10". Inoltre, puoi utilizzare println anche per stampare il valore di una funzione durante l'esecuzione del codice.
 
-Puoi anche combinare `println` e `prn` per stampare output più dettagliati, ad esempio:
+## Deep Dive
 
-```Clojure
-(def x 5)
-(def y 10)
-(println "Il valore di x è:" x)
-(prn "Il valore di y è:" y)
-```
+Oltre ad essere utile per stampare il valore di variabili e funzioni, println è uno strumento versatile per il debug del codice. Puoi utilizzarlo per stampare informazioni su una specifica parte del codice, come il risultato di un'operazione o il valore di una variabile in un determinato momento.
 
-Questo stamperebbe nella console "Il valore di x è: 5" seguito da "Il valore di y è: 10".
+Puoi anche utilizzare la funzione prn per stampare i valori in modo più leggibile, poiché aggiunge spazi tra gli elementi stampati. Inoltre, puoi combinare println o prn con la funzione str per formattare l'output in modo più chiaro e organizzato.
 
-## Approfondimento
+## See Also
 
-Oltre alle funzioni di base `println` e `prn`, Clojure offre anche il logging tramite la libreria `clojure.tools.logging`. Questa libreria permette di stampare output di debug con diversi livelli di severità (ad esempio `info`, `debug`, `warn`), rendendo più semplice comprendere e organizzare gli output.
-
-Un altro strumento utile per il debugging in Clojure è il REPL (Read-Eval-Print Loop). Questo ambiente interattivo permette di eseguire istruzioni in modo rapido e controllare i risultati. Utilizzando il REPL, è possibile inserire output di debug direttamente nel codice e vedere istantaneamente i risultati.
-
-## Vedi anche
-
-- [Documentazione Clojure "Debugging"](https://clojure.org/guides/debugging)
-- [Clojure Logging - Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_logging.asciidoc)
-- [REPL - Clojure Docs](https://clojure.org/reference/repl)
+- [Documentazione ufficiale di Clojure](https://clojuredocs.org/)
+- [Articoli di programmazione di Clojure su Medium](https://medium.com/tag/clojure-programming)
+- [Clojure subreddit](https://www.reddit.com/r/Clojure/)

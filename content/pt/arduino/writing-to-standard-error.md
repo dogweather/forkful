@@ -1,6 +1,7 @@
 ---
-title:                "Arduino: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,35 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever para o erro padrão?
 
-Escrever para o erro padrão pode ser uma ferramenta útil para programadores Arduino. Quando há um erro no código, uma mensagem de erro é enviada para o erro padrão, permitindo que o problema seja identificado e resolvido mais facilmente. Neste artigo, vamos explorar como usar essa funcionalidade para melhorar nossos projetos Arduino.
+O erro padrão é uma ferramenta essencial para depurar e monitorar o comportamento do seu código Arduino. Ao escrever para o erro padrão, você pode obter informações detalhadas sobre o que está acontecendo dentro do seu programa e identificar possíveis erros rapidamente.
 
-## Como fazer:
+## Como Fazer
 
-Para escrever para o erro padrão no Arduino, usamos a função `Serial.println()`. Isso enviará uma mensagem de erro para a porta serial USB, que pode ser lida por um programa no computador. Vamos ver um exemplo simples:
+Para escrever para o erro padrão em seu código Arduino, siga os seguintes passos:
 
-```
-Arduino.setup() {
-  Serial.begin(9600); //Inicia a comunicação serial com taxa de 9600 baud
-}
+- Primeiro, inclua a biblioteca "Arduino.h" no início do seu código.
 
-Arduino.loop() {
-  int valor = analogRead(A0); //Lê o valor do pino analógico A0
-  if(valor < 200) { //Se o valor for menor que 200, há um problema
-    Serial.println("Erro: Sensor de luz não está funcionando corretamente!"); //Envia mensagem de erro para o erro padrão
-  }
-}
+- Em seguida, utilize a função `Serial.begin()` para iniciar a comunicação serial com uma taxa de transmissão de dados.
+
+- Agora, use a função `Serial.println()` para enviar uma mensagem para o erro padrão. Por exemplo: 
+
+```Arduino
+Serial.println("Mensagem de erro");
 ```
 
-Neste exemplo, nosso código verifica o valor do pino analógico A0 e, se for menor que 200, exibe uma mensagem de erro no erro padrão. Podemos usar esta funcionalidade para verificar sensores, atuadores ou qualquer outra parte do nosso projeto.
+- Você também pode enviar variáveis para o erro padrão usando `Serial.println()` e a função `String()`. Por exemplo:
 
-## Mergulho profundo:
+```Arduino
+int temperatura = 25;
+String mensagem = "A temperatura atual é: ";
 
-Você pode estar se perguntando: por que não apenas exibir a mensagem de erro no monitor serial? A resposta é que nem sempre temos um monitor serial conectado ao Arduino, por isso é útil ter a opção de mostrar erros em outro lugar, como no computador. Além disso, a função `Serial.println()` é útil não apenas para exibir mensagens de erro, mas também para enviar informações importantes sobre nosso projeto para o computador.
+Serial.println(mensagem + String(temperatura));
+```
 
-Além disso, a função `Serial.println()` é apenas uma das muitas funções de comunicação serial disponíveis no Arduino. Existem outras funções, como `Serial.write()` e `Serial.print()`, que nos dão mais controle sobre como os dados são enviados. Se você quiser se aprofundar ainda mais no assunto, pode conferir o [Manual de Referência da Comunicação Serial do Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/) para obter mais informações.
+- Para visualizar as mensagens do erro padrão, abra a janela do "Monitor Serial" localizada no menu "Ferramentas" do Arduino IDE.
 
-## Veja também:
+## Uma Profundidade de Mergulho
 
-- [Documentação oficial do Arduino sobre comunicação serial](https://www.arduino.cc/en/Tutorial/Serial) (em inglês)
-- [Vídeo tutorial sobre comunicação serial no Arduino](https://www.youtube.com/watch?v=Ve4PCnNcdiI) (em português)
-- [Outras funções de comunicação serial no Arduino](https://web.iit.edu/sites/web/files/departments/academic-affairs/academic-resource-center/pdfs/Arduino-Tutorial-6.pdf) (em inglês)
+Ao usar a função `Serial.println()`, tenha em mente que o texto enviado para o erro padrão deve estar entre aspas duplas. Se você quiser enviar valores decimal ou hexadecimal para o erro padrão, use `Serial.println()` e `Serial.print()` respectivamente.
+
+Além disso, você pode personalizar a taxa de transmissão de dados ao iniciar a comunicação serial com a função `Serial.begin()`. Isso pode ser útil para depurar problemas de desempenho em seu código.
+
+## Veja Também
+
+- [Documentação do Arduino sobre comunicação serial](https://www.arduino.cc/en/Serial/)
+- [Tutorial em vídeo sobre como usar o Monitor Serial](https://www.youtube.com/watch?v=8ZjfA6wfKt4)
+- [Fórum da comunidade do Arduino](https://forum.arduino.cc/index.php?board=1.0)

@@ -1,5 +1,6 @@
 ---
-title:                "Bash: HTTP 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Bash: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Bash"
 category:             "Bash"
@@ -9,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 HTTP 요청을 보내는가?
+## 왜
+*왜 누군가가 HTTP 요청을 보내는지 설명하는 최대 2문장.*
 
-HTTP 요청은 컴퓨터의 네트워크 통신에서 중요한 역할을 합니다. 많은 웹 응용 프로그램은 사용자의 요청에 따라 HTTP 요청을 보내고, 이를 기반으로 서버는 요청에 대한 응답을 보내줍니다. 그리고 이를 통해 인터넷을 통해 정보를 주고받을 수 있습니다.
+HTTP 요청은 인터넷 상에서 정보를 교환하는 가장 일반적인 방법 중 하나입니다. 여러분은 웹사이트, 앱, 또는 API와의 상호작용을 통해 다양한 정보를 얻거나 제공하기 위해 HTTP 요청을 보낼 수 있습니다.
 
-## 어떻게 HTTP 요청을 보낼 수 있는가?
+## 사용 방법
 
-HTTP 요청을 보내는 것은 터미널에서 간단하게 할 수 있습니다. `curl`이나 `wget`과 같은 프로그램을 이용하면 매우 간단하게 요청을 보낼 수 있습니다. 예를 들어, 다음과 같은 커맨드를 입력하면 해당 사이트에서 내용을 불러올 수 있습니다.
+* ```Bash
+  curl <URL>
+  ```
+  *주어진 URL로 특정 웹 페이지에 접근하는 간단한 방법입니다.
 
-```bash
-curl https://www.example.com
-```
+* ```Bash
+  curl -X POST -H "Content-Type: application/json" -d '{"username": "John", "password": "123"}' <URL>
+  ```
+  *HTTP POST 요청을 보내는 더 복잡한 예제입니다. 헤더와 본문 내용을 함께 포함해야 할 때 유용합니다.
 
-위 커맨드를 실행하면 해당 웹 사이트의 자원들이 터미널에 표시됩니다. 이렇게 받은 정보를 이용해 다양한 목적으로 활용할 수 있습니다.
+### 출력 예시
 
-또한 HTTP 요청을 보내기 위해 직접 소켓을 열어서 요청을 보내는 방법도 있습니다. 이 방법은 더욱 깊이 있는 방법이기 때문에, 아래 "더 알아보기" 섹션에서 좀 더 자세한 정보를 제공하겠습니다.
+* ```Bash
+  <HTTP response>
+  ```
+  *서버로부터 받은 HTTP 응답을 출력하는 방법입니다. 응답에는 상태 코드, 헤더, 본문 등이 포함될 수 있습니다.
 
-## 더 알아보기
+## 깊이 파고들기
 
-HTTP 요청을 보내는 것은 컴퓨터 통신에서 중요한 개념이기 때문에, 이것에 대해 좀 더 자세히 알아보는 것이 좋습니다. 이를 위해 다음 링크들을 참고해보세요:
+HTTP 요청은 다양한 메서드를 사용할 수 있으며 각 메서드는 다른 목적을 가지고 있습니다. GET 메서드는 웹페이지를 가져오는 데 사용되고, POST 메서드는 데이터를 서버에 제출하기 위해 사용됩니다. 또한 HTTP 요청은 헤더를 사용해 웹페이지로 전송되는 정보를 조절하는 것도 중요합니다.
 
-- [HTTP 요청에 대한 더 자세한 정보](https://ko.wikipedia.org/wiki/%EC%88%98%EB%A3%8C%ED%88%AC%EC%9E%90_%ED%86%B5%EC%8B%A0_%EB%B0%A9%EC%8B%9D)
-- [curl과 wget 프로그램 사용 방법](https://www.lesstif.com/pages/viewpage.action?pageId=14745786)
-- [HTTP 요청의 구조와 방식](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
-- [소켓을 이용한 HTTP 요청 보내기](https://stackoverflow.com/questions/13732826/making-http-requests-using-sockets-only)
+## 참고자료
 
-## 관련 링크
+* [curl 공식 문서](https://curl.se/docs/)
+* [HTTP 요청 메서드에 대한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
+* [HTTP 헤더에 대한 자세한 정보](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers)
 
-- [HTTP 프로토콜의 작동 방식](https://asfirstalways.tistory.com/67)
-- [HTTP 기본 개념 이해하기](https://novemberde.github.io/%EA%B0%9C%EB%B0%9C/2017/07/18/%EB%AA%A8%EB%84%90%EB%93%A4%EC%9D%80-%EB%A7%8C%EB%93%A4%EA%B0%80%EB%A9%B4-HTTP-%EC%9E%90%EB%A3%8C%EC%B2%B4-1.html)
-- [HTTP 요청에 대한 자세한 설명과 예제 코드](https://www.tutorialspoint.com/restful/restful_quick_guide)
+## 참고
+
+이 문서는 Bash의 현재 버전인 5.1 기준으로 작성되었습니다. 이외의 다른 버전에서는 결과가 다를 수 있습니다.

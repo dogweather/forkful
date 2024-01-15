@@ -1,6 +1,7 @@
 ---
-title:                "Kotlin: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Kotlin: Arbeta med yaml"
+simple_title:         "Arbeta med yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att arbeta med YAML är en viktig del av Kotlin-programmering. YAML är ett lättläst och språket vilket gör det till en utmärkt filformat för att hantera konfigurationer och data. Genom att lära sig YAML kan du enkelt läsa och skriva strukturerad data, vilket är oumbärligt för många utvecklingsprojekt.
+Om du är en Kotlin-utvecklare som arbetar med back-end-system eller konfigurationsfiler, kommer du ofta stöta på YAML-formatet. YAML är ett enkelt, människoläsbar syntax som används för att strukturera data och konfigurationsfiler. Det är en flexibel och bekväm format för att hantera data och konfigurationer i din Kotlin-applikation.
 
 ## Hur man gör det
 
-För att använda YAML i ditt Kotlin-projekt, behöver du först importera en extern bibliotek. Vanligtvis använder man SnakeYAML-biblioteket, så se till att lägga till det som en beroende i ditt `build.gradle`-fil.
+Att arbeta med YAML i Kotlin är enkelt och kräver inga extra bibliotek eller tredjepartsverktyg. Först måste du importera YAML-biblioteket i din Kotlin-fil:
 
-```Kotlin
-dependencies {
-    implementation("org.yaml:snakeyaml:1.26")
-}
+```
+import org.yaml.snakeyaml.Yaml
 ```
 
-När du har importerat biblioteket, kan du använda dess funktioner för att läsa och skriva YAML-filer. Här är ett enkelt exempel på hur du läser en YAML-fil och skriver ut dess innehåll:
+För att läsa en YAML-fil och omvandla den till ett Kotlin-objekt kan du använda `loadAs`-funktionen från YAML-biblioteket:
 
-```Kotlin
-val yamlString = File("example.yaml").readText()
-val yamlData = Yaml().load<Map<String, Any>>(yamlString)
-println(yamlData)
+```
+val yamlObject = Yaml().loadAs(File("example.yaml").inputStream(), Any::class.java)
 ```
 
-Detta kodsnutt kommer att läsa en YAML-fil vid namn `example.yaml`, konvertera den till en `Map` struktur och skriva ut dess innehåll. En liknande process kan användas för att skriva YAML-filer genom att först skapa en `Map` med data och sedan konvertera den till en YAML-sträng och skriva till en fil. Det finns många fler funktioner i SnakeYAML-biblioteket, så se till att utforska dokumentationen för att lära dig mer om dess möjligheter.
+För att lägga till data i en YAML-fil kan du använda `dump`-funktionen från YAML-biblioteket:
+
+```
+val data = mapOf("name" to "John", "age" to 27)
+Yaml().dump(data, FileWriter("example.yaml"))
+```
 
 ## Djupdykning
 
-YAML är en strukturerad dataformat som är baserat på nyckel-värde-par. Det finns dock ett antal olika sätt att strukturera en YAML-fil, så det är viktigt att förstå skillnaderna och välja rätt struktur för dina specifika behov. Här är en kort förklaring av de vanligaste strukturerna:
+För att arbeta mer avancerat med YAML i Kotlin kan du använda Kotlinx.serialization-biblioteket. Detta bibliotek ger dig möjlighet att enkelt konvertera Kotlin-objekt till YAML och vice versa, vilket gör det enklare att hantera komplexa datamodeller.
 
-- Enkel struktur: En YAML-fil med en enda nyckel-värde-paret.
-- Map-struktur: En YAML-fil med flera nyckel-värde-par som lagras i en `Map`.
-- Lista-struktur: En YAML-fil med flera nyckel-värde-par som lagras i en `List`.
-- YAML-dokument: En YAML-fil som innehåller flera separata YAML-dokument separerade av tre streck (`---`). Detta kan vara användbart när du vill ha flera liknande strukturerade data i en fil.
+För att använda Kotlinx.serialization-biblioteket, måste du först importera det i din Kotlin-fil:
 
-Det finns också många andra konfigurationsalternativ för YAML, såsom att ange datatyper, kommentarer och referenser. Se till att utforska dokumentationen för att lära dig mer om dessa funktioner.
+```
+import kotlinx.serialization.*
+import kotlinx.serialization.yaml.*
+```
 
-## Se också
+För att enkelt konvertera ett Kotlin-objekt till YAML, kan du använda `encodeToString`-funktionen:
 
-- [SnakeYAML-dokumentation](https://bitbucket.org/asomov/snakeyaml)
-- [YAML.org](https://yaml.org/)
+```
+val person = Person("John", 27)
+val yamlString = Yaml.encodeToString(person)
+```
+
+För att konvertera YAML till ett Kotlin-objekt kan du använda `decodeFromString`-funktionen:
+
+```
+val yamlString = "name: John\nage: 27"
+val person = Yaml.decodeFromString<Person>(yamlString)
+```
+
+Nu kan du enkelt arbeta med YAML i Kotlin och utnyttja dess fördelar för att hantera data och konfigurationer.
+
+## Se även
+
+- [Officiell webbplats för YAML](https://yaml.org/)
+- [Kotlinx.serialization-dokumentation](https://github.com/Kotlin/kotlinx.serialization)

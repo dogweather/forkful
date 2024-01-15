@@ -1,6 +1,7 @@
 ---
-title:                "Go: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Go: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,33 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Pourquoi
-Les nombres aléatoires jouent un rôle important dans de nombreuses applications informatiques, telles que les jeux, la cryptographie et les simulations. Ils permettent de générer des valeurs aléatoires, ce qui est essentiel pour diverses fonctions et calculs.
+
+Générer des nombres aléatoires est un concept fondamental en programmation, qui peut être utilisé dans une grande variété de projets. Que vous cherchiez à créer un jeu, un algorithme de sécurité ou simplement à ajouter un peu de hasard dans votre code, la génération de nombres aléatoires est un outil essentiel.
 
 ## Comment faire
+
+La génération de nombres aléatoires en Go est un processus simple et facile à implémenter. Voici quelques exemples de code pour vous montrer comment générer des nombres aléatoires dans votre programme :
+
 ```Go
-package main
+// Générer un nombre aléatoire entre 1 et 10
+rand.Seed(time.Now().UnixNano()) // utilise l'heure actuelle comme graine pour la génération aléatoire
+num := rand.Intn(10) + 1 // génère un nombre entre 0 et 9, donc on ajoute 1 pour avoir un nombre entre 1 et 10
 
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+// Générer un nombre flottant aléatoire entre 0 et 1
+rand.Seed(time.Now().UnixNano())
+num := rand.Float64() // génère un nombre flottant entre 0 et 1
 
-func main() {
-	// Générer un nombre aléatoire entre 0 et 100
-	rand.Seed(time.Now().UnixNano())
-	randomNum := rand.Intn(100)
-	fmt.Println("Le nombre aléatoire est:", randomNum)
+// Générer un nombre aléatoire dans une plage donnée
+rand.Seed(time.Now().UnixNano())
+num := 5 + rand.Intn(10) // génère un nombre entre 5 et 14 inclus
+
+// Générer une séquence de nombres aléatoires
+rand.Seed(time.Now().UnixNano())
+for i := 0; i < 5; i++ {
+    fmt.Println(rand.Intn(100)) // génère 5 nombres aléatoires entre 0 et 99 et les affiche à la console
 }
 ```
-Sortie: Le nombre aléatoire est: 67
 
-Dans cet exemple, nous utilisons le package intégré `math/rand` de Go pour générer un nombre aléatoire. Nous utilisons également `time` pour garantir que chaque exécution du programme génère un nombre différent. Vous pouvez également spécifier une plage de nombres en utilisant les fonctions `rand.Intn` ou `rand.Float64`.
+Voici un exemple de sortie pour les deux premiers exemples de code ci-dessus :
+
+```
+7
+0.9270447181895963
+```
 
 ## Plongée en profondeur
-Générer des nombres aléatoires peut sembler simple, mais il existe différentes techniques pour obtenir une distribution plus uniforme ou pour créer des nombres aléatoires cryptographiquement sûrs. Le package `crypto/rand` peut être utilisé pour cela et utilise des sources de nombres aléatoires plus complexes, telles que le générateur cryptographique AES.
+
+Maintenant que vous savez comment générer des nombres aléatoires en Go, il est intéressant de comprendre comment cela fonctionne en interne. En réalité, les ordinateurs génèrent des nombres pseudo-aléatoires en utilisant des algorithmes basés sur une "graine" initiale, qui peut être n'importe quoi, comme une heure ou un nombre choisi par l'utilisateur. C'est pourquoi il est important de régénérer la graine de manière régulière, pour éviter d'obtenir la même séquence de nombres à chaque fois que le programme est exécuté.
+
+Pour générer des nombres vraiment aléatoires, il est possible d'utiliser des packages externes, tels que "crypto/rand", qui utilise des valeurs provenant de sources d'entropie comme le mouvement de la souris ou l'utilisation du clavier.
 
 ## Voir aussi
-- [Documentation officielle Go sur les nombres aléatoires](https://golang.org/pkg/math/rand/)
-- [Article sur la génération de nombres aléatoires cryptographiquement sûrs en Go](https://medium.com/coinmonks/generating-cryptographically-secure-random-numbers-in-go-4765c3c793f8)
-- [Exemples de génération de nombres aléatoires en Go](https://gobyexample.com/random-numbers)
+
+- Documentation officielle de la génération de nombres aléatoires en Go : https://golang.org/pkg/math/rand/
+- Package "crypto/rand" : https://golang.org/pkg/crypto/rand/

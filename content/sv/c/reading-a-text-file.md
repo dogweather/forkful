@@ -1,5 +1,6 @@
 ---
-title:                "C: Läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "C: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "C"
 category:             "C"
@@ -11,40 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil i C-programmering kan vara en användbar färdighet att ha eftersom det låter dig läsa data från en extern källa och använda den i ditt program.
+Att läsa en textfil är en grundläggande funktion inom programmering och är ofta en nyckelkomponent i att hantera data och information. Genom att läsa en textfil kan du få tillgång till och manipulera information som annars skulle vara svåråtkomlig.
 
-## Så här gör du
+## Hur man gör det
 
-Att läsa en textfil i C-programmering kräver bara några få enkla steg. Först måste du öppna filen med fopen() funktionen och förse den med filens namn och "r" -läget för att ange att filen ska läsas. 
-
-```C
-
-FILE *fp;
-fp = fopen("textfil.txt", "r");
+För att läsa en textfil i C kan du använda funktionen `fopen()` för att öppna filen och sedan använda `fscanf()` för att läsa in data från filen. Här är ett exempel som öppnar en fil med namnet "textfil.txt" och skriver ut innehållet rad för rad:
 
 ```
+#include <stdio.h>
 
-Nästa steg är att använda en loop för att läsa in filens innehåll rad för rad med hjälp av fgets() funktionen tills du når slutet av filen. Du kan sedan skriva ut varje rad till konsolen eller använda den för att utföra en viss uppgift.
+int main() {
+    FILE *fp;
 
-```C
+    // Öppna filen för läsning
+    fp = fopen("textfil.txt", "r");
 
-char line[100];
+    // Läs in och skriv ut rad för rad
+    char line[100];
+    while (fscanf(fp, "%[^\n]\n", line) != EOF) {
+        printf("%s\n", line);
+    }
 
-while(fgets(line, sizeof(line), fp)) {
-    // Gör något med "line"
+    // Stäng filen
+    fclose(fp);
+    return 0;
 }
+```
 
+Om filen "textfil.txt" innehåller följande:
+
+```
+Hej!
+Det här är en textfil.
+```
+
+Så kommer outputen av programmet att vara:
+
+```
+Hej!
+Det här är en textfil.
 ```
 
 ## Djupdykning
 
-Att läsa en textfil kan också innebära att hantera eventuella fel som kan uppstå under processen. Det är viktigt att kontrollera om filen är riktig öppen innan du börjar läsa den och att stänga filen när du är klar med hjälp av fclose() funktionen.
+För att förstå mer om hur textfiler läses i C är det viktigt att förstå formatsträngen som används i `fscanf()`. I exemplet ovan används `"%[^\n]\n"` som betyder att funktionen kommer att läsa in allt fram till ett radbrytningstecken (`\n`) och sedan även läsa in och kasta bort radbrytningen. Detta gör att vi kan läsa en hel rad åt gången.
 
-Det kan också vara användbart att känna till olika sätt att läsa en textfil, till exempel att läsa in hela filen på en gång med hjälp av "fread()", eller att läsa in en viss mängd tecken från filen med hjälp av "fgetc()". Det är också möjligt att läsa in andra typer av filer än textfiler, som binärdata.
+En annan viktig aspekt att tänka på när man läser filer i C är att kontrollera om filen faktiskt kunde öppnas och läsas genom att kolla värdet som returneras av `fopen()`. Om filen inte finns eller om det finns några problem med att läsa den, kommer `fopen()` att returnera `NULL`.
 
 ## Se även
 
-För mer information om hur man läser en textfil i C-programmering, kolla in följande resurser:
-
-- [C Programming File Handling](https://www.tutorialspoint.com/cprogramming/c_file_io.html)
-- [C Graphics Tutorial](https://www.programiz.com/c-programming/c-graphics-programming)
+- [fopen() dokumentation](https://www.gnu.org/software/libc/manual/html_node/File-Open-Example.html#File-Open-Example)
+- [fscanf() dokumentation](https://www.gnu.org/software/libc/manual/html_node/Formatted-Input.html#Formatted-Input)
+- [En guide till C-filer](https://www.cprogramming.com/tutorial/cfileio.html)

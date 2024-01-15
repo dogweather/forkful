@@ -1,6 +1,7 @@
 ---
-title:                "Swift: Написання текстового файлу"
-simple_title:         "Написання текстового файлу"
+title:                "Створення текстового файлу"
+html_title:           "Swift: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,34 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Чому
-
-У програмуванні часто потрібно працювати з текстовими файлами, які зберігають дані або виконують певні функції. Наприклад, це може бути файл зі збереженими налаштуваннями програми або файл логів для зберігання важливих подій. Написання текстового файлу дозволяє вам зберегти інформацію на жорсткому диску і зручно працювати з нею пізніше, не користуючись постійною пам'яттю.
+Якщо ви хочете зберегти дані або текстову інформацію у зручному форматі, наприклад, для подальшого використання або обробки, написання текстового файлу у Swift може бути корисним інструментом. Це дозволяє зберігати дані на вашому пристрої та переглядати їх у будь-який момент.
 
 ## Як це зробити
-
-Написання текстового файлу в Swift - це проста задача, яка використовує стандартний клас `FileManager`. Спочатку потрібно створити об'єкт цього класу, використовуючи ключове слово `let` для створення константи. Потім використовуйте цей об'єкт для створення і записування в файл потрібної інформації:
+Для початку, створіть змінну, яка міститиме шлях до вашого файлу:
 
 ```Swift
-let fileManager = FileManager()
+let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("example.txt")
+```
 
+Цей код дозволить вам отримати шлях до папки документів на вашому пристрої та додати назву вашого файлу до цього шляху.
+
+Наступна крок - написання тексту, який ви хочете зберегти у файлі, у форматі `String`:
+
+```Swift
+let text = "Це приклад тексту, який буде збережено у файлі."
+```
+
+Тепер ви можете створити `Do-Catch` блок для обробки можливих помилок та записати ваш текстовий файл за допомогою `write(to:atomically:encoding:)` методу:
+
+```Swift
 do {
-    let fileURL = URL(fileURLWithPath: "myfile.txt") // задайте назву і шлях до файлу
-    try "Hello world".write(to: fileURL, atomically: true, encoding: .utf8) // записуємо рядок у файл
+    try text.write(to: filePath!, atomically: true, encoding: .utf8)
+    print("Текст успішно збережено у файлі.")
 } catch {
-    print("Помилка: \(error.localizedDescription)")
+    print("Помилка під час запису у файл.")
 }
 ```
 
-У цьому прикладі ми створюємо файл з назвою "myfile.txt" і записуємо в нього рядок "Hello world" з використанням кодування UTF-8. Параметр `atomically` визначає, чи потрібно використовувати механізм імовірного зберігання, щоб уникнути втрати даних при випадковому завершенні програми або при сбої в системі.
+Якщо ви хочете зчитати вміст файлу назад, ви можете це зробити за допомогою `String(contentsOf:encoding:)` методу:
 
-## Deep Dive
+```Swift
+do {
+    let fileContent = try String(contentsOf: filePath!, encoding: .utf8)
+    print(fileContent)
+} catch {
+    print("Помилка під час зчитування файлу.")
+}
+```
 
-У даному розділі хочу надати вам додаткову інформацію про запис текстових файлів в Swift. Крім класу `FileManager`, існують інші способи створення і записування файлів. Наприклад, ви можете використовувати клас `NSString` замість рядка Swift, як це було показано в прикладі вище. Також можна використовувати клас `Data` для запису бінарних даних, які потім можна буде прочитати з файлу.
+## Глибоке дослідження
+Ще один метод для написання текстових файлів у Swift - це використання `FileHandle` класу. Він надає більше можливостей для роботи з файлами та дозволяє виконати більш розширені дії, такі як переміщення курсору чи зміна розміщення даних у файлі.
 
-Для того, щоб перевірити, чи існує файл з певним ім'ям, можна скористатися методом `fileExists(atPath:)` та передати в нього шлях до файла.
+Запис у файл за допомогою `FileHandle` може виглядати так:
 
-## Дивіться також
+```Swift
+do {
+    if let fileHandle = FileHandle(forWritingAtPath: filePath!.path) {
+        fileHandle.seekToEndOfFile()
+        let data = text.data(using: .utf8)!
+        fileHandle.write(data)
+        fileHandle.closeFile()
+        print("Текст успішно додано до файлу.")
+    }
+} catch {
+    print("Помилка під час запису у файл з використанням FileHandle.")
+}
+```
 
-- [Документація Apple про FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Стаття про роботу з файлами в Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-files-in-swift) від Hacking with Swift
-- [Поради та приклади використання FileManager в Swift](https://www.swiftbysundell.com/basics/files-and-folders/) від Swift by Sundell.
+Якщо ви хочете зчитати усі дані з файлу, ви можете використовувати `FileHandle` у режимі читання:
+
+```Swift
+do {
+    if let fileHandle = FileHandle(forReadingAtPath: filePath!.path) {
+        let fileData = fileHandle.readDataToEndOfFile()
+        let fileContent = String(data: fileData, encoding: .utf8)
+        print(fileContent)
+        fileHandle.closeFile()
+    }
+} catch {
+    print("Помилка під час зчитування файлу з використанням

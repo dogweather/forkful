@@ -1,6 +1,7 @@
 ---
-title:                "Bash: Ausgabe von Debug-Informationen drucken"
-simple_title:         "Ausgabe von Debug-Informationen drucken"
+title:                "Fehlersuchausgabe drucken"
+html_title:           "Bash: Fehlersuchausgabe drucken"
+simple_title:         "Fehlersuchausgabe drucken"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -11,49 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Debug-Ausgabe ist ein wichtiger Teil des Programmierens, da sie bei der Identifizierung und Behebung von Fehlern in Ihrem Code hilft. Durch das Drucken von Nachrichten und Variablenwerten während der Ausführung Ihres Codes können Sie besser verstehen, was in Ihrem Programm passiert und wo der Fehler liegt. Es ist ein effektiver Weg, um Ihre Codequalität zu verbessern und Probleme schneller zu lösen.
+Debug-Ausgaben sind eine wichtige Methode, um Fehler in Bash-Programmen zu finden und zu beheben. Durch das Drucken von Debug-Ausgaben können Sie den Programmablauf verfolgen und eventuelle Probleme schnell identifizieren.
 
-## Wie man es macht
+## So geht's
 
-Die Ausgabe von Debug-Nachrichten in Bash ist einfach und kann mit dem `echo` Befehl durchgeführt werden. Hier ist ein Beispiel, um eine Nachricht auszugeben, die bestätigt, dass ein bestimmter Teil des Codes erfolgreich ausgeführt wurde:
-
-```Bash
-echo "Der Code wurde erfolgreich ausgeführt!"
-```
-
-Sie können auch Variablenwerte ausgeben, um zu überprüfen, ob diese den erwarteten Wert haben. Zum Beispiel:
+Um Debug-Ausgaben in Ihrem Bash-Code zu drucken, können Sie das `echo`-Befehl verwenden. Hier ist ein Beispiel:
 
 ```Bash
-name="Max"
-echo "Mein Name ist $name."
+#!/bin/bash
+
+VAR="Hallo Welt!"
+echo "Die Variable VAR enthält: $VAR"
 ```
 
-Die Ausgabe erscheint dann folgendermaßen:
+Dieses Beispiel verwendet den `echo`-Befehl, um den Wert der Variablen `VAR` zu drucken. Die Ausgabe sieht dann wie folgt aus:
 
 ```
-Mein Name ist Max.
+Die Variable VAR enthält: Hallo Welt!
 ```
 
-Wenn Sie mehrere Variablen ausgeben möchten, können Sie das `printf` Befehl verwenden. Dies ist besonders nützlich, wenn Sie komplexe Variablenwerte haben, die formatiert werden müssen. Hier ist ein Beispiel, um den Wert von zwei Variablen auszugeben:
+Sie können auch den `set -x` Befehl verwenden, um den gesamten Programmablauf mit Debug-Ausgaben anzuzeigen. Verwenden Sie jedoch diese Methode mit Vorsicht, da dies zu einer übermäßigen Ausgabe führen kann.
+
+## Tief einsteigen
+
+Es gibt verschiedene Methoden, um Debug-Ausgaben in Bash-Programmen zu drucken. Eine weitere Möglichkeit ist die Verwendung des `printf`-Befehls. Dieser Befehl bietet mehr Möglichkeiten zur Formatierung der Ausgabe. Hier ist ein Beispiel:
 
 ```Bash
-age=28
-balance=1000.50
-printf "Ich bin %d Jahre alt und mein Kontostand beträgt %.2f Euro." $age $balance
+#!/bin/bash
+
+VAR="42"
+printf "Der Wert der Variablen VAR ist %s\n" "$VAR"
 ```
 
-Die Ausgabe lautet dann:
+In diesem Beispiel wird der Wert der Variablen `VAR` mit dem `%s`-Platzhalter formatiert. Die Ausgabe sieht dann wie folgt aus:
 
 ```
-Ich bin 28 Jahre alt und mein Kontostand beträgt 1000.50 Euro.
+Der Wert der Variablen VAR ist 42
 ```
 
-## Tiefer eintauchen
+Eine andere nützliche Methode ist die Verwendung von `die`-Befehl, um Debug-Ausgaben in Kombination mit einer Fehlermeldung zu drucken. Hier ist ein Beispiel:
 
-Zusätzlich zu den grundlegenden Ausgabetechniken können Sie auch Formatierungsoptionen verwenden, um die Ausgabe Ihrer Debug-Nachrichten zu verbessern. Diese können in der offiziellen Bash-Dokumentation gefunden werden. Sie können auch benutzerdefinierte Funktionen erstellen, die das Debugging erleichtern, indem Sie die Ausgabe mit zusätzlichen Informationen wie Zeitstempel und Dateinamen versehen. Eine andere Möglichkeit ist die Verwendung des `set -x` Befehls, um einen Shell-Trace-Modus zu aktivieren, der alle ausgeführten Befehle anzeigt.
+```Bash
+#!/bin/bash
+
+NUM=0
+if [ "$NUM" -eq 0 ]; then
+    die "NUM darf nicht 0 sein!"
+fi
+```
+
+Wenn das Skript ausgeführt wird und die Bedingung `"$NUM" -eq 0` erfüllt ist, wird die folgende Ausgabe gedruckt:
+
+```
+NUM darf nicht 0 sein!
+```
 
 ## Siehe auch
 
-- Offizielle Bash-Dokumentation: https://www.gnu.org/software/bash/manual/
-- Benutzerdefinierte Debug-Funktionen: https://emdentec.com/blog/bash-debug-german/
-- Shell-Trace-Modus: https://ss64.com/bash/set.html
+- [Bash Debugging Guide (auf Englisch)](https://wiki.bash-hackers.org/scripting/debuggingtips)
+- [Einführung in die Bash-Programmierung (auf Deutsch)](https://wiki.ubuntuusers.de/Shell/Bash-Programmierung_Einfuehrung/)
+- [Bash-Dokumentation (auf Deutsch)](https://www.gnu.org/software/bash/manual/html_node/index.html)

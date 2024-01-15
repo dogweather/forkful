@@ -1,6 +1,7 @@
 ---
-title:                "PHP: 使用基本认证发送HTTP请求"
-simple_title:         "使用基本认证发送HTTP请求"
+title:                "用基本认证发送http请求"
+html_title:           "PHP: 用基本认证发送http请求"
+simple_title:         "用基本认证发送http请求"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -9,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：对于从事PHP编程的读者来说，发送带有基本身份验证的HTTP请求是一项重要的技能。它允许您访问需要认证的远程资源。
+## 为什么
+在现代的网络开发工作中，发送HTTP请求是非常常见的。使用基本身份验证能够确保你的请求是安全和私密的，以保护用户的个人信息或敏感数据。 
 
-如何：要发送带有基本身份验证的HTTP请求，您需要使用PHP中的cURL库。以下是一个简单的示例代码，演示如何使用基本身份验证发送GET请求，并从服务器端获取响应。
+## 如何
+在PHP中，我们可以通过使用‘ curl_init’ 和 ‘curl_setopt’函数来发送带有基本身份验证的HTTP请求。首先，我们需要使用‘curl_init’函数来初始化一个curl会话，然后使用‘curl_setopt’将请求的URL和身份验证选项设置为CURLOPT_URL和CURLOPT_USERPWD。接下来，我们可以使用‘curl_exec’函数来执行请求，并通过‘curl_getinfo’函数获取请求的输出结果。
 
 ```PHP
-<?php
-// 设置cURL选项
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://example.com/api"); // 指定要发送请求的URL
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic ' . base64_encode($username . ':' . $password))); // 添加基本身份验证头
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 将响应存储在变量中而不输出到浏览器
-// 发送请求
-$response = curl_exec($ch);
-// 处理服务器端的响应
-if ($response === false) {
-    // 请求失败
-    echo 'cURL error: ' . curl_error($ch);
-} else {
-    // 请求成功
-    echo $response;
-}
-// 关闭cURL
-curl_close($ch);
-?>
+$ch = curl_init(); // 初始化curl会话
+curl_setopt($ch, CURLOPT_URL, "https://www.example.com"); // 设置请求的URL
+curl_setopt($ch, CURLOPT_USERPWD, "username:password"); // 设置基本身份验证选项
+$result = curl_exec($ch); // 执行请求
+$info = curl_getinfo($ch); // 获取请求的输出结果
+curl_close($ch); // 关闭curl会话
+echo $result; // 输出请求的结果
 ```
 
-输出：
+在上面的代码示例中，我们使用‘username’和‘password’作为示例的基本身份验证凭证。根据实际情况，您需要替换为您自己的用户名和密码。
 
-`{"status": "success", "data": {"message": "Hello, [username]!"}}`
+## 深入探讨
+基本身份验证是一种使用用户名和密码来验证请求的方法。当您向服务器发送HTTP请求时，您提供的用户名和密码将被加密并作为HTTP头的一部分加入到请求中。服务器接收到请求后，将对提供的用户名和密码进行验证，如果验证成功，则允许继续访问所请求的资源。
 
-深入了解：基本身份验证是一种HTTP协议，通过在请求头中添加编码的用户名和密码来安全地发送HTTP请求。它是一种简单而又有效的身份验证方法，被广泛用在各种Web应用程序中。您可以使用其他编码方法，如MD5或SHA-1来对用户名和密码进行加密，提高安全性。
-
-同样重要的是要保护您的代码，以防止恶意用户访问您的用户名和密码。您可以使用PHP中的安全散列函数来对用户名和密码进行加密，以防止它们在代码中明文显示。
-
-另外，您也可以在cURL选项中添加额外的参数来设置其他选项，例如添加超时设置或指定请求方法。
-
-参考链接：
-- [PHP官方文档 - cURL介绍](https://www.php.net/manual/en/intro.curl.php)
-- [cURL官方文档](https://curl.haxx.se/docs/)
-- [MDN Web文档 - HTTP基本身份验证](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [PHP安全散列函数](https://www.php.net/manual/en/function.hash.php)
-
-## 参见
+## 参考资料
+- [PHP官方文档 - curl_init()](https://www.php.net/manual/en/function.curl-init.php)
+- [PHP官方文档 - curl_setopt()](https://www.php.net/manual/en/function.curl-setopt.php)
+- [PHP官方文档 - curl_exec()](https://www.php.net/manual/en/function.curl-exec.php)
+- [PHP官方文档 - curl_getinfo()](https://www.php.net/manual/en/function.curl-getinfo.php)

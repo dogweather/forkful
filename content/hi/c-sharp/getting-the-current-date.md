@@ -1,5 +1,6 @@
 ---
-title:                "C#: वर्तमान तारीख प्राप्त करना"
+title:                "वर्तमान तारीख प्राप्त करना"
+html_title:           "C#: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "C#"
 category:             "C#"
@@ -11,26 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-अनुक्रम का बेस आज का तारीख प्राप्त करने में हमें क्यों रुचि है? यह एक असाधारण चीज़ हो सकती है, लेकिन यह आपके कोड में उचित तारीख और समय को ले जाने में बहुत महत्वपूर्ण हो सकता है। इसके साथ हम प्रक्रियाओं को ट्रैक कर सकते हैं और अपनी एप्लिकेशन को उदयापन की विशेषताओं से लाभानुवर्ती बना सकते हैं।
+वर्तमान तारीख हासिल करने के लिए कोई मुख्य उपयोग है। एक अन्य सम्भावना है कि प्रोग्रामर अपने कोड में दिनांक की जानकारी को स्टोर करें या उसे अलग भाषाओं में प्रदर्शित करने के लिए इस्तेमाल करें।
 
-## कैसे
-
-```C#
-// Using DateTime class
-DateTime currentDate = DateTime.Now; // get current date and time
-Console.WriteLine(currentDate); // output: 5/25/2021 10:30:00 AM
-```
-
-यहां हमने `DateTime` कक्षा का उपयोग करके `DateTime.Now` गुण का उपयोग करके वर्तमान तारीख और समय को प्राप्त किया है। यह प्रक्रिया आपको वर्तमान तारीख के सटीक रूप से उपयोग को सुनिश्चित करता है और हमारे काम में आता है। आप इसे विजेट के साथ मूल्यों को संग्रहित करने के लिए और अपने विजेट को परिवर्तित करने के लिए भी उपयोग कर सकते हैं।
+## कैसे करें
 
 ```C#
-// Using DateTime.Now property
-DateTime currentDate = DateTime.Now.Date; // get current date
-Console.WriteLine(currentDate); // output: 5/25/2021 12:00:00 AM
+DateTime currentDate = DateTime.Today; 
+string formattedDate = currentDate.ToString("dd MMMM yyyy"); 
+Console.WriteLine("आज की तारीख: " + formattedDate); 
+
+// आज की तारीख: २५ अप्रैल २०२१
 ```
 
-अगर आपको सिर्फ वर्तमान तारीख की जरूरत है, तो आप `DateTime.Now` की जगह `DateTime.Now.Date` को उपयोग कर सकते हैं। यह आपको वर्तमान तारीख के मुख्य अंश को लेने में मदद करता है।
+## गहराई में जाएं
 
-## गहराई से जाएं
+DateTime डेटा टाइप C# में वर्तमान दिनांक को रखने के लिए उपयोग किया जाता है। इसके अलावा, DateTime ऑब्जेक्ट को मंगलवार, गुरुवार, शुक्रवार आदि जैसे वे दिनों के नाम भी प्रदर्शित करने के लिए उपयोग किया जा सकता है। यह एक सुविधा है जो दिनांक को कुछ अलग तरीके से प्रदर्शित करने में मदद करती है।
 
-जब हम किसी विशेषता का उपयोग करते हैं, तो हमें जानने की जरूरत होती है कि वह बात आखिर हो क्या रही है। `DateTime.Now` के अलावा, हम `DateTime.Today` और `DateTime.UtcNow` भी प्राप्त कर सकते हैं। इन गुणको लेने से
+## इसे भी देखें
+
+- [C# DateTime डेटा टाइप](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- [C# में दिनांक को स्टोर करने का तरीका](https://www.c-sharpcorner.com/UploadFile/mahesh/c-sharp-datetime-conversion-functions/)

@@ -1,5 +1,6 @@
 ---
-title:                "Rust recipe: Downloading a web page"
+title:                "Downloading a web page"
+html_title:           "Rust recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Rust"
 category:             "Rust"
@@ -9,61 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-
-In today's digital world, downloading a web page has become second nature for us. Whether it's accessing a news article, streaming a video, or shopping online, we often take for granted the process of retrieving data from the internet. However, understanding how this process works can enhance our knowledge as programmers and allow us to develop efficient and reliable applications. In this blog post, I will be exploring the process of downloading a web page using Rust programming language.
+## Why
+Downloading web pages is a common task for web developers, data analysts, and anyone looking to extract information from a website. Using Rust, a fast and reliable programming language, can make this process even smoother.
 
 ## How To
-
-To begin, let's create a simple Rust program that will download a web page for us. First, we need to import the "reqwest" library which will allow us to make HTTP requests. This can be done by adding the following line to the "Cargo.toml" file:
+To download a web page in Rust, we can make use of the `reqwest` crate, which provides a simple and user-friendly interface for making HTTP requests. First, we need to add the `reqwest` crate as a dependency in our `Cargo.toml` file:
 
 ```Rust
 [dependencies]
-reqwest = { version = "0.11", features = ["blocking", "json"] }
+reqwest = { version = "0.11.3", features = ["blocking"] }
 ```
 
-Next, let's create a new Rust file called "main.rs" and add the following code:
+Next, we can use the `reqwest::get()` function to make a `GET` request to the desired URL. This function returns a `Response` object, which we can then use to access the response body:
 
 ```Rust
-use reqwest;
+use reqwest::blocking::get;
 
-fn main() {
-  let response = reqwest::blocking::get("https://www.example.com").expect("Failed to download page");
-  println!("Response status: {}", response.status());
-  println!("Response headers:\n{:#?}", response.headers());
-  println!("Response body:\n{}", response.text().expect("Failed to read response body"));
-}
+let response = get("https://www.example.com").unwrap();
+let body = response.text().unwrap();
+
+println!("{}", body); // prints the downloaded web page
 ```
 
-In this code, we are using the "get" function from our imported "reqwest" library to make a GET request to the specified URL. This will return a response object which we can use to obtain details about the request, such as the status code, headers, and response body. 
+We can also specify additional request options, such as headers or query parameters, by creating a `Client` object and using it to make the request:
 
-Let's run our program by using the command "cargo run" in the terminal. If everything goes well, we should see an output similar to the following:
+```Rust
+use reqwest::blocking::{get, Client};
 
- ```Rust
- Response status: 200 OK
- Response headers:
- {"content-length": "1270", "content-type": "text/html"}
- Response body:
- <!doctype html>
- <html>
- <head>
- <title>Example Domain</title>
- ...
+let client = Client::new(); // create a Client object
+let response = client.get("https://www.example.com")
+    .header("User-Agent", "My Rust Application")
+    .query(&[("search", "rust")])
+    .send()
+    .unwrap();
+
+let body = response.text().unwrap();
+
+println!("{}", body); // prints the downloaded web page
 ```
-
-This means that our program successfully downloaded the web page and received a 200 status code, indicating that the request was successful.
 
 ## Deep Dive
+Under the hood, the `reqwest` crate makes use of the `hyper` crate, which provides a low-level HTTP implementation in Rust. By default, `reqwest` uses a blocking client, meaning the current thread will be blocked until the request is completed. However, the `reqwest` crate also provides an asynchronous client for more efficient handling of multiple requests. Additionally, the `reqwest` crate supports cookie management, redirection, and other useful features for web scraping tasks.
 
-Now that we have a basic understanding of how to download a web page using Rust, let's take a deeper dive into the process. When we make a request to a URL, our program is essentially sending an HTTP request to a remote server. The server then processes the request and sends back a response, which may include data, headers, and status codes. 
-
-One important aspect to note is that web pages are not always returned in the same format. Some may be in HTML, others in JSON, and some may even be binary data. This is why it is essential to specify the expected data type in our request. In the previous code example, we used the "text()" function to convert our response to a string, but we can also use other functions such as "json()" or "bytes()" depending on the type of data we are expecting.
-
-Furthermore, we can also customize our request by adding headers, request parameters, or even authentication tokens. This allows us to make more specific and secure requests. 
-
-## See Also 
-
-- [Rust Language Homepage](https://www.rust-lang.org/)
-- [Official Reqwest Documentation](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [HTTP Requests in Rust: A Comprehensive Guide](https://endler.dev/2017/rust-http-client-research/)
-- [Making HTTP Requests in Rust with Reqwest Library](https://www.ameyalokare.com/rust/2017/10/12/rust-crate-to-make-http-requests.html)
+## See Also
+- [reqwest crate documentation](https://docs.rs/reqwest/)
+- [hyper crate documentation](https://docs.rs/hyper/)
+- [Official Rust website](https://www.rust-lang.org/)

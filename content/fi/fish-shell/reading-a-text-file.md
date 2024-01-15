@@ -1,6 +1,7 @@
 ---
-title:                "Fish Shell: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedoston lukeminen"
+html_title:           "Fish Shell: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -9,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä varten
 
-Tekstirivin lukeminen on yksi perustavanlaatuisimmista tehtävistä tiedonkäsittelyssä. Usein meidän täytyy lukea läpi suuria määriä tietoa ja erottaa sieltä haluamamme tiedot. Fish Shell tarjoaa meille helpon tavan tehdä tämä.
+Oletko ikinä törmännyt tekstiin, josta haluat etsiä tai muokata jotain tiettyä sanaa tai lausetta? Fish Shellin avulla voit lukea tekstitiedostoja suoraan komentokehotteesta, joten voit helposti etsiä ja muokata tiedostoa ilman, että sinun tarvitsee avata erillistä tekstieditoria.
 
 ## Miten
 
-Fish Shell tarjoaa meille merkkijonotoiminnon `read`. Tällä funktiolla voimme lukea haluamamme tiedoston ja tallentaa sen sisällön muuttujaan. Tämä muuttuja voidaan sitten käyttää haluamallamme tavalla, kuten tulostaa se näytölle.
+Fish Shellin käyttäminen tekstitiedostojen lukemiseen ja muokkaamiseen on helppoa! Sinun tarvitsee vain kirjoittaa komentoriville `cat` ja sen jälkeen tiedoston nimi, jonka haluat lukea. Esimerkiksi, jos haluat lukea tiedoston nimeltä "testi.txt", kirjoita seuraava komento:
 
 ```Fish Shell
-set sisalto (read -i tiedosto.txt)
-echo $sisalto
+cat testi.txt
 ```
 
-Tässä esimerkissä luetaan tiedosto nimeltä "tiedosto.txt" ja tallennetaan sen sisältö muuttujaan nimeltä "sisalto". Sitten tämä sisältö tulostetaan näytölle komennolla `echo`.
+Kun olet kirjoittanut komennon, paina "Enter" ja voit nähdä tiedoston sisällön komentokehotteessa.
 
-## Syvempi sukellus
-
-Lisäksi Fish Shellillä on muitakin vaihtoehtoja tekstirivin lukemiseksi. Voimme myös lukea tiedostosta vain tietyn määrän merkkejä tai rivejä.
+Mutta mitä jos haluat etsiä tiettyä sanaa tai lausetta tiedostosta? Voit käyttää komentoa `grep`, joka etsii annetun sanan tai lauseen tiedostosta ja näyttää rivit, joilla se esiintyy. Esimerkiksi, jos haluat etsiä sanaa "fish" tiedostosta "testi.txt", kirjoita seuraava komento:
 
 ```Fish Shell
-set merkit (read -n 10 tiedosto.txt)
-echo $merkit
+grep fish testi.txt
 ```
 
-Tässä esimerkissä luetaan tiedostosta vain 10 ensimmäistä merkkiä ja tallennetaan ne muuttujaan nimeltä "merkit". Sitten tulostetaan muuttujan sisältö näytölle.
+Tämä näyttää kaikki rivit, joilla sana "fish" esiintyy tiedostossa.
+
+## Syvällä sukellus
+
+Fish Shell tarjoaa monia erilaisia komentoja tiedostojen lukemiseen ja muokkaamiseen, mukaan lukien `head` ja `tail`, jotka näyttävät tiedoston ensimmäiset tai viimeiset rivit, `wc`, joka laskee tiedoston rivit, sanat ja merkit, ja `sed`, joka muokkaa tiedoston sisältöä.
+
+Voit myös yhdistää erilaisia komentoja ja käyttää putkimerkkiä (`|`) siirtääksesi tiedoston läpi useamman komennon. Esimerkiksi, jos haluat nähdä tiedoston ensimmäiset 10 riviä ja sitten laskea, kuinka monta sanaa tiedostossa on, voit yhdistää `head`- ja `wc`-komentoja seuraavasti:
+
+```Fish Shell
+head -n 10 testi.txt | wc -w
+```
+
+Tämä näyttää 10 ensimmäistä riviä tiedostosta ja laskee sitten niiden sanojen lukumäärän. 
 
 ## Katso myös
-- [Fish Shellin dokumentaatio lukemisesta](https://fishshell.com/docs/current/cmds/read.html)
-- [Merkkijonojen käsittely Fish Shellillä](https://fishshell.com/docs/current/tutorial.html#tut_strings)
+
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Kattava opas Fish Shellin käyttöön](https://medium.com/@arpitbhayani/the-ultimate-guide-to-fish-shell-3791c6bcc57a)
+- [Fish Shellin opetusohjelma Aloittelijoille](https://dev.to/angadsharma1016/fish-shell-tutorial-for-beginners-1bpp)

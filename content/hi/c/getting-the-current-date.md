@@ -1,6 +1,7 @@
 ---
-title:                "C: वर्तमान तिथि प्राप्त करना"
-simple_title:         "वर्तमान तिथि प्राप्त करना"
+title:                "तारीख को प्राप्त करना"
+html_title:           "C: तारीख को प्राप्त करना"
+simple_title:         "तारीख को प्राप्त करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -9,59 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## Kyu
 
-Aaj kal, duniya bhaut fast paced hai aur hume har cheez ko instantly jaanna hota hai. Is liye, kaafi baar hume apni application mein current date ka use karna padta hai. Isse hum apne users ko accurate aur up to date information provide kar sakte hai.
+Aapne kabhi socha hai ki aap ek program banate hai aur wo program hamesha current date ke according chalta rahe? Ya phir aapko kisi bhi tarah ki transaction pe current date aur time ka record rakhna ho? Ya fir aap simply apne program mai kisi bhi tarah ki date aur time se related feature add karna chahte hai? Ye sab cheezein karne ke liye hume current date aur time ki zarurat padhti hai. Isi liye hume C programming mai current date ko acquire karna aana chahiye.
 
-## Kaise Karein
+## Kaise
 
-Current date prapt karne ke liye, hum C programming ka use kar sakte hai. C language mein "time.h" header file ko include karne se hum time-related functions ko access kar sakte hai. Isme se ek function "time()" hai jo hume current date aur time ka epoch format (seconds since January 1, 1970 UTC) return karta hai.
+Agar aap C programming seekh rahe hai ya phir aapke paas pehle se C ki jaankari hai to aapko ye baat pata hogi ki C programming mai kisi bhi tarah ka date aur time ka record rakhna current date aur time ko acquire karna se shuru hota hai. Iske liye hume pata hona chahiye ki hum current date aur time ko kis tarah se acquire kar sakte hai.
 
-```
-# include <stdio.h>
-# include <time.h>
+Ek simple sa example hai jo current date aur time ko acquire karne mai humari madad karega.
+
+```C
+#include <stdio.h>
+#include <time.h>
 
 int main()
 {
-    time_t current_time;
-    time(&current_time); // functions mein pass by reference hoti hai, isliye "&" use kiya hai
+    time_t t = time(NULL);
+    struct tm *now = localtime(&t);
 
-    printf("Epoch format: %ld\n", current_time);
+    printf("Current Date and Time: %d/%d/%d %d:%d:%d",
+            now->tm_mday, now->tm_mon+1, now->tm_year+1900,
+            now->tm_hour, now->tm_min, now->tm_sec);
 
     return 0;
 }
 ```
 
-Is code ke output ke roop mein, hum current date aur time ka epoch format dekh sakte hai. Lekin, is format ko padhna aur samajhna thoda mushkil ho sakta hai.
-
-## Gehri Jhaank
-
-Epoch format ka calculation ek specific time base par hota hai, jo ki January 1, 1970 UTC hai. Iske alawa, current date ko human-readable format mein display karne ke liye hum "struct tm" datatype ka use kar sakte hai. Iss structure mein hum specific components like day, month, year, hour, minute, second ko store kar sakte hai.
+Output:
 
 ```
-# include <stdio.h>
-# include <time.h>
-
-int main()
-{
-    time_t current_time;
-    time(&current_time);
-
-    // localtime() function current time ko apne local time zone ke hisaab se convert karta hai
-    struct tm *local_time = localtime(&current_time);
-
-    printf("Current date & time: %s", asctime(local_time));
-
-    return 0;
-}
+Current Date and Time: 19/9/2021 11:30:44
 ```
 
-Is code ke output mein hum current date aur time ko humare local time zone ke hisaab se dekh sakte hai.
+Is example mai humne `time.h` library ka use kiya hai jo current date aur time ko acquire karne mai humari madad karta hai. `time()` function current date aur time ko seconds mai return karta hai. Isliye humne `time_t` variable mai iska value assign kardiya. Phir humne `localtime()` function ka use kiya hai jo current date aur time ko local timezone mai convert karta hai. Iske baad hum ek `struct tm` variable mai current date aur time ki details ko store karke uska address `localtime()` function mai pass kiya hai. Phir humne `printf()` function ka use kiya hai jo humara output dega current date aur time ke format mai.
+
+Humne yaha `%d` ka use kiya hai jiski madad se hum integer values ko print kar sakte hai. `%d`, `%m`, `%y` aur `%Y` current date ki day, month, year aur century ko represent karte hai. Similarly, `%H`, `%M` aur `%S` current time ke hours, minutes, aur seconds ko represent karte hai.
+
+## Deep Dive
+
+Haal hi mai release hui C11 version mai `time.h` library ka use karke current date aur time ko acquire karna aur bhi easy ho gaya hai. Is version mai `struct tm` ke saath aur bhi functions jaise ki `tm_year` aur `tm_mon` ko operate karne ke liye `iasctime_s` function add kiya gaya hai. Isse hume date aur time ko human readable format mai display karna aur bhi aasan ho gaya hai.
+
+Iske alawa `chrono.h` library ka use karke bhi hum current date aur time ko acquire kar sakte hai. Is library mai hume `year_month_day` aur `year_month_weekday` jaise classes milte hai jo hume date ki specific details provide karte hai. Isiliye C11 version mai current date aur time ko acquire karna aur bhi efficient ho gaya hai.
 
 ## Dekhiye Bhi
 
-Agar aapko C programming mein current date ko manipulate karne ke aur functions ke bare mein aur jaankari chahiye toh "time.h" header file ke official documentation ko refer kar sakte hai. Aur agar aapko specific project mein current date ka use karna hai, toh aapko "strftime()" function ko utilize karna padega. Is function mein hum date aur time ko humare desired format mein convert kar sakte hai.
-
-- [time.h header file documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [strftime() function in C](https://www.geeksforgeeks.org/strftime-function-in-c/)
-- [Epoch time calculator](https://www.epochconverter.com/)
+- [C programming tutorials](https://www.programiz.com/c-programming)
+- [C11 standard documentation](https://www.iso.org/standard/69318.html)
+- [Chrono library documentation](https://en.cppreference.com/w/cpp/chrono)

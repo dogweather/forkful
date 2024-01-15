@@ -1,5 +1,6 @@
 ---
-title:                "Arduino: Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,41 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak policzyć długość ciągu znaków w programowaniu Arduino? Jest to ważna umiejętność, ponieważ pozwala na efektywne zarządzanie pamięcią i zmiennymi. Dzięki temu blogowi dowiesz się, dlaczego jest to istotne oraz jak to zrobić.
+Jeśli pracujesz z ciągami znaków w Arduino, być może zadam sobie pytanie: "Jak mogę sprawdzić długość danego ciągu?". Jest to przydatna umiejętność, ponieważ może Ci pomóc w manipulowaniu i porównywaniu różnych ciągów, co może być użyteczne w wielu projektach Arduino.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-```Arduino
-String myString = "Hello World";
-int length = myString.length();
-Serial.println(length); // Output: 11
-```
-
-W tym powyższym przykładzie, zmienna `myString` przechowuje ciąg znaków "Hello World". Następnie, używając wbudowanej funkcji `length()`, przypisujemy jej długość do zmiennej `length`. Wyświetlamy tę wartość na monitorze szeregowym za pomocą funkcji `println()`. Wynikiem powinno być "11", ponieważ jest to liczba znaków w ciągu "Hello World".
-
-Możesz również użyć pętli `for` do przeiterowania przez wszystkie znaki w ciągu i zliczenia ich ilości.
+Sprawdzenie długości ciągu w Arduino jest proste. Wystarczy użyć funkcji ```length()```, która zwraca liczbę znaków w danym ciągu. Możesz użyć tej funkcji w połączeniu z instrukcją ```Serial.println()``` do wyświetlenia wyniku.
 
 ```Arduino
-String myString = "This is a test";
-int counter = 0;
-
-for (int i = 0; i < myString.length(); i++) {
-  counter++;
-}
-
-Serial.println(counter); // Output: 14
+// Przykładowy kod do wyświetlenia długości ciągu z domyślnego tekstu
+String tekst = "Przykładowy tekst";
+Serial.println(tekst.length()); // Wynik: 18
 ```
 
-W powyższym przykładzie, za pomocą pętli `for` iterujemy przez każdy znak w ciągu `myString` i zwiększamy zmienną `counter` o jeden przy każdym przejściu. Ostatecznie, przypisujemy wartość `counter` do długości ciągu i wyświetlamy ją na monitorze szeregowym.
+## Głębsza analiza
 
-## Deep Dive
+W Arduino funkcja ```length()``` jest dostępna dla obiektów typu ```String```, dlatego musisz ustawić typ daty na ```String```, aby móc jej użyć. Jeśli chcesz wyświetlić długość ciągu liczbowego, musisz najpierw przekonwertować go na typ ```String```, a następnie wykorzystać funkcję ```length()```. 
 
-Podczas liczenia długości stringa, istnieje kilka czynników, które należy wziąć pod uwagę. Po pierwsze, pamiętaj, że funkcja `length()` zwraca *liczbę* znaków, a nie *indeks* ostatniego znaku. Warto również zauważyć, że funkcja ta zlicza zarówno litery, cyfry, jak i znaki specjalne. Jeśli chcesz zliczyć tylko litery, musisz użyć funkcji `isAlpha()`.
+Funkcja ta jest również przydatna przy porównywaniu dwóch ciągów, ponieważ możesz użyć jej do sprawdzenia czy mają one taką samą długość. Jeśli chcesz porównać tylko część ciągu, możesz użyć funkcji ```substring()```, która zwraca podciąg o określonej długości.
 
-Dodatkowo, warto wiedzieć, że ciągi znaków mogą być puste lub nieprawidłowe, co może wpłynąć na wynik funkcji `length()`.
+## Zobacz także
 
-## Zobacz też
+Może zainteresować Cię również temat "Manipulowanie ciągami znaków w Arduino", który zawiera dodatkowe informacje na temat pracy z ciągami w Arduino.
 
-- [Dokumentacja Arduino o funkcji length()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
-- [Tutorial: Praca z ciągami znaków w Arduino](https://randomnerdtutorials.com/arduino-string-processing-functions-syntax/)
-- [Poradnik: Zarządzanie pamięcią w Arduino](https://maker.pro/arduino/tutorial/how-to-manage-memory-on-arduino)
+- [Manipulowanie ciągami znaków w Arduino - Dokumentacja Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Funkcja length() w Arduino - Instructables](https://www.instructables.com/Find-Character-Length-of-String-in-Arduino/)
+- [Działanie funkcji substring() w Arduino - Arduino Stack Exchange](https://arduino.stackexchange.com/questions/253/how-can-i-get-a-substring-from-a-string)

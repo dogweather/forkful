@@ -1,5 +1,6 @@
 ---
-title:                "Fish Shell: Trabalhando com yaml"
+title:                "Trabalhando com yaml"
+html_title:           "Fish Shell: Trabalhando com yaml"
 simple_title:         "Trabalhando com yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -9,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+##Por que usar YAML na linguagem Fish?
 
-A programação com arquivos YAML é essencial para qualquer desenvolvedor que trabalha com automação de tarefas, configurações de servidores e sistemas de gerenciamento de conteúdo. Com a sintaxe simples e legível, o YAML é uma ótima escolha para facilitar o processo de configuração e manutenção de projetos.
+YAML (Yet Another Markup Language) é um formato de dados que é comumente usado para fazer configurações em arquivos de texto simples. Ele possui uma sintaxe amigável e é fácil de aprender, o que o torna uma excelente escolha para ser utilizado na linguagem Fish. Além disso, com a chegada da versão atual do Fish, seu suporte para YAML se tornou mais robusto e prático de ser utilizado.
 
-## Como fazer:
+##Como usar YAML na linguagem Fish
 
-Confira abaixo alguns exemplos de como trabalhar com YAML no Fish Shell:
+Para utilizar o YAML na linguagem Fish, é necessário ter a versão mais recente do Fish instalada em seu sistema. Em seguida, basta seguir os seguintes passos:
 
-```
-# Criação de um arquivo YAML
-$ echo "name: João
-age: 30" > arquivo.yaml
+1. Crie um arquivo com a extensão ".yaml" e abra-o com o editor de sua preferência. Por exemplo: `meu_arquivo.yaml`
 
-# Acesso a valores específicos
-$ cat arquivo.yaml | yq r - name # João
+2. Insira os dados desejados seguindo a sintaxe do YAML, que utiliza espaços para delimitar estruturas (não utilize tabs).
 
-# Adição de um novo valor
-$ yq w -i arquivo.yaml cidade "São Paulo"
-
-# Alteração de um valor existente
-$ yq w -i arquivo.yaml age 31
-
-# Remoção de um valor
-$ yq d -i arquivo.yaml city
-
-# Uso de variáveis para criação de um arquivo YAML
-$ set name Maria
-$ set age 28
-$ echo "name: $name
-age: $age" > arquivo.yaml
+3. Para acessar os dados presentes no arquivo, basta usar o comando `yaml` seguido do caminho do arquivo e o nome do dado desejado. Por exemplo: ```Fish Shell
+yaml meu_arquivo.yaml meu_dado
 ```
 
-## Mergulho profundo:
+4. Você também pode utilizar o YAML para armazenar variáveis e depois acessá-las em seu script Fish. Para isso, utilize o comando `set -g VAR (yaml (cat meu_arquivo.yaml) meu_dado)`, onde `VAR` é o nome da variável e `meu_dado` é o nome do dado que será atribuído a ela.
 
-Existem várias ferramentas disponíveis para trabalhar com arquivos YAML no Fish Shell, como yq e shyaml. Além disso, o Fish Shell também possui funções internas como "string split" e "string replace" que podem ser úteis para manipular valores em um arquivo YAML.
+##Aprofundando-se no YAML
 
-Outro aspecto importante ao trabalhar com arquivos YAML é a indentação correta. Uma indentação inadequada pode gerar erros ao carregar ou ler os arquivos. É também possível utilizar expressões regulares para fazer buscas e alterações em um arquivo YAML.
+O YAML possui um conjunto de regras e convenções que devem ser seguidas para que a sintaxe seja corretamente interpretada. Existem diversas formas de se estruturar um arquivo YAML, como utilizando listas, dicionários e tags.
 
-## Veja também:
+Além disso, é possível realizar operações e filtragens nos dados utilizando ferramentas como o `jq`, que auxiliam na manipulação de dados em formato JSON (que é semelhante ao YAML). Com isso, é possível criar scripts Fish mais robustos e dinâmicos.
 
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Documentação do yq](https://mikefarah.gitbook.io/yq/)
+##Veja também
+
+- [Documentação Oficial do Fish](https://fishshell.com/docs/current/)
+- [Especificação Oficial do YAML](https://yaml.org/spec/)
+- [Projeto Fish no GitHub](https://github.com/fish-shell/fish-shell)
+- [Repositório do `jq` no GitHub](https://github.com/stedolan/jq)

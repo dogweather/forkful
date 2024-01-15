@@ -1,5 +1,6 @@
 ---
-title:                "Python: Porównywanie dwóch dat"
+title:                "Porównywanie dwóch dat"
+html_title:           "Python: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Python"
 category:             "Python"
@@ -11,47 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dat jest niezbędnym elementem programowania w Pythonie, ponieważ często musimy sprawdzić, czy jedna data jest wcześniejsza lub późniejsza od drugiej. Jest to szczególnie ważne w przypadku skryptów, które operują na danych z różnych okresów czasu, takich jak raporty finansowe czy analizy rynkowe.
+Porównywanie dat jest nieodłączną częścią wielu zastosowań programowania w języku Python. Jest to szczególnie przydatne w przypadkach, gdy chcemy sprawdzić, czy określona data jest wcześniejsza lub późniejsza od innej daty. W tym artykule przejdziemy przez podstawowe techniki porównywania dat w Pythonie.
 
 ## Jak to zrobić
 
-Istnieją różne sposoby na porównywanie dat w Pythonie, a jednym z najprostszych jest użycie funkcji `datetime` i operatorów porównania. Przykładowy kod może wyglądać następująco:
+Porównywanie dat w Pythonie jest możliwe dzięki wbudowanej funkcji ```date``` oraz modułowi ```datetime```, który pozwala na wygodne manipulowanie czasem i datami.
+
+Aby porównać dwie daty, musimy najpierw utworzyć zmienne przechowujące konkretne daty. Możemy to zrobić na kilka sposobów, np.:
 
 ```Python
-from datetime import datetime
-
-data_1 = datetime(2021, 5, 5)
-data_2 = datetime(2021, 5, 10)
-
-if data_1 < data_2:
-   print("Data 1 jest wcześniejsza niż data 2")
-elif data_1 > data_2:
-   print("Data 1 jest późniejsza niż data 2")
-else:
-   print("Obie daty są takie same")
+date_1 = datetime.date(2020, 7, 15)
+date_2 = datetime.date(2019, 11, 30)
 ```
 
-Powyższy kod definiuje dwie zmienne typu `datetime` i następnie porównuje je za pomocą operatorów `<`, `>` i `==`, które zwracają odpowiednie wartości logiczne. W tym przypadku wydrukowany zostanie komunikat "Data 1 jest wcześniejsza niż data 2".
-
-## Głębsze zagłębienie
-
-Przeprowadzając porównanie dat, musimy pamiętać o różnicach między datą a datą i czasem. Data jest reprezentowana przez klasę `date`, która zawiera tylko informacje o dniu, miesiącu i roku. Natomiast data i czas są reprezentowane przez klasę `datetime`, która dodatkowo przechowuje informacje o godzinie i minucie. Dlatego też przy porównywaniu dat i czasów należy używać odpowiednich klas, aby uniknąć nieporozumień.
-
-Ponadto, istnieją funkcje wbudowane w Pythona, takie jak `timedelta`, które pozwalają na obliczanie różnicy między dwiema datami. Przykładowo, możemy sprawdzić ile dni minęło od dnia dzisiejszego do dnia urodzin osoby, używając poniższego kodu:
+Następnie wykorzystujemy operator porównania (np. ```>``` lub ```<```) do porównania tych dwóch zmiennych, np.:
 
 ```Python
-from datetime import date, datetime, timedelta
-
-dzis = date.today()
-urodziny = date(1990, 10, 24)
-
-roznica = dzis - urodziny
-
-print("Minęło już", roznica.days, "dni od Twoich urodzin")
+date_1 > date_2 # zwraca "True", ponieważ 15 lipca 2020 jest później niż 30 listopada 2019
 ```
+
+Możemy również wykorzystać funkcję ```timedelta``` z modułu ```datetime``` do dodawania lub odejmowania określonej ilości dni, tygodni czy miesięcy do daty. Na przykład:
+
+```Python
+date_3 = datetime.date(2020, 1, 1)
+date_4 = date_3 + datetime.timedelta(30) # dodajemy 30 dni do daty 1 stycznia 2020
+```
+
+## Głębszy zanurzenie
+
+W Pythonie istnieją również bardziej zaawansowane metody porównywania dat, takie jak wykorzystanie klasy ```dateutil.parser``` do konwersji napisów na daty, czy użycie metody ```strptime()``` do parsowania dat zgodnie z określonym formatem.
+
+Warto również wiedzieć, że daty w Pythonie mogą być porównywane nie tylko za pomocą operatorów porównania, ale także z użyciem metod ```equal()```, ```isocalendar()``` czy ```toordinal()```, które pozwalają na bardziej precyzyjne porównanie.
 
 ## Zobacz także
+[Oficjalna dokumentacja Pythona dotycząca modułu ```datetime```](https://docs.python.org/3/library/datetime.html)
 
-- Dokumentacja Pythona o datach i czasie: https://docs.python.org/pl/3/library/datetime.html
-- Porównywanie danych i czasów w Pythonie: https://www.programiz.com/python-programming/datetime/compare-dates
-- Poradnik Python do porównywania dat i czasów: https://realpython.com/python-datetime/
+[Poradnik na temat porównywania dat w Pythonie](https://realpython.com/python-datetime/)
+
+[Przykłady kodu z wykorzystaniem modułu ```datetime```](https://www.programiz.com/python-programming/datetime)
+
+[Porównywanie dat w innych językach programowania: różnice i podobieństwa](https://www.freecodecamp.org/news/the-basic-principles-of-date-and-time-comparison-in-programming/)

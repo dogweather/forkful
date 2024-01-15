@@ -1,6 +1,7 @@
 ---
-title:                "Python: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Nedladdning av en webbsida"
+html_title:           "Python: Nedladdning av en webbsida"
+simple_title:         "Nedladdning av en webbsida"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -9,45 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att ladda ner en webbsida är en användbar färdighet inom Python-programmering, särskilt om man vill automatisera uppgifter eller extrahera data från internet.
+Att ladda ner en webbsida är en vanlig uppgift inom webbutveckling och datascience. Det kan användas för att hämta information från en specifik webbsida, analysera webbsidans innehåll eller för att bygga en lokal backup av en hemsida.
 
-# Hur man gör det
+## Hur man gör det
 
-För att ladda ner en webbsida i Python, kan man använda biblioteket "requests". Först måste man installera det genom att importera: 
+För att ladda ner en webbsida i Python behöver man använda sig av ett tredjepartsbibliotek som heter "Requests". Detta bibliotek gör det möjligt för oss att skicka HTTP-förfrågningar till en webbsida och hämta dess innehåll.
 
-```Python 
-import requests 
+För att installera "Requests" biblioteket, kan du använda dig av pip-kommandot i terminalen:
+
+```python
+pip install requests
 ```
 
-Sedan kan man använda funktionen "get()" för att hämta in webbsidan genom att ange dess URL som ett argument. Till exempel: 
+När biblioteket är installerat, kan du importera det i ditt Python-skript genom att använda följande kod:
 
-```Python 
-r = requests.get("https://www.example.com")
+```python
+import requests
 ```
 
-För att se det innehåll som har hämtats kan man använda funktionen "text". Till exempel: 
+För att hämta en webbsida använder vi funktionen "get" från "Requests" biblioteket och anger webbadressen som en parameter. Detta skapar sedan ett responsobjekt som innehåller webbsidans innehåll.
 
-```Python 
-print(r.text)
+```python
+# Hämtar en webbsida
+response = requests.get("https://www.example.com")
+
+# Skriver ut webbsidans innehåll
+print(response.content)
 ```
 
-Detta kommer att skriva ut alla HTML-koden för den hämtade webbsidan. Man kan också välja att spara detta innehåll i en fil genom att använda funktionen "write()". Till exempel: 
+En vanlig uppgift är också att spara webbsidans innehåll till en lokal fil. Detta kan göras genom att använda funktionen "open" och skicka in ett filnamn tillsammans med "wb"-läget (vilket står för "write binary").
 
-```Python 
-with open("example.html", "w") as file: 
-    file.write(r.text) 
+```python
+# Skapar en lokal fil och sparar webbsidans innehåll
+with open("exempel.html", "wb") as file:
+    file.write(response.content)
 ```
 
-Detta är en enkel metod för att ladda ner en webbsida, men det finns många andra sätt att göra det på och biblioteket "requests" har många fler funktioner för att anpassa hämtningar.
+## Djupdykning
 
-# Gå i djupet
+Utöver att hämta en hel webbsida, kan man också använda "Requests" biblioteket för att hämta specifika delar av en webbsida. Detta kan göras genom att använda "BeautifulSoup" biblioteket för webbskrapning.
 
-För att förstå ytterligare om hur man laddar ner en webbsida i Python, är det bra att ha en grundläggande förståelse för HTTP-protokollet. Detta är det protokoll som används för att skicka och ta emot data över internet. När man använder funktionen "get()" i "requests"-biblioteket, så skickas faktiskt en GET-begäran till webbsidan och dess svar returneras som ett objekt. Detta objekt, som vi i exemplet kallade för "r", innehåller en mängd olika attribut och funktioner för att hantera den hämtade webbplatsen. Det är värt att undersöka och förstå dessa för att använda "requests"-biblioteket mer effektivt.
+Först måste man installera "BeautifulSoup" genom att köra följande kommando:
 
-# Se även
+```python
+pip install beautifulsoup4
+```
 
-- [Dokumentation för requests-biblioteket](https://requests.readthedocs.io/en/master/)
-- [Mer information om HTTP-protokollet](https://www.w3.org/Protocols/HTTP/)
-- [Tutorial om webb-hämtningar med Python](https://realpython.com/python-web-scraping-practical-introduction/)
+Sedan kan man importera biblioteket i sitt Python-skript:
+
+```python
+from bs4 import BeautifulSoup
+```
+
+Därefter kan man använda "BeautifulSoup" tillsammans med "Requests" för att hitta specifika HTML-element på en webbsida.
+
+```python
+# Hämtar en webbsida
+response = requests.get("https://www.example.com")
+
+# Skapar ett BeautifulSoup objekt av webbsidans innehåll
+soup = BeautifulSoup(response.content, 'html.parser')
+
+# Hittar alla "a"-taggar på webbsidan och skriver ut deras länkar
+for link in soup.find_all('a'):
+    print(link.get('href'))
+```
+
+Detta är bara en grundläggande introduktion till att ladda ner webbsidor i Python. Det finns många fler aspekter som kan utforskas, som att hantera HTTP-headers, skicka POST-förfrågningar och autentisering.
+
+## Se även
+
+- [Dokumentation för Requests biblioteket](https://requests.readthedocs.io/en/master/)
+- [Dokumentation för BeautifulSoup biblioteket](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
+- [En guide till webbskrapning med Python](https://realpython.com/beautiful-soup-web-scraper-python/)

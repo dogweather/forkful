@@ -1,5 +1,6 @@
 ---
-title:                "Clojure: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Clojure: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -9,34 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi ladata web-sivu?
+## Miksi 
 
-Ladatessa web-sivun voit tutkia sen sisältöä ja käyttää sitä hyödyksi eri tarkoituksiin. Voit esimerkiksi analysoida sisältöä tai käyttää sitä osana sovellusta.
+Internetissä on paljon tietoa, mutta joskus haluat tallentaa jonkin sivun omalle tietokoneellesi tai käyttää sivun sisältöä ohjelmassasi. Tämä artikkeli näyttää, kuinka voit ladata verkkosivun käyttämällä Clojurea.
 
-## Miten: Esimerkki koodin avulla
+## Miten
 
-```clojure
-(ns lataa-sivu.core
-  (:require [clojure.java.io :as io]
-            [clj-http.client :as http]))
+Lataa verkkosivu ja tallenna se merkkijonona:
 
-;; lataa sivu ja tallenna se muuttujaan "response"
-(def response (http/get "https://www.example.com"))
-
-;; tulostetaan muuttujan sisältö
-(println (:body response))
+```Clojure
+(def url "https://www.example.com/")
+(def sivu (slurp url))
 ```
 
-Tulostus:
-```
-<p>Tämä on esimerkkisivu.</p>
+Lataa ja tallenna verkkosivu modelAndView-objektiin:
+
+```Clojure
+(defn lataa [url]
+   (try
+     (doto (modelAndView (new URL url))
+       (.addObject "sivu" (.toString (slurp url))))
+     (catch Exception e (modelAndView "error" "Jokin meni pieleen..."))))
 ```
 
-## Syvempi sukellus
+Lataa ja tulosta verkkosivun sisältö:
 
-Web-sivun lataaminen Clojurella onnistuu helposti käyttäen clj-http-kirjastoa. Kirjasto tarjoaa erilaisia funktioita HTTP-pyyntöjen tekemiseen ja vastauksien käsittelyyn. Voit esimerkiksi määrittää lisäparametreja pyyntöön, kuten otsikoita tai käyttää erilaisia HTTP-verbejä kuten POST tai PUT.
+```Clojure
+(defn tulosta [url]
+  (println (slurp url)))
+```
+
+Voit myös ladata ja tallentaa vain tietyt osat sivusta käyttämällä esimerkiksi "select"-funktiota ja CSS-sääntöjä.
+
+```Clojure
+(defn lataa-title [url]
+  (->> url
+       slurp
+       (select [:title])
+       first
+       :content
+       first))
+
+(def title (lataa-title "https://www.example.com/"))
+```
+
+## Syvä sukellus
+
+Clojuren "slurp"-funktio käyttää Javaa ja sen "URLConnection"-luokkaa ladatakseen verkkosivun. Jos sivun lataaminen epäonnistuu, se palauttaa virheen ("error"). Clojuren "select"-funktio käyttää puolestaan "jsoup"-kirjastoa XML/HTML-analysointiin. Voit myös käyttää muita kirjastoja, kuten "clj-http" tai "http-kit", ladataksesi verkkosivuja.
 
 ## Katso myös
-- [Clj-http-kirjaston dokumentaatio](https://github.com/dakrone/clj-http)
-- [Clojuren virallinen verkkosivusto](https://clojure.org/)
-- [Clojure-yhteisön foorumi](https://clojureverse.org/)
+
+- https://clojure.org/
+- https://www.w3schools.com/cssref/default.asp
+- https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj
+- https://github.com/jafingerhut/jafingerhut.github.com/blob/master/demos/pure_css/flexgrid.css

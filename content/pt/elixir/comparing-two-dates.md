@@ -1,5 +1,6 @@
 ---
-title:                "Elixir: Comparando duas datas"
+title:                "Comparando duas datas"
+html_title:           "Elixir: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -9,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Elixir?
+## Por que
 
-Comparações de datas são comumente usadas em programas para verificar se uma data é mais antiga ou mais recente do que outra. Isso pode ser útil em diversos cenários, como em sistemas de reservas, agendamentos ou em aplicações financeiras.
+Comparar duas datas pode ser uma tarefa comum e útil em vários cenários de programação. Algumas das razões mais comuns incluem verificar se um período de tempo já passou, calcular o tempo de duração entre duas datas ou determinar qual data é mais recente.
 
-## Como fazer a comparação de duas datas em Elixir
+## Como fazer
 
-Em Elixir, podemos comparar datas utilizando o módulo `Calendar` e a função `date_to_erl`para converter as datas em formato `{:ok, date}` para formato `:erlang` que permite a comparação.
+Para comparar duas datas em Elixir, podemos usar o módulo `DateTime` juntamente com seus métodos `diff` e `compare`. Primeiro, precisamos definir as duas datas que queremos comparar:
 
-```Elixir
-# Convertendo datas para formato de Erlang
-{:ok, date1} = Calendar.Date.from_erl({2020, 10, 15})
-{:ok, date2} = Calendar.Date.from_erl({2020, 12, 10})
-
-# Comparando datas
-date1 =< date2 # true
-date1 > date2 # false
+```
+iex> data1 = ~U[2021-01-01 23:59:59Z]
+iex> data2 = ~U[2021-02-15 12:00:00Z]
 ```
 
-Podemos também utilizar a função `compare` para retornar um valor numérico que indica se a primeira data é anterior, posterior ou igual à segunda data.
+Em seguida, podemos usar o método `compare` para verificar qual data é maior ou menor:
 
-```Elixir
-Calendar.Date.compare(date1, date2) # -1
+```
+iex> DateTime.compare(data1, data2)
+:lt
+iex> DateTime.compare(data2, data1)
+:gt
 ```
 
-## Profundidade na comparação de datas em Elixir
+Neste exemplo, podemos ver que a data2 é maior (mais recente) do que a data1. Também podemos usar o método `diff` para obter o tempo de duração entre as duas datas:
 
-Ao comparar duas datas, é importante entender como funciona o formato interno de datas em Elixir. Datas são armazenadas como a contagem de dias desde o dia 0 (01/01/0001). Então, ao comparar datas, estamos comparando esses valores numéricos internos.
+```
+iex> DateTime.diff(data1, data2)
+~T[0, 7664141, :second] # resultado em formato: [dias, segundos, microssegundos]
+```
 
-Também é importante lembrar que o formato de Erlang usado em Elixir não suporta anos bissextos antes de 1900, portanto, datas nesse período serão tratadas de forma diferente.
+## Mergulho profundo
+
+Ao comparar duas datas em Elixir, é importante ter em mente que elas devem estar em formatos compatíveis. Portanto, se as datas não forem exibidas no mesmo fuso horário, pode ser necessário convertê-las usando o método `timezone` antes de fazer a comparação. Além disso, o método `compare` retorna o átomo `:eq` se as datas forem iguais, `lt` se a primeira data for menor que a segunda e `gt` se a primeira data for maior que a segunda.
 
 ## Veja também
 
-- [Documentação do módulo Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Referência de funções do módulo Calendar](https://hexdocs.pm/elixir/Calendar.Functions.html)
-- [Artigo sobre manipulação de datas em Elixir](https://medium.com/elixir-miracles/manipulação-de-datas-em-elixir-fac5991c0777)
+- Documentação oficial sobre o módulo `DateTime`: https://hexdocs.pm/elixir/DateTime.html
+- Artigo sobre a diferença entre métodos `diff` e `compare` em datas: https://www.amberbit.com/blog/comparing-dates-in-elixir/
